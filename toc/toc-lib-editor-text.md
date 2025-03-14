@@ -100,7 +100,7 @@ modified: 2021-07-27T15:12:39.959Z
   - Markdown editor for react, developed in jsx and typescript.
   - https://github.com/imzbf/md-editor-v3 /vue3
 
-- https://github.com/test-it-edu/notebook-dev /ts
+- https://github.com/test-it-edu/notebook-dev /202202/ts/inactive
   - Notebook is a simple Markdown and LaTeX Math editor build in React. 
   - The goal of this project is to create a modular / extensible editor for the web
 

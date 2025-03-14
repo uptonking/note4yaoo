@@ -580,8 +580,8 @@ modified: 2024-01-31T19:13:11.286Z
   - Wexond has been acquired_202211
     - https://twitter.com/sentialx/status/1588103883494227971
   - [forks](https://github.com/wexond/browser-base/forks)
-    - https://github.com/Alex313031/promethium
-    - https://github.com/skyebrowser/skye
+    - https://github.com/Alex313031/promethium /GPL
+    - https://github.com/skyebrowser/skye /GPL
     - https://github.com/Nalem14/browser-base
 
 - https://github.com/beakerbrowser/beaker /MIT/202012/js/inactive

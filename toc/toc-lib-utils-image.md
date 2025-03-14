@@ -9,6 +9,8 @@ modified: 2023-04-04T22:39:45.442Z
 
 # guide
 
+- tips
+  - 对image/pdf/富文本编辑器的标注，通常流行产品都会有产品自身的实现，不必执着于标准
 # popular
 - AI位图转矢量
   - https://vectorizer.ai/
@@ -123,7 +125,7 @@ modified: 2023-04-04T22:39:45.442Z
   - Compare two images using a slider, an overlay, or a side by side split view.
   - This webcomponent follows the open-wc recommendation
 
-- OpenSeadragon /2.1kStar/BSD/202304/js
+- OpenSeadragon /3.1kStar/BSD/202503/js
   - https://github.com/openseadragon/openseadragon
   - http://openseadragon.github.io/
   - web-based viewer for high-resolution zoomable images, implemented in pure JavaScript, for desktop and mobile.

@@ -38,7 +38,7 @@ modified: 2020-12-29T17:52:48.584Z
 - 打印预览方式
   - 用于显示打印效果的打印预览（通称“模拟显示”）实际上也是Word文档视图方式中的一种，它在页面视图方式显示文档完整打印效果的基础上，增加了**同时显示文档多个页面内容**的功能，这就有助于用户检查文档的布局，并据此编辑或调整文档格式。注意，在打印预览方式下，用户无法修改文档中的文字信息。
 # examples
-- https://github.com/xournalpp/xournalpp /cpp
+- https://github.com/xournalpp/xournalpp /GPL/202502/cpp
   - https://xournalpp.github.io/
   - Xournal++ is a handwriting notetaking software with PDF annotation support. 
   - Written in C++ with GTK3, supporting Linux, macOS and Windows 10.

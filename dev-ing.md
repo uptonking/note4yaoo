@@ -293,6 +293,7 @@ console.trace(';; loadFile', path, loadType);
 
 ```
 ^(?!42\["resourceM).*
+
 update package @dao42/clacky-paas-front to next patch version, and add one-line changelog in changelog.md
 update package @dao42/clacky-paas-front to next patch version, and run pnpm install
 
@@ -355,6 +356,21 @@ add action to create quickSort1.mjs and add 3 test cases in it
 - action-删除文件
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
+
+## 0314
+
+- how to create terminal, send input, get result  in linux , show me dev tips and  some code examples in nodejs
+  - Use `child_process.spawn` for real-time interaction
+  - Use `child_process.exec` for simple commands
+  - Use `stdin, stdout, and stderr` streams: to interact with the child process programmatically.
+  - Use asynchronous methods to avoid blocking the Node.js event loop.
+
+- 昨天
+  - 解决用户反馈的 requirements.txt打不开的问题，已合入develop
+  - 排查了用户反馈的问题，ai-diff 与 github-pr的diff不一致的问题，是产品设计问题，已反馈给佳路
+  - 排查了内部反馈的一些问题，如makePlan的数据是否是修改过的数据
+- 今天
+  - 继续处理onboarding入职项目流程的剩余2个半需求，树形ui需要花费较多时间
 
 ## 0313
 

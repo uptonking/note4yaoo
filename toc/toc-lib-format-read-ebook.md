@@ -48,6 +48,22 @@ modified: 2023-09-19T07:26:04.103Z
 - https://github.com/nota-lang/bene /202401/ts/rust/tauri
   - https://nota-lang.github.io/bene/
   - Bene is a reading system for documents written in the EPUB file format.
+
+- https://github.com/omnivore-app/omnivore /14.4kStar/AGPL/202503/ts
+  - https://omnivore.app/
+  - open source read-it-later solution for people who like reading
+  - Offline support
+  - 依赖nextjs、swr、stitches、mozilla-readability、radix-ui、pdfjs
+  - Web app written in Node.js and TypeScript; android/ios
+  - Browser extensions for Chrome, Safari, Firefox, and Edge
+  - Add newsletter articles via email (with substack support!)
+  - Every single part is fully open source! deploy it to your own server.
+
+- https://github.com/readest/readest /AGPL/202503/ts/rust
+  - https://readest.com/
+  - an open-source ebook reader designed for immersive and deep reading experiences. 
+  - Built as a modern rewrite of Foliate, it leverages Next.js 15 and Tauri v2 to deliver a smooth, cross-platform experience across macOS, Windows, Linux, Android, iOS, and the Web.
+  - https://github.com/johnfactotum/foliate /GPL/js
 # mdbook
 - https://github.com/rust-lang/mdBook /15.6kStar/MPLv2/202312/rust
   - https://rust-lang.github.io/mdBook/

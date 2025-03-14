@@ -11,6 +11,7 @@ modified: 2021-01-04T17:26:43.784Z
 
 - tips
   - 支持导出pdf是大多数产品的基本功能，如drawio/jsreport/thorium-reader/notesnook
+  - pdf标注可参考 office-drawing, 还可参考: okular, foxit, canva, xournal, 各类电子书阅读器
 
 - https://printcss.live/
   - 渲染pdf的多种js示例
@@ -66,6 +67,15 @@ modified: 2021-01-04T17:26:43.784Z
   - `react-pdf` and react-pdfjs only provide React wrappers for PDF.js and do not have built-in annotation functionality.
   - `pdfjs-annotate` does not provide text highlights out of the box.
   - https://github.com/velvetfs/v-pdf-highlighter
+
+- https://github.com/bfritscher/pdf-stamp /MIT/202405/js/inactive
+  - https://bfritscher.github.io/pdf-stamp/
+  - PDF Stamp is a web application that allows users to add stamps or signatures to PDF files directly from their browsers. 
+  - pdfjs-dist for rendering PDF files to image.
+  - signature_pad for signature creation.
+  - fabric.js for handling canvas and stamps.
+  - pdf-lib for PDF manipulation.
+  - Stamps are stored in the browser's localStorage under the key pdf-stamps-srcStamps. This allows you to reuse them even after refreshing the page.
 
 - https://github.com/aexol-studio/react-pdf-editor /MIT/202205/ts/inactive
   - Pdf editor react component
@@ -315,6 +325,14 @@ modified: 2021-01-04T17:26:43.784Z
 
 - https://github.com/plainlab/plainprinter /GPLv3/202309/ts
   - Take multiple screenshots and convert them into a PDF file
+
+- https://github.com/pdfarranger/pdfarranger /GPL/202502/python
+  - PDF Arranger is a small python-gtk application, which helps the user to merge or split PDF documents and rotate, crop and rearrange their pages using an interactive and intuitive graphical interface. 
+  - It is a front end for pikepdf.
+  - PDF Arranger is a fork of Konstantinos Poulios’s PDF-Shuffler
+  - https://github.com/pikepdf/pikepdf /MPL/202502/cpp/python
+    - https://pikepdf.readthedocs.io/
+    - A Python library for reading and writing PDF, powered by QPDF
 # examples
 - https://github.com/AnsellMaximilian/electron-excel-to-pdf-invoice-generator /ts
   - A desktop invoice generator that turns excel files (with a specifically formatted workbook) into pdf invoices for every customer.
@@ -403,6 +421,9 @@ modified: 2021-01-04T17:26:43.784Z
 - OpenViewerFX  /LGPL/
   - https://github.com/qwertme/OpenViewerFX
   - now part of JDeli
+
+- https://github.com/sumatrapdfreader/sumatrapdf /C
+  - SumatraPDF reader
 # pdf-doc/rag
 - https://github.com/opendatalab/PDF-Extract-Kit /apache2/202407/python
   - 布局检测：使用LayoutLMv3模型进行区域检测，如图像，表格, 标题, 文本等；

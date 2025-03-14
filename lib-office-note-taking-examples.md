@@ -609,7 +609,7 @@ modified: 2024-01-30T20:56:45.773Z
 - https://github.com/zotero/zotero /8.6kStar/AGPLv3/202401/js
   - https://www.zotero.org/
   - a free, easy-to-use tool to help you collect, organize, cite, and share your research sources.
-  - Zotero is built on Firefox and depends on many other exceptional open-source projects:
+  - [Zotero is built on Firefox and depends on many other exceptional open-source projects](https://www.zotero.org/support/credits_and_acknowledgments):
     - [ace](https://ace.c9.io/)
     - Monaco Editor
     - ProseMirror

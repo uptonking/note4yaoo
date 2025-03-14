@@ -205,9 +205,8 @@ modified: 2022-11-07T17:36:22.236Z
 - https://github.com/SkyGuardian42/piko.space /202406/ts
   - Collaborate at the speed of light and seamlessly sync offline work
   - tiptap的协作示例
-  - redis、yjs、tiptap
   - 前端依赖tiptap、radix-ui、tanstack-query、yjs、zustand
-  - 后端依赖trpc、express、yjs、zod
+  - 后端依赖trpc、express、yjs、zod、redis
 
 - https://github.com/baktiaditya/cother
   - A real-time collaborative code editor and previewer.

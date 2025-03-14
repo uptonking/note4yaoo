@@ -155,7 +155,7 @@ modified: 2023-02-05T19:03:27.730Z
 - nextcloud-text /366Star/AGPLv3/202208/js/tiptap/php
   - https://github.com/nextcloud/text
   - Collaborative document editing using Markdown
-  - 依赖tiptap.v2, yjs, @_ueberdosis/prosemirror-tables.v1.1.3, markdown-it、vue2、vuex3
+  - 依赖tiptap.v2, yjs, @ueberdosis/prosemirror-tables.v1.1.3, markdown-it、vue2、vuex3
 
 - element-tiptap /825Star/MIT/202208/ts/vue/tiptap/inactive
   - https://github.com/Leecason/element-tiptap

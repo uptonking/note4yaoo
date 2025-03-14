@@ -10,19 +10,36 @@ modified: 2023-11-03T17:43:01.518Z
 # guide
 - 画板或批注类产品要参考规范 [Web Annotation Data Model](https://www.w3.org/TR/annotation-model/)
   - 富文本格式也可参考
+  - 对image/pdf/富文本编辑器的标注，通常流行产品都会有产品自身的实现，不必执着于标准
 # annotation
-- https://github.com/apache/incubator-annotator /apache2/ts
+- https://github.com/apache/incubator-annotator /apache2/202211/ts/inactive
   - https://annotator.apache.org/
   - provides annotation enabling code for browsers, servers, and humans.
   - The goal is to help developers of annotation tools create their applications without having to reinvent the wheel, while applying a standards-driven approach based on the W3C’s Web Annotation data model, in order to facilitate an ecosystem of interoperable annotation tools 
   - [Web Annotation Protocol Server](https://github.com/apache/incubator-annotator/issues/70)
+    - https://github.com/snvfk1n/simple-annotation-server /MIT/202007/js/inactive
+    - https://code.treora.com/gerben/web-annotation-discovery-server /20221p/inactive
 
-- https://github.com/opendatalab/labelU-Kit /apache2/202412/ts
+- https://github.com/opendatalab/LabelLLM /apache2/202502/python/ts
+  - The Open-Source Data Annotation Platform
+  - including audio, images, and video
+- https://github.com/opendatalab/labelU-Kit /apache2/202503/ts
   - https://opendatalab.github.io/labelU-Kit/
   - https://labelu.shlab.tech/
   - LabelU前端标注组件库，支持图片2D框、点、线、多边形、立体框及混合标注工具，可用于标注平台开发集成，开箱即用。
   - 支持视频标注
   - 支持音频标注
+  - https://github.com/opendatalab/labelU /apache2/202503/python
+    - https://opendatalab.github.io/labelU/
+    - Data annotation toolbox supports image, audio and video data.
+    - Universality: Supports exporting to various data formats, including JSON, COCO, MASK.
+
+- https://github.com/hypothesis/pdf.js-hypothes.is /bsd/202208/js/专注于标注
+  - https://web.hypothes.is/
+  - This is a copy of Mozilla's PDF.js viewer with Hypothesis annotation tools added.
+  - https://github.com/hypothesis/h /2.8kStar/bsd/202311/python
+    - h is the web app that serves most of the https://hypothes.is/ website, including the web annotations API 
+    - The Hypothesis client is a browser-based annotator that is a client for h's API.
 
 - https://github.com/rough-stuff/rough-notation /MIT/202010/ts
   - https://roughnotation.com/
@@ -39,17 +56,10 @@ modified: 2023-11-03T17:43:01.518Z
   - https://goodmansasha.github.io/annotation-model/
   - Javascript implementation of the W3C Web Annotation Data Model, useful for Web Extensions and serializing references to specific resources on a HTML page
 
-- https://github.com/openannotation/annotator /MIT/201511/js
+- https://github.com/openannotation/annotator /MIT/201511/js/inactive
   - http://annotatorjs.org/
   - Annotation tools for the web. Select text, images, or (nearly) anything else, and add your notes.
   - It provides a set of interoperable tools for annotating content in webpages.
-
-- https://github.com/hypothesis/pdf.js-hypothes.is /bsd/202208/js/inactive
-  - https://web.hypothes.is/
-  - This is a copy of Mozilla's PDF.js viewer with Hypothesis annotation tools added.
-  - https://github.com/hypothesis/h /2.8kStar/bsd/202311/python
-    - h is the web app that serves most of the https://hypothes.is/ website, including the web annotations API 
-    - The Hypothesis client is a browser-based annotator that is a client for h's API.
 
 - https://github.com/out-of-cheese-error/gooseberry /MIT/202208/rust
   - A command line utility to generate a knowledge base from Hypothesis annotations
@@ -61,6 +71,8 @@ modified: 2023-11-03T17:43:01.518Z
   - Collaborate & label any type of data, images, text, or documents, in an easy web interface or desktop app.
   - a web/desktop app for editing and annotating images, text, audio, documents and to view and edit any data defined in the extensible `.udt.json/.udt.csv` standard.
   - Usable on web or as Windows, Mac or Linux desktop application
+  - https://github.com/UniversalDataTool/react-image-annotate
+    - Create image annotations. Classify, tag images with polygons, bounding boxes or points.
 
 ## anno-server
 

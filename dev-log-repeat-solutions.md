@@ -41,6 +41,7 @@ modified: 2021-07-20T13:50:23.433Z
     - 重技术的业务开发时灵活性兼容性比性能更重要, Compatibility, Flexibility, Perf
     - frontend: animation, 多标签
     - backend: orm vs sql
+    - 采用第三方包前期开发快，后期跟随升级及处理breaking changes的工作量会增加，要做取舍
   - data-app
     - specification for pivot table
     - 输入数据input-data-table, 开放数据api，开放应用app-builder

@@ -63,7 +63,7 @@ modified: 2021-01-04T17:31:49.998Z
 - https://github.com/katjas/PDFrenderer
   - Java library for rendering PDF documents to the screen using Java2D
   - This is a fork of pdf-renderer (covered by the LGPL-2.1 license) for improvement purposes.
-- https://github.com/torakiki/pdfsam
+- https://github.com/torakiki/pdfsam /AGPL/202502/java
   - a desktop application to extract pages, split, merge, mix and rotate PDF files
 - https://github.com/caryyu/excel2pdf
   - 利用 JAVA 编写把 Excel 转 PDF 解决方案，依赖POI与IText库的实现
