@@ -69,4 +69,15 @@ modified: 2024-04-14T12:19:52.096Z
   - This React component is a locally-based solution for generating still frames from a video source. 
   - This method is an alternative to a server-side, Node.js/FFmpeg solution where video frames would be extracted and returned to the client as a sequence of images.
   - Redux Toolkit 
+# video-player
+- https://github.com/solidSpoon/DashPlayer /2.9kStar/MIT > AGPL/202502/ts
+  - https://dash-player.solidspoon.xyz/
+  - 为英语学习者量身打造的视频播放器，助你通过观看视频、沉浸真实语境，轻松提升英语水平。
+  - 依赖@electron-forge、tailwindcss、radix-ui、better-sqlite3、drizzle-kit、monaco-editor、react-markdown、remark-gfm、zustand、react-player、react-virtuoso、swr
+  - 双语字幕：支持机器翻译字幕。只展示中文/英文，或者全部隐藏都可以。
+  - AI 字幕：可以使用 AI 为视频生成字幕。
+  - 按字幕跳转： 重复当前句，或者跳到上一句，怎么跳都可以。
+  - 查词查询：鼠标悬停生词可快速查询，不打断学习进程。
+  - 视频下载：粘贴视频链接，下载视频。
+  - 支持win/linux/mac
 # more

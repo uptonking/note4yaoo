@@ -129,8 +129,8 @@ modified: 2021-08-30T18:56:18.632Z
   - DB Browser for SQLite, Previously known as "SQLite Database Browser"
   - 基于qt和c++实现
 
-- https://github.com/egoist/querybase
-  - Desktop GUI for PostgreSQL, SQLite, and MySQL.
+- https://github.com/egoist/querybase /AGPL/202501/ts
+  - A simple and smart GUI client for PostgreSQL, MySQL, SQLite
 
 - https://github.com/cyrilbois/Web-GUI-for-SQLite
   - a web-based SQLite browser written in JavaScript.

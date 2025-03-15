@@ -21,10 +21,10 @@ modified: 2021-05-13T03:08:52.583Z
   - Compatible with macOS, Windows, and Linux
 
 - who is using #electron
-  - popular: vscode, theia, jupyter, postman-like(web+pc)
+  - popular: vscode/theia/opensumi, jupyter, postman-like(web+pc)
   - known: qq, slack, mattermost, zulip
   - db: mongodb-compass, dbgate, beekeeper, sqlectron
-  - notes(web/pc): joplin(AGPLv3), marktext(MIT), siyuan(AGPLv3), trilium(AGPLv3), notable(MIT), notesnook(GPL), Zettlr(GPL), yn(AGPLv3), tinywrite
+  - notes(web/pc): joplin(AGPL), marktext(MIT), siyuan(AGPL), trilium(AGPL), notable(MIT), notesnook(GPL), Zettlr(GPL), yn(AGPL), tinywrite
   - open: drawio(apache2), tagspaces, medis
   - 经典示例: file-manager, note-taking, reader-epub
 
@@ -44,6 +44,8 @@ modified: 2021-05-13T03:08:52.583Z
   - 可以复用pake的打包逻辑但产物为electron
 
 - clients for popular apps like notion-database
+  - Stirling-PDF
+  - joplin or extension
 
 - integrations
   - vercel-aisdk

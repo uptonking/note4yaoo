@@ -316,6 +316,10 @@ modified: 2024-03-31T17:45:16.789Z
   - Lighting fast uploads. Real-time, multi-user collaboration. 
   - Powerful role-based sharing. 
   - Simple one-click distribution.
+
+- https://github.com/Scille/parsec-cloud /BSL/202503/rust/ts/vue
+  - https://parsec.cloud/
+  - Open source Dropbox-like file sharing with full client encryption
 # webdav
 - https://github.com/sigoden/dufs /MIT/202402/rust
   - A file server that supports static serving, uploading, searching, accessing control, webdav...

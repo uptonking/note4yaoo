@@ -251,3 +251,7 @@ modified: 2023-09-19T07:26:04.103Z
   - https://opensourcetipsbook.org/
   - Open Source book on Open Source. How to create a successful OSS product - tips and tricks that simply works.
 # more
+- https://github.com/mienaiyami/yomikiru /MIT/202502/ts
+  - An offline desktop reader for manga, comics, and novels.　(not a downloader/host)
+  - It is a offline desktop app to read locally stored manga or epub with great reading experience.
+  - Yomikiru's epub reader is only fit for reading novels / light novels and might not support few advance epub features.

@@ -970,14 +970,15 @@ modified: 2023-09-28T20:35:56.153Z
   - add sync to pdf.js
   - 依赖pouchdb-server
 
-- https://github.com/ResearchHelper/research-helper /AGPLv3/202312/ts/vue
+- https://github.com/ResearchHelper/research-helper /AGPLv3/202312/ts/vue/inactive
   - https://researchhelper.github.io/
   - reference manager with features including PDF reading/annotating, Markdown/Excalidraw note-taking, project/note linking, and more
   - In the year of 2023, I received many useful suggestions, and the beta version of the Research Helper had accomplished its goal, there will be no feature updates in the future. 
   - The new version, Sophosia, will be the version with continuous support and updates. 
     - The new version removes the `PouchDB` database, all data is text-centric.
     - The new version uses Tauri instead of Electron.
-  - https://github.com/sophosia/sophosia
+  - https://github.com/sophosia/sophosia /GPL/202501/ts/vue
+    - a paper/book/note management tool. It is a reference management tool with various useful functionalities such as a built-in PDF reader, live markdown note and excalidraw note.
     - 依赖 pinia、vue、citation-js、excalidraw、quasar、tauri、cytoscape、golden-layout、konva、pdfjs、vditor
 
 - databyss /39Star/AGPLv3/202312/js

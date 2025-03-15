@@ -189,7 +189,7 @@ modified: 2022-06-03T21:34:54.893Z
   - Support selecting multiple knowledge bases for Q&A
   - Currently supported formats include: PDF(pdf), Word(docx), PPT(pptx), XLS(xlsx), Markdown(md), Email(eml), TXT(txt), Image(jpg，jpeg，png), CSV(csv), Web links(html) and more
 
-- https://github.com/mayneyao/eidos /AGPLv3/202406/ts
+- https://github.com/mayneyao/eidos /2.5kStar/AGPLv3/202503/ts
   - https://github.com/mayneyao/eidos-wiki
   - https://wiki.eidos.space/
   - Eidos 是一个开源的、本地优先的 Web App ，完全运行在浏览器中，无需安装，也不依赖于任何服务器

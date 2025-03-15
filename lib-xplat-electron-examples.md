@@ -380,6 +380,16 @@ modified: 2024-01-31T19:13:11.286Z
   - 依赖 prosemirror、katex、bootstrap4、jquery、highlight.js
   - A free note-taking software for programmers and Computer Science students
 
+- https://github.com/dominiksta/wournal /LGPL/202408/ts/inactive
+  - Simple "digitial paper" for note taking and PDF annotation. Heavily inspired by Xournal.
+  - You can freely put your handwriting, text, images and vector graphics on a canvas that is about as easy to use as paper
+  - Supports Windows and GNU/Linux. (Android support is planned, MacOS/iOS open to contribution)
+  - Save single-page documents as SVG to interoperate with other software.
+  - Wournal is a mostly relatively normal electron app, except that it uses `mvui` as a frontend framework
+  - https://github.com/dominiksta/mvui /MIT/202408/ts
+    - https://dominiksta.github.io/mvui/
+    - A Minimalist Frontend Framework Based on Webcomponents
+
 - https://github.com/husseinhareb/Coffee /202401/js
   - Text editor with file management and terminal integration using Electron.
 
@@ -565,6 +575,12 @@ modified: 2024-01-31T19:13:11.286Z
   - Electron IPC is good, but difficult to maintain and scale, either because of the numerous channels you have to remember, or because of the inconsistent API between processes and the absence of inferred types of your channels and handlers.
   - invoke and handle methods in both processes with the same expected behavior
 
+## utils-worker
+
+- https://github.com/bjrmatos/electron-html-to /MIT/202206/js
+  - scalable html conversion using electron workers 
+  - Custom converters: Converters are functions that run in the electron process
+
 ## utils-browser
 
 - https://github.com/samuelmaddock/electron-browser-shell /450Star/GPL+MIT/202503/ts
@@ -611,6 +627,12 @@ modified: 2024-01-31T19:13:11.286Z
   - Browser for Work
   - Wavebox gives you customizable toolbars, sleeping tabs, cookie containers and multiple profile
   - Wavebox 10, a complete **fork of Chromium** launched in 2019, but if you're looking for the Electron based Wavebox Classic, there's an archive of the code here
+
+## ocr
+
+- https://github.com/eastrd/ArchivEye /AGPL/202304/ts/inactive
+  - an offline PDF OCR tool developed to safeguard the privacy and confidentiality of sensitive documents.
+  - A GUI offline OCR tool for searching scanned PDF documents on a per-page basis, prioritizing accessibility, privacy, and user experience with Nextron and NodeJS
 # tauri
 - https://github.com/12joan/ping-ui
   - A simple GUI for the ping command-line utility built using Tauri.

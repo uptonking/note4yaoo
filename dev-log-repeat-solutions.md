@@ -16,6 +16,7 @@ modified: 2021-07-20T13:50:23.433Z
   - 涉猎saas解决方案，积累算法、库、框架、模版项目、生态
     - 尝试将算法和技术转化为可复用的产品, 参考yjs+hocuspocus
     - 工具型框架离商业化应用太远, 直接从主流cms/saas中寻找架构或框架参考
+    - 好用的开源产品通常license都很严格，如esearch/joplin/drawio/reader
   - ⚒️🌰 深入一个项目，开发需要精力，建立生态更需要精力
     - 视图+持久化，前端分析model/view/dataflow, 后端分析数据库设计和优化
     - 分析api的设计，包括扩展ui、api，插件开发，热加载
@@ -57,6 +58,7 @@ modified: 2021-07-20T13:50:23.433Z
   - version-history: rrweb, diff, format(.fodt), video-but-auto-update
   - rspack: js plugin; rspack/rolldown-wasm
   - animation: motion(dom/svg)
+  - 考虑维护/fork旧版项目: codemirror5-lang/demo, outline, handsontable, xlsx, pdf-lib 
 
 - 技术细节(editor): virtualized, draggable, table(eav)
 - 技术产品(reuse):  cm-devtools, noseditor, collab-hocuspocus

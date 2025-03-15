@@ -224,6 +224,9 @@ modified: 2023-02-08T10:46:26.912Z
   - Generates a contribution summary for your GitHub profile. 
   - A Rust implementation of yihong0618/github-readme-stats.
 # github-mirrors/proxy 🪜
+- tips
+  - 在yandex搜索 `github 下载 代理` ，查看近1个月的结果， ghproxy是一种流行的开源方案
+
 - [Gitee极速下载，每日同步一次](https://gitee.com/mirrors)
   - https://gitee.com/organizations/mirrors/projects
 

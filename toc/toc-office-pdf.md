@@ -11,16 +11,19 @@ modified: 2021-01-04T17:26:43.784Z
 
 - tips
   - 支持导出pdf是大多数产品的基本功能，如drawio/jsreport/thorium-reader/notesnook
+  - pdf-editor 可参考 ppt-editor 的实现，都包含自由文本、标注
   - pdf标注可参考 office-drawing, 还可参考: okular, foxit, canva, xournal, 各类电子书阅读器
 
 - https://printcss.live/
   - 渲染pdf的多种js示例
 # popular
-- pdf.js /40.9kStar/Apache2/202212/js
+- pdf.js /50.9kStar/apache2/202503/js
   - https://github.com/mozilla/pdf.js
   - https://mozilla.github.io/pdf.js/
   - PDF.js is a Portable Document Format (PDF) viewer that is built with HTML5.
   - Our goal is to create a general-purpose, web standards-based platform for parsing and rendering PDFs.
+- https://github.com/Osiris-Team/pdf.js-utils /MIT/202408/js
+  - A collection of utility functions for pdf.js to make the lives of developers easier.
 
 - jsPDF /25.7kStar/MIT/202202/js/inactive
   - https://github.com/parallax/jsPDF
@@ -57,6 +60,13 @@ modified: 2021-01-04T17:26:43.784Z
 - https://github.com/react-pdf-viewer/react-pdf-viewer /paid/202408/ts
   - https://react-pdf-viewer.dev/
   - React component to view a PDF document
+  - https://github.com/react-pdf-viewer/starter /js/electron
+
+- https://github.com/pdfme/pdfme /MIT/202503/ts
+  - https://pdfme.com/
+  - Open-source PDF generation library built with TypeScript and React. 
+  - Features a WYSIWYG template designer, PDF viewer, and powerful generation capabilities. 
+  - Create custom PDFs effortlessly in both browser and Node.js environments.
 
 - https://github.com/agentcooper/react-pdf-highlighter /1.2kStar/MIT/202409/ts
   - https://agentcooper.github.io/react-pdf-highlighter
@@ -90,10 +100,6 @@ modified: 2021-01-04T17:26:43.784Z
   - https://github.com/oren-l/PdfEditor /js
   - https://github.com/pgarciacamou/pdf-editor /js
 
-- https://github.com/pdfme/pdfme /MIT/ts
-  - https://pdfme.com/
-  - A TypeScript based PDF generator library, made with React.
-
 - https://github.com/jeetiss/react-pdf-repl
   - https://react-pdf-repl.vercel.app/
   - REPL for `@react-pdf/renderer` with interactive debugger
@@ -107,7 +113,7 @@ modified: 2021-01-04T17:26:43.784Z
   - tables and columns
   - page headers and footers
 
-- https://github.com/Hopding/pdf-lib /202111/ts/inactive
+- https://github.com/Hopding/pdf-lib /MIT/202111/ts/inactive
   - Create and modify PDF documents in any JavaScript environment.
   - Designed to work in any modern JavaScript runtime. Tested in Node, Browser, Deno, and React Native environments.
   - [Is this thing still on?](https://github.com/Hopding/pdf-lib/issues/1423)
@@ -275,6 +281,14 @@ modified: 2021-01-04T17:26:43.784Z
   - 协同笔记与PDF批注
   - 依赖draft-pad(基于paperjs-canvas)、antd.v4、antd-mobile.v5、immutable.v4、pdfjs、react-beautiful-dnd、socket.io
 
+- https://github.com/davidbstein/pdf-tools /MIT/202202/js/inactive
+  - A set of tools for really basic highlighting and reading PDFs because every tool I tried to use couldn't just act like an handful of highlighters
+
+- https://github.com/algorithmx/electron-react-pdf-viewer /202502/ts
+  - An electron app for viewing PDF files, written in Typescript-React
+- https://github.com/ikuokuo/electron-pdf-viewer /MIT/202201/js/inactive
+  - Demo for using PDF.js in Electron.
+
 - https://github.com/koreader/koreader /lua
   - http://koreader.rocks/
   - An ebook reader application supporting PDF, DjVu, EPUB, FB2 and many more formats, running on Cervantes, Kindle, Kobo, PocketBook and Android devices
@@ -282,6 +296,14 @@ modified: 2021-01-04T17:26:43.784Z
 - https://github.com/Cimbali/pympress /GPLv2/202312/python
   - https://cimbali.github.io/pympress/
   - Pympress is a simple yet powerful PDF reader designed for dual-screen presentations
+
+- https://github.com/pdfjs-express/pdfjs-viewer
+  - Building a PDF.js viewer from the ground up
+  - https://github.com/pdfjs-express/pdfjs-express-react-sample
+    - PDF.js Express is a powerful JavaScript-based PDF Library that leverages PDF.js and adds additional features such as annotations, form support, and digitial signatures
+
+- https://github.com/pdf-tools/pdf-web-viewer-samples /202502/js
+  - PDF Web Viewer by Pdftools, Switzerland, is a JavaScript component for viewing and annotating PDFs.
 # utils
 - https://github.com/YuHuaOu/electron-print
   - 支持直接传PDF、图片的资源地址(将资源地址传到桌面端打印程序的接口中)，完成打印。electron、PDF、PNG
@@ -414,6 +436,8 @@ modified: 2021-01-04T17:26:43.784Z
   - https://github.com/ArtifexSoftware/mupdf
   - https://github.com/muennich/mupdf
   - written in C, providing Java JNI
+- https://github.com/pymupdf/PyMuPDF /AGPL/202503/python
+  - a high performance Python library for data extraction, analysis, conversion & manipulation of PDF (and other) documents.
 - https://github.com/andytango/mupdf-js /AGPLv3/202406/ts/c/inactive
   - another Webassembly PDF renderer for node and the browser
   - This is a port of MuPDF to javascript and webassembly

@@ -21,6 +21,9 @@ modified: 2024-12-07T09:51:14.779Z
 
 ## coding
 
+- ai-sandbox
+  - 不仅用于代码，还可扩展到更多场景，类似manus
+
 - roadmap
   - 1. human-in-the-loop
   - 2. self-correction, auto-debug

@@ -145,6 +145,12 @@ modified: 2023-08-29T10:12:22.345Z
   - Pure-Python Git implementation
   - It aims to provide an interface to git repos (both local and remote) that doesn't call out to git directly but instead uses pure Python.
 
+- https://github.com/relagit/relagit /LGPL/202410/ts/inactive
+  - The elegant solution to graphical version control.
+  - Support for git submodules.
+  - roadmap
+    - Use `libgit2` for git operations instead of the git CLI. (?)
+
 - https://github.com/facebook/sapling /rust
   - Sapling SCM is a cross-platform, highly scalable, Git-compatible source control system.
 

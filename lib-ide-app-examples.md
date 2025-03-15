@@ -115,6 +115,11 @@ modified: 2024-08-24T16:30:20.218Z
   - Meet Cline, an AI assistant that can use your CLI aNd Editor.
   - Autonomous coding agent right in your IDE, capable of creating/editing files, executing commands, using the browser, and more with your permission every step of the way.
 
+- https://github.com/kodu-ai/claude-coder /AGPL/202503/ts
+  - https://www.kodu.ai/
+  - Kodu is an autonomous coding agent that lives in your IDE
+  - It's a VS Code extension that adapts to your skill level, helping you bring ideas to life faster than ever before. 
+
 - https://github.com/nutlope/llamacoder /202409/ts
   - https://www.llamacoder.io/
   - open source Claude Artifacts – generate small apps with one prompt. 
@@ -161,6 +166,13 @@ modified: 2024-08-24T16:30:20.218Z
   - https://morph.so/
   - Rift: an AI-native language server for your personal AI software engineer
   - The Rift Code Engine implements an AI-native extension of the language server protocol. The Rift VSCode extension implements a client and end-user interface which is the first step into that future.
+
+- https://github.com/block/goose /apache2/202503/rust/ts
+  - https://block.github.io/goose/
+  - a local, extensible, open source AI agent that automates engineering tasks
+  - an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM
+  - goose is your on-machine AI agent, capable of automating complex development tasks from start to finish. More than just code suggestions, goose can build entire projects from scratch, write and execute code, debug failures, orchestrate workflows, and interact with external APIs - autonomously.
+  - Designed for maximum flexibility, goose works with any LLM and seamlessly integrates with MCP-enabled APIs, making it the ultimate AI-powered assistant
 
 ## vscode-ext-ai
 

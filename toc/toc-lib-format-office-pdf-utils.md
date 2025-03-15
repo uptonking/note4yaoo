@@ -10,6 +10,17 @@ modified: 2022-11-11T10:46:41.519Z
 # guide
 
 # popular
+- https://github.com/pdf-association/pdf-cos-syntax /apache2/202503/ts
+  - VSCode extension for understanding and learning PDF syntax. 
+  - This extension will NEVER render PDF pages or provide support like an interactive PDF viewer. There are other VSCode extensions and external applications which do this
+  - Implementers with suitable PDF rendering and viewing technologies are encouraged to create their own VSCode extensions to render PDF pages to work along side this extension.
+  - PDF COS syntax and content stream operator syntax highlighting
+  - Technically all PDF files are binary files and should never be arbitrarily edited in, or saved from, text-based editors such as VSCode as this will break them
+    - PDF files use precise byte offsets for locating objects and data, and can contain compressed or encrypted data. 
+    - PDFs are NOT UTF-8
+  - https://github.com/pdf-association/pdf-differences /apache2/202502
+    - The PDF files in this repository are targeted test files highlighting specific issues seen across multiple widely-used implementations.
+
 - https://github.com/Stirling-Tools/Stirling-PDF /20.4kStar/GPLv3/202403/java/js
   - https://www.pdfdrills.com/
   - locally hosted web application that allows you to perform various operations on PDF files

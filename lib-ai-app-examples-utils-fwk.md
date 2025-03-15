@@ -32,9 +32,21 @@ modified: 2025-02-21T18:20:42.624Z
 # ai-sdk
 - [AI SDK Cookbook](https://sdk.vercel.ai/cookbook)
   - An open-source collection of recipes and guides for building with the AI SDK.
+# browser-use
+
+# computer-use
+- https://github.com/Aident-AI/open-cuak /apache2/202503/ts
+  - https://aident.ai/
+  - Open CUA Kit (Computer Use Agent), is THE platform for teaching, hiring and managing automation agents at scale — starting with browsers.
+  - Open-CUAK is designed to run and manage thousands of automation agents, ensuring each one is reliable.
+  - Run Operator-like automation workflows locally, ensuring full privacy
 # perf/large
 - https://github.com/MoonshotAI/MoBA /MIT/202502/python
   - Mixture of Block Attention for Long-Context LLMs
   - https://x.com/tuturetom/status/1892753818028216717
     - 可以实现近乎无限的上下文窗口，将一整本书或一整个代码库扔进去提问
+# proxy
+- https://github.com/lymanzhao/Ollama-serve /202503/python
+  - 一个 Ollama转发代理，用于为原生 Ollama 服务添加 API 密钥认证功能。
+  - 该项目解决了 Ollama 官方不提供 API 密钥验证的问题，使您可以更安全地部署 Ollama 服务并防止未授权访问
 # more

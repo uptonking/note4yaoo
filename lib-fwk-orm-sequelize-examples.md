@@ -290,7 +290,7 @@ modified: 2023-02-05T18:50:32.900Z
   - a basic social network designed for entrepreneurs. 
   - Users can create profiles, share projects, 
 
-- https://github.com/GeneralBots/BotServer /AGPLv3/202402/ts
+- https://github.com/GeneralBots/BotServer /AGPLv3/202503/ts
   - https://gb.pragmatismo.com.br/
   - Bot Server accelerates the process of developing a bot. It provisions all code base, resources and deployment to the cloud, and gives you templates you can choose from whenever you need a new bot. 
   - The server has a database and service backend allowing you to further modify your bot package directly by downloading a zip file, editing and uploading it back to the server (deploying process) with no code

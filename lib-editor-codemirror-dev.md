@@ -211,9 +211,10 @@ modified: 2021-05-06T09:38:31.520Z
 
 - diff-view
   - diff左侧显示原文行号和最新行号
-  - 支持隐藏绿色部分或红色部分，隐藏后显示为普通文档且显示行号
+  - 支持隐藏绿色部分或红色部分，隐藏后显示为普通文档且显示行号，切换显示隐藏时不用刷新页面
   - 红色部分支持copy和选中
   - git diff text formatter: 将被打乱的git-diff输出从一行格式化为分段
+  - diff for version-history-timeline
 
 - integrations
   - strapi-codemirror

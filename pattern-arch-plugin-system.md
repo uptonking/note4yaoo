@@ -513,6 +513,10 @@ class Plugins {
 
 - https://github.com/elijahgreen/plugin-frame
   - plugin-frame is a library for running untrusted code in a sandboxed iframe.
+- https://github.com/InfoGata/audiogata /AGPL/202503/ts
+  - https://www.audiogata.com/
+  - A plugin based web app that plays audio.
+  - The plugin scripts are run in sandboxed iframes using plugin-frame. Every iframe is ran on it's own subdomain
 
 - https://github.com/krakenjs/zoid /js
   - Cross domain components

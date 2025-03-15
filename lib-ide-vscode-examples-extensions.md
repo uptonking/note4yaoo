@@ -765,6 +765,10 @@ modified: 2024-08-24T16:17:26.715Z
   - It simulates user interactions with your extension's UI at the VS Code DOM level, providing real UI testing capabilities beyond the VS Code Test CLI.
 - https://github.com/webdriverio-community/wdio-vscode-service /MIT/202502/ts
   - A service to test VSCode extensions from end to end using WebdriverIO
+# ext-ai
+- https://github.com/osadavc/typescript-error-wand /MIT/202502/ts
+  - A simple VS Code extension that enhances TypeScript error messages with AI-powered explanations and solutions.
+  - Uses GitHub Copilot if installed (free or paid subscription), Falls back to custom AI models if Copilot isn't available
 # ext-more
 - https://github.com/redhat-developer/vscode-didact /apache2/202201/ts/archived
   - Framework and tools for providing interactive tutorials with active links that call VS Code commands

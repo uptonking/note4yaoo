@@ -169,9 +169,12 @@ modified: 2022-11-06T11:21:27.612Z
   - Collaborative in-browser database IDE for your team. 
   - Supports PostgreSQL & MongoDB.
 
- - https://github.com/dbeaver/cloudbeaver
+ - https://github.com/dbeaver/cloudbeaver /java/ts
    - CloudBeaver is a web server which provides rich web interface. 
    - Server itself is a Java application, web part is written on TypeScript and React.
+
+- https://github.com/egoist/querybase /AGPL/202501/ts
+  - A simple and smart GUI client for PostgreSQL, MySQL, SQLite
 
 - https://github.com/csanyipal/ajqvue /java/inactive
   - Ajqvue provides an easy to use Java based user interface frontend for viewing, adding, editing, or deleting entries in several mainstream databases.

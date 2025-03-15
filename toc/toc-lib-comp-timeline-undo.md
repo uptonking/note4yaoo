@@ -286,6 +286,18 @@ modified: 2023-11-24T18:41:26.906Z
     - as someone who has contributed quite a bit to this library in the past, I feel obliged to tell you that this library is quite out of date and in many ways unfixable due to the way it is structured as browsers are changing those parts that this library touches all the time.
     - I would recommend going with an editing library that maintains its own model of the content - such as ProseMirror or CKEditor 5 and build tracked changes on top of that.
 # replay/debug
+- https://github.com/webrecorder/archiveweb.page /AGPL/202501/ts
+  - https://archiveweb.page/guide
+  - ArchiveWeb.page is a JavaScript based application for interactive, high-fidelity(精确; 保真度) web archiving that runs directly in the browser. 
+  - The system creates, stores, and replays high-fidelity web archives stored directly in the browser's storage (via IndexedDB).
+  - The system can be used as a Chrome/Chromium based browser extension and also as a standalone Electron app.
+    - The Chromium extension and Electron app are built from the same source code for ease of development.
+  - The extension makes use of the Chrome debugging protocol to capture and save network traffic, and extends the ReplayWeb.page UI and the wabac.js service worker system for replay and storage.
+  - https://github.com/webrecorder/wabac.js /AGPL/202503/ts
+    - wabac.js provides a full web archive replay system, or 'wayback machine', using Service Workers
+    - With 2.20.0 release, wabac.js is written fully in TypeScript.
+    - This library provides the 'server-side' portion for web archive replay, and an API for managing web archive collections, and is designed to be run as service worker (or web worker). 
+
 - https://github.com/rrweb-io/rrweb /MIT/202412/ts
   - https://www.rrweb.io/
   - rrweb refers to 'record and replay the web', which is a tool for recording and replaying users' interactions on the web.

@@ -634,6 +634,22 @@ modified: 2024-01-30T20:56:45.773Z
 - https://github.com/dvanoni/notero /MIT/202401/ts
   - a Zotero plugin for syncing items and notes into Notion. 
   - The Notero plugin watches for Zotero items being added to or modified within any collections that you specify in the Notero preferences. 
+
+- https://github.com/Future-Scholars/paperlib /GPL/202412/ts/vue
+  - https://paperlib.app/
+  - An open-source academic paper management tool.
+  - Why not Zotero, Mendely? A good metadata scraping capability is one of the core functions of a paper management tool. Unfortunately, no software in this world does this well, not even commercial software.
+  - Scrape paper’s metadata with many scrapers. Support writing your metadata scrapers. Tailored for many disciplines.
+# note-ai
+- https://github.com/reorproject/reor /AGPL/202503/ts
+  - https://reorproject.org/
+  - Private & local AI personal knowledge management app for high entropy((熵(平均信息量))) people.
+  - an AI-powered desktop note-taking app: it automatically links related notes, answers questions on your notes and provides semantic search.
+  - Everything is stored locally and you can edit your notes with an Obsidian-like markdown editor.
+  - The hypothesis of the project is that AI tools for thought should run models locally by default. 
+  - Reor stands on the shoulders of the giants Ollama, Transformers.js & LanceDB to enable both LLMs and embedding models to run locally
+  - Reor interacts directly with Ollama which means you can download and run models locally right from inside Reor.
+  - Reor works within a single directory in the filesystem. You choose the directory on first boot.
 # note-utils
 - graph /7Star/MIT/202210/ts
   - https://github.com/graphcentral/graph
