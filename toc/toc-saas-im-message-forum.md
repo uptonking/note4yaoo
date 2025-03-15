@@ -608,13 +608,16 @@ modified: 2021-05-14T15:04:15.333Z
     - 感觉上面这一套，还能优化就是 Dexie.js 了，希望今年底之前能迁移到 pglite + electric-sql 的新方案，实现真正的 Local First 完全体
     - 现阶段用 pg 就是有一个全套的 auth + 服务端数据库，数据按用户维度保存。不用 pg 走前端db，消息按浏览器维度保存 (换个浏览器数据就没了) 未来个人知识库(文件上传)的功能只会做在 pg 版本上。因为社区不存在纯前端的生产级的 RAG 解决方案。
 
-- https://github.com/vercel/ai-chatbot /apache2/202502/ts
+- https://github.com/vercel/ai-chatbot /apache2/202503/ts
   - https://chat.vercel.ai/
   - A full-featured, hackable Next.js AI chatbot built by Vercel
 - https://github.com/vercel/ai /apache2/202406/ts
   - https://sdk.vercel.ai/docs
   - Build AI-powered applications with React, Svelte, Vue, and Solid
   - Vercel AI SDK abstracts away the differences between model providers, eliminates boilerplate code for building chatbots
+  - [Allow custom MCP transport _202503](https://github.com/vercel/ai/issues/5179)
+    - The new MCP API is great but it's harded-coded with 2 default transport at the moment. Instead, it should accept custom transport.
+    - To use AI SDK in non-standard JS environment like Electron / Tauri, browser code that has access to equivalent Node.js APIs for IO but not the same.
   - https://x.com/nicoalbanese10/status/1806680358093541401
     - this is all you need to use chrome's built in ai model with the vercel ai sdk
     - no api keys, no configuration, running locally in the browser
@@ -653,6 +656,17 @@ modified: 2021-05-14T15:04:15.333Z
   - a web frontend for the WeeChat IRC client and strives to be a modern interface. 
   - https://github.com/weechat/weercd /python
     - WeeChat IRC testing server.
+
+## im/mq-sdk
+
+- https://github.com/emqx/MQTTX /apache2/202503/ts/vue
+  - https://mqttx.app/
+  - All-in-One MQTT 5.0 client toolbox for Desktop, CLI and WebSocket.
+  - 依赖electron、vue-element、typeorm、sqlite、mqttjs
+  - MQTTX is a cross-platform MQTT 5.0 client tool open sourced by EMQ, which can run on macOS, Linux and Windows, and supports formatting MQTT payload.
+  - MQTTX simplifies test operation with the help of a familiar, chat-like interface
+  - MQTTX is designed to connect to test MQTT Brokers such as EMQX, The one-click connection and simple graphical interface make it easy to connect to EMQX or EMQX Cloud to debug and explore functional features.
+  - `MQTT` stands for MQ Telemetry Transport. It is a publish/subscribe, extremely simple and lightweight messaging protocol, designed for constrained devices and low-bandwidth, high-latency or unreliable networks.
 # mastodon
 - resources
   - https://joinmastodon.org/apps

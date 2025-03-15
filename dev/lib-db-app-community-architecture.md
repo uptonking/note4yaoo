@@ -264,6 +264,20 @@ modified: 2023-09-17T17:37:19.913Z
 - Totally makes sense - SQLite is very dependent on a traditional filesystem. I've been figuring out how to run backups recently and grabbing a copy of the file isn't enough - you need to be sure there are no transactions going on, so you need to use the SQLite backup API or run VACUUM INTO a separate copy, which then doubles the amount of disk space you need.
 
 - Having a simple database it a great feature for prototyping, but I think having custom Dockerfile support would be even better.
+# discuss-storage-compute-separation
+- ## 
+
+- ## 
+
+- ## Every time we separate compute from storage, we bring it back together it seems. And then we do it again a decade later.
+- https://x.com/kellabyte/status/1900649147234955489
+- That's a natural cycle, I think. 
+  - 1) Separate to get perf from parallel access, then 
+  - 2) combine again when HW has caught up and remove complexity.
+
+- IMO, all the approaches have pros and cons. It is about tradeoffs and the problems you are trying to solve. Vendors make it very hard to have this discussion and don't acknowledge the tradeoffs. There are legit benefits for storage/compute decoupling for OLTP, and there are definite benefits of putting every component of an OLTP on one machine.
+
+- With @spacetime_db we're skipping right to the next decade.
 # discuss
 - ## 
 

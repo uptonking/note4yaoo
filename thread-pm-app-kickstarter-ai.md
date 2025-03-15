@@ -244,7 +244,27 @@ modified: 2023-04-04T03:59:40.928Z
   - Change the head rotation & tilt
   - Adjust the smile, mouth opening
 
+# discuss-ai-gpu/training
+- ## 
+
+- ## 
+
+- ## 苹果芯片跑文本生成和多模态还算行，但是多媒体生成还是N卡的天下
+- https://x.com/karminski3/status/1900686167961727219
+- nv不是早就想把arm结合到显卡中吗，怎么后来没有动静了
+  - 搜 grace superchip系列，已经量产了
+- 显卡板卡上除了GPU芯片之外本身就还带有其他的控制芯片（可能是ARM CPU也可能是其他ISA架构的CPU）
+
+- 大模型卡内存带宽
+
+- 硬件再厉害就算不要钱，不出系统驱动没软件用也白搭啊
+
+- 老黄的digit是128G统一内存，带宽500G/s，3000美元。
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 👷🏻 I'm Peak from Manus AI. Actually, it's not that complicated - the sandbox is directly accessible to each user
@@ -377,11 +397,11 @@ modified: 2023-04-04T03:59:40.928Z
 
 - ## 5 new market maps in AI
 - https://x.com/chiefaioffice/status/1799766662746398851
-  01.                 AI code generation tools from Greylock
-  02.                 AI legal tools from Battery Ventures
-  03.                 AI agent infrastructure from Madrona
-  04.                 AI marketing tools from a16z
-  05.                 Conversational AI from Cobus Greyling
+  01.                  AI code generation tools from Greylock
+  02.                  AI legal tools from Battery Ventures
+  03.                  AI agent infrastructure from Madrona
+  04.                  AI marketing tools from a16z
+  05.                  Conversational AI from Cobus Greyling
 
 - ## Google 最近新出了两个 Code 相关的 Agent 非常有意思：
 - https://x.com/tuturetom/status/1798350275314581670

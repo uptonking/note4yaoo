@@ -89,6 +89,20 @@ modified: 2024-05-06T02:54:40.374Z
   - 减少layout计算，面板上方部分元素尽可能减少重绘
   - 动画要考虑进入场景和退出场景
 
+### dev-summary
+
+- 包管理使用apt而不是nix的原因
+  - nix安装的包在bash无法检测到执行入口
+
+- bcachefs换回btrfs，因为fork不稳定
+
+- 一台宿主机上创建多个docker容器，实测隔离性不好
+  - 采用vm的方案隔离得更彻底
+
+- 
+- 
+- 
+
 ### codebase-collab 🔀
 
 - ai工作时

@@ -64,7 +64,10 @@ modified: 2021-04-21T15:01:12.882Z
 
 - ## 
 
-- ## 
+- ## With tools like @LottieFiles , @rive_app , and @jittervideo designers can easily integrate smooth, lightweight animations.
+- https://x.com/Deconinck_co/status/1900494369934708806
+- What tool did you use for this animations?
+  - You can use Lottie, Rive, After effect or Jitter
 
 - ## cat in macdonald
 - https://x.com/FinanceYF5/status/1898531217697653160

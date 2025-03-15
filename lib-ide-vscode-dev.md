@@ -54,8 +54,10 @@ modified: 2024-08-24T16:15:11.456Z
   - vscode mobile
 
 - ide-ai
-  - editor-control MCP, 让ai操作编辑器的协议
+  - editor-control MCP, 让ai操作编辑器的协议，可参考browser-use
+
 - extension
+
 - integrations
   - notion database
 

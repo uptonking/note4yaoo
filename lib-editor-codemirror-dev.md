@@ -287,6 +287,9 @@ modified: 2021-05-06T09:38:31.520Z
 
 ## collab-cm
 
+- 多标签场景下同步多个文档，codemirror的官方同步不支持
+  - 使用外部状态管理如yjs可支持
+
 - codemirror协作官方示例使用ot变体，社区有使用crdt如yjs
 
 ## dev-ai-coding/diff

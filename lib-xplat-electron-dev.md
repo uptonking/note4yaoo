@@ -47,6 +47,7 @@ modified: 2021-05-13T03:08:52.583Z
 
 - integrations
   - vercel-aisdk
+  - chat/slack
 
 - maybe
   - copy zed xp to vscode

@@ -13,6 +13,9 @@ modified: 2022-12-16T01:51:52.564Z
 
 - 分栏 list-view
   - 左边是内容列表，右边是关键词卡片，类似google/ai-search
+
+- 多级列表的设计
+  - 主列表类似changelog-history, 每个version包含feat/fixes/ui, 右侧卡片提供过滤标签 feat/fixes/ui
 # features
 
 # draft

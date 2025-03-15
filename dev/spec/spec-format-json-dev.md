@@ -59,7 +59,11 @@ modified: 2021-02-27T15:31:23.130Z
 
 - ## 
 
-- ## 
+- ## 🚀 Announcing: jsonreader -  A JSON parser for streaming data. Use JSON data immediately as it arrives — not when the stream is complete.
+- https://x.com/jpschroeder/status/1900597645686481012
+- I was surprised how fiddly streaming Markdown was to get right, I imagine JSON is even harder.
+
+- Excellent, start a long connection to backend, stream every thing, just ping backend to send data in stream, not in response, no need for ws
 
 - ## One coding project that I recommend every engineer to build at least once is to write your own JSON parser that converts the given string into a language-native object like a dictionary.
 - https://x.com/arpit_bhayani/status/1848931553281450419

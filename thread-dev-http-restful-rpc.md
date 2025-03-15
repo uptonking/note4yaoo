@@ -50,31 +50,6 @@ modified: 2021-09-20T18:38:00.319Z
 - At Google they use arenas for allocating protobufs to avoid overhead, but this isn't in any of the gRPC libraries. I do prefer the pb IDL to flatbuffers/capnp, but the overhead from allocations is like 99.99% of our profiles, and we even use better codegen: vtprotobuf
 - This is where https://capnproto.org shines
 
-# discuss-grpc
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 🌰 Recently, LinkedIn Engineering shared how they used Protocol buffers (ProtoBuf) to improve performances by up to 60% _202403
-- https://twitter.com/milan_milanovic/status/1772898221972500759
-  - gRPC is a high-performance, open-source, and universal remote procedure call (RPC) framework developed by Google. 
-  - It uses Protocol Buffers (protobuf) as its interface definition language.
-  - Protocol Buffers are compact binary serialization formats for structured data. 
-  - They offer advantages like smaller size and faster processing than traditional JSON or XML.
-- Advantages of gRPC:
-  1. Speed: Thanks to HTTP/2, gRPC is faster and more efficient than REST over HTTP/1.1.
-  2. Polyglot: Provides tools to generate client and server code in many languages.
-  3. Streaming: Supports bidirectional streaming, allowing for more interactive real-time communication.
-  4. Deadlines/Timeouts: Built-in support ensures requests don't hang.
-  5. Ecosystem: Supports authentication, load balancing, retries, etc.
-- Drawbacks of gRPC:
-  1. Complex: Requires understanding of Protocol Buffers and the gRPC API.
-  2. Limited Browser Support: Native browser support is limited due to reliance on HTTP/2.
-  3. Tooling: While growing, gRPC tooling is less mature than REST's.
-  4. Not human-readable: Because they are binary, they are not easy to debug like text-based formats (such as XML or JSON).
-
 # discuss-graphql
 - ## 
 
