@@ -152,6 +152,19 @@ modified: 2023-07-26T11:23:38.282Z
 - https://github.com/bubblegroup/bubble-reactivity /ts
   - He continued his work at @bubble and generalized approach to async propagation, but again effects aren't needed. The lib provides an effect.ts but it isn't necessary. It could be done implemented completely in userland by extending the Computation class.
 
+- https://github.com/axiijs/axii /MIT/202503/ts
+  - https://axii.dev/
+  - An Incremental Reactive Frontend Framework
+  - a brand-new frontend framework that relies on an "incremental update" reactive data structure to truly build a high-performance data logic layer.
+  - Uses React-style JSX, but functions execute only once, creating real DOM elements instead of Virtual DOM.
+  - Binds updates to elements by recognizing reactive data structures. No special syntax, no framework-specific hooks, no compiler magic.
+  - Rich reactive structures like RxList / RxMap / RxSet / RxTime suitable for various scenarios.
+  - https://github.com/axiijs/boilerplate
+  - https://github.com/axiijs/statemachine
+    - data0 based statemachine
+  - https://github.com/axiijs/action0
+    - data0 based action management library.
+
 - https://github.com/alibaba/formily /ts/多框架
   - https://formilyjs.org/
   - High Performance Normal Form/Dynamic(JSON Schema) Form/Form Builder 

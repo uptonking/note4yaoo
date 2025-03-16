@@ -195,6 +195,18 @@ modified: 2023-02-08T07:20:48.475Z
   - https://chatlaw.cloud/lawchat/
   - 中文法律大模型
 
+- https://github.com/ChatGPTNextWeb/NextChat /MIT/202503/ts/tauri
+  - https://nextchat.club/
+  - Light and Fast AI Assistant. 
+  - Support: Web | iOS | MacOS | Android | Linux | Windows
+  - NextChat Support MCP
+  - Fully compatible with self-deployed LLMs, recommended for use with RWKV-Runner or LocalAI
+  - Privacy first, all data is stored locally in the browser
+  - Enterprise Edition
+    - Permission Control: Clearly defined member permissions, resource permissions
+    - Security Auditing: Automatically intercept sensitive inquiries and trace all historical conversation records
+    - Private Deployment: Enterprise-level private deployment supporting various mainstream private cloud solutions
+
 - https://github.com/LAION-AI/Open-Assistant /apache2/202401/python
   - OpenAssistant is a chat-based assistant that understands tasks, can interact with third-party systems, and retrieve information dynamically to do so.
   - OpenAssistant is completed, and the project is now finished. The final published oasst2 dataset can be found on HuggingFace at OpenAssistant/oasst2

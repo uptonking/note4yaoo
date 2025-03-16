@@ -11,6 +11,17 @@ modified: 2022-11-07T11:00:28.824Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## everyone in YC has been brainwashed to 'iterate and learn from user feedback' 
+- https://x.com/shaiunterslak/status/1900639752308879867
+  - but my last backend commit was 7 months ago (September), and this is my revenue chart.
+  - sometimes you just need to stop coding and learn how to grow things
+  - without traffic and users you’re dead. Even a bad product with traffic will have some + conversion rate and make money
+- I get what you're saying but growing a business *is* iterating and learning from user feedback as well - in this case, iterating your growth strategy.
+
 - ## 最近perplexity开始推他们的Android和Ios应用了，似乎一个SaaS初创公司的网站发展路径基本如下，没太多不一样：
 - https://x.com/seclink/status/1846014308817555656
   1.  没数据、没真实用户、没访问量时，最先需要的是把业务数据搞起来（通过爬虫、通过数据生成都可以），并且文字、图片、视频，都不可缺少.

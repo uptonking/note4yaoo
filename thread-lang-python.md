@@ -58,6 +58,22 @@ modified: 2024-02-14T12:35:31.547Z
 - FastAPI is a relatively new framework that’s designed for building high-performance APIs. It’s based on Starlette for the web parts, and Pydantic for the data parts. It is a great option if you want to build fast and modern APIs.
 - Tornado is a mature, non-blocking web framework that’s well suited to building real-time applications, such as chat applications and online games.
 
+# discuss-toolchain-python
+- ## 
+
+- ## 
+
+- ## uv still has a bunch of issues.
+- https://x.com/HanchungLee/status/1900942356377202762
+  - it’s not pip
+  - lack of ide and coding agent support
+  - venv created by uv cant be used without uv
+  - poor documentation. there’s no playbook on how to migrate to it. information scattered around like a changelog.
+- If you’re dealing with complex dependencies, like stuff in requirements.txt that comes directly from GitHub, or certain things involving CUDA libraries, then uv has some rough edges. But for many projects it “just works” at this point and it’s wildly faster and very nice to use.
+- The third one is not true, you can do uv pip install pip and then pip install whatever didn't work before. I'm doing this basically every other day
+- can't you just run `source ./venv/bin/activate` like normal?
+  - you can. but that venv does not have pip and will use global. so a pip install will mess up your global python environment.
+
 # discuss
 - ## 
 

@@ -10,6 +10,15 @@ modified: 2025-02-21T18:20:42.624Z
 # guide
 
 # popular
+- https://github.com/langgenius/dify /82.5kStar/apache2/202503/python
+  - https://dify.ai/
+  - Dify is an open-source LLM app development platform
+  - combines AI workflow, RAG pipeline, agent capabilities, model management, observability features and more
+  - 依赖flask-sqlalchemy、beautifulsoup4、celery、gunicorn、langfuse、numpy、pandas、pydantic、starlette、unstructured
+  - license 💰
+    - Unless explicitly authorized by Dify in writing, you may not use the Dify source code to operate a multi-tenant environment.
+    - In the process of using Dify's frontend, you may not remove or modify the LOGO or copyright information in the Dify console or applications. 
+
 - https://github.com/cloudflare/agents /MIT/202502/ts
   - https://developers.cloudflare.com/agents/
   - Build and deploy AI Agents on Cloudflare
@@ -40,6 +49,23 @@ modified: 2025-02-21T18:20:42.624Z
   - Open CUA Kit (Computer Use Agent), is THE platform for teaching, hiring and managing automation agents at scale — starting with browsers.
   - Open-CUAK is designed to run and manage thousands of automation agents, ensuring each one is reliable.
   - Run Operator-like automation workflows locally, ensuring full privacy
+# crawler-ai
+- https://github.com/mendableai/firecrawl /AGPLv3/202502/python/rust/ts
+  - https://firecrawl.dev/
+  - Turn entire websites into LLM-ready markdown or structured data. 
+  - Scrape, crawl and extract with a single API.
+  - The hard stuff: proxies, anti-bot mechanisms, dynamic content (js-rendered), output parsing, orchestration
+  - Batching (New): scrape thousands of URLs at the same time with a new async endpoint.
+  - open-version: scrape, extract, map, formats, sdk
+  - cloud-version: anti-bot, dashboard, actions, browserless, enterprise
+  - This project is primarily licensed under AGPLv3
+    - However, certain components of this project are licensed under the MIT 
+    - The SDKs and some UI components are licensed under the MIT License. 
+
+- https://github.com/getmaxun/maxun /AGPL/202503/ts
+  - https://www.maxun.dev/
+  - Open-source no-code web data extraction platform. 
+  - Maxun lets you create custom robots which emulate user actions and extract data. A robot can perform any of the actions: Capture List, Capture Text or Capture Screenshot. Once a robot is created, it will keep extracting data for you without manual intervention
 # perf/large
 - https://github.com/MoonshotAI/MoBA /MIT/202502/python
   - Mixture of Block Attention for Long-Context LLMs

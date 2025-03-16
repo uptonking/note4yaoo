@@ -20,6 +20,11 @@ modified: 2025-02-26T15:04:15.883Z
 - https://github.com/django/django
   - The Web framework for perfectionists with deadlines.
 
+- https://github.com/langgenius/dify /82.5kStar/apache2/202503/python
+  - https://dify.ai/
+  - Dify is an open-source LLM app development platform
+  - combines AI workflow, RAG pipeline, agent capabilities, model management, observability features and more
+
 - https://github.com/keras-team/keras
   - /49.9kStar/MIT/202009
   - Deep Learning for humans

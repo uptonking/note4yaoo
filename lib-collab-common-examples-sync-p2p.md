@@ -45,6 +45,16 @@ modified: 2023-01-17T19:13:01.845Z
     - We just launched self-hosted @convex_dev _20250214
     - When people say they want open source they rarely mean they just want to read the source code. They mean they want unrestricted access, an active community, ease of use, and yes, often something for free.
 
+- https://github.com/typeonce-dev/sync-engine-web /ISC/202503/ts
+  - https://typeonce.dev/
+  - A Sync Engine for the web: React (TanStack Router), Web Workers, Effect, Loro
+  - A local-first, offline-capable web sync engine implementation with CRDT-based synchronization. The project provides a complete solution for data synchronization between multiple devices while maintaining data consistency and offline capabilities.
+  - Local-First Architecture: Data is primarily stored and managed locally, with server acting as sync + backup
+  - CRDT-Based Sync: Uses loro-crdt for conflict-free data synchronization
+  - Secure Authentication: JWT-based auth with master/access token system
+  - This is a functional implementation of a web sync engine, optimized for single-user scenarios (not real-time collaboration). 
+    - The focus is on providing reliable data synchronization while maintaining offline capabilities.
+
 - verdant/lo-fi /7Star/MIT/202211/ts
   - https://github.com/a-type/verdant
   - https://github.com/a-type/lo-fi

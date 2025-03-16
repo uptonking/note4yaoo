@@ -527,6 +527,12 @@ export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890
 
 ## v2ray
 
+- https://github.com/2dust/v2rayN /GPL/202503/csharp
+  - https://1.2345345.xyz/
+  - A GUI client for Windows, Linux and macOS, support Xray and sing-box and others
+  - [[Feature request]: 在v2rayn中使用clash订阅链接 ](https://github.com/2dust/v2rayN/discussions/6669)
+    - 可以在 v2rayN 打开自定义的配置，然后点编辑就可以自动跳过去了
+
 - https://github.com/v2rayA/v2rayA /AGPLv3/202406/go/js
   - https://v2raya.org/en/docs/prologue/introduction/
   - https://v2raya.org/docs/prologue/quick-start/

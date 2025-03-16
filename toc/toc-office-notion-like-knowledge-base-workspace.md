@@ -677,6 +677,12 @@ modified: 2022-06-03T21:34:54.893Z
   - 定时发布任务
   - 定时任务: node-cron
   - 模板引擎: EJS
+
+- https://github.com/getmaxun/maxun /AGPL/202503/ts
+  - https://www.maxun.dev/
+  - Open-source no-code web data extraction platform. 
+  - Maxun lets you create custom robots which emulate user actions and extract data. A robot can perform any of the actions: Capture List, Capture Text or Capture Screenshot. Once a robot is created, it will keep extracting data for you without manual intervention
+  - BYOP (Bring Your Own Proxy) lets you connect external proxies to bypass anti-bot protection. Currently, the proxies are per user. Soon you'll be able to configure proxy per robot.
 # office
 - https://github.com/paperless-ngx/paperless-ngx /GPLv3/202412/ts/python
   - https://docs.paperless-ngx.com/

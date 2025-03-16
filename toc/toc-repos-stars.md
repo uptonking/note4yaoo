@@ -7,8 +7,53 @@ modified: 2021-01-12T18:49:13.490Z
 
 # toc-repos-stars
 
-# quickstart
+# guide
 
+# popular/most-starred
+- fe: 
+  - vscode(MIT)/atom, code-server(MIT), excalidraw(MIT), reveal.js(MIT/js), pdfjs(apache2/js), strapi(MIT)
+  - redux/zustand, docusaurus(MIT), react-router, quilljs(BSD), tanstack-query
+
+- js: 
+  - react, vue, svelte, d3, axios, threejs, ts, mui/antd/shadcn(MIT), tailwindcss(MIT/ts/rust), storybook(MIT/ts), animate.css, pm2(AGPL/js), typeorm, formik, marked, solidjs, immutable-js, video.js(apache2/js), tesseract.js(apache2/js)
+  - slidev(MIT/ts/vue), impress.js(MIT/js), mermaid(MIT/ts), chartjs(MIT/js/ts), echarts(apache2), Leaflet(BSD/js), monaco-editor(MIT)
+
+- saas: 
+  - dify(apache2/python/ts), NextChat(MIT), lobe-chat(apache2), superset(apache2), Stirling-PDF(MIT/java/js), drawio-desktop(apache2/js), nocodb(AGPL/ts/vue), marktext(MIT/js/vue), joplin(AGPL), siyuan(AGPL/go), novu(MIT/ts)
+  - payload(MIT/ts), n8n(FSL/ts/vue), cal.com(AGPL/ts), plane(AGPL/python/ts), ToolJet(AGPL/ts), Ghost(MIT/js), appsmith(apache2/java/ts)
+  - immich(AGPL/ts/dart/svelte), gitea/gogs(MIT/go), RocketChat(MIT/ts), odoo(LGPLv3/python/js), mattermost(AGPL/go), discourse(GPL/ruby)
+
+- lang: 
+  - python, linux, electron, nodejs, go, rust, godot(MIT/cpp), frp(apache2/go), tauri(MIT/rust), redis, rails, git(GPL/c), pandas(BSD)
+
+- api: 
+  - django(BSD), fastapi(MIT), flask(BSD), gin(MIT), pocketbase(MIT/go/svelte), laravel(MIT), supabase(apache2/ts), spring-boot, nestjs(MIT), expressjs, trpc, fastify
+
+- fwk: 
+  - hugo(apache2/go), nuxt, astro, jekyll(MIT/ruby), JeecgBoot(apache2/java/vue)
+
+- ai: 
+  - tensorflow, langchain, DeepSeek-V3, pytorch, whisper, keras, scikit-learn, OpenHands(MIT), cline(apache2/ts)
+  - langflow(MIT), ragflow(apache2), Flowise(apache2/ts)
+
+- apps: 
+  - rustdesk(AGPL/rust/dart), syncthing(MPL/go), rclone(MIT/go), localsend(apache2/dart), spacedrive(AGPL/rust/ts)
+  - obs-studio(GPL/c), AppFlowy(AGPL/dart), upscayl(AGPL/ts)
+  - carbon(MIT/js)
+
+- devtools: 
+  - puppeteer(apache2/ts), playwright(apache2/ts), zed(GPL), prettier(MIT/js), zx, dbeaver(apache2)
+  - vite(MIT/ts), webpack, json-server(FSL/js), hoppscotch(MIT/ts/vue), insomnia(apache2/ts), bruno(MIT/js)
+
+- devops: 
+  - grafana(AGPL/go), prometheus(apache2/go), uptime-kuma(MIT/js/vue)
+  - ansible(GPL/python), caddy(apache2/go), traefik(MIT/go)
+  - portainer(zlib/go/ts), localstack(apache2/python)
+
+- utils: 
+  - protobuf(BSD/cpp), grpc(apache2/cpp), socket.io(MIT), ripgrep(MIT/rust), minio(AGPL/go), elasticsearch(AGPL), meilisearch(MIT/rust)
+  - scrapy(BSD), EasySpider(AGPL/python)
+# quickstart
 - https://github.com/eleme/duang
   - https://eleme.github.io/duang/docs/intro/
   - 一种基于配置自动生成CMS的工具
@@ -101,3 +146,4 @@ modified: 2021-01-12T18:49:13.490Z
 - https://github.com/microsoft/playwright
   - https://playwright.dev/
   - library to automate Chromium, Firefox and WebKit with a single API
+# popular/most-starred

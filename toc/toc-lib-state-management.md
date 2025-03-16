@@ -569,6 +569,19 @@ modified: 2020-07-14T11:03:53.196Z
   - Vegetarian friendly state for React
 - https://github.com/nanxiaobei/retalk
   - The Simplest Redux. 依赖redux、react-redux
+# reactive
+- https://github.com/axiijs/axii /MIT/202503/ts
+  - https://axii.dev/
+  - An Incremental Reactive Frontend Framework
+  - a brand-new frontend framework that relies on an "incremental update" reactive data structure to truly build a high-performance data logic layer.
+  - Uses React-style JSX, but functions execute only once, creating real DOM elements instead of Virtual DOM.
+  - Binds updates to elements by recognizing reactive data structures. No special syntax, no framework-specific hooks, no compiler magic.
+  - Rich reactive structures like RxList / RxMap / RxSet / RxTime suitable for various scenarios.
+  - https://github.com/axiijs/boilerplate
+  - https://github.com/axiijs/statemachine
+    - data0 based statemachine
+  - https://github.com/axiijs/action0
+    - data0 based action management library.
 # observable
 - https://github.com/xolvio/pojo-observer
   - A minimalist object observer with React hooks support. 

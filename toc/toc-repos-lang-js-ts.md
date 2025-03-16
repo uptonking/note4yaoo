@@ -7,8 +7,10 @@ modified: 2021-05-14T15:04:55.849Z
 
 # toc-repos-lang-js-ts
 
+# guide
+- popular/most-starred
+  - react, vue
 # focus
-
 - https://github.com/ag-grid/ag-grid
 - https://github.com/adazzle/react-data-grid
   - /4.1kStar/MIT/202009
@@ -115,6 +117,9 @@ modified: 2021-05-14T15:04:55.849Z
 
 ## viz
 
+- https://github.com/excalidraw/excalidraw /94.6kStar/MIT/20203
+  - Virtual whiteboard for sketching hand-drawn like diagrams
+
 - https://github.com/recharts/recharts
   - /14.9kStar/MIT/202009 
   - Redefined chart library built with React and D3
@@ -160,9 +165,7 @@ modified: 2021-05-14T15:04:55.849Z
   - https://github.com/beizhedenglong/rough-charts
   - https://github.com/rough-stuff/wired-elements
   - https://github.com/rough-stuff/rough-notation
-- https://github.com/excalidraw/excalidraw
-  - /11.6kStar/MIT/202009
-  - Virtual whiteboard for sketching hand-drawn like diagrams
+
 - https://github.com/elastic/elastic-charts
   - /156Star/Apache2/202009
   - Elastic Charts library
@@ -194,7 +197,19 @@ modified: 2021-05-14T15:04:55.849Z
   - /6kStar/MIT/202005
   - framework for visual programming and creating node editor
 
-## ts-app
+## ts/js-app
+
+- https://github.com/ChatGPTNextWeb/NextChat /MIT/202503/ts/tauri
+  - https://nextchat.club/
+  - Light and Fast AI Assistant. 
+  - Support: Web | iOS | MacOS | Android | Linux | Windows
+  - NextChat Support MCP
+  - Fully compatible with self-deployed LLMs, recommended for use with RWKV-Runner or LocalAI
+  - Privacy first, all data is stored locally in the browser
+  - Enterprise Edition
+    - Permission Control: Clearly defined member permissions, resource permissions
+    - Security Auditing: Automatically intercept sensitive inquiries and trace all historical conversation records
+    - Private Deployment: Enterprise-level private deployment supporting various mainstream private cloud solutions
 
 - https://github.com/allegro/turnilo
   - /356Star/Apache2/202009
@@ -401,7 +416,6 @@ modified: 2021-05-14T15:04:55.849Z
   - VineJS is a form data validation library for Node.js
   - You may use it to validate the HTTP request body in your backend applications.
   - VineJS performance is the outcome of our pre-compiling API. Both Yup and Zod have no option for pre-compiling schemas.
-
 # ts-toolchain
 - https://github.com/webpro-nl/knip /ISC/202410/ts
   - https://knip.dev/

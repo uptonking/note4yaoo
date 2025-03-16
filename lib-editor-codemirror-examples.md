@@ -640,7 +640,7 @@ modified: 2023-06-23T12:46:53.288Z
   - https://minditor.dev/
   - A plug-and-play, highly customizable block-based rich text editor. 
   - Supports block/inlineBlock development with any framework, including React/Vue.
-  - 未使用react/vue, 🐛 使用自研未开源的视图框架axii
+  - 未使用react/vue, ~~使用自研未开源的视图框架axii~~
   - 依赖codemirror6、highlight.js、eventemitter3、thememirror、@uppy/xhr-upload
   - 由 Zhenyu Hou 独立开发和维护
   - 不支持拖拽改变block顺序

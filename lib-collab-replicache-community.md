@@ -251,6 +251,20 @@ modified: 2024-01-07T05:09:14.413Z
 
 - ## 
 
+- ## 
+
+- ## Quick demo of Zero’s new background queries.
+- https://x.com/aboodman/status/1901198594952384984
+  - Zero’s sync is query-based. Rather than specifying what data you want using rules or some other separate system, you just use queries.
+  - Right inside the client app, you do a query using a full sql-style language. You get filters, subqueries , limits, etc.
+  - Zero syncs the data backing these queries to the client.
+  - It’s important to realize Zero isn’t really a cache. It’s a replica. It’s eagerly replicating a precise snapshot of a slice of your database - the slice covered by the queries you have open. So there is never stale data in Zero. When you close a query, we delete the rows uniquely returned by that query because we can no longer keep them up to date.
+  - Of course that kind of sucks for the common case of doing a query, navigating, then pressing “back”. Ideally we want that back nav to be fast.
+  - 🎯✨ To address this Zero 0.17 adds background queries. You can add a ttl to a query and it will keep running and syncing in the background.
+  - This is much different than normal caching because this data stays up to date.
+  - If you make the same query again, the results will be *instantly* available *and already up to date with server*. If you make a different query the data from the background query is used client-side to answer the new query instantly if possible.
+  - This all happens completely automatically. Just by adding the ttl flag.
+
 - ## We have a streaming query engine called ZQL that uses Incremental View Maintenance to maintain live queries.
 - https://x.com/aboodman/status/1894235341911199866
   - We use ZQL on both the client and server. 

@@ -236,7 +236,29 @@ modified: 2023-09-02T09:17:22.992Z
     - To mitigate these risks, we strongly recommend taking a security-in-depth approach and relying on additional security mechanisms such as process isolation, seccomp(2), pledge(2), ProcessSystemCallDisablePolicy and SELinux, to name a few. 
     - Where feasible, we also recommend static code analysis and code reviews, as well as adequate auditing and logging.
   - Note that the sandbox does not prevent denial-of-service attacks such as infinite loops or memory exhaustion. It's important to take appropriate measures to prevent these types of attacks, such as setting resource limits or using timeouts.
-# browser-emulator
+# browser-emulator 🧭
+- https://github.com/thecodacus/OpenWebContainer /MIT/202501/ts
+  - https://open-web-container.vercel.app/
+  - A browser-based virtual container runtime that enables server-like JavaScript execution environments directly in the browser. 
+  - OpenWebContainer provides a sandboxed environment with a virtual file system, process management, and shell capabilities, making it possible to run server-side JavaScript applications entirely in the browser.
+  - 依赖quickjs-emscripten
+  - The architecture consists of three main layers:
+    - UI Layer: React-based user interface with terminal and file explorer
+    - Container Manager: Handles communication between UI and Worker
+    - Web Worker: Runs the actual container in an isolated thread
+  - Roadmap
+    - NPM package manager integration
+    - Network simulation implementation
+    - WebSocket support
+    - Add pipe support for shell commands
+    - Implement environment variables
+    - Add signal handling (SIGTERM, SIGKILL, etc.)
+    - Create process groups and job control
+
+- https://github.com/anbraten/nano-web-ide /202411/ts/vue
+  - https://nano-ide.vercel.app/
+  - Develop the web in the web. This project provides a runtime to run Node.js projects completely in the browser by mocking internals like process. In addition it includes a shell written in javascript to run commands like ls or cd and a playground to test those features.
+
 - https://github.com/jvilk/BrowserFS
   - an in-browser filesystem that emulates the Node JS filesystem API and supports storing and retrieving files from various backends.
 
@@ -289,11 +311,16 @@ modified: 2023-09-02T09:17:22.992Z
 - https://github.com/voronianski/esnextbin /201905/js
   - Prototype JavaScript apps in the browser with ES2015's latest features and importing modules directly from NPM.
 
-- https://github.com/langgenius/dify-sandbox /apache2/202407/go
+- https://github.com/langgenius/dify-sandbox /apache2/202410/go/inactive
   - https://docs.dify.ai/development/backend/sandbox
+  - DifySandbox is a lightweight, fast, and secure code execution environment that supports multiple programming languages, including `Python` and `Node.js`. 
   - 我们开源了 Dify Sandbox，这是一个从 Dify 中衍生出的代码运行时项目。安全，安全，还是为了安全
-  - Dify-Sandbox offers a simple way to run untrusted code in a secure environment. It is designed to be used in a multi-tenant environment, where multiple users can submit code to be executed. 
+  - built on `Seccomp`, a low-level security mechanism that enables support for multiple programming languages
+  - It is designed to be used in a multi-tenant environment, where multiple users can submit code to be executed. 
   - The code is executed in a sandboxed environment, which restricts the resources and system calls that the code can access.
+    - System Security: It implements a whitelist policy, allowing only specific system calls to prevent unexpected security breaches.
+  - File System Isolation: User code runs in an isolated file system environment.
+  - Network Isolation: DockerCompose or k8s-Egress
   - DifySandbox currently only supports Linux, as it's designed for docker containers
 
 - https://github.com/freewheel/code-kitchen /apache2/202402/ts

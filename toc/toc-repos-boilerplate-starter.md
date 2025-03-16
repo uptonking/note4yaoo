@@ -27,6 +27,11 @@ modified: 2022-11-28T17:41:37.209Z
   - A boilerplate, not a framework.
   - The goal of this repo is to make it easy to start a new full-stack application
   - This architecture is very similar to the one I built for Notion and is designed so that everything can run in a single process on a single server, while still being easy to scale up by breaking pieces out into separate services.
+
+- https://github.com/sahat/hackathon-starter /MIT/202503/js/pug
+  - https://hackathon-starter-1.ydftech.com/
+  - A boilerplate for Node.js web applications
+  - primary focus was on simplicity and ease of use.
 # electron-starter
 - https://github.com/hojinahn4234/electron-typescript-react-nedb /202209/ts/nedb
   - work-in-progress scaffold for an Electron app in TypeScript, integrating React and NeDB.

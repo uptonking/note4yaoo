@@ -160,6 +160,10 @@ modified: 2023-04-04T22:39:45.442Z
   - An image processing library written entirely in JavaScript for Node, with zero external or native dependencies.
   - 图片格式转换, 图片裁剪/改变大小, 自定义插件  
 
+- https://github.com/immich-app/immich /AGPLv3/202503/ts/dart/svelte
+  - https://immich.app/
+  - High performance self-hosted photo and video management solution.
+
 ## annotation/labelling
 
 - mirador /400Star/Apache2/202105/js

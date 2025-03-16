@@ -317,4 +317,19 @@ modified: 2024-08-24T16:30:20.218Z
   - Kooder 服务包含两个模块，分别是 gateway 和 indexer（默认配置下 indexer 被集成到 gateway 中）。 
     - 其中 gateway 用来接受来自 HTTP 的索引任务， 对任务进行检查后存放到队列中； 同时 gateway 还接受搜索的请求，并返回搜索结果给客户端。
     - 而 indexer 进程负责监控队列中的索引任务， 并将这些要新增、删除和修改索引的任务更新到索引库中。
+
+- https://github.com/kantord/SeaGOAT /MIT/202503/python
+  - https://kantord.github.io/SeaGOAT/
+  - local-first semantic code search engine
+  - 依赖ripgrep、ChromaDB
+  - SeaGOAT is a local search tool that leverages vector embeddings to enable you to search your codebase semantically.
+  - SeaGOAT does not rely on 3rd party APIs or any remote APIs and executes all functionality locally using the SeaGOAT server
+  - it uses the vector database called `ChromaDB`, with a local vector embedding engine and telemetry disabled by default.
+  - SeaGOAT also uses `ripgrep`, a regular-expression based code search engine in order to provider regular expression/keyword based matches in addition to the "AI-based" matches.
+  - The preferred character encoding is `UTF-8`. Most other character encodings should also work. 
+    - Only text files are supported, SeaGOAT ignores binary files.
+  - SeaGOAT needs a server in order to provide a speedy response. It's worth noting that you are able to run SeaGOAT server entirely locally
+  - Why is SeaGOAT processing files so slowly while barely using my CPU?
+    - SeaGOAT is designed to allow you to use your computer while processing files. 
+    - It is an intentional design choice to avoid blocking/slowing down your computer. This design decision does not affect the performance of queries.
 # more

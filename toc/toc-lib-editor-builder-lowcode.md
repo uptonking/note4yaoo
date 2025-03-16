@@ -677,7 +677,7 @@ modified: 2020-12-28T12:24:09.275Z
   - Built in Python code editor.
   - Drag drop data pipeline builder.
 
-- https://github.com/jitsucom/jitsu /MIT/202401/ts
+- https://github.com/jitsucom/jitsu /MIT/202401/go/ts
   - a tool for collecting event data from your websites, apps and stream them to your data warehouse or other services. 
   - It is a self-hosted, open-source alternative to Segment.
   - Jitsu is based on Bulker(golang), an open-source data warehouse ingestion engine. Bulker can be used as a standalone tool
@@ -699,6 +699,9 @@ modified: 2020-12-28T12:24:09.275Z
   - https://pipelineui.dev/
   - Open source editor for visualizing, creating and managing GitHub Actions workflows. 
   - Built with SolidStart and Appwrite
+
+## ai-workflow
+
 # json-builder
 - https://github.com/redgeoff/mson /apache2/202401/js
   - The MSON compiler allows you to generate apps from JSON

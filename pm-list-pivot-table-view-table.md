@@ -25,7 +25,6 @@ modified: 2022-12-16T01:52:33.729Z
   - [Bootstrap Table Examples - Sub Table](https://examples.bootstrap-table.com/#welcomes/sub-table.html)
 
 - search-view
-
 # usecase
 - 文件列表及搜索，很适合切换为多维表格的交互
 # table-in-editor
@@ -93,7 +92,9 @@ modified: 2022-12-16T01:52:33.729Z
 
 - ## 
 
-- ## 
+- ## Learned a cool formula style from reddit
+- https://x.com/NotionKristen/status/1900728669641076995
+  - 自定义百分比的渲染方式
 
 - ## 🌰 [Linear on X: "How we redesigned the Linear UI (part Ⅱ)  _202403](https://twitter.com/linear/status/1773435685275328542)
 - 

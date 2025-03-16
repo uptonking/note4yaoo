@@ -25,16 +25,33 @@ modified: 2023-02-08T10:46:26.912Z
   - It is a client-side solution using a CORS proxy to fetch assets.
   - 对于那些没有将repo作为github pages托管网站的，可加上前缀直接在浏览器查看网页内容，而不是查看源码
 
-- 排行榜
-  - [GitHub-Chinese-Top-Charts](https://github.com/kon9chunkit/GitHub-Chinese-Top-Charts)
-  - [Github User Ranking 中国和全球用户排名](https://github.com/jaywcjlove/github-rank)
-  - [GitHub star ranking for users, organizations and repositories](https://github.com/k0kubun/gitstar-ranking)
-    - https://gitstar-ranking.com/
-
 - license
   - 先检查确保只存在一个文件，其名称中包含license单词，可以是license.txt/md，不能是wiki-license.md
   - 若要给没有license文件的repo添加license，直接本地上传一个即可
   - 若要给已有license文件的repo修改license，修改后可能github显示不出来，可以先删除再上传新的
+
+## ranking/leaderboard
+
+- https://github.com/EvanLi/Github-Ranking /MIT/202503/python/样式简陋
+  - https://evanli.github.io/Github-Ranking
+  - https://github.com/EvanLi/Github-Ranking/blob/master/Top100/JavaScript.md
+  - https://github.com/EvanLi/Github-Ranking/blob/master/Top100/TypeScript.md
+  - Github仓库排名，每日自动更新
+  - 包含 Stars, Forks, Issues, LastCommitDate
+
+- https://github.com/jaywcjlove/github-rank /MIT/202503/ts/ejs
+  - http://jaywcjlove.github.io/github-rank
+  - https://wangchujiang.com/github-rank/repos.html
+  - Github 全球/中国用户排名，全球仓库 Star 最多排名，通过 Github API v3 来生成页面数据，排行榜预览。
+
+  - [Github User Ranking 中国和全球用户排名](https://github.com/jaywcjlove/github-rank)
+
+- https://github.com/k0kubun/gitstar-ranking /MIT/202311/ruby/kotlin/js
+  - https://gitstar-ranking.com/
+  - GitHub star ranking for users, organizations and repositories
+
+- inactive
+  - [GitHub-Chinese-Top-Charts](https://github.com/kon9chunkit/GitHub-Chinese-Top-Charts)
 
 ## nice-to-have
 

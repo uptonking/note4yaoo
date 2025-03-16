@@ -152,7 +152,7 @@ modified: 2023-09-17T17:37:19.913Z
 
 - ## We are writing a massive multitenant database at Turso. A node is capable of running hundreds of thousands of databases, concurrently. 
 - https://x.com/iavins/status/1900220354985169332
-  - We also decided to write our own asynchronous runtime implementation (instead of using Tokio) for reasons. Now this bad boy is all bare bones, we don't use Rust's `async` yet.
+  - We also decided to write our own asynchronous runtime implementation (instead of using `Tokio` ) for reasons. Now this bad boy is all bare bones, we don't use Rust's `async` yet.
   - For disk or network we use io_uring (of course). Since it's a database, that's pretty much all it does: talk with io. And that requires a state machine. You submit a request, wait for some time to poll or for callback to trigger. That means, a function doesn't always have a result ready; sometimes it says, my friend wait for sometime, I don't have result ready yet: `Ok(None)` . When it's done you get: `Ok(Some(T))` .
   - The entire codebase is pretty much `Result<Option<T>>`
 
