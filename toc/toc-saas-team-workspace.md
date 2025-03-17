@@ -624,6 +624,24 @@ modified: 2023-02-07T17:38:05.336Z
   - 支持在线查看任务日志
   - 支持手机端操作
 # meetings
+- https://github.com/suitenumerique/meet /MIT/202503/python/ts
+  - https://visio.numerique.gouv.fr/
+  - Open source alternative to Google Meet and Zoom powered by LiveKit: HD video calls, screen sharing, and chat features. 
+  - Built with Django and React.
+  - Powered by LiveKit, Visio offers Zoom-level performance with high-quality video and audio. 
+  - No installation required—simply join calls directly from your browser. 
+  - Optimized for stability in large meetings (+100 p.)
+  - Support for multiple screen sharing streams
+- https://github.com/livekit/livekit /apache2/202503/go
+  - https://docs.livekit.io/
+  - End-to-end stack for WebRTC. SFU media server and SDKs.
+  - LiveKit is an open source project that provides scalable, multi-user conferencing based on WebRTC. 
+  - It's designed to provide everything you need to build real-time video audio data capabilities in your applications.
+  - LiveKit's server is written in Go, using the awesome Pion WebRTC implementation.
+  - Scalable, distributed WebRTC SFU (Selective Forwarding Unit)
+  - Robust networking and connectivity, UDP/TCP/TURN
+  - Easy to deploy: single binary, Docker or Kubernetes
+
 - https://github.com/rustdesk/rustdesk /AGPLv3/202401/rust/dart
   - https://rustdesk.com/
   - Yet another remote desktop software, written in Rust. 

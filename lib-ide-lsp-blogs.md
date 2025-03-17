@@ -47,4 +47,12 @@ modified: 2025-01-05T15:00:32.524Z
   - The idea behind salsa is rather simple — all function calls inside the compiler are instrumented to record which other functions were called during their execution.
   - Using this engine, we were able to implement a rather fancy update strategy. 
   - The main drawback is extra complexity, slower performance (fine-grained tracking of dependencies takes time and memory) and a feeling that this is a somewhat uncharted territory yet 
+# blogs-xp
+
+## [最硬核教程： 解锁LSP协议原理，打造你的IDE _202503](https://mp.weixin.qq.com/s/slJyLUDeXfvWz1XKhTzS1Q)
+
+- Demo 看 lsp-bridge 源码吧
+
+## [【go】搞明白cursor卡慢问题](https://mp.weixin.qq.com/s/78R596lJl7YxCFj3TEnUiw?scene=262&from=industrynews#rd)
+
 # more

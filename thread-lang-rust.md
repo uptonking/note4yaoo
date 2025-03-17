@@ -14,7 +14,9 @@ modified: 2023-10-06T16:26:57.557Z
 
 - ## 
 
-- ## 
+- ## Sounds like there was an effort to rewrite React Compiler in Rust, but JavaScript won out in the end.
+- https://x.com/birch_js/status/1901454090552709542
+  - Interestingly, it's eventually planned to compile it with Static Hermes. Which implies we may get a headless Static Hermes-based runtime in future?
 
 - ## 🤔 Prisma rewrite in TypeScript _202412
 - https://x.com/localhost_5173/status/1863873604229972068

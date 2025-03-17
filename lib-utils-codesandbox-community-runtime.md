@@ -181,7 +181,17 @@ modified: 2024-05-12T17:20:03.132Z
 
 - ## 
 
-- ## 
+- ## same.dev literally hosts a vm for your project
+- https://x.com/aidenybai/status/1901019106234732938
+  - you get basically a full agent + operating system (which you can play doom / minecraft on if you want)
+
+- surely it's docker; no way youre giving 32gb ram vms to agents lol
+  - docker
+- interesting that you didn’t go for a pre-made solution like e2b or scrapy though
+  - figured we can just built it ourselves at 50% the costs
+
+- Few crypto miners and your AWS account is cooked, just fyi
+- Can't wait for you to see your first AWS bill
 
 - ## 👷🏻 I 100% agree with this. We needed an orchestrator that understands VM snapshotting/cloning and can spin up a new VM extremely quickly.
 - https://x.com/CompuIves/status/1853478202569617647

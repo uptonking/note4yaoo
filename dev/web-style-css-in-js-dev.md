@@ -196,7 +196,14 @@ modified: 2021-01-01T20:06:19.327Z
 
 - ## 
 
-- ## 
+- ## 🆚️ What's the best CSS solution for a styling UI library in 2025?
+- https://x.com/huozhi/status/1901595598966403501
+  - Always output CSS and let users import it?
+  - render Inline style tag?
+- You need the first one to support SSR and strict CSP anyway.
+  - It's quite painful to always provide a CSS import. Defining the css export in package.json is not a common standard yet, and framework has to deal with the CSS imports which is tight to the page rather than the component from library.
+- Years later, still super happy about css modules since it's the closest to vanilla and it means that everything just works, no matter what happens to frameworks. Shipping RSC support for Reshaped took 2 hours while everyone around was rewriting their whole packages and shipping major releases
+  - Internally I just keep css imports in the ESM build and all popular frameworks just handle it automatically or with a one-line configuration. On top of that, tree-shaking works too since css is defined on the component level
 
 - ## 2022 check-up: how do you bundle CSS alongside JavaScript in an NPM library?
 - https://twitter.com/steveruizok/status/1525106339692822529

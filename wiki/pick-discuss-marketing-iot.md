@@ -21,7 +21,9 @@ modified: 2021-04-12T16:30:53.968Z
 
 ## 
 
-## 
+## [第一次看到人家里装了两个洗碗机，问了原因，说可以两边倒来倒去，碗筷从来不需要放柜子里](https://x.com/xiaopeng163/status/1901575259578315238)
+
+- Primary/secondary architecture
 
 ## [雷总也不一定百分百保险..（来自前米家生态链公司员工的小小提醒](https://x.com/corvuschen1211/status/1900904693481828721)
 

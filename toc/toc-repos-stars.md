@@ -51,7 +51,8 @@ modified: 2021-01-12T18:49:13.490Z
   - portainer(zlib/go/ts), localstack(apache2/python)
 
 - utils: 
-  - protobuf(BSD/cpp), grpc(apache2/cpp), socket.io(MIT), ripgrep(MIT/rust), minio(AGPL/go), elasticsearch(AGPL), meilisearch(MIT/rust)
+  - protobuf(BSD/cpp), grpc(apache2/cpp), socket.io(MIT)
+  - ripgrep(MIT/rust), minio(AGPL/go), elasticsearch(AGPL), meilisearch(MIT/rust)
   - scrapy(BSD), EasySpider(AGPL/python)
 # quickstart
 - https://github.com/eleme/duang

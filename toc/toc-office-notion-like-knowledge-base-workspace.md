@@ -51,6 +51,26 @@ modified: 2022-06-03T21:34:54.893Z
   - ref
     - https://github.com/ProseWorker/ProseWriter
 
+- https://github.com/suitenumerique/docs /4.8kStar/MIT/202503/python/ts
+  - https://docs.numerique.gouv.fr/
+  - A collaborative note taking, wiki and documentation platform that scales. 
+  - Docs is built on top of Django Rest Framework, Next.js, BlockNote.js, HocusPocus and Yjs.
+  - Easy to install, scalable and secure alternative to Notion, Outline or Confluence
+  - Offline? No problem, keep writing, your edits will get synced when back online
+  - Built for productivity (markdown support, many block types, slash commands, keyboard shortcuts).
+  - Save time thanks to our AI actions (generate, sum up, correct, translate)
+  - Granular access control to ensure your information is secure and only shared with the right people
+  - Professional document exports in multiple formats (.odt, .doc, .pdf) with customizable templates
+  - Running Docs locally using the methods described below is for testing purposes only. It is based on building Docs using Minio as the S3 storage solution but you can choose any S3 compatible object storage of your choice.
+  - [Docs – Open source alternative to Notion or Outline | Hacker News _202503](https://news.ycombinator.com/item?id=43378239)
+
+- https://github.com/docmost/docmost /AGPL/202503/ts
+  - https://docmost.com/
+  - an open-source collaborative wiki and documentation software. 
+  - It is an open-source alternative to Confluence and Notion.
+  - Diagrams (Draw.io, Excalidraw and Mermaid)
+  - Permissions management
+
 - think /1.8kStar/MIT/202304/ts/nestjs/tiptap/inactive
   - https://github.com/fantasticit/think
   - https://think.codingit.cn/
@@ -124,6 +144,16 @@ modified: 2022-06-03T21:34:54.893Z
     - https://github.com/JhinBoard/jhin
       - Next-Gen Collaborative Knowledge Base, A free replacement for Notion & Miro
 
+- https://github.com/TriliumNext/Notes /AGPL/202503/ts
+  - https://triliumnext.github.io/Docs/
+  - open-source, cross-platform hierarchical note taking application with focus on building large personal knowledge bases.
+  - Notes can be arranged into arbitrarily deep tree. Single note can be placed into multiple places in the tree
+  - Rich WYSIWYG note editing including e.g. tables, images and math with markdown autoformat
+  - Note attributes can be used for note organization, querying and advanced scripting
+  - Synchronization with self-hosted sync server
+  - REST API for automation
+  - [Announcement: Trilium transitions into maintenance mode _202401](https://github.com/zadam/trilium/issues/4620)
+    - In short, my time priorities changed and I now have other things on which I want to spend more of my time.
 - trilium /23.3kStar/AGPLv3/202311/js/ckeditor5/支持多端
   - https://github.com/zadam/trilium
   - https://github.com/zadam/trilium/wiki/

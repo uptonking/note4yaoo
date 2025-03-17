@@ -34,7 +34,9 @@ modified: 2023-10-27T19:03:54.530Z
 
 - ## 
 
-- ## 
+- ## cloudflare数据库的问题似乎是数据没法导入到maxcompute做计算，这意味着一旦数据量大起来到了千万级别你不得不迁移系统。
+- https://x.com/seclink/status/1901525460926058525
+  - supabase的问题是后面扩容起来收费的阶梯很贵，不像阿里云用的越多还可以谈折扣。supabase的稳定性也不行，经常查询失败。
 
 - ## 云计算厂商的机器，是怎么挂载云硬盘的呢？用的什么技术呢？难不成是 SMB？
 - https://twitter.com/sci_kobayashi/status/1730097196983570748

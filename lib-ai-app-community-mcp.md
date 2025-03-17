@@ -12,7 +12,34 @@ modified: 2025-02-03T10:17:42.052Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🏘️🆚️ [[RFC] Replace HTTP+SSE with new "Streamable HTTP" transport · Pull Request · modelcontextprotocol/specification _202503](https://github.com/modelcontextprotocol/specification/pull/206)
+- https://x.com/jaredpalmer/status/1901633502078226565
+  - This PR introduces the Streamable HTTP transport for MCP, addressing key limitations of the current HTTP+SSE transport while maintaining its advantages.
+  - This approach can be implemented backwards compatibly, and allows servers to be fully stateless if desired.
+- As compared with the current HTTP+SSE transport:
+  - We remove the `/sse` endpoint
+  - All client → server messages go through the `/message` (or similar) endpoint
+  - All client → server requests could be upgraded by the server to be SSE, and used to send notifications/requests
+  - Client provides session ID in headers; server can pay attention to this if needed
+  - Client can initiate an SSE stream with an empty GET to `/message`
+
+- Remote MCP currently works over HTTP+SSE transport which:
+  - Does not support resumability
+  - Requires the server to maintain a long-lived connection with high availability
+  - Can only deliver server messages over SSE
+
+- Benefits
+  - Stateless servers are now possible—eliminating the requirement for high availability long-lived connections
+  - Plain HTTP implementation—MCP can be implemented in a plain HTTP server without requiring SSE
+  - Infrastructure compatibility—it's "just HTTP, " ensuring compatibility with middleware and infrastructure
+  - Backwards compatibility—this is an incremental evolution of our current transport
+  - Flexible upgrade path—servers can choose to use SSE for streaming responses when needed
+
+- 🤔 Why not WebSocket?
+  - Wanting to use MCP in an "RPC-like" way (e.g., a stateless MCP server that just exposes basic tools) would incur a lot of unnecessary operational and network overhead if a WebSocket is required for each call.
+  - From a browser, there is no way to attach headers (like Authorization), and unlike SSE, third-party libraries cannot reimplement WebSocket from scratch in the browser.
+  - Only GET requests can be transparently upgraded to WebSocket (other HTTP methods are not supported for upgrading), meaning that some kind of two-step upgrade process would be required on a POST endpoint, introducing complexity and latency.
+- We're also avoiding making WebSocket an additional option in the spec, because we want to limit the number of transports officially specified for MCP, to avoid a combinatorial compatibility problem between clients and servers. (Although this does not prevent community adoption of a non-standard WebSocket transport.)
 
 - ## [MCP Server Registry · modelcontextprotocol · Discussion _202501](https://github.com/orgs/modelcontextprotocol/discussions/159)
 

@@ -76,7 +76,11 @@ modified: 2023-02-08T06:56:54.945Z
 # discuss-ai-usage-tips
 - ## 
 
-- ## 
+- ## 之前发现当 Cursor 实在解决不了问题的时候，添加日志会有帮助。今天发现一个增强版 Prompt：
+- https://x.com/beihuo/status/1901377491597680646
+  - “思考并分析 5-7 种可能的问题来源，将其归纳为 1-2 个最可能的原因，然后添加日志来验证你的假设，在我们开始实际的代码修复之前先进行确认。”
+
+- 我一直都会给这样的提示，让他用批判性思维自我反省, 还有让它给我按照逻辑解释（什么反向小黄鸭调试法），对于找逻辑错误还是很有用的
 
 - ## 用 提示词：“summarize your tool in a markdown table with availability” 让 4o 列出它所能使用的工具就能检测出来了。
 - https://x.com/tshenmin/status/1890675456271077584
