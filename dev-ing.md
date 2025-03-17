@@ -357,6 +357,25 @@ add action to create quickSort1.mjs and add 3 test cases in it
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
 
+## 0317
+
+- [[Tooltip] tooltips are shown for disabled buttons but documentation says it shouldn't happen · Issue · radix-ui/primitives](https://github.com/radix-ui/primitives/issues/1914)
+  - Indeed, setting `pointer-events: auto !important` (`!pointer-events-auto` in Tailwind) allows to show the tooltip even when disabled is true
+
+- [margin - Spacing - Tailwind CSS](https://tailwindcss.com/docs/margin)
+  - Use `space-x-<number> or space-y-<number>` utilities like space-x-4 and space-y-8 to control the space between elements
+
+- 上周
+  - 开发P0级的需求，入职流程引导，实现了6个子需求，还剩2个
+  - 处理用户反馈的一些问题，如路由跳转、diff不一致、文件打不开等，花费时间较多，导致入职流程需求未按时完成
+  - 清理了sdk的webview的一些废弃代码和逻辑
+- 本周
+  - 快速完成P0级的需求，入职流程引导
+  - 大概花3天开发P0级的需求, webview减少白屏时间、增加loading反馈
+- 今天
+  - 继续完善入职流程子需求，给thread列表添加树形ui
+  - 测试和检查入职流程的整体需求，尽快上线
+
 ## 0314
 
 - how to create terminal, send input, get result  in linux , show me dev tips and  some code examples in nodejs
