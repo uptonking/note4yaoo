@@ -357,6 +357,15 @@ add action to create quickSort1.mjs and add 3 test cases in it
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
 
+## 0318
+
+- 昨天
+  - 给thread列表添加了树形ui
+  - 开始入职流程最后一个子需求，创建root-thread时添加二次确认的指引
+- 今天
+  - 完成子需求，创建root-thread时添加二次确认的指引
+  - 测试和检查入职流程的整体需求，今天应该可以合到staging
+
 ## 0317
 
 - [[Tooltip] tooltips are shown for disabled buttons but documentation says it shouldn't happen · Issue · radix-ui/primitives](https://github.com/radix-ui/primitives/issues/1914)
@@ -436,6 +445,7 @@ async function getFirstLine(pathToFile) {
 ## 0311
 
 - 在html中显示同向斜引号
+  - `{' '} <span className='font-["Inter_Variable",_"SF_Pro_Display",_-apple-system,_BlinkMacSystemFont,_sans-serif]'> “Root Thread” </span>{' '}`
 
 ```CSS
 .quotes {

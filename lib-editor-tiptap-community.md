@@ -99,9 +99,18 @@ modified: 2023-02-05T19:03:27.730Z
 
 - ## 
 
-- ## 
+- ## [Append text to current editor's content · Issue #230 · ueberdosis/tiptap](https://github.com/ueberdosis/tiptap/issues/230)
 
-- ## 
+```JS
+editor.chain().focus().insertContent('some content').run();
+
+editor.chain().focus('end').createParagraphNear().insertContent('some content').run()
+```
+
+- [Append text/info to the end of the document · Issue #696 · ueberdosis/tiptap](https://github.com/ueberdosis/tiptap/issues/696)
+
+- ## [[Bug]: `generateJSON` is stripping trailing whitespace · Issue #4432 · ueberdosis/tiptap](https://github.com/ueberdosis/tiptap/issues/4432)
+- `editor.commands.setContent("<p>Example Text </p> ", false, { preserveWhitespace: true });`
 
 - ## Just in case anyone tries to use Hocuspocus with NestJS in the future, this code allows me to run hocuspocus (although a bit hacky) without issues_20221005
 - https://discord.com/channels/818568566479257641/818569767149371444/1027216475179712692
