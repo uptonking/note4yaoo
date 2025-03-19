@@ -189,6 +189,8 @@ modified: 2022-10-05T04:57:38.647Z
   - https://github.com/readium/webpub-manifest
     - a JSON-based document meant to represent and distribute publications over HTTPS.
     - It is the primary exchange format used in the Readium Architecture and serves as the main building block for OPDS 2.0.
+  - https://github.com/readium/readium-js-viewer
+    - default web app for Readium.js library
 
 - https://github.com/edrlab/thorium-reader /BSD/202402/ts
   - https://www.edrlab.org/software/thorium-reader/

@@ -93,12 +93,12 @@ modified: 2024-01-30T20:56:45.773Z
     - I keep thinking about some reasonable ways to integrate with the file system as well - my ideal solution would be to sort of "mount" some directory into trilium 
     - This gets complicated with possible filename conflicts, the fact Trilium also supports versioning etc. In the end it would also create a mess - directory full of files which would need to at least contain some UUID. The benefits compared to just storing them in SQLite get smaller
 
-- simplenote /4.6kStar/GPLv2/202201/ts/inactive
+- simplenote /4.6kStar/GPLv2/202201/ts/inactive/服务端未开源
   - https://github.com/Automattic/simplenote-electron
   - https://simplenote.com/
   - Simplenote for Web, Windows, and Linux
   - import notes from Simplenote(.json) exports, Evernote(.enex) export, Plain text files(.txt)
-  - node-simperium for Simperium syncing. 服务端未开源
+  - node-simperium for Simperium syncing. 
   - Simplenote API features such as sharing and publishing will not work with development
   - https://github.com/Automattic/simplenote-android
   - https://github.com/Automattic/simplenote-ios
@@ -650,6 +650,13 @@ modified: 2024-01-30T20:56:45.773Z
   - Reor stands on the shoulders of the giants Ollama, Transformers.js & LanceDB to enable both LLMs and embedding models to run locally
   - Reor interacts directly with Ollama which means you can download and run models locally right from inside Reor.
   - Reor works within a single directory in the filesystem. You choose the directory on first boot.
+# note-android
+- https://github.com/gsantner/markor /apache2/202503/java
+  - Text editor - Notes & ToDo (for Android) - Markdown, todo.txt, plaintext, math, ..
+# note-mac/ios
+- https://github.com/glushchenko/fsnotes /MIT/202503/swift
+  - modern notes manager for macOS and iOS.
+  - Markdown-first. Also supports any plaintext files.
 # note-utils
 - graph /7Star/MIT/202210/ts
   - https://github.com/graphcentral/graph

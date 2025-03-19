@@ -82,7 +82,19 @@ modified: 2025-01-05T15:00:51.509Z
 
 - ## 
 
-- ## 
+- ## 🤔 Anyone know how to access the running tsserver from outside VSCode?
+- https://x.com/mattpocockuk/status/1902295528747983253
+  - Want to build a MCP server that can do go-to-definition, rename symbol etc.
+- Is there an MCP for Language Server Protocols? does anyone have an MCP server that hooks up to any server that supports the LSP protocol (which tsserver does).
+
+- Not 100% sure, but it seems like `tsserver.js` is running on my laptop with the following arguments, one of which `--useNodeIpc`.
+  - But for a more sustainable approach it's probably might be possible to create a plugin for tsserver in vscode
+  - And for a short-term workaround I would "patch" `_tsserver.js` to spawn another child process which will host the required logic.
+- [Developing a Custom TypeScript language service plugin in VSCode - Stack Overflow](https://stackoverflow.com/questions/56138965/developing-a-custom-typescript-language-service-plugin-in-vscode)
+
+- [Using the Compiler API · microsoft/TypeScript Wiki](https://github.com/microsoft/TypeScript/wiki/Using-the-Compiler-API)
+
+- You can create a typescript plugin.
 
 - ## In LSP, a position is represented as a line number and a column offset (in Unicode code units)
 - https://x.com/_wilfredh/status/1890901779518206149

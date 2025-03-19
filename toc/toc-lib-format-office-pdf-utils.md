@@ -27,11 +27,6 @@ modified: 2022-11-11T10:46:41.519Z
   - locally hosted web based PDF manipulation tool using docker that allows you to perform various operations on PDF files
   - 依赖 Spring Boot + Thymeleaf、pdfbox、itext7、libreoffice转换格式、ocrMyPdf
   - 除了能给PDF打水印之外，还可以轻松批量给扫描的PDF文件瘦身，1秒钟搞定，太好用了
-  - [New Browser-based PDF Editor (github link) : selfhosted](https://www.reddit.com/r/selfhosted/comments/10pexhn/new_browserbased_pdf_editor_github_link/)
-  - https://twitter.com/dotey/status/1739426777091408207
-    - 一个本地的处理 PDF 的工具，界面是 Web UI，可以支持 Docker 部署。
-  - https://twitter.com/geekbb/status/1739627252701450251
-    - Docker 真是方便，刚刚在 NAS 上弄了一个本地 PDF 工具 ：Stirling PDF，并通过 Cloudflare Tunnels 建立连接方便自己外网访问，再也不用担心 PDF 资料泄漏的问题了
 
 - https://github.com/SimplePDF/simplepdf-embed /280Star/NonOpen/202502/ts
   - https://simplepdf.eu/embed

@@ -226,6 +226,18 @@ modified: 2021-01-04T17:26:43.784Z
   - Internally server starts a headless browser and opens http://localhost:3000 application and creates the pdf (i.e print layout).
   - Note: Server-side pdf generator code is hardcoded so you will get same pdf every time.
 # reader/viewer
+- https://github.com/Stirling-Tools/Stirling-PDF /20.4kStar/GPLv3/202403/java/js
+  - https://www.pdfdrills.com/
+  - locally hosted web application that allows you to perform various operations on PDF files
+  - locally hosted web based PDF manipulation tool using docker that allows you to perform various operations on PDF files
+  - 依赖 Spring Boot + Thymeleaf、pdfbox、itext7、libreoffice转换格式、ocrMyPdf
+  - 除了能给PDF打水印之外，还可以轻松批量给扫描的PDF文件瘦身，1秒钟搞定，太好用了
+  - [New Browser-based PDF Editor (github link) : selfhosted](https://www.reddit.com/r/selfhosted/comments/10pexhn/new_browserbased_pdf_editor_github_link/)
+  - https://twitter.com/dotey/status/1739426777091408207
+    - 一个本地的处理 PDF 的工具，界面是 Web UI，可以支持 Docker 部署。
+  - https://twitter.com/geekbb/status/1739627252701450251
+    - Docker 真是方便，刚刚在 NAS 上弄了一个本地 PDF 工具 ：Stirling PDF，并通过 Cloudflare Tunnels 建立连接方便自己外网访问，再也不用担心 PDF 资料泄漏的问题了
+
 - https://github.com/TheWebDevel/electron-pdf-conversion-article-proj /js
   - [Converting an Electron view content to PDF - DEV Community](https://dev.to/sathish/converting-an-electron-view-content-to-pdf-caa)
   - simple electron app to demonstrate the conversion of view into PDF.
@@ -339,15 +351,6 @@ modified: 2021-01-04T17:26:43.784Z
   - Users can select a page from the uploaded PDF and view its content as text.
   - 依赖streamlit、pdf2image、pypdf2、pillow
 
-- https://github.com/pdfarranger/pdfarranger /python
-  - Small python-gtk application, which helps the user to merge or split PDF documents and rotate, crop and rearrange their pages using an interactive and intuitive graphical interface.
-
-- https://github.com/hkdb/Densify /python
-  - A GTK+ GUI Application written in Python that simplifies compressing PDF files with Ghostscript
-
-- https://github.com/plainlab/plainprinter /GPLv3/202309/ts
-  - Take multiple screenshots and convert them into a PDF file
-
 - https://github.com/pdfarranger/pdfarranger /GPL/202502/python
   - PDF Arranger is a small python-gtk application, which helps the user to merge or split PDF documents and rotate, crop and rearrange their pages using an interactive and intuitive graphical interface. 
   - It is a front end for pikepdf.
@@ -355,6 +358,12 @@ modified: 2021-01-04T17:26:43.784Z
   - https://github.com/pikepdf/pikepdf /MPL/202502/cpp/python
     - https://pikepdf.readthedocs.io/
     - A Python library for reading and writing PDF, powered by QPDF
+
+- https://github.com/hkdb/Densify /python
+  - A GTK+ GUI Application written in Python that simplifies compressing PDF files with Ghostscript
+
+- https://github.com/plainlab/plainprinter /GPLv3/202309/ts
+  - Take multiple screenshots and convert them into a PDF file
 # examples
 - https://github.com/AnsellMaximilian/electron-excel-to-pdf-invoice-generator /ts
   - A desktop invoice generator that turns excel files (with a specifically formatted workbook) into pdf invoices for every customer.
@@ -436,6 +445,8 @@ modified: 2021-01-04T17:26:43.784Z
   - https://github.com/ArtifexSoftware/mupdf
   - https://github.com/muennich/mupdf
   - written in C, providing Java JNI
+  - https://github.com/ArtifexSoftware/mupdf.js /AGPL
+  - https://github.com/ArtifexSoftware/pdf2docx /AGPL
 - https://github.com/pymupdf/PyMuPDF /AGPL/202503/python
   - a high performance Python library for data extraction, analysis, conversion & manipulation of PDF (and other) documents.
 - https://github.com/andytango/mupdf-js /AGPLv3/202406/ts/c/inactive
@@ -446,7 +457,7 @@ modified: 2021-01-04T17:26:43.784Z
   - https://github.com/qwertme/OpenViewerFX
   - now part of JDeli
 
-- https://github.com/sumatrapdfreader/sumatrapdf /C
+- https://github.com/sumatrapdfreader/sumatrapdf /GPL/C
   - SumatraPDF reader
 # pdf-doc/rag
 - https://github.com/opendatalab/PDF-Extract-Kit /apache2/202407/python

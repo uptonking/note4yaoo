@@ -653,6 +653,21 @@ modified: 2023-02-07T17:38:05.336Z
   - https://team-linker.com/
   - Teamlinker is a team collaboration platform that integrates multi-functional modules, such as contact, task management, meeting, IM, Wiki and file management.
   - Teamlinker is developed based on the TeamOS system. It is a web operating system that allows users to process different tasks in parallel
+# online-teaching/learning
+- https://github.com/openedx/edx-platform /AGPL/202503/python/js
+  - https://openedx.org/
+  - The Open edX Platform is a service-oriented platform for authoring and delivering online learning at any scale. 
+  - The platform is written in Python and JavaScript and makes extensive use of the Django framework. 
+  - At the highest level, the platform is composed of a monolith, some independently deployable applications (IDAs), and micro-frontends (MFEs) based on the ReactJS.
+  - Functionally, the edx-platform repository provides two services:
+    - CMS (Content Management Service), which powers Open edX Studio, the platform's learning content authoring environment; and
+    - LMS (Learning Management Service), which delivers learning content.
+
+- https://github.com/oppia/oppia /apache2/202503/python/ts
+  - https://www.oppia.org/
+  - Oppia is an online learning tool that enables anyone to easily create and share interactive activities (called 'explorations'). 
+  - These activities simulate a one-on-one conversation with a tutor, enabling students to learn by doing while getting feedback.
+  - The Oppia web application is built using Python, Angular, and Google App Engine.
 # more
 - https://github.com/avisek-official/simple-notes /ts
   - https://next-simple-notes.vercel.app/

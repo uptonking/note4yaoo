@@ -143,6 +143,11 @@ modified: 2022-06-03T21:34:54.893Z
       - simple Block editor like BlockSuite, based on Vue and @blocksuite/store
     - https://github.com/JhinBoard/jhin
       - Next-Gen Collaborative Knowledge Base, A free replacement for Notion & Miro
+  - 🚨 [Announcement: The Evolution of BlockSuite _202412](https://github.com/toeverything/blocksuite/issues/9045)
+    - BlockSuite has been the core editor powering AFFiNE, designed initially as a universal editor framework. Over time, as both BlockSuite and AFFiNE evolved, BlockSuite gradually incorporated more and more of AFFiNE’s specific business logic.
+    - To realign with our goals and streamline development, we have made the decision to merge BlockSuite's codebase into AFFiNE. 
+    - we will extract and rebuild the core elements of BlockSuite into a new, independent project. This will allow us to return to the original mission of BlockSuite—creating a flexible, universal editor framework that can be used beyond AFFiNE.
+    - We are currently working on integrating BlockSuite into AFFiNE while simultaneously outlining the roadmap for the new universal editor framework
 
 - https://github.com/TriliumNext/Notes /AGPL/202503/ts
   - https://triliumnext.github.io/Docs/

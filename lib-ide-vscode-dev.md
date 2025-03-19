@@ -56,6 +56,7 @@ modified: 2024-08-24T16:15:11.456Z
 
 - ide-ai
   - editor-control MCP, 让ai操作编辑器的协议，可参考browser-use
+  - mcp for drawio
 
 - extension
 

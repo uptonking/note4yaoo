@@ -63,7 +63,14 @@ modified: 2023-09-19T07:26:04.103Z
   - https://readest.com/
   - an open-source ebook reader designed for immersive and deep reading experiences. 
   - Built as a modern rewrite of Foliate, it leverages Next.js 15 and Tauri v2 to deliver a smooth, cross-platform experience across macOS, Windows, Linux, Android, iOS, and the Web.
-  - https://github.com/johnfactotum/foliate /GPL/js
+
+- https://github.com/johnfactotum/foliate /GPL/202503/js
+  - https://johnfactotum.github.io/foliate/
+  - lightweight GTK-based ebook reader for Linux. 
+- https://github.com/johnfactotum/foliate-js /MIT/202503/js/NoDeps
+  - https://johnfactotum.github.io/foliate-js/reader.html
+  - 📖 Library for rendering e-books in the browser.
+  - Supports EPUB, MOBI, KF8 (AZW3), FB2, CBZ, PDF (experimental; requires PDF.js)
 # mdbook
 - https://github.com/rust-lang/mdBook /15.6kStar/MPLv2/202312/rust
   - https://rust-lang.github.io/mdBook/
@@ -156,7 +163,7 @@ modified: 2023-09-19T07:26:04.103Z
 
 ## epub
 
-- https://github.com/futurepress/epub.js /bsd/202305/js
+- https://github.com/futurepress/epub.js /bsd/202305/js/inactive
   - a JavaScript library for rendering ePub documents in the browser, across many devices.
   - provides an interface for common ebook functions (such as rendering, persistence and pagination) without the need to develop a dedicated application or plugin
   - https://github.com/futurepress/epubjs-reader /MIT/201805/js

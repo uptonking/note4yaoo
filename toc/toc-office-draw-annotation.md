@@ -40,6 +40,8 @@ modified: 2023-11-03T17:43:01.518Z
   - https://github.com/hypothesis/h /2.8kStar/bsd/202311/python
     - h is the web app that serves most of the https://hypothes.is/ website, including the web annotations API 
     - The Hypothesis client is a browser-based annotator that is a client for h's API.
+- https://github.com/instructure/pdf-annotate.js /MIT/201812/js/archived
+  - Annotation layer for pdf.js (no longer maintained)
 
 - https://github.com/rough-stuff/rough-notation /MIT/202010/ts
   - https://roughnotation.com/
