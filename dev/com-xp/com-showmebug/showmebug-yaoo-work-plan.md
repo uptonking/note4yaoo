@@ -23,6 +23,7 @@ modified: 2024-05-06T02:54:40.374Z
 - 研发流程
   - backlog > todo > doing(dev分支) > readyForTest(staging分支) > done
   - 研发负责添加任务，测试负责减少； review属于doing的开发或联调状态
+  - 早会: 用户留存/研发排期, 研发质量, 技术专项
 # projects
 
 ## proj-coding-ai

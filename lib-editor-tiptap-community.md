@@ -99,12 +99,17 @@ modified: 2023-02-05T19:03:27.730Z
 
 - ## 
 
-- ## [Append text to current editor's content · Issue #230 · ueberdosis/tiptap](https://github.com/ueberdosis/tiptap/issues/230)
+- ## 🌰[Append text to current editor's content · Issue #230 · ueberdosis/tiptap](https://github.com/ueberdosis/tiptap/issues/230)
 
 ```JS
 editor.chain().focus().insertContent('some content').run();
 
 editor.chain().focus('end').createParagraphNear().insertContent('some content').run()
+
+// 插入换行不能在insertContent里面写 
+insertContent('\nCreate a new thread to help me implement it.')
+// 要写成
+insertContent('<p>Create a new thread to help me implement it.</p>')
 ```
 
 - [Append text/info to the end of the document · Issue #696 · ueberdosis/tiptap](https://github.com/ueberdosis/tiptap/issues/696)

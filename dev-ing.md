@@ -357,6 +357,15 @@ add action to create quickSort1.mjs and add 3 test cases in it
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
 
+## 0319
+
+- 昨天
+  - 完成子需求，创建root-thread时添加二次确认的指引
+  - 测试和检查入职流程的整体需求，已经合到staging
+- 今天
+  - 进一步清理sdk的浏览器组件，减少rerender的次数，来减少白屏时间
+  - 和佳路讨论优化场景，打开多个端口时，webview是否要自动切换到展示最新port
+
 ## 0318
 
 - 昨天

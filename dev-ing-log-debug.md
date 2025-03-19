@@ -20,6 +20,10 @@ modified: 2023-06-14T00:53:15.226Z
   - 可尝试在onClick等event handler的逻辑中间直接设置breakpoint，这样可在source面板看到调用栈及闭包对象，再通过 store as global variable 拿到重要对象
 
 - 前端页面有时无法捕获鼠标事件，可尝试先F12关闭devtools控制台，再重启服务，然后页面可能就能正常交互了，再F12打开控制台调试异常
+
+- 存储层
+  - 对于mq和db，最好不要放在docker或k8s的pod中运行，因为放在容器中会涉及网络转发和持久化寻址，最好直接放在物理机或虚拟机中运行
+  - 一般独占机器，k8s的独占节点模式性能会好一点
 # issues-server
 
 ## 
@@ -43,7 +47,11 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
-## 
+## 进ide时一直卡在第三个loading进度条
+
+- 20250319排查的现象是getTicket请求成功，但获取ideServerUrl的请求未发起
+  - 原因是用户自己的网络问题，没开vpn而存在网络问题，导致 `await import('@dao42/clacky-paas-front')` 获取外部js的代码未执行，从而外部js里包含的发起请求的逻辑未执行
+  - 解决方法是 在dynamic import的返回值为空或异常时，抛出异常提醒用户检查网络或刷新页面，或隔一段时间检查dynamic import的返回值是否为空
 
 ## 排查日志时，先确定userId/email和浏览器url
 
