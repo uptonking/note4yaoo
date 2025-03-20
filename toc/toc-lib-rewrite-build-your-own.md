@@ -58,7 +58,6 @@ modified: 2021-09-29T13:23:09.969Z
 - https://github.com/themarcba/vue-reactivity /js
   - basic implementation of the Vue 3 reactivity engine - from scratch
   - 提供了分步实现思路
-
 - https://github.com/bplok20010/vue-toy /ts
   - [vue-toy: 200行代码模拟Vue实现](https://my.oschina.net/nobo/blog/4310649)
   - 观察对象主要使用的是Object.defineProperty或Proxy来实现
@@ -71,6 +70,11 @@ modified: 2021-09-29T13:23:09.969Z
 - https://github.com/JokerLHF/mini-vue3 /202204/ts
   - 模拟vue3，实现了模板编译、创建组件实例、运行渲染函数、挂载虚拟 dom、接合响应式系统、patch 更新渲染、scheduler 任务调度， 基本上完成主线任务。
   - 其中 compiler 并没有完成 vue3 的一系列优化
+
+- https://github.com/smalllong/lightue /MIT/202303/js/inactive
+  - https://lightue.netlify.app/
+  - A lightweight and simple model-view framework inspired by Vue.js
+  - https://github.com/smalllong/lightuepress
 
 - https://github.com/Ubugeeei/chibivue /ts/代码多
   - https://ubugeeei.github.io/chibivue/en/

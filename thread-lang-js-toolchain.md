@@ -64,7 +64,9 @@ modified: 2024-03-17T15:24:20.824Z
 
 - ## 
 
-- ## 
+- ## ts-node monkeypatches `require.extensions` (a internal that should not have been exposed and has been deprecated since Node.js v0.10) which conflicts with Node.js type stripping and boom
+- https://x.com/satanacchio/status/1902715349021204845
+- not many dependencies rely on require.extensions to know if ts-node is loaded, we are opening a bunch of issues and sending patches
 
 - ## Do any TypeScript compiler nerds out there know if there's anyway to create a TS server plugin asynchronously?
 - https://x.com/justinfagnani/status/1847699545658184114

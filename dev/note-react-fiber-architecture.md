@@ -9,12 +9,22 @@ modified: 2020-07-14T11:58:47.593Z
 
 # guide
 
+- tips
+  - 将更多精力用在业务架构和异步数据流上收益更高，通过fiber增加渲染层的复杂度会增加维护难度而收益低
+  - 主流的前端项目都是自己实现渲染层，特殊的架构如virtualized-render/fiber都可能导致view层定制难度大，如实现sticky元素、渲染元素
+  - 先将时间花在现有编辑器的架构协作同步上
+
 - 司徒正美分析fiber
   - [React Fiber架构](https://zhuanlan.zhihu.com/p/37095662)
   - [React Fiber在并发模式下的运行机制](https://zhuanlan.zhihu.com/p/54042084)
   - [React Fiber的优先级调度机制与事件系统](https://zhuanlan.zhihu.com/p/95443185)
 - ref
   - [react fiber 主流程及功能模块梳理](https://juejin.im/post/6844903781805752328)
+
+- https://github.com/tranbathanhtung/react-fiber-implement /201901/js/inactive
+  - react-fiber is my self-study project help me understand how react work. In fact, all codebase re-implement each step , so it looks similar to the source code of react.
+  - I think it's still smaller and easier to understand than when you actually read the react source code. 
+  - Hooks are stored as a linked list on the fiber's prevState field of fiber.
 # blog
 
 ## [Fiber架构的心智模型](https://react.iamkasong.com/process/fiber-mental.html)
@@ -255,3 +265,33 @@ function* doWork(A, B, C) {
 - ref
   - https://dev.to/afairlie/to-understand-react-fiber-you-need-to-know-about-threads-3dof
   - https://kentcdodds.com/blog/fix-the-slow-render-before-you-fix-the-re-render
+# discuss-fiber-arch
+- ## 
+
+- ## 
+
+- ## [React Fiber Architecture | Hacker News _201608](https://news.ycombinator.com/item?id=12243269)
+- Rather than try to diff two DOM trees and optimize reconciliation, why not use one-way data binding and update exactly what has changed, with 0 reconciliation cost?
+  - If all of your rendered HTML corresponds 1:1 with the underlying data model, there's no particular advantage to the declarative approach used by React.
+  - However, once you start to have relationships in the underlying data, so DOM events in one place can affect the desired DOM content somewhere else, simple one-way data binding is not sufficient.
+  - The alternative that declarative rendering tools like React offer is that you can specify what your rendered table should look like in absolute terms, using whatever inputs need to be considered but ignoring the existing state of the DOM. You still need to consider however many factors you have that affect the rendering, which might still be somewhat complicated in a case like this, but at least you only need to consider them from a single, neutral starting point, not relative to every possible starting point.
+
+- ## [Facebook Announces React Fiber, a Rewrite of Its React Framework | Hacker News _201704](https://news.ycombinator.com/item?id=14142120)
+- Is this as big a change as Angular 2 for you react devs?
+  - Not at all, nothing incompatible changes on the surface. There are more features and no breaking changes. It's mostly all under the hood!
+  - There will be new public api's to build your own custom rendering engine, ex how there is react-dom for browsers, react-native for mobile, and it will get easier to target new platforms thanks to fiber.
+- It's a rewrite of the internals, particularly the diffing/reconciliation algorithm. React Fiber involves effectively re-implementing the JS call stack using a data structure called "fibers" to track work that needs to be done.
+- Fiber is a method of divvying up the work the reconciler is doing so the main thread can process higher priority updates ahead of ones that matter less. There are other benefits, but this is the central one.
+  - My understanding is that it's a prioritisation system. If all of the UI changes can't be completed before the next render, the lowest priority changes are deferred to the next render.
+  - It should help with things where perceived lag is undesirable, like typing in an input field.
+
+- Please note that Fiber is not meant to be a “big speed improvement”. (React is already pretty fast, and most speed improvements you can do in this space are marginal for most apps.)
+  - Fiber is a rewrite that makes it easier for us to add new features to React (and it adds some). It also adds the foundation for enabling better perceived performance in the future releases thanks to async pre-rendering and more control over scheduling. That part is still work in progress and won't be enabled in React 16 by default.
+
+- Correct me if I'm wrong, but Fiber sounds like a micro tasker for React? Ember had been doing this for years through Backburner run loop
+  - With the ability to pause large updates in the middle without committing them to UI, doing some higher priority updates, and then "rebasing" lower priority updates on top of them and continuing the work. So it's a bit more sophisticated.
+- Does Fiber yield control back to the js engine when doing the "rebasing"? Or are all of these synchronous in one frame?
+  - Yea, it does. We are using requestIdleCallback to do the work "while we can", and then yield the control back.
+
+- Is fiber similar to what glimmer is to ember? Is it a big enough improvement to reconsider using react instead? (I was stoked on the glimmer stuff).
+  - Since Glimmer is implemented as a bytecode VM, they were able to go ahead and pull in many of the improvements that Fiber brings to React:

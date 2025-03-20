@@ -147,6 +147,18 @@ const CountingComponent = () => {
   - Reentrance: Regor supports multiple mountings in the previously mounted area using the same or different app contexts. This enables creating and mounting new directives dynamically.
   - Regor also utilizes `Jsep`, a fast and lightweight JavaScript expression parser. 
   - we would like to acknowledge the `happy-dom` library, which played a significant role in our testing process.
+# web-fwk-architecture
+- https://github.com/glimmerjs/glimmer-vm /MIT/202503/ts
+  - https://glimmerjs.com/
+  - Glimmer is a flexible, low-level rendering pipeline for building a "live" DOM from a superset of the Handlebars templates that can subsequently be updated cheaply when data changes.
+  - A fast and lightweight UI component library from the Ember.js team
+  - At a high level, Glimmer is made up of two parts:
+    - The compiler, which turns templates into optimized binary bytecode.
+    - The runtime, which evaluates that bytecode and translates its instructions into things like creating DOM elements or instantiating JavaScript component classes.
+  - [glimmer-vm/guides/01-introduction.md](https://github.com/glimmerjs/glimmer-vm/blob/main/guides/01-introduction.md)
+    - In addition to the basic Handlebars features such as helpers, Glimmer also comes with built-in support for a very flexible and powerful primitive called "Components" and a set of low-level hooks which the host environment can use to build other high-level, user-facing features.
+    - The key insight of Glimmer is that templates represent a declarative programming language for building and updating DOM. By structuring web UI around templates as the central abstraction, we can use advanced techniques from programming languages and compilers to significantly boost the performance of web applications in practice.
+    - Because of this, Glimmer's architecture has more in common with compiler toolchains like clang/LLVM or javac/JVM than traditional JavaScript libraries.
 # more-web-framework
 - https://github.com/gimenete/ui-state-sync
   - DIY modern JavaScript framework based on Virtual DOM

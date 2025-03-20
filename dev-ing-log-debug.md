@@ -104,7 +104,7 @@ modified: 2023-06-14T00:53:15.226Z
   - 检查css是否input被其他不可见元素(z-index)挡住了，Unclickable due to pointer-events: none
 
 - tips
-  - 文件树的react组件 和 编辑器的react组件 不在同一颗vdom树，要考虑react的事件委托都在appRoot或document
+  - 🤔 文件树的react组件 和 编辑器的react组件 不在同一颗vdom树，要考虑react的事件委托都在appRoot或document
   - 注释掉切换打开文件时editor的focus逻辑，重命名能正常执行，说明focus的相关的逻辑导致问题但切换文件时auto-focus光标功能不能去掉
 - 一种思路是，在编辑器外的input输入时，可考虑disable input的keyboard events(设为readonly过于严格)，
   - 这仅解决编辑器不接受字符的问题(实测没有解决问题，codemirror在readonly还是会被input的keydown字符修改)，
@@ -195,7 +195,7 @@ const memoize = (func) => {
 - toolbar上按钮的click事件会后于editor的blur事件执行，若在editor的blur事件中已经将toolbar所在的dom销毁了，toolbar上按钮的事件也不会触发
   - blur事件中的timeout设置要考虑低性能的浏览器和设备，调试时设为60ms会在windows上出bug，设为120ms会在windows上正常
 
-## innerHTML=\ `内容\` 内容中若有换行时，会占用元素高度
+## codemirror 的 toDOM 中的 innerHTML=\ `内容\` 内容中若有换行时，会占用元素高度
 
 - 注意内容使用反引号包裹和使用双引号包裹时内部换行符的区别
 

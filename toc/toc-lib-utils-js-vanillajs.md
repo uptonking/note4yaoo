@@ -70,7 +70,7 @@ modified: 2023-04-04T22:35:59.255Z
   - bl is a storage object for collections of Node Buffers, exposing them with the main Buffer readable API. 
   - Also works as a duplex stream so you can collect buffers from a stream that emits them and emit buffers to a stream that consumes them!
 # MV**-framework
-- https://github.com/smalllong/lightue /js
+- https://github.com/smalllong/lightue /MIT/202303/js/inactive
   - https://lightue.netlify.app/
   - A lightweight and simple model-view framework inspired by Vue.js
   - https://github.com/smalllong/lightuepress
