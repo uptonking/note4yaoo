@@ -30,7 +30,21 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## ❓ error: followingFocusComponent call timeout (7s)
 
-- 20250318左右今天碰到超时问题，导致agent无法执行action
+- 20250318左右经常碰到超时问题，导致agent无法执行action
+
+- 排查进展
+  - 1. 回滚应急，降级agent socketio版本无效
+  - 2. 增加延时配置能力，补充AIAgent python日志，确认异常情况AIAgent有发包
+  - 3. 找到IDEServer抓包方案
+  - 4. 阅读socketio协议，梳理清楚发包流程和ack回调包协议
+- IDEServer宿主抓包有效：服务端日志+IDEServer宿主抓包共同确认问题域在AiAgent vs IDEServer
+
+- 可疑点
+  - ide-server的文件树数据更新频繁，将文件树最大数量从1000增加到2000可能导致python-socketio或js-sockerio在接收到大包时意外丢失, 暂时先将最大文件数量限制降低来观察复现
+
+- 
+- 
+- 
 
 ## 当浏览器标签页处于后台且未挂起时，websocket的hearbeat心跳事件有时会自动停止发送
 

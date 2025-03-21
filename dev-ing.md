@@ -357,6 +357,14 @@ add action to create quickSort1.mjs and add 3 test cases in it
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
 
+## 0321
+
+- 昨天
+  - 在thread close后，允许编辑文件
+  - 设计webview刷新时的loading状态，今天会继续完善
+- 今天
+  - 进一步清理sdk的浏览器组件，减少rerender的次数，来减少白屏时间
+
 ## 0319
 
 - 昨天
