@@ -14,7 +14,22 @@ modified: 2024-01-07T05:09:14.413Z
 
 - ## 
 
-- ## 
+- ## I asked why not have the LLM stream terminate at *server*, then write response to DB when complete? 
+- https://x.com/aboodman/status/1903041915865665957
+  - You could then rely on a sync engine to send DB state to client. 
+  - This would be nice because you don't even need to deal with sockets and state - sync engine does that.
+  - 🐛 The problem is that while this would solve the resume problem, it would kill the UX. A big part of current chat UI is the streaming response. The experience is much worse if you must wait for the entire response or even paragraph-sized chunks.
+  - But could you just write every token to the same row in the database and let the sync engine send updates to clients?
+  - On one hand this seems clearly crazy. On the other, because of several of Zero's design decisions, it is kind of surprisingly fast. We have demo'd 200 writes per second, and it seems clear with tuning it can go way higher – probably ultimately limited only by Postgres' write throughput.
+  - So I was very curious to explore building an AI chat this way to see how it went, but didn't have time to do it myself. That's how the zchat challenge got started.
+  - is this the way that Grok should be built? or t3chat? Probably not without some modifications.
+- 🐛 Besides the obvious problem that the data sent will be much bigger than optimal (this is easy to fix: https://bugs.rocicorp.dev/issue/3603), the more serious issue is that this just causes a ton of database writes.
+  - If you want to achieve a competitive UX you'll want to stream at at least 30fps and in that case you'll quickly get to thousands of db writes/sec once your service gets popular. This probably doesn't make sense – even taking into account that Zero significantly *reduces* load on your database by taking over reads.
+
+- There is no reason every communication with the server needs to happen over Zero. Serverless functions can stream responses nowadays. Why not just send a function request and utilize its ability to stream?
+  - The only downside of this approach is that only the requesting client will see the live stream. Other collaborating clients (if there are any - today's chat UIs don't usually allow this) won't – they'll only see the response once committed to db.
+
+-  I've used Firebase Realtime Database in the past for a chat-like streaming app, but I'm been keeping an eye on Zero. I love the idea of the text append feature to trim down on payload size.
 # discuss-author(aboodman)
 - ## 
 
@@ -277,7 +292,13 @@ modified: 2024-01-07T05:09:14.413Z
 
 - ## 
 
-- ## 
+- ## Why is preloading cheating? If it works, it works. The only way to go faster is to load data before user needs it.
+- https://x.com/aboodman/status/1902745871248429324
+  - Now I don't know enough about Next.js to know if this amount of preloading is really a scalable solution. 
+  - But sync engines are designed to do this efficiently.
+- nah I'm pro preloading, was just poking at the idea one could "pretend" to be fast – this is how everyone does it. local first diverges dramatically on the mutation story but for data fetching. it's just different degrees of "fetch before you need it"
+
+- With a sync engine, the client is a (partial) *replica*. With classic web architecture, the client is a *cache*. These are two different things and it's important to internalize the differences.
 
 - ## Replicache is closer to a db than you’d think. 
 - https://twitter.com/aboodman/status/1743829055827546152

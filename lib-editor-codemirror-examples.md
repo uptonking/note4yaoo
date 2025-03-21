@@ -1468,9 +1468,10 @@ modified: 2023-06-23T12:46:53.288Z
   - LSP-AI can work as an alternative to Github Copilot.
   - The goal of LSP-AI is to assist and empower software engineers by integrating with the tools they already know and love not replace software engineers.
 
-- https://github.com/craftzdog/react-codemirror-runmode /MIT/202405/ts
+- https://github.com/craftzdog/react-codemirror-runmode /MIT/202503/ts
   - Syntax highlighting for react, utilizing CodeMirror's parser
-  - Syntax highlighter for React, using CodeMirror 6. It automatically loads the language metadata and dynamically loads language parser modules based on the specified language.
+  - Syntax highlighter for React, using CodeMirror 6. 
+  - It automatically loads the language metadata and dynamically loads language parser modules based on the specified language.
 
 ## utils-lang
 

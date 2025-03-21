@@ -44,6 +44,15 @@ modified: 2021-03-10T11:38:16.053Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## this website hides a world that wakes up with every cursor move.. pure magic
+- https://x.com/Aurelien_Gz/status/1902480383884550384
+
 - ## 卡片手风琴效果
 - https://x.com/brotzky_/status/1894428493993193533
 

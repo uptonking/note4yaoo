@@ -12,6 +12,16 @@ modified: 2022-11-21T15:27:20.974Z
 # examples-loading/progress
 - ## 
 
+- ## 
+
+- ## A mix of clip path and CSS transitions
+- https://x.com/emilkowalski_/status/1901689149154869746
+  - here's a path animation variant
+
+- ## Animated hero
+- https://x.com/lostdoesart/status/1902386317889098066
+  - 流程图的连线会显示流动动画
+
 - ## animate an element along the border of another and mask it 
 - https://x.com/jh3yy/status/1894787364762812778
   - `@​keyframes trail { to { offset-distance: 100%; }}`

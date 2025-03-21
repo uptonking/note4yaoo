@@ -174,6 +174,11 @@ Don’t want/can’t have external dependencies?
 - https://x.com/idoubicc/status/1899666072107880839
   - mcprouter 网关，暴露统一的 http 接口给到上游调用，转发请求到 omcp 启动的下游服务，通过 apikey 鉴权，计费，类似 openrouter。
 
+- https://x.com/idoubicc/status/1901531705678405844
+  - 用 go 实现了一个 mcprouter 服务，代理了几个MCP Servers，可以在线调试，也能添加到其他 MCP 客户端使用。
+  - mcp 一天一个样，得一段时间跟着跑
+  - https://github.com/chatmcp/mcprouter
+
 - https://x.com/idoubicc/status/1900469666402976234
   - MCP Server 使用 SSE Transport 实现消息传输，用的是双通道响应机制。
   - 按照这个交互流程可以实现一个 MCP Server Proxy, 对上游暴露 HTTP 接口，下游调用任意的后台服务

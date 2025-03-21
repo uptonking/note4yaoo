@@ -32,7 +32,12 @@ modified: 2024-02-12T03:23:17.007Z
 # discuss-news
 - ## 
 
-- ## 
+- ## We shared our initial design objectives for PowerSync about a year ago at @postgresconf USA — they remain true
+- https://x.com/powersync_/status/1903062553732977137
+  - treat postgres as sacrosanct(神圣不可侵犯的，不可更改的)
+  - dynamic partial replication
+  - low maintenance
+  - strong consistency
 
 - ## The latest version of our JS Web SDK introduces an OPFS-based virtual filesystems for the SQLite database, with initial implementations of OPFSCoopSyncVFS and AccessHandlePoolVFS. _202501
 - https://x.com/powersync_/status/1884591544461935090

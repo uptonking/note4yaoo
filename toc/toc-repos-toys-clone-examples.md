@@ -56,6 +56,9 @@ modified: 2024-02-27T10:42:48.580Z
   - 依赖material-ui、redux4、styled-components、tailwindcss、rich-markdown-editor
   - 基本可用，且实现了列表组件和看板组件，但编辑器基本未修改
 
+- https://github.com/ln-dev7/circle
+  - Teams and Members page w/ shadcn-ui and linear's design
+
 - https://github.com/tiffanyw-hu/ReadBooks
   - https://readbooksapp.herokuapp.com/
   - 依赖react16.3、redux3，依赖很少

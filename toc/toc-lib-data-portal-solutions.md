@@ -98,6 +98,23 @@ modified: 2021-01-01T16:02:50.598Z
 
 - https://github.com/Inist-CNRS/lodex /js
   - Lodex is a tool to enable publishing a set of data csv, tsv, xml, json, ... in semantic web formats JSON-LD, N-Quads, ... and propose to manipulate them in a backoffice.
+# data-ai
+- https://github.com/Oxen-AI/oxen-release /apache2/202502/python/rust
+  - https://oxen.ai/
+  - fast data version control system for structured and unstructured machine learning datasets. 
+  - We aim to make versioning datasets as easy as versioning code.
+  - The interface mirrors git, but shines in many areas that git or git-lfs fall short. Oxen is built from the ground up for data, and is optimized to handle large datasets, and large files.
+    - oxen clone https://hub.oxen.ai/ox/CatDogBBox
+  - Oxen is comprised of a command line interface, as well as bindings for Rust 🦀, Python 🐍, and HTTP interfaces to make it easy to integrate into your workflow.
+  - This repository contains the Python library that wraps the core Rust codebase. 
+  - Oxen is designed to efficiently manage large datasets, including those with large individual files, for example CSV files with millions of rows. 
+    - It also handles datasets comprising millions of individual files and directories such as the complete collection of ImageNet images.
+  - Collaborate with your team (sync to an oxen-server)
+  - Solutions like `git-lfs` are too slow when it comes to the scale of data we need for machine learning.
+  - https://github.com/Oxen-AI/Oxen /apache2/202503/rust
+    - Oxen.ai's core rust library, server, and CLI
+    - Oxen at it's core is a data version control library, written in Rust.
+    - Oxen Server: Remote repositories have the same internal structure as local ones, with the caviate that all the data is in the .oxen dir and not duplicated into a "local workspace".
 # metadata
 - https://github.com/GuinsooLab/darkseal
   - A Single place to Discover, Collaborate, and Get your data right

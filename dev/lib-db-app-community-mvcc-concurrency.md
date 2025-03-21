@@ -129,7 +129,21 @@ modified: 2023-11-01T10:15:06.245Z
 
 - ## 
 
-- ## 
+- ## 🔀 supabase: CRDTs inside Postgres have been achieved internally
+- https://x.com/kiwicopple/status/1902378691142763005
+  - merging happens on the db (in memory)
+  - casting between JSON/CRDT
+  - scalar types and text docs supported
+  - scalar types and text docs supported
+  - this uses automerge libs
+  - we will also do one for yjs eventually so users can choose
+  - via a pg extension
+
+- So you just send data to postgres & it solves conficts there? No need to solve conflicts on client anymore?
+  - Yeah, for any “crdt” columns
+
+- How does this fit into powersynch capabilities ?
+  - it should "just work" with most sync engines that use the WAL tracking changes
 
 - ## Amazon MemoryDB multi-region is now generally available. 
 - https://x.com/MarcJBrooker/status/1877532954940915821
@@ -144,7 +158,18 @@ modified: 2023-11-01T10:15:06.245Z
 
 - ## 
 
-- ## 
+- ## Race conditions love concurrency—Kafka doesn’t let them win.
+- https://x.com/RaulJuncoV/status/1903058576194630028
+  - The Single Writer Pattern, but for distributed systems.
+  - Anyone who’s worked with real-time data knows how painful it is when events arrive out of order. One misstep and your system state is toast. 
+
+- The Single Writer pattern makes sure that only one entity writes or processes data at a time to avoid conflicts and maintain consistency. 
+  - Kafka applies this concept at the partition level, and only one consumer processes each partition at a time. No clashes. No confusion. Just clean, ordered processing.
+- Kafka splits topics into partitions. 
+  - Each partition is assigned to only one consumer at a time. 
+  - One consumer processes all messages from a partition in order, which keeps the sequence right and avoids race conditions.
+
+- Event ordering isn’t just a nice-to-have; it’s foundational for correctness in distributed systems.
 
 - ## 🌵 Are there databases which let you continue the execution of a transaction on connection failures or machine restarts? 
 - https://x.com/iavins/status/1801450141993628092

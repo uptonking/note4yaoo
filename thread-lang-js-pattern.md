@@ -14,7 +14,12 @@ modified: 2023-11-10T08:05:12.852Z
 
 - ## 
 
-- ## 
+- ## 💡 In TypeScript, there are at least 4 ways to implement immutability.
+- https://x.com/housecor/status/1902378789859885550
+- how would you choose between the typescript versions? Mainly when to use `as const` vs `readonly/ReadOnly` .
+  - readonly is the only granular option. 
+  - Otherwise I generally prefer “as const”
+- Only in JavaScript, we declare something as const but then add an `as const` at the end of it to say, please remain immutable.
 
 - ## [The handleEvent() method is the absolute best way to handle events in Web Components | Go Make Things](https://gomakethings.com/the-handleevent-method-is-the-absolute-best-way-to-handle-events-in-web-components/)
 - https://x.com/WebReflection/status/1866817584039071759

@@ -58,7 +58,12 @@ modified: 2023-12-01T09:08:18.316Z
 
 - ## 
 
-- ## 
+- ## 我没服务器，我的 blog 存哪里比较好 
+- https://x.com/ayingott319/status/1902729976895656334
+- neon/vercel/cloudfare/GitHub
+
+- 静态博客：cloudflare pages
+  - 动态博客：去看看 vps 圈子有哪些好商家
 
 - ## Exposing database tables directly to client code strikes again. It’s the bad design pattern that never quits.
 - https://x.com/jamesacowling/status/1895970943631327460

@@ -63,7 +63,9 @@ modified: 2024-08-24T16:52:53.996Z
 
 - ## 
 
-- ## 
+- ## Problem: I want to see a list of the settings I've changed in VS Code.
+- https://x.com/housecor/status/1903120001160053231
+  - Solution: Search for ` @modified ` .
 
 - ## [How do I show reference count in Visual Studio Code? - Stack Overflow](https://stackoverflow.com/questions/45490475/how-do-i-show-reference-count-in-visual-studio-code)
 - This feature is called CodeLens. search settings for codeLens

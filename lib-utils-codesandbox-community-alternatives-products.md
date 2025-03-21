@@ -14,7 +14,12 @@ modified: 2024-06-30T03:34:13.014Z
 
 - ## 
 
-- ## 
+- ## By popular request, http://TanStack.com examples now default to a newly designed in-house file explorer and code preview panel _202503
+- https://x.com/KevinVanCott/status/1903165939345916192
+  - You can continue to access the sandbox mode, too!
+
+- in-house file explorer, How does this work? Is there a PR link?
+  - yeah, we're just fetching the files from a github api, then I made a custom file tree in react/tailwind. Surprisingly easy.
 # discuss
 - ## 
 

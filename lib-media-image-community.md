@@ -48,6 +48,17 @@ modified: 2024-09-16T11:11:14.989Z
 # discuss-screenshot-dom
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Built this animation entirely in Remotion
+- https://x.com/JNYBGR/status/1902632839239074217
+  - 源码显示在三维表面的效果
+- Do you have HDR support? Specifically rec2020/bt2084?
+  - Not to a satisfactory degree. We rely on Chrome screenshots that are only available in sRGB. 
+  - We do however tonemap HDR videos so they look okay in sRGB. You can also export videos in BT.2020, but to be honest you should probably not use this option
+
 - ## 💡🤔 TIL you can turn HTML elements into screenshots in JavaScript with modern-screenshot
 - https://x.com/aidenybai/status/1883934244390724026
 - idk if you’ve ever looked at the source of one of these, but it is a master class in obscure web hacks. IIRC most of them work by embedding the html in an svg foreign object and inlining stuff like fonts where possible. there are a lot of foot guns that can cause them to break (by tainting the canvas). still incredible none the less

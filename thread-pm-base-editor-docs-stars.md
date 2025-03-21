@@ -12,6 +12,10 @@ modified: 2021-08-22T07:29:34.045Z
 # discuss-editor-ai 👾
 - ## 
 
+- ## 
+
+- ## 
+
 - ## 使用 Cursor 之类的代码编辑器写博客的Markdown非常尬，每打一个字都有自动补全，严重影响思路和观感，
 - https://x.com/vikingmute/status/1896110973280559112
   - 自动补全的内容行文和小学生作文一样，那么问一下各位推友，有没有类似 Cursor 的编辑器但是是针对写文章的工具？
@@ -56,6 +60,10 @@ modified: 2021-08-22T07:29:34.045Z
 - ## 
 
 - ## 
+
+- ## I am so happy to introduce you to Not Real - a design-driven creative studio focused on art direction, CGI, and animation
+- https://x.com/alex_barashkov/status/1902745611125842058
+  - The studio is a well known for their work on many Microsoft promo videos
 
 - ## Attempting to replace folders with tags is a rite of passage for info-structure designers.
 - https://x.com/msimoni/status/1893260097976975587

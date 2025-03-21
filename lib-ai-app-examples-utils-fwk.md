@@ -75,4 +75,9 @@ modified: 2025-02-21T18:20:42.624Z
 - https://github.com/lymanzhao/Ollama-serve /202503/python
   - 一个 Ollama转发代理，用于为原生 Ollama 服务添加 API 密钥认证功能。
   - 该项目解决了 Ollama 官方不提供 API 密钥验证的问题，使您可以更安全地部署 Ollama 服务并防止未授权访问
+# ai-machines
+- https://github.com/exo-explore/exo /GPL
+  - exo: Run your own AI cluster at home with everyday devices
+  - exo supports different models including LLaMA (MLX and tinygrad), Mistral, LlaVA, Qwen, and Deepseek.
+  - 该项目支持将现有设备统一到一个功能强大的GPU中，支持 iPhone，iPad，Android，Mac，Nvidia，树莓派等等几乎所有设备。
 # more

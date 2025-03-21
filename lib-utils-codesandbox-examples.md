@@ -224,6 +224,16 @@ modified: 2023-09-02T09:17:22.992Z
   - Firecracker has a minimalist design. It excludes unnecessary devices and guest-facing functionality to reduce the memory footprint and attack surface area of each microVM.
   - Firecracker was developed at Amazon Web Services to accelerate the speed and efficiency of services like AWS Lambda and AWS Fargate. 
 
+- https://github.com/oomol-lab/ovm-core
+  - The minimal virtual machine to run podman.
+  - Linux kernel: v6.1.50
+  - Buildroot: 2023.11.1
+  - https://github.com/oomol-lab/ovm
+    - Run ovm-core virtual machine on Apple Virtualization Framework
+  - https://x.com/realxxnuo/status/1902215577483239875
+    - 发现了一个底层开源的 Manus for Code，使用 VSCode 做 IDE + 本地运行的 Podman 虚拟机，支持 GPU 加速、社区共享工作流
+    - OOMOL Studio: https://oomol.com
+
 - https://github.com/Exact-Realty/lot /ISC/202405/ts
   - Sandbox for isolating ECMAScript code
   - Our sandbox supports multiple runtimes and allows for bidirectional communication, ensuring you have the flexibility and security to run your code in various environments.

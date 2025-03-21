@@ -115,6 +115,17 @@ git log --online --graph --decorate
 # disccuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 如果经常在终端上操作 Git 可以安装这款实用的命令行工具：git-who。
+- https://x.com/GitHub_Daily/status/1902918146782269478
+  - 与 git blame 只能告诉你某行代码的作者不同，它能够解答 “谁写的这段代码？”，可以展示整个组件或子系统的责任人，而非针对单个文件。
+  - 执行命令可查看项目主要贡献者、最后编辑时间、修改行数、提交次数等等信息，并且还可进行排序。
+
 - ## 🆚 [How to retrieve a single file from a specific revision in Git? - Stack Overflow](https://stackoverflow.com/questions/610208/how-to-retrieve-a-single-file-from-a-specific-revision-in-git)
 
 ```sh

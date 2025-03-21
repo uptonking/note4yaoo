@@ -189,7 +189,9 @@ modified: 2022-11-29T20:41:25.566Z
 # discuss-external-sync
 - ## 
 
-- ## 
+- ## Ethersync lets multiple people write code together remotely.
+- https://x.com/sitnikcode/status/1903055041075777619
+  - Unlike solutions in VS Code and similar tools, it’s just a simple command-line script that works with any editor (and even with console tools that modify text, like Prettier).
 
 - ## [Joplin/Obsidian笔记软件同步问题：如何在不能装网盘客户端的电脑上同步？ - 知乎](https://www.zhihu.com/question/471377032)
 - 方案一： 官网Sync服务

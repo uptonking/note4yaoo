@@ -512,14 +512,23 @@ modified: 2024-08-24T16:28:20.515Z
   - Charity, CTO of Honeycomb has strong views (which we enjoy a lot): https://charity.wtf/tag/observability-2-0/ - they come at it from a tracing/OT angle which is Honeycomb's forte, but we agree a lot on the intended outcomes - actionable (not spammy/noisy) + make it easy to gather the variable/state context in the context of a single event.
 
 - OneUptime.com already does it with the copilot feature. It also fixes exceptions, add structured logs, optimizes functions / spans that take a long time to complete and integrates with OpenTelemetry natively. It's also 100% open-source.
-# discuss-devin-like
+# discuss-pm-ai-devops
 - ## 
 
 - ## 
 
 - ## 
 
-- ## 
+- ## cursor 有没有可能让我在等待AI生成的时候，强制看广告，让我来赚钱token？
+- https://x.com/yihui_indie/status/1902958928142667805
+  - 1. 付费会员免广告 
+  - 2. 普通用户看广告
+- 看 60 秒广告可以免费使用 thinking 一次, 需要看 10 个广告集齐 sonnet max 才能抽卡一次 SSR 代码。
+- 广告就太 low 了，等待时间可能会让你做图片识别来训练AI用，以换取 token
+
+- 广告就太 low 了，等待时间可能会让你做图片识别来训练AI用，以换取 token
+
+- 首行代码免广告，每一个人通过你的邀请码加入，你每次看广告时间缩短0.01秒
 # discuss
 - ##
 

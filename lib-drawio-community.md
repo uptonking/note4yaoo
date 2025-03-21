@@ -18,7 +18,13 @@ modified: 2024-04-12T11:59:11.017Z
 
 - ## 
 
-- ## 
+- ## http://draw.io 是最适合由Sonnet 生成的流程图、架构图格式。 比svg增加了可编辑，比mermaid、plantuml 漂亮。
+- https://x.com/9hills/status/1901933558790488255
+- 我还试了 excalidraw 和 tldraw，确实是 http://draw.io 画的稳定，但不够有创意，我还没找到有什么关键词能让其画的好看
+  - 目前是靠人，http://draw.io 可以自由编辑。
+- 比 mermaid 漂亮是的，但是语义对人类太不友好了，也不像 mermaid 可以直接在 github readme 渲染
+
+- 是让sonnet直接调用drawio的mcp tool？
 
 - ## [Draw.io: Open Source Online Diagramming | Hacker News _202308](https://news.ycombinator.com/item?id=37137448)
 - > draw.io is not open source software. The complete source code required to build the app from scratch is not available. The Apache license allows you to deploy the project and make changes to the source code that is available on the site.

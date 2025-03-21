@@ -126,6 +126,35 @@ modified: 2024-05-22T11:24:07.511Z
 - Ext4. I tried f2fs recently and grub has some nasty bugs with it. Braking the efi quite often.
 - I’m using xubuntu and zfs is shipped with grub snapshot support you don’t need to do anything. I think its better than btrfs and easier.
 
+# discuss-fs-on-db
+- ## 
+
+- ## 
+
+- ## 最近搞了个有趣的玩法，用JuiceFS把PG当成文件系统用，可以实现FS/DB一致的时间点恢复。
+- https://x.com/RonVonng/status/1902943946051104890
+  - 像Odoo这样的应用就能把所有状态都放在数据库里，而不是在外面还留个文件系统的“小尾巴” 了。
+- PG 撑得住？不会越来越臃肿吗？而且所有的文件都走PG的话，文件系统撑得住？
+
+# discuss-file-sync/transfer
+- ## 
+
+- ## 
+
+- ## 需要记笔记做沉淀，也没法远程连自己的电脑（有监控软件），有没有好的解决方法？只能自带电脑了吗
+- https://x.com/using_YueCheng/status/1902534987758628995
+- 将本地文档转为二维码，然后扫码传输
+  - https://github.com/qifi-dev/qrs
+  - https://github.com/ganlvtech/qrcode-file-transfer
+
+- 微信输入法，剪切板功能跨设备同步。多找找能跨设备同步的，挺多的。问就是下次注意
+  - 走云端都危险啊。还是线下物理同步比较好，之前有位大佬还通过主机的音频接口传输的数据
+
+- 在上一个工作经历里我是用手写来解决问题的。。。买个pad或者大号电子纸之类的东西
+
+- 用localsend直接发到自己的电脑上，最好回家这么干，避免用公司的网
+
+- 写完拍照回去ocr
 # discuss
 - ## 
 

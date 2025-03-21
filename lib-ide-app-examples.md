@@ -110,6 +110,8 @@ modified: 2024-08-24T16:30:20.218Z
 - products
   - https://x.com/0xrandomlabs
     - https://www.ycombinator.com/launches/Lnp-random-labs-an-open-source-agent-that-deeply-understands-you
+# ai-devops
+
 # coding-ai
 - https://github.com/cline/cline /24.5kStar/apache2/202501/ts
   - Meet Cline, an AI assistant that can use your CLI aNd Editor.

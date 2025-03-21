@@ -73,7 +73,10 @@ modified: 2021-04-24T08:29:02.272Z
 
 - ## 
 
-- ## 
+- ## Mark my word - @tan_stack /start  is going to be acquired by @Netlify , he is optimizing it for Netlify and not @Cloudflare worker/page for a reason.
+- https://x.com/itspuru/status/1902620517581893852
+- TanStack is not for sale, nor is it optimized for any deployment destination over another (this would currently mean Nitro is biased, which it's not) and it never will be.
+- Netlify has cut its open-source involvement pretty heavily - Netlify CMS, Gatsby, and Netlify Identity are all dead.
 
 - ## 一个经典问题：做 ssr ， js 在服务端怎么判断移动设备
 - https://x.com/YuTengjing/status/1896031013396234611

@@ -120,6 +120,9 @@ modified: 2023-11-28T14:48:45.910Z
 # business-apps
 - 知识库的市场
   - 客服系统自动回复，并显示相关历史
+
+- naming
+  - mandroid (from android+manus)
 # features
 - inspirations
   - 高频需求，网盘分享

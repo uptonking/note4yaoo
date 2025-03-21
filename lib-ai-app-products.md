@@ -11,6 +11,13 @@ modified: 2024-12-07T09:51:14.779Z
 
 # ai-dev-xp
 
+## mcp
+
+- browser-use
+- computer-use
+
+- drawio-use
+
 ## lowcode
 
 ## designing

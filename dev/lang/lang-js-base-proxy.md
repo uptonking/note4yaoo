@@ -18,6 +18,24 @@ modified: 2022-11-23T17:49:54.052Z
 
 # more
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## If you are having JavaScript performance problems and you are currently using Proxy objects for anything, try not using Proxy objects for anything.
+- https://x.com/awesomekling/status/1902758984768987334
+
+- Proxy is the Svelte's core
+
+- i like valtio for its convenience but it’s slow. stupid proxy objects
+  - The convenience/performance tradeoff is totally fine for reasonable object counts. Goes off the rails quickly when you start scaling up though
+
+- Try Ladybird with Salesforce and their Lightning Web Components (LWC) framework. They use JS proxies for everything.
+
+- For the cases that need proxies I wonder if anyone has tried not using the proxy directly, instead using them for a prototype which uses `Object.defineProperty` on the instance when values get set or accessed, theoretically then only new props get proxy overhead.
+
+- proxy still cheaper than unnecessary rerender.
 # discuss
 - ## 
 

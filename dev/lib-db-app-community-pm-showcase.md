@@ -22,6 +22,12 @@ modified: 2024-08-11T07:20:47.398Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
 - ## Wanna work on/around databases? Here's ~216 database companies Alex Miller curated for you.
 - https://x.com/eatonphil/status/1824505089303720119
   - this is a conservative list. This does not include companies with major database divisions like DataDog, Apple, Microsoft, Meta, Google, Bloomberg, etc. etc. etc.

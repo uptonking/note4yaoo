@@ -79,7 +79,23 @@ modified: 2020-12-12T19:22:00.735Z
 
 - ## 
 
-- ## 
+- ## 💡 Today I learned that prefetch for ` <Link />` is defaulted to false when using the App-router. But true when using the Page-router.
+- https://x.com/emilwidlund/status/1902632753587274017
+  - A small correction - default is set to null, not false.
+  - prefetch does not default to true when left omitted.
+  - Pass `prefetch={true}` to your `<Link />`
+
+- not true, it is null by default and depends on whether a route is static or dynamic
+  - for static routes it prefetches the page + data by default
+  - for dynamic routes it prefetches a portion of the page + the first loading.js file
+
+- Prefetch is set to null by default - meaning it will prefetch static routes on load and on mouse hover event. It is not set to true. 
+  - N. B: if you care about vercel not bankrupting you, probably set it to false kn production cuz those edge requests can add up quickly
+
+- Using `prefetch = true` by default gave us immense issues
+  - we had a `<Link />` on each row of a data table, which was causing our db to have cpu overload if you tried to navigate anywhere within 10 seconds of visiting the data table route
+
+- In app-router, you can use Partial Pre Reendering (PPR), "use-cache" directive by enabling Dynamic IO, and use @tan_satck to manage the data fetching, you can do realtime data fetching. Done, instant page navigation, and realtime data fetching.
 
 - ## 哭了啊，升级 nextjs13 到 14 的时候，一直碰到个编译错误，花了 2 个多小时，最后发现解决方法是 rm -rf node_modules && rm -rf ./yarn.lock && yarn install。
 - https://x.com/YuTengjing/status/1791870826029240743

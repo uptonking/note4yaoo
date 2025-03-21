@@ -18,7 +18,19 @@ modified: 2023-11-12T16:48:11.308Z
 
 - ## 
 
-- ## 
+- ## 🤔 Two years ago I wrote about how a few major source-available databases execute expressions.
+- https://x.com/eatonphil/status/1903083042408747445
+  - Many (most?) of them still operate as AST-walking interpreters! 
+  - Some compile to virtual machine instructions they then interpret. 
+  - Few JIT. 
+  - Or is it bespoke? (Bespoke jits pretty much always give you better performance and solve the dependency problem of linking llvm. They also have lower latency than llvm for producing code, so you can use the JIT more often.)
+  - [How do databases execute expressions? | notes.eatonphil.com _202309](https://notes.eatonphil.com/2023-09-21-how-do-databases-execute-expressions.html)
+- When folks do JIT, what’s the strategy? Is it link against LLVM or some other library that provides a compiler? Or is it bespoke?
+  - I think clickhouse and postgres both link against llvm yeah
+  - I think it's still early days for JIT in both.
+
+- We had prototypes over the years using Truffle to JIT. Problem is there are no dynamic loops to optimize so interpreter dispatch is not too important to get rid of. If you JIT the entire operator that is a different game but much harder to pull off as they are precisely tuned.
+  - If you include bigger js functions with loops in the query. Jitting is important. We are already doing that with oracle mle and MySQL mle.
 
 - ## [A Fast Excel Formula Parser and Evaluator | Hacker News _202205](https://news.ycombinator.com/item?id=31365777)
 - I’m surprised that Excel formulas have such poor coverage in text editors like NP++ or VSCode. Developing horribly convoluted formulas with nested IF statements in the formula bar is painful, and the PowerQuery editor doesn’t even have syntax highlighting.

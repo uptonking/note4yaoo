@@ -72,7 +72,13 @@ modified: 2021-09-20T18:38:00.319Z
 
 - ## 
 
-- ## 
+- ## 🆚️ REST APIs are outdated. GraphQL is overrated. Just send JSON over WebSockets and be done with it
+- https://x.com/_trish_07/status/1901695896745914395
+- Real devs just send raw binary over UDP and pray it reaches
+
+- I’m guessing you don’t waste time with databases either, just flat file your data and when a user needs something push it over the web socket
+
+- The real solution is managing events on a pub/sub broker. You can still use JSON for the payload.
 
 - ## 🪧 REST API Cheatsheet
 - https://twitter.com/sahnlam/status/1768159055229723063

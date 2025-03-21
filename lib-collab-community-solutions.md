@@ -39,6 +39,14 @@ modified: 2024-01-28T09:05:12.586Z
 - How about we make the realtime part more pervasive? Change the industry instead of changing the messaging Even the most basic CRUD app could have improved UX with realtime, hard to implement right now even with something like PartyKit though
   - The framework needs to provide absurdly easy-to-use and reason about primitives. Makes me think of Meteor, which did this very thing with minimongo and op-log tailing.
 
+# discuss-remote-control
+- ## 
+
+- ## 
+
+- ## Cloudflare now provides clientless, browser-based support for the Remote Desktop Protocol (RDP)
+- https://x.com/Cloudflare/status/1903076650952335699
+
 # discuss
 - ## 
 

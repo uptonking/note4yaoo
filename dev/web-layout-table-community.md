@@ -14,7 +14,22 @@ modified: 2023-12-26T10:47:51.891Z
 
 - ## 
 
-- ## 
+- ## stick the first row using `<thead>` so you don't lose context, and give it a `margin-bottom` so you don't lose the last row on scroll
+- https://x.com/jh3yy/status/1902855264086245830
+
+```CSS
+thead {
+  position: sticky;
+  top: var(--header-height);
+  margin-bottom: 1lh;
+  /* or whatever row height */
+}
+```
+
+- that margin bottom trick is slick
+  - alternative "hack" is to absolutely position the last row with top: 100%
+
+- What if my rows is not fixed height? 
 # discuss
 - ## 
 
