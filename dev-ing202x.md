@@ -45,3 +45,10 @@ modified: 2023-02-26T15:30:04.261Z
   - plate
 # maybe
 - 参考atlaskit-editor实现collab，服务端未开源，但yjs提供了示例，支持切换docs
+# showmebug
+- vercel
+
+```shell
+iuser：develop@dao42.com
+ipaas：d***2C****AI
+```

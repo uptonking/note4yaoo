@@ -28,7 +28,9 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
-## 
+## ❓ error: followingFocusComponent call timeout (7s)
+
+- 20250318左右今天碰到超时问题，导致agent无法执行action
 
 ## 当浏览器标签页处于后台且未挂起时，websocket的hearbeat心跳事件有时会自动停止发送
 
@@ -60,6 +62,13 @@ modified: 2023-06-14T00:53:15.226Z
 # issues-sketch/figma
 
 ## 
+
+## 
+
+## 有时列表前的多个icon显示的大小不同
+
+- 设置 flex-shrink-0
+  - 没必要单独设置奇怪的width/height/font-size
 
 ## figma渲染和浏览器渲染的区别
 

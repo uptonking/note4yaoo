@@ -266,11 +266,19 @@ modified: 2023-02-26T18:25:01.328Z
   - https://github.com/xiaoluoboding/tailwind-pre-processor/blob/master/assets/styles/sass/config.scss
   - https://tailwind-pre-processor.vercel.app/
   - An implementation of tailwindcss using less/stylus/Sass/SCSS.
+  - Build on top of Vite
+
+- https://github.com/rahmanda/tailwindscss /201905/inactive
+  - SCSS version of Tailwind CSS for people who don't use modern module bundler.
 
 - https://github.com/fractaledmind/sasswind /201803/scss/inactive
   - A SASS port of the Tailwind CSS utility framework
 
-- https://github.com/zvizvi/freewindcss /scss
+- https://github.com/siketyan/tailwind-sass /MIT/202003/js
+  - Tailwind CSS for Sass.
+  - `@import '~tailwind-sass';`
+
+- https://github.com/zvizvi/freewindcss /202305/scss/inactive/单文件
   - https://codesandbox.io/s/freewindcss-pfq17e
   - Use Tailwind's set values and units in pure CSS variables
 
@@ -320,9 +328,6 @@ modified: 2023-02-26T18:25:01.328Z
 
 - https://github.com/swkeever/tailwind-scss /202110/js/inactive
   - Compiles Tailwind CSS default configuration into SASS variables.
-
-- https://github.com/rahmanda/tailwindscss /201905/inactive
-  - SCSS version of Tailwind CSS for people who don't use modern module bundler.
 # tailwind-anime
 - https://github.com/romboHQ/tailwindcss-motion /MIT/202502/ts
   - https://rombo.co/tailwind/

@@ -292,7 +292,7 @@ console.trace(';; loadFile', path, loadType);
 ```
 
 ```
-^(?!42\["resourceM).*
+^(?!42\["resourceM).* 
 
 update package @dao42/clacky-paas-front to next patch version, and add one-line changelog in changelog.md
 update package @dao42/clacky-paas-front to next patch version, and run pnpm install

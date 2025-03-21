@@ -432,7 +432,7 @@ modified: 2023-06-23T12:46:53.288Z
   - Agit CMS is a simple web frontend interface that utilizes filesystem to manage markdown/media contents. 
   - 依赖codemirror6、mui5、remark-gfm、remark-parse、xterm
   - Built for markdown-based static site generators, like Hugo and Jekyll.
-  - vertical split style markdown editor 左右分屏
+  - vertical split style markdown editor, 左右分屏
   - reads from and writes to your filesystem
 
 - https://gitlab.com/emergence-engineering/prosemirror-codemirror-block /202310/ts
