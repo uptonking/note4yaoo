@@ -43,7 +43,7 @@ modified: 2021-01-04T17:26:43.784Z
 - https://github.com/unjs/unpdf /ts
   - Utilities to work with PDFs in Node.js, browser and workers
   - unpdf ships with a serverless build/redistribution of Mozilla's PDF.js for serverless environments. 
-  - This library is also intended as a modern alternative to the unmaintained but still popular pdf-parse.
+  - This library is also intended as a modern alternative to the unmaintained but still popular `pdf-parse`.
 
 - https://github.com/diegomura/react-pdf /MIT/202503/ts
   - React renderer for creating PDF files on the browser and server
@@ -57,10 +57,38 @@ modified: 2021-01-04T17:26:43.784Z
   - Display PDFs in your React app as easily as if they were images.
   - For React-PDF to work,  `PDF.js` worker needs to be provided.
 
+- https://github.com/pdfslick/pdfslick /MIT/202503/ts
+  - https://pdfslick.dev/
+  - PDFSlick is a library that enables viewing of and interaction with PDF documents in React, SolidJS, Svelte and JavaScript apps. 
+  - It's build on top of Mozilla's `PDF.js`, and utilises `Zustand` to provide a reactive store for the loaded documents.
+  - @pdfslick/core package wraps PDF.js's functionality and links it to the store.
+    - you can learn more about using PDFSlick's @pdfslick/core package with Vanilla JS apps and with libraries other than React and SolidJS
+
 - https://github.com/react-pdf-viewer/react-pdf-viewer /paid/202408/ts
   - https://react-pdf-viewer.dev/
   - React component to view a PDF document
   - https://github.com/react-pdf-viewer/starter /js/electron
+  - [WARNING: Project no longer maintained - Do not use in virtual solutions _202406](https://github.com/react-pdf-viewer/react-pdf-viewer/issues/1768)
+
+- https://github.com/anaralabs/lector /MIT/202503/ts
+  - https://lector-weld.vercel.app/
+  - A composable, headless PDF viewer toolkit for React applications, powered by PDF.js
+  - Page thumbnails and outline navigation
+  - Text selection and search functionality
+  - Responsive and mobile-friendly
+  - Form filling support
+  - Internal and external link handling
+
+- https://github.com/OnedocLabs/pdfreader /MIT/202411/ts
+  - https://pdfreader.fileforge.com/
+  - Easy Radix-Style PDF Viewer for React.
+
+- https://github.com/jkgenser/react-pdf-headless /MIT/202412/ts
+  - react-pdf-headless is a React component for efficiently rendering and navigating PDF documents.
+  - It leverages virtualization to handle large documents smoothly and provides APIs for client-side interactions such as jumping to specific pages or highlighted areas.
+  - [Don't use this package, and a good mostly FREE alternative · Issue · react-pdf-viewer/react-pdf-viewer](https://github.com/react-pdf-viewer/react-pdf-viewer/issues/1858)
+    - I re-wrote it from scratch on top of wojtekmaj/react-pdf and tanstack.com/virtual
+    - My use case involves lazily rendering large PDFs, scrubbing to particular pages or offsets within a page, showing bounding boxes or highlights overlaid on the pages and more!
 
 - https://github.com/pdfme/pdfme /MIT/202503/ts
   - https://pdfme.com/
@@ -329,9 +357,6 @@ modified: 2021-01-04T17:26:43.784Z
 
 - https://github.com/USEPA/pdf-data-extraction /js
   - The purpose of this project is to further the research and development of tools that NCEA can use in their creation of machine-readable datasets and machine learning research. 
-
-- https://github.com/FanQinFred/OCRmyPDF-Desktop
-  - 在OCRmyPDF的基础上，集成了所需环境，并使用Electron开发了桌面端
 
 - https://github.com/Cimorexave/desktop-document-manager /js
   - a desktop ElectronJS app to extract and edit data and tables from pdf to other formats

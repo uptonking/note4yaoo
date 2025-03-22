@@ -62,6 +62,13 @@ modified: 2023-02-07T17:38:05.336Z
   - 前端依赖blueprintjs、nivo-chart、remirror、nextjs、swr
   - https://github.com/makeplane/plane-mobile /dart
 
+- https://github.com/hcengineering/platform /EPLv2/202503/ts/svelte/Huly
+  - https://huly.io/
+  - All-in-One Project Management Platform (alternative to Linear, Jira, Slack, Notion, Motion)
+  - a robust framework designed to accelerate the development of business applications, such as CRM systems. 
+  - This repository includes several applications, such as Chat, Project Management, CRM, HRM, and ATS. 
+  - Various teams are building products on top of the Platform, including Huly and TraceX.
+
 - https://github.com/JordanKnott/taskcafe /MIT/202209/go/ts/inactive
   - open source project management tool with Kanban boards
   - Manage tasks through a Kanban board interface (set due dates, labels, add checklists)
@@ -180,13 +187,6 @@ modified: 2023-02-07T17:38:05.336Z
 - https://github.com/opf/openproject /GPLv3/202402/ruby
   - https://www.openproject.org/
   - the leading open source project management software
-
-- https://github.com/hcengineering/platform /EPLv2/202404/ts/svelte/Huly
-  - https://huly.io/
-  - All-in-One Project Management Platform (alternative to Linear, Jira, Slack, Notion, Motion)
-  - a robust framework designed to accelerate the development of business applications, such as CRM systems. 
-  - This repository includes several applications, such as Chat, Project Management, CRM, HRM, and ATS. 
-  - Various teams are building products on top of the Platform, including Huly and TraceX.
 
 - https://github.com/marcelovicentegc/octosync /MIT/202105/ts/inactive
   - An open-source solution to keep Github and Jira issues synchronized. 
@@ -616,13 +616,16 @@ modified: 2023-02-07T17:38:05.336Z
   - a self-hostable web productivity suite. 
   - It's implemented as a security-hardened web app package manager.
 # scheduler-task
-- https://github.com/whyour/qinglong /apache2/202401/ts
+- https://github.com/whyour/qinglong /apache2/202503/ts
   - 支持 Python3、JavaScript、Shell、Typescript 的定时任务管理平台
-  - 依赖express、nedb、multer、sequelize、ip2region
+  - 依赖express、nedb、multer、sequelize、ip2region、umi、antd-pro
   - 支持多种脚本语言（python3、javaScript、shell、typescript）
   - 支持在线管理脚本、环境变量、配置文件
   - 支持在线查看任务日志
   - 支持手机端操作
+  - https://github.com/sunpu007/admin-server /MIT/202206/js/inactive
+    - 动态权限控制+任务调度系统
+    - 依赖egg2、egg-websocket-plugin、egg-websocket-plugin
 # meetings
 - https://github.com/suitenumerique/meet /MIT/202503/python/ts
   - https://visio.numerique.gouv.fr/
@@ -641,6 +644,15 @@ modified: 2023-02-07T17:38:05.336Z
   - Scalable, distributed WebRTC SFU (Selective Forwarding Unit)
   - Robust networking and connectivity, UDP/TCP/TURN
   - Easy to deploy: single binary, Docker or Kubernetes
+
+- https://github.com/jitsi/jitsi-meet /apache2/202503/ts
+  - https://jitsi.org/meet
+  - Secure, Simple and Scalable Video Conferences that you use as a standalone app or embed in your web application.
+  - Raise hand and reactions
+  - Chat with private conversations
+  - Virtual backgrounds
+  - We provide Debian packages and a comprehensive Docker setup to make deployments as simple as possible.
+  - 8x8 Jitsi as a Service (JaaS) is an enterprise-ready video meeting platform that allows developers, organizations and businesses to easily build and deploy video solutions.
 
 - https://github.com/rustdesk/rustdesk /AGPLv3/202401/rust/dart
   - https://rustdesk.com/

@@ -184,7 +184,7 @@ modified: 2021-04-30T20:14:17.669Z
 - viewer
   - [zettlr slides.md](https://zettlr.com/slides.revealjs.htm)
 
-- slidev /4.8kStar/MIT/202105/ts
+- slidev /4.8kStar/MIT/202105/ts/vue
   - https://github.com/slidevjs/slidev
   - https://sli.dev/
   - Presentation Slides for Developers

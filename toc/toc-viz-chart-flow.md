@@ -382,13 +382,6 @@ modified: 2020-10-22T10:22:55.878Z
   - a JavaScript library to visualise gridded data (or any tabular dataset with x/y position) in the browser in a large variety of advanced cartographic styles
   - a JavaScript library to visualise gridded data (or any tabular dataset with x/y position) in the browser in a large variety of advanced cartographic styles
 # flow-ai
-- https://github.com/FlowiseAI/Flowise /apache2/202406/ts
-  - https://flowiseai.com/
-  - https://docs.flowiseai.com/
-  - Drag & drop UI to build your customized LLM flow
-  - Open source low-code tool for developers to build customized LLM orchestration flow & AI agents
-  - 支持langchain的各种组件
-
 - https://github.com/Tiledesk/tiledesk-dashboard /MIT/202406/ts
   - https://www.tiledesk.com/
   - full-stack Open Source Live Chat with built-in Chatbots, written in Node.js and Angular.

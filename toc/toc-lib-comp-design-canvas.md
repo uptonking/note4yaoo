@@ -7,8 +7,11 @@ modified: 2021-05-19T13:54:12.338Z
 
 # toc-lib-comp-design-canvas
 
-# canvas-based-components
+# guide
 
+- tips
+  - 还可以复用主流业务组件的canvas渲染逻辑，如 echarts-zrender, Fabric, pixi, dropflow, LeaferJS
+# canvas-based-components
 - easy-canvas /544Star/MIT/202208/js/NoDeps
   - https://github.com/Gitjinfeiyang/easy-canvas
   - https://gitjinfeiyang.github.io/easy-canvas/example/ui.html

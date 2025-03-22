@@ -39,6 +39,13 @@ modified: 2023-02-08T10:25:14.173Z
   - https://chrome.google.com/webstore/detail/insomnia-rest-client/gmodihnfibbjdecbanmpmbmeffnmloel?hl=en-US
     - not updated
 
+- https://github.com/usebruno/bruno /MIT/202405/js/tauri
+  - https://www.usebruno.com/
+  - Opensource IDE For Exploring and Testing Api's (lightweight alternative to postman/insomnia)
+  - Bruno stores your collections directly in a folder on your filesystem. 
+  - We use a plain text markup language, Bru, to save information about API requests.
+  - 🧐 Bruno is offline-only. There are no plans to add cloud-sync to Bruno, ever. 
+
 - https://github.com/firecamp-dev/firecamp /AGPLv3/202403/ts
   - https://firecamp.dev/
   - Developer-first OpenSource API DevTool, Postman/Insomnia alternative.
@@ -48,13 +55,6 @@ modified: 2023-02-08T10:25:14.173Z
 - https://github.com/flawiddsouza/Restfox /MIT/202406/ts/vue
   - https://restfox.dev/
   - Offline-First Minimalistic HTTP & Socket Testing Client for the Web & Desktop
-
-- https://github.com/usebruno/bruno /MIT/202405/js/tauri
-  - https://www.usebruno.com/
-  - Opensource IDE For Exploring and Testing Api's (lightweight alternative to postman/insomnia)
-  - Bruno stores your collections directly in a folder on your filesystem. 
-  - We use a plain text markup language, Bru, to save information about API requests.
-  - 🧐 Bruno is offline-only. There are no plans to add cloud-sync to Bruno, ever. 
 
 - https://github.com/kubeshop/tracetest /go/ts
   - Generate end-to-end tests automatically from your traces. For QA, Dev, & Ops.

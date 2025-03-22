@@ -1,11 +1,11 @@
 ---
-title: toc-lib-ux-style-sketch-hand-drawn
-tags: [hand-drawn, sketch, toc, ux]
+title: toc-lib-ux-style-draw-whiteboard-sketch
+tags: [drawing, hand-drawn, sketch, toc, ux, whiteboard]
 created: 2020-08-09T09:04:58.352Z
-modified: 2021-01-13T19:30:59.508Z
+modified: 2025-03-22T18:23:37.602Z
 ---
 
-# toc-lib-ux-style-sketch-hand-drawn
+# toc-lib-ux-style-draw-whiteboard-sketch
 - search
   - paper, reading, reader, document
 
@@ -41,7 +41,7 @@ modified: 2021-01-13T19:30:59.508Z
   - https://github.com/DallasCarraher/compound
     - This fork of tldraw is focused on providing a free-for-commercial-use white boarding tool
 
-- excalidraw /15.3kStar/MIT/202101/ts
+- excalidraw /94.6kStar/MIT/202503/ts/canvas
   - https://github.com/excalidraw/excalidraw
   - https://excalidraw.com/
   - 基于canvas实现
@@ -54,6 +54,23 @@ modified: 2021-01-13T19:30:59.508Z
   - https://github.com/UreekaBiz/svg-poc
     - An Excalidraw-like SVG Proof-of-Concept
 
+- https://github.com/plait-board/drawnix /MIT/202503/ts/svg
+  - https://drawnix.com/
+  - 开源白板工具（SaaS），一体化白板，包含思维导图、流程图、自由画等
+  - 基于插件机制 - 可灵活扩展
+  - 导出为 PNG, JPG, JSON(.drawnix)
+  - 编辑特性：撤销、重做、复制、粘贴等
+  - 无限画布：缩放、滚动
+  - Drawnix 的定位是一个开箱即用、开源、免费的工具产品，它的底层是 Plait 框架，Plait 是我司开源的一款画图框架，代表着公司在知识库产品上的重要技术沉淀。
+  - Drawnix 是插件架构，能够支持多种 UI 框架（Angular、React），能够集成不同富文本框架（当前仅支持 Slate 框架），在开发上可以很好的实现业务的分层
+- https://github.com/worktile/plait /MIT/202503/ts/svg
+  - https://plait.pages.dev/
+  - A completely customizable framework for building all-in-one drawing whiteboard
+  - core依赖roughjs、immer, 通过rxjs的Subject将状态放入context(仅一个文件使用rxjs)
+  - 对于形状绘制如circle/line/rectangle依赖RoughSVG
+  - 代码架构几乎完全模仿slate
+  - Plait does not rely on any frontend UI framework at its core, but it provides solutions for integrating with mainstream frontend UI frameworks 
+  - Text rendering in the plait is based on the Slate framework, Plait was inspired by the Slate framework in its design
 
 - https://github.com/phedkvist/whiteboard
   - https://whiteboard-umber.vercel.app/

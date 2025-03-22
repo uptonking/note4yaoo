@@ -503,7 +503,7 @@ modified: 2020-12-28T12:24:09.275Z
     - 借助首创Observable Graph，可记录任意时刻的全量状态，也可将状态回滚至任意时刻
   - https://github.com/alibaba/formily-editor
 
-- appsmith /340Star/Apache2/202009/ts/java
+- appsmith /340Star/apache2/202009/ts/java
   - https://github.com/appsmithorg/appsmith
   - open source alternative to Power Apps, Salesforce Lightning
   - A low code way to build dashboards, workflows, forms, and any internal tool.

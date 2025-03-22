@@ -558,6 +558,12 @@ modified: 2024-01-31T19:13:11.286Z
   - Graphical Remote via VNC
   - Terminal Console via SSH
 
+- https://github.com/ECRomaneli/electron-findbar /MIT/202406/js/inactive
+  - Chrome-like findbar for your Electron application
+  - The electron-findbar is a BrowserWindow component designed to emulate the Chrome findbar layout, leveraging the webContents.findInPage method to navigate through matches. 
+  - Inter-process communication (IPC) is used for interaction between the main and renderer processes.
+  - To optimize memory usage, the Findbar window is created only when the findbar is open. The implementation is lightweight, including only essential code.
+
 ## utils-messaging
 
 - https://github.com/linonetwo/electron-ipc-cat /MIT/202307/ts

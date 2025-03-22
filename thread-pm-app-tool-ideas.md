@@ -82,7 +82,9 @@ modified: 2022-11-07T10:58:24.512Z
 - 网站数据
   - github trending
   - 微博热搜
-# 国内替代
+# 国内替代/open-alternatives
+- obsidian
+
 - algolia
   - MeiliSearch
   - algolia是纯做SaaS服务的吧，跟es还是有定位上的区别。

@@ -117,7 +117,7 @@ modified: 2021-05-14T15:04:55.849Z
 
 ## viz
 
-- https://github.com/excalidraw/excalidraw /94.6kStar/MIT/20203
+- https://github.com/excalidraw/excalidraw /94.6kStar/MIT/202503/ts/canvas
   - Virtual whiteboard for sketching hand-drawn like diagrams
 
 - https://github.com/recharts/recharts
@@ -198,18 +198,6 @@ modified: 2021-05-14T15:04:55.849Z
   - framework for visual programming and creating node editor
 
 ## ts/js-app
-
-- https://github.com/ChatGPTNextWeb/NextChat /MIT/202503/ts/tauri
-  - https://nextchat.club/
-  - Light and Fast AI Assistant. 
-  - Support: Web | iOS | MacOS | Android | Linux | Windows
-  - NextChat Support MCP
-  - Fully compatible with self-deployed LLMs, recommended for use with RWKV-Runner or LocalAI
-  - Privacy first, all data is stored locally in the browser
-  - Enterprise Edition
-    - Permission Control: Clearly defined member permissions, resource permissions
-    - Security Auditing: Automatically intercept sensitive inquiries and trace all historical conversation records
-    - Private Deployment: Enterprise-level private deployment supporting various mainstream private cloud solutions
 
 - https://github.com/allegro/turnilo
   - /356Star/Apache2/202009

@@ -38,6 +38,8 @@ modified: 2023-02-08T10:46:26.912Z
   - https://github.com/EvanLi/Github-Ranking/blob/master/Top100/TypeScript.md
   - Github仓库排名，每日自动更新
   - 包含 Stars, Forks, Issues, LastCommitDate
+- https://poozhu.cn/project-center/#/github-rank
+  - 实时排名，可以筛选语言，查看超过100个
 
 - https://github.com/jaywcjlove/github-rank /MIT/202503/ts/ejs
   - http://jaywcjlove.github.io/github-rank

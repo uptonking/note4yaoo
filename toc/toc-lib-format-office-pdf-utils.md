@@ -112,6 +112,16 @@ modified: 2022-11-11T10:46:41.519Z
   - Convert any web technology to PDF (HTML to PDF, html2pdf)
   - 依赖chokidar、live-server、passport、puppeteer、react
   - Please note that React components are not required for web-to-pdf to work. It supports all frameworks, and even vanilla JS/HTML/CSS.
+# ocr-pdf
+- https://github.com/ocrmypdf/OCRmyPDF /22.6kStar/MPLv2/202503/python
+  - http://ocrmypdf.readthedocs.io/
+  - OCRmyPDF adds an OCR text layer to scanned PDF files, allowing them to be searched or copy-pasted.
+  - Generates a searchable PDF/A file from a regular PDF
+  - Distributes work across all available CPU cores
+  - Uses Tesseract OCR engine to recognize more than 100 languages
+  - Battle-tested on millions of PDFs.
+- https://github.com/FanQinFred/OCRmyPDF-Desktop /apache2/202312/js/vue/inactive
+  - 在OCRmyPDF的基础上，集成了所需环境，并使用Electron开发了桌面端
 # utils
 - https://github.com/RussCoder/djvujs /js
   - https://djvu.js.org/

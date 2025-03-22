@@ -142,6 +142,12 @@ modified: 2021-05-25T09:41:29.066Z
   - https://github.com/logto-io/js
     - The monorepo for SDKs and working samples written in JavaScript (Well, mostly in TypeScript).
 
+- https://github.com/better-auth/better-auth /MIT/202503/ts
+  - https://better-auth.com/
+  - Better Auth is framework-agnostic authentication (and authorization) library for TypeScript
+  - It provides a comprehensive set of features out of the box and includes a plugin ecosystem that simplifies adding advanced functionalities
+  - Whether you need 2FA, multi-tenant support, or other complex features.
+
 - https://github.com/oslo-project/jwt /MIT/202409/ts
   - https://jwt.oslojs.dev/
   - https://oslojs.dev/
@@ -206,6 +212,7 @@ modified: 2021-05-25T09:41:29.066Z
 
 - https://github.com/openauthjs/openauthjs /202411/ts
   - openauthjs
+
 ## auth-jwt
 
 - https://github.com/rajeshpillai/node-jwt-step-by-step /202005/js

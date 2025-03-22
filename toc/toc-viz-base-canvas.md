@@ -13,6 +13,9 @@ modified: 2020-10-05T06:17:42.467Z
   - 具体场景需求不同，如ui组件、图表、动画
   - 跨平台的差异
   - react-canvas/webgl，在一定程度也是将vdom渲染到不同平台
+
+- tips
+  - 还可以复用主流业务组件的canvas渲染逻辑，如 echarts-zrender, Fabric, pixi, dropflow, LeaferJS
 # popular
 - canvas-engines-comparison
   - https://github.com/slaylines/canvas-engines-comparison

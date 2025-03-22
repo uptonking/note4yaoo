@@ -30,6 +30,15 @@ modified: 2023-04-05T19:35:14.347Z
   - JavaScript file system utilities for Node.js and browser.
   - This demo shows how to run isomorphic-git on memfs in-memory file system.
 # file-upload
+- https://github.com/transloadit/uppy /MIT/202503/ts
+  - https://uppy.io/
+  - modular JavaScript file uploader that integrates seamlessly with any application
+  - Fetch files from local disk, remote URLs, Google Drive, Dropbox, Box, Instagram or snap and record selfies with a camera
+  - Preview and edit metadata with a nice interface
+  - Upload to the final destination, optionally process/encode
+  - Resumable file uploads via the open [tus](https://tus.io/) standard, so large uploads survive network hiccups
+  - https://github.com/tus/tus-node-server
+
 - https://github.com/johndatserakis/file-upload-with-preview /ts/框架无关
   - Simple file-upload utility that shows a preview of the uploaded image. 
   - Written in TypeScript. No dependencies.

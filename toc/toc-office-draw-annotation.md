@@ -11,6 +11,15 @@ modified: 2023-11-03T17:43:01.518Z
 - 画板或批注类产品要参考规范 [Web Annotation Data Model](https://www.w3.org/TR/annotation-model/)
   - 富文本格式也可参考
   - 对image/pdf/富文本编辑器的标注，通常流行产品都会有产品自身的实现，不必执着于标准
+# popular
+- https://github.com/HumanSignal/label-studio /apache2/202503/python/ts
+  - Label Studio is an open source data labeling tool. 
+  - It lets you label data types like audio, text, images, videos, and time series with a simple and straightforward UI and export to various model formats. 
+  - It can be used to prepare raw data or improve existing training data to get more accurate ML models.
+  - Support for multiple data types including images, audio, text, HTML, time-series, and video.
+  - Import from files or from cloud storage in Amazon AWS S3, Google Cloud Storage, or JSON, CSV, TSV, RAR, and ZIP archives.
+  - Integration with machine learning models so that you can visualize and compare predictions from different models and perform pre-labeling.
+  - Integration with machine learning models so that you can visualize and compare predictions from different models and perform pre-labeling.
 # annotation
 - https://github.com/apache/incubator-annotator /apache2/202211/ts/inactive
   - https://annotator.apache.org/
@@ -75,9 +84,7 @@ modified: 2023-11-03T17:43:01.518Z
   - Usable on web or as Windows, Mac or Linux desktop application
   - https://github.com/UniversalDataTool/react-image-annotate
     - Create image annotations. Classify, tag images with polygons, bounding boxes or points.
-
-## anno-server
-
+# anno-server
 - https://github.com/jankaszel/simple-annotation-server /MIT/202007/js/inactive
   - simple annotation server intended for testing purposes, implementing both the Web Annotation Protocol as well as the Web Annotation Data Model with simple REST-based user management. 
   - The server is written in JavaScript and runs in Node.js, running an in-process LevelDB database.

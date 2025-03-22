@@ -64,7 +64,15 @@ modified: 2023-11-10T08:05:12.852Z
 # discuss
 - ## 
 
-- ## 
+- ## Destructuring is still the nicest way to remove an object property. I always name it 'removed' for clarity.
+- https://x.com/toddmotto/status/1902791574129414248
+  - TypeScript doesn't like unused variables, comment added to keep the compiler happy.
+
+- `{ [0]: removed, [1]: removed_2, [2]: removed_final, ...rest }`
+
+- `Object.assign({...form.state}, {[field]: undefined}) as Omit<T, field>?`
+
+- Todd please try to rename it to `_removed` . prefixing an unused variable with _ (e.g. _removed) is supposed to suspend the "unused variable" error.
 
 - ## would people use AsyncLocalStorage more if we called it React Context for javascript functions
 - https://x.com/threepointone/status/1894224170570911939

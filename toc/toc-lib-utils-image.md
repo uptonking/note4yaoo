@@ -43,6 +43,11 @@ modified: 2023-04-04T22:39:45.442Z
   - 效果类似在图片上的画板批注层
   - Linkware license for v2; MIT for v1
   - https://github.com/ailon/markerjs
+
+- https://github.com/immich-app/immich /61.9kstar/AGPLv3/202503/ts/dart/svelte
+  - https://immich.app/
+  - High performance self-hosted photo and video management solution.
+  - server依赖@nestjs/bullmq、typeorm、handlebars、kysely-postgres-js
 # image-editor
 - https://github.com/ximing/fabric-photo /MIT/202003/js/inactive
   - https://ximing.github.io/fabric-photo/
@@ -160,10 +165,6 @@ modified: 2023-04-04T22:39:45.442Z
   - An image processing library written entirely in JavaScript for Node, with zero external or native dependencies.
   - 图片格式转换, 图片裁剪/改变大小, 自定义插件  
 
-- https://github.com/immich-app/immich /AGPLv3/202503/ts/dart/svelte
-  - https://immich.app/
-  - High performance self-hosted photo and video management solution.
-
 ## annotation/labelling
 
 - mirador /400Star/Apache2/202105/js
@@ -185,6 +186,19 @@ modified: 2023-04-04T22:39:45.442Z
   - https://squoosh.app/
   - Make images smaller using best-in-class codecs, right in the browser.
   - Squoosh does not send your image to a server. All image compression processes locally.
+
+- https://github.com/addyosmani/squish /MIT/202501/ts
+  - https://squish.addy.ie/
+  - A modern, browser-based image compression tool that leverages WebAssembly for high-performance image optimization
+  - Support formats: AVIF (AV1 Image Format), JPEG (using MozJPEG), JPEG XL, PNG (using OxiPNG), WebP
+  - Browser-based compression (no server uploads needed)
+  - Batch processing support
+  - Smart queue for compressing large number of files
+  - Format conversion
+  - Real-time preview
+  - Drag and drop interface
+  - WebAssembly for native-speed image processing
+  - jSquash for image codec implementations
 
 - https://github.com/nodeca/pica /202201/js
   - http://nodeca.github.io/pica/demo/

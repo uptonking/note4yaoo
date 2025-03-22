@@ -26,6 +26,18 @@ modified: 2025-02-21T17:17:42.225Z
   - This designer is not associated with any workflow engine. 
   - the definition is stored as JSON
 
+- https://github.com/langflow-ai/langflow /MIT/202503/python/ts
+  - http://www.langflow.org/
+  - a powerful tool for building and deploying AI-powered agents and workflows.
+  - It provides developers with both a visual authoring experience and a built-in API server that turns every agent into an API endpoint that can be integrated into applications built on any framework 
+
+- https://github.com/FlowiseAI/Flowise /apache2/202406/ts
+  - https://flowiseai.com/
+  - https://docs.flowiseai.com/
+  - Drag & drop UI to build your customized LLM flow
+  - Open source low-code tool for developers to build customized LLM orchestration flow & AI agents
+  - 支持langchain的各种组件
+
 - https://github.com/gensx-inc/gensx /apache2/202502/ts
   - https://gensx.com/
   - The TypeScript framework for agents & workflows with react-like components.
@@ -41,11 +53,6 @@ modified: 2025-02-21T17:17:42.225Z
   - 一个基于工作流 workflow 的低代码平台：Flock。
   - 基于 LangChain 和 LangGraph 构建，提供灵活的低代码编排协作代理解决方案，可用于快速构建聊天机器人、RAG 应用和协调多代理团队。
   - 支持聊天机器人、RAG 应用、代理和多代理系统，并具备离线运行能力。
-
-- https://github.com/langflow-ai/langflow /MIT/202503/python/ts
-  - http://www.langflow.org/
-  - a powerful tool for building and deploying AI-powered agents and workflows.
-  - It provides developers with both a visual authoring experience and a built-in API server that turns every agent into an API endpoint that can be integrated into applications built on any framework 
 # ai-figure/数字人
 - https://github.com/taoofagi/easegen-front
   - 开源的数字人课程制作项目：easegen，它提供从课程制作、视频管理、智能课件生成到智能出题全套方案
