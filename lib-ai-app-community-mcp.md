@@ -43,6 +43,24 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## [MCP Server Registry · modelcontextprotocol · Discussion _202501](https://github.com/orgs/modelcontextprotocol/discussions/159)
 
+# discuss-mcp-pm
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 我收集了MCP市场的1000多个AI Agent MCP Server做了分析：
+- https://x.com/CFC4N/status/1903090673454112828
+  1. 数据管理与分析 (占比30%)
+  2. 开发运维工具 (占比22.8%)
+  3. 智能体自动化 (占比19.3%)
+  4. 知识管理 (占比15.3%)
+  5. 垂直领域应用 (占比12.5%)
+  - 整体来看，提升效率的工具居多。你觉得，面向普通用户，未来哪个方向的产品，更受他们欢迎？
+- 我觉得讲故事，写作，角色扮演和情感支持的最受欢迎（？ 不过这方面的产品虽然有不少，但是目前要么场景简单依赖基础模型，还不太有 mcp 的需求（比如简单的角色扮演）, 要么技术还不太成熟，我们还不知道什么技术方案更好用，需不需要 agent（比如长篇小说写作和交互式游戏）
+- 以后家用电器会不会出厂自带mcp?
+
 # discuss-ai-marketplace
 - ## 
 

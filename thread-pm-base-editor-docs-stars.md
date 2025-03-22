@@ -14,7 +14,10 @@ modified: 2021-08-22T07:29:34.045Z
 
 - ## 
 
-- ## 
+- ## 为啥 Copilot Edit 在 LLM 输出回答后，Applying Edits 那一步会那么慢。
+- https://x.com/oasisfeng/status/1903354770288488636
+- 看来 Dev AI 团队也做不到让 LLM 直接生成 patch 文件那样规范的代码变化。
+  - LLM 会像人类一样笼统地描述「在哪哪之后添加这段」、「保留…直到…」，Copilot 估计又让 LLM 来最终 merge。
 
 - ## 使用 Cursor 之类的代码编辑器写博客的Markdown非常尬，每打一个字都有自动补全，严重影响思路和观感，
 - https://x.com/vikingmute/status/1896110973280559112

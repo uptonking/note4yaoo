@@ -307,6 +307,14 @@ modified: 2020-11-17T13:38:19.107Z
   - 依赖：antd4, braft-editor, koa, react-dnd, redux-thunk2, styled-components, swiper 
   - 一个页面构建平台demo，项目以展示思路为主，只有打包和预览部分运用了node，并未使用数据库
   - 当前项目中所包含的页面以及页面中的组件和组件中的状态，均以json格式存在redux store当中
+
+- https://github.com/belastrittmatter/Framely /MIT/202503/ts
+  - https://framely.site/
+  - The open-source drag-and-drop website builder boilerplate.
+  - offering multi-tenancy, custom domain support, and a flexible drag-and-drop web editor.
+  - Authentication: User authentication powered by Clerk.
+  - Multi-Tenancy: Full support for subdomains
+  - Prisma & MySQL: Database ORM and relational database.
 # ai-builder
 - https://github.com/onlook-dev/onlook /apache2/202502/ts
   - https://onlook.com/

@@ -56,9 +56,10 @@ modified: 2021-07-20T13:50:23.433Z
   - vscode: monaco-editor + electron/BS/CS, code-server, sourcegraph
   - codemirror/prosemirror: state + view + commands + transform/ot/collab + virtualized
   - version-history: rrweb, diff, format(.fodt), video-but-auto-update
+  - workflow: lowcode
   - rspack: js plugin; rspack/rolldown-wasm
   - animation: motion(dom/svg)
-  - 考虑维护/fork旧版项目: codemirror5-lang/demo, outline, handsontable, xlsx, pdf-lib 
+  - 考虑维护/fork旧版项目: codemirror5-lang/demo, outline, handsontable, xlsx, pdf-lib
 
 - 技术细节(editor): virtualized, draggable, table(eav)
 - 技术产品(reuse):  cm-devtools, noseditor, collab-hocuspocus

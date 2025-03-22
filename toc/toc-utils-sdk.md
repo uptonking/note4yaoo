@@ -44,4 +44,8 @@ modified: 2023-03-24T05:06:08.832Z
 # sdk-from-vendors
 - https://github.com/wechaty/wechaty
   - Conversational RPA SDK for Chatbot Makers
+# remote-desktop
+- https://github.com/Devolutions/IronRDP /MIT/202503/rust/csharp
+  - Rust implementation of the Microsoft Remote Desktop Protocol (RDP)
+  - https://news.ycombinator.com/item?id=43436894
 # more-sdk

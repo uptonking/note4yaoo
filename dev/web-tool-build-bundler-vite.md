@@ -9,15 +9,19 @@ modified: 2021-01-10T16:24:19.787Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 
 # discuss
-
- 
-
 - ## 
 
 - ## 
 
-- ## 
+- ## If Vite is the foundation to build meta frameworks on… does it make it a meta-meta-framework?
+- https://x.com/youyuxi/status/1903249140924158240
 
 - ## [聊一聊Vite - 掘金 _202208](https://juejin.cn/post/7137873906748096525)
 - Vite 相较于传统的 Webpack、Rollup 的编译方式，采用的是 ESM 混合编译。即在开发环境，使用 Server 动态编译 + 浏览器的 ESM ，实现了开发环境 “0编译”。在生产环境时，采用了 Rollup 进行打包编译。

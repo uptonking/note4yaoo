@@ -13,6 +13,26 @@ modified: 2023-12-07T09:33:17.608Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 有大佬知道如何解决 cf 数据库链接链路过长的问题吗？
+- https://x.com/zhdsuperman/status/1903349880703299872
+  - 同样的请求和后端代码，同一个数据库（us-east-1），vercel 的 function 比 cloudflare worker 快很多（物理上更接近数据库的原因），cf workers 开启了 smart placement 也不行。
+- 难搞。 如果不搞异地多活，最佳的解法永远是后端和数据库同一区域甚至同一个局域网，前端通过 cf 网络加速访问后端数据库。
+  - 是呀，数据库和后端就得放一起，vercel 的 function 配置就在 us-east-1，和数据库同个区域，10ms 就执行完了，但是我不知道 cf 怎么配置在 us-east-1 计算，这个影响太大了。
+  - cf 没有 pg 服务，有的话买就行了。D1 无法满足我的需求，应用依赖很多 PG 的特性。
+
+- 一定要 serverless 么, 感觉其实量没有那么大的时候一台实例蛮好的。
+  - 稳定服务有 k8s 集群，但是项目前期不太想管理实例，代码不少写了很快就要删，serverless 适合随手抛。
+
+- 在考虑要不要迁移到 supabase 了
+- 你是说把 function compute 迁移到 supabase 吗？我尝试配置了 cf 的 Hyperdrive，有好一点，但不多。vercel 上用的 hono，切换平台很容易。
+  - 不仅是 function，还有 db，现在 db size 100+m/d，感觉继续用 workers + d1 不是个办法
+- Supabase 背后就是 AWS 的 RDS 实例，如果不用 supabase 的特性，或免费的 t4g.nano，直接买对应型号的 RDS 更便宜，还支持 pg 16 和 multi db（supabase 砍掉了 multidb 功能）。
+
+- 云到云 与端到云 差别基本不可跨越
+  - 需要多云的网络方案，像 vercel/supabase 一样，这样增加的 delay 大多数场景都能接受。
 # discuss
 - ## 
 

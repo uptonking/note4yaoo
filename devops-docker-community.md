@@ -151,7 +151,18 @@ modified: 2024-06-30T11:17:28.971Z
 
 - ## 
 
-- ## 
+- ## 据说 OrbStack 是更好的 docker desktop，但是我根本不用 docker desktop，直接在终端里使用 podman，岂不是更轻量吗
+- https://x.com/imvihv/status/1903141569022267722
+- 不是一码事，Docker Desktop / Podman (machine) 和 OrbStack 本质上不只是 GUI，还是虚拟机引擎，做的是在 macOS 上开启一个 Linux 虚拟机 + 安装必要的容器化工具
+  - 而 docker / podman 才是一个层级的，都是 CLI 工具，可以理解成是调用容器化 API 的前端
+  - 所以说，macOS 买来，直接装 docker cli 是不可以用的，然后 podman cli 在 Homebrew 那边自带了虚拟机启动器，反而是变得不接耦了
+  - OrbStack 给了许多可以直接在 macOS 侧操作 Linux 虚拟机的能力和命令（传输文件，无缝远程调用），也自带一套还不错的界面，性能也不错
+
+- OrbStack 如何链接远程服务器的 Docker?
+  - 能这么玩吗，不是先ssh到服务器上，然后再运行docker命令吗
+
+- 观察到orbstack确实比podman少用了200兆内存，很好，就用它吧
+  - orbstack性能好一点，做了一下虚拟机和内存分配上的优化。
 
 - ## [OrbStack 1.0 is here! Fast, light, easy way to run Docker containers and Linux | Hacker News _202309](https://news.ycombinator.com/item?id=37599549)
 - I recently installed docker, podman, Colima, and Orbstack. Orbstack was the only one that overwrote the docker socket instead of connecting to the docker socket. The containerization on my Mac is locked into using Orbstack because no other container engine can bind to that, now overridden, socket.

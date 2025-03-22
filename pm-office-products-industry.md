@@ -9,6 +9,14 @@ modified: 2023-03-18T09:44:00.939Z
 
 # guide
 
+## docs
+
+## sheet
+
+## ppt
+
+- markdown to ppt
+- markdown to sharable-card(-editor)
 # web-office
 - 支持私有/中立仓库，如openvsx，获取apps数据的api与桌面版可相同
   - 通过平台标签描述支持的平台、浏览器、编辑器

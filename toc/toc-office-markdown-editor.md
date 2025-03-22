@@ -197,6 +197,10 @@ modified: 2022-11-09T11:53:13.093Z
   - Edit, preview and share mermaid charts/diagrams. 
   - New implementation of the live editor.
   - 左侧代码，右侧流程图，整体类似markdown编辑器
+
+- https://github.com/maqi1520/mdx-notes /GPL/202410/ts/web+pc/inactive
+  - https://mdxnotes.com/
+  - 跨平台笔记软件，公众号排版编辑器，使用MDX来排版
 # md-app
 - https://github.com/1943time/bluestone /AGPLv3/202403/ts
   - https://www.bluemd.me/

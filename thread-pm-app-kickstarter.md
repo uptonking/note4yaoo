@@ -311,7 +311,9 @@ modified: 2021-10-29T15:02:28.882Z
 
 - ## 
 
-- ## 
+- ## cloudflare: We didn’t need to give how we bill you a fancy name because charging based on what you use felt obvious.
+- https://x.com/CloudflareDev/status/1903126992246988972
+- affordable tcp ddos protection when
 
 - ## 去年在 7 月在上海人工智能大会现场见到过几台这样的硬件设备，还可以识别多种语言的作业，产品可用程度已经很高了。
 - https://x.com/chendama1024/status/1902888309082505311
