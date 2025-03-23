@@ -8,7 +8,12 @@ modified: 2023-03-25T16:43:59.362Z
 # toc-lib-format-ast-parser-generator
 
 # popular
-
+- https://github.com/compiler-explorer/compiler-explorer /BSD/202503/ts
+  - https://godbolt.org/
+  - Run compilers interactively from your web browser and interact with the assembly
+  - Edit code in C, C++, C#, F#, Rust, Go, D, Haskell, Swift, Pascal, ispc, Python, Java, or any of the other 30+ supported languages components, and see how that code looks after being compiled in real time.
+  - Compiler Explorer is written in TypeScript, on Node.js.
+  - Multiple compilers are supported for each language, many different tools and visualizations are available, and the UI layout is configurable (thanks to `GoldenLayout`).
 # ast
 - https://github.com/syntax-tree/mdast
   - Markdown Abstract Syntax Tree format

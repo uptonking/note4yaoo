@@ -44,16 +44,17 @@ modified: 2023-02-07T09:43:01.972Z
 - https://github.com/developit/redaxios /apache2/202208/js/inactive
   - The Axios API, as an 800 byte Fetch wrapper.
   - [Is the goal to be 100% compatible with axios?](https://github.com/developit/redaxios/issues/14)
-    - Aside from uploadProgress and downloadProgress, the goal is to support most/all features
+    - Aside from `uploadProgress` and downloadProgress, the goal is to support most/all features
     - `.interceptors` for instance is missing on a redaxios instance
   - [Put request doesnt work](https://github.com/developit/redaxios/issues/81)
     - get, post works as expected. But put doesnt work.
   - [Support axios Config Defaults](https://github.com/developit/redaxios/issues/62)
-    - FWIW defaults are supported, we just don't prepopulate the headers object. You can do this: instance.defaults = { headers: { 'Content-Type': 'application/json' } };
+    - FWIW defaults are supported, we just don't prepopulate the headers object. You can do this: `instance.defaults = { headers: { 'Content-Type': 'application/json' } };`
+
 - https://github.com/divyam234/feaxios /MIT/202402/ts
   - tiny 2KB fetch wrapper of axios
   - a lightweight alternative to Axios, providing the same familiar API with a significantly reduced footprint 
-  - It leverages the native fetch() API supported in all modern browsers, delivering a performant and minimalistic solution.
+  - It leverages the native `fetch()` API supported in all modern browsers, delivering a performant and minimalistic solution.
   - supports interceptors, allowing you to customize and augment the request and response handling process.
   - Retries: Axios retry package is integrated with feaxios.
 

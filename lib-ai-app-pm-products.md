@@ -17,6 +17,10 @@ modified: 2025-03-22T16:10:24.856Z
 - computer-use
 # ai-editor
 - drawio-use
+
+- 不适合流式的数据
+  - markdown-table
+  - mermaid-graph
 # ai-designing
 - cursor for design: logo creator
 

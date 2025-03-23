@@ -30,8 +30,10 @@ modified: 2023-04-04T22:39:45.442Z
   - It can handle images, videos with autoplay, inline content and iframes
   - All the animations are created with CSS and only the transform and opacity properties are animated. 
 
-- https://github.com/jimp-dev/jimp
+- https://github.com/jimp-dev/jimp /MIT/202409/ts/NoDeps
+  - http://jimp-dev.github.io/jimp/
   - An image processing library written entirely in JavaScript for Node, with zero external or native dependencies.
+  - 图片格式转换, 图片裁剪/改变大小, 自定义插件  
 
 - https://github.com/cozmo/jsQR
   - A pure javascript QR code reading library. 
@@ -159,11 +161,6 @@ modified: 2023-04-04T22:39:45.442Z
   - https://willnguyen1312.github.io/zoom-image/
   - powerful framework agnostic headless library to zoom images on the web
   - Examples are written with Preact, React, Svelte, Vanilla JS and Vue.
-
-- https://github.com/jimp-dev/jimp /MIT/202409/ts/NoDeps
-  - http://jimp-dev.github.io/jimp/
-  - An image processing library written entirely in JavaScript for Node, with zero external or native dependencies.
-  - 图片格式转换, 图片裁剪/改变大小, 自定义插件  
 
 ## annotation/labelling
 

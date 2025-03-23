@@ -200,6 +200,20 @@ modified: 2023-02-26T18:25:01.328Z
 - refs
   - [Tailwind Toolbox - Free Starter Templates](https://www.tailwindtoolbox.com/starter-templates)
 
+- tremor /6.2kStar/apache/202202/ts
+  - https://github.com/tremorlabs/tremor
+  - https://www.tremor.so/
+  - https://demo.tremor.so/
+  - a low-level, opinionated UI component library to build dashboards.
+  - [tremor • changelog](https://www.tremor.so/changelog)
+    - v2_202303 exposure of className, and full switch to Tailwind CSS
+  - 依赖recharts2、tippyjs、date-fns，未使用任何组件库
+  - 图表默认动画
+  - https://github.com/tremorlabs/tremor-blocks
+    - https://blocks.tremor.so/
+    - a Next.js project bootstrapped with create-next-app.
+    - thanks to @vercel acquisition, you can get access to all blocks on GitHub
+
 - https://github.com/MarsX-dev/floatui /2kStar/202306/js/非常简洁/已被收购
   - https://floatui.com/components
   - https://floatui.com/demo

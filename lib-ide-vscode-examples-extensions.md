@@ -597,6 +597,9 @@ modified: 2024-08-24T16:17:26.715Z
 
 ## ext-js/ts
 
+- https://github.com/yoavbls/pretty-ts-errors /MIT/202411/ts
+  - Make TypeScript errors prettier and human-readable in VSCode.
+
 ## ext-data/format
 
 - https://github.com/AdamRaichu/vscode-zip-viewer /MIT/202412/js

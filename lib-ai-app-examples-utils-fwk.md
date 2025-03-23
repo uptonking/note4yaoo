@@ -19,6 +19,12 @@ modified: 2025-02-21T18:20:42.624Z
     - Unless explicitly authorized by Dify in writing, you may not use the Dify source code to operate a multi-tenant environment.
     - In the process of using Dify's frontend, you may not remove or modify the LOGO or copyright information in the Dify console or applications. 
 
+- https://github.com/open-webui/open-webui /MIT/202405/svelte/python
+  - https://openwebui.com/
+  - User-friendly WebUI for LLMs (Formerly Ollama WebUI)
+  - extensible, feature-rich, and user-friendly self-hosted WebUI designed to operate entirely offline. 
+  - It supports various LLM runners, including Ollama and OpenAI-compatible APIs
+
 - https://github.com/cloudflare/agents /MIT/202502/ts
   - https://developers.cloudflare.com/agents/
   - Build and deploy AI Agents on Cloudflare
@@ -71,11 +77,23 @@ modified: 2025-02-21T18:20:42.624Z
   - Mixture of Block Attention for Long-Context LLMs
   - https://x.com/tuturetom/status/1892753818028216717
     - 可以实现近乎无限的上下文窗口，将一整本书或一整个代码库扔进去提问
+# agi-text
+
+# agi-image
+- https://github.com/joanrod/star-vector /apache2/202503/python
+  - https://starvector.github.io/
+  - StarVector is a foundation model for SVG generation that transforms vectorization into a code generation task. 
+  - Using a vision-language modeling architecture, StarVector processes both visual and textual inputs to produce high-quality SVG code with remarkable precision.
+  - It can be used to perform image2SVG and text2SVG generation. We pose image generation as a code generation task, using the power of multimodal VLMs
+  - March 2025: StarVector Accepted at CVPR 2025
+  - SVGBench and SVG-Stack datasets are now available on HuggingFace Datasets
+    - https://huggingface.co/datasets/starvector/svg-bench
+    - https://huggingface.co/datasets/starvector/svg-stack
 # proxy
 - https://github.com/lymanzhao/Ollama-serve /202503/python
   - 一个 Ollama转发代理，用于为原生 Ollama 服务添加 API 密钥认证功能。
   - 该项目解决了 Ollama 官方不提供 API 密钥验证的问题，使您可以更安全地部署 Ollama 服务并防止未授权访问
-# ai-machines
+# ai-devops
 - https://github.com/exo-explore/exo /GPL
   - exo: Run your own AI cluster at home with everyday devices
   - exo supports different models including LLaMA (MLX and tinygrad), Mistral, LlaVA, Qwen, and Deepseek.

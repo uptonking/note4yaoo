@@ -40,7 +40,7 @@ modified: 2021-04-30T20:14:17.669Z
 - reveal.js /66.4kStar/MIT/202402/js/官方editor未开源
   - https://github.com/hakimel/reveal.js
   - https://revealjs.com/
-  - open source HTML presentation framework. It enables anyone with a web browser to create beautiful presentations for free.
+  - 🌓 open source HTML presentation framework. It enables anyone with a web browser to create beautiful presentations for free.
   - broad range of features including nested slides, Markdown support, Auto-Animate, PDF export, speaker notes, LaTeX support and syntax highlighted code.
   - [Question: Is the online editor available in the source?](https://github.com/hakimel/reveal.js/issues/971)
     - the slides.com editor isn't open source
@@ -82,9 +82,9 @@ modified: 2021-04-30T20:14:17.669Z
 - https://github.com/impress/impress.js /37.5kStar/MIT/202402/js
   - http://impress.js.org/
   - http://impress.github.io/impress.js/examples/classic-slides/
-  - [Examples and demos · impress/impress.js Wiki](https://github.com/impress/impress.js/wiki/Examples-and-demos)
-  - a presentation framework based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com
+  - 🌓 a presentation framework based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com
   - The HTML source code of the official impress.js demo serves as a good example usage and contains comments explaining various features of impress.js
+  - [Examples and demos · impress/impress.js Wiki](https://github.com/impress/impress.js/wiki/Examples-and-demos)
   - [Authoring tool discussion](https://github.com/impress/impress.js/issues/5)
 
 - https://github.com/henrikingo/impressionist /MIT/202005/js/inactive

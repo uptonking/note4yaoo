@@ -25,15 +25,27 @@ modified: 2020-10-05T06:17:42.467Z
     - The comparison was unfair it was only moving the positions of the rectangles each frame for paper.js, and two.js 
     - but for pixi.js it was redrawing them from scratch which means it had to retesselate everything every frame.
 
-- konva /8.9kStar/MIT/202301/ts
+- konva /12.4kStar/MIT/202503/ts/NoDeps
   - https://github.com/konvajs/konva
   - http://konvajs.org/
   - JS framework that extends the 2d context by enabling canvas interactivity for desktop and mobile applications.
   - began as a fork of ericdrowell/KineticJS
+  - In order to run konva in nodejs environment, you also need to install `canvas` package manually. Konva will use it for 2d canvas API.
   - https://github.com/ericdrowell/KineticJS
     - /MIT/3.9kStar/201404
   - https://github.com/konvajs/react-konva
     - provides declarative and reactive bindings to the Konva Framework.
+
+- https://github.com/fabricjs/fabric.js /29.8kStar/MIT/202503/ts/NoDeps
+  - http://fabricjs.com/
+  - Javascript Canvas Library, SVG-to-Canvas (& canvas-to-SVG) Parser
+  - Out of the box interactions such as scale, move, rotate, skew, group...
+  - Built in shapes, controls, animations, image filters, gradients, patterns, brushes...
+  - Typed and modular
+  - See browser modules for using es6 imports in the browser or use a dedicated bundler.
+  - Fabric.js depends on `node-canvas` for a canvas implementation (HTMLCanvasElement replacement) and jsdom for a window implementation on node. 
+- https://github.com/nihaojob/vue-fabric-editor
+  - 基于fabric.js和Vue的图片编辑器，可自定义字体、素材、设计模板。
 
 - react-canvas /12.5kStar/BSD/201703/inactive
   - https://github.com/Flipboard/react-canvas
@@ -121,11 +133,6 @@ modified: 2020-10-05T06:17:42.467Z
   - Pikaso is built on top of `Konva` to provide a couple of advanced features that Konva doesn't support out of the box.
   - Pikaso comes with support for NodeJs out of the box
   - https://github.com/pikasojs/pikaso-react-hook
-
-- https://github.com/fabricjs/fabric.js
-  - Javascript Canvas Library, SVG-to-Canvas (& canvas-to-SVG) Parser
-- https://github.com/nihaojob/vue-fabric-editor
-  - 基于fabric.js和Vue的图片编辑器，可自定义字体、素材、设计模板。
 
 - https://github.com/cburgmer/rasterizeHTML.js /js
   - http://cburgmer.github.io/rasterizeHTML.js

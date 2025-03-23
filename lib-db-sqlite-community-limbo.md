@@ -195,6 +195,33 @@ modified: 2024-12-13T15:12:55.861Z
 - I think its inevitable that we have to move to everything encrypted at rest and everything encrypted in transit.
 
 - We rely on SQLite internally in a rather extreme way: every program is in itself an SQLite file that holds the entire JavaScript heap, among other things. We should definitely write a Turso connector though, I think it would be super useful to our users. Added to our roadmap.
+# discuss-internals
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## How does @tursodatabase diskless architecture work?
+- https://x.com/penberg/status/1903381080410861708
+  - In the new diskless architecture, WAL writes are synchronous to S3, which means the WAL file is fragmented into lots of small objects. We do this to guarantee durability while allowing fast failover (another compute node can just pick up the work if one machine dies).
+  - But the database file itself is also broken into parts -- we call them database file segments to distinguish between the WAL fragments. These are 128 KB blocks right now. This allows us to lazily load even larger database files to the compute node for caching on local disk.
+  - The millisecond granularity across different plans comes from us essentially batching WAL writes (we actually have not rolled this into production yet) to essentially keep things cost-effective (S3 PUTs are pretty expensive).
+  - Basically, the whole architecture is built around latency vs cost trade-off so that the free tier has higher latency (but is cost-efficient to operate), but for paid tiers, the higher the tier, the lower the latency (because you essentially get more CPU, memory, and disk).
+
+- Do you also write the WAL logs straight to S3? If yes won’t that be  major latency bottleneck? If not how do you guarantee durability in these cases if the nodes are diskless?
+  - We write straight to S3 Express, which is bit slower than EBS `fsync()` latency, but not much
+
+- how does the orchestration of all this work? like each db (or group) get's it's own container?
+  - We host multiple databases per container to multiplex resources. We ended up building it all the multitenancy in our server, but an alternative might have been @UnikraftSDK -based solution
+- so there's a daemon process always active in the container and does the thing to the right container based on the incoming request?
+  - Yup, exactly
+
+- What is the latency? And how about if s3 also does the throttling?
+
+- Does each replica maintain its own WAL in S3 ? How do you enforce consistency around replicas
 # discuss
 - ## 
 
@@ -204,7 +231,7 @@ modified: 2024-12-13T15:12:55.861Z
 
 - ## We are writing a massive multitenant database at Turso. A node is capable of running hundreds of thousands of databases, concurrently. 
 - https://x.com/iavins/status/1900220354985169332
-  - We also decided to write our own asynchronous runtime implementation (instead of using `Tokio`) for reasons. Now this bad boy is all bare bones, we don't use Rust's `async` yet.
+  - We also decided to write our own asynchronous runtime implementation (instead of using `Tokio` ) for reasons. Now this bad boy is all bare bones, we don't use Rust's `async` yet.
   - For disk or network we use io_uring (of course). Since it's a database, that's pretty much all it does: talk with io. And that requires a state machine. You submit a request, wait for some time to poll or for callback to trigger. That means, a function doesn't always have a result ready; sometimes it says, my friend wait for sometime, I don't have result ready yet: `Ok(None)` . When it's done you get: `Ok(Some(T))` .
   - The entire codebase is pretty much `Result<Option<T>>`
 

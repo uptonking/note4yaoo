@@ -33,7 +33,10 @@ modified: 2021-01-08T17:13:43.392Z
 # discuss
 - ## 
 
-- ## 
+- ## Use the `<datalist>` element to create native HTML autocomplete.
+- https://x.com/denicmarko/status/1903431486335803801
+  - <input list="items" /> ` + ` <datalist id="items"><option value="aa" /></datalist>`
+- It used to have a horrible browser default design which was terrible to style. Don’t if there are better ways for its styling now.
 
 - ## Each element remembers where it was scrolled to, even the virtualized element list, which is WAY dynamic and only rendered after the DOM has been measured.
 - https://x.com/tannerlinsley/status/1880404505260617978

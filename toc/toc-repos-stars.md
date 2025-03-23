@@ -11,9 +11,9 @@ modified: 2021-01-12T18:49:13.490Z
 
 # popular/most-starred
 - fe: 
-  - vscode(MIT)/atom, code-server(MIT), excalidraw(MIT), reveal.js(MIT/js), pdfjs(apache2/js), 
-  - redux/zustand, react-router, quilljs(BSD), tanstack-query,uppy
-  -  strapi(MIT), docusaurus(MIT), outline
+  - vscode(MIT)/atom/theia, code-server(MIT), excalidraw(MIT), reveal.js(MIT/js), pdfjs(apache2/js), 
+  - redux/zustand, react-router, quilljs(BSD), tanstack-query, uppy, localForage
+  - strapi(MIT), docusaurus(MIT), outline
 
 - js: 
   - react, vue, svelte, d3, axios, threejs, ts, mui/antd/shadcn(MIT), tailwindcss(MIT/ts/rust), storybook(MIT/ts), animate.css, pm2(AGPL/js), typeorm, formik, marked, solidjs, immutable-js, video.js(apache2/js), tesseract.js(apache2/js)

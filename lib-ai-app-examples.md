@@ -249,12 +249,6 @@ modified: 2023-02-08T07:20:48.475Z
   - 基于Qwen2.0的agent框架：Qwen-Agent，它有指令遵循、工具使用、做规划和记忆能力
   - 基于Qwen-Agent的一个Chrome浏览器扩展，一个智能浏览器助手：BrowserQwen, 它可以基于当前页面或文档跟你对话、能记住你浏览过的内容进行总结、可以解决数学问题、数据图表可视化
 # ollama
-- https://github.com/open-webui/open-webui /MIT/202405/svelte/python
-  - https://openwebui.com/
-  - User-friendly WebUI for LLMs (Formerly Ollama WebUI)
-  - extensible, feature-rich, and user-friendly self-hosted WebUI designed to operate entirely offline. 
-  - It supports various LLM runners, including Ollama and OpenAI-compatible APIs
-
 - https://github.com/pamelafox/ollama-python-playground /jupyter
   - A dev container with ollama and ollama examples with the Python OpenAI SDK
   - This project is designed to be opened in GitHub Codespaces as an easy way for anyone to try out SLMs (small language models) entirely in the browser.

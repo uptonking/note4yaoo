@@ -120,6 +120,15 @@ modified: 2022-11-11T11:04:29.007Z
   - Visually display the information obtained by ogp.
     - 输入url，自动显示预览图
 
+- https://github.com/hoarder-app/hoarder /AGPL/202503/ts
+  - https://hoarder.app/
+  - A self-hostable bookmark-everything app (links, notes and images) with AI-based automatic tagging and full text search
+  - Automatic fetching for link titles, descriptions and images.
+  - Full text search of all the content stored.
+  - AI-based (aka chatgpt) automatic tagging. With supports for local models using ollama
+  - OCR for extracting text from images.
+  - An iOS app, and an Android app.
+
 - https://github.com/Daniel31x13/linkwarden /MIT/js/代码简单
   - a self-hosted, open-source bookmark + archive manager to collect, and save websites for offline use.
   - 依赖mongodb、puppeteer、react-select

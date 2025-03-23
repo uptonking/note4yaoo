@@ -43,7 +43,7 @@ modified: 2023-04-05T19:35:14.347Z
   - Simple file-upload utility that shows a preview of the uploaded image. 
   - Written in TypeScript. No dependencies.
 
-- https://github.com/pqina/filepond /202311/js/NoDeps/active
+- https://github.com/pqina/filepond /MIT/202503/js/NoDeps
   - https://pqina.nl/filepond/
   - A flexible JavaScript file upload library that can upload anything you throw at it, optimizes images for faster uploads, and offers a great, accessible, silky smooth user experience.
   - Accepts directories, files, blobs, local URLs, remote URLs and Data URIs.

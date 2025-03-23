@@ -54,6 +54,9 @@ modified: 2024-01-02T07:53:22.956Z
 - 
 - 
 
+# rspack-draft
+- create-react-app by rspack
+- electron-webpack by rspack
 # rspack-dev-xp
 - Rsbuild 应用不能使用 Rspack 的 devServer 配置项。你可以通过 Rsbuild 的 dev 和 server 配置 Server 的行为
 

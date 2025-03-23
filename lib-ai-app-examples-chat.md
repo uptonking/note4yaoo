@@ -10,6 +10,10 @@ modified: 2025-03-22T18:49:15.634Z
 # guide
 
 # popular
+- https://github.com/vercel/ai-chatbot /apache2/202503/ts
+  - https://chat.vercel.ai/
+  - A full-featured, hackable Next.js AI chatbot built by Vercel
+
 - https://github.com/ChatGPTNextWeb/NextChat /MIT/202503/ts/tauri
   - https://nextchat.club/
   - Light and Fast AI Assistant. 
@@ -57,6 +61,9 @@ modified: 2025-03-22T18:49:15.634Z
     - 支付：Lemon Squeezy
     - 部署：Vercel
 # chat-pdf
+- https://github.com/mayooear/ai-pdf-chatbot-langchain /MIT/202502/ts
+  - LangChain & LangGraph AI PDF chatbot agent
+
 - https://github.com/williamcaseylucas/quill-pdf-chat /202401/ts
   - 依赖prisma, shadcn-ui, react-pdf, AWS S3 buckets
   - https://github.com/khaledmk20/quill

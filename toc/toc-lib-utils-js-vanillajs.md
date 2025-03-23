@@ -135,6 +135,15 @@ modified: 2023-04-04T22:35:59.255Z
   - Node.js Native Messaging host
 - https://github.com/browserext/native-messaging
   - Native Messaging for Browser Extensions Specification
+
+- https://github.com/nexe/nexe /MIT/202503/ts
+  - Nexe is a command-line utility that compiles your Node.js application into a single executable file.
+  - Distribute binaries without needing node / npm.
+  - Lockdown specific application versions, and easily rollback.
+
+- https://github.com/vercel/pkg /MIT/202401/ts/archived
+  - This command line interface enables you to package your Node.js project into an executable that can be run even on devices without Node.js installed.
+  - we’re excited about Node.js 21’s support for single executable applications.
 # render
 - https://github.com/arthurhovhannisyan31/offscreen-canvas-worker
   - Application allows to fetch and process data in the background using workers api.

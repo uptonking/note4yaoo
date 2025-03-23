@@ -63,6 +63,17 @@ modified: 2023-09-07T04:17:31.787Z
 - 
 - 
 
+# discuss-ai-draw
+- ## 
+
+- ## 
+
+- ## 
+
+- ## A new open-source model StarVector with a specific focus on SVG drawing was added to Huggingface. 
+- https://x.com/testingcatalog/status/1903590867564175398
+  - "StarVector is a foundation model for generating Scalable Vector Graphics (SVG) code from images and text."
+
 # discuss
 - ## 
 

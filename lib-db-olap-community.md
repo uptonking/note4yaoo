@@ -42,6 +42,21 @@ modified: 2023-12-15T18:01:43.992Z
   - Due to Go’s memory GC issues, I rewrote it in [Rust](https://github.com/vectorengine/vectordb)
   - Then we founded DatabendLabs (formerly DatafuseLabs), and based on Vectordb, we built what is now #Databend—the best open-source alternative to #Snowflake. 
 
+# discuss-olap-model
+- ## 
+
+- ## 
+
+- ## Why don’t ODBC & JDBC fit today’s analytical world?
+- https://x.com/Dipankartnt/status/1903573696767541740
+  - ODBC & JDBC were designed back when most systems were row-based. They gave us a standard protocol to move data between systems in a row-wise fashion — and became the de facto interface for decades. But things have changed.
+  - Today, OLAP systems, lakehouse formats (Hudi, Iceberg, Delta), and modern client tools are columnar. Why? Columnar systems are optimized for analytical workloads and massive datasets. Row-based protocols are no longer ideal here.
+  - Yet, we don’t have a standard way to transfer columnar data! So even if your DB and client are both columnar, using ODBC/JDBC forces you to: Convert column → row → column again. This hurts performance.
+  - This convert-convert process is called serialization/deserialization (serde). And get this — it can take 60–90% of your data transfer time. Yes, just the data conversion.
+  - That’s where Apache Arrow Flight and the newer Flight SQL and ADBC come in.
+  - They’re built with columnar data in mind — and they avoid unnecessary serde altogether.
+  - [What is Apache Arrow Flight, Flight SQL & ADBC? _202503](https://dipankar-tnt.medium.com/what-is-apache-arrow-flight-flight-sql-adbc-a076511122ac)
+
 # discuss
 - ## 
 

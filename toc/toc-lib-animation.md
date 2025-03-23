@@ -282,6 +282,8 @@ modified: 2020-10-05T06:22:02.107Z
   - It supports keyframe and spring animations for numbers, colors and complex strings.
   - designed to be composable and portable into any JavaScript environment, with an eye on worklets in the future.
   - react-pose is deprecated for framer-motion
+  - [Document deprecation in favour of Framer Motion · Issue · Popmotion/popmotion](https://github.com/Popmotion/popmotion/issues/834)
+  - [Popmotion 9 [WIP] by mattgperry · Pull Request · Popmotion/popmotion](https://github.com/Popmotion/popmotion/pull/859)
 - https://github.com/kimmobrunfeldt/progressbar.js
   - Responsive and slick progress bars
 - https://github.com/alexfoxy/lax.js

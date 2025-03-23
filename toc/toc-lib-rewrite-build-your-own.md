@@ -11,7 +11,7 @@ modified: 2021-09-29T13:23:09.969Z
 
 - search: rewrite, alternative, clone
 # catalog
-- https://github.com/aosabook/500lines
+- https://github.com/aosabook/500lines /MIT/python/js
   - https://aosabook.org/en/
   - This is the source for the book 500 Lines or Less, the fourth in the Architecture of Open Source Applications series.
   - 示例包括 spreadsheet、template-engine、crawler、server

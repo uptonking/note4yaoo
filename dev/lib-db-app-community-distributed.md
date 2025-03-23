@@ -214,10 +214,14 @@ modified: 2023-10-26T19:04:00.318Z
   - SOLID (Tim Berners-Lee, RDF)
   - GUN (ours, graph)
 
-# discuss-protocol-raft/paxos ⚖️
+# discuss-protocol-raft/paxos ⚖️🆚️
 - ## 
 
-- ## 
+- ## Could you elaborate on why you prefer Paxos over Raft?
+- https://x.com/wangbin579/status/1903819153926217768
+  - The Paxos algorithm is not too complicated, and there are many ways to learn it. It also has many variants, so you can choose the one that fits your needs. For example, MySQL uses a multi-leader version of Paxos, which allows every node to handle writes.
+
+- gree, Raft is maybe easy from a programming and implementation perspective, but from a consensus theoretical perspective, paxos is way easier to understand and reason about.
 
 - ## Oracle Sharding uses Raft for replication. Writes are local on the executing shard. 
 - https://x.com/FranckPachot/status/1823621723129802935
