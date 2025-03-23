@@ -14,6 +14,7 @@ modified: 2023-06-14T00:53:15.226Z
 # tips
 - 后端有没有收到请求以及请求执行是否成功/超时，需要开发时在业务逻辑的现场位置提前添加日志记录并判断，否则排查时需要靠猜或缺少信息
   - 添加日志的重要场景: http请求， 文件io， 文件格式解析异常(易漏)
+  - 要在日志的内容文本中写上日志等级如info/error，不能尽依赖sdk的等级，方便迁移到其他日志平台
 
 - nextjs或react组件如何在浏览器devtools中调试或获取业务变量/对象
   - 有时在devtools中直接source代码不会生效
@@ -30,7 +31,7 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## ❓ error: followingFocusComponent call timeout (7s)
 
-- 20250318左右经常碰到超时问题，导致agent无法执行action
+- 20250318左右经常碰到超时问题，导致agent无法执行action或执行其他操作
 
 - 排查进展
   - 1. 回滚应急，降级agent socketio版本无效
@@ -38,13 +39,29 @@ modified: 2023-06-14T00:53:15.226Z
   - 3. 找到IDEServer抓包方案
   - 4. 阅读socketio协议，梳理清楚发包流程和ack回调包协议
 - IDEServer宿主抓包有效：服务端日志+IDEServer宿主抓包共同确认问题域在AiAgent vs IDEServer
+- 抓包丢失问题解决，确认IDEServer有ack回包，问题缩小到AIAgent模块。
+  - 发现pingInterval+pingTimeout 125s的僵尸连接识别。触发发读/写模块aborting触发丢包问题
+  - AIAgent雪崩时，cpu整体负载并不高(排除单一CPU负载过高问题⇒线程模型还可以优化)，可以出现瓶颈一分钟一次health超时问题，在3次应急措施后缓解。确认AIAgent是否有主线程耗时运算+阻塞调用，阻塞了事件循环机制。
+  - 僵尸连接abort识别后，预期关闭连接重新建ws连接。⇒实际上没有恢复，确认是否连接没有关闭回收，还是有其它问题
+  - SWE staging之前报过很多超时，是否线上同款超时日志。⇒AIAgent主线程超时单号 ⇒配合SWE环境+Python性能采集分析
+
+- 为何抓包有丢包
+  - wireshark通过websocket完整http建连机制识别起点，已建连无法识别出ws协议。手动将3012端口的请求识别成ws协议即可(通过右键菜单Decode As - TCP Port WebSocket)。
+
+- python socketio. AsyncClient( websocket_extra_option={ 'receive_timeout': 10} )
+  - receive_timeout参数定义了WebSocket连接在等待接收消息时的最大超时时间（以秒为单位）
+  - 超时异常触发：如果在指定时间内没有收到响应，会触发超时异常，允许客户端代码捕获并处理这种情况。
+
+- 僵尸连接aborting问题
+  - Waiting for write loop task to end
+  - Server has stopped communicating, aborting
+
+- 
+- 
 
 - 可疑点
   - ide-server的文件树数据更新频繁，将文件树最大数量从1000增加到2000可能导致python-socketio或js-sockerio在接收到大包时意外丢失, 暂时先将最大文件数量限制降低来观察复现
-
-- 
-- 
-- 
+    - 降低后问题仍然有复现
 
 ## 当浏览器标签页处于后台且未挂起时，websocket的hearbeat心跳事件有时会自动停止发送
 

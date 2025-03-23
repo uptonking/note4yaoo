@@ -246,7 +246,6 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - ~~elmesque-editor~~, 基于immutable思想实现的编辑器大多采用redux/elm风格
   - branching/versioned-doc
   - pouchdb + kappa-crdt + eav => pouchdb-crdt-eav
-  - todo remove hashId在编辑器model中有什么作用
   - 做完tailwind-table就面试
 
 - dev-to 提炼核心`需求+产出`工作流，不能在产品中检验的技术不玩
@@ -272,6 +271,7 @@ console.log(';; act-file-o ', currentOpenedActionId, shouldForceOpenFile, action
 
 console.log(';; taskActions', currentActionId, path, store.cdePlay.enableDiffView(), taskActions)
 console.log(';; open-diff ', enableDiffAnimation, store.cdePlay.enableDiffView(), store.cdeReplay.isMachinePaused())
+console.log(';; qryDiffSnap ', snapshotFrameResult)
 console.log(';; qryDiffSnap ', snapshotFrameResult)
 
 console.log(
@@ -316,16 +316,16 @@ add action to create quickSort1.mjs and add 3 test cases in it
   - gitignore的文件不应该显示M
 
 - 🔲 🔜
-  - terminal在执行时需要自动滚到末尾，方便显示最新输出信息
   - terminal在follow时自动打开，在非follow时显示更新的红点
   - terminal放大缩小折叠展开后，光标自动聚焦在terminal
   - 编辑器行号宽度样式优化
-  - 编辑器打开时自动跳到diff视图第一个变更块的位置
-  - action路径超出卡片宽度
   - 修复文件树将文件夹拖到文件夹不work的问题
   - 变更列表 accept-all, reject-all
+  - ~~terminal在执行时需要自动滚到末尾，方便显示最新输出信息~~
+  - ~~编辑器打开时自动跳到diff视图第一个变更块的位置~~
+  - ~~action路径超出卡片宽度~~
   - ~~webview自动打开, 刷新时保持打开~~
-  - cmdk工具条无法触发，快捷键可以
+  - ~~cmdk工具条无法触发，快捷键可以~~
 
 - 异常处理增强
   - 观测重要log: RESOURCE_NOT_ENOUGH
@@ -356,6 +356,15 @@ add action to create quickSort1.mjs and add 3 test cases in it
 - action-删除文件
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
+
+## 0323
+
+- 昨天
+  - 清理sdk的浏览器组件，将未实现完的loading隐藏
+  - 与茜茜确定revert后打开文件，diff视图的对比逻辑 和 revert/restore工具条 的需求变更，调整了一部份代码
+- 今天
+  - 继续调整 revert后打开文件自动定位到未被revert的action
+  - 测试diff视图的逻辑，保证准确性
 
 ## 0321
 

@@ -59,6 +59,7 @@ modified: 2024-08-24T16:15:11.456Z
   - mcp for drawio
 
 - extension
+  - github repo的insights统计可实现为vscode扩展，如contributor/LOC-by-lang
 
 - integrations
   - notion database
