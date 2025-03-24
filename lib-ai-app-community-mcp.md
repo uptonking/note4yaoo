@@ -102,7 +102,8 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
-- ## 
+- ## 具体研究了browser-use的底层代码才发现，其网页可交互部分的结构化数据是完全靠DOM数据分析得来的而不是靠视觉模型，这也证明了为什么在普通机器上也能快速得到结果了
+- https://x.com/uptonking2/status/1904040163229200491
 
 - ## [How I taught an AI to use a computer _202501](https://e2b.dev/blog/how-i-taught-an-ai-to-use-a-computer)
 - 

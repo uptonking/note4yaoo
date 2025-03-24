@@ -32,7 +32,10 @@ modified: 2023-08-28T04:43:22.738Z
 
 - ## 
 
-- ## 
+- ## 🆚️ As an async Rust based database, we are interested in more efficient async Rust disk I/O. 
+- https://x.com/tonboio/status/1904167784013070833
+  - We took a deep dive into comparing tokio, io_uring (via monoio) and others in real-world scenarios, and the results might surprise you.
+  - [Exploring better async Rust disk I/O _202503](https://tonbo.io/blog/exploring-better-async-rust-disk-io)
 
 - ## Another day wasted because Rust actix actors are incapable of using &self in async methods.
 - https://x.com/Horusiath/status/1889929863521509490

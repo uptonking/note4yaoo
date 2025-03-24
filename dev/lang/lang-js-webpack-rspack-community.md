@@ -33,6 +33,15 @@ modified: 2024-01-03T16:14:53.804Z
 # discuss-author
 - ## 
 
+- ## 
+
+- ## 
+
+- ## I originally thought that bundler was  CPU-bound, but on some platforms(enterprise macOS), the I/O overhead is far greater than the CPU overhead during make phase(generate module graph). 
+- https://x.com/hardfist_1/status/1904140063338054110
+  - Reading files takes significantly more time than parsing files
+  - Don'ts guess, just profile!
+
 - ## 🦀 @rspack_dev pick Rust just because @rspack_dev needs super complex js binding which is not easy for Go( binding between two gc language is hard)
 - https://x.com/hardfist_1/status/1899502014935290162
   - reason 2: @rspack_dev needs minifier & transformer

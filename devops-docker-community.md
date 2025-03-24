@@ -197,7 +197,10 @@ modified: 2024-06-30T11:17:28.971Z
 # discuss
 - ## 
 
-- ## 
+- ## The smaller your Docker image, the fewer points of vulnerability.
+- https://x.com/sitnikcode/status/1904111163090063531
+  - One approach is “distroless”, even without a package manager. You install everything you need in Alpine, then copy only the necessary binaries into an empty image `FROM scratch` .
+  - https://github.com/hplush/slowreader/blob/main/proxy/Dockerfile
 
 - ## [macos - Docker command not found when running on Mac - Stack Overflow](https://stackoverflow.com/questions/64009138/docker-command-not-found-when-running-on-mac)
 - Inside Docker desktop, go to Settings > Advanced Settings

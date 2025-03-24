@@ -23,6 +23,7 @@ modified: 2025-03-22T16:10:24.856Z
   - mermaid-graph
 # ai-designing
 - cursor for design: logo creator
+  - 形态是否要基于vscode，产物是否要直接在vscode打开
 
 - 使用ai实现高仿设计，是否可以绕过版权限制
 # ai-lowcode
