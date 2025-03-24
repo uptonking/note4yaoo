@@ -357,6 +357,23 @@ add action to create quickSort1.mjs and add 3 test cases in it
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
 
+## 0324
+
+- 上周
+  - 完成了入职流程剩余的子需求并提测
+  - 插入子需求，在thread close后，允许编辑文件
+  - 优化webview组件，减少白屏时间，刷新时loading反馈未做完
+  - 开始实现插入的需求，revert后打开文件自动定位到未被revert的action
+- 本周
+  - 提测 revert后打开文件自动定位到未被revert的action
+  - 提测 优化webview组件，减少白屏时间，刷新时loading反馈
+  - LSP的优化
+- 今天
+  - 测试diff视图的逻辑，保证准确性
+  - 完善webview刷新时的loading状态和交互细节
+- 昨天
+  - 调整 revert后打开文件自动定位到未被revert的action，基本改完了，本地测试中
+
 ## 0323
 
 - 昨天
