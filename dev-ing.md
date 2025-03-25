@@ -357,6 +357,26 @@ add action to create quickSort1.mjs and add 3 test cases in it
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
 
+## 0325
+
+- iframe的`onload`事件发生在iframe的html的`<script>`脚本执行后
+
+- [HTMLElement: load event - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/load_event)
+  - The load event fires for elements containing a resource when the resource has successfully loaded. 
+  - Currently, the list of supported HTML elements are: `<body>, <embed>, <iframe>, <img>, <link>, <object>, <script>, <style>, and <track>`.
+  - The error and load events fired on `<iframe>`s could be used to probe the URL space of the local network's HTTP servers. 
+  - Therefore, as a security precaution user agents do not fire the `error` event on `<iframe>`s, and the `load` event is always triggered even if the `<iframe>` content fails to load.
+
+- 邮件子帐号
+  - `username+1/2/2@gmail.com` ， gmail支持子邮箱，但业界不推荐
+  - 在产品上，如果按user email收费就会存在漏洞
+
+- 今天
+  - 测试 revert后打开文件自动定位到未被revert的action, 今天会提测
+  - 修复一些影响发版的问题
+- 昨天
+  - 完善webview刷新时的loading状态和交互细节
+
 ## 0324
 
 - 上周

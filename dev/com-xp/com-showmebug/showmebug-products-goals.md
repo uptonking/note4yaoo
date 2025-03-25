@@ -260,6 +260,10 @@ modified: 2024-05-06T02:52:41.789Z
   - 基于vscode: marscode
   - 自研: replit
 
+- ide-repo-thread分支的设计很符合git的习惯
+  - thread-list的树形ui对用户的引导很友好
+
+- 
 - 
 - 
 - 
