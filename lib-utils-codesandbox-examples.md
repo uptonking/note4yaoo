@@ -224,6 +224,24 @@ modified: 2023-09-02T09:17:22.992Z
   - Firecracker has a minimalist design. It excludes unnecessary devices and guest-facing functionality to reduce the memory footprint and attack surface area of each microVM.
   - Firecracker was developed at Amazon Web Services to accelerate the speed and efficiency of services like AWS Lambda and AWS Fargate. 
 
+- https://github.com/e2b-dev/e2b /apache2/202405/ts/python
+  - https://e2b.dev/docs
+  - Secure cloud runtime for AI apps & AI agents. Fully open-source
+  - E2B Sandbox is a secure sandboxed cloud environment made for AI agents and AI apps. Sandboxes allow AI agents and apps to have long running cloud secure environments. 
+  - The E2B sandbox can be connected to any LLM and any AI agent or app.
+  - Cloud browsers
+  - We have built a dedicated SDK for building custom code interpreters in your AI apps. It's build on top of E2B and our core E2B SDK.
+  - sdk支持python、js、cli
+  - [Show HN: We are building an open-source IDE powered by AI | Hacker News _202304](https://news.ycombinator.com/item?id=35440552)
+
+- https://github.com/jamsocket/forevervm /MIT/202503/rust/python/ts/paid
+  - https://forevervm.com/
+  - foreverVM provides an API for running arbitrary, stateful Python code securely.
+  - The core concepts in foreverVM are machines and instructions.
+  - Machines represent a stateful Python process. You interact with a machine by running instructions (Python statements and expressions) on it, and receiving the results. A machine processes one instruction at a time.
+  - You don't need to terminate machines -- foreverVM will automatically swap them from memory to disk when they are idle, and then automatically swap them back when needed. This is what allows foreverVM to run repls “forever”.
+  - [ForeverVM: Run AI-generated code in stateful sandboxes that run forever | Hacker News _202502](https://news.ycombinator.com/item?id=43184686)
+
 - https://github.com/oomol-lab/ovm-core
   - The minimal virtual machine to run podman.
   - Linux kernel: v6.1.50

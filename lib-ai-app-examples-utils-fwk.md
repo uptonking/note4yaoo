@@ -14,7 +14,8 @@ modified: 2025-02-21T18:20:42.624Z
   - https://dify.ai/
   - Dify is an open-source LLM app development platform
   - combines AI workflow, RAG pipeline, agent capabilities, model management, observability features and more
-  - 依赖flask-sqlalchemy、beautifulsoup4、celery、gunicorn、langfuse、numpy、pandas、pydantic、starlette、unstructured
+  - 依赖flask-sqlalchemy、beautifulsoup4、celery、gunicorn、langfuse、langsmith、numpy、pandas、pydantic、starlette、unstructured、python-docx、boto3
+  - 前端依赖 @dagrejs/dagre、elkjs、elkjs@lexical/react、@next/mdx、zustand、swr、tanstack-query5、ahooks、echarts-for-react、immer、mermaid、react-markdown、react-window、remark-gfm、sortablejs
   - license 💰
     - Unless explicitly authorized by Dify in writing, you may not use the Dify source code to operate a multi-tenant environment.
     - In the process of using Dify's frontend, you may not remove or modify the LOGO or copyright information in the Dify console or applications. 

@@ -26,6 +26,10 @@ modified: 2023-05-29T15:09:30.865Z
   - 主要用于流程图，不必在支持任意图形编辑和pdf编辑上花费过多精力
 
 - resources
+# draft
+- 支持mermaid流程图
+  - maxgraph-mcp
+  - drawio-mcp
 # dev
 - 插入图形的一般流程
   - graph.insertVertex

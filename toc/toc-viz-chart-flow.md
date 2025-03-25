@@ -138,7 +138,7 @@ modified: 2020-10-22T10:22:55.878Z
   - https://reactflow.dev/docs/examples/layout/auto-layout/
     - One using d3-hierarchy and the other one using dagre.js as a layout engine.
   - open source libraries for building node-based UIs with React or Svelte
-  - core依赖d3-drag, d3-selection, d3-zoom
+  - core只依赖3个: d3-drag, d3-selection, d3-zoom
   - react依赖zustand，postcss
   - library for building interactive node-based UIs, editors, flow charts and diagrams
   - React Flow Pro is not an additional library, it is a paid subscription around the React Flow

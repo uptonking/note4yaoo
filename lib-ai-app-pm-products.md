@@ -15,6 +15,10 @@ modified: 2025-03-22T16:10:24.856Z
 
 - browser-use
 - computer-use
+
+- ai-sandbox
+  - 不仅用于代码，还可扩展到更多场景，类似manus
+  - 在一台vm的前提下，能将ai执行任务的过程更具体的展示给用户，甚至邀请用户协作，甚至执行完将产物以用户熟悉的文件夹或预置软件打开给用户查看操作
 # ai-editor
 - drawio-use
 
@@ -34,9 +38,6 @@ modified: 2025-03-22T16:10:24.856Z
 
 - logicflow + ai
 # ai-coding
-- ai-sandbox
-  - 不仅用于代码，还可扩展到更多场景，类似manus
-
 - roadmap
   - 1. human-in-the-loop
   - 2. self-correction, auto-debug

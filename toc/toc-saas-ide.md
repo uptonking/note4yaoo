@@ -255,15 +255,7 @@ modified: 2021-05-14T15:06:46.615Z
   - https://minaplayground.com/
   - Mina Playground, an innovative interactive learning platform that allows you to follow step-by-step tutorials, run zkApps and Smart Contracts directly in your browser
 # ide-ai
-- https://github.com/e2b-dev/e2b /apache2/202405/ts/python
-  - https://e2b.dev/docs
-  - Secure cloud runtime for AI apps & AI agents. Fully open-source
-  - E2B Sandbox is a secure sandboxed cloud environment made for AI agents and AI apps. Sandboxes allow AI agents and apps to have long running cloud secure environments. 
-  - The E2B sandbox can be connected to any LLM and any AI agent or app.
-  - Cloud browsers
-  - We have built a dedicated SDK for building custom code interpreters in your AI apps. It's build on top of E2B and our core E2B SDK.
-  - sdk支持python、js、cli
-  - [Show HN: We are building an open-source IDE powered by AI | Hacker News _202304](https://news.ycombinator.com/item?id=35440552)
+
 # ide-paid
 - sublime text
 - ultra edit

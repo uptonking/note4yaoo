@@ -62,11 +62,14 @@ modified: 2023-02-07T17:38:05.336Z
   - 前端依赖blueprintjs、nivo-chart、remirror、nextjs、swr
   - https://github.com/makeplane/plane-mobile /dart
 
-- https://github.com/hcengineering/platform /EPLv2/202503/ts/svelte/Huly
+- https://github.com/hcengineering/platform /19.8kStar/EPLv2/202503/ts/svelte/Huly
   - https://huly.io/
   - All-in-One Project Management Platform (alternative to Linear, Jira, Slack, Notion, Motion)
   - a robust framework designed to accelerate the development of business applications, such as CRM systems. 
   - This repository includes several applications, such as Chat, Project Management, CRM, HRM, and ATS. 
+  - 文档基于tiptap实现
+  - 提供了网盘功能
+  - 支持第三方integrations
   - Various teams are building products on top of the Platform, including Huly and TraceX.
 
 - https://github.com/JordanKnott/taskcafe /MIT/202209/go/ts/inactive

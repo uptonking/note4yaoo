@@ -19,17 +19,17 @@ modified: 2025-02-21T17:17:42.225Z
 
 # workflow-ai
 
+- https://github.com/langflow-ai/langflow /52.9kStar/MIT/202503/python/ts
+  - http://www.langflow.org/
+  - a powerful tool for building and deploying AI-powered agents and workflows.
+  - It provides developers with both a visual authoring experience and a built-in API server that turns every agent into an API endpoint that can be integrated into applications built on any framework 
+
 - https://github.com/nocode-js/sequential-workflow-designer /MIT/202502/ts/NoDeps/svg
   - https://nocode-js.com/
   - Customizable no-code component for building flow-based programming applications or workflow automation
   - written in pure TypeScript and uses SVG for rendering
   - This designer is not associated with any workflow engine. 
   - the definition is stored as JSON
-
-- https://github.com/langflow-ai/langflow /MIT/202503/python/ts
-  - http://www.langflow.org/
-  - a powerful tool for building and deploying AI-powered agents and workflows.
-  - It provides developers with both a visual authoring experience and a built-in API server that turns every agent into an API endpoint that can be integrated into applications built on any framework 
 
 - https://github.com/FlowiseAI/Flowise /apache2/202406/ts
   - https://flowiseai.com/

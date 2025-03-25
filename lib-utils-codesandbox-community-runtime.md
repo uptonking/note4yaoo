@@ -442,6 +442,42 @@ modified: 2024-05-12T17:20:03.132Z
 # discuss-firecracker
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [ForeverVM: Run AI-generated code in stateful sandboxes that run forever | Hacker News _202502](https://news.ycombinator.com/item?id=43184686)
+- 🔒 why are you allowing network requests in the VM? (Tested in the python REPL which is available on your homepage) What are you doing to prevent the abuse?
+  - We allow outgoing requests because a common use case of ForeverVM is making API calls or fetching data files.
+  - We give every repl its own network namespace and virtual ethernet device. We also apply a set of firewall rules to lock it out from making non-public-internet requests.
+
+- Does this use CRIU? https://criu.org/Main_Page
+  - I don't think so. This looks like to be using an actual VM instead of container tech.
+
+- 🤔 It’s trivial to build something that does what this describes. I’m sure there’s more too it, but based on the description the pieces are already there under permissive open source licenses. 💡 For a clean implementation I’d look at socket-activated rootless podman with a wasi-sdk build of Python.
+  - It was an afternoon to prototype, followed by a lot of work to make it scale to the point of giving everyone who lands from HN a live CPython process
+- This is the sort of thing that would touch a lot of my data so I’d much prefer to have it self hosted but you mention Claude rather than deepseek or mistral so know your audience I guess.
+  - Fair enough. Our audience is businesses rather than consumer, so our equivalent to self-hosting is that we can run it in a customer's cloud.
+  - We mention Claude a lot because it is a good general coding model, but this works with any LLM trained for tool calling. Lately I've been using it as much with Gemini Flash 2.0, via Codename Goose.
+- Is it possible to run cython code with this as well? Since you can run a setup.py script could you compile cython and run it? Looking at the docs, it seems only suited for interpreted code
+  - We are working now on support for arbitrary imports of public packages from PyPi, which will include cython support, but only for public pypi packages. Soon after that we'll be working on a way to provide proprietary packages (including cython).
+
+- I tried to do this myself about ~1.5 years ago, but ran into issues with capturing state for sockets and open files (which started to show up when using some data science packages, jupyter widgets, etc.)
+  - Good insight! We also initially tried to use Jupyter as a base but found that it had too much complexity (like the widgets you mention) for what we were trying to do and settled on something closer to a vanilla Python repl. This really simplified a lot.
+
+- 🆚️ How is this different than chatgpt's python code execution?
+  - ChatGPT's code interpreter is mostly used as a calculator / graphing calculator. It can run arbitrary Python code, but it is limited in practice because it can't (e.g.) make external web requests or install arbitrary packages.
+
+- Fun fact: this is very similar to how Smalltalk works. Instead of storing source code as text on disk, it only stores the compiled representation as a frozen VM. Using introspection, you can still find all of the live classes/methods/variables. 
+  - Is this the best way to build applications? Almost assuredly not. But it does make for an interesting learning environment, which seems in line with what this project is, too.
+
+- it swaps idle sessions to disk, so that they don't consume memory. From what I read, apparently "traditional" code interpreters keep sessions in memory and if a session is idle, it expires. This one will write it to disk instead, so that if user comes back after a month, it's still there.
+
+- Is it possible to reuse the same paused VM multiple times from the same snapshot?
+  - Check out why Togerther. AI acquired CodeSandbox.
+
+- The API could be used for non-AI use cases if you wanted to, but it’s built to be integrated with an LLM through tool calling. We provide an MCP (model context protocol, for integration in Claude, Cursor, Windsurf etc.) server.
+
 - ## [Fast CI with MicroVMs | Hacker News _202211](https://news.ycombinator.com/item?id=33656767)
 - Firecracker is nice but still very limited to what it can do.
   - My gripe with all CI systems is that an an industry standard we've universally sacrificed performance for hermeticity and re-entrancy, even when it doesn't really gives us a practical advantage. Downloading and re-running containers and vms, endlessly checking out code, installing deps over and over is just a waste of time, even with caching, COW, and other optimizations.

@@ -104,10 +104,14 @@ modified: 2020-12-28T12:24:09.275Z
     - templates
     - sharing
   - [Change to the Sustainable Use License _202203](https://github.com/n8n-io/n8n/commit/521cf51e7cfb73ad60650b72206083d4c2666d29)
-    - [n8n is not open source and your project is gaslighting its users _201910](https://github.com/n8n-io/n8n/issues/40)
+  - ⚖️ [n8n is not open source and your project is gaslighting its users _201910](https://github.com/n8n-io/n8n/issues/40)
   - https://github.com/drudge/n8n-nodes-puppeteer
     - n8n node for requesting webpages using Puppeteer, a Node library which provides a high-level API to control Chrome or Chromium over the DevTools Protocol.
-- https://github.com/windmill-labs/windmill /5.9kStar/AGPLv3/22405/rust/svelte/js
+  - [N8n.io – Workflow automation alternative to Zapier | Hacker News _201910](https://news.ycombinator.com/item?id=21191676)
+  - 🍴 forks
+  - https://github.com/Deep-Consulting-Solutions/n8n-fork
+
+- https://github.com/windmill-labs/windmill /5.9kStar/AGPLv3/202503/rust/svelte/js
   - https://windmill.dev/
   - Open-source developer platform to turn scripts into workflows and UIs. 
   - Open-source alternative to Airplane/Retool/pipedream.
@@ -629,22 +633,44 @@ modified: 2020-12-28T12:24:09.275Z
   - A curated list of awesome open source workflow engines
   - saas, bpm, embedded
 
-- https://github.com/node-red/node-red /apache2/js
-  - Low-code programming for event-driven applications
+- https://github.com/activepieces/activepieces /12.3kStar/MIT+EE/202503/ts
+  - https://www.activepieces.com/
+  - Your friendliest open source all-in-one automation tool 
+  - Workflow automation tool 100+ integration / Enterprise automation tool / Zapier Alternative
+  - 后端依赖 fastify、typeorm、langchain
+  - 前端依赖 zustand、zone.js、codemirror6、dnd-kit、radix-ui、fuse.js、imapflow、pdf-lib、recharts
+  - Activepieces' Community Edition is released as open source under the MIT license and enterprise features are released under Commercial License
+    - paid: permissions,Audit logs,Collaborate using Git,Customize branding
+  - [More install options for self-hosting _202309](https://github.com/activepieces/activepieces/issues/1277)
+    - Activepieces can run in single docker image now using `sqlite3` and in memory queue, marking this as complete.
+  - [Non local pieces _202312](https://github.com/activepieces/activepieces/issues/3388)
+    - I want to define pieces in code, I don't care where the invocation come from, this is the trigger like usecase, after the define, can using the pieces in WebUI, just like the normal pieces
+    - activepieces running as a standalone server, it may invoke the pieces by NATS or HTTP callback or Redis Queue, Nast is simplest here, has builtin RPC semantic.
+    - temporal is code first, very heavy, full durable.
+    - trigger is half-half, the task is in userspace code, the schema is on the server side, major for cron like task.
+    - activepieces with flow + pieces, but WebUI only, the customize is not easy.
+    - laf is pure core, runtime only, more like serverless, heavy, not worth it.
+    - I think activepieces can meet the sweet point here with userspace/remote pieces.
+    - This is an interesting thought that would extend the activepieces existing capabilities to be code first used by developers. I believe it is the different direction and separate product, that we might not be able to develop forward in the short term, as the activepieces are postioned to be used by non-technical people and the pieces framework is purely for the developers
 
-- https://github.com/triggerdotdev/trigger.dev
+- https://github.com/triggerdotdev/trigger.dev /10.5kStar/apache2/202503/ts
   - https://trigger.dev/
   - The developer-first open source Zapier alternative.
   - Trigger.dev is an open source platform that makes it easy for developers to create event-driven background tasks directly in their code. 
   - open-source platform to create long-running jobs directly in your Next.js project, with features like API integrations, webhooks, scheduling and delays.
-  - 后端依赖remix、prisma
-  - 前端依赖headless/react、codemirror6、json-query、keyv、pulsar
+  - Trigger.dev is an open source platform and SDK which allows you to create long-running background jobs
+  - 后端依赖remix、prisma、eventsource
+  - 前端依赖ariakit/react、codemirror6、json-query、keyv、pulsar
 
 - https://github.com/automatisch/automatisch /3.8kStar/AGPLv3/202403/js/graphql
   - open source Zapier alternative. 
   - Build workflow automation without spending time and money.
   - 前端依赖mui5、apollo、graphql、slate
   - 后端依赖express、knex、pg、graphql
+
+- https://github.com/node-red/node-red /20.7kStar/apache2/202503/js
+  - http://nodered.org/
+  - Low-code programming for event-driven applications
 
 - https://github.com/elyra-ai/pipeline-editor
   - A react component for editing pipeline files. 
@@ -677,10 +703,21 @@ modified: 2020-12-28T12:24:09.275Z
   - Built in Python code editor.
   - Drag drop data pipeline builder.
 
+- https://github.com/prefecthq/prefect /18.7kStar/apache2/202503/python/ts
+  - https://prefect.io/
+  - Prefect is a workflow orchestration framework for building data pipelines in Python.
+  - With just a few lines of code, data teams can confidently automate any data process with features such as scheduling, caching, retries, and event-based automations.
+  - Workflow activity is tracked and can be monitored with a self-hosted Prefect server instance or managed Prefect Cloud dashboard.
+
 - https://github.com/jitsucom/jitsu /MIT/202401/go/ts
   - a tool for collecting event data from your websites, apps and stream them to your data warehouse or other services. 
   - It is a self-hosted, open-source alternative to Segment.
   - Jitsu is based on Bulker(golang), an open-source data warehouse ingestion engine. Bulker can be used as a standalone tool
+
+- https://github.com/kestra-io/kestra /apache2/202503/java/vue
+  - https://kestra.io/
+  -  Workflow Automation Platform. Orchestrate & Schedule code in any language, run anywhere, 500+ plugins. 
+  -  Alternative to Zapier, Rundeck, Camunda, Airflow...
 
 - https://github.com/cptn-io/el-cptn /java
   - an open source platform that helps develop and deploy integrations and data pipelines quickly and easily.
@@ -689,11 +726,6 @@ modified: 2020-12-28T12:24:09.275Z
     - Destination: 存放/写入数据的目的地，对接各种数据库和线上存储
     - Transformation: 转化数据的 code block
     - Pipeline: 将以上组合起来的工作流
-
-- https://github.com/activepieces/activepieces /MIT+EE/202503/ts
-  - https://www.activepieces.com/
-  - Your friendliest open source all-in-one automation tool 
-  - Workflow automation tool 100+ integration / Enterprise automation tool / Zapier Alternative
 
 - https://github.com/riccardoperra/pipelineui /MIT/202411/ts
   - https://pipelineui.dev/
