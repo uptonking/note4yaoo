@@ -216,6 +216,14 @@ modified: 2021-08-30T07:01:09.493Z
 # discuss-setTimeout/setInterval
 - ## 
 
+- ## 
+
+- ## [Is there memory leak issue if not calling clearTimout after calling setTimeout - Stack Overflow](https://stackoverflow.com/questions/4244309/is-there-memory-leak-issue-if-not-calling-cleartimout-after-calling-settimeout)
+- No. clearTimeout only needs to be called if you want to stop a pending setTimeout from happening. After the setTimeout happens, the timer id is no longer valid but fortunately calling clearTimeout with an invalid timer id is harmless.
+
+- [Will a setTimeout keep a function from being garbage collected? - Stack Overflow](https://stackoverflow.com/questions/31503110/will-a-settimeout-keep-a-function-from-being-garbage-collected)
+  - In javascript scope of a function is created when the function is created. setTimeout takes a callback function which keeps a reference of scope of myFunction. So it wont be garbage collected till the callback function is called.
+
 - ## in early versions of Bun we made setTimeout(cb, 0) append to the task queue without delay and it broke a lot of libraries that implicitly expected it to clamp to 1ms
 - https://x.com/jarredsumner/status/1885104099307511953
   - Blink:  Intent to Ship: Remove clamping of setTimeout(...) to >= 1ms

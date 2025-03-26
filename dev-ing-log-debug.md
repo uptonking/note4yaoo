@@ -11,6 +11,13 @@ modified: 2023-06-14T00:53:15.226Z
 
 # not-yet
 - ❓ hover的tooltip/popover如何调试
+
+- 流式输出在前端刷新页面时容易导致数据丢失，如何处理
+
+- 
+- 
+- 
+
 # tips
 - 后端有没有收到请求以及请求执行是否成功/超时，需要开发时在业务逻辑的现场位置提前添加日志记录并判断，否则排查时需要靠猜或缺少信息
   - 添加日志的重要场景: http请求， 文件io， 文件格式解析异常(易漏)
@@ -29,7 +36,11 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
-## ❓ error: followingFocusComponent call timeout (7s)
+## 
+
+## 
+
+## error: followingFocusComponent call timeout (7s)
 
 - 20250318左右经常碰到超时问题，导致agent无法执行action或执行其他操作
 
@@ -44,6 +55,9 @@ modified: 2023-06-14T00:53:15.226Z
   - AIAgent雪崩时，cpu整体负载并不高(排除单一CPU负载过高问题⇒线程模型还可以优化)，可以出现瓶颈一分钟一次health超时问题，在3次应急措施后缓解。确认AIAgent是否有主线程耗时运算+阻塞调用，阻塞了事件循环机制。
   - 僵尸连接abort识别后，预期关闭连接重新建ws连接。⇒实际上没有恢复，确认是否连接没有关闭回收，还是有其它问题
   - SWE staging之前报过很多超时，是否线上同款超时日志。⇒AIAgent主线程超时单号 ⇒配合SWE环境+Python性能采集分析
+
+- 后续优化
+  - 外网改内网的pr，目前的改动可以暂时满足AIAgent到IDEServer的只走内网访问的需求，但是从性能和流程的角度上看，还可以近一步优化空间。目前先考虑将其合入develop 分支，我们可以记一个todo： 对IDEServer和AIAgent进行联合修改，服务间请求不进行身份验证。
 
 - 为何抓包有丢包
   - wireshark通过websocket完整http建连机制识别起点，已建连无法识别出ws协议。手动将3012端口的请求识别成ws协议即可(通过右键菜单Decode As - TCP Port WebSocket)。
