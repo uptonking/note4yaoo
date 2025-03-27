@@ -113,6 +113,13 @@ modified: 2024-08-24T16:30:20.218Z
 # ai-devops
 
 # coding-ai
+
+- https://github.com/vizhub-core/editcodewithai /MIT/202503/ts
+  - The premise of this project is to build and iterate an open source AI code editing system. 
+  - The core idea is that you can feed this system a set of source code files and high level instructions, and it will return the edited code after some time. 
+  - 依赖langchain、llm-code-format
+  - It aims to be compatible with many LLMs, and flexible enough to adapt to future models as they come out.
+
 - https://github.com/cline/cline /24.5kStar/apache2/202501/ts
   - Meet Cline, an AI assistant that can use your CLI aNd Editor.
   - Autonomous coding agent right in your IDE, capable of creating/editing files, executing commands, using the browser, and more with your permission every step of the way.

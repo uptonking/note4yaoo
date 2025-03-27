@@ -244,7 +244,7 @@ modified: 2023-02-08T10:46:26.912Z
   - A Rust implementation of yihong0618/github-readme-stats.
 # github-mirrors/proxy 🪜
 - tips
-  - 在yandex搜索 `github 下载 代理` ，查看近1个月的结果， ghproxy是一种流行的开源方案
+  - 在yandex/bing搜索 `github 下载 代理` ，查看近1个月的结果， ghproxy是一种流行的开源方案
 
 - [Gitee极速下载，每日同步一次](https://gitee.com/mirrors)
   - https://gitee.com/organizations/mirrors/projects
@@ -259,6 +259,10 @@ modified: 2023-02-08T10:46:26.912Z
   - http://521github.com/
 
 - git-only
+  - https://ghproxy.link/
+  - https://github.moeyy.xyz/
+  - https://goppx.com/
+  - https://ghproxy.wujiyan.cc/
   - https://github.zhlh6.cn/
     - git clone git@git.zhlh6.cn:tinyplex/tinybase.git
   - https://gitclone.com/

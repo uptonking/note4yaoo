@@ -61,6 +61,12 @@ tsc --showconfig
 # clone非master分支、修改克隆下来的文件夹名称
 git clone -b <branch-name> <repo-url> <destination-folder-name>
 
+# 对于体积很大的仓库，可以在clone时指定只获取最近N次提交
+git clone --depth N repo
+# 在获取10个提交
+git fetch --depth=10
+git fetch --unshallow
+
 # 将远程git仓库里的指定分支拉取到本地（本地不存在的分支）
   # 若提示origin/远程分支名不存在，需要先 git fetch --all
 git checkout -b 本地分支名 origin/远程分支名

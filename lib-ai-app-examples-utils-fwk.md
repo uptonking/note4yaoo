@@ -32,6 +32,18 @@ modified: 2025-02-21T18:20:42.624Z
   - https://x.com/threepointone/status/1895097050439593993
     - an event bus for ai agents
 # agent-framework
+- https://github.com/MotiaDev/motia /MIT/202503/ts
+  - https://motia.dev/
+  - Motia lets developers create, test, and deploy production-ready AI agents in minutes, in a framework that will feel familar to software engineering teams. 
+  - Motia gives you full, code-first control of your agents and automations with the simplicity of a visual interface, letting you focus on what truly matters: your business logic
+  - Motia is built for developers who want to build agentic and intelligent, event-driven systems rapidly and reliably.
+  - Use any LLM, vector store, or reasoning pattern without restrictions.
+  - Zero Infrastructure Headaches - No Kubernetes expertise required. Deploy agents with a single command
+  - Code-First Development - Write agent logic in familiar languages, not proprietary DSLs.
+  - Composable Steps with Runtime Validation - Build agents from modular, reusable components with automatic input/output validation.
+  - Built-in Observability - Debug agent behavior with visual execution graphs and real-time logging.
+  - Instant APIs & Webhooks - Expose agent functionality via HTTP endpoints without extra code.
+
 - https://github.com/mastra-ai/mastra /Elastic/202502/ts
   - https://mastra.ai/
   - Mastra is an opinionated Typescript framework that helps you build AI applications

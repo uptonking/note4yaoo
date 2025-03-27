@@ -90,7 +90,16 @@ modified: 2020-12-19T08:52:02.671Z
   - It's not a good idea for Docusaurus to maintain the entire layout and styling as these stuff are hard to make improvements without breaking existing users' code.
 - Rearchitect architecture to introduce hooks into the development and build phase so that a plugin system is possible.
 - Use a module bundler like webpack
-# discuss
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## For example, Docusaurus SSG will only use RSCs at build time, no server/runtime. You can use RSCs in much simpler ways
+- https://x.com/sebastienlorber/status/1905222350112432262
+  - I think this complexity is mostly related to using a server-driven router
+
+# discuss-doc-solutions
 - ## 
 
 - ## 

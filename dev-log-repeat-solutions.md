@@ -150,6 +150,7 @@ modified: 2021-07-20T13:50:23.433Z
   - suite-docs     (MIT/django+blocknote)
   - huly-platform  (EPL/tiptap/svelte//🐞jira)
   - zulip      (apache2/django)
+  - think          (MIT/typeorm+tiptap)
   - nocobase   (apache2/sequelize+umi)
   - payloadcms     (MIT/drizzle+slate)
 - ✨ airtable-like(data-mgmt)

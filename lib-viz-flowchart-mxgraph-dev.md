@@ -30,6 +30,8 @@ modified: 2023-05-29T15:09:30.865Z
 - 支持mermaid流程图
   - maxgraph-mcp
   - drawio-mcp
+
+- mermaid-editor using drawio/tldraw
 # dev
 - 插入图形的一般流程
   - graph.insertVertex
