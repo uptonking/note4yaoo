@@ -213,6 +213,18 @@ modified: 2021-01-06T14:40:03.364Z
 - We’ve started following this approach for new components in our internal library, and it’s definitely a fine balance when trying to ensure people don’t deviate from the branding guidelines. But I can confidently say it helps us solve more problems than it introduces
 - This is a huge topic of mine. I've been promoting this along with React Context to get super clean APIs.
 
+# discuss-news-react
+- ## 
+
+- ## 
+
+- ## 
+
+- ## If you think this is all optional you're not paying attention. React 19 doesn't even ship a file that works in the browser anymore without a compiler. Why?
+- https://x.com/mjackson/status/1905009747881025898
+- Neither does Angular, Solid, Svelte, Qwik, etc...
+- I haven’t used vanilla js in about 6 years.  From the typescript perspective it’s all optional.
+
 # discuss-svelte
 - ## 
 
@@ -238,12 +250,42 @@ modified: 2021-01-06T14:40:03.364Z
   - With React Forget on the horizon, I think we’ll start to see more front end UI compiler driven optimizations that aren’t just Babel plugins.
   - Not to say that Babel plugins weren’t important. They were. It’s just you need a proper compiler pipeline to make larger scale optimizations. It gets even more impressive when you couple the compiler to the bundler/type system.
 
-# discuss-ssr/rsc
+# discuss-rsc/ssr
 - ## 
 
 - ## 
 
 - ## 
+
+- ##  RSC is not working out. They add a lot of complexity and tie together front-end, bundling and server runtimes. And in return we get, what?
+- https://x.com/biilmann/status/1904985218538434643
+- I believe they have one use case. SEO. Thats it.
+  - Isn't SSR enough?
+- SSR or partial pre rendering solves that
+- Is this still an issue in 2025? I know Google bot runs the client-side javascript, so then...?
+  - Yeah but it's better and faster for you if they don't need to do that. Also most other webscrapers, like Facebook and X preview feature, don't run JS.
+  - Depends—google crawl has a budget limit if your website exceeds it google will not finish crawling it.
+
+- I plan to use RSC in Docusaurus SSG in the future and it's still super helpful for flexibility, not even considering the perf/bundle size reduction
+
+- https://x.com/youyuxi/status/1905275294090662266
+  - The issue is the tradeoffs involved in making it work. It leaks into, or even demands control over layers that are previously not in scope for client-side frameworks. This creates heavy complexity (and associated mental overhead) in order to get the main benefits it promises.
+  - React team made a bet that they can work with Next team to polish the DX to the extent that the benefit would essentially be free - so that RSC can be a silver bullet for all kinds of apps, and that it would become the idiomatic way to use React. IMO, that bet has failed.
+
+- ## tanner: I'm rooting for RSCs and want to support them as soon as the RSC + Vite story is solid.
+- https://x.com/tannerlinsley/status/1905314307857907780
+  - I have immediate use cases for them that will allow me to stop shipping useless code to the client to generate/render rarely-changing content.
+  - There's an ongoing effort to get the RSC spec/manifest unified and flexible enough to work the same across any bundler, including vite.
+
+- Meanwhile I'd love full framework with @rspack_dev . @ScriptedAlchemy already did demo of RsPack with MF and Epic Stack (so React Router)
+  - They just supported react router, so imagine possible for tanstack start too when it moves off vinxi and becomes a vite plugin
+- pretty sure vinxi is the main constraint. Since vite has env api now, and rsbuild has env api too - it will be much easier to port once they address that. I imagine once they resolve that - it would be a good time to start discussions.
+
+- ## rspack: It required 20, 000 LOC change to Module Federation to support RSC. 
+- https://x.com/ScriptedAlchemy/status/1905470010820276496
+  - It was the largest architectural change to the compiler mechanics of federation since creation. 
+  - V2 was primarily a new runtime + add-on plugins. The 3 main underlaying plugins havent changed this much in ~6 years
+  - We will support RSC, i think there are some good use cases. But i completely understand the take. This is why i havent supported it for such a long time - the amount non-trivial work was large.
 
 - ## RSC is the most painful new React API in the State of React survey.
 - https://x.com/housecor/status/1889683309707379027

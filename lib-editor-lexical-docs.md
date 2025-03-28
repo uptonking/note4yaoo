@@ -11,6 +11,8 @@ modified: 2022-05-15T18:36:36.524Z
 
 # blogs
 
+## [Lexical state updates _202311](https://dio.la/article/lexical-state-updates)
+
 ## [富文本编辑器 Lexical 解析](https://zhuanlan.zhihu.com/p/591864284)
 
 - 每个命令有 5 个可选的优先级: 0-4

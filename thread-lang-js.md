@@ -16,6 +16,32 @@ Symbol('a') === Symbol('a'); //false
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🤔💡 spent 2+ hours debugging this problem:
+- https://x.com/aidenybai/status/1905662417461272761
+
+```JS
+❌
+JSON.stringify("data") === "data" // false
+
+✅
+JSON.stringify("data") === "\"data\"" // true
+
+// ""data"" === "data" so false
+```
+
+- `stringify` shows the JSON string representation, parse it after stringifying if you want it represented as a js string
+
+- ##  `try { return 'try'}  finally { return 'final' }` would return `final`
+
+- https://x.com/FaPerreault/status/1905639919810195809
+- It returns finally. Finally runs regardless of an exception or a return statement being encountered. JS will remember the first return statement in case the finally block doesn't return something else.
+
+- If you are running it outside a function, then you'll get an error. But if you are running it inside a function, then it will return 'finally' as no matter whatever happens in the try/catch blocks, the finally block always executes at the last.
+
 - ## Introducing Visual Edits: visually edit any styles in Lovable, for faster and more precise edits
 - https://x.com/lovable_dev/status/1890075209748902304
 - This is what I call generative UX! Using Natural Language when needed but ALSO other GUIs for different tasks. Whatever fits the use-case best!!!

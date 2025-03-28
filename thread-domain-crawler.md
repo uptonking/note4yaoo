@@ -30,6 +30,14 @@ modified: 2025-02-03T15:11:10.478Z
 
 - ## 
 
+- ## Best CLI for crawling a URL and turning it into LLM-ready text... hit me
+- https://x.com/mattpocockuk/status/1904208550127186104
+- firecrawl, or even home made code + LLM call actually
+- crawl4ai
+
+- ## SourceHut 的站长，公开发表文章（下图），痛斥 AI 爬虫太过份，服务器无法承受访问压力，中断服务。
+- https://x.com/ruanyf/status/1905419401958170675
+
 - ## 一个需求： 把过去 24小时，小红书的爆款笔记，爆款商品拉出来。每天早晨收到这份列表
 - https://x.com/huangyun_122/status/1885541683611177233
   - 1/ 我的 RPA 已经可以拉到数据

@@ -56,6 +56,7 @@ modified: 2021-01-04T17:26:43.784Z
   - https://projects.wojtekmaj.pl/react-pdf
   - Display PDFs in your React app as easily as if they were images.
   - For React-PDF to work,  `PDF.js` worker needs to be provided.
+  - https://x.com/xiaohanyu1988/status/1905077853785567258 🆚️
 
 - https://github.com/pdfslick/pdfslick /MIT/202503/ts
   - https://pdfslick.dev/

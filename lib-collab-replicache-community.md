@@ -268,6 +268,21 @@ modified: 2024-01-07T05:09:14.413Z
 
 - ## 
 
+- ## How is this sync engine different than `useOptimistic` and friends?
+- https://x.com/aboodman/status/1905209548748845133
+  - It's a lot different. With a sync engine you build your UI out of reactive queries that run against a local, on-device database.
+  - Whenever the local datastore changes, all affected queries instantly update *automatically* and the UI re-renders.
+  - This runs instantly against the *local* datastore. The affected query above *instantly* refreshes and the UI updates. In the next frame.
+  - There is no need to manually update the UI to splice in the new user optimistically. There is no worry about duplicating the sort or filter in the optimistic rendering.
+  - Behind the scenes, Zero sends the write to the server. If this results in any different state than the optimistic one (i.e., due to conflicts), the resolved changes are synced down and re-rendered reactively in the same way.
+
+- Doesn’t Apollo do this same behavior? Once the “cache” is updated every hook reading the cache rerenders…
+  - In Apollo the normalization only works for single items. 
+
+- Can you dig into what Zero does with conflicts?
+  - Here's a blog post that explains how it works for our previous project Reflect. Same exact way in Zero
+  - This is what we refer to as 'custom mutators' in Zero. Custom mutators are the ability provide these functions that run on client and server.
+
 - ## Quick demo of Zero’s new background queries.
 - https://x.com/aboodman/status/1901198594952384984
   - Zero’s sync is query-based. Rather than specifying what data you want using rules or some other separate system, you just use queries.

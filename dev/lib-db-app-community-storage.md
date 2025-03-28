@@ -153,9 +153,15 @@ modified: 2023-09-17T17:36:36.118Z
 
 - ## 
 
-- ## 
+- ## I wrote a post covering some of the scenarios you might want to be aware of, and resilient to, when you write systems that read and write files.
+- https://x.com/eatonphil/status/1905312781517123598
+  - [Things that go wrong with disk IO | notes.eatonphil.com](https://notes.eatonphil.com/2025-03-27-things-that-go-wrong-with-disk-io.html)
+- ive heard that using sqlite as a “filesystem” can actually be more reliable in some cases, as it handles a lot of IO errors. is this true?
+  - No, the post covers many scenarios sqlite does not handle.
+- A funny thing under Linux is that for files that get appended to, on filesystems that use delayed allocation, the original I/O priority tagging gets lost and the delayed allocation is (re)injected in the queue at the default priority. This strictly does not break 'correctness'.
 
-- ## 
+- ## I had a long running thread about database pages, that aligns to block sizes on SSDs.
+- https://x.com/shrirambalaji/status/1905257916954730692
 
 - ## I deleted a few TBs of data from s3, cost me $270 to **delete** data
 - https://twitter.com/boristane/status/1764018341327286549

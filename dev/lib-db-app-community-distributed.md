@@ -217,6 +217,14 @@ modified: 2023-10-26T19:04:00.318Z
 # discuss-protocol-raft/paxos ⚖️🆚️
 - ## 
 
+- ## 
+
+- ## 
+
+- ## I’ve almost figured out the Paxos interaction process in MySQL through the animation. 
+- https://x.com/wangbin579/status/1905467848442741067
+  - I personally think Paxos in MySQL is much simpler than Raft.
+
 - ## Could you elaborate on why you prefer Paxos over Raft?
 - https://x.com/wangbin579/status/1903819153926217768
   - The Paxos algorithm is not too complicated, and there are many ways to learn it. It also has many variants, so you can choose the one that fits your needs. For example, MySQL uses a multi-leader version of Paxos, which allows every node to handle writes.

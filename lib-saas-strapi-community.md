@@ -244,7 +244,8 @@ modified: 2023-12-15T17:04:36.589Z
 # discuss-news 🆕️
 - ## 
 
-- ## 
+- ## Strapi v5 changed its approach—Lifecycle Hooks are out, Document Service Middleware is in
+- https://x.com/strapijs/status/1904571475446706363
 
 - ## We did a major refactoring of the cors middleware in 4.24.0 I believe _20240503
 - https://discord.com/channels/811989166782021633/1095091586452426824/1235981764208623636

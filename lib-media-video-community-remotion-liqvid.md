@@ -78,7 +78,11 @@ modified: 2024-06-21T09:53:44.956Z
 # discuss-vid-codec
 - ## 
 
-- ## 
+- ## 我的电脑在其他平台在线播放视频，风扇完全不会转得像在Bilibili里播放视频时那样夸张。
+- https://x.com/sinokitatokyo/status/1904905066966114434
+- 感觉像是b站特有的DASH解码方案，以及特有如H.265/HEVC视频编码格式, 对硬件还是有一定要求的, 完全依赖软件解码会导致CPU占用率飙升, 还有一个就是阿b用了HTML5，对浏览器的压力也不低
+  - 但是b站这样做也有好处：弹幕互动好、流畅适应
+  - 对老设备确实不如其他视频网站友好
 
 - ## I am picking up my WebCodecs efforts with a new website: http://convert.remotion.dev!
 - https://x.com/JNYBGR/status/1854081067352793592

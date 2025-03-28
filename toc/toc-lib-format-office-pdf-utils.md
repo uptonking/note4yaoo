@@ -89,6 +89,12 @@ modified: 2022-11-11T10:46:41.519Z
 # extension-superset
 
 # converters
+
+- https://github.com/oomol-lab/pdf-craft /AGPL/202503/python
+  - PDF craft can convert PDF files into various other formats. This project will focus on processing PDF files of scanned books. 
+  - This project can read PDF pages one by one, and use `DocLayout-YOLO` mixed with an algorithm I wrote to extract the text from the book pages 
+  - 超过100页的，可转为EPUB，结合了本地OCR和云端LLM处理，兼顾效率和功能性，最终生成带目录分章节的EPUB
+
 - https://github.com/yWorks/svg2pdf.js /MIT/202308/ts
   - A javascript-only SVG to PDF conversion utility that runs in the browser leveraging jsPDF.
 

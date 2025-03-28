@@ -179,6 +179,10 @@ modified: 2022-09-21T15:47:41.340Z
   - Hindsight is a retrospective board for Scrum practitioners.
   - No back-end. Data is encrypted and shared directly between connected browsers.
 # yjs-bindings
+- https://github.com/kapv89/k_yrs_go /MIT/202503/go/ts
+  - k_yrs_go is a database server for YJS documents. It works on top of Postgres and Redis. 
+  - k_yrs_go uses binary redis queues as I/O buffers for YJS document updates, and uses the following PG table to store the updates
+
 - https://github.com/joebobmiles/y-react
   - React bindings for Yjs.
   - a set of React components and React hooks for working with Yjs in an idiomatic way.

@@ -24,6 +24,15 @@ modified: 2023-10-27T06:54:20.487Z
 # discuss-id
 - ## 
 
+- ## 
+
+- ## UUIDs are not great, and they are not sortable. Learned the hard way.
+- https://x.com/pontusab/status/1904205433721749949
+- generate them on server instead of db
+
+- when would you need to sort by ids?
+  - started of by a migration, and realised a bit too late.. also when you want a simple cursor pagination (cant use createdAt) because of bulk inserts
+
 - ## When using auto-incrementing IDs on the backend database, how do you handle offline client-side record creation?
 - https://x.com/powersync_/status/1881739219745579295
   - A good solution is to use a secondary UUID on the client, then map it to a sequential ID when performing an update on the backend database.

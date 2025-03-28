@@ -14,7 +14,9 @@ modified: 2024-11-16T10:35:13.534Z
 
 - ## 
 
-- ## 
+- ## Used 50+ Motion animations on the new NativePHP site—and the new @filamentphp site is next
+- https://x.com/HassanZahirnia/status/1905253050501001704
+
 # discuss-news/author
 - ## 
 

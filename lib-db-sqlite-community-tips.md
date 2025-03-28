@@ -129,6 +129,11 @@ modified: 2023-10-28T13:38:46.522Z
 
 - ## 
 
+- ## SQLite in the backend is a terrible choice!
+- https://x.com/CFDevelop/status/1904623460447641786
+  - It suffers from the same problem as document dbs. There are only a handful of data types so you can’t do powerful querying 
+  - Use something like Postgres for an RDBMS on the backend
+
 - ## Generated columns are calculated based on other columns in the same table. 
 - https://twitter.com/ohmypy/status/1788193851099726311
   - For example, we can calculate the failure rate based on the number of queries

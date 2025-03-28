@@ -64,7 +64,9 @@ modified: 2023-02-08T06:56:54.945Z
 
 - ## 
 
-- ## 
+- ## What are we doing right and wrong with @pydantic AI to have such a wildly different downloads/stars ratio compared to other Agent Frameworks released around the same time
+- https://x.com/samuel_colvin/status/1904657385769046046
+- Perhaps they market their repo better? Huggingface had 100K signups for their agents course where they might have asked explicitly for a star or two
 
 - ## 有个习惯是有了 AI 之后我才改过来的。现在在 AI 提示下我会把敏感信息操作和普通信息操作完全隔离开来
 - https://x.com/wwwyesterday/status/1892560418968654100

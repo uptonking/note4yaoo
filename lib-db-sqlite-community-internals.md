@@ -41,6 +41,19 @@ modified: 2023-10-28T13:45:16.973Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## SQLite says its immune to torn pages but it doesn't say how
+- https://x.com/sunbains/status/1903873086849728769
+  - if you set a page size of 8KB or 16KB or whatever, how does SQLite protect against torn writes?
+
+- From memory it uses a rollback journal. Copies the old page contents to this journal before updating the data file. I think these are transient files too, need to confirm. It’s similar to the innodb double write somewhat, the difference is that Innodb uses a designated area (earlier) and now separate files. 
+  - SQLite write performance is a little underwhelming and the authors have never positioned it as write efficient etc.
+
+- Pretty sure that it does that as part of the WAL recovery, by writing the full pages during startup. That way, you don't care about this. Note that this assumes that after fsync, you cannot have torn pages, since the WAL is cleared then.
+
 - ## 🤔 TIL the hard way that foreign keys in SQLite DO NOT automatically give you indexes
 - https://x.com/stevekrouse/status/1890469849584795824
 - postgres doesnt do this either

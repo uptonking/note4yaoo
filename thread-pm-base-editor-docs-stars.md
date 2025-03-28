@@ -64,6 +64,16 @@ modified: 2021-08-22T07:29:34.045Z
 
 - ## 
 
+- ## 
+
+- ## 花了四个月终于快完工啦，超顺滑的无限白板和编辑器。
+- https://x.com/kk_shinkai/status/1903959640595103966
+  - 白板部分更是完全从零编写，交互和配色都雕琢了很久，还支持复杂的对齐和挤压算法。
+- Obsidian's Canvas is already capable of doing this.
+
+- https://x.com/kk_shinkai/status/1901791856528363817
+  - 给我的白板软件开发的富文本编辑器。目前还有不少 bug，离 “超高质量” 还有一段距离
+
 - ## I am so happy to introduce you to Not Real - a design-driven creative studio focused on art direction, CGI, and animation
 - https://x.com/alex_barashkov/status/1902745611125842058
   - The studio is a well known for their work on many Microsoft promo videos

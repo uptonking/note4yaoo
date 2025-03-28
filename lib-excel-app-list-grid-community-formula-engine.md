@@ -18,6 +18,14 @@ modified: 2023-11-12T16:48:11.308Z
 
 - ## 
 
+- ## 
+
+- ## If you find @NotionHQ formulas confusing, I've got a huge new video for you that explains them at 5 levels.
+- https://x.com/TomFrankly/status/1905375808278966445
+
+- ## excel常用函数 sum, sumif, count, vlookup, index, match
+- https://x.com/abskoop/status/1905299316920418306
+
 - ## 🤔 Two years ago I wrote about how a few major source-available databases execute expressions.
 - https://x.com/eatonphil/status/1903083042408747445
   - Many (most?) of them still operate as AST-walking interpreters! 

@@ -19,7 +19,11 @@ modified: 2024-08-11T07:19:29.817Z
 # discuss-coding-ai
 - ## 
 
-- ## 
+- ## 我最近有个奇怪的发现，ai写go的质量特别高。如果Python代码oneshot可用50%的话，go能到80%。
+- https://x.com/virushuo/status/1904915286010081529
+- 个人感觉 Go/TS >> Python >>>>> Rust/C++/Swift
+
+- 语法简单，版本兼容性好，开源质量高。从某种角度来说，更接近自然语言。 Python 本来是语法简明的脚本，但是经过几十年的迭代，越来越臃肿了。
 
 - ## Aider keeps shipping with 70% of its code now written by AI. But I think its growth is constrained by being terminal only. 
 - https://x.com/imrat/status/1845158205552226742

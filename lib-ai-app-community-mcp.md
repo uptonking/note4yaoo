@@ -12,6 +12,23 @@ modified: 2025-02-03T10:17:42.052Z
 # discuss-stars
 - ## 
 
+- ## 各位现在用到MCP最实用的场景是什么？
+- https://x.com/wong2_x/status/1904793226713706653
+- 工具自动发现+接入。
+  - 我说完整一点：假设你是dify这样的ai应用平台开发者，你通过coding agent+mcp协议 理论上可以自动发现并接入各种你想使用的工具（基于关键词/类型订阅，指定订阅源）。以后agent/workflow的用户理论上基本没有工具接入这件事了。
+
+- Sequential thinking提升规划能力，搭配Tavily等搜索引擎，实现低配版Deep Research。
+
+- 目前看没有比较落地的场景
+
+- ## why mcp won
+- https://x.com/swyx/status/1905000926127313217
+  - based off successful LSP
+  - dogfooding
+- dogfooding is probably the winning factor
+  - best abstractions come from actually using them, not from theoretical design commitees
+- I feel like cursor adopting it was a huge bump
+
 - ## 🏘️🆚️ [[RFC] Replace HTTP+SSE with new "Streamable HTTP" transport · Pull Request · modelcontextprotocol/specification _202503](https://github.com/modelcontextprotocol/specification/pull/206)
 - https://x.com/jaredpalmer/status/1901633502078226565
   - This PR introduces the Streamable HTTP transport for MCP, addressing key limitations of the current HTTP+SSE transport while maintaining its advantages.
@@ -42,6 +59,18 @@ modified: 2025-02-03T10:17:42.052Z
 - We're also avoiding making WebSocket an additional option in the spec, because we want to limit the number of transports officially specified for MCP, to avoid a combinatorial compatibility problem between clients and servers. (Although this does not prevent community adoption of a non-standard WebSocket transport.)
 
 - ## [MCP Server Registry · modelcontextprotocol · Discussion _202501](https://github.com/orgs/modelcontextprotocol/discussions/159)
+
+# discuss-news-mcp
+- ## 
+
+- ## 
+
+- ## A new version of the MCP spec was finalized today. _20230326
+- https://x.com/alexalbert__/status/1904908450473324721
+  - Auth framework based on OAuth 2.1
+  - ✨ Replaced the previous HTTP+SSE transport with Streamable HTTP transport
+  - Support for JSON-RPC batching
+  - Tool annotations for better describing tool behavior
 
 # discuss-mcp-pm
 - ## 
@@ -105,6 +134,14 @@ modified: 2025-02-03T10:17:42.052Z
 - ## 具体研究了browser-use的底层代码才发现，其网页可交互部分的结构化数据是完全靠DOM数据分析得来的而不是靠视觉模型，这也证明了为什么在普通机器上也能快速得到结果了
 - https://x.com/uptonking2/status/1904040163229200491
 
+- https://x.com/GanymedeNil/status/1904877695336395123
+  - 在之前我发了一篇关于browser-use，
+  - 首先网页交互的数据确实是基于playwright执行buildDomTree.js脚本而得到的，然后controller层调用browser层的playwright的一些动作的封装，其中比如点击就是基于buildDomTree.js 脚本返回的数据中的xpath来执行的。
+  - 然后Agent是如何知道要点击哪个地方的呢？这里有两个部分：
+  - 第一个是基于视觉，这部分是默认开启的，那么模型是怎么知道要点击的呢，上文说到js脚本解析了所有DOM节点构成了一个DOM树并且标注了DOM节点是否可以点击并且是可视的，这个脚本还做了另一件事就是将可交互的所有DOM节点进行了数字标记。每次执行任务都会提交对应的网页截图其中也包含了数字标记。
+  - 第二个是基于DOM结构化数据中将可视化的数据转换成了一个如下格式的文本串： `[索引]<DOM标签名 属性 标签内所有文本/>` 直到下一个可点击元素之前的所有文本, 然后当模型接收到如上数据之后，会执行对应的funcation_calling，然后把索引传递给对应的方法，这样就成功执行了一次点击。
+  - 当然Agent也可以关闭视觉的参与，然后纯靠如上第二部分的数据来进行推理，根据我的实验，如果网页视觉结构非常复杂，当关闭视觉参与可以得到不错的效果。当然Agent中执行操作是很重要的一部分，历史数据记录也是不容忽视的。这我会在之后的文章中分享。
+
 - ## [How I taught an AI to use a computer _202501](https://e2b.dev/blog/how-i-taught-an-ai-to-use-a-computer)
 - 
 - 
@@ -155,6 +192,16 @@ modified: 2025-02-03T10:17:42.052Z
 - Making it an open protocol like LSP leapfrogged ChatGPT's "Work with Apps".
 # discuss-mcp-dev-impl 🚧
 - ## 
+
+- ## 
+
+- ## Here is a step-by-step introduction to building a workflow with a custom AI agent that uses MCP.
+- https://x.com/svpino/status/1904523106628059315
+  - I explain every component in the video:
+  1. Building the MCP server
+  2. Building the agent and an MCP client
+  3. Building a workflow that uses the agent
+  - The goal is simple: Generate a dialogue between two people and make one yell and the other answer with sarcasm.
 
 - ## Did you know that when you're running MCP severs locally, you can't console.log?
 - https://x.com/mattpocockuk/status/1899049658883645798

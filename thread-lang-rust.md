@@ -53,6 +53,20 @@ modified: 2023-10-06T16:26:57.557Z
 
 - ## 
 
+- ## 
+
+- ## Rust exists because C++ refused to admit it has problems.
+- https://x.com/davepl1968/status/1904324609232736542
+- No, Rust exists because people treat C++ as "C with Classes" and continue to abuse it. If you stick to unique_ptr and shared_ptr and so on, you can write entirely memory-safe code trivially.
+
+- https://x.com/penberg/status/1904441622802145352
+  - Rust exists for many reasons, but one of them is because there are as many variants of C++ as there are developers. C++ has a lot of features and it’s hard to ”stick to” a specific subset in larger projects…
+  - So, you're saying Rust is simply a coding style guideline of C++? 
+
+- ## 用 rust 实现一些偏底层的数据结构真的是太痛苦了，比如实现一个高性能的 lrucache，你不用 unsafe 基本不可能（至少我没这能力）。
+- https://x.com/minibobo/status/1904193920684486748
+- 此事早已有定论，LinkedList这种数据结构在rust都是噩梦
+
 - ## 🤔 [Four Years of Rust | Hacker News _201905](https://news.ycombinator.com/item?id=19919561)
 - 
 - 

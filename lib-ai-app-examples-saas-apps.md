@@ -64,4 +64,12 @@ modified: 2025-02-21T17:17:42.225Z
   - We write your reusable computer vision tools. Whether you need to load your dataset from your hard drive, draw detections on an image or video, or count how many detections are in a zone.
   - Supervision was designed to be model agnostic. Just plug in any classification, detection, or segmentation model.
     - we have created connectors for the most popular libraries like Ultralytics, Transformers, or MMDetection.
+# image
+- https://github.com/Nutlope/logocreator /202411/ts
+  - https://www.logo-creator.io/
+  - A free + OSS logo generator powered by Flux on Together AI
+  - Flux Pro 1.1 on Together AI for logo generation
+  - nextjs + shadcn + redis + clerk + plausible
+  - Create a .env file and add your Together AI API key: TOGETHER_A[license · Issue · Nutlope/logocreator](https://github.com/Nutlope/logocreator/issues/16)PI_KEY=
+
 # more

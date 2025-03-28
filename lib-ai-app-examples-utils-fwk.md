@@ -61,7 +61,11 @@ modified: 2025-02-21T18:20:42.624Z
 - [AI SDK Cookbook](https://sdk.vercel.ai/cookbook)
   - An open-source collection of recipes and guides for building with the AI SDK.
 # browser-use
-
+- https://github.com/microsoft/playwright-mcp /apache2/202503/ts
+  - A Model Context Protocol (MCP) server that provides browser automation capabilities using Playwright. 
+  - This server enables LLMs to interact with web pages through structured accessibility snapshots, bypassing the need for screenshots or visually-tuned models.
+  - https://x.com/playwrightweb/status/1904265499422409047
+    - we went ahead and built an MCP server for Playwright. Ours is snapshot-based, which makes it faster and more reliable! You can opt into the visual mode too. 
 # computer-use
 - https://github.com/Aident-AI/open-cuak /apache2/202503/ts
   - https://aident.ai/

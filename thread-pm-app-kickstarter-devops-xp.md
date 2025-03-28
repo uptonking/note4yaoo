@@ -22,6 +22,13 @@ modified: 2022-11-07T11:00:28.824Z
 
 - 你这是老板的mvp 能用就行是牛马的mvp
 
+- ## 低段位的人才玩技术，高段位都玩产品和商业模式，更高段位的人都在玩资本。 
+- https://x.com/mrpanda88888888/status/1905627402195403113
+  - 创始人或CEO为资本打工，技术工程师为CEO打工 。
+
+- 资本挺难玩的。要有很高的科技判断力和选人能力。也有完蛋的，比如铱星，摩托罗拉，Nokia, etc. 技术相对（也有很多反例）风险小（当然你要非说风险大也对）。
+- 技术是敲门砖，资本才是决策权。最终决定命运的，永远不是你写了多少代码，而是你在谁的剧本里。
+
 - ## everyone in YC has been brainwashed to 'iterate and learn from user feedback' 
 - https://x.com/shaiunterslak/status/1900639752308879867
   - but my last backend commit was 7 months ago (September), and this is my revenue chart.

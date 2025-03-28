@@ -187,7 +187,11 @@ modified: 2022-01-05T14:36:28.057Z
 
 - ## 
 
-- ## 
+- ## zustand/vanilla is just 23 loc.
+- https://x.com/dai_shi/status/1903962704836165902
+- Why Object.assign({}, state, nextState) instead of { ...state, ...nextState }?
+  - Just a preference and a historical reason. the ability to use the spread operator on objects was added only mid 2018
+- Also spreading syntax is slow.
 
 - ## 💥⚡️ [How to batch multiple store updates? ](https://github.com/pmndrs/zustand/discussions/2275)
 - For frequent updates, we shouldn't trigger React for each update. One technique is known as transient update.

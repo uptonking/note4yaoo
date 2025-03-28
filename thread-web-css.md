@@ -38,7 +38,13 @@ modified: 2021-01-08T17:15:13.906Z
 
 - ## 
 
-- ## 
+- ## fun fact: the max z-index in CSS is 2147483647
+- https://x.com/aidenybai/status/1904188706434768966
+  - or infinity
+- The z-index value technically doesn’t have a fixed maximum but under the hood it’s treated as a 32-bit signed integer. This means: Theoretical limits:
+  - Min: -2147483648 (-2^31)
+  - Max: 2147483647 (2^31 - 1)
+- Fun fact: The maximum number of CSS rules able to be used in the same file in IE6 is 4, 096.
 
 - ## how to not feel like a website:
 - https://x.com/morajabi/status/1846583265072660939

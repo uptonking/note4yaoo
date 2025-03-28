@@ -16,7 +16,9 @@ modified: 2023-10-27T19:03:54.530Z
 
 - ## 
 
-- ## 
+- ## You get maximum performance with dedicated resources, but one point of the cloud is to give you a path there incrementally.
+- https://x.com/penberg/status/1905170786089918628
+
 # discuss-db-saas
 - ## 
 

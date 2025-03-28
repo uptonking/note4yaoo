@@ -106,7 +106,22 @@ modified: 2023-12-15T17:05:49.576Z
 - Autosave
   - Opt-in pattern for autosaving drafts of documents as they are edited, with control over manually publishing changes.
 
+# discuss-news
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Just released: the ability to save filters and share them across your team. This was one of the most frequently requested features
+- https://x.com/jacobsfletch/status/1905279680585818609
+- Equals is chosen by default! One less click yay!
+
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 
