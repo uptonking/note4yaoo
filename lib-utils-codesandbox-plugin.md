@@ -55,6 +55,10 @@ modified: 2023-09-02T09:16:30.412Z
   - 让原生程序在浏览器、移动端执行
   - 让浏览器中的文件系统更方便
 # iframe
+- iframe load speed
+  - 思路1: 
+  - 思路2: 若是pwa，可考虑service worker
+
 - iframe渲染时注入自定义脚本的实现方案，(针对拦截window.history的场景)
   - 不要采用 `iframe.contentDocument.body.appendChild(script)` 方式来注入包含window.onload的自定义js，直接用iframe.onload
   - onload事件直接注册在iframe元素上，而不是 iframe.contentWindow 上

@@ -170,7 +170,7 @@ modified: 2023-09-02T09:17:22.992Z
   - There are a variety of configuration options, including a React preset and a React Native preset.
   - The sandbox may be included on your site in one of two ways: as a React component, directly as an iframe
 
-- https://github.com/krakenjs/zoid /js
+- https://github.com/krakenjs/zoid /apache2/202412/js
   - A cross-domain component toolkit
   - Render an iframe or popup on a different domain, and pass down props, including objects and functions
   - [Iframes are just terrible. Here’s how they could be better.](https://bluepnume.medium.com/iframes-are-just-terrible-heres-how-they-could-be-better-974b731f0fb4)

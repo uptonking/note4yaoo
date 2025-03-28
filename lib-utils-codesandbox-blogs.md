@@ -173,6 +173,50 @@ Function('str', 'console.log(str, aaa)')('aaa:');
   - 易于集成到C/C++项目中：将duktape.c, duktape.h，和duk_config.h添加到的构建项目中，然后使用Duktape API实现 C 代码与 Ecmascript 函数的双向调用。
 # blogs-iframe
 
+## [Iframe Performance Part 2: The Good News | by Max Rafferty _202101](https://medium.com/slices-of-bread/iframe-performance-part-2-the-good-news-26eb53cea429)
+
+- iframe has inherent delays to the loading of the page 
+  - they can’t begin until they are reached in the DOM, 
+  - they may have a network request, 
+  - and they must create a new document context and load the DOM into it.
+  - each browser handles iFrames differently. 
+
+- One of the most powerful tools at our disposal when dealing with frames is the ability to utilize the src and srcdoc attributes to directly inject our markup rather than letting the iFrame handle the network portions of the operation. 
+- Scenario 1: Data URI pages
+  - Much like images, iFrames also have a src element and can have their content pages be base64 encoded as a Data URI.
+  - The theory here is to remove the network element entirely. If that is a part of the problem, then we should see notable improvement with this approach.
+- Scenario 2: srcdoc
+  - This approach is nearly identical to the last, however it uses raw HTML in the srcdoc element rather than an encoded document in the src. 
+
+## [Iframes are just terrible. Here’s how they could be better with zoid. _201908](https://bluepnume.medium.com/iframes-are-just-terrible-heres-how-they-could-be-better-974b731f0fb4)
+
+- iframes let you build user experiences into embeddable ‘cross-domain components’, which let users interact with other sites without being redirected. 
+  - There are a metric ton of awesome uses for that other than tracking and advertizing.
+- things that iframes (and also popup windows) are really bad at:
+  - They have a terrible reputation; historically they’ve been used pretty much exclusively for advertizing and tracking.
+  - They’re slow to load, resulting in a pretty terrible user experience.
+  - Communication is tricky: messages are fire-and-forget, with no real error handling or responses, or passing any interesting data types
+  - Cross-browser issues and implementation differences are common, and less frequently discovered and fixed than other categories of cross-browser bug.
+  - Security is problematic, and many other classes of vulnerability need to be taken into account when dealing with cross-browser iframes
+  - Popups can only be opened at limited times (usually on a button click), as a prevention mechanism for popup ads
+  - Cookie support is limited; with third-party-cookies-disabled mode, and intelligent tracking prevention (ITP) becoming more and more common.
+  - Real-estate is limited; by default iframes are constrained to their original size and will not resize to fit any child content. And because they’re sandboxed on the page, it’s not possible to render from within an iframe to another part of the page.
+
+- My talk went into how at PayPal, we built zoid to solve some of the major problems with iframes and popups
+- Zoid adds the following nice features to iframes and popups:
+  - Pre-render to avoid the perception of slow rendering
+  - Automatically resize frames to fit child content
+  - Render from inside an iframe to other parts of the page
+  - Pass down any kind of data and functions/callbacks as props (just like React), and avoid the nightmare of cross-domain messaging between windows.
+  - Make iframes and popups feel like first class (cross-domain) components.
+
+- Prevent click-jacking once and for all
+  - Is the frame at 100% opacity
+  - Are there any elements hovering over the frame
+  - Did a click pass through any hovering elements using pointer-events: none?
+
+- Chrome supports the IntersectionObserver `isVisible` property; this seems to solve your problem.
+
 ## [打破iframe安全限制的3种方案 | 黯羽轻扬](https://www.ayqy.net/blog/%e6%89%93%e7%a0%b4iframe%e5%ae%89%e5%85%a8%e9%99%90%e5%88%b6%e7%9a%843%e7%a7%8d%e6%96%b9%e6%a1%88/)
 
 - 禁止页面被放在iframe里加载主要是为了防止点击劫持（Clickjacking）

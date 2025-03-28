@@ -18,7 +18,15 @@ modified: 2024-01-25T13:33:23.267Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [Incredibly slow performance · Issue · codesandbox/codesandbox-client _201810](https://github.com/codesandbox/codesandbox-client/issues/1220)
+- import * as am4charts from "@amcharts/amcharts4/charts"; 
+  - The first two imports are what makes the execution quite slow.
+  - We then transpile these files (because we see export/import statements which aren't supported in the browser) and download/transpile all the files that are referenced by those. This takes a long while and takes the main amount of time.
+
+- Normally we do some optimizations for this:
+  - We prepackage any files we can find for a dependency on a server and cache that.
+  - We don't transpile files if we detect that it's not needed.
+  - We cache transpilation results on our server and in the browser.
 
 - ## 🤔 if you want to eval some untrusted js in the browser, try quickjs-emscripten. 
 - https://x.com/jitl/status/1832520899766915354
@@ -68,6 +76,27 @@ modified: 2024-01-25T13:33:23.267Z
 - Incredible! I am using a little bigger machine for a much lesser scale application.  Likely I am doing something wrong.
 # discuss-iframe
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Does the iframe have any effect on page load time? Why not? - Stack Overflow](https://stackoverflow.com/questions/2323374/does-the-iframe-have-any-effect-on-page-load-time-why-not)
+- The biggest drawback is that they block the window `onload` event until complete, which can make the users perceive that the page they requested is slow.
+
+- ## [How to make iframe load faster - Ionic Framework / ionic-v3 - Ionic Forum _201805](https://forum.ionicframework.com/t/how-to-make-iframe-load-faster/130056)
+- If your App is a PWA you can use a Service Worker to cache URLs 
+
+- ## [Embed iFrame loading times very slow and not appearing at times | Figma Forum _202309](https://forum.figma.com/ask-the-community-7/embed-iframe-loading-times-very-slow-and-not-appearing-at-times-11724)
+- it would be really awesome if your embedded view API allowed to show some kind of a message while the view is loading
+  - I’d just write something like “It may take a while to load…”, to just let the users know that this is an expected behaviour
+
+- ## [Lazy load an iframe by IntersectionObserver - DEV Community](https://dev.to/phuocng/lazy-load-an-iframe-4jp1)
+- Setting up lazy loading for an iframe is similar to lazy loading images. 
+  - Instead of setting the `src` attribute directly, we'll use a custom data attribute like `data-src` . This way, the iframe won't load immediately when the page loads.
+  - we'll set up an `IntersectionObserver` to watch the iframe and detect when it comes into view. Once the iframe becomes visible, we'll grab the URL from the `data-src` attribute and use it to set the `src` attribute, which will start loading the iframe.
 
 - ## [Adding javascript to an iframe - Anvil Q&A - Anvil Community Forum](https://anvil.works/forum/t/adding-javascript-to-an-iframe/17599/2)
 - Do you control the source of the iframe? If so, include the Javascript in it originally.
@@ -205,28 +234,26 @@ window.document.getElementById("baidu-container").onload = function() {
   - 用来实现长连接，在websocket不可用的时候作为一种替代，最开始由google发明。Comet：基于 HTTP 长连接的“服务器推”技术
   - 跨域通信。JavaScript跨域总结与解决办法 ，类似的还有浏览器多页面通信，比如音乐播放器，用户如果打开了多个tab页，应该只有一个在播放
   - 历史记录管理，解决ajax化网站响应浏览器前进后退按钮的方案，在html5的history api不可用时作为一种替代。
-  - 纯前端的utf8和gbk编码互转。
+- 纯前端的utf8和gbk编码互转。
+  - 比如在utf8页面需要生成一个gbk的encodeURIComponent字符串，可以通过页面加载一个gbk的iframe，
+  - 然后主页面与子页面通信的方式实现转换，这样就不用在页面上插入一个非常巨大的编码映射表文件了
 
-    - 比如在utf8页面需要生成一个gbk的encodeURIComponent字符串，可以通过页面加载一个gbk的iframe，
-    - 然后主页面与子页面通信的方式实现转换，这样就不用在页面上插入一个非常巨大的编码映射表文件了
+- 用iframe实现无刷新文件上传，在FormData不可用时作为替代方案
+- 在移动端用于从网页调起客户端应用
+- 创建一个全新的独立的宿主环境。
 
-  - 用iframe实现无刷新文件上传，在FormData不可用时作为替代方案
-  - 在移动端用于从网页调起客户端应用
-  - 创建一个全新的独立的宿主环境。
-
-    - iframe还可以用于创建新的宿主环境，用于隔离或者访问原始接口及对象，
-    - 比如有些前端安全的防范会覆盖一些原生的方法防止恶意调用，那我们就能通过创建一个iframe，然后从iframe中取回原始对象和方法来破解这种防范。
+- iframe还可以用于创建新的宿主环境，用于隔离或者访问原始接口及对象，
+- 比如有些前端安全的防范会覆盖一些原生的方法防止恶意调用，那我们就能通过创建一个iframe，然后从iframe中取回原始对象和方法来破解这种防范。
 
 - 可以用于单页面项目强制更新title
 - 可以做委托提交，使页面不刷新、不跳转
 
 - ## [为什么前端尽量少用iframe？](https://www.zhihu.com/question/23683645/answers/updated)
 - 因为iframe等于打开一个新的网页，所有的JS/CSS全部加载一遍，内存会*2，无法释放，典型的内存泄露
-  - 最近一个vue项目，一个组件用到了iframe，每次切换路由，会销毁这个组件，再重新加载，
-
-    - 在火狐浏览器下，切换几十次内存占用暴增，最后浏览器崩溃，但是在谷歌浏览器下一切正常，
-    - 通过各种方法最终定位到是iframe导致的内存泄漏，就是因为每次组件销毁但是iframe的内存在火狐下不会被释放，谷歌没有这种问题。
-    - 解决方法是：把iframe提取到上一层组件，只加载一次，切换路由不会重新加载iframe，就一切正常了。
+- 最近一个vue项目，一个组件用到了iframe，每次切换路由，会销毁这个组件，再重新加载，
+  - 在火狐浏览器下，切换几十次内存占用暴增，最后浏览器崩溃，但是在谷歌浏览器下一切正常，
+  - 通过各种方法最终定位到是iframe导致的内存泄漏，就是因为每次组件销毁但是iframe的内存在火狐下不会被释放，谷歌没有这种问题。
+  - 解决方法是：把iframe提取到上一层组件，只加载一次，切换路由不会重新加载iframe，就一切正常了。
 
 - 移动端对iframe不友好
   - 最近有个项目在移动端使用iframe，解决了安卓IOS又出问题，解决完ios安卓又出问题
@@ -251,7 +278,7 @@ window.document.getElementById("baidu-container").onload = function() {
 - 弹框遮罩、通讯问题：可以在创建iframe的时候把topwindow的对象挂在到子应用的window上，这样子应用就能直接调用topwindow的方法了，比如使用topwindow的弹框，而且这种方式主应用可以往iframe中注入脚本和样式等，通讯也可以通过管理“事件中心实现” （这个方案还在探索中）
 
 - 另外某些情况下，比如网页截屏，iframe 就不被支持
-- 事件处理也是个问题，比如实现顶层菜单展开时，需要点击空白处收起，如果点到ifram则无法触发
+- 事件处理也是个问题，比如实现顶层菜单展开时，需要点击空白处收起，如果点到iframe则无法触发
 
 - iframe 还有一个问题就是不能改变其在 DOM 树中的位置，否则也会导致重新加载 iframe。而在以 VDOM + Router 的场景中  iframe 都会被重新加载
 # discuss-csb-editor ✏️
@@ -501,7 +528,14 @@ window.document.getElementById("baidu-container").onload = function() {
 # discuss
 - ## 
 
-- ## 
+- ## [Lazy, lightweight sandbox for embedding on sites _201712](https://github.com/codesandbox/codesandbox-client/issues/381)
+  - The problem is that the sandbox is still too heavy weight for this. We already initialize it only when user scrolls down to it, but eventually we should go even further and only render full sandbox when user clicks on it.
+  - So the idea would be to render something very lightweight first, so we can have many sandboxes on the same landing and only load the rest when user actually wants to edit.
+
+- The embed version is a separate application, made to be lightweight. With that url it only loads the preview, and loads the editor when the user changes view to editor. I also made the editor codemirror to lower payload size.
+- ✨ 201805: We got runonclick now, which defers execution of the sandbox on click. We're also working on Sandpack, which allows you to kind of embed CodeSandbox as a component. I'm closing this one now, but we can always reopen it if there are new suggestions.
+
+- A generated iframe shouldn't be much of a problem as long as you don't load all the js into it, because that would make a lot of js evaluations given many playgrounds on one page.
 
 - ## Is there a good client-side-only React playground/sandbox? 
 - https://x.com/adamwathan/status/1896581693538291840

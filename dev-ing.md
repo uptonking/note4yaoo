@@ -357,6 +357,24 @@ add action to create quickSort1.mjs and add 3 test cases in it
   - live模式显示弹窗
   - 回放模式显示红色背景的文件快照
 
+## 0328
+
+- 昨天
+  - 修复一些测试反馈的问题
+  - 在刷新页面时，自动恢复ports标签页
+  - 点击action打开文件时，调整为自动打开AI Diff
+- 今天
+  - 继续处理测试反馈的问题，减少发版相关issue
+  - 优化编辑器的抖动问题
+
+## 0327
+
+- 昨天
+  - 提测 webview的loading反馈和优化
+- 今天
+  - 修复一些影响发版的问题
+  - 深入调研LSP的实现原理，和在paas中的实现细节，分析现有实现的问题
+
 ## 0325
 
 - iframe的`onload`事件发生在iframe的html的`<script>`脚本执行后
@@ -371,10 +389,10 @@ add action to create quickSort1.mjs and add 3 test cases in it
   - `username+1/2/2@gmail.com` ， gmail支持子邮箱，但业界不推荐
   - 在产品上，如果按user email收费就会存在漏洞
 
-- 今天
+- 昨天
   - 测试 revert后打开文件自动定位到未被revert的action, 今天会提测
   - 修复一些影响发版的问题
-- 昨天
+- 今天
   - 完善webview刷新时的loading状态和交互细节
 
 ## 0324

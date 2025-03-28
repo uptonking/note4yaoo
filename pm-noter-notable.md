@@ -121,6 +121,9 @@ modified: 2023-11-28T14:48:45.910Z
 - 知识库的市场
   - 客服系统自动回复，并显示相关历史
 
+- inspirations
+  - obsidian-mobile, notion-mobile
+
 - naming
   - mandroid (from android+manus)
 # features
