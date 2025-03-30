@@ -138,6 +138,15 @@ modified: 2022-09-21T15:47:41.340Z
 # apps
 - https://github.com/cybersemics/em /ts/yjs/web/ios/android
   - minimalistic note-taking app for personal sensemaking.
+
+## collab-editor
+
+- https://github.com/avelinapp/avelin /MIT/202503/ts
+  - https://avelin.app/
+  - a collaborative code editor built for the web. Local-first. Open source.
+  - 依赖elysiajs、yjs、monaco-editor
+  - https://x.com/kianbazza/status/1893780403984445789
+    - Imagine the simplicity of Pastebin with the real-time magic of Google Docs, coupled with syntax highlighting and validation.
 # examples
 - yboard /301Star/MIT/202206/js/vue
   - https://github.com/felipeleivav/yboard

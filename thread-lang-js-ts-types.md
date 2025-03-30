@@ -146,10 +146,37 @@ modified: 2021-08-05T04:31:02.298Z
 - It would make more sense to actually name those generic values. Also, there has to be easier ways for typing
 - The side benefit is that now you can’t even easily see or read the actual code! But hey, it’s type-safe
 
-# discuss
+# discuss-type-interface 🆚️
 - ## 
 
 - ## 
+
+- ## 
+
+- ## Is there any reason to use "interface" instead of "type" in typescript?
+- https://x.com/aaronmahlke/status/1906036005922070638
+- It use to be for performance reasons, its recommended
+
+- if you need to use `this`， use interface
+# discuss
+- ## 
+
+- ## 🆚️ Poll: How do you name multiple TypeScript generic type arguments?
+- https://x.com/housecor/status/1905968741692629326
+  - 1. Letters, starting with `T: myFunc<T, U>` ; 
+  - 2. T prefix: `myFunc<TList, TKey>` ; 
+  - 3. No prefix: `myFunc<List, Key>` ; 
+
+- The TS docs aren't consistent on this, but they implicitly suggest this: 
+  - Prefer no prefix, or a "Type" suffix (like ArrayType).
+  - Use T, U, etc when using extends.
+  - Prefer "Type" for a single type arg.
+
+- T if it’s one. 
+  - Usually single letter for 2, maybe 3, preferring R for a return type, F for a function type, A for an array, etc
+  - Words if it’s more or if they’re confusing
+
+- I'm a dotnet dev, so the same conventions.  Generally letter for 1 arg, T prefix if more than one
 
 - ## Here's a lovely bit of TS code to turn an object type into an object of getters
 - https://x.com/mattpocockuk/status/1802707952303825130

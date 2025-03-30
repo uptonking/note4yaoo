@@ -255,7 +255,9 @@ modified: 2021-01-06T14:40:03.364Z
 
 - ## 
 
-- ## 
+- ## RSC 确实优化首次进入体验，但之后 pre-fetch 应该是 fetch js，拉下网站其他 route 代码，变成 SPA，
+- https://x.com/zhdsuperman/status/1906174568022307282
+  - _rsc 浪费大量流量和服务端请求，server/client 状态同步困难，路由卡顿。
 
 - ##  RSC is not working out. They add a lot of complexity and tie together front-end, bundling and server runtimes. And in return we get, what?
 - https://x.com/biilmann/status/1904985218538434643

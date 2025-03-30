@@ -14,7 +14,11 @@ modified: 2023-09-24T19:05:33.866Z
 
 - ## 
 
-- ## 
+- ## SQL may have all those problems, but the main use case for ORMs is the mapping of relational data to objects. 
+- https://x.com/penberg/status/1906236557125677356
+  - SQL is increasingly just the the universal database protocol enabling ORMs.
+- SQL was designed as a user facing language, not as a programming interface.
+  - Yes, 100%! However, it also functions as a decent intermediate representation for ORMs to access b-trees, which is why i think of it as imperfect, universal data access protocol
 
 - ## 🏘️ I’m seeing more and more devs writing db queries directly inside their API route handlers and I find it quite bizarre. Where do you write your db queries?
 - https://twitter.com/ImSh4yy/status/1711092090103267784
@@ -57,7 +61,13 @@ modified: 2023-09-24T19:05:33.866Z
 
 - ## 
 
-- ## 
+- ## ORMs exist because SQL is inexpressive and has a bad type system. They don’t fix the underlying problems but do mask them somewhat. 
+- https://x.com/jamesacowling/status/1906054483186212893
+  - Raw SQL is too dangerous to use in large production app code though.
+  - With ORMs there’s no real type bijection and they operate on the schema they know, not what may have drifted in the DB. I’m no Prisma/Drizzle hater though and a modern ORM is safer than raw SQL, responding to OP. 
+
+- I would argue that SQL has an incredibly expressive and beautiful type system, which is very well suited for operating a cash register or computing regional sales numbers, but too constrained for modern OLTP apps
+  - Storage types aside, the text-based SQL query language has very loose typing/guardrails. There aren’t many languages where it’s easier than SQL to make a minor typo and destroy your entire company.
 
 - ## 各种流行的orm都有一些先天性的不足，比如很难描述partition, merge into和CTE等高级请求，甚至是复杂一点的transaction。
 - https://twitter.com/geniusvczh/status/1762750265089007886

@@ -61,6 +61,11 @@ modified: 2025-02-21T18:20:42.624Z
 - [AI SDK Cookbook](https://sdk.vercel.ai/cookbook)
   - An open-source collection of recipes and guides for building with the AI SDK.
 # browser-use
+- https://github.com/browser-use/browser-use /MIT/202503/python/js
+  - https://browser-use.com/
+  - Enable AI to control your browser
+  - [Pack 拆解 browser-use 项目 ](https://quaily.com/silico-anatomy/packs/110)
+
 - https://github.com/microsoft/playwright-mcp /apache2/202503/ts
   - A Model Context Protocol (MCP) server that provides browser automation capabilities using Playwright. 
   - This server enables LLMs to interact with web pages through structured accessibility snapshots, bypassing the need for screenshots or visually-tuned models.
@@ -72,6 +77,13 @@ modified: 2025-02-21T18:20:42.624Z
   - Open CUA Kit (Computer Use Agent), is THE platform for teaching, hiring and managing automation agents at scale — starting with browsers.
   - Open-CUAK is designed to run and manage thousands of automation agents, ensuring each one is reliable.
   - Run Operator-like automation workflows locally, ensuring full privacy
+# mcp
+- https://github.com/jlowin/fastmcp /MIT/202503/python
+  - https://github.com/modelcontextprotocol/python-sdk
+  - The fast, Pythonic way to build Model Context Protocol servers
+  - 依赖pydantic2、httpx
+  - You can now find FastMCP as part of the official Model Context Protocol Python SDK
+    - this repository is no longer maintained.
 # crawler-ai
 - https://github.com/mendableai/firecrawl /AGPLv3/202502/python/rust/ts
   - https://firecrawl.dev/
@@ -89,6 +101,17 @@ modified: 2025-02-21T18:20:42.624Z
   - https://www.maxun.dev/
   - Open-source no-code web data extraction platform. 
   - Maxun lets you create custom robots which emulate user actions and extract data. A robot can perform any of the actions: Capture List, Capture Text or Capture Screenshot. Once a robot is created, it will keep extracting data for you without manual intervention
+# github-repo
+- https://github.com/ahmedkhaleel2004/gitdiagram /MIT/202503/python/ts
+  - https://gitdiagram.com/
+  - Turn any GitHub repository into an interactive diagram for visualization in seconds.
+  - Powered by Claude 3.5 Sonnet for quick and accurate diagrams
+  - Public API available for integration (WIP)
+  - Frontend: Next.js, TypeScript, Tailwind CSS, ShadCN
+  - Backend: FastAPI, Python, Server Actions
+  - Database: PostgreSQL (with Drizzle ORM)
+  - Deployment: Vercel (Frontend), EC2 (Backend)
+  - Analytics: PostHog, Api-Analytics
 # perf/large
 - https://github.com/MoonshotAI/MoBA /MIT/202502/python
   - Mixture of Block Attention for Long-Context LLMs

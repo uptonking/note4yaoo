@@ -14,7 +14,25 @@ modified: 2024-11-16T16:58:32.628Z
 
 - ## 
 
-- ## 
+- ## 🆚️ What's the difference between load balancers, reverse proxies, and API Gateways?
+- https://x.com/Franc0Fernand0/status/1905922643837984991
+- 1. Load Balancers  
+Their main job is sending client requests to several servers. The goal is to spread the load evenly so there are no bottlenecks and the system works smoothly.  
+
+2. Reverse Proxies  
+- They act as an intermediary for client requests, fetching data and communicating with servers on their behalf. They effectively hide the identity of the servers and provide them with increased security.  
+- The main benefit of a reverse proxy is that it adds another level of control and abstraction to make sure that network traffic between clients and servers flows smoothly. 
+- Reverse proxies reduce the risk of attacks and external threats and can provide additional benefits.   
+- For example, they can cache content to reduce server load and compress data to improve transmission speed. 
+- They also often handle SSL/TLS termination, which means they manage encrypted connections, offloading this task from the web servers.
+
+3. API Gateways 
+- Their main job is to serve as a single access point for all API calls. They send requests to the right microservices and gather the results. 
+- The main benefit of an API Gateway is that it makes the client interface for different servers easier to use. 
+  - It can also enforce rules, add extra layers of protection, translate between web protocols, and collect data from many services. 
+- Their ideal use case is as entry points to microservices systems.
+
+- Nginx, which is a Reverse Proxy can have several "upstreams" and spread the load between them
 # discuss-nginx
 - ## 
 
@@ -62,7 +80,11 @@ modified: 2024-11-16T16:58:32.628Z
 
 - ## 
 
-- ## 
+- ## 你目前在用哪种方式翻墙呢？ 🆚️
+- https://x.com/__Inty__/status/1905650995750649966
+- 这图挺误导人的，而且已经有些过时了
+- v2RAY 很流行，软件多，节点多，提供商作坊多，trojan，提供的作坊比较少。支持的软件比较少
+- 最安全的是 ssh 隧道，不过一般人搞不来。
 
 - ## 一款内网穿透工具 Frp 的跨平台桌面客户端：Frpc-Desktop。
 - https://x.com/GitHub_Daily/status/1893616798718685446

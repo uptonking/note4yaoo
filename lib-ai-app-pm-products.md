@@ -38,6 +38,8 @@ modified: 2025-03-22T16:10:24.856Z
 
 - logicflow + ai
 # ai-coding
+- [Compare Top AI IDEs & Coding Assistants | 2025 Reviews & Alternatives](https://www.aiidecompare.com/)
+
 - roadmap
   - 1. human-in-the-loop
   - 2. self-correction, auto-debug
@@ -70,3 +72,13 @@ modified: 2025-03-22T16:10:24.856Z
 # ai-products-hunt
 
 # more
+
+# discuss-ai-pm
+- ## 
+
+- ## 
+
+- ## "We now want to edit our *tools* as we have previously edited our documents"
+- https://x.com/geoffreylitt/status/1646688665479831559
+- "As we shape our tools, our tools shape us." 
+- This is what makes tools like Notion and Airtable so powerful— they’re lightweight ways to build increasingly customizable interfaces with (albeit small) knowledge databases. As they get more flexible and can handle more data, I feel they’ll become essential parts of UI/UX design

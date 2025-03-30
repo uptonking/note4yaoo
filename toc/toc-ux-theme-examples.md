@@ -25,8 +25,12 @@ modified: 2020-12-08T14:24:16.195Z
   - https://www.skin-ui.com/editor/#button
   - A Theme UI Live Preview and Code Editor
 
+- https://github.com/jordanliu/themecn /MIT/202503/ts
+  - https://themecn.dev/
+  - A real-time theme generator for shadcn/ui.
+  - https://x.com/jordanxliu/status/1905664835813023923
+    - The base UI and color generating functionality was created using @v0
 # theming-pieces
-
 - green-as-primary-examples
   - [medium website](https://medium.com/)
   - [bulma docs](https://bulma.io/documentation/overview/colors)
@@ -60,6 +64,4 @@ modified: 2020-12-08T14:24:16.195Z
 - https://github.com/rudrodip/theme-toggle-effect
   - https://theme-toggle.rdsx.dev/
   - 各种
-
-
 # more

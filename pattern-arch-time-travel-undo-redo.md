@@ -195,7 +195,15 @@ modified: 2023-09-12T09:36:25.608Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 尝试复刻了 manus 的 replay 功能, 从 TARS 的开源 repo 学到的两个架构特点
+- https://x.com/Nin19536/status/1905975354227040314
+1️⃣mcp 统一工具协议
+可插拔，可扩展非常关键，且 tool 定义和 tool 执行对外只暴露接口，agent 端不关心实现。
+2️⃣事件管理
+管理好所有流式输出、任何工具 update，都需要考虑到前端展示 event 的方式，提供更好交互。而且事件管理有利于模型统一管理上下文。以事件时间戳永远自增，便于时间回溯和用户观测。
+- 代码是基于我去年八月就实现的原型 MVP重构 cosmos 项目
+  - 可以去看看 TARS 的代码还挺清晰的
+  - 你看一下 manus 返回的数据结构就行了，前端复刻不复杂。
 
 - ## you need to wait until the previous layer has fully dried
 - https://x.com/palekirill/status/1865049187282292823

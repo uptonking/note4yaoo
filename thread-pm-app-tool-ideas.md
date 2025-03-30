@@ -36,6 +36,11 @@ modified: 2022-11-07T10:58:24.512Z
 - 如果你做独立开发，没任何用户感知和判断力，建议多逛逛这个subreddit，https://reddit.com/r/SideProject/
 
 - 解决版权问题的内容管理平台
+  - 思路1: 类似 hacker-news 只放链接
+
+- 链接整合平台
+  - 类似 hacker-news 只放链接
+  - 针对音乐，放视听地址、B站地址
 
 - 给热门产品做周边或工具
   - ai/ide/卖课 + collab

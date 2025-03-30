@@ -23,6 +23,17 @@ modified: 2023-04-16T12:52:03.130Z
 # discuss-image
 - ## 
 
+- ## 
+
+- ## 有分析称，GPT-4o 图片生成效果这么好是因为采用了自回归模型（autoregressive model）而不再是扩散模型（diffusion model）。
+- https://x.com/jason2be/status/1905834259547361645
+  - 如果真是这样的话，那我将再次称 DeepSeek 为神，因他们一月份开源的 Janus-Pro 图像生成模型就是自回归框架，虽然目前效果还待提升，但技术路线选择上相当于又踩对了一次。
+- 这跟deepseek 没啥关系，基于transformer的图像生成22年23年就开始有了，也是一个研究热点，因为大家都想要一个统一的端到端模型既能生成文字也能生成图像。别说图像，openai 的sora 也是基于transformers
+  - 是的。DeepSeek 的 Janus-Pro 创新是将自回归（AR）和扩散模型结合，但这也是有其他团队在研究的。DeepSeek 选 AR 和 GPT 选 Transformer 一样，其实都是行业技术演进的一部分。虽然是独立事件，但也暗示一些必然。
+- 早就是研究热点了，包括nips24的best paper就是给了自回归的视频生成
+
+- 机器学习就那几种模型，论文都是公开的，什么叫踩对一次？
+
 - ## 揭秘一下一键大胸技术原理，顺便请教一下有没有更好的解决方案:
 - https://twitter.com/moeimiku/status/1769285829586022574
   1. 通过 SagmentAnyThing + Grounding-DINO识别乳沟和胸部，然后做叠加遮罩~  

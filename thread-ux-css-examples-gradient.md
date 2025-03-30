@@ -18,7 +18,15 @@ modified: 2022-11-21T15:27:20.974Z
   - [Glass UI - The definitive CSS UI library for glassmorphism](https://ui.glass/)
   - [8 Stunning CSS Snippets for Creating the Glassmorphism Effect](https://speckyboy.com/css-glassmorphism/)
   - [39 CSS Glassmorphism Effects](https://freefrontend.com/css-glassmorphism/)
-# ux-examples
+# ux-blur
+- ## 
+
+- ## 
+
+- ## Adding blur (4px) makes fade animations more soft
+- https://x.com/flornkm/status/1906040363824885919
+
+# ux-gradient
 - ## 
 
 - ## 

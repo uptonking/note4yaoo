@@ -110,10 +110,13 @@ modified: 2024-08-24T16:30:20.218Z
 - products
   - https://x.com/0xrandomlabs
     - https://www.ycombinator.com/launches/Lnp-random-labs-an-open-source-agent-that-deeply-understands-you
-# ai-devops
-
+# ai-manus
+- https://github.com/langchain-ai/langgraph-codeact /MIT/202503/python
+  - This library implements the CodeAct architecture in LangGraph. This is the architecture is used by Manus.im.
+  - https://x.com/tuturetom/status/1905605150884200871
+    - Manus 背后最核心的技术 CodeAct 论文发布
+    - 让 Agent 自己编写 Tool 然后完成 Tool 的调用，形成强大的自给自足机制
 # coding-ai
-
 - https://github.com/vizhub-core/editcodewithai /MIT/202503/ts
   - The premise of this project is to build and iterate an open source AI code editing system. 
   - The core idea is that you can feed this system a set of source code files and high level instructions, and it will return the edited code after some time. 

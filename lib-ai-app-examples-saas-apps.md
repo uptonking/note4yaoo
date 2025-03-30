@@ -19,6 +19,13 @@ modified: 2025-02-21T17:17:42.225Z
 
 # workflow-ai
 
+- https://github.com/samdenty/react-ai-flow /202503/ts
+  - https://react-ai-flow.com/
+  - smooth React AI chatbot primitives
+  - This library uses a single canvas-rendered mask-image, so we can do pixel-level fade-in effects.
+  - https://x.com/samddenty/status/1905843003471581337
+    - I just created a demo website for https://react-ai-flow.com a super advanced cross-framework library for smooth LLM text streaming effects & also text-staggers.
+
 - https://github.com/langflow-ai/langflow /52.9kStar/MIT/202503/python/ts
   - http://www.langflow.org/
   - a powerful tool for building and deploying AI-powered agents and workflows.
@@ -71,5 +78,4 @@ modified: 2025-02-21T17:17:42.225Z
   - Flux Pro 1.1 on Together AI for logo generation
   - nextjs + shadcn + redis + clerk + plausible
   - Create a .env file and add your Together AI API key: TOGETHER_A[license · Issue · Nutlope/logocreator](https://github.com/Nutlope/logocreator/issues/16)PI_KEY=
-
 # more

@@ -39,7 +39,23 @@ modified: 2021-01-03T17:11:47.916Z
   - class="h-20 w-[calc(100%_-_10rem)]
 
 - border-[rgba(16, _24, _40, _0.1)]
+# discuss-author
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 7 years in to this thing and still at $0 MRR
+- https://x.com/adamwathan/status/1906035220052156506
+- you might need to start buying some of these SaaS starter kits/courses
+
+- Tailwindui is in stalled mode for years now. Start charging for yearly updates and ship new ui every few months. Also include a vanila javascript library for interactivity - just like preline, so that we can use it on any framework. Current react only offering is not enough.
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

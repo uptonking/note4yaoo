@@ -12,7 +12,11 @@ modified: 2023-12-26T10:47:51.891Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## Because I keep seeing `position: absolute` + lots of of offset + size + transform + sometimes even margin properties to stack + middle align the stacked items... 
+- https://x.com/anatudor/status/1905947839844290858
+  - you can easily do it with 3 #CSS properties in css-grid
+- I usually go with named areas, as it kinda grows organically: can distinguish between more than one this way, can combine with row/column start/end syntax. Easier to follow than the 1/-1 thing.
+  - I find numbers easier to follow, especially since they can be used in calc() allowing to switch rows/ cols based on current case(s).
 
 - ## stick the first row using `<thead>` so you don't lose context, and give it a `margin-bottom` so you don't lose the last row on scroll
 - https://x.com/jh3yy/status/1902855264086245830

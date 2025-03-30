@@ -42,6 +42,19 @@ JSON.stringify("data") === "\"data\"" // true
 
 - If you are running it outside a function, then you'll get an error. But if you are running it inside a function, then it will return 'finally' as no matter whatever happens in the try/catch blocks, the finally block always executes at the last.
 
+- https://x.com/tdfirth/status/1905668095273811969
+- It returns 'finally'.
+  Return does not immediately return control the caller like you might expect.
+  It actually creates a 'Completion Record', which tells the runtime why the function stopped running, and any associated data (return value, exception, etc).
+  It is at this time (once the function has returned but before control is passed back to the caller) that finally blocks are run.
+  The finally block also creates a completion record. The runtime now has two completion records with different return values, and it has to pick between them.
+  It picks the one from the finally block because that's what the spec says it should do.
+
+- Most languages with a similar language construct behave in more or less the same way I'm afraid. It's the only real option as every other way leads to far worse inconsistencies. 
+  - C# actually has a nice approach, which is to make 'return' inside a 'finally' illegal.
+  - Go does not have a finally construct per se, it just has 'defer'. Deferred function calls run after return like finally, but they cannot add a second return like this. They can mutate the value being returned though, which is not that different.
+  - Swift also has the `defer` keyword that avoids the `finally` trap.
+
 - ## Introducing Visual Edits: visually edit any styles in Lovable, for faster and more precise edits
 - https://x.com/lovable_dev/status/1890075209748902304
 - This is what I call generative UX! Using Natural Language when needed but ALSO other GUIs for different tasks. Whatever fits the use-case best!!!

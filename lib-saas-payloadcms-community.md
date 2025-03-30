@@ -92,6 +92,19 @@ modified: 2023-12-15T17:05:49.576Z
 # discuss-feat-version-history
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Version diffing in @payloadcms is getting a major overhaul! 
+- https://x.com/AlessioGr/status/1905645975324295194
+  - Swapped out confusing JSON comparisons for clean, intuitive HTML diffs.
+- Can we diff blocks? A custom block diff callback would be great.
+
+- [feat: improved lexical richText diffing in version view by AlessioGr · Pull Request #11760 · payloadcms/payload _202503](https://github.com/payloadcms/payload/pull/11760)
+  - This replaces our JSON-based richtext diffing with HTML-based richtext diffing for lexical. 
+  - It uses this [html-diff](https://github.com/Arman19941113/html-diff) library that I then modified to handle diffing more complex elements like links, uploads and relationships.
+
 - ## [Roadmap: Revision History](https://github.com/payloadcms/payload/discussions/292)
 - This is now released in 0.15.0_20220317
 

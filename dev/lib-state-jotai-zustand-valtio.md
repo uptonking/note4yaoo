@@ -185,7 +185,9 @@ modified: 2022-01-05T14:36:28.057Z
 # discuss-zustand
 - ## 
 
-- ## 
+- ## How Zustand Supports Middleware: Learning Zustand in JavaScript Without Types Is Easier Than With Types
+- https://x.com/dai_shi/status/1906127505049993299
+  - [How Zustand Supports Middleware](https://newsletter.daishikato.com/p/how-zustand-supports-middleware)
 
 - ## zustand/vanilla is just 23 loc.
 - https://x.com/dai_shi/status/1903962704836165902

@@ -12,7 +12,15 @@ modified: 2024-06-08T10:27:08.423Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## we’ve found a clear way to make a project stand out and gain traction.
+- https://x.com/GithubProjects/status/1905901281165648204
+1️⃣ A Killer README is Non-Negotiable
+2️⃣ A Strong Visual Identity Helps
+3️⃣ A Live Preview Builds Trust
+4️⃣ Localization Expands Your Reach
+5️⃣ Easy Deployment = More Users
+6️⃣ A Roadmap & Contribution Guide Keep It Alive
+Bottom Line: Success isn’t just about good code. It’s about presentation, accessibility, and ease of contribution. Nail these, and your open-source project might just be the next big thing.
 
 - ## 💰 I think more open source projects should have a commercial clause. 
 - https://x.com/threepointone/status/1799424997946986899
@@ -29,7 +37,8 @@ modified: 2024-06-08T10:27:08.423Z
 
 - ## 
 
-- ## 
+- ## WeChat、WeTerm，IDE叫WeCode好了
+- https://x.com/stephenzhang233/status/1906025084445454836
 
 - ## http://Bolt.new 让我意识到了降维打击教育行业的巨大潜力。本意是让开发更容易，随着 base model 和产品力的提高，过不了多久就会把教育行业的图像绘制能力顺带给打崩了
 - https://x.com/lyson_ober/status/1852448467945210061

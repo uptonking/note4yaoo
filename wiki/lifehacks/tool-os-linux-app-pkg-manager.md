@@ -26,6 +26,19 @@ modified: 2023-07-01T07:14:31.456Z
   - Easy transfer of software environments between computers
   - Avoidance of version conflicts with already installed software
   - First-class cross compilation support
+# discuss-appimage
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [cursor v0.47 Appimage for Linux x64 won't run · Issue #2905 · getcursor/cursor _202503](https://github.com/getcursor/cursor/issues/2905)
+- Getting the same error on Arch Linux. Frankly, the whole AppImage distribution mechanism has started feeling quite unreliable in the recent past
+
+- [Add RPM and DEB packages for Linux · Issue #933 · getcursor/cursor](https://github.com/getcursor/cursor/issues/933)
+  - Just found that they offer the .deb. It's just that they are shy.
+  - https://downloader.cursor.sh/linux/deb/x64 (For x86 chips)
 # discuss
 - ## 
 

@@ -33,6 +33,8 @@ echo aHR0cHM6Ly9tYXMudG8vQG9jYXZ1ZQo= | base64 -d
 - 系统配置相关
 
 ```shell
+# intall a version
+sudo apt-get install -y apache2=2.3.35-4ubuntu1
 
 # 会删除软件包而保留软件的配置文件
 apt remove
