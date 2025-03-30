@@ -156,7 +156,7 @@ modified: 2021-07-20T13:50:23.433Z
 - ✨ airtable-like(data-mgmt)
   - 👉🏻 nocodb     (AGPL/knex+nuxt3)
   - 👉🏻 ethercalc   (MIT/nodejs+redis)
-  - grist      (apache2/typeorm+backbone)
+  - 👉🏻 grist   (apache2/typeorm+backbone)
   - baserow        (MIT/django+nuxt2)
   - rowy       (apache2/firebase+tinymce5)
   - locokit        (MIT/knex+vue2)
@@ -164,9 +164,9 @@ modified: 2021-07-20T13:50:23.433Z
   - apitable      (AGPL/spring-mybatis+canvas)
   - focalboard    (AGPL/go+react-dnd)
   - ckan/datapian
-- ✨ workflow/automation > directus
+- ✨ workflow/automation (eg, directus)
+  - 👉🏻 activepieces(MIT/typeorm)
   - n8n           (AGPL/typeorm+vue2+jsplumb)
-  - activepieces  (MIT/typeorm)
   - budibase      (AGPL/knex+svelte)
   - automatisch   (AGPL/knex+graphql+slate)
 - ✨ bi

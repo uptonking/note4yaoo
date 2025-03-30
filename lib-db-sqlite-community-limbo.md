@@ -73,7 +73,11 @@ modified: 2024-12-13T15:12:55.861Z
 
 - ## 
 
-- ## 
+- ## how many features you drop during the rewrite?
+- https://x.com/penberg/status/1906001453338030104
+- For the SQLite rewrite? Nothing except for some features SQLite itself has deprecated. 
+
+- I have written a JVM (that nobody used), QEMU replacement (before Firecracker). Was part of OSv unikernel and Scylla early teams.
 
 - ## What is the compatibility plan in Limbo with SQLite?
 - https://x.com/penberg/status/1879430213337018423

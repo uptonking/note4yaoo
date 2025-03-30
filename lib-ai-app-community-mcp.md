@@ -16,12 +16,25 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
+- ## 🌰 尝试复刻了 manus 的 replay 功能, 从 TARS 的开源 repo 学到的两个架构特点
+- https://x.com/Nin19536/status/1905975354227040314
+1️⃣mcp 统一工具协议
+可插拔，可扩展非常关键，且 tool 定义和 tool 执行对外只暴露接口，agent 端不关心实现。
+2️⃣事件管理
+管理好所有流式输出、任何工具 update，都需要考虑到前端展示 event 的方式，提供更好交互。而且事件管理有利于模型统一管理上下文。以事件时间戳永远自增，便于时间回溯和用户观测。
+- 代码是基于我去年八月就实现的原型 MVP重构 cosmos 项目
+  - 可以去看看 TARS 的代码还挺清晰的
+  - 你看一下 manus 返回的数据结构就行了，前端复刻不复杂。
+
 - ## mcp 竟然能把这么简单的功能搞到这么复杂，然后竟然还是走 stdio。这是完全不打算给麻瓜用啊。
 - https://x.com/xicilion/status/1905981157503902021
 - 让一部分人先用起来
 - mcp假设市面上有一堆A客户端啊。每个都要支持某个公共服务。mcp价值才出来。假设世界上只有一个chatgpt客户端。直接写function。calling客户端函数就够了。
 - 的确如此，官方: mcp remote 在做了，认证在做了
 - 只能说规范化≠简洁
+
+- https://x.com/jezell/status/1906368293239423018
+  - It's pretty crazy to me how the entire MCP ecosystem is building on top of the Stdio transport rather than http. "Works on my machine" dominating AI tooling continues to be a thing.
 
 - ## 各位现在用到MCP最实用的场景是什么？
 - https://x.com/wong2_x/status/1904793226713706653

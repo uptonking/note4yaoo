@@ -1641,11 +1641,16 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/leon-kfd/OnlineCodeEditor /202311/ts/vue
   - An online code Editor like CodePen, built by Vue3.
 
-- https://github.com/live-codes/livecodes /MIT/202407/ts
+- https://github.com/live-codes/livecodes /933Star/MIT/202503/ts
   - https://livecodes.io/
-  - A feature-rich, open-source, client-side code playground for React, Vue, Svelte, Solid, Typescript, Python, Go, Ruby, PHP and 80+ languages/frameworks.
+  - 🧊 A feature-rich, open-source, client-side code playground for React, Vue, Svelte, Solid, Typescript, Python, Go, Ruby, PHP and 80+ languages/frameworks.
   - 依赖codemirror6、monaco、codejar、codejar、yjs
   - Powerful SDK (available for vanilla JavaScript, TypeScript, React, Vue and Svelte)
+  - No servers to configure 
+  - No databases to maintain 
+  - Use modules from npm, deno.land/x, jsr, GitHub, and others
+  - SDK provides an easy, yet powerful, interface to embed and communicate with LiveCodes playgrounds.
+    - SDK methods allow programmatic communication and control of the playgrounds during runtime.
   - https://x.com/hatem_hosny_/status/1753930554540499064
     - Check this where I dynamically select the editor and load it (e.g. on desktop -> monaco, on mobile -> codemirror, user preference, etc.)
     - Also unified the interface of loading and communicating with the editor

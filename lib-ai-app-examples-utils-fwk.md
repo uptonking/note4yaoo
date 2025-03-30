@@ -72,6 +72,29 @@ modified: 2025-02-21T18:20:42.624Z
   - https://x.com/playwrightweb/status/1904265499422409047
     - we went ahead and built an MCP server for Playwright. Ours is snapshot-based, which makes it faster and more reliable! You can opt into the visual mode too. 
 # computer-use
+- https://github.com/bytedance/UI-TARS-desktop /9.6kStar/apache2/202503/ts
+  - https://agent-tars.com/
+  - A GUI Agent application based on UI-TARS(Vision-Language Model) that allows you to control your computer using natural language.
+  - ❓ agent-tars似乎支持replay，ui-tars是否支持replay
+  - https://x.com/Nin19536/status/1905975354227040314
+    - 从 TARS 的开源 repo 学到的两个架构特点
+    - 1️⃣mcp 统一工具协议: 可插拔，可扩展非常关键，且 tool 定义和 tool 执行对外只暴露接口，agent 端不关心实现。
+    - 2️⃣事件管理: 管理好所有流式输出、任何工具 update，都需要考虑到前端展示 event 的方式，提供更好交互。而且事件管理有利于模型统一管理上下文。以事件时间戳永远自增，便于时间回溯和用户观测。
+  - [2025-03-18] We released a technical preview version of a new desktop app - Agent TARS, a multimodal AI agent that leverages browser operations by visually interpreting web pages and seamlessly integrating with command lines and file systems.
+    - Comprehensive Tool Support: Integrates with search, file editing, command line, and Model Context Protocol (MCP) tools to handle complex workflows.
+  - https://github.com/bytedance/UI-TARS /apache2
+    - UI-TARS is a next-generation native GUI agent model designed to interact seamlessly with graphical user interfaces (GUIs) using human-like perception, reasoning, and action capabilities. 
+    - Unlike traditional modular frameworks, UI-TARS integrates all key components—perception, reasoning, grounding, and memory—within a single vision-language model (VLM), enabling end-to-end task automation without predefined workflows or manual rules.
+    - This project builds upon and extends the capabilities of Qwen2-VL, a powerful vision-language model, which serves as the foundational architecture for UI-TARS. 
+  - https://github.com/web-infra-dev/Midscene /MIT/ts
+    - open-source web automation SDK that has supported UI-TARS model. 
+    - Midscene.js lets AI be your browser operator.Just describe what you want to do in natural language, and it will help you operate web pages, validate content, and extract data. 
+    - Besides the default model GPT-4o, we have added two new recommended open-source models to Midscene.js: UI-TARS and Qwen2.5-VL. (Yes, Open Source !) 
+    - Supports Puppeteer and Playwright integration, allowing you to combine AI capabilities with these powerful automation tools
+    - Visual Reports for Debugging 🎞️: Through our test reports and Playground, you can easily understand, replay and debug the entire process.
+    - [Midscene.js - Joyful Automation by AI - Midscene.js](https://midscenejs.com/index.html#visualized-report)  
+      - Midscene wants to provide a way to make automation more stable and easier to debug, so we provide a visual report after each run. With this report, you can review the animated replay and view the details of each step in the process.
+
 - https://github.com/Aident-AI/open-cuak /apache2/202503/ts
   - https://aident.ai/
   - Open CUA Kit (Computer Use Agent), is THE platform for teaching, hiring and managing automation agents at scale — starting with browsers.
@@ -139,3 +162,9 @@ modified: 2025-02-21T18:20:42.624Z
   - exo supports different models including LLaMA (MLX and tinygrad), Mistral, LlaVA, Qwen, and Deepseek.
   - 该项目支持将现有设备统一到一个功能强大的GPU中，支持 iPhone，iPad，Android，Mac，Nvidia，树莓派等等几乎所有设备。
 # more
+- https://github.com/beuaaa/pywinauto_recorder /MIT/202411/python
+  - https://pywinauto-recorder.readthedocs.io/
+  - A record-replay tool to automate GUI via pywinauto
+  - records user interface actions and saves them in a Python script. The saved Python script can be run to replay the user interface actions previously recorded.
+  - "Pywinauto recorder" is a unique inspect/record/replay tool in the open source field because it generates reliable scripts without hard-coded coordinates thanks to Pywinauto.
+  - The functions of the generated Python script return Pywinauto wrappers so it can be enhanced with Pywinauto methods.

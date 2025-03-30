@@ -178,6 +178,11 @@ modified: 2021-08-05T04:31:02.298Z
 
 - I'm a dotnet dev, so the same conventions.  Generally letter for 1 arg, T prefix if more than one
 
+- https://x.com/mattpocockuk/status/1906054903669092506
+  - Naming generic type arguments: T or TItem. My rule is to default to T + prefix.
+  - That's the rule @tannerlinsley uses in his repos. There is also an eslint rule to enforce that. That's why I think his repos although type heavy are really digestable
+  - Using T as a prefix for types and I for interfaces is a good practice. I've seen many codebases, including VS Code, following this convention.
+
 - ## Here's a lovely bit of TS code to turn an object type into an object of getters
 - https://x.com/mattpocockuk/status/1802707952303825130
 - even though its okay, too much abstraction is sometimes bad

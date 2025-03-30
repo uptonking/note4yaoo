@@ -651,7 +651,8 @@ modified: 2020-12-28T12:24:09.275Z
     - activepieces with flow + pieces, but WebUI only, the customize is not easy.
     - laf is pure core, runtime only, more like serverless, heavy, not worth it.
     - I think activepieces can meet the sweet point here with userspace/remote pieces.
-    - This is an interesting thought that would extend the activepieces existing capabilities to be code first used by developers. I believe it is the different direction and separate product, that we might not be able to develop forward in the short term, as the activepieces are postioned to be used by non-technical people and the pieces framework is purely for the developers
+    - 👷🏻: This is an interesting thought that would extend the activepieces existing capabilities to be code first used by developers. I believe it is the different direction and separate product, that we might not be able to develop forward in the short term, as the activepieces are positioned to be used by non-technical people and the pieces framework is purely for the developers
+    - 👷🏻: I think this is currently out of scope for the Activepieces roadmap, as we align more with a no-code experience and focus on the UI builder.
 
 - https://github.com/triggerdotdev/trigger.dev /10.5kStar/apache2/202503/ts
   - https://trigger.dev/
