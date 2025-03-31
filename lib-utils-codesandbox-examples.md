@@ -323,6 +323,24 @@ modified: 2023-09-02T09:17:22.992Z
 - https://github.com/DustinBrett/daedalOS
   - https://dustinbrett.com/
   - Desktop environment in the browser
+
+## browser-devtools
+
+- https://github.com/ChromeDevTools/devtools-frontend /BSD/202503/ts
+  - The client-side of the Chrome DevTools, including all TypeScript & CSS to run the DevTools webapp.
+  - https://github.com/iam-medvedev/chrome-devtools
+    - This repository contains a Github Action that runs once a week on a schedule, builds the Chrome DevTools frontend source code, and sends the build code to the main 
+- https://github.com/christian-bromann/devtools-backend /apache2/202202/js/inactive
+  - A Node. JS implementation of the Chrome DevTools backend for debugging arbitrary web platforms (e.g. HbbTV applications on Smart TVs).
+
+- https://github.com/jiangzhuo/devtools-frontend-demo /202503/js
+  - A web interface to manage locally running headless Chrome instances and connect to their DevTools, or manually connect to a remote instance. 
+  - Includes a locally hosted Chrome DevTools frontend.
+
+- https://github.com/wanwu/devtools-pro /202112/js/inactive
+  - A web remote debugging tools, based on Chrome DevTools.
+  - DevTools-pro 是基于chrome-devtools-frontend进行开发的，通过自建 WebSocket 通道实现 Frontend 和 Backend 的通信。
+  - 可扩展，支持自定义插件
 # dynamic-js
 - https://github.com/unjs/jiti /ts
   - Runtime Typescript and ESM support for Node.js

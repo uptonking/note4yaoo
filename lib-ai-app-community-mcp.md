@@ -18,9 +18,9 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 🌰 尝试复刻了 manus 的 replay 功能, 从 TARS 的开源 repo 学到的两个架构特点
 - https://x.com/Nin19536/status/1905975354227040314
-1️⃣mcp 统一工具协议
+- 1️⃣mcp 统一工具协议
 可插拔，可扩展非常关键，且 tool 定义和 tool 执行对外只暴露接口，agent 端不关心实现。
-2️⃣事件管理
+- 2️⃣事件管理
 管理好所有流式输出、任何工具 update，都需要考虑到前端展示 event 的方式，提供更好交互。而且事件管理有利于模型统一管理上下文。以事件时间戳永远自增，便于时间回溯和用户观测。
 - 代码是基于我去年八月就实现的原型 MVP重构 cosmos 项目
   - 可以去看看 TARS 的代码还挺清晰的
@@ -101,7 +101,20 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
-- ## 
+- ## Manus 和  OpenAI 的Operator 催生一个新的需：云端渲染的浏览器。
+- https://x.com/leeoxiang/status/1897855654091800798  
+  - browser-use
+  - cloudflare browser-rendering
+  - browser base
+
+- 也会促进另一个方向，bot detection 哈哈
+
+- 如果推广应用的话，最有价值的就是用户行为数据100%被记录分析。
+
+- 借助这种模式，做爬虫是不是无敌了，真实账号，真实操作，真实指纹
+
+- 不错，这个用来做抢票，岂不是无敌
+- headless-chrome 以及 puppeteer / playwright 这种东西存在很多年了，跑在docker里就行
 
 - ## 我收集了MCP市场的1000多个AI Agent MCP Server做了分析：
 - https://x.com/CFC4N/status/1903090673454112828
@@ -155,6 +168,44 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🚀 Today we're bringing vision to Bolt: Bolt now sees your app exactly like users do, enabling faster, more precise edits pixel by pixel (& fewer tokens!) _20250221
+- https://x.com/boltdotnew/status/1892620446106886396
+  - The Visual Inspector works across all web frameworks (React, Vue, Svelte, Next & others) and mobile apps (Expo).
+  - To use it, just click what you want to change & tell Bolt what to do
+
+- 🤔 Does this send a screenshot with `html2canvas` so the app can see any layout issues and you don’t need to take a screenshot? Or does it just send the raw html that you click on. Also does it integrate with frameworks to send the component name?
+  - it's using https://github.com/qq15725/modern-screenshot to send images
+- HTML & CSS are so finicky, lots of potential issues you could run into with loops of asking it to do the same thing if you’re not sending proper context & visual information (and instead just raw DOM)
+
+- This is cool, I hope we can get free fixes soon, so we optimize our spending on tokens
+  - They need to release diff editing. Right now a small fix has to rewrite an entire file, when in reality it could just be a 2 line fix. They only have diff editing for the pro plans though, not the free plans.
+
+- Please make visual inspector like how lovable dev has did , it gives options to change properties directly . Request you to bring that feature.
+
+- It's going to be hard to beat Lovable unless you stop burning credit to fix it..
+  - For React projects, maybe yes. But for non-React projects (SolidJS in my test), @lovable_dev is simply not the tool (at least for me).
+
+- ## I just built this CRACKED Cursor MCP extension that makes your IDE fully aware of all the logs in your browser.
+- https://x.com/VigneshChinnad2/status/1895198959288885314
+  - [AgentDesk](https://www.agentdesk.ai/)
+  - ✅ Check all console logs + errors
+  - ✅ Analyze network requests, responses and errors
+  - ✅ Make changes to a selected element in your browser
+  - ✅ Take screenshots of your browser
+  - Open source, FREE and compatible with Cursor, Cline, Continue and Zed.
+  - My extension is based on MCP which means it only works with Anthropic models. 
+
+- is it possible to select particular element and send to cursor to ask for color/ other changes. similar to Bolt visual Inspector. it will solve major pain for me.
+  - Yes BrowserTools can do this for you in Cursor
+  - Just use the built in chrome dev tools selection tool and then ask cursor to: “get the selected element and implement xyz changes…”
+
+- Have you considered adding support for DevTools Recorder for lightweight testing loops?
+  - [Record, replay, and measure user flows  |  Chrome DevTools  |  Chrome for Developers](https://developer.chrome.com/docs/devtools/recorder)
+
 - ## 具体研究了browser-use的底层代码才发现，其网页可交互部分的结构化数据是完全靠DOM数据分析得来的而不是靠视觉模型，这也证明了为什么在普通机器上也能快速得到结果了
 - https://x.com/uptonking2/status/1904040163229200491
 
@@ -175,6 +226,10 @@ modified: 2025-02-03T10:17:42.052Z
 - ## 
 
 - ## 
+
+- ## I built an MCP server for WhatsApp
+- https://x.com/LukeHarries_/status/1905986562388635913
+  - Why? 99% of your life is stored in WhatsApp, by connecting an LLM to WhatsApp you get all this context. And your AI agent can execute tasks on your behalf by sending messages.
 
 - ## We just published a near-term development roadmap for the model context protocol (MCP) _20250103
 - https://x.com/alexalbert__/status/1874853921543553147
@@ -282,15 +337,6 @@ Don’t want/can’t have external dependencies?
 - 两个多月前我的开源项目就实现了http的中转机制，可以参考一下。楼上那个mcp-proxy项目是实现sse与stdio的转换，原理不同。
 
 - smithery.ai 上 host 的 mcp server 差不多是类似的实现。给每个 mcp server 添加一个 Dockerfile 和一个配置文件，然后就可以在上面 host了。暴露给上游的是websocket，然后上游通过统一的 smithery mcp server 通信。
-# discuss-mcp-examples
-- ## 
-
-- ## 
-
-- ## I built an MCP server for WhatsApp
-- https://x.com/LukeHarries_/status/1905986562388635913
-  - Why? 99% of your life is stored in WhatsApp, by connecting an LLM to WhatsApp you get all this context. And your AI agent can execute tasks on your behalf by sending messages.
-
 # discuss
 - ## 
 

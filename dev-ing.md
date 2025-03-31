@@ -330,6 +330,33 @@ add action to create quickSort1.mjs and add 3 test cases in it
 - 异常处理增强
   - 观测重要log: RESOURCE_NOT_ENOUGH
 
+## 0331
+
+- agent获取浏览器相关信息的需求
+
+- [C-1444 静态代码分析方案测试调研](https://linear.app/clackyai/issue/C-1444/)
+  - treesitter + Semgrep 自动修复（不可靠，强依赖Sem云端）
+    - 使用 Tree-sitter 生成代码的语法树，以检测代码的语法问题和错误。
+    - 静态分析与修复：使用 Semgrep 根据预定义或自定义的规则，对代码进行分析，并应用自动化修复。
+    - 验证结果：再次使用 Tree-sitter 解析修复后的代码，以确认是否存在剩余的语法错误。
+  - ruff/golangci-lint/eslint/rubocop + AI 片段修复
+    - 为 Python、Go、TypeScript、JavaScript 和 Ruby 提供统一的语法检查方案，遵循 Ruff 的 "快速 + 结构化输出" 原则。以下是各语言工具选择和 Python 集成实现
+    - 前置安装：确保所有工具已安装并加入 PATH
+
+- 上周
+  - 提测 revert后打开文件自动定位到未被revert的action
+  - 提测 优化webview组件，减少白屏时间，刷新时loading反馈
+  - 调研进一步减少白屏时间的方法
+  - 调研LSP的原理
+- 本周
+  - 调研agent获取浏览器信息的方案，特别是基于rrweb的实现
+  - 深入LSP的实现，修复LSP插件的现有问题
+  - 尝试实现js/ts文件的语法跳转
+- 今天
+  - webview loading 与浏览器保持一致
+  - 调研agent获取浏览器信息的方案，特别是基于rrweb的实现
+  - 深入LSP的实现，修复LSP插件的现有问题
+
 ### 多标签设计与实现-快速方案
 
 - limitations

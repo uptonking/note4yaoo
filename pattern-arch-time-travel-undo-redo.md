@@ -267,10 +267,11 @@ modified: 2023-09-12T09:36:25.608Z
 # discuss-rrweb
 - ## 
 
-- ## 
+- ## [iframe录制与回放 · Issue #654 · rrweb-io/rrweb _202108](https://github.com/rrweb-io/rrweb/issues/654)
+- 回放的时候不会执行 JS 代码。
 
 - ## [Fabric JS Image object shows blank while replaying · Issue · rrweb-io/rrweb _202103](https://github.com/rrweb-io/rrweb/issues/516)
-- Current workaround I did is to take a screenshot ( `html2canvas` ) and set that dataURL to an image hid behind the actual canvas while recording. While replaying the canvas is empty but the screenshot is shown in it's place so works for me.
+- Current workaround I did is to take a screenshot ( `html2canvas` ) and set that `dataURL` to an image hid behind the actual canvas while recording. While replaying the canvas is empty but the screenshot is shown in it's place so works for me.
 
 # discuss-replay-solutions
 - ## 

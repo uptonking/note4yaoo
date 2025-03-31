@@ -77,6 +77,11 @@ modified: 2024-05-06T02:54:40.374Z
 
 - sdk有些文件代码有3000行，打开有点慢，但能忍受
 
+- 操作iframe内dom元素的需求
+  - 在webview工具条点击devtools时，鼠标hover元素能高亮元素
+  - rrweb的记录与回放
+  - iframe history 用于前进后退
+
 ### dev-log
 
 - root-thread项目初始化时，cde环境会生成.1024start/.1024nix文件
@@ -2348,8 +2353,9 @@ const playbackInfo = [
 ### codebase-LSP
 
 - 业务方使用LSP支持的配置
-  - defaultLspLang: ['html', 'css', 'less', 'sass'],
+  - defaultLspLang: ['html', 'css', 'less', 'sass'], 
   - openLspDiagnostic: false, // 默认是 false
+
 ### codebase-collab 🔀
 
 - 

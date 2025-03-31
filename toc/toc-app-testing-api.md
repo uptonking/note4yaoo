@@ -138,9 +138,13 @@ modified: 2023-02-08T10:25:14.173Z
   - It allows testing Chromium, Firefox and WebKit with a single API.
   - microsoft/playwright-python is almost call-for-call compatible with puppeteer, and gives you access to Firefox and Webkit as well.
 # web-debug
-- https://github.com/liriliri/eruda /js
+- https://github.com/liriliri/eruda /MIT/202411/js/inactive
   - https://eruda.liriliri.io/
   - Console for Mobile Browsers.
+
+- https://github.com/hellof2e/vite-plugin-dev-inspector /MIT/202409/ts
+  - 一个Vite插件，点击页面元素，IDE直接打开对应代码文件。支持 Vue2, Vue3, React, Svelte, Angular, SSR等任何前端工程
+  - Vite-plugin-dev-inspector was inspired by vite-plugin-vue-inspector, but it does not repy on front-end frameworks. It can support any front-end technology stack at the same time, such as Vue 2 & 3, React, Angular, Svelte, Nuxt and SSR.
 # jmeter
 - https://github.com/anthonygauthier/jmeter-es-backendlistener-dashboard /201810/js
   - Dashboard to visualize JMeter results generated via the ElasticSearch Backend Listener. 
