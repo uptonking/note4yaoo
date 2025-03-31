@@ -15,6 +15,11 @@ modified: 2025-02-21T17:17:42.225Z
   - AI Health Assistant | Powered by Your Data
   - Smart Parsing: Automatically parses your health data and generates structured data files.
   - Contextual Conversations: Use the structured data as context for personalized interactions with GPT-powered AI.
+# open-canvas
+- https://github.com/refly-ai/refly /apache2/202503/ts
+  - https://refly.ai/
+  - Refly is an open-source AI-native creation engine powered by 13+ leading AI models. 
+  - Its intuitive free-form canvas interface integrates multi-threaded conversations, multimodal inputs (text/images/files), RAG 
 # products
 
 # workflow-ai

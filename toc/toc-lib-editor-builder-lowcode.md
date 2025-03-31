@@ -639,6 +639,7 @@ modified: 2020-12-28T12:24:09.275Z
   - Workflow automation tool 100+ integration / Enterprise automation tool / Zapier Alternative
   - 后端依赖 fastify、typeorm、langchain
   - 前端依赖 zustand、zone.js、codemirror6、dnd-kit、radix-ui、fuse.js、imapflow、pdf-lib、recharts
+  - [Local Dev Environment - Activepieces](https://www.activepieces.com/docs/developers/development-setup/local)
   - Activepieces' Community Edition is released as open source under the MIT license and enterprise features are released under Commercial License
     - paid: permissions,Audit logs,Collaborate using Git,Customize branding
   - [More install options for self-hosting _202309](https://github.com/activepieces/activepieces/issues/1277)
@@ -720,7 +721,7 @@ modified: 2020-12-28T12:24:09.275Z
   -  Workflow Automation Platform. Orchestrate & Schedule code in any language, run anywhere, 500+ plugins. 
   -  Alternative to Zapier, Rundeck, Camunda, Airflow...
 
-- https://github.com/cptn-io/el-cptn /java
+- https://github.com/cptn-io/el-cptn /java/js/inactive
   - an open source platform that helps develop and deploy integrations and data pipelines quickly and easily.
   - 发现个比 n8n 更适合开发者使用的 workflow 平台 https://cptn.io。核心概念非常简单清晰：
     - Source: 接收数据的 HTTP entrypoint
