@@ -249,9 +249,9 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - 做完tailwind-table就面试
 
 - dev-to 提炼核心`需求+产出`工作流，不能在产品中检验的技术不玩
-# dev-03
+# dev-04
 
-## 030
+## 040
 
 - dev-log
   - ?
@@ -329,6 +329,25 @@ add action to create quickSort1.mjs and add 3 test cases in it
 
 - 异常处理增强
   - 观测重要log: RESOURCE_NOT_ENOUGH
+
+## 0401
+
+- [can I catch exception of Iframe in parent window of Iframe - Stack Overflow](https://stackoverflow.com/questions/6327128/can-i-catch-exception-of-iframe-in-parent-window-of-iframe)
+  - If it's not the same domain but you have control of the iframe content (both domains are under your control), you can communicate with the outer frame by using a cross domain communication 
+
+- [What are the differences between normal and slim package of jquery? - Stack Overflow](https://stackoverflow.com/questions/35424053/what-are-the-differences-between-normal-and-slim-package-of-jquery)
+  - The short answer taken from the announcement of jQuery 3.0 Final Release :
+  - Along with the regular version of jQuery that includes the ajax and effects modules, we’re releasing a “slim” version that excludes these modules. All in all, it excludes ajax, effects, and currently deprecated code.
+  - The file size (gzipped) is about 6k smaller, 23.6k vs 30k.
+  - In the jquery.slim.js, the following features are removed: jQuery.fn.extend jquery.fn.load jquery.each
+
+- 昨天
+  - 微调 webview 的 loading 时间与浏览器保持一致，在 loading 时点击 refresh 会重新开始 loading
+  - 调研 agent 获取浏览器信息的方案，初步方案不需要采用 rrweb，但需要采用注入脚本的方案
+- 今天
+  - 验证agent获取浏览器信息的方案细节，主要是iframe跨域相关操作，给出开发排期计划
+  - 整理ide-server相关的问题形成文档，交接给天平
+# dev-03
 
 ## 0331
 

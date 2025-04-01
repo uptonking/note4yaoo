@@ -45,6 +45,39 @@ modified: 2024-09-16T11:11:14.989Z
   - 如果动态地将已有图像替换为新图像，这会特别有用，而且还可以防止在图像解码时因代码以外的不相关绘制而挂起。
   - 以前预加载图像常用的方式就是捕捉image onload事件，遇到需要写async/await的情况，还得用Promise包裹处理一层，现在有了decode，一个 await img.decode() 完事，简单方便
 
+# discuss-html2canvas
+- ## 
+
+- ## 
+
+- ## 🤔 [when iframe cross-origin , how to sreenshot · Issue #1532 · niklasvh/html2canvas](https://github.com/niklasvh/html2canvas/issues/1532)
+- After digging this issue for hours. I solved it by using
+  - start a reverse proxy ( e.g. http-proxy) which proxy remote-host to localhost:8888.
+  - add `document.domain = document.domain` on both container page and iframe content. According to MDN, this will cause the port number to be overwritten with null. If you can't change iframe content source directly, consider modify the HTTP(s) response. (MitM)
+  - Since container & iframe now have the same domain localhost, Javascript API is working on iframe! ( So does html2canvas)
+
+- ## [Iframe is not working · Issue #3095 · niklasvh/html2canvas](https://github.com/niklasvh/html2canvas/issues/3095)
+- you can get your iframe content by `iframeElement.contentWindow.document.body` , then create an image of that and replace it with the iframe element when you create main image
+
+- ## [IFrame with no width/height fails · Issue #1892 · niklasvh/html2canvas](https://github.com/niklasvh/html2canvas/issues/1892)
+- A possible fix is to use getComputedStyle(iframe).width here instead of iframe.width (and same for height)
+
+- ## 🌰 [Bug canvas iframe · Issue #2120 · niklasvh/html2canvas](https://github.com/niklasvh/html2canvas/issues/2120)
+- adding width and height attributes seems to work but an other bug when i set a margin-left for example
+
+- ## 🤔 [Support for iframe capture · Issue · niklasvh/html2canvas _202109](https://github.com/niklasvh/html2canvas/issues/2692)
+- is there any plan to support iframe capture in the same origin?
+  - It's definitely supported. Try setting a height and width on the iframe.
+  - Iframe element must set width and height through attributes. eg: `<iframe src="./child.html" width="400" height="400"></iframe>` . Because html2canvas iframe clone initialize by `iframe.width and iframe.height`
+
+- ## [html2canvas failing when trying to capture embedded SVG · niklasvh/html2canvas · Discussion _202204](https://github.com/niklasvh/html2canvas/discussions/2855)
+- I think you can't capture an iframe from a different origin without running into CORS problems unless you use a CORS proxy. If you aren't already using some kind of CORS proxy I would suggest it because html2canvas by itself does not bypass CORS restrictions. In the html2canvas documentation it suggest using the html2canvas-proxy.
+
+- ## [why does it render the page inside an iframe · niklasvh/html2canvas · Discussion _202211](https://github.com/niklasvh/html2canvas/discussions/2987)
+  - can't we just render it on the canvas?
+
+- I have this question too. I notice that if I hack the code a little to avoid the iframe and generate the canvas directly from the element on the page it still works, and is about a second faster. 
+  - I assume there was some corner case that required the use of the iframe. It would be interesting to know what it was.
 # discuss-screenshot-dom
 - ## 
 

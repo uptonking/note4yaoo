@@ -6,7 +6,15 @@ modified: 2023-04-16T13:34:33.706Z
 ---
 
 # toc-lib-utils-image-screenshot-preview
-- guide
+
+# guide
+
+- 基于`getDisplayMedia`的方案
+  - 优点是主流pc浏览器都支持，移动端浏览器不支持
+  - 缺点是会提醒用户选择tab/screen，截图体验不好
+
+- tips
+  - 在macos上，html2canvas的截图效果似乎比modern-screenshot要好
   - screenshot更适合静态内容
   - preview实时预览更适合直接展示dom，支持动态交互
 # react-comp-screenshot
@@ -84,7 +92,7 @@ modified: 2023-04-16T13:34:33.706Z
   - web端自定义截屏插件(原生JS版)
   - 支持electron环境下使用插件
 
-- https://github.com/xataio/screenshot /ts
+- https://github.com/xataio/screenshot /MIT/202202/ts/inactive
   - zero-dependency browser-native way to take screenshots powered by the native web MediaDevices API.
 
 - https://github.com/sindresorhus/pageres /MIT/202311/ts
