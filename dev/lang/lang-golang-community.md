@@ -54,6 +54,29 @@ modified: 2023-08-28T06:08:05.348Z
   - Plus there’s the additional compilation complexity
 
 - People dislike what they don't understand. I am a C junkie who likes to use Go. There is nothing wrong with cgo, I'm not writing the software for banks or jet engines. So I use cgo.
+# discuss-ide-golang
+- ## 
+
+- ## 
+
+- ## 💡 [Import statement deleted on save · Issue · golang/vscode-go _202203](https://github.com/golang/vscode-go/issues/2127)
+  - In vscode, it automatically removes any unused imports on save.
+
+- Deleting unused imports is the default behavior to help saved files can compile 
+  - 💡 In Go, unused imports are compile-time errors.
+  - `"[go]": { "editor.codeActionsOnSave": { "source.organizeImports": false }}`
+
+- [Golang will not let you compile if there’s an import or declared variable that’s unused | Hacker News](https://news.ycombinator.com/item?id=5893748)
+  - I think that is the result of an explicit design goal of Go: optimizing for large projects that involve many files and packages developed by many people. 
+  - Having extraneous package or variable declarations in parts of a program are not an issue for small, one-off exploratory programs, but can be for large projects. 
+  - So they're consciously making it slightly more painful for small projects because they're designing for large projects.
+
+- [Disable removing unused imports in vscode : r/golang _202309](https://www.reddit.com/r/golang/comments/16vpyw1/disable_removing_unused_imports_in_vscode/)
+  - You can import the package with an underscore, or use the save without formatting command.
+  - Even with save without formatting it still does that
+  - In VSCode, you don't need to write the imports first. When you actually want to use something from the package, just start typing, using code completion to select the thing you want to use, and it will add the import for you. 
+  - `import ( _ encoding/json _ time )`; 
+  - Goland does that too. Just decided to let it insert the imports as and when needed.
 # discuss-gc
 - ## 
 

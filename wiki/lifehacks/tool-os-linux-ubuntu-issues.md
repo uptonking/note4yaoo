@@ -44,7 +44,12 @@ modified: 2022-08-30T22:47:08.515Z
 
 ## 
 
-## 
+## [python - ModuleNotFoundError: No module named 'distutils.util' - Ask Ubuntu](https://askubuntu.com/questions/1239829/modulenotfounderror-no-module-named-distutils-util)
+
+- `distutils` package is removed in Python version 3.12
+  - It was deprecated in Python 3.10 by PEP 632 “Deprecate distutils module”. 
+  - For projects still using `distutils` and cannot be updated to something else, the `setuptools` project can be installed: it still provides distutils.
+  - if it doesn't work, you may need stay on Python < 3.12 until the package is supported.
 
 ## [Touchpad stopped working 20.04 - Ask Ubuntu](https://askubuntu.com/questions/1235067/touchpad-stopped-working-20-04)
 

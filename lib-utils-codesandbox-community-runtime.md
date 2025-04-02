@@ -371,7 +371,7 @@ modified: 2024-05-12T17:20:03.132Z
 
 - Much easier in the browser that has V8 isolate, however even with webworkers you still want to control CPU/network hijacking which is not ideal.
   - If it's only the user's own code it's fine but if they can run code from others it's a massive pain indeed.
-  - On the server it's still not easy in 2024, even with Firecracker (doesn't work on mac), Workerd (is a subset of NodeJS), isolated-vm (only pre-compiled code, no modules).
+  - On the server it's still not easy in 2024, even with Firecracker (doesn't work on mac), Workerd (is a subset of NodeJS),  `isolated-vm` (only pre-compiled code, no modules).
 
 - What are the attack vectors for a web browser js environment to do malicious things? All browser code is sandboxed via origin controls, and process isolation. It can’t even open an iframe and read the contents of that iframe.
   - It's a fine place to run code trusted by the server (or code trusted by the client within the scope of the app).

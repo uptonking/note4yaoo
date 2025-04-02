@@ -63,6 +63,22 @@ modified: 2023-09-02T09:17:22.992Z
   - Nodebox is a runtime for executing Node.js modules in the browser
   - we did not fully open-source Nodebox for a variety of reasons
 
+- https://github.com/laverdet/isolated-vm /ISC/202503/cpp
+  - Secure & isolated JS environments for nodejs
+  - a library for nodejs which gives you access to v8's Isolate interface
+  - This allows you to create JavaScript environments which are completely isolated from each other. 
+  - currently in maintenance mode. New features are not actively being added
+
+- https://github.com/patriksimek/vm2 /MIT/202307/js/deprecated
+  - Advanced vm/sandbox for Node.js
+  - vm2 is a sandbox that can run untrusted code with whitelisted Node's built-in modules.
+  - It uses the internal `VM` module to create a secure context.
+  - It uses Proxies to prevent escaping from the sandbox.
+  - It overrides the built-in require to control access to modules.
+  - The original intent was to devise a method for running untrusted code in Node, with a keen focus on maintaining in-process performance.
+  - Unfortunately, the growing complexity of Node has brought us to a crossroads. We now find ourselves facing an escape so complicated that fixing it seems impossible.
+  - 💡 We would recommend migrating your code to the `isolated-vm`, a library which employs a slightly different, yet equally effective, approach to sandboxing untrusted code.
+
 - https://github.com/bplok20010/eval5 /MIT/202110/ts/inactive
   - https://bplok20010.github.io/eval5/
   - 基于 TypeScript 编写的 JavaScript 解释器，支持完整 ES5 语法
@@ -101,22 +117,6 @@ modified: 2023-09-02T09:17:22.992Z
   - malware-jail is written for Node's 'vm' sandbox. 
   - Currently implements WScript (Windows Scripting Host) context env/wscript.js
   - browser context is partially implemented env/browser.js.
-
-- https://github.com/patriksimek/vm2 /MIT/202307/js/deprecated
-  - Advanced vm/sandbox for Node.js
-  - vm2 is a sandbox that can run untrusted code with whitelisted Node's built-in modules.
-  - It uses the internal `VM` module to create a secure context.
-  - It uses Proxies to prevent escaping from the sandbox.
-  - It overrides the built-in require to control access to modules.
-  - The original intent was to devise a method for running untrusted code in Node, with a keen focus on maintaining in-process performance.
-  - Unfortunately, the growing complexity of Node has brought us to a crossroads. We now find ourselves facing an escape so complicated that fixing it seems impossible.
-  - We would recommend migrating your code to the `isolated-vm`, a library which employs a slightly different, yet equally effective, approach to sandboxing untrusted code.
-
-- https://github.com/laverdet/isolated-vm /cpp
-  - Secure & isolated JS environments for nodejs
-  - a library for nodejs which gives you access to v8's Isolate interface
-  - This allows you to create JavaScript environments which are completely isolated from each other. 
-  - currently in maintenance mode. New features are not actively being added
 
 - https://github.com/svaarala/duktape /clang/js
   - embeddable Javascript engine with a focus on portability and compact footprint

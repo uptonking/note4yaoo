@@ -11,6 +11,12 @@ modified: 2021-03-29T19:14:57.440Z
 - 工作节奏
   - 思路清晰时，写流程+改接口
   - 头脑不清时，调样式+玩案例
+# repo/git-workflow
+- 正常开发流程
+  - develop -> staging -> main
+
+- hotfix到main 或 dev/staging 存在半成品commit时
+  - 从main新建分支hotfix1, 然后将hotfix1通过pr合到main，再分别将hotfix1新建临时分支后合到 dev/staging，可以保持commitId不变
 # dev-summary
 - 研发工作经常是用同一语言的不同框架，或用不同语言，在不同的平台重复实现相同的功能
   - 静下心来深入一个主题，总结现有方案的优点和缺点

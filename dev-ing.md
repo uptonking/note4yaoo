@@ -53,8 +53,8 @@ https://meeting.tencent.com/p/9606972663
 ```shell
 # delete all node_modules folders recursively
 rm package-lock.json && find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + && find . -name 'dist' -type d -prune -exec rm -rf '{}' + && find . -name '.next' -type d -prune -exec rm -rf '{}' +
-
-sudo find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + 
+# maybe prefix sudo
+find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + 
 
 # 格式化当前包，注意在子文件夹执行命令也会从package.json目录开始格式化整个包
 prettier --write '**/*.{js,jsx,ts,tsx,json}' --ignore-unknown
@@ -329,6 +329,15 @@ add action to create quickSort1.mjs and add 3 test cases in it
 
 - 异常处理增强
   - 观测重要log: RESOURCE_NOT_ENOUGH
+
+## 0402
+
+- 昨天
+  - 微调 webview 的 loading 时间与浏览器保持一致，在 loading 时点击 refresh 会重新开始 loading
+  - 调研 agent 获取浏览器信息的方案，初步方案不需要采用 rrweb，但需要采用注入脚本的方案
+- 今天
+  - 验证agent获取浏览器信息的方案细节，主要是iframe跨域相关操作，给出开发排期计划
+  - 整理ide-server相关的问题形成文档，交接给天平
 
 ## 0401
 

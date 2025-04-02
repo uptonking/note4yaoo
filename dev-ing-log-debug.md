@@ -36,9 +36,20 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
-## 
+## ai写代码的超时异常或其他异常
 
-## 
+- mq的消息消费多次
+- 粘性会话时有多个pod
+
+## 🌵 git commit操作的api在cde很慢， 5s-90s
+
+- git checkout 有时也很慢
+
+- 深入排查时要区分 本地操作、系统调用 的各个阶段
+
+- 
+- 
+- 
 
 ## error: followingFocusComponent call timeout (7s)
 
