@@ -624,7 +624,7 @@ modified: 2020-12-28T12:24:09.275Z
   - Open-source no-code & code web app builder
   - a suite of productivity tools such as visual editor, asset management tools, etc
   - developers do not need to write and document REST APIs. Instead, they rely upon the object model which acts as a single source of truth.
-# workflow-automation-tasks-pipeline
+# workflow/automation/pipeline/rpa
 - tips
   - 考虑跨平台/系统的task兼容性、分享，主流的airflow/ifttt
   - https://github.com/pditommaso/awesome-pipeline
@@ -639,6 +639,7 @@ modified: 2020-12-28T12:24:09.275Z
   - Workflow automation tool 100+ integration / Enterprise automation tool / Zapier Alternative
   - 后端依赖 fastify、typeorm、langchain
   - 前端依赖 zustand、zone.js、codemirror6、dnd-kit、radix-ui、fuse.js、imapflow、pdf-lib、recharts
+  - 工作流ui依赖react-flow实现，基于dom而非svg/canvas
   - [Local Dev Environment - Activepieces](https://www.activepieces.com/docs/developers/development-setup/local)
   - Activepieces' Community Edition is released as open source under the MIT license and enterprise features are released under Commercial License
     - paid: permissions,Audit logs,Collaborate using Git,Customize branding
@@ -661,7 +662,7 @@ modified: 2020-12-28T12:24:09.275Z
   - Trigger.dev is an open source platform that makes it easy for developers to create event-driven background tasks directly in their code. 
   - open-source platform to create long-running jobs directly in your Next.js project, with features like API integrations, webhooks, scheduling and delays.
   - Trigger.dev is an open source platform and SDK which allows you to create long-running background jobs
-  - 后端依赖remix、prisma、eventsource
+  - 后端依赖remix、🛢️prisma、eventsource
   - 前端依赖ariakit/react、codemirror6、json-query、keyv、pulsar
 
 - https://github.com/automatisch/automatisch /3.8kStar/AGPLv3/202403/js/graphql

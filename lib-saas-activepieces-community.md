@@ -52,6 +52,24 @@ modified: 2025-03-31T17:39:01.892Z
 - My perfect workflow is something like Config as code. So basically i could declare a JSON/TOML config, then when deployed, the visual diagram is set.
   - That's a decent feature. The main reasons we know of are versioning and IDE experience. We were designed API-first. They are clean, but undocumented yet. We currently have a draft PR that generates an OpenAPI specification. I think the next step for us would be a CLI to bring the code experience into the IDE.
   - That's a decent feature. The main reasons we know of are versioning and IDE experience. We were designed API-first. They are clean, but undocumented yet. We currently have a draft PR that generates an OpenAPI specification. I think the next step for us would be a CLI to bring the code experience into the IDE.
+# discuss-news
+- ## 
+
+- ## 
+
+- ## Google Sheets is your most used piece. That's why we are so excited to introduce Tables _20250316
+- https://x.com/activepieces/status/1901006256049131750
+  - This is another step in our growing suite of products designed to empower the future of work and eliminate those "No Joy" tasks in the most user-friendly way possible.  
+  - you get fast, built-in sheets right inside your workflows.  
+- no more
+  - Creating sheets just to support automation  
+  - Waiting on slow webhook responses and connectivity issues with Google Sheets  
+  - Data scattered everywhere between Activepieces and other 3rd party platforms
+
+- We just slipped in 2 new upgrades for table _20250330:
+  - https://x.com/activepieces/status/1906280824682459578
+  - single select fields
+  - rename field. These updates are live 
 # discuss
 - ## 
 

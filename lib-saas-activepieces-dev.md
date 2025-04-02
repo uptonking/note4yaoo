@@ -52,4 +52,7 @@ modified: 2025-03-31T17:38:17.881Z
 
 # [changelog](https://www.activepieces.com/docs/about/breaking-changes)
 
+- 0.50.0_20250330
+  - [feat: make mcp stateless](https://github.com/activepieces/activepieces/pull/7261)
+  - It does no longer require the load balancer to be sticky
 # more

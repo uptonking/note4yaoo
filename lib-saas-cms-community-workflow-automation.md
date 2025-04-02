@@ -30,27 +30,12 @@ modified: 2025-03-25T19:15:23.591Z
 
 - ## 
 
-- ## 
-
 - ## [Windmill.dev | Hacker News _202205](https://news.ycombinator.com/item?id=31272793)
 - It has some resemblances with Airflow but one aim is to make it accessible to less technical users that can treat modules like blackbox. Similar to Zapier but the code is inspectable and editable at any point. 
   - At the core, it is a scheduler/orchestrator of script execution, so it's similar to Airflow in that sense, but the product is really not meant for the same usage.
 
 - This looks very similar to airplane.dev, is that intended?
   - Airplane is focused on support, customer success or ops use cases (e.g. "I wrote a script to delete a user record / reset a 2fa token / etc, I can use Airplane to let the customer support team have access in a safe way"). Whereas I've seen other tools in this space target more of a "programmable Zapier" type use case (e.g. "For every new customer, I want to use a Python script to hit the Slack API and generate a custom notification.")
-
-- 
-- 
-- 
-
-- ## 🚀 [Trigger.dev - Show HN: We built a developer-first open-source Zapier alternative | Hacker News _202302](https://news.ycombinator.com/item?id=34610686)
-- Trigger.dev looks like it would be amazing if you want a simplified temporal that is still 100% code based and exclusively in Typescript.
-  - If you are looking for a Zapier-for-developer experience, we took an alternative route at Windmill of allowing Python/Javascript/Go/Bash as steps but the workflows are still GUI based
-
-- Zapier has a python/JS code step (basically a AWS lambda) you can use to do something like this. Downside is that it has a timeout of 10s
-  - And the second downside is that you don't necessarily get the same data as the normal no-code steps... It's still a mess to manage arrays and arguments auto-split by commas
-
-- I tried node-red and I got frustrated having to do all this drag and drop stuff for something I could code easily.
 
 - 
 - 
@@ -67,7 +52,37 @@ modified: 2025-03-25T19:15:23.591Z
 - Activepieces: We used Zapier for a long period of time and ran into many issues that we weren’t able to fix by ourselves because of the closed app ecosystem, and had to pay increasing bills for simple tasks that could cost literally zero if we do them in code.
   - Later, we came across many people with similar problems and more; like not being able to process their data on their own machines, and that’s were we got inspired.
   - the real answer imo is that there is a rising movement for open-source alternatives that are loud about being alternatives to proprietary software, that’s why you read it every week very explicitly.
+# discuss-triggerdotdev
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 💫 Move your background jobs to the foreground with Realtime _20250402
+- https://x.com/triggerdotdev/status/1907117019713122749
+  - Stream AI responses, with full observability built-in
+  - Show progress states on your frontend by subscribing to your runs
+  - Use metadata to provide detailed context for your users
+  - ✨ task执行的进度动画非常友好
+  - Forward streams through the Realtime API to provide real-time updates to your users from any AI providers ( @aisdk , @openai , @AnthropicAI etc).
+  - We also provide Realtime React hooks that allow you to securely interact with the Trigger API from your @reactjs apps.
+
+- ## 🚀 [Trigger.dev - Show HN: We built a developer-first open-source Zapier alternative | Hacker News _202302](https://news.ycombinator.com/item?id=34610686)
+- Trigger.dev looks like it would be amazing if you want a simplified temporal that is still 100% code based and exclusively in Typescript.
+  - If you are looking for a Zapier-for-developer experience, we took an alternative route at Windmill of allowing Python/Javascript/Go/Bash as steps but the workflows are still GUI based
+
+- Zapier has a python/JS code step (basically a AWS lambda) you can use to do something like this. Downside is that it has a timeout of 10s
+  - And the second downside is that you don't necessarily get the same data as the normal no-code steps... It's still a mess to manage arrays and arguments auto-split by commas
+
+- I tried node-red and I got frustrated having to do all this drag and drop stuff for something I could code easily.
+
+- 
+- 
+
 # discuss-n8n
+- ## 
+
 - ## 
 
 - ## 
