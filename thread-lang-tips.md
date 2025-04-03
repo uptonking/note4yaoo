@@ -45,7 +45,15 @@ modified: 2021-04-30T11:10:26.083Z
 
 - ## 
 
-- ## 
+- ## 写了很多年的带 gc 的动态语言，感叹一下，开始的出活快都是是债，早晚要还的，不然就是无尽的 workaround
+- https://x.com/Ehco1996/status/1907602641309577252
+  - 比如早年 py 的性能太拉，用 uwsgi 来解析 http， 还有最近遇到 node gc 太猛导致性能回退，最后通过 event loop lag 开 hpa 来绕开
+
+- Python 最大的问题不是 GC，而是动态和高自由度的语法让程序员很容易忽略代码质量，然后留下巨大技术债。
+
+- go很平衡，排斥它无法两点。
+  - 一是组合替代继承，动摇了信仰，当初java比c++大作业多糊弄过来的，这是表面因素。
+  - 二是抹平了人的差异，十年老司机和新人的代码只要顶层设计一致，跟打印机一样，没法整车轱辘语法，对面js整天把缺陷语法当糖吃。程序设计（c语言版）是程序逻辑不是学c，第一堂课都没搞明白
 
 - ## 🆚️ [What are the main benefits of Elixir compared to Clojure? _202003](https://elixirforum.com/t/what-are-the-main-benefits-of-elixir-compared-to-clojure/29959)
 - The good thing about Elixir (and Erlang) lies in the concurrency - it’s all about creating parallel process and sending messages - and this (as Alan Kay has pointed out on numerous occasions) is the essence of OO programming. OO programming is all about objects. 

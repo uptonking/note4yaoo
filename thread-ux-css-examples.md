@@ -12,7 +12,8 @@ modified: 2021-02-05T14:00:02.922Z
 # ux-examples
 - ## 
 
-- ## 
+- ## stacked avatars: Pure #CSS and very little of it, just some flexbox magic
+- https://x.com/anatudor/status/1907044264418136284
 
 - ## 放烟花效果
 - https://x.com/meetqy/status/1900530649817100702

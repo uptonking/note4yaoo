@@ -23,6 +23,8 @@ modified: 2020-12-28T12:24:09.275Z
   - craft/reka
   - tango, sparrow
   - vue
+- lowcode方案
+  - vercel的v0背后都是vm来执行
 
 - cms-dev
   - cms业务架构一般分为 服务端、管理端、展示端

@@ -12,7 +12,10 @@ modified: 2023-09-17T17:41:51.689Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## The reason the `SELECT 1` benchmark is important is because that is the fixed cost that is paid on every query.
+- https://x.com/glcst/status/1907454682055991576
+  - For complex queries it won't matter - but we will optimize those too. 
+  - For small queries - a lot of SQLite queries for OLTP are small - that fixed cost does matter.
 
 - ## 🌰 ai based search for tldraw's docs
 - https://twitter.com/tldraw/status/1712099716966547787

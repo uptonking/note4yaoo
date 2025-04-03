@@ -43,7 +43,9 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## 
 
-- ## 
+- ## If you build a similar tool for another ecosystem, don’t just tweak the original name (like Remix to Vemix for Vue).
+- https://x.com/adamwathan/status/1906371401608491459
+  - Things will inevitably diverge and you will regret it. You’ll have to work way harder to get credit for your original ideas, because it’ll always look derivative.
 
 - ## 学过的最有用的算法： 分治法和穷举法。 
 - https://x.com/mrpanda88888888/status/1905894687904342173
@@ -243,9 +245,9 @@ modified: 2021-01-21T17:52:13.333Z
 
 - 这里可能有个悖论, 自己造轮子 研发成本高, 不自己造轮子 显不出技术“高明”, 结果是 996 劣质轮子 遍地都是…
 
-01.                    大概率没有开源的好
-02.                    造轮子就要维护一个轮子迭代维保团队
-03.                    迭代维保团队和其他团队无限的撕逼
+01.                     大概率没有开源的好
+02.                     造轮子就要维护一个轮子迭代维保团队
+03.                     迭代维保团队和其他团队无限的撕逼
 
 - ## Five terms I avoid when naming things:
 - https://twitter.com/housecor/status/1742197661837476018

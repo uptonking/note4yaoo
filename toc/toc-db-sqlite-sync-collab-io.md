@@ -23,6 +23,9 @@ modified: 2022-11-04T14:21:31.365Z
   - Cross-tab sync
   - https://twitter.com/tantaman/status/1717634582000865632
     - Similar to this idea https://vlcn.io/blog/crdt-substrate but simplified by going through a central server
+- https://github.com/orbitinghail/graft /MIT/202504/rust
+  - Graft is an open-source transactional storage engine optimized for lazy, partial, and strongly consistent replication—perfect for edge, offline-first, and distributed applications.
+  - [Stop syncing everything by Graft _202503](https://sqlsync.dev/posts/stop-syncing-everything/)
 
 - https://github.com/superfly/litefs /apache2/202401/go
   - FUSE-based file system for replicating SQLite databases across a cluster of machines

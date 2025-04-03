@@ -12,6 +12,17 @@ modified: 2023-09-17T17:46:07.620Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## [Postgres vs. SQL Server: B-Tree Index Differences & the Benefit of Deduplication _202504](https://pganalyze.com/blog/postgresql-vs-sql-server-btree-index-deduplication)
+- PostgreSQL's B-Tree deduplication
+- Benchmarking B-Tree indexes on PostgreSQL vs. SQL Server
+- PostgreSQL Test Setup
+- SQL Server Test Setup
+- Benchmark results: PostgreSQL's deduplication reduces index size
+- Comparison Table: PostgreSQL vs. SQL Server Indexing
+- Choosing the right index for your workload
+
 - ## 🍃🐘 [The Great Migration from MongoDB to PostgreSQL | Hacker News _202403](https://news.ycombinator.com/item?id=39860769)
 - I don't understand how folks seemingly ignore Postgres' non-existent out of the box HA and horizontal scaling support.
   - As far as I can tell, there is no interest in making these features work well in Postgres core because all of the contributors' companies make their money selling solutions for HA/sharding. 

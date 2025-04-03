@@ -14,7 +14,15 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
-- ## 
+- ## 💥 各位做 chat bot 客户端、并最近在接入 MCP 协议的大佬们, 想请教一下大家是怎么做上下文压缩的呀, 
+- https://x.com/Shenqingchuan/status/1906987971703865804
+  - 一些 MCP 调用了工具返回的内容太长, 导致整个 messages 的总 token 数爆炸多, 这个怎么解决呢？
+
+- 具体解决的时候分pre-retrieval，in-retrieval，和post-retrieval的优化。
+
+- 核心还是大模型能力的挖掘。一次请求，返回多步tools，然后分布执行把结果信息压缩返给大模型处理。
+
+- 128k的context length都不够用，那说明这个问题用mcp解决不合适
 
 - ## 🌰 尝试复刻了 manus 的 replay 功能, 从 TARS 的开源 repo 学到的两个架构特点
 - https://x.com/Nin19536/status/1905975354227040314
@@ -34,7 +42,7 @@ modified: 2025-02-03T10:17:42.052Z
 - 只能说规范化≠简洁
 
 - https://x.com/jezell/status/1906368293239423018
-  - It's pretty crazy to me how the entire MCP ecosystem is building on top of the Stdio transport rather than http. "Works on my machine" dominating AI tooling continues to be a thing.
+  - ⚖️ It's pretty crazy to me how the entire MCP ecosystem is building on top of the Stdio transport rather than http. "Works on my machine" dominating AI tooling continues to be a thing.
 
 - ## 各位现在用到MCP最实用的场景是什么？
 - https://x.com/wong2_x/status/1904793226713706653

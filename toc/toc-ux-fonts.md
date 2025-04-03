@@ -190,7 +190,11 @@ modified: 2020-07-17T10:54:16.341Z
 
 - ## 
 
-- ## 
+- ## Nice visual reminder of ideal line length for body text (desktop) and short lines of text (desktop & mobile) 
+- https://x.com/101babich/status/1906660429385842853
+  - 基于material-design
+  - pc: 40-60
+  - mobile: 20-40
 
 - ## 🆚 [What is difference between CSS em and ch units? - Stack Overflow](https://stackoverflow.com/questions/48649169/what-is-difference-between-css-em-and-ch-units)
 - em - Relative to the font size of the own element or the last parent element with a font size

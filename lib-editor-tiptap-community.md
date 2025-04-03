@@ -71,7 +71,9 @@ modified: 2023-02-05T19:03:27.730Z
 
 - ## 
 
-- ## 
+- ## We're experimenting with AI-native editing workflows in Tiptap.
+- https://x.com/tiptap_editor/status/1907459022971683085
+  - Next: let it access and switch between documents, like Cursor for code.
 
 - ## Released “Snapshot Compare” for Tiptap to make tracking changes between document versions simple and visual _202411
 - https://x.com/tiptap_editor/status/1852018294682767647

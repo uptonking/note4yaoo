@@ -206,7 +206,8 @@ modified: 2024-12-13T15:12:55.861Z
 
 - ## 
 
-- ## 
+- ## 👎🏻 现在并没有提供冲突解决的方案，有点半成品的感觉。而且turso 不支持 udf 和 load extension, 改了半天勉强能跑起来，有些失望。
+- https://x.com/mayneyao/status/1907287654368219589
 
 - ## How does @tursodatabase diskless architecture work?
 - https://x.com/penberg/status/1903381080410861708

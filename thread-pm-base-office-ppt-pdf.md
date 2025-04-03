@@ -135,7 +135,22 @@ modified: 2024-01-11T15:57:32.182Z
 
 - ## 
 
-- ## 
+- ## 90% 牛逼的 pdf 解析器诞生在大模型发展的这两年。
+- https://x.com/yihong0618/status/1906895307826516284
+- 关键还是OCR吧，还有根据OCR 之后的数据做推断的LLM, 识别 -> 推断 -> 纠正 -> 质量很好的文档, 这是CV + NLP 的一家亲时刻
+  - 现在很少是基于格式解析的，大多数都是基于 OCR 的，或者两者结合
+- OCR的能力很久没升级了，科研界卷到顶了，这一波优化的应该是各种后处理，也就是各种规则或者文本处理的小技巧。全都是脏活累活，只有工业价值科研界以前不愿意做，现在大家卷一卷整体效果又提升了几个点
+
+- 文档解析还有个问题--字体，字体大小和字体类型，如果没有metadata，目前没有能解决这种问题的模型
+
+- 毕竟这玩意离图片只有一步之遥，比图片只多了一个字符准确坐标以及准确的字符内容…解析起来不比图片简单多少。
+  - 图片的解析不需要还原回规格化的结果，但是 pdf 的解析却需
+
+- 文档中关于表格，图片的解析，是现在 pdf识别的主要性能差异。 由其是在rag领域
+
+- 
+- 
+- 
 
 - ## [History of the PDF | Hacker News _202312](https://news.ycombinator.com/item?id=38511697)
 - PDF is a remarkable creation. It has some notable weaknesses, such as the fact that its color channel for images does not include alpha, and thus needs masks, but the fact that it covers so much visual complexity in a relatively compact form is just amazing. (BTW: Its graphics model is strictly from Adobe Postscript, but PDF content streams are not programs.)

@@ -22,7 +22,10 @@ modified: 2024-02-14T12:35:31.547Z
 
 - ## 
 
-- ## 
+- ## For the first time ever, Python has a standard defined for lock files. 
+- https://x.com/tdhopper/status/1906776048055779373
+  - This human-readable TOML file will allow dependencies to be installed without a resolver, help ensure reproducible builds, and improve the security of installing third-party packages.
+- can we say bye bye to requirements.txt now?
 
 - ## Python 3.13 is out and you can now disable the infamous GIL 
 - https://x.com/arpit_bhayani/status/1845816870458339499

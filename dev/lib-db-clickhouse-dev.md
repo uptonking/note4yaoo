@@ -41,7 +41,10 @@ modified: 2023-12-15T18:01:18.391Z
 # discuss
 - ## 
 
-- ## 
+- ## 5 years operating ClickHouse
+- https://x.com/eatonphil/status/1907074469748682988
+  - [I've operated petabyte-scale ClickHouse® clusters for 5 years _202504](https://www.tinybird.co/blog-posts/what-i-learned-operating-clickhouse)
+
 
 - ## Interesting language feature in ClickHouse: LIMIT .. BY column (in addition to ordinary LIMIT). 
 - https://twitter.com/lukaseder/status/1768220718469206478

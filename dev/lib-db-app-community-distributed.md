@@ -219,7 +219,8 @@ modified: 2023-10-26T19:04:00.318Z
 
 - ## 
 
-- ## 
+- ## Raft has one fundamental difference from Paxos: Raft is lock-based, and Paxos is lock-free.
+- https://x.com/ssougou/status/1907293500280115689
 
 - ## I’ve almost figured out the Paxos interaction process in MySQL through the animation. 
 - https://x.com/wangbin579/status/1905467848442741067

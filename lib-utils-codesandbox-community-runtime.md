@@ -181,7 +181,26 @@ modified: 2024-05-12T17:20:03.132Z
 
 - ## 
 
-- ## 
+- ## Vercel is now consistently handling over 1M builds a day every day.
+- https://x.com/rauchg/status/1902347649275068858
+  - That’s 1M microVMs (virtual mini cloud computers) instantly booting, running user code in a secure sandbox, and being destroyed every day.
+  - To meet our scale and flexibility needs, we had to build our own custom compute platform powered by Firecracker called Hive. 
+  - We orchestrate Hive clusters in multiple regions worldwide, we handle automatic failover, QoS policies across customer and plan tiers, multiple classes of hardware, pre-warming and snapshotting of containers, custom networking overlays, security patching, Dependabot thundering herds… We even carefully synchronize OS and Node runtime flavors with your Functions to prevent unsavory production surprises. 
+
+- https://x.com/rauchg/status/1906814800426086861
+  - We're building an API to run arbitrary compute, targeting agentic AI usecases and long-running tasks. Yes, it can run servers.
+
+- Predicted it in one my replies couple of weeks before. Essentially firecracker as an api.
+
+- would love a e2b like experience for ephemeral sanbox / is this similar to that?
+  - yes
+
+- What will the memory and CPU limits look like? Cloudflare’s worker isolates can be nice for off-loading tasks, but 128mb is very limiting.
+  - Muti-core / multi-GB. Open to adjusting based on customer needs
+
+- 
+- 
+- 
 
 - ## 🚀🧊 I'm excited to launch Arrakis: an open-source and self-hostable sandboxing service designed to let AI Agents execute code and operate a GUI securely. _20250403
 - https://x.com/abshkbh/status/1907480355529203809
@@ -579,7 +598,15 @@ modified: 2024-05-12T17:20:03.132Z
 # discuss
 - ## 
 
-- ## 
+- ## same.dev: after spending $5k+ running automated browsers:
+- https://x.com/aidenybai/status/1907111968521023659
+  - hosting browsers is annoying asf
+  - existing hosting providers are EXPENSIVE
+  - non-deterministic memory usage leads to over/under provisioning
+  - sometimes just randomly crashes???
+
+- cloudflare worker browsers any good? probably not as cheap or flexible though
+- Stop using cloud run and dynamically spin up containers on a kubernetes cluster. Way cheaper.
 
 - ## 🆚️ [Ask HN: Pros and cons of V8 isolates? | Hacker News _202206](https://news.ycombinator.com/item?id=31740885)
   - I was reading this article on Cloudflare workers https://blog.cloudflare.com/cloud-computing-without-containe... and seemed like isolates have significant advantage over serverless technology like lambda etc.

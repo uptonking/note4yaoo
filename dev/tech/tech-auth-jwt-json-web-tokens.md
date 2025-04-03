@@ -214,7 +214,8 @@ HMACSHA256(
 # discuss
 - ## 
 
-- ## 
+- ## How can you safely store passwords in a database? With Salt
+- https://x.com/Franc0Fernand0/status/1906994701951000682
 
 - ## I got a Next.js 15 application with next-auth.  I add a logout button.  It calls a logout action which invokes the signOut method from next-auth.
 - https://x.com/webdevcody/status/1877117381757026720

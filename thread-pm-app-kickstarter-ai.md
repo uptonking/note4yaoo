@@ -276,9 +276,17 @@ modified: 2023-04-04T03:59:40.928Z
 # discuss
 - ## 
 
-- ## 
+- ## cua可以在 Mac 上开一个虚拟机，然后提供 cua-agent 让 AI 能够操作虚拟机中的 Mac 系统。
+- https://x.com/karminski3/status/1906500214288162841
+  - 详细可以直接看视频，不但能操作系统，还能使用内部的程序比如浏览器， VSCode 等等
+  - 到目前为止，windows，MacOS，Linux 的 Agent 都有了，操作系统 Agent 已经补齐了。
+- 微软，苹果，Linux只需要在OS内核的应用层稍微增加一个消息转发接口，这些东西就会自然消失了。之所以他们还没有这么做是因为他们还在等待这个技术的成熟，安全和用户接受度，还有本身的产品惰性。
+- 感谢分享。这个是使用了Docker来操作，用容器container比严格意义上的虚机vm效率更高，而且兼容性也可以兼顾*nix，比如他们用apt-get就可以同时兼顾linux和Mac
 
-- ## 
+- ## Anthropic just launched Claude for Education and it's not what you'd expect.
+- https://x.com/jowettbrendan/status/1907695965726978184
+  - This version doesn’t just give answers—it asks better questions.
+  - it's built for critical thinking.
 
 - ## 👷🏻 I'm Peak from Manus AI. Actually, it's not that complicated - the sandbox is directly accessible to each user
 - https://x.com/peakji/status/1898994802194346408
@@ -410,11 +418,11 @@ modified: 2023-04-04T03:59:40.928Z
 
 - ## 5 new market maps in AI
 - https://x.com/chiefaioffice/status/1799766662746398851
-  01.                  AI code generation tools from Greylock
-  02.                  AI legal tools from Battery Ventures
-  03.                  AI agent infrastructure from Madrona
-  04.                  AI marketing tools from a16z
-  05.                  Conversational AI from Cobus Greyling
+  01.                     AI code generation tools from Greylock
+  02.                     AI legal tools from Battery Ventures
+  03.                     AI agent infrastructure from Madrona
+  04.                     AI marketing tools from a16z
+  05.                     Conversational AI from Cobus Greyling
 
 - ## Google 最近新出了两个 Code 相关的 Agent 非常有意思：
 - https://x.com/tuturetom/status/1798350275314581670

@@ -125,7 +125,11 @@ modified: 2020-12-20T15:48:03.553Z
 
 - ## 
 
-- ## 
+- ## 🆚️ The biggest reason I prefer working in TypeScript over typed alternatives like C# or Java: Bare functions. 
+- https://x.com/housecor/status/1907076979360157916
+  - In C# and Java, everything has to be a class. 
+
+- As of C# 12, bare functions, known in C# as "primary functions" are fully supported. That was released late 2023.
 
 - ## I avoid OOP as much as possible nowadays
 - https://twitter.com/0xglitchbyte/status/1772474741007220770
