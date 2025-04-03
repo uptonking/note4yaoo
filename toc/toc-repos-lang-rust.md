@@ -60,6 +60,10 @@ modified: 2025-02-26T15:04:31.107Z
 - https://github.com/zkat/cacache-rs /apache2/202402/rust
   - A high-performance, concurrent, content-addressable disk cache, with support for both sync and async APIs
   - First-class async support, using either async-std or tokio as its runtime. Sync APIs are available but secondary.
+
+- https://github.com/modal-labs/tokio-par-util /202504/rust
+  - Utilities for running computations in parallel on top of Tokio
+  - This library adds utility methods and stream transformers to `Stream`s and `TryStream`s, to make it easier to run many futures in parallel while adhering to structured parallelism best-practices. 
 # rust-patterns
 - https://github.com/rust-unofficial/patterns /MPLv2/202403/Handlebars
   - https://rust-unofficial.github.io/patterns/

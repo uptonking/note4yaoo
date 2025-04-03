@@ -39,10 +39,40 @@ modified: 2024-01-28T09:05:12.586Z
 - How about we make the realtime part more pervasive? Change the industry instead of changing the messaging Even the most basic CRUD app could have improved UX with realtime, hard to implement right now even with something like PartyKit though
   - The framework needs to provide absurdly easy-to-use and reason about primitives. Makes me think of Meteor, which did this very thing with minimongo and op-log tailing.
 
-# discuss-remote-control
+# discuss-remote-control (rdp/vnc)
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [What's the difference between RDP vs VNC? - Super User](https://superuser.com/questions/32495/whats-the-difference-between-rdp-vs-vnc)
+- RDP is semantic. The RDP is aware of controls, fonts, and other similar graphical primitives. 
+  - This means that when rendering a screen across a network, this information is used to compress the data stream significantly. For instance, if you know that this region of the screen if occupied by a button, with the color grey, then you don't need to send an image of the button across the network, but merely information such as location of this button, size and color.
+
+- VNC is "dumb" in this respect, and largely functions by sending the actual images across the network.
+
+- RDP is tightly coupled to the Windows platform whereas VNC is available for most platforms. 
+  - RDP is also seen as far more performant than VNC, due to the semantic advantage.
+
+- RDP stands for Remote Desktop Protocol. 
+  - It is a proprietary protocol built by Microsoft to let users to graphically control remote computer.
+  - RDP logs in a remote user to the server computer by effectively creating a real desktop session on the server computer including a user profile.
+  - RDP works in the same way as if the user had logged in to the physical server directly.
+  - RDP can support multiple remote users logged in to the same server that completely unaware of each other.
+  - RDP supports multiple monitors, if the client has them
+- VNC stands for Virtual Network Computing. 
+  - It is an open platform independent graphical desktop sharing system designed to remotely control another computer.
+  - VNC follows the older model of simply showing whatever is on the screen with no forced logins required.
+  - VNC connects a remote user to the computer itself by sharing its screen, keyboard and mouse.
+  - Consequently, when several users (including the one operating the real physical monitor and keyboard) connect to the same server they see the same thing and they type on the same keyboard.
+  - VNC has security implications; if you remote into a machine that an Administrator is logged into, you'll effectively be an Administrator. And if you're both trying to use the computer at the same time, it's even more fun!
+
+- ## [如何评价微软的远程桌面？ - 知乎](https://www.zhihu.com/question/26816582)
+- 远程桌面的隐藏配置都明文保存在 RDP 文件里。
+
+- VNC这些是帧传输协议，类比一下就是看直播。
+  - RDP协议支持指令传输协议，使得一些窗体渲染可以发生在客户端上，这使得传输协议天然可以做到很小，同等网络条件下，带宽消耗更小，性能更高。当然也支持了直播的方式做兜底。
 
 - ## Cloudflare now provides clientless, browser-based support for the Remote Desktop Protocol (RDP)
 - https://x.com/Cloudflare/status/1903076650952335699

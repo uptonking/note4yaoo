@@ -181,6 +181,31 @@ modified: 2024-05-12T17:20:03.132Z
 
 - ## 
 
+- ## 
+
+- ## 🚀🧊 I'm excited to launch Arrakis: an open-source and self-hostable sandboxing service designed to let AI Agents execute code and operate a GUI securely. _20250403
+- https://x.com/abshkbh/status/1907480355529203809
+  - AI agents become incredibly capable when given access to a full Linux VM environment.
+  - Self-hostable: Run it on your own infra or Linux server.
+  - Secure by Design: Uses MicroVMs for strong isolation between sandbox instances.
+  - Snapshotting & Backtracking: First-class support allows AI agents to snapshot-and-restore a running sandbox.
+  - Ready to Integrate: Comes with a Python SDK py-arrakis and an MCP server arrakis-mcp-server out of the box.
+  - Customizable: Docker-based tooling makes it easy to tailor sandboxes to your needs.
+
+- When's the typescript SDK dropping?
+  - One of the top things on my plate. But it has a REST API so you can use whatever for the time being.
+
+- firecracker support when? Also, any guide on how to deploy it?
+  - Arrakis uses `cloud-hypervisor` underneath. Both Firecracker and chv are based on `crosvm`.
+- 🆚 any reason why you chose hypervisor over firecracker?
+- When I started the project -
+  1. Chv had stable snapshot/restore support. Firecracker didn't
+  2. Hotplugging of memory that I thought would help with memory management
+  3. I didn't want to be at the mercy of Amazon close sourcing Firecracker
+
+- I can't really deploy your project on aws because EC2 doesn't support virtualization
+  - Yes, exactly why I also went with GCP/GCE. AWS does have a bare metal offering, it's just expensive.
+
 - ## same.dev literally hosts a vm for your project
 - https://x.com/aidenybai/status/1901019106234732938
   - you get basically a full agent + operating system (which you can play doom / minecraft on if you want)

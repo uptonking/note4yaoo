@@ -95,6 +95,16 @@ modified: 2025-02-21T18:20:42.624Z
     - [Midscene.js - Joyful Automation by AI - Midscene.js](https://midscenejs.com/index.html#visualized-report)  
       - Midscene wants to provide a way to make automation more stable and easier to debug, so we provide a visual report after each run. With this report, you can review the animated replay and view the details of each step in the process.
 
+- https://github.com/e2b-dev/open-computer-use /apache2/202503/python
+  - A secure cloud Linux computer powered by E2B Desktop Sandbox and controlled by open-source LLMs.
+  - Uses E2B for secure Desktop Sandbox
+  - Operates the computer via the keyboard, mouse, and shell commands
+  - Supports 10+ LLMs, OS-Atlas/ShowUI and any other models you want
+  - Live streams the display of the sandbox on the client computer
+  - User can pause and prompt the agent at any time
+  - Uses Ubuntu, but designed to work with any operating system
+  - [How I taught an AI to use a computer _202501](https://blog.jamesmurdza.com/how-i-taught-an-ai-to-use-a-computer)
+
 - https://github.com/Aident-AI/open-cuak /apache2/202503/ts
   - https://aident.ai/
   - Open CUA Kit (Computer Use Agent), is THE platform for teaching, hiring and managing automation agents at scale — starting with browsers.

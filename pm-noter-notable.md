@@ -39,6 +39,7 @@ modified: 2023-11-28T14:48:45.910Z
       - 可调倍速
       - 回放时的表现可以和操作时不同，在回放模式下显示diff-view🆚更直观清晰，最好是流式diff
       - 快速定位到指定位置，快速分享链接和截图
+      - 另一种思路: agent执行action后，整个repo都能回到指定action的时刻，类似git回到某个commit的状态
   - 🪟 table
     - diff
     - ✨ markdown-table的wysiwyg是一个痛点和卖点

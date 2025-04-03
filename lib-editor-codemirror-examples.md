@@ -2180,7 +2180,7 @@ modified: 2023-06-23T12:46:53.288Z
   - It is a web/cloud based open-source application made in React/Next.js that you can easily deploy on Appwrite and Vercel for free.
   - 依赖tiptap、appwrite
 # pm-coding-ai
-- https://github.com/asadm/codemirror-copilot /MIT/202401/ts
+- https://github.com/asadm/codemirror-copilot /MIT/202401/ts/inactive
   - https://copilot.asadmemon.com/
   - CodeMirror extension to add GPT autocompletion like GitHub's Copilot
   - This code is based on codemirror-extension-inline-suggestion
@@ -2232,7 +2232,7 @@ modified: 2023-06-23T12:46:53.288Z
     - Infrastructure powering E2B - Secure Runtime for AI Agents & Apps
     - there are several components written in Go and a Terraform configuration for the deployment.
   - [Self-hosting E2B on Google Cloud](https://github.com/e2b-dev/infra/blob/main/self-host.md)
-    - Supported cloud providers: GCP (wip: AWS, Azure, General linux machine)
+    - 🧐 Supported cloud providers: GCP (wip: AWS, Azure, General linux machine)
     - We ask for Terraform v1.5.x because starting from v1.6 Terraform switched their license from Mozilla Public License to Business Source License.
     - PostgreSQL database (Supabase's DB only supported for now)
     - E2B is using Firecracker for Sandboxes. You can build your own kernel and Firecracker version from source by running make build-and-upload-fc-components

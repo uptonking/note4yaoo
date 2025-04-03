@@ -292,6 +292,12 @@ git log -- path/to/folder
   - git cherry-pick commit-id1 commit-id2
     - 将feature分支的commit-id1 id2合并到master
 
+- git 调试
+
+```sh
+GIT_TRACE=2 GIT_CURL_VERBOSE=1 GIT_TRACE_PERFORMANCE=1 git add .  &&  GIT_TRACE=2 GIT_CURL_VERBOSE=1 GIT_TRACE_PERFORMANCE=1 git commit -m 'refactor: remove unused'
+```
+
 ## git-not-yet
 
 - 每次合并远程分支后，会出现干扰性commit

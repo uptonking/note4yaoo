@@ -24,8 +24,8 @@ modified: 2023-09-02T09:17:22.992Z
   - [Does it use codemirror or monaco ? _202102](https://github.com/codesandbox/codesandbox-client/discussions/5495)
     - we use VSCode that uses Monaco, the only part we use codemirror is the embedded because it's lighter to load
     - react-sandpack uses codemirror but we're looking into having monaco as an option as well
-- [Add a collaborative mode _201709](https://github.com/codesandbox/codesandbox-client/issues/206)
-  - it's here now _201803
+  - [Add a collaborative mode _201709](https://github.com/codesandbox/codesandbox-client/issues/206)
+    - it's here now _201803
 - https://github.com/codesandbox/sandpack /4.5kStar/apache2/202405/ts
   - https://sandpack.codesandbox.io/
   - https://sandpack.codesandbox.io/docs
@@ -146,6 +146,12 @@ modified: 2023-09-02T09:17:22.992Z
   - Not implement with, eval, var, label etc.
   - 尝试性的把微任务在 jsscript 里面实现了一下，发现比我预想的简单，也没有八股文中那么多弯弯绕的东西。 又有了新的理解，微任务其实就是 JS 标准内的，而宏任务则是外部 IO 环境的任务。
 
+- https://github.com/sebastianwessel/quickjs /MIT/202503/ts
+  - https://sebastianwessel.github.io/quickjs/
+  - allows you to safely execute JavaScript AND TypeScript code within a WebAssembly sandbox using the QuickJS engine. 
+  - File System: Can mount a virtual file system.
+  - Can provide a fetch client to make http(s) calls.
+
 - https://github.com/jonathan-fielding/nodejs-runner /202005/ts
   - A docker based Node.js code runner which will execute JavaScript sent to it
   - This Node.js runner is a docker container designed to run Node.js within the docker sandbox.
@@ -214,7 +220,7 @@ modified: 2023-09-02T09:17:22.992Z
 
 - https://github.com/its-devtastic/framestack /202204/ts
   - An iframe manager. Easily create, layout, animate, communicate with and clean up iframes.
-# sandbox-using-vm
+# sandbox-by-vm/docker
 - https://github.com/firecracker-microvm/firecracker /apache2/202405/rust/python
   - http://firecracker-microvm.io/
   - Secure and fast microVMs for serverless computing.
@@ -233,6 +239,42 @@ modified: 2023-09-02T09:17:22.992Z
   - We have built a dedicated SDK for building custom code interpreters in your AI apps. It's build on top of E2B and our core E2B SDK.
   - sdk支持python、js、cli
   - [Show HN: We are building an open-source IDE powered by AI | Hacker News _202304](https://news.ycombinator.com/item?id=35440552)
+  - https://github.com/e2b-dev/infra /apache2/202408/go
+    - Infrastructure powering E2B - Secure Runtime for AI Agents & Apps
+    - there are several components written in Go and a Terraform configuration for the deployment.
+  - [Self-hosting E2B on Google Cloud](https://github.com/e2b-dev/infra/blob/main/self-host.md)
+    - 🧐 Supported cloud providers: GCP (wip: AWS, Azure, General linux machine)
+    - We ask for Terraform v1.5.x because starting from v1.6 Terraform switched their license from Mozilla Public License to Business Source License.
+    - PostgreSQL database (Supabase's DB only supported for now)
+    - E2B is using Firecracker for Sandboxes. You can build your own kernel and Firecracker version from source by running make build-and-upload-fc-components
+- https://github.com/e2b-dev/open-computer-use /apache2/202503/python
+  - A secure cloud Linux computer powered by E2B Desktop Sandbox and controlled by open-source LLMs.
+  - Uses E2B for secure Desktop Sandbox
+  - Operates the computer via the keyboard, mouse, and shell commands
+  - Supports 10+ LLMs, OS-Atlas/ShowUI and any other models you want
+  - Live streams the display of the sandbox on the client computer
+  - User can pause and prompt the agent at any time
+  - Uses Ubuntu, but designed to work with any operating system
+  - [How I taught an AI to use a computer _202501](https://blog.jamesmurdza.com/how-i-taught-an-ai-to-use-a-computer)
+
+- https://github.com/abshkbh/arrakis /AGPL/202504/go
+  - A fully customizable and self-hosted sandboxing solution for AI agent code execution and computer use. 
+  - It features out-of-the-box support for backtracking, a simple REST API and Python SDK, automatic port forwarding, and secure MicroVM isolation. 
+  - Arrakis provides a secure, fully customizable, and self-hosted solution to spawn and manage Sandboxes for code execution and computer use. It has out-of-the box support for backtracking via snapshot-and-restore.
+  - Secure by design, each sandbox runs in a MicroVM.
+    - MicroVMs are lightweight Virtual Machines (compared to traditional VMs) powered by Rust based Virtual Machine Managers such as firecracker and cloud-hypervisor.
+    - Arrakis uses `cloud-hypervisor` as the VMM.
+  - 🐧 Each sandbox runs Ubuntu inside with a code execution service and a VNC server running at boot.
+  - Automatically sets up and manages port forwarding from the self-hosted public server to the sanboxes running on it 
+  - Supports snapshot-and-restore out of the box i.e. AI Agents can do some work, snapshot a sandbox, and later backtrack to the exact previous state by restoring the snapshot
+  - `cloud-hypervisor` only works with `/dev/kvm` for virtualization on Linux machines. Hence, we only support Linux machines.
+  - Arrakis also comes with a MCP server that lets MCP clients like Claude Desktop App, Windsurf, Cursor etc.. spawn and manage sandboxes.
+  - ✨ customize the default packages and binaries running in a sandbox.
+  - Every sandbox comes with a VNC server running at boot. It also comes with Chrome pre-installed.
+  - 🆚 any reason why you chose hypervisor over firecracker?
+    1. Chv had stable snapshot/restore support. Firecracker didn't
+    2. Hotplugging of memory that I thought would help with memory management
+    3. I didn't want to be at the mercy of Amazon close sourcing Firecracker
 
 - https://github.com/jamsocket/forevervm /MIT/202503/rust/python/ts/paid
   - https://forevervm.com/
@@ -241,6 +283,8 @@ modified: 2023-09-02T09:17:22.992Z
   - Machines represent a stateful Python process. You interact with a machine by running instructions (Python statements and expressions) on it, and receiving the results. A machine processes one instruction at a time.
   - You don't need to terminate machines -- foreverVM will automatically swap them from memory to disk when they are idle, and then automatically swap them back when needed. This is what allows foreverVM to run repls “forever”.
   - [ForeverVM: Run AI-generated code in stateful sandboxes that run forever | Hacker News _202502](https://news.ycombinator.com/item?id=43184686)
+  - https://x.com/JamsocketHQ/status/1884660472076513468
+    - a Python REPL-as-a-service
 
 - https://github.com/oomol-lab/ovm-core
   - The minimal virtual machine to run podman.
@@ -264,6 +308,44 @@ modified: 2023-09-02T09:17:22.992Z
     - To mitigate these risks, we strongly recommend taking a security-in-depth approach and relying on additional security mechanisms such as process isolation, seccomp(2), pledge(2), ProcessSystemCallDisablePolicy and SELinux, to name a few. 
     - Where feasible, we also recommend static code analysis and code reviews, as well as adequate auditing and logging.
   - Note that the sandbox does not prevent denial-of-service attacks such as infinite loops or memory exhaustion. It's important to take appropriate measures to prevent these types of attacks, such as setting resource limits or using timeouts.
+
+- https://github.com/engineer-man/piston /MIT/202410/js
+  - https://emkc.org/run
+  - Piston is a high performance general purpose code execution engine. It excels at running untrusted and possibly malicious code without fear from any harmful effects.
+  - Piston uses `Isolate` inside Docker as the primary mechanism for sandboxing. 
+    - There is an API within the container written in Node which takes in execution requests and executes them within the container safely.
+    - High level, the API writes any source code and executes it inside an Isolate sandbox.
+    - Piston uses `Isolate` which makes use of Linux namespaces, chroot, multiple unprivileged users, and cgroup for sandboxing and resource limiting. 
+    - Code execution submissions on Piston shall not be aware of each other, shall not affect each other and shall not affect the underlying host system.
+
+- https://github.com/teknologi-umum/pesto /apache2/202409/ts/fork
+  - Remote Code Execution Engine that lets you execute any piece of code on a remote server via REST API
+  - It is heavily inspired by Piston. Pesto is not a fork of Piston, it's an entire rewrite from scratch and therefore it's not compatible with Piston but should be similar
+  - Pesto was written with a fresh start, minimizing the dependencies needed, and system controlled for limited resources usage.
+
+- https://github.com/leaningtech/webvm /apache2+NonCommercial/202312/js
+  - https://webvm.io/
+  - This repository hosts the source code for https://webvm.io, a Linux virtual machine that runs in your browser.
+  - WebVM is a server-less virtual environment running fully client-side in HTML5/WebAssembly. 
+  - It's designed to be Linux ABI-compatible. It runs an unmodified Debian distribution including many native development toolchains.
+  - WebVM is powered by the CheerpX virtualization engine, and enables safe, sandboxed client-side execution of x86 binaries on any browser.
+  - CheerpX includes an x86-to-WebAssembly JIT compiler, a virtual block-based file system, and a Linux syscall emulator.
+  - This project depends on:
+    - CheerpX, made by Leaning Technologies for x86 virtualization and Linux emulation
+    - xterm.js, for providing the Web-based terminal emulator
+    - Tailscale, for the networking component
+    - lwIP, for the TCP/IP stack, compiled for the Web via Cheerp
+  - The public CheerpX deployment is provided as-is and is free to use for technological exploration, testing and non-commercial uses.
+  - If you want to build a product on top of CheerpX/WebVM, please get in touch with sales
+  - https://x.com/tom_doerr/status/1857505332274278907
+    - Using linux and open your browser to use linux 😏
+    - Works in XR too
+    - Very cool. I wonder if it can be leveraged to enhance @vscode to include a terminal too.
+
+- https://github.com/remoteinterview/compilebox /1kStar/MIT/201711/js/inactive
+  - CompileBox is a Docker based sandbox to run untrusted code and return the output to your app. 
+  - The client-side app submits the code and the languageID to the server through the API. The API then creates a new Docker container and runs the code using the compiler/interpreter of that language. 
+  - Once the output is ready it is sent back to the client-side app. The Docker container is destroyed and all the files are deleted from the server.
 # browser-emulator 🧭
 - https://github.com/thecodacus/OpenWebContainer /MIT/202501/ts
   - https://open-web-container.vercel.app/
@@ -341,9 +423,6 @@ modified: 2023-09-02T09:17:22.992Z
   - A web remote debugging tools, based on Chrome DevTools.
   - DevTools-pro 是基于chrome-devtools-frontend进行开发的，通过自建 WebSocket 通道实现 Frontend 和 Backend 的通信。
   - 可扩展，支持自定义插件
-# dynamic-js
-- https://github.com/unjs/jiti /ts
-  - Runtime Typescript and ESM support for Node.js
 # playground
 - https://github.com/nalgeon/codapi /1.2kStar/apache2/202411/go
   - https://codapi.org/
@@ -368,6 +447,17 @@ modified: 2023-09-02T09:17:22.992Z
   - File System Isolation: User code runs in an isolated file system environment.
   - Network Isolation: DockerCompose or k8s-Egress
   - DifySandbox currently only supports Linux, as it's designed for docker containers
+
+- https://github.com/ishaan1013/sandbox /MIT/202408/ts
+  - A cloud-based code editing environment with an AI copilot and real-time collaboration.
+  - It's an OSS code editor with AI code autocompletion and real-time multiplayer collaboration (powered by @liveblocks )
+  - Built with @nextjs + @clerkdev + @shadcn UI and it's fully self-hostable via @docker
+  - https://x.com/steventey/status/1796352490100896149
+    - How is it fully self-hostable if it relies on three SaaS services? Seems more like partially self-hostable?
+    - I rebuilt @Replit — Sandbox is an open-source cloud code editing environment with an AI copilot and multiplayer collaboration, made with @Nextjs + @CloudflareDev Workers
+    - The backend consists of a primary Express and Socket.io server, and 3 Cloudflare Workers microservices for the D1 database, R2 storage, and Workers AI.
+    - 🖥️ Each open sandbox instantiates a secure Linux sandboxes on `E2B`, which is used for the terminal and live preview.
+    - How is it fully self-hostable if it relies on three SaaS services? Seems more like partially self-hostable?
 
 - https://github.com/freewheel/code-kitchen /apache2/202402/ts
   - https://freewheel.github.io/code-kitchen/home
@@ -502,6 +592,9 @@ modified: 2023-09-02T09:17:22.992Z
   - https://x.com/XGHeaven/status/1797982601569058816
     - 笑死了，原本想看看自己的 jsvm 性能好不好，一开始发现跑不起来，辛辛苦苦补了一堆缺失的 API 后跑起来了（才发现连 while 都没支持），终于跑起来了。
     - 结果，只能到 sablejs 的 10%，我就知道，一开始没把性能作为主要目标是对的。
+
+- https://github.com/unjs/jiti /ts
+  - Runtime Typescript and ESM support for Node.js
 # wasm-based
 - https://github.com/ktock/container2wasm /apache2/202405/cpp
   - https://ktock.github.io/container2wasm-demo/
@@ -513,39 +606,6 @@ modified: 2023-09-02T09:17:22.992Z
   - Though more and more programming languages start to support WASM, it's not easy to run the existing programs on WASM. 
     - This sometimes requires re-implementing and re-compiling them and costs extra time for development. 
     - This is a PoC converter tries to solve it by enabling running unmodified containers on WASM.
-# vm/docker-based
-- https://github.com/engineer-man/piston /MIT/202410/js
-  - https://emkc.org/run
-  - Piston is a high performance general purpose code execution engine. It excels at running untrusted and possibly malicious code without fear from any harmful effects.
-  - Piston uses `Isolate` inside Docker as the primary mechanism for sandboxing. 
-    - There is an API within the container written in Node which takes in execution requests and executes them within the container safely.
-    - High level, the API writes any source code and executes it inside an Isolate sandbox.
-    - Piston uses Isolate which makes use of Linux namespaces, chroot, multiple unprivileged users, and cgroup for sandboxing and resource limiting. 
-    - Code execution submissions on Piston shall not be aware of each other, shall not affect each other and shall not affect the underlying host system.
-
-- https://github.com/teknologi-umum/pesto /apache2/202409/ts
-  - Remote Code Execution Engine that lets you execute any piece of code on a remote server via REST API
-  - It is heavily inspired by Piston. Pesto is not a fork of Piston, it's an entire rewrite from scratch and therefore it's not compatible with Piston but should be similar
-  - Pesto was written with a fresh start, minimizing the dependencies needed, and system controlled for limited resources usage.
-
-- https://github.com/leaningtech/webvm /apache2+NonCommercial/202312/js
-  - https://webvm.io/
-  - This repository hosts the source code for https://webvm.io, a Linux virtual machine that runs in your browser.
-  - WebVM is a server-less virtual environment running fully client-side in HTML5/WebAssembly. 
-  - It's designed to be Linux ABI-compatible. It runs an unmodified Debian distribution including many native development toolchains.
-  - WebVM is powered by the CheerpX virtualization engine, and enables safe, sandboxed client-side execution of x86 binaries on any browser.
-  - CheerpX includes an x86-to-WebAssembly JIT compiler, a virtual block-based file system, and a Linux syscall emulator.
-  - This project depends on:
-    - CheerpX, made by Leaning Technologies for x86 virtualization and Linux emulation
-    - xterm.js, for providing the Web-based terminal emulator
-    - Tailscale, for the networking component
-    - lwIP, for the TCP/IP stack, compiled for the Web via Cheerp
-  - The public CheerpX deployment is provided as-is and is free to use for technological exploration, testing and non-commercial uses.
-  - If you want to build a product on top of CheerpX/WebVM, please get in touch with sales
-  - https://x.com/tom_doerr/status/1857505332274278907
-    - Using linux and open your browser to use linux 😏
-    - Works in XR too
-    - Very cool. I wonder if it can be leveraged to enhance @vscode to include a terminal too.
 # miniprogram/小程序
 - https://github.com/yeliex/cromosjs /202310/ts/inactive
   - 简单的小程序跨平台解决方案

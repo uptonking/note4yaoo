@@ -330,6 +330,14 @@ add action to create quickSort1.mjs and add 3 test cases in it
 - 异常处理增强
   - 观测重要log: RESOURCE_NOT_ENOUGH
 
+## 0404
+
+- 昨天
+  - hotfix紧急修复影响发版的问题，task执行时点击已完成的action未显示diff
+  - 熟悉sdk中LSP连接代码和补全相关的逻辑
+- 今天
+  - 修复sdk中LSP补全相关的逻辑，尝试js类型文件的语法跳转
+
 ## 0402
 
 - 昨天
