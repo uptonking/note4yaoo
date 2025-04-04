@@ -14,7 +14,26 @@ modified: 2025-03-31T17:39:01.892Z
 
 - ## 
 
-- ## 
+- ## ✨ [Approval Step · Issue · activepieces/activepieces _202304](https://github.com/activepieces/activepieces/issues/1078)
+  - Because these workflows can have branches, loops, events etc, they are very much like programming languages. 
+  - There exist standards like BPMN, SMMN, DMN etc and various software like jBPM, Camunda, Flowable to model and execute these.
+  - It would be really great to be able to create workflows like these in ActivePieces because so much of the required work has already been done.
+  - This will make it possible to embed ActivePieces based automations right inside actual business processes while making use of ActivePieces's existing infra that supports branching/looping/delay and a canvas-based workflow editor.
+
+- ✅ Done and will be released in 0.5.0_202307
+
+- This is a good start but a YES/NO, APPROVE/REJECT flow fundamentally, is about collecting a single bit of data from a human actor. 
+  - IMHO, a more general and powerful flow would be sending an incomplete JSON object - to be rendered as an HTML form - and receiving a completed one from the person.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 - ## 🚀 [Launch HN: Activepieces (YC S22) – Open-Source Zapier Alternative | Hacker News _202302](https://news.ycombinator.com/item?id=34723989)
   - we decided to build an open source automation tool under a permissive license (MIT) with a simple user experience that doesn’t require technical knowledge, and can be self-hosted. 
@@ -70,6 +89,20 @@ modified: 2025-03-31T17:39:01.892Z
   - https://x.com/activepieces/status/1906280824682459578
   - single select fields
   - rename field. These updates are live 
+# discuss-roadmap
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Parallel execution · Issue · activepieces/activepieces _202305](https://github.com/activepieces/activepieces/issues/1204)
+  - There are some use cases where having a parallel branch could be more comfortable. An example is when you have to send multiple notifications using different pieces, you don't care about fails nor of their sequence execution.
+  - The same could be achieved in other ways, such as sending multiple requests on other flows, but this would be uncomfortable.
+
+- These ideas (Parallel converging gateways) have been explored in BPMN
 # discuss
 - ## 
 

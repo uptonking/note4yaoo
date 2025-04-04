@@ -8,9 +8,15 @@ modified: 2025-03-25T19:15:23.591Z
 # lib-saas-cms-community-workflow-automation
 
 # guide
-
+- features
+  - k8s
+  - sandbox
+  - bpmn
 # pm-workflow
 - tips
+  - 与外部系统通信可考虑使用统一workflow平台, 内部模块间通信优先events/rpc
+
+- products
   - ifttt
   - zapier alternative
 # discuss-stars
@@ -19,6 +25,45 @@ modified: 2025-03-25T19:15:23.591Z
 - ## 
 
 - ## 
+# discuss-bpmn(Business Process Management Initiative)
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Do you plan your automations in BPMN? : r/n8n _202502](https://www.reddit.com/r/n8n/comments/1ifzevz/do_you_plan_your_automations_in_bpmn/)
+  - I am quite new to n8n. I worked 2 years in SAP Consulting (Junior Lvl) and what we used to do was bring all the planned processes in BPMN on paper and then actually implement it.
+
+- There are two good reasons for BPMN diagrams:
+  - you might be required to have them from regulatory perspective in some industries (e.g. banking, pharma, airplanes)
+  - you want to improve a complex process with dependencies, multiple participants, interfaces, conditions - and then BPMN is just the beginning
+
+- ## [换掉bpmn-js，让前端更熟悉工作流业务 - 知乎 _202206](https://zhuanlan.zhihu.com/p/528711473)
+- 这里我们站在前端的角度先明确一下工作流、工作流管理系统、工作流引擎、BPMN规范、bpmn-js的关系。
+- 我们把事情的拆分、组织、执行、最后到管理都搬到计算机上面来，就可以叫做工作流。
+- 工作流引擎有很多，最常见的有Activiti、Camunda BPM、Flowable。
+- 目前大部分开源的工作流引擎都支持BPMN规范，从图上节点、连线的具体含义到提交给工作流引擎的数据格式，都有给出了具体的定义
+- bpmn-js是一个开源的实现BPMN2.0规范的web建模器。但是并不是提出BPMN规范的官方组织开发的。所以不代表工作流引擎支持BPMN规范，前端就一定要用bpmn-js。
+  - 我们也可以基于BPMN规范重新开发一套符合自己业务的流程设计器。
+- bpmn-js给我们带来了下面几个痛点。
+  - 业务逻辑黑盒, 由于bpmn-js将所有的业务逻辑都在其内部实现，前端无法直接从代码层面对业务逻辑有直观的感受。这个时候如果出现一些在前端层面的修改，往往会因为缺乏一个约束，导致代码被修改的十分混乱。
+  - bpmn-js对自定义并不是完全开放，虽然有很多预设场景的示例，但是并不能满足实际项目中所有的场景。
+- 对前端来说，花费大量的精力去学习bpmn-js源码意义不大
+  - 我们代码中更多的是对业务和UI的定义，并没有过多的去涉及BPMN规范。
+  - 那么我们如何把这类业务的代码产生的数据转换为流程引擎可识别的内容呢？最方便的方法当前是让后端自己去转换，比如后端用Java就让他写一个filter。当然，很多时候后端不愿意做，我们也可以前端来转。
+  - LogicFlow本身提供了一个插件bpmnAdapter，来实现LogicFlow数据与bpmn数据互转（json格式和xml格式都支持）。
+- 在工作流项目中，一开始为了快速出成果，直接用bpmn-js也没有问题。而且很多项目可能只是给研发使用B端管理类项目，对UI也没有啥要求。
+  - 但是随着项目的发展，特别是项目中开始出现产品角色，打算拿出去做商业化应用的时候。这个时候如果还是保留bpmn-js作为流程设计器，会给前端研发带来巨大的压力。在必要的时候，建议前端同学激进一点，选择更易维护的流程设计器来开发。
+  - LogicFlow确实是一个比较好的选择，文档全、源码也易理解，使用后会将你从bpmn-js的痛苦中解脱出来。
+
+- 虽然在BPMN2.0中，将流程执行语义分为Events(事件)、Gateways(网关)、Activities(活动)这三类要素，但是在实际项目中，我们并不需要按照BPMN规范来定义流程图的中内容，而是需要按照我们项目业务来定义流程图的内容。
+
+- 
+- 
+- 
+- 
+
 # discuss-ai-flow
 - ## 
 
@@ -83,9 +128,23 @@ modified: 2025-03-25T19:15:23.591Z
 # discuss-n8n
 - ## 
 
-- ## 
+- ## [Wait for a trigger during the execution - Feature Requests - n8n Community _202311](https://community.n8n.io/t/wait-for-a-trigger-during-the-execution/32786/2)
+  - The idea is: to be able to wait for an event (a trigger ideally) in the middle of an execution. 
+  - Close to the current Wait block, we want to pause the execution and wait for the trigger to happen (filtered by a correlation key to select the right execution to resume) before going to the next node.
 
-- ## 
+- It would be like a trigger/event in the middle of an execution.
+
+- since this post was published this node was improved ans now includes the wait for a webhook call. So it seems to fit the need
+
+- ## 📡 [Using reusable elements for n8n workflows - Tips & Tricks - n8n Community _202406](https://community.n8n.io/t/using-reusable-elements-for-n8n-workflows/48624)
+  - This is an example of how you can create reusable steps in n8n instead of having to recreating these steps and workflows a fresh
+  - You can use the execute node to call a workflow inside the workflows that will then return the desired data back
+  - Use a webhook endpoint to call the workflow and set the response endpoint to last node or webhook
+
+- Yeap, I’ve often ran into the need for this too, and arrived at the same solution. The downsides to this are:
+  - When run, this shows up as a different workflow executions. This may make it harder to troubleshoot.
+  - If you have two different instances of N8N (like separate environments) and export from one and import into the other, then the workflow ID’s will be different and this will break. I had to come up with an export/import script that patches workflow ID’s.
+- It would be great if N8N implemented a native feature by which you could reuse parts of your workflow, like with BPMN Call Activities.
 
 - ## [n8n.io - A powerful workflow automation tool | Hacker News _202308](https://news.ycombinator.com/item?id=37274052)
 - free version is quite restricted when it comes to user management, etc, can't even think about oidc integration. 

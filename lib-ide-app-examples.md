@@ -62,6 +62,14 @@ modified: 2024-08-24T16:30:20.218Z
   - Once your free daily token limit is reached, AI interactions are paused until the next day or until you upgrade your plan.
   - https://x.com/oran_ge/status/1842497547010728358
     - Bolt，可以提供写代码、preview、部署网站一条龙服务
+- https://github.com/stackblitz-labs/bolt.diy /MIT/202503/ts
+  - https://stackblitz-labs.github.io/bolt.diy/
+  - the official open source version of Bolt.new, which allows you to choose the LLM that you use for each prompt
+  - use any other model supported by the Vercel AI SDK
+  - AI-powered full-stack web development for NodeJS based applications directly in your browser.
+  - Revert code to earlier versions for easier debugging and quicker changes.
+  - Integration-ready Docker support for a hassle-free setup.
+  - 💰 bolt.diy source code is distributed as MIT, but it uses WebContainers API that requires licensing for production usage in a commercial, for-profit setting.
 
 - https://github.com/langchain-ai/open-canvas /MIT/202412/ts
   - https://opencanvas.langchain.com/

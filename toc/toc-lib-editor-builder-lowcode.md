@@ -14,6 +14,12 @@ modified: 2020-12-28T12:24:09.275Z
   - toggle views: designer view, code view
   - 是否基于iframe
 
+- workflow/automation/pipeline/**rpa**
+  - workflow/flowchart progress animation
+  - workflow specification: bpmn, MCP
+    - n8n, activepieces 似乎对bpmn的讨论度都不高
+  - workflow-backend/engine: logicFlow-server
+
 - tips
   - 通用型builder价值不大，但针对业务平台特别是app-store的builder对平台方和开发者的价值都很大
   - lowcode重逻辑轻设计，侧重给页面元素添加事件和逻辑，而不是样式布局，产物偏向非静态前端工程
@@ -95,7 +101,7 @@ modified: 2020-12-28T12:24:09.275Z
   - helps to connect any app with an API with any other, and manipulate its data with little or no code.
   - 后端依赖express、typeorm、pg、convict(config)、handlebars
   - 前端依赖vue2、jsplumb、codemirror6、jquery、monaco-editor、prismjs
-  - 流程图基于svg实现连线，节点是dom
+  - 流程图 基于svg实现连线edge，基于dom实现节点node
   - 提供了自动化任务模版中心 Workflow templates，类似可复用的工具函数
     - Convert JSON to an Excel file
     - Creating an API endpoint
@@ -276,7 +282,7 @@ modified: 2020-12-28T12:24:09.275Z
   - 全家桶
     - https://jdfed.github.io/drip-form/
 
-- https://github.com/hlerenow/chameleon /apache2/202403/ts
+- https://github.com/hlerenow/chameleon /apache2/202503/ts
   - https://hlerenow.github.io/chameleon/documents/docs/tutorial/quickStart
   - https://hlerenow.github.io/chameleon/
   - Web visual programming engine. (lowcode)
@@ -432,14 +438,16 @@ modified: 2020-12-28T12:24:09.275Z
     - 物料就是节点的定义，包括节点的图标、颜色、缺省配置等信息。把这些信息独立出来的好处，是让代码更容易扩展，方便后期添加新的节点类型。作者自己开源低代码前端RxDrag，也用了类似的设计方式
     - workflow-editor对外提供两个组件：FlowEditorScope，FlowEditorCanvas。前者负责接收各种配置资源，比如物料、物料ui、多语言资源。FlowEditorCanvas是画布区
 
-- https://github.com/deco-cx/deco /apache2/202404/ts
+- https://github.com/deco-cx/deco /apache2/202504/ts
   - https://deno.land/x/deco
+  - Git-based Visual CMS for Deno, htmx and Tailwind Apps.
   - Open-Source web editor based on Preact, Tailwind and TypeScript. 
   - It's focused on reusability and composability of UI components (Sections) and API integrations (Loaders and Actions).
   - 依赖deno
   - Deco combines the best of visual page editing (like Webflow) and the ability for app composition at the admin level (like Wordpress)
   - Sections, Loaders and Actions can be packaged and installed with one click as Apps.
   - Deco Blocks are interoperable: one's output can be visually configured as another's input in the visual editor, based on matching TypeScript types.
+  - The deno project created with Deco is completely standalone — all of the CMS information is neatly packed in JSON files along with the code. Deco is merely a git-based editor.
 
 - https://github.com/opentiny/tiny-engine /MIT/202404/js/vue
   - https://opentiny.design/tiny-engine
@@ -729,7 +737,7 @@ modified: 2020-12-28T12:24:09.275Z
 
 - https://github.com/cptn-io/el-cptn /java/js/inactive
   - an open source platform that helps develop and deploy integrations and data pipelines quickly and easily.
-  - 发现个比 n8n 更适合开发者使用的 workflow 平台 https://cptn.io。核心概念非常简单清晰：
+  - 发现个比 n8n 更适合开发者使用的 workflow 平台 https://cptn.io . 核心概念非常简单清晰：
     - Source: 接收数据的 HTTP entrypoint
     - Destination: 存放/写入数据的目的地，对接各种数据库和线上存储
     - Transformation: 转化数据的 code block

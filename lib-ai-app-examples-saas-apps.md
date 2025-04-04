@@ -9,6 +9,8 @@ modified: 2025-02-21T17:17:42.225Z
 
 # guide
 
+- tips
+  - bpmn + ai
 # popular
 - https://github.com/OpenHealthForAll/open-health /AGPL/202502/ts
   - https://www.open-health.me/
@@ -20,28 +22,28 @@ modified: 2025-02-21T17:17:42.225Z
   - https://refly.ai/
   - Refly is an open-source AI-native creation engine powered by 13+ leading AI models. 
   - Its intuitive free-form canvas interface integrates multi-threaded conversations, multimodal inputs (text/images/files), RAG 
-# products
-
 # workflow-ai
-
-- https://github.com/samdenty/react-ai-flow /202503/ts
-  - https://react-ai-flow.com/
-  - smooth React AI chatbot primitives
-  - This library uses a single canvas-rendered mask-image, so we can do pixel-level fade-in effects.
-  - https://x.com/samddenty/status/1905843003471581337
-    - I just created a demo website for https://react-ai-flow.com a super advanced cross-framework library for smooth LLM text streaming effects & also text-staggers.
-
 - https://github.com/langflow-ai/langflow /52.9kStar/MIT/202503/python/ts
   - http://www.langflow.org/
   - a powerful tool for building and deploying AI-powered agents and workflows.
   - It provides developers with both a visual authoring experience and a built-in API server that turns every agent into an API endpoint that can be integrated into applications built on any framework 
 
-- https://github.com/nocode-js/sequential-workflow-designer /MIT/202502/ts/NoDeps/svg
+- https://github.com/nocode-js/sequential-workflow-designer /1.2kStar/MIT/202502/ts/NoDeps/svg
   - https://nocode-js.com/
   - Customizable no-code component for building flow-based programming applications or workflow automation
   - written in pure TypeScript and uses SVG for rendering
   - This designer is not associated with any workflow engine. 
   - the definition is stored as JSON
+  - https://github.com/nocode-js/sequential-workflow-editor /MIT/vanillajs
+    - Mainly designed to work with the Sequential Workflow Designer
+  - https://github.com/nocode-js/sequential-workflow-machine /MIT/202408/ts
+    - Powerful sequential workflow machine for front-end and back-end applications.
+    -  It provides a simple API for creating its own step execution handlers (activities). It supports multiple types of activities. 
+    - Internally it uses the `xstate` library.
+    - This machine uses the same data model as the Sequential Workflow Designer.
+  - [Pricing of Sequential Workflow Designer Pro](https://nocode-js.com/sequential-workflow-designer-pro-pricing)
+    - Pro Step Components
+    - Custom Theme
 
 - https://github.com/FlowiseAI/Flowise /apache2/202406/ts
   - https://flowiseai.com/
@@ -49,6 +51,16 @@ modified: 2025-02-21T17:17:42.225Z
   - Drag & drop UI to build your customized LLM flow
   - Open source low-code tool for developers to build customized LLM orchestration flow & AI agents
   - 支持langchain的各种组件
+
+- https://github.com/samdenty/react-ai-flow /202503/ts
+  - https://react-ai-flow.com/
+  - smooth React AI chatbot primitives
+  - 支持多种打字动画效果 per character/word/line, 支持react/vanillajs
+  - This library uses a single canvas-rendered mask-image, so we can do pixel-level fade-in effects.
+  - Other libraries can accomplish at most a per-character opacity animation with a HTML soup
+  - This library also features a super customizable text splitter API. Pick a built-in splitter (character, word, line, sentence) or provide you own function that splits the visually rendered text on screen.
+  - https://x.com/samddenty/status/1905843003471581337
+    - I just created a demo website for https://react-ai-flow.com a super advanced cross-framework library for smooth LLM text streaming effects & also text-staggers.
 
 - https://github.com/gensx-inc/gensx /apache2/202502/ts
   - https://gensx.com/
@@ -82,5 +94,8 @@ modified: 2025-02-21T17:17:42.225Z
   - A free + OSS logo generator powered by Flux on Together AI
   - Flux Pro 1.1 on Together AI for logo generation
   - nextjs + shadcn + redis + clerk + plausible
-  - Create a .env file and add your Together AI API key: TOGETHER_A[license · Issue · Nutlope/logocreator](https://github.com/Nutlope/logocreator/issues/16)PI_KEY=
+  - Create a .env file and add your Together AI API key: TOGETHER_API_KEY=
+  - [license · Issue · Nutlope/logocreator](https://github.com/Nutlope/logocreator/issues/16)
+# ai-apps
+
 # more

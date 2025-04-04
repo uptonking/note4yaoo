@@ -17,6 +17,13 @@ modified: 2020-10-22T10:22:55.878Z
 - usecase
   - 自动化任务
 
+- workflow/automation/pipeline/**rpa**
+  - workflow/flowchart progress animation
+  - workflow specification: bpmn, MCP
+    - n8n, activepieces 似乎对bpmn的讨论度都不高
+  - workflow-backend/engine: logicFlow-server
+  - 与外部系统通信可考虑使用统一workflow平台, 内部模块间通信优先events/rpc
+
 - tips
   - 🆚️ 技术栈基于svg容易实现缩放，基于dom不容易缩放
 

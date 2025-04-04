@@ -34,6 +34,7 @@ modified: 2022-08-21T10:02:27.788Z
   - drag between windows
   - stream
   - 常见场景: virtual, infinite, lazy
+  - excel specification: xlsx, md-table, notion-db
 
 - collaborative-editing
   - 数据模型考虑 持久化(一般db-text/json/blob)、展示(json)、协作(llw/map/sequence)、衍生计算(如聚合)
