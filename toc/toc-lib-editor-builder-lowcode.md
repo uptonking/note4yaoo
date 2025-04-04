@@ -23,7 +23,7 @@ modified: 2020-12-28T12:24:09.275Z
   - craft/reka
   - tango, sparrow
   - vue
-- lowcode方案
+- lowcode参考方案
   - vercel的v0背后都是vm来执行
 
 - cms-dev
@@ -40,7 +40,7 @@ modified: 2020-12-28T12:24:09.275Z
   - [对于低代码技术库的选型](https://blog.csdn.net/nihaio25/article/details/126517143)
 
 - workflow类低代码
-  - 简单场景类似表单，支持根据不同评分显示不同内容，如投诉/不足
+  - 简单场景类似表单，支持根据不同评分显示不同内容，如投诉/反馈
 
 - lowcode vs builder
   - 建站侧重于自动生成并发布页面，而不是编辑器
@@ -92,10 +92,10 @@ modified: 2020-12-28T12:24:09.275Z
 - n8n /28kStar/apache2+CC > FairCode/202301/ts/vue/依赖少
   - https://github.com/n8n-io/n8n
   - https://n8n.io/
-  - Easily automate tasks across different services.
   - helps to connect any app with an API with any other, and manipulate its data with little or no code.
   - 后端依赖express、typeorm、pg、convict(config)、handlebars
   - 前端依赖vue2、jsplumb、codemirror6、jquery、monaco-editor、prismjs
+  - 流程图基于svg实现连线，节点是dom
   - 提供了自动化任务模版中心 Workflow templates，类似可复用的工具函数
     - Convert JSON to an Excel file
     - Creating an API endpoint
@@ -105,6 +105,9 @@ modified: 2020-12-28T12:24:09.275Z
     - tags
     - templates
     - sharing
+  - Code When You Need It: Write JavaScript/Python, add npm packages, or use the visual interface
+  - AI-Native Platform: Build AI agent workflows based on LangChain with your own data and models
+  - Full Control: Self-host with our fair-code license or use our cloud offering
   - [Change to the Sustainable Use License _202203](https://github.com/n8n-io/n8n/commit/521cf51e7cfb73ad60650b72206083d4c2666d29)
   - ⚖️ [n8n is not open source and your project is gaslighting its users _201910](https://github.com/n8n-io/n8n/issues/40)
   - https://github.com/drudge/n8n-nodes-puppeteer

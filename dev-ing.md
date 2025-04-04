@@ -67,7 +67,7 @@ DEBUG=* npm i --legacy-peer-deps --no-audit --loglevel=silly --registry=https://
 
 npm --registry=https://registry.npmmirror.com install   axios
 yarn add axios --registry=https://registry.npmjs.org/  
-pnpm install --registry=https://registry.npmmirror.com --loglevel=debug
+pnpm install --loglevel=debug --registry=https://registry.npmmirror.com --loglevel=debug
 
 export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890;export all_proxy=socks5://127.0.0.1:7890
 
@@ -331,6 +331,24 @@ add action to create quickSort1.mjs and add 3 test cases in it
   - 观测重要log: RESOURCE_NOT_ENOUGH
 
 ## 0404
+
+- [Detect network connection in React Redux app - if offline, hide component from user - Stack Overflow](https://stackoverflow.com/questions/40248639/detect-network-connection-in-react-redux-app-if-offline-hide-component-from-u)
+  - `navigator.onLine` will return the status whether it is online or offline but it wont check internet connectivity is there or not.
+  - The reason behind sending the get request to `google.com` instead of any random platform is because it has great uptime. The idea here is to always send the request to a service that is always online. If you have a server, you could create a dedicated route that can replace the google.com domain but you have to be sure that it has an amazing uptime.
+
+```JS
+// Check for internet connectivity
+fetch('https://www.google.com/', {
+    mode: 'no-cors',
+  })
+  .then(() => {
+    console.log('CONNECTED TO INTERNET');
+  }).catch(() => {
+    console.log('INTERNET CONNECTIVITY ISSUE');
+  })
+```
+
+## 0403
 
 - 昨天
   - hotfix紧急修复影响发版的问题，task执行时点击已完成的action未显示diff

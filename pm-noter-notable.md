@@ -24,6 +24,7 @@ modified: 2023-11-28T14:48:45.910Z
   - markdown: hotkeys, table-builder
   - office viewer
   - drag between windows
+  - 产品设计阶段可将 AI 作为用户，用来onboarding引导操作及问答，还可以在系统内预置数据并将owner设为AI，可用来提供模版及引导用户测试
 
 - selling-point-knowledge-base
   - features
