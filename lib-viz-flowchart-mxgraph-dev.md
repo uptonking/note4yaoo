@@ -17,6 +17,7 @@ modified: 2023-05-29T15:09:30.865Z
   - no dependencies
   - 支持transaction
   - 可前端使用
+  - maxgraph is modular and tree-shakable
 
 - cons
   - 不适合绘制大量图形元素
@@ -32,6 +33,9 @@ modified: 2023-05-29T15:09:30.865Z
   - drawio-mcp
 
 - mermaid-editor using drawio/tldraw
+
+- [Migration of mxGraph GraphEditor Demo to MaxGraph · maxGraph/maxGraph · Discussion _202502](https://github.com/maxGraph/maxGraph/discussions/695)
+  - 将类似 drawio 的界面迁移到 maxgraph
 # dev
 - 插入图形的一般流程
   - graph.insertVertex

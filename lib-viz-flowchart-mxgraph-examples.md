@@ -32,10 +32,22 @@ modified: 2023-05-29T17:33:33.600Z
   - mxGraph is pretty much feature complete, production tested in many large enterprises and stable for many years.
   - [mxGraph - Known Issues](https://jgraph.github.io/mxgraph/docs/known-issues.html)
 
-- https://github.com/process-analytics/bpmn-visualization-js
+- https://github.com/process-analytics/bpmn-visualization-js /245Star/apache2/202503/ts
   - https://process-analytics.github.io/bpmn-visualization-js/
   - a TypeScript library for visualizing process execution data on BPMN diagrams
-  - 依赖mxgraph
+  - 依赖mxgraph4、fast-xml-parser，依赖很少
+  - True opensource license without watermark display
+  - Highly customizable rendering in a simple way
+  - Strong identity: the only BPMN viewer with a woman icon in the User Tasks
+  - [[INFRA] Evaluate the Replacement of `mxGraph` with `maxGraph` _202501](https://github.com/process-analytics/bpmn-visualization-js/issues/3238)
+    - maxGraph, as a fork of mxGraph, retains feature parity (including similar extension points) with its predecessor.
+    - Tests are added progressively to maxGraph. On 2025-02-04, there were 143 tests covering 29.21% ( 7109/24334 ) of statements
+    - maxGraph appears to have limited adoption, and there are no active maintainers outside of the Process-Analytics project and Bonitasoft.
+  - [[INFRA] Evaluate the Replacement of `mxGraph` with `JointJS` _202504](https://github.com/process-analytics/bpmn-visualization-js/issues/3315)
+    - jointjs has been rejected. because some key features are missing, especially zooming and keyboard interaction, which are critical for bpmn-visualization.
+  - [[INFRA] Evaluate the Replacement of `mxGraph` with a New Library _202501](https://github.com/process-analytics/bpmn-visualization-js/issues/3237)
+    - Libraries often include editing features that are unnecessary for bpmn-visualization; these features should be easily removable.
+    - mxGraph library is not tree-shakable, but maxgraph is tree-shakable
 
 - https://github.com/WindrunnerMax/FlowChartEditor
   - https://windrunnermax.github.io/FlowChartEditor/

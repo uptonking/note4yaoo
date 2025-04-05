@@ -76,7 +76,16 @@ modified: 2025-03-31T17:39:01.892Z
 
 - ## 
 
-- ## Google Sheets is your most used piece. That's why we are so excited to introduce Tables _20250316
+- ## 
+
+- ## ⚖️ Introducing Activepieces MCP servers _20250401
+- https://x.com/activepieces/status/1906765827460026842
+  - we've turned every integration on our platform (all 280+ of them) into an MCP server that you can run completely free on our cloud or self-host it.
+  - every new community-contributed Piece (integration) added to our platform will automatically become a new MCP server available to everyone.
+  - Activepieces handles all app authentication, letting you connect your AI to any app with just a click.
+  - In the coming weeks, we’ll be rolling out improvements to our MCP servers that will make building powerful AI agents and workflows 100x better.
+
+- ## 📈 Google Sheets is your most used piece. That's why we are so excited to introduce Tables _20250316
 - https://x.com/activepieces/status/1901006256049131750
   - This is another step in our growing suite of products designed to empower the future of work and eliminate those "No Joy" tasks in the most user-friendly way possible.  
   - you get fast, built-in sheets right inside your workflows.  

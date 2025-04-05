@@ -73,7 +73,8 @@ export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890
 
 $$('[contenteditable]')
 
-flatpak run com.discordaspp.Discord --proxy-server="socks5://127.0.0.1:7897"
+# 先打开一次discord确保下载了更新
+flatpak run com.discordapp.Discord --proxy-server="socks5://127.0.0.1:7897"
 betterdiscordctl -i flatpak install
 
 npx create-strapi@latest --ts --use-npm --git-init  --example --skip-cloud --skip-db    --quickstart ./emptyFolder
@@ -329,6 +330,20 @@ add action to create quickSort1.mjs and add 3 test cases in it
 
 - 异常处理增强
   - 观测重要log: RESOURCE_NOT_ENOUGH
+
+## 0405
+
+- [[@types/node] Compiler error: Cannot find module 'undici-types' · DefinitelyTyped/DefinitelyTyped · Discussion #67406](https://github.com/DefinitelyTyped/DefinitelyTyped/discussions/67406)
+  - The suggestion to set `"moduleResolution": "node"` makes the error go away. However my project contains both server-side (Node) and client-side TS code, and obviously I cannot set "moduleResolution": "node" for the client-side portion. Because simply having @types/node installed is enough to trigger the issue, regardless of if the types are actually used, I'm stuck.
+  - For now I've downgraded @types/node to avoid the issue. I guess I could start maintaining two separate node_modules for server- and client-side, but that seems like an inconvenient workaround for this bug.
+  - 👷🏻: 最后解决方案是，手动删除 node_modules, 然后使用.nvmrc指定的版本执行npm install
+
+- [Missing module `undici-types` · Issue #1664 · pop-os/shell](https://github.com/pop-os/shell/issues/1664)
+  - The only solution I've found so far is to downgrade @types/node from 20.10.6 to `20.0.0`. (forced the downgrade using yarn's "resolutions" feature)
+  - Kind of weird, I fixed this error by deleting node_modules directory.
+
+- [[node] After running "ncu -u" and "npm install", then "tsc --project lib/typescript/cmdline/tsconfig.json" gives "node\_modules/@types/node/module.d.ts:106:13 - error TS2386: Overload signatures must all be optional or required." · DefinitelyTyped/DefinitelyTyped · Discussion #70562](https://github.com/DefinitelyTyped/DefinitelyTyped/discussions/70562)
+  - if you are using the v16 or v18 branches of @types/node and want to upgrade to TypeScript 5.6, then you will also need to upgrade @types/node to a compatible version (^16.18.102 or ^18.19.41)
 
 ## 0404
 

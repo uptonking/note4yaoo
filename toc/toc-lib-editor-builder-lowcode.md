@@ -16,8 +16,8 @@ modified: 2020-12-28T12:24:09.275Z
 
 - workflow/automation/pipeline/**rpa**
   - workflow/flowchart progress animation
-  - workflow specification: bpmn, MCP
-    - n8n, activepieces 似乎对bpmn的讨论度都不高
+  - ⚖️ workflow specification: bpmn, MCP, JSON Canvas
+    - n8n/activepieces/trigger 对bpmn的讨论度都不高
   - workflow-backend/engine: logicFlow-server
 
 - tips

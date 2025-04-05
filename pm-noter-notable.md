@@ -8,7 +8,7 @@ modified: 2023-11-28T14:48:45.910Z
 
 # pm-noter-notable
 
-> easy to read， easy to write, content-centric notebook
+> make something people want to pay for. ~~easy to read， easy to write, content-centric notebook~~
 
 # guide(for notable/noter/paper)
 - features

@@ -25,14 +25,14 @@ modified: 2025-03-31T17:38:17.881Z
     - open: Flow History, Custom Pieces	
     - [Editions - Activepieces](https://www.activepieces.com/docs/about/editions)
 
-- Technical limits
-  - Execution Time: Each flow has a maximum execution time of 600 seconds (10 minutes). Flows exceeding this limit will be marked as a timeout.
+- Technical limits 🛑
+  - ⚠️ Execution Time: Each flow has a maximum execution time of 600 seconds (10 minutes). Flows exceeding this limit will be marked as a timeout.
     - Flow run in a paused state, such as Wait for Approval or Delay, do not count toward the 600 seconds.
     - The execution time limit can be worked around by splitting the flows into multiple ones, such as by having one flow call another flow using a webhook, or by having each flow process a small batch of items.
-  - Memory Usage: During execution, a flow should not use more than 128 MB of RAM.
-  - Maximum File Size: 10 MB
+  - ⚠️ Memory Usage: During execution, a flow should not use more than 128 MB of RAM.
+  - ⚠️ Maximum File Size: 10 MB
     - The files from actions or triggers are stored in the database/S3 to support retries from certain steps.
-  - Some pieces utilize the built-in Activepieces key store, such as the Store Piece and Queue Piece.
+  - ⚠️ Some pieces utilize the built-in Activepieces key store, such as the Store Piece and Queue Piece.
     - Maximum Key Length: 128 characters
     - Maximum Value Size: 512 KB
 
@@ -44,6 +44,9 @@ modified: 2025-03-31T17:38:17.881Z
 
 - tips
   - ?
+
+- resources
+  - [280+ Open Source MCPs · Activepieces](https://www.activepieces.com/mcp)
 # draft
 - bpmn adapter/pieces
 # dev-xp

@@ -19,8 +19,8 @@ modified: 2020-10-22T10:22:55.878Z
 
 - workflow/automation/pipeline/**rpa**
   - workflow/flowchart progress animation
-  - workflow specification: bpmn, MCP
-    - n8n, activepieces 似乎对bpmn的讨论度都不高
+  - ⚖️ workflow specification: bpmn, MCP, JSON Canvas
+    - n8n/activepieces/trigger 对bpmn的讨论度都不高
   - workflow-backend/engine: logicFlow-server
   - 与外部系统通信可考虑使用统一workflow平台, 内部模块间通信优先events/rpc
 
@@ -36,16 +36,25 @@ modified: 2020-10-22T10:22:55.878Z
   - Generation of diagram and flowchart from text in a similar manner as markdown
   - [Poll - next diagram type addition: PlantUML](https://github.com/mermaid-js/mermaid/issues/177)
 
-- maxGraph /500Star/apache2/202305/ts
+- maxGraph /500Star/apache2/202504/ts
   - https://github.com/maxGraph/maxGraph
+    - https://maxgraph.github.io/maxGraph/
     - https://jgraph.github.io/mxgraph/
   - https://jgraph.github.io/mxgraph/docs/manual.html
   - https://jgraph.github.io/mxgraph/docs/js-api/files/view/mxGraph-js.html
   - https://jgraph.github.io/mxgraph/javascript/index.html
   - https://github.com/gelvidge/maxGraph
   - maxGraph is a fully client side JavaScript diagramming library
-  - 基于svg实现
+  - 基于svg实现, [连线支持动画](https://maxgraph.github.io/maxGraph/demo/?path=/story/effects-animation--default)
+  - 支持 [auto-layout](https://maxgraph.github.io/maxGraph/demo/?path=/story/layouts-autolayout--default)
+  - 支持 [LoD(在缩放时仅显示部分元素)](https://maxgraph.github.io/maxGraph/demo/?path=/story/zoom-offpage-lod--default)
+  - 支持dynamic-loading
+  - 支持off-page渲染
+  - 支持print时设置page-breaks/footer
+  - 支持overlay/float元素的宽高设置
+  - 支持bpmn
   - It provides many of the diagramming features which would be expected by a piece of presentation software like Microsoft® PowerPoint™ or LibreOffice® Impress such as being able to resize, move or rotate nodes, but has a stronger focus on automatic layout algorithms and applications of Graph Theory.
+  - `maxGraph` APIs are not fully compatible with `mxGraph` APIs. The concepts are the same, so experienced mxGraph users should be able to switch from mxGraph to maxGraph without issues.
   - 🐛 未提供开箱即用的app，如编辑形状属性和文本
     - 似乎不支持 pause/resume ?
   - [mxgraph 系列【2】：项目结构说明 - 掘金](https://juejin.cn/post/6844904153873924110)
