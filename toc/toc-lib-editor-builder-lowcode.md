@@ -650,8 +650,8 @@ modified: 2020-12-28T12:24:09.275Z
   - https://www.activepieces.com/
   - Your friendliest open source all-in-one automation tool 
   - Workflow automation tool 100+ integration / Enterprise automation tool / Zapier Alternative
-  - 后端依赖 fastify、typeorm、langchain
-  - 前端依赖 zustand、zone.js、codemirror6、dnd-kit、radix-ui、fuse.js、imapflow、pdf-lib、recharts
+  - 后端依赖 fastify、typeorm、langchain、bullmq
+  - 前端依赖 zustand、zone.js、codemirror6、isolated-vm5、dnd-kit、radix-ui、fuse.js、@xyflow/react、pdf-lib、recharts、tiptap、tanstack-query/table、react-markdown
   - 工作流ui依赖react-flow实现，基于dom而非svg/canvas
   - [Local Dev Environment - Activepieces](https://www.activepieces.com/docs/developers/development-setup/local)
   - Activepieces' Community Edition is released as open source under the MIT license and enterprise features are released under Commercial License

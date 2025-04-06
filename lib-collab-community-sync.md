@@ -260,7 +260,9 @@ modified: 2022-11-29T20:41:25.566Z
 # discuss
 - ## 
 
-- ## 
+- ## 🚀 Graft—a transactional storage engine providing lazy, partial and strongly consistent edge replication. _202504
+- https://x.com/carlsverre/status/1908130644711911890
+  - [Carl Sverre on "Storing small things in big places" - YouTube](https://www.youtube.com/watch?v=eRsD8uSAi0s)
 
 - ## 这就是 local first 业界现在关注通用 sync engine 的原因。
 - https://x.com/ewind1994/status/1813251125694623775

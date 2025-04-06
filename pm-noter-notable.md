@@ -63,6 +63,7 @@ modified: 2023-11-28T14:48:45.910Z
   - 💫 animation
     - editor + dom-motion + video-playback + 🛝 playground
     - 低代码工具吸引用户的方式一定会加入动画，类似 webflow收购GSAP/Framer开源motion
+    - 适合使用动画的场景: ppt
   - 🎞️ video: 自动生成视频，方便回放、教学
     - pdf/ppt > video
     - video templates for tiktok/bilibili
@@ -77,7 +78,7 @@ modified: 2023-11-28T14:48:45.910Z
     - 只对部分段落或部分文字加密
     - 处理类似`.env`文件时，对secretKey加密或移除，类似上传或同步文档时自动加密或脱敏
   - 视频笔记
-    - 针对视频的笔记，如历史片/纪录片
+    - 针对视频的笔记，如历史片/纪录片, 快速添加时间戳/标签
     - 针对视频的搜索
   - pdf chat
   - ActionText for nodejs: hocuspocus

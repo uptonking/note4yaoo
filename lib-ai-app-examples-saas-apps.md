@@ -28,6 +28,13 @@ modified: 2025-02-21T17:17:42.225Z
   - a powerful tool for building and deploying AI-powered agents and workflows.
   - It provides developers with both a visual authoring experience and a built-in API server that turns every agent into an API endpoint that can be integrated into applications built on any framework 
 
+- https://github.com/1Panel-dev/MaxKB /15.5kStar/GPL/202504/python/ts/vue
+  - https://maxkb.pro/
+  - 基于大模型和 RAG 的开源知识库问答系统
+  - it is a ready-to-use RAG chatbot that features robust workflow and MCP tool-use capabilities. 
+  - 依赖django、langchain、pgvector、Vue
+  - Flexible Orchestration: Equipped with a powerful workflow engine, function library and MCP tool-use, enabling the orchestration of AI processes to meet the needs of complex business scenarios.
+
 - https://github.com/nocode-js/sequential-workflow-designer /1.2kStar/MIT/202502/ts/NoDeps/svg
   - https://nocode-js.com/
   - Customizable no-code component for building flow-based programming applications or workflow automation

@@ -66,12 +66,14 @@ modified: 2020-10-22T10:22:55.878Z
     - mxGraph is pretty much feature complete, production tested in many large enterprises and stable for many years.
     - [mxGraph - Known Issues](https://jgraph.github.io/mxgraph/docs/known-issues.html)
 
-- drawio /36.5kStar/apache2/202310/js
+- drawio /36.5kStar/apache2(NonOpen)/202310/js
   - https://github.com/jgraph/drawio
   - https://www.drawio.com/
   - draw.io, this project, is a configurable diagramming/whiteboarding visualization application
   - draw.io is not suitable as a framework for building other products from. For this try either Tldraw or Excalidraw.
   - 🐛 部分代码未开源，是压缩过的，如mxClient.js
+    - The minified code authored by us in this repo is licensed under an Apache v2 license, but the sources to build those files are not in this repo. 
+    - This is not an open source project. We do not accept PRs unless one of the maintainers specifically says it's OK (basically never).
   - It is not an SVG editing app, the SVG export is designed only for embedding in web pages, not for further editing in other tools.
   - Additional minified JavaScript files and Java libraries are used in this project. All of the licenses are deemed compatible with the Apache 2.0, nothing is GPL or AGPL
   - draw.io is also closed to contributions.
@@ -97,9 +99,9 @@ modified: 2020-10-22T10:22:55.878Z
   - 基于dom实现
   - dev/4.x branch is a rewrite in Typescript
   - In 5.x, the undo/redo functionality was pulled into the Toolkit core
-  - `const instance = jsPlumb.newInstance({container});` 初始化
   - Toolkit Edition 专属功能
     - undo/redo, Graph Operations, layout, search
+  - `const instance = jsPlumb.newInstance({container});` 初始化
   - [automatic layout](https://github.com/jsplumb/jsPlumb/issues/205)
     - available in paid edition
     - [jsPlumb Community Edition with Dagre layout](https://codepen.io/viswesh/pen/ejrLPx)
@@ -173,11 +175,21 @@ modified: 2020-10-22T10:22:55.878Z
   - engine是一个可以在JavaScript环境执行的流程引擎
   - 视图层依赖preact，但使用时不要求react环境，通过instance.render()执行
   - 部分使用class组件
-  - 兼容各种产品自定义的流程编辑需求，绝大部分模块以插件的形式实现，支持各模块自由插拔
+  - 🔌 兼容各种产品自定义的流程编辑需求，绝大部分模块以插件的形式实现，支持各模块自由插拔
   - 本地开发时，使用node.v16
+  - 支持minimap
   - ⌛️ 支持undo/redo
   - 支持pause/resume
     - [feat(engine): add the ability to pause and resume workflows _202307](https://github.com/didi/LogicFlow/commit/7c4e3855ad0a7af4121de6552be61f690b4e0e6c)
+  - https://github.com/didi/Turbo /apache2/202412/java
+    - 一款Java实现的轻量级流程引擎，是公司内多个低代码平台的核心后端服务。
+    - 提供“定义流程，并根据流程定义，执行流程”的核心能力
+    - 支持流程回滚操作
+    - 依赖spring-boot、MySQL
+    - Turbo的定位是兼容BPMN2.0的轻量级流程引擎（而非平台），支持可重入交互，主要负责提供稳定而高效的核心能力：流程定义、流程驱动，而节点的具体执行由接入方实现
+    - 当前市面上大部分是Activiti、Flowable、Camunda等面向OA场景，功能强大且有比较完整的生态的工作流引擎（平台），同时因为OA复杂的场景，库表关联操作非常多，但是对于其它业务场景，引擎运维以及学习成本较高，性能不可避免有一定损失，不适用于C端场景
+    - 还有部分专注于纯内存执行、无状态的流程引擎，比如阿里的Compileflow，这类引擎中断后不可重入，不适用于人机交互场景，适用于执行业务规则
+    - [turbo test _202308](https://github.com/didi/LogicFlow/discussions/1320)
   - [LogicFlow案例分享](https://github.com/didi/LogicFlow/issues/716)
   - [perf: 优化layout](https://github.com/didi/LogicFlow/pull/518)
     - 自动布局这个功能后来发现有很多不足，所以放弃了，我先合并进来，但是这个插件暂时不提供对外文档。

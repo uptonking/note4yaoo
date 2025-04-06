@@ -9,19 +9,25 @@ modified: 2023-05-29T15:09:30.865Z
 
 # guide
 
-- features
-  - 支持多种绘图实现，默认svg，可自己实现canvas
-  - 示例丰富
-
 - pros
   - no dependencies
   - 支持transaction
   - 可前端使用
-  - maxgraph is modular and tree-shakable
+  - maxgraph is modular and tree-shakable, 但无插件
+  - 示例丰富
+    - edge-animation, auto-layout, LoD, dynamic-loading, off-page-render,print,overlay
+    - bpmn
 
 - cons
+  - 没有插件架构
   - 不适合绘制大量图形元素
-  - 代码不够模块化
+  - 不支持 free-draw, 必须使用预定义shape
+  - 不支持minimap
+  - mxgraph代码不够模块化, 但maxgraph is modular and tree-shakable
+
+- features
+  - 支持多种绘图实现，默认svg，可自己实现canvas
+  - 示例丰富
 
 - tips
   - 主要用于流程图，不必在支持任意图形编辑和pdf编辑上花费过多精力

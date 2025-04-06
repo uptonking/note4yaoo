@@ -38,7 +38,15 @@ Topics may provide the flexibility needed to adapt without significant re-archit
 For more stable, defined workflows, queues offer simplicity and directness.
 
 - Could integrating both queues and topics offer a more versatile messaging solution?
+# discuss-mq-vs-websocket 🆚️
+- ## 
+
+- ## 
+
+- ## 
 # discuss-kafka
+- ## 
+
 - ## 
 
 - ## 

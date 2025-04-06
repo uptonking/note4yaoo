@@ -103,6 +103,10 @@ modified: 2023-02-07T17:38:05.336Z
 # microsoft-teams/org
 - https://github.com/xiweicheng/tms /MIT/202309/js/java
   - TMS是基于频道模式的团队沟通协作+轻量级任务看板，支持mardown、富文本、在线表格和思维导图的团队博文wiki，i18n国际化翻译管理的响应式web开源团队协作系统。
+- https://github.com/Teamlinker/Teamlinker /GPL/202407/ts/inactive
+  - Teamlinker is a team collaboration platform that integrates multi-functional modules, such as contact, task management, meeting, IM, Wiki and file management.
+  - Completely developed using TypeScript, using Node.js on the backend and Vue3 on the frontend.
+  - 依赖logicFlow
 
 - https://github.com/bissbr01/Command-project-management /202303/ts-fe/inactive
   - A Scrum Management App for teams

@@ -39,6 +39,15 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
+## 
+
+## 
+
+## 通过点击ui按钮触发git commit很慢，但在terminal执行git commit很快
+
+- 通过ui触发git commit，依赖业务逻辑中使用的github sdk，基于jgit实现?
+- 在terminal执行git commit，基于git ssh协议实现?
+
 ## ai写代码的超时异常或其他异常
 
 - mq的消息消费多次

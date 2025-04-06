@@ -97,4 +97,15 @@ modified: 2023-11-23T18:01:59.304Z
   - https://docs.getodk.org/central-intro/
   - the API server for ODK. It's built with Node.js and Postgres.
   - https://github.com/getodk/central-frontend /js/vue
+# form/survey-SaaS
+- https://github.com/didi/xiaoju-survey /3.3kStar/apache2/202502/ts/vue
+  - https://xiaojusurvey.didi.cn/
+  - 一套轻量、安全的调研系统，提供面向个人和企业的一站式产品级解决方案，用于构建各类问卷、考试、测评和复杂表单，快速满足各类线上调研场景。
+  - Web   端：Vue3 + ElementPlus
+  - Server端：NestJS + MongoDB
+  - 内部系统已沉淀 40+种题型，累积精选模板 100+，适用于市场调研、客户满意度调研、在线考试、投票、报道、测评等众多场景。数据能力上，经过上亿量级打磨，沉淀了分题统计、交叉分析、多渠道分析等在线报表能力，快速满足专业化分析。
+  - 多类型数据采集，轻松创建调研表单：文本输入、数据选择、评分、投票、文件上传等。
+  - ⚖️ 制定了问卷标准化协议规范
+    - 业务描述：问卷协议、题型协议
+    - 物料描述：题型物料协议，包含题型和设置器
 # more
