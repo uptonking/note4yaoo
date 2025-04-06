@@ -49,7 +49,9 @@ modified: 2021-01-04T17:26:43.784Z
   - React renderer for creating PDF files on the browser and server
   - This package is used to create PDFs using React. 
     - If you wish to display existing PDFs, you may be looking for https://github.com/wojtekmaj/react-pdf
-  - https://github.com/enescang/react-pdf-table
+  - https://github.com/ag-media/react-pdf-table /MIT/202501/ts
+    - a declarative table generator for @react-pdf/renderer
+  - https://github.com/enescang/react-pdf-table /202210/js/inactive
     - Simple table generator for @react-pdf/renderer
 
 - https://github.com/wojtekmaj/react-pdf /MIT/202503/ts

@@ -651,7 +651,7 @@ modified: 2020-12-28T12:24:09.275Z
   - Your friendliest open source all-in-one automation tool 
   - Workflow automation tool 100+ integration / Enterprise automation tool / Zapier Alternative
   - 后端依赖 fastify、typeorm、langchain、bullmq
-  - 前端依赖 zustand、zone.js、codemirror6、isolated-vm5、dnd-kit、radix-ui、fuse.js、@xyflow/react、pdf-lib、recharts、tiptap、tanstack-query/table、react-markdown
+  - 前端依赖 zustand、codemirror6、isolated-vm5、dnd-kit、radix-ui、fuse.js、@xyflow/react、pdf-lib、recharts、tiptap、tanstack-query/table、react-markdown
   - 工作流ui依赖react-flow实现，基于dom而非svg/canvas
   - [Local Dev Environment - Activepieces](https://www.activepieces.com/docs/developers/development-setup/local)
   - Activepieces' Community Edition is released as open source under the MIT license and enterprise features are released under Commercial License
@@ -668,6 +668,7 @@ modified: 2020-12-28T12:24:09.275Z
     - I think activepieces can meet the sweet point here with userspace/remote pieces.
     - 👷🏻: This is an interesting thought that would extend the activepieces existing capabilities to be code first used by developers. I believe it is the different direction and separate product, that we might not be able to develop forward in the short term, as the activepieces are positioned to be used by non-technical people and the pieces framework is purely for the developers
     - 👷🏻: I think this is currently out of scope for the Activepieces roadmap, as we align more with a no-code experience and focus on the UI builder.
+  - [feat: Remove Angular and replace with React _202409](https://github.com/activepieces/activepieces/pull/5135)
 
 - https://github.com/triggerdotdev/trigger.dev /10.5kStar/apache2/202503/ts
   - https://trigger.dev/

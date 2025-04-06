@@ -11,6 +11,7 @@ modified: 2024-06-30T11:16:43.565Z
 
 - resources
   - [Portainer architecture](https://docs.portainer.io/start/architecture)
+  - [Docker Cheat Sheet](https://github.com/wsargent/docker-cheat-sheet)
 # cli
 
 ```shell
@@ -22,4 +23,8 @@ docker container ls
 docker update --restart=no containerId
 
 docker stop containerId
+
+# stop all containers
+docker stop $(docker ps -aq) && docker rm $(docker ps -aq)
+
 ```

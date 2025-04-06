@@ -48,6 +48,8 @@ modified: 2025-03-31T17:38:17.881Z
 - resources
   - [280+ Open Source MCPs · Activepieces](https://www.activepieces.com/mcp)
 # draft
+- workflow ui by maxgraph/logicFlow
+
 - bpmn adapter/pieces
 # dev-xp
 

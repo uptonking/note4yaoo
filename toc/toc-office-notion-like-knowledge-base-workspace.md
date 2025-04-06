@@ -55,6 +55,7 @@ modified: 2022-06-03T21:34:54.893Z
   - https://docs.numerique.gouv.fr/
   - A collaborative note taking, wiki and documentation platform that scales. 
   - Docs is built on top of Django Rest Framework, Next.js, BlockNote.js, HocusPocus and Yjs.
+  - 前端依赖next15、zustand、yjs、BlockNote、@react-pdf/renderer、react-pdf-table、tanstack-query5、cmdk、docx、idb、react-aria-components
   - Easy to install, scalable and secure alternative to Notion, Outline or Confluence
   - Offline? No problem, keep writing, your edits will get synced when back online
   - Built for productivity (markdown support, many block types, slash commands, keyboard shortcuts).

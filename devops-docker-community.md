@@ -197,6 +197,34 @@ modified: 2024-06-30T11:17:28.971Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [docker真的好难用啊，为什么说它移植性好啊？ - 知乎](https://www.zhihu.com/question/400400231)
+- 移植性好是因为 Docker 是基于 Linux 的 Cgroups 和 Namespace 的功能实现的，能跑 Linux 的地方他就能跑，Docker 的 rootfs 根文件系统 和联合文件系统使得他泛用性更广了，并且支持跨架构平台构建镜像，例如 MySQL 官方的镜像就支持amd64和arm64
+  - Docker 容器简单说的话，就是在 Linux 基础上，通过约束与限制，来创造出一个进程边界，让不同容器之间形成一种隔离的效果
+  - Namespace 就是用来隔离各类资源用的，例如网络设备、配置、挂载的硬盘等等
+  - Cgroups 就是用来分配资源的，例如cpu、内存、io等资源
+  - 切换进程根目录, 
+- 这一套就是 Docker 的底层文件系统 rootfs（根文件系统）
+  - bootfs（boot file system，左图下方）主要包含 bootloader 和 kernel。bootloader 主要是引导加载 kernel，引导完成后整个内核就都在内存中了。此时内存的使用权已由 bootfs 转交给内核，系统卸载 bootfs。可以被不同的 Linux 发行版共用。
+  - rootfs（root file system，左图上方），包含典型 Linux 系统标准目录和文件。相当于各种不同操作系统发行版（例如 Debian，右图 Base Image 层）。因为底层直接用 Host 的 kernel（所有容器共享宿主机操作系统的内核），rootfs 只包含最基本的命令、工具和程序就可以了。当进行修改或者更新时，会在当前镜像层上新建新的层级（右图 Image 层）。运行起来的容器内容为可写层（右图 Container 层）
+
+- 联合文件系统是 Docker 镜像的基础。镜像可以通过分层来进行继承，基于基础镜像（没有父镜像），可以制作各种具体的应用镜像。
+
+- 虚拟化技术主要是去虚拟或半虚拟硬件资源，将计算机虚拟化为完整的硬件平台，也叫平台虚拟化
+- 而容器化技术主要是OS层面的隔离，实现多个隔离的用户空间实例
+- 当然，你也可以在虚拟机上跑容器，我就都是这么干的，
+
+- 
+- 
+- 
+- 
+- 
+
 - ## The smaller your Docker image, the fewer points of vulnerability.
 - https://x.com/sitnikcode/status/1904111163090063531
   - One approach is “distroless”, even without a package manager. You install everything you need in Alpine, then copy only the necessary binaries into an empty image `FROM scratch` .
