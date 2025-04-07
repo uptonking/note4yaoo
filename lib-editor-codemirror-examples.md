@@ -105,6 +105,7 @@ modified: 2023-06-23T12:46:53.288Z
   - sandpack-react依赖sandpack-client、codemirror6、@lezer/highlight、lz-string、react-devtools-inline
   - 提供了很多示例，包括cm-DecoratorsDynamic/FileExplorer/ReactDevTools
   - 自定义实现的codemirror ext很少
+  - codemirror editor不支持跳转到定义
   - CodeEditor支持codemirror/monaco/vscode
   - `SandpackCodeEditor` component renders a wrapper over codemirror. You can extend the editor with any CodeMirror extensions
     - `SandpackCodeViewer` renders a read-only version of codemirror
@@ -1427,13 +1428,15 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/qualified/lsps /MIT/202206/ts/inactive
   - Use Language Servers with in-browser editors. 
   - Monorepo of editor agnostic packages and CodeMirror client.
+  - See examples/rust-analyzer to run this locally.
+  - See examples/web-worker for an example with simple JSON Language Server running in Web Worker. A live demo is also available at https://qualified.github.io/lsps/.
 
 - https://stackblitz.com/edit/codemirror-6-typescript
 
-- https://github.com/coder0107git/codemirror-web-workers-lsp-demo /202404/ts
+- https://github.com/coder0107git/codemirror-web-workers-lsp-demo /2024043/ts
   - https://codemirror-web-workers-lsp-demo.coder0107git.v6.rocks/
   - Demo of using a Web Worker LSP in CodeMirror 6
-  - https://gitlab.com/aedge/codemirror-web-workers-lsp-demo
+  - This is a fork of https://gitlab.com/aedge/codemirror-web-workers-lsp-demo
 
 - https://github.com/remcohaszing/codemirror-languageservice /MIT/202408/ts
   - https://codemirror-languageservice.js.org/

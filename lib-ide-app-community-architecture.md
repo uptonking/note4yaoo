@@ -16,7 +16,14 @@ modified: 2024-12-03T13:20:30.085Z
 
 - ## 
 
-- ## 
+- ## ⚖️ [Build Server Protocol](https://build-server-protocol.github.io/)
+  - Protocol for IDEs and build tools to communicate about compile, run, test, debug and more.
+  - The Build Server Protocol (BSP) provides endpoints for IDEs and build tools to communicate about directory layouts, external dependencies, compile, test and more.
+  - The build server can notify the client about compile progress and report compile errors.
+- BSP is complementary to LSP
+  - While LSP allows editor clients to abstract over different programming languages, BSP allows IDE clients to abstract over different build tools.
+- Example of running, testing and debugging a Scala program in VS Code via BSP and the Debug Adapter Protocol.
+
 # discuss-ide-database 🛢️
 - ## 
 
