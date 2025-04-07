@@ -31,6 +31,7 @@ modified: 2023-09-02T09:17:22.992Z
   - https://sandpack.codesandbox.io/docs
   - Sandpack is a component toolkit for creating your own live running code editing experience powered by CodeSandbox.
   - 依赖codemirror6、lz-string、react-devtools-inline
+  - 未实现跳转到定义的功能
   - Sandpack Client: This is a small foundation package that sits on top of the bundler. It is framework agnostic and facilitates the handshake between your context and the bundler iframe.
   - Sandpack React: React components that give you the power of editable sandboxes that run in the browser
   - https://github.com/AaronPowell96/sandpack-file-explorer /MIT/202312/ts

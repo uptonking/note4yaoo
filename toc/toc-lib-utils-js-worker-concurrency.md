@@ -17,10 +17,11 @@ modified: 2024-01-30T14:41:38.742Z
   - https://github.com/deebloo/things-you-can-do-in-a-web-worker
   - [Web Worker 文献综述_202007](https://github.com/CntChen/cntchen.github.io/issues/19)
 # worker-web
-- https://github.com/Kanaries/web-data-loader /ts
-  - allows you to load large data files in browser. 
-  - It supports stream data and runs in webworker which will not block the main thread while loading the data. 
-  - web-data-loader also support stream data sampling, it now support Reservoir Sampling methods.
+- https://github.com/GoogleChromeLabs/comlink /11.8kStar/apache2/202411/ts/inactive
+  - Comlink makes WebWorkers enjoyable.
+  - At a more abstract level it is an RPC implementation for postMessage and ES6 Proxies
+  - Comlink turns this messaged-based API into a something more developer-friendly by providing an RPC implementation: Values from one thread can be used within the other thread (and vice versa) just like local values.
+  - Comlink works with Node’s `worker_threads` module
 
 - evolu /101Star/GPLv3/202210/ts
   - https://github.com/evoluhq/evolu
@@ -123,6 +124,11 @@ modified: 2024-01-30T14:41:38.742Z
   - It simplifies the communication between these sandboxes drastically. 
   - The package was mainly developed to help share data between various of webviews within a VSCode extension.
 
+- https://github.com/Kanaries/web-data-loader /ts
+  - allows you to load large data files in browser. 
+  - It supports stream data and runs in webworker which will not block the main thread while loading the data. 
+  - web-data-loader also support stream data sampling, it now support Reservoir Sampling methods.
+
 - https://github.com/Mng12345/webworker-test
   - performance of every worker under different threads number
 
@@ -185,11 +191,6 @@ modified: 2024-01-30T14:41:38.742Z
   -  Workbox is a set of modules that simplify common service worker routing and caching. 
   - [Workbox - Chrome Developers](https://developer.chrome.com/docs/workbox/)
   - [Maintain status](https://github.com/GoogleChrome/workbox/issues/3149)
-
-- https://github.com/GoogleChromeLabs/comlink /apache2/ts
-  - Comlink makes WebWorkers enjoyable.
-  - At a more abstract level it is an RPC implementation for postMessage and ES6 Proxies
-  - Comlink turns this messaged-based API into a something more developer-friendly by providing an RPC implementation: Values from one thread can be used within the other thread (and vice versa) just like local values.
 
 - https://github.com/gauntface/simple-push-demo /js
   - A simple example of use push notifications on the web using Service Workers

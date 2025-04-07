@@ -1199,14 +1199,18 @@ modified: 2023-06-23T12:46:53.288Z
   - Only few linting rules have been implemented
   - 示例lint python2代码
 # extensions
-- https://github.com/val-town/codemirror-ts /ISC/202405/ts
+- https://github.com/val-town/codemirror-ts /ISC/202503/ts
   - https://val-town.github.io/codemirror-ts/
   - a set of extensions for CodeMirror 6 that add support for TypeScript
-  - lint, hover, and autocomplete extensions for CodeMirror + TypeScript
-  - Hover hints for types 
-  - Autocomplete 
-  - Diagnostics (lints, in CodeMirror's terminology)
-  - This is the simplest way to use this code: you'll be running the TypeScript server on the same processing as the rest of the web application. To run the TypeScript server in a worker (which can yield performance benefits, at the cost of complexity), see the next section.
+  - [x] Hover hints for types 
+  - [x] Autocomplete 
+  - [x] Diagnostics (lints, in CodeMirror's terminology)
+  - [x] Go-to definition
+  - [x] Twoslash support
+  - [x] ATA(automatic type acquisition): emulate what you'd get in a local editor
+  - This uses `Comlink` as an abstraction for the WebWorker. 
+  - This module uses TypeScript’s public APIs to power its functionality: it doesn't use the Language Server Protocol
+    - Most good TypeScript language tooling, like VS Code’s autocompletion, does not use the LSP specification. 
   - [Go to definition · val-town/codemirror-ts _202311](https://github.com/val-town/codemirror-ts/issues/8)
     - This module currently uses TypeScript, but not the extra language server. It'd probably use the language server if this adopted more of a client-server architecture, or maybe it should in general, but for now, it's integrating with TypeScript, and we'll need to figure out what's under the hood of the LSP adapter's implementation.
 - https://github.com/modderme123/codemirror-extension-typescript /202312/ts/inactive

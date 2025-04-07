@@ -9,6 +9,28 @@ modified: 2024-08-24T16:29:44.029Z
 
 # guide
 
+# ide-features
+
+## LSP语法跳转
+
+- 
+- 
+
+- 
+- 
+- 
+- 
+
+- codesandbox devbox的语法跳转
+  - 在浏览器内支持跳转到symbol，跳转到相对路径，跳转到自定义路径，跳转到node_modules下的文件(不会自动定位到文件树文件)
+  - 在vscode通过ssh打开时，也能跳转到相对路径/自定义路径，跳转到node_modules下的文件(不会自动定位到文件树文件)
+
+- stackblitz纯前端方案实现的ide不支持在vscode/cursor打开
+  - codesandbox的纯前端版sandbox也不支持在vscode打开
+
+- replit的ssh/在本地vscode打开是付费功能
+  - replit的定义跳转未直接使用LSP，使用自定义river协议来传输二进制数据
+  - codesandbox的定义跳转也未直接使用LSP，用的是自定义二进制协议
 # ide-products
 - [关于IDE，你想知道的都在这! 文章合集 - 掘金 _202303](https://juejin.cn/post/7209472157502668860)
 

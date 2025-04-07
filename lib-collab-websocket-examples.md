@@ -112,7 +112,7 @@ modified: 2023-01-23T19:27:46.948Z
   - Agnostic of framework, build tool, server lib and SQL database.
 
 - https://github.com/replit/river /MIT/202409/ts
-  - [River protocol v2.0](https://github.com/replit/river/blob/main/PROTOCOL.md)
+  - ✨⚖️ [River protocol v2.0](https://github.com/replit/river/blob/main/PROTOCOL.md)
   - River provides a framework for long-lived streaming Remote Procedure Calls (RPCs) in modern web applications, featuring advanced error handling and customizable retry policies to ensure seamless communication between clients and servers.
   - The primary goal of the River protocol is to simplify the development of long-lived client-server systems by abstracting the complexities of network programming, like connection management, message serialization/deserialization, and error handling.
   - River provides a framework similar to tRPC and gRPC but with additional features:

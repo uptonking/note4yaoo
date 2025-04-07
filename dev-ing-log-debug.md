@@ -43,10 +43,7 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
-## 通过点击ui按钮触发git commit很慢，但在terminal执行git commit很快
-
-- 通过ui触发git commit，依赖业务逻辑中使用的github sdk，基于jgit实现?
-- 在terminal执行git commit，基于git ssh协议实现?
+## 
 
 ## ai写代码的超时异常或其他异常
 
@@ -59,6 +56,12 @@ modified: 2023-06-14T00:53:15.226Z
 
 - 深入排查时要区分 本地操作、系统调用 的各个阶段
 
+- 通过点击ui按钮触发git commit很慢，但在terminal执行git commit很快
+  - 通过ui触发git commit，依赖业务逻辑中使用的java git~~hub~~ sdk，基于jgit实现? 所以很慢
+  - 在terminal执行git commit，基于git ssh协议实现?
+- 解决方案: 因为commit前会通过git sdk执行git status，这个操作耗时长就很慢，不采用git sdk操作而采用编码的方式 `child_process.exec(shellCmd)` 执行命令就很快了, 业务中最后没有在
+
+- 
 - 
 - 
 - 

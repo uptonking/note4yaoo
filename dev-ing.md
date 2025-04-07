@@ -331,6 +331,17 @@ add action to create quickSort1.mjs and add 3 test cases in it
 - 异常处理增强
   - 观测重要log: RESOURCE_NOT_ENOUGH
 
+## 0407
+
+- 上周
+  - 调研agent获取浏览器信息的方案，根据产品初步需求确定不使用rrweb的方案
+  - 熟悉sdk中LSP相关的代码，尝试js类型文件的语法跳转
+- 本周
+  - 深入LSP的实现，修复LSP插件的现有问题
+  - 尝试实现js/ts文件的语法跳转
+- 今天
+  - 深入LSP的实现，修复LSP插件的现有问题
+
 ## 0405
 
 - [[@types/node] Compiler error: Cannot find module 'undici-types' · DefinitelyTyped/DefinitelyTyped · Discussion #67406](https://github.com/DefinitelyTyped/DefinitelyTyped/discussions/67406)
