@@ -1430,10 +1430,7 @@ modified: 2023-06-23T12:46:53.288Z
 
 ## lsp
 
-- https://github.com/schizobulia/ide-study /202310/js
-  - [实现一个简单的ide-demo - 知乎](https://zhuanlan.zhihu.com/p/659653723)
-
-- https://www.npmjs.com/package/monaco-languageclient /MIT/202504/ts
+- https://github.com/TypeFox/monaco-languageclient /MIT/202504/ts
   - monaco-languageclient to connect Monaco editor with language servers.
   - monaco-languageclient-examples provides the examples which allows to use them externally.
   - [Teaching the Language Server Protocol to Microsoft's Monaco Editor | TypeFox _201704](https://www.typefox.io/blog/teaching-the-language-server-protocol-to-microsofts-monaco-editor/)
@@ -1507,6 +1504,11 @@ modified: 2023-06-23T12:46:53.288Z
 
 - [@shopify/codemirror-language-client - npm](https://www.npmjs.com/package/@shopify/codemirror-language-client)
   - CodeMirror is the open source library that powers the Online Store Code Editor.
+
+- https://github.com/schizobulia/ide-study /202310/js
+  - [实现一个简单的ide-demo(未使用codemirror) - 知乎](https://zhuanlan.zhihu.com/p/659653723)
+  - id为content的div为显示开发者的输入容器，cursor为光标组件
+  - 先通过node开启一个websocket客户端与lsp-server通信
 
 ## utils-lang
 
