@@ -200,17 +200,18 @@ modified: 2023-06-23T12:46:53.288Z
   - You can also expose your VZCode instance publicly using a tunneling service such as NGrok.
   - Auto-save, debounced after code changes
   - [VSCode-ish: Jump to Definition of Variable ](https://github.com/vizhub-core/vzcode/issues/177)
-    - [202406已合并pr](https://github.com/vizhub-core/vzcode/pull/717)
+    - [202406已合并pr, 只实现了文件内跳转定义，且需要按住Ctrl键同时移动鼠标](https://github.com/vizhub-core/vzcode/pull/717)
     - I also have a history of working with CodeMirror 5 + ShareDB for the real-time integration, and was able to "unlock" that CodeMirror 6 + ShareDB integration successfully
   - [pr已合并_Intelligent Autocompletions _202311](https://github.com/vizhub-core/vzcode/pull/305)
+  - https://github.com/vizhub-core/vizhub /v3
+    - possible to self-host your own instance
+    - possible to extend the core with plugins
+    - 不支持跳转到定义
   - https://github.com/vizhub-core/vizhub-legacy /202206/js/inactive
     - https://vizhub.community/
     - Self Hosted CMS for Web-based Dataviz
     - VizHub 2 has been used in Data Visualization Course 2018, Datavis 2020
     - iFrame-based code execution environment.
-  - VizHub 3
-    - possible to self-host your own instance
-    - possible to extend the core with plugins
   - https://github.com/vizhub-core/codemirror-6-experiments /MIT/201811/js
     - [Codemirror 6 Experiments _201811](https://currankelleher.medium.com/codemirror-6-experiments-a3930bf03781)
 
@@ -1214,9 +1215,21 @@ modified: 2023-06-23T12:46:53.288Z
     - Most good TypeScript language tooling, like VS Code’s autocompletion, does not use the LSP specification. 
   - [Go to definition · val-town/codemirror-ts _202311](https://github.com/val-town/codemirror-ts/issues/8)
     - This module currently uses TypeScript, but not the extra language server. It'd probably use the language server if this adopted more of a client-server architecture, or maybe it should in general, but for now, it's integrating with TypeScript, and we'll need to figure out what's under the hood of the LSP adapter's implementation.
-- https://github.com/modderme123/codemirror-extension-typescript /202312/ts/inactive
+
+- https://github.com/modderme123/codemirror-extension-typescript /202310/ts/inactive
   - https://typescript-codemirror.netlify.app/
   - A codemirror extension providing useful features for typescript, such as a language server with autocomplete and error reporting
+  - 纯前端的hover/autocomplete/lint
+  - vite构建时会打包类型 `const types = import.meta.glob("../../../../node_modules/typescript/lib/*.d.ts", { eager: true, as: "raw" });`
+
+- https://github.com/exuanbo/codemirror-toolkit /MIT/202312/ts/侧重架构组织而弱功能
+  - A batteries-included toolset for efficient development of CodeMirror 6 based editors (w/o React).
+  - https://github.com/code4mk/codemirror-toolkit /202208/ts/inactive
+    - easily use codemirror editor with codemirror-toolkit on react , vue , svelte
+  - [@codemirror-toolkit/react - A small and flexible solution for binding CodeMirror 6 to React : r/reactjs _202301](https://www.reddit.com/r/reactjs/comments/107to4j/codemirrortoolkitreact_a_small_and_flexible/)
+    - I always wanted to use such a library when I was developing my Assembler Simulator in React. 
+    - But all I could find at the moment was like @uiw/react-codemirror, it's "badly written" (e.g. reading a ref's current value during rendering) and contains too many dependencies I don't need, which cannot be tree-shaked so that you can toggle them in props.
+    - So I decided to write it my self and here it is! The API design is inspired by zustand btw
 
 - https://github.com/yeliex/codemirror-extensions /MIT/202403/ts
   - https://cm.yeliex.dev/
@@ -1225,14 +1238,6 @@ modified: 2023-06-23T12:46:53.288Z
   - codemirror-markdown-commands
   - codemirror-markdown-image
   - codemirror-toolbar 非浮动工具条
-
-- https://github.com/exuanbo/codemirror-toolkit /MIT/202312/ts
-  - A batteries-included toolset for efficient development of CodeMirror 6 based editors (w/o React).
-  - https://github.com/code4mk/codemirror-toolkit /202208/ts/inactive
-    - easily use codemirror editor with codemirror-toolkit on react , vue , svelte
-  - [@codemirror-toolkit/react - A small and flexible solution for binding CodeMirror 6 to React : r/reactjs _202301](https://www.reddit.com/r/reactjs/comments/107to4j/codemirrortoolkitreact_a_small_and_flexible/)
-    - I always wanted to use such a library when I was developing my Assembler Simulator in React. But all I could find at the moment was like @uiw/react-codemirror, it's "badly written" (e.g. reading a ref's current value during rendering) and contains too many dependencies I don't need, which cannot be tree-shaked so that you can toggle them in props.
-    - So I decided to write it my self and here it is! The API design is inspired by zustand btw
 
 - https://github.com/overleaf/codemirror-tree-view /MIT/202311/ts
   - A CodeMirror 6 extension providing an interactive view of a document's syntax tree
@@ -1425,41 +1430,66 @@ modified: 2023-06-23T12:46:53.288Z
 
 ## lsp
 
+- https://github.com/schizobulia/ide-study /202310/js
+  - [实现一个简单的ide-demo - 知乎](https://zhuanlan.zhihu.com/p/659653723)
+
+- https://www.npmjs.com/package/monaco-languageclient /MIT/202504/ts
+  - monaco-languageclient to connect Monaco editor with language servers.
+  - monaco-languageclient-examples provides the examples which allows to use them externally.
+  - [Teaching the Language Server Protocol to Microsoft's Monaco Editor | TypeFox _201704](https://www.typefox.io/blog/teaching-the-language-server-protocol-to-microsofts-monaco-editor/)
+  - [如何创建集成 LSP 支持多语言的 Web 代码编辑器 - 米开朗基杨 - 博客园 _202309](https://www.cnblogs.com/ryanyangcs/p/17693108.html)
+
+- https://github.com/jackhodkinson/lsp-editor /202407/ts
+  - [Integrating the ruff language server _202407](https://jack-hodkinson.medium.com/integrating-the-ruff-language-server-4f6b0d126ebd)
+
+- https://github.com/intansemc2/monaco-online-ide /MIT/202410/ts/svelte
+  - This project is a webapp allow user to run code from browser in some languages, include python, c++, java, javascript, php.
+  - This project uses Docker for easy deployment and high compatibility, but it can take a lot of storage
+  - Run code in: python, c++, java, javascript, php
+  - Svelte (SvelteKit): this is the framework for the front-end
+  - Judge0: this is the back-end to run the code
+  - Libraries: monaco-editor, monaco-languageclient, ...
+
 - https://github.com/qualified/lsps /MIT/202206/ts/inactive
   - Use Language Servers with in-browser editors. 
-  - Monorepo of editor agnostic packages and CodeMirror client.
+  - Monorepo of **editor agnostic packages and CodeMirror client**.
   - See examples/rust-analyzer to run this locally.
   - See examples/web-worker for an example with simple JSON Language Server running in Web Worker. A live demo is also available at https://qualified.github.io/lsps/.
 
 - https://stackblitz.com/edit/codemirror-6-typescript
 
-- https://github.com/coder0107git/codemirror-web-workers-lsp-demo /2024043/ts
+- https://github.com/coder0107git/codemirror-web-workers-lsp-demo /202403/ts
   - https://codemirror-web-workers-lsp-demo.coder0107git.v6.rocks/
   - Demo of using a Web Worker LSP in CodeMirror 6
-  - This is a fork of https://gitlab.com/aedge/codemirror-web-workers-lsp-demo
+  - 实现了ipc通信/补全，未实现lint
+  - This is a fork of https://gitlab.com/aedge/codemirror-web-workers-lsp-demo /202301
 
 - https://github.com/remcohaszing/codemirror-languageservice /MIT/202408/ts
   - https://codemirror-languageservice.js.org/
   - https://codemirror-languageservice.js.org/typescript
   - Integrate a Language Server Protocol compatible language service into CodeMirror
-  - This demo shows how you can integrate an LSP based language service into CodeMirror.
+  - 🌰 This demo shows how you can integrate an LSP based language service into CodeMirror.
     - The completion source autocompletes words based on the words in the document and the character typed.
     - The hover tooltip source shows a tooltip which displays the word you’re hovering over.
     - The lint source shows diagnostics for the words hint, info, warning, error, unnecessary, and deprecated.
   - Since LSP uses markdown, you need to provide a function to convert markdown to DOM. A good option is to combine hast-util-to-dom, mdast-util-from-markdown, and mdast-util-to-hast
+  - codemirror-languageservice was developed as part of the Transloadit JSON editor.
 
-- https://github.com/FurqanSoftware/codemirror-languageserver /161Star/BSD/202212/ts/inactive
+- https://github.com/FurqanSoftware/codemirror-languageserver /161Star/BSD/202502/ts/inactive
   - Language Server integration for CodeMirror 6
   - This plugin enables code completion, hover tooltips, and linter functionality by connecting a CodeMirror 6 editor with a language server over WebSocket.
   - [Using Language Servers with CodeMirror 6 _202103](https://hjr265.me/blog/codemirror-lsp/)
   - 🍴 forks
+  - https://github.com/marimo-team/codemirror-languageserver /BSD/202504/ts
+    - a fork of FurqanSoftware/codemirror-languageserver with additional features and modernization.
   - https://github.com/databutton/codemirror-languageserver /202309/ts
 - https://github.com/lbb00/codemirror-typespec /202409/js
   - This project is a demo of useing Typespec with Codemirror.
   - A Node.js server is running the Typespec compiler language server, connected via codemirror-languageserver, because the @typespec/compiler does not support browser environments.
 
-- https://github.com/marc2332/lsp-codemirror /ISC/202008/ts/inactive
+- https://github.com/marc2332/lsp-codemirror /ISC/202008/ts/UNMAINTAINED
   - LSP integration for CodeMirror
+  - Support for custom autocompletion dropmenus
 - https://github.com/alanko0511/codemirror-editor-experiment
   - CodeMirror + TypeScript (experiment)
 
@@ -1469,16 +1499,14 @@ modified: 2023-06-23T12:46:53.288Z
   - https://x.com/SergeiChestakov/status/1486025274240090114
     - I now have a ~relatively~ functional lsp adapter for Codemirror 6, you may want to take a look. The main limitation is recreating a monaco esque environment for Codemirror, e.g. autocomplete doesn't work the same way on Codemirror that it did on Monaco
 
-- https://github.com/SilasMarvin/lsp-ai /MIT/202406/rust
+- https://github.com/SilasMarvin/lsp-ai /MIT/202501/rust
   - LSP-AI is an open source language server that serves as a backend for performing completion with large language models and soon other AI powered functionality. 
   - Because it is a language server, it works with any editor that has LSP support.
   - LSP-AI can work as an alternative to Github Copilot.
   - The goal of LSP-AI is to assist and empower software engineers by integrating with the tools they already know and love not replace software engineers.
 
-- https://github.com/craftzdog/react-codemirror-runmode /MIT/202503/ts
-  - Syntax highlighting for react, utilizing CodeMirror's parser
-  - Syntax highlighter for React, using CodeMirror 6. 
-  - It automatically loads the language metadata and dynamically loads language parser modules based on the specified language.
+- [@shopify/codemirror-language-client - npm](https://www.npmjs.com/package/@shopify/codemirror-language-client)
+  - CodeMirror is the open source library that powers the Online Store Code Editor.
 
 ## utils-lang
 
@@ -1487,6 +1515,11 @@ modified: 2023-06-23T12:46:53.288Z
   - This project demonstrates how to integrate CodeMirror into a React application and implement custom syntax highlighting. 
   - The example highlights any text wrapped in !{} with a specific style using CodeMirror's extensions API.
   - Uses `@uiw/react-codemirror` for seamless integration of CodeMirror with React.
+
+- https://github.com/craftzdog/react-codemirror-runmode /MIT/202503/ts
+  - Syntax highlighting for react, utilizing CodeMirror's parser
+  - Syntax highlighter for React, using CodeMirror 6. 
+  - It automatically loads the language metadata and dynamically loads language parser modules based on the specified language.
 
 - https://github.com/cookshack/codemirror-lang-lezer-tree /MIT/202409/js
   - Language support for Lezer trees, for CodeMirror 6

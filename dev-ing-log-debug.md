@@ -52,6 +52,8 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 🌵 git commit操作的api在cde很慢， 5s-90s
 
+> 拉log统计下现在的耗时耗在了哪里？分析add commit push三个环节。（定位到add后status耗时长）
+
 - git checkout 有时也很慢
 
 - 深入排查时要区分 本地操作、系统调用 的各个阶段
@@ -59,12 +61,8 @@ modified: 2023-06-14T00:53:15.226Z
 - 通过点击ui按钮触发git commit很慢，但在terminal执行git commit很快
   - 通过ui触发git commit，依赖业务逻辑中使用的java git~~hub~~ sdk，基于jgit实现? 所以很慢
   - 在terminal执行git commit，基于git ssh协议实现?
-- 解决方案: 因为commit前会通过git sdk执行git status，这个操作耗时长就很慢，不采用git sdk操作而采用编码的方式 `child_process.exec(shellCmd)` 执行命令就很快了, 业务中最后没有在
-
-- 
-- 
-- 
-- 
+- 经过验证，问题出在 java jgit sdk 打开仓库，注释相关代码后速度正常，相关功能已迁移到 go agent。
+- 解决方案: 因为commit前会通过git sdk执行git status，这个操作耗时长就很慢，不采用git sdk操作而采用编码的方式 `child_process.exec(shellCmd)` 执行命令就很快了
 
 ## error: followingFocusComponent call timeout (7s)
 

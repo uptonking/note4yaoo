@@ -54,10 +54,10 @@ modified: 2025-01-05T15:00:20.963Z
 
 - Using the existing LSP data types as the base for LSIF has another advantage as LSIF can easily be integrated into tools or servers which already understand LSP.
 
-- A client tool would retrieve the hover content from a language server by sending a textDocument/hover request for document file:///Users/username/sample.ts at position {line: 0, character: 10}.
-  - LSIF defines a format that language servers or standalone tools emit to describe that the tuple ['textDocument/hover', 'file:///Users/username/sample.ts', {line: 0, character: 10}] resolves to the above hover. The data can then be taken and persisted into a database.
+- A client tool would retrieve the hover content from a language server by sending a `textDocument/hover` request for document file:///Users/username/sample.ts at position `{line: 0, character: 10}`.
+  - LSIF defines a format that language servers or standalone tools emit to describe that the tuple `['textDocument/hover', 'file:///Users/username/sample.ts', {line: 0, character: 10}]` resolves to the above hover. The data can then be taken and persisted into a database.
 
-- 💡 LSP requests are position based, however results often only vary for ranges and not for single positions.
+- 🆚 LSP requests are position based, however results often only vary for ranges and not for single positions.
   - To make the emitted data more compact, the LSIF uses ranges instead of positions. 
 - LSIF uses graphs to emit this information. In the graph, an LSP request is represented using an edge. Documents, ranges, or request results (for example, the hover) are represented using vertices.
 

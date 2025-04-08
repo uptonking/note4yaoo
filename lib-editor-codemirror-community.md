@@ -176,7 +176,29 @@ modified: 2023-01-29T10:52:44.183Z
 
 - Any thoughts on Code Server? It’s vs code in a browser, I’ve been used it for one year now and it’s great. But maybe it’s outside the scope of the article?
   - It's using monaco as the underlying editor, just like VS Code that it's based on. Code Server basically takes the VS Code codebase as is and just adds a very light server layer to do auth and static content serving. All of the frontend javascript code, etc. is the same as the desktop version of VS Code.
+# discuss-ide
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [VSCode-ish: Jump to Definition of Variable · Issue · vizhub-core/vzcode _202309](https://github.com/vizhub-core/vzcode/issues/177)
+  - I've read that Monaco does not work on mobile, which for me is a deal breaker as one of my ultimate goals is to make a code editor that is actually somewhat usable on mobile, for folks who want to learn to code but don't have access to a laptop 
+  - We are already using the TypeScript language server, which may have this sort of functionality built in. Needs some research on existing implementations with CodeMirror 6.
+
+- [Jump to definition by jeffrey-cordero · Pull Request · vizhub-core/vzcode](https://github.com/vizhub-core/vzcode/pull/717)
+
+- [Jump to definition through CTRL + Hover + Click · Pull Request · vizhub-core/vzcode _202406](https://github.com/vizhub-core/vzcode/pull/733)
+  - When a user holds CTRL, an event listener will be dispatched to search for a potential defining location in the syntax tree for the identifier at the mouse location. 
+  - If found, the identifier will be underlined and show a cursor on hover, indicating that a click on the identifier will move the view into the defining location. 
+
+- [Jump to definition: Get it to work for imports · Issue · vizhub-core/vzcode](https://github.com/vizhub-core/vzcode/issues/726)
+  - Ideally (stretch goal) it would open the definition of the exported variable in the other file (e.g. import { foo } from './foo';) - this would only work for local files
+  - Initially (easier goal) - it should just jump to the import line (this is all we can do for packages e.g. d3 at the moment)
 # discuss
+- ## 
+
 - ## 
 
 - ## 

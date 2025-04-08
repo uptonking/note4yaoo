@@ -59,9 +59,10 @@ modified: 2024-05-02T02:01:04.255Z
   - BranchName是redo、undo二选一，Branch是历史事件合集
 # blogs-lsp
 
-## [Bringing the TypeScript Language Server to Observable | Observable _202211](https://observablehq.com/blog/bringing-the-typescript-language-server-to-observable)
+## 🌰 [Bringing the TypeScript Language Server to Observable | Observable _202211](https://observablehq.com/blog/bringing-the-typescript-language-server-to-observable)
 
-- We represent each cell in a notebook as a separate file in the VFS, and keep the TypeScript virtual environment in sync with changes made in the CodeMirror cell editors. Then, we can query the language service for signature help and autocompletions at any position in the CodeMirror editor. 
+- We represent each cell in a notebook as a separate file in the VFS, and keep the TypeScript virtual environment in sync with changes made in the CodeMirror cell editors. 
+  - Then, we can query the language service for signature help and autocompletions at any position in the CodeMirror editor. 
 - Next, we moved the virtual TypeScript environment to a WebWorker. 
 
 - 

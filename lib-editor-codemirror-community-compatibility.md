@@ -72,6 +72,9 @@ modified: 2024-08-11T06:40:41.476Z
   - I’m generally a bit wary of Blink-only APIs, but since this may help tame the endless mess of virtual keyboard behavior on Andoid, I built a proof-of-concept implementation that uses this feature, when available, to capture text input. The interface was surprisingly pleasant to use, and fits into CodeMirror rather well. 
   - @codemirror/view 6.28.0 ships with EditContext support. I’ve disabled EditContext use by default in 6.28.1 again until I work those out.
 
+- I’ve published a 6.26.4-edit-context.1 that allows you do `EditorView.EDIT_CONTEXT = false` to disable use of edit context. This will not be a stable feature, just a kludge that exists as long as this is experimental.
+  - 🧪 `EDIT_CONTEXT`属性并不在EditorView的类型定义上，但实际是可用的，在代码里包含相关处理逻辑
+
 - ## 才知道 pointermove 事件会按照屏幕刷新率，合并手写笔/鼠标的输入事件。
 - https://x.com/zQwQs/status/1822331239740666306
   - 需要通过 `event.getCoalescedEvents()` 捞出来那些被隐藏的事件。

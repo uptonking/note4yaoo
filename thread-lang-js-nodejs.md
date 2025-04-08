@@ -121,10 +121,58 @@ install more packages. only Bun is zero config, and it is not a compiler, it's r
 
 - 🆚️ How is this different from pm2 ?
   - Wattpm is designed to run only one application at a time, typically inside Docker/Kubernetes. pm2 is designed to run multiple apps on a vps.
-# discuss-perf
+# discuss-perf-nodejs
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [通过执行字节码来优化node启动速度 - 知乎 _202408](https://zhuanlan.zhihu.com/p/712684270)
+  - 很多解释型的语言为了更快的解释开发者编写的源码时就可能会引入字节码，比如java、v8
+  - 因为一般生成的源码不是树就是图，这种数据结构比较好理解，但也非常松散，而且遍历时速度不如意，毕竟机器执行连续顺序紧凑的结构有助于寄存器的缓存。
+  - 执行的前两步：编译源码 -> 生成字节码 -> 开始解释 （当然还有什么机器码什么的这里就不写了）
+  - 所以直接生成字节码给解释器解释不更好？
+
+```JS
+// node如何生成字节码
+const bytenode = require('bytenode');
+
+async function main() {
+  let compiledFilename = await bytenode.compileFile({
+    filename: 'out-old.js', // 需要生成的文件
+    output: 'out.jsc', // 生成文件
+    compileAsModule: false // 最终生成的是脚本还是模块
+  });
+
+  console.log('编译成功:', compiledFilename);
+}
+
+main()
+
+// 如何执行字节码
+
+// const script = new vm.Script(javascriptCode, {
+//         produceCachedData: true
+//     });
+// const dummyBytecode = compileCode('"ಠ_ಠ"');
+
+const bytecodeBuffer = fs.readFileSync(filename);
+
+// runBytecode(bytecodeBuffer);
+
+const context = vm.createContext(sandbox);
+const script = generateScript(bytecodeBuffer);
+
+script.runInContext(context);
+```
+
+- bytenode本身是一个第三方库，封装了一些生成的逻辑，其实就是使用了node的vm模块来保存字节码。
+- 这里需要注意的是sandbox，因为最终生成的代码是在一个vm里执行的，vm可以理解为一个干净的v8环境，而我们需要使用node的很多内置模块就只能通过sandbox来注入。
+  - 上面的部分代码也来源于bytenode库，我只把执行的部分拿出来了，并加入了sandbox的逻辑。。
+
+- 编译为字节码还有一个好处就是保护源码，要不别人直接拿到源码修改修改就可以二次打包
+  - 还有一种优化方式是关于快照的，不过这种方式相对来说更麻烦
 
 - ## 最近工作中手上有一个后端 API Server, 一开始我是拿 Node 写的, 特征是一个请求进来我得 fan out 50+ 个请求出去
 - https://x.com/strrlthedev/status/1897127153642430817

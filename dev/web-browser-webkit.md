@@ -328,6 +328,9 @@ modified: 2021-01-01T20:11:00.889Z
   - https://twitter.com/WebReflection/status/1768378104085467183
     - I think @WPEWebKit is still the go-to embedded browser to use but I was triggered by @ServoDev claims about embedded ability and 10 minutes building
     - I personally love @nw_js great community and well maintained project. There is ARM build also. Certainly not low-consumption  oriented but work well on small hardware for me.
+
+- https://github.com/schizobulia/browser /202407/rust/inactive
+  - Writing a browser involves the integration of several key modules that work together to provide the ability to browse the web.
 # discuss-webview 🧭
 - ## 
 

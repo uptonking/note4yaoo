@@ -229,15 +229,15 @@ modified: 2024-08-24T16:17:26.715Z
 
 ## utils-rpc/messaging
 
-- https://github.com/SAP/vscode-webview-rpc-lib /apache2/202404/ts/inactive
-  - Provides a convenient way to communicate between VSCode extension and its webviews. 
-  - Use RPC calls to invoke functions on the webview, receive callbacks and vice versa.
-
 - https://github.com/TypeFox/vscode-messenger /MIT/202412/ts
   - RPC messaging library for the VS Code extension platform
   - Makes the communication between your VS Code extension and its webviews much simpler.
   - Support for sync and async request/notification handlers
   - Support for request cancellation
+
+- https://github.com/SAP/vscode-webview-rpc-lib /apache2/202404/ts/inactive
+  - Provides a convenient way to communicate between VSCode extension and its webviews. 
+  - Use RPC calls to invoke functions on the webview, receive callbacks and vice versa.
 
 - https://github.com/slightc/web-service-rpc /202311/ts
   - 使用vue/react写vscode插件webview的工具

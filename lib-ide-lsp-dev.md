@@ -13,8 +13,22 @@ modified: 2025-01-05T15:00:07.466Z
 
 - cons
   - jsonrpc
+
+- features
+  - autocomplete
+  - go to definition
+  - Go to Implementation
+  - find all references
+  - format on type
+  - rich code navigation
+
+
+- language-servers list
+  - [Langserver.org](https://langserver.org/)
 # draft
 
 # dev-xp
-
+- 基于web worker实现LSP的缺点，对于更新types不友好
+  - a language server requires all source code files be available on a local disk
+  - The goal of the Language Server Index Format is to augment the LSP protocol to support rich code navigation features without these requirements. 
 # more

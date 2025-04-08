@@ -12,6 +12,14 @@ modified: 2025-01-05T15:00:51.509Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## [Langserver.org – A community-driven source for Language Server implementations | Hacker News _202002](https://news.ycombinator.com/item?id=22442133)
+- 
+- 
+- 
+- 
+
 - ## A technical deep-dive into how we built an AI that understands and propagates code changes across entire codebases. 
 - https://x.com/augmentcode/status/1892616601544872212
   - [The AI research behind Next Edit _202502](https://www.augmentcode.com/blog/the-ai-research-behind-next-edit)
@@ -72,7 +80,7 @@ modified: 2025-01-05T15:00:51.509Z
 
 - ## 
 
-- ## IntelliJ since the have a BSP (Build Server Protocol) on top of LSP. Having nice web assembly target on top of JVM and native one should be great too.
+- ## ⚖️ IntelliJ since the have a BSP (Build Server Protocol) on top of LSP. Having nice web assembly target on top of JVM and native one should be great too.
 - https://x.com/heyyrudyy404/status/1891852722275504340
 
 # discuss
