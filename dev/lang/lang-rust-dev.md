@@ -56,6 +56,11 @@ modified: 2022-11-11T06:57:09.670Z
 - rustup自带版本管理
   - [Rustup 镜像安装帮助 清华大学开源软件镜像站](https://mirrors.tuna.tsinghua.edu.cn/help/rustup/)
   - [Rust crates.io 索引镜像使用帮助](https://mirrors.tuna.tsinghua.edu.cn/help/crates.io-index.git/)
+
+- [上海交通大学 Linux 用户组 软件源镜像服务](https://mirror.sjtu.edu.cn/docs/rust-static)
+
+- [字节 RsProxy](https://rsproxy.cn/)
+  - ~/.cargo/config
 # dev
 
 # examples
@@ -125,3 +130,12 @@ modified: 2022-11-11T06:57:09.670Z
     - async/await syntax has been stabilized in Rust 1.39.
     - You can use it with the active ecosystem of asynchronous I/O around futures, mio, tokio, and async-std.
 # more
+
+# dev-log
+
+- ## [Regex parse error at tracing-subscriber-0.3.16\src\filter\env\directive.rs:140:10 · Issue #2565 · tokio-rs/tracing _202304](https://github.com/tokio-rs/tracing/issues/2565)
+- Seems like manually enable the `unicode-case` feature in `regex` inside the application `Cargo.toml` would work.
+
+```toml
+regex = { version = "1", features = ["unicode-case"] }
+```
