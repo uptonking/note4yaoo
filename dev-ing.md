@@ -1,6 +1,6 @@
 ---
 title: dev-ing
-tags: [dev-xp, dev，dev-log]
+tags: [dev, dev-log, dev-xp]
 created: 2022-05-24T17:52:58.048Z
 modified: 2022-05-24T17:53:08.400Z
 ---
@@ -330,6 +330,13 @@ add action to create quickSort1.mjs and add 3 test cases in it
 
 - 异常处理增强
   - 观测重要log: RESOURCE_NOT_ENOUGH
+
+## 0410
+
+- 昨天
+  - 跨文件的语法跳转demo实现，进行中80%，处理hover时按住cmd显示下划线的ux
+- 今天
+  - 跨文件的语法跳转demo实现
 
 ## 0409
 

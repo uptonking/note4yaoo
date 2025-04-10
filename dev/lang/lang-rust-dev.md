@@ -130,12 +130,3 @@ modified: 2022-11-11T06:57:09.670Z
     - async/await syntax has been stabilized in Rust 1.39.
     - You can use it with the active ecosystem of asynchronous I/O around futures, mio, tokio, and async-std.
 # more
-
-# dev-log
-
-- ## [Regex parse error at tracing-subscriber-0.3.16\src\filter\env\directive.rs:140:10 · Issue #2565 · tokio-rs/tracing _202304](https://github.com/tokio-rs/tracing/issues/2565)
-- Seems like manually enable the `unicode-case` feature in `regex` inside the application `Cargo.toml` would work.
-
-```toml
-regex = { version = "1", features = ["unicode-case"] }
-```
