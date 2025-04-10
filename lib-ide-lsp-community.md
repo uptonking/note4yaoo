@@ -83,6 +83,28 @@ modified: 2025-01-05T15:00:51.509Z
 - ## ⚖️ IntelliJ since the have a BSP (Build Server Protocol) on top of LSP. Having nice web assembly target on top of JVM and native one should be great too.
 - https://x.com/heyyrudyy404/status/1891852722275504340
 
+# discuss-ts-lsp
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [How would you configure this if you don't have a server? · Issue #20 · FurqanSoftware/codemirror-languageserver _202207](https://github.com/FurqanSoftware/codemirror-languageserver/issues/20)
+- https://gitlab.com/aedge/codemirror-web-workers-lsp-demo
+  - we'll want to add a Web Workers transport to @open-rpc/client-js (there's similar Window and IFrame transports there), then make sure it works if we pass it to the LanguageServerClient.
+
+- ## [how the LSP keeps in sync with the editor text, since it's not in the same "filesystem"? _202103](https://hjr265.me/blog/codemirror-lsp/)
+  - What happens if you have multiple files or "packages"?
+- The thing about being able to manage multiple files did come up previously. As a way to accommodate that use case, the `languageServer` extension allows you to reuse the same `LanguageServerClient` .
+  - You can create a single `LanguageServerClient` instance and use that across multiple `languageServer` extension. Each `languageServer` extension would be responsible for a single file.
+  - You can use those extensions with multiple CodeMirror instances (or the same instance) depending on how your application is set up.
+
+- ## [Is it possible to fallback to global packages when local node_modules is not present ? · typescript-language-server/typescript-language-server _202311](https://github.com/typescript-language-server/typescript-language-server/discussions/798)
+- Try installing @types/node globally
+
 # discuss
 - ## 
 

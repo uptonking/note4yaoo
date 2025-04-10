@@ -83,6 +83,8 @@ modified: 2022-08-18T11:29:26.644Z
   - https://medv.io/codejar/
   - An embeddable code editor for the browser
   - Supports undo/redo
+  - [LiveCodes EditorConfig](https://livecodes.io/docs/api/internal/interfaces/EditorConfig/#editor)
+    - Monaco editor is used on desktop, CodeMirror is used on mobile and CodeJar is used in codeblocks, in lite mode and in readonly playgrounds.
 
 - https://github.com/ghost23/east
   - Playing around with the idea of an AST-based code editor for JavaScript.

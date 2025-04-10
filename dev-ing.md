@@ -331,6 +331,14 @@ add action to create quickSort1.mjs and add 3 test cases in it
 - 异常处理增强
   - 观测重要log: RESOURCE_NOT_ENOUGH
 
+## 0409
+
+- 昨天
+  - 配合quick thread的需求， 更新了驾驶舱的快捷键引导
+  - 跨文件的语法跳转demo实现，进行中70%
+- 今天
+  - 在sdk实现 js 文件内的语法跳转
+
 ## 0407
 
 - 上周

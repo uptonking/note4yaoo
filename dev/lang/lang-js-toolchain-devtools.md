@@ -1,11 +1,11 @@
 ---
-title: thread-lang-js-toolchain
-tags: [lang-js, thread, toolchain]
+title: lang-js-toolchain-devtools
+tags: [devtools, lang-js, thread, toolchain]
 created: 2024-03-17T15:24:08.363Z
-modified: 2024-03-17T15:24:20.824Z
+modified: 2025-04-09T02:49:16.372Z
 ---
 
-# thread-lang-js-toolchain
+# lang-js-toolchain-devtools
 
 # guide
 
@@ -20,7 +20,7 @@ modified: 2024-03-17T15:24:20.824Z
 
 - js的混淆并不是主要为了安全
 - 如果是前端，做什么加密混淆都意义不大
-- The purpose of Uglyfying is just to minify the size of the js file.
+- The purpose of Uglifying is just to minify the size of the js file.
 
 - 想靠“加密”前端代码来获得安全方面的保护，本来就是自欺欺人的做法。 拆穿这个假把式有益帮地球省点能源。
 
@@ -59,7 +59,7 @@ modified: 2024-03-17T15:24:20.824Z
 - The only reason to use jest is to support React component testing, and that's still not a great reason because there are solutions to this problem now that use mocha. Mocha is soo much faster and less complicated. The testing support that Jest provides that Mocha does not can be added in through the use of Sinon and other packages if needed. Jest tries to support too many test needs and does none of them well. I'll never use jest in a project again. Mocha is always the right choice.
 
 - mocha and native assert
-# discuss-tsc
+# discuss-compiler/tsc
 - ## 
 
 - ## 

@@ -340,6 +340,7 @@ modified: 2023-06-23T12:46:53.288Z
   - 依赖codemirror6、@headlessui/react、@reduxjs/toolkit、electron-store、markdown-it、vscode-languageserver-protocol、xterm、xterm-addon-search
   - 🔌 扩展多，包括diffExtension, hackDiff, rejectSuggestionCommand, copilotStatus, updateCommentsEffect
   - AI Features: auto-generated inline diffs and completions, a ChatGPT-style embedded chat, on-hover documentation suggestions
+  - Deep language server support: intellisense, go-to-definition, code actions, linting, symantic syntax highlighting
   - 🍴 forks
   - https://github.com/abdulrahman305/cursor
   - https://github.com/fovi-llc/cursor-codemirror
@@ -1214,7 +1215,7 @@ modified: 2023-06-23T12:46:53.288Z
   - This module uses TypeScript’s public APIs to power its functionality: it doesn't use the Language Server Protocol
     - Most good TypeScript language tooling, like VS Code’s autocompletion, does not use the LSP specification. 
   - [Go to definition · val-town/codemirror-ts _202311](https://github.com/val-town/codemirror-ts/issues/8)
-    - This module currently uses TypeScript, but not the extra language server. It'd probably use the language server if this adopted more of a client-server architecture, or maybe it should in general, but for now, it's integrating with TypeScript, and we'll need to figure out what's under the hood of the LSP adapter's implementation.
+    - 👷202404: This module currently uses TypeScript, but not the extra language server. It'd probably use the language server if this adopted more of a client-server architecture, or maybe it should in general, but for now, it's integrating with TypeScript, and we'll need to figure out what's under the hood of the LSP adapter's implementation.
 
 - https://github.com/modderme123/codemirror-extension-typescript /202310/ts/inactive
   - https://typescript-codemirror.netlify.app/
@@ -1430,6 +1431,24 @@ modified: 2023-06-23T12:46:53.288Z
 
 ## lsp
 
+- https://github.com/typescript-language-server/typescript-language-server /apache2/202409/ts
+  - TypeScript & JavaScript Language Server
+  - Language Server Protocol implementation for TypeScript wrapping `tsserver`.
+  - The core logic for interacting with tsserver is nowadays mostly based on the code of the TypeScript Language Features VSCode bundled extension maintained in vscode.
+
+- https://github.com/FurqanSoftware/codemirror-languageserver /161Star/BSD/202502/ts/inactive
+  - Language Server integration for CodeMirror 6
+  - This plugin enables code completion, hover tooltips, and linter functionality by connecting a CodeMirror 6 editor with a language server over WebSocket.
+  - [Using Language Servers with CodeMirror 6 _202103](https://hjr265.me/blog/codemirror-lsp/)
+  - 🍴 forks
+  - https://github.com/marimo-team/codemirror-languageserver /BSD/202504/ts
+    - https://marimo-team.github.io/codemirror-languageserver/
+    - a fork of FurqanSoftware/codemirror-languageserver with additional features and modernization.
+    - Go to Definition - Jump to symbol definitions
+    - Symbol Renaming - Smart symbol renaming across files
+    - Hover Information - Rich documentation on hover
+  - https://github.com/databutton/codemirror-languageserver /202309/ts
+
 - https://github.com/TypeFox/monaco-languageclient /MIT/202504/ts
   - monaco-languageclient to connect Monaco editor with language servers.
   - monaco-languageclient-examples provides the examples which allows to use them externally.
@@ -1437,23 +1456,16 @@ modified: 2023-06-23T12:46:53.288Z
   - [如何创建集成 LSP 支持多语言的 Web 代码编辑器 - 米开朗基杨 - 博客园 _202309](https://www.cnblogs.com/ryanyangcs/p/17693108.html)
 
 - https://github.com/jackhodkinson/lsp-editor /202407/ts
+  - A simple python code editor with code formatting and linting.
+  - This is a toy experiment to show how to integrate the ruff language server into a code editor.
+  - This editor is built with Electron, CodeMirror, and VS Code's language server client library.
   - [Integrating the ruff language server _202407](https://jack-hodkinson.medium.com/integrating-the-ruff-language-server-4f6b0d126ebd)
-
-- https://github.com/intansemc2/monaco-online-ide /MIT/202410/ts/svelte
-  - This project is a webapp allow user to run code from browser in some languages, include python, c++, java, javascript, php.
-  - This project uses Docker for easy deployment and high compatibility, but it can take a lot of storage
-  - Run code in: python, c++, java, javascript, php
-  - Svelte (SvelteKit): this is the framework for the front-end
-  - Judge0: this is the back-end to run the code
-  - Libraries: monaco-editor, monaco-languageclient, ...
 
 - https://github.com/qualified/lsps /MIT/202206/ts/inactive
   - Use Language Servers with in-browser editors. 
   - Monorepo of **editor agnostic packages and CodeMirror client**.
   - See examples/rust-analyzer to run this locally.
   - See examples/web-worker for an example with simple JSON Language Server running in Web Worker. A live demo is also available at https://qualified.github.io/lsps/.
-
-- https://stackblitz.com/edit/codemirror-6-typescript
 
 - https://github.com/coder0107git/codemirror-web-workers-lsp-demo /202403/ts
   - https://codemirror-web-workers-lsp-demo.coder0107git.v6.rocks/
@@ -1472,14 +1484,6 @@ modified: 2023-06-23T12:46:53.288Z
   - Since LSP uses markdown, you need to provide a function to convert markdown to DOM. A good option is to combine hast-util-to-dom, mdast-util-from-markdown, and mdast-util-to-hast
   - codemirror-languageservice was developed as part of the Transloadit JSON editor.
 
-- https://github.com/FurqanSoftware/codemirror-languageserver /161Star/BSD/202502/ts/inactive
-  - Language Server integration for CodeMirror 6
-  - This plugin enables code completion, hover tooltips, and linter functionality by connecting a CodeMirror 6 editor with a language server over WebSocket.
-  - [Using Language Servers with CodeMirror 6 _202103](https://hjr265.me/blog/codemirror-lsp/)
-  - 🍴 forks
-  - https://github.com/marimo-team/codemirror-languageserver /BSD/202504/ts
-    - a fork of FurqanSoftware/codemirror-languageserver with additional features and modernization.
-  - https://github.com/databutton/codemirror-languageserver /202309/ts
 - https://github.com/lbb00/codemirror-typespec /202409/js
   - This project is a demo of useing Typespec with Codemirror.
   - A Node.js server is running the Typespec compiler language server, connected via codemirror-languageserver, because the @typespec/compiler does not support browser environments.
@@ -1508,7 +1512,36 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/schizobulia/ide-study /202310/js
   - [实现一个简单的ide-demo(未使用codemirror) - 知乎](https://zhuanlan.zhihu.com/p/659653723)
   - id为content的div为显示开发者的输入容器，cursor为光标组件
-  - 先通过node开启一个websocket客户端与lsp-server通信
+  - 先通过node开启一个websocket客户端与lsp-server通信，参考monaco中使用的pyright-langserver
+  - 后端依赖vscode-ws-jsonrpc
+
+- https://github.com/intansemc2/monaco-online-ide /MIT/202410/ts/svelte
+  - This project is a webapp allow user to run code from browser in some languages, include python, c++, java, javascript, php.
+  - This project uses Docker for easy deployment and high compatibility, but it can take a lot of storage
+  - Run code in: python, c++, java, javascript, php
+  - Svelte (SvelteKit): this is the framework for the front-end
+  - Judge0: this is the back-end to run the code
+  - Libraries: monaco-editor, monaco-languageclient, ...
+
+- https://github.com/tbodt/js-langserver /202009/js/inactive
+  - A simple language server for JavaScript, powered by ESLint and Tern.
+  - I made this because sourcegraph/javascript-typescript-langserver is really bad at untyped JavaScript.
+  - [Microsoft Language Server Protocol · Issue · ternjs/tern _201607](https://github.com/ternjs/tern/issues/799)
+  - https://github.com/hsiaosiyuan0/vscode-ternjs
+  - [Is Tern.js library in active development/support? _202208](https://github.com/ternjs/tern/issues/1051)
+    - 👷: I'd recommend going with TypeScript (even if just running it on plain JavaScript) nowadays.
+    - Brackets currently uses a webwoker to host tern and directly uses the is API.
+
+- https://github.com/jupyter-lsp/jupyterlab-lsp /BSD/202503/ts/python
+  - https://jupyterlab-lsp.readthedocs.io/
+  - Coding assistance for JupyterLab (code navigation + hover suggestions + linters + autocompletion + rename) using Language Server Protocol
+  - Jump to Definition and References
+  - 依赖 JupyterLab >=4.1.0, <5.0.0a0, Python 3.9+
+- https://github.com/krassowski/jupyterlab-go-to-definition /BSD/201908/ts/inactive
+  - Navigate to variable's definition with a click in JupyterLab 
+  - 依赖codemirror5、@jupyterlab/application.v1
+- https://github.com/wylieconlon/lsp-editor-adapter
+  - 依赖codemirror5
 
 ## utils-lang
 
@@ -1686,7 +1719,8 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/live-codes/livecodes /933Star/MIT/202503/ts
   - https://livecodes.io/
   - 🧊 A feature-rich, open-source, client-side code playground for React, Vue, Svelte, Solid, Typescript, Python, Go, Ruby, PHP and 80+ languages/frameworks.
-  - 依赖codemirror6、monaco、codejar、codejar、yjs
+  - 依赖codemirror6、monaco-editor、codejar、codejar、yjs
+  - 代码编辑器依赖 monaco-editor, Monaco editor is used on desktop, CodeMirror is used on mobile and CodeJar is used in codeblocks, in lite mode and in readonly playgrounds.
   - Powerful SDK (available for vanilla JavaScript, TypeScript, React, Vue and Svelte)
   - No servers to configure 
   - No databases to maintain 
@@ -1701,6 +1735,9 @@ modified: 2023-06-23T12:46:53.288Z
     - On the contrary, it aims to integrate with as many of these services as their APIs allow.
     - All processing and code transformations run in the browser on the client-side.
     - The LiveCodes app (standalone or self-hosted) can be embedded in any web page.
+  - [Introducing LiveCodes _202308](https://blog.livecodes.io/introducing-livecodes/)
+    - All processing and code transformations run in the browser on the client-side. 
+    - On mobile, a lighter-weight touch-friendly code editor (CodeMirror 6) is used
 
 - https://github.com/oxc-project/oxc/tree/main/website /202306/js/inactive
   - https://oxc-project.github.io/oxc/playground

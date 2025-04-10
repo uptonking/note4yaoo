@@ -23,6 +23,10 @@ modified: 2020-07-14T09:27:30.503Z
   - [Status of Python versions](https://devguide.python.org/versions/)
   - [Download Python | Python.org](https://www.python.org/downloads/)
   - https://github.com/pyenv/pyenv
+
+- resources-python
+  - [Python Cheatsheet](https://www.pythoncheatsheet.org/cheatsheet/basics)
+  - https://github.com/gto76/python-cheatsheet
 # python3
 
 # python2

@@ -14,7 +14,8 @@ modified: 2023-01-07T15:58:14.300Z
 
 ```shell
 
-# 查看端口占用
+# 查看端口占用 linux
+# On macos you can get the PID of the process holding a port using -v
 sudo netstat -tunlp|grep 8000
 sudo lsof -i:8000
  

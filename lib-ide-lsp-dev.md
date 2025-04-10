@@ -24,7 +24,8 @@ modified: 2025-01-05T15:00:07.466Z
 
 
 - language-servers list
-  - [Langserver.org](https://langserver.org/)
+  - [Language Servers](https://microsoft.github.io/language-server-protocol/implementors/servers/)
+  - [Langserver.org by sourcegraph](https://langserver.org/)
 # draft
 
 # dev-xp

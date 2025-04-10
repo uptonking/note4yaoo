@@ -425,6 +425,23 @@ modified: 2021-05-14T15:04:42.225Z
   - Like Node.js, it provides an asynchronous, event-driven architecture for writing applications in the lingua franca of modern software. 
   - Unlike Node.js, it makes embedding and cross-device support core use cases, aiming to run just as well on your phone as on your laptop. 
   - The result is a runtime ideal for networked, peer-to-peer applications that can run on a wide selection of hardware.
+
+- https://github.com/bellard/quickjs /MIT/202504/clang/NoDeps
+  - https://bellard.org/quickjs/
+  - a small and embeddable Javascript engine. 
+  - It supports the ES2023 specification including modules, asynchronous generators, proxies and BigInt.
+  - Fast interpreter with very low startup time: runs the 76000 tests of the ECMAScript Test Suite in less than 2 minutes on a single core of a desktop PC.
+  - Passes nearly 100% of the ECMAScript Test Suite tests when selecting the ES2023 features. 
+  - Garbage collection using reference counting (to reduce memory usage and have deterministic behavior) with cycle removal.
+  - https://github.com/hsiaosiyuan0/slowjs /202312/c/inactive
+    - Learning the awesome QuickJS by extending it with below functionalities
+    - Divide the 5.4W LoC quickjs.c into multiple small files, makes the code easy to browser and navigate
+    - A debugger which supports inline breakpoints and includes web interfaces which is easy to integrate with the Debug Adapter Protocol
+    - Dump the GC managed objects and view the results in the Chrome devtools
+- https://github.com/hsiaosiyuan0/pikajs /202005/ts/inactive
+  - JavaScript Interpreter in TypeScript
+- https://github.com/hsiaosiyuan0/vm-proto /202304/ts/inactive
+  - The vm.ts uses less 200 LoC demonstrates the core mechanism in a virtual machine.
 # pref
 - https://github.com/narutosstudent/load-balancer /202401/ts
   - Built a load balancer from scratch. 

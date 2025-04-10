@@ -14,7 +14,13 @@ modified: 2024-08-11T08:00:00.211Z
 
 - ## 
 
-- ## 
+- ## 📌 [State of LSPs in CodeMirror Reference - discuss.CodeMirror _202408](https://discuss.codemirror.net/t/state-of-lsps-in-codemirror-reference/8601)
+- 
+- 
+- 
+- 
+- 
+- 
 # discuss-lsp-worker
 - ## 
 
@@ -25,6 +31,27 @@ modified: 2024-08-11T08:00:00.211Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [Is there a refactoring extension? - v6 - discuss. CodeMirror _202410](https://discuss.codemirror.net/t/is-there-a-refactoring-extension/8700)
+- A linting extension exists, but not queried via language data (because linting tends to be a whole-document thing starting at the top, rather than contextual). 
+  - Lint diagnostics may include a ‘actions’, which are simply functions called for its side effect, that can be used for refactoring hints. There’s no built-in support for refactoring beyond that.
+
+- ## [Start on supporting autoimports · Pull Request · val-town/codemirror-ts _202412](https://github.com/val-town/codemirror-ts/pull/46)
+  - Start supporting go-to-definition with workers. right now punting(用方头或平底船拖运) on a non-worker implementation. 
+
+- ## [ctrl + click to jump - v6 - discuss. CodeMirror _202312](https://discuss.codemirror.net/t/ctrl-click-to-jump/7613)
+- CodeMirror doesn’t know enough about your code to tell you where a given identifier is defined. If you do have that information, for example by integrating a language server, cursor jumping shouldn’t be hard to implement.
+
+```JS
+view.dispatch({
+  selection: { anchor: targetPosition },
+  scrollIntoView: true
+})
+```
+
+- Use `EditorView.domEventHandlers` to bind an event handler, then `posAtCoords` to find the position at those coordinates, and, probably,  `syntaxTree` and `resolveInner` to figure out what the user clicked on.
 
 - ## [TypeScript integration · codesandbox/sandpack _202112](https://github.com/codesandbox/sandpack/discussions/237)
 - Vocs is solving this elegantly with Twoslash

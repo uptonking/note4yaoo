@@ -65,6 +65,17 @@ modified: 2022-06-03T21:34:54.893Z
   - Professional document exports in multiple formats (.odt, .doc, .pdf) with customizable templates
   - Running Docs locally using the methods described below is for testing purposes only. It is based on building Docs using Minio as the S3 storage solution but you can choose any S3 compatible object storage of your choice.
   - [Docs – Open source alternative to Notion or Outline | Hacker News _202503](https://news.ycombinator.com/item?id=43378239)
+  - 📡 roadmap
+  - [Comments on text editor _202408](https://github.com/suitenumerique/docs/issues/156)
+    - Erwan Legal recommended Hypothes.is. @hypothesis (W3C Web anotation) compatible. Comments are stored in an external database. The service could be used in other softwares.
+    - Comments are out in the latest BlockNotejs release _202503
+  - [Why Yjs server in ts when you can use pycrdt instead ?  _202503](https://github.com/suitenumerique/docs/issues/728)
+    - it seems that the server is written in Django but there is a special server for Yjs written in ts. Pycrdt is used for real-time collaboration in JupyterLab. Pycrdt is being used quite extensively in Jupyter-Collaboration.
+    - The main problem I see is managing a websocket with django. We have to switch to an ASGI application, use django-channels. To scale you have to use the redis backend and there are many issues open about memory leaks. FastAPI is probably a better candidate.
+    - my understanding is that it is not trivial to move to Python for Ydoc because the server needs to understand the BlockNotejs syntax which is custom (for blocks etc.)
+    - `pycrdt-websocket` should be server-agnostic. We use it in jupyter_server which is based on Tornado, and in jupyverse which is based on FastAPI.
+    - 👷 I feel this is a bit outside of my area of expertise tbh. It could be an interesting option - but it might be quite some work (so imo we'd need a strong reason to switch)
+      - If you want to do operations on the document (change it's content) through the BlockNote API, or convert it to / from Markdown / HTML - this is easiest in a Node environment indeed.
 
 - https://github.com/docmost/docmost /AGPL/202503/ts
   - https://docmost.com/
