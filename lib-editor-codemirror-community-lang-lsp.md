@@ -14,13 +14,14 @@ modified: 2024-08-11T08:00:00.211Z
 
 - ## 
 
-- ## 📌 [State of LSPs in CodeMirror Reference - discuss.CodeMirror _202408](https://discuss.codemirror.net/t/state-of-lsps-in-codemirror-reference/8601)
+- ## 📌 [State of LSPs in CodeMirror Reference - discuss. CodeMirror _202408](https://discuss.codemirror.net/t/state-of-lsps-in-codemirror-reference/8601)
 - 
 - 
 - 
 - 
 - 
 - 
+
 # discuss-lsp-worker
 - ## 
 
@@ -32,7 +33,11 @@ modified: 2024-08-11T08:00:00.211Z
 
 - ## 
 
-- ## 
+- ## [Code formatting in code mirror - discuss. CodeMirror _202107](https://discuss.codemirror.net/t/code-formatting-in-code-mirror/3405)
+- I tried several options：
+  - Implemented through LSP, just call the `textDocument/formatting` event Specification
+  - In the node middle tier, prettier and some additional packages (eg sql-format…) are called for code formatting. （Executing autopep8 in node to achieve python code formatting is also an idea）
+  - Use prettier’s browser, unfortunately this doesn’t support all features very well
 
 - ## [Is there a refactoring extension? - v6 - discuss. CodeMirror _202410](https://discuss.codemirror.net/t/is-there-a-refactoring-extension/8700)
 - A linting extension exists, but not queried via language data (because linting tends to be a whole-document thing starting at the top, rather than contextual). 

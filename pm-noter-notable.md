@@ -126,6 +126,7 @@ modified: 2023-11-28T14:48:45.910Z
 
 - inspirations
   - obsidian-mobile, notion-mobile
+  - git-statistics ui
 
 - naming
   - mandroid (from android+manus)

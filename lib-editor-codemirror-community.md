@@ -14,7 +14,15 @@ modified: 2023-01-29T10:52:44.183Z
 
 - ## 
 
-- ## 
+- ## [Troubleshooting article for CM6 - v6 - discuss. CodeMirror _202101](https://discuss.codemirror.net/t/troubleshooting-article-for-cm6/2803)
+  - What was happening was that due to web bundling / dependency resolution, in my case with Snowpack, the externally loaded extension that I was creating was actually importing a wholly separate instance of CM6. 
+  - That means that the treeBuffer object was not an instance of TreeBuffer, it was an instance of another TreeBuffer!
+  - `treeBuffer instanceof TreeBuffer`  is false
+
+- We’ve had issues like that with ProseMirror as well—though they theoretically deduplicate packages when versions are compatible, several tools can still end up needlessly loading multiple instances of a package, and indeed, the failures caused by that are really painful to debug.
+  - I’m not sure what to do about this, beyond removing all uses of `instanceof` (and probably some other constructs, like comparing with singletons) from the codebase, which seems impractical.
+
+- just use the stream parsers in @codemirror/legacy-modes, which have the advantage of actually being incremental.
 
 - ## 💡 [How to get the instance of editor in DOM? - discuss. CodeMirror _202206](https://discuss.codemirror.net/t/how-to-get-the-instance-of-editor-in-dom/4457)
 - EditorView.findFromDOM(htmlDom)
@@ -194,7 +202,7 @@ modified: 2023-01-29T10:52:44.183Z
   - If found, the identifier will be underlined and show a cursor on hover, indicating that a click on the identifier will move the view into the defining location. 
 
 - [Jump to definition: Get it to work for imports · Issue · vizhub-core/vzcode](https://github.com/vizhub-core/vzcode/issues/726)
-  - Ideally (stretch goal) it would open the definition of the exported variable in the other file (e.g. import { foo } from './foo';) - this would only work for local files
+  - Ideally (stretch goal) it would open the definition of the exported variable in the other file (e.g. import { foo } from './foo'; ) - this would only work for local files
   - Initially (easier goal) - it should just jump to the import line (this is all we can do for packages e.g. d3 at the moment)
 # discuss
 - ## 

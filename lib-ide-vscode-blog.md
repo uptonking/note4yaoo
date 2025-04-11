@@ -61,4 +61,9 @@ Working Remotely
 
 # blogs-author/team
 
+# blogs-ide-by-vscode
+
+- [WebIDE 的开发记录其三（editor 集成） | Ubug's playground _202001](https://ubug.io/blog/workpad-part-3)
+  - [WebIDE 的开发记录其六（LSP 支持） | Ubug's playground _202002](https://ubug.io/blog/workpad-part-6)
+
 # more

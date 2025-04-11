@@ -1463,9 +1463,10 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/qualified/lsps /MIT/202206/ts/inactive
   - Use Language Servers with in-browser editors. 
-  - Monorepo of **editor agnostic packages and CodeMirror client**.
+  - Monorepo of **editor agnostic packages and CodeMirror5 client**.
   - See examples/rust-analyzer to run this locally.
   - See examples/web-worker for an example with simple JSON Language Server running in Web Worker. A live demo is also available at https://qualified.github.io/lsps/.
+  - 示例使用 lsp-ws-proxy ， 可参考配置方法
 
 - https://github.com/coder0107git/codemirror-web-workers-lsp-demo /202403/ts
   - https://codemirror-web-workers-lsp-demo.coder0107git.v6.rocks/
@@ -1499,6 +1500,8 @@ modified: 2023-06-23T12:46:53.288Z
   - A minor test of Codemirror
   - https://x.com/SergeiChestakov/status/1486025274240090114
     - I now have a ~relatively~ functional lsp adapter for Codemirror 6, you may want to take a look. The main limitation is recreating a monaco esque environment for Codemirror, e.g. autocomplete doesn't work the same way on Codemirror that it did on Monaco
+- https://github.com/hyrious/cm.ts
+  - Trying to integrate TypeScript language server in CodeMirror 6.
 
 - https://github.com/SilasMarvin/lsp-ai /MIT/202501/rust
   - LSP-AI is an open source language server that serves as a backend for performing completion with large language models and soon other AI powered functionality. 
