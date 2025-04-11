@@ -270,7 +270,7 @@ console.log(';; task ', taskState, runningTaskAction, task?.task_steps)
 
 console.log(';; act-file-o ', currentOpenedActionId, shouldForceOpenFile, actionPath, currentFilePath)
 
-console.log(';; taskActions', currentActionId, path, store.cdePlay.enableDiffView(), taskActions)
+·· console.log(';; taskActions', currentActionId, path, store.cdePlay.enableDiffView(), currentAction, taskActions)
 console.log(';; open-diff ', enableDiffAnimation, store.cdePlay.enableDiffView(), store.cdeReplay.isMachinePaused())
 console.log(';; qryDiffSnap ', snapshotFrameResult)
 console.log(';; qryDiffSnap ', snapshotFrameResult)
@@ -295,11 +295,11 @@ console.trace(';; loadFile', path, loadType);
 ```
 ^(?!42\["resourceM).* 
 
-update package @dao42/clacky-paas-front to next patch version, and add one-line changelog in changelog.md
+add action to add datetime at top of readme
+
 update package @dao42/clacky-paas-front to next patch version, and run pnpm install
 
 add an action to run "npm install -ddd" and another action to add datetime at top of readme.md
-add action to create quickSort1.mjs and add 200 separate test cases with more than 200 lines of code in it, because i want to do performance test.
 add action to create a route /nextjs with nextjs changelog content in it , and show nextjs link in home page, when clicking the link, jump to /nextjs route
 
 add action to create quickSort1.mjs and add 3 test cases in it
@@ -330,6 +330,15 @@ add action to create quickSort1.mjs and add 3 test cases in it
 
 - 异常处理增强
   - 观测重要log: RESOURCE_NOT_ENOUGH
+
+## 0411
+
+- 昨天
+  - 处理发版相关问题，增强端口转发的稳定性，对于一个命令开启多个端口的场景，默认在webview打开小端口
+  - 排查执行task时网络断开后再恢复连接，点击action时diff视图未显示且文件不可编辑的问题
+- 今天
+  - 处理昨晚测试反馈的影响发版的问题，包括root-thread未关闭时可聊天、追加步骤时action的diff显示异常
+  - 继续跨文件的语法跳转demo实现
 
 ## 0410
 
