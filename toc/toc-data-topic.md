@@ -119,6 +119,13 @@ modified: 2020-06-22T09:23:56.117Z
   - 词库经过多轮人工筛选，保证词库收录的准确性
   - 开放更新，将不断更新现有词表，并推出更多类别词表
   - THUOCL面向国内外大学、研究所、企业、机构以及个人免费开放，可用于研究与商业
+# cs
+- https://github.com/breck7/pldb
+  - https://pldb.io/
+  - PLDB is a comprehensive public domain database containing over 135, 000 facts about more than 5, 000 programming languages. 
+  - The project includes both the complete dataset and the website code for pldb.io.
+  - Multiple Export Formats: Access the complete dataset in CSV, TSV, or JSON format
+  - Public Domain: All data and code is freely available for any use
 # box-office
 - daily-realtime
   - [Daily Box Office Chart](https://www.the-numbers.com/daily-box-office-chart)

@@ -1435,16 +1435,22 @@ modified: 2023-06-23T12:46:53.288Z
   - TypeScript & JavaScript Language Server
   - Language Server Protocol implementation for TypeScript wrapping `tsserver`.
   - The core logic for interacting with tsserver is nowadays mostly based on the code of the TypeScript Language Features VSCode bundled extension maintained in vscode.
+  - [How do I spin up a language server and then invoke it using a Code editor like codemirror?? _202309](https://github.com/typescript-language-server/typescript-language-server/discussions/760)
+    - You can use `vscode-jsonrpc` to communicate with the language server in nodejs
 
 - https://github.com/FurqanSoftware/codemirror-languageserver /161Star/BSD/202502/ts/inactive
   - Language Server integration for CodeMirror 6
   - This plugin enables code completion, hover tooltips, and linter functionality by connecting a CodeMirror 6 editor with a language server over WebSocket.
+  - [feat: Transport agnostic _202205](https://github.com/FurqanSoftware/codemirror-languageserver/pull/13)
+    - It now accepts any object implementing `Transport`.
+  - [Sharing lsp clients between mutliple editors _202204](https://github.com/FurqanSoftware/codemirror-languageserver/issues/11)
+    - I have added preliminary support for reusing the LSP client across multiple plugin instances.
   - [Using Language Servers with CodeMirror 6 _202103](https://hjr265.me/blog/codemirror-lsp/)
   - 🍴 forks
   - https://github.com/marimo-team/codemirror-languageserver /BSD/202504/ts
     - https://marimo-team.github.io/codemirror-languageserver/
     - a fork of FurqanSoftware/codemirror-languageserver with additional features and modernization.
-    - Go to Definition - Jump to symbol definitions
+    - ✨ Go to Definition - Jump to symbol definitions
     - Symbol Renaming - Smart symbol renaming across files
     - Hover Information - Rich documentation on hover
   - https://github.com/databutton/codemirror-languageserver /202309/ts
@@ -1455,18 +1461,23 @@ modified: 2023-06-23T12:46:53.288Z
   - [Teaching the Language Server Protocol to Microsoft's Monaco Editor | TypeFox _201704](https://www.typefox.io/blog/teaching-the-language-server-protocol-to-microsofts-monaco-editor/)
   - [如何创建集成 LSP 支持多语言的 Web 代码编辑器 - 米开朗基杨 - 博客园 _202309](https://www.cnblogs.com/ryanyangcs/p/17693108.html)
 
+- https://github.com/qualified/lsps /MIT/202206/ts/inactive
+  - Use Language Servers with in-browser editors. 
+  - Monorepo of **editor agnostic packages and CodeMirror5 client**.
+  - ✨ 支持多种编辑器，示例使用CodeMirror5
+  - See examples/rust-analyzer to run this locally.
+  - See examples/web-worker for an example with simple JSON Language Server running in Web Worker. A live demo is also available at https://qualified.github.io/lsps/.
+  - 示例使用 lsp-ws-proxy ， 可参考配置方法
+  - [Codemirror v6 support? _202310](https://github.com/qualified/lsps/issues/109)
+    - Are there any plans to integrate CodeMirror v6 support?
+    - No, there's no plan to make this support CodeMirror v6 because the APIs are incompatible. It's probably easier to create a new project instead. 
+    - I'm not sure if there are packages supporting multiple editors like ours, but I've seen a few packages providing Language Server support for CM6, so you might want to check them out.
+
 - https://github.com/jackhodkinson/lsp-editor /202407/ts
   - A simple python code editor with code formatting and linting.
   - This is a toy experiment to show how to integrate the ruff language server into a code editor.
   - This editor is built with Electron, CodeMirror, and VS Code's language server client library.
   - [Integrating the ruff language server _202407](https://jack-hodkinson.medium.com/integrating-the-ruff-language-server-4f6b0d126ebd)
-
-- https://github.com/qualified/lsps /MIT/202206/ts/inactive
-  - Use Language Servers with in-browser editors. 
-  - Monorepo of **editor agnostic packages and CodeMirror5 client**.
-  - See examples/rust-analyzer to run this locally.
-  - See examples/web-worker for an example with simple JSON Language Server running in Web Worker. A live demo is also available at https://qualified.github.io/lsps/.
-  - 示例使用 lsp-ws-proxy ， 可参考配置方法
 
 - https://github.com/coder0107git/codemirror-web-workers-lsp-demo /202403/ts
   - https://codemirror-web-workers-lsp-demo.coder0107git.v6.rocks/
@@ -1489,7 +1500,7 @@ modified: 2023-06-23T12:46:53.288Z
   - This project is a demo of useing Typespec with Codemirror.
   - A Node.js server is running the Typespec compiler language server, connected via codemirror-languageserver, because the @typespec/compiler does not support browser environments.
 
-- https://github.com/marc2332/lsp-codemirror /ISC/202008/ts/UNMAINTAINED
+- https://github.com/marc2332/lsp-codemirror /ISC/202008/ts/codemirror5
   - LSP integration for CodeMirror
   - Support for custom autocompletion dropmenus
 - https://github.com/alanko0511/codemirror-editor-experiment
@@ -1543,8 +1554,16 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/krassowski/jupyterlab-go-to-definition /BSD/201908/ts/inactive
   - Navigate to variable's definition with a click in JupyterLab 
   - 依赖codemirror5、@jupyterlab/application.v1
-- https://github.com/wylieconlon/lsp-editor-adapter
+- https://github.com/wylieconlon/lsp-editor-adapter /ISC/201911/ts/inactive
+  - connect a CodeMirror document to a language server over WebSockets
   - 依赖codemirror5
+  - https://github.com/lukehaas/lsp-codemirror /202503/ts/CodeMirror5
+    - a more updated and better version of the original client
+    - https://github.com/lukehaas/lsp-codemirror-debug
+
+- https://github.com/RahulBadenkal/ide /202410/ts/inactive
+  - A real-time collaborative platform that combines a whiteboard, code editor and workspace sharing for seamless teamwork - all in one place
+  - improving the editor capabilities by adding LSP support
 
 ## utils-lang
 
@@ -1683,6 +1702,7 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/solidjs-community/solid-playground-editor-cm /MIT/202302/ts/inactive
   - https://solidjs-community.github.io/solid-playground-editor-cm/
   - codemirror6-based editor with typescript support for the solid.js playground
+  - 依赖codemirror6、solid-js1、typescript-language-server
 
 - https://github.com/munshkr/flok /GPLv3/202404/ts
   - https://flok.cc/

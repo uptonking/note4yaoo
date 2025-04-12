@@ -90,7 +90,10 @@ modified: 2025-01-05T15:00:51.509Z
 
 - ## 
 
-- ## 
+- ## [How does filename work? · Issue #8 · FurqanSoftware/codemirror-languageserver _202201](https://github.com/FurqanSoftware/codemirror-languageserver/issues/8)
+- A language server usually keeps a virtual representation of a workspace within its state. And, in that workspace, your files need names. 
+  - Even if you are dealing with just a single file, give it any arbitrary and reasonable name.
+  - For example, you can just name the file "main.cpp" in the case of a C++ source file.
 
 - ## [How would you configure this if you don't have a server? · Issue #20 · FurqanSoftware/codemirror-languageserver _202207](https://github.com/FurqanSoftware/codemirror-languageserver/issues/20)
 - https://gitlab.com/aedge/codemirror-web-workers-lsp-demo
