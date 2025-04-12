@@ -127,6 +127,7 @@ modified: 2023-11-28T14:48:45.910Z
 - inspirations
   - obsidian-mobile, notion-mobile
   - git-statistics ui
+  - auto generate cover by content/fields
 
 - naming
   - mandroid (from android+manus)

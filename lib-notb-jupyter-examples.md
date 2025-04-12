@@ -151,6 +151,25 @@ modified: 2024-06-30T03:20:21.444Z
   - 依赖codemirror
   - Srcbook creates folders on your local machine and provides a web interface (also running locally) as a programming environment.
   - Srcbooks export to markdown using the `.src.md` extension
+
+- https://github.com/marimo-team/marimo /apache2/202504/python/ts
+  - https://marimo.io/
+  - A reactive Python notebook that's reproducible, git-friendly, and deployable as scripts or apps.
+  - marimo notebooks are stored as pure Python, executable as scripts, and deployable as apps.
+    - notebooks are stored as `.py` files
+  - reactive: run a cell, and marimo reactively runs all dependent cells or marks them as stale
+    - Performant runtime. marimo runs only those cells that need to be run by statically analyzing your code.
+    - Notebooks are executed in a deterministic order, based on variable references instead of cells' positions on the page. 
+  - reproducible: no hidden state, deterministic execution, built-in package management
+    - marimo has built-in support for all major package managers, letting you install packages on import. 
+  - shareable: deploy as an interactive web app or slides, run in the browser via WASM
+  - designed for data: query dataframes and databases with SQL, filter and search dataframes
+  - 🧩 marimo is a reinvention of the Python notebook as a reproducible, interactive, and shareable Python program, instead of an error-prone JSON scratchpad.
+    - Our inspiration comes from many places and projects, especially Pluto.jl, ObservableHQ, and Bret Victor's essays.
+    - marimo is part of a greater movement toward reactive dataflow programming. From IPyflow, streamlit, TensorFlow, PyTorch, JAX, and React, the ideas of functional, declarative, and reactive programming are transforming a broad range of tools for the better.
+
+- https://github.com/alishobeiri/thread /AGPL/202410/ts/js/inactive
+  - AI-powered Jupyter Notebook — use local AI to generate and edit code cells, automatically fix errors, and chat with your data
 # jupyter-gis
 - https://github.com/GispoCoding/geoviz-notebooks /MIT/202406/jupyter
   - Python tool for analyzing geospatial data in cities.

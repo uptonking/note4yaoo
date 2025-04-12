@@ -201,6 +201,18 @@ modified: 2022-11-09T11:53:13.093Z
 - https://github.com/maqi1520/mdx-notes /GPL/202410/ts/web+pc/inactive
   - https://mdxnotes.com/
   - 跨平台笔记软件，公众号排版编辑器，使用MDX来排版
+
+- https://github.com/antmicro/myst-editor /apache2/202504/ts/js
+  - https://antmicro.github.io/myst-editor/
+  - a Markdown web editor that uses the MyST Markdown flavor. 
+  - It is implemented as a Preact component. 
+  - The intended way to use it is by embedding the editor in various websites/webapps. 
+  - 依赖yjs、y-websocket、preact、codemirror6、markdown-it
+  - It is written with collaborative editing in mind.
+  - Live preview and dual pane sync
+  - Comments
+  - You can use the diff view to see exactly what changes 
+  - There is an additional wrapper around the base editor that is meant to be easy to integrate with Git version control.
 # md-app
 - https://github.com/1943time/bluestone /AGPLv3/202403/ts
   - https://www.bluemd.me/

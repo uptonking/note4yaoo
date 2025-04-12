@@ -346,6 +346,8 @@ modified: 2023-06-23T12:46:53.288Z
   - https://github.com/fovi-llc/cursor-codemirror
   - https://github.com/kumar045/cursor-codemirror
   - https://github.com/carloslfu/cursor-old
+  - https://github.com/tyyxuhao/cursor
+    - 专为 AI 编程而生的编辑器
   - https://github.com/beachstrider/cursor-assist-electron-openai /202303/ts/inactive
     - This is an OpenAI based code editor built for pair programming with AI
 
@@ -1431,13 +1433,6 @@ modified: 2023-06-23T12:46:53.288Z
 
 ## lsp
 
-- https://github.com/typescript-language-server/typescript-language-server /apache2/202409/ts
-  - TypeScript & JavaScript Language Server
-  - Language Server Protocol implementation for TypeScript wrapping `tsserver`.
-  - The core logic for interacting with tsserver is nowadays mostly based on the code of the TypeScript Language Features VSCode bundled extension maintained in vscode.
-  - [How do I spin up a language server and then invoke it using a Code editor like codemirror?? _202309](https://github.com/typescript-language-server/typescript-language-server/discussions/760)
-    - You can use `vscode-jsonrpc` to communicate with the language server in nodejs
-
 - https://github.com/FurqanSoftware/codemirror-languageserver /161Star/BSD/202502/ts/inactive
   - Language Server integration for CodeMirror 6
   - This plugin enables code completion, hover tooltips, and linter functionality by connecting a CodeMirror 6 editor with a language server over WebSocket.
@@ -1454,12 +1449,27 @@ modified: 2023-06-23T12:46:53.288Z
     - Symbol Renaming - Smart symbol renaming across files
     - Hover Information - Rich documentation on hover
   - https://github.com/databutton/codemirror-languageserver /202309/ts
+- https://github.com/guanyou-git/codemirror-react-test /202107/python/js/inactive
+  - Dockerized codemirror, pyls application
+  - https://github.com/BX-Coding/python-lsp-server-docker
+  - https://github.com/BX-Coding/patch-ide
 
 - https://github.com/TypeFox/monaco-languageclient /MIT/202504/ts
   - monaco-languageclient to connect Monaco editor with language servers.
   - monaco-languageclient-examples provides the examples which allows to use them externally.
   - [Teaching the Language Server Protocol to Microsoft's Monaco Editor | TypeFox _201704](https://www.typefox.io/blog/teaching-the-language-server-protocol-to-microsofts-monaco-editor/)
   - [如何创建集成 LSP 支持多语言的 Web 代码编辑器 - 米开朗基杨 - 博客园 _202309](https://www.cnblogs.com/ryanyangcs/p/17693108.html)
+
+- https://github.com/remcohaszing/codemirror-languageservice /MIT/202408/ts
+  - https://codemirror-languageservice.js.org/
+  - https://codemirror-languageservice.js.org/typescript
+  - Integrate a Language Server Protocol compatible language service into CodeMirror
+  - 🌰 This demo shows how you can integrate an LSP based language service into CodeMirror.
+    - The completion source autocompletes words based on the words in the document and the character typed.
+    - The hover tooltip source shows a tooltip which displays the word you’re hovering over.
+    - The lint source shows diagnostics for the words hint, info, warning, error, unnecessary, and deprecated.
+  - Since LSP uses markdown, you need to provide a function to convert markdown to DOM. A good option is to combine hast-util-to-dom, mdast-util-from-markdown, and mdast-util-to-hast
+  - codemirror-languageservice was developed as part of the Transloadit JSON editor.
 
 - https://github.com/qualified/lsps /MIT/202206/ts/inactive
   - Use Language Servers with in-browser editors. 
@@ -1473,35 +1483,44 @@ modified: 2023-06-23T12:46:53.288Z
     - No, there's no plan to make this support CodeMirror v6 because the APIs are incompatible. It's probably easier to create a new project instead. 
     - I'm not sure if there are packages supporting multiple editors like ours, but I've seen a few packages providing Language Server support for CM6, so you might want to check them out.
 
-- https://github.com/jackhodkinson/lsp-editor /202407/ts
+- https://github.com/wylieconlon/lsp-editor-adapter /ISC/201911/ts/inactive
+  - connect a CodeMirror document to a language server over WebSockets
+  - 依赖codemirror5
+  - https://github.com/wylieconlon/codemirror-lsp-example
+    - CodeMirror connected to remotely-hosted language server over Web Socket
+  - https://github.com/lukehaas/lsp-codemirror /202503/ts/CodeMirror5
+    - a more updated and better version of the original client
+    - https://github.com/lukehaas/lsp-codemirror-debug
+
+- https://github.com/jackhodkinson/lsp-editor /202407/ts/electron
   - A simple python code editor with code formatting and linting.
   - This is a toy experiment to show how to integrate the ruff language server into a code editor.
   - This editor is built with Electron, CodeMirror, and VS Code's language server client library.
   - [Integrating the ruff language server _202407](https://jack-hodkinson.medium.com/integrating-the-ruff-language-server-4f6b0d126ebd)
+  - https://github.com/rice-cracker-dev/electron-codemirror-lua-example
 
 - https://github.com/coder0107git/codemirror-web-workers-lsp-demo /202403/ts
   - https://codemirror-web-workers-lsp-demo.coder0107git.v6.rocks/
-  - Demo of using a Web Worker LSP in CodeMirror 6
+  - Demo of using a Web Worker LSP in CodeMirror 6， 示例是json格式
   - 实现了ipc通信/补全，未实现lint
+  - 依赖codemirror-languageserver、@codemirror/lang-json、svelte4、svelte-codemirror-editor
   - This is a fork of https://gitlab.com/aedge/codemirror-web-workers-lsp-demo /202301
 
-- https://github.com/remcohaszing/codemirror-languageservice /MIT/202408/ts
-  - https://codemirror-languageservice.js.org/
-  - https://codemirror-languageservice.js.org/typescript
-  - Integrate a Language Server Protocol compatible language service into CodeMirror
-  - 🌰 This demo shows how you can integrate an LSP based language service into CodeMirror.
-    - The completion source autocompletes words based on the words in the document and the character typed.
-    - The hover tooltip source shows a tooltip which displays the word you’re hovering over.
-    - The lint source shows diagnostics for the words hint, info, warning, error, unnecessary, and deprecated.
-  - Since LSP uses markdown, you need to provide a function to convert markdown to DOM. A good option is to combine hast-util-to-dom, mdast-util-from-markdown, and mdast-util-to-hast
-  - codemirror-languageservice was developed as part of the Transloadit JSON editor.
+- https://github.com/ConorBobbleHat/codemirror-clangd-demo /202303/ts/inactive
+  - https://conorbobblehat.github.io/codemirror-clangd-demo/
+  - clangd, but in the browser
+
+- https://github.com/AlecDivito/forge-editor /202503/ts
+  - what if we had a editor in the browser that anyone could visit and just start programming. 
+  - The "editor" would run on the server and use a LSP-like protocol to communicate between the client and the server using websockets. 
+  - You need to setup redis, S3 server
 
 - https://github.com/lbb00/codemirror-typespec /202409/js
   - This project is a demo of useing Typespec with Codemirror.
   - A Node.js server is running the Typespec compiler language server, connected via codemirror-languageserver, because the @typespec/compiler does not support browser environments.
 
 - https://github.com/marc2332/lsp-codemirror /ISC/202008/ts/codemirror5
-  - LSP integration for CodeMirror
+  - LSP integration for CodeMirror5
   - Support for custom autocompletion dropmenus
 - https://github.com/alanko0511/codemirror-editor-experiment
   - CodeMirror + TypeScript (experiment)
@@ -1554,16 +1573,20 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/krassowski/jupyterlab-go-to-definition /BSD/201908/ts/inactive
   - Navigate to variable's definition with a click in JupyterLab 
   - 依赖codemirror5、@jupyterlab/application.v1
-- https://github.com/wylieconlon/lsp-editor-adapter /ISC/201911/ts/inactive
-  - connect a CodeMirror document to a language server over WebSockets
-  - 依赖codemirror5
-  - https://github.com/lukehaas/lsp-codemirror /202503/ts/CodeMirror5
-    - a more updated and better version of the original client
-    - https://github.com/lukehaas/lsp-codemirror-debug
 
 - https://github.com/RahulBadenkal/ide /202410/ts/inactive
   - A real-time collaborative platform that combines a whiteboard, code editor and workspace sharing for seamless teamwork - all in one place
   - improving the editor capabilities by adding LSP support
+
+- https://github.com/snuffyDev/svelte-language-server-web /MIT/202408/ts/inactive
+  - https://svelte-language-server-web.vercel.app/
+  - Svelte language server within a web worker.
+  - Based on/inspired by: https://github.com/asafamr/monaco-svelte/
+  - Editor-agnostic, use with Monaco, VSCode Web, CodeMirror...
+  - Essentially this repo emulates Node.js wherever it can, otherwise it will just do a barebones shim so that 'it works'.
+
+- https://github.com/dirkarnez/go-lsp-playground /202501/go
+  - go-lsp-playground
 
 ## utils-lang
 
@@ -2305,6 +2328,7 @@ modified: 2023-06-23T12:46:53.288Z
   - Cody is currently in Beta and available for VS Code and JetBrains.
   - 👣 Swappable LLMs: Support for Anthropic Claude, Claude 2, and OpenAI GPT-4/3.5, with more coming soon.
   - You can use Cody Free or Cody Pro when Codying on your work code.
+  - Cody is available for VS Code, JetBrains, and on the web.
 
 - https://github.com/do-me/SemanticFinder /MIT/202405/js
   - https://do-me.github.io/SemanticFinder/
