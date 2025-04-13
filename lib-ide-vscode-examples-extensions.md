@@ -535,6 +535,12 @@ modified: 2024-08-24T16:17:26.715Z
 - https://github.com/gitkraken/vscode-gitlens /MIT+Plus/202501/ts
   - http://gitkraken.com/gitlens
   - Supercharge Git inside VS Code and unlock untapped knowledge within each repository
+  - ⏳ Interactive Code History
+  - Accelerate PR Reviews
+  - Side Bar Views
+  - Interactive Rebase Editor
+  - 🍴 forks
+  - https://github.com/maattdd/vscode-gitlens /202203/ts/inactive
 
 - https://github.com/MichaelCurrin/auto-commit-msg /ts
   - A VS Code extension to generate a smart commit message based on file changes

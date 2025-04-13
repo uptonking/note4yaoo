@@ -125,6 +125,19 @@ git reset --hard <commitId> && git clean -f -d
 # 
 git checkout -b old-state 0d1d7fc32
 
+# show commits by author 默认大小写敏感
+# git log: it is always case sensitive; to make case-insensitive
+# git config core.pager "less -IR -" 
+
+# 默认按author排序，但不显示datetime
+git shortlog 
+
+git log --author="\(uptonking\)\|\(Jin\)"  --pretty=format:"%h - %an, %ar : %s"
+gitk --author="\(uptonking\)\|\(Jin\)"  --pretty=format:"%h - %an, %ar : %s"
+# exclude commits by author
+gitk --perl-regexp --author='^(?!joe)'
+gitk --perl-regexp --author='^(?!jack|jill)'
+
 ```
 
 - merge相关

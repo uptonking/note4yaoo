@@ -60,12 +60,12 @@ modified: 2024-01-02T07:50:05.847Z
 - v8.3.0_20211209
   - introduces `overrides`: provide a way to replace a package in your dependency tree with another version
 
-## v7.0.0_20201013
+## v7.0.0_20201013 (对应node.v14)
 
 - [Presenting v7.0.0 of the npm CLI_202010](https://github.blog/2020-10-13-presenting-v7-0-0-of-the-npm-cli/)
 - npm 7 comes with some long-awaited and requested features including:
   - Workspaces
-  - package-lock v2 and support for yarn.lock
+  - ✨ package-lock v2 and support for yarn.lock. Prior to npm 7 yarn.lock files were ignored, the npm cli can now use yarn.lock as source of package metadata and resolution guidance.
   - Automatically installing peer dependencies
 - The internals of npm have been significantly refactored for separating concerns. 
   - the inspection and management of the node_modules tree has been moved to the module Arborist

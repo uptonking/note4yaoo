@@ -58,9 +58,6 @@ modified: 2024-08-24T16:15:11.456Z
   - editor-control MCP, 让ai操作编辑器的协议，可参考browser-use
   - mcp for drawio
 
-- extension
-  - github repo的insights统计可实现为vscode扩展，如contributor/LOC-by-lang
-
 - integrations
   - notion database
 
@@ -75,6 +72,18 @@ modified: 2024-08-24T16:15:11.456Z
 
 - ecosystem-bridged-to-zed
   - lsp
+
+## extensions
+
+- gitLens pro
+  - gitLens for data/docs, **without vscode**
+
+- github repo的insights统计可实现为vscode扩展，如contributor/LOC-by-lang
+  - 🔍 可在 git graph 的基础上实现，提供表格快速filter/group/合并author
+  - 可参考 pingcap/ossinsight, chrome-history-trends
+
+- file-tree
+  - 类似github的目录视图，方便查看修改日期和commit-message
 
 ## ci/cd
 

@@ -121,6 +121,46 @@ git log --online --graph --decorate
 
 - ## 
 
+- ## [Case Insensitive Search on Git log comments - Stack Overflow](https://stackoverflow.com/questions/77910421/case-insensitive-search-on-git-log-comments)
+  - 'git log' it is always case sensitive. Which make it difficult to find the relevant text. 
+
+- git log typically sends its output to a pager program, you can use that to search.
+- Git does not use vim as a pager by default, it uses less.
+  - you can use -i or -I (they're subtly different) to make less searches ignore case.
+  - You can set the `LESS` environment variable to -i or -I, then less searches are case-insensitive by default everywhere. 
+  - Or set `core.pager` to less -i or less -I so only it is only case-insensitive with Git.
+
+- 另一种方式 `git log -i --author=jin`  ; 
+  - -i, --regexp-ignore-case: Match the regular expression limiting patterns without regard to letter case.
+
+- ## 🆚 [Gitk vs Git Gui | Atlassian](https://www.atlassian.com/git/tutorials/gitk)
+- Gitk can be thought of as a GUI wrapper for git log. 
+  - It’s written in tcl/tk which makes it portable across operating systems.
+  - Gitk will reflect the current state of the repository. If the repository state is modified through separate command line usage like changing branches Gitk will need to be reloaded.
+
+- Git Gui is another Tcl/Tk based graphical user interface to Git. 
+  - Whereas Gitk focuses on navigating and visualizing the history of a repository, Git Gui focuses on refining individual commits, single file annotation and does not show project history. 
+  - Git Gui also supplies menu actions to launch Gitk for history exploration.
+
+- [git-gui Documentation](https://git-scm.com/docs/git-gui)
+  - git gui focuses on allowing users to make changes to their repository by making new commits, amending existing ones, creating branches, performing local merges, and fetching/pushing to remote repositories.
+  - Unlike gitk, git gui focuses on commit generation and single file annotation and does not show project history. 
+  - It does however supply menu actions to start a gitk session from within git gui.
+
+- ## [How can I view a git log of just one user's commits? - Stack Overflow](https://stackoverflow.com/questions/4259996/how-can-i-view-a-git-log-of-just-one-users-commits)
+
+```sh
+# You don't need to use the whole name. The quotes are optional if you don't need any spaces.
+# Add --all if you intend to search all branches and not just the current commit's ancestors in your repo.
+git log --author=Jon
+git log --author="Jon"
+gitk --author=Jon
+
+# You can also easily match on multiple authors as regex is the underlying mechanism for this filter.
+git log --author="\(Adam\)\|\(Jon\)"
+
+```
+
 - ## 如果经常在终端上操作 Git 可以安装这款实用的命令行工具：git-who。
 - https://x.com/GitHub_Daily/status/1902918146782269478
   - 与 git blame 只能告诉你某行代码的作者不同，它能够解答 “谁写的这段代码？”，可以展示整个组件或子系统的责任人，而非针对单个文件。

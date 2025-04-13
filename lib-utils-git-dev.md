@@ -62,14 +62,23 @@ modified: 2023-08-29T10:11:26.348Z
   - [精通Git | 汪图南](https://wangtunan.github.io/blog/books/git/)
 # draft
 - git的commit-message经常查看，但修改不方便
+  - 对于内容较多的commit message，可以设计一个编辑器
 
 - git checkout在敏感操作前需确认
+
+- gitLens without vscode
+
+- 
+- 
+- 
+- 
+
 # rewrite
 - 在实现branching时使用structural sharing，尽可能复用数据
 
 - event/patch-based
 
-- [Write yourself a Git!](https://wyag.thb.lt/)
+- [Write yourself a Git](https://wyag.thb.lt/)
 # fossil
 - features
   - 支持离线编辑和合并，可以基于通用的数据结构和传输协议自己实现

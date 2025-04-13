@@ -1434,7 +1434,7 @@ modified: 2023-06-23T12:46:53.288Z
 ## lsp
 
 - https://github.com/FurqanSoftware/codemirror-languageserver /161Star/BSD/202502/ts/inactive
-  - Language Server integration for CodeMirror 6
+  - Language Server integration for CodeMirror6
   - This plugin enables code completion, hover tooltips, and linter functionality by connecting a CodeMirror 6 editor with a language server over WebSocket.
   - [feat: Transport agnostic _202205](https://github.com/FurqanSoftware/codemirror-languageserver/pull/13)
     - It now accepts any object implementing `Transport`.
@@ -1450,7 +1450,7 @@ modified: 2023-06-23T12:46:53.288Z
     - Hover Information - Rich documentation on hover
   - https://github.com/databutton/codemirror-languageserver /202309/ts
 - https://github.com/guanyou-git/codemirror-react-test /202107/python/js/inactive
-  - Dockerized codemirror, pyls application
+  - Dockerized codemirror6, pyls application
   - https://github.com/BX-Coding/python-lsp-server-docker
   - https://github.com/BX-Coding/patch-ide
 
@@ -1463,7 +1463,7 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/remcohaszing/codemirror-languageservice /MIT/202408/ts
   - https://codemirror-languageservice.js.org/
   - https://codemirror-languageservice.js.org/typescript
-  - Integrate a Language Server Protocol compatible language service into CodeMirror
+  - Integrate a Language Server Protocol compatible language service into CodeMirror6
   - 🌰 This demo shows how you can integrate an LSP based language service into CodeMirror.
     - The completion source autocompletes words based on the words in the document and the character typed.
     - The hover tooltip source shows a tooltip which displays the word you’re hovering over.
@@ -1475,9 +1475,9 @@ modified: 2023-06-23T12:46:53.288Z
   - Use Language Servers with in-browser editors. 
   - Monorepo of **editor agnostic packages and CodeMirror5 client**.
   - ✨ 支持多种编辑器，示例使用CodeMirror5
+  - 示例使用 lsp-ws-proxy ， 可参考配置方法
   - See examples/rust-analyzer to run this locally.
   - See examples/web-worker for an example with simple JSON Language Server running in Web Worker. A live demo is also available at https://qualified.github.io/lsps/.
-  - 示例使用 lsp-ws-proxy ， 可参考配置方法
   - [Codemirror v6 support? _202310](https://github.com/qualified/lsps/issues/109)
     - Are there any plans to integrate CodeMirror v6 support?
     - No, there's no plan to make this support CodeMirror v6 because the APIs are incompatible. It's probably easier to create a new project instead. 
@@ -1486,8 +1486,17 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/wylieconlon/lsp-editor-adapter /ISC/201911/ts/inactive
   - connect a CodeMirror document to a language server over WebSockets
   - 依赖codemirror5
+  - 示例使用 jsonrpc-ws-proxy, 可参考配置方法，但使用的是旧版 javascript-typescript-langserver
   - https://github.com/wylieconlon/codemirror-lsp-example
     - CodeMirror connected to remotely-hosted language server over Web Socket
+  - 🍴 forks
+  - https://github.com/goorm-dev/lsp-editor-adapter /202111
+  - https://github.com/krassowski/lsp-ws-connection /201910
+
+- https://github.com/marc2332/lsp-codemirror /ISC/202008/ts/codemirror5
+  - LSP integration for CodeMirror5
+  - Support for custom autocompletion dropmenu
+  - 🍴 forks
   - https://github.com/lukehaas/lsp-codemirror /202503/ts/CodeMirror5
     - a more updated and better version of the original client
     - https://github.com/lukehaas/lsp-codemirror-debug
@@ -1519,9 +1528,6 @@ modified: 2023-06-23T12:46:53.288Z
   - This project is a demo of useing Typespec with Codemirror.
   - A Node.js server is running the Typespec compiler language server, connected via codemirror-languageserver, because the @typespec/compiler does not support browser environments.
 
-- https://github.com/marc2332/lsp-codemirror /ISC/202008/ts/codemirror5
-  - LSP integration for CodeMirror5
-  - Support for custom autocompletion dropmenus
 - https://github.com/alanko0511/codemirror-editor-experiment
   - CodeMirror + TypeScript (experiment)
 
@@ -1530,7 +1536,7 @@ modified: 2023-06-23T12:46:53.288Z
   - A minor test of Codemirror
   - https://x.com/SergeiChestakov/status/1486025274240090114
     - I now have a ~relatively~ functional lsp adapter for Codemirror 6, you may want to take a look. The main limitation is recreating a monaco esque environment for Codemirror, e.g. autocomplete doesn't work the same way on Codemirror that it did on Monaco
-- https://github.com/hyrious/cm.ts
+- https://github.com/hyrious/cm.ts /202401/ts/基于worker实现
   - Trying to integrate TypeScript language server in CodeMirror 6.
 
 - https://github.com/SilasMarvin/lsp-ai /MIT/202501/rust

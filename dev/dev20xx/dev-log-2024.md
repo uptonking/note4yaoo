@@ -3392,6 +3392,8 @@ set NODE_OPTIONS=--openssl-legacy-provider
 npm start
 ```
 
+- again20250413
+  - 使用 node v16 也可解决问题
 ## 0117
 
 - [ERR_IMPORT_ASSERTION_TYPE_MISSING for import of json file - Stack Overflow](https://stackoverflow.com/questions/70106880/err-import-assertion-type-missing-for-import-of-json-file)

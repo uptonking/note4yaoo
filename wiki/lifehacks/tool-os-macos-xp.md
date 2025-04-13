@@ -97,6 +97,9 @@ modified: 2023-07-23T07:05:19.441Z
 
 ## devtools
 
+- terminal
+  - fn + shift + ArrowLeft/Right 让光标跳到行首/行尾
+
 - gpg
   - [Generating a new GPG key - GitHub Docs](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key)
   - [Generating a new SSH key and adding it to the ssh-agent - GitHub Docs](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)

@@ -331,6 +331,16 @@ add action to create quickSort1.mjs and add 3 test cases in it
 - 异常处理增强
   - 观测重要log: RESOURCE_NOT_ENOUGH
 
+## 0413
+
+- 昨天
+  - 调整quick thread的入口及交互
+  - 解决root thread未close时， 聊天输入框可输入可发送信息的问题
+  - 解决 追加步骤时，第一个action的diff显示异常的问题
+- 今天
+  - ~~处理执行命令一个打开多个端口时，webview的url会多次变化的问题~~
+  - 继续跨文件的语法跳转demo实现
+
 ## 0411
 
 - 昨天
