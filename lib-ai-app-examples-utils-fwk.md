@@ -65,6 +65,11 @@ modified: 2025-02-21T18:20:42.624Z
   - https://browser-use.com/
   - Enable AI to control your browser
   - [Pack 拆解 browser-use 项目 ](https://quaily.com/silico-anatomy/packs/110)
+- https://github.com/browser-use/web-ui /MIT/202504/python
+  - This project builds upon the foundation of the browser-use, which is designed to make websites accessible for AI agents.
+  - WebUI: is built on Gradio and supports most of browser-use functionalities.
+  - support for various Large Language Models (LLMs), including: Google, OpenAI, Azure OpenAI, Anthropic, DeepSeek, Ollama etc. 
+  - You can choose to keep the browser window open between AI tasks, allowing you to see the complete history and state of AI interactions.
 
 - https://github.com/microsoft/playwright-mcp /apache2/202503/ts
   - A Model Context Protocol (MCP) server that provides browser automation capabilities using Playwright. 
@@ -88,7 +93,7 @@ modified: 2025-02-21T18:20:42.624Z
     - This project builds upon and extends the capabilities of Qwen2-VL, a powerful vision-language model, which serves as the foundational architecture for UI-TARS. 
   - https://github.com/web-infra-dev/Midscene /MIT/ts
     - open-source web automation SDK that has supported UI-TARS model. 
-    - Midscene.js lets AI be your browser operator.Just describe what you want to do in natural language, and it will help you operate web pages, validate content, and extract data. 
+    - Midscene.js lets AI be your browser operator. Just describe what you want to do in natural language, and it will help you operate web pages, validate content, and extract data. 
     - Besides the default model GPT-4o, we have added two new recommended open-source models to Midscene.js: UI-TARS and Qwen2.5-VL. (Yes, Open Source !) 
     - Supports Puppeteer and Playwright integration, allowing you to combine AI capabilities with these powerful automation tools
     - Visual Reports for Debugging 🎞️: Through our test reports and Playground, you can easily understand, replay and debug the entire process.

@@ -15,14 +15,17 @@ modified: 2025-04-12T19:18:28.788Z
 - https://github.com/qualified/lsp-ws-proxy /MIT/202205/rust/inactive
   - WebSocket proxy for Language Servers.
 
-- https://github.com/wylieconlon/jsonrpc-ws-proxy /201906/js/inactive
+- https://github.com/wylieconlon/jsonrpc-ws-proxy /201906/ts/inactive
   - Create a web socket interface for any number of language servers running in subprocesses
   - Each server is run as a subprocess which is connected to by sending the client to the URL / based on a configuration file defined locally. 
   - 依赖vscode-ws-jsonrpc、ws
   - 🍴 forks
+  - https://github.com/Ferix9288/jsonrpc-ws-proxy /202105
+    - add passable `host`. usecase is for dockerized container to use `0.0.0.0`.
+  - https://github.com/mihirs16/jsonrpc-ws-proxy /202208
+    - add Dockerfile, 逻辑未调整
   - https://github.com/devopzacademy/jsonrpc-ws-proxy /202310/js
-  - https://github.com/karpenkoYegor/jsonrpc-ws-proxy /202307/js
-  - https://github.com/milikhin/jsonrpc-ws-proxy
+    - DEFAULT_PORT = 3000
 
 ## ts-server
 

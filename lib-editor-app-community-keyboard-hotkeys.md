@@ -13,6 +13,20 @@ modified: 2024-11-25T09:17:18.678Z
   - chrome cmd/ctrl+N 浏览器保留快捷键
   - mac cmd+M 会缩小窗口
   - mac cmd+, 会打开设置页
+
+## common-hotkeys
+
+- resources
+  - [DefKey](https://defkey.com/)
+  - [keycombiner Search Shortcuts](https://keycombiner.com/collecting/collections/public/search/)
+  - [shortcutworld for Windows, Mac OS, Linux.](https://shortcutworld.com/)
+  - [Shortcuts.design | Every shortcut for designers in one place](https://shortcuts.design/)
+
+- go to definition
+  - F12
+  - ctrl + G: spyder
+  - ctrl + T: geany, brackets
+  - alt + G: UE5
 # discuss-stars
 - ## 
 
