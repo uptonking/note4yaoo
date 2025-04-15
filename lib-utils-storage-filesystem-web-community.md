@@ -99,6 +99,25 @@ modified: 2023-09-16T17:43:09.215Z
 
 - sdk都可以不需要的，返回签名好的上传url直接上传就可以了
   - 是的，可以用预签名 URL
+# discuss-localStorage/sessionStorage
+- ## 
+
+- ## 
+
+- ## [On a browser, sessionStorage in Safari's Private Browsing does not work the same as Chrome's Incognito Mode and Firefox's Private Window? - Stack Overflow](https://stackoverflow.com/questions/18860098/on-a-browser-sessionstorage-in-safaris-private-browsing-does-not-work-the-same)
+- Safari will just use a quota of 0 in private mode, so all attempts to set a value will fail. This is kinda OK according to the spec, as the spec does not mandate a minimum space requirement.
+  - Chrome and Firefox still allow you to use storage, however private storage is independent from non-private, i.e. setting an item in private mode will not reflect back into non-private mode (important for localStorage only).
+
+- Safari latest version (Version 12.0) already have access to sessionStorage without any issue in incognito mode.
+
+- ## [Web Storage (sessionStorage and localStorage) in private browsing mode (incognito) - Stack Overflow](https://stackoverflow.com/questions/26042423/web-storage-sessionstorage-and-localstorage-in-private-browsing-mode-incognit)
+- Android and chrome I believe allow you to access old keys in session storage, but not write to it. I know that Safari will not allow any use of session or local storage.
+
+- ## [Local Storage is not supported with Safari in private mode : r/javascript _201503](https://www.reddit.com/r/javascript/comments/2z06aq/local_storage_is_not_supported_with_safari_in/)
+- This happens because a private window only has session-based storage. The browser should forget anything that happened during that session, including localStorage requests, so Safari simply says that localStorage isn't available. The error message is still confusing, and other browsers provide localStorage but it really acts like sessionStorage.
+  - In Chrome you can't read localStorage items that were set in standard browsing mode while you're accessing a private mode window. Any localStorage items set in private mode will only be available for that session. Apparently instead of giving the user a false sense of storage capability, Safari just says that it's not available in private mode.
+
+- Safari sets the storage limit to 0 bytes in private browsing
 # discuss
 - ## 
 

@@ -22,7 +22,49 @@ modified: 2024-12-27T17:28:57.941Z
 
 - ## 
 
-- ## 
+- ## [Repository X-Ray (#11733) · Epic · gitlab-org _202310](https://gitlab.com/groups/gitlab-org/-/epics/11733)
+  - The idea is to have a container based scanner for repositories that gathers as much information as possible from a repository, saves the data to a database that can also run locally in IDE's and the server.
+
+- Is tree sitter something we can use?
+  - With tree sitter poses significant challenge to deliver onto multiple platform because it is run as native extension and requires dedicated compilation process adjusted for different platforms. There was already research around tree sitter that was concluded with &11568 (closed) that you can check to get more context
+- the tree-sitter project provides WASM bindings for every major programming language. By definition this does not require special handling for cross-platform compilation. It is the defacto standard for editor extensions that need to do AST parsing for this very reason. VSCode extensions, for example, are not compiled for multiple architectures, they are just JavaScript.
+
+- After diving more into resources available around code indexing tasks available in the web I got to conclusion that at this stage the best option forward would be SQLite. My attempts to find reliable and portable graphDB wasn't successful. 
+  - That discussed very similar challenge, and how solution evolved over time. Despite that sourcegraph finally decided to move away from the SQLite as storage for code index, I still believe that in our case their papers can be seen as production proven solution. 
+  - It is important to notice that sourcegraph use cases where overlapping with the ones that we are aiming for, and to achieve them they used graph like data formats (LSIF and later SCIP), which were server from SQLite instead of any graphDB.
+- The fact that before the migration there had 796Gb of data stored in SQlite dbs shows that it can deliver.
+  - Another argument speaking for SQLite is that it offers WebAssembly distribution, which might be very helpful for WebIDE
+- What in my opinion is another great benefit of SQLite approach is that it could use CI artifacts feature (at least in the initial iterations) that would handle significant part of infrastructure foundations required to server repo x-ray data. 
+
+- Why would we want a portable DB?
+  - Moving load towards the client, which in general are less busy then GitLab instances as they serve a single user instead of all of them at once
+  - Some operations can be preprocessed on client side, eg: client can preload list of related files based on active tab, before even code creation request is send. GitLab rails application on the other hand would have to reload that kind of data for each request
+  - Clients will have up most fresh data in some cases, for example with related files map being stored in portable DB, client will be able include local state of those files into the context, while monolith would only have committed version which might be behind local development
+
+- https://lsif.dev/ - which seemed promising at the begging, but after closer look it appears that it has not got enough adoption in community to be reliable
+  - scip - which was announced to be improvement / replacement over lsif, but for now it seem to be only used by sourcegraph, which might not be again reliable tool to build upon
+- you can notice that LSIF and SCIP formats was considered in the research but were not selected as suitable solutions for the MVC scope.
+  - It is worth to notice that LSIF despite being promising at the begging comes with its own challenges, and might raise future support concerns.
+
+- LSIF provide information about structure of a source code, helping to create dependency graph, extracting function/classes/structures names etc. However LFIS does not provide any information about purposes or application of source code. So LSIF (or tree-sitter parser) can provide valuable input that can be used by RAG system to build its context database, but further processing would be also required (eg: create embeddings out of function body, and suggesting users to reuse existing code if it is similar to the newly inputted one) to fetch most relevant pieces of context that can help improve answer returned to a user.
+
+- ## ⚖️ [srctx: a LSIF parser for understanding what happened in every lines of your code : r/golang _202304](https://www.reddit.com/r/golang/comments/12di427/srctx_a_lsif_parser_for_understanding_what/)
+  - The LSIF defines a standard format for language servers or other programming tools to emit their knowledge about a code workspace.
+  - LSIF is a standard format for persisted code analyzer output. Today, several companies are working to support its growth, including Sourcegraph and GitHub/Microsoft. 
+
+- 👷 I work at Sourcegraph. Not trying to take anything away from your tool, but I wanted to communicate where we're at
+  - Over the last ~9 months or so, we've been moving away from LSIF and have been using SCIP instead.
+  - The Sourcegraph backend also natively accepts SCIP instead of LSIF, and converts LSIF to SCIP for maintaining backwardws compatibility.
+
+- ## [Explore whether 'smart code search' (AST, stack graphs, scope graphs) would improve performance beyond the current find/grep based approach. · Issue #38 · SWE-agent/SWE-agent _202404](https://github.com/SWE-agent/SWE-agent/issues/38)
+- Looking at the current 'search' command that the agent has access to, it seems it just uses `grep` for searches within a file, and `find` for searches by filename
+  - It would be interesting to see whether giving some more powerful AST / 'smart' code based search functionality would improve the performance of the agent
+- One direction that might be interesting to explore with regards to this is 'stack graphs' / 'scope graphs'
+- [Introducing stack graphs - The GitHub Blog _202112](https://github.blog/open-source/introducing-stack-graphs/)
+  - Why aren’t we using the Language Server Protocol (LSP) or Language Server Index Format (LSIF)?
+  - To dig even deeper and learn more, I encourage you to check out my Strange Loop talk and the stack-graphs crate: our open source Rust implementation of these ideas.
+  - Incremental, zero-config Code Navigation using stack graphs.
+
 # discuss
 - ## 
 

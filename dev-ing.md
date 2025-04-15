@@ -333,9 +333,11 @@ add action to create quickSort1.mjs and add 3 test cases in it
 
 ## 0415
 
-- 
-- 
-- 
+- 昨天
+  - 尝试 node_modules 下的文件的自动补全和语法跳转, 处理named import和default import的差异
+- 今天
+  - 继续实现 node_modules 场景下，跨文件的语法跳转 demo
+  - 开始在sdk实现语法跳转功能
 
 ## 0414
 

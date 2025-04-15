@@ -50,7 +50,7 @@ modified: 2021-07-20T13:50:23.433Z
     - 网盘: 数据展示和回收站，经典使用场景，大多数cms都有且用来存储资源
 
 - lts-tech-stack 可协作、可同步(离线)、版本历史
-  - 🌰lts: vscode/ide, git/vcs, LSP/MCP(backlink)
+  - 🌰lts: vscode/ide, git/vcs, LSP/MCP(backlink)/tree-sitter
     - 20230630: editor/slate  + table   + collab
     - 20250129: editor/vscode + triplit + sync(powersync/zerosync)
   - vscode: monaco-editor + electron/BS/CS, code-server, sourcegraph
@@ -222,6 +222,7 @@ modified: 2021-07-20T13:50:23.433Z
 - immutable: prosemirror, slate, wangeditor, typewriter, ospreadsheet, maxgraph
 - functional: wangeditor, typewriter, tanstack-table
   - ?: dexie
+  - date-fns
 - 数据层: ivm-crsqlite/zero-sync
 
 ### solutions-cases 💡

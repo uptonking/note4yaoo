@@ -115,6 +115,8 @@ modified: 2023-06-14T00:53:15.226Z
 
 - 🤔 ide-server的cpu占用高的原因，是浏览器客户端和agent客户端的连接逻辑有缺陷，若客户端连接ide-server未成功时，会每隔5s无限发送连接请求，如果ide-server本身cpu就很高而连不上，后续大量新的连接请求会继续连不上，反而会导致ide-server崩溃
 # issues/bugs-fixing
+- tricks
+  - 怀疑localStorage占用是否达到限制，console会出现类似reach limit的信息，或用浏览器的private模式测试
 
 ## 
 

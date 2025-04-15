@@ -326,6 +326,8 @@ modified: 2024-08-24T16:30:20.218Z
   - Glean is designed around an efficient storage model that enables storing information about code at scale.
   - There is currently full support for: C++, C, Hack, Haskell, JavaScript/Flow
   - We also support the SCIP or LSIF code indexing formats, for: rust, ts, go, java, python, .net
+  - [SCIP - a better code indexing format than LSIF | Sourcegraph Blog](https://sourcegraph.com/blog/announcing-scip)
+    - Fri-yayy so hacked up native @sourcegraph SCIP support for TypeScript repos in Glean. The SCIP data is protobuf-encoded and typed, so compared to LSIF its about 8x smaller, and can be processed 3x faster.
 
 - https://github.com/rizsotto/Bear /GPL/202411/cpp
   - Bear is a tool that generates a compilation database for clang tooling.
@@ -352,4 +354,42 @@ modified: 2024-08-24T16:30:20.218Z
   - Why is SeaGOAT processing files so slowly while barely using my CPU?
     - SeaGOAT is designed to allow you to use your computer while processing files. 
     - It is an intentional design choice to avoid blocking/slowing down your computer. This design decision does not affect the performance of queries.
+
+- https://github.com/github/stack-graphs /MIT/202503/rust
+  - Rust implementation of stack graphs
+  - Incremental, zero-config Code Navigation using stack graphs.
+  - allow you to define the name resolution rules for an arbitrary programming language in a way that is efficient, incremental, and does not need to tap into existing build or program analysis tools.
+  - stack graphs use a graphical notation to define the name binding rules for a programming language. They work equally well for dynamic languages like Python and JavaScript, and for static languages like Go and Java.
+  - Our solution is fast — processing most commits within seconds of us receiving your push. It does not require setting up a CI job, or tapping into a project-specific build process.
+  - 优点: 生产检验过的方案，但github code search不支持按时间排序
+  - 缺点: 方案过于创新，未提供LSIF的转换器过度，SCIP提供了
+  - 🚀 [Introducing stack graphs - The GitHub Blog _202112](https://github.blog/open-source/introducing-stack-graphs/)
+  - [Allowing folks to optionally specify repo-specific configuration _202112](https://github.com/github/stack-graphs/discussions/46)
+    - With something like sourcegraph, end users can upload their own LSIF indices to this end. It would be really great if this were eventually possible with GitHub's code navigation.
+  - [Explore whether 'smart code search' (AST, stack graphs, scope graphs) would improve performance beyond the current find/grep based approach. · Issue #38 · SWE-agent/SWE-agent](https://github.com/SWE-agent/SWE-agent/issues/38)
+    - GitHub has developed two code navigation approaches based on the open source tree-sitter and stack-graphs library
+    - Search-based - searches all definitions and references across a repository to find entities with a given name
+    - Precise - resolves definitions and references based on the set of classes, functions, and imported definitions at a given point in your code
+
+- https://github.com/sourcegraph/scip /apache2/202504/go
+  - SCIP (pronunciation: "skip") is a language-agnostic protocol for indexing source code, which can be used to power code navigation functionality such as Go to definition, Find references, and Find implementations.
+  - If you're interested in writing a new indexer that emits SCIP, check out our documentation on how to write an indexer.
+  - [SCIP - a better code indexing format than LSIF | Sourcegraph Blog _202206](https://sourcegraph.com/blog/announcing-scip)
+    - Sourcegraph code navigation such as “Go to definition” comes in two flavors: search-based and precise. 
+      - Search-based code navigation is available out-of-the-box. It is fast and always available, but it can occasionally return false-positive and false-negative results. 
+      - Precise code navigation, on the other hand, requires custom configuration to set up, but the results are compiler-accurate and work across repositories. 
+      - While search-based is less powerful, it is a quick and convenient solution. Precise is more powerful, but it also requires more upfront investment to configure.
+      - 🔧 Search-based code navigation is powered by tools like ctags and tree-sitter and precise code navigation at Sourcegraph has been powered by LSIF.
+      - Precise language indexers first write LSIF to disk, and then users upload the LSIF to our Sourcegraph backend, which processes the LSIF index before storing it in our database. The final result of this pipeline is that users benefit from compiler-accurate code navigation on Sourcegraph that works across multiple repositories.
+    - As our usage of LSIF has grown, we have encountered several limitations of the protocol:
+      - Slow development velocity caused by the lack of static types. LSIF doesn’t come with a machine-readable schema, and the dynamic graph structure makes it difficult to encode LSIF payloads as a simple set of structs or classes in most programming languages.
+      - Slow performance caused the need to hold large in-memory data structures when writing or reading the graph encoding of LSIF payloads.
+      - Difficulty of manually debugging raw LSIF payloads caused by the heavy usage of opaque ID numbers to encode the graph structure.
+      - Complexity of implementing incremental indexing, which becomes necessary for large codebases. Globally incrementing IDs make it difficult, as well, to update an existing index with new information for only a subset of the documents.
+    - Most of these issues boil down to the graph encoding of LSIF, which heavily relies on opaque ID numbers to connect edges and vertices. 
+    - To address these problems, we created SCIP as a Protobuf schema that is centered around human-readable string IDs for symbols replacing the concept of ‘monikers’ and ‘resultSet’.
+    - The design of SCIP is heavily inspired by SemanticDB 🛢️, another code indexing format that was pioneered in the Scala ecosystem.
+    - we anticipate SCIP additionally unblocks the following use-cases that we previously struggled to support with LSIF:
+      - Incremental indexing: once implemented, SCIP users will experience shorter waiting time for precise code navigation to become available on Sourcegraph after a git push because our backend only needs to index the files that have changed instead of the entire repository on every commit.
+      - Cross-language navigation: once implemented, SCIP users will, for example, be able to navigate between Protobuf and generated Java/Go Protobuf bindings, helping them find relevant code examples that were previously unavailable with both search-based and precise code navigation.
 # more

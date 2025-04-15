@@ -9,28 +9,15 @@ modified: 2024-08-24T16:29:44.029Z
 
 # guide
 
+- ide-dev-impl
+  - 工作用的ide不适合采用纯前端的方案实现，LSP依赖跑一个本地服务，运行代码依赖本地或云端环境，可debug，可通过ssh协议用vscode打开
+  - 展示用的ide适合纯前端实现，可采用无需更新依赖包的webworker-LSP，无需执行/debug
 # ide-features
 
-## LSP语法跳转
+## symbols
 
-- 
-- 
+## refactor
 
-- 
-- 
-- 
-- 
-
-- codesandbox devbox的语法跳转
-  - 在浏览器内支持跳转到symbol，跳转到相对路径，跳转到自定义路径，跳转到node_modules下的文件(不会自动定位到文件树文件)
-  - 在vscode通过ssh打开时，也能跳转到相对路径/自定义路径，跳转到node_modules下的文件(不会自动定位到文件树文件)
-
-- stackblitz纯前端方案实现的ide不支持在vscode/cursor打开
-  - codesandbox的纯前端版sandbox也不支持在vscode打开
-
-- replit的ssh/在本地vscode打开是付费功能
-  - replit的定义跳转未直接使用LSP，使用自定义river协议来传输二进制数据
-  - codesandbox的定义跳转也未直接使用LSP，用的是自定义二进制协议
 # ide-products
 - [关于IDE，你想知道的都在这! 文章合集 - 掘金 _202303](https://juejin.cn/post/7209472157502668860)
 
@@ -293,6 +280,36 @@ modified: 2024-08-24T16:29:44.029Z
   - Gitpod's vscode based openvscode-server
   - Theia's highly customizable vscode-like IDE
   - Both can run in the Desktop or the Browser and are fully open sourced
+# blogs-code-search
+
+## [Indexing code at scale with Glean _202411](https://engineering.fb.com/2024/12/19/developer-tools/glean-open-source-code-indexing/)
+
+- Code indexing systems have been around for a while. For example, there’s a well-established format called LSIF used by IDEs that caches information about code navigation.
+
+- Glean doesn’t decide for you what data you can store. 
+  - Indeed, most languages that Glean indexes have their own data schema and Glean can store arbitrary non-programming-language data too. 
+  - The data is ultimately stored using RocksDB, providing good scalability and efficient retrieval.
+- Glean’s query language is very general. 
+  - It’s a declarative logic-based query language that we call Angle (“Angle” is an anagram of “Glean”, and means “to fish”). 
+  - Angle supports deriving information automatically, either on-the-fly at query time or ahead of time; this is a powerful mechanism that enables Glean to abstract over language-specific data and provide a language-neutral view of the data.
+
+- 
+- 
+- 
+
+## [An attempt to build cursor's @codebase feature - RAG on codebases - part 1/2 _202411](https://blog.lancedb.com/rag-codebase-1/)
+
+- Just like Cursor @codebase feature, CodeQA is able to answer your code-base wide queries with relevant snippets, file names and references
+
+- https://github.com/sankalp1999/code_qa /MIT/202411/python/inactive
+  - RAG on codebases using treesitter and LanceDB
+
+- There are two crucial parts to this - codebase indexing (Part 1) and the retrieval pipeline (Part 2).
+- This post is all about codebase indexing with the help of tree-sitter and embedding search with help of LanceDB.
+
+- 
+- 
+
 # blogs-editor
 - [Upcoming Code Editor Upgrade to Monaco! | PlayCanvas Blog _202111](https://blog.playcanvas.com/upcoming-code-editor-upgrade-to-monaco/)
 # more

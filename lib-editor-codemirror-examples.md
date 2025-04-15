@@ -362,6 +362,7 @@ modified: 2023-06-23T12:46:53.288Z
   - https://val-town.github.io/codemirror-codeium/
   - Codeium code completion integration for CodeMirror 6
   - 👾 Copilot-like ghost text code from modeling-app by Jess Frazelle and based on Cursor.
+    - 等1s会显示补全预览，支持切换8个补全方案
   - This makes requests against the Codeium hosted product, using their Protocol Buffer-based interface
 
 - https://github.com/sachinraja/rodemirror /MIT/202112/ts/inactive
@@ -1207,17 +1208,21 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/val-town/codemirror-ts /ISC/202503/ts
   - https://val-town.github.io/codemirror-ts/
   - a set of extensions for CodeMirror 6 that add support for TypeScript
-  - [x] Hover hints for types 
   - [x] Autocomplete 
+  - [x] Hover hints for types 
   - [x] Diagnostics (lints, in CodeMirror's terminology)
   - [x] Go-to definition
   - [x] Twoslash support
   - [x] ATA(automatic type acquisition): emulate what you'd get in a local editor
   - This uses `Comlink` as an abstraction for the WebWorker. 
-  - This module uses TypeScript’s public APIs to power its functionality: it doesn't use the Language Server Protocol
+  - 🧐 This module uses TypeScript’s public APIs to power its functionality: it doesn't use the Language Server Protocol
     - Most good TypeScript language tooling, like VS Code’s autocompletion, does not use the LSP specification. 
-  - [Go to definition · val-town/codemirror-ts _202311](https://github.com/val-town/codemirror-ts/issues/8)
+  - [Go to definition _202311](https://github.com/val-town/codemirror-ts/issues/8)
     - 👷202404: This module currently uses TypeScript, but not the extra language server. It'd probably use the language server if this adopted more of a client-server architecture, or maybe it should in general, but for now, it's integrating with TypeScript, and we'll need to figure out what's under the hood of the LSP adapter's implementation.
+  - [Add recipe for remote node modules _202406](https://github.com/val-town/codemirror-ts/issues/27)
+    - The answer to this is ata but the long answer is, whew, it's hard and we've poured days into improving type acquisition and it is still really tough. 
+    - Making TypeScript and Deno get along is extremely hard - TypeScript doesn't support npm: or jsr: prefixes, doesn't support URLs for imports, etc. So you have to do a lot of arbitrary trickery to make the two get along.
+    - 202502: Landed #57, which includes an example of ATA hooked into codemirror-ts
 
 - https://github.com/modderme123/codemirror-extension-typescript /202310/ts/inactive
   - https://typescript-codemirror.netlify.app/
