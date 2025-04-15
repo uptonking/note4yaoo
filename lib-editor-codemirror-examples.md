@@ -1496,6 +1496,7 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/marc2332/lsp-codemirror /ISC/202008/ts/codemirror5
   - LSP integration for CodeMirror5
   - Support for custom autocompletion dropmenu
+  - 依赖https://github.com/marc2332/node-jsonrpc-lsp, (based on https://github.com/wylieconlon/jsonrpc-ws-proxy，而不是直接依赖vscode-jsonrpc)
   - 🍴 forks
   - https://github.com/lukehaas/lsp-codemirror /202503/ts/CodeMirror5
     - a more updated and better version of the original client

@@ -79,15 +79,19 @@ modified: 2021-05-06T09:58:23.803Z
   - https://tabler.io/icons 
   - A set of 5200 free MIT-licensed high-quality SVG icons
   - Each icon is designed on a 24x24 grid and a 2px stroke.
-  - 默认粗细2px，样式风格有点圆润
-  - 图标数量多
-  - 在网站提供下载多种格式svg/png/pdf, 但不提供粗细
+  - 粗细默认2px，网站可调整粗细
+  - 样式风格有点圆润，图标数量多
+  - 在github提供下载多种格式svg/png/pdf
+  - 🆚 [Compare to FontAwesome _202211](https://github.com/tabler/tabler-icons/discussions/370)
+    - Tabler Icons are made by stroke width (like variable font), not by outline, so you can change it in any time. 
 
 - feather /MIT/16kStar/201908/样式好/图标少
   - https://github.com/feathericons/feather
   - https://github.com/feathericons/react-feather
   - https://feathericons.com/
   - At its core, Feather is a collection of SVG files. Each icon is designed on a 24x24 grid with an emphasis on simplicity
+  - 粗细默认2px，网站可调整粗细
+  - 图标数量不多，文件相关图标少
   - https://github.com/zaydek/feathericons.dev
     - https://feathericons.dev/
     - Remake of the classic Feather by @colebemis. 
@@ -106,10 +110,15 @@ modified: 2021-05-06T09:58:23.803Z
 
 - phosphor-icons /212Star/MIT/202112/易用性高
   - https://github.com/phosphor-icons/web
+  - https://github.com/phosphor-icons/react
   - https://phosphoricons.com/
   - 提供6套图标6x1248个，包括不同粗细和风格，thin/light/regular/fill/bold/duotone
+    - If you'd like to use the raw assets directly to modify them, click the toggle in the toolbar to change from Flat to Raw. 
+    - 实测Flat的体积会小一点
   - 可下载svg/png/iconfonts
+  - 文件操作相关icon不多
   - available for web, React, Vue, Flutter, Elm
+  - providing icons as several webfonts that uses Unicode's Private Use Area character codes to map normally non-rendering characters to icons.
   - [Release v2.0.0](https://github.com/phosphor-icons/homepage/releases/tag/v2.0.0)
     - All icons use currentColor for instead of #000000 for fills and strokes to ease styling of icons
   - providing icons as a webfont that uses Unicode's Private Use Area character codes to map normally non-rendering characters to icons. 

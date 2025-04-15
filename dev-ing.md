@@ -331,6 +331,30 @@ add action to create quickSort1.mjs and add 3 test cases in it
 - 异常处理增强
   - 观测重要log: RESOURCE_NOT_ENOUGH
 
+## 0415
+
+- 
+- 
+- 
+
+## 0414
+
+- terminate和revert导致action的cancel状态
+
+- CodeEditor的逻辑为什么要和action状态相关
+
+- 上周
+  - 熟悉sdk中LSP相关的代码，理解实现原理
+  - 实现了js类型文件 文件内的语法跳转， 跨文件的语法跳转demo还在实现中
+  - 解决影响发版的问题，如root-thread未关闭时也能聊天、追加步骤的diff视图异常
+  - 排查紧急issue，包括action执行完后文件不可编辑
+- 本周
+  - 在sdk，实现js/ts文件的 语法跳转、跨文件的语法跳转
+  - 实现python类型文件的 语法跳转、跨文件的语法跳转
+  - 尽量实现go类型的语法跳转
+- 今天
+  - 继续实现跨文件的语法跳转demo
+
 ## 0413
 
 - 昨天

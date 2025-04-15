@@ -11,6 +11,10 @@ modified: 2021-05-13T03:19:30.464Z
 
 # blogs-async
 
+## [Build Own version of Redux toolkit using Observer design pattern. - DEV Community _202404](https://dev.to/raselmahmuddev/build-own-version-of-redux-toolkit-using-observer-design-pattern-3ib4)
+
+- https://github.com/mohanramphp/redux-with-typescript
+
 ## [手写Redux-Saga源码 - 知乎](https://zhuanlan.zhihu.com/p/266794765)
 
 ## [轻松使用Redux-saga - 知乎 _202206](https://zhuanlan.zhihu.com/p/114409848)

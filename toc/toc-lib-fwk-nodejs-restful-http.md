@@ -252,14 +252,26 @@ modified: 2022-12-19T01:51:01.389Z
   - https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/
 - Create, read, update, delete in a Node.js app with an Express server and Postgres database.
 
+- https://github.com/edwinhern/express-typescript-2024 /202503/ts/函数式风格
+  - Modular Structure: Organized by feature for easy navigation and scalability
+  - Rapid TypeScript execution with `tsx` and type checking with `tsc`.
+  - Efficient logging with `pino-http`.
+  - Testing: Setup with Vitest and Supertest
+  - Code Style: Biomejs for consistent coding standards
+  - Docker Support: Ready for containerization and deployment
+  - Strongly typed request validation using Zod
+  - Swagger UI: Interactive API documentation generated from Zod schemas
+
 - https://github.com/javieraviles/node-typescript-koa-rest /202105/ts/inactive
   - REST API boilerplate using NodeJS and KOA2, typescript. 
   - Logging and JWT as middlewares.
   - TypeORM with class-validator, SQL CRUD. 
   - Docker included. Swagger docs, actions CI and valuable README
 
-- https://github.com/w3tecch/express-typescript-boilerplate
-  - RESTful API with NodeJs & TypeScript 
+- https://github.com/w3tecch/express-typescript-boilerplate /MIT/201911/ts/inactive
+  - RESTful API with NodeJs & TypeScript
+  - Inspired by the awesome framework laravel in PHP and of the repositories from pleerock
+
 - https://github.com/contiamo/restful-react
   - declarative way of interacting with RESTful backends, featuring code-generation from Swagger and OpenAPI spec
 - https://github.com/kunalkapadia/express-mongoose-es6-rest-api

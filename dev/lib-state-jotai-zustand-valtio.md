@@ -11,6 +11,7 @@ modified: 2022-01-05T14:36:28.057Z
 
 - resources
   - [npm trends: jotai vs recoil vs valtio vs zustand](https://www.npmtrends.com/jotai-vs-recoil-vs-valtio-vs-zustand)
+  - [Why Zustand Typescript Implementation Is So Ugly _202307](https://blog.axlight.com/posts/why-zustand-typescript-implementation-is-so-ugly/)
 # zustand
 - pros
   - ?

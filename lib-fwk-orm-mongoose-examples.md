@@ -85,8 +85,6 @@ modified: 2023-02-05T18:50:53.563Z
 
 - https://github.com/Alais29/coderhouse-ecommerce /202312/ts
   - Coderhouse backend course final project. A fullstack MERN ecommerce app.
-
-
 # examples
 - https://github.com/mongodb-university/mflix-ui /201906/js
   - https://github.com/mongodb-university/mflix-js
@@ -118,9 +116,12 @@ modified: 2023-02-05T18:50:53.563Z
   - ✨ 支持Mongoose/Sequelize/TypeORM/Prisma/Knex/MikroORM/GraphQL
   - 采用controller/service/model三层架构，class风格，依赖注入，少量使用装饰器
 
-- https://github.com/janishar/nodejs-backend-architecture-typescript /202010/ts
+- https://github.com/janishar/nodejs-backend-architecture-typescript /apache2/202404/ts
   - Node.js Backend Architecture Typescript
+  - Learn to build a backend server for production ready blogging platform like Medium and FreeCodeCamp. 
+  - Main Features: Role based, Express.js, Mongoose, Redis, Mongodb, Joi, Docker, JWT, Unit Tests, Integration Tests.
   - Open-Source Project By AfterAcademy
+  - https://github.com/unusualcodeorg/wimm-node-app /nestjs
 
 - https://github.com/csandoval18/movie-app /202212/ts/client+server
   - Movie information app using MongoDB/Mongoose for session handling with JWT. 

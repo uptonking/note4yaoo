@@ -81,6 +81,12 @@ modified: 2025-04-12T19:18:28.788Z
 
 - https://github.com/SFX123456/AlpineLspServer /202405/ts/inactive
   - Alpine Lsp Server
+
+## markdown-server
+
+- https://github.com/remarkjs/remark-language-server /MIT/202407/js/inactive
+  - A language server to lint and format markdown files with remark.
+  - Use `vscode-remark` to use the remark language server with Visual Studio Code.
 # lsp-apps
 - https://github.com/kcaswick/language-server-diagram-tool /MIT/202411/ts/inactive
   - A tool to export diagrams of programs, read via language servers or LSIF (language server index format)
@@ -91,6 +97,14 @@ modified: 2025-04-12T19:18:28.788Z
 - https://github.com/Artawower/smells-code-analyzer /MIT/202312/ts/inactive
   - CLI tool powered by LSP and `tree-sitter` for finding dead and smells code from your project
   - This package allows you to find code that is not used in the project. The search is performed by finding references with the help of LSP. The project is based on tree-sitter, LSP and ripgrep.escription
+
+- https://github.com/TechHara/lsp_sniffer /202403/rust/inactive
+  - This tool allows one to intercept communications from a language server protocol (LSP) client and server.
+  - This simply creates a thin wrapper that relays all the stdio communications between the client and the server, while logging them to files.
+  - Let's say we want to sniff LSP communications between VSCode and rust-analyzer extension.
+  - Currently, this works only if the LSP server binary is a natively compiled executable, such as `rust-analyzer`. However, some language servers are distributed as non-native executable, such as `jar`. 
+  - it only supports communications via stdio, but again, it should be trivial to extend and support other channels as well, such as TCP or WebSocket.
+  - [Sniffing LSP traffic. _202403](https://medium.com/@techhara/sniffing-lsp-communications-54f27b539685)
 # mcp-lsp
 - https://github.com/oakenai/headless-editor-mcp /MIT/202412/ts
   - A robust, language-agnostic headless code editor that leverages the Language Server Protocol (LSP) for code intelligence and the Model Context Protocol (MCP) for AI-assisted code manipulation.

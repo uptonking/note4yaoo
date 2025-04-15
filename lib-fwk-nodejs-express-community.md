@@ -9,7 +9,24 @@ modified: 2023-02-05T18:56:12.643Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 🤔 [Serve Static Files Using Express or Use Express To Only Access Backend? - Stack Overflow](https://stackoverflow.com/questions/66737274/serve-static-files-using-express-or-use-express-to-only-access-backend)
+- If your files are truly static (no dynamic content in them at all), then it doesn't really matter who serves them.
+  - You can even use the same domain and use a proxy like NGINX that serves up just the static content while forwarding everything else through to your Express server.
+- If you are dynamically generating any content (like many web sites that use a template engine and generate HTML content from a database from the server), then it makes all the sense in the world to serve your content from the Express server.
+
+- The main reason to get static content off the Express server is when you want to increase scalability and your current load is too much for just the Express server.
+
+
 # discuss-alternatives
+- ## 
+
+- ## 
+
 - ## 
 
 - ## [Anything wrong with Express? What's so good about hono.js? : r/node _202307](https://www.reddit.com/r/node/comments/1502t43/anything_wrong_with_express_whats_so_good_about/)
@@ -27,7 +44,57 @@ modified: 2023-02-05T18:56:12.643Z
 
 - Express works, but was created in 2009 and the author's last commit was in Feb 2014. It doesn't align with modern web standards (like the Fetch API with its Request, Response objects), and Express far from the fastest web server any longer.
   - Check out the more standards-focused HatTip as well, and the more full-featured Bun-only framework Elysia (templates, RPC, e2e type safety, validation).
+# discuss-roadmap
+- ## 
+
+- ## [Builtin Typescript support _202502](https://github.com/expressjs/express/issues/6311)
+- 👷: There are no plans to redo Express with TypeScript, maybe we could launch Express with types, but not redo the library
+
+- [EFI: Publish and maintain types _202402](https://github.com/expressjs/discussions/issues/192)
+
+- ## [It's 2023 and still no native async support for routes? _202301](https://github.com/expressjs/express/discussions/5111)
+
+- 👷: I'm not familiar with TypeScript and don't have interest in using it, either. I believe the other members have expressed the same. 
+  - Coverting the code base from JavaScript to TypeScript would essentially fork the code, as everyone who works on it would disband (like myself) and probably just work on the JavaScript version of Express. 
+  - So, to summarize I don't think it would be worth the change, as it would effectively leave Express unmaintained at that point.
+# discuss-features
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🆚 [serve-static vs express.static() : r/node _202010](https://www.reddit.com/r/node/comments/jf87rh/servestatic_vs_expressstatic/)
+- Basically doing the same. But you should not use either of them. 
+  - Its best practice to server static content via Apache/Nginx/alike.
+
+- `express.static` is simply a reference to the `serve-static` middleware. 
+  - Express includes serve-static as a dependency and exposes it directly via express.static for convenience.
+  - express.static is simply an alias provided by Express that calls into the serve-static module.
+- serve-static is a standalone middleware module that can be used in any Node.js application regardless of whether Express is used.
+
+
+
+
+
+
+- 
+- 
+- 
+- 
+- 
+
+- ## [asynchronous error handling in expressjs _202410](https://www.michelleenos.com/notes/asynchronous-error-handling-expressjs/)
+- It seems like support for async/await in ExpressJS has been a long time in the works - see this github thread which has been going since 2014! 
+  - Express 5.0 apparently does include this support, but the stable/default version (something like 4.2.x) still does not.
+
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 
