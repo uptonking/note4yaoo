@@ -331,6 +331,24 @@ add action to create quickSort1.mjs and add 3 test cases in it
 - 异常处理增强
   - 观测重要log: RESOURCE_NOT_ENOUGH
 
+## 0417
+
+- 昨天
+  - 实现 ctrl + click 的下划线交互
+  - 开始处理 definition事件返回多个定义项时的交互
+- 今天
+  - 继续处理 definition事件返回多个定义项时的交互
+  - 实现和测试python语言的语法跳转
+
+## 0416
+
+- 昨天
+  - 开始在sdk实现语法跳转功能， 处理跳转到隐藏目录如 node_modules 下的文件
+  - 开始实现 ctrl + click 的下划线交互
+- 今天
+  - 继续实现 ctrl + click 的下划线交互
+  - 测试和优化 .ts/.js 类型文件语法跳转的整体功能
+
 ## 0415
 
 - 昨天

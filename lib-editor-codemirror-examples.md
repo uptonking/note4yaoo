@@ -199,9 +199,11 @@ modified: 2023-06-23T12:46:53.288Z
   - A known shortcoming of VZCode is that it does not (yet) watch for changes from the file system. VZCode assumes that no other programs are modifying the same files.
   - You can also expose your VZCode instance publicly using a tunneling service such as NGrok.
   - Auto-save, debounced after code changes
+  - I also have a history of working with CodeMirror 5 + ShareDB for the real-time integration, and was able to "unlock" that CodeMirror 6 + ShareDB integration successfully
   - [VSCode-ish: Jump to Definition of Variable ](https://github.com/vizhub-core/vzcode/issues/177)
-    - [202406已合并pr, 只实现了文件内跳转定义，且需要按住Ctrl键同时移动鼠标](https://github.com/vizhub-core/vzcode/pull/717)
-    - I also have a history of working with CodeMirror 5 + ShareDB for the real-time integration, and was able to "unlock" that CodeMirror 6 + ShareDB integration successfully
+    - 🌰 [202406已合并pr, 只实现了文件内跳转定义，且需要按住`Ctrl`键(macos下也是)同时移动鼠标](https://github.com/vizhub-core/vzcode/pull/717)
+    - 基于遍历syntaxTree判断节点类型实现，纯前端的实现方案，触发时机没有注册在editor `document.addEventListener('mouseover', handleMouseOver)`;
+    - 似乎只支持.js文件，.java不支持显示下划线
   - [pr已合并_Intelligent Autocompletions _202311](https://github.com/vizhub-core/vzcode/pull/305)
   - https://github.com/vizhub-core/vizhub /v3
     - possible to self-host your own instance
@@ -1211,7 +1213,7 @@ modified: 2023-06-23T12:46:53.288Z
   - [x] Autocomplete 
   - [x] Hover hints for types 
   - [x] Diagnostics (lints, in CodeMirror's terminology)
-  - [x] Go-to definition
+  - [x] Go-to definition, 🧐 未实现按住cmd/ctrl显示下划线
   - [x] Twoslash support
   - [x] ATA(automatic type acquisition): emulate what you'd get in a local editor
   - This uses `Comlink` as an abstraction for the WebWorker. 

@@ -8,7 +8,11 @@ modified: 2023-06-19T12:33:38.006Z
 # lib-draw-tldraw-community
 
 # guide
+- pros
+  - 基于DOM实现的画板，方便与其他DOM元素交互和嵌入，渲染逻辑方便复用
 
+- cons
+  - license变得严格
 # dev
 
 # examples

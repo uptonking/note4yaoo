@@ -92,6 +92,9 @@ modified: 2022-08-21T10:02:27.788Z
     - `type Table = { rowOrder: OrderedSet<RowId>, columnOrder: OrderedSet<ColumnId>, rows: Map<RowId, Row> }` 行顺序和列顺序都单独存储
     - `type Row = { cells: Map<ColumnId, RichText> }`
 
+- features
+  - excel/docs的前端组件通常需要一个import工具进行数据转换，方便直接在前端组件编辑，可参考流行的开源工具
+
 - 开源表格
   - 国内: luckysheet
   - 国外: ag-grid, tanstack-table, handsontable, o-spreadsheet, tui.grid, sleekgrid, simple-datatables

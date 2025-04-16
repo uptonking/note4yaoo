@@ -50,16 +50,17 @@ modified: 2021-07-20T13:50:23.433Z
     - 网盘: 数据展示和回收站，经典使用场景，大多数cms都有且用来存储资源
 
 - lts-tech-stack 可协作、可同步(离线)、版本历史
-  - 🌰lts: vscode/ide, git/vcs, LSP/MCP(backlink)/tree-sitter
+  - 🌰 lts: vscode/ide, git/vcs, LSP/MCP(backlink)/tree-sitter, office
     - 20230630: editor/slate  + table   + collab
     - 20250129: editor/vscode + triplit + sync(powersync/zerosync)
   - vscode: monaco-editor + electron/BS/CS, code-server, sourcegraph
   - codemirror/prosemirror: state + view + commands + transform/ot/collab + virtualized
   - version-history: rrweb, diff, format(.fodt), video-but-auto-update
-  - workflow: lowcode
+  - workflow/lowcode: n8n, activepieces
   - rspack: js plugin; rspack/rolldown-wasm
-  - animation: motion(dom/svg)
-  - 考虑维护/fork旧版项目: codemirror5-lang/demo, outline, handsontable, xlsx, pdf-lib, mxgraph-demo
+  - office: outline, handsontable, xlsx, revealjs-ts+PPTist, pdf-lib, mxgraph-demo
+  - 考虑维护/fork旧版项目: codemirror5-lang/demo
+  - ~~animation: motion(dom/svg)~~
 
 - 技术细节(editor): virtualized, draggable, table(eav)
 - 技术产品(reuse):  cm-devtools, noseditor, collab-hocuspocus

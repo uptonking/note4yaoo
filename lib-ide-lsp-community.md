@@ -56,7 +56,11 @@ modified: 2025-01-05T15:00:51.509Z
 # discuss-lsp-vendors
 - ## 
 
-- ## 
+- ## [What are the best linters and language servers for python? : r/Python _202503](https://www.reddit.com/r/Python/comments/1j8bd2n/what_are_the_best_linters_and_language_servers/)
+- JEDI is a static analysis tool that supports autocompletion, goto, and refactoring. It works with several langauge servers. Similar functionality to Pyright.  
+- Pyright is a language server maintained by Microsoft. It supports type checking (primary function), goto, autocomplete, similar to JEDI. It is written in TypeScript. 
+  - Pylance is a Microsoft product that builds on Pyright and adds additional feataures to VS Code. TypeScript.
+- Basedpyright is a fork of Pyright to add Pylance functionality to Pyright for non-Microsoft editors. Mostly TypeScript with Python additions.
 
 - ## [Building an Intelligent Emacs | Hacker News _202202](https://news.ycombinator.com/item?id=30308272)
 - there's an analogous tool for debuggers called dap-mode

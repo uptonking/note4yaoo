@@ -32,11 +32,31 @@ modified: 2025-01-05T15:00:07.466Z
   - a language server requires all source code files be available on a local disk
   - The goal of the Language Server Index Format is to augment the LSP protocol to support rich code navigation features without these requirements. 
 
+## LSP hover事件
+
+- hover返回的内容都是markdown
+
+- hover ts/js
+  - 对于字面量如字符串/数字/保留字，hover返回的内容是 null
+  - 普通变量 "\n```typescript\nconst stateLsp=aa;```"
+  - 普通方法 "\n```typescript\nfunction example(): void\n```\n"
+  - 系统对象 "\n```typescript\nnamespace console\nvar console```"
+  - import namespace "\n```typescript\nimport locales\n```\n"
+  - import相对路径 "\n```typescript\nmodule  absolute/path/to/src.js```"
+  - import三方库 "\n```typescript\nmodule  absolute/path/to/src.js```"
+
 ## LSP语法跳转
 
-- 
-- 
+- ux
+  - vscode/idea 在按住cmd+click时，会跳转到目标位置并高亮，并将光标设在高亮范围的开头，高亮很快消失
+    - zed会将光标设在高亮范围的末尾
+  - vscode/zed按住cmd就会显示下划线，idea需要按住且轻微移动鼠标才会显示下划线样式
 
+- 下划线的实现
+  - 思路1: 利用LSP的hover事件，有内容的一般都可以跳转就显示hover; 要测试其他语言
+  - 思路2: 利用codemirror的syntaxTree
+
+- 
 - 
 - 
 - 
@@ -53,6 +73,10 @@ modified: 2025-01-05T15:00:07.466Z
   result: []
 }
 ```
+
+- 系统内置对象如console/window/window.setTimeout都支持definition事件
+  - 可能包含多个结果
+  - targetUri:"file:///Users/yaoo/Documents/repos/com2024-showmebug/yaoo/codemirror6-lsp-typescript-language-server/node_modules/typescript/lib/lib.dom.d.ts"
 
 ### 文件内跳转的数据结构
 

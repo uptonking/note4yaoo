@@ -10,6 +10,13 @@ modified: 2023-09-07T04:17:31.787Z
 # guide
 
 - 画板或批注类产品要参考规范 [Web Annotation Data Model](https://www.w3.org/TR/annotation-model/)
+
+- 画板内的文本常使用多个富文本编辑器实现，可参考tldraw
+
+- 
+- 
+- 
+
 # discuss-figma/prototyping
 - ## 
 

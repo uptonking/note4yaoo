@@ -23,7 +23,7 @@ modified: 2021-04-30T20:14:17.669Z
   - ✨ pdf-editor与ppt-editor的相似点: 支持批注、左侧页面缩略图
   - 可参考: svg-editor, pdf-editor, drawio
 # popular
-- https://github.com/gitbrent/PptxGenJS /MIT/202305/ts/inactive
+- https://github.com/gitbrent/PptxGenJS /3.3kStar/MIT/202305/ts/inactive
   - https://gitbrent.github.io/PptxGenJS/
   - Create PowerPoint presentations with a powerful, concise JavaScript API.
   - This library creates Open Office XML (OOXML) Presentations which are compatible with Microsoft PowerPoint, Apple Keynote, and other applications.
@@ -31,13 +31,20 @@ modified: 2021-04-30T20:14:17.669Z
   - All major object types are available (charts, shapes, tables, etc.)
   - SVG images, animated gifs, YouTube videos, RTL text, and Asian fonts
   - PowerPoint shape definitions and some XML code via Officegen Project
-  - [WYSIWYG Editor or Playground](https://github.com/gitbrent/PptxGenJS/issues/109)
+  - Includes powerful HTML-to-PowerPoint feature to transform HTML tables into presentations with a single line of code
+  - 🚧 [Unimplemented Features](https://github.com/gitbrent/PptxGenJS/wiki/Unimplemented-Features)
+    - Animations, Importing Existing ppt, SmartArt, Outlines
+  - [Is it possible to read and update a PPTX file using PpptxGenJS? _202206](https://github.com/gitbrent/PptxGenJS/discussions/1120)
+    - This library only generates new presentations. Reading existing presentations is an existing item on the Unimplemented Features
+  - [Rendering of PPTX on screen _202303](https://github.com/gitbrent/PptxGenJS/issues/1230)
+    - You're basically reproducing the functionality of M365 online (turning PPTX and/or code into HTML) while this library produces XML documents.
+  - [WYSIWYG Editor or Playground _201706](https://github.com/gitbrent/PptxGenJS/issues/109)
     - Since the PptxGenJS library produces XML, I don't see how to easily translate that to HTML and then keep a canvas or div element populated. That's basically what the PowerPoint Online engine does.
   - https://github.com/wyozi/react-pptx
     - https://wyozi.github.io/react-pptx/
     - React wrapper for PptxGenJS. Works both in browser and node
 
-- reveal.js /66.4kStar/MIT/202402/js/官方editor未开源
+- reveal.js /66.4kStar/MIT/202503/js/官方editor未开源
   - https://github.com/hakimel/reveal.js
   - https://revealjs.com/
   - 🌓 open source HTML presentation framework. It enables anyone with a web browser to create beautiful presentations for free.
@@ -47,7 +54,7 @@ modified: 2021-04-30T20:14:17.669Z
   - [Export reveal.js presentation to .odp or .ppt presentation _201609](https://github.com/hakimel/reveal.js/issues/1702)
     - Currently there isn't such a way, as Reveal.js presentations are just webpages, and they would be difficult to convert to specific proprietary `.ppt/.odp` slides. 
     - PDF printing is currently the easiest way to export presentations.
-    - The best way is to write the presentation in Markdown and then process it with Pandoc into both reveal.js and PowerPoint, as well as other formats.
+    - 💡 The best way is to write the presentation in Markdown and then process it with Pandoc into both reveal.js and PowerPoint, as well as other formats.
     - Pandoc can also convert from PowerPoint to Markdown, but the result is normally not usable without a lot of touching up.
 - https://github.com/slate-mx/realtime-presentation /202305/js/inactive
   - Minor ui improvements
@@ -79,13 +86,15 @@ modified: 2021-04-30T20:14:17.669Z
 - https://github.com/patarapolw/reveal-md /201912/ts/vue
   - View markdown files as a presentation in Reveal.js with CLI
 
-- https://github.com/impress/impress.js /37.5kStar/MIT/202402/js
+- https://github.com/impress/impress.js /37.5kStar/MIT/202404/js/inactive
   - http://impress.js.org/
   - http://impress.github.io/impress.js/examples/classic-slides/
   - 🌓 a presentation framework based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com
   - The HTML source code of the official impress.js demo serves as a good example usage and contains comments explaining various features of impress.js
   - [Examples and demos · impress/impress.js Wiki](https://github.com/impress/impress.js/wiki/Examples-and-demos)
   - [Authoring tool discussion](https://github.com/impress/impress.js/issues/5)
+  - [Import PPT/PDF to impress.js _201712](https://github.com/impress/impress.js/issues/648)
+    - powerpoints nowadays are XML files and the file format is openly documented. So in theory it would be straightforward to write a converter that takes a pptx file and outputs an impress.js HTML presentation. In reality it's bound to be a lot of work.
 
 - https://github.com/henrikingo/impressionist /MIT/202005/js/inactive
   - A Visual 3D editor for creating stunning impress.js presentations
@@ -129,6 +138,7 @@ modified: 2021-04-30T20:14:17.669Z
 - https://github.com/ChurchApps/FreeShow /GPLv3/202402/ts/svelte
   - https://freeshow.app/
   - free software with a user-friendly interface that offers powerful features for creating and editing slideshows. 
+  - 依赖pptx2json、slideshow、sqlite、@sveltejs/svelte-virtual-list
 
 - https://github.com/shikijs/shiki-magic-move /MIT/202405/ts
   - https://shiki-magic-move.netlify.app/
@@ -137,12 +147,17 @@ modified: 2021-04-30T20:14:17.669Z
   - 依赖diff-match-patch-es、ohash
   - [The Magic in Shiki Magic Move _202403](https://antfu.me/posts/shiki-magic-move)
 # ppt-editor
-- PPTist /apache2 > AGPLv3/202401/ts/vue
+- PPTist /6.9kStar/apache2 > AGPLv3/202504/ts/vue/基于DOM
   - https://github.com/pipipi-pikachu/PPTist
   - https://pipipi-pikachu.github.io/PPTist/
   - 基于 Vue3.x + TypeScript 的在线演示文稿（幻灯片）应用，还原了大部分 Office PowerPoint 常用功能，
-  - 实现在线PPT的编辑、演示。支持导出PPT文件。
+  - 实现在线PPT的编辑、演示。
+  - 支持导入、导出PPT文件。
+  - 依赖vue3、vuedraggable、pptxtojson、pptxgenjs、prosemirror、svg-pathdata、tippy.js、dexie4、animate.css、echarts5
   - 基于 DOM 的渲染方案，优点是简单易上手
+  - 📝 每个文本块都是一个prosemirror编辑器
+  - 每个幻灯片都支持缩放
+  - [ ] 待测试，显示视频/动图， excel导出的图表， smartArt图形
   - [feat: 支持移动端/更换开源协议 _202206](https://github.com/pipipi-pikachu/PPTist/commit/704192508247085d327577848691634a925623b8)
     - apache2 > GPLv3
 
@@ -246,6 +261,7 @@ modified: 2021-04-30T20:14:17.669Z
 # examples
 
 # utils
+
 - https://github.com/argyleink/slyd /js/darkTheme/代码少
   - https://slyd.netlify.com/
   - Snappy, responsive, touch optimized, bi-directional presentation framework
@@ -255,6 +271,12 @@ modified: 2021-04-30T20:14:17.669Z
   - Create powerful slideshows for talks and presentations. 
   - Each "slide" is a JS function that can do *anything*.
   - Let you jump to any slide by number in the url hash
+
+- https://github.com/rse/slideshow /MPLv2/202309/appleScript
+  - Slideshow is a Node/JavaScript Application Programming Interface (API) and Command Line Interface (CLI) for observing and controlling the slideshow presentation applications Microsoft PowerPoint 2010+ for Windows, Microsoft PowerPoint 2011+ for Mac OS X and Apple KeyNote 5+ for Mac OS X. 
+  - It is implemented as a thin Node/JavaScript API layer on top of platform-specific Windows WSH/JScript and Mac OS X Automator AppleScript/JavaScript connectors. No native code is required.
+  - 🍴 forks
+  - https://github.com/vassbo/slideshow
 # ai-slides
 - [ChatSlide | Build your Slides and Videos from Documents in one click](https://chatslide.ai/landing)
 # more

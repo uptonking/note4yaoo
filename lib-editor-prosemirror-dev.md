@@ -84,6 +84,9 @@ modified: 2021-05-06T09:39:53.522Z
 
 # faq-not-yet
 
+- 待确认
+  - 嵌入画板的体验和性能，参考 tldraw/PPTist
+
 > 参考 site:github.com/ottypes
 
 ## 是否支持 batch update

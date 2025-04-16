@@ -64,6 +64,8 @@ modified: 2022-06-03T21:34:54.893Z
   - Granular access control to ensure your information is secure and only shared with the right people
   - Professional document exports in multiple formats (.odt, .doc, .pdf) with customizable templates
   - Running Docs locally using the methods described below is for testing purposes only. It is based on building Docs using Minio as the S3 storage solution but you can choose any S3 compatible object storage of your choice.
+  - [Presentation Upload · suitenumerique/meet _202411](https://github.com/suitenumerique/meet/issues/208)
+    - Low priorities
   - [Docs – Open source alternative to Notion or Outline | Hacker News _202503](https://news.ycombinator.com/item?id=43378239)
   - 📡 roadmap
   - [Comments on text editor _202408](https://github.com/suitenumerique/docs/issues/156)
