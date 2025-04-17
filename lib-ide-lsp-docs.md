@@ -66,6 +66,87 @@ modified: 2025-01-05T15:00:20.963Z
 - 
 - 
 - 
+
+## 🔡 LSP events
+
+- textDocument/didOpen
+  - The tool notifies the language server that a document is open 
+  - From now on, the truth about the contents of the document is no longer on the file system but kept by the tool in memory. 
+  - The contents now has to be synchronized between the tool and the language server.
+
+- textDocument/didChange
+  - The tool notifies the server about the document change and the language representation of the document is updated by the language server. 
+  - As this happens, the language server analyses this information and notifies the tool with the detected errors and warnings (‘textDocument/publishDiagnostics’).
+
+- textDocument/definition
+  - The server responds with the document URI and the position of the symbol’s definition inside the document.
+
+- textDocument/didClose
+  - notification is sent from the tool informing the language server that the document is now no longer in memory. 
+  - The current contents are now up to date on the file system.
+
+- This example illustrates how the protocol communicates with the language server at the level of document references (URIs) and document positions. 
+  - The fact that the data types are simple and programming language neutral simplifies the protocol significantly. 
+  - It is much simpler to standardize a text document URI or a cursor position compared with standardizing an abstract syntax tree and compiler symbols across different programming languages.
+
+- When a user is working with different languages, a development tool usually starts a language server for each programming language. 
+
+- 
+- 
+- 
+
+## ⚖️ Language Server Protocol Spec
+
+- The language server protocol defines a set of JSON-RPC request, response and notification messages which are exchanged using the above base protocol. 
+  - Please also note that a response return value of null indicates no result. It doesn’t tell the client to resend the request.
+
+- In general, the language server protocol supports JSON-RPC messages, however the base protocol defined here uses a convention such that the parameters passed to request/notification messages should be of `object` type (if passed at all). However, this does not disallow using `Array` parameter types in custom messages.
+
+- 🔀 The protocol currently assumes that one server serves one tool. 
+  - There is currently no support in the protocol to share one server between different tools. 
+  - Such sharing would require additional protocol e.g. to lock a document to support concurrent editing.
+
+- the server may decide to use a parallel execution strategy and may wish to return responses in a different order than the requests were received. The server may do so as long as this reordering doesn’t affect the correctness of the responses
+
+- Care should be taken to handle encoding in URIs. but clients and servers should be consistent with the form they use themselves to ensure the other party doesn’t interpret them as distinct URIs. 
+  - Clients and servers should not assume that each other are encoding the same way (for example a client encoding colons in drive letters cannot assume server responses will have encoded colons). 
+
+- The current protocol is tailored for textual documents whose content can be represented as a string. 
+  - There is currently no support for binary documents. 
+  - A position inside a document (see Position definition below) is expressed as a zero-based line and character offset.
+
+- Prior to 3.17 the offsets were always based on a UTF-16 string representation. 
+  - Since 3.17 clients and servers can agree on a different string encoding representation (e.g. UTF-8). 
+  - The client announces it’s supported encoding via the client capability general.positionEncodings. 
+  - To stay backwards compatible the only mandatory encoding is UTF-16 represented via the string utf-16
+  - The server can pick one of the encodings offered by the client and signals that encoding back to the client via the initialize result’s property
+  - If the string value utf-16 is missing from the client’s capability general.positionEncodings servers can safely assume that the client supports UTF-16.
+
+- To ensure that both client and server split the string into the same line representation the protocol specifies the following end-of-line sequences: ‘\n’, ‘\r\n’ and ‘\r’.
+  - Positions are line end character agnostic.
+
+- Position in a text document expressed as zero-based line and zero-based character offset.
+- A range in a text document expressed as (zero-based) start and end positions. 
+  - A range is comparable to a selection in an editor. Therefore, the end position is exclusive
+
+- A document filter denotes a document through properties like language, scheme or pattern. 
+  - An example is a filter that applies to TypeScript files on disk. Another example is a filter that applies to JSON files with name package.json:
+
+- New in version 3.16: Support for `AnnotatedTextEdit`.
+  - range: Range; // The range of the text document to be manipulated
+  - newText: string; // The range of the text document to be manipulated
+- annotated text edit supports to add an annotation to a text edit. 
+
+- Complex text manipulations are described with an array of TextEdit’s or AnnotatedTextEdit’s, representing a single change to the document.
+  - Text edits ranges must never overlap, that means no part of the original document must be manipulated by more than one edit. 
+  - However, it is possible that multiple edits have the same start position: multiple inserts
+- AnnotatedTextEdit： The support is guarded by the client capability `workspace.workspaceEdit.changeAnnotationSupport`. 
+  - If a client doesn’t signal the capability, servers shouldn’t send AnnotatedTextEdit literals back to the client.
+
+- 
+- 
+- 
+- 
 - 
 - 
 

@@ -13,6 +13,7 @@ modified: 2025-01-05T15:00:07.466Z
 
 - cons
   - jsonrpc
+  - 协议设计目标未考虑并发: The protocol currently assumes that one server serves one tool
 
 - features
   - autocomplete

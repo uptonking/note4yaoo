@@ -82,6 +82,8 @@ modified: 2024-05-06T02:54:40.374Z
   - rrweb的记录与回放
   - iframe history 用于前进后退
 
+- playground的架构是否存在scale问题，如在一个playground支持上万人操作,还有LSP-server的压力
+  - 现有架构倾向于不在同一个playground协同，而可以创建上万个playground
 ### dev-log
 
 - root-thread项目初始化时，cde环境会生成.1024start/.1024nix文件
