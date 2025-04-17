@@ -139,8 +139,9 @@ modified: 2022-08-18T16:57:29.058Z
 - https://github.com/fiduswriter/prosemirror-python
   - Python translation of prosemirror parts needed to modify a document in Python
 
-- https://github.com/cozy/prosemirror-go
+- https://github.com/cozy/prosemirror-go /AGPLv3/202501/go
   - A port in Go of ProseMirror for writing a collaborative editing server
+  - This repository contains a port in Go of `prosemirror-model` and `prosemirror-transform` in order to have the server part of the collaborative editing in Go.
 
 - https://github.com/Xiphoseer/prosemirror-rs
   - Implementation of the https://prosemirror.net model/transform API in Rust

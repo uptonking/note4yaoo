@@ -305,6 +305,9 @@ modified: 2022-06-03T21:34:54.893Z
   - self-hosted knowledge base that works with a SQLite db file.
   - Write in the plain textarea without any burden
   - It has no external dependency.
+  - [use orm like https://entgo.io/ instead of writing sqls manually _202401](https://github.com/usememos/memos/issues/2849)
+    - currently, memos support sqlite, mysql, postgresql, but writing target sql separately, we could use orm, like entgo.io to simplify the db logic and get rid of manually written sql.
+    - Although it's a bit more complicated to write SQL for each driver, but the execution/migration will be open and transparent. IMO, I think writing raw SQL is better then using ORM.
 
 - https://github.com/infobsmi/bsmi-kb
   - https://kb.bsmi.info/

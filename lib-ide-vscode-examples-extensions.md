@@ -48,6 +48,7 @@ modified: 2024-08-24T16:17:26.715Z
   - 前端依赖mui.v5、markdown-it、react-infinite-scroller
   - 后端依赖spring-boot、ehcache
   - 未实现依赖的依赖dependents
+  - ./gradlew runServer — start the Spring server on port 8080
   - https://github.com/EclipseFdn/open-vsx.org
     - This repository contains the source of open-vsx.org, the public instance of Eclipse Open VSX. 
     - Most of the code is maintained in eclipse/openvsx, while here you'll find only adaptations specific to the public instance.

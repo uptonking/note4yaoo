@@ -433,6 +433,13 @@ modified: 2023-09-02T09:17:22.992Z
   - It also provides a JavaScript widget codapi-js for easier integration.
   - Custom sandboxes for any programming language, database, or software.
   - Available as a cloud service and as a self-hosted version.
+  - https://github.com/nalgeon/sandboxes
+    - This repository contains sandboxes for Codapi
+    - To use a particular sandbox, install Codapi and add the sandbox.
+    - Sandbox = image + box + commands:
+      - Image as a Docker image containing specific software, like a compiler or a database engine.
+      - Box is a configuration for running a container: cpu and memory restrictions, file systems, etc.
+      - Commands are predefined actions you can run in a container.
 
 - https://github.com/voronianski/esnextbin /201905/js
   - Prototype JavaScript apps in the browser with ES2015's latest features and importing modules directly from NPM.

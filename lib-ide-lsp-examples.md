@@ -31,6 +31,7 @@ modified: 2025-04-12T19:18:28.788Z
 
 - https://github.com/typescript-language-server/typescript-language-server /apache2/202409/ts
   - TypeScript & JavaScript Language Server
+  - typescript-language-server --stdio
   - Language Server Protocol implementation for TypeScript wrapping `tsserver`.
   - The core logic for interacting with tsserver is nowadays mostly based on the code of the TypeScript Language Features VSCode bundled extension maintained in vscode.
   - [How do I spin up a language server and then invoke it using a Code editor like codemirror?? _202309](https://github.com/typescript-language-server/typescript-language-server/discussions/760)
@@ -87,6 +88,26 @@ modified: 2025-04-12T19:18:28.788Z
 - https://github.com/remarkjs/remark-language-server /MIT/202407/js/inactive
   - A language server to lint and format markdown files with remark.
   - Use `vscode-remark` to use the remark language server with Visual Studio Code.
+
+## python-server
+
+- https://github.com/DetachHead/basedpyright /MIT/202504/python/ts
+  - https://docs.basedpyright.com/
+  - a fork of pyright with various type checking improvements, pylance features and more.
+  - basedpyright-langserver --stdio
+  - unlike pyright, the basedpyright CLI and language server are available as a pypi package.
+  - once installed, the `basedpyright` and `basedpyright-langserver` scripts will be available in your python environment.
+
+- https://github.com/replit/pyright-extended /MIT/202503/python/ts
+  - pyright with yapf and ruff
+  - a new Python meta-LSP that includes tools such as pyright, ruff, and yapf.
+
+## go-server
+
+## rust-server
+
+## java-server
+
 # lsp-apps
 - https://github.com/kcaswick/language-server-diagram-tool /MIT/202411/ts/inactive
   - A tool to export diagrams of programs, read via language servers or LSIF (language server index format)

@@ -21,6 +21,10 @@ modified: 2024-08-24T16:29:44.029Z
 # ide-products
 - [关于IDE，你想知道的都在这! 文章合集 - 掘金 _202303](https://juejin.cn/post/7209472157502668860)
 
+## ide-extended
+
+- 针对 GitHub Gist 的 preview
+
 ## ide/cde
 
 - https://github.com/styfle/awesome-online-ide

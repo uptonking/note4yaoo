@@ -67,6 +67,7 @@ modified: 2021-05-14T15:04:15.333Z
   - https://meta.answer.dev/
   - A Q&A platform software for teams at any scales. 
   - Plugins: redis/es/algolia
+  - 依赖注入使用wire
 - https://github.com/casbin/casnode /apache2/202312/go
   - Open-Source Forum and Social Platform, Alternative to StackOverflow & Flarum
   - Go (Beego) + MySQL

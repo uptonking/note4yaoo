@@ -11,8 +11,10 @@ modified: 2023-08-28T06:08:27.303Z
 - classic-examples-golang
   - office
   - crdt
-  - dolt, git-like
+  - dolt, git-like: git-lfs, gitea
   - more: focalboard, json-parser, tree
+    - apps: flomo-like, cloud-drive
+    - monitoring: openreplay
 
 - who is using #golang
   - 国内: 

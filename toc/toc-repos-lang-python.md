@@ -19,6 +19,7 @@ modified: 2025-02-26T15:04:15.883Z
 
 - https://github.com/django/django
   - The Web framework for perfectionists with deadlines.
+  - [Modern JavaScript for Django developers | Hacker News _202501](https://news.ycombinator.com/item?id=42711387)
 
 - https://github.com/langgenius/dify /82.5kStar/apache2/202503/python
   - https://dify.ai/

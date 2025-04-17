@@ -175,6 +175,7 @@ modified: 2024-03-31T17:45:16.789Z
   - simple cloud drive mapping web app supports local, FTP/SFTP, S3, OneDrive, WebDAV, Google Drive.
   - 拖拽/粘贴上传，拖拽管理文件
   - 文件打包下载
+  - 基于用户/组的权限控制
 
 - https://github.com/haiwen/seafile /AGPLv3/202402/c
   - http://seafile.com/

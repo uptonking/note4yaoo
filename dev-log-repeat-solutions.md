@@ -60,6 +60,7 @@ modified: 2021-07-20T13:50:23.433Z
   - rspack: js plugin; rspack/rolldown-wasm
   - office: outline, handsontable, xlsx, revealjs-ts+PPTist, pdf-lib, mxgraph-demo
   - 考虑维护/fork旧版项目: codemirror5-lang/demo
+  - 考虑吧port主流项目: codemirror-go/rust
   - ~~animation: motion(dom/svg)~~
 
 - 技术细节(editor): virtualized, draggable, table(eav)
@@ -258,6 +259,9 @@ modified: 2021-07-20T13:50:23.433Z
   - 容易快速响应用户交互
 - 重前端架构的缺点
   - 刷新页面或关闭页面容易导致数据丢失或数据不一致
+
+- 大量小文件的存储方式
+  - 可参考github的方案
 # collab
 - 多文件的app, 或多或少有点类似知识库
   - 可以参考给普通数据库表添加crdt支持的场景

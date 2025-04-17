@@ -235,10 +235,13 @@ modified: 2023-08-29T10:12:22.345Z
   - [Compared to other Git hosting | Gitea Documentation](https://docs.gitea.com/next/installation/comparison)
   - https://demo.gitea.com/
   - Painless self-hosted all-in-one software development service, including Git hosting, code review, team collaboration, package registry and CI/CD
+  - 前端多是普通js+jquery，未使用react，十几个文件使用vue(diff部份)，
+  - 前端依赖jquery、citation-js、vue3-calendar-heatmap、chart.js4、easymde、katex、monaco-editor、pdfobject、tributejs
+  - 后端依赖chi、go-git、xorm、goquery、fsnotify
   - 🍴 forked from Gogs since November of 2016, but a lot has changed
   - 🆚 [Why use `gitea` over `gogs` ? · Issue · go-gitea/gitea _201612](https://github.com/go-gitea/gitea/issues/423)
     - Gogs is managed by a single person, who is the original author. The community asked many times to share responsibility but this was never accepted. So yes, this is the reason why the project was forked.
-  - [Rewrite Gitea fronend in react+atlaskit · Issue · go-gitea/gitea _202005](https://github.com/go-gitea/gitea/issues/11324)
+  - 🎨 [Rewrite Gitea fronend in react+atlaskit · Issue · go-gitea/gitea _202005](https://github.com/go-gitea/gitea/issues/11324)
     - Vue is what most maintainers seem to have the most experience in and would be preferred.
     - we aren't looking at re-writing our FE in react
     - As for react, you may want to reach out to the authors of unfoldingWord/gitea-react-toolkit as I know they are doing similar things
