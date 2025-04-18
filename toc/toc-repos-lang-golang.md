@@ -27,8 +27,14 @@ modified: 2025-04-17T08:17:04.770Z
 - https://github.com/ryanpenn/go-realworld /MIT/202412/go/gin/gorm
   - A realworld app implementation built with Go.
 
+- https://github.com/amberxcc/realworld-backend-gin-gorm /202304/go
+  - mysql， ✅ 已替换为sqlite
+
 - https://github.com/smy-101/gin_realworld /202408/go
   - mysql + gin
+
+- https://github.com/clindseywsdemo/golang-gin-realworld-example-app /MIT/202204
+  - sqlite + wire
 
 - https://github.com/labasubagia/realworld-backend /MIT/202401/go/inactive
   - Golang Hexagonal Architecture codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the RealWorld spec and API.
