@@ -77,6 +77,12 @@ modified: 2024-01-28T09:05:12.586Z
 - ## Cloudflare now provides clientless, browser-based support for the Remote Desktop Protocol (RDP)
 - https://x.com/Cloudflare/status/1903076650952335699
 
+- ## 推荐一个可自托管的虚拟浏览器，可以直接部署到一个VPS上，然后就可以实现团队间共享一个持久化Session的浏览器。
+- https://x.com/Stephen4171127/status/1883559372204491156
+- 试过了，卡顿很厉害。还不如vpn加windows虚拟机
+- 这种用类似于novnc实现的浏览器项目都不是很好用，带宽和延迟一旦不够就会让整个界面都很卡，甚至是完全不可用的地步
+- aws的remote desktop考虑一下？
+
 # discuss
 - ## 
 

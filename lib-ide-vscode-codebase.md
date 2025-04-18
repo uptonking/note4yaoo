@@ -15,7 +15,7 @@ modified: 2024-08-24T16:15:42.906Z
 ```JS
 // start dev
 npm install
-// npm run watch
+npm run watch
 // docs:　https://github.com/microsoft/vscode/wiki/How-to-Contribute
 ```
 
@@ -42,6 +42,26 @@ npm install
 - 
 
 # vscode
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
+# extensions
+- ⚖️ 很多extensions都使用了markdown-it来处理markdown
+  - markdown-language-features: highlight.js
+  - markdown-math: markdown-it-katex
+  - extension-editing
+  - ipynb
+  - [The TextMate grammar VS Code uses for Markdown syntax highlighting](https://github.com/microsoft/vscode-markdown-tm-grammar)
+
+- 
+- 
+- 
 
 # coder-server
 

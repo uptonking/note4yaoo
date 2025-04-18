@@ -28,10 +28,11 @@ modified: 2025-04-17T08:17:04.770Z
   - A realworld app implementation built with Go.
 
 - https://github.com/amberxcc/realworld-backend-gin-gorm /202304/go
-  - mysql， ✅ 已替换为sqlite
+  - mysql， ✅ 可替换为sqlite
+  - 实现清晰简单
 
-- https://github.com/smy-101/gin_realworld /202408/go
-  - mysql + gin
+- https://github.com/smy-101/gin_realworld /202408/go/mysql
+  - 操作数据库混合使用了 gorm 和 sqlx, 只有一张表使用了sqlx
 
 - https://github.com/clindseywsdemo/golang-gin-realworld-example-app /MIT/202204
   - sqlite + wire

@@ -117,8 +117,12 @@ modified: 2025-01-05T15:00:51.509Z
 
 - ## 
 
-- ## 
+- ## DocumentURI scheme is not 'file'
+- https://stackoverflow.com/questions/2843557
+- The error message is telling you that `new File(fileUri)` works only on `file:` URI's (ones referring to a pathname on the current system), not other schemes like `http:` .
 
+- 👷👷: 实测要在LSP连接参数`rootUri/documentUri`的绝对路径前加上 `file://`，其中typescript/pyright可不加，但gopls需要加
+  
 - ## 🤔 Anyone know how to access the running tsserver from outside VSCode?
 - https://x.com/mattpocockuk/status/1902295528747983253
   - Want to build a MCP server that can do go-to-definition, rename symbol etc.

@@ -317,19 +317,26 @@ add action to create quickSort1.mjs and add 3 test cases in it
   - gitignore的文件不应该显示M
 
 - 🔲 🔜
-  - terminal在follow时自动打开，在非follow时显示更新的红点
   - terminal放大缩小折叠展开后，光标自动聚焦在terminal
   - 编辑器行号宽度样式优化
   - 修复文件树将文件夹拖到文件夹不work的问题
   - 变更列表 accept-all, reject-all
+  - ~~terminal在follow时自动打开，在非follow时显示更新的红点~~
   - ~~terminal在执行时需要自动滚到末尾，方便显示最新输出信息~~
   - ~~编辑器打开时自动跳到diff视图第一个变更块的位置~~
   - ~~action路径超出卡片宽度~~
   - ~~webview自动打开, 刷新时保持打开~~
   - ~~cmdk工具条无法触发，快捷键可以~~
 
-- 异常处理增强
-  - 观测重要log: RESOURCE_NOT_ENOUGH
+- dev-to 💡✨🤔
+  - MCP的原理，及调用LSP的技术方案
+
+## 0418
+
+- 今天计划
+    - 继续完善python语言的语法跳转，特别是处理Any类型和Unknown类型的提示
+    - 开始实现go语言的语法跳转
+- 实际完成
 
 ## 0417
 

@@ -91,3 +91,41 @@ ${varname:?message}
   - -z STRING: returns true if the length of STRING is zero.
   - ! EXPRESSION: returns true of EXPRESSION is false
 # more
+
+# discuss-shell
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [curl vs wget](https://daniel.haxx.se/docs/curl-vs-wget.html)
+- similarities
+  - both are command line tools that can download contents from FTP, HTTP(S)
+  - both support HTTP cookies
+
+- `curl` is powered by `libcurl` - a cross-platform library with a stable API that can be used by each and everyone. (major difference)
+  - curl is MIT licensed. Wget is GPL v3.
+  - pipes: curl works more like the traditional Unix cat command, it sends more stuff to stdout, and reads more from stdin in a "everything is a pipe" manner. Wget is more like cp, using the same analogue.
+  - More protocols: curl supports FTP(S), GOPHER(S), HTTP(S), SCP, SFTP, TFTP, TELNET, DICT, LDAP(S), MQTT, FILE, POP3(S), IMAP(S), SMB(S), SMTP(S), RTMP, RTSP and WS(S). Wget only supports HTTP(S) and FTP.
+  - curl supports HTTP/0.9, HTTP/1.0, HTTP/1.1, HTTP/2 and HTTP/3 to the server and HTTP/1 and HTTP/2 to proxies. wget supports 1.0 and 1.1 and only HTTP/1 to proxies.
+  - More SSL libraries and SSL support: curl can be built with one out of twelve (12!) different SSL/TLS libraries, and it offers more control and wider support for protocol details.
+  - HTTP auth: curl supports more HTTP authentication methods, especially over HTTP proxies: Basic, Digest, NTLM, Negotiate and AWS v4 signatures.
+  - SOCKS: curl supports SOCKS4 and SOCKS5 for proxy access. With local or proxy based name resolving.
+  - curl supports HTTPS proxy, that is HTTPS to the proxy. wget does not.
+  - Bidirectional: curl offers upload and sending capabilities. Wget only offers plain HTTP POST support.
+  - HTTP multipart/form-data sending, which allows users to do HTTP "upload" and in general emulate browsers and do HTTP automation to a wider extent.
+  - curl supports gzip, brotli, zstd and deflate Content-Encoding and does automatic decompression.
+  - curl can do many transfers in parallel (-Z). wget only does serial.
+  - Much more developer activity. 
+  - curl comes pre-installed on macOS and Windows 10. Wget does not.
+
+- `wget` is command line only. There's no library.
+  - Recursive!: Wget's major strong side compared to curl is its ability to download recursively, or even just download everything that is referred to from a remote resource, be it a HTML page or a FTP directory listing.
+  - Wget is GPL v3. curl is MIT licensed.
+  - GNU: Wget is part of the GNU project and all copyrights are assigned to FSF. The curl project is entirely stand-alone and independent with no organization parenting at all with almost all copyrights owned by Daniel.
+  - Wget requires no extra options to simply download a remote URL to a local file, while curl requires `-o or -O`.
+  - Wget supports only GnuTLS or OpenSSL for SSL/TLS support.
+  - Wget has no SOCKS support.
+  - Wget enables more features by default: cookies, redirect-following, time stamping from the remote resource etc. With curl most of those features need to be explicitly enabled.

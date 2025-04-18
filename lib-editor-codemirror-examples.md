@@ -1438,7 +1438,7 @@ modified: 2023-06-23T12:46:53.288Z
   - https://md2pdf.netlify.com/
   - Offline markdown to pdf, choose -> edit -> transform
 
-## lsp
+# lsp
 
 - https://github.com/FurqanSoftware/codemirror-languageserver /161Star/BSD/202502/ts/inactive
   - Language Server integration for CodeMirror6
@@ -1447,7 +1447,7 @@ modified: 2023-06-23T12:46:53.288Z
     - It now accepts any object implementing `Transport`.
   - [Sharing lsp clients between mutliple editors _202204](https://github.com/FurqanSoftware/codemirror-languageserver/issues/11)
     - I have added preliminary support for reusing the LSP client across multiple plugin instances.
-  - [Using Language Servers with CodeMirror 6 _202103](https://hjr265.me/blog/codemirror-lsp/)
+  - 📝 [Using Language Servers with CodeMirror 6 _202103](https://hjr265.me/blog/codemirror-lsp/)
   - 🍴 forks
   - https://github.com/marimo-team/codemirror-languageserver /BSD/202504/ts
     - https://marimo-team.github.io/codemirror-languageserver/

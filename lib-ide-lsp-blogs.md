@@ -11,11 +11,24 @@ modified: 2025-01-05T15:00:32.524Z
 
 # blogs-lsp
 
+## 🌰 [Using Language Servers with CodeMirror 6 · hjr265.me _202103](https://hjr265.me/blog/codemirror-lsp/)
+
+- The goal was to provide code completion, diagnostics, and hover tooltips. And, CodeMirror 6 makes it easy to do all three.
+
+- Language Servers speak JSON-RPC 2.0 over standard IO. To invoke a method or send a notification to a language server, you can write to the process’s standard input.
+  - A JSON-RPC request contains some headers (at least `Content-Length`) followed by an empty line, followed by the payload.
+- The language server process responds by writing to standard output
+  - Notifications are similar, except that you do not expect any response from them.
+
+- 👥 discussion
+
+- how the LSP keeps in sync with the editor text, since it's not in the same "filesystem"? What happens if you have multiple files or "packages"?
+  - The thing about being able to manage multiple files did come up previously. As a way to accommodate that use case the `languageServer` extension allows you to reuse the same `LanguageServerClient`.
+
 ## 🌰 [如何创建集成 LSP 支持多语言的 Web 代码编辑器 - 米开朗基杨 - 博客园 _202309](https://www.cnblogs.com/ryanyangcs/p/17693108.html)
 
 - 对于一个云开发平台来说，一个好的 Web IDE 能很大程度地提高用户的编码体验
 - 在这篇文章中，我们会开发一个最小最轻量的编辑器 Demo 作为演示，架构非常简单，就是前端创建一个 Monaco Editor，后端创建一个语言服务器，二者之间通过 vscode-ws-jsonrpc 和 WebSocket 服务进行传输
-
 
 - 
 - 

@@ -27,6 +27,16 @@ modified: 2025-04-12T19:18:28.788Z
   - https://github.com/devopzacademy/jsonrpc-ws-proxy /202310/js
     - DEFAULT_PORT = 3000
 
+- https://github.com/lspserver/proxy /apache2/202204/ts/inactive
+  - the proxy of lspserver written in JavaScript
+  - https://github.com/lspserver/proxy-go /go
+    - the proxy of lspserver written in Go
+
+- https://github.com/emacs-lsp/lsp-docker /GPL/202503/emacs
+  - lsp-mode uses lsp-docker to run language servers using in containers
+  - pylsp
+  - lsp-mode starts the image passed as :docker-image-id and mounts :path-mappings in the container. 
+
 ## ts-server
 
 - https://github.com/typescript-language-server/typescript-language-server /apache2/202409/ts
