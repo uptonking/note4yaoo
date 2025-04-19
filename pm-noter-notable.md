@@ -135,6 +135,11 @@ modified: 2023-11-28T14:48:45.910Z
 - inspirations
   - 高频需求，网盘分享
 
+## editor-feats
+
+- doc-views
+  - preview/text/text+blame, 类似github的网页版查看文件的tabs
+
 - markdown block diff
   - cloudflare markdown conversion open source alternative
 

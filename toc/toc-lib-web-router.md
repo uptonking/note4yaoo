@@ -19,6 +19,12 @@ modified: 2020-12-12T18:59:54.950Z
 
 - https://github.com/TanStack/router /202402/ts
   - typesafe Router for React (and friends) w/ built-in caching, 1st class search-param APIs, client-side cache integration and isomorphic rendering
+  - 🆚️ [Comparison | TanStack Router & TanStack Start vs Next.js vs React Router / Remix](https://tanstack.com/router/latest/docs/framework/react/comparison)
+  - [TanStack Router React Docs](https://tanstack.com/router/latest/docs/framework/react/installation)
+    - TanStack Router is currently only compatible with React (with ReactDOM) and Solid. 
+    - If you would like to contribute to the React Native, Angular, or Vue adapter, please reach out to us on Discord.
+  - [Are there any plans to support vue? _202405](https://github.com/TanStack/router/discussions/1568)
+    - Currently no. Right now, Tanner's diving into Start and RSCs for Router.
 
 - https://github.com/molefrog/wouter /202402/js
   - a tiny router for modern React and Preact apps that relies on Hooks.

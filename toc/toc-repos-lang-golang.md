@@ -48,4 +48,13 @@ modified: 2025-04-17T08:17:04.770Z
 - https://github.com/k0kishima/golang-realworld-example-app /202408/go/mysql/inactive
   - built with Gin and the Ent framework
   - You might also check out the Frontend implementation in Nuxt3.
+# web-fwk
+- https://github.com/gin-gonic/gin /81.8kStar/MIT/202504/go
+  - https://gin-gonic.com/
+  - Gin is a HTTP web framework
+  - It features a Martini-like API with much better performance -- up to 40 times faster thanks to httprouter.
+  - Zero allocation router
+  - Route grouping
+  - Middleware support
+  - Built-in rendering
 # more

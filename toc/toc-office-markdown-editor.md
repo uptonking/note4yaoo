@@ -85,8 +85,11 @@ modified: 2022-11-09T11:53:13.093Z
 - https://github.com/uiwjs/react-markdown-editor /MIT/202404/ts
   - https://uiwjs.github.io/react-markdown-editor
   - A markdown editor with preview, implemented with React.js and TypeScript.
-  - 依赖codemirror6、@uiw/react-markdown-preview、highlight.js
-
+  - 依赖@uiw/react-codemirror、@uiw/react-markdown-preview
+  - 支持源码和预览同步滚动
+  - https://github.com/jaywcjlove/wxmp /MIT
+    - 微信公众号文章 Markdown 在线编辑器，使用 markdown 语法创建一篇简介美观大方的微信公众号图文
+    - 未来不再开发 Chrome 的插件(暂存在 chrome 分支)，通过 web 版本定制更丰富的功能
 - vditor /1.3kStar/MIT/202503
   - https://github.com/Vanessa219/vditor
   - https://b3log.org/vditor/demo/index.html

@@ -130,7 +130,7 @@ modified: 2024-08-24T16:17:26.715Z
   - All in one i18n extension for VS Code
 
 - https://github.com/reliverse/vscode-extension-framework /MIT/202502/ts
-  - Next-gen framework for developing VSCode extensions.
+  - 🏘️ Next-gen framework for developing VSCode extensions.
   - It's like WXT, but for VSCode Extensions.
   - Supports both MV2 and MV3
   - Dev mode with HMR & fast reload
@@ -140,6 +140,16 @@ modified: 2024-08-24T16:17:26.715Z
 
 - https://github.com/zardoy/vscode-framework /MIT/202111/ts/inactive
   - Framework for fast VSCode extensions prototyping
+
+- https://github.com/Miragon/vscode-hexagonal-example /apache2/202411/ts/inactive
+  - 🏘️ a sample project for creating a VS Code plugin with a hexagonal software architecture.
+  - 依赖Tsyringe
+  - The plugin is an example of a `CustomTextEditor` which reacts on `.hexagon` files.
+  - The application core, which contains the ports and services, has no dependencies on the VS Code API.
+  - the application is divided into:
+    - Input-Adapters "drive" our application. In the case of a VS Code plugin, these are mainly user inputs.
+    - Services contain the business logic of our application. They are the core of our application.
+    - Output-Adapters are "driven" by our application to communicate with the outside world. In the case of a VS Code plugin, this is the VS Code API itself.
 
 ## utils-webview
 

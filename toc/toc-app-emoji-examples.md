@@ -1,11 +1,11 @@
 ---
-title: app-emoji-examples
+title: toc-app-emoji-examples
 tags: [emoji, examples, toc]
 created: 2024-01-21T07:46:07.142Z
-modified: 2024-01-21T07:46:16.335Z
+modified: 2025-04-19T09:56:06.705Z
 ---
 
-# app-emoji-examples
+# toc-app-emoji-examples
 
 # guide
 
@@ -52,6 +52,7 @@ modified: 2024-01-21T07:46:16.335Z
   - Uses IndexedDB, so it consumes far less memory than other emoji pickers
   - Renders native emoji by default, with support for custom fonts
   - Framework and bundler not required, just add a `<script>` tag and use it
+  - [Let’s learn how modern JavaScript frameworks work by building one _202312](https://nolanlawson.com/2023/12/02/lets-learn-how-modern-javascript-frameworks-work-by-building-one/)
   - https://github.com/nolanlawson/emoji-picker-element-data
     - Uses emojibase-data to build JSON files designed for emoji-picker-element.
 

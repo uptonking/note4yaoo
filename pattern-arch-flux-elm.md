@@ -12,6 +12,14 @@ modified: 2023-11-18T09:48:30.897Z
 - flux with event-sourcing
 - functional 插件架构
 
+- 自定义view层的实现参考
+  - 主流开源组件的渲染层实现，如 typewriter/tanstack-table/odoo-spreadsheet
+  - https://github.com/matthewp/views-the-hard-way
+  - https://github.com/nolanlawson/emoji-picker-element
+
+- 
+- 
+
 - redux [数据流](https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow)
   - action -> state -> view
 - flux [数据流](http://fluxxor.com/what-is-flux.html)
