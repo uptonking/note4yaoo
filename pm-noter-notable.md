@@ -143,6 +143,10 @@ modified: 2023-11-28T14:48:45.910Z
 - markdown block diff
   - cloudflare markdown conversion open source alternative
 
+- backlink
+  - 在代码领域，双向链接通常对应import, 方便应用本地lib或远程lib
+  - 在文档领域，双向链接方便引用和复用已有资源，需要在runtime层面支持解析和更新，甚至LSP
+
 ## text-editing
 
 - 选择一段文字，将其中的空格替换成`-`，方便区分比较双方，如 a-bvs c-d

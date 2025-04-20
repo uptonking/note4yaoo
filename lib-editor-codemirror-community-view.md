@@ -93,6 +93,12 @@ modified: 2024-08-08T20:49:11.571Z
 
 - ## 
 
+- ## 
+
+- ## [Basic editor, tooltips are in the wrong place - discuss. CodeMirror _202205](https://discuss.codemirror.net/t/basic-editor-tooltips-are-in-the-wrong-place/4377)
+- Do you have transforms or `contain` CSS declarations on any of the parent nodes?
+  - You might be able to work around the contain problem by passing `position: "absolute"` in your tooltip configuration.
+
 - ## [Highlight some text while hoverTooltip is activated - discuss. CodeMirror _202408](https://discuss.codemirror.net/t/highlight-some-text-while-hovertooltip-is-activated/8506)
   - I want to support LSP hover in CM, so I used the hoverTooltip plugin, it sends the LSP textDocument/hover request and show a tooltip for it, that’s good.
   - However, LSP server will also return a range object, which represents user-focused semantic object, I want to highlight the text in range during the hover tooltip. Is there a good way to do it? Thanks!

@@ -10,7 +10,7 @@ modified: 2023-06-25T04:13:54.132Z
 # guide
 
 # popular
-- https://github.com/osuresearch/annotator
+- https://github.com/osuresearch/annotator /MIT/202305/ts/inactive
   - https://osuresearch.github.io/annotator
   - React components for annotating forms and documents
   - 依赖tiptap2、@osuresearch/ui、mantine-hooks、iframe-resizer、react-aria、react-hook-form

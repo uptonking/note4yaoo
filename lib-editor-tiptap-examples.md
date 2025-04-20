@@ -79,6 +79,17 @@ modified: 2023-02-05T19:03:27.730Z
   - 实现了RTL国际化方向
   - 数据保存使用了 idb-keyval
 
+- https://github.com/osuresearch/annotator /MIT/202305/ts/inactive
+  - https://osuresearch.github.io/annotator
+  - React components for annotating forms and documents
+  - 依赖tiptap2、@osuresearch/ui、mantine-hooks、iframe-resizer、react-aria、react-hook-form
+  - https://github.com/osuresearch/ui
+    - https://osuresearch.github.io/ui/v5
+    - Research UI is The Ohio State University's Office of Research component library, based on Ohio State's design system - BUX.
+    - 依赖react-aria
+  - https://github.com/osuresearch/electron-example
+    - Electron React Boilerplate uses Electron, React, React Router, Webpack and React Fast Refresh.
+
 - neeto-editor /12Star/MIT/202311/js/tiptap/提交多
   - https://github.com/bigbinary/neeto-editor
   - https://neeto-editor.onrender.com/

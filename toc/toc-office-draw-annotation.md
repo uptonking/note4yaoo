@@ -84,6 +84,17 @@ modified: 2023-11-03T17:43:01.518Z
   - Usable on web or as Windows, Mac or Linux desktop application
   - https://github.com/UniversalDataTool/react-image-annotate
     - Create image annotations. Classify, tag images with polygons, bounding boxes or points.
+
+- https://github.com/osuresearch/annotator /MIT/202305/ts/inactive
+  - https://osuresearch.github.io/annotator
+  - React components for annotating forms and documents
+  - 依赖tiptap2、@osuresearch/ui、mantine-hooks、iframe-resizer、react-aria、react-hook-form
+  - https://github.com/osuresearch/ui
+    - https://osuresearch.github.io/ui/v5
+    - Research UI is The Ohio State University's Office of Research component library, based on Ohio State's design system - BUX.
+    - 依赖react-aria
+  - https://github.com/osuresearch/electron-example
+    - Electron React Boilerplate uses Electron, React, React Router, Webpack and React Fast Refresh.
 # anno-server
 - https://github.com/jankaszel/simple-annotation-server /MIT/202007/js/inactive
   - simple annotation server intended for testing purposes, implementing both the Web Annotation Protocol as well as the Web Annotation Data Model with simple REST-based user management. 

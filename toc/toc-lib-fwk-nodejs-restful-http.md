@@ -314,6 +314,13 @@ modified: 2022-12-19T01:51:01.389Z
     - You can bring your own renderer, not only one using hono/jsx.
     - Islands hydration - If you want interactions, create an island. JavaScript is hydrated only for it.
 
+- https://github.com/oakserver/oak /MIT/202501/ts
+  - https://oakserver.org/
+  - oak is a middleware framework for handling HTTP requests across Deno, Node.js, Bun and Cloudflare Workers.
+  - It also includes a middleware router
+  - This middleware framework is inspired by Koa and middleware router inspired by @koa/router.
+  - oak was inspired by Express.js and koa and originally written for the Deno runtime.
+
 - https://github.com/Actionhero/Actionhero /apache2/202406/ts
   - https://www.actionherojs.com/
   - a realtime multi-transport nodejs API Server with integrated cluster capabilities and delayed tasks

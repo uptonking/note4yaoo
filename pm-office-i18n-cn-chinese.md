@@ -46,6 +46,8 @@ modified: 2023-01-14T15:47:04.431Z
   - 语义放在括号中文括号中的情形
 # translation
 - 很多自动翻译的工具会翻译code block里面的代码单词
+# markdown-cn
+- autolink自动识别的链接后若紧跟中文逗号，普通markdown解析器会将逗号后也作为内容
 # i18n-utils
 - react-intl: focalboard, atlaskit-editor
   - 更多使用 FormattedMessage 组件，或intl.formatMessage()方法

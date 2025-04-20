@@ -370,6 +370,11 @@ modified: 2023-08-29T10:12:22.345Z
     - If an object with the same key already exists, git-lfs-s3 does not upload it again.
   - The git S3 integration was inspired by the work of Bryan Gahagan on git-remote-s3.
     - The LFS implementation benefitted from lfs-s3 by @nicolas-graves. If you do not need to use the git-remote-s3 transport you are should use that project.
+
+- https://github.com/GerritCodeReview/gitiles /apache2/202503/java
+  - a simple repository browser for Git repositories, built on JGit.
+  - Its guiding principle is simplicity: it has no formal access controls, no write access, no fancy Javascript, etc.
+  - Gitiles automatically renders *.md Markdown files into HTML for simplified documentation
 # apps-by-git
 - https://github.com/w4/rgit /public/202402/rust
   - https://git.inept.dev/

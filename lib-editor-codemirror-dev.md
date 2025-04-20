@@ -217,7 +217,8 @@ modified: 2021-05-06T09:38:31.520Z
   - 红色部分支持copy和选中
   - git diff text formatter: 将被打乱的git-diff输出从一行格式化为分段
   - diff for version-history-timeline
-  - diff算法的精确度较差，特别是对于增加一行的场景，cm-diff展示的效果是先删除一行再增加两行
+  - 🆚️ 将vscode/monaco的diff逻辑迁移到codemirror
+    - diff算法的精确度较差，特别是对于增加一行的场景，cm-diff展示的效果是先删除一行再增加两行
   - codemirror-diff 作为 git diff 输出的view层
 
 - integrations

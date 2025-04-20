@@ -17,7 +17,7 @@ modified: 2023-06-23T12:46:53.288Z
     - multi-writer的效果
   - (diff)字符渐变的动画效果, 🤔 和时间旅行的回放过程有何区别
     - diff只需初始结束状态, 而时间旅行支持中间状态
-  - codemirror + dockview/fileTree, partykit
+  - codemirror + dockview/fileTree
 
 - fans-codemirror
   - https://github.com/val-town/codemirror-ts
@@ -187,7 +187,7 @@ modified: 2023-06-23T12:46:53.288Z
     - https://tisqleditor-playground.netlify.app/
   - CodeMirror6 based SQL code editor which is used in TiDB Cloud Console
   - Supply React component and Vue component
-  - 提供了ai-widget
+  - 提供了ai-widget 👾🆚️
 
 - https://github.com/vizhub-core/vzcode /MIT/202406/ts/js(server)
   - VZCode: Multiplayer Code Editor
@@ -203,12 +203,12 @@ modified: 2023-06-23T12:46:53.288Z
   - [VSCode-ish: Jump to Definition of Variable ](https://github.com/vizhub-core/vzcode/issues/177)
     - 🌰 [202406已合并pr, 只实现了文件内跳转定义，且需要按住`Ctrl`键(macos下也是)同时移动鼠标](https://github.com/vizhub-core/vzcode/pull/717)
     - 基于遍历syntaxTree判断节点类型实现，纯前端的实现方案，触发时机没有注册在editor `document.addEventListener('mouseover', handleMouseOver)`;
-    - 似乎只支持.js文件，.java不支持显示下划线
+    - 似乎只支持.js文件，.java文件不支持显示下划线
   - [pr已合并_Intelligent Autocompletions _202311](https://github.com/vizhub-core/vzcode/pull/305)
   - https://github.com/vizhub-core/vizhub /v3
     - possible to self-host your own instance
     - possible to extend the core with plugins
-    - 不支持跳转到定义
+    - vzhub网站不支持跳转到定义
   - https://github.com/vizhub-core/vizhub-legacy /202206/js/inactive
     - https://vizhub.community/
     - Self Hosted CMS for Web-based Dataviz
@@ -325,7 +325,7 @@ modified: 2023-06-23T12:46:53.288Z
   - A toolbox for working with block-based linked markdown notes
   - https://github.com/marcoklein/codemirror-block-editor /archived
 
-- https://github.com/JerryI/wljs-editor /202407/js/多层嵌套cm
+- https://github.com/JerryI/wljs-editor /202407/js/多层嵌套cm/formula
   - https://jerryi.github.io/wljs-editor/
   - A cell editor & supporting packages for wolfram-frontend project written in JS with Codemirror 6. Support mathematical expressions rendered inline, Mathematica's boxes and many more...
   - This is a core component of Wolfram JS Frontend project
@@ -397,8 +397,7 @@ modified: 2023-06-23T12:46:53.288Z
   - https://uiwjs.github.io/react-codemirror/#/merge/document
   - CodeMirror 6 component for React
   - Versions after `@uiw/react-codemirror@v4` use codemirror 6.
-    - 从v4(202109)开始使用cm6，v3.0 cannot be upgraded to 4.0+
-    - [Codemirror 6 ](https://github.com/uiwjs/react-codemirror/issues/88)
+    - 从v4(202109)开始使用cm6，[v3.0 cannot be upgraded to 4.0+](https://github.com/uiwjs/react-codemirror/issues/88)
   - 提供了很多示例和ext，包括theme-editor/mention/merge
   - The bundled version supports use directly in the browser
   - Support theme customization, provide theme editor.
@@ -1117,7 +1116,9 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/GerritCodeReview/plugins_codemirror-editor /apache2/202410/ts
   - A plugin that uses CodeMirror to provide a rich code editing experience in PolyGerrit.
-  - The codemirror-element using CodeMirror is loaded lazily from another js bundle
+  - The `codemirror-element` using CodeMirror is loaded lazily from another js bundle
+  - https://github.com/GerritCodeReview/gerrit /java
+    - Gerrit makes reviews easier by showing changes in a side-by-side display, and allowing inline comments to be added by any reviewer.
 
 - https://github.com/jupyterlab/jupyterlab-git /BSD/202407/python/ts
   - A JupyterLab extension for version control using Git
@@ -1261,7 +1262,7 @@ modified: 2023-06-23T12:46:53.288Z
   - codemirror autocompletion for datacore
 
 - https://github.com/jmkng/sen /MIT/202310/ts
-  - Simple, reusable CodeMirror (v6+) extensions.
+  - Simple, reusable CodeMirror (v6+) extensions: markdown bold, heading, block
   - The extensions are exported as functions that return an array of extensions that you can apply to your view.
 
 - https://github.com/eivmosn/plugin-mirror /202311/ts
@@ -1375,7 +1376,7 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/PuruVJ/neocodemirror /202407/ts/svelte
   - Aims to provide Codemirror 6 as an easy to use codemirror action.
   - https://x.com/puruvjdev/status/1780560310547436002
-    - Anytime you change documentId, it stores the state in a map, and when the documentID changes back to the one stored, we apply the history
+    - ⌛️ Anytime you change documentId, it stores the state in a map, and when the documentID changes back to the one stored, we apply the history
 
 - https://github.com/jsonnext/codemirror-json-schema /MIT/202406/ts
   - https://codemirror-json-schema.netlify.app/
@@ -1440,9 +1441,7 @@ modified: 2023-06-23T12:46:53.288Z
   - https://realdennis.github.io/md2pdf/
   - https://md2pdf.netlify.com/
   - Offline markdown to pdf, choose -> edit -> transform
-
 # lsp
-
 - https://github.com/FurqanSoftware/codemirror-languageserver /161Star/BSD/202502/ts/inactive
   - Language Server integration for CodeMirror6
   - This plugin enables code completion, hover tooltips, and linter functionality by connecting a CodeMirror 6 editor with a language server over WebSocket.
@@ -1506,7 +1505,7 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/marc2332/lsp-codemirror /ISC/202008/ts/codemirror5
   - LSP integration for CodeMirror5
   - Support for custom autocompletion dropmenu
-  - 依赖https://github.com/marc2332/node-jsonrpc-lsp, (based on https://github.com/wylieconlon/jsonrpc-ws-proxy，而不是直接依赖vscode-jsonrpc)
+  - 依赖https://github.com/marc2332/node-jsonrpc-lsp, (based on https://github.com/wylieconlon/jsonrpc-ws-proxy, 而不是直接依赖vscode-jsonrpc)
   - 🍴 forks
   - https://github.com/lukehaas/lsp-codemirror /202503/ts/CodeMirror5
     - a more updated and better version of the original client
@@ -1614,8 +1613,7 @@ modified: 2023-06-23T12:46:53.288Z
   - Uses `@uiw/react-codemirror` for seamless integration of CodeMirror with React.
 
 - https://github.com/craftzdog/react-codemirror-runmode /MIT/202503/ts
-  - Syntax highlighting for react, utilizing CodeMirror's parser
-  - Syntax highlighter for React, using CodeMirror 6. 
+  - Syntax highlighting for react, utilizing CodeMirror6's parser
   - It automatically loads the language metadata and dynamically loads language parser modules based on the specified language.
 
 - https://github.com/cookshack/codemirror-lang-lezer-tree /MIT/202409/js
@@ -1630,10 +1628,6 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/mattmundell/codemirror-lang-git-log /MIT/202406/ts
   - https://git.sr.ht/~mattmundell/codemirror-lang-git-log
   - CodeMirror language for 'git log' output
-
-- https://github.com/Juexro/codemirror-iecst /MIT/202408/js
-  - Structured Text language support, includes syntax highlight based on IEC 61131-3
-  - This package implements iecst language support for the CodeMirror code editor.
 
 - https://github.com/inspirnathan/codemirror-lang-mermaid /MIT/202309/ts
   - Mermaid language support for CodeMirror 6
@@ -1844,6 +1838,9 @@ modified: 2023-06-23T12:46:53.288Z
   - https://webmaker.app/
   - A blazing fast & offline frontend playground
   - 依赖codemirror5
+
+- https://github.com/cookshack/bred /CC0-1.0/202504/js
+  - I'm playing with CodeMirror, Monaco and Ace inside Electron.
 
 - https://github.com/ast-grep/ast-grep /MIT/202408/rust
   - https://ast-grep.github.io/
