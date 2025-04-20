@@ -493,6 +493,9 @@ window.matchMedia('(prefers-color-scheme: dark)')
 
 - ## 
 
+- ## [RangeError after setting the initial selection via dispatch - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/rangeerror-after-setting-the-initial-selection-via-dispatch/3688)
+- The new `centerOn` effect should make scrolling something into the middle of the view easier.
+
 - ## 🌰 [cursorScrollMargin for v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/cursorscrollmargin-for-v6/7448)
   - In CodeMirror 5 it was cursorScrollMargin, am I right in thinking that in V6 I should be using EditorView.scrollMargins ?
 

@@ -52,7 +52,7 @@ modified: 2023-11-30T06:56:24.809Z
 - Content in CM6 is virtualized so I’m not sure how third party scrollbars libraries would go.
 
 - ## [editor lines out of sync in merge view - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/editor-lines-out-of-sync-in-merge-view/7138)
-- Thanks, I managed to reproduce it now (it only showed up for me when I scrolled back up from the bottom). This patch overhauls how spacers are handled, and seems to help
+- I managed to reproduce it now (it only showed up for me when I scrolled back up from the bottom). This patch overhauls how spacers are handled, and seems to help
 
 - ## [how does codemirror stay so fast even on thousands of lines of code _20231130](https://twitter.com/RogersKonnor/status/1730043499850977383)
   - TIL it actually virtualizes the viewable nodes. Well, that makes sense, also not looking forward to virtualized scrolling in `<light-editor>` ...

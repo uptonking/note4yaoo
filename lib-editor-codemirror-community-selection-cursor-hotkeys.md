@@ -76,9 +76,6 @@ modified: 2024-08-11T06:46:39.843Z
 
 - Commands are just functions. Writing one that deletes a tab before the cursor shouldn’t be hard.
 
-- ## [RangeError after setting the initial selection via dispatch - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/rangeerror-after-setting-the-initial-selection-via-dispatch/3688)
-- The new `centerOn` effect should make scrolling something into the middle of the view easier.
-
 - ## [Moving of cursor with different size mark decoration and replace decoration issues - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/moving-of-cursor-with-different-size-mark-decoration-and-replace-decoration-issues/4198)
 - Arrow key motion is implemented with regular key bindings in defaultKeymap, so you can create custom commands that implement this type of vertical motion and bind them to the arrow keys (don’t forget to also create a selection-extending version for when shift is held down).
 

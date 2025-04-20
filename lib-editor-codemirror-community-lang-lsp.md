@@ -46,7 +46,7 @@ modified: 2024-08-11T08:00:00.211Z
 - ## [Start on supporting autoimports · Pull Request · val-town/codemirror-ts _202412](https://github.com/val-town/codemirror-ts/pull/46)
   - Start supporting go-to-definition with workers. right now punting(用方头或平底船拖运) on a non-worker implementation. 
 
-- ## [ctrl + click to jump - v6 - discuss. CodeMirror _202312](https://discuss.codemirror.net/t/ctrl-click-to-jump/7613)
+- ## 🤔 [ctrl + click to jump - v6 - discuss. CodeMirror _202312](https://discuss.codemirror.net/t/ctrl-click-to-jump/7613)
 - CodeMirror doesn’t know enough about your code to tell you where a given identifier is defined. If you do have that information, for example by integrating a language server, cursor jumping shouldn’t be hard to implement.
 
 ```JS

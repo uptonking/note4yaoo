@@ -10,6 +10,8 @@ modified: 2022-08-21T09:59:27.391Z
 # guide
 
 - 是否支持nested virtualized? 类似文档内的表格
+
+- 如何让view层能通过配置开启关闭virtualized的选型?
 # react-virtualized的ui结构层次
 - list
   - grid/GridReactVirtualized__List

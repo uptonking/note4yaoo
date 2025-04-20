@@ -1389,6 +1389,11 @@ modified: 2023-06-23T12:46:53.288Z
   - A reference implementation for codemirror-json-schema
   - A Next.js 13 template for building apps with Radix UI and Tailwind CSS.
 
+- https://github.com/hata6502/codemirror-view /202110/inactive
+  - [Dynamic line height - discuss. CodeMirror _202106](https://discuss.codemirror.net/t/dynamic-line-height/3257)
+  - I forked codemirror/view to hata6502/codemirror-view , and disabled viewport.
+  - Disabling viewport may occur the performance issue, but it resolves the following scroll problem.
+
 - https://github.com/thetrevorharmon/zephyr-demo /202402/ts
   - https://zephyr-demo.netlify.app/
   - CodeMirror 6 + ANTLR

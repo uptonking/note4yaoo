@@ -11,6 +11,8 @@ modified: 2022-08-24T10:49:48.139Z
 
 - 是否支持nested virtualized? 类似文档内的表格
 
+- 如何让view层能通过配置开启关闭virtualized的选型?
+
 - ref
   - [How does windowing work?](https://bvaughn.github.io/forward-js-2017/#/12/5)
   - [List Virtualization](https://www.patterns.dev/posts/virtual-lists/)
