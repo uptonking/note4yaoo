@@ -19,12 +19,12 @@ modified: 2021-05-06T09:38:31.520Z
   - ❓ incremental syntax highlighting, 可结合visible ranges
   - 📱 支持mobile
   - accessible
-  - 基于contenteditable(而不是textarea)实现，具备✨富文本的能力
+  - 基于contenteditable(而不是textarea)实现，具备📝富文本的能力
   - 支持nested-editor，可在同一页面渲染多个编辑器，参考split-view示例、公式
   - 支持multi-cursor, 此时键盘输入字符会在多个光标后同时显示
   - 内置支持folded-code
   - 第三方实现了minimap
-  - ~~simpler than prosemirror~~
+  - ~~simpler than prosemirror~~ extension的扩展性比prosemirror更灵活
 
 - cons
   - 非开箱即用，需要组装模块
@@ -33,11 +33,11 @@ modified: 2021-05-06T09:38:31.520Z
   - 顶层容器不支持CSS transform 3d，但支持transform2d(用于画板缩放的场景, 但ace/monaco支持3d，有改进)
   - 使用了自定义css-in-js方案(runtime-css会降低性能)，但也支持css覆盖样式
   - 部分语言不支持语法高亮，如.slim/.erb
-  - codemirror/monaco 的lint/autocomplete 都存在无法让服务端调用的缺陷，基于treesitter的实现对服务端更友好
+  - codemirror/monaco 的lint/autocomplete 都存在无法让服务端调用的缺陷，基于tree-sitter的实现对服务端更友好, 服务端优化的上线更高
     - 但浏览器上进行代码编辑的场景远多于服务端
 
 - features
-  - dispatch高性能，只写不读
+  - dispatch() 高性能，只写不读
   - Mobile Support: Use the platform's native selection and editing features on phones
   - Accessibility: Works well with screen readers and keyboard-only users
   - Bidirectional Text: ltr, rtl
@@ -67,7 +67,7 @@ modified: 2021-05-06T09:38:31.520Z
   - obsidian, zettlr, joplin-markdown-editor, supernotes
   - chrome-devtools(开源代码中使用v6)
   - known: mdn-bob, sourcegraph, odoo, ChatGPT-canvas
-  - libfwk: svelte-playground, gitbutler
+  - libfwk: svelte/solid-playground, gitbutler
   - sql: duckdb, HuggingFace-sql-console, tisqleditor
   - more: tagspaces, hedgedoc
   - apps: desmos-classroom
@@ -77,28 +77,28 @@ modified: 2021-05-06T09:38:31.520Z
 - who is using #highlightjs
   - stackoverflow
   - discord
-- who is usiThere isn’t. (And there won’t be. The performance would be terrible on larger documents.)
-
-ng #prismjs
+  - vscode-markdown-language-features
+- who is using #prismjs
   - mozilla
   - stripe, drupal
 
 - who is using #xtermjs
+  - vscode
   - duckdb-shell
 
 - cloud-ide-pros
   - easy to start and leave
   - better collaborative editing
-  - consistent env
+  - consistent env for example/onboarding
+- cloud-ide-cons
+  - 计算资源受业务平台限制和云厂商限制
+  - vps的性能不如本地计算机，vps很贵
 - cloud-ide-solutions
   - monaco: Codespaces(GitHub绑定), Gitpod(yml), Coder(no-cloud/k8s), theia, OpenSumi, StackBlitz, codesandbox
   - Eclipse Che: OpenShift CDE
   - DevPod: devcontainer-spec + local-and-cloud
   - ace: miro
   - more: AWS Cloud9
-- cloud-ide-cons
-  - 计算资源受业务平台限制和云厂商限制
-  - vps的性能不如本地计算机，vps很贵
 
 - ide类产品 vs 文档类产品 🆚
   - ide一般支持远程连接代码仓库，本地仓库和远程仓库的文件通过git同步
@@ -163,13 +163,7 @@ ng #prismjs
 
 - ❓ 同事实现编辑器内嵌入卡片在滚动时固定在顶部或底部的功能碰到困难
   - 原因是嵌入卡片在滚动到可视区外时卡片的锚点anchor消失了，导致卡片也消失了
-
-- 基于transactionExtender的ext，
-  - 🤔 后注册的会先执行
-  - ~~只能返回单个effect，不能返回数组~~, 看清楚.of的返回值类型时StateEffect或Anno，而不是Transaction
-  - 处理changes推荐用transactionFilter
-
-- codemirror似乎未使用rope数据结构
+  - 可参考virtualized的组件库的sticky实现细节
 
 - 📝 实现notion-like的编辑器
   - 拖拽部分的处理可参考craftjs
@@ -184,35 +178,36 @@ ng #prismjs
   - 尝试集成redux-devtools
   - vscode fork with codemirror
 
-- not-yet
+- roadmap
   - codemirror devtools
-  - autocomplete
-  - 迁移v5的示例到v6
   - migrate monaco-playground to codemirror
-  - lezer-highlight vs highlightjs
-  - EditorView.requestMeasure
 
-- port to server side lang like prosemirror
-  - hocuspocus for codemirror
-  - codemirror-rust 🦀
-- migrate codemirror5 demos to codemirror 6
-- EditorView without virtualized viewport
+- later
+  - port to server side lang like prosemirror
+    - hocuspocus for codemirror
+    - codemirror-rust 🦀
+  - migrate codemirror5 demos to codemirror6
+  - EditorView without virtualized viewport
+  - 兼容tiptap的扩展api，底层替换为codemirror实现
+  - code-block的实现最好默认可折叠
 
-- experimental
+- internals
   - lazy
   - conflict
+  - autocomplete
+  - lezer-highlight vs highlightjs
+  - EditorView.requestMeasure
   - ~~stateField invertedEffects~~
   - ~~Cascading dispatch triggers another dispatch~~
   - ~~undo/addToHistory~~
   - ~~load new document~~
+- ❓🆚 transaction vs changeSet
 
 - extensions-to
   - katex
 
-- 兼容tiptap的扩展api，底层替换为codemirror实现
-
 - lang
-  - replace lezer with Tree-sitter
+  - replace lezer with tree-sitter
 
 - diff-view
   - diff左侧显示原文行号和最新行号
@@ -235,23 +230,37 @@ ng #prismjs
 - autocomplete自动补全
   - 基于视图层decoration的实现更适合协作，不必修改model数据
 
-- code-block的实现最好默认可折叠
-
-- later
+- maybe
   - 简化ast的设计和实现
 
 - 难点
   - 渲染wysiwyg时采用 virtual render
   - 支持可缩放的编辑器，用于将编辑器嵌入画板/设计工具的场景
 
-- ❓🆚 transaction vs changeSet
+- codemirror似乎未使用rope数据结构
 # dev-xp
+
+```JS
+// 在contenteditable的div元素上可以获取到EditorView对象
+edd.contentDOM.cmView.view === edd // true
+```
+
+- selection与docLength的关系
+  - 若docLength是1000， doc[docLength-1]是最后一个字符，doc[docLength]是undefined
+  - `edd.dispatch({selection:{anchor: 1000}})` 不会抛出异常，会定位到末尾
+  - cmd+A全选时的selection范围 `{from: 0, to: 1000 }`, (包含两端)
+
 - 在editor中插入内容要考虑
   - 选区， del键/快捷键操作影响， 复制粘贴
   - undo/redo
 
 - beforeChange/beforeSelectionChange 可使用filter
   - afterChange 可使用 updateListener/viewPlugin.update
+
+- 基于transactionExtender的ext，
+  - 🤔 后注册的会先执行
+  - ~~只能返回单个effect，不能返回数组~~, 看清楚.of的返回值类型时StateEffect或Anno，而不是Transaction
+  - 处理changes推荐用transactionFilter
 
 - 在github页面，每行代码的行号是确定的，不会显示软换行
   - 方便实现高亮搜索结果、查找引用
@@ -383,8 +392,3 @@ ng #prismjs
 ```
 
 # more
-
-# devlog
-
-- "codemirror" Field is not present in this state
-  - 可能是代码import了不同版本的codemirror导致的，也可能是本地fork了代码但用的还是npm包

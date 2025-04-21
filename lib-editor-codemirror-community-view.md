@@ -12,8 +12,9 @@ modified: 2024-08-08T20:49:11.571Z
 # discuss-stars
 - ## 
 
-- ## 💡🤔 AI 生成代码，实时预览的几种方案
+- ## 📌💡 AI 生成代码，实时预览的几种方案
 - https://x.com/idoubicc/status/1890965727844409425
+
 一、 html + srcdoc + iframe 
 1. AI 生成可以通过浏览器直接打开的 html 文件（单文件，html/css/js 写到一起）
 2. 通过 iframe 的 srcdoc 传入 html 源码预览
@@ -25,6 +26,7 @@ modified: 2024-08-08T20:49:11.571Z
 2. 通过 Babel.transform 转换 react 组件/通过 VueCompiler 编译 vue 组件
 3. 使用转换/编译后的组件，构建一个 html 文件
 4. 使用 blob 构建预览 url，传入 iframe.src 预览
+- 缺点: blob url每次执行都会变化，不适合用户习惯固定url的需求
 
 三、 webcontainer 
 1. AI 生成组件代码（可以返回多个组件文件，组件可以互相 import）
@@ -33,7 +35,7 @@ modified: 2024-08-08T20:49:11.571Z
 4. 通过 webcontainer 执行终端命令，安装项目依赖
 5. 通过 webcontainer 启动预览服务，得到预览地址
 6. 把预览地址传入 webcontainer 容器外的 iframe.src 实现项目预览
-这种方案依赖 webcontainer，可以实现多组件预览，灵活性更高，但是涉及到文件挂载，命令行安装依赖等步骤，预览速度会慢一些。
+- 这种方案依赖 webcontainer，可以实现多组件预览，灵活性更高，但是涉及到文件挂载，命令行安装依赖等步骤，预览速度会慢一些。
 
 - 方案一适合用户不关心代码，只想快点看到效果的场景，比如用 Pagen 一句话生成 landing page，页面内容都在一个 html 文件里面。
 - 方案二适合辅助前端写组件场景。比如用 CopyWeb 截图复刻设计，生成单个 react 组件，在线预览效果，导出到本地项目使用。
@@ -65,7 +67,7 @@ modified: 2024-08-08T20:49:11.571Z
   - With codemirror 5 you can use CodeMirror.fromTextArea() to create an editor from a tag which I really like since it lets users without JS still do things and makes it easier to send data with an html form.
 - This was always a dodgy hack (it involves replacing the surrounding form’s submit method, among other things) that leaks quite a bit (for example if you expect your textarea’s value to be kept in sync with the editor content), so I’m kind of happy to get away from it. It’d be easy to write something similar as a separate module, of course.
 
-- ## experimenting with a canvas-driven CodeMirror cursor
+- ## 🎨 experimenting with a canvas-driven CodeMirror cursor
 - https://x.com/hamiltonulmer/status/1822274427142525210
   - will need to try a gradient polygon rather than a trail of thin lines
 
@@ -453,8 +455,7 @@ window.matchMedia('(prefers-color-scheme: dark)')
 
 - ## 
 
-- ## [How to programmatically remove focus from the editor? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-to-programmatically-remove-focus-from-the-editor/3429)
-  - `cm.contentDOM.blur()` should work.
+- ## 
 
 - ## [Handling focus changes in StateField - v6 - discuss. CodeMirror _202303](https://discuss.codemirror.net/t/handling-focus-changes-in-statefield/6138)
   - How to handle focus changes in StateField update function? Should I use UpdateListener which dispatches some effect like FocusChangeEffect when focusChanged?
@@ -465,7 +466,7 @@ window.matchMedia('(prefers-color-scheme: dark)')
   - That means programmatically setting the active element (with .focus()) won’t affect view.hasFocus when the OS user isn’t focused on the web page.
 
 - ## [How to set cursor position in Codemirror editor - Stack Overflow](https://stackoverflow.com/questions/33394855/how-to-set-cursor-position-in-codemirror-editor)
-- Before you set the cursor position you have to focus on the editor.
+- Before you set the cursor position, you have to focus on the editor.
 
 - ## 🤔 [set cursor position in v6 - discuss. CodeMirror _202206](https://discuss.codemirror.net/t/set-cursor-position-in-v6/4476)
   - `editor.dispatch({selection: {anchor: N, head: N}})`
@@ -478,7 +479,7 @@ window.matchMedia('(prefers-color-scheme: dark)')
 - ## 📱🤔 [What is the purpose of settimeout of 10ms in updateForFocusChange? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/what-is-the-purpose-of-settimeout-of-10ms-in-updateforfocuschange/8369)
   - codemirror’s blur happens after a 10ms timeout, making it the last event, occurring after my event
 - There are several types of interactions that will cause the editor to lose and then immediately regain focus (people implementing buttons that steal focus on mousedown but then immediately move it back to the editor, our own kludge for dealing with Android inappropriately closing the virtual keyboard in some situations). This timeout tries to isolate code tracking focus state from that kind of phantom(幽灵；幻觉) focus changes.
-  - If you want to directly track DOM focus state, I’d recommend using a DOM event observer rather than an update listener. Those get the raw DOM events.
+  - 💡 If you want to directly track DOM focus state, I’d recommend using a DOM event observer rather than an update listener. Those get the raw DOM events.
 
 - ## [Trigger a StateEffect when focus changes - discuss. CodeMirror _202302](https://discuss.codemirror.net/t/trigger-a-stateeffect-when-focus-changes/5701)
   - I need to dispatch a state effect when the editor’s focus changes (on focus and on blur), and I am struggling to figure out the right way to go about this
@@ -502,7 +503,7 @@ window.matchMedia('(prefers-color-scheme: dark)')
 - ## [Has User Scrolled? - v6 - discuss. CodeMirror _202208](https://discuss.codemirror.net/t/has-user-scrolled/4786)
   - Is there a way to tell in the state/view if the User has scrolled?
 
-- The view itself doesn’t track this. Easiest way to do it would be a view plugin that keeps a flag for this and registers its own `scroll` event handler.
+- 💡 The view itself doesn’t track this. Easiest way to do it would be a view plugin that keeps a flag for this and registers its own `scroll` event handler.
 
 - ## [Observing Scroll in View Plugin Update Method - v6 - discuss. CodeMirror _202401](https://discuss.codemirror.net/t/observing-scroll-in-view-plugin-update-method/7727)
 - View updates with no document changes but a viewport change are likely to be scroll updates. But there’s no precise way to tell.
@@ -512,7 +513,7 @@ window.matchMedia('(prefers-color-scheme: dark)')
 - ## [Feature request: scrollTo with alignToTop - v6 - discuss. CodeMirror _202112](https://discuss.codemirror.net/t/feature-request-scrollto-with-aligntotop/3795)
   - in the CodeMirror 6 API there’s nowhere to set the `alignToTop` option.
   - We’re currently working around this by dispatching an EditorView.scrollTo effect (to make sure the target line is available), then setting view.scrollDOM.scrollTop manually to scroll the desired line to the top of the viewport
-- `EditorView.scrollIntoView` works perfectly, thanks @marijn.
+- `EditorView.scrollIntoView` works perfectly
 
 - ## [Codemirror 6 sync scrolling of two EditorView's - Meta - discuss. CodeMirror _202104](https://discuss.codemirror.net/t/codemirror-6-sync-scrolling-of-two-editorviews/3113)
   - how it is possible to keep two editors in sync when you scroll?

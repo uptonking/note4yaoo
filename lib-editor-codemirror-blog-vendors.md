@@ -166,7 +166,7 @@ modified: 2024-05-17T16:08:45.674Z
   - Better support for non-latin text – including mixing of right-to-left and left-to-right text and special characters (such as those with diacritics).
   - Faster development of new features and fewer issues – having multiple editors means any change we make to our platform has to be done multiple times. This slows down new development and creates more places for problems to arise. By moving to the new editor, we can develop features and deploy them once, seriously speeding up the process of delivering the features you want.
 
-## 🎨 [miro: Why we developed a code block widget in Miro using ace editor _202307](https://medium.com/miro-engineering/why-we-developed-a-code-block-widget-in-miro-f6c5ec23085c)
+## 🎨🆚 [miro: Why we developed a code block widget in Miro using ace editor _202307](https://medium.com/miro-engineering/why-we-developed-a-code-block-widget-in-miro-f6c5ec23085c)
 
 - Our code widget is a code block with a rich editing experience comparable to a native code editor. It has features like syntax highlighting, auto-closing brackets and indentations, various hotkeys, and more.
 - Miro boards are heavily based on Canvas API. 

@@ -1,11 +1,11 @@
 ---
-title: lib-ide-vscode-community-dev-log
+title: lib-ide-vscode-dev-log
 tags: [community, dev-log, vscode]
 created: 2024-12-01T12:01:13.080Z
-modified: 2024-12-01T12:01:26.714Z
+modified: 2025-04-21T07:30:31.816Z
 ---
 
-# lib-ide-vscode-community-dev-log
+# lib-ide-vscode-dev-log
 
 # guide
 

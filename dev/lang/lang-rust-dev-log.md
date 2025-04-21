@@ -1,11 +1,11 @@
 ---
-title: lang-rust-community-dev-log
+title: lang-rust-dev-log
 tags: [dev-log, rust]
 created: 2025-04-10T02:57:18.262Z
-modified: 2025-04-10T02:57:34.189Z
+modified: 2025-04-21T07:29:39.259Z
 ---
 
-# lang-rust-community-dev-log
+# lang-rust-dev-log
 
 # guide
 

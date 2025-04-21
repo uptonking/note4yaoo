@@ -1,11 +1,11 @@
 ---
-title: lang-js-community-dev-log
+title: lang-js-dev-log
 tags: [dev-log, lang-js]
 created: 2025-04-10T02:58:18.949Z
-modified: 2025-04-10T02:58:48.672Z
+modified: 2025-04-21T07:29:31.605Z
 ---
 
-# lang-js-community-dev-log
+# lang-js-dev-log
 
 # guide
 

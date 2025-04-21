@@ -18,8 +18,8 @@ modified: 2024-09-10T00:43:36.318Z
   - Syntax highlighting
 - deco-widget
   - insert a inline/blocks DOM element at a given position
-  - block-level decorations should not have vertical margins, and if you dynamically change their height, you should make sure to call requestMeasure, so that the editor can update its information about its vertical layout.
-- deco-replacing 可以修改多行
+  - block-level decorations should not have vertical margins, and if you dynamically change their height, you should make sure to call `requestMeasure`, so that the editor can update its information about its vertical layout.
+- deco-replacing 可以修改多行/多个范围
   - hide or replace part of the document with a given DOM node
   - code folding or replacing an element in the text with something else
   - possible to display a widget instead of the replaced text
@@ -64,7 +64,7 @@ modified: 2024-09-10T00:43:36.318Z
   - Facet used to register a hook that gets a chance to update or replace transaction specs before they are applied.
   - You can either return a single transaction spec (possibly the input transaction), or an array of specs (which will be combined in the same way as the arguments to EditorState.update).
 - 🧩 transactionExtender
-  - This is a more limited form of transactionFilter, which can only add annotations and effects.
+  - This is a more limited form of `transactionFilter`, which can only add annotations and effects.
   - But, this type of filter runs even if the transaction has disabled regular filtering, making it suitable 💡 for effects that don't need to touch the changes or selection, but do want to process every transaction.
   - Extenders run after filters, when both are present.
   - 不支持async effect

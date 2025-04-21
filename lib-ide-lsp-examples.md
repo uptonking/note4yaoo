@@ -44,6 +44,9 @@ modified: 2025-04-12T19:18:28.788Z
   - typescript-language-server --stdio
   - Language Server Protocol implementation for TypeScript wrapping `tsserver`.
   - The core logic for interacting with tsserver is nowadays mostly based on the code of the TypeScript Language Features VSCode bundled extension maintained in vscode.
+  - 📡 NOT_PLANNED: [Support .eslintrc config _202303](https://github.com/typescript-language-server/typescript-language-server/issues/708)
+    - This server has nothing to do with eslint. It doesn't integrate with it
+    - There might exist typescript plugins that run eslint but it's out of scope of this server if Zed is using those. I would anyway recommend running a separate LSP server for eslint.
   - [How do I spin up a language server and then invoke it using a Code editor like codemirror?? _202309](https://github.com/typescript-language-server/typescript-language-server/discussions/760)
     - You can use `vscode-jsonrpc` to communicate with the language server in nodejs
 
