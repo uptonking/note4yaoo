@@ -493,27 +493,64 @@ window.matchMedia('(prefers-color-scheme: dark)')
 
 - ## 
 
+- ## [Text not highlighted after EditorView.scrollIntoView - v6 - discuss. CodeMirror _202309](https://discuss.codemirror.net/t/text-not-highlighted-after-editorview-scrollintoview/7073)
+- Parsing work is throttled so as to not slow down the UI and not waste too much cpu/battery/power. That means that if you are way down a big document, it may take a while to catch up, and if the editor isn’t active, it may stop doing work altogether on the assumption that the user isn’t working with it.
+
+- is there an official way to increase the time budget or trigger a refresh programmatically?
+  - I think `forceParsing` is what you are looking for.
+
+- ## [Has User Scrolled? - v6 - discuss. CodeMirror _202208](https://discuss.codemirror.net/t/has-user-scrolled/4786)
+  - Is there a way to tell in the state/view if the User has scrolled?
+
+- The view itself doesn’t track this. Easiest way to do it would be a view plugin that keeps a flag for this and registers its own `scroll` event handler.
+
+- ## [Observing Scroll in View Plugin Update Method - v6 - discuss. CodeMirror _202401](https://discuss.codemirror.net/t/observing-scroll-in-view-plugin-update-method/7727)
+- View updates with no document changes but a viewport change are likely to be scroll updates. But there’s no precise way to tell.
+
+- In case anyone else finds this useful I had a gutter that held pages numbers and could increase in width due to the increase in the size of the numbers, 1 is wider that 100. This change of width while scrolling caused issues with rendering when using the scroll bar and moving quickly through a large document. Setting the gutter width vastly improved things.
+
+- ## [Feature request: scrollTo with alignToTop - v6 - discuss. CodeMirror _202112](https://discuss.codemirror.net/t/feature-request-scrollto-with-aligntotop/3795)
+  - in the CodeMirror 6 API there’s nowhere to set the `alignToTop` option.
+  - We’re currently working around this by dispatching an EditorView.scrollTo effect (to make sure the target line is available), then setting view.scrollDOM.scrollTop manually to scroll the desired line to the top of the viewport
+- `EditorView.scrollIntoView` works perfectly, thanks @marijn.
+
+- ## [Codemirror 6 sync scrolling of two EditorView's - Meta - discuss. CodeMirror _202104](https://discuss.codemirror.net/t/codemirror-6-sync-scrolling-of-two-editorviews/3113)
+  - how it is possible to keep two editors in sync when you scroll?
+- the idea is that you have an update listener and scroll event handler on both editors that syncs the other editor’s scroll position whenever something relevant changes.
+  - You’ll probably need to take a bit of care to avoid endless loops between the editors, but other than that this might be quite simple.
+- I was trying to implement sync scrolling too, and found this thread, but here’s what I discovered for future reference: Scroll events are not handled by `updateListener` , but rather `domEventHandlers`
+
+- ## [setting scrollTop for div.cm-scroller element - discuss. CodeMirror _202208](https://discuss.codemirror.net/t/setting-scrolltop-for-div-cm-scroller-element/4838)
+- Looks like manual scrolling with `scrollTop` can not scroll to a predictable position (even when doing in rAF or after timeout). As far as I understand it depends on whether the content was actually drawn above the scroll or it’s height was calculated approximately. 
+  - In this case, `scrollIntoView` effect is the best option
+
+- Using the `scrollIntoView` effect or giving the editor a moment to measure itself before you scroll might help (it does so in an animation frame callback). It doesn’t synchronously trigger a DOM layout when initialized, which means that at that point it won’t have an accurate representation of its height layout yet.
+
 - ## [RangeError after setting the initial selection via dispatch - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/rangeerror-after-setting-the-initial-selection-via-dispatch/3688)
 - The new `centerOn` effect should make scrolling something into the middle of the view easier.
 
 - ## 🌰 [cursorScrollMargin for v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/cursorscrollmargin-for-v6/7448)
   - In CodeMirror 5 it was cursorScrollMargin, am I right in thinking that in V6 I should be using EditorView.scrollMargins ?
 
-- No, EditorView.scrollMargins is not what you need here. There is no way to configure this at the moment, except is you are scrolling something into view explicitly with EditorView.scrollIntoView.
+- No,  `EditorView.scrollMargins` is not what you need here. There is no way to configure this at the moment, except is you are scrolling something into view explicitly with `EditorView.scrollIntoView`.
 
-- I’ve iterated on this and fixed heaps of bugs with my previous implementation, and I’m leaving it here in case anyone wants to implement this
-
-- ## [Smooth scroll to selection position? - discuss. CodeMirror _202208](https://discuss.codemirror.net/t/smooth-scroll-to-selection-position/4875)
+- ## 🤔 [Smooth scroll to selection position? - discuss. CodeMirror _202208](https://discuss.codemirror.net/t/smooth-scroll-to-selection-position/4875)
 - You can get the current scroll position with `view.scrollDOM.scrollTop` . The desired scroll position you’d have to compute based on the position you want to see ( `view.coordsAtPos` ) and the editor rectangle ( `view.scrollDOM.getBoundingClientRect` ).
 
 - `view.lineBlockAt` should work for out-of-viewport positions, though it may be an estimate, rather than a precise value if they (or other content between them and the current scroll position) haven’t been drawn before.
 
 ```JS
 const f = view.state.doc.line(lineNumber);
-const { qq } = view.coordsAtPos(f.from); // can return null
+const { top } = view.coordsAtPos(f.from); // can return null
 
-view.scrollDOM.scrollTo({ qq, behavior: 'smooth' });
+view.scrollDOM.scrollTo({ top, behavior: 'smooth' });
 ```
+
+- [Smooth scroll line into view _202103](https://discuss.codemirror.net/t/smooth-scroll-line-into-view/3051)
+  - To get a line’s vertical position, you could use `visualLineAtHeight`. 
+  - Smooth scrolling isn’t something the library will do for you—you’ll have to set up your own timed process that incrementally updates the scroll position of `editor.scrollDOM`.
+  - Registering a `scroll` handler through the editor’s DOM event system will notify you whenever the editor, or any of its parent elements, scrolls.
+  - For anyone following this thread, please note that `visualLineAtHeight` appears to be deprecated: Release 0.20.0. The new way to handle this is `EditorView.elementAtHeight`
 
 - ## 💡 [CM6 Scroll To Middle? - discuss. CodeMirror _202102](https://discuss.codemirror.net/t/cm6-scroll-to-middle/2924)
   - Is there a way to configure the “scrollIntoView” option in a transaction update to scroll the selection to the middle of the screen rather than the bottom?

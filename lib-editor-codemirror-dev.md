@@ -77,7 +77,9 @@ modified: 2021-05-06T09:38:31.520Z
 - who is using #highlightjs
   - stackoverflow
   - discord
-- who is using #prismjs
+- who is usiThere isn’t. (And there won’t be. The performance would be terrible on larger documents.)
+
+ng #prismjs
   - mozilla
   - stripe, drupal
 
@@ -194,6 +196,7 @@ modified: 2021-05-06T09:38:31.520Z
   - hocuspocus for codemirror
   - codemirror-rust 🦀
 - migrate codemirror5 demos to codemirror 6
+- EditorView without virtualized viewport
 
 - experimental
   - lazy

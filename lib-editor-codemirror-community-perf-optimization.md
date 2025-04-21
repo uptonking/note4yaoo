@@ -37,11 +37,6 @@ modified: 2024-08-11T03:39:54.012Z
 - It’s likely going to be costly because the editor has to re-split the lines and re-generate the internal data structure for each line. It will also require re-parsing of the document for syntax highlighting. On top of that, you will also lose some states in relation to the old document because those don’t map very well to the “this entire document has been replaced” change that you’re dispatching. For example, any folding states will be lost.
   - I’ve dealt with a similar situation previously and the best way here is to write some kind of diffing algorithm to narrow down the changed section to as little as much as possible.
 
-- ## [Text not highlighted after EditorView.scrollIntoView - v6 - discuss. CodeMirror _202309](https://discuss.codemirror.net/t/text-not-highlighted-after-editorview-scrollintoview/7073)
-- Parsing work is throttled so as to not slow down the UI and not waste too much cpu/battery/power. That means that if you are way down a big document, it may take a while to catch up, and if the editor isn’t active, it may stop doing work altogether on the assumption that the user isn’t working with it.
-
-- is there an official way to increase the time budget or trigger a refresh programmatically?
-  - I think `forceParsing` is what you are looking for.
 # discuss
 - ## 
 
@@ -50,7 +45,7 @@ modified: 2024-08-11T03:39:54.012Z
 - ## 🤔 [Cache objects between Widgets updates - v6 - discuss. CodeMirror _202307](https://discuss.codemirror.net/t/cache-objects-between-widgets-updates/6844)
   - In a Widget’s constructor, I’m initializing a class (a UI library) that is slow to compute, so I’d like to cache it between updates. Unfortunately, the Widget’s constructor is called on every update, so that object is disposed, even if the Widget is equal
   - I understand Widgets are supposed to be cheap to create, but is there a proper way to retain data inside a Widget?
-- Not really, except closing over it in the code run in `toDOM`. I don’t know why you need to retain this value, so I can’t really give specific advice from what you’ve shown.
+- Not really, except closing over it in the code run in `toDOM` . I don’t know why you need to retain this value, so I can’t really give specific advice from what you’ve shown.
 
 - ## [Replace the entire doc performance - v6 - discuss. CodeMirror _202211](https://discuss.codemirror.net/t/replace-the-entire-doc-performance/5289)
   - when I use the dispatch function to insert a huge text, codemirror will create ten-thousands of dom nodes in the background and freeze the page for a while.

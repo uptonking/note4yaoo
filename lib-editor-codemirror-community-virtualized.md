@@ -21,7 +21,25 @@ modified: 2023-11-30T06:56:24.809Z
 
 - ## 
 
-- ## 
+- ## [Content Height changes on scroll with line wrapping - discuss. CodeMirror _202403](https://discuss.codemirror.net/t/content-height-changes-on-scroll-with-line-wrapping/8008)
+  - The challenge is this custom scrollbar expects to know the total height up front
+- Eagerly rendering the entire document is not something the editor supports—it’d go against all the effort I’ve made to make the system fast regardless of document size. 
+  - You’ll have to listen to updates with the `heightChanged` flag and adjust your scrollbar content to sync with the newly measured heights.
+
+- ## [Horizontal scrollbar resize issue - v6 - discuss. CodeMirror _202206](https://discuss.codemirror.net/t/horizontal-scrollbar-resize-issue/4592/2)
+  - Horizontal scrollbar is resizing when scrolling along document document.
+  - 现象: 鼠标拖动竖直方向滚动条时，水平滚动条的宽度也在变化
+  - If I get it right, the issue comes from the “viewport” as CM is rendering only a slice of the document.
+  - do you think would it be possible to “enforce” the width of the “cm-scroll” element to prevent this issue ?
+
+- The patch below should help. You won’t get the proper scroll width until the first time you scroll the widest line into view, but once you do, it should remain stable.
+
+- ## 🤔 [How to disable virtual scroll in code mirror - discuss. CodeMirror _202406](https://discuss.codemirror.net/t/how-to-disable-virtual-scroll-in-code-mirror/8339)
+- There isn’t. (And there won’t be. The performance would be terrible on larger documents.)
+
+- ## [Improve Scroll / Performance tradeoff - v6 - discuss. CodeMirror _202411](https://discuss.codemirror.net/t/improve-scroll-performance-tradeoff/8825)
+  - Is there a way to customize or disable this behaviour? For example if I scroll fast on a large file there would often be frames with no lines rendered / scrollbar behaving eradically as a result.
+- No, there’s no way to change this. The system’s performance is designed about the viewport being of limited size, and making it bigger would make the editor less responsive.
 
 - ## 💡 [Dynamic line height - discuss. CodeMirror _202106](https://discuss.codemirror.net/t/dynamic-line-height/3257)
   - I have a decorations Facet that sets the line height based on a StateField using attributes
