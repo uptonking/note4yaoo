@@ -63,3 +63,22 @@ modified: 2023-03-19T20:03:32.594Z
   - You can programatically trigger key events with the trigger() method
   - [Are there any alternatives to mousetrap? _202201](https://github.com/ccampbell/mousetrap/issues/512)
 # more
+
+# discuss-stars
+
+- ## 
+
+- ## 
+
+- ## [macos - Why does Javascript drop keyUp events when the metaKey is pressed on Mac browsers? - Stack Overflow](https://stackoverflow.com/questions/11818637/why-does-javascript-drop-keyup-events-when-the-metakey-is-pressed-on-mac-browser)
+- Although `event.metaKey` returns `false` , `event.keyCode` and event.key are still populated.
+
+- [macos - Keyup event not firing when meta key is held (Mac OSX only?) - How to handle in javascript? - Stack Overflow](https://stackoverflow.com/questions/73412298/keyup-event-not-firing-when-meta-key-is-held-mac-osx-only-how-to-handle-in)
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 

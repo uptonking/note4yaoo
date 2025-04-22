@@ -82,8 +82,9 @@ modified: 2024-05-06T02:54:40.374Z
   - rrweb的记录与回放
   - iframe history 用于前进后退
 
-- playground的架构是否存在scale问题，如在一个playground支持上万人操作,还有LSP-server的压力
+- playground的架构是否存在scale问题，如在一个playground支持上万人操作, 还有LSP-server的压力
   - 现有架构倾向于不在同一个playground协同，而可以创建上万个playground
+
 ### dev-log
 
 - root-thread项目初始化时，cde环境会生成.1024start/.1024nix文件
@@ -856,7 +857,7 @@ modified: 2024-05-06T02:54:40.374Z
 #### LazyEditor/CodeEditor
 
 - 三层editor结构
-  - LazyEditor: 注册socket事件
+  - LazyEditor: 打开默认文件, 注册自定义事件，创建全局LSP连接对象
   - CodeEditor: 计算content, 准备extensions， LSP
   - CodeMirrorEditor: 初始化codemirror, 设置menu, 不关心filePath
 
@@ -2357,6 +2358,12 @@ const playbackInfo = [
 - 业务方使用LSP支持的配置
   - defaultLspLang: ['html', 'css', 'less', 'sass'], 
   - openLspDiagnostic: false, // 默认是 false
+
+- 切换不同文件时，没有关闭现有lsp的websocket连接，而是复用现有连接发送 textDocument/didOpen 事件
+
+- 
+- 
+- 
 
 ### codebase-collab 🔀
 

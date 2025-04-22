@@ -331,6 +331,13 @@ add action to create quickSort1.mjs and add 3 test cases in it
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
 
+- lsp-play
+  - go 784965962943606784
+  - py 784965933709307904
+  - js 786335673728065536
+
+## 0422
+
 ## 0421
 
 - 今天计划

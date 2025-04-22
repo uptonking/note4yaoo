@@ -550,6 +550,8 @@ modified: 2024-08-24T16:17:26.715Z
   - Accelerate PR Reviews
   - Side Bar Views
   - Interactive Rebase Editor
+  - [How to disable inline author link? ](https://github.com/gitkraken/vscode-gitlens/issues/54)
+    - gitlens.codeLens.visibility
   - 🍴 forks
   - https://github.com/maattdd/vscode-gitlens /202203/ts/inactive
 
@@ -564,6 +566,11 @@ modified: 2024-08-24T16:17:26.715Z
 
 - https://github.com/fabiospampinato/vscode-git-history /MIT/202403/ts
   - View or diff against previous versions of the current file.
+
+- https://github.com/bendera/vscode-commit-message-editor /MIT/202305/ts/inactive
+  - Edit commit messages in a convenient way
+  - Portable configuration to share settings with teammates.
+  - A huge textarea on a dedicated tab, thanks to https://github.com/vscode-elements/elements
 
 - https://github.com/zawys/vscode-as-git-mergetool /AGPL/202111/ts/inactive
   - VS Code extension providing diff editor layouts & more for 3-way merging
