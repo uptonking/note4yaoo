@@ -12,6 +12,15 @@ modified: 2024-08-08T20:49:11.571Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## [variable height editor that scrolls - discuss. CodeMirror _202202](https://discuss.codemirror.net/t/variable-height-editor-that-scrolls/4024)
+  - This works until the user resizes the window of the host app. If the user reduces its height, one gets something like the below, where the text scrolls off below the intended region, which is set dynamically in the host app
+
+- You mean you need to adjust the 700px dynamically? Ideally, you’d express that in some way (such as 100%) so that it automatically adjusts to the parent container. Failing that, you could use `editorAttributes` instead of a theme to set the editor height.
+
+- The `maxHeight: '100%'` suggestion works perfectly. 
+
 - ## 📌💡 AI 生成代码，实时预览的几种方案
 - https://x.com/idoubicc/status/1890965727844409425
 
@@ -494,16 +503,47 @@ window.matchMedia('(prefers-color-scheme: dark)')
 
 - ## 
 
+- ## [How to use scrollMargin? - v6 - discuss. CodeMirror _202103](https://discuss.codemirror.net/t/how-to-use-scrollmargin/3042)
+- scrollMargin won’t help with what you are trying to accomplish. The `scrollPastEnd` extension might be what you are looking for.
+
+- Alternative way to achieve the basic “scroll-past-end” functionality using a theme.
+
+```JS
+EditorView.theme({
+  '.cm-scroller': {
+    paddingBottom: '10em'
+  }
+});
+```
+
+- ## [v6 scroll to the end to show cursor in multi-line code - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/v6-scroll-to-the-end-to-show-cursor-in-multi-line-code/7751)
+- You have to include `scrollIntoView: true` in your transaction spec if you want the change to scroll the cursor into view.
+
+- ## 🤔 [Scroll end event? - discuss. CodeMirror](https://discuss.codemirror.net/t/scroll-end-event/2257)
+
+- [Detecting end of scroll in a div - Stack Overflow](https://stackoverflow.com/questions/67549676/detecting-end-of-scroll-in-a-div)
+  - element.scrollTop + element.offsetHeight>= element.scrollHeight
+  - Math.abs(element.scrollHeight - element.clientHeight - element.scrollTop) <= 1
+
+- [Event when user stops scrolling - Stack Overflow](https://stackoverflow.com/questions/3701311/event-when-user-stops-scrolling)
+  - You can make the scroll() have a time-out that gets overwritten each times the user scrolls.
+  - There is no such event as 'scrollEnd'. I recommend that you check the value returned by scroll() every once in a while (say, 200ms) using setInterval, and record the delta between the current and the previous value. If the delta becomes zero, you can use it as your event.
+
+- [Scrollend, a new JavaScript event  |  Blog  |  Chrome for Developers _202301](https://developer.chrome.com/blog/scrollend-a-new-javascript-event)
+  - [Element: scrollend event - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollend_event)
+  - safari不支持
+
+- ## [Has User Scrolled to the bottom? - v6 - discuss. CodeMirror _202208](https://discuss.codemirror.net/t/has-user-scrolled/4786)
+  - Is there a way to tell in the state/view if the User has scrolled?
+  - is there a way to know if the user is scrolled to the bottom?
+
+- 💡 The view itself doesn’t track this. Easiest way to do it would be a view plugin that keeps a flag for this and registers its own `scroll` event handler.
+
 - ## [Text not highlighted after EditorView.scrollIntoView - v6 - discuss. CodeMirror _202309](https://discuss.codemirror.net/t/text-not-highlighted-after-editorview-scrollintoview/7073)
 - Parsing work is throttled so as to not slow down the UI and not waste too much cpu/battery/power. That means that if you are way down a big document, it may take a while to catch up, and if the editor isn’t active, it may stop doing work altogether on the assumption that the user isn’t working with it.
 
 - is there an official way to increase the time budget or trigger a refresh programmatically?
   - I think `forceParsing` is what you are looking for.
-
-- ## [Has User Scrolled? - v6 - discuss. CodeMirror _202208](https://discuss.codemirror.net/t/has-user-scrolled/4786)
-  - Is there a way to tell in the state/view if the User has scrolled?
-
-- 💡 The view itself doesn’t track this. Easiest way to do it would be a view plugin that keeps a flag for this and registers its own `scroll` event handler.
 
 - ## [Observing Scroll in View Plugin Update Method - v6 - discuss. CodeMirror _202401](https://discuss.codemirror.net/t/observing-scroll-in-view-plugin-update-method/7727)
 - View updates with no document changes but a viewport change are likely to be scroll updates. But there’s no precise way to tell.

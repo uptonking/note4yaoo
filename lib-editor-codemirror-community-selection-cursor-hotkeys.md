@@ -16,7 +16,7 @@ modified: 2024-08-11T06:46:39.843Z
   - I’m dealing with a case where triple clicking a line will select everything on the line + the newline character at the very end.
   - It seems that this deviation from standard text selection behavior is generally intended for code editors because it helps with workflows involving copy-pasting blocks of code.
 
-- ## [Codemirror 6: Move cursor to specific line and mark its text - discuss. CodeMirror](https://discuss.codemirror.net/t/codemirror-6-move-cursor-to-specific-line-and-mark-its-text/4388)
+- ## 🌰 [Codemirror 6: Move cursor to specific line and mark its text - discuss. CodeMirror](https://discuss.codemirror.net/t/codemirror-6-move-cursor-to-specific-line-and-mark-its-text/4388)
 
 # discuss-hotkeys
 - ## 
