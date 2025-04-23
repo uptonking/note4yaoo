@@ -336,7 +336,14 @@ add action to create quickSort1.mjs and add 3 test cases in it
   - py 784965933709307904
   - js 786335673728065536
 
-## 0422
+## 0423
+
+- [What is the difference between decodeURIComponent and decodeURI? - Stack Overflow](https://stackoverflow.com/questions/747641/what-is-the-difference-between-decodeuricomponent-and-decodeuri)
+  - encodeURIComponent("&") returns "%26".
+  - decodeURIComponent("%26") returns "&".
+  - encodeURI("&") returns "&".
+  - decodeURI("%26") returns "%26".
+  - Even though encodeURIComponent does not encode all characters, decodeURIComponent can decode any value between %00 and %7F.
 
 ## 0421
 
