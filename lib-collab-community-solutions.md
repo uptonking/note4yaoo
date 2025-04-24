@@ -39,14 +39,32 @@ modified: 2024-01-28T09:05:12.586Z
 - How about we make the realtime part more pervasive? Change the industry instead of changing the messaging Even the most basic CRUD app could have improved UX with realtime, hard to implement right now even with something like PartyKit though
   - The framework needs to provide absurdly easy-to-use and reason about primitives. Makes me think of Meteor, which did this very thing with minimongo and op-log tailing.
 
-# discuss-remote-control (rdp/vnc)
+# discuss-vnc/novnc
 - ## 
 
 - ## 
 
+- ## [用浏览器远程控制 PC 电脑桌面：noVNC - 知乎 _202405](https://zhuanlan.zhihu.com/p/700346357)
+- 最近想要在微软 XBOX 游戏机远程访问电脑桌面，发现可以用 noVNC 这款软件来实现浏览器远程访问桌面。
+  - 只要在 PC 电脑安装上 noVNC 服务，XBOX 通过 Edge 浏览器就可以远程访问了。
+
+- 安装 UltraVNC 软件（开源免费桌面远程工具）
+  - 还支持设置分辨率、画质
+
+- 通过 noVNC 实现的远程桌面访问方式，不受平台设备限制，只要有浏览器就能远程访问，另外因为是在局域网访问的，所以基本没啥延迟，如果需要外网访问自行研究内网穿透。
+
+- ## 推荐一个可自托管的虚拟浏览器，可以直接部署到一个VPS上，然后就可以实现团队间共享一个持久化Session的浏览器。
+- https://x.com/Stephen4171127/status/1883559372204491156
+- 试过了，卡顿很厉害。还不如vpn加windows虚拟机
+- 这种用类似于novnc实现的浏览器项目都不是很好用，带宽和延迟一旦不够就会让整个界面都很卡，甚至是完全不可用的地步
+- aws的remote desktop考虑一下？
+
+# discuss-rdp
 - ## 
 
-- ## [What's the difference between RDP vs VNC? - Super User](https://superuser.com/questions/32495/whats-the-difference-between-rdp-vs-vnc)
+- ## 
+
+- ## 🆚 [What's the difference between RDP vs VNC? - Super User](https://superuser.com/questions/32495/whats-the-difference-between-rdp-vs-vnc)
 - RDP is semantic. The RDP is aware of controls, fonts, and other similar graphical primitives. 
   - This means that when rendering a screen across a network, this information is used to compress the data stream significantly. For instance, if you know that this region of the screen if occupied by a button, with the color grey, then you don't need to send an image of the button across the network, but merely information such as location of this button, size and color.
 
@@ -59,14 +77,15 @@ modified: 2024-01-28T09:05:12.586Z
   - It is a proprietary protocol built by Microsoft to let users to graphically control remote computer.
   - RDP logs in a remote user to the server computer by effectively creating a real desktop session on the server computer including a user profile.
   - RDP works in the same way as if the user had logged in to the physical server directly.
-  - RDP can support multiple remote users logged in to the same server that completely unaware of each other.
+  - ✨ RDP can support multiple remote users logged in to the same server that completely unaware of each other.
   - RDP supports multiple monitors, if the client has them
+
 - VNC stands for Virtual Network Computing. 
   - It is an open platform independent graphical desktop sharing system designed to remotely control another computer.
   - VNC follows the older model of simply showing whatever is on the screen with no forced logins required.
   - VNC connects a remote user to the computer itself by sharing its screen, keyboard and mouse.
-  - Consequently, when several users (including the one operating the real physical monitor and keyboard) connect to the same server they see the same thing and they type on the same keyboard.
-  - VNC has security implications; if you remote into a machine that an Administrator is logged into, you'll effectively be an Administrator. And if you're both trying to use the computer at the same time, it's even more fun!
+  - when several users (including the one operating the real physical monitor and keyboard) connect to the same server they see the same thing and they type on the same keyboard.
+  - 🔒 VNC has security implications; if you remote into a machine that an Administrator is logged into, you'll effectively be an Administrator. And if you're both trying to use the computer at the same time, it's even more fun!
 
 - ## [如何评价微软的远程桌面？ - 知乎](https://www.zhihu.com/question/26816582)
 - 远程桌面的隐藏配置都明文保存在 RDP 文件里。
@@ -74,15 +93,17 @@ modified: 2024-01-28T09:05:12.586Z
 - VNC这些是帧传输协议，类比一下就是看直播。
   - RDP协议支持指令传输协议，使得一些窗体渲染可以发生在客户端上，这使得传输协议天然可以做到很小，同等网络条件下，带宽消耗更小，性能更高。当然也支持了直播的方式做兜底。
 
-- ## Cloudflare now provides clientless, browser-based support for the Remote Desktop Protocol (RDP)
+- ## 🚀 Cloudflare now provides clientless, browser-based support for the Remote Desktop Protocol (RDP) _202503
 - https://x.com/Cloudflare/status/1903076650952335699
 
-- ## 推荐一个可自托管的虚拟浏览器，可以直接部署到一个VPS上，然后就可以实现团队间共享一个持久化Session的浏览器。
-- https://x.com/Stephen4171127/status/1883559372204491156
-- 试过了，卡顿很厉害。还不如vpn加windows虚拟机
-- 这种用类似于novnc实现的浏览器项目都不是很好用，带宽和延迟一旦不够就会让整个界面都很卡，甚至是完全不可用的地步
-- aws的remote desktop考虑一下？
-
+- [RDP without the risk: Cloudflare's browser-based solution for secure third-party access _202503](https://blog.cloudflare.com/browser-based-rdp/)
+  - Short-lived SSH access made its debut on Cloudflare’s SASE platform in October 2024.
+  - Cloudflare has architectured a high-performance RDP proxy that leverages the modern security controls already part of our Zero Trust Network Access (ZTNA) service.
+  - Cloudflare's browser-based RDP solution is the newest addition to Cloudflare Access alongside existing clientless SSH and VNC offerings, enabling secure, remote Windows server access without VPNs or RDP clients.
+  - Users only need a web browser — no native RDP client is necessary! RDP servers are accessed through our app connector, Cloudflare Tunnel, using a common deployment model of existing Access customers. There is no need to provision user devices to access particular RDP servers, making for minimal setup to adopt this new functionality.
+  - 💡 How it works
+  - Cloudflare’s implementation leverages IronRDP, a high-performance RDP client that runs in the browser.
+  - Unlike Java-based Apache Guacamole, another popular RDP client implementation, IronRDP is built with Rust and integrates very well with Cloudflare’s development ecosystem.
 # discuss
 - ## 
 

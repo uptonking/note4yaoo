@@ -336,6 +336,13 @@ add action to create quickSort1.mjs and add 3 test cases in it
   - py 784965933709307904
   - js 786335673728065536
 
+## 0424
+
+- 今天计划
+  - 优化语法跳转的细节，修复测试反馈的问题
+  - 修复影响发版的问题
+- 实际完成
+
 ## 0423
 
 - [What is the difference between decodeURIComponent and decodeURI? - Stack Overflow](https://stackoverflow.com/questions/747641/what-is-the-difference-between-decodeuricomponent-and-decodeuri)

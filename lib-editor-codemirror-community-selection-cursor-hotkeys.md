@@ -70,6 +70,17 @@ modified: 2024-08-11T06:46:39.843Z
 
 - ## 
 
+- ## 
+
+- ## [Multiple cursor by clicking - v6 - discuss. CodeMirror _202206](https://discuss.codemirror.net/t/multiple-cursor-by-clicking/4463)
+- For future multi-cursor users’ reference:
+  - Click to Create Multiple Cursors (EditorView.clickAddsSelectionRange ). Bound to Ctrl (macOS: Cmd) + Click by default.
+  - Drag to Create Multiple Cursors ( rectangularSelection() ). Bound to Alt (macOS: Option) + Drag.
+
+- This differs from VS Code which is
+  - Click to Create Multiple Cursors: Bound to Alt (macOS: Option) + Click.
+  - Drag to Create Multiple Cursors: Bound to Alt (macOS: Option) + Shift + Drag.
+
 - ## 🌰 [Is it possible deleteTab command - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/is-it-possible-deletetab-command/4453)
   - I want delete tab when I use Shift-Tab shortcut. But I can’t find any StateCommand
   - indentMore and indentLess command affects line. It doesn’t help me.

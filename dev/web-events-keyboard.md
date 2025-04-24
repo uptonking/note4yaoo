@@ -81,4 +81,5 @@ modified: 2023-03-19T20:03:32.594Z
 
 - ## 
 
-- ## 
+- ## [Getting mouse position in keyboard event - Stack Overflow](https://stackoverflow.com/questions/7562503/getting-mouse-position-in-keyboard-event)
+- Cache mouse position in a global variable in every `mousemove` event and use it when a key event fires
