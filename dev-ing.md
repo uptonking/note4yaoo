@@ -335,13 +335,24 @@ add action to create quickSort1.mjs and add 3 test cases in it
   - go 784965962943606784
   - py 784965933709307904
   - js 786335673728065536
+  - java 786790509908774912
+
+## 0425
+
+- 今天计划
+  - 修复测试反馈的语法跳转低优先级问题
+
+- lsp-definition-dev-to
+  - Java/Ruby 代码按住cmd/ctrl时没有显示下划线但可跳转，原因是language server的相关事件没返回，需要修复language server的配置
+  - hover代码时显示类型信息或语法提示
+  - 存在多个定义候选项时的交互优化
+  - 查找引用， 跳转到符号
 
 ## 0424
 
 - 今天计划
   - 优化语法跳转的细节，修复测试反馈的问题
   - 修复影响发版的问题
-- 实际完成
 
 ## 0423
 

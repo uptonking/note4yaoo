@@ -41,7 +41,26 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
-## 
+## cloud browser方案
+
+- 基于 playright + novnc 的方案
+  - 如何限制浏览非开发的网站如youtube，会占用带宽
+  - vnc的方案能透传声音
+  - 用户能手动打开浏览器devtools
+
+## 文件系统
+
+- 分层挂载
+  - docker只支持本地文件系统的分层挂载，不支持网络文件系统的分层挂载
+
+- 
+- 
+- 
+- 
+
+## 鉴权方案思路
+
+- 轻度验证，预生成token，定期更新token
 
 ## 付费逻辑的设计与实现
 
@@ -64,6 +83,7 @@ modified: 2023-06-14T00:53:15.226Z
   - 通过ui触发git commit，依赖业务逻辑中使用的java git~~hub~~ sdk，基于jgit实现? 所以很慢
   - 在terminal执行git commit，基于git ssh协议实现?
 - 经过验证，问题出在 java jgit sdk 打开仓库，注释相关代码后速度正常，相关功能已迁移到 go agent。
+  - 之后又碰到使用java git sdk操作checkout慢的问题
 - 解决方案: 因为commit前会通过git sdk执行git status，这个操作耗时长就很慢，不采用git sdk操作而采用编码的方式 `child_process.exec(shellCmd)` 执行命令就很快了
 
 ## error: followingFocusComponent call timeout (7s)

@@ -10,14 +10,30 @@ modified: 2024-08-24T16:29:44.029Z
 # guide
 
 - ide-dev-impl
-  - 工作用的ide不适合采用纯前端的方案实现，LSP依赖跑一个本地服务，运行代码依赖本地或云端环境，可debug，可通过ssh协议用vscode打开
-  - 展示用的ide适合纯前端实现，可采用无需更新依赖包的webworker-LSP，无需执行/debug
+
+- 工作用的ide不适合采用纯前端的方案实现，
+  - LSP依赖跑一个本地服务，
+  - 运行代码依赖本地或云端环境，
+  - 可debug，
+  - 可通过ssh协议用vscode打开
+- 展示用的ide适合纯前端实现，可采用无需更新依赖包的webworker-LSP，无需执行/debug
 # ide-features
 
 ## symbols
 
 ## refactor
 
+## 源码跳转
+
+- 需求: 类似codesandbox的component inspector, 在拾取元素时可以跳转到源码文件的对应行号
+
+- 思路1: 当用户访问url时 在服务端或网关注入inspector脚本(包含各元素位置) 到iframe或网页
+  - 或在服务端或网关拦截dev-server的请求，此时也可以分析出位置
+  - 可参考 https://github.com/zthxxx/react-dev-inspector
+
+- 思路2: 可参考浏览器react/vue-devtools的实现方式, 将内存模式改为c/s或b/s架构
+  - 安装了react-devtools就可以获取拾取元素的source，类似 [...slug].tsx:131
+  - 可在网关注入类似react-devtools的脚本
 # ide-products
 - [关于IDE，你想知道的都在这! 文章合集 - 掘金 _202303](https://juejin.cn/post/7209472157502668860)
 

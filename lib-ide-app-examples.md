@@ -392,4 +392,11 @@ modified: 2024-08-24T16:30:20.218Z
     - we anticipate SCIP additionally unblocks the following use-cases that we previously struggled to support with LSIF:
       - Incremental indexing: once implemented, SCIP users will experience shorter waiting time for precise code navigation to become available on Sourcegraph after a git push because our backend only needs to index the files that have changed instead of the entire repository on every commit.
       - Cross-language navigation: once implemented, SCIP users will, for example, be able to navigate between Protobuf and generated Java/Go Protobuf bindings, helping them find relevant code examples that were previously unavailable with both search-based and precise code navigation.
+# ide-devtools
+- https://github.com/zthxxx/react-dev-inspector /MIT/202412/ts
+  - https://react-dev-inspector.zthxxx.me/
+  - React component on the browser to its source code in your local IDE instantly
+  - How to Use and Configure
+    - add the `<Inspector/>` component in your page to reads the source info, and sends it to the dev-server when you inspect elements on browser.
+    - integrate the middleware in your framework's dev-server: to receives source path info from API, then call your local IDE/Editor to open the source file.
 # more

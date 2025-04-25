@@ -61,10 +61,11 @@ modified: 2025-02-21T18:20:42.624Z
 - [AI SDK Cookbook](https://sdk.vercel.ai/cookbook)
   - An open-source collection of recipes and guides for building with the AI SDK.
 # browser-use
-- https://github.com/browser-use/browser-use /MIT/202503/python/js
+- https://github.com/browser-use/browser-use /57.9kStar/MIT/202504/python/js
   - https://browser-use.com/
   - Enable AI to control your browser
   - [Pack 拆解 browser-use 项目 ](https://quaily.com/silico-anatomy/packs/110)
+
 - https://github.com/browser-use/web-ui /MIT/202504/python
   - This project builds upon the foundation of the browser-use, which is designed to make websites accessible for AI agents.
   - WebUI: is built on Gradio and supports most of browser-use functionalities.
@@ -75,7 +76,26 @@ modified: 2025-02-21T18:20:42.624Z
   - A Model Context Protocol (MCP) server that provides browser automation capabilities using Playwright. 
   - This server enables LLMs to interact with web pages through structured accessibility snapshots, bypassing the need for screenshots or visually-tuned models.
   - https://x.com/playwrightweb/status/1904265499422409047
-    - we went ahead and built an MCP server for Playwright. Ours is snapshot-based, which makes it faster and more reliable! You can opt into the visual mode too. 
+    - we went ahead and built an MCP server for Playwright. Ours is snapshot-based, which makes it faster and more reliable! You can opt into the visual mode too.
+
+- https://github.com/browserbase/stagehand /11.3kStar/MIT/202504/ts
+  - https://stagehand.dev/
+  - An AI web browsing framework focused on simplicity and extensibility.
+  - This project heavily relies on Playwright 
+  - Choose when to write code vs. natural language: use AI when you want to navigate unfamiliar pages, and use code (Playwright) when you know exactly what you want to do.
+
+- https://github.com/browserless/browserless /10kStar/SSPL-NC/202504/ts
+  - https://browserless.io/
+  - Browserless allows remote clients to connect and execute headless work, all inside of docker. 
+  - It supports the standard, unforked Puppeteer and Playwright libraries, as well offering REST-based APIs for common actions like data collection, PDF generation and more.
+  - Parallelism and request-queueing are built-in + configurable.
+  - Works with unforked Puppeteer and Playwright.
+  - An interactive puppeteer debugger, so you can see what the headless browser is doing and use its DevTools.
+  - Support for running and development on Apple's M1 machines
+  - 💰 If you want to use Browserless to build commercial sites, applications, or in a continuous-integration system that's closed-source, then you'll need to purchase a commercial license.
+  - 💡 Browserless listens for both incoming websocket requests, generally issued by most libraries, as well as pre-build REST APIs to do common functions (PDF generation, images and so on). When a websocket connects to Browserless it starts Chrome and proxies your request into it. 
+    - Once the session is done then it closes and awaits for more connections. 
+    - Some libraries use Chrome's HTTP endpoints, like /json to inspect debug-able targets, which Browserless also supports.
 # computer-use
 - https://github.com/bytedance/UI-TARS-desktop /9.6kStar/apache2/202503/ts
   - https://agent-tars.com/
