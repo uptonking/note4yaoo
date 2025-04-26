@@ -441,6 +441,60 @@ GPS丨Glonass丨BeiDou丨Galileo
 - [苹果iPhone 6S Plus（全网通）参数](http://detail.zol.com.cn/399/398690/param.shtml)
 # laptop
 
+## macbook air
+
+- mac-xp
+  - 20250427: 决定选择air，性能够用(公司用的是老款mbp-2019)，适合开会
+
+- resources
+  - [MacBook Air - 机型比较 - Apple (中国大陆)](https://www.apple.com.cn/macbook-air/compare/)
+  - [【苹果MacBook Air 15 2025款 M4/24GB/512GB/10核集显参数】 -ZOL中关村在线](https://detail.zol.com.cn/2123/2122631/param.shtml)
+
+- 上市时间	2025年03月12
+- 笔记本重量	1.51Kg
+长度	340.4mm
+宽度	237.6mm
+厚度	11.5mm
+- 屏幕尺寸	15.3英寸 Liquid 视网膜显示屏
+屏幕分辨率	2880x1864 超高清屏 
+像素密度	224ppi
+亮度	500尼特
+色域	10bit，P3广色域
+屏幕技术	原彩显示技术
+- CPU系列	苹果 ARM系列
+  - CPU型号	Apple M4
+  - 核心/线程数	十核心
+  - 10 核中央处理器，具有 4 个性能核心 和 6 个能效核心
+  - 10 核图形处理器
+  - 硬件加速光线追踪
+  - 16 核神经网络引擎
+  - 120GB/s 内存带宽
+- 内存容量	24GB极速运行, 最高可达32GB统一内存
+- 硬盘容量	512GB
+  - 硬盘描述	SSD固态硬盘
+- 显卡类型	核芯显卡>
+显卡芯片	10核图形处理器
+显存容量	共享内存容量 
+- 摄像头
+	1200万Center Stage摄像头，支持桌上视角功能
+
+- 扬声器	六扬声器系统
+  - 采用振动抵消低音单元
+- 麦克风	三麦克风阵列
+- 无线网卡	WiFi6E，支持802.11ax无线协议>
+- 蓝牙	支持，蓝牙5.3模块
+- 数据接口	2×雷雳4
+- 音频接口	3.5mm耳机/麦克风二合一接口
+- 电池类型	锂电池，66.5瓦时纠错
+  - 电源适配器	35W 双 USB-C 端口小型电源适配器
+  - 可快速充电 (使用 70W 或更大功率的 USB-C 电源适配器)
+- 其它接口	MagSafe3
+  - USB-C 转 MagSafe 3 连接线(2 米)  x1
+
+- 
+- 
+- 
+
 ## hp omen 8 plus
 
 - [惠普暗影精灵笔记本电脑 - 17-ck1008TX 产品规格](https://support.hp.com/cn-zh/product/details/omen-17.3-inch-gaming-laptop-pc-17-ck1000/model/2100997924?sku=6J0W0PA)
