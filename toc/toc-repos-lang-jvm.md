@@ -216,6 +216,18 @@ modified: 2021-05-14T15:05:02.456Z
   - This project aims at providing faster Maven builds using techniques known from Gradle and Takari.
   - used @GitHub Actions to compile all binaries for Linux, macOS (Apple Silicon+Intel), and Windows with @GraalVM
 # java-starter
+- https://github.com/1chz/realworld-java21-springboot3 /MIT/202504/java
+  - https://1chz.github.io/realworld-java21-springboot3
+  - RealWorld backend API built using Java 21 and Spring Boot 3
+  - implemented using Java 21 and Spring Boot 3, leveraging technologies such as Spring MVC, Spring Data JPA, and Spring Security. 
+  - It uses H2 DB (in-memory, MySQL mode) as the database and JUnit 5 for testing.
+  - Database Abstraction: Implemented with JPA to simplify database changes.
+  - H2 Database: Used in MySQL mode to provide similar functionality to MySQL.
+  - Scalability: Designed to scale for large volumes of data.
+  - Performance: Optimized for frequently used operations through database indexing, query optimization, and caching.
+  - OAuth 2.0: Used for simpler JWT implementation compared to manual implementations.
+  - Slug and Title Uniqueness: Ensured uniqueness according to API specifications.
+
 - https://github.com/release-the-kraken/java-servlet-crud-web-app /java/js
   - Dynamic CRUD webb app using MongoDB; Java backend; VanillaJS, HTML, CSS frontend.
 # java-repos

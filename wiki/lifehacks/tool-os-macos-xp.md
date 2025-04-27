@@ -127,6 +127,14 @@ gSXdBQJmo0KzAhsMAAoJEHTMJKDngSXdOtoA/1LeTu+cgBnSNT3aL3ES+v2/90Ta
 -----END PGP PUBLIC KEY BLOCK-----
 ```
 
+# arm-mac
+
+# intel-mac
+
+- [If you need to install Rosetta on Mac - Apple Support](https://support.apple.com/en-us/102527)
+  - Open any app that needs Rosetta. If the app opens, Rosetta is already installed and working.
+  - If Rosetta is not installed, you're automatically asked to install it.
+  - Rosetta is not an app that you open or interact with. Rosetta works automatically in the background whenever you use an app that was built only for Mac computers with an Intel processor. It translates the app for use with Apple silicon.
 # blogs-tips
 
 ## [Mac使用技巧大整合：基础篇+进阶篇 - 知乎](https://zhuanlan.zhihu.com/p/89987302)

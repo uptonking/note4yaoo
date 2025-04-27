@@ -20,41 +20,25 @@ modified: 2024-06-30T03:28:19.638Z
 # discuss-server
 - ## 
 
+- ## 
 
 - ## 
 
-
-
 - ## 
 
-
-
 - ## 
-
-
-- ## 
-
-
-
 
 - ## [Make jupyterlab_server optional _202109](https://github.com/jupyterlab/jupyterlab/issues/11101)
 - JupyterLab currently depends on jupyterlab server. For alternative servers to the JupyterLab frontend, such as jupyverse, this dependency is really not necessary, and makes the installation more problematic.
 
-
 - 
 - 
 - 
-
 
 # discuss-cluster
 - ## 
 
-
 - ## 
-
-
-
-
 
 - ## [Jupyter hub pod autoscaler (HPA) · Issue · jupyterhub/zero-to-jupyterhub-k8s _201811](https://github.com/jupyterhub/zero-to-jupyterhub-k8s/issues/1019)
 - 202010: The original issue was about using a horizontal pod autoscaler, which is about creating more and more pods as they get busier. This is not plausible for any pod in our Helm chart currently though because we cannot support High Availability
@@ -122,10 +106,9 @@ modified: 2024-06-30T03:28:19.638Z
 
 - 202210: Thanks for your sketch! I think I've outlined everything above that needs to be solved in the Hub to allow more than one Hub pod to talk to the same database without conflict. The proxy part is already fully solved if you use traefik (long-since the default in littlest jupyterhub, hit some snags that stopped a migration in z2jh). CHP can also be fully HA if you use CHP's redis backend.
 
-- 
-- 
-- 
-
+- 202504: It's a big project and requires substantial resources and time. There is not currently available time or funding to develop this
+  - HA and scaling were both explicitly out of scope during JupyterHub development, but folks want what they want
+  - JupyterHub was designed such that availability of the Hub wouldn't be critical (i.e. everything involved in users running code is not disrupted while the Hub is restarting/migrating, only new user spawns and admin UI are affected). So if you have your own UI for launching servers via the JupyterHub REST API that is fault tolerant (as e.g. BinderHub does), you should be able to get pretty close to an HA deployment. That's part of what makes this a lower priority.
 # discuss-extensions
 - ## 
 

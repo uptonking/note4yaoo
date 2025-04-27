@@ -12,6 +12,15 @@ modified: 2025-04-12T19:18:28.788Z
 # popular
 
 # lsp-servers
+
+- https://github.com/TypeFox/monaco-languageclient /MIT/202504/ts
+  - monaco-languageclient to connect Monaco editor with language servers.
+  - monaco-editor-wrapper for building monaco editor application driven by configuration.
+  - monaco-languageclient-examples provides the examples which allows to use them externally.
+  - monaco-editor-wrapper依赖monaco-languageclient
+  - [Teaching the Language Server Protocol to Microsoft's Monaco Editor | TypeFox _201704](https://www.typefox.io/blog/teaching-the-language-server-protocol-to-microsofts-monaco-editor/)
+  - [如何创建集成 LSP 支持多语言的 Web 代码编辑器 - 米开朗基杨 - 博客园 _202309](https://www.cnblogs.com/ryanyangcs/p/17693108.html)
+
 - https://github.com/qualified/lsp-ws-proxy /MIT/202205/rust/inactive
   - WebSocket proxy for Language Servers.
 
@@ -121,6 +130,38 @@ modified: 2025-04-12T19:18:28.788Z
 
 ## java-server
 
+- https://github.com/chaitanya71998/monaco-language-testing-with-java /MIT/202308/ts/inactive
+  - integrating monaco language client with java language server from eclipse
+  - referenced from TypeFox/monaco-languageclient
+
+- https://github.com/eclipse-jdtls/eclipse.jdt.ls /EPL/202504/java
+  - The Eclipse JDT Language Server is a Java language specific implementation of the Language Server Protocol and can be used with any editor that supports the protocol
+  - Eclipse JDT, which provides Java support (code completion, references, diagnostics...)
+  - Supports compiling projects from Java 1.8 through 24
+  - Maven pom.xml project support
+  - Gradle project support (with experimental Android project import support)
+  - Code actions (quick fixes, source actions & refactorings)
+  - Code lens (references/implementations)
+  - Annotation processing support (automatic for Maven projects)
+  - Choose a value for `-data`: An absolute path to your data directory. eclipse.jdt.ls stores workspace specific information in it. This should be unique per workspace/project.
+  - [Question, How to "GoToDefination" for JDK package? _202111](https://github.com/eclipse-jdtls/eclipse.jdt.ls/issues/1931)
+    - Jumping to the definition of JDK libraries or other third-party libraries requires the `classFileContentsSupport extendedClientCapabilities` on the client. This is not part of the core protocol, but a custom extension of eclipse.jdt.ls
+  - [Issue when trying to connect using Monaco Editor _202111](https://github.com/eclipse-jdtls/eclipse.jdt.ls/issues/1933)
+  - ⛓️ [Unable to Start Eclipse JDT Language Server _202310](https://github.com/eclipse-jdtls/eclipse.jdt.ls/issues/2890)
+    - java -Declipse.application=org.eclipse.jdt.ls.core.id1 -Dosgi.bundles.defaultStartLevel=4 -Declipse.product=org.eclipse.jdt.ls.core.product -Dlog.level=ALL -Dosgi.dev -Dsocket.stream.debug=true -DCLIENT_PORT=5036 -DCLIENT_HOST=127.0.0.1 -Xmx1G --add-modules=ALL-SYSTEM --add-opens java.base/java.util=ALL-UNNAMED -jar ./plugins/org.eclipse.equinox.launcher_1.6.500.v20230717-2134.jar -configuration ./config_linux -data /tmp/foospace/
+  - [Support for ARM/aarch64 _202308](https://github.com/eclipse-jdtls/eclipse.jdt.ls/issues/2784)
+  - [snippet and inmemory uri support _202501](https://github.com/eclipse-jdtls/eclipse.jdt.ls/discussions/3359)
+    - Only `file://` URIs are supported. Looking through the JDT-LS codebase, I see places where we make assumptions regarding whether the file scheme is file (ie. file:/some/path/on/local/system). There's only a handful of these in the code base, but it would be good to examine them.
+  - [Cannot run server on apple M2 silicon ](https://github.com/eclipse-jdtls/eclipse.jdt.ls/issues/2680)
+    - Perhaps Eclipse is able to match against the cocoa.macosx.x86_64 platform-specific bundles. We definitely don't ship the aarch64 one. I did read that with Rosetta, it should be possible to run the x86_64 binaries so perhaps this is supported.
+  - [Neovim LSP can't run LSP client: `Unrecognized option: --add-modules=ALL-SYSTEM` ](https://github.com/eclipse-jdtls/eclipse.jdt.ls/issues/2175)
+    - java -Declipse.application=org.eclipse.jdt.ls.core.id1 -Dosgi.bundles.defaultStartLevel=4 -Declipse.product=org.eclipse.jdt.ls.core.product --add-modules=ALL-SYSTEM --add-
+  - [Lombok with jdtls.py script _202206](https://github.com/eclipse-jdtls/eclipse.jdt.ls/issues/2113)
+    - jdtls --jvm-arg=-javaagent:/path/to/lombok.jar --jvm-arg=-Xbootclasspath/a:/path/to/lombok.jar -data "$HOME/dev/eclipse/workspace"
+  - [Getting - {"jsonrpc":"2.0", "method":"window/logMessage", "params":{"type":3, "message":"12-Jan-2024, 12:00:51 am Main thread is waiting"}} on insallation ](https://github.com/eclipse-jdtls/eclipse.jdt.ls/issues/3021)
+  - [Put this bash script into the appropriate location ](https://github.com/eclipse-jdtls/eclipse.jdt.ls/issues/1823)
+  - https://github.com/eruizc-dev/jdtls-launcher /deprecated
+    - It included awesome features like updates, and backups, and Lombok configuration.
 # lsp-apps
 - https://github.com/kcaswick/language-server-diagram-tool /MIT/202411/ts/inactive
   - A tool to export diagrams of programs, read via language servers or LSIF (language server index format)

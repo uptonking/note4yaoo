@@ -46,6 +46,44 @@ modified: 2025-01-05T15:00:07.466Z
   - import相对路径 "\n```typescript\nmodule  absolute/path/to/src.js```"
   - import三方库 "\n```typescript\nmodule  absolute/path/to/src.js```"
 
+```JS
+// method: textDocument/hover
+// result: Hover | null
+
+/**
+ * The result of a hover request.
+ */
+export interface Hover {
+  /**
+   * The hover's content
+   */
+  contents: MarkedString | MarkedString[] | MarkupContent;
+
+  /**
+   * An optional range is a range inside a text document
+   * that is used to visualize a hover, e.g. by changing the background color.
+   */
+  range ? : Range;
+}
+
+type MarkedString = string | { language: string;value: string };
+
+/**
+ * A MarkupContent literal represents a string value which content can be represented in different formats. 
+ * - Currently `plaintext` and `markdown` are supported formats
+ * - If the format is markdown the content should follow the GitHub Flavored Markdown Specification.
+ */
+export interface MarkupContent {
+  kind: MarkupKind;
+  /**
+   * The content itself
+   */
+  value: string;
+}
+
+export type MarkupKind = 'plaintext' | 'markdown';
+```
+
 ## LSP语法跳转
 
 - ux

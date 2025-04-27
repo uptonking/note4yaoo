@@ -82,6 +82,7 @@ modified: 2023-11-28T14:48:45.910Z
     - 针对视频的搜索
   - pdf chat
   - ActionText for nodejs: hocuspocus
+  - editor无法成为主营业务，但ide可以
   - cms+crdt
   - interoperable/sharing
     - MCP/LSP/backlink
@@ -142,6 +143,8 @@ modified: 2023-11-28T14:48:45.910Z
 
 - markdown block diff
   - cloudflare markdown conversion open source alternative
+- markdown
+  - frontend LSP/autoFormat/autocomplete/twoslash
 
 - backlink
   - 在代码领域，双向链接通常对应import, 方便应用本地lib或远程lib

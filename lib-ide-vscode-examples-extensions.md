@@ -780,6 +780,10 @@ modified: 2024-08-24T16:17:26.715Z
     - add new services that were not included in Monaco
   - This project was mainly created to make the implementation of monaco-languageclient more robust and maintainable.
   - VSCode extensions are bundled as vsix files. This library publishes a rollup plugin (vite-compatible) that allows to load a vsix file.
+  - [Wiki](https://github.com/CodinGame/monaco-vscode-api/wiki)
+    - This project was mainly created to make the implementation of monaco-languageclient more robust and maintainable.
+    - The first implementations of monaco-languageclient were using a fake VSCode api implementation. The vscode-languageclient was hacked so the VSCode<->protocol object converters were mainly bypassed, so the fake VSCode api was receiving Language Server Protocol objects. 
+    - With this library, it would be possible to plug vscode-languageclient directly on top of monaco
   - [Getting started guide](https://github.com/CodinGame/monaco-vscode-api/wiki/Getting-started-guide)
   - https://github.com/CodinGame/monaco-editor-react
     - This library uses https://github.com/CodinGame/monaco-editor-wrapper
