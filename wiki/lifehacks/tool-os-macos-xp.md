@@ -153,10 +153,18 @@ gSXdBQJmo0KzAhsMAAoJEHTMJKDngSXdOtoA/1LeTu+cgBnSNT3aL3ES+v2/90Ta
 - ## [node.js - Create directory "/dotenv" on MacOs, Read-only file system - Stack Overflow](https://stackoverflow.com/questions/60469031/create-directory-dotenv-on-macos-read-only-file-system)
 - If you really want to, you can disable the read-only file system in Catalina 
 
-# discuss-hardware
+# discuss-macos
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [为什么macOS软件生态不敌Windows? - 知乎](https://www.zhihu.com/question/630055595)
+- MacOSX: 每次升级都有老程序跑不了了
+  - Windows: 每天都有人写程序，几十年前的程序还能继续跑。
+
+- 其中一个原因是因为贵。macmini降价是最近几年的事情，十年以前往前数，苹果电脑是很贵的。
 
 - ## 新买了一台新的 Mac 电脑，配置新电脑是非常开心的一个过程，分享几个我认为工程师必装的软件
 - https://x.com/vikingmute/status/1800341873179111456
@@ -173,6 +181,14 @@ gSXdBQJmo0KzAhsMAAoJEHTMJKDngSXdOtoA/1LeTu+cgBnSNT3aL3ES+v2/90Ta
 - Kap 录制视频和 gif 的轻量工具；
 - SwitchKey  自动在各个应用之间切换中英输入法；
 - Linear 项目管理的好工具。
+# discuss-hardware
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
 
 - ## 忽然想起来，Apple 主推自己的芯片之后，以后就没有for x86的macOS系统了吧？那么，以后也就没有黑苹果咧？
 - https://twitter.com/choicky/status/1682953718004858882

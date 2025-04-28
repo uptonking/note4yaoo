@@ -236,6 +236,13 @@ modified: 2023-12-08T16:02:26.515Z
   - 默认last-write-win
   - 更多是业务逻辑问题，而不是技术问题
   - 在linear llw可以work，但在groupon的交易冲突时会提示用户选区版本
+# sync-examples
+- https://github.com/wzhudev/reverse-linear-sync-engine /202504/js
+  - A reverse engineering of Linear's sync engine for learning purposes
+  - While OT/CRDT these technologies are effective for editors and spreadsheets, they may not be ideal for other types of applications
+  - While OT excels at synchronizing edits, preserving user intent, and handling conflicts, its complexity often makes it overkill for simpler use cases—such as managing user information or file metadata—where a straightforward last-writer-wins approach might suffice.
+  - CRDTs often introduce metadata overhead and become challenging to manage in scenarios involving partial syncing or permission controls—such as when users can only access a subset of files.
+  - I decided to reverse-engineer its frontend code to understand how it works. 
 # discuss-sync-figma-like
 - ## 
 
