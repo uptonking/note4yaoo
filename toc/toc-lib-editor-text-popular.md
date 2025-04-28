@@ -54,6 +54,8 @@ modified: 2022-11-08T19:04:00.289Z
   - https://github.com/facebook/lexical
   - https://lexical.dev/
   - editor framework with an emphasis on reliability, accessibility, and performance.
+  - https://github.com/facebook/lexical-ios /MIT/202504/swift
+    - An extensible text editor/renderer written in Swift, built on top of TextKit, and sharing a philosophy and API with Lexical JavaScript.
 
 - https://github.com/wikimedia/VisualEditor /185Star/MIT/202311/js
   - https://www.mediawiki.org/wiki/VisualEditor

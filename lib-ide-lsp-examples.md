@@ -36,6 +36,14 @@ modified: 2025-04-12T19:18:28.788Z
   - https://github.com/devopzacademy/jsonrpc-ws-proxy /202310/js
     - DEFAULT_PORT = 3000
 
+- https://github.com/mkslanc/websockets-ls /MIT/202503/js
+  - This script provides a WebSocket bridge to interface multiple Language Servers (e.g. `svelte-language-server, pylsp, gopls, clangd`, etc.) with clients via a single WebSocket connection. 
+  - 🔀 It supports various language servers concurrently and handles language-specific file extensions and initialization parameters.
+  - Utilizes `vscode-jsonrpc` for LSP message handling.
+  - Support for IPC and stdio communication with language servers.
+  - Automatic file URI translation between server and client paths.
+  - Temporary file creation for `textDocument/didOpen` events.
+
 - https://github.com/lspserver/proxy /apache2/202204/ts/inactive
   - the proxy of lspserver written in JavaScript
   - https://github.com/lspserver/proxy-go /go
@@ -58,14 +66,6 @@ modified: 2025-04-12T19:18:28.788Z
     - There might exist typescript plugins that run eslint but it's out of scope of this server if Zed is using those. I would anyway recommend running a separate LSP server for eslint.
   - [How do I spin up a language server and then invoke it using a Code editor like codemirror?? _202309](https://github.com/typescript-language-server/typescript-language-server/discussions/760)
     - You can use `vscode-jsonrpc` to communicate with the language server in nodejs
-
-- https://github.com/mkslanc/websockets-ls /MIT/202503/js
-  - This script provides a WebSocket bridge to interface multiple Language Servers (e.g. `svelte-language-server, pylsp, gopls, clangd`, etc.) with clients via a single WebSocket connection. 
-  - 🔀 It supports various language servers concurrently and handles language-specific file extensions and initialization parameters.
-  - Utilizes `vscode-jsonrpc` for LSP message handling.
-  - Support for IPC and stdio communication with language servers.
-  - Automatic file URI translation between server and client paths.
-  - Temporary file creation for `textDocument/didOpen` events.
 
 - https://github.com/lukehaas/ws-ts-language-server /202503/js
   - cli, 依赖 vscode-ws-jsonrpc
@@ -147,6 +147,9 @@ modified: 2025-04-12T19:18:28.788Z
   - [Question, How to "GoToDefination" for JDK package? _202111](https://github.com/eclipse-jdtls/eclipse.jdt.ls/issues/1931)
     - Jumping to the definition of JDK libraries or other third-party libraries requires the `classFileContentsSupport extendedClientCapabilities` on the client. This is not part of the core protocol, but a custom extension of eclipse.jdt.ls
   - [Issue when trying to connect using Monaco Editor _202111](https://github.com/eclipse-jdtls/eclipse.jdt.ls/issues/1933)
+  - 🌰 [Add Eclipse JDT Language Server example · Pull Request · TypeFox/monaco-languageclient _202407](https://github.com/TypeFox/monaco-languageclient/pull/708)
+    - The server is executed within a container. Use docker compose to build it and launch it.
+    - JDT LS requires that the files physically exist at the specified location. An openTextDocument is not sufficient. 
   - ⛓️ [Unable to Start Eclipse JDT Language Server _202310](https://github.com/eclipse-jdtls/eclipse.jdt.ls/issues/2890)
     - java -Declipse.application=org.eclipse.jdt.ls.core.id1 -Dosgi.bundles.defaultStartLevel=4 -Declipse.product=org.eclipse.jdt.ls.core.product -Dlog.level=ALL -Dosgi.dev -Dsocket.stream.debug=true -DCLIENT_PORT=5036 -DCLIENT_HOST=127.0.0.1 -Xmx1G --add-modules=ALL-SYSTEM --add-opens java.base/java.util=ALL-UNNAMED -jar ./plugins/org.eclipse.equinox.launcher_1.6.500.v20230717-2134.jar -configuration ./config_linux -data /tmp/foospace/
   - [Support for ARM/aarch64 _202308](https://github.com/eclipse-jdtls/eclipse.jdt.ls/issues/2784)
@@ -162,6 +165,11 @@ modified: 2025-04-12T19:18:28.788Z
   - [Put this bash script into the appropriate location ](https://github.com/eclipse-jdtls/eclipse.jdt.ls/issues/1823)
   - https://github.com/eruizc-dev/jdtls-launcher /deprecated
     - It included awesome features like updates, and backups, and Lombok configuration.
+
+- https://github.com/gaograce/java-languageserver /202204/js/inactive
+  - A java language server
+  - 未使用vscode-ws-jsonrpc，手动解析字符流
+  - https://github.com/gaograce/java-editor /202204/js/vue
 # lsp-apps
 - https://github.com/kcaswick/language-server-diagram-tool /MIT/202411/ts/inactive
   - A tool to export diagrams of programs, read via language servers or LSIF (language server index format)

@@ -337,13 +337,18 @@ add action to create quickSort1.mjs and add 3 test cases in it
   - js 786335673728065536
   - java 786790509908774912
 
+## 0428
+
+- 今天计划
+  - 解决Java代码按住ctrl不显示下划线的问题
+
 ## 0427
 
 - 今天计划
   - 调研和开始开发hover信息卡片的交互和ui
 
 ```sh
-java -Declipse.application=org.eclipse.jdt.ls.core.id1 -Dosgi.bundles.defaultStartLevel=4 -Declipse.product=org.eclipse.jdt.ls.core.product -Dlog.level=ALL -Dosgi.dev -Dsocket.stream.debug=true -DCLIENT_PORT=3000 -DCLIENT_HOST=localhost -Xmx1G --add-modules=ALL-SYSTEM --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED -jar  /Users/yaoo/Documents/active/opt/env/jdt-language-server-1.46.1-202504011455/plugins/org.eclipse.equinox.launcher_1.7.0.v20250331-1702.jar -configuration /Users/yaoo/Documents/active/opt/env/jdt-language-server-1.46.1-202504011455/config_mac -data /Users/yaoo/Documents/active/opt/env/jdtls-data
+java -Declipse.application=org.eclipse.jdt.ls.core.id1 -Dosgi.bundles.defaultStartLevel=4 -Declipse.product=org.eclipse.jdt.ls.core.product -Dlog.level=ALL -Dosgi.dev -Dsocket.stream.debug=true -DCLIENT_PORT=4000 -DCLIENT_HOST=localhost -noverify -Xmx1G --add-modules=ALL-SYSTEM --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED -jar  /Users/yaoo/Documents/active/opt/env/jdt-language-server-1.46.1-202504011455/plugins/org.eclipse.equinox.launcher_1.7.0.v20250331-1702.jar -configuration /Users/yaoo/Documents/active/opt/env/jdt-language-server-1.46.1-202504011455/config_mac -data /Users/yaoo/Documents/active/opt/env/jdtls-data
 ```
 
 ## 0425

@@ -12,7 +12,8 @@ modified: 2025-01-05T15:00:07.466Z
   - 标准化的方式，支持多种ide如vscode/jetbrains, 启发技术发展如MCP/backlink
 
 - cons
-  - jsonrpc
+  - 会将文件内容保存在内存，对大文件不友好 ❓
+  - jsonrpc是非主流协议
   - 协议设计目标未考虑并发: The protocol currently assumes that one server serves one tool
 
 - features
@@ -29,6 +30,10 @@ modified: 2025-01-05T15:00:07.466Z
 # draft
 
 # dev-xp
+
+- 有些language server如java-jdtls在初始化的 `initialize` 事件只会返回部分支持的 capabilities, 比如其中不包含hoverProvider/definitionProvider但server实际支持此能力
+  - 一种思路是首次触发 textDocument/hover 事件后根据结果来判断server到底是否支持此能力
+
 - 基于web worker实现LSP的缺点，对于更新types不友好
   - a language server requires all source code files be available on a local disk
   - The goal of the Language Server Index Format is to augment the LSP protocol to support rich code navigation features without these requirements. 

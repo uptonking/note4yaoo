@@ -118,7 +118,15 @@ modified: 2022-06-13T03:00:06.041Z
 
 - ## 
 
-- ## 
+- ## [Connection Java - MySQL : Public Key Retrieval is not allowed - Stack Overflow](https://stackoverflow.com/questions/50379839/connection-java-mysql-public-key-retrieval-is-not-allowed)
+
+```
+jdbc:mysql://localhost:3306/db?allowPublicKeyRetrieval=true&useSSL=false
+```
+
+- [Troubleshooting DBeaver: “Public Key Retrieval is not allowed” Error ](https://medium.com/@kiena/troubleshooting-dbeaver-public-key-retrieval-is-not-allowed-error-29f203d745c5)
+- Open DBeaver and navigate to your database connection. Right-click on the connection and select “Edit Connection”.
+  - Go to the “Driver Properties” section. Locate the property named “allowPublicKeyRetrieval”. By default, it is set to “false”. Change the value of “allowPublicKeyRetrieval” to “TRUE”.
 
 - ## Built a MySQL branching tool for GitHub Actions - similar to PlanetScale but runs directly in your CI/CD pipeline. 
 - https://x.com/earayu/status/1871833634703131094

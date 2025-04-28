@@ -592,6 +592,15 @@ modified: 2023-09-02T09:17:22.992Z
 
 - https://github.com/neverUsedGithub/WebEditor /202304/js/inactive
   - A basic online code editor using Webcontainers.
+# sandbox-linux
+- https://github.com/netblue30/firejail /GPL/202504/c
+  - https://firejail.wordpress.com/
+  - Linux namespaces and seccomp-bpf sandbox
+  - Firejail is a lightweight security tool intended to protect a Linux system by setting up a restricted environment for running (potentially untrusted) applications.
+  - it is an SUID sandbox program that reduces the risk of security breaches by using Linux namespaces, seccomp-bpf and Linux capabilities. It allows a process and all its descendants to have their own private view of the globally shared kernel resources, such as the network stack, process table and mount table. 
+  - Firejail can work in an SELinux or AppArmor environment, and it is integrated with Linux Control Groups.
+  - Written in C with virtually no dependencies, the software runs on any Linux computer with a 3.x kernel version or newer.
+  - The sandbox is lightweight, the overhead is low. There are no complicated configuration files to edit, no socket connections open, no daemons running in the background. All security features are implemented directly in Linux kernel and available on any Linux computer.
 # utils
 - https://github.com/ximing/jsvm2 /202402/ts
   - Javascript Interpreter implemented by typescript（TS实现的JS解释器）
