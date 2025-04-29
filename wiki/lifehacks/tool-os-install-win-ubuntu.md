@@ -474,15 +474,18 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
 
 ## os-starter
 
-- 在 settings 关闭 开机声音
+- settings-start
+  - 在 settings 关闭 开机声音
+  - fonts: [Install and validate fonts in Font Book on Mac - Apple Support](https://support.apple.com/en-hk/guide/font-book/fntbk1000/mac)
 
 - mac-apps-loved
   - pkg-manager: [Homebrew/Linuxbrew 镜像使用帮助](https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/)
   - appstore: localsend
 
 - brew install
-  - gedit: 安装gedit后，能够直接在terminal执行gedit filename
-  - git
+  - git, 先安装brew的git，会自动替换系统自带的git， 然后考虑生成key-ssh/gpg + ed25519
+  - ohmyzsh
+  - vscode/gedit: 安装gedit后，能够直接在terminal执行code/gedit filename
 
 - cut and paste
   - cmd+c cmd+option+v
