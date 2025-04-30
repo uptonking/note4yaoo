@@ -56,6 +56,8 @@ modified: 2023-07-23T07:05:19.441Z
 - [Mac 键盘快捷键 - 官方 Apple 支持 (中国)](https://support.apple.com/zh-cn/102650)
 - [Use Multi-Touch gestures on your Mac - Apple Support](https://support.apple.com/en-us/102482)
 
+- a11y
+  - 在zoom可打开按住 Control+向上scroll， 向下scroll可恢复
 ### 文件管理器
 
 - 唤起finder cmd + opt + space
