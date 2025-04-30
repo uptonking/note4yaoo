@@ -213,11 +213,14 @@ modified: 2022-08-21T10:19:58.756Z
 - ## [Possibility to create custom features](https://github.com/TanStack/table/discussions/4403)
 - not yet
 
-- ## [Declaration merging makes typing per-table meta difficult](https://github.com/TanStack/table/discussions/4220)
+- ## 🤔 [Declaration merging makes typing per-table meta difficult](https://github.com/TanStack/table/discussions/4220)
 - This would require a return to the insane generics. I doubt the benefits would outweigh the increased friction on types.
 
 - currently, I just add more props to meta, but I have no way to understand which types are related... 
   - I do think adding a generic for meta is the solution here
+
+- I’m strongly in favor of restoring a per-table meta-type setter. 
+  - In large codebases where dozens of tables each carry a different row-meta contract, forcing all meta functions into a single merged global interface quickly becomes unmanageable... duplicate definitions and unintended meta callbacks get pulled into tables where they don’t belong.
 
 - [Possibility to type `meta` prop in `ColumnDef`](https://github.com/TanStack/table/discussions/4104)
 

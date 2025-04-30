@@ -10,6 +10,7 @@ modified: 2025-01-05T15:00:07.466Z
 # guide
 - pros
   - 标准化的方式，支持多种ide如vscode/jetbrains, 启发技术发展如MCP/backlink
+  - 采用c/s的架构，能支持和扩展的能力更强，上限更高，比浏览器纯前端的autocomplete/lint更强
 
 - cons
   - 会将文件内容保存在内存，对大文件不友好 ❓
@@ -38,7 +39,13 @@ modified: 2025-01-05T15:00:07.466Z
   - a language server requires all source code files be available on a local disk
   - The goal of the Language Server Index Format is to augment the LSP protocol to support rich code navigation features without these requirements. 
 
-## LSP hover事件
+## LSP-diagnostics/lint
+
+- 纯前端实现lint的缺点
+  - 跨文件的类型lint在前端难以实现
+  - 前端引入lint工具包和规则包会显著增加体积
+
+## LSP-hover
 
 - hover返回的内容都是markdown
 
@@ -89,7 +96,7 @@ export interface MarkupContent {
 export type MarkupKind = 'plaintext' | 'markdown';
 ```
 
-## LSP语法跳转
+## LSP-definition/语法跳转
 
 - ux
 - vscode/idea 在按住cmd+click时，会跳转到目标位置并高亮，并将光标设在高亮范围的开头，高亮很快消失

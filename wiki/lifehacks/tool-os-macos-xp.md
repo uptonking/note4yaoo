@@ -58,9 +58,14 @@ modified: 2023-07-23T07:05:19.441Z
 
 ### 文件管理器
 
+- 唤起finder cmd + opt + space
+  - 进入Download, cmd + opt  + L
+  - 进入Documents, cmd + shift  + O
+  - 进入Home, cmd + shift  + H
+- 打开finder，输入路径 cmd + shift + g
+  - 输入~，可直接打开 /Users/yaoo
+- 前进后退 cmd + [ / ]
 - 打开文件夹 cmd + N
-- 打开目录，根据输入路径 cmd + shift + g
-  - 输入～，可直接打开 /Users/yaoo
 - 进入文件夹 cmd + arrow-down
 - 返回上级文件夹 cmd + arrow-up
 - 切换到列表视图 cmd + 2
