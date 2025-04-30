@@ -476,7 +476,8 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
 
 - settings-start
   - 在 settings 关闭 开机声音
-  - fonts: [Install and validate fonts in Font Book on Mac - Apple Support](https://support.apple.com/en-hk/guide/font-book/fntbk1000/mac)
+  - fonts: 可右键一次选多个ttf/otf字体用font book 打开并安装 
+    - [Install and validate fonts in Font Book on Mac - Apple Support](https://support.apple.com/en-hk/guide/font-book/fntbk1000/mac)
 
 - mac-apps-loved
   - pkg-manager: [Homebrew/Linuxbrew 镜像使用帮助](https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/)
