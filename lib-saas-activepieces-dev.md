@@ -52,7 +52,9 @@ modified: 2025-03-31T17:38:17.881Z
 
 - bpmn adapter/pieces
 # dev-xp
-
+- published flow在off状态也会一直执行?
+  - 似乎与flow重命名相关，在flow列表重命名后，存在旧flow和新flow同时执行的问题
+  - 临时方案是，手动设置为off，再设置为on
 # codebase
 
 # [changelog](https://www.activepieces.com/docs/about/breaking-changes)

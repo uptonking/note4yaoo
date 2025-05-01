@@ -25,16 +25,6 @@ modified: 2025-03-31T17:39:01.892Z
 - This is a good start but a YES/NO, APPROVE/REJECT flow fundamentally, is about collecting a single bit of data from a human actor. 
   - IMHO, a more general and powerful flow would be sending an incomplete JSON object - to be rendered as an HTML form - and receiving a completed one from the person.
 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-
 - ## 🚀 [Launch HN: Activepieces (YC S22) – Open-Source Zapier Alternative | Hacker News _202302](https://news.ycombinator.com/item?id=34723989)
   - we decided to build an open source automation tool under a permissive license (MIT) with a simple user experience that doesn’t require technical knowledge, and can be self-hosted. 
   - We plan to make money from the cloud version and a future enterprise edition with advanced features - maybe advanced roles and permissions.
