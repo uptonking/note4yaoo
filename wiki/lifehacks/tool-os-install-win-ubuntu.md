@@ -482,6 +482,7 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
 - mac-apps-loved
   - pkg-manager: [Homebrew/Linuxbrew 镜像使用帮助](https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/)
   - appstore: localsend
+  - https://github.com/buresdv/Cork
 
 - brew install
   - git, 先安装brew的git，会自动替换系统自带的git， 然后考虑生成key-ssh/gpg + ed25519
@@ -529,6 +530,20 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
   - [MP3 support on Mac? _202205](https://github.com/clementine-player/Clementine/issues/7173)
     - [Release 1.4.0rc1-777-g24a766d0e _202201 · clementine-player/Clementine](https://github.com/clementine-player/Clementine/releases/tag/1.4.0rc1-777-g24a766d0e)
   - [last.fm plugin not submitting scrobbles when track has finished](https://github.com/clementine-player/Clementine/issues/6829)
-    - 记录last.fm需要创建文件夹,注意文件名中的空格 /Users/yaoo/Library/Application\ Support/Last.fm
+    - 记录last.fm需要创建文件夹,注意文件名中的空格, 注意权限
+    - /Users/yaoo/Library/Application\ Support/Last.fm
+
+- dict
+  - https://github.com/goldendict/goldendict
+    - [Early Access Builds for Mac OS X ](https://github.com/goldendict/goldendict/wiki/Early-Access-Builds-for-Mac-OS-X)
+  - https://github.com/xiaoyifang/goldendict-ng /实测m4air不work快捷键
+    - support latest Qt6
+    - built with xapian as fulltext engine
+  - https://github.com/yozhic/goldendict-macos-builds 
+    - `mac-adapted` version is an attempt to make GoldenDict look more presentable on newer macOS systems
+  - https://github.com/nonwill/GoldenDict-OCR /实测m4air不work
+    - 内置大量的官方版本问题的修正；先期添加了一个简单的插件机制，并基于该机制接入了多个 OCR 划词 和 音频播放 引擎；后期在增强易用性的基础上为提高查询效率、减少运行时 CPU 及 内存 占用、降低代码维护难度，完全重构了所有的实现
+  - [欧路词典 Windows & Macos 最新版 破解版 稳定可用 永久生效 - 资源分享 - FreeMdict Forum](https://forum.freemdict.com/t/topic/28687)
+    - 激活后登录账号使用没有任何问题，不会弹出注册窗口
 
 ## more-macos
