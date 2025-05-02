@@ -43,6 +43,9 @@ modified: 2025-02-21T18:20:42.624Z
   - Composable Steps with Runtime Validation - Build agents from modular, reusable components with automatic input/output validation.
   - Built-in Observability - Debug agent behavior with visual execution graphs and real-time logging.
   - Instant APIs & Webhooks - Expose agent functionality via HTTP endpoints without extra code.
+  - https://github.com/MotiaDev/motia-examples /数据流动画
+    - Intelligent Q&A from PDFs with Docling's smart chunking, Weaviate's sca lable vector DB, and OpenAI embeddings & text generation. 
+    - Built with TypeScript & Python.
 
 - https://github.com/mastra-ai/mastra /Elastic/202502/ts
   - https://mastra.ai/

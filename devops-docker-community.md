@@ -194,6 +194,16 @@ modified: 2024-06-30T11:17:28.971Z
   - 若是 SOCKS 代理的话，用 gost 转一下即可
 - 不需要用 gost 转一下，这里直接写 socks5://127.0.0.1:1080 是可以的，支持直接使用 socks5 代理。
 
+# discuss-podman
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Docker socket notification appearing continuously when podman VM stopped _202504](https://github.com/podman-desktop/podman-desktop/issues/12262)
+- 
+- 
 # discuss
 - ## 
 

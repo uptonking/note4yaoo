@@ -86,6 +86,8 @@ modified: 2023-11-17T10:12:06.357Z
   - Persistent Redux store for Reasonaboutable Offline-First applications, with first-class support for optimistic UI. 
   - Use with React, React Native, or as standalone state container for any web app.
   - 🤔 没必要执着于寻找已有的offline方案，使用 persist + crdt 也可以实现协作，甚至普通的协作同步
+  - [v3 · Issue · redux-offline/redux-offline](https://github.com/redux-offline/redux-offline/issues/392#issuecomment-2846860751)
+    - Regarding v3, it's 95% ready. Both the slim version (offline-side-effects) and the redux-offline bit. Needs some testing and iron out any remaining issues. But I dont have the time nor the incentive to continue working on it.
 
 - https://github.com/endpointservices/mps3 /ts
   - Infraless Database over any s3 storage API.

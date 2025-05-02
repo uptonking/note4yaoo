@@ -67,7 +67,7 @@ DEBUG=* npm i --legacy-peer-deps --no-audit --loglevel=silly --registry=https://
 
 npm --registry=https://registry.npmmirror.com install   axios
 yarn add axios --registry=https://registry.npmjs.org/  
-pnpm install --loglevel=debug --registry=https://registry.npmmirror.com --loglevel=debug
+pnpm install --loglevel=debug --registry=https://registry.npmmirror.com  
 
 export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890;export all_proxy=socks5://127.0.0.1:7890
 
