@@ -518,6 +518,7 @@ sudo apt install -y  sqlite3 libsqlite3-dev sqlitebrowser
   - 打开devtools, cmd+option+C
 
 - chrome
+  - https://www.google.cn/intl/en_us/chrome/
   - 打开devtools, cmd+option+i
 
 - vscode

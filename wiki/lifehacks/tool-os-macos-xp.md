@@ -14,7 +14,7 @@ modified: 2023-07-23T07:05:19.441Z
 ## macbook
 
 - mac-apps-loved
-  - pkg-manager: homebrew
+  - pkg-manager: homebrew, cork
   - appstore: localsend
 
 ### 全局快捷键
@@ -39,14 +39,11 @@ modified: 2023-07-23T07:05:19.441Z
 - 回到桌面 四指抓拢手势
   - cmd + f3
   - fn + f11
-- 类似win的delete键向后删，fn + backspace
 
 - Command-W：关闭最前方的窗口。 
   - 要关闭App 的所有窗口，请按下Option-Command-W
 
-- 显示Finder/访达: cmd+option+space
-  - Shift-Command-N：在“访达”中创建一个新文件夹。
-  - cmd+[/]是后退或前进上一个文件夹
+- 类似win的delete键向后删，fn + backspace
 
 - 按住Command，可以选择并移动顶部菜单栏图标
 
@@ -58,7 +55,12 @@ modified: 2023-07-23T07:05:19.441Z
 
 - a11y
   - 在zoom可打开按住 Control+向上scroll， 向下scroll可恢复
+
 ### 文件管理器
+
+- 显示Finder/访达: cmd+option+space
+  - Shift-Command-N：在“访达”中创建一个新文件夹。
+  - cmd+[/]是后退或前进上一个文件夹
 
 - 唤起finder cmd + opt + space
   - 进入Download, cmd + opt  + L
@@ -118,20 +120,6 @@ modified: 2023-07-23T07:05:19.441Z
 brew install gnupg
 # passphrase 1123
 
-gpg --armor --export 74CC24A0E78125DD
------BEGIN PGP PUBLIC KEY BLOCK-----
-
-mDMEZqNCsxYJKwYBBAHaRw8BAQdAEYetEWDc8OJtwDY5uG2tGxn1DnvEH/uwY4dr
-cw+Ul0W0Lmppbnlhb28gKGdtYWlsIGZvciB5YW9vKSA8amlueWFvbzg2QGdtYWls
-LmNvbT6IkwQTFgoAOxYhBGp+pD+b7/gpuBnOeXTMJKDngSXdBQJmo0KzAhsDBQsJ
-CAcCAiICBhUKCQgLAgQWAgMBAh4HAheAAAoJEHTMJKDngSXdGu8BAMCCBPx/r7qX
-NPB7xLzQokw5wk5rBptquuJTjYwlMW0SAPwJJyTInWterPJzwf8S5g+6vvbQ8TLW
-kr1/+Es38Nh7Brg4BGajQrMSCisGAQQBl1UBBQEBB0DzgrXG8oNqdDqy2fM068uu
-y/23h0rhn+3OXZmHX782dQMBCAeIeAQYFgoAIBYhBGp+pD+b7/gpuBnOeXTMJKDn
-gSXdBQJmo0KzAhsMAAoJEHTMJKDngSXdOtoA/1LeTu+cgBnSNT3aL3ES+v2/90Ta
-+RPNCVf9f1pdKVNyAP0TmDb1zjuoDnexxtwbMdSCz51iAxLA0N6yWmgpjS2GBQ==
-=4gwC
------END PGP PUBLIC KEY BLOCK-----
 ```
 
 # arm-mac
