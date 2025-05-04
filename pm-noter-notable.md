@@ -125,13 +125,16 @@ modified: 2023-11-28T14:48:45.910Z
 - 知识库的市场
   - 客服系统自动回复，并显示相关历史
 
-- inspirations
-  - obsidian-mobile, notion-mobile
-  - git-statistics ui
-  - auto generate cover by content/fields
-
 - naming
   - mandroid (from android+manus)
+
+## inspirations
+
+- obsidian-mobile, notion-mobile
+  - note-app compatible with obsidian plugin, 主流插件已达到百万下载
+
+- git-statistics ui， 可参考 pingcap/ossinsight
+  - auto generate cover by content/fields
 # features
 - inspirations
   - 高频需求，网盘分享

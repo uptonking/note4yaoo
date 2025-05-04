@@ -15,7 +15,7 @@ modified: 2023-07-23T07:05:19.441Z
 
 - mac-apps-loved
   - pkg-manager: homebrew, cork
-  - appstore: localsend
+  - apps: localsend
 
 ### 全局快捷键
 
@@ -59,7 +59,8 @@ modified: 2023-07-23T07:05:19.441Z
 ### 文件管理器
 
 - 显示Finder/访达: cmd+option+space
-  - Shift-Command-N：在“访达”中创建一个新文件夹。
+  - Command-N：打开finder新窗口
+  - Command-Shift-N：在“访达”中创建一个新文件夹
   - cmd+[/]是后退或前进上一个文件夹
 
 - 唤起finder cmd + opt + space
@@ -68,7 +69,6 @@ modified: 2023-07-23T07:05:19.441Z
   - 进入Home, cmd + shift  + H
 - 打开finder，输入路径 cmd + shift + g
   - 输入~，可直接打开 /Users/yaoo
-- 前进后退 cmd + [ / ]
 - 打开文件夹 cmd + N
 - 进入文件夹 cmd + arrow-down
 - 返回上级文件夹 cmd + arrow-up
@@ -122,6 +122,43 @@ brew install gnupg
 
 ```
 
+# mac-apps
+- appstore
+  - [MacKed - 专注于Mac破解资源的分享与下载](https://macked.app/)
+    - 很多站点会转发macked的工具包
+  - [MacWk.com.cn - 精品mac软件下载](https://macwk.com.cn/)
+  - [MacWk.cn - 精品mac软件下载](https://macwk.cn/)
+  - [XMac.App - Download crack app for mac with full speed just one step](https://xmac.app/)
+  - 还可在 twitter/zhihu 搜索 mac 软件
+
+
+- tips
+  - 很多热门软件会在固定几个站点间相互转发，碰到失效时可以多尝试几个站点
+  - 某一软件难免费，可以尝试寻找其他热门软件 或 开源替代
+    - 还可以在站点交流群里面寻求帮助
+
+- git
+  - [UGit - 让每个人都可以轻松使用Git](https://ugit.qq.com/zh/) 从这个带/zh的url进去才能下载
+    - 内置LFS模版，腾讯众多大型项目LFS管理经验沉淀，尤其是游戏项目
+    - UGit的快速提交，可以实现只要用户提交的文件其他人没修改，可以在不更新情况下直接完成提交
+    - 工蜂锁是针对游戏项目中存在大量二进制文件协作场景而设计的锁方案，解决了Git LFS Lock的稳定性和性能问题
+    - 支持检出子目录
+    - OAuth，支持工蜂、Github、Coding.net平台的OAuth认证
+    - Gitflow，可视化的交互集成业界经典的Gitflow工作流实践
+    - 加速服务，支持Git LFS缓存加速、UE4 DDC、Unity Cache
+    - 多仓库管理，Git Submodule的替代方案，通过可视化操作，旨在解决大型项目多仓库依赖管理问题，支持批量克隆，一键更新、拉分支、切分支等等
+    - 支持Excel Diff&Merge，支持单元格内容、公式，暂不支持表格样式
+  - [Sourcetree | Free Git GUI for Mac and Windows](https://www.sourcetreeapp.com/)
+
+- 
+- 
+- 
+
+- https://github.com/mulaRahul/keyviz /GPL/cpp/dart/支持win/mac/linux
+  - https://github.com/zetaloop/keyviz /汉化版
+  - 一款免费开源的按键可视化软件，可以实时显示您的按键和鼠标操作
+  - 在录屏、演讲还是团队协作中，您都能让观众一目了然地看到操作过程。
+
 # arm-mac
 
 # intel-mac
@@ -145,21 +182,56 @@ brew install gnupg
 # discuss-not-yet
 - ## 
 
+- ## 
+
+- ## [Is it possible to change the menu bar's height? - Ask Different](https://apple.stackexchange.com/questions/429853/is-it-possible-to-change-the-menu-bars-height)
+- No, it is not possible to change the menubar's height using any Apple-provided settings or configuration tools.
+
+- the Top Notch app does a decent job hiding the bar by adding a black bar around it
+
+- [Make notch bar height configurable - Feature Requests - BetterTouchTool Community](https://community.folivora.ai/t/make-notch-bar-height-configurable/25889/1)
+  - unfortunately this height is set by Apple and can not be changed as far as I know (but if I ever find a way I’ll make it configurable)
+
 - ## [node.js - Create directory "/dotenv" on MacOs, Read-only file system - Stack Overflow](https://stackoverflow.com/questions/60469031/create-directory-dotenv-on-macos-read-only-file-system)
 - If you really want to, you can disable the read-only file system in Catalina 
 
 # discuss-macos
 - ## 
 
-- ## 
+- ## ScreenBrush: 录课的时候有非常多的同学都问我是什么软件，尤其是它的 Ghost Mode。
+- https://x.com/vikingmute/status/1844275556797513785
+  - 如果你做一些视频教程或者展示类的功能，这个软件非常好用，就一个功能，但是做的很丝滑。
 
-- ## 
+- 这类软件如果再加上个快捷键显示就完美了
+
+- 付费版 [Presentify - Screen Annotation and Cursor Highlight for Mac](https://presentifyapp.com/)
+
+- ## [为什么会有MacWK这么良心的网站？ - 知乎](https://www.zhihu.com/question/531886608)
+- 其实都是 http://mac-torrent-download.net 的搬运工（mac-torrent-download 已于2022年被FBI查封）
+
+- 站长收了一波会员费之后，从今年初开始，就再也没回过消息。群友说站长把网站交给别人了。实际上你懂的，就是割韭菜跑路，换个网站继续
 
 - ## [为什么macOS软件生态不敌Windows? - 知乎](https://www.zhihu.com/question/630055595)
 - MacOSX: 每次升级都有老程序跑不了了
   - Windows: 每天都有人写程序，几十年前的程序还能继续跑。
 
 - 其中一个原因是因为贵。macmini降价是最近几年的事情，十年以前往前数，苹果电脑是很贵的。
+
+- ## 新购一台 Mac Pro M4（10+10C/32G/2T）作为办公机器，分享一下我第一时间安装的软件
+- https://x.com/idoubicc/status/1899285222597984315
+  - 办公必备
+  - 开发工具
+  - 沟通交流
+  - 效率工具
+  - 终端软件
+  - 浏览器插件
+
+- 推荐 Mihomo-party 替代 ClashX Pro，开源且在维护
+  - mihomo内核仓库有个clash mate项目，好用
+  - 不如clash verge
+  - Clash Nyanpasu这个也类似
+
+- 小火箭，其实是iPad版，但M芯片MacBook也可以安装，复制链接到剪贴板就可以添加节点。
 
 - ## 新买了一台新的 Mac 电脑，配置新电脑是非常开心的一个过程，分享几个我认为工程师必装的软件
 - https://x.com/vikingmute/status/1800341873179111456

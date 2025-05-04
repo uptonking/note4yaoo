@@ -57,4 +57,10 @@ modified: 2025-04-17T08:17:04.770Z
   - Route grouping
   - Middleware support
   - Built-in rendering
+# utils
+
+## filesystem
+
+- https://github.com/orbstack/fsnotify-macvirt
+  - fsnotify is a Go library to provide cross-platform filesystem notifications on Windows, Linux, macOS, BSD, and illumos.
 # more
