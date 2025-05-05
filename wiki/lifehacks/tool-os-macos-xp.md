@@ -79,7 +79,12 @@ modified: 2023-07-23T07:05:19.441Z
 - 文件路径复制 cmd + opt + c
 - 移动文件 cmd + opt + v
 
+- tags
+  - spotlight中设置排除文件夹fo11可能导致fo11下文件的tags都失效
+  - [Mac点击Finder左边的「标签」，右侧无对应文件；关闭Spotlight聚焦之后的小麻烦。 - 知乎](https://zhuanlan.zhihu.com/p/138489878)
+
 - 在finder显示文件路径
+  - 在view中设置显示 path bar 比文本路径更友好
   - defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
 
 ### 浏览器
@@ -108,6 +113,7 @@ modified: 2023-07-23T07:05:19.441Z
 
 - terminal
   - fn + shift + ArrowLeft/Right 让光标跳到行首/行尾
+  - cmd+D 会竖向显示2个terminal， cmd+shift+D可还原
 
 - gpg
   - [Generating a new GPG key - GitHub Docs](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key)
@@ -128,9 +134,8 @@ brew install gnupg
     - 很多站点会转发macked的工具包
   - [MacWk.com.cn - 精品mac软件下载](https://macwk.com.cn/)
   - [MacWk.cn - 精品mac软件下载](https://macwk.cn/)
-  - [XMac.App - Download crack app for mac with full speed just one step](https://xmac.app/)
+  - [XMac. App - Download crack app for mac with full speed just one step](https://xmac.app/)
   - 还可在 twitter/zhihu 搜索 mac 软件
-
 
 - tips
   - 很多热门软件会在固定几个站点间相互转发，碰到失效时可以多尝试几个站点
@@ -158,7 +163,6 @@ brew install gnupg
   - https://github.com/zetaloop/keyviz /汉化版
   - 一款免费开源的按键可视化软件，可以实时显示您的按键和鼠标操作
   - 在录屏、演讲还是团队协作中，您都能让观众一目了然地看到操作过程。
-
 # arm-mac
 
 # intel-mac
@@ -184,6 +188,11 @@ brew install gnupg
 
 - ## 
 
+- ## 
+
+- ## [How to use keyboard shortcuts to navigate the OS X Finder sidebar? - Super User](https://superuser.com/questions/90378/how-to-use-keyboard-shortcuts-to-navigate-the-os-x-finder-sidebar)
+- cmd+shift+G Then just fill in the filepath: ~/Desktop | /Backups | and so on.
+
 - ## [Is it possible to change the menu bar's height? - Ask Different](https://apple.stackexchange.com/questions/429853/is-it-possible-to-change-the-menu-bars-height)
 - No, it is not possible to change the menubar's height using any Apple-provided settings or configuration tools.
 
@@ -195,8 +204,34 @@ brew install gnupg
 - ## [node.js - Create directory "/dotenv" on MacOs, Read-only file system - Stack Overflow](https://stackoverflow.com/questions/60469031/create-directory-dotenv-on-macos-read-only-file-system)
 - If you really want to, you can disable the read-only file system in Catalina 
 
+# discuss-macos-devtools
+- ## 
+
+- ## [How to Install MySQL on Mac _202305](https://medium.com/@rodolfovmartins/how-to-install-mysql-on-mac-959df86a5319)
+- brew install mysql
+- 
+
+- ## [[PostgreSQL] Installing PostgreSQL through Homebrew on MacOS - DEV Community _202304](https://dev.to/uponthesky/postgresql-installing-postgresql-through-homebrew-on-macos-388h)
+
+```JS
+// 👇 需要手动加上版本号，发行版默认可能是旧版
+brew install postgresql @15
+
+brew services start postgresql @15
+
+createuser - s postgres
+psql - h localhost - U postgres
+```
+
 # discuss-macos
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Option + Command + Spacebar opens Searching this mac window instead of Finder - Ask Different](https://apple.stackexchange.com/questions/360114/option-command-spacebar-opens-searching-this-mac-window-instead-of-finder)
+- Command + Option + T makes the sidebar appear again 
 
 - ## ScreenBrush: 录课的时候有非常多的同学都问我是什么软件，尤其是它的 Ghost Mode。
 - https://x.com/vikingmute/status/1844275556797513785
