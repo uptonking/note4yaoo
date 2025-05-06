@@ -250,9 +250,9 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - 做完tailwind-table就面试
 
 - dev-to 提炼核心`需求+产出`工作流，不能在产品中检验的技术不玩
-# dev-04
+# dev-05
 
-## 040
+## 050
 
 - dev-log
   - ?
@@ -336,6 +336,16 @@ add action to create quickSort1.mjs and add 3 test cases in it
   - py 784965933709307904
   - js 786335673728065536
   - java 786790509908774912
+
+## 0506
+
+- 今天计划
+  - 继续调研并完成LSP体验增强的设计文档
+  - 评审并修改设计文档
+- 实际完成
+  - 梳理了需求细节并完善了设计文档70%的内容，还要画几张架构图
+  - 解决了今天刚反馈的高优先级问题，使用vim在命令行修改文件时编辑器未更新的问题
+# dev-04
 
 ## 0428
 
