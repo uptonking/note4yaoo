@@ -68,7 +68,24 @@ modified: 2023-11-29T15:23:06.805Z
 # discuss-design-pattern
 - ## 
 
-- ## 
+- ## 🤔 [为什么java中不流行使用链式调用? - 知乎](https://www.zhihu.com/question/40095316)
+- 我日常主要工作是业务发开发，很少使用链式调用。主要的原因是 链式调用让类的方法产生了依赖，从而导致你很难判断现在实例处于什么样的状态。
+  - A->a()->b()->c() ，请问此时c状态是什么？你很难确定，因为c此时的状态依赖a, b函数
+  - 你就需要一步一步的追踪，增加了阅读代码成本。
+
+- 链式调用的核心就在于调用完的方法将自身实例返回
+
+- https://x.com/ibuildthecloud/status/1919602049169215569
+  - Have I ever mentioned I hate the builder pattern.
+  - I program go and I prefer a struct. Builders in practice typically just populate a data structure and then have a "build()" method with all the logic. So basically it's just a lot of sugar for a struct and a factory method.
+  - Trying to guess what the spring webclient builder wants in any given situation is... "fun."
+  - Java doesn’t have default parameters and the builder pattern is a way around it. You readed my mind. It is an old language related pattern
+  - those chain of functions can be just params instead
+  - it’s a sign of bad language design
+
+- https://x.com/htmx_org/status/1919571679577084033
+  - Just good ol’ explicit deterministic code with just the right amount of ceremony. Few of us will die on this hill (alone).
+  - I love functional Java
 
 - ## design patterns like Gang of Four and Clean Code are a scam made up by consultants that didn’t have the time to understand your codebase and wanted to parachute in and out of clients for loads of money.
 - https://twitter.com/leostera/status/1762018884444463355

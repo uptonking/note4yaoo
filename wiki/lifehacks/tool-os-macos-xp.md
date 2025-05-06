@@ -228,7 +228,14 @@ psql - h localhost - U postgres
 
 - ## 
 
-- ## 
+- ## [Desktop wallpaper keeps changing back - Apple Community](https://discussions.apple.com/thread/254934033?sortBy=rank)
+  - OnlySwitch存在相同的问题
+
+- Any one who have installed an app called TopNotion, you may need to uninstall or disable the dynamic wallpaper option, this application changes the wallpaper automatically.
+
+- [Sonoma Wallpaper resets to default??? : r/MacOS](https://www.reddit.com/r/MacOS/comments/16t3vcc/sonoma_wallpaper_resets_to_default/)
+  - TopNotch is the issue. You can turn it off, set the wallpapers, and turn it back on.
+  - I am currently using for the past 6 months the Bartender app. it has a feature where you can change the menu bar style. it has been flawless 
 
 - ## [Option + Command + Spacebar opens Searching this mac window instead of Finder - Ask Different](https://apple.stackexchange.com/questions/360114/option-command-spacebar-opens-searching-this-mac-window-instead-of-finder)
 - Command + Option + T makes the sidebar appear again 
