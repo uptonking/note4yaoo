@@ -95,8 +95,10 @@ modified: 2022-11-11T10:46:41.519Z
   - This project can read PDF pages one by one, and use `DocLayout-YOLO` mixed with an algorithm I wrote to extract the text from the book pages 
   - 超过100页的，可转为EPUB，结合了本地OCR和云端LLM处理，兼顾效率和功能性，最终生成带目录分章节的EPUB
 
-- https://github.com/yWorks/svg2pdf.js /MIT/202308/ts
+- https://github.com/yWorks/svg2pdf.js /MIT/202503/ts
+  - https://raw.githack.com/yWorks/svg2pdf.js/master/
   - A javascript-only SVG to PDF conversion utility that runs in the browser leveraging jsPDF.
+  - Since version 2.x, this repository no longer depends on a forked jsPDF but can be used with original MrRio/jsPDF.
 
 - https://github.com/VikParuchuri/marker /GPLv3/202312/python
   - converts PDF, EPUB, and MOBI to markdown. 

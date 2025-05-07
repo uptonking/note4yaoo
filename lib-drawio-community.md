@@ -9,11 +9,45 @@ modified: 2024-04-12T11:59:11.017Z
 
 # guide
 
+# resources/templates
+
+- 
+- 
+- 
+- 
+
+- [20+ UML Diagram Templates for Visual Modeling | Miro](https://miro.com/templates/uml-diagram/)
 # discuss-stars
 - ## 
 
 - ## 
+# discuss-format-uml
+- ## 
+
+- ## 
+
+- ## [Standard UML file format - Stack Overflow](https://stackoverflow.com/questions/7930199/standard-uml-file-format)
+  - I cannot open my old UML diagrams because the tool is obsolete.
+  - I would like to know if there is a standard format for UML diagrams. 
+
+- In theory the standard exchange format for UML models is XMI but it´s true that each vendor implements a slightly different version so interchange is not a reality.
+
+- The OMG is working on a new standard : Diagram Definition that is supposed to fix the problems with the current XMI one 
+# discuss-not-yet
+- ## 
+
+- ## 
+
+- ## [XMI import/export · Issue · jgraph/drawio](https://github.com/jgraph/drawio/issues/1336)
+- 202101: Outside the scope of the project.
+
+- https://github.com/jmcklondonuk/drawio_enterprise_architect_integration /202403/js/inactive
+  - This project imports XMI files from Sparx System Enterprise Architect into Draw.io
+  - It can be added in Draw.io as a plug-in.
+  - it parses UML elements that are present in the diagram, returns a structure with UML elements that can be easily represented as JSON, it traverses the data structure with UML elements and dynamically creates mxgraph vertices and edges with the default style
 # discuss
+- ## 
+
 - ## 
 
 - ## 

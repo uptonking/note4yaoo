@@ -640,6 +640,12 @@ modified: 2024-05-06T02:54:40.374Z
   - vscode, theia, opensumi, replit, codesandbox
   - [Running the SDK](https://cloud9-sdk.readme.io/docs/running-the-sdk)
 
+- paas-arch
+  - affinity gateway: ide-server的服务发现网关
+  - paas gateway: redis/mysql/pg的网关
+  - ssh gateway
+  - paas engine: 使用go补充manager的功能，git操作很多从manager的java实现迁移到了paas engine的go实现
+
 ### not-yet
 
 - 
