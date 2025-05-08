@@ -62,11 +62,11 @@ modified: 2023-11-24T18:41:26.906Z
   - https://github.com/joshwcomeau/key-and-pad /201803/js
     - Fun experiment with the Web Audio API 
 
-- https://github.com/HeyPuter/Oops.js /MIT/202408/js
+- https://github.com/HeyPuter/Oops.js /MIT/202408/js/单文件650LOC/inactive
   - Add powerful undo/redo capabilities to your app
   - Oops.js provides a robust implementation of the command pattern, allowing you to easily add advanced undo and redo functionality to your projects
   - Command Pattern: Implements the command pattern for easy extensibility and operation encapsulation.
-  - Transaction Support: Allows grouping multiple commands into a single, atomic operation.
+  - ✨ Transaction Support: Allows grouping multiple commands into a single, atomic operation.
   - Automatic Command Merging: Intelligently merges commands executed within a specified time window.
   - Snapshot System: Creates and recovers from snapshots for enhanced error handling and state preservation.
   - History Compression: Optimizes memory usage by compressing the command history when it exceeds a threshold.
@@ -266,7 +266,7 @@ modified: 2023-11-24T18:41:26.906Z
   - demonstrate Loro's high performance and time travel capabilities.
   - The entire code is only about 100 lines.
 
-- https://github.com/haydn/use-state-snapshots /MIT/201906/js/NoDeps/inactive
+- https://github.com/haydn/use-state-snapshots /MIT/201906/js/NoDeps/单文件100LOC/inactive
   - https://codesandbox.io/s/use-state-snapshots-i6fuq
   - A React hook to keep track of state changes for undo/redo functionality
   - Drop-in replacement for `useState` including support for functional updates and lazy initial state.
@@ -277,6 +277,8 @@ modified: 2023-11-24T18:41:26.906Z
     - Only create snapshots for specific changes to state.
   - Configurable limit for the number of snapshots to keep.
   - Snapshots include timestamps and ID's so you can display a timeline of changes.
+- https://github.com/homerchen19/use-undo /MIT/202211/ts/inactive
+  - React Hooks to implement Undo and Redo functionality
 
 - https://github.com/nytimes/ice /GPLv2/201402/js/NoDeps/inactive
   - https://nytimes.github.io/ice/demo/
@@ -315,7 +317,7 @@ modified: 2023-11-24T18:41:26.906Z
   - https://openreplay.com/
   - a session replay suite you can host yourself, that lets you see what users do on your web app, helping you troubleshoot issues faster.
 
-- https://github.com/HuolalaTech/page-spy-web /MIT/202407/ts/go
+- https://github.com/HuolalaTech/page-spy-web /MIT/202504/ts/go
   - https://www.pagespy.org/
   - Debug remotely and easily like chrome devtools
   - PageSpy 是一款兼容 Web / 小程序 / React Native / 鸿蒙 App 等平台项目的开源调试平台
@@ -358,7 +360,7 @@ modified: 2023-11-24T18:41:26.906Z
   - https://github.com/philipmendels/undomundo-multiplayground
   - https://philipmendels.github.io/undomundo-multiplayground/
   - a library for managing an action-based undo history, with support for time travel and branching. 
-  - 依赖fp-ts
+  - 依赖fp-ts2
   - 🔀 It can be used in a multi-user setting because it allows for modification of the history at the time of undo/redo, as visually explained in this blog article from Figma.
   - Undomundo does not enable you to declare in advance which actions should be grouped/skipped and under which circumstances. You can however skip actions on a per-call basis
   - https://github.com/philipmendels/use-flexible-undo /MIT/202204/ts/inactive
@@ -370,6 +372,12 @@ modified: 2023-11-24T18:41:26.906Z
     - The board itself is built from scratch in React. The list with draggable items/layers uses react-beautiful-dnd.
     - Desktop only. No touch support yet.
 
+- https://github.com/ArthurClemens/JavaScript-Undo-Manager /424Star/MIT/202305/js/NoDeps/单文件200LOC/inactive
+  - https://arthurclemens.github.io/JavaScript-Undo-Manager/
+  - Simple undo manager to provide undo and redo actions in JavaScript applications.
+  - Actions (typing a character, moving an object) are structured as command pairs: one command for destruction (undo) and one for creation (redo). Each pair is added to the undo stack
+  - 支持设置limit、group-op
+
 - https://github.com/plantain-00/composable-editor-canvas /MIT/202404/ts
   - https://plantain-00.github.io/composable-editor-canvas/
   - A composable editor canvas library.
@@ -377,14 +385,11 @@ modified: 2023-11-24T18:41:26.906Z
   - 提供了多种render target:react, react-canvas, react-svg, react-webgl
   - 实现了2种undo: undo, patch-based-undo-redo
 
-- https://github.com/ArthurClemens/JavaScript-Undo-Manager /424Star/MIT/202305/js/NoDeps/单文件
-  - https://codesandbox.io/s/undo-manager-color-sliders-z4myoj
-  - Simple undo manager to provide undo and redo actions in JavaScript applications.
-  - Actions (typing a character, moving an object) are structured as command pairs: one command for destruction (undo) and one for creation (redo). Each pair is added to the undo stack
-
-- https://github.com/gliese1337/command-history /201903/ts
+- https://github.com/gliese1337/command-history /MIT/201903/ts
   - A typed undo-redo system based on the Command Object pattern
-  - type ICommand = { execute, redo, undo, coalesce }
+  - implements a safe command-object based undo/redo system.
+  - `type ICommand = { execute, redo, undo, coalesce }`; 
+
 - https://github.com/ubie-oss/historian-js /202006/ts
   - History manager with undo and redo capabilities
 

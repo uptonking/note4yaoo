@@ -474,6 +474,8 @@ modified: 2020-07-14T11:03:53.196Z
   - https://github.com/pmndrs/zustand
   - a comfy api based on react hooks, isn't boilerplatey or opinionated, 
   - but still just enough to be explicit and flux-like.
+  - https://github.com/charkour/zundo
+    - undo/redo middleware for zustand
 - jotai /1.8kStar/MIT/202010/ts/like-atoms
   - https://github.com/pmndrs/jotai
   - state resides with React, getting full benefits from suspense and concurrent mode
