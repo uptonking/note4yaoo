@@ -110,7 +110,7 @@ modified: 2023-11-24T18:41:26.906Z
   - Actions are stored in an array named history. 
   - 🐛🆚️ The most popular and used library to add undo/redo functionality to redux is without a doubt `redux-undo`. It stores whole states instead of actions. This is great for small states and fat actions, but does not scale well if the state tree grows and especially if state is persisted.
   - It really just boils down to if your state is fat and your actions are thin or your state is thin and your actions are fat.
-- https://github.com/omnidan/redux-undo /202001/js
+- https://github.com/omnidan/redux-undo /MIT/202001/js
   - higher order reducer to add undo/redo functionality to redux state containers
 - https://github.com/StephenHaney/redux-time-travel /MIT/201809/js/inactive
   - A scalable undo redo time travel implementation that leaves your original state intact
@@ -277,8 +277,6 @@ modified: 2023-11-24T18:41:26.906Z
     - Only create snapshots for specific changes to state.
   - Configurable limit for the number of snapshots to keep.
   - Snapshots include timestamps and ID's so you can display a timeline of changes.
-- https://github.com/homerchen19/use-undo /MIT/202211/ts/inactive
-  - React Hooks to implement Undo and Redo functionality
 
 - https://github.com/nytimes/ice /GPLv2/201402/js/NoDeps/inactive
   - https://nytimes.github.io/ice/demo/
@@ -390,6 +388,17 @@ modified: 2023-11-24T18:41:26.906Z
   - implements a safe command-object based undo/redo system.
   - `type ICommand = { execute, redo, undo, coalesce }`; 
 
+- https://github.com/homerchen19/use-undo /MIT/202211/ts/inactive
+  - React Hooks to implement Undo and Redo functionality
+  - Refer to Redux Implementing Undo History, use-undo implements the same concept with `useReducer`.
+  - inspired by https://github.com/omnidan/redux-undo
+- https://github.com/xplato/useUndoable /MIT/202401/ts/NoDeps/inactive
+  - React Hook adding undo/redo functionality to useState with a hassle-free API and customizable behavior.
+  - Familiar API similar to useState
+  - Set a history limit to prevent huge memory consumption.
+  - You can choose how you'd like state changes to be reflected, with mergePastReversed, mergePast, destroyFuture, or keepFuture
+  - why does this project exist? most undo/redo packages default to the `destroyFuture` behavior. I don't think this is a good approach
+
 - https://github.com/ubie-oss/historian-js /202006/ts
   - History manager with undo and redo capabilities
 
@@ -398,6 +407,15 @@ modified: 2023-11-24T18:41:26.906Z
   - 示例参考 https://www.cssscript.com/demo/undo-redo-history/
   - simple JavaScript library provides a history for undo/redo functionality
   - 示例用的textarea，一次undo会删除多个文字
+
+- https://github.com/jzaefferer/undo
+  - https://jzaefferer.github.io/undo/demos/
+  - http://jzaefferer.github.io/undo/demos/contenteditable.html
+  - This is only a proof of concept, not a proper library.
+  - provides an abstraction for undoing and redoing any task. 
+  - It can run both in the browser and on the server (targetted at node.js). 
+  - The base abstraction will stay independent of any framework, while plugins, like a command editing a sortable list, will likely depend on libraries such as jQuery.
+  - contenteditable with bold command
 
 - https://github.com/propero-oss/action-history /202201/ts
   - Extensible history for reversible actions (undo/redo)
