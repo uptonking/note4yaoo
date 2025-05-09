@@ -16,22 +16,25 @@ modified: 2024-08-24T16:15:42.906Z
 // start dev
 npm install
 npm run watch
+// npm run watch-web
 // docs:　https://github.com/microsoft/vscode/wiki/How-to-Contribute
 ```
 
-- ./scripts/code.sh
+- 🚀 ./scripts/code.sh
   - Running on Electron with extensions run in NodeJS
-- ./scripts/code-web.sh
+- 🚀 ./scripts/code-web.sh
   - Extensions and UI run in the browser
-  - 切换文件时url不变， url不包含文件路径
+  - 切换文件时url不变， url不包含文件路径, `http://localhost:8080/`.
   - 编辑文件会持久化到磁盘
-  - 刷新页面时打开的仓库会丢失，需要重新打开
+  - 刷新页面时打开的文件夹会丢失，需要重新打开文件夹及文件
   - 数据保存在indexeddb
-- ./scripts/code-server.sh --launch
+  - hover类型提示只支持浏览器内置的js对象及BOM对象，不支持node_modules下的提示如useState
+- 🚀 ./scripts/code-server.sh --launch
   - UI in the browser, extensions run in code server (NodeJS)
-  - url包含文件路径，?folder=/Users/user11/repos/，切换文件时url不会变
+  - 切换文件时url不会变, url包含项目根目录路径但不包含文件名，`?folder=/Users/user11/repos/proj11`.
   - 编辑文件会持久化道磁盘
-  - 刷新页面时仓库会恢复，打开文件名也会恢复
+  - 刷新页面时打开的文件夹会恢复，打开的文件名及tabs也会恢复
+  - hover类型提示支持node_modules下的提示如useState
 
 - 
 - 

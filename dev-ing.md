@@ -337,6 +337,17 @@ add action to create quickSort1.mjs and add 3 test cases in it
   - js 786335673728065536
   - java 786790509908774912
 
+## 0509
+
+- [My beloved Ruby Cheat Sheet - DEV Community](https://dev.to/ericchapman/my-beloved-ruby-cheat-sheet-208o)
+  - full_name = 'Mike Taylor'
+  - active? = true
+  - fruits = ['Appel', 'Orange', 'Banana']
+  - fruit_color = { apple: 'red' }
+  - number.round 2.68
+
+- [test coverage at ci · Pull Request · clacky-ai/clacky-ai-frontend](https://github.com/clacky-ai/clacky-ai-frontend/pull/913)
+
 ## 0506
 
 - 今天计划

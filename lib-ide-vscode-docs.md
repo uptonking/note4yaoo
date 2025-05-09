@@ -33,6 +33,27 @@ modified: 2024-12-01T18:13:48.944Z
 - Panel - An additional space for views below the editor region. 
   - By default, it contains output, debug information, errors and warnings, and an integrated terminal. 
   - The Panel can also be moved to the left or right for more vertical space.
+
+## [Visual Studio Code Server](https://code.visualstudio.com/docs/remote/vscode-server)
+
+- The Visual Studio Code Server is a service you can run on a remote development machine, like your desktop PC or a virtual machine (VM). 
+  - It allows you to securely connect to that remote machine from anywhere through a local VS Code client, without the requirement of SSH.
+- We now provide a standalone "VS Code Server, " which is a service built off the same underlying server used by the remote extensions, plus some additional functionality, like an interactive CLI and facilitating secure connections to vscode.dev.
+
+- The CLI establishes a tunnel between a VS Code client and your remote machine. Tunneling securely transmits data from one network to another.
+
+- 🐛 Is the VS Code Server designed for multiple users to access the same remote instance?
+  - No, an instance of the server is designed to be accessed by a single user.
+- Can I host the VS Code Server as a service?
+  - No, hosting it as a service is not allowed, as specified in the VS Code Server license.
+
+- 
+- 
+- 
+- 
+- 
+- 
+
 # licensing
 - some extensions like Wallaby.js, Google Cloud Code, and the VS Code Remote Development extensions use proprietary licenses.
 # more

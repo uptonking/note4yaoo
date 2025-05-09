@@ -56,9 +56,33 @@ modified: 2024-12-01T09:34:54.164Z
 # discuss-coder-server
 - ## 
 
-- ## 
+- ## [Will VS Code Settings Sync be supported? · coder/code-server  _202009](https://github.com/coder/code-server/discussions/2064)
+- Settings Sync uses an API only available for Visual Studio Codespaces and Visual Studio Code, I don't think we're allowed to use this since it violates their ToS. We should implement our own instead.
 
-- ## 
+- ## [Can I share a code-server instance for multiple, isolated users? · coder/code-server _202211](https://github.com/coder/code-server/discussions/5761)
+  - Can I enforce any isolation between the individual sessions if they use the same underlying host? If two users Alice and Bob use the instance at the same time, what information from Alice could Bob read?
+- Have you checked out coder/coder? That was built with this kind of use case in mind except that each user has their own workspace, which could include code-server.
+
+- [Is code-server free? · coder/code-server ](https://github.com/coder/code-server/discussions/3102)
+  - Code Server is the free and open source single-user variant of Coder, an Enterprise developer workspace platform.
+
+- ## [Connect to Code Server's server from VS Code for Desktop · coder/code-server · Discussion](https://github.com/coder/code-server/discussions/2402)
+  - Is it possible to connect to the Code Server's server (the backend it is running) from Visual Studio Code Desktop? My use case would be to just use my Desktop application when possible, then switch to the browser-based editor when on the go.
+
+- 👷 202012: It's not possible unfortunately. The remote extensions download VS Code's server backend and execute then connect to that.
+  - So the only way to make this work would be to modify the remote extensions to work with code-server but since they're closed source we can't and we'd need to re-implement them entirely.
+  - For now I think the only workaround is to run both separately. You could set code-server's user data directory to the one VS Code remote uses in order to share plugins and settings.
+
+- you can install PWA. 
+
+- try something like this if you are on macOS `/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --new-window --app=http://192.168.100.8:8078/\?folder\=/home/coder/projects/manger`
+
+- ## [How to develop VSCode? · coder/code-server](https://github.com/coder/code-server/discussions/6884)
+- I do not use code-server to edit code-server or VS Code, but it should work as well as any other editor.
+  - Also keep in mind that loading the development version in the browser is veeeeeeeery slow.
+
+- ## [Implement VS Code remote extensions · Issue #1315 · coder/code-server](https://github.com/coder/code-server/issues/1315)
+- For a workaround, use the extension https://open-vsx.org/extension/Kelvin/vscode-sshfs
 
 - ## 这玩意比巨硬自家的好用啊 _202308
 - https://x.com/VincentMucid/status/1690977433326145536
@@ -100,6 +124,24 @@ modified: 2024-12-01T09:34:54.164Z
   - That's exactly what this lets you do.
 
 - SSH and VIM... since 1995. Best feature: no telemetry.
+
+- ## 🆚 [Difference to OpenVSCode Server _202109](https://github.com/coder/code-server/discussions/4267)
+- for collaborating with multiple people simultaneously, Open VS Code is best but for individuals, code-server is recommended since it has protection.
+
+- 👷 202110: both projects extend Microsoft’s open-source VS Code. However, the GitPod team describes their project as attempting to apply a minimal set of changes
+  - Personally, I find their recounting of the project’s history to be a bit misleading. I suppose it’s accurate to say that Gitpod first started with a fork of Microsoft’s repo, while we initially went with a submodule approach. Or that they’re going for a “minimal” set of changes, which I believe is technically true if we're comparing line counts across our respective projects.
+- this is our approach to building code-server:
+  - Retain a high degree of understanding in upstream’s architectural designs so that we can build features faster and with fewer issues.
+  - Implement extra features the community frequently asks for, such as TLS via Coder Link, and an open-source replacement for Settings Sync.
+  - Eventually, offer our changes back upstream as pull requests, minimizing the differences between our fork and mainstream releases.
+- I think it is unlikely we would add our own version of settings sync. I believe there are some extensions that offer syncing which can be used instead.
+  - The ideal solution would be that Microsoft would allow open source versions of VS Code to use settings sync but they seem pretty against that idea 
+
+- 202110: Here is my summary of differences:
+  - code-server support auth (protect the editor with password) while OpenVSCode doesn't
+  - OpenVSCode installs extensions from open-vsx, while code-server is in the process of switching to open-vsx
+  - TAB is working in the code-server's terminal. Doesn't work in the OpenVSCode. This difference may seem small, but significant to my day-to-day use
+  - I figured how code-server handles user account in Docker, but haven't figure out yet how OpenVSCode does it in the Docker
 # discuss-openVscode-server
 - ## 
 

@@ -112,7 +112,27 @@ modified: 2025-01-05T15:00:51.509Z
 - ## [Is it possible to fallback to global packages when local node_modules is not present ? · typescript-language-server/typescript-language-server _202311](https://github.com/typescript-language-server/typescript-language-server/discussions/798)
 - Try installing @types/node globally
 
+# discuss-DAP
+- ## 
+
+- ## 
+
+- ## 
+
+- ## DAP and LSP: IDE Development Relationship
+- Client-Server Architecture:
+  - LSP: The IDE is the client, and the language server is the server. They communicate over a standardized protocol (typically JSON-RPC).
+  - DAP: The IDE is the client, and the debug adapter is the server (which in turn communicates with the actual debugger for the language/runtime). They also communicate over a standardized protocol (typically JSON-RPC).
+- A rich IDE experience often relies on both.
+  - While paused at that breakpoint, you might hover over a variable to see its value (DAP), but also get type information or documentation for that variable's type (which could come from LSP).
+  - The "problems" or "diagnostics" pane in an IDE is typically populated by LSP, while the "call stack" or "watch" windows are populated by DAP.
+- They operate independently—using LSP does not require DAP, and vice versa. 
+
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 
