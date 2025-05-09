@@ -130,6 +130,15 @@ modified: 2023-11-28T14:48:45.910Z
 - naming
   - mandroid (from android+manus)
 
+## cloud-saas
+
+- cloud-pros
+  - unattended
+  - parallel
+  - collaborative
+
+- 类似ruby的ActionText
+
 ## inspirations
 
 - obsidian-mobile, notion-mobile
@@ -297,10 +306,6 @@ modified: 2023-11-28T14:48:45.910Z
   - https://github.com/phryneas/remark-typescript-tools
   - https://github.com/shikijs/twoslash
   - 两种方案需要选择取舍
-
-## cloud-saas
-
-- 类似ruby的ActionText
 
 ## sync
 

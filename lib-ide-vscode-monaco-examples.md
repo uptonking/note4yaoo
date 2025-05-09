@@ -25,6 +25,9 @@ modified: 2024-08-24T16:17:47.677Z
   - Judge0 IDE is using Judge0 for executing user's source code.
   - 依赖monaco-editor
 
+- https://github.com/x-orpheus/react-monaco-editor-lite /MIT/202409/ts
+  - lite webide with multifile support & eslint & prettier & vscode-theme
+
 - https://github.com/ast-grep/ast-grep /MIT/202406/rust
   - https://ast-grep.github.io/
   - https://ast-grep.github.io/playground.html

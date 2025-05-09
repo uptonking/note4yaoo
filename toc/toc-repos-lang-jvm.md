@@ -216,7 +216,7 @@ modified: 2021-05-14T15:05:02.456Z
   - This project aims at providing faster Maven builds using techniques known from Gradle and Takari.
   - used @GitHub Actions to compile all binaries for Linux, macOS (Apple Silicon+Intel), and Windows with @GraalVM
 # java-starter/template
-- https://github.com/1chz/realworld-java21-springboot3 /MIT/202504/java
+- https://github.com/1chz/realworld-java21-springboot3 /MIT/202504/java/gradle
   - https://1chz.github.io/realworld-java21-springboot3
   - RealWorld backend API built using Java 21 and Spring Boot 3
   - implemented using Java 21 and Spring Boot 3, leveraging technologies such as Spring MVC, Spring Data JPA, and Spring Security. 
@@ -228,7 +228,7 @@ modified: 2021-05-14T15:05:02.456Z
   - OAuth 2.0: Used for simpler JWT implementation compared to manual implementations.
   - Slug and Title Uniqueness: Ensured uniqueness according to API specifications.
 
-- https://github.com/gabrielgua/realworld-springboot /MIT/202405/java
+- https://github.com/gabrielgua/realworld-springboot /MIT/202405/java/mvn
   - The application uses Spring Boot 3 and Java 21 for all its architecture.
   - MySql for the database.
   - Flyway for the database migrations.

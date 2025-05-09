@@ -29,6 +29,23 @@ modified: 2024-08-24T16:16:25.433Z
   - gitpod早期参与研发了theia，但2020年vscode开源remote和web后，gitpod将ide替换到了vscode
 # blogs
 
+## 🤔 [Is Forking VS Code a Good Idea? _202412](https://eclipsesource.com/blogs/2024/12/17/is-it-a-good-idea-to-fork-vs-code/)
+
+- Hidden Shortcomings of VS Code Forks
+- Forking VS Code means losing access to the official VS Code Marketplace due to its terms of use 
+- Several proprietary VS Code extensions are explicitly restricted to Microsoft’s official builds.
+  - Remote Development Extensions
+  - Live Share
+  - Proprietary Language VS Code extensions (e.g., CPP Tools or Github Copilot)
+- Technical shortcomings of forking VS Code: The Maintenance Burden
+  - maintaining compatibility with the rapidly evolving VS Code codebase becomes increasingly challenging.
+
+- An Alternative Path: Building on Open Frameworks
+  - Open platforms like Eclipse Theia provide a compelling alternative, offering flexibility without the downsides of forking. 
+  - Theia even supports VS Code extensions while giving you control over the core architecture.
+- Theia AI offers an open, flexible framework for building AI-powered tools and IDEs, aligning perfectly with the needs of modern tool builders.
+  - Theia AI is built as an extensible and adaptable framework integrated into the Eclipse Theia platform. It is fully open source and supports a commercial-friendly governance model
+
 ## 🎯 [Theia: An Open Source Alternative to Visual Studio Code _202004](https://eclipse-foundation.blog/2020/04/01/theia-an-open-source-alternative-to-visual-studio-code/)
 
 - With the release of Eclipse Theia 1.0, organizations and vendors that build cloud and desktop integrated development environments (IDEs) have a production-ready, vendor-neutral, and open source framework for creating customized development environments for both desktops and browsers. 
@@ -149,7 +166,7 @@ modified: 2024-08-24T16:16:25.433Z
 - 只是UI 作用不大 持续自动测试 持续自动发布 集成在一起就有意思了
 - web ide配置vim插件容易出问题
 
-### [如何打造轻量级 WebIDE - 知乎](https://zhuanlan.zhihu.com/p/471476313)
+### [如何打造轻量级 WebIDE - 知乎 _202202](https://zhuanlan.zhihu.com/p/471476313)
 
 - https://github.com/yuzai/base-editor /MIT/202210/ts/inactive
   - https://blog.maxiaobo.com.cn/base-editor/build/index.html
