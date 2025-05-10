@@ -13,6 +13,10 @@ modified: 2021-08-30T18:57:27.645Z
   - northwind, chinook, AdventureWorks, Sakila
   - foodmart
   - imdb/omdb, realworld
+  - wikipedia
+  - 学生选课
+  - 购物订单
+  - imdb
 
 - [Database Examples - Wikiversity](https://en.wikiversity.org/wiki/Database_Examples)
 # popular-db-schema-examples
@@ -111,6 +115,11 @@ modified: 2021-08-30T18:57:27.645Z
 - https://github.com/awesomejt/database-schema-examples
   - 经典的shopping_cart例子
 # eg-northwind
+- https://github.com/microsoft/sql-server-samples/tree/master/samples/databases/northwind-pubs
+  - [Northwind 2.0 Developer Edition - Microsoft Support](https://support.microsoft.com/en-us/office/northwind-2-0-developer-edition-32eb79d2-bede-4ea4-b575-0714ca8dc1e2)
+  - [Northwind sample database | YugabyteDB Docs](https://docs.yugabyte.com/preview/sample-data/northwind/)
+    - The Northwind database contains the sales data for a fictitious company called “Northwind Traders”
+
 - https://github.com/harryho/db-samples /202012/js/inactive
   - Northwind sample database for MySql, PostgresQL, mongo, sqlite etc.
   - This folder contains scripts to create and load the Northwind sample databases.

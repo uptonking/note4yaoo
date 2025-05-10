@@ -9,6 +9,36 @@ modified: 2024-12-13T15:12:55.861Z
 
 # guide
 
+# usage
+- All SQL commands must end with a semicolon (; ).
+
+```shell
+# start example db
+target/debug/limbo database.db
+
+# Show the current values of settings
+.show
+
+# To open a database file at path './employees.db'
+.open employees.db
+
+# To list all table
+.tables
+
+# To import csv file 'sample.csv' into 'csv_table' table
+.import --csv sample.csv csv_table
+
+# To display the database contents as SQL
+.dump
+
+# To load an extension library:
+.load /target/debug/liblimbo_regexp
+
+# To show names of indexes:
+.indexes ?TABLE?
+
+```
+
 # discuss-stars
 - ## 
 

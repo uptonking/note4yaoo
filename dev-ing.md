@@ -337,6 +337,11 @@ add action to create quickSort1.mjs and add 3 test cases in it
   - js 786335673728065536
   - java 786790509908774912
 
+## 0510
+
+- [error: the 'cargo' binary, normally provided by the 'cargo' component, is not applicable to the '1.78.0-x86\_64-unknown-linux-gnu' toolchain · Issue #12763 · rust-lang/rust-clippy](https://github.com/rust-lang/rust-clippy/issues/12763)
+  - I would guess this is rust-lang/rustup#988, where e.g. rust analyzer runs at the same time you run a cargo command after updating the toolchain file.
+
 ## 0509
 
 - [My beloved Ruby Cheat Sheet - DEV Community](https://dev.to/ericchapman/my-beloved-ruby-cheat-sheet-208o)

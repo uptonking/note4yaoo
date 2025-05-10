@@ -12,24 +12,23 @@ modified: 2023-11-28T14:48:45.910Z
 
 # guide(for notable/noter/paper)
 - features
-  - market: lowcode(editor/automation), playground(code+preview+pdf)
-  - versioning and branching: 基于oplog/events实现, draft/public, replay, diff
-  - collaboration-ready: 基于crdt
-  - end-user database: 支持用户自定义数据和流程, multi views
-  - mobile-editor: phone/pad, 自定义编辑器可以是主特性，也可以是锦上添花
-  - animated-text/code sharing: playback with different speed
-  - github修改文档要提pr很繁琐; 可协作的workspace可直接改或用审阅修订模式
+  - 💰 market: lowcode(editor/automation), playground(preview+code+pdf)
+  - ⏳ versioning and branching: 基于oplog/events实现, draft/public, replay, diff
+  - 🤝 collaboration-ready: 基于crdt
+  - 📱 mobile-editor: phone/pad, 自定义编辑器可以是主特性，也可以是锦上添花
   - mobile-app-generator
-  - local-first data storage with optional syncing: 兼容git的commits
+  - end-user database: 支持用户自定义数据和流程, multi views
+  - animated-text/code sharing: playback with different speed
   - markdown: hotkeys, table-builder
+  - github修改文档要提pr很繁琐; 可协作的workspace可直接改或用审阅修订模式
+  - local-first storage with optional sync: 兼容git-commits, 浏览器多tab在断网时sync
   - office viewer
-  - drag between windows
-  - 产品设计阶段可将 AI 作为用户，用来onboarding引导操作及问答，还可以在系统内预置数据并将owner设为AI，可用来提供模版及引导用户测试
+  - 👾 产品设计阶段可将 AI 作为用户，用来onboarding引导操作及问答，还可以在系统内预置数据并将owner设为AI，可用来提供模版及引导用户测试
 
 - selling-point-knowledge-base
   - features
-    - 多文件知识库(ide)
-    - 移动优先的markdown知识库
+    - classic 多文件知识库(ide)
+    - mobile-first + markdown 知识库
     - automation(lowcode)
   - 通用或单一的builder价值不大，但针对业务平台特别是app-store的builder对平台方和开发者的价值都很大
   - ⌛️ version history
@@ -48,12 +47,14 @@ modified: 2023-11-28T14:48:45.910Z
     - split-table
   - ⚖️ markdown support with git-like database
     - widely used, enterprise-loved(易盈利)
+    - hotkeys
+    - table-builder
     - text files works well with existing tooling
     - 备选方案参考git，将文本与git工具绑定
     - sync: 本地文件自动生成delta
     - 标题也支持富文本，特别是最顶层标题支持code/link
     - rust-mdBook
-    - code block 也能支持基本的自动补全
+    - code block 也能支持纯前端的 autocomplete/lint
   - 🔍 search: rag, code-search, ai-chat
     - 针对代码优化的搜索可作为技术卖点和产品卖点，可参考github-code-search/algolia
     - 文档和代码同步更新、搜索
@@ -88,6 +89,7 @@ modified: 2023-11-28T14:48:45.910Z
   - cms+crdt
   - interoperable/sharing
     - MCP/LSP/backlink
+  - drag between windows
   - integrations
     - jupyter-notebook
     - whisper-editor
