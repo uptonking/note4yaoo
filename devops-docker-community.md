@@ -194,6 +194,21 @@ modified: 2024-06-30T11:17:28.971Z
   - 若是 SOCKS 代理的话，用 gost 转一下即可
 - 不需要用 gost 转一下，这里直接写 socks5://127.0.0.1:1080 是可以的，支持直接使用 socks5 代理。
 
+# discuss-registry/docker-hub
+- ## 
+
+- ## 
+
+- ## [Docker Hub, or GHCR, or ECR: Lazy man’s guide _202402](https://blog.devops.dev/docker-hub-or-ghcr-or-ecr-lazy-mans-guide-4da1d943d26e?gi=ccf8216e773b)
+- docker-hub downsides
+  - First of all, Docker Hub is no longer (very) friendly to open source project.
+  - 100–200 pulls per 6 hours limit
+  - Docker Hub is not the best integration with GitHub
+
+- GHCR, or GitHub Container Registry, seems to be an okay solution. It’s part of the GitHub offering. For OSS project, it’s free and easy to use. There is no pull limit as Docker Hub (at least much relaxing)
+  - download counts are confusing. I want to get fair numbers, not just a pretty number. 
+  - GHCR is not always accessible globally. I got complain from friends/users in China
+  - Other major issues, such as the image URL is same as the GitHub project. So it’s timeplus-io/proton We prefer timeplus/proton if possible.
 # discuss-podman
 - ## 
 
@@ -204,6 +219,7 @@ modified: 2024-06-30T11:17:28.971Z
 - ## [Docker socket notification appearing continuously when podman VM stopped _202504](https://github.com/podman-desktop/podman-desktop/issues/12262)
 - 
 - 
+
 # discuss
 - ## 
 

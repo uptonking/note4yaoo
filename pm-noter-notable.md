@@ -145,6 +145,7 @@ modified: 2023-11-28T14:48:45.910Z
 
 - obsidian-mobile, notion-mobile
   - note-app compatible with obsidian plugin, 主流插件已达到百万下载
+  - obsidian-open-rewrite
 
 - git-statistics ui， 可参考 pingcap/ossinsight
   - auto generate cover by content/fields

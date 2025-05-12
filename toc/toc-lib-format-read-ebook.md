@@ -131,17 +131,23 @@ modified: 2023-09-19T07:26:04.103Z
   - Add bookmarks, notes, highlights to your books
   - [希望能够有编辑功能_202401](https://github.com/koodo-reader/koodo-reader/issues/1037)
     - 个人认为作为一个阅读器，编辑功能有点冗余，如果需要编辑可以用对应的各种强大产品
+  - [MIT > AGPL _202104](https://github.com/koodo-reader/koodo-reader/issues/133)
+    - 从1.2.5版开始，本项目不再使用MIT授权，不再允许任何组织或个人在本项目基础上开发闭源付费软件。本项目不允许商用
 
 - https://github.com/edrlab/thorium-reader /2kStar/BSD/202503/ts/epub
   - https://www.edrlab.org/software/thorium-reader/
   - A cross platform desktop reading app, based on the Readium Desktop toolkit
   - an easy to use EPUB reading application for Windows 10/10S, MacOS and Linux
   - 依赖redux、redux-saga.v1.3、electron、inversify、lunr2、mathjax、radix-ui、pdfjs、r2-streamer-js、react-table7
+  - TTS的体验很好
+  - 🐛 不支持web, rewrite+redux/epubjs/standalone2one-ui
   - Thorium-reader is composed of 3 parts: 
     - One node.js main process (electron back-end) 
     - One library window (chromium renderer) 
     - One to N reader window(s) (chromium renderer)
-    - Each part runs a model-controller and a view for the renderer process.
+  - Each part runs a model-controller and a view for the renderer process.
+    - the controller is a middleware from Redux named Redux-saga. It handles all side effects and application behaviour.
+    - the view for the rendering is React with class components
   - A great care is taken to ensure the accessibility of the application for visual impaired people using NVDA, JAWS or Narrator.
   - No ads. No private data flowing anywhere.
   - [Feature proposal: read PDFs as HTML _202502](https://github.com/edrlab/thorium-reader/discussions/2810)
@@ -149,6 +155,13 @@ modified: 2023-09-19T07:26:04.103Z
     - This seems like a format conversion tool (PDF to EPUB) more than a Thorium feature. Thorium could ultimately integrate this tool transparently like we do with DAISY 2.02 and DAISY 3.0 text / text+audio / audio digital talking books.
   - [consider to swap to mupdfjs ?](https://github.com/edrlab/thorium-reader/discussions/2742)
     - PDF.js may be a slower rendering engine, but it is a mature library, with a strong feature set (including text selection + annotations) and a page layout logic that integrates quite well in Thorium.
+  - [Newbie questions about how to use this reader _202411](https://github.com/edrlab/thorium-reader/discussions/2644)
+    - Thorium is a desktop application
+    - Would be nice to be able to run Thorium Reader on a web server though (as a Docker app), like what VS Code for the Web does.
+  - [Implement print _201912](https://github.com/edrlab/thorium-reader/discussions/1737)
+    - Integrating Paged.js may be a solution. In this case it may be better to create a specific window for the selected paginated content
+    - Interestingly in the Electron/Chromium "print to PDF" API, `printSelectionOnly` (which is not available in the regular "print" feature)
+    - A print feature would make Thorium Reader the only app in existence, as far as I know of, capable of converting a fixed layout epub3 file to a PDF (via the Save As PDF output option).
   - https://github.com/readium/ts-toolkit
 
 - https://github.com/koreader/koreader /AGPLv3/lua
@@ -170,6 +183,11 @@ modified: 2023-09-19T07:26:04.103Z
     - https://futurepress.github.io/epubjs-reader/
     - You can change the ePub it opens by passing a link to bookPath in the url: ?bookPath=https://s3.amazonaws.com/epubjs/books/alice.epub
   - https://github.com/futurepress/epubjs-rn /201912/js
+- https://github.com/pacexy/flow /AGPL/202503/ts
+  - Browser-based ePub reader
+  - Epub.js, nextjs
+- https://github.com/btpf/Alexandria
+  - A minimalistic cross-platform eBook reader built with Tauri, Epub.js, and Typescript
 
 - https://github.com/Sigil-Ebook/Sigil /GPLv3/cpp
   - http://sigil-ebook.com/

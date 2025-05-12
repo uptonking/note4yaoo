@@ -38,7 +38,7 @@ modified: 2024-01-30T20:56:45.773Z
   - view层基于tid文件
   - https://github.com/TiddlyWiki/TiddlyWiki
     - the Classic version (2.x.x) of TiddlyWiki
-  - https://github.com/TiddlyWiki/TiddlyDesktop
+  - https://github.com/TiddlyWiki/TiddlyDesktop /BSD
 
 - joplin /31.9kStar/MIT > AGPLv3/202212/ts/web需付费+pc+mobile
   - https://github.com/laurent22/joplin
@@ -383,6 +383,13 @@ modified: 2024-01-30T20:56:45.773Z
     - Yes it is technical, TagSpaces is a front-end application, which can connect to S3 back ends. For you use case you can use S3Proxy to expose a shared folder for example on a NAS and connect it with TagSpaces as S3 location.
   - https://github.com/tagspaces/tagspaces-extensions /MIT/202404/js
     - This repository contains the viewer and editor extensions delivered by default with TagSpaces products.
+
+- https://github.com/codexu/note-gen /MIT/202505/ts
+  - https://codexu.github.io/note-gen/
+  - a cross-platform Markdown note-taking application dedicated to using AI to bridge recording and writing, organizing fragmented knowledge into a readable note.
+  - Cross-platform: Supports Mac, Windows, Linux, and thanks to Tauri2
+  - Native offline usage with Markdown(.md) as the storage format, while also supporting real-time synchronization to private GitHub repositories with history rollback.
+  - AI-enhanced: Configurable with ChatGPT, Gemini, Ollama, LM Studio, DeepSeek, and other models, with support for custom third-party model configuration.
 # notes-browser-extensions
 - note-it /16Star/apache2/202412/ts/tiptap
   - https://github.com/MuhametSmaili/note-it

@@ -485,8 +485,9 @@ modified: 2021-01-04T17:26:43.784Z
   - https://github.com/qwertme/OpenViewerFX
   - now part of JDeli
 
-- https://github.com/sumatrapdfreader/sumatrapdf /GPL/C
-  - SumatraPDF reader
+- https://github.com/sumatrapdfreader/sumatrapdf /14.7kStar/GPL/202505/C
+  - http://www.sumatrapdfreader.org/
+  - SumatraPDF reader for windows only
 # pdf-doc/rag
 - https://github.com/opendatalab/PDF-Extract-Kit /apache2/202407/python
   - 布局检测：使用LayoutLMv3模型进行区域检测，如图像，表格, 标题, 文本等；

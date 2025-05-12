@@ -25,7 +25,7 @@ modified: 2023-12-15T17:50:41.213Z
   - https://github.com/TiddlyWiki/TiddlyWiki
     - the Classic version (2.x.x) of TiddlyWiki
 
-- https://github.com/TiddlyWiki/TiddlyDesktop /202307/js
+- https://github.com/TiddlyWiki/TiddlyDesktop /202307/js/BSD
   - A custom desktop browser for TiddlyWiki 5 and TiddlyWiki Classic, based on nw.js
 
 - https://github.com/tiddly-gittly/TidGi-Desktop /1.2kStar/MPLv2/202309/ts
