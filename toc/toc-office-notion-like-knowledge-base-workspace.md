@@ -298,7 +298,7 @@ modified: 2022-06-03T21:34:54.893Z
 - memos /26.4kStar/MIT/202403/ts/go
   - https://github.com/usememos/memos
   - https://usememos.com/
-  - 后端依赖 go
+  - 后端依赖 go, 未使用orm而直接用raw-sql
   - 前端依赖 redux-toolkit, dayjs, axios
   - 编辑器使用的是简单 textarea
   - ui高度复刻flomo，中文开发者作品，代码量不大
@@ -730,6 +730,13 @@ modified: 2022-06-03T21:34:54.893Z
   - 定时发布任务
   - 定时任务: node-cron
   - 模板引擎: EJS
+
+- https://github.com/opendatalab/MinerU /AGPLv3/202407/python
+  - MinerU 是一款一站式、开源、高质量的数据提取工具
+  - Magic-PDF 是一款将 PDF 转化为 markdown 格式的工具。支持转换本地文档或者位于支持S3协议对象存储上的文件。
+  - Magic-Doc 是一款支持将网页或多格式电子书转换为 markdown 格式的工具。
+    - 支持176种语言的准确识别
+  - https://huggingface.co/spaces/opendatalab/MinerU
 
 - https://github.com/getmaxun/maxun /AGPL/202503/ts
   - https://www.maxun.dev/

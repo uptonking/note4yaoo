@@ -67,7 +67,7 @@ modified: 2023-08-29T10:12:22.345Z
 
 - https://github.com/GerritCodeReview/gerrit /955Star/apache2/202410/java/ts
   - https://www.gerritcodereview.com
-  - https://gerrit.googlesource.com/gerrit
+  - https://gerrit.googlesource.com/gerrit/
   - Gerrit is a code review and project management tool for Git based projects.
   - Gerrit makes reviews easier by showing changes in a side-by-side display, and allowing inline comments to be added by any reviewer.
   - Gerrit simplifies Git based project maintainership by permitting any authorized user to submit changes to the master Git repository, rather than requiring all approved changes to be merged in by hand by the project maintainer.

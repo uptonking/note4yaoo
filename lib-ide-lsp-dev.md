@@ -42,8 +42,67 @@ modified: 2025-01-05T15:00:07.466Z
 ## LSP-diagnostics/lint
 
 - 纯前端实现lint的缺点
+  - 支持js/ts外的语言较困难
   - 跨文件的类型lint在前端难以实现
   - 前端引入lint工具包和规则包会显著增加体积
+
+```JS
+// response
+{
+  "jsonrpc": "2.0",
+  "method": "textDocument/publishDiagnostics",
+  "params": {
+    "uri": "file:///Users/yaoo/Documents/repos/com2024-showmebug/yaoo/codemirror6-lsp-typescript-language-server/example-projects/go-gin-gorm/main.go",
+    "version": 3,
+    "diagnostics": [
+      {
+        "range": {
+          "start": {
+            "line": 9,
+            "character": 1
+          },
+          "end": {
+            "line": 9,
+            "character": 55
+          }
+        },
+        "severity": 1,
+        "code": "UnusedImport",
+        "codeDescription": {
+          "href": "https://pkg.go.dev/golang.org/x/tools/internal/typesinternal#UnusedImport"
+        },
+        "source": "compiler",
+        "message": "\"github.com/examples-hub/realworld-gin-gorm/validator\" imported and not used",
+        "tags": [
+          1
+        ]
+      },
+      {
+        "range": {
+          "start": {
+            "line": 36,
+            "character": 4
+          },
+          "end": {
+            "line": 36,
+            "character": 13
+          }
+        },
+        "severity": 1,
+        "code": "UnusedVar",
+        "codeDescription": {
+          "href": "https://pkg.go.dev/golang.org/x/tools/internal/typesinternal#UnusedVar"
+        },
+        "source": "compiler",
+        "message": "declared and not used: unusedVar",
+        "tags": [
+          1
+        ]
+      }
+    ]
+  }
+}
+```
 
 ## LSP-hover
 

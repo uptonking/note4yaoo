@@ -179,7 +179,7 @@ modified: 2024-01-30T20:56:45.773Z
   - https://www.marktext.cc/
   - simple and elegant markdown editor, available for Linux, macOS and Windows.
   - MarkText uses virtual DOM to render pages
-  - 依赖electron-store、codemirror.v5、dragula、vue2、vuex、element-ui.v2、snabbdom
+  - 依赖marked.v1、prismjs、electron-store、codemirror.v5、dragula、vue2、vuex、element-ui.v2、snabbdom
   - 不支持添加tag
   - 🆚️ [MarkText + Zettlr _201907](https://github.com/marktext/marktext/issues/1130)
     - Zettlr knowledge management features are what sets it apart from Mark Text

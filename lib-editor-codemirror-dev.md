@@ -218,6 +218,7 @@ modified: 2021-05-06T09:38:31.520Z
   - 🆚️ 将vscode/monaco的diff逻辑迁移到codemirror
     - diff算法的精确度较差，特别是对于增加一行的场景，cm-diff展示的效果是先删除一行再增加两行
   - codemirror-diff 作为 git diff 输出的view层
+  - codemirror-diff对 yml/xml 的支持不好，yml中换行处未变动的部分也经常显示diff [found issue with MergeView: the diff function seems not working well when I use YAML or XML file - v6 - discuss. CodeMirror _202302](https://discuss.codemirror.net/t/found-issue-with-mergeview/5805)
 
 - integrations
   - strapi-codemirror

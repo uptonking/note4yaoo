@@ -501,10 +501,13 @@ modified: 2021-01-04T17:26:43.784Z
     - 支持176种语言的准确识别
   - https://huggingface.co/spaces/opendatalab/MinerU
 
-- https://github.com/DS4SD/docling /MIT/202409/python
+- https://github.com/docling-project/docling /MIT/202409/python
+  - https://github.com/DS4SD/docling
   - Transform PDF to JSON or Markdown with ease and speed
   - Understands detailed page layout, reading order and recovers table structures
+  - Parsing of multiple document formats incl. PDF, DOCX, XLSX, HTML, images, and more
   - Optionally applies OCR (use with scanned PDFs)
+  - Support of Visual Language Models (SmolDocling)
 
 - https://github.com/lumina-ai-inc/chunkr /AGPLv3/202410/python/ts/rust
   - https://chunkr.ai/
