@@ -344,7 +344,7 @@ add action to create quickSort1.mjs and add 3 test cases in it
 
 ## 0509
 
-- [My beloved Ruby Cheat Sheet - DEV Community](https://dev.to/ericchapman/my-beloved-ruby-cheat-sheet-208o)
+- [My beloved Ruby Cheat Sheet - DEV Community _202012](https://dev.to/ericchapman/my-beloved-ruby-cheat-sheet-208o)
   - full_name = 'Mike Taylor'
   - active? = true
   - fruits = ['Appel', 'Orange', 'Banana']

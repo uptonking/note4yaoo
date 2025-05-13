@@ -122,6 +122,10 @@ git push origin -f
 # useful since adding the -f -d flag deletes new directories and files within them as opposed to just -f flag which only deletes new files.
 git reset --hard <commitId> && git clean -f -d 
 
+# [Hard reset of a single file](https://stackoverflow.com/questions/7147270/)
+git checkout HEAD -- my-file.txt
+git checkout upstream/master -- myfile.txt
+
 # 
 git checkout -b old-state 0d1d7fc32
 
