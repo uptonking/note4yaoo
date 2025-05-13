@@ -149,6 +149,9 @@ modified: 2023-11-28T14:48:45.910Z
 
 - git-statistics ui， 可参考 pingcap/ossinsight
   - auto generate cover by content/fields
+
+- github
+  - permlink for old docs
 # features
 - inspirations
   - 高频需求，网盘分享

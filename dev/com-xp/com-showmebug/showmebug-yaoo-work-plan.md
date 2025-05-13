@@ -2455,6 +2455,10 @@ const playbackInfo = [
 - 
 - 
 
+### codebase-server 🔡
+
+- goAgent启动Language Server时，gopls要等80s左右才有LSP事件响应传给客户端，其他language server很快(15s)会传给客户端
+
 ### docs-sdk
 
 - 本案例的axios为封装后的axios, baseUrl默认为“www.1024paas.com”。

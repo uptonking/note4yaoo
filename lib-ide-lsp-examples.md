@@ -144,6 +144,8 @@ modified: 2025-04-12T19:18:28.788Z
   - Code lens (references/implementations)
   - Annotation processing support (automatic for Maven projects)
   - Choose a value for `-data`: An absolute path to your data directory. eclipse.jdt.ls stores workspace specific information in it. This should be unique per workspace/project.
+  - [Provide an API endpoint that accepts a fully qualified class name as input and returns the source code content of the class definition. This will be used to support AI tools or resource calls. · eclipse-jdtls/eclipse.jdt.ls · Discussion _202504](https://github.com/eclipse-jdtls/eclipse.jdt.ls/discussions/3437)
+    - I propose introducing a feature that allows Cursor to retrieve the source code definition of a class located in a JAR dependency, using its Fully Qualified Name (FQN). 
   - [Question, How to "GoToDefination" for JDK package? _202111](https://github.com/eclipse-jdtls/eclipse.jdt.ls/issues/1931)
     - Jumping to the definition of JDK libraries or other third-party libraries requires the `classFileContentsSupport extendedClientCapabilities` on the client. This is not part of the core protocol, but a custom extension of eclipse.jdt.ls
   - [Issue when trying to connect using Monaco Editor _202111](https://github.com/eclipse-jdtls/eclipse.jdt.ls/issues/1933)
