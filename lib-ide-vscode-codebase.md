@@ -24,7 +24,7 @@ npm run watch
   - Running on Electron with extensions run in NodeJS
 - 🚀 ./scripts/code-web.sh
   - Extensions and UI run in the browser
-  - 切换文件时url不变， url不包含文件路径, `http://localhost:8080/`.
+  - 切换文件时url不变， url不包含文件路径 `http://localhost:8080/`.
   - 编辑文件会持久化到磁盘
   - 刷新页面时打开的文件夹会丢失，需要重新打开文件夹及文件
   - 数据保存在indexeddb
@@ -67,5 +67,24 @@ npm run watch
 - 
 
 # coder-server
+- ❓ 待确认原因: 使用`./scripts/code-server.sh`启动vscode时，能在chrome devtools看到2条websocket连接
+  - ws://localhost:9888/oss-dev?reconnectionToken=80d0daf1-ce1f-44ac-9861-a90054bdd4f5&reconnection=false&skipWebSocketFrames=false
+  - ws://localhost:9888/oss-dev?reconnectionToken=1676ba6a-f452-4fe7-967f-c444eb325b25&reconnection=false&skipWebSocketFrames=false
+
+- VS Code's web/server edition uses two separate WebSocket channels for different purposes:
+  - a. Main Connection: Handles core editor functionality (e.g., file operations, UI interactions).
+  - b. Extension Host Connection: Manages extensions and their communication with the core editor.
+  - If the extension host crashes (a common scenario with third-party extensions), the core editor remains functional.
+  - The WebSocket server logic is in `src/vs/server/remoteExtensionHostAgentServer.ts`.
+  - The client-side WebSocket management is in `src/vs/platform/remote/browser/browserSocketFactory.ts`.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 # more

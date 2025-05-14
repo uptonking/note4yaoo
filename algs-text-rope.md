@@ -92,7 +92,7 @@ modified: 2023-12-19T19:28:51.206Z
 - https://github.com/josephg/librope
   - C library for heavyweight utf-8 strings (rope).
 
-- https://github.com/vinzmay/go-rope /go
+- https://github.com/vinzmay/go-rope /BSD/201409/go/inactive
   - Go implementation of a persistent rope data structure, useful to manipulate large text. 
   - Persistent means that any operation on the rope doesn't modify it, so it's inherently thread safe.
 

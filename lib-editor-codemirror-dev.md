@@ -32,6 +32,7 @@ modified: 2021-05-06T09:38:31.520Z
   - ssr默认不支持, 但有方案支持
   - 顶层容器不支持CSS transform 3d，但支持transform2d(用于画板缩放的场景, 但ace/monaco支持3d，有改进)
   - 使用了自定义css-in-js方案(runtime-css会降低性能)，但也支持css覆盖样式
+  - 同一文件包含多种语言时，语法高亮/hover/lint都需要自己实现
   - 部分语言不支持语法高亮，如.slim/.erb
   - codemirror/monaco 的lint/autocomplete 都存在无法让服务端调用的缺陷，基于tree-sitter的实现对服务端更友好, 服务端优化的上线更高
     - 但浏览器上进行代码编辑的场景远多于服务端

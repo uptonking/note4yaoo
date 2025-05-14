@@ -232,6 +232,9 @@ git remote rename <old-name> <new-name>
 git config --global init.defaultBranch main 
 git config --global core.fileMode false 
 git config --global core.ignoreCase false 
+# 让git status输出的包含中文的文件名正确显示
+git config --global core.quotepath false
+
 git config --global alias.co checkout
 git config --global alias.br branch
 git config --global alias.ci commit

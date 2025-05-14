@@ -12,7 +12,11 @@ modified: 2024-12-01T09:34:54.164Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [vscode for web production deployment - Stack Overflow](https://stackoverflow.com/questions/75265432/vscode-for-web-production-deployment)
+- VS Code for the Web(./scripts/code-web.sh) - Extensions and UI run in the browser
+- Code Server Web (./scripts/code-server.sh --launch) - UI in the browser, extensions run in code server (NodeJS)
+  - Using Code Server Web I can access the terminal
+  - Through the terminal I can use the OS functionalities
 
 - ## [Making Remote Development Even Better _202212](https://code.visualstudio.com/blogs/2022/12/07/remote-even-better)
 - You may not think about it, but VS Code has a built-in command-line interface (CLI) that lets you control how you launch and manage the editor - you can open files, install extensions, and output diagnostics through command-line options

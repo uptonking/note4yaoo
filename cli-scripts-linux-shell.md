@@ -52,6 +52,12 @@ resolvectl statistics
 
 ```shell
 
+# create file only if the parent directories already exist
+touch folder11/folder12/aa.md
+# create nested folder
+mkdir -p folder11/folder12
+
+# copy-paste
 cp -r source_folder /path/to/destination_folder/
 
 ```

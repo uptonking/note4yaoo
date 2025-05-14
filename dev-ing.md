@@ -337,6 +337,22 @@ add action to create quickSort1.mjs and add 3 test cases in it
   - js 786335673728065536
   - java 786790509908774912
 
+## 0514
+
+**昨天完成：**
+
+- [x]  对于LSP体验增强的需求，根据review反馈和产品调整需求细节，调整技术文档
+- [x]  review时光机折叠需求的技术文档
+- [x]  尝试复线近一周未处理的2个issue，一个找到了方法，另一个未能复现，先停下来处理紧急issue
+- [x]  测试language server的响应时间     [LSP Language Server 事件检查清单](https://www.notion.so/LSP-Language-Server-1e0a0f93102280e1abdcee39d3642010?pvs=21)
+- [ ]  处理紧急issue，在terminal删除多个文件`rm *.js`时，文件树未更新，未定位到问题需要继续分析日志和代码逻辑
+
+**今日计划：**
+
+- [ ]  集中精力处理3个文件树同步相关的紧急issue，避免阻塞双ide需求的调研和架构分析
+- [ ]  补充测试本地vscode LSP事件的响应时间
+- [ ]  为clacky-ai-paas-frontend接入测试覆盖率
+
 ## 0510
 
 - [error: the 'cargo' binary, normally provided by the 'cargo' component, is not applicable to the '1.78.0-x86\_64-unknown-linux-gnu' toolchain · Issue #12763 · rust-lang/rust-clippy](https://github.com/rust-lang/rust-clippy/issues/12763)
