@@ -324,6 +324,12 @@ modified: 2024-08-24T16:17:26.715Z
     - Notes are stored in the global storage location of VS Code, meaning they're specific to the VS Code environment and not synced across different machines automatically
   - No Multi-File Support: Currently, each note is created as an individual .txt or .md file.
 
+- https://github.com/tnesbitt210/smart-file-templates /MIT/202501/ts
+  - an extension that helps you work faster by letting you create your own file templates.
+  - 改进点是将选择template的交互实现为editor placeholder，而不是现在的系统弹窗
+  - You decide the rules (using regex patterns) for when each template should be suggested. 
+  - when you make a new file, the extension suggests the right template based on your rules.
+
 ## ext-editor
 
 - https://github.com/patmood/rich-markdown-editor-vsc /202405/ts/inactive
@@ -585,6 +591,9 @@ modified: 2024-08-24T16:17:26.715Z
 
 - https://github.com/dzhavat/git-cheatsheet-inside-vs-code /MIT/202501/ts
   - VS Code extension that lets you open a Git cheatsheet directly in the editor.
+
+- https://github.com/tnesbitt210/interactive-smartlog-issues
+  - This repo is just for issue tracking — the extension itself is not open source (at least for now).
 
 ## ext-history
 
