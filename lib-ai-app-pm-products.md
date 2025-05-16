@@ -53,6 +53,9 @@ modified: 2025-03-22T16:10:24.856Z
 - ai写与第三方sdk集成的代码时，先写注释example，再写代码
 # ai-office
 
+# ai-dev-xp
+
+- 让ai将从日志平台复制来的残缺字符串补全为合法字符串并格式化缩进，速度很快很好用
 # ai/llm-api
 - [现在做大模型，还有靠谱且免费的 api 接口吗？ - 知乎](https://www.zhihu.com/question/662092970)
   - 纯粹免费的API也是有的，但是多限于轻量级的大模型，比如智谱AI的flash模型，Google的 Gemini 1.5 Flash。

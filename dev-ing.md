@@ -293,7 +293,9 @@ console.trace(';; loadFile', path, loadType);
 ```
 
 ```
-^(?!42\["resourceM).* 
+^((?!(heartbeat|resourceMonit|refreshXtermCols)).)*$
+^((?!(heartbeat|resourceMonit|refreshXtermCols|42\["multiTerminal)).)*$
+^(?!42\["resourceMonit).* 
 
 add action to add datetime at top of readme
 

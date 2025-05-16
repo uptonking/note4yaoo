@@ -326,9 +326,26 @@ GIT_TRACE=2 GIT_CURL_VERBOSE=1 GIT_TRACE_PERFORMANCE=1 git add .  &&  GIT_TRACE=
 
 ## github-cli
 
-- 自动 sync 所有 fork
+```sh
+# List repositories owned by a user or organization.
+gh repo list [<owner>] [flags]
+gh repo list uptonking --source
 
+# Display the description and the README of a GitHub repository
+gh repo view [<repository>] [flags]
+
+# Assigned Issues/PR/CR/Mention
+gh status
+
+```
+
+
+- 自动 sync 所有 fork
 ```shell
+gh repo sync [<destination-repository>] [flags]
+# Sync remote repository from another remote repository
+gh repo sync owner/repo --source owner2/repo2
+
 # https://twitter.com/tison1096/status/1732739063810334796
 gh repo list --fork --visibility public --json owner,name | jq -r 'map(.owner.login + "/" + .name) | .[]' | xargs -t -L1 gh repo sync
 ```
