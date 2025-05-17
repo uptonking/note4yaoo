@@ -15,6 +15,7 @@ modified: 2023-11-28T14:48:45.910Z
   - 💰 market: lowcode(editor/automation), playground(preview+code+pdf)
   - ⏳ versioning and branching: 基于oplog/events实现, draft/public, replay, diff
   - 🤝 collaboration-ready: 基于crdt
+  - ⛓️ automation/workflow/rpa: 给予dag
   - 📱 mobile-editor: phone/pad, 自定义编辑器可以是主特性，也可以是锦上添花
   - mobile-app-generator
   - end-user database: 支持用户自定义数据和流程, multi views
@@ -70,6 +71,7 @@ modified: 2023-11-28T14:48:45.910Z
   - 🎞️ video: 自动生成视频，方便回放、教学
     - pdf/ppt > video
     - video templates for tiktok/bilibili
+    - motion/live photo for doc
   - 🖼️ image
     - edit-image: 虽然不是编辑器的核心，但很实用且难做好
   - mdbook/gitbook: text + actions/workflows
@@ -144,8 +146,7 @@ modified: 2023-11-28T14:48:45.910Z
 ## inspirations
 
 - obsidian-mobile, notion-mobile
-  - note-app compatible with obsidian plugin, 主流插件已达到百万下载
-  - obsidian-open-rewrite
+  - obsidian-open-rewrite compatible with obsidian plugin, 主流插件已达到百万下载
 
 - git-statistics ui， 可参考 pingcap/ossinsight
   - auto generate cover by content/fields

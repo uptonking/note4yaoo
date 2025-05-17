@@ -71,7 +71,7 @@ modified: 2022-06-03T21:34:54.893Z
   - [Comments on text editor _202408](https://github.com/suitenumerique/docs/issues/156)
     - Erwan Legal recommended Hypothes.is. @hypothesis (W3C Web anotation) compatible. Comments are stored in an external database. The service could be used in other softwares.
     - Comments are out in the latest BlockNotejs release _202503
-  - [Why Yjs server in ts when you can use pycrdt instead ?  _202503](https://github.com/suitenumerique/docs/issues/728)
+  - 🔀 [Why Yjs server in ts when you can use pycrdt instead ?  _202503](https://github.com/suitenumerique/docs/issues/728)
     - it seems that the server is written in Django but there is a special server for Yjs written in ts. Pycrdt is used for real-time collaboration in JupyterLab. Pycrdt is being used quite extensively in Jupyter-Collaboration.
     - The main problem I see is managing a websocket with django. We have to switch to an ASGI application, use django-channels. To scale you have to use the redis backend and there are many issues open about memory leaks. FastAPI is probably a better candidate.
     - my understanding is that it is not trivial to move to Python for Ydoc because the server needs to understand the BlockNotejs syntax which is custom (for blocks etc.)

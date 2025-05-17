@@ -133,7 +133,10 @@ git log --online --graph --decorate
 
 - ## 
 
-- ## 
+- ## [How do I remove the passphrase for the SSH key without having to create a new key? - Stack Overflow](https://stackoverflow.com/questions/112396/how-do-i-remove-the-passphrase-for-the-ssh-key-without-having-to-create-a-new-ke)
+- ssh-keygen -p [-P old_passphrase] [-N new_passphrase] [-f keyfile]
+  - ssh-keygen -p -P oldpassphrase -N "" -f ~/.ssh/id_rsa
+- To be explicit: you can just run `ssh-keygen -p` in a terminal. It will then prompt you for a keyfile (defaulted to the correct file for me, ~/.ssh/id_rsa), the old passphrase (enter what you have now) and the new passphrase (enter nothing).
 
 - ## [Case Insensitive Search on Git log comments - Stack Overflow](https://stackoverflow.com/questions/77910421/case-insensitive-search-on-git-log-comments)
   - 'git log' it is always case sensitive. Which make it difficult to find the relevant text. 

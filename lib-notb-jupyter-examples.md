@@ -167,6 +167,7 @@ modified: 2024-06-30T03:20:21.444Z
   - 🧩 marimo is a reinvention of the Python notebook as a reproducible, interactive, and shareable Python program, instead of an error-prone JSON scratchpad.
     - Our inspiration comes from many places and projects, especially Pluto.jl, ObservableHQ, and Bret Victor's essays.
     - marimo is part of a greater movement toward reactive dataflow programming. From IPyflow, streamlit, TensorFlow, PyTorch, JAX, and React, the ideas of functional, declarative, and reactive programming are transforming a broad range of tools for the better.
+  - Automatically convert Jupyter notebooks to marimo notebooks with the CLI
 
 - https://github.com/alishobeiri/thread /AGPL/202410/ts/js/inactive
   - AI-powered Jupyter Notebook — use local AI to generate and edit code cells, automatically fix errors, and chat with your data

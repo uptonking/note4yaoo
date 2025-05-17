@@ -76,6 +76,8 @@ modified: 2023-06-23T12:46:53.288Z
   - 🐛未解决: [[Feature Request] Enable to display 4-byte characters in the editor _202406](https://github.com/overleaf/overleaf/issues/1234)
     - The editor can display basic 3-byte emojis (without some emojis with ligature) (on row 16), but it cannot display any 4-byte emojis (on row 17).
     - CJK IME shows converting candidates including emoji while inputting, however, the current candidate turns into a "non-compliant" string when those emoji appear as the current candidate. It terminates the converting process, thus we cannot select the correct candidate, making it hard to input our languages in the editor.
+  - [Node 20 Compile Issues · Issue · mscdex/mmmagic](https://github.com/mscdex/mmmagic/issues/169)
+    - I've just updated the @picturae/mmmagic package to support node 22 as well
   - 🍴 forks
   - https://github.com/yu-i-i/overleaf-cep /202408/AGPL
     - extended CE with changes tracking and LDAP authentication
@@ -1192,6 +1194,10 @@ modified: 2023-06-23T12:46:53.288Z
     - Generated C programs can be quite large.
     - Parsing can be extremely slow for pathological inputs such as infinite loops, sometimes taking hours and even days.
     - Support for unicode is currently lagging.
+
+- https://github.com/so-fancy/diff-so-fancy /MIT/202505/perl
+  - make your diffs human readable
+  - Simply copy the `diff-so-fancy` script from the latest release into your `$PATH` and you're done.
 
 ## lint
 

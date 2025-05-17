@@ -425,6 +425,12 @@ modified: 2023-08-29T10:12:22.345Z
 
 - [Git as a Database | GitRows](https://gitrows.com/)
   - GitRows makes it easy to use and store data in GitHub and GitLab repos and deliver them with a powerful API.
+
+- https://github.com/git-bug/git-bug /GPL/202505/go
+  - git-bug is a standalone, distributed, offline-first issue management tool that embeds issues, comments, and more as objects in a git repository (not files!), enabling you to push and pull them to one or more remotes.
+  - Native Git Storage: Manage issues, users, and comments directly within your repository
+  - Third-Party Bridges: Easily synchronize issues with platforms like GitHub and GitLab using bridges
+  - Flexible Interfaces: Choose how you interact - via CLI, TUI, or a web browser
 # examples
 
 # utils
@@ -440,6 +446,11 @@ modified: 2023-08-29T10:12:22.345Z
   - https://git-lfs.com/
   - Git extension for versioning large files
   - Git LFS is a command line extension and specification for managing large files with Git.
+  - Git LFS source code utilizes Go modules in its build system, and therefore this project contains a `go.mod` file with a defined Go module path. However, we do not maintain a stable Go language API or ABI, as Git LFS is intended to be used solely as a compiled binary utility. 
+  - [Git LFS maintains a list of currently known limitations](https://github.com/git-lfs/git-lfs/wiki/Limitations)
+    - GitHub currently enforces a 2 GiB size limit per-object.
+    - GitHub has no way of delete remote Git LFS objects except from deleting the whole repository
+    - Windows clients with Git <2.34 corrupt files > 4Gb
 
 - https://github.com/filhodanuvem/gitql /go
   - a Git query language

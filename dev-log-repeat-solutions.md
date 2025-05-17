@@ -49,11 +49,11 @@ modified: 2021-07-20T13:50:23.433Z
     - 产品方向: 偏设计布局， 偏业务逻辑
     - 网盘: 数据展示和回收站，经典使用场景，大多数cms都有且用来存储资源
 
-- lts-tech-stack 可协作、可同步(离线)、版本历史、自动化
+- lts-tech-stack 可协作/同步(离线)、版本历史、自动化
   - 🌰 lts: vscode/ide/~~office~~, git/vcs(history/sync), LSP/MCP(backlink)/auto
     - 20230630: editor/slate  + table   + collab
     - 20250129: editor/vscode + triplit + sync(powersync/zerosync)
-  - vscode: monaco-editor + electron/BS/CS, coder-server, sourcegraph
+  - vscode: 🏘️ 支持BS/CS架构, monaco-editor + electron, coder-server
   - codemirror/prosemirror: state + view + commands + transform/ot/collab + virtualized
   - workflow/lowcode/automation: n8n, activepieces
   - version-history: rrweb, diff, format(.fodt), video-but-auto-update
@@ -81,7 +81,7 @@ modified: 2021-07-20T13:50:23.433Z
 - 🎯 roadmap: virtualized-draggable-table, cm-devtools, cm-noseditor, cm-hocus
   - 📝 编辑器，协作同步，版本分支，~~虚拟渲染, 分支版本, 协作冲突, undo/redo~~
   - 🔀🛢️ crdt版本历史, partial-replica、ivm, delta-db, 实时架构
-  - version-history+sync(for table/pdf), replay, motion-photo(标准)
+  - version-history+sync(for table/pdf), replay, motion/live-photo(标准)
   - replay(editor+tree+layout), reproducible
   - dynamic-schema/eav
   - 基于ast的架构: reka, tango-lowcode, ast优化常使用bytecode(data+logic)
@@ -150,10 +150,10 @@ modified: 2021-07-20T13:50:23.433Z
 ## solutions: inter(re)active knowledge-base/wiki
 
 - ✨ cms(content-mgmt)
+  - 👉 suite-docs  (MIT/django+blocknote)
   - 👉🏻 outline (apache2/sequelize+prosemirror)
   - 👉🏻 strapi      (MIT/knex+slate)
   - 👉🏻 directus   (AGPL/knex+vue3+tinymce5)
-  - suite-docs     (MIT/django+blocknote)
   - huly-platform  (EPL/tiptap/svelte//🐞jira)
   - zulip      (apache2/django)
   - think          (MIT/typeorm+tiptap)
@@ -161,8 +161,8 @@ modified: 2021-07-20T13:50:23.433Z
   - payloadcms     (MIT/drizzle+slate)
 - ✨ airtable-like(data-mgmt)
   - 👉🏻 nocodb     (AGPL/knex+nuxt3)
-  - 👉🏻 ethercalc   (MIT/nodejs+redis)
   - 👉🏻 grist   (apache2/typeorm+backbone)
+  - 👉🏻 ethercalc   (MIT/nodejs+redis)
   - baserow        (MIT/django+nuxt2)
   - rowy       (apache2/firebase+tinymce5)
   - locokit        (MIT/knex+vue2)
