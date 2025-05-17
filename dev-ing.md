@@ -339,6 +339,13 @@ add action to create quickSort1.mjs and add 3 test cases in it
   - js 786335673728065536
   - java 786790509908774912
 
+## 0518
+
+- [RC Config files. What are RC config files? | by Aadish N | Medium](https://medium.com/@aadishazzam/rc-files-403a2b7c80a9)
+  - .bashrc
+  - .npmrc
+  - .eslintrc
+
 ## 0514
 
 **昨天完成：**

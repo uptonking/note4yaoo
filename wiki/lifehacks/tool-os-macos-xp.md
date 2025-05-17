@@ -212,16 +212,29 @@ brew install gnupg
 - 
 
 - ## [[PostgreSQL] Installing PostgreSQL through Homebrew on MacOS - DEV Community _202304](https://dev.to/uponthesky/postgresql-installing-postgresql-through-homebrew-on-macos-388h)
+  - [How to Enable Remote Access to PostgreSQL 15 on macOS (Homebrew) _202501](https://medium.com/@jaatcodes/how-to-enable-remote-access-to-postgresql-15-on-macos-homebrew-95923e62166e)
 
-```JS
-// 👇 需要手动加上版本号，发行版默认可能是旧版
-brew install postgresql @15
+```sh
+# 👇 需要手动加上版本号，发行版默认可能是旧版
+brew install postgresql@15
 
-brew services start postgresql @15
+brew services start postgresql@15
 
-createuser - s postgres
+# -s, --superuser           role will be superuser
+createuser -s postgres
 psql - h localhost - U postgres
+
+# /opt/homebrew/var/postgresql@15/postgresql.conf
+
 ```
+```sql
+-- set pass
+ALTER USER postgres WITH PASSWORD '11111111';
+
+CREATE ROLE username WITH LOGIN SUPERUSER CREATEDB CREATEROLE PASSWORD 'password';
+
+```
+
 
 # discuss-macos
 - ## 

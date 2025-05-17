@@ -11,6 +11,11 @@ modified: 2022-06-13T03:00:51.734Z
 
 - [PostgreSQL wiki](https://wiki.postgresql.org/wiki/Main_Page)
   - [A Brief History of PostgreSQL](https://www.postgresql.org/docs/current/history.html)
+
+- cli-pg
+  - [psql](https://www.postgresql.org/docs/current/app-psql.html)
+  - [PostgreSQL Cheat Sheet - neon](https://neon.tech/postgresql/postgresql-cheat-sheet)
+  - [PostgreSQL command line cheatsheet](https://gist.github.com/Kartones/dd3ff5ec5ea238d4c546)
 # pg-tips
 - [Don't Do This - PostgreSQL wiki](https://wiki.postgresql.org/wiki/Don%27t_Do_This)
   - only do it if you know what you are doing

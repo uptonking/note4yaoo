@@ -20,6 +20,25 @@ modified: 2025-04-09T02:50:35.187Z
 
 - ## 
 
+- ## [How to add requirements.txt to uv environment - Stack Overflow](https://stackoverflow.com/questions/79344035/how-to-add-requirements-txt-to-uv-environment)
+```sh
+
+uv pip install -r requirements.txt
+
+# also add the requirements to the project's pyproject.toml
+uv add -r requirements.txt
+
+# install into the system Python environment.
+uv pip install --system
+```
+
+
+- ## 🆚 [What's the difference between `uv pip install` and `uv add` · Issue #9219 · astral-sh/uv _202411](https://github.com/astral-sh/uv/issues/9219)
+- The `uv pip` APIs are meant to resemble the pip CLI. 
+  - uv add, uv run, uv sync, and uv lock are what we call the "project APIs". These are "higher-level"
+- `pip install` will only install into its own environment, `uv pip install` can target other environments.
+  - `uv run script.py` will activate a virtual environment if necessary, and read PEP 723 inline metadata or sync your project if necessary, then call `python script.py` — the latter just uses your current environment as-is.
+
 - ## [The creators of ruff and uv are building a new static type checker for Python : r/Python _202501](https://www.reddit.com/r/Python/comments/1idk4ko/the_creators_of_ruff_and_uv_are_building_a_new/)
 - Free me from pylance please
   - pyright or based-pyright

@@ -12,21 +12,23 @@ modified: 2024-11-16T16:58:32.628Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🆚 [tx/rx which direction : r/networking](https://www.reddit.com/r/networking/comments/6muphz/txrx_which_direction/)
+- Rx is "receive", i.e. stuff coming in and waiting in queue to be processed.
+  - Tx is "transmit", i.e. stuff waiting in queue to go out.
 
 - ## 🆚️ What's the difference between load balancers, reverse proxies, and API Gateways?
 - https://x.com/Franc0Fernand0/status/1905922643837984991
 - 1. Load Balancers  
 Their main job is sending client requests to several servers. The goal is to spread the load evenly so there are no bottlenecks and the system works smoothly.  
 
-2. Reverse Proxies  
+1. Reverse Proxies  
 - They act as an intermediary for client requests, fetching data and communicating with servers on their behalf. They effectively hide the identity of the servers and provide them with increased security.  
 - The main benefit of a reverse proxy is that it adds another level of control and abstraction to make sure that network traffic between clients and servers flows smoothly. 
 - Reverse proxies reduce the risk of attacks and external threats and can provide additional benefits.   
 - For example, they can cache content to reduce server load and compress data to improve transmission speed. 
 - They also often handle SSL/TLS termination, which means they manage encrypted connections, offloading this task from the web servers.
 
-3. API Gateways 
+1. API Gateways 
 - Their main job is to serve as a single access point for all API calls. They send requests to the right microservices and gather the results. 
 - The main benefit of an API Gateway is that it makes the client interface for different servers easier to use. 
   - It can also enforce rules, add extra layers of protection, translate between web protocols, and collect data from many services. 

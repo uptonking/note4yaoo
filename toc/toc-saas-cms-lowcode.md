@@ -267,12 +267,31 @@ modified: 2023-01-20T21:59:47.792Z
   - https://www.odoo.com/
   - a suite of web based open source business apps.
   - The main Odoo Apps include an Open Source CRM, Website Builder, eCommerce, Warehouse Management, Project Management, Billing & Accounting, Point of Sale, Human Resources, Marketing, Manufacturing
+- https://github.com/tryton/tryton /GPL/202505/python
+  - https://foss.heptapod.net/tryton/tryton
+  - Tryton is business software, ideal for companies of any size, easy to use, complete and 100% Open Source.
+  - [GNU Health | Hacker News _201611](https://news.ycombinator.com/item?id=12984383)
+    - 👷(founder/CEO of Odoo):tryton is a fork of OpenERP. OpenERP is now known as Odoo
+    - Tryton's fork was motivated by disagreements on the technical and business directions.
+    - Odoo moved to the web, Tryton was attached to the GTK/rich client.
+    - The Tryton founders were 2 ex-employees of Odoo back in 2008 before the fork. Odoo had 5 employees at that time.
 
-- https://github.com/frappe/frappe /MIT/202411/python/js
-  - https://frappeframework.com/
-  - https://erpnext.com/
-  - Low code web framework for real world applications, in Python and Javascript
-  - Full-stack web application framework that uses Python and MariaDB on the server side and a tightly integrated client side library. Built for ERPNext.
+- https://github.com/frappe/erpnext /25kStar/GPLv3/202505/python
+  - https://frappe.io/erpnext
+  - 100% Open-Source ERP system to help you run your business.
+  - Projects
+  - Asset Management
+  - Order Management
+  - Accounting
+  - https://github.com/frappe/frappe /MIT/202505/python/js
+    - https://frappeframework.com/
+    - https://erpnext.com/
+    - Low code web framework for real world applications, in Python and Javascript
+    - Full-stack web application framework that uses Python and MariaDB on the server side and a tightly integrated client side library. Built for ERPNext.
+  - https://github.com/frappe/frappe-ui /MIT/202505/ts/vue
+    - a set of components and utilities for rapid UI development. 
+    - Components are built using Vue 3 and Tailwind
+    - Headless UI, tiptap, dayjs
 # in-memory/json-cms/dashboard
 - TiddlyWiki5 /7.5kStar/BSD/202311/js
   - https://github.com/Jermolene/TiddlyWiki5

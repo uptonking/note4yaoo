@@ -14,6 +14,10 @@ modified: 2023-10-28T13:46:14.957Z
 
 - ## 
 
+- ## [sql: support NOTIFY, LISTEN, and UNLISTEN commands of postgresql · Issue · cockroachdb/cockroach _201910](https://github.com/cockroachdb/cockroach/issues/41522)
+  - PostgreSQL has support for NOTIFY, LISTEN, and UNLISTEN commands which generate and listen for a notification, respectively. 
+  - This is not a part of SQL standard; however, some ORMs (like go-pg) seems to be using it.
+
 - ## How does Postgres decide when to use an index? Depends.
 - https://twitter.com/denismagda/status/1778445306662723747
 
