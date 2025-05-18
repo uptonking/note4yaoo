@@ -191,9 +191,10 @@ modified: 2023-02-07T17:38:05.336Z
   - an experimental personal task manager that represents tasks as nodes of a multitree, a class of directed acyclic graphs. 
   - The structure enables the subdivision of tasks
 
-- https://github.com/opf/openproject /GPLv3/202402/ruby
+- https://github.com/opf/openproject /GPLv3/202402/ruby/ts
   - https://www.openproject.org/
   - the leading open source project management software
+  - 🆚 [Best Open Source Odoo Alternative - OpenProject](https://www.openproject.org/project-management-software-alternatives/best-odoo-alternative/)
 
 - https://github.com/marcelovicentegc/octosync /MIT/202105/ts/inactive
   - An open-source solution to keep Github and Jira issues synchronized. 

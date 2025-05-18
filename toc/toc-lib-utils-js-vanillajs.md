@@ -176,7 +176,13 @@ modified: 2023-04-04T22:35:59.255Z
   - A DLNA, UPnP and HTTP(S) Media Server
   - It is capable of sharing video, audio and images between most modern devices. 
   - It was originally based on PS3 Media Server by shagrath, in order to ensure greater stability and file-compatibility.
+  - Connect to your media using any web browser on any device 
+  - Support for the largest range of media renderers. Connect to your media via UPnP or DLNA on a large selection of devices, whether television, audio device, gaming console
+  - Dynamic lookup of metadata for your media allows you to easily find related media.
   - [Universal Media Server | Comparison of Media Servers](https://www.universalmediaserver.com/comparison/)
+  - [Plugins needed? _202009](https://github.com/UniversalMediaServer/UniversalMediaServer/issues/2253)
+    - I looked for a Media Server to adapt for own projects in Java. The UMS has rests of plugin support in the code. I think, it is possible, to reactivate the plugin support. is this needed from others?
+    - When we supported plugins before, there were some but gradually they broke as our code moved on and the authors didn't update them.
 
 - https://github.com/gerbera/gerbera /GPLv2/202312/cpp
   - https://gerbera.io/

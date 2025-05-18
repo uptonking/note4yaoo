@@ -20,14 +20,6 @@ modified: 2025-05-17T18:55:18.257Z
 
 - ## 
 
-- ## [reengineering frontend ui rendering · Issue · odoo/odoo _202301](https://github.com/odoo/odoo/issues/109704)
-  - this xml view and js is very slow and generating server side makes respones for ui generation is very boring and slow for the user of software
-
-- LOL, even with server side rendering of xml views, odoo web client (it is javascript single page application in v16) is ridiculously slow. You want to make it even slower by transferring view generation code from server to the client ?
-  - It is already almost unbearably slow because odoo developers decided to move to a single-page-application design. This made 11+ versions of odoo slower and slower and slower. Just install odoo 10 and compare speed.
-# discuss
-- ## 
-
 - ## [Support CockroachDB as alternative to PostgreSQL · Issue · odoo/odoo _202202](https://github.com/odoo/odoo/issues/83730)
 - if you aren't at scale then you don't really need cockroachdb. Postgres is perfectly acceptable and all the major cloud services off it as a service again perfectly acceptable for even midsized installs.
   - But also being distributed it means sequential index performance sucks. And that is what Odoo uses for primary keys. And for an ERP that makes a whole lot of sense (compared to say GUIID's) if you think about the time value of information and how records are typically inserted.
@@ -36,6 +28,59 @@ modified: 2025-05-17T18:55:18.257Z
 
 - [sql: support NOTIFY, LISTEN, and UNLISTEN commands of postgresql · Issue · cockroachdb/cockroach _201910](https://github.com/cockroachdb/cockroach/issues/41522)
   - PostgreSQL has support for NOTIFY, LISTEN, and UNLISTEN commands which generate and listen for a notification, respectively. This is not a part of SQL standard; however, some ORMs (like go-pg) seems to be using it.
+
+- ## [reengineering frontend ui rendering · Issue · odoo/odoo _202301](https://github.com/odoo/odoo/issues/109704)
+  - this xml view and js is very slow and generating server side makes respones for ui generation is very boring and slow for the user of software
+
+- LOL, even with server side rendering of xml views, odoo web client (it is javascript single page application in v16) is ridiculously slow. You want to make it even slower by transferring view generation code from server to the client ?
+  - It is already almost unbearably slow because odoo developers decided to move to a single-page-application design. This made 11+ versions of odoo slower and slower and slower. Just install odoo 10 and compare speed.
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Open source ERP written in Go : r/golang _202412](https://www.reddit.com/r/golang/comments/1hnf6nx/open_source_erp_written_in_go/)
+  - developing an Odoo alternative with Go, Alpine.js, Templ and HTMX
+- There are many OpenSource ERP other than Odoo. Some things that Odoo has, and I don't believe can be decently achieved in a compiled language is:
+  - the capacity to extend existing models seamlessly
+  - this includes extending methods to change their behaviors
+  - a fool proof ORM with automatic search features, view generation, ..
+  - model-based permissions (compared to route-based/action-based) with configurable permission system (i.e. no hardcoded groups)
+- These features are IMO the strongest points of Odoo if you want to compare to it specifically.
+
+- This is why I don't believe that a compiled language can offer has much extensiom capabilities has an interpreted one.
+  - Odoo uses the same metaclass everywhere and uses the "__inherit__" attribute to classify the definitions. Then, a class is gemerated at runtime from the aggregated definitions. This is the runtime aggregation capability that is missing in Go and in all compiled languages. In python, you could replace the "models. Model" inheritance by something like: registry.add("mymodel", MyModel) This generation has massive advantages compared to inheritance.
+
+- I’ve worked for a startup which used Odoo. It has a lot of features and plug-ins people buy which could be how you can maybe revenue. A marketplace like steam and you take a cut is also another avenue.
+  - One major pain point personally for odoo was the dev experience. We used odoo 14 which was tightly coupled with Postgres 12. Upgrading odoo felt scary because there would be breaking changes. Also things like Celery was not easy to integrate.
+
+- What other hurdles(障碍；围栏) did you have with Odoo that we could improve on?
+  - The odoo ORM was atrocious(恶劣的, 糟糕的), they made their own implementation on top of psycopg. Since it’s on python, had dependency hell which as i mentioned made celery impossible to add without breaking everything.
+  - They had very bad default implementation like using the file system to store session cookies. To use redis for session store you can buy a plug-in but it was a 1 week task for me. I found this shady.
+  - The database migration system is super slow with no reason to be. We had a small product for a B2B where we had 1000 weekly active users. Our codebase wasn’t that big but still took 10s of minutes to migrate.
+  - For their UI system they used their own XML which was very convoluted. Strange inheritance rules.
+  - Access management for data was also half baked, could add rules on entire tables but not on columns via their dashboard. Example we have a table called Products, one group can add, edit product details. Only admin should be able to change the price. Would need to add those rules in code in a hacky way by an if condition.
+  - The dashboard was very very slow for the amount data and users we had. Would take minutes to filter, search and load screens.
+
+- 
+- 
+- 
+
+- ## [What doesn't Odoo get more love? : r/Odoo _202410](https://www.reddit.com/r/Odoo/comments/1fvwmzh/what_doesnt_odoo_get_more_love/)
+- I still believe Odoo is the best and most affordable ERP you can get. There is nothing else out there that matches the flexibility for the price you get from Odoo.
+  - Numbers of users is irrelevant for the implementation cost. It's about apps, industry, complexity, specifics on configuration, ...
+
+- as soon as you want something a little bit specific, you'll learn you have to use a module someone is selling. To use that module, you need Odoo.sh. That's, like 800$ a year more than the plan you were probably paying.
+
+- To be honest Odoo has flexibility other ERR systems users don't even expect to have. We're doing Acumatica implementation and Odoo implementation. Odoo get way more flexibility. Acumatica get more manuals. Odoo bigger community. Acumatica get some features better tested
+
+- For me, I believe that the issue is the complexity of the app. As a single person shop using Odoo is problematic due to the configuration overhead as compared to using more simplistic but specialized software.
+
+- We have spent hundreds of thousands of dollars on support and “Success Packs” to get it working correctly and accurately. We all have come to accept that it was not a good choice, and it definitely is not inexpensive.
+
+- Because there is a lot of competitors, and they are very localized
 
 - ## [Ask HN: Which NoCode platforms are fine? | Hacker News _202110](https://news.ycombinator.com/item?id=28984955)
 - Odoo is actively updated by large team in Belgium if I remember correctly, and their paid support is quite good. Odoo is Python atop Postgres, and uses a simple HTML/CSS/js for the frontend. Quite customizable
@@ -49,7 +94,7 @@ modified: 2025-05-17T18:55:18.257Z
   - This one also has a lot of traction. It's less advanced than Odoo but in my opinion it looks more clean Ui somehow. Sometimes for small and simple client projects, we propose Erpnext instead of Odoo. They also have way less friction with upgrades. It's not as crazy as Odoo year over year.
 - Flectra would be illegal to even exist in many countries. It is a legit scripted copy paste replacing "Odoo" by "Flectra".
 
-- The odoo app store is really where I think it will do well. We hade like 4 modules that we purchased and installed for our build
+- 🛒 The odoo app store is really where I think it will do well. We hade like 4 modules that we purchased and installed for our build
 
 - ERPNEXT could be the best alternative. Much cheaper for startups and 100% open source plus can be self hosted, which you own your data.
 
@@ -71,4 +116,11 @@ modified: 2025-05-17T18:55:18.257Z
 
 - Odoo is essentially a Python web framework (ORM, UI framework, etc) that happens to include a bunch of apps for typical business needs.
 
+- Odoo is not comparable to SAP or Oracle. We focus mostly on SMEs, with an approach "per app" rather than an ERP.
+
 - It is open core. More and more parts are removed from the open source part and require a license.
+
+- ## [Odoo: The new OpenERP | Hacker News _201405](https://news.ycombinator.com/item?id=7750020)
+- > built on the solid foundation of openERP.
+  - Solid foundation is a joke. OpenERP is probably one of the shittiest pieces of code every written in Python. Take a look at their ORM code. And, of course they still use floating points for accounting
+- the core and base modules (and in theory, all community modules, since they're derived works) of Odoo are Free Software (APGL) and available on Github

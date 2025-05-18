@@ -441,7 +441,7 @@ GPS丨Glonass丨BeiDou丨Galileo
 - [苹果iPhone 6S Plus（全网通）参数](http://detail.zol.com.cn/399/398690/param.shtml)
 # laptop
 
-## macbook air
+## macbook air m4
 
 - mac-xp
   - 20250427: 决定选择air，性能够用(公司用的是老款mbp-2019)，适合开会

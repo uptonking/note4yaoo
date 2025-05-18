@@ -57,6 +57,8 @@ modified: 2022-06-03T21:34:54.893Z
   - Docs is built on top of Django Rest Framework, Next.js, BlockNote.js, HocusPocus and Yjs.
   - 前端依赖next15、zustand、yjs、BlockNote、@react-pdf/renderer、react-pdf-table、tanstack-query5、cmdk、docx、idb、react-aria-components
   - 后端依赖djangorestframework3、beautifulsoup4、boto3、gunicorn、markdown、pycrdt、requests、python-magic
+  - 似乎为设计插件/扩展架构
+  - 📡 集成 suite-docs + odoo
   - Easy to install, scalable and secure alternative to Notion, Outline or Confluence
   - Offline? No problem, keep writing, your edits will get synced when back online
   - Built for productivity (markdown support, many block types, slash commands, keyboard shortcuts).
@@ -78,6 +80,10 @@ modified: 2022-06-03T21:34:54.893Z
     - `pycrdt-websocket` should be server-agnostic. We use it in jupyter_server which is based on Tornado, and in jupyverse which is based on FastAPI.
     - 👷 I feel this is a bit outside of my area of expertise tbh. It could be an interesting option - but it might be quite some work (so imo we'd need a strong reason to switch)
       - If you want to do operations on the document (change it's content) through the BlockNote API, or convert it to / from Markdown / HTML - this is easiest in a Node environment indeed.
+  - [Document sometimes freezes when sync editing _202412](https://github.com/suitenumerique/docs/issues/440)
+    - A user (Alice) without an error in the update method makes a change to the document
+    - Bob's update method throws an error
+    - Bob resyncs it's prosemirror state to the other user, effectively undoing Alice's change
 
 - https://github.com/docmost/docmost /AGPL/202503/ts
   - https://docmost.com/

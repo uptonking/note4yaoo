@@ -127,6 +127,8 @@ modified: 2020-12-28T12:24:09.275Z
   - Open-source developer platform to turn scripts into workflows and UIs. 
   - Open-source alternative to Airplane/Retool/pipedream.
   - 依赖svelte-headlessui、d3-dag
+  - Windmill is fully open-sourced (AGPLv3) and Windmill Labs offers dedicated instance and commercial support and licenses.
+
 - https://github.com/PipedreamHQ/pipedream /7.1kStar/Paid/202309/ts
   - https://pipedream.com/
   - an integration platform for developers.

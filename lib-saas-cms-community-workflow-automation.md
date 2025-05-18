@@ -97,7 +97,7 @@ modified: 2025-03-25T19:15:23.591Z
 - Activepieces: We used Zapier for a long period of time and ran into many issues that we weren’t able to fix by ourselves because of the closed app ecosystem, and had to pay increasing bills for simple tasks that could cost literally zero if we do them in code.
   - Later, we came across many people with similar problems and more; like not being able to process their data on their own machines, and that’s were we got inspired.
   - the real answer imo is that there is a rising movement for open-source alternatives that are loud about being alternatives to proprietary software, that’s why you read it every week very explicitly.
-# discuss-triggerdotdev
+# discuss-triggerdotdev ⛓️
 - ## 
 
 - ## 
@@ -125,7 +125,7 @@ modified: 2025-03-25T19:15:23.591Z
 - 
 - 
 
-# discuss-n8n
+# discuss-n8n ⛓️
 - ## 
 
 - ## [Wait for a trigger during the execution - Feature Requests - n8n Community _202311](https://community.n8n.io/t/wait-for-a-trigger-during-the-execution/32786/2)

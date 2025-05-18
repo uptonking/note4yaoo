@@ -35,7 +35,26 @@ Bottom Line: Success isn’t just about good code. It’s about presentation, ac
 # discuss
 - ## 
 
-- ## 
+- ## [Ask HN: what are examples of successful "open-source alternatives"? | Hacker News _202407](https://news.ycombinator.com/item?id=40848998)
+  - It seems like every day there's a Show HN post for another "open source alternative" to a popular SaaS app.
+  - this search shows 34 pages of results, with clones of everything from Notion to Jira to Hex to Figma to Carta. https://hn.algolia.com/?q=open+source+alternative
+  - succeeded as in "has a large user base" or as in "makes a lot of money"
+
+- no one mentioned LibreOffice yet? 200 million active users (!) seems like it's successful enough. 
+
+- I think the market share of ublock Origin helped limit the success of so-called "acceptable ads" schemes, where adblock makers took money for excluding certain ad providers.
+
+- OBS Studio - I found this to be a very valuable and successful application for video and audio editing, with some amazing companies sponsoring them.
+
+- GitLab is definitely the most obvious success at $600M+ in revenue, but a couple new ones are Cal.com and PostHog.
+
+- GitLab, Mattermost, RocketChat would be a few good examples of products that began as OSS alternatives to well-established players.
+
+- Blender didn't start as open source.
+
+- Reports from large bodies of users is they are very happy with https://OnlyOffice.com which some clients are on to avoid GSuite
+
+- It looks like baserow (open source alternative to AirTable) is making a fair amount of income.
 
 - ## WeChat、WeTerm，IDE叫WeCode好了
 - https://x.com/stephenzhang233/status/1906025084445454836

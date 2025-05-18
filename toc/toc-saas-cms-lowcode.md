@@ -253,7 +253,7 @@ modified: 2023-01-20T21:59:47.792Z
   - https://openstax.org/
   - The OpenStax CMS, built using Wagtail on top of Django.
   - SQLite is supported as an alternative to PostgreSQL
-# crm/erp
+# erp/crm
 - https://github.com/twentyhq/twenty /AGPLv3/202411/ts
   - https://twenty.com/
   - https://demo.twenty.com/
@@ -283,6 +283,10 @@ modified: 2023-01-20T21:59:47.792Z
   - Asset Management
   - Order Management
   - Accounting
+  - 🆚 [Here's why Open Source ERPNext is better than Odoo](https://frappe.io/erpnext/comparisons/erpnext-vs-odoo)
+    - odoo: Only some of the core modules are available for the public
+    - you can use ERPNext for free if you want to. You only have to pay if you need hosting, and even then, it’s significantly cheaper than alternatives like Odoo which make you pay per user.
+    - Odoo lets you customize applications without coding through Odoo Studio, but it’s only available on its most expensive plan.
   - https://github.com/frappe/frappe /MIT/202505/python/js
     - https://frappeframework.com/
     - https://erpnext.com/
@@ -292,6 +296,18 @@ modified: 2023-01-20T21:59:47.792Z
     - a set of components and utilities for rapid UI development. 
     - Components are built using Vue 3 and Tailwind
     - Headless UI, tiptap, dayjs
+
+- https://github.com/ever-co/ever-gauzy /2.6kStar/AGPL/202505/ts
+  - https://gauzy.co/
+  - Open Business Management Platform (ERP/CRM/HRM/ATS/PM)
+  - Ever® Gauzy™ - Open Business Management Platform for Collaborative, On-Demand and Sharing Economies.
+
+- https://github.com/erxes/erxes /3.6kStar/AGPL+EE/202505/ts
+  - https://erxes.io/
+  - source available experience management infrastructure.
+  - erxes is composed of 2 main components: XOS & Plugins
+
+
 # in-memory/json-cms/dashboard
 - TiddlyWiki5 /7.5kStar/BSD/202311/js
   - https://github.com/Jermolene/TiddlyWiki5
