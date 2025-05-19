@@ -293,9 +293,12 @@ console.trace(';; loadFile', path, loadType);
 ```
 
 ```
-^((?!(heartbeat|resourceMonit|refreshXtermCols)).)*$
 ^((?!(heartbeat|resourceMonit|refreshXtermCols|42\["multiTerminal)).)*$
+^((?!(heartbeat|resourceMonit|refreshXtermCols)).)*$
 ^(?!42\["resourceMonit).* 
+
+<!-- 观测云搜索 ide-server -->
+-multiTerminalHeartBeat -all\:multiTerminal -"[fromMQ] multiTerminal" -"[toMQ]paas:multiTerminal" 
 
 add action to add datetime at top of readme
 
@@ -338,6 +341,30 @@ add action to create quickSort1.mjs and add 3 test cases in it
   - py 784965933709307904
   - js 786335673728065536
   - java 786790509908774912
+
+## 0519
+
+- [fs - I need to create a 'touch' function in node.js - Stack Overflow](https://stackoverflow.com/questions/55342795/i-need-to-create-a-touch-function-in-node-js)
+  - fs.utimesSync(filename, time, time);
+
+
+```JS
+// 手动在文件树创建文件
+[
+  "fileTree",
+  {
+    "action": "CREATE",
+    "files": [{
+      "type": "FILE",
+      "name": "aa.md"
+    }],
+    "fileRootId": "home"
+  },
+  {
+    "currentDockerId": "795083519319052288"
+  }
+]
+```
 
 ## 0518
 
@@ -1161,13 +1188,17 @@ run_command: npx concurrently "cd backend && npm run start:dev" "cd admin-fronte
   - 优化ports启动白屏时间过长的问题、loading反馈
 
 - [`stat` command in Linux with examples - GeeksforGeeks](https://www.geeksforgeeks.org/stat-command-in-linux-with-examples/)
-  - stat -x aa.md
+  - `stat -x aa.md`; 
   - Birth: The time at which the file was created. 对于NFS系统，属性值为空
   - Change: The last time the at which file’s attribute or content was changed(the last time the file's metadata or contents were changed. Metadata includes file permissions, ownership, link count, etc.)
   - Modify: The last time at which file was modified(the last time the contents of the file were modified)
   - Access: The last time at which the file was accessed.
   - 在本地ubuntu系统，在vscode中拖拽移动文件时或通过mv移动文件时，只有ctime会变化
   - 在NFS系统，Birth一直为空, 通过mv移动文件时只有ctime会变化
+
+- [stat(1)](https://man.freebsd.org/cgi/man.cgi?query=stat&sektion=1)
+  - The -x option in the stat command is not a standard option in Linux's GNU stat utility
+  - This flag is typically associated with the BSD version of stat (e.g., on macOS or BSD-based systems), where -x displays file metadata in a more verbose, "human-readable" format
 
 ## 0217
 

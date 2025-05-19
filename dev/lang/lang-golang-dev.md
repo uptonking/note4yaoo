@@ -23,6 +23,10 @@ modified: 2023-08-28T06:08:27.303Z
 
 # resources
 
+- go-dev
+  - [a8m/golang-cheat-sheet: An overview of Go syntax and features.](https://github.com/a8m/golang-cheat-sheet)
+  - [Go cheatsheet](https://devhints.io/go)
+
 - ebooks
   - https://github.com/0voice/Introduction-to-Golang
 
