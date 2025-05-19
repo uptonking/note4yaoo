@@ -345,10 +345,31 @@ add action to create quickSort1.mjs and add 3 test cases in it
 ## 0519
 
 - [fs - I need to create a 'touch' function in node.js - Stack Overflow](https://stackoverflow.com/questions/55342795/i-need-to-create-a-touch-function-in-node-js)
-  - fs.utimesSync(filename, time, time);
-
+  - fs.utimesSync(filename, time, time); 
 
 ```JS
+// 在terminal cp文件夹 
+
+// 在terminal移动文件夹 <=[fromMQ] fileChange change1-add/2-del, type0-file
+{
+    "messageId": "40e04d09-34df-11f0-ac1b-0242ac110005",
+    "timestamp": 1747679391,
+    "replyMessageId": "",
+    "dockerId": "796297186127343616",
+    "fileChanges": [
+        {
+            "path": "ffo11",
+            "change": 2,
+            "type": 0
+        },
+        {
+            "path": "ffo112",
+            "change": 1,
+            "type": 1
+        }
+    ]
+}
+
 // 手动在文件树创建文件
 [
   "fileTree",
