@@ -293,8 +293,8 @@ console.trace(';; loadFile', path, loadType);
 ```
 
 ```
-^((?!(heartbeat|resourceMonit|refreshXtermCols|42\["multiTerminal)).)*$
-^((?!(heartbeat|resourceMonit|refreshXtermCols)).)*$
+^((?!(42\["heartbeat|resourceMonit|refreshXtermCols|42\["multiTerminal)).)*$
+^((?!(42\["heartbeat|resourceMonit|refreshXtermCols)).)*$
 ^(?!42\["resourceMonit).* 
 
 <!-- 观测云搜索 ide-server -->
@@ -342,32 +342,142 @@ add action to create quickSort1.mjs and add 3 test cases in it
   - js 786335673728065536
   - java 786790509908774912
 
+## 0520
+
+- [Using async/await with a forEach loop - Stack Overflow](https://stackoverflow.com/questions/37576685/using-async-await-with-a-foreach-loop)
+  - await y.forEach(async (x) => {})
+  - await Promise.all(y.map(async (x) => {}))
+  - Promise.all will run all the promises concurrently. 
+  - A for loop is meant to be sequential
+
 ## 0519
 
 - [fs - I need to create a 'touch' function in node.js - Stack Overflow](https://stackoverflow.com/questions/55342795/i-need-to-create-a-touch-function-in-node-js)
   - fs.utimesSync(filename, time, time); 
 
 ```JS
-// 在terminal cp文件夹 
+// <=[fromMQ] fileChange change1-add/2-del, type0-file
 
-// 在terminal移动文件夹 <=[fromMQ] fileChange change1-add/2-del, type0-file
+// 在terminal cp文件夹 
 {
-    "messageId": "40e04d09-34df-11f0-ac1b-0242ac110005",
-    "timestamp": 1747679391,
-    "replyMessageId": "",
-    "dockerId": "796297186127343616",
-    "fileChanges": [
-        {
-            "path": "ffo11",
-            "change": 2,
-            "type": 0
-        },
-        {
-            "path": "ffo112",
-            "change": 1,
-            "type": 1
-        }
-    ]
+  "messageId": "cd80c091-3527-11f0-8fb0-0242ac110004",
+  "timestamp": 1747710551,
+  "replyMessageId": "",
+  "dockerId": "796427839766491136",
+  "fileChanges": [{
+      "path": "ffo1111",
+      "change": 1,
+      "type": 1
+    },
+    {
+      "path": "ffo1111/ffo12",
+      "change": 1,
+      "type": 1
+    }
+  ]
+}
+
+// cp时包含文件
+{
+  "messageId": "f71f6ccd-3529-11f0-8fb0-0242ac110004",
+  "timestamp": 1747711480,
+  "replyMessageId": "",
+  "dockerId": "796427839766491136",
+  "fileChanges": [{
+      "path": "ffo1333",
+      "change": 1,
+      "type": 1
+    },
+    {
+      "path": "ffo1333/ffo12",
+      "change": 1,
+      "type": 1
+    },
+    {
+      "path": "ffo1333/ffo12/qqqzzz.md",
+      "change": 1,
+      "type": 0
+    }
+  ]
+}
+
+// 在terminal移动文件夹 - 包含文件
+
+{
+  "messageId": "55b06fba-3529-11f0-8fb0-0242ac110004",
+  "timestamp": 1747711209,
+  "replyMessageId": "",
+  "dockerId": "796427839766491136",
+  "fileChanges": [{
+      "path": "ffo1111",
+      "change": 2,
+      "type": 1
+    },
+    {
+      "path": "",
+      "change": 2,
+      "type": 0
+    },
+    {
+      "path": "ffo1222",
+      "change": 1,
+      "type": 1
+    }
+  ]
+}
+
+// 在terminal移动文件夹 
+{
+  "messageId": "cc543ff4-3524-11f0-8fb0-0242ac110004",
+  "timestamp": 1747709261,
+  "replyMessageId": "",
+  "dockerId": "796427839766491136",
+  "fileChanges": [{
+      "path": "ffo12",
+      "change": 2,
+      "type": 0
+    },
+    {
+      "path": "ffo11/ffo12",
+      "change": 1,
+      "type": 1
+    }
+  ]
+}
+
+{
+  "eventName": "fileTree",
+  "agentUesrId": "shell",
+  "playgroundId": "796427839711965184",
+  "dockerId": "796427839766491136",
+  "data": {
+    "action": "CREATE",
+    "files": [{
+      "type": "DIRECTORY",
+      "name": "ffo11/ffo12"
+    }],
+    "result": true
+  },
+  "timestamp": 1747709261188
+}
+
+// 在terminal重命名文件夹 
+{
+  "messageId": "40e04d09-34df-11f0-ac1b-0242ac110005",
+  "timestamp": 1747679391,
+  "replyMessageId": "",
+  "dockerId": "796297186127343616",
+  "fileChanges": [{
+      "path": "ffo11",
+      "change": 2,
+      "type": 0
+    },
+    {
+      "path": "ffo112",
+      "change": 1,
+      "type": 1
+    }
+  ]
 }
 
 // 手动在文件树创建文件
