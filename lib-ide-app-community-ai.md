@@ -143,6 +143,32 @@ modified: 2024-08-24T16:28:20.515Z
 # discuss-ide-ai
 - ## 
 
+- ## 
+
+- ## [Jules: An asynchronous coding agent | Hacker News _202505](https://news.ycombinator.com/item?id=44034918)
+- This has been proposed/exlored in 2023 already: ChatDev: Communicative Agents for Software Development - https://arxiv.org/abs/2307.07924
+
+- Google’s ability to offer inference for free is a massive competitive advantage vs everyone else
+  - > Yes, for now, Jules is free of charge. Jules is in beta and available without payment while we learn from usage. In the future, we expect to introduce pricing, but our focus right now is improving the developer experience.
+
+- Can it resolve merge conflicts for me? My least favorite programming task and one I haven't seen automated yet.
+  - Claude Code has been creating and cleaning up lots of Git messes for me.
+
+- Any coding solution that doesn’t offer the ability to edit the code in an IDE is nonsense. Why would I ever want this over cursor? The sync thing is kinda cool but I basically already do this with cursor
+
+- Notice how no-one (up until now) mentioned "Devin" or compared it to any other AI agent?
+
+- ## [Microsoft Open Sources Copilot | Hacker News _202505](https://news.ycombinator.com/item?id=44031344)
+- Is there a good way to replicate cursor tab in VS code? I don’t mean the interaction model, but how accurate it is. What model does Cursor use? It’s quite good AND fast.
+
+- So they make "building your own Cursor" easier. But at the same time they ban your fork from using Extension Marketplace.
+
+- ## 👾 [VS Code: Open Source Copilot : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kqhljr/vs_code_open_source_copilot/)
+- One of the biggest downsides for extensions vs. fork was the lack of access to UI. This will work towards better integration for all extensions. I like it.
+
+- The biggest downside, to date, is not being able to officially use it in Code Server which arguably should have been a first class thing for enterprise customers.
+- Yes and no, MCP and local models are not supported yet for enterprise customers (through vscode) and also since we can't easily install copilot in Code Server, the entirely of the functionality is non-existent.
+
 - ## 💰 Windsurf revealed today that they have 500k+ active users and ~1M messages sent a day.
 - https://x.com/deedydas/status/1893040524287971437
   - That’s 2% of the global software developer market of ~30M.

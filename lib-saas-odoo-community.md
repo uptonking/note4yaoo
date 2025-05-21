@@ -39,7 +39,25 @@ modified: 2025-05-17T18:55:18.257Z
 
 - ## 
 
-- ## 
+- ## [What's SAP, and why's it worth $163B? (2020) | Hacker News _202209](https://news.ycombinator.com/item?id=32776276)
+- Every single company I interacted with used SAP. It is the de facto software in its field and is deeply entrenched. Its UX is the most horribly wicked thing I’ve ever come across. 
+  - The initial learning curve felt far too high. 
+
+- Customizing odoo is a nightmare it is similar to "It doesn't do everything you want, but it does everything your business needs". (quote by Larry Ellison about Oracle ERP). Underneath its a mess but at least its open source.
+- What did you find is a mess about Odoo? And why is customizing it a nightmare?
+  - SQL database was a large amount of tables alike and if you try to add a feature that it doesn't implement yet (such as drop shipping capabilities) I couldn't figure it out because its not as simple as creating a new set of forms like in Django you basically have to understand the whole system and I think the task would take a year. It would have been better to integrate an existing system instead.
+
+- There are two major ERP software out there right now: SAP and Peoplesoft.
+  - SAP is the "European" way of doing things, which means there's one right way and you need to align your business to SAP's way of doing things. If you do that, things work very well.
+  - Peoplesoft is the "American" way of doing it, which means that you make your software fit around you. This means a lot of customizations. This makes integrations much more challenging if you're too far off kilter, and things like upgrading is much much harder, because there's too many customizations.
+  - That's the information I had about 10 years old and not sure how much SAP has evolved since then.
+- Oracle acquired Peoplesoft and Netsuite long ago. Oracle has its Fusion product where it attempts to fuse their acquisitions into one platform
+- PeopleSoft became part of Oracle (and now uses the Oracle brand) and some of their people left and founded Workday.
+
+- If anyone thinks about going for odoo - which I did for a customer - do yourself a favor and try anything else. Here's why:
+  - The developer experience is terrible, simple template changes need a your modules to be "upgraded" which means every change takes several seconds at least.
+  - The quality of the app ecosystem is so bad you almost can't install any non-core apps if you want to be able to maintain your project. And apps are incredibly expensive (250€ for a GDPR compliant cookie banner). 
+  - The documentation is partially non-existing and you're supposed to read odoo's code to know how things works - which is true, but quite time consuming.
 
 - ## [Open source ERP written in Go : r/golang _202412](https://www.reddit.com/r/golang/comments/1hnf6nx/open_source_erp_written_in_go/)
   - developing an Odoo alternative with Go, Alpine.js, Templ and HTMX
