@@ -301,6 +301,9 @@ edd.contentDOM.cmView.view === edd // true
   - 方便实现非行内的跨block的评论，行内评论和块级评论
   - 复制文本时不需要带上评论数据, 处理复制粘贴更简单
 
+- codemirror编辑器字体默认大小是 13px, 
+  - 如果编辑器外层dom的font-size是其他值 且 通过effect延迟设置字体，可能会有字体变大或变小的不良体验
+
 - To completely reset a state—for example to load a new document—it is recommended to create a new state instead of a transaction. 
   - That will make sure no unwanted state (such as undo history events) sticks around.
 

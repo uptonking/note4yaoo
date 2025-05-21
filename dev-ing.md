@@ -342,6 +342,12 @@ add action to create quickSort1.mjs and add 3 test cases in it
   - js 786335673728065536
   - java 786790509908774912
 
+## 0521
+
+- [EACCES: permission denied on yarn install · Issue · yarnpkg/yarn](https://github.com/yarnpkg/yarn/issues/1806)
+  - `sudo chmod -R 777 node_modules` just fine
+  - sudo npm i yarn --global
+
 ## 0520
 
 - [Using async/await with a forEach loop - Stack Overflow](https://stackoverflow.com/questions/37576685/using-async-await-with-a-foreach-loop)
@@ -353,7 +359,7 @@ add action to create quickSort1.mjs and add 3 test cases in it
 ## 0519
 
 - [fs - I need to create a 'touch' function in node.js - Stack Overflow](https://stackoverflow.com/questions/55342795/i-need-to-create-a-touch-function-in-node-js)
-  - fs.utimesSync(filename, time, time); 
+  - `fs.utimesSync(filename, time, time)`; 
 
 ```JS
 // <=[fromMQ] fileChange change1-add/2-del, type0-file
