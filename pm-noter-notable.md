@@ -15,7 +15,7 @@ modified: 2023-11-28T14:48:45.910Z
   - 💰 market: lowcode(editor/automation), playground(preview+code+pdf)
   - ⏳ versioning and branching: 基于oplog/events实现, draft/public, replay, diff
   - 🤝 collaboration-ready: 基于crdt
-  - ⛓️ automation/workflow/rpa: 给予dag
+  - ⛓️ automation/workflow/rpa: 基于dag，结合lowcode
   - 📱 mobile-editor: phone/pad, 自定义编辑器可以是主特性，也可以是锦上添花
   - mobile-app-generator
   - end-user database: 支持用户自定义数据和流程, multi views
@@ -27,10 +27,6 @@ modified: 2023-11-28T14:48:45.910Z
   - 👾 产品设计阶段可将 AI 作为用户，用来onboarding引导操作及问答，还可以在系统内预置数据并将owner设为AI，可用来提供模版及引导用户测试
 
 - selling-point-knowledge-base
-  - features
-    - classic 多文件知识库(ide)
-    - mobile-first + markdown 知识库
-    - automation(lowcode)
   - 通用或单一的builder价值不大，但针对业务平台特别是app-store的builder对平台方和开发者的价值都很大
   - ⌛️ version history
     - diff
@@ -45,7 +41,9 @@ modified: 2023-11-28T14:48:45.910Z
   - 🪟 table
     - diff
     - ✨ markdown-table的wysiwyg是一个痛点和卖点
+    - 基于文本的table格式: gfm, front-matter-yaml; + diff
     - split-table
+    - export: copy-md-table, copy-list
   - ⚖️ markdown support with git-like database
     - widely used, enterprise-loved(易盈利)
     - hotkeys
@@ -100,15 +98,16 @@ modified: 2023-11-28T14:48:45.910Z
 - 特色功能点
   - localizable note file(not local-first)
   - keyboard shortcuts(accessible): 参考office、vscode、浏览器不冲突
-  - api doc，生成openapi/swagger ui风格的文档
-    - 针对开发者的文档也有市场和融资，支持swagger/postman
-  - hero block，类似在一页ppt上只显示一个大号的单词/短语，以醒目突出
-  - examples as notes
+  - blocks-store/templates
+    - hero block，类似在一页ppt上只显示一个大号的单词/短语，以醒目突出
   - instant-preview
     - 类似typora的即时预览，可选择 行内/上下 两种结构
     - 类似observable-notebook的上下结构可减少页面reflow
   - dev-tools, instead of wrapper like react-ag-grid，需要大量时间，可跨平台
   - 文章段落查重，也可用于论文查重、评论查重
+  - examples as notes
+  - api doc，生成openapi/swagger ui风格的文档
+    - 针对开发者的文档也有市场和融资，支持swagger/postman
 
 - 难点
   - 对于嵌入到note中的本地媒体资源如图片、视频、音频，如何解析、存储、渲染更好
@@ -130,6 +129,8 @@ modified: 2023-11-28T14:48:45.910Z
 # business-apps
 - 知识库的市场
   - 客服系统自动回复，并显示相关历史
+  - classic 多文件知识库(ide)
+  - mobile-first + markdown 知识库
 
 - naming
   - mandroid (from android+manus)
@@ -147,6 +148,7 @@ modified: 2023-11-28T14:48:45.910Z
 
 - obsidian-mobile, notion-mobile
   - obsidian-open-rewrite compatible with obsidian plugin, 主流插件已达到百万下载
+  - obsidian bases database
 
 - git-statistics ui， 可参考 pingcap/ossinsight
   - auto generate cover by content/fields
