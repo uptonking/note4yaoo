@@ -23,12 +23,29 @@ modified: 2024-01-30T14:41:38.742Z
   - Comlink turns this messaged-based API into a something more developer-friendly by providing an RPC implementation: Values from one thread can be used within the other thread (and vice versa) just like local values.
   - Comlink works with Node’s `worker_threads` module
 
+- https://github.com/Aaronius/penpal /MIT/202504/ts
+  - Penpal simplifies communication with iframes, workers, and windows by using promise-based methods on top of postMessage.
+  - When sending a value between windows or workers, the browser uses a structured clone algorithm by default to clone the value as it is sent. As a result, the value will exist in memory multiple times
+  - To address this scenario, browsers support transferable objects which allow certain types of objects to be transferred between contexts.
+  - In fairly rare cases, you may wish to make parallel connections between two participants. Penpal provides the concept of channels. 
+
 - evolu /101Star/GPLv3/202210/ts
   - https://github.com/evoluhq/evolu
   - https://www.evolu.dev/
   - React Hooks library for local-first software with end-to-end encrypted backup and sync using SQLite and CRDT
   - 依赖fp-ts、protobuf、kysely、murmurhash、~~zod~~
   - 提供了dbworker.worker
+
+- https://github.com/web-infra-dev/unport /MIT/202407/ts/还可参考openrpc
+  - A Universal Port with strict type inference capability for cross-JSContext communication.
+  - Unport emerges as a well-architected solution, meticulously designed to simplify the complexity revolving around various JSContext environments.
+    - Node.js, ChildProcess, Webview, Web Worker, worker_threads, WebSocket, iframe, MessageChannel, ServiceWorker, and much more.
+  - Each of these JSContext environments exhibits distinct methods of communicating with the external world
+    - the lack of defined types can make handling the code for complex projects an arduous task.
+  - You only need to define the message types (MessageDefinition) and Intermediate communication channel (Channel) that different JSContexts need to pass, and you will get a unified type of Port
+    - a MessageDefinition is a crucial concept that defines the structure of the messages that can be sent and received through a Channel.
+    - a Channel is a fundamental concept that represents a Intermediate communication pathway between different JavaScript contexts
+  - unrpc: Starting with the 0.6.0 release, we are experimentally introducing support for Typed RPC
 
 - https://github.com/StudentOfJS/query-plus
   - fetch and process data in web worker, store in indexedDB.

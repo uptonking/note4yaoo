@@ -276,9 +276,13 @@ EditorState.transactionFilter.of(tr => {
 
 - ## 
 
-- ## 
+- ## [Need to capture beginning of word - discuss. CodeMirror](https://discuss.codemirror.net/t/need-to-capture-beginning-of-word/1047)
+- `findWordAt` will return a range around a piece of whitespace if the cursor is in front of whitespace, so it’s probably not doing what you expect it to do here.
+  - There is no built-in function that does this for you, you’ll have to scan through the text yourself.
 
-- ## 
+- ## 🤔 [Retrieve text at cursor position before and after up to boundary character - v6 - discuss. CodeMirror _202208](https://discuss.codemirror.net/t/retrieve-text-at-cursor-position-before-and-after-up-to-boundary-character/4805)
+- you could get the syntax tree and figure out which statement node is around or before the cursor from that.
+  - Try `state.sliceDoc(node.from, node.to)`
 
 - ## 🌰 [Distinguish User Input Updates - v6 - discuss. CodeMirror _202209](https://discuss.codemirror.net/t/distinguish-user-input-updates/5052)
   - I needed to know if the document had changed due to direct user input in that specific CodeMirror instance, not due to other extensions or an external source changing the document

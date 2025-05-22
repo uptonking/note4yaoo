@@ -144,6 +144,15 @@ modified: 2025-04-12T19:18:28.788Z
   - Code lens (references/implementations)
   - Annotation processing support (automatic for Maven projects)
   - Choose a value for `-data`: An absolute path to your data directory. eclipse.jdt.ls stores workspace specific information in it. This should be unique per workspace/project.
+  - [Taking JDT LS to next level _202301](https://github.com/eclipse-jdtls/eclipse.jdt.ls/discussions/2388)
+    - Today JDT.LS use JDT.Core underneath for implement LS support for Java. JDT.Core comes with a long history and therefore the design might be bit of complex to move forward faster.
+    - JDT has some issues around when it comes the Java Parser and AST resolution which brings issues time to time mostly in Completions but also in Compilation as well. One issues that I observe is the Parser implementation has become some what complex and only known by few who has worked from the beginning. 
+    - For the compiler part, we could keep on using Eclipse JDT Compiler or look for Javac 
+    - I know that JDT compiler is fast and more memory efficient, But considering effort we have to put to maintain it while Java team already provides a compiler, Should we spend that time on improving the LS for better Java Editing experience ?
+    - Both NetBeans and georgewfraser/java-language-server are built on top of javac. Using javac as AST parser is one direction we want to explore.
+    - It looks like javac is at least partly fault-tolerant, generates some not too bad AST
+    - another aspect of the problem is illustrated in this picture: ECJ's Parser is the root of a relatively big class hierarchy; and it's not obvious to know which parsers are meant to do what, what specificity they provide that make an extra parser useful. 
+    - The features that depend on these ECJ parser variants are the real challenging part if switching to Javac parser. We may need to resturcture the JDT code or even rewrite the feature to make it compatible with Javac.
   - [Provide an API endpoint that accepts a fully qualified class name as input and returns the source code content of the class definition. This will be used to support AI tools or resource calls. · eclipse-jdtls/eclipse.jdt.ls · Discussion _202504](https://github.com/eclipse-jdtls/eclipse.jdt.ls/discussions/3437)
     - I propose introducing a feature that allows Cursor to retrieve the source code definition of a class located in a JAR dependency, using its Fully Qualified Name (FQN). 
   - [Question, How to "GoToDefination" for JDK package? _202111](https://github.com/eclipse-jdtls/eclipse.jdt.ls/issues/1931)
@@ -216,4 +225,10 @@ modified: 2025-04-12T19:18:28.788Z
   - Multi-Language Support
   - Language Server Protocol (LSP) Support
   - Advanced Search Features
+
+- https://github.com/isaacphi/mcp-language-server /BSD/202505/go
+  - This is an MCP server that runs and exposes a language server to LLMs
+  - helps MCP enabled clients navigate codebases more easily by giving them access semantic tools like get definition, references, rename, and diagnostics.
+  - This codebase makes use of edited code from gopls to handle LSP communication.
+  - mcp-go is used for MCP communication.
 # more

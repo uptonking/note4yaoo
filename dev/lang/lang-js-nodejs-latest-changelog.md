@@ -10,6 +10,7 @@ modified: 2022-12-31T20:13:33.307Z
 # guide
 
 - resources
+  - [Node.js Releases: latest/lts/maintenance/end](https://nodejs.org/en/about/previous-releases)
   - [Node.js Release Blog Posts](https://nodejs.org/en/blog/release)
   - [Node.js Previous Releases with dates](https://nodejs.org/en/download/releases/)
   - [Node.js ES2015/ES6, ES2016 and ES2017 support](https://node.green/)

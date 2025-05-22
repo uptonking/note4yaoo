@@ -34,7 +34,7 @@ modified: 2025-01-05T15:00:07.466Z
   - 方案1: 添加language server网关gateway，lsp client 每次发送的事件如textDocument/hover时都添加新字段lspLang，网关服务根据lspLang转发到对应server处理
   - 方案2: 添加language server网关gateway，lsp client 发送的事件不变，网关服务根据didOpen事件自动判断language并缓存，然后将后续请求如textDocument/hover转发到对应的server处理
   - 备注: 需要考虑多人协同编辑不同语言文件的场景。还要确保不同用户的同名文件不会混淆, 如一个关了另一个没关。
-- 🤔🤔 上面的方案都是客户端主动发送languageId给gateway，可以改造下，方案1的语言由gateway根据请求参数location的文件后缀自动识别再转发到对应language server，而不用加在消息体中
+- 🤔🤔 上面的方案都是客户端主动发送languageId给gateway，可以改造下，方案1的语言由gateway根据请求参数location的文件后缀自动识别再转发到对应language server，而不用加在消息体中，这种方案需要手动解包再修改再传递？
   - 语言检测兜底逻辑，若客户端未正确发送 languageId（如自定义文件类型），网关可通过文件扩展名或内容启发式判断语言。
   - 🤔 codesandbox/replit/github-codespace 都复用了一条websocket，会定制传递LSP消息的格式
 
@@ -51,10 +51,12 @@ modified: 2025-01-05T15:00:07.466Z
 
 # dev-xp
 
-- 有些language server如java-jdtls在初始化的 `initialize` 事件只会返回部分支持的 capabilities, 比如其中不包含hoverProvider/definitionProvider但server实际支持此能力
-  - 一种思路是首次触发 textDocument/hover 事件后根据结果来判断server到底是否支持此能力
+- 有些language server如java-jdtls在初始化时的 `initialize` 事件只会返回部分支持的 capabilities, 比如其中不包含hoverProvider/definitionProvider但server实际支持此能力
+  - 实测将`initialize`事件参数中的 `dynamicRegistration` 设为false或去掉，可以在response中获取到capabilities
+  - 另一种思路是，开启dynamicRegistration后lsp server会向lsp client发送 `client/registerCapability` 事件，根据事件结果可以手动更新 client capabilities
+  - 另一种思路是首次触发 textDocument/hover 事件后根据结果来判断server到底是否支持此能力
 
-- 基于web worker实现LSP的缺点，对于更新types不友好
+- 基于web worker实现LSP的缺点，对于更新内容和types不友好
   - a language server requires all source code files be available on a local disk
   - The goal of the Language Server Index Format is to augment the LSP protocol to support rich code navigation features without these requirements. 
 
@@ -63,7 +65,7 @@ modified: 2025-01-05T15:00:07.466Z
 - 纯前端实现lint的缺点
   - 支持js/ts外的语言较困难
   - 跨文件的类型lint在前端难以实现
-  - 前端引入lint工具包和规则包会显著增加体积
+  - 前端引入lint工具包和规则包会显著增加体积，降低性能
 
 ```JS
 // response
@@ -136,6 +138,32 @@ modified: 2025-01-05T15:00:07.466Z
   - import三方库 "\n```typescript\nmodule  absolute/path/to/src.js```"
 
 ```JS
+{
+  "contents": {
+    "kind": "markdown",
+    "value": "```python\n(method) def format(\n    *args: object,\n    **kwargs: object\n) -> str\n```\n---\nReturn a formatted version of the string, using substitutions from args and kwargs.\nThe substitutions are identified by braces ('{' and '}')."
+  },
+  "range": {
+    "start": {
+      "line": 19,
+      "character": 44
+    },
+    "end": {
+      "line": 19,
+      "character": 50
+    }
+  }
+}
+
+{
+  "contents": [{
+      "language": "java",
+      "value": "java.lang.System"
+    },
+    "The `System` class contains several useful class fields and methods. It cannot be instantiated. Among the facilities provided by the `System` class are standard input, standard output, and error output streams; access to externally defined properties and environment variables; a means of loading files and libraries; and a utility method for quickly copying a portion of an array.\n\n *  **Since:**\n    \n     *  1.0"
+  ]
+}
+
 // method: textDocument/hover
 // result: Hover | null
 
@@ -178,11 +206,11 @@ export type MarkupKind = 'plaintext' | 'markdown';
 - ux
 - vscode/idea 在按住cmd+click时，会跳转到目标位置并高亮，并将光标设在高亮范围的开头，高亮很快消失
   - zed会将光标设在高亮范围的末尾
-  - 💡 将光标设在开头更合理和一致，因为cmd+click点击 import的路径部份会跳转到整个文件
+  - 💡 将光标设在开头更合理和一致，因为cmd+click点击 import的路径 会跳转到整个文件
   - vscode/zed按住cmd就会显示下划线，idea需要按住且轻微移动鼠标才会显示下划线样式
   - vscode/zed cmd+click跳转会自动居中定义所在行，若在变量仅在1处使用，则会跳转到使用处
 - 对于有多个定义项的场景
-  - vscode会显示一个占满编辑器宽度的popover来展示，左边是编辑器、右边是定义列表
+  - vscode会显示一个占满编辑器宽度的popover来展示，左边是编辑器、右边是定义列表， 其实不是popover而是嵌入式卡片
     - 默认定位在当前文件的定义处,编辑器显示最新内容(split-view)
   - zed会在新标签页(defintions for variable)来展示，占满编辑器宽度的定义列表
     - 默认定位在当前文件的定义处
@@ -366,4 +394,91 @@ export type MarkupKind = 'plaintext' | 'markdown';
 - replit的ssh/在本地vscode打开是付费功能
   - replit的定义跳转未直接使用LSP，使用自定义river协议来传输二进制数据
   - codesandbox的定义跳转也未直接使用LSP，用的是自定义二进制协议
+
+### codeAction
+
+```JS
+[{
+    "title": "Browse gopls feature documentation",
+    "kind": "gopls.doc.features",
+    "command": {
+      "title": "Browse gopls feature documentation",
+      "command": "gopls.client_open_url",
+      "arguments": [
+        "https://github.com/golang/tools/blob/master/gopls/doc/features/README.md"
+      ]
+    }
+  },
+  {
+    "title": "Add test for main",
+    "kind": "source.addTest",
+    "command": {
+      "title": "Add test for main",
+      "command": "gopls.add_test",
+      "arguments": [{
+        "uri": "file:///Users/yaoo/Documents/repos/com2024-showmebug/yaoo/codemirror6-lsp-typescript-language-server/example-projects/go-gin-gorm/main.go",
+        "range": {
+          "start": {
+            "line": 20,
+            "character": 11
+          },
+          "end": {
+            "line": 20,
+            "character": 30
+          }
+        }
+      }]
+    }
+  },
+  {
+    "title": "Browse amd64 assembly for main",
+    "kind": "source.assembly",
+    "command": {
+      "title": "Browse amd64 assembly for main",
+      "command": "gopls.assembly",
+      "arguments": [
+        "1",
+        "github.com/examples-hub/realworld-gin-gorm",
+        "main.main"
+      ]
+    }
+  },
+  {
+    "title": "Browse free symbols",
+    "kind": "source.freesymbols",
+    "command": {
+      "title": "Browse free symbols",
+      "command": "gopls.free_symbols",
+      "arguments": [
+        "1",
+        {
+          "uri": "file:///Users/yaoo/Documents/repos/com2024-showmebug/yaoo/codemirror6-lsp-typescript-language-server/example-projects/go-gin-gorm/main.go",
+          "range": {
+            "start": {
+              "line": 20,
+              "character": 11
+            },
+            "end": {
+              "line": 20,
+              "character": 30
+            }
+          }
+        }
+      ]
+    }
+  },
+  {
+    "title": "Show compiler optimization details for \"go-gin-gorm\"",
+    "kind": "source.toggleCompilerOptDetails",
+    "command": {
+      "title": "Show compiler optimization details for \"go-gin-gorm\"",
+      "command": "gopls.gc_details",
+      "arguments": [
+        "file:///Users/yaoo/Documents/repos/com2024-showmebug/yaoo/codemirror6-lsp-typescript-language-server/example-projects/go-gin-gorm/main.go"
+      ]
+    }
+  }
+]
+```
+
 # more

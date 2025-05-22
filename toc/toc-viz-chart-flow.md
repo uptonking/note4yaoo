@@ -208,6 +208,12 @@ modified: 2020-10-22T10:22:55.878Z
 - https://github.com/towersxu/draft-flow
   - 基于LogicFlow和rough.js实现的手绘风格流程图
 
+- https://github.com/bytedance/flowgram.ai /MIT/202505/ts
+  - https://flowgram.ai/
+  - a node-based flow building engine that helps developers quickly create workflows in either fixed layout or free connection layout modes.
+  - Fixed layout: where nodes can be dragged to specified positions, with support for compound nodes like branches and loops.
+  - Free layout: where nodes can be placed anywhere and connected using free-form lines.
+
 - https://github.com/alibaba/butterfly /js
   - 基于JS的数据驱动的节点式编排组件库
   - 利用DOM/REACT/VUE来定制元素；灵活性，可塑性，拓展性优秀

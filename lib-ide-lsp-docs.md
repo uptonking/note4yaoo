@@ -85,6 +85,10 @@ modified: 2025-01-05T15:00:20.963Z
   - notification is sent from the tool informing the language server that the document is now no longer in memory. 
   - The current contents are now up to date on the file system.
 
+- textDocument/codeAction
+  - These commands are typically code fixes to either fix problems or to beautify/refactor code
+  - To ensure that a server is useful in many clients, the commands specified in a code actions should be handled by the server and not by the client 
+
 - This example illustrates how the protocol communicates with the language server at the level of document references (URIs) and document positions. 
   - The fact that the data types are simple and programming language neutral simplifies the protocol significantly. 
   - It is much simpler to standardize a text document URI or a cursor position compared with standardizing an abstract syntax tree and compiler symbols across different programming languages.
@@ -106,7 +110,10 @@ modified: 2025-01-05T15:00:20.963Z
   - There is currently no support in the protocol to share one server between different tools. 
   - Such sharing would require additional protocol e.g. to lock a document to support concurrent editing.
 
-- the server may decide to use a parallel execution strategy and may wish to return responses in a different order than the requests were received. The server may do so as long as this reordering doesn’t affect the correctness of the responses
+- The set of capabilities is exchanged between the client and server during the `initialize` request.
+
+- the server may decide to use a parallel execution strategy and may wish to return responses in a different order than the requests were received. The server may do so as long as this reordering doesn’t affect the correctness of the responses 
+  - the server most likely should not reorder textDocument/definition and textDocument/rename requests, since executing the latter may affect the result of the former.
 
 - Care should be taken to handle encoding in URIs. but clients and servers should be consistent with the form they use themselves to ensure the other party doesn’t interpret them as distinct URIs. 
   - Clients and servers should not assume that each other are encoding the same way (for example a client encoding colons in drive letters cannot assume server responses will have encoded colons). 
@@ -143,7 +150,14 @@ modified: 2025-01-05T15:00:20.963Z
 - AnnotatedTextEdit： The support is guarded by the client capability `workspace.workspaceEdit.changeAnnotationSupport`. 
   - If a client doesn’t signal the capability, servers shouldn’t send AnnotatedTextEdit literals back to the client.
 
-- 
+## considerations
+
+- Servers usually support different communication channels (e.g. stdio, pipes, …). To ease the usage of servers in different clients it is highly recommended that a server implementation supports the following command line arguments to pick the communication channel:
+  - stdio: uses stdio as the communication channel.
+  - pipe: use pipes (Windows) or socket files (Linux, Mac) as the communication channel. The pipe / socket file name is passed as the next arg or with --pipe=.
+  - socket: uses a socket as the communication channel. The port is passed as next arg or with --port=.
+  - node-ipc: use node IPC communication between the client and the server. This is only supported if both client and server run under node.
+
 - 
 - 
 - 

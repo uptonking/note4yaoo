@@ -152,11 +152,16 @@ modified: 2023-04-04T22:35:59.255Z
 - https://github.com/unjs/knitwork /ts
   - Utilities to generate JavaScript code.
 # patterns
-- https://github.com/web-infra-dev/unport /ts/cross-runtime
+- https://github.com/web-infra-dev/unport /MIT/202407/ts/还可参考openrpc
   - A Universal Port with strict type inference capability for cross-JSContext communication.
   - Unport emerges as a well-architected solution, meticulously designed to simplify the complexity revolving around various JSContext environments.
-  - Node.js, ChildProcess, Webview, Web Worker, worker_threads, WebSocket, iframe, MessageChannel, ServiceWorker, and much more.
+    - Node.js, ChildProcess, Webview, Web Worker, worker_threads, WebSocket, iframe, MessageChannel, ServiceWorker, and much more.
   - Each of these JSContext environments exhibits distinct methods of communicating with the external world
+    - the lack of defined types can make handling the code for complex projects an arduous task.
+  - You only need to define the message types (MessageDefinition) and Intermediate communication channel (Channel) that different JSContexts need to pass, and you will get a unified type of Port
+    - a MessageDefinition is a crucial concept that defines the structure of the messages that can be sent and received through a Channel.
+    - a Channel is a fundamental concept that represents a Intermediate communication pathway between different JavaScript contexts
+  - unrpc: Starting with the 0.6.0 release, we are experimentally introducing support for Typed RPC
 
 - https://github.com/jcubic/sysend.js /202306/js
   - a small library that allows to send messages between pages that are open in the same browser

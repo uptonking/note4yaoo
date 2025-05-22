@@ -29,12 +29,13 @@ modified: 2024-06-30T03:28:19.638Z
 - ## 
 
 - ## [Make jupyterlab_server optional _202109](https://github.com/jupyterlab/jupyterlab/issues/11101)
-- JupyterLab currently depends on jupyterlab server. For alternative servers to the JupyterLab frontend, such as jupyverse, this dependency is really not necessary, and makes the installation more problematic.
+  - JupyterLab currently depends on jupyterlab server. 
+  - For alternative servers to the JupyterLab frontend, such as jupyverse, this dependency is really not necessary, and makes the installation more problematic.
 
-- 
-- 
-- 
+- It would indeed be great if JupyterLab could work without the full set of endpoints exposed by jupyterlab_server. This would also make it easier to build custom distributions
 
+- 202505: FWIW I created jupyterlab-js which just distributes JupyterLab's static assets.
+  - I opened jupyter-server/jupyverse#489 so that jupyverse doesn't depend on jupyter-server.
 # discuss-cluster
 - ## 
 

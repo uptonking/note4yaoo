@@ -12,7 +12,16 @@ modified: 2025-01-05T15:00:51.509Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [Should initialize result be sent after build? · Issue · eclipse-jdtls/eclipse.jdt.ls _201708](https://github.com/eclipse-jdtls/eclipse.jdt.ls/issues/337)
+  - Currently eclipse.jdt.ls initialization flow triggers an asynchronous build job which take some time. However capabilities are sent to client immediately.
+  - There is no guarantee that the capabilities are really available since the build process might fail.
+  - To me it means that after initialize result the client can send requests. Currently it can, but the response takes too much time to complete.
+
+- As I understand it, the official LSP answer is to use dynamic registration - the LSP server should initially not register its capabilities, but then once the build has finished then it does register its capabilities.
+
+- [Specification](https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/)
+  - Server must not register the same capability both statically through the initialize result and dynamically for the same document selector. 
+  - If a server wants to support both static and dynamic registration, it needs to check the client capability in the initialize request and only register the capability statically if the client doesn’t support dynamic registration for that capability.
 
 - ## [Langserver.org – A community-driven source for Language Server implementations | Hacker News _202002](https://news.ycombinator.com/item?id=22442133)
 - 
