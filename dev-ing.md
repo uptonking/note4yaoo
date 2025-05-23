@@ -270,7 +270,7 @@ console.log(';; task ', taskState, runningTaskAction, task?.task_steps)
 
 console.log(';; act-file-o ', currentOpenedActionId, shouldForceOpenFile, actionPath, currentFilePath)
 
-·· console.log(';; taskActions', currentActionId, path, store.cdePlay.enableDiffView(), currentAction, taskActions)
+console.log(';; taskActions', currentActionId, path, store.cdePlay.enableDiffView(), currentAction, taskActions)
 console.log(';; open-diff ', enableDiffAnimation, store.cdePlay.enableDiffView(), store.cdeReplay.isMachinePaused())
 console.log(';; qryDiffSnap ', snapshotFrameResult)
 console.log(';; qryDiffSnap ', snapshotFrameResult)
@@ -341,6 +341,43 @@ add action to create quickSort1.mjs and add 3 test cases in it
   - py 784965933709307904
   - js 786335673728065536
   - java 786790509908774912
+
+## 0523
+
+```JS
+// file request
+[
+  "file",
+  {
+    "path": "conduit/app.py",
+    "fileRootId": "home",
+    "fileRootPath": "",
+    "readOnly": false,
+    "loadType": "default",
+    "timestamp": 1747992586816,
+  },
+  {
+    "currentDockerId": "794044105415118848"
+  }
+]
+
+// file response
+{
+  "agentUserId": "12cdfe61-72ca-4046-be33-9c2af5d23af4",
+  "data": {
+    "revision": 54,
+    "openedPath": "conduit/app.py",
+    "isRefresh": false,
+    "isBinary": false,
+    "ext": "py",
+    "mapSelection": {},
+    "content": "from fastapi import FastAPI\nfrom  "
+  },
+  "timestamp": 1747992587884,
+  "aiCodeInfo": [],
+  "requestTimestamp": 1747992586816
+}
+```
 
 ## 0521
 

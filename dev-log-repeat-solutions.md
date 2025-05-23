@@ -57,7 +57,7 @@ modified: 2021-07-20T13:50:23.433Z
   - codemirror/prosemirror: state + view + commands + transform/ot/collab + virtualized
   - workflow/lowcode/automation: n8n, activepieces
   - version-history: rrweb, diff, format(.fodt), video-but-auto-update
-  - collab: room-playground❓
+  - collab: room-playground❓, 非auth版本的简易测试环境
   - plugin/extension: sandbox, e2b
   - rspack: js plugin; rspack/rolldown-wasm
   - office: suite-docs, outline, handsontable, xlsx, revealjs-ts+PPTist, pdf-lib

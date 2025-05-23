@@ -40,8 +40,8 @@ modified: 2023-11-28T14:48:45.910Z
       - rrweb + editor-diff
   - 🪟 table
     - diff
-    - ✨ markdown-table的wysiwyg是一个痛点和卖点
     - 基于文本的table格式: gfm, front-matter-yaml; + diff
+    - ✨ markdown-table的wysiwyg是一个痛点和卖点
     - split-table
     - export: copy-md-table, copy-list
   - ⚖️ markdown support with git-like database
@@ -127,22 +127,13 @@ modified: 2023-11-28T14:48:45.910Z
   - 基于场景预定义react组件接口，允许替换默认使用的各个组件
   - 因为允许替换，所以经常需要动态导入
 # business-apps
-- 知识库的市场
+- 知识库的市场 (🤔 toB or toC)
   - 客服系统自动回复，并显示相关历史
   - classic 多文件知识库(ide)
   - mobile-first + markdown 知识库
 
 - naming
   - mandroid (from android+manus)
-
-## cloud-saas
-
-- cloud-pros
-  - unattended
-  - parallel
-  - collaborative
-
-- 类似ruby的ActionText
 
 ## inspirations
 
@@ -154,8 +145,18 @@ modified: 2023-11-28T14:48:45.910Z
   - auto generate cover by content/fields
 
 - github
+  - github readme.md viewer: 参考obsdian的插件/vscode扩展/npm包可直接显示github-readme
   - reusable workflow actions as files
   - permlink for old docs
+
+## saas/cloud
+
+- cloud-pros
+  - unattended
+  - parallel
+  - collaborative
+
+- 类似ruby的ActionText
 # features
 - inspirations
   - 高频需求，网盘分享

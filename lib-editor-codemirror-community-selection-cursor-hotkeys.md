@@ -72,6 +72,20 @@ modified: 2024-08-11T06:46:39.843Z
 
 - ## 
 
+- ## [Equivalent of `findWordAt` in CM6 ? - v6 - discuss. CodeMirror _202104](https://discuss.codemirror.net/t/equivalent-of-findwordat-in-cm6/3077)
+- The search addon has one internally, but I agree it’d make sense to put that someone where client code can use it.
+  - `@codemirror/state` 0.18.6 now comes with an `EditorState.wordAt(pos: number) => SelectionRange | null` method.
+
+- ## [Making the (text) cursor more noticeable - discuss. CodeMirror _202305](https://discuss.codemirror.net/t/making-the-text-cursor-more-noticeable/6579)
+  - This may be down to Obsidian’s implementation.
+  - There is one plugin that draws a new customizable cursor on top of the CodeMirror one (which you can then make invisible), but it doesn’t always work quite right… and frankly feels a bit ridiculous 
+
+- A single pixel (in fact 1.2px in CodeMirror) seems a common thing across applications. 
+  - But you can change the styling for `.cm-cursor` elements to give it a wider left border if you want it to be wider. 
+  - The height is determined by the text height at its position, though I suppose you could force it to be higher by adding vertical padding if you can make sure it doesn’t stick out into the next line somehow.
+
+- By default `.cm-cursor` are `border-left: 1.2px solid black; margin-left: -0.6px`; . Overriding those two with your own should give you any thickness you want.
+
 - ## [Multiple cursor by clicking - v6 - discuss. CodeMirror _202206](https://discuss.codemirror.net/t/multiple-cursor-by-clicking/4463)
 - For future multi-cursor users’ reference:
   - Click to Create Multiple Cursors (EditorView.clickAddsSelectionRange ). Bound to Ctrl (macOS: Cmd) + Click by default.
