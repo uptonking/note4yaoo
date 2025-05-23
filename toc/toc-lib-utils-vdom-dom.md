@@ -35,6 +35,19 @@ modified: 2023-11-23T09:56:33.507Z
   - Owl framework 1.x is based on a fork of snabbdom
   - version 2 is not ready yet, but will be based on blockdom.
   - It features blocks, supports fragments, manage synthetic event handlers and more.
+- https://github.com/tomstove/snabbdom-redux-architecture /201711/js/inactive
+  - A minimal redux-like implementation experiment using snabbdom
+- https://github.com/andyrj/snabbdom-redux-starter /MIT/201609/archived
+  - starter kit for snabbdom redux projects, implementing yet another todo app and counters
+- https://github.com/irony/pureact /MIT/202302/js/inactive
+  - This is very small implementation of the idea of React+Redux with a very light weight approach. 
+  - The result is a small lib (~150 lines of code, 6kb incl dependencies gzipped) and superfast (based on snabbdom.v3) with batteries included (a minmal version of Redux+Hooks).
+  - A lightweight redux-compatible store is also included
+  - both reducers and actions can be asynchronous
+  - Hooks are also included (beta - only works for non-lists right now)
+  - examples
+    - https://github.com/irony/pureact-todo
+    - https://github.com/iteam1337/mandatkollen
 
 - https://github.com/livoras/simple-virtual-dom /MIT/202003/js
   - Simple virtual-dom algorithm. It has only ~500 lines of code

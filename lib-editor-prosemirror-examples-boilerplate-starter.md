@@ -40,9 +40,10 @@ modified: 2022-09-05T03:41:15.727Z
   - https://hedgerwang.github.io/learn-prosemirror-typescript-react-app/
   - 案例
 
-- https://github.com/ccorcos/prosemirror-examples
+- https://github.com/ccorcos/prosemirror-examples /
   - https://ccorcos.github.io/prosemirror-examples/
   - ProseMirror rich text editor with @mentions with autocomplete and nested inline nodes.
+  - Block Selection Plugin: Press escape, then arrow keys, then enter to navigate blocks
 
 - DoX /6Star/NALic/202308/js/ejs
   - https://github.com/AlbertCerfeda/DoX

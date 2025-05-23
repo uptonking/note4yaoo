@@ -381,6 +381,11 @@ modified: 2023-02-08T10:24:11.422Z
 
 ## devtools
 
+- https://github.com/ccorcos/click-perf /202504/js
+  - A browser extension that monitors and logs click performance metrics on web pages.
+  - Monitors page load performance
+  - Real-time logging in browser console
+
 - 
 - 
 - 

@@ -63,6 +63,9 @@ modified: 2023-11-21T10:17:34.596Z
   - Spades follows The Elm Architecture, this architecture basically dictates all the state flow within Elm, but still allows multiple organizations as your app grows.
   - Spades then follows an organization with domain focus
   - Another important thing in a real-world Elm app is a solution for parent-child communication, for that part, Spades uses the NoMap pattern
+
+- https://github.com/paldepind/functional-frontend-architecture
+  - This repository is meant to document and explore the implementation of what is known as "the Elm architecture". 
 # elm-like
 - https://github.com/ccorcos/elmish /201601/js/支持undo/示例多
   - A Javascript UI library inspired by Elm
@@ -555,7 +558,7 @@ modified: 2023-11-21T10:17:34.596Z
   - Small and sturdy content management dashboard in Elm's trusted hands
   - this library is not maintained. CMS' are pretty hard to abstract in a way that caters to the needs of a realistic UX and infrastructure needs
   - therefore I am finding it unrealistic that I can pull it off with such a simple system
-# utils
+# utils/model-view-update
 - https://github.com/Zaid-Ajaj/elmish-composition /202012/js/f#
   - This repository includes two projects: traditional and hybrid to compare the composition technique of an Elmish application.
   - The traditional directory contains an application that follows Elm-style technique for composition.

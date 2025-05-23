@@ -15,6 +15,7 @@ modified: 2023-11-17T10:28:14.247Z
   - 考虑将redux-devtools的协议和交互作为time-travel的通用方案，在api/ui/数据结构
   - 支持多store
   - 应用层级的store不适合保存变化频率很高的状态，如input输入框、scroll、animation
+  - 架构参考: 开发应用层可使用snabbdom + redux/mobx/zustand，开发框架自定义state+jsx
 
 - component vs app
   - 跨框架的component常使用adapter模式，跨框架的app应用使用flux/elm
@@ -272,6 +273,26 @@ modified: 2023-11-17T10:28:14.247Z
   - At the store an EventEmitter is initialized, and everytime the app data is set an event is emitted to the components subscribed to have a data update. 
   - In this app the data is stored at localStorage in the browser. This makes the things much easier in order to comunicate the data updates between components.
 # utils
+- https://github.com/irony/pureact /MIT/202302/js/inactive
+  - This is very small implementation of the idea of React+Redux with a very light weight approach. 
+  - The result is a small lib (~150 lines of code, 6kb incl dependencies gzipped) and superfast (based on snabbdom.v3) with batteries included (a minmal version of Redux+Hooks).
+  - A lightweight redux-compatible store is also included
+  - both reducers and actions can be asynchronous
+  - Hooks are also included (beta - only works for non-lists right now)
+  - examples
+    - https://github.com/irony/pureact-todo
+    - https://github.com/iteam1337/mandatkollen
+
+- https://github.com/flintinatux/puddles /MIT/201905/js/inactive
+  - Tiny vdom app framework. Pure Redux. No boilerplate.
+  - The main goal of puddles is to make the Redux pattern easy, without all of the boilerplate
+  - pure view functions in plain javascript
+  - modern client-side routing with history.pushState
+  - native support for thunks
+  - integration with the Redux DevTools extension
+  - 依赖snabbdom.v0.7、tinyfunk
+  - There is no `dispatch` function! The `setName` action creator attached to the input event is composed with the dispatch function internally.
+
 - https://github.com/lmiller1990/flux-entities /202007/ts
   - The flux entity pattern, or simply the entity pattern, is a common pattern I identified and extracted over the last few years of working on various single page apps
   - This pattern, however is applicable to any flux library

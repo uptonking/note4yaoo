@@ -12,7 +12,14 @@ modified: 2021-06-09T01:09:55.241Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [What are the disadvantages of storing all your state in a single immutable atom? · Issue · reduxjs/redux _201602](https://github.com/reduxjs/redux/issues/1385)
+  - it's hard to find people critical of the single immutable store
+
+- Specific to the Redux approach though, the biggest downside for us is that single state atoms is sort of an all or nothing thing. The benefits of easy hydration, snapshots, time travel, etc only work if there is no other place important state lives.
+
+- Redux is basically event-sourcing where there is a single projection to consume.
+  - In distributed systems, there is generally one event log (like Kafka)
+  - In most cases this overhead is not a big deal, however when mounting text inputs into a not so good state shape, and typing fast on a slow mobile device, it's not always performant enough.
 
 - ## 🤔 [Sagas should rather be totally autonomous · redux-saga/redux-saga](https://github.com/redux-saga/redux-saga/issues/8)
 - You have to consider the source of truth according to what you will want to record / replay and how the derived source of truth should behave after code change.
@@ -97,7 +104,15 @@ modified: 2021-06-09T01:09:55.241Z
 
 - ## 
 
-- ## 
+- ## 🆚⚡️ [My MobX code performs better than my Redux code. Is there anything I can do to close the gap? · reduxjs/redux _202202](https://github.com/reduxjs/redux/discussions/4294)
+  - I wrote some code to render 30000 text areas in mobx and and in redux. The mobx code rerenders the UI very quickly, whereas the redux version is laggy. Is there anything I can do to improve the performance of my redux code?
+
+- We specifically recommend not storing form state in Redux (or more to the point, not trying to dispatch actions on every keystroke)
+  - Generally, rendering thousands of items at once in React (or the DOM in general) is not a great idea to begin with 
+  - At that point you should really start looking into either pagination or virtualization.
+- The other couple notes I'd toss out are:
+  - If you want to use Redux, don't tie input changes directly to dispatching. Keep form inputs either uncontrolled, or controlled by local state, and then dispatch only when the user is done editing
+  - React runs noticeably faster in production mode than it does in dev mode
 
 - ## React-Redux Roadmap: version 8.x, React 18, and TypeScript
 - https://github.com/reduxjs/react-redux/issues/1740
