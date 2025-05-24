@@ -137,7 +137,7 @@ modified: 2021-07-20T13:50:23.433Z
   - ~~excel-like~~/~~headless~~
 - 💎 collab
   - crdt: yjs, automerge, logux, rga, fluid-framework, hlc
-  - log-based: ~~p/couchdb, ~~powersync, kappa-db, event-sourcing
+  - log-based: ~~p/couchdb~~, powersync, kappa-db, event-sourcing
   - eav: triplitdb
 
 - 通用能力/features
@@ -152,7 +152,7 @@ modified: 2021-07-20T13:50:23.433Z
 - ✨ cms(content-mgmt)
   - 👉 suite-docs  (MIT/django+blocknote)
   - 👉🏻 outline (apache2/sequelize+prosemirror)
-  - 👉🏻 odoo       (LGPL/python+vue3+tinymce5)
+  - 👉🏻 odoo       (LGPL/python+owl)
   - 👉🏻 strapi      (MIT/knex+slate)
   - 👉🏻 directus   (AGPL/knex+vue3+tinymce5)
   - huly-platform  (EPL/tiptap/svelte//🐞jira)

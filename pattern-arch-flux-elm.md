@@ -12,7 +12,7 @@ modified: 2023-11-18T09:48:30.897Z
 - flux with event-sourcing
 - functional 插件架构
 
-- 自定义view层的实现参考
+- 自定义view层(state + presentation)的实现参考
   - 主流开源组件的渲染层实现，如 typewriter/tanstack-table/odoo-spreadsheet
   - https://github.com/matthewp/views-the-hard-way
   - https://github.com/nolanlawson/emoji-picker-element

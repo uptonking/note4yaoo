@@ -28,13 +28,15 @@ modified: 2023-09-12T09:37:22.608Z
 - https://github.com/xolvio/typescript-event-sourcing /ts
   - Domain Driven Design, Event Sourcing & Command Query Responsibility Segregation with Typescript
 
-- https://github.com/Judahh/flexiblePersistence /ts
+- https://github.com/Judahh/flexiblePersistence /MIT/202310/ts/inactive
   - A CQRS and Event Sourcing platform
   - It's possible to use different databases or services implementing IPersistence interface, like MongoDB does (MongoPersistence).
   - Other implementations: DAO, Sequelize, Service
   - https://github.com/Judahh/sequelizePersistence
+  - https://github.com/Judahh/dAOPersistence /202304/ts
+    - a data access object (DAO) implementation for Flexible Persistence's PersistenceAdapter.
 
-- https://github.com/oskardudycz/EventSourcing.NodeJS /MIT/ts
+- https://github.com/oskardudycz/EventSourcing.NodeJS /MIT > CC-BY-SA4.0/202505/ts
   - Examples and Tutorials of Event Sourcing in NodeJS
   - I already have samples of Event Versioning and Snapshots in my sample repo. 
   - [Introduction to Event Sourcing - Self Paced Kit_202203](https://event-driven.io/en/introduction_to_event_sourcing/)
@@ -53,7 +55,7 @@ modified: 2023-09-12T09:37:22.608Z
   - Simply put, it lets you save and retrieve present and past string values of attributes that belong to entities identified by string IDs. 
   - Reaves is backed by Redis.
 
-- https://github.com/Skalar/ddes /ts
+- https://github.com/Skalar/ddes /MIT/202403/ts/inactive
   - https://ddes.io/docs/
   - TypeScript framework that facilitates Event Sourcing and CQRS using distributed cloud services.
   - persist and access all relevant events within your domain, in an “immutable” store
@@ -68,7 +70,7 @@ modified: 2023-09-12T09:37:22.608Z
   - Event Sourcing development made simple
   - This project aims to experiment with an opinionated Event Sourcing framework based on my experience working on Marten and EventStoreDB.
 
-- https://github.com/reimagined/resolve /MIT/202212/ts/提供了很多示例
+- https://github.com/reimagined/resolve /MIT/202212/ts/inactive/提供了很多示例
   - https://reimagined.github.io/resolve/
   - Full stack CQRS, DDD, Event Sourcing framework for Node.js
   - features
@@ -171,7 +173,7 @@ modified: 2023-09-12T09:37:22.608Z
   - couchdb was chosen for it simple API and architecture which is very much in sync with event sourcing, one of the key concepts of the solution
   - With current implementation, only CouchDB is supported for both event sourcing storage and views cache storage.
 
-- https://github.com/thenativeweb/node-eventstore /MIT/js/legacy/inactive
+- https://github.com/thenativeweb/node-eventstore /MIT/202009/js/legacy/inactive
   - http://eventstore.js.org/
   - EventStore Implementation in node.js
   - By default the eventstore will use an in-memory Storage.

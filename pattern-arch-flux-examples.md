@@ -15,7 +15,7 @@ modified: 2023-11-17T10:28:14.247Z
   - 考虑将redux-devtools的协议和交互作为time-travel的通用方案，在api/ui/数据结构
   - 支持多store
   - 应用层级的store不适合保存变化频率很高的状态，如input输入框、scroll、animation
-  - 架构参考: 开发应用层可使用snabbdom + redux/mobx/zustand，开发框架自定义state+jsx
+  - 架构参考: 应用层 redux/mobx/zustand + snabbdom，框架自定义 state + jsx/vdom
 
 - component vs app
   - 跨框架的component常使用adapter模式，跨框架的app应用使用flux/elm

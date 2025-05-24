@@ -54,6 +54,12 @@ modified: 2024-08-24T16:15:11.456Z
 - vscode提供了electron和web模式，未提供纯前端模式
   - vscode mobile
 
+- vscode-ext-pattern
+  - command-palette
+  - editor
+  - context-menu
+  - terminal
+
 - ide-ai
   - editor-control MCP, 让ai操作编辑器的协议，可参考browser-use
   - mcp for drawio
