@@ -51,7 +51,7 @@ modified: 2021-05-14T15:04:15.333Z
   - [5 open source alternatives to Slack for team chat | Opensource.com](https://opensource.com/alternatives/slack)
 # forum-popular
 - https://github.com/discourse/discourse /GPLv2/202401/ruby/js
-  - 依赖emberjs、postgresql、redis
+  - 依赖emberjs、postgresql、redis、Sidekiq(job-processing by Redis) 
   - discussion platform built for the next decade of the Internet.
 - https://github.com/forem/forem /AGPLv3/202402/ruby/js
   - https://forem.com/

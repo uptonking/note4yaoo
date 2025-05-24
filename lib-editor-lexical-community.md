@@ -9,6 +9,15 @@ modified: 2022-05-15T18:35:39.272Z
 
 # discuss-stars
 
+- ## 
+
+- ## 
+
+- ## [How to do a incremental/partial update with LexicalOnChangePlugin with restful api? _202303](https://github.com/facebook/lexical/discussions/4042)
+  - I want to create an editor like Notion to realtime update current changes (not the full state) to database.
+
+- If you will ever only have one user per editor (a.k.a. don't care about the collaborative use case), then you can simply diff the two states' JSON using JSON diff.
+
 - ## [Differences between Prosemirror and Lexical _202204](https://discuss.prosemirror.net/t/differences-between-prosemirror-and-lexical/4557)
 - They(lexical) affirm that their value proposition differentiates them from RTE as Prosemirror in the following points:
   - **Mutable state approach**: I would appreciate if someone can elaborate on this point.

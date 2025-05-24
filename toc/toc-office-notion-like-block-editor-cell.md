@@ -16,6 +16,7 @@ modified: 2022-08-14T16:26:48.558Z
   - 支持协作
 
 - 想要分析notion的block架构设计，可参考clone示例
+  - 实现思路: 将editor作为一种类似table/kanban的数据视图来开发实现
   - 扩展思路，前端的block通常对应后端的field字段
 
 - resources

@@ -91,6 +91,11 @@ modified: 2022-06-03T21:34:54.893Z
   - It is an open-source alternative to Confluence and Notion.
   - Diagrams (Draw.io, Excalidraw and Mermaid)
   - Permissions management
+  - [Show HN: I am building an open-source Confluence and Notion alternative | Hacker News _202406](https://news.ycombinator.com/item?id=40832146)
+    - We are still using Confluence on-prem (behind VPN). To switch, we need the following: 
+      - An export function (PDFs). 
+      - An integrated diagram editor like Gliffy. 
+      - History / diffs.
 
 - think /1.8kStar/MIT/202304/ts/nestjs/tiptap/inactive
   - https://github.com/fantasticit/think
@@ -105,6 +110,7 @@ modified: 2022-06-03T21:34:54.893Z
     - 对于文档类产品，无法做出独立的 library 或 framework 给不同需求的团队（或个人），这使得我不确定这件事的意义
     - 对于独立编辑器开发，无论最终以何种形态存在，其表现还是为应用，而非框架（或依赖），能做到的也许只是一种示范
     - 作者本身专攻前端，对高性能、扩展性良好的后端架构心有余而力不足
+  - https://github.com/fantasticit/sailkit /202407/ts
   - https://github.com/fantasticit/magic-editor /202301/ts
 
 - logseq /15.9kStar/AGPLv3/202208/clojure/ts
@@ -405,6 +411,17 @@ modified: 2022-06-03T21:34:54.893Z
   - CryptPad is a collaboration suite that is end-to-end-encrypted and open-source.
   - 依赖 onlyoffice、netflux-websocket
   - It is built to enable collaboration, synchronizing changes to documents in real time. 
+
+- https://github.com/hyperlink-academy/leaflet /MIT/202505/ts/卡片式风格
+  - https://leaflet.pub/
+  - Leaflet is a tool for shared writing and social publishing.
+  - Next.js for UI and app framework
+  - Supabase for db / storage layer
+  - Replicache for realtime data sync layer
+  - TailwindCSS for styling magic
+  - [Show HN: Leaflet.pub – a web app for creating and sharing rich documents | Hacker News _202503](https://news.ycombinator.com/item?id=43269928)
+    - We do sync and all our client-side state via Replicache - Data is modeled as a set of facts about entities, a la Datomic, forming a graph. 
+    - every text block is a separate ProseMirror instance. This lets us keep the document structure in our database and our schema, without having to dive into ProseMirror's every time we want to modify things.
 # TiddlyWiki/in-memory/cms
 - TiddlyWiki5 /7.5kStar/BSD/202311/js
   - https://github.com/Jermolene/TiddlyWiki5

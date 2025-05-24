@@ -39,6 +39,24 @@ modified: 2025-05-17T18:55:18.257Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Odoo现在流行吗，如果从事Odoo开发，以后前景怎样呢？ - 知乎](https://www.zhihu.com/question/335807070)
+- ODOO 没前途，从openerp到现在，版本之间不兼容，模块变化也很大。二次开发的很多方法也不兼容。
+  - 10多年前改了几个版本，受够了，连基本的版本兼容也做不到。
+- 202311: 血泪经验：不要用它做大量的定制化开发。。。主要问题：
+  - 1、版本兼容问题，13、14、15、16，最近的几个版本，底层架构变化太大（特别是前端实现），基本上无法平滑升级，当然如果小应用，你说我就一直不升级，当然也可以，最后造成的结果，可能就是你有一堆版本的Odoo应用； 
+  - 2、性能问题，并发量一大就很明显，谁用谁知道；
+  - 3、模块虽多，但是符合国情的非常少；
+  - 4、不好招人，因为没有几个人愿意学，这是企业和新人都需要考虑的一个很现实的问题
+
+- 看以odoo免费，实际定制开发的成本更高，还不如一个用友、或者金蝶呢。
+
+- 金蝶太贵了，小企业根本消费不起
+
+
 - ## [What's SAP, and why's it worth $163B? (2020) | Hacker News _202209](https://news.ycombinator.com/item?id=32776276)
 - Every single company I interacted with used SAP. It is the de facto software in its field and is deeply entrenched. Its UX is the most horribly wicked thing I’ve ever come across. 
   - The initial learning curve felt far too high. 

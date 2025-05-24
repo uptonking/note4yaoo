@@ -57,7 +57,7 @@ modified: 2024-08-24T16:15:11.456Z
 - vscode-ext-pattern
   - command-palette
   - editor
-  - context-menu
+  - context-menu for editor/fileTree/toolbar
   - terminal
 
 - ide-ai

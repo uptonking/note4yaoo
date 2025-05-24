@@ -153,7 +153,8 @@ modified: 2023-02-05T19:03:12.723Z
 - https://github.com/JokerLHF/mini-slate /202304/ts/inactive
   - 使用 ts 实现 slate 富文本
 
-- https://github.com/Darginec05/Yoopta-Editor /MIT/202310/ts
+- https://github.com/yoopta-editor/Yoopta-Editor /MIT/202310/ts
+  - https://github.com/Darginec05/Yoopta-Editor
   - https://yopta-editor.vercel.app/basic
   - Notion-like editor with similar behaviour
   - 几乎无依赖

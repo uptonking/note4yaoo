@@ -38,6 +38,7 @@ modified: 2022-08-21T10:02:05.129Z
     - eidos
 
 - 🤔 要点
+  - 实现思路: 将editor作为一种类似table/kanban的数据视图来开发实现
   - 🆚️ notion database 的设计思路是先填写数据再设置类型，而不是大多数cms的先设置类型再填写数据
   - 动态修改数据类型或schema，可用eav或jsonb, 但大多方案是用户建表时同时在db建表
 
@@ -170,6 +171,18 @@ modified: 2022-08-21T10:02:05.129Z
     - 🛢️ A key idea of Eidos is to make each table a real SQLite table, so users can view and modify it through other software or visualize it with tools like Metabase
     - You can make some adjustments in the settings to store data in a local folder. Then, use iCloud, Git, or your preferred service to back up your data. Just like the web version of VSCode, it can handle local files. The web is just an app and doesn't hold any data.
     - I carefully designed the architecture, which is very flexible. The "backend" is currently running on web worker & service worker. It should be possible to deploy it to a web-standard runtime environment for self-hosting. P2P synchronization based on CRDT is on the roadmap.
+  - https://discord.com/channels/1153437530952323186/1153437531883446277/1285260552872132619
+    - Where can I read more about the data structure? Is everything a block (like in Remnote, and the new upcoming Logseq db)?
+    - 👷202409: Each space contains a files directory to store static resources such as images, PDFs, audio, video, etc. All other data is stored in the `db.sqlite3` file. 
+    - All documents are stored in `eidos__docs`. Each table is an actual database table and not a view of a collection of blocks
+    - Each document follows a standard lexical data structure, stored in JSON format in the `content` field, and includes a readable markdown version stored in the `markdown` field. 
+    - SQLite contains all the data, making it convenient for portability, storage, computation, and retrieval. Based on this design, both documents and tables can be queried and retrieved even without using the Eidos app.
+    - The Eidos table is a lightweight wrapper for SQLite table, allowing it to handle large amounts of data, which Notion/Obsidian/Logseq cannot achieve. On my M2 MacBook Pro, a table with 1 million records runs
+    - 🤔 In Eidos it seems there is a hard separation between tables and nodes/blocks. Personally I'm looking for a PKMS, and the "everything is a x" concept is important to me.
+    - Eidos is not a tool specifically designed for PKM. Tables and documents are separated, but they can query each other through SQL because they are in the same sqlite database
+    - The biggest difference is whether you put the data in a table or a document. I don't think it's a good idea to put structured data in a document because the query will not work when you leave these apps.
+    - Word and Excel are distinct tools, and different types of data should have separate containers. I don't want to mix them up just to fit the concept of 'everything is x'. When you have a lot of CSV/Excel files, you definitely don't want to create a markdown document for every row.
+    - Actually, my initial goal was to build an offline Airtable/Notion database. I would focus more on the tables.
 
 - teable /80Star/AGPLv3/202403/ts
   - https://github.com/teableio/teable

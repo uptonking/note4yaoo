@@ -8,7 +8,7 @@ modified: 2022-08-30T19:04:37.774Z
 # lib-editor-prosemirror-community-block-editor
 
 # guide
-
+- 实现思路: 将editor作为一种类似table/kanban的数据视图来开发实现
 # discuss-multi/nested/sub-doc
 - ## 
 
@@ -75,7 +75,7 @@ modified: 2022-08-30T19:04:37.774Z
   - when an existing block content is deleted
 - 
 
-- ## Block structure editor by prosemirror_202003
+- ## ✏️ Block structure editor by prosemirror __202003
 - https://discuss.prosemirror.net/t/block-structure-editor-by-prosemirror/2620
   - notion’s block is an independent contenteditable dom, which only has an independent node (table/calendar or other nodeType)
   - I am wandering if separate all my schema into each mini-prosemirror editor and have a doc container that holds all the mini-prosemirror, can i achieve the block structure style new editor as notion.

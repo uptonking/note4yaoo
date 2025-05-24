@@ -157,7 +157,7 @@ modified: 2021-07-20T13:50:23.433Z
   - 👉🏻 directus   (AGPL/knex+vue3+tinymce5)
   - huly-platform  (EPL/tiptap/svelte//🐞jira)
   - zulip      (apache2/django)
-  - think          (MIT/typeorm+tiptap)
+  - 👉 think       (MIT/typeorm+tiptap)
   - nocobase   (apache2/sequelize+umi)
   - payloadcms     (MIT/drizzle+slate)
 - ✨ airtable-like(data-mgmt)
