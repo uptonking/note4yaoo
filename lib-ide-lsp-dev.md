@@ -395,7 +395,25 @@ export type MarkupKind = 'plaintext' | 'markdown';
   - replit的定义跳转未直接使用LSP，使用自定义river协议来传输二进制数据
   - codesandbox的定义跳转也未直接使用LSP，用的是自定义二进制协议
 
-### codeAction
+### 根目录外的跳转
+
+```JS
+[{
+  "range": {
+    "end": {
+      "character": 13,
+      "line": 47
+    },
+    "start": {
+      "character": 6,
+      "line": 47
+    }
+  },
+  "uri": "file:///home/runner/.pyenv/versions/3.12.8/lib/python3.12/site-packages/fastapi/applications.py"
+}]
+```
+
+## LSP-codeAction
 
 ```JS
 [{

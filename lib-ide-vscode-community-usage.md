@@ -63,6 +63,13 @@ modified: 2024-08-24T16:52:53.996Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Why do I have two source controls in VsCode git? - Stack Overflow](https://stackoverflow.com/questions/63328002/why-do-i-have-two-source-controls-in-vscode-git/64243268)
+- I found out how to remove it, just right click on the title of the repository and press "close"
+
 - ## Problem: I want to see a list of the settings I've changed in VS Code.
 - https://x.com/housecor/status/1903120001160053231
   - Solution: Search for ` @modified ` .
