@@ -156,6 +156,11 @@ modified: 2023-11-28T14:48:45.910Z
   - parallel
   - collaborative
 
+- 云桌面/云浏览器的缺点
+  - 需要在云环境/容器中安装 输入法、语言包
+  - 需要透传声音
+  - 需要设置vpn/防火墙/屏蔽占用带宽或流量的网站
+
 - 类似ruby的ActionText
 # features
 - inspirations

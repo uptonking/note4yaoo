@@ -101,7 +101,11 @@ modified: 2025-01-05T15:00:51.509Z
 
 - ## 
 
-- ## 
+- ## [TSServer >=4.1.0 never publishes textDocument/publishDiagnostics event (NeoVim) _202311](https://github.com/typescript-language-server/typescript-language-server/discussions/816)
+- Your client sends very limited capabilities which don't include the `textDocument.publishDiagnostics` capability
+
+- [How to disable textDocument/publishDiagnostics message from tsserver? _201809](https://github.com/typescript-language-server/typescript-language-server/issues/76)
+  - It's my emacs configuration problem, everything works fine after i disable `js2-mode`.
 
 - ## [How does filename work? · Issue #8 · FurqanSoftware/codemirror-languageserver _202201](https://github.com/FurqanSoftware/codemirror-languageserver/issues/8)
 - A language server usually keeps a virtual representation of a workspace within its state. And, in that workspace, your files need names. 
