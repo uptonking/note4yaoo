@@ -84,7 +84,10 @@ modified: 2023-11-28T14:48:45.910Z
 
 - 
 - 
-- 
+
+- ## [The data model behind Notion's flexibility (2021) | Hacker News _202403](https://news.ycombinator.com/item?id=39805744)
+- This is great and all but notion is slow. After being a paying user for a number of years, i pulled the plug because of its atrocious performance.
+
 - ## [The data model behind Notion's flexibility | Lobsters _202105](https://lobste.rs/s/y11kqf/data_model_behind_notion_s_flexibility)
 - So what’s the backend database? Is it an “real” graph database (like Neo4J)?
   - We actually tried Neo4J in an early version of Notion (before my time) but it was very slow for the kinds of access Notion does.
@@ -116,7 +119,7 @@ modified: 2023-11-28T14:48:45.910Z
 
 - ## 📈🛢️ [The data model behind Notion's flexibility_202105](https://news.ycombinator.com/item?id=27200177)
 
-- I think it makes us unique among the popular editors of today, but we're very aware that the block model isn't original. Execution matters much more than innovation.
+- 👷jitl: I think it makes us unique among the popular editors of today, but we're very aware that the block model isn't original. Execution matters much more than innovation.
   - Pretty sure Athens & Workflowy (both YC companies) use blocks.
 
 - Not sure how "unique" this model is; for example Claris Works was built out of an even more powerful block model (they called them frames) back in the late 1980s

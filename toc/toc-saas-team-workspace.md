@@ -71,6 +71,11 @@ modified: 2023-02-07T17:38:05.336Z
   - 提供了网盘功能
   - 支持第三方integrations
   - Various teams are building products on top of the Platform, including Huly and TraceX.
+  - https://github.com/hcengineering/rebeldb /MIT/202412/zig
+    - RebelDB™ is a high-performance database engine written in Zig that combines efficient memory management with flexible storage options
+    - Variable-length integer encoding optimized for lexicographical ordering
+    - Flexible page-based storage system with configurable alignment
+    - Zero-copy value storage with efficient memory management
 
 - https://github.com/JordanKnott/taskcafe /MIT/202209/go/ts/inactive
   - open source project management tool with Kanban boards

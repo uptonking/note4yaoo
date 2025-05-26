@@ -96,6 +96,11 @@ modified: 2022-06-03T21:34:54.893Z
       - An export function (PDFs). 
       - An integrated diagram editor like Gliffy. 
       - History / diffs.
+  - [Feature Request: 'databases' (special tables) with custom views like Notion _202407](https://github.com/docmost/docmost/issues/78)
+  - [[FEATURE REQUEST] Notion-style databases to link/ query/ visualise a set of notes by properties _202501](https://github.com/docmost/docmost/issues/595)
+    - Docmost is more of a wiki than a project management tool. I don't see us implementing this anytime soon.
+  - [Feature Request: Kanban Style Boards _202502](https://github.com/docmost/docmost/issues/455)
+    - No plans to introduce Kanban at this time, but you could do Kanban with the Mermaid integration.
 
 - think /1.8kStar/MIT/202304/ts/nestjs/tiptap/inactive
   - https://github.com/fantasticit/think

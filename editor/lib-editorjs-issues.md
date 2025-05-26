@@ -33,7 +33,24 @@ modified: 2020-11-17T09:39:37.776Z
 # issues-not-yet
 - ## [[Suggestions for collaborative editing scenario] Reconstruct read-only mode logic](https://github.com/codex-team/editor.js/issues/2265)
 
-- ## [Optimize the rendering by using a diffing algorithm](https://github.com/codex-team/editor.js/pull/1606)
+- ## [Optimize the rendering by using a diffing algorithm _202103](https://github.com/codex-team/editor.js/pull/1606)
+- 
+- 
+- 
+
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [React/ReactNative in the scope _202006](https://github.com/codex-team/editor.js/discussions/1883)
+  - If anyone cares, I'm porting editorJS to React Native without using WebViews (so no, it doesn't use any code from editorJS, it only shares the syntax of blocks). It's all native and performs fast even if there's thousands of blocks to render. It uses a virtualized view.
+  - Don't take it as an advertise; I'm struggling with TextInput (set bold, italic, inline toolbar), and any help it's highly appreciate.
+  - Well, I actually ended up writing everything native, because I couldn't load the editor in the WebView.
+
+- Editor.js is strongly relying on browser JS APIs and DOM model.
 # discuss-collaboration
 - ## 
 
@@ -54,6 +71,24 @@ modified: 2020-11-17T09:39:37.776Z
 - yjs
 
 # discuss
+- ## 
+
+- ## 
+
+- ## [[Bug] Editor.js bundle size is very large _202009](https://github.com/codex-team/editor.js/issues/1321)
+- 108.41 KB gzipped is "very large"? it's 2020. This is negligible for today's internet speed. It makes no sense to complicate the structure with lazy loading.
+
+- ## [How to update some blocks, not all _202003](https://github.com/codex-team/editor.js/issues/1074)
+  - i know `editor.render()` can update all blocks, Is there any way to update only a certain block?
+  - I see from the source that `BlockMananger` may be able to do it, but it is not a public API.
+  - If editor.js can get or update specific blocks, it may be beneficial for collaborative editing and performance.
+
+- 202003: at the moment we can't provide a method to update a certain block, as data passed to the Tool constructor. So to update it, we need to construct the new Block with updated data and replace the old one. I don't think this approach is the best one, so we need to design a block update flow and describe it with APIs and docs.
+
+- If you update all the blocks, the page will jump, so the user experience is very bad
+
+- I approach to use the diff library: kpdecker/jsdiff
+
 - ## [[Feature Request] Apply granular updates without recreating all blocks _202307](https://github.com/codex-team/editor.js/discussions/2427)
   - Look at ChatGPT and how it writes answers letter by letter. It does so by using Server-sent events (SSE) where small text parts are transmitted one by one.
   - Current APIs: Calling `editor.render({ blocks: [..] })` results in recreating all blocks in the editor, so calling it over and over again lets the editor flicker where the contents of the editor become invisible because of too much rerendering.

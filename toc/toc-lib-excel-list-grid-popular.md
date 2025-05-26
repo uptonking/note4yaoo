@@ -1303,10 +1303,11 @@ modified: 2022-08-21T10:02:27.788Z
   - This is largely a re-write of Handsontable's https://github.com/handsontable/ruleJS, and https://github.com/sutoiku/formula.js/.
   - The parser was derived from Handsontable's, and many of the formulas were created with FormulaJS's formulas as a reference point.
 
-- https://github.com/ironcalc/IronCalc /MIT/202312/rust/canvas
+- https://github.com/ironcalc/IronCalc /2.4kStar/MIT/202505/rust/ts/canvas
   - https://www.ironcalc.com/
   - https://playground.ironcalc.com/
   - IronCalc is a spreadsheet engine and ecosystem
+  - This repository contains the main engine and the xlsx reader and writer.
   - Excel compatible
   - https://github.com/ironcalc/web-skin
     - React frontend for IronCalc

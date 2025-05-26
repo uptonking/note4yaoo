@@ -207,6 +207,55 @@ modified: 2023-10-26T21:54:54.201Z
 
 - To put it coarsely, outside ZigZag there are three different kinds of structures in computers today: linear lists (and grids i.e.~lists of lists), hierarchical trees and messes. That is really messes, not meshes. By a mess, I mean any complicated data structure, usually with one-directional links to make things even more unmanageable.
   - That's not a mess, that's a graph.
+# discuss-pm-airtable
+- ## 
+
+- ## [It's time to add Databases now that Tables are fully supported - Time to overthrow Notion! - Help - Obsidian Forum _202403](https://forum.obsidian.md/t/its-time-to-add-databases-now-that-tables-are-fully-supported-time-to-overthrow-notion/78428)
+- 202403: Recently, SiYuan launched this database feature which I think is the ultimate replacement for Notion. It is fully open source and also supports PDF annotation, one of the most requested features in Obsidian
+- you’re talking about ~siyuan~ being very slow with 50 row tables?
+- Siyuan notes are JSON, so that’s a massive drawback, in my opinion.
+
+- the dataview/datacore effort is well thought out. Nobody else is as knowledgeable or fluent about doing sql like querying of markdown data using the Obsidian api.
+- the dynamic view is developed by the Obsidian team, and Datacore by the author of the Dataview plugin.
+
+- ## [Docmost is one of the best open source notion alternative out there : r/selfhosted _202502](https://www.reddit.com/r/selfhosted/comments/1iyfig5/docmost_is_one_of_the_best_open_source_notion/)
+- No, it's absolutely not a Notion alternative. It's a good note taking app and wiki, but it has nothing of what makes Notion special. It doesn't even have databases, which is one of the major features of Notion.
+
+- SiYuan doesn’t have a traditional “database” that is used to store data which is served to its clients. Everything is stored locally in plaintext json files with .sy extension and each SiYuan instance is basically identical in functionality and complete in itself. So the docker version isn’t some special “server” version that other instances can connect to.
+
+- ## [What is the best Notion alternative? (really) : r/selfhosted _202410](https://www.reddit.com/r/selfhosted/comments/1g144di/what_is_the_best_notion_alternative_really/)
+- Team collaboration is quite impossible in Obsidian. Yes, you can use Sync but that doesn't provide you with permission scopes.
+- Take a look at the Obsidian. You need just a git server to synchronize it.
+
+- I would recommend Affine. They are adding new features every month and in my opinion it is the platform that comes closest to Notion.
+  - Free edition supporting three users and devices per workspace. Low storage limits. Upgraded plans reasonably priced.
+- The license defines limitations for the hosted version, not the self hosted version. From their site: "This EE License applies only to the part of this Software that is not distributed as part of AFFiNE Community Edition."
+- Affine fake open source as well
+  - All content that resides under the "packages/backend/server" directory of this repository, if that directory exists, is licensed under the license defined in "packages/backend/server/LICENSE".
+- Not open source, 3 members max on self host (without breaking the license).
+  - This is actually just a bug they haven't gotten around to fixing. Since you're self hosted, the self hosted limits are set in your own database and you can switch it yourself. And the license for self hosting is different.
+
+- If you like Notion database better, maybe you can try APITable?
+  - But unfortunately it is a database based product. Although it has docs feature but it is a "database field" call "docs field", which means "docs" is inside the database.
+
+- Using Huly extensively for local project management and some client work, and it's great, but it's really the best Asana alternative, rather than a full Notion competitor.
+
+- 
+- 
+- 
+
+- ## [Show HN: Linkidex – save and sort the URLs you care about | Hacker News _202210](https://news.ycombinator.com/item?id=33153866)
+- I’ve been using a Notion database for exactly this problem. The only feature I can see from a quick glance that this has and Notion doesn’t is quickly exporting to browser bookmark format.
+
+- Notion is an interesting tool because it’s so general-purpose and flexible. In the past I used different tools for bookmarks, notetaking, project organization, recipes, reading lists, etc. I got tired of everything having different UI and features and ended up moving all of that to Notion.
+- I think the main features that led me to choose Notion were:
+  - Fully cross-platform (web, desktop, mobile)
+  - Browser extension (PC & Mobile) to quickly save pages to any database
+  - Ability to create searchable databases with custom fields, tags, multiple views, and other advanced features
+  - Ability to easily move an item from one database to another, for example moving an article from “Reading List” to “Saved Articles”
+  - Every database entry is also a page, so an entry in “Saved Articles” can have notes or links to other similar articles
+  - Very easy to share a database or page, similar to Google Drive
+- Yeah full text search, saving an archived text based version of the page behind the link and local storage (export) would make it interesting for me.
 # discuss
 - ## 
 
@@ -214,7 +263,12 @@ modified: 2023-10-26T21:54:54.201Z
 
 - ## 
 
-- ## 
+- ## [What is the database schema of note-taking apps such as Notion with 'database' feature? : r/Database _202405](https://www.reddit.com/r/Database/comments/1d3vdpt/what_is_the_database_schema_of_notetaking_apps/)
+- actually they use postgresql JSONB to store each block.
+
+- You can get stern looks from some for mentioning it, but have a look into EAV (Entity-Attribute-Value) tables. You flip the table on its side and use rows for columns, allowing you to have a flexible schema. Lookups and joins can be a pain, and maintenance is harder but can be overcome with some discipline. Something to have a play with and see if it suits your use case.
+
+- A couple days old but I'll share what I do with SQLite since this shares a lot of similarities to a CMS. (I'm making a website builder w/ CMS)
 
 - ## [Any database engine supports 20-40k column tables? : r/SQL _202210](https://www.reddit.com/r/SQL/comments/xs7dqk/any_database_engine_supports_2040k_column_tables/)
   - The question: does any DB support 40k columns with 100k rows and performs quite fast? Essbase?
