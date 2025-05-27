@@ -261,10 +261,7 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
 
  
 
-```JS
-stt.message.channel().send('uCmdK', 'README.md', 2, 2, 'explain an elegant word in one sentence')
-stt.message.channel().send('message', '@@user_context[file://README.md:12-42, file://XXX]@@')
-stt.message.channel().send('message', '@user_context[file://README.md:7-24]')
+```log
 
 console.log(';; task ', taskState, runningTaskAction, task?.task_steps)
 
@@ -273,26 +270,9 @@ console.log(';; act-file-o ', currentOpenedActionId, shouldForceOpenFile, action
 console.log(';; taskActions', currentActionId, path, store.cdePlay.enableDiffView(), currentAction, taskActions)
 console.log(';; open-diff ', enableDiffAnimation, store.cdePlay.enableDiffView(), store.cdeReplay.isMachinePaused())
 console.log(';; qryDiffSnap ', snapshotFrameResult)
-console.log(';; qryDiffSnap ', snapshotFrameResult)
-
-console.log(
-  '📝 ide-file ',
-  filePath,
-  isFollow,
-  selectedFilePath,
-  store.file.latestRequestFilePath(),
-  isOtherUserOpened,
-  agentUserId,
-  event,
-);
 
 console.trace(';; loadFile', path, loadType);
 
-// apps/webapp/src/components/pull-request-box/commit/commit-message.tsx
-[Nest] 44 - 02 / 25 / 2025, 9: 52: 16 PM ERROR[PlaygroundItem][mqName: paas - ide - server - 54 c68844fb - 6 hhwm][agentUserId: clacky][playgroundId: 740285278417498112] Error: ENOENT: no such file or directory, scandir '/app/data/codeZone/2024/1/12-16/@7ae1bce9-0562-4f50-b3e2-73709105f44f/dependency/home/app' + 1 ms
-```
-
-```
 ^((?!(42\["heartbeat|resourceMonit|refreshXtermCols|42\["multiTerminal)).)*$
 ^((?!(42\["heartbeat|resourceMonit|refreshXtermCols)).)*$
 ^(?!42\["resourceMonit).* 
@@ -300,9 +280,16 @@ console.trace(';; loadFile', path, loadType);
 <!-- 观测云搜索 ide-server -->
 -multiTerminalHeartBeat -all\:multiTerminal -"[fromMQ] multiTerminal" -"[toMQ]paas:multiTerminal" 
 
-add action to add datetime at top of readme
+```
 
-update package @dao42/clacky-paas-front to next patch version, and run pnpm install
+```log
+
+- write unit test for packages/client/src/components/Editor/CodeEditor.tsx (CodeEditor should rerender when `store.file.doc().openedPath` changes ),
+- ensure test pass by running  `cd packages/client && pnpm test src/__tests__/editor/CodeEditor.lsp.sepc.tsx`
+- you can mock state/store/data
+- you can use jest and @testing-library/react
+
+add action to add datetime at top of readme
 
 add an action to run "npm install -ddd" and another action to add datetime at top of readme.md
 add action to create a route /nextjs with nextjs changelog content in it , and show nextjs link in home page, when clicking the link, jump to /nextjs route
@@ -341,6 +328,8 @@ add action to create quickSort1.mjs and add 3 test cases in it
   - py 784965933709307904
   - js 786335673728065536
   - java 786790509908774912
+
+## 0527
 
 ## 0523
 

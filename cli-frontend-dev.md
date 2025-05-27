@@ -68,6 +68,10 @@ btoa(+new Date).slice(-7, -2)
 
 // node vs browser
 crypto.randomUUID().slice(-5)
+
+// sleep
+await new Promise(r => setTimeout(r, 2000));
+const sleep = ms => new Promise(r => setTimeout(r, ms));
 ```
 
 # npm-cli
