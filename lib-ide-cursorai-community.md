@@ -121,6 +121,17 @@ modified: 2024-09-02T02:28:27.398Z
   远程文件编辑
   可拓展性
 
+# discuss-pm-cursorai
+- ## 
+
+- ## 
+
+- ## [Is Cursor Tab available only for Pro subscribers? - Discussion - Cursor - Community Forum _202409](https://forum.cursor.com/t/is-cursor-tab-available-only-for-pro-subscribers/14333)
+- you get 2000 completions only once. After that, you need to upgrade to the PRO plan to continue using it and access other great features of Cursor.
+  - Cursor Tab works only with a PRO subscription, once your free trial has expired, and you have used up your one-off allowance of 2000 completions the free plan allows for.
+
+- All model usage is counted and billed in requests. 
+  - Free requests automatically activate when you run out of normal requests. They’re processed at a lower priority, so you may wait a bit longer compared to fast requests—but they still cost nothing.
 # discuss-cursor-like
 - ## 
 

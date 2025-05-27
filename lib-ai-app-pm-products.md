@@ -40,6 +40,15 @@ modified: 2025-03-22T16:10:24.856Z
 # ai-coding
 - [Compare Top AI IDEs & Coding Assistants | 2025 Reviews & Alternatives](https://www.aiidecompare.com/)
 
+```markdown
+- apps,       tabs,  chats, pricing
+- cursor,     200,   50,    $20
+- windsurf,   any,   100,   $15
+- trae,       5k,    1000,  $10
+- gh-copilot, 2k,    50,    $10
+
+```
+
 - roadmap
   - 1. human-in-the-loop
   - 2. self-correction, auto-debug
