@@ -278,16 +278,24 @@ console.trace(';; loadFile', path, loadType);
 ^(?!42\["resourceMonit).* 
 
 <!-- 观测云搜索 ide-server -->
--multiTerminalHeartBeat -all\:multiTerminal -"[fromMQ] multiTerminal" -"[toMQ]paas:multiTerminal" 
+-multiTerminalHeartBeat -all\:multiTerminal -"[fromMQ] multiTerminal" -"[toMQ]paas:multiTerminal" -"] multiTerminal, {"
 
 ```
 
 ```log
 
-- write unit test for packages/client/src/components/Editor/CodeEditor.tsx (CodeEditor should rerender when `store.file.doc().openedPath` changes ),
-- ensure test pass by running  `cd packages/client && pnpm test src/__tests__/editor/CodeEditor.lsp.sepc.tsx`
-- you can mock state/store/data
-- you can use jest and @testing-library/react
+- write unit test for packages/client/src/components/Editor/CodeEditor.tsx (CodeEditor should rerender when `store.file.doc().openedPath` changes )
+
+- line 290 in file  is not tested, please write unit tests to test it
+
+- ensure tests pass by running  `cd packages/client && pnpm test src/__tests__/editor/CodeEditor.lsp.sepc.tsx`
+- you can mock state/store/data/external-dependencies
+- you can use jest and @testing-library/react, 
+- Each unit test should be independent of other tests. Avoid sharing state or dependencies between tests by using beforeEach/beforeAll/afterEach/afterAll
+- you had better write only in test files and not modify original source code
+- Handle asynchronous code correctly 
+
+- unit test should increase jest test coverage
 
 add action to add datetime at top of readme
 
@@ -295,6 +303,9 @@ add an action to run "npm install -ddd" and another action to add datetime at to
 add action to create a route /nextjs with nextjs changelog content in it , and show nextjs link in home page, when clicking the link, jump to /nextjs route
 
 add action to create quickSort1.mjs and add 3 test cases in it
+
+使用 nextjs 、 shadcn/ui 组件库开发一个类似hacker news的网站， 网站首页显示react 官方blog列表
+use create-react-app to create a webapp, homepage shows a list of frontend frameworks, when click the framework, show its introduction
 ```
 
 - lsp支持的语言排查
@@ -329,7 +340,30 @@ add action to create quickSort1.mjs and add 3 test cases in it
   - js 786335673728065536
   - java 786790509908774912
 
-## 0527
+## 0528
+
+- [ByTestId | Testing Library](https://testing-library.com/docs/queries/bytestid/)
+
+```JSX
+import {screen} from '@testing-library/dom'
+
+<div data-testid="custom-element" />
+
+const element = screen.getByTestId('custom-element')
+```
+
+**昨天完成:** 
+- [ ]  补充单元测试， 进度60%
+- [x]  增强ux，打开根目录外文件显示全路径且支持点击copy
+
+**今日计划:** 
+- [ ]  补充单元测试
+- [ ]  增强ux，打开根目录外文件，编辑文件前显示弹窗提示
+- [ ]  编辑器支持前进后退快捷键
+
+**思考总结:** 
+- 测试覆盖率未达标的代码，如果合到develop环境，会影响别人提测
+- 还会影响自测，对于测试一些服务端相关的功能，如果依赖develop的其他服务如manager/mq/lsp，那不发到develop环境实测都无法确定实现对不对
 
 ## 0523
 
