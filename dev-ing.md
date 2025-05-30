@@ -343,6 +343,17 @@ use create-react-app to create a webapp, homepage shows a list of frontend frame
 
 ## 0530
 
+- [How is setTimeout called in a for loop js? - Stack Overflow](https://stackoverflow.com/questions/63076634/how-is-settimeout-called-in-a-for-loop-js)
+  - 💡 You don't call `setTimeout()` inside a for loop. You replace the for loop with setTimeout(). This is the traditional way of doing it. 
+  - You can use a Promise with async/await in modern js to use the for loop again
+
+- [setTimeout in for-loop does not print consecutive values - Stack Overflow](https://stackoverflow.com/questions/5226285/settimeout-in-for-loop-does-not-print-consecutive-values)
+  - `for (var i = 1; i <= 2; i++) { setTimeout( () => { console.log(i) }, 100); }`  // 3, 3
+  - The function argument to `setTimeout` is closing over the loop variable. The loop finishes before the first timeout and displays the current value of `i`, which is 3.
+  - Because JavaScript variables only have function scope, the solution is to pass the loop variable to a function that sets the timeout.
+  - `for (var i = 1; i <= 2; i++) {  (function (x) { setTimeout(function () { console.log(x); }, 100); })(i);  }`  // 仍然会同时全输出
+  - You can use an immediately-invoked function expression (IIFE) to create a closure around setTimeout
+
 ## 0528
 
 - [ByTestId | Testing Library](https://testing-library.com/docs/queries/bytestid/)

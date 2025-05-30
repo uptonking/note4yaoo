@@ -9,6 +9,8 @@ modified: 2024-12-27T17:28:57.941Z
 
 # guide
 
+- tips
+  - 不必过早在搜索上投入太多精力，类似vscode的ripgrep方案对大多数场景都够用
 # not-yet
 - ❓vscode默认的搜索 vs sourcegraph
 # discuss-stars
@@ -65,6 +67,42 @@ modified: 2024-12-27T17:28:57.941Z
   - To dig even deeper and learn more, I encourage you to check out my Strange Loop talk and the stack-graphs crate: our open source Rust implementation of these ideas.
   - Incremental, zero-config Code Navigation using stack graphs.
 
+- ## 🚀 [Show HN: Sourcebot, an open-source Sourcegraph alternative | Hacker News _202410](https://news.ycombinator.com/item?id=41711032)
+  - Using local tools like grep were ill-suited since you often only had a handful of codebases checked out at a time. 
+- Zoekt already has its own UI, though it is very feature-limited and lacks syntax highlighting.
+
+- this is a relatively small UI wrapper of a zoekt backend, it seems like the risk here is isolated to the upstream Sourcegraph-maintained search dependency. 
+
+- I looked through the sourcecode, but I can only find UI (ie. browser) code. Does this do anything beyond delivering a more functional and prettier UI on top of an existing zoekt deployment? If no, everybody would be better served if you tried to improve the UI inside Zoekt, which currently is a live demonstration of (my lack of) web app programming skills. Have you thought of how you will achieve your further goals (eg. semantic search)? That will require server-side changes, but you currently have no Go code at all.
+  - Yea that is correct - in its current state, it's functionally a UI wrapper on top of the zoekt-webserver api. 
+- As for just a UI over Zoekt, let me plug https://github.com/TreeTide/zoekt-underhood
+  - https://github.com/isker/neogrok
+
+- Why not just use your IDE?
+  - an IDE is often more convenient when you have the code checked-out locally. This becomes a pain when you work in a organization with potentially hundreds of repositories that you need to search across (e.g., a org stores their 100+ microservices in separate repos, and you need to find all places where they make a request to your service).
+  - I cannot run Xcode on Linux, I cannot run Visual Studio on Linux
+  - some languages practically require arbitrary code execution to make a build, which I'd much prefer to shove into an isolated VM.
+- I use ghorg in tandem with ripgrep to address that problem. The former is for checking out the main branches of all repositories, the latter to perform the actual search.
+
+- since GitHub copied SourceGraph, I don't have much of a need for these self-hosted solutions.
+  - yeah, github has a nice search now, the only complaint is that you need to be logged on to use, besides this is really nice.
+- sourcegraph is dead with advent of LLMs and AI coding tools right? Github cross repo search is also not bad anymore
+  - Wrong. Unless you want to feed the LLM your entire codebase, which is usually infeasible, you need to be able to retrieve relevant context, which relies on understanding the codebase, as Sourcegraph does. Sourcegraph has a product that does precisely this, called Cody.
+
+- Does this make a copy of each repo on ingest? Can it work against in-place repos, for example if hosted on the same server as a code forge installation?
+  - Yea exactly - on ingest it clones the repos and will periodically fetch new revisions. Currently we don't support in-place repos, but feel free to file a issue and we'd be happy to take a look.
+
+- How would this work if you want to index different branches of a repository only?
+
+- Any plans to add Gitea/Forgejo (self-hosted) support?
+- Any plans for non Github/Gitlab integrations? Gitea/Gogs/etc. maybe?
+
+- Can you add repos after starting the container? What about persisting indexes across restarts?
+  - Yes - there is a file watcher that should pickup modifications to the configuration file.
+  - And you can persist indexes across restarts by mounting a volume to the `/data` directory (e.g.,    `-v $(pwd):/data`). Indexes are stored in a `.sourcebot` cache directory.
+
+- Does it support Perforce? i couldn't find it in the schema in the repo.
+  - No just GitLab and GitHub atm
 # discuss
 - ## 
 

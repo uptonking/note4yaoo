@@ -139,6 +139,7 @@ modified: 2020-07-17T10:54:16.341Z
 - [JetBrains Mono: A free and open source typeface for developers](https://www.jetbrains.com/lp/mono/)
   - available under the SIL Open Font License 1.1 license
   - free for both commercial and non-commercial purposes
+  - [What the difference between JetBrains Mono and JetBrains Mono NL - Stack Overflow](https://stackoverflow.com/questions/62195642/what-the-difference-between-jetbrains-mono-and-jetbrains-mono-nl)
 
 ## web-fonts
 

@@ -243,13 +243,34 @@ modified: 2024-08-24T16:30:20.218Z
   - http://brackets.io/
   - a modern open-source code editor for HTML, CSS and JavaScript that's built in HTML, CSS and JavaScript.
 # code-search
-- https://github.com/sourcebot-dev/sourcebot /MIT/202411/ts
+- https://github.com/sourcebot-dev/sourcebot /1.9kStar/MIT+EE/202505/ts
   - https://sourcebot.dev/
   - a fast code indexing and search tool for your codebases. 
   - It is built on top of the zoekt indexer, originally authored by Han-Wen Nienhuys and now maintained by Sourcegraph.
+  - Multi-repo search: Index and search through multiple public and private repositories and branches on GitHub, GitLab, Bitbucket, Gitea, or Gerrit.
+  - Full file visualization: Instantly view the entire file when selecting any search result.
+  - [Show HN: Sourcebot, an open-source Sourcegraph alternative | Hacker News _202410](https://news.ycombinator.com/item?id=41711032)
+
  - https://github.com/sourcegraph/zoekt /apache2/202411/go
     - This is a fast text search engine, intended for use with source code.
+    - Zoekt supports fast substring and regexp matching on source code, with a rich query language that includes boolean operators (and, or, not).
+    - It can search individual repositories, and search across many repositories in a large codebase.
+    - Because of its general design based on trigram indexing and syntactic parsing, it works well for a variety of programming languages.
+    - Zoekt also contains an index server and web server to support larger-scale indexing and searching of remote repositories. 
     - This is a Sourcegraph fork of github.com/google/zoekt. It is now the main maintained source of Zoekt.
+    - The JSON API supports advanced features including:
+      - Streaming search results 
+      - Alternative BM25 scoring
+      - Context lines around matches
+      - the web server exposes a gRPC API that supports structured query objects and advanced search options.
+- https://github.com/isker/neogrok /MIT/202502/ts/svelte
+  - https://neogrok-demo-web.fly.dev/
+  - a frontend for zoekt
+  - Neogrok exposes zoekt's search APIs in the form of a modern, snappy UI. Neogrok is a SvelteKit application
+- https://github.com/TreeTide/zoekt-underhood /apache2/202203/go/inactive
+  - An Underhood UI gateway for Zoekt indices.
+  - https://github.com/TreeTide/underhood
+    - UnderHood is a code browsing interface backed by Kythe indices.
 
 - https://github.com/google/codesearch /BSD/202406/go
   - Fast, indexed regexp search over large file trees
@@ -277,6 +298,10 @@ modified: 2024-08-24T16:30:20.218Z
     - a fork of SourceGraph with a few modifications
     - It only contains the opensource code. The proprietary code is removed to make sure it's not used during compilation.
     - It has a Oauth2 Proxy Mode allowing to fetch the user information from the HTTP headers.
+  - https://github.com/efritz/sourcegraph /202311/go/inactive
+    - [Sourcegraph went dark | Eric Fritz _202408](https://www.eric-fritz.com/articles/sourcegraph-went-dark/)
+    - Over my tenure at Sourcegraph I’ve done a fair bit of writing for the engineering blog
+    - [Sourcegraph went dark | Lobsters _202408](https://lobste.rs/s/tg5vwi/sourcegraph_went_dark)
 
 - https://github.com/livegrep/livegrep /BSD/202412/cpp/go
   - http://livegrep.com/
@@ -392,6 +417,12 @@ modified: 2024-08-24T16:30:20.218Z
     - we anticipate SCIP additionally unblocks the following use-cases that we previously struggled to support with LSIF:
       - Incremental indexing: once implemented, SCIP users will experience shorter waiting time for precise code navigation to become available on Sourcegraph after a git push because our backend only needs to index the files that have changed instead of the entire repository on every commit.
       - Cross-language navigation: once implemented, SCIP users will, for example, be able to navigate between Protobuf and generated Java/Go Protobuf bindings, helping them find relevant code examples that were previously unavailable with both search-based and precise code navigation.
+
+- https://github.com/hound-search/hound /MIT/202307/go/js/inactive
+  - Hound is an extremely fast source code search engine. The core is based on this article (and code) from Russ Cox: Regular Expression Matching with a Trigram Index.
+  - Hound itself is a static React frontend that talks to a Go backend. 
+  - Currently Hound is only tested on MacOS and CentOS, but it should work on any *nix system. Hound on Windows is not supported
+  - By default Hound polls the URL in the config for updates every 30 seconds. You can override this value
 # ide-devtools
 - https://github.com/zthxxx/react-dev-inspector /MIT/202412/ts
   - https://react-dev-inspector.zthxxx.me/

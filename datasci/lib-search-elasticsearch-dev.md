@@ -8,6 +8,10 @@ modified: 2021-05-13T03:18:43.412Z
 # lib-search-elasticsearch-dev
 
 # guide
+
+- tips
+  - 不必过早在搜索上投入太多精力，类似vscode的ripgrep方案对大多数场景都够用
+
 - 从es5开始，默认打分算法从TF-IDF变为BM25
 # faq
 - elasticsearch vs solr
