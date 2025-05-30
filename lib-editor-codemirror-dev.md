@@ -316,6 +316,50 @@ edd.contentDOM.cmView.view === edd // true
 
 - codemirror协作官方示例使用ot变体，社区有使用crdt如yjs
 
+- 手动触发服务端 pullOTUpdates 事件，传递参数包含换行符 `changes : [59, [0, "↵ 或 \n"]]`时，前端编辑器会将换行符渲染为 `NL`.
+  - 解决方法为使得传递的数据为格式 `changes: [55, [0, "", ""], 1]`.
+
+```JS
+// 协同时收到的 pullOTUpdates 事件数据结构
+
+// 输入字符前，鼠标点击在文件末尾或文件中间或任意位置时(不修改内容)
+{
+  "changes": [
+    13 // 👉 无论光标渲染在哪个位置，这个长度都是文件内容长度
+  ],
+  "selection": {
+    "ranges": [{
+      "anchor": 4, // 根据位置变化
+      "head": 4
+    }],
+    "main": 0
+  },
+  "agentUserId": "5c38ff4b-b93d-4ce1-b74a-05c2baaf8d28"
+}
+
+// 手动回车造成换行时
+[{
+  "changes": [
+    13,
+    [
+      0,
+      "",
+      ""
+    ]
+  ],
+  "selection": {
+    "ranges": [{
+      "anchor": 14,
+      "head": 14
+    }],
+    "main": 0
+  },
+  "agentUserId": "5c38ff4b-b93d-4ce1-b74a-05c2baaf8d28"
+}]
+
+
+```
+
 ## dev-ai-coding/diff
 
 - diff视图的结果是红色删除行在上、绿色增加行在下

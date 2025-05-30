@@ -41,6 +41,31 @@ modified: 2023-06-14T00:53:15.226Z
 
 ## 
 
+## 浏览器fetch请求的响应是包含400的html: `"result":"|"<!doctype html>chtml lang=l|\"en|||"><head> <title>HTTP Status 400 - Bad Request</title>`
+
+> Failed to init ticket for ide playground: AxiosError: Request failed with status code 400
+
+- ~~初步确认为代理导致问题~~
+
+- ~~`Accept-Encoding`请求头被篡改加入了br, zstd，导致的问题~~
+  - 压缩头部后，长度仍然会超限，就排除了这个原因
+
+- manager 仍是未能复现出来，因为 400 是从 tomcat 连接器层面校验失败报错的，所以请求没有进入到过滤器和拦截器层面，也就捕获不到日志
+
+- 在本地环境复现问题后，能看到fetch请求的完整响应，后面是 `java.lang. IllegalArgumentException: Request header is too large`.
+  - req header超长了
+  - 在线上用一个超长的头复现了400问题，8172接近了8K头部。
+  - 更新线上配置: max-http-header-size: 32KB
+- 观察复现用的curl脚本，里面包含 -H 一个很大的字符串，内容主要是posthog/观测云session相关的，字符串中内容很大的key包括
+  - __session, __session_sZpGZB7P, ph_phc_9x00r9ta9QscUyVtyJ5e64u2ZuJ3GoddR0GWTiFt4Bm_posthog
+
+- 但是看之前抓包的响应结果，没有进一步的错误类型提示信息。和这个结果不太一样
+  - 加大req.header长度20字节就可以复现。出错响应是一样的
+
+## 文件树同步问题
+
+- goAgent其他进程watch的文件数量过多超过系统限制，导致文件监控进程未监控到新创建的文件
+
 ## cloud browser方案
 
 - 基于 playright + novnc 的方案

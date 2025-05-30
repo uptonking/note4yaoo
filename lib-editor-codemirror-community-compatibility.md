@@ -50,7 +50,9 @@ modified: 2024-08-11T06:40:41.476Z
 
 - ## 
 
-- ## 
+- ## [Script editor shows "NL" character instead of rendering actual new line (v-6) _202408](https://github.com/codemirror/dev/issues/1429)
+- What value did you set `lineSeparator` to? If you set it to, for example, `\r\n` , and then load a document that contains just `\n` characters between lines, your editor will look like the screenshot, because in an editor configured that way, `\n` does not start a new line.
+  - If you just want to process code copied from the editor, I've added `clipboardOutputFilter` in @codemirror/view 6.33.0, which might help.
 
 - ## [Inconsistent cursor position for a widget created by Decoration.replace in Chrome and Safari - v6 - discuss. CodeMirror _202106](https://discuss.codemirror.net/t/inconsistent-cursor-position-for-a-widget-created-by-decoration-replace-in-chrome-and-safari/3239)
   - The blinking cursor’s position is after the widget in Chrome, which is expected; however, it is before the widget in Safari, which seems to be incorrect

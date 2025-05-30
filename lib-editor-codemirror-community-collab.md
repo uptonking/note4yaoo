@@ -113,14 +113,14 @@ CodeMirror.commands.undo = function(cm) {
   - If you don’t, then no, there’s no concept of a ‘last document’.
 - `ViewUpdate.transactions` may be empty. It may also hold more than one transaction. So loop over them or use `ViewUpdate.changes` , which combines them into a single changeset.
 
-- ## 🤔 [Specification for serialised changset? - v6 - discuss. CodeMirror _202402](https://discuss.codemirror.net/t/specification-for-serialised-changset/7827)
+- ## ⚖️ [Specification for serialised changset? - v6 - discuss. CodeMirror _202402](https://discuss.codemirror.net/t/specification-for-serialised-changset/7827)
   - I’m currently sending only the serialised changes to the server using something along the lines of: `EditorView.updateListener.of((e) => send("update", e.changes.toJSON()))` .
   - I need to implement the application on the server (not js/ts, elixir). But I couldn’t find documentation for the format. The common [insertion, [removal, new_string]] is sorta obvious
   - The tests use a format like over("2 2:2 2", "0:2 6", "4 2:2 2") and I’m not quite sure how they relate to one another.
 
 - There’s no specification for these, but they won’t change, because that would break things for people. 
   - The elements in the array represent sections of the old document. 
-  - Plain numbers are unchanged ranges. Arrays are replacements, where the number at the start of the array is the amount of deleted text, and the strings following that is the inserted text, split by line. 
+  - 💡💡 Plain numbers are unchanged ranges. Arrays are replacements, where the number at the start of the array is the amount of deleted text, and the strings following that is the inserted text, split by line. 
   - So [0, "", ""] inserts a line break, [1] deletes a character, etc.
   - `[5, [0, "new "], 7]` is a change that, inserts “new ” at position 5 in a length-12 document. “skip 5, replace 0 with the string ‘new’, skip 7”. If the change is at the very end of the document, the skip at the end will not be there.
 - While most editing changes will, obviously, make only a single modification to the document. it’s not hard to create a transaction that makes several changes.

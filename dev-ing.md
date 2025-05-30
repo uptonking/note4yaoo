@@ -293,6 +293,7 @@ console.trace(';; loadFile', path, loadType);
 - you can use jest and @testing-library/react, 
 - Each unit test should be independent of other tests. Avoid sharing state or dependencies between tests by using beforeEach/beforeAll/afterEach/afterAll
 - you had better write only in test files and not modify original source code
+
 - Handle asynchronous code correctly 
 
 - unit test should increase jest test coverage
@@ -339,6 +340,8 @@ use create-react-app to create a webapp, homepage shows a list of frontend frame
   - py 784965933709307904
   - js 786335673728065536
   - java 786790509908774912
+
+## 0530
 
 ## 0528
 
