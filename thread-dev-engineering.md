@@ -43,6 +43,22 @@ modified: 2021-01-21T17:52:13.333Z
 
 - ## 
 
+- ## 
+
+- ## 项目久了就会有很多性能问题堆积了。你们一般多久治理一次？
+- https://x.com/__oQuery/status/1927380807946993856
+- 扶老人悖论 -- “不是你写的bug，你为什么要修”，测试不报，从不治理
+
+- 老板非常认可价值&工作舒适: 每个 PR 都尽量注意性能
+  - 业务迭代压力大|暂时没那么重要: 劣化到一定程度专项治理
+  - 老板不认可价值: let it be
+
+- 能用钱堆机器解决的，绝不去改代码
+
+- 性能问题已经影响到主流程使用了，才会修一下。
+
+- 一般来说，我经手的项目活不到需要考虑性能问题的时候
+
 - ## If you build a similar tool for another ecosystem, don’t just tweak the original name (like Remix to Vemix for Vue).
 - https://x.com/adamwathan/status/1906371401608491459
   - Things will inevitably diverge and you will regret it. You’ll have to work way harder to get credit for your original ideas, because it’ll always look derivative.
@@ -245,9 +261,9 @@ modified: 2021-01-21T17:52:13.333Z
 
 - 这里可能有个悖论, 自己造轮子 研发成本高, 不自己造轮子 显不出技术“高明”, 结果是 996 劣质轮子 遍地都是…
 
-01.                     大概率没有开源的好
-02.                     造轮子就要维护一个轮子迭代维保团队
-03.                     迭代维保团队和其他团队无限的撕逼
+01.                      大概率没有开源的好
+02.                      造轮子就要维护一个轮子迭代维保团队
+03.                      迭代维保团队和其他团队无限的撕逼
 
 - ## Five terms I avoid when naming things:
 - https://twitter.com/housecor/status/1742197661837476018

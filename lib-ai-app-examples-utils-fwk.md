@@ -145,6 +145,10 @@ modified: 2025-02-21T18:20:42.624Z
   - 依赖pydantic2、httpx
   - You can now find FastMCP as part of the official Model Context Protocol Python SDK
     - this repository is no longer maintained.
+
+- https://github.com/mark3labs/mcp-filesystem-server /go
+  - Go server implementing Model Context Protocol (MCP) for filesystem operations.
+  - 通过这个MCP就可以操作本地文件系统了，由于这个是go编写的，go能交叉编译的架构特别多，所以理论上大部分系统都能运行这个MCP Server。
 # crawler-ai
 - https://github.com/mendableai/firecrawl /AGPLv3/202502/python/rust/ts
   - https://firecrawl.dev/

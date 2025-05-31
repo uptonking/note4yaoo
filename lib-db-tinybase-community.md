@@ -103,7 +103,8 @@ modified: 2023-04-21T11:42:46.575Z
 # discuss-news
 - ## 
 
-- ## 
+- ## subset persistence: From an underlying database, you can now easily load just a subset of the rows in a table into a Store.
+- https://x.com/tinybasejs/status/1922390308119007527
 
 - ## 🎯 TinyBase v5.0 🎉 We are thrilled to unveil this major new release - "The One You Can Sync" _20240706
 - https://x.com/tinybasejs/status/1809369908662399466

@@ -33,7 +33,18 @@ modified: 2023-10-28T13:46:14.957Z
 # discuss-indexing
 - ## 
 
-- ## 
+- ## “Why is Postgres seq-scanning rather than use this index?”
+- https://x.com/gwenshap/status/1928139754287333641
+  - Short answer: the planner thinks that index won’t help (or can’t use it).
+
+1️⃣ Stale stats: ANALYZE hasn’t run; filter looks un-selective.
+2️⃣ Truly un-selective: Stats are right; scan really is cheaper.
+3️⃣ Complex estimates: Many joins / ORs / CTE / functions scramble row estimates.
+4️⃣ Handcuffs on: RLS limits optimizations or GUCs forbid the path.
+5️⃣ Planner bugs: Very rare but...
+
+- Debug flow:
+  - ANALYZE ➜ rethink predicate ➜ simplify query ➜ audit policies & GUCs ➜ If still wrong, try pg_hint_plan (force an index to prove a point) or hypopg (hypothetical indexes) before filing a bug.
 
 - ## PostgreSQL implements an interesting optimization to make some scans index-only and execute the query faster. Let's explore the implementation.
 - https://x.com/arpit_bhayani/status/1846754739762901454

@@ -55,6 +55,13 @@ modified: 2023-02-09T18:32:06.240Z
   - It also paves the way for document virtualization 
   - Typewriter adds Decorations like ProseMirror which support changes to how the document is displayed without changing the document. This is used for features like highlighting find-replace words or inserting a collaborator's cursor.
 
+- https://github.com/vincentdchan/quill-next /BSD/202505/ts
+  - https://quill-next.diverse.space/
+  - Quill Next is a modern rich text editor built on the foundation of Quill. 
+  - This fork is currently a personal project, aiming to keep Quill thriving and evolving.
+  - https://x.com/cdz_solo/status/1922246588425994331
+    - It introduces a React-based plugin system that is deeply integrated with React, making it easier to develop Quill plugins and build lightweight rich text editors
+
 - blocky-editor /150Star/MIT/202208/ts
   - https://github.com/vincentdchan/blocky-editor
   - https://blocky-editor.dev/

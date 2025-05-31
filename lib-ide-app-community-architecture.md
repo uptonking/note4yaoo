@@ -212,10 +212,27 @@ modified: 2024-12-03T13:20:30.085Z
 - Same ideas are used in Nim's incremental compilation (wip) https://github.com/nim-lang/Nim/tree/devel/compiler/ic Also there are two JSON implementations with a flat architecture https://github.com/Araq/packedjson and https://github.com/planetis-m/packedjson2 (this one I wrote) But I agree it's a pain to write it like that.
 
 - There was some work on having flattened JS as bytecode. It never got much adoption but I believe it would have made the web a lot more efficient.
+# discuss-lint
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Semgrep is a security scanner trusted by the biggest enterprises in the world. Now runs on every deploy for vibe coders on Replit. _202505
+- https://x.com/amasad/status/1923071981299065189
+
+
 # discuss-ide
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+
 
 - ## [Drowning in code: The ever-growing problem of ever-growing codebases | Hacker News _202402](https://news.ycombinator.com/item?id=39356574)
 - Basically, "divide and conquer." Big things are composed of small things.

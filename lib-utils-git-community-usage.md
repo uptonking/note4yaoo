@@ -131,7 +131,10 @@ git log --online --graph --decorate
 
 - ## 
 
-- ## 
+- ## 我用 Git 的时候有一个很常见的 combo 来合并 main 分支的最新代码：
+- https://x.com/tison1096/status/1926191882360455190
+- 接 git pull origin main -r 就可以了吧
+  - -r: rebase
 
 - ## [How do I remove the passphrase for the SSH key without having to create a new key? - Stack Overflow](https://stackoverflow.com/questions/112396/how-do-i-remove-the-passphrase-for-the-ssh-key-without-having-to-create-a-new-ke)
 - ssh-keygen -p [-P old_passphrase] [-N new_passphrase] [-f keyfile]

@@ -7,7 +7,28 @@ modified: 2021-07-24T08:16:41.076Z
 
 # spec-format-apache-arrow-community
 
+# guide
+
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 
+# discuss-parquet
+- ## 
+
+- ## 
+
+- ## ClickBench keeps me convinced that  Parquet can be quite fast. There is only a 2.3x performance difference vs @duckdb 's own format and unoptimized parquet
+- https://x.com/andrewlamb1111/status/1925537738360504663
+  - I am surprised that the (closed source) Umbra only reports 3.3x faster than DuckDB on parquet
+  - BTW the delta between DuckDB and DataFusion is almost entirely explained by filter pushdown and late materialization, which we are working on
+- Rather than twitter speculation, here is a fun project @MOVNTDQ filed about actually measuring how much better performance you can get using just parquet by simply sorting / clustering
+- Agree. I believe it's possible to 2x or even 5x parquet or certain workloads, but 10x is impossible with an optimized parquet reader . Across all workloads even 3x is hard.
+
 # discuss
+- ## 
 
 - ## 
 

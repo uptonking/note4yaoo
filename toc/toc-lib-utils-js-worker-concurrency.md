@@ -29,6 +29,9 @@ modified: 2024-01-30T14:41:38.742Z
   - To address this scenario, browsers support transferable objects which allow certain types of objects to be transferred between contexts.
   - In fairly rare cases, you may wish to make parallel connections between two participants. Penpal provides the concept of channels. 
 
+- https://github.com/psd-coder/typed-channel
+  - Evil Martians just released a new open source tool for TypeScript to add types to postMessage for communication via Web Workers, BroadcastChannel, etc.
+
 - evolu /101Star/GPLv3/202210/ts
   - https://github.com/evoluhq/evolu
   - https://www.evolu.dev/

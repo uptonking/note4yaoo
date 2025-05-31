@@ -84,7 +84,17 @@ modified: 2021-07-27T16:35:20.057Z
 
 - ## 
 
-- ## 
+- ## The best way to preview PDFs at scale:
+- https://x.com/pontusab/status/1924091702832517357
+  ◇ Generate PNG
+  ◇ Cache in Vercel CDN
+  ◇ Use `<Image />`
+
+- don't like Vercel `<Image/>`, litteraly a wrapper around `<img />` but it charges you money and doesn't work if you deploy out of Vercel
+  - Next.js will still optimise your image using sharp
+  - it’s definitely more than a wrapper. you can also create a loader function not controlled by vercel (well documented). we use it with great success on a self-hosted instance too
+
+- If PNG will not be enough, try to generate SVG is much scalable. I'm using it for photobook building in UI, than generatin same PDF for printing.
 
 - ## 大家觉得企业文档管理最好的产品是哪个？ _202501
 - https://x.com/waylybaye/status/1877307423142146266

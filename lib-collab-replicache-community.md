@@ -33,7 +33,11 @@ modified: 2024-01-07T05:09:14.413Z
 # discuss-author(aboodman)
 - ## 
 
-- ## 
+- ## Sync engines continuously replicate changes from your database to the client device. On Postgres the common way to do this is with PG's logical replication feature.
+- https://x.com/aboodman/status/1923122323449839750
+  - But what happens when the db schema changes? You want to replicate that change too, and unfortunately PG's logical replication support doesn't cover this use case.
+  - In Zero, we use PG "event triggers" to work around this. We register an event trigger to get fired whenever any schema change occurs, then we send this change over our sync stream to clients. This is simple and efficient.
+  - Unfortunately, event triggers require superuser access in PG and so have been unavailable in many hosted PG services, like Supabase.
 
 - ## 🤔 JS/TS devs: For the public entrypoints of libraries, should library authors runtime validate inputs (i.e., with zod/valita), or just rely on TS types to enforce valid inputs?
 - https://x.com/aboodman/status/1897003207005802856
@@ -143,7 +147,14 @@ modified: 2024-01-07T05:09:14.413Z
 # discuss-news
 - ## 
 
-- ## 
+- ## I can't wait to implement aggregates for Zero.
+- https://x.com/aboodman/status/1921648617330475070
+  - For a database, a function like `count()` can be counter-intuitively expensive. Because you have to find all results in order to count them.
+  - Zero can't avoid this worst-case for the _first_ result. But because Zero uses Incremental View Maintenance (updating query results surgically as the data changes, rather than recomputing), as long as you leave the subscription open, updates to count will be trivially cheap.
+
+- Zero creates a server-side replica of your data. Kinda like a read replica, but optimized for sync.
+- Is that a global replica? Or replica per user/session?
+  - Global, or perhaps regional.
 
 - ## The Zero server was designed from the beginning for horizontal scalability
 - https://x.com/aboodman/status/1885496692293984734

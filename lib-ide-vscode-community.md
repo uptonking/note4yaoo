@@ -20,9 +20,7 @@ modified: 2024-08-24T16:15:47.613Z
 
 - One thing that VS Code gives you that Electron doesn't is a distribution model - the marketplace and how new versions of your app can be detected and downloaded automatically etc. This is a big deal.
 
-
 - I think the disadvantages are that a very fancy UX may not be possible directly - but you have to "work around" by putting HTML within a Web View perhaps. 
-
 
 - 
 - 
@@ -56,6 +54,22 @@ modified: 2024-08-24T16:15:47.613Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## Windows Subsystem for Linux is now Open Source _20250520
+- https://x.com/msdev/status/1924506589496496488
+
+- ## 🚀👾 Today, we're announcing plans to make VS Code an open source AI editor. _20250520
+- https://x.com/code/status/1924497694648603021
+- [Open-source AI functionality provided by the Copilot Chat extension _202505](https://github.com/microsoft/vscode/issues/249031)
+  - VS Code itself has been open source, but now we will be open sourcing AI features from the GitHub Copilot Chat extension and adding it to VS Code core.
+
+- Imagine creating a product so good you force VSCode to open source to keep market share
+
+- https://x.com/EricSimons/status/1924527222041231664
+  - When building Bolt, we looked for open source projects as a baseboard... but there were none
+  - We decided to open source ours at http://bolt.diy with the hope others would follow suit
 
 - ## Visualize your repo's history... now directly built into @code
 - https://x.com/code/status/1837540563710615757

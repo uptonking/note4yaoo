@@ -379,9 +379,24 @@ modified: 2023-11-28T14:48:45.910Z
 # discuss-notion-like
 - ## 
 
-- ## 
+- ## 🌰 Sharing some updates for the upcoming Notion clone, or as we are going to call it "Potion". _202310
+- https://x.com/YTCodeAntonio/status/1708979418666860832
 
-- ## 
+- ## [Anytype – local-first, P2P Notion alternative | Hacker News _202307](https://news.ycombinator.com/item?id=36799548)
+- I don't understand this license. It's not open-source.
+  - [Our Open Philosophy _202306](https://blog.anytype.io/our-open-philosophy/)
+  - While our core solutions, the infrastructure protocol any-sync, and the data protocol any-block, are released as open source under the permissive MIT license, we distribute the remaining layers, including the middleware library any-heart, and applications like anytype-js, anytype-swift, and anytype-kotlin, under the Any Source Available License.
+  - This license grants individuals the freedom to review, modify, and utilize the code for personal, academic, scientific, research, and development purposes. 
+  - However, for commercial use, consent from the Any Association is required.
+  - We guarantee free, non-commercial usage of the software and full transparency of the code.
+
+- 👷jitl: The Anytype model is really cool - in a way, they’ve rebuilt Lotus Notes with 21st century E2E encrypted protocols and technology. 
+  - They’ve built a really solid personal knowledge app with many of Notion’s features - and some clear improvements over Notion.
+  - However they also demonstrate the complexity and tradeoffs of the E2E approach. Anytype has been a work-in-progress since at least 2019. 
+  - > There's no browser version of the app. 
+  - Without these features Anytype is in a much smaller market (PKM) with less distribution than Notion/Coda/Dropbox Paper/Quip/Confluence/…
+
+- Coda has the most powerful tables I've seen of the Notion alternatives, and was a fair bit cheaper for my team since they don't charge per viewer or editor but per "creator". But unfortunately it's not open-source or local.
 
 - ## What @NotionHQ feature should we un-ship? _202410
 - https://x.com/akothari/status/1843512114612449483
@@ -399,7 +414,7 @@ modified: 2023-11-28T14:48:45.910Z
 
 - ## 📈 [Show HN: Eidos – Offline alternative to Notion | Hacker News _202406](https://news.ycombinator.com/item?id=40746773)
 
-- A key idea of Eidos is to make each table a real SQLite table, so users can view and modify it through other software or visualize it with tools like Metabase
+- 🛢️ A key idea of Eidos is to make each table a real SQLite table, so users can view and modify it through other software or visualize it with tools like Metabase
 
 - I feel like the sqlite-based thing is, if anything, kind of a downside. Use it for caching and calculation, sure, but I want the source of truth to be just plain markdown files I can take into other apps in 5 years when whatever I'm using now inevitably dies.
   - I think plain text has its limitations. There are many other types of structured data in life. Just like Word and Excel, they have different responsibilities. No one worries that Excel will not work in a few decades because it's just an offline software. Similarly, no one worries that SQLite will be unable to open or view because it has already been running with billions of instances, becoming part of the infrastructure.
@@ -410,7 +425,7 @@ modified: 2023-11-28T14:48:45.910Z
 - good idea. all documents are currently stored in the eidos__docs table. The `content` field is used to store the state of lexical documents in JSON format. Additionally, there is also a `markdown` field. This can be viewed by any sqlite software. Every time a document is updated, both fields are updated simultaneously, making it easy to convert to a file.
 
 - SQLite won't stop working but your format is proprietary. A markdown can be understood even without rendering to HTML but your tables are useless for an user without your app.
-  - This is why I use RTF. It is considerably more flexible than Markdown (which can't do basic stuff like making text red), but not a proprietary format. The application I use (DEVONthink) supports a number of formats including Markdown, HTML and RTF, and documents how to get at the raw files if the application ever becomes unavailable. No use of a proprietary database format. This is for my 30-year files.
+  - ⚖️ This is why I use RTF. It is considerably more flexible than Markdown (which can't do basic stuff like making text red), but not a proprietary format. The application I use (DEVONthink) supports a number of formats including Markdown, HTML and RTF, and documents how to get at the raw files if the application ever becomes unavailable. No use of a proprietary database format. This is for my 30-year files.
   - I also use RTFD in the same application. This is a variant of RTF which can have embedded images. It's not universally supported like RTF, but there are sufficient third-party editors to leave me confident that I will be able to get at the information. This is for my 5-year files.
 
 - I have tried quite many such apps and keep returning to Tiddlywiki (https://tiddlywiki.com/). It is not perfect, and the lack of hierarchy can be both a blessing and a curse. It uses flat-files which can impact performance and be more cumbersome than a database. Also, the integration with external files is a bit clumsy.
@@ -526,6 +541,14 @@ modified: 2023-11-28T14:48:45.910Z
 - I love buttons. But what I love more is forms. Create a way to build a form that populates a database and you might just go next level.
 - The only missing feature now is: connect Notion to external databases (read and write).
 # discuss-like-eidos
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 代理模式太好用了，深刻理解了依赖抽象而不是实现。

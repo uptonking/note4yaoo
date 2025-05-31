@@ -63,6 +63,17 @@ modified: 2024-11-16T10:35:13.534Z
   - https://blendy.tahazsh.com
   - 卡片从小变大的动画示例
 
+# discuss-animation-system
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Motion system that Shopify uses. Includes both visual reference, token naming, value and details
+- https://x.com/101babich/status/1928407232539967491
+- Cleanly structured and super insightful. Love how it balances clarity with flexibility
+
 # discuss
 - ## 
 

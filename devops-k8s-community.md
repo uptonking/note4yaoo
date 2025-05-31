@@ -51,7 +51,18 @@ modified: 2024-06-30T11:15:28.002Z
 
 - ## 
 
-- ## 
+- ## Why Kubernetes remains so popular:
+- https://x.com/GergelyOrosz/status/1923869661713793342
+  1. It avoids cloud vendor lock-in. Using cloud vendor autoscaling doesn’t!
+  2. Kubernetes supports autosclaing well
+  3. Its declarative. Predictable!
+  4. It supports containers - while most cloud autosclaing supports more heavyweight VMs
+
+- Doesn’t make much sense, sorry. Two more likely reasons are:
+  - Bigger companies choosing Kubernetes because it’s the best tech to build an internal platform on.
+  - Smaller companies following the pack without really understanding when not to use the technology.
+
+- It’s a framework most devs know these days. Easy to onboard new hires/devs from other teams. Much harder to do so with obscure cloud-dependent infra.
 
 - ## I understand that k8s and containers is impossible to avoid these days, but when shit goes wrong, the layers of the onion you have to unravel are wild. 
 - https://x.com/mitsuhiko/status/1843307524700934176

@@ -8,7 +8,7 @@ modified: 2023-11-28T14:48:45.910Z
 
 # pm-noter-notable
 
-> make something people want to pay for. ~~easy to read， easy to write, content-centric notebook~~
+> make something people want to pay for futuristically. ~~easy to read， easy to write, content-centric notebook~~
 
 # guide(for notable/noter/paper)
 - features
@@ -163,7 +163,7 @@ modified: 2023-11-28T14:48:45.910Z
   - 启动速度快
   - 方便服务端api操作
 - cons-云桌面/云浏览器
-  - 用户刷新自己环境的浏览器需要手动触发刷新VNC的浏览器,需要自己处理很多操作逻辑，如滚动页面
+  - 用户刷新自己环境的浏览器需要手动触发刷新VNC的浏览器, 需要自己处理很多操作逻辑，如滚动页面
   - 云桌面的截图不能像本地一样滚动截长图
   - 需要在云环境/容器中安装 输入法、语言包、字体
   - 部分应用启动时不会显示全屏窗口，可能会显示黑色背景

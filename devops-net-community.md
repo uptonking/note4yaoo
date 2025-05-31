@@ -145,6 +145,15 @@ Their main job is sending client requests to several servers. The goal is to spr
 
 - 用fail2ban拦截
   - 还可以自动报 http://blocklist.de，顺便做个 crontab 每天拉那个网站的 ip 黑名单
+# discuss-dns
+- ## 
+
+- ## 
+
+- ## YaDNSb - 一个 DNS 服务器性能基准测试工具！支持 IPv4、IPv6、DoH、DoT 和 DoQ - 基本上所有的 DNS 协议
+- https://x.com/geekbb/status/1928287578983186678
+- 更适合中国宝宝体质的 DNS 测速工具：https://github.com/xxnuo/dns-benchmark/tree/master
+
 # discuss
 - ## 
 

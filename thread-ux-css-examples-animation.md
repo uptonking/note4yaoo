@@ -12,7 +12,8 @@ modified: 2022-11-21T15:27:20.974Z
 # examples-loading/progress
 - ## 
 
-- ## 
+- ## Steps animation
+- https://x.com/ln_dev7/status/1928457950152077492
 
 - ## A mix of clip path and CSS transitions
 - https://x.com/emilkowalski_/status/1901689149154869746

@@ -466,6 +466,7 @@ modified: 2023-09-02T09:17:22.992Z
   - File System Isolation: User code runs in an isolated file system environment.
   - Network Isolation: DockerCompose or k8s-Egress
   - DifySandbox currently only supports Linux, as it's designed for docker containers
+  - [I don't care about the security of the system, How can i set up permission to allow all permissions _202503](https://github.com/langgenius/dify-sandbox/issues/139)
 
 - https://github.com/ishaan1013/sandbox /MIT/202408/ts
   - A cloud-based code editing environment with an AI copilot and real-time collaboration.

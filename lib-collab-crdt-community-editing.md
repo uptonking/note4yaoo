@@ -12,7 +12,12 @@ modified: 2023-10-28T09:00:45.811Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## "Collaborative Text Editing without CRDTs or OT". It describes what I hope is a simpler and more flexible approach to the hardest part of a collaborative app, text editing.
+- https://x.com/MatthewWeidner3/status/1925202053346812121
+  - this should let you build central-server collaborative apps with *no* tricky CRDT or OT algorithms! (Though CRDT ideas are still helpful.)
+
+- I love this, but why do people keep framing things as “simpler than a CRDT”? Even your non-distributed design is a CRDT, just with a server as a time stamping authority. Your distributed design is exactly equivalent to how CoLists work in Jazz. It’s just a “simple CRDT”
+  - I tend to think of CRDTs as data structures that ensure commutativity/ACI axioms in a type-specific way. An EC log feels like something different, even though it's technically a CRDT (as is any EC data structure). Likewise for distributed OT.
 
 - ## ⚡️🤔 [WebAssembly 2.0 First Working Draft | Hacker News _202204](https://news.ycombinator.com/item?id=31086217)
 - The big thing that makes javascript slow (that the optimizer can’t really fix) is complex data structures.

@@ -7,8 +7,29 @@ modified: 2021-05-13T07:47:11.964Z
 
 # lib-xplat-community
 
-# discuss
+# guide
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+# discuss-ios
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Arc/Dia 浏览器的团队也解决不了 SwiftUI 的性能问题，退回到了 AppKit。
+- https://x.com/waylybaye/status/1927615528102965478
+  - OpenCat macOS 早期版本也总是卡，优化无果后我直接重写了，几乎所有的 SwiftUI 基础组件：文本、图片、输入框、列表都用 AppKit 重写。然后就一点不卡了…… 
+  - 现在 OpenCat 是三套原生代码。
+
+# discuss
 - ## 
 
 - ## 

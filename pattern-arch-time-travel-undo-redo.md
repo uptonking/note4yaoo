@@ -276,7 +276,14 @@ modified: 2023-09-12T09:36:25.608Z
 # discuss-replay-solutions
 - ## 
 
-- ## 
+- ## 🌰💫 time travel, but for boards and database tables
+- https://x.com/wcools/status/1928332128468582509
+  - Each interaction in the app which changes the workspace state is stored as a mutation event in a log (like event sourcing)
+  - Client applies mutations to local state right away (local-first)
+  - When online, mutations are sent to server, which broadcasts them to other clients (multiplayer)
+  - Clients apply mutations locally. As most are idempotent, replaying them in incoming global order produces consistent state across clients (some mutations may require rollback of pending local changes before (re)applying incoming ones eg to prevent tree/graph cycles)
+  - To prevent having to recalculate old version state by reapplying all mutations, server periodically creates snapshot of workspace state.
+  - As for the rest of the teck "stack", everything in the app is built from scratch, no frameworks
 
 - ## [DOM recording for web application demos | Hacker News _202011](https://news.ycombinator.com/item?id=25195454)
 - This is very cool, but for me the problem has always been the repeatability of demo videos. I make a demo video of our product, and two weeks later that demo is out of date and now I need to make the same video again.
@@ -390,7 +397,14 @@ modified: 2023-09-12T09:36:25.608Z
 # discuss
 - ## 
 
-- ## 
+- ## we brought time travel to replit
+- https://x.com/_jzhao/status/1923095488527548622
+  1. see a global history of all your checkpoints
+  2. view a fully interactive version of your app at any point in that history
+  3. rollback and rollforward to any point in history (with your database data and schema
+
+- Please, turn off that database is being rollbacked by default. this is is super dangerous for everyone like me who has multiple applications in daily use in his team already (or allow users to set a mode for the application like dev / testing / production)
+  - we're working on splitting dev/prod environments for databases but will make some tweaks on the default behavior here
 
 - ## [Text Editor Data Structures: Rethinking Undo | Hacker News _202312](https://news.ycombinator.com/item?id=38601435)
 - Some points that often get left out of 'undo' discussions:

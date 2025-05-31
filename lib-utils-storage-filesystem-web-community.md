@@ -82,7 +82,13 @@ modified: 2023-09-16T17:43:09.215Z
 
 - ## 
 
-- ## 
+- ## Uploading files on the internet could be so much more efficient if whoever designed the `multipart/form-data` spec just included one small detail: a header telling you how long the content is.
+- https://x.com/JoshCaughtFire/status/1927221147860427076
+- It’s was designed for streaming where you didn't know the final size. The other problem is you can’t trust the header, the client could be lying. 
+  - Historically, that’s led to desync issues and vectors like request smuggling, http/2 still sometimes terms and moves to http/1.1 on backends and can cause still cause issues
+
+- 
+- 
 
 - ## 上传文件到对象存储，我觉得的最佳实践: 服务端拿签名给前端，前端通过签名调用对象存储的 sdk 上传
 - https://x.com/TinsFox/status/1891334067011854529

@@ -12,7 +12,7 @@ modified: 2021-07-20T13:50:23.433Z
 
 - tips
   - ~~paas/rendering/web/benefit~~ may be the future
-  - 抽空在线体验，工作专注代码
+  - 抽空在线体验(demo/marks)，工作专注代码
   - 涉猎saas解决方案，积累算法、库、框架、模版项目、生态
     - 尝试将算法和技术转化为可复用的产品, 参考yjs+hocuspocus
     - 工具型框架离商业化应用太远, 直接从主流cms/saas中寻找架构或框架参考

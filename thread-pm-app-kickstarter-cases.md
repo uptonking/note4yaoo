@@ -195,6 +195,20 @@ modified: 2023-03-30T13:31:09.049Z
 - 没做老板之前，都认为老板是狼，每天吃肉。做了老板以后，才知道，老板是狗，每天吃屎。吃屎吃久了，有0.1%的可能性，最后变成不需要上班也能每天吃肉。关键是你能坚持吃那么久的屎么？以及，你能接受99.9%的可能性是白吃屎了么？
 
 - 高手阶层：一眼或几眼就能看穿彼此，真诚是必要的，对方也会有同等位的视野角度去体会你的表达或行为。  但下沉市场，不懂的人太多 一个小问题可能就要解释半天，太耗费自身能量 没办法真诚地去“免费交流”  我的做法是 设置合理的付费门槛 筛选掉白嫖群体 对接值得的群体，助力的同时，顺带赚点小钱
+# discuss-vendors
+- ## 
+
+- ## 
+
+- ## Framer engineering stats:
+- https://x.com/koenbok/status/1926984087610204272
+  - 60/100 engineers, 4 product designers
+  - Median PR Cycle time: 6.2h, Review wait: 1.7h
+  - Median PR size 10-100 lines
+  - 5-10k lines changed per week ~42% AI Assisted
+  - ~1.3 product releases per week
+- Product designer stats are telling! Shows how teams are built. Always curious to see how this affects product outcomes.
+
 # discuss
 - ## 
 

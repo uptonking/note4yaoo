@@ -128,6 +128,17 @@ modified: 2025-03-25T19:15:23.591Z
 # discuss-n8n ⛓️
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 大家觉得 n8n 的爽点是什么？
+- https://x.com/suwakopro/status/1927152617785794701
+- 很早以前用过，想要表达某些逻辑非常困难，完全不如直接写代码，当年搞低代码火了一波，现在都有ai了，就更没必要了
+
+- n8n是不是可以兼容传统的流程运行方式啊，就是保持个运行的当前节点，再交互的时候继续向后执行。
+  - 而不是像dify那样每次都重头执行
+
 - ## [Wait for a trigger during the execution - Feature Requests - n8n Community _202311](https://community.n8n.io/t/wait-for-a-trigger-during-the-execution/32786/2)
   - The idea is: to be able to wait for an event (a trigger ideally) in the middle of an execution. 
   - Close to the current Wait block, we want to pause the execution and wait for the trigger to happen (filtered by a correlation key to select the right execution to resume) before going to the next node.

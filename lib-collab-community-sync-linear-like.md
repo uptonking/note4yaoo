@@ -320,7 +320,17 @@ modified: 2023-12-08T16:02:26.515Z
 
 - ## 
 
-- ## 
+- ## 🔡 If you want to know how @linear ’s sync engine works, Evan Hu reverse engineered it and did a write up that is probably the best documentation that exists - internally or externally
+- https://x.com/artman/status/1927808159139111007
+  - There are so many great sync services out there nowadays that we don’t t need to open source ours. Take a look at t Zero, Jazz and Electric!
+
+- This is a great read! @artman May I ask if Linear use any kind of single source of truth / schema for keeping client model properties up to date with server-side db schema? Obviously they wont always be a 1-1 mapping but it must be a struggle with so many models!
+  - They’re just manually maintained, simple enough and hasn’t been a problem.
+
+- I'm developing a real-time global state management library inspired by @linear
+  - router design inspired by @trpcio
+  - reactive global store inspired on Zustand
+  - https://github.com/pedroscosta/live-state /websocket
 
 - ## The last part of @linear that wasn’t already fully real-time - our document editor - is now real-time and collaborative._202312
 - https://twitter.com/artman/status/1733419868827828319

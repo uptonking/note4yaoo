@@ -88,7 +88,9 @@ modified: 2023-11-10T08:05:25.474Z
 
 - ## 
 
-- ## 
+- ## Congrats to @rbuckton on conditionally advancing Explicit Resource Management to Stage 4 at TC39 today _202505
+- https://x.com/robpalmer2/status/1927744934343213085
+  - It introduces `using` declarations and the Symbol.dispose protocol to deterministically and ergonomically release resources
 
 - ## 🤔 Directives are the weirdest annotation tactic and I think it's insane that they're getting normalized as much as they are. Files... sure. But functions, come on.
 - https://x.com/tannerlinsley/status/1869096602977313273
@@ -154,14 +156,10 @@ modified: 2023-11-10T08:05:25.474Z
   - There are several proposals floating to add types to JavaScript. One of the most popular is types as comments, which would allow JavaScript to treat types in code as ignorable at runtime.
   - But the issue is that this only works with erasable syntax. Anything that requires a more complex transformation, like enums or namespaces, won't work in this model.
 
-
-
-
 - 
 - 
 - 
 - 
-
 
 - ## [Why you shouldn't use Enums _202403](https://www.wordman.dev/blog/typescript-enums)
 - basically TypeScript creates an Object that looks like this

@@ -21,6 +21,7 @@ modified: 2025-04-09T02:50:35.187Z
 - ## 
 
 - ## [How to add requirements.txt to uv environment - Stack Overflow](https://stackoverflow.com/questions/79344035/how-to-add-requirements-txt-to-uv-environment)
+
 ```sh
 
 uv pip install -r requirements.txt
@@ -31,7 +32,6 @@ uv add -r requirements.txt
 # install into the system Python environment.
 uv pip install --system
 ```
-
 
 - ## 🆚 [What's the difference between `uv pip install` and `uv add` · Issue #9219 · astral-sh/uv _202411](https://github.com/astral-sh/uv/issues/9219)
 - The `uv pip` APIs are meant to resemble the pip CLI. 
@@ -80,4 +80,11 @@ uv pip install --system
 
 - ## 
 
-- ## 
+- ## I really wish Python imports were lazy and would pull bindings in like ES6 does. 
+- https://x.com/mitsuhiko/status/1928436437621293392
+  - It would also solve so many issues with typing now which greatly encourage circular imports.
+  - When you "from foo import bar" you look up "bar" in that module's scope at import time and place it in the current module's global scope. The improved approach is to pull in a binding and to only resolve that binding when someone looks it up for the first time.
+
+- ES imports not being lazy by default was a huge oversight(失察; 忽略). I expect import defer will become the default soon enough.
+
+- in langchain, We had to do stuff like this all over the place

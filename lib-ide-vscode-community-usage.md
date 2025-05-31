@@ -65,7 +65,8 @@ modified: 2024-08-24T16:52:53.996Z
 
 - ## 
 
-- ## 
+- ## VSCode line number column is too damn wide because it's actually three columns, which you can individually hide:
+- https://x.com/StatisticsFTW/status/1926340906883375391
 
 - ## [Why do I have two source controls in VsCode git? - Stack Overflow](https://stackoverflow.com/questions/63328002/why-do-i-have-two-source-controls-in-vscode-git/64243268)
 - I found out how to remove it, just right click on the title of the repository and press "close"

@@ -33,6 +33,14 @@ modified: 2021-01-08T17:13:43.392Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## A URL is a URI, but a URI is not always a URL.
+- https://x.com/sergiodxa/status/1928582537003118593
+  - e.g. a torrent magnet link is a URI, but not a URL, it identifies a resource (the torrent) but doesn't locate it via a protocol like HTTP or FTP.
+
 - ## Use the `<datalist>` element to create native HTML autocomplete.
 - https://x.com/denicmarko/status/1903431486335803801
   - <input list="items" /> ` + ` <datalist id="items"><option value="aa" /></datalist>`

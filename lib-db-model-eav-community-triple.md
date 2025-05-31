@@ -125,6 +125,25 @@ modified: 2023-09-25T09:00:49.722Z
   - Blocks are "just" rows in Postgres.
   - We **use JSON for properties for flexibility and for user-defined property schemas**.
   - We could use an `entity-attribute-value` table as you describe for that, but such a table would complicate our caching techniques. It would also be enormous(巨大的；极大的), but, it might be time for another think about that since we finished sharding.
+# discuss-single-table
+- ## 
+
+- ## 
+
+- ## In 2022, after 20 years of building databases, I built an entire application using a single database table.
+- https://x.com/svpino/status/1928124197731266682
+  - This application has been running without issue since then.
+  - It's a DynamoDB database. There are 9 different entities in a single-table design.
+  - This goes against everything I learned about relational databases.
+  - With this, I learned an important lesson: Simplicity is so underrated. Sometimes you need to get your head out of your butt to learn something new. Listen to the experts, but always stay open-minded.
+
+- DynamoDB is not a relational database. So yes, we can do that. I think it's pretty much same with any NoSQL database. Just one table and you can put whatever you want in it.
+  - They have made a UI in AWS that looks like a table. But it's not a table. It's kind of a key value store
+
+- It’s great until you need to add a new query pattern. We use single table design with a lot of our microservices and it’s amazing. Dynamodb toolbox is a fantastic module to use over native AWS SDK for DDB. However, there are plenty of gotchas. It’s amazing for some use cases
+  - Yup. No silver bullet.
+
+- The real reason is: you have your responsibility to yourself. If it fails, you go and fix it. But, in a company environment where you are working with a dozen colleagues, that decision is not favored. And, that is OK.
 # discuss
 - ## 
 

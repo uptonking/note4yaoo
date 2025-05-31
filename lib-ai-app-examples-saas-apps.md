@@ -23,6 +23,14 @@ modified: 2025-02-21T17:17:42.225Z
   - Refly is an open-source AI-native creation engine powered by 13+ leading AI models. 
   - Its intuitive free-form canvas interface integrates multi-threaded conversations, multimodal inputs (text/images/files), RAG 
 # workflow-ai
+- https://github.com/browser-use/workflow-use /AGPL/python
+  - Create and run workflows (RPA 2.0)
+  - https://x.com/gregpr07/status/1923595378286268812
+    - we started Workflow Use (Playwright on steroids):
+    - Show browser once, run forever
+    - 10x faster, ~90% cheaper than pure LLM agents
+    - Self-healing via LLM fallback 
+
 - https://github.com/langflow-ai/langflow /52.9kStar/MIT/202503/python/ts
   - http://www.langflow.org/
   - a powerful tool for building and deploying AI-powered agents and workflows.

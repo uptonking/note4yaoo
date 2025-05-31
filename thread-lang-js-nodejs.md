@@ -18,7 +18,9 @@ modified: 2023-11-10T07:10:19.089Z
 
 - ## 
 
-- ## 
+- ## node.config.json is now available in Node v22.
+- https://x.com/satanacchio/status/1925284506489016343
+- With the introduction of test runner, sea, and other feature that require a lot of flags, a json config flag would improve by a lot the developer experience and increase adoption.
 
 - ## Node `require()` is about to be able to load (non-async) ESM. This will solve so many problems.
 - https://twitter.com/devongovett/status/1769709489962295414

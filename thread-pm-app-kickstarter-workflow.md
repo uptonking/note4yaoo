@@ -22,7 +22,8 @@ modified: 2023-12-26T17:08:35.960Z
 # discuss-vc
 - ## 
 
-- ## 
+- ## Two founders A and B start a company with 50/50 ownership.
+- https://x.com/asmartbear/status/1924736101849186540
 
 - ## 技术创业者怎么拉投资？
 - https://x.com/manateelazycat/status/1855838350022005056
@@ -121,6 +122,18 @@ modified: 2023-12-26T17:08:35.960Z
 - ## 
 
 - ## 
+# discuss-salesman
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 做乙方其实经常会遇到奇葩的客户，遇到找存在感的刚入职小朋友 或者 压榨供应商来补充自己OKR的采购
+- https://x.com/xDinoDeer/status/1928624534283809071
+  - 觉得慈不掌兵又的确希望员工幸福工作，是不是很难赚大钱
+
+- 一般来说，销售总监就是干这个事的，给他的工资里面，一半是用来给老板抵挡和消化这类破事的。
 # discuss-team
 - ## 
 

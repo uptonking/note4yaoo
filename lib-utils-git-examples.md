@@ -20,6 +20,7 @@ modified: 2023-08-29T10:12:22.345Z
     - work with LightningFS/BrowserFS/Filer
   - Isomorphic-git aims for 100% interoperability with the canonical git implementation. 
     - This means it does all its operations by modifying files in a ".git" directory just like the git you are used to.
+  - 使用案例 https://github.com/WordPress/wordpress-playground
   - https://github.com/isomorphic-git/lightning-fs /js
     - I wanted to see if I could make something faster than BrowserFS or filer that still implements enough of the fs API to run the isomorphic-git test suite in browsers.
   - https://github.com/fasiha/isomorphic-gatty /ts

@@ -155,7 +155,11 @@ modified: 2024-01-23T02:52:23.932Z
 # discuss-news-obsdmd
 - ## 
 
-- ## 
+- ## Obsidian Bases can be exported to CSV or copy-pasted anywhere — as Markdown, or even into your favorite spreadsheet app
+- https://x.com/kepano/status/1927501007480582467
+- 
+- 
+- 
 
 - ## [Obsidian 1.9.0 (early access): Introducing Bases! Turn any set of notes into a powerful database. : r/ObsidianMD _202505](https://www.reddit.com/r/ObsidianMD/comments/1ks0ebr/obsidian_190_early_access_introducing_bases_turn/)
   - Introducing Bases, a new core plugin that lets you turn any set of notes into a powerful database. With Bases you can organize everything from projects to travel plans, reading lists, and more.

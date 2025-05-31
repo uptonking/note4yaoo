@@ -9,6 +9,62 @@ modified: 2023-03-01T13:00:27.664Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 
+# discuss-author
+- ## 
+
+- ## 
+
+- ## 
+# discuss-start
+- ## 
+
+- ## 
+
+- ## @tan_stack Start is a bit confusing what runs on the server? what runs on the client?
+- https://x.com/tannerlinsley/status/1928169539344420917
+- It's actually pretty easy. Everything runs on both server/client by default. This is called isomorphism. 
+  - If you want something to *only* run on the server, use `createServerFn` , `serverOnly` , or `createIsomorphicFn().server()` . 
+  - If you want something to only run on the client, use `clientOnly()` , `<ClientOnly>` or `createIsomorphicFn().client()`
+
+- beforeLoad is a router thing, so it runs all the time, but you can create a server function that is called in your before load function .
+- when a server function is called on the server, is making s request to itself? Like an actual http request?
+  - It doesn’t make a request. It creates a request though, sends that request straight to the handler to be executed, then returned. Same flow as on the client, just sans fetch() and server routing
+
+- Is this like the old getInitialProps from nextjs?
+  - Similar in timing yes
+
+- If I use a hook or a browser api, does that only run on the client?
+  - Hooks will run as normal (no effects on server though) and browser APIs will need to be accessed only on the client. You can do that by conditionally looking for document, using an effect, or mounted flag, or even our own utils like `clientOnly(), <ClientOnly>, or even createIsomorphicFn().client()`
+
+- ## [Start BETA - Tracking _202411](https://github.com/TanStack/router/discussions/2863)
+- 202411: v1.83.0 - Changed export variable renamed from Route to APIRoute
+- 202505: Devinxi Alpha
+  - npm uninstall vinxi ; npm install vite
+  - API routes have seen a huge improvement and we're now calling them "Server Routes".
+
+# discuss-router
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I’ve said this before, and I’ll keep saying it. Parallel routes and component routes will be massively powerful in TanStack Router. _202505
+- https://x.com/tannerlinsley/status/1928654398114214360
+  - Just need to get this Start thing launched. Routing is far from solved.
+- Parallel route State in next is not stored in the URL. When you refresh or share the URL, any non main slots are reset back to their fallback content
+
+- What are parallel routes?
+  - when you visit a `/a/b/main_child` route, its parallel route such as `/a/b/parallel_1`  and `/a/b/parallel_1` will also be rendered in their specific outlet port.
+
+- What do u mean component route?
+  - Components as nested routes.
 # discuss
 - ## 
 

@@ -81,7 +81,16 @@ modified: 2024-01-25T13:33:23.267Z
 
 - ## 
 
-- ## 
+- ## is there some js library that makes main<>iframe page communication more maintainable? 
+- https://x.com/aidenybai/status/1921645175757041912
+- I had exactly this problem. I ended up building "Webmesh" exactly for this use case to facilitate the communication for the @livestoredev devtools (particularly for the browser extension).
+
+- https://github.com/psd-coder/typed-channel
+  - Evil Martians just released a new open source tool for TypeScript to add types to postMessage for communication via Web Workers, BroadcastChannel, etc.
+
+- If the iframe is on the same origin, they can just access each other's global contexts (via frame.contentWindow).
+
+- I created a simple RPC using postMessage. RPC returns a promise to the caller, and sends a unique ID with postMessage to the iframe, the result is sent back from the iframe to the parent window with the same ID and then the promise is resolved.
 
 - ## [Does the iframe have any effect on page load time? Why not? - Stack Overflow](https://stackoverflow.com/questions/2323374/does-the-iframe-have-any-effect-on-page-load-time-why-not)
 - The biggest drawback is that they block the window `onload` event until complete, which can make the users perceive that the page they requested is slow.

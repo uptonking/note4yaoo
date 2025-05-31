@@ -25,6 +25,7 @@ modified: 2023-09-25T17:52:46.690Z
   - wordpress
   - drupal
   - php-cms
+  - DynamoDB: single-table design
 
 - eav vs json
   - json更佳灵活，eav中attribute不能再次添加属性，比如attribute的来源/事务时间
@@ -34,6 +35,7 @@ modified: 2023-09-25T17:52:46.690Z
   - jsonb/json
   - inner platform
   - **property graph**: PG/GPQ
+  - single-table design: DynamoDB
   - more: ms-power-query
 
 - 直接根据具体框架或产品搜索解决方案如airtable-database，不必拘泥于通用方案如event-sourcing/eav/triple

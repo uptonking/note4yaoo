@@ -54,6 +54,15 @@ modified: 2023-09-24T19:05:33.866Z
   - 用docker做web应用时，还可以勉强用http://entrypoint.sh来执行prisma migrate deploy。但用electron做桌面应用时，我已经完全想不到办法了
   - drizzle就没这个问题，而且打包后docker镜像也会小不少
 
+# discuss-against/cons
+- ## 
+
+- ## 
+
+- ## I will never use an ORM again, in any project. Use the repository pattern. Avoid SQL injection by never passing raw text through to the repo abstraction.
+- https://x.com/thrawn01/status/1925911513304289748
+- most repositories are basically ORMs in practice, they’re one pattern, but they typically bind underlying SQL to native classes/structs, definitely an ORM. 
+
 # discuss
 - ## 
 

@@ -31,6 +31,22 @@ modified: 2023-04-16T10:02:58.738Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## The @vercel Chat SDK now features stream resumption
+- https://x.com/cramforce/status/1921211838110593310
+  - This is based on https://github.com/vercel/resumable-stream
+  - A core feature is that while it uses Redis, the actual Redis usage is minimal unless you actually need to resume a stream (which should be rare in practice).
+  - It would be dramatically more efficient and lower-cost, because it only does O(1) database writes in the common case.
+- It supports:
+  - Clients resuming streams on network interruption
+  - Multiple browser tabs following the same underlying stream
+  - Multiple users following the same stream
+
+- But this "only" applies to when you have own business logic workflow and you need to "attach" back to ongoing process; it's not resuming an LLM engine streaming in "the middle" of the process, correct?
+
 - ## 🏘️ 分享下我们在做 SaaS 产品 LobeChat Cloud 上用的技术平台选型吧： _202410
 - https://x.com/arvin17x/status/1847627132891254803
   - https://x.com/arvin17x/status/1803761433714507850 /202406

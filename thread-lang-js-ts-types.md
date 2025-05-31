@@ -161,6 +161,15 @@ modified: 2021-08-05T04:31:02.298Z
 # discuss
 - ## 
 
+- ## 
+
+- ## the `string & {}` trick.
+- https://x.com/mattpocockuk/status/1923369342596456566
+- t seems to also work with a `String` constructor
+
+- ## protip: use `import type` if you're only importing types
+- https://x.com/aidenybai/status/1924120038912745910
+
 - ## 🆚️ Poll: How do you name multiple TypeScript generic type arguments?
 - https://x.com/housecor/status/1905968741692629326
   - 1. Letters, starting with `T: myFunc<T, U>` ; 

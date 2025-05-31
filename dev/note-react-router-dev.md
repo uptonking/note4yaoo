@@ -56,6 +56,30 @@ modified: 2023-01-09T15:41:17.179Z
 - file based routing is probably the Nextjs' biggest selling point. As you said, use react-router-dom cause every component to be client-side rendered, which mostly defeats the whole purpose of Nextjs. This is dumb.
 
 - I think the best you can do is tell your client that nextjs can’t do both, ask them to list out which page to have SSR (calls to getServerSideProps), which page is not, maybe a few of them are required for SEO, most other page isn’t required can be stay with react-router-dom
+# discuss-news
+- ## 
+
+- ## For Remix 3, we’re going all-in on runtime-first simplicity: no bundler in dev, and likely none in prod either thanks to native ESM + modern CDN strategies.
+- https://x.com/mjackson/status/1928297364726632499
+  - No HMR, just clean, fast reloads. The goal is minimal tooling, zero critical deps, and a framework that feels closer to the platform. 
+  - We don’t think Vite is necessary to deliver a great DX, though folks can layer it in if they want.
+  - On Preact: it’s a conscious tradeoff for simplicity and control. React’s ecosystem is huge, but so is the complexity. We’re betting that a lighter core + stable APIs + great defaults can make the framework more approachable without sacrificing power and flexibility.
+
+- people can always throw Vite into the mix if they feel they need it.
+
+- “No HMR, just clean, fast reloads. The goal is minimal tooling, ” so your in-memory router will keep reseting to base route after every change. Correct me if I am wrong please
+  - Why would it reset to base route? There’s this nifty thing called the URL that keeps track of where you are.
+
+- ## Remix 3 is a new thing that reuses the name because you should buy our merch(商品/货物 (merchandise))
+- https://x.com/ryanflorence/status/1928190268148248815
+- Reminds me of Angular vs AngularJS. I think I'll call the new thing Premix.
+
+- Broken API for the 7rd time this year?
+
+- RRv7 is exactly what Remix v3 would have been, that is what you should do
+
+- https://x.com/flybayer/status/1928441254678806614
+  - I think re-using a name for something totally new is a huge mistake. Redwood has done this recently too. 
 # discuss
 - ## 
 

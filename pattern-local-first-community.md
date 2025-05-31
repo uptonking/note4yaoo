@@ -107,7 +107,11 @@ modified: 2023-09-13T20:24:41.516Z
 # discuss
 - ## 
 
-- ## 
+- ## Got an idea for naming offline sync modes:
+- https://x.com/oleg008/status/1927701855808999455
+  1. Offline-first – Your app needs to sync all data to work; full offline guarantee.
+  2. Offline-second – Your app syncs only the initially necessary data. It will sync on a "need-to-have" basis. There's no guarantee all data is available offline, but the app generally works offline.
+  3. Offline-third – Your app can temporarily lose internet access, and what you’ve been working on remains available. It will attempt to sync once you're back online. Only partial offline functionality.
 
 - ## 🤼🏻 Eventually, I'd like to write a talk titled something like "Critical problems with local-first " _202410
 - https://x.com/jlongster/status/1851261217580466491

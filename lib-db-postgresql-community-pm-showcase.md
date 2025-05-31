@@ -44,7 +44,13 @@ modified: 2024-08-11T07:21:48.172Z
 
 - ## 
 
-- ## 
+- ## OpenAI使用单一未分片的PostgreSQL集群（1主40从+）服务整个业务
+- https://x.com/RonVonng/status/1924305840535978431
+- OpenAI 的PG实践有力的证实了《分布式数据库是伪需求》，毕竟，OpenAI 能用一套主从PG集群干到现在5亿活跃用户，你的业务有极大概率也根本不需要分区Sharding或分布式数据库
+  - 主从架构写是有上限的吧，这个问题理论上会是以后的瓶颈，而且我看了文章里也只是提到减少瞬时写
+
+- 那Hadoop为代表的大数据是不是伪需求
+  - Hadoop这套基本已经凉了。大数据则受到严峻挑战，可以看DuckDB 的宣言《Big Data is Dead》。
 
 - ## Hyperdrive is: https://hyperdrive-demo.pages.dev - but tl; dr: access Postgres (so far…) databases directly from Workers, 
 - https://twitter.com/elithrar/status/1766472461481054484

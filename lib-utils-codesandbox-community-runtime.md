@@ -391,7 +391,9 @@ modified: 2024-05-12T17:20:03.132Z
 
 - ## 
 
-- ## 
+- ## Traditional containers like Docker were too slow for Manus. 
+- https://x.com/dobrac8/status/1928111487211512231
+  - E2B's Firecracker microVMs offer faster startup times and full OS capabilities
 
 - ## We run close to 1 million sandboxes a day _20250314
 - https://x.com/mlejva/status/1900275519943282781
@@ -595,7 +597,24 @@ modified: 2024-05-12T17:20:03.132Z
 - LXC does it better, you can even have virtualization
   - The difference here is that katacontainers are OCI and CRI complaint - meaning that it can immediately be used with K8s, Nomad and possibly others. You get all the features of these orchestration platforms. LXC doesn't have that (it actually predates OCI and CRI).
   - There are other orchestration systems that can use LXC - LXD, libvirt, Proxmox, and may be others. Also, LXC doesn't have traditional virtualization - that's a feature of LXD using KVM. (Do you mean system containers, as opposed to regular app containers?)
+# discuss-computer-use
+- ## 
+
+- ## 
+
+- ## Launching public preview of C/ua Cloud Containers today - Docker for Computer-Use Agents. _202505
+- https://x.com/trycua/status/1928173355347365942
+  - Zero local setup. Same Computer and Agent interfaces. Scale 1-100 agents instantly.
+  - First cloud platform built for Computer-Use Agents.
+  - Linux/Windows/macOS desktops in your browser. 
+  - Works with OpenAI, Anthropic, or any LLM. Pay only for compute time.
+  - not open source yet - but if there's enough interest, we can cover it in a blog post
+
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## same.dev: after spending $5k+ running automated browsers:

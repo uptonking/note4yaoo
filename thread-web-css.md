@@ -36,7 +36,8 @@ modified: 2021-01-08T17:15:13.906Z
 # discuss
 - ## 
 
-- ## 
+- ## CSS picture-in-picture video transition using container queries + position: sticky 
+- https://x.com/jh3yy/status/1923179769123725595
 
 - ## fun fact: the max z-index in CSS is 2147483647
 - https://x.com/aidenybai/status/1904188706434768966

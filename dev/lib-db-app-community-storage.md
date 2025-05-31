@@ -153,6 +153,27 @@ modified: 2023-09-17T17:36:36.118Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## I designed Dropbox's storage system and modeled its durability. Yes S3 has lost data. No it wasn't because some disks failed.
+- https://x.com/jamesacowling/status/1922428807136608380
+  - If you're building your own infrastructure you should heavily invest in release process and validation testing (link in reply). You're not going to do a better job than a major cloud provider though.
+  - The best thing you can do for your own durability is to choose a competent provider and then ensure you don't accidentally delete or corrupt own data on it
+
+- ## people often ask how to write to disks safely, and the answer is quite simple: just keep calling fsync until you feel like the data is probably durable
+- https://x.com/jhleath/status/1928210542868549771
+  - in rare cases where data integrity matters, it may be appropriate to spin up a background process to call fsync all the time
+
+- If they are so concerned, you'd think they'd check the return value!
+- but what to even do with that return value
+  - Call sync again
+
+- fsyncgate is a classic example of why this may not work sometimes
+
+- You might want to check fsyncgate. After an fsync failure, a second fsync isn't guaranteed to persist the dirty pages before the failed fsync.
+
 - ## I wrote a post covering some of the scenarios you might want to be aware of, and resilient to, when you write systems that read and write files.
 - https://x.com/eatonphil/status/1905312781517123598
   - [Things that go wrong with disk IO | notes.eatonphil.com](https://notes.eatonphil.com/2025-03-27-things-that-go-wrong-with-disk-io.html)

@@ -98,6 +98,14 @@ modified: 2021-04-11T17:37:29.528Z
   - Each primitive can be installed individually so you can adopt them incrementally.
   - Primitives are also versioned independently
 # discuss
+- ## 
+
+- ## 
+
+- ## We've been hacking on a "vanilla" version of Headless UI that uses custom elements and no framework.
+- https://x.com/adamwathan/status/1925977029394022913
+  - Just a `<script>` tag pointed at a CDN, and you can build custom dropdowns, dialogs, popovers, tabs, and more, without writing any JS at all
+
 - ## In many cases, headless React components (components that only execute code and return null) are better than hooks.
 - https://twitter.com/ralex1993/status/1249705985729368068
   - Why? Because you can conditionally render them.
@@ -134,4 +142,5 @@ modified: 2021-04-11T17:37:29.528Z
   - You can write all your logic in them and then inside your component use the logic but customize the styles just like you want.
 - How do you usually implement variants in React?
   - [React Buttons with the Base + Variant Pattern](https://devadi.netlify.app/blog/design-systems-react-buttons-base-variant)
+
 # ref

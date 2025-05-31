@@ -18,6 +18,15 @@ modified: 2023-09-17T17:35:27.024Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 3-valued logic in SQL was a mistake. 
+- https://x.com/julianhyde/status/1928103685059448936
+  - Users prefer 2VL, 2VL plans are faster, and most queries give the same results anyway. 
+- I decided early on that @morel_lang would use 2VL, and I don’t miss 3VL at all. Not as a user writing queries, and especially not when optimizing queries like NOT IN and converting INTERSECT to a join.
+
 - ## A quick reminder that LIMIT without ORDER BY can produce unpredictable results 
 - https://x.com/FranckPachot/status/1881281403528343815
   - it's not a bug but a brilliant @PostgreSQL feature

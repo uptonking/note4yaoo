@@ -257,7 +257,39 @@ modified: 2022-11-29T20:41:25.566Z
 - 
 - 
 
+# discuss-LiveStore
+- ## 
+
+- ## Events are the most accurate representation of state. Everything else is a lossy abstraction. LiveStore gets it right
+- https://x.com/DavidKPiano/status/1923740185520378365
+- I believe the original idea motivating the creation of Kafka was something along the lines of “all databases evolve towards becoming a WAL with domain-specific utilities grafted on top.” Curious to see how you’re solving the (significant) challenges of keeping state on-client.
+
+- ## I'm incredibly excited to introduce LiveStore, the next-gen data layer I'm building for Overtone. _202505
+- https://x.com/schickling/status/1927304242215206927
+  - It's based on reactive SQLite and has a built-in sync engine
+  - we explored using a database (i.e. SQLite) as foundation for your app state management which we explored in depth with the Riffle research project
+
+- Does it have compaction of old events (built-in or planned)?
+  - Planned soon!
+
+- Any built in solution for conflict on sync ?
+  - Yes. Rebasing similar to git.
+
+- Yes, rebasing happens on the client. The sync protocol is pretty straight forward. You can write the sync endpoint in any language.
+
+- https://x.com/livestoredev/status/1927303505213001916
+  - LiveStore is a next-generation state management framework based on reactive SQLite and built-in sync engine.
+
+- You should update demo with Client A and B to work in different tabs.
+
+- Is this using OPFS/workers etc legit doing this manually with Sqlocal package?
+  - Yes, the web-adapter persists data to OPFS in a web worker. Also supports cross-tab syncing. Works fully offline.
+  - Cloudflare Workers are already supported as a sync backend. Using Cloudflare Workers as a server-side client is planned as well
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 🚀 Graft—a transactional storage engine providing lazy, partial and strongly consistent edge replication. _202504

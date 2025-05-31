@@ -18,7 +18,14 @@ modified: 2025-02-03T15:11:10.478Z
 # discuss-tools
 - ## 
 
-- ## 
+- ## 仔细看了下这些流量的来源。因为我们是套了 CF 盾的，一开始我还以为是哪个高手的绕过了 CF 盾，结果一看 UA 居然是 meta 的爬虫。
+- https://x.com/arvin17x/status/1927989856053121431
+  - 然后果断把这个 UA 加进 firewall deny 了，然后请求量一下子就降了下来。
+  - 不过还是得夸一下 Vercel ，看了下这波爬虫 DDOS 的 rps 是直接打到了 100+ ，rpm 打到 5k+，换个小机估计就直接挂了。
+
+- 被 bing 盯上的话也差不多，可以设置个阈值给他们响应 429 降速，不过 meta 和 bing 的爬虫重复率真的巨高，不知道一个劲在那做冗余操作有个沙雕用
+
+- 先加到CDN的黑名单中
 
 - ## puppeteer is the single worst library ever written
 - https://x.com/ThePrimeagen/status/1892222755484942492
