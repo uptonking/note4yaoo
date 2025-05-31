@@ -63,7 +63,9 @@ modified: 2024-08-24T16:52:53.996Z
 
 - ## 
 
-- ## 
+- ## TIL you can mark files as read-only in vscode by config `readonlyInclude` .
+- https://x.com/localhost_5173/status/1910612549860536812
+- If using Sonnet 3.7, you need this
 
 - ## VSCode line number column is too damn wide because it's actually three columns, which you can individually hide:
 - https://x.com/StatisticsFTW/status/1926340906883375391

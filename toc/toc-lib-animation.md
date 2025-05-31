@@ -202,7 +202,6 @@ modified: 2020-10-05T06:22:02.107Z
     - Hubble.gl is a JS library for animating data visualizations.
     - Render within the browser without a backend. 
 # css animation
-
 - https://github.com/ingram-projects/animxyz /MIT/202302/js/inactive
   - The first truly composable CSS animation library. 
   - Powered by CSS variables to allow a nearly limitless number of unique animations without writing a single keyframe. 
@@ -249,7 +248,11 @@ modified: 2020-10-05T06:22:02.107Z
   - HTML5 canvas rendering; 
   - Written in C++ compiled to WebAssembly; 
   - Dependency-free.
-# interactive-ui-components
+# animatable-ui
+- https://github.com/animate-ui/animate-ui /MIT/202505/ts
+  - https://animate-ui.com/
+  - open-source component distribution built with React, TypeScript, Tailwind CSS, Motion, and Shadcn CLI.
+
 - scrollreveal /GPLv3/18.9kStar/202007
   - https://github.com/jlmakes/scrollreveal
   - https://scrollrevealjs.org/

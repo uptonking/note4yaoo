@@ -12,7 +12,16 @@ modified: 2023-10-28T13:45:16.973Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## you can now run SQL commands and instantly see how they affect the file structure.
+- https://x.com/invisal89/status/1913801226673873289
+  - https://sqlite-internal.pages.dev/
+  - https://github.com/invisal/sqlite-internal
+
+- https://x.com/invisal89/status/1911692246182928753
+- An interesting concept. I once saw someone creating visuals to explain some DB tables. This seems to make you do that instantly.
+
+- https://x.com/invisal89/status/1910490337640145394
+  - I wrote a basic visualization of the SQLite file format. You can browse each page and navigate around its page layout
 
 - ## How Bloom Filters Made SQLite 10x Faster
 - https://x.com/iavins/status/1870843294886007005

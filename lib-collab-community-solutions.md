@@ -14,7 +14,10 @@ modified: 2024-01-28T09:05:12.586Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## AI apps are inherently multi-user - an agent is just another user.
+- https://x.com/samwillis/status/1910025816588837345
+  - I've built a demo showing how using a sync engine enables you to build awesome AI apps!
+  - https://electric-ai-chat.examples.electric-sql.com/
 
 - ## As modern web apps become more realtime and collaborative (Figma, Canva, Notion, Linear, etc.), systems and frameworks are being actively developed to support this need. 
 - https://twitter.com/joygao/status/1784012670263550129
@@ -107,7 +110,19 @@ modified: 2024-01-28T09:05:12.586Z
 # discuss
 - ## 
 
-- ## 
+- ## 💡 The How Convex Works article is a great start. 
+- https://x.com/jamesacowling/status/1918026169800339809
+  - At a high level we have a durable versioned document log stored on RDS, a transactional MVCC database on top written in Rust, transactions in typescript running in a V8 isolate, timestamp allocation similar to something like foundationdb, and an end to end sync protocol with the client. 
+  - A big part of Convex are the APIs that compose very well without any non-local reasoning so a great fit for developers or LLM codegen. 
+
+- https://x.com/jamesacowling/status/1918482532708040870
+- Why does Convex re-run a query to determine the updated result of a subscription?
+  - @convex_dev does caching and subscriptions for entire typescript functions, not just documents or collections.
+  - We only run this query once no matter how many sessions are subscribed to it, but we'd still like to make some more optimizations here around diffs and sub-query caching.
+
+- https://x.com/jamesacowling/status/1918482100275298460
+- Why does Convex use OCC instead of 2PL?
+  - Our transactions are general purpose typescript code and we don't want that code holding locks open and blocking the DB. We don't want developers having to reason about deadlocks as locks since locks aren't known until the code is executed. We also want to decouple storage from execution
 
 - ## [A simple way to build collaborative web apps | Hacker News _202108](https://news.ycombinator.com/item?id=28209736)
 - I've worked in the space for a while (Fluid Framework) and there's a growing number of libraries addressing realtime collab. 

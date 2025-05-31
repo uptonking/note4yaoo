@@ -39,7 +39,31 @@ modified: 2024-03-13T14:26:26.220Z
 - https://x.com/criccomini/status/1886490144049651867
   - Clone an existing DB's data to a new location. Clones reference the data from the old bucket rather than copying. Writes to the clone update the new location. Compaction merges old data into new directory.
 
+# discuss-s3-tools
+- ## 
+
+- ## 
+
+- ## Let's say I have a 1GB+ JSON file on AWS S3 for a day's worth of data.
+- https://x.com/arvidkahl/status/1910713079123366065
+  - I want to combine these files into per-week, per-month, and per-year files, but I don't want to download, combine, and upload the merged file(s). That feels wasteful.
+  - How would you do this economically?
+
+- How’s the data structure of the per day week year file differ from the days worth of data? Is it an aggregate with summary statistics? Or just an append?
+  - It's all just JSON arrays, so it would be a big append (but unfortunately not just a file append because of JSON syntax)
+- quick tip: use JSONL! You still get the structure of json but you can append!
+- Jsonl should be your choice of format because of lower memory usage during processing. Most of the time, you don't need to load the files into the memory.
+- you absolutely should use jsonl in the future. But if this is a json array, you can technically still stream parse it, just a bit trickier.
+- Actually jor jsonl files it is a file append. Each line is one row.
+
+- compress each file, use jsonl, and use a streaming reader/writer
+
+- 
+- 
+
 # discuss
+- ## 
+
 - ## 
 
 - ## 

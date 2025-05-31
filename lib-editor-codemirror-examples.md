@@ -1066,6 +1066,10 @@ modified: 2023-06-23T12:46:53.288Z
   - Realtime code collaboration tool with code editor, compiler and realtime cursors
   - 依赖codemirror5, socket.io-client, react
 
+- https://github.com/loro-dev/loro-codemirror /MIT/202505/ts
+  - codemirror binding for loro
+  - Sync cursors with Loro's Awareness and Cursor
+
 ## undo
 
 - yjs undoManager支持selective undo

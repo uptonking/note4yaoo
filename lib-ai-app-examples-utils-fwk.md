@@ -138,6 +138,13 @@ modified: 2025-02-21T18:20:42.624Z
   - Open CUA Kit (Computer Use Agent), is THE platform for teaching, hiring and managing automation agents at scale — starting with browsers.
   - Open-CUAK is designed to run and manage thousands of automation agents, ensuring each one is reliable.
   - Run Operator-like automation workflows locally, ensuring full privacy
+
+- https://github.com/bytebot-ai/bytebot /MIT/202505/ts
+  - Bytebot is the container for desktop agents.
+  - Bytebot spins up a containerized Linux desktop you can drive programmatically or via VNC—perfect for automation, scraping, CI tasks, and remote work.
+  - https://x.com/zhangjintao9020/status/1911379146665603542
+    - 实际上是一个 xface 桌面环境的 Ubuntu，通过 VNC 或浏览器来管理访问
+    - 结合 CF 即将到来的无状态容器化！
 # mcp
 - https://github.com/jlowin/fastmcp /MIT/202503/python
   - https://github.com/modelcontextprotocol/python-sdk

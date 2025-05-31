@@ -12,6 +12,18 @@ modified: 2022-11-21T15:27:20.974Z
 # examples-loading/progress
 - ## 
 
+- ## 
+
+- ## 4 lines of JavaScript. Zero dependencies.
+- https://x.com/crutchcorn/status/1774695605455224871
+- stroke-dashoffset from 0% to 100%?
+  - Yup! Tied to scroll via CSS variable and a JS listener
+
+- ## one way to animate borders with CSS: animate an element along the border of another and mask it
+- https://x.com/httpfleck/status/1894866501049430457
+  - offset-path: border-box; 
+  - https://codepen.io/andrewf3009/pen/oNrxXKP
+
 - ## Steps animation
 - https://x.com/ln_dev7/status/1928457950152077492
 
@@ -69,7 +81,9 @@ modified: 2022-11-21T15:27:20.974Z
 
 - ## 
 
-- ## 
+- ## You can use spring animations with vanilla CSS, no JS motion library needed. Browser support is solid, around 90%. 
+- https://x.com/serhii_be/status/1915850431990821093
+- Only downside is they’re not interruptible.
 
 - ## tooltip timing - a button concept
 - https://x.com/argyleink/status/1824479024254685308

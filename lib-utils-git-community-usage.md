@@ -74,7 +74,10 @@ modified: 2024-05-27T09:12:06.925Z
 # disccuss-usage-github
 - ## 
 
-- ## 
+- ## TIL you can add `.diff` to the end of a Github pull request URL and you'll get a diff file.
+- https://x.com/davidfowl/status/1916541569638834509
+  - you can also add `.patch` to get a git patch file
+- Currently using this in a power automate flow
 
 - ## [Getting permanent links to files - GitHub Docs](https://docs.github.com/en/repositories/working-with-files/using-files/getting-permanent-links-to-files)
 - When viewing a file on GitHub.com, you can press the "y" key to update the URL to a permalink to the exact version of the file you see.

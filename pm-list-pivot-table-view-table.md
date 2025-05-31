@@ -90,7 +90,24 @@ modified: 2022-12-16T01:52:33.729Z
 
 - ## 
 
-- ## 
+- ## 💫 Animated Inline Table - Made with Tailwind and Framer Motion.
+- https://x.com/ln_dev7/status/1920152796566827366
+  - [Inline Table Control Interaction | lndev/ui](https://ui.lndev.me/components/inline-table-control-interaction)
+
+- https://x.com/Lakbychance/status/1914356154660221409
+  - I implemented the same here.
+  - https://github.com/lakbychance/animations
+  - https://animations-lak.vercel.app/inline-table-control
+
+- https://x.com/nitishkmrk/status/1913483954646139265
+- This is really interesting, the pencil icon expands the row. I was expecting the table cells to become editable. 
+  - inline edit is much easier
+- This will work great on mobile where the table header might not be available. Desktop might be an overkill
+- By the time user is making the decision to edit, they already know what column is what. Maybe inline editing won’t make the content switch.
+
+- 🤼 Give me one reason why you need this fancy useless shift instead of having simple inline editing?
+  - Why not make cells editable immediately, without transforming them into a form? Why is this interaction necessary?
+- Because cell editing is for Excel and forms are for the web. What if you want form validation? Now, you have to create a hybrid solution that makes a row behave like a form. And you have to make it accessible.
 
 - ## Learned a cool formula style from reddit
 - https://x.com/NotionKristen/status/1900728669641076995

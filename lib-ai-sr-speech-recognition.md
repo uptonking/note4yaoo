@@ -102,6 +102,21 @@ modified: 2023-02-07T09:22:03.120Z
 
 - https://github.com/nateshmbhat/pyttsx3
   - Fully OFFLINE text to speech conversion
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 看来 TTS 对资源的消耗是远远大于 ASR，在Mac M1芯片上做个对比：
+- https://x.com/leeoxiang/status/1918642940135845904
+  - ASR:  Sencevoice 转录10秒的音频大概需要 300ms；
+  - TTS:  F5 合成一个2秒的音频大概需要7秒；
+  - 有没有效果较好，速度又快的开源TTS模型？
+
+- Kokoro我觉得还能接受啊
+- 速度最快的就是Kokoro  其他 F5 TTS/ index-tts/ MegaTTS3 / FireRedTTS  / CosyVoice 每个TTS功能侧重点不同 例如零样本 或 有的是追求语气效果
 # discuss-whisper
 - ## 
 

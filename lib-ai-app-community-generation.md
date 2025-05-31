@@ -11,6 +11,19 @@ modified: 2023-04-16T12:52:03.130Z
 
 - resources
   - [【轻科普】StableDiffusion那些事儿，关于LoRA、DreamBooth、模型分层融合等](https://www.bilibili.com/video/BV1RT411D7h7/)
+# discuss-video
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 想问下这种视频是AI做的么？ 类似短剧
+- https://x.com/ilovek8s/status/1911305338239983988
+- 4o出图，然后3D化，底图不好说拿啥做的，可能图生视频是既梦
+  - 我搜了一下既梦的模版里，目前还没看到比这个更逼真些的
+
+- 我觉得 以后的书 都会变成这个样子
 # discuss-tts/audio
 - ## 
 

@@ -283,7 +283,14 @@ modified: 2023-09-17T17:37:19.913Z
 
 - ## 
 
-- ## 
+- ## Easier to think of a database = storage layer + data model + query layer (language + optimizer)
+- https://x.com/redixhumayun/status/1919669471377310166
+- I don't think query layer in necessary. AFAIK rocks doesn't have one. API is all you need.
+  - Query layer makes a lot of things easier though. Also hard to write performant queries without an optimizer Data model is the logical structure of the data - relational or document etc
+
+- Same spirit pursued by Apache datafusion project. 
+  - Query + data model + storage. 
+  - Datafusion gives these components as composable pieces => acts as LLVM for databases .
 
 - ## 现在数据库用 Rust 写 extensions 越来越流行了
 - https://x.com/yihong0618/status/1860542339267330185

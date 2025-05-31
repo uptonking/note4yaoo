@@ -14,7 +14,20 @@ modified: 2021-09-20T18:38:00.319Z
 # discuss-protobuf
 - ## 
 
-- ## 
+- ## Unpopular opinion: use Protocol Buffers, not because the format is that great (it isn't), but because the range of supported languages for codegen can't be beat.
+- https://x.com/JustDeezGuy/status/1917589307113537664
+  - Further unpopular opinion: Protocol Buffers plus named pipes (Windows) or UNIX-domain sockets (everything else) are a great IPC mechanism for isolated processes on single hosts.
+
+- Protobuf supports twice as many languages as ASN.1 out of the box, with another five times as many languages covered by third parties.
+
+- 1M$ idea: protocol buffers, but with off-heap memory IO bypassing and RDMA
+
+- The one thing protobufs do really badly is having a bunch of optional fields.  At some point of complexity, sending protobufs directly over the wire gets worse than using a dedicated streaming bus with a schema registry.
+
+- Convince me to use protocol buffers over raw binary blobs.
+  - You’ll need to come up with a mapping from those binary blobs to data structures in your code, provide some means of managing the evolution of those structures, account for the possibility of different versions interacting at the same time, etc. The point isn’t Protobuf per se, 
+
+- Protobuf alone *could* be fine, but these technologies come with strings attached as they were designed for server apps and utterly suck for local user apps.
 
 - ## 遇到一个 Protocol Buffers in JS 的坑：.proto float 会导致 JS number 精度丢失。
 - https://twitter.com/ThaddeusJiang/status/1749662021535289653

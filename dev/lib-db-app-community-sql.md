@@ -81,6 +81,19 @@ modified: 2023-09-17T17:35:27.024Z
 - **My biggest gripe with SQL is the lack of composability**. When writing complex code, I can easily pull out functions. When complex writing SQL, I end up with a giant unmaintainable blob. I hope whatever solution you find addresses this!
 - @perplexity_ai ‘s birdsql. Query in natural language (English), GPT figures out the sql. Hot take: natural language is the best query language.
 
+# discuss-sql-favor
+- ## 
+
+- ## 
+
+- ## True, but SQL became the universal data access language for apps, with ORMs hiding the complexity. 
+- https://x.com/penberg/status/1917594823416242450
+  - It’s like POSIX — far from perfect but unlikely to ever get replaced
+- You can clearly do better than stitching together bunch of strings to express a query, right? However, that does not matter very much because (1) ORMs generate the strings for you and (2) the string gets compiled into efficient code at statement prepare time.
+  - sql over ORM any day. Just adding overhead
+
+- It's like we invented various languages that transpile to JavaScript
+  - This doesn’t mean it’s a good idea OR that it should continue though. Just like Rust/C++
 # discuss-sql-against
 - ## 
 
@@ -135,6 +148,18 @@ modified: 2023-09-17T17:35:27.024Z
   - This physical storage and the indexes will make the reads or joins X times faster.
 
 - I love CTEs because of their readability, but the performance on Temp Tables is hard to ignore in large datasets.
+# discuss-lang-morel
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Data in @morel_lang isn’t always tabular (lists or bags of records) but it often is. So I think it’s time to add a mode so that tables look like tables.
+- https://x.com/julianhyde/status/1917030983062458690
+- Does @ultorg have a text mode?
+  - Ultorg has JSON output or "flattened" CSV for export purposes, though UI interactions are always driven from the graphical nested table layout. I think @jonathoda has a more terminal-like UI for nested relations, though!
+
 # discuss-sql-formats
 - ## 
 
@@ -157,25 +182,27 @@ modified: 2023-09-17T17:35:27.024Z
 
 - ## 
 
-- ## 
+- ## One major prop to SQL systems is they'll answer any query no matter how complex. NoSQL is like "unless it's a index scan, get lost". 
+- https://x.com/matthew_linkous/status/1919743619365265508
+  - I much prefer a system that just works from the beginning that you can then optimize than one where you have to come up with query plan first
 
 - ## Top 20 SQL query optimization techniques
 - https://x.com/milan_milanovic/status/1808141926907920502
-01. Create an index on huge tables (>1.000.000) rows
-02. Use EXIST() instead of COUNT() to find an element in the table
-03. SELECT fields instead of using SELECT *
-04. Avoid Subqueries in WHERE Clause
-05. Avoid SELECT DISTINCT where possible
-06. Use WHERE Clause instead of HAVING
-07. Create joins with INNER JOIN (not WHERE)
-08. Use LIMIT to sample query results
-09. Use UNION ALL instead of UNION wherever possible
+01.  Create an index on huge tables (>1.000.000) rows
+02.  Use EXIST() instead of COUNT() to find an element in the table
+03.  SELECT fields instead of using SELECT *
+04.  Avoid Subqueries in WHERE Clause
+05.  Avoid SELECT DISTINCT where possible
+06.  Use WHERE Clause instead of HAVING
+07.  Create joins with INNER JOIN (not WHERE)
+08.  Use LIMIT to sample query results
+09.  Use UNION ALL instead of UNION wherever possible
 10. Use UNION where instead of WHERE ... or ... query.
 11. Run your query during off-peak hours
 12. Avoid using OR in join queries
-14. Choose GROUP BY over window functions
-15. Use derived and temporary tables
-16. Drop the index before loading bulk data
+13. Choose GROUP BY over window functions
+14. Use derived and temporary tables
+15. Drop the index before loading bulk data
 16. Use materialized views instead of views
 17. Avoid != or <> (not equal) operator
 18. Minimize the number of subqueries

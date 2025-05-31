@@ -31,6 +31,12 @@ modified: 2021-09-20T20:12:38.499Z
 
 - https://github.com/sophiebits/react-dom-mini /MIT/201910/js
   - React DOM Mini is a toy renderer that I built as part of my React Conf 2019 talk, "Building a Custom React Renderer".
+
+- https://github.com/tigerabrodi/arwaal /202504/ts/inactive
+  - A React-like library built from scratch in TypeScript.
+  - Complete fiber architecture implementation
+  - Hooks implementation
+  - Virtual DOM with efficient diffing
 # react-alternatives
 - https://github.com/LuSuguru/fake-react /75Star/202007/ts
   - 基于React 16.8.6 的源码并使用 TypeScript 仿写的 React, 实现了90%的功能

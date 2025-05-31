@@ -43,7 +43,13 @@ modified: 2021-08-28T11:49:05.730Z
 
 - ## 
 
-- ## 
+- ## ⚖️ Prediction: Deterministic Simulation Testing (DST) will completely change the way reliable software is written.
+- https://x.com/LewisCTech/status/1916407192946938076
+  - Given the same inputs, you get the same outputs, always. This part is deterministic.
+  - TDD, manually writing example based tests on a hunch, is small and naive in comparison. DST is the future.
+
+- Sounds like regular functional programming.
+  - Definitely parallels. Some similarities to property based testing too. The difference is 1) local state manipulation is fine, because it's deterministic 2) you assert things internally 3) you make a program that drives the whole core, rather than testing individual functions
 
 - ## Learn how to write end-to-end tests for AG Grid with Playwright
 - https://x.com/ag_grid/status/1881357589633704223

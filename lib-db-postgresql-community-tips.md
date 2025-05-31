@@ -95,6 +95,67 @@ modified: 2023-10-28T17:52:17.942Z
 
 - ## 
 
+- ## 
+
+- ## How many people use window functions in Postgres
+- https://x.com/craigkerstiens/status/1907464058695229598
+- I like to describe them as functions that take many rows as input and don’t change the grain of the output, in comparison with aggregate functions.
+
+- Window and Aggregation functions are both amazing, but the learning curve is steep like you suggest. That said, I have delegated a lot of this query writing now to ChatGPT, which given the specific schema and sample data; makes short work of both.
+
+- ## Five hard problems in @PostgreSQL :
+- https://x.com/samokhvalov/status/1910512378376224989
+  1. LWLock contention of various kinds when various buffers overflow / thresholds exceeded
+  2. no simple path to sharding for OLTP
+  3. single-threaded processes (eg replication bottlenecks)
+  4. partitioning requires a lot of effort
+  5. upgrades too
+
+- 2 + 4 is a large part of why we built @niledatabase, Lots of B2B companies are struggling with these.
+  - The other was that if you go with DB-per-tenant, there's basically no good ecosystem tools for managing a large herd of DBs across all the operational tasks.
+
+- ## use an underscore to write long numbers for queries. 
+- https://x.com/crunchydata/status/1913249228257702329
+  - `select * where orders > 1_000_000` ; 
+  - This only works for query input though. To get query results with zero separators , use to_char for formatting. 
+
+```sql
+SELECT 
+   id, 
+   customer_name,
+   to_char(total_sales, 'FM999,999,999') AS formatted_sales
+FROM
+  sales
+WHERE
+  total_sales > 1_000_000;
+```
+
+- ## Postgres' ENUM type is a trap.
+- https://x.com/gwenshap/status/1918091482898268302 
+  - You can’t remove, rename or reorder values. Only way is to drop and recreate the type... which you can’t do if any table is using it.
+  - Adding a new value takes a lock.
+  - ✅ Better: use a CHECK constraint or a small reference table. You get validation and flexibility without all these gotchas.
+
+- The problem with Postgres Enums is that it’s so limited that there’s really no safe way to use it (unless you are really sure they set of values will never change). The alternatives are more flexible.
+
+- To me domains sit at the proper level of encapsulation of what the constraints of a given field are.
+
+- ## Adding partitions to a Postgres table is a great way to bulk-load data. But you want to add partitions efficiently:
+- https://x.com/gwenshap/status/1919465937641865285
+  - In Postgres, the right DDL path can make or break your uptime.
+
+- ❌ CREATE TABLE new_partition (...) PARTITION OF parent FOR VALUES (...)
+  - Blocks the entire partitioned table with an exclusive lock
+  - Not safe for high-write systems
+- ✅ ALTER TABLE parent ATTACH PARTITION new_partition FOR VALUES (...)
+  - Safe for concurrent inserts and backfills
+
+- Why use ATTACH/DETACH?
+  - No downtime
+  - Safe data backfill
+  - Easy archival and rollbacks
+  - Same outcome, smoother ops
+
 - ## [What I Wish Someone Told Me About Postgres _202411](https://challahscript.com/what_i_wish_someone_told_me_about_postgres)
 
 - Normalize your data unless you have a good reason not to

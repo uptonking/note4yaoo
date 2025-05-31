@@ -16,7 +16,9 @@ modified: 2023-08-28T06:08:05.348Z
 
 - ## 
 
-- ## 
+- ## There are three styles of writing error checking code in Go.
+- https://x.com/ohmypy/status/1920393038620184785
+- Brief gets eliminated by gofmt and carefree is insane so you're left with conservative.
 
 - ## 我大概从15年开始项目都用Go了。 虽然语法太过简陋，但做项目有两个巨大优势：
 - https://x.com/william_bao/status/1800806798460612848
@@ -38,7 +40,13 @@ modified: 2023-08-28T06:08:05.348Z
 
 - ## 
 
-- ## 
+- ## The reason on why Go's syntax is simple is to provide fast compile times. 
+- https://x.com/Chikor_Zi/status/1915869480195916246
+  - Simpler syntax -> simpler parsing rules -> faster compile times. 
+  - It's also why no circular dependencies are allowed and why Go has a rigid package structure. 
+  - It's kinda impressive a AOT compiled language faster at compilation than a JIT compiled language like JS.
+
+- The main reason why Go's syntax is simple is to simplify maintaining large codebases written in Go. Simple syntax is easier to read and understand by humans. Fast compilation times is just another core feature of Go, which shortens code-compile-verify feedback loop 
 
 - ## Why do so many Gophers dislike cgo so much? 
 - https://twitter.com/penberg/status/1764702044672204806

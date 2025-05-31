@@ -649,3 +649,5 @@ modified: 2023-04-04T22:36:31.529Z
     - Some modules are generic and work with multiple database management systems
     - Other modules are tailored for specific database management systems
 # more
+- https://github.com/tokio-js/tokio /MIT/202301/ts
+  - JavaScript's asynchronous runtime

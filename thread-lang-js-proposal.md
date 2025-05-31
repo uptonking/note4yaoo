@@ -86,7 +86,12 @@ modified: 2023-11-10T08:05:25.474Z
 # discuss-js-proposals
 - ## 
 
-- ## 
+- ## Here's why the Records and Tuples proposal died, and how Composites might solve it.
+- https://x.com/mattpocockuk/status/1920480843195150677
+- The big win with records and tuples was deep immutability. This is a bait and switch.
+  - Is that a big win if it comes at a performance cost?
+
+- I suppose I do a double map in those cases `Map<string, Map<string, unknown>>`, but that gets more unwieldy as you have a larger composite key.
 
 - ## Congrats to @rbuckton on conditionally advancing Explicit Resource Management to Stage 4 at TC39 today _202505
 - https://x.com/robpalmer2/status/1927744934343213085

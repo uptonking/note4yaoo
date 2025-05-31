@@ -26,7 +26,10 @@ modified: 2021-05-10T04:06:02.843Z
 
 - ## 
 
-- ## 
+- ## Released an interactive 404 page.
+- https://x.com/abeyang/status/1913334847529238881
+  - 图标变三维的动画效果
+  - Powered by @rive_app (ofc)
 
 - ## for those who are wondering how to create this effect, its basically a simple trick using `view transitions api` . 
 - https://x.com/rds_agi/status/1804864383136497938

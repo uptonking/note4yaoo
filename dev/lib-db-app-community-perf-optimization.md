@@ -32,7 +32,18 @@ modified: 2023-10-26T19:00:02.186Z
 - 100G 也不算多，MySQL 一把梭，查询很轻松，只要做好索引就好了, 实在多了就分区分表。
 
 - 没用过supabase，以mysql好久之前的版本为基准，没索引的情况下，全表扫描1s在100w~200w数据，魔改版应该会快，索引做好，就没啥事
+# discuss-tools-bench
+- ## 
+
+- ## 
+
+- ## Worlds Fastest TPCH Data Generator, courtesy of @ApacheDataFusio 's community.
+- https://x.com/andrewlamb1111/status/1910678714481864849
+  - Scale Factor 100 in under 2 minutes on Macbook air. 
+
 # discuss-vendors
+- ## 
+
 - ## 
 
 - ## 

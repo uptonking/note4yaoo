@@ -212,7 +212,11 @@ modified: 2022-11-07T10:58:24.512Z
 
 - ## 
 
-- ## 
+- ## Build popular open source library, train own model on docs + examples (some private?), guarantee that model is updated with every release, sell as integration with user IDEs
+- https://x.com/steveruizok/status/1908816804140511456
+  - Let’s say @threejs went this route. The core product is free (wedge) but AI assisted coding environments sometimes trip over out of date versions or make poor choices based on bad examples in their training data.
+
+- Best documentation is pair programming type thought process + checkpoints and changes
 
 - ## 我真的好需要一个能按语义（而非单纯名称）搜索 emoji 的 app
 - https://x.com/laike9m_/status/1865845517974216935

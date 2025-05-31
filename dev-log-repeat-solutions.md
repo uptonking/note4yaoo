@@ -259,6 +259,10 @@ modified: 2021-07-20T13:50:23.433Z
   - 回放时可与执行时显示不同的视图，如将edit显示为diff，显示debug信息
   - 基于代码的回放能解决视频难以实时更新的问题, video-but-auto-update
 
+- playground
+  - monaco-editor
+  - https://electric-ai-chat.examples.electric-sql.com/
+
 - 重前端架构的优点
   - 无需服务器，或对服务器要求低
   - 容易快速响应用户交互

@@ -12,6 +12,16 @@ modified: 2021-01-08T17:14:34.841Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🎯 After 5 years in the making, I'm very happy to finally release Anime.js v4 _202504
+- https://x.com/JulianGarnier/status/1907817228168257854
+  - New modular API
+  - Draggables
+  - WAAPI support
+
 - ## 🌰 What is the Figma of motion design?
 - https://x.com/_CryptoDesigner/status/1812785446063329593
 - Adobe After Effects is still THE king for traditional, non-interactive motion design. New tools come and gone, but tbh nothing beats AE in terms of possibilities

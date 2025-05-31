@@ -24,7 +24,14 @@ modified: 2025-03-25T19:15:23.591Z
 
 - ## 
 
-- ## 
+- ## Your Workflows Should Be Database Rows
+- https://x.com/petereliaskraft/status/1917599567400554608
+  - An idea on how to make stateful apps reliable and observable at scale.
+  - A radical solution: as your code is executing, checkpoint key workflows and steps in a database. If done right, this represents your business processes as rows in database tables.
+
+- You're not wrong. There is a lot of really great wisdom in append-only patterns mixed with state machines/FSM, etc. 
+
+- How is this different from event sourcing stream projections?
 # discuss-bpmn(Business Process Management Initiative)
 - ## 
 
@@ -102,7 +109,19 @@ modified: 2025-03-25T19:15:23.591Z
 
 - ## 
 
-- ## 
+- ## Trigger v4 is now in beta! With heaps of new features _20250410
+- https://x.com/triggerdotdev/status/1910006122616066339
+- Warm starts
+  - v4 keeps machines hot after runs finish, so your next run starts in 100-300ms instead of cold booting. Keep an eye out for the little 🔥 icon on the run page.
+- Refreshed dashboard
+  - Environments now front-and-center with faster page loads. Dev mode shows connection status, orgs get custom icons, and new dedicated pages for Queues and Waitpoints.
+- Human-in-the-loop
+  - We call these "Waitpoints". They pause your runs until conditions are met—perfect for getting human approval before critical steps. Set timeouts, use idempotency keys to prevent dupes, block multiple runs at once, and skip during testing.
+- Pause queues
+  - Hit the emergency brake with environment-level pausing when things go sideways. The new queues table shows your live concurrency metrics and lets you pause/resume individual queues.
+- Prioritize runs
+  - Jump the queue when it matters. Set time offsets in seconds to push critical runs ahead—perfect for prioritizing premium users or urgent tasks. A simple but powerful way to control what runs first when things get busy.
+- MCP server
 
 - ## 💫 Move your background jobs to the foreground with Realtime _20250402
 - https://x.com/triggerdotdev/status/1907117019713122749

@@ -170,7 +170,10 @@ modified: 2021-08-30T07:01:09.493Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## I can't tell how many times I have found bugs like this... Is there any way to prevent this somehow?
+- https://x.com/zx_loro/status/1917517267476308381
+  - return中的函数执行忘了写await
+- You need typescript-eslint/no-unnecessary-condition
 
 - ## Let's mess around with sync, async
 - https://x.com/antfu7/status/1896474458086596811

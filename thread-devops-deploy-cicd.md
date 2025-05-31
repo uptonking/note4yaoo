@@ -20,7 +20,7 @@ modified: 2024-04-05T06:34:05.602Z
 # discuss-github-workflow
 - ## 
 
-- ## 
+- ## [How I Prefer to Write GitHub Workflows for zustand _202504](https://newsletter.daishikato.com/p/how-i-prefer-to-write-github-workflows)
 
 - ## [GitHub Actions: A Basic Workflow Syntax _202407](https://medium.com/@leroyleowdev/github-actions-a-basic-workflow-syntax-4f06775790e8)
 - 核心: trigger, job, step(action/shell-scripts)
@@ -95,7 +95,7 @@ jobs:
   - When a job is used to call a reusable workflow, you can use with to provide a map of inputs that are passed to the called workflow.
   - use a GitHub App instead of a personal access token in order to ensure your workflow continues to run even if the personal access token owner leaves.
 - run 🧩
-  - Runs command-line programs that do not exceed 21,000 characters using the operating system's shell.
+  - Runs command-line programs that do not exceed 21, 000 characters using the operating system's shell.
   - Commands run using non-login shells by default.
   - Each `run` keyword represents a new process and shell in the runner environment. When you provide multi-line commands, each line runs in the same shell.
 

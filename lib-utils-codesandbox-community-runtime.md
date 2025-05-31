@@ -12,7 +12,20 @@ modified: 2024-05-12T17:20:03.132Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## Why are VMs still not as convenient as Docker containers to work with?
+- https://x.com/eatonphil/status/1910391779834372356
+  - Installing Docker is hard (podman is easier) but once you have it it's this easy standard.
+  - Whereas for VMs it's a hodgepodge across platforms that no-one has built a good frontend for.
+- Multipass is the closest I've seen to a Docker-like VM experience. Unfortunately it only supports Ubuntu as a guest OS, but if you're ok with Ubuntu (I usually am!) it's pretty good.
+
+- We tried so hard to buy in to the HashiCorp Packer story. It's a nightmare. We ended up building snapshotting in-house.
+  - We(cloudflare) avoid containers (rather treat them as a cloud target, similar to an AWS/GCP image) because it's an unnecessary layer for what we do.
+
+- VM DX is so far off Docker/OCI, and I don't know if there is a fundamental reason why. At least one problem is the mess of machine image formats. Here's a compatibility table
+
+- historically, getting files in and out of a VM, modifying networking settings, building images, were much harder with VMs because of the hard isolation.
+
+- VMs contain an entire system, whereas OCI is focused on running a single process.
 
 - ## 🆚️🐳 [Docker vs. containerd vs. Nabla vs. Kata vs. Firecracker and more | by Benjamin | Medium _202303](https://benriemer.medium.com/docker-vs-containerd-vs-nabla-vs-kata-vs-firecracker-and-more-108f7f107d8d)
 - Containerd is a container runtime originally part of Docker but has since been spun off into its project. 
@@ -224,6 +237,9 @@ modified: 2024-05-12T17:20:03.132Z
 
 - I can't really deploy your project on aws because EC2 doesn't support virtualization
   - Yes, exactly why I also went with GCP/GCE. AWS does have a bare metal offering, it's just expensive.
+
+- would work on aws ec2?
+  - Any Linux machine with kvm access. That rules out EC2 but GCE VMs work
 
 - ## same.dev literally hosts a vm for your project
 - https://x.com/aidenybai/status/1901019106234732938
@@ -490,7 +506,10 @@ modified: 2024-05-12T17:20:03.132Z
 
 - ## 
 
-- ## 
+- ## ntroducing foreverVM, a Python REPL-as-a-service. 
+- https://x.com/JamsocketHQ/status/1884660472076513468
+  - Under the hood, we swap between memory and durable storage
+  - Giving an LLM a code sandbox massively increases its capabilities, but managing VM lifecycles is a pain.
 
 - ## [ForeverVM: Run AI-generated code in stateful sandboxes that run forever | Hacker News _202502](https://news.ycombinator.com/item?id=43184686)
 - 🔒 why are you allowing network requests in the VM? (Tested in the python REPL which is available on your homepage) What are you doing to prevent the abuse?
@@ -615,7 +634,13 @@ modified: 2024-05-12T17:20:03.132Z
 
 - ## 
 
-- ## 
+- ## I rebuilt @Replit — Sandbox is an open-source cloud code editing environment with an AI copilot and multiplayer collaboration, made with @Nextjs + @CloudflareDev Workers _202405
+- https://x.com/ishaandey_/status/1796338262002573526
+  - https://github.com/ishaan1013/sandbox
+  - Collaborate in real-time on the Monaco editor, powered by @liveblocks and Y.js
+
+- 
+- 
 
 - ## same.dev: after spending $5k+ running automated browsers:
 - https://x.com/aidenybai/status/1907111968521023659

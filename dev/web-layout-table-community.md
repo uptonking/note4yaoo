@@ -37,6 +37,14 @@ thead {
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🌰 highlight the row being edited and blur out the distractions 
+- https://x.com/jh3yy/status/1918510262140752021
+  - table:focus-within tbody tr:not(:focus-within) {}
+
 - ## When you build modern front-end data grids and tables, what kind of elements or CSS strategies do you use?
 - https://twitter.com/KevinVanCott/status/1760317094124540170
   - Semantic `<table>` elements

@@ -152,7 +152,23 @@ modified: 2024-01-23T02:52:23.932Z
 
 - Logseq is too complex, and the tasks management is not reliable enough. I switched to Obsidian
   - 🧐 灵活性过高的代价
+# discuss-author
+- ## 
+
+- ## 
+
+- ## if you're wondering why this or that feature hasn't been added to Obsidian, remember we only have three full-time developers (and not trying to grow the team)
+- https://x.com/kepano/status/1908728301700735439
+  - everyone that we have hired was once an active community contributor, including myself. That's always where we look first.
+
+- People keep looking for new features in notetaking apps as productivity procrastination, whereas, if they actually do real work they realise obsidian doesn’t need anything more. It does the job. Let’s keep it simple !
+
+- Adding most of those features would not make Obsidian better anyway. Focus.
 # discuss-news-obsdmd
+- ## 
+
+- ## 
+
 - ## 
 
 - ## Obsidian Bases can be exported to CSV or copy-pasted anywhere — as Markdown, or even into your favorite spreadsheet app

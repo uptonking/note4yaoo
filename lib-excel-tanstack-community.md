@@ -24,7 +24,14 @@ modified: 2023-03-01T13:00:27.664Z
 # discuss-start
 - ## 
 
-- ## 
+- ## You did not need another opinion on this but Tanstack Start is really nicely put together.
+- https://x.com/aboodman/status/1912571470946971743
+- Works great w/ Zero btw. Custom mutators slot right in as an API endpoint.
+
+- My only two gripes with it are
+  1. I do not like vinxi layer, I always have some odd errors with vinxi that are hard to debug. Hopefully they'll remove this soon
+  2. I do not like createRoute api to create routes. I understand why it's done that way, I just really prefer remix's api (it's clean and simple)
+- Docs say they are removing vinxi before v1 release
 
 - ## @tan_stack Start is a bit confusing what runs on the server? what runs on the client?
 - https://x.com/tannerlinsley/status/1928169539344420917

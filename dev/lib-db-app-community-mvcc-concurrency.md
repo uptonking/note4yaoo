@@ -85,6 +85,17 @@ modified: 2023-11-01T10:15:06.245Z
 # discuss-transactions
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Transactions are a protocol on top of a storage layer. 
+- https://x.com/eatonphil/status/1912652168743502120
+  - It might be integrated into the storage layer. But you can also always build your own transaction layer on top of a storage layer that doesn't support transactions.
+- Convex did this, reimplementing MVCC on top of Postgres (or MySQL or something).
+- And store the transaction status in the storage layer if you want the same availability / scalability. Then the question is how you shard it: sharding on top of SQL (transaction table in not multi shard vs distributed SQL
+- Orleans does this, too: https://vldb.org/pvldb/vol17/p3720-eldeeb.pdf. Transactions over blob storage (or practically any other storage)
+
 - ## 💡 How do atomic transactions work in a database?
 - https://twitter.com/Franc0Fernand0/status/1759563991540494663
 - Atomicity makes it possible for a transaction to have only 2 results:

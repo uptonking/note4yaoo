@@ -114,6 +114,18 @@ modified: 2023-02-08T06:56:54.945Z
 - 对回答的答案最好在检查一遍。
 - deepseek就是炒股票的人写出来的。
 
+# discuss-async/parallel
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Headless @cursor_ai . Allow processes to be spawned via a CLI which take the way the existing chat works and lets you run it outside of the Cursor IDE.
+- https://x.com/mattpocockuk/status/1918319619615670437
+  - Should be able to transition from headless to headed to inspect running processes with Cursor.
+
+- Wingman supports this via its language server ; ) it uses JSON Rpc to accept requests and respond.
 # discuss
 - ## 
 

@@ -277,6 +277,14 @@ modified: 2023-02-06T09:14:40.114Z
 - CORS is a client side measure implemented in the browser and therefore not something which can prevent DDOS attacks from bot farms.
 
 - 🐛 通过fetch请求文件地址响应404和cors问题，可能是文件存储的磁盘未挂载到kong/nginx配置的路径位置
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## TIL: In browser, `fetch()` will hide any custom HTTP response header unless you have the `Access-Control-Expose-Headers` header in your response.
+- https://x.com/ocavue/status/1910344852803563845
+
 # discuss
 - ## 
 

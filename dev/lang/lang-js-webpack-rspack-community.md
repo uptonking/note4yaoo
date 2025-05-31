@@ -24,18 +24,26 @@ modified: 2024-01-03T16:14:53.804Z
 # discuss-internals
 - ## 
 
-- ## 
+- ## I just realized that OXC's AST transfer is similar to TC39's binary AST proposal
+- https://x.com/hd_nvim/status/1911838244498559139
 
 - ## Currently, for performance reasons, we interpret JavaScript regular expressions literal as Rust regular expressions _202502
 - https://x.com/hardfist_1/status/1886376769122652230
   - and don't meet too much problems, what if we interpret more JavaScript syntax as native syntax ?
 
-# discuss-author
+# discuss-author/news
 - ## 
 
 - ## 
 
 - ## 
+
+- ## Rspack 1.4 will introduce Wasm build, allowing browser-based bundling in StackBlitz and other web environments. _202404
+- https://x.com/rspack_dev/status/1912713947133981046
+
+- ## Do you know Rspack can compile codes on demand just like Vite _202505
+- https://x.com/Soon_Iter/status/1920088131363086447
+  - `lazyCompilation` with preloading, build the code onHovering the link, seamless refresh 
 
 - ## I originally thought that bundler was  CPU-bound, but on some platforms(enterprise macOS), the I/O overhead is far greater than the CPU overhead during make phase(generate module graph). 
 - https://x.com/hardfist_1/status/1904140063338054110

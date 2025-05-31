@@ -42,7 +42,12 @@ modified: 2024-08-11T07:21:48.172Z
 # discuss
 - ## 
 
-- ## 
+- ## Two projects in Postgres ecosystem I am excited about:
+- https://x.com/iavins/status/1914177272522703311
+  1. PgDog - to build the Vitess of Postgres (in rust, btw). Like Vitess, it's not an extension. It's a full fledged external system which works in conjunction with Postgres databases. 
+  2. OrioleDb - It is a custom storage engine for Postgres (via an extension). Postgres came about 30 years ago, this one is being designed for modern hardware. It is also going to be distributed plus experiments with disaggregated storage.
+- What is great about postgres is the great ecosystem of forks and extensions that make it evolve faster than the core, which must be more conservative. But the risk is the fragmentation of the solutions. Sharding? with Citus, Aurora Limitless, PgDog?
+  - Fragmentation is also good for consulting — one can feel free to recommend the best, if you’re not the vendor
 
 - ## OpenAI使用单一未分片的PostgreSQL集群（1主40从+）服务整个业务
 - https://x.com/RonVonng/status/1924305840535978431

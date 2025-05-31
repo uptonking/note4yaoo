@@ -118,6 +118,11 @@ modified: 2023-03-05T08:55:03.696Z
 
 - ## 
 
+- ## 
+
+- ## I wrote an RFC about unifying the imperative methods we have on the QueryClient. _202505x
+- https://x.com/TkDodo/status/1921181887550177715
+
 - ## Unless I hear a good reason not to, TanStack Query v5 will ship with a default `staleTime` of 30s instead of 0.
 - https://twitter.com/TkDodo/status/1687454784209448962
   - This has mostly upsides, but also a slight downside

@@ -58,7 +58,11 @@ modified: 2021-01-03T17:11:47.916Z
 
 - ## 
 
-- ## 
+- ## What's the steelman case for Tailwind going forward?
+- https://x.com/svpino/status/1908252064633020666
+- AI prefers to write tailwind, it’s literally the reason Tailwind is going to continue to grow even more popular.
+
+- Much less context window required for the LLM to understand the design Everything is in that one component, inline vs having to pass the entire massive css file each time
 
 - ## A ton of confusion amongst Tailwind users comes from not realizing that if you are using CSS modules, or `<style>` blocks in Vue/Svelte/Astro, your CSS pipeline separately for every single one of those blocks.
 - https://x.com/adamwathan/status/1890404835888910467

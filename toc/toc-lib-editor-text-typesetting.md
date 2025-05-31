@@ -27,6 +27,18 @@ modified: 2024-11-16T08:23:40.617Z
   - https://typst.app/
   - Typst is a new markup-based typesetting system that is designed to be as powerful as LaTeX while being much easier to learn and use.
   - This repository contains the Typst compiler and its CLI, which is everything you need to compile Typst documents locally.
+
+- https://github.com/yamlresume/yamlresume /MIT/202505/ts
+  - https://yamlresume.dev/
+  - YAMLResume allows you to manage and version control your resumes using YAML and generate professional looking PDFs with beautiful typesetting in a breeze.
+  - This project was started as the core typesetting engine for PPResume, a LaTeX based, pixel perfect resume builder. 
+  - YAMLResume adopts LaTeX as the default typesetting engine, which is the state of the art typesetting system in the academic and technical publishing industry.
+    - In the future we may support other typesetting engines like Typst, HTML/CSS, etc.
+  - the resume content is drafted in plain text as YAML
+  - the YAML plain text is then rendered into a PDF with a pluggable typesetting engine
+  - the layout can be adjusted with options like font sizes, page margins, etc.
+  - https://x.com/PPResumeX/status/1920294577497387493
+    - This project is inspired by JSON Resume with many enhancements like rich text, layout and i18n, etc.
 # typesetting
 - https://github.com/chearon/dropflow /MIT/202412/ts
   - https://chearon.github.io/dropflow/

@@ -243,7 +243,16 @@ Validate it to ensure it meets the method's requirements.
 
 - ## 
 
-- ## 
+- ## It's quite sad how many early internet open protocols are slowly dying because companies are incentivized to lock in their users.
+- https://x.com/mitsuhiko/status/1914634059847811109
+- RSS, NTP comes to mind, what else? I sometimes miss the internet of early 2000s
+  - IMAP/POP3/CalDAV/IRC/XMPP are all good examples of this.
+
+- To be fair, many of them died either because they're not needed, or because JSON over HTTP worked just as well and was often easier to implement at both ends.
+  - Or web apps replaced them - imap, pop3, caldav where all really killed by the lack of need for desktop applications.
+  - The big story is HTTP eating the world, which is not a bad thing.
+- Sadly there are no portable protocols layered on top of it. You are largely trapped within an ecosystem.
+  - true
 
 - ## How do you implement feature flags in your application? Do you use any apps or have any approaches?
 - https://x.com/wesbos/status/1810687151794962558

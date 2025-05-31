@@ -507,7 +507,10 @@ modified: 2023-11-28T14:48:45.910Z
 
 - ## 
 
-- ## 
+- ## Now you can build apps with @Replit (frontend) and host all the content in Notion (backend) _202505
+- https://x.com/NotionHQ/status/1920892584987074908
+
+- So I could build a Notion competitor and host it on Notion
 
 - ## We shipped 95 product updates last year(2024). Some big, some you might have missed 
 - https://x.com/NotionHQ/status/1879578695750623311
@@ -561,7 +564,13 @@ modified: 2023-11-28T14:48:45.910Z
 
 - ## 
 
-- ## 
+- ## Notion 的数据库竟然不支持粘贴图片
+- https://x.com/oran_ge/status/1916027755122332065
+  - 另一个大规模不支持粘贴图片的产品是Mac的微信朋友圈
+
+- 可以拖
+- 不但不支持粘贴图片，当你发布了你的notion笔记之后，还不支持全文复制粘贴。浏览器一个劲在反复上下跳
+- 而且图片不支持剪切，服了
 
 - ## 再提供一个想法，赚钱了分我一成就行：将 Notion 当数据库提供类似 Vercel 自定义域名的能力，以及各种主题可以选择。
 - https://x.com/_Xheldon/status/1860691877357580581

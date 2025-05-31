@@ -12,7 +12,11 @@ modified: 2023-12-09T12:32:50.692Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## One cool thing about Postgres-backed queues is that they’re incredibly observable. 
+- https://x.com/petereliaskraft/status/1908177644480577595
+  - The queue is just a Postgres table, and you can see–or change–what’s in it with SQL.
+- One challenge with RDBMS-based queues is the consumer model. Does DBOS support competing consumers and consumer groups? Like, for example, the Kafka consumer model. You can parallelize across partitions and dynamically reallocation when consumers go up and down.
+  - Still working on better semantics for consumers, but DBOS already has automatic recovery + reallocation when workers go down.
 
 - ## 🆚️ Trade-offs between Topics and Queues and 5 questions to pick the "right" one.
 - https://twitter.com/RaulJuncoV/status/1767894183560220931
@@ -20,19 +24,19 @@ modified: 2023-12-09T12:32:50.692Z
 If you need to ensure that exactly one consumer processes a message, use a queue.
 If your application requires sending messages to many consumers, use a topic.
 
-2. Do you need message durability and delivery guarantees?
+1. Do you need message durability and delivery guarantees?
 You need message durability and acknowledgments if you can't afford to lose messages.
 Queues offer better support for message durability out of the box. Topics might need more configuration.
 
-3. Scalability?
+1. Scalability?
 Queues are better suited for scaling workloads. Each consumer you add can process messages in parallel without stepping on each other's toes.
 With topics, adding more subscribers means all subscribers process each message. You are not distributing the workload; you are only adding more consumers.
 
-4. How about if one of your consumers is not available now?
+1. How about if one of your consumers is not available now?
 In topics, keeping track of which subscribers have received which messages adds overhead.
 Managing this state is complex, especially if message order matters.
 
-5. How likely are your system's messaging needs to evolve?
+1. How likely are your system's messaging needs to evolve?
 If this is a young system, it will change frequently.
 Topics may provide the flexibility needed to adapt without significant re-architecture.
 For more stable, defined workflows, queues offer simplicity and directness.

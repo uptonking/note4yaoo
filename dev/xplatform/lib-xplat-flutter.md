@@ -140,7 +140,11 @@ modified: 2021-05-13T03:10:56.112Z
 # discuss-cons-flutter
 - ## 
 
-- ## 
+- ## 做客户端一定要远离 flutter，当初手贱选了，现在各种自己搓轮子，全是坑，
+- https://x.com/mortiest_ricky/status/1914640507416002767
+  - 就像沟槽的 webrtc，谁能想到这个 b 玩意儿限制 message size <= 16kb，不同的浏览器限制还 tm 不一样，嗨嗨自己搓分块传输吧。不仅要分块，还要做限流，因为 DataChannel 有 Max Buffer Size，超限了就崩给你看
+- 创业团队减少问题可能性哈哈，就选问题少的
+- web端不推荐使用flutter，UI不是用dom树而是canvas渲染的，seo没法做。而且js有自己成熟的生态，直接用web技术栈更好
 
 - ## 我选择 React Native 而不是 Flutter 的原因，热更新可能占一半
 - https://x.com/imsingee/status/1892935984595046737

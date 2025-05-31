@@ -230,10 +230,17 @@ modified: 2025-02-03T10:17:42.052Z
 - 
 - 
 
-# discuss-ai-protocol
+# discuss-ai-protocol ⚖️
 - ## 
 
-- ## 
+- ## MCP uses JSON-RPC. A2A uses JSON-RPC. Did I miss the memo, why JSON-RPC suddenly.  What happened? Did we forget to train AI on protocols since 2009?
+- https://x.com/ibuildthecloud/status/1915584728616575281
+- Proto is bad outside of strongly typed languages and LSP used JSON RPC (vscode is JavaScript/Typescript).
+
+- tRPC uses it too. turns out people really did just want SOAP/WSDL conceptually but we didn't like XML for some reason.
+- blockchains use json rpc
+
+- The rest of the group got stuck debating Thrift versus Protobufs. I heard they were still having meetings.
 
 - ## I built an MCP server for WhatsApp
 - https://x.com/LukeHarries_/status/1905986562388635913
@@ -351,6 +358,21 @@ Don’t want/can’t have external dependencies?
 - ## 
 
 - ## 
+
+- ## 
+
+- ## ⚖️ Introducing Agent File (.af) - an open file format for importing/exporting agents.
+- https://x.com/Letta_AI/status/1907477696499843121
+  - With .af, you can reproduce an agent (with the same behavior and memories) without any setup or scripts: simply load the .af into your Letta server or Letta Desktop
+- portable agents!
+
+- ## Cline有MCP，Cursor有MCP，CherryStudio有MCP，不会造成很多MCP工具重复下载安装吗？ 怎样才能把它们整合在一起管理？就像OneAPI管理各家各源的LLM API一样。
+- https://x.com/Yayoi_no_yume/status/1913948678534169008
+- 是的你发现了盲点，所以有些解决MCP工具安装、治理、安全的平台
+http://gatewaymcp.com
+- 对于你本地而言， 你可以复用它们（安装到相同位置
+
+- 可以复用的，安装在同一个位置，然后软件里面设置指向同一个位置即可。
 
 - ## Isn’t MCP literally an API for APIs. Like it’s literally an API standard for AI to talk to other APIs right?
 - https://x.com/bikatr7/status/1898184652038230372

@@ -204,7 +204,19 @@ modified: 2022-11-29T20:41:25.566Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## A funny side effect of our sync engine: even when offline, the app stays “multiplayer” across browser tabs. 
+- https://x.com/wcools/status/1920810988040822959
+  - Really useful while we're testing the real-time multiplayer features
+  - the syncing logic runs in a SharedWorker. Each "connected" tab/window forwards new events to the sync backend with postMessage, and syncer broadcasts events (either from remote or local source) to all other connected tabs.
+- not a leader-follower model? maybe because patches are idempotent since it's a CRDT...
+  - Exactly, so there's no leader/follower, which makes tabs joining+leaving and syncing with server simpler as well. Although strictly speaking it's not a pure CRDT but an event sourcing/CRDT hybrid, because tree insert/move (insmov) mutations will first revert other pending insmov's before reapplying them in global order to prevent cycles.
+
+- What sync engine are you using for Thymer ? Your own using SQLite ?
+  - https://x.com/wcools/status/1901991715323408455
+  - app written completely from scratch in vanilla ES6
+  - no frameworks, no dependencies
+
+- Doesn't PG Lite do this natively with their worker implementation?
 
 - ## typeonce: How I implemented a Sync Engine for the Web
 - https://x.com/SandroMaglione/status/1892590407315231098
@@ -257,7 +269,22 @@ modified: 2022-11-29T20:41:25.566Z
 - 
 - 
 
+# discuss-supabase
+- ## 
+
+- ## We've managed to store CRDTs inside Postgres
+- https://x.com/kiwicopple/status/1914048987184939169
+  - A couple of years ago we created an experimental extension for CRDTs in Postgres. It was a good start but it had a major limitation
+  - CRDTs can be very "chatty".
+  - That's the problem that the new version of pg_crdt solves. We use UNLOGGED tables for documents and logged tables for changes. This enables us to merge changes efficiently in-memory, then persist only the changes directly to the WAL (previously it was sending the entire CRDT).
+  - The new version also takes advantage an advanced in-memory object persistence feature in Postgres called "expanded datum", using some optimizations to this feature that are coming in Postgres 18. This allows for more complex operations without serializing and deserializing the documents between every operation, which gets progressively slower as documents grow.
+  - The end goal here is that you will be able to store CRDTs as a data type in your database, and treat Postgres simply as a "peer". A good example would be storing text for a blog post
+  - It's not available on Supabase today - and it won't be until at least PG18 (or possibly longer), but it's a big step forward for Postgres data types
+
+- Using UNLOGGED tables for ephemeral CRDT state and WAL for persistent changes is a smart trade-off. Treating Postgres as an active CRDT peer, with in-memory ops via expanded datums, brings real-time collaboration closer to the data layer itself.
 # discuss-LiveStore
+- ## 
+
 - ## 
 
 - ## Events are the most accurate representation of state. Everything else is a lossy abstraction. LiveStore gets it right

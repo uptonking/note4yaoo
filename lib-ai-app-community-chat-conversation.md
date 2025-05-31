@@ -33,7 +33,13 @@ modified: 2023-04-16T10:02:58.738Z
 
 - ## 
 
-- ## 
+- ## We separate ui message and model message in LobeChat 1.0 last year. And it turns out to be the most flexible way
+- https://x.com/arvin17x/status/1920106270415360251 
+  - Glad to see ai sdk go toward this path
+  - What you display to the user (ui messages) is different from what you want to send to the LLM (model messages).
+  - Actually we storage the llm messages in db and then construct the ui message from llm message. 
+  - For example, in the tool calling, we save both assistant and tool llm message as serperate item. And then combine them into one ui message.
+  - I think it's the key. Don't make ui message as SoT. Because display demand is flexible, ui message should be constructed by all db items
 
 - ## The @vercel Chat SDK now features stream resumption
 - https://x.com/cramforce/status/1921211838110593310
@@ -46,6 +52,14 @@ modified: 2023-04-16T10:02:58.738Z
   - Multiple users following the same stream
 
 - But this "only" applies to when you have own business logic workflow and you need to "attach" back to ongoing process; it's not resuming an LLM engine streaming in "the middle" of the process, correct?
+
+- https://x.com/rauchg/status/1921168985900372081
+  - No proprietary APIs, no sticky load balancing, just Redis pubsub.
+- I was also a little worried about latency of pushing into redis. I know redis is fast, but for this application the ms count. A design with a sticky session seems to make sense since the number of users in a chat is going to be very, very small.
+  - It makes O(1) Redis writes per stream in the common case. If you use Upstash it would cost $4 per million streams which seems very fine
+- Why doesn't every token have to be  written to the stream?
+  - Because it only writes if there are any listeners. By default (no client network error, no second tab opened, etc.) there is no listeners
+- Redis pub-sub scales very well, so you’d probably only need a single node to handle many nodes of your chat service.
 
 - ## 🏘️ 分享下我们在做 SaaS 产品 LobeChat Cloud 上用的技术平台选型吧： _202410
 - https://x.com/arvin17x/status/1847627132891254803
@@ -185,7 +199,13 @@ modified: 2023-04-16T10:02:58.738Z
 # discuss
 - ## 
 
-- ## 
+- ## Things I don't like about the AI SDK #1
+- https://x.com/mattpocockuk/status/1915840893917032521
+  - You can specify 'maxSteps' on streamText & generateText to toggle from a single LLM call to an agentic loop.
+  - what happens when you run out of steps? Well, your app stops. If you've built a coding agent, your agent will just stop half-way through.
+  - maxSteps overall hands _so_ much control over to the AI SDK, I almost find it hard to recommend.
+
+- You can use prepareStep and implement this idea now
 
 - ## 对于大语言模型来说，它是没有记忆功能的，也就是每一次你必须发送给它所有的历史会话内容，也就是每次发新消息都会把历史消息一起发送过去。
 - https://x.com/dotey/status/1856437700225532234

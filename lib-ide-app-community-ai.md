@@ -75,6 +75,12 @@ modified: 2024-08-24T16:28:20.515Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## wish cursor, windsurf, jetbrains junie, and all the ai vibe coders editors out there could just agree on one .rules file format
+- https://x.com/enunomaduro/status/1918373761381752871
+- Next project idea! Make a global .rules format compiler to all vibe coding editor.
+
 - ## 📌 AI辅助编程的几类产品
 - https://x.com/idoubicc/status/1888042418446139837
   1. AI代码编辑器，面向职业程序员，辅助写代码，debug，设计技术方案。代表产品：cursor, windsurf, trae
@@ -369,7 +375,33 @@ modified: 2024-08-24T16:28:20.515Z
 
 - ## 
 
-- ## 
+- ## 🚀 Augment Code: We spent the past few months building a production-grade AI coding agent from scratch. _202504
+- https://x.com/augmentcode/status/1915049816268366268 
+  - we learned what actually matters—and open-sourced the whole stack.
+
+- We built the agent to handle real codebase tasks end-to-end:
+  - Navigate a repo
+  - Reproduce a bug
+  - Plan a fix
+  - Edit source files
+  - Validate with tests
+  - Stay within scope
+
+- The architecture is clean:
+  - Docker-based runs
+  - Planning, file-editing, and bash tools
+  - Optimized prompts
+  - Simple majority-vote ensembling
+- We forked and extended the best ideas from Anthropic’s SWE-bench blog post.
+
+- We didn’t use our own fine-tuned models for this run. The goal was to create a strong, open baseline that others could build on, test against, or tweak. The agent is fast, reproducible, and easy to run.
+- If you're working on agents—or just exploring what’s possible—we open-sourced everything
+  - https://github.com/augmentcode/augment-swebench-agent
+
+- ## 🎯 Introducing Devin 2.0: a new agent-native IDE experience. _20250404
+- https://x.com/cognition_labs/status/1907836719061451067
+  - Spin up parallel Devins to take on multiple tasks at once. Each Devin works autonomously and you can jump in any time on the details that need your expertise.
+  - Devin creates detailed architecture diagrams, links to sources, documentation, and more for all your repos in Devin Wiki.
 
 - ## ai辅助编程， 经历过几乎所有的工具之后， 我最终确认的顶级配置：
 - https://x.com/BadUncleX/status/1900394535408304207

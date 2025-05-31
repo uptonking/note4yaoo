@@ -106,4 +106,6 @@ modified: 2024-02-17T13:01:44.351Z
 
 - ## 
 
-- ## 
+- ## Slack runs on more than 3000 Vitesse MySQL shards serving more than 600, 000 writes a second and storing 1PB+ of data.
+- https://x.com/BdKozlovski/status/1908523999467892865
+  - All this gets shepherded through Kafka into their S3 data lake under an Iceberg format. They basically rolled their own Tableflow.

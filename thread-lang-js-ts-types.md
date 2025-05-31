@@ -14,6 +14,23 @@ modified: 2021-08-05T04:31:02.298Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 🆚 arkType vs zod: choose your hover
+- https://x.com/arktypeio/status/1918344352864080195
+- I actually think this highlights one of the great strengths of Zod, which is that the type representation of schemas is compositional. you can always pull out the internals of a schema: the property schemas from an object, the elements of a union, etc  
+  - ArkType throws away some information about internal schemas to achieve it's representation, which is presumably part of why it doesn't currently have an equivalent of `.shape` on its object types (would love to see this)
+  - Zod *could* simplify its static representations like this, it just doesn't for the sake of static compositionality & introspectability. you could just collapse everything to z. ZodType...if you're into that sort of thing
+- to head off the obvious counterpoint: ArkType does a lot of complex stuff to reduce types to simplest form internally. it makes a lot of sense for them to simplify the outward-facing types as much as possible so there's more flexibility in terms of the internal representation. that unlocks some of its other features like runtime assignability checks. Zod goes for simplicity & introspectability. both totally valid approaches!
+
+- Using a string to define type feels wrong
+
+- are they both at runtime or compile time?
+  - These are TypeScript's compile-time representations, but both libraries have parallel runtime representations.
+
+- Both looks disgusting. But Zod at least have `TypeOf` that infer a type and makes it trivial and clear
+  - TypeOf just infers the schema's output. Ark can do the same with `type x = typeof xSchema.infer`
+
 - ##  `type Color = 'primary' | 'secondary' | (string & {})` autocomplete trick
 - https://x.com/mattpocockuk/status/1821926395380986219
   - This works because of a quirk of the TypeScript compiler.

@@ -100,7 +100,11 @@ modified: 2021-04-11T17:37:29.528Z
 # discuss
 - ## 
 
-- ## 
+- ## Really wish something like shadcn existed without being bound to a JS framework.
+- https://x.com/aschmelyun/status/1908856214680715433
+- Components might look good, but they won't be accessible. You need JS to make it work.
+  - And it's better to use React (or anything else) to achieve this goal than just pure JS (because it's pain). That's why for example React Aria exists.
+  - It simplifies accessibility complexity for you (and handle cross-browser incompabilities for your too). And you get headless components, which you then style yourself.
 
 - ## We've been hacking on a "vanilla" version of Headless UI that uses custom elements and no framework.
 - https://x.com/adamwathan/status/1925977029394022913

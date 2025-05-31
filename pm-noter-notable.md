@@ -158,6 +158,7 @@ modified: 2023-11-28T14:48:45.910Z
   - automation
   - history
   - data slice/subfolder
+  - consistent environment and pre-installed tools
 
 - pros-云桌面/云浏览器
   - 启动速度快

@@ -175,7 +175,9 @@ jdbc:mysql://localhost:3306/db?allowPublicKeyRetrieval=true&useSSL=false
 # discuss-internals-mysql
 - ## 
 
-- ## 
+- ## MySQL builds the best join plans incrementally to make sure it figures out the most optimal join order. 
+- https://x.com/arpit_bhayani/status/1908147587397439653
+  - It goes from single-table access paths to 2-table joins, then to 3-table joins, and so on. As an optimization, it prunes any subtrees that are guaranteed to result in suboptimal costs.
 
 - ## InnoDB default setting IIRC is to use DIRECT IO not buffered IO.  Only the WAL uses buffered IO always.
 - https://twitter.com/sunbains/status/1757237923219656991

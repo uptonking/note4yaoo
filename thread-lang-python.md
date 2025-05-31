@@ -38,7 +38,9 @@ modified: 2024-02-14T12:35:31.547Z
 # discuss-web-fwk
 - ## 
 
-- ## 
+- ## Django now fully runs on Cloudflare Workers with D1 as the database _202504
+- https://x.com/G4brym/status/1915889702218928199
+- We don't use python because I don't want to manage servers and I don't like lambda sls. If python works on workers and has similar DX like TS. We're adding python to our stack
 
 - ## 经我考虑后，决定在新项目上采用Django和PostgreSQL技术栈。
 - https://x.com/1oogle/status/1844008735838257644
