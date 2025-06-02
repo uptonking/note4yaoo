@@ -9,10 +9,30 @@ modified: 2024-01-07T05:09:14.413Z
 
 # guide
 
+- pros-zero
+  - ?
+
+- cons-zero
+  - 准备 disable offline writes, 因为应用场景复杂，可参考fluidFwk也采用了此方案
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🐛 Surprise to know that "local-first" sync engine @rocicorp_zero doesn't support offline writes.
+- https://x.com/ocavue/status/1928807218566013432
+  - [Offline](https://zero.rocicorp.dev/docs/offline)
+  - Zero currently supports offline reads, but not writes. 
+  - We plan to support offline writes in the future, but we don't have a timeline for that yet.
+  - Offline writes are currently accepted by Zero, and sent when you come back online. But we plan to disable this soon.
+  - While Zero can technically queue offline writes and replay them when reconnected (this happens by default in any sync engine, and is what Zero does today), that fact doesn't make supporting offline writes much easier. 
+  - That's because a really hard part of offline writes is in handling conflicts, and no software tool can make that problem go away.
+  - For all of the above reasons, we plan to disable offline writes in Zero for beta.
+
+- 
+- 
+- 
+- 
+- 
+- 
 
 - ## I asked why not have the LLM stream terminate at *server*, then write response to DB when complete? 
 - https://x.com/aboodman/status/1903041915865665957
@@ -311,6 +331,26 @@ modified: 2024-01-07T05:09:14.413Z
   - We use ZQL on both the client and server. 
 
 - We don't even re-sort client-side! A diff comes on the wire that says that an existing row updated its last-modified timestamp (and in this case its `open` status).
+# discuss-zerosync-offline
+- ## 
+
+- ## Zero isn't local-first. It's not offline-first either. It's a sync engine _202505
+- https://x.com/aboodman/status/1919899561549582525
+  - In local-first applications, syncing is completely optional. The server can disappear (or even permanently become unavailable) and the app keeps working. 
+  - Sync engines give you dramatically better UI performance (Zero delivers sub-frame reads and writes for the vast majority of interactions) and a much better dx for heavily interactive apps.
+  - Yes, there is some amount of temporary network resilience you get out of the deal but Zero is not primarily designed for this. It's meant for the bread and butter apps we use on the internet all day which are primarily *online* and collaborative experience. Sync engines make these kind of apps better for users and easier to build.
+
+- There is a final category of systems in this space that I call "reactive databases". Things like @convex_dev and Firestore. In these systems, queries are fully reactive (you do a query and it stays open and auto-updates), but queries go to the server-first by default. All of these systems are closely related technically, but it's become clear to me that they need different labels.
+
+- sync-first
+
+- ## do offline writes work at all currently, even if they "shouldn't"?  _202504
+- https://discord.com/channels/830183651022471199/1363957701331390669
+- what about if the user comes back online and the db is online, but the write fails because of a FK violation. Or because the schema of db has changed while user is offline and the write does not make sense. Or just because validation of mutation fails. 
+  - The desire to allow offline writes seems to conflict with the desire for server to be able to validate and reject mutations while online. 
+  - If validating and rejecting mutations is allowed (even implicitly due to db constraints), then users' offline work can be lost, and this probability grows with amount of time user is offline (because db / server impl can change, data in system can change to become incompatible, etc).
+- It's for these reasons we don't recommend using Zero for offline writes.
+
 # discuss
 - ## 
 

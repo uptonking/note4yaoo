@@ -485,6 +485,41 @@ modified: 2023-08-29T10:12:22.345Z
   - A tool to list print the commits on one git branch that are not on another using loose comparison
   - The output is the same as changelog-maker 
   - The commit list is very close to running: `git log main..next`; But the comparison isn't quite as strict, generally leading to a shorter list of commits.
+
+## git-sync
+
+- https://github.com/AkashRajpurohit/git-sync /MIT/202504/go
+  - A simple cli tool to backup and sync your git repositories
+  - Keep your backups in sync with your remote repositories by running git-sync periodically.
+  - supports shallow, mirror and full clones
+  - Concurrency: Sync multiple repositories concurrently to reduce the time required for backup.
+  - Multi Platform: Currently this project supports backing up repositories from all major Git hosting services like GitHub, GitLab, Bitbucket, Gitea and Forgejo.
+  - Get notified when your sync is complete, or if there are any errors.
+  - 🐛 配置项include_orgs只能是自己的org，公共的org无法sync
+
+- https://github.com/kubernetes/git-sync /apache2/202505/go
+  - git-sync is a simple command that pulls a git repository into a local directory, waits for a while, then repeats. As the remote repository changes, those changes will be synced locally. 
+  - git-sync can pull over HTTP(S) (with authentication or not) or SSH.
+  - It is a perfect "sidecar" container in Kubernetes - it can pull files down from a repository so that an application can consume them.
+
+- https://github.com/alibaba/git-repo-go /apache2/202312/go/archived
+  - https://git-repo.info/
+  - a command-line tool for centralized workflow, can work with Gerrit, AGit-Flow compatible servers.
+
+- https://github.com/hakoerber/git-repo-manager /GPL/202502/rust/python
+  - https://hakoerber.github.io/git-repo-manager/
+  - GRM helps you manage git repositories in a declarative way. 
+  - Configure your repositories in a TOML or YAML file, GRM does the rest.
+  - GRM also provides some tooling to work with single git repositories using git-worktree
+  - 似乎只支持clone，不支持批量更新(pull)
+  - [[Feature Request] Add keep_updated key in configuration file _202405](https://github.com/hakoerber/git-repo-manager/issues/72)
+    - Currently grm only checks the existance of a repository but not keep them updated to remote. A "keep_updated=true" command would be wonderful to let grm know this repo should be actively pulled every time when it syncs.
+
+- https://github.com/fabiospampinato/gitman /MIT/202406/ts/inactive
+  - A simple yet powerful opinionated tool for managing GitHub repositories.
+  - repositories are saved according to the following schema: `$ROOT/username/reponame`
+  - 🐛 不支持配置文件的方式
+  - https://x.com/fabiospampinato/status/1458613055722557444
 # git-ai
 - https://github.com/jnsahaj/lumen /MIT/202411/rust
   - Instant AI Git Commit message, Git changes summary from the CLI (no API key required)

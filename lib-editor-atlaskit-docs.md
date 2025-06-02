@@ -17,7 +17,6 @@ modified: 2021-07-14T15:36:23.541Z
   - https://bitbucket.org/atlassian/atlassian-frontend-mirror/src/master/editor/
   - https://github.com/pioug/atlassian-frontend-mirror
   - https://atlaskit.atlassian.com/packages/editor/editor-core
-  - [kitchen-sink-example](https://atlaskit.atlassian.com/examples/editor/editor-core/kitchen-sink)
   - A package contains Atlassian editor core functionality
   - 基于react class组件实现
   - 提供了针对image/file的图文混排工具
@@ -31,6 +30,9 @@ modified: 2021-07-14T15:36:23.541Z
   - 工具: classnames, data-fns, eventemitter2, fuse.js, lodash, memoize-one, raf-schd, rusha, uuid
   - 格式: markdown-it
   - react: styled-components@3, react-intl@2, re-resizable, react-loadable, react-select, react-transition-group, react-virtualized
+# examples
+- [kitchen-sink-example](https://atlaskit.atlassian.com/examples/editor/editor-core/kitchen-sink)
+  - with-datasource 提供了一个经典的无限滚动表格示例
 # [docs](https://atlaskit.atlassian.com/packages/editor/editor-core)
 - polyfills
   - promise

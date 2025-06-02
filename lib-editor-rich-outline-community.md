@@ -12,7 +12,7 @@ modified: 2021-09-09T18:31:03.467Z
 # issues
 - ## 
 
-- ## 📈 [Add Notion-like inline databases · outline/outline _202402](https://github.com/outline/outline/discussions/6507)
+- ## 📈 [Add Notion-like inline databases _202402](https://github.com/outline/outline/discussions/6507)
 - If we could attach NocoDB as a plugin, and in every row of the table, add a hidden column which links to an Outline page, we could have a bidirectional sync between Outline and NocoDB.
 
 - I think Outline already supports Grist too, but which low-code DB module is less of a point. The point is that ANY good enough low-code DB should have some tighter integration with Outline. So we can be more creative with documents.

@@ -68,7 +68,6 @@ modified: 2025-02-21T18:20:42.624Z
   - https://browser-use.com/
   - Enable AI to control your browser
   - [Pack 拆解 browser-use 项目 ](https://quaily.com/silico-anatomy/packs/110)
-
 - https://github.com/browser-use/web-ui /MIT/202504/python
   - This project builds upon the foundation of the browser-use, which is designed to make websites accessible for AI agents.
   - WebUI: is built on Gradio and supports most of browser-use functionalities.
@@ -80,6 +79,16 @@ modified: 2025-02-21T18:20:42.624Z
   - This server enables LLMs to interact with web pages through structured accessibility snapshots, bypassing the need for screenshots or visually-tuned models.
   - https://x.com/playwrightweb/status/1904265499422409047
     - we went ahead and built an MCP server for Playwright. Ours is snapshot-based, which makes it faster and more reliable! You can opt into the visual mode too.
+
+- https://github.com/Skyvern-AI/skyvern /AGPL/202506/python/ts
+  - https://www.skyvern.com/
+  - Skyvern automates browser-based workflows using LLMs and computer vision. 
+  - It provides a simple API endpoint to fully automate manual workflows on a large number of websites
+  - Instead of only relying on code-defined XPath interactions, Skyvern relies on Vision LLMs to interact with the websites.
+  - Skyvern Cloud is a managed cloud version of Skyvern that allows you to run Skyvern without worrying about the infrastructure
+    - It allows you to run multiple Skyvern instances in parallel and comes bundled with anti-bot detection mechanisms, proxy network, and CAPTCHA solvers.
+  - Skyvern starts running the task in a browser that pops up and closes it when the task is done
+  - Skyvern was inspired by the Task-Driven autonomous agent design popularized by BabyAGI and AutoGPT -- with one major bonus: we give Skyvern the ability to interact with websites using browser automation libraries like Playwright.
 
 - https://github.com/browserbase/stagehand /11.3kStar/MIT/202504/ts
   - https://stagehand.dev/

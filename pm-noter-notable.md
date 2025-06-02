@@ -14,7 +14,7 @@ modified: 2023-11-28T14:48:45.910Z
 - features
   - 💰 market: lowcode(editor/automation), playground(preview+code+pdf)
   - ⏳ versioning and branching: 基于oplog/events实现, draft/public, replay, diff
-  - 🤝 collaboration-ready: 基于crdt
+  - 🤝 collaboration-ready: offline, crdt
   - ⛓️ automation/workflow/rpa: 基于dag，结合lowcode
   - 📱 mobile-editor: phone/pad, 自定义编辑器可以是主特性，也可以是锦上添花
   - mobile-app-generator
@@ -44,6 +44,10 @@ modified: 2023-11-28T14:48:45.910Z
     - ✨ markdown-table的wysiwyg是一个痛点和卖点
     - split-table
     - export: copy-md-table, copy-list
+  - 🔡 coding  + 🛝 playground
+    - 针对用户问题给出代码参考和可运行可操作的在线交互示例，特别针对css
+    - instant-preview: codesandbox的方案仍然太慢
+    - code + table 适合重数据的业务场景，符合toB的需求，可参考jupyter
   - ⚖️ markdown support with git-like database
     - widely used, enterprise-loved(易盈利)
     - hotkeys
@@ -59,9 +63,6 @@ modified: 2023-11-28T14:48:45.910Z
     - 文档和代码同步更新、搜索
     - repomap/manifest for repo
     - search the web
-  - 🔡 coding  + 🛝 playground
-    - 针对用户问题给出代码参考和可运行可操作的在线交互示例，特别针对css
-    - instant-preview: codesandbox的方案仍然太慢
   - 💫 animation
     - editor + dom-motion + video-playback + 🛝 playground
     - 低代码工具吸引用户的方式一定会加入动画，类似 webflow收购GSAP/Framer开源motion

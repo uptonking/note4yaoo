@@ -12,10 +12,10 @@ modified: 2021-07-20T13:50:23.433Z
 
 - tips
   - ~~paas/rendering/web/benefit~~ may be the future
-  - 抽空在线体验(demo/marks)，工作专注代码
+  - 抽空在线体验(demo/bookmarks)，工作专注代码
   - 涉猎saas解决方案，积累算法、库、框架、模版项目、生态
     - 尝试将算法和技术转化为可复用的产品, 参考yjs+hocuspocus
-    - 工具型框架离商业化应用太远, 直接从主流cms/saas中寻找架构或框架参考
+    - 工具型框架离商业化应用太远, 可直接从主流cms/saas产品中寻找架构或框架参考
     - 好用的开源产品通常license都很严格，如esearch/joplin/drawio(minified)/reader
   - 🌰 深入一个项目，开发需要精力，建立生态更需要精力
     - 视图+持久化，前端分析model/view/dataflow, 后端分析数据库设计和优化
@@ -27,7 +27,7 @@ modified: 2021-07-20T13:50:23.433Z
     - 典型产品: editor + fileTree + workbenchLayout + search + cmdKeys + settings
   - 🏘️ architecture-early 需要尽早考虑的架构问题，没有完美的架构
     - 核心架构考虑 server/db/network-socket
-    - feature-flag
+    - feature-flag: strapi
     - 早期不要将系统架构设计得过于复杂，会影响开发进度, 甚至产品终止都用不上
     - 没有完美的架构，优先支持迭代，不要执着于当下的问题，也许以后就突然想清楚了
     - 先实现业务核心功能， 再考虑如何以sdk/paas的方式提供给使用方，再优化性能
@@ -55,13 +55,13 @@ modified: 2021-07-20T13:50:23.433Z
     - 20250129: editor/vscode + triplit + sync(powersync/zerosync)
   - vscode: 🏘️ 支持BS/CS架构, monaco-editor + electron, coder-server
   - codemirror/prosemirror: state + view + commands + transform/ot/collab + virtualized
-  - workflow/lowcode/automation: n8n, activepieces
   - version-history: rrweb, diff, format(.fodt), video-but-auto-update
   - collab: room-playground❓, 非auth版本的简易测试环境
+  - automation/workflow/lowcode: n8n, activepieces
   - plugin/extension: sandbox, e2b
   - rspack: js plugin; rspack/rolldown-wasm
   - office: suite-docs, outline, handsontable, xlsx, revealjs-ts+PPTist, pdf-lib
-  - 考虑维护/fork旧版项目: codemirror5-lang/demo, mxgraph-demo
+  - 考虑维护/fork旧版项目: codemirror5-lang/demo, atlaskit-editor-eg, mxgraph-demo
   - 考虑把port主流项目: codemirror-go/rust
   - ~~animation: motion(dom/svg)~~
 
@@ -157,7 +157,7 @@ modified: 2021-07-20T13:50:23.433Z
   - 👉🏻 directus   (AGPL/knex+vue3+tinymce5)
   - huly-platform  (EPL/tiptap/svelte//🐞jira)
   - zulip      (apache2/django)
-  - 👉 think       (MIT/typeorm+tiptap)
+  - 👉🏻 think       (MIT/typeorm+tiptap)
   - nocobase   (apache2/sequelize+umi)
   - payloadcms     (MIT/drizzle+slate)
 - ✨ airtable-like(data-mgmt)

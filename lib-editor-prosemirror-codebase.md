@@ -30,6 +30,8 @@ modified: 2021-06-02T17:13:37.692Z
   - a persistent sequence type implemented as a loosely-balanced rope. 
   - It supports appending, prepending, and slicing without doing a full copy. 
   - Random access is somewhat more expensive than in an array (logarithmic, with some overhead), but should still be relatively fast.
+# dev-debug
+- 编辑器最外层contenteditable的dom在调试时可以store as global variable，在属性上可拿到 pmViewDesc, 暂时不能拿到EditorView/EditorState数据
 # roadmap
 - plugin既可以包含state，也可以包含view，显得混乱
 

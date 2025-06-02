@@ -175,9 +175,27 @@ modified: 2024-01-23T02:52:23.932Z
 - https://x.com/kepano/status/1927501007480582467
 - 
 - 
-- 
 
-- ## [Obsidian 1.9.0 (early access): Introducing Bases! Turn any set of notes into a powerful database. : r/ObsidianMD _202505](https://www.reddit.com/r/ObsidianMD/comments/1ks0ebr/obsidian_190_early_access_introducing_bases_turn/)
+- ## [Introduction to Bases | Lobsters _202505](https://lobste.rs/s/nxroup/introduction_bases_obsidian_help)
+- but when you really lock-in with bases or obsidian plugins like tasks and dataview, you really rely on thing, not being that easily to replicate if obsidian would go paid or something else.
+
+- This is very interesting. In 2019 I wrote a small hack using Pandoc that parsed a Markdown file and:
+  - Detected tables and dumped them into a SQLite database.
+  - Detected SQL code blocks, run the SQL on the SQLite database and replaced the code block with the query results as a table.
+  - I was obviously inspired by Notion (2016) and Coda (2019). I still think that the slow death of Access and similar tools, the abuse of spreadsheets, and a couple of other factors are a severe drag on global productivity. Easy CRUD on relational databases is an overlooked problem
+  - I wanted to start a similar project based on some more modern lightweight markup language (such as Djot) and likely on some Datalog variant, but I stalled
+
+- ## [Obsidian Bases | Hacker News _202505](https://news.ycombinator.com/item?id=44058972)
+- They are using a yaml file with `.base` extension for this.
+  - I believe their `.canvas` format is also just JSON.
+
+- Bases seem like a great alternative to Dataview but better supported and with simpler syntax than literally writing inline JavaScript for more complicated stuff.
+
+- Are there any good ways to attach files to notes? I often want to tie a memo or email to a note but have not found a convenient way.
+  - Default way is drag and drop which adds a copy of the file to your attachments.
+  - Another way is to put a file reference into your note (in a link). Your file stays where it is and you have a link to it in a note. Links are opened by default apps as per your OS config.
+
+- ## 📈 [Obsidian 1.9.0 (early access): Introducing Bases! Turn any set of notes into a powerful database. : r/ObsidianMD _202505](https://www.reddit.com/r/ObsidianMD/comments/1ks0ebr/obsidian_190_early_access_introducing_bases_turn/)
   - Introducing Bases, a new core plugin that lets you turn any set of notes into a powerful database. With Bases you can organize everything from projects to travel plans, reading lists, and more.
   - All the data in a base is backed by your local Markdown files and properties stored in YAML. 
   - To support Bases, we're introducing the `.base` file format and syntax.
@@ -217,7 +235,18 @@ modified: 2024-01-23T02:52:23.932Z
 - ## one fun thing in Obsidian 1.8 is that it lets you browse the web in plain text — the "reader mode" is persistent as you click links
 - https://x.com/kepano/status/1885022352209306085
 
+# discuss-pm-ob
+- ## 
+
+- ## 
+
+- ## [Obsidian alternatives that are open source (free) and sync feature as well : r/ObsidianMD _202209](https://www.reddit.com/r/ObsidianMD/comments/x95y56/obsidian_alternatives_that_are_open_source_free/)
+- The only good opensource alternative to Obsidian right now is Logseq. I don't think it supports sync though.
+
+- I've been using Zim Desktop for a while now and it's great for note taking and keeping things organized. The one thing it's missing is node-graph linking. 
 # discuss
+- ## 
+
 - ## 
 
 - ## 

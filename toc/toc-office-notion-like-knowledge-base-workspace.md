@@ -37,6 +37,7 @@ modified: 2022-06-03T21:34:54.893Z
     - 不支持网页版，要使用桌面版或移动版
   - SiYuan is made possible by the Vditor and Lute(golang)
   - 用户自己创建的笔记本文件夹下，.sy 后缀的文件用于保存文档数据，数据格式为JSON
+  - 桌面端实现依赖electron， 但数据操作使用go实现而不是nodejs
 
 - outline /18.3kStar/BSD > BSL/202302/ts
   - https://github.com/outline/outline
@@ -46,6 +47,8 @@ modified: 2022-06-03T21:34:54.893Z
   - 后端依赖postgres、redis、koa、sequelize、yjs、y-prosemirror、y-indexeddb
   - 与slack集成很好
   - 样式与airframe-react dashboard风格类似
+  - 📈 [Add Notion-like inline databases _202402](https://github.com/outline/outline/discussions/6507)
+    - [Add a spreadsheet-like UI for structured data (no-code RDBMS) _202502](https://github.com/outline/outline/discussions/8476)
   - [Adopt BSL 1.1 license__202003.v0.41.0](https://github.com/outline/outline/pull/1197)
   - [Convert from slate to Prosemirror_202005.v10.0.0](https://github.com/outline/rich-markdown-editor/pull/150)
   - ref

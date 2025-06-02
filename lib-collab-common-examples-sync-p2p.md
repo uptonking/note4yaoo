@@ -55,6 +55,13 @@ modified: 2023-01-17T19:13:01.845Z
   - This is a functional implementation of a web sync engine, optimized for single-user scenarios (not real-time collaboration). 
     - The focus is on providing reliable data synchronization while maintaining offline capabilities.
 
+- https://github.com/anyproto/any-sync /MIT/202506/go
+  - Any-Sync is an open-source protocol that enables local first communication and collaboration based on CRDTs.
+  - It is focused on bringing high-performance communication and collaboration at scale
+  - Any-Sync allows users to sync data via local WiFi networks. 
+  - Any-Sync uses end-to-end encryption so that backup nodes store encrypted data that they cannot read. Creators control encryption keys; there is no central registry of users
+  - Simultaneous support of p2p and remote communication
+
 - verdant/lo-fi /7Star/MIT/202211/ts
   - https://github.com/a-type/verdant
   - https://github.com/a-type/lo-fi

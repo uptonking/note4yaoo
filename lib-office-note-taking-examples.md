@@ -76,6 +76,7 @@ modified: 2024-01-30T20:56:45.773Z
   - 服务端数据同步代码使用c#
   - [Allow for 3rd party syncing](https://github.com/streetwriters/notesnook/issues/168)
     - 202306: 3rd party syncing is out of scope for Notesnook. We will add support for self hosting but that's it.
+  - [Formula support in tables _202402](https://github.com/streetwriters/notesnook/issues/4221)
 
 - trilium /17.1kStar/AGPLv3/202208/js/ckeditor5/支持PC+web
   - https://github.com/zadam/trilium

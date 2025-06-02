@@ -341,6 +341,13 @@ use create-react-app to create a webapp, homepage shows a list of frontend frame
   - js 786335673728065536
   - java 786790509908774912
 
+## 0602
+
+- [Adding a directory to the PATH in macOS - Apple Community](https://discussions.apple.com/thread/254226896?sortBy=rank)
+  - `export PATH=".:$PATH:/opt/xyz/bin"`
+  - `export PATH=".:$PATH:$HOME/xyz/bin"`
+# dev-05
+
 ## 0530
 
 - [How is setTimeout called in a for loop js? - Stack Overflow](https://stackoverflow.com/questions/63076634/how-is-settimeout-called-in-a-for-loop-js)

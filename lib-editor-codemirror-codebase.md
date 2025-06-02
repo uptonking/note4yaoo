@@ -14,6 +14,8 @@ modified: 2024-05-02T06:41:19.983Z
 - editor业务的数据更新
   - 修改编辑器内容
   - 修改其他状态
+# dev-debug
+- 编辑器最外层contenteditable的dom在调试时可以store as global variable，在属性上可拿到 cmView, 可以进一步拿到 cmView.view/ cmView.view.state
 # not-yet
 - document是否总以换行符结尾
 # overview

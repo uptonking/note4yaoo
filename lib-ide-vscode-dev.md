@@ -79,7 +79,10 @@ modified: 2024-08-24T16:15:11.456Z
 - ecosystem-bridged-to-zed
   - lsp
 
-## extensions
+## extensions-to
+
+- tables
+  - obsidian-bases
 
 - gitLens pro
   - gitLens for data/docs, **without vscode**
