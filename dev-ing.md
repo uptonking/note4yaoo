@@ -284,11 +284,11 @@ console.trace(';; loadFile', path, loadType);
 
 ```log
 
-- write unit test for packages/client/src/components/Editor/CodeEditor.tsx (CodeEditor should rerender when `store.file.doc().openedPath` changes )
+- write unit test for packages/client/src/components/Editor/CodeEditor.tsx (CodeEditor should rerender when "store.file.doc().openedPath" changes )
 
 - line 290 in file  is not tested, please write unit tests to test it
 
-- ensure tests pass by running  `cd packages/client && pnpm test src/__tests__/editor/CodeEditor.lsp.sepc.tsx`
+- ensure tests pass by running  "cd packages/client && pnpm test src/__tests__/editor/CodeEditor.lsp.sepc.tsx"
 - you can mock state/store/data/external-dependencies
 - you can use jest and @testing-library/react, 
 - Each unit test should be independent of other tests. Avoid sharing state or dependencies between tests by using beforeEach/beforeAll/afterEach/afterAll
@@ -304,8 +304,8 @@ add an action to run "npm install -ddd" and another action to add datetime at to
 add action to create a route /nextjs with nextjs changelog content in it , and show nextjs link in home page, when clicking the link, jump to /nextjs route
 
 add action to create quickSort1.mjs and add 3 test cases in it
-
-使用 nextjs 、 shadcn/ui 组件库开发一个类似hacker news的网站， 网站首页显示react 官方blog列表
+zzsz
+使用 nextjs 和 shadcn/ui 组件库开发一个类似hacker news的网站， 网站首页显示react 官方blog列表
 use create-react-app to create a webapp, homepage shows a list of frontend frameworks, when click the framework, show its introduction
 ```
 
@@ -340,6 +340,16 @@ use create-react-app to create a webapp, homepage shows a list of frontend frame
   - py 784965933709307904
   - js 786335673728065536
   - java 786790509908774912
+
+## 0603
+
+- [expect(jest.fn()).toHaveBeenCalled() fails even though the function has been called - Stack Overflow](https://stackoverflow.com/questions/67538405/expectjest-fn-tohavebeencalled-fails-even-though-the-function-has-been-cal)
+  - 箭头函数每次都是新函数  store: { dao: { isPlayBack: () => false, channel: () => ({ loadFile: mockLoadFile, 
+  - const mockLoadFile = jest.fn(() => console.log('; ; loadFile')); 
+
+- [Service mocked with Jest causes "The module factory of jest.mock() is not allowed to reference any out-of-scope variables" error - Stack Overflow](https://stackoverflow.com/questions/44649699/service-mocked-with-jest-causes-the-module-factory-of-jest-mock-is-not-allowe)
+  - The problem is that all `jest.mock` will be hoisted to the top of actual code block at compile time, which in this case is the top of the file. At this point VocabularyEntry is not imported. You could either put the mock in a `beforeAll` block in your test or use `jest.mock` like this
+  - const VocabularyEntry = require("../../../src/model/VocabularyEntry"); 
 
 ## 0602
 
