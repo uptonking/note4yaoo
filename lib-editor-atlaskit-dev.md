@@ -9,18 +9,24 @@ modified: 2021-07-14T15:36:09.702Z
 
 # guide
 
+- pros
+  - 示例非常丰富，且长久维护
+  - 支持lazy node，提供了示例
+  - 支持nested extension
+  - 支持performance metrics
+
+- cons
+  - 很多示例使用了atlassian ui组件，剥离较复杂
+
 - watching
   - nodeViews: code-block, width, card, emoji, hyperlink, placeholder-text, text-color
     - 所有NodeView组件的实现都很复杂！！！
     - 大量依赖atlassian design system中的react组件
   - 使用atlassian editor重写outline，抽象出替换可编辑器的接口，考虑可替换的协作同步方案
-
 # atlaskit-collab
-
 - ref
   - https://atlaskit.atlassian.com/examples/editor/editor-core/collab
   - [How to implement real time collaboration in atlaskit editor? 参考 yjs-atlaskit](https://stackoverflow.com/questions/59622112)
-
 
 - https://github.com/yjs/yjs-demos/tree/main/atlaskit
   - Atlaskit editor collaborative with Yjs & y-prosemirror. 

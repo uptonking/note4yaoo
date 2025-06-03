@@ -33,6 +33,36 @@ modified: 2021-07-14T15:36:23.541Z
 # examples
 - [kitchen-sink-example](https://atlaskit.atlassian.com/examples/editor/editor-core/kitchen-sink)
   - with-datasource 提供了一个经典的无限滚动表格示例
+
+- [Lazy node example - Editor core](https://atlaskit.atlassian.com/examples/editor/editor-core/lazy-node-example)
+  - Main Editor 的修改会立即同步到 Fallback Editor, 但fallback editor的修改不会主动同不到main editor
+
+- [Full page with confluence lazy smart cards - Editor core - Atlassian Frontend Development](https://atlaskit.atlassian.com/examples/editor/editor-core/full-page-with-confluence-lazy-smart-cards)
+
+- [Node data providers - Editor core - Atlassian Frontend Development](https://atlaskit.atlassian.com/examples/editor/editor-core/node-data-providers)
+  - There are various cache layers outside the node view data provider. Which means that the first time you open an example will be the most accurate (as subsequent opens will have various parts cached).
+
+- [Diffing - Editor core - Atlassian Frontend Development](https://atlaskit.atlassian.com/examples/editor/editor-core/diffing)
+  - 效果是，手动输入old/new doc, 点击compare显示上下布局的diff视图
+
+- [Collaborative editing - Editor core - Atlassian Frontend Development](https://atlaskit.atlassian.com/examples/editor/editor-core/collaborative-editing)
+
+- [Collab - Editor core - Atlassian Frontend Development](https://atlaskit.atlassian.com/examples/editor/editor-core/collab)
+
+- [Annotation experiment - Editor core - Atlassian Frontend Development](https://atlaskit.atlassian.com/examples/editor/editor-core/annotation-experiment)
+  - 评论，可resolve
+
+- [Table perf test - Editor core - Atlassian Frontend Development](https://atlaskit.atlassian.com/examples/editor/editor-core/table-perf-test)
+
+- [Ssr tables - Editor core - Atlassian Frontend Development](https://atlaskit.atlassian.com/examples/editor/editor-core/ssr-tables)
+
+- [Scaled editors - Editor core - Atlassian Frontend Development](https://atlaskit.atlassian.com/examples/editor/editor-core/scaled-editors)
+
+- [Resizer basic - Editor core - Atlassian Frontend Development](https://atlaskit.atlassian.com/examples/editor/editor-core/resizer-basic)
+  - 支持配置resize-handler大小、snapGap
+
+- [Testing - Editor core - Atlassian Frontend Development](https://atlaskit.atlassian.com/examples/editor/editor-core/testing)
+  - You're viewing an editor example page intended to be initialised and run via Playwright
 # [docs](https://atlaskit.atlassian.com/packages/editor/editor-core)
 - polyfills
   - promise
