@@ -347,7 +347,6 @@ use create-react-app to create a webapp, homepage shows a list of frontend frame
 
 - ai工作状态变化， 会触发 ide-server 和 sdk前端 相关事件
   - action init > in-progress: sdk前端会先打开跟随文件，但sdk内存状态的跟随文件还是旧文件
-  - xxx
 
 - ai刚开始工作时，打开文件错误的问题
   - sdk的user-fileOpened是旧状态
@@ -360,6 +359,19 @@ use create-react-app to create a webapp, homepage shows a list of frontend frame
   - ⬆️ "followingAgentUser", "clacky"
   - ⬆️ [ "file", { "path": "progressbar.mjs", "fileRootId": "home", "loadType": "follow", "fileRootPath": "", "readOnly": false }  ]
   - 
+  - ⬆️ [ "file", { "path": "progressbar.mjs", "fileRootId": "home", 👉 "loadType": "follow", "fileRootPath": "", "readOnly": false }  ]
+    - 有时sdk会请求ai上一次访问的文件，而不是正在创建的文件
+  - ⬇️ [ "file", { "agentUserId": "307b71ba-6fbf-46c8-b7a8-13a1b8f30f07", "data": { "revision": 0, "openedPath": "progressbar.mjs", "isRefresh": false, "isBinary": false, "ext": "mjs", "mapSelection": {}, "content": "" } } ]
+    - 有时会缺失这一次打开文件的事件
+  - ⬇️ [ "file", { "agentUserId": "clacky", "data": { "revision": 1, "openedPath": "progressbar.mjs", 👉 "isRefresh": true, "isBinary": false, "ext": "mjs", "mapSelection": {}, "content": "xxx" }, "timestamp": 1749126857060 } ]
+  - //////
+  - ⬇️ [ "file", { "agentUserId": "clacky", "data": { "revision": 0, "openedPath": "index.html", "isRefresh": false, "isBinary": false, "ext": "html", "mapSelection": {}, "content": "xxx" } } ]
+  - ⬇️ [ "file", { "agentUserId": "clacky", "data": { "revision": 1, "openedPath": "index.html", 👉 "isRefresh": true, "isBinary": false, "ext": "html", "mapSelection": {}, "content": "xxx y" } } ]
+  - //////
+  - ⬇️ [ "file", { "agentUserId": "clacky", "data": { "revision": 0, "openedPath": "style.css", "isRefresh": false, "isBinary": false, "ext": "css", "mapSelection": {}, "content": "xxx" }  } ]
+  - ⬇️ [ "file", { "agentUserId": "clacky", "data": { "revision": 1, "openedPath": "style.css", 👉 "isRefresh": true, "isBinary": false, "ext": "css", "mapSelection": {}, "content": "xxx y“ }, "timestamp": 1749126885851 } ]
+  - //////
+  - 执行结束后，有时sdk会请求再次打开最后一个文件
 
 - ai工作时的主要事件时序, 流式状态
   - ⬆️ [ "followingAgentUser", "clacky" ]
