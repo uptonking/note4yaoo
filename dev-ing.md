@@ -250,9 +250,9 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - 做完tailwind-table就面试
 
 - dev-to 提炼核心`需求+产出`工作流，不能在产品中检验的技术不玩
-# dev-05
+# dev-06
 
-## 050
+## 060
 
 - dev-log
   - ?
@@ -273,7 +273,7 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
 
 console.trace(';; loadFile', path, loadType);
 
-^((?!(42\["heartbeat|resourceMonit|refreshXtermCols|42\["multiTerminal)).)*$
+^((?!(42\["heartbeat|resourceMonit|refreshXtermCols|42\["multiTerminal|42\["terminalStatus|42\["activeTerminal)).)*$
 ^((?!(42\["heartbeat|resourceMonit|refreshXtermCols)).)*$
 ^(?!42\["resourceMonit).* 
 
@@ -304,7 +304,9 @@ add an action to run "npm install -ddd" and another action to add datetime at to
 add action to create a route /nextjs with nextjs changelog content in it , and show nextjs link in home page, when clicking the link, jump to /nextjs route
 
 add action to create quickSort1.mjs and add 3 test cases in it
-zzsz
+
+add action to create quickSort1.mjs and try to implement quick sort algorithm in less than 40 lines
+
 使用 nextjs 和 shadcn/ui 组件库开发一个类似hacker news的网站， 网站首页显示react 官方blog列表
 use create-react-app to create a webapp, homepage shows a list of frontend frameworks, when click the framework, show its introduction
 ```
@@ -340,6 +342,60 @@ use create-react-app to create a webapp, homepage shows a list of frontend frame
   - py 784965933709307904
   - js 786335673728065536
   - java 786790509908774912
+
+## 0605
+
+- ai工作状态变化， 会触发 ide-server 和 sdk前端 相关事件
+  - action init > in-progress: sdk前端会先打开跟随文件，但sdk内存状态的跟随文件还是旧文件
+  - xxx
+
+- ai刚开始工作时，打开文件错误的问题
+  - sdk的user-fileOpened是旧状态
+
+- ai写完后，编辑器闪烁的问题
+
+- ai写完后，再次打开diff的问题
+
+- ai工作时的主要事件时序, 非流式状态
+  - ⬆️ "followingAgentUser", "clacky"
+  - ⬆️ [ "file", { "path": "progressbar.mjs", "fileRootId": "home", "loadType": "follow", "fileRootPath": "", "readOnly": false }  ]
+  - 
+
+- ai工作时的主要事件时序, 流式状态
+  - ⬆️ [ "followingAgentUser", "clacky" ]
+  - ⬆️ [ "file", { "path": "style.css", "fileRootId": "home", "loadType": "follow", "fileRootPath": "", "readOnly": false }  ]
+  - ⬇️ ai工作的文件 [ "file", { "agentUserId": "clacky", "data": { "revision": 0, "openedPath": "index.html", "isRefresh": false, "isBinary": false, "ext": "html", "mapSelection": {}, "content": "<body> </body>  " } } ]
+  - ⬆️ [ "file", { "path": "style.css", "timestamp": 1749114832648, "fileRootId": "home", "loadType": "default", "fileRootPath": "", "readOnly": false }  ]
+  - 做完一个action
+  - ⬆️ [ "file", { "path": "progressbar.mjs", "timestamp": 1749114853704, "fileRootId": "home", "loadType": "default", "fileRootPath": "", "readOnly": false } ]
+  - ai打字动画
+  - ⬆️ [ "file", { "path": "progressbar.mjs", "timestamp": 1749114861342, "fileRootId": "home", "loadType": "refresh", "fileRootPath": "", "readOnly": false }  ]
+  - ⬇️ [ "file", { "agentUserId": "clacky", "data": { "revision": 0, "openedPath": "style.css", "isRefresh": false, "isBinary": false, "ext": "css", "mapSelection": {}, "content": "body " }  } ]
+  - ⬇️ [ "file", { "agentUserId": "clacky", "data": { "revision": 1, "openedPath": "style.css", "isRefresh": true, "isBinary": false, "ext": "css", "mapSelection": {}, "content": "body " }, "timestamp": 1749117449758 } ]
+
+## 0604
+
+- go-to-definition 容器中执行pwd、lsp返回的地址
+  - /home/runner/.pyenv/versions/3.12.8/lib/python3.12/site-packages/fastapi/applications.py
+  - `/home/runner/.gvm/pkgsets/go1.23/global/pkg/mod/github.com/gin-gonic/gin@v1.9.0/gin.go`
+    - /app/data/codeZone/dependency /home/.gvm/pkgsets/go1.23/global/pkg/mod/github.com/gin-gonic/gin@v1.9.0/gin.go
+  - `/home/runner/app/main.go`
+
+- ide-server 通过node fs.readFile读取的地址
+  - /app/data/codeZone/2025/1/6-4/@f0e6d0c4-04e5-4706-b230-980466466a1b/dependency/ home/app/main.go
+  - 因为文件系统自身不需要 User 目录，为了模拟操作系统，就加了runner
+
+```JS
+// read-request
+{
+  "path": "README.md",
+  "timestamp": 1749030891398,
+  "fileRootId": "home",
+  "loadType": "default",
+  "fileRootPath": "",
+  "readOnly": false
+}
+```
 
 ## 0603
 

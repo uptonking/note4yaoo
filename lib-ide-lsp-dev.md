@@ -67,6 +67,12 @@ modified: 2025-01-05T15:00:07.466Z
   - 跨文件的类型lint在前端难以实现
   - 前端引入lint工具包和规则包会显著增加体积，降低性能
 
+- eslint
+  - [Rules Reference](https://eslint.org/docs/latest/rules/)
+  - [List of available rules](https://denar90.github.io/eslint.github.io/docs/rules/)
+  - No rules are enabled by default. The "extends": "eslint:recommended" have a check mark ✅
+  - The --fix option on the command line automatically fixes problems with 🔧
+
 ```JS
 // response
 {

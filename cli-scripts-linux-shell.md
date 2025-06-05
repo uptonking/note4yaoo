@@ -62,6 +62,12 @@ cp -r source_folder /path/to/destination_folder/
 
 ```
 
+```shell
+# 在linux docker 的terminal输入 mount 命令，可以看到容器的挂载点及地址，对调试读写很有用
+mount
+```
+
+
 ## file-cli
 
 - `ln -s fileOrFolder softLinkName`
