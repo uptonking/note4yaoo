@@ -488,6 +488,16 @@ modified: 2023-08-29T10:12:22.345Z
 
 ## git-sync
 
+- https://github.com/ntns/gh-mirror /MIT/202309/go/inactive
+  - Tool to mirror Github repositories locally
+    - New repositories are cloned using git clone --mirror
+    - Existing repositories are kept up to date using git remote update
+  - 支持非本人repo
+  - 支持配置文件，但无法自定义配置文件的位置和备份位置
+  - https://github.com/beefsack/git-mirror /GPLv2/201505/go/inactive
+    - designed to create and serve read-only mirrors of your Git repositories locally
+    - By default it will update the mirror every 15 minutes and will serve the mirror over HTTP using port 8080
+
 - https://github.com/AkashRajpurohit/git-sync /MIT/202504/go
   - A simple cli tool to backup and sync your git repositories
   - Keep your backups in sync with your remote repositories by running git-sync periodically.
@@ -496,11 +506,23 @@ modified: 2023-08-29T10:12:22.345Z
   - Multi Platform: Currently this project supports backing up repositories from all major Git hosting services like GitHub, GitLab, Bitbucket, Gitea and Forgejo.
   - Get notified when your sync is complete, or if there are any errors.
   - 🐛 配置项include_orgs只能是自己的org，公共的org无法sync
+  - [Repository Syncing Capabilities _202408](https://github.com/AkashRajpurohit/git-sync/discussions/24)
+    - Is it possible to sync from one source repository to another source repository instead of a local folder? 
+    - Hey, this feature is not yet supported since the idea is to create backups from cloud hosted service to your local server.
 
 - https://github.com/kubernetes/git-sync /apache2/202505/go
   - git-sync is a simple command that pulls a git repository into a local directory, waits for a while, then repeats. As the remote repository changes, those changes will be synced locally. 
   - git-sync can pull over HTTP(S) (with authentication or not) or SSH.
   - It is a perfect "sidecar" container in Kubernetes - it can pull files down from a repository so that an application can consume them.
+  - [Syncing multiple repositories _202103](https://github.com/kubernetes/git-sync/issues/352)
+    - I would require to sync 2 repositories to a kubernetes pod.
+    - It would boil down to either starting 2 git-sync binaries inside one container or my personal recommendation use separate git-sync containers. That would also split up logging, error reporting to each repository.
+  - [Way for syncing multiple repositories & branches? _202009](https://github.com/kubernetes/git-sync/issues/261)
+    - Git-sync is more about syncing one specific repo and reference (branch, tag, hash) to a location on disk.
+    - Keeping different repositories, branches etc. in sync was not really the main intention.
+  - [Cloning a Git repo into the current directory _202210](https://github.com/kubernetes/git-sync/issues/636)
+    - Is it possible to clone the git repository into the root directory without creating an additional folder?
+    - No, it's not. git-sync is mostly trying to stay in sync with an upstream, which means the local version will change over time.  We use the `--dest` as a symlink so it can be atomically switched, so clients never see a partial state. If you only need a single checkout, I think you can use `subpath` in your app's volumeMount?
 
 - https://github.com/alibaba/git-repo-go /apache2/202312/go/archived
   - https://git-repo.info/
@@ -520,6 +542,12 @@ modified: 2023-08-29T10:12:22.345Z
   - repositories are saved according to the following schema: `$ROOT/username/reponame`
   - 🐛 不支持配置文件的方式
   - https://x.com/fabiospampinato/status/1458613055722557444
+
+- https://github.com/GerritCodeReview/git-repo /apache2/202506/python
+  - https://gerrit.googlesource.com/git-repo
+  - Repo is a tool built on top of Git. Repo helps manage many Git repositories
+  - Repository tool for Android development
+  - 只支持android项目
 # git-ai
 - https://github.com/jnsahaj/lumen /MIT/202411/rust
   - Instant AI Git Commit message, Git changes summary from the CLI (no API key required)

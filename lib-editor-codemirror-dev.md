@@ -186,7 +186,7 @@ modified: 2021-05-06T09:38:31.520Z
 - later
   - port to server side lang like prosemirror
     - hocuspocus for codemirror
-    - codemirror-rust 🦀
+    - codemirror-rust/go 🦀
   - migrate codemirror5 demos to codemirror6
   - EditorView without virtualized viewport
   - 兼容tiptap的扩展api，底层替换为codemirror实现
@@ -208,6 +208,7 @@ modified: 2021-05-06T09:38:31.520Z
   - katex
 
 - lang
+  - codemirror markdown streamable
   - replace lezer with tree-sitter
 
 - diff-view
@@ -356,8 +357,6 @@ edd.contentDOM.cmView.view === edd // true
   },
   "agentUserId": "5c38ff4b-b93d-4ce1-b74a-05c2baaf8d28"
 }]
-
-
 ```
 
 ## dev-ai-coding/diff

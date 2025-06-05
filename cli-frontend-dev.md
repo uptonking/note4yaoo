@@ -75,6 +75,13 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 ```
 
 # npm-cli
+
+```sh
+# 查看包版本的发版信息，包括 发布时间、大小、发布者
+# npm info <package-name>@<version-number>
+npm info @dao42/clacky-paas-front@0.9.307
+```
+
 - config-settings
   - prefix
     - The location to install global items. 

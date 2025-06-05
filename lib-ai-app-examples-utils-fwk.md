@@ -108,6 +108,11 @@ modified: 2025-02-21T18:20:42.624Z
   - 💡 Browserless listens for both incoming websocket requests, generally issued by most libraries, as well as pre-build REST APIs to do common functions (PDF generation, images and so on). When a websocket connects to Browserless it starts Chrome and proxies your request into it. 
     - Once the session is done then it closes and awaits for more connections. 
     - Some libraries use Chrome's HTTP endpoints, like /json to inspect debug-able targets, which Browserless also supports.
+
+- https://github.com/rebrowser/rebrowser-patches /202506/js
+  - Collection of patches for puppeteer and playwright to avoid automation detection and leaks. 
+  - Helps to avoid Cloudflare and DataDome CAPTCHA pages. 
+  - Easy to patch/unpatch, can be enabled/disabled on demand.
 # computer-use
 - https://github.com/bytedance/UI-TARS-desktop /9.6kStar/apache2/202503/ts
   - https://agent-tars.com/

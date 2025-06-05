@@ -74,6 +74,14 @@ modified: 2024-05-27T09:12:06.925Z
 # disccuss-usage-github
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Can forks be synced automatically in GitHub? - Stack Overflow](https://stackoverflow.com/questions/23793062/can-forks-be-synced-automatically-in-github)
+- You can create a Github App that use Github API to check the upstream repo periodically. Once an update is found, use Github API to create a pull request then call updateRef to update your branch to match master.
+  - Or, just install this Github App that does exactly that
+
 - ## TIL you can add `.diff` to the end of a Github pull request URL and you'll get a diff file.
 - https://x.com/davidfowl/status/1916541569638834509
   - you can also add `.patch` to get a git patch file
