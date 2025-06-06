@@ -273,7 +273,8 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
 
 console.trace(';; loadFile', path, loadType);
 
-^((?!(42\["heartbeat|resourceMonit|refreshXtermCols|42\["multiTerminal|42\["terminalStatus|42\["activeTerminal)).)*$
+^((?!(42\["heartbeat|resourceMonit|refreshXtermCols|42\["multiTerminal|42\["terminalStatus|42\["activeTerminal|42\["ragStatus|42\["initAiCodeInfo)).)*$
+^((?!(42\["heartbeat|resourceMonit|refreshXtermCols|42\["multiTerminal|42\["terminalStatus|42\["activeTerminal|42\["ragStatus|42\["initAiCodeInfo|42\["fileChange|42\["pullOTUpdates)).)*$
 ^((?!(42\["heartbeat|resourceMonit|refreshXtermCols)).)*$
 ^(?!42\["resourceMonit).* 
 
@@ -355,10 +356,26 @@ use create-react-app to create a webapp, homepage shows a list of frontend frame
 
 - ai写完后，再次打开diff的问题
 
-- ai工作时的主要事件时序, 非流式状态
+- ai工作时的主要事件时序, 流式输出
   - ⬆️ "followingAgentUser", "clacky"
-  - ⬆️ [ "file", { "path": "progressbar.mjs", "fileRootId": "home", "loadType": "follow", "fileRootPath": "", "readOnly": false }  ]
-  - 
+  - //////
+  - ⬇️ [ "fileTree", { "playgroundId": "802656873768951808", "eventName": "fileTree", "agentUserId": "clacky", "data": { "action": "CREATE", "files": [ { "type": "FILE", "name": "mergeSort.mjs" } ], "result": true, "message": "success"  } } ]
+  - ⬆️ file, { "path": "mergeSort.mjs", "timestamp": 1749194085630, "fileRootId": "home", 🇺🇳 "loadType": "default", "fileRootPath": "", "readOnly": false }
+  - ⬇️ file, { "revision": 0, "openedPath": "mergeSort.mjs", 👉 "isRefresh": false, "isBinary": false, "ext": "mjs", "mapSelection": {}, "content": "" }
+  - ⬆️ file, { "path": "mergeSort.mjs", "timestamp": 1749194113927, "fileRootId": "home", 🚩 "loadType": "refresh", "fileRootPath": "", "readOnly": false }
+  - //////
+  - ⬆️ file, { "path": "heapSort.mjs", "timestamp": 1749194116519, "fileRootId": "home", 🇺🇳 "loadType": "default", "fileRootPath": "", "readOnly": false }
+  - ⬆️ file, { "path": "heapSort.mjs", "timestamp": 1749194129709, "fileRootId": "home", 🚩 "loadType": "refresh", "fileRootPath": "", "readOnly": false }
+  - ⬆️ file, { "path": "heapSort.mjs", "timestamp": 1749194146606, "fileRootId": "home", 🚩 "loadType": "refresh", "fileRootPath": "", "readOnly": false }
+  - //////
+  - ⬆️ { "path": "testSort.mjs", "timestamp": 1749194148960, "fileRootId": "home", 🇺🇳 "loadType": "default", "fileRootPath": "", "readOnly": false }
+  - ⬆️ { "path": "testSort.mjs", "timestamp": 1749194170868, "fileRootId": "home", 🚩 "loadType": "refresh", "fileRootPath": "", "readOnly": false }
+  - ⬆️ { "path": "testSort.mjs", "timestamp": 1749194173066, "fileRootId": "home", 🚩 "loadType": "refresh", "fileRootPath": "", "readOnly": false }
+  - ⬆️ { "path": "testSort.mjs", "timestamp": 1749194195435, "fileRootId": "home", 🚩 "loadType": "refresh", "fileRootPath": "", "readOnly": false }
+
+- ai工作时的主要事件时序, 非流式输出
+  - ⬆️ "followingAgentUser", "clacky"
+  - //////
   - ⬆️ [ "file", { "path": "progressbar.mjs", "fileRootId": "home", 👉 "loadType": "follow", "fileRootPath": "", "readOnly": false }  ]
     - 有时sdk会请求ai上一次访问的文件，而不是正在创建的文件
   - ⬇️ [ "file", { "agentUserId": "307b71ba-6fbf-46c8-b7a8-13a1b8f30f07", "data": { "revision": 0, "openedPath": "progressbar.mjs", "isRefresh": false, "isBinary": false, "ext": "mjs", "mapSelection": {}, "content": "" } } ]
