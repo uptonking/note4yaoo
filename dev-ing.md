@@ -280,6 +280,7 @@ console.trace(';; loadFile', path, loadType);
 
 <!-- 观测云搜索 ide-server -->
 -multiTerminalHeartBeat -all\:multiTerminal -"[fromMQ] multiTerminal" -"[toMQ]paas:multiTerminal" -"] multiTerminal, {"
+-multiTerminalHeartBeat -all\:multiTerminal -"[fromMQ] multiTerminal" -"[toMQ]paas:multiTerminal" -"] multiTerminal, {"  -"[fromMQ] ragStatus" -"] ragStatus data: [" -"all:ragStatus" -"toMQ fileContentUpdate begin" -agentAppendFile -"[FileTree_writeFile]"
 
 ```
 
@@ -343,6 +344,13 @@ use create-react-app to create a webapp, homepage shows a list of frontend frame
   - py 784965933709307904
   - js 786335673728065536
   - java 786790509908774912
+
+## 0608
+
+- ai执行task的数据流
+  - ⬆️ "followingAgentUser", "clacky"
+  - ⬇️ following, { "agentUserId": "a67ab9fd-b0f6-48be-8945-80c9452a3991", "userId": "705965668918861825",   "userInfo": { "userId": "user_2ly7xQ9AdCaUU4i23Ta55Y51Mpv", "username": "uptonking", "avatarUrl": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ2l0aHViL2ltZ18ybHk3eFdIeGxNaEl1SjlZYVFYV0ZTOVhFZlQifQ" },   "fileOpened": "collab.js",  "status": "online", "followingAgentUserId": "clacky",  "focusComponent": "Tree", "focusXterm": null, "editorScroll": 0, "cursor": {}, "wsClientID": "96aYj58LTtiDzPehAAb0", "color": "#2ACC96" }
+    - 有问题, { "status": "online", "wsClientID": "lmx1IScYa75bkIUoAABN", "fileOpened": "collab.js", "focusComponent": "Tree", "followingAgentUserId": "clacky" }
 
 ## 0605
 
