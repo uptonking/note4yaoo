@@ -13,13 +13,15 @@ modified: 2023-11-28T14:48:45.910Z
 # guide(for notable/noter/paper)
 - features
   - 💰 market: lowcode(editor/automation), playground(preview+code+pdf)
-  - ⏳ versioning and branching: 基于oplog/events实现, draft/public, replay, diff
-  - 🤝 collaboration-ready: offline, crdt
-  - ⛓️ automation/workflow/rpa: 基于dag，结合lowcode
+  - ⏳ versioning and branching (reproducible): git-timeline, diff, draft/public
+    - replay
+    - 基于oplog/events的方案
+  - 🤝 collaboration-ready (accessible): multiplayer, sharing, offlineable, crdt
+  - ⛓️ automation/workflow/rpa (automatable): 结合lowcode, 基于dag的方案, scheduler
   - 📱 mobile-editor: phone/pad, 自定义编辑器可以是主特性，也可以是锦上添花
-  - mobile-app-generator
-  - end-user database: 支持用户自定义数据和流程, multi views
-  - animated-text/code sharing: playback with different speed
+    - mobile-app-generator
+  - 📈 end-user database: 支持用户自定义数据和流程, multi views, ob-bases
+  - 💫 animated-text/code sharing: playback with different speed
   - markdown: hotkeys, table-builder
   - github修改文档要提pr很繁琐; 可协作的workspace可直接改或用审阅修订模式
   - local-first storage with optional sync: 兼容git-commits, 浏览器多tab在断网时sync
@@ -29,6 +31,7 @@ modified: 2023-11-28T14:48:45.910Z
 - selling-point-knowledge-base
   - 通用或单一的builder价值不大，但针对业务平台特别是app-store的builder对平台方和开发者的价值都很大
   - ⌛️ version history
+    - git-timeline
     - diff
     - 快照文件的协同，已删除文件的协同
     - 基于代码的回放能解决视频难以实时更新的问题, video-but-auto-update

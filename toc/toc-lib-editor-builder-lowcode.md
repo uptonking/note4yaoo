@@ -538,12 +538,16 @@ modified: 2020-12-28T12:24:09.275Z
   - Build your admin panels with a Notion-like UI
   - Super simple user dashboards for Supabase users.
 
-- saltcorn /1kStar/MIT/202301/js/ts
+- saltcorn /1kStar/MIT/202506/js/ts
   - https://github.com/saltcorn/saltcorn
+  - https://saltcorn.com/
   - Saltcorn is an extensible open source no-code database application builder.
   - This repository contains the core codebase, including the code necessary to self-host an instance and to host a multitenant instance.
   - 后端依赖express、passport、pg、socket.io
   - 前端采用script标签导入，依赖ckeditor4、codemirror5、jquery、jsgrid、tabulator、bootstrap4
+  - Drag-and-drop page builder
+  - Manage relational database
+  - A Local plugin means that the code lives in your home directory and when you edit it, the plugin updates in the instance after a restart (which will happen automatically on save, when running the dev server)
 
 - illa-builder /10.5kStar/apache2/202403/ts/go
   - https://github.com/illacloud/illa-builder

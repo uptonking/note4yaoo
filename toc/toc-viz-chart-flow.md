@@ -364,6 +364,11 @@ modified: 2020-10-22T10:22:55.878Z
     - In 2022, I created Alma — An interactive playground for generative graphics, by combining nodes & logic into WebGL shaders. All through an intuitive no-code interface.
     - what the flow diagram library you used?
       - I made it myself
+
+- https://github.com/inngest/workflow-kit /apache2/202504/ts
+  - The quickest and easiest way to add a Zapier-like workflow UI experience to your product. 
+  - Define actions in your backend and expose a Workflow UI using pre-built React components.
+  - Workflow Kit enables you to build user-defined workflows with Inngest by providing a set of workflow actions to the Workflow Engine while using the pre-built React components to build your Workflow Editor UI.
 # dataflow
 - jerosoler/Drawflow /3.2kStar/MIT/202206/js/inactive
   - https://github.com/jerosoler/Drawflow

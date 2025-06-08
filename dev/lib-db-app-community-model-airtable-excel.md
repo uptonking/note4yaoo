@@ -261,7 +261,40 @@ modified: 2023-10-26T21:54:54.201Z
 
 - ## 
 
-- ## 
+- ## 🚀 [Show HN: Teable – Open-Source No-Code Database Fusion of Postgres and Airtable | Hacker News _202403](https://news.ycombinator.com/item?id=39666865)
+- When non-technical/semi-technical people are exposed to the database, the biggest issues come from two areas
+  * their lack of grasp on data models, and modeling in general. This stumps them every time they see bridge tables, many-to-ones, and joins. Or when they need to answer a question, and the answer is not obvious from the base tables
+  * databases in general are very normalized, cryptically named (tables and columns) and have too much evolutionary baggage (both from a schema and data point of view) - except for in new/small systems.
+
+- 👷 Our team consists of 5 freelance programmers without any designers on board, and without any funding, so we had to tackle the design aspect ourselves. Initially, we planned to use a colorful gradient theme, but found the UI coordination too challenging for us. It was then that we came across the beautiful simplicity of shadcn, and decided to go with a black and white theme.
+
+- 🆚 What are the differences to Glide's data-grid?
+  - GlideGrid is an outstanding canvas grid component (interestingly, it was initially used by us before we decided to create our own version to enhance the user experience). 
+  - Teable, on the other hand, is a fully-featured no-code platform aimed at empowering those without technical backgrounds to efficiently work with Postgres (a relational database).
+- Grist's Pro Plan offers up to 100k rows, indicating that queries and calculations are processed on the frontend or in memory, which typically makes it challenging to scale data rows further. This is a problem that Airtable also faces.
+- Baserow initially had a limit on the number of rows, but this year's updates seem to have significantly increased its data capacity. Notably, Baserow does not support Bring Your Own Database or query by SQL, but it offers a seamless scrolling table interface, unlike NocoDB, which requires pagination. In terms of other functionalities, both have their strengths. My assessment aligns with what I found on Baserow's official forum and comparisons with NocoDB.
+- ✨ Teable Compared to similar products, Teable invests heavily in its table format UI, striving for seamless scrolling, copy-pasting, batch editing, and other quick table operations, which we believe are key to saving users' time. 
+  - Therefore, we developed our Canvas table rendering component to achieve perfection. 
+  - Meanwhile, batch operations pose a significant challenge for database compatibility, but we see this as a necessary investment.
+  - Additionally, Teable supports developers by offering open database connections and database permission management, a concept inspired by Supabase. This allows both developers and users to create on the same platform.
+
+- Can you join data from various tables and build a view? Also - my team prefers airtable because of the calendar view.... would be great to see.
+  - There is currently no "join" capability, but there is a "Link Field" to handle table relationships.
+
+- Can you build a SQL VIEW and access that from teable?
+  - We have a plan to do it, we have a lot of user feedback, and we find it very useful
+
+- ✨ In fact, Teable has no limit on the number of rows; you can always trust Postgres . Here's a table with 1 million rows, where you can experience the response speed as well as the feedback from filtering and sorting.
+
+- 🤔🤔🤔 How do you handle schema changes like adding columns or changing the type of columns? Is the schema fixed at design time by a database admin, or can the end-user add/remove columns, create tables, and introduce relationships?
+  - That is what I want to share. When users create fields in the visible table, it directly creates columns in the corresponding Postgres table. There's a mapping between the fields on the UI and the physical columns. 
+  - At the same time, relationships are a major highlight; the "link field" of the Teable will create logical foreign keys or junction tables between physical tables to maintain the relationship.
+
+- 
+- 
+- 
+- 
+- 
 
 - ## [What is the database schema of note-taking apps such as Notion with 'database' feature? : r/Database _202405](https://www.reddit.com/r/Database/comments/1d3vdpt/what_is_the_database_schema_of_notetaking_apps/)
 - actually they use postgresql JSONB to store each block.

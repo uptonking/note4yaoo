@@ -103,7 +103,7 @@ modified: 2024-02-04T20:54:34.896Z
 - I looked, but it seems to run on SQLite. Makes me a bit concerned about scalability.
   - They mention 100, 000 rows as a soft limit. SQLite is the underlying database technology and it has a maximum database size of 281 terabytes. Enough
 
-- why didn't this project leverage these modern technologies for UI and instead went with Backbone and Knockout?
+- 🤔 why didn't this project leverage these modern technologies for UI and instead went with Backbone and Knockout?
   - Despite all the talk, there isn’t a world of difference between how apps used to be written 10 years ago and more modern frameworks. The tooling and the language have evolved, but you still manage state in similar ways, fetch data, build components, render.
   - Mainly you’ll be managing the rendering lifecycle manually in Backbone, which you’d end up doing in React anyway to get the best performance for an app like this - you’ll get molasses if you naively build a spreadsheet in react.
   - One thing I consider a huge advantage: you can read and understand the source in one afternoon. Makes debugging and optimization a lot easier.

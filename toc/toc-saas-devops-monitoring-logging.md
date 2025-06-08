@@ -29,6 +29,13 @@ modified: 2024-02-11T15:11:31.598Z
   - We provide a set of SDKs and integration options to make it easier to get started with HyperDX, such as Browser, Node.js, and Python
   - HyperDX is compatible with OpenTelemetry, a vendor-neutral standard for instrumenting your application
 
+- https://github.com/pydantic/logfire /3.2kStar/MIT/202506/python
+  - https://logfire.pydantic.dev/docs/
+  - From the team behind Pydantic, Logfire is an observability platform built on the same belief as our open source library
+  - Python-centric Insights: From rich display of Python objects, to event-loop telemetry, to profiling Python code and database queries
+  - SQL: Query your data using standard SQL
+  - Pydantic Integration: Understand the data flowing through your Pydantic models and get built-in analytics on validations.
+
 - https://github.com/Openpanel-dev/openpanel /AGPLv3/202403/ts
   - https://openpanel.dev/
   - a simple analytics tool for logging events on web, apps and backend

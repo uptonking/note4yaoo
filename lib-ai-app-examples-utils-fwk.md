@@ -204,7 +204,18 @@ modified: 2025-02-21T18:20:42.624Z
   - https://x.com/tuturetom/status/1892753818028216717
     - 可以实现近乎无限的上下文窗口，将一整本书或一整个代码库扔进去提问
 # agi-text
-
+- https://github.com/Olow304/memvid /MIT/202506/python
+  - https://pypi.org/project/memvid/
+  - Video-based AI memory library. 
+  - Store millions of text chunks in MP4 files with lightning-fast semantic search. No database needed.
+  - Memvid revolutionizes AI memory management by encoding text data into videos, enabling lightning-fast semantic search across millions of text chunks with sub-second retrieval times. 
+  - Unlike traditional vector databases that consume massive amounts of RAM and storage, Memvid compresses your knowledge base into compact video files while maintaining instant access to any piece of information.
+  - Video-as-Database: Store millions of text chunks in a single MP4 file
+  - Efficient Storage: 10x compression compared to traditional databases
+  - PDF Support: Direct import and indexing of PDF documents
+  - Built-in Chat: Conversational interface with context-aware responses
+  - Pluggable LLMs: Works with OpenAI, Anthropic, or local models
+  - Offline-First: No internet required after video generation
 # agi-image
 - https://github.com/joanrod/star-vector /apache2/202503/python
   - https://starvector.github.io/

@@ -137,10 +137,35 @@ git log --online --graph --decorate
 - https://x.com/msimoni/status/1884333920080257053
   - In contrast to plain HTTP, Git also solves incremental updates efficiently, so everyone can locally store a complete copy of the sites they follow.
 
+# disccuss-lfs/large-file
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [ `git lfs clone` does not respect `--mirror` (bare) · Issue · git-lfs/git-lfs _201706](https://github.com/git-lfs/git-lfs/issues/2342)
+
+- Yes, this is an incompatibility between git-lfs and the default directory name that git uses for bare repos. 
+  - There is a simple work-around for now: `git lfs clone git@bitbucket.org:foo/bar.git bar.git`.
+  - That explicitly states the output directory name, and "git lfs clone" honors that. You can actually put anything at all for the directory name, just so long as it's explicitly stated.
 # disccuss
 - ## 
 
 - ## 
+
+- ## 
+
+- ## git clone --mirror git@github.com:ueberdosis/tiptap.git
+- Git creates a bare-“mirror” repository, which contains all of the refs (branches, tags, notes) and the entire object database, but no working tree—so you won’t see any checked-out files.
+
+- if you’ve already got the mirror locally, you can “clone from your mirror”:
+
+```sh
+git clone ~/backups/tiptap.git tiptap-working-copy
+```
 
 - ## 我用 Git 的时候有一个很常见的 combo 来合并 main 分支的最新代码：
 - https://x.com/tison1096/status/1926191882360455190

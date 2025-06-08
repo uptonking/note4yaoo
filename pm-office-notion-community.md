@@ -22,6 +22,10 @@ modified: 2023-11-28T14:48:45.910Z
 
 - v202007
   - We recently made our Personal Plan free and removed the block limit
+
+# blogs-notion
+
+- [How Notion Handles 200 Billion Notes Without Crashing: A Technical Deep Dive - DEV Community _202503](https://dev.to/aadarsh-nagrath/how-notion-handles-200-billion-notes-without-crashing-a-technical-deep-dive-5deh)
 # discuss-author
 - ## 
 
@@ -333,7 +337,7 @@ modified: 2023-11-28T14:48:45.910Z
   - The advantage of React Native is allowing web developers to build phone app. If we already have webview for that, React Native does not add value.
 - iOS & Android engineers chose Compose / SwiftUI for this and regretted it because not enough control over optimization. Yet another lesson to be conservative about tech adoption.
 
-- ## 🆚️💡 [Choosing DB model for an app similar to Notion, Block-based ("paragraphs") or document-based?](https://stackoverflow.com/questions/71024175)
+- ## 🆚️💡 [Choosing DB model for an app similar to Notion, Block-based ("paragraphs") or document-based? - Stack Overflow _202202](https://stackoverflow.com/questions/71024175/choosing-db-model-for-an-app-similar-to-notion-block-based-paragraphs-or-do)
 - 比较项目
   - Fetch the contents of a page
   - Render the content of a page**
