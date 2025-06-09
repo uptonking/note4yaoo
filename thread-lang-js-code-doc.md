@@ -11,7 +11,8 @@ modified: 2025-04-19T10:43:17.651Z
 
 - code-doc-solutions
   - [JSDoc](https://jsdoc.app/about-getting-started)
-  - [What is TSDoc?](https://tsdoc.org/)
+  - [TSDoc is a proposal to standardize the doc comments used in TypeScript code](https://tsdoc.org/)
+  - [TypeDoc converts comments in TypeScript's source code into HTML documentation or a JSON model](https://typedoc.org/)
 # docs
 
 ## jsdoc

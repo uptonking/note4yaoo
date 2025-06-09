@@ -345,11 +345,50 @@ use create-react-app to create a webapp, homepage shows a list of frontend frame
   - js 786335673728065536
   - java 786790509908774912
 
+## 0609
+
+- ai执行task时，多次打开文件的异常事件，ide-server的日志
+  - ⬇️ file, {"path":"heapSort.mjs", "timestamp":1749459434122, "fileRootId":"home", "loadType":"refresh", "fileRootPath":"", "readOnly":false} 
+  - ⬆️ self[b10985e2-97a9-4fa2-a8fb-c5f19758f4c8] file, {"agentUserId":"b10985e2-97a9-4fa2-a8fb-c5f19758f4c8", "data":{"revision":72, "openedPath":"heapSort.mjs", 👉 "isRefresh":true, "isBinary":false, "ext":"mjs", "mapSelection":{}, "content":"
+  - ⬇️  openFileByFollow, {"fileOpened":"heapSort.mjs"}
+
+- editor闪烁是由于多次打开文件，相关日志如下
+
+```log
+loadFile	@	DaoPaaS.cjs:30403
+refresh	@	DaoPaaS.cjs:32610
+receiveOTUpdates	@	DaoPaaS.cjs:104366
+eval	@	DaoPaaS.cjs:104447
+onPullUpdates	@	DaoPaaS.cjs:104436
+eval	@	DaoPaaS.cjs:104380
+eval	@	DaoPaaS.cjs:104277
+run	@	DaoPaaS.cjs:104270
+eval	@	DaoPaaS.cjs:104381
+Emitter$1.emit	@	DaoPaaS.cjs:10085
+emitEvent	@	DaoPaaS.cjs:11681
+onevent	@	DaoPaaS.cjs:11669
+onpacket	@	DaoPaaS.cjs:11646
+Emitter$1.emit	@	DaoPaaS.cjs:10085
+eval	@	DaoPaaS.cjs:12004
+Promise.then		
+eval	@	DaoPaaS.cjs:10524
+ondecoded	@	DaoPaaS.cjs:12003
+Emitter$1.emit	@	DaoPaaS.cjs:10085
+add	@	DaoPaaS.cjs:11284
+ondata	@	DaoPaaS.cjs:11997
+Emitter$1.emit	@	DaoPaaS.cjs:10085
+onPacket	@	DaoPaaS.cjs:10908
+Emitter$1.emit	@	DaoPaaS.cjs:10085
+onPacket	@	DaoPaaS.cjs:10198
+onData	@	DaoPaaS.cjs:10195
+ws.onmessage	@	DaoPaaS.cjs:10570
+```
+
 ## 0608
 
 - ai执行task的数据流
   - ⬆️ "followingAgentUser", "clacky"
-  - ⬇️ following, { "agentUserId": "a67ab9fd-b0f6-48be-8945-80c9452a3991", "userId": "705965668918861825",   "userInfo": { "userId": "user_2ly7xQ9AdCaUU4i23Ta55Y51Mpv", "username": "uptonking", "avatarUrl": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ2l0aHViL2ltZ18ybHk3eFdIeGxNaEl1SjlZYVFYV0ZTOVhFZlQifQ" },   "fileOpened": "collab.js",  "status": "online", "followingAgentUserId": "clacky",  "focusComponent": "Tree", "focusXterm": null, "editorScroll": 0, "cursor": {}, "wsClientID": "96aYj58LTtiDzPehAAb0", "color": "#2ACC96" }
+  - ⬇️ following, { "agentUserId": "a67ab9fd-b0f6-48be-8945-80c9452a3991", "userId": "705965668918861825", "userInfo": { "userId": "user_2ly7xQ9AdCaUU4i23Ta55Y51Mpv", "username": "uptonking", "avatarUrl": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ2l0aHViL2ltZ18ybHk3eFdIeGxNaEl1SjlZYVFYV0ZTOVhFZlQifQ" }, "fileOpened": "collab.js", "status": "online", "followingAgentUserId": "clacky", "focusComponent": "Tree", "focusXterm": null, "editorScroll": 0, "cursor": {}, "wsClientID": "96aYj58LTtiDzPehAAb0", "color": "#2ACC96" }
     - 有问题, { "status": "online", "wsClientID": "lmx1IScYa75bkIUoAABN", "fileOpened": "collab.js", "focusComponent": "Tree", "followingAgentUserId": "clacky" }
 
 ## 0605

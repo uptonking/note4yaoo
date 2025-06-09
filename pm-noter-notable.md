@@ -13,7 +13,7 @@ modified: 2023-11-28T14:48:45.910Z
 # guide(for notable/noter/paper)
 - features
   - 💰 market: lowcode(editor/automation), playground(preview+code+pdf)
-  - ⏳ versioning and branching (reproducible): git-timeline, diff, draft/public
+  - ⏳ versioning and branching (reproducible/traceable): git-timeline, diff, draft/public
     - replay
     - 基于oplog/events的方案
   - 🤝 collaboration-ready (accessible): multiplayer, sharing, offlineable, crdt
@@ -147,6 +147,7 @@ modified: 2023-11-28T14:48:45.910Z
 
 - git-statistics ui， 可参考 pingcap/ossinsight
   - auto generate cover by content/fields
+  - files sorted by commits count
 
 - github
   - github readme.md viewer: 参考obsdian的插件/vscode扩展/npm包可直接显示github-readme
@@ -167,7 +168,10 @@ modified: 2023-11-28T14:48:45.910Z
 - pros-云桌面/云浏览器
   - 启动速度快
   - 方便服务端api操作
+  - 最新版chrome逐渐限制cdp调试的能力，在云桌面固定版本可绕过此问题
+
 - cons-云桌面/云浏览器
+  - 复制、粘贴 不如本地环境方便
   - 用户刷新自己环境的浏览器需要手动触发刷新VNC的浏览器, 需要自己处理很多操作逻辑，如滚动页面
   - 云桌面的截图不能像本地一样滚动截长图
   - 需要在云环境/容器中安装 输入法、语言包、字体
@@ -176,6 +180,7 @@ modified: 2023-11-28T14:48:45.910Z
   - 需要设置vpn/防火墙/屏蔽占用带宽或流量的网站
   - 远程桌面的缺点: copy/paste
   - 多人协作时的安全问题，直接读取浏览器密码、剪切板、容器文件
+  - linux环境对GPU支持较差，最新版chrome内置的ai功能依赖gpu
 
 - 类似ruby的ActionText
 # features
