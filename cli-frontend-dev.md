@@ -71,7 +71,14 @@ crypto.randomUUID().slice(-5)
 
 // sleep
 await new Promise(r => setTimeout(r, 2000));
-const sleep = ms => new Promise(r => setTimeout(r, ms));
+const sleep = ms => new Promise(r => setTimeout(r, ms));··
+/** do something every second by 3 times  */
+async function test() {
+  for (let i = 0; i < 3; i++) {
+    await new Promise((resolve, reject) => setTimeout(resolve, 1000));
+    console.log("hi ", i);
+  }
+}
 ```
 
 # npm-cli

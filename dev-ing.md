@@ -340,9 +340,26 @@ use create-react-app to create a webapp, homepage shows a list of frontend frame
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
 
+## 0611
+
+- 流式输出时编辑器闪烁，似乎不是ot事件导致的问题，实测在36s写文件300次都是正常的
+  - 🤔 receiveOTUpdates 的直接原因是 pullOTUpdates 的版本号少了一次
+    - 进一步确认，当触发了 `[vitualOT]mock filechange` 逻辑的文件才异常闪烁, 把doc.version打印出来看看
+  - ideServer收到的 [fromMQ] fileChange  33/42次，似乎也正常
+
+```JS
+async function aa() {
+  for (let i = 0; i < 300; i++) {
+    await new Promise((resolve, reject) => setTimeout(resolve, 120));
+    console.log("hi ", i);
+    stts.dao.channel().send('agentAppendFile', { path: 'append2.md', text: `${i} - ${(Math.random() + 1).toString(36).substring(3)}\n` })
+  }
+}
+```
+
 ## 0610
 
-- receiveOTUpdates的异常事件流
+- receiveOTUpdates 的异常事件流
   - agentAppendFile 向ideServer发送了 ? 次写文件事件
   - 21:21:21  -  8
   - 21:21:22  -  8
@@ -584,7 +601,7 @@ receiveOTUpdates error  heapSort.mjs RangeError: Applying change set to a docume
 
 - go-to-definition 容器中执行pwd、lsp返回的地址
   - /home/runner/.pyenv/versions/3.12.8/lib/python3.12/site-packages/fastapi/applications.py
-  - `/home/runner/.gvm/pkgsets/go1.23/global/pkg/mod/github.com/gin-gonic/gin@v1.9.0/gin.go`
+  - `/home/runner/.gvm/pkgsets/go1.23/global/pkg/mod/github.com/gin-gonic/gin@v1.9.0/gin.go`.
     - /app/data/codeZone/dependency /home/.gvm/pkgsets/go1.23/global/pkg/mod/github.com/gin-gonic/gin@v1.9.0/gin.go
   - `/home/runner/app/main.go`
 
@@ -626,6 +643,31 @@ receiveOTUpdates error  heapSort.mjs RangeError: Applying change set to a docume
 - [How is setTimeout called in a for loop js? - Stack Overflow](https://stackoverflow.com/questions/63076634/how-is-settimeout-called-in-a-for-loop-js)
   - 💡 You don't call `setTimeout()` inside a for loop. You replace the for loop with setTimeout(). This is the traditional way of doing it. 
   - You can use a Promise with async/await in modern js to use the for loop again
+
+```JS
+// async/await
+async function test() {
+  for (let i = 0; i < 3; i++) {
+    await new Promise((resolve, reject) => setTimeout(resolve, 1000));
+    console.log("hi ", i);
+  }
+}
+
+test();
+
+// traditional
+let loop = 0;
+
+function loop() {
+  console.log("hi");
+  x++;
+
+  if (x < 3) {
+    setTimeout(loop, 10000);
+  }
+}
+loop();
+```
 
 - [setTimeout in for-loop does not print consecutive values - Stack Overflow](https://stackoverflow.com/questions/5226285/settimeout-in-for-loop-does-not-print-consecutive-values)
   - `for (var i = 1; i <= 2; i++) { setTimeout( () => { console.log(i) }, 100); }`  // 3, 3
