@@ -271,16 +271,17 @@ console.log(';; taskActions', currentActionId, path, store.cdePlay.enableDiffVie
 console.log(';; open-diff ', enableDiffAnimation, store.cdePlay.enableDiffView(), store.cdeReplay.isMachinePaused())
 console.log(';; qryDiffSnap ', snapshotFrameResult)
 
-console.trace(';; loadFile', path, loadType);
-
 ^((?!(42\["heartbeat|resourceMonit|refreshXtermCols|42\["multiTerminal|42\["terminalStatus|42\["activeTerminal|42\["ragStatus|42\["initAiCodeInfo)).)*$
+
 ^((?!(42\["heartbeat|resourceMonit|refreshXtermCols|42\["multiTerminal|42\["terminalStatus|42\["activeTerminal|42\["ragStatus|42\["initAiCodeInfo|42\["fileChange|42\["pullOTUpdates)).)*$
+
 ^((?!(42\["heartbeat|resourceMonit|refreshXtermCols)).)*$
 ^(?!42\["resourceMonit).* 
 
 <!-- 观测云搜索 ide-server -->
--multiTerminalHeartBeat -all\:multiTerminal -"[fromMQ] multiTerminal" -"[toMQ]paas:multiTerminal" -"] multiTerminal, {"
--multiTerminalHeartBeat -all\:multiTerminal -"[fromMQ] multiTerminal" -"[toMQ]paas:multiTerminal" -"] multiTerminal, {"  -"[fromMQ] ragStatus" -"] ragStatus data: [" -"all:ragStatus" -"toMQ fileContentUpdate begin" -agentAppendFile -"[FileTree_writeFile]"
+-multiTerminalHeartBeat -all\:multiTerminal -"[fromMQ] multiTerminal" -"[toMQ]paas:multiTerminal" -"] multiTerminal, {" -all\:activeTerminal -"] activeTerminal, {"  -"[toMQ]paas:multiTerminalCmd" -"[fromMQ] terminalStatus" -all\:initAiCodeInfo -"[fromMQ] lspStatus" -"[fromMQ] portsChanged" -"[fromMQ] ragStatus" -"] ragStatus data: [" -"all:ragStatus" -"[followingFocusComponent]"
+
+-"toMQ fileContentUpdate begin" -"[toMQ]paas:filePull"  -agentAppendFile -"writeFile prepared"
 
 ```
 
@@ -339,49 +340,179 @@ use create-react-app to create a webapp, homepage shows a list of frontend frame
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
 
-- lsp-play
-  - go 784965962943606784
-  - py 784965933709307904
-  - js 786335673728065536
-  - java 786790509908774912
+## 0610
+
+- receiveOTUpdates的异常事件流
+  - agentAppendFile 向ideServer发送了 ? 次写文件事件
+  - 21:21:21  -  8
+  - 21:21:22  -  8
+  - 06/10 21:21:22.152781 [vitualOT]mock filechange
+  - 06/10 21:21:23.155993 refresh 强制刷新文件
+  - 实测 agentAppendFile 向ideServer写代码的频率为 4-8次/s, 即 4-8行/s
+    - 在异常场景下， 由于fileChange事件通知ideServer有文件变化，ideServer不停持久化、计算变化op 处理出现异常
+
+- 用户A手动输入字符b时，用户B接收事件的时序
+  - 1024paas的旧版事件只有3个
+    - 42["pullOTUpdates",{"updates":[{"changes":[14]
+    - 42["pullOTUpdates",{"updates":[{"changes":[14,[0,"b"]]
+    - 42["fileChange",{"data":["README.md"]}]
+
+```JS
+// ⬇️ pullOTUpdates
+{
+  "updates": [{
+    "changes": [
+      13
+    ],
+    "selection": {
+      "ranges": [{
+        "anchor": 13,
+        "head": 13
+      }],
+      "main": 0
+    },
+    "agentUserId": "5c38ff4b-b93d-4ce1-b74a-05c2baaf8d28"
+  }],
+  "lastRevision": 39,
+  "latestRevision": 40,
+  "path": "README.md",
+  "id": "344eff48-6e2a-45cc-8936-7da2e41adeb7",
+  "mapSelection": {
+    "9962289e-a28e-49fd-8dc8-aef08d263c20": {
+      "ranges": [{
+        "anchor": 13,
+        "head": 13
+      }],
+      "main": 0
+    },
+    "5c38ff4b-b93d-4ce1-b74a-05c2baaf8d28": {
+      "ranges": [{
+        "anchor": 13,
+        "head": 13
+      }],
+      "main": 0
+    },
+    "12cdfe61-72ca-4046-be33-9c2af5d23af4": {
+      "ranges": [{
+        "anchor": 5,
+        "head": 5
+      }],
+      "main": 0
+    }
+  }
+}
+
+// ⬇️ pullOTUpdates
+{
+  "updates": [{
+    "changes": [
+      13,
+      [
+        0,
+        "a"
+      ]
+    ],
+    "selection": {
+      "ranges": [{
+        "anchor": 14,
+        "head": 14
+      }],
+      "main": 0
+    },
+    "agentUserId": "5c38ff4b-b93d-4ce1-b74a-05c2baaf8d28"
+  }],
+  "lastRevision": 40,
+  "latestRevision": 41,
+  "path": "README.md",
+  "id": "073ff2ad-7da6-4fe3-aff6-547ec4785237",
+  "mapSelection": {
+    "9962289e-a28e-49fd-8dc8-aef08d263c20": {
+      "ranges": [{
+        "anchor": 13,
+        "head": 13
+      }],
+      "main": 0
+    },
+    "5c38ff4b-b93d-4ce1-b74a-05c2baaf8d28": {
+      "ranges": [{
+        "anchor": 14,
+        "head": 14
+      }],
+      "main": 0
+    },
+    "12cdfe61-72ca-4046-be33-9c2af5d23af4": {
+      "ranges": [{
+        "anchor": 5,
+        "head": 5
+      }],
+      "main": 0
+    }
+  }
+}
+
+// ⬇️ 42["fileChange",{"data":["README.md"]}] , 2次相同
+// ⬇️ fileTree, 2次 create + feature
+{
+  "eventName": "fileTree",
+  "agentUesrId": "shell",
+  "playgroundId": "804065174448644096",
+  "dockerId": "804065174519947264",
+  "data": {
+    "action": "CREATE",
+    "files": [{
+      "type": "FILE",
+      "name": "README.md"
+    }],
+    "result": true
+  },
+  "timestamp": 1749538196784
+}
+```
+
+- [Why I keep getting ECONNRESET error on proxy calls in MAC OSX only, totally arbitrary with some successful calls (Pretty desperate) - Stack Overflow](https://stackoverflow.com/questions/54096937/why-i-keep-getting-econnreset-error-on-proxy-calls-in-mac-osx-only-totally-arbi)
+  - Found the fix for this after trying all other methods including giving a timeout duration, only keep connection alive option solved it for me.
+  - Added below to to the api object
+
+```JS
+"headers": {
+  "Connection": "keep-alive"
+}
+```
 
 ## 0609
 
 - ai执行task时，多次打开文件的异常事件，ide-server的日志
   - ⬇️ file, {"path":"heapSort.mjs", "timestamp":1749459434122, "fileRootId":"home", "loadType":"refresh", "fileRootPath":"", "readOnly":false} 
   - ⬆️ self[b10985e2-97a9-4fa2-a8fb-c5f19758f4c8] file, {"agentUserId":"b10985e2-97a9-4fa2-a8fb-c5f19758f4c8", "data":{"revision":72, "openedPath":"heapSort.mjs", 👉 "isRefresh":true, "isBinary":false, "ext":"mjs", "mapSelection":{}, "content":"
-  - ⬇️  openFileByFollow, {"fileOpened":"heapSort.mjs"}
+  - ⬇️ openFileByFollow, {"fileOpened":"heapSort.mjs"}
 
 - editor闪烁是由于多次打开文件，相关日志如下
 
 ```log
-loadFile	@	DaoPaaS.cjs:30403
-refresh	@	DaoPaaS.cjs:32610
-receiveOTUpdates	@	DaoPaaS.cjs:104366
-eval	@	DaoPaaS.cjs:104447
-onPullUpdates	@	DaoPaaS.cjs:104436
-eval	@	DaoPaaS.cjs:104380
-eval	@	DaoPaaS.cjs:104277
-run	@	DaoPaaS.cjs:104270
-eval	@	DaoPaaS.cjs:104381
-Emitter$1.emit	@	DaoPaaS.cjs:10085
-emitEvent	@	DaoPaaS.cjs:11681
-onevent	@	DaoPaaS.cjs:11669
-onpacket	@	DaoPaaS.cjs:11646
-Emitter$1.emit	@	DaoPaaS.cjs:10085
-eval	@	DaoPaaS.cjs:12004
-Promise.then		
-eval	@	DaoPaaS.cjs:10524
-ondecoded	@	DaoPaaS.cjs:12003
-Emitter$1.emit	@	DaoPaaS.cjs:10085
-add	@	DaoPaaS.cjs:11284
-ondata	@	DaoPaaS.cjs:11997
-Emitter$1.emit	@	DaoPaaS.cjs:10085
-onPacket	@	DaoPaaS.cjs:10908
-Emitter$1.emit	@	DaoPaaS.cjs:10085
-onPacket	@	DaoPaaS.cjs:10198
-onData	@	DaoPaaS.cjs:10195
-ws.onmessage	@	DaoPaaS.cjs:10570
+receiveOTUpdates error  heapSort.mjs RangeError: Applying change set to a document with the wrong length
+    at ChangeSet.apply (DaoPaaS.cjs:33891:13)
+    at get newDoc (DaoPaaS.cjs:34829:51)
+    at EditorState.applyTransaction (DaoPaaS.cjs:35060:31)
+    at get state (DaoPaaS.cjs:34836:23)
+    at Array.eval (DaoPaaS.cjs:110298:36)
+    at extendTransaction (DaoPaaS.cjs:34962:35)
+    at resolveTransaction (DaoPaaS.cjs:34921:10)
+    at EditorState.update (DaoPaaS.cjs:35031:12)
+    at receiveUpdates (DaoPaaS.cjs:88235:16)
+    at Object.receiveOTUpdates (DaoPaaS.cjs:104339:36)
+    at eval (DaoPaaS.cjs:104446:48)
+    at new Promise (<anonymous>)
+    at Object.onPullUpdates (DaoPaaS.cjs:104435:16)
+    at eval (DaoPaaS.cjs:104379:36)
+    at eval (DaoPaaS.cjs:104270:15)
+    at TaskList.run (DaoPaaS.cjs:104263:16)
+    at Socket.eval (DaoPaaS.cjs:104380:21)
+    at Emitter$1.emit (DaoPaaS.cjs:10085:21)
+    at Socket.emitEvent (DaoPaaS.cjs:11681:16)
+    at Socket.onevent (DaoPaaS.cjs:11669:12)
+    at Socket.onpacket (DaoPaaS.cjs:11646:14)
+    at Emitter$1.emit (DaoPaaS.cjs:10085:21)
+    at eval (DaoPaaS.cjs:12004:12)
 ```
 
 ## 0608

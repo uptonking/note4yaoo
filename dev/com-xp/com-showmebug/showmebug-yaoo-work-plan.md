@@ -2373,6 +2373,24 @@ const playbackInfo = [
 
 ### codebase-collab 🔀
 
+- ideServer向客户端发送 pullOTUpdates 的场景
+  - pushOTUpdates 普通协同编辑
+  - agentWriteFile
+  - agentAppendFile
+  - fileChange > updateFileByVitualOT
+
+- pushOTUpdates
+  - OTInfo = this.currentPlaygroundItem.playgroundHistoryCRDT.queryEditorOTInfoByPath(
+  - currentDoc = OTInfo.currentDoc
+  - doc = changes.apply( Text.of(currentDoc?.split(DefaultSplit) || []); )
+  - this.currentPlaygroundItem.playgroundHistoryCRDT.writeEditorCRDTInfoToFile(path); 
+  - this.fileContentUpdateToMQ(false, path); 
+  - this.broadcastOthers( 'pullOTUpdates', { updates, lastRevision: version, latestRevision: newlatestRevision, path, id: uuid, mapSelection: selection }, true ); 
+
+- 
+- 
+- 
+- 
 - 
 
 ### codebase-ideServer 🔡
@@ -2432,7 +2450,13 @@ const playbackInfo = [
   - if (fileByte / (1024 * 1024) >= 16), this.transmit('file', fileJson); largeSuffix = 'd42.large'
   - this.broadcastAll('file', fileJson, true); 
 
-- 
+- 📃 FileTree_writeFile
+  - fs.writeFile
+  - Update_fileChangeLogs
+  - updateFileChangeToFeatureFile
+    - FreeTree_loadFeatureFile('.1024feature')
+  - this.broadcastAll('fileChange', { data: this.fileChangeLogs.get(dockerId) }); 
+
 - 
 - 
 - 
@@ -2447,6 +2471,7 @@ const playbackInfo = [
   - 思路1: ideServer自身移动文件后，立即touch moved-file.md让其他监听系统能监听到事件
   - 思路2: ideServer自身移动文件后，手动通知manager/goAgent变化的路径，让监听方自己去更新
   - NFS自身没有监听文件变更的能力，需要依赖第三方
+  - 💡: fsnotify不能递归watch子目录，需要在创建目录后手动将新建的目录加入watch
 
 - 
 - 
@@ -2455,9 +2480,16 @@ const playbackInfo = [
 - 
 - 
 
-### codebase-server 🔡
+### codebase-server/goAgent 🔡
+
+- 在界面上点击 重启容器 的原理，是移除旧容器再创建新容器，而不是执行 docker stop/start
+
+- 
+- 
+- 
 
 - goAgent启动Language Server时，gopls要等80s左右才有LSP事件响应传给客户端，其他language server很快(15s)会传给客户端
+  - 原因是容器预置的go版本与项目中配置的go小版本不一致，进容器后会自动更新容器预置的go版本，然后LSPServer才能启动
 
 ### docs-sdk
 

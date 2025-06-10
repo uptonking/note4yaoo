@@ -60,7 +60,7 @@ modified: 2023-11-28T14:48:45.910Z
     - sync: 本地文件自动生成delta
     - 标题也支持富文本，特别是最顶层标题支持code/link
     - rust-mdBook
-    - code block 也能支持纯前端的 autocomplete/lint
+    - code block 也能支持纯前端的 autocomplete/lint/可折叠函数或花括号
   - 🔍 search: rag, code-search, ai-chat
     - 针对代码优化的搜索可作为技术卖点和产品卖点，可参考github-code-search/algolia
     - 文档和代码同步更新、搜索

@@ -18,7 +18,8 @@ modified: 2021-03-29T19:14:57.440Z
 
 - 正常开发流程
   - develop -> staging -> main
-  - feature开发时，前端和后端都要开发feature开关，方便提测后有严重问题时隐藏，可在稳定后去掉开关
+  - feature开发时，前端和后端都要开发feature flag开关，方便提测后有严重问题时隐藏，可在稳定后去掉开关
+    - 对于需要支持多平台、多语言的feature开关，使用统一feature flag api更方便
 
 - hotfix到main 或 dev/staging 存在半成品commit时
   - 从main新建分支hotfix1, 然后将hotfix1通过pr合到main，再分别将hotfix1新建临时分支后合到 dev/staging，可以保持commitId不变
