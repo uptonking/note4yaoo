@@ -275,6 +275,8 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
 
 ^((?!(42\["heartbeat|resourceMonit|refreshXtermCols|42\["multiTerminal|42\["terminalStatus|42\["activeTerminal|42\["ragStatus|42\["initAiCodeInfo|42\["fileChange|42\["pullOTUpdates)).)*$
 
+^((?!(42\["heartbeat|resourceMonit|refreshXtermCols|42\["multiTerminal|42\["terminalStatus|42\["activeTerminal|42\["ragStatus|42\["initAiCodeInfo|42\["fileChange)).)*$
+
 ^((?!(42\["heartbeat|resourceMonit|refreshXtermCols)).)*$
 ^(?!42\["resourceMonit).* 
 
@@ -342,10 +344,16 @@ use create-react-app to create a webapp, homepage shows a list of frontend frame
 
 ## 0611
 
+- 流式输出闪烁的原因，是 fileChange事件引发的ideServer读磁盘文件与mongo文件内容不一致产生的pullOTUpdates事件 与 agentAppendFile引发的pullOTUpdates事件 的编辑器内容不一致，前端编辑器无法处理，导致前端主动多次打开文件获取最新内容
+  - ~~方案1: agentAppendFile不触发文件持久化，事件开始和结束时添加标记，开始时写到内存缓存，结束时自动持久化到磁盘，也能减少lint计算等操作~~
+  - ~~方案2: agentAppendFile不触发文件持久化，由ai手动触发持久化~~
+  - 💡 讨论后采用方案， 对于ideServer主动告知goAgent文件变化的场景，不需要goAgent再次发送fileChange事件通知ideServer文件内容变了，这样ideServer发送给前端的文件更新事件pullOTUpdates只剩下一个，此方案更简单且能满足需求
+
 - 流式输出时编辑器闪烁，似乎不是ot事件导致的问题，实测在36s写文件300次都是正常的
   - 🤔 receiveOTUpdates 的直接原因是 pullOTUpdates 的版本号少了一次
     - 进一步确认，当触发了 `[vitualOT]mock filechange` 逻辑的文件才异常闪烁, 把doc.version打印出来看看
   - ideServer收到的 [fromMQ] fileChange  33/42次，似乎也正常
+- 🤔 另一个角度， agentAppendFile 的逻辑应与 pushOTUpdates 的逻辑保持一致
 
 ```JS
 async function aa() {

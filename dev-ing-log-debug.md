@@ -67,6 +67,16 @@ modified: 2023-06-14T00:53:15.226Z
 
 - goAgent其他进程watch的文件数量过多超过系统限制，导致文件监控进程未监控到新创建的文件
 
+- 流式输出时编辑器闪烁的原因，是 fileChange事件引发的ideServer读磁盘文件与mongo文件内容不一致产生的pullOTUpdates事件 与 agentAppendFile引发的pullOTUpdates事件 的编辑器内容不一致，前端编辑器无法处理，导致前端主动多次打开文件获取最新内容
+  - ~~方案1: agentAppendFile不触发文件持久化，事件开始和结束时添加标记，开始时写到内存缓存，结束时自动持久化到磁盘，也能减少lint计算等操作~~
+  - ~~方案2: agentAppendFile不触发文件持久化，由ai手动触发持久化~~
+  - 💡 讨论后采用方案， 对于ideServer主动告知goAgent文件变化的场景，不需要goAgent再次发送fileChange事件通知ideServer文件内容变了，这样ideServer发送给前端的文件更新事件pullOTUpdates只剩下一个，此方案更简单且能满足需求，不需要采用 先在内存写文件完成后再持久化到文件系统 的方案
+  - 🤔 当分析系统发现类似循环的逻辑时，要多质疑是否存在架构或设计问题， ideServer告知goAgent文件变化了，goAgent监控到文件变化又反过来通知ideServer，这种类似循环或多余的设计很容易导致问题
+- 分析系统架构，要注意文件操作的闭合性，
+  - 对于ideServer，自身既能操作文件文件夹，也能读写文件内容，很少需要外界来通知自身有文件变化，多余的操作一般是自身通知外界文件变化来执行同步/lint等操作，不必要的额外操作可以删除试试看
+
+- 文件系统的同步逻辑
+  - fsnotify不能监听NFS的文件变化，新增的文件夹不能监听子文件或子文件夹的变化，需要ideServer手动通知新增的文件夹
 ## cloud browser方案
 
 - 基于 playright + novnc 的方案
