@@ -61,7 +61,7 @@ prettier --write '**/*.{js,jsx,ts,tsx,json}' --ignore-unknown
 eslint --ext .js,.ts,.tsx --quiet --fix . 
 
 # npm i
-  DEBUG=* npm i --no-audit --loglevel silly
+  DEBUG=* npm i --no-audit --loglevel=silly
 DEBUG=* npm i --legacy-peer-deps --no-audit --loglevel=silly
 DEBUG=* npm i --legacy-peer-deps --no-audit --loglevel=silly --registry=https://registry.npmmirror.com
 

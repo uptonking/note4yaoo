@@ -81,6 +81,9 @@ modified: 2024-08-24T16:15:11.456Z
 
 ## extensions-to
 
+- vscode-knowledge-base
+  - obsidian-like
+
 - tables
   - obsidian-bases
 

@@ -88,6 +88,18 @@ modified: 2022-06-03T21:34:54.893Z
     - Bob's update method throws an error
     - Bob resyncs it's prosemirror state to the other user, effectively undoing Alice's change
 
+- https://github.com/colanode/colanode /1.3kStar/202506/ts/不支持导出
+  - https://colanode.com/
+  - Open-source and local-first Slack and Notion alternative that puts you in control of your data
+  - Colanode is an all-in-one platform for easy collaboration, built to prioritize your data privacy and control. 
+  - Designed with a local-first approach, it helps teams communicate, organize, and manage projects—whether online or offline.
+  - Rich Text Pages: Create documents, wikis, and notes using an intuitive editor, similar to Notion.
+  - Customizable Databases: Organize information with structured data, custom fields and dynamic views (table, kanban, calendar).
+  - Colanode includes a desktop app and a self-hosted server. You can connect to multiple servers with a single app, each containing one or more workspaces for different teams or projects. 
+  - All changes you make are saved to a local SQLite database first and then synced to the server. A background process handles this synchronization so you can keep working even if your computer or the server goes offline. Data reads also happen locally, ensuring immediate access to any content you have permissions to view.
+  - powered by Yjs - to allow real-time collaboration on entries like pages or database records.
+  - [I built Colanode, an open-source & local-first Slack and Notion alternative that you can self-host : r/selfhosted _202505](https://www.reddit.com/r/selfhosted/comments/1khpftl/i_built_colanode_an_opensource_localfirst_slack/)
+
 - https://github.com/docmost/docmost /AGPL/202503/ts
   - https://docmost.com/
   - an open-source collaborative wiki and documentation software. 

@@ -22,9 +22,7 @@ modified: 2023-11-28T14:48:45.910Z
 
 - v202007
   - We recently made our Personal Plan free and removed the block limit
-
 # blogs-notion
-
 - [How Notion Handles 200 Billion Notes Without Crashing: A Technical Deep Dive - DEV Community _202503](https://dev.to/aadarsh-nagrath/how-notion-handles-200-billion-notes-without-crashing-a-technical-deep-dive-5deh)
 # discuss-author
 - ## 
@@ -94,7 +92,7 @@ modified: 2023-11-28T14:48:45.910Z
 
 - ## [The data model behind Notion's flexibility | Lobsters _202105](https://lobste.rs/s/y11kqf/data_model_behind_notion_s_flexibility)
 - So what’s the backend database? Is it an “real” graph database (like Neo4J)?
-  - We actually tried Neo4J in an early version of Notion (before my time) but it was very slow for the kinds of access Notion does.
+  - 👷jitl: We actually tried Neo4J in an early version of Notion (before my time) but it was very slow for the kinds of access Notion does.
   - We try to use very boring technology. Our source-of-truth data store is Postgres, with a Memcached cache on top. Most of our queries are “pointer chasing” - we follow a reference from one record in memory to fetch another record from the data store. To optimize recursive pointer-chasing queries, we cache the set of visited pointers in Memcached.
 - If could view your data structures as trees, rather than graphs, Postgres has ltree module, I use it for taxonomies, works very well (our performance loads are not very big, so cannot comment on very large deployments experience). Some times ago, I traced inner joins operations of regular tables of JSONB fields with our taxonomy trees, and works well. Postgres looks at indices as appropriate.
 - I looked at ltree a few years ago when I joined Notion. When I first saw the DB access pattern I asked, “O(n) queries for a page?!? What! This should be O(1)!”. 
@@ -383,6 +381,44 @@ modified: 2023-11-28T14:48:45.910Z
 # discuss-notion-like
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [It's 2024 and there's still not a decent Notion replacement that can be ran in docker? : r/selfhosted _202401](https://www.reddit.com/r/selfhosted/comments/18zoc0k/its_2024_and_theres_still_not_a_decent_notion/)
+
+- Just use obsidian and sync it with a git repo
+  - lacks database functionality
+
+- I am in the same situation as you OP. There are good alternatives for notes/knowledge base like Obsidian, Logseq or outline. 
+  - But none have database like features like Notion. 
+  - Anytype looks cool but don't have a tree view of all pages and the notion import don't work good. I will keep an eye on Affine. it seems the one with greater potential. 
+  - For now, I think we will have to rely in Notion. At least we can export the content to Markdown and CSV, so not completely locked in.
+
+- Missing functionality on alternatives? Or the import function from Notion?
+  - 1- Import function from notion. Imports hundreds of pages and can't cohesively put them back together again.
+  - 2- Lack of functional databases with ability to write formulas
+  - 3- Lack of ability to form relations between tables
+  - Items 2 and 3 are found in a few of the alternatives. 
+  - Item 1 is what will set you back. Even if the data import feature is good, I'd be surprised if formulas are compatible in the alternatives.
+
+- Notion trapped everyone in their system and has no direct competition. Can’t wait for them to get actual healthy competition that will push them to become a better company.
+
+- The most direct competitors are Microsoft Loop (free with O365), Coda (arguably better than Notion for B2B uses), Obsidian (Markdown, huge community), and Craft.
+  - LOL. Point me to ONE alternative that will let me import my data and use it as is with the databases, dynamic blocks, dynamic dates, reminders, multiple property types, formulas etc. There are NONE. Affine and AnyType are the only direct upcoming competitors at the moment.
+
+- 🤔 I'm not understanding how you're using databases. Can you elaborate on what type of data your use case it? I'm not grasping how note taking ties in with relational database links. Almost all of my notes are references, snippets... It's all stored in a db (I use trilium) but I don't see note taking and dbs intersecting.
+  - Running small independent contractor business Organizing social media posts Designing and implementing curricula utilizing multitudes of resources combined into one database to track them all and tell you what you need for the upcoming week Tracking and organizing pdf file collections
+  - I have used AirTable prior to this and it worked but was not as presentable and fluid as it is in notion
+
+- what are the things in Notion that keep you entrenched there?
+  - Relational databases and formulas.
+  - Also the ability to import existing Notion databases and maintain relationships between tables, pages and cells
+- There are other open source apps you can use for relational databases. All these no-code/low-code tools like Supabase and alternatives.
+  - Taking a look at Supabase, but can't see where it allows you to do simple things like a gallery view of your data. Or generate a calendar to show all the due dates, things like that.. looks more like data science/analytics related
+
+- To some extent, Directus can be a good option for you. Data migration is something that can be handled externally, as a one-off thing.
+
 - ## 🌰 Sharing some updates for the upcoming Notion clone, or as we are going to call it "Potion". _202310
 - https://x.com/YTCodeAntonio/status/1708979418666860832
 
@@ -547,7 +583,79 @@ modified: 2023-11-28T14:48:45.910Z
   • escalating issues
 - I love buttons. But what I love more is forms. Create a way to build a form that populates a database and you might just go next level.
 - The only missing feature now is: connect Notion to external databases (read and write).
-# discuss-like-eidos
+# discuss-colanode
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🚀 [I built Colanode, an open-source & local-first Slack and Notion alternative that you can self-host : r/selfhosted _202505](https://www.reddit.com/r/selfhosted/comments/1khpftl/i_built_colanode_an_opensource_localfirst_slack/)
+
+- do you have any plans on making a web client? I think something like this would be great if i could use it in the browser
+  - We have it in plan to implement the web client as well, we just need to look into some stuff related with local-first. Just curious, is there any reason you can't install the desktop app?
+- I'd prefer using it in the browser since an app like this doesn't really need many system APIs. The browser approach is actually more secure (being sandboxed) and would automatically make it more Linux-compatible too.
+
+- Does your databases/tables support relationships? Can I link one table to another one?
+  - Yes it does, when you create the database you can add fields with the type 'relation' which lets you connect with other databases (or even with the same database itself)
+
+- To create a Kanban view you need to have at least one 'select' or 'multi select' field in the database. We will add options for other fields in the future
+
+- Does this support formulas like AirTable? If so, does it support referencing cells that are formulas to expand into another formula? Something similar to vlookup…
+  - Not yet, it's part of our roadmap.
+
+- Looks cool. If I can get the attendance and vacation list to work on this, it will be a nice replacement for the odoo.
+
+- ## 🚀 [Show HN: Colanode, open-source and local-first Slack and Notion alternative | Hacker News _202504](https://news.ycombinator.com/item?id=43780176)
+  - As a heavy Notion user, I often found it tough to get my teams fully onboard since people naturally gravitate toward chat for quick interactions. Maintaining context between chat apps like Slack and documentation apps like Notion became increasingly frustrating. Switching contexts, losing track of information, and managing data across multiple tools created unnecessary friction.
+  - Colanode is built with simplicity and extensibility in mind, using only open-source tools and avoiding any vendor or cloud lock-in.
+  - It features a local-first architecture offering complete offline support. 
+  - From a technical perspective, Colanode consists of a Node.js server API and an Electron desktop client, with mobile apps coming soon. 
+  - 🏘️ Everything in Colanode is represented as a node (e.g., message, file, folder, chat, channel, database, record), each with specific attributes and permissions. 
+  - All reads and writes performed by the desktop client happen locally within a SQLite database, and changes sync seamlessly via a synchronization engine built on top of SQLite, Postgres, and Yjs—a CRDT library for conflict resolution. 
+  - The server then propagates these changes to other collaborators. You can self-host the server in any environment using Docker, Postgres, Redis, and any S3-compatible storage, and connect using the official desktop client, which supports simultaneous connections to multiple servers and accounts. 
+  - This local-first approach also prepares us for future integrations with fully local LLMs, further enhancing privacy and performance.
+- we do plan to implement mobile apps, but we don't have a concrete timeline yet. It depends on the limitations and challenges we might face when we implement the same local-first approach as we did in desktop (full offline support, background syncing etc).
+
+- do real time cross platform notifications work? If yes, how did you solve this for people self hosting?
+  - That's a great question! We didn't come to it yet, because we are focused only in desktop app for now. This is definitely one of the challenges we need to solve once we start working on the mobile apps. The self-hosting use case makes it tricky (and probably fun challenge to solve).
+- Having used several real time self hostable apps with chat (Nextcloud, Odoo, Rocket chat) this is the hard problem to solve.
+  - Rocketchat uses it as a way to funnel you into paying.
+  - Nextcloud runs their own server for free, but you have to accept that you'll be sending data via their server. 
+  - Odoo, I don't think I ever got notifications working.
+  - I have researched other apps: Mattermost does something similar to Rocketchat, using notifications as a sales funnel. Element is similar to Nextcloud, they host their own free server, although I think you can self host that too.
+  - From this experience, I would never try a new app until they have this feature solved, clearly documented, and with proof that it works and isn't a sales funnel.
+- Can you elaborate on this? I manage a Mattermost instance and there are some features missing from the OSS self-hostable community edition, but notifications seem to mostly work, even on mobile where notification delivery does rely on their gateway
+  - When hosting and using their free notifications service, you're basically using their test server with no uptime guarantees. I agree that there's only so much you can expect from a free service, but unreliable notifications make a chat app 100% useless for any serious work.
+- https://zulip.com is decent. Self hosted free plan hasmMobile notifications for organizations with up to 10 users
+
+- Notion is a tragedy when it comes to export or migration. I didn’t see any bragging about the exportability of content from this one, but that’s the main thing I look for now.
+  - We don’t have export or migration features in place yet, but we are planning to add them.
+
+- 🆚 How does this compare to Huly?
+  - from a quick look (and a test I did some time ago) it seems to take a more opinionated approach: features such as issues, projects, and overall layout are pre-defined. 
+  - Colanode, by contrast, works like Notion, giving you flexible building blocks so you can model your own workflows and knowledge structures. 
+  - Another key distinction is tech architecture: Colanode is built around a local-first design, providing full offline support with background syncing. I haven’t found equivalent offline capabilities documented for Huly, even though they may have them.
+
+- ⛓️ Have you thought about adding programmable logic or automations between nodes?
+  - My 2c: A particular thing about notion that bugs me is that hn page content get imported as simple tables and in notion there is no automated way to delete all empty cells of all tables on page, that make it unreadable, or just to convert tables automatically into text
+
+- 🆚 How does this compare to Notesnook?
+  - I haven’t used Notesnook personally, but from their description it focuses mainly on note-taking. 
+  - Colanode, by contrast, also includes collaboration features such as chat, file sharing, and databases. 
+  - One other difference is that Notesnook offers end-to-end encryption, whereas Colanode does not (at least for now).
+
+- ## From thousands of files to two SQLite databases: the story how @Colanode ships 8K emojis and icons that work fully offline. _202501
+- https://x.com/hakanshehu/status/1885332261265916131
+  - While building it we had an interesting challenge: how do we include over 8, 000 emojis and icons, keep them all fully searchable, and ensure everything works even when users are completely offline?
+  - In a local-first app like Colanode, there’s no relying on CDNs or external sources. Every asset: messages, documents, files, and even emojis and icons, needs to be available locally at all times. That way, users can keep collaborating and customizing their experience without the internet. We wanted to offer a rich library of emojis for reactions and icons for pages, but shipping thousands of small image files in our Electron-based desktop app was tricky.
+  - Initially, we thought: why not just include all emoji and icon files in the repository? But adding thousands of SVGs directly to Git quickly became cumbersome and wasn’t a pleasant developer experience. Plus, we needed a better way to search through all these assets by keywords and categories.
+  - One day I wash watching a talk by the creator of SQLite where one thing he said stood out: “SQLite can be faster than the file system for certain use cases, especially when dealing with many small files.”
+  - We built a script to merge different emoji and icon sets into a consistent data model, then load them into two SQLite databases, one for emojis, one for icons. As part of this process, we: generate a unique id for each asset, add metadata such as category, tags, and keywords and index everything for lightning-fast text search
+  - When it’s time to package the Colanode desktop app, we simply include these two SQLite databases. In effect, we’ve bundled more than 8, 000 assets in just two files. Although the total size is the same, the experience and performance is much better. It makes even the developer experience easier where we need to keep track of just two files and can easily update the icons and emojis later.
+  - Since Colanode is open source, all the scripts for building these databases are up in our public repo. Check it out in Github
+
+# discuss-eidos
 - ## 
 
 - ## 

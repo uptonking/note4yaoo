@@ -24,6 +24,22 @@ modified: 2023-01-23T11:24:14.630Z
 
 - ## 
 
+- ## [Self-hosted Notion alternative with first-class markdown support? : r/selfhosted _202504](https://www.reddit.com/r/selfhosted/comments/1kbcnoe/selfhosted_notion_alternative_with_firstclass/)
+- I need to find a self-hosted Notion alternative that has 2 main features:
+  - Notion-like databases / collections with relations
+  - Markdown editor and easy markdown export.
+
+- As far as I'm aware there is nothing open source / selfhosted which allows you to do databases the way Notion does.
+  - True. Outline has a really good feature set, it only misses the databases. Otherwise i love it!
+
+- I don't like SiYuan. It does not run offline and requires an online connection to run a local database. The developer commented that this is intended functionality and will not allow offline usage.
+  - The device sync is also a bit of a cash grab and doesn't work with the self hosted implementation. You have to remain logged in to an account run by the developer to get this premium feature.
+  - The fact that you need to maintain a connection to their servers at all time seems to defeat the point of self hosting it.
+
+- Even if you don't want to hear it - Obsidian and Logseq are the best, even if not web-based. You could also try Trilium Notes. Still, there isn't any perfect solution, but Obsidian is thanks to it's plugin mechanic the most flexible and powerfull.
+
+- TriliumNext/Notes It's basically SiYuan but less bloated more open. Also has a sweet Android app!
+
 - ## Alternative for Notion
 - https://www.reddit.com/r/selfhosted/comments/qhm1v2/alternative_for_notion/
 - The best alternative to notion is actually trilium. 

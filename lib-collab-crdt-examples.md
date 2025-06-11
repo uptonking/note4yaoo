@@ -858,7 +858,7 @@ modified: 2022-04-05T10:08:25.947Z
     - library for realtime collaboration on JSON structures. 
     - It is a client-oriented, declarative-functional approach to shared application state.
 
-- https://github.com/hyperhyperspace/hyperhyperspace-core /MIT/ts
+- https://github.com/hyperhyperspace/hyperhyperspace-core /MIT/202310/ts/inactive
   - https://www.hyperhyperspace.org/
   - A library to create p2p applications, using the browser as a full peer.
   - An offline-first shared data library for creating p2p apps that work in the browser (and now also NodeJs).
