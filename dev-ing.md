@@ -61,7 +61,7 @@ prettier --write '**/*.{js,jsx,ts,tsx,json}' --ignore-unknown
 eslint --ext .js,.ts,.tsx --quiet --fix . 
 
 # npm i
-  DEBUG=* npm i --no-audit --loglevel=silly
+  DEBUG=* npm i --no-audit --loglevel silly
 DEBUG=* npm i --legacy-peer-deps --no-audit --loglevel=silly
 DEBUG=* npm i --legacy-peer-deps --no-audit --loglevel=silly --registry=https://registry.npmmirror.com
 
@@ -271,6 +271,26 @@ console.log(';; taskActions', currentActionId, path, store.cdePlay.enableDiffVie
 console.log(';; open-diff ', enableDiffAnimation, store.cdePlay.enableDiffView(), store.cdeReplay.isMachinePaused())
 console.log(';; qryDiffSnap ', snapshotFrameResult)
 
+console.log(
+      '📝 file ',
+      filePath,
+      store.file.latestRequestFilePath(),
+      event.data.isRefresh,
+      Boolean(isFollow),
+      Boolean(isOtherUserOpened),
+      event,
+    );
+        
+        
+console.log(
+          ';; receiveOTUpdates error ',
+          store.file.doc()?.openedPath,
+          data.latestRevision,
+          currentVersion,
+          data,
+          error,
+        );
+          
 ^((?!(42\["heartbeat|resourceMonit|refreshXtermCols|42\["multiTerminal|42\["terminalStatus|42\["activeTerminal|42\["ragStatus|42\["initAiCodeInfo)).)*$
 
 ^((?!(42\["heartbeat|resourceMonit|refreshXtermCols|42\["multiTerminal|42\["terminalStatus|42\["activeTerminal|42\["ragStatus|42\["initAiCodeInfo|42\["fileChange|42\["pullOTUpdates)).)*$
@@ -341,6 +361,30 @@ use create-react-app to create a webapp, homepage shows a list of frontend frame
 
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
+
+## 0612
+
+- [how to implement back and forward functionality like browser - Stack Overflow](https://stackoverflow.com/questions/6869476/how-to-implement-back-and-forward-functionality-like-browser)
+  - 一种思路是使用2个栈， backStack/forwardStack
+
+- 🤔 i want to implement jumping backward and forward in custom text editor written in typescript.
+  - solution 1:  use 2 array stacks.  const backStack=[]; const forwardStack=[]; when user clicks in the editor, the cursor position is pushed into backStack. when user click backward/forward button, position is popped from backStack then pushed into forwardStack.
+  - solution 2: use 1 array to store history positions, and a currentPos as array index. when user click backward/forward button, just move the currentPos backward/forward to get the cursor position. 
+  - which solution is better ?
+  - 如果要让其他组件在stack为空时更新ui，需要在状态变化时通知外界，另一种思路是当业务侧每次更新stack时业务侧主动查询最新的stack是否为空
+- 👾 Solution 1 (Dual Stacks) is Better
+  - Matches standard editor/browser history semantics
+  - Back/forward operations are true O(1) (single pop/push)
+  - No array slicing/reallocations needed
+  - No expensive truncation operations during recording
+  - Doesn't retain obsolete forward history (automatically clears when new actions occur)
+  - Solution 1 is superior due to its constant-time operations, memory efficiency, and industry-standard approach.
+  - 🤔 Combine with edit history for full undo/redo system
+- solution2: Single-array + index model 
+  - Easy to dump full history at once (no need to merge two stacks).
+  - State Management and API (The Biggest Win for Solution 2)
+  - Splice on each new navigation (to drop the “forward” tail) is O(N) in the worst case.
+  - Every jump still requires bounds-checking and index arithmetic.
 
 ## 0611
 

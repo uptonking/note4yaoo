@@ -88,11 +88,13 @@ modified: 2022-06-03T21:34:54.893Z
     - Bob's update method throws an error
     - Bob resyncs it's prosemirror state to the other user, effectively undoing Alice's change
 
-- https://github.com/colanode/colanode /1.3kStar/202506/ts/不支持导出
+- https://github.com/colanode/colanode /1.3kStar/202506/ts
   - https://colanode.com/
   - Open-source and local-first Slack and Notion alternative that puts you in control of your data
   - Colanode is an all-in-one platform for easy collaboration, built to prioritize your data privacy and control. 
   - Designed with a local-first approach, it helps teams communicate, organize, and manage projects—whether online or offline.
+  - 🐛 cons: 不支持导出, 不支持undo/redo, 不支持database预览(只能在单独页面打开)
+  - 🌹 feat: database支持多种视图board/calendar
   - Rich Text Pages: Create documents, wikis, and notes using an intuitive editor, similar to Notion.
   - Customizable Databases: Organize information with structured data, custom fields and dynamic views (table, kanban, calendar).
   - Colanode includes a desktop app and a self-hosted server. You can connect to multiple servers with a single app, each containing one or more workspaces for different teams or projects. 
