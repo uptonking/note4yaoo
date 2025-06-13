@@ -362,6 +362,11 @@ use create-react-app to create a webapp, homepage shows a list of frontend frame
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
 
+## 0613
+
+- [Is it possible to simulate key press events programmatically? - Stack Overflow](https://stackoverflow.com/questions/596481/is-it-possible-to-simulate-key-press-events-programmatically)
+  - `element.dispatchEvent(new KeyboardEvent('keydown', {'key': 'a'}));`
+
 ## 0612
 
 - [how to implement back and forward functionality like browser - Stack Overflow](https://stackoverflow.com/questions/6869476/how-to-implement-back-and-forward-functionality-like-browser)

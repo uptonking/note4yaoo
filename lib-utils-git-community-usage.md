@@ -151,12 +151,13 @@ git log --online --graph --decorate
 - Yes, this is an incompatibility between git-lfs and the default directory name that git uses for bare repos. 
   - There is a simple work-around for now: `git lfs clone git@bitbucket.org:foo/bar.git bar.git`.
   - That explicitly states the output directory name, and "git lfs clone" honors that. You can actually put anything at all for the directory name, just so long as it's explicitly stated.
-# disccuss
+# discuss
 - ## 
 
 - ## 
 
-- ## 
+- ## [How to show full-file Git blame in Visual Studio Code - Stack Overflow](https://stackoverflow.com/questions/44161997/how-to-show-full-file-git-blame-in-visual-studio-code)
+- If you use the GitLens plugin, you can also use the "File Annotations" icon in the top right of Visual Studio Code
 
 - ## git clone --mirror git@github.com:ueberdosis/tiptap.git
 - Git creates a bare-“mirror” repository, which contains all of the refs (branches, tags, notes) and the entire object database, but no working tree—so you won’t see any checked-out files.
