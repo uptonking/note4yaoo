@@ -40,7 +40,7 @@ modified: 2021-07-20T13:50:23.433Z
     - 系统的性能受第三方资源如github的fetch api的限制，设计初期要想办法避免
     - 计算密集型的feature可尝试多层架构，如大模型llm/ocr
     - 重技术的业务开发时灵活性兼容性比性能更重要, Compatibility, Flexibility, Perf
-    - frontend: animation, 多标签
+    - frontend: animation, 多标签, 刷新页面是否恢复状态, 换设备是否恢复状态
     - backend: orm vs sql
     - 采用第三方包前期开发快，后期跟随升级及处理breaking changes的工作量会增加，要做取舍
   - data-app
