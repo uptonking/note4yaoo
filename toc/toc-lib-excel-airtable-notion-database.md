@@ -49,6 +49,27 @@ modified: 2022-08-21T10:02:05.129Z
   - [Maybe some misunderstanding of how SQL DB indexes work?](https://github.com/ccorcos/tuple-database/issues/11)
   - [什么是比较好的低代码产品_Tw93](https://zhuanlan.zhihu.com/p/596474809): platform, baas, cms, workflow, airtable-like
 # popular
+- https://github.com/colanode/colanode /1.3kStar/202506/ts
+  - https://colanode.com/
+  - Open-source and local-first Slack and Notion alternative that puts you in control of your data
+  - Colanode is an all-in-one platform for easy collaboration, built to prioritize your data privacy and control. 
+  - Designed with a local-first approach, it helps teams communicate, organize, and manage projects—whether online or offline.
+  - 🐛 cons: 不支持导出, 不支持undo/redo, 不支持database预览(只能在单独页面打开)
+  - 🌹 feat: database支持多种视图board/calendar
+  - 前端依赖tiptap、kysely、fractional-indexing-jittered、zod3、ulid、yjs、radix-ui、floating-ui、@tanstack/react-query.v5、@tanstack/react-virtual、cmdk、date-fns、re-resizable、react-dnd、react-hook-form
+  - web依赖@sqlite.org/sqlite-wasm
+  - desktop依赖@electron-forge、better-sqlite3
+  - server依赖fastify、kysely、bullmq、langchain、pg、sharp
+  - Rich Text Pages: Create documents, wikis, and notes using an intuitive editor, similar to Notion.
+  - Customizable Databases: Organize information with structured data, custom fields and dynamic views (table, kanban, calendar).
+  - Colanode includes a desktop app and a self-hosted server. You can connect to multiple servers with a single app, each containing one or more workspaces for different teams or projects. 
+  - All changes you make are saved to a local SQLite database first and then synced to the server. A background process handles this synchronization so you can keep working even if your computer or the server goes offline. Data reads also happen locally, ensuring immediate access to any content you have permissions to view.
+  - powered by Yjs - to allow real-time collaboration on entries like pages or database records.
+  - [Issues with Undo / Markdown Pasting _202505](https://github.com/colanode/colanode/issues/42)
+    - We have temporarily disabled the default undo, because of some issues it was causing related with the way syncing/conflict resolution with Yjs works. Will need to implement it in a different way. 
+  - [I built Colanode, an open-source & local-first Slack and Notion alternative that you can self-host : r/selfhosted _202505](https://www.reddit.com/r/selfhosted/comments/1khpftl/i_built_colanode_an_opensource_localfirst_slack/)
+  - https://github.com/ylber-gashi/colanode-k8s /smarty
+
 - https://github.com/SAKryukov/personal-database-dynamic-schema /MIT/202311/js/NoDeps/inactive
   - https://sakryukov.github.io/personal-database-dynamic-schema
   - Personal single-file in-memory database. 

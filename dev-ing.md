@@ -362,6 +362,11 @@ use create-react-app to create a webapp, homepage shows a list of frontend frame
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
 
+## 0614
+- dev-to
+  - 支持跳转定义时不click聚焦也能正常回退
+  - editor tab显示文件名
+
 ## 0613
 
 - [Is it possible to simulate key press events programmatically? - Stack Overflow](https://stackoverflow.com/questions/596481/is-it-possible-to-simulate-key-press-events-programmatically)
