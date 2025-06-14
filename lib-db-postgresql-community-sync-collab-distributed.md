@@ -52,6 +52,19 @@ modified: 2023-10-28T17:52:51.915Z
 - It’s pretty great once it’s going. One issue I’ve had is for large tables, the initial copy never finishes. We’ve worked around this using the RDS snapshot technique described by Instacart
 
 - Useful for usecases like data warehousing, provenance, integration, time travel debugging and so on. However beware of those replication slots ... running out of space.
+# discuss-distributed-pg
+- ## 
+
+- ## 
+
+- ## Announcing Multigres, a sharding solution for Postgres to take it to the petabyte-scale _20250614
+- https://x.com/supabase/status/1933627932972376097
+- Powered by the AvgDB storage engine.
+  - Definitely going to be interesting to see the scalability factor, along with ensuring query time is lower. 
+
+- needs to be a simple extension you plug and play & it does all the partitioning / sharding / etc. behind the scenes (like fusion drive on macOS) 
+
+- So a custom proxy handler that handles writes and distributes it across shard nodes?
 # discuss-ha
 - ## 
 

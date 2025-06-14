@@ -271,26 +271,6 @@ console.log(';; taskActions', currentActionId, path, store.cdePlay.enableDiffVie
 console.log(';; open-diff ', enableDiffAnimation, store.cdePlay.enableDiffView(), store.cdeReplay.isMachinePaused())
 console.log(';; qryDiffSnap ', snapshotFrameResult)
 
-console.log(
-      '📝 file ',
-      filePath,
-      store.file.latestRequestFilePath(),
-      event.data.isRefresh,
-      Boolean(isFollow),
-      Boolean(isOtherUserOpened),
-      event,
-    );
-        
-        
-console.log(
-          ';; receiveOTUpdates error ',
-          store.file.doc()?.openedPath,
-          data.latestRevision,
-          currentVersion,
-          data,
-          error,
-        );
-          
 ^((?!(42\["heartbeat|resourceMonit|refreshXtermCols|42\["multiTerminal|42\["terminalStatus|42\["activeTerminal|42\["ragStatus|42\["initAiCodeInfo)).)*$
 
 ^((?!(42\["heartbeat|resourceMonit|refreshXtermCols|42\["multiTerminal|42\["terminalStatus|42\["activeTerminal|42\["ragStatus|42\["initAiCodeInfo|42\["fileChange|42\["pullOTUpdates)).)*$

@@ -312,6 +312,25 @@ modified: 2022-11-29T20:41:25.566Z
 - Is this using OPFS/workers etc legit doing this manually with Sqlocal package?
   - Yes, the web-adapter persists data to OPFS in a web worker. Also supports cross-tab syncing. Works fully offline.
   - Cloudflare Workers are already supported as a sync backend. Using Cloudflare Workers as a server-side client is planned as well
+# discuss-sync-solutions
+- ## 
+
+- ## 
+
+- ## The local-first / sync engine ecosystem is far bigger than I realized.
+- https://x.com/housecor/status/1933860203537047589 
+  - There are DBs / BAAS providers that provide real-time sync like Supabase, Firestore, Convex, Fireproof, and PouchDB.
+  - There are peer-to-peer DBs like OrbitDB, and DefraDB.
+  - There are sync engines like Zero, Powersync, ElectricSQL, and Evolu.
+  - There are local-first DB options like SQLite via sql.js, Postgres via PGlite, DuckDb Wasm, or the browser's built-in IndexedDB.
+  - There are CRDT libraries like Automerge, yjs, and over a dozen more.
+  - Choosing between all these is hard, but that's a great problem to have.
+
+- interesting that this is such a huge ecosystem. what if we used cloudflare sqlite Durable objects to then put it online making the local personal data public for scopes that are useful?
+
+- 
+- 
+
 # discuss
 - ## 
 

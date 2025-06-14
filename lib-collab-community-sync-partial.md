@@ -205,6 +205,34 @@ modified: 2023-12-08T15:49:56.046Z
   - We designed and implemented a novel JSON parsing interface—called On-Demand—that appears to the programmer like a conventional DOM-based approach
   - However, the underlying implementation is a pointer iterating through the content, only materializing the results (objects, arrays, strings, numbers) lazily. 
 
+# discuss-partial-sync-solutions
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 💡 @jazz_tools will remain “subtly but proudly” local-first
+- https://x.com/anselm_io/status/1933827450556883104
+  - We don’t really mention local-first in our homepage - not because we don’t want to be associated with it, but because I believe the value prop can be explained without invoking it, which is always better for a mainstream audience.
+- @jazz_tools today lets you do so much in a local-first way that many think is impossible
+  - Partial sync
+  - Backend workers (with authoritative state!)
+  - Server-side rendering
+  - Complex permissions (no backend needed!)
+  - High perf multiplayer
+  - Reliable encrypted cloud storage
+- we will keep building until *all* of the imagined & real tradeoffs are addressed.
+
+- https://x.com/jjenzz/status/1933590071724093849
+- so many in the space invest lots in partial sync:
+  - @triplit_dev 
+  - @evoluhq 
+  - @inkandswitch ’s Beelay
+  - and of course (shameless plug) @jazz_tools
+
+- I would say @zero__ms main strength rather revolves around letting you have authoritative backends with strong transactionality while also having powerful realtime queries with IVM.
+  - That is something that not many local-first frameworks have a good answer to! We have a pattern for how to do authoritative state with Jazz but it’s less of a focus than it is for Zero and some of our guarantees are weaker. Working on it! That is the interesting tradeoff!
 # discuss-hypercore
 - ## 
 
