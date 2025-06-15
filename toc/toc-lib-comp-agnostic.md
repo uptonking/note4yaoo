@@ -31,6 +31,22 @@ modified: 2020-11-13T07:28:27.824Z
   - https://github.com/SaraVieira/ui-libraries /组件库对比
   - [The Vanilla Javascript Component Pattern](https://dev.to/megazear7/the-vanilla-javascript-component-pattern-37la)
 # framework-agnostic components
+- https://github.com/hunvreus/basecoat /MIT/202506/tailwindcss/js
+  - https://basecoatui.com/
+  - A collection of modern UI components built with Tailwind CSS that works with any web stack. 
+  - Basecoat brings the magic of shadcn/ui to traditional web applications, no React required.
+  - Lightweight: no runtime JS, just CSS
+  - Framework-agnostic: works with any backend or frontend stack
+  - Accessible: components follow accessibility best practices.
+  - Themable: fully compatible with shadcn/ui themes.
+  - Readable: no class soup, just clean markup. add classes like `btn` or `input` and you're done.
+  - [Just got the beta of Basecoat 0.2.0 out _20250615](https://x.com/hunvreus/status/1934096422233845800)
+    - Vanilla JS: no more Alpine.js.
+    - Vanilla CSS: you can still use Tailwind CSS, but you have the option to use regular CSS.
+    - No build: just use the CDN and get up and running in seconds.
+    - I still need to do a lot of testing (especially older browser with no support for anchor positioning), but JS is at 3kB and CSS at 16kB (gzipped).
+    - Offering both vanilla CSS and Tailwind means you can start small and opt into a utility workflow when you need it, without committing up front.
+
 - zag /1.5kStar/MIT/202210/ts/state-machine/panda-css
   - https://github.com/chakra-ui/zag
   - https://zagjs.com/overview/introduction

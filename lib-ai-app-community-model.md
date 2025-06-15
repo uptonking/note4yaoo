@@ -336,14 +336,25 @@ modified: 2023-10-30T07:34:03.602Z
 
 - Does it support streaming?
   - Not yet, keeping scope limited. Theoretically possible
-# discuss-multi-agents
+# discuss-multi-agents 🏘️
 - ## 
 
 - ## 
 
 - ## 
 
-- ## 
+- ## 🆚 今天很有趣，两家知名的公司各出了一篇文章，争论要不要使用多智能体系统。
+- https://x.com/oran_ge/status/1933754019010539923
+  - Claude 的官方 Anthropic ：如何构建多智能体系统
+  - Devin 的官方 Cognition ：不要构建多智能体系统
+- 这核心的争议点在于：Context 上下文到底应该共享还是分开？
+  - Claude 这边的观点是，搜索信息的本质是压缩，单个智能体的上下文有限，面对无限的信息，压缩比太大就会失真。这是集体智慧，一起协作获得的胜利。
+  - Devin 这边的观点是，多个智能体的上下文不一致，会导致信息割裂、误解、他们汇报给老板的信息经常充满了矛盾。
+  - 这让我想到，软件工程从来不是追求完美，而是持续迭代。
+
+- 没啥矛盾的。看需求。open-ended 的问题比较适合 multi-agent；目标很具体的话，就比较适合单个 agent
+
+- 感觉和现实中的两家不同策略运营的公司差不多，没有绝对的对和错，都能走出来的可能性也超大。
 
 - ## @KuraAIAgents 通过创新的五重 Agent 架构（规划、执行、评估）实现了 87% 的浏览器自动化准确率，超越 Claude 计算机操作 28 个百分点，同时支持低成本模型替换方案
 - https://x.com/shao__meng/status/1857586562588094918

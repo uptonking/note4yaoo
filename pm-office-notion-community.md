@@ -583,7 +583,12 @@ modified: 2023-11-28T14:48:45.910Z
   • escalating issues
 - I love buttons. But what I love more is forms. Create a way to build a form that populates a database and you might just go next level.
 - The only missing feature now is: connect Notion to external databases (read and write).
-# discuss-colanode
+# discuss-colanode 📈📝
+
+- features
+  - local-first
+  - blocky data model
+  - collab: chat + doc + files + database
 - ## 
 
 - ## 
@@ -606,8 +611,9 @@ modified: 2023-11-28T14:48:45.910Z
 
 - Looks cool. If I can get the attendance and vacation list to work on this, it will be a nice replacement for the odoo.
 
-- ## 🚀 [Show HN: Colanode, open-source and local-first Slack and Notion alternative | Hacker News _202504](https://news.ycombinator.com/item?id=43780176)
-  - As a heavy Notion user, I often found it tough to get my teams fully onboard since people naturally gravitate toward chat for quick interactions. Maintaining context between chat apps like Slack and documentation apps like Notion became increasingly frustrating. Switching contexts, losing track of information, and managing data across multiple tools created unnecessary friction.
+- ## 🚀💬📄 [Show HN: Colanode, open-source and local-first Slack and Notion alternative | Hacker News _202504](https://news.ycombinator.com/item?id=43780176)
+  - 👷 As a heavy Notion user, I often found it tough to get my teams fully onboard since people naturally gravitate toward chat for quick interactions. 🐛 Maintaining context between chat apps like Slack and documentation apps like Notion became increasingly frustrating. Switching contexts, losing track of information, and managing data across multiple tools created unnecessary friction.
+  - This frustration led me to build Colanode, a single platform integrating structured notes and knowledge management with real-time chat. After building the first version, early feedback highlighted a critical issue: teams/organizations want full control over sensitive data, especially conversations. That's why I decided to open-source Colanode under an Apache 2.0 license, making it fully self-hostable so you can retain complete ownership and privacy over your data.
   - Colanode is built with simplicity and extensibility in mind, using only open-source tools and avoiding any vendor or cloud lock-in.
   - It features a local-first architecture offering complete offline support. 
   - From a technical perspective, Colanode consists of a Node.js server API and an Electron desktop client, with mobile apps coming soon. 
@@ -615,7 +621,10 @@ modified: 2023-11-28T14:48:45.910Z
   - All reads and writes performed by the desktop client happen locally within a SQLite database, and changes sync seamlessly via a synchronization engine built on top of SQLite, Postgres, and Yjs—a CRDT library for conflict resolution. 
   - The server then propagates these changes to other collaborators. You can self-host the server in any environment using Docker, Postgres, Redis, and any S3-compatible storage, and connect using the official desktop client, which supports simultaneous connections to multiple servers and accounts. 
   - This local-first approach also prepares us for future integrations with fully local LLMs, further enhancing privacy and performance.
-- we do plan to implement mobile apps, but we don't have a concrete timeline yet. It depends on the limitations and challenges we might face when we implement the same local-first approach as we did in desktop (full offline support, background syncing etc).
+- 📱 we do plan to implement mobile apps, but we don't have a concrete timeline yet. It depends on the limitations and challenges we might face when we implement the same local-first approach as we did in desktop (full offline support, background syncing etc).
+
+- Here an example of it taking arbitrary input and blindly casting it to a type; anything after this point can blow up. There seems to be no input validation anywhere.
+  - And the database use looks racy(improper or indecent), sometimes not using transactions at all but having a read-modify-write cycle, no GET FOR UPDATE seen anywhere in transactions. Somebody is going to figure out how to do nasty things to the data.
 
 - do real time cross platform notifications work? If yes, how did you solve this for people self hosting?
   - That's a great question! We didn't come to it yet, because we are focused only in desktop app for now. This is definitely one of the challenges we need to solve once we start working on the mobile apps. The self-hosting use case makes it tricky (and probably fun challenge to solve).
@@ -627,23 +636,38 @@ modified: 2023-11-28T14:48:45.910Z
   - From this experience, I would never try a new app until they have this feature solved, clearly documented, and with proof that it works and isn't a sales funnel.
 - Can you elaborate on this? I manage a Mattermost instance and there are some features missing from the OSS self-hostable community edition, but notifications seem to mostly work, even on mobile where notification delivery does rely on their gateway
   - When hosting and using their free notifications service, you're basically using their test server with no uptime guarantees. I agree that there's only so much you can expect from a free service, but unreliable notifications make a chat app 100% useless for any serious work.
-- https://zulip.com is decent. Self hosted free plan hasmMobile notifications for organizations with up to 10 users
+- https://zulip.com is decent. Self hosted free plan has mobile notifications for organizations with up to 10 users
 
 - Notion is a tragedy when it comes to export or migration. I didn’t see any bragging about the exportability of content from this one, but that’s the main thing I look for now.
   - We don’t have export or migration features in place yet, but we are planning to add them.
+
+- ⛓️ Have you thought about adding programmable logic or automations between nodes?
+  - My 2c: A particular thing about notion that bugs me is that hn page content get imported as simple tables and in notion there is no automated way to delete all empty cells of all tables on page, that make it unreadable, or just to convert tables automatically into text
 
 - 🆚 How does this compare to Huly?
   - from a quick look (and a test I did some time ago) it seems to take a more opinionated approach: features such as issues, projects, and overall layout are pre-defined. 
   - Colanode, by contrast, works like Notion, giving you flexible building blocks so you can model your own workflows and knowledge structures. 
   - Another key distinction is tech architecture: Colanode is built around a local-first design, providing full offline support with background syncing. I haven’t found equivalent offline capabilities documented for Huly, even though they may have them.
 
-- ⛓️ Have you thought about adding programmable logic or automations between nodes?
-  - My 2c: A particular thing about notion that bugs me is that hn page content get imported as simple tables and in notion there is no automated way to delete all empty cells of all tables on page, that make it unreadable, or just to convert tables automatically into text
-
 - 🆚 How does this compare to Notesnook?
   - I haven’t used Notesnook personally, but from their description it focuses mainly on note-taking. 
   - Colanode, by contrast, also includes collaboration features such as chat, file sharing, and databases. 
   - One other difference is that Notesnook offers end-to-end encryption, whereas Colanode does not (at least for now).
+
+- Is there a name for this new-age method of notes/webpage/data productivity genre? They all seem to have "write with /" to insert "block" content.
+  - The term I'm familiar with is "outliners", as is used by Logseq
+  - Block-based editors maybe?
+
+- Is the Electron app a necessity or is using a browser possible as well?
+  - For now, Colanode is available only as a desktop app (Electron). The primary reason is that we wanted to implement some local-first features, which are currently more complex to achieve in the browser.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 - ## From thousands of files to two SQLite databases: the story how @Colanode ships 8K emojis and icons that work fully offline. _202501
 - https://x.com/hakanshehu/status/1885332261265916131

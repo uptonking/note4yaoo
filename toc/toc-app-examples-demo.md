@@ -49,3 +49,6 @@ modified: 2024-08-11T07:26:35.101Z
   - [imdb](https://community.algolia.com/instantsearch.js/v1/examples/media/)
   - [ecommerce amazon](https://community.algolia.com/instantsearch.js/v1/examples/e-commerce/)
   - [airbnb](https://community.algolia.com/instantsearch.js/v1/examples/tourism/)
+
+- https://landscape.cncf.io/
+  - 支持筛选开源项目

@@ -214,6 +214,22 @@ modified: 2023-02-26T18:25:01.328Z
     - a Next.js project bootstrapped with create-next-app.
     - thanks to @vercel acquisition, you can get access to all blocks on GitHub
 
+- https://github.com/hunvreus/basecoat /MIT/202506/tailwindcss/js
+  - https://basecoatui.com/
+  - A collection of modern UI components built with Tailwind CSS that works with any web stack. 
+  - Basecoat brings the magic of shadcn/ui to traditional web applications, no React required.
+  - Lightweight: no runtime JS, just CSS
+  - Framework-agnostic: works with any backend or frontend stack
+  - Accessible: components follow accessibility best practices.
+  - Themable: fully compatible with shadcn/ui themes.
+  - Readable: no class soup, just clean markup. add classes like `btn` or `input` and you're done.
+  - [Just got the beta of Basecoat 0.2.0 out _20250615](https://x.com/hunvreus/status/1934096422233845800)
+    - Vanilla JS: no more Alpine.js.
+    - Vanilla CSS: you can still use Tailwind CSS, but you have the option to use regular CSS.
+    - No build: just use the CDN and get up and running in seconds.
+    - I still need to do a lot of testing (especially older browser with no support for anchor positioning), but JS is at 3kB and CSS at 16kB (gzipped).
+    - Offering both vanilla CSS and Tailwind means you can start small and opt into a utility workflow when you need it, without committing up front.
+
 - https://github.com/MarsX-dev/floatui /2kStar/202306/js/非常简洁/已被收购
   - https://floatui.com/components
   - https://floatui.com/demo

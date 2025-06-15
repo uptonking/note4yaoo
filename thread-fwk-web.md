@@ -9,6 +9,19 @@ modified: 2021-01-08T17:13:53.965Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 📡 There are two movements in the web space. Both are embracing streaming protocols and doing more work on the server to power the frontend.
+- https://x.com/devagrawal09/status/1934086338225270959
+  - data/content (MPA, Server Components)
+  - events (Sync Engines, Local First)
+  - The architectural difference lies in what they stream.
+
+- Zerosync doesn’t stream events.
+  - diffs to a table are conceptually events. the idea is that "data/content" is something that is replaced wholesale, and "event" is a mutation applied to client state
+
+- Are those different "movements" or different _usecases_? Both are equally valid, depending on what you actually want to show, right?
 # discuss
 - ## 
 

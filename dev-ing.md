@@ -250,7 +250,7 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - 做完tailwind-table就面试
 
 - dev-to 提炼核心`需求+产出`工作流，不能在产品中检验的技术不玩
-# dev-06
+# dev-06-agentAppendFile-jank-&-LSP-def-jump-back/forward-&-
 
 ## 060
 
@@ -289,6 +289,22 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
 
 ```log
 
+add action to add datetime at top of readme
+
+add an action to run "npm install -ddd" and another action to add datetime at top of readme.md
+
+add action to create a route /nextjs with nextjs changelog content in it , and show nextjs link in home page, when clicking the link, jump to /nextjs route
+
+add action to create quickSort1.mjs and add 3 test cases in it
+
+add action to create quickSort1.mjs and try to implement quick sort algorithm in less than 40 lines
+
+use create-react-app to create a react-router v6 example webapp in typescript: homepage shows a list of frontend frameworks like react/vue/angular, when clicking the framework, navigate to the route to show its introduction
+
+use vanilla html/css/js to create a personal profile landing page: homepage shows a cool welcoming animation, then shows 4 example personal projects, then a simple get in touch form below it
+
+use vanilla html/css/js to create a simplistic personal profile landing page: homepage shows a big welcoming greeting, then shows 2 example personal projects, then a simple get in touch example email below it
+
 - write unit test for packages/client/src/components/Editor/CodeEditor.tsx (CodeEditor should rerender when "store.file.doc().openedPath" changes )
 
 - line 290 in file  is not tested, please write unit tests to test it
@@ -303,17 +319,6 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
 
 - unit test should increase jest test coverage
 
-add action to add datetime at top of readme
-
-add an action to run "npm install -ddd" and another action to add datetime at top of readme.md
-add action to create a route /nextjs with nextjs changelog content in it , and show nextjs link in home page, when clicking the link, jump to /nextjs route
-
-add action to create quickSort1.mjs and add 3 test cases in it
-
-add action to create quickSort1.mjs and try to implement quick sort algorithm in less than 40 lines
-
-使用 nextjs 和 shadcn/ui 组件库开发一个类似hacker news的网站， 网站首页显示react 官方blog列表
-use create-react-app to create a webapp, homepage shows a list of frontend frameworks, when click the framework, show its introduction
 ```
 
 - lsp支持的语言排查
@@ -343,6 +348,7 @@ use create-react-app to create a webapp, homepage shows a list of frontend frame
   - MCP的原理，及调用LSP的技术方案
 
 ## 0614
+
 - dev-to
   - 支持跳转定义时不click聚焦也能正常回退
   - editor tab显示文件名
@@ -678,7 +684,7 @@ receiveOTUpdates error  heapSort.mjs RangeError: Applying change set to a docume
 - [Adding a directory to the PATH in macOS - Apple Community](https://discussions.apple.com/thread/254226896?sortBy=rank)
   - `export PATH=".:$PATH:/opt/xyz/bin"`
   - `export PATH=".:$PATH:$HOME/xyz/bin"`
-# dev-05
+# dev-05-LSP-def-docs-&-filechange-fileTree-sync-&-ideServer-jump-to-external-file-&-agentAppendFile-OT-events
 
 ## 0530
 
@@ -988,7 +994,7 @@ const element = screen.getByTestId('custom-element')
 - 实际完成
   - 梳理了需求细节并完善了设计文档70%的内容，还要画几张架构图
   - 解决了今天刚反馈的高优先级问题，使用vim在命令行修改文件时编辑器未更新的问题
-# dev-04
+# dev-04-iframe-postMessage-&-LSP-protocol-&-codemirror-lsp-client-transport-&-lsp-def/underline-js/go/python/java
 
 ## 0428
 
@@ -1149,7 +1155,7 @@ java -Declipse.application=org.eclipse.jdt.ls.core.id1 -Dosgi.bundles.defaultSta
   - The only solution I've found so far is to downgrade @types/node from 20.10.6 to `20.0.0`. (forced the downgrade using yarn's "resolutions" feature)
   - Kind of weird, I fixed this error by deleting node_modules directory.
 
-- [[node] After running "ncu -u" and "npm install", then "tsc --project lib/typescript/cmdline/tsconfig.json" gives "node\_modules/@types/node/module.d.ts:106:13 - error TS2386: Overload signatures must all be optional or required." · DefinitelyTyped/DefinitelyTyped · Discussion #70562](https://github.com/DefinitelyTyped/DefinitelyTyped/discussions/70562)
+- [[node] After running "ncu -u" and "npm install", then "tsc --project lib/typescript/cmdline/tsconfig.json" gives "node_modules/@types/node/module.d.ts:106:13 - error TS2386: Overload signatures must all be optional or required." · DefinitelyTyped/DefinitelyTyped · Discussion #70562](https://github.com/DefinitelyTyped/DefinitelyTyped/discussions/70562)
   - if you are using the v16 or v18 branches of @types/node and want to upgrade to TypeScript 5.6, then you will also need to upgrade @types/node to a compatible version (^16.18.102 or ^18.19.41)
 
 ## 0404
@@ -1204,7 +1210,7 @@ fetch('https://www.google.com/', {
 - 今天
   - 验证agent获取浏览器信息的方案细节，主要是iframe跨域相关操作，给出开发排期计划
   - 整理ide-server相关的问题形成文档，交接给天平
-# dev-03
+# dev-03-codemirror-EditContext-steals-rename-input-key-&-webview-iframe-onload-&-vite-routes-proxy-path-on-win-&-nodejs-utf16le
 
 ## 0331
 

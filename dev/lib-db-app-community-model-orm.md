@@ -71,7 +71,9 @@ modified: 2023-09-24T19:05:33.866Z
 
 - ## 
 
-- ## 
+- ## 🦀 目前见过最变态的设计之一，sqlx postgres 的 Transaction RAII rollback 的实现会在 connection buffer 里面写一个 ROLLBACK 语句，然后在归还连接池的时候跟着这个 ping 一起发送。
+- https://x.com/leiysky/status/1934181807727198610  
+  - 也就是说不用 sqlx 的连接池而自己管理连接的情况下 rollback 只能等有缘人发送了
 
 - ## ORMs exist because SQL is inexpressive and has a bad type system. They don’t fix the underlying problems but do mask them somewhat. 
 - https://x.com/jamesacowling/status/1906054483186212893
