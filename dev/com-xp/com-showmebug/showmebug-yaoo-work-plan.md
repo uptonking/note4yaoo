@@ -100,6 +100,8 @@ modified: 2024-05-06T02:54:40.374Z
 
 ### dev-summary
 
+- 
+
 - 包管理使用apt而不是nix的原因
   - nix安装的包在bash无法检测到执行入口
 
@@ -641,11 +643,13 @@ modified: 2024-05-06T02:54:40.374Z
   - [Running the SDK](https://cloud9-sdk.readme.io/docs/running-the-sdk)
 
 - paas-arch
+  - paas engine: 使用go补充manager的功能，git操作很多从manager的java实现迁移到了paas engine的go实现
   - affinity gateway: ide-server的服务发现网关
   - paas gateway: redis/mysql/pg的网关
   - ssh gateway
-  - paas engine: 使用go补充manager的功能，git操作很多从manager的java实现迁移到了paas engine的go实现
 
+- paas架构的优点
+  - 在容器未激活的条件下，也能正常打开与编辑文件，因为ideServer自身挂载了NFS文件系统，但容器内goAgent未激活启动时其他功能如执行命令、LSP连接都不可用
 ### not-yet
 
 - 
@@ -2421,6 +2425,18 @@ const playbackInfo = [
     - 直接使用playgroundItem.fileTree缓存，未做重新计算
   - registerFileTreeEvent
     - 每次都去构建文件树, 操作过重, 需要细分
+    
+- ai执行新建文件类型action的流程
+  - 第1次读文件，只发给自己，用来确定文件是否存在； 若不存在，则创建文件
+    - {"path":"script.js","timestamp":1750064772,"loadType":"default","readOnly":false}
+  - 第2次读文件，发给所有用户
+    - {"path":"script.js","timestamp":1750064772,"loadType":"default","readOnly":false}
+  - 在流式输出前，强制写一遍空文件， 也会导致跟随的用户打开文件
+    - [clacky] agentWriteFile, {"path":"script.js","content":"","shouldOpenFileAfterWrite":true} 
+  - 流式输出开始，agentAppendFile
+  - 流式输出完成，会强制再写一遍文件  agentWriteFile， 但不会再次打开因为没有shouldOpenFileAfterWrite
+  
+    
 - registerFileEvent
   - 若非大文件，读内容使用 await this.currentPlaygroundItem. FileTree_readFile( path, fileRootPath ); 
   - 打开文件时，便要初始化文件的基础信息写入数据库，用于回放
@@ -2589,4 +2605,4 @@ for await (const chunk of res.body as any) {
 - ai聊天是输出的代码使用highlightjs高亮
 - 
 - 
-- 
+-

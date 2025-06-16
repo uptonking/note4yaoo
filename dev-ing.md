@@ -305,12 +305,18 @@ use vanilla html/css/js to create a personal profile landing page: homepage show
 
 use vanilla html/css/js to create a simplistic personal profile landing page: homepage shows a big welcoming greeting, then shows 2 example personal projects, then a simple get in touch example email below it
 
-- write unit test for packages/client/src/components/Editor/CodeEditor.tsx (CodeEditor should rerender when "store.file.doc().openedPath" changes )
 
 - line 290 in file  is not tested, please write unit tests to test it
 
+- write unit tests for apps/webapp/src/__tests__/components/cde-header/run-status-button.spec.tsx
 - ensure tests pass by running  "cd packages/client && pnpm test src/__tests__/editor/CodeEditor.lsp.sepc.tsx"
-- you can mock state/store/data/external-dependencies
+
+- write unit tests for apps/webapp/src/components/layout-workbench/workbench/tabs-groups/tab-editor-main.tsx
+- ensure tests pass by running  npx nx run webapp:test src/__tests__/components/layout-workbench/workbench/tabs-groups/tab-editor-main.spec.tsx
+
+
+
+- you can mock state/store/data/external-dependencies, especially you can refer to this test file apps/webapp/src/__tests__/components/chat-box/action-panel.test.tsx to mock store/useTrackedStore/actions
 - you can use jest and @testing-library/react, 
 - Each unit test should be independent of other tests. Avoid sharing state or dependencies between tests by using beforeEach/beforeAll/afterEach/afterAll
 - you had better write only in test files and not modify original source code
@@ -346,6 +352,93 @@ use vanilla html/css/js to create a simplistic personal profile landing page: ho
 
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
+
+## 0616
+- 去掉自动滚动，ai滚动到某一行的事件, 调整diff动画的逻辑
+- 流式输出/修改文件，的ui上要显示diff绿色
+- git diff计算:  输入 时间戳， 返回 时间戳的内容变化
+
+```js
+// 查询文件初始内容
+// 对新创建的文件，一直是空文件
+// 对于0-1项目， historyBaseData:[]
+stts.dao.channel().send('getPlaybackInfo')
+// ⬆️ [ "getPlaybackInfo", {}, { "currentDockerId": "806278374774525952" } ]
+
+// ⬇️ playbackInfo
+{
+  "playbackSummerize": {
+    "total": 80,
+    "start": 1749440495981,
+    "end": 1749441018099,
+    "customize": []
+  },
+  "playbackData": {
+    "playbackData": [],
+    "historyBaseData": [
+      {
+        "_id": "684657f4d808bf3cbf5e43f3",
+        "dockerId": "803690894141677568",
+        "path": "README.md",
+        "playgroundId": "803690894095540224",
+        "__v": 0,
+        "content": "# profile-landing-page 0327\nA Pen created on CodePen.io. Original URL: [https://codepen.io/uptonking/pen/QWdqEmr](https://codepen.io/uptonking/pen/QWdqEmr).\n\nfirst pass at an avatar animation for my personal portfolio\n\n- open http://localhost:9000/\n\n# tests 1527\n\n- aa\n- bb\n\naa\n    ",
+        "createTime": 1749440500984
+      },
+      {
+        "_id": "684659f2d808bf3cbf5e4dc6",
+        "dockerId": "803690894141677568",
+        "path": "script.mjs",
+        "playgroundId": "803690894095540224",
+        "__v": 0,
+        "content": "export const hello = 'world '\nconsole.log('; log ', hello)\n\nexport const hello2 = 'world '\nconsole.log('; log ', hello2)\n\nexport const hello3 = 'world '\nconsole.log('; log ', hello3)\n\nexport const hello4 = 'world'\nconsole.log('; log ', hello4)\n\nexport const hello5 = 'world'\nconsole.log('; log ', hello5)\n\n\n",
+        "createTime": 1749441010390
+      }
+    ]
+  },
+  "agentUsers": [
+    {
+      "agentUserId": "clacky",
+      "userId": "728372792453660672",
+      "userInfo": {
+        "username": "Clacky",
+        "avatarUrl": "https://assetscdn.clacky.ai/clacky/marvin_avatar_common.svg",
+        "userId": "clacky"
+      },
+      "status": "online",
+      "followingAgentUserId": "",
+      "focusComponent": "Editor",
+      "focusXterm": null,
+      "editorScroll": 0,
+      "cursor": {},
+      "wsClientID": "gf8kAoVDp01-H9SrAAGp",
+      "color": "#3091F2"
+    },
+    {
+      "agentUserId": "b10985e2-97a9-4fa2-a8fb-c5f19758f4c8",
+      "userId": "705965668918861825",
+      "userInfo": {
+        "userId": "user_2ly7xQ9AdCaUU4i23Ta55Y51Mpv",
+        "username": "uptonking",
+        "avatarUrl": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ2l0aHViL2ltZ18ybHk3eFdIeGxNaEl1SjlZYVFYV0ZTOVhFZlQifQ"
+      },
+      "fileOpened": "script.mjs",
+      "status": "online",
+      "followingAgentUserId": "",
+      "focusComponent": "Editor",
+      "focusXterm": null,
+      "editorScroll": 0,
+      "cursor": {},
+      "wsClientID": "0aAR-tc-rUq0CvOCAAGt",
+      "color": "#5C5CE5"
+    }
+  ],
+  "rrwebDataAllData": {
+    "rrwebData": [],
+    "customEvents": []
+  }
+}
+```
 
 ## 0614
 
