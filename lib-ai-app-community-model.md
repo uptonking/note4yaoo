@@ -312,6 +312,17 @@ modified: 2023-10-30T07:34:03.602Z
 # discuss-workflow-ai
 - ## 
 
+- ## 
+
+- ## People have the problem running super long Browser Use tasks (agent forgets stuff after 50+ steps)
+- https://x.com/gregpr07/status/1934645184483975566
+  - We are fixing this in two ways2️
+  - 1. Workflow Use - we have a branch (heavy wip) which takes a prompt, explores the page with Browser Use agent, and generates the workflow (HARD)
+  - 2. Finding new ways to make the agent memory and thinking more robust (VERY HARD, lots of experimenting). This requires really big brain (we hired IMO medal guy to tackle this problem)
+  - If you relate with the problem, try using our super early alpha 0.0.0 of Workflow Use auto generation of workflows
+
+- Word of advice, reflect on whether  you're not trying to just outrun the scaling hypothesis through mathematics. It gets expensive and the timelines to capture roi are shorter than ever.
+
 - ## 工作流平台大家关注dify 和 coze比较多，还有一个非常不错的框架 langflow
 - https://x.com/leeoxiang/status/1884945535507083426
   - 1、Flow as an API，代码优先，workflow可以直接转换为可执行的代码；

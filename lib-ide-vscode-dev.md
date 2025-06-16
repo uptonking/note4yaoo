@@ -43,6 +43,12 @@ modified: 2024-08-24T16:15:11.456Z
   - ide类的参考实现包括: vscode, jupyter(codemirror), jetbrains
   - 参考设计 capabilities
   - [Visual Studio Code for Education](https://vscodeedu.com/)
+
+- [VS Code: Open Source AI Editor](https://code.visualstudio.com/blogs/2025/05/19/openSourceAIEditor)
+  - [Open-source AI functionality provided by the Copilot Chat extension _202505](https://github.com/microsoft/vscode/issues/249031)
+    - is agent mode also part of the open source plan?
+    - yes, everything but ghost text completions
+    - [Copilot Chat web support _202504](https://github.com/microsoft/vscode/issues/245860)
 # draft
 - toys
   - wiki: prosemirror/tiptap

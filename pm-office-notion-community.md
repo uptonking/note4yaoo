@@ -586,9 +586,10 @@ modified: 2023-11-28T14:48:45.910Z
 # discuss-colanode 📈📝
 
 - features
-  - local-first
-  - blocky data model
-  - collab: chat + doc + files + database
+  - local-first: background syncing
+  - collab
+  - all-in-one: chat + doc + files + database
+  - blocky data model: flexible building blocks
 - ## 
 
 - ## 
@@ -601,10 +602,10 @@ modified: 2023-11-28T14:48:45.910Z
   - We have it in plan to implement the web client as well, we just need to look into some stuff related with local-first. Just curious, is there any reason you can't install the desktop app?
 - I'd prefer using it in the browser since an app like this doesn't really need many system APIs. The browser approach is actually more secure (being sandboxed) and would automatically make it more Linux-compatible too.
 
+- To create a Kanban view you need to have at least one 'select' or 'multi select' field in the database. We will add options for other fields in the future
+
 - Does your databases/tables support relationships? Can I link one table to another one?
   - Yes it does, when you create the database you can add fields with the type 'relation' which lets you connect with other databases (or even with the same database itself)
-
-- To create a Kanban view you need to have at least one 'select' or 'multi select' field in the database. We will add options for other fields in the future
 
 - Does this support formulas like AirTable? If so, does it support referencing cells that are formulas to expand into another formula? Something similar to vlookup…
   - Not yet, it's part of our roadmap.
@@ -660,14 +661,6 @@ modified: 2023-11-28T14:48:45.910Z
 
 - Is the Electron app a necessity or is using a browser possible as well?
   - For now, Colanode is available only as a desktop app (Electron). The primary reason is that we wanted to implement some local-first features, which are currently more complex to achieve in the browser.
-
-- 
-- 
-- 
-- 
-- 
-- 
-- 
 
 - ## From thousands of files to two SQLite databases: the story how @Colanode ships 8K emojis and icons that work fully offline. _202501
 - https://x.com/hakanshehu/status/1885332261265916131

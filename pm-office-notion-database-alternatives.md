@@ -17,6 +17,18 @@ modified: 2023-01-23T11:24:14.630Z
     - collaboration,aggregate and update live data, comment, project status
   - [Airtable👍🏻 vs Monday](https://www.airtable.com/lp/compare/airtable-vs-monday)
     - sync data, custom data model, custom ui, more free records limit
+# discuss-pm
+- ## 
+
+- ## 
+
+- ## [Project management/Notion alternative : r/selfhosted _202505](https://www.reddit.com/r/selfhosted/comments/1ksjzgp/project_managementnotion_alternative/)
+  - which self hosted alternative can replicate this view from Notion?
+  - Table view with grouping by xxx
+  - IT MUST HAVE the ability to toggle subtask visibility, because not a single "notion alternative" I've tried has this
+  - Block based editing, not markdown
+  - Preferrably local first
+
 # discuss
 - ## 
 
@@ -32,7 +44,7 @@ modified: 2023-01-23T11:24:14.630Z
 - As far as I'm aware there is nothing open source / selfhosted which allows you to do databases the way Notion does.
   - True. Outline has a really good feature set, it only misses the databases. Otherwise i love it!
 
-- I don't like SiYuan. It does not run offline and requires an online connection to run a local database. The developer commented that this is intended functionality and will not allow offline usage.
+- 🐛 I don't like SiYuan. It does not run offline and requires an online connection to run a local database. The developer commented that this is intended functionality and will not allow offline usage.
   - The device sync is also a bit of a cash grab and doesn't work with the self hosted implementation. You have to remain logged in to an account run by the developer to get this premium feature.
   - The fact that you need to maintain a connection to their servers at all time seems to defeat the point of self hosting it.
 
