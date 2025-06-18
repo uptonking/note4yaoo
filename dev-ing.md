@@ -283,7 +283,8 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
 <!-- 观测云搜索 ide-server -->
 -multiTerminalHeartBeat -all\:multiTerminal -"[fromMQ] multiTerminal" -"[toMQ]paas:multiTerminal" -"] multiTerminal, {" -all\:activeTerminal -"] activeTerminal, {"  -"[toMQ]paas:multiTerminalCmd" -"[fromMQ] terminalStatus" -all\:initAiCodeInfo -"[fromMQ] lspStatus" -"[fromMQ] portsChanged" -"[fromMQ] ragStatus" -"] ragStatus data: [" -"all:ragStatus" -"[followingFocusComponent]"
 
--"toMQ fileContentUpdate begin" -"[toMQ]paas:filePull"  -agentAppendFile -"writeFile prepared"
+-"toMQ fileContentUpdate begin" -"[toMQ]paas:filePull"  
+-agentAppendFile -"writeFile prepared"
 
 ```
 
@@ -352,6 +353,13 @@ use vanilla html/css/js to create a simplistic personal profile landing page: ho
 
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
+## 0617
+- 无法跳转的场景: 普通切换文件
+- 未失焦的场景下，刷新页面不能恢复光标位置
+
+- [Organization repo + hobby plan in Vercel - DEV Community](https://dev.to/algoorgoal/deploying-organization-repo-to-vercel-with-a-hobby-plan-2f3h)
+  - Vercel doesn't support deploying an organization repository for free, you will need some workaround if you want to stay on the hobby plan. 
+  - In this post, I'll talk how you can do it with github actions. 
 
 ## 0616
 - 去掉自动滚动，ai滚动到某一行的事件, 调整diff动画的逻辑

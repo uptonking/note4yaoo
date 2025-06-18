@@ -9,10 +9,29 @@ modified: 2022-08-30T22:09:32.804Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🆚 [Difference between head/anchor and to/from - discuss.ProseMirror _202106](https://discuss.prosemirror.net/t/difference-between-head-anchor-and-to-from/3806)
+  - What is the difference between the unresolved head and anchor and the unresolved from and to?
+  
+- The `anchor` is the side of the selection that stays in place when shift-selecting. `from/to` are always the lower and upper bound of the range (so `Math.min(head, anchor)` and `Math.max(head, anchor)`).
+
 # discuss
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+
+
 
 - ## [Question about drop cursor's position - discuss. ProseMirror](https://discuss.prosemirror.net/t/question-about-drop-cursors-position/5891)
 - The drop cursor has nothing to do with `state.selection` . It is just an indicator displayed to show where the dragged content will be dropped.
