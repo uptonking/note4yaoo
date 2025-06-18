@@ -290,7 +290,7 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
 
 ```log
 
-add action to add datetime at top of readme
+add action to add datetime at top of readme.md
 
 add an action to run "npm install -ddd" and another action to add datetime at top of readme.md
 
@@ -308,23 +308,29 @@ use vanilla html/css/js to create a simplistic personal profile landing page: ho
 
 
 - line 290 in file  is not tested, please write unit tests to test it
+- line 160-174, 181-185 in file apps/webapp/src/utils/paas-playground.ts
+ is not tested, please write unit tests to test it
 
 - write unit tests for apps/webapp/src/__tests__/components/cde-header/run-status-button.spec.tsx
 - ensure tests pass by running  "cd packages/client && pnpm test src/__tests__/editor/CodeEditor.lsp.sepc.tsx"
 
-- write unit tests for apps/webapp/src/components/layout-workbench/workbench/tabs-groups/tab-editor-main.tsx
-- ensure tests pass by running  npx nx run webapp:test src/__tests__/components/layout-workbench/workbench/tabs-groups/tab-editor-main.spec.tsx
+- write unit tests for libs/shared/utils/src/env-browser.tsx
+- ensure tests pass by running  npx nx run webapp:test src/__tests__/utils/paas-playground.test.ts
+
+- ensure tests pass by running  npx nx run shared-utils:test __tests__/env-browser.test.ts
 
 
 
 - you can mock state/store/data/external-dependencies, especially you can refer to this test file apps/webapp/src/__tests__/components/chat-box/action-panel.test.tsx to mock store/useTrackedStore/actions
+
+
+
+- you can mock state/store/data/external-dependencies/modules, especially you can refer to this test file apps/webapp/src/__tests__/components/cde-header/run-status-button.test.tsx to mock store/useTrackedStore/actions
 - you can use jest and @testing-library/react, 
 - Each unit test should be independent of other tests. Avoid sharing state or dependencies between tests by using beforeEach/beforeAll/afterEach/afterAll
 - you had better write only in test files and not modify original source code
 
 - Handle asynchronous code correctly 
-
-- unit test should increase jest test coverage
 
 ```
 
@@ -353,9 +359,39 @@ use vanilla html/css/js to create a simplistic personal profile landing page: ho
 
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
+## 0618
+
+- Static imports of lazy-loaded libraries are forbidden. Library is lazy-loaded in these files
+  - 在jest + nx的测试代码出现此问题
+  - 解决方法是， 不使用 const utils = require('@clacky-ai/utils')
+    - 而用 全局变量 mockCheckIsAppleOs = jest.requireMock('@clacky-ai/utils').checkIsAppleOs
+
+- [how do I make the test wait for useEffect's update to be called first - Stack Overflow](https://stackoverflow.com/questions/76824340/how-do-i-make-the-test-wait-for-useeffects-update-to-be-called-first)
+
+```jsx
+// __tests__/App.test.tsx
+import { render, screen, waitFor } from "../test-utils";
+import App from "../App";
+
+test("loads and displays greeting", async () => {
+  // Render your APP to the DOM
+  render(<App />);
+  
+  // Wait for the DOM to update
+  await waitFor(() => {
+    expect(screen.getByText("1")).toBeInTheDocument();
+  });
+});
+```
 ## 0617
 - 无法跳转的场景: 普通切换文件
 - 未失焦的场景下，刷新页面不能恢复光标位置
+
+- [How do you put api routes in the new app folder of Next.js? - Stack Overflow](https://stackoverflow.com/questions/75418329/how-do-you-put-api-routes-in-the-new-app-folder-of-next-js)
+  - app\api\routes.ts
+
+- [error TypeError: Cannot read properties of undefined (reading '') when using Next.js runtime edge on turborepo or Nx · Issue #53562 · vercel/next.js](https://github.com/vercel/next.js/issues/53562)
+  - I got it fixed. Seems like every app requires the dev script to be: "dev": "next dev --turbo" instead of "dev": "next dev"
 
 - [Organization repo + hobby plan in Vercel - DEV Community](https://dev.to/algoorgoal/deploying-organization-repo-to-vercel-with-a-hobby-plan-2f3h)
   - Vercel doesn't support deploying an organization repository for free, you will need some workaround if you want to stay on the hobby plan. 

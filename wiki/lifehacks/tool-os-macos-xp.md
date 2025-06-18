@@ -113,6 +113,7 @@ modified: 2023-07-23T07:05:19.441Z
 
 - terminal
   - fn + shift + ArrowLeft/Right 让光标跳到行首/行尾
+  - fn + ArrowLeft/Right 让光标跳到terminal的头部/尾部
   - cmd+D 会竖向显示2个terminal， cmd+shift+D可还原
 
 - gpg

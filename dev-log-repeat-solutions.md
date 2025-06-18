@@ -36,6 +36,7 @@ modified: 2021-07-20T13:50:23.433Z
     - scale水平扩展/多实例/多租户; http更适合scale; shared配置、缓存
     - 数据通信，http/websocket
     - 读多？ 写多？
+    - 系统解耦: vscode在扩展崩溃时仍可编辑， clacky保证ai断联/LSP断联/未激活时仍可编辑
     - sqlite的流行表明scaling要考虑场景, zulip/jupyterhub私有部署默认支持几千用户但不scale
     - 系统的性能受第三方资源如github的fetch api的限制，设计初期要想办法避免
     - 计算密集型的feature可尝试多层架构，如大模型llm/ocr
