@@ -35,6 +35,7 @@ modified: 2021-07-20T13:50:23.433Z
     - collaborative的数据结构，冲突处理算法，客户端中心还是服务端中心
     - scale水平扩展/多实例/多租户; http更适合scale; shared配置、缓存
     - 数据通信，http/websocket
+    - 偏实时系统的断连恢复如何实现
     - 读多？ 写多？
     - 系统解耦: vscode在扩展崩溃时仍可编辑， clacky保证ai断联/LSP断联/未激活时仍可编辑
     - sqlite的流行表明scaling要考虑场景, zulip/jupyterhub私有部署默认支持几千用户但不scale

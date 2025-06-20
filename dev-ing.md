@@ -271,6 +271,16 @@ console.log(';; taskActions', currentActionId, path, store.cdePlay.enableDiffVie
 console.log(';; open-diff ', enableDiffAnimation, store.cdePlay.enableDiffView(), store.cdeReplay.isMachinePaused())
 console.log(';; qryDiffSnap ', snapshotFrameResult)
 
+ console.log(
+          ';; 📝 ',
+          filePath,
+          store.file.latestRequestFilePath(),
+          event.data?.isRefresh,
+          event.data?.isAfterWrite,
+          isFollow,
+          isOtherUserOpened,
+        );
+        
 ^((?!(42\["heartbeat|resourceMonit|refreshXtermCols|42\["multiTerminal|42\["terminalStatus|42\["activeTerminal|42\["ragStatus|42\["initAiCodeInfo)).)*$
 
 ^((?!(42\["heartbeat|resourceMonit|refreshXtermCols|42\["multiTerminal|42\["terminalStatus|42\["activeTerminal|42\["ragStatus|42\["initAiCodeInfo|42\["fileChange|42\["pullOTUpdates)).)*$
@@ -315,10 +325,13 @@ use vanilla html/css/js to create a simplistic personal profile landing page: ho
 - ensure tests pass by running  "cd packages/client && pnpm test src/__tests__/editor/CodeEditor.lsp.sepc.tsx"
 
 - write unit tests for libs/shared/utils/src/env-browser.tsx
+
+
 - ensure tests pass by running  npx nx run webapp:test src/__tests__/utils/paas-playground.test.ts
 
 - ensure tests pass by running  npx nx run shared-utils:test __tests__/env-browser.test.ts
 
+- ensure tests pass by running cd packages/server && pnpm test apps/entry/__tests__/fileUtils.spec.ts
 
 
 - you can mock state/store/data/external-dependencies, especially you can refer to this test file apps/webapp/src/__tests__/components/chat-box/action-panel.test.tsx to mock store/useTrackedStore/actions
@@ -359,6 +372,24 @@ use vanilla html/css/js to create a simplistic personal profile landing page: ho
 
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
+## 0619
+
+- [Failed to save 'file': A system error occured (EACCES: permission denied, open 'file path') · Issue #17860 · microsoft/vscode](https://github.com/Microsoft/vscode/issues/17860)
+  - i know what was the problem : i'm working with angular cli, when i generate a component using the ng g c name, if in the terminal iam as root, then the generated files belongs to the root user, when after i go to edit them using vscode as a non root i have this error !
+  - The solution is that i created the main project's folder as 'root' and then given it permissions so that i can create files in it. Those files don't have the root as the owner so it doesn't gives an error of permission denied when we try to save/create files in the editor.
+  - `sudo chmod -R <user_name> <directory_name>`
+  
+- lsp跳转到根目录外失败
+  - "file:///home/runner/app/home/runner/.nvm/versions/node/v22.16.0/lib/node_modules/typescript/lib/lib.dom.d.ts"
+  - "file:///home/runner/.cache/typescript/5.8/node_modules/%40types/node/console.d.ts"
+  - "file:///home/runner/.nvm/versions/node/v22.16.0/lib/node_modules/typescript/lib/lib.dom.d.ts"
+
+- go/python/java/ruby挂载的目录在 dependency/ 
+- .nvm及操作系统默认的目录如.cache挂载在 容器 dependency/home/ 对应 操作系统 ~/home/
+
+
+- lsp-ts跳转失败路径
+  - /home/runner/.nvm/versions/node/v22.16.0/lib/node_modules/typescript/lib/lib.dom.d.ts
 ## 0618
 
 - Static imports of lazy-loaded libraries are forbidden. Library is lazy-loaded in these files
@@ -784,14 +815,21 @@ receiveOTUpdates error  heapSort.mjs RangeError: Applying change set to a docume
 
 ## 0604
 
+.rbenv
+.sdkman
+
 - go-to-definition 容器中执行pwd、lsp返回的地址
-  - /home/runner/.pyenv/versions/3.12.8/lib/python3.12/site-packages/fastapi/applications.py
+  - `/home/runner/.nvm/versions/node/v22.16.0/lib/node_modules/typescript/lib/lib.dom.d.ts`.
+    - 实际地址 /app/data/codeZone/2025/1/6-19/@5c32b7b0-d171-4c22-b755-29697210f00d/dependency/home/.nvm/versions/node/v22.16.0/lib/node_modules/typescript/lib/lib.dom.d.ts
+  - `/home/runner/.pyenv/versions/3.12.8/lib/python3.12/site-packages/fastapi/applications.py`.
+    - 实际地址 /app/data/codeZone/2025/dependency/.pyenv/versions/3.12.8/lib/python3.12/site-packages/fastapi/applications.py
   - `/home/runner/.gvm/pkgsets/go1.23/global/pkg/mod/github.com/gin-gonic/gin@v1.9.0/gin.go`.
-    - /app/data/codeZone/dependency /home/.gvm/pkgsets/go1.23/global/pkg/mod/github.com/gin-gonic/gin@v1.9.0/gin.go
+    - 实际地址  /app/data/codeZone/2025/dependency/.gvm/pkgsets/go1.23/global/pkg/mod/github.com/gin-gonic/gin@v1.9.0/gin.go
   - `/home/runner/app/main.go`
 
 - ide-server 通过node fs.readFile读取的地址
   - /app/data/codeZone/2025/1/6-4/@f0e6d0c4-04e5-4706-b230-980466466a1b/dependency/ home/app/main.go
+  - dependency/home on /home/runner type nfs
   - 因为文件系统自身不需要 User 目录，为了模拟操作系统，就加了runner
 
 ```JS

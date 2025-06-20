@@ -210,6 +210,9 @@ modified: 2023-11-28T14:48:45.910Z
   - search commit message
   - statistics (for team)
 
+
+- image
+  - 系统提供默认的图片placeholder需要样式友好
 ## text-editing
 
 - 选择一段文字，将其中的空格替换成`-`，方便区分比较双方，如 a-bvs c-d
@@ -323,6 +326,7 @@ modified: 2023-11-28T14:48:45.910Z
   - 跳到当前可见内或之后的第一个搜索结果，尽量减少页面滚动
   - 跳到页面第一个搜索结果
 
+- search时是否支持搜索侧边栏的评论
 ## page
 
 - title

@@ -2507,6 +2507,13 @@ const playbackInfo = [
 - goAgent启动Language Server时，gopls要等80s左右才有LSP事件响应传给客户端，其他language server很快(15s)会传给客户端
   - 原因是容器预置的go版本与项目中配置的go小版本不一致，进容器后会自动更新容器预置的go版本，然后LSPServer才能启动
 
+- go/python/java/ruby挂载的目录在 dependency/ 
+- .nvm及操作系统默认的目录如.cache挂载在 容器 dependency/home/ 对应 操作系统 ~/home/
+
+- 如果把项目框架相关的具体目录如 gems 加入 .gitngore， 那文件树就不会包含这些文件，但修改这些.gitignore的文件仍会记录进.1024feature-file文件，导致上图中的 fileChangeLogs有时超级大
+  - 要解决这个问题，需要修改 1024feature-file 的更新逻辑
+
+
 ### docs-sdk
 
 - 本案例的axios为封装后的axios, baseUrl默认为“www.1024paas.com”。
