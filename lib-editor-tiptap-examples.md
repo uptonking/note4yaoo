@@ -174,6 +174,12 @@ modified: 2023-02-05T19:03:27.730Z
   - WYSIWYG rich-text editor using tiptap and Element UI for Vue2 (tiptap2 and Vue3 is in alpha)
   - new version2 support Vue3, use tiptap2 and Element Plus
 
+- https://github.com/yiitap/yiitap /MIT/202505/ts
+  - https://yiitap.pileax.ai/
+  - https://yiitap.pileax.ai/demo/vue
+  - an AI powered, Notion-style WYSIWYG rich-text block-based editor, built on top of tiptap.
+  - Supports Vue & React – Seamless integration with both frameworks.
+
 - https://github.com/lobbylabs/lobby-editor /MIT/202309/ts
   - https://lobby-editor-demo.vercel.app/
   - extendable rich text editor for Vercel's Next React framework, based on ProseMirror, built using TipTap. 
@@ -227,6 +233,10 @@ modified: 2023-02-05T19:03:27.730Z
 - https://github.com/g-bastianelli/tiptap-react-notion
   - Quick example of how we can make a 'Notion like' editor with Tiptap and react
 # utils
+- https://github.com/RomikMakavana/tiptap-pagination /MIT/202505/ts
+  - http://romikmakavana.me/tiptap-pagination/
+  - A TipTap extension that adds pagination support to your editor with table handling capabilities.
+
 - https://github.com/troop-dev/tiptap-react-render /202306/ts
   - This library renders TipTap JSON payloads in React clients without embedding the editor.
   - We were inspired by Contentful's rich-text-react-renderer tool, so we built a similar one for TipTap payloads!

@@ -63,6 +63,16 @@ modified: 2024-08-24T16:52:53.996Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [VS Code terminal font size - Stack Overflow](https://stackoverflow.com/questions/61311241/vs-code-terminal-font-size)
+- search for terminal font size and then enter the size of your choice.
+  - `"terminal.integrated.fontSize": 12`
+
 - ## TIL you can mark files as read-only in vscode by config `readonlyInclude` .
 - https://x.com/localhost_5173/status/1910612549860536812
 - If using Sonnet 3.7, you need this

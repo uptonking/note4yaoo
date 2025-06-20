@@ -679,9 +679,28 @@ modified: 2023-11-28T14:48:45.910Z
 
 - ## 
 
-- ## 
+- ## 这个 markmap 用来做思维导图很方便，读文档 markdown。 渲染 mindmap
+- https://discord.com/channels/1153437530952323186/1170178651761946654/1381681321977446521
 
-- ## 
+- ## 🧩 extension marketplace: 分发源码而不是压缩的代码，可以结合 AI  按需修改，然后再分发。 _20250516
+- https://discord.com/channels/1153437530952323186/1170178651761946654/1372872527399092295
+  - 下个版本 micro block 的渲染速度更快了，在一次预览后，就可以离线使用了
+  - micro block 可以利用 node 生态的包，只要支持 esm 格式就可以直接引用，micro block 是没有构建过程的，编写现代 es 代码，直接运行。 第二个例子引用 react json view 只需要几行代码就能实现一个 json view 组件，然后结合 eidos 的 sdk 就可以基于内部的数据扩展展示和交互。 
+  - 如果 micro block 里面使用了 eidos 相关的 API ，还是得安装了才能正常工作。 等 publish 上线就可以结合自己的数据库+ 服务端渲染实现完整的 block 发布。比如你有一个 post 表作为博客的 cms，有一个 block 是自定义的博客主题，publish 支持整体的发布。 
+- micro block 不太适合写复杂交互的组件，超过 400 行就很吃力了。  一般来说只是写一些 UI + SDK 连接的胶水组件方便在 eidos 中使用。
+
+- 工作原理是解析 import，然后自动映射为 esm.sh 的包。
+  - 动态导入的不行
+
+- 可以理解为每个 micro block 就是一个独立的 web app 有自己的域名。 local storage  那些 web api 都可以用
+  - 一般是分为 data 和 state， app 状态可以放  local storage indexed db 存储
+  - 一般来说 local storage 就够用了。
+  - 如果是批量的结构化数据可以绑定表格，以表格为数据源
+
+- https://discord.com/channels/1153437530952323186/1170178651761946654/1382011075867971665
+- 最开始 block 的概念是给文档扩展用的，micro block 是后来的。 做了一个通用的定制 UI 的解决方案
+  - 把 micro block 嵌入文档类似于在网页中嵌入 iframe，如果是想扩展文档的公式编辑能力，这种一般放在文档内部实现比较好，数据可以跟随文档存储。
+
 
 - ## 代理模式太好用了，深刻理解了依赖抽象而不是实现。
 - https://x.com/mayneyao/status/1822712428133785875

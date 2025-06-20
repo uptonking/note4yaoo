@@ -14,6 +14,7 @@ modified: 2023-09-12T09:34:51.108Z
 
 - usecases
   - logux/redux ?
+  - fwk: livestore
   - gundb
   - Datomic/CouchDB
   - undo/redo
