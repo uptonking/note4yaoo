@@ -21,11 +21,11 @@ modified: 2024-02-11T15:11:31.598Z
   - qryn polyglot user interface to explore logs, metrics and traces 
   - Grafana Explore alternative compatible with Loki, Prometheus and Tempo
 # monitoring/observability
-- https://github.com/hyperdxio/hyperdx /MIT/202402/ts
+- https://github.com/hyperdxio/hyperdx /MIT/202506/ts
   - https://hyperdx.io/
   - open source observability platform unifying session replays, logs, metrics, traces and errors powered by Clickhouse and OpenTelemetry.
   - open source and developer-friendly alternative to Datadog and New Relic.
-  - 依赖@clickhouse/client、@hyperdx/lucene、express-session、mongoose、passport、zod、nextjs、mantine6、jotai、swr、tanstack-table、rrweb
+  - 依赖rrweb、@clickhouse/client、@hyperdx/lucene、express-session、mongoose、passport、zod、nextjs、mantine6、jotai、swr、tanstack-table
   - We provide a set of SDKs and integration options to make it easier to get started with HyperDX, such as Browser, Node.js, and Python
   - HyperDX is compatible with OpenTelemetry, a vendor-neutral standard for instrumenting your application
 
@@ -33,6 +33,7 @@ modified: 2024-02-11T15:11:31.598Z
   - https://logfire.pydantic.dev/docs/
   - From the team behind Pydantic, Logfire is an observability platform built on the same belief as our open source library
   - Python-centric Insights: From rich display of Python objects, to event-loop telemetry, to profiling Python code and database queries
+  - 未使用rrweb
   - SQL: Query your data using standard SQL
   - Pydantic Integration: Understand the data flowing through your Pydantic models and get built-in analytics on validations.
 

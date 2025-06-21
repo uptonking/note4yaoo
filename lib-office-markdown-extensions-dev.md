@@ -10,6 +10,10 @@ modified: 2021-06-02T15:29:52.268Z
 # guide
 
 - 集合markdown的灵活性和asciidoc的规范性
+# 🆚 comparison for md parser
+- marked /ts
+- markdown-it /js
+- remark /js
 # mdx
 - knobs for components
   - 在组件预览图周围显示修改配置属性值的工具条

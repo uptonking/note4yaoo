@@ -91,7 +91,7 @@ modified: 2021-06-02T16:45:56.858Z
   - @mdx-js/mdx和xdm都依赖 remark-parse、remark-rehype的unified生态，还依赖 vfile、estree-walker
 # faq-not-yet
 
-## remark vs markdown-it
+## 🆚 remark vs markdown-it
 
 - ### [Consider remark for markdown in svelte](https://github.com/pngwn/MDsveX/issues/20)
 - The decision to use markdown-it was relatively arbitrary when I put this together initially

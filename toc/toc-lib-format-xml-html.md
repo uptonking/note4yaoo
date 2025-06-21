@@ -50,4 +50,8 @@ modified: 2023-09-19T07:24:15.040Z
   - https://wkhtmltopdf.org/
   - wkhtmltopdf and wkhtmltoimage are command line tools to render HTML into PDF and various image formats using the QT Webkit rendering engine. 
   - These run entirely "headless" and do not require a display or display service.
+# diff-html
+- https://github.com/markedjs/html-differ /MIT/202506/js
+  - Compares two HTML strings.
+  - html-differ does not check the validity of HTML, but compares them using the above shown criteria and specified options
 # more

@@ -97,7 +97,7 @@ modified: 2021-07-20T13:50:23.433Z
 
 - 🚀 产品落地
   - 侧重表格的cms, 内容创作与管理
-  - 运营数据仪表板
+  - 运营数据仪表板(bi)
   - sharing table/data pieces/snippets
   - 个人数据管理, 开放api，允许其他app获取，参考ckan
   - tags
@@ -144,7 +144,7 @@ modified: 2021-07-20T13:50:23.433Z
 
 - 通用能力/features
   - collab, realtime
-  - version-history + Sync
+  - version-history + sync
   - 操作与回放, time travel，倍速播放
   - automation
   - ai
@@ -245,11 +245,15 @@ modified: 2021-07-20T13:50:23.433Z
 
 - ivm/incremental-view-maintenance
   - zero-sync
+  - electric-sql/d2ts
   - web前端的reactive实现
   - 数据库的materialized view
   - event sourcing
   - bundler的热加载，如turbopack
   - 编译器的热更新
+
+- event-sourcing
+  - livestore
 
 - 系统提供很多配置项的设计
   - webpack

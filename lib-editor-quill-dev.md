@@ -33,6 +33,7 @@ modified: 2023-02-09T18:23:23.288Z
   - ERPNext
   - devextreme-quill
   - Grammarly Editor
+  - opentiny/tiny-editor, 作者在华为工作
   - 若依管理系统(quill.v1)
   - more: miro
   - [vaadin rich-text-editor is built with Quill](https://vaadin.com/docs/latest/components/rich-text-editor)

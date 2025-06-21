@@ -267,6 +267,17 @@ modified: 2023-09-12T09:36:25.608Z
 # discuss-rrweb
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🛜 Does rrweb currently support interception of XHR?
+- https://rrweb.slack.com/archives/C01BLPP20MV/p1748332378377799
+- The XHR itself isn't significant by itself in terms of a replay; 
+  - in fact all Javascript code is ignored during replay.
+  - Recording of network activity (and e.g. the console logging) is useful for diagnostics, but is not core to rrweb.  
+  - I know there is a console plugin, and believe there is some sort of network plugin?  Otherwise you could work out how to intercept the XHR and add your own custom event to the rrweb events at record time using `addCustomEvent`
+
 - ## [iframe录制与回放 · Issue #654 · rrweb-io/rrweb _202108](https://github.com/rrweb-io/rrweb/issues/654)
 - 回放的时候不会执行 JS 代码。
 
