@@ -62,6 +62,15 @@ modified: 2023-01-17T19:13:01.845Z
   - Any-Sync uses end-to-end encryption so that backup nodes store encrypted data that they cannot read. Creators control encryption keys; there is no central registry of users
   - Simultaneous support of p2p and remote communication
 
+- https://github.com/bholmesdev/simple-sync-engine /NALic/202503/ts/inactive
+  - 🌰 A SQLite-backed sync engine you can build yourself
+  - We use SQLite on the client and server, and use a simplified version of Replicache's "push" and "pull" model to sync changes.
+  - This project is a teaching tool, not the bedrock of your next side hustle.
+  - To make this project simple, we made a lot of assumptions. 
+  - https://x.com/BHolmesDev/status/1897299669132415403
+    - I'm using SQLite in the browser + SQLite on the backend. Whenever you run a "mutation" (ex. createTask), it runs that query in the browser and tells the server to do the same. Cool to use the same tech in both places
+    - for snapshot, My solution relies on an event log to catch up clients on the latest updates. I know Replicache also uses a data snapshot to remove the need to store a full history log
+
 - verdant/lo-fi /7Star/MIT/202211/ts
   - https://github.com/a-type/verdant
   - https://github.com/a-type/lo-fi
@@ -142,7 +151,7 @@ modified: 2023-01-17T19:13:01.845Z
   - Holochain enables developers to build applications that run on just the devices of the participants without relying on centralized servers or blockchain tokens and it provides a robust and efficient means of managing data.
   - This repository contains the Holochain core libraries, not the runtime intended for end-users of Holochain applications.
 
-- https://github.com/saarw/flushout /201910/ts
+- https://github.com/saarw/flushout /MIT/201910/ts/NoDeps/inactive
   - 💡 a distributed data model based on event sourcing. 
   - Collaborative applications use it for clients that need responsive interaction without network delay, or need to function offline.
   - Clients interact with a local proxy of a remote master model without accessing the network. They can then periodically flush changes from the proxy to the master in the background when the network is available.

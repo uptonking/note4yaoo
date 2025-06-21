@@ -297,7 +297,15 @@ modified: 2024-01-07T05:09:14.413Z
 
 - ## 
 
-- ## 
+- ## Sometimes that trade-off is ok and even what you want. How many direct conflicts are there in an issue tracker? 
+- https://x.com/aboodman/status/1934363459921309790
+- Eventual consistency is the big tradeoff as you say. It really is about having to expose concurrent edits in the UX vs higher latency/lower avail.
+
+- Replicache/Zero actually implement a stronger form – Transactional CC, which adds atomic interactive transactions that are causal-consistent
+
+- My experience is that it comes up really frequently. Even now in Zero when we have bugs that break cc we get bug reports on them quickly. People just have a hard time internalizing non-sequentiality of operations.
+  - Beyond CC, Zero has several other new features: interactive transactions, isomorphic transactions, and query-driven sync. Of course it hasn’t been possible to do what Zero does for five years, otherwise there would have been no reason to start it 
+  - Personally I really prefer programming with interactive, strongly consistent transactions. That was the core motivation for Replicache. Zero makes the Replicache model more practical by adding a really nice partial sync impl.
 
 - ## How is this sync engine different than `useOptimistic` and friends?
 - https://x.com/aboodman/status/1905209548748845133

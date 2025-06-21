@@ -866,7 +866,7 @@ modified: 2023-09-12T09:37:22.608Z
 
 ## distributed-es
 
-- https://github.com/saarw/flushout /MIT/201910/ts/NoDeps
+- https://github.com/saarw/flushout /MIT/201910/ts/NoDeps/inactive
   - a distributed data model based on event sourcing. 
   - Collaborative applications use it for clients that need responsive interaction without network delay, or need to function offline.
   - Clients interact with a local proxy of a remote master model without accessing the network. They can then periodically flush changes from the proxy to the master in the background when the network is available.

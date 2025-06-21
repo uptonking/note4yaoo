@@ -241,7 +241,9 @@ modified: 2021-07-20T13:50:23.433Z
   - zerosync: query-based sync
   - powersync
   - triplit
-  - sqlsync/Graft
+  - sqlsync/Graft(rust)
+  - evolu
+  - garden-co/jazz
 
 - ivm/incremental-view-maintenance
   - zero-sync
