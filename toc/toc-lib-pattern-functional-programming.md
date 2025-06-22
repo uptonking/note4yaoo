@@ -251,6 +251,11 @@ modified: 2023-07-26T11:23:38.282Z
   - allow you to add hooks to any function.
   - Internally, hookuspocus uses WeakMaps if possible to keep states between runs (and falls back to simple Maps).
 # games/ecs
+- https://github.com/pmndrs/koota /ISC/202506/ts
+  - Koota is an ECS-based state management library optimized for real-time apps, games, and XR experiences. 
+  - Traits are the building blocks of your state. They represent slices of data with specific meanings.
+  - Koota supports relationships between entities using the relation function. Relationships allow you to create connections between entities and query them efficiently.
+
 - https://github.com/LastOliveGames/becsy /ts/NoDeps
   - https://lastolivegames.github.io/becsy/
   - A multithreaded Entity Component System (ECS) for TypeScript and JavaScript, inspired by ECSY and bitecs.

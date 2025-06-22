@@ -79,7 +79,18 @@ modified: 2024-01-25T13:33:23.267Z
 
 - ## 
 
-- ## 
+- ## 🛍️ [Apps Marketplace · Issue · webstudio-is/webstudio _202311](https://github.com/webstudio-is/webstudio/issues/2648)
+  - This marketplace will facilitate the enhancement of websites with additional functionalities and features, ranging anywhere from email tools through to new ecommerce integrations. 
+
+- Similar thing to figma apps, they are effectively standalone web apps loaded via iframe, hosted by the 3rd-party provider but with access to project data and api to change it
+
+- iframes are a terrible solution, since they do not get resized based on their content the way a div does.
+  - Webflow is doing the same thing, and it works fine for them. When implementing an app you choose the window size, small, medium, large. I believe you can even change between sizes from within the app (if I remember correctly).
+  - IFrames are the safest way to integrate 3rd party application into a web-app. Importing 3rd party scripts into the main-window would be a security nightmare.
+
+- plugins could be used to extend the range of available elements/components in the Webstudio Editor — i.e., elements that use custom calculation logic (eg., custom calculators, countdowns, counters), elements pre-programmed to interface with specific APIs (eg., 'Mailchimp newsletter subscription element', 'Google Reviews widget', 'Instagram Feed Gallery', etc.), and more.
+
+- Apps is more about custom UI in the builder rather than custom components. Both a planned though.
 
 - ## is there some js library that makes main<>iframe page communication more maintainable? 
 - https://x.com/aidenybai/status/1921645175757041912

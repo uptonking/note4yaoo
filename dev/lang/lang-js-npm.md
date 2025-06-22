@@ -303,7 +303,8 @@ npm unlink
 # discuss-npm
 - ## 
 
-- ## 
+- ## npm Failed to remove some directories
+- 原因是vpn未开启enhanced mode，所以在命令行执行npm命令时有时下载/删除失败
 
 - ## Problem: Unused npm dependencies. 
 - https://x.com/housecor/status/1904571512549482657

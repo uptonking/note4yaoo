@@ -56,8 +56,8 @@ modified: 2022-08-21T10:02:05.129Z
   - Designed with a local-first approach, it helps teams communicate, organize, and manage projects—whether online or offline.
   - 🐛 cons: 不支持导出, 不支持undo/redo, 不支持database预览(只能在单独页面打开)
   - 🌹 feat: database支持多种视图board/calendar
-  - 前端依赖tiptap、kysely、fractional-indexing-jittered、zod3、ulid、yjs、radix-ui、floating-ui、@tanstack/react-query.v5、@tanstack/react-virtual、cmdk、date-fns、re-resizable、react-dnd、react-hook-form
-  - web依赖@sqlite.org/sqlite-wasm
+  - 前端依赖tiptap、kysely、fractional-indexing-jittered、zod3、ulid、yjs、radix-ui、tailwind、floating-ui、@tanstack/react-query.v5、@tanstack/react-virtual、cmdk、date-fns、re-resizable、react-dnd、react-hook-form
+  - web依赖@sqlite.org/sqlite-wasm、comlink， 未使用nextjs
   - desktop依赖@electron-forge、better-sqlite3
   - server依赖fastify、kysely、bullmq、langchain、pg、sharp
   - Rich Text Pages: Create documents, wikis, and notes using an intuitive editor, similar to Notion.

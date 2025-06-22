@@ -386,6 +386,9 @@ modified: 2020-12-28T12:24:09.275Z
   - [Change license from MIT to AGPL V3_202307](https://github.com/webstudio-is/webstudio/pull/1980)
   - [Apps Marketplace](https://github.com/webstudio-is/webstudio/issues/2648)
     - Similar thing to figma apps, they are effectively standalone web apps loaded via iframe, hosted by the 3rd-party provider but with access to project data and api to change it
+    - iframes are a terrible solution, since they do not get resized based on their content the way a div does.
+    - Webflow is doing the same thing, and it works fine for them. When implementing an app you choose the window size, small, medium, large. I believe you can even change between sizes from within the app (if I remember correctly).
+    - IFrames are the safest way to integrate 3rd party application into a web-app. Importing 3rd party scripts into the main-window would be a security nightmare.
 
 - https://github.com/dotenx/dotenx /apache2/202402/ts/go
   - No-code and Low-code all-in-one platform to build landing pages, websites, web applications, APIs, automations. 

@@ -20,7 +20,10 @@ modified: 2024-01-02T08:59:51.343Z
 
 ```shell
 # to see which files are included
-tsc --listFiles
+npx tsc --listFiles
+
+# 查看日志
+npx tsc --build --verbose
 
 ```
 
@@ -87,6 +90,16 @@ tsc --listFiles
 
 - 202501: I guess to make the command output all effective compiler options is not easy, as code for that seems to be distributed in the codebase.
   - Meaning as of today, tsc does not compute the full list of compiler options at some central place (which could just be printed via --showConfig).
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## [Add template variable `${configDir}` (name to be determined) for file path substitution · Issue · microsoft/TypeScript _202402](https://github.com/microsoft/TypeScript/issues/57485)
+  - Today when all the options that are file paths, are always relative to config they are specified in. But that also means that if you are extending tsconfig and you want eg say outDir to be same name but relative to your config, you have to re-specify it in the config. 
+  - The proposal is to use template variable in base config which would mean that the resulting file paths are relative to final config directory. 
+
+- Looks like will be a part of TS 5.5 (or at least is in the 5.5 Beta announcement)
 # discuss
 - ## 
 

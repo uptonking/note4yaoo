@@ -367,7 +367,12 @@ modified: 2023-04-04T22:36:31.529Z
   - Node.js, ReactNative
   - Inside existing worker threads (Threading inside Threads)
 
-## scheduler/dag/topo-sort
+## scheduler/DAG/topo-sort
+
+- https://github.com/pmndrs/directed /MIT/202506/ts
+  - A flexible, minimal scheduler written in TypeScript. 
+  - Directed is powered by a directed acyclic graph (DAG) allowing for dependency-based scheduling.
+  - Directed supports a functional and class API depending on what is comfy for you.
 
 - https://github.com/nicolas-van/modern-async /MIT/202410/js
   - https://nicolas-van.github.io/modern-async/

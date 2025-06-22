@@ -23,5 +23,7 @@ modified: 2025-06-21T19:10:57.709Z
 # draft
 
 # dev-xp
-
+- build/run
+  - 顶层的npm run build执行时可能出现部分子包未正确打包构建的问题，可收到执行子包的构建
+  - vite访问站点出现import path not found时，发现由于网络问题部分node_modules下的包只下载了一部分不完整
 # more
