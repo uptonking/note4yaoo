@@ -1461,7 +1461,7 @@ modified: 2023-06-23T12:46:53.288Z
   - Language Server integration for CodeMirror6
   - This plugin enables code completion, hover tooltips, and linter functionality by connecting a CodeMirror 6 editor with a language server over WebSocket.
   - [feat: Transport agnostic _202205](https://github.com/FurqanSoftware/codemirror-languageserver/pull/13)
-    - It now accepts any object implementing `Transport`.
+    - It now accepts any object implementing `Transport`. I have tried it with Event Emitter and WebSockets transports and both work fine
   - [Sharing lsp clients between mutliple editors _202204](https://github.com/FurqanSoftware/codemirror-languageserver/issues/11)
     - I have added preliminary support for reusing the LSP client across multiple plugin instances.
   - 📝 [Using Language Servers with CodeMirror 6 _202103](https://hjr265.me/blog/codemirror-lsp/)

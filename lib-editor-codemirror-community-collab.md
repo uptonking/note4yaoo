@@ -120,8 +120,7 @@ CodeMirror.commands.undo = function(cm) {
 
 - There’s no specification for these, but they won’t change, because that would break things for people. 
   - The elements in the array represent sections of the old document. 
-  - 💡💡 Plain numbers are unchanged ranges. Arrays are replacements, where the number at the start of the array is the amount of deleted text, and the strings following that is the inserted text, split by line. 
-  - So [0, "", ""] inserts a line break, [1] deletes a character, etc.
+  - 💡💡 Plain numbers are unchanged ranges. Arrays are replacements, where the number at the start of the array is the amount of deleted text, and the strings following that is the inserted text, split by line. So [0, "", ""] inserts a line break, [1] deletes a character, etc.
   - `[5, [0, "new "], 7]` is a change that, inserts “new ” at position 5 in a length-12 document. “skip 5, replace 0 with the string ‘new’, skip 7”. If the change is at the very end of the document, the skip at the end will not be there.
 - While most editing changes will, obviously, make only a single modification to the document. it’s not hard to create a transaction that makes several changes.
 # discuss-undo/history

@@ -316,7 +316,6 @@ use vanilla html/css/js to create a personal profile landing page: homepage show
 
 use vanilla html/css/js to create a simplistic personal profile landing page: homepage shows a big welcoming greeting, then shows 2 example personal projects, then a simple get in touch example email below it
 
-
 - line 290 in file  is not tested, please write unit tests to test it
 - line 160-174, 181-185 in file apps/webapp/src/utils/paas-playground.ts
  is not tested, please write unit tests to test it
@@ -326,17 +325,13 @@ use vanilla html/css/js to create a simplistic personal profile landing page: ho
 
 - write unit tests for libs/shared/utils/src/env-browser.tsx
 
-
 - ensure tests pass by running  npx nx run webapp:test src/__tests__/utils/paas-playground.test.ts
 
 - ensure tests pass by running  npx nx run shared-utils:test __tests__/env-browser.test.ts
 
 - ensure tests pass by running cd packages/server && pnpm test apps/entry/__tests__/fileUtils.spec.ts
 
-
 - you can mock state/store/data/external-dependencies, especially you can refer to this test file apps/webapp/src/__tests__/components/chat-box/action-panel.test.tsx to mock store/useTrackedStore/actions
-
-
 
 - you can mock state/store/data/external-dependencies/modules, especially you can refer to this test file apps/webapp/src/__tests__/components/cde-header/run-status-button.test.tsx to mock store/useTrackedStore/actions
 - you can use jest and @testing-library/react, 
@@ -372,6 +367,15 @@ use vanilla html/css/js to create a simplistic personal profile landing page: ho
 
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
+
+## 0623
+
+- [CSS Triangle with border trick | CSS-Tricks](https://css-tricks.com/snippets/css/css-triangle/)
+- [One of the most ubiquitous CSS tricks. How do you implement this arrow? : r/webdev _202308](https://www.reddit.com/r/webdev/comments/164kvpu/one_of_the_most_ubiquitous_css_tricks_how_do_you/)
+  - these days I'd likely use a `clip-path` because it seems to alias better.
+  - What do you mean by alias better?
+  - Sometimes the border trick can leave a subpixel gap on certain screen resolutions or zoom levels. The gap is because the position of the element vs. the pseudoelement is calculated slightly differently, so it has a noticeable gap. This is called aliasing. It's the same effect in video games when a 3d model's edges have sharp pixels, and to smooth it out you use anti-aliasing.
+
 ## 0619
 
 - [Failed to save 'file': A system error occured (EACCES: permission denied, open 'file path') · Issue #17860 · microsoft/vscode](https://github.com/Microsoft/vscode/issues/17860)
@@ -387,9 +391,9 @@ use vanilla html/css/js to create a simplistic personal profile landing page: ho
 - go/python/java/ruby挂载的目录在 dependency/ 
 - .nvm及操作系统默认的目录如.cache挂载在 容器 dependency/home/ 对应 操作系统 ~/home/
 
-
 - lsp-ts跳转失败路径
   - /home/runner/.nvm/versions/node/v22.16.0/lib/node_modules/typescript/lib/lib.dom.d.ts
+
 ## 0618
 
 - Static imports of lazy-loaded libraries are forbidden. Library is lazy-loaded in these files
@@ -414,7 +418,9 @@ test("loads and displays greeting", async () => {
   });
 });
 ```
+
 ## 0617
+
 - 无法跳转的场景: 普通切换文件
 - 未失焦的场景下，刷新页面不能恢复光标位置
 
@@ -429,6 +435,7 @@ test("loads and displays greeting", async () => {
   - In this post, I'll talk how you can do it with github actions. 
 
 ## 0616
+
 - 去掉自动滚动，ai滚动到某一行的事件, 调整diff动画的逻辑
 - 流式输出/修改文件，的ui上要显示diff绿色
 - git diff计算:  输入 时间戳， 返回 时间戳的内容变化
@@ -450,8 +457,7 @@ stts.dao.channel().send('getPlaybackInfo')
   },
   "playbackData": {
     "playbackData": [],
-    "historyBaseData": [
-      {
+    "historyBaseData": [{
         "_id": "684657f4d808bf3cbf5e43f3",
         "dockerId": "803690894141677568",
         "path": "README.md",
@@ -471,8 +477,7 @@ stts.dao.channel().send('getPlaybackInfo')
       }
     ]
   },
-  "agentUsers": [
-    {
+  "agentUsers": [{
       "agentUserId": "clacky",
       "userId": "728372792453660672",
       "userInfo": {

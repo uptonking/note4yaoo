@@ -12,6 +12,16 @@ modified: 2025-01-05T15:00:51.509Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🆚 [What *is* the difference between "signature information" ( `signature_help()` ) and "hover information" ( `hover()` )? · neovim/neovim · Discussion _202310](https://github.com/neovim/neovim/discussions/25711)
+  - There's seemingly no pattern to it, except that `hover()` is more useful in almost all cases. 
+
+- This is explained in the LSP specification. Beyond that, it's up to the server what they show exactly, and different servers can and will have (vastly) different contents.
+  - Signature help represents the signature of something callable. There can be multiple signature but only one active and only one active parameter.
+
 - ## [Should initialize result be sent after build? · Issue · eclipse-jdtls/eclipse.jdt.ls _201708](https://github.com/eclipse-jdtls/eclipse.jdt.ls/issues/337)
   - Currently eclipse.jdt.ls initialization flow triggers an asynchronous build job which take some time. However capabilities are sent to client immediately.
   - There is no guarantee that the capabilities are really available since the build process might fail.

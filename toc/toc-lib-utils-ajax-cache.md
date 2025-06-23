@@ -74,4 +74,12 @@ modified: 2023-02-07T09:43:01.972Z
   - Ccache, short for Conditional Cache, works like HTTP conditional requests, providing client-side caching without sacrificing consistency.
   - Ccache caches data locally, and for subsequent requests, it sends the key with the cached data's ETag to Redis. If the key's data in Redis hasn't changed, Redis returns "no change" and Ccache uses the locally cached data.
   - Redis offers client-side caching to reduce latency and Redis load. However, it only guarantees weak consistency. For example, when clients request different backend servers, they can receive inconsistent data.
+# rpc
+- https://github.com/open-rpc/client-js /131Star/apache2/202301/ts/inactive
+  - A browser-compatible JSON-RPC client with multiple transports: EventEmitter, HTTP/HTTPS, WebSocket
+  - https://github.com/open-rpc/server-js /apache2/202505/ts
+    - JSON-RPC 2.0 + OpenRPC Server implementation that supports multiple transport protocols. 
+  - https://github.com/open-rpc/playground /apache2/202409/ts/inactive
+    - https://playground.open-rpc.org/
+    - This is a tool for editing, validating and previewing OpenRPC documents.
 # more
