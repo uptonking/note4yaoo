@@ -18,9 +18,16 @@ modified: 2025-06-21T19:12:34.201Z
 # discuss-author/internals
 - ## 
 
-- ## 
+- ## In @colanode each change is tracked as Yjs (CRDT) transaction and stored locally before eventually synced with the server. _202506
+- https://x.com/hakanshehu/status/1937402812255682743
+  - The server assigns a sequential number for each transaction to guarantee ordering of changes. 
+  - Colanode clients use a cursor based syncing (similar as Kafka) and process/sync all transactions in order locally.
+  - For performance reasons these clients do not store all individual transactions locally, but only the final merged state. This approach saved storage for users. Only confirmed transactions from the server are merged in the final state. Pending local transactions are stored in a separate queue before syncing with the server.
+  - With undo/redo you basically need to revert a transaction. This gets tricky when you need to send the revert to other clients which did or didn't yet sync that transaction locally. Since the clients merge all transactions in one final state, you can't know which specific transaction to revert.
+  - 💡 Given the constrains, undo/redo in Colanode is implemented as a new transaction which makes the necessary changes to bring back the document to a previous state. It uses the `UndoManager` provided by Yjs which tracks only the current user changes but appends the undo/redo operations as a new update for the document.
+  - The downside of this approach is that it can create a lot of transactions if the user frequently undos/redos a document (each one is a new transaction that needs to be synced). But, we had this problem before (each small changes creates a new transaction) and we are working on an optimization for this.
 
-- ## @tan_stack /query is not meant to be used only for fetching the data from a server. 
+- ## @tan_stack/query is not meant to be used only for fetching the data from a server. 
 - https://x.com/hakanshehu/status/1935466602998415516
   - At @colanode we use it to perform queries and mutations in a local SQLite database (both in web and electron) and it has been a great developer experience.
   - Since you cannot access the db directly from UI, you need to send a message (query or mutation) to the main process and handle the response. This communication is async, similar to a typical frontend - backend request. It makes perfect sense to use an async state management. 
