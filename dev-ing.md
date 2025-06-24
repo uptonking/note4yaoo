@@ -368,6 +368,11 @@ use vanilla html/css/js to create a simplistic personal profile landing page: ho
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
 
+## 0624
+
+- [StatusCodes. Status499ClientClosedRequest Field (Microsoft. AspNetCore. Http) | Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.http.statuscodes.status499clientclosedrequest?view=aspnetcore-9.0)
+  - HTTP status code 499. This is an unofficial status code originally defined by Nginx and is commonly used in logs when the client has disconnected.
+
 ## 0623
 
 - [CSS Triangle with border trick | CSS-Tricks](https://css-tricks.com/snippets/css/css-triangle/)

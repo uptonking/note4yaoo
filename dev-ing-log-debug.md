@@ -33,15 +33,21 @@ modified: 2023-06-14T00:53:15.226Z
   - 对于mq和db，最好不要放在docker或k8s的pod中运行，因为放在容器中会涉及网络转发和持久化寻址，最好直接放在物理机或虚拟机中运行
   - 一般独占机器，k8s的独占节点模式性能会好一点
 # issues-devops/testing
+- 先找 容器id，再找ip， 再ssh登录
+
 - jest跑单个文件的测试能通过，但nx run-many并发跑多个子项目的测试失败了，原因是包含异步逻辑的测试在电脑性能不高时会超时或失败，
   - 临时方案是退出电脑上其他占内存或cpu的程序，这样jest并发测试可利用的资源就多了，可能可以通过
-
 # issues-server
 - 事故时间段10min内，服务端日志缺失的原因，可能是服务器宕机，
   - 也可能是客户端网络异常，如客户端能打日志到日志系统，但连接海外服务器失败
   - 可考虑在业务侧添加定时网络连通性测试逻辑
 
 - server重启的原因一般是内存占满，cpu占满一般不会不会导致k8s的容器重启
+
+- 容器内的vnc经常连接失败
+  - 排查定位到容器OOM时暴露的url会自动失效而不可用， 宿主NFS IO Block占用高导致容器OOM
+
+- agent的socket连接经常断联，原因是redis缓存连接时间过长
 ## 
 
 ## 
@@ -81,6 +87,7 @@ modified: 2023-06-14T00:53:15.226Z
 
 - 文件系统的同步逻辑
   - fsnotify不能监听NFS的文件变化，新增的文件夹不能监听子文件或子文件夹的变化，需要ideServer手动通知新增的文件夹
+
 ## cloud browser方案
 
 - 基于 playright + novnc 的方案
@@ -176,6 +183,18 @@ modified: 2023-06-14T00:53:15.226Z
   - 如事件超时、导致进入页面卡在loading、导致打开编辑器卡在loading、文件树空白
 
 - 🤔 ide-server的cpu占用高的原因，是浏览器客户端和agent客户端的连接逻辑有缺陷，若客户端连接ide-server未成功时，会每隔5s无限发送连接请求，如果ide-server本身cpu就很高而连不上，后续大量新的连接请求会继续连不上，反而会导致ide-server崩溃
+# issues-editing
+
+## agent_write_file: Applying change set to a document with the wrong length
+
+```JS
+const currentDoc = changes.apply(textDoc).toString();
+```
+
+- changes: 从缓存读出的内容未处理 \r\n
+  - textDoc: 通过Text.of(content)的content处理了 \r\n
+  - 需要保持处理逻辑的一致性
+  - 最好在数据修改入口处今早修改
 # issues/bugs-fixing
 - tricks
   - 怀疑localStorage占用是否达到限制，console会出现类似reach limit的信息，或用浏览器的private模式测试
