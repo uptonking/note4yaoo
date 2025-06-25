@@ -156,11 +156,13 @@ modified: 2021-05-06T09:38:31.520Z
   - transactionFilter
   - stateField.update, 可以不使用值，只使用update逻辑
 
-- cm-undo的粒度是什么，如何触发一次undo来撤销指定几个transaction
-
 - cmdk-undo
   - 正向触发流程: originalDoc > newDoc > showDiff > hideDiff
   - undo更好的实现方式是手动控制tr的合并，更简单的这种方式是手动触发undo的逻辑
+  - cm-undo的粒度是什么，如何触发一次undo来撤销指定几个transaction
+
+- tooltip如何调试时让内部元素一直显示
+  - 可以手动设置tooltip的位置❓
 
 - ❓ 同事实现编辑器内嵌入卡片在滚动时固定在顶部或底部的功能碰到困难
   - 原因是嵌入卡片在滚动到可视区外时卡片的锚点anchor消失了，导致卡片也消失了

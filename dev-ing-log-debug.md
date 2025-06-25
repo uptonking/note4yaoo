@@ -194,7 +194,16 @@ const currentDoc = changes.apply(textDoc).toString();
 - changes: 从缓存读出的内容未处理 \r\n
   - textDoc: 通过Text.of(content)的content处理了 \r\n
   - 需要保持处理逻辑的一致性
-  - 最好在数据修改入口处今早修改
+  - 最好在数据修改入口处尽早修改，即在输入处或事件数据源处修改，手动拼接不可靠不一致
+- 对编辑器内容的操作优先使用changes.apply，而不是手动拼接字符串，
+  - ai的输入默认不可靠如换行符混乱需要先normalize再apply
+
+- 排查花了很多时间，定位问题采用的方法是，在异常位置前将异常相关的输入参数/内容持久化到`~/../.paas` 目录，直接读取paas目录的内容在本地稳定复现问题来确定异常位置及原因
+
+- 对比内容差异采取的方法是，普通for循环逐个自负对比，找到差异处打印出unicode字符，因为空白字符视觉上无法区分
+  - 另一种方法是使用 `cat -v file1.js` ，CR会显示为`^M`，LF会显示为`$`
+  - grep -U $'\r' file1.js 也可以查找
+  - `cat -v test.js | grep '^M'`
 # issues/bugs-fixing
 - tricks
   - 怀疑localStorage占用是否达到限制，console会出现类似reach limit的信息，或用浏览器的private模式测试

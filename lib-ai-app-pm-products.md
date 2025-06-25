@@ -42,7 +42,7 @@ modified: 2025-03-22T16:10:24.856Z
 
 ```markdown
 - apps,       tabs,  chats, pricing
-- cursor,     200,   50,    $20
+- cursor,     2k,    50,    $20
 - windsurf,   any,   100,   $15
 - trae,       5k,    1000,  $10
 - gh-copilot, 2k,    50,    $10
