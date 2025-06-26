@@ -89,6 +89,10 @@ git branch -u origin/my_branch
 # To rename the current branch
 git branch -m newname
 
+# git 列出变更文件 --porcelain 和 --short/-s 相似，但易解析、兼容性更好
+git status --porcelain
+# Show untracked files
+git status -u
 ```
 
 - commit相关

@@ -213,6 +213,21 @@ modified: 2021-05-25T09:41:29.066Z
 - https://github.com/openauthjs/openauthjs /202411/ts
   - openauthjs
 
+## auth-solutions
+
+- https://github.com/stack-auth/stack-auth /5.9kStar/MIT/202506/ts
+  - https://stack-auth.com/
+  - Open-source Auth0/Clerk alternative
+  - It is developer-friendly and fully open-source (licensed under MIT and AGPL). MIT for the client libraries, AGPL for the serverside
+  - Our managed service is completely optional and you can export your user data and self-host, for free, at any time.
+  - We support Next.js, React, and JavaScript frontends, along with any backend that can use our REST API. 
+  - Authentication components that support OAuth, password credentials, and magic links
+  - Multi-tenancy & teams
+  - Role-based access control
+  - Impersonate(扮演) users for debugging and support, logging into their account as if you were them
+  - You can now open the dev launchpad at http://localhost:8100. From there, you can navigate to the dashboard at http://localhost:8101, API on port 8102, demo on port 8103, docs on port 8104, Inbucket (e-mails) on port 8105, and Prisma Studio on port 8106. 
+  - [Show HN: Stack, an open-source Clerk/Firebase Auth alternative | Hacker News _202404](https://news.ycombinator.com/item?id=40031090)
+
 ## auth-jwt
 
 - https://github.com/rajeshpillai/node-jwt-step-by-step /202005/js

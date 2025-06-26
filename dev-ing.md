@@ -291,7 +291,7 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
 ^(?!42\["resourceMonit).* 
 
 <!-- 观测云搜索 ide-server -->
--multiTerminalHeartBeat -all\:multiTerminal -"[fromMQ] multiTerminal" -"[toMQ]paas:multiTerminal" -"] multiTerminal, {" -all\:activeTerminal -"] activeTerminal, {"  -"[toMQ]paas:multiTerminalCmd" -"[fromMQ] terminalStatus" -all\:initAiCodeInfo -"[fromMQ] lspStatus" -"[fromMQ] portsChanged" -"[fromMQ] ragStatus" -"] ragStatus data: [" -"all:ragStatus" -"[followingFocusComponent]"
+-multiTerminalHeartBeat -all\:multiTerminal -"[fromMQ] multiTerminal" -"[toMQ]paas:multiTerminal" -"] multiTerminal, {" -all\:activeTerminal -"] activeTerminal, {"  -"[toMQ]paas:multiTerminalCmd" -"[fromMQ] terminalStatus" -"appendMultiTerminalProcessName res" -"appendMultiTerminalCmdReply res" -all\:multiTerminalProcessName -all\:initAiCodeInfo -"[fromMQ] lspStatus" -"[fromMQ] portsChanged" -"[fromMQ] ragStatus" -"] ragStatus data: [" -"all:ragStatus" -"[followingFocusComponent]"
 
 -"toMQ fileContentUpdate begin" -"[toMQ]paas:filePull"  
 -agentAppendFile -"writeFile prepared"
@@ -306,8 +306,7 @@ add an action to run "npm install -ddd" and another action to add datetime at to
 
 add action to create a route /nextjs with nextjs changelog content in it , and show nextjs link in home page, when clicking the link, jump to /nextjs route
 
-add action to create quickSort1.mjs and add 3 test cases in it
-
+··
 add action to create quickSort1.mjs and try to implement quick sort algorithm in less than 40 lines
 
 use create-react-app to create a react-router v6 example webapp in typescript: homepage shows a list of frontend frameworks like react/vue/angular, when clicking the framework, navigate to the route to show its introduction

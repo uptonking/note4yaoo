@@ -146,6 +146,26 @@ modified: 2024-08-24T16:28:20.515Z
 
 - I want an LLM which uses an LSP to gather more context.
   - Aider uses Treesitter to improve code generation.
+# discuss-terminal-ai
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Google introduces Gemini CLI, a light open-source AI agent that brings Gemini directly into the terminal : r/singularity _202506](https://www.reddit.com/r/singularity/comments/1lk5h19/google_introduces_gemini_cli_a_light_opensource/)
+- 
+- 
+
+- ## [Gemini CLI: your open-source AI agent | Lobsters _202506](https://lobste.rs/s/f9xdsg/gemini_cli_your_open_source_ai_agent)
+- While the free tier is generous, there are these privacy concerns.
+  - By default, Anthropic does not train generative models using code or prompts that are sent to Claude Code.
+
+- ## [Gemini CLI: your open-source AI agent | Hacker News _202506](https://news.ycombinator.com/item?id=44373754)
+- The biggest diffs from Claude code (the current champion): 
+  1. Generous free tier (60 RPM!) 
+  2. Open Source Apache (Standard after OAI Codex did the same)
+
 # discuss-ide-ai
 - ## 
 

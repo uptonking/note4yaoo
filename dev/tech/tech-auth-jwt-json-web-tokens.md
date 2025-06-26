@@ -20,6 +20,9 @@ modified: 2021-08-12T14:36:02.148Z
 - todo
   - jwt的核心功能的示例
   - 切换 fake backend api的例子，不必执着，全局的替换需要考虑的场景太多
+# dev-xp-auth
+- 集成的第三方登录如clerk宕机时，可以开启备用方案，通过环境变量禁止注册和旧的登录组件，使用临时的邮箱验证码ui登录
+  - 此方案比转存clerk的jwt token更方便，无需管理token失效
 # jwt-blogs
 
 ## [五分钟带你了解啥是JWT](https://zhuanlan.zhihu.com/p/86937325)
@@ -211,7 +214,39 @@ HMACSHA256(
 - https://github.com/abdelrahman-haridy01/full-mocks-api
   - 依赖json-server
   - Make a Full fake REST API, MakePOST, PUT, PATCH or DELETE requests, Fake Register and login based on role Api with jwt.
+# more-auth
+- [Next.js 11 - JWT Authentication Tutorial with Example App](https://jasonwatmore.com/post/2021/08/04/next-js-11-jwt-authentication-tutorial-with-example-app)
+- [Next.js - Basic HTTP Authentication Tutorial with Example App](https://jasonwatmore.com/post/2021/08/29/next-js-basic-http-authentication-tutorial-with-example-app)
+
+- the access and refresh token are shared across tabs! fortunately, you can implement a cross-tab lock since localstorage is shared and single ops are atomic.
+  - https://twitter.com/_paulshen/status/1478441122993086464
+# discuss-auth-solutions
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Show HN: Stack, an open-source Clerk/Firebase Auth alternative | Hacker News _202404](https://news.ycombinator.com/item?id=40031090)
+- React/Next only
+  - vanilla JS support is pretty high up on our list
+- MIT for the client libraries, AGPL for the serverside
+
+- I have a couple customers who use keycloak to handle SSO integration with my product. Almost every single time we do the configuration on a screenshare it is painfull. The gist is they all seem to have different setup with various configuration and asking me how to fix it but what works for someone doesn't work for someone else. 
+
+- 🆚 Can you summarize what differentiates this from Supabase and Supertokens?
+  - Supabase is way more barebone and you have to implement the frontend and the user auth flow logic yourself. 
+  - Supertokens is pretty complicated and hard to set up in my opinion, but please tell me if you had a different experience
+
+- 🆚 What would be a standout feature compared to other open source authN/authZ solutions like Ory or Keycloak?
+  - Simplicity. Both of these require a lot of setup, and have less/no frontend integration. I would go with us if you are trying to focus on the rest of the app and not auth. The config you need to get started with us is nearly zero.
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## How can you safely store passwords in a database? With Salt
@@ -401,10 +436,3 @@ HMACSHA256(
   - Come check out token auth signed URLs. Useful if you need to revoke and work with multiple CDNs
   - Agreed; cookies have their place, but both JWTs and session IDs can be sent via multiple avenues (cookies, headers, request bodies, URLs, etc)
 - If you're building a normal frontend, you're often much better off using traditional sessions with the session cookie being httpOnly so JavaScript does not even have access to it.
-
-# ref
-- [Next.js 11 - JWT Authentication Tutorial with Example App](https://jasonwatmore.com/post/2021/08/04/next-js-11-jwt-authentication-tutorial-with-example-app)
-- [Next.js - Basic HTTP Authentication Tutorial with Example App](https://jasonwatmore.com/post/2021/08/29/next-js-basic-http-authentication-tutorial-with-example-app)
-
-- the access and refresh token are shared across tabs! fortunately, you can implement a cross-tab lock since localstorage is shared and single ops are atomic.
-  - https://twitter.com/_paulshen/status/1478441122993086464

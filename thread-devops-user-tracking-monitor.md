@@ -10,7 +10,16 @@ modified: 2023-04-25T17:48:06.146Z
 # guide
 
 # observing-xp
-- 观测云支持页面回放，内容放在canvas·
+- 观测云支持页面回放，内容放在canvas界面且回放可能存在缺失
+
+## 观测云日志/搜索
+- [搜索 - 观测云文档](https://docs.guance.com/platform-capabilities/explorer-search/)
+  - 多个单词：guance test；（等同于 guance AND test）
+  - 短语："guance test"； (使用双引号可以将一组单词转换为短语)
+- [查看器检索 - 观测云文档](https://docs.guance.com/others/explorer-search/)
+  - 支持输入通配符进行模糊匹配搜索，如在日志搜索栏输入 global* ，返回关键字中含“global” 的日志数据， global 后面可以是任意数目的字符
+  - NOT c	返回结果需要不包含关键字 c
+  - 
 # discuss-OpenTelemetry
 - ## 
 

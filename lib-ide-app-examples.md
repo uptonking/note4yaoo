@@ -194,6 +194,33 @@ modified: 2024-08-24T16:30:20.218Z
   - goose is your on-machine AI agent, capable of automating complex development tasks from start to finish. More than just code suggestions, goose can build entire projects from scratch, write and execute code, debug failures, orchestrate workflows, and interact with external APIs - autonomously.
   - Designed for maximum flexibility, goose works with any LLM and seamlessly integrates with MCP-enabled APIs, making it the ultimate AI-powered assistant
 
+## terminal-ai
+
+- https://github.com/google-gemini/gemini-cli /15.2kStar/apache2/202506/ts
+  - a command-line AI workflow tool that connects to your tools, understands your code and accelerates your workflows.
+  - Query and edit large codebases in and beyond Gemini's 1M token context window.
+  - Generate new apps from PDFs or sketches, using Gemini's multimodal capabilities.
+  - Automate operational tasks, like querying pull requests or handling complex rebases.
+  - Use tools and MCP servers to connect new capabilities, including media generation with Imagen, Veo or Lyria
+  - Ground your queries with the Google Search tool, built in to Gemini.
+  - [Google announces Gemini CLI: your open-source AI agent _202506](https://blog.google/technology/developers/introducing-gemini-cli-open-source-ai-agent/)
+  - [Gemini CLI: your open-source AI agent | Hacker News _202506](https://news.ycombinator.com/item?id=44373754)
+
+- https://github.com/openai/codex /29.7kStar/apache2/202506/rust/ts
+  - Lightweight coding agent that runs in your terminal
+  - [Introducing Codex | OpenAI _202505](https://openai.com/index/introducing-codex/)
+  - [Support for local / other LLMs _202504](https://github.com/openai/codex/issues/26)
+    - The current logic supports the openai sdk, but we are excited to review contributions that would decouple this if done without introducing significant complexity to the project.
+    - This project is currently using the /responses endpoint from OpenAI's API. Ollama has compatibility with some OpenAI API endpoints, but the /responses endpoint is not included yet.
+  - [Codex CLI is Going Native · openai/codex · Discussion _202505](https://github.com/openai/codex/discussions/1174)
+    - We're planning to continue merging bugfixes in the TypeScript implementation, while we get the Rust implementation to experience and feature parity in the coming weeks.
+
+- https://github.com/anthropics/claude-code /202506/NonOpen
+  - https://docs.anthropic.com/s/claude-code
+  - an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster
+  - [open source? · Issue #59 · anthropics/claude-code _202502](https://github.com/anthropics/claude-code/issues/59)
+    - We currently don't have plans to open source it.
+
 ## vscode-ext-ai
 
 - https://github.com/continuedev/continue /21.3kStar/apache2/202501/ts
