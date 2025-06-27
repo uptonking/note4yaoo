@@ -319,12 +319,13 @@ use vanilla html/css/js to create a simplistic personal profile landing page: ho
 - line 160-174, 181-185 in file apps/webapp/src/utils/paas-playground.ts
  is not tested, please write unit tests to test it
 
-- write unit tests for apps/webapp/src/__tests__/components/cde-header/run-status-button.spec.tsx
+- write unit tests for apps/webapp/src/__tests__/components/cde-header/run-status-button.test.tsx
+- ensure tests pass by running  npx nx run webapp:test src/__tests__/components/cde-header/run-status-button.test.tsx
+
 - ensure tests pass by running  "cd packages/client && pnpm test src/__tests__/editor/CodeEditor.lsp.sepc.tsx"
 
 - write unit tests for libs/shared/utils/src/env-browser.tsx
 
-- ensure tests pass by running  npx nx run webapp:test src/__tests__/utils/paas-playground.test.ts
 
 - ensure tests pass by running  npx nx run shared-utils:test __tests__/env-browser.test.ts
 
