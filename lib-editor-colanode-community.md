@@ -43,7 +43,12 @@ modified: 2025-06-21T19:12:34.201Z
 
 - ## 
 
-- ## 
+- ## [Selfhosted colanode setup, but getting error _202504](https://github.com/colanode/colanode/issues/17)
+- Running Colanode Server via docker on a linux box on my network @ http://192.168.68.73:3381. Could not fetch server configuration. Please make sure the domain is correct.
+  - this happens because the Colanode desktop app currently requires secure connections ( `https` and `wss` ) when connecting to a server, except when the host is `localhost` . That's why it works with http://localhost:3000 but fails when using an IP address without a certificate.
+  - For now, you need to use either localhost or a hostname with a valid HTTPS certificate. We're planning to improve this in the future to allow connections to self-hosted servers without HTTPS as well.
+
+- You can add the env variable `DEBUG=colanode:*` which will show more logs and errors
 
 - ## 🚀 [I built Colanode, an open-source & local-first Slack and Notion alternative that you can self-host : r/selfhosted _202505](https://www.reddit.com/r/selfhosted/comments/1khpftl/i_built_colanode_an_opensource_localfirst_slack/)
 

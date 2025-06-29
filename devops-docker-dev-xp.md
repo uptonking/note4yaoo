@@ -9,6 +9,8 @@ modified: 2024-06-30T11:16:43.565Z
 
 # guide
 
+- podman难以完全替代docker，依赖的环境或服务很可能只提供了docker
+
 - resources
   - [Portainer architecture](https://docs.portainer.io/start/architecture)
   - [Docker Cheat Sheet](https://github.com/wsargent/docker-cheat-sheet)

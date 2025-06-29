@@ -67,6 +67,35 @@ modified: 2022-10-21T21:03:38.124Z
 - 
 - 
 
+# discuss-suite-docs
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+# discuss-suite-docs-roadmap
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Which external file format should we support first for imports ? _202503](https://github.com/suitenumerique/docs/issues/806)
+
+# discuss-suite-docs-changelog
+- ## 
+
+- ## 
+
+- ## [downgrade to docx 9.5.0 _202506](https://github.com/suitenumerique/docs/commit/9f222bbaa3c732d9e9fc5a391a868f6997f84806)
+  - Prob compatibility issue with docx 9.5.1 and BlockNote. We downgrade to 9.5.0 for now until BlockNote is updated to support docx 9.5.1
+
+- ## [(back) remove usage of deprecated db engine _202506](https://github.com/suitenumerique/docs/commit/6964686f7c0a08935e7bbfaca0aa6f5662dc3d6d)
+  - The db engine `postgresql_psycopg2` does not exists anymore in django but for BC compat it is possible to use it in the configuration and it is replace by postgresql at runtime.
+  - `django.db.backends.postgresql_psycopg2` > `django.db.backends.postgresql`
+
 # discuss
 - ## 
 

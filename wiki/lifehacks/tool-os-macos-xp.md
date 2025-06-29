@@ -127,6 +127,9 @@ modified: 2023-07-23T07:05:19.441Z
 brew install gnupg
 # passphrase 1123
 
+redis-server /opt/homebrew/etc/redis.conf
+redis-cli shutdown
+
 ```
 
 # mac-apps
@@ -215,27 +218,38 @@ brew install gnupg
 - ## [[PostgreSQL] Installing PostgreSQL through Homebrew on MacOS - DEV Community _202304](https://dev.to/uponthesky/postgresql-installing-postgresql-through-homebrew-on-macos-388h)
   - [How to Enable Remote Access to PostgreSQL 15 on macOS (Homebrew) _202501](https://medium.com/@jaatcodes/how-to-enable-remote-access-to-postgresql-15-on-macos-homebrew-95923e62166e)
 
+- [PostgreSQL14安装并初始配置外部连接指南。 - 星小梦 - 博客园](https://www.cnblogs.com/XingXiaoMeng/p/18722581)
+  - [PostgreSQL 初始化配置设置 - Amd794 - 博客园](https://www.cnblogs.com/Amd794/p/18634417)
+
 ```sh
 # 👇 需要手动加上版本号，发行版默认可能是旧版
 brew install postgresql@15
 
 brew services start postgresql@15
 
-# -s, --superuser           role will be superuser
+# -s, --superuser role will be superuser, to fix role postgres not exist
 createuser -s postgres
 psql - h localhost - U postgres
 
-# /opt/homebrew/var/postgresql@15/postgresql.conf
+psql -h localhost -U testuser12 -d testdb12;
+
+# /opt/homebrew/var/postgresql@17/postgresql.conf
+listen_addresses = '*'
+
+# /opt/homebrew/var/postgresql@17/pg_hba.conf
+host    all             all             0.0.0.0/0               md5
 
 ```
+
 ```sql
 -- set pass
+CREATE USER postgres WITH PASSWORD '11111111';
 ALTER USER postgres WITH PASSWORD '11111111';
+ALTER USER some_user PASSWORD NULL;
 
 CREATE ROLE username WITH LOGIN SUPERUSER CREATEDB CREATEROLE PASSWORD 'password';
 
 ```
-
 
 # discuss-macos
 - ## 

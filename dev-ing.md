@@ -326,7 +326,6 @@ use vanilla html/css/js to create a simplistic personal profile landing page: ho
 
 - write unit tests for libs/shared/utils/src/env-browser.tsx
 
-
 - ensure tests pass by running  npx nx run shared-utils:test __tests__/env-browser.test.ts
 
 - ensure tests pass by running cd packages/server && pnpm test apps/entry/__tests__/fileUtils.spec.ts
@@ -367,6 +366,14 @@ use vanilla html/css/js to create a simplistic personal profile landing page: ho
 
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
+
+## 0628
+
+- [What is the purpose of . PHONY in a Makefile? - Stack Overflow](https://stackoverflow.com/questions/2145590/what-is-the-purpose-of-phony-in-a-makefile)
+  - By default, Makefile targets are "file targets" - they are used to build files from other files.
+  - However, sometimes, you want your Makefile to run commands that do not represent physical files in the file system.
+  - These special targets are called phony and you can explicitly tell Make they're not associated with files
+  - The special target . PHONY: allows to declare phony targets, so that make will not check them as actual file names: it will work all the time even if such files still exist.
 
 ## 0624
 
