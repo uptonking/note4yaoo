@@ -50,3 +50,19 @@ modified: 2020-07-14T09:27:30.503Z
   - python虚拟机的垃圾回收使用的是引用计数法
     - 频繁更新引用计数会降低运行效率
     - 引用计数无法解决循环引用问题
+# django
+
+## docs-django
+
+- [Quick install guide | Django documentation](https://docs.djangoproject.com/en/5.2/intro/install/)
+  - Django is a high-level Python web framework that encourages rapid development
+
+## docs-drf
+
+- [Django REST framework](https://www.django-rest-framework.org/)
+  - optional pkgs: PyYAML, uritemplate, markdown, Pygments, django-filter, django-guardian
+  - Authentication policies including packages for OAuth1a and OAuth2.
+  - Serialization that supports both ORM and non-ORM data sources.
+  - just use regular function-based views if you don't need the more powerful features
+
+## more-django
