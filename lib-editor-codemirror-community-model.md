@@ -185,7 +185,8 @@ view.dispatch({
 
 - ## 
 
-- ## 
+- ## [Replacing full content of editor multiple times doesn't work because of doc.length in transaction (react-codemirror) - discuss. CodeMirror _202203](https://discuss.codemirror.net/t/replacing-full-content-of-editor-multiple-times-doesnt-work-because-of-doc-length-in-transaction-react-codemirror/4195)
+- A regular CodeMirror `EditorView` will immediately, synchronously replace its `.state` property after you dispatch a transaction to it.
 
 - ## 🤔 [Supress selection transactions until mouse is released - v6 - discuss. CodeMirror _202406](https://discuss.codemirror.net/t/supress-selection-transactions-until-mouse-is-released/8373)
   - I have a CodeMirror 6 editor that uses the official lang-markdown mode. This mode styles the markdown code using decorations unless the text is selected, in which case the styling is removed, similar to HyperMD or Obsidian.
@@ -239,7 +240,7 @@ EditorState.transactionFilter.of(tr => {
 - ## [Keep original's annotation to an updated transaction - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/keep-originals-annotation-to-an-updated-transaction/4218)
   - How can I update a transaction keeping its annotation’s origin value?
   - How can I detect the current transaction’s annotation? 
-- I just realized that if I use annotations: ` Transaction.userEvent.of('delete.selection')` it works.
+- I just realized that if I use annotations: `Transaction.userEvent.of('delete.selection')` it works.
 - You can’t copy all annotations when replacing a selection, currently. But I think that actually is a reasonable thing, since doing that wouldn’t be safe anyway (for example, the transactions created by undo/redo will include a new undo history object in an annotation, which would not be valid for a transaction that has different changes). 
   - You may be able to do what you’re trying to do with a change filter, or just add only userEvent and hope you’re not dropping any important annotations.
 

@@ -185,6 +185,124 @@ modified: 2023-06-14T00:53:15.226Z
 - 🤔 ide-server的cpu占用高的原因，是浏览器客户端和agent客户端的连接逻辑有缺陷，若客户端连接ide-server未成功时，会每隔5s无限发送连接请求，如果ide-server本身cpu就很高而连不上，后续大量新的连接请求会继续连不上，反而会导致ide-server崩溃
 # issues-editing
 
+## 
+
+## 
+
+## 
+
+## codemirror receiveOTUpdates error: Mismatched change set lengths
+
+- 问题的直接原因在 sdk处理 `pullOTUpdates` 事件时，@codemirror/collab 的 `receiveUpdates` 逻辑
+  - unconfirmed = unconfirmed.map((update) => {
+  - let updateChanges = update.changes.map(changes); 
+
+- 🤔 问题1: 第一个pullOTUpdates事件异常时，为什么会碰到长度不一致
+  - 此问题存在，但严重性不高，因为初始打开文件时重复打开一次感知不强
+  - 从websocket连接，可以看到开始时有2条pullOTUpdates消息
+  - `{ "updates": [ { "agentUserId": "clacky", "changes": [ [ 0 ] ] } ], "lastRevision": 0, "latestRevision": 1, "path": "index.html", "id": "7f7382db-9406-460a-9038-30c36e337f22" }` ; 第1条的changes内容可能异常
+  - `{ "updates": [ { "agentUserId": "clacky", "changes": [ 0, [ 0, "<!DOCTYPE html>", "" ] ], "selection": { "ranges": [ { "anchor": 16, "head": 16 } ], "main": 0 } } ], "lastRevision": 1, "latestRevision": 2, "path": "index.html", "id": "ef7d8b4b-06d9-49d4-947b-2324172f569b" }` ; 第2条是触发receiveUpdates异常的位置
+
+- 第一条内容 `{ "updates": [ { "agentUserId": "clacky", "changes": [ 0, [ 0, "/* Reset and Base Styles */", "" ] ], "selection": { "ranges": [ { "anchor": 28, "head": 28 } ], "main": 0 } } ], "lastRevision": 1, "latestRevision": 2, "path": "style.css", "id": "ecfc0a44-9f02-4e33-8a4b-3822aa340a00" }`
+
+```JS
+{ currentText: '' }
+
+// sdk-CodeEditor 当前state.field(collabField).version为初始1
+{
+  "updates": [{
+    "agentUserId": "clacky",
+    "changes": [
+      0,
+      [
+        0,
+        "/* Custom Properties - Theme Variables */",
+        ""
+      ]
+    ],
+    "selection": {
+      "ranges": [{
+        "anchor": 42,
+        "head": 42
+      }],
+      "main": 0
+    }
+  }],
+  "lastRevision": 1,
+  "latestRevision": 2,
+  "path": "style.css",
+  "id": "43b1f93e-5432-4901-8e2c-89595c79cab7"
+}
+```
+
+- 🤔 问题2: 中间pullOTUpdates事件异常时，为什么版本不一致
+  - 正常流式输出时，pullOTUpdates事件的 lastRevision 从1增加到最后一个行号，期间不会有其他事件
+- 特殊场景1，pullOTUpdates事件中间可能有其他事件 此时 pullOTUpdatesS1/pullOTUpdatesS2 的内容相邻且正确，ui上也不会有异常
+  - ⬇️ pullOTUpdatesS1  12/13
+  - ⬇️ syncOTUpdates    8/3
+  - ⬆ pushOTUpdates    13
+  - ⬇️ pushOTUpdates    13/14
+  - ⬇️ pullOTUpdatesS2  14/15
+
+- 异常场景1，pullOTUpdates事件中间可能有其他事件 
+  - ⬇️ pullOTUpdatesS1   8/9
+  - ⬆ syncOTUpdates     4
+  - ⬇️ pullOTUpdatesS2   9/10
+  - ⬇️ syncOTUpdates     4/10
+  - 此时会重新打开文件
+- 异常场景2，pullOTUpdates事件中间可能有其他事件 
+  - ⬇️ pullOTUpdatesS1   11/12
+  - ⬆ syncOTUpdates     10
+  - ⬇️ syncOTUpdates     10/12
+  - 此时会重新打开文件 file
+  - ⬇️ pullOTUpdatesS2   12/13
+- 客户端重新打开文件的原因
+  - 部分是收到 `syncOTUpdates` 导致的: Applying change set to a document with the wrong length
+    - index.html 4/6
+    - style.css 10/12
+    - style.css 13/15 - clientVer-13
+  - 部分是收到 `pullOTUpdates` 导致的: Mismatched change set lengths
+    - style.css  9/10 - clientVer-4
+    - style.css 18/19 - clientVer-16
+    - style.css 22/23 - clientVer-19
+    - style.css 24/25 - clientVer-24: Applying change set to a document with the wrong length
+    - style.css 30/31 - clientVer-28
+    - style.css 34/35 - clientVer-32
+
+```JS
+// sdk-CodeEditor 当前state.field(collabField).version为3
+
+{
+  "updates": [{
+    "agentUserId": "clacky",
+    "changes": [
+      135,
+      [
+        0,
+        "  --background-color: #f8f9fa;",
+        ""
+      ]
+    ],
+    "selection": {
+      "ranges": [{
+        "anchor": 166,
+        "head": 166
+      }],
+      "main": 0
+    }
+  }],
+  "lastRevision": 6,
+  "latestRevision": 7,
+  "path": "style.css",
+  "id": "6df33613-a714-458c-b9a9-c1eeb8d97a15"
+}
+```
+
+- 
+- 
+- 
+- 
+
 ## agent_write_file: Applying change set to a document with the wrong length
 
 ```JS

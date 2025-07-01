@@ -52,6 +52,25 @@ modified: 2022-04-05T10:09:36.436Z
   - compose一般是同一用户的两个操作且有序，transform一般是不同用户的两个操作且可无序，注意分析baseLength和targetLength的关系
 
 - [协同编辑冲突处理算法之OT算法](https://www.douzhixuan.com/xie-tong-bian-ji-chong-tu-chu-li-suan-fa-zhi-otsuan-fa/)
+# dev-xp
+- ## 🤔🔁 When a client's document version (revision) falls significantly behind the server's version, 
+  - The standard and most robust solution is to initiate a full document resynchronization.
+  - Detection on the Server is the most reliable place to detect the problem.
+- Why Not Just Send All the Missed Operations?
+  - Inefficiency: consumes significant network bandwidth and, more importantly, client-side CPU as it transforms and applies each operation in sequence.
+  - Complexity: A long chain of transformations increases the risk of subtle bugs
+  - Server Load: The server would have to query its operation history for thousands of records. It's simpler for the server to just send the current document state.
+- The Resynchronization Workflow
+  - Step 1: Detection (on the Server)
+  - Step 2: Client A's Response to the Resync Request
+    - Preserve Unconfirmed Changes
+    - Provide User Feedback
+    - Request the Full Document
+  - Step 3: Server's Response with the Full Document
+  - Step 4: Client A Finalizes the Resynchronization
+    - Replace Local State
+    - Rebase and Re-apply Unconfirmed Changes
+    - Send Rebased Changes
 # dev
 
 ## Transform Property 2

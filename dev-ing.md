@@ -250,9 +250,9 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - 做完tailwind-table就面试
 
 - dev-to 提炼核心`需求+产出`工作流，不能在产品中检验的技术不玩
-# dev-06-agentAppendFile-jank-&-LSP-def-jump-back/forward-&-
+# dev-07
 
-## 060
+## 070
 
 - dev-log
   - ?
@@ -279,6 +279,7 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
           event.data?.isAfterWrite,
           isFollow,
           isOtherUserOpened,
+          event
         );
         
 ^((?!(42\["heartbeat|resourceMonit|refreshXtermCols|42\["multiTerminal|42\["terminalStatus|42\["activeTerminal|42\["ragStatus|42\["initAiCodeInfo)).)*$
@@ -289,6 +290,8 @@ console.log(';; qryDiffSnap ', snapshotFrameResult)
 
 ^((?!(42\["heartbeat|resourceMonit|refreshXtermCols)).)*$
 ^(?!42\["resourceMonit).* 
+
+/syncUpdates|syncOTUpdates/
 
 <!-- 观测云搜索 ide-server -->
 -multiTerminalHeartBeat -all\:multiTerminal -"[fromMQ] multiTerminal" -"[toMQ]paas:multiTerminal" -"] multiTerminal, {" -all\:activeTerminal -"] activeTerminal, {"  -"[toMQ]paas:multiTerminalCmd" -"[fromMQ] terminalStatus" -"appendMultiTerminalProcessName res" -"appendMultiTerminalCmdReply res" -all\:multiTerminalProcessName -all\:initAiCodeInfo -"[fromMQ] lspStatus" -"[fromMQ] portsChanged" -"[fromMQ] ragStatus" -"] ragStatus data: [" -"all:ragStatus" -"[followingFocusComponent]"
@@ -306,7 +309,6 @@ add an action to run "npm install -ddd" and another action to add datetime at to
 
 add action to create a route /nextjs with nextjs changelog content in it , and show nextjs link in home page, when clicking the link, jump to /nextjs route
 
-··
 add action to create quickSort1.mjs and try to implement quick sort algorithm in less than 40 lines
 
 use create-react-app to create a react-router v6 example webapp in typescript: homepage shows a list of frontend frameworks like react/vue/angular, when clicking the framework, navigate to the route to show its introduction
@@ -341,6 +343,13 @@ use vanilla html/css/js to create a simplistic personal profile landing page: ho
 
 ```
 
+- dev-to 💡✨🤔
+  - MCP的原理，及调用LSP的技术方案
+
+
+## 0701
+
+# dev-06-agentAppendFile-jank-&-LSP-def-jump-back/forward-&-codemirror-tooltip-merged-&-colanode-webapp
 - lsp支持的语言排查
   - 鼠标放上去就消失lint了
   - 让settings开关联动
@@ -364,12 +373,9 @@ use vanilla html/css/js to create a simplistic personal profile landing page: ho
   - ~~webview自动打开, 刷新时保持打开~~
   - ~~cmdk工具条无法触发，快捷键可以~~
 
-- dev-to 💡✨🤔
-  - MCP的原理，及调用LSP的技术方案
-
 ## 0628
 
-- [What is the purpose of . PHONY in a Makefile? - Stack Overflow](https://stackoverflow.com/questions/2145590/what-is-the-purpose-of-phony-in-a-makefile)
+- [What is the purpose of `.PHONY` in a Makefile? - Stack Overflow](https://stackoverflow.com/questions/2145590/what-is-the-purpose-of-phony-in-a-makefile)
   - By default, Makefile targets are "file targets" - they are used to build files from other files.
   - However, sometimes, you want your Makefile to run commands that do not represent physical files in the file system.
   - These special targets are called phony and you can explicitly tell Make they're not associated with files
