@@ -271,15 +271,16 @@ console.log(';; taskActions', currentActionId, path, store.cdePlay.enableDiffVie
 console.log(';; open-diff ', enableDiffAnimation, store.cdePlay.enableDiffView(), store.cdeReplay.isMachinePaused())
 console.log(';; qryDiffSnap ', snapshotFrameResult)
 
- console.log(
+console.log(
           ';; 📝 ',
           filePath,
+          event.data?.revision,
           store.file.latestRequestFilePath(),
-          event.data?.isRefresh,
-          event.data?.isAfterWrite,
-          isFollow,
-          isOtherUserOpened,
-          event
+          Boolean(isFollow),
+          Boolean(event.data?.isRefresh),
+          Boolean(event.data?.isAfterWrite),
+          Boolean(isOtherUserOpened),
+          event,
         );
         
 ^((?!(42\["heartbeat|resourceMonit|refreshXtermCols|42\["multiTerminal|42\["terminalStatus|42\["activeTerminal|42\["ragStatus|42\["initAiCodeInfo)).)*$
@@ -320,32 +321,35 @@ use vanilla html/css/js to create a simplistic personal profile landing page: ho
 - line 290 in file  is not tested, please write unit tests to test it
 - line 160-174, 181-185 in file apps/webapp/src/utils/paas-playground.ts
  is not tested, please write unit tests to test it
+- you only need to test  line  715-732 , donnot write tests for more lines
 
-- write unit tests for apps/webapp/src/__tests__/components/cde-header/run-status-button.test.tsx
-- ensure tests pass by running  npx nx run webapp:test src/__tests__/components/cde-header/run-status-button.test.tsx
+- ensure tests pass by auto run terminal commands  npx nx run webapp:test src/__tests__/components/cde-header/run-status-button.test.tsx
 
-- ensure tests pass by running  "cd packages/client && pnpm test src/__tests__/editor/CodeEditor.lsp.sepc.tsx"
+- ensure tests pass by auto run terminal commands  cd packages/client && pnpm test src/__tests__/DaoChannel.files.spec.tsx
 
-- write unit tests for libs/shared/utils/src/env-browser.tsx
+- ensure tests pass by auto run terminal commands  npx nx run shared-utils:test __tests__/env-browser.test.ts
 
-- ensure tests pass by running  npx nx run shared-utils:test __tests__/env-browser.test.ts
+- ensure tests pass by auto run terminal commands cd packages/server && pnpm test apps/entry/__tests__/fileUtils.spec.ts
 
-- ensure tests pass by running cd packages/server && pnpm test apps/entry/__tests__/fileUtils.spec.ts
-
-- you can mock state/store/data/external-dependencies, especially you can refer to this test file apps/webapp/src/__tests__/components/chat-box/action-panel.test.tsx to mock store/useTrackedStore/actions
+- you can mock state/store/data/websocket/external-dependencies, especially you can refer to this test file apps/webapp/src/__tests__/components/chat-box/action-panel.test.tsx to mock store/useTrackedStore/actions
 
 - you can mock state/store/data/external-dependencies/modules, especially you can refer to this test file apps/webapp/src/__tests__/components/cde-header/run-status-button.test.tsx to mock store/useTrackedStore/actions
+
 - you can use jest and @testing-library/react, 
 - Each unit test should be independent of other tests. Avoid sharing state or dependencies between tests by using beforeEach/beforeAll/afterEach/afterAll
 - you had better write only in test files and not modify original source code
 
 - Handle asynchronous code correctly 
 
+
+- 👾
+- yes, auto fix issues to make tests pass, donnot ask me again
+- you can mock codemirror-related packages, like @codemirror/view
+
 ```
 
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
-
 
 ## 0701
 
