@@ -29,6 +29,10 @@ nohup bash -c 'echo "some text $(aws ... | tail -1)" >> myFile.txt' &
 # base64解码
 echo aHR0cHM6Ly9tYXMudG8vQG9jYXZ1ZQo= | base64 -d
 
+# 创建随机文件
+base64 -w 0 /dev/urandom | head -c 2M > lg1.txt
+base64 -w 0 /dev/urandom | head -c 128K > lg1.txt
+
 ```
 
 - 系统配置相关
@@ -66,7 +70,6 @@ cp -r source_folder /path/to/destination_folder/
 # 在linux docker 的terminal输入 mount 命令，可以看到容器的挂载点及地址，对调试读写很有用
 mount
 ```
-
 
 ## file-cli
 

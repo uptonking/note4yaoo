@@ -156,6 +156,7 @@ modified: 2023-11-28T14:48:45.910Z
 
 - linear
   - 问题描述中添加的 长日志 或 长文本 ， 在code block中显示时不会换行而需要水平滚动很长，临时方案是用 list item显示
+
 ## saas/cloud
 
 - cloud-pros
@@ -210,10 +211,12 @@ modified: 2023-11-28T14:48:45.910Z
   - search commit message
   - statistics (for team)
 
-
 - image
   - 系统提供默认的图片placeholder需要样式友好
+
 ## text-editing
+
+- web-editor在编辑器卡死(如打开超大文件)时，容易造成整个页面不可用，应该在架构上处理极端场景
 
 - 选择一段文字，将其中的空格替换成`-`，方便区分比较双方，如 a-bvs c-d
 - 选择多行文字，批量在行首添加`- `转换成列表显示，甚至`- [ ]`转换成待办列表
@@ -327,6 +330,7 @@ modified: 2023-11-28T14:48:45.910Z
   - 跳到页面第一个搜索结果
 
 - search时是否支持搜索侧边栏的评论
+
 ## page
 
 - title

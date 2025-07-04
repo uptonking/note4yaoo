@@ -321,13 +321,11 @@ use vanilla html/css/js to create a simplistic personal profile landing page: ho
 - line 290 in file  is not tested, please write unit tests to test it
 - line 160-174, 181-185 in file apps/webapp/src/utils/paas-playground.ts
  is not tested, please write unit tests to test it
-- you only need to test  line  715-732 , donnot write tests for more lines
 
-- ensure tests pass by auto run terminal commands  npx nx run webapp:test src/__tests__/components/cde-header/run-status-button.test.tsx
+- ensure tests pass by auto run terminal commands  npx nx run webapp:test  src/__tests__/hooks/use-time-machine.test.tsx
+- ensure tests pass by auto run terminal commands  npx nx run shared-utils:test __tests__/env-browser.test.ts
 
 - ensure tests pass by auto run terminal commands  cd packages/client && pnpm test src/__tests__/DaoChannel.files.spec.tsx
-
-- ensure tests pass by auto run terminal commands  npx nx run shared-utils:test __tests__/env-browser.test.ts
 
 - ensure tests pass by auto run terminal commands cd packages/server && pnpm test apps/entry/__tests__/fileUtils.spec.ts
 
@@ -341,18 +339,29 @@ use vanilla html/css/js to create a simplistic personal profile landing page: ho
 
 - Handle asynchronous code correctly 
 
-
 - 👾
+- tests failed, run test command again and fix issues
 - yes, auto fix issues to make tests pass, donnot ask me again
 - you can mock codemirror-related packages, like @codemirror/view
+- you only need to test  line  715-732 , donnot write tests for more lines
 
+test('mock test', () => {
+  expect(true).toBe(true);
+});
 ```
 
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
 
-## 0701
+## 0703
 
+- The versions of `base64` and head on macOS do not support the same options as their Linux counterparts.
+  - linux: base64 -w 0 /dev/urandom | head -c 2M > textfile.txt
+  - macos: base64 /dev/urandom | head -c 2097152 > textfile.txt
+  - brew install coreutils
+  - gbase64 -w 0 /dev/urandom | ghead -c 2M > textfile.txt
+
+- The size property returned by `fs.statSync` in Node.js is in **bytes** 
 # dev-06-agentAppendFile-jank-&-LSP-def-jump-back/forward-&-codemirror-tooltip-merged-&-colanode-webapp
 - lsp支持的语言排查
   - 鼠标放上去就消失lint了

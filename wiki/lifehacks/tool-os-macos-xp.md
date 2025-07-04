@@ -122,6 +122,9 @@ modified: 2023-07-23T07:05:19.441Z
   - [生成新的 SSH 密钥并将其添加到 ssh-agent - GitHub 文档](https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 
 ```shell
+# GNU versions of head, ls, cat, and many others
+brew install coreutils
+gbase64 -w 0 /dev/urandom | ghead -c 2M > textfile.txt
 
 # git/github
 brew install gnupg
