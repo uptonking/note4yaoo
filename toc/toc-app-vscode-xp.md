@@ -27,6 +27,8 @@ modified: 2023-02-08T10:47:19.056Z
   - back:    Ctrl+Alt+-
   - forward: Ctrl+Shift+-
 
+- line-wrappig: alt + z
+
 - 选中括号内内容 shift+alt+right
   - [keyboard shortcuts - Select everything between matching brackets in VS Code](https://stackoverflow.com/questions/37835012/select-everything-between-matching-brackets-in-vs-code)
 # extensions-stars

@@ -300,6 +300,7 @@ console.log(
 -"toMQ fileContentUpdate begin" -"[toMQ]paas:filePull"  
 -agentAppendFile -"writeFile prepared"
 
+-chunkMessage -richMessage -messageSuggestion -toolCallStatusUpdated
 ```
 
 ```log

@@ -14,19 +14,20 @@ modified: 2021-05-06T09:38:31.520Z
   - 可扩展性很强, ext支持设置优先级
   - collab有官方支持, 基于ot算法变体
   - 支持selective undo
-  - 🌰 diff-view的示例有官方开发，其他编辑器很少提供, 支持上下布局/左右双栏布局
-  - ✨ v6实现了 virtualized-render, 可结合visible ranges进一步提高性能
-  - ❓ incremental syntax highlighting, 可结合visible ranges
+  - 🆚 diff-view的示例有官方开发，其他编辑器很少提供, 支持上下布局/左右双栏布局
+  - ✨ v6实现了virtualized-render的编辑器(其他编辑器很少), 可结合visible ranges提高性能
+  - ❓ incremental syntax highlight, 可结合visible ranges， 可参考编辑器 + 高亮的架构
   - 📱 支持mobile
   - accessible
   - 基于contenteditable(而不是textarea)实现，具备📝富文本的能力
   - 支持nested-editor，可在同一页面渲染多个编辑器，参考split-view示例、公式
-  - 支持multi-cursor, 此时键盘输入字符会在多个光标后同时显示
+  - 提供了可选自绘光标的方案，支持multi-cursor, 此时键盘输入字符会在多个光标后同时显示
   - 内置支持折叠代码方案，folded
   - 第三方实现了minimap
+  - 提供了很多参考方案 tooltip, search
   - ~~simpler than prosemirror~~ extension的扩展性比prosemirror更灵活
 
-- cons
+- cons (部分缺点其他代码编辑器也存在)
   - 非开箱即用，需要组装模块
   - collab基于ot变体，非标准ot
   - ssr默认不支持, 但有方案支持
@@ -34,7 +35,7 @@ modified: 2021-05-06T09:38:31.520Z
   - 使用了自定义css-in-js方案(runtime-css会降低性能)，但也支持css覆盖样式
   - 同一文件包含多种语言时，语法高亮/hover/lint都需要自己实现
   - 部分语言不支持语法高亮，如.slim/.erb
-  - codemirror/monaco 的lint/autocomplete 都存在无法让服务端调用的缺陷，基于tree-sitter的实现对服务端更友好, 服务端优化的上线更高
+  - codemirror/monaco 的lint/autocomplete 都存在无法让服务端调用的缺陷，基于tree-sitter的实现对服务端更友好, 服务端优化的上限更高
     - 但浏览器上进行代码编辑的场景远多于服务端
 
 - features
@@ -161,9 +162,6 @@ modified: 2021-05-06T09:38:31.520Z
   - undo更好的实现方式是手动控制tr的合并，更简单的这种方式是手动触发undo的逻辑
   - cm-undo的粒度是什么，如何触发一次undo来撤销指定几个transaction
 
-- tooltip如何调试时让内部元素一直显示
-  - 可以手动设置tooltip的位置❓
-
 - ❓ 同事实现编辑器内嵌入卡片在滚动时固定在顶部或底部的功能碰到困难
   - 原因是嵌入卡片在滚动到可视区外时卡片的锚点anchor消失了，导致卡片也消失了
   - 可参考virtualized的组件库的sticky实现细节
@@ -272,6 +270,9 @@ edd.contentDOM.cmView.view === edd // true
   - 方便实现高亮搜索结果、查找引用
 
 - 代码的ast和block编辑器的ast处理方式类似，代码的symbol跳转和双链类似
+
+- tooltip如何调试时让内部元素一直显示
+  - 可以手动设置tooltip的位置, 官方tooltip示例提供了方案
 
 - 💄 自定义元素widget
   - codemirror会在widget最外层渲染一个contenteditable为false的元素

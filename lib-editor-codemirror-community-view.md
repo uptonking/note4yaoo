@@ -104,7 +104,8 @@ modified: 2024-08-08T20:49:11.571Z
 
 - ## 
 
-- ## 
+- ## [Custom tooltips - v6 - discuss. CodeMirror _202302](https://discuss.codemirror.net/t/custom-tooltips/5706/12)
+- Note that `coordsAtPos` does not measure a character. It measures a cursor position. Since it relies on DOM bounding rectangles, it indeed does not guarantee that all the rectangles will correspond in height to the height of a non-styled letter.
 
 - ## [Basic editor, tooltips are in the wrong place - discuss. CodeMirror _202205](https://discuss.codemirror.net/t/basic-editor-tooltips-are-in-the-wrong-place/4377)
 - Do you have transforms or `contain` CSS declarations on any of the parent nodes?
