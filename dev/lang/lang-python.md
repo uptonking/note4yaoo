@@ -56,6 +56,9 @@ modified: 2020-07-14T09:27:30.503Z
 
 - [Quick install guide | Django documentation](https://docs.djangoproject.com/en/5.2/intro/install/)
   - Django is a high-level Python web framework that encourages rapid development
+  - [Django topics](https://docs.djangoproject.com/en/5.2/topics/)
+- 🌰 [Django documentation contents | tutorial](https://docs.djangoproject.com/en/5.2/contents/)
+  - tutorial: app-structure, db-crud, view-template, view-generic
 
 ## docs-drf
 
