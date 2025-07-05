@@ -51,6 +51,11 @@ modified: 2020-07-14T09:27:30.503Z
     - 频繁更新引用计数会降低运行效率
     - 引用计数无法解决循环引用问题
 # django
+- who is using #django
+  - zulip
+  - suite-docs
+  - openedx
+  - baserow
 
 ## docs-django
 

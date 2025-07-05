@@ -679,7 +679,7 @@ modified: 2023-02-07T17:38:05.336Z
   - Teamlinker is a team collaboration platform that integrates multi-functional modules, such as contact, task management, meeting, IM, Wiki and file management.
   - Teamlinker is developed based on the TeamOS system. It is a web operating system that allows users to process different tasks in parallel
 # online-teaching/learning
-- https://github.com/openedx/edx-platform /AGPL/202503/python/js
+- https://github.com/openedx/edx-platform /7.8kStar/AGPL/202507/python/js
   - https://openedx.org/
   - The Open edX Platform is a service-oriented platform for authoring and delivering online learning at any scale. 
   - The platform is written in Python and JavaScript and makes extensive use of the Django framework. 
@@ -687,6 +687,13 @@ modified: 2023-02-07T17:38:05.336Z
   - Functionally, the edx-platform repository provides two services:
     - CMS (Content Management Service), which powers Open edX Studio, the platform's learning content authoring environment; and
     - LMS (Learning Management Service), which delivers learning content.
+  - https://github.com/overhangio/tutor /1kStar/AGPL/202506/python
+    - https://docs.tutor.edly.io/
+    - Tutor is the official Docker-based Open edX distribution, both for production and local development. 
+    - World-famous 1-click installation and upgrades
+    - Extensible architecture with plugins
+    - Comes with batteries included: theming, SCORM, HTTPS, web-based administration interface, mobile app, custom translations...
+    - Runs entirely on Docker, Works with Kubernetes
 
 - https://github.com/oppia/oppia /apache2/202503/python/ts
   - https://www.oppia.org/

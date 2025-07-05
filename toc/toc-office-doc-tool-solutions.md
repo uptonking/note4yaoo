@@ -175,7 +175,7 @@ modified: 2021-07-21T18:07:43.056Z
   - 依赖mark-twain、react-router、webpack、prismjs
   - transform Markdown(and other static files with transformers) into static websites and blogs using React.
 
-- https://github.com/zmister2016/MrDoc
+- https://github.com/zmister2016/MrDoc /3.1kStar/GPLv3/202507/python/js
   - http://mrdoc.zmister.com/project-20/
   - MrDoc是基于Python开发的在线文档系统，适合作为个人和小型团队的私有云文档、云笔记和知识管理工具
   - 后端：Python + Django

@@ -31,10 +31,12 @@ modified: 2022-02-23T18:59:51.587Z
   - https://gpx.studio/
   - The online GPX file editor
 
-- https://github.com/yihong0618/running_page
+- https://github.com/yihong0618/running_page /4.1kStar/MIT/202506/python/ts
   - https://running-page.vercel.app/
   - Make your own running home page
   - GitHub Actions manages automatic synchronization of runs and generation of new pages.
+  - 依赖sqlalchemy
+  - 似乎未使用web框架
   - Gatsby-generated static pages, fast
   - Support for Vercel (recommended) and GitHub Pages automated deployment
   - Mapbox for map display
