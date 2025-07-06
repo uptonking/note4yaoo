@@ -34,7 +34,7 @@ modified: 2023-11-28T14:48:45.910Z
     - git-timeline
     - diff
     - 快照文件的协同，已删除文件的协同
-    - 基于代码的回放能解决视频难以实时更新的问题, video-but-auto-update
+    - 基于代码的回放能解决视频难以实时更新的问题, video-but-auto-update, 回放时显示问卷结果
     - replay: 探索rrweb结合的场景
       - 可调倍速
       - 回放时的表现可以和操作时不同，在回放模式下显示diff-view🆚更直观清晰，最好是流式diff
@@ -70,6 +70,7 @@ modified: 2023-11-28T14:48:45.910Z
     - editor + dom-motion + video-playback + 🛝 playground
     - 低代码工具吸引用户的方式一定会加入动画，类似 webflow收购GSAP/Framer开源motion
     - 适合使用动画的场景: ppt
+    - 动画效果类别: 自动变速(时快时慢)
   - 🎞️ video: 自动生成视频，方便回放、教学
     - pdf/ppt > video
     - video templates for tiktok/bilibili
@@ -195,10 +196,15 @@ modified: 2023-11-28T14:48:45.910Z
 - doc-views
   - preview/text/text+blame, 类似github的网页版查看文件的tabs
 
-- markdown block diff
-  - cloudflare markdown conversion open source alternative
 - markdown
   - frontend LSP/autoFormat/autocomplete/twoslash
+  - cloudflare markdown conversion open source alternative
+- markdown code block 的优化
+  - 支持语法高亮
+  - 支持注释快捷键
+  - 支持自动format
+  - 支持基本语法autocomplete/lint/definition，基于webworker-lsp
+  - markdown diff block 格式扩展和优化
 
 - backlink
   - 在代码领域，双向链接通常对应import, 方便应用本地lib或远程lib

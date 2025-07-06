@@ -102,7 +102,14 @@ modified: 2024-08-08T20:49:11.571Z
 # discuss-autocomplete/tooltip
 - ## 
 
-- ## 
+- ## [Custom Class for Hover Tooltip Wrapper - v6 - discuss. CodeMirror _202309](https://discuss.codemirror.net/t/custom-class-for-hover-tooltip-wrapper/7127/1)
+  - When using `hoverTooltip` , there’s no built-in way to add a class to the `cm-tooltip` wrapper around your actual created DOM element.
+  - You can target `.cm-tooltip-hover` for custom styles (like to remove the background or border), however that will affect all hover tooltips.
+  - The only way I’ve found to add a class to the actual tooltip wrapper is like this: by `mount` . This approach works, but feels wrong and prone to problems. Ideally there could be an option in `hoverTooltip` to add a class to the wrapper, much like `autocompletion.config.tooltipClass` .
+
+- That tooltip element may be shared with other hover tooltips, so it seems like changing its style has the potential to create undesirable effects.
+
+- 另一种思路，使用css parent selector
 
 - ## [Custom tooltips - v6 - discuss. CodeMirror _202302](https://discuss.codemirror.net/t/custom-tooltips/5706/12)
 - Note that `coordsAtPos` does not measure a character. It measures a cursor position. Since it relies on DOM bounding rectangles, it indeed does not guarantee that all the rectangles will correspond in height to the height of a non-styled letter.
@@ -376,7 +383,7 @@ const myTheme = EditorView.theme({
   - If you’re not using a theme, you get the `&light` base theme rules. If any of the themes you’re using set the editor to dark, you get &dark.
 
 - ## [Inconsistency in EditorView.theme - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/inconsistency-in-editorview-theme/7290)
-- `&light/&dark` are supported only in `baseTheme` , not in theme.
+- 💡 `&light/&dark` are supported only in `baseTheme` , not in theme.
 
 - ## 🌰💄 [Dynamic light mode / dark mode - how? - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/dynamic-light-mode-dark-mode-how/4709)
   - Previously, handling this was quite straightforward; we’d simply define alternate colors for the relevant classes within a prefers-color-scheme block, in our SCSS

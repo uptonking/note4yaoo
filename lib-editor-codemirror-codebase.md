@@ -41,4 +41,6 @@ modified: 2024-05-02T06:41:19.983Z
 - `eq` is used in merge widgets/decorations
 # styling
 - 编辑器获取到焦点时 .cm-editor 的dom元素会增加样式类 .cm-focused
+
+- 语法高亮通过 defaultHighlightStyle 定义了默认值, 可通过自定义theme覆盖任意值
 # more

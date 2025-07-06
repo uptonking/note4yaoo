@@ -89,14 +89,18 @@ modified: 2021-01-04T17:26:25.032Z
   - light-weight while implementing all markdown features from the supported flavors & specification
   - works in a browser, on a server, or from a command line interface (CLI)
   - Marked can be extended using custom extensions. This is a list of extensions that can be used with `marked.use(extension)`.
+  - Warning: Marked does not sanitize the output HTML
+  - `const html = marked.parse('# Marked in Node.js\n\nRendered by **marked**.');`
 
 - markdown-it /16.8kStar/MIT/202401/js
   - https://github.com/markdown-it/markdown-it
+  - https://markdown-it.github.io/markdown-it/
   - https://markdown-it.github.io/
   - Markdown parser done right. Fast and easy to extend.
   - Follows the CommonMark spec + adds syntax extensions & sugar (URL autolinking, typographer).
   - Community-written plugins and other packages on npm.
-  - a fork of https://github.com/jonschlinkert/remarkable /js
+  - `const md = markdownit(); const html = md.render('# markdown-it rule\n');`; 
+  - a fork of https://github.com/jonschlinkert/remarkable /MIT/202505/js/inactive
 
 - snarkdown /2kStar/MIT/202201/js/单文件
   - https://github.com/developit/snarkdown

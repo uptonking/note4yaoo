@@ -115,13 +115,28 @@ modified: 2024-05-02T02:00:47.318Z
 - The editor's DOM structure looks something like this:
 
 ```HTML
-<div class="cm-editor [theme scope classes]">
-  <div class="cm-scroller">
-    <!-- 👇🏻编辑实现 -->
-    <div class="cm-content" contenteditable="true">
-      <div class="cm-line">Content goes here</div>
-      <div class="cm-line">...</div>
+<div class="cm-editor flex-col [theme scope classes]">
+  <div class="cm-scroller flex">
+    <div class="cm-gutters flex">
+      <div class="cm-gutter flex-col cm-lineNumbers"> </div>
+      <div class="cm-gutter flex-col cm-foldGutter"> </div>
     </div>
+
+    <!-- 👇🏻编辑实现 -->
+    <div class="cm-content block" contenteditable="true">
+      <div class="cm-line block">Content goes here</div>
+      <div class="cm-line block">...</div>
+    </div>
+
+    <div class="cm-layer cm-cursorLayer">
+      <div class="cm-cursor cm-cursor-primary"></div>
+      <div class="cm-cursor cm-cursor-secondary"></div>
+    </div>
+    <div class="cm-layer cm-selectionLayer"></div>
+  </div>
+  
+  <div class="cm-tooltip cm-tooltip-hover">
+    <!-- <div class="cm-tooltip-section"></div> -->
   </div>
 </div>
 ```

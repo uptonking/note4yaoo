@@ -287,7 +287,7 @@ edd.contentDOM.cmView.view === edd // true
 
 - 多标签页的实现思路和单标签差别不大，视觉上只有1个visible的editor，上方是tab
 
-- baseTheme的specificity比theme低，且能使用&dark
+- `.baseTheme`的specificity比`.theme`低，且能使用`&dark`前缀，`.theme`不能使用此前缀
 
 - 难以完全使用state对象控制的状态
   - screen-coordinates

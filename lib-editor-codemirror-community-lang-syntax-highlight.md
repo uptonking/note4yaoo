@@ -9,6 +9,10 @@ modified: 2024-08-11T07:59:35.617Z
 
 # guide
 
+- 基本的语法高亮元素
+  - 保留关键字
+  - 变量、函数
+  - 字面量: 字符串
 # solutions-docs
 - [Get started | OpenCtx](https://openctx.org/docs/start)
   - OpenCtx shows you contextual info about code from your dev tools, in your editor, in code review, and anywhere else you read code
@@ -77,6 +81,33 @@ modified: 2024-08-11T07:59:35.617Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Better code highlighting on the web: rehype-tree-sitter | Hacker News _202307](https://news.ycombinator.com/item?id=36854138)
+- lezer is directly based on tree-sitter but tailored to be more web friendly 
+  - I think I'd prefer Lezer in a javascript-only setting. The results are compact and you don't have to deal with WASM.
+  - I've written a small tree-sitter grammar, with off-side rule even, and had a bunch of issues with the javascript bits not being the same version as the WASM bits. I ended up having to get just the right version of emscripten installed (and maybe a few other tools). The process felt a bit fragile to me.
+
+- tree-sitter has first party Rust bindings (and its WASM bindings use Rust wasm-bindgen), but the core functionality is written in C.
+
+- While I have no doubt tree-sitter is technically superior for the specific task of syntax highlighting, Shiki has some other appealing qualities:
+  - Built in support for TextMate themes (and therefore also themes for VSCode, probably Sublime as well)
+  - Shiki Twoslash, which supports a variety of really cool features for highlighting subsections of code, static types and type errors, module relationships
+
+- Shameless plug for the Rehype plugin I wrote based on Starry Night. If you're interested in syntax highlighting like GitHub or customize it with CSS properties (for example, to support multiple themes), this is one solution.
+
+- Is syntax highlighting considered difficult? A regex loop that outputs HTML to a pre is a few lines of vanilla JS.
+  - This is essentially the bulk of grammar tools like TextMate (though it also has the very useful begin/end token construct).
+  - The hard part is likely doing it efficiently, and standardizing on a set of token names such that a theme ecosystem can exist.
+
+- 
+- 
+- 
+- 
+- 
 
 - ## [How get token from updateListener.of - v6 - discuss. CodeMirror](https://discuss.codemirror.net/t/how-get-token-from-updatelistener-of/4158)
 - `syntaxTree(state).resolve(pos)` might help here (though it doesn’t do exactly the same thing as tokenBefore, but you can see how that’s implemented and do something similar if needed).

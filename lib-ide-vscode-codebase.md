@@ -55,13 +55,25 @@ npm run watch
 - 
 
 # extensions
-- ⚖️ 很多extensions都使用了markdown-it来处理markdown
-  - markdown-language-features: highlight.js
+- ⚖️ 大多数markdown渲染的场景使用了marked处理
+  - lsp - HoverWidget > MarkdownRenderer.render(), md的code block渲染复用了编辑器的语法高亮 render codeblocks with the editor mechanics 
+  - ext-browser 的 ExtensionEditor.renderMarkdownDocument()
+
+- ⚖️ 很多extensions使用了markdown-it来处理markdown的解析
+  - markdown-language-features: MarkdownItEngine + highlight.js
   - markdown-math: markdown-it-katex
-  - extension-editing
+  - ext-editing: ExtensionLinter
   - ipynb
+  - 在vscode源码中，大多只用markdown-it解析，只有notebook采用它渲染
   - [The TextMate grammar VS Code uses for Markdown syntax highlighting](https://github.com/microsoft/vscode-markdown-tm-grammar)
 
+- 编辑器hover的浮窗视图层
+  - monaco-hover-content > hover-row >
+    - lsp-hover内容: markdown-hover > code-hover-contents > rendered-markdown > monaco-tokenized-source
+    - lint内容: .hover-contents.marker
+    - action-fix内容: status-bar > action-container
+
+- 
 - 
 - 
 - 
