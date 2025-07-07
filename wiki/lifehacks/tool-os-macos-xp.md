@@ -170,6 +170,9 @@ redis-cli shutdown
   - https://github.com/zetaloop/keyviz /汉化版
   - 一款免费开源的按键可视化软件，可以实时显示您的按键和鼠标操作
   - 在录屏、演讲还是团队协作中，您都能让观众一目了然地看到操作过程。
+
+- monitor
+  - network: sniffnet
 # arm-mac
 
 # intel-mac

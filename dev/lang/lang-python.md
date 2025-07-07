@@ -65,6 +65,60 @@ modified: 2020-07-14T09:27:30.503Z
 - 🌰 [Django documentation contents | tutorial](https://docs.djangoproject.com/en/5.2/contents/)
   - tutorial: app-structure, db-crud, view-template, view-generic
 
+- To represent database-table data in Python objects, Django uses an intuitive system: A model class represents a database table, and an instance of that class represents a particular record in the database table.
+
+- A `QuerySet` represents a collection of objects from your database. 
+  - It can have zero, one or many filters. Filters narrow down the query results based on the given parameters. 
+  - In SQL terms, a QuerySet equates to a `SELECT` statement, and a filter is a limiting clause such as `WHERE` or `LIMIT`.
+- You get a QuerySet by using your model’s Manager. Each model has at least one Manager, and it’s called `objects` by default.
+  - A Manager is accessible only via model classes, rather than from model instances, to enforce a separation between “table-level” operations and “record-level” operations.
+
+- Each time you refine a QuerySet, you get a brand-new QuerySet that is in no way bound to the previous QuerySet. 
+  - Each refinement creates a separate and distinct QuerySet that can be stored, used and reused.
+  - The initial QuerySet (q1) is unaffected by the refinement process.
+
+- QuerySet objects are lazy – the act of creating a QuerySet doesn’t involve any database activity. You can stack filters together all day long, and Django won’t actually run the query until the QuerySet is evaluated. 
+
+- If you know there is only one object that matches your query, you can use the `get()` method on a Manager which returns the object directly
+  - Note that there is a difference between using get(), and using filter() with a slice of [0]. If there are no results that match the query,  `get()` will raise a `DoesNotExist` exception. 
+  - Similarly, Django will complain if more than one item matches the get() query
+
+- Some methods on managers and querysets - like get() and first() - force execution of the queryset and are blocking. 
+  - Methods that return new querysets: These are the non-blocking ones, and don’t have asynchronous versions. You’re free to use these in any situation, though read the notes on defer() and only() before you use them.
+  - Methods that do not return querysets: These are the blocking ones, and have asynchronous versions - the asynchronous name for each is noted in its documentation, though our standard pattern is to add an a prefix.
+
+- You can evaluate a QuerySet in the following ways:
+  - Iteration. (for-in)
+    - A QuerySet is iterable, and it executes its database query the first time you iterate over it. 
+  - Slicing an unevaluated QuerySet usually returns another unevaluated QuerySet, but Django will execute the database query if you use the “step” parameter of slice syntax, and will return a list.
+  - Pickling/Caching.
+  - repr(). A QuerySet is evaluated when you call repr() on it. 
+  - len(). A QuerySet is evaluated when you call len() on it.
+  - list(). Force evaluation of a QuerySet by calling list() on it.
+  - bool(). Testing a QuerySet in a boolean context, such as using bool(), or, and or an if statement, will cause the query to be executed
+- If you pickle a QuerySet, this will force all the results to be loaded into memory prior to pickling.
+
+- Transactions are not currently supported with asynchronous queries and updates. 
+  - If you wish to use a transaction, we suggest you write your ORM code inside a separate, synchronous function and then call that using `sync_to_async`
+
+- To compare two model instances, use the standard Python comparison operator, the double equals sign: ==. Behind the scenes, that compares the primary key values of two models.
+  - If a model’s primary key isn’t called id, no problem. Comparisons will always use the primary key, whatever it’s called.
+
+- When Django deletes an object, by default it emulates the behavior of the SQL constraint `ON DELETE CASCADE` – in other words, any objects which had foreign keys pointing at the object to be deleted will be deleted along with it.
+
+- Instances of F() act as a reference to a model field within a query. These references can then be used in query filters to compare the values of two different fields on the same model instance.
+
+- Keyword argument queries – in filter(), etc. – are “AND”ed together. If you need to execute more complex queries (for example, queries with OR statements), you can use Q objects.
+  - Q objects can be combined using the &, |, and ^ operators. When an operator is used on two Q objects, it yields a new Q object.
+
+- If you find yourself needing to write an SQL query that is too complex for Django’s database-mapper to handle, you can fall back on writing SQL by hand. 
+
+- 
+- 
+- 
+- 
+- 
+
 ## docs-drf
 
 - [Django REST framework](https://www.django-rest-framework.org/)

@@ -59,4 +59,9 @@ modified: 2020-12-12T19:01:56.749Z
 # ci/cd
 - https://github.com/intuit/auto /MIT/202502/ts
   - Generate releases based on semantic version labels on pull requests.
+# network-tunnel
+- https://github.com/GyulyVGC/sniffnet /26.2kStar/MIT/202507/rust
+  - https://sniffnet.net/
+  - comfortably monitor your Internet traffic. Cross-platform.
+  - import and export comprehensive capture reports as PCAP files
 # more
