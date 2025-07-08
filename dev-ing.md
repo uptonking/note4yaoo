@@ -295,7 +295,7 @@ console.log(
 /syncUpdates|syncOTUpdates/
 
 <!-- 观测云搜索 ide-server -->
--multiTerminalHeartBeat -all\:multiTerminal -"[fromMQ] multiTerminal" -"[toMQ]paas:multiTerminal" -"] multiTerminal, {" -all\:activeTerminal -"] activeTerminal, {"  -"[toMQ]paas:multiTerminalCmd" -"[fromMQ] terminalStatus" -"appendMultiTerminalProcessName res" -"appendMultiTerminalCmdReply res" -all\:multiTerminalProcessName -all\:initAiCodeInfo -"[fromMQ] lspStatus" -"[fromMQ] portsChanged" -"[fromMQ] ragStatus" -"] ragStatus data: [" -"all:ragStatus" -"[followingFocusComponent]"
+-multiTerminalHeartBeat -all\:multiTerminal -"[fromMQ] multiTerminal" -"[toMQ]paas:multiTerminal" -"] multiTerminal, {" -all\:activeTerminal -"] activeTerminal, {"  -"[toMQ]paas:multiTerminalCmd" -"[fromMQ] terminalStatus" -"appendMultiTerminalProcessName res" -"appendMultiTerminalCmdReply res" -all\:multiTerminalProcessName -all\:initAiCodeInfo -"[fromMQ] lspStatus" -"[fromMQ] portsChanged" -"[fromMQ] availablePorts" -"[fromMQ] ragStatus" -"] ragStatus data: [" -"all:ragStatus" -"[fromMQ] vncStatus" -"[followingFocusComponent]"
 
 -"toMQ fileContentUpdate begin" -"[toMQ]paas:filePull"  
 -agentAppendFile -"writeFile prepared"
@@ -313,6 +313,7 @@ add action to create a route /nextjs with nextjs changelog content in it , and s
 
 add action to create quickSort1.mjs and try to implement quick sort algorithm in less than 40 lines
 
+<!-- 🛝 -->
 use create-react-app to create a react-router v6 example webapp in typescript: homepage shows a list of frontend frameworks like react/vue/angular, when clicking the framework, navigate to the route to show its introduction
 
 use vanilla html/css/js to create a personal profile landing page: homepage shows a cool welcoming animation, then shows 4 example personal projects, then a simple get in touch form below it
@@ -353,6 +354,8 @@ test('mock test', () => {
 
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
+
+## 0708
 
 ## 0707
 

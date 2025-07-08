@@ -1686,7 +1686,7 @@ modified: 2023-06-23T12:46:53.288Z
   - https://prismjs.com/
   - a lightweight, robust, and elegant syntax highlighting library. It's a spin-off project from Dabblet.
   - Supports parallelism with Web Workers, if available. 
-  - Regex-based so it *will* fail on certain edge cases, which are documented
+  - 🧮 Regex-based so it *will* fail on certain edge cases, which are documented
   - [Roadmap for Prism v2 _202208](https://github.com/orgs/PrismJS/discussions/3531)
     - This is by far the most important change in v2: ES modules.
 # code-playgrounds

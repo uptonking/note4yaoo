@@ -76,13 +76,14 @@ modified: 2021-05-06T09:38:31.520Z
   - ?: replay.io
   - 参考这些公司在开源项目中的用法
 
-- who is using #highlightjs
+- who is using #highlightjs (Auto language detection)
+  - vscode-ext-markdown-language-features(MarkdownItEngine)
   - stackoverflow
   - discord
   - vscode-markdown-language-features
   - marked-highlight
   - lowlight/rehype-highlight
-- who is using #prismjs
+- who is using #prismjs (smaller bundle size)
   - mozilla-mdn
   - css-tricks, smashing-magazine
   - stripe, drupal

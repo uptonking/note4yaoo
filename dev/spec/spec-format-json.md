@@ -7,8 +7,11 @@ modified: 2020-10-15T13:41:01.275Z
 
 # spec-format-json
 
-# spec
+# guide
 
+# div-xp-json
+- socket.io server向浏览器的socket.io js client发送的数据object1会序列化为json传输，但json规范的格式值不包含 `undefined`，server侧会先使用`JSON.stringify`将object1序列化后再传输，这会导致object1中值为undefined的属性丢失
+# spec
 - json
   - https://www.json.org/json-en.html
   - [RFC 6901 - JavaScript Object Notation (JSON) Pointer](https://datatracker.ietf.org/doc/html/rfc6901)

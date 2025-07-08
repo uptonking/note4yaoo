@@ -9,6 +9,9 @@ modified: 2023-11-10T07:38:26.990Z
 
 # guide
 
+# dev-xp
+- Map对象
+  - 可作为key的有: 空字符串'', undefined
 # discuss-stars
 - ## 
 
