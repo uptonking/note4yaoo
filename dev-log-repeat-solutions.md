@@ -60,9 +60,10 @@ modified: 2021-07-20T13:50:23.433Z
   - version-history: rrweb, diff, format(.fodt), video-but-auto-update
   - collab: room-playground❓, 非auth版本的简易测试环境
   - automation/workflow/scheduler: n8n, activepieces, lowcode
+  - format parser/generator: json, markdown
+  - office: suite-docs, outline, handsontable, xlsx, revealjs-ts+PPTist, pdf-lib
   - plugin/extension: sandbox, e2b
   - rspack: js plugin; rspack/rolldown-wasm
-  - office: suite-docs, outline, handsontable, xlsx, revealjs-ts+PPTist, pdf-lib
   - 考虑维护/fork旧版项目: codemirror5-lang/demo, atlaskit-editor-eg, mxgraph-demo
   - 考虑把port主流项目: codemirror-go/rust
   - ~~animation: motion(dom/svg)~~

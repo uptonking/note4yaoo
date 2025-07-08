@@ -90,7 +90,8 @@ modified: 2021-01-04T17:26:25.032Z
   - works in a browser, on a server, or from a command line interface (CLI)
   - Marked can be extended using custom extensions. This is a list of extensions that can be used with `marked.use(extension)`.
   - Warning: Marked does not sanitize the output HTML
-  - `const html = marked.parse('# Marked in Node.js\n\nRendered by **marked**.');`
+  - `const html = marked.parse('# Marked in Node.js\n\nRendered by **marked**.');`; 
+  - `marked-highlight`语法高亮基于highlightjs实现
 
 - markdown-it /16.8kStar/MIT/202401/js
   - https://github.com/markdown-it/markdown-it
@@ -101,6 +102,11 @@ modified: 2021-01-04T17:26:25.032Z
   - Community-written plugins and other packages on npm.
   - `const md = markdownit(); const html = md.render('# markdown-it rule\n');`; 
   - a fork of https://github.com/jonschlinkert/remarkable /MIT/202505/js/inactive
+  - [Lazy highlighting _202408](https://github.com/markdown-it/markdown-it/issues/1045)
+    - The current render code seems to do everything in one sequential flow. As soon as it finds a fenced block it passes it though the highlight function. Which works fine if the highlighter being used is ready for it.
+    - Loading them all in memory at once (like `highlight.js` allows) results in a MB big minified js file which i very much like to prevent.
+    - But the render mechanism in markdown-it seems to be not so happy about a on-demand highlighter.
+    - I fixed this by, at parse time, "remembering which fenced blocks" went through the parser and then, once parsed, go over those blocks again and load the syntax highlighting files. That works as lazy enough. It's quite a bit more involved then this but it works. 
 
 - snarkdown /2kStar/MIT/202201/js/单文件
   - https://github.com/developit/snarkdown

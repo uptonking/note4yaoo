@@ -119,7 +119,7 @@ modified: 2024-05-02T02:01:04.255Z
   - Problem 1: You still need to know if the user input is code / technical language vs plain text / natural language. (This turns out to be quite difficult to solve, but there’s a solution below.)
   - Problem 2: If it’s code, you need to know what language it is, and then, of course, syntax highlight it!
   - HighlightJS does not solve Problem 1, and for Problem 2, HighlightJS can attempt to determine the coding language but at an expensive network and compute cost.
-- Given HighlightJS’s limitations, my team at Pieces built and published the CodeDetectionAPI to solve Problems 1 and 2 in our app with machine learning while achieving optimal network and compute performance.
+- Given HighlightJS’s limitations, my team at Pieces built and published the `CodeDetectionAPI` to solve Problems 1 and 2 in our app with machine learning while achieving optimal network and compute performance.
 # more
 - https://dev.to/thinkthroo/execa-vs-using-childprocess-to-execute-cli-commands-programmatically-1mjm
 

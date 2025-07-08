@@ -20,6 +20,12 @@ modified: 2021-06-02T16:58:43.564Z
   - The smallest CommonMark compliant markdown parser
   - It uses a state machine to parse the entirety of markdown into concrete tokens.
   - It was made to replace the internals of remark-parse
+- https://github.com/wooorm/markdown-rs /1.2kStar/MIT/202504/rust
+  - https://docs.rs/markdown/
+  - CommonMark compliant markdown parser in Rust with ASTs and extensions.
+  - extensions (100% GFM, 100% MDX, frontmatter, math)
+  - markdown-rs is an open source markdown parser written in Rust. It’s implemented as a state machine (`#![no_std]` + `alloc`) that emits concrete tokens, so that every byte is accounted for, with positional info.
+  - This Rust crate has a sibling project in JavaScript: `micromark` (and `mdast-util-from-markdown` for the AST).
 
 - unified is an interface for processing text with syntax trees and transforming between them. 
 - Three syntaxes are connected to unified, each coming with a syntax tree definition, and a parser and stringifier: 

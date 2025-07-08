@@ -80,9 +80,13 @@ modified: 2021-05-06T09:38:31.520Z
   - stackoverflow
   - discord
   - vscode-markdown-language-features
+  - marked-highlight
+  - lowlight/rehype-highlight
 - who is using #prismjs
-  - mozilla
+  - mozilla-mdn
+  - css-tricks, smashing-magazine
   - stripe, drupal
+  - 在202507左右开始准备发布v2，v2最大变更是支持esm
 
 - who is using #xtermjs
   - vscode

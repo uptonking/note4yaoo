@@ -1674,6 +1674,21 @@ modified: 2023-06-23T12:46:53.288Z
   - https://eecavanna.github.io/monocle
   - Web-based visualizer for Makefiles
   - You can use it to view a Makefile as a graph of its targets and their dependencies—in your web browser.
+# syntax-highlighting
+- https://github.com/highlightjs/highlight.js /24.5kStar/BSD/202507/js
+  - https://highlightjs.org/
+  - https://highlightjs.readthedocs.io/en/latest/readme.html
+  - JavaScript syntax highlighter with language auto-detection and zero dependencies.
+  - Compatible with any JS framework
+  - It works in the browser as well as on the server.
+
+- https://github.com/PrismJS/prism /12.7kStar/MIT/202506/ts
+  - https://prismjs.com/
+  - a lightweight, robust, and elegant syntax highlighting library. It's a spin-off project from Dabblet.
+  - Supports parallelism with Web Workers, if available. 
+  - Regex-based so it *will* fail on certain edge cases, which are documented
+  - [Roadmap for Prism v2 _202208](https://github.com/orgs/PrismJS/discussions/3531)
+    - This is by far the most important change in v2: ES modules.
 # code-playgrounds
 - https://github.com/PotatoGroup/code-editor /ISC/202402/ts
   - a JS code editor based on codeMirror6, support code autoCompletion, which can be used with @astii/expression-sandbox

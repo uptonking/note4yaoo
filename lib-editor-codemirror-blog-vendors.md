@@ -176,8 +176,7 @@ modified: 2024-05-17T16:08:45.674Z
   - It is well-integrated in Miro and has a native plugin for syntax highlighting that uses the highlightjs
   - Highlight.js, which Quill uses for syntax highlighting, isn’t the best library available
 - Option 2: Use HTML elements and syntax highlighting libraries
-  - By using various approaches based on HTML elements like this one using textarea and highlightjs/prismjs, we can make editable code blocks with real-time syntax highlightiing
-  - By using various approaches based on HTML elements like this one using textarea and highlightjs/prismjs, we can make editable code blocks with real-time syntax highlightiing
+  - By using various approaches based on HTML elements like this one using textarea and highlightjs/prismjs, we can make editable code blocks with real-time syntax highlighting
 - Option 3: Integrate a web-based code editor
   - we used the web-based code editor CodeMirror. 
   - we can highlight the heavy weight of the editor, which may result in a longer load time. 

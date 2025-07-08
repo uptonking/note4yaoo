@@ -354,6 +354,14 @@ test('mock test', () => {
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
 
+## 0707
+
+- The standard JavaScript Error object and its descendants (like TypeError, ReferenceError, etc.) have properties like message, name, and stack. However, these properties are not enumerable.
+  - JSON.stringify() only includes an object's enumerable properties in the resulting JSON string. Since stack, message, and name are not enumerable, JSON.stringify() ignores them completely.
+
+- [typescript - Why Catch clause variable type annotation must be any? - Stack Overflow](https://stackoverflow.com/questions/69021040/why-catch-clause-variable-type-annotation-must-be-any)
+  - unknown type exists as a safe alternative to any, because operations with unknown type are illegal, so you are forced to type check your unknown variable before doing anything.
+
 ## 0703
 
 - The versions of `base64` and head on macOS do not support the same options as their Linux counterparts.
