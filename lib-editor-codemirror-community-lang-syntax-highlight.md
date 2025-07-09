@@ -13,6 +13,8 @@ modified: 2024-08-11T07:59:35.617Z
   - 保留关键字
   - 变量、函数
   - 字面量: 字符串
+# dev-xp
+- highlightjs或其他方案如何实现局部主题，比如编辑器使用用户配置的高亮主题而侧边栏使用系统默认高亮主题，css-in-js 更容易实现
 # solutions-docs
 - [Get started | OpenCtx](https://openctx.org/docs/start)
   - OpenCtx shows you contextual info about code from your dev tools, in your editor, in code review, and anywhere else you read code
@@ -33,6 +35,44 @@ modified: 2024-08-11T07:59:35.617Z
 - 👷 CodeMirror 5 also eagerly parses the lines it redraws, but I guess that ends up not drawing attention in the profile because it is generally limited to a single line.
   - Various bits of state (highlighting, folding information, bracket matching, etc) in version 6 rely on the tree to be available whenever the editor is updated. As such, ‘debouncing’ parsing would incur a rather high complexity cost.
   - The idea is that, at least once warmed up, the incremental parser is fast enough to create a new tree in about 1 millisecond. 
+# discuss-prismjs
+- ## 
+
+- ## 
+
+- ## 
+# discuss-highlightjs
+- ## 
+
+- ## [[Request] Auto use dark/light theme depending on prefers-color-scheme _202211](https://github.com/highlightjs/highlight.js/issues/3652)
+
+- S1
+
+```CSS
+@import url('/styles/base16/solarized-dark.css') screen and (prefers-color-scheme: dark);
+@import url('/styles/base16/solarized-light.css') screen and (prefers-color-scheme: light);
+```
+
+- S2
+
+```HTML
+<link href="/styles/base16/solarized-dark.css" media="(prefers-color-scheme: dark)" rel="stylesheet">
+<link href="/styles/base16/solarized-light.css" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" rel="stylesheet">
+```
+
+- 👷 I think we'll draw a line in the sand and say a first-party theme (for our purposes) is a singular set of colors - if a theme has both a light and dark variant - that is two themes, two CSS files, etc.
+  - This is historically how it's been done, and our theme previewer also assumes such. 
+
+- I was recently using the technique used by the Highlight.js demo: main/demo/demo.js Which involved using JS to enable / disable one of two `<link>` in the head. This worked but the switch had a bit of flicker or delay to it.
+  - Instead, i've switched to using a single highlightjs CSS file with CSS variables to control it. The result is very fast theme changes.
+
+- ## [Question: How do I change the style at runtime by clicking a button _201909](https://github.com/highlightjs/highlight.js/issues/2115)
+- The highlight.js demo page shows you one way to do it https://github.com/highlightjs/highlight.js/blob/main/demo/demo.js
+  - Each of the alternate stylesheets is included in a `<link>` tag in the page's `<head>` tag. demo.js disables all but the currently-selected style.
+
+- You can set an inline script at the head. That script could read the actual cookie and set the appropriate style based on that value.
+  - The first approach can also generate some Flash of unstyled content. In the process of solving this, you may deal with some blank pages until the styles are loaded, which is better but does not solve the entire problem.
+  - I think the second approach is the best by default, because it's rare to have very extensive theme definitions.
 # discuss-lint
 - ## 
 

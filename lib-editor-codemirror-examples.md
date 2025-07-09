@@ -1681,6 +1681,15 @@ modified: 2023-06-23T12:46:53.288Z
   - JavaScript syntax highlighter with language auto-detection and zero dependencies.
   - Compatible with any JS framework
   - It works in the browser as well as on the server.
+  - 🆚 [Prism vs Highlight.js: Why choose one over the other? _202209](https://github.com/highlightjs/highlight.js/issues/3625)
+    - automatic language detection
+    - 👷 Neither library uses a simple lexer/tokenizer (that walks the code one character at a time).
+      - Both parsers tokenize based on regex scanning.
+      - Both can highlight operators/punctuation 
+      - Both have line number plugins.
+    - I think a major weakness of both syntax highlighters is they're based on regular expressions. Most if not all of the languages they highlight are not regular languages. They run into issues with things such as nesting.
+    - A syntax highlighter having proper context-free parsers would be a major reason to prefer one over all others. An earley parser with grammar data for all supported languages, for example.
+    - In the end, I chose Shiki, it's a heavier and slower highlighter, that's more suited for server-side rendering, rather than client-side.
 
 - https://github.com/PrismJS/prism /12.7kStar/MIT/202506/ts
   - https://prismjs.com/

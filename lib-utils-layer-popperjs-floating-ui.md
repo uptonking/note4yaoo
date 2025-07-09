@@ -27,6 +27,9 @@ modified: 2022-06-04T00:44:40.955Z
 - resources
   - [HTMLElement API: popover | Can I use](https://caniuse.com/mdn-api_htmlelement_popover)
 # dev-xp
+- 调试浮窗如tooltip/dialog的技巧， devtools > rendering > emulate a focused page
+  - inspect浮窗元素时，ctrl+shift+p 搜索 disable javascript
+
 - 在包含popover的组件逻辑中提前return可能会导致问题
   - fewer hooks
 # blogs

@@ -295,11 +295,12 @@ console.log(
 /syncUpdates|syncOTUpdates/
 
 <!-- 观测云搜索 ide-server -->
--multiTerminalHeartBeat -all\:multiTerminal -"[fromMQ] multiTerminal" -"[toMQ]paas:multiTerminal" -"] multiTerminal, {" -all\:activeTerminal -"] activeTerminal, {"  -"[toMQ]paas:multiTerminalCmd" -"[fromMQ] terminalStatus" -"appendMultiTerminalProcessName res" -"appendMultiTerminalCmdReply res" -all\:multiTerminalProcessName -all\:initAiCodeInfo -"[fromMQ] lspStatus" -"[fromMQ] portsChanged" -"[fromMQ] availablePorts" -"[fromMQ] ragStatus" -"] ragStatus data: [" -"all:ragStatus" -"[fromMQ] vncStatus" -"[followingFocusComponent]"
+-multiTerminalHeartBeat -all\:multiTerminal -"[fromMQ] multiTerminal" -"[toMQ]paas:multiTerminal" -"] multiTerminal, {" -all\:activeTerminal -"] activeTerminal, {"  -"[toMQ]paas:multiTerminalCmd" -"[fromMQ] terminalStatus" -"appendMultiTerminalProcessName res" -"appendMultiTerminalCmdReply res" -all\:multiTerminalProcessName -all\:multiTerminalCmdReply -all\:initAiCodeInfo -"[fromMQ] lspStatus" -all\:lspStatus -all\:updateDebugSupport -all\:availablePorts -"[fromMQ] portsChanged" -"[fromMQ] availablePorts" -"availablePorts, {}" -"[fromMQ] ragStatus" -"] ragStatus data: [" -"all:ragStatus" -"[fromMQ] vncStatus" -"[fromMQ] config" -"[followingFocusComponent]"
 
 -"toMQ fileContentUpdate begin" -"[toMQ]paas:filePull"  
--agentAppendFile -"writeFile prepared"
+-agentAppendFile -"[FileTree_writeFile] fs.writeFile prepared" -"[FileTree_writeFile] success"
 
+<!-- 观测云搜索 frontend -->
 -chunkMessage -richMessage -messageSuggestion -toolCallStatusUpdated
 ```
 
@@ -355,7 +356,29 @@ test('mock test', () => {
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
 
-## 0708
+## 0709
+
+```JS
+import 'highlight.js/styles/atom-one-dark.css'
+```
+
+```jsx
+<link
+  id="el"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  <!-- 👇  -->
+  disabled
+  crossorigin="anonymous" />
+```
+
+- If `disabled` attribute is specified in the HTML when it is loaded, the stylesheet will not be loaded during page load. 
+  - Instead, the stylesheet will be loaded only when the `disabled` property is set to `false` or removed. 
+  - Setting the `disabled` property using JavaScript causes the stylesheet to be removed from the document's `Document.styleSheets` list.
+  - It only has an effect with style sheet links (`rel` property set to `stylesheet`).
+- rel=preload
+  - specifying resources that your page will need very soon, which you want to start loading early in the page lifecycle, before browsers' main rendering machinery kicks in.
+  - Even though the name contains the term load, it doesn't load and execute the script but only schedules it to be downloaded and cached with a higher priority.
 
 ## 0707
 

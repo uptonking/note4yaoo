@@ -15,7 +15,17 @@ modified: 2021-08-10T03:51:01.891Z
 
 - ## 
 
-- ## 
+- ## ⏳ [HypeCycles](https://wiki.alopex.li/HypeCycles)
+
+1998-2001: Dotcom Bubble
+1999-2006: Java
+2004-2007: Web 2.0
+2007-2010: The Cloud
+2010-2015: Social media (Android)
+2012-2015: Internet of Things
+2013-2015: Big Data
+2017-2021: Blockchain
+2021-present: AI
 
 - ## 🤔 spring boot的“依赖注入”就是在程序启动的时候，先把所有注释的类过一遍，放到一个巨大的map里去，
 - https://x.com/halfamonk/status/1901554972690612381

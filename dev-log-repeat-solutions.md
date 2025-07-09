@@ -37,6 +37,7 @@ modified: 2021-07-20T13:50:23.433Z
     - 数据通信，http/websocket
     - 偏实时系统的断连恢复如何实现
     - 读多？ 写多？
+    - api/接口 冪等调用
     - 系统解耦: vscode在扩展崩溃时仍可编辑， clacky保证ai断联/LSP断联/未激活时仍可编辑
     - sqlite的流行表明scaling要考虑场景, zulip/jupyterhub私有部署默认支持几千用户但不scale
     - 系统的性能受第三方资源如github的fetch api的限制，设计初期要想办法避免

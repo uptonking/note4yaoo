@@ -9,6 +9,10 @@ modified: 2023-02-20T19:41:08.506Z
 
 # guide
 
+# dev-xp
+- 调试浮窗如tooltip/dialog的技巧， devtools > rendering > emulate a focused page
+  - inspect浮窗元素时，ctrl+shift+p 搜索 disable javascript
+# resources
 - [Chrome DevTools Protocol](https://chromedevtools.github.io/devtools-protocol/)
   - The Chrome DevTools Protocol allows for tools to instrument, inspect, debug and profile Chromium, Chrome and other Blink-based browsers.
   - Instrumentation is divided into a number of domains (DOM, Debugger, Network etc.). Each domain defines a number of commands it supports and events it generates. 

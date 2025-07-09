@@ -87,6 +87,10 @@ modified: 2023-07-23T07:05:19.441Z
   - 在view中设置显示 path bar 比文本路径更友好
   - defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
 
+- disable cmd+shift+I 默认会打开邮件
+  - settings > Keyboard Shortcuts > messaging/text > New Email With Selection
+  - To disable it: Simply uncheck the box next to "New Email With Selection".
+
 ### 浏览器
 
 - command+L/option(alt)+command+F/fn＋control+F5：定位地址栏/聚焦搜索栏
