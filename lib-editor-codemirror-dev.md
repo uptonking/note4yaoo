@@ -83,6 +83,8 @@ modified: 2021-05-06T09:38:31.520Z
   - vscode-markdown-language-features
   - marked-highlight
   - lowlight/rehype-highlight
+  - Currently, and by design, highlight.js doesn't support highlight of contenteditable code.
+
 - who is using #prismjs (smaller bundle size)
   - mozilla-mdn
   - css-tricks, smashing-magazine

@@ -54,7 +54,7 @@ modified: 2025-04-12T19:18:28.788Z
   - pylsp
   - lsp-mode starts the image passed as :docker-image-id and mounts :path-mappings in the container. 
 
-## ts-server
+## ts-server/tsserver
 
 - https://github.com/typescript-language-server/typescript-language-server /apache2/202409/ts
   - TypeScript & JavaScript Language Server
@@ -111,7 +111,7 @@ modified: 2025-04-12T19:18:28.788Z
   - A language server to lint and format markdown files with remark.
   - Use `vscode-remark` to use the remark language server with Visual Studio Code.
 
-## python-server
+## python-server/pyright/pylsp
 
 - https://github.com/DetachHead/basedpyright /MIT/202504/python/ts
   - https://docs.basedpyright.com/
@@ -124,11 +124,11 @@ modified: 2025-04-12T19:18:28.788Z
   - pyright with yapf and ruff
   - a new Python meta-LSP that includes tools such as pyright, ruff, and yapf.
 
-## go-server
+## go-server/gopls
 
 ## rust-server
 
-## java-server
+## java-server/jdtls
 
 - https://github.com/chaitanya71998/monaco-language-testing-with-java /MIT/202308/ts/inactive
   - integrating monaco language client with java language server from eclipse

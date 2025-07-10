@@ -44,6 +44,22 @@ modified: 2024-08-11T07:59:35.617Z
 # discuss-highlightjs
 - ## 
 
+- ## 
+
+- ## [[Request] On the `contenteditable` issue _202411](https://github.com/highlightjs/highlight.js/issues/4176)
+  - Currently, and by design, highlight.js doesn't support highlight of contenteditable code.
+  - I started to create the github repo: https://github.com/denis-migdal/hljs_editable
+
+- That could work for smaller amounts of code. It would get progressively worse with longer lengths of text since eventually you'd start to feel the cost to re-highlighting the entire code-base for every single change. That cost of course would vary by CPU/browser, etc... no idea how well this would scale; just one reason we're not interested in supporting this complexity in core. To do this "properly" you need a solution that can only re-highlight changed portions of the code as you are editing.
+  - Also, there are MUCH better solutions for live editing, such as CodeMirror, etc. that already support such functionality.
+
+- 
+- 
+
+- ## [[Request] Add line numbering _202106](https://github.com/highlightjs/highlight.js/issues/3238)
+- there is an explicit page here explaining why line numbers are not implemented in this library.
+  - Highlight.js’ notable lack of line numbers support is not an oversight but a feature
+
 - ## [[Request] Auto use dark/light theme depending on prefers-color-scheme _202211](https://github.com/highlightjs/highlight.js/issues/3652)
 
 - S1

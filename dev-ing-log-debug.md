@@ -362,7 +362,9 @@ const currentDoc = changes.apply(textDoc).toString();
 
 ## 
 
-## 
+## clerk认证与登陆管理的集成与使用体验
+
+- clerk在develop与prod环境的key不同，在feature分支环境使用key会因此有限制，比如预览环境a/b测试需要生产用户与非生产付费(配置混乱)
 
 ## 大量用户同时调用github的api来clone仓库，可能导致后端崩溃
 

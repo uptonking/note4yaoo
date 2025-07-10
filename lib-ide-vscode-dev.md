@@ -108,6 +108,9 @@ modified: 2024-08-24T16:15:11.456Z
 
 - update-version/changelog这样的pr应该被自动化，人工只需要review，不需要敲繁琐的命令
 # dev-xp
+- themes
+  - Github Light Default能将python的from-import渲染为不同颜色，Github Light不能
+  - Github Light Default在import部分多褐色，Github Light多紫色
 
 ## hot-keys
 

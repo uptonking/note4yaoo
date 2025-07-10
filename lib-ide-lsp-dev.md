@@ -132,7 +132,42 @@ modified: 2025-01-05T15:00:07.466Z
 
 ## LSP-hover
 
-- hover返回的内容都是markdown
+- hover返回的数据格式都是markdown
+  - hover浮窗显示在左右侧边栏内容上层
+  - hover浮窗内容显示为line-wrapping自动换行，支持竖直滚动，不支持水平滚动
+
+- tests
+  - js https://develop.app.clackyai.com/thread/0197e48d-bd3b-7222-a90e-3f14ec8ec31d
+  - ts https://develop.app.clackyai.com/thread/0197f28d-04e6-78b4-a6b7-d1dc981b4751
+  - go https://develop.app.clackyai.com/thread/0197e8e8-2193-711d-b9f4-90f0c1553e4b
+  - python https://develop.app.clackyai.com/thread/0197c3ca-9d82-7e10-8890-18834e521aa0
+  - java https://develop.app.clackyai.com/thread/01971696-4771-722b-b644-a95259dcd705
+  - ruby https://develop.app.clackyai.com/thread/0196f2bb-a022-7457-beba-ce32439eeb4d
+
+- 👉 tsserver, 数据包含range
+  - 结构是 code block, 后能可能接着是 换行
+  - .js文件的hover数据和.ts文件数据格式相同
+  - { "kind": "markdown", "value": "\n```typescript\n(alias) const hello2: \"world \"\nimport hello2\n```\n" }
+  - { "kind": "markdown", "value": "\n```typescript\nfunction Root(): JSX.Element\n```\n" }
+  - { "kind": "markdown", "value": "\n```typescript\nfunction useCollabMulti(): {}\n```\n测试hook方法" }
+- 👉 gopls, 数据包含range
+  - 结构是 code block, 后能可能接着是 ---
+  - { "kind": "markdown", "value": "```go\nfunc main()\n```" }
+  - 🧐 注意水平分隔线 { "kind": "markdown", "value": "```go\nfunc main()\n```\n\n---\n\n\\* \\* go的启动方法\n" }
+- 👉 pylsp, 数据不包含range
+  - 结构是 desc-md
+  - { "kind": "markdown", "value": "```python\nmain()\n```\n\n\nRun administrative tasks." }
+  - { "kind": "markdown", "value": "```python\ninclude(arg: Any, namespace: Optional[str]=...) -> Tuple[List[URLResolver], Optional[str], Optional[str]]\n```\n\n\n```\n\n```\n" }
+  - basedpyright
+    - 结构是 code block, 后能可能接着是 ---
+- 👉 jdtls ☕️, 数据不包含range
+  - 内容可能是数组，也可能不是
+  - { contents: [ { "language": "java", "value": "org.springframework.web.bind.annotation. RestController" }, "annotated with @Controller and @ResponseBody"  ] }
+  - { "contents": { "language": "java", "value": "AuthUtils authUtils" } }
+- 👉 ruby, 数据不包含range
+  - { "kind": "markdown", "value": "CodeHTML\n\n`=~ CodeHTML`" }
+  - { "kind": "markdown", "value": "String\n\n`=~ String`" }
+  - { "kind": "markdown", "value": "Post\n\nCalculates the factorial of a number." }
 
 - hover ts/js
   - 对于字面量如字符串/数字/保留字，hover返回的内容是 null

@@ -356,6 +356,15 @@ test('mock test', () => {
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
 
+## 0710
+
+- hover浮窗尺寸限制: w-400, h-240
+
+- YARD has become the de‑facto standard for Ruby documentation—and most IDEs will show these docstrings on hover. 
+  - You simply put `#` lines immediately above your method or class, optionally using `@param/@return` tags
+- RDoc-style comments
+  - You can use a block comment with `=begin/=end`, but note that not every editor will pick it up for hovers 
+
 ## 0709
 
 ```JS
