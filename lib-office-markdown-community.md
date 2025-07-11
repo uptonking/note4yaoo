@@ -235,7 +235,50 @@ export default FrontPage
   - 远的比如某名人挂名做了一个LLM调用库，近的比如微软发布的 markitdown。 它只有 1000 行左右，主要工作是把很多开源库给集成到一个简便的API。并没有提升解析效果，该不好还是不好。 你要说有价值吧，是有价值的，但是你说这玩意震撼发布，那就属于尬吹了。
 - 名人挂名做了一个LLM调用库是啥。
   - 吴恩达的aisuite
+# discuss-markdown-it
+- ## 
+
+- ## 
+
+- ## 
+# discuss-marked
+- ## 
+
+- ## 
+
+- ## [What would be the preferred method to add target="_blank" to links? _201509](https://github.com/markedjs/marked/issues/655)
+- use custom renderer
+
+```ts
+import { marked, type Tokens } from "marked";
+
+const renderer = {
+  link({ href, title, text }: Tokens.Link): string {
+    const localLink = href.startsWith(
+      `${location.protocol}//${location.hostname}`
+    );
+
+    // to avoid title="null"
+    if (title === null) {
+      return localLink ?
+        `<a href="${href}">${text}</a>` :
+        `<a target="_blank" rel="noreferrer noopener" href="${href}">${text}</a>`;
+    }
+    
+    return localLink ?
+      `<a href="${href}" title="${title}">${text}</a>` :
+      `<a target="_blank" rel="noreferrer noopener" href="${href}" title="${title}">${text}</a>`;
+  },
+};
+
+marked.use({ renderer });
+
+export default marked;
+```
+
 # discuss
+- ## 
+
 - ## 
 
 - ## 
