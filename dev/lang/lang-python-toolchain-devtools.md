@@ -18,7 +18,10 @@ modified: 2025-04-09T02:50:35.187Z
 # discuss-pkg/pip/uv
 - ## 
 
-- ## 
+- ## what's uv's equivalent to `pip install diff_cover`
+
+- uv tool install diff-cover
+  - This will fetch diff-cover, put its executable on your PATH, and isolate it from your project’s venv 
 
 - ## [How to add requirements.txt to uv environment - Stack Overflow](https://stackoverflow.com/questions/79344035/how-to-add-requirements-txt-to-uv-environment)
 

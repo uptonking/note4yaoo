@@ -328,7 +328,7 @@ use vanilla html/css/js to create a simplistic personal profile landing page: ho
 - ensure tests pass by auto run terminal commands  npx nx run webapp:test  src/__tests__/hooks/use-time-machine.test.tsx
 - ensure tests pass by auto run terminal commands  npx nx run shared-utils:test __tests__/env-browser.test.ts
 
-- ensure tests pass by auto run terminal commands  cd packages/client && pnpm test src/__tests__/DaoChannel.files.spec.tsx
+- ensure tests pass by auto run terminal commands  cd packages/client && pnpm test  src/lib/codemirror-languageserver/src/__tests__/utils.spec.ts
 
 - ensure tests pass by auto run terminal commands cd packages/server && pnpm test apps/entry/__tests__/fileUtils.spec.ts
 

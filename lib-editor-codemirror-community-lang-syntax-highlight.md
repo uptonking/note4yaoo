@@ -65,6 +65,18 @@ modified: 2024-08-11T07:59:35.617Z
 - S1
 
 ```CSS
+/* Option 1 - 注意highlight.js/styles/a11y-light末尾不要带.css*/
+@use "sass:meta";
+
+html[data-theme="light"] {
+  @include meta.load-css("highlight.js/styles/a11y-light");
+}
+
+html[data-theme="dark"] {
+  @include meta.load-css("highlight.js/styles/a11y-dark");
+}
+
+/* Option 2 */
 @import url('/styles/base16/solarized-dark.css') screen and (prefers-color-scheme: dark);
 @import url('/styles/base16/solarized-light.css') screen and (prefers-color-scheme: light);
 ```

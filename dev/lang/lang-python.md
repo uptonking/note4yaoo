@@ -127,4 +127,19 @@ modified: 2020-07-14T09:27:30.503Z
   - Serialization that supports both ORM and non-ORM data sources.
   - just use regular function-based views if you don't need the more powerful features
 
+- A serializer class is very similar to a Django `Form` class, and includes similar validation flags on the various fields, such as required, max_length and default.
+  - We can also serialize querysets instead of model instances.
+
+- REST framework introduces a `Request` object that extends the regular `HttpRequest`, and provides more flexible request parsing. The core functionality of the Request object is the `request.data` attribute, which is similar to request. POST, but more useful for working with Web APIs.
+
+- One of the big wins of using class-based views is that it allows us to easily compose reusable bits of behavior.
+
+- IsAuthenticatedOrReadOnly, which will ensure that authenticated requests get read-write access, and unauthenticated requests get read-only access.
+
+- `ViewSet` classes are almost the same thing as `View` classes, except that they provide operations such as `retrieve, or update`, and not method handlers such as `get or put`.
+
+- Because we're using ViewSet classes rather than View classes, we actually don't need to design the URL conf ourselves. The conventions for wiring up resources into views and urls can be handled automatically, using a Router class. All we need to do is register the appropriate view sets with a router, and let it do the rest.
+
+- 
+
 ## more-django

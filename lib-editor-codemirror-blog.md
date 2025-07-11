@@ -11,6 +11,18 @@ modified: 2024-05-02T02:01:04.255Z
 
 # blogs-internals
 
+## [CodeMirror视图结构篇 - 知乎 _202405](https://zhuanlan.zhihu.com/p/700825737)
+
+- [CodeMirror理解ContentView - 知乎](https://zhuanlan.zhihu.com/p/706811860)
+  - ContentView是编辑器中所有View节点的基类
+
+- [CodeMirror思维和使用-引导篇 - 知乎](https://zhuanlan.zhihu.com/p/699686042)
+
+- 
+- 
+- 
+- 
+
 ## 👷 [Facets as Composable Extension Points _202206](https://marijnhaverbeke.nl/blog/facets.html)
 
 - A good extensible system also makes sure multiple extensions that don't know anything about each other can be combined, and compose in ways that don't cause problems.
