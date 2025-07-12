@@ -23,7 +23,7 @@ modified: 2023-02-05T19:03:27.729Z
 # draft
 
 # dev-xp
-
+- ai编辑文档考虑使用 fast-apply 的模型方案
 # more
 
 # suite-docs

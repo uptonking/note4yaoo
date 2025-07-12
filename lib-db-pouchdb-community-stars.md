@@ -86,8 +86,22 @@ modified: 2023-12-06T15:59:01.332Z
   - When talking about ordering by time, both in the context of LWW and insertions in lists, we are talking about **vector clock time**, not necessarily device time (or though that is taken into account as well).
 - LWW is a tradeoff. You'll be better off selling it as an automated-resolution option on top of manual resolution, instead of an innovation over manual resolution. (MV registers are a CRDT as well!)
 - Adam from Realm. Our approach differs in building off our object database. We couple this with low-latency sync that only transmits changes and deterministic conflict resolution, making collaborative experiences really easy to build
-# discuss-large-data
+# discuss-perf/large-data 💥
 - ## 
+
+- ## 
+
+- ## My `db.get` is slow occasionally (3-4 seconds to return the doc). How can I optimize this?
+- https://couchdb.slack.com/archives/C016TJAE7A4/p1751622772088449
+  - My database contains 1307 docs , total size 1.3 MB
+  - I'm using PouchDB (9.0) on my Angular app. There's a live sync with CouchDB 3.3.3.
+  - db il my local database let db = new PouchDB(environment.pouchDbName + this.clientId); 
+
+- How's your document's revision counter (number before dash in _rev) growing between requests? 
+  - I'm currently able to reproduce the problem on a document that hasn't changed.
+
+- I tried creating an empty application, or a page that only performs the get() function. In both cases, the get() function is always fast. On my pages where the application is slow, when the get() function is slow, I see an `allDocs()` request in the PouchDB debug. Is this the PouchDB <> CouchDB synchronization?
+  - Please investigate where the allDocs call is coming from: that's likely the source of your slowdown. In synchronization (technically correct: two-way replication), you should see (in your network tab of dev tools) two calls to `https://dbServer/` , requests to `/${pouchDbName}${clientId}` and then just requests to `_changes` endpoint on your db.
 
 - ## [Most performant way of range querying large PouchDB datasets - Stack Overflow](https://stackoverflow.com/questions/35023293/most-performant-way-of-range-querying-large-pouchdb-datasets)
 - Which is the most performant on the two, or is there a smarter way of creating the indices? Or is there a different approach without using PouchDB at all?

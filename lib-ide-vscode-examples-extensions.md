@@ -806,6 +806,9 @@ modified: 2024-08-24T16:17:26.715Z
 - https://github.com/webdriverio-community/wdio-vscode-service /MIT/202502/ts
   - A service to test VSCode extensions from end to end using WebdriverIO
 # ext-ai
+- https://github.com/microsoft/vscode-copilot-chat /MIT/202507/ts
+  - GitHub Copilot Chat (this extension) - A companion extension that provides conversational AI assistance.
+
 - https://github.com/osadavc/typescript-error-wand /MIT/202502/ts
   - A simple VS Code extension that enhances TypeScript error messages with AI-powered explanations and solutions.
   - Uses GitHub Copilot if installed (free or paid subscription), Falls back to custom AI models if Copilot isn't available
