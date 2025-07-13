@@ -27,6 +27,7 @@ modified: 2020-07-14T09:27:30.503Z
 - resources-python
   - [Python Cheatsheet](https://www.pythoncheatsheet.org/cheatsheet/basics)
   - https://github.com/gto76/python-cheatsheet
+  - [Built-in Functions — Python documentation](https://docs.python.org/3/library/functions.html)
 # python3
 
 # python2

@@ -12,11 +12,15 @@ modified: 2024-08-24T16:29:44.029Z
 - ide-dev-impl
 
 - 工作用的ide不适合采用纯前端的方案实现，
-  - LSP依赖跑一个本地服务，
-  - 运行代码依赖本地或云端环境，
-  - 可debug，
+  - LSP依赖跑一个本地Language Server服务
+  - 运行代码依赖本地或云端环境，特别是系统库的依赖
+  - 可debug
   - 可通过ssh协议用vscode打开
 - 展示用的ide适合纯前端实现，可采用无需更新依赖包的webworker-LSP，无需执行/debug
+
+- cde相对于本地ide的缺点
+  - 读文件的路径
+  - 程序包含系统库的依赖
 # ide-features
 
 ## symbols
