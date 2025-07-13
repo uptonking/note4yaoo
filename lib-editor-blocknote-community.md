@@ -80,7 +80,13 @@ modified: 2022-10-21T21:03:38.124Z
 
 - ## 
 
-- ## 
+- ## [Support WOPI protocol for Nextcloud / OpenCloud integration _202503](https://github.com/suitenumerique/docs/issues/815)
+  - Are there any plans on nextcloud integration yet?
+
+- WOPI support would also enable integration in OpenCloud. We would happily integrate.
+
+- I study the server part of the WOPI protocol in order to implement it in the drive project.
+  - For docs, it is the client part of the WOPI protocol that should be implemented.
 
 - ## [Which external file format should we support first for imports ? _202503](https://github.com/suitenumerique/docs/issues/806)
 

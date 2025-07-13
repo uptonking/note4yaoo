@@ -236,6 +236,18 @@ modified: 2023-04-05T19:35:14.347Z
   - [Watching file over network _201507](https://github.com/paulmillr/chokidar/issues/315)
     - With nfs mounting and `UsePolling: true` it is working.
 
+- https://github.com/facebook/watchman /13.1kStar/MIT/cpp/python/rust
+  - https://facebook.github.io/watchman/
+  - Watchman exists to watch files and record when they actually change. 
+  - It can also trigger actions (such as rebuilding assets) when matching files change.
+  - support: Windows and macOS builds, Linux builds on recent Ubuntu and Fedora releases
+  - Python, Rust, and JavaScript clients
+  - [[Feature Request] Symlink support. Is there any performance/complexity reason for not supporting symlinks? _201505](https://github.com/facebook/watchman/issues/105)
+    - Watchman recursively watches files that are contained within a filesystem tree. Symlinks can point to an arbitrary location on the filesystem. Changes to symlink targets that are outside the tree are not observable.
+    - Why not simply resolve the symlink and watch its target? Because it isn't simple. Here are a handful of reasons that make this a difficult prospect.
+    - 👷🐛202303: The harsh reality is that there is not really a case for symlink support internally (I recently chatted with folks about this), and we probably won't be motivated to implement this.
+    - 202303: gajus/turbowatch@v2.0.0 (release) `Turbowatch` made a switch to `chokidar`. However, I kept the API such that we could revert to using Watchman, or maybe even support multiple backends.
+
 - https://github.com/webpack/watchpack
   - 不依赖chokidar，依赖graceful-fs，由webpack开发
   - watchpack high level API doesn't map directly to watchers.

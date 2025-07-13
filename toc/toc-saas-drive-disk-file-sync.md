@@ -157,6 +157,32 @@ modified: 2024-03-31T17:45:16.789Z
   - It is a full rewrite of the Pydio project using the Go language following a micro-service architecture.
   - https://github.com/pydio/pydio-core /php/archived
 
+- https://github.com/suitenumerique/drive
+  - A collaborative file sharing and document management platform that scales. 
+  - Built with Django and React.
+
+- https://github.com/opencloud-eu/opencloud /1.9kStar/apache2/202507/go
+  - https://opencloud.eu/
+  - This the main repository of the OpenCloud server. It contains the golang codebase for the backend services.
+  - 🛢️ The OpenCloud backend does not use a database. It stores all data in the filesystem. By default, the root directory of the backend is `$HOME/.opencloud/`.
+  - The OpenCloud backend authenticates users via OpenID Connect using either an external IdP like Keycloak or the embedded LibreGraph Connect identity provider.
+  - https://github.com/opencloud-eu/web /112Star/AGPL/202507/ts/vue
+    - Web UI for OpenCloud built with Vue.js and TypeScript
+    - Files: Upload, download, search and manage files 
+    - Versioning: Saved the wrong version? We have the time machine you were looking for! Easily go back in time and restore older versions of your files.
+    - Share: Allow fine-grained access to files and whole folders directly with other users on your OpenCloud.
+    - Create links and share them with anyone in the world - optional password-protection available.
+    - Write: Edit your documents with the editor of your choice like Collabora, ONLYOFFICE or Microsoft Word and more.
+    - Extensible: OpenCloud Web is built as a platform that can be extended in the most developer friendly way.
+    - extension-sdk: Provides utilities for developing and integrating custom extensions
+    - runtime: Central place of (user) authentication, provisioning of the user interface layout, client side storage, routing, theming, dependencies and (sub)application handling
+  - https://github.com/opencloud-eu/web-extensions
+    - A collection of officially supported apps and extensions for OpenCloud Web
+    - web-app-draw-io
+    - web-app-json-viewer
+    - web-app-importer
+    - web-app-unzip
+
 - https://github.com/mgilangjanuar/teledrive /GPLv3/202310/ts
   - open source Google Drive/OneDrive/iCloud/Dropbox alternative using Telegram API for the free unlimited cloud storage.
 
@@ -180,10 +206,6 @@ modified: 2024-03-31T17:45:16.789Z
 - https://github.com/haiwen/seafile /AGPLv3/202402/c
   - http://seafile.com/
   - open source cloud storage system with privacy protection and teamwork features. 
-
-- https://github.com/pydio/cells /AGPLv3/202408/go
-  - https://pydio.com/
-  - Pydio Cells is an open-source, self-hosted Document Sharing and Collaboration platform specifically designed for organizations that need advanced document-sharing and collaboration without security trade-offs or compliance issues.
 # cloud-drive-sync
 - https://github.com/qiniu/kodo-browser /apache2/202406/ts
   - 为七牛对象存储（Kodo）提供类似 Windows 资源管理器的功能。用户可以很方便的浏览文件，上传下载文件，支持断点续传等。
