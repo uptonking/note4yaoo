@@ -32,6 +32,9 @@ modified: 2023-07-23T07:05:19.441Z
   - [macos - Keyboard Shortcut to maximize a window? - Ask Different](https://apple.stackexchange.com/questions/421443/keyboard-shortcut-to-maximize-a-window)
   - [How do you maximize windows in MacOS? : r/MacOS](https://www.reddit.com/r/MacOS/comments/15t7gdc/how_do_you_maximize_windows_in_macos/)
 
+- open settings
+  - alt + any-fn-keys
+
 - 截屏 cmd + shift + 3/4
   - 📷 截指定窗口 cmd +shift + 4 + space
 - Option-Command-Esc：强制退出 App。
@@ -55,6 +58,10 @@ modified: 2023-07-23T07:05:19.441Z
 
 - a11y
   - 在zoom可打开按住 Control+向上scroll， 向下scroll可恢复
+
+- [How to set a keyboard app shortcut on macOS (along with submenus)](https://woorkup.com/keyboard-app-shortcut/)
+  - Edit->Paste From->Rich Text
+  - You have to add `->` without any spaces in-between the menu title fields.
 
 ### 文件管理器
 

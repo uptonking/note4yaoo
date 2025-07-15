@@ -47,6 +47,7 @@ modified: 2025-03-22T16:10:24.856Z
 - trae,       5k,    1000,  $10
 - gh-copilot, 2k,    50,    $10
 - gemini-cli, 180k,  240x30,$10/1M-tokens
+·- amazon-kiro,any,   50,    $19   
 
 ```
 

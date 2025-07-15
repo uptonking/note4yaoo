@@ -356,6 +356,11 @@ test('mock test', () => {
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
 
+## 0715
+- makefile
+  - `=` (recursive expansion): Variables are evaluated each time they are used; Can lead to circular dependencies if not careful
+  - `:=` (immediate expansion): Evaluates variables immediately when the Makefile is read
+
 ## 0710
 
 - hover浮窗尺寸限制: w-400, h-240

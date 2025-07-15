@@ -75,6 +75,20 @@ modified: 2022-10-21T21:03:38.124Z
 - ## 
 
 - ## 
+# discuss-suite-docs-internals
+- ## 
+
+- ## 
+
+- ## 
+
+- ## What are the features where celery is required? _202507
+- https://matrix.to/#/!pKqGwFDkjqlFyJabhP:matrix.org/$E9yxykAo7ED3CAQpNIdZqOGtwiuhqIx_1Q8Z6UVyfks?via=matrix.org&via=linagora.com&via=tchncs.de
+- it's used for asynchronous tasks. To this day only one task is asynchronous
+
+- Third packages have also shared task used. For example in `django-lasuite` package, the `malware_detection` application is using shared tasks
+
+- I feel like it remains lots of effort for something that does not bring much added value. I would prefer something to just by-pass celery and run the tasks synchronously to "ask for access".
 # discuss-suite-docs-roadmap
 - ## 
 
@@ -93,7 +107,7 @@ modified: 2022-10-21T21:03:38.124Z
 # discuss-suite-docs-changelog
 - ## 
 
-- ## 
+- ## I saw the feature for Subpages got merged into main. v3.4.0 _20250710
 
 - ## [downgrade to docx 9.5.0 _202506](https://github.com/suitenumerique/docs/commit/9f222bbaa3c732d9e9fc5a391a868f6997f84806)
   - Prob compatibility issue with docx 9.5.1 and BlockNote. We downgrade to 9.5.0 for now until BlockNote is updated to support docx 9.5.1
