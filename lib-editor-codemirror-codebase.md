@@ -17,7 +17,11 @@ modified: 2024-05-02T06:41:19.983Z
 # dev-debug
 - 编辑器最外层contenteditable的dom在调试时可以store as global variable，在属性上可拿到 cmView, 可以进一步拿到 cmView.view/ cmView.view.state
 # not-yet
+
+# dev-xp
+
 - document是否总以换行符结尾
+  - 并不是，文档内容可为空字符串
 # overview
 
 # architecture

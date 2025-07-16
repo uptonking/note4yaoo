@@ -32,11 +32,12 @@ modified: 2021-06-02T17:13:37.692Z
   - Random access is somewhat more expensive than in an array (logarithmic, with some overhead), but should still be relatively fast.
 # dev-debug
 - 编辑器最外层contenteditable的dom在调试时可以store as global variable，在属性上可拿到 pmViewDesc, 暂时不能拿到EditorView/EditorState数据
+  - 但tiptap封装后可以拿到
 # roadmap
-- plugin既可以包含state，也可以包含view，显得混乱
-
 - 直接将plugin的状态挂在editorState对象上
   - @see EditorState.create
+
+- plugin既可以包含state，也可以包含view，~~显得混乱~~
 # not-yet
 - branch的实现思路
   - 保存各branch的id-name/delta-changes/baseBranchId，然后根据以上数据获取分支对应的所有delta-changes，然后计算出文档对象数据

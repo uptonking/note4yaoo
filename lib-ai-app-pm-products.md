@@ -63,9 +63,18 @@ modified: 2025-03-22T16:10:24.856Z
 
 - ai写与第三方sdk集成的代码时，先写注释example，再写代码
 # ai-office
+- 产品方向: ask、生成、集成
 
+- google-docs-ai
+  - [How to Use AI in Google Docs - Numerous.ai](https://numerous.ai/blog/how-to-use-ai-in-google-docs)
+
+- notion-ai
+  - [Everything you can do with Notion AI](https://www.notion.com/help/guides/everything-you-can-do-with-notion-ai)
+    - Notion AI helps you find information, create content, understand data, and chat - without ever leaving Notion.
+    - Analyze files and images
+    - Access information across your integrated apps like Slack & Google Drive
+    - Limit your search to trusted knowledge sources
 # ai-dev-xp
-
 - 当一个复杂问题让ai折腾了1h还没解决，不要继续纠结，赶紧换更强的模型
   - 让ai动手前自己先拆分任务，不要让ai分析复杂的任务，ai分析不清会乱改增加工作量，自己可以主动mock状态和对象
   - 有时使用搜索引擎默认的ai结果又快又好，可以尝试解决类似stackoverflow类型的问题

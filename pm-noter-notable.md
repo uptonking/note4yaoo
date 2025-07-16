@@ -105,6 +105,7 @@ modified: 2023-11-28T14:48:45.910Z
   - keyboard shortcuts(accessible): 参考office、vscode、浏览器不冲突
   - blocks-store/templates
     - hero block，类似在一页ppt上只显示一个大号的单词/短语，以醒目突出
+    - 对内容的块级抽象，可参考colanode
   - instant-preview
     - 类似typora的即时预览，可选择 行内/上下 两种结构
     - 类似observable-notebook的上下结构可减少页面reflow

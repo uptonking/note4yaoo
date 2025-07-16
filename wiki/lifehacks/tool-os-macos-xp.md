@@ -146,6 +146,7 @@ redis-cli shutdown
 
 ```
 
+- little snitch 查看network monitor面板的快捷键显示在设置界面
 # mac-apps
 - appstore
   - [MacKed - 专注于Mac破解资源的分享与下载](https://macked.app/)

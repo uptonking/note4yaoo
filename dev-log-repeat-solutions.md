@@ -58,6 +58,7 @@ modified: 2021-07-20T13:50:23.433Z
     - 20250129: editor/vscode + triplit + sync(powersync/zerosync)
   - vscode: 🏘️ 支持BS/CS架构, monaco-editor + electron, coder-server
   - codemirror/prosemirror: state + view + commands + transform/ot/collab + virtualized
+    - 对内容的块级抽象，可参考colanode
   - version-history: rrweb, diff, format(.fodt), video-but-auto-update
   - collab: room-playground❓, 非auth版本的简易测试环境
   - automation/workflow/scheduler: n8n, activepieces, lowcode
