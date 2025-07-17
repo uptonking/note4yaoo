@@ -1,3 +1,9 @@
+---
+title: yaooking-resume-v202508
+created: 2025-07-15T16:17:50.422Z
+modified: 2025-07-15T16:17:50.422Z
+---
+
 # 金 瑶
 
 ## 个人信息
@@ -62,3 +68,4 @@
 - [基于Strapi CMS的内容管理系统 (可在Nodejs环境下运行源码)](https://github.com/uptonking/nostalgia-studio/tree/main/cms-strapi/strapi-awesome)
 - [Materials 资料库 (无在线预览，有部分文档)](https://github.com/uptonking/nostalgia-studio-v2023/tree/main/packages/materials-repo)
 - [Dashboard 仪表板 (在线预览)](https://uptonking.github.io/pgd-dashboard-showcase)
+

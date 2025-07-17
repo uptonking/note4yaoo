@@ -9,6 +9,31 @@ modified: 2023-08-28T06:14:28.873Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 
+# discuss-django-stars
+- ## 
+
+- ## 
+
+- ## 
+# discuss-django
+- ## 
+
+- ## 
+
+- ## 🆚 django-admin flush vs migrate
+- flush
+  - Deletes all data from the database but preserves the database schema (tables, columns, etc.).
+  - Does NOT alter the database schema.
+  - 修改过的schema不会回滚
+
+- migrate
+  - Synchronizes the database state with the current set of models and migrations.
 # discuss
 - ## 
 

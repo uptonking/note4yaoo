@@ -227,7 +227,28 @@ modified: 2024-06-30T11:17:28.971Z
 
 - ## 
 
-- ## 
+- ## [Why are Makefiles not the norm while using docker : r/docker](https://www.reddit.com/r/docker/comments/1atcomp/why_are_makefiles_not_the_norm_while_using_docker/)
+  - docker compose 支持windows
+
+- Make has a bunch of things you get out of the box. 
+  - For example, dependencies and parallelism. 
+  - You also get a declarative style which is quite beneficial for understanding what's going on, don't use shell scripts longer than say 10 lines, it's just asking for trouble.
+
+- I like to create Makefiles with common stuff instead of having to type in `docker-compose build --no-cache <some-service>` etc.
+
+- You should not be building anything in your docker-compose files. They should be pulling tagged images from your docker registry, which should have tagged images pushed to it by your CI process.
+
+- I've been in situations where Makefiles are used to hide away some build processes that are way more complex than they need to be. Like, 5+ different docker compose files for a single Flask service.
+
+- 💡 My solution for local development is to avoid using docker if at all possible, because rebuilding images every time something changes is a real pain -- or if I have to, make a development container that I can work inside without rebuilding it.
+
+- When I'm doing local development, my preference is to not do that inside an image you rebuild every time you change anything, because building images is very slow. I'll just build and run things outside of a container if possible, or if it needs to be done inside a specific environment, make a development container that I can work in without rebuilding it every time I change anything.
+
+- some people hate make and come up with some other solution like ant … scons and others
+
+- I wonder how much of this can be handled with composition of docker compose files. Make a base `docker-compose.yml` for your services, but extend it with `docker-compose.dev.yml` if you need specifics for local dev.
+  - I tried it but it gets increasingly complex, if you have docker compose file with container volume data separation for dev, staging, prod. Some setup require auth, some don’t. And in the pipeline u have huge script logic for pushing to aws ecr. I think Makefile is a good solution, personally
+- I'm surprised that that complexity doesn't also propagate into your makefile then. As for pushing to ecr we handle that through a common github action, so most of the complexity is abstracted away (terraform managed resources for environment config/secrets etc)
 
 - ## [docker真的好难用啊，为什么说它移植性好啊？ - 知乎](https://www.zhihu.com/question/400400231)
 - 移植性好是因为 Docker 是基于 Linux 的 Cgroups 和 Namespace 的功能实现的，能跑 Linux 的地方他就能跑，Docker 的 rootfs 根文件系统 和联合文件系统使得他泛用性更广了，并且支持跨架构平台构建镜像，例如 MySQL 官方的镜像就支持amd64和arm64

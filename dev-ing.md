@@ -356,7 +356,19 @@ test('mock test', () => {
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
 
+## 0717
+
+- [Install VSCode extensions in Windsurf](https://www.nisanthchunduru.com/posts/Install-VSCode-extensions-in-Windsurf)
+
+```JSON
+{
+  "windsurf.marketplaceExtensionGalleryServiceURL": "https://marketplace.visualstudio.com/_apis/public/gallery",
+  "windsurf.marketplaceGalleryItemURL": "https://marketplace.visualstudio.com/items"
+}
+```
+
 ## 0715
+
 - makefile
   - `=` (recursive expansion): Variables are evaluated each time they are used; Can lead to circular dependencies if not careful
   - `:=` (immediate expansion): Evaluates variables immediately when the Makefile is read

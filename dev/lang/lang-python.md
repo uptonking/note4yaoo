@@ -58,6 +58,9 @@ modified: 2020-07-14T09:27:30.503Z
   - openedx
   - baserow
 
+- resources
+  - [django-admin and manage.py commands](https://docs.djangoproject.com/en/5.2/ref/django-admin/)
+
 ## docs-django
 
 - [Quick install guide | Django documentation](https://docs.djangoproject.com/en/5.2/intro/install/)

@@ -45,6 +45,7 @@ docker stop containerId
 docker stop $(docker ps -aq) && docker rm $(docker ps -aq)
 
 docker exec -it containerName /bin/bash
+docker exec -it my_container sh -c "echo a && echo b"
 
 docker save -o myImage.tar image
 docker load -i myImage.tar image
