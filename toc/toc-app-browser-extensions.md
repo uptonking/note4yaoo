@@ -15,6 +15,12 @@ modified: 2023-02-08T10:24:11.422Z
 
 - resources
   - [Extension Development and ToolKit - WebExtension. ORG](https://webextension.org/)
+# draft
+- tips
+  - 👾 可让ai实现一些扩展
+
+- reddit
+  - 新ui显示绝对时间
 # popular
 - https://github.com/JasonGrass/auto-extension-manager /APGLv3/202411/js
   - https://ext.jgrass.cc/docs/intro

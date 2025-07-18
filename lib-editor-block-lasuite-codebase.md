@@ -9,6 +9,32 @@ modified: 2025-07-17T14:40:30.038Z
 
 # guide
 
+- services(14)
+  - django-celery-dev
+    - app-dev
+      - postgresql
+      - redis
+      - mailcatcher
+      - createbuckets
+        - minio
+  - y-provider
+  - nginx
+    - keycloak
+      - kc_postgresql
+  - frontend-dev, node, crowdin
+
+```shell
+# start lasuite-docs
+
+# webapp
+cd ./src/frontend/apps/impress
+yarn
+yarn dev
+
+# backend - django
+
+```
+
 - urls
   - webapp http://localhost:3000/
   - admin http://localhost:8071/admin

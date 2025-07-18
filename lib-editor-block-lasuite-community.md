@@ -67,20 +67,44 @@ modified: 2025-07-17T14:40:07.230Z
 - 
 - 
 
-# discuss-suite-docs
+# discuss
 - ## 
 
 - ## 
 
 - ## 
 
-- ## 
-# discuss-suite-docs-internals
+- ## is it possible to deploy Docs without any AuthN whatsoever? _202503
+- https://matrix.to/#/!pKqGwFDkjqlFyJabhP:matrix.org/$nvAFuaU-kjXn8fXzL0AVRsrihaVblOLDG9spe-WVjto?via=matrix.org&via=linagora.com&via=tchncs.de
+- it's possible to deploy it but nobody will be able to use it 
+- It would not be hard to install a third party user account management app like https://github.com/incuna/django-user-management/
+
+- User management is handle via keycloak (or your own oidc sso)
+# discuss-devops/toolchain
 - ## 
 
 - ## 
 
 - ## 
+
+- ## I'm looking for a lightweight alternative to Keycloak that's more suitable for small development teams. 
+- https://matrix.to/#/!pKqGwFDkjqlFyJabhP:matrix.org/$M0nsa9zzmntwzlEN63wCVyvRjS97Rtubu5a8SgjH_sQ?via=matrix.org&via=linagora.com&via=tchncs.de
+  - Ideally, something easy to set up, less resource-intensive, and focused on core authentication and authorization features (OIDC/OAuth2).
+  - I've already looked into Authelia and tried Hydra+Kratos, but I'm specifically interested in solutions that also include managing user identities for web applications — not just authorization servers.
+
+- Authentik sounded like a good modern alternative last time i checked.
+# discuss-internals/codebase
+- ## 
+
+- ## 
+
+- ## Django uses the Cookie header of the request to authenticate, 
+- https://matrix.to/#/!pKqGwFDkjqlFyJabhP:matrix.org/$e6xbeZ40igEQ3f-vjQUpRZKJ8OXMJxxk9aSu7vOli9c?via=matrix.org&via=linagora.com&via=tchncs.de
+  - the session middleware parses it, reads the session id from it, and then searches for the the correct user and attaches it to the session object.
+- I had to do now a couple of things to get it running:
+  - frontend and backend should indeed run on the same domain, so that I do not have to override any cookie policies. cookies are per default not transported cross-domain
+  - as the dev backend now runs with a path prefix, I needed to tell the django stack, that there is a prefix. Otherwise it simply omits it when e.g. constructing redirect uris for the authenticate requests to keycloak.
+  - I needed to change the CSRF trusted domains for the django stack.
 
 - ## What are the features where celery is required? _202507
 - https://matrix.to/#/!pKqGwFDkjqlFyJabhP:matrix.org/$E9yxykAo7ED3CAQpNIdZqOGtwiuhqIx_1Q8Z6UVyfks?via=matrix.org&via=linagora.com&via=tchncs.de
@@ -89,7 +113,9 @@ modified: 2025-07-17T14:40:07.230Z
 - Third packages have also shared task used. For example in `django-lasuite` package, the `malware_detection` application is using shared tasks
 
 - I feel like it remains lots of effort for something that does not bring much added value. I would prefer something to just by-pass celery and run the tasks synchronously to "ask for access".
-# discuss-suite-docs-roadmap
+
+- the simplest way to get rid of celery in this situation is to replace it with postgresql with something like https://github.com/PaulGilmartin/django-pgpubsub
+# discuss-roadmap
 - ## 
 
 - ## 
@@ -104,7 +130,11 @@ modified: 2025-07-17T14:40:07.230Z
 
 - ## [Which external file format should we support first for imports ? _202503](https://github.com/suitenumerique/docs/issues/806)
 
-# discuss-suite-docs-changelog
+# discuss-changelog
+- ## 
+
+- ## 
+
 - ## 
 
 - ## I saw the feature for Subpages got merged into main. v3.4.0 _20250710

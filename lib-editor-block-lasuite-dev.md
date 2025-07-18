@@ -11,6 +11,7 @@ modified: 2025-07-17T14:39:41.606Z
 - pros
   - version-history
   - collab
+  - subpage/subdoc
 
 - cons
   - 本地开发的环境配置过于复杂
@@ -23,10 +24,23 @@ modified: 2025-07-17T14:39:41.606Z
 - editor
   - slash-menu /
 # draft
+- 完全本地部署的架构
+
+- 分析数据库的结构，文件编辑操作的结构
+
+- 
+- 
+- 
+
 - code-to ❓
   - 不同的浏览器打开时，存在数据不一致的情况
 
+- 测试协作的op、光标
+
+- 使用类似colanode的架构实现pc版
+
 - 使用简化版的oidc替代keycloak
+  - 接入更多登录
 
 ## ai-to
 
