@@ -227,6 +227,9 @@ modified: 2022-11-07T10:25:12.034Z
   - source code is published under GPLv3 with OpenSSL exception
   - support win/linux/macos
   - 下载的视频在本地目录 ~/.var/app/io.github.tdesktop_x64. TDesktop/data/64Gram/tdata/temp_data
+  - features
+    - Expose all chat permissions setting
+    - Show admin titles in member list
 
 - https://github.com/morethanwords/tweb /webk
   - Telegram Web K, GPL v3
@@ -241,6 +244,13 @@ modified: 2022-11-07T10:25:12.034Z
   - Telegram believes that having multiple teams that compete will be beneficial. 
   - if you look at the dependencies and code, WebZ is written in React/teact, WebK does not have any popular libraries (React, Vue, Angular, Svelte...) in the dependencies and in the source code is written in native js (ts)
   - I noticed that WebK is running way faster on my potato pc than WebZ, Z has more features tho
+
+- https://github.com/tangyoha/telegram_media_downloader /MIT/202507/python/js
+  - 基于Dineshkarthik的项目， 电报视频下载，电报资源下载，跨平台，支持web查看下载进度 ，支持bot下发指令下载，支持下载已经加入的私有群但是限制下载的资源
+
+- https://github.com/Neet-Nestor/Telegram-Media-Downloader /GPL/202506/js
+  - A script allowing you to download images and videos from Telegram web even if the group restricts downloading.
+  - https://github.com/vinodkr494/telegram-media-downloader /python
 # discord
 - [Use SOCKS5 proxy with Discord on Linux](https://gist.github.com/mzpqnxow/ca4b4ae0accf2d3b275537332ccbe86e)
 

@@ -87,6 +87,14 @@ modified: 2022-11-07T10:58:24.512Z
 - 网站数据
   - github trending
   - 微博热搜
+
+- 类似企查查/天眼查的政府数据整合平台
+
+- 高质量数据
+  - wikipedia
+  - hackernews
+  - reddit-tech
+  - imdb
 # 国内替代/open-alternatives
 - obsidian
 

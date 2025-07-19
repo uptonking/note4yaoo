@@ -8,8 +8,9 @@ modified: 2024-06-30T11:16:43.565Z
 # devops-docker-dev-xp
 
 # guide
-
-- podman难以完全替代docker，依赖的环境或服务很可能只提供了docker
+- tips
+  - 使用要点: image, container, volume, network
+  - podman难以完全替代docker，依赖的环境或服务很可能只提供了docker，反而会造成使用时的混乱
 
 - resources
   - [Portainer architecture](https://docs.portainer.io/start/architecture)

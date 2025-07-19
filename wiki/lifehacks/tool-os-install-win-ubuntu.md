@@ -9,6 +9,8 @@ modified: 2023-04-11T02:24:25.572Z
 
 # guide
 
+- disk-usage
+  - app, data, code, free
 # config-backup
 - linux
   - .bashrc

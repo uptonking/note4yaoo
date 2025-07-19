@@ -96,7 +96,28 @@ modified: 2025-07-17T14:40:07.230Z
 # discuss-internals/codebase
 - ## 
 
-- ## 
+- ## 🤔 [Store documents in a stable format _202506](https://github.com/suitenumerique/docs/issues/1043)
+  - Currently, Docs stores all documents in a Y.js buffer format, which does not have any stability guarantee. 
+  - Y.js messages are only supposed to be stored in order to be sent to currently-offline users. If Y.js breaks their format, or if BlockNote breaks their own (which happens from time to time), many documents will break. 
+  - Documents should be stored in a stable format, be it Markdown, HTML, anything really, even a standardized JSON object would be fine
+  - I recently had the opportunity to discuss with some of the (lovely) persons working on BlockNote, and I understand that my initial comment was wrong ; Docs doesn't store update buffers but rather snapshots that can be used to rebuild the original Y.js document. 
+  - But, you can absolutely make realtime work without storing Y.js documents. That's what we do in our app that also uses BlockNote, and it works flawlessly.
+- Basically the way we do it in our project is:
+  - If the client is the first to connect, the editor is directly initialized with the document's content
+  - If there are other players in the realtime session, we sync the current user with them
+
+- It is important to save a YDoc to have the collaboration working correctly.
+  - initially we saved the Blocknote json, but when users are collaborating and a new user arrives, it didn't sync correctly.
+
+- The Y.js update encoding has been stable & backwards compatible since it began as a project (~2011)
+  - It is always extract-able to json, if you can read the document in clear text.
+  - Side note, it isn't technically a "format", a format determines the structure of some data, whereas Y.js is merely an encoding for document content in this case (since you can go from Y.js <-> JSON interchangeably).
+  - While we can talk more about the formats that docs should support (especially in regards to durability when projects are changing like BlockNote), Y.js should be treated as the source of truth for collaborative documents (since it's merging properties are only valid against other Y.js update). It is okay to break this rule of thumb in specific scenarios like single user editing but, not in the general case.
+  - One approach often recommended is to store not just Y.js updates in the database, but also to store some secondary format alongside it. This makes it easier to retrieve the document content for things which are read-only, but all writes should be made by Y.js updates.
+
+- yjs allows the user to come back from being offline & their changes would sync just like any other.
+- it wouldn't be possible if the "raw" document (e.g. Markdown) was used. Is that right?  
+  - Yep, that is exactly right, Y.js would support that.
 
 - ## Django uses the Cookie header of the request to authenticate, 
 - https://matrix.to/#/!pKqGwFDkjqlFyJabhP:matrix.org/$e6xbeZ40igEQ3f-vjQUpRZKJ8OXMJxxk9aSu7vOli9c?via=matrix.org&via=linagora.com&via=tchncs.de
@@ -129,6 +150,15 @@ modified: 2025-07-17T14:40:07.230Z
   - For docs, it is the client part of the WOPI protocol that should be implemented.
 
 - ## [Which external file format should we support first for imports ? _202503](https://github.com/suitenumerique/docs/issues/806)
+
+- ## 📈 [Adding support for formulas _202504](https://github.com/suitenumerique/docs/issues/859)
+  - As a Coda user (a tool very much like Notion), I do a lot of formulas in my docs.
+  - By typing = the formulae form would show up, allowing user to enter a "math" expression, allowing referencing cells from table.
+
+- ## 📈 [Notion like databases _202501](https://github.com/suitenumerique/docs/issues/538)
+- I believe that the experience of using Notion is awesome because of the databases it allows things as different as:
+  - creating a Kanban board
+  - mapping your organisation to entities linking them together and providing infinite options of navigation, filtering, views
 
 # discuss-changelog
 - ## 

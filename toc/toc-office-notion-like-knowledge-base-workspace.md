@@ -434,6 +434,7 @@ modified: 2022-06-03T21:34:54.893Z
   - An offline-first, realtime-collaborative wiki engine
 
 - cryptpad /4.3kStar/AGPLv3/202301/js
+  - https://github.com/cryptpad/cryptpad
   - https://github.com/xwiki-labs/cryptpad
   - https://cryptpad.org/
   - CryptPad is a collaboration suite that is end-to-end-encrypted and open-source.
@@ -494,6 +495,24 @@ modified: 2022-06-03T21:34:54.893Z
 - https://github.com/Arlen22/TiddlyServer /202111/ts
   - A static file server that can also save files and mount TiddlyWiki folders
 # knowledge-base/wiki
+- https://github.com/xwiki-contrib/cristal /LGPL/202507/ts/vue
+  - https://cristal.xwiki.org/
+  - Cristal is a new project to build a new modular wiki UI using modern web technologies, which will support multiple backends (including of course XWiki to store Wiki data).
+  - A wiki UI to rule them all: Provide a UI that can be plugged onto various content backends (XWiki, local file system, GitHub, etc.)
+  - Ability to work offline, reconnect, and sync content.
+  - Usable in various forms:
+    - From a URL in your browser
+    - Executable locally on your computer (Electron application).
+    - Embeddable in backends. For example, the intent on the long run is to have Cristal be used by XWiki as its native UI
+
+- https://github.com/xwiki/xwiki-platform /1.1kStar/LGPL/202507/java
+  - http://platform.xwiki.org/
+  - https://www.xwiki.org/xwiki/bin/view/Main/
+  - XWiki Platform is a generic wiki platform offering runtime services for applications built on top of it.
+  - XWiki Commons, XWiki Rendering, and XWiki Platform are part of the XWiki.org software forge. They are released together and share the same version.
+  - Over 600 extensions: applications, macros, skins, plugins, themes, etc.
+  - Learn about XWiki's concept and why it's an alternative to Confluence and MediaWiki
+
 - monotome /151Star/AGPLv3/202208/js
   - https://github.com/cblgh/monotome
   - a personal knowledge base system. markdown markup, runs in the browser
@@ -586,12 +605,6 @@ modified: 2022-06-03T21:34:54.893Z
 - https://github.com/BookStackApp/BookStack /php
   - https://www.bookstackapp.com/
   - A platform to create documentation/wiki content built with PHP & Laravel
-
-- https://github.com/xwiki/xwiki-platform /java
-  - XWiki Platform is a generic wiki platform offering runtime services for applications built on top of it.
-  - XWiki Commons, XWiki Rendering, and XWiki Platform are part of the XWiki.org software forge. They are released together and share the same version.
-  - Over 600 extensions: applications, macros, skins, plugins, themes, etc.
-  - Learn about XWiki's concept and why it's an alternative to Confluence and MediaWiki
 
 - https://github.com/OpenKnowledgeMaps/Headstart /js/python
   - a web-based knowledge mapping software intended to give researchers a head start on their literature review

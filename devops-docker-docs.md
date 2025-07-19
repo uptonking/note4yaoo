@@ -24,6 +24,38 @@ modified: 2024-06-30T11:20:53.755Z
 - 
 - 
 - 
+
+- [Prune unused Docker objects | Docker Docs](https://docs.docker.com/engine/manage-resources/pruning/)
+  - `docker system df`: 查看磁盘占用  
+  - By default,  `docker image prune` only cleans up dangling images. 
+  - A dangling image is one that isn't tagged, and isn't referenced by any container. 
+  - When you stop a container, it isn't automatically removed unless you started it with the `--rm` flag.
+  - A stopped container's writable layers still take up disk space.
+  - Volumes are never removed automatically, because to do so could destroy data.
+  - Docker networks don't take up much disk space, but they do create iptables rules, bridge network devices, and routing table entries.
+  - The `docker system prune` command is a shortcut that prunes images, containers, and networks. Volumes aren't pruned by default
+
+```shell
+docker system prune
+docker builder prune
+
+docker container prune
+# 👀
+docker image prune
+docker network prune
+# 👀
+docker volume prune
+```
+
+- 🗑️ docker system prune [OPTIONS]
+  - Remove all unused containers, networks, images (both dangling and unused), and optionally, volumes.
+  - By default, volumes aren't removed to prevent important data from being deleted
+  - --volumes		Prune anonymous volumes
+
+- docker builder prune
+  - Remove build cache
+
+- 
 - 
 
 ## cli-compose
