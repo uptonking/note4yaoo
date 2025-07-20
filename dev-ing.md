@@ -356,6 +356,10 @@ test('mock test', () => {
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
 
+## 0720
+
+- [Working with the Alpine Package Keeper (apk) - Alpine Linux Documentation](https://docs.alpinelinux.org/user-handbook/0.1a/Working/apk.html)
+  - apk is the Alpine Package Keeper - the distribution’s package manager. 
 ## 0717
 
 - [Install VSCode extensions in Windsurf](https://www.nisanthchunduru.com/posts/Install-VSCode-extensions-in-Windsurf)

@@ -86,12 +86,33 @@ Their main job is sending client requests to several servers. The goal is to spr
 - 多一层还是有好处的，一个宽字符*dns记录多个子域名转到nginx上然自动proxy到多个容器上，如果tunnel负载加上nginx负载
 
 - 然而用这个还是需要有域名，若是要用国内的云服务商，通过域名访问就要ICP备案
+# discuss-nginx-k8s
+- ## 
+
+- ## 
+
+- ## [K8s体系下，ingress代表的云原生网关和传统的Nginx有哪些不同？会是未来的流量入口么？ - 知乎](https://www.zhihu.com/question/491886832)
+- 在Kubernetes（K8s）体系下，Ingress（入口）是一种API对象，用于配置和管理应用程序服务的外部访问。
+  - k8s中的ingress是一个标准规范，是定义外部流量进入集群内部的规则描述，
+- ingress-nginx是一个具体的K8s ingress控制器提供者之一，通俗说就是一个k8s ingress的具体实现。同时也存在其他很多的实现，例如istio、kong等。
+
+- 
+- 
+- 
+
 # discuss
 - ## 
 
 - ## 
 
-- ## 
+- ## [nginx's prefix is /opt/homebrew/Cellar/nginx/1.25.3 but why does the file search always have html subpath ? _202311](https://github.com/orgs/Homebrew/discussions/4880)
+  - I checked nginx's prefix with nginx -V and see it is /opt/homebrew/Cellar/nginx/1.25.3 but why does the location search always start from /opt/homebrew/Cellar/nginx/1.25.3/html.
+
+- The `html` part comes from nginx's default config
+
+- 
+- 
+
 # discuss-tunnel/gateway
 - ## 
 

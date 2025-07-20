@@ -41,6 +41,12 @@ modified: 2022-12-31T20:13:33.307Z
 - 
 - 
 - 
+- 
+- 🔖 [v22.17.0 (LTS) _2025-06-24](https://nodejs.org/en/blog/release/v22.17.0)
+  - stable: assert.partialDeepStrictEqual()
+  - Deprecations
+    - Constructing classes like IncomingMessage or ServerResponse without the new keyword is now discouraged. 
+    - The HTTP/2 prioritization API (e.g., stream.priority) is now deprecated due to poor real-world support.
 
 - 🔖 [v22.12.0 _2024-12-03](https://nodejs.org/en/blog/release/v22.12.0)
   - require(esm) is now enabled by default

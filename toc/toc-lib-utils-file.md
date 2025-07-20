@@ -169,6 +169,12 @@ modified: 2023-04-05T19:35:14.347Z
 - https://github.com/vercel/serve /ts
   - serve helps you serve a static site, single page application or just a static file
   - It also provides a neat interface for listing the directory's contents
+  - [how to add prefix _202003](https://github.com/vercel/serve/issues/584)
+  - [i hope the serve can add proxy feature _201801](https://github.com/vercel/serve/issues/315)
+    - To customize serve's behavior, create a `serve.json` file in the public folder 
+    - Simply add `redirects` or `rewrites` to your config file, as described in the serve-handler documentation
+  - https://github.com/vercel/serve-handler /MIT/202410/js
+    - This package represents the core of serve. It can be plugged into any HTTP server and is responsible for routing requests and handling responses.
 
 - https://github.com/http-party/http-server /js
   - a simple zero-configuration command-line http server

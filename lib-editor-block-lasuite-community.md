@@ -129,11 +129,13 @@ modified: 2025-07-17T14:40:07.230Z
 
 - ## What are the features where celery is required? _202507
 - https://matrix.to/#/!pKqGwFDkjqlFyJabhP:matrix.org/$E9yxykAo7ED3CAQpNIdZqOGtwiuhqIx_1Q8Z6UVyfks?via=matrix.org&via=linagora.com&via=tchncs.de
-- it's used for asynchronous tasks. To this day only one task is asynchronous
+- Celery allocates some RAM, 150Mb in the best case, which can seem very much OK in many cases but can be heavy in the context of self-hosting
+
+- it's used for asynchronous tasks. To this day only one task is asynchronous: send email to admins when user ask for access
+  - I feel like it remains lots of effort for something that does not bring much added value. I would prefer something to just by-pass celery and run the tasks synchronously to "ask for access".
+  - But maybe I should disable Celery for now, until there exists some task that justifies its reintroduction (regarding the amount of resources and the effort required).
 
 - Third packages have also shared task used. For example in `django-lasuite` package, the `malware_detection` application is using shared tasks
-
-- I feel like it remains lots of effort for something that does not bring much added value. I would prefer something to just by-pass celery and run the tasks synchronously to "ask for access".
 
 - the simplest way to get rid of celery in this situation is to replace it with postgresql with something like https://github.com/PaulGilmartin/django-pgpubsub
 # discuss-roadmap

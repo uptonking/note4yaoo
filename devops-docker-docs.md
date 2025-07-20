@@ -109,6 +109,75 @@ docker volume prune
   - Set using just the `environment` attribute in the Compose file.
   - Use of the `env_file` attribute in the Compose file.
   - Set in a container image in the ENV directive. Having any ARG or ENV setting in a Dockerfile
+
+## 🛢️ [Volumes | Docker Docs](https://docs.docker.com/engine/storage/volumes/)
+
+- By default all files created inside a container are stored on a writable container layer that sits on top of the read-only, immutable image layers.
+  - Data written to the container layer doesn't persist when the container is destroyed. This means that it can be difficult to get the data out of the container if another process needs it.
+  - The writable layer is unique per container. You can't easily extract the data from the writeable layer to the host, or to another container.
+
+- No matter which type of mount you choose to use, the data looks the same from within the container. 
+  - It is exposed as either a directory or an individual file in the container's filesystem.
+
+- Volume mounts
+  - Volume data is stored on the filesystem on the host, but in order to interact with the data in the volume, you must mount the volume to a container. 
+  - Directly accessing or interacting with the volume data is unsupported
+  - They retain data even after the containers using them are removed.
+  - Since the storage location is managed on the daemon host, volumes provide the same raw file performance as accessing the host filesystem directly.
+  - Volumes are ideal for performance-critical data processing and long-term storage needs.
+
+- Bind mounts
+  - Bind mounts create a direct link between a host system path and a container, allowing access to files or directories stored anywhere on the host. 
+  - Since they aren't isolated by Docker, both non-Docker processes on the host and container processes can modify the mounted files simultaneously.
+  - Use bind mounts when you need to be able to access files from both the container and the host.
+
+- tmpfs mounts
+  - A tmpfs mount stores files directly in the host machine's memory, ensuring the data is not written to disk. 
+  - This storage is ephemeral: the data is lost when the container is stopped or restarted, or when the host is rebooted. 
+  - tmpfs mounts do not persist data either on the Docker host or within the container's filesystem.
+  - These mounts are suitable for scenarios requiring temporary, in-memory storage, such as caching intermediate data, handling sensitive information like credentials, or reducing disk I/O.
+
+- Named pipes
+  - Named pipes can be used for communication between the Docker host and a container. 
+  - Common use case is to run a third-party tool inside of a container and connect to the Docker Engine API using a named pipe.
+
+- Volumes are persistent data stores for containers, created and managed by Docker. 
+  - When you create a volume, it's stored within a directory on the Docker host. When you mount the volume into a container, this directory is what's mounted into the container. 
+  - This is similar to the way that bind mounts work, except that volumes are managed by Docker and are isolated from the core functionality of the host machine.
+- While bind mounts are dependent on the directory structure and OS of the host machine, volumes are completely managed by Docker. 
+  - Volumes are not a good choice if you need to access the files from the host, as the volume is completely managed by Docker. 
+  - Use bind mounts if you need to access files or directories from both containers and the host.
+
+- Unlike a bind mount, you can create and manage volumes outside the scope of any container.
+
+- ❓ Volumes are often a better choice than writing data directly to a container, because a volume doesn't increase the size of the containers using it. 
+- Using a volume is also faster; writing into a container's writable layer requires a storage driver to manage the filesystem. The storage driver provides a union filesystem, using the Linux kernel. This extra abstraction reduces performance as compared to using volumes, which write directly to the host filesystem.
+
+- If you mount a non-empty volume into a directory in the container in which files or directories exist, the pre-existing files are obscured by the mount. 
+- If you mount an empty volume into a directory in the container in which files or directories exist, these files or directories are propagated (copied) into the volume by default. 
+
+- Just like named volumes, anonymous volumes persist even if you remove the container that uses them, except if you use the --rm flag when creating the container
+  - Anonymous volumes are given a random name that's guaranteed to be unique within a given Docker host. 
+  - Anonymous volumes aren't reused or shared between containers automatically.
+
+- When you use a bind mount, a file or directory on the host machine is mounted from the host into a container. 
+  - By contrast, when you use a volume, a new directory is created within Docker's storage directory on the host machine, and Docker manages that directory's contents.
+
+- If you bind mount file or directory into a directory in the container in which files or directories exist, the pre-existing files are obscured by the mount. 
+  - With containers, there's no straightforward way of removing a mount to reveal the obscured files again. Your best option is to recreate the container without the mount.
+- If you bind-mount a directory into a non-empty directory on the container, the directory's existing contents are obscured by the bind mount. This can be beneficial, such as when you want to test a new version of your application without building a new image. 
+  - However, it can also be surprising and this behavior differs from that of volumes.
+
+- Bind mounts have write access to files on the host by default.
+- Containers with bind mounts are strongly tied to the host.
+
+- When you start a service and define a volume, each service container uses its own local volume. None of the containers can share this data if you use the `local` volume driver. 
+
+- 
+- 
+- 
+- 
+
 # docs-compose/config
 - A service is an abstract definition of a computing resource within an application which can be scaled or replaced independently from other components. 
   - A service definition contains the configuration that is applied to each service container.
@@ -121,6 +190,13 @@ docker volume prune
   - If the image does not exist on the platform, Compose attempts to pull it based on the pull_policy.
   - `image` may be omitted from a Compose file as long as a `build` section is declared. 
 
+- You can use `volumes` to define multiple types of mounts; volume, bind, tmpfs, or npipe.
+  - The short syntax uses a single string with colon-separated values to specify a volume mount (`VOLUME:CONTAINER_PATH`), or an access mode (`VOLUME:CONTAINER_PATH:ACCESS_MODE`).
+  - `VOLUME`: Can be either a host path on the platform hosting containers (bind mount) or a volume name.
+  - Relative host paths are only supported by Compose that deploy to a local container runtime. This is because the relative path is resolved from the Compose file’s parent directory which is only applicable in the local case. When Compose deploys to a non-local platform it rejects Compose files which use relative host paths with an error. 
+
+- 
+- 
 - 
 - 
 - 

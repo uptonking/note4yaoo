@@ -11,17 +11,17 @@ modified: 2025-07-17T14:40:30.038Z
 
 - services(14)
   - django-celery-dev
-    - app-dev
-      - postgresql
-      - redis
-      - mailcatcher
+    - app-dev-8071
+      - postgresql16-15432
+      - redis-6371
+      - mailcatcher-1081
       - createbuckets
-        - minio
-  - y-provider
-  - nginx
-    - keycloak
-      - kc_postgresql
-  - frontend-dev, node, crowdin
+        - minio-9000/9001
+  - y-provider-4444
+  - nginx-8083 还转发路由 /media/, /media-auth
+    - keycloak-8080 转发
+      - kc_postgresql14-5433
+  - frontend-dev-3000, node, crowdin
 
 ```shell
 # start lasuite-docs
@@ -32,6 +32,7 @@ yarn
 yarn dev
 
 # backend - django
+python manage.py runserver 0.0.0.0:8071
 
 ```
 
