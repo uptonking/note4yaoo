@@ -45,7 +45,8 @@ reboot
 - tracker-miner-fs cpu high
   - 导致触摸板的鼠标指针失效，或者不流畅
   - [tracker-miner-fs is taking 90% of CPU](https://askubuntu.com/questions/1258757)
-  - tracker reset --hard ; tracker daemon --start
+    - Tracker is an indexing system. It searches all files for words, which are included in a database so you can quickly find files containing specific words.
+    - tracker reconstruct: `tracker reset --hard ; tracker daemon --start`
 
 - 无法开机
   - 变通方案：使用win 10的wsl子系统

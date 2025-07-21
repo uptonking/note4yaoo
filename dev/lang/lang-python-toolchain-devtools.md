@@ -9,6 +9,13 @@ modified: 2025-04-09T02:50:35.187Z
 
 # guide
 
+# cli-xp
+
+```sh
+# Use as the default Python version, python3, and python executables are also installed.
+uv python install --default 3.13 
+```
+
 # discuss-stars
 - ## 
 

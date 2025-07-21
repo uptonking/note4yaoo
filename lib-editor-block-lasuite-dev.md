@@ -14,6 +14,7 @@ modified: 2025-07-17T14:39:41.606Z
   - subpage/subdoc
 
 - cons
+  - 不支持 FileTree
   - 本地开发的环境配置过于复杂
   - 编辑器标题按enter回车键时光标不会自动进入内容区
 
