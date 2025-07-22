@@ -9,6 +9,13 @@ modified: 2024-03-13T14:26:26.220Z
 
 # guide
 
+# minio-dev
+- brew install minio/stable/minio
+  - minio server /mnt/data{1...64}
+  - The MinIO deployment starts using default root credentials `minioadmin:minioadmin`; 
+  - http://127.0.0.1:9000 and log in with the root credentials
+
+- Enabling bucket versioning on a bucket with existing data immediately creates a `NULL` value version ID for each unversioned object.
 # discuss-stars
 - ## 
 

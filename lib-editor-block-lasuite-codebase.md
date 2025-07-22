@@ -23,6 +23,17 @@ modified: 2025-07-17T14:40:30.038Z
       - kc_postgresql14-5433
   - frontend-dev-3000, node, crowdin
 
+- make-bootstrap
+  - pre-bootstrap: @touch env.d/development, @mkdir -p data/media
+  - build: fe, be, yjs-provider
+  - post-bootstrap:
+    - migrate: uv run python manage.py migrate
+    - resetdb: 
+      - uv run python manage.py flush --no-input
+      - uv run python manage.py createsuperuser --email admin@example.com --password admin
+    - demo: uv run python manage.py create_demo --force
+    - back-i18n-compile:: uv run python manage.py compilemessages --ignore="venv/**/*"
+
 ```shell
 # start lasuite-docs
 
@@ -32,6 +43,8 @@ yarn
 yarn dev
 
 # backend - django
+MINIO_ROOT_USER=impress MINIO_ROOT_PASSWORD=password minio server --console-address :9001  /Users/yaoo/Documents/repos/saas/lasuite-docs/data/media
+
 python manage.py runserver 0.0.0.0:8071
 
 ```
@@ -40,6 +53,7 @@ python manage.py runserver 0.0.0.0:8071
   - webapp http://localhost:3000/
   - admin http://localhost:8071/admin
     - user: admin@example.com ,  pass: admin
+  - django-api http://localhost:8071/api/v1.0/swagger.json
 # overview
 
 # frontend

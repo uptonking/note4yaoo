@@ -72,7 +72,15 @@ modified: 2025-07-17T14:40:07.230Z
 
 - ## 
 
-- ## 
+- ## 🔒 [OpenID Connect (OIDC) _202503](https://github.com/suitenumerique/docs/issues/735)
+  - OpenID Connect is a robust standard across the industry (supported with other solutions, e.g. Authelia, Authentik)
+
+- Looks like it has support for OIDC because it is mentioned in the code and k8s deployment documentation as well as development environmental values .
+
+- Looking at the track record of auth0, octa etc in recent years, I think there is zero guarantee that external auth providers do actually provide better security than just sticking to django builtins. OIDC still may make sense for larger installations, though.
+
+- We do support OIDC so I'll close this. For user management we're building a separate product : suitenumerique/people
+  - People is not live yet so we don't tackle user management out of what's offered in Django Admin
 
 - ## is it possible to deploy Docs without any AuthN whatsoever? _202503
 - https://matrix.to/#/!pKqGwFDkjqlFyJabhP:matrix.org/$nvAFuaU-kjXn8fXzL0AVRsrihaVblOLDG9spe-WVjto?via=matrix.org&via=linagora.com&via=tchncs.de
@@ -95,6 +103,19 @@ modified: 2025-07-17T14:40:07.230Z
 - Authentik sounded like a good modern alternative last time i checked.
 # discuss-internals/codebase
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Allow organizing documents in a tree structure · Pull Request _202501](https://github.com/suitenumerique/docs/pull/516)
+  - This pull request introduces a hierarchical organization for documents by implementing a tree structure. 
+  - It integrates the `django-treebeard` library to manage the tree hierarchy, allowing documents to be nested within parent documents. 
+  - Update document models to include parent-child relationships.
+
+- Looks perfect frontside, 1million docs, 5000 per users, works great, we are not even using db index apparently so it even lets room to speed improvement.
 
 - ## 🤔 [Store documents in a stable format _202506](https://github.com/suitenumerique/docs/issues/1043)
   - Currently, Docs stores all documents in a Y.js buffer format, which does not have any stability guarantee. 
@@ -142,6 +163,25 @@ modified: 2025-07-17T14:40:07.230Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [Doc of Docs _202501](https://github.com/suitenumerique/docs/issues/576)
+  - we will improve the documentation of Docs with md files, in the root/documentations folder.
+
+- For tech docs, the docs-as-code approach supposes that the tech stack is mastered by several members of the team, and that the stack automates as many moving parts as possible (for instance, merging a doc-changing PR triggers a workflow to update the live site).
+
+- I think that Docs documentation should be using Docs. It would be a grate showcase of the project.
+
+- I'm not entirely convinced by using Docs for the Documentation. While indeed it makes it a great showcase for Docs, the workflow would be too complicated at the moment. It would be a great solution in the future though.
+
+- I agree that requiring contributors to use git in order to contribute to a Docs-hosted documentation would be counter-productive. Either Docs is use as-is, or it's not used.
+
+- ## 🤔 [Folder view -> integration with Drive _202505](https://github.com/suitenumerique/docs/issues/964)
+  - Organise drive files in folders / shared workspaces that exist in Drive.
+
+- Being able to create docs from drive is definitely in the roadmap yes !
+  - Having a folder view in Docs is not.
 
 - ## [Support WOPI protocol for Nextcloud / OpenCloud integration _202503](https://github.com/suitenumerique/docs/issues/815)
   - Are there any plans on nextcloud integration yet?
