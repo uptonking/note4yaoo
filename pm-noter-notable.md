@@ -221,6 +221,12 @@ modified: 2023-11-28T14:48:45.910Z
 - image
   - 系统提供默认的图片placeholder需要样式友好
 
+## diff
+
+- special diff elements
+  - table
+  - code-block
+
 ## text-editing
 
 - web-editor在编辑器卡死(如打开超大文件)时，容易造成整个页面不可用，应该在架构上处理极端场景
@@ -243,7 +249,7 @@ modified: 2023-11-28T14:48:45.910Z
 
 - toggle-list，支持设置初始折叠状态
 
-## link
+## statistics
 
 - 统计以 github.com 开头的链接次数
 

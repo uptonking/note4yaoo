@@ -229,6 +229,31 @@ redis-cli shutdown
 # discuss-macos-devtools
 - ## 
 
+- ## [MinIO Object Storage for MacOS](https://min.io/docs/minio/macos/index.html)
+
+```sh
+brew install minio/stable/minio
+brew install minio/stable/mc
+
+minio server --console-address :9001 ./path
+
+# append an ampersand (&) to your command to run it in the background.
+MINIO_ROOT_USER=admin MINIO_ROOT_PASSWORD=password minio server ./data --console-address :9001 &
+
+nohup minio server ./data --console-address :9001 &
+
+```
+
+- ## [Install Redis on macOS | Docs](https://redis.io/docs/latest/operate/oss_and_stack/install/archive/install-redis/install-redis-on-mac-os/)
+
+```sh
+brew install redis
+
+brew services start redis
+
+brew services info redis
+```
+
 - ## [How to Install MySQL on Mac _202305](https://medium.com/@rodolfovmartins/how-to-install-mysql-on-mac-959df86a5319)
 - brew install mysql
 - 

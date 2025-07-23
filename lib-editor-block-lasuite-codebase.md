@@ -9,6 +9,58 @@ modified: 2025-07-17T14:40:30.038Z
 
 # guide
 
+- urls
+  - webapp http://localhost:3000/
+  - admin http://localhost:8071/admin
+    - user: admin@example.com ,  pass: admin
+  - django-api http://localhost:8071/api/v1.0/swagger.json
+
+- make-bootstrap
+  - pre-bootstrap: @touch env.d/development, @mkdir -p data/media
+  - build: fe, be, yjs-provider
+  - post-bootstrap:
+    - migrate: uv run python manage.py migrate
+    - resetdb: 
+      - uv run python manage.py flush --no-input
+      - uv run python manage.py createsuperuser --email admin@example.com --password admin
+    - demo: uv run python manage.py create_demo 
+    - back-i18n-compile:: uv run python manage.py compilemessages --ignore=".venv/**/*"
+  - run: fe, django-be, yjs-provider, nginx
+
+```shell
+# start lasuite-docs
+source ./bin/dev-env.sh
+
+# webapp
+cd ./src/frontend/apps/impress/
+yarn dev
+
+# collab
+cd src/frontend/servers/y-provider/
+yarn dev
+
+# backend - django
+
+docker compose up -d keycloak
+brew services start nginx
+brew services start postgresql@17
+brew services start redis
+MINIO_ROOT_USER=impress MINIO_ROOT_PASSWORD=password minio server --console-address :9001  /Users/yaoo/Documents/repos/saas/lasuite-docs/data/media
+
+cd src/backend/
+uv sync --all-extras
+uv run python manage.py runserver 0.0.0.0:8071
+
+uv run celery -A impress.celery_app worker -l DEBUG
+
+# stop-services
+brew services stop --all
+```
+
+- keycloak
+  - 登录时前端会location.replace http://localhost:8071/api/v1.0/authenticate
+  - 接着django-lasuite会redirect到 http://localhost:8083/realms/impress/protocol/openid-connect/auth
+
 - services(14)
   - django-celery-dev
     - app-dev-8071
@@ -22,38 +74,6 @@ modified: 2025-07-17T14:40:30.038Z
     - keycloak-8080 转发
       - kc_postgresql14-5433
   - frontend-dev-3000, node, crowdin
-
-- make-bootstrap
-  - pre-bootstrap: @touch env.d/development, @mkdir -p data/media
-  - build: fe, be, yjs-provider
-  - post-bootstrap:
-    - migrate: uv run python manage.py migrate
-    - resetdb: 
-      - uv run python manage.py flush --no-input
-      - uv run python manage.py createsuperuser --email admin@example.com --password admin
-    - demo: uv run python manage.py create_demo --force
-    - back-i18n-compile:: uv run python manage.py compilemessages --ignore="venv/**/*"
-
-```shell
-# start lasuite-docs
-
-# webapp
-cd ./src/frontend/apps/impress
-yarn
-yarn dev
-
-# backend - django
-MINIO_ROOT_USER=impress MINIO_ROOT_PASSWORD=password minio server --console-address :9001  /Users/yaoo/Documents/repos/saas/lasuite-docs/data/media
-
-python manage.py runserver 0.0.0.0:8071
-
-```
-
-- urls
-  - webapp http://localhost:3000/
-  - admin http://localhost:8071/admin
-    - user: admin@example.com ,  pass: admin
-  - django-api http://localhost:8071/api/v1.0/swagger.json
 # overview
 
 # frontend

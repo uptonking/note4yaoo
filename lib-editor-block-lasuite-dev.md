@@ -12,12 +12,13 @@ modified: 2025-07-17T14:39:41.606Z
   - version-history
   - collab
   - subpage/subdoc
+  - 私有化部署方便，提供了docker/k8s等多种方式，还提供了很多环境变量可配置
 
 - cons
-  - 不支持 FileTree
-  - 本地开发的环境配置过于复杂
+  - 不支持个人所有文件的 FileTree
   - editor
     - 编辑器标题按enter回车键时光标不会自动进入内容区
+  - ~~本地开发的环境配置过于复杂~~
 
 - features
   - pin docs
@@ -26,12 +27,18 @@ modified: 2025-07-17T14:39:41.606Z
 - editor
   - slash-menu /
 # draft
-- 完全本地部署的架构
+- ✅ 完全本地部署的架构
 
 - 分析数据库的结构，文件编辑操作的结构
 
-- 测试协作的op、光标
+- collab的op、光标
+  - websocket水平扩展时是否采用粘性会话
 
+- 文档分享的数据流
+
+- version-history的原理
+
+- 
 - 
 - 
 - 
@@ -50,6 +57,13 @@ modified: 2025-07-17T14:39:41.606Z
 # dev-xp
 - 分析文章内容数据持久化在哪里了，impress_document 这张表似乎没有具体内容
   - 内容都存储在s3里
+
+- sharing-doc
+  - share doc时，sub-doc 也会自动分享出去
+# bugs
+- collab
+  - 协作时，drag调整顺序会失效
+  - 切换doc再切回来时，协作者光标的颜色会变化
 # more
 
 # lasuite-documentation
