@@ -227,6 +227,12 @@ modified: 2023-11-28T14:48:45.910Z
   - table
   - code-block
 
+## statistics/insights
+
+- 统计以 github.com 开头的链接次数
+
+- git-repo-insights
+
 ## text-editing
 
 - web-editor在编辑器卡死(如打开超大文件)时，容易造成整个页面不可用，应该在架构上处理极端场景
@@ -248,10 +254,6 @@ modified: 2023-11-28T14:48:45.910Z
   - s3: 列表块的判断基于前置符号+块级换行，这样可以将列表项前的段落作为折叠触发点
 
 - toggle-list，支持设置初始折叠状态
-
-## statistics
-
-- 统计以 github.com 开头的链接次数
 
 ## image
 

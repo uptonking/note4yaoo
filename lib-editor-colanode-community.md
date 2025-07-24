@@ -34,11 +34,24 @@ modified: 2025-06-21T19:12:34.201Z
   - We built a wrapper which contains type safe inputs, automatically generates query keys and handles the communication between processes. It also updates the cache on result changes from the main process. Basically almost all of app state is handled this way
   - By using TanStack/Query we get caching, loading states, retries and many other features out of the box which has been a great help in development of the app.
 
+# discuss-changelog
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🚀📈 [Implement inline databases _20250722](https://github.com/colanode/colanode/pull/153)
+
 - ## 🚀🧭 We have build a local-first web client for @colanode . It supports full offline mode _20250618
 - https://x.com/hakanshehu/status/1935031919785160973
   - To achieve this we use 🛢️ SQLite with wasm and OPFS (Origin Private File System) in browsers (not supported by all browsers yet). The assets are cached using PWA techniques for offline support. The data you have access to is stored locally and is accessible anytime. New changes are stored locally first and eventually synced with the server.
 
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

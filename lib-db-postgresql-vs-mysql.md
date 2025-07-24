@@ -100,7 +100,15 @@ modified: 2023-11-01T14:13:41.390Z
 # discuss-pg-mysql
 - ## 
 
-- ## 
+- ## 🔀 The most interesting difference between MySQL and Postgres is the choice of parallelism model.
+- https://x.com/BenjDicken/status/1948140242122473826
+  - MySQL: multi-threaded
+  - Postgres: multi-process
+  - It's quite fun to study the tradeoffs between the two, both for these specific databases and broadly in systems engineering.
+
+- [PostgreSQL: Let's make PostgreSQL multi-threaded _202306](https://www.postgresql.org/message-id/31cc6df9-53fe-3cd9-af5b-ac0d801163f4%40iki.fi)
+
+- I hate to use pgbouncer in postgres, it feels like a terrible hack
 
 - ## I love Postgres but what are areas where MySQL outperforms?
 - https://x.com/jamesacowling/status/1894828996917101029

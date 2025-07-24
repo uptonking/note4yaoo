@@ -31,6 +31,15 @@ modified: 2025-07-17T14:40:30.038Z
 # start lasuite-docs
 source ./bin/dev-env.sh
 
+docker compose up -d keycloak
+brew services start nginx
+brew services start postgresql@17
+brew services start redis
+
+MINIO_ROOT_USER=impress MINIO_ROOT_PASSWORD=password minio server --console-address :9001  /Users/yaoo/Documents/repos/saas/lasuite-docs/data/media
+
+mc alias set impress http://localhost:9000 impress password 
+
 # webapp
 cd ./src/frontend/apps/impress/
 yarn dev
@@ -40,13 +49,6 @@ cd src/frontend/servers/y-provider/
 yarn dev
 
 # backend - django
-
-docker compose up -d keycloak
-brew services start nginx
-brew services start postgresql@17
-brew services start redis
-MINIO_ROOT_USER=impress MINIO_ROOT_PASSWORD=password minio server --console-address :9001  /Users/yaoo/Documents/repos/saas/lasuite-docs/data/media
-
 cd src/backend/
 uv sync --all-extras
 uv run python manage.py runserver 0.0.0.0:8071

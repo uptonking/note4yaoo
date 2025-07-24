@@ -643,6 +643,15 @@ modified: 2023-09-02T09:17:22.992Z
     - 将web代码运行在小程序上, 低成本的比如webview, 高级的比如kbone
     - 将web代码编译成小程序原生, 比如taro
     - 将小程序代码编译成跨端代码, 比如morjs
+# cloud-browser
+- https://github.com/m1k1o/neko /12.5kStar/apache2/202507/go
+  - https://neko.m1k1o.net/
+  - A self hosted virtual browser that runs in docker and uses WebRTC.
+  - you can browse the web, run applications, and perform other tasks just as you would on a regular browser, all within a secure and isolated environment
+  - Neko offers the ability for multiple users to access it simultaneously
+  - This app uses WebRTC to stream a desktop inside of a docker container
+  - It is not only limited to a browser; it can run anything that runs on linux (e.g. VLC). Browser only happens to be the most popular and widely used use-case.
+  - Compared to clientless remote desktop gateway (e.g. Apache Guacamole or websockify with noVNC), installed with remote desktop server along with desired program (e.g. linuxserver/firefox) provides neko additionally: built-in audio, Multi-participant control
 # more
 - https://github.com/BrowserBox/BrowserBox /AGPLv3/js
   - https://dosyago.com/
