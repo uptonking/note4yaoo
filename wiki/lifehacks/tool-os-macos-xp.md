@@ -147,6 +147,13 @@ redis-cli shutdown
 ```
 
 - little snitch 查看network monitor面板的快捷键显示在设置界面
+
+- 查看开放端口: 
+  - 可查看进程名: (sudo) lsof -i -P | grep LISTEN
+  - 无进程名: netstat -an | grep LISTEN
+  - [Open Ports for macOS](https://openports.app/)
+    - lsof -P -iTCP -sTCP:LISTEN +c0
+    - kill -15 {PID}
 # mac-apps
 - appstore
   - [MacKed - 专注于Mac破解资源的分享与下载](https://macked.app/)
