@@ -154,7 +154,12 @@ git log --online --graph --decorate
 # discuss
 - ## 
 
-- ## 
+- ## [gpg: Screen or window too small · Issue · kovidgoyal/kitty _202302](https://github.com/kovidgoyal/kitty/issues/6018)
+
+```sh
+gpgconf --kill gpg-agent
+gpgconf --launch gpg-agent
+```
 
 - ## [How to show full-file Git blame in Visual Studio Code - Stack Overflow](https://stackoverflow.com/questions/44161997/how-to-show-full-file-git-blame-in-visual-studio-code)
 - If you use the GitLens plugin, you can also use the "File Annotations" icon in the top right of Visual Studio Code

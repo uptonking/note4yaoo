@@ -107,6 +107,9 @@ modified: 2020-06-22T09:23:56.117Z
 - 胡润百富 Under30s创业领袖 2020
 # edu
 - 高考分数线
+
+- 学术相关数据: arxiv/paper, huggingface-data, github-code
+  - [Trending Papers - Hugging Face](https://huggingface.co/papers/trending)
 # geo
 - 现地名，古地名，如南京-建业(三国)
 - 地名，车牌号 的对应关系(如浙A)

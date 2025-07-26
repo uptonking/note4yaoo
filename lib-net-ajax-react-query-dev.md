@@ -32,6 +32,11 @@ modified: 2023-03-05T08:55:03.696Z
   - In `online` mode, Queries and Mutations will not fire unless you have network connection
   - 在测试时可改为 `always`
 # query-examples
+- https://github.com/KevinVandy/react-data-fetching /202507/ts
+  - I have now built the same app 22 times for my workshop where I teach different data loading patterns in React Router, TanStack Router, Next.js, and even a bit of Astro and Sveltekit too.
+  - https://x.com/KevinVanCott/status/1949121990066868591
+    - how to use TanStack Query with all of them.
+
 - https://github.com/alan2207/react-query-auth
   - Authenticate your react applications easily with react-query.
 

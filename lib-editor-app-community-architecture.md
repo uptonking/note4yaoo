@@ -15,7 +15,27 @@ modified: 2024-12-28T19:11:01.446Z
 - ## 
 
 - ## 
+# discuss-edit-with-diff
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Sonnet-4 is trained to use a specific Text Editor Tool that is super well designed to understand diffs, make edits etc drastically increasing the quality of every change.
+- https://x.com/pelaseyed/status/1948835276127973689
+
+- I gave claude a more advanced edit tool (with white-space forgiving context, line-scoped edits, etc.) But claude defaults to only use `old_string` and `new_string` without the fancy arguments. This could explain why.
+- The edit tool is just search replace. There’s nothing magic about it, but they did train the model to be great at that task.
+
+- the magic sauce is probably the detailed structuredPatch tool result, which allows claude to keep track of the current content of the file
+
+- the diff understanding is game-changing. use claude code for workflow debugging when n8n nodes break. it reads the entire workflow structure, identifies the failing connection, and suggests fixes with surgical precision. other coding assistants just generate code. claude code actually understands the system it's modifying
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

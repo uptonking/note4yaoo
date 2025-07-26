@@ -9,18 +9,25 @@ modified: 2025-07-17T14:39:41.606Z
 
 # guide
 - pros
+  - license: MIT
+  - collab by yjs is optional, 支持文档分享
   - version-history
-  - collab is optional
-  - subpage/sub-doc
+  - subpage/sub-doc, 支持多层嵌套的subpage，折叠交互待优化
   - self-hostable 私有化部署方便，提供了docker/k8s等多种方式，还提供了很多环境变量可配置
+  - export pdf/docx
 
 - cons
   - 不支持个人所有文件的 FileTree
+  - database/table
+  - editor
+  - collab
   - ~~本地开发的环境配置过于复杂~~
 
 - features
+  - 文档名在编辑器内容外，方便在名称和内容之间插入其他内容
   - pin docs
   - doc-toc
+  - 产品设计未采用多tab
 
 - editor-pros 🌹
   - slash-menu /
@@ -28,6 +35,10 @@ modified: 2025-07-17T14:39:41.606Z
 - editor-cons 🐛
   - 编辑器标题按enter回车键时光标不会自动进入内容区
 # draft
+- roadmap
+  - lasuite-desktop, 使用类似colanode的架构实现pc版
+  - doc-api-for-ai, 参考notion的实现方式
+
 - ✅ 完全本地部署的架构
 
 - 分析数据库的结构，文件编辑操作的结构
@@ -43,30 +54,44 @@ modified: 2025-07-17T14:39:41.606Z
   - 实现方式是浮动工具条的下拉菜单
   - summarize, rephrase, beautify
 
-- 
-- 
-- 
-
-- code-to ❓
-  - 不同的浏览器打开时，存在数据不一致的情况
-
-- 使用类似colanode的架构实现pc版
-
-- 使用简化版的oidc替代keycloak
+- auth
+  - 使用简化版的oidc替代keycloak
+  - ❓ 使用django-auth代替keycloak
   - 接入更多登录
 
-## ai-to
+- 
+- 
+- 
+
+- issues-maybe
+  - ~~不同的浏览器打开时，存在数据不一致的情况~~
+
+## ai-to 👾
 
 - ai编辑文档考虑使用 fast-apply 的模型方案
-# dev-xp
-- 分析文章内容数据持久化在哪里了，impress_document 这张表似乎没有具体内容
-  - 内容都存储在s3里
 
-- 用户正常编辑文档时，没有http请求来持久化文档，而通过/collab/ws光标文档更新信息
+- 参考markdown流式输出的方案实现文档的流式输出
+
+- 
+- 
+
+# dev-xp
+- 分析文档内容数据持久化在哪里了，`impress_document` 这张表似乎没有具体内容
+  - 文档内容都存储在s3里
+
+- 用户正常编辑文档时，没有http请求来持久化文档，而通过websocket通道`/collab/ws`来更新光标文档信息
 
 - sharing-doc
   - share doc时，sub-doc 也会自动分享出去
+
+## editor-dev
+
+- 编辑器内图片url默认只有登录用户能访问，未登录用户不能访问
+  - http://localhost:8083/media/2e7c9a29-06e5-4b4c-b9f8-7a9617db7d71/attachments/918abdac-b9f9-4d8b-b7f4-27e72808c954.png
 # bugs
+- drag
+  - 拖拽开始时，必须要停顿一下留出时间来显示原位置的拖拽指示线，否则会拖拽失败
+
 - collab
   - 协作时，drag调整顺序会失效
   - 切换doc再切回来时，协作者光标的颜色会变化

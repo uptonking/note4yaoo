@@ -31,7 +31,53 @@ Their main job is sending client requests to several servers. The goal is to spr
 - Their ideal use case is as entry points to microservices systems.
 
 - Nginx, which is a Reverse Proxy can have several "upstreams" and spread the load between them
+# discuss-alternatives-caddy
+- ## 
+
+- ## 
+
+- ## [Caddy Web server is awesome. stop using apache and use caddy instead. : r/selfhosted _202505](https://www.reddit.com/r/selfhosted/comments/1khbhqj/caddy_web_server_is_awesome_stop_using_apache_and/)
+- More indepth reason you should give caddy a try.
+- pros-caddy
+  - Automatic HTTPS with Let's Encrypt
+  - Simple Configuration: JSON config is also available for advanced use cases or dynamic configuration.
+  - Modern, Secure Defaults: Strong TLS defaults and automatic redirects from HTTP to HTTPS.
+  - Built-in Reverse Proxy
+  - written in Golong: single binary
+  - Extensible via Plugins
+  - Great for Local Development and Self-Hosting
+
+- cons-caddy
+  - Fewer third-party modules and community scripts compared to more mature servers.
+  - Performance Benchmarks Are Good—but Not Always Best
+
+- benefits of caddy:
+  - Caddy has automatic https with Let's Encrypt
+  - Caddy config is trivial. It takes a 1 liner to serve your website
+  - Even advanced features like url rewrites are much easier on caddy than on nginx. Furthermore there are plugins which make this much easier.
+- Nginx proxy manager handles 1 and 2 doesn’t require any code to be written
+
+- Caddy does support TLS GREASE
+
+- Been using nginx for 15 years. No reason to switch. Rock solid and easy to configure.
+
+- Swag makes nginx configuration trivial and almost entirely in your docker compose...
+  - SWAG, which contains all the templates you’ll ever need.
+
+- The main advantage of Caddy is that it's not a server, it's a "server of servers". It's a framework on which you add "apps" that do stuff. People (especially on this sub) tend to just use the http app to serve files or as a reverse proxy but it can do a lot more. Also, it's fully controllable via API and with JSON configs, which makes it even more interesting.
+
+- I just use NPM and done. The UI is the easiest of em all. Why change to Cuddy?
+
+- from my understaning traefik is best used for kubernetes or similar "docker only" setups. When you are in such a setup, it's nice to configure it through docker tags, but I really didn't enjoy the other ways of configuration.
+
+- I don't think traefik offers a static web server
+
+- [NPM vs Caddy : r/selfhosted _202405](https://www.reddit.com/r/selfhosted/comments/1copfx7/npm_vs_caddy/)
+
+- [Planning to switch from Nginx reverse proxy to Caddy - will i miss or regret anything? : r/linuxadmin _202401](https://www.reddit.com/r/linuxadmin/comments/1aepv6g/planning_to_switch_from_nginx_reverse_proxy_to/)
 # discuss-traefik
+- ## 
+
 - ## 
 
 - ## 

@@ -476,7 +476,7 @@ modified: 2023-09-02T09:17:22.992Z
     - How is it fully self-hostable if it relies on three SaaS services? Seems more like partially self-hostable?
     - I rebuilt @Replit — Sandbox is an open-source cloud code editing environment with an AI copilot and multiplayer collaboration, made with @Nextjs + @CloudflareDev Workers
     - The backend consists of a primary Express and Socket.io server, and 3 Cloudflare Workers microservices for the D1 database, R2 storage, and Workers AI.
-    - 🖥️ Each open sandbox instantiates a secure Linux sandboxes on `E2B`, which is used for the terminal and live preview.
+    - 🧊 Each open sandbox instantiates a secure Linux sandboxes on `E2B`, which is used for the terminal and live preview.
     - How is it fully self-hostable if it relies on three SaaS services? Seems more like partially self-hostable?
 
 - https://github.com/freewheel/code-kitchen /apache2/202402/ts

@@ -16,6 +16,15 @@ modified: 2024-03-13T14:26:26.220Z
   - http://127.0.0.1:9000 and log in with the root credentials
 
 - Enabling bucket versioning on a bucket with existing data immediately creates a `NULL` value version ID for each unversioned object.
+
+- standalone MinIO does support bucket versioning, but the “warning” in the docs is really about durability and production‑readiness, not about the absence of the feature.
+  - Versioning is available in Single‑Node Single‑Drive (SNSD) deployments. As of the May 4,  2023 server release, MinIO standalone (SNSD) will happily accept mc version enable … and keep multiple object versions in your bucket
+  - That notice is cautioning that, on a single drive, all your versions live on the same disk without erasure coding. If that disk fails, all versions go with it.
+
+- 
+- 
+- 
+
 # discuss-stars
 - ## 
 

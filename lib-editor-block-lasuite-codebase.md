@@ -81,6 +81,9 @@ brew services stop --all
 # frontend
 
 # backend
+
+## content
+
 - 获取文档内容的Get请求 http://localhost:8071/api/v1.0/documents/39cadaaa-4d96-40f1-b864-491554de0574/
   - 返回的文档内容是编码过的，不是原始内容
 
@@ -149,4 +152,19 @@ brew services stop --all
 }
 ```
 
+## version-history
+
+- 👉 获取版本历史列表 /api/v1.0/documents/1150f3fb-9d1c-445f-a984-12a156b67a06/versions/?version_id=
+  - 若版本很多，滚动时会拉取更多旧版本，此时api默认会变为如 ?version_id=1c7e8f4d-540a-4001-acc9-701586c8ec01
+  - `get_versions_slice`: Get document versions from object storage with pagination and starting conditions
+  - default_storage.connection.meta.client.list_object_versions(bucket, file_key, maxSize)
+    - 这里涉及django-storages和boto3的api
+    - https://github.com/jschneier/django-storages/blob/master/storages/backends/s3.py
+
+- every call to `storage.save("reports/quarterly.pdf", …)` creates a new immutable version rather than overwriting.
+  - 实际保存多版本执行的是 obj.upload_fileobj(content, ExtraArgs=params, Config=self.transfer_config)
+
+- 👉 获取某个版本的内容 /api/v1.0/documents/1150f3fb-9d1c-445f-a984-12a156b67a06/versions/6cf08154-3041-4c3c-861b-5fe7a5834821/
+  - 实际执行 default_storage.connection.meta.client.get_object(**params)
+  - params参数包括 Bucket, file_key, VersionId
 # more

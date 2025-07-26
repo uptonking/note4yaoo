@@ -106,6 +106,18 @@ modified: 2023-11-01T14:13:41.390Z
   - Postgres: multi-process
   - It's quite fun to study the tradeoffs between the two, both for these specific databases and broadly in systems engineering.
 
+- https://x.com/BenjDicken/status/1948848908492534227
+- Context switching is the root cause of the performance difference between multi-process and multi-threaded architectures.
+  - Processes gets their own virtual memory space. 
+  - Threads in the same process share the memory space, other than their stacks.
+
+- Scheduler differences are also at play. Most schedulers apply little to no penalty for switching between runnable threads whereas processes get a guaranteed minimum run time on a core to keep cache thrashing at bay. For MySQL at high concurrency this proved fatal. 
+  - Looks like I misremembered/hallucinated the details. Or gippity outhallucinated me. When thread pool was introduced scheduler behavior should have been identical for processes/threads assuming no other workloads were colocated with the database.
+  - Looking back, locking design in MySQL and cache coherency traffic might have been the biggest culprit in the performance cliff. IIRC this was roughly around the time when dual-socket x86 systems became popular, being extra painful on cache coherency.
+  - I find it deviously entertaining that Oracle chose to keep thread pools out of MySQL CE. One way to make money I guess.
+
+- It almost always boils down to "do I need to transfer a lot of data between my parallel contexts" where multiprocessing will be a pain, and "does the parallel logic require intervention (or lack of) from the OS to run properly", in which case context switching can be fatal.
+
 - [PostgreSQL: Let's make PostgreSQL multi-threaded _202306](https://www.postgresql.org/message-id/31cc6df9-53fe-3cd9-af5b-ac0d801163f4%40iki.fi)
 
 - I hate to use pgbouncer in postgres, it feels like a terrible hack

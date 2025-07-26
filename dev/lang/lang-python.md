@@ -69,6 +69,8 @@ modified: 2020-07-14T09:27:30.503Z
 - 🌰 [Django documentation contents | tutorial](https://docs.djangoproject.com/en/5.2/contents/)
   - tutorial: app-structure, db-crud, view-template, view-generic
 
+### QuerySet
+
 - To represent database-table data in Python objects, Django uses an intuitive system: A model class represents a database table, and an instance of that class represents a particular record in the database table.
 
 - A `QuerySet` represents a collection of objects from your database. 
@@ -118,6 +120,22 @@ modified: 2020-07-14T09:27:30.503Z
 - If you find yourself needing to write an SQL query that is too complex for Django’s database-mapper to handle, you can fall back on writing SQL by hand. 
 
 - 
+- 
+
+### storage
+
+- [Managing files | Django documentation | Django](https://docs.djangoproject.com/en/5.2/topics/files/)
+  - [File storage API | Django documentation | Django](https://docs.djangoproject.com/en/5.2/ref/files/storage/)
+- By default, Django stores files locally, using the `MEDIA_ROOT` and `MEDIA_URL` settings. 
+- Internally, Django uses a django.core.files. File instance any time it needs to represent a file.
+- Django delegates decisions about how and where to store files to a file storage system. 
+  - Django’s default file storage is `django.core.files.storage.FileSystemStorage`.
+
+- [Amazon S3 - django-storages 1.14.6 documentation](https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html)
+  - The backend is based on the `boto3` library which must be installed
+- [S3 - Boto3 1.39.14 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html)
+  - use the AWS SDK for Python (Boto3) to create, configure, and manage AWS services, such as Amazon Elastic Compute Cloud (Amazon EC2) and Amazon Simple Storage Service (Amazon S3).
+
 - 
 - 
 - 

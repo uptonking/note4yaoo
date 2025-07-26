@@ -95,6 +95,7 @@ modified: 2022-11-07T10:58:24.512Z
   - hackernews
   - reddit-tech
   - imdb
+  - 学术相关数据: arxiv/paper, huggingface-data, github-code
 # 国内替代/open-alternatives
 - obsidian
 

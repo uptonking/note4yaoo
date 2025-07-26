@@ -30,7 +30,7 @@ modified: 2025-07-23T15:48:28.642Z
 
 - ## 
 
-- ## 本地django-dev-server获取本地minio中的内容失败 An error occurred (502) when calling the GetObject operation (reached max retries: 4): Bad Gateway.
+- ## 本地django-dev-server获取本地minio中的内容失败 An error occurred (502) when calling the GetObject operation (reached max retries: 4): Bad Gateway. _20250725
 - ai帮着加了几个aws相关的环境变量
   - 实际最后是撤消了所有ai添加的变量，将localhost改为 127.0.0.1，然后正确 source bin/dev-env.sh 来设置环境变量解决
 
@@ -42,6 +42,9 @@ AWS_S3_ENDPOINT_URL=http://127.0.0.1:9000
 
 - localhost can resolve to both IPv4 (127.0.0.1) and IPv6 (::1) addresses
   - MinIO was listening on both IPv4 and IPv6, but there was likely a configuration or networking issue with the IPv6 stack.
+
+- ### 🆕0726 prosemirror编辑器内图片的url未正常显示图片
+- 图片url通过nginx转发到minio，转发时 需要将 `proxy_pass http://localhost:9000/impress-media-storage/;` 改为 `proxy_pass http://127.0.0.1:9000/impress-media-storage/; `
 
 - ## login: "GET /api/v1.0/callback/?error=invalid_scope&error_description=Invalid+scopes%3A+%22openid+email%22&state=zGWy6oJBntayvzTeCbQXGGHjHtagTiou HTTP/1.1" 302 0 
 
