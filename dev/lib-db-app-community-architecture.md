@@ -150,6 +150,13 @@ modified: 2023-09-17T17:37:19.913Z
 
 - ## 
 
+- ## 
+
+- ## Apps used to have one database for multiple users. Now many have one database per user. Soon we will have multiple databases for each user.
+- https://x.com/jamespearce/status/1943114966162379234
+  - This is a pattern I find myself using increasingly with @tinybasejs : some of a user’s app data is private. Some is local. Some is in the cloud. Some is shared. Some is synced. 
+  - Makes sense to shard it out into different databases altogether, each with different behaviors.
+
 - ## We are writing a massive multitenant database at Turso. A node is capable of running hundreds of thousands of databases, concurrently. 
 - https://x.com/iavins/status/1900220354985169332
   - We also decided to write our own asynchronous runtime implementation (instead of using `Tokio` ) for reasons. Now this bad boy is all bare bones, we don't use Rust's `async` yet.

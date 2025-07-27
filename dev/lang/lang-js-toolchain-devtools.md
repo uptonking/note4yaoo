@@ -81,6 +81,15 @@ modified: 2025-04-09T02:49:16.372Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 💡 Pro tip: always do deps installation at the start of your dev script, like `pnpm i && vite` . It will save you nerves during branch changes / pulling.
+- https://x.com/artalar_dev/status/1949184081498894788
+
 - ## I'm wondering whether bundler & compiler should keep following Node.js new features like `module-sync` , 
 - https://x.com/hardfist_1/status/1843292473046781963
   - It seems tools should be runtime agnostic, so why should we keep following Node.js specific new behavior other than Deno's or Bun's. I hope JS0 can solve these things

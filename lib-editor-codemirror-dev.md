@@ -181,7 +181,8 @@ modified: 2021-05-06T09:38:31.520Z
 - nostable-editor
   - virtualized
   - draggable block-style
-  - table/database: multi views, user-defined
+  - table/database: multi-views, user-defined
+  - markdown parser/highlight
   - markdown sync scroll
   - 尝试集成redux-devtools
   - vscode fork with codemirror

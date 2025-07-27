@@ -52,7 +52,18 @@ modified: 2023-10-28T13:45:16.973Z
 
 - ## 
 
-- ## 
+- ## TIL: SQLite has a Pragma that makes connections to the database readonly, but not fully readonly. `PRAGMA query_only = boolean;` .
+- https://x.com/glcst/status/1949229982389047544
+  - Two operations - that have absolutely nothing to do with each other, are still allowed, and if you ask if the database is readonly it will say no
+  - The `query_only` pragma prevents data changes on database files when enabled. 
+  - When this pragma is enabled, any attempt to CREATE, DELETE, DROP, INSERT, or UPDATE will result in an SQLITE_READONLY error. 
+  - However, the database is not truly read-only. You can still run a `checkpoint` or a `COMMIT` and the return value of the `sqlite3_db_readonly()` routine is not affected."
+  - 👷turso: Our compatibility approach to those will likely just be to not implement it until someone comes and demonstrates a use case.
+
+- Is it because wal mode was added after readonly? Since wal mode requires write access, an exception for checkpoint and commit was made. sqlite3_db_readonly() handles this case for compatibility.
+  - makes some sense. But there is still a way to make it fully ro
+
+- How about immutable=1 param, which makes db truly ro?
 
 - ## SQLite says its immune to torn pages but it doesn't say how
 - https://x.com/sunbains/status/1903873086849728769

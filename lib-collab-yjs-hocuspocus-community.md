@@ -13,6 +13,19 @@ modified: 2023-03-15T15:52:29.437Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## tinybase: We need a CRDT sync layer, and the transport ecosystem to go with it. What should we ship? _202302
+- https://x.com/jamespearce/status/1629516942401847297
+- YJS is great, the transport ecosystem not so much – would stay away from y-websocket, consider https://hocuspocus.dev
+- Downside of YJS is building native Swift app..
+
+- How about a plug-in api and then a separate integration package for each?
+  - Yeah that would be the idea. (Also fits with the peerDep “tiny” philosophy). Can probably reuse the persister API too.
+- If you do that, make sure you provider a performant version of version vectors with GC.
+
+- Build an adapter API. Then build implementation libraries for yjs and automerge adapters. They shouldn’t be peer deps. People should install or write the adapter they want and provide it via configuration.
 # discuss-scaling
 - ## 
 
@@ -74,3 +87,29 @@ modified: 2023-03-15T15:52:29.437Z
 - ## 
 
 - ## 
+
+- ## 🆚 anyone have opinions on yjs backends? liveblocks vs hocuspocus? _202407
+- https://x.com/scottonote/status/1816646954786435107
+
+- PartyKit is very easy to prototype with but still barebones (might improve over time. It’s the best option if you want flexibility with what you do in your websockets server and access to the larger Cloudflare ecosystem might be worth it too. But it’s not a purpose built Yjs backend.
+  - For that, Liveblocks is the best, but there’s some initial setup. The setup is worth it though and everything is very well documented. They have APIs for a lot of stuff – both client and server side – as well as browser dev tools. 
+- There’s also TipTap Collab which is a hosted version of Hocuspocus. The pricing is similar to Liveblocks but they bill by simultaneous connections instead of monthly active users, which is harder to estimate. 
+- Both Hocuspocus and TipTap Collab however is not known for having good DX. Their docs however are a little less well written than Liveblocks and support from TipTap team tends to be patchy
+  - With TipTap the way to debug is read the open source code yourself, fork the package and patch it, and submit a PR hoping it would be merged (won’t be in months), whereas Liveblocks is more of a managed service with support and DevRel.
+
+- If you want full control, Partyserver / Partykit on Cloudflare is my pick
+  - If you want a simplified, vendor solution then Liveblocks is absolutely great.
+
+- Hocuspocus is super easy to self host. Liveblocks is great if you want an out of the box UX.
+
+- Y-Sweet is built to be easy to use and self-host. There's a docker compose file that can be easily adapted to provide HTTPS. At scale you can also run on your own Cloudflare account (and soon on Jamsocket, too).
+
+- ## how was your experience running the tiptap pro history extension w/ a self-hosted hocuspocus? 
+- https://x.com/radian614/status/1879288472110055510
+  - looking at your sync-server it doesn't seem like anything required patching on that end, just wondering if there were any quirks, esp with comments you ran into
+
+- great, we had basically no issues with it. scales well too. the only gotcha was tracking schema versions so that if there's a change, the highest schema version wins and gets stored in the db. when we detect an old version, we flash a banner to reload and make the editor readonly.
+  - https://github.com/campsite/campsite/blob/main/apps/web/components/Post/Notes/useEditorSync.ts#L66
+
+- we rolled our own y.doc versions extension, but we don't store schema versions atm, prob should start doing that - thanks for the tip.
+  - as a sidenote, is the styled-text-server it's own standalone thing for separation of concerns/unrelated translations? we've been using the hocuspocus openDirectConnection method to live translate and render html <> json <> yjs docs
