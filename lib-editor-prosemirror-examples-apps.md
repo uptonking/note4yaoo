@@ -96,7 +96,7 @@ modified: 2022-08-18T16:57:15.296Z
   - If your browser doesn't support local file system APIs, you'll still be able to open individual local files or import JSON file 
   - Since mdSilo Web app is running completely within the browser, some experiences will naturally be more constrained
   - Available for Web, Linux, Windows and macOS. 
-- mdSilo-app /463Star/AGPLv3/202312/ts/rust/tauri
+- mdSilo-app /463Star/AGPLv3/202507/ts/rust/tauri
   - https://github.com/mdSilo/mdSilo-app
   - https://github.com/danloh/mdSilo-app
   - https://mdsilo.com/
@@ -217,6 +217,26 @@ modified: 2022-08-18T16:57:15.296Z
 - https://github.com/huewilliams/notion-clone /202311/ts
   - https://notion-clone-kappa.vercel.app/
   - notion.so clone (React + ProseMirror)
+# integrations
+- https://github.com/matthiask/django-prose-editor /164Star/BSD/202507/python/js
+  - https://django-prose-editor.readthedocs.io/
+  - editor for the Django admin based on ProseMirror and Tiptap
+  - [django-prose-editor – Prose-editing component for the Django admin - Matthias Kestenholz _202403](https://406.ch/writing/django-prose-editor-prose-editing-component-for-the-django-admin/)
+
+- https://github.com/Prototypr/typr /58Star/202408/js/inactive
+  - https://prototypr.io/typr
+  - a Medium-like editor for React that integrates with your user system and CMS
+  - It's currently live in use on Prototypr, a platform built with Strapi and Next.js, but it can be used with any Content Management System
+- https://github.com/Prototypr/prototypr-frontend /150Star/NALic/202501/js
+  - https://prototypr.io/
+  - https://prototypr-frontend.vercel.app/
+  - Open source publishing platform, built with Next.js and Strapi CMS backend. 
+  - Uses Tiptap/Prose-mirror editor.
+  - This site uses Next.js's Static Generation feature using `Strapi` as the data source.
+  - https://github.com/Prototypr/prototypr-backend /MIT/202403/js
+    - 依赖strapi.v4、strapi-plugin-meilisearch、radix-ui、tiptap、novel(editor)
+  - https://open.prototypr.io/
+    - develop Prototypr as an inclusive and open source Web Monetized publishing platform for designers
 # prose-cms
 - alternatives
   - outline
@@ -283,7 +303,7 @@ modified: 2022-08-18T16:57:15.296Z
 - https://github.com/erellsworth/overlord /nuxt
   - CMS built with Nuxt, Express, and Tiptap.
 
-- https://github.com/factly/scooter /202308/js
+- https://github.com/factly/scooter /21Star/NALic/202504/js
   - https://scooter-storybook.pages.dev/
   - a Notion like editor built on top of TipTap & Prosemirror
   - https://github.com/factly/dega /go

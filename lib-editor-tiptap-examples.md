@@ -49,10 +49,10 @@ modified: 2023-02-05T19:03:27.730Z
   - 服务端数据同步代码未找到
   - [A fully open-source and end-to-end encrypted note taking alternative to Evernote | Hacker News_202209](https://news.ycombinator.com/item?id=32708019)
 
-- https://github.com/docs-plus/docs.plus /MIT/202311/js
+- https://github.com/docs-plus/docs.plus /78Star/MIT/202507/ts
   - http://docs.plus/
   - a real-time community collaboration platform
-  - 依赖tiptap、hocuspocus/yjs、next、react-query、zustand
+  - 依赖Supabase、tiptap、hocuspocus/yjs、next、react-query、zustand
 
 - https://github.com/chenyuncai/tiptap-track-change-demo /vue
   - https://track-change.onrender.com/
@@ -89,6 +89,11 @@ modified: 2023-02-05T19:03:27.730Z
     - 依赖react-aria
   - https://github.com/osuresearch/electron-example
     - Electron React Boilerplate uses Electron, React, React Router, Webpack and React Fast Refresh.
+
+- https://github.com/Seedsa/echo-editor /583Star/MIT/202507/ts/vue
+  - https://echo-editor.jzcloud.site/
+  - A modern AI-powered WYSIWYG rich-text editor for Vue, based on Tiptap and shadcn-vue
+  - Markdown support with real-time preview
 
 - neeto-editor /12Star/MIT/202311/js/tiptap/提交多
   - https://github.com/bigbinary/neeto-editor
@@ -232,6 +237,11 @@ modified: 2023-02-05T19:03:27.730Z
 
 - https://github.com/g-bastianelli/tiptap-react-notion
   - Quick example of how we can make a 'Notion like' editor with Tiptap and react
+
+- https://github.com/Cassielxd/CassieEditor /apache2/202506/ts/vue/inactive
+  - http://cassie.vv-xj.com/
+  - 基于prosemirror和tiptap开发的富文本编辑器项目
+  - 本项目主要用于 电子病历的预研
 # utils
 - https://github.com/RomikMakavana/tiptap-pagination /MIT/202505/ts
   - http://romikmakavana.me/tiptap-pagination/
@@ -267,6 +277,10 @@ modified: 2023-02-05T19:03:27.730Z
 
 - https://github.com/yaskevich/extension-marker
   - Tiptap extension for setting custom class of the inline node (mark)
+
+- https://github.com/sereneinserenade/tiptap-inline-suggestion /69Star/MIT/202308/ts/inactive
+  - https://sereneinserenade.github.io/tiptap-inline-suggestion/
+  - A tiptap extension that allows you to add inline suggestions to your editor
 
 - https://github.com/benasher44/prosemirror-nodenext
   - Developer Ready: A comprehensive template.

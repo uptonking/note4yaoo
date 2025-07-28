@@ -60,13 +60,13 @@ modified: 2023-11-28T14:42:16.738Z
   - https://github.com/xiphoseer/padington-client 
     - for the HTML frontend
 
-- https://github.com/drl990114/MarkFlowy /202311/ts/remirror
+- https://github.com/drl990114/MarkFlowy /1.2kStar/AGPL/202507/rust/ts/remirror
   - https://markflowy.vercel.app/
+  - 现代化的 Markdown 跨平台编辑器应用，更简单更智能
   - Modern markdown editor application, Build fast and efficient workflows.
   - Built-in ChatGpt
   - based on tauri and has a volume of less than 10MB and better performance.
   - uses the remirror editor
-
 
 - https://github.com/microvoid/marktion /MIT/202403/ts
   - https://marktion.io/

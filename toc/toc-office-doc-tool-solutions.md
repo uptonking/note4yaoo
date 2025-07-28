@@ -92,6 +92,13 @@ modified: 2021-07-21T18:07:43.056Z
   - Raneto is a "flat file" CMS, meaning no database problems, no MySQL queries, nothing.
   - Full-text search powered by Lunr
 
+- https://github.com/Gram-ax/gramax /217Star/GPL/202506/ts/rust
+  - Embrace a docs-as-code approach to build, version, and publish Git-driven documentation sites using Markdown and a visual editor
+  - It stores all data locally in Markdown format, offering flexibility and offline access, and seamlessly integrates with Git for version control and collaboration
+  - Cross-Platform: Available as a desktop app (Windows, Mac, Linux) and a browser-based version.
+  - Visual Editor: Makes editing Markdown-files easy for technical and non-technical users.
+  - Git Integration: Connect to Git repositories (GitHub, GitLab, Bitbucket, Gitea, etc.) for version control and collaboration.
+
 - https://github.com/metalsmith/metalsmith /7.8kStar/MIT/202304/js/代码量少
   - https://metalsmith.io/docs/getting-started
   - simple, pluggable static site generator.

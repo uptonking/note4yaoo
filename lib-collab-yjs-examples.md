@@ -10,9 +10,9 @@ modified: 2022-09-21T15:47:41.340Z
 # guide
 
 # popular
-- https://github.com/ueberdosis/hocuspocus /MIT/202403/ts
+- https://github.com/ueberdosis/hocuspocus /1.8kStar/MIT/202507/ts
   - https://tiptap.dev/docs/hocuspocus/introduction
-  - A plug & play collaboration backend based on Y.js
+  - The CRDT Yjs WebSocket backend for conflict-free real-time collaboration in your app.
 
 - https://github.com/closeally/yjs-server
   - An extensible, y-websocket-compatible server. Written in TypeScript. Supports authentication. ESM-only.

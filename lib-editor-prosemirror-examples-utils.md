@@ -125,6 +125,32 @@ modified: 2022-08-18T16:57:29.058Z
 - https://github.com/MH4GF/prosemirror-details-list
   - https://prosemirror-details-list.vercel.app/
   - an open/closeable details element that works with rich text editor based on ProseMirror.
+# code-block
+- https://github.com/ocavue/prosemirror-highlight /24Star/MIT/202506/ts
+  - https://prosemirror-highlight.pages.dev/
+  - Highlight your ProseMirror code blocks with any syntax highlighter you like
+  - 支持 lowlight(highlightjs), refactor(prism), shiki, sugar-high
+
+- https://github.com/b-kelly/prosemirror-lezer
+  - Experimental ProseMirror syntax highlighting plugin that uses Lezer grammars
+  - an experimental plugin forked from b-kelly/prosemirror-highlightjs
+
+- https://github.com/StackExchange/prosemirror-highlightjs /19Star/MIT/202207/ts/inactive
+  - Or import just the decoration parser and write your own plugin
+  - Due to how ProseMirror renders decorations, some existing highlight.js themes might not work as expected. ProseMirror collapses all nested/overlapping decoration structures
+
+- https://github.com/b-kelly/prosemirror-highlightjs
+  - Due to how ProseMirror renders decorations, some existing highlight.js themes might not work as expected.
+  - ProseMirror collapses all nested/overlapping decoration structures
+# form
+- https://github.com/kameojs/kameo /23Star/MIT/202507/js
+  - https://kameo.dev/
+  - Web form editor framework powered by ProseMirror
+  - Kameo is a toolkit for creating and rendering interactive web forms in rich text. Based on ProseMirror.
+  - Import/export forms - Save and load forms as JSON
+  - Dynamic form creation - Build forms programmatically with commands
+  - Extensible and customizable - Create your own custom extensions and form fields
+  - Framework agnostic - Works seamlessly across different frontend frameworks
 # media/embed
 - https://github.com/OrkhanAlikhanov/prosemirror-image-uploader
   - The necessary image uploader for prosemirror based editors like (tiptap, remirror).
@@ -132,24 +158,29 @@ modified: 2022-08-18T16:57:29.058Z
   - File upload by dragging the images onto the Prosemirror editor. No upload form, no hassle. 
   - Accepts svg, png, jpg and gif.
 # port-lang
-- https://github.com/fellowapp/prosemirror-py
+- https://github.com/fellowapp/prosemirror-py /50Star/BSD/202503/python
   - Python implementation of core ProseMirror modules
   - Until now, the only option for manipulating and working with ProseMirror documents from Python was to embed a JS runtime. 
   - With this translation, you can now define schemas, parse documents, and apply transforms directly via a native Python API.
 - https://github.com/fiduswriter/prosemirror-python
   - Python translation of prosemirror parts needed to modify a document in Python
 
-- https://github.com/cozy/prosemirror-go /AGPLv3/202501/go
+- https://github.com/cozy/prosemirror-go /47Star/AGPLv3/202501/go
   - A port in Go of ProseMirror for writing a collaborative editing server
   - This repository contains a port in Go of `prosemirror-model` and `prosemirror-transform` in order to have the server part of the collaborative editing in Go.
 
 - https://github.com/Xiphoseer/prosemirror-rs
   - Implementation of the https://prosemirror.net model/transform API in Rust
 
+- https://github.com/atlassian-labs/prosemirror-kotlin /29Star/apache2/202506/kotlin
+  - Java/Kotlin implementation of Prosemirror
+  - collab, history, model, state, test-builder, transform
+
 - https://github.com/Holoon/ProseMirror.Model /c#
   - C# definitions of ProseMirror's content model, the data structures used to represent and work with documents.
+  - https://github.com/stepwisehq/prosemirror-dotnet
 # utils/extensions
-- https://github.com/marekdedic/prosemirror-unified /202311/ts
+- https://github.com/marekdedic/prosemirror-unified /MIT/202507/ts
   - This package provides support for using the unified ecosystem of parsers and other packages (for example, remark, the markdown parser) in ProseMirror.
   - Currently, there is only the prosemirror-remark package to support markdown parsing and serialization
   - https://github.com/marekdedic/prosemirror-remark
@@ -161,7 +192,7 @@ modified: 2022-08-18T16:57:29.058Z
 - https://github.com/mailbean/pm2html /202310/ts
   - ProseMirror JSON to HTML
 
-- https://github.com/ueberdosis/html-to-prosemirror
+- https://github.com/ueberdosis/html-to-prosemirror /php
   - Takes HTML and outputs ProseMirror compatible JSON. 基于php实现
 - https://github.com/enVolt/html-to-prosemirror
   - Takes HTML and outputs ProseMirror compatible JSON. originally written for PHP
@@ -172,7 +203,7 @@ modified: 2022-08-18T16:57:29.058Z
 - https://github.com/ShreyRavi/prosemirror-toc
   - An implementation of a table of contents using prosemirror within React.
 
-- https://github.com/ocavue/prosemirror-virtual-cursor
+- https://github.com/ocavue/prosemirror-virtual-cursor /83Star/MIT/202408/ts/inactive
   - https://prosemirror-virtual-cursor.vercel.app/
   - a plugin that adds a virtual cursor (or caret) to your editor. 
   - It implements the bike-style cursor, which shows a tail under the cursor between mark boundary.
@@ -193,6 +224,10 @@ modified: 2022-08-18T16:57:29.058Z
   - A ProseMirror plugin that enables @mentions and #hashtags in a prosemirror view.
   - https://github.com/quartzy/prosemirror-suggestions
 
+- https://github.com/sereneinserenade/tiptap-inline-suggestion /69Star/MIT/202308/ts/inactive
+  - https://sereneinserenade.github.io/tiptap-inline-suggestion/
+  - A tiptap extension that allows you to add inline suggestions to your editor
+
 - https://github.com/lukesmurray/prosemirror-async-query
   - A simple declarative API for using promises in prosemirror plugin state.
 
@@ -206,7 +241,7 @@ modified: 2022-08-18T16:57:29.058Z
   - https://github.com/toba/editor-test
     - 只转换了2个模块到ts就放弃了
 
-- https://github.com/curvenote/prosemirror-docx
+- https://github.com/curvenote/prosemirror-docx /140Star/MIT/202506/ts
   - Export a prosemirror document to a Microsoft Word file, using docx.
   - https://github.com/dxc111/prosemirror-docx
     - Export a prosemirror document to a Microsoft Word file, using docx.
@@ -226,7 +261,7 @@ modified: 2022-08-18T16:57:29.058Z
 - https://github.com/artcompiler/L123
   - A language for writing ProseMirror editors
 
-- https://github.com/todorstoev/prosemirror-pagination /202008/ts/inactive
+- https://github.com/todorstoev/prosemirror-pagination /88Star/MIT/202412/ts/inactive
   - Plugin for ProseMirror emulating A4 pages
 
 - https://github.com/guardian/prosemirror-invisibles
@@ -241,7 +276,7 @@ modified: 2022-08-18T16:57:29.058Z
 - https://github.com/xylk/prosemirror-compress /201805/js
   - ProseMirror data compression
 
-- https://github.com/prowriting/beyondgrammar-prosemirror
+- https://github.com/prowriting/beyondgrammar-prosemirror /28Star/MIT/202008/ts/inactive
   - Bring real-time spelling, grammar and style checking into your ProseMirror editor.
   - You will need to register to get a API key first (FREE for Individuals)
 
@@ -255,13 +290,13 @@ modified: 2022-08-18T16:57:29.058Z
 - https://github.com/sereneinserenade/vimirror
   - VIM bindings for ProseMirror/Tiptap.
 
-- https://github.com/b-kelly/prosemirror-lezer
-  - Experimental ProseMirror syntax highlighting plugin that uses Lezer grammars
-  - an experimental plugin forked from b-kelly/prosemirror-highlightjs
+- https://github.com/benrbray/prosemirror-math /288Star/MIT/202404/ts/katex/inactive
+  - https://benrbray.com/prosemirror-math/
+  - provides schema and plugins for comfortably writing mathematics with ProseMirror.
+  - math rendering handled by KaTeX
 
-- https://github.com/b-kelly/prosemirror-highlightjs
-  - Due to how ProseMirror renders decorations, some existing highlight.js themes might not work as expected.
-  - ProseMirror collapses all nested/overlapping decoration structures
+- https://github.com/mattberkowitz/prosemirror-find-replace /MIT/201606/js/inactive
+  - Find & Replace plugin for ProseMirror
 # selection
 - https://github.com/xnimorz/selection-range-enhancer /202010/ts
   - A project, which enhances abilities of selectionRange. It allows to track changes, works with carets and so on
@@ -269,6 +304,9 @@ modified: 2022-08-18T16:57:29.058Z
 - https://github.com/retentioneering/retentioneering-dom-observer /202111/ts
   - tools for parsing DOM data, observing DOM and tracking changes
   - a wrapper over MutationObservers, allowing you to observe changes even of those nodes that are not already in the DOM.
+# mobile
+- https://github.com/amjadbouhouch/rn-text-editor /22Star/MIT/202405/ts/inactive
+  - an evolving and feature-rich text editor package for React Native 
 # more-utils
 - https://github.com/remirror/prosemirror-migration
   - a tool for migrating ProseMirror documents when you have breaking changes to your document schema.

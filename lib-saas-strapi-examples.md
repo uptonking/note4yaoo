@@ -100,7 +100,7 @@ modified: 2023-12-15T19:30:23.094Z
   - https://github.com/strapi/strapi-sdk-javascript /201910/archived
     - We stopped to maintained it because the features provided by this SDK are the same as a good HTTP client well configured
 
-- https://github.com/Prototypr/prototypr-frontend /NALic/202401/js
+- https://github.com/Prototypr/prototypr-frontend /150Star/NALic/202501/js
   - https://prototypr.io/
   - https://prototypr-frontend.vercel.app/
   - Open source publishing platform, built with Next.js and Strapi CMS backend. 

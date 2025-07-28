@@ -82,6 +82,19 @@ modified: 2022-10-04T23:32:30.824Z
   - 依赖milkdown.v6、vue2、bootstrap-vue.v2、remark-directive、three、yjs
   - https://github.com/scenaristeur/noosphere2 /202306/js/vue
     - A simple example for using milkdown with vue.
+# diff/track-change
+- https://github.com/handlewithcarecollective/prosemirror-suggest-changes /28Star/MIT/202507/ts
+  - https://handlewithcarecollective.github.io/prosemirror-suggest-changes/
+  - A ProseMirror library for enabling Google Docs-style suggestions
+  - This library provides three mark types: insertion/deletion/modification
+
+- https://github.com/davefowler/prosemirror-suggestion-mode /22Star/MIT/202503/ts
+  - A ProseMirror plugin that implements a "suggestion mode" method to track and show changes similar to Google Docs and Word. 
+  - This plugin allows users to make suggested edits that can be reviewed, accepted, or rejected later.
+
+- https://github.com/nytimes/prosemirror-change-tracking-prototype /23Star/apache2/201609/js/inactive
+  - a basic implementation of change tracking for ProseMirror
+  - This project is a prototype built to explore the possibility of porting track changes to ProseMirror. 
 # versioning
 - https://github.com/inkandswitch/upwelling-code /ts
   - https://upwelling-prototype.netlify.app/
@@ -180,12 +193,22 @@ modified: 2022-10-04T23:32:30.824Z
     - I think both modes are feasible. However, if I had to choose, I would prefer to use Loro CRDT as the source of truth, with writes also being made directly to Loro CRDT.  This would establish a unidirectional data flow from CRDTs to other application states.
     - Currently, we don't have more complex open-source projects based on Loro to refer to; the most complex one at the moment seems to be this ProseMirror binding.
 
+- https://github.com/automerge/automerge-prosemirror /108Star/MIT/202410/ts/inactive
+  - Collaborate on rich text documents which follow the rich text schema using ProseMirror.
+  - This library provides a plugin which maps between Automerge documents and ProseMirror documents. 
+  - This plugin relies on two things: 
+    - firstly that the schema you use be a very specific subset of the ProseMirror schema which is mapped to the Automerge rich text schema (more on this later), 
+    - and secondly that you initialize the ProseMirror document from the Automerge document.
+
 - https://github.com/saranrapjs/prosemirror-automerge /201904/js/inactive
   - experiment with wiring automerge up to ProseMirror
   - The basic idea is to have a ProseMirror plugin that works similarly to the collab plugin: steps which originate from the editor are translated to an Automerge document, and changes to a "remote" Automerge document are translated back to the ProseMirror document as steps.
 
 - https://github.com/ShenQingchuan/HeteroDoc
   - Heterocube Cloud Collaborative Docs. Built with Vue3 + TypeScript + ProseMirror + Y.js + DeepKit
+
+- https://github.com/get-convex/prosemirror-sync /apache2/202507/ts
+  - Sync prosemirror documents with Convex for server-authorized collaborative editing
 # ot-like/prosemirror-collab
 - bear-plus /5Star/ISC/202008/js/ejs/inactive
   - https://github.com/yk9331/bear-plus
@@ -196,10 +219,6 @@ modified: 2022-10-04T23:32:30.824Z
 
 - https://github.com/li-yechao/paper-collab
   - Backend of the rich editor paper-editor.
-
-- https://github.com/stepwisehq/prosemirror-collab-commit /MIT/202307/ts/inactive
-  - Commit-based collaborative editing plugin for ProseMirror
-  - [ProseMirror Collab Performance | Blog _202307](https://stepwisehq.com/blog/2023-07-25-prosemirror-collab-performance/)
 
 - https://github.com/benaubin/prosemirror-collab-plus /202008/ts/inactive
   - Improvements over prosemirror-collab:

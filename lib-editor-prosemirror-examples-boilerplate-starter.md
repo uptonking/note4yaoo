@@ -19,7 +19,7 @@ modified: 2022-09-05T03:41:15.727Z
 
 - https://github.com/ueberdosis/tiptap/tree/main/packages/starter-kit
   - 官方提供了模版工具箱 `@tiptap/starter-kit` npm包
-  - https://github.com/syfxlin/tiptap-starter-kit /inactive
+  - https://github.com/syfxlin/tiptap-starter-kit /MIT/202503/ts
     - 非官方套件，包含了常见的扩展，以及斜杠菜单，浮动菜单，Markdown解析、序列化等功能
 
 - https://github.com/mfoitzik/prosemirror-breakout-starter-kit

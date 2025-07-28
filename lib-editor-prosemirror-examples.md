@@ -45,14 +45,14 @@ modified: 2022-08-18T16:57:46.405Z
     - 支持多层嵌套拖拽
   - 缺点: 很多扩展未开源
 
-- BlockNote /14Star/MPLv2/202208/ts/tiptap
+- BlockNote /8.4kStar/MPLv2+AGPL/202508/ts/tiptap
   - https://github.com/TypeCellOS/BlockNote
   - https://www.blocknotejs.org/
   - A "Notion-style" block-based extensible text editor built on top of Prosemirror and Tiptap.
   - 支持跨block选择部分文字
   - 支持拖拽block修改顺序，特别是支持将list item拖入拖出列表
   - 支持斜杠菜单、悬浮菜单修改标题层级、多级列表、顺滑动画
-  - ✨❤️️ 支持multi-column布局, 支持拖拽生成多列布局
+  - ✨❤️️ 支持multi-column布局, 支持拖拽生成多列布局 (AGPL)
   - ✨ 支持editor多实例，且支持将block从一个editor拖到另一个editor
   - 📱 支持mobile优化
   - 示例丰富: 嵌入pdf
@@ -83,7 +83,8 @@ modified: 2022-08-18T16:57:46.405Z
   - https://github.com/Milkdown/vscode /MIT/202501/ts
     - vscode-ext: Edit markdown in a WYSIWYG way, powered by milkdown
 
-- https://github.com/ocavue/prosekit /101Star/MIT/202404/ts
+- https://github.com/prosekit/prosekit /720Star/MIT/202507/ts
+  - https://github.com/ocavue/prosekit
   - https://prosekit.dev/
   - https://prosekit.dev/guide/integrations/react
   - Framework agnostic and headless rich text editor based on ProseMirror
@@ -105,7 +106,7 @@ modified: 2022-08-18T16:57:46.405Z
   - 支持node-view, plugin-view, widget-decoration
   - not on the plan: no ui, no hotkeys, no schema
 
-- remirror /1.8kStar/MIT/202208/ts
+- remirror /2.9kStar/MIT/202504/ts
   - https://github.com/remirror/remirror
   - https://remirror.io/
   - [basic editor demo](https://remirror.vercel.app/?path=/story/editors-wysiwyg--basic)
@@ -117,7 +118,7 @@ modified: 2022-08-18T16:57:46.405Z
   - 缺点: ui组件依赖material-ui, api设计依赖装饰器
   - [Introducing Remirror v3 _202407](https://www.remirror.io/blog/announcement-v3)
     - This version aims to make it easier to use Remirror in existing applications, by not imposing our architectural decisions on to you.
-    - The core of Remirror v2 relied on packages such as @mui/material to power our menus and toolbars, and @lingui/core to provide internationalisation (i18n) support.
+    - The core of Remirror v2 relied on packages such as `@mui/material` to power our menus and toolbars, and @lingui/core to provide internationalisation (i18n) support.
     - we have removed these features from the core, and moved them into optional packages.
 
 - wax-prosemirror /9Star/MIT/202411/js/react
@@ -151,7 +152,7 @@ modified: 2022-08-18T16:57:46.405Z
   - 还提供了多列布局工具，包括两栏、三栏、按比例、居中
   - 提供了语法树ADF显示
   - 样式写法在2022年抛弃styled转向css工具方法
-  - https://github.com/TeemuKoivisto/prosemirror-react-typescript-example
+  - https://github.com/TeemuKoivisto/prosemirror-react-typescript-example /MIT/202210/inactive
     - copy the approach by Atlassian editor_v20201205
   - ref
     - https://github.com/TeemuKoivisto/prosemirror-track-changes-example
@@ -258,7 +259,7 @@ modified: 2022-08-18T16:57:46.405Z
     - [example: Editor with Chart Plugin](https://nhn.github.io/tui.editor/latest/tutorial-example07-editor-with-chart-plugin)
     - https://github.com/QinHongZhe/hongzhe-tui.editor
 
-- bangle.dev-editor /527Star/MIT/202310/ts/inactive
+- bangle.dev-editor /667Star/MIT/202503/ts
   - https://github.com/bangle-io/bangle-editor
   - https://github.com/bangle-io/banger-editor
   - https://github.com/bangle-io/bangle.dev
@@ -418,7 +419,7 @@ modified: 2022-08-18T16:57:46.405Z
   - 所有的元素都是使用 div 进行模拟, 而不是使用语义化的 p/ul/ol 等进行, 这是为了摆脱浏览器的限制, 如段落嵌套段落的时候, p 标签无法嵌套块级元素等.
   - 使用了 React 构建界面的有: Slash
 
-- use-prosemirror /321Star/MIT/202201/ts
+- use-prosemirror /321Star/MIT/202201/ts/inactive
   - https://github.com/ponymessenger/use-prosemirror
   - ProseMirror + React made easy
   - Separates state and presentation so you can keep your state as high up as necessary.
@@ -495,7 +496,7 @@ modified: 2022-08-18T16:57:46.405Z
   - 实现了RTL国际化方向
   - 数据保存使用了 idb-keyval
 
-- https://github.com/fantasticit/magic-editor /202301/ts
+- https://github.com/fantasticit/magic-editor /202301/ts/inactive
   - http://magic-editor.vercel.app/
   - rich text editor built on top of Prosemirror and Tiptap
 
@@ -505,10 +506,11 @@ modified: 2022-08-18T16:57:46.405Z
   - WYSIWYG rich-text editor using tiptap and Element UI for Vue2 (tiptap2 and Vue3 is in alpha)
   - new version2 support Vue3, use tiptap2 and Element Plus
 
-- nextcloud-text /366Star/AGPLv3/202208/js/vue/tiptap/php
+- nextcloud-text /591Star/AGPLv3/202507/js/vue/tiptap/php
   - https://github.com/nextcloud/text
   - Collaborative document editing using Markdown
   - 依赖tiptap.v2, yjs, @_ueberdosis/prosemirror-tables.v1.1.3, markdown-it、vue2、vuex3
+  - Nextcloud Text is the default text editor since Nextcloud 17. 
 
 - standardnotes.markdown-visual-editor /4Star/AGPLv3/202208/ts/milkdown
   - https://github.com/standardnotes/app/tree/main/packages/components/src/Packages/Editors/org.standardnotes.markdown-visual-editor
@@ -534,6 +536,13 @@ modified: 2022-08-18T16:57:46.405Z
 - https://github.com/equinor/fusion-components/tree/master/src/customElements/components/markdown-editor
   - https://equinor.github.io/fusion-components/?path=/story/general-markdown-editor--default
   - 依赖prosemirror、prosemirror-markdown、lit
+
+- https://github.com/gravity-ui/markdown-editor /MIT/202407/ts/设计系统中的一个组件
+  - https://preview.gravity-ui.com/md-editor/
+  - a powerful tool for working with Markdown, which combines WYSIWYG and Markup modes
+  - Support for the basic Markdown and YFM syntax.
+  - Extensibility through the use of ProseMirror and CodeMirror engines.
+  - 依赖 prosemirror, @diplodoc/transform, react, react-dom, @gravity-ui/uikit, @gravity-ui/components 
 # ai-editor
 - novel /13.7kStar/apache2/202501/ts
   - https://github.com/steven-tey/novel
@@ -542,7 +551,7 @@ modified: 2022-08-18T16:57:46.405Z
   - Built with [Tiptap](https://tiptap.dev/) + [Vercel AI SDK](https://sdk.vercel.ai).
   - 依赖tiptap、@vercel/kv/blob、nextjs、react-markdown.v8、tailwindcss
 
-- https://github.com/aieditor-team/AiEditor /LGPLv2/202407/ts
+- https://github.com/aieditor-team/AiEditor /1.5kStar/LGPLv2/202506/ts
   - https://gitee.com/aieditor-team/aieditor
   - https://aieditor.dev/
   - https://aieditor.dev/versions.html
@@ -553,6 +562,9 @@ modified: 2022-08-18T16:57:46.405Z
   - 基于 Web Component，因此支持 Layui、Vue、React、Angular 等几乎任何前端框架
   - 目标是打造一个完全由 AI 驱动的富文本编辑器，同时支持对接任意大模型，包括私有的大模型。允许用户使用自己私有的大模型 ApiKey
   - 还提供了功能更加强大的商业，商业版不限制用户量、不限制应用数量
+  - we also provide a more powerful commercial version, which does not limit the number of users or the number of applications.
+    - https://aieditor.dev/price
+    - paid: Can remove the logo, collab, word import, local llm
 # editors-collection
 - licit /33Star/MIT/202208/js
   - https://github.com/MO-Movia/licit
@@ -577,11 +589,17 @@ modified: 2022-08-18T16:57:46.405Z
     - That was extended further by the Licit Editor
     - This fork converts from flow to Typescript, adds a few plugins
 
-- nib /215Star/GPLv3/202205/ts
+- nib /215Star/GPLv3/202205/ts/inactive
   - https://github.com/nib-edit/nib
   - https://nib-edit.github.io/nib/
   - 高级功能未开源如comment/collab
   - Nib not only has good rich text editing capabilities but also addresses complex editing requirements like tracking changes made to a document, adding comments in document, collaborative editing and more...
+
+- https://github.com/abdulrahman-mh/textrix /26Star/MIT/202506/ts
+  - https://textrix.vercel.app/
+  - a rich-text publishing editor inspired by Medium 
+  - Unlike most editors, Textrix lets you write, edit, and publish in one place!, Generate a static HTML article or blog post from document that look exactly like they did in the editor
+  - Framework-Agnostic: use it with React, Vue, Svelte, Vanilla JS, and more.
 
 - humhub-prosemirror /15Star/Apache2/202212/js
   - https://github.com/humhub/humhub-prosemirror
@@ -697,7 +715,7 @@ modified: 2022-08-18T16:57:46.405Z
 - https://github.com/vuau/simplemirror /2Star/MIT/202102/js/inactive
   - A simple and easy to use WYSIWYWG editor based on ProseMirror
 
-- https://github.com/paperbits/paperbits-prosemirror
+- https://github.com/paperbits/paperbits-prosemirror /28Star/MIT/202507/ts
   - Paperbits HTML editor based on ProseMirror.
   - 代码过于简单
 
