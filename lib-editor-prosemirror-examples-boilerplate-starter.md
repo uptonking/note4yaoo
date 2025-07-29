@@ -32,7 +32,7 @@ modified: 2022-09-05T03:41:15.727Z
   - Interactive view of the basic example from the ProseMirror website.
   - 使用vite版和无需打包的js版
 
-- https://github.com/TeemuKoivisto/prosemirror-bug-template
+- https://github.com/TeemuKoivisto/prosemirror-bug-template /MIT/202410/js
   - Github template to reproduce ProseMirror bugs in simplest form possible
   - Loads the basic `prosemirror-example-setup` with `prosemirror-dev-toolkit` as ES modules using `importmap`
 
@@ -62,9 +62,40 @@ modified: 2022-09-05T03:41:15.727Z
   - https://vivaxy.github.io/examples/libraries/prosemirror/
   - 日常积累的各种demo，包括prosemirror/yjs/算法
 
-- https://github.com/edp1096/hello-prosemirror
+- https://github.com/lgmworks/prosemirror-with-es6-browser-modules
+  - A working project with ES6 browser modules for the example in https://prosemirror.net/examples/basic/
+
+- https://github.com/edp1096/hello-prosemirror /202505/ts
   - https://edp1096.github.io/hello-prosemirror/
   - 测试图片上传，服务端基于go
+# play/tests
+- https://github.com/amitavanath/prosemirror-uitest /202507/ts
+  - transform-test.ts
+
+- https://github.com/gliheng/pm-examples /202407/ts
+  - Prosemirror examples
+
+- https://github.com/wangyucode/vite-react-prosemirror /202507/ts
+  - 重构分页插件并优化中文输入处理
+
+- https://github.com/Madhawa97/prosemirror-next-demo /202506/ts
+  - bootstrapped with create-next-app.
+
+- https://github.com/nicolas-zozol/rsc-prosemirror /202501/ts
+  - https://rsc-prosemirror.vercel.app/
+  - ProseMirror demo, with React server components used
+
+- https://github.com/i10416/prosemirror-experiment /202501/ts
+  - This repository serves as a sandbox to understand ProseMirror internal step by step
+  - the code focused on ProseMirror core concept without UI concerns.
+  - Transforming ProseMirror data model to AST-like structure
+
+- https://github.com/yoophoon/prosemirror-debug /202504/ts
+  - for debugging prosemirror and learning
+  - https://github.com/LiamLeeX/prosemirror-source /inactive
+
+- https://github.com/davvidbaker/prosemirror-position-debugger /202210/js/inactive
+  - use it in a prosemirror plugin or standalone
 # example-online
 - prosemirror-react-example-setup-js
   - https://codesandbox.io/s/prosemirror-react-hooks-6qvlfr

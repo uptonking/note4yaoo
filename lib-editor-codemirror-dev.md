@@ -182,7 +182,7 @@ modified: 2021-05-06T09:38:31.520Z
   - virtualized
   - draggable block-style
   - table/database: multi-views, user-defined
-  - markdown parser/highlight
+  - 🛝 markdown parser/highlight (lezer <> unified/remark)
   - markdown sync scroll
   - 尝试集成redux-devtools
   - vscode fork with codemirror
@@ -225,6 +225,7 @@ modified: 2021-05-06T09:38:31.520Z
   - 红色部分支持copy和选中
   - git diff text formatter: 将被打乱的git-diff输出从一行格式化为分段
   - diff for version-history-timeline
+  - diff for rich-text
   - 🆚️ 将vscode/monaco的diff逻辑迁移到codemirror
     - diff算法的精确度较差，特别是对于增加一行的场景，cm-diff展示的效果是先删除一行再增加两行
     - 🤔 replace @codemirror/state with monaco-data-model, 目标是复用优化的diff逻辑、计算逻辑

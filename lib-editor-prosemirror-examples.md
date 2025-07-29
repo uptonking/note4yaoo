@@ -33,6 +33,11 @@ modified: 2022-08-18T16:57:46.405Z
 
 - examples
   - https://prosekit.dev/examples/drop-cursor
+
+- fans-prosemirror
+  - https://github.com/sereneinserenade/tiptap-comment-extension
+  - https://github.com/TeemuKoivisto/prosemirror-react-typescript-example
+  - https://github.com/emergence-engineering/prosemirror-slash-menu-ui
 # popular
 - tiptap /28.5kStar/MIT/202501/ts
   - https://github.com/ueberdosis/tiptap
@@ -141,6 +146,8 @@ modified: 2022-08-18T16:57:46.405Z
     - licit也是适合论文的编辑器
     - Wax, a [Cabbage Tree Labs](https://www.cabbagetreelabs.org/) project
     - The Cabbage Tree Method and Book Sprints and led the development of open source software for publishing such as PubSweet, Editoria, Kotahi, PagedJS, Wax, BookType and many more
+  - https://github.com/uday-ament/wax-prosemirror-services /202403/js
+    - An extension of wax-prosemirror-services with additional services
 
 - @atlaskit/editor-core /8Star/Apache2/202208/ts
   - https://bitbucket.org/atlassian/atlassian-frontend-mirror/src/master/editor/
@@ -180,7 +187,7 @@ modified: 2022-08-18T16:57:46.405Z
     - This approach works, but tenuously. Having additional nodes in the document that ProseMirror isn't strictly aware of can cause issues with its change detection system, leading to challenging edge cases. [Deleting the last node view can throw errors · Issue · nytimes/react-prosemirror _202306](https://github.com/nytimes/react-prosemirror/issues/42)
   - 💡 This library provides an alternate implementation of ProseMirror's `EditorView`. It uses React as the rendering engine, rather than ProseMirror's home-brewed DOM update system. This allows us to provide a more comfortable integration with ProseMirror's powerful data model, transformations, and event management systems.
     - the new release moves rendering responsibility entirely into React. We disabled the EditorView's DOM update cycle, and implemented the same update algorithm that prosemirror-view uses with React components. The result is a more idiomatic, React-based library, which doesn't have any of the issues of the original implementation.
-- nytimes-react-prosemirror /314Star/apache2/202311/ts
+- nytimes-react-prosemirror /314Star/apache2/202311/ts/migrated
   - https://github.com/nytimes/react-prosemirror
   - A fully featured library for safely integrating ProseMirror and React
   - React separates updates into render and commit phases so that it can process updates in batches
@@ -204,7 +211,13 @@ modified: 2022-08-18T16:57:46.405Z
     - The courses within focus on developing an understanding of how the three tools that the Oak collaborative rich text editor relies on, React, ProseMirror, and Redux, actually work.
     - [Build Your Own: ProseMirror View](https://nytimes.github.io/oak-byo-react-prosemirror-redux/post/build-your-own-pm-view/)
       - demonstrate how to build the core components of a ProseMirror view library.
+      - https://github.com/mlhiter/mini-prosemirror
     - [Build Your Own: React, ProseMirror, and Redux : javascript](https://www.reddit.com/r/javascript/comments/10swhle/build_your_own_react_prosemirror_and_redux/)
+    - [Why I rebuilt ProseMirror’s renderer in React _202502](https://smoores.dev/post/why_i_rebuilt_prosemirror_view/)
+      - For almost five years, I worked on the New York Times’ rich text editor, Oak.
+      - The Times’ website is written with React, which is one of the big reasons that Oak was written in React. We were able to author React components that could be used by both the reader-facing website and Oak
+      - React and ProseMirror do not play nicely together. 
+      - React and ProseMirror actually have very similar philosophies about how to manage the DOM. Both libraries maintain a sort of “virtual DOM”, a tree structure that’s very efficient to update, which maps to the actual DOM that the browser uses to render the web page. Both libraries also separate state from the view, and use that state to drive the view unidirectionally. The differences between how they implement these philosophies are small, but they’re very important
 
 - manuscript-editor /7Star/apache2>CPAL/202208/ts/react
   - https://github.com/Atypon-OpenSource/manuscripts-article-editor
@@ -310,6 +323,11 @@ modified: 2022-08-18T16:57:46.405Z
   - a combination rich text/markdown editor that powers Stack Overflow's post editing experience.
   - 依赖prosemirror, hightlight.js、markdown-it、@lezer/markdown、stacks-ui，不依赖react
   - 全部基于es6 class，[new EditorView()](https://github.com/StackExchange/Stacks-Editor/blob/main/src/rich-text/editor.ts#L105)的过程非常标准，无封装
+
+- https://github.com/alphagov/govspeak-visual-editor /MIT/202507/js
+  - https://govspeak-preview.publishing.service.gov.uk/editor
+  - A visual editor for Govspeak built using ProseMirror
+  - Govspeak is a flavour of Markdown used for publishing content on GOV. UK.
 
 - syllepsis /187Star/MIT/202304/ts/字节/inactive/参考中文支持
   - https://github.com/bytedance/syllepsis
@@ -443,6 +461,13 @@ modified: 2022-08-18T16:57:46.405Z
   - Reprose’s functionality is contained in features. 
   - A feature can provide schema aspects (nodes, marks), and authoring aspects (key bindings, menu items, ProseMirror plugins).
 
+- https://github.com/KhushilMistry/prosemirror-react /202408/ts/inactive
+  - https://prosemirror-react.vercel.app/
+  - a powerful library for building rich-text editors on the web
+  - In early 2021, few libraries offered React integration with ProseMirror. 
+    - Inspired by these libraries and `prosemirror-react-nodeviews`, we developed our own toolkit.
+    - We recently revisited our decision and explored other libraries. if we were to start anew, we might choose Tiptap instead of building a toolkit from scratch.
+
 - Aditor /9Star/MIT/202104/js
   - https://github.com/YacheLee/Aditor
   - https://yachelee.github.io/Aditor/
@@ -482,6 +507,11 @@ modified: 2022-08-18T16:57:46.405Z
     - https://github.com/luke-john-atlassian/prosemirror-devtools /单独app或extension/inactive
     - [Is there a good way to understand the “pos” that is used all over?](https://discuss.prosemirror.net/t/is-there-a-good-way-to-understand-the-pos-that-is-used-all-over/3458)
 # tiptap/milkdown/remirror/atlassian
+- https://github.com/NiazMorshed2007/shadcn-tiptap /MIT/202410/ts
+  - https://tiptap.niazmorshed.dev/
+  - Sets of custom extensions & toolbars for tiptap editor. 
+  - Install with shadcn/cli.
+
 - typist /8Star/MIT/202211/ts
   - https://github.com/Doist/typist
   - https://typist.doist.dev/
@@ -565,8 +595,41 @@ modified: 2022-08-18T16:57:46.405Z
   - we also provide a more powerful commercial version, which does not limit the number of users or the number of applications.
     - https://aieditor.dev/price
     - paid: Can remove the logo, collab, word import, local llm
+
+- https://github.com/numerique-gouv/blocknote-llm /202406/ts/inactive
+  - https://numerique-gouv.github.io/blocknote-llm/
+  - A proof of concept of what can be done with the BlockNote editor based on ProseMirror and an LLM running in the browser
+  - Works offline
+  - This tool is built on top of `WebLLM`, a package that brings language model inference directly onto web browsers with hardware acceleration.
+    - To run this, you need a modern browser with support for WebGPU. 
+
+- https://github.com/khyamay/prosemirror-speech-to-text /202407/ts
+  - https://prosemirror-speech-to-text.vercel.app/
+  - basic text to speech menu for prosemirror
+
+- https://github.com/trendy-design/llmchat /782Star/MIT/202504/ts/inactive
+  - https://llmchat.co/
+  - Unified interface for AI chat, Agentic workflows and more ...
+
+- https://github.com/phyohtetarkar/tiptap-block-editor /MIT/202507/ts
+  - https://tiptap-block-editor.web.app/
+  - Notion style AI-powered block editor build with Tiptap + Vercel AI SDK + Shadcn + Tailwindcss.
+  - This template used Gemini as AI model provider. You can change any provider supported by Vercel AI SDK models.
+
+- https://github.com/gjc14/tiptap-streaming-preview /MIT/202410/ts/Remix
+  - A compact demo of streaming Markdown from Google AI Gemini and save to Tiptap Extension demo
 # editors-collection
-- licit /33Star/MIT/202208/js
+- https://github.com/Harbour-Enterprises/SuperDoc /37Star/AGPL/202507/js/vue
+  - https://superdoc.dev/
+  - open source document editor bringing Microsoft Word capabilities to the web with real-time collaboration, 
+  - Self-hostable with Vanilla JS, React, Vue, and more
+  - uses: Yjs, FontAwesome, JSZip, and Vite
+  - Extensible architecture: Modular design makes it easy to extend, brand, and customize
+  - Microsoft Word compatible: View and edit DOCX documents with great import/export, advanced formatting, comments, and tracked changes
+  - seamlessly integrates with React, Vue, vanilla JavaScript, and more
+  - Real-time collaboration: Features multiplayer editing, live updates, commenting, sharing, and revision history
+
+- licit /37Star/MIT/202507/js
   - https://github.com/MO-Movia/licit
   - http://greathints.com/licit/
   - a feature rich editor based on ProseMirror and an initial foundation of CZI code
@@ -589,11 +652,29 @@ modified: 2022-08-18T16:57:46.405Z
     - That was extended further by the Licit Editor
     - This fork converts from flow to Typescript, adds a few plugins
 
+- https://github.com/tiptiz/editor /MIT/202503/ts/svelte
+  - https://tiptiz.github.io/editor/
+  - HTML5 & Email friendly WYSIWYG rich text editor by Tiptap & web comonents (WIP)
+  - 基于Svelte和Tiptap实现一个WYSIWYG富文本编辑器，项目的目标是实现一个HTML5 Copy/Paste友好 & Email格式友好 & Markdown友好的WYSIWYG富文本编辑器。 
+  - 编辑器将用于个人博客、邮件编辑器、博客文章快速复制粘贴到微信公众号、掘金、知乎等平台发布。
+
+- https://github.com/KID-1912/tiptap-appmsg-editor /202501/js/inactive
+  - 基于 tiptap 搭建的微信公众号编辑器示例，支持排版后复制到微信公众平台，支持开发者自己开发样式库、模板库作为内容插入
+
+- https://github.com/alin995/wechat-tiptap /MIT/202311/ts/inactive
+  - 一个基于 Tiptap 的 WYSIWYG 编辑器。界面和操作采用微信文档风格，同时提供了AI能力。
+  - OpenAI - AI completions
+
 - nib /215Star/GPLv3/202205/ts/inactive
   - https://github.com/nib-edit/nib
   - https://nib-edit.github.io/nib/
   - 高级功能未开源如comment/collab
   - Nib not only has good rich text editing capabilities but also addresses complex editing requirements like tracking changes made to a document, adding comments in document, collaborative editing and more...
+
+- https://github.com/tautastic/ltx /MIT/202504/ts
+  - https://ltx.st/
+  - efficient and minimalist LaTeX editor. 
+  - Creating, saving and sharing LaTeX documents has never been so effortless.
 
 - https://github.com/abdulrahman-mh/textrix /26Star/MIT/202506/ts
   - https://textrix.vercel.app/
@@ -601,10 +682,20 @@ modified: 2022-08-18T16:57:46.405Z
   - Unlike most editors, Textrix lets you write, edit, and publish in one place!, Generate a static HTML article or blog post from document that look exactly like they did in the editor
   - Framework-Agnostic: use it with React, Vue, Svelte, Vanilla JS, and more.
 
-- humhub-prosemirror /15Star/Apache2/202212/js
+- https://github.com/neetozone/neeto-editor /MIT/202507/js
+  - https://neeto-editor.neeto.com/
+  - The neetoEditor library drives the rich text experience in the neeto products built at BigBinary.
+
+- humhub-prosemirror /17Star/apache2/202505/js
   - https://github.com/humhub/humhub-prosemirror
   - Prosemirror based richtext implementation for the humhub social network
   - 依赖 prosemirror-example-setup、markdown-it
+
+- https://github.com/lynhan318/nextlint /MIT/202404/ts/svelte/inactive
+  - https://nextlint-editor.vercel.app/
+  - Rich text editor (WYSIWYG) written in Svelte, build on top of tiptap, prosemirror, AI prompt integrated.
+  - written in Svelte, using MeltUI headless UI and tailwindcss 
+  - The theme tokens are inherited from Svelte Shadcn.
 
 - kangxi-editor /2Star/MIT/202312/ts
   - https://github.com/mgenware/kangxi-editor
@@ -621,11 +712,23 @@ modified: 2022-08-18T16:57:46.405Z
   - It is based off tiptap and rich-markdown-editor, but tries to stay agnostic to Vue and React.
     - 其实不依赖react、tiptap、rich-markdown-editor
 
+- https://github.com/PeopleWhoListenToStories/sanxi-kit /202507/ts
+  - https://sanxi.xulai.fun/
+  - A toolkit editor suite based on tiptap and prosemirror.
+
+- https://github.com/ahsanu123/litsi /202501/ts
+  - Litsi is an extended markdown editor based on Prosemirror and Lit, with easy to add custom component, inputrules, and dragable element (notion like).
+
 - https://github.com/IsaacAderogba/pine /1Star/MIT/202208/ts
   - https://www.craft.do/s/yE0O3cmWP35qHQ
   - An extensible and headless text-editor framework.
   - Pine is an extensible text-editor framework that prioritizes modularity and performance.
   - Pine adopts an extension system, similar to other prosemirror-based frameworks such as TipTap.
+
+- https://github.com/cesardeazevedo/nostr-editor /MIT/202506/ts
+  - nostr-editor is a collection of Tiptap extensions designed to enhance the user experience when creating and editing nostr notes. 
+  - It also provides tools for parsing existing notes into a structured content schema.
+  - Parse existing nostr events, including imeta tags
 
 - xen-editor /4Star/MIT/202112/ts
   - https://github.com/specup/xen-editor
@@ -643,6 +746,17 @@ modified: 2022-08-18T16:57:46.405Z
   - A rich editor toolkit based on ProseMirror.
   - 渲染自定义组件基于`plugin.props.nodeViews`配置
 
+- pubpub-editor /100Star/GPLv2/202003/js/inactive
+  - https://github.com/pubpub/pubpub-editor
+  - A stand alone, extensible WSIWYG editor based on ProseMirror.
+  - https://github.com/pubpub/pubpub/tree/master/client/components/Editor
+    - Collaborative Community Publishing
+    - 最新的编辑器
+  - https://github.com/pubpub/prosemirror-reactive /MIT/202301/ts/NoDeps
+    - Reactive documents for Prosemirror
+    - This package provides an API modeled on React Hooks for dynamically computing ProseMirror node attributes.
+    - This library allows you to define "reactive attributes" on a Node schema that are automatically recomputed as necessary and passed into toDOM (or a NodeView). A "reactive node" is just one that has one or more reactiveAttrs.
+
 - paper-editor /2Star/Apache2/202108/ts/inactive
   - https://github.com/li-yechao/paper-editor
   - A rich editor powered by prosemirror.
@@ -656,6 +770,10 @@ modified: 2022-08-18T16:57:46.405Z
     - Paper powered by jsipfs and ProseMirror
   - https://github.com/li-yechao/paper-collab
 
+- https://github.com/tinyrack94/edybara /202504/ts
+  - https://edybara.com/
+  - Powerfull rich text library for browser, based on ProseMirror
+
 - react-tinacms-editor /ts
   - https://github.com/tinacms/tinacms/blob/main/packages/react-tinacms-editor
 
@@ -664,15 +782,6 @@ modified: 2022-08-18T16:57:46.405Z
 
 - https://github.com/SeogJongYu/editor-demo
   - Django Backend / React Frontend ，使用@toast-ui/editor.v3
-
-- pubpub-editor /100Star/GPLv2/202003/js/inactive
-  - https://github.com/pubpub/pubpub-editor
-  - A stand alone, extensible WSIWYG editor based on ProseMirror.
-  - https://github.com/pubpub/pubpub/tree/master/client/components/Editor
-    - Collaborative Community Publishing
-    - 最新的编辑器
-  - https://github.com/pubpub/prosemirror-reactive /NoDeps
-    - Reactive documents for Prosemirror
 
 - the-grid-ed /56Star/MIT/201702/js/inactive
   - https://github.com/the-grid/ed

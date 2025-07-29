@@ -225,7 +225,19 @@ HMACSHA256(
 
 - ## 
 
-- ## 
+- ## @better_auth: If you want `http://auth.site.com` to be your auth server and authenticate other subdomains like `http://app.site.com ` , `http://your.site.com` ... 
+- https://x.com/imbereket/status/1949675605345349801
+  - you don’t need to do anything fancy. You just need to enable cross-subdomain cookies to share cookies between them
+  - this is assuming you trust all your subdomains
+
+- Cool, but subdomain takeover and compromise of a third-party subdomain are legitimate risks. One domain = one authentication boundary.
+- Setting `domain` to the root is a security concern
+
+- I think best practice is to have your api and auth on the dame domain/subdomain?
+
+- What if I put my auth server on a completely separate domain from 2 other domains? Would JWTs be viable here?
+
+- Instead of relying on cross-site cookies, what if the app sends data + signature to a centralized guardIDP that you can set, which verifies it and sets its own cookie after validation? Could be a workaround post-3PC era.
 
 - ## [Show HN: Stack, an open-source Clerk/Firebase Auth alternative | Hacker News _202404](https://news.ycombinator.com/item?id=40031090)
 - React/Next only

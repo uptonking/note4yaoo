@@ -196,7 +196,23 @@ modified: 2023-04-16T10:02:58.738Z
 
 - which model of gpt you use as ocr?
   - OpenAI GPT4o-mini
+# discuss-ui-chat
+- ## 
+
+- ## 
+
+- ## a quick prototype sprint on an LLM chat interface
+- https://x.com/argyleink/status/1949966641233531030
+  - https://codepen.io/editor/argyleink/pen/wBKWNwQ
+  ✅ view transitions
+  ✅ readablestreams
+  ✅ flow control
+
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## Things I don't like about the AI SDK #1

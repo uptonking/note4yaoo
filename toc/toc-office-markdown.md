@@ -76,6 +76,11 @@ modified: 2021-01-04T17:26:25.032Z
 - https://github.com/zcaceres/markdownify-mcp /MIT/202501/ts
   - Markdownify is a Model Context Protocol (MCP) server that converts various file types and web content to Markdown format. 
   - It provides a set of tools to transform PDFs, images, audio files, web pages, and more into easily readable and shareable Markdown text.
+
+- https://github.com/MarkPDFdown/markpdfdown /1.5kStar/apache2/202507/python
+  - 一款基于大模型视觉识别的高质量PDF转Markdown工具
+  - By utilizing advanced multimodal AI models, it can accurately extract text, preserve formatting, and handle complex document structures including tables, formulas, and diagrams.
+  - Customizable Model: Configure the model to suit your needs
 # md-parser-generator
 - remark 
   - https://github.com/remarkjs/remark/tree/main/packages/remark-parse

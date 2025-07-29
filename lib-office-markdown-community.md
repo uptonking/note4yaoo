@@ -244,7 +244,15 @@ export default FrontPage
 # discuss-marked
 - ## 
 
-- ## 
+- ## [Don't use marked - macwright.com _202401](https://macwright.com/2024/01/28/dont-use-marked)
+- In my mind, there are a few high priorities for Markdown parsers:
+  - Security: `marked` isn’t secure by default. Yes, you can absolutely run `DOMPurify` on its output, but will you forget?
+  - Standards: it’s nice to follow Commonmark 
+  - Performance: Markdown rendering probably isn’t a bottleneck for your application, but it shouldn’t be.
+
+- Marked is pretty performant, but it’s not secure, it’s doesn’t follow a standard - we can do better!
+  - micromark: the “micro” Markdown parser primarily by wooorm, which is tiny, follows Commonmark. It’s great. Solid default.
+  - remark: the most extensible Markdown parser you could ever imagine, also by wooorm.
 
 - ## [What would be the preferred method to add target="_blank" to links? _201509](https://github.com/markedjs/marked/issues/655)
 - use custom renderer
@@ -276,6 +284,29 @@ marked.use({ renderer });
 export default marked;
 ```
 
+# discuss-md-parser/generator
+- ## 
+
+- ## 
+
+- ## 🆚 [Remark vs MarkdownIt · benrbray/noteworthy _202106](https://github.com/benrbray/noteworthy/discussions/16)
+  - I'm really curious about the reason why you switch the markdown parser to remark from markdown-it.
+
+- I chose markdown-it at first since it seems to be the de-facto standard for Markdown syntax extensions.
+  - Noteworthy originally used Marijn's proof-of-concept markdown conversion code to convert the `markdown-it` token stream to a `ProseMirror` document. I hacked on a few extra features but I knew I'd have to eventually rewrite it from scratch, which gave me an opportunity to evaluate if `markdown-it` was the best choice.
+- The main reasons I switched:
+  - `markdown-it` prioritizes HTML output, while `remark` has first-class support for abstract syntax trees. Having clean ASTs to work with on the backend makes it much simpler to examine / transform Markdown documents in various ways
+  - I considered writing a library to convert the `markdown-it` token stream to/from an AST, but decided against it, since many existing syntax extensions don't produce tokens that would be easy to consume. Some of them go direct to HTML without even generating tokens!
+  - I found the syntax-extension authoring experience for markdown-it to be too confusing / complicated.
+  - `remark` has a very well-specified process for converting `Markdown -> AST -> HTML`.
+- There are a few cons, but so far I'm much happier using remark.
+  - Remark is relatively young, so the API is a bit unstable 
+  - Writing syntax extensions involves manually writing a state machine. 
+
+- Taking a look at your docs, I think we share the common goal of being plugin-driven, and it looks like you're quite far ahead of me with plugin support. I'd be interested to hear about any lessons learned setting up your plugin system.
+  - Noteworthy currently takes inspiration from remirror's plugin system for defining schema extensions, and for Markdown parser extensions I let plugins define transformations between the mdast and ProseMirror tree formats.
+- In fact milkdown take everything as an Atom. So a prosemirror node as actually an atom. The core part of milkdown just load the atom one by one, and I provide some internal atoms such as parser and serializer, and I also provide some helpers for users to quickly create their own atoms, such as createProsemirrorPlugin
+  - All atoms will share a common context, they can read and write properties on it. So as you can imagine, a Paragraph atom will add a node to node list on context. And later, a ProsemirrorSchema atom will use the node list to create a prosemirror schema. This sequence is controlled by LoadState, which has a more clear description in this document page
 # discuss
 - ## 
 

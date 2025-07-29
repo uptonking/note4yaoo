@@ -164,7 +164,8 @@ modified: 2025-07-17T14:40:07.230Z
 
 - ## 
 
-- ## 
+- ## 👀 [Templates library _202507](https://github.com/suitenumerique/docs/issues/1125)
+  - Users have templates for meeting minutes, product requirement documents, briefs etc.
 
 - ## [Doc of Docs _202501](https://github.com/suitenumerique/docs/issues/576)
   - we will improve the documentation of Docs with md files, in the root/documentations folder.

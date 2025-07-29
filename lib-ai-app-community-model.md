@@ -309,10 +309,22 @@ modified: 2023-10-30T07:34:03.602Z
 - If it includes evaluating js driven websites, including images Then yes 
   - To really replicate that, you'd probably wanna just use puppeteer, save the whole page as an image, extract the info from that, and then crunch that data
 
-# discuss-workflow-ai
+# discuss-workflow-ai ⛓️
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 尝试下 coze studio 开源版本，目前看其整体功能不如 Dify 完备，而且 Coze 做的比 Dify 好的功能基本都阉割了（如实时语音模式），留下的功能没有亮点。
+- https://x.com/9hills/status/1949689118784717097
+- 有一个很重要的点你没说：License 差异。
+  - Coze是完全的 Apache 2.0，Dify 是 Apache 2.0 + 限制（不能多租户 + Logo限制）。
+  - 如果只是公司内部自用，无区别。主要是对定制平台的小ToB SaaS公司来说，Coze 会方便做二开。
+
+- 是的，而且模型配置也很麻烦，插件也不多
 
 - ## People have the problem running super long Browser Use tasks (agent forgets stuff after 50+ steps)
 - https://x.com/gregpr07/status/1934645184483975566

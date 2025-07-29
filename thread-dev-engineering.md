@@ -38,12 +38,33 @@ modified: 2021-01-21T17:52:13.333Z
   - After the analysis, they concluded that the distributed approach didn't bring many benefits, so they packed all the components into a single process. 
   - Moving their service to a monolith reduced their infrastructure cost by over 90% and increased scaling capabilities.
 
+# discuss-exception/restore
+- ## 
+
+- ## 
+
+- ## 服务挂了，有人建议要加强 review，我说，一般这种不是要加强 review，而是要有限保证 rollback。
+- https://x.com/yfractal/status/1949789540924719204
+  - 我们老板说，加强 review 也没错，我说是错的，保证保证不了 rollback，加强 review 就是错的。
+  - 我说的很清楚，问题的可能有很多中，rollback 最可行。 然后今天又有人操作失误了。
+
+- 最水的复盘就是“加强责任心，以后会更加注意”
+- 加强review可能只是口号，如何保障review的质量？如何保证快速修复，如何规范操作步骤，避免人为的错误和快速恢复才是根本
+
+- review很容易犯于形式，我们通常要求的是必须测试，PR附带测试截图要不然review不给过
+  - 职责也不明确，review 过了，出了问题也不好说算谁的。
+
+- 服务器为什么不使用nixos，声明式的图灵完备的编程语言管理配置，系统即代码一键部署，出了问题可以在Boot时选择任意generation rollback或者直接`nixos rebuild --rollback`.
+  - 因为有些状态不是在服务器本身，比如数据库的表结构，消息队列的任务
+
+- 出问题了首先rollback止血 事后再RCA解决，rollback这种操作不是很平常吗？
 # discuss
 - ## 
 
 - ## 
 
-- ## 
+- ## 我就是在做业务页面开发的! 写表单写表格、调接口、改样式、修兼容!
+- https://x.com/hd_nvim/status/1950038562948182443
 
 - ## 项目久了就会有很多性能问题堆积了。你们一般多久治理一次？
 - https://x.com/__oQuery/status/1927380807946993856

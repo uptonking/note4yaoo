@@ -35,6 +35,12 @@ modified: 2021-07-11T15:08:26.481Z
   - 很多其他项目也会使用这种类似ioc依赖注入的风格，传入实例属性不使用constructor，而是通过在init/inject方法中赋值
   - 本项目只注入了全局单例的this.context对象，没有注入其他对象，实现很简单；
   - 其他很多其他对象都保存到了this.context的二级属性或三级属性
+# examples
+
+## extensions
+
+- https://github.com/omarmir/milkdown-plugin-file /AGPL/202506/ts
+  - Milkdown plugin that adds remark directive support and prosemirror component to handle file uploads
 # codebase
 - dataflow
   - md str > mdast > prosemirror node > dom

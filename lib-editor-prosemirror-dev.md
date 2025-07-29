@@ -78,9 +78,22 @@ modified: 2021-05-06T09:39:53.522Z
   - atlaskit-editor开源了自定义renderer可以参考
   - atlaskit-editor实现了layout多列插件和图片排版插件
 # draft
-- diff-view
+- roadmap
+  - fwk agnostic noseditor: prosekit + atlaskit <> tiptap
+  - migrate prosemirror-dev-toolkit features to prosemirror-devtools
+
+- 🆚 diff-view
+  - diff support codeblock/table
   - diff for version-history-timeline
-  - port tiptap diff
+  - diff for tiptap extensions
+  - rewrite tiptap diff
+
+- collab
+  - codemirror in proesmirror all collaborative
+
+- prosemirror-markdown
+  - rewrite with remark
+  - rewrite with codemirror/lezer
 # dev-xp
 
 # faq-not-yet

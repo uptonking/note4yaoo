@@ -28,6 +28,9 @@ modified: 2022-10-04T23:32:30.824Z
 - https://github.com/ocavue/y-prosemirror-playground
   - 依赖 yjs, y-webrtc, y-prosemirror
 
+- https://github.com/wangfupeng1988/collab-demo-prosemirror /202408/js
+  - using prosemirror and yjs
+
 ## 基于prosemirror-collab + websocket实现协作的示例
 
 - https://github.com/mehri-amin/meditor
@@ -77,11 +80,21 @@ modified: 2022-10-04T23:32:30.824Z
   - 展示了 quill、draftjs、canvas+mousemove 几个示例
   - 提供了client+server，可作为通用协作方案
 
+- https://github.com/filipe-freire/live-collaboration-editor-fe /202501/ts
+  - An implementation of a live collaboration feature in a Rich Text Editor environment, using Web Sockets
+  - Persisted changes across sessions (leveraging SQLite's power and might).
+  - https://github.com/filipe-freire/live-collaboration-editor-be
+    - An Express backend built to support a live collaboration environment through Web Sockets
+    - Express-WS
+
 - https://github.com/scenaristeur/noosphere /202210/js/vue
   - https://scenaristeur.github.io/noosphere
   - 依赖milkdown.v6、vue2、bootstrap-vue.v2、remark-directive、three、yjs
   - https://github.com/scenaristeur/noosphere2 /202306/js/vue
     - A simple example for using milkdown with vue.
+
+- https://github.com/cwwojin/CRDT-text-editor /MIT/202501/ts
+  - Real-time document editor based on Yjs, Prosemirror, MongoDB, Redis, Next.js
 # diff/track-change
 - https://github.com/handlewithcarecollective/prosemirror-suggest-changes /28Star/MIT/202507/ts
   - https://handlewithcarecollective.github.io/prosemirror-suggest-changes/
@@ -91,15 +104,41 @@ modified: 2022-10-04T23:32:30.824Z
 - https://github.com/davefowler/prosemirror-suggestion-mode /22Star/MIT/202503/ts
   - A ProseMirror plugin that implements a "suggestion mode" method to track and show changes similar to Google Docs and Word. 
   - This plugin allows users to make suggested edits that can be reviewed, accepted, or rejected later.
+  - https://github.com/davefowler/prosemirror-suggestion-mode-examples
 
 - https://github.com/nytimes/prosemirror-change-tracking-prototype /23Star/apache2/201609/js/inactive
   - a basic implementation of change tracking for ProseMirror
   - This project is a prototype built to explore the possibility of porting track changes to ProseMirror. 
+
+- https://github.com/chenyuncai/tiptap-track-change-demo /vue
+  - https://track-change.onrender.com/
+  - [Implement new track changes in current document, just lice office review mode](https://discuss.prosemirror.net/t/implement-new-track-changes-in-current-document-just-lice-office-review-mode/4890)
+  - https://github.com/chenyuncai/tiptap-track-change-extension /MIT/202308/ts/inactive
+
+- https://github.com/bsachinthana/tiptap-diff-suggestions /MIT/202507/ts
+  - A TipTap extension for inline comparison of content with suggested revisions, including interactive controls.
+  - This extension provides a way to visualize and interact with suggested changes within a TipTap editor. 
+  - It bridges the gap between static diff viewers and actionable content editing, allowing users to evaluate, accept, or reject suggestions directly in the editor.
+  - Interactive Diff Visualization: Inline comparison with accept/reject controls
+  - Framework Agnostic: Leverages TipTap's framework-agnostic architecture
+
+- https://github.com/ItaZure/TiptapBasedRichtextDiff /202507/js
+  - 基于 Tiptap 的富文本差异对比工具，支持文本内容和格式变化的可视化对比，以及文档评注功能。
+  - 字符级别对比：精确到每个字符的差异检测
+  - 将 Tiptap 的 JSON 文档结构展平为字符数组，每个字符携带格式信息。
+  - 差异检测: 使用最长公共子序列（LCS）算法进行基础差异检测
+    - 目前只支持段落（paragraph）节点的对比
+    - 不支持列表、表格等复杂结构
 # versioning
 - https://github.com/inkandswitch/upwelling-code /ts
   - https://upwelling-prototype.netlify.app/
   - [Upwelling: Combining real-time collaboration with version control for writers](https://www.inkandswitch.com/upwelling/)
   - 依赖@atjson/document、@atjson/renderer-react、prosemirror
+
+- https://github.com/dipesh162/Versioned-Rich-Text-Editor /202505/ts
+  - https://versioned-rich-text-editor.vercel.app/
+  - A full-featured, collaborative document editor built using React, TypeScript, and TipTap (ProseMirror), designed to support version control and branching timelines. 
+  - This project demonstrates advanced state management, real-time UI updates, and a creative approach to document versioning and branching workflows in the browser.
 
 - https://gitlab.com/peer/doc /AGPLv3/202110/js/vue
   - https://github.com/peer/doc
@@ -119,6 +158,9 @@ modified: 2022-10-04T23:32:30.824Z
     - We managed to do it without CRDT though
   - https://github.com/peer/db
 # collab-solutions
+- https://github.com/saranrapjs/prosemirror-json-patch-demo /MIT/202301/ts/inactive
+  - illustrating a ProseMirror-unaware approach to generating JSON patch patches, given only an input doc and a set of ProseMirror steps applied to that doc.
+
 - https://github.com/saranrapjs/prosemirror-v8-perf /202311/ts
   - ProseMirror's support for collaborative editing requires an "authority server". 
   - The reference implementation of an authority server stores the current document and steps in-memory, and uses functions exported by ProseMirror libraries to apply steps to a document. 
@@ -140,14 +182,28 @@ modified: 2022-10-04T23:32:30.824Z
 - https://github.com/microsoft/FluidFramework/tree/main/examples/data-objects/prosemirror
   - An experimental implementation of how to take the open source ProseMirror rich text editor and enable real-time coauthoring using the Fluid Framework.
   - Fluid Framework is a library for building distributed, real-time collaborative web applications using JavaScript or TypeScript.
-# tiptap.v1、vue2 实现协作的示例
+
+- https://github.com/dev-badace/live-text-crdt /202307/ts/inactive
+  - https://livetext-delta.vercel.app/
+  - A Text Crdt implementation on top of the liveblocks platform, and tiptap (prosemirror) text editor
+# collab-tiptap
+- https://github.com/ueberdosis/y-tiptap /MIT/202507/js
+  - Tiptap Binding for Yjs
+  - This binding maps a Y. XmlFragment to the ProseMirror state.
+  - We forked `y-prosemirror` to create a Tiptap-specific package with changes we needed for Tiptap-related features. 
+    - These modifications were too specific to be merged upstream 
+  - Shared Undo / Redo (each client has its own undo-/redo-history)
+  - Successfully recovers when concurrents edit result in an invalid document schema
+
+## tiptap.v1、vue2 实现协作的示例
+
 - https://github.com/dekunma/tiptap-collaboration
   - 包含client+server
 - https://github.com/powlaa/text-editor
   - 包含client+server
 - [A simple implementation of prosemirror-collab for tiptap.v1](https://discuss.prosemirror.net/t/a-simple-implementation-of-prosemirror-collab/1930)
 
-- https://github.com/naept/tiptap-collab-server
+- https://github.com/naept/tiptap-collab-server /MIT/202011/js/inactive
   - https://github.com/naept/tiptap-extension-collaboration
   - A socket.io server for tiptap collaboration module. Handles multi-documents, users's cursors, and hooks for programmers.
   - [Build a multi-document collaborative text editor with Tiptap and Socket.io_202009](https://www.naept.com/en/blog/build-a-multi-document-collaborative-text-editor-with-tiptap-and-socket-io/)
@@ -177,7 +233,7 @@ modified: 2022-10-04T23:32:30.824Z
   - Each user has a copy of the collaborative document on their own device stored inside IndexedDB. 
   - Editorial then uses WebRTC to make a direct connection between the browsers of different users to exchange changes to the document.
 
-- https://github.com/fadiquader/prosemirror-collaborative-editor
+- https://github.com/fadiquader/prosemirror-collaborative-editor /202303/js/inactive
   - collaborative editor for React built with Prosemirror + Yjs + mongodb
 
 - https://github.com/tororosoba0534/collab-note-yjs-wsserver
@@ -193,22 +249,28 @@ modified: 2022-10-04T23:32:30.824Z
     - I think both modes are feasible. However, if I had to choose, I would prefer to use Loro CRDT as the source of truth, with writes also being made directly to Loro CRDT.  This would establish a unidirectional data flow from CRDTs to other application states.
     - Currently, we don't have more complex open-source projects based on Loro to refer to; the most complex one at the moment seems to be this ProseMirror binding.
 
-- https://github.com/automerge/automerge-prosemirror /108Star/MIT/202410/ts/inactive
+- https://github.com/automerge/automerge-prosemirror /108Star/MIT/202507/ts
   - Collaborate on rich text documents which follow the rich text schema using ProseMirror.
   - This library provides a plugin which maps between Automerge documents and ProseMirror documents. 
   - This plugin relies on two things: 
     - firstly that the schema you use be a very specific subset of the ProseMirror schema which is mapped to the Automerge rich text schema (more on this later), 
     - and secondly that you initialize the ProseMirror document from the Automerge document.
+  - https://github.com/automerge/prosemirror-quickstart
 
 - https://github.com/saranrapjs/prosemirror-automerge /201904/js/inactive
   - experiment with wiring automerge up to ProseMirror
   - The basic idea is to have a ProseMirror plugin that works similarly to the collab plugin: steps which originate from the editor are translated to an Automerge document, and changes to a "remote" Automerge document are translated back to the ProseMirror document as steps.
+  - https://github.com/alexjg/automerge-prosemirror-demo
 
-- https://github.com/ShenQingchuan/HeteroDoc
+- https://github.com/ShenQingchuan/HeteroDoc /202305/ts/inactive
   - Heterocube Cloud Collaborative Docs. Built with Vue3 + TypeScript + ProseMirror + Y.js + DeepKit
+  - https://github.com/zhoujiangang0911/HeteroDoc
 
 - https://github.com/get-convex/prosemirror-sync /apache2/202507/ts
   - Sync prosemirror documents with Convex for server-authorized collaborative editing
+
+- https://github.com/soumith2105/collab.md /202503/ts
+  - A realtime collaborative markdown editor built with React, Yjs, and Prosemirror.
 # ot-like/prosemirror-collab
 - bear-plus /5Star/ISC/202008/js/ejs/inactive
   - https://github.com/yk9331/bear-plus

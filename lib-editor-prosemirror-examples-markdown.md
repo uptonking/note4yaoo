@@ -71,6 +71,7 @@ modified: 2023-11-28T14:42:16.738Z
 - https://github.com/microvoid/marktion /MIT/202403/ts
   - https://marktion.io/
   - a WYSIWYG Markdown editor based on ProseMirror, dedicated to enhancing the editing experience of Markdown.
+  - an AI Powered Markdown Editor
 # markdown-apps
 - tiny-write /4Star/NALic/202208/ts/prosemirror/markdown-it/web版+桌面版
   - https://github.com/dennis84/tiny-write
@@ -121,7 +122,7 @@ modified: 2023-11-28T14:42:16.738Z
   - transforms an MDX syntax tree into a Prosemirror syntax tree. 
     - This way, you can load it into a Prosemirror editor and allow rich-text editing with your custom components.
 
-- https://github.com/Sats365/ProsemirrorMarkdownParser
+- https://github.com/Sats365/ProsemirrorMarkdownParser /202306/ts/inactive
   - /提交多
 # more
 - prosemirror-markdown /210Star/MIT/202208/ts

@@ -10,10 +10,12 @@ modified: 2023-02-05T19:03:27.730Z
 # guide
 
 - resources
-  - https://github.com/ueberdosis/awesome-tiptap
   - https://tiptap.dev/experiments
   - [提供了类似块编辑器的drag示例](https://tiptap.dev/guide/node-views/examples)
 # popular
+- https://github.com/ueberdosis/awesome-tiptap
+  - Delightful Tiptap packages and resources
+
 - BlockNote /14Star/MPLv2/202208/ts
   - https://github.com/YousefED/BlockNote
   - https://blocknote-main.vercel.app/
@@ -39,6 +41,19 @@ modified: 2023-02-05T19:03:27.730Z
   - https://github.com/fantasticit/sailkit /202407/ts/inactive
     - A toolkit editor suite based on tiptap and prosemirror.
 
+- https://github.com/xun082/DocFlow /MIT/202507/ts
+  - https://www.codecrack.cn/
+  - 一个基于 Tiptap 和 Next.js 构建的现代化协同文档编辑器，集成了丰富的编辑能力与多人实时协作功能，支持插件扩展、主题切换与持久化存储。
+  - 适合团队写作、教育笔记、在线文档平台等场景。
+  - 实时协作：使用 Yjs + @hocuspocus/provider 实现高效协同
+  - 插件丰富：基于 Tiptap Pro 多种增强功能（如表情、详情组件等）
+  - 后端依赖nestjs、fastify、hocuspocus、prisma、minio、ioredis
+
+- https://github.com/docs-plus/docs.plus /78Star/MIT/202507/ts
+  - http://docs.plus/
+  - a real-time community collaboration platform
+  - 依赖Supabase、tiptap、hocuspocus/yjs、next、react-query、zustand
+
 - notesnook /2.8kStar/GPLv3/202209/js+ts/tiptap
   - https://github.com/streetwriters/notesnook
   - https://notesnook.com/
@@ -49,15 +64,10 @@ modified: 2023-02-05T19:03:27.730Z
   - 服务端数据同步代码未找到
   - [A fully open-source and end-to-end encrypted note taking alternative to Evernote | Hacker News_202209](https://news.ycombinator.com/item?id=32708019)
 
-- https://github.com/docs-plus/docs.plus /78Star/MIT/202507/ts
-  - http://docs.plus/
-  - a real-time community collaboration platform
-  - 依赖Supabase、tiptap、hocuspocus/yjs、next、react-query、zustand
-
 - https://github.com/chenyuncai/tiptap-track-change-demo /vue
   - https://track-change.onrender.com/
   - [Implement new track changes in current document, just lice office review mode](https://discuss.prosemirror.net/t/implement-new-track-changes-in-current-document-just-lice-office-review-mode/4890)
-  - https://github.com/chenyuncai/tiptap-track-change-extension
+  - https://github.com/chenyuncai/tiptap-track-change-extension /MIT/202308/ts/inactive
 
 - https://github.com/johnpuddephatt/gutentap
   - https://gutentap.letsdance.agency/
@@ -96,8 +106,10 @@ modified: 2023-02-05T19:03:27.730Z
   - Markdown support with real-time preview
 
 - neeto-editor /12Star/MIT/202311/js/tiptap/提交多
+  - https://github.com/neetozone/neeto-editor
   - https://github.com/bigbinary/neeto-editor
   - https://neeto-editor.onrender.com/
+  - https://neeto-editor.neeto.com/
   - [editor demo with addons](https://neeto-editor.onrender.com/?path=/docs/examples-customize-options-addons--addons)
   - 支持定义变量
   - neetoEditor library drives the rich text experience in the neeto products built at BigBinary
@@ -141,9 +153,29 @@ modified: 2023-02-05T19:03:27.730Z
   - https://github.com/gitlabhq/gitlabhq/tree/master/app/assets/javascripts/content_editor
   - [Research and evaluate editor options against UX and technical requirements · GitLab.org / GitLab_202007](https://gitlab.com/gitlab-org/gitlab/-/issues/231725)
 
+- https://github.com/isboyjc/isle-editor /MIT/202501/js
+  - https://editor.islenote.com/
+  - an open-source web editor that supports rich text, block-based, and markdown editing. 
+  - It's efficient and ready to use out of the box, built on top of prosemirror and tiptap.
+  - We leverage tiptap's core implementation for its reliability while providing UI views and additional core extensions that enable out-of-the-box functionality through configuration.
+  - isle-editor's `core` extensions are fully compatible with `tiptap`. If you're developing a project using tiptap, you can seamlessly use our core extensions. You can also reference the isle-editor source code, as we aim for it to be a best practice implementation of tiptap.
+
 - https://github.com/amjadbouhouch/markup /202210/ts
   - https://mark-up.netlify.app/
   - mobile first markdow editor for web & desktop with tiptap plugins and more
+
+- https://github.com/Okramjimmy/docx-editor /202412/ts
+  - https://docx-editor-six.vercel.app/
+  - DOCX Editor with Tiptap (Next.js) is a powerful, web-based editor that allows users to create, edit, and format DOCX documents directly in their browser.
+
+- https://github.com/raulereno/tiptap-example-integration /202507/ts
+  - https://tiptapexample.netlify.app/
+  - A minimal, fully-commented example showing how to use Tiptap 3 with DOCX import/export functionality.
+  - Multiple Document Sources
+  - Get a token from Tiptap Cloud
+
+- https://github.com/Tzng/allahbin-tiptap /MIT/202507/ts
+  - 基于tiptap配置的一个用于国内公文的编辑器
 # tiptap-editors
 - dante3 /1.7kStar/MIT/202208/js
   - https://github.com/michelson/Dante
@@ -185,6 +217,10 @@ modified: 2023-02-05T19:03:27.730Z
   - an AI powered, Notion-style WYSIWYG rich-text block-based editor, built on top of tiptap.
   - Supports Vue & React – Seamless integration with both frameworks.
 
+- https://github.com/Sachin-chaurasiya/BlockEditor /14Star/MIT/202406/ts
+  - A notion like editor built with TipTap and Prosemirror
+  - https://github.com/huewilliams/notion-clone
+
 - https://github.com/lobbylabs/lobby-editor /MIT/202309/ts
   - https://lobby-editor-demo.vercel.app/
   - extendable rich text editor for Vercel's Next React framework, based on ProseMirror, built using TipTap. 
@@ -196,6 +232,9 @@ modified: 2023-02-05T19:03:27.730Z
 - https://github.com/essential-randomness/boba-editor-next
   - Next-generation editor for BobaBoard (and beyond). 
   - 代码量很少
+
+- https://github.com/KuaiYu95/ct-tiptap-editor /MIT/202507/ts/提交多
+  - 基于 Tiptap 二次开发的编辑器组件
 
 - https://github.com/KonnorRogers/tip-tap-element
   - http://tip-tap-element.vercel.app/
@@ -225,6 +264,9 @@ modified: 2023-02-05T19:03:27.730Z
 - https://github.com/Young6118/dudu-editor
   - 基于 tiptap v2 的富文本编辑器
 
+- https://github.com/zjz1993/easy-editor /202505/ts
+  - 基于tiptap的富文本编辑器
+
 - https://github.com/shikimori/shiki-editor /js/vue/提交多/active
   - a wysiwyg editor based on prosemirror
   - highly inspired by tiptap source code. Many parts of the code are taken from there.
@@ -238,18 +280,54 @@ modified: 2023-02-05T19:03:27.730Z
 - https://github.com/g-bastianelli/tiptap-react-notion
   - Quick example of how we can make a 'Notion like' editor with Tiptap and react
 
+- https://github.com/clevertask/scribe /MIT/202507/ts
+  - A Tiptap-based rich text editor with a Notion-style block interface for viewing and creating content. 
+  - Easily integrate @clevertask/scribe into any project requiring rich text editing.
+
 - https://github.com/Cassielxd/CassieEditor /apache2/202506/ts/vue/inactive
   - http://cassie.vv-xj.com/
   - 基于prosemirror和tiptap开发的富文本编辑器项目
   - 本项目主要用于 电子病历的预研
+
+- https://github.com/pagevamp/tapwrite /202503/ts
+  - a robust WYSIWYG rich text editor component for React built on top of Tiptap designed to integrate seamlessly into your projects. 
+  - This component supports image and PDF file handling within the text editor
 # utils
-- https://github.com/RomikMakavana/tiptap-pagination /MIT/202505/ts
-  - http://romikmakavana.me/tiptap-pagination/
-  - A TipTap extension that adds pagination support to your editor with table handling capabilities.
+- https://github.com/l1m2e/tiptap-print-designer /MIT/202507/ts/vue
+  - https://l1m2e.github.io/tiptap-print-designer/
+  - 一个开箱即用的富文本打印设计器，基于 tiptap 和 Vue3 开发。让开发者可以像写文档一样设计打印模板
+  - 它提供了一个可视化模板设计系统，允许用户创建具有数据绑定功能的打印模板，然后使用实际数据呈现这些模板以进行打印。
+  - 它提供了两个重要组件：设计器 Designer 渲染器Render
+
+- https://github.com/namesakefyi/tiptap-extensions /MIT/202507/ts
+  - A collection of extensions for Tiptap, including step-by-step guides and disclosures.
+
+- https://github.com/Aslam97/shadcn-minimal-tiptap /1.5kStar/MIT/202507/ts
+  - https://shadcn-minimal-tiptap.vercel.app/
+  - a lightweight, customizable rich text editor component designed for integration with Shadcn UI.
+
+- https://github.com/NiazMorshed2007/shadcn-tiptap /MIT/202410/ts
+  - https://tiptap.niazmorshed.dev/
+  - Sets of custom extensions & toolbars for tiptap editor. 
+  - Install with shadcn/cli.
+  - https://github.com/ehtisham-afzal/tiptap-shadcn
+
+- https://github.com/hunghg255/reactjs-tiptap-editor /MIT/202507/ts
+  - https://reactjs-tiptap-editor.vercel.app/
+  - A modern WYSIWYG rich text editor based on tiptap and shadcn ui for Reactjs
+  - https://github.com/hunghg255/reactjs-tiptap-editor-demo
+
+- https://github.com/sjdemartini/mui-tiptap /MIT/202507/ts
+  - A Material UI (MUI) styled WYSIWYG rich text editor, using Tiptap
 
 - https://github.com/troop-dev/tiptap-react-render /202306/ts
   - This library renders TipTap JSON payloads in React clients without embedding the editor.
-  - We were inspired by Contentful's rich-text-react-renderer tool, so we built a similar one for TipTap payloads!
+  - We were inspired by Contentful's rich-text-react-renderer tool, so we built a similar one for TipTap payloads
+
+- https://github.com/formfcw/tiptap-render-view /GPL/202503/ts
+  - Serialize Tiptap JSON content with interactive components.
+  - this package only provides a Vue component to render your JSONContent. 
+  - But it also provides types and tools to build components for your preferred JavaScript framework.
 
 - https://github.com/sereneinserenade
   - https://github.com/sereneinserenade/tiptap-comment-extension-react
@@ -266,6 +344,10 @@ modified: 2023-02-05T19:03:27.730Z
 - https://github.com/GoCapsule/tiptap-extensions
   - https://codesandbox.io/p/github/leonard-henriquez/column-extension/main
   - 支持选中文字后创建分栏，并将选中文字放在第一栏
+
+- https://github.com/aguingand/tiptap-markdown /MIT/202401/js/inactive
+  - The Markdown extension for Tiptap editor.
+  - As Tiptap have now a solution for markdown (paid Conversion extension and more markdown handling announced for v3). I don't plan to release v1. Feel free to fork 
 
 - https://github.com/n8b8dy/tiptap-spoiler
   - React extension (actually two extensions) for TipTap to add spoilers to the editor.
@@ -298,14 +380,22 @@ modified: 2023-02-05T19:03:27.730Z
 - [Tiptap CodeBlock Extension](https://gist.github.com/Itsnotaka/7eb107dcfe18225eeab66263339a8074)
   - Decided to ditch shiki and use highlightjs
 
+- https://github.com/harshtalks/tiptap-plugins /202502/ts
+  - https://tiptap-plugins.vercel.app/
+  - Tiptap React extensions and headless components for image nodes and a slash command for React.js
+
+- https://github.com/arnau01/tiptap-templates /202405/ts/inactive
+  - exemplary UI templates for those looking to get a headstart with the Tiptap Editor in a React 
+
 ## tiptap-ruby
 
-- rhino-editor /26Star/MIT/202212/ts/ruby
+- rhino-editor /322Star/MIT/202506/ts/ruby
   - https://github.com/KonnorRogers/rhino-editor
   - https://rhino-editor.vercel.app/
   - a grab and go WYSIWYG editing experience that can hook into Ruby on Rails ActionText backend.
-  - Currently this package does so using TipTap but will most likely include another integration for ProseMirror to allow for both Markdown + WYSIWYG editing.
+  - Currently this package does so using `TipTap` but will most likely include another integration for ProseMirror to allow for both Markdown + WYSIWYG editing.
   - A drop-in Trix replacement which creates ActionText compatible HTML and can parse your existing Trix views allowing a seamless migration without updating any existing db columns
+  - Getting up and running locally is hopefully quite painless. We have a test suite using Ruby on Rails and is intended to provide a good demonstration of how this package can hook into ActionText.
 
 - https://github.com/afomera/richer-text.js /MIT/202406/js
   - https://www.richer-text.com/
@@ -335,6 +425,47 @@ modified: 2023-02-05T19:03:27.730Z
 - [Thoughts on Action Text](https://www.reddit.com/r/rails/comments/rt2qvo/thoughts_on_action_text/)
   - Action Text seems too coupled to Trix
 # examples
+- https://github.com/tanlucvn/miniwrit /202506/ts
+  - https://miniwrit.vercel.app/
+  - A clean, minimal, local-first writing app — designed for focused writing and seamless syncing.
+  - Tag-based organization
+  - Local-first sync (Dexie + Turso)
+  - Daily writing goals and statistics
+  - Soft delete & trash recovery
+  - Settings with full control over appearance, storage & sync
+
+- https://github.com/ueberdosis/ai-agent-custom-llm-demos /MIT/202507/ts
+  - https://tiptap.dev/docs/content-ai/capabilities/agent/custom-llms/overview
+  - Integrate the Tiptap AI Agent extension with a custom backend and AI model provider.
+  - This repository contains 12 complete demos demonstrating different integration patterns and capabilities.
+
+- https://github.com/chenxiaoyao6228/idea-forge /MIT/202504/ts
+  - Idea Forge is an AI-powered tool for writing and collaboration, enhancing creativity, productivity, and seamless teamwork
+  - AI-powered writing assistance
+  - Backend: NestJS, PostgreSQL, Redis, Hocuspocus, Prisma, S3
+  - Frontend: React, TypeScript, TailwindCSS, Shadcn UI, Tiptap
+  - AI Integration: OpenAI API
+
+- https://github.com/volagold/beenote /MIT/202503/ts
+  - https://beenote-ai.netlify.app/
+  - Full stack AI web application for languge learning built with Next.js and ChatGPT
+
+- https://github.com/imberZsk/editor /202507/ts
+  - 基于 TipTap 的 block-editor，支持 MD、AI、协同
+
+- https://github.com/artificialcitizens/acai.so /MIT/202401/ts/inactive
+  - ACAI is a collection of AI powered tools to help you manage your digital world
+
+- https://github.com/Damonbodine/wordwise-ai /202507/ts
+  - https://wordwise-ai-sigma.vercel.app/
+  - Modern Next.js app with TipTap editor, document management, and real-time features
+  - 依赖nextjs、tiptap、zustand、supabase
+  - Real-time Grammar Analysis - AI-powered grammar and spell checking using Groq API
+  - Smart Suggestions - Accept/dismiss grammar corrections with one click
+  - Overall writing quality assessment with detailed metrics
+  - Three-column Layout - Document list, editor, and suggestions panel
+  - AI: Groq API (llama-3.1-8b-instant model)
+
 - https://github.com/SkyGuardian42/piko.space /202212/ts
   - https://piko.space/
   - Collaborate at the speed of light and seamlessly sync offline work
@@ -379,12 +510,35 @@ modified: 2023-02-05T19:03:27.730Z
   - https://github.com/plausible/analytics
     - 基于elixir
 
-- https://t.co/cSLL2bvRp6
+- https://github.com/OpenSlides/OpenSlides /555Star/MIT/202507/python
+  - https://openslides.com/
+  - OpenSlides is a free, web based presentation and assembly system for managing and projecting agenda, motions and elections of an assembly.
+  - OpenSlides is a powerful and modern, web-based software for the digital organization of your meetings and committees. All user access their committees and meetings via one central URL.
+
+- https://github.com/sturepo/onotes
+  - https://onotes.onotes.workers.dev/
   - using @tailwindcss @tiptap_editor @vuejs & @nuxt_js
 
 - https://github.com/yesmore/inke /apache2/202311/ts
   - https://inke.app/
   - 一个所见即所得的Markdown笔记本，支持AI辅助写作和多人协作，支持自部署，使用IndexedDB存储笔记。
+
+- https://github.com/arikchakma/maily.to /MIT/202507/ts
+  - https://maily.to/
+  - Craft beautiful emails effortlessly with Maily, the powerful email editor that ensures impeccable communication across all major clients.
+
+- https://github.com/Davronov-Alimardon/google-docs /202412/ts
+  - A full-stack Google Docs clone with real-time collaboration, commenting, advanced text editing (Tiptap), and a template gallery. Next.js 15, React 19
+  - https://github.com/Sunanda-05/papergate-docs-editor
+
+- https://github.com/RajdeepDs/coordinize /AGPL/202507/ts
+  - Coordinize is a modern communication platform designed specifically for asynchronous team
+  - Asynchronous Collaboration: Coordinize is built for asynchronous teams, allowing members to work independently and communicate asynchronously.
+  - Integration-Friendly: Works with tools like GitHub, Linear, and other platforms for issue tracking and project management.
+  - 依赖nextjs、shadcn、prisma
+
+- https://github.com/UmarAurangzeb/tiptap-ppt /202507/ts
+  - ppt-export added
 # cms-like
 - vrite /1kStar/AGPLv3/202307/ts
   - https://github.com/vriteio/vrite
@@ -410,6 +564,14 @@ modified: 2023-02-05T19:03:27.730Z
   - Content is fully typed
   - Alinea supports custom backends that can be hosted as a simple Node.js process or on serverless runtimes.
 
+- https://github.com/elegantframework/elegant-cli /210Star/MIT/202411/ts/inactive
+  - https://www.elegantframework.com/
+  - Build SEO-friendly websites, super fast full-stack web applications
+  - Built with Next.js, TipTap, Tailwind CSS, and more
+  - An all-in-one web application and blogging solution. All the features you need are included right out of the box.
+  - Seamless integration with PostgreSQL and Prisma
+  - Elegant is perfect for blogging, documentation websites, or just about any type of web application.
+
 - https://github.com/primodotso/primo
   - https://primo.so/
   - ui基于svelte
@@ -426,6 +588,9 @@ modified: 2023-02-05T19:03:27.730Z
   - https://tip-tap-element.vercel.app/
   - A starter kit for tip-tap to get going
 
+- https://github.com/stckme/tiptapy /MIT/202506/ts
+  - Library that generates HTML output from JSON export of tiptap editor
+
 - https://github.com/ueberdosis/tiptap-php
   - A PHP package to work with Tiptap content. 
   - You can transform Tiptap-compatible JSON to HTML, and the other way around, sanitize your content, or just modify it.
@@ -440,8 +605,20 @@ modified: 2023-02-05T19:03:27.730Z
   - Manifold's public API and web app are hosted by Vercel.
   - All data is stored in Firebase's database, Cloud Firestore. 
 
+- https://github.com/iamrohanshrestha/form-builder /202407/ts/inactive
+  - A Full Stack MERN app for building dynamic forms with drag and drop interface & to track and view the responses received in the created form.
+  - You can use Brevo for free SMTP server and MongoDB Atlas for database.
+  - Frontend: React, TypeScript, Tailwind, React Hook Form, Zod, ShadcnUI, React Router, DND Kit, Tanstack Query, Tanstack Table, Tiptap, React Dropzone, React Easy Crop, Zustand
+  - Backend: Node, Express, TypeScript, Nodemailer, Multer, JWT
+  - Database: MongoDB, Mongoose
+
 - https://github.com/nurullahhossain/resume-builder
   - http://resume-builder-xi.vercel.app/
+
+- https://github.com/nabedkhan/multistep-job-application-form /202505/ts
+  - https://multistep-job-application-form.vercel.app/
+  - This is a AI powered multi-steps form built with TypeScript, Redux Toolkit, TipTap editor, and OpenAI integration. 
+  - The project uses modern development tools and practices including Tailwind CSS for styling and React Hook Form for form management
 
 - https://github.com/Leosouthey/Raphael
   - 开源的个人/团队知识库系统

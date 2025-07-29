@@ -36,6 +36,7 @@ modified: 2023-09-01T10:18:14.842Z
 
 - https://github.com/pvh/automerge-prosemirror-workbench
   - testbed for automerge/prosemirror
+  - https://github.com/automerge/prosemirror-quickstart
 
 - https://github.com/block-based-editors/automerge-tree
   - https://block-based-editors.github.io/automerge-tree/

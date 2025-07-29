@@ -29,6 +29,8 @@ modified: 2022-08-18T16:57:15.296Z
   - 参考了prosemirror、zettlr、vscode、notable
     - Thanks to Fabio Spampinato for releasing the source to an early version Notable!
   - https://github.com/benrbray/prosemirror-math
+- https://github.com/RuanCampello/noteworthy
+  - A sleek note-taking app powered by Next.js and Rust.
 
 - tiny-write /4Star/NALic/202208/ts/prosemirror/markdown-it/web版+桌面版
   - https://github.com/dennis84/tiny-write
@@ -217,11 +219,15 @@ modified: 2022-08-18T16:57:15.296Z
 - https://github.com/huewilliams/notion-clone /202311/ts
   - https://notion-clone-kappa.vercel.app/
   - notion.so clone (React + ProseMirror)
+
+- https://github.com/benyakirten/writers-ide /202504/ts/svelte
+  - A fully-featured word processor for writers based on ProseMirror using Tauri
 # integrations
 - https://github.com/matthiask/django-prose-editor /164Star/BSD/202507/python/js
   - https://django-prose-editor.readthedocs.io/
   - editor for the Django admin based on ProseMirror and Tiptap
   - [django-prose-editor – Prose-editing component for the Django admin - Matthias Kestenholz _202403](https://406.ch/writing/django-prose-editor-prose-editing-component-for-the-django-admin/)
+  - https://github.com/djangomango/django-prosemirror /202406/js
 
 - https://github.com/Prototypr/typr /58Star/202408/js/inactive
   - https://prototypr.io/typr
@@ -237,6 +243,9 @@ modified: 2022-08-18T16:57:15.296Z
     - 依赖strapi.v4、strapi-plugin-meilisearch、radix-ui、tiptap、novel(editor)
   - https://open.prototypr.io/
     - develop Prototypr as an inclusive and open source Web Monetized publishing platform for designers
+
+- https://github.com/marekdedic/vitest-prosemirror /MIT/202507/ts
+  - A plugin for Vitest that enables you to write tests using the ProseMirror editor
 # prose-cms
 - alternatives
   - outline
@@ -308,6 +317,9 @@ modified: 2022-08-18T16:57:15.296Z
   - a Notion like editor built on top of TipTap & Prosemirror
   - https://github.com/factly/dega /go
     - lightweight, scalable & high performant CMS written in Go & React
+
+- https://github.com/ifiri/colladitor /202407/ts/vue
+  - CRDT-based editor for collaborative CMS based on Yjs and Prosemirror
 # more-prosemirror-examples
 - https://github.com/devmnj/react-editor-framework-examples
   - This is a set of Editor Example (React) with TinyMCE, RMirror, Draftjs, MuiEditor and Slatejs .
@@ -321,6 +333,9 @@ modified: 2022-08-18T16:57:15.296Z
 
 - https://github.com/NoteHub-official/RetroFlux /GPL/202201/ts/inactive
   - fully-customizable collaborative knowledge management app featuring note-taking, note-sharing, community, knowledge graph functionalities.
+
+- https://github.com/amitavanath/websockets-prosemirror /202507
+  - be-ts, fe-js
 
 - https://github.com/ShenQingchuan/HeteroDoc
   - Heterocube Cloud Collaborative Docs. 
