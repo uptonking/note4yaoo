@@ -83,6 +83,7 @@ modified: 2021-05-06T09:39:53.522Z
   - migrate prosemirror-dev-toolkit features to prosemirror-devtools
 
 - 🆚 diff-view
+  - prosemirror-diff + codemirror-diff + (ai-writing)
   - diff support codeblock/table
   - diff for version-history-timeline
   - diff for tiptap extensions

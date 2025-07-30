@@ -145,11 +145,6 @@ modified: 2022-08-18T16:57:29.058Z
 - https://github.com/ProseMirror/prosemirror-changeset
   - a helper module that can turn a sequence of document changes into a set of insertions and deletions, for example to display them in a change-tracking interface
 
-- https://github.com/hamflx/prosemirror-diff /202207/js/inactive
-  - 支持保留新版本状态的标记
-- https://github.com/pubpub/prosemirror-diff /201907/ts/inactive
-- https://codesandbox.io/p/sandbox/prosemirror-diff-forked-9trmjq
-
 - https://github.com/davvidbaker/prosemirror-position-debugger
   - I wouldn't say the code in here is exemplary by any means. Lots of mutation, no tests (yet), no strong typing
 

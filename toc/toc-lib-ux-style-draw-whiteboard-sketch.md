@@ -138,11 +138,13 @@ modified: 2025-03-22T18:23:37.602Z
   - 提供了多种render target:react, react-canvas, react-svg, react-webgl
   - 实现了2种undo: undo, patch-based-undo-redo
 
-- https://github.com/antfu/drauu /MIT/202402/ts
+- https://github.com/antfu/drauu /1.4kStar/MIT/202502/ts
   - https://drauu.netlify.app/
   - Headless SVG-based drawboard in browser.
   - built with Vanilla JavaScript
   - Built for Slidev.
+  - Stylus / Touch pressure support
+  - Undo / Redo stacks
 
 - https://github.com/mohitkumartoshniwal/whiteboard-konva-react /202402/js
   - Code for the Youtube video on building excalidraw clone using React and Konva.js

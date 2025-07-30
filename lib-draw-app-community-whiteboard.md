@@ -70,6 +70,104 @@ modified: 2023-09-07T04:17:31.787Z
 - 
 - 
 
+# discuss-ai-canvas
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Best self-hosted AI UI? : r/selfhosted _202501](https://www.reddit.com/r/selfhosted/comments/1i4ef8g/best_selfhosted_ai_ui/)
+- That "backend" is the actual LLM infrastructure; so, GPUs. The frontend is just some HTML/CSS/JS that communicates to that backend.
+  - For instance, OpenWebUI can connect to various backends - but it is preferably used with an also selfhosted backend (like ollama or localai - which both require you to have your own GPU infra).
+  - AnythingLLM is also just a frontend and has nothing to do with backend. 
+
+- I really like LLMcord. Lets you interact with your LLM via a discord bot. No exposing ports, VPN, etc. you just pop in discord and chat with it. It supports images and files if you are using a vision-capable model
+
+- Do any of these self-hosted UIs, using API, allow the sync of conversations across devices?
+
+- ## 🕸️ [tangent: the AI chat canvas that grows with you : r/LocalLLaMA _202412](https://www.reddit.com/r/LocalLLaMA/comments/1hgc64u/tangent_the_ai_chat_canvas_that_grows_with_you/)
+  - https://github.com/itsPreto/tangent /270Star/apache2/202502/python/js/inactive
+  - I just open-sourced a project I've been tinkering with called tangent. Where instead of your usual, generic, & linear chat interface, it's a canvas where you can branch off into different threads and explore ideas organically.
+  - I want it to actually learn from your past conversations. The idea is to use local LLMs to analyze your chat history and build up a knowledge base that makes future discussions smarter - kind of like giving your AI assistant a real memory.
+  - Another neat feature I want to add: automatically understanding why conversations branch. You know those moments when you realize "wait, let me rephrase that" or "actually, let's explore this direction instead"? I want to use LLMs to detect these patterns and make sense of how discussions evolve.
+
+- So basically you're doing like the Obsidian document graph but for AI and it's automatically linked by the AI based on relevance of each discussion? This would also be useful for documents, any other document.
+
+- Have you considered using an application like Obsidian for the base of the application? Thats what I decided to do after reinventing the wheel for a majority of the UI features so I could focus less on UI.
+  - I haven’t even looked at Obsidian or Excalidraw’s codebase as I assumed it would be massive enough to discourage me from doing this— but now that I’ve got the prototype functional that’s definitely a path we could explore
+
+- This UI concept for chatbot is gonna be a major thing, I'm sure. This is really great!
+
+- ## [OpenWebUI Canvas Implementation -- Coming Soon! (Better Artifacts) : r/LocalLLaMA _202501](https://www.reddit.com/r/LocalLLaMA/comments/1i3as1m/openwebui_canvas_implementation_coming_soon/)
+  - I'm implementing Canvas (beefing up Artifacts) on OpenWebUI.
+  - This was my only issue ever with OpenWebUI, just the very limited canvas feature (only restricted to HTML, CSS, JavaScript and SVG).
+  - I've expanded support for the following languages
+  - Another notable feature I'm adding is to switch between Design view and Code view for web design.
+
+- Mermaid is already supported iirc
+
+- Sometimes I wish OpenwebUI had the addon/extension model that browsers have where users could just go to the addon library and pick and choose what they want to add to their OpenwebUI experience.
+  - unless I am misunderstanding your request, they do... https://openwebui.com/tools https://openwebui.com/functions
+- These are "plugins" for the LLM backend, less so for the frontend. I think what u/Elite_Crew asked for is particularly for a frontend extension store.
+  - The functions modify or enhance the behavior of the model. That's what I meant by backend. Front-end plugins would allow for adding functionality like canvas.
+
+- Could you just have something that supports tree-sitter for syntax highlighting?
+
+- Does OpenWebUI have the same feature from Claude where if you copy something that doesn't fit nicely in the chat window, it adds it as an attachment to the chat window? That would be pretty sick.
+
+- ## [Is there local app that mimics OpenAI's Canvas or Anthropic's Artifacts? : r/LocalLLM _202502](https://www.reddit.com/r/LocalLLM/comments/1int9fr/is_there_local_app_that_mimics_openais_canvas_or/)
+  - I've tried LM Studio and Msty, and neither are able to have a separate document that I can edit via prompts. Does such an app exist? Preferably for Windows?
+
+- Open WebUI will let you edit and run some things directly from the generated code. I've been able to edit and run generated python code, see and edit live canvas renders of HTML
+  - I haven't used it in Claude but on ChatGPT I find the edit in canvas a little clunky. It opens a separate pane to the side with the code and then you have to switch back and forth for a live preview
+  - Open WebUI lets you edit the code in the midst of the chat itself and shows the updates in the live preview canvas. It's also quite clever at automatically opening a canvas
+
+- What I'm looking for is the Google or Word doc to be the "Canvas" and there is a separate panel to enter my prompts, which will in turn edit the doc. I don't want my prompts in the doc.
+  - You can have your prompts in the Add-in panel. BTW, we just released a new "Track Changes" feature as below. The demo shows that your document remains separate from your prompts."
+
+- ## [OpenAI just released artifacts for ChatGPT called canvas : r/singularity _202410](https://www.reddit.com/r/singularity/comments/1fvct1c/openai_just_released_artifacts_for_chatgpt_called/)
+- Gemini had this for ages, and allowed editing in place, and regenerating segments.
+
+- 💡 This makes using AI to edit drafts of long emails/letters/etc actually practical. Previously it was never worth the hassle for me of copying and pasting it back and forth.
+
+- artifacts are kinda only useful for code, this totally changes the way we use AI in general beyond code so that's why I believe this is bigger than artifacts
+
+- The problem with Claude Artifacts was their short 200k context length and ChatGPT has even shorter one at 128k...
+
+- ## 🚀 [Introducing canvas, a new way to write and code with ChatGPT. | OpenAI _202410](https://openai.com/index/introducing-canvas/)
+
+- features-writing
+  - suggest edits
+  - ask ai from floating toolbar
+  - polish
+  - Adjust the length
+  - Change reading level: from Kindergarten to Graduate School
+  - Add emojis: Adds relevant emojis for emphasis and color.
+- features-coding
+  - review code
+  - add comments
+  - add logs
+  - port to another language
+
+- We’re introducing canvas, a new interface for working with ChatGPT on writing and coding projects that go beyond simple chat. 
+  - Canvas opens in a separate window, allowing you and ChatGPT to collaborate on a project. 
+  - Although the chat interface is easy to use and works well for many tasks, it’s limited when you want to work on projects that require editing and revisions.
+- With canvas, You can highlight specific sections to indicate exactly what you want ChatGPT to focus on. 
+  - Like a copy editor or code reviewer, it can give inline feedback and suggestions with the entire project in mind.
+
+- We trained GPT‑4o to collaborate as a creative partner. The model knows when to open a canvas, make targeted edits, and fully rewrite. 
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
 # discuss-ai-draw
 - ## 
 

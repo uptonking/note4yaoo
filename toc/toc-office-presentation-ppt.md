@@ -277,8 +277,65 @@ modified: 2021-04-30T20:14:17.669Z
   - It is implemented as a thin Node/JavaScript API layer on top of platform-specific Windows WSH/JScript and Mac OS X Automator AppleScript/JavaScript connectors. No native code is required.
   - 🍴 forks
   - https://github.com/vassbo/slideshow
-# ai-slides
+# ai-ppt/slides
+- https://github.com/presenton/presenton /1kStar/apache2/202507/python/ts
+  - Open-Source AI Presentation Generator and API (Gamma, Beautiful AI, Decktopus Alternative)
+  - generating presentations with AI — all running locally on your device.
+  - using models like OpenAI and Gemini, or use your own hosted models through Ollama.
+  - custom layouts with HTML and Tailwind, support any presentation design
+  - Support for accessing custom templates over API
+  - Support external SQL database
+  - API Presentation Generation — Host as API to generate presentations over requests
+  - Ollama Support — Run open-source models locally with Ollama integration
+  - Use any OpenAI-compatible API endpoint with your own models
+  - Image Generation — Choose from DALL-E 3, Gemini Flash, Pexels, or Pixabay for your visuals
+  - Save as PowerPoint (PPTX) and PDF
+  - [We made open source AI presentation generator (Gamma Alternative) : r/selfhosted _202505](https://www.reddit.com/r/selfhosted/comments/1kn6btt/we_made_open_source_ai_presentation_generator/)
+    - We've actually archived electron project for now. We'll only support docker for now. Most wanted in docker format to run on web, and it was hard to maintain both. Hopefully, if we prove useful to many, we will go back to desktop as well.
+
 - [ChatSlide | Build your Slides and Videos from Documents in one click](https://chatslide.ai/landing)
+# ai-canvas
+- https://github.com/open-webui/open-webui /104kStar/BSD+LOGO/python/ts/svelte
+  - https://openwebui.com/
+  - Open WebUI is an extensible, feature-rich, and user-friendly self-hosted AI platform designed to operate entirely offline. 
+  - It supports various LLM runners like Ollama and OpenAI-compatible APIs, with built-in inference engine for RAG, making it a powerful AI deployment solution.
+  - Install seamlessly using Docker or Kubernetes (kubectl, kustomize or helm) 
+  - Ollama/OpenAI API Integration
+  - Granular Permissions and User Groups
+  - Full Markdown and LaTeX Support
+  - Hands-Free Voice/Video Call
+  - Local RAG Integration
+  - Web Browsing Capability
+  - Pipelines, Open WebUI Plugin Support
+  - Image Generation Integration: Seamlessly incorporate image generation capabilities using options such as AUTOMATIC1111 API or ComfyUI (local), and OpenAI's DALL-E (external)
+  - https://github.com/open-webui/pipelines /2kStar/MIT/202507/python
+    - Pipelines: UI-Agnostic OpenAI API Plugin Framework
+    - Pipelines bring modular, customizable workflows to any UI client supporting OpenAI API specs 
+    - Pipelines comes into play when you're dealing with computationally heavy tasks (e.g., running large models or complex logic) that you want to offload from your main Open WebUI instance for better performance and scalability.
+    - Pipelines are a plugin system with arbitrary code execution — don't fetch random pipelines from sources you don't trust.
+
+- https://github.com/langchain-ai/open-canvas /4.8kStar/MIT/202505/ts/inactive
+  - https://opencanvas.langchain.com/
+  - A better UX for chat, writing content, and coding with LLMs.
+  - Open Canvas is an open source web application for collaborating with agents to better write documents. 
+  - It is inspired by OpenAI's "Canvas"
+  - Open Source: All the code, from the frontend, to the content generation agent, to the reflection agent is open source and MIT licensed.
+  - Built in memory: Open Canvas ships out of the box with a reflection agent which stores style rules and user insights in a shared memory store. 
+  - allowing you to start the session with your existing content, instead of being forced to start with a chat interaction.
+  - ⏳ Artifact versioning: All artifacts have a "version" tied to them, allowing you to travel back in time and see previous versions of your artifact.
+
+- https://github.com/CopilotKit/open-multi-agent-canvas /202504/python/ts/inactive
+  - https://open-multi-agent-canvas.vercel.app/
+  - The open-source multi-agent chat interface that lets you manage multiple agents in one dynamic conversation and add MCP servers for deep research
+  - built with Next.js, LangGraph, and CopilotKit to help with travel planning, research, and general-purpose tasks through MCP servers.
+  - Check out these awesome agents (they live in separate repositories). You can run them separately or deploy them on LangSmith
+  - [Open Multi-Agent Canvas + MCP Demo : r/mcp _202504](https://www.reddit.com/r/mcp/comments/1k0py22/open_multiagent_canvas_mcp_demo/)
+    - Chat with multiple LangGraph agents and any MCP server inside a canvas app.
+    - Chat interface - CopilotKit
+    - Multi AI Agents - LangGraph
+    - MCP Servers - Composio
+    - CopilotKit seems to be fairly tightly coupled to LangGraph AFAIK. If I wanted to use Mastra instead, is that fairly easy?
+      - Yes we have a tight integration with LangGraph but also CewAI, and soon Mastra + others
 # more
 - https://github.com/nimeshnayaju/tlslides /202204/ts/inactive
   - Create slides using tldraw (Unmaintained)

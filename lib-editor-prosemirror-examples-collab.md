@@ -51,22 +51,6 @@ modified: 2022-10-04T23:32:30.824Z
     - Fairness: Users with high latencies will not have their edits blocked by users with low latencies. This will greatly smooth the collab experience on documents with high levels of concurrent edits.
   - [ProseMirror Collab Performance | Blog _202307](https://stepwisehq.com/blog/2023-07-25-prosemirror-collab-performance/)
 
-- https://github.com/TeemuKoivisto/prosemirror-track-changes-example
-  - https://teemukoivisto.github.io/prosemirror-track-changes-example/
-  - simple track-changes example with prosemirror-changeset
-  - [Question about track-changes with prosemirror-changeset](https://discuss.prosemirror.net/t/question-about-track-changes-with-prosemirror-changeset/3801)
-
-- https://github.com/milahu/prosemirror-track-changes-demo /js
-  - https://milahu.github.io/prosemirror-track-changes-demo/
-  - add a "track changes" feature to prosemirror
-
-- https://github.com/Atypon-OpenSource/manuscripts-track-changes-plugin /202311/ts
-  - ProseMirror plugin to track inserts/deletes to nodes and text.
-
-- https://github.com/newsdev/prosemirror-change-tracking-prototype /201609/js
-  - ProseMirror change tracking proof-of-concept
-  - https://github.com/nytimes/prosemirror-change-tracking-prototype
-
 - https://github.com/dxos/editor  /1Star/AGPLv3/202101/js/archived
   - Collaborative editor
   - 依赖 react、material-ui、remark-rehype、yjs、prosemirror、hightlight.js
@@ -106,6 +90,21 @@ modified: 2022-10-04T23:32:30.824Z
   - This plugin allows users to make suggested edits that can be reviewed, accepted, or rejected later.
   - https://github.com/davefowler/prosemirror-suggestion-mode-examples
 
+- https://github.com/Atypon-OpenSource/manuscripts-track-changes-plugin /202311/ts
+  - ProseMirror plugin to track inserts/deletes to nodes and text.
+
+- https://github.com/TeemuKoivisto/prosemirror-track-changes-example /202108/ts/inactive
+  - https://teemukoivisto.github.io/prosemirror-track-changes-example/
+  - simple track-changes example with prosemirror-changeset
+  - [Question about track-changes with prosemirror-changeset](https://discuss.prosemirror.net/t/question-about-track-changes-with-prosemirror-changeset/3801)
+
+- https://github.com/milahu/prosemirror-track-changes-demo /CC-1.0/202409/js/inactive
+  - https://milahu.github.io/prosemirror-track-changes-demo/
+  - add a "track changes" feature to prosemirror
+
+- https://github.com/newsdev/prosemirror-change-tracking-prototype /201609/js
+  - ProseMirror change tracking proof-of-concept
+
 - https://github.com/nytimes/prosemirror-change-tracking-prototype /23Star/apache2/201609/js/inactive
   - a basic implementation of change tracking for ProseMirror
   - This project is a prototype built to explore the possibility of porting track changes to ProseMirror. 
@@ -121,6 +120,11 @@ modified: 2022-10-04T23:32:30.824Z
   - It bridges the gap between static diff viewers and actionable content editing, allowing users to evaluate, accept, or reject suggestions directly in the editor.
   - Interactive Diff Visualization: Inline comparison with accept/reject controls
   - Framework Agnostic: Leverages TipTap's framework-agnostic architecture
+
+- https://github.com/hamflx/prosemirror-diff /202207/js/inactive
+  - 支持保留新版本状态的标记
+- https://github.com/pubpub/prosemirror-diff /201907/ts/inactive
+- https://codesandbox.io/p/sandbox/prosemirror-diff-forked-9trmjq
 
 - https://github.com/ItaZure/TiptapBasedRichtextDiff /202507/js
   - 基于 Tiptap 的富文本差异对比工具，支持文本内容和格式变化的可视化对比，以及文档评注功能。
