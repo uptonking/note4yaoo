@@ -77,7 +77,9 @@ modified: 2023-09-07T04:17:31.787Z
 
 - ## 
 
-- ## 
+- ## trickle: Introducing Magic Canvas, the world’s first agentic canvas where you create with AI in a visual flow that feels natural and alive.
+- https://x.com/Trickle_HQ/status/1947917675893821824
+  - We’ve always felt coding should have the same creative flow as design
 
 - ## [Best self-hosted AI UI? : r/selfhosted _202501](https://www.reddit.com/r/selfhosted/comments/1i4ef8g/best_selfhosted_ai_ui/)
 - That "backend" is the actual LLM infrastructure; so, GPUs. The frontend is just some HTML/CSS/JS that communicates to that backend.

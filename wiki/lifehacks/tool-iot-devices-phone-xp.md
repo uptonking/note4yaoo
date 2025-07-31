@@ -31,6 +31,24 @@ modified: 2024-09-25T15:20:00.070Z
   - 三星 active系列
 # cpu
 - [高通处理器规格表](https://www.mydrivers.com/zhuanti/tianti/01/index_gaotong.html)
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## ios/android devices sales number by year
+
+- [百分比 Mobile operating system - Wikipedia](https://en.wikipedia.org/wiki/Mobile_operating_system)
+
+```markdown
+- year: ios,          android
+- 2024: 225.9M,       994.1M
+- 2023: 234.6M,       
+- 2022: 226.4M
+- 2021: 217.7/233.9M
+- 2020: 196.9M
+```
+
 # discuss-watch
 - ## 
 

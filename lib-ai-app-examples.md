@@ -248,18 +248,13 @@ modified: 2023-02-08T07:20:48.475Z
   - Agent framework and applications built upon Qwen>=2.0, featuring Function Calling, Code Interpreter, RAG, and Chrome extension
   - 基于Qwen2.0的agent框架：Qwen-Agent，它有指令遵循、工具使用、做规划和记忆能力
   - 基于Qwen-Agent的一个Chrome浏览器扩展，一个智能浏览器助手：BrowserQwen, 它可以基于当前页面或文档跟你对话、能记住你浏览过的内容进行总结、可以解决数学问题、数据图表可视化
-# ollama
+# llama
 - https://github.com/pamelafox/ollama-python-playground /jupyter
   - A dev container with ollama and ollama examples with the Python OpenAI SDK
   - This project is designed to be opened in GitHub Codespaces as an easy way for anyone to try out SLMs (small language models) entirely in the browser.
   - https://x.com/pamelafox/status/1801678164969853034
     - To make it super easy for anyone to try out Ollama (esp teachers/students)
     - I've included an example notebook that walks through completions, prompt eng, few-shots, and RAG
-
-- https://github.com/fmaclen/hollama /MIT/202407/ts/svelte
-  - https://hollama.fernando.is/
-  - A minimal web-UI for talking to Ollama servers
-  - Markdown parsing w/syntax highlighting
 
 ## llama-rewrite
 
@@ -410,6 +405,12 @@ modified: 2023-02-08T07:20:48.475Z
   - Zep persists and recalls chat histories, and automatically generates summaries and other artifacts from these chat histories. 
   - Zep also provides a simple, easy to use abstraction for document vector search called Document Collections. This is designed to complement Zep's core memory features, but is not designed to be a general purpose vector database.
 # ui-ai 💄
+- https://github.com/open-webui/open-webui /MIT/202405/svelte/python
+  - https://openwebui.com/
+  - User-friendly WebUI for LLMs (Formerly Ollama WebUI)
+  - extensible, feature-rich, and user-friendly self-hosted WebUI designed to operate entirely offline. 
+  - It supports various LLM runners, including Ollama and OpenAI-compatible APIs
+
 - https://github.com/richardgill/llm-ui /MIT/202502/ts
   - https://llm-ui.com/
   - The React library for LLMs
@@ -418,6 +419,11 @@ modified: 2023-02-08T07:20:48.475Z
   - Renders output at native frame rate
   - Code blocks for every language with Shiki
   - Headless: Bring your own styles
+
+- https://github.com/fmaclen/hollama /MIT/202407/ts/svelte
+  - https://hollama.fernando.is/
+  - A minimal web-UI for talking to Ollama servers
+  - Markdown parsing w/syntax highlighting
 
 - https://github.com/kangfenmao/cherry-studio /NonCommercial/202409/ts
   - https://cherry-ai.com/

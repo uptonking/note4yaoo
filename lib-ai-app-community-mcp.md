@@ -359,7 +359,33 @@ Don’t want/can’t have external dependencies?
 
 - ## 
 
-- ## 
+- ## 🤔 MCP is just like...an API right?
+- https://x.com/jamesqquick/status/1950604084370620719
+- MCP is an API with ELI-agent docs built into the wire format
+- The "docs" in that case is just the description field for a given tool right? That doesn't inherently make them good? Depends on how detailed the description field is?
+  - Description on the overall service (what is it for, what problems can it solve), on each tool (what is it for, what example problems can it solve, what are usage examples) and each param (if helpful)
+  - The http://grep.app MCP https://vercel.com/blog/grep-a-million-github-repositories-via-mcp is a good example
+- That's a great example! But that's also just dependent on the creator of the MCP server itself. If do a shitty job detailing the what, why, and how, then its not inherently an amazing experience?
+  - Right. It's currently very difficult to make a good MCP server. It's a prompt engineering exercise mostly given that you probably already have an API which you call from the MCP implementation
+
+- Yes along description and inputSchema. Like an Open API document.
+
+- No. It’s glorified API. The logic is encapsulated. So instead of coding up the request, you just request in English.
+
+- MCP is a function call, which is an API wrapper
+
+- not quite - MCP is more like a standardized protocol for AI agents to connect to external tools and data sources. think of it as a universal adapter that lets AI clients talk to different services without custom integrations for each one.
+
+- Yeah, I’d say like an extension that wraps an api
+- It’s a wrapper on api — to make it accessible to llms
+
+- not really, MCP is more about message passing between programs
+
+- MCP by itself is a protocol. MCP server is an API
+
+- Yes, but also no. If you try to turn your existing REST API into MCP, you will end up wasting lots of tokens and achieving nothing
+
+- Everything is just like an API.
 
 - ## ⚖️ Introducing Agent File (.af) - an open file format for importing/exporting agents.
 - https://x.com/Letta_AI/status/1907477696499843121

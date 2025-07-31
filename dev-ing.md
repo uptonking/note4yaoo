@@ -356,10 +356,23 @@ test('mock test', () => {
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
 
+## 0731
+- prompts-logo-excel-like
+  - create a product logo for my excel-like webapp, 
+  - the logo brand color should be like green/teal/indigo/..., or any good color that giving a cold and formal feeling, 
+  - the logo should express rows or columns or grid, but logo should not be complicated,
+
+- [Running on CPU only · Issue · comfyanonymous/ComfyUI](https://github.com/comfyanonymous/ComfyUI/issues/718)
+  - `python main.py --cpu`
+
+- [Failed to initialize database. · Issue · comfyanonymous/ComfyUI](https://github.com/comfyanonymous/ComfyUI/issues/8764)
+  - for macos, go to folder `/Applications/ComfyUI.app/Contents/Resources/ComfyUI`, and create a folder named `user` inside it .
+
 ## 0720
 
 - [Working with the Alpine Package Keeper (apk) - Alpine Linux Documentation](https://docs.alpinelinux.org/user-handbook/0.1a/Working/apk.html)
   - apk is the Alpine Package Keeper - the distribution’s package manager. 
+
 ## 0717
 
 - [Install VSCode extensions in Windsurf](https://www.nisanthchunduru.com/posts/Install-VSCode-extensions-in-Windsurf)

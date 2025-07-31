@@ -10,6 +10,9 @@ modified: 2025-02-21T18:20:42.624Z
 # guide
 
 # popular
+- https://github.com/microsoft/mcp-for-beginners /MIT/202507/python/ts
+  - This open-source curriculum introduces the fundamentals of Model Context Protocol (MCP) through real-world, cross-language examples in . NET, Java, TypeScript, JavaScript, and Python.
+
 - https://github.com/langgenius/dify /82.5kStar/apache2/202503/python
   - https://dify.ai/
   - Dify is an open-source LLM app development platform
@@ -19,12 +22,6 @@ modified: 2025-02-21T18:20:42.624Z
   - license 💰
     - Unless explicitly authorized by Dify in writing, you may not use the Dify source code to operate a multi-tenant environment.
     - In the process of using Dify's frontend, you may not remove or modify the LOGO or copyright information in the Dify console or applications. 
-
-- https://github.com/open-webui/open-webui /MIT/202405/svelte/python
-  - https://openwebui.com/
-  - User-friendly WebUI for LLMs (Formerly Ollama WebUI)
-  - extensible, feature-rich, and user-friendly self-hosted WebUI designed to operate entirely offline. 
-  - It supports various LLM runners, including Ollama and OpenAI-compatible APIs
 
 - https://github.com/cloudflare/agents /MIT/202502/ts
   - https://developers.cloudflare.com/agents/

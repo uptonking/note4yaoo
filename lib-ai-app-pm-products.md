@@ -13,8 +13,14 @@ modified: 2025-03-22T16:10:24.856Z
 
 # pm-mcp
 
+- writing
+
+- image-generation
+  - 现在的ai产品很少将图片生成和编辑设计和实现的体验很好
+
 - browser-use
-- computer-use
+  - computer-use
+  - vscode-use, vscode-mcp
 
 - ai-sandbox
   - 不仅用于代码，还可扩展到更多场景，类似manus
