@@ -204,9 +204,24 @@ modified: 2023-04-16T10:02:58.738Z
 - ## a quick prototype sprint on an LLM chat interface
 - https://x.com/argyleink/status/1949966641233531030
   - https://codepen.io/editor/argyleink/pen/wBKWNwQ
-  ✅ view transitions
-  ✅ readablestreams
-  ✅ flow control
+  - view transitions
+  - readablestreams
+  - flow control
+
+# discuss-news
+- ## 
+
+- ## 
+
+- ## AI SDK 5: Introducing type-safe chat, agentic loop controls, data parts, speech generation and transcription, Zod 4 support, global provider, and raw request access. _202508
+- https://x.com/aisdk/status/1950952373616337280
+  - The chat abstraction has been redesigned to support type-safety, customizable transports, flexible state management, and more.
+  - Data parts provide a first-class way to stream custom, type-safe data from the server to the client, ensuring your code remains maintainable as your application grows.
+  - For information about a message, such as a timestamp, model ID, or token count, you can attach type-safe metadata.
+  - AI SDK 5 brings all new agentic controls. stopWhen/prepareStep
+  - AI SDK 5 extends our unified provider abstraction to speech. Just as we've done for text and image generation, we're bringing the same consistent, type-safe interface to both speech generation and transcription.
+  - AI SDK 5 works with Zod 4 and Zod Mini giving you faster validation, better TypeScript performance, and reduced bundle size.
+  - [AI SDK 5 - Vercel](https://vercel.com/blog/ai-sdk-5)
 
 # discuss
 - ## 

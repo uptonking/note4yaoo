@@ -306,6 +306,11 @@ console.log(
 
 ```log
 
+- prompts-logo-excel-like
+  - create a product logo for my excel-like webapp, 
+  - the logo brand color should be like green/teal/indigo/..., or any good color that giving a cold and formal feeling, 
+  - the logo should express rows or columns or grid, but logo should not be complicated,
+
 add action to add datetime at top of readme.md
 
 add an action to run "npm install -ddd" and another action to add datetime at top of readme.md
@@ -355,12 +360,9 @@ test('mock test', () => {
 
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
+# dev-07-pullOTUpdates/syncOTUpdates-editor-flickering-&-vscode-hover-marked-&-lasuite-local-dev-&-ollama-comfyui
 
 ## 0731
-- prompts-logo-excel-like
-  - create a product logo for my excel-like webapp, 
-  - the logo brand color should be like green/teal/indigo/..., or any good color that giving a cold and formal feeling, 
-  - the logo should express rows or columns or grid, but logo should not be complicated,
 
 - [Running on CPU only · Issue · comfyanonymous/ComfyUI](https://github.com/comfyanonymous/ComfyUI/issues/718)
   - `python main.py --cpu`
