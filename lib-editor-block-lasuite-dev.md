@@ -16,6 +16,7 @@ modified: 2025-07-17T14:39:41.606Z
   - self-hostable 私有化部署方便，提供了docker/k8s等多种方式，还提供了很多环境变量可配置
   - export pdf/docx
   - 提供了 业务系统 与 帐户系统 基于OIDC实现SSO单点登录的示例
+  - 支持ai能力，支持llama
 
 - cons
   - 不支持个人所有文件的 FileTree

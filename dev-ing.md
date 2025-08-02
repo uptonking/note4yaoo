@@ -360,6 +360,13 @@ test('mock test', () => {
 
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
+
+## 0802
+
+- [log in error · Issue #884 · TGX-Android/Telegram-X](https://github.com/TGX-Android/Telegram-X/issues/884)
+  - 出现此错误后，不要继续多次尝试了；停止尝试48小时；
+  - 更换你使用的vpn节点，登录手机版的Telegram X，然后验证码会发送到你的电脑版Telegram上面，输入即可登录手机版。
+  - 核心问题就是你的vpn节点有问题了，比如协议不完整，或者以ipv6为优先等情况。
 # dev-07-pullOTUpdates/syncOTUpdates-editor-flickering-&-vscode-hover-marked-&-lasuite-local-dev-&-ollama-comfyui
 
 ## 0731

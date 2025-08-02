@@ -159,6 +159,20 @@ modified: 2025-07-17T14:40:07.230Z
 - Third packages have also shared task used. For example in `django-lasuite` package, the `malware_detection` application is using shared tasks
 
 - the simplest way to get rid of celery in this situation is to replace it with postgresql with something like https://github.com/PaulGilmartin/django-pgpubsub
+# discuss-ai 👾
+- ## 
+
+- ## 
+
+- ## [Blocknote AI _202505](https://github.com/suitenumerique/docs/pull/1016)
+  - Possibility to revert what the AI made
+  - Collaborative friendly - Other collaborators will see the AI changes only when changes are accepted
+  - This feature is under AGPL license.
+
+- ## [Improve AI requests _202503](https://github.com/suitenumerique/docs/issues/694)
+  - Translation seems to be an easy task, we can use meta-llama/Llama-3.1-8B-Instruct, the request will be faster
+  - We can stream the response, by streaming the response we will be able to display content the the user gradually.
+
 # discuss-roadmap
 - ## 
 

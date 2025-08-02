@@ -80,21 +80,25 @@ modified: 2021-05-06T09:39:53.522Z
 # draft
 - roadmap
   - fwk agnostic noseditor: prosekit + atlaskit <> tiptap
-  - migrate prosemirror-dev-toolkit features to prosemirror-devtools
 
 - 🆚 diff-view
   - prosemirror-diff + codemirror-diff + (ai-writing)
   - diff support codeblock/table
+  - diff for tiptap extensions/schema
   - diff for version-history-timeline
-  - diff for tiptap extensions
   - rewrite tiptap diff
+  - streamable diff
 
 - collab
-  - codemirror in proesmirror all collaborative
+  - codemirror in prosemirror: all collaborative
 
 - prosemirror-markdown
   - rewrite with remark
   - rewrite with codemirror/lezer
+
+- devtools
+  - migrate prosemirror-dev-toolkit features to prosemirror-devtools
+  - rewrite prosemirror-devtools in tanstack-devtools style
 # dev-xp
 
 # faq-not-yet

@@ -274,7 +274,6 @@ modified: 2022-08-18T16:57:46.405Z
 
 - bangle.dev-editor /667Star/MIT/202503/ts
   - https://github.com/bangle-io/bangle-editor
-  - https://github.com/bangle-io/banger-editor
   - https://github.com/bangle-io/bangle.dev
   - https://bangle.dev/docs/examples/markdown-editor
   - https://app.bangle.io/
