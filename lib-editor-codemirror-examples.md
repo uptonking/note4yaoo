@@ -276,7 +276,7 @@ modified: 2023-06-23T12:46:53.288Z
   - Autocomplete for HTMLTextAreaElement and more
   - 支持 textarea/contenteditable/codemirror
 
-- https://github.com/davidmyersdev/ink-mde /206Star/MIT/202410/ts/函数式/typora风格
+- https://github.com/davidmyersdev/ink-mde /206Star/MIT/202507/ts/函数式/typora风格
   - https://stackblitz.com/fork/github/davidmyersdev/ink-mde/tree/main/examples/template-ts
   - A beautiful, modern, customizable Markdown editor powered by CodeMirror 6 and TypeScript
   - This is the editor that powers https://octo.app.
@@ -477,16 +477,6 @@ modified: 2023-06-23T12:46:53.288Z
   - 依赖codemirror.v6、highlight.js、markdown-it、mustache、webpack
   - 详情页会显示Minimum app version、下载量
   - 搜索没有单独的页面
-
-- https://github.com/expressive-code/expressive-code /MIT/202408/ts/不依赖codemirror
-  - https://expressive-code.com/
-  - A text marking & annotation engine for presenting source code on the web
-  - Expressive Code is an engine for presenting source code on the web, aiming to make your code easy to understand and visually stunning.
-  - On top of accurate syntax highlighting powered by the same engine as VS Code, Expressive Code allows you to annotate code blocks using text markers, diff highlighting, code editor & terminal window frames, and more.
-    - @expressive-code/plugin-shiki - Adds syntax highlighting to your code blocks, using the same engine as VS Code.
-  - All annotations are based on a powerful plugin architecture 
-  - Zero dependencies on React, Vue, or any other front-end framework.
-    - Works with popular site generators like Astro and Next.js, as well as plain markdown and MDX
 
 - https://github.com/Sagargupta16/ai-code-translator /202311/ts
   - https://ai-code-translator-delta-six.vercel.app/
@@ -2316,6 +2306,18 @@ modified: 2023-06-23T12:46:53.288Z
   - Export to valid markdown format (.src.md)
   - Local execution with a web interface
   - Powered by Node.js
+
+- https://github.com/expressive-code/expressive-code /MIT/202507/ts/不依赖codemirror
+  - https://expressive-code.com/
+  - https://expressive-code.com/key-features/text-markers/
+  - A text marking & annotation engine for presenting source code on the web
+  - 通过配置可在codeblock高亮指定行、指定文本
+  - Expressive Code is an engine for presenting source code on the web, aiming to make your code easy to understand and visually stunning.
+  - On top of accurate syntax highlighting powered by the same engine as VS Code, Expressive Code allows you to annotate code blocks using text markers, diff highlighting, code editor & terminal window frames, and more.
+    - @expressive-code/plugin-shiki - Adds syntax highlighting to your code blocks, using the same engine as VS Code.
+  - All annotations are based on a powerful plugin architecture 
+  - Zero dependencies on React, Vue, or any other front-end framework.
+    - Works with popular site generators like Astro and Next.js, as well as plain markdown and MDX
 
 - Starboard Notebook /889Star/MPLv2/202206/ts
   - https://github.com/gzuidhof/starboard-notebook

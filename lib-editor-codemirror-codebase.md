@@ -16,6 +16,33 @@ modified: 2024-05-02T06:41:19.983Z
   - 修改其他状态
 # dev-debug
 - 编辑器最外层contenteditable的dom在调试时可以store as global variable，在属性上可拿到 cmView, 可以进一步拿到 cmView.view/ cmView.view.state
+
+## dev-codemod-update
+
+- 更新fork代码的基本步骤
+  1. 备份fork处旧代码
+  2. 全量复制最新代码到fork仓库
+  3. lint + format, 先格式化方便后面看修改的diff。 eslint里一些特殊的规则需要在更新/patch代码后设为error，但lint大部分完后设为warn, 如prefer-const有时会修改源码结构，所以保留一部分lint error不处理
+  4. codemod
+  5. tests
+
+- 需要更新的主要文件
+  - state SectionIter.len/offset/ins 去掉declare
+  - state Facet.tag, FacetProvider.extension, PrecExtension.extension CompartmentInstance.extension 去掉declare
+  - state RangeValue.startSide/endSide/mapMode/point LayerCursor/HeapCursor.from/to 去掉declare
+  - state Text/RawTextCursor/PartialTextCursor.[Symbol.iterator]   去掉declare
+  - state Annotation._isAnnotation 去掉declare
+  - view ContentView.breakAfter 去掉declare
+  - view Decoration.point 去掉declare  MarkDecoration 添加 point = false; LineDecoration 添加 point = true; mapMode = MapMode. TrackBefore; PointDecoration 添加 point = true
+  - view DocView.children/split 去掉declare
+  - view EditorView.inputState/styleModules 去掉declare
+  - view GutterMarker.elementClass 去掉declare
+  - view HeightMap.size 将declare改为size=1, HeightMapBranch.size 前面加上declare
+  - view WidgetView/WidgetBufferView.children 将declare改为= noChildren
+  - view ViewState.viewportLines/viewport/viewports 去掉declare
+  - view placeholder.update 去掉declare
+  - view tooltipPlugin.container 去掉declare
+  - diff Frontier.len/start/end 去掉declare
 # not-yet
 
 # dev-xp

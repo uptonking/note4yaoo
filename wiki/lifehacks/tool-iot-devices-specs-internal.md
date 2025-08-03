@@ -451,6 +451,7 @@ GPS丨Glonass丨BeiDou丨Galileo
 - resources
   - [MacBook Air - 机型比较 - Apple (中国大陆)](https://www.apple.com.cn/macbook-air/compare/)
   - [【苹果MacBook Air 15 2025款 M4/24GB/512GB/10核集显参数】 -ZOL中关村在线](https://detail.zol.com.cn/2123/2122631/param.shtml)
+  - [MacBook Air 13 英寸和 15 英寸 (M4 芯片) - 技术规格 - Apple (中国大陆)](https://www.apple.com.cn/macbook-air/specs/)
 
 - 上市时间	2025年03月12
 - 笔记本重量	1.51Kg
@@ -487,15 +488,12 @@ GPS丨Glonass丨BeiDou丨Galileo
 - 蓝牙	支持，蓝牙5.3模块
 - 数据接口	2×雷雳4
 - 音频接口	3.5mm耳机/麦克风二合一接口
-- 电池类型	锂电池，66.5瓦时纠错
+- 电池类型	内置 66.5 瓦时锂聚合物电池
   - 电源适配器	35W 双 USB-C 端口小型电源适配器
   - 可快速充电 (使用 70W 或更大功率的 USB-C 电源适配器)
+  - USB-C 转 MagSafe 3 连接线
 - 其它接口	MagSafe3
   - USB-C 转 MagSafe 3 连接线(2 米)  x1
-
-- 
-- 
-- 
 
 ## hp omen 8 plus
 

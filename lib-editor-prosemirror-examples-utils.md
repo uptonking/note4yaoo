@@ -87,11 +87,6 @@ modified: 2022-08-18T16:57:29.058Z
   - Provides scroll position tracking
   - Customizable heading ID generation
 # model-data-structure
-- amat-react /1Star/MIT/202207/js/提交多
-  - https://github.com/APMG/amat-react
-  - Amat React renders ProseMirror JSON Documents as HTML
-  - This component is able to take in a ProseMirror endpoint and compose the correct HTML from it
-
 - https://bitbucket.org/jstleger/prosemirror-composer
   - A useful way to keep complex prosemirror projects tidy, maintainable and testable.
   - complex Prosemirror project: [how we structured our code](https://discuss.prosemirror.net/t/prosemirror-composer-wip/3887)
@@ -100,6 +95,11 @@ modified: 2022-08-18T16:57:29.058Z
 
 - https://github.com/atlassian/prosemirror-utils /apache2/202307/ts
   - Utils library for ProseMirror
+
+- amat-react /1Star/MIT/202507/js/提交多
+  - https://github.com/APMG/amat-react
+  - Amat React renders ProseMirror JSON Documents as HTML
+  - This component is able to take in a ProseMirror endpoint and compose the correct HTML from it
 
 - https://github.com/rexxars/react-prosemirror-document
   - Render a ProseMirror document in JSON-format using React

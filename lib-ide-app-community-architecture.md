@@ -139,7 +139,30 @@ modified: 2024-12-03T13:20:30.085Z
 
 - ## 
 
-- ## 
+- ## [Codemod – A library to assist with large-scale codebase refactoring | Hacker News _201708](https://news.ycombinator.com/item?id=15083882)
+- This code was open sourced in 2008, with a few improvements here and there until 2010.
+  - Codemod is great, but there are better tools out there (pfff by facebook, IntelliJ plugins, etc). It's too bad the readme doesn't do a great job explaining that.
+- https://github.com/facebookarchive/pfff /LGPL/201702/ocaml/archived
+  - pfff is a set of tools and APIs to perform static analysis, code visualizations, code navigations, or style-preserving source-to-source transformations such as refactorings on source code. 
+
+- I also like Clang Tools for C++ AST and programmatic refactoring. Much better than regex replace. What exactly is the benefit of Codemod? Too me it seems like a glorified regex replacer, nothing more.
+- What I really want: a language agnostic abstract syntax tree parser, matcher and transformer.
+
+- Facebook also maintains a JS codemod tool that React uses: https://github.com/facebook/jscodeshift
+
+- I find the idea of https://github.com/facebook/jscodeshift to be really useful.
+  - For example, I wrote a small script to change var to let or const when possible. It uses the AST to check scoping rules and to check if a variable is ever reassigned.
+  - Writing scripts like this is way more effective than doing it by hand.
+
+- Or just use a language that supports large scale refactoring, say Java, C#, perhaps even C++ if you are careful. I generally don't like dynamic languages for large projects exactly because of this. You can't safely and quickly do large scale refactorings, a point that will come back and haunt you sooner or later. No matter how good you are or how much care you take, the code will rot significantly more than in Java/C# because you just can't quickly refactor stuff across the entire codebase, so you won't.
+
+- I'd also recommend checking out https://github.com/Yelp/undebt (/201707/python/archived) which is a bit more robust it seems in the search aspect, since it's grammar-based instead of regex-based.
+
+- 
+- 
+- 
+- 
+- 
 
 - ## [Where is the CRDT for syntax trees | Hacker News _202112](https://news.ycombinator.com/item?id=29433896)
   - 核心是json的crdt操作
@@ -222,7 +245,6 @@ modified: 2024-12-03T13:20:30.085Z
 - ## Semgrep is a security scanner trusted by the biggest enterprises in the world. Now runs on every deploy for vibe coders on Replit. _202505
 - https://x.com/amasad/status/1923071981299065189
 
-
 # discuss-ide
 - ## 
 
@@ -231,8 +253,6 @@ modified: 2024-12-03T13:20:30.085Z
 - ## 
 
 - ## 
-
-
 
 - ## [Drowning in code: The ever-growing problem of ever-growing codebases | Hacker News _202402](https://news.ycombinator.com/item?id=39356574)
 - Basically, "divide and conquer." Big things are composed of small things.

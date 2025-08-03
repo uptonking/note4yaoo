@@ -23,6 +23,13 @@ modified: 2021-03-29T19:14:57.440Z
 
 - hotfix到main 或 dev/staging 存在半成品commit时
   - 从main新建分支hotfix1, 然后将hotfix1通过pr合到main，再分别将hotfix1新建临时分支后合到 dev/staging，可以保持commitId不变
+
+- 更新fork代码的基本步骤
+  1. 备份fork处旧代码
+  2. 全量复制最新代码到fork仓库
+  3. lint + format, 先格式化方便后面看修改的diff。 eslint里一些特殊的规则需要在更新/patch代码后设为error，但lint大部分完后设为warn, 如prefer-const有时会修改源码结构，所以保留一部分lint error不处理
+  4. codemod
+  5. tests
 # dev-summary
 - 研发工作经常是用同一语言的不同框架，或用不同语言，在不同的平台重复实现相同的功能
   - 静下心来深入一个主题，总结现有方案的优点和缺点

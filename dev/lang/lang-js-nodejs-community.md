@@ -9,7 +9,33 @@ modified: 2022-12-19T01:49:06.760Z
 
 # guide
 
+# discuss-file-io
+- ## 
+
+- ## 
+
+- ## [Find home directory in platform agnostic way - Stack Overflow](https://stackoverflow.com/questions/9080085/node-js-find-home-directory-in-platform-agnostic-way)
+- `os.homedir()` was added by this PR and is part of the public 4.0.0 release of nodejs.
+
+- ## [Check synchronously if file/directory exists in Node.js - Stack Overflow](https://stackoverflow.com/questions/4482686/check-synchronously-if-file-directory-exists-in-node-js)
+- Update December 2016: `fs.exists()` is still deprecated but `fs.existsSync()` is no longer deprecated. So you can safely use it now.
+
+- The answer to this question has changed over the years.
+  - You can use `fs.existsSync()` ; 
+  - You've specifically asked for a synchronous check, but if you can use an asynchronous check instead (usually best with I/O), use `fs.promises.access` if you're using async functions or `fs.access` (since exists is deprecated) if not
+# discuss-network
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

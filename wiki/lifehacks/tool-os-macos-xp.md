@@ -375,7 +375,108 @@ CREATE ROLE username WITH LOGIN SUPERUSER CREATEDB CREATEROLE PASSWORD 'password
 
 - ## 
 
-- ## 
+- ## [小米67w充电器（非氮化镓）可以用来给macbook air m1充电吗？拿来长期使用的话可以吗？ - 知乎](https://www.zhihu.com/question/609382105)
+- 可以，其实只要充电头有20vPD挡位，不管是30w、65w、120w都能冲，无非是跑不满充电速度慢而已。但不建议长期使用，因为手机充电头散热不行，满功率输出对充电头的寿命影响很大。
+
+- 只有12V甚至9V档位也能充，就是慢而已
+
+- 可以用, 没什么大问题。我的m1pro16寸这么用很久了, 更多的时候用的显示器的65w或90w反向充电。
+
+- 没有任何问题，充电器会量力而行的，笔记本电池只怕过放过冲（放电到20%以下，非常伤电池）和高温
+
+- ## [2分钟看懂MacBook Air 13 M4充电 - 小红书](https://www.xiaohongshu.com/explore/67fa37d2000000001c032013?xsec_token=ABufSAS9QghohUw1fzyX0iVCtCVyatOV4oAVyqAGiEEzQ=&xsec_source=pc_search&source=web_search_result_notes)
+  - 这款MacBook Air 13 M4在充电方面变化依然不大，可以兼容常见的C口充电器快充，最高功率可以到71W，实测26分钟可以充到50%，1小时58分钟完全充满，充电期间几乎感觉不到发热
+- 结论是三方充电器也正常可以用哈
+
+- [MacBook 新发现 - 小红书](https://www.xiaohongshu.com/explore/6814360b0000000022029d14?xsec_token=ABxl5JKVzVRtrdRLAFg3NctkZfBWcgYO1O8rrAd2AbM5Y=&xsec_source=pc_search&source=web_search_result_notes)
+  - 我买的时候店员说c口可以，但是充电头要30w以上
+- 一直是C口充，好几年了
+- m1max c口充了4年 电池一点问题都没有 
+
+- 充电宝建议用支持30瓦以上功率的，如果充电宝功率太低，不仅充不上电，还会掉电，甚至给充电宝反向充电
+
+- 我的建议是，把那破原装头子扔了，自己买个大功率的氮化镓PD头，体积小，还能同时给多个设备充电
+
+- 一直都这么用，家里的磁吸，外出就配一个安钛克的电源一根c口线，手机电脑都能用。
+
+- 自从发现小米13充电器能给苹果67w快充后，就再也没用过苹果自带35w磁吸
+
+- 如果是Air，本来充电器的功率就是三十瓦，所以充电宝充也没事，Win本一般都是65瓦，普通充电宝带不动
+
+- 我都是这么干。小米65w 1A1C省事不累赘，冲啥都够用。
+
+- 那么安卓的手机充电器也可以给mac充电喽？
+  - 和什么机型没关系 只要不是特殊协议的手机充电线都可以通用 关键要看数据线（一般叫充电线）的规格 充电器是包含电源适配器和数据线 两个都相互牵制和影响 笔记本如果支持小功率充电的话 usb3.0 的数据线就能充 快慢的区别
+
+- ## [Macbook M1 充电头不见了 但是原装好贵 其他的充电头能用吗？ 会影响电脑电池吗？#macbook配件 - 小红书](https://www.xiaohongshu.com/explore/6721c776000000001d03b23d?xsec_token=ABFkQO1Gl1-pWnjjLTpAWVDyLPOz9T9XFtoQloixAZNB8=&xsec_source=pc_search&source=web_search_result_notes)
+- 买个65W的PD充电头就可以了，还能给手机充电
+
+- 随便买个pd45w就行，原装那个才30w就是一个垃圾，我到手就扔了
+
+- ## [求助用小米充电线充苹果15会坏吗？今天没带充电器，抱着试试看心态试了一下用小米可以充 - 小红书](https://www.xiaohongshu.com/explore/669dd5ea000000002701e02a?xsec_token=ABNHgVtAj61rOEMKna5VW9dgOseLpizS3wNz4tG_ctWks=&xsec_source=pc_search&source=web_search_result_notes)
+- 不会坏 我天天用小米的
+
+- 我的头坏了，为了省钱天天用的红米充电器，而且充电嘎嘎快
+
+- 小米的通用性比较高，支持pd协议，可以冲苹果。华为的不能充苹果
+
+- 别慌，我还特地买的小米头、线、充电宝来冲
+
+- ## [用type C给macbook充电，应了个急～ - 小红书](https://www.xiaohongshu.com/explore/67b033390000000018011760?xsec_token=AB37FEjnwyYBwILr2RQtHgsUPJG_R7tHXshaF6wgKnQHo=&xsec_source=pc_search&source=web_search_result_notes)
+- typec充电的非常慢
+  - 那是你电源适配器功率太低，和c口半毛钱关系都没有，甚至magsafe接口之前还被砍掉了，只能插c口充，后面可能觉得还是蛮好用的又给加回来了
+
+- 随便用，我16寸MBP常年用20瓦usbc供电...magsafe基本不用
+
+- 以前去掉 MagSafe 的几年不都是用 usbc 充电的
+
+- ## [好消息！小米不愧是苹果配件厂！ - 小红书](https://www.xiaohongshu.com/explore/6512bd92000000002101c2d5?xsec_token=AB7S78mwEXZaZh0gSyTUVw_q3ouqUlGKUpD3TeOZWbOmo=&xsec_source=pc_search&source=web_search_result_notes)
+- 附上直营店店员原话
+  - 任何c口线都可以插手机
+  - 两端都是c口的线需要配有PD协议的充电头
+  - macbook和iPhone的充电器和充电线可以互相用，是上下兼容的，不会出现功率不足或者过大的问题
+
+- 苹果全系列都是PD协议，只要充电头是PD协议就行。功率的话按照水桶效应看，取决于设备/充电头/线各自支持的最大功率的最小值。
+  - 比如你拿120W的头充手机，那就会自动协商到手机支持的最高功率，也就是20W。 给电脑的话建议查查电脑是否支持PD充电，以及支持的功率。上古时代小新不一定支持PD，就算支持PD也很可能是65W，没法满足电脑满功率运行的需求。
+- 买的原装，不过现在用小米好像也没坏
+
+- [Macbook 充电器好大 - 小红书](https://www.xiaohongshu.com/explore/666951e1000000000e0307c8?xsec_token=ABXyox8CPEs6q5AuOLEfiN3b4dYGZMf2o469B0lqMOBrU=&xsec_source=pc_search&source=web_search_result_notes)
+  - 我的m3 pro从开盒之后就没用过原装充电器，被我送给同事了，一直在用小米65w、120w、努比亚80w充电头，还有办公桌上的5w USB充电头，和你们对比起来我是不是对它太坏了
+
+- ## [小米手机充电器能给mac充电吗 - 小红书](https://www.xiaohongshu.com/explore/66d58a37000000001f016b32?xsec_token=AB36raZON7rhJOGKgOTp2CP19lw-O7OQ2_SZBPEkbc7rg=&xsec_source=pc_search&source=web_search_result_notes)
+- 可以，小米这个充电器支持65w PD协议，兼容Mac
+
+- [求问：苹果笔记本可以用90w的小米充电器吗 #不懂就问有问必答 #万能的小红书 出门不想带那么多充电器 - 小红书](https://www.xiaohongshu.com/explore/67a02f7c000000001800fdbe?xsec_token=ABe2aRwCPTUNI2eh71Dom8V9RUIjYcjLXJFQaYmjJD3kk=&xsec_source=pc_search&source=web_search_result_notes)
+  - 我经常用65w氮化镓充。一点事都没有
+
+- [小米充电器充Macbookpro - 小红书](https://www.xiaohongshu.com/explore/668107e4000000001d016265?xsec_token=ABnKza9r9cWVkWBcrFnQEixWaDHr-AD6HPAwyXjyghnnY=&xsec_source=pc_search&source=web_search_result_notes)
+  - 用Mac充电器充手机，发现充的也挺快，而且没发现异常
+  - 今天想试试手机充电器能不能充电脑，充了一会，电量有增加，系统信息显示27w
+
+- MacBook对PD协议支持很全的，上至20V，下至9V，都可以充电，不像很多国产笔记本，只支持20V档位
+- 我小米 14 的充电器拿来充 mac 还很快
+
+- ## [自己总结手机和笔电充电器互充的注意事项 - 小红书](https://www.xiaohongshu.com/explore/67d2cb090000000006029e0b?xsec_token=ABG6d6mee-BXD05kT1s72Bc2B5lIldBwmav5XAb7e1JeA=&xsec_source=pc_search&source=web_search_result_notes)
+- 移动设备充电器协议常见的有两种，一种普通dc充电器（无协议）；第二种是带协议的充电器，主要有qc、pd(pps)、ufcs等，还有各家手机商私有协议挺杂的，不妨统称pd充电器。
+
+- ## [忘带💻电源结果发现手机充电线也能充… - 小红书](https://www.xiaohongshu.com/explore/6821ea190000000021019b91?xsec_token=AB7IcqjUbnYI73r3Laq2wuGuhtKqzA2XGPVKpwkd9DXB0=&xsec_source=pc_search&source=web_search_result_notes)
+- 线不重要 头尽量用原装的
+
+- 只要支持PD 充电就都能充啊
+  - 苹果都是pd充电，是公版协议，除了华为的某些充电器，几乎所有手机品牌的充电器都可以充，不过功率多高就说不准了。不过苹果设备的充电，是可以长时间跑满功率的，你20w充电器充电脑，充电器要累瘫了
+
+- 不能总用这种瓦数低的充电器充电脑 轻则损伤电池 严重的话就会跟我上一台电脑一样直接主板给烧了
+  - 太扯犊子了这个发言，我的Air支持140w，原生充电线时候30w，就是说我一直这样用会把主板烧了？你这个怎么看怎么不对劲，真的服了在这里误导人
+- Air苹果自己宣称140w，他的包装里面一直放的就是30w充电器，按照你的意思不就是不能用低瓦数的充电头，这不就是无解，或者Air包装盒里面的充电头给iPhone用？
+  - 宣称140w是它最高支持140w的功率 原配的30w是它功率的最低标准 低于这个标准充电会造成损伤（转自Genius Bar工作人员）我所谓的低瓦数充电器是低于它自带的原装充电器瓦数
+- 我去Genius Bar修电脑的时候工作人员跟我说的是主板烧了 因为我经常用小功率充电器边充电边使用 所有我就这么发出来 你杠就是你对喽
+
+- ## [如果你有Mac那么你就不需要再买充电头了 - 小红书](https://www.xiaohongshu.com/explore/671b485e000000001b02e470?xsec_token=ABbW1fXGj4wn9zVrDpQ9rElRJTRkI14EqnX07TkY8QUls=&xsec_source=pc_search&source=web_search_result_notes)
+- 其实Apple官方也说过Macbook 61W到140W的充电头可以为iphone充电。
+
+- 我就用macbook充电器给ipad 和iphone充电。懒得买头头了
+
+- 我是MacBook air ，手机电脑充了半年了通用
 
 - ## 忽然想起来，Apple 主推自己的芯片之后，以后就没有for x86的macOS系统了吧？那么，以后也就没有黑苹果咧？
 - https://twitter.com/choicky/status/1682953718004858882

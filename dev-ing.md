@@ -361,6 +361,20 @@ test('mock test', () => {
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
 
+## 0803
+
+- [fix: Remove `clone-deep` dependency in favor of native `structuredClone` · Pull Request · survivejs/webpack-merge _202407](https://github.com/survivejs/webpack-merge/pull/214)
+  - I imagine there's some subtle difference between `structuredClone` and `clone-deep` and there was some structure in your configuration `structuredClone` wasn't able to handle.
+  - `async function terserMinify(input, sourceMap, minimizerOptions, extractComments) { }` could not be cloned.
+
+- [quilt(1) - Linux manual page](https://www.man7.org/linux/man-pages/man1/quilt.1.html)
+  - Quilt is a tool to manage large sets of patches by keeping track of the changes each patch makes.  
+  - Patches can be applied, unapplied, refreshed, and so forth.  
+  - The key philosophical concept is that your primary working material is patches
+  - Quilt manages a stack of patches.  Patches are applied incrementally on top of the base tree plus all preceding patches.
+  - Patch files are located in the patches subdirectory of the source tree
+  - Before a patch is applied, copies of all files the patch modifies are saved to the `.pc/patch-name` directory, where patch-name is the name of the patch
+
 ## 0802
 
 - [log in error · Issue #884 · TGX-Android/Telegram-X](https://github.com/TGX-Android/Telegram-X/issues/884)
