@@ -20,13 +20,13 @@ modified: 2024-05-02T06:41:19.983Z
 ## dev-codemod-update
 
 - 更新fork代码的基本步骤
-  1. 备份fork处旧代码
-  2. 全量复制最新代码到fork仓库
-  3. lint + format, 先格式化方便后面看修改的diff。 eslint里一些特殊的规则需要在更新/patch代码后设为error，但lint大部分完后设为warn, 如prefer-const有时会修改源码结构，所以保留一部分lint error不处理
-  4. codemod
+  1. 备份fork处旧代码，备份在平行目录更方便
+  2. 全量复制最新代码到fork仓库, replace部分文件(可替换或减少第三方依赖/数据)
+  3. lint + format, 格式化方便后面看修改的diff。 eslint里一些特殊的规则需要在更新/patch代码后设为error，但lint大部分完后设为warn, 如prefer-const有时会修改源码结构，所以保留一部分lint error不处理
+  4. codemod，基于jscodeshift; 一般是添加或移除class field modifier，如declare/private, 设置初始值; 可利用流程先移除所有再添加部分来实现移除部分
   5. tests
 
-- 需要更新的主要文件
+- 需要更新的主要文件·
   - state SectionIter.len/offset/ins 去掉declare
   - state Facet.tag, FacetProvider.extension, PrecExtension.extension CompartmentInstance.extension 去掉declare
   - state RangeValue.startSide/endSide/mapMode/point LayerCursor/HeapCursor.from/to 去掉declare

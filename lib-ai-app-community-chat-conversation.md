@@ -208,12 +208,23 @@ modified: 2023-04-16T10:02:58.738Z
   - readablestreams
   - flow control
 
-# discuss-news
+# discuss-ai-sdk
 - ## 
 
 - ## 
 
-- ## AI SDK 5: Introducing type-safe chat, agentic loop controls, data parts, speech generation and transcription, Zod 4 support, global provider, and raw request access. _202508
+- ## 
+
+- ## 
+
+- ## 
+
+- ## HITL(Human in the loop) in AI SDK v5, using custom data parts
+- https://x.com/mattpocockuk/status/1952322985068802369
+- Does this have to be stateful ? 
+  - No, my implementation is not stateful
+
+- ## 🎯 AI SDK 5: Introducing type-safe chat, agentic loop controls, data parts, speech generation and transcription, Zod 4 support, global provider, and raw request access. _202508
 - https://x.com/aisdk/status/1950952373616337280
   - The chat abstraction has been redesigned to support type-safety, customizable transports, flexible state management, and more.
   - Data parts provide a first-class way to stream custom, type-safe data from the server to the client, ensuring your code remains maintainable as your application grows.

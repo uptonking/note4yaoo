@@ -512,6 +512,17 @@ sudo systemctl start minidlna
   - https://github.com/yiyuanjichang/dizhi
   - [一元机场节点安全吗，不会是钓鱼吧 - V2EX](https://www.v2ex.com/t/913781)
 
+### justmysocks
+
+- [Just My Socks clients](https://justmysocks.net/members/index.php?rp=/knowledgebase/2/How-to-use-Just-My-Socks)
+  - [Software download links - Knowledgebase - Just My Socks](https://justmysocks.net/members/index.php?rp=/knowledgebase/5/Software-download-links.html)
+  - win-jamjamsapp/v2rayN, mac-jamjamsapp/v2rayX, ios-jamjamsapp/potatso, android-ss/v2rayNG
+  - https://github.com/2dust/v2rayNG
+
+- justmysocks to clash
+  - 💡 实测最简单的方式是将前司smb的clash配置文件中的url替换为自己的jmsocks信息，不需要在线订阅，直接复制一份clash配置文件直接改然后切换过去就可以生效
+  - [ClashX订阅配置Just My Socks的教程](https://sites.google.com/site/besttopvps/clashx-tutorial-steps-for-configuring-just-my-socks)
+
 ## proxy-cli-for-apps
 
 - 代理配置软件
@@ -557,6 +568,15 @@ export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890
 - https://github.com/tindy2013/subconverter /GPLv3/202408/cpp
   - https://github.com/tindy2013/subconverter/blob/master/README-cn.md
   - 在各种订阅格式之间进行转换的实用程序
+
+- https://github.com/CareyWang/sub-web /5.8kStar/MIT/202407/js/vue
+  - https://sub-web.netlify.app/
+  - 基于 vue-cli 与 tindy2013/subconverter 后端实现的配置自动生成。
+  - [现在你们机场订阅转换用什么？就是从机场自带的订阅转到 clash 或者 surge 或者小火箭这些的工具，可以自动测速，分流规则好一点的，并且维护起来方便的 - V2EX _202308](https://v2ex.com/t/965450)
+    - 这个项目就是个可视化配置界面,规则新不新你可以自己填的
+    - "远程配置" 这个输入框可以自己输入其他规则的 
+    - "后端地址" 这个输入框可以自己输入其他地址的 担心节点泄露的话可以自己部署一个 subconverter 服务
+    - 担心风险可以填个假的订阅链接，晚点再替换
 
 ## clash
 

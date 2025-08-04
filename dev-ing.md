@@ -361,6 +361,15 @@ test('mock test', () => {
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
 
+## 0804
+
+- ["parserOptions.project" has been set for @typescript-eslint/parser - Stack Overflow](https://stackoverflow.com/questions/58510287/parseroptions-project-has-been-set-for-typescript-eslint-parser)
+  - ESLint legacy config (version <= 8): update your ESLint config to use TypeScript rules only on TypeScript files
+  - [Relative TSConfig Projects with `parserOptions.project = true` | typescript-eslint](https://typescript-eslint.io/blog/parser-options-project-true/)
+    - As of typescript-eslint 5.52.0, we now support providing true for parserOptions.project
+    - Doing so indicates that each source file being linted should use type information based on the nearest tsconfig.json in its directory.
+    - For each file, @typescript-eslint/parser will check that file's directory, then the parent directory, and so on - until a tsconfig.json file is found.
+
 ## 0803
 
 - [fix: Remove `clone-deep` dependency in favor of native `structuredClone` · Pull Request · survivejs/webpack-merge _202407](https://github.com/survivejs/webpack-merge/pull/214)

@@ -14,6 +14,15 @@ modified: 2025-03-22T18:49:15.634Z
   - https://chat.vercel.ai/
   - A full-featured, hackable Next.js AI chatbot built by Vercel
 
+- https://github.com/python-ai-sdk/sdk /MIT/202508/python
+  - https://pythonaisdk.mintlify.app/
+  - The Vercel AI SDK, in Python
+  - A pure Python re-implementation of Vercel's popular AI SDK for TypeScript. 
+  - Zero-configuration functions that work consistently across providers with first-class streaming, tool-calling, and structured output support.
+  - Strong Pydantic types throughout: Strict structured-output generation and streaming via Pydantic models
+  - Provider-agnostic embeddings with built-in batching & retry logic
+  - Tiny dependency footprint - no bloated external frameworks
+
 - https://github.com/ChatGPTNextWeb/NextChat /MIT/202503/ts/tauri
   - https://nextchat.club/
   - Light and Fast AI Assistant. 

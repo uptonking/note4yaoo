@@ -110,7 +110,7 @@ modified: 2025-02-21T18:20:42.624Z
   - Collection of patches for puppeteer and playwright to avoid automation detection and leaks. 
   - Helps to avoid Cloudflare and DataDome CAPTCHA pages. 
   - Easy to patch/unpatch, can be enabled/disabled on demand.
-# computer-use
+# computer/container-use
 - https://github.com/bytedance/UI-TARS-desktop /9.6kStar/apache2/202503/ts
   - https://agent-tars.com/
   - A GUI Agent application based on UI-TARS(Vision-Language Model) that allows you to control your computer using natural language.

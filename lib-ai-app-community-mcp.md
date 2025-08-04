@@ -171,7 +171,7 @@ modified: 2025-02-03T10:17:42.052Z
 - You can test out a few chunkers here: https://chunkers.vercel.app
 
 - Actually the LangChain splitters (which is quite good) is not bundled, it's available as a separate package @langchain/textsplitters
-# discuss-ai-use-computer/browser
+# discuss-ai-use-browser/computer/container
 - ## 
 
 - ## 
