@@ -23,6 +23,11 @@ modified: 2025-03-22T18:49:15.634Z
   - Provider-agnostic embeddings with built-in batching & retry logic
   - Tiny dependency footprint - no bloated external frameworks
 
+- https://github.com/ben-vargas/ai-sdk-provider-claude-code /MIT/202507/ts
+  - lets you use Claude via the Vercel AI SDK through the official `@anthropic-ai/claude-code` SDK/CLI.
+  - Vercel AI SDK community provider for Claude Code SDK - Use Pro/Max Subscription via SDK
+  - This is the v5-beta compatible version. For AI SDK v4 support, use version 0.2.x.
+
 - https://github.com/ChatGPTNextWeb/NextChat /MIT/202503/ts/tauri
   - https://nextchat.club/
   - Light and Fast AI Assistant. 

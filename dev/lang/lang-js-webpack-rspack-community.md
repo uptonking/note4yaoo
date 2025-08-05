@@ -12,7 +12,11 @@ modified: 2024-01-03T16:14:53.804Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [RFC: Lazy make for reexports in side effects free barrel file · web-infra-dev/rspack _202508](https://github.com/web-infra-dev/rspack/discussions/11273)
+  - barrel file: a file that imports modules from other files and exports the said modules
+- https://x.com/rspack_dev/status/1952577747706142927
+  - Rspack v1.5 will introduce an experimental optimization that skips building unused reexports in side-effect-free barrel files.
+  - This reduces the build time of `import { Button } from 'antd'` from 528ms to 82ms.
 
 - ## I just discovered that nearly all bundlers(rspack webpack rollup esbuild) handle module externals incorrectly(or not following spec).
 - https://x.com/hardfist_1/status/1889287024743723053

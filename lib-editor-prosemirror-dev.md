@@ -80,13 +80,13 @@ modified: 2021-05-06T09:39:53.522Z
 # draft
 - roadmap
   - fwk agnostic noseditor: prosekit + atlaskit <> tiptap
+  - lasuite/colanode + diff-view
 
 - 🆚 diff-view
   - prosemirror-diff + codemirror-diff + (ai-writing)
   - diff support codeblock/table
-  - diff for tiptap extensions/schema
+  - diff for tiptap extensions/schema(rewrite tiptap diff)
   - diff for version-history-timeline
-  - rewrite tiptap diff
   - streamable diff
 
 - collab

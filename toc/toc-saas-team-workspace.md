@@ -658,9 +658,10 @@ modified: 2023-02-07T17:38:05.336Z
   - Robust networking and connectivity, UDP/TCP/TURN
   - Easy to deploy: single binary, Docker or Kubernetes
 
-- https://github.com/jitsi/jitsi-meet /apache2/202503/ts
+- https://github.com/jitsi/jitsi-meet /26.1kStar/apache2/202508/ts
   - https://jitsi.org/meet
   - Secure, Simple and Scalable Video Conferences that you use as a standalone app or embed in your web application.
+  - 支持 web, ios, android
   - Raise hand and reactions
   - Chat with private conversations
   - Virtual backgrounds

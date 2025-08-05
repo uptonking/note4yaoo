@@ -61,8 +61,9 @@ modified: 2025-06-21T19:10:57.709Z
 
 - editor
   - 如何将database的数据结构提取为适配多种编辑器的通用结构
-# dev-xp
 
+- search如何实现
+# dev-xp
 - build/run
   - 顶层的npm run build执行时可能出现部分子包未正确打包构建的问题，可到子包目录单独构建
   - vite访问站点出现import path not found时，发现由于网络问题部分node_modules下的包只下载了一部分不完整

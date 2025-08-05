@@ -14,6 +14,7 @@ modified: 2021-01-01T20:06:36.094Z
   - 多用css创建一次性组件，注意难以覆盖
   - 尽量在`style`属性中使用属性名和局部变量值，而不是`style={{'--var-prop': value}}`，减少抽象层次更便于理解，减少修改入口便于排查
   - 使用css vars实现theming，目前的主流方案，但不用css vars来做状态管理
+  - 👀 新的bundler对css-in-js的支持都不好，如不支持vanilla-extract/linaria
 
 - linaria pros
   - 基于css vars实现，现代浏览器的选择
@@ -23,6 +24,7 @@ modified: 2021-01-01T20:06:36.094Z
   - 🚨 编译构建依赖@linaria/webpack5-loader，且社区方案不多
     - 对业务代码中组件的导出顺序有要求，若先使用再导出会异常
     - 对三方包的代码不友好，使用了反引号模版字符串会异常，解决方法是fork三方包源码自己打包
+  - 就算bundler支持了打包，热加载需要 bundler 及 view框架如react-refresh 共同支持，开发体验也较差
   - css支持所有，但框架集成只支持react
   - 不直接支持动态样式
   - styled自身就是一个wrapper，引入了额外的计算

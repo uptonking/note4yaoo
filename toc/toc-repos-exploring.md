@@ -7,7 +7,20 @@ modified: 2020-11-03T06:55:09.225Z
 
 # toc-repos-exploring
 
+# guide
+
+# image
+- https://github.com/aoguai/LiYing /AGPL/202508/python/offline/仅win
+  - LiYing 是一套适用于自动化 完成一般照相馆后期证件照处理流程的照片自动处理的程序。
+  - 可以完成人体、人脸自动识别，角度自动纠正，自动更换任意背景色，任意尺寸证件照自动裁切，并自动排版。
+  - 可以完全离线运行。所有图像处理操作都在本地运行。
+  - 支持webui/cli/bat批处理脚本
+  - 注：本项目仅针对证件照图像处理，而非要求任意照片图像都可以完美执行，所以该项目的输入图片应该是符合一般要求的单人肖像照片。如果您使用复杂图片制作证件照出现意外情况属于正常现象。
+  - 人脸识别	Yunnet
+  - 人体识别	yolov8n-pose
+  - 主体识别替换背景	RMBG-1.4/2.0
 # collection
+
  
 
 - https://github.com/piotrkulpinski/openalternative /GPLv3/202403/ts

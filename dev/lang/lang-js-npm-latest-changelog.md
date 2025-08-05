@@ -74,3 +74,4 @@ modified: 2024-01-02T07:50:05.847Z
   - `npx` has been completely rewritten to use the `npm exec` command
   - npm uses the `package.exports` field making it no longer possible to require() npm’s internal modules.
 # more
+- [npm trusted publishing with OIDC is generally available - GitHub Changelog _202507](https://github.blog/changelog/2025-07-31-npm-trusted-publishing-with-oidc-is-generally-available/)

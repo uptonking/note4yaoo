@@ -67,6 +67,18 @@ modified: 2023-02-20T19:41:08.506Z
   - To increase the number of concurrent connections, one can host resources (e.g. images) in different domains. However, you cannot exceed `MaxConnections` , the maximum number of connections a browser will open in total - across all domains.
 - Host and domain are completely different. `ConnectionsPerHostname` means per subdomain. So if there are 2 sub domains it uses additional connections.if no subdomain then it means per domain.
 
+# discuss-news
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [What's new in DevTools, Chrome 139  |  Blog  |  Chrome for Developers _20250722](https://developer.chrome.com/blog/new-in-devtools-139)
+- To provide additional visual context to your prompts, you can now not only take automatic screenshots but also upload arbitrary images to your chats with Gemini in the AI assistance panel.
+  - 👀 注意大陆地区不支持此feature
+
+- In the Network panel, you can now right-click a column name in the requests table and select multiple `request headers` to add them as columns.
 # discuss
 - ## 
 

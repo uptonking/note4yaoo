@@ -222,9 +222,11 @@ modified: 2025-07-17T14:40:07.230Z
 
 - ## 
 
-- ## 
+- ## [✨(frontend) add multi columns support for editor _20250725](https://github.com/suitenumerique/docs/commit/11d0bafc94ff277232bcc4cfedbf80f6fc97e24f)
 
 - ## I saw the feature for Subpages got merged into main. v3.4.0 _20250710
+
+- [✨(frontend) create page from slash menu _20250731](https://github.com/suitenumerique/docs/commit/afa48b6675063bc8682bcd6df45b554541a89345)
 
 - ## [downgrade to docx 9.5.0 _202506](https://github.com/suitenumerique/docs/commit/9f222bbaa3c732d9e9fc5a391a868f6997f84806)
   - Prob compatibility issue with docx 9.5.1 and BlockNote. We downgrade to 9.5.0 for now until BlockNote is updated to support docx 9.5.1

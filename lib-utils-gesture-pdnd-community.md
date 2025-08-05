@@ -14,7 +14,9 @@ modified: 2024-03-08T05:29:35.446Z
 
 - ## 
 
-- ## 
+- ## If your app contains multiple scroll containers, consider adding `overscroll-behavior: none` to your html/body to prevent "page bounce"
+- https://x.com/joebell_/status/1952688097730158926
+
 # discuss-compatibility
 - ## 
 

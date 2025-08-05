@@ -1937,6 +1937,9 @@ modified: 2023-06-23T12:46:53.288Z
 
 ## playgrounds
 
+- playground-examples
+  - https://arktype.io/playground
+
 - https://github.com/vercel/satori /MPLv2/202411/ts
   - https://og-playground.vercel.app/
   - Enlightened library to convert HTML and CSS to SVG

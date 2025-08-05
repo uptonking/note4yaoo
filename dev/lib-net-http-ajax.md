@@ -282,6 +282,20 @@ modified: 2023-02-06T09:14:40.114Z
 
 - ## 
 
+- ## 
+
+- ## [Network features reference  |  Chrome DevTools](https://developer.chrome.com/docs/devtools/network/reference#save-as-har)
+- `HAR` (HTTP Archive) is a file format used by several HTTP session tools to export the captured data. 
+  - The format is a JSON object with a particular set of fields.
+  - To reduce the chances of accidental leaks of sensitive information, by default you can export the "sanitized" network log in HAR format that excludes sensitive information such as `Cookie, Set-Cookie, and Authorization` headers. 
+  - If required, you can also export the log with sensitive data.
+
+- Once you have a HAR file, you can import it back into DevTools for analysis in two ways:
+  - Drag-and-drop the HAR file into the Requests table.
+  - Click upload Import HAR in the action bar at the top of the Network panel.
+
+- Note: The Network panel reads and shows initiators for the requests imported from HAR files.
+
 - ## TIL: In browser, `fetch()` will hide any custom HTTP response header unless you have the `Access-Control-Expose-Headers` header in your response.
 - https://x.com/ocavue/status/1910344852803563845
 

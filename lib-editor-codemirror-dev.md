@@ -182,21 +182,21 @@ modified: 2021-05-06T09:38:31.520Z
   - virtualized
   - draggable block-style
   - table/database: multi-views, user-defined
-  - 🛝 markdown parser/highlight (lezer <> unified/remark)
-  - markdown sync scroll
-  - 尝试集成redux-devtools
-  - vscode fork with codemirror
 
 - roadmap
+  - 🛝 markdown parser/highlight (lezer <> unified/remark)
+  - markdown sync scroll
   - codemirror devtools
   - migrate monaco-playground to codemirror
+  - 尝试集成redux-devtools
+  - vscode fork with codemirror
+  - EditorView without virtualized viewport, 存在业务需求
 
 - later
-  - port to server side lang like prosemirror
+  - port to server side lang like prosemirror-go/python
     - hocuspocus for codemirror
     - codemirror-rust/go 🦀
   - migrate codemirror5 demos to codemirror6
-  - EditorView without virtualized viewport
   - 兼容tiptap的扩展api，底层替换为codemirror实现
   - code-block的实现最好默认可折叠
 
@@ -224,11 +224,12 @@ modified: 2021-05-06T09:38:31.520Z
   - 支持隐藏绿色部分或红色部分，隐藏后显示为普通文档且显示行号，切换显示隐藏时不用刷新页面
   - 红色部分支持copy和选中
   - git diff text formatter: 将被打乱的git-diff输出从一行格式化为分段
-  - diff for version-history-timeline
-  - diff for rich-text
+  - diff for version-history-timeline, 类似 vscode-timeline, git-graph-任意2个commit的diff
+  - diff for rich-text: table, code-block, image
   - 🆚️ 将vscode/monaco的diff逻辑迁移到codemirror
-    - diff算法的精确度较差，特别是对于增加一行的场景，cm-diff展示的效果是先删除一行再增加两行
     - 🤔 replace @codemirror/state with monaco-data-model, 目标是复用优化的diff逻辑、计算逻辑
+    - cm-diff算法的精确度较差，特别是对于增加一行的场景，cm-diff展示的效果是先删除一行再增加两行
+    - vscode-diff 支持显示code移动
   - codemirror-diff 作为 git diff 输出的view层
   - codemirror-diff对 yml/xml 的支持不好，yml中换行处未变动的部分也经常显示diff [found issue with MergeView: the diff function seems not working well when I use YAML or XML file - v6 - discuss. CodeMirror _202302](https://discuss.codemirror.net/t/found-issue-with-mergeview/5805)
 

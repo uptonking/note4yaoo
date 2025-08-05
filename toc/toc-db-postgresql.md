@@ -118,7 +118,21 @@ modified: 2023-10-26T15:28:53.748Z
 
 ## pg-like
 
-# mysql-powered
+# pg-ha/vitess
+- https://github.com/multigres/multigres /1.1kStar/apache2/202508
+  - https://multigres.com/
+  - Multigres is a project to build an adaptation of Vitess for Postgres.
+  - [How will Multigres be different from PlaneScale Vitess for Postgres _202507](https://github.com/multigres/multigres/discussions/23)
+    - Recently PlanetScale announced that they are gonna support Postgres. they mentioned that they will not use Vitess but rather build a new system from scratch (in the blog post also calling it "Vitess for Postgres").
+    - 👷: It's hard to infer much from that statement. All I can say is that Multigres is 100% open source and we'll be building it in public.
+  - [External contributions _202506](https://github.com/multigres/multigres/discussions/6)
+    - The initial phase of this project involves bulk-importing code from Vitess. This work requires intimate knowledge of Vitess, knowing what is generic vs what is MySQL specific.
+    - During this phase, we will not be accepting external contributions.
+  - [Announcing Multigres: Vitess for Postgres _202506](https://supabase.com/blog/multigres-vitess-for-postgres)
+    - Vitess is a database clustering system for scaling MySQL: Sharding, Connection pooling,Query routing, Resiliency and failover, Cloud-native orchestration (Kubernetes)
+    - Multigres is a new proxy that sits in front of your Postgres database. It shares the same goals as Vitess but it will be focused on the Postgres ecosystem. 
+    - Like Vitess, Multigres will be open source using the same license: Apache 2. 
+
 - https://github.com/wesql/wescale /apache2/202401/go
   - a database proxy that cares about your application, the development experience, and supports OnlineDDL.
   - fork自vitess的，但改造了它的架构，并且为它支持了读写分离、Read After Write Consistency、透明Failover等功能

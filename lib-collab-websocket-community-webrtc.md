@@ -13,6 +13,22 @@ modified: 2023-12-12T08:45:31.670Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## just intercepting a direct Undici request and handling it on the socket level in Node.js. Is this... socket-level interception, at last? _202508
+- https://x.com/kettanaito/status/1952733757037007059
+  - Doesn't patch Undici; 
+  - Doesn't re-configure Undici; 
+  - Doesn't patch "node:http"
+  - Works on the "node:net" level.
+- 👀 There's a price though. The interceptor now has to be imported before the client code. Previously, it was less sensitive to import order. "node:net" is way down low and as such gets subjected to import order issues.
+  - Which means that if we are to pursue this, you'd have to set up MSW as a part of your test environment. Some request clients, like XHR in JSDOM, come from environment and would have to be imported after the interceptor for the things to work.
+  - For "node:http"-based requests, all that you have to do is place the interceptor import before the client import. That's usually enough.
+
+- the biggest change here is that interceptors themselves will be able to switch to being protocol-first! Things like HttpRequestInterceptor vs ClientRequestInterceptor. This is huge.
+
+- Undici has really great tooling for mocking on its own, too! They've got MockAgent and mockDispatcher, IIRC, and they handle Undici-initiated requests really well. 
+
 - ## The repeating 2 and 3 messages in Chrome DevTools are Socket. IO heartbeat packets used to keep the connection alive. 
 - 2: A ping packet sent by the server to check if the client is alive.
   - 3: A pong packet sent by the client in response to a ping.

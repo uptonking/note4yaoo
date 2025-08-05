@@ -190,6 +190,9 @@ let view = new EditorView(document.body, {
 - 渲染出来的编辑器，默认内容为 `<p><br></p>`，`transaction.before.content.size`默认大小为2
 - 编辑器默认支持按backspace退格键删除、del删除键
 - 编辑器默认不支持enter换行
+# migrate/upgrade-prosemirror
+- 除src文件夹外包含style文件夹的包
+  - view, example-setup, gapcursor, menu, search, tables
 # prosemirror-mdx-dev
 - 一种实现思路是使用react组件作为NodeView，视图层用react封装prosemirror-view实现，一般基于portal渲染
   - pros：使用丰富的react组件和prosemirror插件
