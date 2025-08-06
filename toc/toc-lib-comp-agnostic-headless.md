@@ -232,6 +232,14 @@ modified: 2021-04-11T06:17:51.318Z
   - An headless editor built with blocks
   - The core of the editor. Written in vanilla JS.
 
+- https://github.com/fabian-hiller/formisch /224Star/MIT/202508/ts
+  - https://formisch.dev/
+  - The modular and type-safe form library for any framework
+  - Supported frameworks: Preact, Qwik, SolidJS, and Vue. Svelte will follow soon.
+  - https://x.com/FabianHiller/status/1952545041341100173
+    - What makes Formisch unique is its framework-agnostic core, It works by inserting framework-specific reactivity blocks when the core package is built. 
+    - TanStack Form is implemented with a framework-agnostic core that has its own reactivity system. This system is then connected to the framework you are using via framework-specific adapters. This differs from how Formisch works under the hood.
+
 - https://github.com/jieter/leaflet-headless
   - Leaflet for node.(Has Leaflet 1.1.x as dependency.)
   - Uses jsdom to fake ad DOM.

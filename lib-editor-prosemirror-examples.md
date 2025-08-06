@@ -580,6 +580,12 @@ modified: 2022-08-18T16:57:46.405Z
   - Built with [Tiptap](https://tiptap.dev/) + [Vercel AI SDK](https://sdk.vercel.ai).
   - 依赖tiptap、@vercel/kv/blob、nextjs、react-markdown.v8、tailwindcss
 
+- https://github.com/continuedev/continue /21.3kStar/apache2/202508/ts
+  - https://docs.continue.dev/
+  - Continue is the leading open-source AI code assistant. You can connect any models and any context to build custom autocomplete and chat experiences inside VS Code and JetBrains
+  - Tab to autocomplete code suggestions
+  - [Continue 实现原理 · Pines-Cheng/blog _202505](https://github.com/Pines-Cheng/blog/issues/108)
+
 - https://github.com/aieditor-team/AiEditor /1.5kStar/LGPLv2/202506/ts
   - https://gitee.com/aieditor-team/aieditor
   - https://aieditor.dev/
@@ -614,6 +620,13 @@ modified: 2022-08-18T16:57:46.405Z
   - https://tiptap-block-editor.web.app/
   - Notion style AI-powered block editor build with Tiptap + Vercel AI SDK + Shadcn + Tailwindcss.
   - This template used Gemini as AI model provider. You can change any provider supported by Vercel AI SDK models.
+
+## ai-pattern
+
+- https://github.com/taranek/prosemirror-ai-completion /202508/ts
+  - https://prosemirror-ai-completion.vercel.app/
+  - Prosemirror AI-completion demo
+  - 灰色显示修改文字，有打字机效果
 
 - https://github.com/gjc14/tiptap-streaming-preview /MIT/202410/ts/Remix
   - A compact demo of streaming Markdown from Google AI Gemini and save to Tiptap Extension demo
@@ -733,6 +746,12 @@ modified: 2022-08-18T16:57:46.405Z
   - https://github.com/specup/xen-editor
   - https://specup.github.io/xen-editor
   - Yet another React editor based on Prosemirror
+
+- https://github.com/Mo2men-dev/noqta-editor /MIT/202508/ts
+  - https://mo2men-dev.github.io/noqta
+  - customizable rich text editor for React. 
+  - Clean UI, extensible plugins, and built for modern web apps.
+  - WYSIWYG editing with semantic HTML output
 
 - start-editor /4Star/lic/202105/ts
   - https://github.com/NewBuilding/start-editor

@@ -78,7 +78,28 @@ modified: 2021-09-20T18:38:00.319Z
 
 - https://twitter.com/zhdsuperman/status/1776301948914090407
   - fb 没给 db 抽象实现，社区的实现各个语言质量差异太大了，版本化、鉴权、限流、安全、参数校验、测试，gateway 到 db 都要大改，就为了客户端请求调用方便一点，收益太小了。
+# discuss-rpc/ipc
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Made `bidc` — create bidirectional message channels between different JavaScript contexts (main document, worker, iframe, service worker, etc.)
+- https://x.com/shuding_/status/1953047622844846565
+  - This was highly inspired by the protocol of React Server Components and React Server Actions.
+
+- What made you create this? 
+  - Usually from real engineering pain points I’m trying to solve for a product I’m working on. If it’s a common problem and I got a good & general solution, I’d love to abstract it as a utility. 
+
+- Shall we try this for vscode extension webview <-> node communication 
+
+- Any plans to support Chrome extensions?
+
+- "Function reference store is getting large, it is not recommended to send anonymous and inline functions through the channel as they cannot be cached" can weak maps or finalization registry help here?
 # discuss
+- ## 
+
 - ## 
 
 - ## 

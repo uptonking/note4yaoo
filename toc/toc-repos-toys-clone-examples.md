@@ -11,6 +11,11 @@ modified: 2024-02-27T10:42:48.580Z
 - resources
   - [Repository dedicated to all my UI(clonoe) projects!](https://github.com/Pedro-Murilo/user-interface)
 # toys-react
+- https://github.com/ln-dev7/circle /2kStar/MIT/202508/ts
+  - https://circle.lndev.me/
+  - Project management interface inspired by Linear. 
+  - Built with Next.js and shadcn/ui, this application allows tracking of issues, projects and teams.
+
 - https://github.com/leoronne/github-ui-clone
   - https://github.ui-clone.ronne.dev/
   - 依赖material-ui.v4、axios、date-fns、react-router.v6、styled-components
@@ -55,9 +60,6 @@ modified: 2024-02-27T10:42:48.580Z
 - https://github.com/tuan3w/linearapp_clone
   - 依赖material-ui、redux4、styled-components、tailwindcss、rich-markdown-editor
   - 基本可用，且实现了列表组件和看板组件，但编辑器基本未修改
-
-- https://github.com/ln-dev7/circle
-  - Teams and Members page w/ shadcn-ui and linear's design
 
 - https://github.com/tiffanyw-hu/ReadBooks
   - https://readbooksapp.herokuapp.com/

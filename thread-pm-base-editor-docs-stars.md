@@ -14,6 +14,18 @@ modified: 2021-08-22T07:29:34.045Z
 
 - ## 
 
+- ## Gemini 的 Stroybook 太酷了, 只要上传一段文字或者提示词或者文档，就可以生成一本图文并茂的故事书，效果相当相当的好
+- https://x.com/dotey/status/1952954741777945071
+  - 只需简单描述你脑海里的故事，Gemini 就能为你自动创作一本独特的、10 页的个性化插画故事书，还带有温暖的有声朗读哦
+  - PS：默认是10张绘本并没有在系统提示词约束，而是可能是在工具中有限制，不过可以试试连载的效果。
+
+- 播放就伴随页面转换，很流畅，配图也很好
+
+- 哈基米是最大生产力的AI
+
+- ## Rspress 2.0.0-beta.25 supports UI display in plugin-llms, which is inspired from fumadocs and other docsites in the community.
+- https://x.com/Soon_Iter/status/1953026619536208379
+
 - ## 为啥 Copilot Edit 在 LLM 输出回答后，Applying Edits 那一步会那么慢。
 - https://x.com/oasisfeng/status/1903354770288488636
 - 看来 Dev AI 团队也做不到让 LLM 直接生成 patch 文件那样规范的代码变化。

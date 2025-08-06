@@ -303,7 +303,7 @@ modified: 2023-06-23T12:46:53.288Z
   - manual resizing of the editor (similar to html textarea)
   - custom linting
   - allow undo/redo toolbar buttons, 实现了UndoSelection
-  - CSV mode: add column paddings for alignment, navigate columns with tab / shift-tab; 支持markdown-table 📈
+  - 📈 CSV mode: add column paddings for alignment, navigate columns with tab / shift-tab; 支持markdown-table 📈
   - 支持emoji
 
 - https://github.com/imzbf/md-editor-rt /MIT/202407/ts/非及时预览
@@ -320,6 +320,19 @@ modified: 2023-06-23T12:46:53.288Z
     - vue3 环境的 Markdown 编辑器
   - https://github.com/imzbf/md-editor-extension
     - Common extensions for md-editor-v3 and md-editor-rt
+
+- https://github.com/Type-32/codemirror-rich-obsidian /202508/ts
+  - Obsidian-Flavored WYSIWYG Markdown Editor using CodeMirror 6
+
+- https://github.com/emdashcodes/codemirror-markdown-canvas /MIT/202506/ts
+  - a plugin for CodeMirror 6 that provides a rich editing experience for Markdown content.
+  - Inspired by Obsidian's Markdown Live Preview.
+  - The plugin takes advantage of the lezer-markdown tokenizer that comes with CodeMirror's Markdown language support. 
+
+- https://github.com/glifox/gnosis /MIT/202507/ts
+  - http://gnosis.feraxhp.com/
+  - GNOSIS is an extension-pack for codemirror to support WYSIWYG markdown 
+  - The Obsidian editor is nice but not Open Source... So I decided to start a new project.
 
 - https://github.com/marcoklein/noteberry /MIT/202204/ts/archived/notion-like
   - https://marcoklein.github.io/noteberry/
@@ -362,12 +375,35 @@ modified: 2023-06-23T12:46:53.288Z
   - https://replit.com/@util/codemirror-interact
   - A CodeMirror extension that lets you interact with different values (clicking, dragging, etc).
 
+- https://github.com/marimo-team/codemirror-ai /apache2/202508/ts
+  - https://marimo-team.github.io/codemirror-ai/
+  - 👾 A CodeMirror extension that adds AI-assisted inline code editing capabilities to your editor (like Continue.dev and Cursor)
+  - Accept/reject AI suggestions with a clean, modern interface
+  - 输入提示词实现为嵌入式卡片
+  - 🆚 ai的修改建议会显示为diff视图(无打字动画)，但accept后undo时不会恢复diff视图
+  - 还实现了在浮窗中显示suggest edit
+  - https://github.com/Oxen-AI/codemirror-copilot
+    - Integrating Oxen.ai's autocomplete into codemirror as a POC for Marimo notebooks
+
 - https://github.com/val-town/codemirror-codeium /ISC/202404/ts
   - https://val-town.github.io/codemirror-codeium/
   - Codeium code completion integration for CodeMirror 6
   - 👾 Copilot-like ghost text code from modeling-app by Jess Frazelle and based on Cursor.
     - 等1s会显示补全预览，支持切换8个补全方案
   - This makes requests against the Codeium hosted product, using their Protocol Buffer-based interface
+
+- https://github.com/yuri2peter/codemirror-ai-enhancer /MIT/202503/ts
+  - https://codemirror-ai-enhancer.vercel.app/
+  - extension that leverages AI to perform localized text modifications and continuations.
+  - 仅灰色修改提示，无diff
+  - Customizable LLM invocation
+
+- https://github.com/marimo-team/codemirror-mcp /apache2/202501/ts/inactive
+  - https://marimo-team.github.io/codemirror-mcp/
+  - A CodeMirror extension that implements the Model Context Protocol (MCP) for resource mentions and prompt commands.
+  - Autocomplete for @resource mentions, Use @resource-uri syntax to reference resources
+  - Autocomplete for /prompt commands
+  - 依赖 @modelcontextprotocol/sdk
 
 - https://github.com/sachinraja/rodemirror /MIT/202112/ts/inactive
   - React component for CodeMirror 6
@@ -417,6 +453,9 @@ modified: 2023-06-23T12:46:53.288Z
   - Code edit preview for React
   - 编辑代码时立刻刷新预览
   - 依赖@uiw/react-codesandbox、@uiw/react-codemirror
+
+- https://github.com/handlewithcarecollective/react-codemirror /MIT/202506/ts
+  - A simple library for safely integrating React and CodeMirror.
 
 - https://github.com/scniro/react-codemirror2 /MIT/202108/ts/v5/inactive
   - https://scniro.github.io/react-codemirror2/
@@ -478,10 +517,29 @@ modified: 2023-06-23T12:46:53.288Z
   - 详情页会显示Minimum app version、下载量
   - 搜索没有单独的页面
 
+- https://github.com/JPerez00/typesavior /202503/ts
+  - https://typesavior.vercel.app/
+  - Your AI JavaScript to TypeScript Converter.
+  - Code Conversion: Paste your JavaScript code and receive the TypeScript version.
+  - Detailed Summaries: Get concise explanations of the changes made 
+  - Model Selection: Choose between different OpenAI models for code conversion.
+  - TypeSavior uses the power of OpenAI's language models to convert your JavaScript code to TypeScript.
+
 - https://github.com/Sagargupta16/ai-code-translator /202311/ts
   - https://ai-code-translator-delta-six.vercel.app/
   - Use AI to translate code from one language to another
   - 依赖@uiw/react-codemirror、next
+
+- https://github.com/EditableBlock/EditableBlock /NonOpen
+  - https://editableblock.github.io/EditableBlock/
+  - EditableBlock 开发阶段快速测试平台 + 试用Demo
+  - MdEditor: 纯文本
+  - MdViewer: 渲染，使用markdown-it引擎 + EditableBlock 插件，不可编辑
+  - CodeMirror: 渲染，使用CodeMirror引擎 + EditableBlock 插件，可编辑
+  - CodeMirrorOld: 渲染，使用CodeMirror引擎，可编辑
+
+- https://github.com/oscarmarina/monaco-editor-vs-codemirror /MIT/202501/ts/inactive
+  - This project is a playground to compare the CodeMirror and Monaco Editor libraries
 
 ## typewriter/Text Generate Effect
 
@@ -491,6 +549,14 @@ modified: 2023-06-23T12:46:53.288Z
   - create a Typewriter Effect from scratch using native React and/or Javascript functions
   - 动画打字完undo会撤销所有字
   - 依赖codemirror6、@uiw/react-codemirror
+
+- https://github.com/gitdog01/AnimateTyping-cm6 /MIT/202507
+  - a plugin for CodeMirror 6 that adds dynamic CSS-based typing animations to your editor.
+  - As you type, visually engaging effects like bouncing letters, glowing text, and motion trails enhance the user experience 
+  - perfect for presentations, educational tools, or just making coding more fun.
+  - Multiple Animation Types: Choose from fadeIn, glow, shootingStar, rollingThunder, frenchFries, and bubble effects
+  - Configurable: Customize animation duration and style
+  - Only animates newly typed characters
 
 ### typewriter-css-only
 
@@ -666,6 +732,11 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/emberry-org/lemon-editor /GPLv3/202208/ts/inactive
   - a Rich Text Editor build upon Codemirror for the Emberry client.
+
+- https://github.com/unvalley/ephe /MIT/202508/ts/极简风格
+  - https://ephe.app/landing
+  - Ephe is an ephemeral markdown paper to organize your daily todos and thoughts.
+  - Ephe is designed to organize your tasks with plain Markdown.
 
 - https://github.com/retronav/ixora /apache2/202305/ts/inactive
   - a CodeMirror 6 extension pack to make writing Markdown fun and beautiful.
@@ -906,9 +977,12 @@ modified: 2023-06-23T12:46:53.288Z
   - Code Execution: Users can execute the code directly within the collaboration environment, providing instant feedback and results.
   - Collaborative Drawing: Enable users to draw and sketch collaboratively in real-time
 
-- https://www.npmjs.com/package/collaborative-codemirror /202312/crdt
-  - Makes a plain Codemirror editor instance collaborative by binding it to a JSON CRDT document str node. 
-  - This allows multiple users to edit the same document `json-joy` JSON CRDT document concurrently through the Codemirror editor.
+- https://github.com/YashNuhash/Realtime-Collaborative-Code-Editor
+
+- https://github.com/streamich/collaborative-codemirror /202407/ts/inactive
+  - Codemirror support for collaborative editing using JSON CRDT
+  - Makes a plain Codemirror editor instance collaborative by binding it to a JSON CRDT document str node.
+  - allows multiple users to edit the same document `json-joy` JSON CRDT document concurrently through the Codemirror editor.
   - https://www.npmjs.com/package/collaborative-editor
     - This package provides bindings a generic implementation for binding any plain text editor to a JSON CRDT string.
 
@@ -984,6 +1058,10 @@ modified: 2023-06-23T12:46:53.288Z
   - https://code.biomousavi.com/
   - A real-time collaborative code editor in your browser.
   - 依赖codemirror6、socket.io-client、vue3
+
+- https://github.com/YashNuhash/Realtime-Collaborative-Code-Editor /202504/ts
+  - A Real-time Collaborative Code Editor built with Next.js, Socket.io & Express.js Which Provides a Range of Powerful Features Like Instant Code Synchronization While Code Changes to Across all the Users
+  - Room-based Collaboration: Create or join coding rooms with unique room IDs
 
 - https://github.com/AlbertArakelyan/collaborative-markdown-editor-example /MIT/202405/ts
   - Collaborative Markdown Editor built on modern and simple web technologies with markdown editing libraries integrations
@@ -1087,6 +1165,10 @@ modified: 2023-06-23T12:46:53.288Z
   - cursor的代码修改使用了aider的codeblock diff格式
   - [Snapshot Compare extension | Tiptap Editor Docs](https://tiptap.dev/docs/collaboration/documents/snapshot-compare)
 
+- https://github.com/lfnandoo/codemirror-merge-fork /MIT/202508/ts
+  - Implement inverted effects in order to support undo/redo
+  - https://github.com/AlpineX-Labs/codemirror-merge
+
 - https://github.com/OrgFlow/codemirror-conflicts /MIT/202408/ts
   - A CodeMirror extension that displays Git conflict markers (`<<<<<<<` syntax) as side-by-side pieces of conflicting code, and provides an interface for accepting, copying, and deleting the chunks, with a top toolbar that shows information about remaining conflicts.
   - [Feasability Assessment: Extension to decorate conflict markers - v6 - discuss. CodeMirror _202407](https://discuss.codemirror.net/t/feasability-assessment-extension-to-decorate-conflict-markers/8459)
@@ -1126,7 +1208,7 @@ modified: 2023-06-23T12:46:53.288Z
   - This is a CodeMirror 6 extension that adds support for `.diff` files syntax.
 
 - https://github.com/codedownio/codemirror-compose-change /MIT/202306/ts/inactive
-  - Compose two sequential CodeMirror changes
+  - Compose two sequential CodeMirror changes, for v5
 
 - https://github.com/MrWangJustToDo/git-diff-view /MIT/202404/ts
   - https://mrwangjusttodo.github.io/git-diff-view/
@@ -1193,6 +1275,12 @@ modified: 2023-06-23T12:46:53.288Z
   - make your diffs human readable
   - Simply copy the `diff-so-fancy` script from the latest release into your `$PATH` and you're done.
 
+- https://github.com/aazzroy/VersaDiff /MIT/202503/python/js/inactive
+  - a modern open-source web app for comparing multiple code versions. 
+  - Using Python, Flask, CodeMirror, and Bootstrap, it offers interactive editors, dynamic language support, and clear diff visualizations to help developers quickly analyze code changes.
+  - Multi-Version Comparison: Compare between 2 to 5 versions of your code.
+  - Diff Visualization: Generates clear, color-coded HTML diff tables using Python's `difflib`.
+
 ## lint
 
 - https://github.com/duncanpierce/codemirror-reflector /MIT/202410/ts
@@ -1210,6 +1298,10 @@ modified: 2023-06-23T12:46:53.288Z
   - Demo: Contracting Linting in Codemirror6
   - Only few linting rules have been implemented
   - 示例lint python2代码
+
+- https://github.com/azu/codemirror-textlint /MIT/202507/ts
+  - https://azu.github.io/codemirror-textlint/
+  - CodeMirror 6 integration with textlint using @textlint/kernel.
 # extensions
 - https://github.com/val-town/codemirror-ts /ISC/202503/ts
   - https://val-town.github.io/codemirror-ts/
@@ -1236,6 +1328,12 @@ modified: 2023-06-23T12:46:53.288Z
   - 纯前端的hover/autocomplete/lint
   - vite构建时会打包类型 `const types = import.meta.glob("../../../../node_modules/typescript/lib/*.d.ts", { eager: true, as: "raw" });`
 
+- https://github.com/handlebauer/codemirror-extensions /202502/ts/inactive
+  - A powerful set of sidebar extensions for CodeMirror 6 that adds file explorer and AI assistance capabilities to your editor. 
+  - Sidebar Framework: A flexible and customizable sidebar system that can be docked to either side of the editor
+  - File Explorer: A full-featured file explorer panel for navigating and managing your project files
+  - AI Assistant: An intelligent coding assistant panel with support for multiple AI models
+
 - https://github.com/exuanbo/codemirror-toolkit /MIT/202312/ts/侧重架构组织而弱功能
   - A batteries-included toolset for efficient development of CodeMirror 6 based editors (w/o React).
   - https://github.com/code4mk/codemirror-toolkit /202208/ts/inactive
@@ -1257,9 +1355,21 @@ modified: 2023-06-23T12:46:53.288Z
   - A CodeMirror 6 extension providing an interactive view of a document's syntax tree
   - ⛏ 更偏向于作为codemirror的devtools
   - https://github.com/overleaf/codemirror-autocomplete
-  - https://github.com/overleaf/codemirror-search
 - https://github.com/GamerGirlandCo/datacore-autocomplete
   - codemirror autocompletion for datacore
+
+- https://github.com/overleaf/codemirror-search
+  - https://github.com/GavinRigsby/codemirror-vscodeSearch /MIT/202504/ts
+    - A VS Code style search and replace control for codemirror
+    - built on top of the core @codemirror/search
+    - Toggle options: Regex, Case Sensitivity, Whole Word
+    - Fully integrated with CodeMirror's state and view systems
+
+- https://github.com/GavinRigsby/codemirror-symboltree /MIT/202504/ts
+  - extension that provides a Symbol Tree sidebar for visualizing the symbols in your code
+  - It allows you to explore the structure of your code just like the Outline view in vscode
+  - The sidebar displays a hierarchical tree of symbols (functions, classes, variables, etc.) with nesting, making it easier to navigate large codebases.
+  - The extension leverages the Abstract Syntax Tree (AST) from any language extension used for syntax highlighting. 
 
 - https://github.com/jmkng/sen /MIT/202310/ts
   - Simple, reusable CodeMirror (v6+) extensions: markdown bold, heading, block
@@ -1314,6 +1424,9 @@ modified: 2023-06-23T12:46:53.288Z
   - Codemirror extension for read-only ranges
   - This library aims to help you dealing with read-only ranges on CodeMirror 6.
 
+- https://github.com/WtecHtec/codemirror-placeholder-plugin
+  - 可以创建可编辑的占位符区域
+
 - https://github.com/dimfeld/codemirror-json5 /MIT/202306/ts
   - This package implements JSON5 support for Codemirror 6.
 
@@ -1337,6 +1450,10 @@ modified: 2023-06-23T12:46:53.288Z
   - an extension for CodeMirror 6 to add a clickable link icon next to a valid URL.
   - SVG Icon and CSS style are from @uiwjs/react-codemirror/hyper-link
 
+- https://github.com/cookshack/codemirror-bracket-matching /MIT/202503/ts
+  - extension for highlighting matching brackets
+  - Based on the builtin CodeMirror bracket matching, with two additional options for the config argument of bracketMatching: `directional/enclosing`
+
 - https://github.com/eriknewland/rainbowbrackets /202304/js/inactive
   - https://codepengpt.netlify.app/
   - This is a working attempt at a rainbowBracket extension for CodeMirror6.
@@ -1357,6 +1474,7 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/justinfagnani/codemirror-elements /MIT/202308/ts/inactive
   - A set of HTML custom elements for editing source code with CodeMirror.
+  - Extensions are also HTML elements that you add as children of `<cm-editor>`
 
 - https://github.com/flawiddsouza/code-mirror-custom-element /MIT/202312/js
   - https://flawiddsouza.github.io/code-mirror-custom-element/
@@ -1365,10 +1483,6 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/0xdevalias/userscripts/tree/main/userscripts/github-gist-codemirror-resizer
   - Makes the CodeMirror editor resizable when creating/editing a gist on GitHub
-
-- https://github.com/JackieScorpio/convert-json-to-ts /MIT/202404/ts
-  - use codemirror and vscode webview to achieve a vscode extension
-  - Convert Json to Typescript
 
 - https://github.com/A99US/codemirror-6-snippetbuilder /MIT/202304/js
   - This is a function for CodeMirror 6 to convert a standard array of snippet (like this one) and turn it into snippet array that is ready to use in CodeMirror 6 extension.
@@ -1446,7 +1560,28 @@ modified: 2023-06-23T12:46:53.288Z
   - https://realdennis.github.io/md2pdf/
   - https://md2pdf.netlify.com/
   - Offline markdown to pdf, choose -> edit -> transform
+- https://github.com/sahilatahar/markdown2pdf
+  - An Impressive Markdown to PDF Converter
+
+## utils-vscode
+
+- https://github.com/samestep/codemirror-vscode /MIT/202504/ts
+  - CodeMirror as a VS Code extension.
+  - Use the Open in CodeMirror command (bound to ctrl+alt+c ctrl+alt+m by default) to open the current file in a new CodeMirror editor.
+
+- https://github.com/JackieScorpio/convert-json-to-ts /MIT/202404/ts
+  - use codemirror and vscode webview to achieve a vscode extension
+  - Convert Json to Typescript
+
+- https://github.com/greeenboi/vscodex /202402/ts/inactive
+  - Vs code Clone
+  - 依赖codemirror6、tauri
 # lsp
+- https://github.com/codemirror/lsp-client /MIT/202508/ts
+  - Language server protocol client for CodeMirror
+  - https://github.com/andy0130tw/codemirror-lsp-client-demo /202507/ts
+    - Demo on wiring up tsserver with CodeMirror's lsp-client module
+
 - https://github.com/FurqanSoftware/codemirror-languageserver /161Star/BSD/202502/ts/inactive
   - Language Server integration for CodeMirror6
   - This plugin enables code completion, hover tooltips, and linter functionality by connecting a CodeMirror 6 editor with a language server over WebSocket.
@@ -1611,15 +1746,11 @@ modified: 2023-06-23T12:46:53.288Z
 
 ## utils-lang
 
-- https://github.com/M-AnasGit/Codemirror-custom-highlighting /202410/ts
-  - Using codemirror in react for custom syntax highlighting
-  - This project demonstrates how to integrate CodeMirror into a React application and implement custom syntax highlighting. 
-  - The example highlights any text wrapped in !{} with a specific style using CodeMirror's extensions API.
-  - Uses `@uiw/react-codemirror` for seamless integration of CodeMirror with React.
+- https://github.com/codemirror/lang-markdown
+  - Language support for GFM plus subscript, superscript, and emoji syntax.
 
-- https://github.com/craftzdog/react-codemirror-runmode /MIT/202503/ts
-  - Syntax highlighting for react, utilizing CodeMirror6's parser
-  - It automatically loads the language metadata and dynamically loads language parser modules based on the specified language.
+- https://github.com/cookshack/codemirror-lang-csv /MIT/202411/js/inactive
+  - Minimal CSV language package for CodeMirror 6, with basic rainbow highlighting.
 
 - https://github.com/cookshack/codemirror-lang-lezer-tree /MIT/202409/js
   - Language support for Lezer trees, for CodeMirror 6
@@ -1664,7 +1795,27 @@ modified: 2023-06-23T12:46:53.288Z
   - https://eecavanna.github.io/monocle
   - Web-based visualizer for Makefiles
   - You can use it to view a Makefile as a graph of its targets and their dependencies—in your web browser.
+
+- https://github.com/citedrive/lang-bibtex /MIT/202508/ts
+  - BibTeX language support for the CodeMirror editor.
+  - https://github.com/TeXlyre/codemirror-lang-bib
+
+- https://github.com/xavierog/codemirror-mode-nginx-renewed
+  - This is a CodeMirror mode that provides syntax highlighting for nginx configuration files.
 # syntax-highlighting
+- https://github.com/M-AnasGit/Codemirror-custom-highlighting /202410/ts
+  - Using codemirror in react for custom syntax highlighting
+  - This project demonstrates how to integrate CodeMirror into a React application and implement custom syntax highlighting. 
+  - The example highlights any text wrapped in !{} with a specific style using CodeMirror's extensions API.
+  - Uses `@uiw/react-codemirror` for seamless integration of CodeMirror with React.
+
+- https://github.com/litingyes/shikimirror /MIT/202503/ts
+  - Integrate Shiki into CodeMirror
+
+- https://github.com/craftzdog/react-codemirror-runmode /MIT/202503/ts
+  - Syntax highlighting for react, utilizing CodeMirror6's parser
+  - It automatically loads the language metadata and dynamically loads language parser modules based on the specified language.
+
 - https://github.com/highlightjs/highlight.js /24.5kStar/BSD/202507/js
   - https://highlightjs.org/
   - https://highlightjs.readthedocs.io/en/latest/readme.html
@@ -1905,6 +2056,12 @@ modified: 2023-06-23T12:46:53.288Z
   - 依赖codemirror6、lezer、shadcn、reactflow、dexie
   - 功能似乎无法正常使用
 
+- https://github.com/ShankarDutta/codecraft-webapp /MIT/202508/ts
+  - https://codecraft-v1.netlify.app/
+  - CodeCraft is a frontend code playground built with React, Next.js, CodeMirror, and shadcn/ui. 
+  - It lets users write and preview HTML, CSS, and JavaScript in real time
+  - Built with technologies like Next.js, React, @uiw/react-codemirror, and Tailwind CSS
+
 - https://github.com/BaseMax/MarkdownLiveEditor /202411/js
   - Real-time Markdown editor with live preview support, automatic scrolling synchronization and full support for right-to-left (RTL) languages. Built using CodeMirror and Marked.js.
 
@@ -1935,6 +2092,10 @@ modified: 2023-06-23T12:46:53.288Z
 - code-play
   - https://github.com/xorazmiy-dev/code-mirror /js
 
+- https://github.com/val-town/playground /MIT/202505/ts
+  - This repository provides a React component that you can use to embed an interactive coding playground on a website that uses Val Town to execute code.
+  - `<Playground env={{ YOUR_API_KEY: 'something' }} code="console.log(1);" workerPath="/public/worker.ts" />`
+
 ## playgrounds
 
 - playground-examples
@@ -1946,6 +2107,18 @@ modified: 2023-06-23T12:46:53.288Z
   - ✨ 提供了支持可视化配置的playground
   - 不支持html字符串渲染和dangerouslySetInnerHTML
   - What if there’s a `<Satori>` component that adds fluid layout & style transitions to your elements?
+
+- https://github.com/divriots/universal-story-render /202205/ts/inactive
+  - Universal story renderer, compatible with most JS UI frameworks out there.
+
+## repl
+
+- https://github.com/rspack-contrib/rspack-repl /202508/ts
+  - https://repl.rspack.rs/
+  - The REPL for Rspack based on @rspack/browser.
+  - https://x.com/WhoKnow50498590/status/1952523801092403358
+    - rspack/browser means bundle on the browser side?
+    - Yep, run rspack build in your browser
 # starter
 - https://github.com/nothingislost/obsidian-cm6-attributes /202112/ts/inactive
   - This reference plugin implements a ViewPlugin which will parse the markdown syntaxTree and add various Decorations to enhance the editor.
@@ -1994,10 +2167,6 @@ modified: 2023-06-23T12:46:53.288Z
   - electron + vite + CodeMirror 6 + remark
   - [How to build a Markdown editor using Electron, ReactJS, Vite, CodeMirror, and Remark - YouTube ](https://www.youtube.com/watch?v=gxBis8EgoAg)
 
-- https://github.com/greeenboi/vscodex /202402/ts
-  - Vs code Clone
-  - 依赖codemirror6、tauri
-
 - https://github.com/Bilal-Belli/Basic-IDE /MIT/202403/js
   - This is a basic Desktop IDE made using ElectronJS NodeJS CodeMirror and JsTree, jquery
 - https://github.com/RAGHAV-N5/CodeIt /202312/js
@@ -2038,6 +2207,14 @@ modified: 2023-06-23T12:46:53.288Z
   - https://quick-planner.vercel.app/
   - a fast calendar routine generator
   - export ics to Import into any calendar
+
+- https://github.com/Hussseinkizz/writter-desktop /202506/ts
+  - The fully offline-first desktop minimalistic markdown editor for your notes and thoughts
+
+- https://github.com/BruceHong666/xwsitch-v3 /MIT/202508/ts
+  - A modern HTTP request forwarding and debugging tool for developers, built with React, TypeScript, and Manifest V3.
+  - This project is deeply inspired by [xswitch](https://github.com/yize/xswitch)
+  - Why Rewrite: With the release of Chrome Extension Manifest V3, the classic xswitch extension can no longer run properly in modern browsers 
 
 - https://github.com/danielgolden/volon /202408/ts/vue
   - https://volon.app/
@@ -2367,6 +2544,12 @@ modified: 2023-06-23T12:46:53.288Z
   - https://copilot.asadmemon.com/
   - CodeMirror extension to add GPT autocompletion like GitHub's Copilot
   - This code is based on codemirror-extension-inline-suggestion
+
+- https://github.com/continuedev/continue /21.3kStar/apache2/202508/ts
+  - https://docs.continue.dev/
+  - Continue is the leading open-source AI code assistant. You can connect any models and any context to build custom autocomplete and chat experiences inside VS Code and JetBrains
+  - Tab to autocomplete code suggestions
+  - [Continue 实现原理 · Pines-Cheng/blog _202505](https://github.com/Pines-Cheng/blog/issues/108)
 
 - https://github.com/useScriba/useScriba /202308/ts
   - https://docs.usescriba.com/

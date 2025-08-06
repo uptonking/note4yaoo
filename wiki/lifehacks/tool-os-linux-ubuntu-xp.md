@@ -16,6 +16,12 @@ modified: 2021-01-01T22:26:57.773Z
     - 系统级的launcher集成在菜单中，操作方便，第三方launcher需要自动启动和替换默认
   - 桌面甚至是不必要的，更推荐类似mac的spotlight
   - 更建议使用系统自带search和spotlight，操作更编辑无覆盖，无需重复索引
+
+- pros-linux/ubuntu
+  - 开发方便
+
+- cons-linux/ubuntu
+  - 很多热门软件不提供linux版，如ide-trae/kiro
 # usage
 - 查看各程序网络带宽占用
   - sudo apt-get install nethogs

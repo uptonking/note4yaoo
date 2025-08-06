@@ -100,6 +100,25 @@ modified: 2023-11-01T14:13:41.390Z
 # discuss-pg-mysql
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Postgres vs MySQL table storage is a fascinating study in architectural trade-offs:
+- https://x.com/BenjDicken/status/1953121213829791804
+- Postgres: Uses table row array files + separate index files
+  - The Postgres architecture has all table data stored separately from indexes.
+  - All indexes, including PK indexes, are stored in separate files.
+  - All rows are stored in a large array of pages on disk. Row inserts and updates always produce a whole new version of the row, either in existing free space or by appending new pages to the file.
+  - Postgres maintains the old version and the new version of updated rows for MVCC purposes, and old pages can later be cleaned up by VACUUMing. 
+
+- MySQL: Table data stored in clustered B-tree indexes
+  - In MySQL (with InnoDB), all table data is stored in a B-tree. 
+  - The primary key is used as the tree key, and the rest of the columns are used as the values.
+  - The advantages for Postgres here are less read/write blocking and simpler MVCC design. 
+  - The big con is table bloat. Data size can get out of control fast unless you're careful about doing regular VACUUMs or use something like pg_repack.
+  - MySQL minimizes table bloat due to the node-merging capabilities of a B-tree and leveraging an undo log for MVCC.
+
 - ## 🔀 The most interesting difference between MySQL and Postgres is the choice of parallelism model.
 - https://x.com/BenjDicken/status/1948140242122473826
   - MySQL: multi-threaded

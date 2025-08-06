@@ -54,6 +54,11 @@ modified: 2023-09-02T09:17:22.992Z
     - CodeSandbox 本质上是在浏览器中运行的简化版 Webpack
     - 本方案主要对 Vite / esm.sh 等开源方案的改造，再结合 Web Worker / Service Worker / Broadcast Channel / Cache Storage / iframe 等浏览器技术，以实现在浏览器中对前端应用按照 bundless 模式进行实时构建的目的
 
+- https://github.com/divriots/browser-vite /600Star/MIT/202203/ts/inactive
+  - This is a fork of vite v2 which aims at being used in a browser (served by service worker).
+  - Used in Backlight.dev and in the upcoming Replic.dev
+  - [Vite in the browser _202203](https://divriots.com/blog/vite-in-the-browser)
+
 - https://github.com/endojs/endo /apache2/js
   - a distributed secure JavaScript sandbox, based on SES
   - Endo is a JavaScript platform under development for secure communication among objects within one process and distributed between mutually suspicious machines

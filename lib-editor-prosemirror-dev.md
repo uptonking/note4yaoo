@@ -49,6 +49,7 @@ modified: 2021-05-06T09:39:53.522Z
   - manuscripts
   - 美团学城
   - chatwoot
+  - llm: open-webui
 
 - roadmap-toys
   - prosemirror offline / local-first
@@ -84,7 +85,7 @@ modified: 2021-05-06T09:39:53.522Z
 
 - 🆚 diff-view
   - prosemirror-diff + codemirror-diff + (ai-writing)
-  - diff support codeblock/table
+  - diff support codeblock/table, 📈 pivotable + diff
   - diff for tiptap extensions/schema(rewrite tiptap diff)
   - diff for version-history-timeline
   - streamable diff

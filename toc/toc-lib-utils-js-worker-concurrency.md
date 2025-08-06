@@ -30,16 +30,9 @@ modified: 2024-01-30T14:41:38.742Z
   - In fairly rare cases, you may wish to make parallel connections between two participants. Penpal provides the concept of channels. 
 
 - https://github.com/psd-coder/typed-channel
-  - Evil Martians just released a new open source tool for TypeScript to add types to postMessage for communication via Web Workers, BroadcastChannel, etc.
+  - Evil Martians just released a new open source tool for TypeScript to add types to `postMessage` for communication via Web Workers, BroadcastChannel, etc.
 
-- evolu /101Star/GPLv3/202210/ts
-  - https://github.com/evoluhq/evolu
-  - https://www.evolu.dev/
-  - React Hooks library for local-first software with end-to-end encrypted backup and sync using SQLite and CRDT
-  - 依赖fp-ts、protobuf、kysely、murmurhash、~~zod~~
-  - 提供了dbworker.worker
-
-- https://github.com/web-infra-dev/unport /MIT/202407/ts/还可参考openrpc
+- https://github.com/web-infra-dev/unport /35Star/MIT/202407/ts/inactive/还可参考openrpc
   - A Universal Port with strict type inference capability for cross-JSContext communication.
   - Unport emerges as a well-architected solution, meticulously designed to simplify the complexity revolving around various JSContext environments.
     - Node.js, ChildProcess, Webview, Web Worker, worker_threads, WebSocket, iframe, MessageChannel, ServiceWorker, and much more.
@@ -49,6 +42,17 @@ modified: 2024-01-30T14:41:38.742Z
     - a MessageDefinition is a crucial concept that defines the structure of the messages that can be sent and received through a Channel.
     - a Channel is a fundamental concept that represents a Intermediate communication pathway between different JavaScript contexts
   - unrpc: Starting with the 0.6.0 release, we are experimentally introducing support for Typed RPC
+
+- https://github.com/shuding/bidc /100Star/MIT/202508/ts
+  - A bidirectional channel library for asynchronous communication support across JavaScript contexts.
+  - Unlike traditional `postMessage` APIs, BIDC enables seamless communication between different JavaScript execution contexts (workers, iframes, service workers) with full support for complex data types, with Promises and Async Functions, via a custom streaming protocol.
+  - It also handles re-establishing connections if one side is reloaded (e.g., an iframe) and buffers messages until the other side is ready to receive them.
+  - Complex Data Types: Seamlessly transfer Dates, RegExp, Maps, Sets, ArrayBuffers, TypedArrays, and more
+  - Asynchronous: Promises and Async Functions remain as first-class citizens during transfer
+  - Concurrent Operations: Handle multiple simultaneous messages without blocking
+  - https://x.com/shuding_/status/1953047622844846565
+    - This was highly inspired by the protocol of React Server Components and React Server Actions.
+    - "Function reference store is getting large, it is not recommended to send anonymous and inline functions through the channel as they cannot be cached" can weak maps or finalization registry help here?
 
 - https://github.com/StudentOfJS/query-plus
   - fetch and process data in web worker, store in indexedDB.
@@ -102,6 +106,13 @@ modified: 2024-01-30T14:41:38.742Z
   - It provides a controller class, with some defaults.
   - [Secure Data Connections with SafeJS • Decipad's Blog_202308](https://www.decipad.com/blog/introducing-safejs-a-secure-way-to-integrate-data)
 # worker-examples
+- evolu /101Star/GPLv3/202210/ts
+  - https://github.com/evoluhq/evolu
+  - https://www.evolu.dev/
+  - React Hooks library for local-first software with end-to-end encrypted backup and sync using SQLite and CRDT
+  - 依赖fp-ts、protobuf、kysely、murmurhash、~~zod~~
+  - 提供了dbworker.worker
+
 - [Excel export web worker script](https://gist.github.com/damoresa/77b40cd393d1606ea10c92a4d802d32c)
 
 - https://github.com/dai-shi/react-worker-components

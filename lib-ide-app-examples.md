@@ -223,10 +223,11 @@ modified: 2024-08-24T16:30:20.218Z
 
 ## vscode-ext-ai
 
-- https://github.com/continuedev/continue /21.3kStar/apache2/202501/ts
+- https://github.com/continuedev/continue /21.3kStar/apache2/202508/ts
   - https://docs.continue.dev/
   - Continue is the leading open-source AI code assistant. You can connect any models and any context to build custom autocomplete and chat experiences inside VS Code and JetBrains
   - Tab to autocomplete code suggestions
+  - [Continue 实现原理 · Pines-Cheng/blog _202505](https://github.com/Pines-Cheng/blog/issues/108)
 
 - https://github.com/twinnydotdev/twinny /MIT/202408/ts
   - https://twinny.dev/

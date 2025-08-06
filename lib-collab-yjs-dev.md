@@ -38,6 +38,7 @@ modified: 2022-04-05T10:10:59.826Z
   - jupyter
   - gutenberg
   - apps: linear, Gitbook, Evernote, Appflowy(yrs), AppMaster
+  - llm: open-webui
   - more: Serenity Notes, Skiff
   - [Yjs in the Wild | Yjs Docs](https://docs.yjs.dev/yjs-in-the-wild)
 

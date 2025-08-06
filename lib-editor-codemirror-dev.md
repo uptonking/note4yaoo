@@ -30,6 +30,7 @@ modified: 2021-05-06T09:38:31.520Z
 - cons (部分缺点其他代码编辑器也存在)
   - 非开箱即用，需要组装模块
   - collab基于ot变体，非标准ot
+  - 不如prosemirror的方面: pagination
   - ssr默认不支持, 但有方案支持
   - 顶层容器不支持CSS transform 3d，但支持transform2d(用于画板缩放的场景, 但ace/monaco支持3d，有改进)
   - 使用了自定义css-in-js方案(runtime-css会降低性能)，但也支持css覆盖样式
@@ -216,7 +217,8 @@ modified: 2021-05-06T09:38:31.520Z
   - katex
 
 - lang
-  - codemirror markdown streamable
+  - markdown streamable
+  - markdown 支持gfm/wiki
   - replace lezer with tree-sitter
 
 - diff-view
@@ -225,7 +227,7 @@ modified: 2021-05-06T09:38:31.520Z
   - 红色部分支持copy和选中
   - git diff text formatter: 将被打乱的git-diff输出从一行格式化为分段
   - diff for version-history-timeline, 类似 vscode-timeline, git-graph-任意2个commit的diff
-  - diff for rich-text: table, code-block, image
+  - diff for rich-text: table, code-block, image, 📈 pivotable + diff
   - 🆚️ 将vscode/monaco的diff逻辑迁移到codemirror
     - 🤔 replace @codemirror/state with monaco-data-model, 目标是复用优化的diff逻辑、计算逻辑
     - cm-diff算法的精确度较差，特别是对于增加一行的场景，cm-diff展示的效果是先删除一行再增加两行

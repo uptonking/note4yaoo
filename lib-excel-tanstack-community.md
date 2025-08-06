@@ -14,7 +14,27 @@ modified: 2023-03-01T13:00:27.664Z
 
 - ## 
 
-- ## 
+- ## 🏘️ My new form library Formisch is already available for @preactjs , @QwikDev , @solid_js and @vuejs . @sveltejs will follow soon _202508
+- https://x.com/FabianHiller/status/1952555778612629507
+  - What makes Formisch unique is its framework-agnostic core, which is fully native to the framework you are using
+  - It works by inserting framework-specific reactivity blocks when the core package is built. The result is a small bundle size (<= 2.5 kB gzip) and native performance for any UI update
+  - This feature, along with a few others, distinguishes Formisch from other form libraries. My vision for Formisch is to create a framework-agnostic platform similar to @vite_js , but for forms.
+- As I understand it, TanStack Form is implemented with a framework-agnostic core that has its own reactivity system. This system is then connected to the framework you are using via framework-specific adapters. This differs from how Formisch works under the hood. Is my assumption correct?
+  - That's correct
+
+- Does it also cover complex features like nested forms and async validation?
+  - For validation we are using Valibot which supports async validation. But besides that you can also write your own validation logic and call `setErrors` to control the form programmatically.
+
+- 🤔 Are there specific reasons behind the lack of support for React?
+  - Yes. Most frameworks, besides React, use signals for their reactivity system. Although there are differences between the frameworks, the general concept remains the same. This makes them easy to support. 
+  - However, React's reactivity system is based on rerunning components, which complicates building a complex system if you don't want to rerender the entire form with every keystroke. Therefore, supporting React in a performant and reliable way requires a lot more effort.
+
+- Could you add enhance schema validation  by supporting standardschema?
+  - No, not right now. Formisch "walks" the Valibot schema to initialize the reactive store of the form, where every state is its own signal. 
+- Standard Schema does not provide the functionality to "walk" a schema because every schema library is implemented differently internally and this is almost impossible to standardise. What schema library would you like to use?
+  - I want to use @arktypeio and ajv. That's why I asked. Maybe standardschema need to provide a way to walk the schema
+- We will probably support them at some point, but depending on a non-modular schema library like ArkType or AJV goes against the idea of a modular form library. 
+  - Currently, using Formisch with Valibot adds less than 3.5 kB to your bundle. ArkType would increase this number by four times, and AJV would increase it by more than eight times.
 # discuss-author
 - ## 
 
@@ -72,6 +92,26 @@ modified: 2023-03-01T13:00:27.664Z
 
 - What do u mean component route?
   - Components as nested routes.
+# discuss-store/db
+- ## 
+
+- ## 
+
+- ## 🔁 How does TanStack DB, Store, and Query fit together? _20250806
+- https://x.com/penberg/status/1952995106966958316
+  - DB is the reactive client store using differential data flow to provide live queries. 
+  - Query is a general purpose data access interface to bring data over (for example, from REST API or database). 
+  - But what is store? And how do sync frameworks like Electric fit the picture -- they seem to integrate with DB, but not query?
+
+- Store is a lightweight signals implementation thats framework agnostic - perfect for react where there is no built in signals system for storing and computing application state.
+  - DB grew out of our investigations into how to integrate sync with Query...
+  - sync breaks the normal 'optimistic state while fetching” that Query supports into ‘optimistic state until we see the firm state come back through the sync’. Making that work with Query was complex and we couldn’t find a good DX. 
+  - We also found that with sync you want to sync the normalised tables, rather than a pre-joined data structure. To do that you then need a way to construct the expressive structures that you want for the UI on the client.
+  - 🤔 We also found that real applications often have many different datastore that are used to build the front end, you need a sync capable store that can join with non-synced data, and that store can’t be tied to a single sync engine. Hence DB was born.
+  - So while we are the main contributors to it, the intention is that the on rap is via Query and then to *any* sync engine. It’s very important to us that thats the case and we will help and support anyone building a sync engine integration.
+
+- https://x.com/penberg/status/1953102852974350423
+  - I switched my example project to use TanStack DB with the Turso serverless driver, and the UI is now incredibly responsive and slick
 # discuss
 - ## 
 

@@ -104,7 +104,7 @@ modified: 2022-10-22T18:47:16.228Z
   - Basically what I’m curious about is whether you could replicate ProseMirror data using Yjs, but still write ProseMirror plugins without needing to “know” that Yjs was handling remote state updates (e.g. where you could, for example, rely on transaction steps + step maps to figure out what ranges have changed during a given remote sync).
 - Oh, no, that does seem like a sure way to break almost every ProseMirror plugin ever written.
 - Yes, there is. I gave an outline here: ProseMirror + CRDT's? . 
-  - 👉🏻️ The idea is to compute the steps based on the diff of the new and the old state of the document.
+  - 🆚 The idea is to compute the steps based on the diff of the new and the old state of the document.
   - From my personal experience computing “minimal diffs” is a bit expensive and unnecessary for my use-cases. I’m still a bit indifferent about this feature. 
 - From a p2p point of view, transactions (especially the order in which transactions are applied) are not as expressive as the Yjs document changes combined with relative positions. Still, I’m looking for ways to combine these two worlds in a way that makes sense.
 - I’m not denying that it will break some ProseMirror plugins (i.e. plugins that render using decorations and ProseMirror mappings). 

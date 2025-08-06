@@ -75,7 +75,7 @@ modified: 2024-08-11T03:36:51.607Z
 - ## [How Edit/Save works in ProseMirror?](https://discuss.prosemirror.net/t/how-edit-save-works-in-prosemirror/5664)
 - Depending on what you want in your database, you can store `state.doc.toJSON()` or use `DOMSerializer` and then `innerHTML` to convert the document to HTML.
 
-- ## [Current state of the art on syncing data to backend](https://discuss.prosemirror.net/t/current-state-of-the-art-on-syncing-data-to-backend/5175)
+- ## 🔁 [Current state of the art on syncing data to backend](https://discuss.prosemirror.net/t/current-state-of-the-art-on-syncing-data-to-backend/5175)
 - I am still torn on how to sync my data to backend
   - documents can be very big. Like, 10Mb JSONs. (P. S. Prosemirror handles those pretty well, actually impressive)
   - So sending entire JSON to backend is not good. 

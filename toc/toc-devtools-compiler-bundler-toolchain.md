@@ -21,6 +21,13 @@ modified: 2022-11-01T01:05:07.873Z
   - https://google.github.io/zx/
   - A tool for writing better scripts
   - The zx package provides useful wrappers around `child_process`, escapes arguments and gives sensible defaults.
+
+- https://github.com/module-federation/core /2.1kStar/MIT/202508/ts
+  - https://module-federation.io/
+  - Module Federation is a concept that allows developers to share code and resources across multiple JavaScript applications
+  - You can consider the module federation capabilities provided by this repository as "module federation 2.0".
+  - "Module Federation 2.0" differs from the "Module Federation" built into Webpack 5 by offering not only the core features of module export, loading, and dependency sharing but also additional dynamic type hinting, a "Manifest", a "Federation Runtime", and a "Runtime Plugin System". 
+  - These features make "Module Federation" more suitable for use as a micro-frontend architecture in large-scale web applications.
 # frontend-compiler
 
 # dynamic-import

@@ -14,11 +14,14 @@ modified: 2024-08-24T16:15:11.456Z
   - MIT, theia is licensed under EPL
   - 完善的编辑器和ide架构，包括 editor/workbench/files/search/ext/cmd-palette
     - 可提取出丰富的工具库
-  - 支持运行在多种环境，如 web-memory, web-node-server, electron
+  - 支持运行在多种环境，如 electron, web-memory, web-node-server, 
+    - 提供了处理 cross-platform/browser 的参考架构
+    - vscode对于本地c/s架构的参考价值高，web架构需要scale的价值不高
   - 💥 支持打开超大文件，而普通web-editor在编辑器卡死(如打开超大文件)时，容易造成整个页面不可用
   - 实现了很多git操作的ui和展示的ui，可作为git客户端
+  - diff的计算较准确，支持可视化move操作
+  - 对LSP的支持较好，能找到很多第三方LSP Server
   - 提供了很多原理深度解析的技术博客
-  - 提供了处理 cross-platform/browser 的参考方案
 
 - cons
   - insecure/non-sandboxed by design, 但微软设计就是如此，支持在本地或远程执行代码

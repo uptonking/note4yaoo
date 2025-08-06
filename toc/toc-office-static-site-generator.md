@@ -85,6 +85,13 @@ modified: 2021-07-17T03:00:02.268Z
   - https://github.com/natemoo-re/microsite/tree/main/docs
   - /524Star/MIT/202012/ts
   - a fast, opinionated static-site generator (SSG) built on top of Snowpack.
+# utils
+- https://github.com/divriots/jampack /1.7kStar/MIT/202505/ts
+  - https://jampack.divriots.com/
+  - jampack is a post-processing tool that takes the output of your Static Site Generator (aka SSG) and optimizes it for best user experience and best Core Web Vitals scores.
+  - Not a bundler. Not a framework.
+  - 优化image, compress
+  - [Introducing Jampack - A new optimizer for static websites _202301](https://divriots.com/blog/introducing-jampack/)
 # more-ssg
 - https://github.com/eleme/duang
   - https://eleme.github.io/duang/docs/intro/

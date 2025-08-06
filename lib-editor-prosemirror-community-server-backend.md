@@ -12,7 +12,7 @@ modified: 2022-10-03T10:15:05.904Z
 # discuss-transform-operation
 - ## 
 
-- ## [Current state of the art on syncing data to backend](https://discuss.prosemirror.net/t/current-state-of-the-art-on-syncing-data-to-backend/5175)
+- ## 🔁 [Current state of the art on syncing data to backend](https://discuss.prosemirror.net/t/current-state-of-the-art-on-syncing-data-to-backend/5175)
 - I am still torn on how to sync my data to backend
   - documents can be very big. Like, 10Mb JSONs. (P. S. Prosemirror handles those pretty well, actually impressive)
   - So sending entire JSON to backend is not good. 
@@ -23,7 +23,7 @@ modified: 2022-10-03T10:15:05.904Z
 
 - I guess you could try something like JSON diffing to only send a small patch over, if you really need to.
 
-- For anyone looking for a solution with this, we have successfully implemented a POC that is consisting of:
+- 💡 For anyone looking for a solution with this, we have successfully implemented a POC that is consisting of:
   - We then compare the reference state with the last captured state and calculate a JSON diff via this library and generate JSON patch array.
   - **For calculating patches, we are using a Web Worker**
   - Backend: Since we are doing JSON patches, most of backends support these patches, we then just patch the JSON and save it. For our particular setup, we translate the patches to MongoDB methods.

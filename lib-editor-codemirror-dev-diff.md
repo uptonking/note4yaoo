@@ -158,7 +158,71 @@ modified: 2024-07-29T11:49:33.248Z
 
 - ## 
 
-- ## 
+- ## ✨🤔 How come code move detection is not a thing in all diff tools?
+- https://x.com/artman/status/1951296531442573447
+- Maybe because row index is not stable, better to use unique id to tracking change.
+  - No row indexes or unique indexes necessary, this is comparing deletions to addition on the AST level and showing moves when they match.
+- Beautiful! I've always wanted to build source control tools based on AST, never got around to doing it though
+- you answered your own question, diff tools typically arent ast parsers
+- sadly barely any tools work on the AST level. mergiraf does though!
+- AST fr? Seems doable with plain text
+
+- why do you have to parse the code to detect lines being moved around?
+  - The moved lines might also have slight changes
+
+- because most diff tools still don't parse out ASTs
+  - Throw arbitrary AST awareness into the mix and now you have 100 different versions of diff++ that all have to understand each other somehow
+
+- Most diff tools are using a linear-space version of the Myers diff which is fast but doesn’t work well for cases like this. 
+  - Patience diff is much better https://blog.jcoglan.com/2017/09/19/the-patience-diff-algorithm/
+  - You can use it in git: `git diff --patience`.
+
+- I just thought about this. Currently, most diff algorithms and tools show moved code as deleted and added. This is because they’re likely using LCS/Myers, right? Didn’t GitClear build Commit Cruncher and add the move operator? I’ve been working on something for a while now that solves it. 
+
+- Because they're all based on the longest common subsequence, and not on alternatives like "The String-to-String Correction Problem with Block Moves"
+
+- They work based on edit distance and DP. It's just cheaper in terms of time complexity. I mean, edit distance only requires texts, but this thing needs constructing the whole AST first.
+
+- How about moving a section and editing a line in it?
+
+- Formatting detection too
+
+- I don't think GNU diff natively supports this feature.
+
+- I think JetBrains IDEs try to tackle code move detection, but it’s NP-hard and requires AST parsing, which can be impractical for large codebases. 
+
+- JetBrains git tool is a top notch.
+  - vscode has this feature too
+- JetBrains' diff tooling works with a lot more than git.  Off the cuff, local files, clipboard, local history, probably more I've forgotten.
+
+- It actually gets really complicated when you try to handle all the scenarios. Sometimes information is destroyed and what you try to infer ends up being deceptive/distracting instead of helpful.
+
+- I *so* wish that diff/patch (or more specifically, whatever git uses for conflict resolution) would construct semantic changes (e.g. rename method "foo" to "bar"). Patches would be smaller, conflict less often, and I would haven't to deal with conflicts in my imports.
+  - @_wilfredh says AST merging is a hard problem
+- es, I can imagine why he says that. He’d never get the credit, only the blame when something goes wrong. Still, the rise of vibe-coding suggests that people are becoming more comfortable with fallible tools.  And let’s face it, merging was always somewhat fallible.
+
+- Because the original diff implementations were written back in the 1970s (at Bell Labs) to run on a PDP-11, which means the overhead of detecting moved lines was just not possible, especially for "large" files. tl; dr historical artifact
+
+- As someone who’s worked alot on diffing, I can answer
+  - 🌴 Code often modeled as trees (think open and curly braces) — minimum edit distance with moves on tree-diff is NP-Hard
+  - doing a lot of “moves” can add mental complexity (think of a tangled knot)
+
+- http://meldmerge.org has had this for years now.
+- Microsoft Word apparently even figured this out recently. Was pleasantly surprised earlier today
+
+- when comments are attached to specific lines they are invalidated when they could just move with new code
+
+- Simple moves are rare. Most of the time you move and change. So how will the diff tool know if you moved and changed or deleted and implemented a new version?
+- Because it breaks after some nontrivial movement between files + change of some lines. The only way is to have human label every move/copy, maybe with some semi-automatic algorithm that needs slight assistance.
+  - The best tool for movement detection I know is this: https://people.f4.htw-berlin.de/~weberwu/simtexter/app.html . But it's more suitable for natural text. I use it to compare my video scripts between iterations.
+
+- computing edit distance with block moves—key to exact code move detection—is NP-complete. This hardness explains why it's not standard in diff tools; approximations are used for efficiency.
+
+- Just make a hash table with an entry for each line in the original. Then go through the modified version and check the hash table where the line comes from.
+  - it's worse than that. you want to be able to indicate minimal (sub line) edits modulo relocation, so you have to do chunked comparison ~independently of position, which you can still make more efficient with clever indexing strategy but it's not gonna be both pretty and linear.
+
+- It's really hard to do because of all the edge cases because of all the different language's
+- I guess that is because not all code move is commutative, and, what's worse, the commutativity is both language dependent and context dependent. For a diff tool to be aware of these, it will have to know each language it diffs -- i.e. be an ide. That's my understanding.
 
 - ## [Synchronous Fold/Unfold in MergeView - v6 - discuss. CodeMirror _202405](https://discuss.codemirror.net/t/synchronous-fold-unfold-in-mergeview/8194)
   - I’m using MergeView plugin to show the difference between 2 json strings

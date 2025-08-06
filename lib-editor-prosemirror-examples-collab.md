@@ -109,10 +109,11 @@ modified: 2022-10-04T23:32:30.824Z
   - a basic implementation of change tracking for ProseMirror
   - This project is a prototype built to explore the possibility of porting track changes to ProseMirror. 
 
-- https://github.com/chenyuncai/tiptap-track-change-demo /vue
+- https://github.com/chenyuncai/tiptap-track-change-demo /202308/ts/vue/inactive
   - https://track-change.onrender.com/
   - [Implement new track changes in current document, just lice office review mode](https://discuss.prosemirror.net/t/implement-new-track-changes-in-current-document-just-lice-office-review-mode/4890)
-  - https://github.com/chenyuncai/tiptap-track-change-extension /MIT/202308/ts/inactive
+  - https://githu
+  - b.com/chenyuncai/tiptap-track-change-extension /MIT/202308/ts/inactive
 
 - https://github.com/bsachinthana/tiptap-diff-suggestions /MIT/202507/ts
   - A TipTap extension for inline comparison of content with suggested revisions, including interactive controls.
@@ -121,10 +122,26 @@ modified: 2022-10-04T23:32:30.824Z
   - Interactive Diff Visualization: Inline comparison with accept/reject controls
   - Framework Agnostic: Leverages TipTap's framework-agnostic architecture
 
+- https://github.com/ukrocks007/tiptap-markdown-editor-with-diff /202505/ts
+  - A modern Markdown blog editor built with React, TypeScript, Vite, and TipTap.
+  - It features real-time Markdown editing, GitHub-style diff view, and robust track changes (accept/reject) support.
+  - User Attribution: Track changes by user (configurable).
+
+- https://github.com/ansh/tiptap-diff /202502/ts
+  - https://tiptap-diff.vercel.app/
+  - React + TypeScript + Vite
+
+- https://github.com/a329279263/tiptap-diff /202502/js/vue
+  - 实现文档差异比较和标注高亮功能- 新增 HTML 差分算法，用于比较文档变更
+
+
+
 - https://github.com/hamflx/prosemirror-diff /202207/js/inactive
   - 支持保留新版本状态的标记
-- https://github.com/pubpub/prosemirror-diff /201907/ts/inactive
-- https://codesandbox.io/p/sandbox/prosemirror-diff-forked-9trmjq
+
+- more-diff-pm
+  - https://github.com/pubpub/prosemirror-diff /201907/ts/inactive
+  - https://codesandbox.io/p/sandbox/prosemirror-diff-forked-9trmjq
 
 - https://github.com/ItaZure/TiptapBasedRichtextDiff /202507/js
   - 基于 Tiptap 的富文本差异对比工具，支持文本内容和格式变化的可视化对比，以及文档评注功能。

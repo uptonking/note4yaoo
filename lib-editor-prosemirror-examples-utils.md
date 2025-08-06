@@ -46,6 +46,7 @@ modified: 2022-08-18T16:57:29.058Z
   - https://github.com/RomikMakavana/tiptap-pagination-plus
     - adds pagination support to your editor with table handling capabilities.
   - https://github.com/Nanomagicos/tiptap-extension-pagination-mod
+  - [Feature Request: Pagination extension (A4 format content) _202410](https://github.com/ueberdosis/tiptap/discussions/5719)
 
 - https://github.com/adityayaduvanshi/tiptap-pagination-breaks /MIT/202504/ts
   - a Tiptap extension that enables automatic pagination and page breaks within your Tiptap editor. 
@@ -62,6 +63,10 @@ modified: 2022-08-18T16:57:29.058Z
 
 - https://github.com/hugs7/tiptap-extension-pagination /MIT/202503/ts
   - An extension for the Tiptap editor allowing for pagination
+
+- https://github.com/ramu-narasinga/tiptap-extension-pagination-changesets-playground /MIT/202503/ts/inactive
+  - An extension for the Tiptap editor allowing for pagination
+  - Improved from clemente-xyz's comment [Feature Request: Pagination extension (A4 format content) _202410](https://github.com/ueberdosis/tiptap/discussions/5719)
 
 - https://github.com/emergence-engineering/prosemirror-vs-lexical-performance-comparison /202410/ts
   - ProseMirror vs. Lexical Performance Comparison

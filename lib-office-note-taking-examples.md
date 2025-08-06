@@ -649,7 +649,7 @@ modified: 2024-01-30T20:56:45.773Z
   - Why not Zotero, Mendely? A good metadata scraping capability is one of the core functions of a paper management tool. Unfortunately, no software in this world does this well, not even commercial software.
   - Scrape paper’s metadata with many scrapers. Support writing your metadata scrapers. Tailored for many disciplines.
 # note-ai
-- https://github.com/reorproject/reor /AGPL/202503/ts
+- https://github.com/reorproject/reor /8.2kStar/AGPL/202505/ts/inactive
   - https://reorproject.org/
   - Private & local AI personal knowledge management app for high entropy((熵(平均信息量))) people.
   - an AI-powered desktop note-taking app: it automatically links related notes, answers questions on your notes and provides semantic search.

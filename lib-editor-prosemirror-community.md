@@ -102,7 +102,7 @@ class TodoListView {
 - the parser will get the node’s type and attributes from the node view.
 - as long as you go through a transaction you should be fine.
 
-- ## Inlining a node for a comment plugin or best to use marks?
+- ## 🆚🤔 Inlining a node for a comment plugin or best to use marks?
 - https://discuss.prosemirror.net/t/inlining-a-node-for-a-comment-plugin-or-best-to-use-marks/2391
 - Comments are usually not modeled as document nodes—rather, they are references to ranges, that are tracked separately, outside of the document.
 - I will try with references to ranges outside the document. One downside is that it could be a bit trickier to preserving comments when users copy to clipboard.
