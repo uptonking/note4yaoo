@@ -55,6 +55,8 @@ modified: 2025-02-21T18:20:42.624Z
   - Workflows are durable graph-based state machines. They have loops, branching, wait for human input, embed other workflows
   - RAG lets you construct a knowledge base for agents
   - Evals are automated tests that evaluate LLM outputs using model-graded, rule-based, and statistical methods.
+  - https://github.com/mastra-ai/mastra/blob/main/examples/crypto-chatbot/lib/editor/diff.js
+    - 使用diff_match_patch计算差异
   - https://x.com/dingyi/status/1893329741060489438
     - 以前非常喜欢且深度使用的 Gatsby，他们团队原班人马做的新产品，The TypeScript Agent Framework
 # ai-sdk

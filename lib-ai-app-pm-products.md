@@ -10,6 +10,9 @@ modified: 2025-03-22T16:10:24.856Z
 # guide
 
 # ai-dev-xp
+- tips
+  - aisdk + docs/excel/image
+
 - agent-ipc
 
 - markdown-stream

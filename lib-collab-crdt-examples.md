@@ -744,6 +744,13 @@ modified: 2022-04-05T10:08:25.947Z
     - Hence, we use logical timestamps that match the wall clock time numerically.
     - A similar approach was termed "hybrid timestamps"
     - this is logical clock that tries to be as close to wall clock as possible
+  - https://github.com/Empia/swarm/blob/master/doc/ver0.3/patch-based-issues.md
+    - There are 4 general frameworks for data synchronization:
+    - patch-based (like diff-match-patch, also recursive its generalizations) used by Apple iCloud, Wunderlist, ProseMirror and others;
+    - operational transforms (OT), used by Google Docs/Apps;
+    - conflict-free replicated data types, used by Riak (and Swarm), TomTom has custom solution for relaying CRDTs to the client side;
+    - something improvised(临时制作, 临时凑成) (which is typically not that good, CouchDB+pouchdb duo pushes the user precisely in this direction).
+    - Swarm's CmRDTs solve all of the mentioned issues
 
 - https://github.com/imns/TSCRDT /202402/ts
   - a project I've developed to dive deeper into the internal workings of CRDTs.

@@ -14,7 +14,21 @@ modified: 2024-06-21T09:53:44.956Z
 
 - ## 
 
-- ## 
+- ## [Serving Video with HTTP Range Requests _202505](https://smoores.dev/post/http_range_requests/)
+- `<video>` elements can be provided a `src` attribute, which specifies the URL of the video to embed.
+
+```HTML
+<video controls width="250">
+  <source src="/shared-assets/videos/flower.webm" type="video/webm" />
+  <source src="/shared-assets/videos/flower.mp4" type="video/mp4" />
+</video>
+```
+
+- in Network tab: Firstly, the response code for the `flower.webm` request was 206, rather than the standard 200 success/OK response. 
+  - you may actually have seen multiple requests for the video file, all responding with a 206. 
+  - There are also some additional headers, like Accept-Ranges: bytes and Content-Range: bytes 0-554057/554058.
+
+- Together, these make up an HTTP range request. As the name suggests, range requests allow the client to request a specific range of bytes from the server, rather than the entire resource. This is particularly useful for video, as videos can be arbitrarily long 
 # discuss-vid-pm
 - ## 
 

@@ -175,7 +175,7 @@ layoutApi.current?.addPanel({
   - CDE powered by StackBlitz's WebContainer
   - Monaco + DockView + Xterm + YJS + React Complex Tree
 
-- https://github.com/Oneirocom/Magick /apache2/202405/ts
+- https://github.com/Oneirocom/Magick /811Star/apache2/202506/ts
   - https://magickml.com/
   - a cutting-edge toolkit for a new kind of AI builder
   - Magick is a groundbreaking visual AIDE (Artificial Intelligence Development Environment) for no-code data pipelines and multimodal agents.

@@ -12,12 +12,11 @@ modified: 2022-10-04T23:32:30.824Z
 - 基于yjs
   - tiptap.v2
   - outline
-  - milkdown
+  - more: milkdown
 
 - 基于prosemirror-collab
   - atlaskit-editor
-  - dox
-  - paper-editor
+  - more: dox, paper-editor
 # collab-starter
 
 ## 基于y-prosemirror实现协作的示例
@@ -84,14 +83,36 @@ modified: 2022-10-04T23:32:30.824Z
   - https://handlewithcarecollective.github.io/prosemirror-suggest-changes/
   - A ProseMirror library for enabling Google Docs-style suggestions
   - This library provides three mark types: insertion/deletion/modification
+  - 提供了inline-diff的示例，undo时先恢复inline-diff再恢复原文，每个修改处无hover-action
 
 - https://github.com/davefowler/prosemirror-suggestion-mode /22Star/MIT/202503/ts
+  - https://prosemirror-suggestion-mode.netlify.app/basic/
   - A ProseMirror plugin that implements a "suggestion mode" method to track and show changes similar to Google Docs and Word. 
   - This plugin allows users to make suggested edits that can be reviewed, accepted, or rejected later.
+  - accept后undo支持恢复diff视图，还提供了适合ai场景的applySuggestion
+  - Toggle suggestion mode on/off
+  - Accept/reject individual suggestions, 每个修改处有提供hover-action
+  - Text search/replace helpers for AI generated suggestions
   - https://github.com/davefowler/prosemirror-suggestion-mode-examples
+  - [Releasing prosemirror-suggestion-mode - Show - discuss. ProseMirror _202502](https://discuss.prosemirror.net/t/releasing-prosemirror-suggestion-mode/8239)
 
-- https://github.com/Atypon-OpenSource/manuscripts-track-changes-plugin /202311/ts
-  - ProseMirror plugin to track inserts/deletes to nodes and text.
+- https://github.com/hamflx/prosemirror-diff /202207/js/inactive
+  - 基于 diff_match_patch 计算diff
+  - todo: 补上行相似程度的判断, 支持保留新版本状态的标记
+  - https://github.com/will-lp1/snowleopard /apache2/202507/ts
+    - https://www.cursorforwrit.ing/
+    - Cursor for Writing
+    - apps/snow-leopard/lib/editor/diff.js: Modified from https://github.com/hamflx/prosemirror-diff/blob/master/src/diff.js
+
+- https://github.com/Atypon-OpenSource/manuscripts-track-changes-plugin /apache2/202508/ts
+  - plugin designed to track changes within a document, similar to the track changes functionality found in Google Docs or Microsoft Word
+  - Allows to reject/accept a single change or a list of changes.
+  - Provides commands to enable, disable, skip, accept, reject changes. Commands are issues as transactions meta. This is the way to communicate with the plugin.
+  - Plugin provides a ChangeSet class that helps to interpret changes in a user-friendly way.
+
+- https://github.com/Atypon-OpenSource/manuscripts-article-editor/blob/master/src/lib/comparison/compare-table-element.ts
+  - 使用了 diff-match-patch 比较文档字符串
+  - 示例很多，还提供了相似度计算的方法
 
 - https://github.com/TeemuKoivisto/prosemirror-track-changes-example /202108/ts/inactive
   - https://teemukoivisto.github.io/prosemirror-track-changes-example/
@@ -101,43 +122,42 @@ modified: 2022-10-04T23:32:30.824Z
 - https://github.com/milahu/prosemirror-track-changes-demo /CC-1.0/202409/js/inactive
   - https://milahu.github.io/prosemirror-track-changes-demo/
   - add a "track changes" feature to prosemirror
-
-- https://github.com/newsdev/prosemirror-change-tracking-prototype /201609/js
-  - ProseMirror change tracking proof-of-concept
+  - based on fiduswriter, track changes as commits
+  - https://github.com/milahu/live-diff-html-editor /CC-1.0/202210/js/deprecated
+    - generate exact diffs of rich text by tracking all changes in a wysiwyg html editor
+    - the diff format is always ambiguous, since there are many representations of one change
+    - this was just a proof of the "live diff html editor" concept
 
 - https://github.com/nytimes/prosemirror-change-tracking-prototype /23Star/apache2/201609/js/inactive
   - a basic implementation of change tracking for ProseMirror
   - This project is a prototype built to explore the possibility of porting track changes to ProseMirror. 
 
+- https://github.com/ansh/tiptap-diff /202502/ts
+  - https://tiptap-diff.vercel.app/
+  - React + TypeScript + Vite
+  - Compute the diff using Myers algorithm
+
 - https://github.com/chenyuncai/tiptap-track-change-demo /202308/ts/vue/inactive
   - https://track-change.onrender.com/
   - [Implement new track changes in current document, just lice office review mode](https://discuss.prosemirror.net/t/implement-new-track-changes-in-current-document-just-lice-office-review-mode/4890)
-  - https://githu
-  - b.com/chenyuncai/tiptap-track-change-extension /MIT/202308/ts/inactive
+  - https://github.com/chenyuncai/tiptap-track-change-extension /MIT/202308/ts/inactive
 
-- https://github.com/bsachinthana/tiptap-diff-suggestions /MIT/202507/ts
+- https://github.com/bsachinthana/tiptap-diff-suggestions /MIT/202507/ts/仅依赖tiptap-core
   - A TipTap extension for inline comparison of content with suggested revisions, including interactive controls.
   - This extension provides a way to visualize and interact with suggested changes within a TipTap editor. 
   - It bridges the gap between static diff viewers and actionable content editing, allowing users to evaluate, accept, or reject suggestions directly in the editor.
   - Interactive Diff Visualization: Inline comparison with accept/reject controls
   - Framework Agnostic: Leverages TipTap's framework-agnostic architecture
+  - Following TipTap's headless architecture, this extension includes no built-in styling
 
-- https://github.com/ukrocks007/tiptap-markdown-editor-with-diff /202505/ts
+- https://github.com/ukrocks007/tiptap-markdown-editor-with-diff /202505/ts/完全自定义实现
   - A modern Markdown blog editor built with React, TypeScript, Vite, and TipTap.
   - It features real-time Markdown editing, GitHub-style diff view, and robust track changes (accept/reject) support.
   - User Attribution: Track changes by user (configurable).
 
-- https://github.com/ansh/tiptap-diff /202502/ts
-  - https://tiptap-diff.vercel.app/
-  - React + TypeScript + Vite
-
 - https://github.com/a329279263/tiptap-diff /202502/js/vue
   - 实现文档差异比较和标注高亮功能- 新增 HTML 差分算法，用于比较文档变更
-
-
-
-- https://github.com/hamflx/prosemirror-diff /202207/js/inactive
-  - 支持保留新版本状态的标记
+  - [基于tiptap的富文本内容对比 - SegmentFault 思否 _202402](https://segmentfault.com/a/1190000044613673)
 
 - more-diff-pm
   - https://github.com/pubpub/prosemirror-diff /201907/ts/inactive
@@ -150,6 +170,14 @@ modified: 2022-10-04T23:32:30.824Z
   - 差异检测: 使用最长公共子序列（LCS）算法进行基础差异检测
     - 目前只支持段落（paragraph）节点的对比
     - 不支持列表、表格等复杂结构
+
+- https://github.com/yyjhao/wrait /202503/ts/inactive
+  - https://demo-ai-editor.combini.app/
+  - Wrait is a text editor that uses local, in-browser AI with the WebLLM technology.
+  - It depends on support for WebGPU in the browser, so e.g., it doesn't work on Safari.
+  - 在 src/app/components/ProseMIrror
+/proofReadPlugin.ts 使用 diff-match-patch计算差异
+
 # versioning
 - https://github.com/inkandswitch/upwelling-code /ts
   - https://upwelling-prototype.netlify.app/

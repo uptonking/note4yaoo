@@ -114,6 +114,7 @@ modified: 2022-08-18T16:57:46.405Z
 - remirror /2.9kStar/MIT/202504/ts
   - https://github.com/remirror/remirror
   - https://remirror.io/
+  - https://remirror.vercel.app/
   - [basic editor demo](https://remirror.vercel.app/?path=/story/editors-wysiwyg--basic)
   - A React toolkit for building cross-platform text editors, based on ProseMirror.
   - I18n support via lingui.
@@ -192,7 +193,7 @@ modified: 2022-08-18T16:57:46.405Z
   - A fully featured library for safely integrating ProseMirror and React
   - React separates updates into render and commit phases so that it can process updates in batches
   - [Announcing React ProseMirror_202303](https://discuss.prosemirror.net/t/announcing-react-prosemirror/5328)
-  - [The Future of @nytimes/react-prosemirror_202309](https://discuss.prosemirror.net/t/the-future-of-nytimes-react-prosemirror/5855)
+  - 📡 [The Future of @nytimes/react-prosemirror_202309](https://discuss.prosemirror.net/t/the-future-of-nytimes-react-prosemirror/5855)
     - For the past several months, I’ve been hard at work on a very different approach to integrate React and ProseMirror. 
     - The summary is this: the new approach completely replaces ProseMirror’s DOM management system with one built in React. 
     - We’re still using `prosemirror-view` for everything outside of change detection and DOM updates, which means we are exposing exactly the same API. 
@@ -213,7 +214,7 @@ modified: 2022-08-18T16:57:46.405Z
       - demonstrate how to build the core components of a ProseMirror view library.
       - https://github.com/mlhiter/mini-prosemirror
     - [Build Your Own: React, ProseMirror, and Redux : javascript](https://www.reddit.com/r/javascript/comments/10swhle/build_your_own_react_prosemirror_and_redux/)
-    - [Why I rebuilt ProseMirror’s renderer in React _202502](https://smoores.dev/post/why_i_rebuilt_prosemirror_view/)
+    - 🤔 [Why I rebuilt ProseMirror’s renderer in React _202502](https://smoores.dev/post/why_i_rebuilt_prosemirror_view/)
       - For almost five years, I worked on the New York Times’ rich text editor, Oak.
       - The Times’ website is written with React, which is one of the big reasons that Oak was written in React. We were able to author React components that could be used by both the reader-facing website and Oak
       - React and ProseMirror do not play nicely together. 
@@ -223,6 +224,8 @@ modified: 2022-08-18T16:57:46.405Z
   - https://github.com/Atypon-OpenSource/manuscripts-article-editor
   - the editor package of Manuscripts app to be used in a react application.
   - 数据保存支持 pouchdb-adapter-idb
+  - https://github.com/Atypon-OpenSource/manuscripts-article-editor/blob/master/src/lib/comparison/compare-table-element.ts
+    - 使用了 diff-match-patch 比较文档字符串
   - https://github.com/Atypon-OpenSource/manuscripts-body-editor
     - A React + ProseMirror editor for manuscripts.
   - https://gitlab.com/mpapp-public/manuscripts-manuscript-editor
@@ -623,6 +626,22 @@ modified: 2022-08-18T16:57:46.405Z
   - Notion style AI-powered block editor build with Tiptap + Vercel AI SDK + Shadcn + Tailwindcss.
   - This template used Gemini as AI model provider. You can change any provider supported by Vercel AI SDK models.
 
+- https://github.com/will-lp1/snowleopard /apache2/202507/ts
+  - https://www.cursorforwrit.ing/
+  - Cursor for Writing
+  - Drizzle schema & migrations, Next.js (App Router)
+  - apps/snow-leopard/lib/editor/diff.js: Modified from https://github.com/hamflx/prosemirror-diff/blob/master/src/diff.js
+
+- https://github.com/yyjhao/wrait /202503/ts/inactive
+  - https://demo-ai-editor.combini.app/
+  - Wrait is a text editor that uses local, in-browser AI with the WebLLM technology.
+  - It depends on support for WebGPU in the browser, so e.g., it doesn't work on Safari.
+  - 在 src/app/components/ProseMIrror
+/proofReadPlugin.ts 使用 diff-match-patch计算差异
+
+- https://github.com/mastra-ai/mastra/blob/main/examples/crypto-chatbot/lib/editor/diff.js
+  - 使用diff_match_patch计算差异
+
 ## ai-pattern
 
 - https://github.com/ueberdosis/ai-agent-custom-llm-demos /MIT/202507/ts
@@ -641,12 +660,24 @@ modified: 2022-08-18T16:57:46.405Z
 
 ## ai-chat
 
+- https://github.com/vercel/ai-chatbot /17.4kStar/apache2/202507/ts/inactive
+  - https://github.com/vercel/ai-chatbot/blob/main/lib/editor/diff.js
+  - Modified from https://github.com/hamflx/prosemirror-diff/blob/master/src/diff.js
+
 - https://github.com/trendy-design/llmchat /782Star/MIT/202504/ts/inactive
   - https://llmchat.co/
   - Unified interface for AI chat, Agentic workflows and more ...
   - LLMChat.co is a sophisticated AI-powered chatbot platform that prioritizes privacy 
   - LLMChat.co stands out with its workflow orchestration system and focus on privacy, storing all user data locally in the browser using IndexedDB
   - Multiple LLM Provider Support
+
+- https://github.com/RyanLisse/rra-v2 /202506/ts
+  - Production-grade RAG Chat Application v2 - Built with Next.js 15, Vercel AI SDK, TailwindCSS v4, and comprehensive testing
+  - 使用 diff-match-patch计算差异
+
+- https://github.com/mayneyao/eidos /AGPL/202507/ts
+  - https://github.com/mayneyao/eidos/blob/dev/packages/lib/editor/diff.js
+  - Modified from https://github.com/hamflx/prosemirror-diff/blob/master/src/diff.js
 # editors-collection
 - https://github.com/Harbour-Enterprises/SuperDoc /37Star/AGPL/202507/js/vue
   - https://superdoc.dev/

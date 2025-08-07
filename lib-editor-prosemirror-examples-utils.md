@@ -136,12 +136,13 @@ modified: 2022-08-18T16:57:29.058Z
   - In prosemirror, in order to update attributes of a node, you must delete it and replace with a new node with updated attributes.
   - While this works perfectly, during collaboration it does not go well with undo history. 
 
-- https://github.com/sueddeutsche/prosemirror-recreate-transform
+- https://github.com/sueddeutsche/prosemirror-recreate-transform /apache2/202004/js/inactive
   - This module allows recreating the steps needed to go from document A to B
   - it allows merging two different Transforms (sets of steps) whose steps may be conflicting.
   - Recreating steps can be interesting for example in order to show the changes between two document versions without having access to the original steps.
 - https://gitlab.com/mpapp-public/manuscripts-manuscript-transform
   - It provides a way to import/export Manuscript JSON Schema formatted data from and to other formats such as (JATS XML, STS XML, HTML, ProseMirror Model)
+
 - https://gitlab.com/mpapp-public/prosemirror-recreate-steps /js
   - This module allows recreating the steps needed to go from document A to B should these not be available otherwise, and it allows merging two different Transforms (sets of steps) whose steps may be conflicting.
   - https://github.com/chanzuckerberg/prosemirror-recreate-steps-timeout-patch /apache2/202202/js/inactive
@@ -167,6 +168,10 @@ modified: 2022-08-18T16:57:29.058Z
 - https://github.com/chatwoot/prosemirror-schema /MIT/202507/js
   - Schema setup for using prosemirror in chatwoot. 
   - Based on https://github.com/ProseMirror/prosemirror-example-setup/
+
+- https://github.com/Atypon-OpenSource/manuscripts-transform /apache2/202508/ts
+  - ProseMirror transformer for Manuscripts applications.
+  - It provides a way to import/export Manuscript JSON Schema formatted data from and to other formats such as (JATS XML, STS XML, HTML, ProseMirror Model)
 
 - https://github.com/ekkolon/prosemirror-autopairs /MIT/202506/ts
   - Smart auto-pairing of brackets and quotes for ProseMirror editors.
