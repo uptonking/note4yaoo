@@ -572,49 +572,51 @@ modified: 2022-08-18T16:57:46.405Z
   - Support for the basic Markdown and YFM syntax.
   - Extensibility through the use of ProseMirror and CodeMirror engines.
   - 依赖 prosemirror, @diplodoc/transform, react, react-dom, @gravity-ui/uikit, @gravity-ui/components 
-# ai-editor
-- novel /13.7kStar/apache2/202501/ts
+# ai-editor(可参考vscode ai)
+- novel /13.7kStar/apache2/202501/ts/inactive
   - https://github.com/steven-tey/novel
   - https://novel.sh/
   - Notion-style WYSIWYG editor with AI-powered autocompletion. 
-  - Built with [Tiptap](https://tiptap.dev/) + [Vercel AI SDK](https://sdk.vercel.ai).
-  - 依赖tiptap、@vercel/kv/blob、nextjs、react-markdown.v8、tailwindcss
-
-- https://github.com/continuedev/continue /21.3kStar/apache2/202508/ts
-  - https://docs.continue.dev/
-  - Continue is the leading open-source AI code assistant. You can connect any models and any context to build custom autocomplete and chat experiences inside VS Code and JetBrains
-  - Tab to autocomplete code suggestions
-  - [Continue 实现原理 · Pines-Cheng/blog _202505](https://github.com/Pines-Cheng/blog/issues/108)
+  - 依赖tiptap、@vercel/kv/blob、nextjs、Vercel AI SDK、react-markdown.v8、tailwindcss
+  - Slash menu & bubble menu
+  - 核心的ai功能: improve writing, shorter/longer, fix-grammer, agi
+  - 不支持图片生成， 不支持ask ai
+  - Mathematical symbols with LaTeX expression
+  - [feat: IS THIS REPO BEING MAINTAINED? _202412](https://github.com/steven-tey/novel/issues/469)
+    - No, it is not.
 
 - https://github.com/aieditor-team/AiEditor /1.5kStar/LGPLv2/202506/ts
   - https://gitee.com/aieditor-team/aieditor
   - https://aieditor.dev/
   - https://aieditor.dev/versions.html
-  - http://aieditor1.jpress.cn 现代风格（类腾讯文档）
-  - https://aieditor.dev/demo.html 经典/传统风格
+  - http://doc.aieditor.com.cn 现代风格（类腾讯文档）
+  - https://aieditor.com.cn/zh/demo 经典/传统风格
   - a next-generation rich text editor for AI
-  - 开箱即用、支持所有前端框架、支持 Markdown 书写模式
+  - AI 驱动的开源富文本编辑器， 开箱即用、支持所有前端框架、支持 Markdown 书写模式
+  - 目标是打造一个完全由 AI 驱动的富文本编辑器，同时支持对接任意大模型，包括私有的大模型，允许用户使用自己私有的大模型 ApiKey
+  - 所有的 AI 功能，都允许用户自定义自己的 prompt，以及扩展的 AI 菜单。
   - 基于 Web Component，因此支持 Layui、Vue、React、Angular 等几乎任何前端框架
-  - 目标是打造一个完全由 AI 驱动的富文本编辑器，同时支持对接任意大模型，包括私有的大模型。允许用户使用自己私有的大模型 ApiKey
-  - 还提供了功能更加强大的商业，商业版不限制用户量、不限制应用数量
-  - we also provide a more powerful commercial version, which does not limit the number of users or the number of applications.
-    - https://aieditor.dev/price
+  - pro: 还提供了功能更加强大的商业，商业版不限制用户量、不限制应用数量
+    - 类 Notion 内容块拖拽， Word 导入/导出， PDF 导出，团队协作编辑， 批注评论功能
+  - https://aieditor.dev/price
     - paid: Can remove the logo, collab, word import, local llm
 
 - https://github.com/numerique-gouv/blocknote-llm /202406/ts/inactive
   - https://numerique-gouv.github.io/blocknote-llm/
   - A proof of concept of what can be done with the BlockNote editor based on ProseMirror and an LLM running in the browser
-  - Works offline
+  - Works offline: No data ever leaves your computer
   - This tool is built on top of `WebLLM`, a package that brings language model inference directly onto web browsers with hardware acceleration.
     - To run this, you need a modern browser with support for WebGPU. 
+    - We use Llama3, a 8B language model. it takes up 5.2 Gb of storage in the browser's cache.
+
+- https://github.com/taranek/prosemirror-ai-completion /202508/ts
+  - https://prosemirror-ai-completion.vercel.app/
+  - Prosemirror AI-completion demo
+  - 灰色显示修改文字，有打字机效果
 
 - https://github.com/khyamay/prosemirror-speech-to-text /202407/ts
   - https://prosemirror-speech-to-text.vercel.app/
   - basic text to speech menu for prosemirror
-
-- https://github.com/trendy-design/llmchat /782Star/MIT/202504/ts/inactive
-  - https://llmchat.co/
-  - Unified interface for AI chat, Agentic workflows and more ...
 
 - https://github.com/phyohtetarkar/tiptap-block-editor /MIT/202507/ts
   - https://tiptap-block-editor.web.app/
@@ -623,13 +625,28 @@ modified: 2022-08-18T16:57:46.405Z
 
 ## ai-pattern
 
-- https://github.com/taranek/prosemirror-ai-completion /202508/ts
-  - https://prosemirror-ai-completion.vercel.app/
-  - Prosemirror AI-completion demo
-  - 灰色显示修改文字，有打字机效果
+- https://github.com/ueberdosis/ai-agent-custom-llm-demos /MIT/202507/ts
+  - https://tiptap.dev/docs/content-ai/capabilities/agent/custom-llms/overview
+  - Integrate the Tiptap AI Agent extension with a custom backend and AI model provider.
+  - 🌰 示例包括: generate, autocomplete(tab), suggest(lint-like), review(diff), agent-sidebar
+
+- https://github.com/continuedev/continue /21.3kStar/apache2/202508/ts
+  - https://docs.continue.dev/
+  - Continue is the leading open-source AI code assistant. You can connect any models and any context to build custom autocomplete and chat experiences inside VS Code and JetBrains
+  - Tab to autocomplete code suggestions
+  - [Continue 实现原理 · Pines-Cheng/blog _202505](https://github.com/Pines-Cheng/blog/issues/108)
 
 - https://github.com/gjc14/tiptap-streaming-preview /MIT/202410/ts/Remix
   - A compact demo of streaming Markdown from Google AI Gemini and save to Tiptap Extension demo
+
+## ai-chat
+
+- https://github.com/trendy-design/llmchat /782Star/MIT/202504/ts/inactive
+  - https://llmchat.co/
+  - Unified interface for AI chat, Agentic workflows and more ...
+  - LLMChat.co is a sophisticated AI-powered chatbot platform that prioritizes privacy 
+  - LLMChat.co stands out with its workflow orchestration system and focus on privacy, storing all user data locally in the browser using IndexedDB
+  - Multiple LLM Provider Support
 # editors-collection
 - https://github.com/Harbour-Enterprises/SuperDoc /37Star/AGPL/202507/js/vue
   - https://superdoc.dev/

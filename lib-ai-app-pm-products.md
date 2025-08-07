@@ -10,9 +10,19 @@ modified: 2025-03-22T16:10:24.856Z
 # guide
 
 # ai-dev-xp
+- agent-ipc
+
+- markdown-stream
+
+- ai-architecture
+  - 前端和大模型直接对接的缺点: 关闭页面会丢失数据
+
+- 
+- 
+- 
+- 
 
 # pm-mcp
-
 - writing
 
 - image-generation

@@ -81,6 +81,7 @@ modified: 2021-05-06T09:39:53.522Z
 # draft
 - roadmap
   - fwk agnostic noseditor: prosekit + atlaskit <> tiptap
+    - rewrite tiptap/blocknote/atlaskit extension in prosemirror
   - lasuite/colanode + diff-view
 
 - 🆚 diff-view
@@ -96,6 +97,9 @@ modified: 2021-05-06T09:39:53.522Z
 - prosemirror-markdown
   - rewrite with remark
   - rewrite with codemirror/lezer
+
+- tiptap
+  - ai-extension open version
 
 - devtools
   - migrate prosemirror-dev-toolkit features to prosemirror-devtools

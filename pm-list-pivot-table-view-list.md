@@ -28,3 +28,21 @@ modified: 2022-12-16T01:51:52.564Z
 
 - [list添加item的动画效果](https://twitter.com/dillionverma/status/1735630932655378544)
 # more-list
+
+# discuss-infinite/lazy
+
+- ## 
+
+- ## 
+
+- ## 🌰 motiondev: New children entering into a staggered list now also stagger in!
+- https://x.com/mattgperry/status/1949809836914274750 
+  - As easy as delayChildren: stagger(0.2).
+  - https://examples.motion.dev/react/infinite-loading
+
+# discuss-list
+- ## 
+
+- ## 
+
+- ## 

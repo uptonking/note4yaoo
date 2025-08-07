@@ -9,10 +9,24 @@ modified: 2021-08-22T07:29:34.045Z
 
 # guide
 
-# discuss-editor-ai 👾
+# discuss-docs-ai 👾
 - ## 
 
-- ## 
+- ## Notion AI can now actually use Notion. _202508
+- https://x.com/NotionHQ/status/1953127672848236721
+  - It handles multi-step tasks like editing multiple pages or updating entire database—like a power user, built in.
+
+- Amazing. Just need an API endpoint to send a prompt to a page for automation now, would be extremely useful
+
+- the shift from "ai helps with tasks" to "ai performs tasks" is everything
+  - this is what we mean by agentic - not just generating text but actually manipulating systems
+  - curious about the safety boundaries - what stops it from accidentally deleting important pages?
+- It'll ask for confirmation before deleting pages 
+
+- This is how agents should work, not just "ai writes text" but "ai actually does the work": updating databases, cross-referencing pages, maintaining consistency across workspaces
+
+- https://x.com/ivanhzhao/status/1953180931260596387
+  - Looks familiar on the surface, but we completely rebuilt Notion AI.
 
 - ## Gemini 的 Stroybook 太酷了, 只要上传一段文字或者提示词或者文档，就可以生成一本图文并茂的故事书，效果相当相当的好
 - https://x.com/dotey/status/1952954741777945071

@@ -437,6 +437,7 @@ modified: 2023-02-05T19:03:27.730Z
 - https://github.com/ueberdosis/ai-agent-custom-llm-demos /MIT/202507/ts
   - https://tiptap.dev/docs/content-ai/capabilities/agent/custom-llms/overview
   - Integrate the Tiptap AI Agent extension with a custom backend and AI model provider.
+  - 🌰 示例包括: generate, autocomplete(tab), suggest(lint-like), review(diff), agent-sidebar
   - This repository contains 12 complete demos demonstrating different integration patterns and capabilities.
 
 - https://github.com/chenxiaoyao6228/idea-forge /MIT/202504/ts
@@ -452,6 +453,11 @@ modified: 2023-02-05T19:03:27.730Z
 
 - https://github.com/imberZsk/editor /202507/ts
   - 基于 TipTap 的 block-editor，支持 MD、AI、协同
+
+- https://github.com/Sohail-Ali-Khwazada/YouSummarizer /202508/python/ts
+  - AI-based YouTube summarizer with chat, notes, and chapter generation using LangChain + MERN.
+  - This project combines RAG (Retrieval-Augmented Generation) using LangChain, Faiss, and LLMs via a Python Flask microservice with a MERN-based application frontend.
+  - The core AI functionality is powered by a Retrieval-Augmented Generation (RAG) pipeline that seamlessly integrates multiple components
 
 - https://github.com/artificialcitizens/acai.so /MIT/202401/ts/inactive
   - ACAI is a collection of AI powered tools to help you manage your digital world
@@ -473,6 +479,13 @@ modified: 2023-02-05T19:03:27.730Z
   - redis、yjs、tiptap
   - 前端依赖tiptap、radix-ui、tan-query、yjs、zustand
   - 后端依赖trpc、express、yjs、zod
+
+- https://github.com/imohammedh/Notevo /202508/ts
+  - https://notevo.vercel.app/dashboard
+  - Notevo is an AI-powered, real-time note-taking SaaS platform 
+  - Notion-style editor powered by Novel
+  - AI-powered autocompletion with OpenAI integration
+  - Cloud storage support with Convex
 
 - rockeseat-ignite-rotion /1Star/ISC/202212/ts
   - https://github.com/wfl-junior/rockeseat-ignite-rotion
@@ -611,8 +624,6 @@ modified: 2023-02-05T19:03:27.730Z
   - Manifold Markets: A market for every question
   - Manifold's public API and web app are hosted by Vercel.
   - All data is stored in Firebase's database, Cloud Firestore. 
-
-
 
 - https://github.com/nurullahhossain/resume-builder
   - http://resume-builder-xi.vercel.app/

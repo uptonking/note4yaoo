@@ -216,7 +216,42 @@ export default FrontPage
 - atjson isn't really a spec; there's space for someone with the energy to do that to go ahead and standardise something, but so far we've just built a tool that meets our needs. I think it's a good approach, and @codexeditor independently came up with almost the same thing
 - One of the differences to conmonmark is that it's more of an approach. The spec is: here's some Unicode text, here are some annotations on that text (standoff per codex). Annotations have a type, start and end indexes, and a set of type-specific attributes. That's really it!
 
+# discuss-md-stream
+- ## 
+
+- ## We’re exploring ways to improve how Markdown is rendered in our components during streaming.
+- https://x.com/marcbouchenoire/status/1953123423359541670
+  - Complete partial syntax when possible (bold, links, table headers, …)
+  - Buffer incomplete elements (partial images, broken emojis, …)
+  - `<AiChat />` from `@liveblocks` will have this out-of-the-box, but we’ll also look into releasing it as a standalone package.
+
+- we had a similar issue. solved by using a custom render using markdoc https://markdoc.dev it also allowed us to stream stream component while showing a loading/fallback
+
+- https://x.com/sasicodes/status/1953106071180198345
+  - literally all the code you need for smooth response streaming in the ai sdk v5  
+
+- ## I find the way LLM apps treat markdown streaming so infuriating(令人大怒的). _202505
+- https://x.com/nicoalbanese10/status/1928010729581326495
+- copy this transform into your project and then it's a one line addition to streamText https://gist.github.com/nicoalbanese/d5c19195d0831aae712ec04e49b192b9
+  - Markdown parsing has lots of edge cases so it might be best as more shadcn style (copy and modify for your use case)
+
+- [Sidekick’s Improved Streaming Experience - Shopify _202308](https://shopify.engineering/sidekicks-improved-streaming)
+  - how Shopify's Sidekick solves markdown rendering jank and response delay in LLM chatbots with buffering parser and async content resolution.
+  - Markdown, as a means of transporting structure, beats JSON and YAML in token counts. And it’s human-readable.
+
+- a TransformStream acts as mdast parser is good for this, but emoji things are really hard to deal
+
+- It’s hard 
+  - Generally you either have to re-render the markdown content with each new token (expensive at 60+ tkps) or debounce it or handle it a line at a time 
+  - Gets worse if you need multi line code blocks with syntax highlighting, you have to memo the shit out of it
+
+- I wrote a backend MarkdownStreamer that won't flush chunks inside of certain fences to frontend until they're complete.  It only covers the important use cases for us.
+
+- Here’s a processor that converts a markdown stream to an HTML stream on the fly: https://github.com/rossrobino/robino/blob/main/packages/md/README.md#renderstream
+  - This way you don’t have to ship your markdown parser to the client, instead just stream HTML directly.
 # discuss-md-conversion
+- ## 
+
 - ## 
 
 - ## 

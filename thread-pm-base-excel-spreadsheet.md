@@ -21,12 +21,31 @@ modified: 2022-04-23T18:48:32.550Z
 - https://twitter.com/_adamwiggins_/status/1775523348430069853
   - Here an edit is selected in the history, highlighting the diff on the document.
 
-# discuss-excel-ai
+# discuss-excel-ai 👾
 - ## 
 
 - ## 
 
-- ## 
+- ## 🚀 Endex is the first AI agent to live inside Excel. _202508
+- https://x.com/TarunAmasa/status/1953130965355905140
+- It's a tool on Excel or you guys building your own excel? Looks like tool on Excel, would be a lot limited.
+  - Quadratic AI: For anyone ready to skip legacy file formats, Quadratic puts the AI agent inside a modern, browser-based spreadsheet with Python, SQL, and state-of-the-art LLMs baked right in. Spreadsheet power without the Excel baggage.
+  - That's why we built a modern spreadsheet with native AI functionality, Python & SQL support, and smoother interactions. The sky is the limit
+  - we recently improved performance to handle more data than Excel
+- Can it also update data? For e.g., I give a list of Million skills and ask it to update the definition of those? Or only for data analysis and insights
+  - Yes, essentially Quadratic's AI would read the first handful of rows of data to understand the structure, then write Python in the grid next to your data to generate the table with whatever changes you request.
+- But I don't need Python, I need it to work according to prompt and use intelligence to add definition. Please confirm
+  - There is no LLM today that can handle millions of rows of data as context - there are limits to input tokens. Therefore we use AI understand the data, then write Python that solves your problem.
+- Yeah, without API, none can do it.
+  - our support for Python allows you to connect to any public API so you can get financial data and other info right into your sheet without additional tools :) AI makes it easy to write the code you need.
+
+- Can I ask it to organize data from a .csv file into a properly formatted table?
+  - No, don’t be silly. But it can automate vlookup
+
+- Excel is where financial data lives. Smart move targeting where the work actually happens instead of creating yet another dashboard.
+
+- http:excalai.com might be better 
+- http://Docupulse.org is doing it for a while already
 
 - ## Been building the 'Cursor for Spreadsheets'
 - https://x.com/jc__gr/status/1892705094463844688

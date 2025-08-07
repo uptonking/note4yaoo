@@ -41,7 +41,7 @@ modified: 2021-01-04T17:26:25.032Z
 - https://github.com/atom-community/markdown-preview-plus
   - a fork of Markdown Preview that provides a real-time preview of markdown documents.
 
-- markdoc /6.8kStar/MIT/202312/ts/inactive
+- markdoc /7.6kStar/MIT/202508/ts
   - https://github.com/markdoc/markdoc
   - https://markdoc.dev/
   - Markdoc is a Markdown-based syntax and toolchain for creating custom documentation sites and experiences.
@@ -194,6 +194,18 @@ modified: 2021-01-04T17:26:25.032Z
   - This program can be used with editors like neovim, vscode and emacs to provide a similar experience to Dataview (but very barebones for now).
   - https://github.com/k-lar/vscode-dynomark
     - This extension is a wrapper around that engine, and provides a simple way to query your markdown files.
+# streaming
+- https://github.com/thetarnav/streaming-markdown /266Star/MIT/202505/js
+  - https://thetarnav.github.io/streaming-markdown/
+  - Experiment making a streaming makdown parser à la ChatGPT.
+  - It's single argument is a `Renderer` object, which is an interface to render the parsed markdown tokens to the DOM.
+
+- https://github.com/rossrobino/robino/tree/main/packages/md /MIT/202506/ts
+  - An extended markdown-it instance 
+  - Syntax highlighting with shiki using the CSS variables theme to style
+  - `stream` function to render and highlight a stream of markdown
+    - stream streams the result of a markdown stream through the renderer/highlighter.
+    - The result will come in chunks of elements instead of by word since the entire element needs to be present to render and highlight correctly.
 # apps
 - https://github.com/motifland/markprompt
   - Markprompt is a platform for building GPT-powered prompts. 

@@ -99,9 +99,39 @@ modified: 2022-01-16T15:52:31.293Z
   - CPU
   - RAM
   - 边框
-- ## 
 
 - ## 
+
+- ## [互联网电视不能装网络浏览器…也是醉了 - 小红书](https://www.xiaohongshu.com/explore/6700c411000000001a0223db?xsec_token=ABoe1ug9YJJDbnOMEN4Q6C0fZ0dK1qg9_RVKDLAdWF5b8=&xsec_source=pc_search&source=web_explore_feed)
+- 法规要求，电视上的内容必须管起来，浏览器上的内容管不了，不让装。
+
+- ## [Why Chrome browser is not available on Android TV (Google TV)? : r/AndroidTV _202304](https://www.reddit.com/r/AndroidTV/comments/12yc3mi/why_chrome_browser_is_not_available_on_android_tv/)
+- I don't know the reason but TV Bro does a great job instead.
+
+- Google doesn't think you need to browse the web in your TV. That's just for consuming media.
+
+- Mozilla used to have a Firefox for Fire TV (and then generic ATV) but they killed that years ago as well.
+  - firefox continues to work on ATV but it requires a mouse to operate correctly.
+
+- ## [小米电视不用挂墙，就装个底座为啥还要安装费 - 小红书](https://www.xiaohongshu.com/explore/686c7ba7000000000b02db9e?xsec_token=ABL7n_fleKY2d2yJ0Kl5bHj7o_Vw4sUjrEkqzyYIDNIto=&xsec_source=pc_search&source=web_explore_feed)
+- 就拧四颗螺丝这么简单，何须花50块，自己装不就行了吗？
+
+- 其实安装很简单，就是电视太大了要两个人装
+
+- 首先再简单也要时间成本。其次只要过手了就会有风险。
+
+- ## [小米电视没法装第三方软件？看这里！ - 小红书](https://www.xiaohongshu.com/explore/6885f1cc000000001c037e3d?xsec_token=ABFqR2NYsx0tMZ2_1jW9XRC31wt0kSyS-GYe02iCV-ca8=&xsec_source=pc_search&source=web_explore_feed)
+- 小米电视安装第三方软件第一步，电视恢复出厂设置。这一步是为了清除电视内的app黑名单。
+  - 恢复出厂设置后电视重启，进入新电视设置阶段，一定不要联网，跳过WiFi无线网络选择。保持断网的状态就不会更新黑名单。
+  - 打开电视的设置-账号与安全-选择允许安装未知来源的应用。
+  - 安装需要的APP：将下载好的app的apk文件拷贝到U盘，把U盘插入电视的USB接口，打开U盘。找到APK文件，点击确定进行安装即可。弹窗提示可能存在未知风险，选择继续安装。软件安装成功。
+
+- ## [红米电视解决底座螺丝难拧的小技巧 - 小红书](https://www.xiaohongshu.com/explore/6794beb00000000029032fe0?xsec_token=ABvhnSCS5ukgPATsbc3yLg8-KBvtXyfeWGHlUGivnnbQQ=&xsec_source=pc_search&source=web_explore_feed)
+  - 刚买了个红米电视, 家里人说底座装不上, 查了网上很多人说螺丝难拧
+  - 其实只要装支架前螺丝先拧进孔里再拧出来，之后安装就很简单了
+- 就是先不带架子单独拧一遍螺丝，然后螺丝拿出来之后再重新安架子不？
+  - 对，拧的时候小心点，用巧劲别死摁
+- 先别装支架，把孔拧松
 
 - ## [红米电视apro系列和a系列有什么区别？Redmi A55 Pro和a55 2025款怎么选？ - 知乎](https://zhuanlan.zhihu.com/p/721352900)
 - 处理器
