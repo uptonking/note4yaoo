@@ -80,6 +80,13 @@ modified: 2025-03-22T18:49:15.634Z
 
 ## ai-providers/vendors
 
+- https://github.com/BerriAI/litellm /27.1kStar/MIT+EE/202508/python/ts
+  - https://docs.litellm.ai/docs/
+  - Python SDK, Proxy Server (LLM Gateway) to call 100+ LLM APIs in OpenAI format - [Bedrock, Azure, OpenAI, VertexAI, Cohere, Anthropic, Sagemaker, HuggingFace, Replicate, Groq]
+  - Translate inputs to provider's completion, embedding, and image_generation endpoints
+  - Consistent output, text responses will always be available at ['choices'][0]['message']['content']
+  - Set Budgets & Rate limits per project, api key, model
+
 - https://github.com/ben-vargas/ai-sdk-provider-claude-code /MIT/202507/ts
   - lets you use Claude via the Vercel AI SDK through the official `@anthropic-ai/claude-code` SDK/CLI.
   - Vercel AI SDK community provider for Claude Code SDK - Use Pro/Max Subscription via SDK
@@ -95,6 +102,19 @@ modified: 2025-03-22T18:49:15.634Z
   - Strong Pydantic types throughout: Strict structured-output generation and streaming via Pydantic models
   - Provider-agnostic embeddings with built-in batching & retry logic
   - Tiny dependency footprint - no bloated external frameworks
+
+- https://github.com/jetify-com/ai /115Star/apache2/202508/go
+  - https://www.jetify.com/
+  - a unified interface for interacting with multiple AI providers including OpenAI, Anthropic, and more. 
+  - Inspired by Vercel's AI SDK for TypeScript, we bring a similar developer experience to the Go ecosystem.
+  - Provider abstraction - Common interfaces for language models, embeddings, and image generation
+  - Multi-modal by default - First-class support for text, images, files, and structured outputs across all providers
+  - Extensible architecture - Clean interfaces make it easy to add new providers while maintaining backward compatibility
+
+- https://github.com/ClickHouse/ai-sdk-cpp /87Star/apache2/202507/cpp
+  - a modern C++ toolkit designed to help you build AI-powered applications with popular model providers like OpenAI and Anthropic. 
+  - [Show HN: A modern C++20 AI SDK (GPT‑4o, Claude 3.5, tool‑calling) | Hacker News _202506](https://news.ycombinator.com/item?id=44412726)
+    - inspired by Vercel's AI SDK, and litellm 
 
 ## aisdk-examples
 

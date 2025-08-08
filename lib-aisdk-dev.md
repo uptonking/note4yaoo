@@ -9,12 +9,22 @@ modified: 2025-08-08T07:35:49.535Z
 
 # guide
 
+- pros
+  - 方便前端接入ai，ui体验好
+  - 提供了常用的ai开发pattern
+
+- cons
+  - 后端功能很弱, 如 RAG/持久化/工作流
+
 - features
   - Unified Provider API
   - UI Framework-agnostic
   - Streaming AI Responses
   - Generative UI: allow a LLM to go beyond text and "generate UI"
     - Generative UI is the process of connecting the results of a tool call to a React component.
+
+- tips
+  - 🆚 ai sdk vs framework --> lightweight fwk 轻量/可扩展定制/模块化
 # ai-providers
 - free-api
   - google-gemini
