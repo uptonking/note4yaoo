@@ -51,6 +51,7 @@ modified: 2022-11-07T10:58:24.512Z
 - 技术文档
   - 公开的文档会自动收录
   - 私有或个人的技术文档需付费收录
+  - 独立开发者博客链接，不放具体内容
 
 - 文字动画、代码动画
   - 局部放大
@@ -61,6 +62,18 @@ modified: 2022-11-07T10:58:24.512Z
 - 
 
 # datable/数据整理
+- 高质量数据
+  - wikipedia
+  - hackernews
+  - reddit-tech
+  - imdb
+
+- 学术相关数据
+  - 论文一条龙: arxiv/paper, huggingface-data, github-code
+  - 中科院PubScholar公益学术平台
+
+- 类似企查查/天眼查的政府数据整合平台
+
 - 政府数据
   - 各级统计局
   - 国外统计局
@@ -75,11 +88,6 @@ modified: 2022-11-07T10:58:24.512Z
 - 各大公司技术博客
   - mdn开发者文档，历史版本的作用不大，但可作为参考
 
-- 中科院PubScholar公益学术平台
-
-- 数据整理
-  - [2023各平台年终报告](https://www.yuque.com/paidaxin/dkopg8/gqpfgysdw0wiqwmh)
-
 - 公共数据的衍生产品
   - 地铁线路图上添加 租房价格/美食, 再提供给第三方社交平台如知乎/小红书
   - 租房地点，位置测评，交通指数、美食指数
@@ -88,14 +96,8 @@ modified: 2022-11-07T10:58:24.512Z
   - github trending
   - 微博热搜
 
-- 类似企查查/天眼查的政府数据整合平台
-
-- 高质量数据
-  - wikipedia
-  - hackernews
-  - reddit-tech
-  - imdb
-  - 学术相关数据: arxiv/paper, huggingface-data, github-code
+- 数据整理
+  - [2023各平台年终报告](https://www.yuque.com/paidaxin/dkopg8/gqpfgysdw0wiqwmh)
 # 国内替代/open-alternatives
 - obsidian
 
@@ -152,6 +154,8 @@ modified: 2022-11-07T10:58:24.512Z
 
 - color-mode-converter
   - rgb-hsl-hsv/b-contrast
+# devtools
+- 以github作为插件/产物/模版仓库，支持自动统计更新时间/star数量
 
 ## sandbox
 

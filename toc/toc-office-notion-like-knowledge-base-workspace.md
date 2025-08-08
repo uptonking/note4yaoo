@@ -183,6 +183,8 @@ modified: 2022-06-03T21:34:54.893Z
   - https://github.com/toeverything/AFFiNE
   - https://affine.pro/
   - Affine is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use.
+  - 🤖 https://github.com/toeverything/AFFiNE/tree/canary/packages/frontend/apps/android
+    - android和ios都基于capacitor实现
   - blocksuite /50Star/MPLv2/202210/ts
     - https://github.com/toeverything/blocksuite
     - https://pathfinder.affine.pro/

@@ -10,24 +10,6 @@ modified: 2025-03-22T18:49:15.634Z
 # guide
 
 # popular
-- https://github.com/vercel/ai-chatbot /apache2/202503/ts
-  - https://chat.vercel.ai/
-  - A full-featured, hackable Next.js AI chatbot built by Vercel
-
-- https://github.com/python-ai-sdk/sdk /MIT/202508/python
-  - https://pythonaisdk.mintlify.app/
-  - The Vercel AI SDK, in Python
-  - A pure Python re-implementation of Vercel's popular AI SDK for TypeScript. 
-  - Zero-configuration functions that work consistently across providers with first-class streaming, tool-calling, and structured output support.
-  - Strong Pydantic types throughout: Strict structured-output generation and streaming via Pydantic models
-  - Provider-agnostic embeddings with built-in batching & retry logic
-  - Tiny dependency footprint - no bloated external frameworks
-
-- https://github.com/ben-vargas/ai-sdk-provider-claude-code /MIT/202507/ts
-  - lets you use Claude via the Vercel AI SDK through the official `@anthropic-ai/claude-code` SDK/CLI.
-  - Vercel AI SDK community provider for Claude Code SDK - Use Pro/Max Subscription via SDK
-  - This is the v5-beta compatible version. For AI SDK v4 support, use version 0.2.x.
-
 - https://github.com/ChatGPTNextWeb/NextChat /MIT/202503/ts/tauri
   - https://nextchat.club/
   - Light and Fast AI Assistant. 
@@ -56,6 +38,66 @@ modified: 2025-03-22T18:49:15.634Z
 - https://github.com/microsoft/TypeChat /MIT/202405/python/ts
   - https://microsoft.github.io/TypeChat/
   - TypeChat is a library that makes it easy to build natural language interfaces using types
+# aisdk
+- https://github.com/vercel/ai /16.5kStar/apache2/202508/ts
+  - https://ai-sdk.dev/docs/introduction
+  - Build AI-powered applications with React, Svelte, Vue, and Solid
+  - Vercel AI SDK abstracts away the differences between model providers, eliminates boilerplate code for building chatbots
+  - AI SDK Core module provides a unified API to interact with model providers like OpenAI, Anthropic, Google, and more.
+  - AI SDK UI module provides a set of hooks that help you build chatbots and generative user interfaces. These hooks are framework agnostic, so they can be used in Next.js, React, Svelte, and Vue.
+  - https://vercel.com/templates/ai
+    - We've built templates that include AI SDK integrations for different use cases, providers, and frameworks.
+  - https://x.com/nicoalbanese10/status/1806680358093541401
+    - this is all you need to use chrome's built in ai model with the vercel ai sdk
+    - no api keys, no configuration, running locally in the browser
+
+- https://github.com/vercel/ai-chatbot /apache2/202503/ts
+  - https://chat.vercel.ai/
+  - A full-featured, hackable Next.js AI chatbot built by Vercel
+
+- https://github.com/langtail/ai-orchestra
+  - a lightweight TypeScript library for orchestrating AI agents
+  - No magic, just simple patterns built around @aisdk 's `streamText` for managing agent handoffs and state transitions.
+  - A lightweight alternative to `LangGraph` without the complexity.
+  - State lives outside the library - you control everything.
+
+- https://github.com/nickscamara/open-deep-research
+  - An open source deep research clone. 
+  - AI Agent that reasons large amounts of web data extracted with Firecrawl
+  - Powered by the @aisdk
+  - https://x.com/nickscamara_/status/1886459999905521912
+    - This is an experimental clone of Open AI's Deep Research. Instead of using a fine-tuned version of o3, this method uses Firecrawl's extract + search with a reasoning model to deep research the web.
+
+- https://github.com/nicolasmontone/ai-sdk-agents /202502/ts
+  - https://ai-sdk-agents.vercel.app/
+  - Tools for Vercel AI SDK
+
+- https://github.com/moeru-ai/xsai /MIT/202502/ts
+  - https://xsai.js.org/
+  - extra-small AI SDK for Browser, Node.js, Deno, Bun or Edge Runtime
+  - xsAI is a series of utils to help you use OpenAI or OpenAI-compatible API.
+  - xsAI doesn't depend on Node.js Built-in Modules, it works well in Browsers, Deno, Bun and even the Edge Runtime.
+
+## ai-providers/vendors
+
+- https://github.com/ben-vargas/ai-sdk-provider-claude-code /MIT/202507/ts
+  - lets you use Claude via the Vercel AI SDK through the official `@anthropic-ai/claude-code` SDK/CLI.
+  - Vercel AI SDK community provider for Claude Code SDK - Use Pro/Max Subscription via SDK
+  - This is the v5-beta compatible version. For AI SDK v4 support, use version 0.2.x.
+
+## port-lang
+
+- https://github.com/python-ai-sdk/sdk /MIT/202508/python
+  - https://pythonaisdk.mintlify.app/
+  - The Vercel AI SDK, in Python
+  - A pure Python re-implementation of Vercel's popular AI SDK for TypeScript. 
+  - Zero-configuration functions that work consistently across providers with first-class streaming, tool-calling, and structured output support.
+  - Strong Pydantic types throughout: Strict structured-output generation and streaming via Pydantic models
+  - Provider-agnostic embeddings with built-in batching & retry logic
+  - Tiny dependency footprint - no bloated external frameworks
+
+## aisdk-examples
+
 # chat-docs/knowledgebase
 - https://github.com/jorge-armando-navarro-flores/chat_with_your_docs /MIT/202409/python
   - ChatWithYourDocs Chat App is a Python application that allows you to chat with multiple Docs formats like PDF, WEB pages and YouTube videos. 

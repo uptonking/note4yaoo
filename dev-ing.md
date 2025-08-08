@@ -250,10 +250,7 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - 做完tailwind-table就面试
 
 - dev-to 提炼核心`需求+产出`工作流，不能在产品中检验的技术不玩
-# dev-07
-
-## 070
-
+# dev-08
 - dev-log
   - ?
 - dev-to
@@ -305,6 +302,8 @@ console.log(
 ```
 
 ```log
+
+- what's the weather in guangzhou china? give me some food and outdoor-activities suggestions according to weather temperature
 
 - prompts-logo-excel-like
   - create a product logo for my excel-like webapp, 
@@ -360,6 +359,15 @@ test('mock test', () => {
 
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
+
+## 0809
+
+- ### why do you use `a` html element? why do you not use nextjs `Link` component?
+- why I should have used Link:
+  - Client-side navigation - Next.js Link provides faster navigation by avoiding full page reloads
+  - Prefetching - Link automatically prefetches linked pages in the background for better performance
+  - Consistency - The existing code already imports and uses Next.js components like Image, so using Link would be more consistent with the project's patterns
+  - SEO and accessibility - While both work, Link is optimized for Next.js routing
 
 ## 0804
 

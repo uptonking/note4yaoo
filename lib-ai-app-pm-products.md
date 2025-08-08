@@ -17,9 +17,12 @@ modified: 2025-03-22T16:10:24.856Z
 
 - markdown-stream
 
-- ai-architecture
+- ai-architecture: 与ai的通信和计算是在前端实现，还是在后端实现
   - 前端和大模型直接对接的缺点: 关闭页面会丢失数据
+  - 消息持久化时，使用服务端id才方便消息保存与恢复、多人聊天一致性
+  - ai在前端或后端的架构都和workflow工作流紧密相关
 
+- 
 - 
 - 
 - 
