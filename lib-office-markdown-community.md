@@ -216,8 +216,22 @@ export default FrontPage
 - atjson isn't really a spec; there's space for someone with the energy to do that to go ahead and standardise something, but so far we've just built a tool that meets our needs. I think it's a good approach, and @codexeditor independently came up with almost the same thing
 - One of the differences to conmonmark is that it's more of an approach. The spec is: here's some Unicode text, here are some annotations on that text (standoff per codex). Annotations have a type, start and end indexes, and a set of type-specific attributes. That's really it!
 
-# discuss-md-stream
+# discuss-md-stream 〰️
 - ## 
+
+- ## 
+
+- ## 
+
+- ## At @liveblocks , we've exploring different ways to render streaming markdown. 
+- https://x.com/nayajunimesh/status/1953471816845918583
+  - I've been experimenting with an approach where you only ever enqueue a fully parsed/formed token so you never see an incorrect or partial markdown.
+  - In the video, only a fully formed block token is sent to the client for rendering, but we could also be more granular and send fully parsed inline tokens. We could even combine optimistic markdown parsing with this buffering approach for ambiguous markdown elements e.g. links.
+  - @ShopifyDevs published an article about a similar approach in 2023! - they call it 'selective markdown buffering'.
+  - Rendering markdown stream can be tricky. Most open source solutions append the incoming chunk to the previous chunks and re-parse the entire markdown string. 
+  - 💡 A more optimal solution is to maintain a buffer of unparsed markdown and only re-parse that buffer string.
+  - In the video, I also parse and sanitize the markdown on server and perform syntax highlighting on server, which helps with security and offloads some heavy work from client
+  - @ChromiumDev published an article recently that talks about best practices. [Best practices to render streamed LLM responses  |  Chrome for Developers _202501](https://developer.chrome.com/docs/ai/render-llm-responses)
 
 - ## We’re exploring ways to improve how Markdown is rendered in our components during streaming.
 - https://x.com/marcbouchenoire/status/1953123423359541670
@@ -225,7 +239,7 @@ export default FrontPage
   - Buffer incomplete elements (partial images, broken emojis, …)
   - `<AiChat />` from `@liveblocks` will have this out-of-the-box, but we’ll also look into releasing it as a standalone package.
 
-- we had a similar issue. solved by using a custom render using markdoc https://markdoc.dev it also allowed us to stream stream component while showing a loading/fallback
+- we had a similar issue. solved by using a custom render using markdoc https://markdoc.dev . it also allowed us to stream stream component while showing a loading/fallback
 
 - https://x.com/sasicodes/status/1953106071180198345
   - literally all the code you need for smooth response streaming in the ai sdk v5  

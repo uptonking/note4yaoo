@@ -18,10 +18,28 @@ modified: 2025-03-22T16:10:24.856Z
 - markdown-stream
 
 - ai-architecture: 与ai的通信和计算是在前端实现，还是在后端实现
-  - 前端和大模型直接对接的缺点: 关闭页面会丢失数据
-  - 消息持久化时，使用服务端id才方便消息保存与恢复、多人聊天一致性
+  - 🐛 前端和大模型直接对接的缺点: 关闭页面会丢失数据、流程中断、并发控制复杂
+  - 🤔 why backend server
+    - 消息持久化时，使用服务端id才方便消息保存与恢复、多人聊天一致性
+    - 方便实现并发控制，特别是多任务
+    - background-task
   - ai在前端或后端的架构都和workflow工作流紧密相关
+  - 🏘️ 架构参考: gemini-cli/qwen-cli(依赖fs) + ui/copilot-chat + framework/langfuse
 
+- 🏘️ ai-backend/platform
+  - caching
+  - embedding
+  - self-evaluation
+  - parallel
+  - manual orchestration
+  - Observability
+  - prompt management
+  - playground
+  - dataset
+
+- 
+- 
+- 
 - 
 - 
 - 
@@ -69,9 +87,13 @@ modified: 2025-03-22T16:10:24.856Z
 - trae,       5k,    1000,  $10
 - gh-copilot, 2k,    50,    $10
 - gemini-cli, 180k,  240x30,$10/1M-tokens
-·- amazon-kiro,any,   50,    $19   
+- amazon-kiro,any,   50,    $19   
 
 ```
+
+- [智能编码助手通义灵码 产品文档](https://help.aliyun.com/zh/lingma/)
+  - [价格-通义灵码](https://lingma.aliyun.com/pricing)
+  - 个人专业版为限免阶段，所有用户均可享受个人专业版服务，限免期结束后，也会对所有开发者免费提供个人基础版服务，限免周期暂未确定
 
 - roadmap
   - 1. human-in-the-loop
@@ -86,6 +108,12 @@ modified: 2025-03-22T16:10:24.856Z
 - ai写与第三方sdk集成的代码时，先写注释example，再写代码
 # ai-office
 - 产品方向: ask、生成、集成
+
+- 基于演讲视频生成视频中的ppt, 还原ppt内容
+
+- 
+- 
+- 
 
 - google-docs-ai
   - [How to Use AI in Google Docs - Numerous.ai](https://numerous.ai/blog/how-to-use-ai-in-google-docs)

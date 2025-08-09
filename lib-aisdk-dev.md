@@ -25,6 +25,7 @@ modified: 2025-08-08T07:35:49.535Z
 
 - tips
   - 🆚 ai sdk vs framework --> lightweight fwk 轻量/可扩展定制/模块化
+  - 🤔 不要在ai fwk选型上浪费太多时间，直接分析具体业务场景的需求和现有案例，然后尝试理解方案并改进
 # ai-providers
 - free-api
   - google-gemini

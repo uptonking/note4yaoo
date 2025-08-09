@@ -161,6 +161,14 @@ modified: 2022-11-06T11:21:27.612Z
   - A modern, browser-based, open source SQL workbench for your MySQL and PostgreSQL compatible database with version control features when connected to Dolt.
   - Use Dolt to unlock powerful version control features.
 
+- https://github.com/ourines/drizzleflow /202507/ts
+  - A smart, visual management tool for modern databases. 
+  - Go beyond Drizzle Studio with AI-powered agents and interactive schema visualization
+  - chat with your database in natural language
+  - Renders your database schema into an interactive graph using `ReactFlow`.
+  - seamlessly integrated Drizzle Studio with auto-start, health checks, failed retries
+  - Easily switch between multiple database environments like development, testing, and production
+
 - https://github.com/mlaanderson/database-js
   - Database-js implements a common, promise-based interface for SQL database access. 
   - Inspired by JDBC, it uses connection strings to identify the database driver. 

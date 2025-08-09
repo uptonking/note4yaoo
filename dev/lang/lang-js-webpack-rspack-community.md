@@ -28,6 +28,42 @@ modified: 2024-01-03T16:14:53.804Z
 # discuss-internals
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🌴💡 [Bundler Tree Shaking Principles and Differences · web-infra-dev _202507](https://github.com/orgs/web-infra-dev/discussions/29)
+- implementations of tree shaking vary. 
+  - For example, webpack is primarily used for front-end application bundling and emphasizes correctness, with its tree shaking focusing on cross-module-level optimizations. 
+  - On the other hand, Rollup is mainly used for library bundling and prioritizes optimization efficiency, performing tree shaking at the granularity of AST nodes, which typically results in smaller bundle sizes. However, it may lack guarantees for the execution correctness of certain edge cases.
+- Currently, Rspack (v1.4) follows the same tree shaking implementation as webpack, so the following introduction will use webpack's implementation approach as an example.
+
+- webpack's tree shaking consists of three parts:
+  - module-level：optimization.sideEffects Remove modules that have no used exports and no side effects.
+  - export-level：optimization.providedExports and optimization.usedExports, to remove unused exports
+  - code-level：optimization.minimize Use minifiers like SWC or Terser to analyze code through techniques such as inlining and evaluation, removing dead code and performing compression to minimize bundle size as much as possible.
+- In addition, another important part is static analysis. 
+  - Both module-level and export-level optimizations require webpack to perform static analysis on the code to determine whether a module has side effects, what exports it contains, and which exports are actually used. This information serves as input for these optimization phases.
+  - However, currently, webpack only performs static analysis for very limited scenarios involving CJS and dynamic imports. Many analyzable cases remain unoptimized, leaving significant room for improvement.
+
+- Tree shaking in esbuild
+  - Split each module into top-level statements, treating each top-level statement as a part.
+  - Perform a top-down traversal starting from the entry module's parts. If a part is used by other parts or has side effects, mark it as IsLive = true.
+  - Splitting top-level statements in advance allows esbuild to inherently solve the innerGraph issue. 
+
+- Tree shaking in Turbopack
+  - Module splitting is actually more suitable for bundlers like webpack, which can separate module loading and execution, inherently ensuring the correctness of module execution without requiring additional handling of variable declarations and usage within modules.
+  - So, is there a bundler that combines webpack-like runtime (separating module loading and execution) with support for module splitting? Yes: Turbopack.
+  - Turbopack uses an output format similar to webpack, wrapping each module in a function to separate module loading and execution.
+  - Of course, module splitting also has its drawbacks. After splitting, each top-level statement in the output is wrapped in a function. While this ensures correct execution, it amplifies the downsides of this wrapping approach:
+    - Excessive duplication of these wrapper functions increases bundle size
+    - More variables must be accessed via object properties 
+
+- Tree shaking in Rollup
+  - If webpack performs tree shaking on export statements and modules, and esbuild does it on top-level statements, then Rollup conducts tree shaking from top to bottom for all statements and even finer-grained AST nodes, with more precise side effects detection.
+  - Finer-grained analysis: It analyzes and removes code at the AST node level, while other bundlers typically operate at the top-level statement level or with even coarser granularity, leaving finer-grained dead code elimination (DCE) to minifiers.
+  - Rollup’s fine-grained approach inherently includes the coarser-grained analysis of export statements and top-level statements. As a result, Rollup can not only remove unused exports across modules but also handle some intra-module DCE. 
+
 - ## I just realized that OXC's AST transfer is similar to TC39's binary AST proposal
 - https://x.com/hd_nvim/status/1911838244498559139
 

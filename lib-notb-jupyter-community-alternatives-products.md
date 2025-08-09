@@ -45,6 +45,57 @@ modified: 2024-06-30T03:32:45.893Z
   - [Benefits of the classic UI and use cases for classic over JupyterLab](https://discourse.jupyter.org/t/benefits-of-the-classic-ui-and-use-cases-for-classic-over-jupyterlab-was-why-is-tim-not-moving-to-lab/2419)
   - The goal of the jupyterlab-classic project is to look as close to the classic notebook UI as possible, while leveraging the efforts put in the development of JupyterLab itself and its extension system
 
+# discuss-marimo
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [marimo: Representing Python notebooks as dataflow graphs | Hacker News _202508](https://news.ycombinator.com/item?id=44801392)
+- One thing which I don't like about reactive notebooks is that you have to be much more mindful of expensive and long running calculations. 
+  - There are feature to help, like adding a run button, but often I end up just disabling auto-run which does reduce the value of the reactive flow. 
+  - For those use cases I don't find myself using marimo over Jupyter.
+- for my own personal work, I find that there are many reasons to use marimo even when autorun is disabled — you still get guarantees on state, rich dataframe views, reusable functions, the Python file format, and more.
+- Marimo is just a `.py` file.
+
+- I don't like this reproducibility crisis story either. Notebooks are for exploration. It is okay if they are messy. 
+  - If the tool I am using doesn't get in the way of my process but instead makes it fast enough then it is already doing its job. 
+  - Once you are done it is up to you to let it die, make sure it is something you can go back and iterate on it, or package it and make it usable elsewhere.
+
+- From the blog, you will see that reactive execution not only minimizes hidden state, it also enables rapid data exploration (far more rapid than a traditional notebook), reuse as data apps, reuse as scripts, a far more intelligent module autoreloader, and much more.
+  - marimo is not just another Jupyter extension, it's a new kind of notebook. 
+
+- > You have to be very disciplined to make a Jupyter notebook that is actually reproducible
+  - This seems not necessarily very hard to me? All you have to do is keep yourself honest by actually trying to reproduce the results of the notebook when you're done
+
+- Marimo seems really solid if you like tools like Streamlit or Observable
+  - It certainly has some of the “widget feelings” from streamlit but the real killer feature is that you’re still always in a notebook. You can still explore with these widgets, which is a stellar experience.
+
+- Even with data flow extension (also like ipyflow) I am still struggling with the execution model of notebooks in general. I often still see people defining functions and classes in notebooks to somehow handle prototyping loops.
+  - I would love to see DAGs like in SSA form of compilers, that also supports loop operators. However, IMHO also the notebook interface needs to adjust for that (cell indentation ?). 
+  - However, the strength of notebooks rather shows in document authoring like quarto, which IMHO mostly contradicts more complex controll flow.
+
+- ## [marimo: Lessons learned reinventing the Python notebook | Hacker News _202403](https://news.ycombinator.com/item?id=40327543)
+- I question the choice of Python as the format. Agreed that Json is terrible. But Python will have similar problems. And a notebook is a marked up document. Using a markup language is a natural choice. Delimit areas of particular syntax and you are off to the races. (Yes, I am fond of org mode.)
+- We're adding support markdown with fenced code blocks, which maybe gets you closer to "delimiting areas of particular syntax"
+  - Python is nice because it enables composition and reuse as vanilla scripts. But there are definitely tradeoffs.
+
+- Yes, fenced blocks is what I meant. Recreating parts of xml and cdata seems the common end goal. I think we have enough modern processing that you can do looser grammars.
+  - Composition is an odd goal to me. Most notebook usage is exploratory. As such, taking effort to reuse notebooks feels counter to the benefits of doing it again that you can get.
+
+- How about lessons learned from other reactive notebook environments that have been around for a while? If you are 'reinventing' something, I wonder why no mentions are made of the paths that have been laid before (Observable, Quarto, Enso, etc.).
+  - Pluto.jl is our biggest inspiration. We also took some inspiration from streamlit, and of course a lot of inspiration from the IPython kernel and Jupyter. We didn't look closely at Observable (though Fons cites Observable as his biggest inspiration), and didn't look at Quarto or Enso at all.
+
+- as a daily jupyter user, i like this .py DAG approach a lot - more so for visualizing complex workflows than addressing a potentially corrupt hidden state.
+
+- having spent a lot of time with airflow recently, it's designed for scheduling recurring jobs, not *batch processing.* meanwhile dagster is not meant for computationally intensive/ long-running jobs and the dataset-centric approach is offputting
+
+- In principle every notebook is a DAG, since the cells are evaluated in a certain order. You could even infer the DAG from Jupyter notebooks, at least when the execution number is stored (the In[...] part).
+
+- I am skeptical about the power of static analysis with a language like Python. Many times, the hidden state in Jupyter lives in another module, or somewhere deep in an object hierarchy. If you’re going to reinvent the Python notebook for reproducibility, I wonder why not go further, and fully snapshot the program state?
+
+- the only ergonomic solution to me is to maintain a converted script of notebooks and using it for diff tracking, productionizing, etc. through a simple abstraction.
 # discuss
 - ## 
 

@@ -71,6 +71,24 @@ modified: 2023-04-16T12:52:03.130Z
   - it's using https://github.com/qq15725/modern-screenshot to send images!
 
 - I built this in 25 minutes using MCP tools
+# discuss-ai-example 🌰 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Google Gemini 的 StoryBook 功能用了 20+ 个 Agents，其中 6 个是专门为故事书功能设计的核心 Agents
+- https://x.com/iguangzhengli/status/1953770970680000637
+  1. Writer - 负责创作故事内容
+  2. Storyboarder - 分镜和插图说明
+  3. NewStorybook - 核心 Agent
+  4. IllustratorSingleCall - 插画导演
+  5. Animator - 动画导演
+  6. Photos - Google Photos 集成
+- StroyBook 的 System Prompt 很容易逆向出来，估计现在根本没有设防(后面看到后估计马上要加过滤了)
+
+- 各国文学的叙事风格有很大差异，不知道这些Agents是如何实现的。
 # discuss
 - ## 
 

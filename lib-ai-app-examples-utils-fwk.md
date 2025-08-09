@@ -29,6 +29,18 @@ modified: 2025-02-21T18:20:42.624Z
   - https://x.com/threepointone/status/1895097050439593993
     - an event bus for ai agents
 # agent-framework
+- https://github.com/langfuse/langfuse /14.8kStar/MIT+EE/202508/ts
+  - https://langfuse.com/docs
+  - Langfuse is an open source LLM engineering platform. 
+  - It helps teams collaboratively develop, monitor, evaluate, and debug AI applications. 
+  - Observability: tracking LLM calls and other relevant logic in your app such as retrieval, embedding, or agent actions
+  - Prompt Management 
+  - Evaluations: supports LLM-as-a-judge, user feedback collection
+  - Datasets enable test sets and benchmarks for evaluating your LLM applications
+  - LLM Playground is a tool for testing and iterating on your prompts and model configurations
+  - [All Langfuse Product Features now Free Open-Source : r/LangChain _202506](https://www.reddit.com/r/LangChain/comments/1l36tte/all_langfuse_product_features_now_free_opensource/)
+    - Langfuse is an open-source LangSmith alternative that helps teams collaboratively build, debug, and improve their LLM applications
+
 - https://github.com/MotiaDev/motia /MIT/202503/ts
   - https://motia.dev/
   - Motia lets developers create, test, and deploy production-ready AI agents in minutes, in a framework that will feel familar to software engineering teams. 

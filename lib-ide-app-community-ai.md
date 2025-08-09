@@ -146,6 +146,28 @@ modified: 2024-08-24T16:28:20.515Z
 
 - I want an LLM which uses an LSP to gather more context.
   - Aider uses Treesitter to improve code generation.
+# discuss-ai-coding-free 💰
+- ## 
+
+- ## 
+
+- ## You get 2, 000 free Qwen Code runs every day! `npx @​qwen-code/qwen-code@latest` Hit Enter, and that’s it! _20250808
+- https://x.com/Alibaba_Qwen/status/1953835877555151134
+  - 2, 000 requests per day with no token limits
+  - 60 requests per minute rate limit
+  - 2000 is for china users, 1000 for everyone else
+
+- You kind of get the same deal with Gemini cli too. Just that it's 1000 requests per day, not 2000 like Qwen. You sign up through your personal Google account, not AI Studio API keys. And all requests go to Gemini 2.5 pro, which is better than Qwen3 coder?
+  - It’s not 1000 Gemini 2.5 Pro requests per day. You only get 40-50 requests per day for 2.5 Pro and then it switches to Flash.
+- 2.5 pro is bad at tool calling though
+
+- Do you log/train/retain code written with Qwen Code free tier?  Didn’t see info on that on GitHub.
+- almost all providers that allow free usage like google gemini cli, qwen code, the horizon beta model on open router etc use the data for training.
+
+- I notice this is a Gemini-CLI fork. Is anybody else having trouble with the google_web_search tool?
+
+- Is this the full qwen coder or qwen coder flash? Big regardless but if this is for the full coder then its game over.
+  - the 480b version. full.
 # discuss-terminal-ai
 - ## 
 

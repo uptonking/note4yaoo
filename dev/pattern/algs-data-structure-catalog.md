@@ -55,6 +55,20 @@ modified: 2020-12-20T15:27:57.656Z
   - a Rust HashMap implementation with copy-on-write keys and values.
   - Originally built for optimizing the Purple Protocol, this library provides a way to link HashMaps in memory that have duplicate entries. 
   - Instead of the duplicate data, it is instead borrowed and it is only cloned when mutation is needed.
+# discuss-algs
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Fastest shortest paths algorithm in 40 years, beating the famous Dijkstra plus Tarjan `n log n` limit by avoiding global sorting and working through a small set of pivot nodes. _202508
+- https://x.com/rohanpaul_ai/status/1954088843356799045
+  - The paper shows a deterministic O(m log2/3 n) algorithm for directed single‑source shortest paths with real non‑negative weights in the comparison‑addition model, which beats the O(m + n log n) Dijkstra bound on sparse graphs. 
+  - The usual practice keeps a global priority queue that effectively sorts up to n distance keys, so hitting a sorting wall near n log n. 
+  - The core shift is that the algorithm computes all distances without maintaining a full order of the frontier, so it avoids paying for global sorting. 
+  - Prior results even proved Dijkstra is optimal if the algorithm has to output the exact order of vertices by distance. This work targets only the distances, not that full ranking, which opens the door to bypass sorting entirely. 
+
 # discuss-data-structure
 - ## 
 

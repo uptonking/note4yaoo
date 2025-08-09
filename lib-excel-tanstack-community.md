@@ -80,7 +80,15 @@ modified: 2023-03-01T13:00:27.664Z
 
 - ## 
 
-- ## 
+- ## Introducing a new package that automates SSR dehydration/hydration and streaming between TanStack Router / Start and TanStack Query.
+- https://x.com/schanuelmiller/status/1953941380121739485
+  - with this integration, if you execute a query on the server during SSR, the query data will be sent to the client automatically next to the SSR HTML. this works for queries that block the SSR requests as well as ones that resolve later.
+
+- What are situations where this is extra beneficial?
+  - whenever you don't want the client to refetch the queries the server performs during SSR. also to prefill the client query cache that are not immediately rendered.
+
+- Does this replace react-router-with-query then?
+  - yes
 
 - ## I’ve said this before, and I’ll keep saying it. Parallel routes and component routes will be massively powerful in TanStack Router. _202505
 - https://x.com/tannerlinsley/status/1928654398114214360
