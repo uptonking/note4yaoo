@@ -22,7 +22,7 @@ modified: 2025-03-22T18:49:15.634Z
     - Security Auditing: Automatically intercept sensitive inquiries and trace all historical conversation records
     - Private Deployment: Enterprise-level private deployment supporting various mainstream private cloud solutions
 
-- https://github.com/lobehub/lobe-chat /MIT/202406/ts
+- https://github.com/lobehub/lobe-chat /apache2+NonModify/202406/ts
   - https://chat-preview.lobehub.com/
   - An open-source, modern-design ChatGPT/LLMs UI/Framework.
   - Supports speech-synthesis, multi-modal, and extensible (function call) plugin system.
@@ -32,7 +32,7 @@ modified: 2025-03-22T18:49:15.634Z
     - SDK for LobeChat function calling plugins
 
 - https://github.com/LAION-AI/Open-Assistant /apache2/202401/python
-  - OpenAssistant is a chat-based assistant that understands tasks, can interact with third-party systems, and retrieve information dynamically to do so.
+  - a chat-based assistant that understands tasks, can interact with third-party systems, and retrieve information dynamically to do so.
   - OpenAssistant is completed, and the project is now finished. The final published oasst2 dataset can be found on HuggingFace at OpenAssistant/oasst2
 
 - https://github.com/microsoft/TypeChat /MIT/202405/python/ts
@@ -52,8 +52,17 @@ modified: 2025-03-22T18:49:15.634Z
     - no api keys, no configuration, running locally in the browser
 
 - https://github.com/vercel/ai-chatbot /apache2/202503/ts
-  - https://chat.vercel.ai/
+  - https://chat-sdk.dev/
   - A full-featured, hackable Next.js AI chatbot built by Vercel
+  - React Server Components (RSCs) and Server Actions for server-side rendering and increased performance
+  - Neon Serverless Postgres for saving chat history and user data
+  - Vercel Blob for efficient file storage
+  - Auth.js: Simple and secure authentication
+
+- https://github.com/CopilotKit/CopilotKit /22.4kStar/MIT/202508/ts
+  - https://docs.copilotkit.ai/
+  - React UI + elegant infrastructure for AI Copilots, AI chatbots
+  - The Agentic Application Framework: Open source framework and hosted service for AI-assisted applications.
 
 - https://github.com/langtail/ai-orchestra
   - a lightweight TypeScript library for orchestrating AI agents

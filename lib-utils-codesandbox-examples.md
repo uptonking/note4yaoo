@@ -264,6 +264,8 @@ modified: 2023-09-02T09:17:22.992Z
     - We ask for Terraform v1.5.x because starting from v1.6 Terraform switched their license from Mozilla Public License to Business Source License.
     - PostgreSQL database (Supabase's DB only supported for now)
     - E2B is using Firecracker for Sandboxes. You can build your own kernel and Firecracker version from source by running make build-and-upload-fc-components
+  - [Is there an open-source alternative to e2b (e2b.dev. Code interpreting for your AI app)? : r/LocalLLaMA _202405](https://www.reddit.com/r/LocalLLaMA/comments/1chsx7z/is_there_an_opensource_alternative_to_e2b_e2bdev/)
+    - The reason we aren't using containers for code execution is because they aren't secure. We're using Firecracker micro VMs under the hood instead.
 - https://github.com/e2b-dev/open-computer-use /apache2/202503/python
   - A secure cloud Linux computer powered by E2B Desktop Sandbox and controlled by open-source LLMs.
   - Uses E2B for secure Desktop Sandbox
@@ -302,6 +304,21 @@ modified: 2023-09-02T09:17:22.992Z
   - [ForeverVM: Run AI-generated code in stateful sandboxes that run forever | Hacker News _202502](https://news.ycombinator.com/item?id=43184686)
   - https://x.com/JamsocketHQ/status/1884660472076513468
     - a Python REPL-as-a-service
+
+- https://github.com/daytonaio/daytona /21.1kStar/AGPL/202508/go
+  - https://daytona.io/
+  - Secure and Elastic Infrastructure for Running Your AI-Generated Code.
+  - OCI/Docker Compatibility: Use any OCI/Docker image to create a Sandbox
+  - [Top Daytona.io alternatives for running AI code in secure sandboxed environments | Blog — Northflank _202507](https://northflank.com/blog/top-daytona-io-alternatives-for-running-ai-code-in-secure-sandboxed-environments)
+    - Daytona pivoted in February 2025 from development environments to become infrastructure for running AI-generated code. They provide sandboxes through an SDK that lets AI agents execute code in isolated environments.
+    - Under the hood, Daytona's default configuration uses standard Docker containers, though they support enhanced isolation through Kata Containers and Sysbox when explicitly configured. This tiered approach means security depends heavily on your configuration choices.
+    - Daytona is built for AI agent workflows, not comprehensive infrastructure. If you're trying to run production workloads beyond just code snippets, like databases, long-running services, or GPU jobs, you'll need a more complete platform
+    - E2B.dev uses Firecracker microVMs with great persistence features but no self-hosting in production.
+    - Vercel Sandbox uses Firecracker microVMs for development environments but with session limits.
+    - Cloudflare Workers uses V8 isolates for blazing-fast edge functions but no persistent state.
+    - Modal provides fast Python containers with gVisor isolation, ideal for ML workloads but Python-only. Modal uses gVisor containers
+    - Northflank offers production-proven Kata Containers powered microVMs, and gVisor, with full orchestration, GPU support, long-running jobs, Bring Your Own Cloud (BYOC), and runs your entire infrastructure, not just sandboxes.
+      - Technologies like Kata Containers with Cloud Hypervisor (CLH) and gVisor, giving you flexibility in your secure compute stack
 
 - https://github.com/oomol-lab/ovm-core
   - The minimal virtual machine to run podman.

@@ -91,6 +91,10 @@ modified: 2023-02-08T10:46:26.912Z
 - [Github search cheatsheet from official docs](https://gist.github.com/bonniss/4f0de4f599708c5268134225dda003e0)
 
 ```
+<!-- 搜索多种语言的仓库 -->
+language:JavaScript  language:TypeScript
+
+<!-- 搜索多种语言的code -->
 ( language:JavaScript  OR  language:TypeScript ) NOT is:fork
 ```
 
@@ -317,6 +321,9 @@ modified: 2023-02-08T10:46:26.912Z
 
 - https://github.com/amplemarket/github-repo-size-public
   - display repository size on GitHub
+
+- https://gist.github.com/luoling8192/3c0a33f6a60dc322a99f60162e6a9824
+  - 显示代码总行数和仓库大小
 # github-theming
 - https://github.com/imfunniee/gitfolio
   - https://imfunniee.github.io/gitfolio/

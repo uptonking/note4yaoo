@@ -360,6 +360,12 @@ test('mock test', () => {
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
 
+## 0810
+
+- [No response is returned from route handler (Response differs due to polyfill!) · Issue · vercel/next.js _202311](https://github.com/vercel/next.js/issues/58611)
+  -  ⨯ Error: No response is returned from route handler '/.../auth0-nextjs-repro/app/api/auth/[auth0]/route.ts'. Ensure you return a `Response` or a `NextResponse` in all branches of your handler.
+  -  my problem was that I hadn't fully adapted the `@auth0/nextjs-auth0` example to the app router. I needed to return `handleLogin`, not just await it.
+
 ## 0809
 
 - ### why do you use `a` html element? why do you not use nextjs `Link` component?

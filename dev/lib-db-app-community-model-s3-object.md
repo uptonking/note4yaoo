@@ -90,6 +90,69 @@ modified: 2024-03-13T14:26:26.220Z
 
 - JuiceFS with Redis (with append-only + real-time save) is extremely reliable for me. It stores the data on any S3-compatible storage backend (e.g. Amazon S3, GCP Cloud Storage, or your local Minio cluster). The config allows you to set how often the metadata is backed up to the S3. While file data is stored on S3-compatible storage, the metadata can be stored on Redis, etcd, TiKV, etc. Plenty of setup options. Easy to install too. One thing about these mounted file systems. They use FUSE and the file names must be <= 255 characters.
 - JuiceFS is not a storage backend; it's a distributed mounting system, allowing you to make the same storage available all across your network. It will need a block storage like Minio which does erasure coding and storage. 
+# discuss-vercel-blob
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 📃 [Supabase Storage now supports the S3 protocol | Hacker News _202404](https://news.ycombinator.com/item?id=40083807)
+  - we have a storage product for large files (like photos, videos, etc). 
+  - The storage paths are mapped into your Postgres database so that you can create per-user access rules (using Postgres RLS)
+  - We can do neat things like dump postgres tables in to Storage (parquet) and you can connect DuckDB/Clickhouse directly to them.
+
+- is the data really stored in a Postgres database? Do you support transactional updates like atomically updating two files at once?
+  - We do not store the files in Postgres, the files are stored in a managed S3 bucket.
+  - We store the metadata of the objects and buckets in Postgres so that you can easily query it with SQL. You can also implement access control with RLS to allow access to certain resources.
+  - It is not currently possible to guarantee atomicity on 2 different file uploads since each file is uploaded on a single request, this seems a more high-level functionality that could be implemented at the application level
+- So this is like, S3 on top of S3? That's interesting.
+  - Yes indeed! I would call it S3 on steroids!
+  - Currently, it happens to be S3 to S3, but you could write an adapter, let's say GoogleCloudStorage and it will become S3 -> GoogleCloudStorage, or any other type of underline Storage.
+  - Additionally, we provide a special way of authenticating to Supabase S3 using the SessionToken, which allows you to scope S3 operations to your users specific access control
+
+- I like to Lob my BLOBs into PG's storage. You need that 1-2TB of RDS storage for the IOPS anyway; might as well fill it up. Large object crew, who's with me?!
+- I don't. S3-compatible storages usually are significantly cheaper, allow to offload HTTP requests. Also huge databases make backups and recoveries slow.
+  - The only upside of storing blobs in the database is transactional semantics. Buf if you're fine with some theoretical trash in S3, that's trivially implemented with proper ordering.
+- that's not how this works. files are stored in s3, metadata in postgres
+  - A trigger could add a "job" to delete the blob into another table when the file record is deleted though..
+- Lol. The most PG blob storage I've used in prod was a couple hundred GB. It was a hack and the performance wasn't ideal, but the alternatives were more complicated. Simple is good.
+  - Yeah, it's a great place to start. I took the time to implement streaming reads/write via npgsql's client support for it (it can stream records, and of course the Lob storage is broken into page sized rows) and performance is pretty darn good.
+
+- in my experience Supabase was definitely challenging to selfhost. Pocketbase being literally single-binary doesn't make Supabase look good either, although funtionalities differ.
+  - Yes, we have a vastly different architecture from Pocketbase. We choose individual tools based on their scaling characteristics and give you the flexibility to add/remove tools as you see fit.
+
+- The S3 API reference is closest to a formal spec there is. The request, response and the error codes are pretty well documented.
+
+- do you support pre-signed URLs?
+  - we do not support signed URLs just yet, but it will be added in the next iteration
+- Presigned URLs are useful because client app can upload/download directly from S3, saving the app server from this traffic. Does Row-Level Security achieve the same benefit?
+
+
+- ## 💡 [The open-source alternative to Vercel Storage _202305](https://javascript.plainenglish.io/dodging-the-vercel-storage-tax-there-are-better-open-source-alternatives-ef04e537b598)
+- Vercel Postgres — A PostgreSQL database powered by Neon, that’s easy to set up, easy to integrate with any Postgres client
+- Vercel KV — a Redis compatible Key-Value store, powered by Upstash, available at Vercel Edge locations, and usable with any Redis client.
+- Vercel Blob — An accessible, streamlined Amazon S3-compatible solution to upload, store, and serve binary files, powered by Cloudflare R2
+
+- ## 📝 [Vercel Blob docs](https://vercel.com/docs/vercel-blob)
+- Each Vercel Blob store can be accessed by multiple Vercel projects. Vercel Blob URLs are publicly accessible
+- Each Blob is served with a `content-disposition` header. Based on the MIME type of the uploaded blob, it is either set to `attachment` (force file download) or `inline` (can render in a browser tab).
+  - This is done to prevent hosting specific files on @vercel/blob like HTML web pages. 
+
+- When you request a blob URL using a browser, the content is cached in two places: Your browser's cache, Vercel's cache
+  - Both caches store blobs for up to 1 month by default to ensure optimal performance when serving content.
+
+- 🐛 When you delete or update (overwrite) a blob, the changes may take up to 60 seconds to propagate through our cache. 
+
+- For optimal performance and to avoid caching issues, consider treating blobs as immutable objects:
+  - Instead of updating existing blobs, create new ones with different pathnames 
+
+- There are still valid use cases for mutable blobs with shorter cache durations, such as a single JSON file that's updated every 5 minutes with a top list of sales or other regularly refreshed data. 
+  - For these scenarios, set an appropriate cacheControlMaxAge value and be mindful of caching behaviors.
+
+- By default, Vercel Blob prevents you from accidentally overwriting existing blobs by using the same pathname twice. When you attempt to upload a blob with a pathname that already exists, the operation will throw an error.
 # discuss-minio-like
 - ## 
 

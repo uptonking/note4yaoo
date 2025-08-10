@@ -53,7 +53,7 @@ modified: 2021-08-30T18:57:27.645Z
   - Openstreetmap - Openstreetmap source data
   - Freebase - Various wiki style data on places/people/things
 
-- [Postgres sample data - Neon Docs](https://neon.tech/docs/import/import-sample-data)
+- [Postgres sample data - Neon Docs](https://neon.com/docs/import/import-sample-data)
   - Netflix data
     - A dataset containing information about movies and tv shows on Netflix.
   - Chinook database

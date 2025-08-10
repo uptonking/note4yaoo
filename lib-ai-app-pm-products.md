@@ -27,13 +27,27 @@ modified: 2025-03-22T16:10:24.856Z
   - 🏘️ 架构参考: gemini-cli/qwen-cli(依赖fs) + ui/copilot-chat + framework/langfuse
 
 - 🏘️ ai-backend/platform
+  - providers-wrapper: models, communication+state, structured in/output
+  - tool-call, MCP
+  - streaming
   - caching
-  - embedding
-  - self-evaluation
+  - persistence/storage
+  - memory: short, long
+  - RAG
+  - embedding: chunking, indexing, vector store/db
+  - planning
+  - ⛓️ workflow
+  - 👥 multi-agent, sub-agent
   - parallel
-  - manual orchestration
-  - Observability
+  - manual orchestration: retry
+  - self-evaluation
+  - human-in-the-loop
+  - Observability: connection mgmt
   - prompt management
+  - deep-research
+  - rate-limiter
+  - multi-modal: image, video
+  - checkpoint/time travel
   - playground
   - dataset
 

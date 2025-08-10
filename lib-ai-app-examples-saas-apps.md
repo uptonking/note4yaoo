@@ -23,6 +23,13 @@ modified: 2025-02-21T17:17:42.225Z
   - Refly is an open-source AI-native creation engine powered by 13+ leading AI models. 
   - Its intuitive free-form canvas interface integrates multi-threaded conversations, multimodal inputs (text/images/files), RAG 
 # workflow-ai
+- https://github.com/FlowiseAI/Flowise /42.5kStar/apache2+EE/202508/ts
+  - https://flowiseai.com/
+  - https://docs.flowiseai.com/
+  - Drag & drop UI to build your customized LLM flow
+  - Open source low-code tool for developers to build customized LLM orchestration flow & AI agents
+  - 基于 LangchainJS, 支持langchain的各种组件
+
 - https://github.com/browser-use/workflow-use /AGPL/python
   - Create and run workflows (RPA 2.0)
   - https://x.com/gregpr07/status/1923595378286268812
@@ -59,13 +66,6 @@ modified: 2025-02-21T17:17:42.225Z
   - [Pricing of Sequential Workflow Designer Pro](https://nocode-js.com/sequential-workflow-designer-pro-pricing)
     - Pro Step Components
     - Custom Theme
-
-- https://github.com/FlowiseAI/Flowise /apache2/202406/ts
-  - https://flowiseai.com/
-  - https://docs.flowiseai.com/
-  - Drag & drop UI to build your customized LLM flow
-  - Open source low-code tool for developers to build customized LLM orchestration flow & AI agents
-  - 支持langchain的各种组件
 
 - https://github.com/samdenty/react-ai-flow /202503/ts
   - https://react-ai-flow.com/

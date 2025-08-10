@@ -37,6 +37,8 @@ modified: 2025-08-08T07:35:49.535Z
   - aisdk对groq-llama提供官方支持，支持image input
   - groq-names: deepseek-r1-distill-llama-70b, qwen/qwen3-32b, moonshotai/kimi-k2-instruct
   - aisdk/groq-names: llama-3.3-70b-versatile, meta-llama/llama-4-scout-17b-16e-instruct
+  - [Model Deprecation - GroqDocs](https://console.groq.com/docs/deprecations)
+    - deprecation of gemma2-9b-it in favor of llama-3.1-8b-instant
 
 - openrouter
   - aisdk对free-model由社区提供支持

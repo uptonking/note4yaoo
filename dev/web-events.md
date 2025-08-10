@@ -483,7 +483,38 @@ function getOffsetX(event) {
 - bubbles by default is false
 - Unlike "native" events, which are fired by the browser and invoke event handlers asynchronously via the event loop,  `dispatchEvent()` invokes event handlers synchronously. 
   - All applicable event handlers are called and return before `dispatchEvent()` returns.
+# discuss-ios-safari-events
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Discovered that Safari on iOS has a 32ms delay between the pointerup event and the click event. 
+- https://x.com/devongovett/status/1884274593147543597
+  - But ONLY if the tapped element is not a form control and does not have an aria role. 
+  - Took spelunking into the WebKit source code to find that one!
+  - It's actually for hover emulation I think. First tap triggers hover, second triggers click. They are attempting to detect if the page is modified on the first tap, and if it is assume a tooltip or something appeared. In that case they don't fire a click. It makes sense but very weird exceptions.
+
+- What's the positive version of that statement? Form controls and controls with aria roles have no delay?
+  - Correct.
+
+- ## Took me days to work out the reason why the event-handling wasn't working properly in my web app for iOS.
+- https://x.com/birch_js/status/1954164933958255027
+  - all I needed to do was add a no-op double-click event handler on the document with an angry comment inside
+  - I learned about the concept of Safari sometimes needing a no-op click handler in order to behave properly from the 10ten Japanese Reader codebase!
+
+- I think Safari is actively setting traps to prevent LLMs taking the jobs of engineers who can think outside the box
+
+- How did you debug this?
+  - When the officially recommended options 1) and 2) both failed to work, I felt the only avenue left was to call `preventDefault()` somewhere. I tried it on "click" and "touchstart" events without any luck, before finally taking a chance on "dblclick".
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## Discovered that Safari on iOS has a 32ms delay between the pointerup event and the click event. 

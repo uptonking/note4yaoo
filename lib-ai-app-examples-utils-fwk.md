@@ -28,7 +28,42 @@ modified: 2025-02-21T18:20:42.624Z
   - Build and deploy AI Agents on Cloudflare
   - https://x.com/threepointone/status/1895097050439593993
     - an event bus for ai agents
-# agent-framework
+# agent-framework/backend
+- https://github.com/langchain-ai/langchain /113kStar/MIT/202508/python
+  - https://python.langchain.com/
+  - https://python.langchain.com/docs/introduction/
+  - LangChain is a framework for building LLM-powered applications. 
+  - langchain-core: Base abstractions for chat models and other components.
+  - langchain: Chains, agents, and retrieval strategies that make up an application's cognitive architecture.
+  - langgraph: Orchestration framework for combining LangChain components into production-ready applications with persistence, streaming, and other key features
+  - LangSmith: Trace and evaluate your language model applications and intelligent agents
+
+- https://github.com/langchain-ai/langchainjs /15.4kStar/MIT/202508/ts
+  - https://js.langchain.com/docs/
+  - a framework for developing applications powered by language models
+  - can be used in: nodejs, Browser, Cloudflare Workers, Deno, VERCEL
+  - [Is LangChainJS possible without NodeJS? · langchain-ai/langchainjs _202504](https://github.com/langchain-ai/langchainjs/discussions/4494)
+    - 支持在浏览器纯前端运行
+
+- https://github.com/langchain-ai/langgraph /17.1kStar/MIT/202508/python
+  - https://langchain-ai.github.io/langgraph/
+  - a low-level orchestration framework for building, managing, and deploying long-running, stateful agents.
+  - LangGraph does not abstract prompts or architecture
+  - Durable execution: Build agents that persist through failures and can run for extended periods, automatically resuming from exactly where they left off.
+  - Human-in-the-loop: Seamlessly incorporate human oversight by inspecting and modifying agent state at any point during execution.
+  - both short-term working memory for ongoing reasoning and long-term persistent memory across sessions.
+  - [Feature request: Source code? · Issue · langchain-ai/langgraph-studio _202410](https://github.com/langchain-ai/langgraph-studio/issues/154)
+    - we're currently not considering open-sourcing the project, as it depends on some parts of LangSmith.
+
+- https://github.com/langchain-ai/langgraphjs /1.9kStar/MIT/202508/ts
+  - https://langchain-ai.github.io/langgraphjs/
+  - LangGraph library enables agent orchestration — offering customizable architectures, long-term memory, and human-in-the-loop to reliably handle complex tasks.
+  - JavaScript port of LangGraph. The architecture is the same conceptually — a durable graph of tasks/agents
+  - Reliability and controllability. LangGraph persists context for long-running workflows, keeping your agents on course.
+  - Low-level and extensible. Build custom agents with fully descriptive, low-level primitives 
+  - First-class streaming support. With token-by-token streaming and streaming of intermediate steps, LangGraph gives users clear visibility into agent reasoning and actions as they unfold in real time
+  - LangGraph is inspired by Pregel and Apache Beam. The public interface draws inspiration from NetworkX.
+
 - https://github.com/langfuse/langfuse /14.8kStar/MIT+EE/202508/ts
   - https://langfuse.com/docs
   - Langfuse is an open source LLM engineering platform. 
@@ -39,7 +74,31 @@ modified: 2025-02-21T18:20:42.624Z
   - Datasets enable test sets and benchmarks for evaluating your LLM applications
   - LLM Playground is a tool for testing and iterating on your prompts and model configurations
   - [All Langfuse Product Features now Free Open-Source : r/LangChain _202506](https://www.reddit.com/r/LangChain/comments/1l36tte/all_langfuse_product_features_now_free_opensource/)
-    - Langfuse is an open-source LangSmith alternative that helps teams collaboratively build, debug, and improve their LLM applications
+    - 💡 Langfuse is an open-source LangSmith alternative that helps teams collaboratively build, debug, and improve their LLM applications
+
+- https://github.com/microsoft/autogen /48.5kStar/MIT/202508/python
+  - https://microsoft.github.io/autogen/
+  - a framework for creating multi-agent AI applications that can act autonomously or work alongside humans.
+  - 未主打workflow
+  - The framework uses a layered and extensible design.
+  - Core API implements message passing, event-driven agents, and local and distributed runtime for flexibility and power. 
+  - AgentChat API implements a simpler but opinionated API for rapid prototyping. 
+  - Extensions API enables first- and third-party extensions continuously expanding framework capabilities.
+  - AutoGen Studio provides a no-code GUI for building multi-agent applications.
+  - AutoGen Bench provides a benchmarking suite for evaluating agent performance.
+
+- https://github.com/crewAIInc/crewAI /35.5kStar/MIT/202508/python
+  - https://crewai.com/
+  - a lean, lightning-fast Python framework built entirely from scratch—completely independent of LangChain or other agent frameworks.
+  - CrewAI's Advantage: CrewAI combines autonomous agent intelligence with precise workflow control through its unique Crews and Flows architecture. 
+  - CrewAI Crews: Teams of AI agents with true autonomy and agency, working together to accomplish complex tasks through role-based collaboration
+  - CrewAI Flows: Enable granular, event-driven control, single LLM calls for precise task orchestration and supports Crews natively
+  - Flexible Low Level Customization: Complete freedom to customize at both high and low levels - from overall workflows and system architecture to granular agent behaviors, internal prompts, and execution logic.
+  - Ideal for Every Use Case
+  - 🆚 How CrewAI Compares
+    - While LangGraph provides a foundation for building agent workflows, its approach requires significant boilerplate code and complex state management patterns. The framework's tight coupling with LangChain can limit flexibility when implementing custom agent behaviors or integrating with external systems.
+    - Autogen: While Autogen excels at creating conversational agents capable of working together, it lacks an inherent concept of process.
+    - ChatDev: ChatDev introduced the idea of processes into the realm of AI agents, but its implementation is quite rigid. Customizations in ChatDev are limited
 
 - https://github.com/MotiaDev/motia /MIT/202503/ts
   - https://motia.dev/
@@ -71,9 +130,55 @@ modified: 2025-02-21T18:20:42.624Z
     - 使用diff_match_patch计算差异
   - https://x.com/dingyi/status/1893329741060489438
     - 以前非常喜欢且深度使用的 Gatsby，他们团队原班人马做的新产品，The TypeScript Agent Framework
-# ai-sdk
-- [AI SDK Cookbook](https://sdk.vercel.ai/cookbook)
-  - An open-source collection of recipes and guides for building with the AI SDK.
+
+- https://github.com/google-gemini/gemini-fullstack-langgraph-quickstart /apache2/202506/python/ts
+  - Get started with building Fullstack Agents using Gemini 2.5 and LangGraph
+  - https://x.com/JvShah124/status/1933016336113791159
+    - Gemini 2.5 + LangGraph = Build Research Agents That AUTONOMOUSLY Crawl the Web, Cite Sources & Solve Complex Queries.
+    - Backend: Python (FastAPI) + LangGraph for orchestrating multi-step workflows
+    - Pluggable AI: Gemini 2.5 by default, but swap in Claude/Mistral via API keys
+    - Tools: Google Search API + room to add LlamaIndex, custom APIs, etc.
+
+## langgraph
+
+- https://github.com/langchain-ai/agent-chat-ui /1.2kStar/MIT/202505/ts/inactive
+  - https://agentchat.vercel.app/
+  - Web app for interacting with any LangGraph agent (PY & TS) via a chat interface.
+  - a Next.js application which enables chatting with any LangGraph server with a `messages` key through a chat interface.
+  - By default, the Agent Chat UI is setup for local development, and connects to your LangGraph server directly from the client. 
+
+- https://github.com/langchain-ai/open-swe /3kStar/MIT/202508/ts
+  - https://swe.langchain.com/
+  - open-source cloud-based asynchronous coding agent built with LangGraph. 
+  - It autonomously understands codebases, plans solutions, and executes code changes across entire repositories—from initial planning to opening pull requests.
+  - 🧊 Open SWE’s sandbox environment is powered by Daytona.io.
+  - Planning: Open SWE has a dedicated planning step which allows it to deeply understand complex codebases and nuanced tasks.
+  - Human in the loop: you can send it messages while it's running (both during the planning and execution steps). 
+  - Parallel Execution: You can run as many Open SWE tasks as you want in parallel. Since it runs in a sandbox environment in the cloud, you're not limited by the number of tasks you can run at once.
+  - automatically create GitHub issues for tasks, and create pull requests which will close the issue when implementation is complete
+  - [FAQ - Docs by LangChain](https://docs.langchain.com/labs/swe/faq)
+    - For most tasks, you can expect to pay between $0.50 -> $3.00 when using Claude Sonnet 4. 
+  - [Introducing Open SWE: An Open-Source Asynchronous Coding Agent _202508](https://blog.langchain.com/introducing-open-swe-an-open-source-asynchronous-coding-agent/)
+    - The entire project is open source, built on LangGraph, and designed to be extended.
+
+## deep-research
+
+- https://github.com/bytedance/deer-flow /16.1kStar/MIT/202508/python/ts
+  - https://deerflow.tech/
+  - community-driven Deep Research framework, combining language models with tools like web search, crawling, and Python execution
+  - DeerFlow implements a modular multi-agent system architecture designed for automated research and code analysis. 
+  - The system is built on LangGraph, enabling a flexible state-based workflow where components communicate through a well-defined message passing system.
+  - DeerFlow uses LangGraph for its workflow architecture. You can use LangGraph Studio to debug and visualize the workflow in real-time.
+  - DeerFlow now includes a Text-to-Speech (TTS) feature that allows you to convert research reports to speech.
+
+- https://github.com/langchain-ai/local-deep-researcher /8kStar/MIT/202508/python
+  - a fully local web research assistant that uses any LLM hosted by Ollama or LMStudio.
+  - By default, it will use DuckDuckGo for web search, which does not require an API key. But you can also use SearXNG, Tavily or Perplexity by adding their API keys to the environment file
+  - [Building a fully local research assistant from scratch with Ollama - YouTube _202412](https://www.youtube.com/watch?v=XGuTzHoqlj8)
+
+- https://github.com/langchain-ai/open_deep_research /7.4kStar/MIT/202508/python
+  - a simple, configurable, fully open source deep research agent that works across many model providers, search tools, and MCP servers.
+  - By default it uses the Tavily search API.
 # browser-use
 - https://github.com/browser-use/browser-use /57.9kStar/MIT/202504/python/js
   - https://browser-use.com/
