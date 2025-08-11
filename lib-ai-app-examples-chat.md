@@ -38,6 +38,16 @@ modified: 2025-03-22T18:49:15.634Z
 - https://github.com/microsoft/TypeChat /MIT/202405/python/ts
   - https://microsoft.github.io/TypeChat/
   - TypeChat is a library that makes it easy to build natural language interfaces using types
+
+- https://github.com/samdenty/react-ai-flow /202503/ts
+  - https://react-ai-flow.com/
+  - smooth React AI chatbot primitives
+  - 支持多种打字动画效果 per character/word/line, 支持react/vanillajs
+  - This library uses a single canvas-rendered mask-image, so we can do pixel-level fade-in effects.
+  - Other libraries can accomplish at most a per-character opacity animation with a HTML soup
+  - This library also features a super customizable text splitter API. Pick a built-in splitter (character, word, line, sentence) or provide you own function that splits the visually rendered text on screen.
+  - https://x.com/samddenty/status/1905843003471581337
+    - I just created a demo website for https://react-ai-flow.com a super advanced cross-framework library for smooth LLM text streaming effects & also text-staggers.
 # aisdk
 - https://github.com/vercel/ai /16.5kStar/apache2/202508/ts
   - https://ai-sdk.dev/docs/introduction
@@ -146,8 +156,10 @@ modified: 2025-03-22T18:49:15.634Z
     - 支付：Lemon Squeezy
     - 部署：Vercel
 # chat-pdf
-- https://github.com/mayooear/ai-pdf-chatbot-langchain /MIT/202502/ts
-  - LangChain & LangGraph AI PDF chatbot agent
+- https://github.com/mayooear/ai-pdf-chatbot-langchain /15.8kStar/MIT/202502/ts
+  - PDF chatbot agent built with LangChain & LangGraph
+  - This monorepo is a customizable template example of an AI chatbot agent that "ingests" PDF documents, stores embeddings in a vector database (Supabase), and then answers user queries using OpenAI (or another LLM provider) utilising LangChain and LangGraph as orchestration frameworks.
+  - This template is also an accompanying example to the book Learning LangChain (O'Reilly): Building AI and LLM applications with LangChain and LangGraph.
 
 - https://github.com/williamcaseylucas/quill-pdf-chat /202401/ts
   - 依赖prisma, shadcn-ui, react-pdf, AWS S3 buckets

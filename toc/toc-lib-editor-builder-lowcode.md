@@ -119,6 +119,10 @@ modified: 2020-12-28T12:24:09.275Z
   - https://github.com/drudge/n8n-nodes-puppeteer
     - n8n node for requesting webpages using Puppeteer, a Node library which provides a high-level API to control Chrome or Chromium over the DevTools Protocol.
   - [N8n.io – Workflow automation alternative to Zapier | Hacker News _201910](https://news.ycombinator.com/item?id=21191676)
+  - https://github.com/Zie619/n8n-workflows /202508/python/js
+    - collection of 2,053 n8n workflows with a lightning-fast documentation system
+    - https://x.com/xicilion/status/1954534225715315025
+    - 其实就是爬了 n8n 的模板库。我也爬了一份自己做分析用，差不多也是这个规模
   - 🍴 forks
   - https://github.com/Deep-Consulting-Solutions/n8n-fork
 

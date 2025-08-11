@@ -42,6 +42,9 @@ modified: 2025-08-08T07:35:49.535Z
 
 - openrouter
   - aisdk对free-model由社区提供支持
+
+- cloudflare workers ai 提供了免费额度
+  - [Pricing · Cloudflare Workers AI docs](https://developers.cloudflare.com/workers-ai/platform/pricing/)
 # draft
 
 # dev-xp

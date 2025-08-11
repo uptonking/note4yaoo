@@ -41,26 +41,6 @@ modified: 2023-04-16T10:02:58.738Z
   - For example, in the tool calling, we save both assistant and tool llm message as serperate item. And then combine them into one ui message.
   - I think it's the key. Don't make ui message as SoT. Because display demand is flexible, ui message should be constructed by all db items
 
-- ## The @vercel Chat SDK now features stream resumption
-- https://x.com/cramforce/status/1921211838110593310
-  - This is based on https://github.com/vercel/resumable-stream
-  - A core feature is that while it uses Redis, the actual Redis usage is minimal unless you actually need to resume a stream (which should be rare in practice).
-  - It would be dramatically more efficient and lower-cost, because it only does O(1) database writes in the common case.
-- It supports:
-  - Clients resuming streams on network interruption
-  - Multiple browser tabs following the same underlying stream
-  - Multiple users following the same stream
-
-- But this "only" applies to when you have own business logic workflow and you need to "attach" back to ongoing process; it's not resuming an LLM engine streaming in "the middle" of the process, correct?
-
-- https://x.com/rauchg/status/1921168985900372081
-  - No proprietary APIs, no sticky load balancing, just Redis pubsub.
-- I was also a little worried about latency of pushing into redis. I know redis is fast, but for this application the ms count. A design with a sticky session seems to make sense since the number of users in a chat is going to be very, very small.
-  - It makes O(1) Redis writes per stream in the common case. If you use Upstash it would cost $4 per million streams which seems very fine
-- Why doesn't every token have to be  written to the stream?
-  - Because it only writes if there are any listeners. By default (no client network error, no second tab opened, etc.) there is no listeners
-- Redis pub-sub scales very well, so you’d probably only need a single node to handle many nodes of your chat service.
-
 - ## 🏘️ 分享下我们在做 SaaS 产品 LobeChat Cloud 上用的技术平台选型吧： _202410
 - https://x.com/arvin17x/status/1847627132891254803
   - https://x.com/arvin17x/status/1803761433714507850 /202406
@@ -208,46 +188,12 @@ modified: 2023-04-16T10:02:58.738Z
   - readablestreams
   - flow control
 
-# discuss-ai-sdk
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 
-
-- ## HITL(Human in the loop) in AI SDK v5, using custom data parts
-- https://x.com/mattpocockuk/status/1952322985068802369
-- Does this have to be stateful ? 
-  - No, my implementation is not stateful
-
-- ## 🎯 AI SDK 5: Introducing type-safe chat, agentic loop controls, data parts, speech generation and transcription, Zod 4 support, global provider, and raw request access. _202508
-- https://x.com/aisdk/status/1950952373616337280
-  - The chat abstraction has been redesigned to support type-safety, customizable transports, flexible state management, and more.
-  - Data parts provide a first-class way to stream custom, type-safe data from the server to the client, ensuring your code remains maintainable as your application grows.
-  - For information about a message, such as a timestamp, model ID, or token count, you can attach type-safe metadata.
-  - AI SDK 5 brings all new agentic controls. stopWhen/prepareStep
-  - AI SDK 5 extends our unified provider abstraction to speech. Just as we've done for text and image generation, we're bringing the same consistent, type-safe interface to both speech generation and transcription.
-  - AI SDK 5 works with Zod 4 and Zod Mini giving you faster validation, better TypeScript performance, and reduced bundle size.
-  - [AI SDK 5 - Vercel](https://vercel.com/blog/ai-sdk-5)
-
 # discuss
 - ## 
 
 - ## 
 
 - ## 
-
-- ## Things I don't like about the AI SDK #1
-- https://x.com/mattpocockuk/status/1915840893917032521
-  - You can specify 'maxSteps' on streamText & generateText to toggle from a single LLM call to an agentic loop.
-  - what happens when you run out of steps? Well, your app stops. If you've built a coding agent, your agent will just stop half-way through.
-  - maxSteps overall hands _so_ much control over to the AI SDK, I almost find it hard to recommend.
-
-- You can use prepareStep and implement this idea now
 
 - ## 对于大语言模型来说，它是没有记忆功能的，也就是每一次你必须发送给它所有的历史会话内容，也就是每次发新消息都会把历史消息一起发送过去。
 - https://x.com/dotey/status/1856437700225532234

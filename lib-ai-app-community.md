@@ -20,7 +20,7 @@ modified: 2023-02-08T06:56:54.945Z
   - 流处理：kafka，flink
   - 工作流：airflow，prefect
 
-- ## 大家有没有发现一个很奇怪的现象 : AI 公司既然都有安卓和客户端那就说明他们内部肯定是有对应的 SDK/Library, 但是他们开源的基本上是 Node 和 Python SDK和 REST API, 为什么呢?
+- ## 一个很奇怪的现象: AI 公司既然都有安卓和客户端那就说明他们内部肯定是有对应的 SDK/Library, 但是他们开源的基本上是 Node 和 Python SDK和 REST API, 为什么呢?
 - https://x.com/ivyliner/status/1892808355183218914
 - ChatGPT的客户端也不是拿着API key请求服务器端的，有中间层
 - sdk 只是简化了接入方式。

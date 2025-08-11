@@ -351,14 +351,7 @@ modified: 2023-02-08T07:20:48.475Z
 - https://github.com/infiniflow/ragflow /apache2/202502/python/ts
   - https://ragflow.io/
   - open-source RAG (Retrieval-Augmented Generation) engine based on deep document understanding
-# ai-examples
-- https://github.com/Zeyi-Lin/HivisionIDPhotos /apache2/202409/python
-  - https://swanhub.co/ZeYiLin/HivisionIDPhotos/demo
-  - 一个轻量级的AI证件照制作算法
-  - 旨在开发一种实用、系统性的证件照智能制作算法, 利用一套完善的AI模型工作流程，实现对多种用户拍照场景的识别、抠图与证件照生成
-  - SwanLab：训练人像抠图模型全程用它来分析和监控，以及和实验室同学协作交流，大幅提升了训练效率。
-  - 支持 纯离线 或 端云 推理
-# assistant-ai
+# rag-memory
 - https://github.com/mem0ai/mem0 /apache2/202409/python
   - https://mem0.ai/
   - Mem0 (pronounced as "mem-zero") enhances AI assistants and agents with an intelligent memory layer, enabling personalized AI interactions. 
@@ -376,12 +369,34 @@ modified: 2023-02-08T07:20:48.475Z
   - With Zep, you can provide AI assistants with the ability to recall past conversations, no matter how distant, while also reducing hallucinations, latency, and cost.
   - Zep persists and recalls chat histories, and automatically generates summaries and other artifacts from these chat histories. 
   - Zep also provides a simple, easy to use abstraction for document vector search called Document Collections. This is designed to complement Zep's core memory features, but is not designed to be a general purpose vector database.
+# ai-examples
+- https://github.com/Zeyi-Lin/HivisionIDPhotos /apache2/202409/python
+  - https://swanhub.co/ZeYiLin/HivisionIDPhotos/demo
+  - 一个轻量级的AI证件照制作算法
+  - 旨在开发一种实用、系统性的证件照智能制作算法, 利用一套完善的AI模型工作流程，实现对多种用户拍照场景的识别、抠图与证件照生成
+  - SwanLab：训练人像抠图模型全程用它来分析和监控，以及和实验室同学协作交流，大幅提升了训练效率。
+  - 支持 纯离线 或 端云 推理
 # ui-ai 💄
 - https://github.com/open-webui/open-webui /MIT/202405/svelte/python
   - https://openwebui.com/
   - User-friendly WebUI for LLMs (Formerly Ollama WebUI)
   - extensible, feature-rich, and user-friendly self-hosted WebUI designed to operate entirely offline. 
   - It supports various LLM runners, including Ollama and OpenAI-compatible APIs
+
+- https://github.com/assistant-ui/assistant-ui /5.8kStar/MIT/202508/ts
+  - https://www.assistant-ui.com/
+  - open source TypeScript/React library for AI chat.
+  - The library handles essential chat features such as auto-scrolling, accessibility, and real-time updates, while providing easy integration with LangGraph, AI SDK, and custom backends.
+  - The API of assistant-ui is inspired by libraries like shadcn/ui and cmdk. Instead of a single monolithic chat component, developers get primitive components that can be fully customized.
+  - We have wide model provider support (OpenAI, Anthropic, Mistral...)
+  - Chat UI: Streaming, Auto-scrolling, Markdown, Code Highlighting, File Attachments, and more
+  - Frontend tool calls: Let LLMs take action in your frontend application
+  - LangGraph interrupt() support
+  -  Chat Persistence
+  - Choose your backend
+    - AI SDK
+    - LangGraph
+    - Custom: your own backend/streaming protocols
 
 - https://github.com/richardgill/llm-ui /MIT/202502/ts
   - https://llm-ui.com/
@@ -400,24 +415,15 @@ modified: 2023-02-08T07:20:48.475Z
 - https://github.com/kangfenmao/cherry-studio /NonCommercial/202409/ts
   - https://cherry-ai.com/
   - a desktop client that supports for multiple LLM providers, available on Windows, Mac and Linux
-# protocols/MCP
-
-## use-computer
-
-## use-browser
-
-- https://github.com/browserbase/stagehand /MIT/202502/ts
-  - https://stagehand.dev/
-  - An AI web browsing framework focused on simplicity and extensibility.
-  - Stagehand is the easiest way to build browser automations. It is fully compatible with Playwright, offering three simple AI APIs on top of the base Playwright `Page` class
-  - It works best when your code is a sequence of atomic actions.
-  - Stagehand allows you to write durable, self-healing, and repeatable web automation workflows that actually work.
-  - https://github.com/browserbase/mcp-server-browserbase
-  - https://github.com/browserbase/sdk-node
 # ai-devops/tooling
 - https://github.com/Tencent/AI-Infra-Guard /MIT/202503/go
   - 腾讯开源了一个AI基础设施安全评估工具：AI-Infra-Guard，一键检测AI系统的潜在安全风险
   - 支持包括langchain、ollama、gradio、open-webui以及ComfyUI等在内的30种AI组件
   - 可以帮助识别，比如像Ollama在其docker中默认以root权限运行且开放到公网上，由于缺乏鉴权，可能会导致模型被删除/窃取/投毒或算力被窃取的风险
   - 这个工具的特点是轻量级，二进制文件8MB，内存占用低，支持跨平台运行，开箱即用
+
+- https://github.com/exo-explore/exo /GPL
+  - exo: Run your own AI cluster at home with everyday devices
+  - exo supports different models including LLaMA (MLX and tinygrad), Mistral, LlaVA, Qwen, and Deepseek.
+  - 该项目支持将现有设备统一到一个功能强大的GPU中，支持 iPhone，iPad，Android，Mac，Nvidia，树莓派等等几乎所有设备。
 # more

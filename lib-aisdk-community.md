@@ -47,26 +47,6 @@ modified: 2025-08-08T07:36:31.265Z
 
 - I found the js langchain to be always behind python, so you often are missing tutorials or things aren't supported. I ended up liking mastra
 
-- ## Which framework should I use for developing AI agents? LangGraph or @pydantic Agent framework? _202505
-- https://x.com/NielsRogge/status/1928064768109076759
-  - avoid fwk, use llm apis to have better control.
-  - build workflows instead.
-- If you want to make direct requests to the LLM, but you want to still be able to switch provider easily, you can use @pydantic AI's direct API
-
-- Agreed. Many of these frameworks add bloat and unnecessary LLM calls. And in most cases you need an automation, not an agent. I’ve written a guide on it too
-
-- 100% - everything is moving too fast to get locked into a framework.
-
-- I used to think this but @aisdk changed my mind. I wish it was for python too
-  - For starters, being able to easily switch between models without any speed loss (*openrouter) is one.
-  - Their tool call implementation is really minimal and quick to setup too.
-
-- Use LangGraph but code your own components in it. This way you have visualization, adapt- and extendability and testing while maintaining full control over implementation details.
-
-- Langchain is pain in the ass with every version they change syntax and naming conventions
-
-- agree. These days I just ask the LLM to help me build the tiny part I need from any SDK, then turn it into my own minimal wrapper. No bloat, full control. Most libraries we add, we just use a small part of them.
-
 - ## [OpenAI Agent SDK vs LangGraph : r/LangChain _202503](https://www.reddit.com/r/LangChain/comments/1j95uat/openai_agent_sdk_vs_langgraph/)
 - Now with OpenAI stepping into the "LLM framework" territory, I think they will on purpose lock the developers into it, by always providing the best support to OpenAI-exclusive features which Langchain doesn't support well (I'm talking about stuff like real-time generation, audio input, computer use, hell even the basic structured output).
 
@@ -126,12 +106,6 @@ modified: 2025-08-08T07:36:31.265Z
 
 - if you use langchain your code is slower than mine, less understandable, and less extensible than mine. that’s all.
 
-- 
-- 
-- 
-- 
-- 
-
 - ## [How would you build an LLM agent application without using LangChain? : r/LocalLLaMA _202501](https://www.reddit.com/r/LocalLLaMA/comments/1i2n0il/how_would_you_build_an_llm_agent_application/)
 - llamaindex is just as bad
 
@@ -144,28 +118,6 @@ modified: 2025-08-08T07:36:31.265Z
 - The bad: the actual chains (a kitten dies every time some dumbnut tries clever things with operator overloading in Python and breaks code introspection), LCEL, documentation. I steered away from almost everything due to the latter.
 
 - This is the same discussion about frameworks in web dev: a framework can make you massively more productive but it comes at the cost of complexity to your codebase
-
-- ## 🌰 [The Most Powerful Way to Build AI Agents: LangGraph + Pydantic AI (Detailed Example) : r/AI_Agents _202504](https://www.reddit.com/r/AI_Agents/comments/1jorllf/the_most_powerful_way_to_build_ai_agents/)
-  - we built an AI Listing Manager Agent capable of web scraping (crawl4ai), categorization, human feedback integration, and database management.
-  - [How We Built an AI Listing Manager Using LangGraph, PydanticAI & Crawl4AI - YouTube](https://www.youtube.com/watch?v=KPw6IPTOUPQ&t=3150s)
-  - I also show how we orchestrate agents using LangGraph, and how we built an interactive front end with Streamlit to manage everything seamlessly
-- The system is made of 7 specialized Pydantic AI agents connected with Langgraph.
-  - Search agent: Searches the internet for potential new listings
-  - Filtering agent: Ensures listings meet our quality standards.
-  - Summarizer agent: Extract the information we want in the format we want
-  - Classifier agent: Assigns categories and tags following our internal classification guidelines
-  - Feedback agent: Collects human feedback before final approval.
-  - Rectifier agent: Modifies listings according to our feedback
-  - Publisher agent: Publishes agents to the directory
-- In LangGraph, you create a separate node for each agent. Inside each node, you run the agent, then save whatever the agent outputs into the flow's state.
-  - The trick is making sure the output type from your Pydantic AI agent exactly matches the data type you're storing in LangGraph state. 
-  - This way, when the next agent runs, it simply grabs the previous agent’s results from the LangGraph state, does its thing, and updates another part of the state. By doing this, each agent stays independent, but they can still easily pass information to each other.
-- Human-in-the-loop. Listings are only published after explicit human approval. 
-
-- Judging by your workflow, I’m wondering if it can even be called agentic? it seems like a sequence of tasks are being performed one after the other without any loop of multi-agent collaboration or complex decision making. Correct me if I’m wrong?
-
-- how would this be different from pydantic graph ?
-  - I used Langgraph because it's battle-tested
 
 - ## [Python vs Javascript for langchain : r/LangChain _202407](https://www.reddit.com/r/LangChain/comments/1dtjqwi/python_vs_javascript_for_langchain/)
 - The main advantage of python is that in case you need advanced customization of the ML architecture then there are already lot of support for that in python since the critical frameworks like pytorch are in python.
@@ -185,54 +137,6 @@ modified: 2025-08-08T07:36:31.265Z
 - I realized their JS lib doesn't support o1, while their python lib already does
 
 - Langchain helped save me a ton of time in parsing json for a text extraction prompt. 
-
-- ## [Thoughts on LangGraph.js & LangChain.js — Great work, but we need more TypeScript-native design : r/LangChain _202505](https://www.reddit.com/r/LangChain/comments/1kelzq6/thoughts_on_langgraphjs_langchainjs_great_work/)
-  - much of the design still feels like a direct translation from Python. Patterns like dict-style objects, Pydantic-like schemas, or deep class hierarchies don’t always fit naturally into the JS/TS ecosystem.
-  - By contrast, look at Spring AI, also inspired by LangChain, but fully adapted to the Spring ecosystem.
-  - I'd love to see more TypeScript-first designs: interfaces, composability, structural typing
-  - It’s fine to port initially, but long-term success means embracing the strengths of each language and community.
-
-- On LangChain, while I don’t have anything that I can share publicly, I have been cooking up a new architecture for ChatModel integrations that I think will go a long way toward what you’re talking about here. If I accomplish my goals it should make these integrations much more consistent and predictable, while feeling a lot more TS-native.
-  - On LangGraph we’re looking to improve our types substantially, and to provide better devX around things like external detection/handling of interrupt/resume, functional API, state management, tooling, and a host of things that crop up when you go to deploy to some bespoke, self-hosted environment. We’re also investing heavily in prebuilt agents, and reusable components for genetic applications.
-
-- One example from LangGraph.js: using Annotation. Root() to define state feels like a non-idiomatic pattern for TypeScript. It works, but it’s abstract and hard to reason about.
-  - In LangChain.js, there’s a similar issue with ChatPromptTemplate.fromMessages(). Passing arrays with magic keys like 'system' is brittle and lacks type safety. TS devs generally expect APIs to guide them with strong types. Those are
-
-- ## [Why are people choosing LangGraph + PydanticAI for production AI agents? : r/LangChain _202505](https://www.reddit.com/r/LangChain/comments/1kpkybb/why_are_people_choosing_langgraph_pydanticai_for/)
-- I'm using the Typescript version (Langgraph + Zod) but the big answer is task decomposition plus reliability. Agents perform more reliably when you decompose the problem and give each subtask the right tools to get the job done. Zod (or pydantic) helps you reinforce a reliable schema. This makes it much easier to build in proper guardrails for bigger LLM tasks.
-
-- With LangGraph, we defined a clear sequence: summarize → extract headings → draft content → run SEO check.
-  - PydanticAI ensured each output matched strict formats (e.g. JSON with predefined fields for title, meta description, etc.).
-  - We even added a conditional branch where, if the SEO score is below 80, it loops back to rewrite with a different prompt.
-
-- I have personally used LangGraph, Crew AI, LangChain and gotten briefly introduced to AutoGen and others. I feel LangGraph gives complete control over the agents you are building. 
-  - The ease of coding and visualizing the agentic system end-to-end makes it the go-to choice.
-
-- ## [Langgraph vs Pydantic AI : r/LangChain _202503](https://www.reddit.com/r/LangChain/comments/1ji4d2k/langgraph_vs_pydantic_ai/)
-- theoretically you can mix Pydantic AI with Langraph which is what I recommend you do. 
-  - But my recommendation would be to stay away from langchain as much as you can while using langgraph.
-  - Even within langgraph, be careful about using their built-in components too much e.g. use a third party memory library mem0 instead of built in checkpointer.
-
-- Pydantic is a kind of open environment for mainly software developers. Creating agents are like 2 lines of code and managing the workflow is also like building a state machine, rather than chain or acyclic graphs. It has its pros and cons. Pros are probably, it's easy and fast to bootstrap anything. Cons is that the developer needs to keep a conscious eye on the code architecture as the flow is free.
-  - Langchain or graph is bloated, but that enforces some standard of development which has its own value proposition in scalable architecture.
-
-- I was in the middle of refactoring a module from using LangChain to PydanticAI when I made the shocking discovery that the latter doesn't appear to have proper retry logic or connection management for concurrent requests. For retries it instead relies on a clunky FallbackModel paradigm. You instead need to wrap it with your own retry and async logic for real world usage at scale. This alone has convinced me to stick with my current LangChain implementation for the moment.
-
-- ## [LangChain vs LangGraph? : r/LangChain _202505](https://www.reddit.com/r/LangChain/comments/1kynej0/langchain_vs_langgraph/)
-- Langchain helps you make LLM calls with structured data, tools, etc…
-  - Langgraph helps you build a whole complex workflow defined of a series of steps called nodes, each of which could be an LLM call, running some code, doing whatever. These nodes are connected by edges, which are basically the rules of once you finish one node which you go to next.
-
-- LG, by itself doesn't have infrastructure to communicate with LLMs by itself, is designed to be used in conjunction with, something like LC.
-  - LG is _just_ a flow design tool for program execution. Agents are just one particular type of flow i.e. with a feedback step.
-  - If you want to build something like deep research you need to add `langgraph-supervisor` on top of vanilla LG as it doesn't do it out of the box
-
-- I use LangChain just for LLM calls with structured output. Then, I try to write everything from scratch, as you don't want to get pulled into the LangChain ecosystem.
-  - LangGraph, on the other hand, is perfect for orchestrating complex workflows/agents.
-  - So I suggest going with LangGraph to orchestrate your logic + custom code for LLM calls/RAG stuff.
-
-- my experience with langgraph has been very positive, cursor can build langgraph very well
-
-- What I like about LangGraph is you can customize and configure your agent/chatbot apps really flexibly, but they also offer some prebuilt things like a ReAct agent that is more plug-n-play.
 
 - ## Wondering what's the current best way to build AI agent
 - https://x.com/MattM_lj/status/1933087756596678963
@@ -258,63 +162,6 @@ modified: 2025-08-08T07:36:31.265Z
 - batteries included" is exactly what production needs
   - mario's workflows broke constantly before we added proper error recovery and state management
   - langgraph foundation + deepagents orchestration? this could save teams months of debugging agent loops
-
-- ## tell me why your agent framework is better than langgraph _202504
-- https://x.com/hwchase17/status/1913662736963412365
-- There seems to be a common pattern for the agent syntax that everyone is regressing to. (Not to mention everybody thinks everybody else is copying from them.)
-  - At some point, they all pretty much look and act the same, with very little differentiation.
-  - The “real” differentiation starts to be in the tools layer for memory, retrieval, etc.
-
-- Frankly we wrote ours when there weren't other great options in the space and at this point it's super tailored to our work so I wouldn't replace it.
-  - But being honest we actually don't rely heavily on the graph element of it anymore and if I was rewriting it I would drop the graph executor in favor of a stack based approach leveraging tool calls to queue and pop or something like that because we naturally kind of moved there anyway.
-  - https://github.com/BismuthCloud/asimov /apache2/202506/python
-    - A Python framework for building AI agent systems with robust task management in the form of a graph execution engine, inference capabilities, and caching.
-    - We support advanced features like State Snapshotting, Middleware, Agent Directed Graph Execution, Open Telemetry Integrations and more.
-- in practice we could probably just model the whole thing as a queue or stack of tool calls so yeah the graph stuff just feels heavier than it needs to be is what I was trying to say
-- so main agent is basically using a tool call to route to another agent (diff system prompt, tools)?
-  - yeah basically, and then we’re only relying on our actual graph executor rn for things like writing a commit message and posting to GitHub but I can see how I would fold that in
-
-- short term memory, long term memory, human in the loop, human on the loop, observability
-  - you can write all those yourself, but a good framework will handle those for you
-
-- While we use Langgraph, fragmentation seems concerning (ex. langgraph-supervisor, langgraph-swarm).. IMHO, they should be part of the same ecosystem, otherwise they feel like they would be left on their own to die similar to langserve.
-
-- People are choosing their abstractions based on ergonomics and other factors. Graphs are explicit but hard to intuitively reason about in aggregate.
-
-- Langgraph seems to be an orchestration tool at it's core. This operates on a much lower level that a framework like PydanticAI which is a higher abstraction.
-  - A better comparison would be with the likes of PydanticGraph or even Temporal. Here's one - it's hard to inject dependencies like database driver objects in Langgraph nodes. You have to keep it global or do some weird hack. Its possible but not as clean as DI in PydanticGraphs.
-
-- LangGraph’s visual nodes rock for prototyping LLM flows, but OpenAI Agent Framework brings native func calling with type safety, built in RAG memory, multi model orchestration GPT, Whisper, Vision telemetry & secure sandboxes
-
-- Langgraph lacks batch inference support. Pretty important functionality imo
-
-- https://x.com/fungiblexbt/status/1940579019113816341
-  - this is why the langgraph framework beats autogen and crewai in terms of state management and persistent memory
-  - i would recommend crewai for beginners looking to get into agentic systems but langgraph for complex tasks that require context (which is most tasks)
-
-- ## Most people think of langgraph as agent abstractions, but it’s powered by a low level event driven framework under the hood _202507
-- https://x.com/hwchase17/status/1940847199157682383
-- LangGraph primitives > abstractions. Expose the core and let us build custom flow control + metrics.
-
-- This was perhaps my biggest realization when I was building @MagickML . Graphs were event driven. Events as inputs and outputs. And easy to shuttle events between graphs, handle side effects, etc. Graphs with events and hooks are the way.
-
-- Exposing the different levels of abstraction will enable developers across the board to use the framework effectively to their use case.
-
-- ## langgraph: we've spent a lot of time on the langgraph persistence/state layer _202501
-- https://x.com/hwchase17/status/1874486239723712939
-  - enables production ready short term & long term memory, checkpointing, human-in-the-loop, time travel, etc
-  - if we made this work with ANY agent framework (including DIY) would that be interesting to folks?
-
-- Yeah I think people would use it!  You can roll your own memory thing but lots of people don’t want to do that esp when getting started
-
-- would be very cool if i can bring my own database (and embedding/inference). 
-  - i’ve been looking for something like this but mem0 and zep are too opinionated 
-
-- One thing missing for me on the persistence layer is the ability to export the long term memory from a LangGraph Cloud Deployment, it would be really useful (seeding, migration of long term memory from one deployment to another, backup...)
-
-- Related: clearer edge traversal visibility (e.g., from_node → to_node) and pre-execution indicators (e.g., next_node) would make debugging and steaming a lot cleaner in LangGraph.
-
-- Does langchain have something to interact with browsers? The idea is agent perform certain task on the browser, for example, search for a name(s) or something or fill in the text fields, etc.
 
 - ## 🆚🌰 I am coding the same agents in all LLM frameworks to compare them side-by-side: _202504
 - https://x.com/_rchaves_/status/1914083928647885122
@@ -404,12 +251,6 @@ modified: 2025-08-08T07:36:31.265Z
 - ## 
 
 - ## 
-# discuss-ollama
-- ## 
-
-- ## 
-
-- ## 
 # discuss-roadmap
 - ## 
 
@@ -420,6 +261,41 @@ modified: 2025-08-08T07:36:31.265Z
 - ## 
 
 - ## 
+
+- ## HITL(Human in the loop) in AI SDK v5, using custom data parts
+- https://x.com/mattpocockuk/status/1952322985068802369
+- Does this have to be stateful ? 
+  - No, my implementation is not stateful
+
+- ## 🎯 AI SDK 5: Introducing type-safe chat, agentic loop controls, data parts, speech generation and transcription, Zod 4 support, global provider, and raw request access. _202508
+- https://x.com/aisdk/status/1950952373616337280
+  - The chat abstraction has been redesigned to support type-safety, customizable transports, flexible state management, and more.
+  - Data parts provide a first-class way to stream custom, type-safe data from the server to the client, ensuring your code remains maintainable as your application grows.
+  - For information about a message, such as a timestamp, model ID, or token count, you can attach type-safe metadata.
+  - AI SDK 5 brings all new agentic controls. stopWhen/prepareStep
+  - AI SDK 5 extends our unified provider abstraction to speech. Just as we've done for text and image generation, we're bringing the same consistent, type-safe interface to both speech generation and transcription.
+  - AI SDK 5 works with Zod 4 and Zod Mini giving you faster validation, better TypeScript performance, and reduced bundle size.
+  - [AI SDK 5 - Vercel](https://vercel.com/blog/ai-sdk-5)
+
+- ## The @vercel Chat SDK now features stream resumption _202505
+- https://x.com/cramforce/status/1921211838110593310
+  - This is based on https://github.com/vercel/resumable-stream /MIT
+  - A core feature is that while it uses Redis, the actual Redis usage is minimal unless you actually need to resume a stream (which should be rare in practice).
+  - It would be dramatically more efficient and lower-cost, because it only does O(1) database writes in the common case.
+- It supports:
+  - Clients resuming streams on network interruption
+  - Multiple browser tabs following the same underlying stream
+  - Multiple users following the same stream
+
+- But this "only" applies to when you have own business logic workflow and you need to "attach" back to ongoing process; it's not resuming an LLM engine streaming in "the middle" of the process, correct?
+
+- https://x.com/rauchg/status/1921168985900372081
+  - No proprietary APIs, no sticky load balancing, just Redis pubsub.
+- I was also a little worried about latency of pushing into redis. I know redis is fast, but for this application the ms count. A design with a sticky session seems to make sense since the number of users in a chat is going to be very, very small.
+  - It makes O(1) Redis writes per stream in the common case. If you use Upstash it would cost $4 per million streams which seems very fine
+- Why doesn't every token have to be  written to the stream?
+  - Because it only writes if there are any listeners. By default (no client network error, no second tab opened, etc.) there is no listeners
+- Redis pub-sub scales very well, so you’d probably only need a single node to handle many nodes of your chat service.
 
 - ## AI SDK 5 is now in Beta! We redesigned the AI SDK to create a next-generation AI framework _202506
 - https://x.com/aisdk/status/1937524577854456270
@@ -436,6 +312,14 @@ modified: 2025-08-08T07:36:31.265Z
 - ## 
 
 - ## 
+
+- ## Things I don't like about the AI SDK #1
+- https://x.com/mattpocockuk/status/1915840893917032521
+  - You can specify 'maxSteps' on streamText & generateText to toggle from a single LLM call to an agentic loop.
+  - what happens when you run out of steps? Well, your app stops. If you've built a coding agent, your agent will just stop half-way through.
+  - maxSteps overall hands _so_ much control over to the AI SDK, I almost find it hard to recommend.
+
+- You can use prepareStep and implement this idea now
 
 - ## 👀 [PR 974 introduces unspecified Redis dependency · Issue · vercel/ai-chatbot _202505](https://github.com/vercel/ai-chatbot/issues/977)
 - The issue is that I was using `redis://` as provided by Upstash.

@@ -9,6 +9,25 @@ modified: 2022-11-21T15:27:20.974Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Animating from `scale(0)` usually feels "off". Try animating from a higher initial scale instead (0.9+).
+- https://x.com/emilkowalski_/status/1954891053032755560
+  - It helps it feel more gentle and elegant.
+  - Here's the difference between initial `scale(0)` and `scale(0.93)`
+
+- It's combined with a fade in/out animation right?
+  - Yes, custom `ease-out` easing, 125ms duration, opacity 0 → 1. 
+  - @lochieaxon has made a nice site with easings that can help you make your animations look great - https://easing.dev.
+
+- After several tries, I agree 0.9+ is the sweet spot! ~0.95+ for larger modals/windows
+
+- 0.7 would be even better imho
 # examples-loading/progress
 - ## 
 

@@ -37,6 +37,9 @@ modified: 2021-09-20T20:12:38.499Z
   - Complete fiber architecture implementation
   - Hooks implementation
   - Virtual DOM with efficient diffing
+
+- [The History of React Through Code _202507](https://playfulprogramming.com/posts/react-history-through-code)
+  - [Let's Write React Hooks From Scratch _202507](https://playfulprogramming.com/posts/react-write-hooks-from-scratch)
 # react-alternatives
 - https://github.com/LuSuguru/fake-react /75Star/202007/ts
   - 基于React 16.8.6 的源码并使用 TypeScript 仿写的 React, 实现了90%的功能

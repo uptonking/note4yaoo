@@ -25,6 +25,8 @@ modified: 2025-03-22T16:10:24.856Z
     - background-task
   - ai在前端或后端的架构都和workflow工作流紧密相关
   - 🏘️ 架构参考: gemini-cli/qwen-cli(依赖fs) + ui/copilot-chat + framework/langfuse
+  - 基于dnd的方案偏前端，后端一般很难定制和scale，会受限于平台提供的组件和工具
+  - ✏️ ai修改文档的方案 fast-apply
 
 - 🏘️ ai-backend/platform
   - providers-wrapper: models, communication+state, structured in/output
@@ -39,7 +41,7 @@ modified: 2025-03-22T16:10:24.856Z
   - ⛓️ workflow
   - 👥 multi-agent, sub-agent
   - parallel
-  - manual orchestration: retry
+  - manual orchestration: retry, routing
   - self-evaluation
   - human-in-the-loop
   - Observability: connection mgmt
@@ -51,6 +53,9 @@ modified: 2025-03-22T16:10:24.856Z
   - playground
   - dataset
 
+- workflow
+  - Zapier and n8n help to an extent, but they’re not designed for multi-tenant SaaS. They’re great for internal workflows—not product infrastructure.
+
 - 
 - 
 - 
@@ -58,7 +63,10 @@ modified: 2025-03-22T16:10:24.856Z
 - 
 - 
 - 
-- 
+
+
+# draft
+- rewrite open-canvas with langgraph
 
 # pm-mcp
 - writing
@@ -68,6 +76,7 @@ modified: 2025-03-22T16:10:24.856Z
 
 - browser-use
   - computer-use
+  - container-use
   - vscode-use, vscode-mcp
 
 - ai-sandbox
@@ -85,10 +94,15 @@ modified: 2025-03-22T16:10:24.856Z
 
 - 使用ai实现高仿设计，是否可以绕过版权限制
 # ai-lowcode
-
+- tips
+  - 基于dnd的方案偏前端，后端一般很难定制和scale
+  - Zapier and n8n help to an extent, but they’re not designed for multi-tenant SaaS. They’re great for internal workflows—not product infrastructure.
 # ai-workflow
+- tips
+  - 基于dnd的方案偏前端，后端一般很难定制和scale
 
 - n8n open alternative
+- langgraph-studio open alternative
 
 - logicflow + ai
 # ai-coding
@@ -123,7 +137,7 @@ modified: 2025-03-22T16:10:24.856Z
 # ai-office
 - 产品方向: ask、生成、集成
 
-- 基于演讲视频生成视频中的ppt, 还原ppt内容
+- 💡 基于演讲视频生成视频中的ppt, 还原ppt内容
 
 - 
 - 
@@ -138,7 +152,7 @@ modified: 2025-03-22T16:10:24.856Z
     - Analyze files and images
     - Access information across your integrated apps like Slack & Google Drive
     - Limit your search to trusted knowledge sources
-# ai-dev-xp
+# ai-dev-xp 🚧
 - 当一个复杂问题让ai折腾了1h还没解决，不要继续纠结，赶紧换更强的模型
   - 让ai动手前自己先拆分任务，不要让ai分析复杂的任务，ai分析不清会乱改增加工作量，自己可以主动mock状态和对象
   - 有时使用搜索引擎默认的ai结果又快又好，可以尝试解决类似stackoverflow类型的问题

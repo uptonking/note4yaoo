@@ -17,6 +17,22 @@ modified: 2022-11-01T01:05:07.873Z
 
 - dev-server
 # popular
+- https://github.com/TanStack/devtools /65Star/MIT/202508/ts
+  - https://x.com/AlemTuzlak/status/1954587606479487396
+    - We've integrated an event bus which let you pipe the data from your libraries/app code into your devtools panel. You can set up custom devtools within minutes that help you ship faster.
+  - https://x.com/AlemTuzlak/status/1950968833478467592 _20250801
+    - I've been invited by the wonderful @tan_stack team to help them build out framework-agnostic devtools
+    - the plugin system is the best part, it should be as easy as just plugging it in
+    - Can't wait for the multi-tool view
+    - take a look at the nuxt devtools, very nice things to take inspiration from
+  - https://x.com/AlemTuzlak/status/1951292149204386082 _20250801
+    - @tan_stack Devtools is officially in alpha
+    - You mount a devtools shell into your app, then you give it the plugins as props, when you click on one of the tabs it calls the plugins render method and mounts the UI so you can see it. 
+    - The core just gives you the DOM node where the adapters allow you to pass in JSX.
+    - It's a panel that allows you to plug anything into it and show it inside of that panel via plugins. This allows you to have both the TanStack router/query devtools inside of here. 
+    - For now, the biggest priority would be helping the tanstack ecosystem by providing tooling for easier integration of other potential devtools (think db, form etc)
+    - In the long run when we enable server <> client communication things will get crazy
+
 - https://github.com/google/zx /apache2/202309/ts
   - https://google.github.io/zx/
   - A tool for writing better scripts

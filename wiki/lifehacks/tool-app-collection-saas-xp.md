@@ -203,6 +203,11 @@ modified: 2022-11-07T10:25:12.034Z
 - [Bluesky](https://bsky.app/)
 - [AT Protocol](https://atproto.com/guides/overview)
 # telegram
+- not-yet
+
+- 点击播放视频时，不能使用左右方向键快进快退，播放视频时开启全屏才能
+  - [[Feature Request] Video player skip some seconds when right/left arrow keys are pressed · Issue · telegramdesktop/tdesktop _201909](https://github.com/telegramdesktop/tdesktop/issues/6606)
+
 - [Telemetrio - Your dedicated manager throughout the analysis telegram-channels](https://telemetr.io/en)
   - https://telemetr.io/en/channels?languages=zh
 

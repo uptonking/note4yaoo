@@ -139,28 +139,6 @@ modified: 2025-02-21T18:20:42.624Z
     - Pluggable AI: Gemini 2.5 by default, but swap in Claude/Mistral via API keys
     - Tools: Google Search API + room to add LlamaIndex, custom APIs, etc.
 
-## langgraph
-
-- https://github.com/langchain-ai/agent-chat-ui /1.2kStar/MIT/202505/ts/inactive
-  - https://agentchat.vercel.app/
-  - Web app for interacting with any LangGraph agent (PY & TS) via a chat interface.
-  - a Next.js application which enables chatting with any LangGraph server with a `messages` key through a chat interface.
-  - By default, the Agent Chat UI is setup for local development, and connects to your LangGraph server directly from the client. 
-
-- https://github.com/langchain-ai/open-swe /3kStar/MIT/202508/ts
-  - https://swe.langchain.com/
-  - open-source cloud-based asynchronous coding agent built with LangGraph. 
-  - It autonomously understands codebases, plans solutions, and executes code changes across entire repositories—from initial planning to opening pull requests.
-  - 🧊 Open SWE’s sandbox environment is powered by Daytona.io.
-  - Planning: Open SWE has a dedicated planning step which allows it to deeply understand complex codebases and nuanced tasks.
-  - Human in the loop: you can send it messages while it's running (both during the planning and execution steps). 
-  - Parallel Execution: You can run as many Open SWE tasks as you want in parallel. Since it runs in a sandbox environment in the cloud, you're not limited by the number of tasks you can run at once.
-  - automatically create GitHub issues for tasks, and create pull requests which will close the issue when implementation is complete
-  - [FAQ - Docs by LangChain](https://docs.langchain.com/labs/swe/faq)
-    - For most tasks, you can expect to pay between $0.50 -> $3.00 when using Claude Sonnet 4. 
-  - [Introducing Open SWE: An Open-Source Asynchronous Coding Agent _202508](https://blog.langchain.com/introducing-open-swe-an-open-source-asynchronous-coding-agent/)
-    - The entire project is open source, built on LangGraph, and designed to be extended.
-
 ## deep-research
 
 - https://github.com/bytedance/deer-flow /16.1kStar/MIT/202508/python/ts
@@ -179,6 +157,28 @@ modified: 2025-02-21T18:20:42.624Z
 - https://github.com/langchain-ai/open_deep_research /7.4kStar/MIT/202508/python
   - a simple, configurable, fully open source deep research agent that works across many model providers, search tools, and MCP servers.
   - By default it uses the Tavily search API.
+# ai-api
+- https://github.com/pollinations/pollinations /2.7kStar/MIT/202508/python
+  - https://pollinations.ai/
+  - https://text.pollinations.ai/
+  - an open-source gen AI startup based in Berlin, providing the most easy-to-use, free text and image generation API available
+  - 100% Open Source
+  - 🖼️ Free AI image and text generation APIs
+  - privacy: No logins, no keys, no data stored
+  - ❓ 是否方便定制agentic的提示词和流程
+  - 🎵 Audio generation: Text-to-speech and speech-to-text capabilities
+  - Easy-to-use React hooks (React Hooks Examples)
+  - Autonomous Development: Features implemented by our MentatBot coding assistant through GitHub issues
+  - Our MCP server enables AI assistants like Claude to generate images and audio directly.
+  - https://github.com/pollinations/pollinations/blob/master/APIDOCS.md
+    - 可在线测试图片生成的api https://image.pollinations.ai/prompt/excel_logo /在url直接修改提示词
+    - https://pollinations.ai/p/excel_logo 会重定向到上面的地址
+  - `image.pollinations.ai/`: Backend service for image generation and caching with Cloudflare Workers and R2 storage.
+  - `text.pollinations.ai/`: Backend service for text generation.
+  - Future Developments
+    - Digital Twins: Creating interactive AI-driven avatars
+    - Music Video Generation
+    - Real-time AI-driven Visual Experiences
 # browser-use
 - https://github.com/browser-use/browser-use /57.9kStar/MIT/202504/python/js
   - https://browser-use.com/
@@ -209,8 +209,11 @@ modified: 2025-02-21T18:20:42.624Z
 - https://github.com/browserbase/stagehand /11.3kStar/MIT/202504/ts
   - https://stagehand.dev/
   - An AI web browsing framework focused on simplicity and extensibility.
-  - This project heavily relies on Playwright 
-  - Choose when to write code vs. natural language: use AI when you want to navigate unfamiliar pages, and use code (Playwright) when you know exactly what you want to do.
+  - Stagehand is the easiest way to build browser automations. It is fully compatible with Playwright, offering three simple AI APIs on top of the base Playwright `Page` class
+  - It works best when your code is a sequence of atomic actions.
+  - Stagehand allows you to write durable, self-healing, and repeatable web automation workflows that actually work.
+  - https://github.com/browserbase/mcp-server-browserbase
+  - https://github.com/browserbase/sdk-node
 
 - https://github.com/browserless/browserless /10kStar/SSPL-NC/202504/ts
   - https://browserless.io/
@@ -346,11 +349,6 @@ modified: 2025-02-21T18:20:42.624Z
 - https://github.com/lymanzhao/Ollama-serve /202503/python
   - 一个 Ollama转发代理，用于为原生 Ollama 服务添加 API 密钥认证功能。
   - 该项目解决了 Ollama 官方不提供 API 密钥验证的问题，使您可以更安全地部署 Ollama 服务并防止未授权访问
-# ai-devops
-- https://github.com/exo-explore/exo /GPL
-  - exo: Run your own AI cluster at home with everyday devices
-  - exo supports different models including LLaMA (MLX and tinygrad), Mistral, LlaVA, Qwen, and Deepseek.
-  - 该项目支持将现有设备统一到一个功能强大的GPU中，支持 iPhone，iPad，Android，Mac，Nvidia，树莓派等等几乎所有设备。
 # more
 - https://github.com/beuaaa/pywinauto_recorder /MIT/202411/python
   - https://pywinauto-recorder.readthedocs.io/

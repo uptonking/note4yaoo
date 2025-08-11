@@ -477,6 +477,14 @@ curl http://localhost:11434/api/chat -d '{
 # discuss-ai-knowledgebase
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 一些企业描述为知识库的需求，实际上是没有办法通过当前的 RAG 来满足的，更像是一个本地的 Deepresearch 或者其他的 agent 可以 cover 的场景。 不要被带到坑里。
+- https://x.com/YinsenHo_/status/1954741140307235282
+- 根据我的日常经验。企业其实更倾向于半自动。通过AI大模型快速找到相关的几个类，最后汇总一下。由于审核的存在，根本无法做到全自动
+
 - ## 🆚️ 这几天在给公司产品的 AI 助手选择知识库的数据处理工具，重新看了一遍 Marker、MinerU、Docling、Markitdown、Llamaparse 这五个工具
 - https://x.com/shao__meng/status/1893984985998365096
 1. Marker
@@ -491,7 +499,7 @@ curl http://localhost:11434/api/chat -d '{
 ✅ 开源免费、处理速度快（比同类快 4 倍）
 ❌ 缺乏复杂布局解析能力，依赖本地 GPU 资源
 
-2. MinerU
+1. MinerU
 技术架构
 · 集成 LayoutLMv3、YOLOv8 等模型，支持多模态解析（表格/公式/图像），依赖 Docker 和 CUDA 环境
 功能特性
@@ -503,7 +511,7 @@ curl http://localhost:11434/api/chat -d '{
 ✅ 企业级安全合规，支持 API 和图形界面
 ❌ 依赖 GPU，表格处理速度较慢，配置复杂
 
-3. Docling
+1. Docling
 技术架构
 · 模块化设计，集成 Unstructured、LayoutParser 等库，支持本地化处理
 功能特性
@@ -515,7 +523,7 @@ curl http://localhost:11434/api/chat -d '{
 ✅ 与 IBM 生态兼容，支持多格式混合处理
 ❌ 需 CUDA 环境，部分功能依赖商业模型
 
-4. Markitdown
+1. Markitdown
 技术架构
 · 微软开源项目，集成 GPT-4 等模型实现 AI 增强处理，支持多格式转换
 功能特性
@@ -527,7 +535,7 @@ curl http://localhost:11434/api/chat -d '{
 ✅ 格式支持最全，开发者友好（Python API/CLI）
 ❌ 依赖外部 API，部分功能需付费模型
 
-5. Llamaparse
+1. Llamaparse
 技术架构
 · 专为 RAG 设计，结合 Azure OpenAI 和 KDB AI 向量数据库，优化语义检索
 功能特性
@@ -613,56 +621,6 @@ curl http://localhost:11434/api/chat -d '{
 - If it includes evaluating js driven websites, including images Then yes 
   - To really replicate that, you'd probably wanna just use puppeteer, save the whole page as an image, extract the info from that, and then crunch that data
 
-# discuss-workflow-ai ⛓️
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 尝试下 coze studio 开源版本，目前看其整体功能不如 Dify 完备，而且 Coze 做的比 Dify 好的功能基本都阉割了（如实时语音模式），留下的功能没有亮点。
-- https://x.com/9hills/status/1949689118784717097
-- 有一个很重要的点你没说：License 差异。
-  - Coze是完全的 Apache 2.0，Dify 是 Apache 2.0 + 限制（不能多租户 + Logo限制）。
-  - 如果只是公司内部自用，无区别。主要是对定制平台的小ToB SaaS公司来说，Coze 会方便做二开。
-
-- 是的，而且模型配置也很麻烦，插件也不多
-
-- ## People have the problem running super long Browser Use tasks (agent forgets stuff after 50+ steps)
-- https://x.com/gregpr07/status/1934645184483975566
-  - We are fixing this in two ways2️
-  - 1. Workflow Use - we have a branch (heavy wip) which takes a prompt, explores the page with Browser Use agent, and generates the workflow (HARD)
-  - 2. Finding new ways to make the agent memory and thinking more robust (VERY HARD, lots of experimenting). This requires really big brain (we hired IMO medal guy to tackle this problem)
-  - If you relate with the problem, try using our super early alpha 0.0.0 of Workflow Use auto generation of workflows
-
-- Word of advice, reflect on whether  you're not trying to just outrun the scaling hypothesis through mathematics. It gets expensive and the timelines to capture roi are shorter than ever.
-
-- ## 工作流平台大家关注dify 和 coze比较多，还有一个非常不错的框架 langflow
-- https://x.com/leeoxiang/status/1884945535507083426
-  - 1、Flow as an API，代码优先，workflow可以直接转换为可执行的代码；
-  - 2、支持丰富的逻辑判断；
-
-- ## 又一个值得学习的爬虫&RPA开源库 Maxun
-- https://x.com/yan5xu/status/1881150511220752884
-  - 自带低代码后台，轻松抓取任何网页数据，自动提取整理成表格，还能处理滚动分页和验证码
-  - 核心用 Playwright 做浏览器自动化，配合 puppeteer-extra-plugin-stealth/recaptcha 插件处理反爬和验证码，再用 adblocker 清理广告干扰
-
-- ## Announcing Flows AI: A light-weight library to build agent workflows, on top of Vercel AI SDK.
-- https://x.com/grabbou/status/1882139484994551861
-  - Use any LLM and provider of your choice.
-  - All patterns from Anthropic article provided out of the box.
-  -  we have a branch open and POC of a builder project, where we want to provide a very light-weight flow-based UI for configuring and visualizing this. Standalone and CLI-like, so you can execute those workflows like JavaScript files
-- There’s more than on the screenshot, including routers etc. Error handling can be done with a custom agent, overall - very simple, although I am interested to implement the missing blocks!
-
-- No unnecessary abstractions whilst literally abstracting away the AI SDK 
-
-- Is it capable of passing and using structured outputs and objects ?
-  - Agent is a function, so simply use generate object inside. The helpers we provide operate on text for now (keeping things slim), but adding that if requested isn’t too much of work
-
-- Does it support streaming?
-  - Not yet, keeping scope limited. Theoretically possible
 # discuss-multi-agents 🏘️
 - ## 
 
