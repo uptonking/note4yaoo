@@ -52,10 +52,37 @@ modified: 2023-10-28T17:52:51.915Z
 - It’s pretty great once it’s going. One issue I’ve had is for large tables, the initial copy never finishes. We’ve worked around this using the RDS snapshot technique described by Instacart
 
 - Useful for usecases like data warehousing, provenance, integration, time travel debugging and so on. However beware of those replication slots ... running out of space.
-# discuss-distributed-pg
+# discuss-pg-distributed/vitess
 - ## 
 
-- ## 
+- ## [Neki – sharded Postgres by the team behind Vitess | Hacker News _202508](https://news.ycombinator.com/item?id=44867374)
+  - if you look at the top 10 committers to Vitess over the last 12 months, 8 of them are helping with Neki in one way or another
+- This is exciting. The announcement says it will be open source. I really hope that this includes a functionally complete control plane so you realistically self-host.
+  - I looked Neon recently, and it appears that it's designed as a SaaS product from the outset; while it is technically possible to self-host the individual components of the architecture, it does not look trivial, in large part because the control plane is closed source (and probably extremely specific to Neon's SaaS operations).
+- Maybe make the announcement after you've actually released code?
+
+- Looks like there is two ongoing vitess for postgres projects. Hopefully this competition leads to a better postgres ecosystem.
+- There is also pgdog by the author of pgcat: https://pgdog.dev
+
+- supabase OrioleDB is not about sharding, it's about the storage layer.
+
+- Does Neki still need sharding key in query, just like Citus?
+  - If it’s like vitess then no, but IIRC you get relaxed consistency across shards
+
+- The Postgres team incorporating io_uring into PG 18 
+
+- Is anyone working on replacing postgres?
+  - Who isn't? Cockroach rewrote Postgres in Go. CedarDB rewrote Postgres in C++.
+  - And then to lesser degrees you've got Yugabyte, AlloyDB, and Aurora DSQL (and certainly more I'm forgetting) that only replace parts of Postgres.
+
+- The MVCC that Postgres uses(and no one else) is like 50yo outdated concept they still cling to. So just by virtue of that, it makes PGSQL the most archaic db on the market nowadays.
+  - I never understood why PGSQL had so many fanboys, yet every major tech company always ditches it for mysql
+
+- 👥 https://x.com/eatonphil/status/1955030896341553452
+- Did cockroach rewrite postgres? I though it was more of a wrapper for distributing it across nodes.
+  - They did
+
+- CedarDB isn’t just a new Postgres - it’s also one of the fastest OLAP according to ClickBench, making it a 2 in 1
 
 - ## Announcing Multigres, a sharding solution for Postgres to take it to the petabyte-scale _20250614
 - https://x.com/supabase/status/1933627932972376097

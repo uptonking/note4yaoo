@@ -11,7 +11,7 @@ modified: 2025-08-08T07:36:16.802Z
 
 # overview
 
-# docs
+# docs-ai-sdk
 - AGI refers to models that predict and generate various types of outputs (such as text, images, or audio) based on what’s statistically likely, pulling from patterns they’ve learned from their training data. 
 
 - A LLM is a subset of generative models focused primarily on text.
@@ -162,7 +162,21 @@ modified: 2025-08-08T07:36:16.802Z
 - 
 - 
 - 
-- 
+
+# docs-ai-gateway
+- [Introducing the AI Gateway - Vercel _202505](https://vercel.com/blog/ai-gateway)
+  - Built on the AI SDK 5 alpha, the Gateway lets you switch between ~100 AI models without needing to manage API keys, rate limits, or provider accounts. 
+  - We built the AI SDK to create a common abstraction for AI model APIs across modalities like text, images, and audio.
+  - The AI Gateway is a separate Vercel product built on top of the AI SDK. The Gateway will take full advantage of AI SDK features like tool calling, function arguments, streaming, retries, attachments, and structured outputs.
+  - The Gateway handles authentication, usage tracking, and in the future, billing.
+  - The AI Gateway will allow you to load balance across providers, or fail over if a provider has downtime or degradation in performance. 
+  - We plan to support pay-as-you-go pricing when the Gateway reaches general availability. We are also planning to explore bring-your-own-key in the future.
+
+- [AI Gateway](https://vercel.com/docs/ai-gateway)
+  - The AI Gateway provides a unified API to access 100+ models through a single endpoint. 
+  - It gives you the ability to set budgets, monitor usage, load-balance requests, and manage fallbacks.
+  - The AI Gateway provides OpenAI-compatible API endpoints that allow you to use existing OpenAI client libraries and tools with the AI Gateway.
+
 - 
 - 
 

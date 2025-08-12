@@ -73,6 +73,17 @@ modified: 2021-04-24T08:29:02.272Z
 
 - ## 
 
+- ## 
+
+- ## a tip for finding what *exactly* caused a hydration mismatch:
+- https://x.com/iamakulov/status/1955061420871020718
+  01. set a breakpoint on the line that logs a hydration warning
+  02. reload
+  03. in the stack, go one level up
+  04. boom! you have the exact DOM node that triggered the mismatch
+
+- also works with minified (production) React btw!(you might have to go two levels up instead of one afair)
+
 - ## Mark my word - @tan_stack /start  is going to be acquired by @Netlify , he is optimizing it for Netlify and not @Cloudflare worker/page for a reason.
 - https://x.com/itspuru/status/1902620517581893852
 - TanStack is not for sale, nor is it optimized for any deployment destination over another (this would currently mean Nitro is biased, which it's not) and it never will be.
@@ -162,12 +173,12 @@ modified: 2021-04-24T08:29:02.272Z
 
 - ## [How single-page application works in SSR (React) - Stack Overflow](https://stackoverflow.com/questions/57243697/how-single-page-application-works-in-ssr-react)
 - When implementing Server Side Rendering (SSR), the server knows how to generate a full page with markup so the user gets a fully rendered page and from that moment, when the js resources get downloaded, the application will be live (event listeners will be enabled, the react lifecycle will be active and so on).
-01.              Get a request for a specific path
-02.              Initiate a new store instance for the request
-03.              In case of using react router (or other router solution), fill the state with the requested route
-04.              Render the app, but instead of rendering and mounting the App, render the App to string (with renderToString)
-05.              Dehydrate the state - take the latest state snapshot and append it to the result (after escaping it and wrapping it with script tag for example)
-06.              Return the markup as a response. The markup can look similar to the following: 
+01.               Get a request for a specific path
+02.               Initiate a new store instance for the request
+03.               In case of using react router (or other router solution), fill the state with the requested route
+04.               Render the app, but instead of rendering and mounting the App, render the App to string (with renderToString)
+05.               Dehydrate the state - take the latest state snapshot and append it to the result (after escaping it and wrapping it with script tag for example)
+06.               Return the markup as a response. The markup can look similar to the following: 
 
 ```HTML
 <html>

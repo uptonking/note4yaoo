@@ -9,6 +9,8 @@ modified: 2025-08-11T08:47:03.579Z
 
 # guide
 
+- rpa vs agent
+  - agent的操作依赖所提供的api/mcp, 而rpa可以在无api的前提下模拟click等人工操作
 # discuss-stars
 - ## 
 
@@ -104,7 +106,41 @@ modified: 2025-08-11T08:47:03.579Z
 
 - ## 
 
-- ## 
+- ## 🆚 [RPA vs AI agents vs Agentic Process Automation : r/rpa _202502](https://www.reddit.com/r/rpa/comments/1iftre3/rpa_vs_ai_agents_vs_agentic_process_automation/)
+- Not everything needs an LLM to perform rules based decisions. In fact it's expensive (energy, cost, infra) or wasteful to do so.
+  - Most rpa platforms are rebranding as AI platforms with rpa backbones so I suspect we'll see a blending of the two into the future.
+
+- APA: The AI is just the ‘R’ part of RPA, imo
+- You’re right that many are moving toward “Agentic Process Automation, ” where rulebased automation (RPA-style) blends with LLM powered reasoning. Hybrid setups are becoming more popular because they balance reliability with flexibility.
+
+- My two cents on this is that for most enterprises, the bottleneck will be tooling. 
+  - How will you interact with all your applications and data, transparently and be assured the outcomes are precise. Hence why RPA will still be popular. It’s much faster to build out and maintain an automation with an RPA solution than with a non low code platform.
+  - Orchestrating agents and tools is not trivial, but it’s also not technically difficult. LangGraph is the great example of that and most RPA vendors are building this in or have some means of doing it already.
+
+- I've worked as Upath rpa dev, and now i build chatbots. 
+  - I feel like they need to co-exist because the AI agents are able to interact with apps only using API. 
+  - For things where you don't have API and you want the bot to actually interact with an app and perform repetitive steps, you still need RPA. 
+  - You can trigger this RPA process using the chatbot but i feel like this works only for smaller processes. 
+  - In my previous company we had hundreds of different bot with a very big volume, it's impossible to orchestrate this using AI agents
+
+- I’ve worked at a company that was one of the largest banking institutions in its state. They deployed software from a company who had few APIs and no integrations with the systems they wanted. 
+  - The banking dev team had an overflowing backlog so they couldn’t get to making something custom and the company said there would be a wait and potential cost to build those APIs. 
+  - We used RPA to build a UI automation to get the job done.
+  - A LOT of people just assume there will be APIs for everything, but it takes devs to make them to start with and that assumes you’re not dealing with the above hurdles. 
+  - RPA will be a thing in larger slower moving companies, but smaller companies probably won’t have much use for it if they have a dev team and APIs are available.
+
+- It seems that RPA is not going to die but will cover less use cases. In my opinion the trend right now will gear towards workflow automation tools (make.com, n8n, etc.) where you can connect and call whatever tools are best for the use case (RPA, AI Agent, API, etc) or even for certain steps in the process
+  - At my role currently we only use RPA strictly for UI click automations where there are no APIs available. AI Agents are slowly starting to be used but at this point the hype outweighs the actually utility. However that will definitely flip in the next 3-6 months. AI capabilities have an exponential growth not linear.
+
+- You have use cases that need automation and you have tools to automate. 
+  - Line up the most suitable tool for each use case based on your value prop: Speed, Accuracy, Cost, Scale etc etc.
+  - Ignore the puns and spin, its all gimmicks.
+  - With that being said, RPA is crap and there is no real place for it in the modern tech stack.
+
+- I’d say AI agents (intelligence layer - planning, decision making, reasoning) and automation/rpa (automation layer, whether its api or ui based) are complementary to each other - they thrive together.
+  - RPA thrives in rules based end to end process so its more reliable for structured tasks, while agents thrive on processes having lots of nuances - its can get more flexible by leveraging its ability to plan, reason, execute and iterate bots/automations.
+
+- The purpose of RPA is not just to provide cost savings on manual tasks, but to do so while at the same time providing a completely transparent and signed off set of business rules for the automated process, as set by operational stakeholders. The automation will not deviate from that (assuming reasonable RPA design).
 
 - ## [Can n8n fully replace frameworks like LangChain, LangGraph, AutoGen, etc? : r/n8n _202503](https://www.reddit.com/r/n8n/comments/1j3ub58/can_n8n_fully_replace_frameworks_like_langchain/)
 - 🤔 No. Because in frameworks you can use other libs, and in n8n you can use only things that support n8n. But for most of simple tasks n8n can be enough

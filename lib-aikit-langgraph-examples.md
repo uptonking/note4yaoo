@@ -10,6 +10,16 @@ modified: 2025-08-11T08:47:56.335Z
 # guide
 
 # popular
+- https://github.com/google-gemini/gemini-fullstack-langgraph-quickstart /apache2/202506/python/ts
+  - Get started with building Fullstack Agents using Gemini 2.5 and LangGraph
+  - https://x.com/JvShah124/status/1933016336113791159
+    - Gemini 2.5 + LangGraph = Build Research Agents That AUTONOMOUSLY Crawl the Web, Cite Sources & Solve Complex Queries.
+    - Backend: Python (FastAPI) + LangGraph for orchestrating multi-step workflows
+    - Pluggable AI: Gemini 2.5 by default, but swap in Claude/Mistral via API keys
+    - Tools: Google Search API + room to add LlamaIndex, custom APIs, etc.
+  - https://github.com/zhouruiliangxian/Qwen-Fullstack-LangGraph-Quickstart
+    - 原项目基于 Google Gemini 实现，并使用 Google 搜索获取内容。我替换为通义千问（Qwen），并使用 Tavily 作为搜索引擎。
+
 - https://github.com/langchain-ai/agent-chat-ui /1.2kStar/MIT/202505/ts/inactive
   - https://agentchat.vercel.app/
   - Web app for interacting with any LangGraph agent (PY & TS) via a chat interface.
@@ -55,14 +65,6 @@ modified: 2025-08-11T08:47:56.335Z
   - ⏳ Artifact versioning: All artifacts have a "version" tied to them, allowing you to travel back in time and see previous versions of your artifact.
   - [is this repo still active? _202507](https://github.com/langchain-ai/open-canvas/issues/356)
 
-- https://github.com/LangGraph-GUI/LangGraph-GUI /196Star/MIT/202506/ts
-  - https://langgraph-gui.github.io/
-  - Visual node-edge graph GUI editor for LangGraph and run with local LLM or online API
-  - an user-friendly graphical interface for interacting with SvelteFlow frontend and fastAPI backend using LLM such ollama or other api key.
-  - https://github.com/LangGraph-GUI/LangGraph-GUI-backend /MIT/202605/fastapi
-    - The backend supports running LangGraph-GUI workflow json using localLLM such ollama.
-  - https://github.com/LangGraph-GUI/LangGraph-GUI-Svelte
-
 - https://github.com/langchain-ai/open-swe /3kStar/MIT/202508/ts
   - https://swe.langchain.com/
   - open-source cloud-based asynchronous coding agent built with LangGraph. 
@@ -96,6 +98,11 @@ modified: 2025-08-11T08:47:56.335Z
   - VectorDB: A vector database for storing semantic embeddings to efficiently retrieve and compare content.
   - langchain用的很少，仅prompts/schema/langchain_groq
 
+- https://github.com/simonebittidev/Parallax /202505/python/ts
+  - https://parallax.chat/
+  - an application designed for reflection and dialogue. 
+  - Users can submit a thought, opinion, or short text, and Parallax will rewrite it from three distinct perspectives: opposing, neutral, and empathetic.
+
 - https://github.com/usman-faisal/api-flow /202507/python/ts
   - https://api-flow-lyart.vercel.app/
   - An AI-powered tool that translates plain English commands into multi-step API workflows, automating the entire testing process.
@@ -103,6 +110,14 @@ modified: 2025-08-11T08:47:56.335Z
   - Backend: FastAPI, LangGraph, Python, A Google Gemini API Key
   - Frontend: Next.js, React, TypeScript
 # workflow
+- https://github.com/LangGraph-GUI/LangGraph-GUI /196Star/MIT/202506/ts
+  - https://langgraph-gui.github.io/
+  - Visual node-edge graph GUI editor for LangGraph and run with local LLM or online API
+  - an user-friendly graphical interface for interacting with SvelteFlow frontend and fastAPI backend using LLM such ollama or other api key.
+  - https://github.com/LangGraph-GUI/LangGraph-GUI-backend /MIT/202605/fastapi
+    - The backend supports running LangGraph-GUI workflow json using localLLM such ollama.
+  - https://github.com/LangGraph-GUI/LangGraph-GUI-Svelte
+
 - https://github.com/hrhrng/gragraf /202507/python/ts
   - Gragraf is a workflow orchestration application similar to Dify or n8n, built with LangGraph and React. 
   - It provides a visual canvas to build and execute graphs of nodes, including HTTP requests, code execution, conditional branching, and AI agents.
@@ -126,6 +141,24 @@ modified: 2025-08-11T08:47:56.335Z
   - Interactive Canvas: Pan, zoom, and navigate large workflows with ease
   - React 19: Modern React with hooks for state management
   - SVG-based drawing area with zoom/pan and grid overlay
+
+- https://github.com/nMaroulis/agent-smith /202507/python/ts
+  - https://nmaroulis.github.io/agent-smith/
+  - AgentSmith is a developer-first, visual framework for building, testing, and exporting LangGraph-based AI agents.
+  - describe flows in natural language, define custom state/message schemas, and generate full runnable Python code
+  - Drag & Drop Agent Builder: Design nodes, edges, and async flows using a canvas powered by React Flow.
+  - Visually define `TypedDict`-based agent state and message schemas.
+  - Modify each node’s logic directly in a Monaco (VSCode-style) editor.
+  - Built-in support for OpenAI, Anthropic, Hugging Face Transformers, and local LLMs, currently Llama.cpp
+  - Frontend	React Flow + TailwindCSS + Monaco Editor
+  - Backend	  Python + FastAPI + LangChain + LangGraph
+  - Storage	  SQLite / TinyDB / Local JSON
+
+- https://github.com/nyvyn/autonomais /MIT/202504/ts
+  - a typeScript library created to streamline the deployment and coordination of multiple AI agents
+  - built on LangGraph and LangChain
+  - The key addition of this library is to move the configuration of the graph workflows to attributes of the nodes.
+  - Conditional nodes use langchain LCEL expression to determine the next node to route too. In practice, this is the function configured as part of a conditional edge for a graph: addConditionalEdges.
 # starter
 - https://github.com/langchain-ai/agent-inbox-langgraphjs-example /MIT/202501/ts
   - a bare minimum code example to get started with the Agent Inbox with LangGraph.js
@@ -136,10 +169,14 @@ modified: 2025-08-11T08:47:56.335Z
 - https://github.com/engagepy/LangGraph-Multi-Tool-Agent /202507/python/ts
   - https://lang-graph-multi-tool-agent.vercel.app/
   - A comprehensive multi-agent system built with LangGraph that provides a wide range of tools and capabilities through a modular, well-organized architecture.
+  - https://github.com/tobySolutions/multi-agent-arch-gaia
+    - shows how to use LangGraph for a multi-agent system setup
 
 - https://github.com/esurovtsev/langgraph-hitl-fastapi-demo /202507/python/js
   - A minimal working example of a Human-in-the-Loop (HITL) agent using LangGraph and FastAPI. 
   - This demo shows how to pause a LangGraph agent, wait for user input from a frontend, and resume execution — using embedded mode and a simple React UI.
+  - https://github.com/kturung/Langgraph-Multi-Agent-HITL-Form /202503/ts/inactive
+    - showcasing Langgraph's capabilities for Multi-Agent Collaboration (Swarm-Agents) and Human In The Loop (HITL) interactions.
 
 - https://github.com/KirtiJha/langgraph-interrupt-workflow-template /MIT/202506/python/ts
   - Production-ready LangGraph interrupt template with modern web interface for building human-in-the-loop AI workflows. 
@@ -156,14 +193,49 @@ modified: 2025-08-11T08:47:56.335Z
   - Tool integration support with conditional logic
   - Conditional routing and decision-making capabilities
 
+- https://github.com/nngb102/langgraph-nextjs-template /MIT/202505/ts
+  - A starter template for building chat applications using LangGraph and Next.js. 
+  - This template provides a foundation for creating AI-powered chat experiences with streaming capabilities and modern UI components.
+  - State management with LangGraph
+
 - https://github.com/assistant-ui/assistant-ui-starter-langgraph /202508/ts
   - assistant-ui starter project for langgraph.
   - https://github.com/assistant-ui/assistant-ui-langgraph-interrupt
+
+- https://github.com/MrGaoGang/langgraph-mcp-example /202507/ts
+  - langgraph use mcp example
 # examples
 - https://github.com/akveo/ai-cookbook /MIT/202507/ts
   - a set of use cases demonstrating how to build AI-featured applications.
   - LangGraph + Next.js: Agent streams LLM tokens to the client application. In the demo app, state is persisted in memory
   - MCP: TypeScript and Python MCP servers implementations. Integration MCP servers with LangGraph servers. STDIO and SSE transport protocols
+
+- https://github.com/meghrp/webresearch-agent /202507/python/ts
+  - a langgraph agent that uses gemini to perform web backed research on a topic.
+  - use the cli_research.py file to accept a research question as an arg or via stdin.
+
+- https://github.com/notJust-dev/AiAgentRunJS /202503/ts/inactive
+  - An AI agent demo that can execute JavaScript code using LangGraph.js
+  - [Building your first AI Agent with LangGraph _202504](https://www.notjust.dev/blog/langgraph-ai-agent-genezio)
+
+- https://github.com/iinm/coding-agent-langgraph /202503/ts
+  - An example implementation of a CLI coding agent built with LangGraph.js.
+  - Tools: exec_command, write_file, patch_file, tmux, tavily_search
+
+- https://github.com/zedems01/AutoX-app /202507/python/ts/提交多
+  - https://achillenguessie.vercel.app/
+  - LangGraph AI agent-based system that leverages real-time trends and news to automate wide range content creation and publication, from X posts and threads to full blog articles.
+  - LangGraph+FastAPI backend and a Next.js frontend.
+  - Image Generation
+  - Content can be published directly to X or exported for use.
+  - The workflow can run independently or include optional Human-in-the-Loop (HiTL) checkpoints for review and editing
+  - Live Progress Dashboard: Provides a real-time overview of the multi-agent workflow, including task status and output previews.
+
+- https://github.com/max-d3v/geo_toolkit /202507/python/ts
+  - GEO Tools is a comprehensive FastAPI-based platform that helps you understand and optimize how your company or brand is positioned in Large Language Model (LLM) responses. 
+  - Built with OpenAI's web research capabilities and LangGraph for intelligent workflow orchestration.
+  - Uses OpenAI's web search for real-time data
+  - Competitive Intelligence: Generates dominance graphs showing competitor positioning
 
 - https://github.com/blaxel-templates/template-similar-company-finder /MIT/202508/ts
   - A LangGraph-powered agent that finds and analyzes similar companies, leveraging Qdrant for data storage, Exa for research, and Gmail for report delivery. 
@@ -183,9 +255,8 @@ modified: 2025-08-11T08:47:56.335Z
 - https://github.com/mayooear/ai-company-researcher /202501/ts/inactive
   - An AI agent that automates company research and lead prospecting (powered by langgraph and firecrawl)
 
-- https://github.com/notJust-dev/AiAgentRunJS /202503/ts/inactive
-  - An AI agent demo that can execute JavaScript code using LangGraph.js
-  - [Building your first AI Agent with LangGraph _202504](https://www.notjust.dev/blog/langgraph-ai-agent-genezio)
+- https://github.com/UtkarshTheDev/ai-math-assistant /MIT/202508/ts
+  - command-line calculator powered by Google's Gemini AI that understands natural language and provides step-by-step explanations of calculations.
 
 - https://github.com/bracesproul/langgraphjs-examples /202503/ts
   - a series of example TypeScript projects which implement LangGraph.js agents.
@@ -208,6 +279,9 @@ modified: 2025-08-11T08:47:56.335Z
   - Data Persistence: SQLite database with proper foreign key relationships
   - LangGraph Integration: Powered by LangGraph workflow with conditional logic and validation
 
+- https://github.com/FreakQnZ/Samvaada /202507/python/ts
+  - an Agentic AI Application built using LangGraph to Communicate with Enterprise Database (MySQL) in Natural Language and retrieve data back in a similar Fashion
+
 - https://github.com/tavily-ai/crawl2rag /202507/python/ts
   - https://crawl-to-rag.tavily.com/
   - Turn Any Website into a Searchable Knowledge Base and Chat with it using Tavily and MongoDB. 
@@ -226,6 +300,9 @@ modified: 2025-08-11T08:47:56.335Z
   - Integrates with MongoDB Atlas for storing and retrieving conversation data
   - Includes a tool for employee lookup using MongoDB Atlas vector search
 
+- https://github.com/kubowania/ai-agent-mongodb /202505/ts
+  - build an AI Agent in Express.js using LangGraph with MongoDB to build conversational apps using an agentic approach.
+
 - https://github.com/harishdeivanayagam/rowfill /283Star/AGPL+EE/202503/ts
   - https://www.rowfill.com/
   - Open-source unstructured data (PDFs, Images, Audiofiles) processing platform built for knowledge workers
@@ -237,6 +314,9 @@ modified: 2025-08-11T08:47:56.335Z
 
 - https://github.com/flemx/realtime-langgraph-agent /202508/python/ts
   - Multi Agent Realtime Voice with livekit and langgraph, searching linkedin profiles for personalised recommendations
+
+- https://github.com/PR-HARIHARAN/GeoChat-Agent /202507/python/ts
+  - Conversational AI agent for geospatial analysis using LangChain, LangGraph, Groq, and Google Earth Engine.
 # utils/fwk
 - https://github.com/keboola/langgraph-chat-transport /MIT/202508/ts
   - A transport adapter that bridges LangGraph API streaming events to Vercel AI SDK's `useChat` hook format
@@ -252,6 +332,15 @@ modified: 2025-08-11T08:47:56.335Z
 
 - https://github.com/atharvagupta2003/Langgraph-streaming /202508/ts
   - Full stack application for streaming responses of langgraph agents
+
+- https://github.com/ITZSHOAIB/agentic-express /MIT/202503/ts
+  - A library to accelerate REST agent app development on top of Express
+  - By providing prebuilt utilities, middleware, and patterns, it allows developers to focus on building Langgraph agents without worrying about the underlying REST infrastructure.
+  - Langgraph Agent Focus: Designed to complement Langgraph agent development by handling REST concerns.
+
+- https://github.com/FluffBaal/ragas-langgraph-vercel /MIT/202507/ts
+  - LangGraph Agent Architecture: Specialized agents for different evolution types
+  - Documents → Process → Simple Evolution → Multi-Context → Reasoning → Generate Answers → Retrieve Contexts → Results
 
 - https://github.com/langchain-ai/data-enrichment-js /MIT/202506/ts
   - Producing structured results (e.g., to populate a database or spreadsheet) from open-ended research (e.g., web research) is a common use case that LLM-powered agents are well-suited to handle
@@ -290,15 +379,6 @@ modified: 2025-08-11T08:47:56.335Z
   - A lightweight implementation of BaseCheckpointSaver that persists checkpoints and writes in MongoDB. 
   - Works out‑of‑the‑box with LangGraph’s serde
 
-- https://github.com/MehulG/memX /MIT/202506/python/js
-  - https://mem-x.vercel.app/
-  - memX is an open-source real-time shared memory layer designed for agent-based systems powered by LLMs. 
-  - Real-time CRDT-style state sync(WebSocket)
-  - Pub/Sub updates on change
-  - Python SDK (memx-sdk) for easy integration
-  - Modern multi-agent setups—whether using LangGraph, Autogen, or custom orchestration—lack a reliable way to share evolving context (state, goals, thoughts) between agents. 
-  - memX provides a simple and secure memory layer that agents can read/write from in real-time — no message-passing or controller required.
-
 - https://github.com/Onelevenvy/flock /950Star/apache2/202508/python/ts
   - 一个基于工作流 workflow 的低代码平台：Flock。
   - 基于 LangChain 和 LangGraph 构建，提供灵活的低代码编排协作代理解决方案，可用于快速构建聊天机器人、RAG 应用和协调多代理团队。
@@ -312,7 +392,7 @@ modified: 2025-08-11T08:47:56.335Z
   - The code logic referenced Google's Gemini LangGraph Project.
 
 - https://github.com/cqzyys/lang-agent /apache2/202508/python/ts
-  - 以LangGraph为底层技术来实现的一个可有限编程的Agent配置平台。 
+  - 以LangGraph为底层技术来实现的一个可有限编程的Agent配置平台
   - 传统的类WorkFlow项目一般只会将上一个节点的输出作为下一个节点的输入，Lang-Agent允许自定义状态变量，可以作用于节点以及条件边的输入和输出，从而实现更精准的控制。
   - LangGraph, FastApi, HeroUI, ReactFlow
 
@@ -343,9 +423,32 @@ modified: 2025-08-11T08:47:56.335Z
   - Give it a topic and it will generate a web search query, gather web search results (via Tavily), summarize the results of web search, reflect on the summary to examine knowledge gaps, generate a new search query to address the gaps, search, and improve the summary for a user-defined number of cycles. 
   - It will provide the user a final markdown summary with all sources used.
   - Ollama Deep Researcher is inspired by IterDRAG. This approach will decompose a query into sub-queries, retrieve documents for each one, answer the sub-query, and then build on the answer by retrieving docs for the second sub-query.
-# rag
+
+- https://github.com/mendableai/firesearch /202506/ts
+  - AI-powered deep research tool that breaks down complex queries, validates answers, and provides cited comprehensive results using Firecrawl and LangGraph
+# rag/memory
+- https://github.com/0xPratikPatil/langgraph-db /MIT/202505/ts/inactive
+  - A powerful memory backend for LangGraph.js that provides short-term and long-term memory for your agents using flexible storage providers.
+  - Multiple Storage Providers: Seamlessly integrate with Redis, MongoDB, Prisma, and more (Redis currently implemented)
+  - Checkpoint Support: Built on top of LangGraph's checkpoint system for reliable state management
+  - Flexible Architecture: Abstract base classes allow for easy extension with new providers
+
 - https://github.com/moaaz12-web/Offline-RAG /202508/python/ts
   - Offline single click Docker based RAG solution, built with Typescript, FastAPI, Langgraph, and Ollama
+
+- https://github.com/ilni-ai/simple-agentic-rag-langgraph-nodejs /202504/js/inactive
+  - a full-stack AI assistant application that demonstrates the use of LangGraph.js, Gemini API, FAISS vector search, and React Vite Bootstrap UI to build a simple yet RAG app
+  - Graph-based state orchestration with LangGraph.js
+  - Persistent multi-turn memory using SQLite
+
+- https://github.com/MehulG/memX /MIT/202506/python/js
+  - https://mem-x.vercel.app/
+  - memX is an open-source real-time shared memory layer designed for agent-based systems powered by LLMs. 
+  - Real-time CRDT-style state sync(WebSocket)
+  - Pub/Sub updates on change
+  - Python SDK (memx-sdk) for easy integration
+  - Modern multi-agent setups—whether using LangGraph, Autogen, or custom orchestration—lack a reliable way to share evolving context (state, goals, thoughts) between agents. 
+  - memX provides a simple and secure memory layer that agents can read/write from in real-time — no message-passing or controller required.
 # langchainjs
 - https://github.com/chrisleekr/langchain-playground /202508/ts
   - In this project, I used LangGraph to build a workflow to analyze New Relic logs.
@@ -390,18 +493,18 @@ modified: 2025-08-11T08:47:56.335Z
   - AI Travel Agent - Intelligent multi-agent system powered by LangGraph that coordinates specialized AI agents (flight search, hotel booking, activity planning) to provide personalized travel recommendations and assistance
   - AI/ML: LangChain + LangGraph (advanced agent orchestration)
 
+- https://github.com/supreme-gg-gg/multiflex /MIT/202507/python/ts
+  - https://multiflex-75bba-1cadf.web.app/
+  - Multi-agentic platform that gathers and presents knowledge in creative UI generated on the fly (work in progress)
+  - Instead of just text, the AI can present answers as cards, tables, galleries, or custom layouts, choosing the best format for each context.
+
 - https://github.com/therealcyberlord/Vea /MIT/202508/python/ts
   - Vea is a local AI copilot that seamlessly integrates with your Ollama installations. 
   - It provides a modern, web-based interface for interacting with local AI models while leveraging additional capabilities such as web search, mathematical operations, weather information, and image analysis. 
   - Backend: FastAPI, Langchain, LangGraph, LangSmith, and Ollama
   - Frontend: React, TypeScript, TailwindCSS, and Vite
   - langchain用的很少
-
-- https://github.com/nyvyn/autonomais /MIT/202504/ts
-  - a typeScript library created to streamline the deployment and coordination of multiple AI agents
-  - built on LangGraph and LangChain
-  - The key addition of this library is to move the configuration of the graph workflows to attributes of the nodes.
-  - Conditional nodes use langchain LCEL expression to determine the next node to route too. In practice, this is the function configured as part of a conditional edge for a graph: addConditionalEdges.
+  - https://github.com/keleshteri/langgraph-mcp-ollama-ts /202504/ts/langchain
 
 - https://github.com/ThalesGroup/fred /apache2/202508/python/ts
   - https://fredk8.dev/

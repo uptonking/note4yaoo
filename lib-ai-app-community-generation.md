@@ -40,7 +40,10 @@ modified: 2023-04-16T12:52:03.130Z
 
 - ## 
 
-- ## 
+- ## 把ComfyUI工作流无缝转为MCP Tool的一款工具：Pixelle-MCP
+- https://x.com/aigclink/status/1955163038035914972
+  - 也就是说用自然语言即可让LLM控制ComfyUI执行复杂的生成任务
+  - 自动化和批量化，LLM可以自动化执行重复性的任务，比如批量生成不同风格的图像，或者根据预设的规则自动调整参数
 
 - ## ComfyUI 现在是不是没人学了。时间线上的 ComfyUI 大佬好像都不发新教程了 _202508
 - https://x.com/hylarucoder/status/1954857846987968542
@@ -54,6 +57,11 @@ modified: 2023-04-16T12:52:03.130Z
 - 我一直认为工作流是过渡产物，注定被模型干掉
 
 - 感觉comfyUI很麻烦，租个云电脑配置半天还不如直接花钱在平台生图 生视频
+
+- https://x.com/hylarucoder/status/1955106887407653234
+  - 汇总一下大家的观点, 早期 ComfyUI 火是因为生图必须「会搭工作流」
+  - 现在 通用模型就能解决 80% 的场景。搭节点的边际价值下降，而 ComfyUI 生态商业化分叉进一步拉大了用户和开发者学习和维护成本
+  - 而开源世界里面又有很多一键化套件，ComfyUI 进一步成为了牛夫人。。。。
 
 - ## 有分析称，GPT-4o 图片生成效果这么好是因为采用了自回归模型（autoregressive model）而不再是扩散模型（diffusion model）。
 - https://x.com/jason2be/status/1905834259547361645

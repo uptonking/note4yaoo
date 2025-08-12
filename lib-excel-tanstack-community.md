@@ -44,6 +44,15 @@ modified: 2023-03-01T13:00:27.664Z
 # discuss-start
 - ## 
 
+- ## 
+
+- ## 
+
+- ## The other night, @schanuelmiller and I refactored TanStack Start's "static" server function mode out of the core and into a server function middleware. _202508
+- https://x.com/tannerlinsley/status/1955048427047489801
+  - Not only does this mean that our middleware system is awesome, but it was also one of the best times I've had pairing programming in a LONG time. A great reminder that AI's are YES-monsters. No pushback. No resistance.
+  - @schanuelmiller forces me to be a better developer and I won't exchange that kind of interaction for AI any time soon.
+
 - ## You did not need another opinion on this but Tanstack Start is really nicely put together.
 - https://x.com/aboodman/status/1912571470946971743
 - Works great w/ Zero btw. Custom mutators slot right in as an API endpoint.
@@ -103,7 +112,11 @@ modified: 2023-03-01T13:00:27.664Z
 # discuss-store/db
 - ## 
 
-- ## 
+- ## Is @tan_stack DB a new ORM, like Prisma or Drizzle?
+- https://x.com/jherr/status/1954942206688805231
+- It's not quite an ORM, but more of a data-fetching and caching solution.  Think of it as a powerful bridge between your database and UI.
+
+- It's less an ORM, more a data-fetching layer with potential to reshape how we interact with databases.
 
 - ## 🔁 How does TanStack DB, Store, and Query fit together? _20250806
 - https://x.com/penberg/status/1952995106966958316

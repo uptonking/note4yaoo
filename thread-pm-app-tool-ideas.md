@@ -69,21 +69,27 @@ modified: 2022-11-07T10:58:24.512Z
   - wikipedia
   - hackernews
   - reddit-tech
-  - imdb
+  - stackoverflow
+
+- 技术文档
+  - mdn
+  - languages apis
 
 - 学术相关数据
   - 论文一条龙: arxiv/paper, huggingface-data, github-code
   - 中科院PubScholar公益学术平台
 
-- 类似企查查/天眼查的政府数据整合平台
+- pm-data
+  - 类似企查查/天眼查的政府数据整合平台
 
 - 政府数据
   - 各级统计局
   - 国外统计局
-
-- public dataset
   - 统计年鉴
   - 中国裁判文书网
+
+- public dataset
+  - imdb
 
 - 经典数据集
   - 权威公开数据

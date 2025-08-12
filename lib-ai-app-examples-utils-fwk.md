@@ -76,6 +76,15 @@ modified: 2025-02-21T18:20:42.624Z
   - [All Langfuse Product Features now Free Open-Source : r/LangChain _202506](https://www.reddit.com/r/LangChain/comments/1l36tte/all_langfuse_product_features_now_free_opensource/)
     - 💡 Langfuse is an open-source LangSmith alternative that helps teams collaboratively build, debug, and improve their LLM applications
 
+- https://github.com/K-Mistele/swarm /GPLv3/202501/ts/inactive
+  - Model-agnostic typescript implementation of OpenAI's Swarm framework with the Vercel AI SDK
+  - model-agnostic library for creating and managing multi-agent AI systems
+  - This package is loosely based off of OpenAI Swarm, but please note that APIs are not identical, and they are not intended to be. 
+  - This package is intended to provide the same functionality, but with better patterns
+- https://github.com/joshmu/ts-swarm /MIT/202507/ts/deprecated
+  - Minimal agentic library mixing the simplicity of OpenAI Swarm with the flexibility of the Vercel AI SDK
+  - Option to run locally with the ollama-ai-provider.
+
 - https://github.com/microsoft/autogen /48.5kStar/MIT/202508/python
   - https://microsoft.github.io/autogen/
   - a framework for creating multi-agent AI applications that can act autonomously or work alongside humans.

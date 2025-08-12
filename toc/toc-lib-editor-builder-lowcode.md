@@ -762,7 +762,21 @@ modified: 2020-12-28T12:24:09.275Z
   - Open source editor for visualizing, creating and managing GitHub Actions workflows. 
   - Built with SolidStart and Appwrite
 
-## ai-workflow
+## rpa
+
+- https://github.com/robocorp/rpaframework /1.4kStar/apache2/202503/python
+  - https://www.rpaframework.org/
+  - Collection of open-source libraries and tools for Robotic Process Automation (RPA), designed to be used with both Robot Framework and Python
+  - https://github.com/robotframework/robotframework /11kStar/apache2/202507/python
+    - https://robotframework.org/
+    - a generic open source automation framework for acceptance testing, acceptance test driven development (ATDD), and robotic process automation (RPA). 
+    - It has simple plain text syntax and it can be extended easily with generic and custom libraries.
+
+- https://github.com/open-rpa/openrpa /2.7kStar/MPL/202506/csharp
+  - https://app.openiap.io/
+  - Open Source Robotic Process Automation Software
+
+
 
 # json-builder
 - https://github.com/redgeoff/mson /apache2/202401/js

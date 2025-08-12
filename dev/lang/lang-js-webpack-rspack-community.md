@@ -76,7 +76,13 @@ modified: 2024-01-03T16:14:53.804Z
 
 - ## 
 
-- ## 
+- ## Rspack v1.5.0-beta.0 is out
+- https://x.com/rspack_dev/status/1954869708664254582
+  - 🧭 New @rspack/browser package
+  - Barrel file optimization
+  - Virtual module plugin
+  - Hoisted federation runtime
+  - Drop support for Node 16
 
 - ## Rspack 1.4 will introduce Wasm build, allowing browser-based bundling in StackBlitz and other web environments. _202404
 - https://x.com/rspack_dev/status/1912713947133981046

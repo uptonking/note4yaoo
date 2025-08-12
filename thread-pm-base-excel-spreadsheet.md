@@ -24,7 +24,15 @@ modified: 2022-04-23T18:48:32.550Z
 # discuss-excel-ai 👾
 - ## 
 
-- ## 
+- ## 有人搞了个Excel的AI插件，可以直接在单元格与AI聊天让它帮你写公式或者宏。
+- https://x.com/karminski3/status/1955103864400777414
+  - 我看了下源代码，也是宏实现的，估计用的时候可能杀软会报。感兴趣的朋友可以看看。
+  - 我觉得这个实现得还是太程序员思维了。理想的情况应该是出现一个类似 Browser Use 的 Excel Use 界面，输入任务后让AI直接完成整个Excel。而不是硬着头皮弄到一半开始折腾单元格。
+  - 但是实现方式还是可以参考下的，可以给想做 Excel+AI 的同学提供思路。
+  - https://github.com/deepanshu88/ollama-excel
+  - [Run Open Source Local AI Models in Excel with Ollama](https://www.listendata.com/2025/08/ollama-in-excel.html)
+
+- excel 实在是太复杂了，而且很多时候表述也很麻烦，我现在很多都是输出 csv 完成即可。
 
 - ## 🚀 Endex is the first AI agent to live inside Excel. _202508
 - https://x.com/TarunAmasa/status/1953130965355905140

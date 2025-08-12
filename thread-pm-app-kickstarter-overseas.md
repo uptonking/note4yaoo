@@ -278,6 +278,21 @@ SecretOps:
 # discuss-payment-overseas
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 有个海外客户想要发票（invoice），但是他是上个月购买的，Stripe 无法给过去的订单开发票，这种情况怎么处理？
+- https://x.com/weijunext/status/1955152019175682305
+- 如果是one off payment的话， 在check out的时候没有写invoice的选项就不能在生成Invoice了， 只能生成receipt。
+- stripe里的one off payment 设置invoice自动生成还手续费。
+
+- 上个月的也可以开的吧， 在 invoices 里创建一个，对应上客户和产品就可以了
+  - 只能选未来时间
+
+- 海外的 invoice 自己生成就可以了
+- 手敲一个
+
 - ## Paddle 也支持 Alipay，算上 Stripe ，最后支持全球收款的，反而是这几个国际支付渠道
 - https://x.com/tualatrix/status/1860157697511064012
 - 是Paddle的消费者支付支持alipay，还是开发者收款支持alipay？

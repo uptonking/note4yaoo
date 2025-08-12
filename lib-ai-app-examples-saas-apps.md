@@ -89,6 +89,13 @@ modified: 2025-02-21T17:17:42.225Z
   - Supervision was designed to be model agnostic. Just plug in any classification, detection, or segmentation model.
     - we have created connectors for the most popular libraries like Ultralytics, Transformers, or MMDetection.
 # image
+
+- https://github.com/ammaarreshi/openjourney /135Star/MIT/202507/ts
+  - https://openjourney.replit.app/
+  - Open-source clone of the MidJourney web interface featuring real AI image and video generation powered by Google's Gemini SDK. 
+  - Use Imagen 4 to generate images and Veo 2 and 3 for image and text to video with audio.
+  - 
+
 - https://github.com/Nutlope/logocreator /202411/ts
   - https://www.logo-creator.io/
   - A free + OSS logo generator powered by Flux on Together AI

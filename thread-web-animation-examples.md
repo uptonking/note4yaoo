@@ -79,7 +79,24 @@ modified: 2021-04-21T15:01:12.882Z
 
 - ## 
 
-- ## 
+- ## 🌰 Everyone’s doing this trendy hero effect with a plain `<video>` tag. 
+- https://x.com/konstipaulus/status/1954539977812980030
+  - I tried it with WebCodecs for extra performance.
+  - 1. Generated the first frame with Flux.1 Kontext Max → upscaled with Real-ESRGAN.
+  - 2. Used Seedance 1 Lite to experiment with image-to-video prompts
+  - 3. Demuxed the video in-browser with mediabunny > decoded frames using a VideoDecoder instance > painted them via Canvas 2D Context API.
+- https://github.com/diffusionstudio/webcodecs-scroll-sync /MIT/202508/ts
+  - A video decoder that synchronizes video playback with scroll position using the WebCodecs API.
+
+- Interesting approach.  Is WebCodecs support wide enough yet?  Performance gains would be compelling if so.
+  - Yes it’s supported in all major browsers except Firefox on Android. We’re still working on getting some inconsistencies resolved though.
+
+- looks so laggy
+  - The screen recording software I used significantly reduced the performance for some reason
+
+- The text receding as if it were placed three-dimensionally is a lovely touch
+
+- anything that hijacks scroll is no-go for me
 
 - ## Responsive login form with fun animation Using HTML, CSS and JS.
 - https://twitter.com/viki_code/status/1721979187127353709

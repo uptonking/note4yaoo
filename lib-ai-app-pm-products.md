@@ -16,6 +16,7 @@ modified: 2025-03-22T16:10:24.856Z
 - agent-ipc
 
 - markdown-stream
+  - table-typewriter
 
 - ai-architecture: 与ai的通信和计算是在前端实现，还是在后端实现
   - 🐛 前端和大模型直接对接的缺点: 关闭页面会丢失数据、流程中断、并发控制复杂
@@ -27,6 +28,10 @@ modified: 2025-03-22T16:10:24.856Z
   - 🏘️ 架构参考: gemini-cli/qwen-cli(依赖fs) + ui/copilot-chat + framework/langfuse
   - 基于dnd的方案偏前端，后端一般很难定制和scale，会受限于平台提供的组件和工具
   - ✏️ ai修改文档的方案 fast-apply
+
+- 🔡 可是尝试用code generation的思路来实现ai产物如ppt
+  - web sandbox + ai-coding > lovable ❓
+  - sandpack ai? react-live ai?
 
 - 🏘️ ai-backend/platform
   - providers-wrapper: models, communication+state, structured in/output
@@ -56,18 +61,18 @@ modified: 2025-03-22T16:10:24.856Z
 - workflow
   - Zapier and n8n help to an extent, but they’re not designed for multi-tenant SaaS. They’re great for internal workflows—not product infrastructure.
 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
+- image
+  - stream
 
+- 
+- 
+- 
+- 
+- 
+- 
 
 # draft
 - rewrite open-canvas with langgraph
-
 # pm-mcp
 - writing
 
@@ -136,8 +141,11 @@ modified: 2025-03-22T16:10:24.856Z
 - ai写与第三方sdk集成的代码时，先写注释example，再写代码
 # ai-office
 - 产品方向: ask、生成、集成
+  - core-features: improve, shorter, longer, fix, translate
 
-- 💡 基于演讲视频生成视频中的ppt, 还原ppt内容
+- ai-ppt 🌗
+  - 🔡 尝试用code generation的思路来实现ai ppt
+  - 🎞️ 基于演讲视频生成视频中的ppt, 还原ppt内容
 
 - 
 - 

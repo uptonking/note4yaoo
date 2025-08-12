@@ -268,6 +268,16 @@ modified: 2020-10-05T06:22:02.107Z
 - https://github.com/hakimel/kontext
   - http://lab.hakim.se/kontext/
   - 页面切换时的三维效果
+
+- https://github.com/diffusionstudio/webcodecs-scroll-sync /MIT/202508/ts
+  - A video decoder that synchronizes video playback with scroll position using the WebCodecs API.
+  - This project requires `mediabunny` as a dependency
+  - While canvas.tsx shows a React example, the core decoder can be used with any JavaScript framework
+  - Smooth Seeking: Binary search algorithms for fast frame lookup
+  - Bidirectional Playback: Optimized for both forward and backward seeking
+  - Memory Management: Automatic cleanup of unused video frames
+  - Note: The required buffer range is highly dependent on the density of keyframes in your video footage. Videos with more frequent keyframes will perform better with this decoder.
+  - https://x.com/konstipaulus/status/1954539977812980030
 # animation-utils
 - svg.js /MIT/8.2kStar/202006
   - https://github.com/svgdotjs/svg.js

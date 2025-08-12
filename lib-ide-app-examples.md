@@ -240,6 +240,27 @@ modified: 2024-08-24T16:30:20.218Z
 - https://github.com/julesmons/recline /MPLv2/202501/ts
   - The AI assistant that seamlessly integrates with VSCode to autonomously create, edit, and run terminal commands; redefining how you code.
 
+## background-ai
+
+- https://github.com/ishaan1013/shadow /MIT/202508/ts
+  - https://shadowrealm.ai/
+  - Background coding agent and real-time web interface
+  - Sets up isolated execution environments for AI agents to work on GitHub repositories with tools to understand code, edit files, and much more.
+  - Automatic workspace setup and cleanup on Micro-VMs
+  - Kata QEMU containers for hardware-level isolation
+  - Multi-provider LLM support (Anthropic, OpenAI, OpenRouter)
+  - Tool execution with file operations, terminal commands, and code search
+  - Memory system for repository-specific knowledge retention
+  - Lightweight Shadow Wiki generation for comprehensive codebase documentation
+  - Shadow supports two execution modes through an abstraction layer:
+    - Local Mode: Direct filesystem execution on the host machine
+    - Remote Mode (For Deployment): Hardware-isolated execution in Kata QEMU containers, True VM isolation via QEMU hypervisor
+  - https://x.com/_rajanagarwal/status/1955075526621794716
+    - meet Shadow, a powerful open-source background coding agent
+    - 1.7K commits later, we think this is a great open source framework to build off of to make background coding agents. 
+    - shadow has contributed 1k+ lines to itself
+    - https://x.com/ElijahKurien/status/1955075209720967457
+
 ## ide-repo-ai
 
 - https://github.com/yamadashy/repopack /MIT/202411/ts

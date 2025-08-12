@@ -16,7 +16,10 @@ modified: 2024-08-24T16:52:53.996Z
 
 - ## 
 
-- ## 
+- ## VScode's code-folding is indentation-based instead of syntax-based and that's insane
+- https://x.com/nullvoxpopuli/status/1955014292769542598
+- Default is indent based. But you can change in settings.
+
 # discuss-diff
 - ## 
 

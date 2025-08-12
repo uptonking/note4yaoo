@@ -233,6 +233,36 @@ modified: 2025-02-03T10:17:42.052Z
 # discuss-ai-protocol ⚖️
 - ## 
 
+- ## 
+
+- ## 
+
+- ## ai rules and mcp is madness. What are we doing!
+- https://x.com/shadcn/status/1955254151807635602
+- The ironic part is that most of them are MDs (for rules) and json for MCP. We could really solve this with two files (promp.md and mcp.json)
+
+- here's the same mess in the AI SEO industry, but with the name itself
+  - The number one task for the AI SEO industry should be to agree on one name! Currently we have: * AI SEO * AEO * GEO * AIO * LLM * SEO * LLMO * LEO
+
+- A unified memory layer for all coding agents to the rescue
+- https://github.com/RedPlanetHQ/core /AGPL/ts
+  - Your unified, shareable memory layer for coding agents. 
+  - Compatible with Cursor, Claude Desktop/Code, Gemini CLI, Windsurf, AWS's Kiro, VSCode, Cline
+  - a portable memory graph built from your llm interactions and personal data, making all your context and workflow history accessible to any AI tool, just like a digital brain
+  - This eliminates the need for repeated context sharing 
+  - Plug n Play: Instantly use CORE memory in apps like Cursor, Claude
+
+- https://github.com/intellectronica/ruler /MIT/ts
+  - apply the same rules to all coding agents
+  - Centralised Rule Management: Store all AI instructions in a dedicated .ruler/ directory using Markdown files
+  - MCP Server Propagation: Manage and distribute Model Context Protocol (MCP) server settings
+- Can it fetch rules from a GitHub repo? We use multiple repos and worktrees but have a single toolkit and rules. Keeping all repos updated is more tedious than managing individual agents.
+  - Not yet, but sounds like a good idea. Would you mind adding an issue? I'm planning the 0.3 cycle now so will include that.
+
+- @AmpCode has this proposal to address that issue
+
+- let's make a new standard to solve all this mess
+
 - ## MCP uses JSON-RPC. A2A uses JSON-RPC. Did I miss the memo, why JSON-RPC suddenly.  What happened? Did we forget to train AI on protocols since 2009?
 - https://x.com/ibuildthecloud/status/1915584728616575281
 - Proto is bad outside of strongly typed languages and LSP used JSON RPC (vscode is JavaScript/Typescript).

@@ -10,6 +10,7 @@ modified: 2023-02-08T10:46:26.912Z
 # guide
 - tips
   - 下载慢先尝试修改dns，或将 git://github.com/ 前缀替换成 https://github.com/
+  - [GitHub Status](https://www.githubstatus.com/)
 # git-usage
 - 统计仓库人员贡献比例
   - git shortlog -sn

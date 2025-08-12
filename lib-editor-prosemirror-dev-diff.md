@@ -12,7 +12,9 @@ modified: 2025-08-07T17:22:10.051Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## TinyMCE 8.0’s Suggested Edits changes the way teams work , for good _202508
+- https://x.com/joinTiny/status/1955255652319633475
+  - 产品动画很好
 
 - ## [The Third Bit: Diff and Merge for ProseMirror _201711](https://third-bit.com/2017/11/22/prosemirror-diff-merge/)
 - I think it would be really exciting to implement a general JSON-based diff-and-merge for ProseMirror that leveraged the structural information in the schemas in the way that Compare++ and SemanticMerge do syntax-aware merging for code. 

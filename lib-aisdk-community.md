@@ -70,7 +70,12 @@ modified: 2025-08-08T07:36:31.265Z
 # discuss-ai-chrome/browser
 - ## 
 
-- ## 
+- ## [免费 + 本地 + Chrome 内置] Prompt API : 基于 Gemini Nano 模型的 Chrome 内置 AI 功能，让开发者通过自然语言、图像和音频输入创建智能化的网页应用。
+- https://x.com/shao__meng/status/1955152721205662037
+  - Prompt API 是 Chrome 浏览器提供的一项实验性功能（目前在 Chrome 138 及以上版本的 Origin Trial 中），让开发者可以通过 API 调用 Gemini Nano 模型，直接在浏览器中处理自然语言、图像和音频输入，生成文本输出
+  - 操作系统：Windows 10/11、macOS 13+ 或 Linux（暂不支持 Android、iOS 或 ChromeOS）。
+  - 存储空间：至少 22GB 空闲存储（模型大小可能随更新变化，可在 chrome://on-device-internals 查看，如果存储空间不足 10GB，模型会自动删除，需重新下载）。
+  - GPU：显存大于 4GB。
 
 - ## Chrome has an AI summarizer API built in now _20250809
 - https://x.com/BHolmesDev/status/1954179936249376962

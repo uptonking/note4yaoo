@@ -35,6 +35,18 @@ modified: 2023-08-28T06:08:05.348Z
 
 - golang 里就是 close、unlock、cancel 满天飞，尤其是遇到 loop 真的烦。要么就全包进毫无意义的函数里。
 - 对我来说，go最困扰的就是duck type导致源代码很难阅读，如果文档写的不详细有些库连用都不会用。当然我还是菜鸟阶段，指针，协程，基本上不用，所以这些坑还没摸到。
+# discuss-news-golang
+- ## 
+
+- ## 
+
+- ## 
+
+- ## It's been a year since iterators were added to Go. Do you think it was worth it? _202508
+- https://x.com/ohmypy/status/1955228993352855775
+- I think it would be better if they improved generics in Go than to add this lol.
+  - Honestly I haven't used it and I don't bother much trying to find places to use.
+
 # discuss-compiler-toolchain
 - ## 
 
