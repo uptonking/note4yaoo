@@ -48,17 +48,55 @@ modified: 2024-01-11T15:57:32.182Z
 # discuss-pdf
 - ## 
 
+- ## 
+
+- ## Parsing PDFs has slowly driven me insane over the last year. Here are 8 weird edge cases to show you why PDF parsing isn't an easy problem. 
+- https://x.com/VikParuchuri/status/1955355127818358929
+01. PDFs have a font map that tells you what actual character is connected to each rendered character, so you can copy/paste.  Unfortunately, these maps can lie, so the character you copy is not what you see.  If you're unlucky, it's total gibberish.
+02. PDFs can have invisible text that only shows up when you try to extract it.  "Measurement in your home" is only here once...or is it?
+03. Math is a whole can of worms.  Remember the font map problem?  Well, math is almost always random characters - here we get some strange Tamil/Amharic combo.
+04. Math bounding boxes are always fun - see how each formula is broken up into lots of tiny sections?  Putting them together is a great time!
+05. Once upon a time, someone decided that their favorite letters should be connected together into one character - like ffi or fl.  Unfortunately, PDFs are inconsistent with this, and sometimes will totally skip ligatures - very ecient of them.
+06. Not all text in a PDF is correct.  Some PDFs are digital, and the text was added on creation.  But others have had invisible OCR text added, sometimes based on pretty bad text detection.  That's when you get this mess
+07. Overlapping text elements can get crazy - see how the watermark overlaps all the other text?  Forget about finding good reading order here.
+08. I've been showing you somewhat nice line bounding boxes.  But PDFs just have character positions inside - you have to postprocess to join them into lines.  In tables, this can get tricky, since it's hard to know when a new cell starts
+
+- This is what we do with marker - https://github.com/datalab-to/marker - we only OCR if the text is bad.
+
+- ## @VikParuchuri 在 Marker 中坚持先提取 PDF 的原始文本，仅在文本质量差时才使用 OCR
+- https://x.com/shao__meng/status/1955413498516906316
+  - PDF 解析的八个难题，虽然很难，但直接提取 PDF 中的文本仍然比重新 OCR 更快、更准确 
+
+01.  字体映射问题：
+PDF 文件包含字体映射，理论上能将显示的字符与实际字符对应，便于复制粘贴。但这些映射有时不准确，导致复制的字符与看到的完全不同，甚至可能是乱码。
+02.  隐形文本：
+有些 PDF 包含不可见的文本，只有在提取时才会显现。例如，文本 “Measurement in your home” 可能在文件中重复出现，但肉眼无法察觉，增加了解析难度。
+03.  数学公式乱码：
+数学公式在 PDF 中常以随机字符呈现，字体映射问题让公式变成类似泰米尔文或阿姆哈拉文的奇怪组合，难以正确解析。
+04.  数学公式分块：
+数学公式的边界框（bounding box）往往被拆分成多个小块，重新组合这些片段需要复杂的处理，耗时且易出错。
+05.  连字不一致：
+PDF 文件有时会将某些字母组合（如“ffi”或“fl”）合并成一个字符（连字），但处理连字的方式不统一，有时甚至完全忽略，导致文本提取不完整。
+06.  OCR 文本错误：
+部分 PDF 的文本是通过 OCR 添加的。如果 OCR 基于不准确的文本检测，提取结果可能出现混乱，影响数据质量。
+07.  文本重叠：
+PDF 中的水印或其他重叠文本会干扰正常文本的阅读顺序，解析时难以确定正确的文本流，增加处理复杂性。
+08.  表格行边界问题：
+PDF 文件只记录字符位置，需后期处理将字符组合成行。在表格中，判断单元格的起点和终点尤为困难，容易导致行或列混淆。
+
+- OCR只能作为最后的兜底方案，不然数据质量太难保证了
+
 - ## 📌 PDF转Markdown 方案选型
 - https://x.com/dotey/status/1817072212316135776
-01. document-convert（开源）：https://github.com/multimodal-art-projection/MAP-NEO/tree/main/Matrix/document-convert
-02. Ragflow（开源）：https://github.com/infiniflow/ragflow
-03. gptpdf（开源）：https://github.com/CosmosShadow/gptpdf
-04. 百度云Textmind（闭源）：https://cloud.baidu.com/product/textmind.html
-05. doc2x（闭源）：https://doc2x.noedgeai.com
-06. 腾讯云文档解析（闭源）：https://cloud.tencent.com/document/product/1759/107504
-07. marker（开源）：https://github.com/VikParuchuri/marker
-08. PDF-Extract-Kit（开源）：https://github.com/opendatalab/PDF-Extract-Kit
-09. zerox（开源）：https://github.com/getomni-ai/zerox
+01.  document-convert（开源）：https://github.com/multimodal-art-projection/MAP-NEO/tree/main/Matrix/document-convert
+02.  Ragflow（开源）：https://github.com/infiniflow/ragflow
+03.  gptpdf（开源）：https://github.com/CosmosShadow/gptpdf
+04.  百度云Textmind（闭源）：https://cloud.baidu.com/product/textmind.html
+05.  doc2x（闭源）：https://doc2x.noedgeai.com
+06.  腾讯云文档解析（闭源）：https://cloud.tencent.com/document/product/1759/107504
+07.  marker（开源）：https://github.com/VikParuchuri/marker
+08.  PDF-Extract-Kit（开源）：https://github.com/opendatalab/PDF-Extract-Kit
+09.  zerox（开源）：https://github.com/getomni-ai/zerox
 10. OminiParse（开源）：https://github.com/adithya-s-k/omniparse
 11. MinerU（开源）：https://github.com/opendatalab/MinerU
 

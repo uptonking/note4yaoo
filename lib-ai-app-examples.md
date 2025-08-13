@@ -128,10 +128,6 @@ modified: 2023-02-08T07:20:48.475Z
 - https://github.com/nicepkg/gpt-runner
   - Conversations with your files! Manage and run your AI presets!
 
-- https://github.com/Mintplex-Labs/anything-llm /MIT/js/python
-  - https://useanything.com/
-  - An efficient, customizable, and open-source enterprise-ready document chatbot solution.
-
 - https://github.com/AprilNEA/ChatGPT-Admin-Web /MIT/202312/ts/inactive
   - CAW 是一个自托管网络应用程序，提供开箱即用的用户管理，包括后台界面以及可配置的支付计划和相关支付界面
   - Nest.js + Next.js
@@ -232,7 +228,66 @@ modified: 2023-02-08T07:20:48.475Z
 
 - https://github.com/naklecha/llama3-from-scratch /MIT/202405/jupyter/inactive
   - llama3 implementation one matrix multiplication at a time
-# text2image
+# image 🖼️
+- https://github.com/badboysm890/ClaraVerse /3kStar/MIT/202508/ts
+  - https://claraverse.space/
+  - Privacy-first, fully local AI workspace with Ollama LLM chat, tool calling, agent builder, Stable Diffusion, and embedded n8n-style automation. 
+  - No backend. No API keys. Just your stack, your machine.
+  - The Story Behind ClaraVerse: Why can't everything be in a single app?
+  - The Solution: One App. Six Tools. Zero Compromises.
+  - Built on the shoulders of giants: llama.cpp • llama-swap • faster-whisper • ComfyUI • N8N
+
+## comfyui
+
+- https://github.com/comfyanonymous/ComfyUI /85.4kStar/GPLv3/202508/python
+  - https://www.comfy.org/
+  - The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface.
+  - ComfyUI lets you design and execute advanced stable diffusion pipelines using a graph/nodes/flowchart based interface. 
+  - Available on Windows, Linux, and macOS.
+  - Image Models: SD1.x, SD2.x, SDXL, Flux, Qwen Image, HiDream
+  - Image Editing Models: Flux Kontext, HiDream, Omnigen 2
+  - Video Models: Stable Video Diffusion, Mochi, Hunyuan, Wan
+  - Audio Models: Stable Audio, ACE Step
+  - 3D Models: Hunyuan3D 2.0
+  - Asynchronous Queue system
+  - Many optimizations: Only re-executes the parts of the workflow that changes between executions.
+  - Smart memory management: can automatically run large models on GPUs with as low as 1GB vram with smart offloading.
+  - Works even if you don't have a GPU with: --cpu (slow)
+  - Loras (regular, locon and loha)
+  - Loading full workflows (with seeds) from generated PNG, WebP and FLAC files.
+  - Works fully offline: core will never download anything unless you want to.
+  - ⚙️ 配置GPU运行模式的文件在 `~/Library/Application Support/ComfyUI/config.json`, 同时配置启动参数文件在 `~/Documents/ComfyUI/user/default/comfy.settings.json` ; 
+  - https://github.com/Comfy-Org/ComfyUI_frontend /GPL/202508/ts/vue
+    - Official front-end implementation of ComfyUI
+    - Backend: Dev server expects ComfyUI backend at http://localhost:8188 by default
+    - 依赖vue-router、pinia、vuefire、tiptap-markdown、marked、three、jsondiffpatch
+
+- https://github.com/comfy-addons/comfyui-sdk /MIT/202508/ts
+  - TypeScript SDK for seamless interaction with the ComfyUI API. 
+  - This SDK significantly simplifies the complexities of building, executing, and managing ComfyUI workflows, all while providing real-time updates and supporting multiple instances
+  - Construct and manipulate intricate ComfyUI workflows effortlessly using a fluent, intuitive builder pattern
+  - Multi-Instance Management: Handle a pool of ComfyUI instances with ease, employing flexible queueing strategies for optimal resource utilization.
+  - Subscribe to WebSocket events for live progress tracking, image previews, and error notifications.
+  - Custom WebSocket Support: Supply your own WebSocket implementation for greater flexibility
+  - Supports Basic Auth, Bearer Token, and Custom Authentication Headers
+  - Extension Support: Seamlessly integrate with ComfyUI Manager and leverage system monitoring
+  - Examples: Includes practical examples for Text-to-Image (T2I), Image-to-Image (I2I), and complex multi-node workflows
+
+- https://github.com/Good-Dream-Studio/ComfyUI-Connect /MIT/202507/python
+  - Expose your workflows into HTTP endpoints directly from ComfyUI itself.
+  - Auto Documentation - Show all your workflows in OpenAPI format using `/api/connect` internal endpoint
+  - Install by cloning this project into your `custom_nodes` folder.
+  - [Made a custom node to turn ComfyUI into a REST API : r/comfyui _202505](https://www.reddit.com/r/comfyui/comments/1kef4xo/made_a_custom_node_to_turn_comfyui_into_a_rest_api/)
+
+- https://github.com/SaladTechnologies/comfyui-api /MIT/202508/ts
+  - A simple API server to make ComfyUI easy to scale horizontally. 
+  - Get outputs directly in the response, or receive them via webhook or s3.
+  - A simple wrapper that facilitates using ComfyUI as a stateless API, either by receiving images in the response, or by sending completed images to a webhook
+  - The server supports the full ComfyUI /prompt API, and can be used to execute any ComfyUI workflow.
+  - Stateless API: The server is stateless, and can be scaled horizontally to handle more requests.
+
+## image-provider
+
 - https://github.com/Stability-AI/stablediffusion
   - https://github.com/CompVis/stable-diffusion
   - A latent text-to-image diffusion model
@@ -246,12 +301,10 @@ modified: 2023-02-08T07:20:48.475Z
 - https://github.com/cmdr2/stable-diffusion-ui
   - The easiest way to install and use Stable Diffusion on your computer.
 
-- https://github.com/Nutlope/blinkshot /202410/ts
-  - https://www.blinkshot.io/
-  - An open source real-time AI image generator. 
-  - Powered by Flux through Together.ai.
-  - Flux Schnell from BFL for the image model
-  - Together AI for inference
+- https://github.com/mcmonkeyprojects/SwarmUI /3kStar/MIT/202508/csharp/js
+  - SwarmUI (formerly StableSwarmUI), A Modular Stable Diffusion Web-User-Interface, with an emphasis on making powertools easily accessible, high performance, and extensibility
+  - [Best way to use Qwen Image on Linux? : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mmx3cg/best_way_to_use_qwen_image_on_linux/)
+    - It's a fairly standard UI that sits on top of it's own comfy instance. It supports nearly everything that comfyui does, and makes the full comfyUI available as a built-in tab for when you need custom workflows not doable with the main UIs parameters.
 # ml-neural-network
 - https://github.com/AlloyTeam/netural
   - JavaScript的前向神经网络和反向传播的实现。
@@ -376,45 +429,6 @@ modified: 2023-02-08T07:20:48.475Z
   - 旨在开发一种实用、系统性的证件照智能制作算法, 利用一套完善的AI模型工作流程，实现对多种用户拍照场景的识别、抠图与证件照生成
   - SwanLab：训练人像抠图模型全程用它来分析和监控，以及和实验室同学协作交流，大幅提升了训练效率。
   - 支持 纯离线 或 端云 推理
-# ui-ai 💄
-- https://github.com/open-webui/open-webui /MIT/202405/svelte/python
-  - https://openwebui.com/
-  - User-friendly WebUI for LLMs (Formerly Ollama WebUI)
-  - extensible, feature-rich, and user-friendly self-hosted WebUI designed to operate entirely offline. 
-  - It supports various LLM runners, including Ollama and OpenAI-compatible APIs
-
-- https://github.com/assistant-ui/assistant-ui /5.8kStar/MIT/202508/ts
-  - https://www.assistant-ui.com/
-  - open source TypeScript/React library for AI chat.
-  - The library handles essential chat features such as auto-scrolling, accessibility, and real-time updates, while providing easy integration with LangGraph, AI SDK, and custom backends.
-  - The API of assistant-ui is inspired by libraries like shadcn/ui and cmdk. Instead of a single monolithic chat component, developers get primitive components that can be fully customized.
-  - We have wide model provider support (OpenAI, Anthropic, Mistral...)
-  - Chat UI: Streaming, Auto-scrolling, Markdown, Code Highlighting, File Attachments, and more
-  - Frontend tool calls: Let LLMs take action in your frontend application
-  - LangGraph interrupt() support
-  -  Chat Persistence
-  - Choose your backend
-    - AI SDK
-    - LangGraph
-    - Custom: your own backend/streaming protocols
-
-- https://github.com/richardgill/llm-ui /MIT/202502/ts
-  - https://llm-ui.com/
-  - The React library for LLMs
-  - Removes broken markdown syntax
-  - Throttling smooths out pauses in the LLM’s streamed output
-  - Renders output at native frame rate
-  - Code blocks for every language with Shiki
-  - Headless: Bring your own styles
-
-- https://github.com/fmaclen/hollama /MIT/202407/ts/svelte
-  - https://hollama.fernando.is/
-  - A minimal web-UI for talking to Ollama servers
-  - Markdown parsing w/syntax highlighting
-
-- https://github.com/kangfenmao/cherry-studio /NonCommercial/202409/ts
-  - https://cherry-ai.com/
-  - a desktop client that supports for multiple LLM providers, available on Windows, Mac and Linux
 # ai-devops/tooling
 - https://github.com/Tencent/AI-Infra-Guard /MIT/202503/go
   - 腾讯开源了一个AI基础设施安全评估工具：AI-Infra-Guard，一键检测AI系统的潜在安全风险

@@ -14,6 +14,7 @@ modified: 2023-11-24T18:41:26.906Z
   - 考虑侧重静态展示，还是动态展示和操作
   - playback回放一般考虑支持倍速
   - pause/resume的方案: redux, logic-flow
+  - 参考 redux-devtools, zustand-devtools
 
 - time-travel的实现方案
   - redux/event-sourcing

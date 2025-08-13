@@ -33,12 +33,31 @@ modified: 2023-04-16T12:52:03.130Z
 - https://twitter.com/xenovacom/status/1716711760982319429
   - `import { pipeline } from '@​xenova/transformers';`
 
-# discuss-image
+# discuss-comfyui/sd
 - ## 
 
 - ## 
 
 - ## 
+
+- ## [How well does ComfyUI perform on macOS with the M4 Max and 64GB RAM? : r/comfyui _202503](https://www.reddit.com/r/comfyui/comments/1jhifyi/how_well_does_comfyui_perform_on_macos_with_the/)
+- TLDR - if you want to work linear on one image, a Mac is a huge waste of time. Maybe 25% of the speed of a decent NVIDIA PC for AI generation. 
+  - However, if you know how or want to multitask, it’s easily the best system you can purchase.
+
+- for generative AI stuff, compared with my Linux PC with a RTX 4090 - mac m4 pales in comparison. 
+  - We are talking minutes vs seconds here for a 1024x1024 Flux generation. Most of it is tuned for Nivida CUDA and that is the key. 
+  - Apple Silicon offers great performance for everyday computing, but its support for machine learning frameworks like PyTorch sucks butt compared to CUDA.
+  - i can drive Comfui remotely from the mac with the server running on the linux pc.
+
+- AI image and video generation require cuda cores to function properly so Apple or even AMD gpus are not recommended.
+
+- Not well. Most local AI is still tied to having CUDA. Honestly the biggest missing link is getting Pytorch to run accelerated on Apple silicon. That will speed up most of the tasks that do CPU fallback which is where you get your abysmal performance.
+
+- Apple has been so far behind in AI. Best just go for PC with Nvidia gpu.
+
+- M4 Max MBP with 128 GB memory here. Let’s just say I never, ever run image gen on that machine. Even for models/pipelines that ARE supported, it’s not worth the agonizing wait.
+
+- my Mac M4 16gb is much more slower than my old PC with the good old Geforce 3060. An Apple a day keeps the Comfyui away.
 
 - ## 把ComfyUI工作流无缝转为MCP Tool的一款工具：Pixelle-MCP
 - https://x.com/aigclink/status/1955163038035914972
@@ -62,6 +81,18 @@ modified: 2023-04-16T12:52:03.130Z
   - 汇总一下大家的观点, 早期 ComfyUI 火是因为生图必须「会搭工作流」
   - 现在 通用模型就能解决 80% 的场景。搭节点的边际价值下降，而 ComfyUI 生态商业化分叉进一步拉大了用户和开发者学习和维护成本
   - 而开源世界里面又有很多一键化套件，ComfyUI 进一步成为了牛夫人。。。。
+# discuss-image
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Qwen image 20B is coming : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mhf0kl/qwen_image_20b_is_coming/)
+- ComfyUI is just a simple visual programming language with custom node support. 
+  - If you want a simpler approach use some UI for it like https://github.com/mcmonkeyprojects/SwarmUI and if you need more control no need to pack everything into a workflow just use Krita AI or sth...
 
 - ## 有分析称，GPT-4o 图片生成效果这么好是因为采用了自回归模型（autoregressive model）而不再是扩散模型（diffusion model）。
 - https://x.com/jason2be/status/1905834259547361645
@@ -81,6 +112,14 @@ modified: 2023-04-16T12:52:03.130Z
   - 靠谱，还想做一键穿丝袜功能
 - 这个通过拖拽构建系统的框架是什么？
   - comfyUI 关注我回头出教程
+
+- ## [how to image generate locally? : r/ollama _202505](https://www.reddit.com/r/ollama/comments/1kjhul8/how_to_image_generate_locally/)
+- r/StableDiffusion would be the place to ask. There are a couple different UIs like ComfyUI, Fooocus, Forge, and SwarmUI that can be used to do local generation.
+
+- ## [How to generate text to image with ollama? · Issue · ollama/ollama-python _202409](https://github.com/ollama/ollama-python/issues/280)
+- You need to know what's a LLM and how it work: llm stand for large language model, which basically mean it a model made to understand language, and can reply with similar language, understandable for human.
+  - what you're trying to do is to have this llm generate an image, without being train on generating image but only generating text... So its impossible to have the model nativly provide you an image by its own.
+  - If you're looking to have a chatbot capable of chatting and generating image, you must have two AI, one LLM and one made to generate image (like stable diffusion, etc), if you have a good computer, you can run both locally
 
 # discuss-designer/builder
 - ## 

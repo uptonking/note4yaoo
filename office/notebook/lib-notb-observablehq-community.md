@@ -71,7 +71,17 @@ modified: 2024-06-30T03:21:21.677Z
 
 - ## 
 
-- ## 
+- ## [Observable Notebooks 2.0 Technology Preview | Observable](https://observablehq.com/notebook-kit/)
+- Our goals for Notebooks 2.0 are:
+  - Support file-based workflows so you can do more with notebooks
+  - Adopt vanilla JavaScript so notebooks are easier to learn, use, & reuse
+  - Modernize notebooks to support the latest syntax & libraries
+  - Render notebooks as fast static sites for the best reading experience
+- To achieve these goals, we’ve developed an open notebook file format and are releasing Observable Notebook Kit, an open-source command-line interface (and Vite plugin) for generating static sites from notebooks
+
+- we’re releasing two things:
+  - Observable Notebook Kit - An open file format for notebooks, and accompanying tooling for generating static sites
+  - Observable Desktop - A macOS desktop application for editing notebooks as local files, and with a radical new approach to AI
 
 - ## I appreciate the nod to "File over app" from @mbostock and the @observablehq team in the latest announcement.
 - https://twitter.com/kepano/status/1758202572446581025

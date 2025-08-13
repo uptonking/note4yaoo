@@ -14,6 +14,26 @@ modified: 2021-01-06T14:40:03.364Z
 
 - ## 
 
+- ## 🤔 React, the good parts: 🌹
+- https://x.com/mjackson/status/1955286430449606762
+  - components. Composable building blocks for UI
+  - JSX. Markup uses a JS language extension instead of a bespoke templating language
+  - virtual DOM. Render everything, let the runtime figure out DOM updates
+  - refs. Sometimes you need to input.focus()
+
+- The ok parts:
+  - context
+  - synthetic events. Allows some normalization (good) but merging with user-provided events gets ugly 
+  - the style prop
+  - class component lifecycle methods. Most are deprecated now
+  - effects. Workable, but footgunny
+
+- The bad parts: 🐛
+  - React owns your state, rerender is coupled to state change
+  - lines are blurry around what is state vs ref
+  - “rules of hooks”. Hooks are functions that don’t follow normal rules of JavaScript
+  - “bundler magic” required to use full feature set of modern React
+
 - ## Async/Await and components are not friends
 - https://x.com/Enea_Jahollari/status/1891848025850405038
   - I understand this as: don't fetch inside your components. Fetch outside of them and let your components be completely synchronous. 

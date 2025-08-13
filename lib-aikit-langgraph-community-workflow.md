@@ -16,7 +16,40 @@ modified: 2025-08-11T08:47:03.579Z
 
 - ## 
 
-- ## 
+- ## 🤼 [Why LangGraph overcomplicates AI agents (and my Go alternative) : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1m0hgtt/why_langgraph_overcomplicates_ai_agents_and_my_go/)
+- After my LangGraph problem analysis gained significant traction, I kept digging into why AI agent development feels so unnecessarily complex.
+  - The fundamental issue: LangGraph treats programming language control flow as a problem to solve, when it's actually the solution.
+- What LangGraph does:
+  - Vertices = business logic
+  - Edges = control flow
+  - Runtime graph compilation and validation
+- What any programming language already provides:
+  - Functions = business logic
+  - if/else = control flow
+  - Compile-time validation
+- My realization: An AI agent is just this pattern. So I built go-agent - no graphs, no abstractions, just native Go:
+- https://github.com/vitalii-honchar/go-agent /MIT/202507/go
+  - Simplicity: Standard control flow, no graph DSL to learn
+  - Clean Architecture - Interface-based design following Go best practices
+
+```go
+for {
+    response := callLLM(context)
+    if response.ToolCalls {
+        context = executeTools(response.ToolCalls)
+    }
+    if response.Finished {
+        return
+    }
+}
+```
+
+- Yes, graphs neatly map to function invocation. The point of the graph abstraction is to provide a graphical UI for it that doesn't involve code, which terrifies non technical users.
+  - Whenever you see graph based workflow UIs, it's an attempt to cater to a broader user base (n8n, ComfyUI, the zillion non-AI enterprise workflow systems out there, etc). 
+  - IMO that type of UI doesn't scale arbitrarily; soon enough you end up with the spaghetti horrors ComfyUI is known for. In this regard code is clearly better as programming languages are built around managing complexity and maintainability, though you can't expect a regular business analyst to deal with Go.
+
+- Every time an industrial use case with a large potential scale comes up, there is a tendency to design graph-based user interfaces (UIs). 
+  - This is quite common in manufacturing and production systems, where both design and operations, despite being separate systems, employ such UIs and have been quite successful. 
 
 - ## Most people think of langgraph as agent abstractions, but it’s powered by a low level event driven framework under the hood _202507
 - https://x.com/hwchase17/status/1940847199157682383
@@ -247,7 +280,37 @@ modified: 2025-08-11T08:47:03.579Z
 
 - ## 
 
-- ## 
+- ## [What is the other best alternative to LangGraph? : r/LangChain _202411](https://www.reddit.com/r/LangChain/comments/1ggrqis/what_is_the_other_best_alternative_to_langgraph/)
+- No surprise there, every senior dev, techlead and CTO despises most current frameworks like langgraph, langchain, crewai, ... Due to being overly complex...
+- The whole Lang* ecosystem is a repackaging of existing ideas under the banner of generative AI. LangChain is an elaborate library for string formatting and web requests; 
+  - LangGraph reinvents state machines but worse because it thinks a request to an LLM warrants an entire framework.
+  - To engineers who have been around for a while: there’s nothing new here. It’s just JSON, strings, web requests, and maybe some database persistence. Use libraries which already exist for these things.
+
+- Here is a building block for any agent library
+  - memory ( basically past alternate messages) + ability to track current messages , ability to take multi modal messages)
+  - tools - function calling or plain prompt
+  - an executor (kind of react ) or state based like langraph
+  - parser ( structured output- can be json parser plus LLM call on fallback )
+  - ability to retry
+  - multi language - ii8n
+  - ability to use multiple llms.
+  - agent agent interaction
+  - ability to pass context between agents . ( database in production vs in memory)
+  - prompt optimizer
+  - ui to visualize and test
+  - evaluator
+- When you have the whole package and start combining things every other new framework will be bulky .
+  - So there is nothing wrong with the frameworks out there . These will adapt as “LLM as a service “ brings newer capability (probably some functionality will shift left like memory) .
+
+- Can you give a concrete example and explain exactly what would be more difficult about it without langgraph?
+  - As soon as you start having multiple agents with complex routing logics among them, and complex interaction and information exchange, using langgraph becomes a lot more convenient
+  - Mind you, you can do everything without it, it will just require more time and effort, as you would have to reimplement many functionalities that langgraph gives you out of the box, like a shared state, persistency, routing functionalities, and even an easier interface for tool usage and task delegations
+
+- Nice part about LangGraph is the use of Pregel, which you can roll yourself, but it’s there and the state management isn’t half terrible. If you skim the paper you have a reasonable understanding of LangGraph.
+
+- Right now LangGraph is the best thing in my opinion....where are you struggling....if I have to guess you might have missed some concepts or you are yolo-ing your DAG on the fly.
+
+- I actually prefer the Graph part over the Chain part. If you want to get more control you could just build on the Pregel implementation that Graph ships with and ignore the rest, maybe even ditch Chain if your model of choice comes with a decent SDK (OpenAI assistants for example)
 
 - ## 🌰 [The Most Powerful Way to Build AI Agents: LangGraph + Pydantic AI (Detailed Example) : r/AI_Agents _202504](https://www.reddit.com/r/AI_Agents/comments/1jorllf/the_most_powerful_way_to_build_ai_agents/)
   - we built an AI Listing Manager Agent capable of web scraping (crawl4ai), categorization, human feedback integration, and database management.

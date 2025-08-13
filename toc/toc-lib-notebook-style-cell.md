@@ -15,6 +15,12 @@ modified: 2021-05-13T16:08:15.067Z
   - https://starboard.gg/
   - In-browser literal notebook runtime used in Starboard.
 
+- https://github.com/vizhub-core/vizhub-runtime /MIT/202508/ts
+  - A powerful, flexible runtime environment for executing code sandboxes in the browser. 
+  - @vizhub/runtime powers VizHub and can be used to build similar interactive coding platforms.
+  - @vizhub/runtime intelligently detects the appropriate runtime version based on the provided files and generates executable HTML that can be used within an iframe's `srcdoc` attribute. 
+  - It handles everything from simple HTML/JS/CSS combinations to complex module bundling, dependency resolution, and cross-viz imports.
+
 - Data-Forge Notebook /MIT/202401/ts
   - https://github.com/data-forge-notebook/data-forge-notebook
   - https://www.data-forge-notebook.com/

@@ -24,7 +24,12 @@ modified: 2023-10-27T06:54:20.487Z
 # discuss-id
 - ## 
 
-- ## 
+- ## I might change all my blog post links to be numbered like /blog/123. 
+- https://x.com/pilcrowonpaper/status/1955617117396672559
+  - I don't like having links tied to the original titles and it's better than a random ID
+- ou can have both though! For example medium uses `<id>-<slug>` wherein the contents are found using the id. The slug is only available for SEO purposes, it is disregarded essentially. As the id is stable, it allows you to rewrite the URL if the slug has changed.
+
+- There's SEO benefit to having the url be tied to the title
 
 - ## UUIDs are not great, and they are not sortable. Learned the hard way.
 - https://x.com/pontusab/status/1904205433721749949

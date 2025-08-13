@@ -14,7 +14,11 @@ modified: 2023-09-17T17:37:19.913Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## Poll: When your automated tests run on your CI server, what database does your app call?
+- https://x.com/housecor/status/1955624930487497212
+- Why run these tests at all? I ran them on my machine, we're good, right?
+- I truncate all tables between every test case, but I guess its technically only a unique db per build
+- I wonder if the size of the test data would matter & what is the purpose of that test?
 
 - ## [Synchronizing local state with the database : r/rust _202306](https://www.reddit.com/r/rust/comments/14jfcen/synchronizing_local_state_with_the_database/)
 - I'm working on a websocket server too, and I'm completely forgoing the DB for real time updates.

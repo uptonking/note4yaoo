@@ -159,6 +159,10 @@ modified: 2025-08-11T08:47:56.335Z
   - built on LangGraph and LangChain
   - The key addition of this library is to move the configuration of the graph workflows to attributes of the nodes.
   - Conditional nodes use langchain LCEL expression to determine the next node to route too. In practice, this is the function configured as part of a conditional edge for a graph: addConditionalEdges.
+
+- https://github.com/Erickrus/langgraph-editor /MIT/202405/python
+  - a visual editor for langgraph workflow. 
+  - It is based on litegraph.js as its workflow engine (the same as ComfyUI). You can add, remove, and layout different nodes as you wish, get the workflow as you wish.
 # starter
 - https://github.com/langchain-ai/agent-inbox-langgraphjs-example /MIT/202501/ts
   - a bare minimum code example to get started with the Agent Inbox with LangGraph.js

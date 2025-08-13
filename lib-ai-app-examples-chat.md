@@ -10,11 +10,47 @@ modified: 2025-03-22T18:49:15.634Z
 # guide
 
 # popular
-- https://github.com/ChatGPTNextWeb/NextChat /MIT/202503/ts/tauri
+- https://github.com/open-webui/open-webui /107kStar/MIT > BSD+LOGO/202405/svelte/python
+  - https://openwebui.com/
+  - User-friendly WebUI for LLMs (Formerly Ollama WebUI)
+  - extensible, feature-rich, and user-friendly self-hosted WebUI designed to operate entirely offline. 
+  - It supports various LLM runners, including Ollama and OpenAI-compatible APIs
+  - 🌹 pros: comfyui
+  - 🐛 cons: MCP
+  - [Open WebUI changed license from BSD-3 to Open WebUI license with CLA | Hacker News _202505](https://news.ycombinator.com/item?id=43901575)
+    - What really is the moat of openwebui? I have seen at least 4 - 5 react UIs with similar functionality (chat, RAG, document library).
+    - Not sure about the moat, it's mostly a SvelteKit web app with extra utils after all. But it has a rather unique combination of advanced features (RAG integrations, workspaces, pipelines, code execution, MCP integration, etc.) and a user-friendly "production grade" interface. 
+    - They swapped out MIT for BSD-3 just five months ago
+  - 🍴 forks
+  - https://github.com/AI3clauseBSD/claused-webai /inactive
+
+- https://github.com/danny-avila/LibreChat /29kStar/MIT/202508/ts
+  - https://librechat.ai/
+  - Enhanced ChatGPT Clone: Features Agents, DeepSeek, Anthropic, Gemini
+  - 聊天数据持久化在mongodb
+  - UI & Experience inspired by ChatGPT with enhanced design and features
+  - Code Interpreter API
+  - Generative UI with Code Artifacts: allow creation of React, HTML, and Mermaid diagrams directly in chat
+  - Image Generation & Editing: Text-to-image with DALL-E (3/2), Stable Diffusion, Flux, or any MCP server
+  - Multimodal & File Interactions
+  - Import & Export Conversations
+  - Multi-User, Secure Authentication with OAuth2, LDAP, & Email Login Support
+  - [Enhancement: Extend Stable Diffusion plugin to work with ComfyUI _202405](https://github.com/danny-avila/LibreChat/issues/2672)
+    - We already support Stable Diffusion. It will be great to add support for ComfyUI.
+    - /not-planned
+
+- https://github.com/Mintplex-Labs/anything-llm /47.8kStar/MIT/202508/js/python
+  - https://anythingllm.com/
+  - A full-stack application that enables you to turn any document, resource, or piece of content into context that any LLM can use as a reference during chatting
+    - An efficient, customizable, and open-source enterprise-ready document chatbot solution.
+  - 基于langchain实现
+
+- https://github.com/ChatGPTNextWeb/NextChat /85.4kStar/MIT/202508/ts/tauri
   - https://nextchat.club/
   - Light and Fast AI Assistant. 
   - Support: Web | iOS | MacOS | Android | Linux | Windows
   - NextChat Support MCP
+  - 研发活跃降低，对新模型的支持不快
   - Fully compatible with self-deployed LLMs, recommended for use with RWKV-Runner or LocalAI
   - Privacy first, all data is stored locally in the browser
   - Enterprise Edition
@@ -48,6 +84,39 @@ modified: 2025-03-22T18:49:15.634Z
   - This library also features a super customizable text splitter API. Pick a built-in splitter (character, word, line, sentence) or provide you own function that splits the visually rendered text on screen.
   - https://x.com/samddenty/status/1905843003471581337
     - I just created a demo website for https://react-ai-flow.com a super advanced cross-framework library for smooth LLM text streaming effects & also text-staggers.
+# ui-ai 💄
+- https://github.com/assistant-ui/assistant-ui /5.8kStar/MIT/202508/ts
+  - https://www.assistant-ui.com/
+  - open source TypeScript/React library for AI chat.
+  - The library handles essential chat features such as auto-scrolling, accessibility, and real-time updates, while providing easy integration with LangGraph, AI SDK, and custom backends.
+  - The API of assistant-ui is inspired by libraries like shadcn/ui and cmdk. Instead of a single monolithic chat component, developers get primitive components that can be fully customized.
+  - We have wide model provider support (OpenAI, Anthropic, Mistral...)
+  - Chat UI: Streaming, Auto-scrolling, Markdown, Code Highlighting, File Attachments, and more
+  - Frontend tool calls: Let LLMs take action in your frontend application
+  - LangGraph interrupt() support
+  -  Chat Persistence
+  - Choose your backend
+    - AI SDK
+    - LangGraph
+    - Custom: your own backend/streaming protocols
+
+- https://github.com/richardgill/llm-ui /MIT/202502/ts
+  - https://llm-ui.com/
+  - The React library for LLMs
+  - Removes broken markdown syntax
+  - Throttling smooths out pauses in the LLM’s streamed output
+  - Renders output at native frame rate
+  - Code blocks for every language with Shiki
+  - Headless: Bring your own styles
+
+- https://github.com/fmaclen/hollama /MIT/202407/ts/svelte
+  - https://hollama.fernando.is/
+  - A minimal web-UI for talking to Ollama servers
+  - Markdown parsing w/syntax highlighting
+
+- https://github.com/kangfenmao/cherry-studio /NonCommercial/202409/ts
+  - https://cherry-ai.com/
+  - a desktop client that supports for multiple LLM providers, available on Windows, Mac and Linux
 # ai-sdk
 - https://github.com/moeru-ai/xsai /MIT/202502/ts
   - https://xsai.js.org/

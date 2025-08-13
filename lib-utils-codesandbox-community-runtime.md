@@ -194,6 +194,44 @@ modified: 2024-05-12T17:20:03.132Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [I'm building a Self-Hosted Alternative to OpenAI Code Interpreter, E2B : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kxlx46/im_building_a_selfhosted_alternative_to_openai/)
+- What's the security model - looks like using a full VM but maybe pooling them?
+  - They are lightweight VMs like the one Firecracker uses. They boot fast and have low memory footprints. As low as a few mbs depending on the image you are running.
+
+- does it use firecracker?
+  - it uses libkrun
+- how does that work, compared to firecracker?
+  - it is probably not that different from firecracker. personally i like that it bundles the kernel. i have not tried firecracker extensively btw.
+- libkrun shares code with firecracker and uses crates from https://github.com/rust-vmm
+
+- How would you suggest embedding microsandbox in some fashion so it can be distributed as part of a larger project?
+
+- ## [microsandbox: I'm building a Self-Hosted Alternative to OpenAI Code Interpreter, E2B : r/LangChain _202505](https://www.reddit.com/r/LangChain/comments/1kxlsq5/im_building_a_selfhosted_alternative_to_openai/)
+- This is cool, I built a solution as part of my previous startup, and I've been thinking about extracting it out as its own service.
+  - That said it requires Kubernetes, as it spins up a new pod for each connected session, then proxies requests to it based on headers.
+  - One down side to this, is the start up time is about 20-30 seconds.
+  - I'm curious to see how you proxy requests and handle issues with sandbox escape attempts. I'll dig through the code when I have a chance.
+- Right now, the sandboxes are based on custom python image with a server program that accepts code, runs code in repl and spits back the result. It is a temp setup that I will be changing soon to allow any image. I don't understand what you mean by sandbox escape attempts. The received code runs in VMs.
+- I'm digging through the code now and I see it's a true VM that requires KVM, for nested virtualization. Which means you don't have the same security issues as containers do
+  - That said, this is awesome and looks more like a replacement for docker, than anything else. Awesome stuff, and again thanks for sharing.
+- You are right. The goal is to build Docker for microvms
+
+- ## [microsandbox: A secure environment for running untrusted code : r/rust _202505](https://www.reddit.com/r/rust/comments/1kz7tw6/microsandbox_a_secure_environment_for_running/)
+- That's an exciting project! While similar tech exists in the form of Firecracker and Hyperlight, there are nowhere near this easy to use. I'm happy to see a solution with a ready-to-use API and CLI
+  - There is more to virtualization on Linux than just KVM. There is a fair bit of userspace code too, either in the form of qemu-kvm or something from the crosvm lineage (firecracker, cloud-hypervisor, etc). I don't see any references to any of these in the code. I wonder how microsandbox deals with that?
+
+- ## [Is there an open-source alternative to e2b (e2b.dev. Code interpreting for your AI app)? : r/LocalLLaMA _202405](https://www.reddit.com/r/LocalLLaMA/comments/1chsx7z/is_there_an_opensource_alternative_to_e2b_e2bdev/)
+- e2b is fully open source!
+  - The reason we aren't using containers for code execution is because they aren't secure. We're using Firecracker micro VMs under the hood instead.
+- When I am executing the code, where is the code getting executed - locally using Firecracker or one of the cloud services?
+  - Our cloud service. We'll make it easier for people to run E2B locally but it's tricky. For example, Firecracker doesn't run natively on macOS, another layer of virtualization is required.
+
+- If you are still looking (or maybe anyone else is), microsandbox is what you want. It is the same true VM-level isolation you'd get from E2B but has the easiest path to self hosting.
+
 - ## Vercel is now consistently handling over 1M builds a day every day.
 - https://x.com/rauchg/status/1902347649275068858
   - That’s 1M microVMs (virtual mini cloud computers) instantly booting, running user code in a secure sandbox, and being destroyed every day.
@@ -633,6 +671,13 @@ modified: 2024-05-12T17:20:03.132Z
 - ## 
 
 - ## 
+
+- ## [How safe is Docker compared to a VM for running ComfyUI and similar programs? : r/StableDiffusion _202503](https://www.reddit.com/r/StableDiffusion/comments/1j90nmg/how_safe_is_docker_compared_to_a_vm_for_running/)
+- Short answer is that a VM is substantially more secure than a container. 
+  - VM's use the CPU's virtualization functionality to isolate workloads while containers use the kernel to do the same. 
+- Isolation: The VM runs it's own OS and does not rely on resources of the host OS. Docker uses a shared host kernel, which increases the risk of container escape vulnerabilities if the container is compromised. VM wins
+
+- The root user in a container is not equivalent to root on the host, it by default is limited in capabilities. You have to actively relax that security in order to pull off exploits.
 
 - ## I rebuilt @Replit — Sandbox is an open-source cloud code editing environment with an AI copilot and multiplayer collaboration, made with @Nextjs + @CloudflareDev Workers _202405
 - https://x.com/ishaandey_/status/1796338262002573526

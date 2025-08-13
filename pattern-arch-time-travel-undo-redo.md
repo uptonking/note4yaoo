@@ -242,7 +242,10 @@ modified: 2023-09-12T09:36:25.608Z
 # discuss-redux-like
 - ## 
 
-- ## 
+- ## 🌰 I've been building @tan_stack Devtools and today I've made a video on what they are and how they work
+- https://x.com/AlemTuzlak/status/1955562543231160439
+  - I also show you how to build your own plugins by creating a time-travel plugin for Zustand.
+  - [This new TanStack library will change your DX forever. - YouTube _202508](https://www.youtube.com/watch?v=Em2MeE-GTK0)
 
 - ## 💥 [Huge performance issue when dispatching hundreds of actions · reduxjs/react-redux _201601](https://github.com/reduxjs/react-redux/issues/263)
 - On boot, the app I'm building gets a stream of data from a server. This stream can have hundreds of messages and entities and each message is handled separately.

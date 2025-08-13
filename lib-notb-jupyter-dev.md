@@ -31,6 +31,7 @@ modified: 2024-06-30T03:19:11.399Z
   - 网易tango低代码平台会先将用户搭建产生的react组件编译为ast再基于codesandbox在前端运行
 
 - dev-xp
+  - python-notebook的作用常用来做测试和原型，很少用在生产
   - npm打包分发的方式，不如docker/ollama-run方便，但jspm在线源的设计就很方便了
 # draft
 - jupyterhub实现支持ha/多实例

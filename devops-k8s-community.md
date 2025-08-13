@@ -28,7 +28,99 @@ modified: 2024-06-30T11:15:28.002Z
 - May I use a MQ to replace those proxy mesh? Much simpler
 
 - I remember the days we called this the “ambassador model”.
+# discuss-k8s-manager-terraform
+- ## 
+
+- ## 🌰 [Deploy full fledged K3s private clusters in Terraform, in < 2 mins : r/kubernetes _202101](https://www.reddit.com/r/kubernetes/comments/l3ctd1/deploy_full_fledged_k3s_private_clusters_in/)
+  - https://github.com/inscapist/terraform-k3s-private-cloud
+
+- ## [Deploying K8s with Terraform to minikube locally? : r/kubernetes _202112](https://www.reddit.com/r/kubernetes/comments/rohyan/deploying_k8s_with_terraform_to_minikube_locally/)
+- Terraform has kubernetes and helm providers that work with minikube to create resources.
+
+# discuss-k8s/alternatives-k3s/minikube
+- ## 
+
+- ## [Full kubernetes vs k3s microk8s etc… for learning with a cluster : r/kubernetes _202402](https://www.reddit.com/r/kubernetes/comments/1aqjwir/full_kubernetes_vs_k3s_microk8s_etc_for_learning/)
+- If you want to learn normal day-to-day operations, and more "using the cluster" instead of "managing/fixing the cluster", stick with your k3s install.
+  - If you want a bit more control, you can disable some k3s components and bring your own.
+  - If you want even more control over certain components, that you don't get with k3s, use kubeadm.
+
+- Not only is k3s great for learning Kubernetes, it can and should be used in a lot of production scenarios.
+  - The downside of using k3s is that it is minimal because it trims out a lot of components that most use cases don't need but are there for backwards compatibility or edge cases.
+  - I personally dislike some of the opinions that k3s ships with such as traefik as the default ingress controller, but that is easy enough to swap out on my own.
+
+- ## [2023: K3s vs Minikube? : r/kubernetes _202308](https://www.reddit.com/r/kubernetes/comments/15pehfb/2023_k3s_vs_minikube/)
+- Minikube/K3D/Kind are for development and testing. 
+  - K3S on the other hand is a standalone, production ready solution suited for both dev and prod workloads.
+
+- For my dev usecase, i always go for k3s on my host machine since its just pure kubernetes without the cloud provider support (which you can add yourself in production). 
+  - It doesnt need docker like kind or k3d and it doesnt add magic like minikube/microk8s to facilitate ease of provisioning a cluster.
+
+- ## 🆚 [K3s, minikube or microk8s? : r/kubernetes _201904](https://www.reddit.com/r/kubernetes/comments/be0415/k3s_minikube_or_microk8s/)
+- Minikube
+  - Minikube can run on Windows and MacOS, because it relies on virtualization (e.g. Virtualbox) to deploy a kubernetes cluster in a Linux VM. 
+  - You can also run minikube directly on linux with or without virtualization. 
+  - It also has some developer-friendly features, like add-ons.
+  - Minikube is currently limited to a single-node Kubernetes cluster
+  - Minikube is the closest to an official mini distribution for local testing and development, it is run by the same foundation as K8s.
+  - [Add multi-node support · Issue · kubernetes/minikube](https://github.com/kubernetes/minikube/issues/94)
+  - 202004: This feature is now available experimentally
+
+- Microk8s
+  - Microk8s is similar to minikube in that it spins up a single-node Kubernetes cluster with its own set of add-ons.
+  - Like minikube, microk8s is limited to a single-node Kubernetes cluster, with the added limitation of only running on Linux and only on Linux where snap is installed.
+  - Microk8s is a spin on what minikube tries to do and is run and maintained by Canonical (the Ubuntu people).
+  - Also please note that microk8s is being distributed using the proprietary snapcraft store, which could be a concern.
+  - MicroK8s is Linux only, only works with snap compatible distros and comes with its own tooling built-in (kubectl, etc) as well as some sugar shortcuts
+
+- K3s
+  - K3s runs on any Linux distribution without any additional external dependencies or tools. 
+  - K3s achieves its lightweight goal by stripping a bunch of features out of the Kubernetes binaries (e.g. legacy, alpha, and cloud-provider-specific features), replacing docker with containerd, and using sqlite3 as the default DB (instead of etcd).
+  - this lightweight Kubernetes only consumes 512 MB of RAM and 200 MB of disk space. K3s has some nice features, like Helm Chart support out-of-the-box.
+  - K3s can do multiple node Kubernetes cluster. However, due to technical limitations of SQLite, K3s currently does not support High Availability (HA), as in running multiple master nodes. 
+  - K3s is a project by Rancher, it is compliant but it’s completely up to them what is or isn’t included.
+
+- Kind
+  - Kind (Kubernetes-in-Docker), as the name implies, runs Kubernetes clusters in Docker containers. 
+  - This is the official tool used by Kubernetes maintainers for Kubernetes v1.11+ conformance testing. 
+  - It supports multi-node clusters as well as HA clusters. 
+  - Because it runs K8s in Docker, kind can run on Windows, Mac, and Linux.
+  - Kind is optimized first and foremost for CI pipelines, so it may not have some of the developer-friendly features of other offerings.
+- K3d
+  - A new project that aims to bring K3s-in-Docker (similar to kind).
+
+- Desktop Docker
+  - Docker for Mac/Windows now ships with a bundled Kubernetes offering.
+  - Kubernetes versions are tightly coupled with the Docker version
+  - Not as easy to destroy and start a new K8s cluster. AFAIK, you would have to disable Kubernetes and re-enable it through the Docker desktop app preferences.
+
+- Kubeadm
+  - The official CNCF tool for provisioning Kubernetes clusters in a variety of shapes and forms (e.g. single-node, multi-node, HA, self-hosted)
+  - Although this is the most manual way to create and manage a cluster of all the offerings listed here.
+
+- I can name a few changes since the original post:
+  - Minikube and Microk8s are no longer limited to single node cluster
+  - K3d has come a long ways and doesn't suffer from those mentioned issues
+- I recently installed k3s on my home server to replace various docker compose deployments I maintained. It's great, except I'm not a fan of Traefik's static config for endpoints. I wish the endpoints were dynamic and created on-the-fly with extra config from the ingress.
+  - Traefik has a dynamic config. The only thing I need is an ingress and Traefik will register it as a service and send traffic to the endpoint.
+
+- minikube is maintained by the main k8s crew. It's fully cross platform, but it heavily relies on an intermediary VM (which is significant overhead) and needs a switch to run on the actual host (only on Linux).
+  - K3S is a fully compatible Kubernetes system, but the compatibility extends to the current core of Kubernetes. Betas, alphas are removed
+  - Also, etcd is replaced by sqlite3 for state persistence. It's also the least resource consuming option of the 3 and it's also built with ARM compatibility at the core.
+
+- The standard kubernetes build has a bunch of in-tree stuff dealing with cloud provider (GKE, AWS, Azure, etc) features backing Dynamically Provisioned PVs and Services with type=LoadBalancer. None of those will work in Minikube or K3s.
+
+- Agree with who says none of the above. Imho if you want to play with a real Kubernetes environment you have two options:
+  - Buy at least 3 Raspberry PIs, connect them using a switch and run Kube on top of them (obviously, also if low, this has a cost)
+  - Use kvm/libvirt on a good pc/laptop (with at least 16gb of RAM) and then provision the cluster with Kubespray.
+  - Personally, in addition to my homelab, I use the second option on top of a Macbook Pro (broken screen) provisioned with CentOS.
+
+- k3s looks cool but they change some things from base k8s, things like getting rid of etcd for sqlite, so you might find some differences using "real" Kubernetes if you learn off that.
 # discuss-scaling
+- ## 
+
+- ## 
+
 - ## 
 
 - ## [How do you guys move nodejs applications to k8s with cluster module? : r/node](https://www.reddit.com/r/node/comments/15qwkrg/how_do_you_guys_move_nodejs_applications_to_k8s/)

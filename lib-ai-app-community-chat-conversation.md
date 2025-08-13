@@ -179,7 +179,8 @@ modified: 2023-04-16T10:02:58.738Z
 # discuss-ui-chat
 - ## 
 
-- ## 
+- ## [Ollama's new app | Hacker News _202508](https://news.ycombinator.com/item?id=44739632)
+- OpenWebUI refuses to support MCP and uses an MCP to OpenAPI proxy which often doesn't work. If you don't like or need MCP, then it is a good choice. The dev is very opinionated
 
 - ## a quick prototype sprint on an LLM chat interface
 - https://x.com/argyleink/status/1949966641233531030
@@ -188,12 +189,44 @@ modified: 2023-04-16T10:02:58.738Z
   - readablestreams
   - flow control
 
+# discuss-chat-dev/server
+- ## 
+
+- ## 
+
+- ## 
+
+
+
+- ## [OpenWebUI vs LibreChat : r/selfhosted _202503](https://www.reddit.com/r/selfhosted/comments/1jltdjq/openwebui_vs_librechat/)
+- I will give you two somewhat conflicting answers; 
+  - Hands-down Open-WebUI is far easier to deploy and support and lowest cost.
+  - Open-WebUI is client heavy, bogs down and has extremely high network utilisation (annoys mobile phone uses). Entire conversation is held in the browser, lots of back and forth and images are stored in the single json payload. Although easier to setup there is no real database design, limited indexing, and real no database design. As such both the main application and vector databases grow and will get bloated. Moving to Postgres helps, but doesn't address the fundamental lack of database design\indexing.
+  - b) Hands-down LibreChat provides a closer ChatGPT Plus style experience and is FAR easier to use.  Open-Webui development stick closely to their own guardrails and principles, as such far slower to adapt new features. eg: LibreChat users can use MCP servers\features. Where as Open-WebUI devs have stuck with the OpenAPI approach (great idea, but only 1% of the real-world use case), when all the popular agents are MCP. LibreChat seems to support image generation and editing within chat, without add-ons Open-WebUI can only create images.
+- LibreChat supports all the common providers out of the box, Open-WebUI just supports OpenAI compatible providers, everything else you need middleware or pipelines.
+- Common downsides with both these are; 
+  - No native iOS\Android applications (Open-WebUI works as a PWA app)
+  - No advanced voice
+  - Both lag with new features (eg: Advanced Imaging), yes that is expected but of note.
+  - Tool usage is clumsy at best on both
+
+- For some reason chat apps like using stupid database choices. At least OpenWebUI on Postgres won’t lose your data.
+  - LibreChat uses… MongoDB. In 2025. Yep.
+
+- ## [Best way to start Open-WebUI server from software? : r/OpenWebUI _202504](https://www.reddit.com/r/OpenWebUI/comments/1k1er0s/best_way_to_start_openwebui_server_from_software/)
+- Docker is the way. You're nailing it with the env var idea.
+- if you're using python why not pip install it and then just run it?
+
 # discuss
 - ## 
 
 - ## 
 
-- ## 
+- ## [完胜3款同类AI聊天工具！群晖部署OpenWebUI小白教程 - 知乎 _202503](https://zhuanlan.zhihu.com/p/32145475986)
+- OpenWebUI 更多是用来结合本地部署的大模型来使用，不过它也支持 OpenAI 格式的API。
+  - 多用户管理功能，且可以自定义用户访问到的模型范围
+- NextChat
+  - 项目目前已接近停更状态。虽然 NextChat 的部署过程非常简便，却存在不少问题：功能添加新模型的步骤复杂，用户分享机制过于基础，整体来看并无明显竞争优势。
 
 - ## 对于大语言模型来说，它是没有记忆功能的，也就是每一次你必须发送给它所有的历史会话内容，也就是每次发新消息都会把历史消息一起发送过去。
 - https://x.com/dotey/status/1856437700225532234

@@ -80,7 +80,14 @@ modified: 2023-09-16T17:43:09.215Z
 # discuss-file-upload
 - ## 
 
-- ## 
+- ## 🤔 做一个文件导出的功能，数据量可能会很大，所以采用了异步导出
+- https://x.com/TinsFox/status/1955267842519028014
+  - 我建议是服务端推送结果，完事了前端弹窗通知, 用 MQTT/websocket/SSE 都行
+  - 结果他们要用轮询, 今天上线了之后一看 network ，满屏轮询请求, 我都没有进到那个模块的页面
+
+- MQTT的话虽然可以用但是不太符合它的设计目的，websocket和SSE我感觉要看系统中是否已经引入了这样的东西，如果已经有了优先考虑这两个，如果没有的话轮询确实还是比较合适的，为了实现这一个小功能为系统引入新的组件有点牛刀杀鸡了
+
+- 感觉没啥，很多大厂的网页都是轮询，最经典的扫码登录也是轮询，当然这个看服务器资源，还有其他条件。
 
 - ## Uploading files on the internet could be so much more efficient if whoever designed the `multipart/form-data` spec just included one small detail: a header telling you how long the content is.
 - https://x.com/JoshCaughtFire/status/1927221147860427076

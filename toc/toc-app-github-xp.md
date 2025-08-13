@@ -15,6 +15,9 @@ modified: 2023-02-08T10:46:26.912Z
 - 统计仓库人员贡献比例
   - git shortlog -sn
     - 统计每人commit次数
+
+- 统计各语言代码行数
+  - npx loctok
 # github-usage
 - github邮箱帐号绑定
   - commit的帐号

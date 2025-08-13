@@ -276,6 +276,29 @@ modified: 2023-09-02T09:17:22.992Z
   - Uses Ubuntu, but designed to work with any operating system
   - [How I taught an AI to use a computer _202501](https://blog.jamesmurdza.com/how-i-taught-an-ai-to-use-a-computer)
 
+- https://github.com/microsandbox/microsandbox /3.5kStar/apache2/202507/rust
+  - https://docs.microsandbox.dev/
+  - Self-Hosted Plaform for Secure Execution of Untrusted User/AI Code
+  - Strong Isolation - Hardware-level VM isolation with microVMs
+  - Self-hosted with full control
+  - OCI Compatible - Works with standard container images
+  - AI-Ready - Built-in MCP support for seamless AI integration
+  - microsandbox server is also an MCP server, so it works directly with Claude, Agno and other MCP-enabled AI tools and agents.
+  - libkrun - The lightweight virtualization library that powers our secure microVM isolation
+  - 源码未使用 Firecracker
+  - [Microsandbox vs. Docker](https://github.com/microsandbox/microsandbox/blob/main/MSB_V_DOCKER.md)
+    - Microsandbox leverages microVM technology (KVM on Linux, Hypervisor.framework on macOS), providing true hardware-level virtualization. Each sandbox runs its own isolated kernel, creating a significantly stronger security boundary through CPU virtualization extensions.
+    - Docker uses container technology with process-level isolation through Linux namespaces and cgroups. While efficient, all containers share the host kernel
+  - [Microsandbox - A self-hosted alternative to AWS Lambda, E2B. Run AI code in fast lightweight VMs : r/Python _202505](https://www.reddit.com/r/Python/comments/1ktg6mm/microsandbox_a_selfhosted_alternative_to_aws/)
+    - Cloud sandboxes like AWS Lambda, E2B, Flyio, give you less control and slower dev cycles, Docker containers offer limited isolation for untrusted multi-tenant code, traditional VMs are slow to start and resource-heavy, and running code directly on your machine is a no-go
+    - Do you have to push a file with the code you want to run the msb? Or can you also inject code at runtime? E.g. lets say an llm generates some test code, do i need to package it first?
+      - You can just inject the code at runtime.
+    - How does this work from a resource consumption perspective, does each msb instance consume a thread?
+      - There is just the msb server that receives your code and commands and runs it in a virtual machine. And as for concurrency, msb server can run multiple of vms at once. These are lightweight vms with very low overhead
+    - how would you run this on a separate machine? Do I need to wrap and api, bash scripts or something else?
+      - You simply install the msb CLI and start the server on the machine. There is nothing to wrap. The SDK handles the part of sending the code to the right msb server for execution.
+    - It uses microVMs - lightweight virtual machines with amazingly low overhead. You probably have heard of Firecracker, the tech behind Amazon Lambda. You basically get the same sandbox guarantees as a traditional virtual machine. These are hardware-enabled virtualization. Each sandbox runs its own kernel.
+
 - https://github.com/abshkbh/arrakis /AGPL/202504/go
   - A fully customizable and self-hosted sandboxing solution for AI agent code execution and computer use. 
   - It features out-of-the-box support for backtracking, a simple REST API and Python SDK, automatic port forwarding, and secure MicroVM isolation. 

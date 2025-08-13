@@ -89,20 +89,30 @@ modified: 2025-02-21T17:17:42.225Z
   - Supervision was designed to be model agnostic. Just plug in any classification, detection, or segmentation model.
     - we have created connectors for the most popular libraries like Ultralytics, Transformers, or MMDetection.
 # image
-
 - https://github.com/ammaarreshi/openjourney /135Star/MIT/202507/ts
   - https://openjourney.replit.app/
   - Open-source clone of the MidJourney web interface featuring real AI image and video generation powered by Google's Gemini SDK. 
   - Use Imagen 4 to generate images and Veo 2 and 3 for image and text to video with audio.
-  - 
 
-- https://github.com/Nutlope/logocreator /202411/ts
+- https://github.com/Nutlope/logocreator /5.5kStar/NALic/202501/ts/inactive
   - https://www.logo-creator.io/
   - A free + OSS logo generator powered by Flux on Together AI
   - Flux Pro 1.1 on Together AI for logo generation
   - nextjs + shadcn + redis + clerk + plausible
-  - Create a .env file and add your Together AI API key: TOGETHER_API_KEY=
+  - Create a .env file and add your Together AI API key 
   - [license · Issue · Nutlope/logocreator](https://github.com/Nutlope/logocreator/issues/16)
+
+- https://github.com/Nutlope/blinkshot /202410/ts
+  - https://www.blinkshot.io/
+  - An open source real-time AI image generator. 
+  - Powered by Flux through Together.ai.
+  - Flux Schnell from BFL for the image model
+  - Together AI for inference
+# ai-designer/lovable
+- https://github.com/mendableai/open-lovable /8.3kStar/MIT/202508/ts
+  - Clone and recreate any website as a modern React app in seconds
+  - Chat with AI to build React apps instantly. Made by the Firecrawl team.
+  - 基于e2b sandbox实现
 # ai-apps
 
 # more
