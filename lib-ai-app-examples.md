@@ -114,7 +114,6 @@ modified: 2023-02-08T07:20:48.475Z
 - https://github.com/n4ze3m/dialoqbase /MIT/202401/ts
   - https://dialoqbase.n4ze3m.com/
   - open-source application designed to facilitate the creation of custom chatbots using a personalized knowledge base
-  - open-source application designed to facilitate the creation of custom chatbots using a personalized knowledge base
 
 - https://github.com/binary-husky/gpt_academic /GPLv3/202405/python/js
   - https://github.com/binary-husky/gpt_academic/wiki/online
@@ -195,7 +194,13 @@ modified: 2023-02-08T07:20:48.475Z
   - OmAgent是一个多模态智能体系统，专注于利用多模态大语言模型能力以及其他多模态算法来做一些有趣的事
   - 包含一个专为解决多模态任务而设计的轻量级智能体框架omagent_core。我们利用这个框架搭建了超长复杂视频理解系统——OmAgent，当然你可以利用它实现你的任何想法。
   - DnCLoop: 受到经典算法思想Divide and Conquer启发，我们设计了一个递归的通用任务处理逻辑，它将复杂的问题不断细化形成任务树，并最终使复杂任务变成一组可解得简单任务。
-# open-agent
+# agent-open
+- https://github.com/AIDC-AI/Pixelle-MCP /271Star/MIT/202508/python
+  - https://pixelle.ai/
+  - Open-Source Multimodal AIGC Solution based on ComfyUI + MCP + LLM
+  - An AIGC solution based on the MCP protocol, seamlessly converting ComfyUI workflows into MCP tools
+  - Server-side is built on ComfyUI, inheriting all capabilities from the open ComfyUI ecosystem
+
 - https://github.com/modelcontextprotocol/servers /MIT/202411/python
   - https://modelcontextprotocol.io/
   - A collection of reference implementations and community-contributed servers for the Model Context Protocol (MCP). This repository showcases the versatility and extensibility of MCP, demonstrating how it can be used to give Large Language Models (LLMs) secure, controlled access to tools and data sources.
@@ -261,6 +266,9 @@ modified: 2023-02-08T07:20:48.475Z
     - Official front-end implementation of ComfyUI
     - Backend: Dev server expects ComfyUI backend at http://localhost:8188 by default
     - 依赖vue-router、pinia、vuefire、tiptap-markdown、marked、three、jsondiffpatch
+  - [Server Config - ComfyUI](https://docs.comfy.org/interface/settings/server-config)
+    - host: Sets the IP address the server binds to. Default `127.0.0.1` means only local access is allowed. If you need LAN access, you can set it to `0.0.0.0`.
+    - port: Desktop version defaults to port `8000`, Web version typically uses port `8188`.
 
 - https://github.com/comfy-addons/comfyui-sdk /MIT/202508/ts
   - TypeScript SDK for seamless interaction with the ComfyUI API. 
@@ -273,18 +281,48 @@ modified: 2023-02-08T07:20:48.475Z
   - Extension Support: Seamlessly integrate with ComfyUI Manager and leverage system monitoring
   - Examples: Includes practical examples for Text-to-Image (T2I), Image-to-Image (I2I), and complex multi-node workflows
 
+- https://github.com/SaladTechnologies/comfyui-api /218Star/MIT/202508/ts
+  - A simple API server to make ComfyUI easy to scale horizontally. 
+  - Get outputs directly in the response, or receive them via webhook or s3.
+  - A simple wrapper that facilitates using ComfyUI as a stateless API, either by receiving images in the response, or by sending completed images to a webhook
+  - The server supports the full ComfyUI /prompt API, and can be used to execute any ComfyUI workflow.
+  - Stateless API: The server is stateless, and can be scaled horizontally to handle more requests.
+
+- https://github.com/BennyKok/comfyui-deploy /1.4kStar/AGPL/202508/python/ts
+  - https://www.comfydeploy.com/
+  - open source `vercel` like deployment platform for Comfy UI
+  - Open source comfyui deployment platform, a vercel for generative workflow infra. (serverless hosted gpu with vertical intergation with comfyui)
+  - Stack: Clerk (Auth), NextJS, Drizzle (ORM), Neon / Vercel Postgres, R2 / S3 (Object Storage)
+
 - https://github.com/Good-Dream-Studio/ComfyUI-Connect /MIT/202507/python
   - Expose your workflows into HTTP endpoints directly from ComfyUI itself.
   - Auto Documentation - Show all your workflows in OpenAPI format using `/api/connect` internal endpoint
   - Install by cloning this project into your `custom_nodes` folder.
   - [Made a custom node to turn ComfyUI into a REST API : r/comfyui _202505](https://www.reddit.com/r/comfyui/comments/1kef4xo/made_a_custom_node_to_turn_comfyui_into_a_rest_api/)
 
-- https://github.com/SaladTechnologies/comfyui-api /MIT/202508/ts
-  - A simple API server to make ComfyUI easy to scale horizontally. 
-  - Get outputs directly in the response, or receive them via webhook or s3.
-  - A simple wrapper that facilitates using ComfyUI as a stateless API, either by receiving images in the response, or by sending completed images to a webhook
-  - The server supports the full ComfyUI /prompt API, and can be used to execute any ComfyUI workflow.
-  - Stateless API: The server is stateless, and can be scaled horizontally to handle more requests.
+- https://github.com/AIDC-AI/Pixelle-MCP /271Star/MIT/202508/python
+  - https://pixelle.ai/
+  - Open-Source Multimodal AIGC Solution based on ComfyUI + MCP + LLM
+  - An AIGC solution based on the MCP protocol, seamlessly converting ComfyUI workflows into MCP tools
+  - Server-side is built on ComfyUI, inheriting all capabilities from the open ComfyUI ecosystem
+
+- https://github.com/joenorton/comfyui-mcp-server /97Star/apache2/202503/python/inactive
+  - lightweight Python-based MCP server that interfaces with a local ComfyUI instance to generate images programmatically via AI agent requests.
+  - This project enables AI agents to send image generation requests to ComfyUI using the MCP protocol over WebSocket. 
+  - Returns image URLs served by ComfyUI.
+  - Dependencies: requests, websockets, mcp
+  - https://github.com/Overseer66/comfyui-mcp-server
+
+- https://github.com/lalanikarim/comfy-mcp-server /MIT/202503/python/inactive
+  - A server using FastMCP framework to generate images based on prompts via a remote Comfy server.
+  - https://github.com/lalanikarim/langgraph-mcp-pipeline /MIT/202503/python
+    - This project demonstrates the use of the Model Context Protocol (MCP) with LangGraph to create workflows that generate prompts and AI-generated images based on a given topic. 
+    - These scripts utilize the Comfy MCP Server to generate AI image prompts and AI images.
+  - https://github.com/lalanikarim/comfy-mcp-pipeline
+    - a pipeline wrapper for comfy-mcp-server for Open WebUI.
+
+- https://github.com/heshengtao/comfyui_LLM_party /AGPL/202508/python
+  - aims to develop a complete set of nodes for LLM workflow construction based on comfyui as the front end. 
 
 ## image-provider
 
@@ -305,6 +343,16 @@ modified: 2023-02-08T07:20:48.475Z
   - SwarmUI (formerly StableSwarmUI), A Modular Stable Diffusion Web-User-Interface, with an emphasis on making powertools easily accessible, high performance, and extensibility
   - [Best way to use Qwen Image on Linux? : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mmx3cg/best_way_to_use_qwen_image_on_linux/)
     - It's a fairly standard UI that sits on top of it's own comfy instance. It supports nearly everything that comfyui does, and makes the full comfyUI available as a built-in tab for when you need custom workflows not doable with the main UIs parameters.
+
+- https://github.com/joanrod/star-vector /apache2/202503/python
+  - https://starvector.github.io/
+  - StarVector is a foundation model for SVG generation that transforms vectorization into a code generation task. 
+  - Using a vision-language modeling architecture, StarVector processes both visual and textual inputs to produce high-quality SVG code with remarkable precision.
+  - It can be used to perform image2SVG and text2SVG generation. We pose image generation as a code generation task, using the power of multimodal VLMs
+  - March 2025: StarVector Accepted at CVPR 2025
+  - SVGBench and SVG-Stack datasets are now available on HuggingFace Datasets
+    - https://huggingface.co/datasets/starvector/svg-bench
+    - https://huggingface.co/datasets/starvector/svg-stack
 # ml-neural-network
 - https://github.com/AlloyTeam/netural
   - JavaScript的前向神经网络和反向传播的实现。
@@ -369,19 +417,6 @@ modified: 2023-02-08T07:20:48.475Z
 # rag-utils
 - https://github.com/rag-web-ui/rag-web-ui /apache2/202502/python/ts
   - RAG Web UI is an intelligent dialogue system based on RAG
-# rag-knowledge-base
-- https://github.com/pingcap/autoflow /apache2/202411/python
-  - https://tidb.ai/
-  - pingcap/autoflow is a Graph RAG based and conversational knowledge base tool built with TiDB Serverless Vector Storage.
-  - An open source GraphRAG (Knowledge Graph) built on top of TiDB Vector and LlamaIndex and DSPy.
-  - UI交互类似chatgpt
-  - https://x.com/9hills/status/1862522244527972625
-    - RAG Demo 到 RAG Application 难度的完美表现，其实功能不算丰富（增加了 Graph RAG和 Agent RAG 的思想），
-    - 代码却不得不做的非常复杂，大部分其实是应用逻辑。 P. S. 代码已经成熟到可以直接抄了，直接复刻就完了
-
-- https://github.com/dontizi/rlama /202503/go
-  - RLAMA is a powerful AI-driven question-answering tool for your documents, seamlessly integrating with your local Ollama models. 
-  - It enables you to create, manage, and interact with Retrieval-Augmented Generation (RAG) systems tailored to your documentation needs.
 # rag-search
 - https://github.com/Cinnamon/kotaemon /apache2/202409/python
   - https://cinnamon.github.io/kotaemon/

@@ -34,11 +34,59 @@ modified: 2023-04-16T12:52:03.130Z
   - `import { pipeline } from '@​xenova/transformers';`
 
 # discuss-comfyui/sd
+- resources
+  - [【SD + ComfyUI】合集 - 知乎](https://zhuanlan.zhihu.com/c_1625633809227010048)
+  - [Flux.1 ComfyUI 对应模型安装及教程指南 | ComfyUI Wiki](https://comfyui-wiki.com/zh/tutorial/advanced/image/flux/flux-1-dev-t2i)
+
+- flux-guff
+  - https://huggingface.co/city96/FLUX.1-schnell-gguf/tree/main
+  - https://huggingface.co/city96/FLUX.1-dev-gguf/tree/main
+  - https://hf-mirror.com/city96/FLUX.1-schnell-gguf/tree/main
+  - https://hf-mirror.com/city96/FLUX.1-dev-gguf/tree/main
+  - 🌰 [How to Run Flux Dev GGUF Models in ComfyUI (Low VRAM Guide) - Next Diffusion _202506](https://www.nextdiffusion.ai/tutorials/how-to-run-flux-dev-gguf-in-comfyui-low-vram-guide)
+  - [如何用ComfyUI运行FLUX GGUF文件模型_慕课手记](https://www.imooc.com/article/371309)
+
+- qwen-image
+  - https://huggingface.co/city96/Qwen-Image-gguf/tree/main
+  - https://modelscope.cn/models/city96/Qwen-Image-gguf/files
 - ## 
 
 - ## 
 
-- ## 
+- ## [m4 mac mini本地部署ComfyUI, 测试Flux-dev-GGUF的workflow模型10步出图, 测试AI绘图性能, 基于MPS(fp16), 优点是能耗小和静音 - 刘悦的技术博客 - 博客园 _202505](https://www.cnblogs.com/v3ucn/p/18593990)
+- [How to Use FLUX GGUF Files in ComfyUI _202505](https://promptingpixels.com/tutorial/flux-gguf)
+
+- 最后是10步迭代的出图效果，可以看到，精度没有下降太多，主要问题还是出图速度太慢
+
+- ## [Flux.1 GGUF模型说明及使用](https://www.zhihu.com/tardis/zm/art/16474690938)
+
+- GGUF 版本 是 Flux 模型的一种优化版本，专门为低显存设备设计
+- GGUF 是 GPT-Generated Unified Format 的缩写，是一种高效的模型存储和交换格式。它通过量化技术（如 4 位、6 位、8 位等）压缩模型权重，从而减少显存占用，同时保持较高的生成质量。
+  - 量化原理：量化通过减少模型权重的精度（如从 32 位浮点数压缩到 4 位），降低显存需求，但可能会略微影响生成质量。
+  - 优势：GGUF 版本可以在低显存设备（如 6GB 显存）上运行，适合没有高端显卡的用户。
+- 原始版本（如 Flux.1 Dev 和 Schnell）对显存要求较高，通常需要 16GB 或更多的显存才能流畅运行。
+  - Q4 和 Q5：适合大多数用户，显存需求适中，生成质量较好。
+
+```table
+量化级别	      显存需求	 生成质量
+Q2/Q3（2/3 位）	6GB	     较低
+Q4（4 位）	    8GB	     中等
+Q5（5 位）	    10GB	   较高
+Q8（8 位）	    16GB+	   接近原始版本
+```
+
+- GGUF 版本的优势与局限​
+- 优势​
+  - 低显存需求：最低仅需 6GB 显存，适合老显卡或低端设备。
+  - 快速生成：量化后的模型推理速度更快，适合需要快速出图的场景。
+  - 高质量生成：尽管是量化版本，但 Flux GGUF 的生成质量仍然非常出色，尤其是在 8 步或更多步数的情况下。
+- 局限​
+  - 生成质量略低：与原始版本相比，GGUF 版本的生成质量略有下降，尤其是在低量化级别（如 Q2 或 Q4）时。
+  - 不支持负提示：Flux GGUF 版本不支持负提示功能。
+
+- ## 📌 [FLUX.1入门教程：模型资源汇总与详细说明 - 知乎 _202503](https://zhuanlan.zhihu.com/p/10106104364)
+- 一般情况：完整版（fp16）需要 24G 显存才能正常驾驭，阉割版（fp8）16G 就足够，nf4 版本 8-12G 显存可正常驾驭，
+  - 而 gguf 格式量化的如最小的 Q2 版本 6G 显存也能够正常驾驭，而且由于 gguf 近期展现出强劲的技术发展，充分体现降低内存需求而质量更好的特点，黑暗森林官方开始全面支持，所以 nf4 的版本将逐渐淘汰。
 
 - ## [How well does ComfyUI perform on macOS with the M4 Max and 64GB RAM? : r/comfyui _202503](https://www.reddit.com/r/comfyui/comments/1jhifyi/how_well_does_comfyui_perform_on_macos_with_the/)
 - TLDR - if you want to work linear on one image, a Mac is a huge waste of time. Maybe 25% of the speed of a decent NVIDIA PC for AI generation. 

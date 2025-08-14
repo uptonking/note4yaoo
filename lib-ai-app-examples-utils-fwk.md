@@ -109,25 +109,11 @@ modified: 2025-02-21T18:20:42.624Z
     - Autogen: While Autogen excels at creating conversational agents capable of working together, it lacks an inherent concept of process.
     - ChatDev: ChatDev introduced the idea of processes into the realm of AI agents, but its implementation is quite rigid. Customizations in ChatDev are limited
 
-- https://github.com/MotiaDev/motia /MIT/202503/ts
-  - https://motia.dev/
-  - Motia lets developers create, test, and deploy production-ready AI agents in minutes, in a framework that will feel familar to software engineering teams. 
-  - Motia gives you full, code-first control of your agents and automations with the simplicity of a visual interface, letting you focus on what truly matters: your business logic
-  - Motia is built for developers who want to build agentic and intelligent, event-driven systems rapidly and reliably.
-  - Use any LLM, vector store, or reasoning pattern without restrictions.
-  - Zero Infrastructure Headaches - No Kubernetes expertise required. Deploy agents with a single command
-  - Code-First Development - Write agent logic in familiar languages, not proprietary DSLs.
-  - Composable Steps with Runtime Validation - Build agents from modular, reusable components with automatic input/output validation.
-  - Built-in Observability - Debug agent behavior with visual execution graphs and real-time logging.
-  - Instant APIs & Webhooks - Expose agent functionality via HTTP endpoints without extra code.
-  - https://github.com/MotiaDev/motia-examples /数据流动画
-    - Intelligent Q&A from PDFs with Docling's smart chunking, Weaviate's sca lable vector DB, and OpenAI embeddings & text generation. 
-    - Built with TypeScript & Python.
-
-- https://github.com/mastra-ai/mastra /Elastic/202502/ts
+- https://github.com/mastra-ai/mastra /15.8kStar/apache2/202508/ts
   - https://mastra.ai/
-  - Mastra is an opinionated Typescript framework that helps you build AI applications
+  - an opinionated TypeScript framework that helps you build AI applications and features quickly.
   - It gives you the set of primitives you need: workflows, agents, RAG, integrations and evals.
+  - 不依赖langchain/langflow
   - You can run Mastra on your local machine, or deploy to a serverless cloud.
   - Mastra uses the Vercel AI SDK for model routing, providing a unified interface to interact with any LLM provider including OpenAI, Anthropic, and Google Gemini. 
   - Agents are systems where the language model chooses a sequence of actions. 
@@ -139,6 +125,33 @@ modified: 2025-02-21T18:20:42.624Z
     - 使用diff_match_patch计算差异
   - https://x.com/dingyi/status/1893329741060489438
     - 以前非常喜欢且深度使用的 Gatsby，他们团队原班人马做的新产品，The TypeScript Agent Framework
+
+- https://github.com/MotiaDev/motia /5.8kStar/MIT/202508/ts
+  - https://motia.dev/
+  - Modern Backend Framework that unifies APIs, background jobs, workflows, and AI agents into a single cohesive system with built-in observability and state management.
+  - Motia gives you full, code-first control of your agents and automations with the simplicity of a visual interface, letting you focus on what truly matters: your business logic
+  - 不依赖langchain/langflow
+  - Use any LLM, vector store, or reasoning pattern without restrictions.
+  - Zero Infrastructure Headaches - No Kubernetes expertise required. Deploy agents with a single command
+  - Code-First Development - Write agent logic in familiar languages, not proprietary DSLs.
+  - Composable Steps with Runtime Validation - Build agents from modular, reusable components with automatic input/output validation.
+  - Built-in Observability - Debug agent behavior with visual execution graphs and real-time logging.
+  - Instant APIs & Webhooks - Expose agent functionality via HTTP endpoints without extra code.
+  - https://github.com/MotiaDev/motia-examples /数据流动画
+    - Intelligent Q&A from PDFs with Docling's smart chunking, Weaviate's sca lable vector DB, and OpenAI embeddings & text generation. 
+    - Built with TypeScript & Python.
+
+- https://github.com/gensx-inc/gensx /507Star/apache2/202508/ts
+  - https://gensx.com/
+  - The TypeScript framework for agents & workflows with react-like components.
+  - GenSX takes a lot of inspiration from React, but the programming model is very different - it’s a Node.js framework designed for data flow.
+  - 不依赖langchain/langflow
+  - Pure Functions: Components are pure TypeScript functions that are easily testable, reusable, and sharable
+  - Parallel by Default: Components execute in parallel when possible while maintaining dependencies
+  - Full TypeScript support with no DSLs or special syntax - just standard language features
+  - Streaming Built-in: Stream responses with a single prop change, no refactoring needed
+  - https://x.com/_Evan_Boyle/status/1892590845485895730
+    - GenSX components are reusable by default and are easy to consume and share. 
 
 - https://github.com/google-gemini/gemini-fullstack-langgraph-quickstart /apache2/202506/python/ts
   - Get started with building Fullstack Agents using Gemini 2.5 and LangGraph
@@ -331,7 +344,7 @@ modified: 2025-02-21T18:20:42.624Z
   - Mixture of Block Attention for Long-Context LLMs
   - https://x.com/tuturetom/status/1892753818028216717
     - 可以实现近乎无限的上下文窗口，将一整本书或一整个代码库扔进去提问
-# agi-text
+# utils
 - https://github.com/Olow304/memvid /MIT/202506/python
   - https://pypi.org/project/memvid/
   - Video-based AI memory library. 
@@ -344,16 +357,7 @@ modified: 2025-02-21T18:20:42.624Z
   - Built-in Chat: Conversational interface with context-aware responses
   - Pluggable LLMs: Works with OpenAI, Anthropic, or local models
   - Offline-First: No internet required after video generation
-# agi-image
-- https://github.com/joanrod/star-vector /apache2/202503/python
-  - https://starvector.github.io/
-  - StarVector is a foundation model for SVG generation that transforms vectorization into a code generation task. 
-  - Using a vision-language modeling architecture, StarVector processes both visual and textual inputs to produce high-quality SVG code with remarkable precision.
-  - It can be used to perform image2SVG and text2SVG generation. We pose image generation as a code generation task, using the power of multimodal VLMs
-  - March 2025: StarVector Accepted at CVPR 2025
-  - SVGBench and SVG-Stack datasets are now available on HuggingFace Datasets
-    - https://huggingface.co/datasets/starvector/svg-bench
-    - https://huggingface.co/datasets/starvector/svg-stack
+
 # proxy
 - https://github.com/lymanzhao/Ollama-serve /202503/python
   - 一个 Ollama转发代理，用于为原生 Ollama 服务添加 API 密钥认证功能。

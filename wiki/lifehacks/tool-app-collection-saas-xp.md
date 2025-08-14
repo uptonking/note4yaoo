@@ -395,6 +395,11 @@ sudo systemctl start minidlna
   - https://y2down.cc/en/youtube-playlist.html
   - https://playlist.downloader.is/
   - https://ytshorts.savetube.me/youtube-playlist-downloader-1
+# huggingface
+- [AI开发必备之Hugging Face镜像——再也不用烦恼无法从Hugging Face下载模型和数据集了 - 知乎](https://zhuanlan.zhihu.com/p/32981512105)
+  - 原链接：https://huggingface.co/数据集名称
+  - 镜像链接：https://hf-mirror.com/数据集名称
+  - 还可以在 https://modelscope.cn/models 下载模型和数据集
 # gfw-proxy
 - [镜像站点收集](https://xiaodu114.github.io/p/fav/imageSite/index.html)
   - 谷歌镜像、YouTube镜像、GitHub镜像

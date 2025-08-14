@@ -20,7 +20,7 @@ modified: 2025-02-21T17:17:42.225Z
 # open-canvas
 - https://github.com/refly-ai/refly /apache2/202503/ts
   - https://refly.ai/
-  - Refly is an open-source AI-native creation engine powered by 13+ leading AI models. 
+  - an open-source AI-native creation engine powered by 13+ leading AI models. 
   - Its intuitive free-form canvas interface integrates multi-threaded conversations, multimodal inputs (text/images/files), RAG 
 # workflow-ai
 - https://github.com/FlowiseAI/Flowise /42.5kStar/apache2+EE/202508/ts
@@ -42,6 +42,7 @@ modified: 2025-02-21T17:17:42.225Z
   - http://www.langflow.org/
   - a powerful tool for building and deploying AI-powered agents and workflows.
   - It provides developers with both a visual authoring experience and a built-in API server that turns every agent into an API endpoint that can be integrated into applications built on any framework 
+  - 大量使用langchain
 
 - https://github.com/1Panel-dev/MaxKB /15.5kStar/GPL/202504/python/ts/vue
   - https://maxkb.pro/
@@ -66,17 +67,6 @@ modified: 2025-02-21T17:17:42.225Z
   - [Pricing of Sequential Workflow Designer Pro](https://nocode-js.com/sequential-workflow-designer-pro-pricing)
     - Pro Step Components
     - Custom Theme
-
-- https://github.com/gensx-inc/gensx /apache2/202502/ts
-  - https://gensx.com/
-  - The TypeScript framework for agents & workflows with react-like components.
-  - GenSX takes a lot of inspiration from React, but the programming model is very different - it’s a Node.js framework designed for data flow.
-  - Pure Functions: Components are pure TypeScript functions that are easily testable, reusable, and sharable
-  - Parallel by Default: Components execute in parallel when possible while maintaining dependencies
-  - Full TypeScript support with no DSLs or special syntax - just standard language features
-  - Streaming Built-in: Stream responses with a single prop change, no refactoring needed
-  - https://x.com/_Evan_Boyle/status/1892590845485895730
-    - GenSX components are reusable by default and are easy to consume and share. 
 # ai-figure/数字人
 - https://github.com/taoofagi/easegen-front
   - 开源的数字人课程制作项目：easegen，它提供从课程制作、视频管理、智能课件生成到智能出题全套方案
@@ -113,6 +103,16 @@ modified: 2025-02-21T17:17:42.225Z
   - Clone and recreate any website as a modern React app in seconds
   - Chat with AI to build React apps instantly. Made by the Firecrawl team.
   - 基于e2b sandbox实现
+
+- https://github.com/11cafe/jaaz /2kStar/NonCommercial/202408/python/ts
+  - https://jaaz.app/
+  - AI design agent, local alternative for Lovart. Canva + Cursor. 
+  - Infinite Canvas & Visual Storyboarding Plan scenes with an unlimited canvas
+
+- https://github.com/onlook-dev/onlook /apache2/202502/ts
+  - https://onlook.com/
+  - The open source Cursor for Designers. 
+  - Design directly in your live React app and publish your changes to code.
 # ai-apps
 
 # more

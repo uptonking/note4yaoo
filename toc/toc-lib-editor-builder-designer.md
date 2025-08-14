@@ -315,11 +315,6 @@ modified: 2020-11-17T13:38:19.107Z
   - Authentication: User authentication powered by Clerk.
   - Multi-Tenancy: Full support for subdomains
   - Prisma & MySQL: Database ORM and relational database.
-# ai-builder
-- https://github.com/onlook-dev/onlook /apache2/202502/ts
-  - https://onlook.com/
-  - The open source Cursor for Designers. 
-  - Design directly in your live React app and publish your changes to code.
 # h5-editor
 - h5-dooring /7kStar/GPLv3/202312/ts
   - https://github.com/MrXujiang/h5-Dooring

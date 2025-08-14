@@ -12,6 +12,9 @@ modified: 2025-03-22T16:10:24.856Z
 # ai-dev-xp
 - tips
   - aisdk + docs/excel/image
+  - frontend: ai-sdk/chatbot, assistant-ui, librechat
+  - backend: langgraph + python/nodejs
+  - ai-apps as ref: lasuite
 
 - agent-ipc
 
@@ -28,6 +31,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 🏘️ 架构参考: gemini-cli/qwen-cli(依赖fs) + ui/copilot-chat + framework/langfuse
   - 基于dnd的方案偏前端，后端一般很难定制和scale，会受限于平台提供的组件和工具
   - ✏️ ai修改文档的方案 fast-apply
+  - 偏展示型的项目考虑采用ai-coding的思路来更新ui，如sandpack/react-live+ai，更灵活
 
 - 🔡 可是尝试用code generation的思路来实现ai产物如ppt
   - web sandbox + ai-coding > lovable ❓
@@ -62,6 +66,7 @@ modified: 2025-03-22T16:10:24.856Z
   - Zapier and n8n help to an extent, but they’re not designed for multi-tenant SaaS. They’re great for internal workflows—not product infrastructure.
 
 - image
+  - 一次生成多幅图
   - stream
 
 - 

@@ -22,13 +22,29 @@ modified: 2025-08-11T20:15:18.297Z
     - this is all you need to use chrome's built in ai model with the vercel ai sdk
     - no api keys, no configuration, running locally in the browser
 
-- https://github.com/vercel/ai-chatbot /apache2/202503/ts
+- https://github.com/vercel/ai-chatbot /17.4kStar/apache2/202507/ts
   - https://chat-sdk.dev/
   - A full-featured, hackable Next.js AI chatbot built by Vercel
   - React Server Components (RSCs) and Server Actions for server-side rendering and increased performance
   - Neon Serverless Postgres for saving chat history and user data
   - Vercel Blob for efficient file storage
   - Auth.js: Simple and secure authentication
+  - 🍴 forks
+  - https://github.com/ragingwind/ai-chatbot-desktop /202506/ts
+    - Next.js 14 and Electron integration
+    - Added MCP Integration
+    - Add WebLLM for LocalLLM
+  - https://github.com/nickscamara/extract-chat /202501/ts
+    - Extract information from any website by chatting with AI 
+    - Fork of Vercel AI Chatbot w/ Firecrawl Integrated
+  - https://github.com/olyaiy/build-your-own-bot /202504/ts
+    - Agent Vendor is a marketplace where AI creators build specialized agents and users discover tailored AI solutions
+  - https://github.com/supabase-community/vercel-ai-chatbot /202307/ts/inactive
+    - Supabaseified Next.js AI chatbot built by Vercel Labs & Supabase
+    - 已不维护，大多胶水层
+  - https://github.com/ddoonnggee/ai-chatbot /切换中文
+  - https://github.com/flybyflo/ai-chatbot /mcp-test-server
+  - https://github.com/Kleo-App/ai-chatbot /added the prompt to langfuse and integrated it with the project
 
 - https://github.com/CopilotKit/CopilotKit /22.4kStar/MIT/202508/ts
   - https://docs.copilotkit.ai/

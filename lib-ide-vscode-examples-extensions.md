@@ -806,7 +806,7 @@ modified: 2024-08-24T16:17:26.715Z
 - https://github.com/webdriverio-community/wdio-vscode-service /MIT/202502/ts
   - A service to test VSCode extensions from end to end using WebdriverIO
 # ext-ai
-- https://github.com/microsoft/vscode-copilot-chat /MIT/202507/ts
+- https://github.com/microsoft/vscode-copilot-chat /8.3kStar/MIT/202508/ts
   - GitHub Copilot Chat (this extension) - A companion extension that provides conversational AI assistance.
 
 - https://github.com/osadavc/typescript-error-wand /MIT/202502/ts

@@ -360,11 +360,26 @@ test('mock test', () => {
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
 
+## 0814
+
+- [Error loading model: missing text_projection.weight · Issue · comfyanonymous/ComfyUI _202410](https://github.com/comfyanonymous/ComfyUI/issues/5222)
+  - clip missing: ['text_projection.weight']
+  - No action needed. The message is just informational.
+- How can it be "just informational"? If the weights are missing, the CLIP-textencoder will not work properly.
+  - `text_projection` is used in the CLIP model and does not exist structurally in T5 text encoder.
+  - FLUX uses both CLIP and T5, so the message appears during the process of loading T5.
+- Exactly, it uses both and CLIP will fail due to the missing weights.
+  - It's an issue with the CLIP-L textencoder. If replaced with a another one like ViT-L/14 there is no error message.
+
+- `text_projection.weight` is a key associated with the projected pooled output, and many diffusion models do not use this.
+  - For this reason, some diffusion models exclude unnecessary keys from the text encoder model when releasing their weights.
+  - This is why text_projection.weight is not included in some versions of CLIP-L.
+
 ## 0810
 
 - [No response is returned from route handler (Response differs due to polyfill!) · Issue · vercel/next.js _202311](https://github.com/vercel/next.js/issues/58611)
-  -  ⨯ Error: No response is returned from route handler '/.../auth0-nextjs-repro/app/api/auth/[auth0]/route.ts'. Ensure you return a `Response` or a `NextResponse` in all branches of your handler.
-  -  my problem was that I hadn't fully adapted the `@auth0/nextjs-auth0` example to the app router. I needed to return `handleLogin`, not just await it.
+  - Error: No response is returned from route handler '/.../auth0-nextjs-repro/app/api/auth/[auth0]/route.ts'. Ensure you return a `Response` or a `NextResponse` in all branches of your handler.
+  - my problem was that I hadn't fully adapted the `@auth0/nextjs-auth0` example to the app router. I needed to return `handleLogin`, not just await it.
 
 ## 0809
 

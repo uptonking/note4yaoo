@@ -25,6 +25,7 @@ modified: 2025-08-11T08:47:56.335Z
   - Web app for interacting with any LangGraph agent (PY & TS) via a chat interface.
   - a Next.js application which enables chatting with any LangGraph server with a `messages` key through a chat interface.
   - By default, the Agent Chat UI is setup for local development, and connects to your LangGraph server directly from the client. 
+  - 基于langchain实现
   - [[Question] LangGraph server deployment example _202504](https://github.com/langchain-ai/agent-chat-ui/issues/89)
     - can you provide a link to a langgraph project which uses best practices that I can deploy locally to test this UI with?
     - here's a repo which contains a few different agents, including generative UI ones: https://github.com/langchain-ai/langgraphjs-gen-ui-examples
@@ -109,6 +110,19 @@ modified: 2025-08-11T08:47:56.335Z
   - An AI-powered engine (using Google Gemini & LangGraph) takes your request, creates a multi-step plan, calls the APIs, and even cleverly passes data (like auth tokens) between steps
   - Backend: FastAPI, LangGraph, Python, A Google Gemini API Key
   - Frontend: Next.js, React, TypeScript
+
+- https://github.com/langchain-ai/chat-langchain /6kStar/MIT/202508/python/ts
+  - https://chat.langchain.com/
+  - an implementation of a chatbot specifically focused on question answering over the LangChain documentation. 
+  - Built with LangChain, LangGraph, and Next.js.
+  - https://github.com/langchain-ai/chat-langchainjs /MIT/202503/ts/inactive
+    - https://chatjs.langchain.com/
+    - Built with LangChainjs, and Next.js.
+
+- https://github.com/lalanikarim/langgraph-mcp-pipeline /MIT/202503/python
+  - This project demonstrates the use of the Model Context Protocol (MCP) with LangGraph to create workflows that generate prompts and AI-generated images based on a given topic. 
+  - These scripts utilize the Comfy MCP Server to generate AI image prompts and AI images.
+  - [AI Image Generation with LangGraph and MCP - YouTube _202504](https://www.youtube.com/watch?v=rq69zhxZS-8)
 # workflow
 - https://github.com/LangGraph-GUI/LangGraph-GUI /196Star/MIT/202506/ts
   - https://langgraph-gui.github.io/
@@ -321,6 +335,12 @@ modified: 2025-08-11T08:47:56.335Z
 
 - https://github.com/PR-HARIHARAN/GeoChat-Agent /202507/python/ts
   - Conversational AI agent for geospatial analysis using LangChain, LangGraph, Groq, and Google Earth Engine.
+
+- https://github.com/lalanikarim/comfy-mcp-server /MIT/202503/python/inactive
+  - A server using FastMCP framework to generate images based on prompts via a remote Comfy server.
+  - https://github.com/lalanikarim/langgraph-mcp-pipeline /MIT/202503/python
+    - This project demonstrates the use of the Model Context Protocol (MCP) with LangGraph to create workflows that generate prompts and AI-generated images based on a given topic. 
+    - These scripts utilize the Comfy MCP Server to generate AI image prompts and AI images.
 # utils/fwk
 - https://github.com/keboola/langgraph-chat-transport /MIT/202508/ts
   - A transport adapter that bridges LangGraph API streaming events to Vercel AI SDK's `useChat` hook format
