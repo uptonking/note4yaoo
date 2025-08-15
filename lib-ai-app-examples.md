@@ -333,6 +333,11 @@ modified: 2023-02-08T07:20:48.475Z
 - https://github.com/camenduru/stable-diffusion-webui-portable
   - This Project Aims for 100% Offline Stable Diffusion (People without internet or with slow internet can get it via USB or HD-DVD)
 
+- https://github.com/lllyasviel/stable-diffusion-webui-forge /11.4kStar/AGPL/202506/python
+  - a platform on top of Stable Diffusion WebUI (based on Gradio)
+  - Forge is currently based on SD-WebUI 1.10.1 at this commit. (Because original SD-WebUI is almost static now, Forge will sync with original WebUI every 90 days, or when important fixes.)
+  - https://github.com/Panchovix/stable-diffusion-webui-reForge
+
 - https://github.com/AUTOMATIC1111/stable-diffusion-webui
   - A browser interface based on Gradio library for Stable Diffusion.
 

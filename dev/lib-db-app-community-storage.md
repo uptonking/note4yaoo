@@ -14,7 +14,9 @@ modified: 2023-09-17T17:36:36.118Z
 
 - ## 
 
-- ## 
+- ## 🌰 [huggingface Storage](https://huggingface.co/docs/hub/en/storage-backends#xet)
+- In August 2024 Hugging Face acquired XetHub, a seed-stage startup based in Seattle, to replace Git LFS on the Hub.
+  - Like Git LFS, a Xet-backed repository utilizes S3 as the remote storage with a .gitattributes file at the repository root helping identify what files should be stored remotely.
 
 - ## Concrete example of the difference between theory and practice in systems engineering:
 - https://x.com/jamesacowling/status/1882160361467695345

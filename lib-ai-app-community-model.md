@@ -80,6 +80,22 @@ modified: 2023-10-30T07:34:03.602Z
 # discuss-vision-llm
 - ## 
 
+- ## 
+
+- ## [moondream 0.5B - the world's smallest vision language model : r/LocalLLaMA _202412](https://www.reddit.com/r/LocalLLaMA/comments/1h7ivts/moondream_05b_the_worlds_smallest_vision_language/)
+  - https://github.com/vikhyat/moondream
+  - Moondream 0.5B offers a significantly lower download size and memory usage than moondream 2B.
+  - It is intended to be used as a distillation target—start building with moondream 2B, and distill your use-cases onto the 0.5B model before deployment.
+  - This model was built using structured pruning on 2B with quantization-aware training. This means we can easily distill from 2B to recover accuracy on the specific target tasks an application needs, and run with int8 quantization without any loss of accuracy.
+  - Today we are releasing int8 and int4 weights for moondream 0.5B, as well as fast CPU inference support in the Python client library. 16-bit weights and distillation support will be coming soon, so stay tuned!
+
+- doesnt look like this new model has been added to ollama as yet (and no GGUFs available)
+
+- Awesome. Florence is nice and small too, but could only really handle a finite list of specific prompts. It seems this small models retains the ability to ask free-form questions, which would make it extremely useful for mobile devices.
+  - Florence 2 base is smaller. You can also fine tune it to work with any specific prompt you like if you have consistent prompts.
+
+
+
 - ## LGM：生成高质量3D模型，支持文字生成模型、图片生成模型，分辨率512*512，5秒内即可生成。
 - https://x.com/Gorden_Sun/status/1784230776311284205
   - https://github.com/3DTopia/LGM

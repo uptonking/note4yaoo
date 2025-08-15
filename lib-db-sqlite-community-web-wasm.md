@@ -91,6 +91,14 @@ modified: 2023-12-09T10:03:55.375Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🆚 Your SQLite bindings really matter.
+- https://x.com/tantaman/status/1956151559110451499
+  - hermes vs better-sqlite3 vs rust
+
 - ## How Notion uses Sqlite WASM.
 - https://x.com/evoluhq/status/1813874658619601205
   - Evolu do that without Shared Workers which are not supported on Android.

@@ -66,6 +66,8 @@ modified: 2025-03-22T16:10:24.856Z
   - Zapier and n8n help to an extent, but they’re not designed for multi-tenant SaaS. They’re great for internal workflows—not product infrastructure.
 
 - image
+  - prompts: bg, person/object, text
+  - 模型选择要考虑: 硬件限制、速度、质量， 只有成熟的model才会提供lite/turbo/精简版
   - 一次生成多幅图
   - stream
 

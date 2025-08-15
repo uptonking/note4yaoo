@@ -33,25 +33,94 @@ modified: 2023-04-16T12:52:03.130Z
 - https://twitter.com/xenovacom/status/1716711760982319429
   - `import { pipeline } from '@​xenova/transformers';`
 
-# discuss-comfyui/sd
-- resources
-  - [【SD + ComfyUI】合集 - 知乎](https://zhuanlan.zhihu.com/c_1625633809227010048)
-  - [Flux.1 ComfyUI 对应模型安装及教程指南 | ComfyUI Wiki](https://comfyui-wiki.com/zh/tutorial/advanced/image/flux/flux-1-dev-t2i)
+# discuss-qwen
+- qwen-image
+  - https://huggingface.co/city96/Qwen-Image-gguf/tree/main
+  - https://modelscope.cn/models/city96/Qwen-Image-gguf/files
+  - [Qwen-Image ComfyUI Native Workflow Example - ComfyUI](https://docs.comfy.org/tutorials/image/qwen/qwen-image)
 
+- https://github.com/ModelTC/Qwen-Image-Lightning /apache2/202508/python
+  - Qwen-Image-Lightning: Speed up Qwen-Image model with distillation
+  - Qwen-Image-Lightning-8steps-V1.1
+  - Qwen-Image-Lightning-4steps-V1.0
+
+- ## 
+
+- ## 
+
+- ## [The 4-Step lightening lora for Qwen Image is available now : r/StableDiffusion _202508](https://www.reddit.com/r/StableDiffusion/comments/1mngtnn/the_4step_lightening_lora_for_qwen_image_is/)
+  - 提供了workflow示例
+
+- Can anyone confirm the workflow is working? It's not for me, it's like the lora is ignored and i get a lot of `lora key not loaded:` errors.
+  - I have tried unsucessfully with both the city96 qwen-image-gguf and the distilled version from DiffSynth-Studio.
+- Did you update the comfyui to the nightly one?
+  - I just updated to nightly and it is working fine now ! Thanks !
+
+- The text encoder still takes a minute to load whenever i change the prompt
+  - Try this https://huggingface.co/unsloth/Qwen2.5-VL-7B-Instruct-GGUF/tree/main
+  - I'm on Q3 RTX-3060 12gb, 4 steps, 1328x1328, total render time even changing prompts: Prompt executed in 49.27 seconds
+  - If I've posted it is because I'm using it. It's the one recommended by city96, the fp8 clip is also very slow on my computer.
+
+- Can anyone explain how these lightning loras work?
+  - Use it like a regular lora (add a lora node) set cfg to one, steps to four, and don't bother with a negative prompt. In exchange for a small quality decrease, that might not be noticeable, you get a massive speedup. 
+  - As of now, this LORA is absolutely amazing, I'm generating 1920 x 1074 images on my laptop with 8GB VRAM in under a minute, and it's getting more prompt adherence than I've ever seen even from ChatGPT.
+
+- ## [Comfyorg upload Qwen-Image models bf16 and fp 8 : r/comfyui _202508](https://www.reddit.com/r/comfyui/comments/1mhzi3b/comfyorg_upload_qwenimage_models_bf16_and_fp_8/)
+- VRAM usage reference - Tested with RTX 4090D 24GB
+- Model Version: Qwen-Image_fp8
+  - VRAM: 86%
+  - Generation time: 94s for the first time, 71s for the second time
+- Model Version: Qwen-Image_bf16
+  - VRAM: 96%
+  - Generation time: 295s for the first time, 131s for the second time
+
+- ## [Qwen image 20B is coming : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mhf0kl/qwen_image_20b_is_coming/)
+- ComfyUI is just a simple visual programming language with custom node support. 
+  - If you want a simpler approach use some UI for it like https://github.com/mcmonkeyprojects/SwarmUI and if you need more control no need to pack everything into a workflow just use Krita AI or sth...
+
+# discuss-flux
 - flux-guff
+  - [Lists of FLUX.1 Series Models : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1h3fcs8/lists_of_flux1_series_models/)
   - https://huggingface.co/city96/FLUX.1-schnell-gguf/tree/main
   - https://huggingface.co/city96/FLUX.1-dev-gguf/tree/main
   - https://hf-mirror.com/city96/FLUX.1-schnell-gguf/tree/main
   - https://hf-mirror.com/city96/FLUX.1-dev-gguf/tree/main
+  - https://huggingface.co/TencentARC/flux-mini
   - 🌰 [How to Run Flux Dev GGUF Models in ComfyUI (Low VRAM Guide) - Next Diffusion _202506](https://www.nextdiffusion.ai/tutorials/how-to-run-flux-dev-gguf-in-comfyui-low-vram-guide)
   - [如何用ComfyUI运行FLUX GGUF文件模型_慕课手记](https://www.imooc.com/article/371309)
+  - 版本比较及示例 [Flux Examples | ComfyUI_examples](https://comfyanonymous.github.io/ComfyUI_examples/flux/)
 
-- qwen-image
-  - https://huggingface.co/city96/Qwen-Image-gguf/tree/main
-  - https://modelscope.cn/models/city96/Qwen-Image-gguf/files
 - ## 
 
 - ## 
+
+- ## [What's the fastest flux model right now? : r/comfyui _202409](https://www.reddit.com/r/comfyui/comments/1fryi73/whats_the_fastest_flux_model_right_now/)
+- On my 3090, fp8 e5m2 with the --fast command line switch is approx 50% faster than fp16, gguf, or fp8 e4m3.
+  - I thought --fast was only useful for 40xx cards! Testigñng right away with my 3070
+
+- Gguf models are the fastest after nf4
+
+- ## [Fast Flux.1 Dev (in 8 steps!) - Turbo Alpha: First Impressions and Testing Results : r/StableDiffusion _202410](https://www.reddit.com/r/StableDiffusion/comments/1g26pim/fast_flux1_dev_in_8_steps_turbo_alpha_first/)
+  - I spent my Saturday morning testing out the newly released Flux.1 Dev Turbo Alpha.
+  - Quality vs. Speed Trade-off: It maintains most of the quality of Flux Dev, but there is an obvious decline in fine details (generations are done in 8 steps). You will notice details are off (e.g., a waterfall in an unexpected spot or a crooked pole).
+
+- For those who don't know, these are model distillations.
+  - A model is effectively retrained to do the same task in less steps and attempt to meet the same quality as the original. Distillations in general attempt to get 90%+ of the original quality in less steps.
+
+- ## [Testing Flux. Dev vs HiDream. Fast – Image Comparison : r/StableDiffusion _202506](https://www.reddit.com/r/StableDiffusion/comments/1l1dn1e/testing_fluxdev_vs_hidreamfast_image_comparison/)
+- i use FLUX.1-Turbo-Alpha by alimama-creative. It gives great images in just 8 steps with euler_ancestral, Sgm_Uniform & cfg at 1.
+
+- ## [Why is Flux "schnell" so much slower than SDXL? : r/StableDiffusion _202502](https://www.reddit.com/r/StableDiffusion/comments/1itw0j4/why_is_flux_schnell_so_much_slower_than_sdxl/)
+- Schnell isn't a small model - it's the same as Dev model, and it just uses fewer steps. Why would you compare it to SDXL? 
+
+- Use fp8 versions of Flux Schnell based models and 4 steps only, CFG1, flux guidance 3.5
+
+- SDXL is an LDM architecture and Flux is a DiT architecture, which requires more computing resources.
+
+- ## [Is Flux GGUF supposed to be faster or its just memory savings? : r/StableDiffusion _202408](https://www.reddit.com/r/StableDiffusion/comments/1evktoz/is_flux_gguf_supposed_to_be_faster_or_its_just/)
+- It is actually slower at the moment, because it once dequants and calculate. to make faster, we need more optimized calculation.
+
+- The current implementation of GGUF doesn't yet fully utilize the advantages of GGUF's structure. It's partially borrowing techniques used in LLMs, but it still needs to evolve further.
 
 - ## [m4 mac mini本地部署ComfyUI, 测试Flux-dev-GGUF的workflow模型10步出图, 测试AI绘图性能, 基于MPS(fp16), 优点是能耗小和静音 - 刘悦的技术博客 - 博客园 _202505](https://www.cnblogs.com/v3ucn/p/18593990)
 - [How to Use FLUX GGUF Files in ComfyUI _202505](https://promptingpixels.com/tutorial/flux-gguf)
@@ -87,6 +156,217 @@ Q8（8 位）	    16GB+	   接近原始版本
 - ## 📌 [FLUX.1入门教程：模型资源汇总与详细说明 - 知乎 _202503](https://zhuanlan.zhihu.com/p/10106104364)
 - 一般情况：完整版（fp16）需要 24G 显存才能正常驾驭，阉割版（fp8）16G 就足够，nf4 版本 8-12G 显存可正常驾驭，
   - 而 gguf 格式量化的如最小的 Q2 版本 6G 显存也能够正常驾驭，而且由于 gguf 近期展现出强劲的技术发展，充分体现降低内存需求而质量更好的特点，黑暗森林官方开始全面支持，所以 nf4 的版本将逐渐淘汰。
+
+# discuss-comfyui/sd
+- image-gen-xp
+  - 模型参数: clip/text-encoder, vae, sampler, model
+  - 测试模型: sd-v1.5(+ hyper-lora), sdxl-lightning, flux
+
+- resources
+  - [【SD + ComfyUI】合集 - 知乎](https://zhuanlan.zhihu.com/c_1625633809227010048)
+  - [Flux.1 ComfyUI 对应模型安装及教程指南 | ComfyUI Wiki](https://comfyui-wiki.com/zh/tutorial/advanced/image/flux/flux-1-dev-t2i)
+
+- stable-diffusion
+  - https://modelscope.cn/models/ByteDance/SDXL-Lightning/files
+  - https://huggingface.co/ByteDance/SDXL-Lightning
+  - [ComfyUI平台下应用字节SDXL-Lightning 模型 - 老E的博客 _202405](https://appscross.com/blog/using-sdxl-lightning-model-under-comfyui-platform.html)
+  - [Hyper-SD · 模型库](https://modelscope.cn/models/ByteDance/Hyper-SD/summary)
+
+- ## 
+
+- ## [I hope comfyui will support sdxs soon · Issue · comfyanonymous/ComfyUI _202403](https://github.com/comfyanonymous/ComfyUI/issues/3147)
+  - This model can achieve a speed of 100FPS on a single GPU
+  - https://github.com/IDKiro/sdxs
+
+- I wrapped up all of this thread into something a bit easier to understand, with some other features just for fun:  https://openart.ai/workflows/-/-/fUxFDJrPkuSshjFyTl7F
+
+- Just a quick word of feedback for others interested in this model:
+  - It is fast, but it is also really baked-in. Even in a huge batch generation, different images are only minimally different. To be honest it feels more like a db of pre-generated images being retrieved than a full generative model.
+  - Negative prompts as for most of these fast models do not work. This can very much limit the kind of generations
+  - The direct generation of images which are not exactly 512x512 will just not work.
+
+- 🚀 [SDXS: Real-Time One-Step Latent Diffusion Models with Image Conditions : r/StableDiffusion _202403](https://www.reddit.com/r/StableDiffusion/comments/1bo2aj6/sdxs_realtime_onestep_latent_diffusion_models/)
+- There is a pre-release version (v0.9) available. At the moment it's only for Diffusers based Stable Diffusion installs.
+
+- ## 📡 [Current State of Text-To-Image models : r/StableDiffusion _202503](https://www.reddit.com/r/StableDiffusion/comments/1jnt4ch/current_state_of_texttoimage_models/)
+- Flux is really good, pony is really good for *cough* nsfw stuff, SDXL shines in photrealism with the plethora of LORAs to give your stuff a unique feel.
+
+- ## [Gguf speed question : r/comfyui _202409](https://www.reddit.com/r/comfyui/comments/1fguxif/gguf_speed_question/)
+- Gguf is slower but smaller, use the Q4 gguf if you are trying to add a ton of overhead like stacked loras and controlnet.
+
+- [Should GGUF will be faster than safetensors? : r/comfyui _202503](https://www.reddit.com/r/comfyui/comments/1j52vsy/should_gguf_will_be_faster_than_safetensors/)
+- No, oftentimes GGUF is slower even. The main benefit of these quantized models (same as with LLMs) is it allows you to run a larger "better" model on lower end hardware at the cost of precision and time depending on which type of quantization you use
+- GGUF is often slower unless the overhead of swapping stuff in and out of VRAM (for the non-GGUF model) outweighs the overhead of having to dequantize everything before actually performing calculations. If you can compile the GGUF model, that actually seems to make a huge difference. 
+- Gguf save vram not speed, they’re technically slower as gguf is compression
+
+- I've found GGUF is to save VRAM, not necessarily to speed up generations, though it can help to fit more operations on your cards at once. 
+
+- It would actually use slightly more (but you're right about higher quality). GGUF quants are block-based, so they have a small header at the start of every chunk. FP8 is basically just casting to an 8-bit type and doesn't contain meta-information.
+
+- 
+- 
+- 
+- 
+
+- ## [SD-Turbo is out : r/StableDiffusion _202312](https://www.reddit.com/r/StableDiffusion/comments/189zvcg/sdturbo_is_out/)
+  - They actually seem to have released SD-turbo at the same time as SDXL-turbo.
+  - It does not allow for commercial use. But DOES allow for non-commercial redistribution. 
+  - Its like SDXL-turbo. But with 1/4 the memory, 1/4 the rendering time.... and 1/4 the variety of subject matter.
+
+- ## [why is SD1.5 still so popular and so many new models come on civit? : r/StableDiffusion _202501](https://www.reddit.com/r/StableDiffusion/comments/1hzwkvl/why_is_sd15_still_so_popular_and_so_many_new/)
+- Because of the lower cost of resources and training, works that pursue an artistic style rather than a "real photo" can and will be well represented by LORA.
+
+- Fine-tuning with SD1.5 is efficient due to its lower parameter count and resolution, resulting in faster training and less burden for large-scale tasks. SD1.5 requires no compromise on accuracy. With advanced tools available today, fine-tuning is more efficient than ever. 
+
+- ## [What is currently the fastest, low-resolution way to generate images on an M1 Mac? : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1heqec0/what_is_currently_the_fastest_lowresolution_way/)
+- For 256x256, use miniSD , and I think you can use a sd1.5 LCM LoRA to make it very fast.
+  - [justinpinkney/miniSD · Hugging Face](https://huggingface.co/justinpinkney/miniSD)
+
+- ## [Current state of 1.5 vs SDXL? : r/StableDiffusion _202401](https://www.reddit.com/r/StableDiffusion/comments/19df545/current_state_of_15_vs_sdxl/)
+- What's nice about SDXL:
+  - prompt styling - you barely need to switch models or add loras, like you can, but usually the base models like juggernaut can just adapt to way more styles via prompts that they are already pretty solid.
+  - larger images
+- Whats nice about 1.5:
+  - better NSFW support
+  - better skin textures via custom models
+  - easier to train
+  - lower memory footprint
+  - backlog of tools
+  - contronet works better
+
+- SD1.5 is better in the following ways:
+  - Lower hardware requirement
+  - Hardcore NSFW
+  - "SD1.5 style" Anime (a kind of "hyperrealistic" look that is hard to describe). But some say AnimagineXL is very good. There is also Lykon's AAM XL (Anime Mix)
+  - Asian Waifu
+  - Simple portraiture of people (SD1.5 are overtrained for these type of images, hence better in terms of "realism")
+  - Better ControlNet support?
+
+- [SDXL vs. SD 1.5: A Deep Dive into Image Generation AI Performance _202308](https://sandner.art/sdxl-vs-sd-15-a-deep-dive-into-image-generation-ai-performance/)
+
+- ## [comfyui知识点简记](https://oq6szavaxui.feishu.cn/wiki/JoDRwnWz6iOi3SkYMxwcDycInkh)
+- 
+- 
+- 
+
+- ## [ComfyUI_提升图片生成速度 - 知乎 _202408](https://zhuanlan.zhihu.com/p/695820264)
+- Turbo Lora 只能用于 SDXL 模型，它的效果其实并不好，我用在出角色图时，坏图率极高，会严重拉长主体或肢体混乱。
+  - Turbo Lora 对采样器没有固定要求，Scheduler 推荐 sgm_uniform，但我用其它的也没见明显负面影响。
+
+- Lightning 的模型越来越多，其出图品质整体上要优于 Turbo 和 LCM，对于没有采用 Lightning 技术的 SDXL 模型来说，加个 Lightning Lora 也能降低步数产出不错的图。
+  - 采样器建议 euler，Scheduler 需使用 sgm_uniform。示例中我使用的是 8 Steps Lora, 其整体效果已经足够好，很接近原模型直出图了，并且在角色图形中表现要远优于 Turbo。
+  - 下载页上有 Lora 和 Unet 模型，Unet 取自 StabilityAI 的官方 SDXL 模型，平时可能用的并不多，建议下载使用 sdxl_lightning_8step_lora 和 sdxl_lightning_4step_lora。
+
+- 目前 Hyper Lora 有 SD1.5、SDXL、SD3、Flux1 的，它有多种步数的 Lora 可选，步数越低效果相应的差一些，8 和 12 步的效果非常不错。
+  - 采样器建议 ddim、euler a、euler，Scheduler 需使用 sgm_uniform。
+
+- DMD2_SDXL_4step_lora 仅用于 SDXL 模型，采样器推荐 LCM Karras，步数 4-8，CFG 1。
+  - DMD2 有 fp32 和 fp16 两种模型，fp16 速度要比 fp32 快不少，两者生成的图片质量并无可见差异。
+  - Lightning 及 Hyper 出图速度要比 DMD2 慢一些，但质量明显更优，构图较原图更接近，细节优于原图。
+
+- 以上是使用 Lora 的方法来提升出图速度，Lora 使用方法与常规的一样，权重设置为 1 就好。
+
+- ## [字节又整活，新型框架 Hyper-SD，比 SDXL-Lightning 更优秀！ - 知乎 _202404](https://zhuanlan.zhihu.com/p/694590649)
+- Hyper-SD 不仅支持对 SDXL 大模型的加速，这次还增加了对 SD1.5 大模型的加速支持。
+
+- ## [What is the difference between lighting versions on checkpoints? : r/StableDiffusion _202412](https://www.reddit.com/r/StableDiffusion/comments/1hpevjb/what_is_the_difference_between_lighting_versions/)
+- Lightning models take only about 5 steps to converge, so they are much faster. Make sure to set the CFG lower for Lightning models. It should be around 2, rather than the 7 or so for a regular model. From what I can tell, Lightning models don't seem to take much notice of negative prompts, which is a disadvantage.
+  - UPDATE: Lightning models also work best with a different sampler schedule, such as SGM Uniform or Turbo. Some samplers work better than others.
+
+- I recommend trying DMD2 checkpoints instead of lighting ones. Or just manually download the dmd2 lora and generate at 4-12 steps with CFG 1-1.5 using LCM scheduler.
+
+- ## [Are there any fast, lightweight models? : r/StableDiffusion _202501](https://www.reddit.com/r/StableDiffusion/comments/1i6k86e/are_there_any_fast_lightweight_models/)
+- Any SDXL model with DMD2 lora. It's newer and as fast as LCM, Turbo and Lighting but with better prompt adherence (according to DMD2 paper).
+
+- [I work a lot with FLUX, but DMD2 keeps amazing me (12 examples) : r/StableDiffusion _202408](https://www.reddit.com/r/StableDiffusion/comments/1f0znay/i_work_a_lot_with_flux_but_dmd2_keeps_amazing_me/)
+  - This is DMD2 for SDXL, something like 18 images/minute on a simple L4 Colab. I do 0.4 GS for 8 Steps (default is 0/4). It's NOT as coherent as FLUX of course, but it hits differently, right?
+  - DMD2 is just an optimiser, like Lightning, Turbo or LCM. Your post does not specify what checkpoint you're using.
+  - DMD2 is a LORA, but also a model based on PG2 or SDXL.
+
+- ## [What are the currently known methods to speed up SDXL image generation in A1111/forge? (windows) : r/StableDiffusion _202502](https://www.reddit.com/r/StableDiffusion/comments/1ixuii6/what_are_the_currently_known_methods_to_speed_up/)
+- For me the dmd2 lora is the best method right now
+  - I personally use with 10 steps, 1 cfg and lcm karras
+  - https://huggingface.co/tianweiy/DMD2
+- The lora is to keep the image quality in lower steps. Low steps=faster generation There's dmd2, lcm and lightning loras for that purpose but I personally think dmd2 gives better results.
+
+- Turbo loras etc
+
+- A lcm LoRA will Bring SDXL down to 6 steps
+
+- ## 🆚 [What's the Difference Between SDXL LCM, Hyper, Lightning, and Turbo? : r/StableDiffusion _202506](https://www.reddit.com/r/StableDiffusion/comments/1lk1anq/whats_the_difference_between_sdxl_lcm_hyper/)
+- They are all distillation techniques that trade some quality and variability for increased generation speed.
+- CFG: for some distill techniques, CFG needs to be very low, typically below 2, so negative prompting mostly doesn't work (unless you can raise CFG by other means, like APG). The main tradeoff is that CFG at exactly 1 typically doubles the generation speed, _and_ they usually work great at very low step counts. Some techniques like Hyper and PCM are available both as small CFG and normal CFG versions: the normal ones behave more like usual models, with CFG reduced a bit.
+- Samplers: LCM, PCM "lcmlike" and DMD2 are "small CFG" distills that work specifically with the LCM sampler (although sometimes you can have successful gens with other samplers, like Euler). TCD is designed to work with the TCD distill, although it can work very well with other small CFG techniques; DDIM and Euler also tend to go well with those. Oh, and to make matters more confusing, note that "LCM" and "TCD" can mean the samplers, and/or the techniques/LoRAs.
+- the original SDXL-Turbo generates at only 1-2 steps, but at a lower resolution (512x512), and AFAIK there are no official LoRAs available. There are some unofficial around, and many other models called "Turbo"
+  - it'd fall into the "small CFG" variety.
+
+- Small CFG: Lightning, Hyper, TCD, PCM, Turbo: low CFG with DDIM, TCD, Euler, or other samplers.
+- Small CFG, LCM-like: LCM original, PCM-lcmlike, DMD2: low CFG with the LCM sampler.
+- Normal CFG: Hyper, PCM; sampler likely depends on the model.
+
+- ## [Lightning/DMD2/PCM equivalents for Flux? : r/StableDiffusion _202505](https://www.reddit.com/r/StableDiffusion/comments/1khkdvi/lightningdmd2pcm_equivalents_for_flux/)
+- My favourite is Flux 1 Turbo Alpha, a LoRA that allows you to drop your steps to 8-12.
+  - There's also the Hyper LoRA, which works similarly but it's double the size.
+
+- That's what the Schnell version of the Flux model is.
+
+- 🆚 [Compare 1 step real time generations between SDXL Turbo, Lightning and Hyper : r/StableDiffusion _202405](https://www.reddit.com/r/StableDiffusion/comments/1cbzwqh/compare_1_step_real_time_generations_between_sdxl/)
+- Why is Lighting sd xl is really great. almost no quality loss and all superfast 1.5 model are garbage in comparison with full 1.5 or am I doing something wrong? is there a way to use Hyper in 1.5 with 1-6 steps and get good quality?
+  - You need the 1.5 hyper lora models
+
+- ## 🆚 [Lightning vs Turbo models?? : r/StableDiffusion _202404](https://www.reddit.com/r/StableDiffusion/comments/1bsg1cb/lightning_vs_turbo_models/)
+- Turbo diffuses the image in one step, while Lightning diffuses the image in 2 - 8 steps usually (for comparison, standard SDXL models usually take 20 - 40 steps to diffuse the image completely).
+  - I'm not fully sold on the idea of diffusing the image in just one step, since stable diffusion was originally intended to be a multi-step process.
+- SDXL Turbo is optimized for 512×512 image resolution, while Lightning supports 1024×1024 full SDXL resolution (and also all the various resolutions SDXL was trained on). 
+  - Also, SDXL Turbo doesn't support CFG scale or negative prompts
+
+- Lightning works well with ControlNet.
+  - Turbo, not so much since it generates in one step, and multiple steps are required for fine ControlNet influence control.
+  - Turbo and all the derived models are limited by Stability AI's Non-Commercial license.
+  - 💰 Lightning models have a proper free and open-source license, and commercial use is allowed, no question asked, no registration required.
+
+- turbo model works with 1 step and gives goodish results, there are 4 lightning models, for 1, 2, 4 and 8 steps, fewer steps are faster but more steps gives better quality, the 2 steps one is the fastest giving a passable quality, in line with turbo I would say, so the turbo model is the fastest as it only needs one step. 
+  - The 1 step lightning exists but it's experimental and don't work too well. Sdxl turbo is optimized for 512x512, so speed is even faster, in can do 1024x1024, but quality drops. Lightning is optimized for 1024x1024.
+
+- LCM increases the inference speed of older stable diffusion models (SD 1.5, SD 2.0) by reducing the number of steps needed to diffuse the image (basically the same as Lightning but for older models). However, Lightning is made to work with SDXL models and it's faster than LCM. While there's an LCM for SDXL, using SDXL Lightning is recommended because it's faster than LCM SDXL.
+
+- ## [SDXL Turbo, SDXL Lightning, Cascade and SD3 : r/StableDiffusion _202402](https://www.reddit.com/r/StableDiffusion/comments/1b23p3l/sdxl_turbo_sdxl_lightning_cascade_and_sd3/)
+- Neither Turbo nor Lightning are “improved.” The whole point of using them is the speed, not quality. 
+
+- Turbo needs as few as just 1 step, suitable for real-time applications. 
+  - As for Lightning, it still retains a pretty good quality at 8 steps, as opposed to LCM which had noticeable quality loss. Lightning is good enough that I switch to using it for normal uses now.
+- As for Cascade, I find SDXLs refined models to give better looking outputs but Stable Cascades ability to write all kind of random text pretty accurately is really impressive... 
+
+- ## 🆚 [Hyper, Turbo, Lightning, Cascade, Pony, Pix Art and more - Whats the differences? : r/StableDiffusion _202405](https://www.reddit.com/r/StableDiffusion/comments/1cy9lcm/hyper_turbo_lightning_cascade_pony_pix_art_and/)
+- Hyper, Lightning, Turbo = special checkpoints that only need 1 to 8 steps to make an image and work better with really low CFG of 1 to 2 (though Hyper can now work at 5-8 CFG). 
+
+- Turbo: meant for 512x512 image size. Faster than lightning.
+- Lightning: a fast model with good image quality. I prefer it over sdxl. Pretty popular in the community.
+- Hyper: similar to lightning. Creator claims that it outperforms lightning in image aesthetics but so far I have been disappointed. 
+- Cascade: almost as slow as sdxl on my poor old system. Usually creates pretty good images. A bit surprisingly not that popular in the community.
+- Pony: I think it was trained with booru images and image tags so it is able to produce anime/hentai images with great prompt adherence.
+
+- ## 🧩 [Difference between checkpoint , lora, model... : r/StableDiffusion _202308](https://www.reddit.com/r/StableDiffusion/comments/15jfsdt/difference_between_checkpoint_lora_model/)
+- Technically they're all machine learning models, but checkpoints are usually referred to just as models. 
+  - All models are static, meaning they only know what they were trained on. In order for them to learn something new, they have to be (re)trained again, also known as finetuning.
+- Their differences in very rough terms:
+  - Checkpoints are the big models that make images on their own.
+  - Loras and all their variations like Lycoris are "mini models" that plug into a checkpoint and alter their outputs. They let checkpoints make styles, characters and concepts that the base checkpoint they're used on doesn't know or didn't know very well.
+  - Hypernetworks are an older and not as good implementation of the same paper and same concept as Loras.
+  - Textual Inversions are sort of bookmarks or compilations of what a model already knows, they don't necessarily teach something new but rearrange stuff that a model already knows in a way that it didn't know how to arrange by itself.
+- SD 1.x, SD 2.x and SDXL are both different base checkpoints and also different model architectures
+  -  SD 1.5 is say both the NES itself but also one game for it. All SD 1.x based models are compatible with SD 1.x Loras and models for extensions like ControlNet. 
+  -  SD 2. X is the SNES, it's a different architecture so 1.x models won't be compatible with it, same for SDXL if you say that's like the N64.
+
+- ControlNet models are also machine learning models that inject into the Stable Diffusion process and control the denoising process, they're used with an image made by preprocessor. That image is be used to guide and control that denoising process, also hence the name.
+
+- ## [Super fast image generation with LCM Sampler : r/comfyui _202311](https://www.reddit.com/r/comfyui/comments/17s3s6u/super_fast_image_generation_with_lcm_sampler/)
+- FYI LCM sampler is no longer required, ksampler supports lcm (coming from the original creator of that node)
+- THis POST is now outdated ! LCM has been integrated in ComfyUI and can be used with normal samplers. Just update ComfyUI and you will be able to choose it.
+
+- i do not understand how to use it. Any examples of workflow?
+  - There you go: https://app.flowt.ai/c/ilKpVL
+  - you just plug in a Lora that uses the LCM-weights thing, then set your LCM settings in K-Sampler and off you go.
 
 - ## [How well does ComfyUI perform on macOS with the M4 Max and 64GB RAM? : r/comfyui _202503](https://www.reddit.com/r/comfyui/comments/1jhifyi/how_well_does_comfyui_perform_on_macos_with_the/)
 - TLDR - if you want to work linear on one image, a Mac is a huge waste of time. Maybe 25% of the speed of a decent NVIDIA PC for AI generation. 
@@ -137,10 +417,6 @@ Q8（8 位）	    16GB+	   接近原始版本
 - ## 
 
 - ## 
-
-- ## [Qwen image 20B is coming : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mhf0kl/qwen_image_20b_is_coming/)
-- ComfyUI is just a simple visual programming language with custom node support. 
-  - If you want a simpler approach use some UI for it like https://github.com/mcmonkeyprojects/SwarmUI and if you need more control no need to pack everything into a workflow just use Krita AI or sth...
 
 - ## 有分析称，GPT-4o 图片生成效果这么好是因为采用了自回归模型（autoregressive model）而不再是扩散模型（diffusion model）。
 - https://x.com/jason2be/status/1905834259547361645
