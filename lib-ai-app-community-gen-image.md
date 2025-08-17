@@ -14,7 +14,7 @@ modified: 2025-08-16T14:12:24.416Z
   - sd 模型: sd-v1.5(+ hyper-lora), sdxl-lightning, segmind-ssb/vega, ...
   - hot模型: flux, qwen, ...
   - 模型尝试: lumina, omnigen, sonic-风格迁移(如对口型), ACE-audio, ...
-  - 💡 直接搜索 comfyui + 模型名, 找资源更准; 还可用github搜索code找模型名如 "SSD-1B.safetensors" language: JSON
+  - 💡 直接搜索 comfyui + 模型名, 找资源更准; 还可用github搜索code找模型名如 `"SSD-1B.safetensors" language:JSON`
 
 - resources
   - [【轻科普】StableDiffusion那些事儿，关于LoRA、DreamBooth、模型分层融合等](https://www.bilibili.com/video/BV1RT411D7h7/)
@@ -28,12 +28,22 @@ modified: 2025-08-16T14:12:24.416Z
   - prompts: lawn
 
 ```markdown
-- model,                       1st/s,  2nd/s, size/gb, year,  notes
-- sdxs-512-dreamshaper/1step , 8.5,    3.5,    1.26,   202403, sd15
-- sd15/hyper-lora/1step,       12,     7.5,    2.13,   202404, sd
-- sdxl-lightning/1step,        27,     12,     6.94,   20240x, sdxl
-- sdxl-lightning/4step,        27,     12,     6.94,   20240x, sdxl/过于卡通风格/768非卡通
-- segmind-vega/4step,          24,     16,     3.29,   202401, sdxl/过于卡通风格
+- model,                       1st/s,  2nd/s, size/gb,  year,  notes
+- 🌹sdxs-512-dreamshaper/1step,6.1,    2.4,   1.26,     202403, sd15
+- 🌹sdxl-segmind-vega/2step,   12,     3.6,   3.29,     202401, sdxl
+- sdxl-lightning/1step,        18,     3.8,   6.94,     20240x, sdxl
+- sd15/hyper-lora/1step,       12,     4.2,   2.13,     202404, sd15
+- sd15/lcm/2step,              22,     5.3,   2.13,     202404, sd15
+- 🌹sdxl-lightning/4step,      27,     11,    6.94,     20240x, sdxl/过于卡通风/768非卡通
+- qwen/4step,                  250,    219,   7.06+3,   202404, qwen2.5-vl-7b
+- lumina/6step,                134,    127,   1.79+5,   202404, gemma2-2b
+- omnigen2/4step,              147,    123,   5.98+3,   202404, qwen-2.5-vl-3b
+- 🌹flux-miniQ3KS/8step,       90,     80,    5.21,     202404, 3.2b-MMDiT
+- 🌹fluxQ4KM-hyper/8step,      260,    220,   5.21,     202404, hypersd
+- fluxQ3KS-gguf/8step,         350,    320,   5.21,     202404, model
+- flux-gguf-hyper/8step,       760,    770,   5.21+1,   202404, model
+- flux-gguf-turbo/8step,       760,    760,   5.21+0.6, 202404, model
+
 ```
 
 - 
@@ -69,8 +79,16 @@ modified: 2025-08-16T14:12:24.416Z
   - Run ComfyUI workflows on Replicate, with an API
   - https://github.com/replicate/comfyui-replicate
     - Custom nodes for running Replicate models in ComfyUI.
-- https://github.com/aimpowerment/comfyui-workflows
-  - A collection of ComfyUI Worflows in .json format
+- https://github.com/602387193c/ComfyUI-wiki
+  - 分享最好用、最实用的ComfyUI工作流
+- https://github.com/yjuddpl/Interesting-things
+  - 空余时间给大家制作一些实用性的工作流
+- workflows
+  - https://github.com/602387193c/ComfyUI-wiki/tree/main/pysssss-workflows
+  - https://github.com/aimpowerment/comfyui-workflows
+  - https://github.com/Clinteastman/comfyui_workflows
+  - https://github.com/Creepybits/ComfyUI-workflow
+  - https://github.com/BennyKok/comfyui-deploy
 
 - stable-diffusion
   - https://modelscope.cn/models/ByteDance/SDXL-Lightning/files
@@ -85,6 +103,7 @@ modified: 2025-08-16T14:12:24.416Z
 
 - sdxl
   - https://modelscope.cn/models/AI-ModelScope/stable-diffusion-xl-base-1.0/files /6.94gb
+  - https://github.com/xingren23/ComfyUI-for-ComfyFlowApp /1step
   - https://huggingface.co/segmind/SSD-1B /4.47gb/202310
     - a distilled 50% smaller version of SDXL
   - https://huggingface.co/segmind/Segmind-Vega /3.29gb
@@ -99,6 +118,7 @@ modified: 2025-08-16T14:12:24.416Z
     - 💰 The subsequent open source program has been terminated by the Company.
   - https://github.com/Zeqiang-Lai/OpenDMD
     - I just read this paper's figures, which has a one-step model training method that is closer to the idea of this paper
+    - [SDXS-512-0.9 - New Base Model for April 2024 | Civitai](https://civitai.com/articles/4760)
 
 - lumina 👾
   - https://modelscope.cn/models/calcuis/lumina-gguf/files
@@ -133,6 +153,28 @@ modified: 2025-08-16T14:12:24.416Z
 - ## 
 
 - ## 
+
+- ## [VAE and "Realistic Vision" Checkpoint : r/StableDiffusion _202312](https://www.reddit.com/r/StableDiffusion/comments/189tyz7/vae_and_realistic_vision_checkpoint/)
+- (VAE) means it has VAE baked-in so no need to use any. So V6.0 B1 is a full-fledged checkpoint.
+- If a checkpoint has "vae" in the name that means it contains a vae, so you want to set your vae in settings to "none". Otherwise, you want to select the appropriate vae (usually the default vae 840000 mse for SD1.5 models).
+
+- ## [Best way to generate TONS of small images? : r/StableDiffusion _202405](https://www.reddit.com/r/StableDiffusion/comments/1d0y9us/best_way_to_generate_tons_of_small_images/)
+- No model is good for small images, because the smallest SD we have was trained on 512x512 images.
+
+- ## 🤔 [Question: how can stable diffusion models be so small? : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/14lczjp/question_how_can_stable_diffusion_models_be_so/)
+- Visual information can be decomposed very efficiently into low-level and high-level features. In fact, the visual cortex in our brains works that way: Lower regions encode orientation, color, and the like, while higher regions can combine them into more complex shapes such as geometric forms or faces. An auto-encoder works in a similar way, splitting images up into low-level features that are efficient to store and from which you can reconstruct the original image (with some loss). This is why models like Stable Diffusion can draw many different things with so few parameters.
+  - By comparison, language somewhat escapes the neat regularity and hierarchical structure of visual information. Words can have a wide range of meanings that depend on context, be it within a sentence, within a paragraph, within a conversation, or beyond. This necessitates a deep network structure that possesses some form of memory. Furthermore, the meaning of words and sentences is often inherently ambiguous, making only sense if you have relevant world knowledge. Now, language models do not store world knowledge directly, they have to completely infer it from the relation between words. That's a pretty monumental task, especially if we expect near human-level communication from the trained model.
+
+- stable diffusion has fewer parameters... a picture is worth 1000 words, so you can use a lot less parameters apparantly.
+
+- ## 🤔 [Smaller sized SD1.5 model? : r/StableDiffusion _202312](https://www.reddit.com/r/StableDiffusion/comments/189jzjy/smaller_sized_sd15_model/)
+- Any checkpoint that is below the 2GB fp16 version of the SD 1.5 checkpoint file wouldn't be a valid checkpoint because you'd either have to throw some data out, or quantize it down to 4-bit/8-bit. As far as I know no one has released anything like that.
+  - basically, SD 1.5 has 3 main parts: U-Net (where the 'data' actually lives), the Text Encoder, and the VAE (turns image into latent or latent into image).
+  - > A 512X512 image is converted into a 64X64 latent for img2img, and a latent is turned into a 512X512 image as the last step of image generation.
+  - SD 1.5 has 860 million parameters in the U-Net, Text Encoder is about 500MB in size, and the VAE is about 300MB. This is normally in 32-bit float so 4 bytes X 860 million + 500MB + 300MB = 4GB+
+  - Convert the model into 16-bit float and you'd get 2 bytes X 860 million + 250MB + 150MB = 2GB+
+  - Convert everything into 8-bit float and you'd get 1GB+, or 4-bit and you'd get 500MB+. No one has released files of 8-bit or 4-bit that I know of but you can do this yourself for your explorations.
+  - The other way to reduce the file size is to reduce the number of parameters in the U-Net but which parameters to throw out?
 
 - ## 🌰 [LCM Lora for SDXL is very slow (\~1 minute for 5 steps) : r/comfyui _202311](https://www.reddit.com/r/comfyui/comments/17t2a86/lcm_lora_for_sdxl_is_very_slow_1_minute_for_5/)
   - Tried new LCM Loras. The one for SD1.5 works great. Two others (lcm-lora-sdxl and lcm-lora-ssd-1b) generate images around 1 minute 5 steps.
@@ -529,14 +571,93 @@ modified: 2025-08-16T14:12:24.416Z
   - https://huggingface.co/city96/t5-v1_1-xxl-encoder-gguf/tree/main
   - https://huggingface.co/TencentARC/flux-mini
   - https://github.com/city96/ComfyUI-GGUF
+  - https://huggingface.co/martintomov/Hyper-FLUX.1-dev-gguf
+  - https://huggingface.co/Zuntan/flux1-dev-TurboA-8step/tree/main
+    - a direct GGUF conversion of black-forest-labs/FLUX.1-dev by @city96 merged with ByteDance/Hyper-Flux.
   - 🌰 [How to Run Flux Dev GGUF Models in ComfyUI (Low VRAM Guide) - Next Diffusion _202506](https://www.nextdiffusion.ai/tutorials/how-to-run-flux-dev-gguf-in-comfyui-low-vram-guide)
+  - 🌰 [How to Use Flux LoRA's in ComfyUI: A Complete Walkthrough - Next Diffusion _202506](https://www.nextdiffusion.ai/tutorials/how-to-use-flux-lora-in-comfyui)
+  - 🌰 [Run Flux model (gguf) with LoRA in ComfyUI _202411](https://lyleaf.medium.com/run-flux-model-gguf-with-lora-in-comfyui-50877c2c703a)
+  - 🌰 [Flux.1 ComfyUI 对应模型安装及教程指南 | ComfyUI Wiki](https://comfyui-wiki.com/zh/tutorial/advanced/image/flux/flux-1-dev-t2i)
   - [如何用ComfyUI运行FLUX GGUF文件模型_慕课手记](https://www.imooc.com/article/371309)
   - 版本比较及示例 [Flux Examples | ComfyUI_examples](https://comfyanonymous.github.io/ComfyUI_examples/flux/)
-  - [Flux.1 ComfyUI 对应模型安装及教程指南 | ComfyUI Wiki](https://comfyui-wiki.com/zh/tutorial/advanced/image/flux/flux-1-dev-t2i)
+  - 🆚🌰 [Most Efficient Flux? GGUF + Hyper-SD Comparisons | ComfyUI Workflow](https://openart.ai/workflows/LO4EDSFcrS6gsPnhCIPF)
+  - [Flux Dev 8-16 Steps LoRA [HyperSD] | ComfyUI Workflow](https://openart.ai/workflows/reverentelusarca/flux-dev-8-16-steps-lora-hypersd/iTFCDLtctlMO6sjmEzoQ)
 
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [ComfyUI Flux Dev: 8-Step vs. 28-Step Workflow Comparison : r/comfyui _202410](https://www.reddit.com/r/comfyui/comments/1g3jwh5/comfyui_flux_dev_8step_vs_28step_workflow/)
+- Half the size of hyper so we're moving on up
+
+- ## 🆚 [GGUF Q8 much slower than fp16 on 8GB card : r/StableDiffusion _202409](https://www.reddit.com/r/StableDiffusion/comments/1ff42v4/gguf_q8_much_slower_than_fp16_on_8gb_card/)
+  - I’m running forge, with GPU weights set to 7000 MB. I can run the original Flux dev fp16 at ~5s/it, and fp8 models at ~3s/it. But when I try the GGUF version it goes up to over a minute/it, which really confuses me because it’s about the same size with the fp8 model. 
+  - I even tried changing the GPU weights slider but it’s always this slow. What am I doing wrong?
+
+- All GGUFs were severely slower for me until I removed `--cuda-malloc`, if you never had it though then it might be something else.
+  - One thing I noticed is--cuda-malloc use a bit more VRAM than without which cause first run using GGUF to offload into RAM especially when you have < 8 Gb VRAM. I have to interrupt first run but then the next run will have no problem.
+  - Without --cuda-malloc I don't have huge slowdown in the first run, sure it's slower than the next run but it's manageable.
+
+- GGUF isn't properly supported in comfyui or forge. It needs to be dequantized on the fly, which is costly, and then the operations are done in normal fp.
+
+- As the other said maybe because it try to load as much as VRAM in the first run and the problem apparent in 8 Gb or below GPU VRAM. I tried to interrupt the first run and the second and next run went smooth.
+  - Also, I didn't noticed any quality advantage using Q8 GGUF than NF4 or even Hyper NF4 (8 steps) which is far more faster.
+
+- ## 🆚 [Comparing FLUX Models: Pro, Dev, and Schnell Explained _202409](https://stockimg.ai/blog/ai-and-technology/what-is-flux-and-models-comparison)
+  - Quality, Speed, license
+- FLUX is a cutting-edge AI image generator created by Black Forest Labs, the same team behind the popular Stable Diffusion.
+- FLUX.1 Pro is the flagship model, offering exceptional image quality and intricate details, making it ideal for high-end commercial and artistic projects.
+- FLUX.1 Dev is designed for research and development, providing similar quality but optimized for non-commercial use. 
+- FLUX.1 Schnell, on the other hand, is built for speed and efficiency, perfect for personal projects and quick experiments.
+
+- ## 🆚🌰👨‍🏫 [FluxTurbo vs. HyperFlux LoRAs: Generate FLUX.1-dev Image in 4-9 Steps _202410](https://sandner.art/fluxturbo-vs-hyperflux-loras-generate-flux1-dev-image-in-4-9-steps/)
+
+- https://github.com/sandner-art/ai-research/tree/main/FLUX
+  - Settings for AI Training
+  - https://github.com/sandner-art/ai-research/tree/main/FLUX/FLUX-TURBO-ALPHA
+  - https://github.com/sandner-art/ai-research/tree/main/HYPER-SD/COMFYUI
+
+- FluxTurbo is another solution to reduce generation times when using the FLUX.1-dev 
+  - The technique uses distilled LoRAs, similar to the Hyper-SD/HyperFlux method.
+  - Considering that FLUX.1-dev typically requires 20-30 steps to produce a final image, this technique presents a promising solution
+- You can achieve impressive results with just four steps (see examples). For even more precise anatomy and details (hands), consider increasing the steps to five or more. 
+  - In general, the optimal range for generating high-quality images is 7-9 steps.
+- FluxTurbo Alpha is used with standard weight 1.0, HyperSD needs weight 0.125 (1.3 in ComfyUI).
+
+- Conclusion
+  - FluxTurbo is slightly faster (approximately 10%) and tends to produce better details at lower step counts. 
+  - However, their quality becomes comparable around 8 steps, where both solutions generate high-quality output.
+  - Compared to Flux.1-schnell (which can produce good results in just 3-5 steps), FluxTurbo offers the advantage of allowing you to use Flux.1-dev-specific features like CFG and Distilled CFG. This technique also shows potential for inpainting applications.
+
+- ## 🆚 [Advice needed. Anything between Flux schnell and Flux 1 dev quality wise? : r/StableDiffusion _202412](https://www.reddit.com/r/StableDiffusion/comments/1hbpyjx/advice_needed_anything_between_flux_schnell_and/)
+  - 🧩 Flux.1 [schnell]： Uses the Apache2.0 license, requires only 4 steps to generate images, suitable for low-spec hardware.
+
+- You can use turbo lora for flux 1 dev. It creates ~dev quality images in just 8 steps.
+  - Exceptionally good at 6 steps, latent upscale and then 6 steps with another seed
+- I have had good results with 8 steps and 4 step upscale, even at 3x.
+
+- ## 🌰 [Simple ComfyUI Flux workflows v2.1 (for Q8, , Q4 models, T5xx Q8) : r/StableDiffusion _202408](https://www.reddit.com/r/StableDiffusion/comments/1f0t6ux/simple_comfyui_flux_workflows_v21_for_q8q4_models/?share_id=u0bxKt1YqGrrp_hLHlvKp&utm_content=1&utm_medium=android_app&utm_name=androidcss&utm_source=share&utm_term=1)
+  - [Simple ComfyUI Flux workflows v2 (for Q8, Q5, Q4 models) : r/StableDiffusion _202408](https://www.reddit.com/r/StableDiffusion/comments/1ewdllh/simple_comfyui_flux_workflows_v2_for_q8q5q4_models/?share_id=bcuoxLoJm9Cu9N8Ik_Gxi&utm_content=1&utm_medium=android_app&utm_name=androidcss&utm_source=share&utm_term=1)
+
+- ## 🆚🌰 [Most efficient way to run Flux? Testing GGUF + Hyper-SD: usable images at 8 steps (workflow included) : r/StableDiffusion _202409](https://www.reddit.com/r/StableDiffusion/comments/1f9i2al/most_efficient_way_to_run_flux_testing_gguf/)
+  - Hardware: RTX 4090, Image Size: 832 x 1216
+  - Seems like the hyper-sd lora is optimized for the original flux-dev. I was surprised that dev-1 at 8 steps ran so much faster than that of GGUF 8 steps. Even within GGUF, it seems like 20 steps with no hyper-sd lora actually ran faster than the 16 steps version.
+  - Tbh quality and fidelity loss on hyper-sd 8 step versions were noticeable to me. So I'd rather go with the 16 step version. Dev-1 + 16 step lora for those with enough VRAM.
+  - Looks to me like text adherence was off to most of the images anyway, but this can be alleviated by using the fine tuned clip model 
+
+- I wish there was a quick way to get a low res preview before waiting 20s on a full render.
+
+- Yes GGUF versions are a bit slower, but they are a savior for us people with not much VRAM. I think the reason is using Loras on GGUF. Each lora you add, the time to complete increases by quite a lot. And Hyper is a lora after all.
+
+- ## [Slow generation times in Flux, using loras ( fixed by using GGUF models or XLabs loras ) · Issue · comfyanonymous/ComfyUI _202408](https://github.com/comfyanonymous/ComfyUI/issues/4674)
+- In Summary:
+  - Flux model + XLabs loras => FAST
+  - GUFF model + loras => FAST
+  - Flux FP8 + civitai loras => SLOW
 
 - ## [What's the fastest flux model right now? : r/comfyui _202409](https://www.reddit.com/r/comfyui/comments/1fryi73/whats_the_fastest_flux_model_right_now/)
 - On my 3090, fp8 e5m2 with the --fast command line switch is approx 50% faster than fp16, gguf, or fp8 e4m3.
