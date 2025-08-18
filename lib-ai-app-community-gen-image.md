@@ -16,6 +16,9 @@ modified: 2025-08-16T14:12:24.416Z
   - 模型尝试: lumina, omnigen, sonic-风格迁移(如对口型), ACE-audio, ...
   - 💡 直接搜索 comfyui + 模型名, 找资源更准; 还可用github搜索code找模型名如 `"SSD-1B.safetensors" language:JSON`
 
+- fans-stable-diffusion
+  - [深入浅出完整解析Stable Diffusion（SD）核心基础知识 - 知乎](https://zhuanlan.zhihu.com/p/632809634)
+
 - resources
   - [【轻科普】StableDiffusion那些事儿，关于LoRA、DreamBooth、模型分层融合等](https://www.bilibili.com/video/BV1RT411D7h7/)
   - [【SD + ComfyUI】合集 - 知乎](https://zhuanlan.zhihu.com/c_1625633809227010048)
@@ -25,16 +28,21 @@ modified: 2025-08-16T14:12:24.416Z
   - https://civitai.com/
 # models-benchmark
 - time cost for image-gen on macbook air m4(32gRAM)
-  - prompts: lawn
+  - prompts: lawn, rabbit, cat
 
 ```markdown
 - model,                       1st/s,  2nd/s, size/gb,  year,  notes
 - 🌹sdxs-512-dreamshaper/1step,6.1,    2.4,   1.26,     202403, sd15
 - 🌹sdxl-segmind-vega/2step,   12,     3.6,   3.29,     202401, sdxl
 - sdxl-lightning/1step,        18,     3.8,   6.94,     20240x, sdxl
+- sdxl-hyper/1step,            20,     4.2,   6.94,     20240x, sdxl
 - sd15/hyper-lora/1step,       12,     4.2,   2.13,     202404, sd15
 - sd15/lcm/2step,              22,     5.3,   2.13,     202404, sd15
-- 🌹sdxl-lightning/4step,      27,     11,    6.94,     20240x, sdxl/过于卡通风/768非卡通
+- sdxl-lightning/2step,        30,     6.2,   6.94,     20240x, sdxl/小于768过于卡通风
+- 🌹sdxl-hyper/4step,          29,     9,     6.94,     20240x, sdxl/小于768过于卡通风
+- sdxl-turbo/4step,            33,     9,     6.94,     20240x, sdxl/小于768输出正常
+- sdxl-dmd2/4step,             27,     9,     6.94,     20240x, sdxl/小于768过于卡通风
+- sdxl-lightning/4step,        27,     11,    6.94,     20240x, sdxl/小于768过于卡通风
 - qwen/4step,                  250,    219,   7.06+3,   202404, qwen2.5-vl-7b
 - lumina/6step,                134,    127,   1.79+5,   202404, gemma2-2b
 - omnigen2/4step,              147,    123,   5.98+3,   202404, qwen-2.5-vl-3b
@@ -57,7 +65,28 @@ modified: 2025-08-16T14:12:24.416Z
 
 - ## 
 
-- ## 
+- ## 🆚 [Any alternatives to Automatic1111 or ComfyUI that DON'T Use Python : r/StableDiffusion _202502](https://www.reddit.com/r/StableDiffusion/comments/1ivpbno/any_alternatives_to_automatic1111_or_comfyui_that/)
+  - Python is such a pain in a$$ with its dependency hell, requiring specific versions of everything. The slightest thing can break it.
+  - Is there an alternative sort of like llamma.cpp but for images?
+
+- The entire ML ecosystem is basically based on pytorch, so you're gonna need python. No real way around it.
+- All of the ML people collectively decided to use package hell with Python so I think you are out of luck.
+
+- A real hero would be some company building a PyTorch alternative in C so we can make bindings in any language.
+  - Actually, PyTorch is built upon Torch, which was a machine learning library originally written in C and Lua. Currently, PyTorch's internal engine is C/C++, and the project itself provides its own C++ interface, which I believe is called LibTorch.
+
+- I found at least a couple like Koboldcpp and stable-diffusion.cpp. Koboldcpp probably being the closest.
+  - I use ComfyUI if I need to do something complicated but sometimes I just want to get up and running quickly without worrying about the latest python shenanigans.
+
+- I just use a dedicated venv for each app. For comfy and automatic it's really not so bad.
+
+- You might like Stability Matrix then. Oneclick installers for most popular tools
+  - But it uses incomplete python and thats why triton will not work on it
+
+- A1111 is really bad at memory management.. models get stuck in VRAM and using other features like upscale get way too slow until you restart.. on my 1080 8gb 
+  - Forge is 5 times faster. ComfyUI is 30% slower than Forge.
+
+- make sure your dependencies run inside a venv and most of those issues go away.
 
 - ## [Stable Diffusion experts: Are you more focussed on getting good images in one step, or are you creating a base image and then inpainting? : r/StableDiffusion _202303](https://www.reddit.com/r/StableDiffusion/comments/11whzuf/stable_diffusion_experts_are_you_more_focussed_on/)
 - It depends on what you’re trying to do. 
@@ -95,6 +124,7 @@ modified: 2025-08-16T14:12:24.416Z
   - https://huggingface.co/ByteDance/SDXL-Lightning
   - [ComfyUI平台下应用字节SDXL-Lightning 模型 - 老E的博客 _202405](https://appscross.com/blog/using-sdxl-lightning-model-under-comfyui-platform.html)
   - [Hyper-SD · 模型库](https://modelscope.cn/models/ByteDance/Hyper-SD/summary)
+  - [DMD2 Speed LoRA [SDXL, Pony, Illustrious] | Civitai](https://civitai.com/models/1608870/dmd2-speed-lora-sdxl-pony-illustrious)
 
 - sd15
   - https://huggingface.co/segmind/tiny-sd /647mb/Realistic_Vision_V4.0
@@ -110,6 +140,8 @@ modified: 2025-08-16T14:12:24.416Z
     - a distilled version of SDXL,  70% reduction in size
   - https://huggingface.co/segmind/Segmind-VegaRT
     - adapter for Segmind-Vega that allows to reduce the number of inference steps to only between 2 - 8 steps.
+  - [SDXL Turbo-LoRA-Stable Diffusion XL faster than light - v1-128dim | Stable Diffusion XL LoRA | Civitai](https://civitai.com/models/215485/sdxl-turbo-lora-stable-diffusion-xl-faster-than-light)
+  - [SDXL DPO-Turbo-LoRA - v1.0 DPO XL TURBO | Stable Diffusion XL LoRA | Civitai](https://civitai.com/models/237775/sdxl-dpo-turbo-lora)
 
 - sdxs
   - https://huggingface.co/IDKiro/sdxs-512-dreamshaper
@@ -153,6 +185,41 @@ modified: 2025-08-16T14:12:24.416Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 🤔 [(ComfyUi) detail issues with DMD2 LoRa and Upscaling : r/StableDiffusion _202507](https://www.reddit.com/r/StableDiffusion/comments/1m2jxse/comfyui_detail_issues_with_dmd2_lora_and_upscaling/)
+  - I'm stumbling over a problem I cannot fix by myself. Whenever I upscale an image with a DMD2 checkpoint I get decent-looking results, but as soon as I switch to a regular SDXL checkpoint with the DMD2-LoRa combined, all skin and image details are washed away. This happened with all my upscale testings.
+
+- There was an article published recently by epinikion on Civitai explaining how to upscale images with the DMD2 LoRA. He suggests Euler Ancestral (aka Euler A) for more details and less plastic look. Have a look at this article. I think it might help you with this.
+  - [Simple Upscale with DMD2 Lora (ForgeUI, A1111) | Civitai _202506](https://civitai.com/articles/15873/simple-upscale-with-dmd2-lora-forgeui-a1111)
+  - This article was really helpful. And I was able to get good-looking results with epinikion's recommendations. Especially with Euler A + Karras. 
+  - I think my basic problem was that I didn't link the KSampler - of the upscaling pass- to the LoRa-Loader-Model-Connector. It was linked with the Checkpoint-Loader-Model-Connector. So I guess, when using a SDXL-Model with the DMD2 LoRa, the DMD2 LoRa got ignored during upscaling.
+
+- [detail issues with DMD2 LoRa and Upscaling : r/comfyui](https://www.reddit.com/r/comfyui/comments/1m1royd/detail_issues_with_dmd2_lora_and_upscaling/)
+  - I would recommend you use a different scheduler, because exponential doesnt handle low steps that well. Or rather it doesnt provide any benefits and can be detrimental. Use it when you run it with 25-50 steps.
+  - Additionally, low step LoRas generally work well with `sgm_uniform` as the scheduler.
+  - If you want to use low step workflows I would recommend you look for 4-step Hyper models as there are far more of them. (Hyper-SD is available as a 4/8/12 step lora or model and even as a 1 step model)
+- I also linked solid and fast sd1.5 and SDXL upscale workflows
+
+- ## 🆚 [Sometimes I want to return to SDXL from FLUX : r/comfyui _202506](https://www.reddit.com/r/comfyui/comments/1l2ddep/sometimes_i_want_to_return_to_sdxl_from_flux/)
+- Give the DMD2 4 step lora for XL(linked below) a try. I used the LCM sampler and the sgm_uniform scheduler with it. I set the steps to 4 and the CFG to 1.0. You can play with the CFG, 1 is my personal preference with this.
+  - Now, since you have dropped the steps down to 4, you can chain another ksampler in the workflow(with the denoise set to 0.2) and this will add details to your render. You can play with the denoise, lower keeps more of the exact output from the 1st kamspler, higher allows the 2nd ksampler more freedom to add stuff and it uses the prompt more.
+
+- SDXL is more creative that's why I've gone back. And of course controlnets work.
+  - Flux controlnets are better than sdxl. Union pro 2 is amazing. The only CN is better is for ad 1.5
+- Upon your tip, and in my very limited testing... Yes, Union Pro 2, does seem to work well.
+
+- The key reason I still use SDXL and SD 1.5 is Artists/Art styles support natively. You don't get any of that in Flux out of the box, even with the numerous variants that are out now, although Chroma (based on Flux Schnell) shows some promise.
+  - Flux is great at what it does, but its breadth and scope is narrow. That is a narrow subset of imagery that I produce.
+
+- Personally I love XL still. I mostly use it for more creative stuff and Flux for more realistic stuff. Both have their use cases. It really comes down to what you’re specifically working on
+
+- ## [Best generation speed ups : r/comfyui _202507](https://www.reddit.com/r/comfyui/comments/1lrajf7/best_generation_speed_ups/)
+- Nunchaku is in my opinion the best option if you are looking for speed and quality.
+
+- For SDXL, DMD2 is the best LCM low step lora.
+  - You can combine with other speedups like compile torch + sage attention + fp16 accumulation + teacache.
 
 - ## [VAE and "Realistic Vision" Checkpoint : r/StableDiffusion _202312](https://www.reddit.com/r/StableDiffusion/comments/189tyz7/vae_and_realistic_vision_checkpoint/)
 - (VAE) means it has VAE baked-in so no need to use any. So V6.0 B1 is a full-fledged checkpoint.
@@ -356,23 +423,6 @@ modified: 2025-08-16T14:12:24.416Z
 - 
 - 
 - 
-
-- ## [ComfyUI_提升图片生成速度 - 知乎 _202408](https://zhuanlan.zhihu.com/p/695820264)
-- Turbo Lora 只能用于 SDXL 模型，它的效果其实并不好，我用在出角色图时，坏图率极高，会严重拉长主体或肢体混乱。
-  - Turbo Lora 对采样器没有固定要求，Scheduler 推荐 sgm_uniform，但我用其它的也没见明显负面影响。
-
-- Lightning 的模型越来越多，其出图品质整体上要优于 Turbo 和 LCM，对于没有采用 Lightning 技术的 SDXL 模型来说，加个 Lightning Lora 也能降低步数产出不错的图。
-  - 采样器建议 euler，Scheduler 需使用 sgm_uniform。示例中我使用的是 8 Steps Lora, 其整体效果已经足够好，很接近原模型直出图了，并且在角色图形中表现要远优于 Turbo。
-  - 下载页上有 Lora 和 Unet 模型，Unet 取自 StabilityAI 的官方 SDXL 模型，平时可能用的并不多，建议下载使用 sdxl_lightning_8step_lora 和 sdxl_lightning_4step_lora。
-
-- 目前 Hyper Lora 有 SD1.5、SDXL、SD3、Flux1 的，它有多种步数的 Lora 可选，步数越低效果相应的差一些，8 和 12 步的效果非常不错。
-  - 采样器建议 ddim、euler a、euler，Scheduler 需使用 sgm_uniform。
-
-- DMD2_SDXL_4step_lora 仅用于 SDXL 模型，采样器推荐 LCM Karras，步数 4-8，CFG 1。
-  - DMD2 有 fp32 和 fp16 两种模型，fp16 速度要比 fp32 快不少，两者生成的图片质量并无可见差异。
-  - Lightning 及 Hyper 出图速度要比 DMD2 慢一些，但质量明显更优，构图较原图更接近，细节优于原图。
-
-- 以上是使用 Lora 的方法来提升出图速度，Lora 使用方法与常规的一样，权重设置为 1 就好。
 
 - ## [字节又整活，新型框架 Hyper-SD，比 SDXL-Lightning 更优秀！ - 知乎 _202404](https://zhuanlan.zhihu.com/p/694590649)
 - Hyper-SD 不仅支持对 SDXL 大模型的加速，这次还增加了对 SD1.5 大模型的加速支持。
@@ -722,6 +772,49 @@ Q8（8 位）	    16GB+	   接近原始版本
 - 一般情况：完整版（fp16）需要 24G 显存才能正常驾驭，阉割版（fp8）16G 就足够，nf4 版本 8-12G 显存可正常驾驭，
   - 而 gguf 格式量化的如最小的 Q2 版本 6G 显存也能够正常驾驭，而且由于 gguf 近期展现出强劲的技术发展，充分体现降低内存需求而质量更好的特点，黑暗森林官方开始全面支持，所以 nf4 的版本将逐渐淘汰。
 
+# discuss-model-tuning
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [ComfyUI_修剪模型的方法 - 知乎 _202502](https://zhuanlan.zhihu.com/p/16255414246)
+- 有一些模型的精度为 fp32 的，以 SD1.5 模型为例，一般修剪过的 fp16 模型大小为 2G，如果是 fp32 的，则可能会达到 4G。
+
+- 在 ComfyUI 中修剪模型十分简单便捷，首先安装 mtb 插件，这是一个综合插件，功能颇多，是我最常用的插件之一
+  - 在节点 mtb--prune 中找到 Model Pruner，并将想要修剪的模型与之连接。
+
+- ## ⚡️ [ComfyUI_提升图片生成速度 - 知乎 _202408](https://zhuanlan.zhihu.com/p/695820264)
+- LCM 的模型并不多见，原因之一是其质量不太理想，之二是它刚出来没几天就有更好的 Turbo 问世。为普通模型添加 LCM Lora 模型，可以明显提升出图速度。
+  - 采样器需为 `LCM` ， Scheduler 建议 `sgm_uniform。`
+
+  - SDXL 模型不建议使用 LCM，因为有更快更好的 Lightning、Hyper 可用。
+
+- Turbo Lora 只能用于 SDXL 模型，它的效果其实并不好，我用在出角色图时，坏图率极高，会严重拉长主体或肢体混乱。
+  - Turbo Lora 对采样器没有固定要求，Scheduler 推荐` sgm_uniform`，但我用其它的也没见明显负面影响。
+
+- Lightning 的模型越来越多，其出图品质整体上要优于 Turbo 和 LCM，对于没有采用 Lightning 技术的 SDXL 模型来说，加个 Lightning Lora 也能降低步数产出不错的图。
+  - 采样器建议 `euler`，Scheduler 需使用 `sgm_uniform`。示例中我使用的是 8 Steps Lora, 其整体效果已经足够好，很接近原模型直出图了，并且在角色图形中表现要远优于 Turbo。
+
+- 目前 Hyper Lora 有 SD1.5、SDXL、SD3、Flux1 的，它有多种步数的 Lora 可选，步数越低效果相应的差一些，8 和 12 步的效果非常不错。
+  - 采样器建议 `ddim、euler a、euler`，Scheduler 需使用 `sgm_uniform`。
+  - 建议使用带有 CFG 的 Lora，此类 Lora 可以使用更高的 CFG 值而不像 Lightning 那样限制在 1-2，更高的 CFG 值可以让图像有更丰富的细节。
+
+- DMD2_SDXL_4step_lora 仅用于 SDXL 模型，采样器推荐 `LCM Karras`，步数 4-8，CFG 1。
+  - DMD2 有 fp32 和 fp16 两种模型，fp16 速度要比 fp32 快不少，两者生成的图片质量并无可见差异。
+
+- SDXL 模型的几种 Lora 对比图:
+  - LCM 的图片更显柔和，但细节不理想，Turbo 的我尝试了很多参数，凡是角色图，大多都有肢体异常，单就画面质量来看，还是要比 LCM 好上不少的。
+  - Lightning 的图片细节不错，画面较柔和。Hyper 的图片细节更为丰富，但有种锐化过度的感觉，而 Hyper CFG Lora 则可以用更高的 CFG 值，细节丰富且不那么锐利，画面效果要好于 Hyper Lora。此两者虽是同出字节，但 Hyper 并非 Lightning 的替代，它们之间更像是一种互补。
+  - Lightning 及 Hyper 出图速度要比 DMD2 慢一些，但质量明显更优，构图较原图更接近，细节优于原图。
+- 以上是使用 Lora 的方法来提升出图速度，Lora 使用方法与常规的一样，权重设置为 1 就好。
+  - 目前模型网上同类的 Lora 不止这些，我尝试了下，结果和他的大模型一样，属于效果极差浪费时间的一类。
+  - 只用自己顺手的就好。
+- TCD 一款用于提升出图速度的插件，需搭配相应的 Lora 模型使用，但与常规 Lora 的使用方法有所不同
+  - 示例图中，Hyper 画质表现优异，TCD 速度提升明显，但画面细节缺失较为严重
+- TGate提升出图速度的节点，无需额外模型，能明显减少出图用时，但也会有一定的质量损失。
+  - 将 TGate Apply 节点连接在模型与采样器之间，start_at 设为 0.5，如果设为 1 的话，它将不起作用。
 # discuss-image
 - ## 
 

@@ -12,6 +12,19 @@ modified: 2023-02-08T06:56:54.945Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [怎么很多人都知道chatgpt ，而不知道Stable Diffusion ？ - 知乎](https://www.zhihu.com/question/637073586)
+- chatGPT的使用难度几乎为0，因为它就是个对话窗口，只要认字的都可以无障碍使用。
+  - sd需要学习什么是prompt, VAE，control net, 以及其他乱七八糟的参数
+- SD需要 
+  - 一台配置有高性能显卡的电脑（否则只能租用云平台了，也是不便宜的） 
+  - 知道如何安装和配置SD和SD对应的web ui
+  - 知道SD里各种参数，大模型和laro模型的区别等等 
+  - 如何收集素材，训练自己的模型等等
+
 - ## 现在大模型一天一个样，一直在思考 LlM 应用中哪些是不变的，梳理了一下 RAG 中那些值得投入的技术栈
 - https://x.com/ZeroZ_JQ/status/1906255737845690372
   - 文档解析： unstructed-io，docling，MinerU
