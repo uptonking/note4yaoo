@@ -94,8 +94,6 @@ modified: 2023-10-30T07:34:03.602Z
 - Awesome. Florence is nice and small too, but could only really handle a finite list of specific prompts. It seems this small models retains the ability to ask free-form questions, which would make it extremely useful for mobile devices.
   - Florence 2 base is smaller. You can also fine tune it to work with any specific prompt you like if you have consistent prompts.
 
-
-
 - ## LGM：生成高质量3D模型，支持文字生成模型、图片生成模型，分辨率512*512，5秒内即可生成。
 - https://x.com/Gorden_Sun/status/1784230776311284205
   - https://github.com/3DTopia/LGM
@@ -605,6 +603,48 @@ curl http://localhost:11434/api/chat -d '{
 - Great work! I like the flow of adding & organizing snippets -> augmented synthesis. The more snippets you grab under a heading, the clearer a cluster forms. That then generates 'what you're getting at' summaries & gives AI bounds to forage for related snippets. Good loop there.
 # discuss-llm-architecture
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [如何看待观点：AI 的关键点不是prompt，而是Context Engineering？ - 知乎](https://www.zhihu.com/question/1923364519964545063)
+- Context远不止是一句prompt，它包括：
+  - 指令/系统提示：定义模型行为的初始指令
+  - 用户提示：来自用户的即时任务或问题
+  - 状态/历史：当前对话的短期记忆
+  - 长期记忆：跨多次对话收集的持久
+  - 知识库检索信息(RAG)：来自文档、数据库或API的外部知识
+  - 可用工具：模型可以调用的所有功能定义
+  - 结构化输出：对模型响应格式的定义
+- 这其实就是在构建一个完整的「AI工作环境」，而不是简单地给AI下指令。
+
+- 即使你写不好prompt，市面上也有很多AI工具可以帮你做prompt enhancement
+  - 期待AI能「有记忆，懂用户」。因此，Context Engineering（上下文工程）就开始被关注到。
+  - context engineering, 是指通过系统性构建、管理和优化 AI 模型的输入上下文，以提升模型在复杂任务中的理解与输出能力。
+  - 第一是历史交互数据。
+  - 第二，是context的总结。对话可以一直延续，但模型的上下文窗口有限，怎么记住之前的对话？当然是压缩，例如把最近5条对话的内容原封保留，再之前的内容总结一下。
+  - 但更重要的，是领域知识与背景信息。
+- AI的能力来源于两个方面 in-weights memory（训练集里学到的） 和 in-context memory（参考资料里学到的）。 in-weights memory基本上是很难修改的, 但in-context memory 更容易修改和更新，你只要提供新的资料，正确的资料，模型就能有「新知」
+
+- 复杂的AI应用，不是靠chat输入提示词这么简单，而是需要自动化多次和大模型的交互，这个自动的过程中，需要能够自动产生给大模型的提示词。
+
+- Agent = LLM + Prompt + 工具调用，但从工程视角来看，这些本质都是Context Engineering，也就是上下文工程。
+  - Context Engineering就是在每次调用里，把模型完成任务所必需的信息按对的格式、在对的时机准确打包进去。
+
+- 上下文工程，AI绘图用户早就天天在用了
+  - 当你使用 Inpaint（局部重绘） 功能时，AI不是凭空想象，而是基于你留下的画布、边缘线条、光线方向、已有画风来补全区域，这就是“图像上下文”
+  - 当你进行 Outpaint（图像扩展） 时，AI必须参考原图的构图逻辑、色彩渐变、风格纹理、人物透视来生成自然衔接的部分。这种对上下文的“理解”和“建模”，比提示词本身更重要
+  - 当你用 Photoshop内置的Firefly进行局部修改创成式填充时，真正起决定作用的不是你说了“给我加一个灯塔”，而是AI是否准确读取了当前画面是夜晚、是水边、有光源投射、有透视消失点。
+  - 上面这些功能，哪怕你根本不写提示词，好的工具也能给你脑补好，比如我现在根本放不开订阅的Photoshop AI。
+
+- 
+- 
+- 
+- 
+- 
 
 - ## DeepSeek最大的创新，是不需要大量的人工标注，而是直接从其他大模型蒸馏或者使用群体相对策略优化算法（GRPO）、CoT（自我反思）来给大模型反馈，
 - https://x.com/seclink/status/1888011462008005030

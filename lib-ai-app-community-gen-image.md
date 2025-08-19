@@ -9,6 +9,9 @@ modified: 2025-08-16T14:12:24.416Z
 
 # guide
 
+- tips
+  - sd的包管理器如StabilityMatrix会移动models/lora等文件， 导致已有的workflow不工作，可考虑只用来管理视频而不管理图片相关模型
+
 - image-gen-xp
   - 模型参数: models/checkpoints, clip/text-encoder, vae, sampler, ...
   - sd 模型: sd-v1.5(+ hyper-lora), sdxl-lightning, segmind-ssb/vega, ...
@@ -31,7 +34,7 @@ modified: 2025-08-16T14:12:24.416Z
   - prompts: lawn, rabbit, cat
 
 ```markdown
-- model,                       1st/s,  2nd/s, size/gb,  year,  notes
+- model,                       1st/s,  2nd/s, size/gb, license, year,  notes
 - 🌹sdxs-512-dreamshaper/1step,6.1,    2.4,   1.26,     202403, sd15
 - 🌹sdxl-segmind-vega/2step,   12,     3.6,   3.29,     202401, sdxl
 - sdxl-lightning/1step,        18,     3.8,   6.94,     20240x, sdxl
@@ -41,7 +44,7 @@ modified: 2025-08-16T14:12:24.416Z
 - sdxl-lightning/2step,        30,     6.2,   6.94,     20240x, sdxl/小于768过于卡通风
 - 🌹sdxl-hyper/4step,          29,     9,     6.94,     20240x, sdxl/小于768过于卡通风
 - sdxl-turbo/4step,            33,     9,     6.94,     20240x, sdxl/小于768输出正常
-- sdxl-dmd2/4step,             27,     9,     6.94,     20240x, sdxl/小于768过于卡通风
+- sdxl-dmd2/4step,             27,     9,     6.94,     20240x, sdxl/过于卡通风,质量差
 - sdxl-lightning/4step,        27,     11,    6.94,     20240x, sdxl/小于768过于卡通风
 - qwen/4step,                  250,    219,   7.06+3,   202404, qwen2.5-vl-7b
 - lumina/6step,                134,    127,   1.79+5,   202404, gemma2-2b
@@ -54,6 +57,79 @@ modified: 2025-08-16T14:12:24.416Z
 
 ```
 
+- 
+- 
+- 
+
+# docs-image-gen
+- 🧩 Text to Image is a fundamental process in AI art generation that creates images from text descriptions, with diffusion models at its core.
+  - This text-to-image generation process can be simply understood as telling your requirements (positive and negative prompts) to an artist (the image model), who then creates what you want on the latent space(as canvas)
+
+- 🧩 Image to Image is a workflow in ComfyUI that allows users to input an image and generate a new image based on it.
+  - Image to Image process is very similar to Text to Image, just with an additional input reference image as a condition.
+  - we let the artist create based on both our reference image and prompts.
+  - Note that in ComfyUI txt2img and img2img are the same node. Txt2Img is achieved by passing an empty image to the sampler node with maximum denoise.
+
+- 🧩 Inpaint/局部重绘
+  - In AI image generation, we often encounter situations where we’re satisfied with the overall image but there are elements we don’t want or that contain errors. 
+  - Simply regenerating might produce a completely different image, so using inpainting to fix specific parts becomes very useful.
+  - We need to tell the artist which areas to adjust (mask), and then let them repaint (inpaint) according to our requirements.
+
+- 🧩 Outpaint/图像扩展
+  - In AI image generation, we often encounter situations where an existing image has good composition but the canvas area is too small, requiring us to extend the canvas to get a larger scene. This is where outpainting comes in.
+  - it requires similar content to Inpainting, but we use different nodes to build the mask.
+
+- 🧩 Upscale
+  - Image Upscaling is the process of converting low-resolution images to high-resolution using algorithms. 
+  - Unlike traditional interpolation methods, AI upscaling models (like ESRGAN) can intelligently reconstruct details while maintaining image quality.
+  - SD1.5 model often struggles with large-size image generation. To achieve high-resolution results, we typically generate smaller images first and then use upscaling techniques.
+  - 🧩 Hires(aka. high resolution) fix is just creating an image at a lower resolution, upscaling it and then sending it through img2img. Note that in ComfyUI txt2img and img2img are the same node. Txt2Img is achieved by passing an empty image to the sampler node with maximum denoise.
+
+- 🧩 LoRA
+  - LoRA (Low-Rank Adaptation) is an efficient technique for fine-tuning large generative models
+  - It introduces trainable low-rank matrices to the pre-trained model, adjusting only a portion of parameters rather than retraining the entire model, thus achieving optimization for specific tasks at a lower computational cost. 
+  - by using a LoRA model, we can generate images in different styles without adjusting the base model.
+
+- 🧩 ControlNet
+  - ControlNet is a conditional control generation model based on diffusion models, first proposed by Lvmin Zhang et al. in 2023 in the paper Adding Conditional Control to Text-to-Image Diffusion Models.
+  - ControlNet models significantly enhance the controllability of image generation and the ability to reproduce details **by introducing multimodal input conditions, such as edge detection maps, depth maps, and pose keypoints**.
+  - Before ControlNet, we could only rely on the model to generate images repeatedly until we were satisfied with the results, which involved a lot of randomness.
+  - With the advent of ControlNet, we can control image generation by introducing additional conditions. For example, we can use a simple sketch to guide the image generation process, producing images that closely align with our sketch.
+
+- 👾 Flux is one of the largest open-source text-to-image generation models, with 12B parameters and an original file size of approximately 23GB.
+  - It was developed by Black Forest Labs, a team founded by former Stable Diffusion team members. 
+  - Flux is known for its excellent image quality and flexibility, capable of generating high-quality, diverse images.
+  - Hybrid Architecture: Combines the advantages of Transformer networks and diffusion models
+  - Supports Multiple Styles
+
+- 👾 Qwen-Image
+  - It’s a 20B parameter MMDiT (Multimodal Diffusion Transformer) model open-sourced under the Apache 2.0
+  - The model has made significant advances in complex text rendering and precise image editing, achieving high-fidelity output for multiple languages including English and Chinese.
+  - Excellent Multilingual Text Rendering: Supports high-precision text generation in multiple languages including English, Chinese, Korean, Japanese, maintaining font details and layout consistency
+  - Diverse Artistic Styles: From photorealistic scenes to impressionist paintings, from anime aesthetics to minimalist design, fluidly adapting to various creative prompts
+
+- 👾 HiDream-I1 is a text-to-image model officially open-sourced by HiDream-ai on April 7, 2025. The model has 17B parameters and is released under MIT
+  - Hybrid Architecture Design: A combination of Diffusion Transformer (DiT) and Mixture of Experts (MoE) architecture
+  - Multimodal Text Encoder Integration
+
+- 👾 OmniGen2 is a powerful and efficient unified multimodal generation model with approximately 7B total parameters (3B text model + 4B image generation model).
+  - Unlike OmniGen v1, OmniGen2 adopts an innovative dual-path Transformer architecture with completely independent text autoregressive model and image diffusion model, achieving parameter decoupling and specialized optimization.
+  - Dual-path Architecture: Based on Qwen 2.5 VL (3B) text encoder + independent diffusion Transformer (4B)
+  - Parameter Decoupling Design: Avoids negative impact of text generation on image quality
+  - Omni-RoPE Position Encoding: Supports multi-image spatial positioning and identity distinction
+  - Visual Understanding: Inherits the powerful image content interpretation and analysis capabilities of the Qwen-VL-2.5 foundation model
+  - Text-to-Image Generation
+  - Image Editing: Performs complex, instruction-based image modifications, achieving state-of-the-art performance 
+  - Contextual Generation: Versatile capabilities to process and flexibly combine diverse inputs (including people, reference objects, and scenes), producing novel and coherent visual outputs
+  - Excellent detail preservation capabilities
+  - Unified architecture supporting multiple image generation tasks
+
+- 
+- 
+- 
+- 
+- 
+- 
 - 
 - 
 - 
@@ -186,7 +262,59 @@ modified: 2025-08-16T14:12:24.416Z
 
 - ## 
 
-- ## 
+- ## [ComfyUI standalone and Stability Matrix : r/StableDiffusion _202408](https://www.reddit.com/r/StableDiffusion/comments/1eidfbn/comfyui_standalone_and_stability_matrix/)
+  - I wanted to ask if any of you have tested whether installing ComfyUI through Stability Matrix is slower than the standalone ComfyUI? 
+- I have both. I go back and forth pretty much every day. Anecdotally I havn't noticed a performance difference. 
+  - Custom Node packages are a different matter. They are not all created equally and can certainly cause major slowdowns. The one I was fighting with last week was the "Easy Nodes". Their Ksampler was adding at least 20 seconds to each generation for no good reason. You just gotta eyeball it and make the call.
+
+- ## [Stability matrix. Impressions of a Novice. : r/StableDiffusion _202411](https://www.reddit.com/r/StableDiffusion/comments/1h1rxr3/stability_matrix_impressions_of_a_novice/)
+- Most likely you couldnt get generation to work because you didnt install and connect comfyui. SM itself has no generation engine, its just a visual ui. You can also run packages installed via sm directly, like normal too
+
+- I would never bother with it's built in "inference" that gives very little control
+
+- ## [Do you know Stability matrix? : r/StableDiffusion _202502](https://www.reddit.com/r/StableDiffusion/comments/1im8wkj/do_you_know_stability_matrix/)
+- I like it. It makes things simpler. But the downside is that it can limit what you can do. I've found a bunch of models that I could not use with it, but as a beginner, it is a godsend.
+- I agree it can limit you on certain fronts, but what model couldn't you run because of stability matrix?
+  - There's a few that I remember but the one that I never forget is PulId. My PC is a potato (3060-12gb), so I would never risk train a LORA. I've been scraping by using IPadapter (which I love) but I wold love to have something like it for flux.
+  - I also tried to use F5-TTS which looks incredible and would have saved me quite some time a few weeks ago but no luck.
+- Yeah I couldn't get F5-TTS to work on comfyui either, don't think it was a stability matrix issue-- Btw, you can change python versions and such through stability matrix's interface in your package section..
+
+- ## 💡 [Stability Matrix : r/StableDiffusion _202506](https://www.reddit.com/r/StableDiffusion/comments/1l07xob/stability_matrix/)
+  - My Models became quite large since I tried ComfyUI, Framepack in Pinokio, Swarm UI and others. Many of them want to get it's own Models etc.
+- You can also use symlink, btw. I have one master model folder, and all of my different UIs refer to that folder for models.
+- Yes, though you could've done it manually too. Stability Matrix uses symbolic links to share folders' contents with other UIs or the configs like yaml file in ComfyUI's case.
+  - I manually moved the other Package Models using the Handy 'Folder reference' into the folder structure of Stability Matrix since they were in the same drive. Ran the 'Find Connected Metadata' on them. Nice that the models can be directly downloaded in it as well.
+
+- It's great, I just wish they dropped the inference tab because every update that comes out 80% of the effort goes into that when most people uses the App for Package/Model management.
+
+- ## [Stability Matrix for macOS Released! : r/StableDiffusion _202402](https://www.reddit.com/r/StableDiffusion/comments/1ajad6l/stability_matrix_for_macos_released/)
+- Does this have up adapter and control net support?
+  - Yes of course.  Or can install any model and any python package.
+
+- ## 🚀📦 [Stability Matrix - One-click install and update for Stable Diffusion WebUIs (Automatic1111, ComfyUI, SD. Next), with shared checkpoint management and CivitAI import : r/StableDiffusion _202306](https://www.reddit.com/r/StableDiffusion/comments/14iuilo/stability_matrix_oneclick_install_and_update_for/)
+  - We are introducing Stability Matrix - a free and open-source Desktop App to simplify installing and updating Stable Diffusion Web UIs.
+  - The one-click install manages all package dependencies like Git and C redistributable frameworks and chooses optimal PyTorch / xformers packages based on your GPU and CUDA versions. 
+  - There’s no need to install anything prior. If you already have Python installed, our embedded version won’t interact with that in any way.
+  - Web UIs you install automatically share the same model directory, and you can find and download new model checkpoints with the in-app model browser, powered by CivitAI.
+  - You can also import existing local model files by drag and drop. 
+
+- I like the concept, unfortunately the inability to like, customize paths across multiple drives or move the project out of `C:\~\AppData\Roaming` is going to keep me from using it for now, for space reasons. 
+  - You can choose a custom install location in the installer window currently, but the model directories are junctions stored in `AppData` under `StabilityMatrix/Models`. 
+  - We're planning to make the model storage directory selectable 
+  - Portable mode and custom data directory now in v1.1.2
+
+- Will this make portable installs? 
+  - At startup we unpack embedded Git and Python 3.10 to` AppData/Roaming/StabilityMatrix`, and the WebUI installs themselves will have a Python `venv` folder in the root directory.
+  - It is self-contained in the sense that you just need your WebUI install folder + the StabilityMatrix app to run on any computer.
+
+- Any plans to include extensions? In particular ControlNet is almost essential, but currently requires many additional steps, manual downloading GBs of models, putting them in the correct folder etc.
+  - Definitely yeah, we have extensions management planned soon. Getting the ControlNet plugin working was pretty confusing to me at first as well, on top of not using the `models/ControlNet` directory as expected but instead the one in `extensions/sd-webui-controlnet/models`
+
+- How to build this in Ubuntu?
+  - Currently we're using WPF and other native windows frameworks, so it is only able to be built and run on Windows. 
+  - But we have an alternate cross-platform version for Linux and MacOS on the roadmap.
+
+- I have an existing master directory for models, and I cannot figure out the best way to install this. It won't let me use my master directory, which I want to keep, and if I manually import them to Stability, it makes copies of my giant repository.
 
 - ## 🤔 [(ComfyUi) detail issues with DMD2 LoRa and Upscaling : r/StableDiffusion _202507](https://www.reddit.com/r/StableDiffusion/comments/1m2jxse/comfyui_detail_issues_with_dmd2_lora_and_upscaling/)
   - I'm stumbling over a problem I cannot fix by myself. Whenever I upscale an image with a DMD2 checkpoint I get decent-looking results, but as soon as I switch to a regular SDXL checkpoint with the DMD2-LoRa combined, all skin and image details are washed away. This happened with all my upscale testings.
@@ -639,7 +767,22 @@ modified: 2025-08-16T14:12:24.416Z
 
 - ## 
 
-- ## 
+- ## [FLUX.1是目前最好的开源AI图像生成模型吗？ - 知乎 _202410](https://www.zhihu.com/question/1457540426/answer/1904675843768317216)
+- 个人觉得Flux与SDXL各有胜负，至于其他模型只能靠边站。
+- 文生图：Flux在写实摄影风格绝对的王者，但二次元方向目前不怎么行，还是看SDXL魔改训练的Illustrious分支，训练资源与生态太强，Flux没得比。
+- 控图：ControlNet目前还是SDXL的好用，Flux虽然Union的模型出到了V2，但还是那么回事，最大的痛点除了控制能力一般之外，还是是占用显存太高。我用远程控制4090那台机器时，多用两个ControlNet串联工作流时，经常因为爆显存卡死不动...
+- 一致性上SDXL的IPAdapter与Flux的Redux各有千秋吧。
+- 改图：Flux因为有专门的Fill模型，而且可以做INT4量化，所以非常强，包括二次元修复画崩区域。你没看错，Flux对二次元生图弱，但改图强，可以把SDXL的图扔给Flux做局部修改。
+- 而SDXL模型如果想Inpaint与Outpaint需要插件注入特殊层修改大模型，工作流复杂，效果没Flux好，但是胜在资源占用低，不过自从Flux有了INT4之后，这个优势没多大了。而且ILL类的模型没法做注入修改。
+- 真正使用的时候，这两个模型经常混用，可以把有优势模型生成的图，当做一个控制底图扔给另一个模型，或者用Flux修图，SDXL快速添加高频细节，甚至用其中一个模型批量抽取生图结果，炼成Lora给另一个模型用。非常灵活，没有谁更好，适合的就是最好的。
+- 当然了要是这样用的话，好多时候用GPT生成的草图，可以作为一个很好的创作参考起点。
+
+- 瑟瑟还是sdxl更好
+
+- 生图用flux真的质量碾压sdxl, 就算用nunhcaku+8步turbo, 质量也是远胜于sdxl, 烂手指, 烂脸的概率低太多了, 生图时间比sdxl还快. 最大的缺点就是用 controlnet拉跨了. 二次元我觉得也是比sdxl好, kontext好好研究还不错, 对工作流没啥要求, 主要就是要研究提示词
+
+- 
+- 
 
 - ## [ComfyUI Flux Dev: 8-Step vs. 28-Step Workflow Comparison : r/comfyui _202410](https://www.reddit.com/r/comfyui/comments/1g3jwh5/comfyui_flux_dev_8step_vs_28step_workflow/)
 - Half the size of hyper so we're moving on up
@@ -771,6 +914,51 @@ Q8（8 位）	    16GB+	   接近原始版本
 - ## 📌 [FLUX.1入门教程：模型资源汇总与详细说明 - 知乎 _202503](https://zhuanlan.zhihu.com/p/10106104364)
 - 一般情况：完整版（fp16）需要 24G 显存才能正常驾驭，阉割版（fp8）16G 就足够，nf4 版本 8-12G 显存可正常驾驭，
   - 而 gguf 格式量化的如最小的 Q2 版本 6G 显存也能够正常驾驭，而且由于 gguf 近期展现出强劲的技术发展，充分体现降低内存需求而质量更好的特点，黑暗森林官方开始全面支持，所以 nf4 的版本将逐渐淘汰。
+
+# discuss-upscale
+- examples
+  - [SD 1.5 LCM Upscale + 4x-UltraSharp | ComfyUI Workflow](https://openart.ai/workflows/gambz/sd-15-lcm-upscale/RO8RtrOWhbNvmbCqHcav)
+  - [UpscaleV2 (Tiled KSampler) + 4x_NMKD-Superscale + xl_more_art-full_v1 | ComfyUI Workflow](https://openart.ai/workflows/gambz/upscalev2-tiled-ksampler/BMt5f1o7pbIPrzBb61uT)
+    - 🆚 [Upscale comparison to 1.5 | ComfyUI Workflow](https://openart.ai/workflows/gambz/upscale/jQ8rhVNNtPTGEz0SKkJ0)
+  - [Model-based Pixel Upscale Workflow by UpscalePth | ComfyUI Workflow](https://openart.ai/workflows/openart/model-based-pixel-upscale-workflow/V6horzh1YQN8Pz5rJXzP)
+  - [Latent Upscale Workflow: Enhance Your Base Image | ComfyUI Workflow](https://openart.ai/workflows/elim_droflem/latent-upscale-workflow-enhance-your-base-image/tdumeZf39DyTUWNDDIK8)
+  - 🆚 [ComfyUI - Sd1.5 & SDXL Upscale workflow (Simple , Basic) - v1.0 | Stable Diffusion XL Workflows | Civitai](https://civitai.com/models/982843/comfyui-sd15-and-sdxl-upscale-workflow-simple-basic)
+  - [ComfyUi Latent Upscaling | Civitai](https://civitai.com/articles/2685/comfyui-latent-upscaling)
+  - [Simple SDXL ControlNet Upscaler Workflow for ComfyUI - v1.0 | Stable Diffusion XL Workflows | Civitai](https://civitai.com/models/1484256/simple-sdxl-controlnet-upscaler-workflow-for-comfyui)
+
+- ## 
+
+- ## 
+
+- ## [WorkFlow - Choose images from batch to upscale : r/comfyui _202308](https://www.reddit.com/r/comfyui/comments/15natwz/workflow_choose_images_from_batch_to_upscale/)
+- one question - the choosing that you mention. how does that work? You dont seem to click an image to choose it so you run the process twice?
+  - You dont click an image, like in MJ, but you have to decide which image(s) in the batch you want to upscale and put into the "LatentSelector" box.
+  - I was trying to figure out how to do a switch with integers, but couldnt figure it out. I also was playing with "LatentFromBatch" but it wasnt scalable and I was getting regens, and not the exact image i wanted to upscale.
+  - I believe he does, the seed is fixed so ComfyUI skips the processes that have already executed. Once ComfyUI gets to the choosing it continues the process with whatever new computations need to be done. In this case if you enter 4 in the Latent Selector, it continues computing the process with the 4th image in the batch.
+
+- ## 🌰 [Help a beginner navigate the upscaling options : r/comfyui _202312](https://www.reddit.com/r/comfyui/comments/18dtfg3/help_a_beginner_navigate_the_upscaling_options/)
+  - I find myself overwhelmed with the number of ways to do upscaling.
+  - From the ComfyUI_examples, there are two different 2-pass (Hires fix) methods, one is latent scaling, one is non-latent scaling
+
+- I just wrote a lengthy reply to someone regarding this very thing. In my experience, 'FreeU_V2' + `PatchModelAddDownscale` is basically god mode when it comes to generating detailed images at high resolution. No other method I have tried has even come close.
+  - If you want to generate really high resolution images (4k and above) the best bet is to use PatchModelAddDownscale to generate at 2k, then run that image through ultimate SD upscaler - though it should be noted that I've been able to generate desktop wallpaper sized images (3440X1440) directly using PatchModelAddDownscale.
+
+- ## [Comfyui SDXL upscaler / hires fix : r/comfyui _202405](https://www.reddit.com/r/comfyui/comments/1d42dim/comfyui_sdxl_upscaler_hires_fix/)
+  -  I wanted to get an image with a resolution of 1080x2800, while the original image is generated as 832x1216.
+- Why has no one mentioned this?? Your math doesn't work. You can't upscale a 832x1216 image to 1080x2800, without seriously stretching and distorting the image.
+  - You should keep the aspect ratio while upscaling. You can crop it later.
+  - And you should start with the recommended resolutions for SDXL.
+  - If you wanna get from 832 to 1024 and don't wanna keep the aspect ratio, it's more like an out-painting.
+
+- Either Ultimate SD Upscale Or Supir
+  - Ultimate SD upscale is good and plays nice with lower-end GFX cards, Supir is great but very resource-intensive.
+
+- 
+- 
+- 
+- 
+- 
+- 
 
 # discuss-model-tuning
 - ## 

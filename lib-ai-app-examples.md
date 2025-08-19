@@ -324,6 +324,16 @@ modified: 2023-02-08T07:20:48.475Z
 - https://github.com/heshengtao/comfyui_LLM_party /AGPL/202508/python
   - aims to develop a complete set of nodes for LLM workflow construction based on comfyui as the front end. 
 
+- https://github.com/kijai/ComfyUI-moondream /202403/python/inactive
+  - ComfyUI node to use the moondream tiny vision language model
+
+## image-upscale
+
+- https://github.com/dicksondickson/dickson-sci-fi-enhance-upscale /202505
+  - These are ComfyUI workflows to upscale images to 2K, 4K, or 8K.
+  - These workflows upscales images in multiple stages using a combination of upscaling models, CCSR, SUPIR and Ulitmate SD Upscale, upscaling models, SDXL and Flux.
+  - Each workflow is tuned to a specific resolution with different speed variants. These workflows are continuing evolving. 
+
 ## image-provider
 
 - https://github.com/Stability-AI/stablediffusion

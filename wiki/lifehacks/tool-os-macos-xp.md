@@ -17,7 +17,7 @@ modified: 2023-07-23T07:05:19.441Z
   - pkg-manager: homebrew, cork
   - apps: localsend
 
-### 全局快捷键
+### hotkeys
 
 - cmd + tab 切换程序时，松开tab然后按Q(cmd+q)，可退出程序
   - 此时可恢复隐藏窗口的app
@@ -63,7 +63,7 @@ modified: 2023-07-23T07:05:19.441Z
   - Edit->Paste From->Rich Text
   - You have to add `->` without any spaces in-between the menu title fields.
 
-### 文件管理器
+### finder/files-explorer
 
 - 显示Finder/访达: cmd+option+space
   - Command-N：打开finder新窗口
@@ -98,7 +98,11 @@ modified: 2023-07-23T07:05:19.441Z
   - settings > Keyboard Shortcuts > messaging/text > New Email With Selection
   - To disable it: Simply uncheck the box next to "New Email With Selection".
 
-### 浏览器
+- [Navigate a zip without extract it : r/MacOS](https://www.reddit.com/r/MacOS/comments/rhy7xr/navigate_a_zip_without_extract_it/)
+  - I see many recommend BetterZip and it is an amazing fully featured app. But for me it is very expensive and I don't use any of the features. 
+  - The dev is awesome though and has made the QuickLook part of it free for all: https://macitbetter.com/BetterZip-Quick-Look-Generator/
+
+### safari
 
 - command+L/option(alt)+command+F/fn＋control+F5：定位地址栏/聚焦搜索栏
 - command+点按：新标签页后台打开链接
