@@ -360,6 +360,35 @@ test('mock test', () => {
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
 
+## 0821
+
+- [Huggingface docs - Understand caching](https://huggingface.co/docs/huggingface_hub/en/guides/manage-cache)
+  - huggingface_hub utilizes the local disk as two caches, which avoid re-downloading items again. 
+  - The first cache is a file-based cache, which caches individual files downloaded from the Hub and ensures that the same file is not downloaded again when a repo gets updated. 
+  - The second cache is a chunk cache, where each chunk represents a byte range from a file and ensures that chunks that are shared across files are only downloaded once.
+  - The Hugging Face Hub cache-system is designed to be the central cache shared across libraries that depend on the Hub.
+  - File-based caching: The default `<CACHE_DIR>` is `~/.cache/huggingface/hub`. 
+  - In order to have an efficient cache-system, huggingface-hub uses symlinks. However, symlinks are not supported on all machines. This is a known limitation especially on Windows. 
+  - Chunk-based caching (Xet): hf_xet adds a `xet` directory to the existing huggingface_hub cache, creating additional caching layer to enable chunk-based deduplication
+    - located at `~/.cache/huggingface/xet` by default, contains two caches, utilized for uploads and downloads.
+    - This cache holds chunks (immutable byte ranges of files ~64KB in size) and shards (a data structure that maps files to chunks). 
+    - `chunk-cache` contains cached data chunks that are used to speed up downloads.
+    - `shard-cache` contains cached shards that are utilized on the upload path.
+    - `staging` is a workspace designed to support resumable uploads.
+    - The `chunk_cache` is limited to 10GB in size while the `shard_cache` has a soft limit of 4GB. 
+  - If you need to reclaim the space utilized by either cache or need to debug any potential cache-related issues, simply remove the `xet` cache entirely by running `rm -rf ~/<cache_dir>/xet`.
+  - At the moment, cached files are never deleted from your local directory: when you download a new revision of a branch, previous files are kept in case you need them again.
+
+- [Fix Codeium Taking Too Much Space on Ubuntu (VS Code Users Must Read) - Duck Cloud _202507](https://www.duckcloud.info/post/fix-codeium-taking-too-much-space-on-ubuntu-vs-code-users-must-read)
+  - If you're using Codeium on Ubuntu with VS Code, chances are you've noticed a surprising storage spike
+  - Codeium stores local AI model embeddings — and over time, these files can swell to gigabytes of data.
+  - delete the ai file, Codeium will rebuild it as needed.
+
+```sh
+du -ah ~/.codeium/database | sort -hr | head -n 20
+rm -rf ~/.codeium/database/9c0694567290725d9dcba14ade58e297
+```
+
 ## 0814
 
 - [Error loading model: missing text_projection.weight · Issue · comfyanonymous/ComfyUI _202410](https://github.com/comfyanonymous/ComfyUI/issues/5222)

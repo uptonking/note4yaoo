@@ -34,9 +34,9 @@ modified: 2025-08-16T14:12:24.416Z
 - ai-images-resources
   - https://www.freepik.com/search?format=search&last_filter=query&last_value=oil+painting&query=oil+painting
 
-- images-categories
+- images-categories (poster/cover, illustration)
   - emojis: people/body, faces/emotion, animals, nature, food/drink, travel/places, activities, objects, symbols, flags
-  - bing-wallpaper: 
+  - bing-wallpaper, unsplash-wallpaper: people, nature, photo, film
 # models-benchmark
 - time cost for image-gen on macbook air m4(32gRAM)
   - prompts: lawn, rabbit, cat
