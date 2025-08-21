@@ -10,6 +10,7 @@ modified: 2025-08-16T14:12:24.416Z
 # guide
 
 - tips
+  - 最好不要手动修改下载的model/checkpoint名称，一是改后容易忘，二是方便搜索文件名，三是第三方包管理器默认从huggingface/civitai下载的文件名是固定的，方便迁移
   - sd的包管理器如StabilityMatrix会移动models/lora等文件， 导致已有的workflow不工作，可考虑只用来管理视频而不管理图片相关模型
 
 - image-gen-xp
@@ -26,9 +27,16 @@ modified: 2025-08-16T14:12:24.416Z
   - [【轻科普】StableDiffusion那些事儿，关于LoRA、DreamBooth、模型分层融合等](https://www.bilibili.com/video/BV1RT411D7h7/)
   - [【SD + ComfyUI】合集 - 知乎](https://zhuanlan.zhihu.com/c_1625633809227010048)
 
-- ai-image-examples
+- ai-images-workflows
   - https://openart.ai/workflows/home
   - https://civitai.com/
+
+- ai-images-resources
+  - https://www.freepik.com/search?format=search&last_filter=query&last_value=oil+painting&query=oil+painting
+
+- images-categories
+  - emojis: people/body, faces/emotion, animals, nature, food/drink, travel/places, activities, objects, symbols, flags
+  - bing-wallpaper: 
 # models-benchmark
 - time cost for image-gen on macbook air m4(32gRAM)
   - prompts: lawn, rabbit, cat
@@ -203,9 +211,21 @@ modified: 2025-08-16T14:12:24.416Z
   - [DMD2 Speed LoRA [SDXL, Pony, Illustrious] | Civitai](https://civitai.com/models/1608870/dmd2-speed-lora-sdxl-pony-illustrious)
 
 - sd15
+  - https://huggingface.co/Lykon/DreamShaper /v2-v8-sd15/xl/v8-2.13gb
   - https://huggingface.co/segmind/tiny-sd /647mb/Realistic_Vision_V4.0
   - https://huggingface.co/segmind/small-sd /2.32gb/Realistic_Vision_V4.0/202304
   - https://huggingface.co/stablediffusionapi/realistic-vision-v51 /1.72gb
+
+- sdxs
+  - https://huggingface.co/IDKiro/sdxs-512-dreamshaper
+  - https://huggingface.co/IDKiro/sdxs-512-0.9
+  - https://huggingface.co/lsb/6-bit-palettized-sdxs-512-dreamshaper /316mb
+  - https://huggingface.co/zweifisch/sdxs-512-0.9-fp16 /656mb
+  - [SDXS-1024 Release? · Issue · IDKiro/sdxs _202403](https://github.com/IDKiro/sdxs/issues/2)
+    - 💰 The subsequent open source program has been terminated by the Company.
+  - https://github.com/Zeqiang-Lai/OpenDMD
+    - I just read this paper's figures, which has a one-step model training method that is closer to the idea of this paper
+    - [SDXS-512-0.9 - New Base Model for April 2024 | Civitai](https://civitai.com/articles/4760)
 
 - sdxl
   - https://modelscope.cn/models/AI-ModelScope/stable-diffusion-xl-base-1.0/files /6.94gb
@@ -218,15 +238,6 @@ modified: 2025-08-16T14:12:24.416Z
     - adapter for Segmind-Vega that allows to reduce the number of inference steps to only between 2 - 8 steps.
   - [SDXL Turbo-LoRA-Stable Diffusion XL faster than light - v1-128dim | Stable Diffusion XL LoRA | Civitai](https://civitai.com/models/215485/sdxl-turbo-lora-stable-diffusion-xl-faster-than-light)
   - [SDXL DPO-Turbo-LoRA - v1.0 DPO XL TURBO | Stable Diffusion XL LoRA | Civitai](https://civitai.com/models/237775/sdxl-dpo-turbo-lora)
-
-- sdxs
-  - https://huggingface.co/IDKiro/sdxs-512-dreamshaper
-  - https://huggingface.co/IDKiro/sdxs-512-0.9
-  - [SDXS-1024 Release? · Issue · IDKiro/sdxs _202403](https://github.com/IDKiro/sdxs/issues/2)
-    - 💰 The subsequent open source program has been terminated by the Company.
-  - https://github.com/Zeqiang-Lai/OpenDMD
-    - I just read this paper's figures, which has a one-step model training method that is closer to the idea of this paper
-    - [SDXS-512-0.9 - New Base Model for April 2024 | Civitai](https://civitai.com/articles/4760)
 
 - lumina 👾
   - https://modelscope.cn/models/calcuis/lumina-gguf/files
@@ -915,6 +926,161 @@ Q8（8 位）	    16GB+	   接近原始版本
 - 一般情况：完整版（fp16）需要 24G 显存才能正常驾驭，阉割版（fp8）16G 就足够，nf4 版本 8-12G 显存可正常驾驭，
   - 而 gguf 格式量化的如最小的 Q2 版本 6G 显存也能够正常驾驭，而且由于 gguf 近期展现出强劲的技术发展，充分体现降低内存需求而质量更好的特点，黑暗森林官方开始全面支持，所以 nf4 的版本将逐渐淘汰。
 
+# discuss-anime
+- examples-anime
+  - [Turn your photos into Studio Ghibli style in ComfyUI | Weird Wonderful AI Art _202504](https://weirdwonderfulai.art/comfyui/turn-your-photos-into-studio-ghibli-style-in-comfyui/)
+  - [Illustrious XL's ComfyUI Beginner Workflow - v1.0-vpred | Illustrious Workflows | Civitai _202411](https://civitai.com/models/892447/illustrious-xls-comfyui-beginner-workflow)
+    - This is an ENG translation of the Illustrious XL's ComfyUI Beginner Workflow by supercatdoing1456.
+    - support v-pred model
+  - [NOOBAI XL Quick Guide | Civitai](https://civitai.com/articles/8962/noobai-xl-quick-guide)
+  - [SDXL image to image florence2 | ComfyUI Workflow](https://openart.ai/workflows/pixeleasel/sdxl-image-to-image-florence2/YLXHLd7gPaK5myqsZhrO)
+
+- resources
+  - [Best Anime SD Models SDv1/SDXL](https://gist.github.com/AshtakaOOf/c7c1f5bdcfa96d111562a3b4f22035bf)
+
+- ## 
+
+- ## 
+
+- ## [Help! I'm stupid and can't figure out V-Prediction! : r/StableDiffusion _202411](https://www.reddit.com/r/StableDiffusion/comments/1gut1bp/help_im_stupid_and_cant_figure_out_vprediction/)
+- Set clip skip to 2, sampler to Euler, steps 30, cfg 4 That is all I did for Reforge. Also use sdxl vae
+- In my experience, Euler with low CFG (~2) works OK. Euler a or high CFG (~6) both fries the image.
+- In my tests, the v-pred version worked best with " dpm++ 2m" sampler, "sgm uniform" scheduler and cfg set at 4. Also, I've used Comfy and A1111, not Forge
+
+- Cat Tower is based on NoobAI V-Pred but looks MUCH better, but I still don't really see any benefit over a good eps model like Zuki Ani ILL.
+
+- ## [V-PRED vs EPS - Tried using V-PRED but results are ugly... : r/StableDiffusion _202507](https://www.reddit.com/r/StableDiffusion/comments/1lr88lc/vpred_vs_eps_tried_using_vpred_but_results_are/)
+- You need to use the Euler CFG++ samplers alongside dynamic thresholding to get the best results with NoobAI-XL's V-Pred version. Any variation except for the ancestral one, as that particular sampler tends to oversaturate outputs.
+  - Use a low CFG scale with them. I recommend starting with 1.5 and adjusting from there to your preferences or until the outputs begin to burn from oversaturation. Set Dynamic Thresholding's mimic scale to 3.5, and set the mimic mode to Half-Cosine down to start. This will keep the outputs clean and free from oversaturation.
+
+- Do you have any advice/ideas for increasing detail? I find that V-PRED models tend to lack detail for anime art vs. EPS...
+  - Try using the detail daemon node. It's a must for detail. Additionally, look for the SDXL control LoRAs by advokat in civitai. I personally use the sdxl_enhance LoRA with good results in NoobAI-XL, both with the EPS and V-Pred versions. Advokat just recently released a new fix LoRA for NoobAI-XL V-Pred:as well. Try testing it out too, and report back your results with examples if you can!
+
+- ## [NoobAI V-Pred 1.0 - A model that can do really great lighting with just simple prompting : r/StableDiffusion _202501](https://www.reddit.com/r/StableDiffusion/comments/1ht7or4/noobai_vpred_10_a_model_that_can_do_really_great/)
+- The best thing about these models is that the generations feel, and don't know how to express it properly, that they are more like artworks by artists.
+  - Another great thing about this model is that it seems to respect both tag-based prompts and simple sentences. Compared to Pony where you can only use tags, or Flux where you need to use prompt generators. The flexibility in prompting feels the most natural and accessible out of any model.
+
+- I like the illust/Noob series of models way more than I did pony. Tons of artist tags open a whole range of stylistic options that Pony never had due to its author making the decision to remove them for 'ethics' reasons. IMO this is the way forward for AI, no dataset censorship and fully focused on bringing the best quality possible. Hopefully they continue to train on newer models as SDXL is getting quite old.
+
+- 🆚 Guys may anyone elaborate the difference between V prediction vs eps prediction, what is the difference? And which one is better and why?
+  - tl; dr Better colors/full color range, and better composition coherency.
+  - Do you think v-pred will become mainstream and replace epsilon? Unfortunately it seems Loras trained on epsilon aren't compatible with v-pred :/ (the results aren't good). I've been told some tweaks are required to train loras on v-pred, though i'm not sure what exactly yet, though it means all of the existing Loras would have to be trained over again to work with v-pred
+- v-pred tends to produce better color than eps
+
+- V-Pred 0.6 worked pretty well for me, but yeah, 1.0 is really not compatible with reForge at all, it seems.
+
+- Foundational models such as Stable Diffusion 1.5 and Stable Diffusion XL were both trained with epsilon prediction.
+  - The idea of V-prediction parameterization for diffusion models was introduced back in 2022
+
+- ## [WAI-NSFW-illustrious-SDXL VS NoobAI-XL (NAI-XL) which one is better? : r/comfyui _202503](https://www.reddit.com/r/comfyui/comments/1j45dqm/wainsfwillustrioussdxl_vs_noobaixl_naixl_which/)
+- I personally like to use WAI because it plays more nicely with comfyui.
+  - To get the most out of NOOB you have to use the v-pred version, which is somewhat hard to work with.
+
+- [WAI illustrious-SDXL VS NoobAI-XL (NAI-XL) which one is better? : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1j4598y/wai_illustrioussdxl_vs_noobaixl_naixl_which_one/)
+  - Noob v-pred -> WAI -> Noob eps
+  - But with Noob you have to figure out the style, wai is more of a typical good finetune. WAI is a lot more hassle free.
+
+- [Noob Vs Illustrious / V-pred / Wai : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1jfktf2/noob_vs_illustrious_vpred_wai/)
+  - Noob is trained on Illustrious 0.1 with 20M additional data.
+  - v-prediction is a different way diffusion models guess the image compared to epsilon prediction, and it usually generates 'better' images with fewer steps.
+  - WAI is another model trained on Illustrious but in a different way. It's easy to use, but hard to make distinctive and natural hand-drawn images compared to Noob.
+
+- ## [Illustrious 1.0 vs noobaiXL : r/StableDiffusion _202505](https://www.reddit.com/r/StableDiffusion/comments/1kti5rk/illustrious_10_vs_noobaixl/)
+- noobai knows many times more artists and characters, vpred version works better with colors and prompt. I don't see any reason to use base illustrious over noobai or mixes
+
+- noob if you care about quality, knowledge, latest data, color etc
+  - illust's lora will work on noob, but vice versa is a bit problematic
+
+- NoobXL is a fine-tune of Illustrious and any Illustrious LoRA works perfectly with NoobAI XL.
+
+- In terms of quality, the newer versions of Illustrious are more consistent and slightly better at anatomy. But in my opinion it is outweighed by style variation of NoobAI XL. It is much easier to get rid of the annoying generic AI style and get interesting composition.
+  - I recommend using NTR Mix, as it is a merge of the two, that combines stability of Illustrious and diversity of NoobAI XL
+
+- I think Noobai shot themselevs in the foot by releasing too many versions. If you were training Lora’s it was like aiming at a moving target. By the time they got to the last version illustrious has become more popular.
+
+- Use NoobAI. Unless you want realistic models, Illustrious still has the better realistic models.
+  - for realism just use pony or flux, why use an anime bias model for realism
+
+- ## [why nobody is interested in the new V2 Illustrious models? : r/StableDiffusion _202505](https://www.reddit.com/r/StableDiffusion/comments/1ktfcwm/why_nobody_is_interested_in_the_new_v2/)
+  - Recently OnomaAI Research team released Illustrious 2 and Illustrious Lumina too. Still, it seems they are not good in performance or the community doesn't want to move, as Illustrous 0.1 and its finetunes are doing a great Job
+
+- Because 1.0 and 2.0 are worse than 0.1finetunes. no real point in merging it. WAI for example just dropped it
+
+- Because the derived Noob AI is a higher-level entity, this is well known among us mentors.
+
+- NoobAI: It's SDXL. 
+  - NoobAI is mostly just a Illustrious V0.1 finetune with a little bit of training on the CLIP. It has a much more up to date and expansive dataset than Illustrious though, and incorporates a bit more funny training techniques that were rumored to be used in NovelAI V3 (zsnr, v-pred noise, etc) that Mr. Bottomless wanted to get working in Illustrious v0.1 but couldn't quite figure out. 
+  - That said, it's also a much less polished end final product than Illustrious, Laxhar didn't timegate his development cycle so each version was published as soon as they finished quality testing it (with some exceptions for sekrit tester only versions like v24r2 and v29), so you get huge variance between different versions because they're also figuring this stuff as it goes along (one version had cosplay pics mixed in until they decided that having IRL stuff messed up the dataset, earlier vpred versions are heavily fried with standard samplers and CFG, etc).
+
+- [Is NoobAI a finetune of Illustrious or base SDXL? : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1k3pref/is_noobai_a_finetune_of_illustrious_or_base_sdxl/)
+  - SDXL > Kohaku > Illustrious > NoobAI
+
+- ## 🆚 [Pony vs Noob vs Illustrious : r/StableDiffusion _202503](https://www.reddit.com/r/StableDiffusion/comments/1jnteo3/pony_vs_noob_vs_illustrious/)
+- Pony was alright, being the first real 2D NSFW-focused SDXL finetune after over a year of SD1.5, but personally I prefer Noob:
+  - Noob was trained with VPred which allows it to generate at full dynamic range compared to Pony which, for example, cannot generate pure white/black backgrounds, only grey.
+  - Pony was deliberately trained without artist tags for 'ethics' reasons. Sorry, but having access to literally thousands of booru artist tags lets me create tons of images in different styles in illust/noob and combine them to create original styles. Way more powerful and versatile.
+  - Noob/illust know way more characters by default and require less loras
+  - Noob/illust were trained more on anime/japanese art and less on furry/mlp/realism data. Again, personal preference but I don't have an interest in realism or furry stuff so.
+- Noob was trained the most. It's trained on top of illustrious, which technically makes it the more trained than illustrious (though later unreleased version of illust, like 3.5vpred, might be better but alas).
+  - Noob works backwards compatible with a fair amount of illust loras (not all)
+
+- Can you help me understand exactly what VPred means/does, why it matters, etc?
+  - Type of loss used. Usually it is either v-prediction or epsilon prediction. Sdxl tried to go v-pred with their 2.0 model, but ditched it for sdxl. 
+  - What that means for you - you HAVE to tweak some parameters to make model produce something adequate. 
+  - What do you get for it? Noob vpred had supreme dynamic range which naturally makes it good at lighting. Also it naturally can do dark imagery, which is an issue for other sdxl base (one of the reasons why dark loras are so popular)
+
+- Illustrious beats pony in every catagory (speaking as a day 1 pony fanboy)
+  - My favorite part is how well it understands prompts and how good the hands are, specialy holding items
+
+- Illustrious is king right now. The new Pony is coming soon though, and that might change the game again.
+
+- Illustrious is better than Pony in nearly every way but realism and maybe some specific semi-realism.
+  - Noob (with vpred) should be an upgrade in color and light range, but I'm still warming up to it as I feel it's more hit and miss than Illustrious right now
+
+- Noob? Built upon Illustrious, a little jank but really the only anime style SDXL model you'll need (especially vpred)
+
+- ## [Which one better for Anime? Pony or SDXL ? : r/StableDiffusion _202412](https://www.reddit.com/r/StableDiffusion/comments/1ha59j8/which_one_better_for_anime_pony_or_sdxl/)
+- Despite the name, Pony is actually primarily focused on human characters. It does include furries though. One of the things to bear in mind though is that Pony is not purely an anime model. It has some distinct western influences.
+
+- Basic SDXL and variants are better for other styles, since anime checkpoints largely focus on anime styles specifically, so realistic or painting-esque pictures would always be better off made with Juggernaut, Albedobase, NightVision or ZavyChroma. Or whatever else general checkpoint you have.
+  - Pony checkpoints are tailored to anime and furry art specifically. It takes a bit of time to grok the altered prompting style and remember animu tags, but with booru-autocomplete extension for A1111 it's easy. In realm of anime and furry things pony checkpoints basically ruled the joint for a while now.
+  - For the most part people making realistic loras for Pony because that was one thing that it couldn't do reliably, so, basically, it was a challenge to overcome.
+  - The only contender now is probably Illustrous checkpoints, which are even more anime-exclusive and boast much better tag recognition and remember a lot of artist styles right out of the box.
+
+- NoobAi (illustrious) and it's merges, it's not even close. You just prompt your artist of choice(or mix of them) and go.
+
+- Pony was actually trained on an even split of anime, cartoon, furry, and pony images.
+
+- ## [Best SDXL Anime Model Today? : r/StableDiffusion _202412](https://www.reddit.com/r/StableDiffusion/comments/1hgw5cd/best_sdxl_anime_model_today/)
+- Illustrious, NoobAi.
+
+- Illustrious based models (noobai for example) give the best results I have ever seen among anime models, especially with v-prediction, however you might get more hallucinations than sdxl or pony but still absolutely worth it
+
+- what is v prediction?
+  - from my limited understanding it is a technique used during the training which makes it possible for model to generate dark colors, unlike traditional ε-prediction
+
+- [What's the best SDXL models for both anime and realistic (NSFW and SFW) and what's the best 1.5 models for anime and realistic (NSFW and SFW) : r/StableDiffusion _202404](https://www.reddit.com/r/StableDiffusion/comments/1c7a8tq/whats_the_best_sdxl_models_for_both_anime_and/)
+
+- ## [SDXL - Image to Anime Inspired Illustrations [workflow included] : r/comfyui](https://www.reddit.com/r/comfyui/comments/1i7r3no/sdxl_image_to_anime_inspired_illustrations/)
+  - Whenever I save a LoRa, I rename them, starting with the base model (so SDXL or Flux), then the triggerword for that specific lora. That's why the name looks different
+
+- Another thing to keep in mind is the autoprompt florence model is generating. That seed should also be fixed to get same results.
+
+- is it working with any Anime Checkpoint/lora? or just these two?
+  - It should work with any Lora and checkpoint. You might have to adjust a few settings on the controlNet models, also try different combinations of sampler, CFG and steps depending on the model.
+
+- thanks for the workflow and models. Are the embeddings needed or not important?
+  - Not necessary
+
+- how to reverse it, anime to realistic? 
+  - Here you go: [SDXL - Anime to Live Action [workflow] : r/StableDiffusion _202501](https://www.reddit.com/r/StableDiffusion/comments/1i8ir8p/sdxl_anime_to_live_action_workflow/)
+  - [Anime to realistic, or vice-versa, or any to any, with unsampler workflow : r/comfyui _202502](https://www.reddit.com/r/comfyui/comments/1iwtyrs/anime_to_realistic_or_viceversa_or_any_to_any/)
+
+- Does it have to be a human image? Can it be just something abstract? 
+  - It should work for anything. Maybe try with a different combination of Checkpoints and LoRa. The rest of the workflow can stay the same.
+
+- I wonder whether florence2 really always return a caption starting with "The image"... I feel that a simple concatenation is more reliable. Otherwise this is very similar to the workflow I use. Or it might be possible to use another language model node to rewrite the caption, especially if you want something like monochrome pencil art.
+  - It usually starts with "The Image", then I add a "find and replace text" node, and add more keywords that I want to inject.
 # discuss-upscale
 - examples
   - [SD 1.5 LCM Upscale + 4x-UltraSharp | ComfyUI Workflow](https://openart.ai/workflows/gambz/sd-15-lcm-upscale/RO8RtrOWhbNvmbCqHcav)

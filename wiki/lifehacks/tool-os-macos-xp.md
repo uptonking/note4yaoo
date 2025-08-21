@@ -214,8 +214,29 @@ redis-cli shutdown
 
 - 不按Option，移动文件是剪切，按住Option，移动文件变粘贴
 - 按住Option，点按小三角，自动展开访达文件夹内的所有子文件夹，所有文件一览无余
-# discuss-macos
+# discuss-macos-tricks
+- ## 
 
+- ## 
+
+- ## 
+
+- ## [system data taking up all my storage, how do i fix this? : r/mac _202211](https://www.reddit.com/r/mac/comments/ynv4d0/system_data_taking_up_all_my_storage_how_do_i_fix/)
+
+```sh
+# `du` (disk usage) and `df` (disk free) to work out dirs space consumption
+df -h | grep Gi
+
+# `/dev/disk3s5 - /System/Volumes/Data` is consuming large space
+du -h /System/Volumes/Data | grep "G\t" | sort -rh
+# Then you can manage sub directories similarly and remove files you no longer need.
+
+```
+
+- I followed this thread, and it worked great. Also can recommend using CleanAppsNow app to uninstall software without leftovers. Especially important for programs that like to cache a lot of stuff.
+
+- [Using Terminal to Find Large Files and Folders](https://macmost.com/using-terminal-to-find-large-files-and-folders.html)
+  - find . -size +20M -exec du -hs {} \; | sort -hr | head -n 10
 # discuss-not-yet
 - ## 
 
