@@ -37,6 +37,13 @@ modified: 2025-08-16T14:12:24.416Z
 - images-categories (poster/cover, illustration)
   - emojis: people/body, faces/emotion, animals, nature, food/drink, travel/places, activities, objects, symbols, flags
   - bing-wallpaper, unsplash-wallpaper: people, nature, photo, film
+
+- tips
+  - [Sable Diffusion WebUI Benchmark Data: nvidia/amd/torch](https://vladmandic.github.io/sd-extension-system-info/pages/benchmark.html)
+  - [Stable Diffusion Benchmarks: 45 Nvidia, AMD, and Intel GPUs Compared | Tom's Hardware _202312](https://www.tomshardware.com/pc-components/gpus/stable-diffusion-benchmarks)
+# dev-xp
+- 生成图片时，一般批量生成10张起
+  - 挑选图片的原则: 清晰、未变形， 最好光线足
 # models-benchmark
 - time cost for image-gen on macbook air m4(32gRAM)
   - prompts: lawn, rabbit, cat

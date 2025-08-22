@@ -363,6 +363,9 @@ modified: 2023-11-28T14:48:45.910Z
 
 ## code-block
 
+- parser
+  - 以3个反引号开头，但结尾不一定是3个反引号，以增强解析容错
+
 - [Update all code blocks to toggle between TS and JS syntax](https://github.com/reduxjs/redux/issues/4112)
   - The RTK docs currently use Lenz Weber's phryneas/remark-typescript-tools plugin to let us write TS syntax in code blocks, compile away the TS syntax to plain JS, and show both versions as a tab
   - https://github.com/phryneas/remark-typescript-tools

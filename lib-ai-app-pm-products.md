@@ -15,6 +15,8 @@ modified: 2025-03-22T16:10:24.856Z
   - frontend: ai-sdk/chatbot, assistant-ui, librechat
   - backend: langgraph + python/nodejs
   - ai-apps as ref: lasuite
+- ai-dev-xp
+  - 难复现好的效果，同样的prompt+context，有时输出的效果就是不好
 
 - agent-ipc
 

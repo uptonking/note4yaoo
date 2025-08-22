@@ -9,12 +9,21 @@ modified: 2021-05-14T14:33:37.058Z
 
 # usage
 
-``` typescript
+```typescript
 <Editor value={value} onChange={() => this.handleChange()} />
 ```
 
-# api 
+# parser/generator
+- code-block
+  - 以3个反引号开头，但结尾不一定是3个反引号，以增强解析容错
 
+- 
+- 
+- 
+- 
+- 
+
+# api
 - api-props-common
   - value:str, 输入框内容
   - placeholder:str, 占位文本
