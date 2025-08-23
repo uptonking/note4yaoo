@@ -92,6 +92,56 @@ modified: 2023-01-22T19:52:09.270Z
 The problem is that the read replica of mysql server are updated by the master server (which handles write queries) in 20ms, so if we do read immediately after write we dont get the new data there.
 - this sounds like a really bad idea in multiple ways (trying to create pseudo synchronous replication setup with application side code).
   - I would just suggest to configure replication setup to work in synchronous manner and that way DB know when to lock (it slows down writes a bit, but it sounds like a lot loss of a problem). Also this effectively limits your write speed to < 10 writes per second or those delays will block all your DB reads...
+
+- 202508: After thoroughly analyzing this issue that's been open since 2017, examining multiple PR attempts, and researching how competing libraries handle this problem, I want to provide a comprehensive response on the state of read/write splitting in Knex.
+  - Each attempt revealed the same core challenges: the complexity is database-specific, cloud-provider-specific, and use-case-specific. 
+  - The 2018 PR closure perfectly encapsulates our position - whether this belonged in Knex core vs. an independent npm module, and after discussion, the consensus was that external solutions were preferable.
+
+- Current State & Why This Hasn't Been Implemented
+- The fundamental challenge isn't technical capability -- it's architectural philosophy. Knex was designed as a query builder first, with connection management as a supporting feature. Adding read/write splitting requires fundamental changes to how Knex thinks about connections, and there are several critical design decisions that have prevented consensus:
+  - Abstraction Level Mismatch: Knex operates at the query building level, while read/write splitting is a connection routing concern. The current architecture tightly couples query building with connection acquisition through the Runner class, making clean separation difficult.
+  - Database-Specific Complexity: Each database has different replication mechanisms (Aurora's reader endpoints, PostgreSQL streaming replication, MySQL's binlog replication). Building a one-size-fits-all solution risks being too generic to be useful or too specific to cover all cases.
+  - Transaction Semantics: Transactions must stay on the master, but determining transaction boundaries across nested transactions, savepoints, and query contexts is non-trivial.
+  - Replication Lag: The 100ms+ replication lag issue that @Frolanta discovered is real and varies by provider. Any built-in solution needs to handle read-after-write consistency, which is application-specific.
+
+- What Other Libraries Do
+- Having examined Sequelize, TypeORM, Rails ActiveRecord, and node-mysql, there are two main patterns:
+- Pattern 1: Configuration-Based (Sequelize, TypeORM)
+  - Separate configuration for read/write hosts
+  - Automatic routing based on query type
+  - Explicit override mechanisms for edge cases
+- Pattern 2: Connection Pool Management (node-mysql, Rails)
+  - Multiple named pools with pattern matching
+  - Middleware/interceptor-based routing
+  - Session-based consistency tracking
+- Why Community Solutions Work Better
+  - The beauty of @Frolanta's runner override pattern and @thetutlage's knex-dynamic-connection is they solve specific problems without requiring Knex to make opinionated choices. They demonstrate that Knex's current architecture, while not ideal, is flexible enough for userland solutions.
+- The Real Problem: AWS Aurora
+  - The elephant in the room is AWS Aurora. Its reader endpoint rotation every second, combined with connection pooling behavior, breaks assumptions about load balancing. 
+  - This isn't a Knex problem -- it's an impedance mismatch between Aurora's design and traditional connection pooling. 
+  - The solution (querying AWS SDK for replica endpoints) is too AWS-specific to belong in Knex core.
+
+- My Recommendation
+- Rather than adding half-baked read/write splitting to Knex core, we should:
+  - Document the Pattern: Create official documentation showing @Frolanta's runner override pattern as the recommended approach. It's battle-tested and elegant.
+  - Enhance Extension Points: Add official hooks for connection routing without breaking changes
+  - Embrace the Ecosystem: The fact that multiple solutions exist (knex-multiconnect, knex-dynamic-connection) shows the community can solve this better than a one-size-fits-all core implementation.
+  - Consider a Plugin System: Long-term, Knex needs a plugin architecture. Read/write splitting is the perfect candidate for an official plugin maintained separately from core.
+
+- Not implementing this feature has been the right call. 
+  - Look at TypeORM -- their built-in replication has edge cases around raw queries always using master. 
+  - Sequelize's implementation doesn't handle dynamic replica discovery. 
+  - Rails requires careful configuration to avoid stale reads.
+- By keeping this out of core, Knex avoids:
+  - Breaking changes for existing users
+  - Maintenance burden of database-specific replication quirks
+  - Support overhead for cloud provider peculiarities
+  - Opinion lock-in that might not fit all use cases
+
+- For Users Needing This Today
+  - Use @Frolanta's pattern from the issue comments. It works, it's production-tested, and it gives you full control. That's more valuable than any half-measure we could add to core.
+
+- This response acknowledges the real need while explaining why the current approach (community solutions) is actually the right one for Knex's philosophy and architecture. After 10 years of requests and attempts, the evidence strongly supports maintaining separation of concerns - keeping Knex focused on query building while letting specialized libraries handle connection routing.
 # discuss-knex-orm-objection
 - ## 
 

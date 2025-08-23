@@ -395,6 +395,7 @@ modified: 2022-01-16T15:52:31.293Z
 - nvidia性能对比
   - [大模型GPU算力卡汇总 - 知乎](https://zhuanlan.zhihu.com/p/1904206218748236301)
   - [Sable Diffusion WebUI Benchmark Data: nvidia/amd/torch](https://vladmandic.github.io/sd-extension-system-info/pages/benchmark.html)
+  - [Which GPU should I buy for ComfyUI · comfyanonymous/ComfyUI Wiki](https://github.com/comfyanonymous/ComfyUI/wiki/Which-GPU-should-I-buy-for-ComfyUI)
   - https://www.zhihu.com/question/615946801/answer/3156016610
 
 - 🆚🔥 [英伟达热门 GPU 对比：H100、A6000、L40S、A100 - 知乎](https://zhuanlan.zhihu.com/p/5041686924)

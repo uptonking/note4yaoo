@@ -40,6 +40,13 @@ modified: 2025-02-26T15:04:15.883Z
   - A template repo holding our common setup for a python project.
   - make `check_code_quality` to check code quality (PEP8 basically)
 # fastapi
+- https://github.com/fastapi/full-stack-fastapi-template /37.1kStar/MIT/202508/python/ts
+  - Full stack, modern web application template. 
+  - fastapi, SQLModel, pydantic
+  - react, chakra-ui
+  - Tests with Pytest.
+  - [How to use Sqlite instead Postgresql _202403](https://github.com/fastapi/full-stack-fastapi-template/discussions/1132)
+
 - https://github.com/adr1enbe4udou1n/fastapi-realworld-example-app /202504/PostgreSQL
   - https://fastapirealworld.okami101.io/api
   - built with FastAPI including CRUD operations, authentication, routing, pagination, and more. Using the very last SQL Alchemy 2.0

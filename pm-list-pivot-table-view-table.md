@@ -17,6 +17,12 @@ modified: 2022-12-16T01:52:33.729Z
 
 - roadmap
   - in-memory > virtual-render > on-demand
+# [obsidian-bases](https://help.obsidian.md/bases)
+- pros
+  - 基于文件和简单markdown语法实现
+- cons
+  - name列的内容不能重复
+  - undo/redo在删除一行后不能恢复一行
 # features
 - facets/multi-tables
 

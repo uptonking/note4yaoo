@@ -169,7 +169,15 @@ modified: 2024-01-23T02:52:23.932Z
 
 - ## 
 
-- ## 
+- ## [Obsidian Bases | Hacker News _202508](https://news.ycombinator.com/item?id=44945532)
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 - ## Obsidian Bases can be exported to CSV or copy-pasted anywhere — as Markdown, or even into your favorite spreadsheet app
 - https://x.com/kepano/status/1927501007480582467

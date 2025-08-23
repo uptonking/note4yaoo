@@ -84,6 +84,9 @@ modified: 2025-03-22T18:49:15.634Z
   - https://github.com/lobehub/chat-plugin-sdk
     - https://chat-plugin-sdk.lobehub.com/
     - SDK for LobeChat function calling plugins
+  - 🍴 forks
+  - https://github.com/justUmen/Bjornulf_lobe-chat /202411/inactive
+    - Quick and dirty fork to enable lobe-chat to send ComfyUI api request + receive image link + local TTS
 
 - https://github.com/microsoft/vscode-copilot-chat /8.3kStar/MIT/202508/ts
   - GitHub Copilot Chat (this extension) - A companion extension that provides conversational AI assistance.

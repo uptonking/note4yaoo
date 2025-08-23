@@ -59,6 +59,7 @@ modified: 2024-08-24T16:15:11.456Z
   - hocuspocus/typefox collab for file-tree/tabs
   - version-history for wiki/editor with ai commits messages
   - file/data-provider, 还可参考社区提供的另一种思路editor+mock-vscode-api
+  - ext: comfyui
   - ui-skin as extension
 
 - vscode提供了electron和web模式，未提供纯前端模式

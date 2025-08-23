@@ -9,6 +9,17 @@ modified: 2023-09-24T19:05:33.866Z
 
 # guide
 
+- orm-features
+  - relations
+  - transaction support
+  - Partition By
+  - connection pooling
+  - read-replica, read/write-split
+  - streaming queries
+  - eager and lazy loading
+  - jsonb datatype
+  - plugin architecture
+  - migration tools/cli
 # discuss-stars
 - ## 
 

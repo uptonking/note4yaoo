@@ -17,6 +17,7 @@ modified: 2023-01-22T19:52:21.676Z
 
 - cons
   - 官方未支持 read replica, 但有第三方方案
+  - 未采用plugin架构
 
 - features
   - both a promise and callback API

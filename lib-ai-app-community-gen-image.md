@@ -41,6 +41,7 @@ modified: 2025-08-16T14:12:24.416Z
 - tips
   - [Sable Diffusion WebUI Benchmark Data: nvidia/amd/torch](https://vladmandic.github.io/sd-extension-system-info/pages/benchmark.html)
   - [Stable Diffusion Benchmarks: 45 Nvidia, AMD, and Intel GPUs Compared | Tom's Hardware _202312](https://www.tomshardware.com/pc-components/gpus/stable-diffusion-benchmarks)
+  - [Which GPU should I buy for ComfyUI · comfyanonymous/ComfyUI Wiki](https://github.com/comfyanonymous/ComfyUI/wiki/Which-GPU-should-I-buy-for-ComfyUI)
 # dev-xp
 - 生成图片时，一般批量生成10张起
   - 挑选图片的原则: 清晰、未变形， 最好光线足
@@ -784,6 +785,22 @@ modified: 2025-08-16T14:12:24.416Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 🌰 [Simple ComfyUI Flux workflows v2 (for Q8, Q5, Q4 models) : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1ewdllh/simple_comfyui_flux_workflows_v2_for_q8q5q4_models/?share_id=UFGPTFpRB728ueaY0RX-d&utm_content=1&utm_medium=android_app&utm_name=androidcss&utm_source=share&utm_term=1)
+  - No any extra nodes.
+
+- Q models come from llamacpp ( llms ) gguf. Gguf was created for achieving llm quality as close to fp16 as possible.
+  - I'm personally waiting for Q4k_m as it is newer than "old" Q4 in the world of llms. Q4k_m has the quality bigger than "old" Q5.
+
+- Am I the only person q models work slowly for
+  - Yes Q models are a bit slower than fp models ( around 10-15% ) because of advanced compression but you're getting better results than fp models .
+
+- Yeah, NF4 dev is about 3s/it and the fastest Q model is around 5s/it.
+  - Only perk I have with the Q model is we can use loras whereas we can't with the NF4.
 
 - ## [FLUX.1是目前最好的开源AI图像生成模型吗？ - 知乎 _202410](https://www.zhihu.com/question/1457540426/answer/1904675843768317216)
 - 个人觉得Flux与SDXL各有胜负，至于其他模型只能靠边站。

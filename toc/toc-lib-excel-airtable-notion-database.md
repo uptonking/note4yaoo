@@ -505,6 +505,8 @@ modified: 2022-08-21T10:02:05.129Z
 
 - https://github.com/souvikinator/notion-to-md /MIT/202307/ts
   - Convert notion pages, block and list of blocks to markdown (supports nesting) using notion-sdk-js
+# [obsidian-bases](https://help.obsidian.md/bases)
+
 # airtable-like
 - https://github.com/chanchalguptaa/db-dash /202303/js
   - This is walkover product based on airtable clone
