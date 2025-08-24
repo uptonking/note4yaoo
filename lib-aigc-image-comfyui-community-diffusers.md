@@ -109,7 +109,26 @@ modified: 2025-08-23T11:42:36.444Z
 
 - ## 
 
-- ## 
+- ## [InvokeAI's alternatives? : r/StableDiffusion _202405](https://www.reddit.com/r/StableDiffusion/comments/1d4jbsp/invokeais_alternatives/)
+  - It lacks a lot of important features for composition: such as layers, color filters and even integration with other AI image processors for segmentation-based selection/masking.
+
+- Invoke was really good for a while, but their refusal to add models like SC because they don't like the license is a bummer. The infinite canvas was such a game changer for me, but going to ditch it in the near future and learn the damn comfy one because it supports like every model type ever. I can train them all in one trainer, so I need a UI that can use them all to match it.
+
+- Anyone who uses SD for work, or as a very serious hobby, should just bite the bullet and learn to use ComfyUI. It is not the easiest thing to use and has a learning curve, but it can do anything you want if it is doable with SD at all.
+  - ComfyUI is the "official" (along with StableSwarmUI, which uses ComfyUI as the underlying engine) UI for SAI products. comfyanonymous works at SAI.
+  - Almost without exception, all new techs appear first on ComfyUI. 
+  - So if you like to play with shiny new toys, it is better to use ComfyUI (or StableSwarmUI if you want a friendly UI).
+  - For example, support for new models such as Cascade, SD3, PixArt, CosXL all appear first there (and some are still not supported with A1111). Same with fancy options such as AYS, PAG, IPAdapter, Faceid, etc.
+
+- Not as comprehensive but I use NMKD Stable Diffusion GUI locally. Its ok but it hasn't gotten an update in months. It doesn't have any of those newer features but it is fast
+
+
+- 
+- 
+- 
+- 
+- 
+- 
 
 - ## [What comes closest to ComfyUI for LLMs? : r/LocalLLaMA _202407](https://www.reddit.com/r/LocalLLaMA/comments/1e8k7q8/what_comes_closest_to_comfyui_for_llms/)
 - make comfyui custom node. it is super easy. or there are some LLM node for comfyui, so you can use them.
@@ -174,6 +193,35 @@ modified: 2025-08-23T11:42:36.444Z
 - 
 - 
 
+# discuss-comfy-local-llama
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [what is the strongest image describer in comfyui? (what you use?) : r/comfyui _202502](https://www.reddit.com/r/comfyui/comments/1iu4izz/what_is_the_strongest_image_describer_in_comfyui/)
+  - many of cool workflows use a node to describe the photo first, so im wondering whats is the best option for it with SUPER DETAIL? strong enough to even mention clothes details
+  - joy caption? QWenImage2Prompt? florence 2?
+- I've said it before here, but Gemini on AI Studio is the best at this, hands down, point blank, period. If you prompt it right it will give you everything you ever need.
+
+- Florence 2 good enough for me
+
+- I tried them all. I usually go with JoyCaption. Perfect spot. ChatGPT playground is also quite good. Florence is disappointing.
+- Joycaption 2, llama 3.2 vision
+
+- I do it locally using OllamaVision node that comes with comfyui-ollama. Run local instance of ollama with a vision llm, I get amazing and detailed results with llama3.2-vision but it takes some time to generate the caption. My process is this: 
+  - Load Image
+  - Resize it maintaining the aspect ration to around 512px width
+  - Pass the resized image to OllamaVision
+  - In OllamaVision, set keep_alive to 0 and in textarea write something like "Describe the image in great detail with subject, background, clothes, colors and tint explained as a senior photographer. Reply in a single line"
+  - You can join output of ollama vision with another text node that has prefixes like "good quality, masterpiece, 90s vibe, studio lightning, " etc using Text Combine node.
+
+- I use Janus-Pro. It's pretty accurate most of the time.
+
+- In my opinion every Model is lacking in details, so most of the times i manually correct generated Prompts
+
+- Qwen 2, and Janus-Pro-7B for me. Florence 2 tends to get things wrong at lot of times. Qwen 2 has honestly been the best for me. Janus-Pro is good but it doesn't follow the prompts well (it needs a really detailed prompt)
 # discuss
 - ## 
 

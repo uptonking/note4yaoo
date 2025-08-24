@@ -67,11 +67,12 @@ modified: 2025-03-22T16:10:24.856Z
 - workflow
   - Zapier and n8n help to an extent, but they’re not designed for multi-tenant SaaS. They’re great for internal workflows—not product infrastructure.
 
-- image
+- image-generator/editor
   - prompts: bg, person/object, text
   - 模型选择要考虑: 硬件限制、速度、质量， 只有成熟的model才会提供lite/turbo/精简版
   - 一次生成多幅图
   - stream
+  - 在线图片生成或编辑的架构, 涉及到模型下载与扩展下载，目前没有类似ollama的统一方案, 还涉及到GPU/CPU硬件支持，只有成熟方案才处理过相关问题
 
 - 
 - 

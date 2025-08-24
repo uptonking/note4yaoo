@@ -180,27 +180,6 @@ modified: 2025-02-21T18:20:42.624Z
   - a simple, configurable, fully open source deep research agent that works across many model providers, search tools, and MCP servers.
   - By default it uses the Tavily search API.
 # ai-api
-- https://github.com/pollinations/pollinations /2.7kStar/MIT/202508/python
-  - https://pollinations.ai/
-  - https://text.pollinations.ai/
-  - an open-source gen AI startup based in Berlin, providing the most easy-to-use, free text and image generation API available
-  - 100% Open Source
-  - 🖼️ Free AI image and text generation APIs
-  - privacy: No logins, no keys, no data stored
-  - ❓ 是否方便定制agentic的提示词和流程
-  - 🎵 Audio generation: Text-to-speech and speech-to-text capabilities
-  - Easy-to-use React hooks (React Hooks Examples)
-  - Autonomous Development: Features implemented by our MentatBot coding assistant through GitHub issues
-  - Our MCP server enables AI assistants like Claude to generate images and audio directly.
-  - https://github.com/pollinations/pollinations/blob/master/APIDOCS.md
-    - 可在线测试图片生成的api https://image.pollinations.ai/prompt/excel_logo /在url直接修改提示词
-    - https://pollinations.ai/p/excel_logo 会重定向到上面的地址
-  - `image.pollinations.ai/`: Backend service for image generation and caching with Cloudflare Workers and R2 storage.
-  - `text.pollinations.ai/`: Backend service for text generation.
-  - Future Developments
-    - Digital Twins: Creating interactive AI-driven avatars
-    - Music Video Generation
-    - Real-time AI-driven Visual Experiences
 # browser-use
 - https://github.com/browser-use/browser-use /57.9kStar/MIT/202504/python/js
   - https://browser-use.com/

@@ -533,14 +533,19 @@ modified: 2021-05-14T15:04:15.333Z
   - builder依赖slate-react、tanstack-table
   - It allows you to create conversational apps/forms (Lead qualification, Product launch, User onboarding, Customer support), embed them anywhere on your web/mobile apps, and collect results in real-time.
 
-- koishi /2kStar/MIT/202303/ts
+- koishi /5.2kStar/MIT/202507/ts
   - https://github.com/koishijs/koishi
   - https://koishi.chat/
   - Koishi 是一个跨平台、可扩展、高性能的跨平台聊天机器人框架。
-  - Koishi 提供了高度便利的控制台，让你无需基础让你在几分钟之内搭建自己的聊天机器人。
   - 支持 QQ，Telegram，Discord，飞书等主流聊天平台，支持多账户和跨平台数据互通
   - 提供在线插件市场，即使没有任何编程基础，也能轻松在控制台中下载安装插件
+  - 随时随地通过控制面板监控运行状态，控制机器人的行为，甚至上号聊天
   - 依赖satorijs、minato(db-driver)、cordis(aop)
+  - 经过了长达四年的迭代，Koishi 已经发展出了丰富的插件生态和与之匹配的健壮系统。超过 1000 个官方和社区插件覆盖了机器人开发的方方面面，从平台支持、数据库、资源存储、网页控制台、状态管理到具体的业务功能一应俱全
+  - https://github.com/koishijs/novelai-bot /2.5kStar/MIT/202503/ts
+    - 基于 NovelAI 的画图机器人
+    - [feat: add support for ComfyUI _202406](https://github.com/koishijs/novelai-bot/pull/254)
+      - 只支持了基本的text2image和image2image功能
 
 - https://github.com/mckaywrigley/chatbot-ui
   - https://www.chatbotui.com/

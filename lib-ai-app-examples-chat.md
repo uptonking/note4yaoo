@@ -8,7 +8,8 @@ modified: 2025-03-22T18:49:15.634Z
 # lib-ai-app-examples-chat
 
 # guide
-
+- tips
+  - 不要执着于chat, text-generation-ui方向的产品也很合适
 # popular
 - https://github.com/open-webui/open-webui /107kStar/MIT > BSD+LOGO/202405/python/svelte
   - https://openwebui.com/
@@ -57,6 +58,24 @@ modified: 2025-03-22T18:49:15.634Z
     - We already support Stable Diffusion. It will be great to add support for ComfyUI.
     - /not-planned
 
+- koishi /5.2kStar/MIT/202507/ts
+  - https://github.com/koishijs/koishi
+  - https://koishi.chat/
+  - Koishi 是一个跨平台、可扩展、高性能的跨平台聊天机器人框架。
+  - 支持 QQ，Telegram，Discord，飞书等主流聊天平台，支持多账户和跨平台数据互通
+  - 提供在线插件市场，即使没有任何编程基础，也能轻松在控制台中下载安装插件
+  - 随时随地通过控制面板监控运行状态，控制机器人的行为，甚至上号聊天
+  - 依赖satorijs、minato(db-driver)、cordis(aop)
+  - 经过了长达四年的迭代，Koishi 已经发展出了丰富的插件生态和与之匹配的健壮系统。超过 1000 个官方和社区插件覆盖了机器人开发的方方面面，从平台支持、数据库、资源存储、网页控制台、状态管理到具体的业务功能一应俱全
+  - https://github.com/koishijs/webui /AGPL/202507/ts/vue
+    - WebUI plugins for Koishi
+  - https://github.com/koishijs/koishi-desktop /AGPL/202405/go/inactive
+    - Launch Koishi from your desktop
+  - https://github.com/koishijs/novelai-bot /2.5kStar/MIT/202503/ts
+    - 基于 NovelAI 的画图机器人
+    - [feat: add support for ComfyUI _202406](https://github.com/koishijs/novelai-bot/pull/254)
+      - 只支持了基本的text2image和image2image功能
+
 - https://github.com/Mintplex-Labs/anything-llm /47.8kStar/MIT/202508/js/python
   - https://anythingllm.com/
   - A full-stack application that enables you to turn any document, resource, or piece of content into context that any LLM can use as a reference during chatting
@@ -75,6 +94,9 @@ modified: 2025-03-22T18:49:15.634Z
     - Permission Control: Clearly defined member permissions, resource permissions
     - Security Auditing: Automatically intercept sensitive inquiries and trace all historical conversation records
     - Private Deployment: Enterprise-level private deployment supporting various mainstream private cloud solutions
+  - https://github.com/ChatAnyTeam/ChatAny /MIT/202411/ts/inactive
+    - 一键拥有你自己的 ChatGPT+众多AI 的聚合网页服务（基于ChatGPT-Next-Web开发）
+    - PRO版本支持更强大的功能：低内存占用，Golang开发原生高并发支持, 包含AI对话、AI绘画、AI音乐、AI视频、AI生成PPT、PDF解析对话、AI应用支持等众多AI模块
 
 - https://github.com/lobehub/lobe-chat /64.5kStar/apache2+NonModify/202508/ts
   - https://chat-preview.lobehub.com/
@@ -108,6 +130,15 @@ modified: 2025-03-22T18:49:15.634Z
   - https://github.com/langchain-ai/chat-langchainjs /MIT/202503/ts/inactive
     - https://chatjs.langchain.com/
     - Built with LangChainjs, and Next.js.
+# local-chat
+- https://github.com/withcatai/catai /477Star/MIT/202406/ts/svelte/api+webapp
+  - https://withcatai.github.io/catai/
+  - Run AI assistant locally! with simple API for Node.js
+  - Run GGUF models on your computer with a chat ui.
+  - Inspired by Node-Llama-Cpp, Llama.cpp
+  - Real time text streaming 
+  - Fast model downloads
+  - There is also a simple API that you can use to ask the model questions.
 # ui-ai 💄
 - https://github.com/assistant-ui/assistant-ui /5.8kStar/MIT/202508/ts
   - https://www.assistant-ui.com/

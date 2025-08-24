@@ -17,6 +17,8 @@ modified: 2023-02-08T07:20:48.475Z
   - LocalAI act as a drop-in replacement REST API that’s compatible with OpenAI API specifications for local inferencing. 
   - It allows you to run LLMs, generate images, audio (and not only) locally or on-prem with consumer grade hardware, supporting multiple model families. 
   - Does not require GPU.
+  - [Add Local ComfyUI/SD base diffusers step with "json API" PLZ _202502](https://github.com/mudler/LocalAI/issues/4818)
+    - 不支持
 
 - https://github.com/janhq/jan /AGPLv3/202403/ts
   - https://jan.ai/

@@ -12,6 +12,7 @@ modified: 2025-08-23T11:42:50.170Z
 - pros-comfyui
   - easy ui to start image-gen
   - 可扩展: custom-node support
+  - 对最新模型的支持很快
   - 支持 sub-graph
   - 支持flow control，如conditional
   - 提供了ui和api
@@ -20,10 +21,15 @@ modified: 2025-08-23T11:42:50.170Z
   - license: GPLv3
   - 一些复杂的workflow难以理解和维护
 
+- comfyui-wrapper
+  - SwarmUI
+  - ClaraVerse
+
 - pros-diffusers
   - flexible internals: pytorch, flax
   - comfyui loader 部分支持
   - 支持flux/qwen/wan
+  - Hybrid Inference: VAE Encode/Decode, TextEncoders
 
 - cons-diffusers
   - diffusers在未调优的条件下结果不如comfyui，因为comfyui内置了很多参数/prompt
@@ -35,16 +41,8 @@ modified: 2025-08-23T11:42:50.170Z
 
 - tips
   - 随着文本大模型能力的增强，prompt自动生成、memory管理基于coding实现更灵活，comfyui支持的能力有限
+  - 在线图片生成或编辑的架构, 涉及到模型下载与扩展下载，目前没有类似ollama的统一方案, 还涉及到GPU/CPU硬件支持，只有成熟方案才处理过相关问题
   - 👷: ComfyUI was never based on diffusers. It's a horrible library but I can't hate it that much because it's so bad that it's responsible for prematurely killing a lot of comfyui competition by catfishing poor devs into using it.
-
-- https://github.com/huggingface/diffusers /30.4kStar/apache2/202508/python
-  - https://huggingface.co/docs/diffusers
-  - Diffusers is a library of state-of-the-art pretrained diffusion models for generating videos, images, and audio in PyTorch and FLAX
-  - Our library is designed with a focus on usability over performance, simple over easy, and customizability over abstractions.
-  - Diffusers offers three core components: 
-    - diffusion pipelines that can be run in inference with just a few lines of code
-    - Interchangeable noise schedulers for different diffusion speeds and output quality
-    - Pretrained models that can be used as building blocks 
 # overview
 - A diffusion model combines multiple components to generate outputs in any modality based on an input, such as a text description, image or both.
 
