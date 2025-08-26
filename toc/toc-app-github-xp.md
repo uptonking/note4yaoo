@@ -104,6 +104,8 @@ language:JavaScript  language:TypeScript
 
 ## not-yet
 
+- readme的多语言切换，有什么主流扩展
+
 - 搜索名称为folder11的文件夹
 
 - 搜索repo名称包含关键词如directus的用户，按仓库数量最多排序，可发现directus的爱好者

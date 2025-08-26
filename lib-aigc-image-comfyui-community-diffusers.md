@@ -12,9 +12,20 @@ modified: 2025-08-23T11:42:36.444Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [Best way to share models between ComfyUI, Forge, and Automatic1111 : r/StableDiffusion _202403](https://www.reddit.com/r/StableDiffusion/comments/1b8gc4o/best_way_to_share_models_between_comfyui_forge/)
+- You could change the config files for each package to all point to the same directories (or use symlinks).
 
-- ## 
+problem is when software like InvokeAI or some else are using the diffusers format and is also converting the .safetensors to a directory
+
+- problem is when software like InvokeAI or some else are using the diffusers format and is also converting the .safetensors to a directory
+
+- ## [What projects and plugins have implemented the separation of the frontend and backend in ComfyUI? · Issue · comfyanonymous/ComfyUI _202407](https://github.com/comfyanonymous/ComfyUI/issues/3973)
+  - Frontend: Extracting the ComfyUI frontend into a separate project.
+  - Backend: A GPU cluster receives tasks and runs them in ComfyUI worker, with multiple frontends sharing these GPU clusters.
+  - The number of frontend users is much greater than the number of backend GPU nodes, and user tasks are queued for execution.
+
+- Swarm does this, allowing both many-users and many-backends relatively cleanly.
+  - There are also various webservices that do things like dynamic backends, such as ComfyDeploy
 
 - ## [Execution Model Inversion · comfyanonymous/ComfyUI _202408](https://github.com/comfyanonymous/ComfyUI/pull/2666)
   - This PR inverts the execution model -- from recursively calling nodes to using a topological sort of the nodes. 
@@ -23,7 +34,7 @@ modified: 2025-08-23T11:42:36.444Z
   - 1. The implementation of lazy evaluation in nodes. or skip evaluation
   - 2. Dynamic expansion of nodes. This allows for the creation of dynamic "node groups". Specifically, custom nodes can return subgraphs that replace the original node in the graph. This is an incredibly powerful concept.
 
-# discuss-comfyui-diffusers
+# discuss-diffusers
 - ## 
 
 - ## 
@@ -62,10 +73,11 @@ modified: 2025-08-23T11:42:36.444Z
 
 - ## [Is Diffusers worth learning? Or stick with Comfy? : r/StableDiffusion _202412](https://www.reddit.com/r/StableDiffusion/comments/1h3r670/is_diffusers_worth_learning_or_stick_with_comfy/)
 - 👷: Diffusers is a bad library, there's a reason I didn't use it for ComfyUI and why no notable SD interface uses it. InvokeAI is the only notable SD interface that used it but I learned recently that they are transitioning away from it.
+  - With Diffusers i can run in one pass: txt2img, img2img (another checkpoint), Face fix, Upscale - it does work on 4Gb VRam. 
+  - With Comfy UI it is literally impossible. 
+  - Only when I saw what is possible with custom implementation, I realized how sh1tty all those "Web UIs".
 
 - It's much more useful to learn one comfyui api or forge api. Forge has a much cleaner api, but it's less flexible. There's just a lot of vram optimization that forge and comfyui do that are tedious to replicate.
-
-- With Diffusers i can run in one pass: txt2img, img2img (another checkpoint), Face fix, Upscale - it does work on 4Gb VRam. With Comfy UI it is literally impossible. Only when I saw what is possible with custom implementation, I realized how sh1tty all those "Web UIs".
 
 - From my small experience (i built backend using diffusers, FastApi).
   - What is good - very simple to use.
@@ -104,10 +116,149 @@ modified: 2025-08-23T11:42:36.444Z
 - I noticed the same result. Somehow comfyui is giving better results has better prompt understanding and quality
 
 - the samplers implementation and parameters are different, diffusers do not work with long prompts. if you make minimal example with raw python code and use short prompts - result will be same, it the output of the ML model after all.
-# discuss-comfyui-like
+# discuss-InvokeAI
+- resources-InvokeAI
+  - 🎯 [v4.2.6 _202407](https://github.com/invoke-ai/InvokeAI/releases/tag/v4.2.6)
+    - Checkpoint models work without conversion to diffusers
+    - The `diffusers` library now supports loading single-file (checkpoint) models directly, and we have removed the mandatory checkpoint-to-diffusers conversion step.
+    - The main user-facing change is that there is no longer a conversion cache directory.
+
 - ## 
 
 - ## 
+
+- ## 🆚🤔 With invoke AI when I scan a folder for models from stable diffusion is it copying them??? somewhere? Id like to use the models as is
+- https://discord.com/channels/1020123559063990373/1020123559831539744/1409616188539142254
+- there's an 'in-place' checkbox, if it's checked, they'll stay where they are and it'll use those
+  - otherwise it copies them, and uses those copies instead
+
+- yes I checked the inplace, however it is hash checking them?
+  - that's normal
+
+- for latest invoke v6, when i set Scan Folder to ~/Documents/ComfyUI/models  and mark in-inplace as checked, will invoke auto convert all my checkpoint/lora safetensors to internal diffusers format, so duplicated?
+  - thats are old info about invoke. 
+  - since version 4.2.6 "Checkpoint models work without conversion to diffusers"
+  - i still convert model that i use most of the time for faster loading time.
+
+- ## [Invoke.ai in Stability Matrix - way to share models? : r/StableDiffusion _202411](https://www.reddit.com/r/StableDiffusion/comments/1h0h5b3/invokeai_in_stability_matrix_way_to_share_models/)
+  - since Invoke in S. M. doesn't offer the normal model sharing option that all other GUI have, I wonder how other users of multiple AI GUI are dealing with the fact that you already have possibly two dozen great model files, each with 6 GB, on your hard-drive, that Invoke. AI simply doesn't 'see'. Duplicating them is obviously no option.
+
+- The reason why InvokeAI doesn't the share thing through the symlink is because there is simply no folder where the model could be shared to. That's why you have to add the whole Models folder through the Models tab in InvokeAI.
+  - Otherwise everything that InvokeAI downloads is in diffusers format.
+
+- That may be an explanation - but to me this is still no sufficient reason why they departed from the common way. I've got 7 different image generator GUI in 'Stability Matrix' - but only Invoke.ai is not playing by the rules here. 
+  - InvokeAI uses diffusers library, other UIs have their own implementations. It seems that they prefer if you use diffusers files that you can directly download just by inputting HF repository, while pointing to folders for everything else.
+
+- ## 🤔 [What is stopping InvokeAI from getting popular in this community? : r/StableDiffusion _202403](https://www.reddit.com/r/StableDiffusion/comments/1b4jbhq/what_is_stopping_invokeai_from_getting_popular_in/)
+- One of my biggest issues was my inability to re-use my models.
+- For me the main reason to nuke it and never reinstall is that it is based on the diffusers file format and needs duplicates of all models. 
+  - On top of that it doesn't even consider the huggingface_cache. More dupes. 
+  - Fast disk space is always tight so this is a weak link.
+  - Also diffusers samplers/schedulers are usually missing the latest, somewhat unmaintained and often are of lower quality. 
+- This is the same reason I've also stopped using it. I want to be able to just point it at the same folders with models, loras, etc that I use in all other programs.
+
+- InvokeAI was way behind in compatibility for ages - couldn't do LoRAs and it couldn't process past the 77th token in a prompt which put a lot of people off.
+
+- 👷: I’m one of the early folks on the project and now-CEO of our business. 
+  - It’s important to recognize that our teams focus is serving the professionals looking to use this for work. 
+  - They need something that is commercially licensed (a lot of research/frontier code and models in this space are not usable, or built for stable deployments) and useful for the day to day workflow.
+  - We’re building for the long term, making sure new features “just work” with everything else, and consolidating the core pro feature set into a single integrated deployment.
+  - The non-commercial stuff can be easily extended with custom nodes and workflows.
+  - AMD on Windows is still very much an issue - We've heard some folks report success w/ Docker installs, or running on WSL - But it requires a bit of fiddling.
+
+- Invoke's power lies in giving users the ability to control and guide the output in an interface that is easy and nice to use. 
+  - Invoke is not the only creative interface. Krita and Photoshop plugins do the same thing, and OpenOutpaint has even more features even if it is clunky to use. 
+
+- As an advanced user I couldn't use Invoke for a long time because it didn't even support embeddings
+  - Embeddings were definitely messy at one point. For some time they only supported single-vector TI, so effects would not match between Invoke and A1111. I think that was about a year ago now.
+  - One of the main problems is that there were core issues that didn't get fixed for a long time while they worked on refactoring their backend to run on Diffusers and Nodes. It was a good plan for the future, but it took so long that Invoke garnered a reputation for being behind the curve.
+
+- Infinite Canvas has some lovely features that are extremely polished, but Open Outpaint has better features (at time of testing summer of 2023) that makes me put up with its jank over InvokeAI:
+  - Composition layers
+  - A proper history list for the composition like Photoshop/Affinity/GiMP
+  - A history of prompts used in the composition
+  - Soft edge masking
+  - Eraser tool for masks
+  - Ability to export prompts and canvas and canvas resources and canvas history as an external file that you can later import. Like a .psd file for Stable Diffusion workflow
+- The lack of those sorts of things made me bounce hard off Invoke. Which is a pity, because Invoke does have a nice interface.
+
+- InvokeAI had a lot of things done right. Like, how embedding work. You write < and start writing and it searches from available embeddings. It seems a lot slicker and compact. While unified canvas offers very simple way of outpainting, cropping, changing composition fast. I have not tried inpainting models, because there is no need.
+
+- I did not like that they forced me to use diffusers format. I do not want to save all of my models twice on my hard drive and wait for all the conversion
+- Forced? It reads safetensor and ckpt just fine.
+  - Yeah, but it is just converting them to diffusers format and keeping the ckpt/safetensor on your drive also.
+
+- ## [Invoke AI saved me! My struggles with ComfyUI : r/StableDiffusion _202508](https://www.reddit.com/r/StableDiffusion/comments/1mxolbn/invoke_ai_saved_me_my_struggles_with_comfyui/)
+- I've got both Invoke and Comfy installed, but then I realised Comfy doesn't have a canvas or any easy way to add masks and guidances really, and the learning curve to get plugins for all that and installing everything properly is way too steep for someone who doesn't even know how to generate properly yet.
+  - I'm glad you understand: the canvas, layers etc... are the real thing that separates this as a usable tool compared to the ramshackle nonsense that ComfyUI demands
+- Comfy has a canvas. It's in the drop-down menu in the load image node. There's a hotkey shortcut too but I can't remember what it is. You just load the image, open the canvas, and draw on the mask. Simple.
+  - https://github.com/Azornes/Comfyui-LayerForge
+
+- That's the main idea behind InvokeAI: to have an interface for those who have worked with image editors in the past. The canvas is excellent; you can do whatever you want as an artist, quickly and easily.
+  - The only problem is that it updates very slowly and doesn't implement the latest advancements. For example, you can't use Flan-T5-XXL-FP16 like in Forge, and they still haven't implemented support for Chroma or Nunchaku.
+
+- If Comfy can solve its dependency and node issues, it will become a far more accessible and widely used tool. 
+  - Unlike Invoke, there's no easy canvas, layering system, or asset gallery to make working efficient. Having to scrub about in output folders is maddening.
+
+- I like Invoke and the people working on it seems decent, but they are to far behind with adding support for anything new. (Local support)
+  - They need to add svdquant/nunchaku support, though I doubt they will. And their upscale works but it’s far from perfect and slow.
+
+- I feel that comfy is a good tool for working with workflows, but a bad tool for working with images.
+- You get it. Professionals don't have time to be a node/workflow hobbyist and traverse the nightmare that is the UI. I think people misunderstand what these tools are. ComfyUI is a great developer playground for testing things out, but it's absolutely not an efficient and professional way to work.
+
+- ## [What do you think about invoke? : r/comfyui _202411](https://www.reddit.com/r/comfyui/comments/1h0hjha/what_do_you_think_about_invoke/)
+- I love it, but it uses more VRAM than Comfy.
+  - I honestly just like the simple UI and how it uses boards to organize images.
+
+- I personally think that integrating diffusion tools in existing drawing software like krita for example is a better idea than trying to do a whole photoshop interface from scratch like they are doing.
+  - The only thing they have over ComfyUI is better UX in some specific areas but I think we will surpass them soon if we have not already.
+
+- I couldn’t get invoke to perform in a ROCm setup. So it was super slow and buggy for me. 
+
+- ## [InvokeAi vs ComfyUi overall outputs quality : r/StableDiffusion _202507](https://www.reddit.com/r/StableDiffusion/comments/1m9pkg7/invokeai_vs_comfyui_overall_outputs_quality/)
+
+- Invoke was made and tuned for inpainting, Comfyui was made to run all open source ai model available.
+  - Invoke lean more into heavy inpainting so it's tools refined to make inpainting more easy. In comfy same can be done but probably will require a lot fiddling with workflows and custom nodes.
+
+- Considering that InvokeAI still doesn't support CN inpaint, I hardly use it for inpainting specifically.
+- Are you sure it doesn't support that? I'm inpainting at 1.0 denoise with a control layer that's using the controlnet union promax in invoke. The results are great. Is that not controlnet inpainting?
+  - Union may automatically do something that is beside the inpainting but other type of CN. Besides, you can do 1.0 denoising strength generation even without any CN model, so it doesn't even play a role here. My issue is that I want to use CN models and not whatever they are using instead.
+  - It also lacks specific preprocessors for inpaint
+
+- It can't be CN because it lacks preprocessors for inpainting, which uses both a mask and an image - control layers don't do that
+  - Denoising strength at 1.0 also isn't specific to CNs (Fooocus inpaint is a patch and not a CN). It just that CNs generally do it better.
+
+- some general tips:
+  - Inpainting works much better when the underlying pixels kinda-sorta match the color you're going for.
+  - Zoom in by shrinking the bounding box, and make sure autoscaling is turned on (default setting so if you haven't messed with it you should be good). Invoke renders small bounding box areas at full resolution and then scales down, which can help details come through better.
+  - But don't zoom in too much. Zooming in will give you better detail, but Invoke will lose the context of the surrounding area.
+  - If necessary, do two passes. The first "main" pass, and then a second low-denoise pass along the border to help things blend better.
+
+- Bonus part is that invoke also supports tablets with pen pressure sensitivity so it makes it a lot easier.
+
+- I like invoke but they don't support Chroma yet.
+  - Chroma has flash and quantitative models now too, so it's way improved.
+  - There is technically a node for Chroma in InvokeAI: https://gitlab.com/keturn/chroma_invoke But at this point it is easier to deal with it in ComfyUI
+
+- ## [ComfyUI or InvokeAI? : r/StableDiffusion _202505](https://www.reddit.com/r/StableDiffusion/comments/1koj2br/comfyui_or_invokeai/)
+- Invoke is better: 
+  - If you want direct control over the composition and output - the control layers and regional prompting are smooth and easy to work with
+  - If you do lots of inpainting and refinement
+  - If you want an easier, more polished experience
+
+- Comfy is better:
+  - If you have some specific piece of tech you want to use that isn't supported elsewhere
+  - If you want direct control over the render pipeline (ie: what happens during each step)
+  - You want to create automated workflows
+
+- Invoke has a much better UI, but is limited by what is implemented (models, etc.). Comfy does everything, but much more awkwardly.
+
+- I like InvokeAI for it's UI and canvas, but it's options limited. Want more options - use node builder. If I need node builder after all, why I needed InvokeAI, I go to more powerful and flexible ComfyUI.
+
+- ## [[bug]: Flux Extremely Slow in Invoke Compared to ComfyUI and Forge · Issue · invoke-ai/InvokeAI _202502](https://github.com/invoke-ai/InvokeAI/issues/7612)
+- I think the developers are not interested in optimizing and popularizing InvokeAI. There are a couple of similar issues here, and after months, there’s still no response from anyone.
+  - While I’ve always been pleasantly impressed by their frontend, their backend is unbelievably sluggish and outdated. 
+  - Invoke consistently runs slower while consuming more resources, and its features pale in comparison to even the basic ComfyUI (I'm not talking about the huge number of third-party nodes from enthusiasts).
 
 - ## [InvokeAI's alternatives? : r/StableDiffusion _202405](https://www.reddit.com/r/StableDiffusion/comments/1d4jbsp/invokeais_alternatives/)
   - It lacks a lot of important features for composition: such as layers, color filters and even integration with other AI image processors for segmentation-based selection/masking.
@@ -121,14 +272,18 @@ modified: 2025-08-23T11:42:36.444Z
   - For example, support for new models such as Cascade, SD3, PixArt, CosXL all appear first there (and some are still not supported with A1111). Same with fancy options such as AYS, PAG, IPAdapter, Faceid, etc.
 
 - Not as comprehensive but I use NMKD Stable Diffusion GUI locally. Its ok but it hasn't gotten an update in months. It doesn't have any of those newer features but it is fast
+# discuss-comfyui-like
+- ## 
 
+- ## 
 
-- 
-- 
-- 
-- 
-- 
-- 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
 
 - ## [What comes closest to ComfyUI for LLMs? : r/LocalLLaMA _202407](https://www.reddit.com/r/LocalLLaMA/comments/1e8k7q8/what_comes_closest_to_comfyui_for_llms/)
 - make comfyui custom node. it is super easy. or there are some LLM node for comfyui, so you can use them.
@@ -168,6 +323,13 @@ modified: 2025-08-23T11:42:36.444Z
 
 - What is the difference between dify and yours?
   - we focus on having evals built into the editor and we also support some nodes with certain prompting techniques like Best-of-N sampling that Dify doesn't support right now.
+
+- ## 🚀 [ComflowySpace: An open-source version of better ComfyUI | Hacker News _202403](https://news.ycombinator.com/item?id=39639418)
+- The non standard licensing puts me off in contributing or using this
+  - This is not Open Source. It is Source Available with usage restrictions. 
+  - But the license not only restricts commercial use, it fails to even allow modification or redistribution.
+
+- I look at the readme and I think it's just a minimal effort layer on top of ComfyUI. It's main point seems to be "easier installation" but it's not ComfyUI that's difficult to install. It's the GPU libraries. CPU based ComfyUI is a `git clone` and a `pip install -r requirements`.
 # discuss-image-generator-tool
 - ## 
 
@@ -193,9 +355,22 @@ modified: 2025-08-23T11:42:36.444Z
 - 
 - 
 
-# discuss-comfy-local-llama
+# discuss-comfyui
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Proposal: Replacing aiohttp with FastAPI in ComfyUI Backend · comfyanonymous/ComfyUI _202412](https://github.com/comfyanonymous/ComfyUI/discussions/5931)
+- our team at Nextcloud—where we were considering offering ComfyUI to the community—has currently put that plan on hold until the situation improves.
+
+- ## [ComfyUI backend questions · Issue · comfyanonymous/ComfyUI _202307](https://github.com/comfyanonymous/ComfyUI/issues/930)
+- On the latest you can "enable dev mode options" in the settings (gear beside the "Queue Size: ") this will enable a button on the UI to save workflows in api format.
+
+# discuss-comfy-local-llama
 - ## 
 
 - ## 

@@ -84,10 +84,20 @@ modified: 2025-02-21T17:17:42.225Z
   - Chat with AI to build React apps instantly. Made by the Firecrawl team.
   - 基于e2b sandbox实现
 
-- https://github.com/11cafe/jaaz /2kStar/NonCommercial/202408/python/ts
+- https://github.com/11cafe/jaaz /2.3kStar/NonComm/202508/python/ts
   - https://jaaz.app/
   - AI design agent, local alternative for Lovart. Canva + Cursor. 
   - Infinite Canvas & Visual Storyboarding Plan scenes with an unlimited canvas
+  - 社区许可证： 面向个人及组织有限使用的免费许可证。
+  - 商业许可证： 任何内部团队部署，或对代码的任何二次开发或修改，都必须获取商业许可证。
+  - [Jaaz's "completely" self-hosted? _202508](https://github.com/11cafe/jaaz/issues/252)
+    - if you use ollama and add comfyui workflows for image generations, it will be fully self hosted. Or add your own replicate api key, you can also self host
+  - [Self-hosted image generation and LLM API _202506](https://github.com/11cafe/jaaz/issues/21)
+    - you want to local host your stable diffusion models or Flus models? Yea we will support that through local comfyui image generations
+  - [WIP: support ComfyUI  _202506](https://github.com/11cafe/jaaz/pull/7)
+    - add ComfyUI installation & install dialog, add adm-zip
+    - Get the latest ComfyUI release information from GitHub
+    - refactor: Standalone comfyUI installation logic
 
 - https://github.com/onlook-dev/onlook /apache2/202502/ts
   - https://onlook.com/

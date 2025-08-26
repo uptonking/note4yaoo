@@ -13,17 +13,30 @@ modified: 2025-08-23T11:42:50.170Z
   - easy ui to start image-gen
   - 可扩展: custom-node support
   - 对最新模型的支持很快
+  - 对各种硬件的支持较好，包括nvidia/amd/cpu
   - 支持 sub-graph
   - 支持flow control，如conditional
   - 提供了ui和api
+  - 架构上支持extension: 内置了manager，支持custom_nodes
+  - 提供扩展，支持批量出图，如XYPlot
+  - 社区活跃，支持gguf
 
 - cons-comfyui
   - license: GPLv3
   - 一些复杂的workflow难以理解和维护
 
-- comfyui-wrapper
-  - SwarmUI
+- who is using #comfyui
+  - jaaz, comflowy
+  - SwarmUI: 支持comfyui/sd-webui
   - ClaraVerse
+
+- pros-InvokeAI
+  - canvas ui
+  - inpaint ux
+
+- cons-InvokeAI
+  - models/safetensors auto converted to diffusers > duplicated❗️
+  - features slow
 
 - pros-diffusers
   - flexible internals: pytorch, flax
@@ -38,6 +51,9 @@ modified: 2025-08-23T11:42:50.170Z
 - who is using #diffusers
   - SDNext
   - InvokeAI
+
+- stable-diffusion
+  - 相对于传统PS软件的优点: upscale还原度高，速度快
 
 - tips
   - 随着文本大模型能力的增强，prompt自动生成、memory管理基于coding实现更灵活，comfyui支持的能力有限
