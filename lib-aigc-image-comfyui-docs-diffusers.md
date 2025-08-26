@@ -24,6 +24,7 @@ modified: 2025-08-23T11:42:50.170Z
 - cons-comfyui
   - license: GPLv3
   - 一些复杂的workflow难以理解和维护
+  - 对于嵌入式文生图/改图的场景，comfyui的工作流图不如invokeAI的canvas易用
 
 - who is using #comfyui
   - jaaz, comflowy
@@ -31,6 +32,7 @@ modified: 2025-08-23T11:42:50.170Z
   - ClaraVerse
 
 - pros-InvokeAI 📌
+  - license: apache2
   - canvas ux like photoshop
   - inpaint by layers
   - 能观察到图像从噪音点到目标图的绘制过程
@@ -63,6 +65,10 @@ modified: 2025-08-23T11:42:50.170Z
 - stable-diffusion
   - 相对于传统PS软件的优点: upscale还原度高，速度快
 
+- openrouter for image
+  - 图像模型的配置比文本llm更复杂，场景更多样
+  - 难点是sd系列模型相关的clip/encoder/vae种类繁多，不如直接用comfyui-api
+
 - tips
   - 随着文本大模型能力的增强，prompt自动生成、memory管理基于coding实现更灵活，comfyui支持的能力有限
   - 在线图片生成或编辑的架构, 涉及到模型下载与扩展下载，目前没有类似ollama的统一方案, 还涉及到GPU/CPU硬件支持，只有成熟方案才处理过相关问题
@@ -77,7 +83,7 @@ modified: 2025-08-23T11:42:50.170Z
   - 软件元数据在 invokeRoot/databases/invokeai.db
   - 生成的图片在 invokeRoot/outputs/images
 
-- [Inpainting: How do I remove an element from an existing image? : Invoke Support Portal](https://support.invoke.ai/support/solutions/articles/151000201404-inpainting-how-do-i-remove-an-element-from-an-existing-image-)
+- [Inpainting: How do I remove an element from an existing image? : Invoke Support Portal](https://support.invoke.ai/support/solutions/articles/151000201404)
   - 尝试根据教程移除草地上的鸟，当 Denoising Strength 设为0.5时没效果，设为0.9时才移除
 # docs-diffusers
 - A diffusion model combines multiple components to generate outputs in any modality based on an input, such as a text description, image or both.

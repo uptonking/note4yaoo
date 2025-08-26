@@ -17,6 +17,9 @@ modified: 2023-02-08T07:20:48.475Z
   - LocalAI act as a drop-in replacement REST API that’s compatible with OpenAI API specifications for local inferencing. 
   - It allows you to run LLMs, generate images, audio (and not only) locally or on-prem with consumer grade hardware, supporting multiple model families. 
   - Does not require GPU.
+  - text-backend: llama.cpp, vLLM, MLX
+  - audio-backend: whisper.cpp, kokoro
+  - image-backend: stablediffusion.cpp, diffusers
   - [Add Local ComfyUI/SD base diffusers step with "json API" PLZ _202502](https://github.com/mudler/LocalAI/issues/4818)
     - 不支持
 
@@ -120,6 +123,11 @@ modified: 2023-02-08T07:20:48.475Z
   - 国内ip无法访问
 
 ## gpt-apps
+
+- https://github.com/enricoros/big-AGI /6.6kStar/MIT/202508/ts
+  - https://big-agi.com/
+  - AI suite powered by state-of-the-art models and providing advanced AI/AGI functions
+  - New AIX framework lets us scale features we couldn't before
 
 - https://github.com/n4ze3m/dialoqbase /MIT/202401/ts
   - https://dialoqbase.n4ze3m.com/

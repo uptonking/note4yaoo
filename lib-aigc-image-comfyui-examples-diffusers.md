@@ -14,14 +14,20 @@ modified: 2025-08-23T11:43:35.904Z
 
 - fans-comfyui
   - https://github.com/cubiq/ComfyUI_essentials
+
+- resources
+  - https://github.com/search?type=repositories&q=stable-diffusion
 # popular
 - https://github.com/invoke-ai/InvokeAI /25.8kStar/apache2/202508/python/ts
   - https://invoke-ai.github.io/InvokeAI/
   - Invoke is a leading creative engine for Stable Diffusion models 
+  - 交互逻辑很特别，支持canvas/workflow/form/queue
+  - 后端依赖fastapi、pydantic、asyncio、torch、diffusers、typing、starlette
+  - 前端依赖@reduxjs/toolkit、redux-undo、@nanostores/react、pragmatic-drag-and-drop、@xyflow/react、@dagrejs/dagre、@dagrejs/graphlib、konva、ag-psd、async-mutex、cmdk、dockview、framer-motion、i18next、idb-keyval、jsondiffpatch、linkifyjs、perfect-freehand、react-hook-form、react-virtuoso、zod、socket.io
+  - 软件元数据在sqlite `invokeRoot/databases/invokeai.db`, 生成的图片在文件夹 invokeRoot/outputs/images
   - Invoke has a Community Edition that is freely available under a commercially-friendly license (Apache 2) and a Professional Edition available
   - Invoke is a powerful, secure, and easy-to-deploy generative AI platform for professional studios that provides a flexible workflow builder with multi-user sharing and permissions, a step-by-step custom AI model trainer
   - Invoke ensures that all integrated open-source technologies are commercially friendly, making it viable to use for commercial projects.
-
   - 🆚 [Why Invoke AI is the Best ComfyUI Alternative](https://www.invoke.com/comparisons/comfyui-vs-invokeai)
   - 🎯 [Invoke AI 3.0 Release : r/StableDiffusion _202307](https://www.reddit.com/r/StableDiffusion/comments/155sm30/invoke_ai_30_release/)
     - As of 3.0, all of the developments we’ve been working on are now available to install and use - And, to demonstrate our commitment to open-source, we’ve updated our license to the most explicitly permissive license available - Apache 2.0.
@@ -31,6 +37,19 @@ modified: 2025-08-23T11:43:35.904Z
     - UI Components for Invoke's applications.
     - Customized Chakra-UI components.
   - https://github.com/Millu/invoke-workflows
+  - https://github.com/invoke-ai/launcher /apache2/202508/ts
+    - The launcher is a desktop application for Windows, macOS (Apple Silicon) and Linux.
+    - It can install, update, reinstall and run Invoke Community Edition. It is self-contained, so you don't need to worry about having the right python version installed.
+    - 依赖@electron-toolkit/typed-ipc、electron-builder、node-pty、xterm、@emotion/react、vite
+    - Using the launcher to update Invoke
+    - Updating the launcher itself
+    - If installation fails, retrying the install in Repair Mode may fix it. 
+    - Like the install script, the launcher creates and manages a normal python virtual environment.
+    - The launcher is an electron application with React UI. We bundle `uv` with the build and then call it to install python, create the app `venv`, and run the app.
+  - The "old" scripts will be phased out over time. The goal is to support 3 ways to install and run Invoke:
+    - Launcher
+    - Docker
+    - Manual (e.g. create a `venv` manually, install the `invokeai` package, run it as a script)
 
 - https://github.com/comfyanonymous/ComfyUI /85.4kStar/GPLv3/202508/python
   - https://www.comfy.org/
@@ -233,6 +252,16 @@ modified: 2025-08-23T11:43:35.904Z
     - Real-time AI-driven Visual Experiences
   - [Add Dreamshaper and Turbo server as fallbacks for image generation _202504](https://github.com/pollinations/pollinations/issues/1837)
     - Currently, the image generation pipeline only falls back to ComfyUI when Cloudflare Flux fails. This enhancement adds two additional fallback options
+
+- https://github.com/DaWe35/image-router /202508/js
+  - https://imagerouter.io/
+  - https://docs.imagerouter.io/
+  - A simple API router for image generation models. 
+  - This service acts as a proxy between your application and other image generation APIs, simplifying the process of using different models.
+  - OpenAI compatible API endpoint
+  - Rate limiting
+  - Integrate ImageRouter into Open WebUI with the ready-made ImageRouter Plugin.
+  - [I built Image Router - A Unified Interface for AI Image Models (Like OpenRouter, but for Images) : r/SideProject _202504](https://www.reddit.com/r/SideProject/comments/1k3tcsa/i_built_image_router_a_unified_interface_for_ai/)
 
 - https://github.com/guoyww/AnimateDiff /11.7kStar/apache2/202407/python/inactive
   - https://animatediff.github.io/
@@ -870,6 +899,7 @@ modified: 2025-08-23T11:43:35.904Z
 
 - https://github.com/Stability-AI/StableStudio /9kStar/MIT/202306/ts/inactive
   - StableStudio is Stability AI's official open-source variant of DreamStudio, our user interface for generative AI.
+  - 被同公司的SwarmUI所替代
   - It is a web-based application that allows users to create and edit generated images. 
   - What's the difference between StableStudio and DreamStudio?
     - All "over-the-wire" API calls have been replaced by a plugin system which allows you to easily swap out the back-end.

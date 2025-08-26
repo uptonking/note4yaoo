@@ -12,6 +12,25 @@ modified: 2025-08-23T11:42:36.444Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [API server framework for text-to-image generation? : r/StableDiffusion _202412](https://www.reddit.com/r/StableDiffusion/comments/1hlgkvs/api_server_framework_for_texttoimage_generation/)
+  - I'm looking to self host text-to-image models (eg. SD3.5), and would like to use these models via an OpenAI API-compatible server, similar to what vLLM offers 
+  - To use vLLM for online serving, you can start an OpenAI API-compatible server
+
+- This space is a mess.
+  - ComfyUI has no "official" API but everyone abuses the internal one
+  - Automatic1111 and KoboldCpp both implement "sdimg" API which seems to be as close of a standard API as stable diffusion engines ever got to and is likely what you're looking for
+  - OpenAI also implements an image generation API for dall-e but it is really limited and frustratingly model specific.
+  - Honorable mention goes to sd-server which has its own API
+- I have an adapter for litellm to be able to use kobold/automatic1111 endpoint but using OpenAI format, it just forwards parameters it doesn't understand so I'm kind of abusing it but this lets me unify things at least a little bit, I'm planning an sd-server adapter as well
+
 - ## [Best way to share models between ComfyUI, Forge, and Automatic1111 : r/StableDiffusion _202403](https://www.reddit.com/r/StableDiffusion/comments/1b8gc4o/best_way_to_share_models_between_comfyui_forge/)
 - You could change the config files for each package to all point to the same directories (or use symlinks).
 

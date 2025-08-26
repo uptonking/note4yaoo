@@ -156,7 +156,26 @@ modified: 2025-08-16T14:12:24.416Z
 
 - ## 
 
-- ## 
+- ## [OpenRouter... but for images? : r/WritingWithAI _202504](https://www.reddit.com/r/WritingWithAI/comments/1keso5x/openrouter_but_for_images/)
+- vendors: replicate, fal.ai, segmind, novelai...
+
+- I used Flux-1.1 models through Replicate. The last ones I created with ChatGPT 4o which is very good in understanding compositions and with texts like title, sub title or author name. Upscaling can be done with replicate agai
+
+- I just built this, it's open source: https://github.com/DaWe35/image-router /202508/js
+
+- [Is there an OpenRouter like equivalent for image models? : r/LocalLLaMA _202406](https://www.reddit.com/r/LocalLLaMA/comments/1dcdzw5/is_there_an_openrouter_like_equivalent_for_image/)
+- https://www.together.ai/ has basic SDXL , SD 2.1 and realistic vision 3.0
+
+- I built Image Router, which is actually inspired by OpenRouter and you guys.
+  - It has 3 free models, they are available to anyone after a sign up.
+
+- None of these are OpenRouter equivalents for visual/audio media models because they are just single providers(or act like one). 
+  - The unique thing about OpenRouter is the transparency and you can select which provider to use, it auto routes to the best balance of quality & cost, so its competitively priced (for open weight models).
+  - Open weight models create a free market, why there isn't a well known one for image/video/audio/etc models, is surprising to me
+
+- Poe provides a number of image models, they offer an API
+
+- [openrouter.ai but for images? : r/OpenWebUI _202411](https://www.reddit.com/r/OpenWebUI/comments/1gle9l8/openrouterai_but_for_images/)
 
 - ## 🆚 [Any alternatives to Automatic1111 or ComfyUI that DON'T Use Python : r/StableDiffusion _202502](https://www.reddit.com/r/StableDiffusion/comments/1ivpbno/any_alternatives_to_automatic1111_or_comfyui_that/)
   - Python is such a pain in a$$ with its dependency hell, requiring specific versions of everything. The slightest thing can break it.
@@ -1157,6 +1176,94 @@ Q8（8 位）	    16GB+	   接近原始版本
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Stable Diffusion 的技术原理是什么？ - 知乎 ](https://www.zhihu.com/question/577079491)
+- 2022年可谓是AIGC（AI Generated Content）元年，上半年有文生图大模型DALL-E2和Stable Diffusion，下半年有OpenAI的文本对话大模型ChatGPT问世，这让冷却的AI又沸腾起来了
+- Stable Diffusion不仅是一个完全开源的模型（代码，数据，模型全部开源），而且是它的参数量只有1B左右，大部分人可以在普通的显卡上进行推理甚至精调模型。
+- SD是CompVis、Stability AI和LAION等公司研发的一个文生图模型，它的模型和代码是开源的，而且训练数据LAION-5B也是开源的。SD在开源90天github仓库就收获了33K的stars
+- SD是一个基于latent的扩散模型，它在UNet中引入text condition来实现基于文本生成图像。
+  - SD的核心来源于Latent Diffusion这个工作，常规的扩散模型是基于pixel的生成模型，而Latent Diffusion是基于latent的生成模型，它先采用一个autoencoder将图像压缩到latent空间，然后用扩散模型来生成图像的latents，最后送入autoencoder的decoder模块就可以得到生成的图像。  
+- 基于latent的扩散模型的优势在于计算效率更高效，因为图像的latent空间要比图像pixel空间要小，这也是SD的核心优势。
+- 文生图模型往往参数量比较大，基于pixel的方法往往限于算力只生成64x64大小的图像，比如OpenAI的DALL-E2和谷歌的Imagen，然后再通过超分辨模型将图像分辨率提升至256x256和1024x1024；
+  - 而基于latent的SD是在latent空间操作的，它可以直接生成256x256和512x512甚至更高分辨率的图像。
+
+- SD模型的主体结构如下图所示，主要包括三个模型：
+  - autoencoder：encoder将图像压缩到latent空间，而decoder将latent解码为图像；
+  - CLIP text encoder：提取输入text的text embeddings，通过cross attention方式送入扩散模型的UNet中作为condition；
+  - UNet：扩散模型的主体，用来实现文本引导下的latent生成
+- 对于SD模型，其autoencoder模型参数大小为84M，CLIP text encoder模型大小为123M，而UNet参数大小为860M，所以SD模型的总参数量约为1B。
+
+- SD的训练是多阶段的（先在256x256尺寸上预训练，然后在512x512尺寸上精调），不同的阶段产生了不同的版本：
+  - SD v1.1：在laion2B-en数据集上以256x256大小训练237, 000步，上面我们已经说了，laion2B-en数据集中256以上的样本量共1324M；然后在laion5B的高分辨率数据集以512x512尺寸训练194, 000步，这里的高分辨率数据集是图像尺寸在1024x1024以上，共170M样本。
+  - SD v1.5：以SD v1.2为初始权重，在improved_aesthetics_5plus数据集上采用CFG以512x512尺寸训练595, 000步数。
+- SD v1.3、SD v1.4和SD v1.5其实是以SD v1.2为起点在improved_aesthetics_5plus数据集上采用CFG训练过程中的不同checkpoints，目前最常用的版本是SD v1.4和SD v1.5。
+
+- SD的训练是采用了32台8卡的A100机器（32 x 8 x A100_40GB GPUs），所需要的训练硬件还是比较多的，但是相比语言大模型还好
+
+- ## 🧮⏳ [[Paper Reading] AIGC - GAN 和 stable diffusion - 知乎 _202401](https://zhuanlan.zhihu.com/p/677297538)
+- 重点方向 (截至 2023.04 月):
+  - Diffusion model 的推理加速。降低门槛，提高部署的性价比。
+  - LoRA, ControlNet。 即，参数高效微调 PEFT。在更多的细分领域谋求落地。
+  - Bigger model，接入更好的 text 模型。
+
+- 个人看法：
+  - 当前，diffusion model 是主流。数学理论、模型效果、提升空间，都明显优于 GAN。
+  - GAN 的鼎盛时期在 2018-2019 年期间，StyleGAN-3 是代表作。短时间内，想要翻身压住 diffusion model，有点难。
+  - GAN 训练不稳定的问题，在大模型时代，更要命。这么多年了，也没点实质性进展。
+
+- 关键的评估指标：
+  - 真实度。比如，画手、画脸的细节能力。
+  - 多样性。输出的图片类型更丰富。
+  - 可控性。精准控制生成自己想要的图像。一般体现在，图像的语义编辑能力，Text input，ControlNet，LoRA
+  - 算力消耗。推理速度。
+
+- Diffusion 领域的特点：
+  - Paper 非常难读。数学基础太完善 => 关于数学演进的 paper 很多，很容易掉进坑里，一周爬不出来
+  - 要抓住主线：模型架构和产品 feature 相关的演进。
+  - 多模态。有没有多模态，怎么打通的 text-image。
+  - 高清大图的真实度
+  - 可控生成的支持水平。典型任务：
+    - 画给定的类别，比如猫、狗。
+    - 画指定细节，比如，头发的颜色、手。
+
+- 闭源模型的 Paper，我们应该关注什么？-- 研判技术趋势。对开源模型的启发，既可能来自技术差异，更有可能来自技术共性。
+
+- 共性：
+  - Text feature -> image feature。一般是选了某个多模态的预训练模型，与 diffusion model 关系不大。典型的是 CLIP。
+  - Image 生成。 都是 diffusion model。特别是 OpenAI 的 Dall-E，一年内，从 VQ-VAE 换成了 diffusion model。
+  - Backbone 都是 UNet，但 building block 部分的换成了 transformer block。
+  - 高精大图离不开超分辨率。更具体的说：1024 * 1024 分辨率，基本都不是直接画的。
+
+- 总结：
+  - DALL-E 2 和 Imagen 哪一个更好，好在哪里？很难给结论。相对靠谱的方法是，找 N 个人盲测，统计大家认为哪个更好。openAI 等都是用了这个方法。
+  - 一般认为，后出现的 ImageGen 更好。这个结论的本质是，text 理解能力更好。即，T5-XXL 比 CLIP 厉害。与 diffusion 的关系不大。
+  - 刷新对 AI 的认知：AI 到底更擅长什么？曾经，大家普遍认为是重复劳动。现在发现，艺术创作好像更厉害。
+  - 朱神：only scale matters。其他的东西，比如模型的种类和训练的技巧，都只是锦上添花罢了。
+  - 朱神：diffusion model 就像 17-18 年的 GAN，应该至少还有 2-3 年的时间去充分发挥他的潜力。
+
+- 图片生成，是少有的还没有被 Transformer 无脑刷榜的领域，而且，奠基之作尚未看到。知乎: DSA已死 
+- 图片生成，可以解决 pixel prediction 的问题。比如，语义分割，画地图等。 应用领域可以非常广，有想象空间。
+
+- Diffusion 涉及的数学概念：
+  - KL 散度
+  - 在计算分布的相似度时，一个常见的指标是KL散度（KL-Divergence）
+  - Score Function
+  - 随机微分方程 SDE 和 常微分方程 ODE
+  - Score Matching 方法
+
+- GAN 与 Diffusion 之外
+  - AE(auto-encoder) -> DAE(Denoising autoencoder) 模型
+  - DAE：给输入的 x 进行一定程度的打乱(Denoising)，得到 corrupted input，然后去重建原始的 x。
+  - 解决过拟合等问题。
+  - 效果非常好 -> 间接证明: 图像特征的冗余太多了。
+  - 弊端：生成的 bottleneck，是一个固定的特征，不是分布，没法做采样。
+
+- VAE 把 AE 学到的 latent space，换成学习一个 distribution，而不再是学习固定特征。
+  - 学习 distribution 之后，大家就认为 VAE 优美了很多。出了很多后续工作，比如，VQ-VAE（DALL-E 1 的基础）
 
 - ## [ComfyUI_修剪模型的方法 - 知乎 _202502](https://zhuanlan.zhihu.com/p/16255414246)
 - 有一些模型的精度为 fp32 的，以 SD1.5 模型为例，一般修剪过的 fp16 模型大小为 2G，如果是 fp32 的，则可能会达到 4G。
