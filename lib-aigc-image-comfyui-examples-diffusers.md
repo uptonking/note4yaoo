@@ -21,11 +21,16 @@ modified: 2025-08-23T11:43:35.904Z
   - Invoke has a Community Edition that is freely available under a commercially-friendly license (Apache 2) and a Professional Edition available
   - Invoke is a powerful, secure, and easy-to-deploy generative AI platform for professional studios that provides a flexible workflow builder with multi-user sharing and permissions, a step-by-step custom AI model trainer
   - Invoke ensures that all integrated open-source technologies are commercially friendly, making it viable to use for commercial projects.
+
   - 🆚 [Why Invoke AI is the Best ComfyUI Alternative](https://www.invoke.com/comparisons/comfyui-vs-invokeai)
   - 🎯 [Invoke AI 3.0 Release : r/StableDiffusion _202307](https://www.reddit.com/r/StableDiffusion/comments/155sm30/invoke_ai_30_release/)
     - As of 3.0, all of the developments we’ve been working on are now available to install and use - And, to demonstrate our commitment to open-source, we’ve updated our license to the most explicitly permissive license available - Apache 2.0.
   - [ComfyUI to InvokeAI - Invoke](https://invoke-ai.github.io/InvokeAI/nodes/comfyToInvoke/)
     - InvokeAI's backend and ComfyUI's backend are very different which means Comfy workflows are not able to be imported into InvokeAI.
+  - https://github.com/invoke-ai/ui-library
+    - UI Components for Invoke's applications.
+    - Customized Chakra-UI components.
+  - https://github.com/Millu/invoke-workflows
 
 - https://github.com/comfyanonymous/ComfyUI /85.4kStar/GPLv3/202508/python
   - https://www.comfy.org/
@@ -438,6 +443,14 @@ modified: 2025-08-23T11:43:35.904Z
   - Works in ComfyUI's execution engine, not just frontend
   - Conditional Logic: Advanced condition evaluation
 
+- https://github.com/taabata/ComfyCanvas /2024011/python/js/inactive
+  - Canvas to use with ComfyUI
+  - select a part of the image to be third output in OutputCanvasNode. https://github.com/taabata/LCM_Inpaint_Outpaint_Comfy.git
+
+- https://github.com/Lerc/canvas_tab /BSD/202401/python/js/inactive
+  - ComfyUI canvas editor page
+  - provides two nodes to provide a full page editor that runs in another tab.
+
 - https://github.com/zanllp/sd-webui-infinite-image-browsing /1.2kStar/MIT/202508/python/ts/vue
   - A fast and powerful image/video browser for Stable Diffusion webui / ComfyUI / Fooocus / NovelAI / StableSwarmUI, featuring infinite scrolling and advanced search capabilities using image parameters.
   - Once caching is generated, images can be displayed in just a few milliseconds.
@@ -663,6 +676,11 @@ modified: 2025-08-23T11:43:35.904Z
 - https://github.com/l3lackcurtains/Comfy_UI_Backend /202506/python
   - A Python-powered API backend featuring a custom Comfy UI, seamlessly integrated with Docker and Kubernetes for modern containerization and orchestration. 
   - Scalable, reliable, and built for efficient deployment
+
+- https://github.com/d3x-at/sd-parsers /MIT/202504/python
+  - A Python library to read metadata from images created by Stable Diffusion.
+  - Prompts as well as some well-known generation parameters are provided as easily accessible properties (see Output).
+  - support: sd-webui, ComfyUI
 # workflows
 - https://github.com/pwillia7/Basic_ComfyUI_Workflows /202508
   - Basic Stable Diffusion Workflows for ComyUI using minimal custom nodes
@@ -883,6 +901,13 @@ modified: 2025-08-23T11:43:35.904Z
     - Forge is not using Comfy as backend. But adopt lot of techniques and code used in comfy.  some of addon modules are just copied from comfy with some modification.
     - i agree, comfyui is NOT the backend 1:1; but most/a lot of the code used in the backend is comfy's code (with a1111 compat fixes which have been known to comfy users for a while now)
   - https://github.com/Panchovix/stable-diffusion-webui-reForge /202508/archived
+
+- https://github.com/licyk/term-sd /GPL/202508/sh
+  - 多平台 Stable Diffusion 部署，管理脚本
+  - Term-SD 是一款基于 Dialog 实现前端界面显示的 AI 管理器，支持安装，管理以下软件：sd-webui, comfyui, InvokeAI, fooocus
+  - Term-SD 支持在 Linux，Windows，MacOS 上
+  - https://github.com/licyk/sd-webui-all-in-one /80Star/GPLv3/202508/jupyter
+    - 支持部署多种 WebUI 的 Jupyter Notebook，支持部署以下 WebUI：sd-webui, comfyui, InvokeAI,fooocus
 # diffusers
 - https://github.com/huggingface/diffusers /30.4kStar/apache2/202508/python
   - https://huggingface.co/docs/diffusers
@@ -919,6 +944,19 @@ modified: 2025-08-23T11:43:35.904Z
     - A simple Gradio-based interface for stable-diffusion.cpp.
   - https://github.com/fszontagh/sd.cpp.gui.wx /MIT/cpp
     - A cross-platform GUI for Stable Diffusion C++, built using wxWidgets.
+# InvokeAI
+- https://github.com/CodeGandee/invokeai-py-client /MIT/202508/python
+  - A Python client library to operate InvokeAI system through its web API
+  - This client does not re‑implement the UI; instead it leverages the exported workflow artifact and selected REST endpoints to let GUI users automate large, repeatable runs in Python.
+  - https://github.com/VeyDlin/invokeai-python
+
+- https://github.com/Echsecutor/gen_ai_container /MIT/202508/python/js
+  - This is a minimalist container running invoke web UI. 
+  - I have just turned the installation manual at https://invoke-ai.github.io/InvokeAI/installation/manual/ into a Dockerfile.
+  - See the Comfy UI Docs for how to use Comfy UI
+
+- https://github.com/kraussian/invoke-civitai /apache2/202504/python
+  - Convert metadata from InvokeAI for automatic recognition when uploading to CivitAI
 # more
 - https://github.com/Comfy-Org/registry-backend /GPL/202502/go
   - https://registry.comfy.org/

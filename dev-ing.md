@@ -305,6 +305,9 @@ console.log(
 
 - what's the weather in guangzhou china? give me some food and outdoor-activities suggestions according to weather temperature
 
+- lawn
+  - a big park for resting and relaxing, there are little trees around a big lawn, some birds are resting in the lawn, The lawn and the trees around it both need pruning
+
 - prompts-logo-excel-like
   - create a product logo for my excel-like webapp, 
   - the logo brand color should be like green/teal/indigo/..., or any good color that giving a cold and formal feeling, 
@@ -359,6 +362,12 @@ test('mock test', () => {
 
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
+
+## 0826
+
+- [convolution_overrideable not implemented. · Issue · comfyanonymous/ComfyUI _202401](https://github.com/comfyanonymous/ComfyUI/issues/2532)
+  - I checked the dimensions of my original drawing and realized it was too big, when I changed it to the dimensions recommended by the model, I didn't have that problem anymore
+  - I have tried different python version(3.10, 3.11, 3.12) met same problem as here. but when I reduce the size of image, will pass the VAE Encode and success.
 
 ## 0821
 

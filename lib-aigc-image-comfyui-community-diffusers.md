@@ -118,6 +118,7 @@ problem is when software like InvokeAI or some else are using the diffusers form
 - the samplers implementation and parameters are different, diffusers do not work with long prompts. if you make minimal example with raw python code and use short prompts - result will be same, it the output of the ML model after all.
 # discuss-InvokeAI
 - resources-InvokeAI
+  - [Adding Models and LoRAs to Invoke](https://support.invoke.ai/support/solutions/articles/151000170960-adding-models-and-loras-to-invoke)
   - 🎯 [v4.2.6 _202407](https://github.com/invoke-ai/InvokeAI/releases/tag/v4.2.6)
     - Checkpoint models work without conversion to diffusers
     - The `diffusers` library now supports loading single-file (checkpoint) models directly, and we have removed the mandatory checkpoint-to-diffusers conversion step.
@@ -126,6 +127,22 @@ problem is when software like InvokeAI or some else are using the diffusers form
 - ## 
 
 - ## 
+
+- ## Can I transfer ComfyUI workflows to Invoke? _202503
+- https://discord.com/channels/1020123559063990373/1350456642759692378/1350461612808601652
+  - You can not because ComfyUI workflow != invokeai workflow.
+
+- https://discord.com/channels/1020123559063990373/1020123559831539744/1351671554924085248
+  - Nope, different app, different workflows.
+
+- ## [[enhancement]: Description about ececuting workflow. · Issue · invoke-ai/InvokeAI _202507](https://github.com/invoke-ai/InvokeAI/issues/8340)
+  - I am trying to use it as GUI-less engine through REST API, similarly to ComfyUI. The my client application is in Java SE.
+
+- The workflow format is an enriched data structure that represents an execution graph and other metadata. It is not executed directly. 
+  - The client builds a graph from the workflow and that is what you enqueue. Suggest running the app in GUI mode and inspecting the network traffic to see the data format for the `enqueue_batch` endpoint.
+  - you can use a web browser's dev tools (network tab) to inspect the payloads sent to the `enqueue_batch` endpoint. The endpoint is hit when you click Invoke.
+  - Invoke's REST API is designed for Invoke as an application, not for programmatic use. We don't have docs on how to use it programmatically. That said, it's not a super complicated API or anything, and we do have many users who have written their own frontends. You'll need to implement polling and/or websockets to retrieve graph execution outputs.
+  - Invoke is a developed as a user-facing application, not an API. The HTTP and socket APIs are focused on providing a good user experience to application users. I cannot comment on whether or not comfy or A1111 are any better or worse.
 
 - ## 🆚🤔 With invoke AI when I scan a folder for models from stable diffusion is it copying them??? somewhere? Id like to use the models as is
 - https://discord.com/channels/1020123559063990373/1020123559831539744/1409616188539142254
