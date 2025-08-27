@@ -299,7 +299,8 @@ modified: 2025-08-16T14:12:24.416Z
 
 - ## 
 
-- ## 
+- ## 🌰 [Type Experiments --- Controlnet and IPAdapter in ComfyUI : r/StableDiffusion _202404](https://www.reddit.com/r/StableDiffusion/comments/1cf6v29/type_experiments_controlnet_and_ipadapter_in/)
+- All you need is a cool font and written image as black font and white background. Thanks OP for this cool idea.
 
 - ## [ComfyUI standalone and Stability Matrix : r/StableDiffusion _202408](https://www.reddit.com/r/StableDiffusion/comments/1eidfbn/comfyui_standalone_and_stability_matrix/)
   - I wanted to ask if any of you have tested whether installing ComfyUI through Stability Matrix is slower than the standalone ComfyUI? 
@@ -1162,14 +1163,6 @@ Q8（8 位）	    16GB+	   接近原始版本
 
 - Either Ultimate SD Upscale Or Supir
   - Ultimate SD upscale is good and plays nice with lower-end GFX cards, Supir is great but very resource-intensive.
-
-- 
-- 
-- 
-- 
-- 
-- 
-
 # discuss-model-tuning
 - ## 
 
@@ -1179,7 +1172,80 @@ Q8（8 位）	    16GB+	   接近原始版本
 
 - ## 
 
-- ## 
+- ## [Controlnet & IP Adapter Question : r/StableDiffusion _202401](https://www.reddit.com/r/StableDiffusion/comments/19akg3a/controlnet_ip_adapter_question/)
+- ControlNet is a platform, and IP Adapter is one of its models. 
+  - IP Adapter is to transfer the style of one image to another. It can be used to help with consistency as well, like using IP Adapter on a masked image where only the clothes are showing to transfer them to another image, etc.
+
+- ## [A quick comparison between Controlnets and T2I-Adapter: A much more efficient alternative to ControlNets that don't slow down generation speed. : r/StableDiffusion _202302](https://www.reddit.com/r/StableDiffusion/comments/11don30/a_quick_comparison_between_controlnets_and/)
+  - For controlnets the large (~1GB) controlnet model is run at every single iteration for both the positive and negative prompt which slows down generation time considerably and taking a bunch of memory.
+  - For T2I-Adapter the ~300MB model is only run once in total at the beginning which means it has pretty much no effect on generation speed.
+  - T2I-Adapter at this time has much less model types than ControlNets but with my ComfyUI You can combine multiple T2I-Adapters with multiple controlnets if you want.
+- That's not correct. There's guidance strength that determines how many iterations it should be run for. Set it to 0.1 and with ten steps it will also only run once.
+
+- the ControlNet extension does support T2I-adapters.
+
+- ## [T2I 及 IP-Adapter - 知乎 _202312](https://zhuanlan.zhihu.com/p/675464021)
+- 在垫图方面，IP-Adapter 效果比 Controlnet reference only 及 SD 原生的 img2img 效果要好很多。并且可以配合 controlnet 的其他风格（如 canny或者 depth）来实现多维度的图片生成控制
+- 回顾 LDM 中的 img-to-img 部分，LDM 中图像与文字交互的方式为单纯的 cross-attention
+
+- IP-Adapter 论文中描述道，image prompt adapter 效果不好的一个主要因素是，图片的特征不能被很好的利用，大部分的 adapter 采用简单的 concatenated 的方式来注入图片特征信息。于是 IP-Adapter 提出了 decoupled cross-attention。
+
+- ## [IP Adapter seems more powerful in SD 1.5 than SDXL ... am I imagining things? : r/StableDiffusion _202503](https://www.reddit.com/r/StableDiffusion/comments/1j1cp8a/ip_adapter_seems_more_powerful_in_sd_15_than_sdxl/)
+  - I think SD 1.5's implementation of IP Adaptor was stronger than SDXL's. The thing is, I can't really tell whether its a checkpoint construction issue, the particular source material I'm using or just my personal aesthetic preferences
+  - One thing that I can see in the architecture is that the SD 1.5 implementation appears to be a single stage, whereas SDXL is two. I'm not sure how FLUX does it, its quite nice in the Krea platform but I haven't gotten results as good on my desktop.
+
+- Yes, 100%. SD1.5 got the strongest toolsets imo, and the rest have been pale imitators by comparison. Some better workflows have adapted to the weaknesses of later models, and there are excellent results that can be obtained from models with great prompt comprehension, etc, but 1.5 really was the king of infrastructure and I don't know that we'll have that again.
+
+- Ipa is King for sd15. For sdxl it depends.. Flux got some new Tools recently, with the 'redux' style model you can merge images/styles or just recreate a similiar img. And for ipa-faceid results you can run the redux with pulid (faceId for sdxl, kinda (like ecomId or indtandid)
+
+- IPAdapter sucks on SDXL, but if you combine it with v2 Photomaker+, it's pretty insane. 
+
+- For XL it works quite well. For Pony and IL it goes so so, while Pony performing noticeable worse with IPA than IL.
+
+- ## 🆚 [Difference/use case between ipadapter and control net? : r/StableDiffusion _202312](https://www.reddit.com/r/StableDiffusion/comments/18g5iuf/differenceuse_case_between_ipadapter_and_control/)
+- IPAdapter: It's similar to a LoRA. It learns the shapes and colors of your input images (it can take multiple) and makes the neural network paint in that style. It won't replicate things perfectly, but it will generally be good.
+  - IP Adapter is good for capturing a general color scheme and style while defining any pose you can imagine.
+  - You want a character that follows certain style from other picture, you use IPadapter.
+- ControlNet: It analyzes shapes and colors (depends on the controlnet) of the input image and then forces the neural network to draw in those locations with those colors.
+  - ControlNet is good for forcing a specific pose.
+- There is also img2img, which is where you input an image to the neural network instead of giving it empty latent noise. Then you tell it to skip X of the early denoising steps. 
+  - As a result, it will draw directly on the input image you gave it. The more steps you skip, the more you keep the input image. 
+  - This technique is very inflexible and almost cannot change pose or colors, except if you use a very low img2img strength so that very little of the input is kept, to allow the network to remix the image more. And even then, it will struggle to move things around in the scene.
+  - Img2img is great for anything where you want the exact same composition. Such as when you're repairing images. 
+
+- So what's the best one of all these? None. I like all 3. I even mix them.
+  - if you have the time, training a LoRA is very worthwhile since it's the only way to truly make the neural network learn a specific body shape or aspect. So you can combine LoRA with all of the above for even better results. 
+  - In fact, LoRA is strictly better than IP-Adapter in every situation, except to save time, since IP-Adapter is basically "lazy 1-image short-training LoRa with so-so results".
+
+- There is a new variant of IP-Adapter now which combines its old ability to paint with a new ability to learn face structure/shape.
+  - The new model is called FaceID. And it is best to combine it with the old model to get the best results.
+  - It's very good. Basically perfect clone of face shape and hair, and about 70% clone of facial features. If you then also combine it with reactor (inswapper) face swap (with GFPGANv1.4 face restore), you will get the most realistic face clones so far, since doing a swap on such a closely matched face creates great results.
+
+- [Difference/use case between ipadapter and control net? : r/comfyui _202312](https://www.reddit.com/r/comfyui/comments/18giazk/differenceuse_case_between_ipadapter_and_control/)
+- ControlNet sets fixed boundaries for the image generation that cannot be freely reinterpreted, like the lines that define the eyes and mouth of the Mona Lisa face
+  - these boundaries can be enforced more or less strictly (via ControlNet weights) and enforced earlier or later in the image generation process (via ControlNet initial and final steps), but they are unavoidable.
+- IPAdapter, instead, defines a reference to get inspired by. "Paint a room roughly like Van Goth's Bedroom in Arles, trying to reuse similar color palette, similar position of the objects, etc., but don't strictly follow the original image."
+  - Just like for ControlNet, IPAdapter has weights to define how strictly the model must follow the reference image you provided, but it's an all-or-nothing process. Either I try to copy in full, or not.
+  - Recently, IPAdapter introduced support for mask attention, which gives you the possibility to alter the all-or-nothing process
+- All of this means that IPAdapter can do things that ControlNet cannot, and vice versa.
+- If I want to "capture" the subject in a source image where he is standing, and generate the image of a subject that looks roughly the same on a horse, IPAdapter can help me do that. ControlNet cannot.
+  - Conversely, if I want to generate the image of a clown that is exactly in the same pose as the Mona Lisa, looking exactly in the same direction, with exactly the same shape of clothes (but not necessarily the same clothes), ControlNet can help with that. IPAdapter cannot.
+
+- Controlnet involves providing image-based input to control aspects that are difficult to express verbally when generating images.
+  - IPAdapter, on the other hand, allows extracting information from images, enabling it to be used in a prompt-like manner.
+
+- At a high level, you can think of IPAdapter as giving you the ability to express a text prompt in the form of an image.
+  - ControlNet is similar, but instead of just trying to transfer the semantic information of the source image as if it were a text prompt, ControlNet instead seeks to guide diffusion according to "instructions" provided by the control vector, which is usually an image but does not have to be.
+- ControlNet is a more heavyweight approach and can completely change the diffusion process to do crazy stuff, whereas IPAdapter is pretty lightweight and seeks only to influence diffusion as would a text prompt.
+- While they are both trained on frozen diffusion models, here's how they differ:
+  - IPAdapter aims to learn four 1024-wide feature vectors that are applied using cross-attention to each layer the diffusion model
+  - ControlNet is a bit more comprehensive. It creates a parallel set of layers running alongside the models' frozen U-Net. 
+
+- controlnets use pretrained models for specific purposes. for example openpose models to generate models with similar pose. 
+  - ipadapter are using generic models to generate similar images. for example to generate an image from an image in a similar way. 
+  - combining the two can be used to make from a picture a similar picture in a specific pose.
+- But you could also put an image inside the control net, and make an image from an image?
+  - yes. but the image you put inside the control net is usually something like a t-bone pose. or specific things like face attributes. A model trained on these specific attributes is then used.
 
 - ## [Stable Diffusion 的技术原理是什么？ - 知乎 ](https://www.zhihu.com/question/577079491)
 - 2022年可谓是AIGC（AI Generated Content）元年，上半年有文生图大模型DALL-E2和Stable Diffusion，下半年有OpenAI的文本对话大模型ChatGPT问世，这让冷却的AI又沸腾起来了

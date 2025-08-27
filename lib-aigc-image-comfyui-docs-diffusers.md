@@ -56,7 +56,7 @@ modified: 2025-08-23T11:42:50.170Z
 
 - cons-diffusers
   - diffusers在未调优的条件下结果不如comfyui，因为comfyui内置了很多参数/prompt
-  - comfyui-custom-node 移植到 diffusers 需要手动设置参数和转换
+  - comfyui-custom_nodes 移植到 diffusers 需要手动设置参数和转换
 
 - who is using #diffusers
   - SDNext
@@ -68,6 +68,7 @@ modified: 2025-08-23T11:42:50.170Z
 - openrouter for image
   - 图像模型的配置比文本llm更复杂，场景更多样
   - 难点是sd系列模型相关的clip/encoder/vae种类繁多，不如直接用comfyui-api
+  - image-gen的逻辑还需要考虑 VLM 生成图片描述prompt所采用的模型，过于灵活
 
 - tips
   - 随着文本大模型能力的增强，prompt自动生成、memory管理基于coding实现更灵活，comfyui支持的能力有限
@@ -76,6 +77,10 @@ modified: 2025-08-23T11:42:50.170Z
 # dev-xp
 
 ## comfyui
+
+### draft
+
+- extension-manager: batch enable/disable
 
 ## InvokeAI
 
@@ -135,7 +140,19 @@ modified: 2025-08-23T11:42:50.170Z
 - 
 - 
 - 
+
+# docs-concepts
+- [IPAdapter · vladmandic/sdnext Wiki](https://github.com/vladmandic/sdnext/wiki/IPAdapter)
+  - IP-Adapter is a tool designed for style transfer with minimal resource usage. It provides an efficient way to clone faces or apply image transformations.
+  - Low Resource Usage: The IP-Adapter is lightweight, with memory requirements under 100MB for SD 1.5 and 700MB for SD-XL, making it an efficient choice for style transfer tasks.
+  - Style Transfer: It offers powerful style transfer capabilities, allowing you to clone faces or apply various image styles.
+  - Integration with ControlNet: IP-Adapter can be combined with ControlNet for more stable results, especially useful for batch processing or video tasks.
+
 - 
+- 
+- 
+- 
+
 - 
 - 
 - 

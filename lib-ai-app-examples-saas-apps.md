@@ -51,6 +51,19 @@ modified: 2025-02-21T17:17:42.225Z
   - 依赖django、langchain、pgvector、Vue
   - Flexible Orchestration: Equipped with a powerful workflow engine, function library and MCP tool-use, enabling the orchestration of AI processes to meet the needs of complex business scenarios.
 
+- https://github.com/PySpur-Dev/PySpur /5.4kStar/apache2/202507/python/ts
+  - https://pyspur.dev/
+  - A visual playground for agentic workflows: use it to build agents, execute them step-by-step and inspect past runs.
+  - Build the agent in Python code or via UI
+  - Human in the Loop: Persistent workflows that wait for human approval.
+  - Structured Outputs: UI editor for JSON Schemas.
+  - RAG: Parse, Chunk, Embed, and Upsert Data into a Vector DB.
+  - Multimodal: Support for Video, Images, Audio, Texts, Code.
+  - Python-Based: Add new nodes by creating a single Python file.
+  - By default, this will start PySpur app at http://localhost:6080 using a sqlite database.
+  - Using Local Models with Ollama: PySpur only works with models that support structured-output and json mode. Most newer models should be good
+  - [ComfyUI for LLMs : r/comfyui _202412](https://www.reddit.com/r/comfyui/comments/1hgfy3g/comfyui_for_llms/)
+
 - https://github.com/nocode-js/sequential-workflow-designer /1.2kStar/MIT/202502/ts/NoDeps/svg
   - https://nocode-js.com/
   - Customizable no-code component for building flow-based programming applications or workflow automation

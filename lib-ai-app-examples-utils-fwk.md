@@ -161,6 +161,7 @@ modified: 2025-02-21T18:20:42.624Z
     - Pluggable AI: Gemini 2.5 by default, but swap in Claude/Mistral via API keys
     - Tools: Google Search API + room to add LlamaIndex, custom APIs, etc.
 
+
 ## deep-research
 
 - https://github.com/bytedance/deer-flow /16.1kStar/MIT/202508/python/ts
@@ -180,6 +181,7 @@ modified: 2025-02-21T18:20:42.624Z
   - a simple, configurable, fully open source deep research agent that works across many model providers, search tools, and MCP servers.
   - By default it uses the Tavily search API.
 # ai-api
+
 # browser-use
 - https://github.com/browser-use/browser-use /57.9kStar/MIT/202504/python/js
   - https://browser-use.com/
@@ -287,6 +289,22 @@ modified: 2025-02-21T18:20:42.624Z
   - You can now find FastMCP as part of the official Model Context Protocol Python SDK
     - this repository is no longer maintained.
 
+- https://github.com/AIDC-AI/Pixelle-MCP /271Star/MIT/202508/python
+  - https://pixelle.ai/
+  - Open-Source Multimodal AIGC Solution based on ComfyUI + MCP + LLM
+  - An AIGC solution based on the MCP protocol, seamlessly converting ComfyUI workflows into MCP tools
+  - Server-side is built on ComfyUI, inheriting all capabilities from the open ComfyUI ecosystem
+  - MCP Server provides functionality based on the MCP protocol, supporting integration with any MCP client (including but not limited to Cursor, Claude Desktop, etc.)
+  - MCP Client is developed based on the `Chainlit` framework, inheriting Chainlit's UI controls
+  - Integrated the LiteLLM framework, adding multi-model support for Gemini, DeepSeek, Claude, Qwen, and more
+  - Flexible Deployment: Supports standalone deployment of Server-side only as MCP Server, or standalone deployment of Client-side only as MCP Client, or combined deployment
+  - Unified Configuration: Uses YAML configuration scheme, one config file manages all services
+  - https://github.com/Chainlit/chainlit /10.5kStar/apache2/202508/python/ts
+    - https://docs.chainlit.io/
+    - Build python production-ready conversational AI applications in minutes
+    - As of May 1st 2025, the original Chainlit team has stepped back from active development.
+    - 依赖langchain、LlamaIndex、ChromaDB
+
 - https://github.com/mark3labs/mcp-filesystem-server /go
   - Go server implementing Model Context Protocol (MCP) for filesystem operations.
   - 通过这个MCP就可以操作本地文件系统了，由于这个是go编写的，go能交叉编译的架构特别多，所以理论上大部分系统都能运行这个MCP Server。
@@ -336,7 +354,6 @@ modified: 2025-02-21T18:20:42.624Z
   - Built-in Chat: Conversational interface with context-aware responses
   - Pluggable LLMs: Works with OpenAI, Anthropic, or local models
   - Offline-First: No internet required after video generation
-
 # proxy
 - https://github.com/lymanzhao/Ollama-serve /202503/python
   - 一个 Ollama转发代理，用于为原生 Ollama 服务添加 API 密钥认证功能。

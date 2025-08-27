@@ -388,6 +388,12 @@ modified: 2025-08-11T08:47:56.335Z
   - Cloudflare Workers for development and hosting
   - Cloudflare D1 for checkpointing and state
 
+- https://github.com/cqzyys/lang-agent /apache2/202508/python/ts
+  - 以LangGraph为底层技术来实现的一个可有限编程的Agent配置平台
+  - 传统的类WorkFlow项目一般只会将上一个节点的输出作为下一个节点的输入，Lang-Agent允许自定义状态变量，可以作用于节点以及条件边的输入和输出，从而实现更精准的控制。
+  - LangGraph, FastApi, HeroUI, ReactFlow
+  - ✨ Lang-Agent的设计理念更接近于comfyUI，而不是dify和coze，鼓励使用者开发适应自身业务的节点
+
 - https://github.com/enso-labs/orchestra /apache2/202506/python/ts
   - https://demo.enso.sh/
   - AI Agent Orchestrator built on LangGraph powered by MCP & A2A
@@ -414,11 +420,6 @@ modified: 2025-08-11T08:47:56.335Z
 - https://github.com/yokingma/deepresearch /apache2/202507/ts
   - 基于LangGraph构建的DeepResearch Agent，可以搭配任意搜索引擎、OpenAI接口兼容的模型
   - The code logic referenced Google's Gemini LangGraph Project.
-
-- https://github.com/cqzyys/lang-agent /apache2/202508/python/ts
-  - 以LangGraph为底层技术来实现的一个可有限编程的Agent配置平台
-  - 传统的类WorkFlow项目一般只会将上一个节点的输出作为下一个节点的输入，Lang-Agent允许自定义状态变量，可以作用于节点以及条件边的输入和输出，从而实现更精准的控制。
-  - LangGraph, FastApi, HeroUI, ReactFlow
 
 - https://github.com/langtail/ai-orchestra /202502/ts
   - Simple orchestration for AI Agents built around Vercel's `streamText`. 
@@ -549,6 +550,22 @@ modified: 2025-08-11T08:47:56.335Z
   - Knowledge Graph Backbone – All data is seamlessly structured into a powerful knowledge graph.
   - Enterprise-Grade Connectors – Scalable, reliable, and built for secure access across your organization.
   - Modular & Scalable Architecture – Every service is loosely coupled to scale independently and adapt to your needs.
+
+- https://github.com/AIDC-AI/Pixelle-MCP /271Star/MIT/202508/python
+  - https://pixelle.ai/
+  - Open-Source Multimodal AIGC Solution based on ComfyUI + MCP + LLM
+  - An AIGC solution based on the MCP protocol, seamlessly converting ComfyUI workflows into MCP tools
+  - Server-side is built on ComfyUI, inheriting all capabilities from the open ComfyUI ecosystem
+  - MCP Server provides functionality based on the MCP protocol, supporting integration with any MCP client (including but not limited to Cursor, Claude Desktop, etc.)
+  - MCP Client is developed based on the `Chainlit` framework, inheriting Chainlit's UI controls
+  - Integrated the LiteLLM framework, adding multi-model support for Gemini, DeepSeek, Claude, Qwen, and more
+  - Flexible Deployment: Supports standalone deployment of Server-side only as MCP Server, or standalone deployment of Client-side only as MCP Client, or combined deployment
+  - Unified Configuration: Uses YAML configuration scheme, one config file manages all services
+  - https://github.com/Chainlit/chainlit /10.5kStar/apache2/202508/python/ts
+    - https://docs.chainlit.io/
+    - Build python production-ready conversational AI applications in minutes
+    - As of May 1st 2025, the original Chainlit team has stepped back from active development.
+    - 依赖langchain、LlamaIndex、ChromaDB
 # workflow-not-by-langgraph
 - https://github.com/callstackincubator/flows-ai /240Star/MIT/202507/ts
   - https://flows-ai.callstack.com/
