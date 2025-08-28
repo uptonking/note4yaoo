@@ -211,10 +211,12 @@ modified: 2021-08-30T18:56:18.632Z
   - [What would SQLite look like if written in Rust? — Part 3_202104](https://medium.com/the-polyglot-programmer/what-would-sqlite-look-like-if-written-in-rust-part-3-edd2eefda473)
   - [Column or row oriented store](https://github.com/sqlrite/design/discussions/6)
 
-- https://github.com/penberg/limbo /MIT/202407/rust
+- https://github.com/tursodatabase/turso /13kStar/MIT/202508/rust
+  - https://github.com/penberg/limbo /legacy
   - Limbo is a work-in-progress, in-process OLTP database management system, compatible with SQLite.
   - In-process OLTP database engine library
   - Asynchronous I/O support with io_uring
+  - 已合并: [Rename Limbo to Turso Database _202506](https://github.com/tursodatabase/turso/pull/1835)
   - https://x.com/penberg/status/1809295488933384615 _202407
     - Me and @Peristocles1 have been hacking on an in-process database in Rust that aims for SQLite compatibility, but with an asynchronous architecture (but no Tokio) to support things like io_uring
     - I am not using async Rust because I want more control over memory allocations, for example. With futures, it becomes hard because you end up creating bunch of closures implicitly.

@@ -114,6 +114,7 @@ modified: 2025-08-23T11:43:35.904Z
 
 - https://github.com/mcmonkeyprojects/SwarmUI /3kStar/MIT/202508/csharp/js
   - SwarmUI (formerly StableSwarmUI), A Modular Stable Diffusion Web-User-Interface, with an emphasis on making powertools easily accessible, high performance, and extensibility
+  - 未直接使用comfyui的代码库，通过请求交互; 前端js实现，有挂载对象到window上
   - Beginner users will love Swarm's primary Generate tab interface with a variety of powerful features. 
   - Advanced users may favor the Comfy Workflow tab to get the unrestricted raw graph, but will still have reason to come back to the Generate tab for convenience features (image editor, auto-workflow-generation, etc) and powertools (eg Grid Generator).
   - 💡 has the option to use as a backend AUTOMATIC1111/stable-diffusion-webui (AGPL).
@@ -203,10 +204,13 @@ modified: 2025-08-23T11:43:35.904Z
 - https://github.com/StableCanvas/comfyui-client /121Star/MIT/202506/ts/NoDeps
   - https://stablecanvas.github.io/comfyui-client/
   - Javascript api Client for ComfyUI that supports both NodeJS and Browser environments.
+  - 可将workflow json转换为js代码, 而comfyui-sdk只处理export-as-api-format格式的json
   - This client provides comprehensive support for all available RESTful and WebSocket APIs, with built-in TypeScript typings for enhanced development experience. 
   - Introduces a human-readable and highly customizable workflow interface inspired by this issue and https://github.com/Chaoses-Ib/ComfyScript
-  - https://stablecanvas.github.io/tool-w2c/
-    - Online convert workflow to code
+  - https://github.com/StableCanvas/tool-w2c
+    - https://stablecanvas.github.io/tool-w2c/
+    - Online convert workflow to `comfyui-client` js code
+    - Upload or drag & drop a ComfyUI .json (API format) or .png workflow file.
   - https://github.com/devniel/nextjs-comfyui-example /202408/ts/inactive
     - 🌰 An example of a project calling ComfyUI via websockets
   - https://github.com/itsKaynine/comfy-ui-client /MIT/202309/ts/inactive
@@ -215,6 +219,7 @@ modified: 2025-08-23T11:43:35.904Z
 - https://github.com/comfy-addons/comfyui-sdk /196Star/MIT/202508/ts
   - TypeScript SDK for seamless interaction with the ComfyUI API. 
   - This SDK significantly simplifies the complexities of building, executing, and managing ComfyUI workflows, all while providing real-time updates and supporting multiple instances
+  - 可使用js builder模式创建workflow， 也可以导入api-format格式的json(workflow)
   - Construct and manipulate intricate ComfyUI workflows effortlessly using a fluent, intuitive builder pattern
   - Multi-Instance Management: Handle a pool of ComfyUI instances with ease, employing flexible queueing strategies for optimal resource utilization.
   - Subscribe to WebSocket events for live progress tracking, image previews, and error notifications.
@@ -223,6 +228,29 @@ modified: 2025-08-23T11:43:35.904Z
   - 🌰 Examples: Includes practical examples for Text-to-Image (T2I), Image-to-Image (I2I), and complex multi-node workflows
   - Auth: Supports Basic Auth, Bearer Token, and Custom Authentication Headers
   - Flexible Node Bypassing: Strategically bypass specific nodes in your workflows during generation, enabling advanced customization
+  - [Loading an existing ComfyUI workflow? _202501](https://github.com/comfy-addons/comfyui-sdk/issues/23)
+    - The workflow should be exported as API format, you can export it from the ComfyUI web interface
+
+- https://github.com/sugarkwork/Comfyui_api_client /17Star/MIT/202506/python
+  - A Python client library for interacting with ComfyUI via its API. 
+  - Supports both synchronous and asynchronous operations with automatic workflow format conversion.
+  - Both sync (ComfyUIClient) and async (ComfyUIClientAsync) implementations
+  - Automatically converts workflow.json to API format
+  - Direct image upload to ComfyUI server
+
+- https://github.com/Chaoses-Ib/ComfyScript /571Star/MIT/202506/python
+  - A Python frontend and library for ComfyUI
+  - Serving as a human-readable format for ComfyUI's workflows.
+  - Converting workflows from ComfyUI's web UI format to API format without the web UI.
+  - Directly running the script to generate images. The main advantage of doing this than using the web UI is being able to mix Python code with ComfyUI's nodes
+  - Scripts can also be used to generate ComfyUI's workflows and then used in the web UI or elsewhere. 
+  - Scripts can be automatically translated from ComfyUI's workflows. See transpiler for details.
+  - With ComfyScript, ComfyUI's nodes can be used as functions to do ML research
+
+- https://github.com/pydn/ComfyUI-to-Python-Extension /2kStar/MIT/202507/python/js
+  - a powerful tool that translates ComfyUI workflows into executable Python code.
+  - Designed to bridge the gap between ComfyUI's visual interface and Python's programming environment
+  - this tool streamlines the process of implementing ComfyUI workflows in Python.
 
 - https://github.com/pollinations/pollinations /2.7kStar/MIT/202508/python
   - https://pollinations.ai/
@@ -258,6 +286,8 @@ modified: 2025-08-23T11:43:35.904Z
   - Integrate ImageRouter into Open WebUI with the ready-made ImageRouter Plugin.
   - 依赖prisma
   - [I built Image Router - A Unified Interface for AI Image Models (Like OpenRouter, but for Images) : r/SideProject _202504](https://www.reddit.com/r/SideProject/comments/1k3tcsa/i_built_image_router_a_unified_interface_for_ai/)
+    - It also has a unified API, so you can switch between models in your own code without any changes.
+    - Image Router does not store any images you generate. This means you need to download anything you want to keep
 
 - https://github.com/AIDC-AI/ComfyUI-Copilot /2.5kStar/MIT/202508/python/ts
   - 👾 An AI-powered custom node for ComfyUI designed to enhance workflow automation and provide intelligent assistance
@@ -268,12 +298,13 @@ modified: 2025-08-23T11:43:35.904Z
   - Workflow Rewriting：Optimizes the current workflow based on your description, such as adjusting parameters, adding nodes, and improving logic.
   - Enhanced Workflow Generation：Understands your requirements more accurately and generates tailored workflows
   - Upgraded Agent Architecture：Now aware of your local ComfyUI environment, Copilot delivers optimized, personalized solutions.
+  - [Local AI model _202502](https://github.com/AIDC-AI/ComfyUI-Copilot/issues/12)
+    - 👷20250827: Now you can use your local LLAMA, and any fuction, like workflow generation, node suggestion, model suggestion are supported with local LLM now. 
   - [Please add local Ai model support (no internet connection required) _202504](https://github.com/AIDC-AI/ComfyUI-Copilot/issues/57)
     - The adoption of the locally deployed model you mentioned is indeed a good idea, and we have considered related optimizations.
     - However, because there are many external data warehouses behind our project, and the entire project uses the Agent tool calling framework, the use of a smaller LLM model will cause the accuracy of the response to drop significantly, so we have abandoned this iterative solution in the short term.
     - In the future, from the perspective of upgrading the entire framework, we will also consider using a small large language model to drive the entire project, and then make relevant updates.
     - I think that adding integration with `litellm` should be reasonable, there are many MLLMs and LLMs that are supported in vllm that can be called through it. If someone is going to run comfyui in a solid computing environment, it is quite reasonable to self-host LMs
-  - [Local AI model _202502](https://github.com/AIDC-AI/ComfyUI-Copilot/issues/12)
 
 - https://github.com/16131zzzzzzzz/EveryoneNobel /1.4kStar/apache2/202411/python/inactive
   - A flexible framework powered by ComfyUI for generating personalized Nobel Prize images.
@@ -288,12 +319,19 @@ modified: 2025-08-23T11:43:35.904Z
 - tips
   - midjourney alternative
 
-- https://github.com/ammaarreshi/openjourney /135Star/MIT/202507/ts
+- https://github.com/ammaarreshi/openjourney /135Star/MIT/202507/ts/提交少
   - https://openjourney.replit.app/
   - Open-source clone of the MidJourney web interface featuring real AI image and video generation powered by Google's Gemini SDK. 
   - 👾 Use Imagen 4 to generate images and Veo 2 and 3 for image and text to video with audio.
   - 4-image grid layout matching MidJourney's design
   - 依赖nextjs、framer-motion、shadcn-ui
+
+- https://github.com/Nutlope/blinkshot /955Star/NALic/202508/ts
+  - https://www.blinkshot.io/
+  - An open source real-time AI image generator. 
+  - Powered by Flux through Together.ai 👾 .
+  - Flux Schnell from BFL for the image model
+  - Together AI for inference
 
 - https://github.com/Nutlope/logocreator /5.5kStar/NALic/202501/ts/inactive
   - https://www.logo-creator.io/
@@ -302,17 +340,52 @@ modified: 2025-08-23T11:43:35.904Z
   - nextjs + shadcn + redis + clerk + plausible
   - [license · Issue · Nutlope/logocreator](https://github.com/Nutlope/logocreator/issues/16)
 
-- https://github.com/Nutlope/blinkshot /NALic/202505/ts
-  - https://www.blinkshot.io/
-  - An open source real-time AI image generator. 
-  - Powered by Flux through Together.ai 👾 .
-  - Flux Schnell from BFL for the image model
-  - Together AI for inference
-
-- https://github.com/premieroctet/photoshot /3.8kStar/MIT/202412/ts
+- https://github.com/premieroctet/photoshot /3.8kStar/MIT/202412/ts/inactive
   - open-source AI avatar generator web app
   - 依赖nextjs、chakra-ui、prisma
   - 👾 Replicate, a platform for running machine learning models in the cloud
+
+- https://github.com/jaaronkot/picprose /719Star/MIT/202508/ts
+  - https://picprose.pixpark.net/
+  - a powerful cover image generator designed for bloggers, content creators, developers, and designers
+  - 🖼️ Access high-quality images directly through the Unsplash API
+  - Flexible Editing - Customize titles, author info, fonts, colors, and transparency
+  - Real-time Preview - See all changes instantly with a WYSIWYG interface
+  - 依赖 dom-to-image、react-photo-album、nextjs、nextui、react-infinite-scroll-component
+  - Developer Icons - Built-in tech-related icons perfect for technical article covers
+  - Multiple Export Formats - Support for JPG, PNG, and SVG exports
+
+- https://github.com/virgoone/next-money /374Star/MIT/202504/ts/inactive
+  - https://fluxaipro.art/
+  - Flux AI Image generator
+  - 比 ComfyUI 更易于使用
+  - Empower your next project with the stack of Next.js 14, Prisma, Supabase, Clerk Auth, Resend, React Email, Shadcn/ui, and Stripe.
+
+- https://github.com/Nutlope/loras-dev /344Star/202501/ts/inactive
+  - https://loras.dev/
+  - An open source real-time AI image generator. 
+  - Powered by Flux through Together.ai.
+
+- https://github.com/Stability-AI/StableStudio /9kStar/MIT/202306/ts/inactive
+  - StableStudio is Stability AI's official open-source variant of DreamStudio, our user interface for generative AI.
+  - 被同公司的SwarmUI所替代
+  - It is a web-based application that allows users to create and edit generated images. 
+  - What's the difference between StableStudio and DreamStudio?
+    - All "over-the-wire" API calls have been replaced by a plugin system which allows you to easily swap out the back-end.
+    - you can create your own plugin and use StableStudio with any back-end you want
+  - [`ComfyUI` plugin _202306](https://github.com/Stability-AI/StableStudio/pull/36)
+  - [StableStudio.app downloaded the wrong compyui _202307](https://github.com/Stability-AI/StableStudio/issues/96)
+    - macos m1, After running StableStudio.app, will download the Windows version of the ComfyUI installation package.
+  - [StableStudio vs StableSwarmUI _202308](https://github.com/Stability-AI/StableStudio/discussions/106)
+    - As StableSwarmUI and StableStudio are both projects with StabilityAI, I'm curious if one will be abandoned in favor of the other
+  - https://github.com/jtydhr88/ComfyUI-StableStudio
+    - a ComfyUI plugin that provides a user interface of StableStudio
+  - 🍴 forks
+  - https://github.com/altx-labs/StableStudio /202507/ts
+  - https://github.com/gryphus-lab/StableStudio /bot
+  - https://github.com/crazydevlegend/StableStudio /202310/ts
+  - https://github.com/AndyKong207/DrawStudio /202308
+  - https://github.com/codeoria/StableStudio
 
 - https://github.com/rogeriochaves/pictureit-editor /38Star/MIT/202304/ts/inactive
   - an open-source design editor, currently in beta version, designed to be a studio to help you create and iterate on digital art using a variety of AI models available as tools in the editor
@@ -324,7 +397,30 @@ modified: 2025-08-23T11:43:35.904Z
 - https://github.com/yardimli/ImageGeneratorForComfyUI /MIT/202508/php/blade
   - Client/Server for generating images with comfyUI and Flux, use OpenRouter for creating prompts, run ComfyUI locally. 
   - Run generator on the web. Use S3 to transfer generation from local to the web. Use Replicate to upscale.
+
+- https://github.com/replicate/inpainter /425Star/MIT/202508/js
+  - https://inpainter.app/
+  - A web GUI built with Next.js for inpainting with AI models using Replicate's API
+  - A web GUI for inpainting with Ideogram v2 and Ideogram v2 Turbo using the Replicate API.
+  - Next.js server-side API routes for talking to the Replicate API
+
+- https://github.com/dabasajay/Image-Caption-Generator /183Star/MIT/202307/js/inactive
+  - A very simple placeholder image generator with zero dependencies. 
+  - Returns a data URI (or raw SVG source) as a string for use in templates.
 # examples
+- https://github.com/d4N-87/ComfyUI-Workflow-Inspector /7Star/MIT/202508/ts
+  - https://d4n-87.github.io/ComfyUI-Workflow-Inspector/
+  - A React application to inspect ComfyUI workflow metadata embedded in PNG, WebP, MP4, FLAC, and JSON files.
+  - Supports workflows from PNG, WebP, MP4, FLAC, and JSON files.
+  - Workflow graph rendered using `LiteGraph.js`, with link colors and node names as faithful as possible to ComfyUI (based on object_info.json).
+  - ComfyUI Look & Feel: Polished user interface inspired by ComfyUI.
+
+- https://github.com/Nutlope/description-generator /311Star/NALic/202501/ts/inactive
+  - https://product-descriptions.vercel.app/
+  - Generate descriptions from product images in multiple languages with AI
+  - Powered by Together AI and Llama 3.2 Vision.
+  - S3 for image storage
+
 - https://github.com/Tiefflieger06/comfyui-simple-frontend /GPL/202506/python/inactive
   - A basic web frontend for ComfyUI with the goal of being as simple to use as possible
   - Prompt-Based Image Generation: Users can input text prompts to generate images.
@@ -349,6 +445,7 @@ modified: 2025-08-23T11:43:35.904Z
 - https://github.com/Visionatrix/Visionatrix /149Star/AGPL/202507/ts/vue/参考架构
   - https://visionatrix.github.io/VixFlowsDocs/
   - Simplify your AI media generation workflows with Visionatrix—an intuitive interface built on top of ComfyUI
+  - 可安装新comfyui，也可管理现有的comfyui
   - ⏳ Versioned and upgradable workflows.
   - Scalability: Run multiple instances with simultaneous task workers for increased productivity.
   - Multi-User Support: Configure for multiple users with ease and integrate different user backends.
@@ -356,7 +453,7 @@ modified: 2025-08-23T11:43:35.904Z
   - Run as a service with backend endpoints for smooth project integration.
   - Easy integrate LoRAs from CivitAI into your flows.
   - Official Docker images and a pre-configured Docker Compose file.
-  - [Working modes - Visionatrix Documentation](https://visionatrix.github.io/VixFlowsDocs/AdminManual/WorkingModes/working_modes/)
+  - 🏠 [Working modes - Visionatrix Documentation](https://visionatrix.github.io/VixFlowsDocs/AdminManual/WorkingModes/working_modes/)
     - By default, Vix launches with all components integrated (Server + Worker + UI) for quick and easy use on a single computer.
     - A simple and understandable User Interface
     - A server component, namely, the backend
@@ -371,6 +468,25 @@ modified: 2025-08-23T11:43:35.904Z
     - Yes, you can install your Nodes there and run ComfyUI separately without running Visionatrix.
   - Can I run it on multiple GPU?
     - You can run one worker on one GPU and process tasks in parallel, take a look at Server and Worker modes.
+
+- https://github.com/rvion/CushyStudio /781Star/AGPL/202412/ts/inactive
+  - https://docs.cushystudio.com/
+  - The AI and Generative Art platform for everyone
+  - Cushy orchestrate various tools like ComfyUI or FFMpeg. Some apps require you to have those tools installed.
+  - Most CushyStudio Apps build on top of ComfyUI as a backend
+
+- https://github.com/sdfxai/sdfx /440Star/AGPL/202505/ts/vue
+  - https://sdfx.ai/
+  - no-code platform to build and share AI apps with beautiful UI.
+  - What SDFX allows, for example, is the creation of complex graphs (as one would do on ComfyUI), but with an overlay of a simpler, high-level UI (such as a form-based interface, with an incredible UI). 
+  - This is an initial draft, there is still much to do 
+  - We tried to do things right, focusing solely on what we do best: UIs and product design with a modern frontend stack. 
+  - Therefore, we rely 100% on Comfy's backend, making SDFX fully compatible with ComfyUI. 
+  - However, installing ComfyUI is not necessary, as everything is abstracted. We also made an effort to simplify the installation process; 
+  - 100% compatible with ComfyUI and all its features
+  - Can work with your existing Comfy installation (with our SDFXBridgeForComfy custom node)
+  - LiteGraph almost refactored from scratch in typescript
+  - Node bookmarks and advanced graph search
 
 - https://github.com/11cafe/jaaz /2.3kStar/NonComm/202508/python/ts
   - https://jaaz.app/
@@ -413,29 +529,11 @@ modified: 2025-08-23T11:43:35.904Z
     - 如果只是想自己用，不提供登录服务的话,也可以直接改下代码返回。 本地用用是可以的
     - API for user login only
 
-- https://github.com/sdfxai/sdfx /440Star/AGPL/202505/ts/vue
-  - https://sdfx.ai/
-  - no-code platform to build and share AI apps with beautiful UI.
-  - What SDFX allows, for example, is the creation of complex graphs (as one would do on ComfyUI), but with an overlay of a simpler, high-level UI (such as a form-based interface, with an incredible UI). 
-  - This is an initial draft, there is still much to do 
-  - We tried to do things right, focusing solely on what we do best: UIs and product design with a modern frontend stack. 
-  - Therefore, we rely 100% on Comfy's backend, making SDFX fully compatible with ComfyUI. 
-  - However, installing ComfyUI is not necessary, as everything is abstracted. We also made an effort to simplify the installation process; 
-  - 100% compatible with ComfyUI and all its features
-  - Can work with your existing Comfy installation (with our SDFXBridgeForComfy custom node)
-  - LiteGraph almost refactored from scratch in typescript
-  - Node bookmarks and advanced graph search
-
 - https://github.com/huanyingtianhe/EasyComfyUI /MIT/202411/js/inactive
   - https://easy-comfyui.vercel.app/
   - An UI to integrate with ComfyUI backend for easy use
   - we only support "Text to image" and "Video to video": Text to Image, Text to Video, Image to Image, Image to video, Video to video
-
-- https://github.com/rvion/CushyStudio /781Star/AGPL/202412/ts/inactive
-  - https://docs.cushystudio.com/
-  - The AI and Generative Art platform for everyone
-  - Cushy orchestrate various tools like ComfyUI or FFMpeg. Some apps require you to have those tools installed.
-  - Most CushyStudio Apps build on top of ComfyUI as a backend
+  - 依赖prisma、Mysql、nextjs
 
 - https://github.com/ShivanshKandwal/Kairo---image-generation-and-editing-frontend-application-based-on-comfyui-backend /202508/js
   - Kairo is a user-friendly desktop application that acts as a powerful, network-accessible host for your ComfyUI backend.
@@ -453,7 +551,29 @@ modified: 2025-08-23T11:43:35.904Z
 - https://github.com/Praecordi/comfy-character-app /202507/python 
   - A ComfyUI and ComfyScript Gradio-based app for generating characters using a multi-step process.
   - provides a Gradio-based interface for generating consistent character images using ComfyUI. It features a multi-step generation process with specialized controls for character attributes, style transfer, and detail enhancement.
-# comfyui-llm
+
+- https://github.com/comfy-deploy/comfyui-deploy-gradio-demo /202408/python/inactive
+  - This project provides a Gradio interface for interacting with ComfyDeploy, allowing users to dynamically generate UI components based on deployment input definitions and submit jobs to ComfyDeploy.
+  - Dynamic UI generation based on ComfyDeploy input definitions
+  - Asynchronous job submission to ComfyDeploy
+# comfyui/sd-llm
+- https://github.com/AIDC-AI/Pixelle-MCP /271Star/MIT/202508/python
+  - https://pixelle.ai/
+  - Open-Source Multimodal AIGC Solution based on ComfyUI + MCP + LLM
+  - An AIGC solution based on the MCP protocol, seamlessly converting ComfyUI workflows into MCP tools with zero code
+  - Server-side is built on ComfyUI, inheriting all capabilities from the open ComfyUI ecosystem
+  - MCP Server provides functionality based on the MCP protocol, supporting integration with any MCP client (including but not limited to Cursor, Claude Desktop, etc.)
+    - 服务端不依赖langchain
+  - MCP Client is developed based on the `Chainlit` framework, inheriting Chainlit's UI controls
+  - Integrated the LiteLLM framework, adding multi-model support for Gemini, DeepSeek, Claude, Qwen, and more
+  - Flexible Deployment: Supports standalone deployment of Server-side only as MCP Server, or standalone deployment of Client-side only as MCP Client, or combined deployment
+  - Unified Configuration: Uses YAML configuration scheme, one config file manages all services
+  - https://github.com/Chainlit/chainlit /10.5kStar/apache2/202508/python/ts
+    - https://docs.chainlit.io/
+    - Build python production-ready conversational AI applications in minutes
+    - As of May 1st 2025, the original Chainlit team has stepped back from active development.
+    - 依赖langchain、LlamaIndex、ChromaDB
+
 - https://github.com/oobabooga/text-generation-webui /44.8kStar/AGPLv3/202508/python
   - https://oobabooga.gumroad.com/l/deep_reason
   - A Gradio web UI for Large Language Models.
@@ -472,6 +592,75 @@ modified: 2025-08-23T11:43:35.904Z
   - The Story Behind ClaraVerse: Why can't everything be in a single app?
   - The Solution: One App. Six Tools. Zero Compromises.
   - Built on the shoulders of giants: llama.cpp • llama-swap • faster-whisper • ComfyUI • N8N
+
+- https://github.com/CLOUDWERX-DEV/DiffuGen /MIT/202504/python
+  - a powerful yet user-friendly interface for local\edge image generation.
+  - DiffuGen is a powerful MCP-based image generation system that brings cutting-edge AI models directly into your development workflow.
+  - Built on top of the highly optimized `stable-diffusion.cpp` implementation
+  - Now includes OpenAPI server support and OpenWebUI OpenAPI Tools (OWUI Version 0.60.0 Required) integration for seamless image generation and display in chat interfaces
+
+- https://github.com/stavsap/comfyui-ollama /622Star/apache2/202508/python
+  - Custom ComfyUI Nodes for interacting with Ollama using the ollama python client.
+  - Integrate the power of LLMs into ComfyUI workflows easily or just experiment with LLM inference.
+
+- https://github.com/mattjohnpowell/comfyui-lmstudio-image-to-text-node /MIT/202508/python
+  - custom nodes for ComfyUI that deeply integrate LM Studio's capabilities using the official lmstudio Python SDK. 
+  - It allows you to leverage locally run models for various generative tasks directly within your ComfyUI workflows.
+
+- https://github.com/burnsbert/ComfyUI-EBU-LMStudio /MIT/202507/python
+  - provides custom nodes for integrating with LMStudio, allowing for loading, managing, and making requests of LLM models through the LMStudio local server and command-line interface.
+  - Load and manage LLM models directly from ComfyUI
+  - Optional image model unloading to free up VRAM
+
+- https://github.com/kijai/ComfyUI-moondream /202403/python/inactive
+  - ComfyUI node to use the moondream tiny vision language model
+
+- https://github.com/DadoIrie/ComfyUI_Dados_Nodes /MIT/202508/python/js
+  - A collection of custom nodes for ComfyUI featuring AI vision models, advanced text processing tools, and wildcard prompt utilities.
+
+- https://github.com/comfy-deploy/comfyui-llm-toolkit /33Star/NALic/202508/python
+  - A custom node collection for integrating various LLM (Large Language Model) providers with ComfyUI.
+  - Streaming Output directly on the node UI stream
+  - Runs openai latest image model GPT-image-1 and we include various templates
+  - Text generation using various LLM providers (OpenAI and local models, etc.)
+  - Provider selection and configuration with dynamic model fetching
+  - Seamless integration with ComfyUI workflows
+  - Supported Providers: OpenAI (Default: gpt-4o-mini), Ollama (local)
+  - When you change the LLM provider, the model dropdown updates dynamically with available models
+  - Unified ONE-INPUT / ONE-OUTPUT Architecture
+    - Toolkit uses a single "context" input/output approach for maximum flexibility
+    - Cascading Data Flow: As data flows through nodes, it accumulates in the "context" structure. Preserve and accumulate data throughout the workflow
+    - Chain multiple LLM operations with a single connection
+
+- https://github.com/gokayfem/ComfyUI_VLM_nodes /apache2/202502/python/inactive
+  - Custom ComfyUI nodes for Vision Language Models, Large Language Models, Image to Music, Text to Music, Consistent and Random Creative Prompt Generation
+  - Utilizes `llama-cpp-python` for integration of LLaVa models. You can load and use any VLM with LLaVa models in GGUF format with this nodes.
+
+- https://github.com/fblissjr/shrug-prompter /MIT/202508/python
+  - ComfyUI nodes using uses local vision LLMs / VLMs (and other providers) optimized for wan2.2, wan2.1, and flux kontext.
+  - memory-efficient VLM nodes for ComfyUI, with state management, looping, keyframe extraction, batching, and built-in templates for Wan2.1, VACE, and beyond.
+  - Built for Wan2.1, WAN VACE, and FLUX Kontext, but obviously can be extended beyond that. The nodes are generic enough to work with any workflow that needs vision-to-text capabilities
+  - Initially built and tested with my local (OpenAI API compatible and sorta ollama compatible) vision LLM server, https://github.com/fblissjr/heylookitsanllm, which works with any GGUF or MLX model. 
+    - Most features will work with any OpenAI-compatible API endpoint
+
+- https://github.com/if-ai/ComfyUI-IF_AI_PromptImaGen /MIT/202504/python
+  - Lighter version of ComfyUI-IF_AI_tools is a set of custom nodes to Run Local and API LLMs and LMMs, supports Ollama, LlamaCPP LMstudio, Koboldcpp, TextGen, Transformers or via APIs Anthropic, Groq, OpenAI
+  - https://github.com/if-ai/ComfyUI-IF_AI_tools /MIT/202412/python/inactive
+    - https://ko-fi.com/impactframes
+    - a set of custom nodes for ComfyUI that allows you to generate prompts using a local Large Language Model (LLM) via Ollama.
+    - I am Moving the prompt generation to this new node PromptImaGen 
+
+- https://github.com/pupba/Rabbit-Hole /GPL/202507/python
+  - Modular image generation pipeline for enterprise, research, and MLOps—custom flows, batch-ready, inspired by ComfyUI.
+  - rabbit_hole was created to bring powerful, customizable image generation pipelines into enterprise and research environments.
+  - While ComfyUI is highly visual and flexible, it has limitations for production use:
+    - Node development is complex and not easily extensible.
+    - Workflow customization requires internal code changes.
+    - Integration with external Python libraries is difficult.
+    - Maintaining reproducibility, batch operations, and versioned config is not straightforward.
+  - rabbit_hole was built to solve these, enabling rapid, modular, and automated workflows—fully in Python and easy to extend.
+    - Build custom flows as Python classes by connecting modular tunnel steps.
+    - Use static, version-controlled YAML files for models, runtime, and batch settings.
 # extensions/custom_nodes
 - https://github.com/VrchStudio/comfyui-web-viewer /248Star/MIT/202508/python/js
   - http://vrch.ai/
@@ -641,6 +830,9 @@ modified: 2025-08-23T11:43:35.904Z
   - Customize the information saved in file- and folder names.
   - Save data about the generated job (sampler, prompts, models) as entries in a json (text) file, in each folder.
 
+- https://github.com/BigStationW/ComfyUi-Load-Image-And-Display-Prompt-Metadata /202508/python/js
+  - This node displays the positive and negative prompts of a ComfyUi image.
+
 - https://github.com/LEv145/images-grid-comfy-plugin /202405/python
   - https://civitai.com/models/31126
   - A simple comfyUI plugin for images grid (X/Y Plot)
@@ -689,57 +881,6 @@ modified: 2025-08-23T11:43:35.904Z
     - The released model is for academic purposes only.
     - The model is published under CC BY-NC 4.0 license. It is intended for educational and research use, and should not be used for any commercial or illegal purposes
 
-- https://github.com/stavsap/comfyui-ollama /622Star/apache2/202508/python
-  - Custom ComfyUI Nodes for interacting with Ollama using the ollama python client.
-  - Integrate the power of LLMs into ComfyUI workflows easily or just experiment with LLM inference.
-
-- https://github.com/mattjohnpowell/comfyui-lmstudio-image-to-text-node /MIT/202508/python
-  - custom nodes for ComfyUI that deeply integrate LM Studio's capabilities using the official lmstudio Python SDK. 
-  - It allows you to leverage locally run models for various generative tasks directly within your ComfyUI workflows.
-
-- https://github.com/burnsbert/ComfyUI-EBU-LMStudio /MIT/202507/python
-  - provides custom nodes for integrating with LMStudio, allowing for loading, managing, and making requests of LLM models through the LMStudio local server and command-line interface.
-  - Load and manage LLM models directly from ComfyUI
-  - Optional image model unloading to free up VRAM
-
-- https://github.com/kijai/ComfyUI-moondream /202403/python/inactive
-  - ComfyUI node to use the moondream tiny vision language model
-
-- https://github.com/DadoIrie/ComfyUI_Dados_Nodes /MIT/202508/python/js
-  - A collection of custom nodes for ComfyUI featuring AI vision models, advanced text processing tools, and wildcard prompt utilities.
-
-- https://github.com/comfy-deploy/comfyui-llm-toolkit /33Star/NALic/202508/python
-  - A custom node collection for integrating various LLM (Large Language Model) providers with ComfyUI.
-  - Streaming Output directly on the node UI stream
-  - Runs openai latest image model GPT-image-1 and we include various templates
-  - Text generation using various LLM providers (OpenAI and local models, etc.)
-  - Provider selection and configuration with dynamic model fetching
-  - Seamless integration with ComfyUI workflows
-  - Supported Providers: OpenAI (Default: gpt-4o-mini), Ollama (local)
-  - When you change the LLM provider, the model dropdown updates dynamically with available models
-  - Unified ONE-INPUT / ONE-OUTPUT Architecture
-    - Toolkit uses a single "context" input/output approach for maximum flexibility
-    - Cascading Data Flow: As data flows through nodes, it accumulates in the "context" structure. Preserve and accumulate data throughout the workflow
-    - Chain multiple LLM operations with a single connection
-
-- https://github.com/gokayfem/ComfyUI_VLM_nodes /apache2/202502/python/inactive
-  - Custom ComfyUI nodes for Vision Language Models, Large Language Models, Image to Music, Text to Music, Consistent and Random Creative Prompt Generation
-  - Utilizes `llama-cpp-python` for integration of LLaVa models. You can load and use any VLM with LLaVa models in GGUF format with this nodes.
-
-- https://github.com/fblissjr/shrug-prompter /MIT/202508/python
-  - ComfyUI nodes using uses local vision LLMs / VLMs (and other providers) optimized for wan2.2, wan2.1, and flux kontext.
-  - memory-efficient VLM nodes for ComfyUI, with state management, looping, keyframe extraction, batching, and built-in templates for Wan2.1, VACE, and beyond.
-  - Built for Wan2.1, WAN VACE, and FLUX Kontext, but obviously can be extended beyond that. The nodes are generic enough to work with any workflow that needs vision-to-text capabilities
-  - Initially built and tested with my local (OpenAI API compatible and sorta ollama compatible) vision LLM server, https://github.com/fblissjr/heylookitsanllm, which works with any GGUF or MLX model. 
-    - Most features will work with any OpenAI-compatible API endpoint
-
-- https://github.com/if-ai/ComfyUI-IF_AI_PromptImaGen /MIT/202504/python
-  - Lighter version of ComfyUI-IF_AI_tools is a set of custom nodes to Run Local and API LLMs and LMMs, supports Ollama, LlamaCPP LMstudio, Koboldcpp, TextGen, Transformers or via APIs Anthropic, Groq, OpenAI
-  - https://github.com/if-ai/ComfyUI-IF_AI_tools /MIT/202412/python/inactive
-    - https://ko-fi.com/impactframes
-    - a set of custom nodes for ComfyUI that allows you to generate prompts using a local Large Language Model (LLM) via Ollama.
-    - I am Moving the prompt generation to this new node PromptImaGen 
-
 - https://github.com/11cafe/comfyui-workspace-manager /1.3kStar/MIT/202408/python/ts/inactive
   - A ComfyUI workflows and models management extension to organize and manage all your workflows, models in one place.
   - [2025-4-16] since ComfyUI frontend has built-in workspace management feature now, this plugin becomes obsolete and will not be maintained anymore. 
@@ -748,6 +889,12 @@ modified: 2025-08-23T11:43:35.904Z
   - 专为 ComfyUI 设计的高效工作流文件管理器插件。
   - 它提供了完整的文件系统操作功能
   - 双视图模式：列表视图（紧凑布局）+ 网格视图（预览模式）
+
+- https://github.com/Nuked88/ComfyUI-N-Sidebar /560Star/MIT/202507/python
+  - A simple sidebar for ComfyUI
+  - In WORKFLOW PATHS, set the folder path to where your workflows are located
+  - Search within your nodes
+  - This new panel allows you to download CIVITAI models (Checkpoint, lora)
 
 - https://github.com/yolain/ComfyUI-Easy-Use /1.9kStar/GPLv3/202508/python/js
   - custom nodes integration package, which is extended on the basis of TinyTerraNodes.
@@ -772,10 +919,25 @@ modified: 2025-08-23T11:43:35.904Z
   - 首次执行节点的时候会自动从huggingface下载paint-by-example模型，所以要等一段时间并且会占用大于5GB的硬盘。
   - https://github.com/Fantasy-Studio/Paint-by-Example
     - Exemplar-based Image Editing with Diffusion Models
+
+- https://github.com/whmc76/ComfyUI-UniversalToolkit /42Star/MIT/202508/python
+  - 提供丰富的图像处理、音频处理、掩码操作和实用工具节点，支持批量处理、智能分析、色彩迁移等多种高级功能。
+  - 图像处理：色彩迁移、图像拼接、尺寸调整、深度图模糊等
+  - 音频处理：音频加载、裁剪、重采样、增益调节等
+  - 智能预设：32种Kontext VLM系统预设，支持动态场景描述
+
+- https://github.com/yondonfu/comfystream /105Star/MIT/202508/python/js
+  - a package for running img2img Comfy workflows on video streams.
+  - This repo also includes a WebRTC server and UI that uses comfystream to support streaming from a webcam and processing the stream with a workflow JSON file (API format) created in ComfyUI. 
+  - https://github.com/livepeer/comfystream
+    - A custom ComfyUI node for running real-time media workflows directly within ComfyUI
+    - a package for running img2img Comfy workflows on video streams.
+  - 🍴 forks
+  - https://github.com/creativeplatform/comfystream_inside
+  - https://github.com/ryanontheinside/comfystream_inside
 # utils
-- https://github.com/Tavris1/ComfyUI-Easy-Install /170Star/MIT/202508/bat
-  - Portable ComfyUI for Windows, macOS and Linux 
-  - Pixaroma Community Edition 
+- https://github.com/hayden-fr/ComfyUI-Model-Manager /146Star/GPL/202508/python/ts/vue
+  - Download, browse and delete models in ComfyUI.
 
 - https://github.com/willmiao/ComfyUI-Lora-Manager /579Star/GPLv3/202508/python/js
   - A comprehensive toolset that streamlines organizing, downloading, and applying LoRA models 
@@ -800,35 +962,6 @@ modified: 2025-08-23T11:43:35.904Z
   - 批量调试可以是多个参数的组合体，如「商品图 + 对应 prompt」 X 不同基模
   - 多维表格，自由抽卡预览或批量导出：不同参数的聚合浏览方式
 
-- https://github.com/Chaoses-Ib/ComfyScript /571Star/MIT/202506/python
-  - A Python frontend and library for ComfyUI
-  - Serving as a human-readable format for ComfyUI's workflows.
-  - Directly running the script to generate images. The main advantage of doing this than using the web UI is being able to mix Python code with ComfyUI's nodes
-  - With ComfyScript, ComfyUI's nodes can be used as functions to do ML research
-  - Generating ComfyUI's workflows with scripts.
-  - Converting workflows from ComfyUI's web UI format to API format without the web UI.
-
-- https://github.com/pydn/ComfyUI-to-Python-Extension /2kStar/MIT/202507/python/js
-  - a powerful tool that translates ComfyUI workflows into executable Python code.
-  - Designed to bridge the gap between ComfyUI's visual interface and Python's programming environment
-  - this tool streamlines the process of implementing ComfyUI workflows in Python.
-
-- https://github.com/AIDC-AI/Pixelle-MCP /271Star/MIT/202508/python
-  - https://pixelle.ai/
-  - Open-Source Multimodal AIGC Solution based on ComfyUI + MCP + LLM
-  - An AIGC solution based on the MCP protocol, seamlessly converting ComfyUI workflows into MCP tools
-  - Server-side is built on ComfyUI, inheriting all capabilities from the open ComfyUI ecosystem
-  - MCP Server provides functionality based on the MCP protocol, supporting integration with any MCP client (including but not limited to Cursor, Claude Desktop, etc.)
-  - MCP Client is developed based on the `Chainlit` framework, inheriting Chainlit's UI controls
-  - Integrated the LiteLLM framework, adding multi-model support for Gemini, DeepSeek, Claude, Qwen, and more
-  - Flexible Deployment: Supports standalone deployment of Server-side only as MCP Server, or standalone deployment of Client-side only as MCP Client, or combined deployment
-  - Unified Configuration: Uses YAML configuration scheme, one config file manages all services
-  - https://github.com/Chainlit/chainlit /10.5kStar/apache2/202508/python/ts
-    - https://docs.chainlit.io/
-    - Build python production-ready conversational AI applications in minutes
-    - As of May 1st 2025, the original Chainlit team has stepped back from active development.
-    - 依赖langchain、LlamaIndex、ChromaDB
-
 - https://github.com/joenorton/comfyui-mcp-server /97Star/apache2/202503/python/inactive
   - lightweight Python-based MCP server that interfaces with a local ComfyUI instance to generate images programmatically via AI agent requests.
   - This project enables AI agents to send image generation requests to ComfyUI using the MCP protocol over WebSocket. 
@@ -844,6 +977,10 @@ modified: 2025-08-23T11:43:35.904Z
   - https://github.com/lalanikarim/comfy-mcp-pipeline
     - a pipeline wrapper for comfy-mcp-server for Open WebUI.
 
+- https://github.com/ericwanghp/ComfyUI_MCP /MIT/202505/python
+  - 为 ComfyUI 设计的松耦合、可扩展、配置驱动的模型上下文协议（ModelContextProtocol）服务端。
+  - 支持依据客户定制工作流可扩展MCP服务(tool) 如: txt2img、img2img，每个MCP服务(tool)的参数和行为均可通过 JSON初始化和MCP工具装饰器模块灵活扩展，适合 AI 绘图、推理等场景的自动化与集成。
+
 - https://github.com/MarcusYuan/mcp-comfyui-anything /202507/python
   - 针对 ComfyUI 工作流管理难题的智能执行引擎
   - 两个主要挑战：
@@ -858,10 +995,6 @@ modified: 2025-08-23T11:43:35.904Z
   - 工具2不直接调用工具3，而是通过返回引导信息让Client LLM自动调用工具3, 符合FastMCP最佳实践
   - 提供实时执行反馈和进度跟踪
   - 依赖FastMCP、Pydantic、HTTPX、aiofiles、deepmerge、watchdog
-
-- https://github.com/ericwanghp/ComfyUI_MCP /MIT/202505/python
-  - 为 ComfyUI 设计的松耦合、可扩展、配置驱动的模型上下文协议（ModelContextProtocol）服务端。
-  - 支持依据客户定制工作流可扩展MCP服务(tool) 如: txt2img、img2img，每个MCP服务(tool)的参数和行为均可通过 JSON初始化和MCP工具装饰器模块灵活扩展，适合 AI 绘图、推理等场景的自动化与集成。
 
 - https://github.com/felixszeto/ComfyUI-RequestNodes /91Star/MIT/202508/python
   - a custom node plugin for ComfyUI that provides functionality for sending HTTP requests and related utilities. 
@@ -903,21 +1036,6 @@ modified: 2025-08-23T11:43:35.904Z
     - each project created in comfyui launcher has its own virtualenv (so this will let you create a new isolated project for running workflows that require different dependencies than your other workflows), but the models folder is shared across all projects.
     - the reasoning behind this is that this setup allows you to run different workflows w/ different requirements, while not having to duplicate any models across them.
 
-- https://github.com/cumulo-autumn/StreamDiffusion /10.4kStar/apache2/202412/python/inactive
-  - StreamDiffusion is an innovative diffusion pipeline designed for real-time interactive generation.
-  - Streamlined data processing through efficient batch operations.
-  - Improved guidance mechanism that minimizes computational redundancy.
-  - Improves GPU utilization efficiency through advanced Stochastic Similarity Filter.
-  - https://github.com/jesenzhang/ComfyUI_StreamDiffusion
-    - a simple implemention StreamDiffusion for ComfyUI
-
-- https://github.com/RishiDesai/CharForge /MIT/202506/python
-  - https://www.charforge.dev/
-  - Generate character consistent images with a single reference
-  - 48GB is preferred, but you can get by with 24GB
-  - [Generate character consistent images with a single reference (Open Source & Free) : r/StableDiffusion _202506](https://www.reddit.com/r/StableDiffusion/comments/1lkezo2/generate_character_consistent_images_with_a/)
-    - I built a tool for training Flux character LoRAs from a single reference image, end-to-end.
-
 - https://github.com/ty0x2333/ComfyUI-Dev-Utils /146Star/MIT/202507/python/js
   - Execution Time Analysis, Reroute Enhancement, Remote Python Logs, For ComfyUI developers.
 
@@ -927,23 +1045,11 @@ modified: 2025-08-23T11:43:35.904Z
 - https://github.com/jordenyt/stable_diffusion_sketch /122Star/GPLv3/202506/java
   - an Android client app that connect to your own ComfyUI or A1111-sd-webui
   - This app integrates with ComfyUI via a RESTful API, enabling powerful AI image generation capabilities right from your mobile device.
-
-- https://github.com/CLOUDWERX-DEV/DiffuGen /MIT/202504/python
-  - DiffuGen is a powerful yet user-friendly interface for local\edge image generation.
-  - DiffuGen is a powerful MCP-based image generation system that brings cutting-edge AI models directly into your development workflow.
-  - Built on top of the highly optimized `stable-diffusion.cpp` implementation
-  - Now includes OpenAPI server support and OpenWebUI OpenAPI Tools (OWUI Version 0.60.0 Required) integration for seamless image generation and display in chat interfaces
-
-- https://github.com/CrazyBoyM/ComfyUI2API /apache2/202408/python/inactive
-  - 一个把ComfyUI工作流转换为API服务的服务
-  - 基于本地websocket通信实现数据转发，用于让ComfyUI变成一个通用的API服务
-
-- https://github.com/ParisNeo/comfyui_proxy_server /apache2/202403/python/inactive
-  - a lightweight reverse proxy server designed for load balancing and rate limiting. 
-
-- https://github.com/l3lackcurtains/Comfy_UI_Backend /202506/python
-  - A Python-powered API backend featuring a custom Comfy UI, seamlessly integrated with Docker and Kubernetes for modern containerization and orchestration. 
-  - Scalable, reliable, and built for efficient deployment
+  - https://github.com/jordenyt/ComfyuiGW /202508/python
+    - https://github.com/jordenyt/stable_diffusion_sketch/tree/comfyui
+    - a RESTful API Gateway designed specifically for running ComfyUI version of Stable Diffusion Sketch. 
+    - It provides a robust interface for executing complex workflows through both API endpoints and a user-friendly web interface.
+    - Real-time Progress Tracking - Monitor workflow execution with live updates
 
 - https://github.com/d3x-at/sd-parsers /MIT/202504/python
   - A Python library to read metadata from images created by Stable Diffusion.
@@ -962,17 +1068,9 @@ modified: 2025-08-23T11:43:35.904Z
 - https://github.com/martijnat/comfyui-previewlatent /GPL/202508/python
   - ComfyUI plugin for previewing latents without vae decoding
 
-- https://github.com/pupba/Rabbit-Hole /GPL/202507/python
-  - Modular image generation pipeline for enterprise, research, and MLOps—custom flows, batch-ready, inspired by ComfyUI.
-  - rabbit_hole was created to bring powerful, customizable image generation pipelines into enterprise and research environments.
-  - While ComfyUI is highly visual and flexible, it has limitations for production use:
-    - Node development is complex and not easily extensible.
-    - Workflow customization requires internal code changes.
-    - Integration with external Python libraries is difficult.
-    - Maintaining reproducibility, batch operations, and versioned config is not straightforward.
-  - rabbit_hole was built to solve these, enabling rapid, modular, and automated workflows—fully in Python and easy to extend.
-    - Build custom flows as Python classes by connecting modular tunnel steps.
-    - Use static, version-controlled YAML files for models, runtime, and batch settings.
+- https://github.com/LarryJane491/Lora-Training-in-Comfy /505Star/NALic/202401/python/inactive
+  - This custom node lets you train LoRA directly in ComfyUI
+  - By default, it saves directly in your ComfyUI lora folder. That means you just have to refresh after training
 # integrations
 - https://github.com/nchenevey1/gimp-comfy-tools /91Star/GPL/202507/python
   - GIMP plugins that communicate with ComfyUI. 
@@ -994,6 +1092,8 @@ modified: 2025-08-23T11:43:35.904Z
 
 - https://github.com/Lingyuzhou111/Comfyui_Free_Jimeng
   - 将即梦AI的强大图片生成功能集成到ComfyUI中的官方插件
+  - https://github.com/Yunwuxin-666/Comfyui-Jimeng-api
+    - 为 ComfyUI 提供了火山引擎即梦AI的四个核心功能：t2i, i2i, t2v, vlm
 # workflows
 - https://github.com/pwillia7/Basic_ComfyUI_Workflows /202508
   - Basic Stable Diffusion Workflows for ComfyUI using minimal custom nodes
@@ -1004,6 +1104,7 @@ modified: 2025-08-23T11:43:35.904Z
 - https://github.com/comfyanonymous/ComfyUI_examples /202508
   - https://comfyanonymous.github.io/ComfyUI_examples/
   - Examples of ComfyUI workflows
+  - All the images in this repo contain metadata which means they can be loaded into ComfyUI
 
 - https://github.com/heshengtao/comfyui_LLM_party /1.9kStar/AGPL/202508/python
   - aims to develop a complete set of nodes for LLM workflow construction based on comfyui as the front end. 
@@ -1020,10 +1121,6 @@ modified: 2025-08-23T11:43:35.904Z
   - These workflows upscales images in multiple stages using a combination of upscaling models, CCSR, SUPIR and Ulitmate SD Upscale, upscaling models, SDXL and Flux.
   - Each workflow is tuned to a specific resolution with different speed variants. These workflows are continuing evolving.
 
-- https://github.com/comfyanonymous/ComfyUI_examples
-  - https://comfyanonymous.github.io/ComfyUI_examples/
-  - All the images in this repo contain metadata which means they can be loaded into ComfyUI
-
 - https://github.com/yaiol/ComfyUI-Workflows /202508
   - Each workflow is named using following convention: [Category]-[Workflow]-[Model]-[Method]
 
@@ -1037,6 +1134,15 @@ modified: 2025-08-23T11:43:35.904Z
   - [ComfyUI : Using the API : Part 1. Controlling ComfyUI via Script _202309](https://medium.com/@yushantripleseven/comfyui-using-the-api-261293aa055a)
   - https://github.com/ZYJ-3721/ComfyUI-API-Client /202411/python/inactive
     - 调用ComfyUI的API实现文生图和图生视频
+
+- https://github.com/nexmoe/serverless-comfyui /91Star/MIT/202502/ts/inactive
+  - 一个基于 Docker 的 ComfyUI 弹性 Serverless 应用，提供完整的前后端分离架构和用户友好的界面。
+  - 基于nextjs的前端
+  - 项目的图片上传功能需要配置 S3 存储服务。你可以使用 AWS S3 或其他兼容 S3 协议的对象存储服务（如 MinIO）
+
+- https://github.com/CrazyBoyM/ComfyUI2API /apache2/202408/python/inactive
+  - 一个把ComfyUI工作流转换为API服务的服务
+  - 基于本地websocket通信实现数据转发，用于让ComfyUI变成一个通用的API服务
 
 - https://github.com/SaladTechnologies/comfyui-api /218Star/MIT/202508/ts
   - A simple API server to make ComfyUI easy to scale horizontally. 
@@ -1059,17 +1165,6 @@ modified: 2025-08-23T11:43:35.904Z
   - The server can forward ComfyUI websocket events to a configured webhook, which can be used to monitor the progress of a workflow.
   - The server is designed to work well with SaladCloud. It is likely to work well with other platforms as well.
 
-- https://github.com/nexmoe/serverless-comfyui /MIT/202502/ts/inactive
-  - 一个基于 Docker 的 ComfyUI 弹性 Serverless 应用，提供完整的前后端分离架构和用户友好的界面。
-  - 基于nextjs的前端
-  - 项目的图片上传功能需要配置 S3 存储服务。你可以使用 AWS S3 或其他兼容 S3 协议的对象存储服务（如 MinIO）
-
-- https://github.com/Netwrck/stable-diffusion-server /53Star/MIT/202507/python
-  - 🖼️ Image Generation API Server - Similar to https://text-generator.io but for images
-  - Simple interface for generating images in Gradio locally and easy to use FastAPI docs/server for advanced users.
-  - Running the Gradio UI: python gradio_ui.py
-  - Local Deployment: Run locally for style transfer, art generation and inpainting.
-
 - https://github.com/Distillery-Dev/Discomfort /248Star/MIT/202508/python
   - https://www.discomfort.ai/
   - Control ComfyUI with Python
@@ -1083,6 +1178,12 @@ modified: 2025-08-23T11:43:35.904Z
   - Pre-Execution Graph Manipulation: Before a workflow is executed, Discomfort modifies the graph to inject and extract data through the DiscomfortPort nodes.
   - Intelligent Data Handling: Discomfort can handle different types of data, passing large objects like models by reference to avoid unnecessary memory overhead.
 
+- https://github.com/Netwrck/stable-diffusion-server /53Star/MIT/202507/python
+  - 🖼️ Image Generation API Server - Similar to https://text-generator.io but for images
+  - Simple interface for generating images in Gradio locally and easy to use FastAPI docs/server for advanced users.
+  - Running the Gradio UI: python gradio_ui.py
+  - Local Deployment: Run locally for style transfer, art generation and inpainting.
+
 - https://github.com/piyushK52/comfy_runner /235Star/NALic/202411/python/inactive
   - Automatically install ComfyUI nodes and models and use it as a backend
   - This tool automatically downloads all the necessary nodes and models and executes the provided workflow. 
@@ -1091,32 +1192,27 @@ modified: 2025-08-23T11:43:35.904Z
   - Auto installs missing nodes
   - Link to custom nodes and models can be provided for installation/Setup
 
-- https://github.com/luckkyzhou/ComfyUI-API-Integration /MIT/202411/python/inactive
-  - This project provides a comprehensive suite for developers to integrate ComfyUI APIs and automate image generation workflows. 
-  - By encapsulating API input and output, this suite enables developers to input any workflow json file and receive the processed output image directly. 
-  - Allows users to input images and receive the processed result based on selected workflows.
-
-- https://github.com/bobvinch/comfy-server /525Star/202405/ts/nestjs/inactive
+- https://github.com/bobvinch/comfy-server /525Star/NALic/202405/ts/nestjs/inactive
   - comfyui server to use comfyui API as easy as send a message
   - 核心功能1：ComfyUI的绘画API服务和websocket转发，客户端必须使用socketIO链接，WS无法连接
   - 核心功能2：方便将任意comfyui工作转换为在线API，向外提供AI能力
   - 修复Redis相关问题，增加容器一键部署方式
   - 天然支持利用nginx直接实现负载均衡, ComfyUI server之间可以共享AI绘画能力
 
-- https://github.com/sugarkwork/Comfyui_api_client /MIT/202506/python
-  - A Python client library for interacting with ComfyUI via its API. 
-  - Supports both synchronous and asynchronous operations with automatic workflow format conversion.
-  - Both sync (ComfyUIClient) and async (ComfyUIClientAsync) implementations
-  - Automatically converts workflow.json to API format
-  - Direct image upload to ComfyUI server
-
 - https://github.com/Acly/comfyui-tooling-nodes /540Star/GPL/202508/python/js
   - Provides nodes and API geared towards using ComfyUI as a backend for external tools.
   - Send and receive images directly without filesystem upload/download.
   - ComfyUI exchanges images via the filesystem. This requires a multi-step process (upload images, prompt, download images), which invites a whole class of potential issues you might not want to deal with.
 
-- https://github.com/9elements/comfyui-api /202402/python/inactive
-  - You need to a comfyUI server running and be able to access the "/ws" path for this server. If you have the server running localy it usually runs under "127.0.0.1:8188".
+- https://github.com/luckkyzhou/ComfyUI-API-Integration /MIT/202411/python/inactive
+  - This project provides a comprehensive suite for developers to integrate ComfyUI APIs and automate image generation workflows. 
+  - By encapsulating API input and output, this suite enables developers to input any workflow json file and receive the processed output image directly. 
+  - Allows users to input images and receive the processed result based on selected workflows.
+
+- https://github.com/9elements/comfyui-api /129Star/202402/python/inactive
+  - You need a comfyUI server running and be able to access the "/ws" path for this server. If you have the server running localy it usually runs under "127.0.0.1:8188".
+  - For simple prompt to image generation load the `base_workflow.json` and call `prompt_to_image` method with your desired parameters. 
+  - For image to image generation load the `basic_image_to_image.json` and put your input image in the `input` folder. Call `prompt_image_to_image` with your desired parameters.
 
 - https://github.com/SharCodin/comfy-gradio-api /202401/python/inactive
   - building a Python API to connect Gradio and Comfy UI for AI image generation with Stable Diffusion models.
@@ -1160,7 +1256,7 @@ modified: 2025-08-23T11:43:35.904Z
 
 - https://github.com/bentoml/stable-diffusion-server /apache2/202209/python/inactive
   - Deploy Your Own Stable Diffusion Service
-  - Download Pre-built Stable Diffusion Bentos 似乎是定制sd发型版
+  - Download Pre-built Stable Diffusion Bentos 似乎是定制sd发行版
   - https://github.com/bentoml/BentoDiffusion
 
 - https://github.com/Haidra-Org/hordelib /65Star/AGPL/202501/python/inactive
@@ -1172,44 +1268,34 @@ modified: 2025-08-23T11:43:35.904Z
     - AI Horde lets volunteers share their computer power through workers to help others create AI art and writing.
     - When you make a request - like asking for "a painting of a sunset over mountains" - the AI Horde system finds available volunteer computers that can handle your job.
 # sd-ui/webapp
-- https://github.com/ViewComfy/ViewComfy /461Star/AGPL/202508/ts
-  - https://www.viewcomfy.com/
-  - open source tool to help you create beautiful web apps from ComfyUI workflows.
-  - The Playground is a simplified UI where you can run your workflows.
-  - [How to turn a ComfyUI workflow into a web app in minutes _202410](https://www.viewcomfy.com/blog/turn-a-comfyui-workflow-into-an-app)
+- https://github.com/ImDarkTom/ComfyUIMini /288Star/AGPL/202501/ts/inactive
+  - A mobile-friendly WebUI to run ComfyUI workflows.
+  - Ensure ComfyUI is installed and functional (minimum v0.2.2-50-7183fd1 / Sep. 18th release).
 
 - https://github.com/jac3km4/comfyweb /72Star/MIT/202506/ts/svelte
   - a simple interface for ComfyUI that replaces graphs with beautiful forms.
   - A unified gallery view that allows you to easily preview, edit and manage both generated images as well as anything that's pending in the queue.
   - This project builds into a single HTML file. 
 
-- https://github.com/ImDarkTom/ComfyUIMini /288Star/AGPL/202501/ts
-  - A mobile-friendly WebUI to run ComfyUI workflows.
-  - Ensure ComfyUI is installed and functional (minimum v0.2.2-50-7183fd1 / Sep. 18th release).
-
 - https://github.com/diStyApps/ComfyUI-disty-Flow /556Star/202501/python/js/inactive
   - a custom node designed to provide user-friendly interface for ComfyUI by acting as an alternative user interface for running workflows. It is not a replacement for workflow creation.
 
 - https://github.com/canisminor1990/kitchen-comfyui /228Star/MIT/202304/python/ts/inactive
   - A reactflow base stable diffusion GUI as ComfyUI alternative interface
-
-- https://github.com/Stability-AI/StableStudio /9kStar/MIT/202306/ts/inactive
-  - StableStudio is Stability AI's official open-source variant of DreamStudio, our user interface for generative AI.
-  - 被同公司的SwarmUI所替代
-  - It is a web-based application that allows users to create and edit generated images. 
-  - What's the difference between StableStudio and DreamStudio?
-    - All "over-the-wire" API calls have been replaced by a plugin system which allows you to easily swap out the back-end.
-    - you can create your own plugin and use StableStudio with any back-end you want
-  - [`ComfyUI` plugin _202306](https://github.com/Stability-AI/StableStudio/pull/36)
-  - [StableStudio.app downloaded the wrong compyui _202307](https://github.com/Stability-AI/StableStudio/issues/96)
-    - macos m1, After running StableStudio.app, will download the Windows version of the ComfyUI installation package.
-  - [StableStudio vs StableSwarmUI _202308](https://github.com/Stability-AI/StableStudio/discussions/106)
-    - As StableSwarmUI and StableStudio are both projects with StabilityAI, I'm curious if one will be abandoned in favor of the other
+  - clone ComfyUI source code and replace `ComfyUI/web` frontend with release build
 
 - https://github.com/space-nuko/ComfyBox /669Star/GPL/202308/jupyter/ts/svelte
   - Customizable Stable Diffusion frontend for ComfyUI
   - It uses ComfyUI under the hood for maximum power and extensibility.
   - An installation of vanilla ComfyUI for the backend
+
+- https://github.com/asantanna/DNNE-UI-Frontend /GPL/202508/ts/vue
+  - Front end implementation of DNNE (Based off ComfyUI fork)
+  - Vue.js-based visual editor
+  - https://github.com/asantanna/DNNE-UI /GPL/202508/python
+    - Distributed Neural Network Editor based on ComfyUI
+    - DNNE is a visual programming environment for building neural networks and robotics control systems.
+    - It transforms ComfyUI's visual node-based interface from a diffusion model platform into a comprehensive ML/robotics development environment with code export capabilities.
 
 - https://github.com/lllyasviel/stable-diffusion-webui-forge /11.4kStar/AGPL/202506/python
   - a platform on top of Stable Diffusion WebUI (based on Gradio)
@@ -1220,15 +1306,24 @@ modified: 2025-08-23T11:43:35.904Z
     - i agree, comfyui is NOT the backend 1:1; but most/a lot of the code used in the backend is comfy's code (with a1111 compat fixes which have been known to comfy users for a while now)
   - https://github.com/Panchovix/stable-diffusion-webui-reForge /202508/archived
 
-- https://github.com/asantanna/DNNE-UI-Frontend /GPL/202508/ts/vue
-  - Front end implementation of DNNE (Based off ComfyUI fork)
-  - Vue.js-based visual editor
-  - https://github.com/asantanna/DNNE-UI /GPL/202508/python
-    - Distributed Neural Network Editor based on ComfyUI
-    - DNNE is a visual programming environment for building neural networks and robotics control systems.
-    - It transforms ComfyUI's visual node-based interface from a diffusion model platform into a comprehensive ML/robotics development environment with code export capabilities.
+- https://github.com/camenduru/stable-diffusion-webui-portable
+  - This Project Aims for 100% Offline Stable Diffusion (People without internet or with slow internet can get it via USB or HD-DVD)
+
+- https://github.com/cmdr2/stable-diffusion-ui
+  - The easiest way to install and use Stable Diffusion on your computer.
 # devops
-- https://github.com/Good-Dream-Studio/ComfyUI-Connect /MIT/202507/python
+- https://github.com/Tavris1/ComfyUI-Easy-Install /170Star/MIT/202508/bat
+  - Portable ComfyUI for Windows, macOS and Linux 
+  - Pixaroma Community Edition 
+
+- https://github.com/ParisNeo/comfyui_proxy_server /apache2/202403/python/inactive
+  - a lightweight reverse proxy server designed for load balancing and rate limiting.
+
+- https://github.com/l3lackcurtains/Comfy_UI_Backend /202506/python
+  - A Python-powered API backend featuring a custom Comfy UI, seamlessly integrated with Docker and Kubernetes for modern containerization and orchestration. 
+  - Scalable, reliable, and built for efficient deployment
+
+- https://github.com/Good-Dream-Studio/ComfyUI-Connect /17Star/MIT/202507/python
   - Expose your workflows into HTTP endpoints directly from ComfyUI itself.
   - Auto Documentation - Show all your workflows in OpenAPI format using `/api/connect` internal endpoint
   - Install by cloning this project into your `custom_nodes` folder.
@@ -1252,10 +1347,21 @@ modified: 2025-08-23T11:43:35.904Z
   - open source `vercel` like deployment platform for Comfy UI
   - Open source comfyui deployment platform, a vercel for generative workflow infra. (serverless hosted gpu with vertical intergation with comfyui)
   - Stack: Clerk (Auth), NextJS, Drizzle (ORM), Neon / Vercel Postgres, R2 / S3 (Object Storage)
+  - https://github.com/comfy-deploy/comfydeploy-fullstack-demo /202504/ts
+    - https://demo2.comfydeploy.com/
+    - Full stack demo build with Next js 15, Tailwind, Shadcn UI, Drizzle, Turso, Clerk
   - https://github.com/BennyKok/comfyui-deploy-next-example /202404/ts/inactive
     - https://demo.comfydeploy.com/
     - This project is designed to demonstrate the integration and utilization of the ComfyDeploy SDK within a Next.js application.
     - showcase how developers can get started creating applications running ComfyUI workflows using Comfy Deploy.
+
+- https://github.com/ViewComfy/ViewComfy /461Star/AGPL/202508/ts
+  - https://www.viewcomfy.com/
+  - open source tool to help you create beautiful web apps from ComfyUI workflows.
+  - Whether you need to turn comfy workflows into simple web apps that anyone can use, deploy them as serverless APIs, or just use the latest models on a powerful GPU, we’ve got you covered.
+  - [How to turn a ComfyUI workflow into a web app in minutes _202410](https://www.viewcomfy.com/blog/turn-a-comfyui-workflow-into-an-app)
+  - [Build and deploy a ComfyUI-powered app: A complete guide _202504](https://www.viewcomfy.com/blog/build-and-deploy-a-comfyui-powered-app-a-complete-guide)
+    - in order to transform your ComfyUI workflow into a serverless API, you need to deploy it on ViewComfy Cloud. 
 
 - https://github.com/licyk/term-sd /GPL/202508/sh
   - 多平台 Stable Diffusion 部署，管理脚本
@@ -1263,6 +1369,44 @@ modified: 2025-08-23T11:43:35.904Z
   - Term-SD 支持在 Linux，Windows，MacOS 上
   - https://github.com/licyk/sd-webui-all-in-one /80Star/GPLv3/202508/jupyter
     - 支持部署多种 WebUI 的 Jupyter Notebook，支持部署以下 WebUI：sd-webui, comfyui, InvokeAI,fooocus
+
+- https://github.com/runpod-workers/worker-comfyui /AGPL/202508/python
+  - This project allows you to run ComfyUI workflows as a serverless API endpoint on the RunPod platform.
+  - Submit workflows via API calls and receive generated images as base64 strings or S3 URLs.
+  - The worker exposes standard RunPod serverless endpoints (/run, /runsync, /health). 
+    - By default, images are returned as base64 strings. 
+    - You can configure the worker to upload images to an S3 bucket instead by setting specific environment variables 
+  - https://github.com/Dekita/runpod-serverless-comfyui-worker /202311/inactive
+    - serverless ComfyUI worker for Runpod.io
+
+- https://github.com/replicate/cog-comfyui /MIT/202507/python
+  - https://replicate.com/fofr/any-comfyui-workflow
+  - Run ComfyUI with an API
+  - You’ll need the API version of your ComfyUI workflow. This is different to the commonly shared JSON version, it does not included visual information about nodes
+  - You can use LoRAs directly from CivitAI, HuggingFace, or any other URL in two ways
+  - To get the best performance from the model you should run a dedicated instance.
+
+- https://github.com/aws-samples/comfyui-on-eks /MIT/202506/python
+  - It's a solution to deploy ComfyUI on Amazon EKS.
+  - Optimized Use of GPU Instance Store: By fully utilizing the instance store of GPU instances, we maximize performance for model loading and switching while minimizing the costs associated with model storage and transfer.
+  - Images generated are directly written to Amazon S3 using the S3 CSI driver, reducing storage costs.
+
+- https://github.com/cancer32/ComfyEnv /8Star/apache2/202508/python 
+  - ComfyEnv helps you manage isolated environments, so each project or node set can live in its own stable sandbox.
+  - Isolated Conda environments per ComfyUI setup
+  - ✅ Windows ✅ Linux ❌ macOS is currently not supported
+
+- https://github.com/robertvoy/ComfyUI-Distributed /202508
+  - ComfyUI extension that enables multi-GPU processing locally, remotely and in the cloud
+
+- https://github.com/siliconflow/BizyAir /757Star/MIT/202507/python
+  - BizyAir 是一款 ComfyUI 云节点插件，它可以与 ComfyUI 本地的其他插件一同使用、组建工作流。 
+  - BizyAir 使用的是云计算资源，因此即使用户没有本地显卡，也可以做 AI 内容生成。
+  - BizyAir 作为一款云计算产品，云节点按量付费，不做云节点运算时，不产生费用。
+  - 用户可以将自己的模型上传到 BizyAir 中，再利用 BizyAir 到云算力做 AI 创作。
+
+- https://github.com/QuickPoser/ComfyUI_Worker /8Star/apache2/202508/python 
+  - ComfyUI_Worker 仅仅是一个连接到云端服务的客户端。要使其正常工作，您必须首先联系闪报工作人员为您开通云端租户账户。
 # diffusers
 - https://github.com/huggingface/diffusers /30.4kStar/apache2/202508/python
   - https://huggingface.co/docs/diffusers
@@ -1310,12 +1454,6 @@ modified: 2025-08-23T11:43:35.904Z
 - https://github.com/Stability-AI/stablediffusion /Stable Diffusion Version 2
   - https://github.com/CompVis/stable-diffusion
   - A latent text-to-image diffusion model
-
-- https://github.com/camenduru/stable-diffusion-webui-portable
-  - This Project Aims for 100% Offline Stable Diffusion (People without internet or with slow internet can get it via USB or HD-DVD)
-
-- https://github.com/cmdr2/stable-diffusion-ui
-  - The easiest way to install and use Stable Diffusion on your computer.
 # models/loras/controlnet
 - https://github.com/guoyww/AnimateDiff /11.7kStar/apache2/202407/python/inactive
   - https://animatediff.github.io/
@@ -1333,6 +1471,21 @@ modified: 2025-08-23T11:43:35.904Z
   - The repository is for ComfyUI extension. 
   - Universal Compatibility – Works instantly with almost any model (SD 1.5, XL, 3.5, Flux, HiDream, Qwen-Image or custom LoRAs) and ControlNet.
   - ComfyUI-Manager: Search for "LanPaint" in the manager and install it directly.
+
+- https://github.com/RishiDesai/CharForge /MIT/202506/python
+  - https://www.charforge.dev/
+  - Generate character consistent images with a single reference
+  - 48GB is preferred, but you can get by with 24GB
+  - [Generate character consistent images with a single reference (Open Source & Free) : r/StableDiffusion _202506](https://www.reddit.com/r/StableDiffusion/comments/1lkezo2/generate_character_consistent_images_with_a/)
+    - I built a tool for training Flux character LoRAs from a single reference image, end-to-end.
+
+- https://github.com/cumulo-autumn/StreamDiffusion /10.4kStar/apache2/202412/python/inactive
+  - StreamDiffusion is an innovative diffusion pipeline designed for real-time interactive generation.
+  - Streamlined data processing through efficient batch operations.
+  - Improved guidance mechanism that minimizes computational redundancy.
+  - Improves GPU utilization efficiency through advanced Stochastic Similarity Filter.
+  - https://github.com/jesenzhang/ComfyUI_StreamDiffusion
+    - a simple implemention StreamDiffusion for ComfyUI
 
 - https://github.com/joanrod/star-vector /apache2/202503/python
   - https://starvector.github.io/
@@ -1372,27 +1525,6 @@ modified: 2025-08-23T11:43:35.904Z
   - https://registry.comfy.org/
   - The server that backs ComfyUI Registry, a public collection of custom node packs used in ComfyUI.
   - The backend API server for Comfy Registry and Comfy CI/CD.
-
-- https://github.com/runpod-workers/worker-comfyui /AGPL/202508/python
-  - This project allows you to run ComfyUI workflows as a serverless API endpoint on the RunPod platform.
-  - Submit workflows via API calls and receive generated images as base64 strings or S3 URLs.
-  - The worker exposes standard RunPod serverless endpoints (/run, /runsync, /health). 
-    - By default, images are returned as base64 strings. 
-    - You can configure the worker to upload images to an S3 bucket instead by setting specific environment variables 
-  - https://github.com/Dekita/runpod-serverless-comfyui-worker /202311/inactive
-    - serverless ComfyUI worker for Runpod.io
-
-- https://github.com/aws-samples/comfyui-on-eks /MIT/202506/python
-  - It's a solution to deploy ComfyUI on Amazon EKS.
-  - Optimized Use of GPU Instance Store: By fully utilizing the instance store of GPU instances, we maximize performance for model loading and switching while minimizing the costs associated with model storage and transfer.
-  - Images generated are directly written to Amazon S3 using the S3 CSI driver, reducing storage costs.
-
-- https://github.com/replicate/cog-comfyui /MIT/202507/python
-  - https://replicate.com/fofr/any-comfyui-workflow
-  - Run ComfyUI with an API
-  - You’ll need the API version of your ComfyUI workflow. This is different to the commonly shared JSON version, it does not included visual information about nodes
-  - You can use LoRAs directly from CivitAI, HuggingFace, or any other URL in two ways
-  - To get the best performance from the model you should run a dedicated instance.
 
 - https://github.com/phineas-pta/comfyui-auto-nodes-layout /202507/python/js
   - a ComfyUI extension that applies an improved node layout algorithm to ComfyUI workflows, primarily for better visualization

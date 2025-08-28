@@ -66,13 +66,14 @@ modified: 2025-08-23T11:42:50.170Z
   - 相对于传统PS软件的优点: upscale还原度高，速度快
 
 - openrouter for image
-  - 图像模型的配置比文本llm更复杂，场景更多样
+  - 图像模型的配置比文本llm更复杂，不同场景所需的模型和配置都不同
   - 难点是sd系列模型相关的clip/encoder/vae种类繁多，不如直接用comfyui-api
   - image-gen的逻辑还需要考虑 VLM 生成图片描述prompt所采用的模型，过于灵活
 
 - tips
   - 随着文本大模型能力的增强，prompt自动生成、memory管理基于coding实现更灵活，comfyui支持的能力有限
-  - 在线图片生成或编辑的架构, 涉及到模型下载与扩展下载，目前没有类似ollama的统一方案, 还涉及到GPU/CPU硬件支持，只有成熟方案才处理过相关问题
+  - 在线图片生成或编辑的架构, 涉及到model/lora/vae/encoder的下载与组合，目前没有类似ollama的统一方案, 还涉及到GPU/CPU硬件支持，只有成熟方案才处理过相关问题
+  - 下载模型文件后不要rename，方便与第三方包管理共享，方便与云端服务商的模型共享名称
   - 👷: ComfyUI was never based on diffusers. It's a horrible library but I can't hate it that much because it's so bad that it's responsible for prematurely killing a lot of comfyui competition by catfishing poor devs into using it.
 # dev-xp
 

@@ -95,6 +95,10 @@ modified: 2024-08-24T16:15:11.456Z
 - vscode-knowledge-base
   - obsidian-like
 
+- markdown-viewer
+  - open in browser button
+  - toc: auto highlight the title according to scroll position, by codemirror
+
 - tables
   - obsidian-bases
 

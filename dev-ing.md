@@ -363,6 +363,12 @@ test('mock test', () => {
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
 
+## 0828
+
+- [openrouter的Gemini 2.5 Pro Preview调用报错 - 开发调优 - LINUX DO _202504](https://linux.do/t/topic/536770)
+  - (Google AI Studio) Provider returned error: {"error":{"code":400, "status":"FAILED_PRECONDITION"}}
+  - 换成美国节点试试，谷歌限制地区
+
 ## 0826
 
 - [convolution_overrideable not implemented. · Issue · comfyanonymous/ComfyUI _202401](https://github.com/comfyanonymous/ComfyUI/issues/2532)

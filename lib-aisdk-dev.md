@@ -42,6 +42,15 @@ modified: 2025-08-08T07:35:49.535Z
 
 - openrouter
   - aisdk对free-model由社区提供支持
+  - [API Rate Limits | OpenRouter | Documentation](https://openrouter.ai/docs/api-reference/limits)
+    - If you’re using a free model variant (with an ID ending in `:free`), you can make up to 20 requests per minute.
+    - If you have purchased less than 10 credits, you’re limited to 50 `:free` model requests per day.
+    - If you purchase at least 10 credits, your daily limit is increased to 1000 `:free` model requests per day.
+  - [What are the fees for using OpenRouter? | Documentation](https://openrouter.ai/docs/faq#what-are-the-fees-for-using-openrouter)
+    - OpenRouter charges a 5.5% ($0.80 minimum) fee when you purchase credits.
+    - Is there a fee for using my own provider keys (BYOK)?
+    - Yes, if you choose to use your own provider API keys, there is a fee of 5% of what the same model and provider would normally cost on OpenRouter.
+    - This fee is deducted from your OpenRouter credits. This allows you to manage your rate limits and costs directly with the provider while still leveraging OpenRouter’s unified interface.
 
 - cloudflare workers ai 提供了免费额度
   - [Pricing · Cloudflare Workers AI docs](https://developers.cloudflare.com/workers-ai/platform/pricing/)

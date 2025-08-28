@@ -39,6 +39,11 @@ modified: 2024-08-24T16:30:20.218Z
     - 如果是在本地运行，模型参数量级确实不能选太大，性能和速度很难兼得。不过如果是企业内部服务器，还是有机会兼顾性能和安全。
     - cursor的代码补全/提示太迅速及时了 这个能做到吗 除了ai的修改代码功能 我最喜欢就是cursor这个功能了 已经依赖了
     - 用cursor的时候我就找过其他开源的竞品（例如http://continue.dev），大部分步骤（例如embedding、apply、llm）在本地跑都不得劲。或许是我机器太差了？而这些还是相当重要的，例如apply这个在chat完成后自动填入代码这个直接使用普通的llm完成度都太差了。
+  - https://github.com/voideditor/void-builder /MIT/202508/sh
+    - This is a fork of VSCodium, which has a nice build pipeline that we're using for Void.
+    - The purpose of this VSCodium fork is to run Github Actions. These actions build all the Void assets (.dmg, .zip, etc), store these binaries on a release in voideditor/binaries
+  - https://github.com/qinglion/yuejuan-builder
+    - 基于 void-builder 的思想，为 qinglion_yuejuan（青狮阅卷 Electron 应用）提供本地/CI 一键打包、校验、上传与版本 JSON 更新的脚本集合。
 
 - https://github.com/we0-dev/we0 /202402/ts
   - https://we0.ai/wedev

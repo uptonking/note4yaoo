@@ -440,7 +440,25 @@ problem is when software like InvokeAI or some else are using the diffusers form
 
 - ## 
 
-- ## 
+- ## 🤔 [Comfyui前景如何？ - 知乎](https://www.zhihu.com/question/14481050317/answers/updated)
+- 没前景，说是AI，然而比传统软件还繁琐，最主要，连一大堆线，没有一条线是跟创作有关的，都是调用这个调用哪个，那么，可商用的东西一定是要有创作工程文件和明确的版权的，它，两者都没有
+  - 并不会。但凡你用过3dsmax，maya，UE这些传统软件，就会感到亲切。你所谓的传统软件，不会是word，Excel，PPT吧？
+
+- 不看好，我就准备弃坑了。原因就是成本太高了，不管是直接投入的硬件还是时间成本。
+  - Comfyui最大的好处是可以让人接触和学习AI的使用，并可以自由设计流程，可以直观地理解以大模型为驱动力的新的生产和工作方式及原理。
+
+- 不会，别想了，没啥难度。现在的门槛是硬件与背后的大模型
+  - 看着节点很牛，实际压根没必要。。啥叫人工智能，就是说句话就可以了完成所有工作，直接交流，未来会越来越方便，不需要连什么节点。。收费的AI谁搞节点式？
+
+- comfyui简单娱乐的话，也可以快速上手，但是要玩好的话，其实很难。
+  - 难点不在UI操作，而在对Ai模型的底层理解和运用，难在对各种快速发展的Ai技术的熟悉和整合。
+
+- 一个工具而已，就跟excel，word一样，你可以在简历上写熟练掌握excel、word技能，但市场不会说真的招个人专门做excel或者word。
+
+- 工具就是工具，不会变成一个独立岗位。只有某些岗位，例如美工，美术，设计等等，用它可以提高效率
+
+- 没前景，无非是给美工提高点儿工作效率，美工有前景吗？
+  - figma ?
 
 - ## [Why aren’t LoRA’s a big thing i the LLM realm? : r/LocalLLaMA _202312](https://www.reddit.com/r/LocalLLaMA/comments/18oj983/why_arent_loras_a_big_thing_i_the_llm_realm/)
 - Loras work for stable diffusion because the models share an architecture

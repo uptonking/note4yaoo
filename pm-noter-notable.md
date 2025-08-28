@@ -17,7 +17,7 @@ modified: 2023-11-28T14:48:45.910Z
     - replay
     - 基于oplog/events的方案
   - 🤝 collaboration-ready (accessible): multiplayer, sharing, offlineable, crdt
-  - ⛓️ automation/workflow/rpa (automatable): 结合lowcode, 基于dag的方案, scheduler
+  - ⛓️ automation/workflow/rpa (automatable): 结合lowcode, 基于dag?, scheduler, ai-hitl
   - 📱 mobile-editor: phone/pad, 自定义编辑器可以是主特性，也可以是锦上添花
     - mobile-app-generator
   - 📈 end-user database: 支持用户自定义数据和流程, multi views, ob-bases

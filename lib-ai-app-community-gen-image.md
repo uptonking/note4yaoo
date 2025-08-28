@@ -154,9 +154,15 @@ modified: 2025-08-16T14:12:24.416Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [Is there a lightweight node that turns a regular prompt into natural language for FLUX? : r/comfyui _202408](https://www.reddit.com/r/comfyui/comments/1eovcb0/is_there_a_lightweight_node_that_turns_a_regular/)
+- I just use web based LLM for it. My personal preference is Claude. I just ask it to rewrite my prompt in the T5 format. Then I paste that into my ComfyUI positive prompt.
 
-- ## [OpenRouter... but for images? : r/WritingWithAI _202504](https://www.reddit.com/r/WritingWithAI/comments/1keso5x/openrouter_but_for_images/)
+- First off, natural language is the language you speak. You shouldn't need a translator for that hopefully.
+  - Secondly, you don't need natural language to prompt flux. Sure, the t5 encoder can extract the important keywords between all the fluff filler words, but if you don't feed it fluff, even better. It can work off the keywords alone no problem.
+  - The only thing you shouldn't do, is feed it booru tags and such.
+  - The problem is your choice of keywords most likely.
+
+- ## 🖼️ [OpenRouter... but for images? : r/WritingWithAI _202504](https://www.reddit.com/r/WritingWithAI/comments/1keso5x/openrouter_but_for_images/)
 - vendors: replicate, fal.ai, segmind, novelai...
 
 - I used Flux-1.1 models through Replicate. The last ones I created with ChatGPT 4o which is very good in understanding compositions and with texts like title, sub title or author name. Upscaling can be done with replicate agai
@@ -176,6 +182,11 @@ modified: 2025-08-16T14:12:24.416Z
 - Poe provides a number of image models, they offer an API
 
 - [openrouter.ai but for images? : r/OpenWebUI _202411](https://www.reddit.com/r/OpenWebUI/comments/1gle9l8/openrouterai_but_for_images/)
+
+- [Is there an API for GPUs like openrouter for LLMs? : r/StableDiffusion _202508](https://www.reddit.com/r/StableDiffusion/comments/1mp2ts9/is_there_an_api_for_gpus_like_openrouter_for_llms/)
+  - If you want to rent the entire GPU and be charged per usage time, there are services like runpod, vastai, or ours https://www.cloudrift.ai/
+  - However, all approaches have restrictions. Implementing multi-tenancy efficiently for arbitrary GPU workloads is a challenging task.
+  - you just run it on the external host. Most don't charge untill you start actually using the GPUs. You still have storage and CPU costs though. It's not exactly practical to transfer your models and data over to a provider every time you start a run.
 
 - ## 🆚 [Any alternatives to Automatic1111 or ComfyUI that DON'T Use Python : r/StableDiffusion _202502](https://www.reddit.com/r/StableDiffusion/comments/1ivpbno/any_alternatives_to_automatic1111_or_comfyui_that/)
   - Python is such a pain in a$$ with its dependency hell, requiring specific versions of everything. The slightest thing can break it.
