@@ -78,6 +78,7 @@ brew services stop --all
   - frontend-dev-3000, node, crowdin
 # overview
 
+- 聊天基于 crisp-sdk-web 实现， Crisp 的核心平台（如聊天服务、AI 功能、CRM 等）是商业闭源的
 # frontend
 
 # backend

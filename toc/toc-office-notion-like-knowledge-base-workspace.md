@@ -719,11 +719,15 @@ modified: 2022-06-03T21:34:54.893Z
   - 输入：文档类图像, 输出：TXT或Word
   - A[/文档图像/] --> B([文档方向分类 rapid_orientation]) --> C([版面分析 rapid_layout])
 
-- https://github.com/Cinnamon/kotaemon /apache2/202409/python
+- https://github.com/Cinnamon/kotaemon /23kStar/apache2/202507/python
   - https://cinnamon.github.io/kotaemon/
   - https://huggingface.co/spaces/cin-model/kotaemon-demo
   - open-source clean & customizable RAG UI for chatting with your documents. Built with both end users and developers in mind.
   - This project serves as a functional RAG UI for both end users who want to do QA on their documents and developers who want to build their own RAG pipeline.
+  - Minimalistic UI: A user-friendly interface for RAG-based QA.
+  - Support for Various LLMs: Compatible with LLM API providers (OpenAI, AzureOpenAI, Cohere, etc.) and local LLMs (via `ollama` and `llama-cpp-python`).
+  - Framework for RAG Pipelines: Tools to build your own RAG-based document QA pipeline.
+  - Customizable UI: See your RAG pipeline in action with the provided UI, built with Gradio
 
 - https://github.com/shaheryaryousaf/fastapi-docgpt
   - 一个PDF文档GPT项目：fastapi-docgpt，可以对PDF文档内容进行对话问答 
@@ -809,6 +813,17 @@ modified: 2022-06-03T21:34:54.893Z
   - Open-source no-code web data extraction platform. 
   - Maxun lets you create custom robots which emulate user actions and extract data. A robot can perform any of the actions: Capture List, Capture Text or Capture Screenshot. Once a robot is created, it will keep extracting data for you without manual intervention
   - BYOP (Bring Your Own Proxy) lets you connect external proxies to bypass anti-bot protection. Currently, the proxies are per user. Soon you'll be able to configure proxy per robot.
+
+- https://github.com/NanoNets/docstrange /460Star/MIT/202508/python
+  - https://docstrange.nanonets.com/
+  - Extract and convert data from any document, images, pdfs, word doc, ppt or URL into multiple formats (Markdown, JSON, CSV, HTML) with intelligent content extraction and advanced OCR.
+  - Cloud Processing (Default): Instant free conversion with cloud API 
+  - Local Processing: CPU/GPU options for complete privacy - no data sent anywhere
+  - Universal Input: PDFs, Word docs, Excel, PowerPoint, images, URLs, and raw text
+  - URL Processing: Direct conversion from web pages
+  - Smart Output: Markdown, JSON, CSV, HTML, and plain text formats
+  - Advanced OCR: Multiple OCR engines with automatic fallback
+  - MCP Server: Integrate with Claude Desktop for intelligent document navigation
 # office
 - https://github.com/paperless-ngx/paperless-ngx /GPLv3/202412/ts/python
   - https://docs.paperless-ngx.com/

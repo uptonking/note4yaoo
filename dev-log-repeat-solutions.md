@@ -157,8 +157,8 @@ modified: 2021-07-20T13:50:23.433Z
 - ✨ cms(content-mgmt)
   - 👉 suite-docs  (MIT/django+blocknote)
   - 👉🏻 strapi      (MIT/knex+slate)
-  - 👉🏻 directus   (AGPL/knex+vue3+tinymce5)
-  - 👉🏻 odoo       (LGPL/python+owl)
+  - directus      (AGPL/knex+vue3+tinymce5)
+  - odoo          (LGPL/python+owl)
   - huly-platform  (EPL/tiptap/svelte//🐞jira)
   - zulip      (apache2/django)
   - outline    (apache2/sequelize+prosemirror)
@@ -169,7 +169,7 @@ modified: 2021-07-20T13:50:23.433Z
   - 👉 colanode(apache2/kysely+tiptap)
   - 👉🏻 grist   (apache2/typeorm+backbone)
   - 👉🏻 nocodb     (AGPL/knex+nuxt3)
-  - 👉🏻 ethercalc   (MIT/nodejs+redis)
+  - ethercalc      (MIT/nodejs+redis)
   - baserow        (MIT/django+nuxt2)
   - rowy       (apache2/firebase+tinymce5)
   - locokit        (MIT/knex+vue2)
@@ -179,7 +179,7 @@ modified: 2021-07-20T13:50:23.433Z
   - ckan/datapian
 - ✨ workflow/automation (eg, directus)
   - 👉🏻 activepieces(MIT/typeorm)
-  - n8n           (AGPL/typeorm+vue2+jsplumb)
+  - 👉🏻 n8n        (AGPL/typeorm+vue2+jsplumb)
   - budibase      (AGPL/knex+svelte)
   - automatisch   (AGPL/knex+graphql+slate)
 - ✨ bi

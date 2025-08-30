@@ -34,6 +34,9 @@ modified: 2023-03-09T13:47:07.317Z
       - 示例依赖server api，本地无法运行
     - https://github.com/ONLYOFFICE/document-editor-react
       - 示例依赖server api，本地无法运行
+  - https://github.com/phpk/godoos
+    - 一款高效的内网办公操作系统，内含word/excel/ppt/pdf/聊天/白板/思维导图等多个办公系统工具
+    - 支持配置onlyOffice地址，onlyOffice编辑word/ppt/excel文件
 - https://github.com/ibisheng/onlyoffice-ibisheng /AGPLv3/201911/js
   - 毕升文档在线文件服务部分在编辑和预览Office时集成了onlyOffice。我们在集成onlyOffice主要是使用了sdkjs部分代码
   - 抛弃了only Office的原来的UI，整体UI重新设计实现

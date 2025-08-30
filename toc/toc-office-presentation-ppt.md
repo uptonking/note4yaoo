@@ -150,14 +150,25 @@ modified: 2021-04-30T20:14:17.669Z
 - PPTist /6.9kStar/apache2 > AGPLv3/202504/ts/vue/基于DOM
   - https://github.com/pipipi-pikachu/PPTist
   - https://pipipi-pikachu.github.io/PPTist/
-  - 基于 Vue3.x + TypeScript 的在线演示文稿（幻灯片）应用，还原了大部分 Office PowerPoint 常用功能，
-  - 实现在线PPT的编辑、演示。
+  - 一个基于 Web 的在线演示文稿（幻灯片）应用，还原了大部分 Office PowerPoint 常用功能，支持 文字、图片、形状、线条、图表、表格、视频、音频、公式 几种最常用的元素类型
+  - 可以在 Web 浏览器中编辑/演示幻灯片
   - 支持导入、导出PPT文件。
   - 依赖vue3、vuedraggable、pptxtojson、pptxgenjs、prosemirror、svg-pathdata、tippy.js、dexie4、animate.css、echarts5
   - 基于 DOM 的渲染方案，优点是简单易上手
   - 📝 每个文本块都是一个prosemirror编辑器
   - 每个幻灯片都支持缩放
   - [ ] 待测试，显示视频/动图， excel导出的图表， smartArt图形
+  - 基于 Vue3.x + TypeScript 构建，不依赖UI组件库，尽量避免第三方组件，样式定制更轻松
+  - 👾 支持AI生成PPT, AI改写/扩写/缩写
+  - [AIPPT的基本原理](https://github.com/pipipi-pikachu/PPTist/blob/master/doc/AIPPT.md)
+    - 定义PPT结构（一套PPT中都有什么类型的页面，每种页面都有些什么内容）
+    - 示例数据：public/mocks/AIPPT.json
+    - 制作模板，模板中标记好结构类型；
+    - AI生成符合第1步定义的PPT结构的数据；
+    - 利用AI或其他方案，生成相关的配图（常见途径有：AI文生图、图库搜索匹配）；
+    - 将AI生成的数据、配图与模板进行匹配结合，生成最终的PPT。
+    - 注意：实际上并不存在专门提供给AIPPT的模板。所谓的AIPPT模板只是把在PPTist中制作的普通页面标注上类型标记而已。这些数据不仅仅用于AI生成PPT，也可以作为普通的页面模板使用。
+    - 页面标记和节点标记: 封面页、目录页、过渡页、内容页、结束页
   - [feat: 支持移动端/更换开源协议 _202206](https://github.com/pipipi-pikachu/PPTist/commit/704192508247085d327577848691634a925623b8)
     - apache2 > GPLv3
 
@@ -278,7 +289,7 @@ modified: 2021-04-30T20:14:17.669Z
   - 🍴 forks
   - https://github.com/vassbo/slideshow
 # ai-ppt/slides
-- https://github.com/presenton/presenton /1kStar/apache2/202507/python/ts
+- https://github.com/presenton/presenton /1.8kStar/apache2/202508/python/ts
   - Open-Source AI Presentation Generator and API (Gamma, Beautiful AI, Decktopus Alternative)
   - generating presentations with AI — all running locally on your device.
   - using models like OpenAI and Gemini, or use your own hosted models through Ollama.
@@ -292,6 +303,127 @@ modified: 2021-04-30T20:14:17.669Z
   - Save as PowerPoint (PPTX) and PDF
   - [We made open source AI presentation generator (Gamma Alternative) : r/selfhosted _202505](https://www.reddit.com/r/selfhosted/comments/1kn6btt/we_made_open_source_ai_presentation_generator/)
     - We've actually archived electron project for now. We'll only support docker for now. Most wanted in docker format to run on web, and it was hard to maintain both. Hopefully, if we prove useful to many, we will go back to desktop as well.
+
+- https://github.com/allweonedev/presentation-ai /471Star/MIT/202508/ts
+  - https://presentation.allweone.com/
+  - AI Presentation Generator (Gamma Alternative)
+  - Editable Outlines: Review and modify AI-generated outlines before finalizing
+  - Customizable Slides: Choose the number of slides, language, and page style
+  - Choose different AI image generation models for your slides
+  - Real-Time Generation: Watch your presentation build live as content is created
+  - Full Editability: Modify text, fonts, and design elements as needed
+  - Presentation Mode: Present directly from the application
+  - Auto-Save: Everything saves automatically as you work
+  - Multiple Themes: 9 built-in themes with more coming soon
+  - OpenAI API key (for AI generation features)
+  - Together AI API key (for Image generation)
+  - Google Client ID and Secret for authentication feature
+
+- https://github.com/sligter/LandPPT /962Star/apache2/202508/python
+  - https://landppt.pages.dev/
+  - 一个基于大语言模型（LLM）的智能演示文稿生成平台，能够自动将文档内容转换为专业的PPT演示文稿
+  - 从主题到完整PPT，全程AI自动化处理
+  - 🏠 三阶段工作流：需求确认 → 大纲生成 → PPT生成
+  - 直观的大纲编辑器和实时预览
+  - 侧边栏AI编辑功能，支持实时对话和视觉参考
+  - 版本管理：项目历史记录和版本回溯功能
+  - 演讲稿生成：支持单页/多页/全部幻灯片的演讲稿生成，导出为DOCX/Markdown格式
+  - 智能配图：AI自动匹配最适合的图像，支持多源获取和参考图片生成
+    - 多源图像获取：本地图库、网络搜索、AI生成三合一
+    - 网络图像搜索：支持 Pixabay、Unsplash 等优质图库
+  - AI图像生成： 集成 DALL-E、SiliconFlow、Pollinations 等服务
+  - 支持本地部署: OpenAI, Claude, Gemini, Ollama
+  - 深度研究：集成 Tavily API 和 SearXNG 的多源研究功能
+  - 多格式导出：PDF/HTML/PPTX 多种格式导出支持
+  - 智能解析：使用 MinerU 和 MarkItDown 进行高质量内容提取
+  - 丰富的模板系统: 统一的HTML模板系统，支持响应式设计
+    - 场景化模板：通用、旅游、教育等多种专业场景模板
+  - 用户友好的响应式Web界面
+  - [ollama本地连接一直显示错误，服务器500 _202507](https://github.com/sligter/LandPPT/issues/5)
+    - ollama测试一直失败，尝试修复了很久也没有成功，最后发现其实可以直接运行。
+    - 我也是一直测试失败，跨域调了好久，结果发现配置好了可以直接运行。
+
+- https://github.com/YOYZHANG/ai-ppt /144Star/MIT/202410/ts/inactive
+  - Generated ppt by AI based on RevealJS synax
+  - Supabase - User OAuth
+  - Gemini API - AI Powered
+
+- https://github.com/veasion/AiPPT /1.4kStar/GPL/202503/js
+  - https://veasion.github.io/AiPPT
+  - https://www.veasion.cn/AiPPT/
+  - AI 智能生成 PPT，通过主题/文件/网址等方式生成PPT，支持原生图表、动画、3D特效等复杂PPT的解析和渲染，支持用户自定义模板，支持智能添加动画
+  - PPT 解析成 JSON
+  - JSON 反渲染为 PPT
+  - 针对上面技术，我们开发了一套可商用 aippt 软件，支持代理 & 私有化部署, 商业合作 & 进群交流
+
+- https://github.com/limaoyi1/Auto-PPT /737Star/MIT/202311/python/提交少/inactive
+  - 使用 gpt-3.5-turbo 和 pptx 一站式生成指定主题的PPTX文件
+  - 只需输入标题，Auto_PPT将立即为你创造一份全新的PPTX
+  - 我们独特地运用 md格式 多步链式地生成PPT文本
+  - 在v1.0使用langchain对程序进行优化和重构
+  - 与Unsplash合作，提供最精美的插图
+  - 支持本地部署，只需添加你的OpenAI API密钥和Unsplash API密钥信息即可
+  - https://github.com/otahina/PowerPoint-Generator-Python-Project /202311/inactive
+
+- https://github.com/SlideSpeak/slidespeak-webapp /202308/ts/inactive
+  - SlideSpeak allows you to chat with your PowerPoint slides.
+  - NextJS, React Chat Stream
+  - https://github.com/SlideSpeak/slidespeak-backend /202412/python/flask/inactive
+    - Backend for SlideSpeak. Create PowerPoints with AI.
+    - 实现简单
+    - Llama Index and uses the OpenAI GPT 3.5 Turbo Mobel
+    - PineCone as the primary vector storage
+    - MongoDB as the Index Store and Document Store
+    - AWS S3 as the blob file storage
+
+- https://github.com/hughdazz/PPTCopilot /MIT/202308
+  - ppt编辑界面，基于g站上pptist修改而来，该项目ppt的内部表示方式是JSON，这就给我们修改的空间
+  - 后端是基于beego框架从0搭建
+  - 项目管理界面，基于vue-element-admin修改，不过后期由于我个人的喜好将element换成了腾讯的tdesign库
+  - 生成PPT的流程是：
+    - 前端接受到一个ppt的主题(topic)，发送到后端
+    - 后端请求chatgpt，返回一个xml格式的大纲，这是我们的prompt工程
+    - 后端返回大纲到前端，前端进行解析并让用户修改
+    - 前端将修改后的PPT发送到后端
+    - 后端将xml中的每一页概述发给chatgpt，进行请求，得到有具体内容的xml，这样能突破chatgpt的字数限制，可以生成任意多ppt
+    - 数据库中事先存了一些ppt模版，这些ppt模版遵循固定格式，方便进行文本替换，如`{{title}}`之类 进行文本替换，得到完整ppt
+    - 代表ppt的JSON返回给前端，直接渲染、展示
+  - https://github.com/hughdazz/PPTCopilotBackend /go
+  - https://github.com/hughdazz/PPTCopilotEditor /ts/vue
+
+- https://github.com/barun-saha/slide-deck-ai /251Star/MIT/202508/python 
+  - https://huggingface.co/spaces/barunsaha/slide-deck-ai
+  - Co-create a PowerPoint presentation with Generative AI
+  - providers — Azure OpenAI, Google, Cohere, Together AI, and OpenRouter. 
+  - Offline LLMs are made available via Ollama. 
+  - SlideDeck AI generally recommends the use of Mistral NeMo, Gemini Flash, and GPT-4o to generate the slide decks
+  - SlideDeck AI works in the following way:
+    - Given a topic description, it uses a  LLM to generate the initial content of the slides. The output is generated as structured JSON data based on a pre-defined schema.
+    - Next, it uses the keywords from the JSON output to search and download a few images
+    - Subsequently, it uses the `python-pptx` library to generate the slides, based on the JSON data
+    - Every time SlideDeck AI generates a PowerPoint presentation, a download button is provided.
+
+- https://github.com/SmartSchoolAI/ai-to-pptx /1.2kStar/GPL/202503/ts
+  - https://pptx.dandian.net/
+  - 一个使用AI技术(DeepSeek)制作PPTX的助手，支持在线生成、修改和导出PPTX
+  - 使用DeepSeek等大语言模型来生成大纲 
+  - 生成PPTX的时候可以选择不同的模板 
+  - 支持导出PPTX
+  - 支持在线修改PPTX的文字内容，样式，图片等(商业版功能)
+  - 支持用户设计自己的模板上传到共享平台, 分享给其它人使用(商业版功能)
+  - https://github.com/SmartSchoolAI/ai-to-pptx-backend /php
+
+- https://github.com/qrpcode/letsPPT /202309/java/php/inactive
+  - AI自动生成PPT文档的Java应用，一个标题生成PPT模板。
+  - 生成系统（Java）
+  - 生成后人工审核系统（Java）
+  - C端前端页面（PHP，原生html，自适应）
+  - 登录端小程序（原生微信小程序）
+  - 因为POI对2010版本PPT特性支持太差，我直接写了个Java原生生成PPT的jar工具包，开源了
+  - https://github.com/qrpcode/pptshow /apache2/202306/java/inactive
+    - Java生成PPT文档，支持2010版PPTX新特性
+  - https://github.com/qrpcode/wordgo /apache2/202306/java/inactive
+    - 传统的Java生成word通常需要先手动创建模板文件，之后导入。如果不希望创建模板，还想少些点代码，选Word GO是个好主意
 
 - [ChatSlide | Build your Slides and Videos from Documents in one click](https://chatslide.ai/landing)
 # ai-canvas

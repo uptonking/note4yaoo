@@ -14,7 +14,7 @@ modified: 2025-03-22T18:23:37.602Z
   - [Excalidraw白板调研文档](http://wangxiang.website/docs/work/excalidraw.html)
     - npm 包目前不支持：多人协作、共享链接等，不过 Excalidraw 团队已经在规划当中，不久就会以插件的形式支持。
 # popular
-- tldraw /5.8kStar/MIT > NonCommercial/202202/ts
+- tldraw /5.8kStar/MIT > Free+watermark/202202/ts
   - https://github.com/tldraw/tldraw
   - https://www.tldraw.com/
   - https://tldraw.substack.com/archive

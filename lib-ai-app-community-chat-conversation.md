@@ -86,15 +86,6 @@ modified: 2023-04-16T10:02:58.738Z
 - 数据截止到22年，感觉贼落后
 - 一开始就能免费用吧？不过现在是免登陆用了，更进一步了。
 
-- ## 现在RAG+LLM那套太成熟了…亲自体验两百行代码就可以实现一个包括前端在内的定制化Chatbot（比如某个人/某个领域的定制化知识库）。
-- https://twitter.com/VoidAsuka/status/1768328842056499654
-  - 从完全不懂这一套的小白程序员从开发到部署两小时就能搞定，反而还是爬数据、洗数据花的时间更多…果然数据是新时代的黄金
-  - Langchain + Streamlit 几百行搞定
-- 不是成熟，是本来就简单吧 不用langchain不差哪里的，只是他更全
-  - 简单就是成熟的体现之一啊
-- 搭起来很简单，做到效果好很难，做一套评测标准也很难
-- 就是chatbot这个形态有点不三不四
-
 - ## 用 Excel 实现了一个简易的 GPT2，可以下载：不过特别大，有 1.25 个G
 - https://twitter.com/vikingmute/status/1768452277600387161
   - [Spreadsheets are all you need.ai – A low-code way to learn AI](https://spreadsheets-are-all-you-need.ai/)
@@ -157,25 +148,6 @@ modified: 2023-04-16T10:02:58.738Z
   - https://github.com/clidey/whodb
 
 - 和chat2db相比哪个好用？
-# discuss-chat-office
-- ## 
-
-- ## 
-
-- ## 
-
-- ## I have a script that splits all the pages of a PDF, calls OpenAI for OCR into Markdown, and assembles the output. 
-- https://x.com/ccorcos/status/1878308491158589820
-  - https://github.com/ccorcos/ask-pdf/blob/master/src/pdf2md
-  - PDFs are a pain. The format is optimized for printing, not for machine readability. 
-  - The best and most general solution I’ve found is just to use GPT as OCR.
-
-- What about tesseract?
-  - Tried it. Not very good
-  - Aside from doing a poor job recognizing text, it doesn’t do any high level structural arrangement of the only markdown. You’d have to do that yourself. 
-
-- which model of gpt you use as ocr?
-  - OpenAI GPT4o-mini
 # discuss-ui-chat
 - ## 
 
@@ -195,8 +167,6 @@ modified: 2023-04-16T10:02:58.738Z
 - ## 
 
 - ## 
-
-
 
 - ## [OpenWebUI vs LibreChat : r/selfhosted _202503](https://www.reddit.com/r/selfhosted/comments/1jltdjq/openwebui_vs_librechat/)
 - I will give you two somewhat conflicting answers; 

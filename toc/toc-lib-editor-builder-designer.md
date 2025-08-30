@@ -14,11 +14,25 @@ modified: 2020-11-17T13:38:19.107Z
 - ui-prototype
   - https://uigenerator.org/
 # popular
-- grida /104Star/apache2/202404/ts/design2code
+- grida /2.2kStar/apache2/202508/ts/design2code
   - https://github.com/gridaco/grida
   - https://grida.co/
   - Skia based performant live design collaboration & workspace app - redesigned for both designers and developers
   - Grida is a platform that will automatically transform your Figma design to developer-friendly code for Web & Mobile apps.
+  - Grida is a open source Canvas platform where you can manage your database, design websites, and create forms in one place. Designed for Supabase.
+  - Database / CMS
+    - View in list/gallery/charts View
+    - Connect your Supabase Project (Table, Views, Storage, Auth)
+    - Filter, Sort, Search (Locally and FTS).
+  - Forms
+    - 30+ Inputs (file upload, signature, richtext, sms verification, etc)
+    - Logic blocks & Computed Fields
+    - Grida-Database or Supabase-Table Integration
+    - Headless Usage - API-only usage
+  - Canvas
+    - ✅已实现 DOM Backend, WebGL Backend (Skia), SVG Editor (TP), Infinite Canvas
+    - Import from Figma
+    - 未实现  WebGPU Backend (Skia Graphite)
   - studio is built upon skia graphics library
   - studio's surface is built on react
   - https://github.com/gridaco/grida/tree/main/editor

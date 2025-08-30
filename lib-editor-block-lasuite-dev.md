@@ -42,6 +42,7 @@ modified: 2025-07-17T14:39:41.606Z
   - export pdf/docx: MIT approach
   - lasuite-desktop, 使用类似colanode的架构实现pc版 ❓
     - pc版的架构还是vscode更合适，具备diff/timeline/fileTree/web等强大功能
+  - open-chat for lasuite
   - doc-api-for-ai, 参考notion的实现方式
 
 - ✅ 完全本地部署的架构

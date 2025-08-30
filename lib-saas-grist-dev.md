@@ -9,7 +9,8 @@ modified: 2024-02-04T20:54:21.002Z
 
 # guide
 - pros
-  - open source with apache2
+  - license: apache2
+  - 支持2种embed模式(readonly/edit), 还可以使用grist-static嵌入无后端的静态版
 
 - cons
   - 不支持已有数据库，需要import data
@@ -21,6 +22,9 @@ modified: 2024-02-04T20:54:21.002Z
   - Drag-and-drop dashboards
   - Access control options.
   - Sandboxing options for untrusted documents.
+# draft
+- roadmap
+  - react frontend
 # dev
 
 # codebase

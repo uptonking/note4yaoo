@@ -9,6 +9,8 @@ modified: 2025-03-22T18:49:15.634Z
 
 # guide
 - tips
+  - 不必执着于通用chat/ui, 不同业务需要针对具体场景逻辑做优化，如书籍长文本、pdf布局、coding
+    - 而这些已有的方案大多已经提供了chat-ui
   - 不要执着于chat, text-generation-ui方向的产品也很合适
 # popular
 - https://github.com/open-webui/open-webui /107kStar/MIT > BSD+LOGO/202405/python/svelte
@@ -16,6 +18,7 @@ modified: 2025-03-22T18:49:15.634Z
   - User-friendly WebUI for LLMs (Formerly Ollama WebUI)
   - extensible, feature-rich, and user-friendly self-hosted WebUI designed to operate entirely offline. 
   - 后端tavily搜索部分用到了langchain，langchain整体仅7个文件
+  - 前端使用sveltekit
   - It supports various LLM runners, including Ollama and OpenAI-compatible APIs
   - 🌹 pros: comfyui
   - 🐛 cons: MCP
@@ -23,8 +26,14 @@ modified: 2025-03-22T18:49:15.634Z
     - What really is the moat of openwebui? I have seen at least 4 - 5 react UIs with similar functionality (chat, RAG, document library).
     - Not sure about the moat, it's mostly a SvelteKit web app with extra utils after all. But it has a rather unique combination of advanced features (RAG integrations, workspaces, pipelines, code execution, MCP integration, etc.) and a user-friendly "production grade" interface. 
     - They swapped out MIT for BSD-3 just five months ago
+  - [Why is it so difficult to add providers to openwebui? : r/OpenWebUI _202505](https://www.reddit.com/r/OpenWebUI/comments/1kbox4y/why_is_it_so_difficult_to_add_providers_to/)
+    - It's in settings, no it's in admin panel, it's a pipeline - no sorry, it's actually a function.
+    - If you use LiteLLM to configure the providers and don't go through Open WebUI pipe functions at all, it is much easier.
+    - back in the early days of open-webui, LiteLLM was bundled along. It's better that it's installed separately of course, since both projects are moving along nicely.
   - 🍴 forks
   - https://github.com/AI3clauseBSD/claused-webai /inactive
+  - https://github.com/nick-tonjum/open-webui-artifacts-overhaul /202504/inactive
+    - brings Claude artifacts and OpenAI Canvas-like functionality to openwebui
   - 🔧
   - https://github.com/Haervwe/open-webui-tools /MIT/202508/python
     - https://openwebui.com/u/haervwe
@@ -143,6 +152,13 @@ modified: 2025-03-22T18:49:15.634Z
     - https://chatjs.langchain.com/
     - Built with LangChainjs, and Next.js.
 # local-chat
+- https://github.com/menloresearch/jan /37.5kStar/apache2/202508/ts/rust
+  - https://jan.ai/
+  - an AI assistant that can run 100% offline on your device
+  - Local AI Models: Download and run LLMs (Llama, Gemma, Qwen, etc.) from HuggingFace
+  - Cloud Integration: Connect to OpenAI, Anthropic, Mistral, Groq, and others
+  - MCP integration for enhanced capabilities
+
 - https://github.com/withcatai/catai /477Star/MIT/202406/ts/svelte/api+webapp
   - https://withcatai.github.io/catai/
   - Run AI assistant locally! with simple API for Node.js
@@ -170,6 +186,8 @@ modified: 2025-03-22T18:49:15.634Z
 - https://github.com/mckaywrigley/chatbot-ui /32kStar/MIT/202406/ts/inactive
   - https://chatbotui.com/
   - open-source AI chat app for everyone.
+  - 🌰
+  - https://github.com/guangzhengli/ChatFiles
 
 - https://github.com/richardgill/llm-ui /MIT/202502/ts
   - https://llm-ui.com/
@@ -233,6 +251,67 @@ modified: 2025-03-22T18:49:15.634Z
   - [Show HN: A modern C++20 AI SDK (GPT‑4o, Claude 3.5, tool‑calling) | Hacker News _202506](https://news.ycombinator.com/item?id=44412726)
     - inspired by Vercel's AI SDK, and litellm
 # chat-docs/knowledge-base
+- https://github.com/PromtEngineer/localGPT /21.8kStar/MIT/202507/python/ts
+  - LocalGPT is a fully private, on-premise Document Intelligence platform. 
+  - Ask questions, summarise, and uncover insights from your files with AI—no data ever leaves your machine.
+  - LocalGPT features a hybrid search engine that blends semantic similarity, keyword matching, and Late Chunking for long-context precision
+  - A smart router automatically selects between RAG and direct LLM answering for every query, while contextual enrichment and sentence-level Context Pruning surface only the most relevant content
+  - An independent verification pass adds an extra layer of accuracy.
+  - The architecture is modular and lightweight—enable only the components you need. With a pure-Python core and minimal dependencies
+  - 🏠 The RAG system is pure python and does not require any additional dependencies.
+  - models via Ollama.
+  - Chat History: Remembers your previous conversations (in a session).
+  - API: LocalGPT has an API that you can use for building RAG Applications.
+  - GPU, CPU, HPU & MPS Support
+  - Multi-format Support: PDF, DOCX, TXT, Markdown, and more (Currently only PDF is supported)
+  - Contextual Enrichment: Enhanced document understanding with AI-generated context, inspired by Contextual Retrieval
+  - Batch Processing: Handle multiple documents simultaneously
+  - Smart Routing: Automatically chooses between RAG and direct LLM responses
+  - Query Decomposition: Breaks complex queries into sub-questions for better answers
+  - Intuitive Web UI: Clean, responsive design
+  - Real-time Chat: Streaming responses for immediate feedback
+
+- https://github.com/arc53/DocsGPT /17kStar/MIT/202508/python/ts/提交多
+  - https://app.docsgpt.cloud/
+  - https://docsgpt.arc53.com/
+  - GPT-powered chat for documentation, chat with your documents
+  - open-source AI platform for building intelligent agents and assistants. 
+  - Wide Format Support: Reads PDF, DOCX, CSV, XLSX, EPUB, MD, RST, HTML, MDX, JSON, PPTX, and images.
+  - Web & Data Integration: Ingests from URLs, sitemaps, Reddit, GitHub and web crawlers.
+  - Reliable Answers: Get accurate, hallucination-free responses with source citations 
+  - Flexible Deployment: Works with major LLMs (OpenAI, Google, Anthropic) and local models (Ollama, llama_cpp).
+  - Pre-built Integrations: Use readily available HTML/React chat widgets, search tools, Discord/Telegram bots, and more.
+  - Secure & Scalable: Run privately and securely with Kubernetes support
+  - Manually updating chunks in the app UI (Feb 2025)
+  - [Show HN: DocsGPT, open-source documentation assistant, fully aware of libraries | Hacker News _202302](https://news.ycombinator.com/item?id=34648266)
+
+- https://github.com/Cinnamon/kotaemon /23kStar/apache2/202507/python
+  - https://cinnamon.github.io/kotaemon/
+  - https://huggingface.co/spaces/cin-model/kotaemon-demo
+  - open-source clean & customizable RAG UI for chatting with your documents. Built with both end users and developers in mind.
+  - This project serves as a functional RAG UI for both end users who want to do QA on their documents and developers who want to build their own RAG pipeline.
+  - Minimalistic UI: A user-friendly interface for RAG-based QA.
+  - Support for Various LLMs: Compatible with LLM API providers (OpenAI, AzureOpenAI, Cohere, etc.) and local LLMs (via `ollama` and `llama-cpp-python`).
+  - Framework for RAG Pipelines: Tools to build your own RAG-based document QA pipeline.
+  - Customizable UI: See your RAG pipeline in action with the provided UI, built with `Gradio`.
+  - Host your own document QA (RAG) web-UI: Support multi-user login, organize your files in private/public collections, collaborate and share your favorite chat with others.
+  - Hybrid RAG pipeline: Sane default RAG pipeline with hybrid (full-text & vector) retriever 
+  - Advanced citations with document preview: By default the system will provide detailed citations to ensure the correctness of LLM answers.
+  - Extensible: Being built on `Gradio`, you are free to customize or add any UI elements as you like.
+  - require `Unstructured` if you want to process files other than .pdf, .html, .mhtml, and .xlsx documents.
+    - We support both `lite` & `full` version of Docker images. With `full` version, the extra packages of `unstructured` will be installed, which can support additional file types (`.doc, .docx`, ...)
+
+- https://github.com/h2oai/h2ogpt /11.9kStar/apache2/202503/python/inactive
+  - http://h2o.ai/
+  - [Gradio Demo](https://gpt.h2o.ai/)
+  - [OpenWebUI Demo](https://gpt-docs.h2o.ai/)
+  - Query and summarize your documents or just chat with local private GPT LLMs using h2oGPT
+  - Private offline database of any documents (PDFs, Excel, Word, Images, Video Frames, YouTube, Audio, Code, Text, MarkDown, etc.)
+  - Persistent database (Chroma, Weaviate, or in-memory FAISS) using accurate embeddings (instructor-large, all-MiniLM-L6-v2, etc.)
+  - Efficient use of context using instruct-tuned LLMs (no need for LangChain's few-shot approach)
+  - Parallel summarization and extraction, reaching an output of 80 tokens per second with the 13B LLaMa2 model
+  - Gradio UI or CLI with streaming of all models
+
 - https://github.com/labring/FastGPT /25.5kStar/apache2+LOGO+nonTenant/202508/ts
   - https://fastgpt.io/
   - 一个 AI Agent 构建平台，提供开箱即用的数据处理、模型调用等能力，同时可以通过 Flow 可视化进行工作流编排，从而实现复杂的应用场景
@@ -240,15 +319,15 @@ modified: 2025-03-22T18:49:15.634Z
   - ⚖️ License
     - 允许作为后台服务直接商用，但不允许提供 SaaS 服务
 
-- https://github.com/jorge-armando-navarro-flores/chat_with_your_docs /MIT/202409/python
-  - ChatWithYourDocs Chat App is a Python application that allows you to chat with multiple Docs formats like PDF, WEB pages and YouTube videos. 
-  - This app utilizes a language model to generate accurate answers to your queries
+- https://github.com/QuivrHQ/quivr /38.4kStar/apache2/202506/python
+  - https://core.quivr.com/
+  - Opiniated RAG for integrating GenAI in your apps
+  - Opiniated RAG: We created a RAG that is opinionated, fast and efficient so you can focus on your product
+  - LLMs: Quivr works with any LLM, you can use it with OpenAI, Anthropic, Mistral, Gemma, etc.
+  - Any File: Quivr works with any file, you can use it with PDF, TXT, Markdown, etc and even add your own parsers.
+  - Customize your RAG: Quivr allows you to customize your RAG, add internet search, add tools, etc.
 
-- https://github.com/arc53/DocsGPT /MIT/python/ts
-  - https://docsgpt.arc53.com/
-  - GPT-powered chat for documentation, chat with your documents
-
-- https://github.com/pingcap/autoflow /apache2/202411/python
+- https://github.com/pingcap/autoflow /2.6kStar/apache2/202507/python
   - https://tidb.ai/
   - a Graph RAG based and conversational knowledge base tool built with TiDB Serverless Vector Storage.
   - An open source GraphRAG (Knowledge Graph) built on top of TiDB Vector and LlamaIndex and DSPy.
@@ -256,6 +335,38 @@ modified: 2025-03-22T18:49:15.634Z
   - https://x.com/9hills/status/1862522244527972625
     - RAG Demo 到 RAG Application 难度的完美表现，其实功能不算丰富（增加了 Graph RAG和 Agent RAG 的思想），
     - 代码却不得不做的非常复杂，大部分其实是应用逻辑。 P. S. 代码已经成熟到可以直接抄了，直接复刻就完了
+
+- https://github.com/dontizi/rlama /1.1kStar/apache2/202508/go/js
+  - https://rlama.dev/
+  - a powerful AI-driven question-answering tool for your documents, seamlessly integrating with your local Ollama models.
+  - This project is currently on pause due to my work and university commitments that take up a lot of my time
+  - [RLAMA -- A document AI question-answering tool that connects to your local Ollama models. : r/ollama _202503](https://www.reddit.com/r/ollama/comments/1j66pg3/rlama_a_document_ai_questionanswering_tool_that/)
+    - I developed RLAMA to solve a straightforward but frustrating problem: how to easily query my own documents with a local LLM without using cloud services.
+    - RLAMA extracts text from the documents and generates embeddings via Ollama
+    - it uses Tesseract OCR to extract text from image-based PDFs or scanned documents where text can't be directly selected.
+
+- https://github.com/morphik-org/morphik-core /3.2kStar/BSL/202508/python/ts
+  - https://morphik.ai/docs
+  - The most accurate document search and store for building AI apps
+  - We are building the best way for developers to integrate context (however complex and nuanced) into their AI applications. 
+  - Morphik provides developers the tools to ingest, search (deep and shallow), transform, and manage unstructured and multimodal documents.
+  - Multimodal Search: We employ techniques such as ColPali to build search that actually understands the visual content of documents you provide. Search over images, PDFs, videos, and more
+
+- https://github.com/jorge-armando-navarro-flores/chat_with_your_docs /MIT/202409/python
+  - ChatWithYourDocs Chat App is a Python application that allows you to chat with multiple Docs formats like PDF, WEB pages and YouTube videos. 
+  - This app utilizes a language model to generate accurate answers to your queries
+
+- https://github.com/zylon-ai/private-gpt /56.5kStar/apache2/202409/python/inactive
+  - a production-ready AI project that allows you to ask questions about your documents using LLM
+  - Conceptually, PrivateGPT is an API that wraps a RAG pipeline and exposes its primitives.
+    - The API is built using FastAPI and follows OpenAI's API scheme.
+    - The RAG pipeline is based on LlamaIndex.
+  - The design of PrivateGPT allows to easily extend and adapt both the API and the RAG implementation.
+    - Dependency Injection, decoupling the different components and layers.
+    - Usage of `LlamaIndex` abstractions such as `LLM, BaseEmbedding or VectorStore`, making it immediate to change the actual implementations of those abstractions.
+    - Ready to use, providing a full implementation of the API and RAG pipeline.
+  - The project provides an API offering all the primitives required to build private, context-aware AI applications. 
+  - It follows and extends the OpenAI API standard, and supports both normal and streaming responses.
 
 - https://github.com/dontizi/rlama /202503/go
   - RLAMA is a powerful AI-driven question-answering tool for your documents, seamlessly integrating with your local Ollama models. 
@@ -271,6 +382,20 @@ modified: 2025-03-22T18:49:15.634Z
     - 支付：Lemon Squeezy
     - 部署：Vercel
 # chat-pdf
+- https://github.com/bhaskatripathi/pdfGPT /7.1kStar/MIT/202305/python/过于简单/inactive
+  - https://huggingface.co/spaces/bhaskartripathi/pdfChatter
+  - PDF GPT allows you to chat with the contents of your PDF file by using GPT capabilities
+
+- https://github.com/shibing624/ChatPDF /801Star/apache2/202409/python/inactive
+  - 纯原生实现RAG功能，基于本地LLM、embedding模型、reranker模型实现，支持GraphRAG，无须安装任何第三方agent库。
+  - 本项目实现了轻量版的GraphRAG
+  - 支持local模式的关系图检索的文档问答
+  - 支持Openai API, Deepseek API, Ollama API等，可自行扩展支持更多LLM
+  - 支持openai embedding、本地 text2vec embedding、huggingface embedding、sentence-transformers embedding等
+  - 本项目支持多种文件格式，包括PDF、docx、markdown、txt等
+  - 优化了RAG准确率: Chinese chunk切分优化，适配中英文混合文档
+  - 本项目基于`gradio`开发了RAG对话页面，支持流式对话
+
 - https://github.com/mayooear/ai-pdf-chatbot-langchain /15.8kStar/MIT/202502/ts
   - PDF chatbot agent built with LangChain & LangGraph
   - This monorepo is a customizable template example of an AI chatbot agent that "ingests" PDF documents, stores embeddings in a vector database (Supabase), and then answers user queries using OpenAI (or another LLM provider) utilising LangChain and LangGraph as orchestration frameworks.

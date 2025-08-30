@@ -155,6 +155,14 @@ modified: 2021-01-04T17:26:43.784Z
 - https://gitlab.coko.foundation/pagedjs/pagedjs
   - Paged.js is a free and open-source library that paginates any HTML content to produce beautiful print-ready PDF. 
   - The library fragments the content, reads your CSS print declarations and presents a paginated preview in your browser that you can save as PDF.
+
+- https://github.com/Byaidu/PDFMathTranslate /26.7kStar/AGPL/202508/python 
+  - https://pdf2zh.com/
+  - 基于 AI 完整保留排版的 PDF 文档全文双语翻译，支持 Google/DeepL/Ollama/OpenAI 等服务，提供 CLI/GUI/MCP/Docker/Zotero
+  - Preserve formulas, charts, table of contents, and annotations
+  - Support multiple languages, and diverse translation services.
+  - https://github.com/PDFMathTranslate/PDFMathTranslate-next /AGPLv3
+    - pdf2zh 2.0 does not currently provide an online demo
 # pdf-editor
 - https://github.com/luke-browning/pdf-web-edit /MIT/202309/ts/c#/ng/inactive
   - a web-based application for manipulating PDF files. 
@@ -257,6 +265,15 @@ modified: 2021-01-04T17:26:43.784Z
   - Internally server starts a headless browser and opens http://localhost:3000 application and creates the pdf (i.e print layout).
   - Note: Server-side pdf generator code is hardcoded so you will get same pdf every time.
 # reader/viewer
+- https://github.com/embedpdf/embed-pdf-viewer /1.8kStar/MIT/202508/ts
+  - https://www.embedpdf.com/
+  - https://app.embedpdf.com/
+  - EmbedPDF is a framework‑agnostic, MIT‑licensed PDF viewer that drops into any JavaScript project.
+  - Annotations (highlight, sticky notes, free text, ink)
+  - True redaction (content is actually removed)
+  - Pluggable architecture & tree-shakable plugins
+  - Smooth, virtualized scrolling
+
 - https://github.com/Stirling-Tools/Stirling-PDF /20.4kStar/GPLv3/202403/java/js
   - https://www.pdfdrills.com/
   - locally hosted web application that allows you to perform various operations on PDF files
@@ -502,21 +519,17 @@ modified: 2021-01-04T17:26:43.784Z
     - 支持176种语言的准确识别
   - https://huggingface.co/spaces/opendatalab/MinerU
 
-- https://github.com/docling-project/docling /MIT/202409/python
+- https://github.com/docling-project/docling /37.1kStar/MIT/202508/python
   - https://github.com/DS4SD/docling
+  - https://docling-project.github.io/docling
   - Transform PDF to JSON or Markdown with ease and speed
-  - Understands detailed page layout, reading order and recovers table structures
-  - Parsing of multiple document formats incl. PDF, DOCX, XLSX, HTML, images, and more
-  - Optionally applies OCR (use with scanned PDFs)
+  - Parsing of multiple document formats incl. PDF, DOCX, PPTX, XLSX, HTML, WAV, MP3, images (PNG, TIFF, JPEG, ...), and more
+  - Advanced PDF understanding incl. page layout, reading order, table structure, code, formulas, image classification, and more
+  - Unified, expressive DoclingDocument representation format
+  - export formats: Markdown, HTML, DocTags and lossless JSON
+  - Plug-and-play integrations incl. LangChain, LlamaIndex, Crew AI & Haystack for agentic AI
+  - Optionally applies OCR, Extensive OCR support for scanned PDFs and images
   - Support of Visual Language Models (SmolDocling)
-
-- https://github.com/lumina-ai-inc/chunkr /AGPLv3/202410/python/ts/rust
-  - https://chunkr.ai/
-  - Vision model based PDF chunking.
-  - We have temporarily switched to Textract for OCR from PaddleOCR. Textract is provided for free until we resolve PaddleOCR issues.
-  - Lumina的一款基于视觉模型的PDF分块处理工具：Chunkr，速度每秒可处理约5页
-  - 基于视觉模型进行段落提取和OCR，通过 Rust Actix 服务器统一输出，可实现单个NVIDIA L4 GPU上达到每秒约5页速度
-  - 支持自托管部署，兼容GPU和CPU，提供用户界面
 
 - https://github.com/datalab-to/marker /27.3kStar/GPLv3/202508/python
   - https://www.datalab.to/
@@ -527,7 +540,16 @@ modified: 2021-01-04T17:26:43.784Z
   - Removes headers/footers/other artifacts
   - Works on GPU, CPU, or MPS
   - Optionally boost accuracy with LLMs (and your own prompt)
-  - For the highest accuracy, pass the `--use_llm` flag to use an LLM alongside marker. This will do things like merge tables across pages, handle inline math, format tables properly, and extract values from forms. It can use any gemini or ollama model. 
+  - For the highest accuracy, pass the `--use_llm` flag to use an LLM alongside marker. This will do things like merge tables across pages, handle inline math, format tables properly, and extract values from forms. 
+  - It can use any gemini or ollama model. 
+
+- https://github.com/lumina-ai-inc/chunkr /AGPLv3/202410/python/ts/rust
+  - https://chunkr.ai/
+  - Vision model based PDF chunking.
+  - We have temporarily switched to Textract for OCR from PaddleOCR. Textract is provided for free until we resolve PaddleOCR issues.
+  - Lumina的一款基于视觉模型的PDF分块处理工具：Chunkr，速度每秒可处理约5页
+  - 基于视觉模型进行段落提取和OCR，通过 Rust Actix 服务器统一输出，可实现单个NVIDIA L4 GPU上达到每秒约5页速度
+  - 支持自托管部署，兼容GPU和CPU，提供用户界面
 
 - https://github.com/CatchTheTornado/pdf-extract-api 
   - 一款可本地运行去除个人信息的PDF解析工具：pdf-extract-api，文档匿名化处理，可以识别表格数据、数字、数学公式，适合隐私性较强的处理需求，企事业单位、医疗机构等

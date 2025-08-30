@@ -67,6 +67,12 @@ modified: 2023-02-08T07:20:48.475Z
   - The Story Behind ClaraVerse: Why can't everything be in a single app?
   - The Solution: One App. Six Tools. Zero Compromises.
   - Built on the shoulders of giants: llama.cpp • llama-swap • faster-whisper • ComfyUI • N8N
+  - 🍴 forks
+  - https://github.com/vanvuongngo/ClaraN /MIT/202508/ts
+    - This is a hardfork of ClaraVerse
+    - Tauri for building Desktop- and Mobile apps 
+    - Qwik web framework for building performant Web UIs
+    - DaisyUI for faster, cleaner and simple tailwind CSS UI development
 # LLM
 - https://github.com/songquanpeng/one-api /MIT/202404/go/js
   - https://openai.justsong.cn/
@@ -316,11 +322,12 @@ modified: 2023-02-08T07:20:48.475Z
 - https://github.com/rag-web-ui/rag-web-ui /apache2/202502/python/ts
   - RAG Web UI is an intelligent dialogue system based on RAG
 # rag-search
-- https://github.com/Cinnamon/kotaemon /apache2/202409/python
-  - https://cinnamon.github.io/kotaemon/
-  - https://huggingface.co/spaces/cin-model/kotaemon-demo
-  - open-source clean & customizable RAG UI for chatting with your documents. Built with both end users and developers in mind.
-  - This project serves as a functional RAG UI for both end users who want to do QA on their documents and developers who want to build their own RAG pipeline.
+
+- https://github.com/HKUDS/LightRAG /20.1kStar/MIT/202508/python
+  - Simple and Fast Retrieval-Augmented Generation
+  - [2025.06.16]🎯 Our team has released RAG-Anything an All-in-One Multimodal RAG System for seamless text, image, table, and equation processing.
+  - https://github.com/HKUDS/RAG-Anything /MIT/202508/python
+    - All-in-One Multimodal Document Processing RAG system built on LightRAG.
 
 - https://github.com/memfreeme/memfree /MIT/202409/ts
   - https://www.memfree.me/

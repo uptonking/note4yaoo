@@ -142,11 +142,6 @@ modified: 2021-02-09T19:27:01.319Z
   - projects
     - https://github.com/cferdinandi/reef
 
-- Mark Erikson
-  - https://github.com/markerikson
-  - https://twitter.com/acemarke
-  - https://github.com/reduxjs/redux
-
 - Erik Rasmussen
   - https://github.com/erikras
   - https://twitter.com/erikras

@@ -20,6 +20,19 @@ modified: 2023-03-24T05:06:08.832Z
   - https://github.com/ramnes/notion-sdk-py
     - The official Notion API client library, but rewritten in Python! (sync + async)
 
+- https://github.com/gristlabs/grist-static /136Star/apache2/202503/ts
+  - https://gristlabs.github.io/grist-static/
+  - Showing Grist spreadsheets on a static website, without a special backend.
+  - This is a way to view and interact with `.grist` files (Grist spreadsheets) on regular websites, with no special back-end support needed. 
+  - If you can run a special back-end,  `grist-core` is the most battle-tested way to host Grist spreadsheets. And for many purposes Grist embedding may be adequate, where your embed a Grist spreadsheet from an external Grist installation (such as the hosted service offered by Grist Labs).
+  - But if you cannot host your data externally, and don't want the operational burden of standing up a Grist installation of your own, grist-static gives you a way to easily render Grist spreadsheets on regular websites.
+  - [Embedding - Grist Help Center](https://support.getgrist.com/embedding/)
+    - With public access turned on, you may embed your Grist document on your own site.
+    - Once you have decided where to embed your document, paste this code snippet in your HTML file:
+    - `<iframe src="https://templates.getgrist.com/6D8E2h2DQNwS/Task-Management/p/6?embed=true" height="250px" width="100%" frameborder="0"> </iframe>`; 
+    - This is a live, read-only view of the Grist page and it gets updated as soon as someone edits it.
+    - Appending a URL with `?embed=true` shares the page as read-only while `?style=singlePage` can be edited and follows access rules.
+
 - https://github.com/octokit/octokit.js
   - all-batteries-included GitHub SDK for Browsers, Node.js, and Deno.
 

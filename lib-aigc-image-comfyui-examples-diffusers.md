@@ -160,6 +160,14 @@ modified: 2025-08-23T11:43:35.904Z
     - http://www.gradio.app/
     - Gradio is an open-source Python package that allows you to quickly build a demo or web application for your machine learning model, API, or any arbitrary Python function.
     - You can then share a link to your demo or web application in just a few seconds using Gradio's built-in sharing features.
+  - 🍴 forks
+  - https://github.com/anapnoe/stable-diffusion-webui-ux /AGPL/202508
+    - Removed FormSubGroup Component
+    - Split View Resizer Added
+    - Support for Image Aspect Ratio Helper Extension Accordion
+  - https://github.com/lshqqytiger/stable-diffusion-webui-amdgpu /AGPL/202508
+    - ZLUDA support for AMDGPUs.
+    - DirectML support for every GPUs that support DirectX 12 API.
 
 - https://github.com/modelscope/DiffSynth-Studio /9.7kStar/apache2/202508/python
   - DiffSynth-Studio 是由魔搭社区团队开发和维护的开源 Diffusion 模型引擎。
@@ -237,6 +245,14 @@ modified: 2025-08-23T11:43:35.904Z
   - Both sync (ComfyUIClient) and async (ComfyUIClientAsync) implementations
   - Automatically converts workflow.json to API format
   - Direct image upload to ComfyUI server
+
+- https://github.com/zinigor/comfy-es-wrapper /GPL/202508/ts
+  - a frontend wrapper for ComfyUI, designed to provide ESM imports and utilities for building, editing, and interacting with ComfyUI workflows
+  - It offers a modular API for workflow and node manipulation, as well as integrations for Vue and React.
+  - 依赖@comfyorg/litegraph、打包了源码`github: Comfy-Org/ComfyUI_frontend`; 
+  - API utilities: Fetch node types, execute workflows, monitor queue status, retrieve workflow history, and manage real-time WebSocket connections.
+  - Editor Component: Provides a `ComfyEditor` class for embedding and manipulating workflow graphs with ease.
+  - Vue & React adapters: Includes example wrappers for integration with popular frameworks.
 
 - https://github.com/Chaoses-Ib/ComfyScript /571Star/MIT/202506/python
   - A Python frontend and library for ComfyUI
@@ -588,6 +604,12 @@ modified: 2025-08-23T11:43:35.904Z
   - Vision (multimodal models): Attach images to messages for visual understanding
   - Web search: Optionally search the internet with LLM-generated queries to add context to the conversation.
   - Extension support, with numerous built-in and user-contributed extensions available
+  - [Ollama. Please?  _202408](https://github.com/oobabooga/text-generation-webui/issues/6346)
+    - Ollama is llama.cpp. To be precise, the server side of ollama runs on llama.cpp, 
+    - and the server side of text-generation-webui also runs on llama.cpp.
+    - i couppled textgenwui with my open webui and it works perfect
+    - I had the same problem. Because ollama also uses gguf files I simply created a script which links them into the models folder.
+  - [Ollama Integration _202402](https://github.com/oobabooga/text-generation-webui/issues/5532)
   - https://github.com/SkinnyDevi/skdv_comfyui
     - ComfyUI image generation integration for oobabooga's Text Generation WebUI
   - https://github.com/Atinoda/text-generation-webui-docker
@@ -623,6 +645,16 @@ modified: 2025-08-23T11:43:35.904Z
   - DiffuGen is a powerful MCP-based image generation system that brings cutting-edge AI models directly into your development workflow.
   - Built on top of the highly optimized `stable-diffusion.cpp` implementation
   - Now includes OpenAPI server support and OpenWebUI OpenAPI Tools (OWUI Version 0.60.0 Required) integration for seamless image generation and display in chat interfaces
+
+- https://github.com/sanyabeast/imginarium /202504/python
+  - A powerful tool for generating high-quality images using AI. 
+  - This project combines LM Studio for prompt generation with ComfyUI for image creation, with embedded metadata for easy searching.
+  - Tag-Based Generation: Create images based on customizable tags like subject, mood, setting, and style
+  - LM Studio Integration: Generate detailed, creative prompts using advanced language models
+  - ComfyUI Integration: Create high-quality images using the powerful ComfyUI backend
+  - Metadata-Based Search: Search for images using embedded PNG metadata
+  - Flexible Configuration: Customize all aspects of the generation process
+  - Placeholder System: Use placeholders in workflows for dynamic content
 
 - https://github.com/stavsap/comfyui-ollama /622Star/apache2/202508/python
   - Custom ComfyUI Nodes for interacting with Ollama using the ollama python client.
@@ -689,6 +721,13 @@ modified: 2025-08-23T11:43:35.904Z
     - Build custom flows as Python classes by connecting modular tunnel steps.
     - Use static, version-controlled YAML files for models, runtime, and batch settings.
 # extensions/custom_nodes
+- https://github.com/CheNing233/ComfyUI_Image_Pin /202507/python/js
+  - 可以将图片固定到工作流的JSON中，随JSON迁移，也可以嵌入图像metadata
+  - 钉住图片并转换为Base64字符串嵌入到工作流中
+  - 支持压缩为WebP格式的Base64字符串
+  - 嵌入图片到工作流，生成的图片的metadata也具有该图片, 方便分享
+  - 节点部分代码来自 ComfyUI-Inspire-Pack
+
 - https://github.com/Comfy-Org/ComfyUI-React-Extension-Template /GPL/202506/ts/vue
   - A minimal template for creating React/TypeScript frontend extensions for ComfyUI, with complete boilerplate setup.
   - ComfyUI API Integration: Properly typed access to ComfyUI's internal API
@@ -771,6 +810,12 @@ modified: 2025-08-23T11:43:35.904Z
   - 依赖psd_tools、pytoshop
   - https://github.com/mattyamonaca/layerdivider /MIT/202308/python/inactive
     - A tool to divide a single illustration into a layered structure
+
+- https://github.com/grinlau18/ComfyUI_XISER_Nodes /GPL/202508/python/js
+  - 旨在提供交互式画布功能，方便用户在工作流中进行图像编辑与管理。
+  - 节点支持加载多张图像，显示在画布上，用户可通过拖动、缩放、旋转等操作调整图像位置与大小，同时支持图层管理，选择和切换不同图层以进行精细编辑
+  - 节点提供撤销、重做功能，方便操作回溯
+  - Dependencies: Requires torch, PIL, numpy, opencv-python
 
 - https://github.com/o-l-l-i/ComfyUI-Olm-ImageAdjust /NonComm/202508/python/js
   - An interactive image adjustment node for ComfyUI, with an easy-to-use graphical interface and realtime preview.
@@ -867,6 +912,9 @@ modified: 2025-08-23T11:43:35.904Z
 - https://github.com/thedyze/save-image-extended-comfyui /202409/python/inactive
   - Customize the information saved in file- and folder names.
   - Save data about the generated job (sampler, prompts, models) as entries in a json (text) file, in each folder.
+
+- https://github.com/lihaoyun6/ComfyUI-BlindWatermark /GPL/202506/python
+  - 在生成的图片中嵌入不可见的隐形水印
 
 - https://github.com/BigStationW/ComfyUi-Load-Image-And-Display-Prompt-Metadata /202508/python/js
   - This node displays the positive and negative prompts of a ComfyUi image.
@@ -1166,7 +1214,31 @@ modified: 2025-08-23T11:43:35.904Z
 - https://github.com/LarryJane491/Lora-Training-in-Comfy /505Star/NALic/202401/python/inactive
   - This custom node lets you train LoRA directly in ComfyUI
   - By default, it saves directly in your ComfyUI lora folder. That means you just have to refresh after training
+
+- https://github.com/Tessera-C/Comfy_augment /GPL/202508/python/jupyter
+  - Comfy Augment is a powerful data augmentation pipeline designed to generate synthetic data using generative models, based on the ComfyUI framework. 
+  - It provides a comprehensive workflow for data preprocessing, image generation, and quality assessment, enabling users to expand their datasets with high-quality synthetic images.
+  - This project is particularly useful for computer vision tasks where large amounts of varied data are required for training robust models.
+  - Automated Generation: A script (run_pipeline.py) to automate the image generation process using configurable workflows.
+  - Quality Assessment: Tools to measure the quality of generated images (e.g., using LPIPS, DreamSim, FID).
+
+- https://github.com/calcuis/gguf-pack /GPL/202508/python/js
+  - gguf portable pack for picture/audio/video generation
+  - major difference between gguf-pack and comfy
+    - gguf is a core node in gguf-pack
+    - gguf is a custom node in comfy
+  - ui-codebase: comfy
+  - base: llama.cpp
+
+- https://github.com/christian-byrne/python-interpreter-node /202504/python/inactive
+  - Embed scripts into workflows. Alter the node's input/outputs with python.
+  - Write Python code that executes when the workflow is queued
+  - The stdout/err (e.g., prints, error tracebacks) are displayed in the node.
 # integrations
+- https://github.com/nomcycle/comfyui-dev /MIT/202506
+  - A secure, remote, and persistent development environment for ComfyUI that works with cloud GPU services. 
+  - This container combines Tailscale's secure VPN service with VSCode's remote development capabilities, making it perfect for developing on services like RunPod.
+
 - https://github.com/nchenevey1/gimp-comfy-tools /91Star/GPL/202507/python
   - GIMP plugins that communicate with ComfyUI. 
   - Currently uses Power Lora Loader (rgthree)

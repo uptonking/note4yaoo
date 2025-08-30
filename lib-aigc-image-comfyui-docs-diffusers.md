@@ -62,6 +62,11 @@ modified: 2025-08-23T11:42:50.170Z
   - SDNext
   - InvokeAI
 
+- comfyui
+  - ⛓️ workflow的业务场景可参考n8n
+  - comfyui的工作流ux对用户不友好，InvokeAI的canvas更易用、易嵌入
+  - 👷: ComfyUI was never based on diffusers. It's a horrible library but I can't hate it that much because it's so bad that it's responsible for prematurely killing a lot of comfyui competition by catfishing poor devs into using it.
+
 - stable-diffusion
   - 相对于传统PS软件的优点: upscale还原度高，速度快
 
@@ -74,7 +79,6 @@ modified: 2025-08-23T11:42:50.170Z
   - 随着文本大模型能力的增强，prompt自动生成、memory管理基于coding实现更灵活，comfyui支持的能力有限
   - 在线图片生成或编辑的架构, 涉及到model/lora/vae/encoder的下载与组合，目前没有类似ollama的统一方案, 还涉及到GPU/CPU硬件支持，只有成熟方案才处理过相关问题
   - 下载模型文件后不要rename，方便与第三方包管理共享，方便与云端服务商的模型共享名称
-  - 👷: ComfyUI was never based on diffusers. It's a horrible library but I can't hate it that much because it's so bad that it's responsible for prematurely killing a lot of comfyui competition by catfishing poor devs into using it.
 # dev-xp
 
 ## comfyui
@@ -83,7 +87,10 @@ modified: 2025-08-23T11:42:50.170Z
 
 - roadmap
   - workflow as app: 实现思路包括独立fullstack, custom_node-api, custom_node-ui, gradio
-  - comfyui的工作流ux对用户不友好，InvokeAI的canvas更易用、易嵌入
+  - vscode-comfy
+  - ⛓️ workflow的业务场景可参考n8n
+  - 针对ppt优化的图片生成, 如自动添加目录编号/水印/调整大小
+  - models: 学习图标库/logo库的模型
 
 - usecase
   - upscale, anime, faceswap, bg-remove, ocr, ...
