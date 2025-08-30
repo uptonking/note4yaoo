@@ -139,6 +139,27 @@ for {
 
 - ## 
 
+- ## 
+
+- ## 🆚🤔 [LangChain vs LlamaIndex : r/LangChain _202403](https://www.reddit.com/r/LangChain/comments/1bbog83/langchain_vs_llamaindex/)
+- Langchain started as a whole LLM framework and continues to be so. Langchain is much better equipped and all-rounded in terms of utilities that it provides under one roof
+  - Llama-index started as a mega-library for data connectors( data connection to your data source ( CSV file, SQL database etc) ). Later on they started expanding to other capabilities after seeing explosive adoption of Langchain. 
+  - I would recommend you to start with Langchain. It started out first and has better set of modules.
+  - Secondly, do not listen anyone who says Langchain/ Llama-index is crap. They are speaking out their inexperience in this new field.
+  - Lastly, best learning / troubleshooting is in source code documentation , first. Documentation in Langchain portal comes second.
+
+- LangChain and LlamaIndex can overlap, but they serve slightly different needs, LangChain shines when you need chaining logic and tool orchestration, while LlamaIndex is more focused on data-connectivity and retrieval.
+
+- My reasons for favoring these frameworks -
+  - Excellent suite of data loaders / collectors. 
+  - Abstraction is bad when your use case doesn't fit the functionality given by the framework. If it's given though, the task becomes a breeze
+  - Langchain has provided it's own language now - LCEL. Adds a layer of customizability.
+
+- As an experienced engineer DO NOT start with either of these two. They're both extremely abstracted and known to frustrate experienced devs. Junior devs will find them helpful though.
+  - OP I tend to ignore any comments that start with "as an experienced ..." because they're using a call to authority to convince you, rather than just having a good idea that can stand on its own.
+  - There are no experienced devs when it comes to large language models because the latest models' age is measured in months.
+  - Start learning by identifying a toy example that's close to your use case, then figure out how the example was built. Work down the abstraction chain until you've got something that works well for you 
+
 - ## 🆚 [RPA vs AI agents vs Agentic Process Automation : r/rpa _202502](https://www.reddit.com/r/rpa/comments/1iftre3/rpa_vs_ai_agents_vs_agentic_process_automation/)
 - Not everything needs an LLM to perform rules based decisions. In fact it's expensive (energy, cost, infra) or wasteful to do so.
   - Most rpa platforms are rebranding as AI platforms with rpa backbones so I suspect we'll see a blending of the two into the future.

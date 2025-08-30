@@ -110,6 +110,18 @@ modified: 2025-03-22T18:49:15.634Z
   - https://github.com/justUmen/Bjornulf_lobe-chat /202411/inactive
     - Quick and dirty fork to enable lobe-chat to send ComfyUI api request + receive image link + local TTS
 
+- https://github.com/OvidijusParsiunas/deep-chat /2.7kStar/MIT/202508/ts
+  - https://deepchat.dev/
+  - a fully customizable AI chat component that can be injected into your website with just one line of code
+  - Connect to any API
+  - tts, stt, Speech To Speech
+  - Everything is customizable
+  - Support for all major ui frameworks/libraries
+  - `browserStorage` allows you store messages locally on your browser without worrying about a backend message integration.
+  - pr已关闭 [feat: ollama support _202501](https://github.com/OvidijusParsiunas/deep-chat/pull/333)
+    - I am very keen to implement it properly myself
+  - [Adding ollama api connection _202409](https://github.com/OvidijusParsiunas/deep-chat/issues/262)
+
 - https://github.com/microsoft/vscode-copilot-chat /8.3kStar/MIT/202508/ts
   - GitHub Copilot Chat (this extension) - A companion extension that provides conversational AI assistance.
 

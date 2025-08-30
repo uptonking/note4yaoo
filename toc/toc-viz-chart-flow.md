@@ -344,6 +344,25 @@ modified: 2020-10-22T10:22:55.878Z
   - Directed graph layout for JavaScript
   - This project does not have a maintainer or active project members
 
+- https://github.com/jagenjo/litegraph.js /7.5kStar/MIT/202401/js/NoDeps/inactive
+  - https://tamats.com/projects/litegraph/editor
+  - A library in Javascript to create graphs in the browser similar to Unreal Blueprints. 
+  - A graph node engine and editor written in Javascript similar to PD or UDK Blueprints, comes with its own editor in HTML5 Canvas2D. 
+  - Nodes can be programmed easily and it includes an editor to construct and tests the graphs.
+  - The engine can run client side or server side using Node. It allows to export graphs as JSONs to be included in applications independently.
+  - Renders on Canvas2D (zoom in/out and panning, easy to render complex interfaces, can be used inside a WebGLTexture)
+  - Optimized to support hundreds of nodes per graph (on editor but also on execution)
+  - Subgraphs (nodes that contain graphs themselves)
+  - Live mode system (hides the graph but calls nodes to render whatever they want, useful to create UIs)
+  - Highly customizable nodes (color, shape, slots vertical or horizontal, widgets, custom rendering)
+  - Easy to integrate in any JS application (one single file, no dependencies)
+  - https://github.com/Comfy-Org/litegraph.js /233Star/MIT/202508/ts
+    - https://github.com/Comfy-Org/ComfyUI_frontend/tree/main/src/lib/litegraph /MIT
+    - As of August 5, 2025, Comfy-Org/litegraph.js is now part of the ComfyUI Frontend monorepo
+    - This is the litegraph version used in ComfyUI_frontend.
+    - It is a fork of the original litegraph.js. Some APIs may be unchanged, however it is largely incompatible with the original.
+    - Sort node based on ID on graph serialization
+
 - https://github.com/tgdwyer/WebCola /1.9kStar/MIT/202307/ts/NoDeps
   - http://marvl.infotech.monash.edu/webcola/
   - an open-source JavaScript library for arranging your HTML5 documents and diagrams using constraint-based optimization techniques.
@@ -369,19 +388,6 @@ modified: 2020-10-22T10:22:55.878Z
   - The quickest and easiest way to add a Zapier-like workflow UI experience to your product. 
   - Define actions in your backend and expose a Workflow UI using pre-built React components.
   - Workflow Kit enables you to build user-defined workflows with Inngest by providing a set of workflow actions to the Workflow Engine while using the pre-built React components to build your Workflow Editor UI.
-
-- https://github.com/jagenjo/litegraph.js /7.5kStar/MIT/202401/js/NoDeps/inactive
-  - https://tamats.com/projects/litegraph/editor
-  - A library in Javascript to create graphs in the browser similar to Unreal Blueprints. 
-  - A graph node engine and editor written in Javascript similar to PD or UDK Blueprints, comes with its own editor in HTML5 Canvas2D. 
-  - Nodes can be programmed easily and it includes an editor to construct and tests the graphs.
-  - The engine can run client side or server side using Node. It allows to export graphs as JSONs to be included in applications independently.
-  - Renders on Canvas2D (zoom in/out and panning, easy to render complex interfaces, can be used inside a WebGLTexture)
-  - Optimized to support hundreds of nodes per graph (on editor but also on execution)
-  - Subgraphs (nodes that contain graphs themselves)
-  - Live mode system (hides the graph but calls nodes to render whatever they want, useful to create UIs)
-  - Highly customizable nodes (color, shape, slots vertical or horizontal, widgets, custom rendering)
-  - Easy to integrate in any JS application (one single file, no dependencies)
 # dataflow
 - jerosoler/Drawflow /3.2kStar/MIT/202206/js/inactive
   - https://github.com/jerosoler/Drawflow

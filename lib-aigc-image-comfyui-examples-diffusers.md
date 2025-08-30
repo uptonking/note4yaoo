@@ -319,6 +319,11 @@ modified: 2025-08-23T11:43:35.904Z
 - tips
   - midjourney alternative
 
+- https://github.com/google-gemini/gemini-image-editing-nextjs-quickstart /484Star/apache2/202505/ts/inactive
+  - https://ai.google.dev/gemini-api/docs/image-generation
+  - Nextjs quickstart for to generating and editing images with Google Gemini 2.0 Flash
+  - It allows users to generate images from text prompts or edit existing images through natural language instructions, maintaining conversation context for iterative refinements. 
+
 - https://github.com/ammaarreshi/openjourney /135Star/MIT/202507/ts/提交少
   - https://openjourney.replit.app/
   - Open-source clone of the MidJourney web interface featuring real AI image and video generation powered by Google's Gemini SDK. 
@@ -468,6 +473,8 @@ modified: 2025-08-23T11:43:35.904Z
     - Yes, you can install your Nodes there and run ComfyUI separately without running Visionatrix.
   - Can I run it on multiple GPU?
     - You can run one worker on one GPU and process tasks in parallel, take a look at Server and Worker modes.
+  - [ComfyUI to Visionatrix migration ](https://visionatrix.github.io/VixFlowsDocs/FlowsDeveloping/comfyui_vix_migration/)
+    - it is recommended to install our custom ComfyUI-Visionatrix nodes. Otherwise, you will have to use custom nodes titles which will be parsed by Visionatrix.
 
 - https://github.com/rvion/CushyStudio /781Star/AGPL/202412/ts/inactive
   - https://docs.cushystudio.com/
@@ -522,13 +529,6 @@ modified: 2025-08-23T11:43:35.904Z
     - 我们决定先做一个 ComfyUI 社区 - Comflowy
     - 提供一个开源版的 Better ComfyUI - Comflowyspace
 
-- https://github.com/xingren23/ComfyFlowApp /584Star/GPL/202403/python/archived
-  - ComfyFlowApp is a tool to help you develop AI webapp from ComfyUI workflow and share to others.
-  - offers an in-built test account(username: demo) with the credentials(password: comfyflowapp)
-  - [API是否支持自建？ _202403](https://github.com/xingren23/ComfyFlowApp/issues/65)
-    - 如果只是想自己用，不提供登录服务的话,也可以直接改下代码返回。 本地用用是可以的
-    - API for user login only
-
 - https://github.com/huanyingtianhe/EasyComfyUI /MIT/202411/js/inactive
   - https://easy-comfyui.vercel.app/
   - An UI to integrate with ComfyUI backend for easy use
@@ -556,6 +556,12 @@ modified: 2025-08-23T11:43:35.904Z
   - This project provides a Gradio interface for interacting with ComfyDeploy, allowing users to dynamically generate UI components based on deployment input definitions and submit jobs to ComfyDeploy.
   - Dynamic UI generation based on ComfyDeploy input definitions
   - Asynchronous job submission to ComfyDeploy
+
+- https://github.com/zyddnys/manga-image-translator /8.4kStar/GPL/202508/python
+  - https://cotrans.touhou.ai/
+  - 一键翻译各类图片内文字
+  - This project aims to translate images that are unlikely to be professionally translated, such as comics/images on various group chats and image boards, making it possible for Japanese novices like me to understand the content
+  - It mainly supports Japanese, but also supports Simplified and Traditional Chinese, English and 20 other minor languages.
 # comfyui/sd-llm
 - https://github.com/AIDC-AI/Pixelle-MCP /271Star/MIT/202508/python
   - https://pixelle.ai/
@@ -584,6 +590,8 @@ modified: 2025-08-23T11:43:35.904Z
   - Extension support, with numerous built-in and user-contributed extensions available
   - https://github.com/SkinnyDevi/skdv_comfyui
     - ComfyUI image generation integration for oobabooga's Text Generation WebUI
+  - https://github.com/Atinoda/text-generation-webui-docker
+    - Docker variants of oobabooga's text-generation-webui, including pre-built images.
 
 - https://github.com/badboysm890/ClaraVerse /3kStar/MIT/202508/ts
   - https://claraverse.space/
@@ -592,6 +600,23 @@ modified: 2025-08-23T11:43:35.904Z
   - The Story Behind ClaraVerse: Why can't everything be in a single app?
   - The Solution: One App. Six Tools. Zero Compromises.
   - Built on the shoulders of giants: llama.cpp • llama-swap • faster-whisper • ComfyUI • N8N
+
+- https://github.com/apocas/restai /431Star/apache2/202508/python
+  - https://apocas.github.io/restai/
+  - an AIaaS (AI as a Service) open-source platform. 
+  - Built on top of LlamaIndex & Langchain. langchain仅用于dalle_image_generator, LlamaIndex用得多
+  - Supports any public LLM supported by LlamaIndex and any local LLM supported by Ollama/vLLM/etc
+  - Built-in image generation (Dall-E, SD, Flux) and dynamic loading generators.
+  - Image Generation: Supports local and remote image generators. 
+    - Local image generators are run in a separate process. 
+    - New generators are easily added and loaded dynamically.
+    - 本地的图片生成基于diffusers实现， 如 `from diffusers import DiffusionPipeline`;
+  - Proxy: Allows management of an OpenAI compatible proxy. LiteLLM is supported out of the box.
+  - Projects: There are multiple project types, each with its own features. (rag, ragsql, inference, vision, router, agent)
+  - The API is a first-class citizen of RestAI. All endpoints are documented using Swagger.
+  - There are two vectorstores supported: ChromaDB and RedisVL
+  - https://github.com/apocas/restai-frontend /202505/js/inactive
+    - 依赖mui.v5、@reduxjs/toolkit、echarts、mui-datatables、react-d3-tree、recharts
 
 - https://github.com/CLOUDWERX-DEV/DiffuGen /MIT/202504/python
   - a powerful yet user-friendly interface for local\edge image generation.
@@ -649,6 +674,8 @@ modified: 2025-08-23T11:43:35.904Z
     - https://ko-fi.com/impactframes
     - a set of custom nodes for ComfyUI that allows you to generate prompts using a local Large Language Model (LLM) via Ollama.
     - I am Moving the prompt generation to this new node PromptImaGen 
+  - https://github.com/if-ai/ComfyUI-IF_LLM /MIT/202504/python
+    - Run Local and API LLMs, Features Gemini2 image generation, DEEPSEEK R1, QwenVL2.5, QWQ32B, Ollama, LMStudio
 
 - https://github.com/pupba/Rabbit-Hole /GPL/202507/python
   - Modular image generation pipeline for enterprise, research, and MLOps—custom flows, batch-ready, inspired by ComfyUI.
@@ -662,6 +689,17 @@ modified: 2025-08-23T11:43:35.904Z
     - Build custom flows as Python classes by connecting modular tunnel steps.
     - Use static, version-controlled YAML files for models, runtime, and batch settings.
 # extensions/custom_nodes
+- https://github.com/Comfy-Org/ComfyUI-React-Extension-Template /GPL/202506/ts/vue
+  - A minimal template for creating React/TypeScript frontend extensions for ComfyUI, with complete boilerplate setup.
+  - ComfyUI API Integration: Properly typed access to ComfyUI's internal API
+  - Auto-Reload Development: Watch mode for seamless development experience
+  - Graph Manipulation: Programmatically manipulate the workflow graph
+  - [Import app directly rather than waitForInit _202508](https://github.com/Comfy-Org/ComfyUI-React-Extension-Template/issues/14)
+    - The template's `waitForInit` function (main.tsx:20-52) waits for `window.app` to exist to avoid trying to mount things before the vue app is setup (if I recall correctly)
+    - The current ComfyUI Extension Lifecycle is: 1. init → 2. addCustomNodeDefs → 3. getCustomWidgets → 4. beforeRegisterNodeDef → 5. registerCustomNodes → 6. beforeConfigureGraph → 7. nodeCreated → 8. loadedGraphNode → 9. afterConfigureGraph → 10. setup
+    - The template currently registers at step 10, missing critical steps 3 and 7.
+    - Both approaches can be used together in the same extension 
+
 - https://github.com/VrchStudio/comfyui-web-viewer /248Star/MIT/202508/python/js
   - http://vrch.ai/
   - custom nodes and web utilities for real-time AI generation and interaction
@@ -896,6 +934,10 @@ modified: 2025-08-23T11:43:35.904Z
   - Search within your nodes
   - This new panel allows you to download CIVITAI models (Checkpoint, lora)
 
+- https://github.com/chrisgoringe/cg-controller /75Star/MIT/202504/js
+  - The Controller is a new way to interact with a Comfy workflow, in which just the nodes that you select are mirrored in the Controller, without you needing to make any changes to the workflow itself.
+  - The controller gets saved with the workflow, so once you've set it up, it's always there for you. And if you share the workflow with someone else, they get your controller as well...
+
 - https://github.com/yolain/ComfyUI-Easy-Use /1.9kStar/GPLv3/202508/python/js
   - custom nodes integration package, which is extended on the basis of TinyTerraNodes.
   - optimized for many popular awesome custom nodes to achieve the purpose of faster and more convenient use of ComfyUI
@@ -936,6 +978,50 @@ modified: 2025-08-23T11:43:35.904Z
   - https://github.com/creativeplatform/comfystream_inside
   - https://github.com/ryanontheinside/comfystream_inside
 # utils
+- https://github.com/Comfy-Org/ComfyUI_devtools /21Star/202505/python/inactive
+  - ComfyUI developer tools (Custom Node)
+
+- https://github.com/xingren23/ComfyFlowApp /584Star/GPL/202403/python/archived
+  - https://comfyflow.app/
+  - ComfyFlowApp is a tool to help you develop AI webapp from ComfyUI workflow and share to others.
+  - offers an in-built test account(username: demo) with the credentials(password: comfyflowapp)
+  - [API是否支持自建？ _202403](https://github.com/xingren23/ComfyFlowApp/issues/65)
+    - 如果只是想自己用，不提供登录服务的话,也可以直接改下代码返回。 本地用用是可以的
+    - API for user login only
+
+- https://github.com/MixLabPro/comfyui-mixlab-nodes /1.7kStar/MIT/202507/python/js
+  - 新增 AppInfo 节点，可以通过简单的配置，把 workflow 转变为一个 Web APP。
+  - 支持多个 web app 切换
+  - 发布为 app 的 workflow，可以在右键里再次编辑了
+
+- https://github.com/yuyou-dev/ComfyUI_workflow2app /MIT/202412/python/js
+  - 教学项目：ComfyUI的工作流如何开发成app
+  - 1. 在ComfyUI中搭建并运行成功任意工作流。
+  - 2. 在ComfyUI中，配置开发模式，允许通过Save(API Format)的形式下载可用于API搭建的工作流版本。
+  - 3. 将编辑完成的workflow工作流下载到本地。
+  - 4. 部署workflow的后端模块，开发对应的API接口。
+  - 5. 开发「app / 小程序」的前端业务逻辑。
+  - 6. 调试 / 部署 / 上线
+- https://github.com/shadowcz007/comfyui-plugins /MIT/202311/ts/inactive
+  - Plugins：把任意comfyUI的工作流变成一个应用
+  - Comfyui提供了编辑器、后端服务，缺少了一个使用端。 当创作者创建了属于自己的工作流之后，下一次使用还需要同样的界面打开，其他不需要的功能（或者节点）无法隐藏。 类似于游戏引擎，在编辑器里制作好游戏之后，需要打包成一个用户友好的交互界面使用。
+
+- https://github.com/ronaldzgithub/ComfyUI_Appstore /apache2/202412/python/js
+  - a framework to turn comfyui workflows to web apps
+  - 增加运行过程显示
+
+- https://github.com/queiul/MeldUI /202412/NonOpen
+  -  A ComfyUI client app that will help Manage and Generate Images with Ease
+
+- https://github.com/Comfy-Org/ComfyUI-embedded-workflow-editor /12Star/NALic/202505/ts
+  - https://comfyui-embedded-workflow-editor.vercel.app/
+  - In-place embedded workflow-exif editing experience for ComfyUI generated media files. 
+  - Edit workflow data embedded in PNG, WEBP, FLAC, MP3, and MP4 files directly in your browser.
+  - Requirements: - Bun — A fast all-in-one JavaScript runtime
+  - https://github.com/comfyui-wiki/ComfyUI-Workflow-JSON-Editor /202508/js
+    - https://comfyui-wiki.github.io/ComfyUI-Workflow-JSON-Editor/
+    - A tool for helping edit ComfyUI workflow's model link.
+
 - https://github.com/hayden-fr/ComfyUI-Model-Manager /146Star/GPL/202508/python/ts/vue
   - Download, browse and delete models in ComfyUI.
 
@@ -1051,6 +1137,9 @@ modified: 2025-08-23T11:43:35.904Z
     - It provides a robust interface for executing complex workflows through both API endpoints and a user-friendly web interface.
     - Real-time Progress Tracking - Monitor workflow execution with live updates
 
+- https://github.com/eltonkola/ComfyFlux /apache2/202408/kotlin/inactive
+  - simple android client for ComfyUi and Flux workflows
+
 - https://github.com/d3x-at/sd-parsers /MIT/202504/python
   - A Python library to read metadata from images created by Stable Diffusion.
   - Prompts as well as some well-known generation parameters are provided as easily accessible properties (see Output).
@@ -1064,6 +1153,12 @@ modified: 2025-08-23T11:43:35.904Z
   - a comprehensive toolkit for reliably packing and unpacking environments for ComfyUI workflows.
   - Pack workflow environments as artifacts: Saves the workflow environment in a `.cpack.zip` artifact with Python package versions, ComfyUI and custom node revisions, and model hashes.
   - Deploy workflows as APIs: Deploys the workflow as a RESTful API with customizable input and output parameters.
+  - [comfy-pack: Serving ComfyUI Workflows as APIs _202412](https://www.bentoml.com/blog/comfy-pack-serving-comfyui-workflows-as-apis)
+    - once you’ve built a workflow and want to run it in production, new challenges arise.
+    - Limited portability: Workflows can't be easily packaged and deployed elsewhere while maintaining consistent behavior. Users must manually manage Python dependencies, download custom nodes, and source specific model versions.
+    - No scaling capabilities: ComfyUI doesn’t support dynamic scaling, such as scaling down to zero when idle or scaling up to handle high traffic
+    - `comfy-pack` ensures consistency by locking the versions of every component in the workflow, such as custom nodes (pinned to its exact Git commit hash), Python packages, and ComfyUI version
+    - you can deploy your ComfyUI workflow to BentoCloud, our AI inference platform 
 
 - https://github.com/martijnat/comfyui-previewlatent /GPL/202508/python
   - ComfyUI plugin for previewing latents without vae decoding
@@ -1105,6 +1200,7 @@ modified: 2025-08-23T11:43:35.904Z
   - https://comfyanonymous.github.io/ComfyUI_examples/
   - Examples of ComfyUI workflows
   - All the images in this repo contain metadata which means they can be loaded into ComfyUI
+  - https://github.com/Comfy-Org/workflow_templates
 
 - https://github.com/heshengtao/comfyui_LLM_party /1.9kStar/AGPL/202508/python
   - aims to develop a complete set of nodes for LLM workflow construction based on comfyui as the front end. 
@@ -1127,8 +1223,9 @@ modified: 2025-08-23T11:43:35.904Z
 - https://github.com/edenartlab/workflows /202507
   - the official repository of all production-ready ComfyUI workflows for Eden.art.
 
-- flows
+- more-flows
   - https://github.com/dci05049/Comfyui-workflows
+  - https://github.com/cubiq/ComfyUI_Workflows
 # sd-api/server
 - https://github.com/yushan777/comfyui-api-part1-basic-workflow /202312/python/inactive
   - [ComfyUI : Using the API : Part 1. Controlling ComfyUI via Script _202309](https://medium.com/@yushantripleseven/comfyui-using-the-api-261293aa055a)
@@ -1164,6 +1261,14 @@ modified: 2025-08-23T11:43:35.904Z
   - Single Binary: The server is distributed as a single binary, and can be run with no dependencies.
   - The server can forward ComfyUI websocket events to a configured webhook, which can be used to monitor the progress of a workflow.
   - The server is designed to work well with SaladCloud. It is likely to work well with other platforms as well.
+
+- https://github.com/realazthat/comfy-catapult /26Star/MIT/202407/python/inactive
+  - Python library to programmatically schedule ComfyUI workflows via the ComfyUI API
+  - a library for scheduling and running ComfyUI workflows from a Python program, via the existing API endpoint. 
+  - ComfyUI API Pydantic Schema
+  - Download the example workflow, and export it in the API format
+  - https://github.com/realazthat/comfy-catapult-fastapi /MIT/202402/python
+    - This is a demo of how to use the ComfyUI to serve workflows to public facing users using the ComfyUI API, Comfy Catapult, your workflows, and FastAPI.
 
 - https://github.com/Distillery-Dev/Discomfort /248Star/MIT/202508/python
   - https://www.discomfort.ai/
@@ -1203,6 +1308,12 @@ modified: 2025-08-23T11:43:35.904Z
   - Provides nodes and API geared towards using ComfyUI as a backend for external tools.
   - Send and receive images directly without filesystem upload/download.
   - ComfyUI exchanges images via the filesystem. This requires a multi-step process (upload images, prompt, download images), which invites a whole class of potential issues you might not want to deal with.
+
+- https://github.com/matan1905/ComfyUI-Serving-Toolkit /69Star/202410/python/inactive
+  - a node toolkit to allow serving your workflow (for example using discord
+  - This toolkit is designed to simplify the process of serving your ComfyUI workflow, making image generation bots easier than ever before.
+  - Serve from your own computer, workflow is not inserted into the images so your secrets are 100% safe
+  - Support for multiple serving options: Discord, Telegram, HTTP and WebSockets
 
 - https://github.com/luckkyzhou/ComfyUI-API-Integration /MIT/202411/python/inactive
   - This project provides a comprehensive suite for developers to integrate ComfyUI APIs and automate image generation workflows. 
@@ -1271,6 +1382,14 @@ modified: 2025-08-23T11:43:35.904Z
 - https://github.com/ImDarkTom/ComfyUIMini /288Star/AGPL/202501/ts/inactive
   - A mobile-friendly WebUI to run ComfyUI workflows.
   - Ensure ComfyUI is installed and functional (minimum v0.2.2-50-7183fd1 / Sep. 18th release).
+  - [I created a frontend for ComfyUI that lets you run workflows from a mobile device : r/comfyui _202407](https://www.reddit.com/r/comfyui/comments/1eeimeu/i_created_a_frontend_for_comfyui_that_lets_you/)
+    - It's meant to be run on the same machine alongside ComfyUI but you should be able to port forward
+    - Be warned that authentication is not yet implemented so there may be a risk as anyone will be able to connect to it.
+    - 👀 the only way I'm able to make this work is to use the "Save (API Format)" button in Comfy and then upload the resulting json. I tried uploading a regular workflow and it never worked 
+  - [I created a frontend for ComfyUI that lets you run workflows from a mobile device : r/StableDiffusion _202407](https://www.reddit.com/r/StableDiffusion/comments/1eeijnw/i_created_a_frontend_for_comfyui_that_lets_you/)
+    - It uses the built-in ComfyUI API to send data back and forth between the comfyui instance and the interface.
+    - Using images as input (for masks and etc) is not yet implemented but will be added in a later update.
+    - You need to put the full path so in your case `F:\ComfyUI\models\checkpoints`;
 
 - https://github.com/jac3km4/comfyweb /72Star/MIT/202506/ts/svelte
   - a simple interface for ComfyUI that replaces graphs with beautiful forms.
@@ -1359,6 +1478,14 @@ modified: 2025-08-23T11:43:35.904Z
   - https://www.viewcomfy.com/
   - open source tool to help you create beautiful web apps from ComfyUI workflows.
   - Whether you need to turn comfy workflows into simple web apps that anyone can use, deploy them as serverless APIs, or just use the latest models on a powerful GPU, we’ve got you covered.
+  - [Show HN: Open-source app builder for comfy workflows | Hacker News _202409](https://news.ycombinator.com/item?id=41683407)
+    - If you have Comfy already installed, it will run off that. Otherwise, currently, you need to install it manually beforehand.
+  - [Show HN: Turn any ComfyUI workflow into a web app or API | Hacker News _202501](https://news.ycombinator.com/item?id=42714596)
+    - we already have a few Hunyuan workflows running on our H100s. If you can run it on your computer, you can run it on our cloud for sure
+    - I've been looking for something like that at my company, but we have really strict security guidelines.
+      - We ran into quite a few people in this situation and usually offer to integrate our infra with their S3/storage solution. 
+  - [Open source app builder for comfy workflows : r/comfyui _202409](https://www.reddit.com/r/comfyui/comments/1frq45l/open_source_app_builder_for_comfy_workflows/)
+    - The idea is that you can turn a workflow into a web app with an easy-to-use UI
   - [How to turn a ComfyUI workflow into a web app in minutes _202410](https://www.viewcomfy.com/blog/turn-a-comfyui-workflow-into-an-app)
   - [Build and deploy a ComfyUI-powered app: A complete guide _202504](https://www.viewcomfy.com/blog/build-and-deploy-a-comfyui-powered-app-a-complete-guide)
     - in order to transform your ComfyUI workflow into a serverless API, you need to deploy it on ViewComfy Cloud. 
@@ -1378,6 +1505,7 @@ modified: 2025-08-23T11:43:35.904Z
     - You can configure the worker to upload images to an S3 bucket instead by setting specific environment variables 
   - https://github.com/Dekita/runpod-serverless-comfyui-worker /202311/inactive
     - serverless ComfyUI worker for Runpod.io
+  - [Build a custom image-to-image app without writing a line of code _202411](https://medium.com/@guillaume.bieler/build-a-custom-image-to-image-app-without-writing-a-line-of-code-b625c9b0a402)
 
 - https://github.com/replicate/cog-comfyui /MIT/202507/python
   - https://replicate.com/fofr/any-comfyui-workflow
@@ -1395,6 +1523,9 @@ modified: 2025-08-23T11:43:35.904Z
   - ComfyEnv helps you manage isolated environments, so each project or node set can live in its own stable sandbox.
   - Isolated Conda environments per ComfyUI setup
   - ✅ Windows ✅ Linux ❌ macOS is currently not supported
+
+- https://github.com/punitda/ComfyRun /202409/python/ts/inactive
+  - open source and self-hosted solution to run your ComfyUI workflows at blazing fast speeds on cloud GPUs powered by Modal. 
 
 - https://github.com/robertvoy/ComfyUI-Distributed /202508
   - ComfyUI extension that enables multi-GPU processing locally, remotely and in the cloud
@@ -1496,6 +1627,13 @@ modified: 2025-08-23T11:43:35.904Z
   - SVGBench and SVG-Stack datasets are now available on HuggingFace Datasets
     - https://huggingface.co/datasets/starvector/svg-bench
     - https://huggingface.co/datasets/starvector/svg-stack
+
+- https://github.com/songweige/rich-text-to-image /800Star/MIT/python/inactive
+  - https://rich-text-to-image.github.io/
+  - Rich-Text-to-Image Generation
+  - We use various formatting information from rich text, including font size, color, style, and footnote, to increase control of text-to-image generation. 
+  - Our method enables explicit token reweighting, precise color rendering, local style control, and detailed region synthesis
+  - This code was tested with Python 3.8, Pytorch 1.11 and supports a Stable Diffusion v1-5 or Stable Diffusion XL or ANIMAGINE-XL 
 # InvokeAI
 - https://github.com/CodeGandee/invokeai-py-client /MIT/202508/python
   - A Python client library to operate InvokeAI system through its web API
@@ -1525,6 +1663,9 @@ modified: 2025-08-23T11:43:35.904Z
   - https://registry.comfy.org/
   - The server that backs ComfyUI Registry, a public collection of custom node packs used in ComfyUI.
   - The backend API server for Comfy Registry and Comfy CI/CD.
+  - https://github.com/Comfy-Org/registry-web /GPL/202508/ts
+    - https://registry.comfy.org/
+    - The frontend React App for Comfy Registry.
 
 - https://github.com/phineas-pta/comfyui-auto-nodes-layout /202507/python/js
   - a ComfyUI extension that applies an improved node layout algorithm to ComfyUI workflows, primarily for better visualization

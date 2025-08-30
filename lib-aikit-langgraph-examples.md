@@ -514,6 +514,23 @@ modified: 2025-08-11T08:47:56.335Z
   - A key feature is the use of custom LangChain.js callback events, enabling seamless streaming. 
   - 使用了langchain message/runnable/tools
 
+- https://github.com/apocas/restai /431Star/apache2/202508/python
+  - https://apocas.github.io/restai/
+  - an AIaaS (AI as a Service) open-source platform. 
+  - Built on top of LlamaIndex & Langchain. langchain仅用于dalle_image_generator,LlamaIndex用得多
+  - Supports any public LLM supported by LlamaIndex and any local LLM supported by Ollama/vLLM/etc
+  - Built-in image generation (Dall-E, SD, Flux) and dynamic loading generators.
+  - Image Generation: Supports local and remote image generators. 
+    - Local image generators are run in a separate process. 
+    - New generators are easily added and loaded dynamically.
+    - 本地的图片生成基于diffusers实现， 如 `from diffusers import DiffusionPipeline`;
+  - Proxy: Allows management of an OpenAI compatible proxy. LiteLLM is supported out of the box.
+  - Projects: There are multiple project types, each with its own features. (rag, ragsql, inference, vision, router, agent)
+  - The API is a first-class citizen of RestAI. All endpoints are documented using Swagger.
+  - There are two vectorstores supported: ChromaDB and RedisVL
+  - https://github.com/apocas/restai-frontend /202505/js/inactive
+    - 依赖mui.v5、@reduxjs/toolkit、echarts、mui-datatables、react-d3-tree、recharts
+
 - https://github.com/aymen-000/travel_agent /202508/python/ts/FastAPI
   - AI Travel Agent - Intelligent multi-agent system powered by LangGraph that coordinates specialized AI agents (flight search, hotel booking, activity planning) to provide personalized travel recommendations and assistance
   - AI/ML: LangChain + LangGraph (advanced agent orchestration)

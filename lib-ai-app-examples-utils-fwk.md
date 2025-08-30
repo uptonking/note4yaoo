@@ -161,6 +161,22 @@ modified: 2025-02-21T18:20:42.624Z
     - Pluggable AI: Gemini 2.5 by default, but swap in Claude/Mistral via API keys
     - Tools: Google Search API + room to add LlamaIndex, custom APIs, etc.
 
+- https://github.com/apocas/restai /431Star/apache2/202508/python
+  - https://apocas.github.io/restai/
+  - an AIaaS (AI as a Service) open-source platform. 
+  - Built on top of LlamaIndex & Langchain. langchain仅用于dalle_image_generator, LlamaIndex用得多
+  - Supports any public LLM supported by LlamaIndex and any local LLM supported by Ollama/vLLM/etc
+  - Built-in image generation (Dall-E, SD, Flux) and dynamic loading generators.
+  - Image Generation: Supports local and remote image generators. 
+    - Local image generators are run in a separate process. 
+    - New generators are easily added and loaded dynamically.
+    - 本地的图片生成基于diffusers实现， 如 `from diffusers import DiffusionPipeline`;
+  - Proxy: Allows management of an OpenAI compatible proxy. LiteLLM is supported out of the box.
+  - Projects: There are multiple project types, each with its own features. (rag, ragsql, inference, vision, router, agent)
+  - The API is a first-class citizen of RestAI. All endpoints are documented using Swagger.
+  - There are two vectorstores supported: ChromaDB and RedisVL
+  - https://github.com/apocas/restai-frontend /202505/js/inactive
+    - 依赖mui.v5、@reduxjs/toolkit、echarts、mui-datatables、react-d3-tree、recharts
 
 ## deep-research
 

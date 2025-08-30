@@ -79,7 +79,14 @@ modified: 2025-08-23T11:42:50.170Z
 
 ## comfyui
 
-### draft
+### draft-comfy
+
+- roadmap
+  - workflow as app: 实现思路包括独立fullstack, custom_node-api, custom_node-ui, gradio
+  - comfyui的工作流ux对用户不友好，InvokeAI的canvas更易用、易嵌入
+
+- usecase
+  - upscale, anime, faceswap, bg-remove, ocr, ...
 
 - extension-manager: batch enable/disable
 
