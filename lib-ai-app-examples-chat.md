@@ -19,6 +19,7 @@ modified: 2025-03-22T18:49:15.634Z
   - extensible, feature-rich, and user-friendly self-hosted WebUI designed to operate entirely offline. 
   - 后端tavily搜索部分用到了langchain，langchain整体仅7个文件
   - 前端使用sveltekit
+  - db支持pg
   - It supports various LLM runners, including Ollama and OpenAI-compatible APIs
   - 🌹 pros: comfyui
   - 🐛 cons: MCP
@@ -30,11 +31,6 @@ modified: 2025-03-22T18:49:15.634Z
     - It's in settings, no it's in admin panel, it's a pipeline - no sorry, it's actually a function.
     - If you use LiteLLM to configure the providers and don't go through Open WebUI pipe functions at all, it is much easier.
     - back in the early days of open-webui, LiteLLM was bundled along. It's better that it's installed separately of course, since both projects are moving along nicely.
-  - 🍴 forks
-  - https://github.com/AI3clauseBSD/claused-webai /inactive
-  - https://github.com/nick-tonjum/open-webui-artifacts-overhaul /202504/inactive
-    - brings Claude artifacts and OpenAI Canvas-like functionality to openwebui
-  - 🔧
   - https://github.com/Haervwe/open-webui-tools /MIT/202508/python
     - https://openwebui.com/u/haervwe
     - a modular toolkit designed to extend and enrich your Open WebUI instance
@@ -45,6 +41,14 @@ modified: 2025-03-22T18:49:15.634Z
     - Flux Kontext ComfyUI - Professional image editing
     - ComfyUI ACE Step Audio - Advanced music generation
     - Visual Integration: Seamless integration with ComfyUI workflows
+  - 🍴 forks
+  - https://github.com/AI3clauseBSD/claused-webai /inactive
+  - https://github.com/nick-tonjum/open-webui-artifacts-overhaul /202504/inactive
+    - brings Claude artifacts and OpenAI Canvas-like functionality to openwebui
+  - https://github.com/jeannotdamoiseaux/GovChat-NL /202507
+  - https://github.com/ssc-dsai/canchat-v2 /202508/BSD
+    - Granular Permissions and User Groups
+    - Offline Mode
 
 - https://github.com/danny-avila/LibreChat /29kStar/MIT/202508/ts
   - https://librechat.ai/
@@ -60,12 +64,40 @@ modified: 2025-03-22T18:49:15.634Z
   - Multimodal & File Interactions
   - Import & Export Conversations
   - Multi-User, Secure Authentication with OAuth2, LDAP, & Email Login Support
+  - [Install LibreChat Locally Using npm](https://www.librechat.ai/docs/local/npm)
+    - [Getting Started for Contributors](https://www.librechat.ai/docs/development/get_started)
   - [Model Context Protocol (MCP)](https://www.librechat.ai/docs/features/mcp)
     - LibreChat leverages MCP to dramatically expand what your AI agents can do, allowing you to integrate everything from file system access, web browsers, specialized APIs, to custom business tools.
     - Any time you add or edit an MCP server, you will need to restart LibreChat to initialize the connections.
   - [Enhancement: Extend Stable Diffusion plugin to work with ComfyUI _202405](https://github.com/danny-avila/LibreChat/issues/2672)
     - We already support Stable Diffusion. It will be great to add support for ComfyUI.
     - /not-planned
+  - 🔡 [Artifacts: Generate React, HTML & Diagrams Instantly](https://www.librechat.ai/docs/features/artifacts)
+    - Note: The preferred way to use artifacts is now through the Agents feature, which allows for more granular control by enabling/disabling artifacts at the agent level rather than app-wide.
+    - Artifacts in LibreChat use CodeSandbox’s Sandpack library to securely render HTML/JS code. By default, LibreChat connects to CodeSandbox’s public CDN 
+    - For enhanced privacy, security compliance, or isolated network environments, you can self-host the bundler.
+  - https://github.com/leikoilja/LibreChat-UI /202503/js
+    - Cross-platform desktop app wrapper for self-hosted LibreChat
+  - https://github.com/LibreChat-AI/static-browser-server /202504/ts
+    - This repository contains the static browser server used by Sandpack, with step-by-step instructions specifically tailored for LibreChat integration.
+  - 🍴 forks
+  - https://github.com/danieldjupvik/LibreChat-fork /202508
+    - feat: Add 'web_search' capability to ModelSpecItem
+    - feat: create LiteLLM proxy for getting model info
+  - https://github.com/intelequia/LibreChat /202508
+    - feat: Auth and User System
+  - https://github.com/jmaddington/LibreChat /202507
+    - E2B.dev code interpreter added to the tools list
+    - Web Navigator plugin added to the tools list.
+    - QuickChart plugin added to the tools list.
+    - TimeAPI.io plugin added to the tools list.
+  - https://github.com/paychex/LibreChat /202508
+  - https://github.com/MiroStW/LibreChat /202508/docker
+  - https://github.com/lihe8811/LibreChat /202508
+  - https://github.com/aitok-ai/LibreChat /202503
+  - https://github.com/naga-ai-hub/naga-chat /202508/单文件修改
+  - https://github.com/e-gineering/LibreChat /202508
+    - Commented out Perplexity by default
 
 - koishi /5.2kStar/MIT/202507/ts
   - https://github.com/koishijs/koishi
@@ -276,6 +308,7 @@ modified: 2025-03-22T18:49:15.634Z
   - https://docsgpt.arc53.com/
   - GPT-powered chat for documentation, chat with your documents
   - open-source AI platform for building intelligent agents and assistants. 
+  - 使用langchain的代码不多
   - Wide Format Support: Reads PDF, DOCX, CSV, XLSX, EPUB, MD, RST, HTML, MDX, JSON, PPTX, and images.
   - Web & Data Integration: Ingests from URLs, sitemaps, Reddit, GitHub and web crawlers.
   - Reliable Answers: Get accurate, hallucination-free responses with source citations 
@@ -300,6 +333,9 @@ modified: 2025-03-22T18:49:15.634Z
   - Extensible: Being built on `Gradio`, you are free to customize or add any UI elements as you like.
   - require `Unstructured` if you want to process files other than .pdf, .html, .mhtml, and .xlsx documents.
     - We support both `lite` & `full` version of Docker images. With `full` version, the extra packages of `unstructured` will be installed, which can support additional file types (`.doc, .docx`, ...)
+  - [Kotaemon: An open-source RAG-based tool for chatting with your documents | Hacker News _202501](https://news.ycombinator.com/item?id=42571272)
+  - [Kotaemon-papers: an open-source web app to chat with your academic papers | Hacker News _202501](https://news.ycombinator.com/item?id=42603357)
+    - Our team has been working on a public demo to showcase the new advanced citation features in our RAG
 
 - https://github.com/h2oai/h2ogpt /11.9kStar/apache2/202503/python/inactive
   - http://h2o.ai/
@@ -311,6 +347,11 @@ modified: 2025-03-22T18:49:15.634Z
   - Efficient use of context using instruct-tuned LLMs (no need for LangChain's few-shot approach)
   - Parallel summarization and extraction, reaching an output of 80 tokens per second with the 13B LLaMa2 model
   - Gradio UI or CLI with streaming of all models
+
+- https://github.com/GitHamza0206/simba /1.4kStar/apache2/202505/python/jupyter/inactive
+  - https://simba.mintlify.app/
+  - Portable KMS (knowledge management system) designed to integrate seamlessly with any RAG
+  - Modular Architecture: Flexible integration of vector stores, embedding models, chunkers, and parsers.
 
 - https://github.com/labring/FastGPT /25.5kStar/apache2+LOGO+nonTenant/202508/ts
   - https://fastgpt.io/
@@ -368,9 +409,27 @@ modified: 2025-03-22T18:49:15.634Z
   - The project provides an API offering all the primitives required to build private, context-aware AI applications. 
   - It follows and extends the OpenAI API standard, and supports both normal and streaming responses.
 
+- https://github.com/thiswillbeyourgithub/WDoc /478Star/GPL/202507/python
+  - https://wdoc.readthedocs.io/en/stable/
+  - Summarize and query from a lot of heterogeneous documents. 
+  - Any LLM provider, any filetype, advanced RAG, advanced summaries, scriptable, etc
+  - Created by a medical student who needed a way to get a definitive answer from multiple sources at the same time (audio recordings, video lectures, Anki flashcards, PDFs, EPUBs, etc.). wdoc was born from frustration with existing RAG solutions for querying and summarizing.
+  - It uses mostly `LangChain` and `LiteLLM` as backends.
+  - High recall and specificity: it was made to find A LOT of documents using carefully designed embedding search then carefully aggregate gradually each answer using semantic batch to produce a single answer that mentions the source pointing to the exact portion of the source document.
+    - Use both an expensive and cheap LLM to make recall as high as possible because we can afford fetching a lot of documents per query (via embeddings)
+  - Extensible: this is both a tool and a library. It was even turned into an Open-WebUI Tool
+  - Web Search: Preliminary web search support using DuckDuckGo (via the ddgs library)
+
 - https://github.com/dontizi/rlama /202503/go
   - RLAMA is a powerful AI-driven question-answering tool for your documents, seamlessly integrating with your local Ollama models. 
   - It enables you to create, manage, and interact with Retrieval-Augmented Generation (RAG) systems tailored to your documentation needs.
+
+- https://github.com/kqlade/dory-frontend /AGPL/202504/ts/inactive
+  - [Dory – AI Knowledge Base Powered by Browser History | Hacker News _202504](https://news.ycombinator.com/item?id=43619021)
+  - Dynamic Online Recall for You (DORY) helps you find anything you've seen before online using whatever you remember about it. 
+  - DORY also builds a cognitive context graph to organize your work into auto-updating workflows and serve them to you in real time based on your browsing context.
+  - DORY uses Neo4j to store browsing data with weighted edge relationships (semantic, behavioral, temporal) then applies stochastic block modeling for community detection and temporal-behavioral profiling.
+  - It's an approach similar to how banks analyze transaction networks to detect fraud but works surprisingly well for teasing apart browser workflows.
 # chat-excel
 - https://github.com/weijunext/smart-excel-ai /MIT/202312/ts
   - https://smartexcel.cc/

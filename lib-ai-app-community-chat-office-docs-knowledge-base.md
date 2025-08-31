@@ -98,7 +98,13 @@ modified: 2025-08-30T18:16:57.201Z
 
 - ## 
 
-- ## 
+- ## [Ask HN: I have many PDFs – what is the best local way to leverage AI for search? | Hacker News _202405](https://news.ycombinator.com/item?id=40528192)
+- RAG cli from llamaindex, allow you to do it 100% locally when used with ollama or llamacpp instead of OpenAI.
+
+- Paperless supports OCR + full text indexing
+
+- The primary challenge is not just about harnessing AI for search; it's about preparing complex documents of various formats, structures, designs, scans, multi-layout tables, and even poorly captured images for LLM consumption. This is a crucial issue.
+  - To parse PDFs for RAG applications, you'll need tools like LLMwhisperer or unstructured.io.
 
 - ## [Is there a model that actually can examine and read all of a pdf? : r/ollama _202502](https://www.reddit.com/r/ollama/comments/1ipw9og/is_there_a_model_that_actually_can_examine_and/)
 - No model can "read" the pdf - what you need to do is RAG. This is what happens when you upload a file to chatgpt for example.
@@ -134,9 +140,59 @@ modified: 2025-08-30T18:16:57.201Z
 # discuss-ai-docs
 - ## 
 
-- ## 
+- ## [Kotaemon: An open-source RAG-based tool for chatting with your documents | Hacker News _202501](https://news.ycombinator.com/item?id=42571272)
+- At this point there are multiple home RAG systems, pretty much using the same components, so does anyone know how this compares to others? I see that it imports GraphRAG which most other don’t
+  - I think a lot of AI chat services have recognized that document search is table stakes and are building this functionality into their tools, so I don't know whether Kotaemon as a standalone tool will be needed for much longer.
+  - For example, my company was originally going to push out Kotaemon for private document search, but we have now put that on pause because we're exploring whether we can get the same results through our primary AI chat service, without having to point users to a separate tool.
 
-- ## 
+- How well do these kind of pre built systems work? RAG in my experience usually requires a decent amount of customization to your input data for chunk formatting and other things to work well, are these systems flexible enough? What if you want to integrate it into an existing system, are these for local use only? So everyone on e.g. a team has to set it up themselves?
+  - For longer documents or for groups of documents you need a kind of search to extract the most relevant passages to throw in the context.
+
+- ## DocsGPT is an open-source document Q&A system by Arc53, built on RAG _202508
+- https://x.com/andrea_89757/status/1954192824540467256
+  - RAG = split your docs → store in a vector DB → retrieve relevant chunks → feed to an LLM.
+  - You get precise answers with citations, not AI guesses.
+
+- What it can read
+• Text: PDF, DOCX, TXT, Markdown, HTML
+• Spreadsheets: CSV, XLSX
+• Slides: PPTX
+• Code & sites: GitHub repos, Sitemaps, scraped pages
+• OCR: images → searchable text
+
+- Data sources
+• Local folders
+• URLs
+• GitHub / GitLab
+• Reddit threads
+• APIs
+
+- Smart retrieval + answers
+• Searches your own data first
+• Returns answers with references (file + section)
+• Adjustable search scope & answer length
+
+- Model support
+• Cloud LLMs: OpenAI, Claude, Gemini
+• Local LLMs: LLaMA, Mistral, Ollama
+Switch anytime for cost, speed, or privacy.
+
+- Integrations
+• Web chat UI (ChatGPT-style)
+• Embed as website widget (customer support)
+• Slack / Discord / Telegram bots
+• API endpoints for your own apps
+
+- Why it’s useful
+• Enterprise search: Find answers in 1, 000+ pages instantly
+• Dev/API docs: “How do I use this endpoint?” without scrolling
+• Customer support: AI answers from your FAQ & manuals
+• Legal/compliance: Search laws/contracts and get exact citations
+
+- Deploy your way
+• Hosted version (fast start)
+• Local/private via Docker or manual setup
+• Hybrid: local retrieval + cloud LLM
 
 - ## [Show HN: DocsGPT, open-source documentation assistant, fully aware of libraries | Hacker News _202302](https://news.ycombinator.com/item?id=34648266)
 - It's like the new crud but instead of designing the database tables and columns you're tweaking the prompts.
@@ -164,7 +220,38 @@ modified: 2025-08-30T18:16:57.201Z
 
 - ## 
 
-- ## 
+- ## [Ask HN: Local RAG with private knowledge base | Hacker News _202410](https://news.ycombinator.com/item?id=41968366)
+- The key to accuracy is use case specific knowledge graphs. 
+  - Here is a YouTube video of how to do it. https://youtu.be/iWtF1Qe7QkM 
+  - The key benefits are 
+
+    - Improved data quality of the data available for genAI 
+    - Reduction in risk associated with genAI’s known problems 
+    - Increasing business value due to being able to hit use case driven accuracy/reliability, security, and transparency metrics
+
+- > expected the more documents we feed the lower the accuracy
+  - The LLM itself is the least important bit as long as it’s serviceable.
+  - Depending on your goal you need to have a specific RAG strategy.
+  - How are you breaking up the documents? Are the documents consistently formatted to make breaking them up uniform? Do you need to do some preprocessing to make them uniform?
+  - When you retrieve documents how many do you stuff into your prompt as context?
+  - Do you stuff the same top N chunks from a single prompt or do you have a tailored prompt chain retrieving different resourced based on the prompt and desired output?
+- Wouldn't these questions be answered by the RAG solution the OP is asking for?
+  - Not really you need to try different strategies for different use cases in my experience.
+
+- Fascinating there doesn't seem to be a consensus "just use this" answer here.
+  - My sentiments exactly, and given how widespread a need RAG is, I'm extremely surprised that we don't have something solid and clearly a leader in the space yet. We don't even seem to have two or three! It's "pick one of these million side-projects".
+- Because RAGs are simply a list of vectors and a similarity search with some variations trying to use  knowledge graphs. 
+  - So everybody is roughly using the same method with some tweaks here and there and thus getting a similar quality in results.
+- Getting it running is pretty easy, but actually tuning the results to make them better is tricky, especially if you're not a domain expert in the area you're working on.
+  - Evals seem like a solution, but they're very tied to specific examples, so it looks like that might be most of the issue in getting this to work, as with a good set of evals, one can actually measure performance and test out different approaches.
+  - Embedding also seems to be a bit of a dark art in that every tutorial uses something small, but I haven't seen a lot of work on comparing the performance of particular embeddings for domain specific tasks.
+- This was our experience trying to deploy a knowledge base for our Org.
+  - You have to get the domain experts to help you build evals and you need a good pipeline for testing the LLM against those as you make changes. We were never able to get there before the project was killed.
+
+- Just remember that retrieval is the real bottleneck in RAG, so your problem could very much be related to how you create and embed your chunks and not the model you’re using
+
+- I would look at articles on building an open source RAG pipeline. Generation (model) is the last in a series of important steps -- you have options to choose from (retrieval, storage, etc) in each component step. Those decisions will affect the accuracy you mention.
+  - Langchain, llamaindex have good resources on building such a pipeline the last I checked
 
 - ## 🤔 一些企业描述为知识库的需求，实际上是没有办法通过当前的 RAG 来满足的，更像是一个本地的 Deepresearch 或者其他的 agent 可以 cover 的场景。 不要被带到坑里。
 - https://x.com/YinsenHo_/status/1954741140307235282
@@ -189,9 +276,9 @@ modified: 2025-08-30T18:16:57.201Z
 - I explored some closely related ideas with @MagicPaperAI . You guys have pulled off the synthesis of highlights and copied fragments. I’d posit that the next key synthesis is between copied fragments and revisions of a document. Edits are partial copies.
 - Great work! I like the flow of adding & organizing snippets -> augmented synthesis. The more snippets you grab under a heading, the clearer a cluster forms. That then generates 'what you're getting at' summaries & gives AI bounds to forage for related snippets. Good loop there.
 
-- ## 🆚️ 这几天在给公司产品的 AI 助手选择知识库的数据处理工具，重新看了一遍 Marker、MinerU、Docling、Markitdown、Llamaparse 这五个工具
+- ## 🆚️ 这几天在给公司产品的 AI 助手选择知识库的数据处理工具，重新看了一遍 Marker、MinerU、Docling、Markitdown、Llamaparse 这五个工具 _202502
 - https://x.com/shao__meng/status/1893984985998365096
-1. Marker
+1. Marker /GPLv3
 技术架构
 · 基于 PyMuPDF 和 Tesseract OCR，支持 GPU 加速（Surya OCR 引擎），开源轻量化
 功能特性
@@ -203,7 +290,7 @@ modified: 2025-08-30T18:16:57.201Z
 ✅ 开源免费、处理速度快（比同类快 4 倍）
 ❌ 缺乏复杂布局解析能力，依赖本地 GPU 资源
 
-1. MinerU
+2. MinerU /AGPLv3
 技术架构
 · 集成 LayoutLMv3、YOLOv8 等模型，支持多模态解析（表格/公式/图像），依赖 Docker 和 CUDA 环境
 功能特性
@@ -215,7 +302,7 @@ modified: 2025-08-30T18:16:57.201Z
 ✅ 企业级安全合规，支持 API 和图形界面
 ❌ 依赖 GPU，表格处理速度较慢，配置复杂
 
-2. Docling
+3. Docling /MIT
 技术架构
 · 模块化设计，集成 Unstructured、LayoutParser 等库，支持本地化处理
 功能特性
@@ -227,7 +314,7 @@ modified: 2025-08-30T18:16:57.201Z
 ✅ 与 IBM 生态兼容，支持多格式混合处理
 ❌ 需 CUDA 环境，部分功能依赖商业模型
 
-3. Markitdown
+4. Markitdown /MIT
 技术架构
 · 微软开源项目，集成 GPT-4 等模型实现 AI 增强处理，支持多格式转换
 功能特性
@@ -239,7 +326,7 @@ modified: 2025-08-30T18:16:57.201Z
 ✅ 格式支持最全，开发者友好（Python API/CLI）
 ❌ 依赖外部 API，部分功能需付费模型
 
-4. Llamaparse
+5. Llamaparse /CloudOnly/NonOpen
 技术架构
 · 专为 RAG 设计，结合 Azure OpenAI 和 KDB AI 向量数据库，优化语义检索
 功能特性
@@ -281,6 +368,8 @@ modified: 2025-08-30T18:16:57.201Z
 - 多模态解析这种方式挺不错，我们也放在对比中，特别是 gemini 这种成本低多模态能力强的。
 
 - Docling也有点慢... 没有GPU加速的其他库也不快... 平均下来都是 1.x page/s , 比如MinerU一个20页的paper, 一个GPU L4, 最快也要十几秒 到生产环境不开多GPU并发, 时间上是个大问题, 
+
+- 你这个结论并不严谨，你肯定是同时只处理一个文档得出的结论。我也测过，并行处理的速度和能力大不相同
 # discuss
 - ## 
 

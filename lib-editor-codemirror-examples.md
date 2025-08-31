@@ -1955,7 +1955,7 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/live-codes/livecodes /933Star/MIT/202503/ts
   - https://livecodes.io/
-  - 🧊 A feature-rich, open-source, client-side code playground for React, Vue, Svelte, Solid, Typescript, Python, Go, Ruby, PHP and 80+ languages/frameworks.
+  - 🛝 A feature-rich, open-source, client-side code playground for React, Vue, Svelte, Solid, Typescript, Python, Go, Ruby, PHP and 80+ languages/frameworks.
   - 依赖codemirror6、monaco-editor、codejar、codejar、yjs
   - 代码编辑器依赖 monaco-editor, Monaco editor is used on desktop, CodeMirror is used on mobile and CodeJar is used in codeblocks, in lite mode and in readonly playgrounds.
   - Powerful SDK (available for vanilla JavaScript, TypeScript, React, Vue and Svelte)
@@ -1964,6 +1964,18 @@ modified: 2023-06-23T12:46:53.288Z
   - Use modules from npm, deno.land/x, jsr, GitHub, and others
   - SDK provides an easy, yet powerful, interface to embed and communicate with LiveCodes playgrounds.
     - SDK methods allow programmatic communication and control of the playgrounds during runtime.
+  - [Improve Vue support  _202503](https://github.com/live-codes/livecodes/issues/757)
+    - Please note that LiveCodes does not allow having a file system. It only has 3 editors (markup, style and script) which when combined produce the result page. 
+    - This is similar to CodePen and JSFiddle and unlike CodeSandbox and StackBlitz.
+    - This is not an issue with other frameworks like React and Solid since they use functions (or classes) as components and a single file can have many of these. In Vue (and Svelte) the SFC format allows only 1 component per file.
+  - [Programmatic engine? _202301](https://github.com/live-codes/livecodes/issues/294)
+    - there is quite a powerful SDK that allows embedding and communicating with playgrounds and provides lots of configuration options.
+    - the officially supported headless mode
+  - [Would it be possible to use a locally run LLM instead of Codeium, e.g. via Ollama? _202504](https://github.com/orgs/live-codes/discussions/784)
+    - The codeium integration is currently achieved using: Monaco editor: Monaco Codeium Provider, which is a fork of the codeium official codeium-react-code-editor
+    - So to use another backend server (including a local one), you will have to provide the same API and change the URL to it. This is not currently in my scope.
+    - If you need to modify these, you will have to fork the projects, make your modifications and then re-publish them as new packages which can then be used instead of the original ones. The real problem you are trying to solve are not modifying these. The actual problem is providing the code suggestions in the same format that the codeium server does. The actual codeium backend server running the AI models is not open-source.
+    - this is not easily done. :( Thank you for the explanations
   - https://x.com/hatem_hosny_/status/1753930554540499064
     - Check this where I dynamically select the editor and load it (e.g. on desktop -> monaco, on mobile -> codemirror, user preference, etc.)
     - Also unified the interface of loading and communicating with the editor

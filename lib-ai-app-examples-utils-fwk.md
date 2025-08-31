@@ -54,6 +54,8 @@ modified: 2025-02-21T18:20:42.624Z
   - both short-term working memory for ongoing reasoning and long-term persistent memory across sessions.
   - [Feature request: Source code? · Issue · langchain-ai/langgraph-studio _202410](https://github.com/langchain-ai/langgraph-studio/issues/154)
     - we're currently not considering open-sourcing the project, as it depends on some parts of LangSmith.
+  - [[Docs] Add LangGraph integration examples to JS/TS documentation _202507](https://github.com/orgs/langfuse/discussions/7709)
+    - Currently, the Langfuse JS/TS documentation lacks guidance on integrating with LangGraph. 
 
 - https://github.com/langchain-ai/langgraphjs /1.9kStar/MIT/202508/ts
   - https://langchain-ai.github.io/langgraphjs/
@@ -161,6 +163,16 @@ modified: 2025-02-21T18:20:42.624Z
     - Pluggable AI: Gemini 2.5 by default, but swap in Claude/Mistral via API keys
     - Tools: Google Search API + room to add LlamaIndex, custom APIs, etc.
 
+- https://github.com/huggingface/smolagents /22.5kStar/apache2/202509/python
+  - https://huggingface.co/docs/smolagents
+  - smolagents is a library that enables you to run powerful agents in a few lines of code.  
+  - Simplicity: the logic for agents fits in ~1, 000 lines of code (see agents.py). We kept abstractions to their minimal shape above raw code
+  - First-class support for Code Agents. Our CodeAgent writes its actions in code. we support executing in sandboxed environments via E2B, Modal, Docker, or Pyodide+Deno WebAssembly sandbox.
+  - Hub integrations: you can share/pull tools or agents to/from the Hub for instant sharing o
+  - Model-agnostic: smolagents supports any LLM. It can be a local transformers or ollama model
+  - support text, vision, video, even audio inputs
+  - Tool-agnostic: you can use tools from any MCP server, from LangChain, you can even use a Hub Space as a tool.
+
 - https://github.com/apocas/restai /431Star/apache2/202508/python
   - https://apocas.github.io/restai/
   - an AIaaS (AI as a Service) open-source platform. 
@@ -177,6 +189,26 @@ modified: 2025-02-21T18:20:42.624Z
   - There are two vectorstores supported: ChromaDB and RedisVL
   - https://github.com/apocas/restai-frontend /202505/js/inactive
     - 依赖mui.v5、@reduxjs/toolkit、echarts、mui-datatables、react-d3-tree、recharts
+
+- https://github.com/The-Pocket/PocketFlow /8.2kStar/MIT/202508/python
+  - https://the-pocket.github.io/PocketFlow/
+  - Pocket Flow is a 100-line minimalist LLM framework
+  - Lightweight: Just 100 lines. Zero bloat, zero dependencies, zero vendor lock-in.
+  - Expressive: Everything you love—(Multi-)Agents, Workflow, RAG, and more.
+  - Agentic Coding: Let AI Agents (e.g., Cursor AI) build Agents—10x productivity boost!
+  - https://github.com/The-Pocket/PocketFlow-Typescript
+  - https://github.com/The-Pocket/PocketFlow-Go
+
+- https://github.com/Osly-AI/Pocket-Flow-Framework /664Star/MIT/202502/ts/inactive
+  - https://Osly-AI.github.io/Pocket-Flow-Framework
+  - Enabling non‑developers to create custom AI workflows with natural language.
+  - The original core abstraction behind the Pocketflow Platform
+  - This repo contains the original Pocketflow Framework—the Nested Directed Graph engine that underpins one‑shot workflow generation on Pocketflow. Workflows on the platform wrap around this framework, providing a consistent execution model and state management layer.
+  - Nested Directed Graph: Breaks complex tasks into reusable nodes with branching and recursion.
+  - One‑Shot Assembly: Core abstraction powering prompt‑based workflow creation.
+  - Modular Nodes: Each node is an independent processing unit.
+  - Vendor‑Agnostic: Integrate any LLM or API without extra wrappers.
+  - Debug-Friendly: Inspect state and trace execution paths easily.
 
 ## deep-research
 

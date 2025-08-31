@@ -9,6 +9,10 @@ modified: 2025-08-11T08:46:16.962Z
 
 # guide
 
+- who is using #langchain
+  - n8n
+  - flowise
+  - langflow
 # draft
 
 # dev-xp

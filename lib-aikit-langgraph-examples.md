@@ -81,6 +81,23 @@ modified: 2025-08-11T08:47:56.335Z
     - The entire project is open source, built on LangGraph, and designed to be extended.
   - https://github.com/PrasanKumar93/demo-open-swe
     - play with langgraph open swe
+- https://github.com/botingw/langgraph-dev-navigator /15Star/MIT/202508/python
+  - An opinionated development framework for building production-ready AI agents with LangGraph. 
+  - It grounds AI coding assistants (Cursor, Windsurf, Cline) and guides them to use local, official documentation, ensuring reliable, secure, and observable agentic workflows.
+  - AI coding assistants are powerful, but their general knowledge can be outdated or lead to plausible-but-incorrect code ("hallucinations"). This repository addresses that by providing a framework to ground an AI assistant in the executable truth of a specific, version-controlled codebase.
+
+- https://github.com/esinecan/skynet-agent /107Star/MIT/202506/ts/inactive
+  - AI conversation platform implementing dual-layer memory architecture inspired by human cognition.
+  - Dual-Layer Memory
+    - Automatic Memory (RAG): Non-volitional background memory using ChromaDB vectors and Google text-embedding-004
+    - Conscious Memory: Volitional operations via MCP tools - save, search, update, delete with tags and importance scoring
+    - Knowledge Graph: Neo4j-powered relationship mapping with automatic synchronization and retry mechanisms
+  - LangGraph-Powered Autopilot
+  - LangGraph Integration: Complex autonomous workflows
+  - Hybrid Search: Solves subset query limitations
+  - [Built an Autonomous AI Agent with LangGraph - Features Dual-Layer Memory, Knowledge Graphs, and Self-Healing Autopilot : r/LangChain _202506](https://www.reddit.com/r/LangChain/comments/1lhr4ag/built_an_autonomous_ai_agent_with_langgraph/)
+    - I find letting the model decide to write short term memories when it wants to thru tools introduces a lot of latency. Parallel memory tool + responding doesn’t seem to work well for me. Curious if you are experiencing this as well?
+      - I do actually. I need you guys' help on ux design side of this.
 
 - https://github.com/BharathxD/ClaimeAI /55Star/MIT/202508/python/ts
   - https://claime.tech/
@@ -178,6 +195,11 @@ modified: 2025-08-11T08:47:56.335Z
   - a visual editor for langgraph workflow. 
   - It is based on litegraph.js as its workflow engine (the same as ComfyUI). You can add, remove, and layout different nodes as you wish, get the workflow as you wish.
 # starter
+- https://github.com/langchain-ai/new-langgraph-project /MIT/202508/python
+  - This template demonstrates a simple application implemented using LangGraph, designed for showing how to get started with LangGraph Server and using LangGraph Studio, a visual debugging IDE.
+  - https://github.com/langchain-ai/new-langgraphjs-project /MIT/202506/ts
+    - This template demonstrates a simple chatbot implemented using LangGraph.js, showing how to get started with LangGraph Server and using LangGraph Studio, a visual debugging IDE.
+
 - https://github.com/langchain-ai/agent-inbox-langgraphjs-example /MIT/202501/ts
   - a bare minimum code example to get started with the Agent Inbox with LangGraph.js
 
@@ -222,6 +244,9 @@ modified: 2025-08-11T08:47:56.335Z
 
 - https://github.com/MrGaoGang/langgraph-mcp-example /202507/ts
   - langgraph use mcp example
+
+- https://github.com/langchain-ai/langgraphjs-studio-starter /MIT/202409/ts/inactive
+  - Example LangGraph.js project made to run in LangGraph Studio
 # examples
 - https://github.com/akveo/ai-cookbook /MIT/202507/ts
   - a set of use cases demonstrating how to build AI-featured applications.
@@ -341,7 +366,27 @@ modified: 2025-08-11T08:47:56.335Z
   - https://github.com/lalanikarim/langgraph-mcp-pipeline /MIT/202503/python
     - This project demonstrates the use of the Model Context Protocol (MCP) with LangGraph to create workflows that generate prompts and AI-generated images based on a given topic. 
     - These scripts utilize the Comfy MCP Server to generate AI image prompts and AI images.
+
+- https://github.com/getzep/graphiti/tree/main/examples/langgraph-agent /202504/jupyter/inactive
+  - [Using LangGraph and Graphiti | Zep Documentation](https://help.getzep.com/graphiti/integrations/lang-graph-agent)
+  - The following example demonstrates building an agent using LangGraph. 
+  - Graphiti is used to personalize agent responses based on information learned from prior conversations
+  - Graphiti is a framework for building and querying temporally-aware knowledge graphs
+  - A knowledge graph is a network of interconnected facts. 
+  - Each fact is a "triplet" represented by two entities, or nodes ("Kendra", "Adidas shoes"), and their relationship, or edge ("loves"). 
+  - Graphiti powers the core of Zep
 # utils/fwk
+- https://github.com/langchain-ai/open-agent-platform /1.6kStar/MIT/202508/ts
+  - https://oap.langchain.com/
+  - open-source, no-code agent building platform.
+  - Open Agent Platform provides a modern, web-based interface for creating, managing, and interacting with LangGraph agents.
+  - RAG Integration: First-class support for Retrieval Augmented Generation with LangConnect.
+  - Agent Supervision: Orchestrate multiple agents working together through an Agent Supervisor.
+  - Authentication: Built-in authentication and access control.
+  - An agent is a custom configuration on-top of an existing LangGraph graph. This is the same concept as an `assistant`, in the LangGraph API.
+  - OAP does not require a standalone backend server to be running in order for the web app to work. However, if you want to use the RAG features, you will need to have the LangConnect server running on its own. 
+  - All agents you intend to use with OAP must be LangGraph agents, deployed on LangGraph Platform.
+
 - https://github.com/keboola/langgraph-chat-transport /MIT/202508/ts
   - A transport adapter that bridges LangGraph API streaming events to Vercel AI SDK's `useChat` hook format
   - Transforms LangGraph's SSE message format into the chunk protocol that useChat understands, enabling seamless integration between LangGraph agents and React chat interfaces.
@@ -382,6 +427,7 @@ modified: 2025-08-11T08:47:56.335Z
   - SDK for implementing Langgraph in your frontend in few seconds
   - capable of rendering tools and interacting with interrupt tools
   - 基于 @assistant-ui/react-langgraph, zod
+  - [Created LangGraph-ui-sdk package to create Chatbot out of the box : r/LangChain _202411](https://www.reddit.com/r/LangChain/comments/1ghkgvf/created_langgraphuisdk_package_to_create_chatbot/)
 
 - https://github.com/jacoblee93/two-factor-support-agent /MIT/202502/ts
   - LangGraph.js agent that requires authorization before invoking tools
@@ -421,6 +467,14 @@ modified: 2025-08-11T08:47:56.335Z
   - 基于LangGraph构建的DeepResearch Agent，可以搭配任意搜索引擎、OpenAI接口兼容的模型
   - The code logic referenced Google's Gemini LangGraph Project.
 
+- https://github.com/langchain-ai/langgraph-swarm-py /1.1kStar/MIT/202507/python
+  - https://langchain-ai.github.io/langgraph/concepts/multi_agent/
+  - A Python library for creating swarm-style multi-agent systems using LangGraph. 
+  - A swarm is a type of multi-agent architecture where agents dynamically hand off control to one another based on their specializations. 
+  - The system remembers which agent was last active, ensuring that on subsequent interactions, the conversation resumes with that agent.
+  - Built-in tools for communication between agents
+  - This library is built on top of LangGraph, and comes with out-of-box support for streaming, short-term and long-term memory and human-in-the-loop
+
 - https://github.com/langtail/ai-orchestra /202502/ts
   - Simple orchestration for AI Agents built around Vercel's `streamText`. 
   - Lightweight alternative to LangGraph for agent handoffs and state transitions, similar to OpenAI's Swarm but with more developer control and less magic. 
@@ -434,6 +488,14 @@ modified: 2025-08-11T08:47:56.335Z
   - Built-in memory and state handling across nodes
   - Save and resume workflow states with FileCheckpointer
   - Rich event callbacks for monitoring workflow execution
+
+- https://github.com/JoshuaC215/agent-service-toolkit /3.5kStar/MIT/202508/python
+  - https://agent-service-toolkit.streamlit.app/
+  - toolkit for running an AI agent service built with LangGraph, FastAPI and Streamlit.
+  - It includes a LangGraph agent, a FastAPI service to serve it, a client to interact with the service, and a Streamlit app that uses the client to provide a chat interface. 
+  - Data structures and settings are built with Pydantic.
+  - Advanced Streaming: A novel approach to support both token-based and message-based streaming
+  - RAG Agent: A basic RAG agent implementation using ChromaDB 
 # deep-research
 - https://github.com/bytedance/deer-flow /16.1kStar/MIT/202508/python/ts
   - https://deerflow.tech/
@@ -451,6 +513,58 @@ modified: 2025-08-11T08:47:56.335Z
 
 - https://github.com/mendableai/firesearch /202506/ts
   - AI-powered deep research tool that breaks down complex queries, validates answers, and provides cited comprehensive results using Firecrawl and LangGraph
+# rag/docs/kb
+- https://github.com/langchain-ai/rag-research-agent-template /MIT/202412/python/inactive
+  - a starter project to help you get started with developing a RAG research agent using LangGraph in LangGraph Studio.
+  - [Build language agents as graphs](https://github.com/langchain-ai/langgraph/discussions/722)
+
+- https://github.com/safzanpirani/langgraph-agentic-workflow /202505/python/inactive
+  - A simple self correcting and hallucination checking RAG workflow in LangGraph.
+
+- https://github.com/junfanz1/Cognito-LangGraph-RAG-Chatbot /202503/python/inactive
+  - This project implements an advanced RAG workflow to enhance question-answering accuracy and reduce LLM hallucinations.
+  - It leverages LangGraph to create a stateful, multi-step process that includes document retrieval, relevance grading, and web search fallback
+
+- https://github.com/chitralputhran/Advanced-RAG-LangGraph /MIT/202507/python
+  - This is a web application that allows you to upload documents and ask questions about them. 
+  - a Streamlit-based web application that implements an advanced RAG pipeline using LangGraph, ChromaDB, and Tavily to enable interactive document-based Q&A with enhanced retrieval and error-handling capabilities.
+
+- https://github.com/ranguy9304/LangGraphRAG /14Star/MIT/202407/python/inactive
+  - a terminal-based RAG system implemented using LangGraph. 
+  - The architecture is designed to handle queries by routing them through a series of processes involving message history caching, query transformation, and document retrieval from a vector database.
+
+- https://github.com/samitugal/KnowledgeGraphQA-Langgraph /202410/python/inactive
+  - AI-powered system generating knowledge graphs from text and answering questions
+  - LangChain: For building and managing the AI/LLM pipelines.
+  - LangGraph: Used for creating the workflow graph.
+  - Neo4j: Graph database for storing and querying the knowledge graph.
+  - FastAPI: For creating the API endpoints.
+  - Streamlit: For building the user interface.
+  - Amazon Bedrock: Alternative LLM provider.
+  - Tavily Search API: For web search functionality.
+
+- https://github.com/pedarias/langgraph-rag-mcp /202506/jupyter
+  - This repo shows how to build a retrieval-augmented generation (RAG) System using LangGraph documentation and then expose it as a tool using the Model Context Protocol (MCP).
+
+- https://github.com/Feed-dev/RAG-agents-Langgraph /202412/jupyter/inactive
+  - RAG agent using Langgraph, Ollama, and Llama3.2. The agent can perform document retrieval, web searches, and generate answers based on the retrieved
+  - Pinecone (for vector storage and retrieval)
+
+- https://github.com/riolaf05/langgraph-rag-chatbot /202408/jupyter/inactive
+  - Agentic RAG chatbot using Langchain and Langgraph
+
+- https://github.com/GreatHayat/langgraph-corrective-rag /202501/python/inactive
+  - CRAG is a strategy for RAG that integrates self-reflection and self-grading mechanisms to enhance the accuracy of responses by evaluating the relevance of retrieved documents.
+
+- https://github.com/Grecil/Corrective-RAG /202503/python/inactive
+  - https://github.com/Grecil/Corrective-RAG
+  - Implementation of Corrective RAG using LangChain and LangGraph.
+# ai-coding
+- https://github.com/langchain-ai/langgraph-codeact /598Star/MIT/202505/python/inactive
+  - This library implements the CodeAct architecture in LangGraph. This is the architecture is used by Manus.im.
+  - https://x.com/tuturetom/status/1905605150884200871
+    - Manus 背后最核心的技术 CodeAct 论文发布
+    - 让 Agent 自己编写 Tool 然后完成 Tool 的调用，形成强大的自给自足机制
 # rag/memory
 - https://github.com/0xPratikPatil/langgraph-db /MIT/202505/ts/inactive
   - A powerful memory backend for LangGraph.js that provides short-term and long-term memory for your agents using flexible storage providers.
@@ -517,7 +631,7 @@ modified: 2025-08-11T08:47:56.335Z
 - https://github.com/apocas/restai /431Star/apache2/202508/python
   - https://apocas.github.io/restai/
   - an AIaaS (AI as a Service) open-source platform. 
-  - Built on top of LlamaIndex & Langchain. langchain仅用于dalle_image_generator,LlamaIndex用得多
+  - Built on top of LlamaIndex & Langchain. langchain仅用于dalle_image_generator, LlamaIndex用得多
   - Supports any public LLM supported by LlamaIndex and any local LLM supported by Ollama/vLLM/etc
   - Built-in image generation (Dall-E, SD, Flux) and dynamic loading generators.
   - Image Generation: Supports local and remote image generators. 
@@ -567,6 +681,11 @@ modified: 2025-08-11T08:47:56.335Z
   - Knowledge Graph Backbone – All data is seamlessly structured into a powerful knowledge graph.
   - Enterprise-Grade Connectors – Scalable, reliable, and built for secure access across your organization.
   - Modular & Scalable Architecture – Every service is loosely coupled to scale independently and adapt to your needs.
+
+- https://github.com/StreetLamb/tribe /1kStar/MIT/202501/python/ts/inactive
+  - Low code tool to rapidly build and coordinate multi-agent teams 
+  - Prefer to write code instead? Check out Rojak — a Python library designed to orchestrate durable, fault-tolerant multi-agent workflows with ease!
+  - Tribe leverages on the langgraph framework to let you customize and coordinate teams of agents easily. By splitting up tough tasks among agents that are good at different things
 
 - https://github.com/AIDC-AI/Pixelle-MCP /271Star/MIT/202508/python
   - https://pixelle.ai/

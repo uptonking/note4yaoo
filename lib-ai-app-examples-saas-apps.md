@@ -28,7 +28,7 @@ modified: 2025-02-21T17:17:42.225Z
   - https://docs.flowiseai.com/
   - Drag & drop UI to build your customized LLM flow
   - Open source low-code tool for developers to build customized LLM orchestration flow & AI agents
-  - 基于 LangchainJS, 支持langchain的各种组件
+  - 大量使用 LangchainJS, 支持langchain的各种组件
 
 - https://github.com/browser-use/workflow-use /AGPL/python
   - Create and run workflows (RPA 2.0)
@@ -38,7 +38,7 @@ modified: 2025-02-21T17:17:42.225Z
     - 10x faster, ~90% cheaper than pure LLM agents
     - Self-healing via LLM fallback 
 
-- https://github.com/langflow-ai/langflow /52.9kStar/MIT/202503/python/ts
+- https://github.com/langflow-ai/langflow /109kStar/MIT/202508/python/ts
   - http://www.langflow.org/
   - a powerful tool for building and deploying AI-powered agents and workflows.
   - It provides developers with both a visual authoring experience and a built-in API server that turns every agent into an API endpoint that can be integrated into applications built on any framework 
@@ -97,6 +97,14 @@ modified: 2025-02-21T17:17:42.225Z
   - Chat with AI to build React apps instantly. Made by the Firecrawl team.
   - 基于e2b sandbox实现
 
+- https://github.com/dyad-sh/dyad /14.2kStar/apache2/202508/ts
+  - https://dyad.sh/
+  - Free, local, open-source AI app builder 
+  - v0 / lovable / Bolt alternative 
+  - Easy to run on Mac or Windows.
+  - https://github.com/dyad-sh/sandpack-bundler /apache2
+    - The new bundler/runtime powering client-side sandpack sandboxes
+
 - https://github.com/11cafe/jaaz /2.3kStar/NonComm/202508/python/ts
   - https://jaaz.app/
   - AI design agent, local alternative for Lovart. Canva + Cursor. 
@@ -116,6 +124,69 @@ modified: 2025-02-21T17:17:42.225Z
   - https://onlook.com/
   - The open source Cursor for Designers. 
   - Design directly in your live React app and publish your changes to code.
+
+## ai-webapp
+
+- https://github.com/admineral/Reactor /202405/ts/inactive
+  - https://reactor-dev.vercel.app/
+  - Chat with React Code-Editor and Live-preview using Sandpack by Codesandbox
+  - An experimental preview of AI SDK 3.0 with Generative UI support
+
+
+- https://github.com/asj9469/Reactonaut /13Star/NALic/202308/js/inactive
+  - an online React code editor with an AI assistant. 
+  - Live code editing with Ace Editor
+  - React-Live for real-time rendering of React components
+  - OpenAI's ChatGPT API integration for code suggestions
+  - Reactonaut is the general/public version of his original project Reactor with a new UI and enhanced features. It was developed during our collaboration in an AI Startup Hackathon.
+
+
+
+
+- https://github.com/Nutlope/llamacoder /6.5kStar/MIT/202508/ts
+  - https://www.llamacoder.io/
+  - open source Claude Artifacts – generate small apps with one prompt. 
+  - Powered by Llama 3 on Together.ai.
+  - Sandpack for the code sandbox
+  - Next.js app router with Tailwind
+  - 🍴 forks
+  - https://github.com/Hassanrkbiz/llamacoder-any-llm /202412/inactive
+    - Multiple LLMs & Providers Added
+    - Local LLMs (Ollama & LM Studio) Added
+    - Image Support
+
+- https://github.com/etrobot/nextArtifacts /MIT/202409/ts/inactive
+  - https://github.com/etrobot/nextArtifacts
+  - A Next.js version of Claude Aritfacts , inspired by llamacoder
+  - generate small applications using any Large Language Model (LLM) API compatible with the OpenAI format. 
+  - This project is inspired by and modified from llamacoder, which uses Llama 3 405B & Together.ai.
+- https://github.com/xKevIsDev/GenUAI /202408/ts/inactive
+  - AI to UI generation app that uses Shadcn, Aceternity, MagicUI, SyntaxUI built in components to generate websites.
+  - forked and adapted from llamacoders
+
+- https://github.com/iotserver24/pollin-coder /MIT/202508/ts
+  - https://pollin-coder.megavault.in/
+  - open-source AI code generator that lets you create small apps with a single prompt
+  - Powered by advanced AI models and the Pollinations.ai platform
+  - Generate full-stack apps or code snippets from a single prompt
+  - Uses state-of-the-art models for code and text generation
+  - Live code sandbox powered by Sandpack
+  - Built with Next.js, Tailwind CSS, and modern web tech
+  - Pollinations AI for LLM inference
+
+- https://github.com/TesslateAI/Builder-Lite /202504/ts/inactive
+  - A web application that allows you to generate React components using an AI chat interface and view/edit them live in a Sandpack sandbox environment.
+  - Describe the component you need, and the AI will attempt to generate the code, which is then rendered instantly for preview.
+  - Live Sandbox Environment: Uses @codesandbox/sandpack-react to provide an instant preview
+  - Integrated Code Editor: View and modify the generated Component.tsx code directly in the 'Editor' tab.
+  - Dependencies Included: The sandbox automatically includes react, react-dom, framer-motion, and @heroicons/react for richer component possibilities.
+  - Optional Proxy: Built-in logic to route API requests through a local proxy (/llm-proxy) if the target API is not on localhost (requires separate proxy setup).
+
+
+
+
+
+
 # ai-apps
 
 # more

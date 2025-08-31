@@ -363,6 +363,19 @@ test('mock test', () => {
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
 
+## 0831
+
+- [Cannot find module 'librechat-data-provider' · danny-avila/LibreChat _202505](https://github.com/danny-avila/LibreChat/discussions/7416)
+  - 🐛 Failed to resolve entry for package "@librechat/client"
+  - Try running what the commands do manually. Please note any errors at any step.
+  - I ran `npm run frontend` first which built the `librechat-data-provider` component and that seemed to fix the error on my system.
+  - 实测多次碰到vite编译子项目时部分子包编译失败而未生成`dist`目录，此时按依赖顺序手动在子包执行 `npm run build` ，可以让项目运行成功
+
+- [Why does "npm install" rewrite package-lock.json? - Stack Overflow](https://stackoverflow.com/questions/45022048/why-does-npm-install-rewrite-package-lock-json)
+  - `npm install` honors package-lock.json only if it satisfies the requirements of package.json.
+  - If it doesn't satisfy those requirements, packages are updated & package-lock is overwritten.
+  - If you want the install to fail instead of overwriting package-lock when this happens, use `npm ci`.
+
 ## 0828
 
 - [openrouter的Gemini 2.5 Pro Preview调用报错 - 开发调优 - LINUX DO _202504](https://linux.do/t/topic/536770)

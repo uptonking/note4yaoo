@@ -192,6 +192,7 @@ modified: 2025-08-11T20:15:18.297Z
 - https://github.com/admineral/Reactor /202405/ts/inactive
   - https://reactor-dev.vercel.app/
   - Chat with React Code-Editor and Live-preview using Sandpack by Codesandbox
+  - An experimental preview of AI SDK 3.0 with Generative UI support
 
 - https://github.com/vercel-labs/ai-sdk-computer-use /202507/ts
   - https://ai-sdk-computer-use.vercel.app/

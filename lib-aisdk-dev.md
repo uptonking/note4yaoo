@@ -24,8 +24,9 @@ modified: 2025-08-08T07:35:49.535Z
     - Generative UI is the process of connecting the results of a tool call to a React component.
 
 - tips
+  - 🤔 ai-sdk或许是错误的架构, ai输出放在后端实现是更可靠的方案，后端python工具链更完善
+  - 不要在ai fwk选型上浪费太多时间，直接分析具体业务场景的需求和现有案例，然后尝试理解方案并改进
   - 🆚 ai sdk vs framework --> lightweight fwk 轻量/可扩展定制/模块化
-  - 🤔 不要在ai fwk选型上浪费太多时间，直接分析具体业务场景的需求和现有案例，然后尝试理解方案并改进
 # ai-providers
 - free-api
   - google-gemini

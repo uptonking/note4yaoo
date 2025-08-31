@@ -13,6 +13,7 @@ modified: 2024-04-19T12:23:44.448Z
 - leaderboard
   - https://chat.lmsys.org/?leaderboard
     - https://leaderboard.lmsys.org
+    - [Open LLM Leaderboard - a Hugging Face Space by open-llm-leaderboard](https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard#/)
 
 - [大语言模型评测数据集](https://fm.ai.tsinghua.edu.cn/superbench/#/)
   - ExtremeGLUE是一个包含72个中英双语传统数据集的高难度集合，旨在为语言模型提供更严格的评测标准，采用零样本cot评测方式，并根据特定要求对模型输出进行评分。我们首先使用了超过20种语言模型进行初步测试，包括了gpt4、claude、vicuna、wizardlm和chatglm等。我们基于所有模型的综合表现，决定了每个分类中挑选出难度最大的10%～20%数据，将它们组合为"高难度传统数据集"。

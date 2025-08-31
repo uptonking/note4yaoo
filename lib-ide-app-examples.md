@@ -124,7 +124,7 @@ modified: 2024-08-24T16:30:20.218Z
   - https://x.com/0xrandomlabs
     - https://www.ycombinator.com/launches/Lnp-random-labs-an-open-source-agent-that-deeply-understands-you
 # ai-manus
-- https://github.com/langchain-ai/langgraph-codeact /MIT/202503/python
+- https://github.com/langchain-ai/langgraph-codeact /598Star/MIT/202505/python/inactive
   - This library implements the CodeAct architecture in LangGraph. This is the architecture is used by Manus.im.
   - https://x.com/tuturetom/status/1905605150884200871
     - Manus 背后最核心的技术 CodeAct 论文发布
