@@ -363,6 +363,27 @@ test('mock test', () => {
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
 
+## 0901
+
+- The most popular model is ChatGPT. The second most popular model is Claude
+
+- 🆚 what's different between the following 2 models? what does awq mean? 
+  - [mlx-community/DeepSeek-Coder-V2-Lite-Instruct-4bit-AWQ · Hugging Face](https://huggingface.co/mlx-community/DeepSeek-Coder-V2-Lite-Instruct-4bit-AWQ) 
+  - [mlx-community/DeepSeek-Coder-V2-Lite-Instruct-4bit-mlx · Hugging Face](https://huggingface.co/mlx-community/DeepSeek-Coder-V2-Lite-Instruct-4bit-mlx)
+- TL; DR: the two repos are the same base model converted to MLX format with different quantization settings/tools.
+  - …4bit-AWQ was quantized with AWQ (Activation-Aware Weight Quantization) and includes explicit AWQ calibration parameters (group-size, embed-bits, etc.)
+  - 4bit-mlx is a 4-bit MLX conversion made with an earlier mlx-lm converter (default MLX quantization), without the AWQ-specific calibration notes
+- AWQ = Activation-Aware Weight Quantization. It’s a 4-bit weight-only quantization method that tries to keep the important weights (and account for activation magnitudes) so model quality drops much less than naive 4-bit quantization. In practice AWQ aims for near-FP16 quality at 4 bits by using activation-aware scaling and targeted preservation/calibration.
+  - 强调通过 AWQ 技术在低比特（4-bit）下保持较高精度。
+
+- 🤔 when i download …4bit-mlx-like model, I can use it instantly in LM Studio without configuration 
+  - if i download …4bit-AWQ-like model in LM Studio, is it required to config the awq parameters explicitly? if yes, how can i configure it in LM Studio?
+- usually no — you don’t need to type AWQ flags into LM Studio.
+  - AWQ hyper-parameters (--group-size, --embed-bits, --num-samples, etc.) are conversion-time settings used by the quantizer (mlx-lm / autoawq) and are baked into the MLX quantized files. LM Studio ships an MLX engine and will load MLX/AWQ quantized models directly using the quantization data stored in the model
+  - so in normal cases you can drop the …4bit-AWQ MLX model into LM Studio and run it without manually re-entering AWQ params.
+- LM Studio is designed to automatically detect and handle AWQ-quantized models without requiring manual parameter configuration
+# dev-08
+
 ## 0831
 
 - [Cannot find module 'librechat-data-provider' · danny-avila/LibreChat _202505](https://github.com/danny-avila/LibreChat/discussions/7416)

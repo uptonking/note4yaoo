@@ -1111,6 +1111,15 @@ modified: 2025-08-23T11:43:35.904Z
   - https://github.com/lalanikarim/comfy-mcp-pipeline
     - a pipeline wrapper for comfy-mcp-server for Open WebUI.
 
+- https://github.com/zjf2671/hh-mcp-comfyui /15Star/MIT/202507/python
+  - 这是一个基于Model Context Protocol (MCP)的ComfyUI图像生成服务，通过API调用本地ComfyUI实例生成图片
+  - 支持动态替换工作流中的提示词和尺寸等参数
+  - 必须确保本地ComfyUI实例正在运行(默认地址: http://127.0.0.1:8188)
+  - 图片尺寸默认为1024x1024
+  - 自动加载workflows目录下的工作流文件作为资源
+  - 服务启动时会自动加载workflows目录下的所有JSON工作流文件
+  - 如果使用你本地的comfyui工作流的话，先要保证你的工作流能在comfyui正常运行，然后需要导出(API)的JSON格式，并放入到你本地的`/path/hh_mcp_comfyui/workflows`目录中
+
 - https://github.com/ericwanghp/ComfyUI_MCP /MIT/202505/python
   - 为 ComfyUI 设计的松耦合、可扩展、配置驱动的模型上下文协议（ModelContextProtocol）服务端。
   - 支持依据客户定制工作流可扩展MCP服务(tool) 如: txt2img、img2img，每个MCP服务(tool)的参数和行为均可通过 JSON初始化和MCP工具装饰器模块灵活扩展，适合 AI 绘图、推理等场景的自动化与集成。

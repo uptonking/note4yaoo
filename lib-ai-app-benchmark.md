@@ -10,7 +10,7 @@ modified: 2024-04-19T12:23:44.448Z
 # guide
 
 # benchmark
-- leaderboard
+- leaderboard-ai
   - https://chat.lmsys.org/?leaderboard
     - https://leaderboard.lmsys.org
     - [Open LLM Leaderboard - a Hugging Face Space by open-llm-leaderboard](https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard#/)

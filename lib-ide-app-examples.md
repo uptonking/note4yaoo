@@ -211,6 +211,15 @@ modified: 2024-08-24T16:30:20.218Z
   - [Google announces Gemini CLI: your open-source AI agent _202506](https://blog.google/technology/developers/introducing-gemini-cli-open-source-ai-agent/)
   - [Gemini CLI: your open-source AI agent | Hacker News _202506](https://news.ycombinator.com/item?id=44373754)
 
+- https://github.com/QwenLM/qwen-code /11.9kStar/apache2/202509/ts
+  - https://qwenlm.github.io/qwen-code-docs/zh/
+  - Qwen Code 将先进的代码模型能力带入你的终端，提供交互式的 Read-Eval-Print Loop (REPL) 环境
+  - Qwen Code is a powerful command-line AI workflow tool adapted from Gemini CLI
+  - Qwen Code 由一个客户端应用 (packages/cli) 和一个本地 server (packages/core) 组成。
+  - Qwen Code 还包含多种工具，用于执行文件系统操作、运行 shell 命令和网络请求等任务，这些工具由 packages/core 管理。
+  - Mainland China: ModelScope offers 2, 000 free API calls per day
+    - Qwen Code may issue multiple API calls per cycle, resulting in higher token usage (similar to Claude Code). We're actively optimizing API efficiency.
+
 - https://github.com/openai/codex /29.7kStar/apache2/202506/rust/ts
   - Lightweight coding agent that runs in your terminal
   - [Introducing Codex | OpenAI _202505](https://openai.com/index/introducing-codex/)
@@ -219,6 +228,13 @@ modified: 2024-08-24T16:30:20.218Z
     - This project is currently using the /responses endpoint from OpenAI's API. Ollama has compatibility with some OpenAI API endpoints, but the /responses endpoint is not included yet.
   - [Codex CLI is Going Native · openai/codex · Discussion _202505](https://github.com/openai/codex/discussions/1174)
     - We're planning to continue merging bugfixes in the TypeScript implementation, while we get the Rust implementation to experience and feature parity in the coming weeks.
+
+- https://github.com/Aider-AI/aider /37.1kStar/apache2/202508/python
+  - https://aider.chat/
+  - aider is AI pair programming in your terminal
+  - [Aider does not work with lm studio on mac, linux, or windows _202508](https://github.com/Aider-AI/aider/issues/4396)
+  - You need an underscore `lm_studio/...` in the prefix
+  - `aider --model lm_studio/<your-model-name>`
 
 - https://github.com/anthropics/claude-code /202506/NonOpen
   - https://docs.anthropic.com/s/claude-code
