@@ -1506,6 +1506,18 @@ modified: 2025-08-23T11:43:35.904Z
     - i agree, comfyui is NOT the backend 1:1; but most/a lot of the code used in the backend is comfy's code (with a1111 compat fixes which have been known to comfy users for a while now)
   - https://github.com/Panchovix/stable-diffusion-webui-reForge /202508/archived
 
+- https://github.com/Haoming02/sd-webui-forge-classic /187Star/AGPL/202508/python
+  - "Classic" mainly serves as an archive for the "previous" version of Forge, which was built on Gradio 3.41.2 before the major changes were introduced.
+  - this fork is focused exclusively on SD1 and SDXL checkpoints, having various optimizations implemented, with the main goal of being the lightest WebUI without any bloatwares.
+  - Most base features of the original Automatic1111 Webui should still function
+  - Support `uv` package manager
+    - 🐛 仅提供了windows下执行的.bat脚本，未提供linux/mac的shell脚本
+  - Support new LoRA architectures
+  - Support NoobAI Inpaint ControlNet
+  - [2025-07-19: reForge development will continue (for now). · Panchovix/stable-diffusion-webui-reForge](https://github.com/Panchovix/stable-diffusion-webui-reForge/discussions/377)
+    - As for classic, I'm pretty happy with its current state now. So I'll primarily focus on fixing and improving existing features, rather than adding more features.
+    - Lately, I've been working on my own Gradio4-based branch: neo. Yes, I'm drinking the Chroma and Kontext Kool-Aid XD
+
 - https://github.com/camenduru/stable-diffusion-webui-portable
   - This Project Aims for 100% Offline Stable Diffusion (People without internet or with slow internet can get it via USB or HD-DVD)
 

@@ -433,6 +433,44 @@ problem is when software like InvokeAI or some else are using the diffusers form
 - In my opinion every Model is lacking in details, so most of the times i manually correct generated Prompts
 
 - Qwen 2, and Janus-Pro-7B for me. Florence 2 tends to get things wrong at lot of times. Qwen 2 has honestly been the best for me. Janus-Pro is good but it doesn't follow the prompts well (it needs a really detailed prompt)
+# discuss-devops
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [[Bug]: Something went wrong Expecting value: line 1 column 1 (char 0) · Issue · AUTOMATIC1111/stable-diffusion-webui _202303](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/9150)
+  - [[Bug]: "Expecting value: line 1 column 1 (char 0)" thrown, when I added "--listen" to my "COMMANDLINE_ARGS" · Issue · AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/9132)
+
+- If you are using a proxy server, please turn it off.
+
+- [stable-diffusion-webui 安装问题记录 - 哔哩哔哩](https://www.bilibili.com/opus/784293837711343638)
+  - 2025年了，依然是要关掉魔法。应该是全局代理占用接口了
+  - 不开全局就好了，换成其他的模式也可以
+
+- ## [Help getting Automatic1111 and ComfyUI to use the same model directory : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/17630s0/help_getting_automatic1111_and_comfyui_to_use_the/)
+
+- [New instructions for running web UI on macOS (check here for macOS related issues) · AUTOMATIC1111/stable-diffusion-webui ](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/5461)
+  - I couldn't run ./webui.sh directly due a python version mismatch. I've installed the expected version using uv 
+  - I end up running it directly with:
+  - `python3.10 launch.py --skip-torch-cuda-test --upcast-sampling --no-half-vae --use-cpu interrogate`; 
+  - 👷 后面我采用的方案是将 webui.sh 文件中的 `pip install` 改为 `uv pip install -U`; 
+  - [XFORMERS UPDATE ISSUE · Issue #2075 · lllyasviel/stable-diffusion-webui-forge](https://github.com/lllyasviel/stable-diffusion-webui-forge/issues/2075)
+    - pip install uv then uv pip install -U ninja
+
+- [Custom path for models · AUTOMATIC1111/stable-diffusion-webui · Discussion](https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/5053)
+
+```sh
+export COMMANDLINE_ARGS="--skip-torch-cuda-test --disable-nan-check --upcast-sampling --no-half-vae --use-cpu interrogate --opt-sub-quad-attention --ckpt-dir '\Volumes\BEEJ2TB\SD_Models\Stable-diffusion\' "
+
+```
+
+- [How can I point to a shared models folder? · lllyasviel/stable-diffusion-webui-forge · Discussion ](https://github.com/lllyasviel/stable-diffusion-webui-forge/discussions/697)
 # discuss
 - ## 
 

@@ -151,6 +151,24 @@ modified: 2023-04-16T10:02:58.738Z
 # discuss-ui-chat
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🆚 [Librechat vs openwebui : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mmh6k8/librechat_vs_openwebui/)
+- Personally I prefer to use inference engines like vLLM because the speed is incredible and I find their openai compatibility is often the best on the market (especially around tool calling), and there is no built in UI in vLLM.
+
+- My biggest complaint with Open WebUI is that it is very bloated. A full deployment is like 3.5 GB without any user data. It installs a million Python dependencies that are completely unnecessary for most use cases. That being said, it works well.
+
+- ## 🆚 [OpenWebUI vs LibreChat? : r/LocalLLaMA _202506](https://www.reddit.com/r/LocalLLaMA/comments/1l0bc5j/openwebui_vs_librechat/)
+- I've used both quite extensively and found OpenWebUI to be a lot easier to setup, update and maintain. Adding new endpoints and models is also quite a bit easier as well since you can just do that through the web ui.
+
+- I still use Oobabooga, but I tend to plug its API into Void and OpenHands for agentic stuff.
+
 - ## [Ollama's new app | Hacker News _202508](https://news.ycombinator.com/item?id=44739632)
 - OpenWebUI refuses to support MCP and uses an MCP to OpenAPI proxy which often doesn't work. If you don't like or need MCP, then it is a good choice. The dev is very opinionated
 
@@ -168,13 +186,13 @@ modified: 2023-04-16T10:02:58.738Z
 
 - ## 
 
-- ## [OpenWebUI vs LibreChat : r/selfhosted _202503](https://www.reddit.com/r/selfhosted/comments/1jltdjq/openwebui_vs_librechat/)
+- ## 🆚 [OpenWebUI vs LibreChat : r/selfhosted _202503](https://www.reddit.com/r/selfhosted/comments/1jltdjq/openwebui_vs_librechat/)
 - I will give you two somewhat conflicting answers; 
   - Hands-down Open-WebUI is far easier to deploy and support and lowest cost.
   - Open-WebUI is client heavy, bogs down and has extremely high network utilisation (annoys mobile phone uses). Entire conversation is held in the browser, lots of back and forth and images are stored in the single json payload. Although easier to setup there is no real database design, limited indexing, and real no database design. As such both the main application and vector databases grow and will get bloated. Moving to Postgres helps, but doesn't address the fundamental lack of database design\indexing.
-  - b) Hands-down LibreChat provides a closer ChatGPT Plus style experience and is FAR easier to use.  Open-Webui development stick closely to their own guardrails and principles, as such far slower to adapt new features. eg: LibreChat users can use MCP servers\features. Where as Open-WebUI devs have stuck with the OpenAPI approach (great idea, but only 1% of the real-world use case), when all the popular agents are MCP. LibreChat seems to support image generation and editing within chat, without add-ons Open-WebUI can only create images.
+  - b) Hands-down LibreChat provides a closer ChatGPT Plus style experience and is FAR easier to use.  Open-Webui development stick closely to their own guardrails and principles, as such far slower to adapt new features. eg: LibreChat users can use MCP servers\features. Where as Open-WebUI devs have stuck with the OpenAPI approach (great idea, but only 1% of the real-world use case), when all the popular agents are MCP. LibreChat seems to support image generation and editing within chat, without add-ons Open-WebUI can only create images. Much better code-interpreter experience however you need to PAY\SUBSCRIBE but absolutely worth it.
 - LibreChat supports all the common providers out of the box, Open-WebUI just supports OpenAI compatible providers, everything else you need middleware or pipelines.
-- Common downsides with both these are; 
+- 🐛 Common downsides with both these are
   - No native iOS\Android applications (Open-WebUI works as a PWA app)
   - No advanced voice
   - Both lag with new features (eg: Advanced Imaging), yes that is expected but of note.
@@ -182,6 +200,10 @@ modified: 2023-04-16T10:02:58.738Z
 
 - For some reason chat apps like using stupid database choices. At least OpenWebUI on Postgres won’t lose your data.
   - LibreChat uses… MongoDB. In 2025. Yep.
+
+- OpenAI-compatible APIs clearly won out as the standard. Even Google provides an OpenAI compatible endpoint for Gemini.
+
+- In LibreChat, if you want to add an OpenAI API key, where would you add it? The file .env of course! And if you want to add an OpenRouter API key, where would you add it? The file librechat.yaml of course... wait what? ... Yes, the configuration system is that badly incoherent.
 
 - ## [Best way to start Open-WebUI server from software? : r/OpenWebUI _202504](https://www.reddit.com/r/OpenWebUI/comments/1k1er0s/best_way_to_start_openwebui_server_from_software/)
 - Docker is the way. You're nailing it with the env var idea.
