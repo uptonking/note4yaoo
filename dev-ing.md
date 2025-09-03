@@ -250,7 +250,7 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - 做完tailwind-table就面试
 
 - dev-to 提炼核心`需求+产出`工作流，不能在产品中检验的技术不玩
-# dev-08
+# dev-09
 - dev-log
   - ?
 - dev-to
@@ -324,9 +324,9 @@ add action to create quickSort1.mjs and try to implement quick sort algorithm in
 <!-- 🛝 -->
 use create-react-app to create a react-router v6 example webapp in typescript: homepage shows a list of frontend frameworks like react/vue/angular, when clicking the framework, navigate to the route to show its introduction
 
-use vanilla html/css/js to create a personal profile landing page: homepage shows a cool welcoming animation, then shows 4 example personal projects, then a simple get in touch form below it
+use vanilla html/css/javascript to create a personal profile landing page: homepage shows a cool welcoming animation, then shows 4 example personal projects, then a simple get in touch form below it
 
-use vanilla html/css/js to create a simplistic personal profile landing page: homepage shows a big welcoming greeting, then shows 2 example personal projects, then a simple get in touch example email below it
+use vanilla html/css/javascript to create a simplistic personal profile landing page: homepage shows a big welcoming greeting, then shows 2 example personal projects, then a simple get in touch example email below it
 
 - line 290 in file  is not tested, please write unit tests to test it
 - line 160-174, 181-185 in file apps/webapp/src/utils/paas-playground.ts
@@ -362,6 +362,71 @@ test('mock test', () => {
 
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
+
+## 0902
+
+- 下面是一个有异常的curl脚本，异常位置是包含单引号的`what's`
+
+```sh
+curl http://localhost:1234/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "qwen/qwen3-coder-30b",
+    "messages": [
+      { "role": "system", "content": "append important Chinese history events around the date." },
+      { "role": "user", "content": "What's the date today?" }
+    ],
+    "temperature": 0.7,
+    "max_tokens": -1,
+    "stream": false
+}'
+```
+
+- ai改了几遍都没改对
+  - 由于整个 JSON 被包裹在 Shell 单引号中，反斜杠（\）被视为字面量字符，而不是转义字符。
+  - 因此，JSON 实际接收到的内容是 What\'s the date today?，其中包含无效的转义序列 \'。
+  - JSON 解析器遇到 \' 时会报错，因为 JSON 标准只允许特定的转义序列（如 \"、\\ 等），而 \' 不是其中之一。这导致 cURL 请求失败。
+  - 解决方案 B 使用 What\'s，这在 Shell 的单引号字符串中会被视为字面量反斜杠和单引号，导致 JSON 中包含无效的转义序列 \'。JSON 标准不允许 \' 作为转义序列（有效的转义序列是 \"、\\ 等），因此 JSON 解析失败。
+
+```sh
+# solution B 
+curl http://localhost:1234/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "qwen/qwen3-coder-30b",
+    "messages": [
+      { "role": "system", "content": "append important Chinese history events around the date." },
+      👇 若写在.sh文件中作为脚本执行时可以有#注释，但copy到terminal执行执行时不能有#注释
+      { "role": "user", "content": "What'\''s the date today?" }  # 注意内部单引号的转义
+    ],
+    "temperature": 0.7,
+    "max_tokens": -1,
+    "stream": false
+}'
+```
+
+- 在执行命令前，可以使用 `echo` 命令预览 Shell 实际解析的内容：
+  - 解决方案 A 使用 What'\''s，这是 Shell 中在单引号字符串内嵌入单引号的正确方式。它通过退出单引号模式、插入转义的单引号（\'），然后重新进入单引号模式来确保 JSON 内容正确。
+  - In POSIX shells (bash, zsh) a single-quoted literal starts with `'` and ends with the next `'`. Inside those single quotes nothing is special — backslash has no escape meaning. To include a single-quote character (') in a single-quoted string you must close the quote, put an escaped single-quote, then re-open the quote.
+  - In ZSH (and Bash), when you want to include a single quote within a single-quoted string, you need to end the single-quoted string, add an escaped single quote (`\'`), and then start a new single-quoted string.
+  - 如果 JSON 较复杂，考虑使用 `Heredoc` 或临时文件来避免 Shell 转义问题
+
+```sh
+# 💡 echo后的内容可以直接copy执行
+# solution A
+echo curl http://localhost:1234/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "qwen/qwen3-coder-30b",
+    "messages": [
+      { "role": "system", "content": "append important Chinese history events around the date." },
+      { "role": "user", "content": "What'\''s the date today?" }
+    ],
+    "temperature": 0.7,
+    "max_tokens": -1,
+    "stream": false
+}'
+```
 
 ## 0901
 

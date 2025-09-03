@@ -136,9 +136,46 @@ modified: 2024-08-24T16:30:20.218Z
   - 依赖langchain、llm-code-format
   - It aims to be compatible with many LLMs, and flexible enough to adapt to future models as they come out.
 
-- https://github.com/cline/cline /24.5kStar/apache2/202501/ts
+- https://github.com/cline/cline /50kStar/apache2/202509/ts
+  - https://docs.cline.bot/
   - Meet Cline, an AI assistant that can use your CLI aNd Editor.
   - Autonomous coding agent right in your IDE, capable of creating/editing files, executing commands, using the browser, and more with your permission every step of the way.
+  - Unlike autocomplete tools, Cline is a true coding agent that can understand entire codebases, plan complex changes, and execute multi-step tasks.
+  - 100% Open Source - Every line of code on GitHub. 
+  - features
+    - Use any API and Model
+    - Create and Edit Files with diff view
+    - Run Commands in Terminal for VSCode v1.93+
+    - Add Context: @file, @url, @problems
+    - Checkpoints: Compare and Restore, a snapshot of your workspace at each step
+    - Use the Browser with Claude Sonnet's new Computer Use capability
+    - mapSelection
+    - Auto Approve menu lets you set fine-grained permissions on
+    - 🏠 Plan & Act modes represent Cline’s approach to structured AI development, emphasizing thoughtful planning before implementation. 
+    - Workflows: a series of steps to guide Cline through a repetitive set of tasks
+    - Automatic Context Summarization: When your conversation approaches the model’s context window limit, Cline automatically summarizes it to free up space and keep working
+
+- https://github.com/RooCodeInc/Roo-Code /19.2kStar/apache2/202509/ts
+  - https://roocode.com/
+  - https://docs.roocode.com/
+  - an AI-powered autonomous coding agent that lives in your editor.
+  - features
+    - 🏠 Multiple Modes: Code, Architect/plan, ask, Debug, Custom Modes
+    - Read and write files in your project
+    - Execute commands in your VS Code terminal
+    - Control a web browser
+    - MCP with Roo Code Marketplace
+    - Message Queueing: Keep your workflow uninterrupted with message queueing, send multiple messages while Roo is working, and they'll be processed sequentially 
+    - API Configuration Profiles allow you to create and switch between different sets of AI settings
+    - Boomerang Tasks (also known as subtasks or task orchestration) allow you to break down complex projects into smaller, manageable pieces
+    - Code Actions provide instant access to Roo Code's AI assistance directly within your code editor through VSCode's lightbulb (quick fix) system
+    - Codebase Indexing transforms how Roo Code understands your project by creating a semantic search index using AI embeddings.
+    - The diagnostics feature seamlessly integrates with VSCode's diagnostic system to provide context-aware assistance for code issues.
+    - Fast Edits (using the "Enable editing through diffs" setting) is enabled by default in Roo Code.
+    - Model Temperature is a setting (usually between 0.0 and 2.0) that controls how random or predictable the AI's output is. lower values make the output more focused and consistent, while higher values encourage more creativity and variation.
+    - Concurrent File Edits(AKA Multi-File Edits) allows Roo to modify multiple files in your workspace within a single request
+    - "Background Editing" disables automatic diff view displays when Roo Code edits files.
+    - Image Generation: Roo sends your prompt (and optionally an existing image) to an image-capable model through OpenRouter.
 
 - https://github.com/kodu-ai/claude-coder /AGPL/202503/ts
   - https://www.kodu.ai/

@@ -17,12 +17,19 @@ modified: 2024-08-24T16:15:54.137Z
   - https://vscodium.com/
   - binary releases of VS Code without MS branding/telemetry/licensing
   - This is not a fork. This is a repository of scripts to automatically build Microsoft's vscode repository into freely-licensed binaries with a community-driven default configuration.
-  - the Open VSX Registry is the pre-set extension gallery in VSCodium. Using the extension view in VSCodium will therefore by default use it.
+  - [Extensions + Marketplace - VSCodium](https://vscodium-next.netlify.app/docs/extensions)
+    - Open VSX Registry is the pre-set extension gallery in VSCodium
+    - The `VSIX Manager` extension provides a powerful and user-friendly interface for managing `.vsix` files directly within VSCodium. Its author is the main maintainer of VSCodium
   - [Run vscodium in browser](https://github.com/VSCodium/vscodium/discussions/1469)
     - is there a definitive answer for a web version of vscodium?
     - AFAIK, the code-server seems to be the best option for now
   - [Switching between marketplaces](https://github.com/VSCodium/vscodium/issues/519)
-    - If it helps anyone, there's a AUR (Archlinux User Repository) that adds the VSCode marketplace to VSCodium. 
+    - If it helps anyone, there's a AUR (Archlinux User Repository) that adds the VSCode marketplace to VSCodium.
+  - https://github.com/zokugun/vscode-vsix-manager /43Star/MIT/202508/ts
+    - Install extensions from your own sources
+    - `> VSIX Manager: Install extensions`: install the extensions in the config json
+    - [Cannot find extension in official Marketplace _202309](https://github.com/zokugun/vscode-vsix-manager/issues/17)
+
 - https://gitlab.com/gitlab-org/gitlab-web-ide-vscode-fork /MIT/202405/ts
   - GitLab Web IDE - VSCode Fork
   - An internal fork of the VSCode project, used to power GitLab's Web IDE

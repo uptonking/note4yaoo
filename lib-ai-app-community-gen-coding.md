@@ -10,13 +10,22 @@ modified: 2025-09-01T07:58:29.058Z
 # guide
 
 - tips
-  - 🤔 不用纠结是否要用thinking/reasoning模型，参考已有的方案来选架构和改进
-    - thinking+coding(单模型方案) vs plan+coding(双模型方案)
+  - 🤔 模型选择: 不用纠结是否要用thinking/reasoning模型，参考成熟的方案来选架构和改进
+    - thinking+coding(单模型方案) vs plan+coding(双模型方案), 可参考流行工具的默认值
+  - 🤔 工具选择: 不必纠结于工具cline/aider, 模型能力提升后，工具里的体验也会自动提升
+    - github copilot扩展开始支持本地model了
+    - 甚至针对场景的微调模型，如ios/android, mobile-responsive
+  - 🏠 continue.dev相对于cline/aider更擅长inline-autocomplete, 但架构设计可以参考rag/embedding/rerank
 
 - leaderboard-coding
+  - [SWE-rebench Leaderboard](https://swe-rebench.com/leaderboard)
   - [SWE-bench Leaderboards](https://www.swebench.com/)
   - [Aider LLM Leaderboards](https://aider.chat/docs/leaderboards/)
   - [LiveSWEBench](https://liveswebench.ai/)
+  - [Evals | Roo Code](https://roocode.com/evals)
+
+- leaderboard-pm
+  - [LLM Rankings | OpenRouter](https://openrouter.ai/rankings?view=month)
 # discuss-stars
 - ## 
 
@@ -31,14 +40,94 @@ modified: 2025-09-01T07:58:29.058Z
 - This is my exact experience, I have spend over 100 usd on API fees through OpenRouter, OpenAI and Deepseek and tried many models with both Cline and Roocode and you really get various results. Sometimes you can end up in endless loops trying to solve a problem no matter how many times you start a new task with the same LLM then you switch to another LLM and you can get past that point or you get a situation where it wants to go on another totally different tangent. Ive had similar issues with local LLMs and even still have issues with them even working with Roocode and Cline. Ive even tried Bolt.diy which is a fork of Bolt.new, similar issues. Ive started writing my own coder to hopefully solve a few of my concerns but its likely we will end up with the same issues.
 
 - I’ve been having similar issues with all local models. I’m using Qwen-2.5-coder 7B on MacBook M3 Pro and I’ve come to the conclusion that Cline’s context size is too large to be performant. I use the same model with Continue.dev and everything works quickly.
+# discuss-ai-coding-internals
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🆚🏠 [why does cline not apply multiple agent approach? : r/CLine _202508](https://www.reddit.com/r/CLine/comments/1mtnwgp/why_does_cline_not_apply_multiple_agent_approach/)
+  - Roo has default 5 agents, and has more agents in mode market, including code techear and document writer, that's cool when the modes are managed by orchestrator.
+  - why does cline not take this way?
+
+- This approach is a key difference from Roo. Personally, I operate in a plan/act mode, whether for feature development, debugging, or writing documentation.
+
+- all the additional prompting can even create conflicts and reduce performance
+
+- they're just different system prompts. you could switch your active rules files and get most of the way there. 
+
+- ## [RooFlow, RooCommander, SPARC, etc. What frameworks are you still using? : r/RooCode _202508](https://www.reddit.com/r/RooCode/comments/1mz96of/rooflow_roocommander_sparc_etc_what_frameworks/)
+  - A few months ago there was an explosion of frameworks coming out to improve RooCode - RooFlow, RooCommander, SPARC, etc. 
+- I tried some of them, but then I realized I didn't need them.
+  - Same, the native functionality (modes, to do lists etc) plus the models became a lot better so there is much less need for the (well appreciated!) bandages.
+  - Nevertheless, sometimes I still take inspiration from it for a workflow or way of documenting. Orchestrator is good, but it very quickly goes to coder instead of researcher etc. Think before you do could be personal preference.
+
+- I just use plain roo.. but only because I don’t need more (yet). Would be nice if there were presets for different tech stacks, like coder-node-react or coder-cplus coder-serverless etc. as I’m sure things for me would be smoother if I took the time to add guardrails around the stacks I’m using
+
+- SPARC enabled me to do one complex project and taught me so much about system architecture/design. That being said, now that I developed my own understanding of how to architect, I no longer need it.
+
+- ## 🧠🤼 [Should we deprecate Memory Bank? Looking for some feedback from the Cline Community. : r/CLine _202508](https://www.reddit.com/r/CLine/comments/1mu4lej/should_we_deprecate_memory_bank_looking_for_some/)
+  - memory bank is a prompt that I wrote (and to some degree have maintained) over the last year or so. 
+  - It's original purpose was to instruct Cline to create/edit/read these context files that gave it an understanding of the project and where it was headed. 
+  - And to do this via a single prompt that any user could paste into Cline and have work out of the box.
+  - Here are the main benefits I see: - keeps the agent on track - creates project context that persists between tasks - useful documentation across teams
+  - However, it does bloat the context quite a bit. And with our most recent Focus Chain feature, I'm not sure where/how it fits.
+  - What parts of Memory Bank are actually useful to you? What is not useful? What does the ideal version of Memory Bank look like for you?
+
+- My favorite part of memory bank was the tracking of progress. It knew what was done. What still had to be done. How certain parts were set to work. Etc.
+- is this not covered by the focus chain & its todo list?
+  - Only for a task basis. The memory bank keeps the context about the whole project and work which has been done recently. It allows me to start a new task with a description of what's needed and in which parts of the repo. Cline will find everything necessary on its own (mostly), and I can refine it.
+  - It's also super helpful when using plan mode or deep planning to basically get everything pulled into the task.
+
+- Focus chain is for a single Cline task/conversation.
+  - Memory bank is to share basis about the project, the service, the roles, , between Cline conversations, so I do not have to remind it about it everytime my task needs a lot of context to be shared.
+
+- I stopped using the Memory Bank a while ago. It ate too many tokens and no model was very good at keeping it updated. Instead, I have a markdown file that I keep in Obsidian that I manually keep updated, and keep brief for the times when I think the AI needs some more context.
+
+- I love the memory bank, and still consider it a major strength of Cline. The progress is my most used file by far, and I heavily rely on it. Though the product and project contexts are also both helpful.
+
+- in my work, Plan leans heavily on Memory Bank.
+
+- In terms of context usage, memory bank is wasteful, it's mostly the reason I do not use it anymore, though I still create manually specs files and use rules.
+
+- Sharing context with another dev to take up can be super handy.
 # discuss-coding-tools/tricks
 - ## 
 
 - ## 
 
-- ## 
+- ## [Is it true that all tools like Cline/Copilot Agent/Roo Code/Windsurf/Claude Code/Cursor are roughly the same thing? : r/ChatGPTCoding _202505](https://www.reddit.com/r/ChatGPTCoding/comments/1kumywl/is_it_true_that_all_tools_like_clinecopilot/)
+- Yes - it’s essentially a big prompt (32k context window) and their tools. There is no magic except some have different workflows
+  - Different models, better or worse at what to put in the context, RAG approaches…but yeah it’s generally the same.
 
-- ## 
+- There are mainly three category of Coding assistants:
+- 1️⃣ IDEs or IDE plugins with subscription model
+  - VSCode+GH Copilot; Windsurf. AI; Cursor. AI; etc
+  - All this assistants use their own set of prompts and tools, so even when you select the same AI model you can get other results. 
+  - This editos are "cheaper" because they provide a monthly fee, but they also do brokeage between you and the AI services provider, and within that brokerage they can fundamentally cripple how the AI is used to reduce the context and maximize their profit
+- 2️⃣ IDEs or IDE plugins with Bring-Your-Own-Key
+  - Cline/RooCode/Kilo, etc .
+  - Same different as category 1 (different prompts, tools), but they use the API directly, not reducing the inteligence to save money
+- 3️⃣ Command line interfaces
+  - Claude Code, OpenAI Codex, Janito, Aider, etc
+  - This are typically better for natural language programming (prompting more, coding less), because they operate directly on files without the overhead of providing the editor context, (which files are opens, which file tab is open etc).
+- While the model itself available on each of this tools is important, the result can be quite different depending on the optimization of the tools.
+
+- Subscription tools (Cursor, Windsurf) need to balance what you pay vs their inference costs, so they use caps, context optimization, and throttling to manage margins. That's not a bug, it's how the economics work.
+  - Cline/ClaudeCode/Roo (Cline fork) use direct API access with zero markup or throttling. You pay more for inference, but get unfiltered model capability. Different tools optimize for different outcomes.
+  - Many devs use both -- subscription tools for autocomplete, Cline/others for complex tasks where you want maximum AI capability.
+
+- Cline has a vector db like cursor and Windsurf now, it’s free and open source and you can see it in the code.
+  - I think its a terrible idea, because it adds complexity and local search for code, which is mostly structured wording, unlike the generic text which benefits from vectorizing.
+- I have also seen this option being made by other colleagues at my job, I think overall this is a disputed topic. To index or not code using a vector db.
+
+- no Cline does not have a vector db. We're actually very against the notion of it from both a performance and security perspective.
+  - [Why Cline Doesn't Index Your Codebase (And Why That's a Good Thing) - Cline Blog _202505](https://cline.bot/blog/why-cline-doesnt-index-your-codebase-and-why-thats-a-good-thing)
+- why is it calling indexes all over the place in the "new" context management while your post says its not indexing?
+  - "Index" here refers to array positions for organizing conversation history in memory, not database indexing or vector embeddings -- it's just basic data structure navigation.
 
 - ## [It is almost May of 2025. What do you consider to be the best coding tools? : r/LocalLLaMA _202504](https://www.reddit.com/r/LocalLLaMA/comments/1k0nxlb/it_is_almost_may_of_2025_what_do_you_consider_to/)
 - As for what we use on our team, we're doing some server work and a lot of work in Unity and building lots of tools. We largely use Cline or Roo Code for the editor and then Sonnet 3.7 and Gemini 2.5 Pro mixed in. 
@@ -52,6 +141,116 @@ modified: 2025-09-01T07:58:29.058Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [It's here guys and qwen nailed it !! : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1m6qkse/its_here_guys_and_qwen_nailed_it/)
+- on this chart Devstral Small really seems like the efficiency winner. Big numbers for a relatively small model. 
+  - Devstral is the best model I can run with my VRAM poor system.
+  - However, I've been playing with Qwen 3 coder for the last hour now that it's live on Openrouter, and it is really good. It's on a whole different level than latest Devstral.
+
+- ## [OpenHands + Devstral is utter crap as of May 2025 (24G VRAM) : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kui17w/openhands_devstral_is_utter_crap_as_of_may_2025/)
+- Devstral system prompt references OpenHands by name. 
+  - It does not. I tried a few primitive tasks and it utterly failed almost all of them while burning through the whole 380 watts my GPU demands.
+
+- Did you run devstral with default parameters in ollama? By default, it will be initialized to have context length of a mere 2048 tokens
+- I check and I'm using default context length. All instructions just went straight out the window.
+- That is one reason I switched away from ollama to llama.cpp, and run it on port 11434 and let it pretend to be ollama.
+- Can you say a little bit more on how you have it pretend to be ollama?
+  - It is essentially what is explained here https://github.com/ggml-org/llama.cpp/pull/12896 but it is not perfect. 
+  - It is a bit backwards that ollama have custom api endpoints which llama.cpp need to implement because they add support for ollama but not the general openai compatible api endpoints.
+
+- Ollama is so broke on devstral. When manually increasing context it would make the ram usage balloon to 50gb and then hang.
+  - Switched to lm studio mlx devstral and set the context to the max and it works correctly
+- If you do not adjust the KV cache in ollama then you're using full f16 by default which is why its taking 50GB to run devstral at 128k context.
+
+- I need to dig into llama.cpp again, but can it run more than one model at once? Or will I have to build a reverse proxy for it?
+  - There's llama-swap for that use-case. 
+- I'm using it, it's good. Runs a few instances of llama.cpp llama-server with models for chat, embeddings and reranking and switches them as required by the API client.
+
+- Ollama runs much better if you put the following lines in your environment variables and just leave it forever.
+
+```sh
+OLLAMA_CONTEXT_LENGTH: 32768
+
+OLLAMA_FLASH_ATTENTION: true
+
+OLLAMA_KV_CACHE_TYPE: q4_0
+```
+
+- Pretty sure they increased it to 4096 relatively recently. Still extremely small though.
+
+- Qwen2.5-VL is not agentic and not good for coding assistant too, while Qwen3 is ok for agents but no vision support.
+
+- From my experience it is very usable when running on my 4090 w/ 50k context window. Using unsloth dynamic q5. 
+  - The only thing is that you need a more detailed prompting. 
+  - Using w/ roo code. It is very important to use architect & orchestrator modes. Otherwise any bigger change hinders it's capabilities. IMO best local llm for coding
+
+- I agree for Devstral-small. It's crazy bad.
+
+- ## [Meet Mistral Devstral, SOTA open model designed specifically for coding agents : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kryxdg/meet_mistral_devstral_sota_open_model_designed/)
+- Weird that they didn't include aider polyglot numbers makes me think they're probably not good. Unfortunately my suspicion was right ran aider polyglot diff and whole got 6.7% (whole), 5.8% (diff)
+- The official system prompt has a bunch of stuff aobut OpenHands including `When configuring git credentials, use \"openhands\" as the user.name and \"openhands@all-hands.dev\" as the user.email by default` ... So yes seems specifically made to work with that framework?
+  - [SYSTEM_PROMPT.txt · mistralai/Devstral-Small-2505 at main](https://huggingface.co/mistralai/Devstral-Small-2505/blob/main/SYSTEM_PROMPT.txt)
+
+- This is amazing if it holds up to the benchmark in real life
+  - It doesn’t. At least not in my real tests. Couldn’t get it to even update a css class using cline and roo. It doesn’t output the correct expected tokens from an agent
+
+- [Qwen3-Coder is here! : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1m6qdet/qwen3coder_is_here/)
+  - You’re right on Devstral, it’s a good model for its size, although I feel it’s not as good as it scores on SWE-bench, and the fact that they didn’t share any other coding benchmarks makes me a bit suspicious. The good thing is that it sets the bar for small coding/agentic model and future releases will have to outperform it.
+
+- ## [Is MLX or GGUF better for Qwen 3 Coder on Apple Silicon? : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mskd6u/is_mlx_or_gguf_better_for_qwen_3_coder_on_apple/)
+- Mlx is faster. DWQ are maybe better in quality. GGUF are slow.
+
+- It's fairly common for MLX to have multimodal support before GGUF. 
+  - It's also fairly common for GGUF to have larger context windows released before MLX.
+  - There are good reasons to use both, but typically MLX will be a tad more energy efficient with a few more tok/sec at the same bit depth.
+
+- ## [Qwen3-coder is mind blowing on local hardware (tutorial linked) : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1n3ldon/qwen3coder_is_mind_blowing_on_local_hardware/)
+  - qwen3-coder-30B is really impressive. 256k context and is actually able to complete tool calls and diff edits reliably in Cline. I'm using the 4-bit quantized version on my 36GB RAM Mac.
+  - My machine does turn into a bit of a jet engine after a while, but the performance is genuinely useful. 
+  - My setup is LM Studio + Qwen3 Coder 30B + Cline (VS Code extension). 
+  - There are some critical config details that can break it (like disabling KV cache quantization in LM Studio), but once dialed in, it just works.
+
+- The other one that shines on cline is Devstral small 2507. Not as fast as Qwen3-30b but equal if not a little better (in the way it plans and communicate back to you)
+  - But yes, qwen3-30b best thing since web browsers.
+
+- I find Devstral does a lot better than Qwen 30B Coder with thinking off. You need to let it ramble to get good answers but while I'm waiting, I would've got the answer from Devstral already.
+- I don't think Qwen3-Coder comes in a thinking variant?
+  - You're completely correct. Qwen3 30B Coder only has a non-thinking variant. I must have gotten the old 30B mixed up with 30B Coder when I was loading it up recently.
+
+- why is Devstral so much slower than Qwen3 Coder even though it's smaller? I got 36tok/sec with Qwen3-Coder 30b (8bit quant), but I only get about 8.5 tok/sec with Devstral (also 8bit quant) on my Framework Desktop.
+  - It’s a dense model. It’s slower but also smarter.
+  - Devstral isn't an MoE model.
+
+- ## 🤔 [Qwen3-Coder is impressive : r/CLine _202508](https://www.reddit.com/r/CLine/comments/1mssdfo/qwen3coder_is_impressive/)
+- How does it handle long context?
+  - It has 256 k context. Cline supports compression/summarization now for things exceeding that.
+- I think at 125k context it has only 60% recall
+
+- Plan or Act or both?
+  - Both. I am too lazy to switch modes. Act all the way.
+- Usually the solutions generated by act only are worse in my experience than if I did a planning / brainstorm session with the model first.
+  - in my empirical experience/perception too. but that can be a biased by my usage style. i generally add at least a thing or two in its plan - and it works for me. 
+
+- 🤔 Yeah it's excellent. I wish they had a version with reasoning.
+  - “Reasoning” seems like mostly smoke and mirrors to me.
+- Could you use something like sequential thinking MCP simulate that?
+- The coding tools like cline and roo already prompt the model into reasoning. There’s no benefit of using a reasoning model with those.
+  - That's not really how it works. You could tell 4o to "think step by step" back in 2024 (and I did), but that didn't turn it into O1.
+- There's a huge difference between a system prompt and RL. But if you have a prompt that makes 4.1 reason like o1, lets hear it, that would be really interesting.
+
+- Qwen3 coder performs good in terms of reasoning and complex problems. Only issue is context limit
+  - That's when you use /smol or /newtask
+
+- ## [Cline + Qwen3 coder is bliss for LocalLLM : r/CLine _202508](https://www.reddit.com/r/CLine/comments/1mt14x9/cline_qwen3_coder_is_bliss_for_localllm/)
+- How much context window?
+  - (I would max it out to 256k if you can)
+- I’ve been using this combination successfully with a context window of 64k, 128, 256k on my Mac. Honestly I don’t notice too much of a difference, they all work darn pretty well. 
+
+- I use unsloth/qwen3-coder-30b-a3b-instruct in LM Studio with its server enabled. I have 34GB VRAM across 2 cards, which is enough to fit the 26.34GB model in VRAM. 
+
+- I also combined it with the new Archon Beta & the task planning + knowledge base makes this crazy powerful + keeps my context for enormous code bases down to below 128k tokens so lots of headroom not to mention reduces memory usage by around 60GB.
 
 - ## [Qwen3- Coder 👀 : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1m6mew9/qwen3_coder/)
 - gemini flash works satisfactorily at 500k using Roo.
@@ -147,12 +346,6 @@ modified: 2025-09-01T07:58:29.058Z
   - Qwen Coder 30B is an instruct-tuned model, not a chat-tuned one, and I googled to search what means in more details.
   - Instruct-tuned models are optimized to follow direct, self-contained instructions in a single turn. 
   - Chat-tuned models, on the other hand, are trained specifically for conversational environments. They learn to remember previous messages
-- 
-- 
-- 
-- 
-- 
-- 
 
 - ## [Installscript for Qwen3-Coder running on ik_llama.cpp for high performance : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1metf4h/installscript_for_qwen3coder_running_on_ik/)
   - After reading that ik_llama.cpp gives way higher performance than LMStudio, I wanted to have a simple method of installing and running the Qwen3 Coder model under Windows. 
@@ -356,11 +549,6 @@ ollama run hf.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF:Q6_K
 
 - QwQ 32b is even better in coding on my experience.
 
-- 
-- 
-- 
-- 
-
 - ## 🤔 [what are the challenges of fine tuning deepseek coder or codellama on a real world codebase? : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1n1mnbz/what_are_the_challenges_of_fine_tuning_deepseek/)
   - i’m curious about fine tuning code llms like deepseek coder or codellama on an actual messy real world codebase.
 
@@ -373,6 +561,18 @@ ollama run hf.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF:Q6_K
 
 - Stop expecting perfection or near-perfection and learn to work with "good enough" results. If 30B is good enough, then focus on the remaining portion that needs human intervention. You can't change the model behavior, but you can change the way you use it, and how you approach the overall problem.
   -  I have tried all sort of tasks from vibe coding, refactoring, disassembly. The key thing is that you need to know better/more than the AI to be an effective human. I found myself learning things that were beyond my reach previously, so even though the AI had objectively failed at the task assigned to it, through the process I learned enough to carry on the task with whatever meaningful results it had produced, and take the rest over the finishing line.
+
+- ## [LocalLLM for coding : r/LocalLLM _202505](https://www.reddit.com/r/LocalLLM/comments/1ku7zjs/localllm_for_coding/)
+- Go for the highest number of parameters you can fit in vram along with your context, then choose the highest quant of that version that will still fit.
+  - I find that the 32b models have issues with simple code … I can’t imagine a 7b model being anything more than a curiosity.
+
+- Qwen2.5-coder 7B and 14B are both solid for local coding tasks.
+  - Deepseek-Coder (6.7B or 13B): very strong with Python and general coding.
+  - Code LLaMA 13B: great for code generation and reasoning.
+  - StarCoder2 (7B or 15B): worth a try if you can stretch the limit a bit. Quite powerful.
+  - Phi-2 (2.7B): super lightweight and fast for simpler tasks.
+
+- Devstral is really good right now and IMHO it's better than qwen2.5-coder.
 
 - ## [Devstral vs DeepSeek vs Qwen3 : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1ksat42/devstral_vs_deepseek_vs_qwen3/)
 - Devstral is not better than qwen3-32B in general-purpose tasks. I guess it was trained to be specific to that openhands particular agent.
@@ -416,41 +616,6 @@ ollama run hf.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF:Q6_K
 - I decided to check the product and have been sitting with the settings for the whole day. Installing docker and running it is not a problem, but no matter how hard I try, it does not want to connect to the local model, although in the console via curl the connection to it goes. Plus I created a 10 GB container, this is quite a lot, I do not understand why it requires such a crazy size, this is almost the size of the entire operating system.
   - I had a similar experience today. Running both LM studio and Open hands with more permissive networking settings allowed open hands to reach the LM studio web server.
   - So maybe give that a try? IIRC it's add `--host` to the `docker run` arguments and for LM studio it was update the setting to run the web server so it doesn't only resolve over localhost, and instead broadcasts over the machine IP.
-
-- ## [OpenHands + Devstral is utter crap as of May 2025 (24G VRAM) : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kui17w/openhands_devstral_is_utter_crap_as_of_may_2025/)
-- Devstral system prompt references OpenHands by name. 
-  - It does not. I tried a few primitive tasks and it utterly failed almost all of them while burning through the whole 380 watts my GPU demands.
-
-- Did you run devstral with default parameters in ollama? By default, it will be initialized to have context length of a mere 2048 tokens
-- I check and I'm using default context length. All instructions just went straight out the window.
-- That is one reason I switched away from ollama to llama.cpp, and run it on port 11434 and let it pretend to be ollama.
-- Can you say a little bit more on how you have it pretend to be ollama?
-  - It is essentially what is explained here https://github.com/ggml-org/llama.cpp/pull/12896 but it is not perfect. 
-  - It is a bit backwards that ollama have custom api endpoints which llama.cpp need to implement because they add support for ollama but not the general openai compatible api endpoints.
-
-- Ollama is so broke on devstral. When manually increasing context it would make the ram usage balloon to 50gb and then hang.
-  - Switched to lm studio mlx devstral and set the context to the max and it works correctly
-- If you do not adjust the KV cache in ollama then you're using full f16 by default which is why its taking 50GB to run devstral at 128k context.
-
-- I need to dig into llama.cpp again, but can it run more than one model at once? Or will I have to build a reverse proxy for it?
-  - There's llama-swap for that use-case. 
-- I'm using it, it's good. Runs a few instances of llama.cpp llama-server with models for chat, embeddings and reranking and switches them as required by the API client.
-
-- Ollama runs much better if you put the following lines in your environment variables and just leave it forever.
-
-```sh
-OLLAMA_CONTEXT_LENGTH: 32768
-
-OLLAMA_FLASH_ATTENTION: true
-
-OLLAMA_KV_CACHE_TYPE: q4_0
-```
-
-- Pretty sure they increased it to 4096 relatively recently. Still extremely small though.
-
-- Qwen2.5-VL is not agentic and not good for coding assistant too, while Qwen3 is ok for agents but no vision support.
-
-- From my experience it is very usable when running on my 4090 w/ 50k context window. Using unsloth dynamic q5. The only thing is that you need a more detailed prompting. Using w/ roo code. It is very important to use architect & orchestrator modes. Otherwise any bigger change hinders it's capabilities. IMO best local llm for coding
 
 - ## [Best coding models for Consumer Hardware : r/ollama _202502](https://www.reddit.com/r/ollama/comments/1ij1aaz/best_coding_models_for_consumer_hardware/)
 - Qwen2.5-coder-32b is probably best, it’s great with code quality, speed and most coding use-cases.
@@ -572,7 +737,53 @@ OLLAMA_KV_CACHE_TYPE: q4_0
 
 - ## 
 
-- ## 
+- ## [Are you using local LLMs to power Cline, RooCode, Cursor etc.? What is your experience? : r/LocalLLaMA _202502](https://www.reddit.com/r/LocalLLaMA/comments/1ivhrbn/are_you_using_local_llms_to_power_cline_roocode/)
+- I use Qwen Coder 14b/32b for code refactoring and Qwen Coder 3b for autocomplete with the Continue.dev extension for VSCode. It's not quite on par with Github Copilot or Cursor, but it works well enough.
+
+- One nice feature of continue.dev is the drop down for selecting a model. I have qwen coder 7b or 14b running locally and a selection of models via Openrouter. When my local models isn't up to the task, it just takes a second to switch to something more powerful.
+  - I have qwen coder 7b for auto complete and it does really well. The number of times it gets it right is kind of amazing.
+
+- Most of these tools use a temperature of 0. Small local models need to be controlled to avoid looping. In tabbyAPI, you can force the temperature and other settings to what you please
+
+- Deepseek Coder (and coder V2 Lite) is a very old weak model. Qwen2.5 Coder 7b is a starting point for a useful model. 
+
+- ## [Aider's Architect/Editor approach sets new SOTA for AI code editing, achieving 85% pass rate : r/ChatGPTCoding _202409](https://www.reddit.com/r/ChatGPTCoding/comments/1fshzxl/aiders_architecteditor_approach_sets_new_sota_for/)
+- This method separates code reasoning and editing tasks between two models:
+  - Architect model: Focuses on solving the coding problem
+  - Editor model: Translates the solution into well-formatted code edits
+  - Best combination: OpenAI's o1-preview (Architect) with DeepSeek or o1-mini (Editor)
+- If you look at the llm.logs in aider, the architect always writes out the code, the editor model will merge the code with the diffs. So the architect model does the entire thing with code output.
+  - So if you are using o3mini, as architect, it is the main code generator as well, and if you are using Sonnet 3.7 as the editor model, it actually wastes the code generation powess of that model, because it only uses it to "Edit" the code back into your files.
+  - This is where I'm confused on how it "architects". I would call it Code generator model, and a Code patch model.
+
+- you're responding to a 7 month old comment. Even Paul G himself doesn't use Architect mode anymore!
+
+- This is the way to do it. 
+  - AutoGen did this years ago but it's a PITA. CrewAI is mostly OK but it's more designed for process instead of code generation
+
+- ## 🤔 [Should I use reasoning for coding? : r/DeepSeek _202503](https://www.reddit.com/r/DeepSeek/comments/1jnzdb3/should_i_use_reasoning_for_coding/)
+- no, Deepseek V3 writes code much better than R1.
+  - In programming, R1 makes sense to use for planning, precisely..when you need to reason... 
+  - That is, when you are planning something very complex, a model like V3 simply gets confused, wants clear instructions, is not very good with "but, however" .. then you use R1 which does the reasoning and spits out a sensible plan...then for the actual implementation, use V3 anyway...it is cheaper and if it is just about coding, it works better.
+- If V3 is better why is R1 ranked higher for coding benchmarks? And why is it that the best coding models are all reasoning?
+  - You are probably right and I expressed myself badly, although in my specific case V3 literally wrote better code than R1
+
+- ## 🏠 [Has anyone successfully used "thinking" models for large coding projects? : r/ClaudeAI _202502](https://www.reddit.com/r/ClaudeAI/comments/1ifgtrz/has_anyone_successfully_used_thinking_models_for/)
+  - The reason I ask is because I don't know if I'm just missing something when it comes to thinking models, but aside from the early code drafts and/or project planning. I just cannot successfully complete a project with them.
+  - I'm starting to think that maybe models with this type of design paradigm just isn't compatible with complex programs given how many "reasoning" loops it has to reflect on, and thus it seems to constantly muddy up the context window with what it "thinks" it should do. Rather than what it is directed to do.
+  - Everytime I try one of these models it starts off great, but then in a few hours I'm right back to Claude after it just becomes too frustrating.
+
+- The problem I've observed was typically through using aider (where I have a $700+ in API costs from this project alone) where Claude incessantly recommends "improvements" that adds complexity and breaks things
+  - But I noticed that happens significantly less when I use code mode in Roo Code
+  - I think some of that rabbit-hole behavior might be due to the system prompt as I noticed Roo Code doesn't tend to "suggest" improvements that I never asked for.
+  - The fundamental limitation IMO is that you really need to be fully capable of doing the entire project yourself without the use of AI. Then at that point AI becomes a force multiplier.
+
+- I typically use reasoning models like you, then shift to Sonnet as wel
+
+- For what it’s worth, this is the exact kind of workflow Aider (open source console-based dev tool) encourages.
+  - Basically you use the thinking model to prototype the code (in Aider this is called “architect” mode), then when it comes to outputting actual code, you use a different “coder” mode that leverages a simpler chat model to write the code (like Sonnet, GPT4o). The chat model operates on the back of the notes and specs written out by the reasoning model to write the code to spec.
+  - The Aider dev did a bit of research and iirc discovered this works better than just using the reasoning model for everything. And is obviously more affordable, too. It’s very interesting.
+  - Anecdotally, this vibes with how I’ve used gen AI in my coding workflow before reasoning models even came to be. I’d write up a detailed technical spec of how it should be done, then let Claude or GPT4o write up the first draft of code, and iterate from there
 
 - ## 🤔 [Why is Qwen 2.5 the most used models in research? : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kyrhr7/why_is_qwen_25_the_most_used_models_in_research/)
 - We tuned qwen 2.5 7b in our paper, general choice reasons - sota for their size, strong multilingual support, 7b variant is good for restricted compute resources while being smart enough for tasks. And no unexpected tricks are expected from the qwen team, like models are not overly tuned on some style/emojis in response, not overly guarded like early Gemma was etc.

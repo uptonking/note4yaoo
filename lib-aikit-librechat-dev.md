@@ -9,13 +9,19 @@ modified: 2025-09-01T05:52:34.241Z
 
 # guide
 
+- pros
+  - license: apache2
+
+- cons
+  - Code Interpreter 未开源
+
 - features
   - Agents: No-Code Custom Assistants, tools
-  - Code Interpreter API
+  - Artifacts/Generative UI: React, HTML, Mermaid diagrams
+  - Code Interpreter API: provides a secure and hassle-free way to execute code and manage files through a simple API
   - Web Search: Combines search providers, content scrapers, result rerankers 
   - Memory: Users can toggle memory on/off for individual chats
   - MCP: Support for scalable HTTP-based servers
-  - Artifacts/Generative UI: React, HTML, Mermaid diagrams
   - Image Generation & Editing: GPT-Image-1, Stable Diffusion, MCP Servers
   - AI Models
   - 💾 chat export/import
@@ -31,7 +37,7 @@ modified: 2025-09-01T05:52:34.241Z
 - who is using #librechat
   - ?
 # draft
-
+- code interpreter 如何实现
 # dev-xp
 
 # more

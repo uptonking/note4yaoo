@@ -64,8 +64,7 @@ modified: 2025-03-22T18:49:15.634Z
   - Multimodal & File Interactions
   - Import & Export Conversations
   - Multi-User, Secure Authentication with OAuth2, LDAP, & Email Login Support
-  - [Install LibreChat Locally Using npm](https://www.librechat.ai/docs/local/npm)
-    - [Getting Started for Contributors](https://www.librechat.ai/docs/development/get_started)
+  - Install LibreChat Locally Using npm: [Getting Started for Contributors](https://www.librechat.ai/docs/development/get_started)
   - [Model Context Protocol (MCP)](https://www.librechat.ai/docs/features/mcp)
     - LibreChat leverages MCP to dramatically expand what your AI agents can do, allowing you to integrate everything from file system access, web browsers, specialized APIs, to custom business tools.
     - Any time you add or edit an MCP server, you will need to restart LibreChat to initialize the connections.

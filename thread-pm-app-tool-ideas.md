@@ -101,9 +101,10 @@ modified: 2022-11-07T10:58:24.512Z
   - 地铁线路图上添加 租房价格/美食, 再提供给第三方社交平台如知乎/小红书
   - 租房地点，位置测评，交通指数、美食指数
 
-- 网站数据
+- 网站数据整理/year/month/week
   - github trending
   - 微博热搜
+  - openrouter top models/apps 排行
 
 - 数据整理
   - [2023各平台年终报告](https://www.yuque.com/paidaxin/dkopg8/gqpfgysdw0wiqwmh)
