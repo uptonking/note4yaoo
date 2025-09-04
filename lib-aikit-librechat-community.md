@@ -21,7 +21,92 @@ modified: 2025-09-01T05:53:05.266Z
 - ## 
 
 - ## 
-# discuss-librechat
+# discuss-roadmap
+- ## 
+
+- ## 
+
+- ## [Using LibreChat in a corporate environment (Azure or self hosted) _202311](https://github.com/danny-avila/LibreChat/discussions/1207)
+- I'm also interested in custom branding as a feature.
+
+- ## [[Enhancement]: "Bring-your-own" Local MCP servers _202505](https://github.com/danny-avila/LibreChat/discussions/7268)
+  - I would like to see LibreChat provide a built-in mechanism for seamlessly connecting local MCP servers (or local companion apps) to a centrally deployed LibreChat instance.
+  - A browser-based approach alone can’t directly connect the remote server to localhost. Enabling local MCP servers or companion apps, similar in concept to tools like GetMCP (but free), would let each user securely handle local operations while still benefiting from LibreChat’s LLM capabilities. 
+  - This mirrors how Claude Desktop manages local file access by running an MCP server on the user’s machine.
+
+- Claude Desktop is actually running MCP servers very similar to LibreChat. The user runs Claude Desktop, and it runs the MCP processes on their machine. You can achieve the same local "capabilities" by running LC locally.
+  - However, there may not be much more work involved here, if you can use this project in conjunction with LibreChat: https://github.com/srbhptl39/MCP-SuperAssistant
+  - we can take look at that project I linked for the proxying parts, since that's what it does, it may indeed go overboard with script injection via the extension.
+- I'm aware that LC locally is quite similar to Claude Desktop, which is already amazing. Limitations arise when deploying it on scale to many users (where LCs strenghs are).
+- I think you could do this with something like ngrok. 
+  - 1. Locally start an MCP server running on port X.
+  - 2. Locally start ngrok and get an ngrok URL that maps to your local MCP server on port X.
+  - 3. Do some kind of config in your LibreChat session in the browser to give it the ngrok URL so your browser session can use that URL to contact the locally running MCP server.
+  - It would be cool if LibreChat could automatically do 1 and 2 but that's probably out of scope. I think 3 seems like it could be quite useful, though for lots of applications besides just this question. 
+- Cool idea! Also sound a little like my companion App Idea. The Companion could handle the local MCP stuff (file permissions etc.) and the ngrok connection.
+
+- I just recently got this working for our Shopify instance and we want to open source the parts that aren't LC related and hopefully incorporate it into LC core.
+  - this is an example of it talking to my local folders using the example Filesystem MCP server from the MPC repo.
+  - This does not require NGROK, it actually connects to the frontend through a "tunnel" which the frontend acts as a bridge to the backend using the frontend's auth. This way it can better use horizontal scaling in the future. The Tunnel and Web App are authenticated with each other too, so you don't have a random site looking for this on your machine and using it without your permission.
+
+- ## 📡 [2025 Roadmap · danny-avila/LibreChat _202502](https://github.com/danny-avila/LibreChat/discussions/5960)
+  - [LibreChat 2025 Roadmap](https://www.librechat.ai/blog/2025-02-20_2025_roadmap)
+- Basically, the cloud-hosted version will just be the same open-source app you can already self-host. We're not planning to take away or restrict any features from the self-hosted version because of the cloud offering. 
+  - Everything you can do now for free when self-hosting will stay free. 
+  - All planned features on the roadmap are planned to be open-source.
+  - ⚖️ no plans to change the open-source license of LibreChat (MIT License).
+  - The only exception is the Code Interpreter API service – that's already a premium thing, and it'll stay that way.
+  - The cloud version might eventually have some paid tiers (maybe for extra storage, resources, managed stuff, etc.), but the features will mirror what's available in the project repository.
+
+- MCP Marketplace / Store as seen in Cline & 5ire
+
+- One idea I still have would be some image playground within Librechat that can use Black Forest Labs API to generate and modify like on replicate playground or midjourney edit function.
+
+- 🤔 Are there plans for supporting OpenAI's new Responses API which will also replace the Assistants API.
+  - 👷 Nope, we have our own agent framework: https://www.librechat.ai/docs/features/agents
+  - And Assistants API will officially be deprecated following this announcement
+  - Responses API is just another layer on top of completions so it can actually be used with LC Agents framework quite nicely without being its own independent thing like the Assistants API component.
+- Are you referring to OpenAI's deprecation of Assistants, or you are announing LC Assistants will be dreprecated?
+  - Both. [[Enhancement]: Support for OpenAI's new Responses API · Issue · danny-avila/LibreChat _202503](https://github.com/danny-avila/LibreChat/issues/6364)
+  - OpenAI announced last week a new Responses API that contains the feature set of the Chat Completions API and replaces the Assistants API (the latter is now deprecated and will be sunseted mid-2026).
+  - Azure already announced that they provide this API day one and considering OpenAI's position on the market, we can expect that it will become an industry standard as is the Chat Completions API today.
+
+- I'm using librechat within my company as the main chat applications for my employees (50). there are some features listed on the roadmap which makes it even better.
+  - Admin features
+  - Folders in chat & agents
+  - Agent Sharing with groups
+  - Memory
+  - Deepresearch
+- these are all already being worked on:
+  - Admin features
+  - Agent Sharing with groups
+  - Memory (completed)
+  - On Deep Research, the Web Search tool was inspired by multiple papers on the topic
+# discuss-tools/extensions
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [I’ve opened a new PR that adds a Chart Toggle option to agent configs, allowing agents to render inline ECharts-based charts directly in conversations. _202507](https://discord.com/channels/1086345563026489514/1397726855632785500)
+  - [Chart integration by rohitpathak21 · Pull Request · danny-avila/LibreChat _202507](https://github.com/danny-avila/LibreChat/pull/8634)
+  - When enabled, agents can return a strict ECharts option JSON wrapped in a `:::chart{}` block, and it gets rendered seamlessly in the chat UI.
+  - The idea is to make it easy for anyone using LibreChat to plug in their own data tools, scripts, or APIs that generate structured data — and have that data instantly visualized as charts in the conversation flow
+
+- 🏠 Just a thought: maybe this could be generalized into a broader "rich message" system (kind of like Rocket. Chat's cards/buttons or Slack blocks). For example, a JSON block that renders a form asking "Do you want to see the chart?" with Yes/No buttons, and routes the response back to the agent.
+  - This would also align well with MCP/tools/thinking setups during a chat — since you have to render something structured anyway (not just plain text) to give some information to the user... Having a common rendering layer for buttons/forms/charts/etc. feels like a natural next step. What do you think?
+- What you suggested is actually super cool. A generalized rich message system with buttons, forms, and charts sounds like a great direction, especially for tool-based or agentic workflows like MCP. I’d love to see something like that in LibreChat.
+  - Right now though, I’ve tried to keep the implementation pretty simple and aligned with the existing structure. I based the chart feature loosely on how `artifacts` are handled (though this is nowhere near as complex), just to make sure everything fits into the current codebase without too many changes.
+  - I definitely think your idea is worth exploring further, but I feel like it would need a solid plan and quite a few changes under the hood. I’d probably need to sync up with the repo owner first to understand what kind of direction or roadmap they have in mind, and how “rich” they’d actually want this to be.
+
+- For generic "rich-text" uis with forms, buttons etc. a colleague of mine recently linked me this project: https://github.com/idosal/mcp-ui
+  - It's react based and features a server and client side library/sdk.
+# discuss
 - ## 
 
 - ## 

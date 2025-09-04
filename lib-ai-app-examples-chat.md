@@ -50,7 +50,7 @@ modified: 2025-03-22T18:49:15.634Z
     - Granular Permissions and User Groups
     - Offline Mode
 
-- https://github.com/danny-avila/LibreChat /29kStar/MIT/202508/ts
+- https://github.com/danny-avila/LibreChat /29kStar/MIT/202508/ts前端/cjs后端
   - https://librechat.ai/
   - Enhanced ChatGPT Clone: Features Agents, DeepSeek, Anthropic, Gemini
   - 后端依赖@langchain/core、express、keyv、EventSource(sse)、diff

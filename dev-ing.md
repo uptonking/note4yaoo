@@ -363,6 +363,11 @@ test('mock test', () => {
 - dev-to 💡✨🤔
   - MCP的原理，及调用LSP的技术方案
 
+## 0905
+
+- Sync Settings: Error: error: gpg failed to sign the data: [GNUPG:] KEY_CONSIDERED 1C4A85B3737F 2 [GNUPG:] BEGIN_SIGNING H10 [GNUPG:] PINENTRY_LAUNCHED 65844 curses 1.3.1 not a tty - - ? 501/20 0 gpg: signing failed: No such file or directory [GNUPG:] FAILURE sign 83918929 gpg: signing failed: No such file or directory fatal: failed to write commit object
+  - 变通的解决方案是，commit前手动将 `~/.gitconfig`文件中 `commit.gpgsign` 改为false, commit后再改回true
+
 ## 0902
 
 - 下面是一个有异常的curl脚本，异常位置是包含单引号的`what's`

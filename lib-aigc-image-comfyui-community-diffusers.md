@@ -441,8 +441,21 @@ problem is when software like InvokeAI or some else are using the diffusers form
 - ## 
 
 - ## 
+# discuss-sd-webui/forge/reforge
+- ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Stable Diffusion WebUI API : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/10o8wa2/stable_diffusion_webui_api/)
+- You go to the  http://127.0.0.1:7860/docs#/ folder in your installation, and you click open one of the available API requests to try it out.
+
+- How do I set the checkpoint?
+  - I don't think you can do it via the script. I've not played with the API for months, so it may have been added by then, so check the documentation again.
+  - What I used to do is to change the checkpoint via the Auto1111 Web interface.
 
 - ## [[Bug]: Something went wrong Expecting value: line 1 column 1 (char 0) · Issue · AUTOMATIC1111/stable-diffusion-webui _202303](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/9150)
   - [[Bug]: "Expecting value: line 1 column 1 (char 0)" thrown, when I added "--listen" to my "COMMANDLINE_ARGS" · Issue · AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/9132)
