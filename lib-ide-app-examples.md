@@ -247,6 +247,8 @@ modified: 2024-08-24T16:30:20.218Z
   - Ground your queries with the Google Search tool, built in to Gemini.
   - [Google announces Gemini CLI: your open-source AI agent _202506](https://blog.google/technology/developers/introducing-gemini-cli-open-source-ai-agent/)
   - [Gemini CLI: your open-source AI agent | Hacker News _202506](https://news.ycombinator.com/item?id=44373754)
+  - [Whats is the quota limit? 1000 of gemini 2.5 pro? You have reached your daily gemini-2.5-pro quota limit. ](https://github.com/google-gemini/gemini-cli/issues/4300)
+    - The limit for Gemini 2.5 Pro for free is 100 requests per day, with the reset time approximately at 5:00 AM UTC
 
 - https://github.com/QwenLM/qwen-code /11.9kStar/apache2/202509/ts
   - https://qwenlm.github.io/qwen-code-docs/zh/

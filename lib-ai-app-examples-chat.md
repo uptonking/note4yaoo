@@ -53,7 +53,7 @@ modified: 2025-03-22T18:49:15.634Z
 - https://github.com/danny-avila/LibreChat /29kStar/MIT/202508/ts前端/cjs后端
   - https://librechat.ai/
   - Enhanced ChatGPT Clone: Features Agents, DeepSeek, Anthropic, Gemini
-  - 后端依赖@langchain/core、express、keyv、EventSource(sse)、diff
+  - 后端依赖mongoose、@langchain/core、express、@keyv/redis、keyv-file、EventSource(sse)、diff、firebase、handlebars、meilisearch、memorystore、passport-local、sharp、winston
   - 前端依赖@tanstack/react-query、jotai、@ariakit/react、react-hook-form，不依赖langchain
   - 聊天数据持久化在mongodb
   - 🛝📡 考虑用langgraph重写后端，去掉langchain

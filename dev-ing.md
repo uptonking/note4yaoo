@@ -365,6 +365,11 @@ test('mock test', () => {
 
 ## 0905
 
+- [How to print out a dictionary nicely in Python? - Stack Overflow](https://stackoverflow.com/questions/44689546/how-to-print-out-a-dictionary-nicely-in-python)
+  - print(json.dumps(dictionary, indent=4, sort_keys=True))
+
+## 0904
+
 - Sync Settings: Error: error: gpg failed to sign the data: [GNUPG:] KEY_CONSIDERED 1C4A85B3737F 2 [GNUPG:] BEGIN_SIGNING H10 [GNUPG:] PINENTRY_LAUNCHED 65844 curses 1.3.1 not a tty - - ? 501/20 0 gpg: signing failed: No such file or directory [GNUPG:] FAILURE sign 83918929 gpg: signing failed: No such file or directory fatal: failed to write commit object
   - 变通的解决方案是，commit前手动将 `~/.gitconfig`文件中 `commit.gpgsign` 改为false, commit后再改回true
 
@@ -452,7 +457,7 @@ echo curl http://localhost:1234/v1/chat/completions \
   - AWQ hyper-parameters (--group-size, --embed-bits, --num-samples, etc.) are conversion-time settings used by the quantizer (mlx-lm / autoawq) and are baked into the MLX quantized files. LM Studio ships an MLX engine and will load MLX/AWQ quantized models directly using the quantization data stored in the model
   - so in normal cases you can drop the …4bit-AWQ MLX model into LM Studio and run it without manually re-entering AWQ params.
 - LM Studio is designed to automatically detect and handle AWQ-quantized models without requiring manual parameter configuration
-# dev-08
+# dev-08-mirror-editor-upgrade-&-aisdk-&-comfyui-upscale/anime-&-comfyui-examples
 
 ## 0831
 

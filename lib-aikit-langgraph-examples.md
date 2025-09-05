@@ -248,6 +248,11 @@ modified: 2025-08-11T08:47:56.335Z
 - https://github.com/langchain-ai/langgraphjs-studio-starter /MIT/202409/ts/inactive
   - Example LangGraph.js project made to run in LangGraph Studio
 # examples
+- https://github.com/codemilestones/TinyCodeBase /apache2/202509/python
+  - 本项目是一个轻量级的代码智能系统，包含了RAG（检索增强生成）、Agent（智能代理）和评估系统的完整实现。
+  - 项目从[TinyRAG](https://github.com/KMnO4-zx/TinyRAG)扩展而来，专注于代码场景的优化和实践。
+  - [之前有多嫌弃大模型框架，现在用 LangGraph 就有多香 - 知乎 _202509](https://zhuanlan.zhihu.com/p/1946396924342177830)
+
 - https://github.com/akveo/ai-cookbook /MIT/202507/ts
   - a set of use cases demonstrating how to build AI-featured applications.
   - LangGraph + Next.js: Agent streams LLM tokens to the client application. In the demo app, state is persisted in memory
