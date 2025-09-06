@@ -101,11 +101,11 @@ modified: 2023-08-29T10:12:22.345Z
   - It's written in Rust and uses Protocol Buffers/gRPC for communication
   - We've also implemented a UI for the database server, which can be found at: GQL-Project/gql_client.
 
-- https://github.com/MichaelMure/git-bug /GPLv3/202310/go
-  - Distributed, offline-first bug tracker embedded in git, with bridges
-  - fully embedded in git: you only need your git repository to have a bug tracker
-  - distributed: use your normal git remote to collaborate, push and pull your bugs
-  - use bridges to import and export to other trackers.
+- https://github.com/git-bug/git-bug /GPL/202505/go
+  - git-bug is a standalone, distributed, offline-first issue management tool that embeds issues, comments, and more as objects in a git repository (not files!), enabling you to push and pull them to one or more remotes.
+  - Native Git Storage: Manage issues, users, and comments directly within your repository
+  - Third-Party Bridges: Easily synchronize issues with platforms like GitHub and GitLab using bridges
+  - Flexible Interfaces: Choose how you interact - via CLI, TUI, or a web browser
 # git-like
 - https://github.com/GerritCodeReview/jgit /EDL(BSD)/202310/java
   - https://eclipse.dev/jgit/
@@ -426,12 +426,6 @@ modified: 2023-08-29T10:12:22.345Z
 
 - [Git as a Database | GitRows](https://gitrows.com/)
   - GitRows makes it easy to use and store data in GitHub and GitLab repos and deliver them with a powerful API.
-
-- https://github.com/git-bug/git-bug /GPL/202505/go
-  - git-bug is a standalone, distributed, offline-first issue management tool that embeds issues, comments, and more as objects in a git repository (not files!), enabling you to push and pull them to one or more remotes.
-  - Native Git Storage: Manage issues, users, and comments directly within your repository
-  - Third-Party Bridges: Easily synchronize issues with platforms like GitHub and GitLab using bridges
-  - Flexible Interfaces: Choose how you interact - via CLI, TUI, or a web browser
 # examples
 
 # utils

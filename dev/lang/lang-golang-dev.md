@@ -9,12 +9,14 @@ modified: 2023-08-28T06:08:27.303Z
 
 # guide 🐭
 - classic-examples-golang
-  - office
+  - office: focalboard
   - crdt
-  - dolt, git-like: git-lfs, gitea
-  - more: focalboard, json-parser, tree
-    - apps: flomo-like, cloud-drive
-    - monitoring: openreplay
+  - git-like: 🌹 gitea, git-lfs, dolt
+  - flomo-like: usememos, 
+  - cloud-drive: 🌹 opencloud-be+filebrowser-web, minio
+  - monitoring: openreplay
+  - apps: apache-answer, mattermost
+  - more: json-parser, tree
 
 - who is using #golang
   - 国内: 

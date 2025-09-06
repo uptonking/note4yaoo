@@ -62,12 +62,14 @@ modified: 2023-08-29T10:11:26.348Z
 - resources
   - [精通Git | 汪图南](https://wangtunan.github.io/blog/books/git/)
 # draft
+- gitLens without vscode
+
+- git-lfs-alternative
+
 - git的commit-message经常查看，但修改不方便
   - 对于内容较多的commit message，可以设计一个编辑器
 
 - git checkout在敏感操作前需确认
-
-- gitLens without vscode
 
 - 
 - 

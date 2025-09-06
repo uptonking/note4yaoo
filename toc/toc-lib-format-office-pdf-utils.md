@@ -21,12 +21,13 @@ modified: 2022-11-11T10:46:41.519Z
   - https://github.com/pdf-association/pdf-differences /apache2/202502
     - The PDF files in this repository are targeted test files highlighting specific issues seen across multiple widely-used implementations.
 
-- https://github.com/Stirling-Tools/Stirling-PDF /20.4kStar/GPLv3/202403/java/js
+- https://github.com/Stirling-Tools/Stirling-PDF /20.4kStar/MIT(core)+GPL/202403/java/js
   - https://www.pdfdrills.com/
   - locally hosted web application that allows you to perform various operations on PDF files
   - locally hosted web based PDF manipulation tool using docker that allows you to perform various operations on PDF files
   - 依赖 Spring Boot + Thymeleaf、pdfbox、itext7、libreoffice转换格式、ocrMyPdf
   - 除了能给PDF打水印之外，还可以轻松批量给扫描的PDF文件瘦身，1秒钟搞定，太好用了
+  - [refactor: move modules under app/ directory and update file paths _202507](https://github.com/Stirling-Tools/Stirling-PDF/pull/3938)
 
 - https://github.com/SimplePDF/simplepdf-embed /280Star/NonOpen/202502/ts
   - https://simplepdf.eu/embed

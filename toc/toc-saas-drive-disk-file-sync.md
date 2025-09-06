@@ -34,10 +34,6 @@ modified: 2024-03-31T17:45:16.789Z
 - free-cloud-database
   - PlanetScale: mysql
   - supabase: postgresql
-
-- https://github.com/syncthing/syncthing
-  - Syncthing is a continuous file synchronization program. 
-  - It synchronizes files between two or more computers. 
 # 国外云存储
 - icloud 需付费成为apple-developer
   - [iOS独立开发-基于iCloud构建用户体系](https://zhuanlan.zhihu.com/p/392378738)
@@ -81,9 +77,85 @@ modified: 2024-03-31T17:45:16.789Z
 - 坚果云
   - 用于授权第三方应用利用 WebDAV 协议访问团队的文件
 # cloud-drive-alternatives
-- https://github.com/alist-org/alist
+- https://github.com/suitenumerique/drive /77Star/MIT/202509/python/ts
+  - A collaborative file sharing and document management platform that scales. 
+  - Built with Django and React.
+  - [(back) create wopi application _202502](https://github.com/suitenumerique/drive/pull/2)
+
+- https://github.com/opencloud-eu/opencloud /2.1kStar/apache2/202509/go
+  - https://opencloud.eu/
+  - This the main repository of the OpenCloud server. It contains the golang codebase for the backend services.
+  - 🛢️ The OpenCloud backend does not use a database. It stores all data in the filesystem. By default, the root directory of the backend is `$HOME/.opencloud/`.
+  - Architecture: Built with a microservices approach
+  - The OpenCloud backend authenticates users via OpenID Connect using either an external IdP like Keycloak or the embedded LibreGraph Connect identity provider.
+  - 📱 支持 web/win/mac/linux/android/ios
+  - 📡 尝试自定义客户端
+  - https://github.com/opencloud-eu/web /112Star/AGPL/202507/ts/vue
+    - Web UI for OpenCloud built with Vue.js and TypeScript
+    - Files: Upload, download, search and manage files 
+    - Versioning: Saved the wrong version? We have the time machine you were looking for! Easily go back in time and restore older versions of your files.
+    - Share: Allow fine-grained access to files and whole folders directly with other users on your OpenCloud.
+    - Create links and share them with anyone in the world - optional password-protection available.
+    - Write: Edit your documents with the editor of your choice like Collabora, ONLYOFFICE or Microsoft Word and more.
+    - Extensible: OpenCloud Web is built as a platform that can be extended in the most developer friendly way.
+    - extension-sdk: Provides utilities for developing and integrating custom extensions
+    - runtime: Central place of (user) authentication, provisioning of the user interface layout, client side storage, routing, theming, dependencies and (sub)application handling
+  - https://github.com/opencloud-eu/web-extensions
+    - A collection of officially supported apps and extensions for OpenCloud Web
+    - web-app-draw-io
+    - web-app-json-viewer
+    - web-app-importer
+    - web-app-unzip
+  - https://github.com/opencloud-eu/desktop /GPL/cpp
+  - https://github.com/opencloud-eu/android /GPL/kotlin
+  - https://github.com/opencloud-eu/ios /GPL/swift
+  - [Support any S3 provider instead of just Minio _202507](https://github.com/orgs/opencloud-eu/discussions/1149)
+    - This is a misunderstanding. Every S3 compatible Storage should work.
+  - [[Feature] External S3 storage additionally mounting and encryption _202505](https://github.com/opencloud-eu/opencloud/issues/875)
+    - Is it currently possible to mount an additional s3 bucket (to the existing primary) for data storage into opencloud? 
+    - OpenCloud can be set up with the so called DecomposedS3 storage driver, which uses S3 as storage for the binary blobs, in addition to a little bit of Posix storage for the metadata storage, that references to the S3.
+    - I think it should be possible to also encrypt the S3 buckets, independently from OpenCloud, as a feature of the storage
+    - OpenCloud however does not yet support client side S3 encryption.
+
+- https://github.com/gtsteffaniak/filebrowser /3.3kStar/apache2/202509/go/ts/vue
+  - FileBrowser Quantum is a massive fork of the file browser 
+  - Directory-level access control that can be scoped to user or group.
+  - Developer API support: create long-lived API Tokens
+  - Login support for OIDC, password + 2FA, and proxy
+  - Multiple sources support
+  - Simplified configuration via `config.yaml` config file.
+  - Ultra-efficient indexing and real-time updates
+  - 🆚 readme最后提供了产品对比图
+  - 📡 roadmap
+    - [add s3 compatibility ](https://github.com/gtsteffaniak/filebrowser/issues/140)
+  - https://github.com/Softwaredam/filebrowser-chart
+    - For anyone interested in a chart to deploy it on Kubernetes
+
+- https://github.com/filebrowser/filebrowser /31.1kStar/apache2/202509/go/ts/vue
+  - https://filebrowser.org/
+  - https://demo.filebrowser.org/
+  - filebrowser provides a file managing interface within a specified directory and it can be used to upload, delete, preview, rename and edit your files. 
+  - It allows the creation of multiple users and each user can have its own directory.
+  - User Management, Easy Login System
+  - File Editing
+  - [S3 support _202009](https://github.com/filebrowser/filebrowser/issues/1077)
+    - 👷202010: cloud storage support is out of the scope of this project. As @fdefilippo mentioned you can mound your s3 bucket using fuse.
+    - A work-around I've found when trying to get S3 to act as the storage back-end for Filebrowser, at least when deploying Filebrowser as a container, is to mount the Filebrowser storage folder to an NFS share interface tying back to S3.
+  - [add minio as file storage  _202202](https://github.com/filebrowser/filebrowser/issues/1809)
+    - Filebrowser uses spf13/afero as a filesystem abstraction layer. 
+    - S3 support can be added after adding it to the afero package.
+  - https://github.com/spf13/afero /6.4kStar/apache2/202508/go
+    - The Universal Filesystem Abstraction for Go
+
+- https://github.com/OpenListTeam/OpenList /15.5kStar/AGPL/202509/go
+  - A new AList Fork to Anti Trust Crisis
+  - https://github.com/OpenListTeam/OpenList-Frontend /MIT/202509/ts/solidjs
+    - The front-end of OpenList, powered by SolidJS
+- https://github.com/alist-org/alist /MIT > AGPL/go
   - 一个支持多存储的文件列表程序，基于 go-Gin 和 Solidjs。
   - 支持 国内外主流网盘
+  - SolidJS + Hope UI，已经停止维护
+  - https://github.com/AlistGo/alist-web
 
 - myDrive /2.8kStar/GPLv3/202012/前端js+后端ts/inactive
   - https://github.com/subnub/myDrive
@@ -117,10 +189,11 @@ modified: 2024-03-31T17:45:16.789Z
     - I can't think of a way where this can be done without a server. So this will probably break our policy of "your files stay with you and we don't access it".
     - Will need to research a bit on this about how this can be done without needing to have a server.
 
-- https://github.com/linagora/twake-drive /9Star/AGPLv3/202402/ts
+- https://github.com/linagora/twake-drive /9Star/AGPLv3/202505/ts/inactive
   - open-source alternative to Google Drive
   - 依赖mui.v4、antd、redux、fullcalendar、dnd-kit、draft-js、minimongo、fastify、rxjs、opensearch、amqplib、mongodb
   - rxjs用在event-bus、message-queue
+  - https://github.com/linagora/linshare /旧版
 
 - internxt-drive-web /78Star/AGPLv3/202403/ts
   - https://github.com/internxt/drive-web
@@ -145,43 +218,11 @@ modified: 2024-03-31T17:45:16.789Z
   - Upload and store files across multiple platforms.
   - Preview files such as images, videos, PDFs, etc.
 
-- https://github.com/filebrowser/filebrowser /apache2/202401/go/js/vue
-  - https://filebrowser.org/
-  - https://demo.filebrowser.org/
-  - filebrowser provides a file managing interface within a specified directory and it can be used to upload, delete, preview, rename and edit your files. 
-  - It allows the creation of multiple users and each user can have its own directory.
-
-- https://github.com/pydio/cells /AGPLv3/202402/go/js
+- https://github.com/pydio/cells /2kStar/AGPLv3/202509/go/js
   - https://pydio.com/
   - the nextgen file sharing platform for organizations. 
   - It is a full rewrite of the Pydio project using the Go language following a micro-service architecture.
   - https://github.com/pydio/pydio-core /php/archived
-
-- https://github.com/suitenumerique/drive
-  - A collaborative file sharing and document management platform that scales. 
-  - Built with Django and React.
-
-- https://github.com/opencloud-eu/opencloud /1.9kStar/apache2/202507/go
-  - https://opencloud.eu/
-  - This the main repository of the OpenCloud server. It contains the golang codebase for the backend services.
-  - 🛢️ The OpenCloud backend does not use a database. It stores all data in the filesystem. By default, the root directory of the backend is `$HOME/.opencloud/`.
-  - The OpenCloud backend authenticates users via OpenID Connect using either an external IdP like Keycloak or the embedded LibreGraph Connect identity provider.
-  - https://github.com/opencloud-eu/web /112Star/AGPL/202507/ts/vue
-    - Web UI for OpenCloud built with Vue.js and TypeScript
-    - Files: Upload, download, search and manage files 
-    - Versioning: Saved the wrong version? We have the time machine you were looking for! Easily go back in time and restore older versions of your files.
-    - Share: Allow fine-grained access to files and whole folders directly with other users on your OpenCloud.
-    - Create links and share them with anyone in the world - optional password-protection available.
-    - Write: Edit your documents with the editor of your choice like Collabora, ONLYOFFICE or Microsoft Word and more.
-    - Extensible: OpenCloud Web is built as a platform that can be extended in the most developer friendly way.
-    - extension-sdk: Provides utilities for developing and integrating custom extensions
-    - runtime: Central place of (user) authentication, provisioning of the user interface layout, client side storage, routing, theming, dependencies and (sub)application handling
-  - https://github.com/opencloud-eu/web-extensions
-    - A collection of officially supported apps and extensions for OpenCloud Web
-    - web-app-draw-io
-    - web-app-json-viewer
-    - web-app-importer
-    - web-app-unzip
 
 - https://github.com/mgilangjanuar/teledrive /GPLv3/202310/ts
   - open source Google Drive/OneDrive/iCloud/Dropbox alternative using Telegram API for the free unlimited cloud storage.
@@ -203,10 +244,25 @@ modified: 2024-03-31T17:45:16.789Z
   - 文件打包下载
   - 基于用户/组的权限控制
 
-- https://github.com/haiwen/seafile /AGPLv3/202402/c
+- https://github.com/haiwen/seafile /13.6kStar/AGPLv3 > GPLv2/202402/c
   - http://seafile.com/
   - open source cloud storage system with privacy protection and teamwork features. 
+
+- https://github.com/DioCrafts/OxiCloud /1.8kStar/MIT/202506/rust/js
+  - A lightweight, Rust-powered alternative to NextCloud
+  - Lightweight: Minimal resource requirements compared to PHP-based alternatives
+  - Simple Setup: Get running with minimal configuration
+  - Responsive UI: Clean, fast interface that works well on both desktop and mobile
+  - Optimized Binary: Uses Link Time Optimization (LTO) for maximum performance
+  - PostgreSQL 13+ database, 512MB RAM minimum (1GB+ recommended)
+  - I built OxiCloud because I wanted a simpler, faster file storage solution than existing options. After struggling with NextCloud's performance on my home server, I decided to create something that prioritizes speed and simplicity while still being robust enough for daily use.
 # cloud-drive-sync
+- https://github.com/syncthing/syncthing /75.9kStar/MPL/202509/go
+  - https://syncthing.net/
+  - Syncthing is a continuous file synchronization program. 
+  - It synchronizes files between two or more computers. 
+  - Safe From Data Loss: We take every reasonable precaution to avoid corrupting the user's files.
+
 - https://github.com/qiniu/kodo-browser /apache2/202406/ts
   - 为七牛对象存储（Kodo）提供类似 Windows 资源管理器的功能。用户可以很方便的浏览文件，上传下载文件，支持断点续传等。
   - 参考 阿里 OSS Browser 设计
@@ -306,10 +362,12 @@ modified: 2024-03-31T17:45:16.789Z
 - https://github.com/theoephraim/node-google-spreadsheet
   - Google Sheets API (v4) wrapper for Node.js
 # dropbox
-- https://github.com/mickael-kerjean/filestash /AGPLv3/202408/go/js
+- https://github.com/mickael-kerjean/filestash /12.6kStar/AGPLv3/202509/go/js
   - https://www.filestash.app/
   - A Dropbox-like file manager that let you manage your data anywhere it is located: FTP • FTPS • SFTP • WebDAV • Git • S3 • LDAP • Mysql CardDAV • CalDAV • Backblaze B2 • Minio Dropbox • Google Drive
   - Multiple cloud providers and protocols, easily extensible
+  - Extensible / Customisable / Hackable via a rich ecosystem of plugins
+  - 
 
 - https://github.com/psi-4ward/psitransfer /1.4kStar/BSD/202311/js/vue/inactive
   - Simple open source self-hosted file sharing solution.

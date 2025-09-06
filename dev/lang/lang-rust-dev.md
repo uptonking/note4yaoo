@@ -10,11 +10,13 @@ modified: 2022-11-11T06:57:09.670Z
 # guide 🦀
 
 - classic-examples-rust
-  - kilo-editor
+  - editor: kilo-editor
   - crdt
-  - rust-kv, terminusdb-store, git-like
-  - utils: persistent-data-structure, arrow
-  - toolchain: rspack/unplugin
+  - db: 🌹 turso, rust-kv, terminusdb-store, 
+  - git-like
+  - utils: mdx, mdBook/rustdoc, persistent-data-structure, arrow
+  - toolchain: rspack+unplugin
+  - ui: gpui(by zed)
   - more: wasm, json-parser, tree, kanban, remark
 
 - who is using #rust

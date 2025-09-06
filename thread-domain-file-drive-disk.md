@@ -23,6 +23,108 @@ modified: 2024-08-03T20:00:33.414Z
 - ## [File storage server alternative to Nextcloud : r/selfhosted _202403](https://www.reddit.com/r/selfhosted/comments/1bpqfkk/file_storage_server_alternative_to_nextcloud/)
 - I ended up with Tailscale to VPN back to my home, Samba to expose my storage on my network and Restic as my backup solution. The Finder app on MAC and Files app on iPhone are decent UI. This may not be fancy enough but get the job done for me.
 
+# discuss-dropbox/google-drive/onedrive-like
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [What's the Obsidian of file hosting/cloud storage? : r/selfhosted _202506](https://www.reddit.com/r/selfhosted/comments/1ljnsf9/whats_the_obsidian_of_file_hostingcloud_storage/)
+- NextCloud, OwnCloud both do this. Otherwise any WebDAV server (Caddy, Apache, KaraDAV etc) with WebDAV client of your choice.
+  - OpenCloud (recent fork of OCIS the GoLang rewrite of OwnCloud) is making thier Posix backend the default.
+  - It's just about perfect in my opinion, the only downside is it's not the easiest to configure, but has been very stable and lightweight in my experience.
+- OpenCloud has only been forked for a month or two. Give it time.
+
+- Opencloud stores everything as normal files on the filesystem, and includes Collabora for editing. I recently switched to it from Seafile and am happy with the change, quick and stable with a better UI.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
+- ## [Nextcloud Alternative : r/selfhosted _202412](https://www.reddit.com/r/selfhosted/comments/1hdixdv/nextcloud_alternative/)
+- Spun up Seafile, and using webdav for Obsidian.me
+
+- Why are you guys moving off of nextcloud? 
+  - It gets updated frequently but nothing ever changes, its slow and cumbersome
+
+- ownCloud Infinite Scale (OCIS) has been great for me. It's a rewrite of the original ownCloud in Go, and is much more lightweight. Been using it for a year now.
+
+- Have you tried Filebrowser? It's kind of barebones, but it's perfect for me.
+  - It's cool for the first sight, but it has some down sight s like: exposing your filesystem, a lot of little bugs, no 2FA, and GitHub auto closing issues.
+- There is no security layer between web browser of application user and filesystem.
+  - You specify which folders and subfolder it can use, as well as which user rights it operates during the docker setup.
+- 2FA is up to you to setup. Use Authelia or anything else as your proxy auth and pass the header of choice (username, email, ...). Filebrowser will match its value to the user in filebrowser
+
+- ## 🎯 [It's official: Filebrowser is dead, long live FileBrowser Quantum : r/selfhosted _202506](https://www.reddit.com/r/selfhosted/comments/1l92znc/its_official_filebrowser_is_dead_long_live/)
+- Been using Quantum for about a month now & it's so much better than the original. Tried other stuff like SFTPGo & others, but settled on filebrowser quantum. The indexing is insanely helpful for finding stuff. I know it's in beta, but it already feels feature complete.
+  - Only feature I can think I'd want is a preview for fonts, but that's literally it.
+
+- You can also disable indexing like this, but search won't work for anything you haven't "seen".
+
+- ## [[Request]: Lightweight cloud storage solution that isn't nextcloud? : r/selfhosted _202505](https://www.reddit.com/r/selfhosted/comments/1kgti6z/request_lightweight_cloud_storage_solution_that/)
+- If you need only basic file storage and sharing, I would recommend OpenCloud (a fork of ownCloud OCIS)
+- Why not using OwnCloud directly? What’s the point of forking something that works
+  - Because the core maintainer team also moved to opencloud so I would say that this is the new main tree of this product.
+
+- Does opencloud have a good syncing app for desktop?
+  - Released literally today
+
+- Take a look at the german fork OpenCloud, that is easy to install and very lightweight
+  - German fork sounds funny because Nextcloud is already a german fork of owncloud which itself started as german. 
+
+- Nextcloud is a hog when you add a lot of addons. Disable all addons you don't need, don't enable needless addons, and it becomes lightweight.
+  - But if you only need personal storage and access, https://github.com/sigoden/dufs is pretty good. It comes with webdav and a web interface for remote access.
+
+- ## [Please Share/Vote on your favorite self hosted Cloud File Share (Nextcloud, Owncloud, Seafile, etc) : r/selfhosted _202503](https://www.reddit.com/r/selfhosted/comments/1jab3wt/please_sharevote_on_your_favorite_self_hosted/)
+- SMB share + FileBrowser
+- What I settled on was simply adding tailscale to my devices, mounting `SMB` shares as a network drive on windows/Linux devices, and pointing `filebrowser` running on docker at the same SMB share to let me access the files through a browser on my android/iOS devices. So far it's been rock solid due to how uncomplicated it is.
+
+- OpenCloud - https://opencloud.eu/en - which has been created and forked by the original owner of OwnCloud who has now left OwnCloud 
+
+- I don't like the proprietary file format of seafile.
+
+- I've been messing with Cryptpad lately, and the standard install has a Cryptdrive
+
+- ## [I am done with Nextcloud & Owncloud hello FileBrowser. : r/selfhosted _202312](https://www.reddit.com/r/selfhosted/comments/18ema7z/i_am_done_with_nextcloud_owncloud_hello/)
+- Filebrowser is great. I'm sure Nextcloud is right for some people, but to me it always felt incredibly slow and bloated. My only gripe with Filebrowser is the mobile interface. 
+
+- it's a file browser so you can share the same folder to Windows or MacOS with SMB.
+
+- I love that it doesn't encrypt your files - I just want the ability to throw files onto my home server at any time and in any place.
+
+- Seafile here.
+  - The biggest limitation is the non-standard file storage format, that makes backup (e.g. via BorgBackup / Kopia) and interplay with other apps (e.g. PhotoPrism / Paperless / Immich) a real pain.
+
+- Im now switching to it, but only missing feature for me would be user stroage quotas
+
+- ## [Selfhosted alternatives for Dropbox : r/selfhosted _202307](https://www.reddit.com/r/selfhosted/comments/151clya/selfhosted_alternatives_for_dropbox/)
+- I've been using Seafile on docker for years, ~75gb in sync across 7 libraries. Only issue I've ever had was a "too many files to sync" error that was fixed with a config line to increase the default and it synced right back up. Still stupid fast compared to NC/OC's sync over WebDAV.
+
+- I'll just give my two cents on filebrowser: 
+  - I've been using it for the past few months as a solution to my gf's and I's holiday pictures. 
+  - It's incredibly lightweight and simple, however, I find the UI difficult to manage. 
+  - Browsing long lists of files, it won't remember where you were and it doesn't keep sort and view preferences per folder. 
+  - Uploading multiple files and large files is really buggy over WiFi: as in, they will upload, but the UI won't actually respond so you don't know where you are in your upload progress, then you get back to the folder and your view preferences have reset. It's incredibly frustrating.
+
+- ## [Looking for a self-hosted alternative to OneDrive/Google Drive/Dropbox : r/selfhosted _202408](https://www.reddit.com/r/selfhosted/comments/1ezuu39/looking_for_a_selfhosted_alternative_to/)
+- Google drive alternative is Seafile. Install docker instance on home server. Just like Google drive, it has clients for Android, iPhone and PC. All sync & files are available anywhere you go.
+  - Another option is Next cloud but it's slow.
+  - Third option is OIDC, own cloud based file storage/sync.
+  - For photos, look at immich (similar to google photos but self hosted)
+- Been using Seafile for so many years. Phone (auto-sync photos), Linux, Windows, Mac. Great piece of self-hosted software
+
+- 🐛 Seafile has (had?) a proprietary file organization, if it breaks you wont able to repair it or export your data, as said in othet comments. Try filebrowser or filerun or nextcloud. I wrote proprietary filesystem, is has a proprietary file organization in a db or something like it. By the way it could be problem I dont want to face.
+  - Yeah, this is why I usually recommend OwnCloud or NextCloud. I am not comfortable with an abstracted file system that relies on a database to make sense. If something goes wrong with my OwnCloud install, I can just copy files out of the individual user folders, and recreate it. I can also back it up and get files out of the backup without restoring the entire SeaFile instance.
+
+- Worth noting that "Nextcloud being slow" is solved by used Nextcloud AIO (a setup that uses docker containers). This is my current setup and I've been loving it.
 # discuss
 - ## 
 

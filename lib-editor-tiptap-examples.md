@@ -176,6 +176,11 @@ modified: 2023-02-05T19:03:27.730Z
 
 - https://github.com/Tzng/allahbin-tiptap /MIT/202507/ts
   - 基于tiptap配置的一个用于国内公文的编辑器
+
+- https://github.com/fileverse/fileverse-ddoc /89Star/NALic/202509/ts
+  - https://fileverse-ddoc.vercel.app/
+  - ddocs.new is your onchain, privacy-first alternative to G*gle Dcs: peer-to-peer, end-to-end encrypted, and decentralized. 
+  - 依赖yjs
 # tiptap-editors
 - dante3 /1.7kStar/MIT/202208/js
   - https://github.com/michelson/Dante

@@ -10,9 +10,11 @@ modified: 2020-07-14T09:27:30.503Z
 # guide 🐍
 
 - classic-examples-python
-  - jupyter
+  - editor: lasuite-docs, jupyter(framework)
   - crdt
+  - ai: 🌹 langgraph
   - git-like
+  - apps: Docling
   - more: flask, superset, json-parser, tree
 
 - who is using #python

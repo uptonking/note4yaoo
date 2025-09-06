@@ -250,7 +250,7 @@ modified: 2022-06-03T21:34:54.893Z
   - https://www.dootask.com/
   - 轻量级的开源在线项目任务管理工具，提供各类文档协作工具、在线思维导图、在线流程图、项目管理、任务分发、即时IM，文件管理等工具。
 
-- https://github.com/mintterteam/mintter /go/ts
+- https://github.com/mintterteam/mintter /168Star/apache2/202412/go/ts/archived
   - https://mintter.com/
   - a decentralized knowledge collaboration application for open communities powered by a knowledge graph.
 
@@ -350,12 +350,6 @@ modified: 2022-06-03T21:34:54.893Z
   - [use orm like https://entgo.io/ instead of writing sqls manually _202401](https://github.com/usememos/memos/issues/2849)
     - currently, memos support sqlite, mysql, postgresql, but writing target sql separately, we could use orm, like entgo.io to simplify the db logic and get rid of manually written sql.
     - Although it's a bit more complicated to write SQL for each driver, but the execution/migration will be open and transparent. IMO, I think writing raw SQL is better then using ORM.
-
-- https://github.com/infobsmi/bsmi-kb
-  - https://kb.bsmi.info/
-  - 后端依赖 go
-  - 样式过于简单
-  - 这个项目诞生的原始驱动，是因为对“语雀” 知识库的不满。一直不喜欢语雀的目录，发布流程。
 
 - pervane /200Star/MIT/202205/js/python
   - https://github.com/hakanu/pervane
@@ -619,12 +613,6 @@ modified: 2022-06-03T21:34:54.893Z
 - https://github.com/elastic/app-search-kb-demo /202005/js/inactive
   - A beautiful, modern customer support/knowledge base search experience for App Search using Search UI.
   - If you wish to test the full stack build locally, you have to boot all the required services (Elasticsearch, App Search)
-
-- https://github.com/MintterHypermedia/mintter /apache2/202403/go/ts
-  - https://mintter.com/
-  - a decentralized knowledge collaboration application for open communities powered by a knowledge graph.
-  - Powered by the Hypermedia protocol 自定义协议
-  - Mintter supports the new Hypermedia Web Protocol. This open protocol supports secure identities, version control, semantic documents, multimedia, and groups/organizations.
 # vscode-powered
 - foam /15.6kStar/MIT/202411/ts/inactive
   - https://github.com/foambubble/foam
