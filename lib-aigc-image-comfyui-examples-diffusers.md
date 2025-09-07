@@ -314,6 +314,8 @@ modified: 2025-08-23T11:43:35.904Z
   - Workflow Rewriting：Optimizes the current workflow based on your description, such as adjusting parameters, adding nodes, and improving logic.
   - Enhanced Workflow Generation：Understands your requirements more accurately and generates tailored workflows
   - Upgraded Agent Architecture：Now aware of your local ComfyUI environment, Copilot delivers optimized, personalized solutions.
+  - [ComfyUI-Copilot 实现原理 · Pines-Cheng/blog _202507](https://github.com/Pines-Cheng/blog/issues/127)
+    - ❓ 只开源了前端
   - [Local AI model _202502](https://github.com/AIDC-AI/ComfyUI-Copilot/issues/12)
     - 👷20250827: Now you can use your local LLAMA, and any fuction, like workflow generation, node suggestion, model suggestion are supported with local LLM now. 
   - [Please add local Ai model support (no internet connection required) _202504](https://github.com/AIDC-AI/ComfyUI-Copilot/issues/57)

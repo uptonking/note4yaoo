@@ -18,6 +18,15 @@ modified: 2025-03-22T16:10:24.856Z
 - ai-dev-xp
   - 难复现好的效果，同样的prompt+context，有时输出的效果就是不好
 
+- ai相对于搜索引擎的优势 🌹
+  - ai能推理和计算, 分析复杂问题，给出更准确的方案
+  - 能通过tool-call使用工具
+  - 对多语言支持很好
+
+- local-ai-challenges 🐛
+  - 运行大模型需要较多硬件资源，如GPU/CPU/RAM
+  - 本地模型的api很多通过gui如ollama/LMStudio提供，需要适配，同时不同GPU在默认token数、RAG处理方式上有差异
+
 - agent-ipc
 
 - markdown-stream

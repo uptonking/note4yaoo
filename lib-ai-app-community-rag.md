@@ -15,10 +15,27 @@ modified: 2024-09-08T20:08:16.088Z
   - rag的实现还可以参考ai-coding中的实践和模式
   - 针对表格excel/脑图的rag
   - ⏳ 多版本文件的rag
+
+- leaderboard-rag
+  - [MTEB Leaderboard - a Hugging Face Space by mteb](https://huggingface.co/spaces/mteb/leaderboard)
 # discuss-stars
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Using LMStudio for RAG/File Search with LibreChat? · danny-avila/LibreChat _202506](https://github.com/danny-avila/LibreChat/discussions/7713)
+  - I run LibreChat locally inside Docker, I run local models in LMStudio, and want to use LMStudio's nomic (or otherwise) embedding capabilities instead of an external provider like OpenAI.
+  - (A) i want to do it for free/private locally, and B ) especially because when I tested file upload directly within LMStudio [using its RAG] it correctly pulled all text from the PDF, but when I used OpenAI cloud embedding it missed a huge chunk of the text—perhaps because the API version uses a text-only embedding model without vision
+- UPDATE / SOLUTION:
+  - Making a copy of the config.py file in my LibreChat root folder and pointing the compose-override to it did solve the problem and allowed me to use the openai embeddings with LMStudio. I seconded the feature request to make this an easy option for people to opt into
+
+- been down that rabbit hole too, and yep: this kind of embedding mismatch + RAG retrieval chaos is super common when things try to speak in different tensor dialects.
+  - the error from LMStudio (input field must be a string or array of strings) usually hits when the upstream retrieval returns a raw int list or malformed embedding body. 
+  - i eventually got tired of patching these one by one and built a semantic rescue engine that stabilizes the entire pipeline.
 
 - ## 🤔 [RAG（检索增强生成）会不会消亡呢？一旦大模型的Context Length变大，RAG还有存活的必要吗？ - 知乎](https://www.zhihu.com/question/637421964)
 - RAG 的基本原理并不复杂：
@@ -105,7 +122,90 @@ modified: 2024-09-08T20:08:16.088Z
 - ## 📌 A list of software that allows searching the web with the assistance of AI.
 - https://x.com/tom_doerr/status/1856778512612667838
 
+# discuss-rag-local
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Embedding With LM Studio - what am i doing wrong : r/LocalLLaMA _202506](https://www.reddit.com/r/LocalLLaMA/comments/1lharbh/embedding_with_lm_studio_what_am_i_doing_wrong/)
+  - "text-embedding-nomic-embed-text-v1.5" loads fine and works with Anything.
+  - but text-embedding-qwen3-embedding-0.6b & 8B and any other Embed model i use i get the below error: Failed to load embedding model
+
+- SOLVED
+  - LM Studio was defaulting to 4096 Tokens where as the model can only handle 1024. Same goes for AnythingLLM , that defaults to 8192 tokens. set everything to 1024 and now its working
+
+- Your "SOLVED" update is wrong. I ended up on this post after also having memory allocation issues with Qwen3 embedding models. 
+  - The "1024" value you are quoting is the number of output dimensions of the model that clients would use to interpret results. You don't set that anywhere in LM Studio.
+  - all you did by lowering the context length to 1024 tokens is reduce memory usage enough to fix your issue. You also made the output quality worse. Your clients will have to make more requests for more chunks for indexing since the model only accepts 1024 tokens at a time. This will in turn increase the number of vector entries that need to be stored.
+
+- I had to "Override Domain Type" to Text Embedding to get it to work my computer (Models -> settings gear -> bottom setting). Not sure what else to try if you've already done that.
+  - yep, did forget to mention that i tried both configurations
+
+- try using any model you have as an embedder. It works just fine.
+
+- ## [What Embedding Models Are You Using For RAG? : r/LocalLLaMA _202312](https://www.reddit.com/r/LocalLLaMA/comments/18j39qt/what_embedding_models_are_you_using_for_rag/)
+- For RAG, I have been using multilingual minilm model from HF hub (I have multiligual requirement), and qdrant vector database. Happy with both. Specially, minilm embeddings are 368 dims, so some space saving there as well.
+
+- Chinese embedding models and llms are now the top performers. Qwen-1.5B Yi-34B gte-large bge-large
+
+- I chose the most lightweight stack possible— using all-MiniLM-L6-v2 for embeddings and HyperDB for local storage/retrieval (this is super fast for <100k documents)
+
+- I am currently using all-MiniLM-L6-v2 but responses are generally not that good my data size is almost 600mb and it is giving me not that good results, what kind of embedding should i choose considering the size of data and database of pgvector postgres
+
+- What Embedding model is best for Text-To-SQL for Financial data? Currently I'm using OpenAIEmbeddings
+  - Text-to-SQL is a sequence to sequence task. My very first thought was "zero shot learning" because I have done this successfully in other domains. 
+
+- I use whatever models are on top 1-5 on the MTEB leaderboard and run my custom evaluation 
+# discuss-rag-tips/tricks
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [RAG over Database : r/LangChain _202407](https://www.reddit.com/r/LangChain/comments/1efnx5u/rag_over_database/)
+  - I have been trying to build a RAG over a database that has mulitple tables. Often times, for a user query, the data has to be searched by joining multiple tables. I followed this approach as mentioned in Langchain documents.
+  - What I am observing is that many times the query generated by LLM is not correct and the data that user wants is incorrect. 
+
+- Try to make all the joins yourself in the form of view and provide a simple view for the LLM
+
+- dont use joins. use views or make stored procs to call for summaries etc you want.
+
+- I would use the traditional RAG-based approach more in cases when the knowledge base is made of documents instead of structured data.
+# discuss-rag-db
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Best Vector Database for RAG : r/vectordatabase _202501](https://www.reddit.com/r/vectordatabase/comments/1hzovpy/best_vector_database_for_rag/)
+- All vector databases work well for RAG. The selection of a vector database usually depends on your preference: cloud based vs self-hosted, open source vs private, programming languages / clients, API access, already part of SQL etc.
+- Some common ones are (not in any order, I'm not affiliated with any):
+  - Pinecone: private, cloud based, very popular
+  - pgvector: Postres vector search extension, useful if you have already data in Postgres.
+  - Faiss: A library for efficient similarity search and clustering of dense vectors.
+  - Qdrant: Open source vector search engine written in Rust.
+  - Chroma: Yet another vector database
+  - Milvus: An open-source similarity search engine for embedding vectors.
+  - Weaviate: Open source vector database written in Go.
+
+- Pgvector because it is part of Postgres. In the end Vectors are just a data type in a databases. If you only need vectoring and not SQL then it is better to look search engine that does that I think.
+  - PGVector, is like PostGIS for geospatial ops, an extension for Postgre to support vector search, it is not a true vector-native DB, so it adds operational overhead and lacks advanced features that a vector DB provides. 
+
+- Quadrant, it's a vector DB designed specifically for RAG/AI workflows. It offers advanced filtering features (multi-tenancy) that are natively baked-in into its core architecture. These features would require more legwork using other data stores like Redis etc...
+- FAISS: great for vector search is not really a DB, it's a lib and not a true DB
 # discuss
+- ## 
+
 - ## 
 
 - ## 

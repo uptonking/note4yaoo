@@ -13,6 +13,7 @@ modified: 2025-08-11T08:46:16.962Z
   - license: MIT
   - low-level primitives provide the flexibility needed to create fully customizable agents: single, multi-agent, hierarchical
   - 官方提供了多种语言实现: python/js
+  - 文档丰富、示例多
   - Human-in-the-loop: Seamlessly incorporate human oversight by inspecting and modifying agent state at any point during execution
   - memories: stateful agents with both short-term working memory for ongoing reasoning and long-term persistent memory across sessions.
 

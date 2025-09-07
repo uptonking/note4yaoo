@@ -11,7 +11,7 @@ modified: 2023-08-28T06:08:27.303Z
 - classic-examples-golang
   - office: focalboard
   - crdt
-  - git-like: 🌹 gitea, git-lfs, dolt
+  - git-like: 🌹 gitea, git-lfs, dolt, zoekt(code-search)
   - flomo-like: usememos, 
   - cloud-drive: 🌹 opencloud-be+filebrowser-web, minio
   - monitoring: openreplay

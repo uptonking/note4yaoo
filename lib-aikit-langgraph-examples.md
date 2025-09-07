@@ -9,6 +9,8 @@ modified: 2025-08-11T08:47:56.335Z
 
 # guide
 
+- resources
+  - [langgraph Examples](https://langchain-ai.github.io/langgraph/examples/)
 # popular
 - https://github.com/google-gemini/gemini-fullstack-langgraph-quickstart /apache2/202506/python/ts
   - Get started with building Fullstack Agents using Gemini 2.5 and LangGraph

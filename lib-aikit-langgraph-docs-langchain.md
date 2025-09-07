@@ -18,8 +18,18 @@ modified: 2025-09-05T07:18:34.805Z
   - `langserve`: A package to deploy LangChain chains as REST APIs
 # docs-v1.0
 
-# docs-v0.x
+# docs-v0.x-langchanjs
+- LLMs aren’t perfect at generating structured output, especially as schemas become complex. 
+  - You can avoid raising exceptions and handle the raw output yourself by passing `includeRaw: true`. 
 
+- You can also create a custom prompt and parser with LangChain Expression Language (LCEL), using a plain function to parse the output from the model
+
+- 
+- 
+- 
+- 
+
+# docs-v0.x
 - Why LangChain?
   - Standardized component interfaces: a standard interface for key components, making it easy to switch between providers.
   - Orchestration: Complex control flow, Human-in-the-loop

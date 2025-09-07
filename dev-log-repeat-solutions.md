@@ -236,6 +236,7 @@ modified: 2021-07-20T13:50:23.433Z
 - functional: wangeditor, typewriter, tanstack-table
   - ?: dexie
   - date-fns
+  - feathersjs
 - 数据层: ivm-crsqlite/zero-sync
 
 ### solutions-cases 💡
@@ -333,6 +334,9 @@ modified: 2021-07-20T13:50:23.433Z
   - tanstack-table/virtual
   - slate-editor, wangEditor, editablejs
   - tiptap-editor, prosekit
+
+- 使用preact做前端也支持其他框架: 
+  - blocky-editor, tui.grid, gridjs, logicFlow, autocomplete
 # excel
 - tips
 

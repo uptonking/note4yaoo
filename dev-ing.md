@@ -16,25 +16,6 @@ https://meeting.tencent.com/p/9606972663
 #腾讯会议：960-697-2663
 
 # dev-summary
-- dev-starter
-  - css: open-props, glass-ui, 渐变字体
-  - patterns: react, typescript
-- list-grid-starter
-  - no sort/filter/group
-  - no reorder
-  - no column width resize
-  - custom cell renderer
-  - searchable
-  - virtualizable
-- list-grid-solutions
-  - checkbox
-  - draggable/reorder list
-  - fields menu - filter/groupable
-  - inline editing
-  - orm integration
-  - sortable-filterable-groupable-table
-  - dropdown-menu & tabs switcher
-- 产品日历组件: headless-date-picker
 - module/fwk/server: 灵活的tag/bookmark系统, cms, tables, bi
 - 编辑器参考
   - https://atlaskit.atlassian.com/packages/editor/editor-core
@@ -45,10 +26,6 @@ https://meeting.tencent.com/p/9606972663
   - more-editor
     - https://demo.grammarly.com/
 # dev-review
-- coding-tools
-  - https://denigma.app/#demo
-  - https://code-mentor.ai/
-  - [TypeScript to plain JavaScript](https://transform.tools/typescript-to-javascript)
 
 ```shell
 # delete all node_modules folders recursively
@@ -82,9 +59,8 @@ npx create-strapi@latest --ts --use-npm --git-init  --example --skip-cloud --ski
 vite --host 0.0.0.0 --port 8080
 serve -p 9000 --cors
 HOST=0.0.0.0 PORT=8080 react-scripts start
+next dev -H 0.0.0.0 -p 3000
 
-stt.message.channel().send('uResetTask')
-stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorithm')
 ```
 
 - dev-goals 不能在产品中检验的技术不玩，注意产品化
@@ -93,12 +69,8 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - collaboration, local-first database
   - flowchart/whiteboard/pdf/annotation/comment
   - 事项--截止日期(0730+休整)--重要性(hml/s1-s3)
-  - apps-wiki-knowledge-base--0904
-  - dashboard/webapp-template--0901
-  - ui: ariakit, zag/ark, radix-ui/base-ui, mantine
-  - apps: cms+crdt
 
-- deep into lib/fwk 书籍原理与代码实践要分开, 寻找深入debug的状态
+- deep into lib/fwk 书籍原理与代码实践要分开, 寻找深入debug的状态, learn-by-debug
   - 学习巩固: 实践练习 > 源码/示例 > 文档/论坛 > 社交分享
   - 不要从一个想法开始，而是从一个真正的问题开始
   - src-code, issues, pr, forks, extensions/alternatives
@@ -113,18 +85,6 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
 # dev-2025-方向+方法+时间
 - 👉🏻 output: 代码产出、产品落地、生态积累
 
-- cms 功能融合及模块化
-  - outline, strapi, undb, nocobase, 将undb的多维表格加入strapi-admin
-  - business-features, 盈利支持自身
-  - 不必执着于engine如db/excel-dataflow, 产品的形式大多cms
-- slate-wangeditor
-  - model, view, sync, collab
-  - slate-docs-examples
-  - general-editing-backend: ActionText, cms-payload
-- eg-pivot-views/focalboard
-  - table view
-  - kanban view, specification
-  - **结合tanstack-table的pivot和ospreadsheet的edit/architecture**
 - eg-tanstack-table-v8
   - [ ] 方便接入已有的外部数据源
   - [x] 内存数据: nedb, blinkdb
@@ -185,11 +145,6 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - branching与merge可在应用层实现
   - 多个branching可通过structural sharing共享数据结构
 
-- sqlite-web
-  - evolu(hlc+worker)
-  - absurd-sql-ts: read ArrayBuffer
-  - kikko
-
 - ui: headless-architecture
   - state + action: 参考autocomplete、search-ui
 - headless组件是否表明react将view与logic耦合在一起封装为component的思路是错误的?
@@ -215,7 +170,6 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - 将编辑器的计算密集部分的数据模型不使用普通json对象，而直接用类似数据库模型的设计
   - 为了性能，尽量不要直接读写持久化数据源，要使用缓存object pool
 
-- functional-codebase: slate, tanstack-table, feathersjs
 - why use es6 class
   - 运行时类型检查，instanceof
   - 既包含类型定义，又包含逻辑工具方法
@@ -229,19 +183,11 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
   - 不仅要保持编辑器内容和视图同步，还要保持选区和内容同步
   - 编辑器外部相关面板的协同产品较少，如评论
 
-- dev-later
-  - crdt tutorials
-  - 默认 last-write-win, 出现冲突时，提示用户选择版本
-  - 离屏渲染, keep-alive
-  - 分层渲染
-  - 测试文档系统未登录的流程和mock
-
-- [Scrum Poker Online - Free Tool for Planning Poker](https://www.scrumpoker-online.org/en/room/64881797/scrum-poker)
-
 ## ing
 
 - yaoo-proj
-  - codemirror-devtools
+  - prosemirror/codemirror + comfyui
+  - ~~codemirror-devtools~~
 
 - not-yet
   - ~~elmesque-editor~~, 基于immutable思想实现的编辑器大多采用redux/elm风格
@@ -258,110 +204,44 @@ stt.message.channel().send('uCmdK', 'script.mjs',1,1,'write a quick sort algorit
 
  
 
-```log
+```log //dev-xp
 
-console.log(';; task ', taskState, runningTaskAction, task?.task_steps)
-
-console.log(';; act-file-o ', currentOpenedActionId, shouldForceOpenFile, actionPath, currentFilePath)
-
-console.log(';; taskActions', currentActionId, path, store.cdePlay.enableDiffView(), currentAction, taskActions)
-console.log(';; open-diff ', enableDiffAnimation, store.cdePlay.enableDiffView(), store.cdeReplay.isMachinePaused())
-console.log(';; qryDiffSnap ', snapshotFrameResult)
-
-console.log(
-          ';; 📝 ',
-          filePath,
-          event.data?.revision,
-          store.file.latestRequestFilePath(),
-          Boolean(isFollow),
-          Boolean(event.data?.isRefresh),
-          Boolean(event.data?.isAfterWrite),
-          Boolean(isOtherUserOpened),
-          event,
-        );
-        
-^((?!(42\["heartbeat|resourceMonit|refreshXtermCols|42\["multiTerminal|42\["terminalStatus|42\["activeTerminal|42\["ragStatus|42\["initAiCodeInfo)).)*$
-
-^((?!(42\["heartbeat|resourceMonit|refreshXtermCols|42\["multiTerminal|42\["terminalStatus|42\["activeTerminal|42\["ragStatus|42\["initAiCodeInfo|42\["fileChange|42\["pullOTUpdates)).)*$
-
-^((?!(42\["heartbeat|resourceMonit|refreshXtermCols|42\["multiTerminal|42\["terminalStatus|42\["activeTerminal|42\["ragStatus|42\["initAiCodeInfo|42\["fileChange)).)*$
+console.log('; ; task ', taskState, runningTaskAction, task?.task_steps)
 
 ^((?!(42\["heartbeat|resourceMonit|refreshXtermCols)).)*$
 ^(?!42\["resourceMonit).* 
 
 /syncUpdates|syncOTUpdates/
 
-<!-- 观测云搜索 ide-server -->
--multiTerminalHeartBeat -all\:multiTerminal -"[fromMQ] multiTerminal" -"[toMQ]paas:multiTerminal" -"] multiTerminal, {" -all\:activeTerminal -"] activeTerminal, {"  -"[toMQ]paas:multiTerminalCmd" -"[fromMQ] terminalStatus" -"appendMultiTerminalProcessName res" -"appendMultiTerminalCmdReply res" -all\:multiTerminalProcessName -all\:multiTerminalCmdReply -all\:initAiCodeInfo -"[fromMQ] lspStatus" -all\:lspStatus -all\:updateDebugSupport -all\:availablePorts -"[fromMQ] portsChanged" -"[fromMQ] availablePorts" -"availablePorts, {}" -"[fromMQ] ragStatus" -"] ragStatus data: [" -"all:ragStatus" -"[fromMQ] vncStatus" -"[fromMQ] config" -"[followingFocusComponent]"
-
--"toMQ fileContentUpdate begin" -"[toMQ]paas:filePull"  
--agentAppendFile -"[FileTree_writeFile] fs.writeFile prepared" -"[FileTree_writeFile] success"
-
-<!-- 观测云搜索 frontend -->
--chunkMessage -richMessage -messageSuggestion -toolCallStatusUpdated
 ```
 
-```log
+```log //ai
+
+- when did deepseek v3.1 model release?
+- when did qwen3-coder model release?
 
 - what's the weather in guangzhou china? give me some food and outdoor-activities suggestions according to weather temperature
 
-- lawn
+- image-lawn
   - a big park for resting and relaxing, there are little trees around a big lawn, some birds are resting in the lawn, The lawn and the trees around it both need pruning
 
-- prompts-logo-excel-like
+- image-logo-excel-like
   - create a product logo for my excel-like webapp, 
   - the logo brand color should be like green/teal/indigo/..., or any good color that giving a cold and formal feeling, 
   - the logo should express rows or columns or grid, but logo should not be complicated,
 
 add action to add datetime at top of readme.md
 
-add an action to run "npm install -ddd" and another action to add datetime at top of readme.md
-
-add action to create a route /nextjs with nextjs changelog content in it , and show nextjs link in home page, when clicking the link, jump to /nextjs route
-
 add action to create quickSort1.mjs and try to implement quick sort algorithm in less than 60 lines
 
 <!-- 🛝 -->
-use create-react-app to create a react-router v6 example webapp in typescript: homepage shows a list of frontend frameworks like react/vue/angular, when clicking the framework, navigate to the route to show its introduction
+use vanilla html/css/javascript to create a simplistic personal profile landing page: homepage shows a big welcoming greeting, then shows 2 example personal projects, then a simple get in touch example email below it
 
 use vanilla html/css/javascript to create a personal profile landing page: homepage shows a cool welcoming animation, then shows 4 example personal projects, then a simple get in touch form below it
 
-use vanilla html/css/javascript to create a simplistic personal profile landing page: homepage shows a big welcoming greeting, then shows 2 example personal projects, then a simple get in touch example email below it
+use react to create a homepage shows a list of frontend frameworks like react/vue/angular, when clicking the framework, navigate to the route to show its introduction
 
-- line 290 in file  is not tested, please write unit tests to test it
-- line 160-174, 181-185 in file apps/webapp/src/utils/paas-playground.ts
- is not tested, please write unit tests to test it
-
-- ensure tests pass by auto run terminal commands  npx nx run webapp:test  src/__tests__/hooks/use-time-machine.test.tsx
-- ensure tests pass by auto run terminal commands  npx nx run shared-utils:test __tests__/env-browser.test.ts
-
-- ensure tests pass by auto run terminal commands  cd packages/client && pnpm test  src/lib/codemirror-languageserver/src/__tests__/utils.spec.ts
-
-- ensure tests pass by auto run terminal commands cd packages/server && pnpm test apps/entry/__tests__/fileUtils.spec.ts
-
-- you can mock state/store/data/websocket/external-dependencies, especially you can refer to this test file apps/webapp/src/__tests__/components/chat-box/action-panel.test.tsx to mock store/useTrackedStore/actions
-
-- you can mock state/store/data/external-dependencies/modules, especially you can refer to this test file apps/webapp/src/__tests__/components/cde-header/run-status-button.test.tsx to mock store/useTrackedStore/actions
-
-- you can use jest and @testing-library/react, 
-- Each unit test should be independent of other tests. Avoid sharing state or dependencies between tests by using beforeEach/beforeAll/afterEach/afterAll
-- you had better write only in test files and not modify original source code
-
-- Handle asynchronous code correctly 
-
-- 👾
-- tests failed, run test command again and fix issues
-- yes, auto fix issues to make tests pass, donnot ask me again
-- you can mock codemirror-related packages, like @codemirror/view
-- you only need to test  line  715-732 , donnot write tests for more lines
-
-test('mock test', () => {
-  expect(true).toBe(true);
-});
 ```
-
-- dev-to 💡✨🤔
-  - MCP的原理，及调用LSP的技术方案
 
 ## 0905
 
@@ -422,7 +302,7 @@ curl http://localhost:1234/v1/chat/completions \
   - 如果 JSON 较复杂，考虑使用 `Heredoc` 或临时文件来避免 Shell 转义问题
 
 ```sh
-# 💡 echo后的内容可以直接copy执行
+# 💡 echo后的内容可以直接copy执行 ✅
 # solution A
 echo curl http://localhost:1234/v1/chat/completions \
   -H "Content-Type: application/json" \
@@ -573,6 +453,114 @@ rm -rf ~/.codeium/database/9c0694567290725d9dcba14ade58e297
   - 更换你使用的vpn节点，登录手机版的Telegram X，然后验证码会发送到你的电脑版Telegram上面，输入即可登录手机版。
   - 核心问题就是你的vpn节点有问题了，比如协议不完整，或者以ipv6为优先等情况。
 # dev-07-pullOTUpdates/syncOTUpdates-editor-flickering-&-vscode-hover-marked-&-lasuite-local-dev-&-ollama-comfyui
+
+```log //com-showmebug/clacky
+
+console.log('; ; task ', taskState, runningTaskAction, task?.task_steps)
+
+console.log('; ; act-file-o ', currentOpenedActionId, shouldForceOpenFile, actionPath, currentFilePath)
+
+console.log('; ; taskActions', currentActionId, path, store.cdePlay.enableDiffView(), currentAction, taskActions)
+console.log('; ; open-diff ', enableDiffAnimation, store.cdePlay.enableDiffView(), store.cdeReplay.isMachinePaused())
+console.log('; ; qryDiffSnap ', snapshotFrameResult)
+
+console.log(
+
+          ';; 📝 ',
+          filePath,
+          event.data?.revision,
+          store.file.latestRequestFilePath(),
+          Boolean(isFollow),
+          Boolean(event.data?.isRefresh),
+          Boolean(event.data?.isAfterWrite),
+          Boolean(isOtherUserOpened),
+          event,
+        );
+        
+
+^((?!(42\["heartbeat|resourceMonit|refreshXtermCols|42\["multiTerminal|42\["terminalStatus|42\["activeTerminal|42\["ragStatus|42\["initAiCodeInfo)).)*$
+
+^((?!(42\["heartbeat|resourceMonit|refreshXtermCols|42\["multiTerminal|42\["terminalStatus|42\["activeTerminal|42\["ragStatus|42\["initAiCodeInfo|42\["fileChange|42\["pullOTUpdates)).)*$
+
+^((?!(42\["heartbeat|resourceMonit|refreshXtermCols|42\["multiTerminal|42\["terminalStatus|42\["activeTerminal|42\["ragStatus|42\["initAiCodeInfo|42\["fileChange)).)*$
+
+^((?!(42\["heartbeat|resourceMonit|refreshXtermCols)).)*$
+^(?!42\["resourceMonit).* 
+
+/syncUpdates|syncOTUpdates/
+
+<!-- 观测云搜索 ide-server -->
+-multiTerminalHeartBeat -all\:multiTerminal -"[fromMQ] multiTerminal" -"[toMQ]paas:multiTerminal" -"] multiTerminal, {" -all\:activeTerminal -"] activeTerminal, {"  -"[toMQ]paas:multiTerminalCmd" -"[fromMQ] terminalStatus" -"appendMultiTerminalProcessName res" -"appendMultiTerminalCmdReply res" -all\:multiTerminalProcessName -all\:multiTerminalCmdReply -all\:initAiCodeInfo -"[fromMQ] lspStatus" -all\:lspStatus -all\:updateDebugSupport -all\:availablePorts -"[fromMQ] portsChanged" -"[fromMQ] availablePorts" -"availablePorts, {}" -"[fromMQ] ragStatus" -"] ragStatus data: [" -"all:ragStatus" -"[fromMQ] vncStatus" -"[fromMQ] config" -"[followingFocusComponent]"
+
+-"toMQ fileContentUpdate begin" -"[toMQ]paas:filePull"  
+-agentAppendFile -"[FileTree_writeFile] fs.writeFile prepared" -"[FileTree_writeFile] success"
+
+<!-- 观测云搜索 frontend -->
+-chunkMessage -richMessage -messageSuggestion -toolCallStatusUpdated
+
+```
+
+```log //ai
+
+- when did deepseek v3.1 model release?
+- when did qwen3-coder model release?
+
+- what's the weather in guangzhou china? give me some food and outdoor-activities suggestions according to weather temperature
+
+- lawn
+  - a big park for resting and relaxing, there are little trees around a big lawn, some birds are resting in the lawn, The lawn and the trees around it both need pruning
+
+- prompts-logo-excel-like
+  - create a product logo for my excel-like webapp, 
+  - the logo brand color should be like green/teal/indigo/..., or any good color that giving a cold and formal feeling, 
+  - the logo should express rows or columns or grid, but logo should not be complicated,
+
+add action to add datetime at top of readme.md
+
+add an action to run "npm install -ddd" and another action to add datetime at top of readme.md
+
+add action to create a route /nextjs with nextjs changelog content in it , and show nextjs link in home page, when clicking the link, jump to /nextjs route
+
+add action to create quickSort1.mjs and try to implement quick sort algorithm in less than 60 lines
+
+<!-- 🛝 -->
+use create-react-app to create a react-router v6 example webapp in typescript: homepage shows a list of frontend frameworks like react/vue/angular, when clicking the framework, navigate to the route to show its introduction
+
+use vanilla html/css/javascript to create a personal profile landing page: homepage shows a cool welcoming animation, then shows 4 example personal projects, then a simple get in touch form below it
+
+use vanilla html/css/javascript to create a simplistic personal profile landing page: homepage shows a big welcoming greeting, then shows 2 example personal projects, then a simple get in touch example email below it
+
+- line 290 in file  is not tested, please write unit tests to test it
+- line 160-174, 181-185 in file apps/webapp/src/utils/paas-playground.ts
+ is not tested, please write unit tests to test it
+
+- ensure tests pass by auto run terminal commands  npx nx run webapp:test  src/__tests__/hooks/use-time-machine.test.tsx
+- ensure tests pass by auto run terminal commands  npx nx run shared-utils:test __tests__/env-browser.test.ts
+
+- ensure tests pass by auto run terminal commands  cd packages/client && pnpm test  src/lib/codemirror-languageserver/src/__tests__/utils.spec.ts
+
+- ensure tests pass by auto run terminal commands cd packages/server && pnpm test apps/entry/__tests__/fileUtils.spec.ts
+
+- you can mock state/store/data/websocket/external-dependencies, especially you can refer to this test file apps/webapp/src/__tests__/components/chat-box/action-panel.test.tsx to mock store/useTrackedStore/actions
+
+- you can mock state/store/data/external-dependencies/modules, especially you can refer to this test file apps/webapp/src/__tests__/components/cde-header/run-status-button.test.tsx to mock store/useTrackedStore/actions
+
+- you can use jest and @testing-library/react, 
+- Each unit test should be independent of other tests. Avoid sharing state or dependencies between tests by using beforeEach/beforeAll/afterEach/afterAll
+- you had better write only in test files and not modify original source code
+
+- Handle asynchronous code correctly 
+
+- 👾
+- tests failed, run test command again and fix issues
+- yes, auto fix issues to make tests pass, donnot ask me again
+- you can mock codemirror-related packages, like @codemirror/view
+- you only need to test  line  715-732 , donnot write tests for more lines
+
+test('mock test', () => {
+  expect(true).toBe(true);
+});
+```
 
 ## 0731
 

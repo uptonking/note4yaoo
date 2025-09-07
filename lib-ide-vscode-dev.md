@@ -58,10 +58,13 @@ modified: 2024-08-24T16:15:11.456Z
   - wiki: prosemirror/tiptap
   - hocuspocus/typefox collab for file-tree/tabs
   - version-history for wiki/editor with ai commits messages
+  - github-like search for vscode
+
+- roadmap
   - file/data-provider, 还可参考社区提供的另一种思路editor+mock-vscode-api
+  - ripgrep for database
   - ext: comfyui
   - ui-skin as extension
-  - github-like search for vscode
 
 - vscode提供了electron和web模式，未提供纯前端模式
   - vscode mobile

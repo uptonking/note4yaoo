@@ -275,6 +275,16 @@ modified: 2024-08-24T16:30:20.218Z
   - You need an underscore `lm_studio/...` in the prefix
   - `aider --model lm_studio/<your-model-name>`
 
+- https://github.com/shareAI-lab/Kode /2.2kStar/apache2/202509/ts
+  - Like Claude Code, but Koding with DeepSeek V3.1, Kimi2, GLM4.5, Qwen Coder etc.
+  - Kode proudly supports the `AGENTS.md` standard protocol initiated by OpenAI - a simple, open format for guiding programming agents that's used by 20k+ open source projects.
+  - Subagent System - Advanced agent delegation and task orchestration
+  - Security Notice: Kode runs in YOLO mode by default (equivalent to Claude's `--dangerously-skip-permissions` flag), bypassing all permission checks for maximum productivity.
+  - https://github.com/shareAI-lab/analysis_claude_code
+    - 本仓库包含对 Claude Code v1.0.33 进行逆向工程的完整研究和分析资料。包括对混淆源代码的深度技术分析、系统架构文档，以及重构 Claude Code agent 系统的实现蓝图。
+    - 源复现版会在这里发布 Kode
+    - 项目包含超过 50,000 行混淆代码 的分析结果，覆盖了从UI交互到Agent核心引擎的完整技术栈
+
 - https://github.com/anthropics/claude-code /202506/NonOpen
   - https://docs.anthropic.com/s/claude-code
   - an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster
@@ -352,6 +362,17 @@ modified: 2024-08-24T16:30:20.218Z
   - http://brackets.io/
   - a modern open-source code editor for HTML, CSS and JavaScript that's built in HTML, CSS and JavaScript.
 # code-search
+- https://github.com/BurntSushi/ripgrep /55.1kStar/MIT/202507/rust
+  - ripgrep recursively searches directories for a regex pattern while respecting your gitignore
+  - ripgrep is a line-oriented search tool that recursively searches the current directory for a regex pattern. 
+  - By default, ripgrep will respect gitignore rules and automatically skip hidden files/directories and binary files.
+  - ripgrep has first class support on Windows, macOS and Linux, with binary downloads available 
+  - https://github.com/microsoft/ripgrep-prebuilt /MIT
+    - Builds ripgrep on Azure Pipelines for multiple platforms, used by VS Code.
+  - https://github.com/microsoft/vscode-ripgrep /MIT/js
+    - This is an npm module for using ripgrep in a Node project. It's used by VS Code.
+    - In this module's `postinstall` task, it determines which platform it is being installed on and downloads the correct binary from `ripgrep-prebuilt` for the platform.
+
 - https://github.com/sourcebot-dev/sourcebot /1.9kStar/MIT+EE/202505/ts
   - https://sourcebot.dev/
   - a fast code indexing and search tool for your codebases. 

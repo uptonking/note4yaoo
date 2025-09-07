@@ -222,3 +222,4 @@ modified: 2025-08-11T08:47:32.124Z
   - The execution proceeds in a loop
   - The execution loop stops when there are no more nodes to run (ie. after comparing channels with their subscriptions we find all nodes have seen the most recent version of their subscribed channels), or when we run out of iteration steps (a constant the developer can set).
 # more
+- 🌰 [ReAct agent from scratch with Gemini 2.5 and LangGraph  |  Gemini API  |  Google AI for Developers](https://ai.google.dev/gemini-api/docs/langgraph-example)

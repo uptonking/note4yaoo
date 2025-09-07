@@ -10,7 +10,7 @@ modified: 2022-11-11T06:57:09.670Z
 # guide 🦀
 
 - classic-examples-rust
-  - editor: kilo-editor
+  - editor: kilo-editor, treesitter, ripgrep
   - crdt
   - db: 🌹 turso, rust-kv, terminusdb-store, 
   - git-like
