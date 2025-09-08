@@ -18,6 +18,9 @@ modified: 2024-09-08T20:08:16.088Z
 
 - leaderboard-rag
   - [MTEB Leaderboard - a Hugging Face Space by mteb](https://huggingface.co/spaces/mteb/leaderboard)
+
+- resources
+  - [RAG+AI工作流+Agent：LLM框架该如何选择，全面对比MaxKB、Dify、FastGPT、RagFlow、Anything-LLM, 以及更多推荐 - 知乎 _202407](https://zhuanlan.zhihu.com/p/711761781)
 # discuss-stars
 - ## 
 
@@ -115,6 +118,25 @@ modified: 2024-09-08T20:08:16.088Z
 # discuss-solutions
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [I've been noticing more and more people are using GraphRAG instead of embedding and vector databases...is it really helpful or just the hype? : r/LangChain _202507](https://www.reddit.com/r/LangChain/comments/1e66e9r/graphrag/)
+- Been working with graphrag on my current project. It is good, but it has its fallbacks. The good thing is that you can model you data to preserve relations. 
+- The bad thing is:
+  - you rely on your LLM to create queries based on your question to the answer. Lots of times the query created is pure shit, even with the most advanced models.
+  - It gets really expensive. Like really expensive. Imagine that for every document you're storing in your graphDB you need to pass it to a LLM so it can extract the content and create relations so you can store it on your DB.
+
+- If you ask me, people just follow the trends without understanding whether their application really needs something (eg GraphRAG here). 
+
+- This is all basically more of a hype I would say. Why? Because you can use your own database that handles multiple data types and construct a knowledge graph. The knowledge graph basically shows the entity relationship between different nodes and this can be easily fed into your databases as tables and then, using retrieval methods, you can easily retrieve the most relevant chunk and the relationship score. 
+  - I mean, the specialise databases like vector databases or even graph databases are really hyped, your own databases whether it is MongoDB, SingleStore, MariaDB, or even Couchbase can easily help you with creating graph knowledge and store them and then retrieve whenever required.
+
+- how GraphRAG works with existing graphs, meaning if I already have entities and relationships, how would I load this graph in GraphRAG? 
+
 - ## 有没有想过将自己的代码库打包然后直接塞给大语言模型来处理？也许你会想到用RAG或者用windsurf或cursor。现在有了更简单的办法——Repomix
 - https://x.com/karminski3/status/1881150047276138689
   - 这个库可将整个存储库打包到一个 AI 友好的文件中，方便给大语言模型使用。
@@ -210,7 +232,12 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## 🆚 [Does anyone know how much of a performance difference between knowledge graphs and vector based searches? : r/LangChain _202408](https://www.reddit.com/r/LangChain/comments/1eragqk/does_anyone_know_how_much_of_a_performance/)
+  - I made a pretty simple vector based RAG search, and it performs "okay" and doesn't always generate the expected results. I have the pieces for a knowledge graph, but I was wondering if people knew the expected improvements that I should expect to see by moving to knowledge graphs?
+
+- Vector search alone is usually faster. Without any bells and whistles like metadata filtering or stepback, it's just an optimized KNN. 
+  - Graph based RAG involves traversing a graph in addition to searching for the appropriate starting node, which often times is a done via vector search. 
+  - The graph structure usually leads to good results though.
 
 - ## LobeChat v1.85.0 优化了对话上传文件的逻辑，把大家呼声比较高的全文上传的能力做好了，不再走 分块 + embedding 的朴素 RAG 。带来的好处是速度变快了，效果也更加理想了。
 - https://x.com/arvin17x/status/1921101310004179082

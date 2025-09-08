@@ -184,7 +184,37 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## 🆚 [关于几个桌面级的AI统一内存集成方案的对比 - 知乎 _202503](https://zhuanlan.zhihu.com/p/31599083340)
+- 目前桌面级别的AI方案，除了nv的独显外，还有几个统一内存的集成方案
+  - 苹果Mac mini和Mac studio
+  - AMD AI 395 MAX
+  - 英伟达 DGX Spark
+
+- 带宽 ：(❓推理/部署时重要)
+  - m4pro 64G 和nv dgx spark 128G都是 273 GB/s
+  - amd AI 395 max+128G 是            256 GB/s
+  - m3ultra 96G是                     400 GB/s (m3u无128G，256G以上才有800GB/s)
+  - m4max 128G 是                     546 GB/s
+
+- AI算力：(❓训练时重要)
+  - nv dgx spark是  1000 TOPS (FP4)
+  - amd AI395max是  126 TOPS（int4）
+  - m3ultra是       72 TOPS(int4)
+  - m4max和m4pro都是 38 TOPS(int4)
+
+- 价格：
+  - nv dgx spark  3000 美元（估计23000人民币？）
+  - amd ai395max  25999 人民币
+  - m3ultra 96G   32999 人民币
+  - m4max 128G    29249 人民币
+  - m4pro 64G+1T  16999 人民币
+
+- 综合看来如果性价比和通用性比较好的选择应该是nv DGX Spark（生图，生视频之类的算力比带宽更重要），
+  - 如果单纯为了LLM性能（统一内存带宽比算力更重要）m3ultra 96G 可能是比较好的选择。
+- 至于之前有看到的一些用mac mini通过雷电口堆叠的虽然可以低成本做到大显存，但是几乎没啥实用价值，因为雷电口带宽只有15GB/s。。。
+  - 雷电堆叠是为了低延迟跑tensor parallelism吧，又不是remote访问内存。PCIE带宽也不如内存，但多卡并行还是有效的
+
+- 现在网上ai max 395的小主机已经卖到14000左右了，这样比下来，感觉ai max 395性价比还不错。
 
 - ## [如何评价售价 18999 元的惠普暗影精灵 MAX 游戏本? 哪些亮点值得关注? - 知乎 _202503](https://www.zhihu.com/question/15023061538/answers/updated)
 - 暗影精灵MAX这个新模具就用来取代暗影精灵Plus的，依然是主打一个“一线品牌中的性价比”定位。
@@ -388,6 +418,7 @@ modified: 2022-01-16T15:52:31.293Z
 
 # discuss-gpu
 - tips-gpu
+  - 主力工具不要用AMD的CPU/GPU, 因为linux需要特殊配置, 部分软件也需要特殊配置如pytorch
   - 显存、带宽、位宽
   - nvlink
   - ai: 支持int4、fp8、fp4，不能用nanchaku加速, 支持flash- attention、bf16、awq、sglang

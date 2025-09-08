@@ -33,6 +33,26 @@ modified: 2025-08-11T08:47:32.124Z
 
 # docs
 
+- 
+- 
+
+- LangGraph supports multiple invocation modes, including sync, async, and streaming.
+
+- [Build a Retrieval Augmented Generation (RAG) App: Part 1 | LangChain](https://python.langchain.com/docs/tutorials/rag/)
+- To use LangGraph, we need to define three things:
+  - The state of our application; 
+  - The nodes of our application (i.e., application steps); 
+  - The "control flow" of our application (e.g., the ordering of the steps).
+- The state of our application controls what data is input to the application, transferred between steps, and output by the application. 
+  - It is typically a TypedDict, but can also be a Pydantic BaseModel.
+
+- 
+- 
+- 
+- 
+- 
+- 
+
 # blogs
 
 ## [LangGraph 的 内存/记忆 机制总结 - 知乎](https://zhuanlan.zhihu.com/p/1915604388443031303)

@@ -34,6 +34,10 @@ modified: 2023-02-08T10:46:26.912Z
   - 若要给没有license文件的repo添加license，直接本地上传一个即可
   - 若要给已有license文件的repo修改license，修改后可能github显示不出来，可以先删除再上传新的
 
+- branch
+  - https://github.com/xgysigned/NETCoreProject/activity 
+    - 这个ui可以看到所有branch的最新commit，但看起来不直观
+
 ## ranking/leaderboard
 
 - https://github.com/EvanLi/Github-Ranking /MIT/202503/python/样式简陋
