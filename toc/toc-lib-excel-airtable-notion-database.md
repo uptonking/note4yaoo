@@ -205,7 +205,7 @@ modified: 2022-08-21T10:02:05.129Z
     - Word and Excel are distinct tools, and different types of data should have separate containers. I don't want to mix them up just to fit the concept of 'everything is x'. When you have a lot of CSV/Excel files, you definitely don't want to create a markdown document for every row.
     - Actually, my initial goal was to build an offline Airtable/Notion database. I would focus more on the tables.
 
-- teable /80Star/AGPLv3/202403/ts
+- teable /19.5kStar/AGPLv3-app+MIT-pkg/202509/ts
   - https://github.com/teableio/teable
   - https://teable.io/
   - https://app.teable.io/share/shrVgdLiOvNQABtW0yX/view
@@ -217,6 +217,8 @@ modified: 2022-08-21T10:02:05.129Z
   - 后端数据库操作，table/record/view相关用的knex，user/view相关用的prisma
   - Formula Support: Input mathematical and logical formulas to auto-calculate values.
   - Aggregation Function: Automatically summarize statistics for each column, providing instant calculations like sum, average, count, max, and min for streamlined data analysis.
+  - Teable now has support for versioned records and it is growing well in the past. 
+    - In contrast to Grist, it is fast by default, as it uses PostgreSQL and not SQLite-on-S3.
   - Multiple Views
     - Grid
     - Form
@@ -234,6 +236,8 @@ modified: 2022-08-21T10:02:05.129Z
   - https://github.com/teableio/airtable2teable /MIT/202311/ts
     - https://teable.io/
     - The data pipeline from airtable to teable.
+  - 📝 [[Plugin] Block editor view _202408](https://github.com/teableio/teable/issues/829)
+    - [Markdown Document Field _202412](https://github.com/teableio/teable/issues/1137)
 
 - nocobase /3.7kStar/apache2(core)🌹 > AGPL/202404/ts
   - https://github.com/nocobase/nocobase

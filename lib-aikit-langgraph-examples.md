@@ -197,6 +197,9 @@ modified: 2025-08-11T08:47:56.335Z
   - a visual editor for langgraph workflow. 
   - It is based on litegraph.js as its workflow engine (the same as ComfyUI). You can add, remove, and layout different nodes as you wish, get the workflow as you wish.
 # starter
+- https://github.com/tyl-paul-lapczynski/learn-langgraph /202506/jupyter
+  - learn-langgraph with local lm studio following docs
+
 - https://github.com/langchain-ai/new-langgraph-project /MIT/202508/python
   - This template demonstrates a simple application implemented using LangGraph, designed for showing how to get started with LangGraph Server and using LangGraph Studio, a visual debugging IDE.
   - https://github.com/langchain-ai/new-langgraphjs-project /MIT/202506/ts

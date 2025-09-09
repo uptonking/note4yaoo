@@ -217,6 +217,8 @@ console.log('; ; task ', taskState, runningTaskAction, task?.task_steps)
 
 ```log //ai
 
+- give an brief intro to reactjs in less than 90 words
+
 - when did deepseek v3.1 model release?
 - when did qwen3-coder model release?
 
@@ -242,6 +244,23 @@ use vanilla html/css/javascript to create a personal profile landing page: homep
 use react to create a homepage shows a list of frontend frameworks like react/vue/angular, when clicking the framework, navigate to the route to show its introduction
 
 ```
+
+## 0910
+
+- `q4ks` and `q4km` are shorthand for the specific GGUF (Georgi Gerganov Universal Format) quantization applied to the model.
+  - q4: This indicates that the model has been quantized to 4-bit precision. Quantization is a process that reduces the memory footprint and computational cost of a model by representing its weights with fewer bits.
+  - k: This refers to the "k-quant" method. It's a more advanced quantization technique compared to older legacy methods.
+- "s" for small and "m" for medium, denote the specific variant of the k-quant method used. The primary difference between them lies in how they handle different layers within the neural network. 
+  - The `q4_k_m` version typically uses a higher precision (like 6-bit) for some of the more important layers of the model, such as the attention and feed-forward network layers, while the rest of the layers are quantized to 4-bit.
+  - In contrast, the `q4_k_s` version is more uniformly quantized to 4-bit across all layers, making it slightly smaller but with a greater potential for quality degradation.
+  - `q4_k_m` is generally the superior choice as it offers a better-balanced quantization, preserving more of the model's original accuracy and reasoning capabilities
+
+## 0909
+
+- what does zero-shot mean in the text embedding model leaderboard below?
+  - On the Massive Text Embedding Benchmark (MTEB) leaderboard, the term "zero-shot" refers to a model's ability to perform tasks on datasets it has not been explicitly trained on. It serves as a crucial indicator of a model's true generalization capabilities, moving beyond performance on familiar data.
+  - In general, zero-shot learning refers to a model's ability to handle tasks involving categories or classes it hasn't seen during training—without requiring additional task-specific fine-tuning or labeled examples
+  - In MTEB, "zero-shot" indicates the model is being assessed on tasks that it hasn’t been fine-tuned for.
 
 ## 0905
 

@@ -99,6 +99,20 @@ modified: 2025-09-01T07:58:29.058Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🤔 [Best coding model for 12gb VRAM and 32gb of RAM? : r/LocalLLM _202509](https://www.reddit.com/r/LocalLLM/comments/1n7fn2t/best_coding_model_for_12gb_vram_and_32gb_of_ram/)
+- when i tried qwen coder 30b with lm studio it was reaaaallly slow, if u find a way to optimize it let us know or maybe it's lm studio the problem
+  - When I use chat directly in LM Studio with Qwen 3 coder 30b, it’s quite fast! I’m on RTX 3060 12Gb. However, when I hook it up to VS Code, via Continue plugin, it becomes a tad bit slow but still fine. Then, when I switch it to agent mode it just becomes unusable. 
+- Switching to `Llama Server` feels like night and day for me. When I was using LM Studio, I tried everything, but it was mostly very slow.
+
+- I've got 12tps on a single 5060ti on the same Qwen3-Coder-30B-A3B-Instruct-Q6_K model but with much smaller context 16K
+
+- Don't go beyond 100k context window with these as they're useless above it, as I have them as daily drivers with capacity to run full context.
+  - Alternatively balanced, yet faster, you have GPT-OSS-20B from Unsloth. Either quants will work due to how it was optimised, just choose one you can fit. Even with offloading it's an efficient performer.
+
 - ## [Is it true that all tools like Cline/Copilot Agent/Roo Code/Windsurf/Claude Code/Cursor are roughly the same thing? : r/ChatGPTCoding _202505](https://www.reddit.com/r/ChatGPTCoding/comments/1kumywl/is_it_true_that_all_tools_like_clinecopilot/)
 - Yes - it’s essentially a big prompt (32k context window) and their tools. There is no magic except some have different workflows
   - Different models, better or worse at what to put in the context, RAG approaches…but yeah it’s generally the same.
@@ -142,7 +156,8 @@ modified: 2025-09-01T07:58:29.058Z
 
 - ## 
 
-- ## 
+- ## [Best really lightweight coding model for very basic questions? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1n9faly/best_really_lightweight_coding_model_for_very/)
+- Gpt oss 20b or qwen 30b a3b 2507 (thinking version), these aren't just coding models but they do well at coding and run fast on a CPU with enough system ram.
 
 - ## [It's here guys and qwen nailed it !! : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1m6qkse/its_here_guys_and_qwen_nailed_it/)
 - on this chart Devstral Small really seems like the efficiency winner. Big numbers for a relatively small model. 

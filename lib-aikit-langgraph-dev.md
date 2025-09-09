@@ -52,4 +52,5 @@ modified: 2025-08-11T08:46:16.962Z
 
 # dev-xp
 
+- 使用 `while True: graph.stream` 相关的逻辑测试时，注意死循环
 # more

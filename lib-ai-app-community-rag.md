@@ -18,7 +18,8 @@ modified: 2024-09-08T20:08:16.088Z
 
 - leaderboard-rag
   - [MTEB Leaderboard - a Hugging Face Space by mteb](https://huggingface.co/spaces/mteb/leaderboard)
-
+    - https://github.com/embeddings-benchmark/mteb
+    - top202509: gemini-embedding-001, embeddinggemma-300m, Qwen3-Embedding-8B/4B/0.6B, linq-mistral, jina, granite, nomic
 - resources
   - [RAG+AI工作流+Agent：LLM框架该如何选择，全面对比MaxKB、Dify、FastGPT、RagFlow、Anything-LLM, 以及更多推荐 - 知乎 _202407](https://zhuanlan.zhihu.com/p/711761781)
 # discuss-stars
@@ -151,9 +152,9 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## [Embedding With LM Studio - what am i doing wrong : r/LocalLLaMA _202506](https://www.reddit.com/r/LocalLLaMA/comments/1lharbh/embedding_with_lm_studio_what_am_i_doing_wrong/)
+- ## 💡 [Embedding With LM Studio - what am i doing wrong : r/LocalLLaMA _202506](https://www.reddit.com/r/LocalLLaMA/comments/1lharbh/embedding_with_lm_studio_what_am_i_doing_wrong/)
   - "text-embedding-nomic-embed-text-v1.5" loads fine and works with Anything.
-  - but text-embedding-qwen3-embedding-0.6b & 8B and any other Embed model i use i get the below error: Failed to load embedding model
+  - but text-embedding-qwen3-embedding-0.6b & 8B and any other Embed model i use i get the below error: Failed to load embedding model. Internal error: Failed to initialize the context: failed to allocate compute pp buffers
 
 - SOLVED
   - LM Studio was defaulting to 4096 Tokens where as the model can only handle 1024. Same goes for AnythingLLM , that defaults to 8192 tokens. set everything to 1024 and now its working

@@ -73,8 +73,10 @@ modified: 2025-03-22T16:10:24.856Z
   - playground
   - dataset
 
-- workflow
-  - Zapier and n8n help to an extent, but they’re not designed for multi-tenant SaaS. They’re great for internal workflows—not product infrastructure.
+- rag
+  - retrieval
+  - code retrieval
+  - text-matching
 
 - image-generator/editor
   - prompts: bg, person/object, text
@@ -83,7 +85,13 @@ modified: 2025-03-22T16:10:24.856Z
   - stream
   - 在线图片生成或编辑的架构, 涉及到模型下载与扩展下载，目前没有类似ollama的统一方案, 还涉及到GPU/CPU硬件支持，只有成熟方案才处理过相关问题
 
-- 
+- workflow
+  - Zapier and n8n help to an extent, but they’re not designed for multi-tenant SaaS. They’re great for internal workflows—not product infrastructure.
+
+- ideas
+  - parallel chats
+  - speed testing app for models
+
 - 
 - 
 - 

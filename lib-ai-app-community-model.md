@@ -292,7 +292,63 @@ modified: 2023-10-30T07:34:03.602Z
 - 
 - 
 
-# discuss-llama
+# discuss-llama.cpp
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🆚⚡️ [Performance of llama.cpp on Apple Silicon M-series · ggml-org/llama.cpp _202311](https://github.com/ggml-org/llama.cpp/discussions/4167)
+  - 提供了各种mac, air的模型测试数据
+
+# discuss-lmstudio-roadmap
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Qwen3 Models not Recognized as Embedding Types for MLX Format · Issue · lmstudio-ai/lmstudio-bug-tracker _202507](https://github.com/lmstudio-ai/lmstudio-bug-tracker/issues/808)
+  - Qwen3 models not recognized as embedding models in MLX format (but same models are ok in GGUF)
+
+- From what i can understand, while the chat models are using mlx as an inference engine, LMStudio would need to use a package like `mlx-embeddings` to properly handle MLX Embeddings, and integrate it in there LM Studio MLX Runtime.
+  - This would explain why the `Override Domain Type` option is not available for MLX: Only the 'LLMs' models are supported for mlx.
+- there is no support for mlx embeddings in LMStudio
+- The only workaround for now using LMStudio is to use the GGUF versions and take the performance hit
+
+- [[Models] Qwen3 Embedding shown as LLM instead of an embedding model · Issue · lmstudio-ai/lmstudio-bug-tracker](https://github.com/lmstudio-ai/lmstudio-bug-tracker/issues/696)
+
+- 
+
+# discuss-lmstudio
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+# discuss-ollama-roadmap
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [MLX backend · Issue · ollama/ollama _202312](https://github.com/ollama/ollama/issues/1730)
+- Add mlx-vlm backend also.
+
+- Lack of MLX support is the only reason I don't use Ollama. In some cases MLX Q8 is 20% faster than GGUF, and memory usage is better handled.
+
+- 📡 [Draft MLX go backend for new engine by dhiltgen · Pull Request · ollama/ollama _202502](https://github.com/ollama/ollama/pull/9118)
+# discuss-ollama
 
 ```sh
 # ollama原始的版本是并不兼容 OpenAI 格式的请求
@@ -426,6 +482,14 @@ curl http://localhost:11434/api/chat -d '{
 - sudo systemctl daemon-reload
 - sudo systemctl restart ollama
 # discuss-ai-api/tools
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## openrouter 是真方便，一个 Key 所有模型都能用。
