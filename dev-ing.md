@@ -245,6 +245,16 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
 
 ```
 
+## 0911
+
+- a ULID is 26 characters long. 
+  - The first 10 characters encode the timestamp (48-bit, milliseconds since Unix epoch) in Crockford Base32; Timestamp resolution: milliseconds.
+  - the remaining 16 characters are 80 bits of randomness/entropy. 
+  - Total bits: 128 bits = 48 bits timestamp + 80 bits randomness.
+  - That layout is what makes ULIDs both globally unique and lexicographically sortable by creation time.
+- 10 chars × 5 bits/char = 50 bits are used for the timestamp field (the top 2 bits are unused for typical 48-bit timestamps).
+  - Crockford Base32: 0123456789ABCDEFGHJKMNPQRSTVWXYZ (no I, L, O, U to avoid confusion). Case-insensitive, but uppercase is canonical.
+
 ## 0910
 
 - `q4ks` and `q4km` are shorthand for the specific GGUF (Georgi Gerganov Universal Format) quantization applied to the model.

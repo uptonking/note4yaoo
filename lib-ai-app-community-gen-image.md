@@ -310,6 +310,26 @@ modified: 2025-08-16T14:12:24.416Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [ComfyUI vs A1111 : r/StableDiffusion _202401](https://www.reddit.com/r/StableDiffusion/comments/191u7oh/comfyui_vs_a1111/)
+- Automatic1111 - all rounder, tons of extensions, lot of support and development, finicky when updated, uses more memory and extensions break. However, for ease of use when moving between tabs, it's unrivalled.
+- Comfy - Complex UI, great workflows, with more constantly being added. Node based architecture (you might or might not like it, it's another tool in the arsenal).
+
+- Fooocus is a studio made by the developer of ControlNet. in advanced mode it has many tools.
+
+- One of the biggest differences between A1111 and ComfyUI is that in A1111, you input the settings and execute with a single button, while in ComfyUI, it intricately breaks down and operates through various intermediate steps.
+  - Due to this feature, A1111 is straightforward, but ComfyUI allows user-level implementation of things that are only possible through new extensions in A1111. This is because ComfyUI can intervene in various intermediate processes, enabling adjustments at the workflow level.
+
+- Comfy is something in-between but with some serious limitations due to node based workflow and how it executes them. It lacks programmatic workflows, storage, branching, native execution prevention for non active branches and looping due to its design limits (there is a pr hoping to solve this). 
+  - Comfy has a ton of support from node developers who rapidly add features, like the old auto days. 
+
+- I started with A1111 but migrated to Comfy, it seemed very intimidating but it has better performance on low end machines. The best way for learning in my case was using existing flows, understanding what each node does and then customizing for my needs.
+
 - ## 🌰 [Type Experiments --- Controlnet and IPAdapter in ComfyUI : r/StableDiffusion _202404](https://www.reddit.com/r/StableDiffusion/comments/1cf6v29/type_experiments_controlnet_and_ipadapter_in/)
 - All you need is a cool font and written image as black font and white background. Thanks OP for this cool idea.
 
@@ -982,7 +1002,30 @@ Q8（8 位）	    16GB+	   接近原始版本
 - 一般情况：完整版（fp16）需要 24G 显存才能正常驾驭，阉割版（fp8）16G 就足够，nf4 版本 8-12G 显存可正常驾驭，
   - 而 gguf 格式量化的如最小的 Q2 版本 6G 显存也能够正常驾驭，而且由于 gguf 近期展现出强劲的技术发展，充分体现降低内存需求而质量更好的特点，黑暗森林官方开始全面支持，所以 nf4 的版本将逐渐淘汰。
 
-# discuss-anime
+# discuss-style-transfer
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [USO is now natively supported in ComfyUI. : r/StableDiffusion _202509](https://www.reddit.com/r/StableDiffusion/comments/1n8edmb/finally_uso_is_now_natively_supported_in_comfyui/)
+- The results work best for my use case in identity-preserving and style transfer; I think it’s sort of an all-in-one powerhouse that combines InstantID/IP-Adapter/DreamO/UNO.
+  - the samples are showcasing a new mixing feature: combining two style references and, in some cases, mixing a content reference with style refs. 
+  - USO is itself a lora.
+
+- can this replace Tencent-Hunyuan/InstantCharacter?
+  - This is way more powerful than InstantCharacter. I think character consistency is its comfort zone. 
+  - On top of that, it can do so much more, like placing a character/identity into any style from a reference image or a style prompt, and doing pure style transfer.
+
+- Is this like an IPadapter? I know it does style transfer, but how it differs from the ip adapters we have or Kontext?
+  - It’s like a combination—apart from handling standalone style transfer and identity preservation (similar to Pulid), it can also do things like "placing the character from your [identity image] in the style of your [style image]."
+
+- Is it as good as Qwen Image Edit though?
+  - I think the two complement each other: USO works better for style transfer and identity preservation, but it can’t handle things like local removal or addition.
+# discuss-anime/illustration
 - examples-anime
   - [Turn your photos into Studio Ghibli style in ComfyUI | Weird Wonderful AI Art _202504](https://weirdwonderfulai.art/comfyui/turn-your-photos-into-studio-ghibli-style-in-comfyui/)
   - [Illustrious XL's ComfyUI Beginner Workflow - v1.0-vpred | Illustrious Workflows | Civitai _202411](https://civitai.com/models/892447/illustrious-xls-comfyui-beginner-workflow)

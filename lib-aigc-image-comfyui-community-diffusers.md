@@ -398,7 +398,8 @@ problem is when software like InvokeAI or some else are using the diffusers form
 
 - ## 
 
-- ## 
+- ## [Do not use the Desktop version of ComfyUI if you want to test the newest models at launch. : r/StableDiffusion _202508](https://www.reddit.com/r/StableDiffusion/comments/1mv9h42/do_not_use_the_desktop_version_of_comfyui_if_you/)
+- I just run git pull inside of the ComfyUI dir inside my docker container 
 
 - ## [Proposal: Replacing aiohttp with FastAPI in ComfyUI Backend · comfyanonymous/ComfyUI _202412](https://github.com/comfyanonymous/ComfyUI/discussions/5931)
 - our team at Nextcloud—where we were considering offering ComfyUI to the community—has currently put that plan on hold until the situation improves.

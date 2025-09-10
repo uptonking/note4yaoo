@@ -22,7 +22,78 @@ modified: 2023-10-27T06:54:20.487Z
 - What you really want is a database where a query is the same things as an index, is the same thing as a subscription... These are all the same underlying mechanic.
 
 # discuss-id
+- who is using #uuid
+  - ?
+
+- who is using #ulid/cuid
+  - ?
+
+- who is using #nanoid
+  - planetscale
+
+- tips
+  - 建议使用 uuid/ulid + encoding-variant, 来实现 short/click-to-copy
+    - 数据库原生支持，编程语言支持多
+
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Option to remove dashes · Issue · uuidjs/uuid](https://github.com/uuidjs/uuid/issues/177)
+- to re-iterate: This library focuses on what's covered by RFC4122, we have no interest in supporting non-standard formats.
+- If you are looking for more compact unique identifiers to be used in URLs and don't need UUID compliance you could look into some of the alternatives:
+  - nanoid, ulid, cuid, flake-id
+  - The fact that some of these libraries use `base64` encoding instead of hex encoding allows them to encode the same amount of entropy in shorter strings which can be handy when storing & using IDs as opaque strings.
+
+- ## [Anyone use ULID in production? : r/PostgreSQL _202202](https://www.reddit.com/r/PostgreSQL/comments/sxbm0j/anyone_use_ulid_in_production/)
+- ulids can be decoded into a 128-bit representation, which you should then be able to store in Postgres using the native `uuid` type. You just have to handle the base32 encoding/decoding before talking to the database.
+- If you are open to similar solutions to ulid, another option is typeid which we recently open-sourced: https://github.com/jetpack-io/typeid
+  - It's a typed extension of the UUIDv7 standard which uses a similar base32 encoding to ulids. 
+  - It has implementations for several languages with functions that can encode to and from UUIDs (which you can then store natively in Postgres). 
+  - We even have a postgres example available https://github.com/jetpack-io/typeid-sql which shows how to do that, while enforcing type safety
+
+- I reviewed this at one point, and found it frustrating as all clients needed work to serialised correctly. In the end we went with the new draft UUID v6, which worked seamlessly.
+
+- ## [Which function do you recommend for generating session auth token? · uuidjs/uuid _202504](https://github.com/uuidjs/uuid/discussions/872)
+- All UUIDs are 32 bytes long.
+  - UUIDs are hex-encoded, not base32, per the specification.
+  - If you want a base32 id, then you should be looking elsewhere. E.g. nanoid or ulid
+  - v4 is random values only. No timestamp.
+
+- ## [UUID vs Cuid2 – do you ever consider how "smooth" an ID looks in a URL? : r/webdev _202505](https://www.reddit.com/r/webdev/comments/1khzg2l/uuid_vs_cuid2_do_you_ever_consider_how_smooth_an/)
+- UUIDs are great, and supportrd by many database systems natively, meaning you can set them as primary keys and let the DBMS take care of them generating them, and avoid collisions. 
+  - You can encode them however you like for display, even though I personally find the hex and hyphen represention to be aesthetically pleasant.
+  - I hope UUID evolves to support meaningful sorting, or that ULID displaces(取代; 代替; 移动) it.
+
+- You can also just encode your UUIDs in Base58 and take advantage of native UUIDs in Postgres and the like: https://www.npmjs.com/package/short-uuid
+
+- just use ULIDs for nicer looking, indexable IDs.
+  - UUIDv7 is indexable.
+
+- A UUID is 16 bytes, and you can represent these bytes with different encoding as your wish. Lower cased, hex, input numbers... 
+
+- RFC 9562 formally specifies the string representation for UUIDs.
+
+- In one of our latest products we’re encoding standard 128-bit UUIDv4 in base64url (RFC4648) without padding
+  - In this way the 16 bytes are encoded in only 22 characters instead of the standard 36 characters. 
+
+- I use base62 encoded uuids in my front facing... It's 22 bytes, url safe and you can easily double click to select on any OS. It can easily be converted to/from a uuid if there is a need. Tbh though it's not really that big of a deal since they aren't something that's manually typed normally..
+
+- UUID v7 in database because of time based indexing and base58 encoding for url representation. Base58 avoid ambiguous chars like I, l, 0, O making it good for human readability.
+
+- The only different variant of unique IDs I sometimes use is nanoid because they are a bit shorter and can be completely configured to your needs in terms of alphabet and collision change.
+
+- Why don’t people use Snowflake? looks nice (just number), smaller to store (bigint)
+
+- Cui2 serialization/deserialization support isn't worth it being "aesthetic" and the collision numbers are negligible either way.
+
+- I created a function that generates something similar to what stripe does. I have my default value for an order table set to generate_custome_id('ord', 'orders') and it will generate something like ord_71a4b9c.
+
+- Join on uuid is bad for performance. Use an internal id (int)
 
 - ## I might change all my blog post links to be numbered like /blog/123. 
 - https://x.com/pilcrowonpaper/status/1955617117396672559
@@ -197,6 +268,91 @@ modified: 2023-10-27T06:54:20.487Z
 - Why would you ever want to use UUID format, which only has 122 bits, versus just making a random 128 bit number? In which realistic scenario would simply reading 16 bytes from urandom not be fine and actually cause issues that removing 6 of those bits to identify the UUID type help?
   - AFAICT the only reason is that you need it for compatibility. If your variant and version fields aren't valid, you don't have a UUID anymore -- you have something else.
 - Sortability.
+
+- ## 🌰🤔 [We chose NanoIDs for PlanetScale’s API | Hacker News _202212](https://news.ycombinator.com/item?id=34172989)
+
+- I'm curious as to why they didn't decide on using UUIDs with the `-` stripped for URLs, and readding them for queries. It would accomplish the same goals wouldn't it?
+  - NanoIDs are shorter than UUIDs because they have a bigger alphabet. That's probably why.
+  - It's not very important for putting IDs in URL paths. But it can matter when using them in DNS subdomains because often there are surprisingly short max character lengths for domain names in e.g. LetsEncrypt SSL certs (iirc 63 characters)
+- The 63 character limit is in the DNS spec, not invented by Let's Encrypt.
+
+- The basic concept is that they just want to use a bigger alphabet to encode more information in fewer characters. The efficiency ratio of NanoID is log 36/log 16, or ~30% better since it has a bigger alphabet. You could get more if you went for instance with base 58 (includes uppercase, except I and O to remove ambiguity with the digits 1 and 0).
+
+- > This gives us a 1% probability of a collision in the next ~35 years if we are generating 1, 000 IDs per hour.
+  - Yes, but that's for 1, 000 IDs per hour. That is not a large workload. 
+- That's why there are no silver bullets. They have a problem (long IDs in links), they have a scenario (no more than 1000 entities, databases, I suppose, created every hour), and they found something simple that solves their problem under the requirements derived from their scenario. 
+
+- We should consider the following properties when evaluating ID formats and generation algorithms:
+  - 1. Private: you shouldn’t be able to gain information about the system using the IDs from an ID alone. E.g. document enumeration attacks like what happened with Parler (https://www.wired.com/story/parler-hack-data-public-posts-im...)
+  - 2. B-tree/cache friendly: newly created IDs should all exist in a narrow range of values. This is helpful for databases.
+  - 3. Stateless: ideally you shouldn’t need to know the current state of the system to create a new ID.
+  - 4. Human-friendly: IDs should be easily dictated, copied, pasted, etc. This means they should be encodable as text that is short and does not include ambiguous characters. Bonus points for error detection like with credit cards.
+  - Some of the these properties are in conflict. Statelessness is achieved by randomly generating long IDs, but people don’t like reading or typing long IDs.
+  - Different use cases will need these properties in varying amounts. If you don’t intend to expose the IDs to users, (4) doesn’t matter.
+- I think we can do better overall. Bitcoin uses a good encoding scheme called base58check. It generates fairly short strings and uses a checksum at the end. I think it could be refined for non-bitcoin purposes, but it’s already pretty good.
+
+- If you want pseudo-random counters for something that are guaranteed to not have collisions, consider using a "linear feedback shift register". 
+  - LFSRs allow you to choose the number of bits in your id, and "complete" LFSRs use a starting seed [+] value that guarantee they will exhaust the entire bit space before repeating.
+  - In distributed environments, you can assign different seeds to individual nodes, include the seed in the id, and guarantee no collisions across your entire network.
+
+- I wonder how this might compare to just storing regular autoincrementing ints in the database, and converting to/from hashids (https://hashids.org/) at the edge. 
+  - Those are not cryptographically secure. It would not be hard for someone to figure out how to decode it.
+  - Hashids is worse than you think, and should be treated as easily-reversed obfuscation only. It doesn’t encrypt IDs, but instead shuffles the alphabet.
+
+- Javascript random number generators don't let you choose an arbitrary range. 
+  - So if you have an alphabet of 26 characters (0-25) you would have to generate a random number by running: `crypto.getRandomValues(new Uint8Array(1))[0] % 32`; 
+  - And then filter out the value if it falls outside of your range (0-25).
+
+- ULID hits most of these, and can be converted to UUID for use with databases supporting this datatype (not a strong column)
+
+- 👥 [We Chose NanoIDs for PlanetScale's API | Hacker News _202203](https://news.ycombinator.com/item?id=30856703)
+- The post dismisses UUIDs because their default formatting uses hyphens and hex encoding (base16), but as other comments mention you can get UUIDs to be much shorter by encoding them in a different base. If you want to guarantee URL-safety and selection via double-click, use base62 (26 lower-case, 26 upper-case, 10 digits).
+  - This format also lets you attach a prefix with '_' so you can keep track of the semantic type of each ID. 
+  - This pattern is widely used by the Stripe API, and I've grown quite fond of it (so much easier to grep).
+  - url: `api.planetscale.com/v1/deploy-requests/deploy_60hNvkHrZykznfLaESuDBp`; 
+  - Additionally, within an in-memory value or a database, you probably want to store the decoded form of any ID. The value "deploy_60hNvkHrZykznfLaESuDBp" is 29 bytes long, but could be represented by `type DeployID byte[16]` for ~50% space savings and stronger type validation.
+
+- Can’t you just… remove the hyphens? UUIDs are just arrays of bytes, the hyphens are not part of the data.
+  - Nanoid are really great. It is a smarter uuid4 with variable size and alphabet. It is also a lot faster to generate.
+  - By definition, if you base62 or base64 your uuid4 it will be longer (30%?).
+  - But being able to determine the length of the resulting id is one of the greatest feature.
+
+- I’m surprised this would gain traction. UUIDs are much smaller when packed into bytes.
+  - Notion seems to use UUIDs without hyphens in their links, and it works just fine.
+
+- 👥 [Why we chose NanoIDs for PlanetScale's API | Lobsters _202204](https://lobste.rs/s/qmropg/why_we_chose_nanoids_for_planetscale_s_api)
+- the author seems to be treating UUIDs as more special than they really are. The type of UUID everyone uses is just a securely-random 128-bit number (with two(?) of the bits set to constant values to identify it as such) encoded in hex with a few hyphens.
+  - A nanoid is the same thing, just with control over the size and the alphabet used to encode it.
+- I recently discovered the d64 encoding, which is a modified base64 that avoids hyphens and = signs, and I’m using it in my current project.
+
+- UUIDs are 128 bit numbers; the 7cb776c5-8c12-4b1a-84aa-9941b815d873 form is one of many possible encodings. You’re not beholden to it! I’ve become quite fond of just plain old hex encoding, for example.
+  - Similarly, my company just base64url-encodes UUIDs. We store UUIDs in the database and encode them whenever we need the string representation.
+
+- We did something similar for very high speed stuff for NATS.io. https://github.com/nats-io/nuid
+
+- ## 📝 [Why we chose NanoIDs for PlanetScale’s API — PlanetScale _202203](https://planetscale.com/blog/why-we-chose-nanoids-for-planetscales-api)
+- When we were first building PlanetScale’s API, we needed to figure out what type of identifier we’d be using. 
+  - We knew that we wanted to avoid using integer IDs so that we wouldn’t reveal the count of records in all our tables.
+- The common solution to this problem is using a UUID (Universally Unique Identifier) instead. 
+  - UUIDs are great because it’s nearly impossible to generate a duplicate and they obscure your internal IDs. 
+  - They have one problem though. They take up a lot of space in a URL
+  - Try double clicking on that ID to select and copy it. You can’t
+
+- We decided that we wanted our IDs to be:
+  - Shorter than a UUID
+  - Easy to select with double clicking
+  - Low chance of collisions
+  - Easy to generate in multiple programming languages (we use Ruby and Go on our backend)
+- This led us to NanoID
+- NanoID generators are available in many languages.
+
+- An ID collision is when the same ID is generated twice. If this happens seldomly, it’s not a big deal. 
+  - The application can detect a collision, auto-generate a new ID, and move on.
+- In our case, we used the NanoID collision tool and decided to use 12 character long IDs with the alphabet of 0123456789abcdefghijklmnopqrstuvwxyz.
+  - This gives us a 1% probability of a collision in the next ~35 years if we are generating 1, 000 IDs per hour.
+  - If we ever need to increase this, the change would be as simple as increasing the length in our ID generator and updating our database schema to accept the new size.
+
+- Our API is a Ruby on Rails application. For all public-facing models, we have added a `public_id` column to our database. We still use standard auto-incrementing `BigInts` for our primary key. The `public_id` is only used as an external identifier.
 # discuss
 - ## 
 

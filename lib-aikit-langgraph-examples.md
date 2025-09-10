@@ -386,6 +386,16 @@ modified: 2025-08-11T08:47:56.335Z
   - Each fact is a "triplet" represented by two entities, or nodes ("Kendra", "Adidas shoes"), and their relationship, or edge ("loves"). 
   - Graphiti powers the core of Zep
 # utils/fwk
+- https://github.com/ibbybuilds/aegra /124Star/apache2/202509/python
+  - https://aegra.dev/
+  - Open source LangGraph Platform alternative - Self-hosted AI agent backend with FastAPI and PostgreSQL. 
+  - Zero vendor lock-in, full control over your agent infrastructure.
+  - Drop-in Replacement: Use existing LangGraph Client SDK, API Compatibile
+  - Custom auth: JWT/OAuth/Firebase/NoAuth
+  - Self-hosted LangGraph Platform alternative that actually lets you use real auth (Supabase, Firebase, whatever).
+  - Agent Protocol Compliant: Aegra implements the Agent Protocol specification, an open-source standard for serving LLM agents in production.
+  - Works seamlessly with LangChain's Agent Chat UI
+
 - https://github.com/langchain-ai/open-agent-platform /1.6kStar/MIT/202508/ts
   - https://oap.langchain.com/
   - open-source, no-code agent building platform.

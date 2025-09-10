@@ -219,7 +219,11 @@ redis-cli shutdown
 
 - ## 
 
-- ## 
+- ## [Please help me stop mediaanalysisd process because I'm losing my sanity : r/MacOS _202505](https://www.reddit.com/r/MacOS/comments/u17hsa/please_help_me_stop_mediaanalysisd_process/)
+- Try: killall -STOP mediaanalysisd mediaanalysisd-access
+  - This is the only one that worked for me, without disabling SIP. Huge thanks!
+
+- I recently had the same problem. Seems like it was fixed when I turned off siri.
 
 - ## [system data taking up all my storage, how do i fix this? : r/mac _202211](https://www.reddit.com/r/mac/comments/ynv4d0/system_data_taking_up_all_my_storage_how_do_i_fix/)
 

@@ -31,6 +31,8 @@ modified: 2025-09-01T07:58:29.058Z
 
 - ## 
 
+- ## 
+
 - ## [My experience trying out coding agents -- Qwen2.5-coder-tools/Sonnet 3.5 on Cline and Github Copilot agent mode : r/LocalLLaMA _202502](https://www.reddit.com/r/LocalLLaMA/comments/1ilza8m/my_experience_trying_out_coding_agents/)
   - trying out the preview copilot agent feature against cline using both a specialized version of Qwen2.5 through Cline and the Sonnet 3.5 (copilot API) through Cline and copilot
 
@@ -103,6 +105,65 @@ modified: 2025-09-01T07:58:29.058Z
 
 - ## 
 
+- ## [What do you use on 12GB vram? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nd1tqf/what_do_you_use_on_12gb_vram/)
+- Qwen3-coder-30B, qwen3-30b, gpt-oss-20b - you can keep the KV cache on GPU and offload MOE layers to CPU, and it will work reasonably fast on most modern systems.
+- And you can bring some of those MOE layers back to GPU to really fill out the VRAM, which will also provide a great boost overall. 
+  - Don't forget the `--batch-size` and `--ubatch-size` , make those 2048 or even bigger, which will provide much faster prompt processing but at additional VRAM cost which may require a compromise in context size, depending on what's most important. 
+  - I have a machine with 11GB VRAM and I can get it to about 65k context with 2048 ubatch/batch size for Qwen30b MOE. I get about 600 t/s PP and maybe like 15t/s generation, which isn't bad at all. I kept all MOE layers on CPU to get that context and ubatch up though.
+
+- ## [Just bought an M4-Pro MacBook Pro (48 GB unified RAM) and tested Qwen3-coder (30B). Any tips to squeeze max performance locally? : r/LocalLLM _202509](https://www.reddit.com/r/LocalLLM/comments/1naqdl5/just_bought_an_m4pro_macbook_pro_48_gb_unified/)
+- I use mlx with lm-studio. Look for DWQ mlx quants for best quality. Mlx will always be faster than a comparable gguf quant because it is native metal framework.
+
+- You might want to try the unsloth fine tune of Qwen 3. It might perform better on local devices.
+  - I’ve been digging into Unsloth’s fine-tune pipeline. Their Dynamic 2.0 quants deliver up to 2× speed, 70% less VRAM, and up to 8× larger context windows ! That makes running Qwen-3-Coder incredibly efficient on local machines like mine.
+
+- ## 💡 [Recommendation for getting the most out of Qwen3 Coder? : r/LocalLLM _202508](https://www.reddit.com/r/LocalLLM/comments/1mrzi5x/recommendation_for_getting_the_most_out_of_qwen3/)
+  - I was already running the model at the full context 262k with my setup. It was just slow. 
+  - Now I'm experimenting with different versions and settings to find the best compromise/trade-off. 
+  - Currently I'm testing `Qwen3-Coder-30B-A3B-Instruct-Q3_K_L.gguf` with 81k context, K/V Cache Quantization set to Q4_0 and I'm getting 110 tok/s at the start of the chat and still getting a rather respectable 40 tok/s with 55% of the available context used. I haven't done rigorous quality assessment on this yet though. It might be better than Quen2.5 Coder though.
+
+- The cause of the slowness is large context sent to the model, typically 10-20k at the beginning. Have you measured your prompt processing speed? Usually, the issue is solved with prefix caching, vLLM supports it, llama.cpp to some extent, ollama has troubles with it, and I don't know about LLM Studio. 
+  - K/V cache quantization Q4 may hurt model performance heavier then parameter quantization, I would not go lower Q8 for K/V cache.
+
+- Keep tasks under 100k context including prompt and output. Reset once you go about that to avoid hallucinations.
+
+- You may want to explore using Jupyter Notebook or JupyterLab with Qwen3 Coder. They offer integration with various coding languages and can handle larger scripts interactively.
+
+- My 5090 runs at only 25 tks/s speed with 256k context, so the slowdown is normal
+
+- ## 🤔 [Qwen3-Coder-480B Q2_K_XL same speed as Qwen3-235b-instruct Q3_K_XL WHY? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1n7ket1/qwen3coder480b_q2_k_xl_same_speed_as/)
+  - i am running two models and got unusual result of speed inference:
+  - Qwen3-235B-A22B-Instruct-2507-UD-Q3_K_XL.gguf - got 23-24 token/s for 104GB model size from Unsloth
+  - Qwen3-Coder-480B-A35B-Instruct-UD-Q2_K_XL.gguf - got 23-25 token/s for 180GB model size from Unsloth.
+
+- Nope this seems about right
+  - 22B @ 3bpw = ~8.25 GB of active parameters
+  - 35B @ 2bpw = ~8.75 GB of active parameters
+  - The ratios of the active / total parameters between Qwen 235B A22B and Qwen Coder 480B A35B changes such that coder requires less active parameters compared to its total size.
+
+- Something similar happens to me. I'm running gpt oss 120B f16 almost at the same speed as qwen coder 3 30B Q4 in 3xMi50 32gb. 
+  - GPT OSS 120B is 5.1B Active and natively Q4 even if youre running the fp16 weights. Qwen 3 Coder is 3B Active. OSS 120B will only be about ~20% slower aslong as you have enough vram to fit it so it doesnt have to fallback to system ram
+
+- ## [Qwen 3 30B a3b on a Intel NUC is impressive : r/LocalLLM _202509](https://www.reddit.com/r/LocalLLM/comments/1nbxkqh/qwen_3_30b_a3b_on_a_intel_nuc_is_impressive/)
+- These models you're running are MoE, which makes them more CPU friendly, resulting in an increase in performance, they are built for local hardware without much potency, so that is expected.
+  - I am running Qwen3-Coder-30B-A3B-Instruct-GGUF on 12vram and I can set 64k context window and I get 23t/s
+
+- the speed is because at any given time activated parameters are only 3.3b, so computationally it's not like a 30b model, this is a clever thing about moe models.
+
+- Also keep the Thinking and Coder models at hand. They could edge in situations where Instruct may not be able to solve.
+
+- ## [Why does Qwen3-30B-A3B-Instruct-2507 Q8_0 work on my machine and no others come close? : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1msy01r/why_does_qwen330ba3binstruct2507_q8_0_work_on_my/)
+  - I'm surprised that having a machine with 8GB of VRAM and 32GB of RAM can run this LLM. Slow, yes, but it runs and gives good answers. Why isn't there another one like it? Why not a DeepSeek R1, for example?
+
+- Because it's a MoE model, it's kinda like running a small model, during inference it first find which experts it should use and they're very small, it's quite different from running a dense model where it will go through all 30B params.
+  - If you want similar models, look for gpt-oss 20b, Ernie 21b, SmallThinker 21b, those are MoE models too.
+- MoE makes a huge difference. What I’ve noticed is that Qwen’s routing feels more efficient than a lot of other MoE setups, so even on low VRAM it doesn’t get bogged down as badly. Dense 30B models on the same hardware feel like night and day in comparison
+
+- Is there anything in the name that gives away that it's a MoE?
+  - yes the 30B is the total size, A3B = Active 3B, which means that only a part of model is active at time, like Qwen3 235B-A22B, but it's not a rule, gpt-oss 20B does not have it on the name, but if you search it's a 20B-A3.6B
+
+- Dense 32B model, on the other hand, would be around an order of magnitude slower since in dense models active parameter count is equal to the total parameter count.
+
 - ## 🤔 [Best coding model for 12gb VRAM and 32gb of RAM? : r/LocalLLM _202509](https://www.reddit.com/r/LocalLLM/comments/1n7fn2t/best_coding_model_for_12gb_vram_and_32gb_of_ram/)
 - when i tried qwen coder 30b with lm studio it was reaaaallly slow, if u find a way to optimize it let us know or maybe it's lm studio the problem
   - When I use chat directly in LM Studio with Qwen 3 coder 30b, it’s quite fast! I’m on RTX 3060 12Gb. However, when I hook it up to VS Code, via Continue plugin, it becomes a tad bit slow but still fine. Then, when I switch it to agent mode it just becomes unusable. 
@@ -155,6 +216,46 @@ modified: 2025-09-01T07:58:29.058Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Qwen3-coder-30b issues with tool calls : r/unsloth _202508](https://www.reddit.com/r/unsloth/comments/1mi3yis/qwen3coder30b_issues_with_tool_calls/)
+- The qwen3-coder uses a new format to structure the tool calls. The qwen team included a python script on the huggingface repo for parsing the tool calls (I think it was JSON vs XML or something). The original tool call parser in your inference engine (like llama.cpp) may not work with the new format yet, and by replacing the template you're essentially forcing the model to use the old format, which the inference engine already supports.
+  - I'm no expert in LLM fine-tuning, but I think replacing the template might lead to the model not producing correct tool calls occasionally, since these weren't the format they were trained on. On the other hand, it's also possible that the model is smart enough to recognise the alternative format and works just fine.
+- Switched to Beta branch of LM studio and it's working now. Thanks for pointing me in the right in the right direction
+
+- ## [Tool Call Format from Qwen3 Coder 30B Not Recognized by Most LLM Coding Agents · Issue · lmstudio-ai/lmstudio-bug-tracker _20250801](https://github.com/lmstudio-ai/lmstudio-bug-tracker/issues/825)
+- Looks like LM Studio 0.3.21 Build 3 fixed the issue. Thanks
+
+- [Feature Request: Support Qwen3 Coder 30B Local Model for Tool Calls · Issue · continuedev/continue](https://github.com/continuedev/continue/issues/6913)
+
+- ## 🆚 what's the differences between the llm models below
+- https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct  
+  - Long-context Capabilities with native support for 256K tokens, extendable up to 1M tokens using Yarn
+  - Parameters: 30.5B in total and 3.3B activated
+  - Experts: 128
+  - Activated Experts: 8
+- https://huggingface.co/unsloth/Qwen3-Coder-30B-A3B-Instruct  
+  - Unsloth Dynamic 2.0 achieves superior accuracy & outperforms other leading quants.
+  - [Qwen3-Coder: How to Run Locally | Unsloth Documentation](https://docs.unsloth.ai/basics/qwen3-coder-how-to-run-locally)
+  - We managed to fix tool calling via `llama.cpp --jinja` specifically for serving through `llama-server` ! If you’re downloading our 30B-A3B quants, no need to worry as these already include our fixes.
+- https://huggingface.co/nightmedia/unsloth-Qwen3-Coder-30B-A3B-Instruct-qm468-mlx  
+  - "qm468" in the name likely refers to the specific quantization configuration used.  
+- https://huggingface.co/nightmedia/unsloth-Qwen3-Coder-30B-A3B-Instruct-qm468-hi-mlx
+  - "high, " suggesting a different quantization setting or a variation 
+- https://huggingface.co/mlx-community/Qwen3-Coder-30B-A3B-Instruct-4bit-dwq-v2
+  - DWQ (Dynamic Weight Quantization), which significantly reduces memory usage while maintaining performance
+
+- ## [PSA: Qwen3-Coder-30B-A3B tool calling fixed by Unsloth wizards : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mje5o0/psa_qwen3coder30ba3b_tool_calling_fixed_by/)
+- Worth pointing out that it appears to have been fixed in relation to LM Studio.
+  - Also worth pointing out that with LM Studio I get 1.75x - 2x slower performance compared to Llama.cpp, despite enabling flash attention, KV cache, etc. No idea why that is, but I definitely feel it when running the model. It also slows down dramatically as more context is added.
+
+- It's not a real fix, but workaround forcing the model to use different tool call format (that llama.cpp handles) that is originally should use (xml instead of json formatted tool calls).
+  - The proper fix (for llama.cpp-based workflows) is to update llama.cpp's internal tool call parsing to handle the new `<xml>` format, instead of forcing the model to use a different one.
+
+- Got a chance to try out the updated Unsloth quants and it does seem to be improved. Not using a quantized KV cache with llama-server greatly improved tool calling for me and success rate of changes with RooCode.
 
 - ## [Best really lightweight coding model for very basic questions? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1n9faly/best_really_lightweight_coding_model_for_very/)
 - Gpt oss 20b or qwen 30b a3b 2507 (thinking version), these aren't just coding models but they do well at coding and run fast on a CPU with enough system ram.
@@ -293,14 +394,6 @@ OLLAMA_KV_CACHE_TYPE: q4_0
 - The 30B A3B model is MOE model. The A3B tells you that it's 3B active. So you get the speed of a model like it was 3B but the intelligence of a 30B model.
   - Qwen3 32B is dense, not moe, and so it's slower.
 
-- ## [Recommendation for getting the most out of Qwen3 Coder? : r/LocalLLM _202508](https://www.reddit.com/r/LocalLLM/comments/1mrzi5x/recommendation_for_getting_the_most_out_of_qwen3/)
-- The cause of the slowness is large context sent to the model, typically 10-20k at the beginning. Have you measured your prompt processing speed? Usually, the issue is solved with prefix caching, vLLM supports it, llama.cpp to some extent, ollama has troubles with it, and I don't know about LLM Studio. 
-  - K/V cache quantization Q4 may hurt model performance heavier then parameter quantization, I would not go lower Q8 for K/V cache.
-
-- Keep tasks under 100k context including prompt and output. Reset once you go about that to avoid hallucinations.
-
-- You may want to explore using Jupyter Notebook or JupyterLab with Qwen3 Coder. They offer integration with various coding languages and can handle larger scripts interactively. 
-
 - ## [Qwen3-Coder-30B-A3B in a laptop - Apple or NVIDIA (RTX 4080/5080)? : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mwmi2n/qwen3coder30ba3b_in_a_laptop_apple_or_nvidia_rtx/)
 - M2 Max 64 Gb here. 
   - I run Qwen3 30B A3B Q4 With llama.cpp, you’ll get around 50 TPS. 
@@ -423,6 +516,12 @@ ollama run hf.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF:Q6_K
   - they have a 480B-A35B thinking coder model in the works, they'll probably distill from that
 
 - The only one that good both at code and writing is GLM-4, but it has nonexistent long context handling. Small 3.2 is okay too but dumber.
+
+- [🚀 Qwen3-Coder-Flash released! : r/LocalLLaMA _20250731](https://www.reddit.com/r/LocalLLaMA/comments/1me31d8/qwen3coderflash_released/)
+- I hope they still release a dense 30B+ coder. I don't trust tiny MoE models to output anything useful. Being lightning-fast is nice, but output quality is what matters the most for coding.
+
+- a 30B-A3B MoE is poised to compete against ~10B dense models. It loses to Qwen3-14B for instance.
+  - I think that's a poor observation, dense models are usually better than moes. In swebench verified with open hands scaffolding devstral small actually scores a little higher. Unfortunately this is the only benchmark I've been able to find that has both.
 
 - ## [Is Qwen 2.5 Coder Instruct still the best option for local coding with 24GB VRAM? : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kq029v/is_qwen_25_coder_instruct_still_the_best_option/)
 - I'm just using the 30BA3B for everything. It's not the smartest, but it is fast and I am impatient. So far, it has been good enough for most things. If there's something it struggles with, I switch to Gemini Pro.

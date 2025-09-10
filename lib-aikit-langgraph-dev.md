@@ -52,5 +52,11 @@ modified: 2025-08-11T08:46:16.962Z
 
 # dev-xp
 
+- langgraph本身只是库，是sdk的一部份，服务端需要自己实现
+
+- v1的 api 十分混乱，暂时不要花费过多时间
+  - langgraph-python 逐渐使用 create_react-agent
+  - langgraphjs/langchain 逐渐使用 createAgent
+
 - 使用 `while True: graph.stream` 相关的逻辑测试时，注意死循环
 # more

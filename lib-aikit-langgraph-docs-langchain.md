@@ -38,6 +38,18 @@ modified: 2025-09-05T07:18:34.805Z
 - 
 
 # docs-v0.x-langchanjs
+- The model on its own does not have any concept of state.
+  - We can see that it doesn’t take the previous conversation turn into context, and cannot answer the related question
+  - To get around this, we need to pass the entire conversation history into the model
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
 - LLMs aren’t perfect at generating structured output, especially as schemas become complex. 
   - You can avoid raising exceptions and handle the raw output yourself by passing `includeRaw: true`. 
 

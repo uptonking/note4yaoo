@@ -14,7 +14,16 @@ modified: 2025-08-11T08:47:03.579Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 💰 [Can I self-host a LangGraph app without a key? · langchain-ai/langgraph _202409](https://github.com/langchain-ai/langgraph/discussions/1604)
+- LangGraph splits into two parts:
+  - LangGraph OSS: This is a Python library, fully open-source under the MIT license, focused on building agent workflows with reliable execution.
+  - LangGraph API: A closed-source runtime with extra bells and whistles like authentication, auto-scaling, and enterprise-grade features.
+  - If you’re using the free self-hosted version of the LangGraph API, you’re out of luck for custom authentication—it’s not included. You’d need their managed cloud service or an enterprise license for that. The reason? Authentication is tied to their commercial API, not the open-source library.
+
+- https://github.com/ibbybuilds/aegra
+  - Got frustrated with this exact auth issue so I built aegra to solve it. Self-hosted LangGraph Platform alternative that actually lets you use real auth (Supabase, Firebase, whatever).
+
+- I think you can just self-host redis and postgres in their own Docker containers alongside your FastAPI LangGraph API. This is what's done in a development environment when you use LangGraph Studio.
 
 - ## 🤼 [Why LangGraph overcomplicates AI agents (and my Go alternative) : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1m0hgtt/why_langgraph_overcomplicates_ai_agents_and_my_go/)
 - After my LangGraph problem analysis gained significant traction, I kept digging into why AI agent development feels so unnecessarily complex.
@@ -314,7 +323,10 @@ for {
 # discuss-changelog
 - ## 
 
-- ## 
+- ## [DOC: support for a2a with langchain/langgraph · Issue · langchain-ai/langgraph _202508](https://github.com/langchain-ai/langgraph/issues/5987)
+  - what’s the plan from langchain to support a2a protocol natively? Agent2Agent (A2A) Protocol
+
+- We just rolled out support for an A2A endpoint in LG platform!
 
 - ## 🎯 Today we are announcing alpha releases of v1.0 for langgraph and langchain, in both Python and JS. _20250903
 - https://x.com/LangChainAI/status/1962934869065191457
