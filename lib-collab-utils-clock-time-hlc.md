@@ -38,6 +38,8 @@ modified: 2023-03-20T10:28:16.979Z
 
 ## blogs
 
+### [Reading the "CRDTs for Mortals" Example Code - DEV Community _202110](https://dev.to/dimfeld/reading-the-crdts-for-mortals-example-code-4gin)
+
 ### [Ditto Delta State CRDT](https://docs.ditto.live/javascript/common/how-it-works/crdt)
 
 - [Extend Hybrid Logical Clock documentation](https://github.com/getditto/docs/issues/413)

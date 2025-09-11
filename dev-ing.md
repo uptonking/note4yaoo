@@ -245,6 +245,11 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
 
 ```
 
+## 0912
+
+- [Make changes to node_modules files with patch-package - DEV Community](https://dev.to/roshangm1/make-changes-to-nodemodule-files-with-patch-package-30h4)
+  - Track the patch files in git `git add patches/*`
+
 ## 0911
 
 - a ULID is 26 characters long. 

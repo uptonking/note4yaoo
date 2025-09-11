@@ -284,6 +284,10 @@ modified: 2025-08-11T08:47:56.335Z
   - The workflow can run independently or include optional Human-in-the-Loop (HiTL) checkpoints for review and editing
   - Live Progress Dashboard: Provides a real-time overview of the multi-agent workflow, including task status and output previews.
 
+- https://github.com/Shelex/llm-reasoning /202508/ts
+  - attempt to enhance llm answers with LangGraph, RAG and dynamic prompting with COT, CCOT, GOT, SOT
+  - RAG approach contains hybrid retrieval via vector+bm25 search and reranking.
+
 - https://github.com/max-d3v/geo_toolkit /202507/python/ts
   - GEO Tools is a comprehensive FastAPI-based platform that helps you understand and optimize how your company or brand is positioned in Large Language Model (LLM) responses. 
   - Built with OpenAI's web research capabilities and LangGraph for intelligent workflow orchestration.

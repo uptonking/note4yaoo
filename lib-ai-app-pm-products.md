@@ -91,6 +91,7 @@ modified: 2025-03-22T16:10:24.856Z
 - ideas
   - parallel chats
   - speed testing app for models
+  - 相同参数下大模型的output结果不确定性很高， 若修改参数或更换embedding也会导致结果变化， 需要记录每次结果环境参数并提供复现方案
 
 - 
 - 

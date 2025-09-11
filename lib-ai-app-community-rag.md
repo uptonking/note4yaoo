@@ -9,6 +9,13 @@ modified: 2024-09-08T20:08:16.088Z
 
 # guide
 
+- pros-rag
+  - solutions rich
+  - save cost
+
+- cons
+  - extra infra like vectordb/retrive-api
+
 - usecases-rag
   - long-docs/pdf
   - chat-history
@@ -20,6 +27,8 @@ modified: 2024-09-08T20:08:16.088Z
   - [MTEB Leaderboard - a Hugging Face Space by mteb](https://huggingface.co/spaces/mteb/leaderboard)
     - https://github.com/embeddings-benchmark/mteb
     - top202509: gemini-embedding-001, embeddinggemma-300m, Qwen3-Embedding-8B/4B/0.6B, linq-mistral, jina, granite, nomic
+    - 👷实测, embeddinggemma在Ollama结果差, 在LM Studio结果还行 ~~在 similaritySearch 时很差~~
+      - 跟推荐qwen/granite
 - resources
   - [RAG+AI工作流+Agent：LLM框架该如何选择，全面对比MaxKB、Dify、FastGPT、RagFlow、Anything-LLM, 以及更多推荐 - 知乎 _202407](https://zhuanlan.zhihu.com/p/711761781)
 # discuss-stars
@@ -226,6 +235,84 @@ modified: 2024-09-08T20:08:16.088Z
 
 - Quadrant, it's a vector DB designed specifically for RAG/AI workflows. It offers advanced filtering features (multi-tenancy) that are natively baked-in into its core architecture. These features would require more legwork using other data stores like Redis etc...
 - FAISS: great for vector search is not really a DB, it's a lib and not a true DB
+# discuss-code-rag
+- ## 
+
+- ## [Cline doesn't index your codebase. No RAG, no embeddings, no vector databases. : r/CLine _202505](https://www.reddit.com/r/CLine/comments/1kwhcz0/cline_doesnt_index_your_codebase_no_rag_no/)
+- Does Roo Code also do that or is this just a Cline thing?
+  - Roo recently added it for code search. It works with local models
+  - They also added prompt caching for Gemini flash.
+
+- Exceedingly large context windows don't just result in extreme costs but it also will slow down your every operation.
+  - While prompt caching reduce costs it is not entirely free, nor does every model or provider support it. It's also like treating a symptom rather than the disease.
+
+- RAG can be good. See how fast and precise is AUgment Code search
+  - ive found Augment to miss obvious things at times
+
+- cursor has code indexing
+
+- RAG shines when you don’t know the exact function / class names in a repo. ripgrep file search that Cline uses for context search is awesome—if you already have the right keywords. That’s easy on your own project, but on a massive, unfamiliar codebase ripgrep can stall while RAG keeps rolling (although it can return the wrong chunks).
+
+- Privacy issue first. Never is sending low quality windows off the code base to the LLM is bad for quality.
+
+- ## 🤼 Cline doesn't index your codebase. No RAG, no embeddings, no vector databases. _202505
+- https://x.com/cline/status/1927226680206131530
+  - [Why Cline Doesn't Index Your Codebase (And Why That's a Good Thing) - Cline Blog _202505](https://cline.bot/blog/why-cline-doesnt-index-your-codebase-and-why-thats-a-good-thing)
+  - This isn't a limitation -- it's a deliberate design choice. 
+  - As context windows increase, this approach enhances Cline's ability to understand your code.
+  - The industry default: chunk your codebase, create embeddings, store in vector databases, retrieve "relevant" pieces.
+  - But code doesn't work in chunks. A function call in chunk 47, its definition in chunk 892, the context that explains why? Scattered everywhere.
+  - We believe in the agentic power of the modesl, and with Claude's 200K+ context window, we don't need clever retrieval. We need intelligent exploration.
+  - So Cline reads code the way you do -- following imports, tracing dependencies, building connected understanding.
+  - 💡 Instead of indexing, Cline starts with structure. Using ASTs, it maps your codebase architecture -- classes, functions, relationships.
+  - Then it explores. Need to add error handling? It traces from your function to your error utilities to similar patterns. Connected comprehension.
+- The problems with RAG for code run deeper:
+  - Chunking breaks the logical connections between functions and their dependencies
+  - Indexes become stale the moment you push a commit
+  - Your IP gets duplicated in vector embeddings (security nightmare)
+
+- ## [Unpopular opinion: RAG is actively hurting your coding agents : r/ChatGPTCoding _202505](https://www.reddit.com/r/ChatGPTCoding/comments/1ktt4ab/unpopular_opinion_rag_is_actively_hurting_your/)
+- I've been saying this since RAG first became the term used to describe the method. And you are exactly right, the whole reason it became a thing was because, back when context windows were 4k or 8k max, it was out of necessity. Now, in the age where context windows are 1M or 10M tokens, it only makes sense in specific enterprise cases where you have vast datasets to query for specific, isolated information.
+
+- RAG isn’t just calling vector stores, it’s also prompt priming before generation using various sources. Dynamically priming the prompt with relevant information before the LLM generates a response. 
+  - A lot of the large context models drop off in accuracy after 100k tokens, anyway.
+
+- frontier models have large context windows, but they all equate to a token, which equals a cost
+  - Knowledge Graphs + RAG. An syntax tree is constructed of the code , where each class, function , method etc become nodes in the graph. The LLM can then traverse the graph to get only what it needs.
+
+- One thing Aider has that Roo and Cline don't, is what they call a "RepoMap" (and it ties aider to git). 
+  - But the advantage of it is, given a class, it can easily determine all the related classes, so it doesn't have to go digging through folders, trying to figure out which file is actually relevant, it knows, because the RepoMap shows which classes use which classes.
+  - I pulled the RepoMap class out of aider and eventually managed to remove all the aider dependencies and got running as a command-line app. I might try making an MCP with it and giving that to Cline and see if it can improve its ability to understand the app structure.
+- I thought cline already had a tree sitter which did the same thing.
+  - it does use tree-sitter, but not in the same way and not to the same effect. 
+  - How Aider understands you program vs how Cline understands it is very apparent in working with them. Aider has a much better understanding of which bits of code are related to which other bits, whereas Cline is frequently guessing based on the filenames.
+  - Using tree-sitter isn't enough. You need to actually map out the relationships and Cline doesn't seem to do this, at least not nearly as effectively as Aider does.
+- using the LSP if available surley is the best approach?
+  - No, beyond getting LSP diagnostic, which you can get somewhere else anyway. Using LSP server requires counting rows and columns, and LLMs are bad at it.
+- but you don't have to use the interface literally
+  - Then I'm not using LSP, I'm using something that uses LSP under the hood to point that is an implementation detail. Take a look at your favorite LSP server, tell me what is useful there to LLM agent besides diagnostics?
+  - I can see how you give LLM diagnostics after it update the file is useful, but giving LLM access to LSP overall is IMO utterly useless.
+
+- I was watching an interview video with Claude Code engineers and they mentioned along the lines of not using RAG or GraphRAG because they found that Claude Code performed better without it and just relying on tools, memory and agentic search.
+
+- RAG still makes sense for latency sensitive use cases like real-time chat, although prompt caching helps with this. 
+
+- ## [Lessons learned from implementing RAG for code generation : r/LLMDevs _202501](https://www.reddit.com/r/LLMDevs/comments/1hw1n5o/lessons_learned_from_implementing_rag_for_code/)
+  - 📝 [A Recipe for a Better AI-based Code Generator | Pulumi Blog _202501](https://www.pulumi.com/blog/codegen-learnings/)
+  - We wrote a blog post documenting how we do retrieval augmented generation (RAG) for code generation in our AI assistant, Pulumi Copilot. 
+  - Measure and tune recall (how many relevant documents are retrieved out of all relevant documents) and precision (how many of the retrieved documents are relevant)
+  - Implement end-to-end testing and monitoring across development and production
+  - Create self-debugging capabilities to handle common issues like type checking errors
+
+- when I need understanding a medium sized code base I have dumped the whole thing into gemini in Google AI workbench. It can do 2 million tokens, though it is SLOOW.
+
+- I wonder if you've considered feeding more tokens from your retrieval result into your code gen step? Why 20k? Is that always enough? How would you even know if it weren't?
+  - You've got part of the answer right there: SLOOW :-) Also expensive!
+  - Seriously though, you want to optimize for both recall and precision. Too much irrelevant data (poor precision) can confuse the LLM leading to hallucinations.
+  - 20k is based on "it feels right" and empirical data but honestly we have not done enough analysis to conclude that it is the perfect number for all scenarios - we will continue to measure and adjust.
+
+- Did you experiment with other retrieval methods besides or in addition to semantic similarity? I've done some work using different techniques, like parsing dependency trees out of the current file, with promising results for code RAG.
+  - We did look into BM25 for FT search but did not see measurable benefits for our use cases. Our approach relies on getting a lot of documents first and then pruning - it would be better to get just what's needed in the first place, I still hope BM25 can help there. Worth another look!
 # discuss
 - ## 
 

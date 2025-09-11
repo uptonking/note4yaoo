@@ -258,6 +258,8 @@ modified: 2024-08-24T16:30:20.218Z
   - Qwen Code 还包含多种工具，用于执行文件系统操作、运行 shell 命令和网络请求等任务，这些工具由 packages/core 管理。
   - Mainland China: ModelScope offers 2, 000 free API calls per day
     - Qwen Code may issue multiple API calls per cycle, resulting in higher token usage (similar to Claude Code). We're actively optimizing API efficiency.
+  - [Clicking `esc` will not escape ](https://github.com/QwenLM/qwen-code/issues/496)
+    -  New line? That’s Ctrl+J. (esc to cancel, 6s)
 
 - https://github.com/openai/codex /29.7kStar/apache2/202506/rust/ts
   - Lightweight coding agent that runs in your terminal
