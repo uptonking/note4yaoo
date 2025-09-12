@@ -177,6 +177,11 @@ modified: 2024-08-24T16:30:20.218Z
     - "Background Editing" disables automatic diff view displays when Roo Code edits files.
     - Image Generation: Roo sends your prompt (and optionally an existing image) to an image-capable model through OpenRouter.
 
+- https://github.com/Kilo-Org/kilocode /9.7kStar/apache2/202509/ts
+  - Open Source AI coding assistant for planning, building, and fixing code. 
+  - We frequently merge features from open-source projects like Roo Code and Cline, while building our own vision. 
+  - Automate the browser
+
 - https://github.com/kodu-ai/claude-coder /AGPL/202503/ts
   - https://www.kodu.ai/
   - Kodu is an autonomous coding agent that lives in your IDE
@@ -237,6 +242,10 @@ modified: 2024-08-24T16:30:20.218Z
   - Designed for maximum flexibility, goose works with any LLM and seamlessly integrates with MCP-enabled APIs, making it the ultimate AI-powered assistant
 
 ## terminal-ai
+
+- tips
+  - 对于模型厂商推出的cli-coding，会尽可能多的使用token来实现更好的效果
+    - 对于类似cursor应用层推出的coding产品，会偏向减少token用量来降低成本
 
 - https://github.com/google-gemini/gemini-cli /15.2kStar/apache2/202506/ts
   - a command-line AI workflow tool that connects to your tools, understands your code and accelerates your workflows.

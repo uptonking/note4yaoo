@@ -135,6 +135,7 @@ modified: 2023-11-28T14:48:45.910Z
 # business-apps
 - 成功的产品，大多可以不断更新换代
   - 如大模型、支持最新大模型的comfyui
+  - 能为其他产品提供infra或tools，如nvidia
 
 - 知识库的市场 (🤔 toB or toC)
   - 客服系统自动回复，并显示相关历史

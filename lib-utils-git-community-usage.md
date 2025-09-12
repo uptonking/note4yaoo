@@ -144,7 +144,22 @@ git log --online --graph --decorate
 
 - ## 
 
-- ## 
+- ## [Is this a right way to use husky + lint-staged? - Stack Overflow](https://stackoverflow.com/questions/51748246/is-this-a-right-way-to-use-husky-lint-staged)
+
+- ⚠ Some of your tasks use `git add` command. Please remove it from the config since all modifications made by tasks will be automatically added to the git commit index.
+
+```JS
+{
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,mjs,mts,json,css}": [
+      "prettier --write",
+      "eslint --fix src/",
+      "tslint --fix --project .",
+      "git add"
+    ]
+  },
+}
+```
 
 - ## [ `git lfs clone` does not respect `--mirror` (bare) · Issue · git-lfs/git-lfs _201706](https://github.com/git-lfs/git-lfs/issues/2342)
 

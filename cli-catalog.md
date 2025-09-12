@@ -12,6 +12,7 @@ modified: 2021-01-01T22:13:44.013Z
 ```JS
 // 浏览器控制台只输出log不输出行号位置VM信息，方便copy； 将console.log替换为log
 const log = (...args) => queueMicrotask(console.log.bind(console, ...args));
+const log = (...args) => queueMicrotask(.bind(console, ...args));
 ```
 
 # 前端工程化工具相关
@@ -343,8 +344,8 @@ gh status
 
 ```
 
-
 - 自动 sync 所有 fork
+
 ```shell
 gh repo sync [<destination-repository>] [flags]
 # Sync remote repository from another remote repository

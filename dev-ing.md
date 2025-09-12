@@ -247,6 +247,10 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
 
 ## 0912
 
+- 英译中:  Qwen is excellent. I wish they had a version with reasoning. “Reasoning” seems like mostly smoke and mirrors to me.
+  - "smoke and mirrors"采用意译"故弄玄虚"，既保留原比喻意象又确保中文读者理解
+  - 也可翻译为: 虚有其表
+
 - [Make changes to node_modules files with patch-package - DEV Community](https://dev.to/roshangm1/make-changes-to-nodemodule-files-with-patch-package-30h4)
   - Track the patch files in git `git add patches/*`
 

@@ -170,8 +170,16 @@ modified: 2023-02-08T07:20:48.475Z
 - https://github.com/verazuo/jailbreak_llms
   - A dataset consists of 15, 140 ChatGPT prompts from Reddit, Discord, websites, and open-source datasets (including 1, 405 jailbreak prompts).
   - 开源了论文中使用的 15, 140 个 ChatGPT 提示，其中包括 1, 405 个越狱提示，收集于 Reddit、Discord、网站和开源数据集。
-
-## gpt-impl
+# llm-impl
+- https://github.com/ideaweaver-ai/qwen3-from-scratch /apache2/202509/python
+  - A complete implementation of a Qwen3-based language model trained on the TinyStories dataset. 
+  - This project demonstrates modern transformer architecture with Grouped Query Attention, SwiGLU activation, and Rotary Position Embeddings.
+  - Efficient Training: Mixed precision training with gradient accumulation
+  - Memory Optimized: Uses memory mapping for large dataset handling
+  - Text Generation: Built-in generation capabilities with temperature and top-k sampling
+  - Progress Monitoring: Real-time training progress and loss visualization
+  - Model Size: 283M parameters
+  - [Building Qwen3 from Scratch: This Is your chance : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1ndxjsu/building_qwen3_from_scratch_this_is_your_chance/)
 
 - https://github.com/newhouseb/potatogpt
   - Pure Typescript, dependency free, ridiculously slow implementation of GPT2 for educational purposes
@@ -322,7 +330,6 @@ modified: 2023-02-08T07:20:48.475Z
 - https://github.com/rag-web-ui/rag-web-ui /apache2/202502/python/ts
   - RAG Web UI is an intelligent dialogue system based on RAG
 # rag-search
-
 - https://github.com/HKUDS/LightRAG /20.1kStar/MIT/202508/python
   - Simple and Fast Retrieval-Augmented Generation
   - [2025.06.16]🎯 Our team has released RAG-Anything an All-in-One Multimodal RAG System for seamless text, image, table, and equation processing.

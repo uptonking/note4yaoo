@@ -313,6 +313,31 @@ modified: 2024-09-08T20:08:16.088Z
 
 - Did you experiment with other retrieval methods besides or in addition to semantic similarity? I've done some work using different techniques, like parsing dependency trees out of the current file, with promising results for code RAG.
   - We did look into BM25 for FT search but did not see measurable benefits for our use cases. Our approach relies on getting a lot of documents first and then pruning - it would be better to get just what's needed in the first place, I still hope BM25 can help there. Worth another look!
+# discuss-embedding
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Real life experience with Qwen3 embeddings? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nezmfi/real_life_experience_with_qwen3_embeddings/)
+  - I need to decide on an embedding model for our new vector store and I’m torn between Qwen3 0.6b and OpenAI v3 small.
+  - The qwen3 embeddings top the MTEB leaderboards scoring even higher than the new Gemini embeddings. Qwen3 has been killing it, but embeddings can be a fragile thing.
+
+- I don't think Qwen3-Embedding-0.6B performs better than previous encoder models of similar size (e.g., bge-m3); 
+  - its main advantage is long-context support. 
+  - Overall, it's only a little bit better than other prior state-of-the-art LLM-based embedding models (e.g., Kalm-v2), with advantages mainly comes from instruction tuning on the query side, which improves adaptability.
+- Qwen3-Embedding-4B is good. It outperforms bge by 2–3 points (on my own dataset, using NDCG@10), and maintains strong retrieval performance at 2–4k tokens per chunk. 
+  - However, the GGUF version of this model seems inconsistent with the original checkpoint—this discrepancy is unclear (I suspect it may be related to the pooling configuration).
+- Qwen3-Embedding-8B might indeed be a SOTA model, but it costs too much.
+
+- I never tested that quant. There are so many mistakes you can make with embeddings (omitting required eot tokens, missing instructions, wrong padding alignment etc.) 
+
+- I always include something like an embedding version so it is always possible to change embedding algo without reencoding old data so long as you are willing to do a search per algo and re-rank them.
+
+- I've used 8B and 4B as GGUF at Q4_K_M and never had issues some are pointing.
+  - Found the 4B most efficient as the difference between the 8B is small for such resource difference.
+  - Been using for code bases, currently over 380 files with code. No issues.
 # discuss
 - ## 
 
