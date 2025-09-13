@@ -103,7 +103,11 @@ modified: 2025-09-01T07:58:29.058Z
 
 - ## 
 
-- ## 
+- ## [What is your system prompt for Qwen-2.5 Coder 32B Instruct : r/LocalLLaMA _202411](https://www.reddit.com/r/LocalLLaMA/comments/1gqagzg/what_is_your_system_prompt_for_qwen25_coder_32b/)
+- Start your system prompt with You are Qwen, created by Alibaba Cloud. You are a helpful assistant. - and write anything you want after that. Looks like model is underperforming without this first line.
+
+- for the 7B version, my Qwen coder suddenly started working better with LM Studio blank preset. Increased the context length, lowered temperature to 0.2, works great.
+  - any system prompt made the generation worse. That said, any errors in prompt seem to break something, but that's probably the 7B model only.
 
 - ## [What do you use on 12GB vram? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nd1tqf/what_do_you_use_on_12gb_vram/)
 - Qwen3-coder-30B, qwen3-30b, gpt-oss-20b - you can keep the KV cache on GPU and offload MOE layers to CPU, and it will work reasonably fast on most modern systems.
@@ -219,7 +223,9 @@ modified: 2025-09-01T07:58:29.058Z
 
 - ## 
 
-- ## 
+- ## [Cline with Qwen 3 Coder - 100% Local : r/CLine _202508](https://www.reddit.com/r/CLine/comments/1mexlpg/cline_with_qwen_3_coder_100_local/)
+- I would lower the context length to 128k and see if that helps improve performance. 
+  - I can drop it to 128k and I haven't noticed a difference yet, at least not negatively.
 
 - ## [Qwen3-coder-30b issues with tool calls : r/unsloth _202508](https://www.reddit.com/r/unsloth/comments/1mi3yis/qwen3coder30b_issues_with_tool_calls/)
 - The qwen3-coder uses a new format to structure the tool calls. The qwen team included a python script on the huggingface repo for parsing the tool calls (I think it was JSON vs XML or something). The original tool call parser in your inference engine (like llama.cpp) may not work with the new format yet, and by replacing the template you're essentially forcing the model to use the old format, which the inference engine already supports.

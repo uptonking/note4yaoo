@@ -148,6 +148,7 @@ modified: 2022-08-21T10:02:05.129Z
   - [[Feature] Allow changing the `column type` without changing the `column type` by default _202112](https://github.com/nocodb/nocodb/issues/833)
     - Currently, when you change a Column Type to, let's say, SingleLineText from LongText, NocoDB update the Type in Database from text to varchar. 
     - Currently, all UI datatypes map one to one with a respective physical data type(s). _202112
+    - 👷202509: We do not envision to support this.
   - https://github.com/o1lab/xmysql /MIT/202105/js/inactive
     - Xmysql is now NocoDB
     - Xmysql : One command to generate REST APIs for any MySql database

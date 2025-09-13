@@ -56,10 +56,25 @@ modified: 2025-09-01T05:52:34.241Z
 - 
 
 # dev-xp
+- code artifacts对于某些模型很难触发，实测devstral难触发，gemma3-12b较容易触发
+
+## comfyui-integration
+
+- o1: 最简单的方式是，直接去comfyui的output文件夹读取生成的图片为 base64，不推荐此方法因为模型/输出文件夹可能变化那读取路径也会跟着变，已有工作流配置好的output可能各不相同
+- o2: 不需要comfyui server保存图片，使用自定义server封装请求comfyui的api，获取图片输出并转换为base64再转发给librechat服务端
+- o3: 使用主流comfyui-mcp-server或自定义mcp-server，按o2的方式定制逻辑
+
+## image
+
 - image-sd-webui
-  - chat生成的图片不会出现在sd-webui源码的 `outputs` 文件夹
+  - chat生成的图片不会出现在sd-webui源码的 `outputs` 文件夹, 而在 默认的imageOutput 文件夹
+  - 有时文生图失败，可尝试新建一个agent或换模型，也许就能work
   - 本地模型最好选择同时支持 tool-use + vision, 否则生成图片后会提升异常
     - Error in iterating prediction stream: ValueError: Vision add-on is not loaded, but images were provided for processing
+  - 在SDAPI(extends Tool)的`_call`方法生成图片base64后没有立刻保存图片到磁盘，而是在 api/server/controllers/agents/callbacks.js 的 `createToolEndCallback` 方法中检查 `output.artifact.content` 是否存在，若存在才将 content 中的 `image_url`保存到磁盘
+
+- 文生图相关请求
+  - GET http://localhost:3090/api/agents/tools/calls?conversationId=10198a1b-2fc3-47d0-966f-17d03dc8f3e1
 
 - [[Bug]: error: [getAvailableTools] MCPManager has not been initialized. _202509](https://github.com/danny-avila/LibreChat/issues/9437)
   - 导致添加stable-diffusion工具失败，更新到最新代码就可以了

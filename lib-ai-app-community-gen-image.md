@@ -46,7 +46,7 @@ modified: 2025-08-16T14:12:24.416Z
 # dev-xp
 - 生成图片时，一般批量生成10张起
   - 挑选图片的原则: 清晰、未变形， 最好光线足
-# models-benchmark
+# models-benchmark 🆚
 - time cost for image-gen on macbook air m4(32gRAM)
   - prompts: lawn, rabbit, cat
 
@@ -1217,6 +1217,21 @@ Q8（8 位）	    16GB+	   接近原始版本
 
 - Either Ultimate SD Upscale Or Supir
   - Ultimate SD upscale is good and plays nice with lower-end GFX cards, Supir is great but very resource-intensive.
+# discuss-face-identify
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Nano Banana is the first image generator that can do image consistency with real photos : r/Bard _202508](https://www.reddit.com/r/Bard/comments/1mva2wr/nano_banana_is_the_first_image_generator_that_can/)
+- This is just wrong. Nano Banana is amazing, but it will alter the faces slightly, and more so than Flux Kontext.
+- From my experience, Nano Banana is leagues ahead of Flux K.
+  - Depends the use case. For face consistency, Flux Kontext is better
+- I think Flux Kontext changes faces more
+
+- Years ahead? I give it 3 months. Adobe Photoshop has a similar-ish feature.
+  - The AI on photoshop is awful
 # discuss-model-tuning
 - ## 
 

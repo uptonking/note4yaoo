@@ -19,6 +19,9 @@ modified: 2023-10-30T07:34:03.602Z
   - embedding
   - 注意有些社区量化的模型可能遗漏标注了部分features, 可在本地测试来确定是否支持
 
+- 移动端大模型
+  - 参考google-gemma-1b
+
 - [大规模语言模型：从理论到实践](https://intro-llm.github.io/)
   - 复旦大学张奇教授团队写了一本在线免费的电子书，大概有 300 页篇幅，将大模型从理论到实战的每个阶段都描述的较为清楚
 # discuss-stars
@@ -481,6 +484,36 @@ curl http://localhost:11434/api/chat -d '{
 
 - sudo systemctl daemon-reload
 - sudo systemctl restart ollama
+# discuss-mobile-llm
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Meta released MobileLLM-R1 on Hugging Face : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nf7zhq/meta_released_mobilellmr1_on_hugging_face/)
+  - fair-noncommercial-research license
+  - Its not just open weights its truly open source includes all the training data for full reproducabilility..
+
+- it still gets beaten by qwen 0.6 so whats so special?
+  - It's very close but it was trained on much less data
+- The headline is less training compute. (Of course this is also the headline for Qwen3-Next, so that might perform similarly if scaled down; idk.)
+
+- ## [Best local LLMs for mobile? : r/LocalLLaMA _202503](https://www.reddit.com/r/LocalLLaMA/comments/1j0v3b2/best_local_llms_for_mobile/)
+  - I'm working on a project, trying out an in-browser inference engine (WebLLM) for the first time
+  - Bonus points for the LLM being "uncensored"
+
+- best models for mobile are mostly small, think 0.5B to 3B in complete size, but for usability I'll go for 3B, maybe 1.5B.
+  - Phi-4 (Mini) [For Performance]: It's almost 4B (3.8B) in size but it's a great model for it's size and quite brand new.
+  - Smollm2 [Recommended For Small Size]: Comes in sizes from 135M, 360M and 1.7B, made by HuggingFaceTB specially to be a small.
+
+- Another model I just remembered (I was very tired when I wrote the response), Gemma 2 2B. I've heard it's pretty good for writing and creative responses!
+
+- I'd recommend Qwen3 (4B/1.7B) at the moment, just to clarify.
+- Qwen3 0.6B: It can reason and seems to be really good with funcion calling.
+- ERNIE 4.5 (?) 0.3B: It's a really small model that maintains coherence, I personally like it and use it in places with low amount of RAM.
+
+- Small models don't take Quantization well, they can get really dumbed down.
 # discuss-ai-api/tools
 - ## 
 

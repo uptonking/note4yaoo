@@ -29,7 +29,8 @@ https://meeting.tencent.com/p/9606972663
 
 ```shell
 # delete all node_modules folders recursively
-rm package-lock.json && find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + && find . -name 'dist' -type d -prune -exec rm -rf '{}' + && find . -name '.next' -type d -prune -exec rm -rf '{}' +
+rm package-lock.json 
+find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + && find . -name 'dist' -type d -prune -exec rm -rf '{}' + && find . -name '.next' -type d -prune -exec rm -rf '{}' +
 # maybe prefix sudo
 find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + 
 

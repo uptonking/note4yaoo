@@ -14,6 +14,12 @@ modified: 2023-12-15T17:04:24.911Z
 
 - ## 
 
+- ## 
+# discuss-issues
+- ## 
+
+- ## 
+
 - ## 🧐 [[Feature] Allow changing the `column type` without changing the `column type` by default _202112](https://github.com/nocodb/nocodb/issues/833)
   - Currently, when you change a Column Type to, let's say, SingleLineText from LongText, NocoDB update the Type in Database from text to varchar. 
 - Another example is showing columns as select inputs even if they are written as text or varchar on the database
@@ -23,6 +29,8 @@ modified: 2023-12-15T17:04:24.911Z
 - Currently, all UI datatypes map one to one with a respective physical data type(s). _202112
   - And not changing the internal physical data type on changing this UI datatype - will lead to extra steps in UI and make it more confusing for all other usecases during column creation. So altering this common path is not good. 
   - Noco's ability to provide extra option is in a way we want to make it flexible for our users.
+
+- 👷202509: We do not envision to support this.
 # discuss
 - ## 
 

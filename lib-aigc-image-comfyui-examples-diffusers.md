@@ -87,6 +87,10 @@ modified: 2025-08-23T11:43:35.904Z
   - [Server Config - ComfyUI](https://docs.comfy.org/interface/settings/server-config)
     - host: Sets the IP address the server binds to. Default `127.0.0.1` means only local access is allowed. If you need LAN access, you can set it to `0.0.0.0`.
     - port: Desktop version defaults to port `8000`, Web version typically uses port `8188`.
+  - [Change default port · Issue · Comfy-Org/desktop _202506](https://github.com/Comfy-Org/desktop/issues/1193)
+    - You can specify custom port with `COMFY_PORT` env variable
+    - This is also available within the `Settings` menu under `Server-Config`.
+    - Edit the comfy.settings.json file `"Comfy.Server.LaunchArgs": { "port": "9000" }`;
   - https://github.com/Comfy-Org/desktop /1.7kStar/GPLv3/202508/ts
     - 📌 The desktop app for ComfyUI (Windows & macOS)
     - bundled with a few things: ComfyUI_frontend, ComfyUI-Manager, uv
@@ -1310,10 +1314,18 @@ modified: 2025-08-23T11:43:35.904Z
   - https://github.com/dci05049/Comfyui-workflows
   - https://github.com/cubiq/ComfyUI_Workflows
 # sd-api/server
+- https://github.com/comfyanonymous/ComfyUI/blob/master/script_examples/basic_api_example.py
+  - [How to Use ComfyUI API with Python: A Complete Guide _202503](https://medium.com/@next.trail.tech/how-to-use-comfyui-api-with-python-a-complete-guide-f786da157d37)
+
 - https://github.com/yushan777/comfyui-api-part1-basic-workflow /202312/python/inactive
   - [ComfyUI : Using the API : Part 1. Controlling ComfyUI via Script _202309](https://medium.com/@yushantripleseven/comfyui-using-the-api-261293aa055a)
-  - https://github.com/ZYJ-3721/ComfyUI-API-Client /202411/python/inactive
-    - 调用ComfyUI的API实现文生图和图生视频
+  - [ComfyUI : Using the API : Part 2. Digging a Bit Deeper _202309](https://medium.com/@yushantripleseven/comfyui-using-the-api-part-2-daac17fd2727)
+  - [ComfyUI : Using the API : Part 3. Controlling An img2img Workflow _202312](https://medium.com/@yushantripleseven/comfyui-using-the-api-part-3-5042da5fc75c)
+- https://github.com/ZYJ-3721/ComfyUI-API-Client /202411/python/inactive
+  - 调用ComfyUI的API实现文生图和图生视频
+
+- https://github.com/Phando/ComfyUIImageServer /GPL/202405/js
+  - A server to run workflows against a ComfyUI server
 
 - https://github.com/nexmoe/serverless-comfyui /91Star/MIT/202502/ts/inactive
   - 一个基于 Docker 的 ComfyUI 弹性 Serverless 应用，提供完整的前后端分离架构和用户友好的界面。
