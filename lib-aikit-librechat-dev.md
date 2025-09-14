@@ -43,7 +43,7 @@ modified: 2025-09-01T05:52:34.241Z
 - code interpreter 如何实现
   - open source alternative
 
-- tool应该支持在ui上配置
+- tool应该支持在ui上配置参数
   - tool级别的prompt
   - stable-diffusion文生图的工具应该支持配置steps/选择不同效果的模型
 

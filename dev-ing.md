@@ -29,8 +29,10 @@ https://meeting.tencent.com/p/9606972663
 
 ```shell
 # delete all node_modules folders recursively
-rm package-lock.json 
+rm package-lock.json
+
 find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + && find . -name 'dist' -type d -prune -exec rm -rf '{}' + && find . -name '.next' -type d -prune -exec rm -rf '{}' +
+
 # maybe prefix sudo
 find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + 
 
@@ -69,14 +71,14 @@ next dev -H 0.0.0.0 -p 3000
   - pivot-table: editable
   - collaboration, local-first database
   - flowchart/whiteboard/pdf/annotation/comment
-  - 事项--截止日期(0730+休整)--重要性(hml/s1-s3)
+  - 事项--截止日期(0730+休整)--重要性(h/m/l/s1-s3)
 
 - deep into lib/fwk 书籍原理与代码实践要分开, 寻找深入debug的状态, learn-by-debug
   - 学习巩固: 实践练习 > 源码/示例 > 文档/论坛 > 社交分享
   - 不要从一个想法开始，而是从一个真正的问题开始
   - src-code, issues, pr, forks, extensions/alternatives
-  - storage, sync/partial, conflicts, concistency
-  - 直接根据具体框架或产品搜索解决方案如airtable-database，不必拘泥于通用方案如event-sourcing/eav，在产品讨论中常有细节和ideas
+  - storage, sync/partial, conflicts, consistency
+  - 直接根据具体框架或产品搜索解决方案如 airtable-database，不必拘泥于通用方案如event-sourcing/eav，在产品讨论中常有细节和ideas
   - 解决方案在npm/docker也可以搜到，且更准确; 多关注包管理器上的最新的包
   - github package.json 也能搜索示例
   - 拆分核心内容和周边功能

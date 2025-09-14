@@ -33,6 +33,9 @@ modified: 2025-02-03T15:11:10.478Z
 - I have some experience with Playwright, which is not that bad. Selenium was a lot harder to get things right, although with LLMs maybe things changed on the field.
 
 # discuss-paywall
+- tools
+  - medium : https://freedium.cfd/
+
 - ## 
 
 - ## 
@@ -42,7 +45,6 @@ modified: 2025-02-03T15:11:10.478Z
 - Or just clear them from site settings when you want or open in incognito
   - Doesn't works anymore. Medium just kick you out if you block the cookies
 
-- similar tool : https://freedium.cfd/
 - https://codeberg.org/Freedium-cfd/web
   - How does Freedium work?
   - In the first version of Freedium, we reverse-engineered Medium.com's GraphQL endpoints and built our own parser and toolkits to show you unpaywalled Medium posts. 

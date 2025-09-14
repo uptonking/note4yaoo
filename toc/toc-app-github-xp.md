@@ -118,6 +118,12 @@ language:JavaScript  language:TypeScript
 - [Search & Sort by number of commits ](https://github.com/orgs/community/discussions/63611)
   - For now, Most forks, Most Stars might be alternatives
 
+- [Why are commits in forks not counted as contributions in profile? · community _202301](https://github.com/orgs/community/discussions/45474)
+  - options
+  - Open a pull request to have your changes merged into the parent repository
+  - To detach the fork and turn it into a standalone repository on GitHub
+  - manually create a non-fork repo and push to that as the origin.
+
 ## search-issues/pr
 
 - is:unmerged

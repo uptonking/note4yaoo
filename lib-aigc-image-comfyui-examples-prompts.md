@@ -31,10 +31,6 @@ modified: 2025-09-13T09:32:22.969Z
   - Negative prompt: low resolution, low details, blurry, clouds
   - Parameters: Steps: 20, Sampler: Euler a, CFG scale: 7, Seed: 1588191000, Face restoration: CodeFormer, Size: 1024x1024, Model : SD XL
 
-- Prompt: houses in front, houses background, straight houses, digital art, smooth, sharp focus, gravity falls style, doraemon style, shinchan style, anime style
-  - Negative prompt: blurry image, watermark, messy
-  - Parameters: Steps: 50, Sampler: Euler a, CFG scale: 8.5, Seed: -5, Size: 512x512
-
 - Prompt: the street of amedieval fantasy town, at dawn, dark, 4k, highly detailed
   - Parameters: Steps: 40, Sampler: DPM++ 2M Karras, CFG scale: 7.0, Seed: 848, Size: 512x384, Model hash: 82aac931
 
@@ -44,6 +40,10 @@ modified: 2025-09-13T09:32:22.969Z
 - Prompt: Ethereal gardens of marble built in a shining teal river in future city, gorgeous ornate multi-tiered fountain, futuristic, intricate elegant highly detailed lifelike photorealistic realistic painting, long shot, studio lighting, octane render, by Dorian Cleavenger
   - Negative prompt: (disfigured), black and white, bad anatomy, bad hands
   - Parameters: Steps: 20, Sampler: Euler a, CFG scale: 7.0, Seed: 3868142022, Size: 512x512
+
+- Prompt: houses in front, houses background, straight houses, digital art, smooth, sharp focus, gravity falls style, doraemon style, shinchan style, anime style
+  - Negative prompt: blurry image, watermark, messy
+  - Parameters: Steps: 50, Sampler: Euler a, CFG scale: 8.5, Seed: -5, Size: 512x512
 
 ## anime
 

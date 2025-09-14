@@ -169,7 +169,7 @@ modified: 2025-03-22T16:10:24.856Z
 - ai写与第三方sdk集成的代码时，先写注释example，再写代码
 # ai-office
 - 产品方向: ask、生成、集成
-  - core-features: improve, shorter, longer, fix, translate
+  - core-features: improve, shorter, longer, fix/checker, translate
 
 - ai-ppt 🌗
   - 🔡 尝试用code generation的思路来实现ai ppt

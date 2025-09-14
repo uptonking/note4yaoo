@@ -21,7 +21,7 @@ modified: 2025-08-23T11:43:35.904Z
 - https://github.com/invoke-ai/InvokeAI /25.8kStar/apache2/202508/python/ts
   - https://invoke-ai.github.io/InvokeAI/
   - Invoke is a leading creative engine for Stable Diffusion models 
-  - 交互逻辑很特别，支持canvas/workflow/form/queue
+  - 交互逻辑很特别，支持canvas/workflow/form/queue-list-log
   - 后端依赖fastapi、pydantic、asyncio、torch、diffusers、typing、starlette
   - 前端依赖@reduxjs/toolkit、redux-undo、@nanostores/react、pragmatic-drag-and-drop、@xyflow/react、@dagrejs/dagre、@dagrejs/graphlib、konva、ag-psd、async-mutex、cmdk、dockview、framer-motion、i18next、idb-keyval、jsondiffpatch、linkifyjs、perfect-freehand、react-hook-form、react-virtuoso、zod、socket.io
   - 软件元数据在sqlite `invokeRoot/databases/invokeai.db`, 生成的图片在文件夹 invokeRoot/outputs/images
@@ -213,21 +213,6 @@ modified: 2025-08-23T11:43:35.904Z
   - [what happened? Why is the performance so poor? Before run much faster _202406](https://github.com/easydiffusion/easydiffusion/issues/1807)
     - I can think of two possibilities: maybe the version of torch has switched to CPU-only, or you're using the newer NVIDIA drivers.
 
-- https://github.com/StableCanvas/comfyui-client /121Star/MIT/202506/ts/NoDeps
-  - https://stablecanvas.github.io/comfyui-client/
-  - Javascript api Client for ComfyUI that supports both NodeJS and Browser environments.
-  - 可将workflow json转换为js代码, 而comfyui-sdk只处理export-as-api-format格式的json
-  - This client provides comprehensive support for all available RESTful and WebSocket APIs, with built-in TypeScript typings for enhanced development experience. 
-  - Introduces a human-readable and highly customizable workflow interface inspired by this issue and https://github.com/Chaoses-Ib/ComfyScript
-  - https://github.com/StableCanvas/tool-w2c
-    - https://stablecanvas.github.io/tool-w2c/
-    - Online convert workflow to `comfyui-client` js code
-    - Upload or drag & drop a ComfyUI .json (API format) or .png workflow file.
-  - https://github.com/devniel/nextjs-comfyui-example /202408/ts/inactive
-    - 🌰 An example of a project calling ComfyUI via websockets
-  - https://github.com/itsKaynine/comfy-ui-client /MIT/202309/ts/inactive
-    - Node.js WebSockets API client for ComfyUI
-
 - https://github.com/comfy-addons/comfyui-sdk /196Star/MIT/202508/ts
   - TypeScript SDK for seamless interaction with the ComfyUI API. 
   - This SDK significantly simplifies the complexities of building, executing, and managing ComfyUI workflows, all while providing real-time updates and supporting multiple instances
@@ -242,6 +227,26 @@ modified: 2025-08-23T11:43:35.904Z
   - Flexible Node Bypassing: Strategically bypass specific nodes in your workflows during generation, enabling advanced customization
   - [Loading an existing ComfyUI workflow? _202501](https://github.com/comfy-addons/comfyui-sdk/issues/23)
     - The workflow should be exported as API format, you can export it from the ComfyUI web interface
+
+- https://github.com/StableCanvas/comfyui-client /121Star/MIT/202509/ts/NoDeps
+  - https://stablecanvas.github.io/comfyui-client/
+  - Javascript api Client for ComfyUI that supports both NodeJS and Browser environments.
+  - 可将workflow json转换为js代码, 而comfyui-sdk只处理export-as-api-format格式的json
+  - 作者似乎转向了 comfyui-sdk 
+  - This client provides comprehensive support for all available RESTful and WebSocket APIs, with built-in TypeScript typings for enhanced development experience. 
+  - Introduces a human-readable and highly customizable workflow interface inspired by this issue and https://github.com/Chaoses-Ib/ComfyScript
+  - https://github.com/StableCanvas/tool-w2c
+    - https://stablecanvas.github.io/tool-w2c/
+    - Online convert workflow to `comfyui-client` js code
+    - Upload or drag & drop a ComfyUI .json (API format) or .png workflow file.
+  - https://github.com/devniel/nextjs-comfyui-example /202408/ts/inactive
+    - 🌰 An example of a project calling ComfyUI via websockets
+  - https://github.com/itsKaynine/comfy-ui-client /MIT/202309/ts/inactive
+    - Node.js WebSockets API client for ComfyUI
+  - https://github.com/StableCanvas/sd-webui-a1111-client
+    - API client for AUTOMATIC111/stable-diffusion-webui for nodejs/browser
+  - https://github.com/zandko/comfyui-sdk /MIT
+    - TypeScript-first client for interacting with ComfyUI
 
 - https://github.com/sugarkwork/Comfyui_api_client /17Star/MIT/202506/python
   - A Python client library for interacting with ComfyUI via its API. 
@@ -1031,6 +1036,10 @@ modified: 2025-08-23T11:43:35.904Z
   - 🍴 forks
   - https://github.com/creativeplatform/comfystream_inside
   - https://github.com/ryanontheinside/comfystream_inside
+
+- https://github.com/crystian/ComfyUI-Crystools /1.4kStar/MIT/202508/python/ts
+  - A powerful set of tools for ComfyUI
+  - you can see the resources monitor, progress bar & time elapsed, metadata and compare between two images, compare between two JSONs
 # utils
 - https://github.com/Comfy-Org/ComfyUI_devtools /21Star/202505/python/inactive
   - ComfyUI developer tools (Custom Node)
@@ -1316,6 +1325,12 @@ modified: 2025-08-23T11:43:35.904Z
 # sd-api/server
 - https://github.com/comfyanonymous/ComfyUI/blob/master/script_examples/basic_api_example.py
   - [How to Use ComfyUI API with Python: A Complete Guide _202503](https://medium.com/@next.trail.tech/how-to-use-comfyui-api-with-python-a-complete-guide-f786da157d37)
+    - export workflow-api.json
+    - customize prompt text
+    - init websocket
+    - exec `/prompt` as queue
+    - Monitor Execution Status with websocket
+    - get result image and info, close websocket
 
 - https://github.com/yushan777/comfyui-api-part1-basic-workflow /202312/python/inactive
   - [ComfyUI : Using the API : Part 1. Controlling ComfyUI via Script _202309](https://medium.com/@yushantripleseven/comfyui-using-the-api-261293aa055a)
@@ -1429,7 +1444,7 @@ modified: 2025-08-23T11:43:35.904Z
   - It allows you to edit API-format ComfyUI workflows and queue them programmatically to the already running ComfyUI.
   - Only Basic auth and no auth (for local server) are supported.
 
-- https://github.com/comfy-addons/comfy-station /28Star/MIT/202508/ts
+- https://github.com/comfy-addons/comfy-station /28Star/MIT/202508/ts/依赖多
   - open-source application designed to streamline the management of multiple ComfyUI instances.
   - nextjs 15, React Query for data fetching
   - Elysia for API server
