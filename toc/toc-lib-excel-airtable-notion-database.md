@@ -176,7 +176,7 @@ modified: 2022-08-21T10:02:05.129Z
 - https://github.com/mayneyao/eidos /AGPLv3/202406/ts
   - https://github.com/mayneyao/eidos-wiki
   - https://wiki.eidos.space/
-  - Eidos 是一个开源的、本地优先的 Web App ，完全运行在浏览器中，无需安装，也不依赖于任何服务器
+  - 一个开源的、本地优先的 Web App ，完全运行在浏览器中，无需安装，也不依赖于任何服务器
   - 拥有和 Notion 类似的文档和表格，你可以理解为离线版的 Notion，所有数据都在本地
   - 依赖sqlite-wasm、glide-data-grid、lexical
   - 🆚️ Web app is deprecated, use desktop app instead.
@@ -281,7 +281,7 @@ modified: 2022-08-21T10:02:05.129Z
   - http://rowy.io/
   - https://demo.rowy.io/
   - Rowy is an open-source low-code platform for Firebase and Firestore.
-  - 前端依赖mui5、tanstack-table、tinymce5、@monaco-editor/react、jotai.v1、swr、react-dnd、jszip、react-hook-form、eact-markdown、remark-gfm、firebase、firebaseui
+  - 前端依赖mui5、tanstack-table、tinymce5、@monaco-editor/react、jotai.v1、swr、react-dnd、jszip、react-hook-form、react-markdown、remark-gfm、firebase、firebaseui
   - 后端依赖firebase
   - 不支持firebase外的其他数据库、数据源，但在开发中
   - 不支持除表格外的其他视图

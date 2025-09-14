@@ -78,7 +78,7 @@ next dev -H 0.0.0.0 -p 3000
   - 不要从一个想法开始，而是从一个真正的问题开始
   - src-code, issues, pr, forks, extensions/alternatives
   - storage, sync/partial, conflicts, consistency
-  - 直接根据具体框架或产品搜索解决方案如 airtable-database，不必拘泥于通用方案如event-sourcing/eav，在产品讨论中常有细节和ideas
+  - 直接根据具体框架或产品搜索解决方案如 airtable-database，不必拘泥于通用方案如event-sourcing/eav, 在产品讨论中常有细节和ideas
   - 解决方案在npm/docker也可以搜到，且更准确; 多关注包管理器上的最新的包
   - github package.json 也能搜索示例
   - 拆分核心内容和周边功能
@@ -96,7 +96,7 @@ next dev -H 0.0.0.0 -p 3000
 - db-sync/collab
   - db+crdt的参考: piratedb, evolu, triplitdb, mithic
     - 不必执着于基于indexeddb的实现，只是作为一种持久化的方式
-  - base: level/rocksdb/foundationdb, hypercore, ipfs, kappa-db
+  - base: level/rocksdb/foundationdb, hypercore, ipfs, kappadb
   - sqlite: rust_sqlite, extension
   - pouchdb: doc-db, incremental view
   - crsqlite, hypermerge: crdt + db
@@ -112,7 +112,7 @@ next dev -H 0.0.0.0 -p 3000
 
 - long-term-support
   - cms, airtable, lowcode
-- techstacks-to
+- techstack-to
   - async/generator, stream, buffer, binary, scheduler, arrow
   - 样式片段也可在线尝试: codepen, w3schools.com 
 
@@ -131,7 +131,7 @@ next dev -H 0.0.0.0 -p 3000
 
 - collab-sync, partial-sync
   - string-crdt: ? list-crdt
-  - logux: sqlite-persistor, lww-with-hlc
+  - logux: sqlite-persistence, lww-with-hlc
   - verdant/lo-fi: hlc + websocket, no-merkle
   - harika: hlc + sqlite + absurd-sql, no-merkle
   - jaredly/local-first: hlc + rga

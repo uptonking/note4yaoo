@@ -72,6 +72,7 @@ modified: 2023-02-08T10:47:32.359Z
   - Case sensitive 
   - Small memory & CPU usage footprint - uses offline, OS native spell checking backends: Windows Spell Checking API (windows 8/10), NSSpellChecker (macOS) and Hunspell (Linux, Windows 7).
   - Extension uses background processing (on idle) and differential edit notifications to minimize area spelled during editing only to lines touched by changes.
+  - 🤼 实测内存占用比cspell还大, 后面测试内存占用又变小了
   - 关闭`add to system dictionary`时, 单词会添加到 `~/Library/Application Support/Code/User/spellright.dict` 文件
     - 开启`add to system dictionary`时, 单词会添加到 `~/Library/Group Containers/group.com.apple.AppleSpell/Library/Spelling/LocalDictionary/en` 文件
   - 🐛 limitations

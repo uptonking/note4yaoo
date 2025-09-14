@@ -43,7 +43,7 @@ modified: 2023-11-28T14:48:45.910Z
       - rrweb + editor-diff
   - 🪟 table
     - diff
-    - 基于文本的table格式: gfm, front-matter-yaml; + diff
+    - 基于文本的table格式: gfm, frontmatter-yaml; + diff
     - ✨ markdown-table的wysiwyg是一个痛点和卖点
     - split-table
     - export: copy-md-table, copy-list
@@ -157,7 +157,7 @@ modified: 2023-11-28T14:48:45.910Z
   - files sorted by commits count
 
 - github
-  - github readme.md viewer: 参考obsdian的插件/vscode扩展/npm包可直接显示github-readme
+  - github readme.md viewer: 参考obsidian的插件/vscode扩展/npm包可直接显示github-readme
   - reusable workflow actions as files
   - permlink for old docs
 
@@ -415,7 +415,7 @@ modified: 2023-11-28T14:48:45.910Z
 - 支持mdx，支持部分js组件库
 # versions/history
 - 文档级、文件夹级、workspace级
-# integretions
+# integrations
 - 支持mdx，内置开源组件
 # knowledge-base
 - 个人知识搜索引擎
