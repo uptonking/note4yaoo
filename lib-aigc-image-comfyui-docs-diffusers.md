@@ -76,6 +76,17 @@ modified: 2025-08-23T11:42:50.170Z
 
 ## comfyui
 
+- build comfyui from source
+  - [Adding UV installation instructionsUI](https://github.com/comfyanonymous/ComfyUI/pull/6349)
+
+```sh
+uv add --requirements requirements.txt
+
+cp extra_model_paths.yaml.example extra_model_paths.yaml
+
+uv run python main.py
+```
+
 ### draft-comfy
 
 - roadmap

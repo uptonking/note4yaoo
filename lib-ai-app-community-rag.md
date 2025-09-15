@@ -318,7 +318,11 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [embeddinggemma has higher memory footprint than qwen3:0.6b? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nbbi1c/embeddinggemma_has_higher_memory_footprint_than/)
+- For whatever reason, Gemma models have a larger vocab size of 256K whereas most models have a vocab size of around 120k. This adds to the size
+
+- confirmed, i use ollama just for embedding, download it from official ollama library. The size is 621MB on command ollama list. But getting bigger like 2.8GB on ollama ps
+  - and it very slow compared to qwen embedding 4b.
 
 - ## [Real life experience with Qwen3 embeddings? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nezmfi/real_life_experience_with_qwen3_embeddings/)
   - I need to decide on an embedding model for our new vector store and I’m torn between Qwen3 0.6b and OpenAI v3 small.

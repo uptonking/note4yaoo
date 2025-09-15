@@ -40,6 +40,9 @@ modified: 2025-09-01T05:52:34.241Z
 - who is using #librechat
   - ?
 # draft
+- comfyui-local
+  - support tool config: steps, sampler, scheduleer, style-preset
+
 - code interpreter 如何实现
   - open source alternative
 

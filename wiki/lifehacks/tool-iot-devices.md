@@ -182,7 +182,12 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## [Apple M5 could ditch unified memory architecture for split CPU and GPU designs | Hacker News _202412](https://news.ycombinator.com/item?id=42552494)
+- UMA hurts the GPU too much. Widely parallel processing wants to access memory in bigger chunks than a CPU. If you try to mix access and modification, you lose the benefit of widely parallel processing. 
+  - Other GPU designers have considered and eschewed unified memory models, to the tune of hundreds of millions in research dollars.
+- I agree that single cache-line fetches are pretty poor for parallel vector units, but supporting the former in an environment designed for the latter doesn't seem to off-putting (the CM-5 did this).
+
+- You can split the CPU and GPU and still have UMA. Splitting CPU/GPU is a packaging and interconnect concern and is not mutually exclusive with UMA.
 
 - ## [求推荐！想组一台256G➕笔记本跑大模型🥹 - 小红书](https://www.xiaohongshu.com/explore/6892017700000000030274de?xsec_token=ABHUpmj6nmLewRxGBOYsEYt2FVRxDHjqOHSnhQfgUJJnc=&xsec_source=pc_search&source=web_explore_feed)
 - 普通笔记本不支持256，别异想天开
@@ -483,7 +488,16 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## [如何使用intel的gpu和npu跑大模型？ - 知乎](https://www.zhihu.com/question/5293002844)
+- 去下载ollama intel版，运行，然后就能调用核显跑模型了，但32g本子核显只能调用20G
+
+- 目前比较适合半小白的办法，就是下载intel的ollama portable zip
+  - 以上这俩应该都是基于llama.cpp的sycl后端优化的。
+  - 其实在NPU或GPU上运行大语言模型还可以用OpenVINO。但不是很适合小白，OpenVINO更适合有一定开发能力的用户。
+
+- 你需要用openvino，推理的时候指定推理的设备npu，gpu还是cpu，就可以把推理运行到你想要的设备上。你可以到openvino的notebook找到很多例子。
+
+- intel自带的gpu不是普通显卡，不能用gpu这个选项，
 
 - ## [3090 相当于 40 系的什么显卡呢？这款产品的优缺点分别是什么呢？ - 知乎](https://www.zhihu.com/question/681021828)
 - 3090资深用户，首发购入一直用到4090首发, 
@@ -965,6 +979,12 @@ modified: 2022-01-16T15:52:31.293Z
 - 能不用笔记本别用笔记本。Linux对硬件性能没有太大限制，所以，你的硬件越强~你得到的就越多。
   - 显卡，如果搞AI的话，只选NVIDIA独立显卡，现在3090二手货也不贵了，千万别信什么N卡驱动难搞，那都是不会英文的原始人才会信的话术。Linux用其他卡才叫灾难，要啥啥没有，只能显示，还不如亮机卡。
 # discuss-laptop-macbook
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

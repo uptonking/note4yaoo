@@ -101,7 +101,16 @@ modified: 2025-09-01T07:58:29.058Z
 
 - ## 
 
-- ## 
+- ## [Strategy for Coding : r/LocalLLM _202509](https://www.reddit.com/r/LocalLLM/comments/1nf8o7d/strategy_for_coding/)
+  - Qwen 3 Coder can benefit from the thinking output of another model. If you copy/paste your prompt and the thinking output from something like Qwen 3 Thinking, it seems to perform better than simply giving either the prompt alone.
+
+- Wonder if you could fake it in the prompt by asking Coder to write a document discussing the problem and creating a to do list before anything else
+  - sorta but it's not as good as actually using another qwen. the other qwen doesn't even have to be that big
+
+- I guess you're not using a tool like Cline where you enter into Plan or Act mode.
+  - Plan mode lets you chat to the LLM (I prefer a thinking one instead of instruct) about the requirements. During this mode, it can ask to look at files in the project to generate a better plan. The final part of Plan Mode is asking the User if they want to proceed with the generated plan and enter Act Mode.
+  - In Act Mode, will perform creating files, updating files, deleting. And can also run/validate the code if you configure your rules properly.
+  - Another cool thing about cline is you can actually have two different LLMs for the Plan and Act modes. In Plan mode, i'll leverage Qwen3 4B thinking for rapid back and forth on the requirements. Then when Act mode is enabled, use Qwen3 Coder 30B A3B to consume the plan and do the work.
 
 - ## [What is your system prompt for Qwen-2.5 Coder 32B Instruct : r/LocalLLaMA _202411](https://www.reddit.com/r/LocalLLaMA/comments/1gqagzg/what_is_your_system_prompt_for_qwen25_coder_32b/)
 - Start your system prompt with You are Qwen, created by Alibaba Cloud. You are a helpful assistant. - and write anything you want after that. Looks like model is underperforming without this first line.
@@ -216,12 +225,86 @@ modified: 2025-09-01T07:58:29.058Z
 - I do not use any IDE/editor's AI feature for coding. They feel pretty much useless even with full context. My personal opinion is, a developer should fully understand their code before committing, AI powered editors destroys this habit
 
 - I’ve had much better luck with keeping the AI open in a browser and chatting with it, then manually editing the code in an IDE. 
-# discuss-local-coding
+# discuss-local-coding-models
 - ## 
 
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Nemotron Nano V2 models are remarkably good for agentic coding : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1na9crp/nemotron_nano_v2_models_are_remarkably_good_for/)
+  - I use Nvidia Nemotron Nano 9B V2 and 12B v2 with Roo Coder served by both LM Studio (Mac) and Llama.cpp (Ubuntu). 
+  - These models are small, fast, smart, follow instructions well, and are good at tool calling. 
+  - I can load up Q8 quants with 300k context and VRAM use is less than 24Gb. Great little models.
+
+- when I host 12B v2 on latest llamacpp server, they are quite slow - more so than similarly-sized models. My rig is a 2x 3090.
+  - it runs pretty fast in llama.cpp on my w7900.
+- That's weird. I run a single 3080 with 10 GB of VRAM and Nano 9B is *insanely* fast for me, getting up to 80tps.
+
+- what kind of tasks do you trust such small models with when it comes to coding ? Super fascinated by smaller models but my previous attempts at coding with them (months ago) where disastrous.
+  - Right now I’m using them for debugging and code development in Roo Coder. I too had lost faith in smaller models for coding and relied on Qwen 3 Coder 30b. 
+  - These nano models are just as good if not better, and take instructions and perform tool calling better. The mamba long context performance is really handy for coding.
+
+- Qwen 3 Coder 30b is not good, a better option is Qwen 3 2507. But in my testing gpt-oss 20b simply beats them all, making using any of the other kinda pointless right now.
+
+- I see max_position_embeddings at 128K in the source config.json; what’s the protocol for extending context that far in these models?
+  - I just set the context to 300k and it works. Using bartowski ggufs.
+
+- I tried to use Nemotron Nano 9B V2 as directly provided by Nvidia through OpenRouter with Roo Code and Kilo Code but without success due to inability to call tools/mcp servers correctly. For example: Error: Kilo Code tried to use read_file without value for required parameter 'args (containing valid file paths)'. Retrying... Any hints on why doesn't work?
+  - Same problem with Cline: Cline tried to use use_mcp_tool without value for required parameter 'tool_name'. Retrying...
+- I can’t speak to the MCP issue, but I ran into that. All I had to do was give Roo access to the containing directory and the issue resolved after that.
+
+- ## [what the best local llm for coding? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nf8qdl/what_the_best_local_llm_for_coding/)
+- I've used GPT-OSS20b and Qwen3-Coder-30B-A3B-Instruct-GGUF, I like both. 
+  - However, OSS20b due to reasoning, can come up with better code instructions and optimizations/refactoring unlike the Qwen3-Coder.
+
+- I just run 30B on RAM (I have 32GB) currently with ollama, which occupies 19 GB with a 4096 context. 
+
+- If you're using native tool calling (as opposed to Roo/Cline XML-style calls), you can also strongly consider GPT OSS 20B, it is very fast and has a configurable thinking setting, so is a very versatile option.
+
+- ## [Is Codestral 22B still the best open LLM for local coding on 32–64 GB VRAM? : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1lsmtzr/is_codestral_22b_still_the_best_open_llm_for/)
+- Codestral 22b never been a good model at first place. It had terrible errors while making arithmetic computations, problem that has long been solved in llms. It does have lots of different languages based, but is dumb as rock.
+
+- qwen2.5 code is one of the best if u can go with 32b or 14b
+- Qwen2.5 came out 3-4 months later and that was the end of Codestral, but it was king for a hot sec
+
+- GLM-4-32B has been very weak for long context and large codebases, in my experience.
+  - In my experience too. Arcee AI fixed the base GLM4 but not instruct. So yeah glm is good for short interactions only.
+
+- I think maybe DeepSWE-Preview-32B if you are using coding agents? It's based on Qwen3-32B
+  - Deep anything takes way too long thinking and second guessing itself
+- this DeepSWE is based on Qwen 32b. There Chimera that cuts r1 0528 thinking by 2.5x and retains high quality and off course new V3.1 that is also much less wait for thinking and also has thinking off mode which is the default
+
+- Qwen2.5 coder 32B q8 , forget q4, q6.
+  - Qwen3 is a newer model and is miles above even for coding. Scores 40% on Aider polyglot vs 16% for Qwen2.5-Coder-32B.
+
+- 
+- 
+- 
+- 
+- 
+
+- ## [mistralai/Devstral-Small-2507 : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1lwe5y8/mistralaidevstralsmall2507/)
+- What's the dIfference between devstral and codestral? Which one works better with vs code+cline?
+  - Devstral for sure. It was trained specifically to follow the "agentic" / "tool use" patterns (do this -> ok, first I need to read_files, then I need to read_files, then I will edit that, then I need to write_files, etc.)
+  - Codestral was good for aider-like / copilot-like integrations pre "agentic" (do this -> here's the code bruh, deal with it)
+
+- Devstral was specifically made for "agentic" workflows together with tools usage. It'll use tools autonomously (granted you've given it access to suitable tools) in order to solve some problem. Since the model is trained specifically for this sort of usage, it excels at those sort of tasks.
+  - Codestral in constrast, was made for high-quality code generation and code completion specifically. You'd give this model smaller specific tasks like "Write a function that does X" rather than "Implement functionality that adds X" which is how you'd use Devstral.
+  - Another difference is the licenses, where Devstral is Apache 2.0 (proper FOSS) while Codestral is Mistral Non-Production Licence (not open source but proprietary). 
+
+- what is Act Mode & Plan Mode?
+  - It’s just two modes defining which tools are allowed. Plan mode is read-only and act allows the llm to modify files and run more commands.
+  - these modes are just different system prompts describing the different role the LLM is playing
+
+- At 24B parameters, Mistral’s Devstral-Small-2507 is the top open LLM on SWE-Bench Verified (53.6%), outperforming R1-671B, Claude-3.5 & GPT-4.1-mini. 1.1 has stronger generalization across prompts & code environments.
+
+- They also released Devstral Medium on the API only. 
+  - Devstral Medium is available via API only (not open-weight), and supports enterprise deployment on private infrastructure, with optional fine-tuning capabilities.
 
 - ## [Cline with Qwen 3 Coder - 100% Local : r/CLine _202508](https://www.reddit.com/r/CLine/comments/1mexlpg/cline_with_qwen_3_coder_100_local/)
 - I would lower the context length to 128k and see if that helps improve performance. 
@@ -813,6 +896,14 @@ ollama run hf.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF:Q6_K
 - Why not Qwen-Code?
   - Because I want the model to support other general purpose use cases too.
 
+- ## [Deepseek Coder V2 is so good for math : r/LocalLLaMA _202406](https://www.reddit.com/r/LocalLLaMA/comments/1do72te/deepseek_coder_v2_is_so_good_for_math/)
+  - It's really pretty and organized
+- I assume this is because it was trained on Latex? I'm not sure how aggressively Anthropic / OpenAI are training on Latex.
+
+- DeepSeek has some training magic in their coding models.  We have been using DeepSeek for real code generation recently and the only complaint is the speed of their API.   The price is great though.
+  - Separately I’ve been happy running v2 coder lite locally; almost as good as Codestral but significantly faster.
+- Another complaint of their API is the context length. Their open weights supports 128k, But their API only supports 32k 
+
 - ## [Best LLM right now for code generation? : r/LocalLLaMA _202402](https://www.reddit.com/r/LocalLLaMA/comments/1b1tycl/best_llm_right_now_for_code_generation/)
 - I’m confused, why is codellama-70b so bad on this leaderboard
   - Llama 70b feels more like a ESG score replenisher. Practically brain dead. Wonder if finetunes will uncover anything useful beneath 
@@ -856,6 +947,26 @@ ollama run hf.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF:Q6_K
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [New to local, vibe coding recommendations? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nh16ft/new_to_local_vibe_coding_recommendations/)
+- I still prefer Aider. Their system messages are under 2k. Crush is like 10k iirc. Idk about cursor/roo.
+  - Sure it's not agentic but I prefer going one step at a time with the bot. Plenty of /undo's and /clear's.
+
+- Keep using Cursor. 12GB VRAM is too low. The Vibe code part starts around 16GB but BARELY.
+
+- ## 🧑‍🏫 [Engineer's Guide to Local LLMs with LLaMA.cpp and QwenCode on Linux : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nhh1v1/engineers_guide_to_local_llms_with_llamacpp_and/)
+  - I will share my local AI setup on Ubuntu that I use for my personal projects as well as professional workflows (local chat, agentic workflows, coding agents, data analysis, synthetic dataset generation, etc).
+  - Compile LlamaCPP on your machine, set it up in your PATH
+  - Use `llama-server` to serve local models with very fast inference speeds
+  - Setup `llama-swap` to automate model swapping on the fly and use it as your OpenAI compatible API endpoint.
+  - ntegrate local AI in Agent Mode into your terminal with QwenCode/OpenCode
+  - Test some local agentic workflows in Python with CrewAI 
 
 - ## [Are you using local LLMs to power Cline, RooCode, Cursor etc.? What is your experience? : r/LocalLLaMA _202502](https://www.reddit.com/r/LocalLLaMA/comments/1ivhrbn/are_you_using_local_llms_to_power_cline_roocode/)
 - I use Qwen Coder 14b/32b for code refactoring and Qwen Coder 3b for autocomplete with the Continue.dev extension for VSCode. It's not quite on par with Github Copilot or Cursor, but it works well enough.

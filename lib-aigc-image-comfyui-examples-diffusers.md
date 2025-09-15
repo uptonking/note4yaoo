@@ -95,6 +95,7 @@ modified: 2025-08-23T11:43:35.904Z
     - 📌 The desktop app for ComfyUI (Windows & macOS)
     - bundled with a few things: ComfyUI_frontend, ComfyUI-Manager, uv
     - 依赖electron-store、node-pty、@electron/rebuild、@todesktop/runtime(未开源的云端打包)
+    - [Open sourcing v1 Desktop - by Robin - ComfyUI Blog _202411](https://blog.comfy.org/p/open-sourcing-v1-desktop)
     - https://github.com/Comfy-Org/comfy-cli
   - https://github.com/Comfy-Org/ComfyUI-Manager /GPL/python
     - It offers management functions to install, remove, disable, and enable various custom nodes

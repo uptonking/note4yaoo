@@ -10,6 +10,8 @@ modified: 2023-07-23T07:05:19.441Z
 # guide
 
 # usage
+- clean-mac
+  - 清理空间很有用的工具 onyx, 在没怎么清理 `~/Library/Caches` 文件夹的情况下都能释放大约6GB空间
 
 ## macbook
 
@@ -219,6 +221,46 @@ redis-cli shutdown
 
 - ## 
 
+- ## 
+
+- ## [Difference between CleanMyMac and CleanMyMacX ? : r/MacOS _202501](https://www.reddit.com/r/MacOS/comments/1i5kqr4/difference_between_cleanmymac_and_cleanmymacx/)
+- They are both overpriced garbage apps.
+
+- Why would you use clean my Mac where there is another tool which is free and open like onyx. 
+  - Also this tool do nothing to Mac, clearing cache you can do on the command line easily and no risk to expose your data to shady companies.
+
+- ## [macos - Is it safe to delete `~/Library/Caches` ? - Ask Different](https://apple.stackexchange.com/questions/118941/is-it-safe-to-delete-library-caches)
+- It's generally safe, though a little dangerous depending, to do it but often not worth the effort.
+  - The caches in `/System/Library/Caches` are generally small and useful, the ones in `/Library/Caches` are less system caches and much more readily cleared.
+
+- Have no fear, delete caches but I prefer to do it either via Single-User mode or I use https://www.titanium-software.fr/en/onyx.html Check Onyx out as it does some good maintenance scripts as well.
+
+- [macbook pro - Is it ok to delete all the folders inside the library caches folder on macOS? - Ask Different](https://apple.stackexchange.com/questions/479156/is-it-ok-to-delete-all-the-folders-inside-the-library-caches-folder-on-macos)
+  - I contacted Apple direct and they told me to : 
+    - Drag the entire content of the Caches folder into trash
+    - Restart the machine
+    - Delete the trash
+
+- ## 🛢️ [How to do I clear system data on Mac OS? : r/MacOS _202307](https://www.reddit.com/r/MacOS/comments/154rp99/how_to_do_i_clear_system_data_on_mac_os/)
+- there are several ways to clear system data on Mac OS.
+  - 1: Clear system cache: Go to Finder > Go > Go to Folder, then type in `~/Library/Caches` and hit enter. Select all the folders inside the Caches folder and delete them.
+  - 2: Clear system logs: Go to Finder > Go > Go to Folder, then type in `/var/log` and hit enter. Select all the files inside the Log folder and delete them.
+  - 3: Remove unused language files: Go to Finder > Go > Go to Folder, then type in `/Library/Languages` and hit enter. Delete all the language folders you don't need.
+  - 4: Uninstall unused apps: Go to the Applications folder and delete the apps you don't use.
+  - 5: Clean up system files: Use a system cleaning tool like CleanMyMac X to scan and remove unnecessary system files.
+
+- I cleared 190Gb of my system data by having a look at :
+  ~/Library/Caches
+  ~/Library/Logs
+  ~/.cache
+  ~/.gradle/caches
+  XCode Derived Data
+  XCode Simulators
+  Docker containers (docker system prune -a)
+
+- here's what my problem was: A 400GB Spotlight search index.
+  - sudo du -hs /System/Volumes/Data/. Spotlight-V100/
+
 - ## [Please help me stop mediaanalysisd process because I'm losing my sanity : r/MacOS _202505](https://www.reddit.com/r/MacOS/comments/u17hsa/please_help_me_stop_mediaanalysisd_process/)
 - Try: killall -STOP mediaanalysisd mediaanalysisd-access
   - This is the only one that worked for me, without disabling SIP. Huge thanks!
@@ -334,6 +376,19 @@ CREATE ROLE username WITH LOGIN SUPERUSER CREATEDB CREATEROLE PASSWORD 'password
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [“kextload” in Login Items? What is it? Leads to “sbin” : r/MacOS](https://www.reddit.com/r/MacOS/comments/1ceieyy/kextload_in_login_items_what_is_it_leads_to_sbin/)
+- It’s a Kernel Extension loader likely used for NTFS for Mac.
+
+- ## [Finding/ getting rid of the source of a background task in the "Allow in the Background" list? : r/MacOS](https://www.reddit.com/r/MacOS/comments/1jz5qs8/finding_getting_rid_of_the_source_of_a_background/)
+- Open Terminal and run `sfltool dumpbtm` . 
+  - You can Cmd-F for "He X1a0" and it should show you its filepath.
 
 - ## [Desktop wallpaper keeps changing back - Apple Community](https://discussions.apple.com/thread/254934033?sortBy=rank)
   - OnlySwitch存在相同的问题
