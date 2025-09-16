@@ -138,6 +138,9 @@ modified: 2023-11-28T14:48:45.910Z
   - 能为其他产品提供infra或tools，如nvidia
   - 能为其他用户用户提供二创素材，如视频、图片
 
+- 为成功的产品做生态
+  - unsloth给llm写tutorials, 比官方更早fix prompts issues, 增大context, 版本多(The biggest difference I would say isn't the quants, but rather our bug fixes for every model)
+
 - 知识库的市场 (🤔 toB or toC)
   - 客服系统自动回复，并显示相关历史
   - classic 多文件知识库(ide)

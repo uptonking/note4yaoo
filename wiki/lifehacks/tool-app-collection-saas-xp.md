@@ -227,12 +227,14 @@ modified: 2022-11-07T10:25:12.034Z
   - [电报telegram群全网检索 - TgSql.com](https://tgsql.com/search)
 
 - 64Gram
-  - https://github.com/TDesktop-x64/tdesktop
+  - https://github.com/TDesktop-x64/tdesktop /2.3kStar/GPL/202509/cpp
   - https://flathub.org/apps/io.github.tdesktop_x64.TDesktop
   - 64Gram (unofficial Telegram Desktop), Based on Telegram Desktop
   - source code is published under GPLv3 with OpenSSL exception
   - support win/linux/macos
-  - 下载的视频在本地目录 ~/.var/app/io.github.tdesktop_x64. TDesktop/data/64Gram/tdata/temp_data
+  - 下载的视频在本地目录 
+    - linux: ~/.var/app/io.github.tdesktop_x64. TDesktop/data/64Gram/tdata/temp_data
+    - mac: /Users/yaoo/Library/Application Support/Telegram Desktop/tdata/user_data/media_cache
   - features
     - Expose all chat permissions setting
     - Show admin titles in member list

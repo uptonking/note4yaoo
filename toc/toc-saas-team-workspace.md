@@ -71,11 +71,14 @@ modified: 2023-02-07T17:38:05.336Z
   - 提供了网盘功能
   - 支持第三方integrations
   - Various teams are building products on top of the Platform, including Huly and TraceX.
-  - https://github.com/hcengineering/rebeldb /MIT/202412/zig
+  - https://github.com/hcengineering/rebeldb /MIT/202412/zig/inactive
     - RebelDB™ is a high-performance database engine written in Zig that combines efficient memory management with flexible storage options
     - Variable-length integer encoding optimized for lexicographical ordering
     - Flexible page-based storage system with configurable alignment
     - Zero-copy value storage with efficient memory management
+  - [Are there any open-source projects similar to Huly? _202410](https://github.com/hcengineering/platform/discussions/6894)
+  - [Request for Access to Private Repository _202408](https://github.com/hcengineering/platform/issues/6433)
+    - Huly Platform is Open Source and all the code available to everyone (including you) at hcengineering/platform under EPL license. 
 
 - https://github.com/JordanKnott/taskcafe /MIT/202209/go/ts/inactive
   - open source project management tool with Kanban boards

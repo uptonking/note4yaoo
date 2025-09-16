@@ -139,6 +139,10 @@ modified: 2023-02-08T07:20:48.475Z
   - https://dialoqbase.n4ze3m.com/
   - open-source application designed to facilitate the creation of custom chatbots using a personalized knowledge base
 
+- https://github.com/KolosalAI/Kolosal /297Star/apache2/202505/cpp/inactive
+  - https://kolosal.ai/
+  - OpenSource and Lightweight alternative to LM Studio to run LLMs 100% offline on your device
+
 - https://github.com/binary-husky/gpt_academic /GPLv3/202405/python/js
   - https://github.com/binary-husky/gpt_academic/wiki/online
   - 为GPT/GLM等LLM大语言模型提供实用化交互接口，特别优化论文阅读/润色/写作体验，模块化设计，支持自定义快捷按钮&函数插件，支持Python和C++等项目剖析&自译解功能，PDF/LaTex论文翻译&总结功能，支持并行问询多种LLM模型，支持chatglm3等本地模型。
