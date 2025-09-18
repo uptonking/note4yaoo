@@ -10,6 +10,9 @@ modified: 2025-09-16T12:36:12.968Z
 # guide
 
 - model with UD(unsloth dynamic quants)
+
+- models-config
+  - 大模型的测试经常需要修改参数，支持一键恢复默认配置更好
 # discuss-stars
 - ## 
 
@@ -85,6 +88,53 @@ modified: 2025-09-16T12:36:12.968Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Memory Tests using Llama.cpp KV cache quantization : r/LocalLLaMA _202406](https://www.reddit.com/r/LocalLLaMA/comments/1dalkm8/memory_tests_using_llamacpp_kv_cache_quantization/)
+  - Now that Llama.cpp supports quantized KV cache, I wanted to see how much of a difference it makes when running some of my favorite models. 
+
+- how do you enable caching in llamacpp? is it only kv cache or also prefix cache?
+  - The KV cache is always used. Its part of how llama.cpp generates. This post is about enabling quantization on the KV cache
+  - llama.cpp server will do some caching by default depending on how you're using it. You can use "cache_prompt" when using the text completion endpoint. It also has a "slots" system for maintaining cache between requests.
+
+- For future reference: if you want to cache using the v1/chat/completions OAI-compatible endpoint, with the OpenAI client, pass cache_promot as an extra_body parameter 
+
+- ## 🤔 [Using KV Cache, Do You Notice any Quality Drop? : r/LocalLLaMA _202408](https://www.reddit.com/r/LocalLLaMA/comments/1ej8tjn/using_kv_cache_do_you_notice_any_quality_drop/)
+- Use Q8 for K, Q4 for V is fine. Here is a comment from the guy who did the implementation in llama.cpp
+
+- I've noticed a slight quality drop but the benefits outweigh the loss for me.
+  - That's what I am experiencing too.
+
+- On llama.cpp yes. On exllama not not as much.
+
+- For me, q4 cache doing summaries of YouTube videos with llama 3.1 the number of hallucinations increases significantly compared with not using it.
+
+- ## [What's with the obsession with reasoning models? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nfqe2c/whats_with_the_obsession_with_reasoning_models/)
+  - Why are practically all AI model releases in the last few months all reasoning models? Even those that aren't are now "hybrid thinking" models.
+
+- Reasoning is great for making AI follow prompt and instructions, notice small details, catch and fix mistakes and errors, avoid falling into tricky questions etc. I am not saying it solves every one of these issues but it helps them and the effects are noticeable.
+  - Sometimes you need a very basic batch process task and in that case reasoning slows you down a lot and that is when instruct models becomes useful, but for one on one usage I always prefer reasoning models if possible
+
+- It is better at coding and math
+
+- You nailed it, reasoning helps to reduce hallucination. Because there is no real way to eradicate hallucination, making LLM smarter becomes the only viable path even at the expense of token. The state of art is how to achieve a balance as seen in gpt 5 struggling with routing. Of course nobody wants over reasoning for simple problem, but hwo to judge the difficulties of a given problem, maybe gtp5 has some tricks.
+
+- Reasoning models have their place, but not every model should be a reasoning models. Also not too big on hybrid reasoning models either since it feels like a worst of both worlds which is probably why the Qwen team split the instruct and thinking models for the 2507 update.
+
+- I've found that all reasoning models have been massively superior for creative writing compared to their non-reasoning counterparts, 
+
+- Another example is my Devstral Small 1.1 24B doing tremendously better than GPT-OSS-20B/120B, Qwen3 30B A3B 2507 all series, in Solidity problems. A non-reasoning model that spends less tokens compared to the latter models.
+  - However, major benchmarks puts Devstral in the backseat, except in SWE bench. Even latest ERNIE 4.5 seems to be doing the exact opposite of what benchmarks say.
+
+- I think there are two main appeals:
+  - First, reasoning models achieve more or less what RAG achieves with a good database, but without the need to construct a good database. Instead of retrieving content relevant to the prompt and using it to infer a better reply, it's inferring the relevant content.
+  - Second, there are a lot of gullible chuckleheads out there who really think the model is "thinking". It's yet another manifestation of The ELIZA Effect, which is driving so much LLM hype today.
+  - The main downsides of reasoning vs RAG are that it is slow and compute-intensive compared to RAG, and that if the model hallucinates in its "thinking" phase of inference, the hallucination corrupts its reply.
+
+- Reasoning models are exceptionally good at filtering through rules, injected corpo-required bias, overriding and ignoring the user's prompt, requiring injection of RAG and tool use to further deviate from the user's request and tokens used, correcting the pathways on way, and finally reasoning refusal and guardrails.
 
 - ## 🆚 [Can someone explain the difference between a 4bit pre-quantized model and a quantized model? : r/LocalLLaMA _202409](https://www.reddit.com/r/LocalLLaMA/comments/1f92brm/can_someone_explain_the_difference_between_a_4bit/)
 - Normal 4bit version process: [Download 16bit weights => Quantize to 4bit on the fly] => 4bit QLoRA / inference
@@ -493,7 +543,7 @@ sudo launchctl load /Library/LaunchDaemons/io.yaoo.sysctl.plist
 - 
 - 
 
-- [[Bug]: Invalid value for 'tool\_choice' · Issue #7039 · All-Hands-AI/OpenHands](https://github.com/All-Hands-AI/OpenHands/issues/7039)
+- [[Bug]: Invalid value for 'tool_choice' · Issue #7039 · All-Hands-AI/OpenHands](https://github.com/All-Hands-AI/OpenHands/issues/7039)
   - When I switch to use OpenAI (gpt-4o), it working fine.
 
 - ## [Qwen3 Models not Recognized as Embedding Types for MLX Format · Issue · lmstudio-ai/lmstudio-bug-tracker _202507](https://github.com/lmstudio-ai/lmstudio-bug-tracker/issues/808)
@@ -512,9 +562,19 @@ sudo launchctl load /Library/LaunchDaemons/io.yaoo.sysctl.plist
 
 - ## 
 
-- ## 
+- ## 🧩 [Does the number of bits in KV cache quantization affect quality/accuracy? : r/LocalLLaMA _202502](https://www.reddit.com/r/LocalLLaMA/comments/1iuw1kx/does_the_number_of_bits_in_kv_cache_quantization/)
+- Setting the KV cache to Q8 has only a minimal influence on the results. 
+  - Setting the KV cache to Q4 has quite an impact though. Setting K to F16 or Q8 and V to Q4 still achieves decent results though.
+  - Just the extensive test that the author of the KV quantization in llama.cpp did that I linked above. The results make sense, as the keys are used to find the right value, and mismatching keys due to higher quantization will lead to incorrect values, whereas correctly looked up values that have been quantized will still be somewhat related to the original information.
 
-- ## 
+- ## [LMStudio, KV cache and context length : r/LocalLLaMA _202502](https://www.reddit.com/r/LocalLLaMA/comments/1iyv8t6/lmstudio_kv_cache_and_context_length/)
+  - I've turned on KV cache quantization because it "may lead to faster generation"
+  - LMStudio's UI also mentions that when this feature is on, the context length value doesn't matter. So, I'm wondering how big the actual context is with this setting enabled?
+
+- Multiplicative. Normal is fp16. Q4 quadruples your context length with minimal loss (except qwen)
+
+- under the KV Cache Quantization option that "Context Length setting is ignored when using KV Cache Quantization" and unsurprisingly completely ignores whatever you have in the field.
+  - Based on pasting a 10k-ish token article into a conversation, and LM Studio filling the context to 257.8%, it seems like it's set to 4096 by default... which really seems like a huge waste of being able to quantize the cache, but again there is no additional field or slider to adjust context size when quantization is enabled.
 # discuss-ollama-roadmap
 - ## 
 
@@ -781,6 +841,21 @@ curl http://localhost:11434/api/chat -d '{
 - https://x.com/scomper/status/1791804644332908646
 - 好像都是小模型为主吧
 
+# discuss-model-tuning
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [What’s the training cost for models like Qwen3 coder 30b and is the code for training it is open source or close source? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1njws3n/whats_the_training_cost_for_models_like_qwen3/)
+- You can do fine tunes on the 4B real easy with Unsloth. LoRAs and QLoRAs, too. It won’t take much VRAM. You can fine tune a LoRA for Qwen3 30B A3B Instruct 2507 in BF16 on a single 96GB 6000 Pro in just a few hours.
+  - That depends entirely on what you are training and the size of your dataset. True fine tuning, on a really small dataset will take a few hours, but if you are trying to train in new capabilities, that is going to take a much larger dataset, and could be months or over a year on a single RTX pro 6000.
+
+- Their exact code isn't open source, but many companies train using Pytorch and Megatron-Core open source code.
+  - I estimate GPU-time needed for training Qwen 30B A3B to be around 800 000 hours for H100 SXM5, so around 1.6 million dollars. That's for pretraining on 20T tokens, assuming 40% MFU.
+
+- Stick to finetunes, you don't have the hardware or budget to pretrain models of practical size (believe me I have tried).
 # discuss
 - ## 
 

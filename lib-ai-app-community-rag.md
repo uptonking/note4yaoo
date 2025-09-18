@@ -342,6 +342,21 @@ modified: 2024-09-08T20:08:16.088Z
 - I've used 8B and 4B as GGUF at Q4_K_M and never had issues some are pointing.
   - Found the 4B most efficient as the difference between the 8B is small for such resource difference.
   - Been using for code bases, currently over 380 files with code. No issues.
+
+- ## [Are Qwen3 Embedding GGUF faulty? : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1lt18hg/are_qwen3_embedding_gguf_faulty/)
+  - Qwen3 Embedding has great retrieval results on MTEB.
+  - However, I tried it in llama.cpp. The results were much worse than competitors.
+
+- You have to add the EOS Token manually "<|endoftext|>" as of here: https://github.com/ggml-org/llama.cpp/issues/14234
+
+- In multilingual, I was very disappointed with qwen3 embedding compared to jinaai/jina-embeddings-v3 which remains my favorite for the moment
+- v4 is out btw: https://huggingface.co/jinaai/jina-embeddings-v4
+  - It does work much better, getting 48.11% on the same benchmark.
+  - The official JINA API is very slow though. Half a minute for a batch of 32.
+
+- Would you believe I was just trying it out today and it was all messed up. Swapped from Q3 4B and 0.6B to granite 278m and all my problems went away.
+
+- Yes, though if I tried generating the embeddings through the SentenceTransformers module instead, I got the state-of-the-art results I was hoping for on my benchmark. A code snippet for how to do so is listed on their HF page.
 # discuss
 - ## 
 

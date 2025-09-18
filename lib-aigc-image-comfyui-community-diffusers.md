@@ -485,6 +485,43 @@ export COMMANDLINE_ARGS="--skip-torch-cuda-test --disable-nan-check --upcast-sam
 ```
 
 - [How can I point to a shared models folder? · lllyasviel/stable-diffusion-webui-forge · Discussion ](https://github.com/lllyasviel/stable-diffusion-webui-forge/discussions/697)
+# discuss-news 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🚀 [Introducing Comfy Cloud : r/comfyui _202509](https://www.reddit.com/r/comfyui/comments/1nhp958/introducing_comfy_cloud/)
+  - to use ComfyUI, you often had to juggle python dependencies and needed access to a GPU.
+  - Comfy Cloud is designed to just work. Models are available and in the right place. Workflows run fast on powerful GPUs. It is stable and keeps up with the latest ComfyUI releases
+  - Right now, the beta is completely free, we need more people to test it before know how well we can optimize to cut down cost of the subscription.
+
+- My first question was data collection/retention/sharing/etc.
+
+- If it's cheaper than RunPod, I'll promote this one from now on.
+  - But serverless pricing is rarely cheap, so the fact that they haven’t disclosed the rates yet suggests it’s probably expensive.
+
+- This kind of service with pre-configured workflows would be very, very helpful especially to newer users. 
+
+- ## 💰 [Comfy Raises $17M : r/comfyui _202509](https://www.reddit.com/r/comfyui/comments/1nikzu7/comfy_raises_17m/)
+  - In October 2022, u/comfyanonymous discovered Stable Diffusion and got hooked—not because of some vague “make AI accessible” mission, but out of a raw obsession with image generation. The first experiments? Generating better images of characters with fennec ears. Out of that obsession, ComfyUI was born.
+  - Open source must win. If a proprietary service dominates, creativity loses. Proprietary services can come and go. Open source lasts forever.
+  - With ComfyUI, you will always be able to run workflows on your own machine, on your own terms. Even if the internet vanishes
+
+- I would assume the incentive is adoption. ComfyUI’s value is that it’s become the open playground for AI workflows, just like Blender did for 3D or Linux for servers
+
+- cloud confy will be paywalled, but every advantange designed for it will be free for the consumers to run on their machines.
+
+- a list of open source projects that went "Venture Capital" and ended up a mess where the community had to fork the hell outta there:
+  - •	ElasticSearch – Changed license to SSPL/Elastic License under VC pressure → forked into OpenSearch.
+  - •	Terraform – Relicensed to BSL in 2023 → OpenTofu forked under Linux Foundation.
+  - •	Neo4j – Went from AGPL to restrictive license → forks like Memgraph appeared.
+  - •	Travis CI – After Idera acquisition, cut free offering and slowed service → users migrated to GitHub Actions/GitLab CI.
+  - •	Jenkins X – Backed by CloudBees, direction shifted and community lost interest → project stagnated.
+  - •	RethinkDB – VC-backed, pivoted unsuccessfully, company shut down → Linux Foundation rescued as read-only OSS.
 # discuss
 - ## 
 

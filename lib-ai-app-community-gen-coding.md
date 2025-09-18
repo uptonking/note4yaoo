@@ -96,7 +96,17 @@ modified: 2025-09-01T07:58:29.058Z
 
 - ## 
 
-- ## 
+- ## [Do local LLMs do almost as well with code generation as the big boys? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1naiud3/do_local_llms_do_almost_as_well_with_code/)
+- You can run qwen 3 coder with 512GB M3 ultra easily.
+  - Not the 480 though I dont think. Read and a few responses indicate that + context would need about 1TB of ram.
+- The best model that's open source right now i think is still Qwen 3 Coder 480B; in my experience it codes pretty close to Sonnet 4 after having used both pretty extensively. But you're going to want it in 16-bit which would need about 1TB just to load. 
+
+- Coding may be more sensitive, but anything above q6 is not really noticeable. 
+  - Some of the best models are trained at q8 such as DeepSeek, Kimi and GLM 4.5. GPT OSS is 4 bit natively. I use gpt oss 120b every day for coding and I run it local. 
+  - FP16 is for training. It has no place in inference.
+
+- Absolute not. I have a Mac M3 Ultra 512gb, and it can run Kimi, Qwen480, Deepseek, GLM 4.5... but the thing most people don't understand is if you try and feed it a prompt with 100k tokens it's going to take 5-10 minutes just to process that, even if you get 20 t/s after that.
+  - It's basically unusable for coding (which often times requires many prompts of larger context).
 
 - ## [Is there a way to use 2 models at once? Deepcoder nor phi-4 doesn't generate use tool available to it's disposal just tells user what to do. Like an interpretation model. : r/RooCode _202504](https://www.reddit.com/r/RooCode/comments/1k936cu/is_there_a_way_to_use_2_models_at_once_deepcoder/)
 - A lot of models don't do tool calling natively. 

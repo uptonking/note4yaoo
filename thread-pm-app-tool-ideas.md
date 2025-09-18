@@ -113,7 +113,16 @@ modified: 2022-11-07T10:58:24.512Z
 
 - algolia
   - MeiliSearch
-  - algolia是纯做SaaS服务的吧，跟es还是有定位上的区别。
+  - algolia是纯做SaaS服务的吧，跟es还是有定位上的区别
+
+- 🖼️ comfyui-alternative
+  - comfyui/unsloth 都是在技术社区里面寻找目标用户, 并主动提供工作流/微调模型来积累用户
+  - 一直主动提供大公司/政府主导模型的技术支持
+  - 支持魔搭社区的api/分享
+  - 提供与其他主流工具的集成
+  - 寻找产品机会: 
+    - 比如 32B-70b 之间没有适合mac 32G的微调版, 因为Q6/Q8对VRAM的需求翻倍
+    - 提供商业版如 medium/large 的社区版
 # sync-setttins
 - vscode-config
 - greasyfork-scripts

@@ -18,6 +18,9 @@ modified: 2021-10-29T15:06:33.422Z
   - custom top nav menus
   - themes
   - longer videos
+# user-growth
+- users-seeds
+  - comfyui/unsloth 都是在技术社区里面寻找目标用户, 并主动提供工作流/微调模型来积累用户
 # discuss-stars
 - ## 
 

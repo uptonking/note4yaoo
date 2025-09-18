@@ -41,6 +41,29 @@ modified: 2025-09-16T13:29:11.327Z
 
 - [What do most of your coding prompts look like? Example inside. : r/ChatGPTCoding](https://www.reddit.com/r/ChatGPTCoding/comments/187g3ql/what_do_most_of_your_coding_prompts_look_like/)
 
+- ## [Favorite test prompts : r/ollama _202407](https://www.reddit.com/r/ollama/comments/1dtydjc/favorite_test_prompts/)
+- Converting time zones, or asking for commonly used CLI commands in Linux.
+
+- explain classes in python using the example of a bank. Show a code example with it 
+  - test it's ability to teach and write a quick blurb of code
+
+- write a python script that output numbers 1 to 100
+
+- How would you stack these items to be carried in one hand across a room? Laptop, tennis ball, pen and notebook.
+  - The idea is to determine if the model has enough logic from language to understand how things stack in the physical world. This is one that separates llama3 7B from the 70b model.
+
+- If we lay 5 shirts out in the sun and it takes 4 hours to dry, how long would 20 shirts take to dry? Explain your reasoning step by step
+
+- It takes one person 5 hours to dig a 10 foot hole in the ground.  How long would it take 50 people to dig a single 10 foot hole?
+
+- tell me a short story in a nior detective style where the narrator is doing x
+  - trying to decide what coffee they want without holding up a line at a Cafe 
+  - this demonstrates stylized writing and usually has at least a chuckle worthy line in there.
+
+- Give me 10 sentences that end in the word “Apple”
+
+- Why is the sky blue?
+
 - ## 🌰 [Personal benchmark prompts list : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1991i4u/personal_benchmark_prompts_list/)
 - My current benchmarks are:
   - Easy difficulty: "Write django models for a twitter clone"
@@ -75,16 +98,12 @@ modified: 2025-09-16T13:29:11.327Z
 - ## [UIGEN-X-8B, Hybrid Reasoning model built for direct and efficient frontend UI generation, trained on 116 tech stacks including Visual Styles : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1m2ukka/uigenx8b_hybrid_reasoning_model_built_for_direct/)
   - We were just cooking this and realized instead of going the same route as UIGEN-T (t for tailwind) we can add in all the languages. There will be way more sizes released. This model should be way more capable than the 14B
 
-- ## [What is the best self hosted model for Roo Code? : r/RooCode _202506](https://www.reddit.com/r/RooCode/comments/1l4ol5h/what_is_the_best_self_hosted_model_for_roo_code/)
-  - My main dev language is JAVA and React (Typescript).
-
-- Devstral is the best local model and it aint even close.
-  - Devstral Q4_K_M (models size: 14.34GB, I set context to 45K) is a great architect! it follows instructions well, uses all tools properly and has decent speed. 
-  - Q3_XXS (9.51GB, 70K context) has been crushing it as a "turbo" coder for me, even faster than the qwen 8B's and smarter too!
-
-- The only local model under 30B which worked in Roo Code for me was qwen2.5-coder-tools. It's a fine-tunned on Cline's prompts.
-
-- I've had decent luck with GLM, Gemma, and Qwen3-32B as well as 30B-A3B. Sounds like I need to try Mistral.
+- ## [GLM-4.5-9B? : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1m9fuf9/glm459b/)
+- The current GLM4-0414(short for GLM-4.1) is a model I quite like. Its performance is fair, and it offers extremely lightweight context due to having only 2 KV heads (although I suspect that this model's poor long-context performance might also be related to this architecture). 
+  - It also avoids the mixed reasoning approach similar to Qwen3 (I believe Qwen3's mixed reasoning makes some SFT more difficult, and doesn't always bring benefits; Qwen3-2507, which separates the two modes, seems more appropriate).
+- The performance of GLM4.1-9B is generally acceptable and can run locally on a 8GB GPU
+  - Compared to 9B models, I find the advantages of GLM4.1-32B more pronounced. Their 10K context only occupies 2 (KV heads) x 128 (head dim) x 61 (hidden layers) x 2 (K/V) x 2 (BF16) x 10000 = 624MB of VRAM. Considering the VRAM occupied by context, it's even lighter than the smaller Gemma3-27B (for example, you can run GLM4-32B-Q4 with 32K context on a single 3090 card, but you cannot run Gemma3-27B-Q4 with 32K context w/o KV cache quantization), while roughly being able to compete with Qwen3-32B with \nothink.
+  - However, I think GLM-4.1's reasoning version(GLM-Z1) is bad as it exhibiting very significant hallucinations and hoping that improves in later releases.
 
 - ## [Honestly, THUDM might be the new star on the horizon (creators of GLM-4) : r/LocalLLaMA _202504](https://www.reddit.com/r/LocalLLaMA/comments/1kbaecl/honestly_thudm_might_be_the_new_star_on_the/)
 - THUDM/Zhipu/GLM is not some unknown model creator at all. Their first generation GLM-130B was released in 2022 and beat llama-1 from year 2023. It's just that they went closed during GLM-2 to GLM-3, with only 6B ChatGLM models remained open
@@ -251,13 +270,16 @@ modified: 2025-09-16T13:29:11.327Z
 - Qwen2.5 coder 32B q8 , forget q4, q6.
   - Qwen3 is a newer model and is miles above even for coding. Scores 40% on Aider polyglot vs 16% for Qwen2.5-Coder-32B.
 
-- 
-- 
-- 
-- 
-- 
+- ## [Devstral vs DeepSeek vs Qwen3 : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1ksat42/devstral_vs_deepseek_vs_qwen3/)
+- Devstral is not better than qwen3-32B in general-purpose tasks. I guess it was trained to be specific to that openhands particular agent.
 
-- ## [mistralai/Devstral-Small-2507 : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1lwe5y8/mistralaidevstralsmall2507/)
+- Tried devstral on a code review task. It doesn't seem better than Qwen3, not to mention deepseek. Didn't try it in an agentic coding.
+
+- The whole point is agentic though. It works great in cline and open hands I’m super impressed
+
+- i only tried qwen3 30b but that one was better in cline than devstral on my test tasks mostly due to better instruction following and because of its better speed
+
+- ## 🎯 [mistralai/Devstral-Small-2507 : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1lwe5y8/mistralaidevstralsmall2507/)
 - What's the dIfference between devstral and codestral? Which one works better with vs code+cline?
   - Devstral for sure. It was trained specifically to follow the "agentic" / "tool use" patterns (do this -> ok, first I need to read_files, then I need to read_files, then I will edit that, then I need to write_files, etc.)
   - Codestral was good for aider-like / copilot-like integrations pre "agentic" (do this -> here's the code bruh, deal with it)
@@ -367,6 +389,24 @@ OLLAMA_KV_CACHE_TYPE: q4_0
 - This is amazing if it holds up to the benchmark in real life
   - It doesn’t. At least not in my real tests. Couldn’t get it to even update a css class using cline and roo. It doesn’t output the correct expected tokens from an agent
 
+- [Roo + Devstral : r/RooCode _202506](https://www.reddit.com/r/RooCode/comments/1l4ifh6/roo_devstral/)
+  - Temperature: 0.15
+    - Controls randomness
+    - Lower (e.g., 0.2–0.5) = more deterministic, slightly faster
+    - Higher (0.7–1.0) = more creative, marginally slower.
+  - Top K Sampling: 64
+    - Picks from top K most likely tokens. 
+    - Lower = faster, more deterministic.
+    - Set to 1 for greedy decoding (fastest but robotic).
+    - Try 10 or lower for speed.
+  - Repeat Penalty: 1
+    - Discourages repetition. May slightly slow things down, but helps quality.
+  - Min P Sampling: 0, 01
+    - Forces a minimum token probability.
+  - Top P Sampling: 0, 95
+    - Chooses tokens until cumulative probability hits P.
+    - Lower values = fewer choices = faster.
+
 - [Qwen3-Coder is here! : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1m6qdet/qwen3coder_is_here/)
   - You’re right on Devstral, it’s a good model for its size, although I feel it’s not as good as it scores on SWE-bench, and the fact that they didn’t share any other coding benchmarks makes me a bit suspicious. The good thing is that it sets the bar for small coding/agentic model and future releases will have to outperform it.
 
@@ -449,6 +489,8 @@ OLLAMA_KV_CACHE_TYPE: q4_0
 - Only LM Studio works, so they must have hacked around it, but it's closed source.
 
 - ## 🆚 [GPT-OSS 20b vs Qwen3-30B-A3B : r/ollama _202508](https://www.reddit.com/r/ollama/comments/1mlgyct/gptoss_20b_vs_qwen330ba3b/)
+- I've tried them both. Neither is good enough to be of any real use to me.
+
 - I use Qwen3-Coder over OSS because
   - A. Qwen3 models can be ablated to remove railguards for queries, while OSS can’t as easily.
   - B. I can run Qwen3-30b-a3b-abliterated Q6 on my 32gb gpu card fitting the entire model in that space. OSS has no quants available that work with ollama as of this moment. Which edge it just over into 1% CPU - 99% GPU which slows it way down.
@@ -897,6 +939,26 @@ ollama run hf.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF:Q6_K
 - Codellama 70B was a fine-tune of Llama 2. Since then the only coder fine-tune above 70B was the DS 236B. So I'm assuming later models 70B and above have also been trained on coding datasets. Like Qwen 2.5 32B coder probably was fine-tuned on the same coding datasets used in their 72B. And that coder certainly beats codellama - codestral 22B did.
 
 - Deepseek (R1 \ V3) at Q1 at 4k context shits on Llama2 70b any day of the week for whatever task your heart desires.
+
+- ## [What is the best self hosted model for Roo Code? : r/RooCode _202506](https://www.reddit.com/r/RooCode/comments/1l4ol5h/what_is_the_best_self_hosted_model_for_roo_code/)
+  - My main dev language is JAVA and React (Typescript).
+
+- Devstral is the best local model and it aint even close.
+  - Devstral Q4_K_M (models size: 14.34GB, I set context to 45K) is a great architect! it follows instructions well, uses all tools properly and has decent speed. 
+  - Q3_XXS (9.51GB, 70K context) has been crushing it as a "turbo" coder for me, even faster than the qwen 8B's and smarter too!
+
+- The only local model under 30B which worked in Roo Code for me was qwen2.5-coder-tools. It's a fine-tunned on Cline's prompts.
+
+- I've had decent luck with GLM, Gemma, and Qwen3-32B as well as 30B-A3B. Sounds like I need to try Mistral.
+
+- ## [Recommendations for Local LLMs (Under 70B) with Cline/Roo Code : r/LocalLLaMA _202506](https://www.reddit.com/r/LocalLLaMA/comments/1lco9ik/recommendations_for_local_llms_under_70b_with/)
+- How are you serving devstral? We're running fp8 w/ full cache and 128k context on vLLM and don't see problems with tool use at all. Cline seems to work fine with it. Even things like memory-bank and .rules work. 
+  - Best way to prompt it, from my experience, is like this: "based on x impl in @file, do y in @other_file."
+- There are models thar degrade drastically below fp8, and I believe devstral is one of them. When I read the experience of many users online I realised people running in on full precision or q8 were very satisfied, but people running q4 said it worked awfully.
+
+- For me Devstral q8 works well in Cline's planning mode with tool calls. For code mode I like to use Qwen coder 32b q8. This works only on Cline for me; I could not get anything useful out of Roo Code with these models: it is always running into loops
+
+- Devstral was fast and mostly good for me (HTML, CS, JS, Python). Albeit @ q8 quantisation and 64k context. Mostly small and not complexed projects. When I tried something more complexed, “make a chess game” it failed to implement simple logic correctly. It also didn’t attempt to implement more logic like (en passant, castling etc).
 
 - ## [Best local coding model right now? : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1ktudaj/best_local_coding_model_right_now/)
 - Gemma 3 is not a good coding model. Qwen2.5 coder, Qwen3, GLM-4, Mistral Small - these are better.

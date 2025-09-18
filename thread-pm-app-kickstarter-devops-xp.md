@@ -7,8 +7,9 @@ modified: 2022-11-07T11:00:28.824Z
 
 # thread-pm-app-kickstarter-devops-xp
 
-# discuss-stars
+# guide
 
+# discuss-stars
 - ## 
 
 - ## 

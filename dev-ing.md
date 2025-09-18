@@ -248,6 +248,11 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
 
 ```
 
+## 0918
+
+- [What does YMMV mean? : r/TooAfraidToAsk](https://www.reddit.com/r/TooAfraidToAsk/comments/bhzxqc/what_does_ymmv_mean/)
+  - YMMV. also ymmv. written abbreviation for `your mileage may vary`: used, for example on social media and in text messages and emails, to mean that you understand people may have a different opinion or experience to yours: Their first album is better, but of course YMMV.
+
 ## 0917
 
 - 🧩 [MLX Quantization · ml-explore/mlx-lm](https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md)

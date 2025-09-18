@@ -10,10 +10,10 @@ modified: 2025-09-16T19:59:57.856Z
 
 # guide
 
-- tips
-  - models-watching: openai, claude, gemini/gemma, mistral/codestral, qwen, deepseek, glm
-  - 选择模型时多用官方版/主流版，小众微调的版本可能存在tool-call/overthink/多语言/对话风格等问题
-  - 多agent架构时，可使用不同架构的agent相互验证
+- models-variants
+  - watching: openai, claude, qwen, deepseek, gemini/gemma, glm, mistral/codestral
+  - variants: mlx, unsloth, quants
+  - 测试模型时可能更希望速度快，但做任务或规划时更希望质量好，所以偏向选择大B参数的模型
 
 - leaderboard-llm
   - [Artificial Analysis LLM Leaderboard - Comparison of over 100 AI models from OpenAI, Google, DeepSeek & others](https://artificialanalysis.ai/leaderboards/models)
@@ -27,41 +27,79 @@ modified: 2025-09-16T19:59:57.856Z
   - [Find a leaderboard](https://huggingface.co/spaces/OpenEvals/find-a-leaderboard)
 # model-usage-xp
 - models-comparison
-  - 分析清楚核心需求: 需要reasoning/coding/large/faster的模型
+  - 🤔 LMs are tools. Describe your use cases.
+    - 分析清楚核心需求: 需要reasoning/coding/large/faster
   - moe模型的实际效果大概只有dense模型的一半，如qwen3-30B-A3B 相当于 Qwen3-14b
   - 模型占用VRAM不能太大，还要为context处理、应用程序如nextjs/comfyui预留RAM/VRAM
+  - 选择模型时多用官方版/主流版，小众微调的版本可能存在tool-call/overthink/多语言multilingual/对话风格/llama.cpp不支持等问题
+  - 多agent架构时，可使用不同架构的agent相互验证
+  - non-thinking或输出简洁的模型适合coding
 
-- gemma3
+- gemma3 🌹 /多语言/创意文本/vision
   - 27b 和 12b 都能较好遵循带结构的instruct输出， 27b能主动给出更多外部网页链接而12b给的链接很少
 
-- qwen3
-  - think 2-3min, think支持disable
+- qwen3 🌹 /能力全/内容丰富/thinking开关
+  - think 2-3min
   - 4b及14b的输出都比较详细
 
-- glm4
+- glm4 👀 /可以用
   - glm4不会think，输出内容质量感觉一般
-  - 输出的长度大概在30-60行，简洁是特色?
+  - 输出的长度大概在30-60行，简洁是特色，对代码有用?
   - 在多轮聊天时，输出内容也会逐渐变长?
-- glm-z1
+- glm-z1 👀 /思考久
   - z1会think5-15min，think不支持disable，输出内容的长度会比glm4多20行左右，多一些外部链接，多用很多表格，质量较好
   - z1的think时间比qwen3长很多，输出内容的长度比qwen3更少
 
-- gpt-oss-20B-A3.6B
+- gpt-oss-20B-A3.6B 👀 /输出快
+  - 输出的内容特别喜欢用表格📈
   - unsloth-Q5的输出速度为 11.8 tops, offcial-Q4的输出速度为 11.2 tops, 速度比qwen3-14b更快
+
+- magistral-2509  👀 /可以用/think+vision/欧洲多语言
+  - 回复非常短，感觉质量不如2507
+  - thinking时间在3-10min左右，或许对于plan制定计划有用
+  - 几乎不提供外部链接，2507不也提供外部链接
+  - 回复内容中几乎不提供表格
 
 ## models-coding
 
-- qwen3-coder-30b-a3b
+- devstral-2507-24b 🌹 /欧洲多语言/instruct
 
-- qwen2.5-coder-32b
+- qwen3-coder-30b-a3b /速度快
 
-- devtral-2507-24b
+- qwen2.5-coder-32b /微调多
+
+- qwen3-32b /thinking开关/能力全
 # discuss-stars
 - ## 
 
 - ## 
 
 - ## 
+
+- ## [How to use Qwen2.5-Coder-Instruct without frustration in the meantime : r/LocalLLaMA _202411](https://www.reddit.com/r/LocalLLaMA/comments/1gpwrq1/how_to_use_qwen25coderinstruct_without/)
+  - Don't use high repetition penalty! Open WebUI default 1.1 and Qwen recommended 1.05 both reduce model quality. 
+  - 📃 Use recommended inference parameters in your completion requests https://huggingface.co/Qwen/Qwen2.5-Coder-32B-Instruct/blob/main/generation_config.json
+
+- ## 🆚 [Interesting (Opposite) decisions from Qwen and DeepSeek : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mwpmkb/interesting_opposite_decisions_from_qwen_and/)
+- Qwen
+  - (Before) v3: hybrid thinking/non-thinking mode
+  - (Now) v3-2507: thinking/non-thinking separated
+- DeepSeek:
+  - (Before) chat/r1 separated
+  - (Now) v3.1: hybrid thinking/non-thinking mode
+
+- They don't necessarily disagree on results. These decisions are simply driven by different objectives. 
+  - Qwen is more GPU-rich (they're Alibaba, for God's sake), they can train and serve more models and do more experiments.
+  - Original Qwen3 was disappointing. Now they have Q3-2507 as general assistant, Q3-2507-Thinking as powerful reasoner, and Q3-coder as SWE agent.
+  - DeepSeek has V3-0324 as an assistant, R1-0528 as a reasoner, and V3.1 as an SWE-agent, but they don't want to maintain and serve separate models, so V3.1 is also a (token-efficient, likely cheaper in practice than Qwen) reasoner and an assistant. 
+
+- The two models have two different architectures:
+  - Deepseek has 671B parameters with 37B active, with 64 layers and a larger architecture
+  - Qwen has 235B parameters with 22B active, with 96 layers and a more deep architecture
+  - It can be that these differences lead also to different performances in the merging of the two "inference modes": maybe the larger deepseek's architecture leads to more favourable conditions to make it happen.
+
+- GPT-OSS provides low, medium, high reasoning efforts.
+- NVIDIA's V2 Nemotron has token-level reasoning control https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-9B-v2
 
 - ## 🆚 [The new MLX DWQ quant is underrated, it feels like 8bit in a 4bit quant. : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1khb7rs/the_new_mlx_dwq_quant_is_underrated_it_feels_like/)
 - Yep, fully agreed - the DWQs are honestly awesome (at least for 30ba3b). 
@@ -277,7 +315,241 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [46pct Aider Polyglot in 16GB VRAM with Qwen3-14B : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kukjoe/46pct_aider_polyglot_in_16gb_vram_with_qwen314b/)
+  - After some tuning, and a tiny hack to aider, I have achieved a Aider Polyglot benchmark of pass_rate_2: 45.8 with 100% of cases well-formed, using nothing more than a 16GB 5070 Ti and Qwen3-14b, with the model running entirely offloaded to GPU.
+  - That result is on a par with "chatgpt-4o-latest (2025-03-29)" on the Aider Leaderboard. 
+  - The method was to start with the Qwen3-14B Q6_K GGUF, set the context to the full 40960 tokens, and quantized the KV cache to Q8_0/Q5_1. To do this, I used llama.cpp server, compiled with GGML_CUDA_FA_ALL_QUANTS=ON. 
+  - Aider was then configured to use the "/think" reasoning token and use "architect" edit mode. The editor model was the same Qwen3-14B Q6, but the "tiny hack" mentioned was to ensure that the editor coder used the "/nothink" token and to extend the chat timeout from the 600s default.
+
+- So, the combo Qwen3-14b-thinking as architect with Qwen3-14b no-thinking as coder, surpasses¹ the combo QwQ-32B as architect + Qwen 2.5-32b Coder (26.2%). It also surpasses² plain Qwen3-32b no-thinking (no architect) which scored 40%. That's impressive.
+
+- ## [Qwen3-14B vs Phi-4-reasoning-plus : r/LocalLLM _202505](https://www.reddit.com/r/LocalLLM/comments/1kbzsdo/qwen314b_vs_phi4reasoningplus/)
+- It will depend strongly on your use case. So test and check.
+
+- I didn't try Phi 4 reasoning yet, but I was comparing Phi 4 vs Gemma 3 in translation project, Gemma 3 gave me better result but Phi 4 gets less hallucination.
+
+- To me phi4 plus thinks too long. Personally, I slightly prefer qwen
+
+- ## [Qwen3 14b vs the new Phi 4 Reasoning model : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kg5m5a/qwen3_14b_vs_the_new_phi_4_reasoning_model/)
+- Qwen3 14B is smarter and can punch higher.
+  - Phi4-Reasoning will follow the craziest instructions perfectly. It is near perfect at following instructions/formatting.
+  - Phi4 will hopefully make fewer assumptions when explicitly instructed in its system prompt to quote only the provided information. This should make it more accurate for retrieving information instead of inserting its own ideas.
+
+- I found Phi-4-reasoning to be a bit smarter (but not code), but requires almost 3x more tokens than Qwen3-14B to be so.
+  - In terms of real usability, Qwen3-14B will be the better choice for the vast majority of people.
+
+- Phi4 uses a significant amount more tokens while the output is of less quality than Qwen3.
+- Qwen3 is the first local model that I can comfortabel use on my own hardware that gives me major GPT4 vibes, despite the weights being significantly lower.
+
+- phi-4 spend more token than qwen3, so i prefer qwen3
+
+- I recently tried qwen3-14b and aider.chat . Sometimes had trouble following format and would start doing weird things. Even qwen3-32b-q8 was hard to work with. Sometimes reasoning is off, also following exact directives and producing simpler solutions is a bit off. Of course that is compared to chatgpt-4o or claude 3.7
+
+- My experience is that Qwen 3 is lot more smarter. I had high hopes for Phi-4. I want to love it. Being from Microsoft, it is lot easier to deploy it in the corporate environment compared to Qwen. But it was not great
+
+- ## 🆚 [Qwen3-32b /nothink or qwen3-14b /think? : r/LocalLLaMA _202506](https://www.reddit.com/r/LocalLLaMA/comments/1l3yjeb/qwen332b_nothink_or_qwen314b_think/)
+- from tests I've been running with medical exams, the qwen models scored as follows (all at Q8)
+  - 32B /think - 85.5%
+  - 14B /think - 84.5%
+  - 32B /no_think - 84.5%
+  - 14B /no_think - 77.5%
+  - 8B /think - 77.5%
+  - it was clear to me in testing them that the reasoning boosted them a lot for this task, that /think models often competed with the next /no_think model above it, and that when compared to other models, they all punch above their weight. 
+
+- On 24GB VRAM, 14B Thinking (Q8_0) did slightly better than 32B non-thinking (Q4_K_M) in my testing.
+
+- I prefer Qwen3-14B over the 30B-A3B model. While the MoE model obviously has more knowledge, its overall performance is rather inconsistent compared to the dense 14B in my experience
+
+- If you're curious about actual benchmarks, the models are basically equivalent, with the only difference being speed
+  - Thanks for this. Benchmarks between 30B-A3B and 14B are indeed nearly identical. Where the 30B shines is in tasks that require general world knowledge, obviously because it's larger.
+
+- I don't use it with nothink very much. It performs with think so fast that you get the faster inference you're after with 14B but with intelligence a bit closer to 32B
+
+- The more I use 30b the more "disappointed"I am. I'm not sure 30b beats 14b. It used to be my go-to-model, but then I noticed I started using 14b, 32b 
+  - I think 30-A3B is more like an 12B that runs at 3B speed. It's a weird model... it's good at some domains while being hopeless at others.
+
+- I am a Qwen3-14b shill. You get so much context and speed. 32b is good, but doesn’t give enough breathing room for large context.
+  - 14b even beats larger models like mistral small for me.
+  - This is all for coding — maybe I just prompt best with 14b but its been my fav model so far.
+
+- I use Qwen3 30B instead of the 14B model, they are equivalent but for me the 30B runs faster, (30B Q5KM on gpu 50-75 tps, 14B Q6K on gpu 35 tps)
+  - They are not equivalent. They are quite different tbh. My experience has been that the 14b runs better.
+  - Also a rough estimate of the size is sqrt(A*T), A is active parameters and T is total parameters. The 30B is like a model of ~10B in size. 6B active would be closer to a 14B model.
+
+- 32B /nothink for code, 30B-A3B in rambling mode for almost everything else.
+
+- ## [Qwen3-14B vs Gemma3-12B : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kx2hcm/qwen314b_vs_gemma312b/)
+- Qwen 3 for all technical stuff, and gemma 3 for creative/general autocomplete tasks for me.
+  - Second this. Gemma3 is great at writing. Qwen3 is great for science and thinking. Mistral Small 3.1 would be the one off I would put here for second in both categories.
+
+- For pure programming go with qwen, for the UX and UI design go with Gemma that can take screenshots as input.
+
+- I have noticed that Qwen3 is not good in programming questions
+  - Apparently qwen3 degrades a lot for coding under q6
+
+- Why not use the 30b Qwen MoE? I think it will perform similarly to the 14b but run faster. I find the 30b to be a good model, it's only slight weakness for me is coding tasks
+  - In my tests its much closer to 32b than to 14b really.
+
+- Qwen seems less censored than Gemma. If you are going to use Gemma, I recommend an uncensored finetune.
+
+- ## [Gemma 3 - GGUFs + recommended settings : r/LocalLLaMA _202503](https://www.reddit.com/r/LocalLLaMA/comments/1j9hsfc/gemma_3_ggufs_recommended_settings/)
+  - Confirmed with the Gemma + Hugging Face team, that the recommended settings for inference are 
+  - temperature = 1.0
+  - top_k = 64
+  - top_p = 0.95
+
+- Do you have an explanation for why the recommended temperature is so high? Google's models seem to do fine with a temperature of 1 but llama goes crazy when you have such a high temperature. It is very very high for most models. Mistral Small goes completely off the rocker at 0.8.
+  - The models are trained at temp 1.0
+  - Reducing temp will make the output more conservative
+  - To reduce outliers try min_p or top_p
+
+- ## 🆚 [which model is less demanding on resources, gpt-oss-20b or qwen3-30b-a3b. : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mvjdxh/which_model_is_less_demanding_on_resources/)
+- Briefly and in general:
+  - Total parameters is proportional to memory requirements (more parameters more memory)
+  - Active parameters is inversely proportional to inference speed (more active parameters less speed)
+
+- gpt oss is A3.6B and qwen is A3B. qwen should be slightly faster, but it uses more memory (assuming similar quant levels).
+
+- While the number of active parameters increases the memory bandwidth requirements which usually are the bottleneck for inference, they aren't everything. 
+  - Especially for these small active parameter counts, some minor design aspects can affect performance much more. 
+  - So ultimately you usually have to test on your hardware to really say. 
+  - These two are generally super close, but, e.g., MXFP4 hardware support can impact performance a lot.
+- One thing worth mentioning is that I have found Qwen3-30B to fall of with longer contexts much faster so even if they are competitive at the start, gpt-oss will be faster at the end
+- Finally, with gpt-oss-20B being a smaller total size, you can fit a lot more context on a given GPU
+
+- There's 2 resources you should be concerned about: memory and compute.
+  - gpt-oss-20b uses ~33% less memory than Qwen3-30B-A3B, but because of the similar number of active parameters, the compute cost is similar.
+- If you've got at least ~24GB of VRAM, go for Qwen3-30B-A3B. In my experience, Qwen3-30B-A3B is a more capable model, and it happens to hallucinate a lot less. You can also run Qwen3-Coder-30B-A3B if you want to use the model for code generation.
+  - If you don't have enough VRAM, you'll just have to settle for gpt-oss-20b.
+
+- Honestly, at these sizes just try them both on your setup and see which performs better. In my experience they're super close, although qwen3 requires more ram.
+
+- I'd say both models are fairly comparable in capabilities, but they vary in style enough that they're both interesting to mess around with in their own way. Qwen also gives you more experience with the chatML prompt structure, which is more commonly used across many local models right now.
+
+- ## [qwen3-30b-a3b thinking vs non-thinking : r/ollama _202508](https://www.reddit.com/r/ollama/comments/1mhjpe3/qwen330ba3b_thinking_vs_nonthinking/)
+- For coding , thinking >> non thinking with same quant.
+- why don’t they add reasoning capabilities to coding model?
+  - Efficiency. It's more practical at execution not having thinking tokens. Unless you need extra brain power to solve more complex issues, that's where reasoning might help.
+  - Different tools for different jobs.
+
+- Some say Thinking model is better for coding. Theoretically it should, but in my personal testing, it wasn't, where Instruct was better.
+  - Not saying Thinking model is worse overall, the point is, test in your own scenarios.
+
+- I will stick with the previous version, because the answers come much faster and accuracy is nearly the same but much better than current instruct version.
+
+- ## [Is a heavily quantised Q235b any better than Q32b? : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1lx2dw4/is_a_heavily_quantised_q235b_any_better_than_q32b/)
+  - I've come to the conclusion that Qwen's 235b at Q2K~, perhaps unsurprisingly, is not better than Qwen3 32b Q4KL but I still wonder about the Q3? 
+  - Gemma2 27b Q3KS used to be awesome, for example. Perhaps Qwen's 235b at Q3 will be amazing?
+- Q3 of Qwen3 235B may still be better than 32B, but likely much slower if you are short on VRAM and still have some quality issues associated with heavy quantization.
+  - I agree. R1 is better & not much slower in token generation. But, prompt processing of Qwen3 235B q4 is quite faster.
+  - I also tested Qwen3 235B q4 is better than Qwen3 32B Q8
+
+- I run the official Qwen3 235B A22B INT4 GPTQ quant in vLLM using Qwen’s recommended settings.
+  - It’s fabulous for coding and technical work. I love it. Destroys Qwen2.5 72B 8bpw exl2 in all my use cases.
+  - However it drops off quickly at larger contexts. Once you get past ~ 16k it gets significantly dumber, makes syntax mistakes, etc. close to 32k tokens and it’s pretty bad.
+  - But working inside that first 16k feels like I have a SOTA model right next to me. Fantastic.
+
+- I use 2q from unsloth. It's better than the 32b, but it also uses like 6x the memory the 32b @ 4q does. The main advantage is speed. If it wasn't that, there's more bang for your RAM with other dense models. 
+
+- I tried Qwen 235B at Q2_K; it's definitely not lobotomized at that point, it performed quite well in my test. I guess it might even be better than the 32B at Q8, but that would require a deeper comparison, which I haven’t done.
+
+- ## [Running Qwen2.5-Coder-32b-q6-gguf entirely on cpu : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1miqxdc/running_qwen25coder32bq6gguf_entirely_on_cpu/)
+- 1 t/s. For CPU. 
+  - Use the Qwen3-30B-A3B-Instruct-2507-GGUF. You will get roughly 15 t/s output, as its a MOE, but it's not as good as the 32b.
+
+- Supposing you have dual channel memory set up right: 3200MHz * 8B * 2ch = 51.2GBps. The 32B @ Q6 (6.5bpw) is 26GB so theoretical max is 51.2GB/s / 26GB/tok = ~2tok/s. You should derate that by about 50% for normal CPU efficiency and you do indeed wind up with about 1tok/s.
+
+- similar 32GB 5600g setup here if you're ok running latest debian sid (unstable), I managed to get 8-9 t/s using CPU/GPU offloading. (GPU here being the onboard APU). you could go up to 24GB for the apu.
+  - debian unstable provides llama.cpp, rocm, etc, some custom kernel options at boot time and BIOS options for graphics memory.
+
+- ## [What hardware do I need to run Qwen3 32B full 128k context? : r/LocalLLM _202507](https://www.reddit.com/r/LocalLLM/comments/1m5lze2/what_hardware_do_i_need_to_run_qwen3_32b_full/)
+  - unsloth/Qwen3-32B-128K-UD-Q8_K_XL.gguf : 39.5 GB Not sure how much I more ram I would need for context?
+
+- if you choose the 30Ba3B... I ran it on the AMD AI Max 395+ (Asus Flow Z 2025, 128G ram version)
+  - and it runs amazingly well.
+  - and lmstudio already provides rocm runtime for it (which my hx370 handle doesn't)
+  - Somehow, I feel this would be the cheapest hardware? since you can get a mini-PC with this processor with the price less than a 5090?
+
+- You don't need a GPU, AI Max 395+ has a 4060-level integrated GPU.
+  - thus, with my personal test, it runs kinda slow with Qwen3 32B (Dense) model with <20 TPS, but with MOE models like 30Ba3B, it provides steady >30 TPS.
+
+- KV cache will take 32Gb for 128K context. I'm using it with 64K context and it takes 16Gb.
+
+- ## 🎯 [Magistral Small 2509 has been released : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1njgovj/magistral_small_2509_has_been_released/)
+  - Building upon Mistral Small 3.2 (2506), with added reasoning capabilities, undergoing SFT from Magistral Medium traces and RL on top
+  - Multilingual: Supports dozens of languages: English, French, German...
+  - Updates compared with Magistral Small 1.1
+  - Multimodality: The model now has a vision encoder and can take multimodal inputs
+  - Better tone and persona: You should experience better LaTeX and Markdown formatting
+  - The model is less likely to enter infinite generation loops.
+  - Reasoning prompt: The reasoning prompt is given in the system prompt.
+- We release the model with `mistral_common` to ensure correctness
+  - We welcome by all means community GGUFs with chat template - we just provide mistral_common as a reference that has ensured correct chat behavior
+  - It’s not true that you need mistral_common to convert mistral checkpoints, you can just convert without and provide a chat template
+
+- Small 1.2 is better than medium 1.1 by a fair amount? Amazing.
+
+- 🐛 vLLM implementation of tool calling with Mistral models are broken, any chance they could be fixed?
+  - I came to ask about tool calling as that was not mentioned and doesn’t seem to be much of a topic in this thread. Seems like so many open multimodal models (Gemma3, Phi4, Qwen2.5VL) are plagued with tool calling issues
+
+- The GGUF isn't working for me with llama.cpp.
+  - I changed to the unsloth version, it's working fine.
+
+- Long context performance is very very very meh(普通的) compared to qwen3 14b (and above obviously)
+  - It get lost at ~20-30k tokens, doesn't "really" reason and tries to output tool call in reasoning.
+
+- For code, I did some small tests and I think devstral is still better along side qwen coder 30b, glm 32b and GPT oss 20b
+
+- ## 🆚 [My simple test: Qwen3-32b > Qwen3-14B ≈ DS Qwen3-8 ≳ Qwen3-4B > Mistral 3.2 24B > Gemma3-27b-it, : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1m1ylw0/my_simple_test_qwen332b_qwen314b_ds_qwen38/)
+  - I have an article to instruct those models to rewrite in a different style without missing information, Qwen3-32B did an excellent job, it keeps the meaning but almost rewrite everything.
+  - It's not writing, it's re-style an existing article.
+  - Qwen3-14B, 8B tend to miss some information but acceptable
+  - Qwen3-4B miss 50% of information
+  - Mistral 3.2, on the other hand does not miss anything but almost copied the original with minor changes.
+  - Gemma3-27: almost a true copy, just stupid
+  - Structured data generation: Another test is to extract Json from raw html, Qweb3-4b fakes data and all others performs well.
+  - Article classification: long messy reddit posts with simple prompt to classify if the post is looking for help, Qwen3-8, 14, 32 all made it 100% correct, Qwen3-4b mostly correct, Mistral and Gemma always make some mistakes to classify.
+  - Overall, I should say 8b is the best one to do such tasks especially for long articles, the model consumes less vRam allows more vRam allocated to KV Cache
+
+- There is a strong possibility that your test is overfitted to Qwen, leading to poor performance on other models.
+
+- it might just be the problem with your prompt, or for whatever reason thinking models are super suited to your tasks.
+
+- In my tests and workflows, which specifically do drive rewrites of large pieces of text, Gemma3-27b significantly outperforms Qwen3-32b which cannot follow the instructions well enough a lot of the time.
+
+- Qwen3-32b has been the best local model to me. It is the only one I trust enough to handle some simple coding tasks with Aider. I do find Gemma 3 a little bit better in portuguese, though
+  - Q6_K feels like the sweet spot to me. But the difference from Q4_K_M or Q8 is subtle
+- qwen3:32b at full BF16 model size is phenomenal. Much better than Q8 for difficult questions, albeit at 0.3 t/s on a 128GB M3 Macbook.
+
+- 32b is massively better than 30b. I use 30b as my main coding assistant model cause it stupidly fast, but it is not even comparable to 14b, let alone 32b.
+
+- ## [Mistral small 24B 3.2 VS Qwen 3 30b/14b : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1lt0a4n/mistral_small_24b_32_vs_qwen_3_30b14b/)
+- Mistral Small 3 is an actual multilanguage model with a tokenizer specifically for that usecase. You can also try Mistral Nemo 12b, but in my experience it was slightly worse.
+
+- Mistral is much stronger than Qwen models when it comes to swedish language.
+- At least with Spanish, mistral was stronger in my use-case.
+
+- Small 3.2 has way better general knowledge compared to Qwen 3. Where Qwen 3 excels is logic and coding.
+
+- Mistral is way better at instruction following, it feels like a small version of Claude to an extent. If you need to code, try Devstral, and if you need reasoning, try Mistral.
+
+- ## 🆚 [Mistral Small/Medium vs Qwen 3 14/32B : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1knnyco/mistral_smallmedium_vs_qwen_3_1432b/)
+  - Mistral medium is definitely an improvement over mistral small, but not by a whole lot, mistral small in itself is a very strong model. 
+  - Qwen is a clear winner in coding, even the 14b beats both mistral models.
+  - The NER (structured json) test Qwen struggles but this is because of its weakness in non English questions.
+  - Overall, I feel Qwen 32b > mistral medium > mistral small > Qwen 14b. But again, as with anything llm, YMMV.
+
+- To those claiming Gemma 3 27B is miles better than Mistral Small-3, how do you explain Mistral Small outperforming Gemma in most of those tests?
+  - Mistral Small 25xx is unusable as a chatbot or creative writer, as it is very dry compared to Gemma 3 and suffer from extreme repetitions 
+
+- ## [Daydreaming of a new Gemma model : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mgm8d3/daydreaming_of_a_new_gemma_model/)
+- Gemma models is very underrated, has very impressive multi language and conversational capabilities. Probably the open source model with the most humanized style. but i can understand who do not have high praises, i think the biggest demand in local LLMs is for coding, a thing thats Gemma is not good at.
+  - And the second biggest demand is uncensored writing, which Gemma is also not good at.
+
+- Gemma 3 27B was the only local LLM that sucessfully annotated texts in non-english languages. Do you suggest any good < 130B parameter model for European language understanding? (Mistral was also not that bad)
+
+- As a big fan of Gemma-2, I was very excited about Gemma-3, and of course it was cool to finally have more context, and the vision modality is also a valuable bonus, but what I personally loved about Gemma-2 was unfortunately a disappointment in Gemma-3. Namely, the subtle nuances and personality. That was ruined with Gemma-3.
+  - In Gemma-3, it's somehow only superficially interesting. It has personality, but somehow it doesn't. A lot of it seems exaggerated or overfitted. In some tests I conduct privately, the Gemma-2 models perform significantly better than their successors.
 
 - ## [Which do you think is better: Deepseek-R1-32B vs QWQ-32b-preview? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1j2wzky/which_do_you_think_is_better_deepseekr132b_vs/)
 - I've use both, but tbh i like QWQ a bit more. I also like DeepSeek-R1-Distill-Qwen-14B.i1-Q5_K_S just for speed. A lot of simple tasks can be done with 14b variant 6x faster for me.
@@ -317,7 +589,7 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - Until now I can say, I only had positive experience with the reasoning of Magistral. I really like the way it breaks down math problems and looks at it from different angles if it comes to the same conclusion.
 
-- ## [new mistralai/Magistral-Small-2507 !? : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1m85vhw/new_mistralaimagistralsmall2507/)
+- ## 🎯 [new mistralai/Magistral-Small-2507 !? : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1m85vhw/new_mistralaimagistralsmall2507/)
 - The update involves the following features:
   - Better tone and model behaviour. You should experiment better LaTeX and Markdown formatting, and shorter answers on easy general prompts.
   - The model is less likely to enter infinite generation loops.
@@ -330,6 +602,7 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
   - It's a really good model. But if you're someone who wouldn't really utilise its reasoning, then maybe checkout Mistral Small 3.2-Instruct-2506. It's a better model for that use-case, I'd say. Plus it's multimodal. Magistral is based on 3.1.
 
 - Yes Qwen3 has a non-reasoning mode which works exactly as you describe: immediate response with a blank think block. Simple add ‘/no_think’ at the end of your query. Make sure to adjust temps, top-k & min-p values for non-reasoning though 
+  - Qwen team are also moving away from hybrid reasoning as they found it degrades performance. If that's what you're after try the recently released EXAONE 4.0
 
 - I'm happy with Devstral 24B so far. It's not as good as GLM or Qwen3-32B but it's faster than those two, with better answers compared to Gemma 3 27B. I'm beginning to hate Qwen 3's reasoning mode with a vengeance. All the other models I mentioned come up with equivalent answers in a fraction of the time.
   - In my experience, Devstral has been better than Qwen3-32B with tools, at least in Zed. But it's not fine-tuned on coding tasks yet. Can't wait for Qwen3-coder 32B though.
@@ -475,12 +748,17 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
   - After applying this change, 235b q3 is now running at 14 tps, thank you so much!
 
 - ## [How good is Qwen3-14B for local use? Any benchmarks vs other models? : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1ltnpsl/how_good_is_qwen314b_for_local_use_any_benchmarks/)
+- smaller models need to think to get good results. The 30B MOE is guilty of overthinking too often to the point that I've given up on it.
+
 - Qwen3 30b benchmarks are all around the same level as qwen3 14 but performance wise it is significantly faster up to 2-3 times tokenspeed as it only uses 3b active parameters at a time.
   - Though qwen3 30b is alot more sensitive to quantisation and will at q4 and below overthink stuff alot and make more mistakes. If you use it download the q6 version at least.
 
 - Qwen3-14B is the best in South East Asian languages. Even with 4bit quant still very cohesive and good diction choice, much better than Mistral Small 24B 2506.
 
-- Livebench has benchmarks. It's very good. Not far off from 32B actually. 
+- Livebench has benchmarks. It's very good. Not far off from 32B actually.
+
+- 🤔 Your last bullet point is the only one that matters. LLMs are tools. Describe your use cases.
+  - most of the tasks i will be doing includes, RAG, Data Extraction from textual context, and few logical based QnA
 
 - ## [Qwen3 local 14B Q4_K_M or 30B A3B Q2_K_L who has higher quality : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1knx47e/qwen3_local_14b_q4_k_m_or_30b_a3b_q2_k_l_who_has/)
 - When comparing both on Q8 they're relatively evenly matched in thinking mode, although the 30B has an edge in non-thinking mode. At Q3 there's a noticeable drop in quality and at Q2 it starts dropping significantly. 
@@ -547,6 +825,8 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 🆚 [two models big difference in how it converses/answers. ie Qwen3 30B A3B vs Qwen3 32B : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mkgv1l/two_models_big_difference_in_how_it/)
   - I downloaded 2 8bit models (both use 32-33gb of ram)
+  - The first one was Qwen3 30B A3B Instruct 2507 8bit. This model is much nicer it seems more "Human like" ie like a Nexus 6 vs a Nexus 4 etc.. The answers and modeled behaviors are much more interesting and personable. faster ie 72 tokens per second
+  - The second one Qwen3 32B 8bit 8BIT seems more like just getting wikipedia answers, more of a formal Rigid feel to its behavior. slower ie less tokens per second 15 tokens per second.
 
 - Qwen 3 30B A3B 2507 just got released and one of the biggest improvements was made to tone it seems, but Qwen 3 32B hasn't been updated and is still a part of the original Qwen 3 release. I've found Qwen 3 32B actually has better tone than the original Qwen 3 30B A3B does.
   - I really hope they come out with a Qwen 3 32b 2508 version. For my use case, the dense model wins every time, and an update with improvements on par with the other 2507 releases would be a huge win for my workflow.

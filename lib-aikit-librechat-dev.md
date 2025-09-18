@@ -40,9 +40,18 @@ modified: 2025-09-01T05:52:34.241Z
 - who is using #librechat
   - ?
 # draft
-- ❓ chat-queue: 对于很慢的本地模型，一次只能处理一个task，需要支持添加多个task到queue
+- ❓ chat-queue: 对于很慢的本地模型，一次只能处理一个task，需要支持添加多个task到queue, 不同task可能需要切换不同模型
+  - message queue, image queue
 
-- comfyui-local
+- librechat-custom-agent
+  - custom comfyui workflow as custom agent
+  - ai-table
+  - ai-chart
+
+- docs/knowledgebase
+  - granite-docling
+
+- comfyui-local: ollama与comfyui结合的产品形态应该是怎样的
   - support tool config: steps, sampler, scheduleer, style-preset
 
 - code interpreter 如何实现
