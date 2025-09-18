@@ -248,6 +248,31 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
 
 ```
 
+## 0917
+
+- 🧩 [MLX Quantization · ml-explore/mlx-lm](https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md)
+  - To reduce the quality loss from quantization MLX LM has several options:
+  - DWQ(Distilled Weight Quantization) fine-tunes non-quantized parameters (including quantization scales and biases) using the non-quantized model as a teacher.
+  - AWQ(Activation-aware Weight Quantization) scales and clips the weights prior to quantization. 
+  - Dynamic quantization estimates the sensitivity of a model's outputs to each layer and uses a higher precision for layers which have higher sensitivity. 
+  - GPTQ(GPT Quantization) finds quantized weights which minimize the squared error of each layer's output given the provided input.
+- Dynamic quantization is the fastest to run. 
+  - DWQ takes longer but typically yields better results.
+
+- DWQ (Distilled Weight Quantization): 
+  - This method is more complex. By using the original, larger model as a "teacher, " it fine-tunes the smaller, quantized model to behave more like its powerful predecessor. 
+  - This often results in a model that retains more of the original's nuance and accuracy, even at a lower bit-rate. 
+  - The goal is to get closer to the performance of a less quantized model while keeping the file size small.
+
+- AWQ (Activation-aware Weight Quantization): 
+  - This method is more direct. It intelligently analyzes which weights are most important for the model's performance and protects them during the quantization process. 
+  - It's a very effective and efficient way to reduce model size without a catastrophic loss in quality, focusing on preserving the most critical parts of the model's "knowledge."
+  - AWQ is designed for hardware efficiency and faster inference, making it suitable for resource-constrained environments . However, it may require adjustments (e.g., reducing max-model-len or using enforce-eager mode) to avoid OOM errors on limited VRAM 
+
+- 🤔👾 i want to download llm in lm studio to use it on my mac with 32GB unified RAM. 
+  - for a model like qwen3-32b, which quant should i use: Q6_K_S, Q4_K_S, Q4_K_M, Q4_K_L, Q3_K_L, Q3_K_M ?
+  - which model is faster with good quality ?
+
 ## 0912
 
 - 英译中:  Qwen is excellent. I wish they had a version with reasoning. “Reasoning” seems like mostly smoke and mirrors to me.

@@ -40,6 +40,8 @@ modified: 2025-09-01T05:52:34.241Z
 - who is using #librechat
   - ?
 # draft
+- ❓ chat-queue: 对于很慢的本地模型，一次只能处理一个task，需要支持添加多个task到queue
+
 - comfyui-local
   - support tool config: steps, sampler, scheduleer, style-preset
 

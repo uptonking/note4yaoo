@@ -167,6 +167,9 @@ modified: 2023-11-28T14:48:45.910Z
 - linear
   - 问题描述中添加的 长日志 或 长文本 ， 在code block中显示时不会换行而需要水平滚动很长，临时方案是用 list item显示
 
+- ai-local
+  - 医疗行业对本地ai的需求较高
+
 ## saas/cloud
 
 - cloud-pros

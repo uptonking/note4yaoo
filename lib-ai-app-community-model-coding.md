@@ -9,12 +9,16 @@ modified: 2025-09-16T13:29:11.327Z
 
 # guide
 
+- tips
+  - models-watching: qwen-coder, devtral/codestral, deepseek, glm
+
 - leaderboard-coding
   - [Aider LLM Leaderboards](https://aider.chat/docs/leaderboards/)
-  - [SWE-rebench Leaderboard](https://swe-rebench.com/leaderboard)
   - [SWE-bench Leaderboards](https://www.swebench.com/)
+  - [SWE-rebench Leaderboard](https://swe-rebench.com/leaderboard)
   - [LiveSWEBench](https://liveswebench.ai/)
   - [GSO Leaderboard](https://gso-bench.github.io/leaderboard.html)
+  - [BigCodeBench Leaderboard 数据旧](https://bigcode-bench.github.io/)
   - [LiveCodeBench Leaderboard _停更于202505](https://livecodebench.github.io/leaderboard.html)
   - [Evals | Roo Code](https://roocode.com/evals)
 # discuss-stars
@@ -24,15 +28,190 @@ modified: 2025-09-16T13:29:11.327Z
 
 - ## 
 
-- ## 
-# discuss-models-hot
+- ## [What coding prompts do you use to test the capabilities of new models? : r/LocalLLaMA _202410](https://www.reddit.com/r/LocalLLaMA/comments/1g5m8bn/what_coding_prompts_do_you_use_to_test_the/)
+  - I’ve been using this collection of prompts (https://github.com/cpldcpu/MisguidedAttention ) to test reasoning capabilities however looking for good prompts to be able to test the coding and development capabilities.
+
+- Not a prompt, but an auto eval suite:
+  - Take this repo (or similar) https://github.com/trekhleb/javascript-algorithms
+  - Walk all files with AST parser, remove bodies in random functions
+  - Feed to FIM version of the model
+  - Run original tests to see if the generation was correct
+  - Percentage of the tests passed is a score
+- I've started evaluating them to find specific models and workflows that performed the best in my specific tasks. I built harbor bench to aid myself in that (as a simpler alternative to lm evaluation harness)
+
+- [What do most of your coding prompts look like? Example inside. : r/ChatGPTCoding](https://www.reddit.com/r/ChatGPTCoding/comments/187g3ql/what_do_most_of_your_coding_prompts_look_like/)
+
+- ## 🌰 [Personal benchmark prompts list : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1991i4u/personal_benchmark_prompts_list/)
+- My current benchmarks are:
+  - Easy difficulty: "Write django models for a twitter clone"
+  - Mid difficulty: "Write a python script for a CLI version of snake"
+  - Hard difficulty: "Write a python script for a CLI version of tetris"
+  - Most 7B models can "solve" the first one, but most responses lack important subtlety with database design such as using ManyToManyFields where appropriate. Better models produce dramatically more efficient database designs.
+  - Only 30B+ models solve the second one. Smaller models produce gibberish. A good indicator of better responses is use of the curses library.
+  - Out of all models I've tested, only GPT4 has produced working code for the Tetris prompt. It "worked" and produced a tetris-like game, but had significant bugs. Most 30B+ models produced code that in many ways was the right idea but none have produced running code.
+
+- these are bad prompts, and people shouldn't care how well models "solve" these prompts. You don't want that in your pipeline. You want models that attend to the context, solve a detailed task well, listen to instructions and so on. Open-ended stuff like write a snake game in python don't show that at all. You're never going to use that in any sane project anyways.
+  - No actually I want to type as few characters into a chat as possible to receive the best response possible. That's how I can maximize productivity. Open ended questions are more difficult to answer than specific ones, which is why they are better benchmarks for my purposes.
+  - Maybe your purposes are different.
+
+- I have 20 prompts I use to quickly check if model is coherent and writes various things reasonably, compare samplers and my different finetunes. Most of it is taken from no_robots dataset, i straight up suck at coming with good test prompts on demand. Nothing special or very tricky to complete, but it's useful for me. https://huggingface.co/datasets/adamo1139/misc/blob/main/benchmarks/benchmark_prompts.txt
+  - USER: Write a joke about llamas.
+  - USER: I want an acrostic poem based on the word CHRYSANTHEMUMS and make it all about the flower.
+  - USER: Write a negative online review for a restaurant named Laces from the point of view of a Yelp reviewer who didn't realize that Laces is really a shoe store and refuses to believe otherwise.
+  - USER: Write a Breaking news tweet. A lion has escaped from the Local city Zoo. please be on the lookout. Do not approach and call emergency services immediately. Reported by AYZNEWS. Please attach three relevant hashtags including #LION. Keep to the 280-character limit.
+  - USER: Please write a short story about a tree. It drops its berries on a man named Barry who has been ignoring the tree everyday. The tree talks and they have a conversation. Make the story about 200-250 words. Please title it "Talking Tree, Barry". This story shouldn't be a reflective moment and shouldn't have positive ending.
+  - USER: Write a short fun fact for my blog about cats sleeping habits. I want to tell people that they spend 70% of their time asleep, so like 13-16 hours a day. Make it fun
+# discuss-models-hot-coding
 - ## 
 
 - ## 
 
-- ## 
+- ## [Which coding model is best for 48GB VRAM : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kemt2m/which_coding_model_is_best_for_48gb_vram/)
+- GLM-4 is only great with HTLM frontend. 
+  - Python , science - only qwen 3 32b (q4km will be ok for you )
 
-- ## 
+- I am also using local LLMs for help with data science Python scripts that do data manipulation. I was using Qwen 2.5 72B Instruct 4.25bpw at 60k q4 context with TabbyAPI earlier, now I switched to Qwen3 32B FP8 32k with vLLM. Qwen3 32B is pretty good, the reasoning does help and I usually leave it enabled. I am hoping to jump to Qwen3 32B exl2 quant once tabbyapi will merge the PR that adds proper support for processing reasoning tokens so that they don't get mixed up with non-reasoning tokens. I am using all of that in Cline. I couldn't get GLM-4-0414 to work with Cline well - it just doesn't seem to work with this type of function calling well, most likely due to some issue with chat template that I was running into and not the issue with the model itself.
+
+- ## [UIGEN-X-8B, Hybrid Reasoning model built for direct and efficient frontend UI generation, trained on 116 tech stacks including Visual Styles : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1m2ukka/uigenx8b_hybrid_reasoning_model_built_for_direct/)
+  - We were just cooking this and realized instead of going the same route as UIGEN-T (t for tailwind) we can add in all the languages. There will be way more sizes released. This model should be way more capable than the 14B
+
+- ## [What is the best self hosted model for Roo Code? : r/RooCode _202506](https://www.reddit.com/r/RooCode/comments/1l4ol5h/what_is_the_best_self_hosted_model_for_roo_code/)
+  - My main dev language is JAVA and React (Typescript).
+
+- Devstral is the best local model and it aint even close.
+  - Devstral Q4_K_M (models size: 14.34GB, I set context to 45K) is a great architect! it follows instructions well, uses all tools properly and has decent speed. 
+  - Q3_XXS (9.51GB, 70K context) has been crushing it as a "turbo" coder for me, even faster than the qwen 8B's and smarter too!
+
+- The only local model under 30B which worked in Roo Code for me was qwen2.5-coder-tools. It's a fine-tunned on Cline's prompts.
+
+- I've had decent luck with GLM, Gemma, and Qwen3-32B as well as 30B-A3B. Sounds like I need to try Mistral.
+
+- ## [Honestly, THUDM might be the new star on the horizon (creators of GLM-4) : r/LocalLLaMA _202504](https://www.reddit.com/r/LocalLLaMA/comments/1kbaecl/honestly_thudm_might_be_the_new_star_on_the/)
+- THUDM/Zhipu/GLM is not some unknown model creator at all. Their first generation GLM-130B was released in 2022 and beat llama-1 from year 2023. It's just that they went closed during GLM-2 to GLM-3, with only 6B ChatGLM models remained open
+
+- The biggest problem of GLM-4-32B is hallucinations. I'm using a 0.6 temperature as recommended by their GitHub page, but the model still hallucinates heavily during tasks with provided context, such as making up BS on the fly. Qwen might miss some details during the same task, but at least it doesn't hallucinate as bad as GLM.
+  - Qwen historically is good for RAG, very good context grip. Hallucination might be tge result of small number of attention weights, but unusually heavy attention of Gemma 12b does not help either. Qwen 3 in my test was good at RAG, I liked it.
+
+- Qwen3 30b-A3B is probably the most powerful model that can run on CPU-only at pretty high speeds. For being this fast, I think the output quality is impressive. I think the innovation is what makes Qwen3 great.
+  - As for raw quality per parameter, the GLM-4 models are most likely the kings right now. Especially the non-thinking version has chocked me at how good it is in single-shots without CoT. It definitively feels like a 70b model, even better many times.
+
+- Yeah, I find GLM-4-32b to be a top-tier creative writing model, up there with Gemma3-27b.
+  - Depends on mood, GLM is too classical and dry.
+- Right, I like that style for realistic dark-ish sci-fi, but it would not fit poetic fantasy novels.
+
+- 32b is working fine with cline here, I didn't do anything and it just worked. 9b does not work with cline.
+
+- ## [Please , how to disable thinking in GLM-4-Z1? · Issue · zai-org/GLM-4 _202504](https://github.com/zai-org/GLM-4/issues/770)
+  - Is there anyway to disable thinking? Thinking is not always needed you know.
+
+- Z1 is set to the mandatory thinking mode in our template, so it will definitely think. If you want to prevent it from thinking, you need to delete the on the last line of the template and tell it not to think. However, this effect is not good, as this model has only been trained for the thinking state.
+
+- ## [GLM-4 32B is mind blowing : r/LocalLLaMA _202504](https://www.reddit.com/r/LocalLLaMA/comments/1k4god7/glm4_32b_is_mind_blowing/)
+  - the thing I like the most is that this model is not afraid to output a lot of code. It does not truncate anything or leave out implementation details. 
+
+- I've tested all the variants they released
+  - GLM-4-32B-0414: The one I've tested most. It seems solid. Non-reasoning. This is what I currently roll with
+  - GLM-Z1-32B-0414: Feels similar to the non-reasoning model, but well, with reasoning. I haven't really had tasks to really test reasoning so can't say much if it's good.
+  - GLM-Z1-32B-Rumination-0414: Feels either broken or I'm not using it right. Thinking often never stops, but sometimes it does, and then it outputs strange structured output
+
+- that's not the only thing, this model has the best KV cache efficiency I've ever seen, it's an order of magnitude better
+
+- Oddly, I got a very impressive physics simulation from "GLM-4-32B" on their site, but the "Z1-32B" one was mid as hell.
+
+- Bruh, this might quickly replace my gemma27b+coder models. So far it's fit into every role I've put it into and performance is great! 1mil batch size, 30k context, 72gb working vram (with model memory and mmap off). 10ish tps. Much faster than the 6.6 I Was getting from Gemma3 27b in same setup.
+
+- I've been comparing GLM-4-32B-0414 Q4_K_M to: - Qwen2.5-coder-instruct Q8
+  - GLM does a muuuuuuch better job one-shotting making games. I believe this will be my new go to model.
+
+- ## [Quick review of GLM-Z1-32B-0414 : r/LocalLLaMA _202504](https://www.reddit.com/r/LocalLLaMA/comments/1k56qsb/quick_review_of_glmz132b0414/)
+  - The performance is still a bit behind QwQ-32B, but getting closer
+  - Also, it suffers from quite bad repetition issues when using the recommended settings (no repetition penalty). Even though this could be fixed by using a 1.1 penalty, I don't know how much this would hurt the model's performance.
+  - I also observed similar repetition issues when using their official site, Chat. Z. AI, and it also could fall into a loop, so I don't think it's the GGUFs problem.
+
+- For programming the non-reasoning GLM4-model is better than the GLM4-Z1-model.
+
+- I don't wanna be the guy who's calling something crazy good after only limited testing, but GLM-4 Q6_K_M has managed to oneshot some fairly complex and novel web stuff that I doubt was in its training data. Outperforming even Cohere Command A and Mistral Large. This could be local SOTA for webdev. I'd recommend everybody give it a fair shake at least.
+
+- GLM-4-32B on the official website one-shot 3D Tic Tac Toe. There is no other model that was able to do this, not even Grok 3 or Gemini 2.5
+
+- ## [I uploaded GLM-4-32B-0414 & GLM-Z1-32B-0414 Q4_K_M to ollama : r/LocalLLaMA _202504](https://www.reddit.com/r/LocalLLaMA/comments/1k4w9p2/i_uploaded_glm432b0414_glmz132b0414_q4_k_m_to/)
+- I think GLM-4 might be the best non-reasoning local coder right now. Excluding Deepseek V3. 
+  - Interestingly the reasoning version GLM-Z1 seems to actually be worse at coding.
+- Reasoning often degrades coding performance. 
+  - Reasoning essentially fills up the context window with all sorts of tokens. If those tokens are not very quickly presenting the correct and most viable solution - or focused on planning, do this then this then this...well they are degrading and polluting the context as the model (especially smaller models...but many models) focus more on the context tokens, forget what's outside context and also can't cohesively understand everything in context.
+  - Reasoning is most valuable when it progressively leads to a specific answer and the following tokens basically repeat that answer
+- it's more like they are better at code generation, worse at editing
+  - I agree, they are better at single shot code generation - where no prior essential code is in the context.
+- The best performer across all models is google Gemini 2.5 pro, as it has the highest ability to accurately retain, retrieve from, and understand long context past 100k. 
+  - 2.5 flash benchmarks aren't out but both of these models have secret sauce for long context.
+  - The second best performer across all models is gpt-4.1 (plus an enforced "reasoning" step. Per their documentation, 4.1 has been trained on reasoning even if it doesn't do it explicitly). 32k context is great, Up to 160k context is ok.
+  - The third best is gpt o4-mini, which has higher losses than 4.1 per increase in context.
+  - Claude is way in the distance, it loses significant intelligence by 20-30k context.
+  - R1 is also trash.
+  - All local models are essentially useless for long context. So local reasoning models should be used with one off prompts, not for long chains or for code editing.
+  - *Needle in haystack is not a valid benchmark...
+
+- Same experience here. Editing code while having to wait ages on reasoning is a no-go for me, not to mention the reasoning context window. Local non-reasoning models have worked good for editing code though.. for the most part.
+
+- Reasoning for debugging and architecture, non reasoning for code writing
+
+- This model has crazy efficient context window, I enabled 32K context + Q8 kv cache, and I still has 3gb of vram left (24gb card)
+
+- ## [What’s the best open-source LLM for coding in Cline right now — Kimi K2, Qwen 3-Coder, or GLM 4.5? : r/CLine _202508](https://www.reddit.com/r/CLine/comments/1mmoj80/whats_the_best_opensource_llm_for_coding_in_cline/)
+- GLM 4.5 demonstrates better balance. While Qwen coder writes good code, it can be clumsy in the agent process. For example, when 10 changes need to be made to a single file, it requires 10 separate operations.
+
+- havent tried glm yet but qwen 3 coder is pretty dope.
+
+- What about OSS-120b from openai?
+  - Not good 
+
+- Why use open source when Gemini give free api
+  - If you’re not paying, you’re the product.
+
+- ## [GLM 4.5 Air Produces Better Code Without Thinking, Using 3-bit MLX (/nothink)? : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mgv53t/glm_45_air_produces_better_code_without_thinking/)
+- This is just my subjective experience, but to me, reasoning seems to show the best improvements on smaller models when doing things like solving logic puzzles. It can result in, say, a 9b reasoning model getting things right 
+  - Reasoning models are very good at understanding prompts and following instructions. They can generate human-like responses with proper prompts. However, they can be stubborn.
+
+- Wouldn't be surprised, iirc in discord one of the z.ai staff recommended using nothink mode for Claude Code and such, because that's what it's optimised for.
+
+- GLM-4.5-air fp8 produces a working flappy bird game in one shot, as expected. In fact it looked better than the one in their blogpost, with gradient textured pipes.
+  - Tried on Qwen3-235B web version and thinking-mode produced much better results, similar quality to the glm-4.5-air fp8. Non-thinking is much lower quality, but also worked one-shot.
+  - Surprisingly the best quality game I got was with full GLM-4.5, almost the same as GLM-4.5 air. Qwen3-coder second, sonnet with much less quality. Maybe GLM training on flappy bird games?
+
+- Same behaviour I came across Qwen3 30B A3B 2507 Thinking model. It wasn't great on my testing prompts, but if I use the Instruct model (without reasoning feature) it provides a higher output score.
+  - I stick the reasoning models outside coding, or for orchestration. They seem to shine better here, despite the company's benchmarks say otherwise.
+
+- I asked Q5 variant of the model my vibe question with normal prompt and /nothink in the end. In case of normal prompt it used up all my 32k context. It mentioned the right answer (0.46425) 17 times in COT but couldn't stop. With /nothink in prompt it used 2427 tokens and gave the right answer on the first try. The question: There are three circles of radius 1, 2 and 3 tangent to each other. Find the area enclosed by their touching arcs.
+
+- ## [What’s your experience with GLM-4.5? Pros and cons? : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1motbnk/whats_your_experience_with_glm45_pros_and_cons/)
+  - I’ve looked at the paper from the GLM-4.5 team. They put significant effort into filtering code data in pre-training.
+
+- I've been using it daily with kilo code in visual studio code all this past week. It is the best coder I've ever worked with. I've been very impressed.
+
+- Recently installed the 2_K_XL variant from Unsloth on my 24GB VRAM + 32GB DDR5 6000MHz system and I'm impressed that it performs so well. The speed is good. I think it's about 5 t/s and haven't noticed any odd behavior as of yet 
+
+- ## [GLM-4.5 is overhyped at least as a coding agent. : r/ChatGPTCoding _202509](https://www.reddit.com/r/ChatGPTCoding/comments/1ngwzo5/glm45_is_overhyped_at_least_as_a_coding_agent/)
+  - note: this was a quick 1-day experiment I wanted to keep it cheap, so I used SWE-bench Lite and capped the step limit at 50.
+  - GLM-4.5, despite strong performance on official benchmarks and a lower advertised per-token price, turned out to be highly inefficient in practice. It required so many additional steps per instance that its real cost ended up being roughly double that of GPT-5-mini for the whole benchmark.
+  - GPT-5-mini, on the other hand, not only submitted more solutions that passed evaluation but also did so with fewer steps and significantly lower total cost.
+
+- Gemini 2.5 Pro ranked below Qwen3Coder? This benchmark is fantasy.
+
+- Its hyped because of the glm coding plans (3 usd for 120 msg / 15 usd for 600 msg)
+  - Only for first month. Still a good price though. Can't really be beaten at that price.
+
+- ## [Qwen3-Coder is bad at tool call while glm-4.5 is surprisingly good : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mf8la7/qwen3coder_is_bad_at_tool_call_while_glm45_is/)
+- I have glm air running locally and it moves soo fast in Claude code.
+
+- GLM 4.5 on Claude Code is amazing! It works very well. It's helping me get a lot done with great quality and for low cost thanks to Chutes. I have never been so excited by a model.
+
+- I'm going to be honest GLM is better at coding than Qwen3-coder as well.
+
+- ## [GemmaCoder3-12b: Fine-Tuning Gemma 3 for Code Reasoning : r/LocalLLaMA _202504](https://www.reddit.com/r/LocalLLaMA/comments/1joyigi/gemmacoder312b_finetuning_gemma_3_for_code/)
+- Gemma 3 12b is a hidden gem, and I can easily imagine the fine-tuned model performing well at coding as it is pretty good at reasoning even without 'thinking'.
+  - I found Gemma 3 (12b and in general) completely unimpressive for anything other than creative writing, at which it is massively better than other 12b-14b models.
+
+- No where near qwen coder 14b
 
 - ## [Nemotron Nano V2 models are remarkably good for agentic coding : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1na9crp/nemotron_nano_v2_models_are_remarkably_good_for/)
   - I use Nvidia Nemotron Nano 9B V2 and 12B v2 with Roo Coder served by both LM Studio (Mac) and Llama.cpp (Ubuntu). 
@@ -439,6 +618,18 @@ ollama run hf.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF:Q6_K
 - ## [Devstral vs DeepSeek vs Qwen3 : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1ksat42/devstral_vs_deepseek_vs_qwen3/)
 - Devstral is not better than qwen3-32B in general-purpose tasks. I guess it was trained to be specific to that openhands particular agent.
 
+- ## 🆚 [QwQ 32b vs Qwen 3 32b vs GLM-4-32B - HTML coding ONLY comparison. : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kenk4f/qwq_32b_vs_qwen_3_32b_vs_glm432b_html_coding_only/)
+  - All models are from Bartowski - q4km version
+  - GLM-4-32b is insanely good for html code frontend.
+
+- Yeah, I have also tried to generate webpages with a couple of models, like GLM-4, Qwen3, Phi-4 Reasoning, etc. GLM-4 is so far the clear winner at these tasks. It's a gem in my model collection.
+
+- I don't think comparing HTML generated in a single shot is a good benchmark for intelligence. The model might just be repeating patterns it has memorized, resulting in very similar-looking pages.
+  - I've done some experiments and concluded that current LLMs (including Gemini) have no real understanding of what makes a good web design (they are somehow render-blind).
+  - A more useful benchmark might be asking the model to modify an existing web page template given custom instructions.
+
+- GLM falls flat on its face when I try to continue developing after the first prompt. It feels like a model trained (very well) for one-shots
+
 - ## 🤔 [what are the challenges of fine tuning deepseek coder or codellama on a real world codebase? : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1n1mnbz/what_are_the_challenges_of_fine_tuning_deepseek/)
   - i’m curious about fine tuning code llms like deepseek coder or codellama on an actual messy real world codebase.
 
@@ -674,6 +865,11 @@ ollama run hf.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF:Q6_K
 - ## [Best really lightweight coding model for very basic questions? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1n9faly/best_really_lightweight_coding_model_for_very/)
 - Gpt oss 20b or qwen 30b a3b 2507 (thinking version), these aren't just coding models but they do well at coding and run fast on a CPU with enough system ram.
 
+- ## [Best small local llm for coding : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mz0640/best_small_local_llm_for_coding/)
+- GLM-4 0414 9b or Qwen 2.5 Coder 14b are probably your best bets around that size. They are surprisingly good as long you can break your problem down into focused bite-sized pieces.
+- there is a GLM-4 0414 32b and I really like it. Even at brain-damaged quantizations like IQ2_XXS it is still surprisingly functional.
+  - That said, I've mostly shifted to Qwen 3 Coder 30b a3b since it is so much faster and sits right in the ability sweet spot between the 9b and 32b GLM-4 models.
+
 - ## [What is the Best coding LLM for my system? : r/ollama _202508](https://www.reddit.com/r/ollama/comments/1mmu24w/what_is_the_best_coding_llm_for_my_system/)
 - Devstral with Pixtral layers baked in is a lot more precise than Qwen3-coder 30B. 
   - Check Unsloth's version from Huggingface, it has all the multimodal bells and whistles. Take a screenshot, give it to the model, and see magick happen as it creates both back-end and front-end code for a project. 
@@ -701,6 +897,22 @@ ollama run hf.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF:Q6_K
 - Codellama 70B was a fine-tune of Llama 2. Since then the only coder fine-tune above 70B was the DS 236B. So I'm assuming later models 70B and above have also been trained on coding datasets. Like Qwen 2.5 32B coder probably was fine-tuned on the same coding datasets used in their 72B. And that coder certainly beats codellama - codestral 22B did.
 
 - Deepseek (R1 \ V3) at Q1 at 4k context shits on Llama2 70b any day of the week for whatever task your heart desires.
+
+- ## [Best local coding model right now? : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1ktudaj/best_local_coding_model_right_now/)
+- Gemma 3 is not a good coding model. Qwen2.5 coder, Qwen3, GLM-4, Mistral Small - these are better.
+
+- Devstral’s got my full support. It's the only local model under 32B that can actually use tools to gather context in Roo/Cline without breaking a sweat.
+  - Qwq's performance in roo is a bit off on my end. Its tool calling doesn't quite match up to devstral. Maybe it'll perform better with more context.
+- Devstral landed two days ago, so it’s a bit early to have a full overview, but with an RTX 3900, it’s the first model that works out of the box with OLLAMA and AIDER, plus it runs at a decent speed (35 t/s for me) and 100% on GPU even with a large context. So, I would recommend giving it a try.
+
+- I have been using deepcoder and hás serve me well until now. Still waiting for Qwen3-coder.
+
+- I replaced Qwen 2.5 Coder with GLM 4 0414 recently. Qwen 3 seemed OK. In my tests, it was still outperformed by Qwen 2.5 Coder, although reasoning might give it the edge in certain use cases.
+  - I agree about Qwen 3 not being that good at coding in general. It's weird because Supernova Medius, a mashup of Qwen 2.5 Coder 14B and Llama, was really good at coding.
+
+- For web development, GLM-4 is significantly better than Qwen 3, QwQ and Gemma 3 for my use cases.
+
+- Don't discard gemma totally as it can analyze images, so you can ask it to analyze the UI and what not.
 
 - ## [LocalLLM for coding : r/LocalLLM _202505](https://www.reddit.com/r/LocalLLM/comments/1ku7zjs/localllm_for_coding/)
 - Go for the highest number of parameters you can fit in vram along with your context, then choose the highest quant of that version that will still fit.
