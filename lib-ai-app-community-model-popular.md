@@ -14,6 +14,7 @@ modified: 2025-09-16T19:59:57.856Z
   - watching: openai, claude, qwen, deepseek, gemini/gemma, glm, mistral/codestral
   - variants: mlx, unsloth, quants
   - 测试模型时可能更希望速度快，但做任务或规划时更希望质量好，所以偏向选择大B参数的模型
+  - 📱 端侧模型还要考虑电源及功耗问题, 实测macbook-air在跑模型时掉电很快
 
 - leaderboard-llm
   - [Artificial Analysis LLM Leaderboard - Comparison of over 100 AI models from OpenAI, Google, DeepSeek & others](https://artificialanalysis.ai/leaderboards/models)
@@ -32,6 +33,7 @@ modified: 2025-09-16T19:59:57.856Z
   - moe模型的实际效果大概只有dense模型的一半，如qwen3-30B-A3B 相当于 Qwen3-14b
   - 模型占用VRAM不能太大，还要为context处理、应用程序如nextjs/comfyui预留RAM/VRAM
   - 选择模型时多用官方版/主流版，小众微调的版本可能存在tool-call/overthink/多语言multilingual/对话风格/llama.cpp不支持等问题
+    - 选用主流版还方便与其他用户对比速度/配置
   - 多agent架构时，可使用不同架构的agent相互验证
   - non-thinking或输出简洁的模型适合coding
 
@@ -40,25 +42,26 @@ modified: 2025-09-16T19:59:57.856Z
 
 - qwen3 🌹 /能力全/内容丰富/thinking开关
   - think 2-3min
-  - 4b及14b的输出都比较详细
-
-- glm4 👀 /可以用
-  - glm4不会think，输出内容质量感觉一般
-  - 输出的长度大概在30-60行，简洁是特色，对代码有用?
-  - 在多轮聊天时，输出内容也会逐渐变长?
-- glm-z1 👀 /思考久
-  - z1会think5-15min，think不支持disable，输出内容的长度会比glm4多20行左右，多一些外部链接，多用很多表格，质量较好
-  - z1的think时间比qwen3长很多，输出内容的长度比qwen3更少
+  - 4b及14b的输出内容都比较详细，经常包含表格📈
 
 - gpt-oss-20B-A3.6B 👀 /输出快
   - 输出的内容特别喜欢用表格📈
   - unsloth-Q5的输出速度为 11.8 tops, offcial-Q4的输出速度为 11.2 tops, 速度比qwen3-14b更快
 
-- magistral-2509  👀 /可以用/think+vision/欧洲多语言
+- magistral-2509  👀 /可以用/think+vision/欧洲多语言/产品线丰富
   - 回复非常短，感觉质量不如2507
   - thinking时间在3-10min左右，或许对于plan制定计划有用
-  - 几乎不提供外部链接，2507不也提供外部链接
-  - 回复内容中几乎不提供表格
+  - 输出内容几乎不提供外部链接，2507不也提供外部链接
+  - 输出内容中几乎不提供表格
+
+- glm4 👀 /可以用
+  - glm4不会think，输出内容质量感觉一般
+  - 输出的长度大概在30-60行，简洁是特色，对代码有用?
+  - 在多轮聊天时，输出内容也会逐渐变长?
+- glm-z1 👀 /思考非常久
+  - z1会think5-15min，think不支持disable，输出内容的长度会比glm4多20行左右，多一些外部链接，多用很多表格，质量较好
+  - z1的think时间比qwen3长很多，
+  - 输出内容的长度比qwen3更少, 输出内容会有表格📈
 
 ## models-coding
 
@@ -80,6 +83,25 @@ modified: 2025-09-16T19:59:57.856Z
   - Don't use high repetition penalty! Open WebUI default 1.1 and Qwen recommended 1.05 both reduce model quality. 
   - 📃 Use recommended inference parameters in your completion requests https://huggingface.co/Qwen/Qwen2.5-Coder-32B-Instruct/blob/main/generation_config.json
 
+- ## [最近发的国产大模型为什么都没有reasoning版本（k2，qwen3）? - 知乎 _202507](https://www.zhihu.com/question/1931294740818665889)
+
+- 有些模型把reasoning的过程没放think标签里，输出很长的基本都是。
+  - thinking给用户的体验并不是很好，等待时间太长
+  - 大部分问题其实用不着reasoning
+
+- Sam Altman 就提过一个观点：用户虽然能从大模型里得到答案，但他们最想要的其实是——直接拿到那个最好的、正确的答案。
+  - 验证者问题”：怎么判断一个答案是正确或者优秀的？
+  - 这个问题其实可以分成两种情况：一种是在模型内部就能验证的，另一种是要靠外部来验证的。
+  - 比如说，自主Reasoning类的大模型在处理问题时，会先设定好“当这个问题被解决时应该满足什么条件”，或者同时尝试多种路径，看它们能不能都指向同一个结果。这种情况下，它自己就能判断对错，适合用在数学题、逻辑推理题这类任务上。
+  - 但像写作、写代码这些更常见的应用场景呢？它们的验证机制其实并不在模型内部，而是在外部——也就是说，需要人来判断输出是不是符合要求。 这时候真正起作用的不是 Reasoning，而是 [Prompt Iteration](提示词迭代)：人作为“验证器”给模型反馈，让它不断调整输出内容，直到满意为止。这种方式看起来不那么“高科技”，但在日常工作中反而是最实用的。
+  - 其他大部分的时候 Reasoning LLM都在无效思考，为什么呢？因为模型会有一个第一直觉，而它又没有其他的验证途径，来验证它的第一直觉是对是错，比如非数学题，所以它会一直在第一直觉里空转，消耗tokens，最终输出的结果，其实跟不Reason，是一样的。
+  - 用户其实是开发者群体，追求的是效率和快速迭代能力。这就依赖于两个方面：一个是输出速度快，另一个是模型的第一反应——也就是基于大量数据训练出来的模式识别能力。
+- 当然，Reasoning 也有其他用途。它还有一个很大的优势，就是在面对多个冲突目标的时候，可以通过内部博弈找到一个平衡点。比如做规划类的任务，就非常适合用 Reasoning 来处理。
+  - 还有一个我认为特别有用的方向，就是把 Reasoning 和工具使用结合起来，Reasoning的过程可以被视为一个行为过程。比如说把单轮搜索升级成多轮搜索。普通的单轮搜索加改写，搜出来的东西往往比较浅；但如果做成多轮搜索，就可以把上一轮的结果当成上下文，用来反思和优化下一轮的搜索策略。
+  - 如果你的业务场景中只有单轮搜索，没有多轮反馈机制，那就算你用了 Reasoning，最终的效果也是有限的。因为缺少了根据外部信息持续优化的过程。
+
+- 现在这些大模型通过Reasoning在那些可以内部验证的问题上刷出高分，但很多时候，我们面对的问题是真实世界的问题，需要不断迭代提示词，让模型与真实世界进行校准。
+
 - ## 🆚 [Interesting (Opposite) decisions from Qwen and DeepSeek : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mwpmkb/interesting_opposite_decisions_from_qwen_and/)
 - Qwen
   - (Before) v3: hybrid thinking/non-thinking mode
@@ -100,6 +122,16 @@ modified: 2025-09-16T19:59:57.856Z
 
 - GPT-OSS provides low, medium, high reasoning efforts.
 - NVIDIA's V2 Nemotron has token-level reasoning control https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-9B-v2
+
+- ## 🆚 [How does MLX quantization compare to GGUF? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1gc0t0c/how_does_mlx_quantization_compare_to_gguf/)
+- The GGUF quantization is often more accurate than MLX at the same bit depth. 
+  - For example, if you compare a GGUF q4_k_m with a 4-bit MLX model, GGUF tends to maintain better text quality and reduce errors, especially for larger models like 70b and 123b. 
+  - However, MLX is generally faster, though this speed can come at the cost of precision, particularly in 2-bit quantization, where grammatical errors are more frequent.
+
+- MLX's quants are a lot simpler and contains less information than llama.cpp's K quants.
+
+- is it really worth it running a 123B model at 2-bit? Have you noticed any issues running it at that low of a precision?
+  - I find ML 123B 'surprisingly' usable at IQ2M, better or on a par with 70B @ Q4KM for some tasks.
 
 - ## 🆚 [The new MLX DWQ quant is underrated, it feels like 8bit in a 4bit quant. : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1khb7rs/the_new_mlx_dwq_quant_is_underrated_it_feels_like/)
 - Yep, fully agreed - the DWQs are honestly awesome (at least for 30ba3b). 
@@ -128,7 +160,7 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - [Exploring LLM Leaderboards _202405](https://medium.com/@olga.zem/exploring-llm-leaderboards-8527eac97431)
   - This post presents a handpicked collection of leaderboards designed for MLOps and LLMOps, regularly updated based on input from AI experts to ensure accuracy. 
-# discuss-tips/usage
+# discuss-tips/usage 💡
 - ## 
 
 - ## 
@@ -136,6 +168,122 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [Your settings are (probably) hurting your model - Why sampler settings matter : r/LocalLLaMA _202311](https://www.reddit.com/r/LocalLLaMA/comments/17vonjo/your_settings_are_probably_hurting_your_model_why/)
+- Temperature
+  - What Temperature actually controls is the scaling of the scores. 
+  - Every time a token generates, it must assign thousands of scores to all tokens that exist in the vocabulary (32, 000 for Llama 2) and the temperature simply helps to either reduce (lowered temp) or increase (higher temp) the scoring of the extremely low probability tokens.
+
+- Top K is doing something even more linear, by only considering as many tokens are in the top specified value, 
+  - so Top K 5 = only the top 5 tokens are considered always. 
+  - I'd suggest just leaving it off entirely if you're not doing debugging.
+
+- Top P
+  - This is the most popular sampling method, which OpenAI uses for their API. However, I personally believe that it is flawed in some aspects.
+  - With Top P, you are keeping as many tokens as is necessary to reach a cumulative sum.
+
+- Min P
+  - we are setting a minimum value that a token must reach to be considered at all. The value changes depending on how confident the highest probability token is
+  - So if your Min P is set to 0.1, that means it will only allow for tokens that are at least 1/10th as probable as the best possible option. If it's set to 0.05, then it will allow tokens at least 1/20th as probable as the top token, and so on...
+  - "Does it actually improve the model when compared to Top P?" Yes. And especially at higher temperatures.
+  - You might think, "but doesn't this limit the creativity then, since we are setting a minimum that blocks out more uncertain choices?" Nope. In fact, it helps allow for more diverse choices in a way that Top P typically won't allow for.
+  - Min P emphasizes a balance, by setting a minimum based on how confident the top choice is.
+  - 0.05 - 0.1 seems to be a reasonable range to tinker with, but you can go higher without it being too deterministic, too, with the plus of not including tail end 'nonsense' probabilities.
+
+- Repetition Penalty
+  - This penalty is more of a bandaid fix than a good solution to preventing repetition; However, Mistral 7b models especially struggle without it.
+  - I call it a bandaid fix because it will penalize repeated tokens even if they make sense 
+  - I recommend that if you use this, you do not set it higher than 1.20 and treat that as the effective 'maximum'.
+
+- ## [Can someone explain what Top K and Top P are and what they do and how to use them? : r/AIDungeon _202408](https://www.reddit.com/r/AIDungeon/comments/1eppgyq/can_someone_explain_what_top_k_and_top_p_are_and/)
+- Top K sampling is a method used to limit the number of potential tokens (words or characters) that a language model considers at each step during text generation.
+  - During generation, the model predicts a probability distribution over the vocabulary for the next token. Instead of sampling from the entire vocabulary, Top K sampling only considers the top K most probable tokens.
+  - A smaller K makes the output more deterministic and focused, while a larger K allows more diversity and creativity in the generated text.
+- Top P sampling, also known as Nucleus Sampling, is an alternative to Top K that dynamically adjusts the number of tokens considered based on their cumulative probability.
+  - Instead of choosing a fixed number of top tokens (like in Top K), Top P sampling selects the smallest set of tokens whose cumulative probability exceeds a threshold P (a value between 0 and 1). 
+  - For example, if P = 0.9, the model will consider the smallest number of tokens whose combined probability is 90%.
+  - Top P sampling is more adaptive than Top K. It allows for flexible token selection, which can lead to more diverse outputs while maintaining fluency. This method is particularly useful when you want to ensure that the model doesn’t pick from an overly broad or too narrow set of options.
+- a high Top P (closer to 1.0) with a low Top K (under 50) often results in outputs that are more predictable and less diverse. 
+  - Conversely, a high Top K (above 100 or so) with a low Top P (closer to 0) can result in outputs that are less coherent, with a mix of overly predictable and randomly selected tokens.
+
+- Min-P is a much better sampler that replaces both Top K and Top P. 
+  - The user set parameter is a percentage. Tokens within the selection pool must be more probable than the top token probability x the parameter. 
+  - So, if you set it to 0.1 and the top token has a score of .9, every token with a probability over 0.09 is a possible choice. 
+  - What min-p does better than the other two is adjust the size of the token pool dynamically to ensure you have a decent selection. The more likely that top token is, the higher the cutoff is. As it drops, you start getting more options, which is positive because you aren’t as sure of that top token anymore. This is pretty standard at this point in the local model world.
+
+- ## [Memory Tests using Llama.cpp KV cache quantization : r/LocalLLaMA _202406](https://www.reddit.com/r/LocalLLaMA/comments/1dalkm8/memory_tests_using_llamacpp_kv_cache_quantization/)
+  - Now that Llama.cpp supports quantized KV cache, I wanted to see how much of a difference it makes when running some of my favorite models. 
+
+- how do you enable caching in llamacpp? is it only kv cache or also prefix cache?
+  - The KV cache is always used. Its part of how llama.cpp generates. This post is about enabling quantization on the KV cache
+  - llama.cpp server will do some caching by default depending on how you're using it. You can use "cache_prompt" when using the text completion endpoint. It also has a "slots" system for maintaining cache between requests.
+
+- For future reference: if you want to cache using the v1/chat/completions OAI-compatible endpoint, with the OpenAI client, pass cache_promot as an extra_body parameter 
+
+- ## 🤔 [Using KV Cache, Do You Notice any Quality Drop? : r/LocalLLaMA _202408](https://www.reddit.com/r/LocalLLaMA/comments/1ej8tjn/using_kv_cache_do_you_notice_any_quality_drop/)
+- Use Q8 for K, Q4 for V is fine. Here is a comment from the guy who did the implementation in llama.cpp
+
+- I've noticed a slight quality drop but the benefits outweigh the loss for me.
+  - That's what I am experiencing too.
+
+- On llama.cpp yes. On exllama not not as much.
+
+- For me, q4 cache doing summaries of YouTube videos with llama 3.1 the number of hallucinations increases significantly compared with not using it.
+
+- ## [What's with the obsession with reasoning models? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nfqe2c/whats_with_the_obsession_with_reasoning_models/)
+  - Why are practically all AI model releases in the last few months all reasoning models? Even those that aren't are now "hybrid thinking" models.
+
+- Reasoning is great for making AI follow prompt and instructions, notice small details, catch and fix mistakes and errors, avoid falling into tricky questions etc. I am not saying it solves every one of these issues but it helps them and the effects are noticeable.
+  - Sometimes you need a very basic batch process task and in that case reasoning slows you down a lot and that is when instruct models becomes useful, but for one on one usage I always prefer reasoning models if possible
+
+- It is better at coding and math
+
+- You nailed it, reasoning helps to reduce hallucination. Because there is no real way to eradicate hallucination, making LLM smarter becomes the only viable path even at the expense of token. The state of art is how to achieve a balance as seen in gpt 5 struggling with routing. Of course nobody wants over reasoning for simple problem, but hwo to judge the difficulties of a given problem, maybe gtp5 has some tricks.
+
+- Reasoning models have their place, but not every model should be a reasoning models. Also not too big on hybrid reasoning models either since it feels like a worst of both worlds which is probably why the Qwen team split the instruct and thinking models for the 2507 update.
+
+- I've found that all reasoning models have been massively superior for creative writing compared to their non-reasoning counterparts, 
+
+- Another example is my Devstral Small 1.1 24B doing tremendously better than GPT-OSS-20B/120B, Qwen3 30B A3B 2507 all series, in Solidity problems. A non-reasoning model that spends less tokens compared to the latter models.
+  - However, major benchmarks puts Devstral in the backseat, except in SWE bench. Even latest ERNIE 4.5 seems to be doing the exact opposite of what benchmarks say.
+
+- I think there are two main appeals:
+  - First, reasoning models achieve more or less what RAG achieves with a good database, but without the need to construct a good database. Instead of retrieving content relevant to the prompt and using it to infer a better reply, it's inferring the relevant content.
+  - Second, there are a lot of gullible chuckleheads out there who really think the model is "thinking". It's yet another manifestation of The ELIZA Effect, which is driving so much LLM hype today.
+  - The main downsides of reasoning vs RAG are that it is slow and compute-intensive compared to RAG, and that if the model hallucinates in its "thinking" phase of inference, the hallucination corrupts its reply.
+
+- Reasoning models are exceptionally good at filtering through rules, injected corpo-required bias, overriding and ignoring the user's prompt, requiring injection of RAG and tool use to further deviate from the user's request and tokens used, correcting the pathways on way, and finally reasoning refusal and guardrails.
+
+- ## 🆚 [Can someone explain the difference between a 4bit pre-quantized model and a quantized model? : r/LocalLLaMA _202409](https://www.reddit.com/r/LocalLLaMA/comments/1f92brm/can_someone_explain_the_difference_between_a_4bit/)
+- Normal 4bit version process: [Download 16bit weights => Quantize to 4bit on the fly] => 4bit QLoRA / inference
+  - Pre-quantized Unsloth weights instead: Download 4bit weights which is equivalent to [Download 16bit weights => Quantize to 4bit on the fly] => 4bit QLoRA / inference
+  - So there's 0 difference between both, except I just pre-quantize it and save it so people can skip downloading all 16bit weights (16GB or so) and download a 4GB file + get 1GB or so less VRAM usage due to reduced fragmentation.
+- Do you need 'load_in_4bit=True' when using pre-quantized model?
+  - When using Unsloth, yes
+
+- do I run the BF16 with "load in 4bit" checked and it's the same thing as the 4bit version?
+  - Yes, this is the answer. The 4-bit models on Unsloth's page are quite literally just models that have been loaded in 4-bit and then saved to disk. So the quality will be exactly the same.
+  - The main purpose is just to enable you to skip the download of the huge full model when you just intend to run it in 4-bit anyway. Which would be a waste of bandwidth and disk space.
+
+- ## [Qwen3 30B A3B unsloth GGUF vs MLX generation speed difference : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kugp9h/qwen3_30b_a3b_unsloth_gguf_vs_mlx_generation/)
+- Don’t use Q8_K_XL on a Mac. They use bf16 which is not good on a Mac
+  - So what would you recommend? 6_K_XL or 8_0?
+- 8_0 or fp16 in your case
+- Definitely give Q8_0 a try! I might have to place a warning BF16 is slower for Mac devices
+  - I did and yes apparently it was the issue. Now I am getting 75t/s with 8_0
+
+- As someone mentioned below, Q8_K_XL might not function well on Mac due to BF16 being used - best to check Q8_0 directly - if Q8_0 still has reduced perf, it's most likely a llama.cpp backend issue.
+
+- I’m having similar results but for Llama 4 Scout, when comparing an older Bartowski quant to the newer Unsloth quants. I’m getting about DOUBLE the speed with Bartowski’s IQ2_XS (46tps) vs Unsloth’s IQ2_XXS (22tps). I’ve even tried removing the vision encoder for Unsloth (it’s not supported by Bartowski) and Unsloth is still much slower.
+  - Unsloth also seems to occupy less RAM and more VRAM than I’d expect, even though in both cases I’ve selected 48/48 layers offloaded to GPU, and there’s about 2.5GB of VRAM available.
+
+- ## [Qwen3 30B A3B unsloth GGUF vs MLX generation speed difference : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1kugp9h/qwen3_30b_a3b_unsloth_gguf_vs_mlx_generation/)
+
+- ## [188GB VRAM on Mac Studio M2 Ultra - EASY : r/LocalLLaMA _202401](https://www.reddit.com/r/LocalLLaMA/comments/192uirj/188gb_vram_on_mac_studio_m2_ultra_easy/)
+- I think "time for first token" is slow because people don't use --mlock option, which preloads model and force it to stay in RAM and this is not default. It should not be a problem if use it.
+  - This is true and will keep the model in along with additional memory for context which, depending in what you are using may not be allocated until it is required. MLX uses lazy allocation, only grabbing memory when it is needed. So, mlock is something you would always want set so the model doesn’t get swapped or paged out.
 
 - ## [How do you actually test new local models for your own tasks? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nejogz/how_do_you_actually_test_new_local_models_for/)
 - The easiest way for me to test coding ability is to check my task history for challenges I had to use Claude for and see how it performs compared to Claude. 
@@ -314,6 +462,30 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Qwen3 is very.... talkative? And yet not very... focused? : r/LocalLLaMA _202506](https://www.reddit.com/r/LocalLLaMA/comments/1lh4ynv/qwen3_is_very_talkative_and_yet_not_very_focused/)
+  - Is this the expected Qwen output? Is it just designed to act like an extremely chatty person with ADHD?
+
+- Yes it is how it is, I tested 14b, 32b, 30b-3a, and smaller ones too. You can't really stop it from doing this. It is annoying
+  -  I also don't like Qwen3's obsession of overusing line breaks.
+
+- Yep I feel both Gemma and qwen3 are a bit talkative and not delivering the same raw straight to the point no bullshit wrapper words like deepseek v3 and r1 does.
+
+- Another thing then these settings everybody said, is the "prompt template" (like ChatML, Alpaca, Llama 2, etc.). I found it affects the length of the answer if you get the wrong one.
+
+- ## [Qwen 3 8B, 14B, 32B, 30B-A3B & 235B-A22B Tested : r/LocalLLaMA _202504](https://www.reddit.com/r/LocalLLaMA/comments/1kaqi3k/qwen_3_8b_14b_32b_30ba3b_235ba22b_tested/)
+  - They all seem to struggle a bit in non english languages.
+  - Coding is top notch, even with the smaller models.
+
+- In my limited testings so far with Qwen3 - in a nutshell, they feel very strong with thinking enabled. With thinking disabled however, they seems worse than Qwen2.5.
+
+- Ollama is slow compared to VLLM already... Less efficient.
+
+- In my early testing the true magic with qwen 3 is in instruction following, tool use, and consistent a d reliable structured/formatted output. To me these are the most important qualities of a small/medium model so I am very happy.
 
 - ## [46pct Aider Polyglot in 16GB VRAM with Qwen3-14B : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kukjoe/46pct_aider_polyglot_in_16gb_vram_with_qwen314b/)
   - After some tuning, and a tiny hack to aider, I have achieved a Aider Polyglot benchmark of pass_rate_2: 45.8 with 100% of cases well-formed, using nothing more than a 16GB 5070 Ti and Qwen3-14b, with the model running entirely offloaded to GPU.

@@ -25,14 +25,6 @@ modified: 2023-02-08T06:56:54.945Z
   - 知道SD里各种参数，大模型和laro模型的区别等等 
   - 如何收集素材，训练自己的模型等等
 
-- ## 现在大模型一天一个样，一直在思考 LlM 应用中哪些是不变的，梳理了一下 RAG 中那些值得投入的技术栈
-- https://x.com/ZeroZ_JQ/status/1906255737845690372
-  - 文档解析： unstructed-io，docling，MinerU
-  - 数据层：qdrant
-  - 搜索引擎：meilisearch
-  - 流处理：kafka，flink
-  - 工作流：airflow，prefect
-
 - ## 一个很奇怪的现象: AI 公司既然都有安卓和客户端那就说明他们内部肯定是有对应的 SDK/Library, 但是他们开源的基本上是 Node 和 Python SDK和 REST API, 为什么呢?
 - https://x.com/ivyliner/status/1892808355183218914
 - ChatGPT的客户端也不是拿着API key请求服务器端的，有中间层

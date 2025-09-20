@@ -1584,6 +1584,19 @@ modified: 2025-08-23T11:43:35.904Z
     - Create a cluster of your ComfyUI Connect instances.
     - Works behind NAT - Your ComfyUI instances don't need to be directly accessible with IP, they connects directly to the gateway using websocket.
 
+- https://github.com/comfy-deploy/comfydeploy /362Star/GPLv3/202509/python/ts
+  - https://app.comfydeploy.com/
+  - https://github.com/comfy-deploy/api /GPL/python
+  - https://github.com/comfy-deploy/app /GPL/ts
+  - TL; DR: We are open-sourcing ComfyDeploy again, with full platform backend + frontend.
+  - [Re: Open-sourcing ComfyDeploy - Comfy Deploy _20250916](https://www.comfydeploy.com/blog/re-open-sourcing-comfydeploy)
+    - In late 2023, I started ComfyDeploy as an open source project while I was working at my previous company. 
+    - We got into YC with ComfyDeploy around 2.5K MRR.
+    - Around the same timeframe, ComfyOrg was introduced, Stability collapsed, and Flux just came out.
+    - it's inevitable that ComfyOrg will have some sort of cloud solution. 
+    - As of today, ComfyDeploy is doing $29k MRR, and our last 30 days' revenue was $50k processed. Which is the highest we have ever got, but also the most depressing day I have ever had.
+    - We have been working for months on our pay-as-you-go tier—no longer requiring you to talk to us, just pay for the cloud resources you use. And also, going back to our roots: open-sourcing the ENTIRE CLOUD PLATFORM while continuing to support existing customers.
+
 - https://github.com/BennyKok/comfyui-deploy /1.4kStar/AGPL/202508/python/ts
   - https://www.comfydeploy.com/
   - open source `vercel` like deployment platform for Comfy UI
@@ -1601,6 +1614,7 @@ modified: 2025-08-23T11:43:35.904Z
   - https://www.viewcomfy.com/
   - open source tool to help you create beautiful web apps from ComfyUI workflows.
   - Whether you need to turn comfy workflows into simple web apps that anyone can use, deploy them as serverless APIs, or just use the latest models on a powerful GPU, we’ve got you covered.
+  - https://github.com/ViewComfy/cloud-public
   - [Show HN: Open-source app builder for comfy workflows | Hacker News _202409](https://news.ycombinator.com/item?id=41683407)
     - If you have Comfy already installed, it will run off that. Otherwise, currently, you need to install it manually beforehand.
   - [Show HN: Turn any ComfyUI workflow into a web app or API | Hacker News _202501](https://news.ycombinator.com/item?id=42714596)

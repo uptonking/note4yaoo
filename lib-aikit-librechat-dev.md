@@ -63,6 +63,9 @@ modified: 2025-09-01T05:52:34.241Z
 
 - 默认图片输出目录`imageOutput`为 `client/public/images/{userId}/imageName.png`, 需要提供环境变量支持配置到外部系统
 
+- 针对mlx优化的版本，主要是后端多模型及切换模型的优化
+  - 主要开发前端，是否有必要做后端?
+
 - 
 - 
 - 

@@ -381,7 +381,7 @@ OLLAMA_KV_CACHE_TYPE: q4_0
 
 - I agree for Devstral-small. It's crazy bad.
 
-- ## [Meet Mistral Devstral, SOTA open model designed specifically for coding agents : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kryxdg/meet_mistral_devstral_sota_open_model_designed/)
+- ## 🧩 [Meet Mistral Devstral, SOTA open model designed specifically for coding agents : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kryxdg/meet_mistral_devstral_sota_open_model_designed/)
 - Weird that they didn't include aider polyglot numbers makes me think they're probably not good. Unfortunately my suspicion was right ran aider polyglot diff and whole got 6.7% (whole), 5.8% (diff)
 - The official system prompt has a bunch of stuff aobut OpenHands including `When configuring git credentials, use \"openhands\" as the user.name and \"openhands@all-hands.dev\" as the user.email by default` ... So yes seems specifically made to work with that framework?
   - [SYSTEM_PROMPT.txt · mistralai/Devstral-Small-2505 at main](https://huggingface.co/mistralai/Devstral-Small-2505/blob/main/SYSTEM_PROMPT.txt)
@@ -399,13 +399,16 @@ OLLAMA_KV_CACHE_TYPE: q4_0
     - Lower = faster, more deterministic.
     - Set to 1 for greedy decoding (fastest but robotic).
     - Try 10 or lower for speed.
-  - Repeat Penalty: 1
-    - Discourages repetition. May slightly slow things down, but helps quality.
-  - Min P Sampling: 0, 01
-    - Forces a minimum token probability.
   - Top P Sampling: 0, 95
     - Chooses tokens until cumulative probability hits P.
     - Lower values = fewer choices = faster.
+  - Min P Sampling: 0, 01
+    - Forces a minimum token probability.
+    - Turn this off for max speed unless needed.
+  - Repeat Penalty
+    - Discourages repetition.
+    - May slightly slow things down, but helps quality.
+    - Try toggling off if you're benchmarking for speed only.
 
 - [Qwen3-Coder is here! : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1m6qdet/qwen3coder_is_here/)
   - You’re right on Devstral, it’s a good model for its size, although I feel it’s not as good as it scores on SWE-bench, and the fact that they didn’t share any other coding benchmarks makes me a bit suspicious. The good thing is that it sets the bar for small coding/agentic model and future releases will have to outperform it.

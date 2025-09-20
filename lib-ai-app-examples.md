@@ -142,6 +142,10 @@ modified: 2023-02-08T07:20:48.475Z
 - https://github.com/KolosalAI/Kolosal /297Star/apache2/202505/cpp/inactive
   - https://kolosal.ai/
   - OpenSource and Lightweight alternative to LM Studio to run LLMs 100% offline on your device
+  - On Linux/macOS, ensure .so/.dylib are in the library search path or same folder.
+  - Is this windows only? Unfortunately currently yes. But, we're using framework that mostly is crossplatform
+  - https://github.com/KolosalAI/kolosal-server /apache2/202509/cpp
+    - inference server for large language models with OpenAI-compatible API endpoints. Now available for both Windows and Linux systems
 
 - https://github.com/binary-husky/gpt_academic /GPLv3/202405/python/js
   - https://github.com/binary-husky/gpt_academic/wiki/online

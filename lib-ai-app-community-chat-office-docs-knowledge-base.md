@@ -16,6 +16,18 @@ modified: 2025-08-30T18:16:57.201Z
 
 - ## 
 
+- ## 📌 现在大模型一天一个样，一直在思考 LlM 应用中哪些是不变的，梳理了一下 RAG 中那些值得投入的技术栈 _202503
+- https://x.com/ZeroZ_JQ/status/1906255737845690372
+  - 文档解析： unstructed-io，docling，MinerU
+  - 数据层：qdrant
+  - 搜索引擎：meilisearch
+  - 流处理：kafka，flink
+  - 工作流：airflow，prefect
+  - 搞定数据，搞定 RAG
+- 还有文件存储比如 cos，另外我觉得 kafka 可以换成 pulsa
+
+- unstructed-io一般，hires解析太慢，语义切片开源版不支持
+
 - ## 现在RAG+LLM那套太成熟了…亲自体验两百行代码就可以实现一个包括前端在内的定制化Chatbot（比如某个人/某个领域的定制化知识库） _202403
 - https://x.com/VoidAsuka/status/1768328842056499654
   - 从完全不懂这一套的小白程序员从开发到部署两小时就能搞定，反而还是爬数据、洗数据花的时间更多…果然数据是新时代的黄金
@@ -276,7 +288,7 @@ Switch anytime for cost, speed, or privacy.
 - I explored some closely related ideas with @MagicPaperAI . You guys have pulled off the synthesis of highlights and copied fragments. I’d posit that the next key synthesis is between copied fragments and revisions of a document. Edits are partial copies.
 - Great work! I like the flow of adding & organizing snippets -> augmented synthesis. The more snippets you grab under a heading, the clearer a cluster forms. That then generates 'what you're getting at' summaries & gives AI bounds to forage for related snippets. Good loop there.
 
-- ## 🆚️ 这几天在给公司产品的 AI 助手选择知识库的数据处理工具，重新看了一遍 Marker、MinerU、Docling、Markitdown、Llamaparse 这五个工具 _202502
+- ## 🆚️📄 这几天在给公司产品的 AI 助手选择知识库的数据处理工具，重新看了一遍 Marker、MinerU、Docling、Markitdown、Llamaparse 这五个工具 _202502
 - https://x.com/shao__meng/status/1893984985998365096
 1. Marker /GPLv3
 技术架构
@@ -360,16 +372,35 @@ Switch anytime for cost, speed, or privacy.
   2. 离线（简单）场景：Marker 
   3. 在线（通用）：Llamaparse OR VLM
   [VLM 离线用 Qwen2.5 / VL 在线 gemini 2.0 flash]
+- EXCEL: 使用某开源项目修改
 
 - 根据我之前的调研，感觉目前还没有完美的支持多类型文档多模态的解析库。速度，准确性，成本三角里，最均衡的个人觉得反而是楼上有人说到的大模型多模态解析能力
   - 速度-准确性-成本三角，确实很重要，看需求中哪个角更看重了。
   - 多模态解析这种方式挺不错，我们也放在对比中，特别是 gemini 这种成本低多模态能力强的。
-
 - 多模态解析这种方式挺不错，我们也放在对比中，特别是 gemini 这种成本低多模态能力强的。
 
-- Docling也有点慢... 没有GPU加速的其他库也不快... 平均下来都是 1.x page/s , 比如MinerU一个20页的paper, 一个GPU L4, 最快也要十几秒 到生产环境不开多GPU并发, 时间上是个大问题, 
+- Docling也有点慢... 没有GPU加速的其他库也不快... 平均下来都是 1.x page/s , 比如MinerU一个20页的paper, 一个GPU L4, 最快也要十几秒 到生产环境不开多GPU并发, 时间上是个大问题
 
 - 你这个结论并不严谨，你肯定是同时只处理一个文档得出的结论。我也测过，并行处理的速度和能力大不相同
+
+- 其实可以考虑纯多模态的 LLM 的方案，这个方案的好处是性能好，便于扩展，自己优化的空间大。任何语言都可以写，比如我用 golang 写的 https://github.com/recally-io/go-markitdown
+  - 这种方案也有一些限制，如果用服务商API，数据隐私问题不好解决，自己部署，成本高于专做抽取转换的模型。
+- 自己部署开源到 Qwen-VL 系列，效果也很好，还可以自己基于自己的数据来 fine-tune 。 至于成本就看取舍，是更在乎隐私还是更关心成本。
+  - 视觉模型确实可以考虑
+
+- 根据我之前的调研，感觉目前还没有完美的支持多类型文档多模态的解析库。速度，准确性，成本三角里，最均衡的个人觉得反而是楼上有人说到的大模型多模态解析能力
+  - 速度-准确性-成本三角，确实很重要，看需求中哪个角更看重了。
+
+- 感觉大家都在挑工具处理 PPT 和 Excel 这种企业内部传统文档，找来找去发现还是等 VLM 成长
+
+- 公司的知识库来源比较繁杂，想看看这几个专门做文件解析处理的库照顾会不会好一些。
+- 大概率是人工作，不需要洗的数据基本都是个人知识库，企业的都要洗。
+- 单纯靠技术做结构化 难
+  - 单纯靠人做结构化 也难
+  - 技术先怼个垃圾 反向推人 再帮人构建一点小工具校对补充 就不难了
+  - AI不够人工凑  基本都能干下来
+
+- 惯了自己用的AI工具，再做公司的，总想吐槽一句：garbage in, garbage out
 # discuss
 - ## 
 

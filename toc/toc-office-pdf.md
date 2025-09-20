@@ -506,30 +506,51 @@ modified: 2021-01-04T17:26:43.784Z
   - http://www.sumatrapdfreader.org/
   - SumatraPDF reader for windows only
 # pdf-doc/rag
-- https://github.com/opendatalab/PDF-Extract-Kit /apache2/202407/python
-  - 布局检测：使用LayoutLMv3模型进行区域检测，如图像，表格, 标题, 文本等；
-  - 公式检测：使用YOLOv8进行公式检测，包含行内公式和行间公式；
-  - 公式识别：使用UniMERNet进行公式识别；
-  - 光学字符识别：使用PaddleOCR进行文本识别
-
-- https://github.com/opendatalab/MinerU /AGPLv3/202407/python
-  - MinerU 是一款一站式、开源、高质量的数据提取工具
-  - Magic-PDF 是一款将 PDF 转化为 markdown 格式的工具。支持转换本地文档或者位于支持S3协议对象存储上的文件。
-  - Magic-Doc 是一款支持将网页或多格式电子书转换为 markdown 格式的工具。
-    - 支持176种语言的准确识别
-  - https://huggingface.co/spaces/opendatalab/MinerU
-
 - https://github.com/docling-project/docling /37.1kStar/MIT/202508/python
   - https://github.com/DS4SD/docling
   - https://docling-project.github.io/docling
+  - Docling simplifies document processing, parsing diverse formats
   - Transform PDF to JSON or Markdown with ease and speed
   - Parsing of multiple document formats incl. PDF, DOCX, PPTX, XLSX, HTML, WAV, MP3, images (PNG, TIFF, JPEG, ...), and more
+  - 模块化设计，集成 Unstructured、LayoutParser 等库，支持本地化处理
+  - 需 CUDA 环境，部分功能依赖商业模型
   - Advanced PDF understanding incl. page layout, reading order, table structure, code, formulas, image classification, and more
   - Unified, expressive DoclingDocument representation format
   - export formats: Markdown, HTML, DocTags and lossless JSON
   - Plug-and-play integrations incl. LangChain, LlamaIndex, Crew AI & Haystack for agentic AI
   - Optionally applies OCR, Extensive OCR support for scanned PDFs and images
   - Support of Visual Language Models (SmolDocling)
+  - Works on macOS, Linux and Windows environments. Both x86_64 and arm64 architectures.
+  - https://huggingface.co/ibm-granite/granite-docling-258M /apache2
+    - a multimodal Image-Text-to-Text model engineered for efficient document conversion
+
+- https://github.com/opendatalab/PDF-Extract-Kit /8.6kStar/apache2 > AGPL/202501/python/inactive
+  - https://pdf-extract-kit.readthedocs.io/zh-cn/latest/index.html
+  - 布局检测：使用LayoutLMv3模型进行区域检测，如图像，表格, 标题, 文本等；
+  - 公式检测：使用YOLOv8进行公式检测，包含行内公式和行间公式；
+  - 公式识别：使用UniMERNet进行公式识别；
+  - 光学字符识别：使用PaddleOCR进行文本识别
+  - [Update license from Apache 2.0 to AGPL-3.0 _20240914](https://github.com/opendatalab/PDF-Extract-Kit/commit/1471e22384d4b02e1357926e4908296ed31dac51)
+
+- https://github.com/opendatalab/MinerU /44.2kStar/AGPLv3/202509/python
+  - https://opendatalab.github.io/MinerU/
+  - 一站式开源高质量数据提取工具，将PDF转换成Markdown和JSON格式
+  - Magic-PDF 是一款将 PDF 转化为 markdown 格式的工具。支持转换本地文档或者位于支持S3协议对象存储上的文件。
+  - Magic-Doc 是一款支持将网页或多格式电子书转换为 markdown 格式的工具。
+    - 支持176种语言的准确识别
+  - 集成 LayoutLMv3、YOLOv8 等模型，支持多模态解析（表格/公式/图像）
+  - 支持 API 和图形界面
+  - 依赖 GPU，表格处理速度较慢，配置复杂
+  - MinerU2.5: currently the most powerful multimodal large model for document parsing. With only 1.2B parameters
+  - Output text in human-readable order, suitable for single-column, multi-column, and complex layouts.
+  - Extract images, image descriptions, tables, table titles, and footnotes.
+  - Automatically recognize and convert formulas in the document to LaTeX format.
+  - Automatically recognize and convert tables in the document to HTML format.
+  - Automatically detect scanned PDFs and garbled PDFs and enable OCR functionality.
+  - Remove headers, footers, footnotes, page numbers, etc., to ensure semantic coherence
+  - Supports running in a pure CPU environment, and also supports GPU(CUDA)/NPU(CANN)/MPS acceleration
+  - Compatible with Windows, Linux, and Mac platforms
+  - https://huggingface.co/spaces/opendatalab/MinerU
 
 - https://github.com/datalab-to/marker /27.3kStar/GPLv3/202508/python
   - https://www.datalab.to/
@@ -537,6 +558,9 @@ modified: 2021-01-04T17:26:43.784Z
   - Converts PDF, image, PPTX, DOCX, XLSX, HTML, EPUB files in all languages
   - Does structured extraction, given a JSON schema (beta)
   - Extensible with your own formatting and logic
+  - 基于 PyMuPDF 和 Tesseract OCR，支持 GPU 加速（Surya OCR 引擎），开源轻量化
+  - 处理速度快（比同类快 4 倍）
+  - 缺乏复杂布局解析能力，依赖本地 GPU 资源
   - Removes headers/footers/other artifacts
   - Works on GPU, CPU, or MPS
   - Optionally boost accuracy with LLMs (and your own prompt)

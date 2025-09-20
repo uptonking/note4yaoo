@@ -13,6 +13,19 @@ modified: 2025-09-16T12:36:12.968Z
 
 - models-config
   - 大模型的测试经常需要修改参数，支持一键恢复默认配置更好
+
+- tips-ai-tools
+  - lm studio底层用的也是llama.cpp, 不必寻找替代，深入底层更容易替代和扩展
+# lmstudio-xp
+- not-yet
+  - 聊天内搜索
+  - 标题名搜索，便于查看包含某关键字的chats
+
+- 
+- 
+- 
+- 
+
 # discuss-stars
 - ## 
 
@@ -84,86 +97,26 @@ modified: 2025-09-16T12:36:12.968Z
   - However, the "official" quants were often released without imatrix or broken / different in some other way. That's why those unofficial quants are usually preferred.
   - Also, unsloth made large MoE models usable on non-server machines with their dynamic Q2_XXS quants.
 - The biggest difference I would say isn't the quants, but rather our bug fixes for every model
-# discuss-local-llm-tips/tricks
+# discuss-llm-tools-tips/tricks
 - ## 
 
 - ## 
 
 - ## 
 
-- ## 
+- ## 🔧 [Open WebUI vs. LM Studio vs. MSTY vs. _insert-app-here_... What's your local LLM UI of choice? : r/LocalLLM _202502](https://www.reddit.com/r/LocalLLM/comments/1ij3j8m/open_webui_vs_lm_studio_vs_msty_vs_insertapphere/)
+- Ollama vanilla CLI in tmux with vim copy/paste between terminals. I like pain
 
-- ## [Memory Tests using Llama.cpp KV cache quantization : r/LocalLLaMA _202406](https://www.reddit.com/r/LocalLLaMA/comments/1dalkm8/memory_tests_using_llamacpp_kv_cache_quantization/)
-  - Now that Llama.cpp supports quantized KV cache, I wanted to see how much of a difference it makes when running some of my favorite models. 
+- All of them; don’t lock into one solution.
 
-- how do you enable caching in llamacpp? is it only kv cache or also prefix cache?
-  - The KV cache is always used. Its part of how llama.cpp generates. This post is about enabling quantization on the KV cache
-  - llama.cpp server will do some caching by default depending on how you're using it. You can use "cache_prompt" when using the text completion endpoint. It also has a "slots" system for maintaining cache between requests.
+- Open WebUI + LibreChat. LibreChat mainly for creating agents for RAG. Most painless interface for RAG.
 
-- For future reference: if you want to cache using the v1/chat/completions OAI-compatible endpoint, with the OpenAI client, pass cache_promot as an extra_body parameter 
+- Open Web UI. MSTY is no alternative because it is an all-in-one solution.
+  - Closed source right?
+- Yep, they are selling it for businesses.
 
-- ## 🤔 [Using KV Cache, Do You Notice any Quality Drop? : r/LocalLLaMA _202408](https://www.reddit.com/r/LocalLLaMA/comments/1ej8tjn/using_kv_cache_do_you_notice_any_quality_drop/)
-- Use Q8 for K, Q4 for V is fine. Here is a comment from the guy who did the implementation in llama.cpp
-
-- I've noticed a slight quality drop but the benefits outweigh the loss for me.
-  - That's what I am experiencing too.
-
-- On llama.cpp yes. On exllama not not as much.
-
-- For me, q4 cache doing summaries of YouTube videos with llama 3.1 the number of hallucinations increases significantly compared with not using it.
-
-- ## [What's with the obsession with reasoning models? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nfqe2c/whats_with_the_obsession_with_reasoning_models/)
-  - Why are practically all AI model releases in the last few months all reasoning models? Even those that aren't are now "hybrid thinking" models.
-
-- Reasoning is great for making AI follow prompt and instructions, notice small details, catch and fix mistakes and errors, avoid falling into tricky questions etc. I am not saying it solves every one of these issues but it helps them and the effects are noticeable.
-  - Sometimes you need a very basic batch process task and in that case reasoning slows you down a lot and that is when instruct models becomes useful, but for one on one usage I always prefer reasoning models if possible
-
-- It is better at coding and math
-
-- You nailed it, reasoning helps to reduce hallucination. Because there is no real way to eradicate hallucination, making LLM smarter becomes the only viable path even at the expense of token. The state of art is how to achieve a balance as seen in gpt 5 struggling with routing. Of course nobody wants over reasoning for simple problem, but hwo to judge the difficulties of a given problem, maybe gtp5 has some tricks.
-
-- Reasoning models have their place, but not every model should be a reasoning models. Also not too big on hybrid reasoning models either since it feels like a worst of both worlds which is probably why the Qwen team split the instruct and thinking models for the 2507 update.
-
-- I've found that all reasoning models have been massively superior for creative writing compared to their non-reasoning counterparts, 
-
-- Another example is my Devstral Small 1.1 24B doing tremendously better than GPT-OSS-20B/120B, Qwen3 30B A3B 2507 all series, in Solidity problems. A non-reasoning model that spends less tokens compared to the latter models.
-  - However, major benchmarks puts Devstral in the backseat, except in SWE bench. Even latest ERNIE 4.5 seems to be doing the exact opposite of what benchmarks say.
-
-- I think there are two main appeals:
-  - First, reasoning models achieve more or less what RAG achieves with a good database, but without the need to construct a good database. Instead of retrieving content relevant to the prompt and using it to infer a better reply, it's inferring the relevant content.
-  - Second, there are a lot of gullible chuckleheads out there who really think the model is "thinking". It's yet another manifestation of The ELIZA Effect, which is driving so much LLM hype today.
-  - The main downsides of reasoning vs RAG are that it is slow and compute-intensive compared to RAG, and that if the model hallucinates in its "thinking" phase of inference, the hallucination corrupts its reply.
-
-- Reasoning models are exceptionally good at filtering through rules, injected corpo-required bias, overriding and ignoring the user's prompt, requiring injection of RAG and tool use to further deviate from the user's request and tokens used, correcting the pathways on way, and finally reasoning refusal and guardrails.
-
-- ## 🆚 [Can someone explain the difference between a 4bit pre-quantized model and a quantized model? : r/LocalLLaMA _202409](https://www.reddit.com/r/LocalLLaMA/comments/1f92brm/can_someone_explain_the_difference_between_a_4bit/)
-- Normal 4bit version process: [Download 16bit weights => Quantize to 4bit on the fly] => 4bit QLoRA / inference
-  - Pre-quantized Unsloth weights instead: Download 4bit weights which is equivalent to [Download 16bit weights => Quantize to 4bit on the fly] => 4bit QLoRA / inference
-  - So there's 0 difference between both, except I just pre-quantize it and save it so people can skip downloading all 16bit weights (16GB or so) and download a 4GB file + get 1GB or so less VRAM usage due to reduced fragmentation.
-- Do you need 'load_in_4bit=True' when using pre-quantized model?
-  - When using Unsloth, yes
-
-- do I run the BF16 with "load in 4bit" checked and it's the same thing as the 4bit version?
-  - Yes, this is the answer. The 4-bit models on Unsloth's page are quite literally just models that have been loaded in 4-bit and then saved to disk. So the quality will be exactly the same.
-  - The main purpose is just to enable you to skip the download of the huge full model when you just intend to run it in 4-bit anyway. Which would be a waste of bandwidth and disk space.
-
-- ## [Qwen3 30B A3B unsloth GGUF vs MLX generation speed difference : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kugp9h/qwen3_30b_a3b_unsloth_gguf_vs_mlx_generation/)
-- Don’t use Q8_K_XL on a Mac. They use bf16 which is not good on a Mac
-  - So what would you recommend? 6_K_XL or 8_0?
-- 8_0 or fp16 in your case
-- Definitely give Q8_0 a try! I might have to place a warning BF16 is slower for Mac devices
-  - I did and yes apparently it was the issue. Now I am getting 75t/s with 8_0
-
-- As someone mentioned below, Q8_K_XL might not function well on Mac due to BF16 being used - best to check Q8_0 directly - if Q8_0 still has reduced perf, it's most likely a llama.cpp backend issue.
-
-- I’m having similar results but for Llama 4 Scout, when comparing an older Bartowski quant to the newer Unsloth quants. I’m getting about DOUBLE the speed with Bartowski’s IQ2_XS (46tps) vs Unsloth’s IQ2_XXS (22tps). I’ve even tried removing the vision encoder for Unsloth (it’s not supported by Bartowski) and Unsloth is still much slower.
-  - Unsloth also seems to occupy less RAM and more VRAM than I’d expect, even though in both cases I’ve selected 48/48 layers offloaded to GPU, and there’s about 2.5GB of VRAM available.
-
-- ## [Qwen3 30B A3B unsloth GGUF vs MLX generation speed difference : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1kugp9h/qwen3_30b_a3b_unsloth_gguf_vs_mlx_generation/)
-
-- ## [188GB VRAM on Mac Studio M2 Ultra - EASY : r/LocalLLaMA _202401](https://www.reddit.com/r/LocalLLaMA/comments/192uirj/188gb_vram_on_mac_studio_m2_ultra_easy/)
-- I think "time for first token" is slow because people don't use --mlock option, which preloads model and force it to stay in RAM and this is not default. It should not be a problem if use it.
-  - This is true and will keep the model in along with additional memory for context which, depending in what you are using may not be allocated until it is required. MLX uses lazy allocation, only grabbing memory when it is needed. So, mlock is something you would always want set so the model doesn’t get swapped or paged out.
+- KoboldAI Lite running on KoboldCpp. Most others aren't as flexible and just focused on instruct. This one can do instruct, but it can also do regular text generation for example. 
+  - KoboldCpp meanwhile is a single executable with text gen, image gen, image recognition, speech to text and text to speech support. And it emulates the most popular API's if you prefer another UI (KoboldAI LIte doesn't need the backend to have any UI code so if its not open in the browser it does not effect you).
 
 - ## [intel的cpu连大模型都没法跑, 怎么还天天在推aipc? - 知乎](https://www.zhihu.com/question/668042879/answers/updated)
 - 对于端侧AI，我个人的想法，最大的价值应该是拉高上下文窗口，在本地做个人知识库，以及本地批量推理，比如做科研的，懒得读论文，让AI批量总结写个综述。这两种做法如果调用线上的API，其实挺贵的。阅读一篇论文少则几千tokens，多则两三万tokens。本地使用32768的上下文长度的Qwen3 8B，也能完成得不错
@@ -213,7 +166,7 @@ modified: 2025-09-16T12:36:12.968Z
 
 - lm studio能像ollama那样同时使用chat和embedding吗？lm studio每次都要预先加载。
 
-- ## [如何看待苹果发布的 MLX 机器学习框架？ - 知乎 _202312](https://www.zhihu.com/question/633585779)
+- ## 🍎 [如何看待苹果发布的 MLX 机器学习框架？ - 知乎 _202312](https://www.zhihu.com/question/633585779)
 - MLX是一个类似NumPy数组的框架，目的是可以在苹果的芯片上更加高效地运行各种机器学习模型，当然最主要的目的是大模型。
   - MLX的设计受到PyTorch、Jax和ArrayFile的启发，目的是设计一个对用户极其友好，但同时在训练和部署上也非常高效的框架。
   - 所以，它的接口你会非常熟悉，因为它的Python接口与NumPy很相似，而它的神经网络模型的接口和PyTorch非常类似。
@@ -324,10 +277,63 @@ modified: 2025-09-16T12:36:12.968Z
   - ollama pull llama3
 
 - 我说的本地，指的不是一台个人电脑上，跑一个7B、13B参数的大模型。而是在企业本地算力服务器上，私有化部署的700亿参数以上规模的大模型，这种参数规模的大模型，才有更好的指令依从性，结合RAG、Agent等技术，能有效的完成你分配给他的任务。 
-# discuss-mac-llm 🍎
+# discuss-nvidia/amd/linux
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 🆚 [AMD AI Max+ 395 CPU 本地大模型推理性能评测报告 - 知乎 _202509](https://zhuanlan.zhihu.com/p/1952045270763283746)
+- 针对搭载AMD AI Max+ 395 CPU的零刻GTR9迷你主机进行了一系列严格的大模型推理速度测试。
+  - 硬件平台: 零刻 (MINISFORUM) GTR9 迷你主机
+  - 核心组件: AMD AI Max+ 395 CPU
+  - 任务类型: 本地大语言模型推理
+  - 性能指标: Tokens/s (每秒生成Token数) — 该数值越高，代表推理速度越快
+- 设计了涵盖多种任务类型的标准化问题：
+  - 综合能力: "你是谁？请详细介绍一下你能干什么。"
+  - 知识问答: "作为专业人工智能专家，请告诉我如何学习深度学习？"
+  - 数学计算: "如果A+B=12, A-B=10，则A的值是？"
+  - 自然语言理解: "识别句子‘我将会在明天早上的8点到湖北黄陂的森林公园’中的所有地名。"
+  - 代码生成: "请使用Python编写一个贪吃蛇游戏。"
+
+- 参评大模型:
+  - deepseek-r1:70b, 30
+  - qwen3 系列（32b / 30b / 14b / 8b）
+  - gpt-oss（120b / 20b）
+
+```markdown
+
+- model,          ollama, lmstudio
+- deepseek-r1:70b, 4.43,   4.97
+- qwen3:32b,       8.97,   10.12
+- qwen3:14b,       19.47,  21.70
+- qwen3:8b,        29.93,  35.96
+- gpt-oss:120b,    30.84,  42.07
+- gpt-oss:20b,     42.57,  60.54
+- qwen3:30b,       48.93,  68.70
+
+```
+
+- 对比两组数据可见，同一模型在LM-Studio中的推理速度普遍优于Ollama
+- AMD AI Max+ 395 CPU采用CPU/GPU共享内存的统一内存架构（UMA），这种设计天然适合运行混合专家（MoE）模型（如gpt-oss系列、qwen3:30b）。
+  - MoE模型虽然总参数量庞大，但每次推理仅激活部分"专家"参数，非常契合这种大容量内存但绝对算力相对有限的硬件。
+  - 相比之下，对于参数密集的传统稠密模型（如deepseek-r1:70b、qwen3:32b），由于需要更高的绝对算力，该处理器的集成显卡则稍显吃力。
+
+- DFRobot作为在单板计算机（SBC）、AI边缘计算和开源硬件领域的创新者，此次测试结果意义非凡。若未来DFRobot推出基于AMD AI Max+ 395 CPU的单板计算机，将其强大的本地AI推理能力与DFRobot成熟的模块化传感器生态（如Gravity系列）相结合，将催生出更多实时、智能的物联网与机器人应用
+# discuss-mac-mlx 🍎
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [How are people running an MLX-compatible OpenAI API server locally? : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mg26g0/how_are_people_running_an_mlxcompatible_openai/)
+- If you are on a Mac then LM Studio is about your only choice for a mature, stable, fast, reliable, supported, maintained MLX server.
 
 - ## [Adjust VRAM/RAM split on Apple Silicon · ggml-org/llama.cpp _202307](https://github.com/ggml-org/llama.cpp/discussions/2182)
 - just do: `sudo sysctl iogpu.wired_limit_mb=<mb>` from Terminal. You’d have to do it every boot as it’s not sticky
@@ -562,9 +568,50 @@ sudo launchctl load /Library/LaunchDaemons/io.yaoo.sysctl.plist
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Why do people say LM Studio isn't open-sourced? : r/LocalLLaMA _202405](https://www.reddit.com/r/LocalLLaMA/comments/1cvawmz/why_do_people_say_lm_studio_isnt_opensourced/)
+- LMstudio is free in cost but it's proprietary software.
+
+- Surely not all freeware are open source.
+- The power of LM Studio is 4 things:
+  - model discovery is incredibly easy, directly to huggingface gguf repositories
+  - it's a direct inferencing app, can load models itself
+  - able to work as a standalone endpoint server
+  - it can loads multiple model on available GPUs
+
+- i'm currently building https://kolosal.ai it's a free and opensource platform to run LLM on device, 
+  - and the best part? it's only 20mb and can run on both CPU and GPUs, 
+  - and it's also using `llama.cpp` as backend so the performance wouldn't be any different with lmstudio
+- Is this windows only? 
+  - Unfortunately currently yes. But, we're using framework that mostly is crossplatform
+
+- because it's not open source, you cannot view their code or fork it to change it. the open source direct alternative to lmstudio is jan ai
+
+- ## [Is there an alternative to LM Studio with first class support for MLX models? : r/LocalLLaMA _202506](https://www.reddit.com/r/LocalLLaMA/comments/1l0ct34/is_there_an_alternative_to_lm_studio_with_first/)
+  - I've been using LM Studio for the last few months on my Macs due to it's first class support for MLX models (they implemented a very nice MLX engine which supports adjusting context length etc.
+- While it works great, there are a few issues with it:
+  - it doesn't work behind a company proxy, which means it's a pain in the ass to update the MLX engine etc when there is a new release, on my work computers
+  - it's closed source, which I'm not a huge fan of
+  - I can run the MLX models using `mlx_lm.server` and using open-webui or Jan as the front end; but running the models this way doesn't allow for adjustment of context window size (as far as I know)
+
+- Now I use MLX more because of it's GPU usage is not blocking macOS visual fluidity. My Mac screen rendering (especially when doing multitasking with Stage Manager) a lot stutter when inferencing with llama.cpp, but still fluid with MLX. Yes, there are not as mature as llama.cpp, but this factor made me swith to MLX only. I run it using LM Studio as an endpoint.
+
+- ## 🤔 [LM Studio incredibly slow (1.2 tokens/sec) on a 3090, despite model (Qwen 2.5 32B 4xs) fitting entirely into VRAM and not yet hitting the context length. : r/LocalLLaMA _202411](https://www.reddit.com/r/LocalLLaMA/comments/1gqa5xx/lm_studio_incredibly_slow_12_tokenssec_on_a_3090/)
+- increasing context size also increases Vram overhead. From what I remember it's roughly something to the tune of each 4k = 1gb vram.
+  - Yeah. It's just that LM Studio shows VRAM usage and it's not yet hitting the limit. Unless it doesn't show if it goes over for some reason?
+  - Halving the context to 16k allows me to fit everything.
+
+- If you never figured it out its probably the Guardrails just go to hardware and turn them off, also bigger the context the more vram it needs, turn mmap and dont keep in ram off and turn flash attention adn K cache on.
+
 - ## 🧩 [Does the number of bits in KV cache quantization affect quality/accuracy? : r/LocalLLaMA _202502](https://www.reddit.com/r/LocalLLaMA/comments/1iuw1kx/does_the_number_of_bits_in_kv_cache_quantization/)
 - Setting the KV cache to Q8 has only a minimal influence on the results. 
-  - Setting the KV cache to Q4 has quite an impact though. Setting K to F16 or Q8 and V to Q4 still achieves decent results though.
+  - Setting the KV cache to Q4 has quite an impact though. 
+  - Setting K to F16 or Q8 and V to Q4 still achieves decent results though.
   - Just the extensive test that the author of the KV quantization in llama.cpp did that I linked above. The results make sense, as the keys are used to find the right value, and mismatching keys due to higher quantization will lead to incorrect values, whereas correctly looked up values that have been quantized will still be somewhat related to the original information.
 
 - ## [LMStudio, KV cache and context length : r/LocalLLaMA _202502](https://www.reddit.com/r/LocalLLaMA/comments/1iyv8t6/lmstudio_kv_cache_and_context_length/)
@@ -761,7 +808,31 @@ curl http://localhost:11434/api/chat -d '{
 
 - ## 
 
-- ## 
+- ## [Jan: an open-source alternative to LM Studio providing both a frontend and a backend for running local large language models : r/LocalLLaMA _202401](https://www.reddit.com/r/LocalLLaMA/comments/193m27u/jan_an_opensource_alternative_to_lm_studio/)
+- A Big problem all these LLM tools have is that they all have their own way of reading Models folders. I have a huge collection of GGUF's from llama.cpp usage that I want to use in different models. Symlinking isn't user friendly, why can't apps just make their Models folder a plain folder and allow people to point their already existing LLM folders to it
+  - This is salient criticism, thank you. At the core, we're just an application framework. We should not be so opinionated about HOW users go about their filesystem.
+
+- Ollama being the biggest offender, with that fake docker syntax for modelfiles, model import and renaming using sha hashes.
+
+- The Stable Diffusion UI variants also had this problem - until Stability Matrix came along and resolved a number of inconveniences with model management. Wonder if something similar could be viable here too.
+  - invokeai 的选择文件也是一种方案
+
+- Its why Koboldcpp just has a file selector popup, it doesn't make sense to tie people to a location.
+
+- Is it better to use llama.cpp instead of LM Studio? 
+  - Absolutely! KoboldCpp and Oobabooga are also worth a look. 
+  - I'm trying out Jan right now, but my main setup is KoboldCpp's backend combined with SillyTavern on the frontend. 
+  - They all have their pros and cons of course, but one thing they have in common is that they all do an excellent job of staying on the cutting edge of the local LLM scene (unlike LM Studio).
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 - ## openrouter 是真方便，一个 Key 所有模型都能用。
 - https://x.com/pengchujin/status/1894375539726803201

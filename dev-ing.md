@@ -248,6 +248,44 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
 
 ```
 
+## 0919
+
+- 🤔 for a laptop, gpu vs apu vs npu
+- Laptops can feature two types of GPUs: integrated, which is built into the central processing unit (CPU), and discrete, which is a separate, more powerful chip.
+- GPU (discrete GPU) — a separate, much more powerful processor for parallel work (gaming, graphics, heavy ML training/inference).
+- APU — a CPU with an integrated GPU on the same chip (AMD coined the term). 
+  - AMD's marketing term for a CPU that has a powerful integrated GPU on the same chip.
+  - Good for everyday use, much better battery/thermals than a discrete GPU, ok for light gaming and GPU-accelerated web/dev tasks. 
+- NPU (Neural Processing Unit) — a specialized accelerator (also called AI accelerator or “Neural Engine”) built to run neural networks efficiently on-device. 
+  - Extremely power-efficient and fast for inference, but not as general-purpose as a GPU. 
+  - Common in smartphone and modern SoC designs (Apple, some Intel/Android SoCs).
+  - Apple’s Neural Engine (M1/M2 chips), Intel Meteor Lake AI Accelerators, or AMD Ryzen AI.
+
+- 💡 [Cline + LM Studio: the local coding stack with Qwen3 Coder 30B - Cline Blog](https://cline.bot/blog/local-models)
+  - 🧩 KV Cache Quantization: Leave unchecked. The KV cache setting is important. While it can be an optimization for some processes, it will persist context between tasks and create unpredictable behavior. Keep it off for consistent performance.
+  - You can now run Cline completely offline.
+  - LM Studio provides the runtime, Qwen3 Coder 30B provides the intelligence, and Cline orchestrates the work
+  - Qwen3 Coder 30B, especially in its optimized MLX format on Apple Silicon, delivers performance that's genuinely useful for real coding tasks. The model brings 256k native context, strong tool-use capabilities, and repository-scale understanding.
+  - Combined with Cline's compact prompt system (designed specifically for local models at 10% the length), you get an agent that can handle substantial coding tasks without ever touching the cloud.
+  - Choose the right quantization depending on your hardware. For my 36B RAM Mac, this meant the 4-bit quantized model
+  - In Cline's settings, select LM Studio as your provider and qwen/qwen3-coder-30b as your model. Don't set a custom base URL if you're using the default local endpoint.
+  - Match your context window to LM Studio's setting: 262, 144 tokens. This gives you maximum working space for large repositories and complex tasks.
+  - Enable "Use compact prompt." This is crucial for local models. The compact prompt is roughly 10% the size of Cline's full system prompt, making it much more efficient for local inference. The tradeoff is that you lose access to MCP tools, Focus Chain, and MTP features, but you gain a streamlined experience optimized for local performance.
+  - Qwen3 Coder 30B performs well on modern laptops, especially Apple Silicon machines. The MLX optimization makes inference surprisingly fast for a 30B parameter model.
+  - Large context ingestion will slow down over time -- this is inherent to long-context inference. If you're working with massive repositories, consider breaking work into phases or reducing the context window.
+  - If the model seems unresponsive, confirm "Use compact prompt" is enabled in Cline and "KV Cache Quantization" is disabled in LM Studio. These settings are critical for proper operation.
+  - If performance degrades during long sessions, try reducing the context window by half or reloading the model in LM Studio. Very long contexts can strain local inference.
+
+- [LLMLoadModelConfig | LM Studio Docs](https://lmstudio.ai/docs/typescript/api-reference/llm-load-model-config)
+  - `llamaKCacheQuantizationType`: Quantization type for the Llama model's key cache. 
+    - This option determines the precision level used to store the key component of the attention mechanism's cache. 
+    - Lower precision values (e.g., 4-bit or 8-bit quantization) significantly reduce memory usage during inference but may slightly impact output quality. 
+    - The effect varies between different models, with some being more robust to quantization than others.
+    - Set to `false` to disable quantization and use full precision.
+  - `llamaVCacheQuantizationType`: Quantization type for the Llama model's value cache.
+    - Similar to the key cache quantization, this option controls the precision used for the value component of the attention mechanism's cache. Reducing precision saves memory but may affect generation quality. 
+    - This option requires Flash Attention to be enabled to function properly.
+
 ## 0918
 
 - [What does YMMV mean? : r/TooAfraidToAsk](https://www.reddit.com/r/TooAfraidToAsk/comments/bhzxqc/what_does_ymmv_mean/)

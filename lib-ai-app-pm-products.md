@@ -43,6 +43,8 @@ modified: 2025-03-22T16:10:24.856Z
   - 基于dnd的方案偏前端，后端一般很难定制和scale，会受限于平台提供的组件和工具
   - ✏️ ai修改文档的方案 fast-apply
   - 偏展示型的项目考虑采用ai-coding的思路来更新ui，如sandpack/react-live+ai，更灵活
+- 📡 roadmap
+  - coding不适合同时编辑多个文件，但同时执行多个project的任务存在需求，特别是在本地硬件资源有限的条件下
 
 - 🔡 可是尝试用code generation的思路来实现ai产物如ppt
   - web sandbox + ai-coding > lovable ❓
@@ -77,6 +79,10 @@ modified: 2025-03-22T16:10:24.856Z
   - retrieval
   - code retrieval
   - text-matching
+
+- office
+  - excel/database generator
+  - mindmap/drawio generator
 
 - image-generator/editor
   - prompts: bg, person/object, text

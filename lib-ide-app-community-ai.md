@@ -623,6 +623,28 @@ modified: 2024-08-24T16:28:20.515Z
 - 广告就太 low 了，等待时间可能会让你做图片识别来训练AI用，以换取 token
 
 - 首行代码免广告，每一个人通过你的邀请码加入，你每次看广告时间缩短0.01秒
+# discuss-cline
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🏠 [Why Cline cannot edit multiple files at once? : r/CLine _202509](https://www.reddit.com/r/CLine/comments/1njhygc/why_cline_cannot_edit_multiple_files_at_once/)
+
+- RooCode can do multi-file reads and edits.
+
+- This is actually a fundamental architectural constraint, not a performance oversight. The sequential approach exists because:
+  - Context consistency - LLMs work with potentially outdated file states. Parallel edits would create conflicting contexts the model can't reconcile.
+  - Dependency management - Code files have complex interdependencies. When refactoring a class name across multiple files, you need to ensure all references update consistently.
+  - Error handling - When a diff edit fails (which happens), sequential processing allows immediate feedback and correction before issues cascade.
+- The workflow is fundamentally: LLM generates change → Tool applies → File system updates → Feedback → Next decision. Each step needs the previous one to complete for the model to make informed decisions about what to do next.
+
+- Cline has instructed the model in its system prompt to execute only one tool at a time.
+  - I would guess that back then it really worked far better. Even today it works very well.
+  - But indeed - it has its drawbacks - speed, and expensive (for those paying per request)
+  - Can cline do better on this front ? I’d say definitely - Claude Code does very well , while supporting executing multiple tools in a single call. And it makes Claude Code dramatically faster, with the same provider and model compared to Cline.
+- Cursor also executes multiple tools at once.
 # discuss-RooCode
 
 ## docs-RooCode

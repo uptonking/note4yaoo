@@ -183,12 +183,13 @@ modified: 2025-03-22T18:49:15.634Z
     - https://chatjs.langchain.com/
     - Built with LangChainjs, and Next.js.
 # local-chat
-- https://github.com/menloresearch/jan /37.5kStar/apache2/202508/ts/rust
+- https://github.com/menloresearch/jan /37.5kStar/apache2/202508/ts/rust/tauri
   - https://jan.ai/
   - an AI assistant that can run 100% offline on your device
   - Local AI Models: Download and run LLMs (Llama, Gemma, Qwen, etc.) from HuggingFace
   - Cloud Integration: Connect to OpenAI, Anthropic, Mistral, Groq, and others
   - MCP integration for enhanced capabilities
+  - 提供了类似lm studio的模型下载简化版
 
 - https://github.com/withcatai/catai /477Star/MIT/202406/ts/svelte/api+webapp
   - https://withcatai.github.io/catai/

@@ -182,6 +182,25 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
+- ## [本地部署大模型性价比之王真的是Apple Mac Studio M3 Ultra 192或512吗？ - 知乎 _202503](https://www.zhihu.com/question/14548406514)
+- deepseek r1 用mac studio测试
+  - ollama: 16 tops
+  - lmstudio: 18 tops
+  - 512Gb内存还是只能部署4bit量化版本，8bit不行
+- 如果按照18.11token/s的输出速度，不考虑其他，全天24小时运行（不考虑prefill等时间）18.11×86400s=156.5万tokens，而官网百万tokens售价才16块，156.5万售价25块钱
+  - 而Mac studio 512G内存，1t硬盘版本售价7.3w教育优惠也要6.7w，需要365×24h不停运行8年/7.3年才能回本
+
+- 那要看你怎么定义性价比了，[ktransformers] + [epyc] 现在也已经玩得很强了，苹果胜在上手就能用不用折腾装，在那个价位算一个可行方案，但并非算唯一性价比方案
+
+- ## [MAC mini M4芯片32G+256能跑大模型吗？ - 知乎 _202503](https://www.zhihu.com/question/14795834393)
+- 真跑ai只推荐Pro以上的芯片。
+  - m4的内存带宽其实和普通核显win机子差不多。而到了Pro，内存带宽就达到256了，达到4060的水准。
+  - max和ultra带宽分别是400＋和800＋，基本是显卡级别的带宽，用来跑ai推理很合适。
+
+- 主要是内存大啊，我用一万出头的mac能跑27B的gemma3 8bit量化，如果用显卡的话至少得是个3090级别的
+
+- Mac Mini 当副机可以，统一内存看着香，但很多模型不支持 MPS，或者用 MPS 跑得比 CPU 还慢。
+
 - ## [Apple M5 could ditch unified memory architecture for split CPU and GPU designs | Hacker News _202412](https://news.ycombinator.com/item?id=42552494)
 - UMA hurts the GPU too much. Widely parallel processing wants to access memory in bigger chunks than a CPU. If you try to mix access and modification, you lose the benefit of widely parallel processing. 
   - Other GPU designers have considered and eschewed unified memory models, to the tune of hundreds of millions in research dollars.

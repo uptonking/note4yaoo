@@ -10,7 +10,7 @@ modified: 2021-01-04T17:31:31.845Z
 # guide
 
 # popular
-- https://github.com/opendatalab/OmniDocBench /apache2/202412/python
+- https://github.com/opendatalab/OmniDocBench /824Star/apache2/202509/python
   - A Comprehensive Benchmark for Document Parsing and Evaluation
   - OmniDocBench is a benchmark for evaluating diverse document parsing in real-world scenarios
   - OmniDocBench is designed for Document Parsing, featuring rich annotations for evaluation across several dimensions:
