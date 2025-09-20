@@ -15,6 +15,7 @@ modified: 2025-09-16T19:59:57.856Z
   - variants: mlx, unsloth, quants
   - 测试模型时可能更希望速度快，但做任务或规划时更希望质量好，所以偏向选择大B参数的模型
   - 📱 端侧模型还要考虑电源及功耗问题, 实测macbook-air在跑模型时掉电很快
+    - 端侧最好用 api-key + tiny-local-llm
 
 - leaderboard-llm
   - [Artificial Analysis LLM Leaderboard - Comparison of over 100 AI models from OpenAI, Google, DeepSeek & others](https://artificialanalysis.ai/leaderboards/models)
@@ -34,36 +35,47 @@ modified: 2025-09-16T19:59:57.856Z
   - 模型占用VRAM不能太大，还要为context处理、应用程序如nextjs/comfyui预留RAM/VRAM
   - 选择模型时多用官方版/主流版，小众微调的版本可能存在tool-call/overthink/多语言multilingual/对话风格/llama.cpp不支持等问题
     - 选用主流版还方便与其他用户对比速度/配置
+    - 非主流版可能出现vision/rag等被去掉的问题
   - 多agent架构时，可使用不同架构的agent相互验证
   - non-thinking或输出简洁的模型适合coding
+
+- donts
+  - 很多带thinking的大模型不擅长计数，如within 18 words， 有的模型真的会逐个token打印出来逐个数一遍
+
+- mac 🍎
+  - 👀 在low power mode省电模式下, 模型的输出速度会比非省电模式慢2-3倍
 
 - gemma3 🌹 /多语言/创意文本/vision
   - 27b 和 12b 都能较好遵循带结构的instruct输出， 27b能主动给出更多外部网页链接而12b给的链接很少
 
-- qwen3 🌹 /能力全/内容丰富/thinking开关
+- qwen3 🌹 /能力全/thinking开关/内容丰富
   - think 2-3min
   - 4b及14b的输出内容都比较详细，经常包含表格📈
 
-- gpt-oss-20B-A3.6B 👀 /输出快
+- gpt-oss-20B-A3.6B 👀 /业界标杆/输出快
   - 输出的内容特别喜欢用表格📈
   - unsloth-Q5的输出速度为 11.8 tops, offcial-Q4的输出速度为 11.2 tops, 速度比qwen3-14b更快
 
-- magistral-2509  👀 /可以用/think+vision/欧洲多语言/产品线丰富
-  - 回复非常短，感觉质量不如2507
-  - thinking时间在3-10min左右，或许对于plan制定计划有用
+- magistral-small-2509-24b  👀 /可以用/think+vision/欧洲多语言/产品线丰富
+  - 回复一般很短，感觉质量不高
+  - thinking时间在~~3-10~~min(2509已改进)左右，或许对于plan制定计划有用
   - 输出内容几乎不提供外部链接，2507不也提供外部链接
   - 输出内容中几乎不提供表格
+  - 带thinking的模型不擅长计数，如 within 18 words
 
-- glm4 👀 /可以用
+- glm4 👀 /可以用/是否善长html代码?
   - glm4不会think，输出内容质量感觉一般
   - 输出的长度大概在30-60行，简洁是特色，对代码有用?
   - 在多轮聊天时，输出内容也会逐渐变长?
-- glm-z1 👀 /思考非常久
+- glm-z1 👀 /思考非常久/不擅长代码
   - z1会think5-15min，think不支持disable，输出内容的长度会比glm4多20行左右，多一些外部链接，多用很多表格，质量较好
   - z1的think时间比qwen3长很多，
   - 输出内容的长度比qwen3更少, 输出内容会有表格📈
 
 ## models-coding
+
+- tips
+  - ai按用户提供的模版输出html的场景下，用户提供和ai输出的代码通常都是偏短的、偏静态的
 
 - devstral-2507-24b 🌹 /欧洲多语言/instruct
 
@@ -463,9 +475,13 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
-
-- ## 
+- ## [Would it be possible to run gemma3 27b on my MacBook Air M4 with 32GB of Memory/RAM? : r/LocalLLaMA _202503](https://www.reddit.com/r/LocalLLaMA/comments/1jig91a/would_it_be_possible_to_run_gemma3_27b_on_my/)
+- I happen to have just purchased this exact configuration (MacBook Air M4 with 32GB)
+  - I installed LM Studio today and did a couple of tests with Gemma 3 12B and Gemma 3 27B (both Q4_K_M). 
+  - Gemma 3 12B produced output at about 10 tokens per second vs 4-5 tokens per second for Gemma 3 27B. 
+  - Both sets of answers were on point, but I'd give the edge to Gemma 3 27B. However, Gemma 3 27B put a lot more pressure on memory and (especially) CPU.
+  - The bottom line is that I can see myself using Gemma 3 12B a lot more often than Gemma 3 27B. 
+  - I don't think the slight increase in quality makes up for waiting twice as long for the answer, and draining the MacBook Air battery while doing it.
 
 - ## [Qwen3 is very.... talkative? And yet not very... focused? : r/LocalLLaMA _202506](https://www.reddit.com/r/LocalLLaMA/comments/1lh4ynv/qwen3_is_very_talkative_and_yet_not_very_focused/)
   - Is this the expected Qwen output? Is it just designed to act like an extremely chatty person with ADHD?

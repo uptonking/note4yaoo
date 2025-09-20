@@ -63,6 +63,14 @@ modified: 2024-11-16T08:23:40.617Z
   - This library was forked from the `stretch` crate
   - 🆚 性能测试表明多数场景比yoga更快
 
+- https://github.com/iamgio/quarkdown /9.1kStar/GPLv3/202509/kotlin
+  - https://quarkdown.com/
+  - a modern Markdown-based typesetting system, designed around the key concept of versatility, by seamlessly compiling a project into a print-ready book or an interactive presentation. 
+  - All through an incredibly powerful Turing-complete extension of Markdown
+  - Born as an extension of CommonMark and GFM, the Quarkdown Flavor brings functions to Markdown, along with many other syntax extensions.
+  - standard library offers layout builders, I/O, math, conditional statements and loops.
+  - [Quarkdown, a modern, Turing-complete, Markdown-based typesetting system, now finally supports exporting to PDF : r/programming _202508](https://www.reddit.com/r/programming/comments/1joyi4l/quarkdown_a_modern_turingcomplete_markdownbased/)
+
 - https://github.com/litehtml/litehtml /BSD/202412/cpp
   - http://www.litehtml.com/
   - lightweight HTML rendering engine with CSS2/CSS3 support. 

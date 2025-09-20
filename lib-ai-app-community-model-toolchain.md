@@ -102,7 +102,20 @@ modified: 2025-09-16T12:36:12.968Z
 
 - ## 
 
-- ## 
+- ## [国内外大模型API平台体验对比 - 知乎](https://zhuanlan.zhihu.com/p/1914700194517345472)
+
+- 如果想使用国内的模型API，推荐使用国内云厂商提供的API服务或第三方代理平台。
+  - 如果想在国内使用国外的模型API，或者想同时使用很多不同系列的模型，推荐使用第三方代理平台。
+  - 如果服务器在国外，想调用国外的某个API模型，则推荐使用国外云厂商，或第三方代理平台。
+
+- 2025/9/1 更新：
+  - 1. 增加DMXAPI，一个不错的API中转商，模型比较全。
+  - 2. 删除博阅，因为其不开放新用户充值。
+  - 3. 降低openrouter的推荐指数，因为使用过程遇到稳定性问题比较多 
+  - 4. 降低硅基流动的推荐指数，因为限流TPM太小，影响使用。
+  - 5. 增加GLM、Kimi、Minimax模型的推荐厂商
+
+- openrouter 背后的供应商比较乱, 有些模型版本不是最新的. 还需要自己排除供应商
 
 - ## 🔧 [Open WebUI vs. LM Studio vs. MSTY vs. _insert-app-here_... What's your local LLM UI of choice? : r/LocalLLM _202502](https://www.reddit.com/r/LocalLLM/comments/1ij3j8m/open_webui_vs_lm_studio_vs_msty_vs_insertapphere/)
 - Ollama vanilla CLI in tmux with vim copy/paste between terminals. I like pain
@@ -328,9 +341,73 @@ modified: 2025-09-16T12:36:12.968Z
 
 - ## 
 
-- ## 
+- ## [Any experiences running LLMs on a MacBook? : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1m1t19r/any_experiences_running_llms_on_a_macbook/)
+- Pretty good experience on M4 Max with 128Gb, Qwen3-30B-A3B (8bit quants). Speed on small inputs is around 40-50 toks/s, which is very very usable.
+  - I have the same setup I would say not very good. lol. But that’s because I try to use models for things like cline and opencode. It’s just soooo slow on initial prompt and even later on as well. For chats with 24b’s it’s great though
+- I feel that almost any thinking models feel pretty slow in coding assistants. I would prefer them to answer faster with the same quality
 
-- ## 
+- Qwen3-30B-A3B is the goat on my M3 Ultra (96 gb). I asked a few coding/ML questions, and I'm getting between 55 - 70 tok/s
+
+- I get vastly better results with qwen3 32B in 4bit than qwen3 30B in 8bit. 
+
+- Prompt: Write a binary search function in javascript
+  - All models loaded w/ max context window, lm studio, mlx backend.
+- M4 Max MacBook Pro 128GB (mostly 4bit):
+  kimi-dev-72b-dwq: 11 tps
+  qwen3-53b-a3b: 45tps
+  qwen3-30b-a3b-dwq: 96tps
+  devstral-small-2507-dwq: 33tps
+  gemma-3n-e4b-it: 75tps
+  jan-nank-128k (8bit): 90tps
+  qwen3-4b-dwq-053125: 142tps
+  qwen3-1.7b-dwq-053125: 252tps
+- M2 MacBook Air 24GB:
+  qwen3-30b-a3b (3bit): 32tps
+  qwen3-4b-dwq-053125: 30tps
+  qwen3-1.7b-dwq-053125: 66tps
+  devstral-small-2507-dwq: 6tps
+  gemma-3n-e4b-it: 25tps
+  jan-nano-128k (8bit): 16tps
+  jan-nano-128k (4bit): 31tps
+
+- I have M4 pro with 48GB RAM. I can run local models maximum 32B (4/6Q). Gemma 3 27b/Qwen 3 32B is good enough to use for general QnA purpose. For dev assistance, it lacks accuracy and generation speed on Mac M4. I would choose R1 or else in Openrouter. However definitely battery runs out faster with local models.
+  - i’d recommend giving devstral small a shot it’s surprisingly really good and punches above its weight.
+
+- Get the pro and with as much unified memory as you can afford. I’m running a M4 Max with 64GB and I regret not getting the 128
+  - you might want to increase the portion of unified memory allocated to the GPU
+  - LM Studio has awful default settings when you download a model, always check online what are the model’s recommended settings (Unsloth blog or model pages on huggingface are great sources for this).
+  - don’t just max out context length, set one that makes sense for your hardware. You can find calculators online, or resort to the good old trial and error process. Be aware that, even if models support 128k or more tokens in the context, most of them degrade after 40/50k.
+
+- I wouldn't recommend fine tuning on Macs - took 9hrs to train phi 3 mini on the guanaco dataset with autotrain.
+
+- ## [MacBook Air M4/32gb Benchmarks : r/LocalLLaMA _202503](https://www.reddit.com/r/LocalLLaMA/comments/1jklk5y/macbook_air_m432gb_benchmarks/)
+  - Phi4-mini (3.8b)- 34 t/s, 
+  - Gemma3 (4b)- 35 t/s, 
+  - Granite 3.2 (8b)- 18 t/s, 
+  - Llama 3.1 (8b)- 20 t/s, 
+  - Gemma3 (12b)- 13 t/s, 
+  - Phi4 (14b)- 11 t/s, 
+  - Gemma (27b)- 6 t/s, 
+  - QWQ (32b)- 4 t/s
+
+- I suspect it's heating up quite a bit like my 24 gb one does
+  - Sure does, being completely silent is a nice tradeoff though. My old MacBook Pro would sound like a jet engine preparing to take off.
+
+- Those figures are close to what I'm getting using accelerated ARM CPU inference on a Snapdragon X1 Elite with 12 cores. That's on a ThinkPad with fans and big cooling vents. It's incredible that the M4 Air has that much performance in a fanless design.
+  - It definitely gets warm when inferencing with the larger models and longer contexts but being completely silent is pretty amazing. Models tested were Q4.
+
+- People are angry with the MacBook Air M4. Without fans, the benchmarks drop by half compared to the Mac Mini with the same M4 chip.
+
+- ## [Is M4 MacBook Air 32 + 512 good for AI/LLM? : r/macbookair _202503](https://www.reddit.com/r/macbookair/comments/1jd2cbc/is_m4_macbook_air_32_512_good_for_aillm/)
+  - Some preliminary benchmark tests show that the token per second is as follows in model M4 MBA 32 GB: 
+  - 7b 20.8 token/s 
+  - 14b 11.0 token/s 
+  - 32b 4.9 token/s 
+  - Is this acceptable or good enough for playing with local AI/LLM?
+
+- deepseek-r114b on M4 is near 14 tokens but on the 4070 it is 50!!!
+  - Then deepseek 32b does like 4.7 tokens on M4 32/512 and 5.7 on the 4070 ti.
+  - For LLM running i'd go for the M4 PRO with more cores and 48gb ram but that configuration is like x2 expensive over the 32/512 M4
 
 - ## [How are people running an MLX-compatible OpenAI API server locally? : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mg26g0/how_are_people_running_an_mlxcompatible_openai/)
 - If you are on a Mac then LM Studio is about your only choice for a mature, stable, fast, reliable, supported, maintained MLX server.

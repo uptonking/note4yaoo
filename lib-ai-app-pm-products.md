@@ -20,6 +20,7 @@ modified: 2025-03-22T16:10:24.856Z
 
 - ai相对于搜索引擎的优势 🌹
   - ai能推理和计算, 分析复杂问题，给出更准确的方案
+  - ai能拆分复杂任务为多步任务，能通过多轮来执行任务，同时支持one-shot和multi-steps
   - 能通过tool-call使用工具
   - 对多语言支持很好
 
@@ -84,6 +85,10 @@ modified: 2025-03-22T16:10:24.856Z
   - excel/database generator
   - mindmap/drawio generator
 
+- image-gen-by-code
+  - 文生图难度高，但基于文本的流程图难度低很多，如集成 mermaid
+  - 基于代码的文生图方案，如sandpack, 可用于小红书卡片场景，可参考 https://langgptai.feishu.cn/wiki/JQVEwKJQkilWztkMLRGcA8zqngb
+
 - image-generator/editor
   - prompts: bg, person/object, text
   - 模型选择要考虑: 硬件限制、速度、质量， 只有成熟的model才会提供lite/turbo/精简版
@@ -93,6 +98,12 @@ modified: 2025-03-22T16:10:24.856Z
 
 - workflow
   - Zapier and n8n help to an extent, but they’re not designed for multi-tenant SaaS. They’re great for internal workflows—not product infrastructure.
+
+- ai-ui
+  - 可交互，如过滤表格
+  - 可编辑
+  - 可对比
+  - 流式render
 
 - ideas
   - parallel chats

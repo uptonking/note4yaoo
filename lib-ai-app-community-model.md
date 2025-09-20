@@ -218,7 +218,35 @@ e) 最终评论者(Final Critic)
 - https://x.com/aigclink/status/1844936446416912628
   - 用于构建、编排和部署多代理
 
+# discuss-ai-format/interop
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Use YAML over JSON when dumping into prompts for ~2x token saving : r/ChatGPTCoding _202509](https://www.reddit.com/r/ChatGPTCoding/comments/1nl7xux/use_yaml_over_json_when_dumping_into_prompts_for/)
+  - [YAML vs. JSON: Which Is More Efficient for Language Models? _202307](https://medium.com/better-programming/yaml-vs-json-which-is-more-efficient-for-language-models-5bc11dd0f6df)
+  - It's been pointed out in the comments (with sass) that minifying your JSON is another, perhaps even better, alternative than transforming to YAML. So now there's two options for saving tokens.
+
+- Does the guy who wrote the article know that you don't need to use whitepaces in JSON and you can minify it to consume less space than YAML? Generally speaking, JSON is more space-efficient and compact than YAML.
+
+- Just remove the spaces and condence the JSON into a single line. LLMs don't care about spaces, it's a visual thing for us.
+
+- Thought LLM's don't count white space as context... or if they did, it would be incredibly minimal
+  - They kind of have to, if only to correctly write Python
+  - ASCII art too
+
+- Another point is accuracy... some like XML more as well - and there is BAML. If i just wanna save money I could get a cheaper model too.
+- xml is also what Claude officially recommends for better accuracy.
+
+- I use YAML and JSON, because i use the CMS Drupal since 2006 - so this fits quite well in my workflow
+
+- TOML is actually more verbose when it comes to complex data structures.
+  - Which makes sense since it was designed to be a JSON/YAML mappable language for better human readability.
 # discuss
+- ## 
+
 - ## 
 
 - ## 

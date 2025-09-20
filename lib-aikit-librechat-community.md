@@ -21,6 +21,25 @@ modified: 2025-09-01T05:53:05.266Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [OpenWebUI is the most bloated piece of s**t on earth, not only that but it's not even truly open source anymore, now it just pretends it is because you can't remove their branding from a single part of their UI. Suggestions for new front end? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nlkwr3/openwebui_is_the_most_bloated_piece_of_st_on/)
+- If you want 0 bloat, then LLaMa.cpp’s server.exe gives you an extremely lean, no-nonsense interface.
+
+- I love my librechat, full MIT license. 
+  - If your in the discord you will notice large companies like Stripe have deployed it to their employees and government agencies are using it now too for low cost AI that is local hosted and secure. 
+  - They kind of push their code interpreter and search/scraper solutions but you can easily replace those with whatever MCP you want.
+  - I use Perplexity MCP and I use my AI nearly every day in a professional capacity
+  - Lobechat I think its called seemed the best looking but its license is not what was looking for.
+
+- The Code Interpreter bit is a bit annoying and the dual config files were for a long while a bit confusing for a lot of people but once you get past those it's very solid.
+
+- Oobabooga has always been my favorite. 
+  - It supports several backends, including transformers and llama.cpp, has a super configurable frontend with most backend options exposed, has a native OpenAI-compatible API endpoint, and the portable version has auto-install options for basically every major GPU platform. 
+  - Not sure why people don't use it much anymore, as Oobabooga is still pushing meaningful improvements to support new model formats like GPT-OSS. 
+  - If your target environment is a local network for a single knowledgeable user, it really can't be beat.
+- I don’t like Ooba because it has a trash user interface but I support it generally as free and open source software. 
 # discuss-roadmap
 - ## 
 

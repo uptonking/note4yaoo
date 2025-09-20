@@ -99,6 +99,9 @@ modified: 2021-05-06T09:39:53.522Z
   - rewrite with remark
   - rewrite with codemirror/lezer
 
+- chart
+  - markdown-chart + llm
+
 - tiptap
   - ai-extension open version
 

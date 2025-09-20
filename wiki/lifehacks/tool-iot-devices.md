@@ -182,6 +182,22 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🍎 [MacBook M4 Max isn't great for LLMs : r/LocalLLaMA _202503](https://www.reddit.com/r/LocalLLaMA/comments/1jn5uto/macbook_m4_max_isnt_great_for_llms/)
+- M4 Max is about 50% faster than an Nvidia P40 (both in compute throughput and memory bandwidth). 
+  - It is about 2.5x slower than a 3060 in compute¹ throughput (FP16) and 50% faster in memory bandwidth. 
+  - Compared to 3090, it is about 7x slower in compute¹ throughput (FP16) and almost 2x slower in memory bandwidth.
+- P40s (and generally Pascal) were the last ones without tensor cores (which increase FP16 throughout by 4x).
+  - The lack of tensor cores is also the reason Apple M3 Ultra/M4 Max and AMD 395 Max, lag in Prompt Processing throughput compared to Nvidia, even if the M3 Ultra almost matches a 3080/4070 in raster throughput (FP32).
+  - Compared to CPU-only inference, P40s are still great value, since they cost $150-300 and are only matched by dual 96-core Epycs with 8-12 channel DDR5 which start from $5000 used.
+- Pascal doesn't even have FP16 support, all the operations are done through fp32 units afaik so throughput is effectively halved. It wasn't until Ampere that NVidia had FP16 support.
+
+- Try swapping to serving with LMStudio - then use MLX, and speculative decoding with 0.5b as draft for 14b! Tripled my speed on my M1 Max
+  - Speculative decoding really is great. It at least doubled my speeds. In token generation. Prompt processing didn't get and bump though. I'd love to have a 128gb+ RAM machine to also activate KV Cache
+
 - ## [本地部署大模型性价比之王真的是Apple Mac Studio M3 Ultra 192或512吗？ - 知乎 _202503](https://www.zhihu.com/question/14548406514)
 - deepseek r1 用mac studio测试
   - ollama: 16 tops

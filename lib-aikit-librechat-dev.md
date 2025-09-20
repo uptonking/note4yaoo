@@ -53,6 +53,13 @@ modified: 2025-09-01T05:52:34.241Z
 
 - comfyui-local: ollama与comfyui结合的产品形态应该是怎样的
   - support tool config: steps, sampler, scheduleer, style-preset
+  - ✨ 测试需求: 将comfyui中多模型测试输出的能力迁移到文本模型
+
+- mermaid
+  - 文生图难度高，但基于文本的流程图难度低很多，如集成 mermaid
+
+- chart
+  - markdown-chart + llm
 
 - code interpreter 如何实现
   - open source alternative

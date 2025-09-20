@@ -248,6 +248,17 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
 
 ```
 
+## 0920
+
+- [Add cli switch to show generation time and tokens/sec output time · Issue · ollama/ollama](https://github.com/ollama/ollama/issues/1806)
+  - ollama run qwen3 --verbose
+  - it'll dump the token counts and timing info after each message.
+
+- [Error: EACCES: permission denied, mkdir '/usr/local/lib/node\_modules/node-sass/build' - Stack Overflow](https://stackoverflow.com/questions/49679808/error-eacces-permission-denied-mkdir-usr-local-lib-node-modules-node-sass-b)
+  - [EACCES: permission denied in VS Code MAC - Stack Overflow](https://stackoverflow.com/questions/38980338/eacces-permission-denied-in-vs-code-mac)
+  - sudo chown -R $(whoami) .
+  - 最后采用的方法是手动在 .bashrc/.zshrc 设置 `TMPDIR` 的值
+
 ## 0919
 
 - 🤔 for a laptop, gpu vs apu vs npu
