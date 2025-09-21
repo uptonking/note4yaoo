@@ -310,6 +310,19 @@ modified: 2025-09-16T13:29:11.327Z
   - USER: Write a Breaking news tweet. A lion has escaped from the Local city Zoo. please be on the lookout. Do not approach and call emergency services immediately. Reported by AYZNEWS. Please attach three relevant hashtags including #LION. Keep to the 280-character limit.
   - USER: Please write a short story about a tree. It drops its berries on a man named Barry who has been ignoring the tree everyday. The tree talks and they have a conversation. Make the story about 200-250 words. Please title it "Talking Tree, Barry". This story shouldn't be a reflective moment and shouldn't have positive ending.
   - USER: Write a short fun fact for my blog about cats sleeping habits. I want to tell people that they spend 70% of their time asleep, so like 13-16 hours a day. Make it fun
+# discuss-ai-sql/data
+- ## 
+
+- ## 
+
+- ## [Are LLMs good at modifying Large SQLs correctly? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1nmq1m2/are_llms_good_at_modifying_large_sqls_correctly/)
+- Dont ever feed commercial data to public LLM APIs. 
+
+- Export the schema, get some mock data and try it out. I know it's a pain in the derriere but that's the best way to do it imo
+
+- Qwen 4B finetune for text to SQL exists
+
+- I do use them for that, primarily to generate datasets for charts. Before every prompt I inject the entire schema, the version and type of the RDBMS and 3-4 example queries with good generated SQLs. I then use a read-only connection to test if it even runs (syntax correctness and verifies it returns more than 0 rows) and voila.
 # discuss-ai-chart/flow/viz-gen 📊
 - ## 
 
@@ -398,7 +411,14 @@ modified: 2025-09-16T13:29:11.327Z
 
 - ## 
 
-- ## 
+- ## [deepseek r1 vs qwen 3 coder vs glm 4.5 vs kimi k2 : r/LocalLLM _202508](https://www.reddit.com/r/LocalLLM/comments/1n32n02/deepseek_r1_vs_qwen_3_coder_vs_glm_45_vs_kimi_k2/)
+- What I've found is that the model itself makes some difference but how you set the system prompt, the jinja template (where applies), the temp, spec decoding?, etc. matter way more. 
+  - Having used them all for a fair amount of coding I'd say right now glm 4.5 gives me the best results in coding as it appears to be more well trained on the most recent advances / libraries and such in coding. 
+  - Qwen3 coder was a disappointment.
+
+- My conclusion is they are all really good, so use a cheap and fast one. Or even better, use two at once. deepseek/deepseek-chat-v3.1 is what I use most often right now.
+
+- I'm gonna say something a little wild: I find gpt-oss-120b best of all. It's clearly the leaner model so obviously it's much faster and efficient. But the responses I get are very good with coding.
 
 - ## [Which coding model is best for 48GB VRAM : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kemt2m/which_coding_model_is_best_for_48gb_vram/)
 - GLM-4 is only great with HTLM frontend. 
@@ -786,9 +806,18 @@ OLLAMA_KV_CACHE_TYPE: q4_0
   - The new Qwen coder model is also a non-reasoning model. It only scores marginally better on the aider leaderboard than the older 235B model (61.8 vs 59.6) - with the 235B model in non-thinking mode.
 
 - ## [Best Way to Use Qwen3-Coder for Local AI Coding? : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1n4mo1r/best_way_to_use_qwen3coder_for_local_ai_coding/)
-- (For local coding work) the lesson I learned is: Qwen3 Coder works very well as an autocomplete model.
+- (For local coding work) the lesson I learned is: Qwen3 Coder works very well as an autocomplete model. If you need autocomplete, give it a try.
+  - With that said, I look elsewhere to power agents and tool calling. I suggest Devstral Small 2507 as a potential fallback option.
 
 - Cline and LM Studio is all you need.
+
+- I think qwen3-30b-a3b-thinking-2507 is a better coding model. Same requirements, but with thinking mode, and a paired speculative decoding model (qwen3-4b-a3b-thinking-2507) that speeds it way up.
+  - IMO coding models that don't use thinking are going to make more mistakes
+  - Thinking models do a much better job at the agentic coding workflows, when they need to hunt down some info, or reason through a bug.
+  - Peak capability is way below SOTA large models, but 80% of work doesn't need peak capability...
+- I run it in Kilo code and qwen3 seems to be plenty fluent with kilo. It respects my custom rules. It interacts with my local tool servers. But I get ~10 tokens a second on an m4 Mac w/ 48gb, so I'd rather pay for inference than wait for it in practice.
+
+- my setup is pretty weak 3060 12gb + 32GB ddr5 6000mt/s. Roo code worked pretty well for me, although it got unbearable slow when It got close to 40k context.
 
 - ## [Qwen3-Coder-30B-A3B in a laptop - Apple or NVIDIA (RTX 4080/5080)? : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mwmi2n/qwen3coder30ba3b_in_a_laptop_apple_or_nvidia_rtx/)
 - M2 Max 64 Gb here. 

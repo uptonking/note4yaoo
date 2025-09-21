@@ -133,10 +133,12 @@ modified: 2023-11-28T14:48:45.910Z
   - 基于场景预定义react组件接口，允许替换默认使用的各个组件
   - 因为允许替换，所以经常需要动态导入
 
-- why-local?
-  - privacy
+- why-local-ai?
+  - privacy: code, data
   - tweak different configs for ai-models
-  - cost
+  - no implicit ai degradation/switch: bring your model
+  - cost: unlimited tokens
+  - network agnostic
 # business-apps
 - 成功的产品，大多可以不断更新换代
   - 如大模型、支持最新大模型的comfyui, 并且大模型种类多更新多

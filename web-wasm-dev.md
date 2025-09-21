@@ -12,6 +12,9 @@ modified: 2021-01-01T20:10:51.125Z
 - tips
   - 前端开发后端化(Nodejs)，后端开发前端化(WebAssembly)都是比较明确的趋势，未来前后端开发将进一步融合。
   - cpp性能好但开发复杂，rust取代web还要看发展
+
+- who is using #wasm
+  - libfwk: tesseract.js-core
 # wasi
 
 ## docs

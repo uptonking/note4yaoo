@@ -16,6 +16,9 @@ modified: 2025-09-16T12:36:12.968Z
 
 - tips-ai-tools
   - lm studio底层用的也是llama.cpp, 不必寻找替代，深入底层更容易替代和扩展
+
+- mlx
+  - mlx的优点之一是方便支持在iphone上运行
 # lmstudio-xp
 - not-yet
   - 聊天内搜索
@@ -341,6 +344,15 @@ modified: 2025-09-16T12:36:12.968Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Best Local LLM for MacBook Air M3 with 24GB RAM : r/LocalLLaMA _202404](https://www.reddit.com/r/LocalLLaMA/comments/1bu65s6/best_local_llm_for_macbook_air_m3_with_24gb_ram/)
+- Rough rule of thumb is 2xParam Count in B = GB needed for model in FP16.
+  - From there reducing precision scales more or less linearly. 
+  - So 1B param model = 1GB RAM needed INT8, or 0.5GB RAM needed INT4. 
+
 - ## [Any experiences running LLMs on a MacBook? : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1m1t19r/any_experiences_running_llms_on_a_macbook/)
 - Pretty good experience on M4 Max with 128Gb, Qwen3-30B-A3B (8bit quants). Speed on small inputs is around 40-50 toks/s, which is very very usable.
   - I have the same setup I would say not very good. lol. But that’s because I try to use models for things like cline and opencode. It’s just soooo slow on initial prompt and even later on as well. For chats with 24b’s it’s great though
@@ -398,7 +410,11 @@ modified: 2025-09-16T12:36:12.968Z
 
 - People are angry with the MacBook Air M4. Without fans, the benchmarks drop by half compared to the Mac Mini with the same M4 chip.
 
-- ## [Is M4 MacBook Air 32 + 512 good for AI/LLM? : r/macbookair _202503](https://www.reddit.com/r/macbookair/comments/1jd2cbc/is_m4_macbook_air_32_512_good_for_aillm/)
+- [Tested local LLMs on a maxed out M4 Macbook Pro so you don't have to : r/ollama _202503](https://www.reddit.com/r/ollama/comments/1j0by7r/tested_local_llms_on_a_maxed_out_m4_macbook_pro/)
+  - 测试了qwen2.5的各种量化版
+  - lmstudio的mlx比ollama快很多
+
+- ## ⚡️ [Is M4 MacBook Air 32 + 512 good for AI/LLM? : r/macbookair _202503](https://www.reddit.com/r/macbookair/comments/1jd2cbc/is_m4_macbook_air_32_512_good_for_aillm/)
   - Some preliminary benchmark tests show that the token per second is as follows in model M4 MBA 32 GB: 
   - 7b 20.8 token/s 
   - 14b 11.0 token/s 
@@ -408,6 +424,12 @@ modified: 2025-09-16T12:36:12.968Z
 - deepseek-r114b on M4 is near 14 tokens but on the 4070 it is 50!!!
   - Then deepseek 32b does like 4.7 tokens on M4 32/512 and 5.7 on the 4070 ti.
   - For LLM running i'd go for the M4 PRO with more cores and 48gb ram but that configuration is like x2 expensive over the 32/512 M4
+
+- The problem is LLM running locally are very CPU intensive. Which equals heat, which the Air has no internal fans to handle it, which equals the CPU throttling (under clocking) itself to prevent overheating. The AIR will get Hot AF!
+  - The memory and storage is in the range of what is needed. Personally I would go for a 1TB of storage but you need something with a fan which would be a MacBook Pro or mini.
+
+- The base M4 MBP would probably be best because of the active cooling, it’ll allow for better sustained performance and also comes with a slightly bigger battery.
+- Pro model recommended so the active cooling system, the MacBook Air doesn’t handled loads well.
 
 - ## [How are people running an MLX-compatible OpenAI API server locally? : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mg26g0/how_are_people_running_an_mlxcompatible_openai/)
 - If you are on a Mac then LM Studio is about your only choice for a mature, stable, fast, reliable, supported, maintained MLX server.

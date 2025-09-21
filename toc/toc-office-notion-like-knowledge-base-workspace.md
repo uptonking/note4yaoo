@@ -733,6 +733,19 @@ modified: 2022-06-03T21:34:54.893Z
 
 ## doc-etl
 
+- https://github.com/google/langextract /15.5kStar/apache2/202509/python
+  - https://pypi.org/project/langextract/
+  - a Python library that uses LLMs to extract structured information from unstructured text documents based on user-defined instructions.
+  - Precise Source Grounding: Maps every extraction to its exact location in the source text, enabling visual highlighting for easy traceability and verification.
+  - Reliable Structured Outputs: Enforces a consistent output schema based on your few-shot examples
+  - Optimized for Long Documents by using an optimized strategy of text chunking, parallel processing, and multiple passes for higher recall.
+  - Flexible LLM Support: Supports your preferred models, from cloud-based LLMs like the Google Gemini family to local open-source models via the built-in Ollama interface.
+  - [Proposal: Add Docling Integration for End-to-End Document Extraction  _202508](https://github.com/google/langextract/issues/184)
+    - LangExtract today works only on raw text strings. In real-world workflows the source is usually a PDF , DOCX or PPTX. Users currently have to: Manually convert the file to text (losing layout & provenance).
+    - Proposed Solution: Integrate Docling library as an optional front-end
+  - [Question: Does Langextract work better on full documents or chunks? _202508](https://github.com/google/langextract/issues/206)
+    - From my current tests it seems to work better when using docling to chunk it (at least in terms of building a knowledgegraph). I guess its due to contexual / visual chunking vs naive chunking.
+
 - https://github.com/Unstructured-IO/unstructured /10.5kStar/apache2/202503/python
   - https://www.unstructured.io/
   - provides open-source components for ingesting and pre-processing images and text documents, such as PDFs, HTML, Word docs, and many more.
@@ -761,12 +774,20 @@ modified: 2022-06-03T21:34:54.893Z
   - 结构化数据提取工具，它可以以自然语言查询的方式从非结构化文档中提取结构化数据，并以表格或图表的形式展现
   - 文档数据的结构化入库，比如从合同里提取关键交易信息，然后结构化展示
 
-- https://github.com/Goldziher/kreuzberg /MIT/202502/python
+- https://github.com/Goldziher/kreuzberg /2.4kStar/MIT/202509/python
+  - https://kreuzberg.dev/
   - Kreuzberg is a modern Python library for text extraction from documents, designed for simplicity and efficiency
   - It provides a unified async interface for extracting text from a wide range of file formats including PDFs, images, office documents, and more.
   - Local Processing: No external API calls or cloud dependencies required
   - Modern Python: Built with async/await, type hints, and current best practices
   - Kreuzberg was created to solve text extraction needs in RAG (Retrieval Augmented Generation) applications, but it's suitable for any text extraction use case. 
+  - Built on established open source foundations including Pandoc, PDFium, and Tesseract.
+  - OCR Integration: Tesseract OCR with markdown output (default) and table extraction from scanned documents. Tesseract is Google's OCR engine for text recognition
+  - PDFium: Google's PDF rendering engine for accurate PDF processing
+  - Python-docx/pptx: Native Microsoft Office format support
+  - Extensibility: Plugin architecture for custom extractors via the Extractor base class
+  - API Design: Synchronous and asynchronous APIs with consistent interfaces
+  - Type Safety: Complete type annotations throughout the codebase
 
 ## web-etl
 
@@ -828,6 +849,13 @@ modified: 2022-06-03T21:34:54.893Z
   - Documents are saved as PDF/A format which is designed for long term storage, alongside the unaltered originals.
   - Paperless stores your documents plain on disk. Filenames and folders are managed by paperless and their format can be configured freely 
   - [Paperless-ngx – Open source document management system | Hacker News _202310](https://news.ycombinator.com/item?id=37800951)
+  - https://github.com/icereed/paperless-gpt /1.4kStar/MIT/202509/go/ts
+    - Use LLMs and LLM Vision (OCR) to handle paperless-ngx - Document Digitalization powered by AI
+    - paperless-gpt seamlessly pairs with paperless-ngx to generate AI-powered document titles and tags, saving you hours of manual sorting. 
+    - Harness Large Language Models (OpenAI or Ollama) for better-than-traditional OCR
+  - https://github.com/signorecello/paperless-docling /202504/js/inactive
+    - A service that automatically processes documents in Paperless using docling and updates their content.
+    - [Better OCR with Docling : r/Paperlessngx _202504](https://www.reddit.com/r/Paperlessngx/comments/1jqqsly/better_ocr_with_docling/)
 
 - https://github.com/microsoft/markitdown /MIT/202411/python
   - Python tool for converting files and office documents to Markdown.

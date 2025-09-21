@@ -15,6 +15,7 @@ modified: 2025-03-22T16:10:24.856Z
   - frontend: ai-sdk/chatbot, assistant-ui, librechat
   - backend: langgraph + python/nodejs
   - ai-apps as ref: lasuite
+
 - ai-dev-xp
   - 难复现好的效果，同样的prompt+context，有时输出的效果就是不好
 
@@ -23,6 +24,13 @@ modified: 2025-03-22T16:10:24.856Z
   - ai能拆分复杂任务为多步任务，能通过多轮来执行任务，同时支持one-shot和multi-steps
   - 能通过tool-call使用工具
   - 对多语言支持很好
+
+- why-local-ai?
+  - privacy: code, data
+  - tweak different configs for ai-models
+  - no implicit ai degradation/switch: bring your model
+  - cost: unlimited tokens
+  - network agnostic
 
 - local-ai-challenges 🐛
   - 运行大模型需要较多硬件资源，如GPU/CPU/RAM
@@ -84,6 +92,7 @@ modified: 2025-03-22T16:10:24.856Z
 - office
   - excel/database generator
   - mindmap/drawio generator
+  - ai-friendly format: 图片/图形中带有元数据
 
 - image-gen-by-code
   - 文生图难度高，但基于文本的流程图难度低很多，如集成 mermaid

@@ -96,6 +96,16 @@ modified: 2025-09-01T07:58:29.058Z
 
 - ## 
 
+- ## 
+
+- ## [Sometimes I feel like Architecture mode is a waste of tokens. Am I using it wrong? : r/RooCode _202509](https://www.reddit.com/r/RooCode/comments/1nmsu61/sometimes_i_feel_like_architecture_mode_is_a/)
+  - I've seen many people saying how architecture mode is a life saver and it does wonders, however in my experience it hasn't yielded much results, here's why:
+  - I generally do small incremental development steps. For example: 1- build the database schema, 2 - build the seed, 3- use the schema to builde api endpoints, etc. etc..
+  - I feel like Architecture mode is great if you're trying to one-shot a small app with a not very detailed prompt. It designs the whole thing and then you switch to coding mode to build it. However the adjustment and debugging later is massive. Incrementally just ask for coding has made more sense to me so far.
+  - Am I doing this wrong? How do you guys use architecture mode in your workflows to get good results?
+
+- I've used it to build documentation if I'm writing a markdown file. But typically, I just go and use the ask mode.
+
 - ## [Do local LLMs do almost as well with code generation as the big boys? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1naiud3/do_local_llms_do_almost_as_well_with_code/)
 - You can run qwen 3 coder with 512GB M3 ultra easily.
   - Not the 480 though I dont think. Read and a few responses indicate that + context would need about 1TB of ram.

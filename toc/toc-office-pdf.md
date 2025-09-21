@@ -396,6 +396,14 @@ modified: 2021-01-04T17:26:43.784Z
   - Users can select a page from the uploaded PDF and view its content as text.
   - 依赖streamlit、pdf2image、pypdf2、pillow
 
+- https://github.com/chromium/pdfium /apache2/202509/cpp
+  - https://pdfium.googlesource.com/pdfium/
+  - The PDF library used by the Chromium project
+  - PDFium uses the same build tooling as Chromium. PDFium is located in` third_party/pdfium` in Chromium's source code.
+  - PDFium uses GN to generate the build files and Ninja to execute the build files.
+  - PDFium may be built either with or without JavaScript support, and with or without XFA forms support. Both of these features are enabled by default.
+  - By default, the entire project builds with C++20.
+
 - https://github.com/pdfarranger/pdfarranger /GPL/202502/python
   - PDF Arranger is a small python-gtk application, which helps the user to merge or split PDF documents and rotate, crop and rearrange their pages using an interactive and intuitive graphical interface. 
   - It is a front end for pikepdf.
@@ -506,14 +514,13 @@ modified: 2021-01-04T17:26:43.784Z
   - http://www.sumatrapdfreader.org/
   - SumatraPDF reader for windows only
 # pdf-doc/rag
-- https://github.com/docling-project/docling /37.1kStar/MIT/202508/python
-  - https://github.com/DS4SD/docling
+- https://github.com/docling-project/docling /39.3kStar/MIT/202509/python
   - https://docling-project.github.io/docling
   - Docling simplifies document processing, parsing diverse formats
   - Transform PDF to JSON or Markdown with ease and speed
   - Parsing of multiple document formats incl. PDF, DOCX, PPTX, XLSX, HTML, WAV, MP3, images (PNG, TIFF, JPEG, ...), and more
   - 模块化设计，集成 Unstructured、LayoutParser 等库，支持本地化处理
-  - 需 CUDA 环境，部分功能依赖商业模型
+  - ~~需 CUDA 环境，部分功能依赖商业模型~~
   - Advanced PDF understanding incl. page layout, reading order, table structure, code, formulas, image classification, and more
   - Unified, expressive DoclingDocument representation format
   - export formats: Markdown, HTML, DocTags and lossless JSON

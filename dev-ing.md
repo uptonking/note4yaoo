@@ -272,7 +272,7 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
   - Common in smartphone and modern SoC designs (Apple, some Intel/Android SoCs).
   - Apple’s Neural Engine (M1/M2 chips), Intel Meteor Lake AI Accelerators, or AMD Ryzen AI.
 
-- 💡 [Cline + LM Studio: the local coding stack with Qwen3 Coder 30B - Cline Blog](https://cline.bot/blog/local-models)
+- 💡 [Cline + LM Studio: the local coding stack with Qwen3 Coder 30B - Cline Blog _202508](https://cline.bot/blog/local-models)
   - 🧩 KV Cache Quantization: Leave unchecked. The KV cache setting is important. While it can be an optimization for some processes, it will persist context between tasks and create unpredictable behavior. Keep it off for consistent performance.
   - You can now run Cline completely offline.
   - LM Studio provides the runtime, Qwen3 Coder 30B provides the intelligence, and Cline orchestrates the work

@@ -670,10 +670,24 @@ modified: 2024-08-24T16:28:20.515Z
   - Im running debian
 
 - I created a PR that solves this issue on my machine. The cause was (in Windows using Claude Code through the WSL) trying to send all the context as part of the command-line arguments, and Windows PowerShell wouldn't accept more than 8191 characters, which was being vastly outstripped. The PR changes the approach to use stdin and Claude Code's expected schema. There is a lot being passed in just the system prompts, and that alone was hitting that limit on my machine, never mind any open files.
-
-## docs-RooCode-roadmap
+# discuss-Roo-roadmap
+- ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## ⚡️ [Add a 'compact prompt' option for local LLMs · Issue · RooCodeInc/Roo-Code _202508](https://github.com/RooCodeInc/Roo-Code/issues/7550)
+  - When using Roocode with local llm providers (like LM Studio ), API requests regularly stall and hit the 300s timeout This happens with browser/mcp tools disabled
+  - The cause seems to be that roo always builds a very large prompt/context, which local models (running at 7–10 tok/sec) cannot process fast enough
+  - Other Vscode extensions i tested (Cline, Void, Kilocode) remain usable under the same conditions because they send by default a more compact prompt, Cline also introduced a 'compact prompt' option that reduces context size when a local provider is selected
+
+- This is a complex and interesting proposal. We do not have enough internal conviction to commit right now.
+  - If someone in the community can put together a small MVP, we will revisit.
 
 - ## [Support for Alternative Vector Databases in Codebase Indexing _202507](https://github.com/RooCodeInc/Roo-Code/issues/6223)
   - Users are limited to Qdrant as the only vector database option for codebase indexing

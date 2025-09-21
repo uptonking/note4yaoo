@@ -1,11 +1,11 @@
 ---
-title: lib-office-markdown-extensions
-tags: [markdown, proposal]
+title: lib-office-markdown-dev
+tags: [markdown, markdown-extension, proposal]
 created: 2021-06-02T15:23:28.922Z
-modified: 2021-06-02T15:26:19.890Z
+modified: 2025-09-21T18:39:13.776Z
 ---
 
-# lib-office-markdown-extensions
+# lib-office-markdown-dev
 
 # guide
 - markdown-pros
@@ -18,6 +18,17 @@ modified: 2021-06-02T15:26:19.890Z
 
 - hashtag🤔
   - 有助于提取结构化内容
+
+- markdown-table
+  - csv常作为基于文本的表格的一种形式, 可参考现有的基于csv的扩展
+  - 另一种方案是参考obsidian-bases, 用yaml来输入table
+
+- markdown-layout
+  - pdf2markdown后支持渲染为分栏布局
+
+- markdown-ai
+  - 文生图包含元数据，方便复现
+  - ai-friendly format: 图片/图形中带有元数据
 
 - markdown-extensions
   - mdx
@@ -48,9 +59,6 @@ modified: 2021-06-02T15:26:19.890Z
 
 - rmarkdown
   - [cheatsheet: dynamic, reproducible, citations](https://blog.rstudio.com/2021/08/23/cheat-sheet-updates/)
-
-- markdown-table
-  - csv常作为基于文本的表格的一种形式, 可参考现有的基于csv的扩展
 
 - ref
   - commonmark rfcs

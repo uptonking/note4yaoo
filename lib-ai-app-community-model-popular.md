@@ -53,7 +53,7 @@ modified: 2025-09-16T19:59:57.856Z
   - 4b及14b的输出内容都比较详细，经常包含表格📈
 
 - gpt-oss-20B-A3.6B 👀 /业界标杆/输出快
-  - 输出的内容特别喜欢用表格📈
+  - 输出的内容特别喜欢用表格📈, 讨论代码相关问题也喜欢用表格
   - unsloth-Q5的输出速度为 11.8 tops, offcial-Q4的输出速度为 11.2 tops, 速度比qwen3-14b更快
 
 - magistral-small-2509-24b  👀 /可以用/think+vision/欧洲多语言/产品线丰富
@@ -474,6 +474,34 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Magistral 1.2 is incredible. Wife prefers it over Gemini 2.5 Pro. : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nmii5y/magistral_12_is_incredible_wife_prefers_it_over/)
+- I tested the latest release of Magistral Small 2509 in three case scenarios using LM Studio.
+  - Extract text from an educational YouTube video using an MCP server
+  - Create a summary
+  - Once the summary is complete, create a "clean" document from the informative text extracted from the video.
+- I compared it with: -Qwen 4b no thinking -GPT 20b thinking medium -Magistral Small 2509 thinking -Qwen 30b instruct
+- The best extraction with an MCP server was performed by Qwen 4b. 
+  - Magistral Small looped even at low temperatures. 
+  - GPT 20 was slower in processing the prompt, but everything was fine. 
+  - Qwen 30b was slower than 4b, but the result was the same.
+- In the summary, Qwen 30b won out, both in formatting and in terms of ease of reading and rewriting the video in a clean and presentable format (removing chatter, etc.). 
+  - Unfortunately, Magistral was the worst, producing answers that were too concise, even when reworking the prompt. 
+  - For this specific assignment, Qwen 4b + 30b is the best solution for both speed and final result. Using the MCP tools (YouTube search, video text extraction, Google search) was perfect. 
+  - I'm keeping it(magistral) only for its image reading capabilities (OCR). 
+  - I haven't tested other LLMs because I try to beat the current best (for me) in the real world use case. I suggest testing Magistral 1.2 in other real-world situations.
+
+- ## [Just dropped: Qwen3-4B Function calling on just 6GB VRAM : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nmkswn/just_dropped_qwen34b_function_calling_on_just_6gb/)
+  - Fine-tuned on 60K function calling examples
+
+- Qwen 3 4B 2507 versions were already excellent at tool calling tho. What improvements have you made over that?
+  - DPO with extreme negative pairs on top of the base model with the same amount of samples. It’s the best checkpoint will post the tensor board, worked quite well with codex on initial testing. 
 
 - ## [Would it be possible to run gemma3 27b on my MacBook Air M4 with 32GB of Memory/RAM? : r/LocalLLaMA _202503](https://www.reddit.com/r/LocalLLaMA/comments/1jig91a/would_it_be_possible_to_run_gemma3_27b_on_my/)
 - I happen to have just purchased this exact configuration (MacBook Air M4 with 32GB)
