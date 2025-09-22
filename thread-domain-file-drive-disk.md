@@ -32,23 +32,6 @@ modified: 2024-08-03T20:00:33.414Z
 
 - ## 
 
-- ## [What's the Obsidian of file hosting/cloud storage? : r/selfhosted _202506](https://www.reddit.com/r/selfhosted/comments/1ljnsf9/whats_the_obsidian_of_file_hostingcloud_storage/)
-- NextCloud, OwnCloud both do this. Otherwise any WebDAV server (Caddy, Apache, KaraDAV etc) with WebDAV client of your choice.
-  - OpenCloud (recent fork of OCIS the GoLang rewrite of OwnCloud) is making thier Posix backend the default.
-  - It's just about perfect in my opinion, the only downside is it's not the easiest to configure, but has been very stable and lightweight in my experience.
-- OpenCloud has only been forked for a month or two. Give it time.
-
-- Opencloud stores everything as normal files on the filesystem, and includes Collabora for editing. I recently switched to it from Seafile and am happy with the change, quick and stable with a better UI.
-
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-
 - ## [Nextcloud Alternative : r/selfhosted _202412](https://www.reddit.com/r/selfhosted/comments/1hdixdv/nextcloud_alternative/)
 - Spun up Seafile, and using webdav for Obsidian.me
 
@@ -87,7 +70,7 @@ modified: 2024-08-03T20:00:33.414Z
 - SMB share + FileBrowser
 - What I settled on was simply adding tailscale to my devices, mounting `SMB` shares as a network drive on windows/Linux devices, and pointing `filebrowser` running on docker at the same SMB share to let me access the files through a browser on my android/iOS devices. So far it's been rock solid due to how uncomplicated it is.
 
-- OpenCloud - https://opencloud.eu/en - which has been created and forked by the original owner of OwnCloud who has now left OwnCloud 
+- OpenCloud - which has been created and forked by the original owner of OwnCloud who has now left OwnCloud 
 
 - I don't like the proprietary file format of seafile.
 

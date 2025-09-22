@@ -318,6 +318,23 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Is there a classification of worst vs best ai models for RAG : r/Rag _202509](https://www.reddit.com/r/Rag/comments/1nk2rza/is_there_a_classification_of_worst_vs_best_ai/)
+- For small models, most of our users have converged around: Gemma3, Qwen3, and DeepSeek
+  - I always use for demos Mistral Medium 3.1 (mistral-medium-2508), which is a very good middle ground.
+  - For the "large" LLMs, Gemini Flash variants and Claude Sonnet or Haiku. OpenAI models have *never* been good at this use case. The GPT-OSS models have been abysmally bad in testing.
+
+- For an embeddings model, we've been using all-MiniLM-L6-v2 since we released TrustGraph, and haven't really seen any need to change. The platform allows you to choose any embeddings model from HF, but all-MiniLM-L6-v2 seems to do just fine in most use cases. If you want be able to try out all these model combinations, you can give them a try with TrustGraph (open source).
+
+- gemma3 worked best in my case(turkish docs)
+  - but rag mostly depends on understanding and memorization abilities
+
+- I have tried several OpenAI models for our RAG system, and got great results using gpt-4.1-mini.
+  - Via the API, it is the OpenAI model that has the largest context window right now.
+
 - ## [embeddinggemma has higher memory footprint than qwen3:0.6b? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nbbi1c/embeddinggemma_has_higher_memory_footprint_than/)
 - For whatever reason, Gemma models have a larger vocab size of 256K whereas most models have a vocab size of around 120k. This adds to the size
 

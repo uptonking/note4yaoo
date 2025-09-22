@@ -105,6 +105,16 @@ modified: 2025-09-16T12:36:12.968Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Getting counter-intuitive results with local KV Cache Quantization Benchmark - am I doing something wrong? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nn2nqz/getting_counterintuitive_results_with_local_kv/)
+  - I've been running some benchmarks on KV cache quantization for long-context tasks, and I'm getting results that don't make much sense to me. 
+  - The Weird Results: I was expecting to see a clear trend where higher quantization (like q4_0) would lead to a drop in accuracy compared to the f16 baseline. Instead, I'm seeing the opposite. My best performing combination is k-f16_v-q5_0 with 16.79% accuracy, while the f16-f16 baseline only gets 13.74%.
+
+- You see scattered reports of quantized KV increasing accuracy because it “fuzzes” attention in a way that actually benefits (specifically) low bit weight quants. Basically it acts as an implicit smoothing function. I’ve not had amazing luck with llama.cpp’s implementation, but EXllama’s KV cache quants seem to perform exceptionally well at even 4-bits. 
+
 - ## [国内外大模型API平台体验对比 - 知乎](https://zhuanlan.zhihu.com/p/1914700194517345472)
 
 - 如果想使用国内的模型API，推荐使用国内云厂商提供的API服务或第三方代理平台。

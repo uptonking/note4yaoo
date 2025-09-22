@@ -248,6 +248,25 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
 
 ```
 
+## 0922
+
+- what's the filesystem for macos, ntfs or xfs ?
+  - `diskutil info /` will show `File System Personality:   APFS`, Protocol: Apple Fabric.
+  - APFS — default since macOS High Sierra(10.13/2017 and later) for SSDs and for most modern macOS (supports snapshots, cloning, encryption, space sharing).
+  - HFS+ (Mac OS Extended, Journaled) — older macOS used this (spinning HDDs / legacy systems).
+  - exFAT / FAT32 — supported both read/write by macOS and Windows; good for cross-platform external drives.
+- ext4 (Fourth Extended Filesystem)
+  - Commonly used as the default filesystem for general-purpose storage on Linux systems.
+  - Supports large files (up to 16 TB) and file systems (up to 1 exabyte).
+- XFS (eXtensible Filesystem)
+  - Designed for high performance and scalability.
+  - Supports very large files (up to 8 exabytes) and file systems (up to 16 exabytes).
+  - Copy-on-write for metadata operations (improves performance and data integrity).
+- Unix/BSD: May use UFS, ZFS, or other filesystems, but not ext4/XFS by default.
+
+- [GNU make - Options Summary](https://ftp.gnu.org/old-gnu/Manuals/make-3.79.1/html_node/make_93.html)
+  - `-C dir ` / `--directory=dir` Change to directory dir before reading the makefiles.
+
 ## 0920
 
 - [Add cli switch to show generation time and tokens/sec output time · Issue · ollama/ollama](https://github.com/ollama/ollama/issues/1806)

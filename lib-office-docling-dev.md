@@ -19,8 +19,11 @@ modified: 2025-09-21T13:58:08.942Z
   - custom serialization: include pic caption, annotation
 # draft
 - 对于任意一个文件，如何自动选择pipeline来convert
-# dev-xp
 
+- vlm
+  - 如何流式输出
+# dev-xp
+- 使用lmstudio的granite-docling-mlx时，lmstudio的server日志不断出现重复文字，最终返回的文本不完整
 # faq
 - Python 3.13 is supported from Docling 2.18.0.
 

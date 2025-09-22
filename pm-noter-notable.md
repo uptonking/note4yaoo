@@ -135,7 +135,7 @@ modified: 2023-11-28T14:48:45.910Z
 
 - why-local-ai?
   - privacy: code, data
-  - tweak different configs for ai-models
+  - tweak different configs for ai-models: uncensored
   - no implicit ai degradation/switch: bring your model
   - cost: unlimited tokens
   - network agnostic

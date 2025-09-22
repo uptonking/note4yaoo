@@ -72,6 +72,9 @@ modified: 2025-09-16T19:59:57.856Z
   - z1的think时间比qwen3长很多，
   - 输出内容的长度比qwen3更少, 输出内容会有表格📈
 
+- resources
+  - [Qwen3: How to Run & Fine-tune | Unsloth Documentation](https://docs.unsloth.ai/models/qwen3-how-to-run-and-fine-tune)
+
 ## models-coding
 
 - tips
@@ -479,7 +482,10 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [Magistral Small 2509 - Jinja Template Modification (Based on Unsloth's) - No thinking by default _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nnj83s/magistral_small_2509_jinja_template_modification/)
+  - 80%~ of my tasks can be done without thinking really, 
+  - From my tests Magistral without thinking performs similar to regular Mistral Small 3.2, Two models in one, why not, fast answers for simple tasks, thinking for complex.
+  - This small mod is based on Unsloth's Jinja template: Magistral model will answer without any thinking by default, but if you add "/think" tag anywhere in system prompt, model with start thinking as usual, quick and simple solution for LM Studio etc.
 
 - ## [Magistral 1.2 is incredible. Wife prefers it over Gemini 2.5 Pro. : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nmii5y/magistral_12_is_incredible_wife_prefers_it_over/)
 - I tested the latest release of Magistral Small 2509 in three case scenarios using LM Studio.
@@ -496,6 +502,12 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
   - For this specific assignment, Qwen 4b + 30b is the best solution for both speed and final result. Using the MCP tools (YouTube search, video text extraction, Google search) was perfect. 
   - I'm keeping it(magistral) only for its image reading capabilities (OCR). 
   - I haven't tested other LLMs because I try to beat the current best (for me) in the real world use case. I suggest testing Magistral 1.2 in other real-world situations.
+
+- translates better than qwen, yes
+
+- For me, the vision capabilities exceed anything I've found on something I can run locally. Better than gemma 3, better than qwen 2.5vl, better than llava. It can read handwritten text and think about what it should be when it's a little sloppy. Can identify pictures with great accuracy and the contents and asking about the picture. The thoughts give helpful information.
+
+- I pretty much only use VLMs for chart analysis and Magistral Small 1.2 seems comparable to Qwen2.5VL 72B, but I prefer Qwen's output 
 
 - ## [Just dropped: Qwen3-4B Function calling on just 6GB VRAM : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nmkswn/just_dropped_qwen34b_function_calling_on_just_6gb/)
   - Fine-tuned on 60K function calling examples
@@ -1152,6 +1164,16 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [I'll show you mine, if you show me yours: Local AI tech stack September 2025 : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nnb8sq/ill_show_you_mine_if_you_show_me_yours_local_ai/)
+- Qwen3 coder 30b is usable with qwen code CLI. You just need to run it with vllm with patched template and parser. Almost zero tool calling issues since then
+  - [Qwen/Qwen3-Coder-30B-A3B-Instruct · How to achieve reliable native function calling](https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct/discussions/12)
 
 - ## [What kind of models can I run with my new hardware 3090 with 24GB VRAM? : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1lrfo4i/what_kind_of_models_can_i_run_with_my_new_hardware/)
 - Gemma3 27b Q4 for best multilingual

@@ -244,6 +244,16 @@ modified: 2025-09-21T13:57:50.332Z
   - If you need a better speed, you can deploy the GPU image to Lightning. AI and set auto-scale (with the minimum option as 0, so you will save costs, when not used)
 
 - I have a related question. I was trying to use Docling to parse a 220 page pdf using gpu accelerators. When monitoring the load, it seemed like CPU was doing majority of the processing with short periods of GPU bursts. But the overall boost remained low when compared to cpu only processing.
+# discuss-roadmap
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [LMStudio, Remote Services, smoldocling · docling-project/docling _202506](https://github.com/docling-project/docling/discussions/1849)
+- It looks like it got stuck in a loop. It seems to do well, then gets stuck over and over
+
 # discuss
 - ## 
 

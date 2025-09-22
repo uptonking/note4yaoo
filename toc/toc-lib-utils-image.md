@@ -54,6 +54,27 @@ modified: 2023-04-04T22:39:45.442Z
 - https://github.com/ximing/fabric-photo /MIT/202003/js/inactive
   - https://ximing.github.io/fabric-photo/
   - 基于 canvas 的纯前端的图片编辑器，支持方形，圆形，箭头，缩放，拖拽，鹰眼，马赛克，涂鸦，线条，导出 png，剪切等
+
+- https://github.com/cshum/imagor-studio /20Star/MIT/202509/go/ts
+  - https://imagor.net/
+  - Self-hosted image gallery and live editing web application
+  - High-performance image gallery with virtual scrolling and live editing capabilities powered by imagor.
+  - Advanced image editing with real-time preview, color adjustments, effects, cropping, and instant URL generation for transformed images.
+  - Mounts your Photos directory as read-only for safe access 
+  - Creates persistent storage for the app database (SQLite)
+  - GraphQL API with gqlgen
+  - Image Processing via imagor and libvips
+  - Storage abstraction (filesystem/S3)
+  - TanStack Router for type-safe routing with loaders
+  - shadcn/ui component library
+  - GraphQL client with code generation
+  - [Imagor Studio: Self-hosted image gallery and live editing web application : r/selfhosted _202509](https://www.reddit.com/r/selfhosted/comments/1nnmgnb/imagor_studio_selfhosted_image_gallery_and_live/)
+  - https://github.com/cshum/imagor /3.8kStar/apache2/202509/go
+    - Fast, secure image processing server and Go library, using libvips
+    - imagor uses one of the most efficient image processing library libvips with Go binding vipsgen.
+    - It is typically 4-8x faster than using the quickest ImageMagick 
+    - imagor implements libvips streaming that facilitates parallel processing pipelines, achieving high network throughput.
+    - Alongside there is imagorvideo bringing video thumbnail capability through ffmpeg C bindings.
 # image-viewer
 - https://github.com/xiaolin/react-image-gallery /js
   - http://linxtion.com/demo/react-image-gallery

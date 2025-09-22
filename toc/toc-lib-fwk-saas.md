@@ -194,6 +194,11 @@ modified: 2021-05-25T09:41:29.066Z
   - Open Source Identity and Access Management solution for modern Applications and Services.
   - This repository contains the source code for the Keycloak Server, Java adapters and the JavaScript adapter.
 
+- https://github.com/libregraph/lico /51Star/apache2/202507/go
+  - LibreGraph Connect implements an OpenID provider (OP) with integrated web login and consent forms.
+  - LibreGraph Connect has it origin in Kopano Konnect and is meant as its vendor agnostic successor.
+  - Lico can provide user login based on available backends.
+
 - https://github.com/casbin/node-casbin /ts
   - https://casbin.org/
   - An authorization library that supports access control models like ACL, RBAC, ABAC in Node.js and Browser

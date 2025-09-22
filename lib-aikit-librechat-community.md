@@ -134,7 +134,13 @@ modified: 2025-09-01T05:53:05.266Z
 
 - ## 
 
-- ## 
+- ## [LibreChat can't be self-hosted in any commercial way even internally, because of MongoDB SSPL? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nn449p/librechat_cant_be_selfhosted_in_any_commercial/)
+  - I want to run it but it seems, it's complicated way to say they backed by MongoDB right? Because you can't self host it and then you need to pay anyway and give them your data.
+
+- there are MongoDB compatible options that aren't Mongo, such as FerretDB. AWS has DocumentDB with a MongoDB compatibility layer, for a hosted instance. So even if your legal interpretation is right, claiming that Librechat can't be self hosted because of the license is still wrong.
+
+- The SSPL applies if you are making mongo itself available to your customers, not if you are using it to back an application you are making available to your customers.
+  - Would have to look at what surface LibreChat exposes, for instance, a vector db is probably part of the customer facing feature set from LibreChat, presumably mongo is just for data storage and query, could be any database.
 
 - ## 🔌 [Enhancement: Custom Plugins (Langchain Tools) as External Modules - Dependency Injection · danny-avila/LibreChat _202404](https://github.com/danny-avila/LibreChat/discussions/2557)
   - According to the documents (make_your_own.md), adding a new plugin to Librechat requires modifying the repository files including `handle_tools.js, index.js, and manifest.json` .
