@@ -109,4 +109,15 @@ modified: 2023-08-29T10:11:26.348Z
 - man git-checkout
   - git checkout (-p|--patch) [<tree-ish>] [--] [<pathspec>…​]
   - Git checkout will overwrite files if you specify pathspec.
+# gitea
+
+```sh
+# build src
+gitea web --port 4440
+
+# for reset from scratch
+rm custom/app.ini
+```
+
+- open http://localhost:4440
 # more

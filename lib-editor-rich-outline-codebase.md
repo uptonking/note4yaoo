@@ -21,6 +21,13 @@ modified: 2021-09-09T20:54:36.354Z
   - yarn build
   - yarn sequelize db:create --env=production-ssl-disabled
   - yarn dev/start
+
+```sh
+# yarn dev not working
+yarn dev:watch
+```
+
+- open http://localhost:4400
 # issues
 
 # backend

@@ -60,7 +60,7 @@ brew services stop --all
 ```
 
 - keycloak
-  - 登录时前端会location.replace http://localhost:8071/api/v1.0/authenticate
+  - 登录时前端会通过location.replace直接访问后端地址 http://localhost:8071/api/v1.0/authenticate
   - 接着django-lasuite会redirect到 http://localhost:8083/realms/impress/protocol/openid-connect/auth
 
 - services(14)
@@ -77,7 +77,6 @@ brew services stop --all
       - kc_postgresql14-5433
   - frontend-dev-3000, node, crowdin
 # overview
-
 - 聊天基于 crisp-sdk-web 实现， Crisp 的核心平台（如聊天服务、AI 功能、CRM 等）是商业闭源的
 # frontend
 

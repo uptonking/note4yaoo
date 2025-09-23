@@ -76,6 +76,11 @@ modified: 2025-08-23T11:42:50.170Z
 - 需要一个类似openrouter/groq的api能支持多个服务生成image, 需要同时支持 sd-webui和comfyui
   - 可参考aisdk来实现
 
+- lmstudio-mlx for stable-diffusion
+
+- booklet 画册
+  - 红楼梦
+
 ## comfyui
 
 - build comfyui from source

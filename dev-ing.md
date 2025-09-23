@@ -248,6 +248,11 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
 
 ```
 
+## 0923
+
+- authentik + tps://github.com/authts/react-oidc-contex
+  - Access to fetch at 'http://localhost:9000/application/o/aktest3000/.well-known/openid-configuration' from origin 'http://localhost:3001' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+
 ## 0922
 
 - what's the filesystem for macos, ntfs or xfs ?

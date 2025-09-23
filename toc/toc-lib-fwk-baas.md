@@ -29,6 +29,13 @@ modified: 2021-05-25T09:40:55.797Z
   - AI + Vector/Embeddings Toolkit
   - Dashboard
 
+- https://github.com/niledatabase/niledatabase /972Star/NonOpen/202508/ts
+  - https://thenile.dev/
+  - Nile is a Postgres platform that decouples storage from compute, virtualizes tenants, and supports vertical and horizontal scaling globally to ship B2B applications fast while being safe with limitless scale
+  - [Are there any plans on Open Sourcing Database? · Issue #395 · niledatabase/niledatabase](https://github.com/niledatabase/niledatabase/issues/395)
+    - I just want to know if the Database is closed source and only offers cloud subscription or will it open source at some point in future?
+    - Yes, we definitely have plans to open source
+
 - parse-server /20.5kStar/apache2/202401/js
   - https://github.com/parse-community/parse-server
   - https://parseplatform.org/

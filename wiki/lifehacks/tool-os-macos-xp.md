@@ -350,7 +350,7 @@ brew services start postgresql@15
 
 # -s, --superuser role will be superuser, to fix role postgres not exist
 createuser -s postgres
-psql - h localhost - U postgres
+psql -h localhost -U postgres
 
 psql -h localhost -U testuser12 -d testdb12;
 
@@ -369,6 +369,11 @@ ALTER USER postgres WITH PASSWORD '11111111';
 ALTER USER some_user PASSWORD NULL;
 
 CREATE ROLE username WITH LOGIN SUPERUSER CREATEDB CREATEROLE PASSWORD 'password';
+
+ALTER USER myuser WITH SUPERUSER;
+
+-- createdb testdb, createdb is a command line utility
+CREATE DATABASE mydatabase;
 
 ```
 
