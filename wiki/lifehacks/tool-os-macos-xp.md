@@ -221,7 +221,15 @@ redis-cli shutdown
 
 - ## 
 
-- ## 
+- ## [Change DNS Server From Terminal (or script) on Mac OS X - Super User](https://superuser.com/questions/86184/change-dns-server-from-terminal-or-script-on-mac-os-x)
+
+```sh
+sudo bash
+mkdir /etc/resolver
+cd /etc/resolver
+echo "nameserver 119.29.29.29" > domain.tld
+echo "nameserver 223.5.5.5" >> domain.tld
+```
 
 - ## [Difference between CleanMyMac and CleanMyMacX ? : r/MacOS _202501](https://www.reddit.com/r/MacOS/comments/1i5kqr4/difference_between_cleanmymac_and_cleanmymacx/)
 - They are both overpriced garbage apps.

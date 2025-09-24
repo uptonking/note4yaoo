@@ -9,7 +9,6 @@ modified: 2022-05-24T17:53:08.400Z
 
 # guide
 - 分析核心需求和问题，拆分问题，梳理任务、子任务，排期开发
-
 金瑶 邀请您加入【金瑶的个人会议室】
 点击链接直接加入腾讯会议：
 https://meeting.tencent.com/p/9606972663
@@ -30,40 +29,29 @@ https://meeting.tencent.com/p/9606972663
 ```shell
 # delete all node_modules folders recursively
 rm package-lock.json
-
 find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + && find . -name 'dist' -type d -prune -exec rm -rf '{}' + && find . -name '.next' -type d -prune -exec rm -rf '{}' +
-
 # maybe prefix sudo
 find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + 
-
 # 格式化当前包，注意在子文件夹执行命令也会从package.json目录开始格式化整个包
 prettier --write '**/*.{js,jsx,ts,tsx,json}' --ignore-unknown
 eslint --ext .js,.ts,.tsx --quiet --fix . 
-
 # npm i
   DEBUG=* npm i --no-audit --loglevel silly
 DEBUG=* npm i --legacy-peer-deps --no-audit --loglevel=silly
 DEBUG=* npm i --legacy-peer-deps --no-audit --loglevel=silly --registry=https://registry.npmmirror.com
-
 npm --registry=https://registry.npmmirror.com install   axios
 yarn add axios --registry=https://registry.npmjs.org/  
 pnpm install --loglevel=debug --registry=https://registry.npmmirror.com  
-
 export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890;export all_proxy=socks5://127.0.0.1:7890
-
 $$('[contenteditable]')
-
 # 先打开一次discord确保下载了更新
 flatpak run com.discordapp.Discord --proxy-server="socks5://127.0.0.1:7897"
 betterdiscordctl -i flatpak install
-
 npx create-strapi@latest --ts --use-npm --git-init  --example --skip-cloud --skip-db    --quickstart ./emptyFolder
-
 vite --host 0.0.0.0 --port 8080
 serve -p 9000 --cors
 HOST=0.0.0.0 PORT=8080 react-scripts start
 next dev -H 0.0.0.0 -p 3000
-
 ```
 
 - dev-goals 不能在产品中检验的技术不玩，注意产品化
@@ -72,7 +60,6 @@ next dev -H 0.0.0.0 -p 3000
   - collaboration, local-first database
   - flowchart/whiteboard/pdf/annotation/comment
   - 事项--截止日期(0730+休整)--重要性(h/m/l/s1-s3)
-
 - deep into lib/fwk 书籍原理与代码实践要分开, 寻找深入debug的状态, learn-by-debug
   - 学习巩固: 实践练习 > 源码/示例 > 文档/论坛 > 社交分享
   - 不要从一个想法开始，而是从一个真正的问题开始
@@ -87,7 +74,6 @@ next dev -H 0.0.0.0 -p 3000
   - 不必执着于vanillajs，常用模式早晚会抽象出工具库或框架，如reactive/effect/ajax/undo
 # dev-2025-方向+方法+时间
 - 👉🏻 output: 代码产出、产品落地、生态积累
-
 - eg-tanstack-table-v8
   - [ ] 方便接入已有的外部数据源
   - [x] 内存数据: nedb, blinkdb
@@ -109,26 +95,21 @@ next dev -H 0.0.0.0 -p 3000
     - 基于log能提升write性能，基于materialized-view能提升read性能
     - 基于oplog实现partial-sync
   - pijul: crdt + vcs
-
 - long-term-support
   - cms, airtable, lowcode
 - techstack-to
   - async/generator, stream, buffer, binary, scheduler, arrow
   - 样式片段也可在线尝试: codepen, w3schools.com 
-
 - separate storage compute example
   - `Lovefield` uses a plug-in architecture for data stores. All data stores implement `lf.BackStore` interface so that query engine can be decoupled from actual storage technology.
-
 - cache/stream for web storage
   - 参考 tanstack-query, falcor, localforage
-
 - 🤔 支持切换内存和异步数据源的示例
   - tanstack-table external data; ag-grid server-side row model
   - abstract-level, localforage
   - tupledb, tinybase
   - tiddlywiki, react-admin
   - service worker, falcor
-
 - collab-sync, partial-sync
   - string-crdt: ? list-crdt
   - logux: sqlite-persistence, lww-with-hlc
@@ -142,17 +123,14 @@ next dev -H 0.0.0.0 -p 3000
   - 结合hlc+crdt: idbsidesync, evolu, rga-crdt
   - 结合hlc+db: piratedb, tinybase, kappa-db-stream, linvodb
   - hypercore: partial-sync
-
 - undo/redo与branching可拆分实现
   - undo与versioning/history基于persistent data structure
   - branching与merge可在应用层实现
   - 多个branching可通过structural sharing共享数据结构
-
 - ui: headless-architecture
   - state + action: 参考autocomplete、search-ui
 - headless组件是否表明react将view与logic耦合在一起封装为component的思路是错误的?
   - 与view视图无关的component本身就是个简单的函数或eventemitter-pattern
-
 - 若slate-model层采用扁平化Node(扁平化的思路可参考event-sourcing/orm/tinybase)
   - 如何保持path和key同步，参考 getKeysToPathsTable, getByKey实现上基于getByPath
   - 优化方向可参考tree的crud及协作
@@ -165,14 +143,12 @@ next dev -H 0.0.0.0 -p 3000
   - sqlite-react: vlcn-orm
   - ast如何扁平化
   - 参考案例: tree、react-admin
-
 - 内容的存储与更新如何与数据库集成
   - 编辑器内容自动保存一般通过在onChange方法中执行saveToDB
     - 也可以在onChange方法中创建内存db、更新索引，通过索引提高计算效率
     - 应该避免维护2份数据
   - 将编辑器的计算密集部分的数据模型不使用普通json对象，而直接用类似数据库模型的设计
   - 为了性能，尽量不要直接读写持久化数据源，要使用缓存object pool
-
 - why use es6 class
   - 运行时类型检查，instanceof
   - 既包含类型定义，又包含逻辑工具方法
@@ -181,7 +157,6 @@ next dev -H 0.0.0.0 -p 3000
   - 方便调试，可直接log到对象及方法，函数里面的闭包变量更新难以定位
     - 也可提前将需要调试的属性或方法添加到闭包暴露的对象或window上
     - 闭包实现的私有属性更安全
-
 - dev-xp-editor
   - 不仅要保持编辑器内容和视图同步，还要保持选区和内容同步
   - 编辑器外部相关面板的协同产品较少，如评论
@@ -191,61 +166,57 @@ next dev -H 0.0.0.0 -p 3000
 - yaoo-proj
   - prosemirror/codemirror + comfyui
   - ~~codemirror-devtools~~
-
 - not-yet
   - ~~elmesque-editor~~, 基于immutable思想实现的编辑器大多采用redux/elm风格
   - branching/versioned-doc
   - pouchdb + kappa-crdt + eav => pouchdb-crdt-eav
   - 做完tailwind-table就面试
-
 - dev-to 提炼核心`需求+产出`工作流，不能在产品中检验的技术不玩
 # dev-09
 - dev-log
   - ?
 - dev-to
   - ?
-
  
-
 ```log //dev-xp
-
 console.log('; ; task ', taskState, runningTaskAction, task?.task_steps)
-
 ^((?!(42\["heartbeat|resourceMonit|refreshXtermCols)).)*$
 ^(?!42\["resourceMonit).* 
-
 /syncUpdates|syncOTUpdates/
 
 ```
-
 ```log //ai
-
 - give an brief intro to reactjs in less than 90 words
-
 - when did deepseek v3.1 model release?
 - when did qwen3-coder model release?
-
 - what's the weather in guangzhou china? give me some food and outdoor-activities suggestions according to weather temperature
-
 - image-lawn
   - a big park for resting and relaxing, there are little trees around a big lawn, some birds are resting in the lawn, The lawn and the trees around it both need pruning
-
 - image-logo-excel-like
   - create a product logo for my excel-like webapp, 
   - the logo brand color should be like green/teal/indigo/..., or any good color that giving a cold and formal feeling, 
   - the logo should express rows or columns or grid, but logo should not be complicated,
-
 add action to add datetime at top of readme.md
-
 add action to create quickSort1.mjs and try to implement quick sort algorithm in less than 60 lines
-
 <!-- 🛝 -->
 use vanilla html/css/javascript to create a simplistic personal profile landing page: homepage shows a big welcoming greeting, then shows 2 example personal projects, then a simple get in touch example email below it
-
 use vanilla html/css/javascript to create a personal profile landing page: homepage shows a cool welcoming animation, then shows 4 example personal projects, then a simple get in touch form below it
-
 use react to create a homepage shows a list of frontend frameworks like react/vue/angular, when clicking the framework, navigate to the route to show its introduction
+```
 
+## 0924
+
+- [Diff syntax highlighting in Github Markdown - Stack Overflow](https://stackoverflow.com/questions/40883421/diff-syntax-highlighting-in-github-markdown)
+
+```diff
+public class Hello1
+{
+   public static void Main()
+   {
+-      System.Console.WriteLine("Hello, World!");
++      System.Console.WriteLine("Rock all night long!");
+   }
+}
 ```
 
 ## 0923
@@ -268,7 +239,6 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
   - Supports very large files (up to 8 exabytes) and file systems (up to 16 exabytes).
   - Copy-on-write for metadata operations (improves performance and data integrity).
 - Unix/BSD: May use UFS, ZFS, or other filesystems, but not ext4/XFS by default.
-
 - [GNU make - Options Summary](https://ftp.gnu.org/old-gnu/Manuals/make-3.79.1/html_node/make_93.html)
   - `-C dir ` / `--directory=dir` Change to directory dir before reading the makefiles.
 
@@ -277,7 +247,6 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
 - [Add cli switch to show generation time and tokens/sec output time · Issue · ollama/ollama](https://github.com/ollama/ollama/issues/1806)
   - ollama run qwen3 --verbose
   - it'll dump the token counts and timing info after each message.
-
 - [Error: EACCES: permission denied, mkdir '/usr/local/lib/node\_modules/node-sass/build' - Stack Overflow](https://stackoverflow.com/questions/49679808/error-eacces-permission-denied-mkdir-usr-local-lib-node-modules-node-sass-b)
   - [EACCES: permission denied in VS Code MAC - Stack Overflow](https://stackoverflow.com/questions/38980338/eacces-permission-denied-in-vs-code-mac)
   - sudo chown -R $(whoami) .
@@ -295,7 +264,6 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
   - Extremely power-efficient and fast for inference, but not as general-purpose as a GPU. 
   - Common in smartphone and modern SoC designs (Apple, some Intel/Android SoCs).
   - Apple’s Neural Engine (M1/M2 chips), Intel Meteor Lake AI Accelerators, or AMD Ryzen AI.
-
 - 💡 [Cline + LM Studio: the local coding stack with Qwen3 Coder 30B - Cline Blog _202508](https://cline.bot/blog/local-models)
   - 🧩 KV Cache Quantization: Leave unchecked. The KV cache setting is important. While it can be an optimization for some processes, it will persist context between tasks and create unpredictable behavior. Keep it off for consistent performance.
   - You can now run Cline completely offline.
@@ -310,7 +278,6 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
   - Large context ingestion will slow down over time -- this is inherent to long-context inference. If you're working with massive repositories, consider breaking work into phases or reducing the context window.
   - If the model seems unresponsive, confirm "Use compact prompt" is enabled in Cline and "KV Cache Quantization" is disabled in LM Studio. These settings are critical for proper operation.
   - If performance degrades during long sessions, try reducing the context window by half or reloading the model in LM Studio. Very long contexts can strain local inference.
-
 - [LLMLoadModelConfig | LM Studio Docs](https://lmstudio.ai/docs/typescript/api-reference/llm-load-model-config)
   - `llamaKCacheQuantizationType`: Quantization type for the Llama model's key cache. 
     - This option determines the precision level used to store the key component of the attention mechanism's cache. 
@@ -336,17 +303,14 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
   - GPTQ(GPT Quantization) finds quantized weights which minimize the squared error of each layer's output given the provided input.
 - Dynamic quantization is the fastest to run. 
   - DWQ takes longer but typically yields better results.
-
 - DWQ (Distilled Weight Quantization): 
   - This method is more complex. By using the original, larger model as a "teacher, " it fine-tunes the smaller, quantized model to behave more like its powerful predecessor. 
   - This often results in a model that retains more of the original's nuance and accuracy, even at a lower bit-rate. 
   - The goal is to get closer to the performance of a less quantized model while keeping the file size small.
-
 - AWQ (Activation-aware Weight Quantization): 
   - This method is more direct. It intelligently analyzes which weights are most important for the model's performance and protects them during the quantization process. 
   - It's a very effective and efficient way to reduce model size without a catastrophic loss in quality, focusing on preserving the most critical parts of the model's "knowledge."
   - AWQ is designed for hardware efficiency and faster inference, making it suitable for resource-constrained environments . However, it may require adjustments (e.g., reducing max-model-len or using enforce-eager mode) to avoid OOM errors on limited VRAM 
-
 - 🤔👾 i want to download llm in lm studio to use it on my mac with 32GB unified RAM. 
   - for a model like qwen3-32b, which quant should i use: Q6_K_S, Q4_K_S, Q4_K_M, Q4_K_L, Q3_K_L, Q3_K_M ?
   - which model is faster with good quality ?
@@ -356,7 +320,6 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
 - 英译中:  Qwen is excellent. I wish they had a version with reasoning. “Reasoning” seems like mostly smoke and mirrors to me.
   - "smoke and mirrors"采用意译"故弄玄虚"，既保留原比喻意象又确保中文读者理解
   - 也可翻译为: 虚有其表
-
 - [Make changes to node_modules files with patch-package - DEV Community](https://dev.to/roshangm1/make-changes-to-nodemodule-files-with-patch-package-30h4)
   - Track the patch files in git `git add patches/*`
 
@@ -465,7 +428,6 @@ echo curl http://localhost:1234/v1/chat/completions \
 ## 0901
 
 - The most popular model is ChatGPT. The second most popular model is Claude
-
 - 🆚 what's different between the following 2 models? what does awq mean? 
   - [mlx-community/DeepSeek-Coder-V2-Lite-Instruct-4bit-AWQ · Hugging Face](https://huggingface.co/mlx-community/DeepSeek-Coder-V2-Lite-Instruct-4bit-AWQ) 
   - [mlx-community/DeepSeek-Coder-V2-Lite-Instruct-4bit-mlx · Hugging Face](https://huggingface.co/mlx-community/DeepSeek-Coder-V2-Lite-Instruct-4bit-mlx)
@@ -474,7 +436,6 @@ echo curl http://localhost:1234/v1/chat/completions \
   - 4bit-mlx is a 4-bit MLX conversion made with an earlier mlx-lm converter (default MLX quantization), without the AWQ-specific calibration notes
 - AWQ = Activation-Aware Weight Quantization. It’s a 4-bit weight-only quantization method that tries to keep the important weights (and account for activation magnitudes) so model quality drops much less than naive 4-bit quantization. In practice AWQ aims for near-FP16 quality at 4 bits by using activation-aware scaling and targeted preservation/calibration.
   - 强调通过 AWQ 技术在低比特（4-bit）下保持较高精度。
-
 - 🤔 when i download …4bit-mlx-like model, I can use it instantly in LM Studio without configuration 
   - if i download …4bit-AWQ-like model in LM Studio, is it required to config the awq parameters explicitly? if yes, how can i configure it in LM Studio?
 - usually no — you don’t need to type AWQ flags into LM Studio.
@@ -490,7 +451,6 @@ echo curl http://localhost:1234/v1/chat/completions \
   - Try running what the commands do manually. Please note any errors at any step.
   - I ran `npm run frontend` first which built the `librechat-data-provider` component and that seemed to fix the error on my system.
   - 实测多次碰到vite编译子项目时部分子包编译失败而未生成`dist`目录，此时按依赖顺序手动在子包执行 `npm run build` ，可以让项目运行成功
-
 - [Why does "npm install" rewrite package-lock.json? - Stack Overflow](https://stackoverflow.com/questions/45022048/why-does-npm-install-rewrite-package-lock-json)
   - `npm install` honors package-lock.json only if it satisfies the requirements of package.json.
   - If it doesn't satisfy those requirements, packages are updated & package-lock is overwritten.
@@ -526,7 +486,6 @@ echo curl http://localhost:1234/v1/chat/completions \
     - The `chunk_cache` is limited to 10GB in size while the `shard_cache` has a soft limit of 4GB. 
   - If you need to reclaim the space utilized by either cache or need to debug any potential cache-related issues, simply remove the `xet` cache entirely by running `rm -rf ~/<cache_dir>/xet`.
   - At the moment, cached files are never deleted from your local directory: when you download a new revision of a branch, previous files are kept in case you need them again.
-
 - [Fix Codeium Taking Too Much Space on Ubuntu (VS Code Users Must Read) - Duck Cloud _202507](https://www.duckcloud.info/post/fix-codeium-taking-too-much-space-on-ubuntu-vs-code-users-must-read)
   - If you're using Codeium on Ubuntu with VS Code, chances are you've noticed a surprising storage spike
   - Codeium stores local AI model embeddings — and over time, these files can swell to gigabytes of data.
@@ -547,7 +506,6 @@ rm -rf ~/.codeium/database/9c0694567290725d9dcba14ade58e297
   - FLUX uses both CLIP and T5, so the message appears during the process of loading T5.
 - Exactly, it uses both and CLIP will fail due to the missing weights.
   - It's an issue with the CLIP-L textencoder. If replaced with a another one like ViT-L/14 there is no error message.
-
 - `text_projection.weight` is a key associated with the projected pooled output, and many diffusion models do not use this.
   - For this reason, some diffusion models exclude unnecessary keys from the text encoder model when releasing their weights.
   - This is why text_projection.weight is not included in some versions of CLIP-L.
@@ -581,7 +539,6 @@ rm -rf ~/.codeium/database/9c0694567290725d9dcba14ade58e297
 - [fix: Remove `clone-deep` dependency in favor of native `structuredClone` · Pull Request · survivejs/webpack-merge _202407](https://github.com/survivejs/webpack-merge/pull/214)
   - I imagine there's some subtle difference between `structuredClone` and `clone-deep` and there was some structure in your configuration `structuredClone` wasn't able to handle.
   - `async function terserMinify(input, sourceMap, minimizerOptions, extractComments) { }` could not be cloned.
-
 - [quilt(1) - Linux manual page](https://www.man7.org/linux/man-pages/man1/quilt.1.html)
   - Quilt is a tool to manage large sets of patches by keeping track of the changes each patch makes.  
   - Patches can be applied, unapplied, refreshed, and so forth.  
@@ -599,15 +556,11 @@ rm -rf ~/.codeium/database/9c0694567290725d9dcba14ade58e297
 # dev-07-pullOTUpdates/syncOTUpdates-editor-flickering-&-vscode-hover-marked-&-lasuite-local-dev-&-ollama-comfyui
 
 ```log //com-showmebug/clacky
-
 console.log('; ; task ', taskState, runningTaskAction, task?.task_steps)
-
 console.log('; ; act-file-o ', currentOpenedActionId, shouldForceOpenFile, actionPath, currentFilePath)
-
 console.log('; ; taskActions', currentActionId, path, store.cdePlay.enableDiffView(), currentAction, taskActions)
 console.log('; ; open-diff ', enableDiffAnimation, store.cdePlay.enableDiffView(), store.cdeReplay.isMachinePaused())
 console.log('; ; qryDiffSnap ', snapshotFrameResult)
-
 console.log(
 
           ';; 📝 ',
@@ -623,84 +576,55 @@ console.log(
         
 
 ^((?!(42\["heartbeat|resourceMonit|refreshXtermCols|42\["multiTerminal|42\["terminalStatus|42\["activeTerminal|42\["ragStatus|42\["initAiCodeInfo)).)*$
-
 ^((?!(42\["heartbeat|resourceMonit|refreshXtermCols|42\["multiTerminal|42\["terminalStatus|42\["activeTerminal|42\["ragStatus|42\["initAiCodeInfo|42\["fileChange|42\["pullOTUpdates)).)*$
-
 ^((?!(42\["heartbeat|resourceMonit|refreshXtermCols|42\["multiTerminal|42\["terminalStatus|42\["activeTerminal|42\["ragStatus|42\["initAiCodeInfo|42\["fileChange)).)*$
-
 ^((?!(42\["heartbeat|resourceMonit|refreshXtermCols)).)*$
 ^(?!42\["resourceMonit).* 
-
 /syncUpdates|syncOTUpdates/
-
 <!-- 观测云搜索 ide-server -->
 -multiTerminalHeartBeat -all\:multiTerminal -"[fromMQ] multiTerminal" -"[toMQ]paas:multiTerminal" -"] multiTerminal, {" -all\:activeTerminal -"] activeTerminal, {"  -"[toMQ]paas:multiTerminalCmd" -"[fromMQ] terminalStatus" -"appendMultiTerminalProcessName res" -"appendMultiTerminalCmdReply res" -all\:multiTerminalProcessName -all\:multiTerminalCmdReply -all\:initAiCodeInfo -"[fromMQ] lspStatus" -all\:lspStatus -all\:updateDebugSupport -all\:availablePorts -"[fromMQ] portsChanged" -"[fromMQ] availablePorts" -"availablePorts, {}" -"[fromMQ] ragStatus" -"] ragStatus data: [" -"all:ragStatus" -"[fromMQ] vncStatus" -"[fromMQ] config" -"[followingFocusComponent]"
-
 -"toMQ fileContentUpdate begin" -"[toMQ]paas:filePull"  
 -agentAppendFile -"[FileTree_writeFile] fs.writeFile prepared" -"[FileTree_writeFile] success"
-
 <!-- 观测云搜索 frontend -->
 -chunkMessage -richMessage -messageSuggestion -toolCallStatusUpdated
 
 ```
-
 ```log //ai
-
 - when did deepseek v3.1 model release?
 - when did qwen3-coder model release?
-
 - what's the weather in guangzhou china? give me some food and outdoor-activities suggestions according to weather temperature
-
 - lawn
   - a big park for resting and relaxing, there are little trees around a big lawn, some birds are resting in the lawn, The lawn and the trees around it both need pruning
-
 - prompts-logo-excel-like
   - create a product logo for my excel-like webapp, 
   - the logo brand color should be like green/teal/indigo/..., or any good color that giving a cold and formal feeling, 
   - the logo should express rows or columns or grid, but logo should not be complicated,
-
 add action to add datetime at top of readme.md
-
 add an action to run "npm install -ddd" and another action to add datetime at top of readme.md
-
 add action to create a route /nextjs with nextjs changelog content in it , and show nextjs link in home page, when clicking the link, jump to /nextjs route
-
 add action to create quickSort1.mjs and try to implement quick sort algorithm in less than 60 lines
-
 <!-- 🛝 -->
 use create-react-app to create a react-router v6 example webapp in typescript: homepage shows a list of frontend frameworks like react/vue/angular, when clicking the framework, navigate to the route to show its introduction
-
 use vanilla html/css/javascript to create a personal profile landing page: homepage shows a cool welcoming animation, then shows 4 example personal projects, then a simple get in touch form below it
-
 use vanilla html/css/javascript to create a simplistic personal profile landing page: homepage shows a big welcoming greeting, then shows 2 example personal projects, then a simple get in touch example email below it
-
 - line 290 in file  is not tested, please write unit tests to test it
 - line 160-174, 181-185 in file apps/webapp/src/utils/paas-playground.ts
  is not tested, please write unit tests to test it
-
 - ensure tests pass by auto run terminal commands  npx nx run webapp:test  src/__tests__/hooks/use-time-machine.test.tsx
 - ensure tests pass by auto run terminal commands  npx nx run shared-utils:test __tests__/env-browser.test.ts
-
 - ensure tests pass by auto run terminal commands  cd packages/client && pnpm test  src/lib/codemirror-languageserver/src/__tests__/utils.spec.ts
-
 - ensure tests pass by auto run terminal commands cd packages/server && pnpm test apps/entry/__tests__/fileUtils.spec.ts
-
 - you can mock state/store/data/websocket/external-dependencies, especially you can refer to this test file apps/webapp/src/__tests__/components/chat-box/action-panel.test.tsx to mock store/useTrackedStore/actions
-
 - you can mock state/store/data/external-dependencies/modules, especially you can refer to this test file apps/webapp/src/__tests__/components/cde-header/run-status-button.test.tsx to mock store/useTrackedStore/actions
-
 - you can use jest and @testing-library/react, 
 - Each unit test should be independent of other tests. Avoid sharing state or dependencies between tests by using beforeEach/beforeAll/afterEach/afterAll
 - you had better write only in test files and not modify original source code
-
 - Handle asynchronous code correctly 
-
 - 👾
 - tests failed, run test command again and fix issues
 - yes, auto fix issues to make tests pass, donnot ask me again
 - you can mock codemirror-related packages, like @codemirror/view
 - you only need to test  line  715-732 , donnot write tests for more lines
-
 test('mock test', () => {
   expect(true).toBe(true);
 });
@@ -710,7 +634,6 @@ test('mock test', () => {
 
 - [Running on CPU only · Issue · comfyanonymous/ComfyUI](https://github.com/comfyanonymous/ComfyUI/issues/718)
   - `python main.py --cpu`
-
 - [Failed to initialize database. · Issue · comfyanonymous/ComfyUI](https://github.com/comfyanonymous/ComfyUI/issues/8764)
   - for macos, go to folder `/Applications/ComfyUI.app/Contents/Resources/ComfyUI`, and create a folder named `user` inside it .
 
@@ -739,7 +662,6 @@ test('mock test', () => {
 ## 0710
 
 - hover浮窗尺寸限制: w-400, h-240
-
 - YARD has become the de‑facto standard for Ruby documentation—and most IDEs will show these docstrings on hover. 
   - You simply put `#` lines immediately above your method or class, optionally using `@param/@return` tags
 - RDoc-style comments
@@ -773,7 +695,6 @@ import 'highlight.js/styles/atom-one-dark.css'
 
 - The standard JavaScript Error object and its descendants (like TypeError, ReferenceError, etc.) have properties like message, name, and stack. However, these properties are not enumerable.
   - JSON.stringify() only includes an object's enumerable properties in the resulting JSON string. Since stack, message, and name are not enumerable, JSON.stringify() ignores them completely.
-
 - [typescript - Why Catch clause variable type annotation must be any? - Stack Overflow](https://stackoverflow.com/questions/69021040/why-catch-clause-variable-type-annotation-must-be-any)
   - unknown type exists as a safe alternative to any, because operations with unknown type are illegal, so you are forced to type check your unknown variable before doing anything.
 
@@ -784,20 +705,17 @@ import 'highlight.js/styles/atom-one-dark.css'
   - macos: base64 /dev/urandom | head -c 2097152 > textfile.txt
   - brew install coreutils
   - gbase64 -w 0 /dev/urandom | ghead -c 2M > textfile.txt
-
 - The size property returned by `fs.statSync` in Node.js is in **bytes** 
 # dev-06-agentAppendFile-jank-&-LSP-def-jump-back/forward-&-codemirror-tooltip-merged-&-colanode-webapp
 - lsp支持的语言排查
   - 鼠标放上去就消失lint了
   - 让settings开关联动
-
 - 文件树M标记的处理
   - 清理标记的时机， fork时和commit时，提供手动删除.1024feature-file的能力
     - goAgent去删，ideServer不关心git操作和文件操作
   - A/D标记不支持
   - goAgent触发的时机不太确定，计算资源占用大
   - gitignore的文件不应该显示M
-
 - 🔲 🔜
   - terminal放大缩小折叠展开后，光标自动聚焦在terminal
   - 编辑器行号宽度样式优化
@@ -842,10 +760,8 @@ import 'highlight.js/styles/atom-one-dark.css'
   - "file:///home/runner/app/home/runner/.nvm/versions/node/v22.16.0/lib/node_modules/typescript/lib/lib.dom.d.ts"
   - "file:///home/runner/.cache/typescript/5.8/node_modules/%40types/node/console.d.ts"
   - "file:///home/runner/.nvm/versions/node/v22.16.0/lib/node_modules/typescript/lib/lib.dom.d.ts"
-
 - go/python/java/ruby挂载的目录在 dependency/ 
 - .nvm及操作系统默认的目录如.cache挂载在 容器 dependency/home/ 对应 操作系统 ~/home/
-
 - lsp-ts跳转失败路径
   - /home/runner/.nvm/versions/node/v22.16.0/lib/node_modules/typescript/lib/lib.dom.d.ts
 
@@ -855,14 +771,12 @@ import 'highlight.js/styles/atom-one-dark.css'
   - 在jest + nx的测试代码出现此问题
   - 解决方法是， 不使用 const utils = require('@clacky-ai/utils')
     - 而用 全局变量 mockCheckIsAppleOs = jest.requireMock('@clacky-ai/utils').checkIsAppleOs
-
 - [how do I make the test wait for useEffect's update to be called first - Stack Overflow](https://stackoverflow.com/questions/76824340/how-do-i-make-the-test-wait-for-useeffects-update-to-be-called-first)
 
 ```jsx
 // __tests__/App.test.tsx
 import { render, screen, waitFor } from "../test-utils";
 import App from "../App";
-
 test("loads and displays greeting", async () => {
   // Render your APP to the DOM
   render(<App />);
@@ -878,13 +792,10 @@ test("loads and displays greeting", async () => {
 
 - 无法跳转的场景: 普通切换文件
 - 未失焦的场景下，刷新页面不能恢复光标位置
-
 - [How do you put api routes in the new app folder of Next.js? - Stack Overflow](https://stackoverflow.com/questions/75418329/how-do-you-put-api-routes-in-the-new-app-folder-of-next-js)
   - app\api\routes.ts
-
 - [error TypeError: Cannot read properties of undefined (reading '') when using Next.js runtime edge on turborepo or Nx · Issue #53562 · vercel/next.js](https://github.com/vercel/next.js/issues/53562)
   - I got it fixed. Seems like every app requires the dev script to be: "dev": "next dev --turbo" instead of "dev": "next dev"
-
 - [Organization repo + hobby plan in Vercel - DEV Community](https://dev.to/algoorgoal/deploying-organization-repo-to-vercel-with-a-hobby-plan-2f3h)
   - Vercel doesn't support deploying an organization repository for free, you will need some workaround if you want to stay on the hobby plan. 
   - In this post, I'll talk how you can do it with github actions. 
@@ -901,7 +812,6 @@ test("loads and displays greeting", async () => {
 // 对于0-1项目， historyBaseData:[]
 stts.dao.channel().send('getPlaybackInfo')
 // ⬆️ [ "getPlaybackInfo", {}, { "currentDockerId": "806278374774525952" } ]
-
 // ⬇️ playbackInfo
 {
   "playbackSummerize": {
@@ -990,7 +900,6 @@ stts.dao.channel().send('getPlaybackInfo')
 
 - [how to implement back and forward functionality like browser - Stack Overflow](https://stackoverflow.com/questions/6869476/how-to-implement-back-and-forward-functionality-like-browser)
   - 一种思路是使用2个栈， backStack/forwardStack
-
 - 🤔 i want to implement jumping backward and forward in custom text editor written in typescript.
   - solution 1:  use 2 array stacks.  const backStack=[]; const forwardStack=[]; when user clicks in the editor, the cursor position is pushed into backStack. when user click backward/forward button, position is popped from backStack then pushed into forwardStack.
   - solution 2: use 1 array to store history positions, and a currentPos as array index. when user click backward/forward button, just move the currentPos backward/forward to get the cursor position. 
@@ -1016,7 +925,6 @@ stts.dao.channel().send('getPlaybackInfo')
   - ~~方案1: agentAppendFile不触发文件持久化，事件开始和结束时添加标记，开始时写到内存缓存，结束时自动持久化到磁盘，也能减少lint计算等操作~~
   - ~~方案2: agentAppendFile不触发文件持久化，由ai手动触发持久化~~
   - 💡 讨论后采用方案， 对于ideServer主动告知goAgent文件变化的场景，不需要goAgent再次发送fileChange事件通知ideServer文件内容变了，这样ideServer发送给前端的文件更新事件pullOTUpdates只剩下一个，此方案更简单且能满足需求
-
 - 流式输出时编辑器闪烁，似乎不是ot事件导致的问题，实测在36s写文件300次都是正常的
   - 🤔 receiveOTUpdates 的直接原因是 pullOTUpdates 的版本号少了一次
     - 进一步确认，当触发了 `[vitualOT]mock filechange` 逻辑的文件才异常闪烁, 把doc.version打印出来看看
@@ -1043,7 +951,6 @@ async function aa() {
   - 06/10 21:21:23.155993 refresh 强制刷新文件
   - 实测 agentAppendFile 向ideServer写代码的频率为 4-8次/s, 即 4-8行/s
     - 在异常场景下， 由于fileChange事件通知ideServer有文件变化，ideServer不停持久化、计算变化op 处理出现异常
-
 - 用户A手动输入字符b时，用户B接收事件的时序
   - 1024paas的旧版事件只有3个
     - 42["pullOTUpdates",{"updates":[{"changes":[14]
@@ -1094,7 +1001,6 @@ async function aa() {
     }
   }
 }
-
 // ⬇️ pullOTUpdates
 {
   "updates": [{
@@ -1142,7 +1048,6 @@ async function aa() {
     }
   }
 }
-
 // ⬇️ 42["fileChange",{"data":["README.md"]}] , 2次相同
 // ⬇️ fileTree, 2次 create + feature
 {
@@ -1178,7 +1083,6 @@ async function aa() {
   - ⬇️ file, {"path":"heapSort.mjs", "timestamp":1749459434122, "fileRootId":"home", "loadType":"refresh", "fileRootPath":"", "readOnly":false} 
   - ⬆️ self[b10985e2-97a9-4fa2-a8fb-c5f19758f4c8] file, {"agentUserId":"b10985e2-97a9-4fa2-a8fb-c5f19758f4c8", "data":{"revision":72, "openedPath":"heapSort.mjs", 👉 "isRefresh":true, "isBinary":false, "ext":"mjs", "mapSelection":{}, "content":"
   - ⬇️ openFileByFollow, {"fileOpened":"heapSort.mjs"}
-
 - editor闪烁是由于多次打开文件，相关日志如下
 
 ```log
@@ -1219,14 +1123,10 @@ receiveOTUpdates error  heapSort.mjs RangeError: Applying change set to a docume
 
 - ai工作状态变化， 会触发 ide-server 和 sdk前端 相关事件
   - action init > in-progress: sdk前端会先打开跟随文件，但sdk内存状态的跟随文件还是旧文件
-
 - ai刚开始工作时，打开文件错误的问题
   - sdk的user-fileOpened是旧状态
-
 - ai写完后，编辑器闪烁的问题
-
 - ai写完后，再次打开diff的问题
-
 - ai工作时的主要事件时序, 流式输出
   - ⬆️ "followingAgentUser", "clacky"
   - //////
@@ -1243,7 +1143,6 @@ receiveOTUpdates error  heapSort.mjs RangeError: Applying change set to a docume
   - ⬆️ { "path": "testSort.mjs", "timestamp": 1749194170868, "fileRootId": "home", 🚩 "loadType": "refresh", "fileRootPath": "", "readOnly": false }
   - ⬆️ { "path": "testSort.mjs", "timestamp": 1749194173066, "fileRootId": "home", 🚩 "loadType": "refresh", "fileRootPath": "", "readOnly": false }
   - ⬆️ { "path": "testSort.mjs", "timestamp": 1749194195435, "fileRootId": "home", 🚩 "loadType": "refresh", "fileRootPath": "", "readOnly": false }
-
 - ai工作时的主要事件时序, 非流式输出
   - ⬆️ "followingAgentUser", "clacky"
   - //////
@@ -1260,7 +1159,6 @@ receiveOTUpdates error  heapSort.mjs RangeError: Applying change set to a docume
   - ⬇️ [ "file", { "agentUserId": "clacky", "data": { "revision": 1, "openedPath": "style.css", 👉 "isRefresh": true, "isBinary": false, "ext": "css", "mapSelection": {}, "content": "xxx y“ }, "timestamp": 1749126885851 } ]
   - //////
   - 执行结束后，有时sdk会请求再次打开最后一个文件
-
 - ai工作时的主要事件时序, 流式状态
   - ⬆️ [ "followingAgentUser", "clacky" ]
   - ⬆️ [ "file", { "path": "style.css", "fileRootId": "home", "loadType": "follow", "fileRootPath": "", "readOnly": false }  ]
@@ -1277,7 +1175,6 @@ receiveOTUpdates error  heapSort.mjs RangeError: Applying change set to a docume
 
 .rbenv
 .sdkman
-
 - go-to-definition 容器中执行pwd、lsp返回的地址
   - `/home/runner/.nvm/versions/node/v22.16.0/lib/node_modules/typescript/lib/lib.dom.d.ts`.
     - 实际地址 /app/data/codeZone/2025/1/6-19/@5c32b7b0-d171-4c22-b755-29697210f00d/dependency/home/.nvm/versions/node/v22.16.0/lib/node_modules/typescript/lib/lib.dom.d.ts
@@ -1286,7 +1183,6 @@ receiveOTUpdates error  heapSort.mjs RangeError: Applying change set to a docume
   - `/home/runner/.gvm/pkgsets/go1.23/global/pkg/mod/github.com/gin-gonic/gin@v1.9.0/gin.go`.
     - 实际地址  /app/data/codeZone/2025/dependency/.gvm/pkgsets/go1.23/global/pkg/mod/github.com/gin-gonic/gin@v1.9.0/gin.go
   - `/home/runner/app/main.go`
-
 - ide-server 通过node fs.readFile读取的地址
   - /app/data/codeZone/2025/1/6-4/@f0e6d0c4-04e5-4706-b230-980466466a1b/dependency/ home/app/main.go
   - dependency/home on /home/runner type nfs
@@ -1309,7 +1205,6 @@ receiveOTUpdates error  heapSort.mjs RangeError: Applying change set to a docume
 - [expect(jest.fn()).toHaveBeenCalled() fails even though the function has been called - Stack Overflow](https://stackoverflow.com/questions/67538405/expectjest-fn-tohavebeencalled-fails-even-though-the-function-has-been-cal)
   - 箭头函数每次都是新函数  store: { dao: { isPlayBack: () => false, channel: () => ({ loadFile: mockLoadFile, 
   - const mockLoadFile = jest.fn(() => console.log('; ; loadFile')); 
-
 - [Service mocked with Jest causes "The module factory of jest.mock() is not allowed to reference any out-of-scope variables" error - Stack Overflow](https://stackoverflow.com/questions/44649699/service-mocked-with-jest-causes-the-module-factory-of-jest-mock-is-not-allowe)
   - The problem is that all `jest.mock` will be hoisted to the top of actual code block at compile time, which in this case is the top of the file. At this point VocabularyEntry is not imported. You could either put the mock in a `beforeAll` block in your test or use `jest.mock` like this
   - const VocabularyEntry = require("../../../src/model/VocabularyEntry"); 
@@ -1335,16 +1230,13 @@ async function test() {
     console.log("hi ", i);
   }
 }
-
 test();
-
 // traditional
 let loop = 0;
 
 function loop() {
   console.log("hi");
   x++;
-
   if (x < 3) {
     setTimeout(loop, 10000);
   }
@@ -1365,21 +1257,17 @@ loop();
 
 ```JSX
 import {screen} from '@testing-library/dom'
-
 <div data-testid="custom-element" />
-
 const element = screen.getByTestId('custom-element')
 ```
 
 **昨天完成:** 
 - [ ]  补充单元测试， 进度60%
 - [x]  增强ux，打开根目录外文件显示全路径且支持点击copy
-
 **今日计划:** 
 - [ ]  补充单元测试
 - [ ]  增强ux，打开根目录外文件，编辑文件前显示弹窗提示
 - [ ]  编辑器支持前进后退快捷键
-
 **思考总结:** 
 - 测试覆盖率未达标的代码，如果合到develop环境，会影响别人提测
 - 还会影响自测，对于测试一些服务端相关的功能，如果依赖develop的其他服务如manager/mq/lsp，那不发到develop环境实测都无法确定实现对不对
@@ -1402,7 +1290,6 @@ const element = screen.getByTestId('custom-element')
     "currentDockerId": "794044105415118848"
   }
 ]
-
 // file response
 {
   "agentUserId": "12cdfe61-72ca-4046-be33-9c2af5d23af4",
@@ -1442,7 +1329,6 @@ const element = screen.getByTestId('custom-element')
 
 ```JS
 // <=[fromMQ] fileChange change1-add/2-del, type0-file
-
 // 在terminal cp文件夹 
 {
   "messageId": "cd80c091-3527-11f0-8fb0-0242ac110004",
@@ -1461,7 +1347,6 @@ const element = screen.getByTestId('custom-element')
     }
   ]
 }
-
 // cp时包含文件
 {
   "messageId": "f71f6ccd-3529-11f0-8fb0-0242ac110004",
@@ -1485,9 +1370,7 @@ const element = screen.getByTestId('custom-element')
     }
   ]
 }
-
 // 在terminal移动文件夹 - 包含文件
-
 {
   "messageId": "55b06fba-3529-11f0-8fb0-0242ac110004",
   "timestamp": 1747711209,
@@ -1510,7 +1393,6 @@ const element = screen.getByTestId('custom-element')
     }
   ]
 }
-
 // 在terminal移动文件夹 
 {
   "messageId": "cc543ff4-3524-11f0-8fb0-0242ac110004",
@@ -1528,9 +1410,7 @@ const element = screen.getByTestId('custom-element')
       "type": 1
     }
   ]
-}
-
-{
+} {
   "eventName": "fileTree",
   "agentUesrId": "shell",
   "playgroundId": "796427839711965184",
@@ -1545,7 +1425,6 @@ const element = screen.getByTestId('custom-element')
   },
   "timestamp": 1747709261188
 }
-
 // 在terminal重命名文件夹 
 {
   "messageId": "40e04d09-34df-11f0-ac1b-0242ac110005",
@@ -1564,7 +1443,6 @@ const element = screen.getByTestId('custom-element')
     }
   ]
 }
-
 // 手动在文件树创建文件
 [
   "fileTree",
@@ -1592,15 +1470,12 @@ const element = screen.getByTestId('custom-element')
 ## 0514
 
 **昨天完成：**
-
 - [x]  对于LSP体验增强的需求，根据review反馈和产品调整需求细节，调整技术文档
 - [x]  review时光机折叠需求的技术文档
 - [x]  尝试复线近一周未处理的2个issue，一个找到了方法，另一个未能复现，先停下来处理紧急issue
 - [x]  测试language server的响应时间     [LSP Language Server 事件检查清单](https://www.notion.so/LSP-Language-Server-1e0a0f93102280e1abdcee39d3642010?pvs=21)
 - [ ]  处理紧急issue，在terminal删除多个文件`rm *.js`时，文件树未更新，未定位到问题需要继续分析日志和代码逻辑
-
 **今日计划：**
-
 - [ ]  集中精力处理3个文件树同步相关的紧急issue，避免阻塞双ide需求的调研和架构分析
 - [ ]  补充测试本地vscode LSP事件的响应时间
 - [ ]  为clacky-ai-paas-frontend接入测试覆盖率
@@ -1618,7 +1493,6 @@ const element = screen.getByTestId('custom-element')
   - fruits = ['Appel', 'Orange', 'Banana']
   - fruit_color = { apple: 'red' }
   - number.round 2.68
-
 - [test coverage at ci · Pull Request · clacky-ai/clacky-ai-frontend](https://github.com/clacky-ai/clacky-ai-frontend/pull/913)
 
 ## 0506
@@ -1649,7 +1523,6 @@ java -Declipse.application=org.eclipse.jdt.ls.core.id1 -Dosgi.bundles.defaultSta
 
 - 今天计划
   - 修复测试反馈的语法跳转低优先级问题
-
 - lsp-definition-dev-to
   - Java/Ruby 代码按住cmd/ctrl时没有显示下划线但可跳转，原因是language server的相关事件没返回，需要修复language server的配置
   - hover代码时显示类型信息或语法提示
@@ -1719,9 +1592,7 @@ java -Declipse.application=org.eclipse.jdt.ls.core.id1 -Dosgi.bundles.defaultSta
 ## 0414
 
 - terminate和revert导致action的cancel状态
-
 - CodeEditor的逻辑为什么要和action状态相关
-
 - 上周
   - 熟悉sdk中LSP相关的代码，理解实现原理
   - 实现了js类型文件 文件内的语法跳转， 跨文件的语法跳转demo还在实现中
@@ -1785,11 +1656,9 @@ java -Declipse.application=org.eclipse.jdt.ls.core.id1 -Dosgi.bundles.defaultSta
   - The suggestion to set `"moduleResolution": "node"` makes the error go away. However my project contains both server-side (Node) and client-side TS code, and obviously I cannot set "moduleResolution": "node" for the client-side portion. Because simply having @types/node installed is enough to trigger the issue, regardless of if the types are actually used, I'm stuck.
   - For now I've downgraded @types/node to avoid the issue. I guess I could start maintaining two separate node_modules for server- and client-side, but that seems like an inconvenient workaround for this bug.
   - 👷🏻: 最后解决方案是，手动删除 node_modules, 然后使用.nvmrc指定的版本执行npm install
-
 - [Missing module `undici-types` · Issue #1664 · pop-os/shell](https://github.com/pop-os/shell/issues/1664)
   - The only solution I've found so far is to downgrade @types/node from 20.10.6 to `20.0.0`. (forced the downgrade using yarn's "resolutions" feature)
   - Kind of weird, I fixed this error by deleting node_modules directory.
-
 - [[node] After running "ncu -u" and "npm install", then "tsc --project lib/typescript/cmdline/tsconfig.json" gives "node_modules/@types/node/module.d.ts:106:13 - error TS2386: Overload signatures must all be optional or required." · DefinitelyTyped/DefinitelyTyped · Discussion #70562](https://github.com/DefinitelyTyped/DefinitelyTyped/discussions/70562)
   - if you are using the v16 or v18 branches of @types/node and want to upgrade to TypeScript 5.6, then you will also need to upgrade @types/node to a compatible version (^16.18.102 or ^18.19.41)
 
@@ -1832,13 +1701,11 @@ fetch('https://www.google.com/', {
 
 - [can I catch exception of Iframe in parent window of Iframe - Stack Overflow](https://stackoverflow.com/questions/6327128/can-i-catch-exception-of-iframe-in-parent-window-of-iframe)
   - If it's not the same domain but you have control of the iframe content (both domains are under your control), you can communicate with the outer frame by using a cross domain communication 
-
 - [What are the differences between normal and slim package of jquery? - Stack Overflow](https://stackoverflow.com/questions/35424053/what-are-the-differences-between-normal-and-slim-package-of-jquery)
   - The short answer taken from the announcement of jQuery 3.0 Final Release :
   - Along with the regular version of jQuery that includes the ajax and effects modules, we’re releasing a “slim” version that excludes these modules. All in all, it excludes ajax, effects, and currently deprecated code.
   - The file size (gzipped) is about 6k smaller, 23.6k vs 30k.
   - In the jquery.slim.js, the following features are removed: jQuery.fn.extend jquery.fn.load jquery.each
-
 - 昨天
   - 微调 webview 的 loading 时间与浏览器保持一致，在 loading 时点击 refresh 会重新开始 loading
   - 调研 agent 获取浏览器信息的方案，初步方案不需要采用 rrweb，但需要采用注入脚本的方案
@@ -1850,7 +1717,6 @@ fetch('https://www.google.com/', {
 ## 0331
 
 - agent获取浏览器相关信息的需求
-
 - [C-1444 静态代码分析方案测试调研](https://linear.app/clackyai/issue/C-1444/)
   - treesitter + Semgrep 自动修复（不可靠，强依赖Sem云端）
     - 使用 Tree-sitter 生成代码的语法树，以检测代码的语法问题和错误。
@@ -1859,7 +1725,6 @@ fetch('https://www.google.com/', {
   - ruff/golangci-lint/eslint/rubocop + AI 片段修复
     - 为 Python、Go、TypeScript、JavaScript 和 Ruby 提供统一的语法检查方案，遵循 Ruff 的 "快速 + 结构化输出" 原则。以下是各语言工具选择和 Python 集成实现
     - 前置安装：确保所有工具已安装并加入 PATH
-
 - 上周
   - 提测 revert后打开文件自动定位到未被revert的action
   - 提测 优化webview组件，减少白屏时间，刷新时loading反馈
@@ -1880,9 +1745,7 @@ fetch('https://www.google.com/', {
   - 不支持超过2个分栏布局
   - 不支持一个分栏内创建tab-group
   - 支持将webview标签页自由拖拽到任意标签旁
-
 - 单人多标签的场景，只需要在内存保存多个文件的数据，但要支持多个编辑器显示和编辑同一份数据
-
 - 协同多标签的场景，
 - 跟随模式下会自动切换标签页，
   - 大多数场景下，切换标签页时先save再切换
@@ -1922,17 +1785,14 @@ fetch('https://www.google.com/', {
 ## 0325
 
 - iframe的`onload`事件发生在iframe的html的`<script>`脚本执行后
-
 - [HTMLElement: load event - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/load_event)
   - The load event fires for elements containing a resource when the resource has successfully loaded. 
   - Currently, the list of supported HTML elements are: `<body>, <embed>, <iframe>, <img>, <link>, <object>, <script>, <style>, and <track>`.
   - The error and load events fired on `<iframe>`s could be used to probe the URL space of the local network's HTTP servers. 
   - Therefore, as a security precaution user agents do not fire the `error` event on `<iframe>`s, and the `load` event is always triggered even if the `<iframe>` content fails to load.
-
 - 邮件子帐号
   - `username+1/2/2@gmail.com` ， gmail支持子邮箱，但业界不推荐
   - 在产品上，如果按user email收费就会存在漏洞
-
 - 昨天
   - 测试 revert后打开文件自动定位到未被revert的action, 今天会提测
   - 修复一些影响发版的问题
@@ -1995,10 +1855,8 @@ fetch('https://www.google.com/', {
 
 - [[Tooltip] tooltips are shown for disabled buttons but documentation says it shouldn't happen · Issue · radix-ui/primitives](https://github.com/radix-ui/primitives/issues/1914)
   - Indeed, setting `pointer-events: auto !important` (`!pointer-events-auto` in Tailwind) allows to show the tooltip even when disabled is true
-
 - [margin - Spacing - Tailwind CSS](https://tailwindcss.com/docs/margin)
   - Use `space-x-<number> or space-y-<number>` utilities like space-x-4 and space-y-8 to control the space between elements
-
 - 上周
   - 开发P0级的需求，入职流程引导，实现了6个子需求，还剩2个
   - 处理用户反馈的一些问题，如路由跳转、diff不一致、文件打不开等，花费时间较多，导致入职流程需求未按时完成
@@ -2017,7 +1875,6 @@ fetch('https://www.google.com/', {
   - Use `child_process.exec` for simple commands
   - Use `stdin, stdout, and stderr` streams: to interact with the child process programmatically.
   - Use asynchronous methods to avoid blocking the Node.js event loop.
-
 - 昨天
   - 解决用户反馈的 requirements.txt打不开的问题，已合入develop
   - 排查了用户反馈的问题，ai-diff 与 github-pr的diff不一致的问题，是产品设计问题，已反馈给佳路
@@ -2032,7 +1889,6 @@ fetch('https://www.google.com/', {
 ```JS
 const fs = require('fs');
 const readline = require('readline');
-
 // 🚨 This won't work with zero length file. The promise will wait for resolve call forever.
 // Seems to work fine with a zero length file, but may be due to an update. I'm running Node v16.2.0.
 async function getFirstLine(pathToFile) {
@@ -2063,7 +1919,6 @@ async function getFirstLine(pathToFile) {
   - 在状状的协助下，排查了用户反馈的路由跳转未生效的问题，是用户业务侧问题，不是clacky平台问题
 - 今天
   - 处理onboarding入职项目流程的剩余2个高优先级issue，涉及树形ui要花费较多时间
-
 - 排查ai执行action结束后，打开文件ai-diff没有红绿块的问题
   - 因为ai在用户执行前的thinking阶段就自己把文件改了，这是非预期的
 
@@ -2145,7 +2000,6 @@ async function getFirstLine(pathToFile) {
 - 💡 不算完美的解决方案
   - ~~对于重命名非当前打开的文件，可以将文件设为editable=false~~(非重命名的打开文件支持edit)
   - 重写重命名的逻辑
-
 - 昨天
   - 排查ai写的代码与diff展示的代码不一致的问题，定位到是用户特殊的操作流程导致的，不是bug
   - 排查ai写文件时打快照超时的问题，根据日志可判断打快照的逻辑并未超时，由于观测云agent日志缺失，再观察看能否复现
@@ -2163,14 +2017,12 @@ async function getFirstLine(pathToFile) {
 const test = async function() {
   throw new Error('Just another error')
 }
-
 // ❌ error not caught
 try {
   test().then()
 } catch (err) {
   alert('error: ' + err.toString())
 }
-
 // ✅ the following 2 pattern works
 test()
   .then(result => {
@@ -2179,7 +2031,6 @@ test()
   .catch(error => {
     // ...handle/report error here...
   });
-
 try {
   const result = await test();
   // ...use `result` here...
@@ -2200,10 +2051,8 @@ try {
 ## 0304
 
 - 排查rename时编辑器`view.focus()`触发的原因和位置
-
 - [Find and replace with a newline in Visual Studio Code - Stack Overflow](https://stackoverflow.com/questions/30351529/find-and-replace-with-a-newline-in-visual-studio-code)
   - when search in file, Check the regular exp icon `.*`
-
 - 昨天
   - 导入知识库在本地与 @陈旭东 联调完毕，前端已合入develop，agent部分昨天还没合入develop，今天会推进合到staging
   - 添加一个文件树搜索同步调用形式的api，但不work
@@ -2216,7 +2065,6 @@ try {
 
 - [CursorList - .cursorrule files and more for Cursor AI](https://cursorlist.com/)
   - [awesome-cursorrules/rules/react-typescript-nextjs-nodejs-cursorrules-prompt-/.cursorrules at main · PatrickJS/awesome-cursorrules](https://github.com/PatrickJS/awesome-cursorrules/blob/main/rules/react-typescript-nextjs-nodejs-cursorrules-prompt-/.cursorrules)
-
 - 上周
   - 排查用户反馈的问题，主要包括，排查 Console 输出 Cannot write file 的异常， ai写代码后在编辑器显示重复代码的问题，花了较多时间但没有找到原因
   - 优化了cde的体验细节，包括terminal打开文件路径支持显示diff，减少webview和ports出现的频率
@@ -2230,7 +2078,6 @@ try {
   - 本地测试导入知识库的需求，尽快合入staging
   - 处理git stash后文件树与文件系统的同步
   - 确定下一个开发任务
-
 - 迭代需求重点
   - webview关闭打开逻辑优化
   - 语法跳转 (LSP跳转)
@@ -2244,17 +2091,14 @@ try {
   - 开发P0级的需求-导入知识库，与产品设计确定了交互细节，在clacky前端实现了导入知识库的cde tools
 - 今天
   - 在paas实现了placeholder占位符，完成需求开发，与意如在develop环境核对交互，与 陈旭东 联调导入知识库的完整流程，合入staging
-
 - [Difference between DOM parentNode and parentElement - Stack Overflow](https://stackoverflow.com/questions/8685739/difference-between-dom-parentnode-and-parentelement)
   - In most cases,  `parentElement` is the same as `parentNode`. The only difference comes when a node's `parentNode` is not an element. If so,  `parentElement` is null.
 
 ```JS
 document.body.parentNode; // the <html> element
 document.body.parentElement; // the <html> element
-
 document.documentElement.parentNode; // the document node
 document.documentElement.parentElement; // null 👈
-
 (document.documentElement.parentNode === document); // true
 (document.documentElement.parentElement === document); // false
 ```
@@ -2262,7 +2106,6 @@ document.documentElement.parentElement; // null 👈
 - [Is there a CSS parent selector? - Stack Overflow](https://stackoverflow.com/questions/1014861/is-there-a-css-parent-selector)
   - The W3C's Selectors Level 4 Working Draft includes a :has() pseudo-class that provides this capability
   - The pseudo element `:focus-within` allows a parent to be selected if a descendent has focus.
-
 - [VIM: how to go to exact line on Ubuntu - Stack Overflow](https://stackoverflow.com/questions/6380635/vim-how-to-go-to-exact-line-on-ubuntu)
   - :1500
   - try `150G` to get to line 150. which is less key strokes then `:150Enter`
@@ -2279,7 +2122,6 @@ document.documentElement.parentElement; // null 👈
   - Key Conventions
   - Organize and Tag
 -->
-
 - 昨天
   - 处理了ide-server的监控告警噪音日志
   - 优化了cde的体验细节，包括terminal打开文件路径支持显示diff，减少webview和ports出现的频率
@@ -2297,7 +2139,6 @@ document.documentElement.parentElement; // null 👈
   - 继续排查编辑器显示重复代码的问题
   - ide-server的噪音处理
   - 开始分析paas现有LSP的实现逻辑和梳理现有问题
-
 - [What is the point of finally in a try..catch? - Stack Overflow](https://stackoverflow.com/questions/73813509/what-is-the-point-of-finally-in-a-try-catch#)
   - `finally` basically runs even if you have an early-return from try-catch or even if you don't handle the error in the try-catch. 
 
@@ -2309,10 +2150,8 @@ function myFunction() {
   } finally {
     console.log('inside "finally"');
   }
-
   console.log("after try-finally");
 }
-
 myFunction()
 // inside "try"
 // inside "finally"
@@ -2354,7 +2193,6 @@ run_command: npx concurrently "cd backend && npm run start:dev" "cd admin-fronte
   - terminal光标不要闪了
 - 大白屏异常排查
 - webview关闭按钮
-
 - 昨天
   - 测试用户反馈的 Run button 一直 loading 的问题，分为3个子issue，解决了2/3，剩下的 @刘天平 进一步排查
   - 修复影响发版的问题
@@ -2402,7 +2240,6 @@ run_command: npx concurrently "cd backend && npm run start:dev" "cd admin-fronte
   - 修复过程中发现了文件树里移动操作的实现有很大缺陷，fileChange事件不包含移动的文件，修复完待测试
 - 今天
   - 优化ports启动白屏时间过长的问题、loading反馈
-
 - [`stat` command in Linux with examples - GeeksforGeeks](https://www.geeksforgeeks.org/stat-command-in-linux-with-examples/)
   - `stat -x aa.md`; 
   - Birth: The time at which the file was created. 对于NFS系统，属性值为空
@@ -2411,7 +2248,6 @@ run_command: npx concurrently "cd backend && npm run start:dev" "cd admin-fronte
   - Access: The last time at which the file was accessed.
   - 在本地ubuntu系统，在vscode中拖拽移动文件时或通过mv移动文件时，只有ctime会变化
   - 在NFS系统，Birth一直为空, 通过mv移动文件时只有ctime会变化
-
 - [stat(1)](https://man.freebsd.org/cgi/man.cgi?query=stat&sektion=1)
   - The -x option in the stat command is not a standard option in Linux's GNU stat utility
   - This flag is typically associated with the BSD version of stat (e.g., on macOS or BSD-based systems), where -x displays file metadata in a more verbose, "human-readable" format
@@ -2482,17 +2318,13 @@ run_command: npx concurrently "cd backend && npm run start:dev" "cd admin-fronte
   - 测试跟随时打开已删除文件时遇到异常大弹窗的问题
   - 最近又收到新建文件类型的action执行后在文件树不显示的反馈，找到了稳定复现的方法，今天会解决此问题
   - 处理近期反馈的高优先级issues
-
 - [Feat/fix bugs 0116 time-machine action click enhancement by huisnotacouncillor · Pull Request #491 · clacky-ai/clacky-ai-frontend](https://github.com/clacky-ai/clacky-ai-frontend/pull/491)
-
 - [get the second to last item of an array? - Stack Overflow](https://stackoverflow.com/questions/6499012/get-the-second-to-last-item-of-an-array)
 
 ```JS
 array_fragment[array_fragment.length - 2]
-
 path.split('/').slice(-2)[0];
 path.split('/').slice(-2).reverse().pop()
-
 path.split('/').reverse()[1];
 ```
 
@@ -2514,7 +2346,6 @@ path.split('/').reverse()[1];
   - 将前端日志从rum迁移到和后端统一的查看位置，并在文档上记录了clacky日志的格式约定
 - 今天
   - 处理cde高优先级的issues，解决影响近期发版的问题
-
 - [Typescript: No index signature with a parameter of type 'string' was found on type '{ "A": string; } - Stack Overflow](https://stackoverflow.com/questions/56568423/typescript-no-index-signature-with-a-parameter-of-type-string-was-found-on-ty)
   - (this. DNATranscriber as any)[character]; 
 
@@ -2526,13 +2357,10 @@ path.split('/').reverse()[1];
 - 今天
   - 继续cde高优先级的issues
   - 处理删除移动文件相关的问题
-
 - [How to override multiple console function? (console.log, console.info etc) - Stack Overflow](https://stackoverflow.com/questions/73232960/how-to-override-multiple-console-function-console-log-console-info-etc)
   - for-loop 逐个覆盖
   - new Proxy(console, { get(console, key){} })
-
 - [Hijack console.log, console.warn, and console.error without breaking the default browser function.](https://gist.github.com/designbyadrian/2eb329c853516cef618a)
-
 - [How to override the console methods in Javascript | Our Code World](https://ourcodeworld.com/articles/read/104/how-to-override-the-console-methods-in-javascript)
 
 ## 0205
@@ -2571,7 +2399,6 @@ path.split('/').reverse()[1];
 - 今天
   - 和佳路确定端口转发中探测中端口的交互细节，并上线
   - 设计删除文件的体验和实现方案
-
 - cmdk卡片是否要自动隐藏，不方便复制粘贴提示词，不方便在异常后保持卡片位置和内容
 - cmdk的accept/reject快捷键的样式确认
 - cmdk的打字效果在大文件经常超时或卡死，需要讨论解决方案
@@ -2598,9 +2425,7 @@ path.split('/').reverse()[1];
   - 集中处理体验测试反馈的问题，主要是add-to-chat背景色挡住文字、webview宽度优化
   - 修复terminal经常不可用的问题
   - 开始实现当用户点击webview内的链接时自动更新上方的url的功能，访问iframe内的对象碰到跨域问题，需要讨论下解决方案
-
     - 一种思路是用户访问url前向网站注入自定义js脚本逻辑
-
 - 本周
   - 优化webview的体验
   - 实现删除移动文件在live和回放模式的表现
@@ -2614,10 +2439,8 @@ path.split('/').reverse()[1];
 - [Difference between DOMContentLoaded and load events - Stack Overflow](https://stackoverflow.com/questions/2414750/difference-between-domcontentloaded-and-load-events)
   - `DOMContentLoaded` event is fired when the document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading 
   - `load` event will do it when all the images and sub-frames have finished loading.
-
 - [Detect DOMContentLoaded in iframe - Stack Overflow](https://stackoverflow.com/questions/16960829/detect-domcontentloaded-in-iframe)
   - If your page and the iframe are on the same domain, you have to wait for the original page to fire `DOMContentLoaded` first, then attach a `DOMContentLoaded` event listener on the iframe's Window (not Document).
-
 - 周四
   - 协助排查点击action时显示的diff视图与ai实际修改内容不一致的问题
   - 尝试实现当用户点击webview内的链接时，自动更新上方的url，参考了codesandbox的实现，确定了方案
@@ -2647,10 +2470,8 @@ path.split('/').reverse()[1];
   - 修复了文件树搜索的关键词包含特殊字符时导致页面崩溃的问题
 - 今天
   - 集中修复体验测试反馈的问题
-
 - 🤔 [innerWidth and outerWidth oddness on desktop - Stack Overflow](https://stackoverflow.com/questions/22468878/innerwidth-and-outerwidth-oddness-on-desktop)
   - One reason `innerWidth` could be larger than `outerWidth` is if your browser is zoomed
-
 - [AWS EFS too slow when i use git & npm install - Stack Overflow](https://stackoverflow.com/questions/63768023/aws-efs-too-slow-when-i-use-git-npm-install)
   - EFS with git, regardless of config is not working very well. However, rsync works much better. 
   - As such a workaround for EFS+git repo that worked for me: Clone to an EBS. Rsync to the EFS
@@ -2665,7 +2486,6 @@ RegExp.quote = function(str) {
   return str.replace(/([.?*+^$[\]\\(){}|-])/g, "\\$1");
 };
 var re = new RegExp(RegExp.quote(filter));
-
 RegExp.quote = function allowSpecialSymbols(str) {
   return str.replace(/([.?*+^$[\]\\(){}|-])/g, '');
 };
@@ -2679,13 +2499,10 @@ const regExp = new RegExp(RegExp.quote('some \ string'), 'i');
   - 继续修复terminal经常不可用的问题
   - 修复体验测试反馈的问题
   - 实现删除移动文件在live和回放模式的表现
-
 [fromMQ] fileChange
 
 ```log
-
 [Nest] 44  - 01/14/2025, 10:13:23 AM VERBOSE [RabbitmqService] [mqName:paas-ide-server-dev-6db6599549-c84mm][playgroundId:746966488363220992][rabbitmq.service.ts:129] <=[fromMQ] fileChange[750759531793043456]:{"messageId":"21c50acd-d21d-11ef-a5ca-0242ac110004","timestamp":1736820803,"replyMessageId":"","dockerId":"750759531843375104","fileChanges":[{"path":"venv/include/python3.11","change":1,"type":1},{"path":"venv/lib/python3.11","change":1,"type":1},{"path":"venv/lib/python3.11/site-packages","change":1,"type":1},{"path":"venv/bin","change":1,"type":1},{"path":"venv/include","change":1,"type":1},{"path":"venv/lib","change":1,"type":1},{"path":"venv/pyvenv.cfg","change":1,"type":0},{"path":"venv","change":1,"type":1}]} +9038ms
-
 ```
 
 ## 0113
@@ -2723,7 +2540,6 @@ curl -i -X POST -H 'Content-Type: application/json' -d  '{"name": "New1", "email
 - [node.js - Fs.writeFile callback not called - Stack Overflow](https://stackoverflow.com/questions/52225476/fs-writefile-callback-not-called)
   - I've temporarily fixed the issue by writing a synchronous version with fs.writeFileSync
   - If process is dead before the writing path is done, your callback will not be called because it is an asynchronous.
-
 - 昨天
   - 修复布局最大化和收起terminal有时不work的问题，还剩一点工作
   - 排查佳路反馈的激活失败的问题，暂时没什么解决思路
@@ -2766,7 +2582,6 @@ tempOTInfo before write file: true, {"revision":0,"locked":false,"currentDoc":""
     - 此方案耦合度最低，易维护
   - ✅ S3: 在周边事件中添加ports数据或playgroundStatus数据，如在active事件后自动发送ports数据
   - S4: 纯前端的场景定制方案, 前端主动将webview设为空白
-
 - 上周
   - 根据业务需求，与杨豪调整了端口转发事件相关的数据结构
   - 端口转发渲染层逻辑重构

@@ -30,7 +30,21 @@ modified: 2024-08-03T20:00:33.414Z
 
 - ## 
 
-- ## 
+- ## [NextCloud vs OwnCloud vs FileCloud (2024) : r/selfhosted _202408](https://www.reddit.com/r/selfhosted/comments/1euvkxr/nextcloud_vs_owncloud_vs_filecloud_2024/)
+- I use Immich for photos and Seafile for general purpose shared storage.  Immich is great, Seafile is okay, much better than Nextcloud though. 
+  - i use Immich for image and Videos... It is closest to Google Photos in terms of UI. For rest of the thing, Nextcloud
+
+- I've been on nextcloud for years. It works well enough for how sporadically I do anything with it, but really considering switching to OCIS instead. I don't need all of nextcloud's collaborative features and its in dire need of a re-write.
+
+- I don't understand why FileCloud is in this list? Not open source and not selfhostable as far as I can see?
+  - Tried it but there are too many limitations. Biggest is you cannot select any folder on your PC for sync. That is only available in the paid version. 
+
+- ## [Nextcloud vs owncloud : r/selfhosted _202210](https://www.reddit.com/r/selfhosted/comments/ye0j9q/nextcloud_vs_owncloud/)
+- It's an old story that we've seen a million times in FOSS - OwnCloud decided to go more commercial, so everyone of the developers who didn't like that forked it into Nextcloud and afaik it's development is way ahead of OwnCloud now.
+
+- Nextcloud. On the server side all files, unless you enable encryption, are available as just files. So you can back it up from the server easily. I run an RSync cronjob to sync Nextcloud data to another HDD, and from there it get's synced to the cloud 
+
+- I'm personally waiting for owncloud infinite scale to release. It's rebuilt from scratch and looks like it could be much faster and less of a sprawling mess than what nextcloud/owncloud have become over the years through feature creep and just generally being based on older technologies.
 
 - ## [Nextcloud Alternative : r/selfhosted _202412](https://www.reddit.com/r/selfhosted/comments/1hdixdv/nextcloud_alternative/)
 - Spun up Seafile, and using webdav for Obsidian.me

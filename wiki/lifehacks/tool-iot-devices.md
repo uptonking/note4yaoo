@@ -523,6 +523,16 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
+- ## 
+
+- ## [芯动科技发布「风华 3 号」全功能 GPU，该产品都有哪些亮眼性能？ - 知乎 _20250923](https://www.zhihu.com/question/1953762444674565105)
+  - 芯动科技“风华 3 号”全功能 GPU 昨日在珠海香山会议中心正式发布，其采用全国产底层设计，同时拥有 AI 智算算力和 8K 重度渲染算力，兼容 DirectX12、Vulkan1.2 等图形接口，并适配统信、Windows 等系统。
+  - 芯动科技“风华 3 号”全功能 GPU 在行业内率先实现国产开源 RISC-V CPU 与 CUDA 兼容 GPU 的深度融合，可一站式覆盖大模型训推、垂类多模态应用、科学计算与重度图形渲染
+  - 在生态方面，“风华 3 号”在软件端兼容 PyTorch、CUDA、Triton、OpenCL 等主流 AI 和计算生态、和 DirectX、OpenGL、VulKan 等渲染生态，适配统信、麒麟、Windows、Android 等操作系统。
+  - 在大模型方面，“风华 3 号”是国内首款单卡配备 112GB + 大容量高带宽显存和自研 IP 的全功能 GPU，突破目前国产 GPU 显存和多卡搬运的上限，单卡可支持多用户 32B / 72B 大模型；单机八卡能直驱 DeepSeek 671B / 685B 满血版大模型。
+
+- [GPU Fenghua No.3, 112GB HBM, DX12, Vulcan 1.2, Claims to Support CUDA : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1noru3p/gpu_fenghua_no3_112gb_hbm_dx12_vulcan_12_claims/)
+
 - ## [如何使用intel的gpu和npu跑大模型？ - 知乎](https://www.zhihu.com/question/5293002844)
 - 去下载ollama intel版，运行，然后就能调用核显跑模型了，但32g本子核显只能调用20G
 

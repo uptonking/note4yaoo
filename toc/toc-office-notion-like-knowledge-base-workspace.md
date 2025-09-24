@@ -857,6 +857,15 @@ modified: 2022-06-03T21:34:54.893Z
     - A service that automatically processes documents in Paperless using docling and updates their content.
     - [Better OCR with Docling : r/Paperlessngx _202504](https://www.reddit.com/r/Paperlessngx/comments/1jqqsly/better_ocr_with_docling/)
 
+- https://github.com/papra-hq/papra /2.4kStar/AGPL/202509/ts
+  - https://demo.papra.app/
+  - a minimalistic document management and archiving platform.
+  - Papra is a platform for long-term document storage and management, like a digital archive for your documents.
+  - no backend, client-side local storage only
+  - Search: Quickly search for documents with full-text search.
+  - Authentication: User accounts and authentication.
+  - SolidJS, shadcn-solid, honojs, drizzle
+
 - https://github.com/microsoft/markitdown /MIT/202411/python
   - Python tool for converting files and office documents to Markdown.
   - a utility tool for converting various files to Markdown (e.g., for indexing, text analysis, etc.)

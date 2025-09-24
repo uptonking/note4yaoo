@@ -628,7 +628,7 @@ modified: 2024-08-24T16:28:20.515Z
 
 - ## 
 
-- ## 
+- ## [What happened to context compression every 6 prompts? : r/CLine _202509](https://www.reddit.com/r/CLine/comments/1np8vjk/what_happened_to_context_compression_every_6/)
 
 - ## 🏠 [Why Cline cannot edit multiple files at once? : r/CLine _202509](https://www.reddit.com/r/CLine/comments/1njhygc/why_cline_cannot_edit_multiple_files_at_once/)
 

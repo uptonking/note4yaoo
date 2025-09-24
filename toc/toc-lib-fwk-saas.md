@@ -23,6 +23,13 @@ modified: 2021-05-25T09:41:29.066Z
   - CloudBase CMS 是由腾讯云开发推出的，基于 Node.js 的 Headless 内容管理平台
   - 基于模板配置生成内容管理界面，无须编写代码
   - 支持 Webhook 触发，可以方便的与外部系统集成
+
+- https://github.com/nextjs/saas-starter /14.4kStar/MIT/202506/ts
+  - https://next-saas-start.vercel.app/
+  - a starter template for building a SaaS application using Next.js with support for authentication, Stripe integration for payments, and a dashboard for logged-in users.
+  - Dashboard pages with CRUD operations on users/teams
+  - Basic RBAC with Owner and Member roles
+  - Email/password authentication with JWTs stored to cookies
 # saas-multi-tenant
 - [How To Build A Multi-Tenant App With Payload](https://payloadcms.com/blog/how-to-build-a-multi-tenant-app-with-payload)
 
@@ -109,7 +116,7 @@ modified: 2021-05-25T09:41:29.066Z
 - https://github.com/microsoft/redux-micro-frontend /202202/ts/inactive
   - This library can be used for using Redux in a Micro Frontend based architecture.
   - Micro Frontends is an architectural pattern for breaking up a monolith Frontend application into manageable, decoupled and smaller applications.
-# ide-like
+# devops-like
 - https://github.com/labring/laf /7kStar/apache2/202406/ts
   - https://laf.dev/
   - laf 是开源的云开发平台，提供云函数、云数据库、云存储等开箱即用的应用资源。

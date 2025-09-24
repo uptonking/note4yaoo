@@ -166,7 +166,19 @@ git log --online --graph --decorate
 - Yes, this is an incompatibility between git-lfs and the default directory name that git uses for bare repos. 
   - There is a simple work-around for now: `git lfs clone git@bitbucket.org:foo/bar.git bar.git`.
   - That explicitly states the output directory name, and "git lfs clone" honors that. You can actually put anything at all for the directory name, just so long as it's explicitly stated.
+# discuss-gitea
+- ## 
+
+- ## 
+
+- ## [[solved] Re-run Gitea first time installation? - Install/Maintain/Configure - Gitea](https://forum.gitea.com/t/solved-re-run-gitea-first-time-installation/599)
+- instead of going to the /install URL again, as you are already modifying your `app.ini` you can just change the relevant settings there.
+
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## [gpg: Screen or window too small · Issue · kovidgoyal/kitty _202302](https://github.com/kovidgoyal/kitty/issues/6018)

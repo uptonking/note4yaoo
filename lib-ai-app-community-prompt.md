@@ -36,6 +36,16 @@ modified: 2024-09-08T18:57:12.231Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [LM Studio and Context Caching (for API) : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1npatw9/lm_studio_and_context_caching_for_api/)
+  - I'm running a Mac, so LM Studio with their MLX support is my go-to for using local models. 
+  - When using the LM Studio as a local LLM server that integrates with tools and IDEs (like Zed, Roo, Cline, etc.), things get a bit annoying with the long-context slowdown. 
+  - As I understand, it happens for 2 reasons:
+  - The previous messages are reprocessed, the more messages, the longer it takes.
+  - Especially on the Macs, the longer the context, the slower the generation speed.
+
 # discuss
 - ## 
 

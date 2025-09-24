@@ -448,6 +448,12 @@ modified: 2023-02-07T17:38:05.336Z
   - Express
   - MongoDB
 
+- https://github.com/kanbn/kan /3.7kStar/AGPL/202509/ts
+  - https://kan.bn/
+  - The open-source project management alternative to Trello.
+  - Trello Imports: Easily import your Trello boards
+  - Next.js, tRPC, Better Auth, Tailwind CSS, Drizzle ORM, React Email
+
 - https://github.com/MukulSethi123/mini-jira /ts
   - Kanban-style task management application like JIRA
 

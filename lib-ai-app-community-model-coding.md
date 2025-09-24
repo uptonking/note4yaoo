@@ -411,6 +411,19 @@ modified: 2025-09-16T13:29:11.327Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Moving from Cursor to Qwen-code : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nnfwmo/moving_from_cursor_to_qwencode/)
+- i'm also happy with qwen code. The great thing is the massive free tier and if that runs out you can swap to a local model.
+
+- Qwen Coder 30b has been surprisingly good for it's size. I'm running it at Q8 on two 3090s with 128k context and it's super fast (at least 100t/s).
+  - I would second this - I have the Qwen3 coder for coding work and GLM 4.5 air for chat and research and sometimes code as well.. Qwen 3 coder is impressive
+
+- Its weird how fast some of these models work on local hardware that is 4 years+ old. I think AI is best served locally, not in big datacentres.
+  - You'll be even more surprised how well it works on 8-10 year old hardware (for the price). I have a small army of P40s and now also Mi50s. Each of those cost me 1/4th as much as a 3090, but provides 1/3rd or better performance compared to the 3090.
+
 - ## [deepseek r1 vs qwen 3 coder vs glm 4.5 vs kimi k2 : r/LocalLLM _202508](https://www.reddit.com/r/LocalLLM/comments/1n32n02/deepseek_r1_vs_qwen_3_coder_vs_glm_45_vs_kimi_k2/)
 - What I've found is that the model itself makes some difference but how you set the system prompt, the jinja template (where applies), the temp, spec decoding?, etc. matter way more. 
   - Having used them all for a fair amount of coding I'd say right now glm 4.5 gives me the best results in coding as it appears to be more well trained on the most recent advances / libraries and such in coding. 

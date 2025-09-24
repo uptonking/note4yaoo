@@ -152,6 +152,24 @@ modified: 2024-01-23T02:52:23.932Z
 
 - Logseq is too complex, and the tasks management is not reliable enough. I switched to Obsidian
   - 🧐 灵活性过高的代价
+# discuss-internals
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Why is Obsidian not running sandboxed under macOS? : r/ObsidianMD _202509](https://www.reddit.com/r/ObsidianMD/comments/1nofbwc/why_is_obsidian_not_running_sandboxed_under_macos/)
+  - Regarding the latest discussions about potentially insecure plugin updates, I am searching for methods to run Obsidian securely with plugins.
+  - I stumbled over sandboxing which can be activated and configured by the developer. I checked if Obsidian is running sandboxed and found that it is not.
+
+- kepano said: Yes, on desktop, Obsidian plugins can access files on your system, unless you run it in a container. On iOS, iPadOS, and Android the app is sandboxed so plugins are more constrained.
+  - This is not unique to Obsidian. VS Code (and Cursor) works the same way despite Microsoft being a multi-trillion dollar company. This is why Obsidian ships in restricted mode and there's a full-screen warning before you turn on community plugins
+- it seems if you sandbox obsidian, the plugins don't work.
+
+- On macOS, the sandboxing can be configured in many details. So in theory, I could generate a configuration for Obsidian running specific plugins allowing just the access it needs.
 # discuss-author
 - ## 
 

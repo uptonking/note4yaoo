@@ -15,6 +15,7 @@ modified: 2025-09-23T09:28:08.532Z
   - https://goauthentik.io/
   - open-source Identity Provider (IdP) for modern SSO. 
   - It supports SAML, OAuth2/OIDC, LDAP, RADIUS, and more, designed for self-hosting from small labs to large production clusters.
+  - 管理ui方便易用
 
 - https://github.com/keycloak/keycloak /29.7kStar/apache2/202509/java
   - https://www.keycloak.org/
@@ -30,6 +31,16 @@ modified: 2025-09-23T09:28:08.532Z
 - https://github.com/casdoor/casdoor /12.3kStar/apache2/202509/go/国人主导
   - https://casdoor.org/
   - open-source UI-first Identity and Access Management (IAM) / Single-Sign-On (SSO) platform with web UI supporting OAuth 2.0, OIDC, SAML, CAS, LDAP, SCIM, WebAuthn, TOTP, MFA and RADIUS
+
+- https://github.com/better-auth/better-auth /20.8kStar/MIT/202509/ts
+  - https://better-auth.com/
+  - Better Auth is framework-agnostic authentication (and authorization) library for TypeScript
+  - It provides a comprehensive set of features out of the box and includes a plugin ecosystem that simplifies adding advanced functionalities
+  - Plugin Ecosystem
+  - Built-in support for secure email and password authentication
+  - Built-In Rate Limiter
+  - Multiple social sign-on providers
+  - Two Factor Authentication
 
 - https://github.com/nextauthjs/next-auth /21.4kStar/ISC/202403/ts
   - https://authjs.dev/
@@ -59,12 +70,6 @@ modified: 2025-09-23T09:28:08.532Z
   - User management and audit logs help you understand user identity-related information and keep your security on track.
   - https://github.com/logto-io/js
     - The monorepo for SDKs and working samples written in JavaScript (Well, mostly in TypeScript).
-
-- https://github.com/better-auth/better-auth /MIT/202503/ts
-  - https://better-auth.com/
-  - Better Auth is framework-agnostic authentication (and authorization) library for TypeScript
-  - It provides a comprehensive set of features out of the box and includes a plugin ecosystem that simplifies adding advanced functionalities
-  - Whether you need 2FA, multi-tenant support, or other complex features.
 # examples
 - https://github.com/auth0-blog/spa-jwt-authentication-tutorial /201507/js
   - Add authentication to a vanilla js single page app
@@ -95,6 +100,123 @@ modified: 2025-09-23T09:28:08.532Z
 - https://github.com/cornflourblue/node-mysql-registration-login-api /MIT/202008/js
   - Node.js + MySQL API for User Management, Authentication and Registration
   - 依赖sequelize6、express-jwt、express-jwt、bcryptjs
+# fwk-better-auth-examples
+- https://github.com/better-auth/awesome
+  - Adapters, Plugins
+  - https://github.com/better-auth/examples
+    - framework-specific projects that demonstrate how to implement authentication with Better Auth
+
+- https://github.com/daveyplate/better-auth-ui /1kStar/MIT/202509/ts
+  - https://better-auth-ui.com/
+  - shadcn/ui components built for better-auth
+  - Sign In/Up, Forgot Password, UserAvatar, Email Template, Settings Cards
+  - styled with TailwindCSS and shadcn/ui
+- https://github.com/Kinfe123/better-auth-ui /202509/ts
+  - https://better-auth.farmui.com/
+  - Custom + Pre built Auth UI for better-auth that you can copy / paste with their functionality
+
+- https://github.com/daveyplate/better-auth-nextjs-starter /202509/ts
+  - https://nextjs.better-auth-starter.com/
+  - Better Auth Next.js starter template with PostgreSQL, Drizzle, shadcn/ui and TanStack Query
+
+- https://github.com/daveyplate/better-auth-tanstack-starter /202504/ts/inactive
+  - Better Auth TanStack starter template with PostgreSQL, Drizzle, shadcn/ui and TanStack Query
+
+- https://github.com/daveyplate/better-auth-tanstack /MIT/202505/ts
+  - Tanstack Query hooks for Better Auth.
+
+- https://github.com/ping-maxwell/better-auth-kit /MIT/archived
+  - A collection of plugins, tools, libraries, examples, and more for Better-Auth
+  - [STATE OF BETTER-AUTH-KIT ](https://github.com/ping-maxwell/better-auth-kit/issues/37)
+    - I don’t believe I can continue maintaining everything myself. I already work on Better-Auth full-time, and with other parts of life taking up time, it’s not sustainable. Because of this, the current project will be deprecated.
+
+- https://github.com/ping-maxwell/better-auth-dashboard /202505/ts/archived
+  - A Better-Auth powered admin dashboard.
+  - Configure plugins straight from the dashboard.
+  - Advanced route protection.
+
+- https://github.com/zexahq/better-auth-starter /MIT/202507/ts
+  - A modern Next.js boilerplate with authentication, admin dashboard, and user management built with Better Auth, Drizzle ORM, and PostgreSQL
+
+- https://github.com/yeasin2002/bulletproof-nextjs-starter /202509/ts
+  - https://bulletproof-nextjs-starter.vercel.app/
+  - A production-ready Next.js boilerplate with modern tooling, comprehensive testing, and enterprise-grade features.
+
+- https://github.com/laduniestu/nextstart /202509/ts
+  - Nextjs starterkit using Better Auth
+  - https://github.com/laduniestu/better-next /legacy
+
+- https://github.com/rudrodip/titan /MIT/202506/ts
+  - Next.js 15 fullstack template with better-auth for authentication and drizzle-orm as the orm
+  - Drizzle ORM with PostgreSQL support
+  - Multi-provider support (Neon, PlanetScale, Turso, Xata)
+
+- https://github.com/TheOrcDev/better-auth-starter /202509/ts
+  - The Better Auth Starter is simple starter pack using Next.js, Better Auth, Shadcn, Drizzle, and Neon
+- https://github.com/indieceo/Indiesaas /202508/ts
+  - Next.js Saas Starter. Built with Better Auth UI, Shadcn/Ui, Drizzle ORM, UploadThing, Resend and Stripe
+
+- https://github.com/blefnk/relivator-nextjs-template /MIT/202505/ts
+  - next.js 15 react 19 ecommerce template
+  - better-auth polar shadcn/ui tailwind drizzle orm typescript ts radix, postgres neon, app router
+
+- https://github.com/CodeGuide-dev/codeguide-starter-fullstack /202509/ts
+  - A modern web application starter template built with Next.js 15, featuring authentication, database integration, and dark mode support.
+
+- https://github.com/RvDstudio/nextjs_drizzle_better-auth /202508/ts
+  - A Next.js starter kit integrating Drizzle ORM for type-safe database operations, Better Auth
+- https://github.com/JavaScript-Mastery-Pro/e-commerce
+  - Nike-style eCommerce built with Devin AI, Next.js, TS, Tailwind, and Better Auth. Features product pages, cart
+  - https://github.com/Achour/nextjs-better-auth
+
+- https://github.com/wrsrsh/startstack /MIT/202507/ts/paused
+  - i have since moved away from next.js as the base building block for my applications
+
+- https://github.com/Bekacru/nextjs-better-auth-SaaS-stater /MIT/202411/ts/inactive
+  - Forked from https://github.com/leerob/next-saas-starter
+  - Changes the jwt authentication to better-auth
+
+- https://github.com/thaitype/thaitype-stack-mongodb-template /MIT/202509/ts
+  - Type-Safe Next.js Stack using Simple Clean Architecture with MongoDB Template For AI Friendly
+  - Enterprise Architecture - Entity-based repository pattern
+  - Full TypeScript with `tRPC` API layer
+  - MongoDB with audit logging via Monguard
+
+- https://github.com/JuanPabloGilA/hono-react-boilerplate /MIT/202509/ts
+  - a boilerplate for react, postgres, hono, drizzle, ai, better-auth, tanstack-query, tanstack-router, shadcn and tailwind
+  - https://github.com/LovelessCodes/hono-better-auth
+
+- https://github.com/dotnize/react-tanstarter /Unlic/202505/ts
+  - https://tanstarter.nize.ph/
+  - minimal TanStack Start template with Better Auth, Drizzle ORM, shadcn/ui
+  - React 19 + React Compiler
+  - TanStack Start + Router + Query
+  - Drizzle ORM + PostgreSQL
+  - Tailwind CSS + shadcn/ui
+
+- https://github.com/ThallesP/nestjs-better-auth /202509/ts
+  - A comprehensive NestJS integration library for Better Auth, providing seamless authentication and authorization for your NestJS applications.
+  - https://github.com/laakal/nestjs-better-auth-template
+
+- https://github.com/lifefloating/nestjs-project-template /MIT/202509/ts
+  - https://lifefloating.github.io/nestjs-project-template/
+  - NestJS Bun project template, Boilerplate. Auth, Better-Auth, Prisma, MongoDB, Pino, Docker.
+
+- https://github.com/foxlau/react-router-v7-better-auth /202508/ts
+  - a template that can be deployed on Cloudflare Workers, built with React Router v7 (Remix), Better Auth, Drizzle ORM, and D1.
+
+- https://github.com/Daanish2003/validation-better-auth /MIT/202505/ts
+  - A flexible and extensible validation plugin for the Better Auth framework. 
+  - This package allows developers to validate API request using standard schema library
+
+- https://github.com/GeKorm/better-auth-harmony /MIT/202507/ts
+  - A better-auth plugin for email & phone normalization and additional validation, blocking over 55, 000 temporary email domains.
+
+- https://github.com/marcellosso/better-auth-localization /MIT/202509/ts
+  - A localization plugin for Better Auth that automatically translates error messages.
+
+- https://github.com/cnbrown04/better-auth-abac /202507/ts
+  - A plugin for ABAC in better-auth
 # fwk-authentik
 - https://github.com/alicrossnet/sso-frontend-app /202409/js/inactive
   - This a Demo app for implementing SSO.
@@ -126,6 +248,10 @@ modified: 2025-09-23T09:28:08.532Z
   - Multi-platform OpenID Connect (OIDC) authentication using a single IdP (Authentik).
   - Both the mobile app (Flutter) and the web admin (Angular) share the same login flow.
   - A Go gateway validates issued tokens (multi-issuer support) and communicates with a Spring Boot identity microservice via gRPC to link/upsert users and return a compact profile.
+
+- https://github.com/VULGA01/Authentik-Login-theme-Glassmorphism /MIT/202509/css
+  - A custom glassmorphism login theme for Authentik, designed by VULGA.
+  - [My new Authentik Theme ! : r/Authentik](https://www.reddit.com/r/Authentik/comments/1n9o3nd/my_new_authentik_theme/)
 # authentication
 - https://github.com/libregraph/lico /51Star/apache2/202507/go
   - LibreGraph Connect implements an OpenID provider (OP) with integrated web login and consent forms.
@@ -185,7 +311,7 @@ modified: 2025-09-23T09:28:08.532Z
     - https://x.com/pilcrowonpaper/status/1843258855280742481
     - I will continue to maintain all my other projects, including Oslo and Arctic
     - This is exactly what make dev’s lose total trust in small half baked libs.
-  - [Lucia 3.0 · Discussion _20240127](https://github.com/lucia-auth/lucia/discussions/1361)
+  - 🎯 [Lucia 3.0 · Discussion _20240127](https://github.com/lucia-auth/lucia/discussions/1361)
     - Lucia doesn't use JWTs
     - We used to support JWT and it was a broken mess. Token rotation requires additional complexity, you need to sync state in the client, and the added security risks requires you to just do more. Even if it was simple, sessions and JWTs are 2 totally different things and require different db tables. Supporting both with a single library doesn't make any sense.
     - I would prefer a jwt session. Is it possible with Lucia? Any reason why a db approach is used instead?

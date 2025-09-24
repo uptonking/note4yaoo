@@ -9,6 +9,21 @@ modified: 2025-09-04T17:54:44.603Z
 
 # guide
 
+# devops
+- [Install LibreChat Locally Using npm](https://www.librechat.ai/docs/development/get_started)
+
+```sh
+cp .env.example .env
+
+npm ci
+
+npm run backend:dev
+
+npm run frontend:dev
+```
+
+- Backend: http://localhost:3080
+- Frontend: http://localhost:3090
 # overview
 
 # image-gen

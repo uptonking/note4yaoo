@@ -45,6 +45,27 @@ modified: 2025-09-01T05:53:05.266Z
 
 - ## 
 
+- ## 
+
+- ## [[openidStrategy] only requests to HTTPS are allowed · danny-avila/LibreChat _202507](https://github.com/danny-avila/LibreChat/discussions/8310)
+
+```diff
+     openidConfig = await client.discovery(
+        new URL(process.env.OPENID_ISSUER),
+        process.env.OPENID_CLIENT_ID,
+        clientMetadata,
+        undefined,
+        {
+          [client.customFetch]: customFetch,
++         execute: [client.allowInsecureRequests],
+        },
+      );
+```
+
+- [Disable need for HTTPS during development? _202411](https://github.com/panva/openid-client/discussions/716)
+  - In case someone else runs in the observation that the flag `allowInsecureRequests` is marked as deprecated: The reason is to highlight the fact that you shouldn't have to use it.
+  - Instead, use it only in development or other non-TLS environments where you are absolutely certain it is secure enough. The default should be HTTPs, though.
+
 - ## [Using LibreChat in a corporate environment (Azure or self hosted) _202311](https://github.com/danny-avila/LibreChat/discussions/1207)
 - I'm also interested in custom branding as a feature.
 
@@ -132,7 +153,12 @@ modified: 2025-09-01T05:53:05.266Z
 
 - ## 
 
-- ## 
+- ## [Setting BAN_VIOLATIONS=false has no effect on login violation bans _202509](https://github.com/danny-avila/LibreChat/discussions/9527)
+  - Setting `BAN_VIOLATIONS=false` works as expected for violations such as `NON_BROWSER_VIOLATION` , but seems to have no effect on `LOGIN_VIOLATION` .
+  - Additionally, when an IP is banned for Too many login attempts, please try again after 5 minutes, this ban does not seem to be logged anywhere.
+
+- [BAN_VIOLATIONS=false doesnt have any effect · danny-avila/LibreChat · Discussion #3914](https://github.com/danny-avila/LibreChat/discussions/3914)
+  - LOGIN_MAX and LOGIN_WINDOW, adjust as desired.
 
 - ## [LibreChat can't be self-hosted in any commercial way even internally, because of MongoDB SSPL? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nn449p/librechat_cant_be_selfhosted_in_any_commercial/)
   - I want to run it but it seems, it's complicated way to say they backed by MongoDB right? Because you can't self host it and then you need to pay anyway and give them your data.

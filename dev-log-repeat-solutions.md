@@ -166,7 +166,7 @@ modified: 2021-07-20T13:50:23.433Z
   - nocobase   (apache2/sequelize+umi)
   - payloadcms     (MIT/drizzle+slate)
 - ✨ airtable-like(data-mgmt)
-  - 👉 colanode(apache2/kysely+tiptap)
+  - 👉 colanode(apache2/kysely🛢️+tiptap)
   - 👉🏻 grist   (apache2/typeorm+backbone)
   - 👉🏻 nocodb     (AGPL/knex+nuxt3)
   - ethercalc      (MIT/nodejs+redis)

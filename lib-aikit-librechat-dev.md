@@ -82,6 +82,10 @@ modified: 2025-09-01T05:52:34.241Z
 # dev-xp
 - code artifacts对于某些模型很难触发，实测devstral难触发，gemma3-12b较容易触发
 
+- 本地已有用户迁移到openid的方式，手动将mongodb的`users`表中对应用户的数据修改为 `provider: ""`, 然后用本地用户原邮箱登陆到openid
+
+- 不同浏览器在退出登录后，再次选择openid登录时能快速登录到各自的上个帐号
+
 ## comfyui-integration
 
 - o1: 最简单的方式是，直接去comfyui的output文件夹读取生成的图片为 base64，不推荐此方法因为模型/输出文件夹可能变化那读取路径也会跟着变，已有工作流配置好的output可能各不相同
