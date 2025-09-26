@@ -350,6 +350,14 @@ modified: 2024-08-24T16:30:20.218Z
   - Token Counting: Provides token counts for each file and the entire repository, useful for LLM context limits.
   - Git-Aware: Automatically respects your .gitignore files.
   - 可以将你的代码库打包成一个 AI 友好文件（带有文件的目录结构，文件内容以及提示词），然后可以方便的供给大模型进行分析和使用。思路非常有趣。
+# coding-saas
+- https://huggingface.co/spaces/enzostvs/deepsite/tree/main
+  - DeepSite is a coding platform powered by DeepSeek AI, designed to make coding smarter and more efficient. 
+  - Tailored for developers, data scientists, and AI engineers, it integrates generative AI into your coding projects to enhance creativity and productivity.
+  - Multi Pages: Create complex websites with multiple interconnected pages
+  - [How to run 🐳 DeepSite locally](https://huggingface.co/spaces/enzostvs/deepsite/discussions/74)
+  - [Request for License Information for the DeepSite Project](https://huggingface.co/spaces/enzostvs/deepsite/discussions/119)
+    - DeepSite is using the MIT License
 # ide/cde
 - https://github.com/pulsar-edit/pulsar /MIT/202501/js
   - https://pulsar-edit.dev/

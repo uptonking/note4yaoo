@@ -389,6 +389,11 @@ modified: 2025-08-11T08:47:56.335Z
   - A knowledge graph is a network of interconnected facts. 
   - Each fact is a "triplet" represented by two entities, or nodes ("Kendra", "Adidas shoes"), and their relationship, or edge ("loves"). 
   - Graphiti powers the core of Zep
+
+- https://github.com/davialabs/davia /MIT/202509/archived
+  - The easiest way to build apps from your Python code
+  - With Davia, you define your logic in Python, and Davia generates the user interface, handles real-time updates, and manages the backend.
+  - Works with any Python application, including LangGraph agents.
 # utils/fwk
 - https://github.com/ibbybuilds/aegra /124Star/apache2/202509/python
   - https://aegra.dev/
@@ -699,9 +704,12 @@ modified: 2025-08-11T08:47:56.335Z
   - Fred agents are LangGraph-based conversational experts
   - 使用了InMemoryLangchainVectorStore, langchain-message/tools
 
-- https://github.com/pipeshub-ai/pipeshub-ai /apache2/202508/python/ts
+- https://github.com/pipeshub-ai/pipeshub-ai /1.2kStar/apache2/202508/python/ts
   - https://pipeshub.com/
   - The OpenSource Alternative to Glean's Workplace AI
+  - PipesHub AI helps you quickly find the right information using natural language search—just like Google.
+  - The platform not only delivers the most relevant results but also shows where the information came from, with proper citations, using Knowledge Graphs and Page Ranking
+  - Beyond search, our platform allows enterprises to create custom apps and AI agents using a No-Code interface.
   - Knowledge Graph Backbone – All data is seamlessly structured into a powerful knowledge graph.
   - Enterprise-Grade Connectors – Scalable, reliable, and built for secure access across your organization.
   - Modular & Scalable Architecture – Every service is loosely coupled to scale independently and adapt to your needs.

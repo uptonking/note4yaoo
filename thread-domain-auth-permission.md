@@ -27,7 +27,24 @@ modified: 2025-09-22T13:53:51.831Z
 
 - ## 
 
-- ## 
+- ## [Should we do authentication in house or outsource? : r/webdev _202402](https://www.reddit.com/r/webdev/comments/1akm37q/should_we_do_authentication_in_house_or_outsource/)
+- having built several of them myself and often used djangos pre made auth, i would still go with Keycloak if you plan to have either multi client or distributed backend. 
+  - Authentication isnt my main business, why should i spend time build something that already exists that I can get for free, even if its "not hard". 
+  - The saved time can be used to improve keycloak if you really want to build auth services.
+
+- NextAuth.js, now Auth.js, is the library you run on top of your frontend app to connect to any of these oauth services. 
+  - Auth.js just makes it easier to use an oauth provider, it doesnt actually authenticate users.
+
+- You need to factor in long term maintenance, including software upgrades as security changes and keeping a close watch on that server. Just because something is possible doesn’t make it the right decision 
+- Keycloak is a good choice at the start, but there are extra things to take into account like maintenance and upgrade of the Keycloak, this might be cumbersome if you have a small team so I'd suggest going with an external provider like Okta.
+
+- Coding an auth system isn't hard at all, unless you need a super safe system and/or work with high risk content. I try to avoid 3rd party services as much as I can. Vendor lock in, fees, etc
+
+- Don’t handle your own auth. There are smarter, better devs who have built much more secure systems than you could hack together.
+
+- I would use the outsourced provider because you can have a faster Time to Market, cheaper at small scale (don't need to invest in learning these technologies in depth), more features, easy onboarding of new users via social logins (google, github, facebook etc.).
+
+- That's why I choose Laravel for 90% of my projects. It takes care of that out of the box and 100 other things at the same time.
 
 - ## [Why use Authentik/Authelia over built in authentication? : r/homelab _202508](https://www.reddit.com/r/homelab/comments/1mfn2k5/why_use_authentikauthelia_over_built_in/)
 - Built-in auth means 10 ways to log in. Authentik/Authelia give you one master key—central control, no duplicate logins. Why juggle when you can simplify?
@@ -61,7 +78,20 @@ modified: 2025-09-22T13:53:51.831Z
 
 - ## 
 
-- ## 
+- ## [What Auth provider? : r/nextjs _202506](https://www.reddit.com/r/nextjs/comments/1li4mx7/what_auth_provider/)
+- Personally for my use case Better Auth makes more sense. It’s more customizable than Clerk.
+  - Yeah, I have worked with Clerk, and the overall customizablity is so bad. The UI, the logic, you will feel writing the auth(backend part) from scratch. I think Kinde and 0Auth is better. If you're using Firebase or Supabase, using their own auth.
+
+- I previously used Clerk due to how simple it was to set up, but the UI and UX was so terrible. It felt like an alien in my application due to the lack of in-depth customization.
+  - Better auth seems like the best option at the moment. They permit so many features using their plugin system and i love it. They even have some features that you have to pay for using Clerk.
+
+- Clerk auth just added subscriptions through stripe and I must say, it’s a game changer. Easy to lock down pages and have lots of features and payment tiers.
+
+- Authentication provider shouldn't matter much since in properly designed system it can be swapped anytime. 
+
+- I started using supabase a while ago. While great at first, you're being quickly locked down to their infra.
+  - For example if client has a specific need or the project really doesn't need postgres and a simple sqllite would work well, you cannot easily migrate from it.
+- Firebase Auth is so great and very generous, but the firestore database is a mess in my opinion. Supabase is a way better option at this point
 
 - ## [Does anyone not like better-auth? : r/nextjs _202507](https://www.reddit.com/r/nextjs/comments/1m3tcg3/does_anyone_not_like_betterauth/)
 - I’m the actual maintainer :) We’ll have a lot more people involved soon now that we have some funding to push things forward.
@@ -98,7 +128,12 @@ modified: 2025-09-22T13:53:51.831Z
 - Clerk is solid. The reason people talk about BetterAuth is control. It lives in your own codebase, works closely with Next js, and avoids vendor lock in. Some folks prefer that approach. If you are happy with Clerk and the pricing works for you, you are not missing much.
 
 - ## [Why does everyone recommend Clerk/Auth0/etc when NextAuth is this easy?? : r/nextjs _202504](https://www.reddit.com/r/nextjs/comments/1k02xki/why_does_everyone_recommend_clerkauth0etc_when/)
+- Authjs has far fewer features than Clerk, which covers more than just authentication (roles management, organization management, etc). Betterauth has most of these things
+
+- next-auth is currently transitioning to auth.js and it’s not been the smoothest upgrade path. And to be honest, I don’t really like the auth.js implementation.
+
 - Some companies don't want to manage user data. data breaches, GDPR, etc are big risks if you don't do it right. My company doesn't want to manage user data, so we use a third party for user data and authentication instead.
+- The difference is mainly managing user sessions and data strictly in a security and cryptographic sense. We use Auth0 at work for all of our apps simply because we don’t need to care about quite a whole lot.
 
 - Because implementing it covers only 1/4 of the whole auth and authorisation and security concerns. 
   - You still need to handle password recovery, user recovery, mfa, securing data at rest. Also it goes without warranty if you use byo auth. Oh also, scaling.
@@ -122,9 +157,59 @@ modified: 2025-09-22T13:53:51.831Z
 
 - ## 
 
-- ## 
+- ## [Which Identity Provider are you using? : r/selfhosted _202507](https://www.reddit.com/r/selfhosted/comments/1lpvlnj/which_identity_provider_are_you_using/)
+- My Authentik instance, all-in (Redis, Postgres, Server, and worker) is like 1.5G of RAM (with half being Redis) and minimal CPU usage.
+  - It's configured with dozens of apps, 40+ users, and supports everything I need (LDAP, Proxy, OIDC, SAML).
 
-- ## 
+- First one I tried was Authentik and loved it so never tried anything else. It works great with traefik and also supports LDAP for the couple apps I'm running that don't support anything else.
+
+- I use Keycloak (ODIC/OAuth) + FreeIPA (LDAP). Somewhat steep learning curve, but totally worth the trouble. Those are maintained by Red Hat and pretty much set it and forget it, except for regular updates. 
+  - I tried Authentik, it’s pretty good too, and easier to set up, but it feels a bit bloated. 
+  - Authelia + LLDAP is perfect for low power-powered SBC (Raspberry Pi) and does not need much resources to run those.
+
+- I choosed Authentik, as when I wanted to setup idp, authelia didn't have Ui (from what I saw) and authentik support more protocols for identification
+  - it had built in reverse proxy for app not supporting idp. 
+  - The cons for me is it doesn't work with haproxy for remote auth
+
+- logto.io, adopted it and going into production soon, what sucks though is the lack of profile/account management UI components to embed into your own app. 
+  - Out of the box it gives you user login/signup/password reset UI and then admin management ui, but doing user account updates is on you and it's a complicated system with too many moving parts and multiple APIs. 
+  - They have something cooking regarding this, but there's no ETA nor guarantees if it will be delivered, so I'm stuck slowly building my own. 
+  - Apart from that, if you don't need in-app account management, it's quite amazing and supports most if not all modern auth features.
+
+- I consider Logto.io to be an excellent option. In fact, I’m considering the SaaS solution for a production setup, but I’ve been impressed by the UX/DX.
+  - However, the FOSS is somewhat limited, in which case I also consider KeyCloak, Authentic and Authelia very good options, with each their own pros and cons.
+
+- Authentik. Gotta be honest, I really like their partial White Labelling feature. I can put my custom wallpapers for them cool points.
+
+- Authentik. It has a nice balance of features / size, but the documentation is not great to get started. Once you get the hang of the basic patterns for adding services, it's super simple and looks properly "branded" for a self-hosted tool.
+
+- Authentik: for me it is easy to host, has both configuration as code, and well made UI. Has built in support for multiple types of single sign on. Also has a good track record for smooth updates.
+
+- ## [Logto: Open-source alternative to Auth0, prettified : r/selfhosted _202208](https://www.reddit.com/r/selfhosted/comments/wmskps/logto_opensource_alternative_to_auth0_prettified/)
+- Usable with ts-ocid-client (no vendor lock-in) [Not ts-ocid-client. but they have their own vanilla js client]
+  - nothing is paywalled
+  - No MFA yet
+
+- [Logto: Open-source project to build sign-in experience and user identity : r/programming _202207](https://www.reddit.com/r/programming/comments/vuqtf1/logto_opensource_project_to_build_signin/)
+
+- Why not LDAP?
+  - With LDAP, every app that requires you to login handles your password to send it to the LDAP server.
+  - With OIDC, you are always directed to the website of your identity provider. When it's done right, the only two things you have to trust are your browser and your identity provider.
+  - Also OIDC/oauth offers many more options for handling permissions, refreshable and revocable tokens, and alternate forms of login like Device Codes.
+- LDAP itself doesn't provide login, you have to integrate it manually in your app. Which isn't too bad, but you're better off using a sso provider that connects to LDAP.
+
+- What is it that makes your solution better than keycloak?
+  - Logto also offers a bunch of useful SDKs out of the box, including native SDKs such as kotlin for Android and Swift for iOS.
+  - another thing I can think of is that Logto provides a great user experience in the admin console. The interactive SDK integration guide and the sign-in experience customization page look really interesting. 
+- Our highlight is not about how many techniques we're using (we'll support more 3rd party services though), it is about the smooth and unified user experience, and how easy you can build your user identity from frontend to backend with a standard and secure implementation.
+
+- [Logto: A cost-effective open-source alternative to Auth0 : r/coolgithubprojects _202303](https://www.reddit.com/r/coolgithubprojects/comments/11hnspm/logto_a_costeffective_opensource_alternative_to/)
+- Is this similar to authentik?
+  - as a heavy Authentik user I read through the docs and I think this solution is somewhere inbetween something like Authelia and Authentik.
+  - It has a built in IdP, looks very straightforward to setup and is fairly customizable/extensible, but not nearly as much so as Authentik in most areas.
+  - I fully plan to spin this up in my test environment to kick the tires, but my initial thought is that this aims at being more targeted towards developers looking for a straightforward drop-in auth provider for their app.
+
+- Really a great project look awsm, but lacks few important features like having custom clientId and secret, i couldn't edit it from db directly bcz of 21 char limit.
 
 - ## [Authentik or Authelia: Attack Surface & Disclosed Vulnerabilities : r/selfhosted _202509](https://www.reddit.com/r/selfhosted/comments/1nbnznf/authentik_or_authelia_attack_surface_disclosed/)
 - Since Authelia hasn't undergone an audit you can't really compare them.

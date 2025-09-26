@@ -187,6 +187,43 @@ modified: 2024-01-23T02:52:23.932Z
 
 - ## 
 
+- ## one fun thing in Obsidian 1.8 is that it lets you browse the web in plain text — the "reader mode" is persistent as you click links
+- https://x.com/kepano/status/1885022352209306085
+
+# discuss-pm-ob
+- ## 
+
+- ## 
+
+- ## [Obsidian alternatives that are open source (free) and sync feature as well : r/ObsidianMD _202209](https://www.reddit.com/r/ObsidianMD/comments/x95y56/obsidian_alternatives_that_are_open_source_free/)
+- The only good opensource alternative to Obsidian right now is Logseq. I don't think it supports sync though.
+
+- I've been using Zim Desktop for a while now and it's great for note taking and keeping things organized. The one thing it's missing is node-graph linking. 
+# discuss-feat-database/bases
+- ## 
+
+- ## 
+
+- ## [Obsidian bases are great, but is making a separate note for each item practical? : r/ObsidianMD _202509](https://www.reddit.com/r/ObsidianMD/comments/1nq0mci/obsidian_bases_are_great_but_is_making_a_separate/)
+  - I really like Obsidian bases in terms of automation, customization and overall look. It's pretty and functional. 
+  - However, there are cases where making a note for each entry can be a bit excessive. Do you think it's possible to have multiple items from one note?
+  - Example use case: movies to watch, games to play. Say you want to have 200 entries, do you really have to make 200 notes? If you make lists like this you end up with potentially thousands of empty notes (besides the metadata).
+
+- The Bases core plugin is not a database. It provides filtered views, generally based on Properties. If you need true database functionality, Obsidian might not be the right solution.
+  - The idea of Bases is to provide a managed jumping-off point to dig deeper. (Heck, a Base is, arguably, a Map of Contents.) The way that Bases' Table and Card views aggregate information amps up Obsidian's capabilities, so how the data (notes) are handled behind the scenes really depends on what you are trying to do.
+
+- Why not both? For example, I’ll create a note for each book that I want to create a note for. I separately have a note called “Books consumed” that just has a bulleted list of books that I’ve read by year, which may or may not link to a note.
+
+- This is why I still use dataview, too, not only bases. For some notes I need to collect pieces from notes that contain many things.
+
+- Remember Base is just a view and not a database. It doesn't change anything nor depends on how your notes are made. It just style so to speak what's already in your vault (for simplicity sake).
+  - So write and organize your notes however you want. Experiment to discover what works for you, and it might be the same or different for each use case. You can always tweak and change.
+- Yes, Base doesn't display the content of a note, rather it displays the properties or YAML.
+
+- In some cases Dataview is still a better fit (and probably Datacore, although this is still unexplored territory for me) if you want to use the note's contents instead of the YAML frontmatter properties.
+
+- This has me thinking that the community could use a plugin that converts each line in a table into a note with metadata, and then generates a Base for those notes with the same look as the original table. Then you can start modest and there's no FOMO of not starting it as a Base. Because you're right, a lot of knowledge management starts smaller than what a Base is.
+
 - ## [Obsidian Bases | Hacker News _202508](https://news.ycombinator.com/item?id=44945532)
 - 
 - 
@@ -257,19 +294,6 @@ modified: 2024-01-23T02:52:23.932Z
 
 - Can the Base file also query text inside the note itself? like collecting open checkboxes under a specific header of a note?
   - Currently no.
-
-- ## one fun thing in Obsidian 1.8 is that it lets you browse the web in plain text — the "reader mode" is persistent as you click links
-- https://x.com/kepano/status/1885022352209306085
-
-# discuss-pm-ob
-- ## 
-
-- ## 
-
-- ## [Obsidian alternatives that are open source (free) and sync feature as well : r/ObsidianMD _202209](https://www.reddit.com/r/ObsidianMD/comments/x95y56/obsidian_alternatives_that_are_open_source_free/)
-- The only good opensource alternative to Obsidian right now is Logseq. I don't think it supports sync though.
-
-- I've been using Zim Desktop for a while now and it's great for note taking and keeping things organized. The one thing it's missing is node-graph linking. 
 # discuss
 - ## 
 

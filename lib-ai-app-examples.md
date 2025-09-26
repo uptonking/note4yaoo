@@ -188,6 +188,7 @@ modified: 2023-02-08T07:20:48.475Z
   - Progress Monitoring: Real-time training progress and loss visualization
   - Model Size: 283M parameters
   - [Building Qwen3 from Scratch: This Is your chance : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1ndxjsu/building_qwen3_from_scratch_this_is_your_chance/)
+  - https://github.com/Emericen/tiny-qwen
 
 - https://github.com/newhouseb/potatogpt
   - Pure Typescript, dependency free, ridiculously slow implementation of GPT2 for educational purposes

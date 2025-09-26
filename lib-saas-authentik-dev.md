@@ -10,11 +10,16 @@ modified: 2025-09-23T13:07:14.156Z
 # guide
 
 - pros
+  - license: MIT, 比logto MPL 更友好
   - integrations: HedgeDoc, Kanboard, Mastodon, Nextcloud/owncloud, Wekan, Zulip, AppFlowy, OnlyOffice, BookStack, DokuWiki, Outline, Paperless-ngx, Wiki.js, Calibre-Web, Immich, Jellyfin, Seafile, Open WebUI, librechat, Grafana, Zoho
     - Coder, gitea, gitlab, Jenkins, MinIO, pgAdmin, RustDesk Server, Tailscale, PocketBase
     - Stripe, WordPress, 1Password, Linkwarden, Bitwarden
+    - 集成的案例比logto丰富
 
 - cons
+  - 未提供user account setttings页面ui
+  - paid features: multiple tenants, 但存在社区方案
+  - social logins: 通过第三方平台登录时，默认无法访问用户页 Interface can only be accessed by internal users.
   - 核心功能是sso, 偏向于后端逻辑及账户管理, 在前端交互功能及定制很弱
   - 定制复杂度较高，缺少示例
   - logout退出登陆的逻辑及ui都很难定制
@@ -22,10 +27,28 @@ modified: 2025-09-23T13:07:14.156Z
 - features
   - Read Replicas: You can configure additional read replica databases to distribute database load and improve performance.
 # draft
+- roadmap
+  - clerk sdk for authentik
+    - https://github.com/clerk/javascript
+  - strapi with authentik
+  - better auth sdk for authentik
+
+- lowcode代替flow
+  - login/auth page editor
+
 - authentik + lasuite-docs?
 
 - ❓ how to register user on custom webapp?
 # dev-xp
+- tips
+  - 每个flow都有唯一slug，可在单独页面打开
+
+- 用户注册ui的教程在youtube视频中 [Authentik - Enrollment  _202208](https://www.youtube.com/watch?v=mGOTpRfulfQ)
+  - 需要在default-authentication-flow编辑default-authentication-identification, 点击 Edit Stage
+  - default-enrollment-flow 会提示 Request has been denied. Invalid invite/invite not found
+  - default-source-enrollment 会提示 Request has been denied. Flow does not apply to current user.
+  - 使用自定义entroll-stage可正常注册
+
 - authentik + gitea
   - gitea退出登陆后，无法切换用户登录，会以刚才的用户自动登录
 

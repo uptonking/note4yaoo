@@ -343,6 +343,13 @@ modified: 2025-08-23T11:43:35.904Z
     - 大家都认可引入直接付费的机制。我们在网站的入口处直接放了本人的微信二维码，希望用户能够来我这边购买注册码。
     - 但实际的结果是，大火的一个小半天里只有不到100人添加微信，有意向购买的不到十个人，最终仅有1人愿意付款，甚至认为19.9 10张图太贵
     - 10.10号的下午我们才正式接入了支付，令人意外的是，当天就有不少流水，和私域的大失败形成鲜明对比。
+
+- https://github.com/PastLifeDreamer/Pocket-Comfy /MIT/202509/python
+  - Lightweight mobile first web app combining ComfyUi, ComfyUi Mini and Smart ComfyUI Gallery with convenient local control functions hosted on your PC under one python script.
+  - [Pocket Comfy. Free open source Mobile Web App released on GitHub. : r/StableDiffusion _202509](https://www.reddit.com/r/StableDiffusion/comments/1npylj2/pocket_comfy_free_open_source_mobile_web_app/)
+    - Pocket Comfy wraps the best comfy mobile apps out there and runs them in one python console
+    - Pocket Comfy unifies the best web apps currently available for mobile first content creation including: ComfyUI, ComfyUI Mini (Created by ImDarkTom), and smart-comfyui-gallery (Created by biagiomaf) into one web app that runs from a single Python window. 
+    - Launch, monitor, and manage everything from one place at home or on the go.
 # ai-image-generator
 - tips
   - midjourney alternative

@@ -148,6 +148,10 @@ modified: 2022-11-07T10:58:24.512Z
 - 分享有设计感的网站、主页
 
 - b站很多视频是带人读文章/公告、读论文
+
+- sharing-ai
+  - ai-model config
+  - image workflow
 # integrations
 - search-filters
 

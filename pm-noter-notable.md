@@ -139,6 +139,7 @@ modified: 2023-11-28T14:48:45.910Z
   - no implicit ai degradation/switch: bring your model
   - cost: unlimited tokens
   - network agnostic
+  - your copyright: platform agnostic
 # business-apps
 - 成功的产品，大多可以不断更新换代
   - 如大模型、支持最新大模型的comfyui, 并且大模型种类多更新多
@@ -238,6 +239,9 @@ modified: 2023-11-28T14:48:45.910Z
 
 - image
   - 系统提供默认的图片placeholder需要样式友好
+
+- quote
+  - 支持引用文件中的第m-n行, 在引用处也能显示语法高亮
 
 ## diff
 

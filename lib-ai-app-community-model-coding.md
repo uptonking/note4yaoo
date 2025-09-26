@@ -131,6 +131,11 @@ modified: 2025-09-16T13:29:11.327Z
   - Percentage of the tests passed is a score
   - I've started evaluating them to find specific models and workflows that performed the best in my specific tasks. I built harbor bench to aid myself in that (as a simpler alternative to lm evaluation harness)
 
+- [Magistral vs Devstral vs DeepSeek R1: Which is best? ](https://blog.getbind.co/2025/07/20/magistral-vs-devstral-vs-deepseek-r1-which-is-best/)
+  - Implement a Python function to perform a breadth-first search (BFS) on an arbitrarily nested dictionary representing a graph, returning the shortest path between two specified nodes.
+  - Develop a React component that fetches and displays real-time stock data from a mock API, dynamically updating charts and highlighting significant price changes.
+  - Construct a full-stack web application using Node.js (Express), MongoDB, and React, enabling users to create, read, update, and delete (CRUD) blog posts with user authentication.
+
 - [What do most of your coding prompts look like? Example inside. : r/ChatGPTCoding](https://www.reddit.com/r/ChatGPTCoding/comments/187g3ql/what_do_most_of_your_coding_prompts_look_like/)
 
 - Write django models for a twitter clone
@@ -413,7 +418,9 @@ modified: 2025-09-16T13:29:11.327Z
 
 - ## 
 
-- ## 
+- ## [New model from Meta FAIR: Code World Model (CWM) 32B - 65.8 % on SWE-bench Verified : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1npp8xi/new_model_from_meta_fair_code_world_model_cwm_32b/)
+- They report CWM + tts to get 65% on swebench. What’s tts? If anything at all, however, I think this shows how great magistral is. Better performance with 2/3s of the parameters.
+  - tts=test time scaling, basically select an answer to submit out of several candidates, rather common practice
 
 - ## [Moving from Cursor to Qwen-code : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nnfwmo/moving_from_cursor_to_qwencode/)
 - i'm also happy with qwen code. The great thing is the massive free tier and if that runs out you can swap to a local model.
@@ -614,12 +621,19 @@ modified: 2025-09-16T13:29:11.327Z
 - Qwen2.5 coder 32B q8 , forget q4, q6.
   - Qwen3 is a newer model and is miles above even for coding. Scores 40% on Aider polyglot vs 16% for Qwen2.5-Coder-32B.
 
-- ## [Devstral vs DeepSeek vs Qwen3 : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1ksat42/devstral_vs_deepseek_vs_qwen3/)
+- ## [How open-source models like Mistral, Devstral, and DeepSeek R1 compare for coding : r/ChatGPTCoding _202507](https://www.reddit.com/r/ChatGPTCoding/comments/1m57u5v/how_opensource_models_like_mistral_devstral_and/)
+
+- [Magistral vs Devstral vs DeepSeek R1: Which is best? – Bind AI IDE _202507](https://blog.getbind.co/2025/07/20/magistral-vs-devstral-vs-deepseek-r1-which-is-best/)
+  - Overall, coding accuracy ranking is: DeepSeek R1 > Devstral (small/medium) > Magistral, with the latter prioritizing broader reasoning capabilities.
+  - Magistral (Small/Medium) excels at multi-step reasoning with auditability and is available as an open model and via a fast API. 
+  - Devstral (Small/Medium) is optimized for developer workflows, especially for agile coding tasks, and can be deployed locally or through Mistral’s API. 
+  - DeepSeek-R1 (and its distills) focuses on reasoning and code benchmarks, offering high capability but requiring more engineering 
+
+- ## 🆚 [Devstral vs DeepSeek vs Qwen3 : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1ksat42/devstral_vs_deepseek_vs_qwen3/)
 - Devstral is not better than qwen3-32B in general-purpose tasks. I guess it was trained to be specific to that openhands particular agent.
 
 - Tried devstral on a code review task. It doesn't seem better than Qwen3, not to mention deepseek. Didn't try it in an agentic coding.
-
-- The whole point is agentic though. It works great in cline and open hands I’m super impressed
+  - The whole point is agentic though. It works great in cline and open hands I’m super impressed
 
 - i only tried qwen3 30b but that one was better in cline than devstral on my test tasks mostly due to better instruction following and because of its better speed
 
@@ -1250,7 +1264,19 @@ ollama run hf.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF:Q6_K
 
 - ## 
 
-- ## 
+- ## [Local LLM Coding Stack (24GB minimum, ideal 36GB) : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nkfvrl/local_llm_coding_stack_24gb_minimum_ideal_36gb/)
+  - Chipset Model: Apple M4 Pro
+  - 给出了很多模型的速度tops
+
+- Why not Qwen3-32B? It's better 
+  - I prefer MoE just for the (initial) speed, but a dense one that I like a lot is Devstral small.
+
+- Context window size?
+  - I run Qwen3Coder and GPT-OSS at 131k via lm studio, mlx format, 6bit and 4bit respectively.
+- Mean nothing. After 60k all models start to hallucinate
+
+- How is the prompt processing speeds for long contexts ?
+  - Slow, like 3x to 10x slower than api. But that’s not due to the models, but my hardware.
 
 - ## [what the best local llm for coding? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nf8qdl/what_the_best_local_llm_for_coding/)
 - I've used GPT-OSS20b and Qwen3-Coder-30B-A3B-Instruct-GGUF, I like both. 

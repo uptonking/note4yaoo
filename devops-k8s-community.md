@@ -28,6 +28,31 @@ modified: 2024-06-30T11:15:28.002Z
 - May I use a MQ to replace those proxy mesh? Much simpler
 
 - I remember the days we called this the “ambassador model”.
+# discuss-against 🐛
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Kubernetes killed our simple deployment process : r/devops _202509](https://www.reddit.com/r/devops/comments/1no0bdm/kubernetes_killed_our_simple_deployment_process/)
+  - Remember when you could just rsync files to a server? Now we have yaml files everywhere, different CLI tools, and deployments that break for no reason.
+  - Used to ssh into a box and see whats wrong. Now when something breaks we gotta figure out which namespace, which pod, which container, then hope the logs actually made it somewhere we can find them.
+  - Half our outages are kubectl apply conflicts or pods stuck in pending. Spent 2 weeks debugging why staging was slow and it was just resource limits set wrong.
+  - Management thinks were "cloud native" but our deployment success rate went from 99% to like 60%. When stuff breaks we have no idea if its the app or some random controller we didnt know existed.
+
+- I hate when people say this, but this is actually a skill issue.
+  - Yep. Our team went from no k8s to building and maintaining the platform that’s used across our company.
+- 1000% this is all coming from inexperience.
+- I agree. First time i worked at a place that used k8s i had a similar opinion. It was a skill issue, and after getting with the times and working through the certifications - my opinion is vastly different now. It was based entirely from my dated development experiences.
+
+- Your entire engineering team needs to up-skill on kubernetes or you need to pay someone with those skills. Secondly, Graylog + Prometheus + argocd can solve a majority of the problems you’re facing right now.
+
+- My entire Kubernetes deployment process is a Dev making a single commit and every single Kubernetes error shows on Alertmanager dashboard for everyone to see, including all the details required to investigate. Where do you see complexity exactly? sounds like skill issues…
+
+- No, modern k8s is fast and relatively easy to learn. You don't have to use every feature to get value from k8s. It's sounds like the whole team needs to increase their skills.
 # discuss-k8s-manager-terraform
 - ## 
 

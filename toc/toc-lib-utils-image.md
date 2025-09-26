@@ -75,6 +75,10 @@ modified: 2023-04-04T22:39:45.442Z
     - It is typically 4-8x faster than using the quickest ImageMagick 
     - imagor implements libvips streaming that facilitates parallel processing pipelines, achieving high network throughput.
     - Alongside there is imagorvideo bringing video thumbnail capability through ffmpeg C bindings.
+
+- https://github.com/sahandghavidel/ai-image-editor-saas-app /202509/ts
+  - https://ai-image-editor.100jsprojects.com/
+  - AI Image Editor SaaS app using Next.js, Tailwind CSS, Prisma, Neon, ImageKit and Better Auth
 # image-viewer
 - https://github.com/xiaolin/react-image-gallery /js
   - http://linxtion.com/demo/react-image-gallery

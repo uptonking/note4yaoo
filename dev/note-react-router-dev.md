@@ -30,7 +30,22 @@ modified: 2023-01-09T15:41:17.179Z
 # not-yet
 - 最新 Link 总是会重复添加 path，如 http://localhost:8999/dashboard/basic/basic/basic
   - 此问题在v6 beta版会出现，后面已修复
-# upgrading
+# changelog
+- resources
+  - [CHANGELOG.md for React Router Releases](https://github.com/remix-run/react-router/blob/main/CHANGELOG.md)
+
+- [v7.0.0_2024-11-21](https://reactrouter.com/upgrading/v6)
+  - The v7 upgrade has no breaking changes if you have enabled all future flags. 
+  - The react-router-dom, @remix-run/react, @remix-run/server-runtime, and @remix-run/router have been collapsed into the `react-router` package
+  - The react-router-dom-v5-compat and `react-router-native` packages are removed starting with v7
+  - The `json` and `defer` methods are deprecated in favor of returning raw objects.
+  - The Remix Vite plugin is the proper way to build full-stack SSR apps using React Router v7. The former `esbuild`-based compiler is no longer available.
+  - React Router v7 includes a new `prerender` config in the vite plugin to support SSG use-cases. 
+  - [React Router v7 release blog](https://remix.run/blog/react-router-v7)
+    - v7 brings everything you love about Remix back into React Router
+    - We encourage all Remix v2 users to upgrade to React Router v7
+    - For React Router v6 users, this release brings a wealth of features from Remix back into React Router in the form of "framework mode".
+
 - [v6.0.0-beta.4](https://github.com/remix-run/react-router/releases/tag/v6.0.0-beta.4)
   - Absolute nested path support
   - Removed the ability for nested route paths to begin with a / 

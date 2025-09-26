@@ -492,7 +492,17 @@ export COMMANDLINE_ARGS="--skip-torch-cuda-test --disable-nan-check --upcast-sam
 
 - ## 
 
-- ## 
+- ## [Mobile Comfy Support : r/comfyui _202509](https://www.reddit.com/r/comfyui/comments/1npv1f5/mobile_comfy_support/)
+  - I have been working on a mobile app that is the UI for comfy on the desktop or server. I finally got it to somewhat decent state and first version was published on App Store today
+
+- Biggest wins for a mobile Comfy UI are painless secure connect, live progress, and quick workflow tweaks.
+  - For setup, add QR pairing from desktop that encodes host/port/token, plus Bonjour discovery and a reachability test. 
+  - Security-wise, a quick guide for Tailscale or Cloudflare Tunnel and support for API keys/basic auth would keep folks from opening ports raw
+  - UX: pinch-zoom and two-finger pan on the canvas, long-press to collapse subgraphs, node search with favorites, and preset templates. 
+  - Queue control is huge: show running/queued jobs, pause/resume/cancel, per-node progress, and push notifications when a render finishes. 
+  - Previews: stream low-res first, then swap in full res to avoid iOS memory spikes. 
+  - Offline: let me edit a workflow JSON and sync when I’m back on wifi. 
+  - For ops, Sentry for crashes and PostHog for funnels help a lot. I’ve used Tailscale and Cloudflare Tunnel; DreamFactory helped wrap ComfyUI endpoints into locked-down REST with keys and rate limits for team use. Nail those and this will be a daily driver.
 
 - ## 🚀 [Introducing Comfy Cloud : r/comfyui _202509](https://www.reddit.com/r/comfyui/comments/1nhp958/introducing_comfy_cloud/)
   - to use ComfyUI, you often had to juggle python dependencies and needed access to a GPU.

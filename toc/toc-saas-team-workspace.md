@@ -683,6 +683,11 @@ modified: 2023-02-07T17:38:05.336Z
   - Works out of the box, no configuration required. 
   - You have full control of your data, with no concerns about security. 
   - You can use our rendezvous/relay server, set up your own, or write your own rendezvous/relay server.
+
+- https://github.com/Lostovayne/Complete-Clone-Meet-Ai-Platform /MIT/202509/ts
+  - End-to-end AI-powered video call application where you implement real-time calls with customized AI agents, generate automatic summaries and transcriptions through background processes
+  - Next.js 15, React 19, Tailwind CSS v4, Better Auth
+  - Drizzle ORM, Stream Video SDK, Stream Chat SDK
 # team-ai
 - https://github.com/Teamlinker/Teamlinker /GPLv3/202406/ts/vue
   - https://team-linker.com/
