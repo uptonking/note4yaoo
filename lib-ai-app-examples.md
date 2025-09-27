@@ -349,6 +349,18 @@ modified: 2023-02-08T07:20:48.475Z
 - https://github.com/rag-web-ui/rag-web-ui /apache2/202502/python/ts
   - RAG Web UI is an intelligent dialogue system based on RAG
 # rag-search
+- https://github.com/chunkhound/chunkhound /118Star/MIT/202509/python
+  - https://chunkhound.github.io/
+  - Deep Research for Code & Files
+  - Transform your codebase into a searchable knowledge base for AI assistants using semantic search via cAST algorithm and regex search. 
+  - Integrates with AI assistants via the Model Context Protocol (MCP).
+  - cAST Algorithm - Research-backed semantic code chunking
+  - Multi-Hop Semantic Search - Discovers interconnected code relationships beyond direct matches
+  - Semantic search - Natural language queries like "find authentication code"
+  - Regex search - Pattern matching without API keys
+  - Local-first - Your code stays on your machine
+  - 22 languages with structured parsing, via Tree-sitter
+
 - https://github.com/HKUDS/LightRAG /20.1kStar/MIT/202508/python
   - Simple and Fast Retrieval-Augmented Generation
   - [2025.06.16]🎯 Our team has released RAG-Anything an All-in-One Multimodal RAG System for seamless text, image, table, and equation processing.

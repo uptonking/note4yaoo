@@ -87,6 +87,12 @@ modified: 2022-06-03T21:34:54.893Z
     - A user (Alice) without an error in the update method makes a change to the document
     - Bob's update method throws an error
     - Bob resyncs it's prosemirror state to the other user, effectively undoing Alice's change
+- https://git.coopcloud.tech/coop-cloud/lasuite-docs /仅运维/无新功能
+  - https://docs.coop/
+  - Docs (part of La Suite Numerique) for Co-op Cloud
+  - [Autonomic launch docs.coop - Co-operativley hosted open source document editing _202506](https://community.coops.tech/t/autonomic-launch-docs-coop-co-operativley-hosted-open-source-document-editing/4439)
+    - Building on the great work of Suite Numerique, we are offering an opportunity to be part of a new collaborative Docs platform as a service
+    - We are offering managed Docs instances with full support provided by us
 
 - https://github.com/colanode/colanode /1.3kStar/202506/ts
   - https://colanode.com/
@@ -833,6 +839,8 @@ modified: 2022-06-03T21:34:54.893Z
   - Smart Output: Markdown, JSON, CSV, HTML, and plain text formats
   - Advanced OCR: Multiple OCR engines with automatic fallback
   - MCP Server: Integrate with Claude Desktop for intelligent document navigation
+  - [Package for converting PDF, images and docs to structured data like JSON, markdown, HTML : r/node _202509](https://www.reddit.com/r/node/comments/1nqxada/package_for_converting_pdf_images_and_docs_to/)
+    - I've published a Node.js client for DocStrange 
 # office
 - https://github.com/paperless-ngx/paperless-ngx /GPLv3/202412/ts/python
   - https://docs.paperless-ngx.com/

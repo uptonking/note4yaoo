@@ -184,7 +184,32 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## [The NVIDIA DGX Spark at $4, 299 can run 200B parameter models locally - This is our PC/Internet/Mobile moment all over again : r/LlamaFarm _202509](https://www.reddit.com/r/LlamaFarm/comments/1nee9fq/the_nvidia_dgx_spark_at_4299_can_run_200b/)
+- DGX has 273gb/s versus 1.7Tb/s for a rtx 5090...
+  - The bandwidth is terrible. You'll run your models at 5 tps
+  - I literally don't see who's gonna buy this aside from people who just got blinded by the unified RAM...
+- At 273 GB/s memory bandwidth this unified RAM there will make inference VERY SLOW... For comparison: RTX 4090 has 1008 GB/s and RTX 5090 has 1792 GB/s memory bandwidth
+
+- u can easily get an m1 max with 128 gb of unified memory for 1k cheaper than that and double the memory bandwidth. Don’t see how this is a good deal.
+  - It's not a good deal. It is more of a sign. MLX is growing, but the ecosystem is still tiny compared to CUDA. With Blackwells coming to PCs and AMD shipping powerful GPUs, there will be real competition in this area for the first time.
+
+- M3 Ultra with 256GB RAM does cost roughly $1000 more, but has 256GB unified memory
+  - And 819 gb/s vs Spark's 273.
+
+- Mac Studio, Ultra series, either M1 or M2 with 96GB or 128GB RAM. And more recently, the M4 Max. I bet by next year the Mini will likely have a 128GB configuration too.
+  - What I am NOT saying is that Apple’s offerings are the best local inference for 128GB workloads. I am saying they are relatively cheap and capable, and the inflection point for fairly large local models (>60GB) was two years ago.
+  - I bought my M4 Max 128GB last year for local models. It does not disappoint.
+
+- No thanks, I'm not taking my wallet out until I see the AMD Medusa Halo 128GB AI mini-PCs in two years. I CAN WAIT.
+
+- Jetson AGX Thor claims 2000 TOPS of AI at FP4, but it is the same memory bandwidth as DGX spark so I have my doubts. Guess we have to wait for some benchmarks.
+
+- [DGX spark vs MAC studio vs Server (Advice Needed: First Server for a 3D Vision AI Startup (\~$15k-$22k Budget) : r/deeplearning](https://www.reddit.com/r/deeplearning/comments/1lylfuw/dgx_spark_vs_mac_studio_vs_server_advice_needed/)
+- Macs are decent for inference, but nobody "real" is training models on Mac. Even Apple was using TPUs earlier (when that team was still run by the ex-Google guy) and grapevine says they're on Nvidia now
+
+- DGX Spark is like a RTX 5060(70?) class GPU with 128GB of slowish (for GPU) memory.
+  - The only thing Spark really has going for it is it might be SM100 (real Blackwell with Tensor Memory) instead of SM120 (basically Ada++) which may be useful for developing SM100 CUDA kernels without needing a B200.
+  - Much better off I think with a NVIDIA RTX PRO 6000 Blackwell Series (96GB) for most people, or 512GB Mac Studio if you need very large LLMs but less GPU perf.
 
 - ## 🍎 [MacBook M4 Max isn't great for LLMs : r/LocalLLaMA _202503](https://www.reddit.com/r/LocalLLaMA/comments/1jn5uto/macbook_m4_max_isnt_great_for_llms/)
 - M4 Max is about 50% faster than an Nvidia P40 (both in compute throughput and memory bandwidth). 

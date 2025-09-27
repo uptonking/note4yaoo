@@ -320,7 +320,15 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [Open-source embedding models: which one's the best? : r/Rag _202509](https://www.reddit.com/r/Rag/comments/1nro65j/opensource_embedding_models_which_ones_the_best/)
+- tried embeddinggemma:300m and qwen3-embedding-0.6b and 4b
+
+- [Open-source embedding models: which one's the best? : r/ollama](https://www.reddit.com/r/ollama/comments/1nro30i/opensource_embedding_models_which_ones_the_best/)
+- I find the latest Qwen embeddings and reranker models the best out there today even when comparing with offerings from OpenAI and VoyageAI
+  - I tried BGE, Nomic, and Qwen using ChunkHound I don't care so much about the raw numbers but about the end to end result. You can easily see the difference in results by running the chunkhound search command
+
+- [Open-source embedding models: which one to use? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1nrgklt/opensource_embedding_models_which_one_to_use/)
+- I've had my best results with bge-m3 or qwen3-embedding
 
 - ## [Is there a classification of worst vs best ai models for RAG : r/Rag _202509](https://www.reddit.com/r/Rag/comments/1nk2rza/is_there_a_classification_of_worst_vs_best_ai/)
 - For small models, most of our users have converged around: Gemma3, Qwen3, and DeepSeek

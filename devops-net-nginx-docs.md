@@ -35,11 +35,17 @@ modified: 2025-07-20T13:18:12.842Z
 
 - in Nginx, you can define multiple `server` blocks that listen on different ports (like 8080, 8081, etc.) within the same `http` context. This allows you to serve different content or applications at URLs like: http://localhost:8080/ http://localhost:8081/
 # config
-- proxy_pass URL; 
+- `proxy_pass` URL; 
   - Sets the protocol and address of a proxied server and an optional URI to which a location should be mapped.
   - If a domain name resolves to several addresses, all of them will be used in a round-robin fashion.
   - WebSocket proxying requires special configuration and is supported since version 1.3.13.
 
+- `upstream` name { ... }
+  - Defines a group of servers. Servers can listen on different ports. In addition, servers listening on TCP and UNIX-domain sockets can be mixed.
+  - By default, requests are distributed between the servers using a weighted round-robin balancing method
+
+- 
+- 
 - 
 - 
 - 

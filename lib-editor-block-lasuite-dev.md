@@ -61,8 +61,10 @@ modified: 2025-07-17T14:39:41.606Z
   - summarize, rephrase, beautify
 
 - auth
+  - ❓ 用authentik替换keycloak碰到问题, 打开nginx默认首页http://localhost:8083/会显示authentik主页, 但此时api请求为http://localhost/api/v3/core/users/me/, 而不是正常的 http://localhost:9000/api/v3/core/users/me/
+  - 使用better-auth实现邮箱密码登录
   - 使用简化版的oidc替代keycloak
-  - ❓ 使用django-auth代替keycloak
+  - 🤔 使用django-auth代替keycloak
   - 接入更多登录
 
 - 

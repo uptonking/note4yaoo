@@ -10,8 +10,8 @@ modified: 2025-07-17T14:40:30.038Z
 # guide
 
 - urls
-  - webapp http://localhost:3000/
-  - admin http://localhost:8071/admin
+  - webapp: http://localhost:3000/
+  - backend/admin: http://localhost:8071/admin
     - user: admin@example.com ,  pass: admin
   - django-api http://localhost:8071/api/v1.0/swagger.json
 
@@ -36,9 +36,12 @@ brew services start nginx
 brew services start postgresql@17
 brew services start redis
 
-MINIO_ROOT_USER=impress MINIO_ROOT_PASSWORD=password minio server --console-address :9001  /Users/yaoo/Documents/repos/saas/lasuite-docs/data/media
+MINIO_ROOT_USER=impress MINIO_ROOT_PASSWORD=password minio server --address :9090 --console-address :9001  /Users/yaoo/Documents/repos/saas/lasuite-docs/data/media
 
-mc alias set impress http://localhost:9000 impress password 
+mc alias set impress http://localhost:9090 impress password 
+
+cd ./src/frontend/
+yarn install
 
 # webapp
 cd ./src/frontend/apps/impress/
@@ -51,6 +54,7 @@ yarn dev
 # backend - django
 cd src/backend/
 uv sync --all-extras
+# uv run python manage.py migrate
 uv run python manage.py runserver 0.0.0.0:8071
 
 uv run celery -A impress.celery_app worker -l DEBUG
@@ -168,3 +172,4 @@ brew services stop --all
   - 实际执行 default_storage.connection.meta.client.get_object(**params)
   - params参数包括 Bucket, file_key, VersionId
 # more
+- [Self-hosting La Suite Docs with Docker _202505](https://blog.ryangl.com/self-hosting-la-suite-docs-with-docker-compose/)

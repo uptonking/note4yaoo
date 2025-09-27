@@ -39,6 +39,13 @@ modified: 2025-09-23T13:07:14.156Z
 - authentik + lasuite-docs?
 
 - ❓ how to register user on custom webapp?
+
+- ❓ 如何配置nginx, 让nginx8083端口主页显示authentik主页且功能正常
+
+- 
+- 
+- 
+
 # dev-xp
 - tips
   - 每个flow都有唯一slug，可在单独页面打开
@@ -96,6 +103,8 @@ make run-worker
 
 - frontend: http://localhost:9000/
   - https://localhost:9443/
+
+- [Reverse-proxy | authentik](https://docs.goauthentik.io/install-config/reverse-proxy/)
 # codebase
 
 # integrations

@@ -36,7 +36,25 @@ modified: 2025-09-16T12:36:12.968Z
 
 - ## 
 
-- ## 
+- ## 🧩 [The difference between quantization methods for the same bits : r/LocalLLaMA _202307](https://www.reddit.com/r/LocalLLaMA/comments/159nrh5/the_difference_between_quantization_methods_for/)
+  - Using GGML quantized models, let's say we are going to talk about 4bit
+  - I see a lot of versions suffixed with either 0, 1, k_s or k_m
+- [k-quants · Pull Request · ggml-org/llama.cpp _202306](https://github.com/ggml-org/llama.cpp/pull/1684)
+
+- K-quantization options are labeled "S", "M", and "L" and stand for small, medium, and large model sizes, respectively. 
+  - Option "0" represents baseline quantization without extra calibration. 
+  - In terms of quality and speed: 0 (lowest quality, fastest speed) < S < M < L (highest quality, slowest speed).
+
+- k models are k-quant models and generally have less perplexity loss relative to size. A q4_K_M model will have much less perplexity loss than a q4_0 or even a q4_1 model.
+- Generally, the K_M models have the best balance between size and PPL, so q3_K_M, q4_K_M, q5_K_M, etc. I like q5, and q4 best usually. 
+
+- Aside from the number of bits per weight in a scaling group being obvious, here are the main differences:
+  - Type _0 compression gives each group of weights a shared scale, but they are "symmetric" weights about 0. Type _1 weights add in a "bias" - an offset for each group of weights which allows them to be better resolved if they are mainly shifted away from zero. Type K is an enhancement in the way hierarchal groups are encoded to squeeze a little more compression into the mix. Finally, after the K we now have nothing, M, S and L variants - these actually refer to which tensors have the base precision. In the K_S models, all weight tensors have the stated precision. The simple K, K_M and K_L models specify varying amounts of weight tensors that will actually use higher precision to improve accuracy, typically 4-6 bits. This will no doubt keep expanding over time. Note that the PR referred to by u/lemon07r also contains descriptions of all the formats.
+
+- With the older quantisation method, 4_0 is 4.5 bits per weight and 4_1 is 5 bits per weight.
+  - The K quantisation methods are newer. Hopefully, they will get slightly better accuracy for roughly the same file size compared to the old methods.
+- That’s not correct. You will get the best speed with q4_K_S oder q4_K_M. This is because 3-bit and 2-bit needs more calculations.
+  - If memory bandwidth is your bottleneck and not processor speed, then smaller is faster.
 
 - ## [AMA with the Unsloth team : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1ndjxdt/ama_with_the_unsloth_team/)
 - What’s your go-to quant for most models? I usually pick Q4_K_XL dynamic, but if I have enough VRAM, is there another Q4 you’d recommend for better accuracy?
@@ -1043,4 +1061,4 @@ curl http://localhost:11434/api/chat -d '{
 
 - ## 
 
-- ## 
+- ##

@@ -558,6 +558,15 @@ modified: 2023-06-23T12:46:53.288Z
   - Configurable: Customize animation duration and style
   - Only animates newly typed characters
 
+- https://github.com/whiteSHADOW1234/TypingSVG /MIT/202509/ts
+  - https://typingsvg.vercel.app/
+  - A More Powerful Typing SVG Generator—multi-line & blank-space formatting, multiple cursor styles, customizable delete speed, and more.
+  - 结果是打字效果svg, 支持emoji, 支持多轮文字
+  - Use any font available on Google Fonts. the server will fetch and inline the font files so the SVG renders the same everywhere.
+  - Per-line customization: Set font, color, fontSize, letterSpacing
+  - Multi-line input: Each lines item can contain \n to render visual line breaks
+  - Server-rendered: SVG is fully rendered server-side — fonts are inlined so consumers don't need to load fonts on the client.
+
 ### typewriter-css-only
 
 - https://github.com/Mikulew/css-typewriter-effect /202112/css

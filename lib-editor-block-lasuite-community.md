@@ -72,6 +72,24 @@ modified: 2025-07-17T14:40:07.230Z
 
 - ## 
 
+- ## 
+
+- ## 
+# discuss-auth
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [login/passwd instead of authentity provider _202509](https://github.com/suitenumerique/docs/discussions/1367)
+  - Can I use standard login/password instead of services like Keycloak
+
+- Currently you can't. you have to use an OIDC compatible identity provider.
+  - Keycloak is not the only one out there.
+  - You could even consider using a SAAS identity provider so you have to self-host.
+  - We don't plan on adding login password on Docs for the forseable future.
+
 - ## 🔒 [OpenID Connect (OIDC) _202503](https://github.com/suitenumerique/docs/issues/735)
   - OpenID Connect is a robust standard across the industry (supported with other solutions, e.g. Authelia, Authentik)
 
@@ -88,12 +106,6 @@ modified: 2025-07-17T14:40:07.230Z
 - It would not be hard to install a third party user account management app like https://github.com/incuna/django-user-management/
 
 - User management is handle via keycloak (or your own oidc sso)
-# discuss-devops/toolchain
-- ## 
-
-- ## 
-
-- ## 
 
 - ## I'm looking for a lightweight alternative to Keycloak that's more suitable for small development teams. 
 - https://matrix.to/#/!pKqGwFDkjqlFyJabhP:matrix.org/$M0nsa9zzmntwzlEN63wCVyvRjS97Rtubu5a8SgjH_sQ?via=matrix.org&via=linagora.com&via=tchncs.de
@@ -101,6 +113,12 @@ modified: 2025-07-17T14:40:07.230Z
   - I've already looked into Authelia and tried Hydra+Kratos, but I'm specifically interested in solutions that also include managing user identities for web applications — not just authorization servers.
 
 - Authentik sounded like a good modern alternative last time i checked.
+# discuss-devops/toolchain
+- ## 
+
+- ## 
+
+- ## 
 # discuss-internals/codebase
 - ## 
 

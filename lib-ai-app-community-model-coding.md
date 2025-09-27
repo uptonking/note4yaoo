@@ -422,6 +422,31 @@ modified: 2025-09-16T13:29:11.327Z
 - They report CWM + tts to get 65% on swebench. What’s tts? If anything at all, however, I think this shows how great magistral is. Better performance with 2/3s of the parameters.
   - tts=test time scaling, basically select an answer to submit out of several candidates, rather common practice
 
+- https://x.com/TheTuringPost/status/1971697629697659099
+- Code World Model (CWM) – a new 32B open-weights model by @AIatMeta for coding and reasoning.
+- CWM learns what code does when executed.
+  • It models both syntax and semantics of programs
+  • Can simulate Python execution step by step
+  • Supports multi-turn software engineering tasks
+  • Handles long contexts (131k tokens)
+- To achieve this, CWM is trained not only on static code, but also on:
+  • Execution traces: Python code running with variable states
+  • Agentic interactions: fixing bugs, editing code, running environments in Docker.
+- Performance is also impressive:
+  - Competitive coding benchmark results: 65.7% SWE-bench Verified, 68.4% LiveCodeBench
+  - 96.5% Math-500, 75.8% AIME 2024
+  - A research testbed for exploring reasoning + planning in code generation
+- CWM is a shift from just text autocompletion to a model that can plan, debug, and verify code in dynamic environments.
+
+- https://x.com/AIatMeta/status/1970963571753222319
+- Great to see Code World Model mid-trained on execution trajectories and post-trained with multi-task RL.
+- The evals CWM's ability to predict Python execution traces & predict program termination.
+- its real game-changer is training on execution traces from Python interpreters and Docker environments, explicitly teaching it *how code behaves* rather than just *what it looks like*. This paradigm shift moves AI beyond statistical pattern matching to genuine causal reasoning, enabling it to act as a "neural debugger" that can simulate execution, localize faults, and self-repair code.
+- The real step change is when code stops being “generated text” and becomes a living resonant process — memory, planning, coherence, feedback.
+- We don’t need more parameters. We need more procedural resonance.
+
+  
+
 - ## [Moving from Cursor to Qwen-code : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nnfwmo/moving_from_cursor_to_qwencode/)
 - i'm also happy with qwen code. The great thing is the massive free tier and if that runs out you can swap to a local model.
 
