@@ -72,10 +72,12 @@ modified: 2025-09-23T13:08:29.044Z
 - ## 
 
 - ## [Authentik server does not start - backend not alive yet _202408](https://github.com/goauthentik/authentik/issues/10879)
-- 
-- 
-- 
-- 
+- Got it working again by redeploying all components in docker (so dedicated PG16 and dedicated redis instance).
+
+- 实测睡了一觉起来重启mac后authentik就恢复可用了，异常原因未排查到
+
+- [Error connecting to embedded outpost : r/Authentik](https://www.reddit.com/r/Authentik/comments/14di4z8/error_connecting_to_embedded_outpost/)
+  - I'm receiving the same error message. Would it be because another service is using port 8000 ?
 
 - ## [Deny administration paths externally? /if/admin/? _202307](https://github.com/goauthentik/authentik/issues/6385)
   - In my use case, only local users should have administrator access.
@@ -187,7 +189,9 @@ if ($request_uri ~* (/if/admin)){
 
 - ## 
 
-- ## 
+- ## ["email_verified": true by default in oauth2 is potentially unsafe _202508](https://github.com/goauthentik/authentik/issues/16205)
+  - The default behavior of the OAuth2 "email" scope of authentik (defined in the property mapping named `authentik default OAuth Mapping: OpenID 'email'` ) is to return every email as verified.
+  - Authentik should consider emails not verified by default.
 
 - ## [How to use flows · goauthentik/authentik  _202212](https://github.com/goauthentik/authentik/discussions/4306)
 - in authentik you create or modify the default-authentication-identification flow to have an Enrollment flow. This makes it so that the main login site will have a Sign up link, where your new users can sign up. Then when they login they will be able to change password/email/etc.

@@ -10,19 +10,19 @@ modified: 2025-09-23T13:07:14.156Z
 # guide
 
 - pros
-  - license: MIT, 比logto MPL 更友好
+  - license: MIT+EE, 比logto(MPL)更友好
   - integrations: HedgeDoc, Kanboard, Mastodon, Nextcloud/owncloud, Wekan, Zulip, AppFlowy, OnlyOffice, BookStack, DokuWiki, Outline, Paperless-ngx, Wiki.js, Calibre-Web, Immich, Jellyfin, Seafile, Open WebUI, librechat, Grafana, Zoho
     - Coder, gitea, gitlab, Jenkins, MinIO, pgAdmin, RustDesk Server, Tailscale, PocketBase
     - Stripe, WordPress, 1Password, Linkwarden, Bitwarden
     - 集成的案例比logto丰富
+  - 使用文档和问题讨论较多，一般能找到开发运维相关的问题
 
 - cons
-  - 未提供user account setttings页面ui
   - paid features: multiple tenants, 但存在社区方案
-  - social logins: 通过第三方平台登录时，默认无法访问用户页 Interface can only be accessed by internal users.
   - 核心功能是sso, 偏向于后端逻辑及账户管理, 在前端交互功能及定制很弱
   - 定制复杂度较高，缺少示例
   - logout退出登陆的逻辑及ui都很难定制
+  - ~~未提供user account setttings页面ui~~, 用户设置页需要隐藏部份按钮
 
 - features
   - Read Replicas: You can configure additional read replica databases to distribute database load and improve performance.
@@ -42,6 +42,12 @@ modified: 2025-09-23T13:07:14.156Z
 # dev-xp
 - tips
   - 每个flow都有唯一slug，可在单独页面打开
+
+- social logins: 通过第三方平台登录时，默认无法访问用户页 Interface can only be accessed by internal users.
+  - 应该支持跳转到应用页
+
+- authentik提供退出登录系统的默认页面如 http://localhost:9000/application/o/betterauth2509/end-session/
+  - 但这个页面的ux让人困惑, log back into app 的url是否可配置
 
 - 用户注册ui的教程在youtube视频中 [Authentik - Enrollment  _202208](https://www.youtube.com/watch?v=mGOTpRfulfQ)
   - 需要在default-authentication-flow编辑default-authentication-identification, 点击 Edit Stage

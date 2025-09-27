@@ -45,7 +45,7 @@ modified: 2025-09-22T12:32:49.473Z
   - 一种产品设计思路, ai聊天作为一种文件保存在网盘，聊天列表使用一种特殊视图
 # dev-xp
 
-# toolchain
+# devops
 - build from srouce
   - default storage folder: ~/.opencloud/storage/users/users
 
@@ -54,7 +54,7 @@ make clean generate-dev
 
 make -C opencloud build-debug
 
-./opencloud/bin/opencloud-debug server
+# ./opencloud/bin/opencloud-debug server
 
 dotenvx run -- ./opencloud/bin/opencloud-debug server
 
@@ -70,4 +70,12 @@ mc alias set opencloud http://localhost:9000 minioadmin minioadmin
 
 - open https://localhost:9200/
   - 注意本地打开的地址必须是 `https://` 开头, 否则无法打开
+  - user: admin
+  - password: admin
+
+- [[HOW-TO] Install Bare-metal opencloud version (without compilation)  _202506](https://github.com/orgs/opencloud-eu/discussions/1016)
+
+- [External OpenID Connect Identity Provider | OpenCloud Docs](https://docs.opencloud.eu/docs/admin/configuration/authentication-and-user-management/external-idp/)
+  - [Getting OpenCloud to work with External SSO/OIDC (Authentik) · opencloud-eu _202505](https://github.com/orgs/opencloud-eu/discussions/835)
+  - 🌰 [[HOW-TO] Setup SSO (OIDC) with Authentik (web, desktop app, iOS app) ](https://github.com/orgs/opencloud-eu/discussions/1014)
 # more

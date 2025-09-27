@@ -1169,7 +1169,16 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [Best instruct model that fits in 32gb VRAM : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nqnabr/best_instruct_model_that_fits_in_32gb_vram/)
+- For coding, this is SEED OSS 36B. it's a slower, but very smart model for it's size, and it may also do good on text. I know asking it various asian trivia produces great results versus qwen3 30B/32B ( SEED is more accurate and detail oriented, Qwen 30B is more like a speed reader )
+
+- Honestly for summarization and question answering from RAG (In my case web results, ) GLM-4 32B has been very good and quite easy to manage. 
+  - I have tested 30B A3B for several tasks and RP scenarios and it just does not perform anywhere near as well as a dense model. Yes, it is very efficient, and yes, it is quite fast, but if accuracy and steerability are important to you, I highly recommend dense models over these mini MoE releases.
+- GLM4 suffers from severe context forgetfulness. Arcee-AI has fixed the base model to have better grip on context, and someone else made an instruct from tha
+
+- GLM 4 32b has a very strong instruct variant that handles complex tasks well and might be worth a look.
+
+- Since it's just text summarization you probably don't need a thinking/reasoning at all.
 
 - ## [I'll show you mine, if you show me yours: Local AI tech stack September 2025 : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nnb8sq/ill_show_you_mine_if_you_show_me_yours_local_ai/)
 - Qwen3 coder 30b is usable with qwen code CLI. You just need to run it with vllm with patched template and parser. Almost zero tool calling issues since then

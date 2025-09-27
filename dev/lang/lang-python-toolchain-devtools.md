@@ -25,6 +25,21 @@ uv python install --default 3.13
 # discuss-pkg/pip/uv
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 💡 [uv-managed python installed into .local/bin can't be used with venv module · Issue · astral-sh/uv _202411](https://github.com/astral-sh/uv/issues/8821)
+  - `python3.12 -m venv` fails to create a virtual environment.
+  - ModuleNotFoundError: No module named 'encodings'
+
+- this works for me
+  - might be better than using ls -1 which may not work if you have multiple python interpreter
+
+```sh
+export PATH=$(dirname $(realpath $(which python))):$PATH
+```
+
 - ## what's uv's equivalent to `pip install diff_cover`
 
 - uv tool install diff-cover

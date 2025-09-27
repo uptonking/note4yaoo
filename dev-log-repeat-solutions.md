@@ -152,7 +152,7 @@ modified: 2021-07-20T13:50:23.433Z
   - automation
   - ai
 
-## solutions: inter(re)active knowledge-base/wiki
+## solutions: inter(re)active knowledgebase/wiki
 
 - ✨ cms(content-mgmt)
   - 👉 suite-docs  (MIT/django+blocknote)

@@ -166,6 +166,16 @@ modified: 2023-02-08T07:20:48.475Z
   - 付费方案配置，一键对接支付接口
   - 关键词过滤、替换保证文本安全
 
+- https://github.com/lordmathis/llamactl /MIT/202509/go/ts
+  - http://llamactl.org/
+  - Unified management and routing for llama.cpp, MLX and vLLM models with web dashboard.
+  - llamactl sits on top of popular LLM backends (llama.cpp, MLX, and vLLM) and provides a unified interface to manage model instances through a web dashboard or REST API.
+  - [I built llamactl - Unified management and routing for llama.cpp, MLX and vLLM models with web dashboard. : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nr06en/i_built_llamactl_unified_management_and_routing/)
+    - I got tired of SSH-ing into servers to manually start/stop different LLM instances, so I built a web-based management layer for self-hosted language models.
+    - Great for running multiple models at once or switching models on demand.
+  - What differentiates this project from `llama-swap`?
+    - The main thing is that you can create instances via web dashboard. With llama-swap you need to edit the config file. There's also API key auth which llama-swap doesn't have at all as far as I know.
+
 ## api
 
 - [https://www.steamship.com](https://www.steamship.com/)

@@ -26,6 +26,19 @@ modified: 2025-09-24T14:53:03.421Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Map additional fields by using mapProfileToUser in OAuth _202507](https://github.com/better-auth/better-auth/discussions/3290)
+  - I am using better-auth with a self-hosted keycloak oauth provider. I need to map roles that defined in keycloak to the user object.
+
+- ## [getting error while setting microsoft sso _202509](https://github.com/better-auth/better-auth/discussions/4473)
+
+- 🌰 [How to share login state and accounts across multiple apps using the same Better Auth server (like Google/YouTube)? _202507](https://github.com/better-auth/better-auth/discussions/3505)
+
+- I turned my main app (myauthserver) into an IdP using the OIDC Provider plugin .
+
 - ## [Admin plugin: allow to override built-in access control _202507](https://github.com/better-auth/better-auth/issues/3270)
   - Currently, the admin plugin enforces its built-in RBAC-like access control model. 
   - In our project, it's not enough - we are using Casbin. It would be nice if we could integrate Casbin with the admin plugin.

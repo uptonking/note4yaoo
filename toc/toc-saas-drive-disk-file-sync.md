@@ -80,7 +80,7 @@ modified: 2024-03-31T17:45:16.789Z
 - https://github.com/suitenumerique/drive /77Star/MIT/202509/python/ts
   - A collaborative file sharing and document management platform that scales. 
   - Built with Django and React.
-  - [(back) create wopi application _202502](https://github.com/suitenumerique/drive/pull/2)
+  - [已合并@202509 (back) create wopi application ](https://github.com/suitenumerique/drive/pull/2)
 
 - https://github.com/opencloud-eu/opencloud /2.1kStar/apache2/202509/go
   - https://opencloud.eu/

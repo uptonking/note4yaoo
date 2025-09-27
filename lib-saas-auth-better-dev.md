@@ -25,7 +25,7 @@ modified: 2025-09-24T14:52:43.269Z
   - Two Factor Authentication
 
 - who is using #better-auth
-  - ?
+  - [Who is using Better Auth in Production? ](https://github.com/better-auth/better-auth/discussions/2581)
 # draft
 
 # dev-xp

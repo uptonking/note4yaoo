@@ -15,10 +15,18 @@ modified: 2024-02-04T20:54:34.896Z
 - ## 
 
 - ## 
-# discuss-not-yet
+# discuss-roadmap/issues
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Sandbox] PipeToSandbox is closed: sandbox-exec: execvp() of 'grist-core/sandbox_venv3/bin/python' failed: Operation not permitted
+
+- [Sandbox] PipeToSandbox is closed: node:internal/modules/cjs/loader:1368 throw err; ^ Error: Cannot find module './_build/worker/node_modules/pyodide'
 
 - ## [Offline first support _202212](https://github.com/gristlabs/grist-core/issues/380)
 - Grist's origin was as a standalone, downloaded program. Then, work was done to network it in an end-to-end encrypted way, between individual devices, via a dumb hub. This idea excited people, but no-one seemed willing to actually install and pay for it. So we tried Grist as a conventional SaaS app, and that is when we started accumulating users.
@@ -26,6 +34,12 @@ modified: 2024-02-04T20:54:34.896Z
   - Grist has two levels. There's a "home" database, which keeps track of users/sites/workspaces/documents, and that uses postgresql/sqlite via typeorm. Then, each individual document has its own database, which is sqlite accessed directly via node-sqlite3.
   - For offline first use, you could get good mileage by focusing on the individual document level. Grist has features at this level that are quite compatible with working offline, due to its history.
 
+# discuss-internals
+- ## 
+
+- ## 
+
+- ## 
 # discuss
 - ## 
 
@@ -33,7 +47,8 @@ modified: 2024-02-04T20:54:34.896Z
 
 - ## 
 
-- ## 
+- ## [OIDCConfig: email not verified - Developers - Grist Creators _202503](https://community.getgrist.com/t/oidcconfig-email-not-verified/9032)
+- For your scenario, where you have full control and don’t need verification, setting the environment variable `GRIST_OIDC_SP_IGNORE_EMAIL_VERIFIED=true` may suffice.
 
 - ## [(Automatically) (re)load external changes to SQLite database](https://github.com/gristlabs/grist-core/issues/836)
 - I now have something that works for me, but perhaps it would be nice to also have some way to force reload the Electron app from the UI.

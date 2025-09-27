@@ -23,8 +23,6 @@ modified: 2025-09-22T12:33:21.753Z
 - ## 
 
 - ## 
-
-- ## 
 # discuss-internals
 - ## 
 
@@ -37,6 +35,33 @@ modified: 2025-09-22T12:33:21.753Z
 
 - editing existing files is supported, yes. The problem with syncthing seems to be that, when adding files from a remote location, it opens the file with temporary file name, writes the bytes, closes the file and then immediately renames it to the final name. That final rename sometimes isn't handled properly in your case.
   - There either seems to be a race condition in the code which leads to the `rename` event getting lost or the `MOVED_FROM` `inotify` event isn't emitted. Unfortunately I wasn't able to reproduce the issue on my machine, even after sycing tens of thousands of files.
+# discuss-auth/permission
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [OpenCloud not claiming "groups" from OIDC Token _202506](https://github.com/opencloud-eu/opencloud/issues/1116)
+- the requested scopes can be configure with the WEB_OIDC_SCOPE env var.
+
+- ## [Authentik without openldap · opencloud-eu  _202506](https://github.com/orgs/opencloud-eu/discussions/1093)
+
+- OpenCloud always uses LDAP to store its users. The built-in service is called `idm` and is usable for small deployments. If you want enterprise grade, you always need to substitute that LDAP with an external service (like OpenLDAP or Active Directory or something similar)
+
+- Turns out the authentik LDAP outpost was sending back the uid, not the entryUUID. Once I switched to OC_LDAP_USER_SCHEMA_ID: "uid" and OC_LDAP_GROUP_SCHEMA_ID: "uid", everything worked and I could log in!".
+
+- [User Role Mapping Fails on Auto-Provisioning with External IDP Enabled  ](https://github.com/opencloud-eu/opencloud/issues/1282)
+
+- ## [Getting OpenCloud to work with External SSO/OIDC (Authentik) · opencloud-eu _202505](https://github.com/orgs/opencloud-eu/discussions/835)
+
+- 
+- 
+- 
+
+- [External OIDC (Authentik) Broken with Upgrade form 2.3.0 to 3.0.0 _202506](https://github.com/orgs/opencloud-eu/discussions/1052)
+  - 🐛 no role in claim maps to an OpenCloud role
+  - Disregard, this was due to a config bug where the radicale container was not running after the containers were updated to the newest version.
 # discuss
 - ## 
 

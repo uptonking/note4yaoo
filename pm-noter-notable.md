@@ -17,9 +17,10 @@ modified: 2023-11-28T14:48:45.910Z
     - replay
     - 基于oplog/events的方案
   - 🤝 collaboration-ready (accessible): multiplayer, sharing, offlineable, crdt
-  - ⛓️ automation/workflow/rpa (automatable): 结合lowcode, 基于dag?, scheduler, ai-hitl
+  - ⛓️ automation/workflow/rpa (automatable): 结合lowcode, 基于dag/graph?, scheduler, ai-hitl
   - 📱 mobile-editor: phone/pad, 自定义编辑器可以是主特性，也可以是锦上添花
     - mobile-app-generator
+    - image-gen
   - 📈 end-user database: 支持用户自定义数据和流程, multi views, ob-bases
   - 💫 animated-text/code sharing: playback with different speed
   - markdown: hotkeys, table-builder
@@ -134,6 +135,7 @@ modified: 2023-11-28T14:48:45.910Z
   - 因为允许替换，所以经常需要动态导入
 
 - why-local-ai?
+  - 支持调用或执行本地MCP/工具/浏览器, 这也是很多saas产品开发桌面版的原因
   - privacy: code, data
   - tweak different configs for ai-models: uncensored
   - no implicit ai degradation/switch: bring your model
