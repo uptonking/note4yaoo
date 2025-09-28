@@ -8,6 +8,14 @@ modified: 2024-06-30T11:16:43.565Z
 # devops-docker-dev-xp
 
 # guide
+- pros
+  - redeployable
+  - rich ecosystem
+  - 可有效降低端口冲突, 容器内的端口除非主动映射出去否则不占用主机端口
+
+- cons
+  - complex configrations
+
 - tips
   - 使用要点: image, container, volume, network
   - podman难以完全替代docker，依赖的环境或服务很可能只提供了docker，反而会造成使用时的混乱

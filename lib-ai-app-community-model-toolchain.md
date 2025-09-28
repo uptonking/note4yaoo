@@ -34,7 +34,10 @@ modified: 2025-09-16T12:36:12.968Z
 
 - ## 
 
-- ## 
+- ## [What is your primary reason to run LLM’s locally : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1nsjwv1/what_is_your_primary_reason_to_run_llms_locally/)
+- For me, it is independence from Big Tech and venture capital. Open weight models can never be taken away from us.
+
+- New open weight models come out like every week and I want to be able to try the ones that can can run on my PC without waiting for a subscription service to add them or paying per use.
 
 - ## 🧩 [The difference between quantization methods for the same bits : r/LocalLLaMA _202307](https://www.reddit.com/r/LocalLLaMA/comments/159nrh5/the_difference_between_quantization_methods_for/)
   - Using GGML quantized models, let's say we are going to talk about 4bit

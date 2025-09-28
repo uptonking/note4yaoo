@@ -9,6 +9,13 @@ modified: 2025-04-09T02:59:11.259Z
 
 # guide
 
+- sdkman
+
+```sh
+sdk list java | grep installed
+
+```
+
 # discuss-stars
 - ## 
 

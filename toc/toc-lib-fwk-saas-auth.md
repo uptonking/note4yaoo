@@ -20,7 +20,9 @@ modified: 2025-09-23T09:28:08.532Z
 - https://github.com/keycloak/keycloak /29.7kStar/apache2/202509/java
   - https://www.keycloak.org/
   - Open Source Identity and Access Management solution for modern Applications and Services.
+  - Add authentication to applications and secure services with minimum effort. No need to deal with storing users or authenticating users.
   - Keycloak provides user federation, strong authentication, user management, fine-grained authorization, and more.
+  - 依赖quarkus、jboss、wildfly、hibernate, 未使用spring
 
 - https://github.com/authelia/authelia /25.3kStar/apache2/202509/go
   - https://www.authelia.com/

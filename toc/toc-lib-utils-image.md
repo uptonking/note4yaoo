@@ -75,6 +75,11 @@ modified: 2023-04-04T22:39:45.442Z
     - It is typically 4-8x faster than using the quickest ImageMagick 
     - imagor implements libvips streaming that facilitates parallel processing pipelines, achieving high network throughput.
     - Alongside there is imagorvideo bringing video thumbnail capability through ffmpeg C bindings.
+    - https://github.com/libvips/libvips /10.7kStar/LGPL/202509/c
+      - https://libvips.github.io/libvips/
+      - A fast image processing library with low memory needs
+      - libvips is a demand-driven, horizontally threaded image processing library
+      - Compared to similar libraries, libvips runs quickly and uses little memory
 
 - https://github.com/sahandghavidel/ai-image-editor-saas-app /202509/ts
   - https://ai-image-editor.100jsprojects.com/

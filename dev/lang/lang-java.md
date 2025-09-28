@@ -10,14 +10,13 @@ modified: 2020-07-14T09:26:35.281Z
 # guide ☕️
 
 - classic-examples-java
-  - office: apache-poi, pdf, apitable
+  - office: Stirling-PDF(MIT+EE), apache-poi, pdf-iText, kkFileView(文档在线预览-sb+freemarker)
   - flow-graph: logicFlow-backend
-  - crdt
   - android: 🌹 dict-mdx-table
-  - sirixdb
+  - crdt
   - git-like: onedev
-  - utils: persistent-data-structure
-  - apps: kkFileView(文档在线预览-sb+freemarker), Stirling-PDF
+  - utils: persistent-data-structure, sirixdb
+  - apps: apitable, keycloak
   - more: jedit, json-parser, tree
 # 开发通用问题
 - 搜索

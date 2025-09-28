@@ -40,7 +40,21 @@ modified: 2025-07-23T15:48:28.642Z
 
 - ## 
 
-- ## 
+- ## ❓ 使用authentik登录时, 从主页跳转到登录页的请求为  "GET /api/v1.0/authenticate/ HTTP/1.1" 302 0 (keycloak登录时日志也是这个)
+
+- lasuite-docs后端正常登录时的请求为
+  - /api/v1.0/callback/?state=jsscAcf2x7b25prCoPIrQQcZb2V2Y5Eq&session_state=99cd15f8-f891-4d82-a5cb-47e2146673ec&iss=http%3A%2F%2Flocalhost%3A8083%2Frealms%2Fimpress&code=f21c993f-22ba-41e9-9674-b17d180ce737.99cd15f8-f891-4d82-a5cb-47e2146673ec.869481d0-5774-4e64-bc30-fedc7c58958f HTTP/1.1
+
+- authentik异常的日志为
+  - The request fails due to a missing, invalid, or mismatching redirection URI (redirect_uri). [authentik.providers.oauth2.views.authorize] auth_via=unauthenticated cause=redirect_uri_no_match domain_url=localhost host=localhost:9000 pid=9615 request_id=ef442b8797b1443ea6731283404b6d8c schema_name=public
+  - HTTP GET /application/o/authorize/?response_type=code&scope=openid+email&client_id=DyADizAP1Q5rlDqNqeBbzRgLFI5GpujpahrbkxgA&redirect_uri=http%3A%2F%2Flocalhost%3A8071%2Fapi%2Fv1.0%2Fcallback%2F&state=IPGmFHqvq7c7WclpdbYKnr18i62ck5jU&acr_values=eidas1&nonce=UGK75ddeexQ3ryeBHj6Co6pWOnKrz6R2 400 [0.04, 127.0.0.1:53032] [django.channels.server]
+
+- 有个疑问，keycloak登录的url为 http://localhost:8083/realms/impress/protocol/openid-connect/auth?response_type=code&scope=openid+email&client_id=impress&redirect_uri=http%3A%2F%2Flocalhost%3A8071%2Fapi%2Fv1.0%2Fcallback%2F&state=jHa4OitdbWHfEV6uao3ehuL5gHHoDJzu&acr_values=eidas1&nonce=otplOUD0GDEynkHomSLDdV9A0GOKBdFF
+  - 而authentik登录的url为 http://localhost:9000/application/o/authorize/?response_type=code&scope=openid+email&client_id=orgK14kskvU9UCETRbaqKE6kMCeR211uC4hRKFe4&redirect_uri=http%3A%2F%2Flocalhost%3A8071%2Fapi%2Fv1.0%2Fcallback%2F&state=T3RYXqrc6APnys1wMgeWNDaC8jwXjfgJ&acr_values=eidas1&nonce=hbcoG328CA9iNhkxeL6dnYeJP2KQJkIq
+    - 为什么不是8083端口而是9000
+
+- [Grafana Redirect URI Error · Issue · goauthentik/authentik _202402](https://github.com/goauthentik/authentik/issues/8673)
+  - I suspect that Grafana is being operated behind a reverse proxy. If that's the case, you should update the Grafana container by adding the following environment variable `GF_SERVER_ROOT_URL: "https://grafana.domain.com"`
 
 - ## Problem: my login is auto invalidated every day, so I have to login every day. is there any environment variables to configure the login token time limit? 
   - maybe you have to read keycloak documentation https://www.keycloak.org/documentation.html
@@ -54,11 +68,6 @@ modified: 2025-07-23T15:48:28.642Z
   - SESSION_COOKIE_AGE = values. PositiveIntegerValue( default=60 * 60 * 12, environ_name="SESSION_COOKIE_AGE", environ_prefix=None ) // 12h
   - SESSION_COOKIE_AGE=604800  # 7 days
   - ensures both `Keycloak` and `Django` sessions have compatible timeouts.
-
-- 
-- 
-- 
-- 
 
 - ## 本地django-dev-server获取本地minio中的内容失败 An error occurred (502) when calling the GetObject operation (reached max retries: 4): Bad Gateway. _20250725
 - ai帮着加了几个aws相关的环境变量

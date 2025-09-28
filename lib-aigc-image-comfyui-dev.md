@@ -79,6 +79,10 @@ modified: 2025-09-25T16:24:05.355Z
   - 在线图片生成或编辑的架构, 涉及到model/lora/vae/encoder的下载与组合，目前没有类似ollama的统一方案, 还涉及到GPU/CPU硬件支持，只有成熟方案才处理过相关问题
   - 下载模型文件后不要rename，方便与第三方包管理共享，方便与云端服务商的模型共享名称
 # draft
+- roadmap
+  - docs-editor  + image-gen
+  - image-editor + image-gen
+
 - google-photos-like + google-drive + preview workflow
 
 - 需要一个类似openrouter/groq的api能支持多个服务生成image, 需要同时支持 sd-webui和comfyui

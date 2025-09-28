@@ -14,8 +14,10 @@ modified: 2025-09-23T13:07:14.156Z
   - integrations: HedgeDoc, Kanboard, Mastodon, Nextcloud/owncloud, Wekan, Zulip, AppFlowy, OnlyOffice, BookStack, DokuWiki, Outline, Paperless-ngx, Wiki.js, Calibre-Web, Immich, Jellyfin, Seafile, Open WebUI, librechat, Grafana, Zoho
     - Coder, gitea, gitlab, Jenkins, MinIO, pgAdmin, RustDesk Server, Tailscale, PocketBase
     - Stripe, WordPress, 1Password, Linkwarden, Bitwarden
-    - 集成的案例比logto丰富
+  - 集成的案例比logto丰富，但github上示例较少，特别是sdk示例少
   - 使用文档和问题讨论较多，一般能找到开发运维相关的问题
+  - Read Replicas: You can configure additional read replica databases to distribute database load and improve performance.
+  - Remote Access (RDP, VNC, SSH)
 
 - cons
   - paid features: multiple tenants, 但存在社区方案
@@ -25,7 +27,10 @@ modified: 2025-09-23T13:07:14.156Z
   - ~~未提供user account setttings页面ui~~, 用户设置页需要隐藏部份按钮
 
 - features
-  - Read Replicas: You can configure additional read replica databases to distribute database load and improve performance.
+  - 可定制: partial White Labelling
+  - self hostable
+  - ✨ flows: se our pre-built workflows, or customize every step of authentication through configurable templates, infrastructure as code, and comprehensive APIs.
+  - Use our APIs and fully customizable policies to automate any workflow
 # draft
 - roadmap
   - clerk sdk for authentik
@@ -40,12 +45,12 @@ modified: 2025-09-23T13:07:14.156Z
 
 - ❓ how to register user on custom webapp?
 
-- ❓ 如何配置nginx, 让nginx8083端口主页显示authentik主页且功能正常
-
 - 
 - 
 - 
 
+- done
+  - ~~如何配置nginx, 让nginx8083端口主页显示authentik主页且功能正常~~
 # dev-xp
 - tips
   - 每个flow都有唯一slug，可在单独页面打开

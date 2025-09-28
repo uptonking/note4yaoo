@@ -274,7 +274,7 @@ modified: 2021-01-04T17:26:43.784Z
   - Pluggable architecture & tree-shakable plugins
   - Smooth, virtualized scrolling
 
-- https://github.com/Stirling-Tools/Stirling-PDF /20.4kStar/GPLv3/202403/java/js
+- https://github.com/Stirling-Tools/Stirling-PDF /20.4kStar/GPL > MIT/202403/java/js
   - https://www.pdfdrills.com/
   - locally hosted web application that allows you to perform various operations on PDF files
   - locally hosted web based PDF manipulation tool using docker that allows you to perform various operations on PDF files

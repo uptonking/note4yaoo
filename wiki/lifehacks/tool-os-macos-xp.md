@@ -350,6 +350,8 @@ brew services info redis
 - [PostgreSQL14安装并初始配置外部连接指南。 - 星小梦 - 博客园](https://www.cnblogs.com/XingXiaoMeng/p/18722581)
   - [PostgreSQL 初始化配置设置 - Amd794 - 博客园](https://www.cnblogs.com/Amd794/p/18634417)
 
+- [Setting Up PostgreSQL for macOS Users: Step-by-Step Instructions _202410](https://dev.to/techprane/setting-up-postgresql-for-macos-users-step-by-step-instructions-2e30)
+
 ```sh
 # 👇 需要手动加上版本号，发行版默认可能是旧版
 brew install postgresql@15
@@ -377,6 +379,7 @@ ALTER USER postgres WITH PASSWORD '11111111';
 ALTER USER some_user PASSWORD NULL;
 
 CREATE ROLE username WITH LOGIN SUPERUSER CREATEDB CREATEROLE PASSWORD 'password';
+GRANT ALL PRIVILEGES ON DATABASE products_db TO your_username;
 
 ALTER USER myuser WITH SUPERUSER;
 

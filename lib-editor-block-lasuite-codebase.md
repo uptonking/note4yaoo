@@ -40,6 +40,8 @@ MINIO_ROOT_USER=impress MINIO_ROOT_PASSWORD=password minio server --address :909
 
 mc alias set impress http://localhost:9090 impress password 
 
+cd ~/opt/compiled/keycloak &&  ./bin/kc.sh start-dev --features=preview --import-realm --hostname=http://localhost:8083 --hostname-strict=false --http-port=8088 --http-management-port=9037 --health-enabled=true --metrics-enabled=true --proxy-headers forwarded --db postgres --db-url-host localhost --db-username impress --db-password pass --bootstrap-admin-username admin --bootstrap-admin-password admin
+
 cd ./src/frontend/
 yarn install
 

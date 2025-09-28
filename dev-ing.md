@@ -204,6 +204,19 @@ use vanilla html/css/javascript to create a personal profile landing page: homep
 use react to create a homepage shows a list of frontend frameworks like react/vue/angular, when clicking the framework, navigate to the route to show its introduction
 ```
 
+## 0928
+
+- [Why am I getting a permission denied error for schema public on pgAdmin 4? - Stack Overflow](https://stackoverflow.com/questions/67276391/why-am-i-getting-a-permission-denied-error-for-schema-public-on-pgadmin-4)
+  - ✅ ALTER DATABASE my_database OWNER TO my_database_user; 
+  - GRANT USAGE ON SCHEMA public TO your_user; 
+
+- [PGError: ERROR: source database "template1" is being accessed by other users - Stack Overflow](https://stackoverflow.com/questions/4977171/pgerror-error-source-database-template1-is-being-accessed-by-other-users)
+  - `CREATE DATABASE` works by copying an existing database. PostgreSQL won't let you copy a database if another session is connected to it. If `template1` is being accessed by other users, CREATE DATABASE will fail.
+  - The question you need to answer: Why are other sessions connected to template1?
+  - At the point you initialize a database cluster, template0 and template1 are the same. if you add the procedural langauge PL/python to template1, every database you create later will include PL/python.
+  - The database template0 is intended to be a "virgin" template. It should contain only standard database objects--the ones created by initializing the cluster. As a "virgin" template, it should never be changed. Never.
+  - 💡 Solution: Restart posgres service.
+
 ## 0924
 
 - [Diff syntax highlighting in Github Markdown - Stack Overflow](https://stackoverflow.com/questions/40883421/diff-syntax-highlighting-in-github-markdown)

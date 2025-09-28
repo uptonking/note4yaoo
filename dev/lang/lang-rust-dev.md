@@ -10,9 +10,9 @@ modified: 2022-11-11T06:57:09.670Z
 # guide 🦀
 
 - classic-examples-rust
-  - editor: kilo-editor, treesitter, ripgrep
-  - crdt
+  - editor: kilo-editor, treesitter, ripgrep, xi-editor/lapce/zed
   - db: 🌹 turso, rust-kv, terminusdb-store, 
+  - crdt
   - git-like
   - utils: mdx, mdBook/rustdoc, persistent-data-structure, arrow
   - toolchain: rspack+unplugin
