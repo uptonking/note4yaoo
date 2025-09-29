@@ -204,6 +204,70 @@ use vanilla html/css/javascript to create a personal profile landing page: homep
 use react to create a homepage shows a list of frontend frameworks like react/vue/angular, when clicking the framework, navigate to the route to show its introduction
 ```
 
+## 0929
+
+- opencloud-start-error
+  - {"level":"error", "service":"storage-users", "host.name":"ba72b0838508", "protocol":"http", "error":"http service dataprovider could not be started, : tree: unfit storage '/var/lib/opencloud/storage/users': extended attributes not supported: xattr. Set /var/lib/opencloud/storage/users/posixfs-xattr-check-87673789 user.posixfs.test: operation not supported", "time":"2025-09-29T22:18:38Z", "message":"reva server error"}
+
+- [Extended attributes not supported over NFS after v1.10.6 · Issue #11843 · siderolabs/talos _202509](https://github.com/siderolabs/talos/issues/11843)
+  - {"level":"error", "service":"storage-users", "error":"http service dataprovider could not be started, : tree: unfit storage '/var/lib/opencloud/storage/users': extended attributes not supported: xattr. Set /var/lib/opencloud/storage/users/posixfs-xattr-check-3771599314 user.posixfs.test: operation not supported", "time":"2025-09-16T18:35:16Z", "message":"error starting the http server"}
+
+- traefik-1    | 2025-09-29T21:41:32Z ERR Unable to obtain ACME certificate for domains error="cannot get ACME client acme: error: 400 :: POST :: https://acme-v02.api.letsencrypt.org/acme/new-acct :: urn:ietf:params:acme:error:invalidContact :: Error validating contact(s) :: contact email has forbidden domain \"example.org\"" ACME CA=https://acme-v02.api.letsencrypt.org/directory acmeCA=https://acme-v02.api.letsencrypt.org/directory domains=["cloud.opencloud.test"] providerName=letsencrypt.acme routerName=opencloud@docker rule=Host(`cloud.opencloud.test`)
+
+- https://github.com/bitnami/containers/tree/main/bitnami/openldap
+  - packaged by Bitnami
+
+- [Installing and configuring OpenLDAP - IBM Documentation](https://www.ibm.com/docs/en/rpa/30.0.x?topic=ldap-installing-configuring-openldap)
+
+- [Mastering LDAP on Mac: A Simple Guide for Technology Managers](https://hoop.dev/blog/mastering-ldap-on-mac-a-simple-guide-for-technology-managers/)
+  - Find the Directory Utility on your Mac. This simple tool allows you to connect to directory services like LDAP.
+  - 实测最新macos上内置了opendal
+
+- [LDAP/OpenLDAPSetup - Debian Wiki](https://wiki.debian.org/LDAP/OpenLDAPSetup)
+- [OpenLDAP - ArchWiki](https://wiki.archlinux.org/title/OpenLDAP)
+
+### [OpenLDAP Software 2.6 Administrator's Guide](https://www.openldap.org/doc/admin26/)
+
+- [A Quick-Start Guide](https://www.openldap.org/doc/admin26/quickstart.html)
+
+- What is a directory service?
+  - A directory is a specialized database specifically designed for searching and browsing, in additional to supporting basic lookup and update functions.
+  - Directories tend to contain descriptive, attribute-based information and support sophisticated filtering capabilities.
+- LDAP runs over TCP/IP or other connection oriented transfer services. 
+- The LDAP information model is based on entries. 
+  - An entry is a collection of attributes that has a globally-unique Distinguished Name (DN). The DN is used to refer to the entry unambiguously.
+  - Each of the entry's attributes has a type and one or more values. 
+- directory entries are arranged in a hierarchical tree-like structure.
+- LDAP allows you to control which attributes are required and allowed in an entry through the use of a special attribute called `objectClass`. 
+  - The values of the `objectClass` attribute determine the schema rules the entry must obey.
+-  LDAP defines operations for interrogating and updating the directory. Operations are provided for adding and deleting an entry from the directory, changing an existing entry, and changing the name of an entry. 
+   -  Most of the time, though, LDAP is used to search for information in the directory.
+- LDAP utilizes a client-server model. 
+  - One or more LDAP servers contain the data making up the directory information tree (DIT). 
+  - The client connects to servers and asks it a question. The server responds with an answer and/or with a pointer to where the client can get additional information (typically, another LDAP server). 
+  - No matter which LDAP server a client connects to, it sees the same view of the directory; a name presented to one LDAP server references the same entry it would at another LDAP server. This is an important feature of a global directory service.
+
+- Why doesn't OpenLDAP use a relational database management system (RDBMS) instead of an embedded key/value store like LMDB? 
+  - The short answer is that use of an embedded database and custom indexing system allows OpenLDAP to provide greater performance and scalability without loss of reliability. 
+  - OpenLDAP uses LMDB concurrent / transactional database software.
+
+- `slapd`(8) is an LDAP directory server that runs on many different platforms. 
+  - You can use it to provide a directory service of your very own. Your directory can contain pretty much anything you want to put in it.
+  - You can connect it to the global LDAP directory service, or run a service all by yourself. 
+- slapd comes with a variety of different database backends you can choose from. 
+  - They include MDB, a hierarchical high-performance transactional database backend; and PASSWD, a simple backend interface to the passwd(5) file. 
+  - The MDB backend utilizes LMDB.
+  - slapd can be configured to serve multiple databases at the same time. This means that a single slapd server can respond to requests for many logically different portions of the LDAP tree, using the same or different database backends.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
 ## 0928
 
 - [Why am I getting a permission denied error for schema public on pgAdmin 4? - Stack Overflow](https://stackoverflow.com/questions/67276391/why-am-i-getting-a-permission-denied-error-for-schema-public-on-pgadmin-4)

@@ -42,22 +42,55 @@ modified: 2025-09-22T12:33:21.753Z
 
 - ## 
 
-- ## [OpenCloud not claiming "groups" from OIDC Token _202506](https://github.com/opencloud-eu/opencloud/issues/1116)
-- the requested scopes can be configure with the WEB_OIDC_SCOPE env var.
+- ## 
 
-- ## [Authentik without openldap · opencloud-eu  _202506](https://github.com/orgs/opencloud-eu/discussions/1093)
+- ## [Is the Shared User Directory Mode diagram actually correct? · opencloud-eu _202508](https://github.com/orgs/opencloud-eu/discussions/1364)
+  - In Shared User Directory Mode, the OpenCloud server gets group memberships from the OIDC token according to the corresponding diagram. 
+  - Can anyone confirm whether this is actually correct?
+  - In my understanding, the OIDC token does no contain information about group membership.
 
-- OpenCloud always uses LDAP to store its users. The built-in service is called `idm` and is usable for small deployments. If you want enterprise grade, you always need to substitute that LDAP with an external service (like OpenLDAP or Active Directory or something similar)
+- Thanks for the hint. That part of the diagram is actually slightly wrong. The "Reads Roles and Group memberships from claims" should actually just be "Reads Roles from claims"
 
-- Turns out the authentik LDAP outpost was sending back the uid, not the entryUUID. Once I switched to OC_LDAP_USER_SCHEMA_ID: "uid" and OC_LDAP_GROUP_SCHEMA_ID: "uid", everything worked and I could log in!".
+- ## [Issues with Keycloak and User Provisioning in OpenCloud Deployment · opencloud-eu _202506](https://github.com/orgs/opencloud-eu/discussions/1078)
+- The combination of external keycloak and internal ldap is not documented / tested and not recommended.
+  - Our compose example shows both components as external services.
+
+- If we try with an external LDAP, I assume an "external" LDAP means a standalone LDAP service that is not managed or bundled by OpenCloud. So this could be, a separate OpenLDAP server (or an enterprise LDAP service like Active Directory) that we deploy and manage ourselves (outside the opencloud compose stack). Is that correct?
+  - Yes. OpenCloud brings a "built-in" LDAP server which is suitable for small and home lab installations.
+  - To get an "enterprise" system, you should replace it with OpenLDAP or something similar.
+
+- [I'm using OIDC with Keycloak. OpenCloud receives the token successfully, but it fails with could not get user by could not get user by claim email with value email@email.com machine error. How can I register or auto-provision users? · opencloud-eu _202507](https://github.com/orgs/opencloud-eu/discussions/1261)
+
+- [In the Keycloak deployment example,  `PROXY_USER_OIDC_CLAIM`  should be `sub` _202504](https://github.com/opencloud-eu/opencloud/issues/682)
+  - That really depends on your requirements. 
+  - the autoprovisioning example was indeed switch to sub 
+
+- ## [question: external OIDC with internal LDAP server (idm) possible? _202506](https://github.com/orgs/opencloud-eu/discussions/1118)
+- The "built-in IDP" is lico (libregraph/lico) which is an OIDC Server. The built-in LDAP Server is based on libregraph/idm which is a different component (internally we call that component "idm" not "idp".
+
+- It is technically possible. We just do not document such a setup currently as we have to focus a bit on which combination for internal/external IDPs and LDAP servers we actually what to actively support otherwise this gets too much of a maintenance burden.
+
+- we do not want this setup to be considered as an option because we cannot maintain so many different approaches. Although you can do that on your own, it should not be documented.
+
+- ## 💡 [Authentik without openldap · opencloud-eu  _202506](https://github.com/orgs/opencloud-eu/discussions/1093)
+
+- OpenCloud always uses LDAP to store its users. The built-in service is called `idm` and is usable for small deployments. 
+  - If you want enterprise grade, you always need to substitute that LDAP with an external service (like OpenLDAP or Active Directory or something similar)
+
+- Turns out the authentik LDAP outpost was sending back the `uid`, not the `entryUUID`. Once I switched to `OC_LDAP_USER_SCHEMA_ID: "uid"` and `OC_LDAP_GROUP_SCHEMA_ID: "uid"`, everything worked and I could log in
 
 - [User Role Mapping Fails on Auto-Provisioning with External IDP Enabled  ](https://github.com/opencloud-eu/opencloud/issues/1282)
 
+- ## [OpenCloud not claiming "groups" from OIDC Token _202506](https://github.com/opencloud-eu/opencloud/issues/1116)
+- the requested scopes can be configure with the `WEB_OIDC_SCOPE` env var.
+
 - ## [Getting OpenCloud to work with External SSO/OIDC (Authentik) · opencloud-eu _202505](https://github.com/orgs/opencloud-eu/discussions/835)
 
-- 
-- 
-- 
+- https://github.com/patchmonkey/opencloud-authentik-specific-config /202505
+  - My personal configuration for integrating authentik with opencloud 2.3.0 for external OIDC.
+  - Understanding that I needed autoprovisioning mode (opencloud needs an ldap dir to store users always, and if you haven't provided that explicitly, you need to configure your docker files to spin up the ldap server AND make sure you have the correct parameters set for autoprovisioning
+
+- the problem with Authentik (and seemingly with other IdPs) is that Authentik's endpoints are tied to a single Client/Client ID, and that additional ClientIDs have different URLs.
 
 - [External OIDC (Authentik) Broken with Upgrade form 2.3.0 to 3.0.0 _202506](https://github.com/orgs/opencloud-eu/discussions/1052)
   - 🐛 no role in claim maps to an OpenCloud role

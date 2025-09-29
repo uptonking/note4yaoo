@@ -137,7 +137,16 @@ modified: 2021-07-27T16:35:20.057Z
 
 - ## 
 
-- ## 
+- ## [Migrating from folder-based storage to Paperless-ngx – need advice on structure : r/Paperlessngx](https://www.reddit.com/r/Paperlessngx/comments/1nt4xg0/migrating_from_folderbased_storage_to/)
+  - I’m moving my documents from a traditional folder-based system into Paperless-ngx.
+  - Here’s how I’m thinking of mapping that into Paperless:
+  - Correspondent → the last folder before the files (e.g., Dr_Smith, 1stAve, 2ndAve)
+  - Tags → the broader folder (e.g., Medical, Apartment Rent) + any extra context I might need later
+  - Document Type → something specific like Lab Report, Lease, Rent Payment, etc.
+  - Title → not sure what the best practice is here. What would you recommend?
+- Just keep title detailed. I've recently migrated. Still trying to figure out things. Paperless can add tags from folders and subfolders automatically for docs in consume folder. So then you can go later and make that into correpondent, doc type, tags... Just don't overdo anything unless you see it working... Itself main use case is finding docs fast
+
+- Very timely topic for me as well and will follow this conversation. Just started and trying out different ways. Now I'm using more and more workflows to set the Doctype first, then Correspondent, Path and Tags. In tags using OCR word matching.
 
 - ## The best way to preview PDFs at scale:
 - https://x.com/pontusab/status/1924091702832517357

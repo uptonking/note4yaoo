@@ -12,6 +12,20 @@ modified: 2024-06-30T11:17:28.971Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 💡 [How can I use environment variables in docker-compose? - Stack Overflow](https://stackoverflow.com/questions/29377853/how-can-i-use-environment-variables-in-docker-compose)
+- Docker Compose has native support for default environment variables in a file.
+- [Interpolation | Docker Docs](https://docs.docker.com/compose/how-tos/environment-variables/variable-interpolation/)
+- Docker Compose can interpolate variables into your Compose file from multiple sources.
+  - Variables from your shell environment
+  - If --env-file is not set, variables set by an `.env` file in local working directory (PWD)
+  - Variables from a file set by - `-env-file` or an `.env` file in project directory
+  - You can check variables and values used by Compose to interpolate the Compose model by running `docker compose config --environment` .
+  - `COMPOSE_DEBUG=${DEV_MODE:-false}`
+
 - ## 又有人遇到 Docker 网络问题，之前分享的操作方法我又分享一下。这是最稳妥的做法：
 - https://x.com/jaywcjlove/status/1894825834390921678
   - 1️⃣ 本地下载镜像

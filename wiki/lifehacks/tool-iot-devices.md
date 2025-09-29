@@ -184,6 +184,26 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Advice: 2× RTX 5090 vs RTX Pro 5000 (48GB) for RAG + local LLM + AI development : r/LocalLLM _202509](https://www.reddit.com/r/LocalLLM/comments/1nsyiag/advice_2_rtx_5090_vs_rtx_pro_5000_48gb_for_rag/)
+- As someone with 2x 5090s, started from 1.. don't do it. Go straight to the pro 6000. Thank me later. It'll save you time, money, and effort. :) I now have a pro 6000. You can pick one up from Exxact for $7200.
+  - Dual 5090s are great… you can run many models. 
+  - However, even with quantized KV cache it’ll crash often. You can’t max out the 1million context Qwen coder. You can’t really fine tune models that don’t fit in a single GPU. You’ll have issues with accelerate. 
+  - Heat is very hot. At least 10 degrees warmer in a whole room when fine tuning. Power usage is very high. You’ll need to run new electrical or have your machine shut off when someone plugs in a vacuum. You’ll need to run dual psus or buy a 2000w+ psu. 
+  - Case options are very limited. The cards are massive in size. You’ll need 8 slot pc cases minimum for 2 cards. 
+  - You’ll want to run 70b+ models guaranteed. Even Qwen next 80b. 2x 5090s isn’t enough. 
+  - This is all solved with a single pro 6000. So for an extra $1000 you can save yourself a lot of headaches and get access to nvidia enterprise
+
+- Rent GPUs online unless you have a reason other than inference
+
+- Remember the most important thing: whatever you choose initially, you will have to switch to RTX 6000 PRO 96Gb on Epic or Threadripper platrofm eventually if you want to continue running large local llms efficiently. The cost of those things will dwarf your current current setup. So, do not sweat much while deciding on the current config. Just make sure that your case and motherboard allow to connect at least 2 GPUs via riser cards with PCI 5.0 on each, even if at x8 speed. 
+
+- Be sure you get a motherboard with dual x8 pcie slots if you go with two GPUs. Most AM5 boards don’t support that but a handful do. Just wanted to give you a heads up
+  - Yeps, Asus Pro Art 2x pice 5.0
+
 - ## [The NVIDIA DGX Spark at $4, 299 can run 200B parameter models locally - This is our PC/Internet/Mobile moment all over again : r/LlamaFarm _202509](https://www.reddit.com/r/LlamaFarm/comments/1nee9fq/the_nvidia_dgx_spark_at_4299_can_run_200b/)
 - DGX has 273gb/s versus 1.7Tb/s for a rtx 5090...
   - The bandwidth is terrible. You'll run your models at 5 tps

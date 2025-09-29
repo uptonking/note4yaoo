@@ -387,7 +387,14 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## 🤔 [Is RAG system actually slow because of tool calling protocol? : r/Rag _202509](https://www.reddit.com/r/Rag/comments/1ntc1ky/is_rag_system_actually_slow_because_of_tool/)
+  - Just came across few wild comparison between MCP and UTCP protocols and honestly... my mind is blown.
+  - For RAG systems where every millisecond counts when we are retrieving documents. UTCP is 30-40% faster performance than MCP. that's HUGE.
+
+- Why would you use mcp in RAG to begin with?
+  - The consumer of a RAG might use tools, but ‘the’ RAG components do not need tools.
+
+- Find it funny everyone so focused on speed, but go ask gpt and wait 15min is fine
 
 - ## 🆚 [Does anyone know how much of a performance difference between knowledge graphs and vector based searches? : r/LangChain _202408](https://www.reddit.com/r/LangChain/comments/1eragqk/does_anyone_know_how_much_of_a_performance/)
   - I made a pretty simple vector based RAG search, and it performs "okay" and doesn't always generate the expected results. I have the pieces for a knowledge graph, but I was wondering if people knew the expected improvements that I should expect to see by moving to knowledge graphs?

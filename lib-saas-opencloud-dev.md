@@ -19,6 +19,7 @@ modified: 2025-09-22T12:32:49.473Z
   - Built-in File Preview
 
 - cons
+  - oidc的配置很复杂, keycloak使用了外部ldap-server, authentik未提供官方支持
   - 未实现文件树
   - 在mac上进行源码开发不顺利
 
@@ -44,12 +45,22 @@ modified: 2025-09-22T12:32:49.473Z
 - 💡 ideas
   - 一种产品设计思路, ai聊天作为一种文件保存在网盘，聊天列表使用一种特殊视图
 # dev-xp
+- https://github.com/opencloud-eu/opencloud-compose 
+  - 使用的基础镜像是 opencloudeu/opencloud-rolling, 里面包含了backend/web, 未包含 keycloak/openldap/radicale/tika/collabora, 可根据需求组合
 
+- 本地执行 ./opencloud/bin/opencloud-debug server 运行时存在问题，会自动起250个端口号，从9100-9350
 # devops
 - build from srouce
   - default storage folder: ~/.opencloud/storage/users/users
 
 ```sh
+docker compose -f docker-compose.yml -f traefik/opencloud.yml up 
+docker compose -f docker-compose.yml  -f external-proxy/opencloud.yml   up 
+# optional oauth with openldap
+
+docker compose -f docker-compose.yml  -f idm/ldap-keycloak.yml -f idm/external-idp.yml  -f external-proxy/opencloud.yml -f external-proxy/keycloak.yml up -d
+/usr/libexec/slapd 
+
 make clean generate-dev
 
 make -C opencloud build-debug
@@ -79,3 +90,5 @@ mc alias set opencloud http://localhost:9000 minioadmin minioadmin
   - [Getting OpenCloud to work with External SSO/OIDC (Authentik) · opencloud-eu _202505](https://github.com/orgs/opencloud-eu/discussions/835)
   - 🌰 [[HOW-TO] Setup SSO (OIDC) with Authentik (web, desktop app, iOS app) ](https://github.com/orgs/opencloud-eu/discussions/1014)
 # more
+- changelog
+  - [Release Lifecycle | OpenCloud Docs](https://docs.opencloud.eu/docs/admin/resources/lifecycle/)
