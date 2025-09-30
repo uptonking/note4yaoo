@@ -118,6 +118,61 @@ modified: 2025-09-16T13:29:11.327Z
 - If a regular hexagon has a short diagonal of 64, what is its long diagonal?
   - waiting for one of them to get it right. The answer is 73.9 by the way.
 
+- ## 💄 ui prompts/resources
+  - https://huggingface.co/Tesslate/UIGEN-X-4B-0729
+
+- Create a navigation bar using React + Tailwind CSS with logo, menu items, and mobile hamburger menu
+
+- Make a single-file landing page for "Waterble" (spreadsheet workflow with ai).
+  - Style: modern tech, muted palette, Tailwind, rounded-xl, subtle gradients.
+  - Sections: navbar, hero (big headline + 2 CTAs), logos row, features (3x cards), 
+  - code block (copyable), pricing (3 tiers), FAQ accordion, footer.
+  - Constraints: semantic HTML, no external JS. Return ONLY the HTML code.
+
+- Make a single-file landing page for "Watarbase"(an embeddable and fast database using rust).
+  - Style: modern, generous whitespace, Tailwind, rounded-xl, soft gradients.
+  - Sections: navbar, hero (headline + 2 CTAs), features grid, pricing (3 tiers), 
+  - FAQ accordion, footer. 
+  - Constraints: semantic HTML, no external JS
+
+- Build a complete e-commerce dashboard using Next.js + TypeScript + Tailwind CSS + shadcn/ui with:
+  - Product management (CRUD operations)
+  - Order tracking with status updates  
+  - Customer analytics with charts
+  - Responsive design for mobile/desktop
+  - Dark mode toggle
+  - Style: Use a clean, modern glassmorphism aesthetic
+
+- Design an Angular Material admin panel with:
+  - Sidenav with expandable menu items
+  - Data tables with sorting and filtering
+  - Form validation with reactive forms
+  - Charts using ng2-charts
+  - SCSS custom theming
+
+- Create a complete SaaS application using Vue 3 + Nuxt 3 + Tailwind CSS + Pinia:
+  - Pages needed:
+    1. Landing page with hero, features, pricing
+    2. Dashboard with metrics and quick actions
+    3. Settings page with user preferences
+    4. Billing page with subscription management
+  - Include: Navigation between pages, state management, responsive design
+  - Style: Professional, modern with subtle animations
+
+- Build a portfolio website using Svelte + SvelteKit + Tailwind CSS combining:
+  - Minimalist layout principles
+  - Cyberpunk color scheme (neon accents)
+  - Smooth animations for page transitions
+  - Typography-driven content sections
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
 - ## 🔡 [What coding prompts do you use to test the capabilities of new models? : r/LocalLLaMA _202410](https://www.reddit.com/r/LocalLLaMA/comments/1g5m8bn/what_coding_prompts_do_you_use_to_test_the/)
   - I’ve been using this collection of prompts (https://github.com/cpldcpu/MisguidedAttention ) to test reasoning capabilities however looking for good prompts to be able to test the coding and development capabilities.
 
@@ -417,6 +472,57 @@ modified: 2025-09-16T13:29:11.327Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [Any fine tune of Qwen3-Coder-30B that improves its over its already awesome capabilities? : r/LocalLLM _202509](https://www.reddit.com/r/LocalLLM/comments/1nks4g2/any_fine_tune_of_qwen3coder30b_that_improves_its/)
+- You could try your look with Devstral Small 1.1 2507 as it is specifically designed as enterprise-grade agentic coder. Spends less tokens for the same amount of work in my use-cases.
+
+- Fine tunes might change the behavior, but not likely to make it significantly smarter. One big plus on the 30b-a3b is the speed. You can try a larger dense model like devstral, but you lose that speed with a large dense model.
+
+- ## [WEBGEN-OSS Web Design Model - a model that runs on a laptop and generates clean responsive websites from a single prompt : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nfy5pv/webgenoss_web_design_model_a_model_that_runs_on_a/)
+  - 20B open-weight model focused exclusively on generating responsive websites
+  - We prompted GPT-OSS-120b 44k times, saved those samples and then did a supervised finetuning training on them using the Unsloth library, which is really fast and great for long context.
+  - We specifically did a high rank lora (128, a=256) using the Unsloth library and their custom kernels. They enable faster finetuning and much longer context than the rest.
+  - It took 13 Rented MI300Xs to generate 44k samples in 4 hours at rate of $26/hr. u/random-tomato might be able to share more.
+
+- ## [UIGEN-X-0727 Runs Locally and Crushes It. Reasoning for UI, Mobile, Software and Frontend design. : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1mb15g2/uigenx0727_runs_locally_and_crushes_it_reasoning/)
+
+- [UIGEN-X 8B supports React Headless, Flutter, React Native, Static Site Generators, Tauri, Vue, Gradio/Python, Tailwind, and prompt-based design. GGUF/GPTQ/MLX Available : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1m5lgtr/uigenx_8b_supports_react_headless_flutter_react/)
+  - So type out your prompt like this: [Action] [UI type or page] [Framework(s)] [Key features] [Style (optional)]
+  - Create a navbar using React + Tailwind CSS with logo, links, and mobile hamburger menu.
+  - Generate a personal blog with SvelteKit + DaisyUI, mixing cyberpunk colors and minimalist layout. Responsive for mobile.
+
+- Those are some extremely impressive UIs for a large SOTA model, never mind a comparatively tiny 32b dense model. I understand that it's a finetune of qwen3, but how did you manage to train it to be this good?
+  - Your data matters the most
+  - The strong performance likely comes from high-quality fine-tuning data and optimized training techniques. Qwen3's architecture provides a solid foundation, and careful prompt engineering enhances perceived capability despite the smaller size. Specific training details would require developer input
+
+- https://uigenoutput.tesslate.com/uigen-t3-32b-fp8 Many prompts to try.
+
+- ## 🧩 [WEBGEN-4B: Quality Web Design Generation : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1n6vzfe/webgen4b_quality_web_design_generation/)
+  - a 4B model that produces quality tailwind websites. We trained it on 100k samples with synthetic data exclusively generated from GPT-OSS. 
+  - In other news, we are open sourcing our UIGEN-T2 Dataset at Tesslate/UIGEN-T2
+  - You can access the models here: https://designer.tesslate.com
+
+- 🆚 What’s the difference between web and uigen models? It’s not clear to me as a layman
+  - WEBGEN is for static html css sites, and in this case tailwind. It had absolutely 0 React in it.
+  - UIGEN is for all kinds of UIs across many multiple domains, and it is intended to be a drop in replacement to your coding models with a focus on UI, everywhere from python kivy to react and etc. Your frontend engineer.
+
+- Really great small model for prototyping. I do however wish we had more models that weren't trained on frameworks, and just on good old HTML5 standards
+  - Yep, I thought the same but then realized it is actually better to use frameworks, in this case tailwind, because it reduces the number of tokens needed to achieve something visual.
+
+- ## [PyDevMini-1: A 4B model that matches/outperforms GPT-4 on Python & Web Dev Code, At 1/400th the Size! : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1ncam9h/pydevmini1_a_4b_model_that_matchesoutperforms/)
+  - 基于 Qwen3-4B-Thinking-2507
+  - a 4B parameter model to provide GPT-4 level performance for Python and web coding development tasks
+- This is all great and impressive for such a small model, but I am sure there are plenty of realizations of these tasks in training dataset. Give it a real 100k+ lines codebase and ask to fix a bug. I am quite sure it will fall apart very quickly. Btw, you say nothing about tool calling and that is a must for a model to be considered as a coding model nowadays.
+  - This model can handle with 100% perfect understanding 32K context as that’s what the maximum fed into it during training per prompt was, which isn’t enough to actually meet the full context present in the training data so once funds are available, I will make it a priority to increase contextual understanding.
+
+- It works, but I'm trying it out in LMStudio and it generates inconsistent indentation regarding tabs and spaces, dunno why.
+
+- I like it so far. It seemed to give some good answers quickly, but it got easily confused with longer and more complex prompts compared to Qwen3-Coder-32b.
+
+- Is there a way to do this easily for more niche areas? Like programming drivers on MacOS or another language like Swift?
+  - Easily certainly not , really all of AI training is data gathering and labor through experiments but you could definitely do it if you put in the time and effort
 
 - ## [New model from Meta FAIR: Code World Model (CWM) 32B - 65.8 % on SWE-bench Verified : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1npp8xi/new_model_from_meta_fair_code_world_model_cwm_32b/)
 - They report CWM + tts to get 65% on swebench. What’s tts? If anything at all, however, I think this shows how great magistral is. Better performance with 2/3s of the parameters.
@@ -1080,6 +1186,34 @@ ollama run hf.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF:Q6_K
 - Stop expecting perfection or near-perfection and learn to work with "good enough" results. If 30B is good enough, then focus on the remaining portion that needs human intervention. You can't change the model behavior, but you can change the way you use it, and how you approach the overall problem.
   -  I have tried all sort of tasks from vibe coding, refactoring, disassembly. The key thing is that you need to know better/more than the AI to be an effective human. I found myself learning things that were beyond my reach previously, so even though the AI had objectively failed at the task assigned to it, through the process I learned enough to carry on the task with whatever meaningful results it had produced, and take the rest over the finishing line.
 
+- ## [DeepCoder: A Fully Open-Source 14B Coder at O3-mini Level : r/LocalLLaMA _202504](https://www.reddit.com/r/LocalLLaMA/comments/1juni3t/deepcoder_a_fully_opensource_14b_coder_at_o3mini/)
+- Is llama4 actually that bad, or are people working off of a collective meme from a poor first showing? 
+  - Poor first showing and disappointment. Gemma 3 had issues during launch, but now that it's sorted I'm running the 1b, 4b, and 12b versions locally no problem. 
+  - Lllama 4 has no version I can run locally. Llama 4 was hyped to be a huge deal, but it seems more geared towards enterprise or large scale rollouts.
+
+- I found most local LLMs to be unusable with Roo, apart from one or two that have been specifically finetuned to work with Roo and Cline.
+  - The default system prompt is insanely long, and it just confuses the LLMs. It's insanely long because Roo needs to explain to the LLM what sort of tools are available, and how to call them. Unfortunately, that leads to the issue that smaller local LLMs can't even find your instructions about what you even want them to do.
+  - QwenCoder, QwQ, Gemma3 27b, Deepseek R1 Distills (14b, 32b, 70b) - they all fail.
+  - The only models I found to work moderately well were tom_himanen/deepseek-r1-roo-cline-tools and hhao/qwen2.5-coder-tools
+  - Just checked: For me, the default system prompt in Roo's code mode is roughly 9000 tokens long. That doesn't even include the info about your workspace (directory structure, any open files, etc. ) yet.
+
+- did anyone try if it works with CLINE/ roo code?
+  - it didn't do well, but I am going to check to make sure my settings are right.
+
+- I tried a few simple tasks with the Q8 model on a 32gb macbook.
+  - The diffs will work at least.
+  - After the simple task I asked for it to do (insert another button in an html) succeeded, it failed at the last step with: "Cline tried to use attempt_completion without value for required parameter 'result'. Retrying..."
+  - It retried 2x before successfully figuring out how to use attempt_completion. Note, this is after the file itself was edited correctly.
+  - It made a few other edits decently well. Be careful with clarifications. If you ask it to do A, then clarify also B, it may do B only without doing A.
+  - I suspect this model will score okay ish on the aider coding benchmark, but will lose some percentage due to edit format.
+  - I set context to 32k, but Cline is yappy and can easily fill up the context.
+  - Using Q8 makes it slower than Q4, but coding is one of those things that are more sensitive to smaller quants, so I'm sticking with Q8 for now. It'd be cool if they release a QAT 4bit version, similar to Gemma 3 QAT. At Q8 it runs around 15tok/sec for me.
+- Conclusion: not anywhere near as good as Sonnet 3.7, but I'm not sure if that's due to my computer's limitations (quantized quality loss, context size, quantized kv cache, etc). It's not complete trash, so I'm hopeful. It might be really cheap to run from an inference provider for people who can't run it locally.
+
+- I'm playing around with it right now, and at q8_0 it's failing miserably at stuff that o3-mini easily one-shots.
+
+- Tried it and its completely useless, it writes paragraphs and paragraphs thinking about what I said instead of just doing it. These reasoning models that talk to themselves cant be the way.
+
 - ## [New coding model DeepCoder-14B-Preview : r/LocalLLaMA _202504](https://www.reddit.com/r/LocalLLaMA/comments/1jvxi5f/new_coding_model_deepcoder14bpreview/)
 - Make sure to tweak params: {"temperature": 0.6, "top_p": 0.95}
 
@@ -1191,7 +1325,7 @@ ollama run hf.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF:Q6_K
 - have you tested it inside openhands? the whole fine tuning was to make it interact better with openhands, the fact that it didn't lose much outside of it is actually surprising.
   - Ah, got it. I only ran it via llama-server with the model's default configuration through the usual completion API.
 
-- ## [Why has no one been talking about Open Hands so far? : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1ksfos8/why_has_no_one_been_talking_about_open_hands_so/)
+- ## 🤔 [Why has no one been talking about Open Hands so far? : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1ksfos8/why_has_no_one_been_talking_about_open_hands_so/)
   - What’s weird is that OpenHands has 54k+ stars on GitHub. For comparison: Roo Code sits at ~14k, and Cline is around 44k. So it’s clearly on the radar of devs. But when you go look it up on YouTube or Reddit—nothing. Practically no real discussion, no deep dives, barely any content.
 
 - They used to be Open Devin. I think they started after Devin made a bit of a splash. Rebranding might have killed a bit of name recognition.
@@ -1206,9 +1340,22 @@ ollama run hf.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF:Q6_K
 
 - it somewhat works with docker, but tools like LocAgent(which relies on external openhands_aci package), or file upload don't work for me. maybe it's just not mature enough yet
 
+- 🏠 Just to confirm, for every new feature or bug I want to work on I usually make a new convo to keep the context length short.
+  - In OpenHands a new convo is like a new instance so this requires pulling the repo, reinstalling dependencies, etc. which also eats up a ton of context window.
+  - Is there a way to have multiple convos on the same codebase without having to reinstall everything each convo? Or does it not matter that I start new convos and I can just keep requesting more and more things in the same convo?
+
 - I decided to check the product and have been sitting with the settings for the whole day. Installing docker and running it is not a problem, but no matter how hard I try, it does not want to connect to the local model, although in the console via curl the connection to it goes. Plus I created a 10 GB container, this is quite a lot, I do not understand why it requires such a crazy size, this is almost the size of the entire operating system.
   - I had a similar experience today. Running both LM studio and Open hands with more permissive networking settings allowed open hands to reach the LM studio web server.
   - So maybe give that a try? IIRC it's add `--host` to the `docker run` arguments and for LM studio it was update the setting to run the web server so it doesn't only resolve over localhost, and instead broadcasts over the machine IP.
+
+- Too many undocumented things for a shittier version of cursor really, and since it's bring your own model the monthly cost will be HIGHER than cursor.
+
+- it somewhat works with docker, but tools like LocAgent(which relies on external openhands_aci package), or file upload don't work for me. maybe it's just not mature enough yet
+
+- 🏠🐛 OpenHands is really awesome and works quite well. However, for now you would need to setup the whole virtual machine if you want to run it on your host without giving privileged permission to the docker container. 
+  - That’s because their docker container spins up another docker container and this type of functionality requires developers to give privileged permission or mount docker sockets (basically has the same problem if security vulnerability is found).
+  - This prevents developers in many companies from using OpenHands when they can’t use privileged containers easily, and setting up the whole virtual machine is a bit of overkill when you can spin up Docker-based Code Server with RooCode plugin without adding extra capabilities to a docker container.
+  - I believe at some point they will move to docker compose to spin up multiple Docker containers instead of using Docker inside Docker and this will simplify running OpenHands for broader community.
 
 - ## [Qwen-2.5-Coder 32B – The AI That's Revolutionizing Coding! - Real God in a Box? : r/LocalLLaMA _202411](https://www.reddit.com/r/LocalLLaMA/comments/1gp84in/qwen25coder_32b_the_ai_thats_revolutionizing/)
 - I've been using the Q4_0 gguf version of the Qwen2.5 Coder Instruct, and I'm pleasantly surprised. Despite the significant loss in quality due to gguf quantization—where the loss, although hoped to be negligible, is still considerable compared to full loading—it performs similarly to the GPT-4o-mini and is far better than the non-advanced free version of Gemini.
@@ -1241,6 +1388,19 @@ ollama run hf.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF:Q6_K
 
 - Why not Qwen-Code?
   - Because I want the model to support other general purpose use cases too.
+
+- ## [deepseek-coder-v2:16b does not support tools？](https://huggingface.co/deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct/discussions/9)
+
+- [Thank you for this model.](https://huggingface.co/deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct/discussions/6)
+  - It can code really fine, about Codestral 22b level
+  - It can speak okay on different languages.
+
+- ## [Deepseek coder v2 : r/LocalLLaMA _202503](https://www.reddit.com/r/LocalLLaMA/comments/1j7vwcr/deepseek_coder_v2/)
+- It's a 16b mixture of expert, not a 7b
+
+- it runs fast and is reasonably good at Python and PowerShell. Somewhere around Deepseek Coder 33B in performance.
+
+- It is fast but weak.
 
 - ## [Deepseek Coder V2 is so good for math : r/LocalLLaMA _202406](https://www.reddit.com/r/LocalLLaMA/comments/1do72te/deepseek_coder_v2_is_so_good_for_math/)
   - It's really pretty and organized
@@ -1284,10 +1444,95 @@ ollama run hf.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF:Q6_K
 - [Codellama - Has anyone found "Codellama 34B Instruct" to be uncooperative? : r/LocalLLaMA _202308](https://www.reddit.com/r/LocalLLaMA/comments/160zxjd/codellama_has_anyone_found_codellama_34b_instruct/)
   - Just an update: issue appears to be definitely solved by using the correct parameters when loading and querying the model. 
   - Fortunately many of the popular frameworks like text-generation-ui are getting updates that use the correct settings for this new class of codellama models
+# discuss-coding-model-fine-tuning
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [[P] I fine-tuned Qwen 2.5 Coder on a single repo and got a 47% improvement in code completion accuracy : r/MachineLearning _202503](https://www.reddit.com/r/MachineLearning/comments/1jdiafd/p_i_finetuned_qwen_25_coder_on_a_single_repo_and/)
+  - Training data: Svelte source files from this repo on github
+  - Tl; dr: The fine-tuned model achieves a 47% improvement in the code completion task (tab autocomplete). Accuracy goes from 25% to 36% (exact match against ground truth) after a short training run of only 500 iterations on a single RTX 4090 GPU.
+
+- This sounds like the strategy that https://ninetyfive.gg/ uses. Awesome to see your results open sourced! How did you figure out the best way to determine the prefix/middle/suffix splits for training? It seems like here you did something more clever than randomly picking a location in the file to split?
+  - the logic for determining the split is actually very basic right now, and not even all that comprehensive. It just looks for if-else blocks, function definitions, loops etc. and takes the entire block as the “middle” portion to be completed by the model. There’s also a min and max length filter I apply to get reasonably sized middle blocks.
+  - I just wanted to quickly get some results, so I implemented this very simple method, and there’s lots of room to improve on this. E.g., in the SAFIM paper, they determine “critical algorithm blocks” by checking if removal of those blocks results in compilation or test failures.
+
+- Do you feel the benefit is from being familiar with the project or with your coding style? Most of my code is written via llm these days so style wise it would provide no benefit. But if the benefit comes from being more familiar with the project and it's goals without having to burn context I think that would be a meaningful improvement
+
+- This is solid, is the code completely limited to certain stack usage?
+  - The dataset generation code is Svelte-specific because it only parses Svelte files, but the training itself is not. You can generate a training set in a similar manner for any language/stack of your choosing as long as you can parse the code into an AST.
+
+- Do you have to fine-tune after every code edit?
+  - As the codebase evolves, some of the things that model has learnt will become out-dated. So yeah if a similar model is deployed on a real codebase, it will have to be fine-tuned periodically. But it probably won't be necessary to do after every single commit, minor changes in the code can be addressed by implementing an effective context selection algorithm.
+
+- Do you touch all weights?
+  - No, it was a LoRA fine-tune with rank 16. 68M trainable parameters.
+- These "500 iterations" that you mention, was that the entirety of your fine tuning? How long did it take?
+  - Yes, the checkpoint I evaluated was the one I got after iteration 500. It took about 1h 20m to get there.
+
+- in total how many passes over the codebase the model train on? Is it just once? Or multiple times?
+  - I wasn’t even able to do one pass :) My training run only saw like 10% of the training set.
+  - I’ve switched to using torchtune for training, and with a smaller model and more powerful GPU, we’ll be able to do a full pass over the training set in 5-6 hours. Will make another post with an update.
+
+- [I fine-tuned Qwen 2.5 Coder on a single repo and got a 47% improvement in code completion accuracy : r/ChatGPTCoding](https://www.reddit.com/r/ChatGPTCoding/comments/1jdi4o6/i_finetuned_qwen_25_coder_on_a_single_repo_and/)
+- you can use the fine-tuned model via Continue. You can export the model in GGUF, serve via Ollama, and connect Continue to it.
+
+- ## [[D] Can I fine tune an LLM using a codebase (~4500 lines) to help me understand and extend it? : r/MachineLearning _202505](https://www.reddit.com/r/MachineLearning/comments/1kqpam7/d_can_i_fine_tune_an_llm_using_a_codebase_4500/)
+- That will fit into the context window of most modern LLMs, there's no advantage to fine tuning
+
+- "Smarter" RAG setups will probably serve you a lot better since among other things, if tuned, its tuned knowledge would be so specific and go out of date so easily when the codebase is modified. Requiring more feeding at the prompt anyway.
+
+- Fine-tuning means supervised learning, so you would need training data in the form of input (probably a part of your codebase + a question about it) and output (expected output from the model). You can't fine-tune only using your codebase. You can maybe continue pretraining (unsupervised) but your data is too little for that.
+
+- For comprehension, you're probably much better off chucking it into context, or failing that then RAG.
+
+- ## [Finetuning a model on a source code repository : r/LocalLLaMA _202405](https://www.reddit.com/r/LocalLLaMA/comments/1csmprt/finetuning_a_model_on_a_source_code_repository/)
+  - I want to finetune a model on a source code repository so I can ask question, create code based on it etc
+
+- finetuning is not meant for this, finetuning / training is done to achieve a knowledge level / “intelligence” not for literal facts.
+  - Basically you need to push your repo in the context so you can ask questions of it, but llama3 has only 8k context. 
+  - But although I do believe code is perfect for rag ( basically you could create a file-overview, then function overview per file and then a code overview per function, so you can rag for 3 levels deep easily) I have not seen any rag implementation which is made for code. And general rag will not work good, general rag will just take x characters and in doing so loose all coherence code has.
+- Basically I believe you need specialized rag and large context for what you want, that way you can also do it on real-time git code updated after every commit instead of constant finetuning
+
+- ## [Too Afraid to Ask: Why don't LoRAs exist for LLMs? : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kzg3yv/too_afraid_to_ask_why_dont_loras_exist_for_llms/)
+- Unsloth allows you to train your own lora on some LLMs. 
+
+- RAG and increased context windows eliminated many people's use cases for LoRA (myself included) but it's still very much real and around
+
+- there are, but LLMs each have such a big variety of architectures that it’s not common for public releases and are usually used for developers. Ex: a lora for Gemini wouldn’t work for Gemma 3 nor llama nor really any other release nor version . Much easier to train it as a new version if you’re adding fine tuning .
+
+- In LLMs we generally don't differentiate between LoRA and FFT in the same way that a distinction is drawn in image generation. 
+  - Most of the finetunes that you see in LLMs are actually LoRAs with the LoRA additively merged into the weights to lower the inference cost. 
+  - LoRAs actually aren't free in terms of computational performance, and LLMs are really hard to run, so people generally merge them for that reason.
+  - Additionally, LoRAs are often used there as a means of control, whereas generally LLMs are general purpose enough to just prompt for the thing you want.
+  - So, long story short, if someone does a LoRA in an LLM, it's usually to create a complete change in experience, more like a custom SDXL finetune, for example, so it doesn't really make sense to distribute them in the same way.
+
+- LORAs do exist for LLMs, but as opposed to Diffusion, which only has SD 1.5, SDXL, SD3.5, and Flux, in the LLM space we seem to be getting a different model every week, each with a new architecture. Hence, it's generally considered impractical to have a separate LORA for every model and have the end user manage it. We also don't have a CivitAI-like website where we can distribute such things easily.
+  - In LLMs, most of the time, fine-tuners train a LORA, and merge it into the checkpoint, then distribute the new checkpoint and its quants.
 # discuss
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [What is the current best python coding model? : r/LocalLLaMA _202408](https://www.reddit.com/r/LocalLLaMA/comments/1epjget/what_is_the_current_best_python_coding_model/)
+- CodeQwen-1.5-7b is a powerful coding model according to livecodebench.
+
+- In the 8GB~12GB range I have used a few specialised ones:
+  - Codestral-22B-v0.1-Q4KM
+  - DeepSeek-Coder-V2-Lite-Q5KM
+  - CodeGeeX4-All-9B-Q8
+
+- CodeGeeX4-ALL-9B, CodeQwen1.5-7B-Chat and Codestral-22B-v0.1 are very good small coding models. There's also the DeepSeek-Coder-V2 models.
+
+- Check out bigcode-bench.github.io. Top 7B on there is CodeQwen1.5-7B-Chat which has been good in my experience. CodeLlama is the lowest ranked 7B.
 
 - ## [Local LLM Coding Stack (24GB minimum, ideal 36GB) : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nkfvrl/local_llm_coding_stack_24gb_minimum_ideal_36gb/)
   - Chipset Model: Apple M4 Pro

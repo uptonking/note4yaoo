@@ -10,7 +10,7 @@ modified: 2025-09-22T12:32:49.473Z
 # guide
 
 - pros
-  - license: 
+  - license: apache2
   - ⏳ File Versioning & Recovery: Roll back to previous file versions, trash bin
   - 🔌 Extension System: Add new features and third-party integrations.
   - Privacy-First Design: Zero-Knowledge principle ensures admins can't access user content.
@@ -19,9 +19,11 @@ modified: 2025-09-22T12:32:49.473Z
   - Built-in File Preview
 
 - cons
+  - 🤔 业务层采用无数据库的设计, 限制了功能添加、灵活性
+  - 关于 go micro 微服务的架构还在调整，考虑去掉 nats
   - oidc的配置很复杂, keycloak使用了外部ldap-server, authentik未提供官方支持
+  - 本地开发运行的问题太多, 配置TLS/oidc/ldap, 官方文档几乎不支持本地运行, docker也不支持localhost
   - 未实现文件树
-  - 在mac上进行源码开发不顺利
 
 - features
   - Seamless File Synchronization: Access your files across all devices
@@ -47,6 +49,9 @@ modified: 2025-09-22T12:32:49.473Z
 # dev-xp
 - https://github.com/opencloud-eu/opencloud-compose 
   - 使用的基础镜像是 opencloudeu/opencloud-rolling, 里面包含了backend/web, 未包含 keycloak/openldap/radicale/tika/collabora, 可根据需求组合
+  - 🐛 The compose project is not made for localhost.
+  - https://github.com/rabol/opencloud-install
+    - How I installed Opencloud on a Mini PC and have data on TrueNas
 
 - 本地执行 ./opencloud/bin/opencloud-debug server 运行时存在问题，会自动起250个端口号，从9100-9350
 # devops

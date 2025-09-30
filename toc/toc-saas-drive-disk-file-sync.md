@@ -124,7 +124,7 @@ modified: 2024-03-31T17:45:16.789Z
   - Login support for OIDC, password + 2FA, and proxy
   - Multiple sources support
   - Simplified configuration via `config.yaml` config file.
-  - Ultra-efficient indexing and real-time updates
+  - 🔍 Ultra-efficient indexing and real-time updates
   - 🆚 readme最后提供了产品对比图
   - 📡 roadmap
     - [add s3 compatibility ](https://github.com/gtsteffaniak/filebrowser/issues/140)
@@ -138,6 +138,7 @@ modified: 2024-03-31T17:45:16.789Z
   - It allows the creation of multiple users and each user can have its own directory.
   - User Management, Easy Login System
   - File Editing
+  - 不支持OIDC, 相关pr都关闭了
   - [S3 support _202009](https://github.com/filebrowser/filebrowser/issues/1077)
     - 👷202010: cloud storage support is out of the scope of this project. As @fdefilippo mentioned you can mound your s3 bucket using fuse.
     - A work-around I've found when trying to get S3 to act as the storage back-end for Filebrowser, at least when deploying Filebrowser as a container, is to mount the Filebrowser storage folder to an NFS share interface tying back to S3.

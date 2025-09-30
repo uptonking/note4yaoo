@@ -204,15 +204,25 @@ use vanilla html/css/javascript to create a personal profile landing page: homep
 use react to create a homepage shows a list of frontend frameworks like react/vue/angular, when clicking the framework, navigate to the route to show its introduction
 ```
 
+## 0930
+
+- 英语里面表示最热门的歌曲/电影/技术一般用hot/trending, 那么如何表达冷门且质量好的歌曲/电影/技术呢? 帮我分析并给出示例
+  - That B-side track is so `underrated`; it's way better than their singles.
+  - I found this `hidden gem `on a vinyl from the 70s. You have to hear it
+  - The instant pot started as a `sleeper hit`(后期走红的作品）) among cooking enthusiasts before becoming a household name.
+  - It's a very `niche`(中性词，强调服务于特定群体，但可能垃圾) genre of electronic music, but the production quality is top-notch
+  - She's an incredibly talented artist, but she is still flying completely `under the radar`(低调、没被注意到, 口语、媒体标题都常用)
+
 ## 0929
 
 - opencloud-start-error
   - {"level":"error", "service":"storage-users", "host.name":"ba72b0838508", "protocol":"http", "error":"http service dataprovider could not be started, : tree: unfit storage '/var/lib/opencloud/storage/users': extended attributes not supported: xattr. Set /var/lib/opencloud/storage/users/posixfs-xattr-check-87673789 user.posixfs.test: operation not supported", "time":"2025-09-29T22:18:38Z", "message":"reva server error"}
+  - traefik-1    | 2025-09-29T23:12:24Z ERR Unable to obtain ACME certificate for domains error="cannot get ACME client acme: error: 400 :: POST :: https://acme-v02.api.letsencrypt.org/acme/new-acct :: urn:ietf:params:acme:error:invalidContact :: Error validating contact(s) :: contact email has forbidden domain \"example.org\"" ACME CA=https://acme-v02.api.letsencrypt.org/directory acmeCA=https://acme-v02.api.letsencrypt.org/directory domains=["cloud.opencloud.test"] providerName=letsencrypt.acme routerName=opencloud@docker rule=Host(`cloud.opencloud.test`)
+
+- traefik-1    | 2025-09-29T21:41:32Z ERR Unable to obtain ACME certificate for domains error="cannot get ACME client acme: error: 400 :: POST :: https://acme-v02.api.letsencrypt.org/acme/new-acct :: urn:ietf:params:acme:error:invalidContact :: Error validating contact(s) :: contact email has forbidden domain \"example.org\"" ACME CA=https://acme-v02.api.letsencrypt.org/directory acmeCA=https://acme-v02.api.letsencrypt.org/directory domains=["cloud.opencloud.test"] providerName=letsencrypt.acme routerName=opencloud@docker rule=Host(`cloud.opencloud.test`)
 
 - [Extended attributes not supported over NFS after v1.10.6 · Issue #11843 · siderolabs/talos _202509](https://github.com/siderolabs/talos/issues/11843)
   - {"level":"error", "service":"storage-users", "error":"http service dataprovider could not be started, : tree: unfit storage '/var/lib/opencloud/storage/users': extended attributes not supported: xattr. Set /var/lib/opencloud/storage/users/posixfs-xattr-check-3771599314 user.posixfs.test: operation not supported", "time":"2025-09-16T18:35:16Z", "message":"error starting the http server"}
-
-- traefik-1    | 2025-09-29T21:41:32Z ERR Unable to obtain ACME certificate for domains error="cannot get ACME client acme: error: 400 :: POST :: https://acme-v02.api.letsencrypt.org/acme/new-acct :: urn:ietf:params:acme:error:invalidContact :: Error validating contact(s) :: contact email has forbidden domain \"example.org\"" ACME CA=https://acme-v02.api.letsencrypt.org/directory acmeCA=https://acme-v02.api.letsencrypt.org/directory domains=["cloud.opencloud.test"] providerName=letsencrypt.acme routerName=opencloud@docker rule=Host(`cloud.opencloud.test`)
 
 - https://github.com/bitnami/containers/tree/main/bitnami/openldap
   - packaged by Bitnami

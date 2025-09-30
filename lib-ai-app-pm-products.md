@@ -31,6 +31,7 @@ modified: 2025-03-22T16:10:24.856Z
   - no implicit ai degradation/switch: bring your model
   - cost: unlimited tokens
   - network agnostic
+  - 发挥端侧计算的能力，如总结/查询，而不侧重端侧聊天
 
 - local-ai-challenges 🐛
   - 运行大模型需要较多硬件资源，如GPU/CPU/RAM

@@ -94,9 +94,69 @@ modified: 2025-09-01T07:58:29.058Z
 
 - ## 
 
-- ## 
+- ## [I tried vibe coding for 4 weeks, here’s why I’m dialing it back : r/vibecoding](https://www.reddit.com/r/vibecoding/comments/1nu8s3y/i_tried_vibe_coding_for_4_weeks_heres_why_im/)
+  - And honestly? The first week felt incredible. I was in the zone, shipping features fast, and it felt like I was finaly coding for fun again.
+  - But as the weeks went on, the cracks started to show.
+- The Upside:
+  - Super fast for prototyping.
+  - Way less friction to just start building.
+  - It did bring back that “hacking for fun” feeling.
+- The Downside:
+  - Code chaos: By week 3, I had no idea why certain functions worked or if they’d break something else.
+  - Debuging nightmare: AI suggestions + zero structure = hours wasted chasing sily bugs.
+  - Feature whiplash: I kept adding things randomly, which meant ripping out work a few days later.
+  - Momentum drop: Without a roadmap, I started losing motivation once the shiny feeling wore off.
+- What I Learned:
+  - Vibe coding is amazing for exploration and quick hacks.
+  - But if you actually want to scale a project, you need at least some structure (docs, tests, basic planning).
+  - For me, the balance is: vibe code the prototype → switch to structured dev once the core idea works.
+- So yeah… vibe coding was fun, but I don’t think I could rely on it for anything bigger than a proof of concept.
 
-- ## 
+- Who said you should vibe code without a roadmap ?
+
+- ## 🤔 [Hot take: ALL Coding tools are bullsh\*t : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nu6kjc/hot_take_all_coding_tools_are_bullsht/)
+- We have these incredible language models—DeepSeek 3.2, GLM-4.5, Qwen 3 Coder—that can understand complex problems, reason through edge cases, and generate genuinely good code. And what did we do? We wrapped them in so many layers of bullshit that they can barely function.
+- The Scam: Every coding tool follows the same playbook:
+  - Inject a 20, 000 token system prompt explaining how to use tools
+  - Add tool-calling ceremonies for every filesystem operation
+  - Send timezone, task lists, environment info with EVERY request
+  - Read the same files over and over and over
+  - Make tiny edits one at a time
+  - Re-read everything to "verify"
+  - Repeat until you've burned 50, 000 tokens
+  - And then they market this as "agentic" and "autonomous" and charge you $20/month.
+- The Reality:
+  - The model spends 70% of its context window reading procedural garbage it's already seen five times. It's not thinking about your problem—it's playing filesystem navigator. It's not reasoning deeply—it's pattern matching through the noise because it's cognitively exhausted.
+  - You ask it to fix a bug. It reads the file (3k tokens). Checks the timezone (why?). Reviews the task list (who asked?). Makes a one-line change. Reads the file AGAIN to verify. Runs a command. Reads the output. And somehow the bug still isn't fixed because the model never had enough clean context to actually understand the problem.
+- The Insanity:
+  - What you can accomplish in 15, 000 tokens with a direct conversation—problem explained, context provided, complete solution generated—these tools spread across 50, 000 tokens of redundant slop.
+  - And the worst part? It gives worse results. The solutions are half-assed because the model is working with a fraction of its actual reasoning capacity. Everything else is burned on ceremonial bullshit.
+- The Market Dynamics:
+  - VCs threw millions at "AI coding agents." Companies rushed to ship agentic frameworks. Everyone wanted to be the "autonomous" solution. So they added more tools, more features, more automation.
+  - They optimized for demos, not for actual utility. Because in a demo, watching the tool "autonomously" read files and run commands looks impressive. In reality, you're paying 3x the API costs for 0.5x the quality.
+- The Simple Truth:
+  - Just upload your fucking files to a local chat interface like LobeHub (Open Source). Explain the problem. Let the model think. Get your code in one artifact. Copy it. Done.
+  - No tool ceremonies. No context pollution. No reading the same file seven times. No timezone updates nobody asked for.
+  - The model's full intelligence goes toward your problem, not toward navigating a filesystem through an API. You get better code, faster, for less money.
+- The Irony:
+  - We spent decades making programming languages more expressive so humans could think at a higher level. Then we built AI that can understand natural language and reason about complex systems.
+  - And then we forced it back down into the machine-level bullsh*t of "read file, edit line 47, write file, run command, read output."
+  - We took reasoning engines and turned them into glorified bash scripts.
+- The Future:
+  - I hope we look back at this era and laugh. The "agentic coding tool" phase where everyone was convinced that more automation meant better results. Where we drowned AI in context pollution and called it progress.
+  - The tools that will win aren't the ones with the most features or the most autonomy. They're the ones that get out of the model's way and let it do what it's actually good at: thinking.
+  - Until then, I'll be over here using the chat interface like a sane person, getting better results for less money, while the rest of you pay for the privilege of context r*pe.
+
+- Can you share the prompt & model used to generate this post? thxbye
+
+- that's exactly what aider is doing. So there is one coding tool that is not bullshit?
+- It doesn't have any tools and repo map is disabled with a single argument. 2k tokens for system prompt is nothing for modern models. However tool calling agentic tools are still more minimal then this because they can break down task into smaller steps and solve them separately in new context not connected to initial one.
+
+- Qwen code (free 2000 api) has been an extremely valuable cli agent that I've been using geting it to do desktop tasks fast and raw. Its cost vs a human person per hour is still cheaper when you know the scope of the task. How big of a code base are you using that copy pasting is sufficient and all in a single file? Seems like you are a very basic end user or doing things with limited scope putting an entire framework into one file.
+
+- models are stateless, so you are sending all initial context plus sliding context on each request. optimization can happen if it can output a summarized context that is still relevant for the next request.
+
+- Integration at the IDE level allows the LLM to go find these links itself rather than putting the onus on you. It saves time.
 
 - ## [Sometimes I feel like Architecture mode is a waste of tokens. Am I using it wrong? : r/RooCode _202509](https://www.reddit.com/r/RooCode/comments/1nmsu61/sometimes_i_feel_like_architecture_mode_is_a/)
   - I've seen many people saying how architecture mode is a life saver and it does wonders, however in my experience it hasn't yielded much results, here's why:

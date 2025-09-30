@@ -22,7 +22,18 @@ modified: 2025-09-22T12:33:21.753Z
 
 - ## 
 
-- ## 
+- ## [nats as service registry is redundant · Issue · opencloud-eu/opencloud _202508](https://github.com/opencloud-eu/opencloud/issues/1409)
+  - When we started the codebase we adhered to how go micro encapsulated a service registry because we thougth we would need that. 
+  - As it turns out, we don't. We can rely on dns to be our service registry
+  - We should remove any service registry related code and stick to urls. the grpc client can then handle `unix:// dns:// or kubernetes://` prefixes. for kubernetes we alredy integrate with the kubernetes control plane to pick up new pods when scaling up.
+  - We can already prevent nats from being used by using dns:// urls in the endpoints. I tested this and there are a few points where service names have been hardcoded: requests to the settings service and search IIRC. They will need to be made configurable, but IMO it is already a bug that they cannot be configured.
+- Using dns as our service registry would significantly reduce the complexity:
+  - we can delete the nats-js-kv registry obsolete
+  - reva services don't have to manually be registered
+  - requests can be made without implementin our own service lookup code with go micro selectors etc
+  - drop dozens of env vars
+  - less dependency on go micro
+
 # discuss-internals
 - ## 
 
@@ -104,9 +115,33 @@ modified: 2025-09-22T12:33:21.753Z
 
 - ## 
 
-- ## 
+- ## [confused about the install one-liner · opencloud-eu _202505](https://github.com/orgs/opencloud-eu/discussions/924)
+- This script is a very quick way to install opencloud backend, frontend and Identity Provider as a single binary with no needed dependencies.
+  - That means you have a very bare feature set without external services like collabora or tika.
+  - This script is targeting localhost setups for "take aquick look" usecases.
+  - Bare metal is also possible but not supported because it creates too many issues.
 
-- ## 
+- ## there is a 'Bare-metal' section in the Gettings started - but.... there is also a disclaimer saying that this is not supported, so what is the official supported way to install OpenCloud if I don't want to use Docker ? _202509
+- https://matrix.to/#/!MXIMfhTMMRFPuXSKJZ:matrix.org/$FoxVobZSB60wmgqbpzjvux_k8nh4nVrnnQGDhsYtJM0?via=chat.opencloud.eu&via=matrix.org&via=tchncs.de
+- I just tried the install script: curl -L https://opencloud.eu/install | /bin/bash
+  - but that did not help much as it want one to connect to https://localhost:9200, which I cannot do on a clean Ubuntu Server installation and the `https://<ip>:9200` just gives an error saying "missing or invalid config"
+- 💡 I just changed the `runopencloud.sh` script to have ip instead of localhost, and that seems to work
+  - If it’s on a remote machine, localhost can’t work externally
+- but u can use nginx reverse proxy tho to make it work with localhost
+
+- You can manually download the binary and then run “opencloud init” before running opencloud! Here some useful envs
+  - OC_INSECURE=true
+  - OC_URL=https://${host}:9200
+  - IDM_CREATE_DEMO_USERS=true
+  - OC_LOG_LEVEL=debug
+
+- You can overwrite the `localhost` default with the following env: `OC_HOST` for the install script
+
+- Everything from our compose example can run in any way you like (kubernetes, compose, bare metal)… but you have to know how to setup and organize your infrastructure. I suggest, stick to the compose version or use it as inspiration for your bare metal setup
+  - bare metal and docker uses the same env variables
+
+- opencloud stores metadata as files, not in a heavy database, so accessing them over a modern NAS connection introduces almost no latency compared to local storage
+  - the real bottleneck is usually the NAS disk I/O or overall network throughput, not whether the metadata is stored locally
 
 - ## [OpenCloud : r/selfhosted _202507](https://www.reddit.com/r/selfhosted/comments/1ls2a83/opencloud/)
 - Technology wise OpenCloud is much much superior. It is based on Go, and thus needs way less memory, is much faster and does not need a database. 

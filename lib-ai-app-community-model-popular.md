@@ -56,8 +56,9 @@ modified: 2025-09-16T19:59:57.856Z
   - 输出的内容特别喜欢用表格📈, 讨论代码相关问题也喜欢用表格
   - unsloth-Q5的输出速度为 11.8 tops, offcial-Q4的输出速度为 11.2 tops, 速度比qwen3-14b更快
 
-- magistral-small-2509-24b  👀 /可以用/think+vision/欧洲多语言/产品线丰富
+- magistral-small-2509-24b  👀 /可以用/think+vision/欧洲多语言/产品线丰富/censor弱
   - 回复一般很短，感觉质量不高
+  - mistral系列模型的知识丰富度很高, 可以降低对RAG的依赖 🤔
   - thinking时间在~~3-10~~min(2509已改进)左右，或许对于plan制定计划有用
   - 输出内容几乎不提供外部链接，2507不也提供外部链接
   - 输出内容中几乎不提供表格
@@ -78,15 +79,36 @@ modified: 2025-09-16T19:59:57.856Z
 ## models-coding
 
 - tips
-  - ai按用户提供的模版输出html的场景下，用户提供和ai输出的代码通常都是偏短的、偏静态的
+  - 对于ai按用户提供的模版输出html的场景，用户提供和ai输出的代码通常都是偏短的、偏静态的
+  - coding模型必须要用新版才能使用最新框架的架构写法，如tailwind.v4, reactjs.v19
 
-- devstral-2507-24b 🌹 /欧洲多语言/instruct
+- qwen3-coder-30b-a3b 🌹 /速度快
+  - 生成单页面的效果好速度快
+  - 擅长用渐变色块代替图片占位符
+  - 写完代码后一般还会讲解说明一段
 
-- qwen3-coder-30b-a3b /速度快
+- devstral-2507-24b /欧洲多语言/instruct
 
 - qwen2.5-coder-32b /微调多
 
 - qwen3-32b /thinking开关/能力全
+
+- uigen-fx-4b /擅长ui框架/能写js
+  - 不擅长用渐变色块代替图片占位符
+  - 有时能写很多js代码
+
+- webgen-4b /擅长html页面不擅长框架和js
+  - webgen生成单页面的效果远不如uigen/qwen3-coder
+  - 似乎不擅长tailwind, 生成页面的风格偏非tailwind样式的传统网页
+  - 经常出现部分元素样式错乱的问题
+
+## models-underrated
+
+- [lakhera2023/devops-slm-v1 · Hugging Face _202509](https://huggingface.co/lakhera2023/devops-slm-v1)
+  - Based on Qwen2.5
+  - a specialized language model specifically for DevOps tasks and operations only.
+  - designed EXCLUSIVELY for DevOps-related tasks. It has robust filtering that will NOT respond to general questions about movies, weather, cooking, sports, music
+  - [Meet the first Small Language Model built for DevOps : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1ndm44z/meet_the_first_small_language_model_built_for/)
 # discuss-stars
 - ## 
 
@@ -481,6 +503,22 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 - ## 
 
 - ## 
+
+- ## [Mistral 3.2-24B quality in MoE, when? : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mxmyhx/mistral_3224b_quality_in_moe_when/)
+  - While the world is distracted by GPT-OSS-20B and 120B, I’m here wasting no time with Mistral 3.2 Small 2506. An absolute workhorse, from world knowledge to reasoning to role-play, and the best of all “minimal censorship”. 
+  - GPT-OSS-20B has about 10 mins of usage the whole week in my setup. I like the speed but the model is so bad at hallucinations when it comes to world knowledge, and the tool usage broken half the time is frustrating.
+  - The only complaint I have about the 24B mistral is speed. On my humble PC it runs at 4-4.5 t/s depending on context size. If Mistral has 32b MOE in development, it will wipe the floor with everything we know at that size and some larger models.
+
+- The Qwen team has been killing it with MoE performance and quality at the same time. Definitely don’t go lower quality for the sake of speed.
+
+- I use the same model alongside Qwen3-30B-A3B-2507 (reasoning) and it's kinda crazy how much obscure knowledge Mistral is able to pack into just a 24B param dense model. I rely on tool-calling with Qwen via RAG to get accurate information, but Mistral rarely requires that. 
+  - A mixture-of-experts version of Mistral Small 3.2 would be incredible imo. And if they go that route, I really hope they use more active parameters than just 3-3.5B like Qwen & GPT-OSS do.
+  - An MoE version of this model using 7-8B active parameters would be a dream. Hopefully at the very least Mistral are working on a successor to Mixtral(2023)/Pixtral.
+
+- Tbh, recent Qwen3 thinking (both a3b and 4b) are crazy good for their size, especially in abliterated variants. However, the more you work with them, the more mistakes you notice, and going back to Mistral 24b feels like going back to a reliable (but predictable) setup.
+
+- I would really love that. Mistral is not only intelligent, but also uncensored and creative. I'm usually disappointed with new small models because they all tend to be bland, despite being capable for their size.
+  - My current dream right now is a Mistral Nemo 2 with clear improvements on the model's shortcomings.
 
 - ## [Magistral Small 2509 - Jinja Template Modification (Based on Unsloth's) - No thinking by default _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nnj83s/magistral_small_2509_jinja_template_modification/)
   - 80%~ of my tasks can be done without thinking really, 
