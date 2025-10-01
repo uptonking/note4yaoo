@@ -186,7 +186,43 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## 🆚 [AI max+ 395 128gb vs 5090 for beginner with ~$2k budget? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nunlls/ai_max_395_128gb_vs_5090_for_beginner_with_2k/)
+- ComfyUI? 5090.  LLMs? AI Max
+  - FWIW, you can also use a thunderbolt eGPU with the AI Max.
+
+- I've been able to run ComfyUI on max+ 395. It's a pain, but it's possible.
+
+- As for ComfyUI, I run that just fine on my Max+ 395 as well. But saying ComfyUI doesn't mean much. It's just a framework to run things. What exactly do you want to do? If it's just image gen, then the Max+ is as good as anything else. If it's video gen, it does work but uses way more memory than Nvidia. If it's voice cloning, that just works too. So other than using way so much memory, which you have plenty of on a Max+ 128GB, what is this bugginess you are talking about?
+  - Max+ 395 owner, and I agree, the level of experimenting i've reached has been great with the device.
+- I love my 395+ 128 GB, and I've got LLM, image generation, voice, etc. working, but I cannot for the life of me get video working. Mainly trying to experiment with I2V with WAN 2.1 and 2.2, but have never got a successful run. Either get OOM or seemingly infinite time per iteration. Not sure if you can provide any tips. Using the pytorch 2.9.0+rocm7 RC since that was the most stable for everything else.
+
+- I’d personally go 395, because almost all AI labs are going with MoE architecture at this point. So big RAM can accomplish a lot even if it’s not the fastest.
+
+- The AI Max+ 395 handles all my AI needs for now and it’s pretty snappy once you get things working in Linux.
+  - The downside is if you need/want to run anything super fast - you will need a different setup. Eventually I might get a setup like that, and use the Max+ 395 for my mobile AI needs.
+  - Still, I can get 20+ TPS on GLM Air 4.5, and even faster with the GPT-OSS models.
+
+- How much memory ddr5 with 5090? Just 32gb is limited 128gb can run huge Moe's.
+  - If your running 30b models and under 5090 all day. 
+  - If your running large 120b moe models or smaller dense models 395plus all day.
+
+- if you want to do some training stuff, CUDA, and ... maybe gaming, go for the 5090
+  - if you just want to run some local model to try them or serve them locally 24/7, strix halo is probably a better option, almost all the best latest open model are MoE and they need a lot of ram/vram (glm 4.5 air, gpt oss 120b, some qwant of qwen 235, qwen 3 next, ... will all run better on strix halo vs 5090+128gb ram). Also strix halo is usually a full machine, while the 5090 you still need the rest of the PC
+
+- AMD AI 395 miniPC preferably with Oculink (there are couple) where you can hook later external dGPU like AMD AI PRO R9700.
+
+- If you're interested in image/video gen, you need the 5090. That is going to be miserably slow on CPU.
+  - If you just want to run MoE models interactively, the AI 395 will be enough.
+  - Personally? I'd go with both. You can in fact attach a 5090 to an AI 395 system. Then you can run LLMs for your prompt generation/improvement workflows while generating video and imagery to your heart's content.
+  - I don't think people who have not experienced a Blackwell GPU understand how much faster they are for image/video work. Even against a 4090 my workflow times cut in half.
+- I agree, I think I start with 395 and add the 5090 if it becomes necessary.
+
+- if it was only to play around and learn llm stuff i'd lean towards the framework 128.
+  - but the moment you mention comfy, amd is off the table. get the 5090 instead.
+
+- If you're looking mostly to be able to inference bigger MoE models with llama.cpp then I think the 395 can be a good choice.
+  - However, if you have an interest in playing round w/ image/video generation, doing any further poking around (vLLM/SGLang, voice, PyTorch, model training/fine tuning, etc) then I think the 5090 is the clear way to go.
+  - If you're working w/ smaller models btw it's not just about stability either, the 5090 is a whole different animal in performance - as long as you're OK w/ running ~30B/smaller models.
 
 - ## [Advice: 2× RTX 5090 vs RTX Pro 5000 (48GB) for RAG + local LLM + AI development : r/LocalLLM _202509](https://www.reddit.com/r/LocalLLM/comments/1nsyiag/advice_2_rtx_5090_vs_rtx_pro_5000_48gb_for_rag/)
 - As someone with 2x 5090s, started from 1.. don't do it. Go straight to the pro 6000. Thank me later. It'll save you time, money, and effort. :) I now have a pro 6000. You can pick one up from Exxact for $7200.

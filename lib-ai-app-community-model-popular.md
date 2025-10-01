@@ -102,7 +102,16 @@ modified: 2025-09-16T19:59:57.856Z
   - 似乎不擅长tailwind, 生成页面的风格偏非tailwind样式的传统网页
   - 经常出现部分元素样式错乱的问题
 
-## models-underrated
+## models-exploring
+
+- [starvector/starvector-1b-im2svg · Hugging Face _202503](https://huggingface.co/starvector/starvector-1b-im2svg)
+  - StarVector is a foundation model for generating Scalable Vector Graphics (SVG) code from images and text
+  - It utilizes a Vision-Language Modeling architecture to understand both visual and textual inputs, enabling high-quality vectorization and text-guided SVG creation.
+  - https://github.com/joanrod/star-vector /apache2/202504/python
+    - StarVector Accepted at CVPR 2025
+  - [感觉不太行。。](https://huggingface.co/starvector/starvector-1b-im2svg/discussions/2)
+    - This checkpoint is designed for converting images into SVGs. While we do have a text-to-SVG model, we plan to release it at a later stage.
+    - The current model performs well with simple icons but has limitations with more complex images. Improving performance on complex cases is a key focus of our ongoing work.
 
 - [lakhera2023/devops-slm-v1 · Hugging Face _202509](https://huggingface.co/lakhera2023/devops-slm-v1)
   - Based on Qwen2.5
@@ -1205,7 +1214,9 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [LiquidAI bet on small but mighty model LFM2-1.2B-Tool/RAG/Extract : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nuyjp9/liquidai_bet_on_small_but_mighty_model/)
+  - So LiquidAI just announced their fine-tuned LFM models with different variants - Tool, RAG, and Extract. Each one's built for specific tasks instead of trying to do everything.
+  - This lines up perfectly with that Nvidia whitepaper about how small specialized models are the future of agentic AI. Looks like it's actually happening now.
 
 - ## [Best instruct model that fits in 32gb VRAM : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nqnabr/best_instruct_model_that_fits_in_32gb_vram/)
 - For coding, this is SEED OSS 36B. it's a slower, but very smart model for it's size, and it may also do good on text. I know asking it various asian trivia produces great results versus qwen3 30B/32B ( SEED is more accurate and detail oriented, Qwen 30B is more like a speed reader )

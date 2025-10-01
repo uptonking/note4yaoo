@@ -45,6 +45,10 @@ modified: 2025-07-17T14:39:41.606Z
   - open-chat for lasuite
   - doc-api-for-ai, 参考notion的实现方式
 
+- docs-editor  + image-gen
+  - comfyui: text-to-image
+  - svg图片
+
 - ✅ 完全本地部署的架构
 
 - 分析数据库的结构，文件编辑操作的结构

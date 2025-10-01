@@ -60,6 +60,11 @@ modified: 2021-01-04T17:26:43.784Z
   - For React-PDF to work,  `PDF.js` worker needs to be provided.
   - https://x.com/xiaohanyu1988/status/1905077853785567258 🆚️
 
+- https://github.com/Alpovka/EasyPDF-React /MIT/202510/ts
+  - https://easypdf.vercel.app/
+  - open source React library for generating beautiful PDFs from React components
+  - [I built an open-source package 6 months ago to easily turn React components into PDFs _202510](https://www.reddit.com/r/reactjs/comments/1nun17d/i_built_an_opensource_package_6_months_ago_to/)
+
 - https://github.com/pdfslick/pdfslick /MIT/202503/ts
   - https://pdfslick.dev/
   - PDFSlick is a library that enables viewing of and interaction with PDF documents in React, SolidJS, Svelte and JavaScript apps. 

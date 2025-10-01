@@ -13,7 +13,9 @@ modified: 2025-09-22T12:32:49.473Z
   - license: apache2
   - ⏳ File Versioning & Recovery: Roll back to previous file versions, trash bin
   - 🔌 Extension System: Add new features and third-party integrations.
-  - Privacy-First Design: Zero-Knowledge principle ensures admins can't access user content.
+    - 支持集成第三方app或工具
+  - 🛢️ 支持多种存储层: PosixFS, Decomposeds3
+  - Privacy-First Design: Zero-Knowledge principle ensures admins can't access user content
   - Secure & Flexible File Sharing with granular roles, expiration dates, and password
   - On-Premise: Fully self-hosted deployment for maximum control.
   - Built-in File Preview

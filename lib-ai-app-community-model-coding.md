@@ -118,6 +118,17 @@ modified: 2025-09-16T13:29:11.327Z
 - If a regular hexagon has a short diagonal of 64, what is its long diagonal?
   - waiting for one of them to get it right. The answer is 73.9 by the way.
 
+- ## 🖼️ svg prompts/resources
+- [Best SVG AI Prompts - DocsBot AI](https://docsbot.ai/prompts/tags?tag=SVG)
+  - Design a high-quality logo in SVG format for an e-commerce brand named 'Selct'. The logo should reflect the nature of e-commerce, incorporating modern design elements that convey trust, convenience, and innovation. Use a color palette that is visually appealing and suitable for online shopping platforms. Make sure the design is scalable and maintains clarity when resized. 
+
+- [AI SVG Generator: Create SVGs Instantly with AI](https://www.svgai.org/)
+- Adorable red panda sitting on bamboo branch, fluffy tail, warm orange and brown colors, kawaii style illustration.
+- Minimal eco logo 'TerraBloom' with sprouting seedling icon, fresh green and charcoal text, clean lines.
+- Single-line art of steaming coffee cup with swirling beans, monochrome dark brown.
+- Cartoon rocket soaring past planets and stars, flat style, blue space, red rocket, orange flames.
+- 3 kawaii stickers: smiling cat with heart, cheerful corgi, happy cloud raining hearts, pastel colors.
+
 - ## 💄 ui prompts/resources
   - https://huggingface.co/Tesslate/UIGEN-X-4B-0729
 
@@ -383,6 +394,42 @@ modified: 2025-09-16T13:29:11.327Z
 - Qwen 4B finetune for text to SQL exists
 
 - I do use them for that, primarily to generate datasets for charts. Before every prompt I inject the entire schema, the version and type of the RDBMS and 3-4 example queries with good generated SQLs. I then use a read-only connection to test if it even runs (syntax correctness and verifies it returns more than 0 rows) and voila.
+# discuss-ai-graphics-gen 📊
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Any good open-source model for SVG image generation? : r/svg _202505](https://www.reddit.com/r/svg/comments/1kx8jhy/any_good_opensource_model_for_svg_image_generation/)
+- AFAIK no. I think anyone using generative AI to create vector art or vector illustrations is using something like Stable Diffusion to make vector illustration looking PNGs, then converting them to vector.
+
+- I did some more research, found one that gives 20 free credits to generate SVG images, the images look pretty cool. https://svgmaker.io
+
+- 
+- 
+- 
+- 
+- 
+- 
+
+- ## [I tested various models' ability to generate SVG unicorns. : r/singularity _202502](https://www.reddit.com/r/singularity/comments/1ixe5yu/i_tested_various_models_ability_to_generate_svg/)
+  - 3.7 sonnet was initially a bit dissapointing here, but after giving it another attempt it's definetly the best one.
+
+- we need to start with an SVG Benchmark test when new AIs come out 
+  - They can perform the "most difficult human exams" but they can't do a simple 2D vectorized image.
+
+- ## [Can Flux Models generate SVG images? : r/StableDiffusion _202409](https://www.reddit.com/r/StableDiffusion/comments/1fcsy8x/can_flux_models_generate_svg_images/)
+- Text to image models produce images. They can produce vector-style graphics, which you can often run through a vectorizer for passable results.
+- Illustrator has a text-to-vector feature, but I'm not sure what it's doing in the background. I assume it's doing a text-to-image-to-vector.
+
+- It might sound counterintuitive, but your best bet might be fine-tuning an LLM (such as Llama 3.1) on a big dataset of text prompts with SVG outputs.
+
+- SVG-like images yes, actual SVGs no. There are no AI vector solutions yet, even Adobe's AI vector thing is arguably also auto vector using Illustrator or whatever.
+
+- Inkscape is open source and can convert images to SVG vectors.
 # discuss-ai-chart/flow/viz-gen 📊
 - ## 
 
@@ -473,7 +520,41 @@ modified: 2025-09-16T13:29:11.327Z
 
 - ## 
 
-- ## 
+- ## 🆚 [AMD tested 20+ local models for coding & only 2 actually work (testing linked) : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nufu17/amd_tested_20_local_models_for_coding_only_2/)
+  - tldr; qwen3-coder (4-bit, 8-bit) is really the only viable local model for coding; if you have 128gb+ of RAM, check out GLM-4.5-air (8-bit)
+  - [Getting Started: Vibe Coding Locally with AMD Ryzen™ AI and Radeon™ Graphics Cards _202509](https://www.amd.com/en/blogs/2025/how-to-vibe-coding-locally-with-amd-ryzen-ai-and-radeon.html)
+  - [Which local models actually work with Cline? AMD tested them all - Cline Blog _202509](https://cline.bot/blog/local-models-amd)
+  - AMD used Cline & LM Studio for all their testing, which is how they validated these specific configurations. Cline is pretty demanding in terms of tool-calling and context management, so if a model works with Cline, it'll work with pretty much anything.
+  - Qwen3 Coder 30B
+  - GLM-4.5-Air
+  - magistral-small-2509
+  - devstral-small-2507
+  - hermes-70B
+  - gpt-0ss-120b
+  - seed-oss-36b
+  - deepseek-r1-0528-qwen3-8b
+  - They tested 20+ models and found exactly what many of us suspected: most of them completely fail at actual coding tasks. Out of everything they tested, only three models consistently worked: Qwen3-Coder 30B, GLM-4.5-Air for those with beefy rigs. Magistral Small is worth an honorable mention in my books.
+  - deepseek/deepseek-r1-0528-qwen3-8b, smaller Llama models, GPT-OSS-20B, Seed-OSS-36B (bytedance) all produce broken outputs or can't handle tool use properly. This isn't a knock on the models themselves, they're just not built for the complex tool-calling that coding agents need.
+  - What's interesting is their RAM findings match exactly what I've been seeing. 
+  - For 32gb machines, Qwen3-Coder 30B at 4-bit is basically your only option, but an extremely viable one at that.
+  - For those with 64gb RAM, you can run the same model at 8-bit quantization. 
+  - And if you've got 128gb+, GLM-4.5-Air is apparently incredible (this is AMD's #1)
+
+- Kind of expected. I have had a RTX 4090 for a year now but for coding I never go local. it is just waste of time for majority of tasks. Only for tasks like massive text classification (Recently a 250k abstract classification task using Gemma 3 27b QAT) pipelines I tend to use local. For coding either own a big rig (GLM 4.5 Air is seriously reliable) or go API. Goes against this sub but for now that is kind of reality. Things will improve for sure in the future.
+
+- I've had decent results with gpt-oss-20b + Qwen Coder CLI - better than Qwen3-Coder-30b-A3B. I was pleasantly surprised with the throughput. I get about 150 tokens/s (served using lmstudio)
+  - what applications are you using gpt-oss-20b in? unfortunately the gpt-oss models are terrible in cline -- might have something to do with our tool calling format, which we are currently re-architecting
+
+- OSS-120B is on par with 4.5 Air, except Air is way better with UI. OSS-120B is better at some backend-related tasks.
+
+- I think the problem is in how the tool usage is set up. A lot of the models work with specific setups. For example: GPT-OSS:20B - does not work on Roo or Cline or Kilo. But you put it into Copilot Chat and its like a completely different model. Works fine and does everything it needs to. Seems like there should be some standardization on how the tools are being used in these models.
+  - yes -- noted this above. we are updating our tool calling schemas in cline to work better with the gpt family of models. seems the oss line was heavily tuned for their native tool calling
+
+- Locally I use Qwen3-Coder 30B for coding, qwen3:14b-q4_K_M for general experiments (switch to qwen3:30b if it doesn't work). I also found out that 30B seems to be the right spot for local models. 8B/13B seem to be limited.
+
+- It's wild that Magistral 1.2 2509 was a honorable mention and it's not even a coding focused model. Goes to show that the model is a solid all around model for most things. Has a ton of world knowledge too. 
+
+- I have been able to get GLM 4.5 Air with lower quant on my 64 GB MBP and it’s good. Prior to it, I was getting GLM 4 32B to produce decent Python. I have stopped trying under 30B models for coding altogether as it’s not worth it.
 
 - ## [Any fine tune of Qwen3-Coder-30B that improves its over its already awesome capabilities? : r/LocalLLM _202509](https://www.reddit.com/r/LocalLLM/comments/1nks4g2/any_fine_tune_of_qwen3coder30b_that_improves_its/)
 - You could try your look with Devstral Small 1.1 2507 as it is specifically designed as enterprise-grade agentic coder. Spends less tokens for the same amount of work in my use-cases.

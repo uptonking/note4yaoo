@@ -172,7 +172,7 @@ next dev -H 0.0.0.0 -p 3000
   - pouchdb + kappa-crdt + eav => pouchdb-crdt-eav
   - 做完tailwind-table就面试
 - dev-to 提炼核心`需求+产出`工作流，不能在产品中检验的技术不玩
-# dev-09
+# dev-10
 - dev-log
   - ?
 - dev-to
@@ -203,6 +203,13 @@ use vanilla html/css/javascript to create a simplistic personal profile landing 
 use vanilla html/css/javascript to create a personal profile landing page: homepage shows a cool welcoming animation, then shows 4 example personal projects, then a simple get in touch form below it
 use react to create a homepage shows a list of frontend frameworks like react/vue/angular, when clicking the framework, navigate to the route to show its introduction
 ```
+
+## 1001
+
+- how to describe a saas product feature: it has deep technology, and put great professional effect, so it's very competitive in the market
+  - Emphasize the cutting-edge innovation powering the feature, avoiding vague terms like "deep tech" alone. Instead, clarify its technical foundation
+  - Use Powerful Vocabulary: Incorporate terms like "AI-powered, " "full-link tracking, " "cloud-native, " "automated workflow, " and "seamlessly integrates" to convey technical depth.
+# dev-09-cline/roo-coidng-&-langchain/langgraphjs-&-librechat-&-authentik-saas-better-auth
 
 ## 0930
 

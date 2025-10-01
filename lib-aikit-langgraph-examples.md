@@ -618,6 +618,15 @@ modified: 2025-08-11T08:47:56.335Z
   - Modern multi-agent setups—whether using LangGraph, Autogen, or custom orchestration—lack a reliable way to share evolving context (state, goals, thoughts) between agents. 
   - memX provides a simple and secure memory layer that agents can read/write from in real-time — no message-passing or controller required.
 # langchainjs
+- https://github.com/IBJunior/fullstack-langgraph-nextjs-agent /202509/ts
+  - Next.js template for building AI agents with LangGraph.js. 
+  - Features MCP integration for dynamic tool loading, human-in-the-loop tool approval, persistent conversation memory with PostgreSQL, and real-time streaming responses. 
+  - Built with TypeScript, React, Prisma, and Tailwind CSS.
+  - LangGraph.js StateGraph with persistent memory via PostgreSQL checkpointer
+  - Full MCP Integration - dynamically load tools from MCP servers (stdio & HTTP)
+  - Multi-model support - OpenAI and Google AI out of the box
+  - Thread-based persistence - conversations resume seamlessly across sessions
+
 - https://github.com/chrisleekr/langchain-playground /202508/ts
   - In this project, I used LangGraph to build a workflow to analyze New Relic logs.
   - A playground for LangChain.js, LangGraph, Slack, Model Context Protocol (MCP) and other LLM-related tools.

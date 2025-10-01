@@ -64,10 +64,10 @@ modified: 2025-02-21T17:17:42.225Z
   - Using Local Models with Ollama: PySpur only works with models that support structured-output and json mode. Most newer models should be good
   - [ComfyUI for LLMs : r/comfyui _202412](https://www.reddit.com/r/comfyui/comments/1hgfy3g/comfyui_for_llms/)
 
-- https://github.com/nocode-js/sequential-workflow-designer /1.2kStar/MIT/202502/ts/NoDeps/svg
+- https://github.com/nocode-js/sequential-workflow-designer /1.2kStar/MIT/202502/ts/NoDeps
   - https://nocode-js.com/
   - Customizable no-code component for building flow-based programming applications or workflow automation
-  - written in pure TypeScript and uses SVG for rendering
+  - written in pure TypeScript and uses `SVG` for rendering
   - This designer is not associated with any workflow engine. 
   - the definition is stored as JSON
   - https://github.com/nocode-js/sequential-workflow-editor /MIT/vanillajs
@@ -132,16 +132,12 @@ modified: 2025-02-21T17:17:42.225Z
   - Chat with React Code-Editor and Live-preview using Sandpack by Codesandbox
   - An experimental preview of AI SDK 3.0 with Generative UI support
 
-
 - https://github.com/asj9469/Reactonaut /13Star/NALic/202308/js/inactive
   - an online React code editor with an AI assistant. 
   - Live code editing with Ace Editor
   - React-Live for real-time rendering of React components
   - OpenAI's ChatGPT API integration for code suggestions
   - Reactonaut is the general/public version of his original project Reactor with a new UI and enhanced features. It was developed during our collaboration in an AI Startup Hackathon.
-
-
-
 
 - https://github.com/Nutlope/llamacoder /6.5kStar/MIT/202508/ts
   - https://www.llamacoder.io/
@@ -181,12 +177,6 @@ modified: 2025-02-21T17:17:42.225Z
   - Integrated Code Editor: View and modify the generated Component.tsx code directly in the 'Editor' tab.
   - Dependencies Included: The sandbox automatically includes react, react-dom, framer-motion, and @heroicons/react for richer component possibilities.
   - Optional Proxy: Built-in logic to route API requests through a local proxy (/llm-proxy) if the target API is not on localhost (requires separate proxy setup).
-
-
-
-
-
-
 # ai-apps
 
 # more

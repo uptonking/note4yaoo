@@ -100,6 +100,13 @@ modified: 2021-05-14T15:04:15.333Z
   - 前端依赖 react、redux、react-quill
   - https://github.com/dyarleniber/typescript-ddd-forum
 
+- https://github.com/replyke/monorepo /apache2/202509/ts
+  - https://replyke.com/
+  - [I built Replyke: an open-source social infrastructure layer (comments, feeds, notifications, profiles) for your apps : r/reactjs](https://www.reddit.com/r/reactjs/comments/1nv6zaa/i_built_replyke_an_opensource_social/)
+    - It’s a non-intrusive data layer that integrates with your existing systems
+    - No changes to your data or auth
+    - Full-featured comment sections with @mentions/Threaded-replies/Likes
+
 - orca /1.1kStar/MIT/202203/ts/inactive/功能全
   - https://github.com/DimiMikadze/orca
   - https://dimimikadze.github.io/orca-docs/

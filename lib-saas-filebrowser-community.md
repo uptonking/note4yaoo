@@ -20,7 +20,7 @@ modified: 2025-09-30T09:00:23.492Z
 # discuss-roadmap
 - ## 
 
-- ## 
+- ## [add s3 compatibility _202407](https://github.com/gtsteffaniak/filebrowser/issues/140)
 
 - ## [Stable Release & 0.9.0 update _202509](https://github.com/gtsteffaniak/filebrowser/discussions/1293)
   - A breakdown of some things to expect in 0.9.x:
@@ -52,3 +52,9 @@ modified: 2025-09-30T09:00:23.492Z
 - 本地keycloak异常日志 ERROR [org.keycloak.services] (executor-thread-6) KC-SERVICES0093: Invalid parameter value for: scope
 
 - 💡 将配置`scopes: "email openid profile groups"`中groups去掉可登录
+
+- ## 🎯 [It's official: Filebrowser is dead, long live FileBrowser Quantum : r/selfhosted _202506](https://www.reddit.com/r/selfhosted/comments/1l92znc/its_official_filebrowser_is_dead_long_live/)
+- Been using Quantum for about a month now & it's so much better than the original. Tried other stuff like SFTPGo & others, but settled on filebrowser quantum. The indexing is insanely helpful for finding stuff. I know it's in beta, but it already feels feature complete.
+  - Only feature I can think I'd want is a preview for fonts, but that's literally it.
+
+- You can also disable indexing like this, but search won't work for anything you haven't "seen".

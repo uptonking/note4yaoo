@@ -17,6 +17,20 @@ modified: 2024-01-30T14:41:38.742Z
   - https://github.com/deebloo/things-you-can-do-in-a-web-worker
   - [Web Worker 文献综述_202007](https://github.com/CntChen/cntchen.github.io/issues/19)
 # worker-web
+- https://github.com/cloudflare/capnweb /2.8kStar/MIT/202509/ts/NoDeps
+  - JavaScript/TypeScript-native, low-boilerplate, object-capability RPC system
+  - Like Cap'n Proto, it is an object-capability protocol. ("Cap'n" is short for "capabilities and".) 
+  - Unlike Cap'n Proto, Cap'n Web has no schemas.
+  - Also unlike Cap'n Proto, Cap'n Web's underlying serialization is human-readable. In fact, it's just `JSON`, with a little pre-/post-processing.
+  - It works over HTTP, WebSocket, and postMessage() out-of-the-box, with the ability to extend it to other transports easily.
+  - It works in all major browsers, Cloudflare Workers, Node.js, and other modern JavaScript runtimes. 
+  - Cap'n Web is more expressive than almost every other RPC system, because it implements an object-capability RPC model.
+    - Supports bidirectional calling. The client can call the server, and the server can also call the client
+    - Supports passing functions by reference
+    - supports passing objects by reference
+    - Supports promise pipelining
+  - [Cap'n Web: a new RPC system for browsers and web servers _202509](https://blog.cloudflare.com/capnweb-javascript-rpc-library/)
+
 - https://github.com/GoogleChromeLabs/comlink /11.8kStar/apache2/202411/ts/inactive
   - Comlink makes WebWorkers enjoyable.
   - At a more abstract level it is an RPC implementation for postMessage and ES6 Proxies

@@ -26,12 +26,13 @@ modified: 2025-07-17T14:40:30.038Z
     - demo: uv run python manage.py create_demo 
     - back-i18n-compile:: uv run python manage.py compilemessages --ignore=".venv/**/*"
   - run: fe, django-be, yjs-provider, nginx
+# devops
 
 ```shell
 # start lasuite-docs
 source ./bin/dev-env.sh
 
-docker compose up -d keycloak
+# docker compose up -d keycloak
 brew services start nginx
 brew services start postgresql@17
 brew services start redis

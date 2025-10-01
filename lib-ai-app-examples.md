@@ -176,6 +176,11 @@ modified: 2023-02-08T07:20:48.475Z
   - What differentiates this project from `llama-swap`?
     - The main thing is that you can create instances via web dashboard. With llama-swap you need to edit the config file. There's also API key auth which llama-swap doesn't have at all as far as I know.
 
+- https://github.com/amd/gaia /MIT/202510/python
+  - Run LLM Agents on Ryzen AI PCs in Minutes
+  - GAIA is specifically designed for AMD Ryzen AI systems and uses Lemonade Server for optimal hardware utilization
+  - GAIA UI is an optional, modern web-based interface for GAIA, built on the RAUX (Open-WebUI fork) platform.
+
 ## api
 
 - [https://www.steamship.com](https://www.steamship.com/)

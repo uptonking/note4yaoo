@@ -117,6 +117,18 @@ modified: 2024-03-31T17:45:16.789Z
     - I think it should be possible to also encrypt the S3 buckets, independently from OpenCloud, as a feature of the storage
     - OpenCloud however does not yet support client side S3 encryption.
 
+- https://github.com/owncloud/ocis /1.8kStar/apache2/202510/go
+  - https://doc.owncloud.com/ocis/next/
+  - ownCloud Infinite Scale (oCIS) is the new file sync & share platform that will be the foundation of your data management platform.
+  - [Provide login option for Basic Auth and SSO at the same time _202508](https://github.com/owncloud/ocis/issues/11601)
+    - this will be hard to implement as requested. When having an external IDP configured, oCIS uses that as source of truth for the authentication. That means that ocis itself does not store any password information internally, hence it can't authenticate basic auth requests. I do not think it is a good idea to duplicate this password information. 
+    - A better solution to this problem is in my opinion to allow multiple IDPs. This would give the user the opportunity to choose its identity provider on login. These IDPs would be independent from each other, means each one will have their own password.
+  - [OIDC can't be set up for the hardcoded clients · Issue · owncloud/ocis](https://github.com/owncloud/ocis/issues/9389)
+    - The OIDC implementation that ownCloud uses is fundamentally broken: the clients are not authenticating in a way that anyone considers rational, and which is incompatible with many identity providers. ownCloud's response here is nothing short of absolutely wild, from suggesting small home users pay an enterprise subscription to rationalizing the why it's not broken "because of the history".
+  - https://github.com/owncloud/web /516Star/AGPL/202510/ts/vue
+    - https://owncloud.dev/clients/web/
+    - Next generation frontend for ownCloud Infinite Scale
+
 - https://github.com/gtsteffaniak/filebrowser /3.3kStar/apache2/202509/go/ts/vue
   - FileBrowser Quantum is a massive fork of the file browser 
   - Directory-level access control that can be scoped to user or group.
@@ -127,7 +139,7 @@ modified: 2024-03-31T17:45:16.789Z
   - 🔍 Ultra-efficient indexing and real-time updates
   - 🆚 readme最后提供了产品对比图
   - 📡 roadmap
-    - [add s3 compatibility ](https://github.com/gtsteffaniak/filebrowser/issues/140)
+    - [add s3 compatibility _202407](https://github.com/gtsteffaniak/filebrowser/issues/140)
   - https://github.com/Softwaredam/filebrowser-chart
     - For anyone interested in a chart to deploy it on Kubernetes
 
@@ -158,7 +170,7 @@ modified: 2024-03-31T17:45:16.789Z
   - SolidJS + Hope UI，已经停止维护
   - https://github.com/AlistGo/alist-web
 
-- myDrive /2.8kStar/GPLv3/202012/前端js+后端ts/inactive
+- myDrive /2.8kStar/GPLv3/202012/前端js+后端ts/~~inactive~~
   - https://github.com/subnub/myDrive
   - https://mydrive-storage.com/
   - MyDrive is an Open Source cloud file storage server (Similar To Google Drive). 
@@ -217,7 +229,20 @@ modified: 2024-03-31T17:45:16.789Z
   - easy to use, document sharing and management solution
   - 依赖werkzeug
   - Upload and store files across multiple platforms.
-  - Preview files such as images, videos, PDFs, etc.
+  - Preview files such as images, videos, PDFs, etc
+
+- https://github.com/chibisafe/chibisafe /2.4kStar/MIT/202507/ts/inactive
+  - https://chibisafe.app/
+  - Chibisafe is a file uploader service written in typescript
+  - It accepts files, photos, documents, anything you imagine and gives you back a shareable link for you to send to others.
+  - You can run it in public mode, user accounts mode or invite-only mode.
+  - The service also comes with a dashboard where you can edit almost every configuration of the instance directly from the UI without having to touch environment or configuration files manually. 
+  - S3 Storage Support
+  - File management and file tagging
+  - Snippets/Gists creation with direct links to share
+  - User management and quotas
+  - Built-in URL shortener
+  - Easily extensible
 
 - https://github.com/pydio/cells /2kStar/AGPLv3/202509/go/js
   - https://pydio.com/
@@ -368,7 +393,7 @@ modified: 2024-03-31T17:45:16.789Z
   - A Dropbox-like file manager that let you manage your data anywhere it is located: FTP • FTPS • SFTP • WebDAV • Git • S3 • LDAP • Mysql CardDAV • CalDAV • Backblaze B2 • Minio Dropbox • Google Drive
   - Multiple cloud providers and protocols, easily extensible
   - Extensible / Customisable / Hackable via a rich ecosystem of plugins
-  - 
+  - Shared Links which you can mount locally as network drives
 
 - https://github.com/psi-4ward/psitransfer /1.4kStar/BSD/202311/js/vue/inactive
   - Simple open source self-hosted file sharing solution.

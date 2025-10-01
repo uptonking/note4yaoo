@@ -572,6 +572,15 @@ modified: 2024-08-24T16:30:20.218Z
   - Hound itself is a static React frontend that talks to a Go backend. 
   - Currently Hound is only tested on MacOS and CentOS, but it should work on any *nix system. Hound on Windows is not supported
   - By default Hound polls the URL in the config for updates every 30 seconds. You can override this value
+# code-rag
+- https://gitlab.com/gitlab-org/rust/knowledge-graph /gitlab-ee/202510/rust
+  - https://gitlab-org.gitlab.io/rust/knowledge-graph/
+  - aims to create a structured, queryable graph database from code repositories to power AI features and enhance developer productivity.
+  - gitlab-code-parser: A language-agnostic parsing engine powered by `tree-sitter` and other native Rust parsers.
+  - database: The persistence layer, powered by the `Kuzu` graph database, for storing and querying the knowledge graph.
+  - event-bus: A real-time event system for broadcasting progress and status updates.
+  - [The GitLab Knowledge Graph, a universal graph database of your code, sees up to 10% improvement on SWE-Bench-lite : r/Rag _202510](https://www.reddit.com/r/Rag/comments/1nu148l/the_gitlab_knowledge_graph_a_universal_graph/)
+    - It’s not a vector DB with embedding (yet), but a graph database called Kuzu. It’s taking your code’s AST and translating that into graph format.
 # ide-devtools
 - https://github.com/zthxxx/react-dev-inspector /MIT/202412/ts
   - https://react-dev-inspector.zthxxx.me/

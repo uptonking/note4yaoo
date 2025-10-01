@@ -30,6 +30,61 @@ modified: 2024-08-03T20:00:33.414Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Nextcloud alternative experience : r/selfhosted _202407](https://www.reddit.com/r/selfhosted/comments/1ebc5ii/nextcloud_alternative_experience/)
+- I've also used just plain Filebrowser and have been playing around with Spacedrive. Might be worth a look
+
+- ## [Has a better Google Drive alternative come out recently besides Nextcloud? : r/unRAID _202506](https://www.reddit.com/r/unRAID/comments/1li334b/has_a_better_google_drive_alternative_come_out/)
+- If you want a feature full web browser based file explorer.
+  - The SFTPGO is very good for what it does:
+  - I use it for:
+  - Web File browser
+  - SFTP and WEBDAV server
+  - User Management with 2FA
+  - Encryption
+- FOSS and no limits. I don't think that it does Syncing though. But you can just use Syncthing in combination with it and now you've got it all.
+
+- Is this for accessing files remotely or actually syncing? For remotely accessing files I love webDAV. You can map a share on windows, macOS, Linux, iOS, Android etc and it’s accessible like a local folder.
+  - I just use SMB over a VPN.
+- SFTP works great.
+
+- ## [Why is Seafile not common? : r/selfhosted  _202506](https://www.reddit.com/r/selfhosted/comments/1lm2f1d/why_is_seafile_not_common/)
+- Because people are apprehensive(忧虑的, 担心的) of how Seafile stores data. 
+  - Seafile stores data is a proprietary FUSE FS which is not directly accessible outside of Seafile. 
+  - They do it for performance reasons and a whole list of other pros that massively outweigh the cons of this approach. It's also the reason Seafile outperforms every other Open Source Cloud Provider out there.
+  - That said, in a community like this(selfhosted) where people are highly cautious of their data, a proprietary inaccessible FS is a taboo.
+  - Seafile stores data as blobs in their proprietary database in a Git like fashion which can be exposed using a Fuse FS. This architecture allows them to outperform every other File Storage app out there.
+- FUSE is not used in the Seafile server, its just hash-identified blobs on the file system, kinda like Git. There's a separate tool for exploring a Seafile library without a server using FUSE, but its not part of Seafile proper.
+  - Arguably the Seafile disk layout is ideal for using object storage as the storage backing, like S3 or MinIO, but for personal use most people won't be doing that.
+- It's also paywalled.
+  - Valid complaint. I wish S3 support was in the community edition. Seems silly that it isn't.
+- The FUSE wrapper is read-only though which is a bit of a bummer.
+
+- OpenCloud (recent fork of OCIS) now stores files in a posix (normal file system) format and is lighter and possibly faster than SeaFile. 
+  - The setup is a big bowl of spaghetti. Very clever I am sure, but not easy to untangle. I am slowly working on a setup which doesn't have traefik but will integrate collabora, but it's taking more time than I have patience 
+
+- ## [Thinking About a Better File-Sharing Platform—Need Your Input! : r/selfhosted _202408](https://www.reddit.com/r/selfhosted/comments/1euwqrb/thinking_about_a_better_filesharing_platformneed/)
+- Is this something you will be actively maintaining in 15 years? 20 years? Many open source projects fail because there is no money being directly involved and that means the dev process isn’t going to be maintainable. Personally I would love a stable program at a cost even.
+- i am personally not looking to contribute to nextcloud since I find it to be bloating day by day when the basic functionality does not work and maintenance is a nightmare (for some). The number of issues on github is reflective on how bad the state is currently.
+  - I think we can do better and offload file management to any S3 compliant storage (minio, garage, seaweedfs, or any cloud provider) and focus on the indexing and sharing of files.
+
+- You can check Owncloud OCIS, it is rewritten to go but right now it focusing only on files but I had problems with mobile client
+
+- I love everything about OCIS except that it's complicated (there is a lot of documentation but it's not always easy to figure out how to actually put the pieces together) and that it stores files in a proprietary format on the server. As u/henry_tennenbaum says, there is a new POSIX driver which I haven't tried yet
+  - However OCIS is still a complicated beast aimed primarily at large installations. I think there is probably space for a smaller, simpler solution aimed at selfhosters that can make different tradeoffs because it's not expected to scale in the way NextCloud and OCIS are.
+
+- ## [Better file manager than FileBrowser? : r/selfhosted _202402](https://www.reddit.com/r/selfhosted/comments/1axbsni/better_file_manager_than_filebrowser/)
+- I would say the next step up would be either nextcloud or seafile, only reason I have stayed with file browser is it's just simple and does not break.
+
+- I use and enjoy FileBrowser, but when I'm moving a lot of files around I normally do it in Windows using a mounted drive. I have also used Webtop and use KDE Plasma's Dolphin file browser and that is good if you're on a machine that you don't want to mount network drives to.
+  - Yeh so this is me. Every now and again I need to move a lot of files around.
+  - The “move” feature in FileBrowser is just painful to use. Especially when I have click 20 times just to find the folder I want to move the file to
+
+- I am currently facing a problem: I want to use nginx proxy to access it, but when my proxy path is not location /, for example, when my proxy path is location /fb, it will cause Filebrowser to be inaccessible. How can it customize the project path to fit my needs?
+
 - ## [NextCloud vs OwnCloud vs FileCloud (2024) : r/selfhosted _202408](https://www.reddit.com/r/selfhosted/comments/1euvkxr/nextcloud_vs_owncloud_vs_filecloud_2024/)
 - I use Immich for photos and Seafile for general purpose shared storage.  Immich is great, Seafile is okay, much better than Nextcloud though. 
   - i use Immich for image and Videos... It is closest to Google Photos in terms of UI. For rest of the thing, Nextcloud
@@ -59,12 +114,6 @@ modified: 2024-08-03T20:00:33.414Z
 - There is no security layer between web browser of application user and filesystem.
   - You specify which folders and subfolder it can use, as well as which user rights it operates during the docker setup.
 - 2FA is up to you to setup. Use Authelia or anything else as your proxy auth and pass the header of choice (username, email, ...). Filebrowser will match its value to the user in filebrowser
-
-- ## 🎯 [It's official: Filebrowser is dead, long live FileBrowser Quantum : r/selfhosted _202506](https://www.reddit.com/r/selfhosted/comments/1l92znc/its_official_filebrowser_is_dead_long_live/)
-- Been using Quantum for about a month now & it's so much better than the original. Tried other stuff like SFTPGo & others, but settled on filebrowser quantum. The indexing is insanely helpful for finding stuff. I know it's in beta, but it already feels feature complete.
-  - Only feature I can think I'd want is a preview for fonts, but that's literally it.
-
-- You can also disable indexing like this, but search won't work for anything you haven't "seen".
 
 - ## [[Request]: Lightweight cloud storage solution that isn't nextcloud? : r/selfhosted _202505](https://www.reddit.com/r/selfhosted/comments/1kgti6z/request_lightweight_cloud_storage_solution_that/)
 - If you need only basic file storage and sharing, I would recommend OpenCloud (a fork of ownCloud OCIS)

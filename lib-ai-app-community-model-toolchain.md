@@ -128,7 +128,20 @@ modified: 2025-09-16T12:36:12.968Z
 
 - ## 
 
-- ## 
+- ## [weighted/imatrix VS static quants? : r/LocalLLaMA _202405](https://www.reddit.com/r/LocalLLaMA/comments/1ck76rk/weightedimatrix_vs_static_quants/)
+- Imatrix quants were introduced a couple of months ago and are recommended over static quants because they have better output quality. 
+  - For example, a Q4_K_M quant made with imatrix should be closer to a Q5_K_M non-imatrix quant in quality.
+
+- Importance matrix is used to choose vocabulary to preserve precision for.
+  - Both normal Q_k quants and IQ quants can use imatrix.
+  - IQ quants, I don't know the expansion of the I, but they attempt to approximate the original value at runtime. They do extra math, and slow down CPU inference but GPUs generally are still memory speed limited.
+
+- Are there any disadvantages? I usually go for Q4k_m and tried iq4_nl or something, the IQ is slightly smaller in file size but inference speed seems to be basically the same. If imatrix is better why do people still release/use static? 
+
+- [Static vs imatrix? : r/SillyTavernAI](https://www.reddit.com/r/SillyTavernAI/comments/1ggfpo8/static_vs_imatrix/)
+  - imatrix is distinct from i-quants.
+  - i-quants are better if your hardware(CPU in this case, not GPU/RAM/VRAM) is beefy enough to run them at a speed you find usable.
+  - K-quants if your CPU is struggling with i-quants.
 
 - ## [Getting counter-intuitive results with local KV Cache Quantization Benchmark - am I doing something wrong? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nn2nqz/getting_counterintuitive_results_with_local_kv/)
   - I've been running some benchmarks on KV cache quantization for long-context tasks, and I'm getting results that don't make much sense to me. 
