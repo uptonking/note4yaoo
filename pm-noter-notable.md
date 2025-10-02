@@ -142,6 +142,7 @@ modified: 2023-11-28T14:48:45.910Z
   - cost: unlimited tokens
   - network agnostic
   - your copyright: platform agnostic
+  - avoid ai ads
 # business-apps
 - 成功的产品，大多可以不断更新换代
   - 如大模型、支持最新大模型的comfyui, 并且大模型种类多更新多

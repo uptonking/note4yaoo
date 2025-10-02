@@ -39,6 +39,15 @@ modified: 2025-09-16T19:59:57.856Z
   - 多agent架构时，可使用不同架构的agent相互验证
   - non-thinking或输出简洁的模型适合coding
 
+- 超大模型的极小量化版
+  - Llama-3.3-70B-Instruct-abliterated-Q2-mlx  22.07gb
+  - Qwen3-Next-80B-A3B-Instruct-q2-mlx  24.95gb
+  - Mistral-Large-Instruct-2411-Q2-MLX  45.99gb
+  - gpt-oss-120b-mlx-2Bit  36.61gb
+  - GLM-4.5-Air-2bit  33.45gb
+  - DeepSeek-V3.1-Terminus-mlx-2Bit  209.89gb
+  - DeepSeek-R1-2bit  251.82gb
+
 - donts
   - 很多带thinking的大模型不擅长计数，如within 18 words， 有的模型真的会逐个token打印出来逐个数一遍
 

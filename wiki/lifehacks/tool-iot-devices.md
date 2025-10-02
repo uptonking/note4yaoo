@@ -186,6 +186,297 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
+- ## 
+
+- ## [How well does ComfyUI perform on macOS with the M4 Max and 64GB RAM? : r/comfyui _202503](https://www.reddit.com/r/comfyui/comments/1jhifyi/how_well_does_comfyui_perform_on_macos_with_the/)
+- TLDR - if you want to work linear on one image, a Mac is a huge waste of time. Maybe 25% of the speed of a decent NVIDIA PC for AI generation. 
+  - However, if you know how or want to multitask, it’s easily the best system you can purchase.
+
+- I don't know if you'll find this information but based on estimates comparing to the M4 Pro, it should reach close to half the performance of an $800 PC with an RTX 3060
+
+- I have a Mac Mini M4 Pro with 48GB of unified RAM. As my daily driver for everyday things, it's great, even great at media encoding, but for generative AI stuff, compared with my Linux PC with a RTX 4090 - it pales in comparison. We are talking minutes vs seconds here for a 1024x1024 Flux generation. Most of it is tuned for Nivida CUDA and that is the key. Apple Silicon offers great performance for everyday computing, but its support for machine learning frameworks like PyTorch sucks butt compared to CUDA.
+
+- I transitioned from dabbling with generative AI images on M1 Max Macbook to using a PC that I owned with Nvidia RTX 3060 graphics card. 
+  - The PC with ComfyUI was 3 times faster than my Mac which was using DrawThings (I installed ComfyUI on Mac but abandoned it because DrawThings was more convenient and faster). 
+  - After getting more involved I ended up buying a PC with Nvidia RTX 4090 graphics card. Very happy with that decision. I love the Mac for most things but most likely even the M4 Max might prove to be frustrating to use to keep up with the rapid advances in the ComfyUI - Stable Diffusion world.
+
+- AI image and video generation require cuda cores to function properly so Apple or even AMD gpus are not recommended.
+
+- I ran ComyUI Flux Schnell, Pro and several LORAs on Mac studio Max4 base model and most models will run fine. I only ran into memory issues with video generation therefore moved to M3 Ultra 96GB. I dont have a reference point with PC but i am getting 15-30sec for 1024x1024 img generation for most workflows.
+  - That's pretty slow. A NVIDIA 3090ti 24gb PC can do that in under half that
+
+- my Mac M4 16gb is much more slower than my old PC with the good old Geforce 3060. An Apple a day keeps the Comfyui away.
+
+- ## [Setting up ComfyUI with AI MAX+ 395 in Bazzite : r/StableDiffusion _202510](https://www.reddit.com/r/StableDiffusion/comments/1nux1f0/setting_up_comfyui_with_ai_max_395_in_bazzite/)
+  - Qwen took 3 min 20s with fp8 image and clip at 20 steps
+  - 1 min 22s for Qwen 4-step lightning lora with 8 steps - 8-step lora doesn't work since it's bf16
+  - Flux was super slow first time, running flux-dev at fp8, but after that it was about 1 min 51s
+  - WAN 2.2 fp8 high-lo 20 steps took 4 min 14s for an image (no speed up lora)
+  - WAN 2.2 fp8 with Lightx2v took 18 seconds for an image
+
+- 3 times more expensive than 4070 but 3 times slower than 4070?
+  - The purpose is the 128gb of unified ram, it's meant for LLM use, not image generation. 
+  - Obviously if you only care about small models that fit in 16gb vram there are way cheaper and faster methods.
+
+- [System Question: AMD Ryzen AI Max + 395 with 128GB LPDDR5x 8000mhz Memory -- Will this work to run ComfyUI? : r/comfyui](https://www.reddit.com/r/comfyui/comments/1nr9ttv/system_question_amd_ryzen_ai_max_395_with_128gb/)
+  - It would be really sloooooow. Assuming you’re talking about ai max. There is a YouTube video of a review in Chinese. He shows running some T2i and t2v using some Chinese software. Regardless it was super slow.
+  - TLDR CUDA is still king.
+- You can load large LLMs and run them decently on that machine but it is not meant for heavy image and video work. 
+  - A dedicated GPU will run rings around that machine for rendering time. With a 5090 I can generate 8 seconds of 720p video with FP16 high and low noise models and Loras using sage attention 2 in about 3 to 5 minutes, you don’t need to be running them as high as I am if you want good results with 16 a 24gb vram. 
+  - The main difference is that VRAM is faster (much faster) than ram and the GPU chip turns out many more TFLOPS of 16 floating point precision than the tiny 8060S can, not to mention the LPPDR 8000 ddr ram is much slower than GDDR7. 
+  - If you just want to run language models get that machine. Otherwise, you’ll be badly equipped and your render times will be forever
+
+- ## [DIY vs Nvidia dgx spark? : r/StableDiffusion _202509](https://www.reddit.com/r/StableDiffusion/comments/1nfoi9d/diy_vs_nvidia_dgx_spark/)
+- As already suggested, go for 5090. Or if you need more VRAM and have the budget, go for RTX PRO 6000 (if you are planning some video work, that may be a better option).
+
+- The spark can be a good option for LLMs but not for image generation. Here the currently best options that you can run in an office are the 5090 and the RTX Pro 6000.
+  - When it's coming to training you could (should) even consider multiple 5090 like 2 or 4.
+
+- just buy 5090, DGX spark is 40/5060 Ti ish performance
+
+- Spark can do nvlink? did you mean network based NCCL?
+  - You want to train Stable Diffusion, i assume UNET based model like XL and 1.5 variant. The less pain in the ass way to train in multi gpu setup is DDP. splitting unet is pain you need special libs like https://github.com/mit-han-lab/distrifuser
+  - Incur communication cost, no free meal, DDP even though less demanding than FSDP in communication, it stilll need allreduce the gradient across rank.
+  - Is 128G VRAM really important for your use case? DGX Spark is mainly for LLM workflow, large weight model but low active compute sequence (tokens), since LLM sequence isn't as crazy as diffusion models.
+  - Engineering and salary cost. Your engineer need to learn to parallelizing gpu, manage networking, setting up torch distribution
+  - Most SD trainer is mainly for single gpu
+  - DGX Spark is not GDDR memory but LPDDR, and boy moving tensor from GDDR to share memory (gpu internal memory) is already slow, relative to SM speed, and now LPDDR is much slower
+
+- ## [Will this thing work for Video Generation? NVIDIA DGX Spark with 128GB : r/StableDiffusion _202504](https://www.reddit.com/r/StableDiffusion/comments/1ju2mfk/will_this_thing_work_for_video_generation_nvidia/)
+- For a machine with 128 GB of LPDDR5 with 273 GB/s memory bandwidth and a paltry 200 GbE ConnectX-7 I find $4k a bit much.
+
+- 4090 still superior to this despite the 128GB of memory. That memory speed is much slower and the TOPS is lower. A 4090 is still best dollar value if your focus is SD and video.
+
+- Check out the HP Z2 G1a that's dropping on Monday. Allocate up to 96GB of RAM to the GPU (I've heard that on Linux you can allocate even more) and the price has surprised me. I'll be getting one as soon as I know Ollama and SD support its APU.
+  - Yes, it's 110GB on Linux. Are you surprised that the price is so high? Other Strix Halo machines also with the same APU and the same 128GB of RAM are much cheaper. The Framework Desktop starts at $2000 or just $1700 to buy the motherboard. The GTK is well spec'ed out for around $1800 ready to run. Those are like half the cost of the HP.
+
+- ## [DGX Spark? : r/comfyui _202506](https://www.reddit.com/r/comfyui/comments/1ljbgxn/dgx_spark/)
+- 4090 or 5090 for images. RTX 6000 Pro if you're doing video. DGX Spark is for running medium to large-ish LLMs slowly and does not have the right mix of performance for image/video work.
+  - The 6000 is about 3x the price of a 5090 so I'll have to think about that one.
+  - 96GB of RAM on one GPU. Video models were mostly engineered to run on 80GB H100s. You can run them on less VRAM but with hokey compromises and limitations. Not saying people don’t do it but I don’t have the appetite, would rather just use models as intended.
+- Yes, any RTX *90 series card will be faster. DGX Spark is targeted at large text based models. I would not buy this if you plan on using it for image/video gen.
+
+- Just get a nuc and a pro 6000 Blackwell and you'll be set for a long while.
+  - Wow it's at least 10k€ just for the gpu!
+
+- [NVIDIA says DGX Spark releasing in July : r/comfyui](https://www.reddit.com/r/comfyui/comments/1labkat/nvidia_says_dgx_spark_releasing_in_july/)
+  - Lmao. It has 1/5 the memory bandwidth and cuda cores of a rtx6000 pro. 
+  - comfyUI would need to be able to run on arm CPU. All Mac users have ARM CPU 
+
+- ## 🧮🤔 [NVIDIA says DGX Spark releasing in July : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kq4ey4/nvidia_says_dgx_spark_releasing_in_july/)
+- Let's do some quick napkin math on the expected tokens per second:
+  - If you're lucky you might get 80% out of 273 GB/s in practice, so 218 GB/s.
+  - Qwen 3 32B Q6_K is 27 GB.
+  - A low-context "tell me a joke" will thus give you about 8 t/s.
+  - When running with 32K context there's 8 GB KV cache + 4 GB compute buffer on top: 39 GB, so still 5.5 t/s. If you have a larger.
+  - If you run a larger (72B) model with long context to fill all the RAM then it drops to 1.8 t/s.
+- Yes, these architectures aren't the best for dense models, but they can be quite useful for MoE. Qwen 3 30B A3B should probably yield 40+ t/s. Now we just need a bit more RAM to fit DeepSeek R1.
+
+- Is that how you can calculate the maximum speed? Just bandwidth / model size => tokens / second? I guess it makes sense, I've just never thought about it that way. I didn't realize you would need to transfer the entire model size constantly.
+  - You don't transfer the model, but for every token generated it needs to go through the whole model, which is why it is bandwidth limited for single user local inference.
+  - As for bandwidth, it's a MT/s multiplied by the bus width. Normally in desktop systems one channel = 64bit so dual channel is 128bit etc. Spark uses 8 of DDR5X chips of which each is connected with 32bits, so 256bit total. The speed is 8533MT/s and that give you the 273GB/s bandwidth. So (256/8)*8533=273056MB/s or 273GB/s.
+- > "You don't transfer the model, but for every token generated it needs to go through the whole model"
+  - Except when you use models with "sparse" support, apparently. Which is why its a big deal the things have hardware accel for sparse models.
+
+- My MacBook Pro M1 Pro is close to 5yo and it runs qwen3 30B-a3B q4 at 45-47t/s on commands with context. It might drop to 37t/s with long context.
+  - when you run a smaller quant like Q4 of the 30B A3B model you might get close to 60 t/s in your not-long-context case.
+
+- Running the same Qwen model with a 32k context size, I can get 13+ tokens a second on my M4 Max.
+  - With just 32k context size set, or also mostly filled with text? Anyway, 13 tps * 39 GB gives us about 500 GB/s. The M4 Max has 546GB/s memory bandwidth, so this sounds about right, even though it's a bit higher than expected.
+
+- thank you. those numbers look terrible. I have a 3090, I can easily get 29 t/s for the models you mentioned.
+  - I don't think you can fit a 27 GB model file fully into 24 GB VRAM. I think you could fit about Q4_K_M version of Qwen 3 32B (20 GB file) with maybe 8K context into 3090, but it would be really close. So comparison would be more like Q4 quant and 8K context at 30 t/s with risk of slowdown/out of memory vs. Q6 quant and 32K context at 5 t/s and not being near capacity.
+
+- But 128GB of memory will be amazing for ComfyUI. Operating on 12GB is impossible, you can generate a random image, but you can't then take the character created and iterate on it in any way or use it again in another scene without getting an OOM error. At least not within the same workflow. For those of us who don't want an Apple for our desktops this is going to bring a whole new range of desktops we can use alternatively. They are starting at $3k from partnered manufactures and might down to the same price as a good desktop at $1-2k in just another year.
+  - You're probably better off with an RTX 4090 (and a full desktop PC to support it, so it is going to be more expensive) for image generation, as the Spark is going to be slower than a gpu. It can run far bigger models, yes. But 128GB is too much for just image generation while the speed will suffer due the limited bandwith. A sweetspot would be half the memory at twice the speed, but that doesn't quite exist, at least in that price range. A modded RTX 4090 with 48GB of ram (and the accompanying desktop) is going to perform better - although the entire thing would probably cost more than twice as much. BUT, if you already have a desktop, upgrading your gpu will give you better bang per buck.
+- It likely depends on how big your workflows are. Your right in that if I don't run out of memory on my gaming graphics card, image generation is super fast, but if I do run out of memory all the speed in the world is not going to help me finish my workflow. Also the speed is not as important for developing, since your the only user. I can let this little guy do the work while I game on my gaming card and the power draw is so low it can share the same circuit.
+  - This is similar to my thoughts. You have CUDA-capable running in the background and reasonably low wattage. Just throw some stuff at it and come back later to see the results. It won't bog down your main system and hopefully it won't waste too much electricity (maxing at 170 watts? Each, since you could have multiple linked). Having an always available local LLM is also just nice. MSTY or similar can make it available to your whole home network rather easily.
+
+- So, basically like a 128 GB strix halo but almost triple the price. Yawn.
+  - But it has CUDA man. CUDA!!!!!
+
+- Just a note that DGX Spark is listed as $3999 on their page currently. There are some licensed competitors that have cheaper machines available but they all sacrifice something to get there.
+
+- You can get an Apple Studio M4 128 GB for a little less than DGX Spark. The Apple device will have slower prompt processing but more memory bandwidth and thus faster token generation. So there is a choice to make there.
+
+- ## [Comparing AI Performance of DGX Spark to Jetson Thor - DGX Spark / GB10 User Forum / DGX Spark / GB10 - NVIDIA Developer Forums _202508](https://forums.developer.nvidia.com/t/comparing-ai-performance-of-dgx-spark-to-jetson-thor/343159)
+  - Jetson Thor: “NVIDIA® Jetson Thor™ series modules give you the ultimate platform for physical AI and robotics, delivering up to 2070 FP4 TFLOPS of AI compute and 128 GB of memory with power configurable between 40 W and 130 W.”
+  - DGX Spark: “Powered by the NVIDIA GB10 Grace Blackwell Superchip, NVIDIA DGX™Spark delivers 1 petaFLOP of AI performance in a power-efficient, compact form factor.”
+  - Is this a case of marketing terminology conflation, or might the Jetson AGX Thor provide better local inference performance compared to DGX Spark?
+
+- The NVIDIA Jetson Thor Developer Kit is a purpose-built developer platform targeted at developers creating robotics and physical AI solutions that deploy with embedded Jetson modules. 
+  - DGX Spark is a purpose-build compute to build and run AI, targeted at AI developers and data scientists who need to augment current laptop, desktop, cloud, or data center resources to provide large local memory and access to the NVIDIA AI software stack for their AI prototyping, fine-tuning, inference, data science, and general edge workloads.
+
+- The RAM being similar but performance different could be down to scaling with power draw. The DGX Spark ships with a 240w USB-C brick, and I think it’s specced to draw significantly higher than the Thor at 170W.
+
+- The DGX Spark has 6144 CUDA cores, or just as many as RTX 5070. I believe I saw numbers claiming 1000 TOPS in FP4 sparse mode. I’m not sure how many tensor cores, or what type of tensor cores even, if any?
+  - The AGX Thor has 2560 CUDA cores, with 96 fifth-generation Tensor cores; benchmarks I’ve seen so far indicate it performs on LLMs about as fast as an RTX 5070. I’m unsure if these were tests used in FP4 Sparse mode, as NVIDIA rates it for 2070 TOPS in FP4 sparse mode
+  - I suppose I can see the Spark using more power due to using CUDA cores instead of Tensor Cores as the main source of processing, offering FP32 performance needed for precision during training and perhaps greatly versatility
+
+- Some other differences that are noteworthy
+  - DGX Spark has one NVENC/ NVDEC chip. Thor has Two.
+  - DGX Spark has a connect-x nic. Thor is not connect-x but a 4x25g nic. It doesn’t appear to support RDMA among other features you get with connect-x. which also means you probably can’t combine the thor modules very easily.
+
+- ## [AGX Thor LLM Inference Performance & Implications for DGX Spark? : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1n0rheb/agx_thor_llm_inference_performance_implications/)
+  - Excited to see the initial benchmarks rolling in for the AGX Thor following yesterday's release. A recent YouTube video showed around 30 tokens/sec generation speed with gpt-oss-120b using llama.cpp
+  - This got me thinking about the DGX Spark. NVIDIA advertises the AGX Thor as having 2 PFLOPS of FP4 performance, while the DGX Spark is listed at 1 PFLOP
+
+- Why would LLM inference scale with available FLOPs? 
+  - Most of the operations used are dot produces (particularly matrix-matrix products) which are memory bound operations fundamentally; the number of FLOPs don't matter (within reason). Even a 4 core CPU with sufficient bandwidth can still run an LLM like GPT OSS
+  - Where the FLOPs might matter is prefill (long context operation) or for concurrent inference serving, like maybe if you were doing async agents or something in parallel. These operations are compute bound, and FLOPs do matter (though in the case of prefill, with KV caching it doesn't matter for iterative workflows like chatting or iterative coding, and you're memory bandwidth bound again).
+
+- I think one of the biggest drawbacks of the Spark (and something that is holding back many current offerings for AI and Handheld gaming) is the memory bandwidth
+  - The one benefit that Spark might bring is NVIDIA MIG, which would allow us to partition GB10 into several instances and maybe run several models in parallel. Might be interesting for exploring LM Agents, especially if you got several of them working at the same time.
+
+- I think there are two versions of the future: MXFP4 - will become the standard. MXFP4 - will not become the standard. 
+  - In the first case, DGX Spark and Blackwell will make other solutions garbage. In the second case, DGX Spark will be garbage.
+
+- ## [Nvidia DGX Spark | Hacker News _202508](https://news.ycombinator.com/item?id=45008434)
+
+```markdown
+<!-- FP4-sparse -->
+| GPU Model | FP4-sparse (TFLOPS) | Price ($) | $/TF4s |
+|-----------|---------------------|-----------|--------|
+| 5090      | 3352                | 1999      | 0.60   |
+| Thor      | 2070                | 3499      | 1.69   |
+| Spark     | 1000                | 3999      | 4.00   |
+
+<!-- FP8-dense -->
+| Model        | FP8-dense (TFLOPS) | Price | $/TF8d (4090s have no FP4) |
+|--------------|---------------------|-------|----------------------------|
+| 4090         | 661                 | 1599  | 2.42                      |
+| 4090 Laptop  | 343                 | vary  | -                         |
+
+<!-- Geekbench -->
+| Model      | Geekbench 6 (compute score) | Price | $/100k |
+|------------|-----------------------------|-------|--------|
+| 4090       | 317800                      | 1599  | 503    |
+| 5090       | 387800                      | 1999  | 516    |
+| M4 Max     | 180700                      | 1999  | 1106   |
+| M3 Ultra   | 259700                      | 3999  | 1540   |
+
+```
+
+- Memory is the bottleneck. It limits the size of the models you can run and what you pay for.
+  - Spark: 200B 
+  - 5090 : 12B (raw)
+
+- spark is $3, 999 and current M3 Max 28-Core CPU 60-Core GPU is the same price.
+
+- I run 4 Mac Studio ultras at work (they’re pricy when maxed out), for local-first AI dev services. But there’s a few things that make me want to switch to the Spark. 
+  - Networking is the biggest one, the Macs have Thunderbolt and Ethernet, but if I run distributed inference with EXO over Thunderbolt; the drop in tokens/second is massive. These Sparks get RDMA and can stack nicely. 
+  - The other big one is access to CUDA, MLX has come a long way but being able to have CUDA and GPU access in containers would simplify the stack so nicely. 
+  - If I had a USB-C/Thunderbolt backplane it might compare, but scaling with the Spark is likely a lot more straightforward.
+
+- Biggest problem with Macs is that they don't have dedicated tensor cores in the GPU which makes prompt processing very slow compared to Nvidia and AMD.
+  - there's been a little speculation that Apple adding TensorOps to Metal 4 suggests M5/M6 may get tensor cores.
+
+- If that would be true why aren't Mac sales banned in China instead of Nvidia GPUs?
+  - Because it's only a superior solution if you just want one box, and that mostly for inference. Once you start scaling to larger loads, it's much trickier to get a clusters of Macs to efficiently process them in parallel, whereas datacenter GPUs are designed for clusters.
+
+- ## [What is the estimated token/sec for Nvidia DGX Spark : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1krsast/what_is_the_estimated_tokensec_for_nvidia_dgx/)
+- generation rate (tokens / s) are almost always bound by memory bandwidth not compute. 
+  - It will be bound by the LPDDR5x memory to 273 GB/s.
+  - Of course the compute will help with prompt processing and batching multiple queries, and the huge RAM will allow you to (slowly) run big models
+
+- Slightly more than Strix Halo, due to better GPU/drivers, but nothing major.
+
+- Ohhh.. now i see why they are willing to sell this high memory product to the general public. This is straight up trash tier performance. Fast enough that it will be bought and used by AI developers and enthusiasts... but slow enough as to not be hoarded and abused by cloud providers.
+
+- Strix Halo devices are all at $2000 and are now widely shipping from many manufacturers. These are RDNA3.5 devices and while WIP, have full PyTorch support.
+
+- ## [Nvidia digits specs released and renamed to DGX Spark : r/LocalLLaMA _202503](https://www.reddit.com/r/LocalLLaMA/comments/1jedy17/nvidia_digits_specs_released_and_renamed_to_dgx/)
+- Framework Desktop is 256GB/s for $2000… much cheaper for running 70gb - 200 gb models than a Spark.
+  - Yup, and being X86 is much more usable. These small AMD APUs are quite nice for a console/multi-media box purposes when not using LLMs. 
+  - Nvidia offering is ARM so Linux only and not even X86 Linux so pretty much no gaming will be possible.
+
+- ## [Local inference with Snapdragon X Elite : r/LocalLLaMA _202506](https://www.reddit.com/r/LocalLLaMA/comments/1l5k290/local_inference_with_snapdragon_x_elite/)
+- I've been using mine (Surface Laptop 7) since it came out. It's good, but not in the exact way marketed.
+  - I use it with LM Studio and AnythingLLM running models up to about 21B, the model size is limited by my 32GB integrated RAM. The token rate on an 8B is like 17-20 per second. 
+  - But the NPU doesn't seem to have to do with anything. All the inference is on CPU, but not in that bad way people complain about if they have Intel products, more in the good way people talk about if they have Macs.
+
+- I've been using local inference on multiple Snapdragon X Elite and X Plus laptops.
+  - In a nutshell, llama.cpp or Ollama or LM Studio for general LLM inference, using ARM accelerated CPU instructions or OpenCL on the Adreno GPU. CPU is faster but uses a ton of power and puts out plenty of heat; the GPU is about 25% slower but uses less than half the power, so that's my usual choice.
+  - I can run everything from small 4B and 8B Gemma and Qwen models to 49B Nemotron, as long as it fits completely into unified RAM. 64 GB RAM is the max for this platform.
+
+- NPU support for LLMs is here, at least by Microsoft. 
+  - You can download AI Toolkit under Visual Studio Code or Foundry Local. 
+  - Both of them allow running of ONNX-format models on the NPU. 
+  - Phi-4-mini-reasoning, deepseek-r1-distill-qwen-7b-qnn-npu and deepseek-r1-distill-qwen-14b-qnn-npu are available for now.
+- Microsoft has AI Foundry which uses the Hexagon NPU. You're limited to Phi models and DeepSeek Distill Qwen models. Performance is fine but the models are old.
+- Microsoft just added Qwen 7B and 14B DeepSeek Distill models that run on NPUs. I think for the moment, only the Snapdragon X Hexagon NPU is supported using the QNN framework. These are ONNX models that require Microsoft's AI Toolkit to run. 
+
+- the X elite, would maybe use the gpu for the transformers i dont know if it would be possible for the llm since im using llama cpp
+  - I don't think it's possible. A lot of Python ML-related frameworks don't have ARM64 Windows wheels or they can't be compiled without getting into a dependency nightmare. They won't work under WSL Linux because there's no Vulkan or OpenCL GPU passthrough.
+  - If you want to use the Adreno GPU for inference, you're stuck with llama.cpp, LM Studio or Ollama, which all use the same ggml backend code.
+
+- [Snapdragon X CPU inference is fast! (Q\_4\_0\_4\_8 quantization) : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1emd3bg/snapdragon_x_cpu_inference_is_fast_q_4_0_4_8/)
+  - On a Surface Pro 11 with a Snapdragon X Plus 10-core chip, running CPU inference for Llama 3.1 8B, I'm getting the following:
+  - llama_print_timings: prompt eval time = 895.37 ms / 126 tokens ( 7.11 ms per token, 140.72 tokens per second)
+  - llama_print_timings: eval time = 90360.33 ms / 1391 runs ( 64.96 ms per token, 15.39 tokens per second)
+- I get ~5.5 tokens/s with Llama 3.1 8B Q8_0 and DDR4-3600 memory, so ~15.5 tokens/s for Q4 and dual-channel LPDDR5X-8400 memory doesn't seem that impressive.
+- Well it's not close to m2 levels at all. M2 max gets 66 t/s and 671 pp/s at q4
+- Wow, I have ~5.8 tokens/s on 8+gen1 in llama 3.1 8b
+
+- ## [Snapdragon X Elite - local llm? : r/LocalLLaMA _202406](https://www.reddit.com/r/LocalLLaMA/comments/1ddyc51/snapdragon_x_elite_local_llm/)
+- I have purchased the new Surface Pro CoPilot+PC and am struggling to get the LLMs to run using the embedded NPU. I guess I was spoiled by using Ollama and Llama.cpp, now I am having to learn the basics of quantizing a model and using HuggingFace APIs to host the models.
+
+- Should be good for 13B. There is a video out there showing it’s real world performance already on a model called “Phi Silica”
+
+- [Snapdragon X Elite llama.cpp ? : r/LocalLLaMA _202406](https://www.reddit.com/r/LocalLLaMA/comments/1dj6h6x/snapdragon_x_elite_llamacpp/)
+
+- [$899 mini PC puts Snapdragon X Elite into a mini desktop for developers (with 32GB RAM) : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1cxhh1q/899_mini_pc_puts_snapdragon_x_elite_into_a_mini/)
+  - every modern CPU since AMD phenom is a SoC with unified memory architecture. The key thing is the memory controller and how many steps it needs. CPUs benefit from being able to quickly go back and forth between ram compared to GPUs, which is why RAM performance isnt a direct competitor to VRAM in GB/s because the MT/s is more important for RAM and how efficiently your data and instructions are packed into every transfer.
+  - Thanks for correcting that AMD and other competitors have had UMA for years. My mistake. But still stands that apple has 800GB/s memory bandwidth vs things like Snapdragon X Elite’s 136GB/s
+
+- ## [骁龙X Elite再遭痛殴, 第二代酷睿Ultra 英特尔Meteor Lake有多强？ - 知乎 _202406](https://zhuanlan.zhihu.com/p/701851374)
+- 第一代酷睿Ultra平台（流星湖，Meteor Lake）的四大模块中，除了计算模块采用了自家的Intel 4工艺，其他三个模块都是台积电代工。
+  - 到了【月亮湖】，就连最核心的计算模块也改用了台积电的N3B工艺，英特尔仅保留了自己的先进封装工艺（Foveros）。
+  - 在【月亮湖】上，英特尔还带来了类似苹果统一内存架构的设计，直接将LPDDR5X-8533内存封装在了芯片之上，可选16GB或32GB容量。
+  - 这种设计的好处是，能使数据传输负载降低大约40%，延迟更低，相较传统的板载内存还能节省大约250平方毫米的主板空间
+- 【月亮湖】的核心竞争力，就是计算模块中的CPU、GPU和NPU三大单元都迎来了全面提升。
+  - 首先就是NPU，从第一代酷睿Ultra的11TOPS，大涨到48TOPS
+  - 【月亮湖】CPU部分的AI算力为5TOPS，GPU为67TOPS，在异构计算的加持下，整体AI算力高达120TOPS，一举超越了骁龙X Elite的整体75TOPS（NPU为45TOPS），和锐龙AI 300的整体80TOPS（NPU为50TOPS）。
+  - AI PC时代之所以格外强调AI算力，就是因为微软即将在Windows操作系统层面，就把生成式AI技术应用到基础体验之中。如果使用CPU和GPU进行处理，笔记本的续航会尿崩。此时，唯有低功耗高AI性能的NPU，才能在兼顾续航的同时，随时随地享受AI带来的便利
+  - 在GPU方面，【月亮湖】升级到了新一代的Xe2架构，性能有了平均50%的提升，有机会与AMD锐龙AI 9 HX 370集成的Radeon 890M掰掰手腕
+
+- ## 🆚🌰 [AMD AI Max+ 395 CPU 本地大模型推理性能评测报告 - 知乎 _202509](https://zhuanlan.zhihu.com/p/1952045270763283746)
+- 针对搭载AMD AI Max+ 395 CPU的零刻GTR9迷你主机进行了一系列严格的大模型推理速度测试。
+  - 硬件平台: 零刻 (MINISFORUM) GTR9 迷你主机
+  - 核心组件: AMD AI Max+ 395 CPU
+  - 任务类型: 本地大语言模型推理
+  - 性能指标: Tokens/s (每秒生成Token数) — 该数值越高，代表推理速度越快
+- 设计了涵盖多种任务类型的标准化问题：
+  - 综合能力: "你是谁？请详细介绍一下你能干什么。"
+  - 知识问答: "作为专业人工智能专家，请告诉我如何学习深度学习？"
+  - 数学计算: "如果A+B=12, A-B=10，则A的值是？"
+  - 自然语言理解: "识别句子‘我将会在明天早上的8点到湖北黄陂的森林公园’中的所有地名。"
+  - 代码生成: "请使用Python编写一个贪吃蛇游戏。"
+
+- 参评大模型:
+  - deepseek-r1:70b, 30
+  - qwen3 系列（32b / 30b / 14b / 8b）
+  - gpt-oss（120b / 20b）
+
+```markdown
+| Model          | Ollama | LM Studio |
+|----------------|--------|-----------|
+| deepseek-r1:70b | 4.43  | 4.97      |
+| qwen3:32b      | 8.97   | 10.12     |
+| qwen3:14b      | 19.47  | 21.70     |
+| qwen3:8b       | 29.93  | 35.96     |
+| gpt-oss:120b   | 30.84  | 42.07     |
+| gpt-oss:20b    | 42.57  | 60.54     |
+| qwen3:30b      | 48.93  | 68.70     |
+```
+
+- 对比两组数据可见，同一模型在LM-Studio中的推理速度普遍优于Ollama
+- AMD AI Max+ 395 CPU采用CPU/GPU共享内存的统一内存架构（UMA），这种设计天然适合运行混合专家（MoE）模型（如gpt-oss系列、qwen3:30b）。
+  - MoE模型虽然总参数量庞大，但每次推理仅激活部分"专家"参数，非常契合这种大容量内存但绝对算力相对有限的硬件。
+  - 相比之下，对于参数密集的传统稠密模型（如deepseek-r1:70b、qwen3:32b），由于需要更高的绝对算力，该处理器的集成显卡则稍显吃力。
+
+- DFRobot作为在单板计算机（SBC）、AI边缘计算和开源硬件领域的创新者，此次测试结果意义非凡。若未来DFRobot推出基于AMD AI Max+ 395 CPU的单板计算机，将其强大的本地AI推理能力与DFRobot成熟的模块化传感器生态（如Gravity系列）相结合，将催生出更多实时、智能的物联网与机器人应用
+
 - ## 🆚 [AI max+ 395 128gb vs 5090 for beginner with ~$2k budget? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nunlls/ai_max_395_128gb_vs_5090_for_beginner_with_2k/)
 - ComfyUI? 5090.  LLMs? AI Max
   - FWIW, you can also use a thunderbolt eGPU with the AI Max.
@@ -558,17 +849,22 @@ modified: 2022-01-16T15:52:31.293Z
 
 - 这个东西3000刀是真的很贵，不过project digits是挑战冯诺依曼架构，CPU 访问内存、硬盘，显卡处理数据需要把数据先传到显存。统一内存架构就是把GPU核心直接与内存相连，弄大内存。
   - 目前除了大公司有钱买几百上千卡跑训练，普通人真跑不起LLM大模型。对于普通人来说，核心算力不重要，问题是怎么在显卡load大模型。而统一内存就是用超高性价比的内存代替显存，不用GDDR7，用DDR5 。
-
-- 
-- 
-- 
-
 # discuss-gpu
 - tips-gpu
+  - 使用场景的要求: 🤔 文多还是图多, 显存大(VRAM), 速度快(带宽)
+    - 大显存的方案: mac, amd-ai-max, nvidia, intel-arc
+  - 显存、带宽、位宽, 显存够大才能运行模型，运行模型时的速度主要考虑内存带宽
+  - 估算文本模型速度用 `内存带宽如260GBpSec / 模型实际体积如13GB`, 还要考虑context的影响
+    - MoE模型对内存带宽的要求会低很多
+    - 文本大模型的免费api更容易获取
+  - ❓ 文生图的场景是否也用此公式计算, 
+    - 注意文生图能通过lora加速，所以内存带宽重要性降低
+    - 文生图时经常需要VLM视觉模型辅助，所以VRAM越大越好
+    - 常见文生图模型的大小在20GB左右，大显存的单卡也可运行
+  - 考虑软件支持度, comfyui在arm/linux平台的支持度, dgx-spark默认linux
+  - 计算集群: nvlink
   - 主力工具不要用AMD的CPU/GPU, 因为linux需要特殊配置, 部分软件也需要特殊配置如pytorch
-  - 显存、带宽、位宽
-  - nvlink
-  - ai: 支持int4、fp8、fp4，不能用nanchaku加速, 支持flash- attention、bf16、awq、sglang
+  - 模型选择: 支持int4、fp8、fp4，能否用nanchaku加速, 支持flash-attention、bf16、awq、sglang
 
 - nvidia性能对比
   - [大模型GPU算力卡汇总 - 知乎](https://zhuanlan.zhihu.com/p/1904206218748236301)
@@ -577,27 +873,43 @@ modified: 2022-01-16T15:52:31.293Z
   - https://www.zhihu.com/question/615946801/answer/3156016610
 
 - 🆚🔥 [英伟达热门 GPU 对比：H100、A6000、L40S、A100 - 知乎](https://zhuanlan.zhihu.com/p/5041686924)
+  - [Memory Bandwidth Comparisons - Planning Ahead : r/LocalLLaMA _202402](https://www.reddit.com/r/LocalLLaMA/comments/1amepgy/memory_bandwidth_comparisons_planning_ahead/)
 
 - 参数对比
   - gpu-arch: 2020-ampere(a100/a6000), 2022-ada-Lovelace(L20/L40s/6000ada/4090/4090d), 2022-hopper(h100), 2024-blackwell(5090)
   - fp16/tflops
   - 3090是最后一代支持nvlink的消费级显卡，低端专业级显卡如5880/L20也不支持nvlink
 
+- gpu-specs
+
+- Memory Bandwidth:
+  - Nvidia DGX Spark: 273 GB/s
+  - AMD AI Max 300: 256GB/s
+  - M1(68)/M2/M3: 100 GB/s
+  - M4: 120 GB/, 10-cpu, 10-gpu, 16-neural
+  - M1/M2/M3 Pro: 150/200 GB/s
+  - M1/M2/M3 Max: 300/400 GB/s
+  - M4 Max: 546 GB/s
+  - M1/M2/M3 Ultra: 819 GB/s
+  - RTX 5090: ~1.8 TB/s
+  - RTX PRO 6000 Blackwell: ~1.8 TB/s
+
 ```markdown
-- GPU,   VRAM,        fp16, v-bandwidth,v-bit, cu-core, power, note
-- A100,  40GB HBM2,   312,  2039gb/s,   ?,     ?,       400W, 40g-9w
-- A6000, 48GB GDDR6,  77,   768gb/s,    ?,     ?,       300W, 48g-3w3
-- 6000ad,48GB GDDR?,  ?,    960/s,      ?,     ?,       ?,    48g-4.8w
-- L20,   48GB GDDR6,  119,  854gb/s,    384,   1.02w,   350W, no-nvlink
-- L40,   48GB GDDR6,  147,  ?,          ?,     ?,       350W, ee
-- L40s,  48GB GDDR6,  731,  864gb/s,    ?,     ?,       350W, 48g-4.4w
-- 5880ad,48GB GDDR6,  69,   960/s,      384,   1.28w,   285w, 48g-2.5w,no-nvlink,6000Ad阉割
-- 5000ad,32GB GDDR6,  65,   576/s,      256,   1.41w,   250w, no-nvlink
-- 5090,  32GB GDDR7,  3352, ?gb/s,      512,   2.18w,   450W, 32g-2.3w, no-nvlink
-- 4090,  24GB GDDR6X, 330,  1008gb/s,   384,   1.64w,   450W, 48g-2.4w, no-nvlink,850wP
-- 4090d, 24GB GDDR6X, 330,  1008gb/s,   384,   1.46w,   425W, 48g-1.9w,频率锁且不超频
-- 3090,  24GB GDDR6X,  ?,   912gb/s,    384,   1.05w,   350W, 24g-8.3k, nvlink-ok,VulkanRT,OpenGL4.6
-- 3090ti,24GB GDDR6X,  ?,   ?gb/s,      384,   1.08w,   750W, 24g-8.3k, nvlink-ok
+| GPU    | VRAM        | fp16 | v-bandwidth | v-bit | cu-core | power | note                         |
+|--------|-------------|------|-------------|-------|---------|-------|------------------------------|
+| A100   | 40GB HBM2  | 312  | 2039gb/s    | ?     | ?       | 400W  | 40g-9w                        |
+| A6000  | 48GB GDDR6 | 77   | 768gb/s     | ?     | ?       | 300W  | 48g-3w3                       |
+| 6000ad | 48GB GDDR? | ?    | 960/s       | ?     | ?       | ?     | 48g-4.8w                      |
+| L20    | 48GB GDDR6 | 119  | 854gb/s     | 384   | 1.02w   | 350W  | no-nvlink                     |
+| L40    | 48GB GDDR6 | 147  | ?           | ?     | ?       | 350W  | ee                            |
+| L40s   | 48GB GDDR6 | 731  | 864gb/s     | ?     | ?       | 350W  | 48g-4.4w                      |
+| 5880ad | 48GB GDDR6 | 69   | 960/s       | 384   | 1.28w   | 285w  | 48g-2.5w,no-nvlink,6000Ad阉割  |
+| 5000ad | 32GB GDDR6 | 65   | 576/s       | 256   | 1.41w   | 250w  | no-nvlink                     |
+| 5090   | 32GB GDDR7 | 3352 | 1800gb/s    | 512   | 2.18w   | 450W  | 32g-2.3w, no-nvlink           |
+| 4090   | 24GB GDDR6X| 330  | 1008gb/s    | 384   | 1.64w   | 450W  | 48g-2.4w, no-nvlink,850wP     |
+| 4090d  | 24GB GDDR6X| 330  | 1008gb/s    | 384   | 1.46w   | 425W  | 48g-1.9w,频率锁且不超频         |
+| 3090   | 24GB GDDR6X| ?    | 912gb/s     | 384   | 1.05w   | 350W  | 24g-8.3k, nvlk/VulkRT/OpenGL4 |
+| 3090ti | 24GB GDDR6X| ?    | ?gb/s       | 384   | 1.08w   | 750W  | 24g-8.3k, nvlink              |
 ```
 
 - ## 
@@ -1673,7 +1985,37 @@ modified: 2022-01-16T15:52:31.293Z
   - 同时，对多种网络协议有着广泛的支持，保障了在不同网络环境下的稳定通信。
   - 多层次的安全访问控制机制，严格限制不同用户的权限，保障系统安全稳定运行。
   - 星光麒麟的软件生态相对小众，集中于科研等特定领域，银河麒麟则在民用和工业等多领域构建了较为丰富的软件生态，与众多第三方软件有良好的兼容性。
+# discuss-os-arm
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [2024年 arm windows 用来写代码能胜任吗? - 知乎](https://www.zhihu.com/question/725977971)
+- NodeJS、Python、. NET 和 OpenJDK 都有 ARM 版，VS 之类 IDE 也有，但你要注意：
+  - 很多插件可能没有 ARM 版。
+  - 你的项目可能会有奇怪的 native 依赖，不过前端工具的话应该还好？
+  - 如果你涉及到 Native 调试，那 ARM 处理器不少硬件调试功能是比不过 x86 的，比如内存断点就很残废。
+  - ARM 的 CI（持续集成）产业还很原始，因为——地球上到现在就没几台 ARM 服务器。Github Actions 的 ARM runner 是今年才上线的，且似乎还收费。
+
+- 跑不了, netty 他对x86有专门优化，在arm上运行一堆bug，只有毕生jdk才把arm的坑踩完了
+
+- 难度比较大。python在winodws跑已经很麻烦了，arm环境更是雪上加霜。
+
+- 这个问题可以关闭了，lunar lake的实机测试已经有了，XElite和Windows on ARM可以进棺材了。
+
+- 2025年6月了，这个问题已经结束了。Lunar Lake就是一个市场的失败品。
+  - lunar lake失败是因为被amd打死了，而不是输给了elite
+
+- ARM用在笔记本上不具有任何优势。真想要的话去收个淘汰的飞腾信创笔记本，记得要AMD显卡的，然后自己装Gentoo. 东西都是原生的。
+
+- 如果要写 C/C++ 配合 intrinsics 的话挺麻烦的。主要就是三套编译器 MSVC、GCC、Clang
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

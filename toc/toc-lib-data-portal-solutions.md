@@ -29,7 +29,7 @@ modified: 2021-01-01T16:02:50.598Z
   - An Open Data Catalog built on Drupal 8
   - [Comparing DKAN and CKAN](https://dkan.readthedocs.io/en/latest/introduction/dkan-ckan.html)
 
-- datopian-portaljs /2kStar/MIT/202402/ts
+- datopian-portaljs /2.2kStar/MIT/202509/ts
   - https://github.com/datopian/portaljs
   - https://portaljs.org/
   - a framework for rapidly building rich data portal frontends using a modern frontend approach.

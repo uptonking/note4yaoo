@@ -20,6 +20,18 @@ modified: 2025-09-30T09:00:23.492Z
 # discuss-roadmap
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [OIDC Auth - loop with expired token _202507](https://github.com/gtsteffaniak/filebrowser/issues/995)
+  - token expired or revoked
+- just to confirm, you have password authentication disabled? When password authentication is enabled, OIDC should redirect to the login page instead of OIDC provider.
+
+- Directly going to the filebrowser.example.com/login page also worked as a workaround.
+
+- [Looking for a Filebrowser Quantum alternative with OIDC : r/selfhosted](https://www.reddit.com/r/selfhosted/comments/1ne9zfa/looking_for_a_filebrowser_quantum_alternative/)
+
 - ## [add s3 compatibility _202407](https://github.com/gtsteffaniak/filebrowser/issues/140)
 
 - ## [Stable Release & 0.9.0 update _202509](https://github.com/gtsteffaniak/filebrowser/discussions/1293)

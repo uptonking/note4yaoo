@@ -7,6 +7,21 @@ modified: 2024-08-03T20:00:33.414Z
 
 # thread-domain-file-drive-disk
 
+# guide
+
+- tips
+
+- 🤔 普通网盘和github有什么区别
+  - github支持文件的版本历史
+  - github的上传与下载对普通用户不友好
+
+- 存储与同步的参考方案
+  - 通用: s3, minio
+  - 大文件： git-lfs, xet
+  - 小文件: git
+  - 难点: symlink
+  - more
+    - Gitlab btw also simply offloads git lfs to S3. 
 # discuss-stars
 - ## 
 
@@ -171,6 +186,73 @@ modified: 2024-08-03T20:00:33.414Z
   - Yeah, this is why I usually recommend OwnCloud or NextCloud. I am not comfortable with an abstracted file system that relies on a database to make sense. If something goes wrong with my OwnCloud install, I can just copy files out of the individual user folders, and recreate it. I can also back it up and get files out of the backup without restoring the entire SeaFile instance.
 
 - Worth noting that "Nextcloud being slow" is solved by used Nextcloud AIO (a setup that uses docker containers). This is my current setup and I've been loving it.
+# discuss-filesync
+- ## 
+
+- ## 
+
+- ## [The future of large files in Git is Git | Hacker News _202508](https://news.ycombinator.com/item?id=44916783)
+- I wrote git-bigstore almost 10 (!) years ago to solve this problem—even before Git LFS—and as far as I know, bigstore still works perfectly.
+  - You specify the files you want to store in your storage backend via .gitattributes, and use two separate commands to sync files. I have not touched this code in years but the general implementation should still work.
+  - GitHub launched LFS not too long after I wrote this, so I kind of gave up on the idea thinking that no one would want to use it in lieu of GitHub's solution, but based on the comments I think there's a place for it.
+  - It needs some love but the idea is solid. I wrote a little description on the wiki about the low-level implementation if you want to check it out.
+  - Also, all of the metadata is stored using git notes, so is completely portable and is frontend agnostic—doesn't lock you into anything (except, of course, the storage backend you use).
+
+- > Large object promisors are special Git remotes that only house large files.
+  - I like this approach. If I could configure my repos to use something like S3, I would switch away from using LFS. 
+  - S3 seems like a really good synergy for large blobs in a VCS. The intelligent tiering feature can move data into colder tiers of storage as history naturally accumulates and old things are forgotten. I wouldn't mind a historical checkout taking half a day (i.e., restored from a robotic tape library) if I am pulling in stuff from a decade ago.
+- The article mentions alternatives to git lfs like git annex that support S3 already (which IMHO is however still a bit of a pain in the ass on windows due to the symlink workflow). Also dvc plays nicely with git and S3. Gitlab btw also simply offloads git lfs to S3. All have their quirks. I typically opt for LFS as a no-brainer but use the others when it fits the workflow and the infrastructure requirements.
+
+- At my current job I've started caching all of our LFS objects in a bucket, for cost reasons. Every time a PR is run, I get the list of objects via `git lfs ls-files`, sync them from gcp, run `git lfs checkout` to actually populate the repo from the object store, and then `git lfs pull` to pick up anything not cached. If there were uncached objects, I push them back up via `gcloud storage rsync`. Simple, doesn't require any configuration for developers (who only ever have to pull new objects), keeps the Github UI unconfused about the state of the repo.
+  - I'd initially at spinning up an LFS backends, but this solves the main pain point, for now. Github was charging us an arm and a leg for pulling LFS files for CI, because each checkout is fresh, the caching model is non-ideal (max 10GB cache, impossible to share between branches), so we end up pulling a bunch of data that is unfortunately in LFS, every commit, possibly multiple times. Because of this they happily charge us for all that bandwidth, because they don't provide tools to make it easy to reduce bandwidth (let me pay for more cache size, or warm workers with an entire cache disc, or better cache control, or...).
+  - and if I want to enable this for developers it's relatively easy, just add a new git hook to do the same set of operations locally.
+
+- We use a somewhat similar approach in RWX when pulling LFS files
+  - We run `git lfs ls-files` to get a list of the lfs files, then pass that list into a task which pulls each file from the LFS endpoint using curl. Since in RWX the output of tasks are cached as long as their inputs don't change, the LFS files just stay in the RWX cache and are pulled from there on future clones in CI. 
+  - In addition to saving on GitHub's LFS bandwidth costs, the RWX cache is also _much_ faster to restore from than `git lfs pull`.
+
+- You can install your own S3 compatible storage system on premises. 
+  - It can be anything from a simple daemon (Scality, JuiceFS) to a small appliance (TrueNAS) to a full-blown storage cluster (Ceph). OpenStack has it own object storage service (Swift).
+  - If you fancy it for your datacenter, big players (Fujitsu, Lenovo, Huawei, HPE) will happily sell you "object storage" systems which also support S3 at very high speeds.
+
+- TFA asserts that Git LFS is bad for several reasons including because proprietary with vendor lock-in which I don't think is fair to claim. GitHub provided an open client and server which negates that.
+  - LFS does break disconnected/offline/sneakernet operations which wasn't mentioned and is not awesome, but those are niche workflows. It sounds like that would also be broken with promisors.
+
+- Another way that LFS is bad, as I recently discovered, is that the migration will pollute the `.gitattributes` of ancestor commits that do not contain the LFS objects.
+  - In other words, if you migrate a repo that has commits A->B->C, and C adds the large files, then commits A & B will gain a `.gitattributes` referring to the large files that do not exist in A & B.
+  - This is because the migration function will carry its ~gitattributes structure backwards as it walks the history, for caching purposes, and not cross-reference it against the current commit.
+- That doesn't sound right. There's no way it's adding a file to previous commits, that would change the hash and thereby break a lot of things.
+- `git lfs migrate ` rewrites the commits to convert large files in the repo to/from LFS pointers, so yes it does change the hashes. That's a well-documented effect.
+
+- Git annex is somewhat more decentralized as it can track the presence of large files across different remotes. And it can pull large files from filesystem repos such as USB drives. 
+  - The downside is that it's much more complicated and difficult to use. Some code forges used to support it, but support has since been dropped.
+
+- Git LFS didn't work with SSH, you had to get an SSL cert which github knew was a barrier for people self hosting at home. I think gitlab got it patched for SSH finally though.
+  - I think it is a much bigger barrier than ssh and have seen it be one on short timeline projects where it's getting set up for the first time and they just end up paying github crazy per GB costs, or rat nests of tunnels vpn configurations for different repos to keep remote access with encryption with a whole lot more trouble than just an ssh path.
+
+- 🧩 xet on hugging face does seem to not have such bandwidth issues imo. I wish that something like xet but open source could exist.
+  - xet is open source, check out https://github.com/huggingface/xet-core.
+  - We (I'm on the xet team at HF) are open sourcing our spec + protocol in the coming months. So, with the spec and protocol open-sourced, anyone can create xet clients and implement the protocol to build a xet backend.
+  - The specific implementation of our xet backend is deeply integrated into HF backend so open-sourcing it directly wouldn't be very helpful. Once we get the spec + protocol released it should be easy to generate a compatible backend.
+
+- Xet uses block level deduplication.
+
+- ## [Migrating Hugging Face repos off Git LFS and onto Xet : r/LocalLLaMA _202503](https://www.reddit.com/r/LocalLLaMA/comments/1je6bfq/migrating_hugging_face_repos_off_git_lfs_and_onto/)
+- Is the chunk level dedupe on the client side or the server side?
+  - On the client side. We're working on an integration Hugging Face's Python library that will be released soon. All the dedupe specific client code is available here https://github.com/huggingface/xet-core
+
+- ## google 的 cdc-file-transfer 是一个文件同步程序，亮点是比 rsync 的速度快几倍。那么它是如何实现的呢？
+- https://x.com/hemashushu/status/1973311859072921927
+  - rsync 是一个非常悠久且高效的远程文件（夹）同步程序，当它发现某个文件数据改变需要传输新内容时，它并不会整个文件上传，而是把文件按照固定大小（比如100 kb）切分并结算每一块的hash, 在 remote 端，对目标文件作相同大小的切分和计算hash，然后 local 端把hash序列发送给remote作对比，最后只上传新的或者发生更改的块（block）。这种去重算法能避免上传整个文件，但如果文件是在中间插入新的数据，那么就会导致这个节点后面的block hash全都改变了
+  - cdc则改进了文件切分的方法： 在 cdc-file-transfer 里，使用了一种叫 gear based 的切分方法，算法：预先生成随机数组 gear_table[256]，然后读取文件的每一个字节值b，计算hash = (hash << 1) + gear_table[b]，当 (hash & mask) == 0 时（mask是预期每个块的大小，每 2^n 字节，n 为 mask 的位数，每位都是1）就分为一个block.
+  - 用这种方法切分的 block 因为不是固定大小的，所以即使原文件中间被插入了或者删除了部分数据，都不会导致后续的所有block hash更改，所以除重率比rsync的固定大小切分法高很多。对于app store或者steam之类的大文件同步很有帮助。
+
+- 可惜的是代码已经被归档，后面不维护了。
+
+- xet 可以看看
+  - [Options for self-hosting? · Issue · huggingface/xet-core _202506](https://github.com/huggingface/xet-core/issues/398)
+    - No, we currently do not have an option to self-host the Xet Storage backend.
+    - the underlying Xet tech is all open source and we'll work on packaging it into a reusable bundle at some point in the future but we need to focus on finishing the migration first.
 # discuss
 - ## 
 

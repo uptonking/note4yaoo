@@ -431,6 +431,13 @@ modified: 2025-03-22T18:49:15.634Z
   - DORY uses Neo4j to store browsing data with weighted edge relationships (semantic, behavioral, temporal) then applies stochastic block modeling for community detection and temporal-behavioral profiling.
   - It's an approach similar to how banks analyze transaction networks to detect fraud but works surprisingly well for teasing apart browser workflows.
 # chat-excel
+- https://github.com/huggingface/aisheets /1.5kStar/apache2/202510/python/ts
+  - https://huggingface.co/spaces/aisheets/sheets
+  - an open-source tool for building, enriching, and transforming datasets using AI models with no code. 
+  - The tool can be deployed locally or on the Hub. 
+  - By default, AI Sheets is configured to use the Huggingface Inference Providers API to run inference on the latest open-source models. However, you can also run Sheets with own custom LLMs, such as those hosted on your own infrastructure or other cloud providers. The only requirement is that your LLMs must support the OpenAI API specification.
+  - This app has a minimal Expressjs server implementation
+
 - https://github.com/weijunext/smart-excel-ai /MIT/202312/ts
   - https://smartexcel.cc/
   - Generate the Excel formulas you need in seconds using ChatGPT

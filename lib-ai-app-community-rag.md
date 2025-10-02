@@ -154,6 +154,31 @@ modified: 2024-09-08T20:08:16.088Z
 - ## 📌 A list of software that allows searching the web with the assistance of AI.
 - https://x.com/tom_doerr/status/1856778512612667838
 
+# discuss-ocr
+- ## 
+
+- ## 
+
+- ## [Are vision models (like qwen3-vl) good for OCR? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nu7vw8/are_vision_models_like_qwen3vl_good_for_ocr/)
+- Your concern about hallucination is totally valid but honestly the accuracy issues with traditional OCR like tesseract are way worse than occasional VL model hallucinations, especially for real world documents. 
+  - I've been dealing with this exact problem for years and tesseract just falls apart with anything that isnt a perfect scan - weird fonts, slight rotations, quality issues, you name it. 
+  - Vision models like qwen2.5-vl actually have much better accuracy because they understand context and can handle imperfect inputs way better than traditional engines.
+  - The key is setting up proper prompting to minimize hallucinations - be very specific about what fields you want extracted and ask the model to indicate confidence levels or mark uncertain text.
+  - We built Docstrange specifically for this use case and found that combining good prompting with validation rules catches most issues. For invoices and licenses, the structured nature actually helps a lot since VL models can understand document layout and context much better than traditional OCR engines that just see individual characters.
+
+- I use Qwen2.5-VL for OCR all the time. Works great. I've OCR'd entire PDF scans of documents, and traditional OCR usually OCRs decently but has layout problems, whereas AI OCR usually does a good job of understanding and flattening layout. I've used it for Chinese, Japanese, German, and (of course) English.
+
+- My best results for processing tabular PDFs has been: https://huggingface.co/ibm-granite/granite-docling-258M
+  - Qwen-2.5 oddly either gives me great results, or the first row and nothing else.
+
+- Gemma3 27b is pretty great for OCR.
+
+- 
+- 
+- 
+- 
+- 
+
 # discuss-rag-local
 - ## 
 

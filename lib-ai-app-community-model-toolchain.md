@@ -337,52 +337,6 @@ modified: 2025-09-16T12:36:12.968Z
   - ollama pull llama3
 
 - 我说的本地，指的不是一台个人电脑上，跑一个7B、13B参数的大模型。而是在企业本地算力服务器上，私有化部署的700亿参数以上规模的大模型，这种参数规模的大模型，才有更好的指令依从性，结合RAG、Agent等技术，能有效的完成你分配给他的任务。 
-# discuss-nvidia/amd/linux
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 🆚 [AMD AI Max+ 395 CPU 本地大模型推理性能评测报告 - 知乎 _202509](https://zhuanlan.zhihu.com/p/1952045270763283746)
-- 针对搭载AMD AI Max+ 395 CPU的零刻GTR9迷你主机进行了一系列严格的大模型推理速度测试。
-  - 硬件平台: 零刻 (MINISFORUM) GTR9 迷你主机
-  - 核心组件: AMD AI Max+ 395 CPU
-  - 任务类型: 本地大语言模型推理
-  - 性能指标: Tokens/s (每秒生成Token数) — 该数值越高，代表推理速度越快
-- 设计了涵盖多种任务类型的标准化问题：
-  - 综合能力: "你是谁？请详细介绍一下你能干什么。"
-  - 知识问答: "作为专业人工智能专家，请告诉我如何学习深度学习？"
-  - 数学计算: "如果A+B=12, A-B=10，则A的值是？"
-  - 自然语言理解: "识别句子‘我将会在明天早上的8点到湖北黄陂的森林公园’中的所有地名。"
-  - 代码生成: "请使用Python编写一个贪吃蛇游戏。"
-
-- 参评大模型:
-  - deepseek-r1:70b, 30
-  - qwen3 系列（32b / 30b / 14b / 8b）
-  - gpt-oss（120b / 20b）
-
-```markdown
-
-- model,          ollama, lmstudio
-- deepseek-r1:70b, 4.43,   4.97
-- qwen3:32b,       8.97,   10.12
-- qwen3:14b,       19.47,  21.70
-- qwen3:8b,        29.93,  35.96
-- gpt-oss:120b,    30.84,  42.07
-- gpt-oss:20b,     42.57,  60.54
-- qwen3:30b,       48.93,  68.70
-
-```
-
-- 对比两组数据可见，同一模型在LM-Studio中的推理速度普遍优于Ollama
-- AMD AI Max+ 395 CPU采用CPU/GPU共享内存的统一内存架构（UMA），这种设计天然适合运行混合专家（MoE）模型（如gpt-oss系列、qwen3:30b）。
-  - MoE模型虽然总参数量庞大，但每次推理仅激活部分"专家"参数，非常契合这种大容量内存但绝对算力相对有限的硬件。
-  - 相比之下，对于参数密集的传统稠密模型（如deepseek-r1:70b、qwen3:32b），由于需要更高的绝对算力，该处理器的集成显卡则稍显吃力。
-
-- DFRobot作为在单板计算机（SBC）、AI边缘计算和开源硬件领域的创新者，此次测试结果意义非凡。若未来DFRobot推出基于AMD AI Max+ 395 CPU的单板计算机，将其强大的本地AI推理能力与DFRobot成熟的模块化传感器生态（如Gravity系列）相结合，将催生出更多实时、智能的物联网与机器人应用
 # discuss-mac-mlx 🍎
 - ## 
 
@@ -1077,4 +1031,31 @@ curl http://localhost:11434/api/chat -d '{
 
 - ## 
 
-- ##
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Jan now auto-optimizes llama.cpp settings based on your hardware for more efficient performance : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nvzeuh/jan_now_autooptimizes_llamacpp_settings_based_on/)
+  - It works with Mac too! Although it is still experimental, so do let us know how it works for you.
+  - We don't support MLX yet (only gguf and llama.cpp), but we will be looking into it in the near future.
+
+- Can the Jan server serve multiple models (swapping them in/out as required) similar to Ollama?
+  - You can definitely serve multiple models similar to Ollama. Although the only caveat is that you would also need to have enough VRAM to run both model at the same time also, if not you would need to manually switch out the model on Jan.
+  - Under the hood we are basically just proxying `llama.cpp` server as Local API Server to you with an easier to use UI
+- The manual switching out of the models is what I’m trying to avoid. It would be great if Jan could automatically swap out the models based on the requests.
+  - We used to have this, but it makes us deviate(背离, 偏离) too much away from llama.cpp and make it hard to maintain, so we have to deprecate it for now.
+  - We are looking into how to bring it back in a more compartmentalize way, so that it is easier for us to manage. Do stay tune tho, it should be coming relative soon!
+- I believe this is what llama-swap does?
+
+- What is the use case for a chat tool without RAG? How is this better than the llama.cpp integrated Webserver? 
+  - Jan supports MCP so you can have it call a search tool for example
+  - It can reason - use tool - reason just like chatgpt
+  - As for the use case, it's the only open source AIO(All-In-One) solution that nicely wraps llama.cpp with multiple models
+- What “All-In-One” practically means for Jan
+  - Runtime + engine: includes llama.cpp (local inference) plus cloud provider options so you can run models locally
+  - Model management / hub
+  - UI: chat UI, model hub, model settings, downloads
+  - Tool / integration layer: supports MCP
+  - Server/API & multi-tenant features

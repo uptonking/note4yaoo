@@ -121,7 +121,7 @@ modified: 2021-01-04T17:26:25.032Z
 - https://github.com/eczn/down-parse /ts/2019
   - markdown parser with a wonderful plugin system
 # md-database
-- https://github.com/datopian/markdowndb /MIT/202401/ts/sqlite
+- https://github.com/datopian/markdowndb /392Star/MIT/202503/ts/sqlite
   - https://markdowndb.com/
   - JS library to turn markdown files into structured queryable database (SQL-based and simple JSON). 
   - It helps you build rich markdown-powered sites easily

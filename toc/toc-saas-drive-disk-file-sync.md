@@ -427,45 +427,6 @@ modified: 2024-03-31T17:45:16.789Z
 - https://github.com/Scille/parsec-cloud /BSL/202503/rust/ts/vue
   - https://parsec.cloud/
   - Open source Dropbox-like file sharing with full client encryption
-# webdav
-- https://github.com/sigoden/dufs /MIT/202402/rust
-  - A file server that supports static serving, uploading, searching, accessing control, webdav...
-  - Download folder as zip file
-  - Upload files and folders (Drag & Drop)
-  - Resumable/partial uploads/downloads
-# filesystem
-- https://github.com/rejetto/hfs /GPLv3/202402/ts
-  - HFS is the best way via web to access or share files from your disk.
-  - access files from a phone or another computer just using a browser
-  - possibly create accounts and limit access to files
-  - Share even a single file with our virtual file system, even with a different name, all without touching the real file. Present things the way you want!
-  - Watch all activities in real-time.
-  - Control bandwidth, decide how much to give.
-  - This is a full rewrite of the Delphi version.
-
-- https://github.com/internalfx/sqlgrid /16Star/apache2/201910/js
-  - A file storage system for SQL databases inspired by GridFS
-  - Revisions - Keeps multiple versions of files.
-  - Supports byte ranges to allow for streaming media.
-  - Consistent - Sha256 hashes are calculated when the file is written, and verified when read back out.
-  - 依赖sequelize.v5、bluebird、lru
-  - https://github.com/internalfx/rethinkdb-regrid
-
-- https://github.com/djedi23/mongodb-gridfs-rs /202310/rust
-  - An implementation of Mongo GridFS in Rust
-  - provides an implementation of Mongo GridFS on the top of mongodb's crate.
-  - This implementation only use the async/await version of mongodb.
-
-- https://github.com/fhellwig/mongodb-filesystem /202006/js
-  - Implements a basic filesystem using the MongoDB GridFS interface
-- https://github.com/oleksiyk/mongofs /201312/js
-  - MongoFS is an implementation of MongoDB GridFS that emulates node.js fs module
-
-## fs-utils
-
-- https://github.com/jvilk/BrowserFS /202001/ts/inactive
-  - BrowserFS is an in-browser filesystem that emulates the Node JS filesystem API and supports storing and retrieving files from various backends.
-  - 支持 memory/localStorage/indexeddb/dropbox/Emscripten file systems
 # s3/minio
 - Zenko CloudServer /1.5kStar/apache2/202401/js
   - https://github.com/scality/cloudserver
@@ -504,6 +465,74 @@ modified: 2024-03-31T17:45:16.789Z
   - FUSE-based file system backed by Amazon S3
   - s3fs allows Linux, macOS, and FreeBSD to mount an S3 bucket via FUSE(Filesystem in Userspace).
   - s3fs makes you operate files and directories in S3 bucket like a local file system.
+# webdav
+- https://github.com/cs3org/reva /197Star/apache2/202510/go
+  - https://reva.link/
+  - WebDAV/gRPC/HTTP high performance server to link high level clients to storage backends
+  - Reva is an interoperability platform consisting of several daemons written in Go. 
+  - It acts as bridge between high-level clients (mobile, web, desktop) and the underlying storage (CephFS, EOS, local filesytems). 
+  - It also exports a high-performance gRPC API, codenamed CS3 APIs, to easily integrate with other systems. 
+  - Reva is meant to be a high performant and customizable HTTP and gRPC server.
+  - [Decide on HTTP chunked-data transfer protocol _201910](https://github.com/cs3org/reva/issues/290)
+    - Compare different chunking data transfer protocols and chose the one that everyone should implement.
+    - The protocol needs to allow to upload by chunks of data (files are split into small chunks) and resumable, if the transfer is cut, the client should be able to discover what are the missing chunks to be uploaded.
+    - tus.io and ownCloud rely solely on HTTP headers while the rest rely on some encoded payload.
+    - @butonic prefers relying only on headers and I also share the same opinion.
+    - I think `tus` is a great approach. IMHO tus and ownCloud Chunking NG share the same basic ideas, which is cool, but tus is way further on the way to become a real standard: It has many supporters, people who verified it's concepts and wrote code and put it in production. That alone makes it the top candidate
+    - the decision is that we use tus.
+  - https://github.com/tus/tusd
+    - Reference server implementation in Go of tus: the open protocol for resumable file uploads
+  - 🍴 forks
+  - https://github.com/opencloud-eu/reva
+
+- https://github.com/sigoden/dufs /MIT/202402/rust
+  - A file server that supports static serving, uploading, searching, accessing control, webdav...
+  - Download folder as zip file
+  - Upload files and folders (Drag & Drop)
+  - Resumable/partial uploads/downloads
+# filesystem
+- https://github.com/rejetto/hfs /GPLv3/202402/ts
+  - HFS is the best way via web to access or share files from your disk.
+  - access files from a phone or another computer just using a browser
+  - possibly create accounts and limit access to files
+  - Share even a single file with our virtual file system, even with a different name, all without touching the real file. Present things the way you want!
+  - Watch all activities in real-time.
+  - Control bandwidth, decide how much to give.
+  - This is a full rewrite of the Delphi version.
+
+- https://github.com/internalfx/sqlgrid /16Star/apache2/201910/js
+  - A file storage system for SQL databases inspired by GridFS
+  - Revisions - Keeps multiple versions of files.
+  - Supports byte ranges to allow for streaming media.
+  - Consistent - Sha256 hashes are calculated when the file is written, and verified when read back out.
+  - 依赖sequelize.v5、bluebird、lru
+  - https://github.com/internalfx/rethinkdb-regrid
+
+- https://github.com/djedi23/mongodb-gridfs-rs /202310/rust
+  - An implementation of Mongo GridFS in Rust
+  - provides an implementation of Mongo GridFS on the top of mongodb's crate.
+  - This implementation only use the async/await version of mongodb.
+
+- https://github.com/fhellwig/mongodb-filesystem /202006/js
+  - Implements a basic filesystem using the MongoDB GridFS interface
+- https://github.com/oleksiyk/mongofs /201312/js
+  - MongoFS is an implementation of MongoDB GridFS that emulates node.js fs module
+# fs-filesync
+- https://github.com/datopian/giftless /157Star/MIT/202507/python
+  - https://giftless.datopian.com/
+  - Giftless is a Python implementation of a Git LFS Server. 
+  - It is designed with flexibility in mind, to allow pluggable storage backends, transfer methods and authentication methods.
+  - Giftless supports the basic Git LFS transfer mode with the following storage backends:
+    - Local storage
+    - Amazon S3 Storage
+    - Google Cloud Storage
+    - Azure Blob Storage with direct-to-cloud or streamed transfers
+  - In addition, Giftless implements a custom transfer mode called multipart-basic, which is designed to take advantage of many vendors' multipart upload capabilities. It requires a specialized Git LFS client to use, and is currently not supported by standard Git LFS.
+  - https://github.com/datopian/giftless-client
+# fs-utils
+- https://github.com/jvilk/BrowserFS /202001/ts/inactive
+  - BrowserFS is an in-browser filesystem that emulates the Node JS filesystem API and supports storing and retrieving files from various backends.
+  - 支持 memory/localStorage/indexeddb/dropbox/Emscripten file systems
 # file-sharing/local-network
 - https://gitlab.com/timvisee/send /MPLv2/202306/js
 - https://github.com/timvisee/send

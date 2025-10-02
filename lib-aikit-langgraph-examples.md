@@ -660,6 +660,13 @@ modified: 2025-08-11T08:47:56.335Z
   - Progress Tracking & Streaming: Provides real-time feedback on the report generation process, including progress steps and streaming text output.
   - Dependency Injection: Uses a robust dependency injection container (ioc/container.ts) for managing services and their implementations, adhering to Clean Architecture principles.
 # langchain
+- https://github.com/onyx-dot-app/onyx /15.1kStar/MIT+EE/202510/python/ts
+  - https://onyx.app/
+  - Onyx is a feature-rich, self-hostable Chat UI that works with any LLM.
+  - Onyx comes loaded with advanced features like Agents, Web Search, RAG, MCP, Deep Research, Connectors to 40+ knowledge sources, and more.
+  - [Introducing Onyx - a fully open source chat UI with RAG, web search, deep research, and MCP : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1nw52ad/introducing_onyx_a_fully_open_source_chat_ui_with/)
+    - I’ve tried many other open-source chat tools, and I found that none of them had the mix of things I wanted: a beautiful chat UI + great RAG + deep research.
+
 - https://github.com/Ashot72/Multi-Modal-Chat /202503/ts/inactive
   - Multi-Modal Next.js Chat App with Vercel AI SDK & LangGraph.js
   - Users can ask questions, analyze uploaded images, convert content to audio, generate and download charts, display videos, and create AI-generated images.
