@@ -150,6 +150,61 @@ modified: 2023-09-17T17:36:36.118Z
 
 - 🧐 Worth noting that Hacker News is a "store it all in files" design.
   - Files on disk mean you can use all your great UNIX tooling to do all sorts of complex operations that would take you many many hours of skilled development to do with a database. Then there are all the possible things you could do with Git or (imagine!) ZFS! Versioning everything for free? Keep an activity log within a hierarchy. 
+# discuss-small-files 🏠
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [canva: We put half a million files in one Git repository (2022) | Hacker News _202308](https://news.ycombinator.com/item?id=37291765)
+- Ah yes, I too have accidentally committed node_modules.
+  - it's interesting to me that a file count that size is still a real performance issue for git
+- Are there some fundamental aspects of git that would make it either very difficult to improve that, or that would sacrifice some important benefits if they were made?
+  - It’s hard to look at a million files on disk and figure out which ones have changed. 
+  - Git, by default, examines the filesystem metadata. It takes a long time to examine the metadata for a million files.
+- The main alternative approaches are:
+  - Locking: Git makes all the files read-only, so you have to unlock them first before editing. This way, you only have to look at the unlocked files.
+  - Watching: Keep a process running in the background and listen to notifications that the files have changed.
+  - Virtual filesystem: Present a virtual filesystem to the user, so all file modifications go through some kind of Git daemon running in the background.
+- All three approaches have been used by various version control systems. They’re not easy approaches by any means, and they all have major impacts on the way you have to set up your Git repository.
+  - People also want e.g. sparse checkouts, when you’re working with such large repos.
+- It's notable that git does support "watching", but it requires some setup on Linux to install and integrate with Watchman. On Windows and Mac, core.fsmonitor has been built in since version 2.37.
+
+- Are there any solutions that use libgit2's ability to define a custom ODB backend? There are even example backends already written that use RDBMSs as the underlying data store.
+  - There are repos with many files and there are repos with lots of history data. Those are problems with different solutions—adding millions of files to the repo will make 'git status' take ages, but it won’t necessarily put the same level of pressure on the object database.
+  - There are various versions of Git that use alternative object storage, like Microsoft’s VFS, if I remember correctly.
+
+- What about asking the OS for the list of changes like Everything on Windows does, instantly, for millions, at a RAM cost of a ~1-2 browser tabs (though that might be limited to NTFS, but still)?
+  - That's not, the last time I checked, how everything on Windows works.
+  - Windows provides the ability to hook into FS system calls, so that things like virus scanners work.
+  - Everything uses the hook to get notified of all changes, and uses those mods simply to update its index (which is faster than scanning a file for viruses, so it's imperceptible to users).
+  - It's a great idea, and I don't think there is anything similar in Linux or BSD (inotify isn't the same thing, AFAIK, it uses up file descriptors).
+
+- In my experience, the standard linux file system can get very slow even on super powerful machines when you have too many files in a directory. I recently generated ~550, 000 files in a directory on a 64-core machine with 256gb of RAM and an SSD, and it took around 10 seconds to do `ls` on it. So that could be a part of it too.
+  - It sounds suspiciously like you measured the time to display 500k lines in the terminal instead of the time to ls.
+
+- There is VFS for git from Microsoft, that can solve problem more elegant way, I think: https://github.com/microsoft/scalar
+  - That was discontinued (like multiple times under different names). And is moved into a git fork. https://github.com/microsoft/git
+  - They upstreamed almost everything. The last version of "scalar" was mostly just a configuration tool for sparse checkout "cones" which needed a bit of hand-holding, and that is easier to configure in git itself now, or so I hear.
+
+- Since 70% of the files were xlf files used for translation/localization, couldn't they instead just store all of those in a single SQLite file and solve their problem much more easily? 
+  - The translations are dependent on the original strings that is in code. For example if we change "design anything" to "design everything", the translations also needs to be updated to reflect that and by keeping it within vcs, we have an atomic change including both code, copy and translation. Moving it to a database would make updates easier but would now be a separate process to "sync" between copy change in code and translation changes in the database
+
+- ## [canva: We Put Half a Million Files in One Git Repository, Here’s What We Learned | Hacker News _202206](https://news.ycombinator.com/item?id=31762245)
+- . `xlf` files aren't really generated files, they're created through our translation pipeline by real humans. I considered them generated in the sense that they're not directly worked on by engineers who have to deal with them in the repository.
+  - The content of these translation files are snapshot in time aligned with the text in our product so simply removing them we would lose all the changes made to translations each time texts are changed.
+
+- .xlf isn't a config file format here. It refers to XLIFF, a standard for translation files. https://en.wikipedia.org/wiki/XLIFF
+
+- > git status takes 10 seconds on average
+  - I created a `beep` alias that just does `echo "\x07\x07\x07"` which triggers the system notification sound three times. Then if I have a command that will take a while, like a stupidly long `git status`, I do `git status && beep`.
 # discuss
 - ## 
 
