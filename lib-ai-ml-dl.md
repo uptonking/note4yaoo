@@ -34,6 +34,22 @@ modified: 2023-03-21T07:54:11.468Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [The most important AI paper of the decade. No debate : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1nwx1rx/the_most_important_ai_paper_of_the_decade_no/)
+  - Attention is all you need
+- I think "Attention is all you Need" be at the top. It gave birth to the transformer.
+
+- Pretty much so as of now. But please don‘t forget „Efficient Estimation of Word Representations in Vector Space“, Mikolov et al. (2013). It‘s the „Word2Vec“ paper.
+
+- Not of the 2010 decade, maybe of the 2015-2025 decade? In 2010-2019, it was almost certainly AlexNet. Without it, and its usage of GPUs (2x GTX580), neural nets wouldn't even be a thing, and Nvidia would probably still be in the billions club.
+
 - ## When evaluating the performance of Time Series forecasting models, several metrics can be used to assess their accuracy and predictive power.
 - https://twitter.com/daansan_ml/status/1718575478276239512
   - Here are 4️⃣ of the most used metrics for time series forecasting

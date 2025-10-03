@@ -94,6 +94,19 @@ modified: 2025-09-01T07:58:29.058Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [How to tell cline must use recent documentation for a python lib? : r/CLine](https://www.reddit.com/r/CLine/comments/1nw95t9/how_to_tell_cline_must_use_recent_documentation/)
+- The context7 MCP server is tailored made for this.
+  - Add context7 mcp. Then add a global rule to fetch lastest docs before planning.
+
+- Create your own documentation and put it in a docs folder. And then @ the file in your prompt. EZPZ
+
+- is it going to create a rag or context injection?
+  - Just context injection.
+
 - ## [I tried vibe coding for 4 weeks, here’s why I’m dialing it back : r/vibecoding](https://www.reddit.com/r/vibecoding/comments/1nu8s3y/i_tried_vibe_coding_for_4_weeks_heres_why_im/)
   - And honestly? The first week felt incredible. I was in the zone, shipping features fast, and it felt like I was finaly coding for fun again.
   - But as the weeks went on, the cracks started to show.

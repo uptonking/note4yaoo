@@ -182,11 +182,27 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## [Laptop with 32 GB VRAM for Stable Diffusion : r/StableDiffusion _202305](https://www.reddit.com/r/StableDiffusion/comments/1353g26/laptop_with_32_gb_vram_for_stable_diffusion/)
+- I don't think so, unless you do an "egpu" with a card in a separate case connected via thunderbolt. My card has 16gb VRAM and I can run a 2048x2048 without tiling. Tiling lets that go much higher, so that's the way to go if you want to do large images. Generally speaking the vram stuff is mostly an issue if you want to train LoRAs/embeddings/hypernetworks/etc.
 
-- ## 
+- Is 16 GB of VRAM on your machine enough to train LoRAs and checkpoints? I can do very limited training with my current 8 GB VRAM machine, and I'd be very interested in training LoRAs and checkpoints to personalize my work. 
+  - Yes, 16gb is enough. Until recently I was able to do batch sizes of 8 for Dreambooth fine-tuning, generally in other AI training it's good to do that or accumulate gradients
 
-- ## 
+- ## [AMD 计划于 2026 年推出 Zen 6 架构 Ryzen 处理器，有何亮点值得期待？ - 知乎 _202506](https://www.zhihu.com/question/1944114025425269198)
+- 2006年，ATi被AMD以54亿美元收购，“Fusion融合”成为新AMD最高战略。CPU、GPU、主板芯片组三者合一，集成为前所未有的SOC单芯片，即“APU”，异构运算以提升运算效能
+- 2017年，“Zen禅”架构的锐龙处理器上市。单芯片设计的APU力挽狂澜，桌面处理器触底反弹、移动处理器迅速崛起、拿下双游戏主机大单。但称雄桌面、制霸服务器端，AMD依靠的是Zen2开始的Chiplet多晶粒模块化设计，多核堆死老师傅。
+- 摩尔定律失效，单芯片面积有限，先进制程代价昂贵，剥离了GF格罗方德工厂、几近破产边缘抢救回来的AMD，必须得精打细算
+- 新一代Zen6架构，CCD计算核首发2纳米制程，连财大气粗的苹果、高通都没敢下这么重的本。
+- AMD选择将Chiplet进行到底： 2nm的Zen6 CCD计算核，2-3种3nm的RDNA5GPU，用4种以上3nm的APU组合在一起
+  - Strix Halo架构那颗AI MAX+ 395上取得的经验，成为日后的封装标准
+
+- Strix Halo架构的AI MAX+ 395，性能足以媲美RTX4060；只是双CCD计算核拉高了成本，试水新封装良率不高，又遇上AI推理本地化热潮，造成出厂价奇高，单U价格超过4060游戏本整机，叫好不叫座。
+
+- 2027年末上市的AI MAX 500系列新品，是APU，也是一颗可以做成独显的GPU：
+  - 【小杯】Medusa Halo mini，也是 AT4 GPU，12大小核2LP，24CU RDNA5，PTX 1050同芯，对标4060
+  - 【大杯】Medusa Halo，也是 AT3 GPU，至少具备12核，可选CCD计算核桥接补齐，48CU RDNA5，PTX 1060同芯，对标4070
+  - 小杯使用128bit LPDDR5X内存控制器，显存可达128G，更适合经济游戏本
+  - 大杯采用384bit LPDDR6内存控制器，显存可达512G，针对价格不敏感的AI行业用户
 
 - ## [How well does ComfyUI perform on macOS with the M4 Max and 64GB RAM? : r/comfyui _202503](https://www.reddit.com/r/comfyui/comments/1jhifyi/how_well_does_comfyui_perform_on_macos_with_the/)
 - TLDR - if you want to work linear on one image, a Mac is a huge waste of time. Maybe 25% of the speed of a decent NVIDIA PC for AI generation. 
@@ -916,7 +932,27 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## [单卡双芯48GB 铭瑄Arc Pro B60 Dual Turbo专业卡规格详解 - 知乎 _202505](https://zhuanlan.zhihu.com/p/1908505488590636946)
+- 第二代锐炫Pro专业卡，同样基于“BattleMage战斗法师”架构，有两款产品
+  - Pro B50 16GB，16组Xe核心，2048sp，128bit显存带宽，TBP整卡功耗70w
+  - Pro B60 24GB，20组Xe核心，2560sp，192bit显存带宽，TBP整卡功耗120-200w
+
+- B580 24GB的传闻已久，不算新鲜；最出人意料的是铭瑄，拿出来的Pro B60产品是单卡双芯
+  - 双DP 2.1 + 双HDMI 2.1a满血输出，均可支持8K 60hz或4K 240hz；由上至下，分属于两个不同的GPU
+  - 这张显卡并未集成PCIe桥接芯片，PCIe Gen5 x8 + PCIe Gen5 x8，需要主板本身支持PCIe x16通道拆分。
+  - 所以电脑设备管理器内显示，应该显示为两张Pro B60 24GB，而非单张Pro B60 48GB，只有通过相应程序，才能实现GPU、显存统一调用，料想不会有驱动程序层面的特殊支持，和其他品牌的单卡单芯无异。
+
+- 这么说就是两个显卡，插在一个插槽，并且两个卡都是pcie5.08 这样每个卡的带宽都砍掉了pcie 5.0 *16 的一半。 这种东西有鬼用啊。还不如插两个显卡
+  - 1，现在的GPU性能跑不满带宽，包括5090用PCIE x8都没问题；
+  - 2，AI模型推理其实对GPU性能要求不高，主要是卡显存。
+  - 3，B580原生Gen4 x8，B60升到Gen5 x8，两GPU集成到一块儿并没阉割带宽。
+
+- 后续所有的锐炫中高端家用显卡都会复刻，Q3发布的B770 16GB当然也会有相应的32GB专业卡；连AMD也表示会跟进产品。
+
+- 牙膏要是有类似nvlink的东西那价值还能上升，毕竟甭管训练还是推理，瓶颈都在这个pcie 5.0x16的64GB/s 上。
+
+- 48G显存玩SD画图不得爽死。话说现在SD对intel的支持咋样了？能玩不？
+  - 不怎么行，只能pf16否则加lora就会黑图，训练目前我还没跑通过。而且双芯卡实际是两张卡，常见的部署框架comfyUI不支持多卡
 
 - ## [显卡日报10月8日｜笔电RTX5090显存容量24G？ - 知乎 _202410](https://zhuanlan.zhihu.com/p/853223258)
 
@@ -1464,7 +1500,127 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## [Is mac best for local llm and ML? : r/LocalLLM _202509](https://www.reddit.com/r/LocalLLM/comments/1ndhu25/is_mac_best_for_local_llm_and_ml/)
+- Mac is best for energy efficiency for sure. Idle power is super low.
+  - even at inference you're using less than 300W on a top of the line Mac Studio
+
+- For casual, chat style inference it's hard to beat. However for training, high context processing and diffusion image generation Nvidia is still king and Mac will be quite slow for this.
+
+- macs are pretty good for LLMs but as far as i know they struggle with vision nets and diffusion models 
+
+- Bro, running models you should be good. However, training/fine-tuning (sometimes like 10% of the time works decent) other 90% you will find yourself crying watching your MAC train, slower than Dial-up internet back in the 90s.
+
+- ## [How does M2 Ultra compare with M3 Ultra for LLM? : r/MacStudio _202508](https://www.reddit.com/r/MacStudio/comments/1mr09e2/how_does_m2_ultra_compare_with_m3_ultra_for_llm/)
+- Llama 7b F16 TG
+  - M1U/64 - 37.0
+  - M2U/60 - 39.9
+  - M3U/60 - 42.2
+
+- ## [M3 Ultra Mac Studio Benchmarks (96gb VRAM, 60 GPU cores) : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kvd0jr/m3_ultra_mac_studio_benchmarks_96gb_vram_60_gpu/)
+  - I loaded each model freshly in LMStudio, and input 30-40k tokens of Lorem Ipsum text (the text itself shouldn't matter, all that matters is token counts)
+
+- I have the same machine as the OP (96GB, 60 cores) and am running Qwen3-30B-A3B 8bit and Qwen3-32b 6bit concurrently - great combo to use in Aider architect mode. Which two models have you chosen to work with in Roo Code? What has been your experience?
+  - I typically use Qwen3 32b as Orchestrator and Architect, Qwen 2.5 32b 128 K as coder and debugger. I use Unsloth versions of all. They can handle certain projects just fine. Especially languages like python. If I run into issues, I mix in deepseek r1 or v3 from openrouter.
+
+- Can you explain how to load several models?
+  - I use LM Studio, and you just keep loading models until you’ve either loaded all of the ones that you need, or when you reach 85% of your memory capacity. It’s a good practice not to fill more than that.
+
+- ## [Mac Studio for LLMs: M4 Max (64GB, 40c GPU) vs M2 Ultra (64GB, 60c GPU) : r/LocalLLM _202506](https://www.reddit.com/r/LocalLLM/comments/1l702x2/mac_studio_for_llms_m4_max_64gb_40c_gpu_vs_m2/)
+- The ultimate decision comes down to: (a) Do you want to run smaller models a little faster or (b) Do you want to be able to run larger models for less money? 
+  - In my experience, the larger models are almost ALWAYS better. They just win.
+  - Now, if you really do care about speed, and you plan on using LONG contexts, and you are content running smaller models, then by all means get a 3090 PC and call it a day. 
+  - Just understand that the speed gaps tend to disappear at the larger models, and many of the nvidia fan boys cannot run the larger models at all due to lack of VRAM.
+
+- M2 ultra gets destroyedy by AMD instinct Mi50 , especially if we're talking about value because we can pick up 1X 32GB GPU @ $250-300. Couple that with old mining rig motherboard or 7002-7003 EPYC CPU + cheap mobo
+  - It's not easy because there's a ton of configuration needed . The MI50 is not supported by rocm anymore which means that we need to use older versions and compile it all ourselves. 
+
+- LLMs are horribly memory bandwidth and memory size limited. Not as compute limited.
+  - Forget the M4, it has MAX chip with half bandwidth.
+  - The choice would be between M2/M3 Ultra at around 800GB/s. Unfortunately Apple asks for extreme premiums on memory capacity.
+  - The AMD AI Max boxes go for around 2 000 with 128GB of unified memory, that alone makes them a better value, but it's slower memory at 250 GB/s
+  - With AI Max 395 you spend less to run much bigger models, or regular models slower.
+  - Personally I have a 7900XTX 24GB that is really competent due to the high memory bandwidth. I can run 30B models competently on my GPU with ROCm or Vulkan runtimes.
+
+- Memory bandwidth of 3090 is also 800GB/sec right, so in terms of new machine M2/M3 Ultra is relatively similar performance with ability to use bigger model?
+  - If you are serious about machine learning, not, and it's not even close. It's just LLM inference that it can work because they are very forgiving on compute, and just require huge slabs of fast memory. There are people using 12 channel EPYC processors and running LLMs on 1.5 Terabytes of memory that way.
+  - Nvidia has CUDA, and there aren't words to describe how far other vendors are from providing something that works like CUDA does. I use ROCm and took a month to get acceleration running on Comfy UI. With metal my collogue gets maybe 5 % of the theoretical performance, it takes minutes to diffuse somethings that take literally 2 seconds on my 7900XTX.
+- No, the RTX 3090 is 4X faster for prompt evaluation and 2X faster for token generation. Because whatever they say, compute power is important too.
+
+- ## [What models can't I run with 128gb (M4 Max) vs 256gb (M3 Ultra)? : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mkip7t/mac_llm_users_what_models_cant_i_run_with_128gb/)
+- I got the 256GB
+  - Remember that the Ultra will have twice the memory bandwidth of the M4 for more speed.
+  - I hate running the very largest, because it makes it so I can't run image generation at the same time with a decent sized context.
+
+- Technically the M3 Ultra has only about 1.5x more the mem bandwidth than M4 Max (812 vs 546 GB/s)
+
+- I have the M3 Ultra 256 gb. The problem with really large models is that inference speed is super slow. However, you can load several smaller models concurrently. Which can be useful.
+
+- ## [need a “M4 Max 128GB” vs “M3 Ultra 96GB” comparison please! : r/MacStudio _202503](https://www.reddit.com/r/MacStudio/comments/1ja5xyc/need_a_m4_max_128gb_vs_m3_ultra_96gb_comparison/)
+  - M4 Max [unbinned] with 16‑core CPU, 40‑core GPU, 16‑core Neural Engine, 128GB unified memory.
+  - M3 Ultra [binned] with with 28-core CPU, 60-core GPU, 32-core Neural Engine, 96GB unified memory.
+
+- Just to confirm, M3 Ultra (28CPU, 60GPU, 32NE) has the same memory bandwidth as M4 Max (16CPU, 40GPU, 16NE) ?
+  - Apple is confusing the heck out of people - putting “up to 819” but without providing a real figure for binned chip.
+- No both M3s have the same bandwidth. From apples page “You can choose between two M3 Ultra chips for this Mac Studio. Both are phenomenally powerful, with a 32-core Neural Engine. Both feature 819GB/s of memory bandwidth.”
+
+- the M3 Ultra single-core performance is over 20% less than the M4 Max, and a fair amount of my work is heavily dependent on single-core performance
+
+- M4 Max does seem like the best value for money in this comparison, but I want to know if am I going to lose on Ultra’s 800+Gb/s memory bandwidth which seems like an important factor when it comes to 3D rendering and video editing
+
+- [Mac Studio (M4 Max 128GB Vs M3 Ultra 96GB-60GPU) : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1koxr32/mac_studio_m4_max_128gb_vs_m3_ultra_96gb60gpu/)
+  - M3 Ultra will perform better of course. It is two cpu running in one pc. But it also means 2x more power consumption. Personally I'd pick M4 Max even though it's a bit slower
+
+- ## 🆚 [So the M3 Ultra is better than the M4 Max? Why do that? : r/MacStudio _202503](https://www.reddit.com/r/MacStudio/comments/1j45hnw/so_the_m3_ultra_is_better_than_the_m4_max_why_do/)
+- the M3 Ultra is different than the prior iterations of M1 and M2 Ultra. It is not two Max chip SoC’s fused together with a common I/O like the M2 Ultra, rather, its a single SoC on a megachip with the performance and experience cores of two Max chips but without the limitations in memory access across the prior I/O interface. The speed and performance improvements are substantial; 
+  - You are correct that the M3 Ultra does not have the single core performance of the M4 Max, but it massively outperforms the M4 Max in multicore performance; 
+  - The ability to outfit the M3 Ultra Mac Studio with 512Gbs of VRAM shared unified memory is a game changer for machine learning and large model.
+
+- Because the M2 Ultra is better than the M3 Max, and the M1 Ultra is better than the M2 Max. That’s how it’s always been
+
+- [why don't we have m4 ultra it's much worse than you think : r/mac](https://www.reddit.com/r/mac/comments/1ld47pn/why_dont_we_have_m4_ultra_its_much_worse_than_you/)
+  - In a recent video, we see that it's already possible to make the Mac Studio with an M4 Max chip overheat—even with the fans running at full speed. When both the CPU and GPU are pushed to their limits simultaneously, the system draws over 330 watts of power. That’s already enough to overwhelm the Studio’s cooling system, forcing it to throttle performance to avoid overheating.
+  - if you imagine an M4 Ultra—which would essentially be two M4 Max chips fused together—you’re looking at a theoretical power draw of over 670 watts. That’s more than even a high-end GPU like the RTX 5090 consumes.
+  - But it’s not just about cooling. The current Mac Studio’s power supply is only rated for 480 watts.
+  - The Mac Studio, in its current form, simply isn’t built to handle that kind of power. But there is one Mac that could handle it: the Mac Pro. 
+  - m3 ultra was chosen which consumes around 450w peak
+
+- ## [苹果推出 M4 Max / M3 Ultra 芯片 Mac Studio，哪些亮点值得关注？ - 知乎 _202503](https://www.zhihu.com/question/14167658813)
+- 在今天之前，最适合个人用户跑大模型的机器是 M2 Ultra + 192G 内存的 Mac Studio，而在今天之后，我单方面宣布 Mac Studio M3 Ultra 512G 版本
+
+- b站张黑黑：[DeepSeek R1] [Q4 MLX]  19.17 token/sec，适合个人用户，但是不适合大规模并发的商业场景
+  - 512GB统一内存，本地跑Q4的671b R1！！8550刀！甚至不到一张 A100 40GB
+  - 内存带宽819GB/s！（4090是1008GB/s，5090是1792GB/s，买了一堆商单吹上天的AI Max+395的带宽是256GB/s）
+- 不过现阶段llm还是买不如租，租不如白嫖
+  - 除非是专业相关需要自己调模型发paper，或者是网上流出个671b的NSFW的model，否则本地部署671b没有太大意义（70b缺的通识知识可以通过允许联网搜索来弥补）
+
+- 其实，最应该干这个活的是AMD手里有CPU，有GPU，有缓存，有高速总线。而且x86生态好。AMD弄一个8核处理器，GPU尽可能多的芯片，支持多通道lpddr5很方便。结果，还是苹果先弄出来了。
+
+- AMD AI Max，4070级核显，128G片上内存，但内存带宽就256，苹果是500/800
+
+- LLM一次推理可以分为prefill和generate两个阶段。
+  - prefill阶段读入所有token，然后计算他们的内部表示。你可以理解为写文章前先读一遍书，把书上的字转换为自己理解的内容。
+  - generate阶段则是根据prefill的计算结果，生成新的token。这个可以理解为是看完书开始写，一次写一个字，写完一个字后再写下一个。
+  - prefill是计算密集型任务，因为prefill时所有要计算的token都已经确定，可以并行地同时计算所有token对应的内部状态。
+  - generate是内存密集型任务，因为generate时每个token的计算都依赖于前一个token的计算结果，所以只能一个一个地计算，这时候带宽就成了瓶颈
+  - prefill影响的是你看到第一个返回的字之前要等多久，generate影响的是后续token的生成速度。
+- 大家都会忽略prefill的速度只看generate的速度。这个在gpu上是合理的，因为gpu的计算速度相对能容纳的模型大小是足够的。但是在mac上，这个情况就反过来了，因为mac的内存可以很大，但是计算性能比较差，这就导致prefill会成为瓶颈。
+
+- 芯片不是M4 Ultra，而是M3 Ultra，其实本来就只有M3 Ultra，这在一年半前就有消息了，内部代号是T6032/T6033
+  - 至于M4 Ultra目前消息中显示是不会有的，不是为了给 Mac Pro 去拉开产品差异，而是M4 Max 没有 UltraFusion连接器，M3 Max 是有 UltraFusion 的，只是切割芯片的时候把 UltraFusion 连接器切掉了，所以放到网上看到的 M3 Max 的 Die 图找不到 UltraFusion 连接器。
+  - M3 Ultra 雷雳5的驱动应该是重新设计，符合它本身的定位。
+- 看内部代号 M5 Ultra 为 T6052，也是使用 UltraFusion 连接两块 M5 Max。
+- m4max相比m3max核心提升不大。做m4ultra提升也不大，研发成本还高。干脆直接m5ultra惊艳一点
+
+- 
+- 
+- 
+- 
+- 
+
+- 
+- 
+- 
+- 
 
 - ## [苹果产品中的“统一内存（unified memory）“与以往的”内存（memory）“有何不同？ - 知乎](https://www.zhihu.com/question/429727608)
 - 统一架构的好处，就是把以前内存和显存（显卡的内存，gpu用的memory）做了统一
@@ -1638,6 +1794,112 @@ modified: 2022-01-16T15:52:31.293Z
 - ## 
 
 - ## 
+
+- ## [支持多指触控的开源触控板来啦！ - 小红书](https://www.xiaohongshu.com/explore/6711d2b30000000021006a5d?xsec_token=ABBAVIU5BmyEoOSC1_U-awDuJr92L8j26jKmwMyo1z8q4=&xsec_source=pc_search&source=web_search_result_notes)
+  - Ploopy因其开源、3D打印的PC外设在小众市场中享有盛誉，其最新产品Ploopy Trackpad也延续了这一风格。这款“3D打印、开源的大型触控板”适用于桌面和笔记本电脑，尺寸为190 × 140 × 20毫米，比Apple的Magic Trackpad还大一些。
+  - 它支持Windows和Linux上的最多五指多点触控手势，但由于macOS与QMK固件之间存在限制，苹果设备的手势支持受限
+  - Ploopy Trackpad的外壳和触控表面都由PLA塑料3D打印而成，Ploopy声称这种材料比ABS更耐磨并且使用舒适。虽然最初计划使用玻璃表面，但最终选择了ABS，因为它在不同操作系统和设备上提供了更一致的跟踪效果。鉴于Ploopy的开源设计和活跃的社区，未来可能会有用户实现玻璃触控表面的改进。
+
+- ## [妙控板有没有平替 Apple也太贵了 舍不得 #妙控板 #Apple #苹果#Macmini - 小红书](https://www.xiaohongshu.com/explore/6822f22b000000002202f95b?xsec_token=AB7ZPhxG4yCtuySva103gpkHVwVRQu1KHJQbB5APshtUc=&xsec_source=pc_search&source=web_search_result_notes)
+- 没有，而且妙控有线>蓝牙连mac>蓝牙连ipad pro，很追求手感的话还要配一根长线，是连60hz的屏都能分辨出区别的程度
+- 没有，尤其是破罗技，一生黑
+
+- 买二手的吧，这个很耐用的，二手成色好和新的也没啥区别
+- 买一代的二手也就一百多啊
+
+- 是的，而且非常建议用有线连接，没有蓝牙的延迟，使用体验和mbp自带的基本一样
+
+- [我的mac mini穷鬼套餐，不失体验 - 小红书](https://www.xiaohongshu.com/explore/68320649000000000c03825f?xsec_token=ABF0XhwOtoKDBQhKUo195eNCcCz6x5xwHH_366uEQDqSo=&xsec_source=pc_search&source=web_search_result_notes)
+  - 一代妙控板可以配m4的，打开就直接连上了
+
+- [苹果触控板理想平替 150块能实现80%功能？ - 小红书](https://www.xiaohongshu.com/explore/6728d5db000000001b01018c?xsec_token=ABXrx-jUlKOXDJg4dJl1XMWqHF5XtUK6_hozrpAJbVH9Q=&xsec_source=pc_search&source=web_search_result_notes)
+
+- ## [最佳外接独立触摸板罗技casa touch体验 - 小红书](https://www.xiaohongshu.com/explore/6804c1f0000000001201c88a?xsec_token=ABZ7BagZ46pJM6c6btbNXwLHXUCDQ3iVwDsgN_a75SKZ8=&xsec_source=pc_search&source=web_search_result_notes)
+  - 太长不看，最佳外置触摸板-妙控板替代品，可以无脑下手。
+  - 罗技23年推出了一款pop-up desktop产品，里面包含了一个外置触摸板，上一次罗技推出独立的触摸板还是在十几年前。
+  - 大小和笔记本上的差不多，有黑色/白色和粉红色。表面材质是玻璃，被塑料覆盖。重量157.6克，妙控板是230克，触摸面积比妙控板2小很多，
+  - 可以用bolt和蓝牙进行连接，有三模，每一个都可以单独连接bolt和蓝牙，
+  - Mac/Windows/ChromeOS（fydeOS）/iPadOS都支持所有功能和手势。
+  - 可以连接三台设备，三个记忆点
+- 没有国行
+  - 闲鱼卖光了，可能要买套装了
+
+- 比huke好用太多了
+
+- ## [MacBook外接键盘使用分享 - 小红书](https://www.xiaohongshu.com/explore/66fbde7b000000002a034d62?xsec_token=ABuws2tsgaoDnK4grUvCbFCBwKv3VPGL8ZVJ0p8qGnHec=&xsec_source=pc_search&source=web_search_result_notes)
+  - 一、苹果妙控键盘 - 桌板轴 给 Mac 配备的第一个键盘是妙控键盘。这款键盘在适配性方面堪称最佳。无论是颜值、重量、键位、多功能键还是续航，都与 Mac 实现了无缝衔接。唯一令人吐槽的地方在于按键手感，几乎没有任何反馈，打字的时候，你可以想象自己是在敲桌子，完全没有输入的乐趣。倘若你不在意手感，那么这款键盘是我的首要推荐。
+  - 二、京造 K2- 红轴 受够了敲桌子般的无聊手感后，我换京东京造 K3 红轴键盘（与 Keychron 贴牌同款，当时众多自媒体都在安利的网红款，号称是 Mac 的第三方最佳适配键盘）。 这款键盘的颜值当时不错，黑橘配色，但是会打油，连接方式为蓝牙和有线双模式，轴体是佳达隆红轴，直上直下，比较轻盈。使用了一段时间后，体验尚可。槽点是键帽较高，使用时手部悬空，长时间使用会比较累。 内置电池待机时间短，充电较为频繁。对于强迫症患者来说，最难以忍受的是蓝牙断联和睡眠唤醒慢，还会吞字。
+  - 三、罗技 MX Mechanical-红轴 恰好罗技新上市了一款 MX Mechanical 矮轴机械键盘，超长待机、三模连接，满足我的需求，于是入手了一把茶轴款。这款键盘的轴体与传统轴体有所不同，茶轴有点类似于黑轴，手感很重，不够轻盈，不太适应，换成了直上直下的红轴。这个矮轴相比高轴的红轴，回弹稍微重了一些。矮轴长期使用不会那么累了，连接速度也很快，没有断联和吞字的情况，整体来说还是比较满意的。这款键盘目前我也一直在使用中。说缺点的话，键帽比较小众，没有完美替换的，少了些乐趣。键轴也不支持热插拔。
+  - 四、Nuphy Air75-越橘轴 给 Mac 主机配键盘，选择了 Nuphy 的 Air75 一代。键盘的包装和做工很精致，颜值是最高的，键帽好看，三模连接，采用佳达隆热插拔矮轴，连接速度快，不会出现断联和吞字的情况。后期换了Air75 二代，提高了连接速度和续航，增加新的轴体，新的轴体和垫棉带来了更好的手感。开始买的是芦荟轴，太轻，反馈弱，容易误触。换成了越橘轴，这个轴类似于 “HiFi 麻将音”，手感重一些，有更好的反馈力不会误触，长时间打字也不会累。
+
+- 刚入手keychron K4 pro 香蕉轴，手感不错，适合办公打字。关键是可以via改键位，很香
+  - 声音不大，挺柔软，适合在办公室用。
+
+- [苹果电脑妙控键盘 最强平替 - 小红书](https://www.xiaohongshu.com/explore/67cc2e4f00000000290198e4?xsec_token=ABb9QlEEv4edez8zXqcCpR1avO8fI6BvZ09MtS_ONM62k=&xsec_source=pc_search&source=web_search_result_notes)
+
+- [Mac book外接设备分享（穷鬼版） - 小红书](https://www.xiaohongshu.com/explore/67de16ad000000001d017c2e?xsec_token=ABYgeab4C5E3b9gpHBDeBL8QBz3tky0SCWCe9j92RoGQg=&xsec_source=pc_search&source=web_search_result_notes)
+  - 键盘⌨️：京东京造k3 max（💰340r）
+  - 鼠标🖱：蜻蜓VXE R1 SE+（💰70r）
+  - 拓展坞：绿联五合一（💰158r）
+
+- [可以支持Mac 的无线机械键盘，轻便静音，适合长期打字办公党的，宝子们有没有推荐呀？谁懂打字手指关节痛呀 - 小红书](https://www.xiaohongshu.com/explore/67a2ca1400000000290289d0?xsec_token=ABVfm3DcCUe0ysKmPGx8coQmEZCkPFcCZi28IS-M-_rUg=&xsec_source=pc_search&source=web_search_result_notes)
+  - 可以支持Mac 的无线机械键盘，轻便静音，适合长期打字办公党的，宝子们有没有推荐呀？谁懂打字手指关节痛呀
+- Nuphy Air系列或者Keychron K系列, Nuphy是静音的
+- nuphy air系列，铝厂 MG65 都很好
+
+- 宁芝静电容 mirco plum 84 35g版本
+
+- 官方妙控键盘 轻薄 静音
+
+- nuphy， 洛斐，渴创，都是支持苹果的成品键盘
+
+- 京东k3max，keychron代工的，我用着还可以。矮轴不需要腕托。
+
+- ## [Mac外接显示器使用的一些建议和优化方案 - 小红书](https://www.xiaohongshu.com/explore/67d823340000000007036b64?xsec_token=ABi4D7ISTN18_diLmfrK_nWQFIh4EdsPayzksbNRkvRgQ=&xsec_source=pc_search&source=web_search_result_notes)
+- Mac外接低分辨率显示器出现的模糊问题
+  - 当购买了Macbook或者Mac后 我们选择外接显示器 通常选择分辨率是 4k或者 5k的居多 但也有一些小伙伴用的是1080P或者是2k的显示器 导致Mac在此类显示器上会出现字体发虚、模糊等问题 
+  - 因为Mac默认 4k以上分辨率的显示设备才会开启HiDPi  
+  - 所以解决此类问题也很简单 利用软件强制开启HiDPi即可 这里推荐RDM 不仅开启HiDPi 还能开启显示器高刷 当然有条件的话 还是推荐换高分辨率的显示设备
+- 外接显示器后无法利用外接键盘调节显示器亮度和音量
+  - 第一次使用Mac外接显示器 用的外置键盘 却无法调节显示器的亮度 甚至音量也无法控制 这里推荐一款软件 即可解决此类问题 Monitor Control 是github上免费开源软件
+- MacBook长时间外接显示器满电使用电池寿命问题
+  - 这个问题也是大家很在意的 毕竟新买的设备都比较爱惜 这里推荐大家一款AIDente的软件 可以将设备电量🔋控制在 80%  还能控制MagSafe充电灯 充电的同时主动放电到 80% 的健康百分比等 还可以监控充电功率 计划充电等 网友评价很高 部分功能在Pro版本上需要付费 但一般基础功能免费开放
+- Mac mini m4 本身是支持 最高 4k 240hz 的显示器 多台连接也有 4k 120 hz或者 4k 144hz 办公 60hz足够 但是高刷体验更佳 比如浏览网页更丝滑 拖动窗口也丝滑 有足够预算选是最优解
+
+- ## [买了个超高清 4K 23.8 寸 便携显示器 - 小红书](https://www.xiaohongshu.com/explore/6810c50000000000090174b8?xsec_token=AB_QqkK7_ZF3_KbwyW1ZB1W-4U-ahovczyytBjBGhW3_A=&xsec_source=pc_search&source=web_search_result_notes)
+  - 如果是长期自用办公和科研，至少要2K以上，搞艺术的最好是4K。
+  - sculptor23.8寸 4K 显示屏
+
+- ## 📌 [便携屏挑选建议 - 小红书](https://www.xiaohongshu.com/explore/678deac90000000018029a17?xsec_token=AByy4GMp8bWndvumxKkA0t2zCapY5R9quZuyaVsMR8Y_w=&xsec_source=pc_search&source=web_search_result_notes)
+  - 首先明确需求: 办公还是游戏？Switch、主机或电脑？
+  - 目前市场主流品牌均为非一线厂商，但不代表产品不达标，质量也有很不错的。
+  - 主流品牌有，ARZOPA阿卓帕、雕塑家、EIMIO、CFORCE等，各有特色。其他品牌，若预算不足，要求不高，也可选择。 
+  - 主要有两个参数需要注意
+  - 帧率:60hz适合办公以及轻度游戏，包括switch、ps主机、电脑端。然后就是144hz及以上，适合FPS等竞技游戏，例如CS2
+  - 色域: 主要标准有sRGB、Adobe RGB、DCI-P3、NTSC。基本上sRGB大于75%就有较好的颜色表现了，当然越高越好。
+- 我相信1080p已经满足绝大多数人需求，更高分辨率不如直接上台显，对设备性能要求也会更高。
+  - 这也是为啥只测试了1080p的版本，足够清晰了，屏幕又小，钱花在刀刃上。
+
+- ## [mac mini 便携显示器难得找个完美的 - 小红书](https://www.xiaohongshu.com/explore/67be8dff00000000280368be?xsec_token=ABatyUb9Lx1XYXALQpMcvmTBAo775B3MvozPzD4EZe9RI=&xsec_source=pc_search&source=web_search_result_notes)
+  - 经过多方对比，拿下arzopa 16寸的2.5k便携显示器，菜单方便，连接一根线即可，显示效果不错，不过这类显示器很难支持hidpi，目前就1280-800还行，不过感觉缩放有点大，原始分辨率字又很小
+
+- 要么4k要么1080，m系列就是hidp有问题，得这两个分辨率，五年了都没解决很无语。intel版就不会
+  - 理解为没法点对点就行
+
+- 所以很多博主推荐苹果配4k显示器，就是要它默认1080p的hidpi。最重要的一点是mac的应用不能随意改变窗口大小，必须考虑这个问题（720p在用QQ音乐可能会与程序坞重叠）
+
+- 一般来说2k显示器默认720p的hidpi
+
+- [Mac外接便携屏 - 小红书](https://www.xiaohongshu.com/explore/68b697cf000000001d03b010?xsec_token=ABUJretia2o2VefwJarjPWkuB5UQVMIEKT9s7nuAqwVcs=&xsec_source=pc_search&source=web_search_result_notes)
+  - 要不然 1080 要不然 4k，mac 用 2.5 是不行的
+  - mac 的 hidpi 导致合并像素变成 720p，直接看 2.5k 的话小的没法看，其它分辨率会糊
+  - 重新买了一个4k的 感觉不错
+
+- [Mac mini + 2.5k 触摸便携双屏 - 小红书](https://www.xiaohongshu.com/explore/677691f1000000000902d752?xsec_token=AB-RIwo7Ptt2-VRNMWpcTa4IqKO9_fbiWVFPRQBKISJ7U=&xsec_source=pc_search&source=web_search_result_notes)
+  - 2.5k 虽然开了 hidpi 只有1260*800分辨率， 但在16寸屏幕上字体显示比较舒服，不会吃力，缺点是双屏触摸屏很重（2.1kg），已经不能算便携了
+
+- ## [mac怎么选便携外接屏？ - 知乎](https://www.zhihu.com/question/539704864)
+- 便携的话就ipadpro很适合，平时可以当pad用，看看电影，记记笔记，干活的时候就可以作为外接屏，很方便。
 
 - ## [英特尔怎么可能一年之间就没落了？ - 知乎 _202410](https://www.zhihu.com/question/2005473234)
 - pc端只是表象，真正打断intel骨头的是服务器端。zen刚推出的时候，16~32核线程撕裂者，平均每核成本和售价比志强低，线程撕裂者一推出就收到市场好评，28核以下的志强市场立刻遭受线程撕裂者的瓜分。

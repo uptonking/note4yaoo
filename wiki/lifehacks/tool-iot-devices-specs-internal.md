@@ -19,6 +19,9 @@ modified: 2024-09-25T15:17:42.743Z
 - omen暗影精灵问题
   - 键盘灯常亮只为最新的omen9提供了bios升级，旧版不支持，贴吧有人试过了
   - 官方提供的bios下载，最新版竟然不兼容无法使用
+
+- apple
+  - [认证的翻新产品 - Apple (中国大陆)](https://www.apple.com.cn/shop/refurbished)
 # phone
 - cpu 根据使用场景确定性能需求
 - 内存
