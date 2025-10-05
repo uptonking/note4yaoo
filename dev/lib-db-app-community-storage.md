@@ -161,7 +161,18 @@ modified: 2023-09-17T17:36:36.118Z
 
 - ## 
 
-- ## 
+- ## [Why MinIO uses 1.6 billion inodes a day? · minio/minio _202404](https://github.com/minio/minio/discussions/19630)
+  - Currently, the MinIO cluster has 3 nodes with 8 disks each, and the cluster has stored 4.5TB of data, using 1.6 billion inodes. I want to check where these 1.6 billion inodes are being used and whether this is normal.
+  - Stable traffic with only tens of millions of object writes per day, with a lifecycle set to 1 day.
+  - The cluster has a total of 40 buckets, 6.8 million files, with an average file size of 150K
+  - The file was deleted after reaching its lifecycle expiration, but the inode still remains. I believe this might be a bug that needs to be reported.
+
+- MinIO does not manage inodes; your filesystem does. For performance related questions look into our paid subscriptions.
+
+- When I use the bpftrace tool to debug the kernel, I find that MinIO keeps opening non-existent files, which prevents inodes from being released. What could be the reason, and how should I investigate this?
+
+- My situation is similar to this thread
+  - If I stop my minio process and fully clear the path it's using for its data, the inode count comes back down to what I expect. Obviously this is not an option for me - I want to keep minio operating, but just not have "double the inodes" consumed compared to what I expect.
 
 - ## [canva: We put half a million files in one Git repository (2022) | Hacker News _202308](https://news.ycombinator.com/item?id=37291765)
 - Ah yes, I too have accidentally committed node_modules.

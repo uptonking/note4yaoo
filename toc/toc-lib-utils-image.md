@@ -50,6 +50,10 @@ modified: 2023-04-04T22:39:45.442Z
   - https://immich.app/
   - High performance self-hosted photo and video management solution.
   - server依赖@nestjs/bullmq、typeorm、handlebars、kysely-postgres-js
+  - 🍴 forks
+  - https://github.com/EinAeffchen/Omoide /NonCommercial/202511/python/ts
+    - Self‑hosted, offline‑capable photo & video library with AI features. No cloud services required. 
+    - Everything runs locally after an initial one‑time model setup.
 # image-editor
 - https://github.com/ximing/fabric-photo /MIT/202003/js/inactive
   - https://ximing.github.io/fabric-photo/

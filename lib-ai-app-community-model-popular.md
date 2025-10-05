@@ -522,6 +522,34 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
+- ## 
+
+- ## [My key takeaways on Qwen3-Next's four pillar innovations, highlighting its Hybrid Attention design : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nwzs0k/my_key_takeaways_on_qwen3nexts_four_pillar/)
+  - Hybrid Architecture: Combines Gated DeltaNet + Full Attention to context efficiency
+  - Unltra Sparsity: 80B parameters, only 3B active per token
+  - Stability Optimizations: Zero-Centered RMSNorm + normalized MoE router
+  - Multi-Token Prediction: Higher acceptance rates in speculative decoding
+  - Qwen3-Next, especially its Hybrid Attention design, might be one of the most significant efficiency breakthroughs in open-source LLMs this year
+  - One thing to note is that the model tends toward verbose responses. You'll want to use structured prompting techniques or frameworks for output control.
+  - It Outperforms Qwen3-32B with 10% training cost and 10x throughput for long contexts. 
+
+- Don't get me wrong, I think it's really exciting that both Alibaba and IBM are experimenting with linear attention mechanisms (like Gated DeltaNet and Mamba2) at large scales in their open-weight releases.
+
+- The hybrid attention is cool on paper but I've been running some tests and the memory overhead during the attention switching is actually pretty brutal if you're not careful with your batching strategy.
+  - Been working with similar hybrid approaches at Anthromind and honestly the verbosity issue you mentioned is way worse than it sounds. It's not just about prompt engineering, the model genuinely struggles with knowing when to stop elaborating which becomes a real problem when you're trying to do any kind of structured output or API integration. The multi-token prediction sounds great but in practice you end up with these weird cascading errors where one bad prediction throws off the whole sequence. Still impressive work from the Qwen team but I'd def recommend extensive testing before any production deployment, especially if you're doing anything mission critical.
+
+- ## [What’s your experience with Qwen3-Omni so far? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nqg5q3/whats_your_experience_with_qwen3omni_so_far/)
+- from a usage standpoint? It's really, really good. The output voices are not the greatest, but it's multimodal input understanding is top notch. It's the only openweights model that actually "understands" a video
+  - Ovis2 and 2.5 are pretty good for videos too, sadly got never support in llama.cpp
+
+- Why would you want to do anything multimodal in llamacpp? It doesn’t even handle multimodal context. 
+  - llama.cpp supports mulitmodal models with `libmtmd` since Apr 10, 2025
+  - You just use the text model as gguf and load the mmproj gguf containing the vision encoder
+- Ya and libmtmd literally just dumps all your image tokens into the stream and has no idea what is what. Maybe for some workflows but nothing complex or multi step.
+  - That is true for basically all common inference engines like vllm though. It encodes the images to tokens and has those in context, sure thats not 100% safe in long chats, but for that you need high-level multimodal orchestration. As far as I understand most inference engines work that way, Encode the image to tokens and then insert them into the model context so even multi step works, but like with everything else it degrades over time.
+
+- Yeah the inference is catastrophic. Even if you manage to use vllm on unquant variant (>60GB VRAM), you can't use the streaming input audio feature, you have to write that code yourself. (transformers on unquant is stupidly slow, CPU bound). The model looks very good, and pretty cool, but "batteries not included" would be an understatement.
+
 - ## [Mistral 3.2-24B quality in MoE, when? : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mxmyhx/mistral_3224b_quality_in_moe_when/)
   - While the world is distracted by GPT-OSS-20B and 120B, I’m here wasting no time with Mistral 3.2 Small 2506. An absolute workhorse, from world knowledge to reasoning to role-play, and the best of all “minimal censorship”. 
   - GPT-OSS-20B has about 10 mins of usage the whole week in my setup. I like the speed but the model is so bad at hallucinations when it comes to world knowledge, and the tool usage broken half the time is frustrating.

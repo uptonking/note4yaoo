@@ -229,7 +229,7 @@ modified: 2025-09-16T13:29:11.327Z
   - 你是新汉语老师，你年轻, 批判现实, 思考深刻, 语言风趣"。你的行文风格和"Oscar Wilde" "鲁迅" "林语堂"等大师高度一致，你擅长一针见血的表达隐喻，你对现实的批判讽刺幽默。
   - 将一个汉语词汇进行全新角度的解释，你会用一个特殊视角来解释一个词汇：用一句话表达你的词汇解释，抓住用户输入词汇的本质，使用辛辣的讽刺、一针见血的指出本质，使用包含隐喻的金句。 例如：“委婉”： "刺向他人时, 决定在剑刃上撒上止痛药。"
   - 输出结果: 以下面 HTML代码 模版的形式输出词语卡片, 要求整体设计合理使用留白，整体排版要有简洁感优雅感
-  - 按上面的说明来解释: 百足之虫, 聚散浮生, 木石前盟, 金玉良缘, 膏粱锦绣, 金门绣户, 孤标傲世, 红飞翠舞, 玉动珠摇, 心活面软, 粉面含春, 烈火烹油, 眠花卧柳, 蜜里调油, 心甜意洽, 鲜花着锦, 茶饭无心, 坐卧不宁, 人烟阜盛, 风刀霜剑, 罕言寡语, 青灯古佛, 移船就岸, 万目睚眦, 引风吹火, 扯篷拉纤, 作小服低, 持戈试马, 高才捷足, 饫甘餍肥[yù gān yàn féi]
+  - 按上面的说明来解释: 百足之虫, 聚散浮生, 木石前盟, 金玉良缘, 膏粱锦绣, 金门绣户, 孤标傲世, 红飞翠舞, 玉动珠摇, 心活面软, 粉面含春, 烈火烹油, 眠花卧柳, 蜜里调油, 心甜意洽, 鲜花着锦, 茶饭无心, 坐卧不宁, 人烟阜盛, 风刀霜剑, 罕言寡语, 青灯古佛, 移船就岸, 前尘旧梦, 变生不测, 蛇影杯弓, 陈腐旧套, 投鼠忌器, 万目睚眦, 引风吹火, 扯篷拉纤, 作小服低, 持戈试马, 高才捷足, 饫甘餍肥[yù gān yàn féi]
 
 - [‌代码绘制卡片](https://langgptai.feishu.cn/wiki/QONuwufVYigZrvkbJ0nc42k6nqe)
   - 你是一位专业的节日海报设计师，能够根据用户提供的节日信息生成高质量、美观的节日卡片。你擅长运用简洁、典雅的设计原则，创造出富有美感和节日氛围的卡片设计。
@@ -555,6 +555,8 @@ modified: 2025-09-16T13:29:11.327Z
 - It's wild that Magistral 1.2 2509 was a honorable mention and it's not even a coding focused model. Goes to show that the model is a solid all around model for most things. Has a ton of world knowledge too. 
 
 - I have been able to get GLM 4.5 Air with lower quant on my 64 GB MBP and it’s good. Prior to it, I was getting GLM 4 32B to produce decent Python. I have stopped trying under 30B models for coding altogether as it’s not worth it.
+
+- I think VERY sophisticated RAG systems could actually rival large coding models. But most orchestration software is closed source or not that spectacular.
 
 - ## [Any fine tune of Qwen3-Coder-30B that improves its over its already awesome capabilities? : r/LocalLLM _202509](https://www.reddit.com/r/LocalLLM/comments/1nks4g2/any_fine_tune_of_qwen3coder30b_that_improves_its/)
 - You could try your look with Devstral Small 1.1 2507 as it is specifically designed as enterprise-grade agentic coder. Spends less tokens for the same amount of work in my use-cases.

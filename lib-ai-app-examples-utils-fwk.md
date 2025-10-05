@@ -228,6 +228,9 @@ modified: 2025-02-21T18:20:42.624Z
 - https://github.com/langchain-ai/open_deep_research /7.4kStar/MIT/202508/python
   - a simple, configurable, fully open source deep research agent that works across many model providers, search tools, and MCP servers.
   - By default it uses the Tavily search API.
+  - [Local Open Deep Research with Offline Wikipedia Search Source : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nx5w8m/local_open_deep_research_with_offline_wikipedia/)
+    - I created my own branch of the deep research repo and added functionality to enable fully offline Wikipedia search to decrease the per-report cost even further
+    - [Wikipedia Deep Research](https://publish.obsidian.md/neutron/Published/Projects/10-03-25+Wikipedia+Deep+Research)
 # ai-api
 
 # browser-use

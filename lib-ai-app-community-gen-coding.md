@@ -96,7 +96,16 @@ modified: 2025-09-01T07:58:29.058Z
 
 - ## 
 
-- ## 
+- ## [What's the best way to get the most out of LLMs for "vibe coding"? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1n8kadm/whats_the_best_way_to_get_the_most_out_of_llms/)
+- I like creating a product requirement document and then use AI to expand, analyse and refine it ( 2 or 3 rounds, using diferent llms) and  creating a file with a list of tasks/functions that need to be coded to create the script. After that i ask them to implement a task and review the code
+
+- Add one feature per chat.
+  - But you should really use an IDE with an agentic coding assistant, since copy-pasting code from one chat to another wastes a lot of time. This will also provide static analysis to catch basic code errors your or the AI might introduce.
+  - Also, (learn to) use git for version control. Some of the AI extensions will even write commit messages for you so no thinking is required.
+
+- You could have ChatGPT make a proof of concept script, with the functions you need and some suggestions. Then you could use VSCode with a free Gemini API to refine and debug. When it starts forgetting stuff just restart the conversation and tell it what files to use as context. Just remember to save your versions because it will break stuff.
+
+- The problem you're describing is super common - ChatGPT "forgets" parts of your script as the conversation gets longer because it's literally running out of memory space. I'd suggest you try out Kilo Code in VS Code (disclaimer: I'm working with their team). Its memory bank learns your patterns and preferences over time, so it remembers how you like to structure projects. Way cleaner than going back and forth for hours trying to keep everything in one conversation thread.
 
 - ## [How to tell cline must use recent documentation for a python lib? : r/CLine](https://www.reddit.com/r/CLine/comments/1nw95t9/how_to_tell_cline_must_use_recent_documentation/)
 - The context7 MCP server is tailored made for this.

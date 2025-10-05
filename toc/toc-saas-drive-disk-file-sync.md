@@ -609,6 +609,12 @@ modified: 2024-03-31T17:45:16.789Z
   - https://react-files-preview.netlify.app/
   - A file view component for React apps with image editor, and a sleek design powered by Tailwind CSS
   - 偏向图片
+# files-protocols
+- https://github.com/xetdata/nfsserve /685Star/BSD/202409/rust
+  - This is an incomplete but very functional implementation of an NFSv3 server in Rust.
+  - I wanted to implement a user-mode file-system mount that is truly cross-platform. What is a protocol that pretty much every OS supports? NFS.
+  - Portmapper is a very old mechanism which is rarely used anymore. We do not strictly need to implement this protocol as this is pretty much unused these days (NFSv4 does not use the portmapper for instance).
+  - [XetHub | NFS > FUSE: Why We Built our own NFS Server in Rust _202309](https://xethub.com/blog/nfs-fuse-why-we-built-nfs-server-rust)
 # more-drive
 - https://github.com/FazioNico/dDrive
   - An alternative storage solution to Google Drive

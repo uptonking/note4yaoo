@@ -82,7 +82,65 @@ modified: 2024-03-13T14:26:26.220Z
 
 - ## 
 
-- ## 
+- ## 🤔 [SeaweedFS fast distributed storage system for blobs, objects, files and datalake | Hacker News _202402](https://news.ycombinator.com/item?id=39235593)
+- SeaweedFS is built on top of a blob storage based on Facebook's Haystack paper. The features are not fully developed yet, but what makes it different is a new way of programming for the cloud era.
+  - When needing some storage, just fallocate some space to write to, and a file_id is returned. Use the file_id similar to a pointer to a memory block. There will be more features built on top of it. File system and Object store are just a couple of them.
+  - The allocated storage is append only. For updates, just allocate another blob. The deleted blobs would be garbage collected later. So it is not really mmap.
+- The blob storage is what SeaweedFS built on. All blob access has O(1) network and disk operation.
+  - Files and S3 are higher layers above the blob storage. They require metadata to manage to the blobs, and other metadata for directories, S3 access, etc.
+  - These metadata usually sit together with the disks containing the files. But in highly scalable systems, the metadata has dedicated stores, e.g., Google's Colossus, Facebook's Techtonics, etc. SeaweedFS file system layer is built as a web application of managing the metadata of blobs.
+  - Actually SeaweedFS file system implementation is just one way to manage the metadata. There are other possible variations, depending on requirements.
+- what makes it different is a new way of programming for the cloud era?
+  - Previously fallocate just allocate disk space for a local server. Now SeaweeedFS can allocate a blob on a remote storage.
+
+- SeaweedFS does the thing: I've used it to store billions of medium-sized XML documents, image thumbnails, PDF files, etc. It fills the gap between "databases" (broadly defined; maybe you can do few-tens-KByte docs but stretching things) and "filesystems" (hard/inefficient in reality to push beyond tens/hundreds of millions of objects; yes I know it is possible with tuning, etc, but SeaweedFS is better-suited).
+  - The docs and operational tooling feel a bit janky at first, but they get the job done, and the whole project is surprisingly feature-rich. I've dealt with basic power-outages, hardware-caused data corruption (cheap old SSDs), etc, and it was possible to recover.
+- In some ways I feel like the surprising thing is that there is such a gap in open source S3 API blob stores. 
+  - Minio is very simple and great, but is one-file-per-object on disk (great for maybe 90% of use-cases, but not billions of thumbnails). This has not been true since 2021. https://blog.min.io/minio-optimizes-small-objects/
+  - Ceph et al are quite complex. There are a bunch of almost-sort-kinda solutions like base64-encoded bytes in HBase/postgresql/etc, or chunking (like MongoDB), but really you just want to concatenate the bytes like a .tar file, and index in with range requests.
+- The Wayback Machine's WARC files plus CDX (index files with offset/range) is pretty close.
+
+- GarageS3 is a nice middle ground, it is not file on disk per object but it's simpler than SeaweedFS as well. https://garagehq.deuxfleurs.fr/ /AGPL
+  - Yes, garage sourcecode is very easy to read and understand. Didn’t read seaweed yet.
+- Garage has no intention to support erasure coding though.
+
+- 🤔 What are the pros/cons of storing one file per object?
+  - For many small objects a generic filesystem can be less efficient than a more specialised store. Things are being managed that aren't needed for your blob store, block alignment can waste a lot of space, there are often inefficiencies in directories with many files leading to a hierarchical splitting that adds more inefficiency through indirection, etc. 
+  - The space waste is mitigated somewhat by some filesystems by supporting partial blocks, or including small files directly in the directory entry or other structure (the MFT in NTFS) but this adds an extra complexity.
+  - The significance of these inefficiencies will vary depending on your base filesystem. The advantage of using your own storage format rather than naively using a filesystem is you can design around these issues taking different choices around the trade-offs than a general filesystem might, to produce something that is both more space efficient and more efficient to query and update for typical blob access patterns.
+  - The middle ground is using a database rather than a filesystem is usually a compromise: still less efficient than a specially designed storage structure, but perhaps more so than a filesystem. They tend to have issues (it just inefficiencies) with large objects though, so your blob storage mechanism needs to work around those or just put up with them. A file-per-object store may have a database also anyway, for indexing purposes.
+- The other commenter already outlined the main trade-offs, which boils down to increased latency and storage overhead for the file-per-object model. As for papers, I like the design of Haystack. https://www.usenix.org/legacy/event/osdi10/tech/full_papers/...
+
+- We (https://hivegames.io/) use this for storing 50+ TB of multiplayer match recordings ("replays"), heavily using the built-in expiry feature. It's incredibly easy to use and to built on top off; never had an issue updating, migrating or utilizing new features.
+
+- This sounds like what Microsoft has tried but failed to do in numerous iterations for two decades: OFS (Cairo, unreleased predecessor to Windows 95), Storage+ (SQL Server 7.0), RFS (SQL Server 2000), Exchange Webstore, Outlook LIS, WinFS, and finally Microsoft Semantic Engine.
+
+- We tested both SeaweedFS and Min.io for cheaply (HDD) storing > 100TB of audio data. Seaweed had much better performance for our use case.
+  - with MinIO and erasure coding a single PUT results in more IOPS and we saw lower performance.
+  - Also, expanding MinIO must be done in increments of your original buildout which is annoying. So if you start with 4 servers and 500TB, they recommend you expand by adding another 4 servers with 500TB at least.
+
+- Advantages over Ceph?
+  - Ceph should have 10x+ metadata overhead for chunk storage. When using erasure-coding writes are faster because it's using replication and then erasure-coding is done async for whole volumes (30GB).
+
+- Forgive my ignorance but why is this preferable to a big ZFS pool?
+  - I could be wrong here, but I believe this (ceph, et al) is the answer to the question: > """But what if I don't have a JBOD of 6x18TB hard drives with good amount of ECC RAM for ZFS? What if I have 3 raspberry pi 4's, at different houses with 3x 12TB externals on them, and 2 other computers with 2x 4TB externals on them, and I want to use that all together with some redundancy/error checking?" That would give (3x3x12)+(2x2x4)=124 TB of storage, vs 108TB in the ZFS single box case (of raw storage).
+- Ceph is nice, but performance is lackluster on anything but a proper cluster (pun intended).
+
+- Things to make sure of when choosing your distributed storage:
+  1) are you _really_ sure you need it distributed, or can you shard it your self? (hint, distributed anything sucks at least one if not two innovation tokens, if you're using other innovation tokens as well. you're going to have a very bad time)
+  2) do you need to modify blobs, or can you get away with read/modify/replace? (s3 doesn't support partial writes, one bit change requires the whole file to be re-written)
+  3) whats your ratio of reads to writes (do you need local caches or local pools in gpfs parlance)
+  4) How much are you going to change the metadata (if theres posix somewhere, it'll be a lot)
+  5) Are you going to try and write to the same object at the same time in two different locations (how do you manage locking and concurrency?)
+  6) do you care about availability, consistency or speed? (pick one, maybe one and a half)
+  7) how are you going to recover from the distributed storage shitting it's self all at the same time
+  8) how are you going to control access?
+
+- Have used SeaweedFS to store billions of thumbnails. The tooling is a bit clunky, but it mostly works. The performance is very good for small-ish objects (memory usage + latency), and latency remains consistently good into 99.9 percentiles. We had some issues with data loss and downtime, but that was mostly our own fault.
+
+- 
+- 
+- 
 
 - ## [Looking for SeaweedFS experiences : r/selfhosted _202212](https://www.reddit.com/r/selfhosted/comments/zks8xn/looking_for_seaweedfs_experiences/)
 - The major issue I have is with the Weed Mount (FUSE), which has a number of bugs that can result in corruption, particularly around SQLite database. This basically makes Plex, Sonarr, Radarr unusable. At the moment I suffer from sporadic `weed mount` process crashes, which just fowl the reliability of the service
@@ -129,7 +187,6 @@ modified: 2024-03-13T14:26:26.220Z
 - do you support pre-signed URLs?
   - we do not support signed URLs just yet, but it will be added in the next iteration
 - Presigned URLs are useful because client app can upload/download directly from S3, saving the app server from this traffic. Does Row-Level Security achieve the same benefit?
-
 
 - ## 💡 [The open-source alternative to Vercel Storage _202305](https://javascript.plainenglish.io/dodging-the-vercel-storage-tax-there-are-better-open-source-alternatives-ef04e537b598)
 - Vercel Postgres — A PostgreSQL database powered by Neon, that’s easy to set up, easy to integrate with any Postgres client

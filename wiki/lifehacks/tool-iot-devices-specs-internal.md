@@ -562,6 +562,9 @@ CPU主频	2.3GHz
 屏幕刷新率	165Hz
 响应时间	3ms
 
+- 最小尺寸（宽 x 深 x 高） 39.71 x 26.2 x 2.7 厘米
+- 重量 起始重量 2.78 千克, 含包装重量 5.45 千克
+
 ### ref
 
 - [OMEN 17.3 英寸游戏本 17-ck1000 (509W2AV)](https://support.hp.com/cn-zh/product/omen-17.3-inch-gaming-laptop-pc-17-ck1000/2100997909/model/2100997924/product-info)
@@ -661,6 +664,9 @@ CPU主频	2.3GHz
 - [惠普 ENVY 薄锐笔记本 - 15-as109tu 产品规格](https://support.hp.com/cn-zh/document/c05255263)
 - [HP ENVY - 15-as109tu Product Specifications](https://support.hp.com/us-en/product/hp-envy-15-as100-notebook-pc/12499192/model/13402468/document/c05255261)
 - [惠普ENVY 15-AS109TU(Y8H74PA)参数](http://detail.zol.com.cn/1156/1155399/param.shtml)
+# pc/mini
+- 惠普 战99 台式机
+  - 机箱的官方尺寸是 15L, 17.0×33.8×27.7 cm
 # watch
 - [反射屏或半反射屏的智能手表是不是都是垃圾，像华为手表都不用这种低端配置？ - 知乎](https://www.zhihu.com/question/461149092)
   - 这个主要用在户外专业运动手表上，大大节省屏幕的功耗，以提供更长的续航时间，以及电量供给给更需要的 GPS 定位。

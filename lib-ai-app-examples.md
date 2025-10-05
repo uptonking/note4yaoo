@@ -422,5 +422,10 @@ modified: 2023-02-08T07:20:48.475Z
 - https://github.com/exo-explore/exo /GPL
   - exo: Run your own AI cluster at home with everyday devices
   - exo supports different models including LLaMA (MLX and tinygrad), Mistral, LlaVA, Qwen, and Deepseek.
-  - 该项目支持将现有设备统一到一个功能强大的GPU中，支持 iPhone，iPad，Android，Mac，Nvidia，树莓派等等几乎所有设备。
+  - 该项目支持将现有设备统一到一个功能强大的GPU中，支持 iPhone，iPad，Android，Mac，Nvidia，树莓派等等几乎所有设备
+
+- https://github.com/GhennadiiMir/ollama_server_manager /202510/ruby
+  - A streamlined web interface for managing Ollama models across multiple servers. 
+  - Perfect for teams running distributed Ollama instances or managing models on different machines.
+  - Since I only use this on my private, trusted network, I kept it intentionally simple with no authentication required.
 # more
