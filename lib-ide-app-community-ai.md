@@ -628,6 +628,19 @@ modified: 2024-08-24T16:28:20.515Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Is the Memory Bank pattern deprecated/superceded now? : r/CLine _202510](https://www.reddit.com/r/CLine/comments/1ny9zpz/is_the_memory_bank_pattern_deprecatedsuperceded/)
+  - Not sure with all the updates Cline has had if this usage pattern is still recommended? u/nick-baumann was suggesting deprecating it a while back
+
+- No, and it's still extremely useful imo, i have different rules i use for different vertical slices and tasks that can get a new session up-to-speed very quickly. The ability to turn those rules on and off easily is a huge timesaver and Clines recent other improvements have done nothing to deprecate this use-case
+
+- I believe that post was just asking for options if it should be deprecated and he suggested that the focus chain https://docs.cline.bot/features/focus-chain might provide a better workflow now.
+
+- You gotta remember, memory bank works with your custom instructions, even with the updates even though we can't access those at the GUI in VSCode, it currently still refers to it as that file lives in /cline/rules... technically you don't even need Cline, just any LLM with a filesystem MCP server.
+
 - ## [What happened to context compression every 6 prompts? : r/CLine _202509](https://www.reddit.com/r/CLine/comments/1np8vjk/what_happened_to_context_compression_every_6/)
 
 - ## 🏠 [Why Cline cannot edit multiple files at once? : r/CLine _202509](https://www.reddit.com/r/CLine/comments/1njhygc/why_cline_cannot_edit_multiple_files_at_once/)

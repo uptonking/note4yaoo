@@ -16,7 +16,46 @@ modified: 2024-09-08T18:57:12.231Z
 
 - ## 
 
-- ## 
+- ## [Spent 6 months deep in prompt engineering. Here's what actually moves the needle: : r/PromptEngineering _202510](https://www.reddit.com/r/PromptEngineering/comments/1ny2pff/spent_6_months_deep_in_prompt_engineering_heres/)
+- Examples beat instructions 
+  - Wasted weeks writing perfect instructions. Then tried 3-4 examples and got instant results. 
+  - Models pattern-match better than they follow rules (except reasoning models like o1)
+- Version control your prompts like code 
+  - One word change broke our entire system. Now I git commit prompts, run regression tests, track performance metrics. Treat prompts as production code
+- Test coverage matters more than prompt quality 
+  - Built a test suite with 100+ edge cases. Found my "perfect" prompt failed 30% of the time. 
+  - Now use automated evaluation with human-in-the-loop validation
+- Domain expertise > prompt tricks 
+  - Your medical AI needs doctors writing prompts, not engineers. 
+  - Subject matter experts catch nuances that destroy generic prompts
+- Temperature tuning is underrated 
+  - Everyone obsesses over prompts. Meanwhile adjusting temperature from 0.7 to 0.3 fixed our consistency issues instantly
+- Model-specific optimization required 
+  - GPT-4o prompt ≠ Claude prompt ≠ Llama prompt. 
+  - Each model has quirks. What makes GPT sing makes Claude hallucinate
+- Chain-of-thought isn't always better 
+  - Complex reasoning chains often perform worse than direct instructions. 
+  - Start simple, add complexity only when metrics improve
+- Use AI to write prompts for AI 
+  - Meta but effective: Claude writes better Claude prompts than I do. Let models optimize their own instructions
+- System prompts are your foundation 
+  - 90% of issues come from weak system prompts. Nail this before touching user prompts
+- Prompt injection defense from day one 
+  - Every production prompt needs injection testing. One clever user input shouldn't break your entire system
+
+- The biggest revelation: prompt engineering isn't about crafting perfect prompts. It's systems engineering that happens to use LLMs
+
+- When I said prompt injection I meant more to when you are using AI inside your app and the user can talk to it (via a bot or smth similar). The two ways (as far as I know & tried) you can implement prompt injection defense are:
+  - Giving very solid instruction inside your templated-prompt you are using for your LLM.
+  - Fine tune your AI model to train it against prompt injections, but this a lot more time & resources, yet it's way more effective than any templated prompt.
+
+- Examples are good, however small models will overuse them and they can really ruin the output so you have to be tactical where you use them.
+  - I have a system in place that randomly picks examples from a larger set so you have more variety while keeping prompts lean.
+- Nice! I’ve a number of workarounds, my favourite is using unrelated examples that the LLM would never actually use - so it copies the structure but uses the context for the actual content.
+
+- Don’t make prompts static. Dynamically write the prompt in chain so you don’t have to craft a fucking system message that matters just preload hard rules and soft code other rules in the dynamic creating.
+  - You guys don’t think right. System prompts are not what you think. They are not rules for the system. It’s stargate.
+  - You dial up your destination with your user prompts. The system message is your origin. Your perspective it’s the things you believe as the environment.
 # discuss-known
 - ## 
 

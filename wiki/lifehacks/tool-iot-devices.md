@@ -995,12 +995,18 @@ modified: 2022-01-16T15:52:31.293Z
   - 模型选择: 支持int4、fp8、fp4，能否用nanchaku加速, 支持flash-attention、bf16、awq、sglang
 
 - 多显卡
-  - 多显卡的机箱太大，不便携
-  - 💡 可考虑使用大容量单卡如4090-48gb配合20L以下的小机箱如方糖机械大师cmax(18 x 39 x 28)
-    - 可用itx机箱包括, 机械大师c28(18)/cmax(20), 闪鳞g300(17)/g350(20), 乔思伯z20(20)
-    - 机箱选择cpu要注意cpu功耗和显卡功耗，可选用低功耗cpu+高功耗显卡，双塔风冷
-    - 暂时选择乔思伯, 公开资料最多
+  - 多显卡的机箱太大，不便携, 配置和维护成本高，不如用主流台式机箱或某宝成品可定制工作站
+  - 多显卡/多硬盘都需要大体积的机箱，itx一般不能满足，需要使用matx
   - 配置nvlink需要单独的bridge连接线
+  - 选显卡要注意尺寸，公版一般尺寸适中，其他场景的定制显卡有的长宽比较大，如三风扇卡会明显大雨涡轮卡
+
+- 可考虑用大容量单卡如4090-48gb配合20L以下的小机箱, 
+  - 4090公版尺寸304x137mm, 涡轮版267x111x38mm, ⚡️ 三风扇版350x140x53mm
+  - 可考虑itx机箱包括, 机械大师c28(18)/cmax(20), 闪鳞g300(17)/g350(20), 乔思伯z20(20)
+  - 机箱散热要注意cpu功耗和显卡功耗，可选用低功耗cpu+高功耗显卡，双塔风冷
+  - 暂时选择机械大师cmax(392*185*284mm, 20.5L), 因为能支持较长的三风扇显卡，显卡支持 385*160mm 以内
+    - 乔思伯, 公开资料最多, t6(13.6L), tk-o(16.45L),c6(18.4L), z20(20.2L)
+  - 想要128GB的内存，机箱的空间够大且满足散热需求是前提，还需要主板提供4个内存插槽，cpu的和内存的频率是能和谐工作，频率都不能太高
 
 - nvidia性能对比
   - [大模型GPU算力卡汇总 - 知乎](https://zhuanlan.zhihu.com/p/1904206218748236301)
@@ -1040,7 +1046,7 @@ modified: 2022-01-16T15:52:31.293Z
 | L20    | 48GB GDDR6 | 119  | 854gb/s     | 384   | 1.02w   | 350W  | no-nvlink                     |
 | L40    | 48GB GDDR6 | 147  | ?           | ?     | ?       | 350W  | ee                            |
 | L40s   | 48GB GDDR6 | 731  | 864gb/s     | ?     | ?       | 350W  | 48g-4.4w                      |
-| 5880ad | 48GB GDDR6 | 69   | 960/s       | 384   | 1.28w   | 285w  | 48g-2.5w,no-nvlik,6000Ad阉割  |
+| 5880ad | 48GB GDDR6 | 69   | 960/s       | 384   | 1.28w   | 285w  | 48g-2.8w,no-nvlik,6000Ad阉割  |
 | 5000ad | 32GB GDDR6 | 65   | 576/s       | 256   | 1.41w   | 250w  | no-nvlink                     |
 | 5090   | 32GB GDDR7 | 3352 | 1800gb/s    | 512   | 2.18w   | 450W  | 32g-2.3w, no-nvlink           |
 | 4090   | 24GB GDDR6X| 330  | 1008gb/s    | 384   | 1.64w   | 450W  | 48g-2.4w🌹, no-nvlink, 850wP  |
@@ -1055,17 +1061,14 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## [rtx 4090 vs rtx 5090 vs rtx 4090 48gb vram? : r/StableDiffusion _202505](https://www.reddit.com/r/StableDiffusion/comments/1km4snx/rtx_4090_vs_rtx_5090_vs_rtx_4090_48gb_vram/)
+- across various benchmarks rtx5090 is around 30% faster than rtx4090 in terms of "raw power". It also has native FP4 support, which can increase speed by ~x2 and reduce memory usage ~x2 for use-cases where fp4 models available.
+  - So, choice depends really on your use-case.
+  - If you run repetitive tasks and it fits into rtx5090 32GB VRAM, especially in fp4 format, then, this is the way.
+  - as an all rounder and for different experiments, rtx4090 with 48GB can be more interesting.
 
-- ## [Quad 4090 48GB + 768GB DDR5 in Jonsbo N5 case : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1m9uwxg/quad_4090_48gb_768gb_ddr5_in_jonsbo_n5_case/)
-  - JONSBO N5 NAS Pc Case: W355*D403*H350mm
-  - GPUs -- Quad 4090 48GB (Roughly 3200 USD each, 450 watts max energy use)
-  - CPUs -- Intel 6530 32 Cores Emerald Rapids (1350 USD)
-  - So some additional information. I'm located in China, where "top end" PC hardware can be purchased quite easily.
-
-- Do they "just work" or do you need sketchy drivers?
-  - On Ubuntu they just work with official drivers (either Ubuntu PPA or Nvidia). 
-  - On Windows I've seen reports that they do not work with official drivers, but I have not tried (nor do I plan to run windows on this machine)
+- If you have a workflow with multiples models, vram is king as it allows you to avoid loading / unloading models. It's the slowest part of the process in generation. With enough vram, you can keep all models loaded, gaining a tremendous amount of time each generation.
+  - Example: generating with model A which has very good prompt understanding but shit styles, glossy skin etc...then inpainting / upscaling with model B which has better style and so on.
 
 - ## 🆚 [RTX 5090 vs RTX 4090 48GB (or RTX 6000) : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mo92ou/rtx_5090_vs_rtx_4090_48gb_or_rtx_6000/)
 - The jump from 32GB to 48GB is a big jump, but the question is whether it's actually relevant today. 
@@ -1951,6 +1954,375 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
+- ## 
+
+- ## [Are there any ITX motherboards that can handle 128GB RAM? : r/buildapc _202307](https://www.reddit.com/r/buildapc/comments/15cazh5/are_there_any_itx_motherboards_that_can_handle/)
+- Are there ones that you, right now, as an average consumer or even business can buy? No.
+  - There are custom ITX server boards that have 4 DIMM slots, but they're for fairly old and slow server CPUs using DDR3, and have no PCIe slots.
+  - DDR5 can technically support up to 512GB on a single DIMM, so an Intel 13th gen or Ryzen 7000 ITX motherboard could theoretically support up to 1TB of RAM! But the largest consumer DIMM is 48GB, so the most you can get on an ITX motherboard right now is 96GB. 
+
+- If you need 128GB right now, you have to get an mATX motherboard. There is no other option.
+- That said, the SSUPD Meshroom S can take an mATX motherboard, even a full sized ATX motherboard, and isn't much bigger than the Terra.
+
+- [Can you guys recommend me a motherboard which can support 128gb ram? : r/buildapc _202412](https://www.reddit.com/r/buildapc/comments/1hbspr8/can_you_guys_recommend_me_a_motherboard_which_can/)
+  - I'm looking for a motherboard which can support a lot of ram for programming. Preferably it should be mATX. I've heard that ITX boards aren't really great for that soft of thing. edit : CPU is Ryzen 9 7950x.
+- ASUS rog-strix-b650e-f has 128 GB configurations on their Memory QVL for Ryzen 9 7950x. According to them it'll run at 5200.
+  - I'm considering such a configuration now. I've not yet found an ASROCK Motherboard with any 128GB configurations on their QVL.
+
+- All of the mid tier boards with 4 memory slots will support minimum 128GB.
+  - First choice you have to make is which cpu you want, after that you can look for mobo recommendations.
+
+- Since you're 7950X (though I'd strongly recommend getting a 7900X or 9700X as they're far better value - www.bestvaluecpu.com exists, filter for AM5), just get one with decent VRMs. This probably means going ATX as high end boards are usually this size.
+  - I would not recommend putting a 7900X in a ITX build, it'll get spicy in there!
+  - 64gb is enough even for most video editing, 128gb is "I do programming for my job and my job paid for this PC" kind of levels.
+
+- [128GB of RAM in a tiny box? : r/buildmeapc](https://www.reddit.com/r/buildmeapc/comments/17lxgsj/128gb_of_ram_in_a_tiny_box/)
+- The smallest motherboard with 4 dimms would be a micro ATX. Mini ITX only have 2 slots, that's why you can't find options for 128 GB.
+  - I thought maybe DDR5 had been out long enough to be able to find a 2x64GB kit, but looks like maybe not. But, Crucial does have a 2x48GB DDR5 kit, and 96GB would be alright.
+
+- I'd suggest the following that gets you 128GB of DDR5 RAM, a 14-core 13600K, compact 17.9L case, with very good CPU cooling capacity that will allow the CPU to run under heavy multi-core load without thermal throttling.
+  - CPU: the 13600K provides a good number of cores for a lot of VM's, 
+  - Motherboard: mATX motherboard with wifi and bluetooth, plus 4 RAM slots.
+  - Memory: 128GB of RAM (four sticks of 32GB).
+  - Storage: Good sped 2TB PCie 4 NVME.
+  - Video Card: It wasn't clear if you need a separate GPU or not. Added in a decent GPU for not too much money - though if you can just use integrated graphics, you could upgrade to a 13700 for more cores.
+  - Power Supply: SFX unit for space savings in the compact case.
+  - Case: The Mechanic Master C28, despite being mATX, is smaller than several mITX cases 
+
+- [Please advise on a mATX build with 128GB RAM : r/buildapc _202307](https://www.reddit.com/r/buildapc/comments/15e1r2j/please_advise_on_a_matx_build_with_128gb_ram/)
+  - So far my only criteria is: - AMD 7950X, 128GB RAM, RTX4090. Likely the CPU would be under a lot most stress than the GPU for most of my use cases, 
+- Asus Prime AP201 MicroATX Mini Tower Case	
+  - Motherboard	MSI MAG B650M MORTAR WIFI Micro ATX AM5 Motherboard
+  - Memory	G. Skill Trident Z5 Neo 64 GB (2 x 32 GB) DDR5-6000 CL30 Memory x2
+
+- 4x DDR5 configurations barelly run with 4800MT/s and even that might need some DDR5 kit swaps till you have 4 working DIMMs.
+  - Getting DDR5 6000MT/s CL30 is ridiculous.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
+- ## [64G内存+纯CPU裸跑gpt-oss:120b - 小红书](https://www.xiaohongshu.com/explore/68a6ee02000000001c03f964?xsec_token=ABIl2xpN-BcJcn0jmdi2k1RkNoJcXZiMAtj5QFwnpIark=&xsec_source=pc_search&source=unknown)
+  - 64G内存+纯CPU裸跑gpt-oss:120b，一秒钟几个字儿往外蹦
+- 慢主要是因为用的DDR4，内存带宽太低
+
+- 换AMD，7840H＋96G内存，纯CPU跑30B，30t/s, Q4，我需要长上下文，Q4拉满256k要79G内存。量化再往上就加载不上了
+  - 7840H没有npu
+
+- 组一个一千多块的洋垃圾，256gddr3内存跑，效果看着还行，b站别人有类似视频
+
+- ## [多么痛的领悟，上百台ITX电脑总结出的经验 - 小红书](https://www.xiaohongshu.com/explore/64d4825a000000000c034f36?xsec_token=ABRh3ACWg_DKSLuH2VaseP_A7Mn7MpO5RifkuaugGycJM=&xsec_source=pc_search&source=unknown)
+- 第一种机箱类型：ITX主板+小1U电源（个人非常不推荐）
+  - 优点：体积可以做到很小，很薄。
+  - 坑点：小1U电源噪音大且是你受不了的那种、CPU散热器难以选择、需要显卡延长线、需要半高显卡。
+  - 建议：非必要，直接不要选择
+
+- 第二种机箱类型：ITX主板+SFX电源（比较推荐，但也不是没有问题。）
+  - 优点：可选择的电源比较多、结构合理、很多品牌的电源也可以做到没什么噪音。
+  - 坑点：假的SFX电源比较多且虚标、有些也需要显卡延长线
+  - 建议：优先选择类似机械大师C24这种显卡直插形式的。SFX电源尽量选择长城、TT这些品牌。
+
+- 第三种机箱类型：小尺寸MATX主板+SFX电源（比较推荐，主要这类机箱较少，好看的不多）
+  - 优点：主板选择空间大，有很多便宜的主板，可扩展空间大，装了显卡还能装网卡，费用少。
+  - 坑点：没啥坑点，就是可选择的机箱有点少。
+  - 建议：就选艾罗拉SS31/30、笨牛U45等，如有其他建议评论区留言帮助大家。
+
+- 第四种机箱类型：ITX主板+MATX电源（非常推荐，但这类机箱更少了）
+  - 优点：电源可选择性很多，空间富裕，显卡可直插主板等。
+  - 坑点：同样没啥坑点，也是可选择的机箱有点少。
+  - 建议：目前我见过的机箱有闪鳞G200，同样建议有好心人评论区留言帮助一下大家。
+
+- 装了好多种itx，小1u那种适合功耗比较低的，而且大多数小1u电源机箱都要买显卡延长线，而且好的静音电源很贵，建议还是装那种sfx电源的，省事，也比较便宜，后期扩展性也比较大，显卡选择也更多样一些，前面提到的那种一般都是短卡，价格又上去了
+
+- ## [u7 265k用什么风冷能压住 pa140可以吗？还是p60t，或者fc140？  ](https://www.xiaohongshu.com/explore/68d1b0a30000000013007154?xsec_token=AB9X5HvN7d3sRdmBFeEqk4N5mZwaaHkl_t8SjBmCKQI7c=&xsec_source=pc_feed)
+  - 开始看到有人说pa120就可以，然后140差不了多钱性能比较好，但是去问客服，客服说不行，说fc140可以。然后也看到推荐p60tv3的，但也有说阿萨辛都压不下265k的。
+- 默频满载功耗也不低啊，官标250w，我的满载跑默频260w，最好的风冷也不建议去压240w以上的u。除非你买265k就为了刷刷视频，而且对游戏帧数没要求，没生产力需求。
+
+- 正常用随便一个设计没硬伤的双塔都能压，甚至非生产场景单塔都行，因为ultra系列的优势就是超高能耗比，低功耗也能发挥绝大部分性能，
+  - 但你要以长期满载和喜欢烤鸡看温度为要求，这u满载250w风冷干不动只能水，我会选择pa120这种中小尺寸双塔或者厚单塔，相对好装省事儿，fc140这种大驼子除了安装和更新硅脂时带来痛苦带不来什么
+- 这位解释的很好了。满载风冷不够，但大多数情况下双塔风冷随便选
+- 降个压吧，损失一点点换个好功耗用
+- 不超频降压用风冷就没问题，如果要超频那功耗就冲着300w去了，必须水冷
+- 你要是做视频解码啥的还是水冷吧，撑的时间长些，不然降频了
+- 可以限制啊。你玩itx追求完美释放性能吗？
+
+- 我这pa120换扇p12e对我这个用于编译的工况是够的，p60t没对比过
+
+- 265跟147比就是，性能一样，不缩缸，功耗还低，6热管双塔风冷就行。147一般都是360水冷
+
+- pa140，换俩12cm的风压扇，记得额外买个12cm风扇的扣具
+
+- 如果你会设置cpu，265k，190瓦左右，就可以发挥出97%的性能，也就是说你用b60t也行，甚至大霜塔
+
+- ## 🤔 [itx主机CPU选哪个（AMD还是intel）？ - 知乎](https://www.zhihu.com/question/444107051/answers/updated)
+- 11代是牙膏倒吸，没必要。AMD带G的也在涨，轻度使用3400G完全足够，还可以兼顾点游戏，不过还是看预算吧，肯定是预算内堆核心。
+  - itx主机麻烦在散热器和机箱的选择上，体积压缩到极致还要散热强，不然容易积热。当然如果不在乎体积的话另说
+
+- 在ITX环境中，还是intel有点优势 
+  - 因为ITX优点和缺点一样明显 所以选择intel的平台，办公尽量选择低功耗的, 桌面atx/matx的diy平台，选择amd ryzen
+
+- [10l以下ITX可以支持最高什么cpu？ - 知乎](https://www.zhihu.com/question/7439796831)
+
+- 10L刚好能装双塔，双塔风冷散热器所能支持最高CPU是 EPYC 9004系列和R9 9950X系列。
+
+- 现在有的10L的机箱可以装135mm的散热器。135mm双塔的解热能力在200W出头。
+  - 如果以生产力需求为主，那么可以上新的ultra7 265k，新的ultra系列虽然游戏性能开倒车，但是能耗比比上一代有大幅度的提升，比较符合你的情况，但是性价比不高，按需选择。
+  - 如果以打游戏为主，那么amd X3D系列的CPU可以随便用。因为工艺问题，除了最新出的9000系列x3d其他的都是限制功率的。功率比非x3d型号的CPU要低。
+  - 其他的amd系列的处理器。基本可以随便上，即使是解锁了功耗的9950x也只有230W。
+
+- 10L以下的机箱上不了三槽的标准显卡。只能核显或者有些可以用专门的itx短卡。如果是用风冷，基本就不要考虑intel带k的型号和amd的高端型号了。可能有用120水冷的，上个i5带k的就最多了。
+  - 10L左右能上240水冷的机箱我以前还真研究过，这种的基本最高能跑两百瓦出头，上i7带k的型号稍微降一点电压基本能发挥出来，顶级的i9带k跑不满，但也不是彻底不能用。
+
+- 默认用的话其实目前 [Ultra200S系列] 或者 AMD 9000系列 都对散热要求较低了，考虑10升以内的旗舰处理器也都问题不大，基本不会有i9性能损失后只有i7甚至i5性能的问题。
+  - 所以不论针对游戏或者生产力主机，配置上处理器都可以放心的选择9950X或者9800X3D或者是U9 285K都是OK的。
+
+- [U7 265K和9700X到底么选 - 小红书](https://www.xiaohongshu.com/explore/68a883b8000000001c03c2ab?xsec_token=AB2GCeMJb66g6AJnAmLcHLOqUT9Bzg3qO1V9MsHhNoFL4=&xsec_source=pc_search&source=web_search_result_notes)
+  - 首先9700x有积热问题又或者说这个U太挑散热器也很难压温度 我风冷双塔散热器九州风神AK620默认频率待机温度57度 随便开个软件60来度 打3A游戏甚至70多度 散热器和机箱风扇忽吵忽静 严重影响我正常体验
+  - 其次我的机箱是Z20 显卡5070Adoc 这么小的机箱 我稍微玩一下3A游戏这俩货给我机箱搞的跟个炉子似的 
+  - 原先14600KF江西夏天不开空调游戏温度58度不到、显卡最高65度、换了9700X游戏温度极度不稳定平均73度 偶尔抽搐一下温度能干到80度 显卡也更热了
+- 烤鸡40分钟都没你打游戏热
+  - 我各种试过了 问了商家今年批次的9700X电压默认给的高 但是我不开PBO然后负压30温度还是很高 我见过最低温度53度差不多
+- 你这温度应该开pbo而且还没降压吧，9700x默认88w温度不高啊，9700x不开pbo，用个百元的风冷随便压啊，打游戏噪音更多来自显卡吧
+
+- 主要265k没法升级了 am5起码能用到2027年 但是Intel明天又要换接口 太逆天了
+
+- 俩都不是一个等级的，97x能配几百块入门的b650，265k搭配的z板最差的也接近1k，稍微好点的b板也这个价，总拿货价比97x高一个数量级了，本来就不该拿来比，265真正的强势来源于能跟更贵的79x99x掰手腕
+
+- 生产力265 游戏97x，还有70度对于cpu来说还太低了，85度都很正常，你这实属温度瞎焦虑
+
+- ## [为什么ITX架构的短显卡大部分都是Nvidia的，而AMD的高端ITX显卡则一卡难求？ - 知乎](https://www.zhihu.com/question/318806879)
+- ITX 短卡就是一个细分市场, 事实上除了我国有一堆 K39, 鱼潮S3 这样的机箱, 其他国家基本都找不到类似的机箱.
+  - 目前 N 卡阵营里的短卡主要以 [技嘉] 为代表, 包含 1060/1070/1080, 2060/2070 和 1660. 所以除了 1080Ti/2080 这些顶级旗舰货, 基本上甜品卡都有了.
+
+- 最根本的原因在我看来是源自于n卡对笔记本市场的重视。笔记本受制于电源适配器，拢共就200w左右的供电能力，CPU和GPU（显卡核心）都要吃电的情况下，两位大哥都得控制住自己的功耗。
+  - 一般就分给显卡90-140w，给cpu 60-90w，多了要么电源扛不住，要么散热顶不住。
+  - 有了笔记本控制散热和电源的前提，设计芯片时，才会控制能耗比和发热，最终也就能做出适合itx的短卡、刀卡。
+  - 由于nv在笔记本市场的排挤，amd很难把自己的芯片推销给成熟、有名气的笔记本厂商，并做出调教完美的好产品。
+
+- 成本，公版vega就用上了均热板(而且大多数高端卡也都用上均热板了)，所以NANO用均热板是不会有什么成本增加的。
+
+- ITX显卡市场是显卡市场下的另一个细分市场，太小众，AMD作为弱势方也没余力发展。
+  - 而且ITX卡对能耗比要求较高，AMD在这方面没有优势。
+
+- ## [5090靠边让让，真神降临——48G的4090！ - 小红书](https://www.xiaohongshu.com/explore/67b5809e000000000e006d0c?xsec_token=ABGeo98UKSG8fjOMNixsHiBRqoxj7iqPLj_-v2GsF7NMk=&xsec_source=pc_search&source=web_search_result_notes)
+  - 【CPU】AMD R9 9950X
+  - 【主板】技嘉 B650M AORUS PRO AX
+  - 【内存】阿斯加特 TUF 64G(32GX2) D5 6400
+  - 【显卡】英伟达 4090 48G 涡轮卡
+  - 【固态】三星 990PRO 2T+1T
+  - 【机箱】机械大师 CMAX
+  - 【散热】九州风神 冰暴 240 LCD屏
+  - 【电源】全汉Hydro PTM X PRO 1200
+  - 【风扇】棱镜 4PRO
+  - 【定制】CMAX硅胶线
+
+- ## [ITX | 塞个RTX5080？没问题！ - 小红书](https://www.xiaohongshu.com/explore/67bc32a90000000009039a96?xsec_token=ABBUmmsfcqVOegTyFI0DTJ4zLCSJXlG34hPsmQuX6DX3M=&xsec_source=pc_search&source=web_search_result_notes)
+  - 背靠背结构的ITX机箱刚好塞入了一张三风扇的RTX5080，海韵SPX750作为扎实耐用的经典sfx电源轻松带动了i5+RTX5080的组合，顶部两个安静优雅的海韵Magflow风扇为机箱带来了更优化的风道散热
+  - 机箱：FORMD T1
+  - 显卡：影驰RTX5080-16G魔刃
+  - 主板：微星B760i D4 Wi-Fi
+  - 内存：皇家戟ddr4-4000-16g*2
+  - CPU：i5-14600K
+  - 散热器：超频三RC600黑色电源：海韵SPX750W
+  - 风扇：海韵MagFlow RGB 120*2
+  - 电源：海韵SPX750W
+
+- [高颜值、能装三扇长显卡的13升itx主机 - 小红书](https://www.xiaohongshu.com/explore/676e9a4f0000000014026954?xsec_token=AB_LcGHuSS1a9ZxmBLSWAdGMd-OlAMXO2f9f82oya7dHg=&xsec_source=pc_search&source=web_search_result_notes)
+
+- ## [小机箱 5090d+9950x3d 拿下！ - 小红书](https://www.xiaohongshu.com/explore/67f779020000000007036603?xsec_token=ABegebsB80NsOXLuiVvWiW-lQszDh0QuWayKWLU0ABe5c=&xsec_source=pc_search&source=web_search_result_notes)
+  - 【CPU】AMD RyzenTm 9 9950X3D
+  - 【显卡】微星 5090d超龙
+  - 【机箱】方糖机械大师C+MAX银色
+  - 【主板】微星 MAG B850M MORTAR WIFI
+  - 【散热】TRYX PANORAMA展域240水冷ARGB 黑色
+  - 【内存】佰维 128G（32Gx4）DDR5 6400 C34
+  - 【固态】三星 9100PRO 4TB PCIe5.0*4 M.2接口
+  - 【电源】 洛基1200w
+  - 【风扇】 联立积木三代
+
+- 我和你一样的卡和U，这样装冷排吸显卡尾气再加上9953这个火炉得多热啊我用的还是大机箱和展域360性能版水冷，待机就要40多度了，稍微打开几个网页登一下steam就50+了
+  - 我感觉还能接受哎，待机五十多，打开 C4d 轻量干个活 70 多度，CPU 反正也烧不坏
+- 我是14900k换过来的之前没用过x3d的CPU。149k虽然耐电但是待机温度不高的，浏览网页不会超过35度。还是心理上没适应高温的CPU
+  - 那我老适应了之前用的 i9+3080ti 笔记本
+
+- 如果是 LOL 这种游戏的话显卡三十多度，cpu 六十多，3a 游戏大概都在七八十度左右
+
+- 换个联力a3就可以了，侧面还可以加三把风扇，5面打孔散热板
+
+- 机械大师c系列侧边都是玻璃，要是换成网散热能更好点
+
+- [C+MAX金属大师 GT银灵感 - 小红书](https://www.xiaohongshu.com/explore/65f446c20000000014005ff3?xsec_token=ABxIEa1q74egE8STTJo9DqtGHzgiBycDD0OoPvjAjGLJA=&xsec_source=pc_search&source=web_search_result_notes)
+  - CPU：12600KF
+  - GPU：影驰 金属大师 4080super
+  - 机箱：方糖机械大师 C+max 月光银Air版
+  - 主板：技嘉 B760M A ELITE AX D5
+  - 散热：奥斯艾i240-B 一体式水冷
+  - 硬盘：光威 弈系列 旗舰版 2T
+  - 电源：海盗船SF850L
+
+- [机械大师 CMax 老铁抄作业了 9700X搭 5070T - 小红书](https://www.xiaohongshu.com/explore/67caf20b0000000029029b83?xsec_token=ABqsyDIYHWnZyXfQUxpaLc8dJaKdhuBLrkKua73Sg89IQ=&xsec_source=pc_search&source=web_search_result_notes)
+  - CPU：AMD 9700X 中文盒（全程烤机不超 70 度）
+  - 显卡：技嘉 RTX5070TI 雪鹰 16G
+  - 主板：技嘉 B850M 冰雕 WiFi6E
+  - 散热器：酷里奥 p60t Pro 白色性能版
+  - 机箱：机械大师 Cmax
+  - 阿斯加特女武神二代 32G 套 6000 c28 
+  - 硬盘：三星 990 Pro 4TB 固态
+  - 电源：航嘉 sfx 额定 850w 白金全模 atx3.1
+
+- ## [itx机箱有啥很难受的缺点吗，散热到底能有多差？ - 知乎](https://www.zhihu.com/question/337421059)
+- 缺点是空间太小，走线麻烦，换零件麻烦(换的频率不高就不算是缺点了
+  - 散热也是看机箱而定的
+- 散热也是看机箱而定的, 目前装过三台c24 qbx geeek a4的温度都没啥问题
+  - 现在很多a4 机箱的风道都是从下到上，肯花钱买风扇的话，散热效果还是可以的
+  - 实在不行就把侧透换成防尘网呗，又能低五度了
+
+- 风道设计在 ITX 里虽然重要，但是实际上最影响散热的是硬件选择，比如你非要在 ITX 里放 i9 + 旗舰或次旗舰的显卡注定好不了。
+  - 几年前为了装个 Ubuntu 小主机，搞了一套 11900K + 6600XT 的 ITX 主机，开机就60度以上，后来给 CPU 降压降频，每个核心都降了 0.2GHz，电压 1.1v 才勉强压下来
+  - 另外一点就是 ITX 对 SSD 不友好，常见 ITX 主板的 M.2 位少，且散热差，刚才提到的那机器，玩游戏的场景下不一会 SSD 就能上 70 度。背面的 SSD 就好很多，只有 50 度左右
+  - 如果想要 ITX 的“小”，那么推荐全部用中端的硬件，i5 级别左右 + 中端显卡，不常移动且能接受水冷的话可以上 240 尺寸的水冷，显卡可以看看品牌拆机的涡轮卡，能够有效的降低箱内温度。
+
+- 我之前搞了个12500H+P4的itx，热的根本没法用，CPU和显卡一直100度，最后无奈换了个ATX机箱，解决，温度没高于60度过
+
+- 当温度上去后，带来的最直观后果就是风扇转速过高引起的噪音很大。
+  - 另外itx机箱和主板对于硬盘控非常不友好。M.2一般不超过两个且温度较高，3.5机械硬盘安装困难即使装上去也一般会占用一个风扇位间接影响散热。
+- 确实, 我光看小巧便携去了, 几年也搬不了一次, itx换下来比常规贵两千, 而且性能还差
+
+- [【8.1L】 便携科研ITX本地小主机推荐1️⃣ - 小红书](https://www.xiaohongshu.com/explore/67adb5420000000029034581?xsec_token=ABakFdkTIJ1ZcM6p0CG5TD5J9V9fUMmia67ixkR6mRgtE=&xsec_source=pc_search&source=unknown)
+  - 机箱：闪鳞s300 tc+usb PCIE4.0延长线（444）
+  - CPU：12600kf｛也可14600kf（板u：1889）｝
+  - 主板：铭瑄b760i WIFI D4（1669）
+  - 散热：利民AXP90-x53 4热管（164）
+  - 内存：金百达银爵3600 D4 32G*2 （741）
+  - 硬盘：金士顿kc3000 1T PCIE4.0 1G独缓（473）
+  - 显卡：技嘉风魔RTX4060ti-16G（3689）毫无性价比，可以考虑二手大显存的卡。
+  - 电源：玄武650sfx 金牌全模组（359）
+- 12600kf已经可以满足很多日常的生产力任务同时不用担心缩肛，但是和14600kf仅有200元差距，说实话我更推荐146kf，但是无奈缩肛…有动手能力的小伙伴可以上146kf
+- 铭瑄b760主板性价比首选。给到9个USB接口其中有2个20Gbps的c口，带WIFI6E网卡，同时给到2个m2 2280的插槽，支持PCIE4.0的速率。再搭配4个SATA接口给硬盘扩容，满足高存储的需求。同时对显卡是PCIE5.0x16插槽。
+
+- ## 🧩💡 [ITX机箱推荐 2025年版 80起步 ［支持MATX主板、ITX主板、常规ATX电源、SFX电源 15L 20L体积］300以内 高性价比 台式电脑机箱 K88 i8 P90 趣造等 - 知乎](https://zhuanlan.zhihu.com/p/677817218)
+
+- resources
+  - [CaseEnd filters](https://caseend.com/)
+
+- 15升、20升机箱的结构类型：常见结构，基本是前置电源，横放显卡
+  - 有一些特殊的机箱，结构：下置电源、需要显卡延长线、下压式风冷。类似酷鱼T40，但本文不做推荐（太少了，花费也可能比较高）
+
+- 玻璃侧板：常见的侧板材质，安装时，需要注意边角不能被磕到，否则它会碎掉。
+- 亚克力侧板：透明塑料侧板，如果温度较高，可能会有塑料味，时间长了，也会发黄。
+- 铁侧板：相对来说，比较其他类型的侧板，这款是最好的，碎不了，也不会有塑料味。但有些厂家，铁侧板甚至不开孔，这就会让散热效果差。
+- 防尘网侧板：这种侧板，一般自己DIY的比较多，多为塑料材质。部分机箱，是金属侧板+防尘网的组合。
+  - 所有机箱，都可以自制防尘网侧板，成本不到10块：
+
+- 本文推荐的所有机箱，个人都只推荐装双风扇显卡。 双风扇显卡，长度一般不会超过300毫米，多数机箱，都可以放下。
+
+- 机械大师 cmax ◇99
+  - 尺寸：392*185*284mm, 20.5L
+  - 显卡：385*160mm以内
+  - 散热：162毫米风冷 或 240水冷
+  - 材质：内框：1mmSPCC钢材 ；外框：2mm铝合金
+  - 主板支持 MATX/ITX
+  - 电源支持 SFX/SFX-L/（140mm以内）ATX
+  - 风扇支持 顶部：12cm*2；尾部：12cm*1；前面板：8/9cm*1
+  - 2.5寸硬盘位 至多3个
+  - 3.5寸硬盘位 至多1个
+
+- 鱼巢 S9 ◇99
+  - 尺寸：375×188×300, 21.15L
+  - 显卡：360x150限长
+  - 散热：160毫米风冷 或 240水冷
+  - 材质：1.2毫米 镀锌钢板
+  - 侧板：~~玻璃~~
+  - 电源：ATX电源，170mm以内
+  - 主打的就是便宜，99，还能走背线，让机箱内更美观一些，虽然能走的不多
+
+- 铝小宝 E90 PRO
+  - 尺寸：377×187×298, 21L
+  - 显卡：355x150x80mm限长
+  - 散热：160毫米风冷 或 240水冷
+  - 电源：ATX电源，160mm以内, sfx/fiex电源需自备转接板
+  - 铝小宝ALBOX P90 ◇158, 被E90Pro取代
+    - 尺寸：375×188×300, 21L
+    - 显卡：360x150x80mm限长
+    - 散热：160毫米风冷 或 240水冷
+    - 材质：1.5毫米+1.0毫米 冷轧钢板
+    - 侧板：铝 或 亚克力
+    - Motherboard(MM): 245 x 245
+    - Power Supply(MM): 150 x 160 x 86
+    - 木质提手，算是这个机箱的特色了。
+    - 电源延长线位置，在机箱顶部，装出来的效果，就参考官方这个图吧。
+
+- 笨牛 N20 ◇199
+  - 尺寸：381×199×300mm, 22L
+  - 显卡：限长364x160x85mm, 16cm的电源长度支持315mm显卡长度, 16cm以上电源仅支持290mm显卡
+  - 材质：1.5毫米+0.8毫米 冷轧钢板
+  - 侧板：3毫米 玻璃侧板
+  - 散热：164毫米风冷 或 240水冷
+  - 能走背线的小机箱，不多，也不少。不过都只能走一点点。前面板有大面积开孔，散热通风好，电源位置有一个挡板，装出来，那堆线就看不到了
+
+- 包子星人 A88Pro ◇183
+  - 尺寸：380×195×305, 22.6L
+  - 显卡：360毫米限长
+  - 材质：1.2毫米 镀锌钢板
+  - 侧板：铁 或 玻璃
+
+- 先马趣造 ◇139
+  - 尺寸：391×185×303
+  - 显卡：335毫米限长
+  - 散热：155毫米风冷
+  - 材质：1.5毫米+1.0毫米 冷轧钢板
+  - 侧板：铝 或 亚克力
+  - 趣造还有个兄弟，叫做蓝宝石银角大王，但目前只有库存货了，而且卖的比趣造贵……
+
+- 文中提到的这些品牌，多数都是有10升的机箱，可以去搜搜看。
+
+- 有没有多盘位（3-5个3.5HDD）小机箱推荐
+  - 无
+
+- 如果拒绝光污染，非透明侧板的15升，有推荐吗？
+  - A88
+
+- ## [有哪些可容纳 4090 显卡的 ITX 机箱？ - 知乎](https://www.zhihu.com/question/559771286/answers/updated)
+- 极限尺寸itx不是不能搞，问题是溢价太高，定制的机箱就要1k-2k左右，主板（itx板型），电源（），显卡（最完美的是，三风扇的不用想了）小尺寸的全都有溢价。总体比正常配要贵30%-40%左右。
+  - 4090还算好，你降频到3090这个水平玩没有散热问题，但是itx正常用散热问题很大，建议开盖，不然CPU得上水，显卡4090降频用问题不大，还有背部m2的散热，风切声音问题等等。
+
+- 公版4090和3090一个大小，买公版然后基本上原本能装3090的都能装
+
+- 在reddit上看到了几个案例，不提Nr200、Meshlicious那些大号的itx机箱，就看10L左右的：
+  - Formd T1，这是个10L的机箱，这个机箱我也在用，外形我非常喜欢。我自己的T1里面塞了个公版3090。
+  - 联力A4-H2O，这是个11L的机箱，继承了Dan A4的好传统，增加了兼容性，成本也降下来了
+  - Jimu D+ V2.0，10.5L的机箱，同样塞进去了一个4090FE+AIO，这个机箱外观和内部规划跟Formd T1几乎如出一辙，但价格要便宜些
+  - Ncase M1，不到13L，因为不是三明治格局，这货为了不憋死4090把机箱垫起来了，而且如果不用个90度转接头的话4090的电源线没法插。
+- 基本上看到的小于14L的4090案例就这些了，如果放宽要求，reddit上有大量的ssupd meshlicious的案例，虽然体积要大不少，但因为是竖直放置的，占地空间非常小
+  - 除了公版卡之外第三方的卡基本都塞不进去
+
+- ## [各位心目中最好的ITX机箱是什么？ - 知乎](https://www.zhihu.com/question/55014071/answers/updated)
+- 我自己DIY主机，喜欢在有限的空间里，充分发挥各部件的性能
+  - PS：我从不考虑水冷，因此不做水冷推荐。
+
+- 高性能兼顾小体积的选择：乔斯伯的Z20机箱（20L）
+  - 高性能主机的显卡是一定要上三风扇的，基本上是4080以上级别，CPU也是13600以上的规格，这对机箱的散热有不小的要求。
+  - 乔斯伯Z20机箱顶部和底部可以支持4个14cm风扇，尾部还可以装一个12cm风扇，合理规划下进上出的风道，足够压得住4080和13700的组合。
+- 最佳性价比小机箱的选择：机械大师C26（12.9L）和笨牛U45（11L）
+  - 2024年这个时候，三大厂的ITX主板比MATX主板贵了将近一倍，同样的配置把MATX主板换成ITX主板至少贵600块，实在没什么性价比。因此选择MAXT主板+SFX电源的组合，便成了兼顾性价比的最小机箱搭配
+  - 2.1更强散热，推荐机械大师C26。对于AMD显卡+CPU组合或者13700+4070ti高性能组合的，更推荐带前面板风扇位的机械大师C26。这个规格的机箱，顶部和底部只支持9cm风扇了，这个大小的风扇还带侧边RGB样式的，我只找到鱼巢的9cm风扇。
+  - 为了压13700或5800X这样的CPU，135mm高度散热器只能选利民的SS135了，但这款不带RGB风扇，为了和9cm鱼巢的风扇rgb风格统一，建议自行更换成鱼巢的12cm风扇。如果是13400规格的CPU，那么利民的AK120mini就能压得住，RGB风扇的风格就自行发挥了
+  - 2.2更具性价比且更紧凑，推荐U45。U45有个缺点就是前面板没有风扇位，所以建议CPU和显卡的规格要下降一些，以防机箱闷罐。此外，U45右边那个挡板设计，虽然方便了理线和藏线，但我是真的欣赏不来这设计。
+
+- ## [Quad 4090 48GB + 768GB DDR5 in Jonsbo N5 case : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1m9uwxg/quad_4090_48gb_768gb_ddr5_in_jonsbo_n5_case/)
+  - JONSBO N5 NAS Pc Case: W355*D403*H350mm
+  - GPUs -- Quad 4090 48GB (Roughly 3200 USD each, 450 watts max energy use)
+  - CPUs -- Intel 6530 32 Cores Emerald Rapids (1350 USD)
+  - So some additional information. I'm located in China, where "top end" PC hardware can be purchased quite easily.
+
+- Do they "just work" or do you need sketchy drivers?
+  - On Ubuntu they just work with official drivers (either Ubuntu PPA or Nvidia). 
+  - On Windows I've seen reports that they do not work with official drivers, but I have not tried (nor do I plan to run windows on this machine)
+
 - ## [乔思伯Z20机箱小白首次装机分享 - 小红书](https://www.xiaohongshu.com/explore/67eadb49000000001c00c0db?xsec_token=ABhwvh4o79bh1iZJod5ETLKzRMlnZYs2oM-5p3wHmKM24=&xsec_source=pc_search&source=unknown)
 
 - [乔思伯Z20装机分享 - 小红书](https://www.xiaohongshu.com/explore/67e7b093000000001201ed15?xsec_token=ABhmT245aHYddZ3_znj1lt9rAgzysn8wPmPsb_KU5jWH0=&xsec_source=pc_search&source=unknown)
@@ -2122,6 +2494,78 @@ modified: 2022-01-16T15:52:31.293Z
 
 - 装c26的坑： 1买风冷没注意大小，放不进去 2对风扇太过自信，买多了，上面的风扇位和风冷打架 3机箱内电源线很怪只能往内排风，因为不敢随便弯折线 4买了个显卡支架，位置不够装
 
+- ## [纯白色美学装机小巅峰，机械大师C28 AI“学习机”配置分享](https://www.zhihu.com/tardis/zm/art/691493855?source_id=1003)
+- 彩虹的主板绝对是最高性价比白色主题装机的选择。
+- 内存是来自宏碁掠夺者的冰刃系列，内存顶部是哑光半透导光条，相当漂亮。
+  - 冰刃的灯光很柔美，能够被七彩虹的iGame Center统一控制
+- 显卡是索泰的RTX 4070 Ti Super月白
+- 水冷是利民冰封视界240水冷，一块LCD屏幕给机箱增加了几分灵动。
+- 由于机械大师C28机箱内存限高最多44mm，这里不得不将利民冰封视界240水冷当作120水冷来用
+- 电源规格上支持140mm的ATX电源搭配ITX主板使用，也支持SFX/SFX-L搭配Matx主板使用，电源支架安装起来也蛮方便，其实机械大师的机箱只要把铝壳子拆下装机就很简单。
+  - 由于超级紧凑的机箱设计，电源位被设计机箱前侧，通过电源转接线进行连接。
+- 机箱设计有4个PCIe槽位，只要满足限长的显卡统统拿捏，机箱前部可以上一个9cm的风扇。
+
+- 前置接口上给到了1只USB-A与1只Type-C接口
+
+- 主板：七彩虹CVN B760M FROZEN WIFI D5 战列舰
+  - 主板采用了12+1相直出式加强供电，CPU核心供电为12相，核显供电为1相，最大电流55A，CPU供电接口为8+4设计。B760芯片组本就是不支持CPU超频的，
+  - 相对B760I推荐上14600K来说，CVN B760M FROZEN WIFI D5 V20 就更推荐配合i5-13490F或者是带核显的i5-13500使用了。
+
+- 主板板载了4个DDR5内存插槽，单槽容量最大支持32GB，总共最多可以支持到128GB内存，内存频率最高支持XMP 6600MHz（OC），目前市面上的高性价比D5内存普遍以6000MHz、6400MHz居多，选B760M刚刚好。
+- 内存时序CL32，工作电压1.4，内存PMIC不锁电压，用户可以自行体验超频的快乐，毕竟6800MHz的内存就要加400块呢
+
+- 主板提供了1个采用了合金强化设计的PCIe 5.0 x16插槽以及1个PCIe3.0 x4插槽，其中x16插槽由CPU提供，x4插槽由PCH提供，可以用来扩展万兆网卡、采集器等PCIe配件。
+
+- 主板提供了3个M.2接口，均为PCIe 4.0 x4，其中靠近CPU的M.2接口由CPU提供，剩余2个M.2接口由PCH提供，三个M.2接口均配备了便捷锁扣，靠近CPU的两个M.2插槽有散热装甲覆盖。正值双十一大促，加满M.2 SSD也花不了多少钱。
+
+- 机械大师C28配240水冷+Matx主板，SFX电源是唯一选择。鑫谷SFX昆仑KL-750G冰山版ATX3.0全模组电源主打一个纯白配色，1块出头1W也还能接受。
+
+- [小钢炮也有大能量｜13600K+B760+机械大师C28 装机实录](https://www.zhihu.com/tardis/zm/art/616613140?source_id=1003)
+- 选择 C28 的理由是相比C26plus 宽度高度大了 20mm。实物并没有太大的尺寸差距，但换来更宽裕内部空间，对于机箱内部散热还是很有好处的。
+  - 配件方面，13600K+ B760M +6600XT 硬件组合，日常应用不成问题，玩游戏跑个 2K@144 绰绰有余，特效稍微调低也可以流畅运行 4K 游戏。
+  - 散热是超频三的风冷 K4，电源因为要考虑到后续要升级 4060ti，选用振华刚出的 13cm 白金电源 VP 1000W。 
+- 机械大师的箱子都超级紧凑，尺寸较小，颜值也高，很适合桌面摆放，配合便携屏效果一流。
+- 机箱可以支持 335mm 以内的显卡，6600XT 作为过渡显卡，后续会上 4060ti。
+- 机箱虽然小巧，但可以支持到 280 水冷。其实我本来也是建议他直接上水冷，奈何朋友总是担心漏液，死活要上风冷。
+  - 风冷的话散热高度限制在 162mm，超频三 K4 的高度是 156mm，可以说是刚刚好。
+  - 四热管 + 130mm 高性能风扇，官方宣称能压住 12900K，压个 13600K 应该没啥问题。
+- 振华 VP1000W 是刚出的新品，主打 13cm 短机身、全日系电容、高转换率。振华是典型的反向虚标专业户，额定 1000W 完全可以当 1200W 来用。而且标配的线材都是柔性软线，很适合用在这种紧凑型机箱里。
+
+- 装机屏幕用的 INNOCN 15Q1F ，屏幕采用的 OLED 技术，显示效果出色，最关键的是这货支持触控，而且自带电池，装机调试都特别方便。
+
+- 英特尔 酷睿 i5-13600K CPU处理器采用性能核+能效核混合CPU架构，拥有6个性能核和8个能效核。
+  - 拥有 14 核心 20 线程，主频至高可达 5.1GHz，PCIe 5.0 至高可达20通道，DDR5 至高可达 5600MHz，24MB 的 L3和 20MB L2高速缓存。
+  - 搭载英特尔 770核芯显卡，支持超频和WIFI6E网络。
+
+- GIGABYTE B760M AORUS ELITE AX 主板
+  - AORUS 系列属于技嘉产品高端阵营，定位追求极致的电竞玩家。
+  - 主板采用了14+1+1相核心供电，辅助供电为 8 Pin + 4Pin 12V输入，60A 供电晶体管， 2 盎司铜电路板 + 6 层 PCB 设计，供电、SSD、芯片组等关键位置，甚至连南桥都覆盖了银白色的散热装甲，配合 6mm 热管以及高品质导热垫，让主板散热更为均匀，实现高效的散热能力。
+  - 主板为标准的四槽内存设计，有D4\D5 两个版本可选。D5 版最高可支持 7600MHz（O. C），最高兼容 128GB 内存容量，其独有的超频黑科技（高带宽低延迟模式）目前也只搭载在 D5 版上。
+  - 此外主板提供了双 PCI-E 插槽，靠近 CPU 的插槽采用合金装甲加固，支持 PCI-E 4.0 x16速率。下方则是普通插槽，速率也只有PCI-E4.0 x4，适合插一些扩展卡之类的。
+  - 一体式挡板接口丰富，技嘉B760M小雕WIFI 提供了4个USB 2.0 接口、1个USB3.2 Gen2 Type-A接口（10Gbps）、3个USB3.2 Gen1接口（5Gbps）、1个USB 3.2 Gen2 Type-C接口（20Gbps），HDMI/DP 接口各1、以及2.5G网络接口。当然WiFi6无线网卡天线接口以及音频输入/输出接口、光纤接口都一一完备。
+  - 技嘉 13代 主板开始推出的“高带宽低延迟模式”，对于内存性能提升效果明显，特别是高频内存，我之前曾经用它将 7200MHz 内存超到了 7800MHz，读写拷贝超过 10GB/s，写入更是逼近12GB/s（119.18 GB/s），延迟更是压到了 55.7ns，特别适合喜欢玩超频的朋友，有兴趣的朋友可以看看我之前做的测评。
+
+- 技嘉从 b760 D5 主板开始，推出了个“高带宽低延迟模式”，同样的 DDR5 内存条在这块板能跑出更高的读写，更低的延迟，就拿雷克沙这套内存来说，同样的 5200MHz 开启这个模式后，相比正常XMP模式下数据都有不小的提升。
+
+- SSD 是雷克沙定位高端的 NM800PRO 1TB。单面PCB 底板，厚度控制不错，笔记本或者游戏主机都能适配。SSD 表面覆盖新一代纳米铜箔复合材料，搭载智能温度检测模式，有助于快速降温，长时间使用不用担心高温引发的掉素问题。
+
+- 散热用的手头的 超频三 K4。其实我本来建议上水冷，奈何朋友一直对水冷有偏见，总担心漏液的情况。K4 是 超频三的高端风冷，全金属扣具，支持 I家 / A家 全平台处理器，标配 GT-3 高导热硅脂，能够快速将 CPU 产生的热量进行传递。
+  - K4 采用单塔单风扇设计，塔身为全黑色电泳工艺，独立装饰性顶盖，四热管触底导热、50 片130mm 铝制散热鳍片进行热量散发，两者通过穿Fin工艺组成鳍片群加大散热速度。整体工艺还是蛮精细的。
+
+- 电源安排的振华 VP1000W。这款电源最大的亮点就是采用了创新的微型化技术，提高性能的同时尺寸缩减到 13cm 短机身、可以释放不少空间给其他硬件。电源本身通过了 80plus 白金认证，转换效率高，加上额定 1000W 的功率，别看身材小，拖 13900 + 4090都不成问题。
+
+- 机械大师在紧凑型机箱里拥有不错的口碑，之前我就装过一次 C26 plus，体验极好。这次选的稍大一些的 C28
+  - 机箱灵活度极高，除了基本框架，大部分面板都是可拆式组合，不过大量螺丝拆卸起来还是比较繁琐，这也是其被广大网友戏称为“螺丝大师”的原因。
+- 背板可拆，方便走线的同时安装配件更加轻松。有些主板 m.2 是在主板背面，用这个机箱就可以在不拆主板的情况下加装 SSD。
+- 顶部还支持 双 12cm 风扇或者 240 水冷。话说别看 C28 体积就比 C26plus 大了一点，但装机体验好了不少。
+
+- 便携屏｜INNOCN 15Q1F
+  - 装机我都是习惯用便携屏。INNOCN 15Q1F采用的 OLED 屏幕
+  - 重量 0.94kg ，单手握持毫无压力，长时间使用有专用的皮套提供倾斜角度。接口是 Type C X 2 +Mini HDMI 组合，可以实现一线连功能（供电与信号传输一线达成）。
+  - 这款便携屏支持手指直接操作，十点触控+内置的触摸OSD面板
+  - 甚至还支持无线连接。INNOCN 15Q1F自身搭载了 WiFi 模块，通过它可以将主机、手机或者笔电的画面直接投屏显示，控制则通过触摸实现
+  - 便携屏还内置 5000mAH 电池，可以脱离线材连接的不便，续航时间能达到 4小时左右，完全就是台平板电脑。
+
 - [【17.9L】C28迷你手提主机 - 小红书](https://www.xiaohongshu.com/explore/664881a50000000014018c4a?xsec_token=ABjcFKpzYqPfIG6C1AnlqDTFCINPxDCJ7dN5lu4n9saWI=&xsec_source=pc_search&source=web_search_result_notes)
   - 开盖风冷都行
 
@@ -2203,11 +2647,6 @@ modified: 2022-01-16T15:52:31.293Z
 - 这么紧凑散热跟得上吗？
   - 4060和12490F，配置不高，目前温度稳定，显卡最高到72
 
-- 
-- 
-- 
-- 
-
 - ## [新品预告：闪鳞G350机箱 - 小红书 _202504](https://www.xiaohongshu.com/explore/680b49e4000000000f03025e?xsec_token=ABmVEaGHnouuW4by4cF_K2PztIm78YN2rgioigqEQn8-4=&xsec_source=pc_search&source=web_search_result_notes)
 - g300加顶部风扇支持吗，太心动啦
   - g350支持两个顶部风扇
@@ -2222,8 +2661,8 @@ modified: 2022-01-16T15:52:31.293Z
 - 能不能出个mesh板，把玻璃换成网孔
 
 - ## [机箱说¹ - 乔思伯和机械大师谁赢了 - 小红书](https://www.xiaohongshu.com/explore/66a61571000000002701010c?xsec_token=AB-NVtDH_xyoN48IVgN-otrQDhbPhG6D8S77xA6fATSDM=&xsec_source=pc_search&source=web_search_result_notes)
-  - c+max尺寸:392mm*284mm*185mm 20.5l体积
-  - z20      尺寸:370mm*295mm*186mm  20l体积
+  - c+max尺寸:392mm*284mm*185mm  20.5l体积
+  - z20  尺寸:370mm*295mm*186mm  20l体积
   - z20最好的方案是风冷+atx的组合
   - c+max最佳方案是水冷+atx的组合
   - c28在安装240水冷的情况下，大部分主板不支持atx电源。

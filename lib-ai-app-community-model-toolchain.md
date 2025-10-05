@@ -126,7 +126,52 @@ modified: 2025-09-16T12:36:12.968Z
 
 - ## 
 
-- ## 
+- ## [Mixed precision KV cache quantization, Q8 for K / Q4 for V : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kddcdp/mixed_precision_kv_cache_quantization_q8_for_k_q4/)
+- Plenty of KV cache quantization literature suggest K is more sensitive to quantization than V (SKVQ, QAQ, etc.
+  - No one can really answer whether K8V4 is good enough as this is highly model-task-setting-whatever else dependent, 
+  - but conventional wisdom suggests: Granting Key cache more budget is generally the right move.
+  - You probably need some kind of "fancy" KV cache quantization techniques — like our KIVI, 
+
+- Yes.. I try it all the time. 4/4 is really bad, 8/4 is as low as I'm willing to go. Don't forget to compile llama.cpp with all kernels.
+
+- ## [Does Q4-8 'KV cache' quantization have any impact on quality with GGUF? : r/LocalLLaMA _202409](https://www.reddit.com/r/LocalLLaMA/comments/1flw4of/does_q48_kv_cache_quantization_have_any_impact_on/)
+- Yes in my test. I was testing the summarizing ability of llama3.1 8B q5_ks on oobabooga a while back on youtube transcripts.
+  - With q4 kv cache the accuracy was about 82%. (something like that) I think even q8 had a performance drop that was unacceptable. (if I remember correctly)
+  - Without cache quantisation bullet point accuracy went up to 97.6% accuracy. This was over at least 5 youtube videos of 2-12 minutes each. (If I remember)
+
+- Q8 is pretty painless, but Q4 can be pretty rough, although is usually usable. Smaller models will feel it worse. Just like with model quantization.
+
+- Yes, I noticed some larger models suffer even with q8 so I don't even bother using it
+
+- ## [Recommendation for getting the most out of Qwen3 Coder? : r/LocalLLM _202508](https://www.reddit.com/r/LocalLLM/comments/1mrzi5x/recommendation_for_getting_the_most_out_of_qwen3/)
+- Setting K quantization to q4_0 has a pretty big impact on model’s quality of output. 
+  - K is much more sensitive to quantization than V. 
+  - You can get away with q4_0 for V but for K the lowest i’d go is q5_1 and ideally q8_0
+
+- [Why is my llama so dumb? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1ljn4h8/why_is_my_llama_so_dumb/)
+  - I know a lot of models don't like going that small. Try upping that to Q8_0 or even fp16/bf16.
+  - Q4_0 is a fairly very aggressive quantization. Quantization noise leads to loops.
+  - Ive personally never used a model that didnt have a noticable decrease in quality at q4, often even at q8. Just leave it at fp16.
+
+- [What's the best models available today to run on systems with 8 GB / 16 GB / 24 GB / 48 GB / 72 GB / 96 GB of VRAM today? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1k4avlq/whats_the_best_models_available_today_to_run_on/)
+  - I wouldn't go as low as q4_0 for K cache, quality impact is quite noticeable. q4_0 on V cache seems fine though.
+  - I use in larger models (nemotron 253B, deepseekv3 03-25) ctk q8_0 and ctv q4_0, haven't noticed much differences vs fp16 (on deepseek I had to test at like 4k ctx lol)
+
+- ## [LM Studio released new version with Flash Attention - 0.2.22 : r/LocalLLaMA _202405](https://www.reddit.com/r/LocalLLaMA/comments/1cir98j/lm_studio_released_new_version_with_flash/)
+- Must be because llama.cpp merged it recently.
+  - Yes, from the changelog
+- ROCm version already released you need to get the link from LMstudio discord sever
+
+- The flash attention benefit becomes noticeable at LONG LONG contexts - at 26k, its the diff between 30 tok/sec and 10 tok/sec w/ LLama 3 8B on an M3 Max.
+
+- the difference shows up at long contexts.
+
+- Quick check for me didn't see any difference between flash attention on and off for llama3 8b. On a Macbook pro
+  - Made huge difference for me on m2 max Mac studio in terms of ftimr to first token and general response rate for decently sized contexts. Details are also remembered much better
+- Try with more context, or models like Mixtral. In llama.cpp (which LMStudio uses) I get about 4+ tokens a second higher and no real downside. I can store a lot more context at the same time.
+
+- Flash Attention works on Mac? I always thought CUDA only.
+  - Not only does it work it seems to be giving a bigger performance boost, at least on some quick tests
 
 - ## [weighted/imatrix VS static quants? : r/LocalLLaMA _202405](https://www.reddit.com/r/LocalLLaMA/comments/1ck76rk/weightedimatrix_vs_static_quants/)
 - Imatrix quants were introduced a couple of months ago and are recommended over static quants because they have better output quality. 

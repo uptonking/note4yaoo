@@ -54,4 +54,5 @@ uv run python manage.py runserver 0.0.0.0:8071
 
 ```
 
+- The redirect authentik should send you is /api/v1.0/callback 
 # more

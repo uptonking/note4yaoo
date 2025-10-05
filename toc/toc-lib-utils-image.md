@@ -341,3 +341,8 @@ modified: 2023-04-04T22:39:45.442Z
   - It can’t know it needs it until it’s got all the CSS and completed the page layout. 
   - So don’t use it unless it’s going to be off screen. 
   - Particularly don’t use on LCP images.
+
+- https://github.com/andrii-kryvoviaz/slink /984Star/AGPL/202510/php/svelte
+  - https://docs.slinkapp.io/
+  - self-hosted image sharing platform designed to give users complete control over their media sharing experience. 
+  - Built with Symfony and SvelteKit
