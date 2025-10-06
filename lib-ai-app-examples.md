@@ -289,6 +289,34 @@ modified: 2023-02-08T07:20:48.475Z
 
 - https://github.com/naklecha/llama3-from-scratch /MIT/202405/jupyter/inactive
   - llama3 implementation one matrix multiplication at a time
+# ollama/lmstudio-like
+- https://github.com/menloresearch/jan /37.5kStar/apache2/202508/ts/rust/tauri
+  - https://jan.ai/
+  - an AI assistant that can run 100% offline on your device
+  - Local AI Models: Download and run LLMs (Llama, Gemma, Qwen, etc.) from HuggingFace
+  - Cloud Integration: Connect to OpenAI, Anthropic, Mistral, Groq, and others
+  - MCP integration for enhanced capabilities
+  - 提供了类似lm studio的模型下载简化版
+
+- https://github.com/withcatai/catai /477Star/MIT/202406/ts/svelte/api+webapp/inactive
+  - https://withcatai.github.io/catai/
+  - Run AI assistant locally! with simple API for Node.js
+  - Run GGUF models on your computer with a chat ui.
+  - Inspired by Node-Llama-Cpp, Llama.cpp
+  - Real time text streaming 
+  - Fast model downloads
+  - There is also a simple API that you can use to ask the model questions.
+
+- https://github.com/EmreMutlu99/Ollama-Agent-Kit /202510/ts
+  - https://emc-ltd.co/software-consultancy/
+  - open-source Node.js toolkit for building memory-enabled AI agents powered by Ollama. 
+  - It supports conversation threads, lightweight JSONL memory, and tool calls (e.g., weather, time, reservations), making it easy to integrate LLM agents into your own projects.
+
+- https://github.com/cztomsik/ava /458Star/MIT/202508/zig/ts
+  - https://avapls.com/
+  - Ava is an open-source desktop application for running language models locally on your computer. 
+  - It's batteries-included GUI for llama.cpp
+  - Zig, C++ (llama.cpp), SQLite, Preact, Preact Signals, Twind
 # ml-neural-network
 - https://github.com/AlloyTeam/netural
   - JavaScript的前向神经网络和反向传播的实现。

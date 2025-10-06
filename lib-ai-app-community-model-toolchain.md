@@ -912,6 +912,158 @@ curl http://localhost:11434/api/chat -d '{
 
 - sudo systemctl daemon-reload
 - sudo systemctl restart ollama
+# discuss-janai
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Jan: An open source alternative to ChatGPT that runs on the desktop | Hacker News _202403](https://news.ycombinator.com/item?id=39782876)
+- GPT4All makes it annoyingly difficult to run any other than their "approved" models. I'd like to kick the tires on a whole host of random GGUF quantizations on Hugging Face, please.
+  - I use text-gen-ui (Oobabooga) as a back-end and have it run with `--api` to use the front end of my choice.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
+- ## 🏠 [Jan got an upgrade to v0.6.0: New design, switched from Electron to Tauri, custom assistants, and 100+ fixes - it's faster & more stable now : r/LocalLLaMA _202506](https://www.reddit.com/r/LocalLLaMA/comments/1lf5yog/jan_got_an_upgrade_new_design_switched_from/)
+  - Switched from Electron to Tauri for lighter and more efficient performance
+  - You can create your own assistants with instructions & custom model settings
+  - Fully redesigned UI
+
+- Tauri helps us bring Jan to new platforms like mobile. It's also lighter and faster, which gives us more room to improve performance in upcoming updates.
+  - Tauri allows us to reuse our existing React and JavaScript codebase, which helps us move faster while keeping the design clean and modern. 
+  - Qt and similar native toolkits don't integrate well with the web stack.
+
+- Wails doesn't support mobile, and we're planning to bring Jan to mobile too - so we went with Tauri.
+
+- As someone who is finalizing a port of a small app (atv-desktop-remote) from electron to tauri: If most of your code is in the renderer, the transition is easy. If you have lots of stuff in main.js, you’ll need to reimplement that in rust. The IPC line is still there (between main and renderer processes), you can move stuff around if you need to.
+
+- what makes Jan different from / better than LM Studio? It seems you have same backend and similar frontend?
+  - Jan is open-source 
+  - We're experimenting with MCP support using our own native model, Jan-nano that outperforms DeepSeek V3 671B in tool use. It's available now in the Beta build.
+
+- Been looking for some opensource UI for openrouter for a long time. It looks very promising, but I haven't figured out how to output reasoning yet.
+  - reasoning output isn't supported yet - it's still on the todo list to check.
+
+- Can we edit the responses?
+  - No, you can't. why do you want to edit the responses?
+- That's an easy way to steer the story in the direction you want it to go. Say, you draft a chapter and ask the model to develop the story; it starts well, but in the middle of generation makes an unwanted twist, and the story starts going in the wrong direction. Sure, you could just delete the response and try again, or try editing your prompt, but it is much, much easier to just stop generation, edit the last line of text, and hit "resume". So, editing AI responses is a must-have for writing novels.
+
+- Jan supports OpenAI-compatible setup for APIs. So if it's empty, it won't work, even if the remote endpoint itself doesn't require one. We should add a clearer indicator for this, but in the meantime, try entering any placeholder key and see if that works.
+  - Plus, Ollama doesn't support OPTIONS requests on all endpoints (like /models), which breaks some standard web behavior. We're working on improving compatibility.
+
+- Jan doesn't work with Ollama llms out of the box is my biggest grip . Still unable to add ollama to Jan. Anyone succeeded?
+- can it be used with lmstudio ?
+  - i tried it and it doesnt work. not sure which one is wrong
+  - jan is using OPTION request to list model while lmstudio only serve /v1/models on GET
+
+- When using Ollama if the model does not fit in my GPU it will use the GPU and offload to the CPU but the same did not work with jan.
+  - you can update the number of GPU layers manually in model settings (Model Providers -> llama.cpp).
+  - We're planning to add automatic GPU offloading soon, once it's merged upstream in llama.cpp
+
+- Please add MLX as a future inference engine
+
+- The app is huge in size. I thought Tauri didn't ship the whole browser.
+  - Totally fair. The app's size is due to the universal bundle - we're working on slimming it down soon.
+  - Universal bundle on Mac means the app includes native code for both Apple Silicon & Intel Macs, so it's basically twice the size.
+
+- I love Jan! Is there an option for it to autostart on boot with the API server enabled? I couldn't find any way to do that with the previous versions of Jan so I went with LM Studio for my backend unfortunately.
+
+- Jan doesn't support chatting with files or image generation yet. We're going to add chatting with files feature soon. As for image generation, it's not available right now - we'll take a look at it as well.
+
+- What do you feel differentiates your app from all the others? I keep downloading chat apps and they all pretty much offer the same functionality and interface. What is Jan's approach for separating yourself from the herd?
+
+- Is chat history formatted into some portable standard?
+  - We're using the same format as previous versions. It loosely follows OpenAI's thread structure but isn't a strict match. It's extension-based, so it can be replaced or exported to other formats if needed.
+
+- on Linux Tauri uses WebKitGTK for now, so performance isn't as good as Chromium. We're refactoring to reduce app size, and once that's done, we'll look into bundling a better browser. Tauri gives us flexibility there, unlike Electron.
+
+- ## [Cortex.cpp: llama.cpp Engine · menloresearch/cortex.cpp _202409](https://github.com/menloresearch/cortex.cpp/discussions/1156)
+- We submodule llama.cpp
+  - How we handle different llama.cpp versions (e.g. AVX, CUDA etc)
+  - Documents which llama.cpp versions we bundle into Cortex/Jan
+  - Switching logic for CPU/GPU inference
+
+- ## [Are people not using JAN a lot? : r/LocalLLaMA _202408](https://www.reddit.com/r/LocalLLaMA/comments/1eza2kl/are_people_not_using_jan_a_lot/)
+- I think that Jan still lacks a lot of “nice haves” that are present in LM Studio
+  - Built in RAG support
+
+- I'm Emre from Jan. Really appreciate this post - it's going to be super helpful as we keep improving Jan! Let me share a few things we're working on:
+  - Improving Jan's performance across different hardware (with a new engine that is compatible with various hardware)
+  - Revamping the new model hub, providing better
+  - Experimenting with something that we'll share soon in homebrew.ltd, our R&D lab which is also the company behind Jan.
+- Responding only to features and ideas without addressing the questions of struggling users is called exploitation(广告，宣传).
+
+- Jan has a lot of potential, but is let down by its model management when it’s not the server. Please invest in Ollama and OpenAI compatible APIs. Jan has a lot of potential but not being able to simply connect to your server and select models from a list makes it a pain to use when you already have Ollama / OpenAI compatible servers other clients use.
+
+- I don’t know if Im Studio has it, but I am waiting for tts and stt support in Jan. As for the online based tts it would nice to have different options like elevenlabs, oai whisper, google tts, amazon poly etc For a local tts it would be cool to have at least something that is friendly to limited hardware like piper.
+  - Msty for example has implemented stt in the meantime. They just use oai‘s whisper api.
+
+- It's probably due to the "competition" from other excellent easy-to-use software such as Koboldcpp, LM Studio, Ollama, etc. Additionally, Jan has historically been lacking in some functionality that the alternatives have. Maybe this is not the case anymore, as it was a few months ago I last tried Jan.
+
+- I love using JAN but there are a few things that made me switch to openwebui.
+  - First I need a more robust API. Running the same time as my threads. Why does it not let me chat in threads if I turn on the API? 
+  - I also tried to do some simple things like get the currently loaded model and swap the loaded model for another one. I still have not been able to do this.
+  - Why is there so many manual steps involved in adding a model that is not included in the hub? Can't we just provide the huggingface link and it pull the info it needs?
+  - I could not find a way to add a custom extension. I want to add image generation using SearmUI. But I don't think I'm able to create extensions yet.
+  - I would really love to come back to Jan but the features I need are already there on openwebui.
+
+- JAN is poorly build and thought out unfortunately. 
+  - They really need to address support of already existing GGUF models, new quantization types (IQ quants), proper and easy ways to switch prompt/system messages and have presets for things like ChatML, LLama 2/3/3.1, Mistral, etc.
+  - Also things like longer context, Flash Attention, KV Cache, More useful debugging/error messages and proper Apple Silicon support is needed badly.
+  - It generates a bunch of random and weird output on a lot of new models and quant types.
+  - It's too bad that after all this time it is still very buggy and clunky.. I had high hopes for it
+
+- jan has stopped supporting the WebUI, so browser functions are not available.
+
+- ## [Jan: an open-source alternative to LM Studio providing both a frontend and a backend for running local large language models : r/LocalLLaMA _202401](https://www.reddit.com/r/LocalLLaMA/comments/193m27u/jan_an_opensource_alternative_to_lm_studio/)
+- A Big problem all these LLM tools have is that they all have their own way of reading Models folders. I have a huge collection of GGUF's from llama.cpp usage that I want to use in different models. Symlinking isn't user friendly, why can't apps just make their Models folder a plain folder and allow people to point their already existing LLM folders to it
+  - This is salient(显著的, 突出的) criticism, thank you. At the core, we're just an application framework. We should not be so opinionated about HOW users go about their filesystem.
+  - [/pr已合并 - epic: Better files & links · Issue · menloresearch/jan _202401](https://github.com/menloresearch/jan/issues/1494)
+
+- Ollama being the biggest offender, with that fake docker syntax for modelfiles, model import and renaming using sha hashes.
+
+- The Stable Diffusion UI variants also had this problem - until Stability Matrix came along and resolved a number of inconveniences with model management. Wonder if something similar could be viable here too.
+  - invokeai 的选择文件也是一种方案
+
+- Its why Koboldcpp just has a file selector popup, it doesn't make sense to tie people to a location.
+  - Koboldcpp also has an OpenAI compatible server on by default, so if the main thing you wish for is an OpenAI endpoint (or KoboldAI API endpoint) with bigger context processing enhancements its worth a look.
+  - Koboldcpp is a bit of a hybrid since it also has its own bundled QT UI. We also have GGUF support as well as every single version of GGML.
+
+- This is the best example of why LLMs wont replace devs.
+  - IMO, work is the tedious processes of begrudgingly implementing common design patterns. 
+  - Did anyone building LLM frameworks/dev tools think they'd be building model library browsers drawing from itunes and calibre? If they're smart. How many people used itunes just because it had better browsing/searching than winamp? (Jumping back to hugging face for the model card and details is already less frequent.)
+  - We all want different things.
+
+- Is it better to use llama.cpp instead of LM Studio? 
+  - Absolutely! KoboldCpp and Oobabooga are also worth a look. 
+  - I'm trying out Jan right now, but my main setup is KoboldCpp's backend combined with SillyTavern on the frontend. 
+  - They all have their pros and cons of course, but one thing they have in common is that they all do an excellent job of staying on the cutting edge of the local LLM scene (unlike LM Studio).
+
+- It really needs a custom folder and scan directory function to incorporate already available local GGUF files. I also don't understand the weird implementation of needing a config/JSON file for each model. Why not just use the GGUF metadata and filename to determine the proper settings like other apps are doing?
+  - local configs give you an ability to override specific parameters for every model - like to have a custom prompt, custom context length, rope settings etc. Without having local configs there would be no such place to put all your overrides. 
+  - But of course no inference software should require them by default and should take everything it can from metadata (where applicable). 
+  - And generate those Configs automatically only if you change some parameter from its default value.
+
+- it's nice and simple, but as a consequence of being so new it lacks a lot of QoL stuff that I would expect with more mature apps. 
+  - Also I find that the app loads/unloads LLM models into the RAM with every query, unlike LLMStudio which leaves it in RAM until you eject the model. I don't know which is better, but I am a bit concerned about that constant load on my computer.
+
+- I don't like ollama. It keeps loading and unloading models Everytime you do Inference.
+
+- It looks to have an openai API compatibility, wonder if I can use oobabooga textgen as a backend
+
+- I am looking for a GUI that lets me set a -ve CFG without hassle. Does this GUI let me do that?
+
+- Is it some kind of electron app bundled with llama.cpp? Can it be used as a web UI over network?
 # discuss-vllm
 - ## 
 
@@ -949,32 +1101,6 @@ curl http://localhost:11434/api/chat -d '{
 - ## 
 
 - ## 
-
-- ## [Jan: an open-source alternative to LM Studio providing both a frontend and a backend for running local large language models : r/LocalLLaMA _202401](https://www.reddit.com/r/LocalLLaMA/comments/193m27u/jan_an_opensource_alternative_to_lm_studio/)
-- A Big problem all these LLM tools have is that they all have their own way of reading Models folders. I have a huge collection of GGUF's from llama.cpp usage that I want to use in different models. Symlinking isn't user friendly, why can't apps just make their Models folder a plain folder and allow people to point their already existing LLM folders to it
-  - This is salient criticism, thank you. At the core, we're just an application framework. We should not be so opinionated about HOW users go about their filesystem.
-
-- Ollama being the biggest offender, with that fake docker syntax for modelfiles, model import and renaming using sha hashes.
-
-- The Stable Diffusion UI variants also had this problem - until Stability Matrix came along and resolved a number of inconveniences with model management. Wonder if something similar could be viable here too.
-  - invokeai 的选择文件也是一种方案
-
-- Its why Koboldcpp just has a file selector popup, it doesn't make sense to tie people to a location.
-
-- Is it better to use llama.cpp instead of LM Studio? 
-  - Absolutely! KoboldCpp and Oobabooga are also worth a look. 
-  - I'm trying out Jan right now, but my main setup is KoboldCpp's backend combined with SillyTavern on the frontend. 
-  - They all have their pros and cons of course, but one thing they have in common is that they all do an excellent job of staying on the cutting edge of the local LLM scene (unlike LM Studio).
-
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
 
 - ## openrouter 是真方便，一个 Key 所有模型都能用。
 - https://x.com/pengchujin/status/1894375539726803201

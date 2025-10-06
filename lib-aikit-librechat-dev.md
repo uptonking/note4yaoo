@@ -72,6 +72,7 @@ modified: 2025-09-01T05:52:34.241Z
 
 - 针对mlx优化的版本，主要是后端多模型及切换模型的优化
   - 主要开发前端，是否有必要做后端?
+  - 可参考 jan.ai
 
 - oauth登录及退出登录的交互及ui需要针对框架定制
   - authentik切换到keycloak后, social login button的文字及图标未改变，但登录逻辑已顺利改变
@@ -108,4 +109,18 @@ modified: 2025-09-01T05:52:34.241Z
 
 - [[Bug]: error: [getAvailableTools] MCPManager has not been initialized. _202509](https://github.com/danny-avila/LibreChat/issues/9437)
   - 导致添加stable-diffusion工具失败，更新到最新代码就可以了
+# ollama/lmstudio/llama.cpp
+- ollama/lmstudio封装了llama.cpp, janai fork了llama.cpp
+
+- ai-chat的客户端封装可参考
+  - janni, ollama-ui
+  - gradio: Oobabooga, sd-webui
+
+- llama.cpp的封装可参考
+  - janai, Oobabooga
+
+- 
+- 
+- 
+
 # more

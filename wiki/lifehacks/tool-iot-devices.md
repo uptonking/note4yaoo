@@ -184,7 +184,32 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## [More RAM or faster RAM? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nzf0zf/more_ram_or_faster_ram/)
+  - If I were to run LLMs off the CPU and had to choose between 48GB 7200MHz RAM (around S$250 to S$280) or 64GB 6400MHz (around S$380 to S$400), which one would give me the better bang for the buck? This will be with an Intel Core Ultra.
+- Little to no difference in speed. You need to optimize for the number of memory channels you have to ensure the highest bandwidth possible.
+  - This is why folks opt for older Xeon or Epyc machines, because even with slower ram, they have oodles(大量或很多) more ram bandwidth.
+
+- I bought 2x64 sticks at 6400 on paper but only 5600 stable for my system. I can run GLM 4.6 at 5 t/s and q2, but it beats anything else I could run easily. Cost me 380 euros, totally worth it.
+
+- More Ram.. I use all 32 GB Vram from RTX5090 and 50+ GB Ram just to run Wan2.2.
+  - I would say at the minimum you should get 128 GB ram if you want to run LLM (so you can offload and run 70B model). 
+  - Personally my spec is 5090 + 256 GB ram so I can offloading most mid size LLM.
+
+- VRAM is up to 20 times faster than 6000MHz RAM, there lies your answer
+  - Those models are MoE models and will run at usable speed. Even a 355b GLM 4.6 runs at 4 to 5 tokens per second on 128gb ram on my system. 
+  - With upcoming implementations of MTP this might get uplifted into the 10 tokens per second range. MoE models are also getting sparser and sparser. 128 GB ram even if it's just dual channel is absolutely worth it in my opinion.
+
+- Neither of those rams will make a significant difference in inference speeds for llms, both are quite slow bandwidth wise. The useful bit of those ram kits is the capacity, could you get a cheaper 64gb kit instead?
+
+- You even sure your CPU and mobo can utilize these speeds?
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 - ## 🖥️ 我想买个 已装好但可自己配置的台式机工作站 或 自己买机箱/cpu/2张3090显卡自己装台式机, 要求台式机的机箱要尽量小，同时能发挥多张显卡的计算能力，散热要正常
 - 铭瑄 ARL-HX 迷你双卡工作站
@@ -1007,6 +1032,8 @@ modified: 2022-01-16T15:52:31.293Z
   - 暂时选择机械大师cmax(392*185*284mm, 20.5L), 因为能支持较长的三风扇显卡，显卡支持 385*160mm 以内
     - 乔思伯, 公开资料最多, t6(13.6L), tk-o(16.45L),c6(18.4L), z20(20.2L)
   - 想要128GB的内存，机箱的空间够大且满足散热需求是前提，还需要主板提供4个内存插槽，cpu的和内存的频率是能和谐工作，频率都不能太高
+    - 内存条的频率要考虑cpu支持、主板支持
+    - 大内存对跑MoE模型有用
 
 - nvidia性能对比
   - [大模型GPU算力卡汇总 - 知乎](https://zhuanlan.zhihu.com/p/1904206218748236301)
@@ -1956,6 +1983,94 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
+- ## [有没有单条64G或者更高的内存条？ - 知乎](https://www.zhihu.com/question/518047029)
+- 普通的DDR4内存单条32G到顶，要服务器用的RECC内存有单条256G, 512G的，当然，价格美丽，且需要主板支持
+- 普通条也有64g
+  - ddr4 有，ddr5不确定因为还没见到
+
+- ## [为什么市面上没有单条64G的高频DDR5（8000MHz以上）？ - 知乎](https://www.zhihu.com/question/1932456730404587491)
+- 你内存频率上去了，主板和CPU跟不上，白搭
+- 4月份，芝奇就发布了一款DDR5-8000 128GB内存套装，也就是DDR5-8000 128GB（64GB x2），时序为CL44-58-58-127，不过这款内存条暂时还没有上市，属于第一款64G的DDR5-8000频率内存。
+  - 4月份，芝奇就发布了一款DDR5-8000 128GB内存套装，也就是DDR5-8000 128GB（64GB x2），时序为CL44-58-58-127，不过这款内存条暂时还没有上市，属于第一款64G的DDR5-8000频率内存。
+  - 现在DIY装机的主流依然是32G（16x2）DDR5 6000MT/s及以上频率和48G（24x2）DDR5 6000MT/s的内存条，即使你在某些生产力上面需要，也64G（32Gx2）DDR5就很足够了。
+  - 正常你要是AMD的话，上套6000MT/s的DDR5就可以，而英特尔处理器的话，实际上套6800MT/s的DDR5就可以，所以不用纠结太多。
+
+- 事实上呢，GSK4月份就发表了8000MHz的128GB套装和64GB的DDR5-9000MHz特挑套装，然而具体的供货呢？还是那些渠道才有，官方不会随便给价格，好方便他们漫天要价
+  - 8000MHz超高容量比6400s的贵一倍或者两倍都是渠道商们随便喊。
+  - 你要搞这种东西，其他部分可以先满上，然后坐等上货，毕竟芝奇的测试平台用的就是：
+  - 处理器：Intel-265K/AMD 9950X3D
+  - 主板：华硕玩家国度MAXIMUS Z890 APEX
+  - 显卡：NV XPG RTX5090-24G
+
+- ## [感觉华擎的东西做工用料都很扎实呀，为什么都说是二线？ - 知乎](https://www.zhihu.com/question/354822608)
+- 华擎是现在公认的四大家，所有的跟主板相关的认证，一定是会通过华擎的认证的。
+  - 在硬件支持上也一直保留自己的特色，接口和设计上一直都算是比较全且相当友好的。
+  - 他最辉煌的时候应该是2011年，当年的销量冲破了1000万片，达到全球第三。
+  - 前几年跟华硕分手导致的阵痛比较严重，不过自身产业转型升级很快，渠道上不太待见华擎，主要原因是不赚钱，没有补贴力度（深有体会，没有会议没有钱……）
+  - 现在华擎在国内的份额只有2.8%，属实可怜，基本看不到了，而且华擎不接受个人送保，主板性价比极佳，但除非是京东自营，否则自己买，售后属实麻烦。
+  - 代理商是不给予代保的（比如大仙，不是自己出的华擎主板坏了，是真的会拒绝代保）
+  - 不过总销量依旧可观，全球主板出货量在2018年的时候是400万片左右，2019年好像有接近600万的出货量（数据存疑，因为找不到之前看到的数据了），相当可观，逆市增长那种。
+  - 保持出货不跌的只有微星和华擎两个品牌。
+  - 华擎是迄今为止，最友好的台湾系品牌商之一，中文网站访问和资料搜索都是最友好的，说出来一般人都可能不太相信。。
+
+- 华擎支持个人送保，只需出来回运费
+
+- 我个人感觉其实就是售后率，售后效率太扯淡了点。1所有主板售后得通过省代资格的手寄到深圳，再返回来，和微星有的一拼。
+  - 从矿板就可看出售后率太高，前几年矿潮也就几K的矿板售后率硬是能大几百片，果真一分钱一分货。至今仓库里还10片矿板懒得售后也没人要，等过保修了卖垃圾。
+
+- [如何评价华擎主板？ - 知乎](https://www.zhihu.com/question/27738363/answers/updated)
+
+- ## [Mini server for virtualization with 128 GB ECC RAM, many CPU cores : r/selfhosted _202412](https://www.reddit.com/r/selfhosted/comments/1hbfay9/mini_server_for_virtualization_with_128_gb_ecc/)
+- DDR5 is inherently ECC. You do not need explicit ECC, though the on-die ECC only protects the DRAM cells, not the link between the CPU and the RAM chips. So, run the bus slower (say, if you have LPDDR5X 7500, run it at 6400, if you have DDR5 5600, run it at 5200), and you will be fine.
+  - with on-die ECC, you do not get early warning on ECC events, and you do not get unrecovered 2-bit ECC reports, so it's safer than no ECC, but not as safe as true ECC. You should not do ZFS RAM caching, for instance, with this setup. But most home server applications should be fine, though.
+  - As for capacity, you can get 96GB easily. 128GB would be hard until vendors start making 64GB sticks. So far, the largest consumer grade sticks are 48GB. My setup is MS-A1+7950X+2x48GB+2x2TB+1x118GB Optane. It's been rock solid far.
+
+- Minisforum MS01 ticks all the boxes except RAM. It can go up to 96GB, has 3 m.2 slots, a spare pcie slot, dual 10gbe SFP, dual 2.5gbe with one offering IPMI.
+
+- I have been eyeing the Asrock B650M PG Riptide mATX board.
+  - Supports AMD Ryzen™ 9000, 8000 and 7000 Series Processors
+  - Supports 256GB DDR5 ECC/non-ECC, un-buffered memory up to 7200+(OC)
+  - 2.5G Ethernet
+  - 2 x 16x PCIe slots (One of which may only support x4)
+  - 2 x M.2 Gen 4 slots
+- AsRock DeskMeet seems similar. The motherboard doesn’t seem to support bifurcation to make use of PCIe slot for 4 NVMe, and there is no IPMI. Otherwise OKish, albeit 8 liters
+  - I think you have to compromise if you want a small formfactor / non-server board. Have been struggling with the same compromises. But at least this have 2.5G Lan.
+  - Bifurcation would have been nice.
+  - I don't think it is going to be easy to find a small/non-server board with IPMI.
+
+- ## [Mini ITX AM5 mobo that supports 2x64GB RAM sticks? : r/sffpc _202507](https://www.reddit.com/r/sffpc/comments/1m8wexd/mini_itx_am5_mobo_that_supports_2x64gb_ram_sticks/)
+- check the SFF masterlist > mITX boards tab. Lots of boards support 128GB
+  - https://docs.google.com/spreadsheets/d/1AddRvGWJ_f4B6UC7_IftDiVudVc8CJ8sxLUqlxVsCz4/edit?gid=523597416#gid=523597416
+  - I would still double check the motherboard's website just to be sure. As this is still a community maintained page so info isn't guaranteed to be 100% accurate.
+
+- The Asus B650E-I has a maximum capacity of 64GB per RAM slot, with 128GB total
+  - Cheaper models like the MSI 650I Edge and the AsRock B650I Lightning only have a maximum capacity of 48GB per slot
+
+- Gigabyte X870I AORUS PRO ICE supports 128GB. Saw it on Microcenter's website and doublechecked on the Gigabyte site
+- If you really want to be sure you have enough RAM capacity, you can always go for an ITX X870 board, but that's a prety big upcost for pretty much no benefits in terms of features (outside of maybe more USB ports in the rear I/O)
+
+- ## [DDR5 128GB on ITX possible nowadays? Experience? : r/sffpc _202506](https://www.reddit.com/r/sffpc/comments/1lgu72h/ddr5_128gb_on_itx_possible_nowadays_experience/)
+  - I couldn't find new information on anyone trying out 64GB DDR5 Sticks in their ITX build.
+  - Would two sticks work to yield 128GB DDR5?
+  - Kingston FURY Beast schwarz DIMM 64GB, DDR5-5600, CL40-40-40
+  - there is also a Crucial 64GB stick and an even faster Kingston 64GB stick.
+  - ✅ Update: Received my 2x Kingston 64GB RAM sticks and after a 1min initial boot, setting the right EXPO profile in the BIOS, it works perfectly without any issues. To whoever reads this in the future, good luck on your build!
+
+- If you want small with 128GB of fast RAM, then something built with the AMD AI Max 395 might be of interest? Framework are going to sell an ITX motherboard (and SFF PC) with the same chip, but it isn't available yet
+  - Yes I am aware of its existence and the advantages soldered RAM has to reduce latency and improve memory bandwidth, but I already got a rig and am happy with the general performance of my 7900. 
+  - I was considering upgrading form my measly 2*16GB and my most recent info is that optimum uses 2*48GB sticks, hence 96GB, but I couldn't find further info on 2*64GB.
+
+- Even though only 96 GB of RAM is listed there, it is possible to use 128 GB. I've seen it in YouTube videos, but only with mini PCs, and the guy used SO DIMMs.
+
+- Just did this on my homelab server. The board claims to only support 64GB but I put this 128GB kit in and all is well. (Passed prime95, etc tests. All 128GB is usable.)
+
+- I think the biggest problem is there hasn't actually been 64GB sticks out for very long and with the price not many people have actually tried it. I would just go with a motherboard that states it supports 128GB and make sure you buy the ram from a retailer with a good return policy.
+
+- ## [六联智能推出 AMD "Strix Halo" Thin Mini ITX 主板，板载内存设计 - IT之家 _202507](https://www.ithome.com/0/869/805.htm)
+- AMD 的锐龙 AI Max 300 "Strix Halo" 平台 ODM 伙伴六联智能推出了一款板载该系列处理器和 DRAM 内存颗粒的 Thin Mini ITX 主板 STHT1。
+- 这一主板目前已被六联智能的 2L 迷你主机、8L 紧凑型台式机、一体机解决方案采用，而其兼容外形规格使之存在直接安装于标准台式机机箱的可能。
+- 该主板包含 8 个 LPDDR5x 焊盘，支持至高 128GB 内存容量；配备 2 个 M.2 2280 PCIe 4.0×4 盘位；提供 1 个 M.2 2230 无线网卡位。
+
 - ## [Are there any ITX motherboards that can handle 128GB RAM? : r/buildapc _202307](https://www.reddit.com/r/buildapc/comments/15cazh5/are_there_any_itx_motherboards_that_can_handle/)
 - Are there ones that you, right now, as an average consumer or even business can buy? No.
   - There are custom ITX server boards that have 4 DIMM slots, but they're for fairly old and slow server CPUs using DDR3, and have no PCIe slots.
@@ -1964,7 +2079,7 @@ modified: 2022-01-16T15:52:31.293Z
 - If you need 128GB right now, you have to get an mATX motherboard. There is no other option.
 - That said, the SSUPD Meshroom S can take an mATX motherboard, even a full sized ATX motherboard, and isn't much bigger than the Terra.
 
-- [Can you guys recommend me a motherboard which can support 128gb ram? : r/buildapc _202412](https://www.reddit.com/r/buildapc/comments/1hbspr8/can_you_guys_recommend_me_a_motherboard_which_can/)
+- ## [Can you guys recommend me a motherboard which can support 128gb ram? : r/buildapc _202412](https://www.reddit.com/r/buildapc/comments/1hbspr8/can_you_guys_recommend_me_a_motherboard_which_can/)
   - I'm looking for a motherboard which can support a lot of ram for programming. Preferably it should be mATX. I've heard that ITX boards aren't really great for that soft of thing. edit : CPU is Ryzen 9 7950x.
 - ASUS rog-strix-b650e-f has 128 GB configurations on their Memory QVL for Ryzen 9 7950x. According to them it'll run at 5200.
   - I'm considering such a configuration now. I've not yet found an ASROCK Motherboard with any 128GB configurations on their QVL.
@@ -1998,13 +2113,24 @@ modified: 2022-01-16T15:52:31.293Z
 - 4x DDR5 configurations barelly run with 4800MT/s and even that might need some DDR5 kit swaps till you have 4 working DIMMs.
   - Getting DDR5 6000MT/s CL30 is ridiculous.
 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
+- [Is it possible to have 128GB RAM with SFFPC? : r/sffpc _202210](https://www.reddit.com/r/sffpc/comments/yd2z0b/is_it_possible_to_have_128gb_ram_with_sffpc/)
+- Matx board, 25L matax case and 4x32gb dimms?
+  - Silverstone Alta g1m or asus ap201 are ones I want since they support a 360 AIO
+
+- Should i maybe get c26 or c28 cases? It looks like even c26 can fit an ATX board so with that it should solve these issues?
+  - You will not be able to properly cool the components you are aiming for in a case like the C26, which by the way will not be able to fit a 4090. C28 maybe, but I wouldn't want to travel with a case that has a TG panel. And you need all the airflow you can get.
+  - The new Asus Prime AP201 looks promising. I would not advise to go smaller than that.
+
+- [Smallest possible m-atx + 7950x + 4090.... advice appreciated! : r/sffpc _202301](https://www.reddit.com/r/sffpc/comments/107jq5o/smallest_possible_matx_7950x_4090_advice/)
+- I just received C26plus, bought B660 mATX MB and 12600K, pending to get a 4090 and PSU. Will get back to you if the case is good fit for 4090 FE
+  - Nope, side panel cannot close even with native 16pin cable
+
+- AP201 is the current matx meta imho but the d31 is nice
+
+- ## [Should I Choose a Motherboard with 128GB or 256GB RAM Max? : r/buildapc _202410](https://www.reddit.com/r/buildapc/comments/1fvoskv/should_i_choose_a_motherboard_with_128gb_or_256gb/)
+  - is there a significant performance difference if I opt for the 128GB option?
+
+- No. Chance is that you won't even reach the 128GB mark long before you make another full upgrade certain years down the road. 
 
 - ## [64G内存+纯CPU裸跑gpt-oss:120b - 小红书](https://www.xiaohongshu.com/explore/68a6ee02000000001c03f964?xsec_token=ABIl2xpN-BcJcn0jmdi2k1RkNoJcXZiMAtj5QFwnpIark=&xsec_source=pc_search&source=unknown)
   - 64G内存+纯CPU裸跑gpt-oss:120b，一秒钟几个字儿往外蹦

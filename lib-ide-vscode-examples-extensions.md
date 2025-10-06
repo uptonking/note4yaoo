@@ -597,6 +597,9 @@ modified: 2024-08-24T16:17:26.715Z
 
 ## ext-history
 
+- https://github.com/nagavineerpasam/code-time-machine /202509/ts
+  - A VS Code extension that lets you view how functions and code blocks evolved across Git commits with beautiful side-by-side diffs.
+
 - https://github.com/microsoft/codetour /MIT/202303/ts/inactive
   - VS Code extension that allows you to record and play back guided tours of codebases, directly within the editor
   - A "code tour" is simply a series of interactive steps, each of which are associated with a specific directory, or file/line, and include a description of the respective code. 

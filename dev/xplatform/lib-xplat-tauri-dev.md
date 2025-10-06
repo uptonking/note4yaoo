@@ -8,7 +8,17 @@ modified: 2023-01-14T17:21:28.975Z
 # lib-xplat-tauri-dev
 
 # guide
+- pros
+  - ?
 
+- cons
+  - ?
+
+- features
+  - ?
+
+- who is using #tauri
+  - janai
 # dev
 
 # dev-xp

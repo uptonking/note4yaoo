@@ -26,6 +26,13 @@ modified: 2021-05-10T04:06:02.843Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Dory - An app switcher for people who can’t remember shortcuts : r/MacOS](https://www.reddit.com/r/MacOS/comments/1nyzej5/dory_an_app_switcher_for_people_who_cant_remember/)
+- 圆环型的悬浮菜单fab, 带有动画
+
 - ## Released an interactive 404 page.
 - https://x.com/abeyang/status/1913334847529238881
   - 图标变三维的动画效果

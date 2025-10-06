@@ -582,6 +582,29 @@ modified: 2025-09-16T13:29:11.327Z
 
 - https://uigenoutput.tesslate.com/uigen-t3-32b-fp8 Many prompts to try.
 
+- ## 🆚 [WEBGEN, UIGEN-FX, UIGENT research preview releases : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nz20g2/webgen_uigenfx_uigent_research_preview_releases/)
+- We intend to make a drop-in coding models that have heightened design capabilities in normal developer workflows.
+- UIGENT is the frontend engineer, designed to work across all frameworks and languages. 
+  - Tries to get the best "understanding" and agentic usage. Built on top of 30B.
+- UIGEN-FX is a UI generation based agentic, trained on agentic trails and our common UI datasets. 
+  - Works best with react, tailwind, ssg, and web frameworks. 
+  - Model was designed to have the most 'functional' and thought out designs, focusing on accessibility and not just design.
+- WEBGEN is simply an experiment on how far we can push design in one singular category (landing pages in html css js tailwind) to make them look as far away as possible from 'ai slop' design. That is the goal. (still working on it).
+
+- The Training process looks like this: We have our dataset. 
+  - We then compact it into rows such as {text} and then go through them as samples, using packing. 
+  - We released our internal training library for ROCM on MI300X here: https://github.com/TesslateAI/Late but with contributions, I'm sure it can run on any platform. 
+  - Its mostly for batch training runs, parameter sweeps, quickly patching your training environment for standardization, etc.
+
+- Everything is Apache 2.0, code is commodity
+
+- We're working on a local loveable / webapp builder next
+
+- These create fantastic results when just used directly in chat, but if used in Cline or bolt.diy it tries to output html instead of following tool calls. At least the last version I tried a few months ago. I will try these and report back.
+
+- Some of them incorrectly have unsloth tag when they arent.
+  - Some of them were merged loras with unsloth. I'll clean it up whoops. Wish it would run on ROCM lol.
+
 - ## 🧩 [WEBGEN-4B: Quality Web Design Generation : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1n6vzfe/webgen4b_quality_web_design_generation/)
   - a 4B model that produces quality tailwind websites. We trained it on 100k samples with synthetic data exclusively generated from GPT-OSS. 
   - In other news, we are open sourcing our UIGEN-T2 Dataset at Tesslate/UIGEN-T2

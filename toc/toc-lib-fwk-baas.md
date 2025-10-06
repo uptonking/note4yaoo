@@ -140,6 +140,14 @@ modified: 2021-05-25T09:40:55.797Z
   - https://easycrud.org/
   - This project is aimed at providing a series of handy packages for the development of a typical CRUD web application.
   - The packages are work around a kind of schema written in JSON for database table.
+
+- https://github.com/InsForge/InsForge /610Star/apache2/202510/ts
+  - https://insforge.dev/
+  - the Agent-Native Supabase Alternative. 
+  - We are building the features of Supabase in an AI-native way, enabling AI agents to build and manage full-stack applications autonomously.
+  - [I built a backend that agents can understand and control through MCP : r/CLine _202510](https://www.reddit.com/r/CLine/comments/1nz29qb/i_built_a_backend_that_agents_can_understand_and/)
+    - The coding agent didn’t really understand my backend. It didn’t know my database schema, which functions existed, or how different parts were wired together. To avoid hallucinations, I had to keep repeating the same context manually. 
+    - That’s why I built InsForge, a backend as a service designed for AI coding. It follows many of the same architectural ideas as Supabase, but is customized for agent driven workflows. Through MCP, agents get structured backend context and can interact with real backend tools directly.
 # baas/backend-as-a-service
 - https://github.com/lagonapp/lagon /rust/ts
   - Lagon is an open-source runtime and platform that allows developers to run TypeScript and JavaScript Serverless Functions close to users.
