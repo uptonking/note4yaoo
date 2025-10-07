@@ -181,7 +181,7 @@ modified: 2023-06-23T12:46:53.288Z
   - Modified CodeMirror mode based on wikimedia/mediawiki-extensions-CodeMirror
   - 💡 The goal is to support a standalone integration between CodeMirror and Wikitext, without the need for a MediaWiki environment
 
-- https://github.com/tidbcloud/tisqleditor /MIT/202408/ts
+- https://github.com/tidbcloud/tisqleditor /15Star/MIT/202503/ts
   - https://tisqleditor.vercel.app/
   - https://tisqleditor.vercel.app/playground
   - https://tisqleditor.vercel.app/examples?ex=all&theme=default
@@ -1849,6 +1849,18 @@ modified: 2023-06-23T12:46:53.288Z
   - [Roadmap for Prism v2 _202208](https://github.com/orgs/PrismJS/discussions/3531)
     - This is by far the most important change in v2: ES modules.
 # code-playgrounds
+- tips
+  - 单页/多页 示例
+  - 示例配置
+
+- https://github.com/tidbcloud/tisqleditor /15Star/MIT/202503/ts
+  - https://tisqleditor.vercel.app/
+  - https://tisqleditor.vercel.app/playground
+  - https://tisqleditor.vercel.app/examples?ex=all&theme=default
+  - CodeMirror6 based SQL code editor which is used in TiDB Cloud Console
+  - Supply React component and Vue component
+  - 提供了ai-widget
+
 - https://github.com/PotatoGroup/code-editor /ISC/202402/ts
   - a JS code editor based on codeMirror6, support code autoCompletion, which can be used with @astii/expression-sandbox
   - 依赖react
@@ -1908,6 +1920,20 @@ modified: 2023-06-23T12:46:53.288Z
     - A component for rendering React components with editable source and live preview
   - [codemirror withlive](https://github.com/FormidableLabs/react-live/issues/210)
     - 202210: if you are using the standard LiveProvider, you can use `@uiw/react-codemirror` as a drop in replacement for LiveEditor
+  - https://github.com/asj9469/Reactonaut /13Star/NALic/202308/js/inactive
+    - an online React code editor with an AI assistant. 
+    - Live code editing with Ace Editor
+    - React-Live for real-time rendering of React components
+    - OpenAI's ChatGPT API integration for code suggestions
+    - Reactonaut is the general/public version of his original project Reactor with a new UI and enhanced features. It was developed during our collaboration in an AI Startup Hackathon.
+
+- react-view /711Star/MIT/202312/ts/inactive
+  - https://github.com/uber/react-view
+  - https://react-view.netlify.com/
+  - 优点是除了支持直接编辑源码，还支持类似storybook的knobs，通过复选框直接设置属性值，甚至能直接输入函数形式的字符串作为属性值
+  - Prior Art: react-live, sb-knobs, playroom
+  - The first prototype of React View was even using react-live internally 
+  - 示例使用ladle, knob显示在文档内
 
 - https://github.com/reddit/play /BSD/202406/ts/lit
   - https://developers.reddit.com/play
@@ -1915,6 +1941,10 @@ modified: 2023-06-23T12:46:53.288Z
   - We open-sourced a little playground for building apps on Reddit. 
   - It's all Lit web components, CodeMirror, CSS, TypeScript, and esbuild
   - 依赖codemirror6、devvit/ui-renderer、lit3
+
+- https://github.com/val-town/playground /MIT/202505/ts
+  - This repository provides a React component that you can use to embed an interactive coding playground on a website that uses Val Town to execute code.
+  - `<Playground env={{ YOUR_API_KEY: 'something' }} code="console.log(1);" workerPath="/public/worker.ts" />`
 
 - https://github.com/abhirampai/CodeBoost /MIT/202304/js/inactive
   - https://codeboost.vercel.app/
@@ -1950,17 +1980,14 @@ modified: 2023-06-23T12:46:53.288Z
     - a web application designed to render HTML, CSS, and JavaScript. 
     - Built with React.js and used CodeMirror and react-codemirror2 for the code editor functionality, and Tailwind CSS for styling.
 
-- https://github.com/badass-courses/course-builder /MIT/202406/ts
-  - https://www.coursebuilder.dev/
-  - experimental platform for building Badass Courses
-  - Course Builder is a real-time multiplayer CMS for building and deploying the opinionated data structures of developer education products
-  - [feat: codemirror + partykit markdown editor _202312](https://github.com/badass-courses/course-builder/pull/35)
-    - used this Liveblocks guide to get this running with partykit.
-  - [feat: collaborative codemirror editor _202401](https://github.com/badass-courses/course-builder/issues/54)
-    - We've set up the basics for the collaborative editor, but the results are mixed and kind of janky where the text sometimes doubles up and it doesn't feel right in terms of the syncing between the CMS (Sanity) and the Partykit connection.
-
 - https://github.com/leon-kfd/OnlineCodeEditor /202311/ts/vue
   - An online code Editor like CodePen, built by Vue3.
+
+- https://github.com/jqlang/playground /MIT/202507/ts/交互类似codepen
+  - https://play.jqlang.org/
+  - A jq playground built with Next.js
+  - Test your jq queries against JSON directly in your browser. 
+  - it integrates the `jq-wasm` package, a WebAssembly-based jq JSON processor for Node.js and browsers, with no native dependencies
 
 - https://github.com/live-codes/livecodes /933Star/MIT/202503/ts
   - https://livecodes.io/
@@ -1988,7 +2015,7 @@ modified: 2023-06-23T12:46:53.288Z
   - https://x.com/hatem_hosny_/status/1753930554540499064
     - Check this where I dynamically select the editor and load it (e.g. on desktop -> monaco, on mobile -> codemirror, user preference, etc.)
     - Also unified the interface of loading and communicating with the editor
-  - [Why Another Playground? | LiveCodes](https://livecodes.io/docs/why/)
+  - [Why Another Playground? ](https://livecodes.io/docs/why/)
     - There are great products like CodePen, JSFiddle, JS Bin, CodeSandbox, Replit and many others, which LiveCodes does not aim to replace or compete with.
     - On the contrary, it aims to integrate with as many of these services as their APIs allow.
     - All processing and code transformations run in the browser on the client-side.
@@ -2004,6 +2031,14 @@ modified: 2023-06-23T12:46:53.288Z
   - https://x.com/TheLarkInn/status/1667266703745757184
     - Awesome now do the “click on AST on right to highlight code on left” like astexplorer does!
     - https://ast-grep.github.io/playground.html
+
+- https://github.com/ast-grep/ast-grep /MIT/202408/rust
+  - https://ast-grep.github.io/
+  - https://ast-grep.github.io/playground.html
+  - A CLI tool for code structural search, lint and rewriting. Written in Rust
+  - playground的diff视图基于monaco实现
+  - https://github.com/ast-grep/tree-sitter-wasm
+  - https://github.com/ast-grep/ast-grep.github.io
 
 - https://github.com/lucademenego99/icp-bundle /apache2/202307/svelte
   - Interactive Code Playgrounds Bundle is a plugin for embedding interactive code playgrounds in HTML pages.
@@ -2042,14 +2077,6 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/cookshack/bred /CC0-1.0/202504/js
   - I'm playing with CodeMirror, Monaco and Ace inside Electron.
-
-- https://github.com/ast-grep/ast-grep /MIT/202408/rust
-  - https://ast-grep.github.io/
-  - https://ast-grep.github.io/playground.html
-  - A CLI tool for code structural search, lint and rewriting. Written in Rust
-  - playground的diff视图基于monaco实现
-  - https://github.com/ast-grep/tree-sitter-wasm
-  - https://github.com/ast-grep/ast-grep.github.io
 
 - https://github.com/monis07/logicloom /202405/ts
   - https://logicloom-client.vercel.app/
@@ -2113,14 +2140,7 @@ modified: 2023-06-23T12:46:53.288Z
 - code-play
   - https://github.com/xorazmiy-dev/code-mirror /js
 
-- https://github.com/val-town/playground /MIT/202505/ts
-  - This repository provides a React component that you can use to embed an interactive coding playground on a website that uses Val Town to execute code.
-  - `<Playground env={{ YOUR_API_KEY: 'something' }} code="console.log(1);" workerPath="/public/worker.ts" />`
-
-## playgrounds
-
-- playground-examples
-  - https://arktype.io/playground
+## playgrounds-examples
 
 - https://github.com/vercel/satori /MPLv2/202411/ts
   - https://og-playground.vercel.app/
@@ -2129,8 +2149,67 @@ modified: 2023-06-23T12:46:53.288Z
   - 不支持html字符串渲染和dangerouslySetInnerHTML
   - What if there’s a `<Satori>` component that adds fluid layout & style transitions to your elements?
 
+- https://github.com/vercel/next-app-router-playground /2.9kStar/MIT/202506/ts
+  - https://app-router.vercel.app/
+  - This playground is used by the DX team to explore, test, and demo new Next.js features. 
+  - It serves as a starting point for writing documentation and helps us understand features
+  - 支持nested routes
+
+- https://github.com/tajo/ladle /2.8kStar/MIT/202510/ts
+  - https://ladle.dev/docs/
+  - Ladle is a drop-in alternative to Storybook. 
+    - Without adding a single component Storybook 6.4 outputs 5.1MB of assets. Ladle only 250KB
+  - Develop, test and document your React story components faster
+  - It is a tool for developing and testing your React components in an environment that's isolated 
+  - Why? Performance! 
+    - Ladle supports only React, embraces the latest standards (ES Modules) and focuses on performance. It's built around Vite
+    - Each Ladle story gets automatically code-split, so it doesn't matter how many components you want it to handle. Ladle always loads fast.
+
+- sqlime /1kStar/MIT/202509/js
+  - https://github.com/nalgeon/sqlime
+  - http://sqlime.org/
+  - an online SQLite playground for debugging and sharing SQL snippets. 
+  - Kinda like JSFiddle, but for SQL instead of JavaScript.
+  - backed by SQLite, provided by an excellent sql.js project.
+  - Connect any local or remote SQLite database. Both files and URLs are supported. 
+    - For example, try loading the Employees database from the GitHub repo.
+
+- https://ai-sdk.dev/playground
+  - 双栏聊天布局
+
+- https://github.com/prvnsmpth/open-playground /apache2/202503/ts/svelte
+  - LLM playground to experiment with local models and build fine-tuning datasets and benchmarks
+  - [Open source chat playground for local LLMs : r/selfhosted](https://www.reddit.com/r/selfhosted/comments/1iys4jd/open_source_chat_playground_for_local_llms/)
+    - I’ve been tinkering with local LLMs and needed a more flexible interface for experimentation - so I built a web UI for myself
+
+- https://github.com/MCPJam/inspector /1.1kStar/apache2+EE/202510/ts
+  - https://www.mcpjam.com/
+  - A developer tool for testing, debugging Model Context Protocol (MCP) servers. 
+  - It’s a great place to start evaluating an MCP server by inspecting the protocol handshake and getting a deterministic list of tools, resources, prompts from the server.
+  - 类似 postman for mcp-server
+
+- https://github.com/badass-courses/course-builder /MIT/202406/ts
+  - https://www.coursebuilder.dev/
+  - experimental platform for building Badass Courses
+  - Course Builder is a real-time multiplayer CMS for building and deploying the opinionated data structures of developer education products
+  - [feat: codemirror + partykit markdown editor _202312](https://github.com/badass-courses/course-builder/pull/35)
+    - used this Liveblocks guide to get this running with partykit.
+  - [feat: collaborative codemirror editor _202401](https://github.com/badass-courses/course-builder/issues/54)
+    - We've set up the basics for the collaborative editor, but the results are mixed and kind of janky where the text sometimes doubles up and it doesn't feel right in terms of the syncing between the CMS (Sanity) and the Partykit connection.
+
+## playgrounds-more
+
+- https://ui.shadcn.com/examples/playground
+  - Build your Component Library
+
+- playground-examples
+  - https://arktype.io/playground
+
 - https://github.com/divriots/universal-story-render /202205/ts/inactive
   - Universal story renderer, compatible with most JS UI frameworks out there.
+
+- [Langfuse LLM Playground](https://langfuse.com/docs/prompt-management/features/playground)
+  - Tweak the prompt and model parameters to see how different models respond to these input changes. This allows you to quickly iterate on your prompts and optimize them for the best results
 
 ## repl
 

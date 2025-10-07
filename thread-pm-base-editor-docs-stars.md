@@ -12,6 +12,16 @@ modified: 2021-08-22T07:29:34.045Z
 # discuss-docs-ai 👾
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [I built an AI that redesigns your Notion pages into real websites : r/Notion _202510](https://www.reddit.com/r/Notion/comments/1o0bco2/i_built_an_ai_that_redesigns_your_notion_pages/)
+  - I’ve been building Bullet.so for a while, growing slowly and steadily. 
+  - But recently I hit a point where I started wondering: why do we still have to tweak every block, color, and spacing by hand when Notion already gives us great content structure?
+
 - ## Notion AI can now actually use Notion. _202508
 - https://x.com/NotionHQ/status/1953127672848236721
   - It handles multi-step tasks like editing multiple pages or updating entire database—like a power user, built in.

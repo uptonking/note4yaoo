@@ -44,7 +44,7 @@ modified: 2021-03-03T21:48:48.379Z
     - If you need to modify these, you will have to fork the projects, make your modifications and then re-publish them as new packages which can then be used instead of the original ones. The real problem you are trying to solve are not modifying these. The actual problem is providing the code suggestions in the same format that the codeium server does. The actual codeium backend server running the AI models is not open-source.
     - this is not easily done. :( Thank you for the explanations
 
-- react-view /558Star/MIT/202105/ts
+- react-view /711Star/MIT/202312/ts/inactive
   - https://github.com/uber/react-view
   - https://react-view.netlify.com/
   - 优点是除了支持直接编辑源码，还支持类似storybook的knobs，通过复选框直接设置属性值，甚至能直接输入函数形式的字符串作为属性值

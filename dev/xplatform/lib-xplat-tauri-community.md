@@ -13,6 +13,36 @@ modified: 2023-01-14T17:22:00.810Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+# discuss-tauri-chromium
+- ## 
+
+- ## 
+
+- ## [Is it possible to have Chromium bundled/used for a Linux build ? _202212](https://github.com/tauri-apps/tauri/discussions/5796)
+- No. sidecars also don't help at all here. It would basically allow us to bundle a "normal" browser, but we can't use browsers as a tauri backend because we don't have any control over them. For what it's worth, we are somewhat actively researching our own webview which could be based on chromium too.
+
+- ## [Bundle chromium renderer · Issue · tauri-apps/wry _202311](https://github.com/tauri-apps/wry/issues/1064)
+  - The performances of WebkitGTK are really bad and the implementation often breaks. It is also hard to test for app maintainers since nobody really uses it outside of some obscure default browser. It is also not on the MDN compatibility list for API.
+  - For better or worst, shipping a chromium renderer like electron does is the way all big companies ship their app today and the reason is simple: it works great. The experience is consistent for the user and it's not a pain to QA.
+  - I think wry should support bundling a renderer.
+
+- if Microsoft had any vision of would be awesome to have a webview2 standard across OS and it could be even a user setting (like use Firefox to provide webviews in my apps). Sadly we are not there yet.
+- CEF work I think is the way to go. Even better if the user can patch the chromium version without us. I know that for security oriented OS (like Parrot OS) the maintenance of electron apps is annoying because they cant easily patch the browser in case there is a critical CVE.
+
+- As a MacOS first shop I'd like to add that this isn't just a Linux issue - MacOS webviews are also wildly inconsistent.
+  - Making the bundle just a bit smaller for a desktop app is outweighed by the simplicity and consistency of having Chromium bundled for many users imho.
+
+- I guess iOS also suffers from the same webview issue. Though on the apple side, you may use html, js, css features that are available on the lowest macos version of safari.
+
+- The solution is to to go with chromium until servo/verso gets stable enough, which will very likely happen earlier than webkitgtk becoming usable.
+
+- How is electron faster at WebGL than CEF? (Sorry OT)
+  - Other way around. Electron is faster than Tauri as it stands currently for doing any kind of 3D render through webgl. Tauri using CEF would fix that.
+  - Dioxus is also showing some promise with the new WGPU Overlays.
 # discuss-news
 - ## 
 

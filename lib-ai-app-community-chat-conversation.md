@@ -179,6 +179,14 @@ modified: 2023-04-16T10:02:58.738Z
   - readablestreams
   - flow control
 
+- ## [What LLM frontend you are using ? : r/LocalLLaMA _202404](https://www.reddit.com/r/LocalLLaMA/comments/1cdk5nr/what_llm_frontend_you_are_using/)
+- LM Studio - When I just want to start chatting right away without any technical hassle.
+  - Text Generation Web UI - When I want more "advanced" features.
+  - I have also coded my own very personal chat front end for very specific use cases, for example when I want to chat with an local LLM on my phone by connecting it to my PC that runs the heavy model.
+
+- I wanted to use RAG features, and models that were set up for specific tasks, so I plugged into Anything LLM, and that is also very user-friendly, and has fast vector searches
+
+- I use discord as a GUI. Also, the bot supports multiple simultaneous users with permanent memory and RAG. No goldfish syndrome. Remembers info from outside the context window, while keeping context below 32k. https://github.com/DataBassGit/AssistAF
 # discuss-chat-dev/server
 - ## 
 

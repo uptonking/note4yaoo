@@ -290,13 +290,29 @@ modified: 2023-02-08T07:20:48.475Z
 - https://github.com/naklecha/llama3-from-scratch /MIT/202405/jupyter/inactive
   - llama3 implementation one matrix multiplication at a time
 # ollama/lmstudio-like
-- https://github.com/menloresearch/jan /37.5kStar/apache2/202508/ts/rust/tauri
+- https://github.com/menloresearch/jan /37.5kStar/agpl > apache2/202508/ts/rust/tauri
   - https://jan.ai/
   - an AI assistant that can run 100% offline on your device
   - Local AI Models: Download and run LLMs (Llama, Gemma, Qwen, etc.) from HuggingFace
   - Cloud Integration: Connect to OpenAI, Anthropic, Mistral, Groq, and others
   - MCP integration for enhanced capabilities
   - 提供了类似lm studio的模型下载简化版
+  - [chore: Jan's code is now under the Apache license _202505](https://github.com/menloresearch/jan/pull/5042)
+    - release/v0.5.18
+
+- https://github.com/oobabooga/text-generation-webui /45.1kStar/AGPLv3/202509/python/js
+  - https://oobabooga.gumroad.com/l/deep_reason
+  - A Gradio web UI for Large Language Models.
+  - The definitive Web UI for local AI, with powerful features and easy setup.
+  - Supports multiple local text generation backends, including llama.cpp, Transformers, ExLlamaV3, ExLlamaV2, and TensorRT-LLM (the latter via its own Dockerfile).
+  - Easy setup: Choose between portable builds (zero setup, just unzip and run) for GGUF models on Windows/Linux/macOS, or the one-click installer that creates a self-contained installer_files directory.
+  - 100% offline and private, with zero telemetry, external resources, or remote update requests.
+  - File attachments: Upload text files, PDF documents, and .docx documents to talk about their contents.
+  - Vision (multimodal models): Attach images to messages for visual understanding
+  - Web search: Optionally search the internet with LLM-generated queries to add context to the conversation.
+  - https://github.com/oobabooga/text-generation-webui-extensions
+    - ad_discordbot (altoiddealer's discordbot)
+    - Diffusion_TTS
 
 - https://github.com/withcatai/catai /477Star/MIT/202406/ts/svelte/api+webapp/inactive
   - https://withcatai.github.io/catai/
@@ -317,6 +333,19 @@ modified: 2023-02-08T07:20:48.475Z
   - Ava is an open-source desktop application for running language models locally on your computer. 
   - It's batteries-included GUI for llama.cpp
   - Zig, C++ (llama.cpp), SQLite, Preact, Preact Signals, Twind
+
+- https://github.com/felladrin/MiniSearch /480Star/apache2/202510/ts
+  - https://felladrin-minisearch.hf.space/
+  - A minimalist web-searching app with an AI assistant that runs directly from your browser.
+  - Cross-platform: Models run inside the browser, both on desktop and mobile
+  - Efficient: Models are loaded and cached only when needed
+  - Customizable: Tweakable settings for search results and text generation
+  - Can I use custom models via OpenAI-Compatible API?
+    - Yes! For this, open the Menu and change the "AI Processing Location" to Remote server (API). Then configure the Base URL, and optionally set an API Key and a Model to use.
+  - It's a docker-based web app built upon SearXNG.
+  - https://github.com/searxng/searxng /AGPL/202510/python
+    - https://docs.searxng.org/
+    - SearXNG is a free internet metasearch engine which aggregates results from various search services and databases. Users are neither tracked nor profiled.
 # ml-neural-network
 - https://github.com/AlloyTeam/netural
   - JavaScript的前向神经网络和反向传播的实现。

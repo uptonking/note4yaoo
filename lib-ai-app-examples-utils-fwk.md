@@ -359,6 +359,11 @@ modified: 2025-02-21T18:20:42.624Z
 - https://github.com/mark3labs/mcp-filesystem-server /go
   - Go server implementing Model Context Protocol (MCP) for filesystem operations.
   - 通过这个MCP就可以操作本地文件系统了，由于这个是go编写的，go能交叉编译的架构特别多，所以理论上大部分系统都能运行这个MCP Server。
+# protocols-ai
+- https://github.com/zed-industries/agent-client-protocol /871Star/apache2/202510/rust/ts
+  - https://agentclientprotocol.com/
+  - A protocol for connecting any editor to any agent
+  - [Bring Your Own Agent to Zed — Featuring Gemini CLI — Zed's Blog _202508](https://zed.dev/blog/bring-your-own-agent-to-zed)
 # crawler-ai
 - https://github.com/mendableai/firecrawl /AGPLv3/202502/python/rust/ts
   - https://firecrawl.dev/

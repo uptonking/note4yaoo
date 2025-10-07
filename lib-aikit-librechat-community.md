@@ -22,7 +22,12 @@ modified: 2025-09-01T05:53:05.266Z
 
 - ## 
 
-- ## 
+- ## [Anyone running Open Webui with llama.cpp as backend? does it handles model switching by itself? : r/LocalLLaMA _202504](https://www.reddit.com/r/LocalLLaMA/comments/1k5w6gg/anyone_running_open_webui_with_llamacpp_as/)
+
+- llamacpp will not swap models by itself, but someone else mentioned, llama-swap is exactly for this use case.
+  - In my setup I have more than one llama.cpp servers running at the same time, each with a small model.
+
+- 🧑‍🏫 [Tutorial: Open WebUI and llama-swap works great together! Demo of setup, model swapping and activity monitoring. : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mon08l/tutorial_open_webui_and_llamaswap_works_great/)
 
 - ## [OpenWebUI is the most bloated piece of s**t on earth, not only that but it's not even truly open source anymore, now it just pretends it is because you can't remove their branding from a single part of their UI. Suggestions for new front end? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nlkwr3/openwebui_is_the_most_bloated_piece_of_st_on/)
 - If you want 0 bloat, then LLaMa.cpp’s server.exe gives you an extremely lean, no-nonsense interface.

@@ -94,6 +94,16 @@ modified: 2025-09-25T16:24:05.355Z
   - 红楼梦
 
 - mobile-comfy
+
+- workflow-appstore
+  - resell workflow
+  - customize workflow
+
+- 
+- 
+- 
+- 
+
 # dev-xp
 - roadmap
   - workflow as app: 实现思路包括独立fullstack, custom_node-api, custom_node-ui, gradio

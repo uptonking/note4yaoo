@@ -73,7 +73,7 @@ modified: 2022-08-21T10:37:01.349Z
   - 我很喜欢的一点是所有筛选条件都是持久在 URL
   - 我还发现它居然是直接接入数据库的，用的是：https://neon.tech 这个 Serverless Postgres，也有开源版本，又了解了一个工具，现在这个云数据库也太卷了。
 
-- https://github.com/openstatusHQ/data-table-filters /MIT/202504/ts
+- https://github.com/openstatusHQ/data-table-filters /1.7kStar/MIT/202504/ts
   - https://data-table.openstatus.dev/
   - This is a standalone data-table demo that we will be using within the OpenStatus dashboard.
   - The UI is heavily inspired by datadog and vercel log tables.

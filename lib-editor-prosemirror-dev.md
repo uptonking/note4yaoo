@@ -83,6 +83,7 @@ modified: 2021-05-06T09:39:53.522Z
   - fwk agnostic noseditor: prosekit + atlaskit <> tiptap
     - rewrite tiptap/blocknote/atlaskit extension in prosemirror
   - lasuite/colanode + diff-view
+  - codemirror-chat 移植到 prosemirror
 
 - 🆚 diff-view
   - diff-match-patch + prosemirror-diff

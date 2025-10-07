@@ -122,6 +122,13 @@ modified: 2025-03-22T18:49:15.634Z
     - An efficient, customizable, and open-source enterprise-ready document chatbot solution.
   - 基于langchain实现
 
+- https://github.com/huggingface/chat-ui /9.2kStar/apache2/202510/ts/svelte
+  - https://huggingface.co/chat
+  - A chat interface for LLMs. 
+  - It is a SvelteKit app and it powers the HuggingChat app on hf.co/chat.
+  - Chat UI only supports OpenAI-compatible APIs via OPENAI_BASE_URL and the /models endpoint.
+  - Chat history, users, settings, files, and stats all live in MongoDB. You can point Chat UI at any MongoDB 6/7 deployment.
+
 - https://github.com/ChatGPTNextWeb/NextChat /85.4kStar/MIT/202508/ts/tauri
   - https://nextchat.club/
   - Light and Fast AI Assistant. 
@@ -150,7 +157,14 @@ modified: 2025-03-22T18:49:15.634Z
   - https://github.com/justUmen/Bjornulf_lobe-chat /202411/inactive
     - Quick and dirty fork to enable lobe-chat to send ComfyUI api request + receive image link + local TTS
 
-- https://github.com/OvidijusParsiunas/deep-chat /2.7kStar/MIT/202508/ts
+- https://github.com/thinkinaixyz/deepchat /4.1kStar/apache2/202510/ts/vue
+  - https://deepchat.thinkinai.xyz/
+  - Open-Source Multi-Model AI Chat Platform
+  - supporting multiple cloud and local large language models with powerful search enhancement and tool calling capabilities.
+  - Built-in Ollama support 
+  - Built-in MCP support enables code execution, web access, and other tools without additional configuration
+
+- https://github.com/OvidijusParsiunas/deep-chat /3.2kStar/MIT/202510/ts
   - https://deepchat.dev/
   - a fully customizable AI chat component that can be injected into your website with just one line of code
   - Connect to any API

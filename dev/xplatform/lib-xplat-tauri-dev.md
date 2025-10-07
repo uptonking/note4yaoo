@@ -9,7 +9,8 @@ modified: 2023-01-14T17:21:28.975Z
 
 # guide
 - pros
-  - ?
+  - 比electron支持更多平台，如android/ios
+    - ionic-capacitor 也支持web/ios/android, 但桌面端采用electron方案
 
 - cons
   - ?

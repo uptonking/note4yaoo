@@ -130,8 +130,9 @@ modified: 2021-05-14T15:03:38.010Z
 
 - https://play.fe-dev.cn/
 # more-online-code-editor
-- https://github.com/agneym/playground
+- https://github.com/agneym/playground /1.1kStar/MIT/202210/ts/inactive
   - https://blog.agney.dev/introducing-playground/
   - playground for HTML, CSS and JavaScript supporting module imports.
+  - vizhub的方案更全面
 # ref
 - [7 JavaScript Playgrounds to Use in 2019 ― Scotch.io](https://scotch.io/tutorials/7-javascript-playgrounds-to-use-in-2019)

@@ -109,15 +109,50 @@ modified: 2025-09-01T05:52:34.241Z
 
 - [[Bug]: error: [getAvailableTools] MCPManager has not been initialized. _202509](https://github.com/danny-avila/LibreChat/issues/9437)
   - 导致添加stable-diffusion工具失败，更新到最新代码就可以了
-# ollama/lmstudio/llama.cpp
+# ollama/lmstudio/llama.cpp 🔧
+- 工具链功能
+  - model management: Ollama(支持api)
+  - frontend: openwebui, librechat
+  - backend/api: Koboldcpp(包括fe)
+  - all-in-one: lmstudio, janai
+
+- 自定义模型工具链的优点
+  - 后台运行llm、自动切换llm、加入task queue及异常恢复 都需要自定义工具链的支持
+  - 针对硬件自动选择合适参数
+  - 支持针对模型添加自定义启动参数
+  - 定制切换模型、模型保留缓存的逻辑，避免每次都重新加载模型
+  - 自定义模型路由，类似openrouter, 根据体积/cost自动选择模型
+  - 能优化软件占用的内存, lmstudio的内存占用很少, janai价值qwen3-4b模型gguf占用内存上10GB
+  - 针对多gpu进行优化
+  - 针对apple设备进行优化
+
 - ollama/lmstudio封装了llama.cpp, janai fork了llama.cpp
 
+- 支持使用已有model文件.safetensors的工具包括
+  - janai, 通过llama.cpp方式的provider
+  - Oobabooga
+
 - ai-chat的客户端封装可参考
-  - janni, ollama-ui
+  - janai, ollama-ui
   - gradio: Oobabooga, sd-webui
 
 - llama.cpp的封装可参考
   - janai, Oobabooga
+
+- gui封装后端逻辑的参考
+  - comfyui, invokeai
+
+- janai-xp
+  - 不支持直接使用已有的.safetensors文件
+
+- 
+- 
+- 
+
+# janai-xp
+- 使用ollama或lmstudio的模型api时，需要关闭clash全局代理
+  - http://localhost:11434/v1
+  - http://localhost:1234/v1
 
 - 
 - 

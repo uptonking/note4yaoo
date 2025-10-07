@@ -175,7 +175,7 @@ modified: 2023-09-02T09:17:22.992Z
 
 ## iframe-sandbox
 
-- https://github.com/dabbott/javascript-playgrounds /ts
+- https://github.com/dabbott/javascript-playgrounds /1.4kStar/BSD/202411/ts/inactive
   - https://unpkg.com/javascript-playgrounds/public/index.html
   - An interactive JavaScript sandbox
   - It's designed to be loaded as an iframe for easy inclusion in any webpage.

@@ -70,7 +70,7 @@ modified: 2021-08-30T18:56:18.632Z
     - Can handle much larger SQLite files (tested up to 1.5GB), only limited by storage quota of your browser
     - Fixed virutal scrolling and resizing for very large tables
 
-- sqlime /338Star/MIT/202401/js
+- sqlime /1kStar/MIT/202509/js
   - https://github.com/nalgeon/sqlime
   - http://sqlime.org/
   - an online SQLite playground for debugging and sharing SQL snippets. 

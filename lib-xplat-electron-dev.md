@@ -10,8 +10,10 @@ modified: 2021-05-13T03:08:52.583Z
 # guide
 
 - pros
+  - 内置了chromium/nodejs, 使用方碰到兼容性问题的概率小很多
   - 相对于qt/zed等原生框架实现ui，electron基于html/dom实现，可以方便集成类似rrweb进行操作回放
   - 基于electron可将数据保存在本地文件系统，比web浏览器支持更大的缓存
+  - 成熟工具如vscode提供了多平台如 web/win/linux/mac 的架构参考
 
 - cons
   - 基于ipc的通信增加了web端开发的复杂度，但能支持client-server/local/idb多种架构
@@ -24,7 +26,7 @@ modified: 2021-05-13T03:08:52.583Z
   - popular: vscode/theia/opensumi, jupyter, postman-like(web+pc)
   - known: qq, slack, mattermost, zulip
   - db: mongodb-compass, dbgate, beekeeper, sqlectron
-  - notes(web/pc): joplin(AGPL), marktext(MIT), siyuan(AGPL), trilium(AGPL), notable(MIT), notesnook(GPL), Zettlr(GPL), yn(AGPL), tinywrite
+  - notes(web/pc): obsidian, joplin(AGPL), marktext(MIT), siyuan(AGPL), trilium(AGPL), notable(MIT), notesnook(GPL), Zettlr(GPL), yn(AGPL), tinywrite
   - open: drawio(apache2), tagspaces, medis
   - 经典示例: file-manager, note-taking, reader-epub
 

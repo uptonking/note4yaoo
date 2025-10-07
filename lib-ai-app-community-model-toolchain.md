@@ -710,11 +710,36 @@ sudo launchctl load /Library/LaunchDaemons/io.yaoo.sysctl.plist
 
 - ## 
 
-- ## 
+- ## [Is there any all-in-one app like LM Studio, but with the option of hosting a Web UI server? : r/LocalLLaMA _202506](https://www.reddit.com/r/LocalLLaMA/comments/1larzxz/is_there_any_allinone_app_like_lm_studio_but_with/)
+- llama.cpp's llama-server hosts a very basic webUI by default. It's hosted at the server root, without the API endpoint.
 
-- ## 
+- LM Studio + OpenWebUI work quite well together and you can share it via a VPN like Tailscale if you want to access it from anywhere. 
 
-- ## 
+- Anything can be anything with docker. Make a docker compose once that launches all the things
+
+- ## [Best Opensource LM Studio alternative : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mrxuwd/best_opensource_lm_studio_alternative/)
+- llama.cpp: `llama-server -m model.gguf` http://localhost:8080
+- Add Llama-Swap to make it hot swap models. Open WebUI is a sleek interface.
+- what is llama swap
+  - It’s a small proxy server (portable, no installation needed) that runs your Llama Cpp instance but offers its OpenAI compatible API to any client you have. Once you connect to this proxy and request any model by name, it will load it up and serve.
+- This is the only correct answer. Start here. You will not be dependent on some company that wants to make money at some point.
+
+- The problem with the llama.cpp / llama swap configuration is that the easy install is Vulcan only and if you buy newer hardware, aka, 50 series stuff, you have to build it from source. Most of the people using lm studio or ollama are not set up for that.
+
+- Really wanted to use jan.ai since its fully open source but its lacking many features of lmstudio 
+  - Jan doesn't have RAG to chat with document files 
+  - qwen 3 30b a4b runs at 3 t/s instead of 17 on lm studio. using 2080 super
+  - No projects folder option like in lm studio/ chatgpt 
+
+- Jan AI if you want an all-in-one desktop app that runs both the AI and the GUI. Open source and looks very nice. Best LM Studio alternative IMO.
+
+- KoboldCPP feels more like LM Studio because it's available as a single binary.
+  - If only it wasn't ugly as all hell. Really needs.. some.. no.. A LOT.. of UI work.
+- Agreed. They should invest some in creating a new UI. Lots of good backend stuff... There is a lot I love about Oobabooga that I wish they would adopt.
+
+- I like gpustack, they run llamabox which is based on llama.cpp
+
+- GPT4ALL was nice but it's a dead project now.
 
 - ## [Why do people say LM Studio isn't open-sourced? : r/LocalLLaMA _202405](https://www.reddit.com/r/LocalLLaMA/comments/1cvawmz/why_do_people_say_lm_studio_isnt_opensourced/)
 - LMstudio is free in cost but it's proprietary software.
@@ -771,7 +796,12 @@ sudo launchctl load /Library/LaunchDaemons/io.yaoo.sysctl.plist
 
 - ## 
 
-- ## 
+- ## [FR: Meaningful names of models in models/blobs dir _202501](https://github.com/ollama/ollama/issues/8466)
+  - Please make models to have meaningful filenames (like user/modelname-quantization.gguf) in models/blobs directory, so they can be (easier) used with other model inference software.
+
+- The blobs are content addressable which means that if you have two or more models which share the same content they will share the same blob which saves space on your disk and also means you don't have to pull down that data if you already have it. The format is also changing with the new engine though so it probably won't be useful with other tools unless they support the new format.
+
+- You use less disk space because the many of the quantizations of the tensors share the same tensors.
 
 - ## [MLX backend · Issue · ollama/ollama _202312](https://github.com/ollama/ollama/issues/1730)
 - Add mlx-vlm backend also.
@@ -797,6 +827,26 @@ curl http://localhost:11434/api/chat -d '{
 - ## 
 
 - ## 
+
+- ## [502 Bad Gateway · Issue · ollama/ollama _202407](https://github.com/ollama/ollama/issues/5437)
+- you're right, I ignored the proxy.
+
+- [Running without network error: ollama._types. ResponseError · Issue #85 · ollama/ollama-python](https://github.com/ollama/ollama-python/issues/85)
+  - Met similar issue that direct me here, fixed by turning off the global proxy.
+  - Tried turning off the wifi, and it still works (on MacOS).
+
+- [ValueError: Ollama call failed with status code 502. Details · Issue #20742 · langchain-ai/langchain](https://github.com/langchain-ai/langchain/issues/20742)
+
+- ## [使用OllamaEmbeddings时，报错ollama._types. ResponseError(status code:502)和(status code:500)_ollama 502-CSDN博客](https://blog.csdn.net/m0_70647377/article/details/146829186)
+- 1. 关闭VPN代理，重试
+
+- 2. 在cmd中设置两步
+  - set OLLAMA_HOST=0.0.0.0
+  - ollama serve
+
+- ## 💡 [Electron & root priveleges · Issue · ollama/ollama _202311](https://github.com/ollama/ollama/issues/1076)
+  - This project has 84% of the codebase written in Go, but for some reason it uses Electron, which is very heavy (500MB+) both for persistent memory and RAM usage.
+- 202404: I successfully migrated the ollama mac app from electron to Tauri. The app package size is only 30M and the memory usage is only 100M.
 
 - ## 🏞️ [Can add Stable Diffusion 3.5 model？ · Issue · ollama/ollama _202412](https://github.com/ollama/ollama/issues/8047)
   - Does Olama not support the Diffusion 3.5 model? Can we add an Diffusion 3.5 model?
@@ -919,22 +969,96 @@ curl http://localhost:11434/api/chat -d '{
 
 - ## 
 
-- ## [Jan: An open source alternative to ChatGPT that runs on the desktop | Hacker News _202403](https://news.ycombinator.com/item?id=39782876)
-- GPT4All makes it annoyingly difficult to run any other than their "approved" models. I'd like to kick the tires on a whole host of random GGUF quantizations on Hugging Face, please.
-  - I use text-gen-ui (Oobabooga) as a back-end and have it run with `--api` to use the front end of my choice.
+- ## 
 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
+- ## [Is it possible to use Jan AI server instead of LM Studio server in Obsidian Copilot? : r/LocalLLaMA _202409](https://www.reddit.com/r/LocalLLaMA/comments/1f5vswt/is_it_possible_to_use_jan_ai_server_instead_of_lm/)
+- You could also try changing Jan port to 1234 to attempt to use original (unchanged) LM Studio option. If Obsidian doesn't use any uncommon API features, maybe it could work.
+
+- Yep, there's a local API server. In the left ribbon, click the icon right above settings. Turn on the server. Visit: http://127.0.0.1:1337 to verify (there should be an api playground)
+  - Make sure you are on v0.5.3+
+
+- ## [Jan vs LM Studio : r/LocalLLaMA _202503](https://www.reddit.com/r/LocalLLaMA/comments/1j7qol7/jan_vs_lm_studio/)
+- LM studio does have Rocm support, but only for RX6800 or higer or newer variants(7600, 7600XT, 7800....).
+- I recommend you to stay with LM Studio, which responds more quickly to newer models than other frontends. Jan was just a full of frustrating experience as I tried it.
+
+- Check settings in Jan i think it doesn’t offload all layers to gpu fully by default
+
+- ## [Jan. AI with Ollama (working solution) : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1lsoflk/janai_with_ollama_working_solution/)
+  - I already have lot of downloaded local llms in my system via ollama.
+
+- Go to Settings > Model Providers
+  - Click OpenAI
+  - In API Key field add `ollama` as api key & in Base URL enter `http://localhost:11434/v1` equivalent endpoint.
+  - In Models list you can see many already available models of OpenAI you can keep it or delete it (but it's optional)
+  - In Models there is and option to add new model (there is plus icon), so click on it and add you local ollama model name in my case it was `qwen2.5-coder:14b` (to see available models with exact name run ollama list command in terminal)
+
+- ## 🎯 [Jan now auto-optimizes llama.cpp settings based on your hardware for more efficient performance : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nvzeuh/jan_now_autooptimizes_llamacpp_settings_based_on/)
+  - It works with Mac too! Although it is still experimental, so do let us know how it works for you.
+  - We don't support MLX yet (only gguf and llama.cpp), but we will be looking into it in the near future.
+
+- Can the Jan server serve multiple models (swapping them in/out as required) similar to Ollama?
+  - You can definitely serve multiple models similar to Ollama. Although the only caveat is that you would also need to have enough VRAM to run both model at the same time also, if not you would need to manually switch out the model on Jan.
+  - Under the hood we are basically just proxying `llama.cpp` server as Local API Server to you with an easier to use UI
+- The manual switching out of the models is what I’m trying to avoid. It would be great if Jan could automatically swap out the models based on the requests.
+  - We used to have this, but it makes us deviate(背离, 偏离) too much away from llama.cpp and make it hard to maintain, so we have to deprecate it for now.
+  - We are looking into how to bring it back in a more compartmentalize way, so that it is easier for us to manage. Do stay tune tho, it should be coming relative soon!
+- I believe this is what llama-swap does?
+
+- What is the use case for a chat tool without RAG? How is this better than the llama.cpp integrated Webserver? 
+  - Jan supports MCP so you can have it call a search tool for example
+  - It can reason - use tool - reason just like chatgpt
+  - As for the use case, it's the only open source AIO(All-In-One) solution that nicely wraps llama.cpp with multiple models
+- You can actually run MCP that search your own files too! A lot of our user do that through Filesystem MCP that come pre-config with Jan
+  - Any file over 5MB will flood the context and become truncated. It is not an alternative. 
+
+- RAG is definitely on our roadmap, however, like other user has pointed out, implementing RAG with a smooth UX is actually a non-trivial task. A lot of our users don't have access to high compute power, so balance between functionality and usability has always been a huge pain point for us.
+
+- I really wish Jan would be a capable RAG-system (like GPT4all) but with regular updates and support of any gguf-models (unlike GPT4all).
+
+- What “All-In-One” practically means for Jan
+  - Runtime + engine: includes llama.cpp (local inference) plus cloud provider options so you can run models locally
+  - Model management / hub
+  - UI: chat UI, model hub, model settings, downloads
+  - Tool / integration layer: supports MCP
+  - Server/API & multi-tenant features
+
+- Does it support multi-GPU optimization?
+  - Yes, it does!
+  - It does handle multi-GPU setups, but not automatically yet. 
+- I found the optimizer doesn't check if the model fits in a single GPU without layer offloading to CPU. It should put -1
+
+- Does Jan allow one to create their own agents and/or agent routing?
+  - Not yet, but soon! Right now, we only have Assistant, which is a combination of custom prompt and model temperature settings
+
+- ## 🎯 [Jan now runs fully on llama.cpp & auto-updates the backend : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1mdy1at/jan_now_runs_fully_on_llamacpp_autoupdates_the/)
+  - Jan v0.6.6 is out. Over the past few weeks we've ripped out Cortex, the backend layer on top of llama.cpp. It's finally gone, every local model now runs directly on llama.cpp.
+  - Plus, you can switch to any llama.cpp build under Settings, Model Providers, llama.cpp (see the video above).
+- We had different plans for Cortex, that's why we insisted on keeping it for a while, but maintaining it with the new plans became pretty tough. It just made more sense to support llama.cpp directly instead of going through an extra layer.
+  - Well I'm glad the team changed direction. This more polished, cleaner, leaner, faster way of Jan development is bound to result in great progress!
+- Cortex was the engine behind Jan. It ran on llama.cpp and worked kind of like an alternative to Ollama. We used to update it whenever llama.cpp got updated. Since we've changed our plans, we removed it with Jan v0.6.6.
+
+- I see that the Linux version became 850MB lighter. Is that because of the Cortex removal?
+  - Yes, Cortex removal is part of it. We also trimmed down the app by moving out unused dependencies like CUDA 11/12 and extra llama.cpp builds. 
+  - Jan now fetches the right llama.cpp version after install, so no need to be bundled in the app itself, which makes the download much lighter
+- Although it would be great to keep at least 1 version of llama.cpp, so the install would be portable.
+
+- Does Jan allow selectively offloading model tensors to CPU? (For MoE models) If yes, I would migrate from LM Studio to Jan just for that!
+  - oh - not yet, but we're adding it to the roadmap. Thanks for the request!
+- this is the killer feature all the slick frontends are missing.
+
+- Allowing ik_llama as a backend would be cool too!
+
+- Llama cpp has so many options, there really should be a "custom arguments" option (input field that gets passed through to llama).
+
+- Koboldcpp have this feature iirc
+
+- Would be great if we could also use llama.cpp forks such as ik_llama.cpp or the Unsloth fork
+  - llama.cpp forks: Each fork comes with its own changes, and integrating them cleanly would add a lot of maintenance overhead. We're keeping an eye on where things go, but sticking with official llama.cpp keeps Jan more stable for now.
+
+- MLX support has been on the table for a while... it's something we revisit from time to time. We made several roadmap changes around it, but no final decision yet
 
 - ## 🏠 [Jan got an upgrade to v0.6.0: New design, switched from Electron to Tauri, custom assistants, and 100+ fixes - it's faster & more stable now : r/LocalLLaMA _202506](https://www.reddit.com/r/LocalLLaMA/comments/1lf5yog/jan_got_an_upgrade_new_design_switched_from/)
+  - [Release 0.6.0 · menloresearch/jan _20250619](https://github.com/menloresearch/jan/releases/tag/v0.6.0)
   - Switched from Electron to Tauri for lighter and more efficient performance
   - You can create your own assistants with instructions & custom model settings
   - Fully redesigned UI
@@ -1024,6 +1148,10 @@ curl http://localhost:11434/api/chat -d '{
   - It's too bad that after all this time it is still very buggy and clunky.. I had high hopes for it
 
 - jan has stopped supporting the WebUI, so browser functions are not available.
+
+- ## [Jan: An open source alternative to ChatGPT that runs on the desktop | Hacker News _202403](https://news.ycombinator.com/item?id=39782876)
+- GPT4All makes it annoyingly difficult to run any other than their "approved" models. I'd like to kick the tires on a whole host of random GGUF quantizations on Hugging Face, please.
+  - I use text-gen-ui (Oobabooga) as a back-end and have it run with `--api` to use the front end of my choice.
 
 - ## [Jan: an open-source alternative to LM Studio providing both a frontend and a backend for running local large language models : r/LocalLLaMA _202401](https://www.reddit.com/r/LocalLLaMA/comments/193m27u/jan_an_opensource_alternative_to_lm_studio/)
 - A Big problem all these LLM tools have is that they all have their own way of reading Models folders. I have a huge collection of GGUF's from llama.cpp usage that I want to use in different models. Symlinking isn't user friendly, why can't apps just make their Models folder a plain folder and allow people to point their already existing LLM folders to it
@@ -1206,27 +1334,106 @@ curl http://localhost:11434/api/chat -d '{
 
 - ## 
 
-- ## 
+- ## [Why do people like Ollama more than LM Studio? : r/LocalLLaMA _202501](https://www.reddit.com/r/LocalLLaMA/comments/1icta5y/why_do_people_like_ollama_more_than_lm_studio/)
+- I think many of us are programmers, personally I prefer open-source applications. Of course as a programmer, I have no problems with using command line.
+- You can search for models using the the website of Ollama. Downloading models is just one command ollama pull `<model_name>` . The same for removing or serving a model.
+- And you can use Ollama with HuggingFace GGUF now too.
 
-- ## [Jan now auto-optimizes llama.cpp settings based on your hardware for more efficient performance : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nvzeuh/jan_now_autooptimizes_llamacpp_settings_based_on/)
-  - It works with Mac too! Although it is still experimental, so do let us know how it works for you.
-  - We don't support MLX yet (only gguf and llama.cpp), but we will be looking into it in the near future.
+- Ollama depends on llama.cpp which was created by the guy (Georgi Gerganov) who invented GGUF.
+  - Ollama does have its own registry though that stores the GGUF files in its own MODELFILE format.
+  - You can use any GGUF with Ollama
 
-- Can the Jan server serve multiple models (swapping them in/out as required) similar to Ollama?
-  - You can definitely serve multiple models similar to Ollama. Although the only caveat is that you would also need to have enough VRAM to run both model at the same time also, if not you would need to manually switch out the model on Jan.
-  - Under the hood we are basically just proxying `llama.cpp` server as Local API Server to you with an easier to use UI
-- The manual switching out of the models is what I’m trying to avoid. It would be great if Jan could automatically swap out the models based on the requests.
-  - We used to have this, but it makes us deviate(背离, 偏离) too much away from llama.cpp and make it hard to maintain, so we have to deprecate it for now.
-  - We are looking into how to bring it back in a more compartmentalize way, so that it is easier for us to manage. Do stay tune tho, it should be coming relative soon!
-- I believe this is what llama-swap does?
+- As a programmer I don't understand why more people don't use koboldcpp
+  - It was a pain in the ass to get going properly. Also it might be just me, but I couldn't figure out how to serve multiple models at the same time with kobold.
+- KoboldCPP seems oriented towards Windows. A lot of programmers are on Mac/Linux. (At least compared to the average population). Sure KoboldCPP seems to work on Mac/Linux. But, the docs are very Windows-centric. And so I'd rather use something more focused on my environment.
 
-- What is the use case for a chat tool without RAG? How is this better than the llama.cpp integrated Webserver? 
-  - Jan supports MCP so you can have it call a search tool for example
-  - It can reason - use tool - reason just like chatgpt
-  - As for the use case, it's the only open source AIO(All-In-One) solution that nicely wraps llama.cpp with multiple models
-- What “All-In-One” practically means for Jan
-  - Runtime + engine: includes llama.cpp (local inference) plus cloud provider options so you can run models locally
-  - Model management / hub
-  - UI: chat UI, model hub, model settings, downloads
-  - Tool / integration layer: supports MCP
-  - Server/API & multi-tenant features
+- Does llama-server allow serving multiple models at once? I couldn't figure out how to get that going, but it was a killer feature for me since I swap models on a task by task basis.
+  - Well, kind of. You can start multiple llama-server instances and have multiple models loaded simultaneously, resources permitting. Otherwise, you can always hot load llama-server in your code.
+
+- I use LM Studio even in production. You can start it as service. When product is new you need to babysit it , testing different params and models in pretty OK in LM Studio. I was using it from 0.1 to new 0.3 , new interface and multi-model support is pretty good.
+
+- you can use ollama commercially without problems. lm studio writes that you have to contact them.
+
+- Headless is a feature not a bug. I'm using multiple frontends to talk to the same server (Tabby, OpenWebUI, custom programs, etc). And, I'm running the inference on a separate machine from where I'm accessing it anyways.
+  - Basically, programmers like Ollama, Llama.cpp Server, and other programmer oriented servers and libraries.
+
+- Why don't people talk about OOBABOOGA? It's better than all listed, yes, including LM Studio!
+  - Python programs take like 5 hours to install to then fail on some dependency conflict. Then you start again. I used OOBA for a bit but my python env and everything broke with every update.
+
+- For me, the biggest advantage of Ollama is loading models on demand. I have a few automation scripts that use different models, plus it serves OpenWebUI, cline and aider, and dynamic loading/unloading is the way to go for me, otherwise I’d just use pure llama.cpp.
+
+- ## [Are there any better offline/local LLMs for computer illiterate folk than Llama? Specifically, when it's installed using Ollama? : r/LocalLLaMA _202411](https://www.reddit.com/r/LocalLLaMA/comments/1gnjev5/are_there_any_better_offlinelocal_llms_for/)
+- LMStudio uses llama.cpp backend on PC, and can additionally use MLX on Mac, so the model selection is somewhat broader on Mac. 
+- MSTY uses bundled Ollama and can connect to other servers, including ChatGPT. It will also pick up models already downloaded by another Ollama installation.
+- Msty is quite easy to set up and use: https://msty.app/ But which model they run depends on the computer. If necessary need to use some online API service like OpenRouter, which Msty also supports.
+
+- ## [LM Studio vs Ollama vs Jan vs Llama.cpp vs GPT4All : r/LocalLLaMA _202502](https://www.reddit.com/r/LocalLLaMA/comments/1isazyj/lm_studio_vs_ollama_vs_jan_vs_llamacpp_vs_gpt4all/)
+- llama-swap, which I use to proxy llama.cpp and koboldcpp.
+  - llama-swap provides two important features: on-demand model load/unload; manage the parameters for launching the models
+  - I am now able to "save" the way I launch llama.cpp for each model I want to use. I no longer need to keep a CLI open to stop/start llama.cpp or ollama when I want to change models.
+- Agree. I started with ollama but slowly shifting towards llama-swap because it's simpler and provides better control over parameters.
+  - I know I can create alter parameters in ollama to a great extent but having everything in a single config file is just better.
+
+- LM Studio, mainly because it now has the "Auto unload unused JIT loaded models" feature.
+
+- LM Studio as it just works. I really don’t care about open/closed source. I want something that looks nice and just works well on my hardware.
+  - same here. lm studio outperforms ollama anythingllm msty gpt4all in terms of speed and ease and model intelligence actually. I tried them all.
+- Until it doesnt and you could do nothing about it.
+
+- Quick note: Cortex powers Jan, and we're adding backend-level features to Jan through Cortex. Once Cortex becomes multi-engine, Jan will also support multiple engines alongside llama.cpp.
+
+- KoboldCpp for obvious reasons, but the main advantages are that its not limited to just instruct models as it also has regular text completion modes. Its a server rather than just a local app so it can be used remotely, and for those that the bundled UI isn't suitable for it can be used with third party UI's trough the multiple API's it supports and emulates.
+
+- GPT4ALL is my favorite on paper, but the devs refuse to fix a big issue with response streaming. I want to couple it with Open WebUI and the responses don't show up.
+
+- Ooba because you can use quantized KV cache with Context Shift (LLM_Streaming). It's a must have if you roleplay and have low VRAM.
+  - LLM Streaming to my knowledge is not the same as Context Shift like in KoboldCpp. Context Shift is compatible with things that should stay in memory, it shifts after the tokens that persisted. While traditional LLM Streaming implementations tend to fade out the old bits including context you may need. If I am out of the loop and ooba's implementation does now work like Kobolds feel free to correct me but this was not originally the case.
+
+- LMStudio but their REST API is kinda of restrictive. I use hugging models loaded on ray sometimes for better API functionality. Wish i could try vLLM but not working on windows
+
+- I use llama.cpp, because it is relatively simple and self-contained (not a lot of external dependencies), and something for which I could develop features and maintain.
+  - It has the potential to be the "do-everything tool" for LLM technology; 
+  - it used to have training and fine-tuning example code, but it was taken out and is in the process of being re-implemented so it can take advantage of any supported back-end (CUDA, SYCL, Vulkan, etc). 
+  - The GGUF file format is well thought-out and people are taking good advantage of its metadata features, so you don't have to chase down inference-time parameters from obscure corners of the web.
+  - I might be forced to learn vLLM eventually if my employer decides to start using Red Hat Enterprise AI, but until then llama.cpp is all I want or need.
+
+- ## 🆚 [What's the point of OpenUI Web vs Piniochio or Jan.ai? The ladder of which being substantially easier to install : r/LocalLLaMA _202412](https://www.reddit.com/r/LocalLLaMA/comments/1hc20u7/whats_the_point_of_openui_web_vs_piniochio_or/)
+- Lmstudio and Jan are examples of kitchen sink LLM apps, they merge model management with backend and frontend.
+- OpenWebUI is just a frontend, so it makes most sense for folks that already have both a backend (and thus already have docker, etc all configured) and a way to manage models loaded on that backend.
+- There are also several middle grounds:
+  - Ollama has backend and model management, but no frontend.
+  - Koboldcpp has backend and frontend, no model management.
+
+- The kitchen sinks are a great place to start but if you're wondering what their downsides are: you are stuck to their model management system and whatever quants they support. Batch/multi-user performance is also not a priority for these apps.
+  - To pick a concrete example, to my knowledge there's no all in one's support EXL2 and can spin me up a tabbyAPI with tensor parallel and a big context cache. So how easy it is to install doesn't matter to me, vs doing what I want.
+
+- I don't use any of these and instead sometimes have to resort to fixing bugs in python myself in ooga/text-generation-webui, 
+  - because I want to use top_a, tail_free or mirostat sampling, use GBNF-grammar restrictions, use DRY penalty, define custom stop tokens or token bias, control the order the samplers are applied, toggle if the BOS token is prefixed or not, edit the Models responses on the fly, change the chat template, adjust the RoPe-scale, choose the quantization datatype, etc...
+- Most interfaces have some subset of these but rarely all. Some are pretty stubborn when I want to use the folder where I store all my models and not have them download the model again together with some stupid specific template file.
+- text-generation-webui is a pretty crappy(差劲的，很糟的) UI and can be quite the hassle(麻烦, 不方便) to install and update, but the closest feature set relative to writing custom python code using llama.cpp or hf-transformers.
+
+- Simplest "chat to LLM" is llama.cpp's server. The newest release.
+  - It's 5 MB in size, has a well-looking web frontend, stores past conversations in browser memory. And is super lightweight and works fast.
+- You say "simplest", but... one of these you can just download an app and double click it, and it's not llama.cpp. I have no trouble compiling llama.cpp myself, and I can also navigate HuggingFace to find a good model in the right quant and download that myself, but this is asking a lot of the average person.
+
+- ## [What is your preferred front-end/back-end these days? (Q2 2024) : r/LocalLLaMA _202406](https://www.reddit.com/r/LocalLLaMA/comments/1dad0rh/what_is_your_preferred_frontendbackend_these_days/)
+- Personal (single user, power-user) use: SillyTavern frontend, oobabooga's text-generation-webui backend (EXL2, HF). KoboldCpp backend if I need to run a GGUF for some reason (I prefer EXL2 for speed, especially with big contexts).
+  - Professional (multi user, end-user) use: Open WebUI frontend, Ollama backend (simple) or vLLM/Aphrodite Engine (fast). Aphrodite Engine is a fork of vLLM that I prefer, supports more formats and is more customizable.
+- I like to call SillyTavern the LLM IDE for power users: it gives you complete control over generation settings and prompt templates, editing chat history or forking entire chats, and offers many other useful options. There are also extensions for advanced features such as RAG and web search, real-time voice chat, etc. I love it and use it all the time. Once you learn it, you can use any backend, both local and online.
+  - But it's not for everyone. Some just want a ChatGPT alternative, a simple chat interface, and advanced options would just confuse them. That's true for most users who aren't AI developers or enthusiasts, and that's who Open WebUI is ideal for. I run it as a local AI chat interface at work for my colleagues, while I prefer to use SillyTavern myself.
+
+- I currently use koboldcpp for both back and front ends. I love how fast the team integrates upstream llamacpp fixes/additions. Has a multiuser batching function with nice GUI for the Mrs to use, and "just works" no matter what I throw at it.
+
+- jan failed for me with codestral. It never answered back, tried multiple times, and different PCs as well. I can get llama3 8B just fine tho.
+
+- I started with lm-studio but now i prefer librechat as frontend and ollama as backend. Supports pretty much all online apis and ollama. Supports a rag database and search. Is very simple to setup and i dont need to manage all the model setup (ollama just works) im just limited to the available models unless i write a modelfile myself.
+
+- What i didnt like about lm studio but got with librechat:
+  - using Local ai and online apis seamlessly in the same chat
+  - not have to manage presets to run models correctly and efficiently
+  - Search in chats
+  - Rag database
+  - TTS
+- What i miss from using lm-studio:
+  - accessing huggingface models directly
+  - performance metrics

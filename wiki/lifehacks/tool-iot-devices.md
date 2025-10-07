@@ -1981,7 +1981,18 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## [求推荐mATX非侧透散热好的机箱 - 小红书](https://www.xiaohongshu.com/explore/688e90bf00000000250132d4?xsec_token=ABB5_uSFZrF4Fb2p-cIYUQAnzEybe1BZQKTuCoX9z-RXw=&xsec_source=pc_search&source=unknown)
+- 看标题第一反应就是追风者xtm3了，水冷可以选华硕的那个，风冷对风道要求高只有追风者合适了。
+  - 如果你的配件都是无光的，也无所谓非侧透了
+
+- 酷冷至尊 MASTERBOX NR200 📌
+  - [机箱_产品_酷冷至尊 - NR200](https://www.coolermaster.com.cn/product_detail/335.html)
+  - 185x292x376mm, 20.3L 
+  - 支持显卡尺寸 330x156x60mm
+
+- [ASUS Prime AP201 MicroATX Case｜機殼｜ASUS 香港](https://www.asus.com/hk/motherboards-components/cases/prime/asus-prime-ap201-microatx-case/)
+  - 33 公升的時尚 MicroATX
+  - 可容納 360 mm 水冷散熱器、長達 338 mm 顯示卡及標準 ATX 電源供應器
 
 - ## [有没有单条64G或者更高的内存条？ - 知乎](https://www.zhihu.com/question/518047029)
 - 普通的DDR4内存单条32G到顶，要服务器用的RECC内存有单条256G, 512G的，当然，价格美丽，且需要主板支持
