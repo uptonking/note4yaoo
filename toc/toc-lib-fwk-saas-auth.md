@@ -76,6 +76,16 @@ modified: 2025-09-23T09:28:08.532Z
 
 - https://github.com/panva/node-oidc-provider /3.5kStar/MIT/202509/js
   - OpenID Certified™ OAuth 2.0 Authorization Server implementation for Node.js
+
+- https://github.com/authzed/spicedb /6.1kStar/apache2/202510/go
+  - https://authzed.com/docs
+  - https://authzed.com/spicedb
+  - Open Source, Google Zanzibar-inspired database for scalably storing and querying fine-grained authorization data
+  - SpiceDB is the most mature open source project inspired by Google's internal authorization system: Zanzibar.
+  - https://github.com/authzed/playground
+    - https://play.authzed.com/schema
+    - Playground for SpiceDB, the open source, Google Zanzibar-inspired permissions database to enable fine-grained access control for customer applications
+    - an interactive app for building a SpiceDB schema, interacting with test relationships, and quickly iterating with test assertions.
 # examples
 - https://github.com/auth0-blog/spa-jwt-authentication-tutorial /201507/js
   - Add authentication to a vanilla js single page app

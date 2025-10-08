@@ -125,6 +125,7 @@ modified: 2025-09-01T05:52:34.241Z
   - 能优化软件占用的内存, lmstudio的内存占用很少, janai价值qwen3-4b模型gguf占用内存上10GB
   - 针对多gpu进行优化
   - 针对apple设备进行优化
+  - 支持用户替换最新的llamacpp来测试最新模型
 
 - ollama/lmstudio封装了llama.cpp, janai fork了llama.cpp
 

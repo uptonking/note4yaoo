@@ -24,7 +24,12 @@ modified: 2025-09-01T07:58:29.058Z
 
 - ## 
 
-- ## 
+- ## [is GTX 3090 24GB GDDR6 good for local coding? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o11udk/is_gtx_3090_24gb_gddr6_good_for_local_coding/)
+- Local models are nowhere near the performance of top-tier closed-source models. And even the best local ones (eg GLM-4.5/4.6) are too big to be hosted locally at reasonable speeds. So no, a 3090 is definitely a bad investment if the goal is to replace Codex-CLI.
+
+- I have a 5090 and i mostly use qwen coder 30b almost everyday. It's realy capable model but with my gpu i am using 110k context and i can't go above that. For coding i think minimum around 50k context length you gonna need. So i don't know.maybe you can get smaller quant.but from my exprience even 4bit is not enough for coding.
+
+- 3090 24GB is highly versatile. Especially if you have at least 128 GB system RAM or even 256 GB and it's DDR5. You can run coding models such as qwen 3 30B A3B coder on the 3090 at 4-bit quant with high context and high speed. Or OSS 20B or devstral 24B etc. But other coding models are larger MoE so would spill into system RAM and consequently be far slower.
 
 - ## [My experience trying out coding agents -- Qwen2.5-coder-tools/Sonnet 3.5 on Cline and Github Copilot agent mode : r/LocalLLaMA _202502](https://www.reddit.com/r/LocalLLaMA/comments/1ilza8m/my_experience_trying_out_coding_agents/)
   - trying out the preview copilot agent feature against cline using both a specialized version of Qwen2.5 through Cline and the Sonnet 3.5 (copilot API) through Cline and copilot

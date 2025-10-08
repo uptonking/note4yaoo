@@ -8,7 +8,7 @@ modified: 2022-05-24T17:53:08.400Z
 # dev-ing
 
 # guide
-- 分析核心需求和问题，拆分问题，梳理任务、子任务，排期开发
+- 分析核心需求和问题，拆分需求，梳理任务、子任务，排期开发
 金瑶 邀请您加入【金瑶的个人会议室】
 点击链接直接加入腾讯会议：
 https://meeting.tencent.com/p/9606972663
@@ -24,6 +24,40 @@ https://meeting.tencent.com/p/9606972663
   - https://ckeditor.com/docs/ckeditor5/latest/examples/builds-custom/full-featured-editor.html
   - more-editor
     - https://demo.grammarly.com/
+
+- editor-play
+  - https://ckeditor.com/docs/ckeditor5/latest/examples/builds-custom/full-featured-editor.html
+  - https://prosemirror.net/examples/
+    - https://tiptap.dev/docs/examples/basics/default-text-editor
+  - https://codemirror.net/try/
+  - https://www.slatejs.org/
+  - https://quilljs.com/playground/snow
+  - https://playground.lexical.dev/
+
+- code-play
+  - https://microsoft.github.io/monaco-editor/playground.html
+  - https://play.tailwindcss.com/
+  - https://streamlit.io/playground
+  - https://arktype.io/playground
+  - https://developer.mozilla.org/en-US/play
+  - https://play.jqlang.org/
+  - https://editor.swagger.io/
+  - https://lit.dev/playground/
+  - https://playground.solidjs.com/
+  - https://angular.dev/playground
+
+- lang-play
+  - https://www.typescriptlang.org/play/
+  - https://go.dev/play/
+  - https://play.rust-lang.org/
+  - https://play.kotlinlang.org/
+  - https://playground.babylonjs.com/
+
+- ai-play
+  - https://www.ibm.com/granite/playground
+
+- play-examples
+  - https://playground.powerbi.com/en-us/
 # dev-review
 
 ```shell
@@ -203,6 +237,11 @@ use vanilla html/css/javascript to create a simplistic personal profile landing 
 use vanilla html/css/javascript to create a personal profile landing page: homepage shows a cool welcoming animation, then shows 4 example personal projects, then a simple get in touch form below it
 use react to create a homepage shows a list of frontend frameworks like react/vue/angular, when clicking the framework, navigate to the route to show its introduction
 ```
+
+## 1008
+
+- [How to get Screen Time data on macOS? - Stack Overflow](https://stackoverflow.com/questions/66935741/how-to-get-screen-time-data-on-macos)
+  - [Some notes on accessing / exporting Apple's Screen Time data](https://gist.github.com/0xdevalias/38cfc92278f85ae89a46f0c156208fd5)
 
 ## 1001
 

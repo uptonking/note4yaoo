@@ -33,7 +33,7 @@ modified: 2025-09-16T19:59:57.856Z
     - 分析清楚核心需求: 需要reasoning/coding/large/faster
   - moe模型的实际效果大概只有dense模型的一半，如qwen3-30B-A3B 相当于 Qwen3-14b
   - 模型占用VRAM不能太大，还要为context处理、应用程序如nextjs/comfyui预留RAM/VRAM
-  - 选择模型时多用官方版/主流版，小众微调的版本可能存在tool-call/overthink/多语言multilingual/对话风格/llama.cpp不支持等问题
+  - 选择模型时多用官方版/主流版，小众微调的版本可能存在tool-call/overthink/多语言multilingual/对话风格/llama.cpp不支持等问题/loop
     - 选用主流版还方便与其他用户对比速度/配置
     - 非主流版可能出现vision/rag等被去掉的问题
   - 多agent架构时，可使用不同架构的agent相互验证
@@ -45,6 +45,7 @@ modified: 2025-09-16T19:59:57.856Z
   - Mistral-Large-Instruct-2411-Q2-MLX  45.99gb
   - gpt-oss-120b-mlx-2Bit  36.61gb
   - GLM-4.5-Air-2bit  33.45gb
+  - GLM-4.5-Air-4bit  62gb
   - DeepSeek-V3.1-Terminus-mlx-2Bit  209.89gb
   - DeepSeek-R1-2bit  251.82gb
 
@@ -520,9 +521,31 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [Granite-4.0-H-Tiny vs. OLMoE: Rapid AI improvements : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nwovv8/granite40htiny_vs_olmoe_rapid_ai_improvements/)
+- Idk why everyone is so excited about this thing, it's pretty awful. Nemotron Nano is a much more exciting hybrid, for 1B extra params you get a model that actually works..
 
-- ## 
+- Phi-mini-MoE has 7.6B total parameters and 2.4B activated parameters, that's 2, 4 times more active parameters than the new granite model(1B)
+
+- ## IBM 其实十一也发了 Granite 4.0 系列大模型，不过没什么水花。给大家盘点一下：
+- https://x.com/karminski3/status/1975509987360395552
+  - granite-4.0-h-small-32B-A9B (MoE)
+  - granite-4.0-h-tiny-7B-A1B (MoE)
+  - granite-4.0-h-micro-3B (Dense)
+  - granite-4.0-micro-3B (Dense)
+  - 模型中的"h" 的意思是 hybrid (混合)，标志着模型采用了Mamba/Transformer 混合架构。
+  - Mamba是一种状态空间模型（State Space Model, SSM），相比传统的 Transformer 架构在处理长文本时效率更高，能显著降低内存需求。 这种混合设计使得模型在保持高性能的同时，内存需求降低了70%以上，并能以更低的成本在更经济的 GPU 上运行。
+  - reddit上有人测试 granite-4.0-h-small 可以输出1M大小上下文。但是！内容是不能用的，输出到100K左右就炸了，开始胡乱输出了......
+
+- small那款我测完就顺手删了，32B  A9B 还不如qwen3 30B A3B系列，而且看信息也看不出这是mamba还是mamba2
+
+- 我看reddit上说这玩意废话少速度快，省token，拿来做总结挺好。
+
+- [Granite 4.0 Language Models - a ibm-granite Collection : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1nw2wd6/granite_40_language_models_a_ibmgranite_collection/)
+- Any plans on keeping the reasoning and non-reasoning models seperate or will future models be hybrids?
+  - Near term: separate. Later this year we’ll release variants with explicit reasoning support. Worth noting that previous Granite models with reasoning include a “toggle” so you can turn on/off as needed.
+
+- No context limit is crazy. Im so excited for advancements in hybrid mamba architecture
+  - We’re big fans of Mamba in case you couldn’t tell! We’ve validated performance up to 128k but with hardware that can handle it, you should be able to go much further.
 
 - ## [My key takeaways on Qwen3-Next's four pillar innovations, highlighting its Hybrid Attention design : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nwzs0k/my_key_takeaways_on_qwen3nexts_four_pillar/)
   - Hybrid Architecture: Combines Gated DeltaNet + Full Attention to context efficiency
@@ -1249,7 +1272,35 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [What models do you find yourself actually using, and what for? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o1eac0/what_models_do_you_find_yourself_actually_using/)
+  - I wanted to gauge what people actually use instead of just going off benchmarks. What models are you running/ which ones are your favorites? 
+- qwen3-coder-30b for coding in Python or Javascript/Typescript
+  - qwen3-vl-30b and qwen2.5-vl-32b for OCR/document understanding
+  - gpt-oss-120b for pretty much everything else (including coding in languages other than Python/JS/TS)
+- Using llama.cpp as an inference engine, all models in Q4_K_XL quants from Unsloth, except for gpt-oss-120b which is native MXFP4 quant and qwen3-vl which is AWQ 4bit running in VLLM.
+  - I have 24GB VRAM though.
+
+- You running oss-120b across system RAM, then? What kind of speeds do you see? I'm debating grabbing a couple more sticks of DDR5 so I can run it on my 9800X3D.
+  - I get 11-12 tok/s running gpt-oss-120b on my 3090 (24gb VRAM) and 64 GB DDR5 using an AMD 9900X. It’s very usable.
+- I have 64gb ram also and am able to run it at about 10t/s. Just barely fits as long as you split vram and ram effectively. 
+
+- I mostly run Kimi K2, IQ4 quant (it is 555 GB GGUF file) with ik_llama.cpp. I use it a lot for programming, either by chatting directly in SillyTavern (I use "character cards" as prompt templates for various tasks) or in Roo Code when I need agentic coding (which I do almost daily). 
+  - When I need thinking feature, I also use DeepSeek 671B (or as an alternative if K2 gets stuck with something).
+
+- Mainly Mistral Small 3.2 and a bit of: Qwen14b, Qwen 30bA3b, OSS 20b.
+  - Essentially any model that can fit Q6 on a 3090 or Q8/FP16. They run at like 40tps or so.
+  - I use these models for writing autocomplete and n8n automation. Mistral Small has pretty solid writing and 20b has been able to do some pretty decent code stuff. Still playing around with Qwen.. not sure on its use yet.
+  - For complex tasks, like having the LLM generate plugins or chapters of a novel, I use cloud models, but honestly I haven’t actually found it that useful. The local small QOL improvements have proven a lot more beneficial.
+
+- I actually use gemini 2.5 flash lite, which is the best model for the price/performance ratio, the local models are either worse than it or more expensive than it.
+
+- Honestly the benchmark chase can be pretty misleading when you're actually trying to get work done. I've been running mostly Qwen2.5 14B and 32B variants lately, and they're solid performers for real tasks rather than just eval scores. The 14B fits nicely in 16GB VRAM and handles most coding/reasoning stuff I throw at it without the weird quirks you sometimes get with smaller models.
+  - For practical use at Anthromind we've found that model selection really depends on your specific workflow rather than general benchmarks. If you're doing a lot of structured output or need consistent formatting, something like Hermes or the newer Llama 3.1 instruct variants might serve you better than the highest scoring model on some leaderboard. The 9070XT should actually work fine with ollama if you want to revisit that setup, but honestly LM Studio is pretty solid for experimentation and the UI makes it way easier to test different quantization levels without messing with command line stuff.
+
+- I have 4090, 3090, 128 gb ddr5 5600
+  - I have a bunch of models downloaded but the only ones I actually use are gpt-oss-120b and qwen3 30ba3b coder (q6)
+  - I use gpt oss for pretty much everything except for coding tools (qwen code, cline, etc) where the 10k pp/s makes a big difference
+  - I can run qwen 235ba22b at 15 tok/s but gpt oss 120b is way faster and tbh i prefer its output (less sycophantic, seems more well rounded)
 
 - ## [LiquidAI bet on small but mighty model LFM2-1.2B-Tool/RAG/Extract : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nuyjp9/liquidai_bet_on_small_but_mighty_model/)
   - So LiquidAI just announced their fine-tuned LFM models with different variants - Tool, RAG, and Extract. Each one's built for specific tasks instead of trying to do everything.

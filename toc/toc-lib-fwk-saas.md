@@ -131,10 +131,17 @@ modified: 2021-05-25T09:41:29.066Z
 - https://github.com/Dokploy/dokploy /apache2+NonResell/202409/ts
   - https://dokploy.com/
   - Open Source Alternative to Vercel, Netlify and Heroku
-# app-store
+# app-store/platform
 - https://github.com/microsoft/code-push-server /MIT/202409/ts
   - CodePush is an App Center feature that enables React Native developers to deploy mobile app updates directly to their users’ devices. It consists of two parts: CodePush Server where developers can publish app updates to (e.g. JS, HTML, CSS or image changes), and CodePush React Native Client SDK that enables quering for updates from within an app.
   - We announced that Visual Studio App Center will be retired on March 31, 2025.
+
+- https://github.com/safeboxnetwork/framework-scheduler /MPLv2/202509/shell
+  - https://safebox.network/
+  - Framework scheduler is a lightweight, Alpine-based container that provides task scheduling and service management.
+  - It includes network scanning, service discovery, certificate management, and automated backup functionality for challenge clients.
+  - it is part of the Safebox platform. For full functionality, it also requires the safebox/web-installer image.
+  - [Safebox: Open-source platform for self-hosted apps : r/selfhosted _202510](https://www.reddit.com/r/selfhosted/comments/1o13qo7/safebox_opensource_platform_for_selfhosted_apps/)
 # more
 - https://github.com/yazz/yazz /js
   - Yazz is a both an IDE for building small web applications and a decentralised app store. 

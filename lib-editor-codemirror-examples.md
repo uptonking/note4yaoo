@@ -1585,6 +1585,17 @@ modified: 2023-06-23T12:46:53.288Z
 - https://github.com/greeenboi/vscodex /202402/ts/inactive
   - Vs code Clone
   - 依赖codemirror6、tauri
+# protocols
+- https://github.com/editor-code-assistant/eca /404Star/apache2/202510/clojure
+  - https://eca.dev/
+  - Editor Code Assistant (ECA) - AI pair programming capabilities agnostic of editor
+  - A Free and OpenSource editor-agnostic tool that aims to easily link LLMs <-> Editors
+  - Editor-agnostic: protocol for any editor to integrate.
+  - Single configuration: Configure eca making it work the same in any editor via global or local configs.
+  - Multi models: Login to OpenAI, Anthropic, Copilot, Ollama local models and many more
+  - OpenTelemetry: Export metrics of tools, prompts, server usage
+  - The server is written in Clojure and heavily inspired by the LSP protocol which is a success case for this kind of integration.
+  - How it works: Editors spawn the server via `eca server` and communicate via stdin/stdout, similar to LSPs. Supported editors already download latest server on start and require no extra configuration.
 # lsp
 - https://github.com/codemirror/lsp-client /MIT/202508/ts
   - Language server protocol client for CodeMirror
@@ -2024,10 +2035,12 @@ modified: 2023-06-23T12:46:53.288Z
     - All processing and code transformations run in the browser on the client-side. 
     - On mobile, a lighter-weight touch-friendly code editor (CodeMirror 6) is used
 
-- https://github.com/oxc-project/oxc/tree/main/website /202306/js/inactive
-  - https://oxc-project.github.io/oxc/playground
+- https://github.com/oxc-project/playground /MIT/202510/ts/vue
+  - https://playground.oxc.rs/
   - Oxc has a playground now. Need more knobs but it works.
   - I built it with CodeMirror in plain JavaScript without any frameworks
+  - https://github.com/oxc-project/oxc/tree/main/website /legacy
+    - https://oxc-project.github.io/oxc/playground`
   - https://x.com/TheLarkInn/status/1667266703745757184
     - Awesome now do the “click on AST on right to highlight code on left” like astexplorer does!
     - https://ast-grep.github.io/playground.html
@@ -2197,13 +2210,10 @@ modified: 2023-06-23T12:46:53.288Z
   - [feat: collaborative codemirror editor _202401](https://github.com/badass-courses/course-builder/issues/54)
     - We've set up the basics for the collaborative editor, but the results are mixed and kind of janky where the text sometimes doubles up and it doesn't feel right in terms of the syncing between the CMS (Sanity) and the Partykit connection.
 
-## playgrounds-more
+## playgrounds-more 🛝
 
 - https://ui.shadcn.com/examples/playground
   - Build your Component Library
-
-- playground-examples
-  - https://arktype.io/playground
 
 - https://github.com/divriots/universal-story-render /202205/ts/inactive
   - Universal story renderer, compatible with most JS UI frameworks out there.

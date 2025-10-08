@@ -729,6 +729,7 @@ modified: 2025-08-11T08:47:56.335Z
   - Knowledge Graph Backbone – All data is seamlessly structured into a powerful knowledge graph.
   - Enterprise-Grade Connectors – Scalable, reliable, and built for secure access across your organization.
   - Modular & Scalable Architecture – Every service is loosely coupled to scale independently and adapt to your needs.
+  - [Work AI for all - AI platform for agents, assistant, search](https://www.glean.com/)
 
 - https://github.com/StreetLamb/tribe /1kStar/MIT/202501/python/ts/inactive
   - Low code tool to rapidly build and coordinate multi-agent teams 

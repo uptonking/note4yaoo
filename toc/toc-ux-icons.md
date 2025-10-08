@@ -345,6 +345,21 @@ modified: 2021-05-06T09:58:23.803Z
 - https://icons.pqoqubbw.dev/
   - animated icons i’ve been working on lately are now open source
 # logos-generator
+- https://github.com/dicebear/dicebear /7.6kStar/MIT/202508/ts/经典图层组合
+  - https://dicebear.com/
+  - https://www.dicebear.com/playground/
+  - With DiceBear you can create awesome avatars for your project in no time.
+  - In addition to purely random avatars, you can also create deterministic avatars for user identities. With the built-in PRNG you create the same avatar over and over again based on a seed.
+  - The avatars are created in SVG format. This allows to generate avatars dynamically without much computing power.
+    - In most cases, various SVG elements such as hair, eyes, ears etc. are selected from a set and combined to create a character / avatar.
+    - XorShift32 is used as the algorithm for the PRNG. It is important to note that the PNGR does not attempt to be cryptographically secure
+  - [Host the HTTP API yourself | DiceBear](https://www.dicebear.com/guides/host-the-http-api-yourself/)
+  - [Licenses | DiceBear](https://www.dicebear.com/licenses/)
+    - While our code is MIT licensed, the avatar styles are licensed under different licenses that the artists can choose themselves
+    - 友好的风格: Avataaars, Bottts, Bootstrap Icons
+  - https://github.com/dicebear/api /118Star/MIT/202507/ts
+    - source code for the DiceBear API. It's built on Fastify
+
 - https://github.com/Nutlope/logocreator /202411/ts
   - https://www.logo-creator.io/
   - A free + OSS logo generator powered by Flux on Together AI

@@ -173,7 +173,7 @@ modified: 2022-10-05T04:57:38.647Z
   - 💡 Implements the Readium Architecture for Web Apps
   - https://github.com/readium/playground
     - https://playground.readium.org/
-    - Play with the capabilities of Readium Web & Readium CSS
+    - 🛝 Play with the capabilities of Readium Web & Readium CSS
     - a Next.js project bootstrapped with create-next-app.
   - https://github.com/readium/readium-css /202005/css/inactive
     - https://readium.org/readium-css/docs/

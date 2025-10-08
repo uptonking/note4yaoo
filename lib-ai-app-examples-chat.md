@@ -197,6 +197,18 @@ modified: 2025-03-22T18:49:15.634Z
     - https://chatjs.langchain.com/
     - Built with LangChainjs, and Next.js.
 # ui-ai 💄
+- https://github.com/ag-ui-protocol/ag-ui /8.4kStar/MIT/202510/python/ts
+  - https://ag-ui.com/
+  - AG-UI is an open, lightweight, event-based protocol that standardizes how AI agents connect to user-facing applications. 
+  - Built for simplicity and flexibility, it enables seamless integration between AI agents, real time user context, and user interfaces.
+  - During agent executions, agent backends emit events compatible with one of AG-UI's ~16 standard event types
+  - Agent backends can accept one of a few simple AG-UI compatible inputs as arguments
+  - AG-UI includes a flexible middleware layer that ensures compatibility across diverse environments:
+    - Works with any event transport (SSE, WebSockets, webhooks, etc.)
+    - Allows for loose event format matching, enabling broad agent and app interoperability
+  - It also ships with a reference HTTP implementation and default connector to help teams get started fast.
+  - 支持vanillajs/LangGraph/Pydantic/Mastra
+
 - https://github.com/assistant-ui/assistant-ui /5.8kStar/MIT/202508/ts
   - https://www.assistant-ui.com/
   - open source TypeScript/React library for AI chat.

@@ -283,7 +283,19 @@ modified: 2025-09-16T13:29:11.327Z
 
 - Tell a joke within 18 words.
 - Is the earth flat? Answer with yes or no only. Do not provide any explanation or additional narrative.
-- Which of these objects is not like the others: apple, banana, potato, chair
+
+- Which of these objects is not like the others: orange, banana, potato, chair
+
+- convert inches to cm: 15.4 x 7.3 x 13.5 inches
+- turn pounds to kg: 11.44 pounds
+
+<!-- 检查语料丰富度 -->
+- 春风得意马蹄疾 出自哪里? 上下句是什么？ 表达什么意思？
+  - dengkehou
+- 大漠孤烟直 出自哪里? 上下句是什么？ 表达什么意思？ 有其他地方引用过这句吗?
+  - wangwei
+- 何心意之忡忡，若寤寐之栩栩 出自哪里? 上下句是什么？ 表达什么意思？
+  - storyofstone 芙蓉女儿诔(lei)
 
 - Jane is faster than Joe. Joe is faster than Sam. Is Sam faster than Jane? Explain your reasoning step by step.
 
@@ -736,8 +748,7 @@ modified: 2025-09-16T13:29:11.327Z
   - I also observed similar repetition issues when using their official site, Chat. Z. AI, and it also could fall into a loop, so I don't think it's the GGUFs problem.
 
 - For programming the non-reasoning GLM4-model is better than the GLM4-Z1-model.
-
-- I don't wanna be the guy who's calling something crazy good after only limited testing, but GLM-4 Q6_K_M has managed to oneshot some fairly complex and novel web stuff that I doubt was in its training data. Outperforming even Cohere Command A and Mistral Large. This could be local SOTA for webdev. I'd recommend everybody give it a fair shake at least.
+  - I don't wanna be the guy who's calling something crazy good after only limited testing, but GLM-4 Q6_K_M has managed to oneshot some fairly complex and novel web stuff that I doubt was in its training data. Outperforming even Cohere Command A and Mistral Large. This could be local SOTA for webdev. I'd recommend everybody give it a fair shake at least.
 
 - GLM-4-32B on the official website one-shot 3D Tic Tac Toe. There is no other model that was able to do this, not even Grok 3 or Gemini 2.5
 

@@ -126,6 +126,12 @@ modified: 2025-09-16T12:36:12.968Z
 
 - ## 
 
+- ## 
+
+- ## 🆚 [8B models at full-size, or 32B models at Q4? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1o13oyn/30b_models_at_fullsize_or_120b_models_at_q4/)
+- Q4 isn't much of a degradation and the base is so much stronger.
+- The degradation depends on the models original size and architecture as MOE can be more sensitive but overall I would always pick the larger models when possible so long as you still have enough space for context.
+
 - ## [Mixed precision KV cache quantization, Q8 for K / Q4 for V : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kddcdp/mixed_precision_kv_cache_quantization_q8_for_k_q4/)
 - Plenty of KV cache quantization literature suggest K is more sensitive to quantization than V (SKVQ, QAQ, etc.
   - No one can really answer whether K8V4 is good enough as this is highly model-task-setting-whatever else dependent, 
@@ -686,6 +692,13 @@ sudo launchctl load /Library/LaunchDaemons/io.yaoo.sysctl.plist
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [LM Studio Fails to Load 32B 4bit Models on macOS M4 (Freezes System) While Ollama Works Normally · Issue · lmstudio-ai/lmstudio-bug-tracker _202503](https://github.com/lmstudio-ai/lmstudio-bug-tracker/issues/484)
+- It seems like LM Studio isn't correctly utilizing swap memory, as there's a small spike in usage when the model is initially loaded, but afterwards it doesn’t exceed 24GB of memory.
+
+- Only fix for this inside LM Studio that I found is to set Model loading guardrails to Custom and a memory limit to 23GB, because if it goes over 23GB it crashes macOS as LM Studio doesn't use swap memory if it uses over the total available 24GB of memory of the Mac Mini M4 Pro. With this guard setup if the model is too big and exceeds over 23GB of memory, it unloads the model and not crash macOS. For models 30B+, it's better to use Q3 or MLX 3bit because Q4/4bit is too big for 24GB of RAM. I wish I had known about this before buying the 24GB version
 
 - ## [Incompatible type of `tool_choice` · Issue · lmstudio-ai/lmstudio-bug-tracker _202505](https://github.com/lmstudio-ai/lmstudio-bug-tracker/issues/670)
 - 

@@ -28,6 +28,12 @@ modified: 2025-09-21T13:58:46.548Z
   - https://huggingface.co/ibm-granite/granite-docling-258M /apache2
     - a multimodal Image-Text-to-Text model engineered for efficient document conversion
 
+- https://huggingface.co/spaces/ibm-granite/granite-docling-258M-WebGPU
+  - [Granite Docling WebGPU: State-of-the-art document parsing 100% locally in your browser. : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o0php3/granite_docling_webgpu_stateoftheart_document/)
+  - a demo which showcases the model running entirely in your browser with WebGPU acceleration
+  - WebGPU seems to be underutilized in general and could provide a better alternative to BYOK + cloud inference.
+  - I had a very good experience with granite-docling as my goto pdf processor for RAG knowledge base.
+
 - https://github.com/docling-project/docling-serve /725Star/MIT/202509/python
   - Running Docling as an API service.
   - The server is available at http://127.0.0.1:5001
