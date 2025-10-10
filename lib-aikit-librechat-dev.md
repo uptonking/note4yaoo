@@ -40,6 +40,9 @@ modified: 2025-09-01T05:52:34.241Z
 - who is using #librechat
   - ?
 # draft
+- roadmap
+  - 支持直接在界面上配置大模型url, 可参考openwebui/janai
+
 - ❓ chat-queue: 对于很慢的本地模型，一次只能处理一个task，需要支持添加多个task到queue, 不同task可能需要切换不同模型
   - message queue, image queue
 

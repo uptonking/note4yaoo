@@ -244,6 +244,28 @@ I’m surprised there is not much CRDT literature/projects for dealing with rich
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Very cool to see Notion shipping offline mode, building on research we did at @inkandswitch on rich text CRDTs _202508
+- https://x.com/geoffreylitt/status/1958203836738265405
+  - If you're curious why rich text CRDTs matter, why they're hard, and how the Peritext algorithm works, here's an 8min conf talk sharing the key highlights
+  - fun fact: while CRDTs are great for offline mode, that wasn't actually our main motivation for Peritext! we were seeking "creative privacy" - branch a doc, work in private, merge back.
+  - Since the Peritext work in 2021 we've gone much deeper on version controlled documents.
+  - last year the ideas from Peritext also shipped in a rich text implementation in Automerge, the production-ready CRDT library developed at the lab
+  - Recently @pvh demoed the collaboration environment we use internally at @inkandswitch , which supports git-style branching for any software tool
+  - 🧐 不要过分执着于crdt, 在可离线db/sync-engine的领域, 冲突处理算法都是可替换的
+
+- Do you know anything about how Notions implementation differs from yours?
+  - Our published Peritext paper only handles inline formatting; it seems like they probably extended to "block formatting" like splitting paragraphs which is quite tricky. ( @martinkl did some work on this as well, not sure it's been published anywhere)
+
+- finally some offline functionality that actually works, the crdt magic makes all the difference compared to those janky old sync solutions
+
+- the magic is in making complex merges feel invisible a real step for rich text collab and offline resilience
+
 - ## 🐛 [How to make Peritext agnostic to the underlying plain text CRDT_202211](https://github.com/inkandswitch/peritext/issues/31)
   - In the current implementation, Peritext needs a special behavior to fix an issue related to tombstones
   - It requires the plain text CRDT to insert text after the tombstone with a special property to make the span expansion behavior intuitive

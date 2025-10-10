@@ -106,6 +106,17 @@ modified: 2021-05-14T15:04:15.333Z
     - It’s a non-intrusive data layer that integrates with your existing systems
     - No changes to your data or auth
     - Full-featured comment sections with @mentions/Threaded-replies/Likes
+  - https://github.com/replyke/express
+    - Open-Source Framework for Social Features. 
+    - Build social apps faster with powerful API and SDKs for JavaScript, React, and React Native
+  - https://github.com/replyke/reel-snap
+    - a modern boilerplate for building social networks inspired by TikTok and Instagram Reels. 
+    - It comes with fully functional authentication, dynamic feeds, profiles, and a suite of social features. 
+    - ReelSnap is powered by Replyke
+    - Thanks to Replyke, ReelSnap comes with a robust, plug-and-play backend. This project functions perfectly well without a server, making it easy to get started.
+  - https://github.com/replyke/social-network-tutorial
+    - This project demonstrates how to create a fully functional social network using Replyke 
+    - [How to Build a Social Network in 1 Day: Part 1 - Introduction - DEV Community](https://dev.to/tsabary/how-to-build-a-social-network-in-1-day-part-1-introduction-1a3d)
 
 - orca /1.1kStar/MIT/202203/ts/inactive/功能全
   - https://github.com/DimiMikadze/orca

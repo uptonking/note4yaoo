@@ -128,6 +128,18 @@ modified: 2025-09-16T12:36:12.968Z
 
 - ## 
 
+- ## 
+
+- ## [I did not realize how easy and accessible local LLMs are with models like Qwen3 4b on pure CPU. : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o1z3hj/i_did_not_realize_how_easy_and_accessible_local/)
+  - I hadn't tried running LLMs on my laptop until today. I thought CPUs were too slow and getting the old igpu working (AMD 4650U, so Vega something) would be driver hell. So I never bothered.
+  - I downloaded LM Studio, downloaded Qwen3 4b q4, and I was getting 5 tok/sec generation with no hassle at all with the automatic Vulkan setup. Not bad
+  - Then, just to be sure, I disabled the GPU and was surprised to get 10 tok/sec generation with CPU only! Wow! Very usable.
+  - This means I can just buy any used laptop off ebay, install linux, and go wild??? It has a built in monitor, low power draw, everything for $200-300? My laptop only has DDR4-3200, so anything at that speed or above should be golden. Since async processing is fine I could do even more if I dared. Maybe throw in whisper.
+
+- Qwen3-4B is really a good choice for 16GB laptops (common choice for general consumers). I use it for local PDF rag and it can provide me with accurate in-line citations + clear structured report.
+
+- Or you can just run it much faster with a $60 GPU and have your low power kitchen computer connect to that via wifi.
+
 - ## 🆚 [8B models at full-size, or 32B models at Q4? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1o13oyn/30b_models_at_fullsize_or_120b_models_at_q4/)
 - Q4 isn't much of a degradation and the base is so much stronger.
 - The degradation depends on the models original size and architecture as MOE can be more sensitive but overall I would always pick the larger models when possible so long as you still have enough space for context.

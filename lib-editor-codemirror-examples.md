@@ -2155,6 +2155,24 @@ modified: 2023-06-23T12:46:53.288Z
 
 ## playgrounds-examples
 
+- https://github.com/replyke/monorepo /apache2/202509/ts
+  - https://replyke.com/
+  - [I built Replyke: an open-source social infrastructure layer (comments, feeds, notifications, profiles) for your apps : r/reactjs](https://www.reddit.com/r/reactjs/comments/1nv6zaa/i_built_replyke_an_opensource_social/)
+    - It’s a non-intrusive data layer that integrates with your existing systems
+    - No changes to your data or auth
+    - Full-featured comment sections with @mentions/Threaded-replies/Likes
+  - https://github.com/replyke/express
+    - Open-Source Framework for Social Features. 
+    - Build social apps faster with powerful API and SDKs for JavaScript, React, and React Native
+  - https://github.com/replyke/reel-snap
+    - a modern boilerplate for building social networks inspired by TikTok and Instagram Reels. 
+    - It comes with fully functional authentication, dynamic feeds, profiles, and a suite of social features. 
+    - ReelSnap is powered by Replyke
+    - Thanks to Replyke, ReelSnap comes with a robust, plug-and-play backend. This project functions perfectly well without a server, making it easy to get started.
+  - https://github.com/replyke/social-network-tutorial
+    - This project demonstrates how to create a fully functional social network using Replyke 
+    - [How to Build a Social Network in 1 Day: Part 1 - Introduction - DEV Community](https://dev.to/tsabary/how-to-build-a-social-network-in-1-day-part-1-introduction-1a3d)
+
 - https://github.com/vercel/satori /MPLv2/202411/ts
   - https://og-playground.vercel.app/
   - Enlightened library to convert HTML and CSS to SVG

@@ -1979,7 +1979,56 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## 🆚 [Any downside to having 128GB of RAM on two 64GB sticks? : r/buildapc _202510](https://www.reddit.com/r/buildapc/comments/1nyso1u/any_downside_to_having_128gb_of_ram_on_two_64gb/)
+  - should I split it into four 32GB sitcks or get two 64GB sticks? Is there a difference to performance? 
+  - The specific product I am looking at is: Corsair Vengeance 128 GB (2 x 64 GB) DDR5-6400 CL42 Memory
+  - I could get 4 32GB sticks instead. But I read that DDDR5 RAM doesn't play well on AM5 if all 4 sticks are utilized.(AM5 is the latest CPU socket from AMD for their Ryzen 7000, 8000, and 9000 series desktop processors, replacing the long-lived AM4 socket)
+
+- You likely won't be able to run four sticks at 6400MHz, but there's a higher chance you will with two. It depends on your CPUs memory controller. I have 4x32GB 6000 CL30 and I regret not getting 2x64GB. You live and you learn, I guess.
+
+- Much better performance-wise on two sticks than four for DDR5. Downside is lighter wallet lol
+
+- You can buy a motherboard with 4 slots and only populate two of them. Dual slots ATX mobo are very rare
+  - I have built and bought parts for at least a dozen pcs and i am pretty sure i have never seen a motherboard with 2 slots in my life
+- It’s much more common in ITX boards though.
+  - Only itx and ultra cheapo boards have 2 slots.
+- All mini-ITX form factor board, a good chunk of the lowest end budget boards (ie stuff like A620 boards generally intended for low power office machines, that kind of thing), and a tiny few extremely high end OC boards (two slots to use larger traces and maximize stability at extreme OCs). You can just set the number of slots to 2 on PCPartPicker to see.
+
+- If only people listened to Apple, and just accept whatever memory came on the device when they bought it
+  - Shit, big Repair got to him in the middle of his sentence
+
+- Maybe look into 2x48GB: 6000MT/s CL30 isn't extortionately priced.
+  - 2x48 is your best bet. You won't have any performance penalties with that setup. 2x48 is no harder on the memory controller than 2x32.
+  - I wouldn't take the performance hit of 128GB of RAM, when 96GB works so well. Unless you really need it, that is. I use my PC as a workstation for processing drone imagery into orthomosaic maps and 64GB is enough for mapping up to 150 acres. OpenDroneMap is pretty damn RAM hungry.
+  - If you really need 128GB, you should still stick to 2 DIMMs. 2x64 is going to be much easier to get working and perform better than 4x32.
+
+- 2 sticks have better performance than 4 sticks.
+
+- As others are saying, dual channel is going to be significantly more stable (as opposed to 4x32).
+  - If you’re just tinkering and have the funds, there are boards that support 196GB. Or you could jump up into professional stuff and go for 256GB.
+  - All of this is assuming DDR5.
+
+- There's not any specific significant downside, but some motherboards may not support a RAM with 64 GB per stick without a BIOS update.
+  - those 64 GB sticks are slower than 32 GB sticks (6000 CL30 > 6400 CL42), as small as it might be.
+  - If your PC is AM5, 6400 is highly not likely to boot with 1:1 setting. There's also going to be longer RAM training initially but that's just one time thing.
+  - 99% of AM5 CPUs support 6000 at 1:1 speed, but any higher than that, the chance lowers noticeably, and 6400 1:1 is a crap shoot. It doesn't help it's a high-capacity 64 GB, dual rank stick, which puts even more stress on to the memory controller.
+  - It's just the way AM5 CPU memory controllers roll. There's a G. Skill 128 GB set (2x 64GB) that is EXPO certified, at 6000 CL32, 34, or 36 that you can get instead. I have the CL34 one, then tightened RAM timings to get it down to 32-40-40-76.
+
+- Most consumer motherboards are going to be duel channel RAM, which means there's only 2 lanes between the RAM and CPU. Duel channel motherboards with 4 RAM slots will have 2 slots share a lane, so in most cases you will get more performance out of 2 sticks then 4, as long as you follow the instruction in the manual and use the slots it tells you to put the RAM in (Often A2 and B2, but can be board specific).
+  - Worth keeping in mind a lot of CPU/motherboards don't seem to like running large amounts of RAM at higher speeds, so while it might be rated for 6400MHz you might have to run it at 6000, so if there's a cheaper 6000MHz kit, especially one with a lower latency (CL42 part of the product you listed) I'd probably go for that. Having a quick look it seems common for CL40+ on 128GB kits though.
+  - If you must have 128GB, look at something like the G. Skill Flare X5 128 GB (2 x 64 GB) DDR5-6000 CL32 Memory for lower latency, though depending on where you are lower latency kits might not be available. I can see a few CL32 128GB kits available on US pc part picker, but the lowest it shows in stock for the UK is CL34, still be an improvement over CL42.
+
+- for some reason, 2x48gb 6400 CL32, is relatively easy to find
+  - but once you go for 2x64gb, it's hard to find good timings.
+
+- it's possible to get even 256GB of DDR5 to run on AM5, so 128GB should be no problem.. not at the same speeds you'll get with the "generic gaming choice of 32GB", ofc, but still.
+
+- if you want 6400MHz, shoot for CL32
+  - I believe that is the correct spread change for DDR5 above 6000MHz CL30
+
+- I got 4 sticks CL30 Corsair Vengeance 4 x 32, could not get >5200Mhz stable with MSI Mag 870E + 9950x3D. Though running benchmarks, I ended up staying with this config instead of 2x48 @ 6000. There was negligible difference in any of my workloads, for work or for play, but I did benefit from the at the time, very drastic price difference, and the additional ram is useful in my use-cases.
+
+- Why stop at 128gb when you can now do 256gb 6000MT? See Level1Techs video from 2 weeks ago.
 
 - ## [求推荐mATX非侧透散热好的机箱 - 小红书](https://www.xiaohongshu.com/explore/688e90bf00000000250132d4?xsec_token=ABB5_uSFZrF4Fb2p-cIYUQAnzEybe1BZQKTuCoX9z-RXw=&xsec_source=pc_search&source=unknown)
 - 看标题第一反应就是追风者xtm3了，水冷可以选华硕的那个，风冷对风道要求高只有追风者合适了。

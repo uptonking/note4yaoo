@@ -195,6 +195,29 @@ modified: 2021-01-04T17:26:25.032Z
   - https://github.com/k-lar/vscode-dynomark
     - This extension is a wrapper around that engine, and provides a simple way to query your markdown files.
 # streaming
+- https://github.com/vercel/streamdown /2.7kStar/apache2/202509/ts
+  - https://streamdown.ai/
+  - A drop-in replacement for react-markdown, designed for AI-powered streaming.
+  - Streamdown powers the AI Elements Response component but can be installed as a standalone package for your own streaming needs.
+  - Drop-in replacement for react-markdown
+  - Streaming-optimized - Handles incomplete Markdown gracefully
+  - GitHub Flavored Markdown - Tables, task lists, and strikethrough support
+  - Unterminated block parsing - Styles incomplete bold, italic, code, links, and headings
+  - Math rendering - LaTeX equations via KaTeX
+  - Mermaid diagrams - Render Mermaid diagrams as code blocks with a button to render them
+  - Code syntax highlighting - Beautiful code blocks with Shiki
+  - Security-first - Built on harden-react-markdown for safe rendering
+  - [Introducing Streamdown: Open source Markdown for AI streaming - Vercel _202508](https://vercel.com/changelog/introducing-streamdown)
+
+- https://github.com/Simon-He95/vue-markdown-render /430Star/MIT/202510/ts/vue
+  - https://vue-markdown-renderer.netlify.app/
+  - A Vue 3 renderer specifically built for AI-powered streaming Markdown: Monaco incremental, Mermaid progressive, and KaTeX formula speed, with real-time updates and no jitter, ready to use out of the box.
+  - Streaming diff code blocks: show diffs as they arrive for instant feedback.
+  - Built for scale: optimized DOM updates and memory usage for very large documents.
+  - Streaming-first rendering: render partial or incrementally-updated Markdown content without re-parsing the whole document each time. 
+  - [Show HN: Vue-Markdown-render – up to 100× faster streaming Markdown for Vue 3 | Hacker News _202509](https://news.ycombinator.com/item?id=45238350)
+    - Streamdown targets server-side streaming; our results are for client rendering. Ideal for AI chatbot UIs.
+
 - https://github.com/thetarnav/streaming-markdown /266Star/MIT/202505/js
   - https://thetarnav.github.io/streaming-markdown/
   - Experiment making a streaming makdown parser à la ChatGPT.
@@ -206,6 +229,14 @@ modified: 2021-01-04T17:26:25.032Z
   - `stream` function to render and highlight a stream of markdown
     - stream streams the result of a markdown stream through the renderer/highlighter.
     - The result will come in chunks of elements instead of by word since the entire element needs to be present to render and highlight correctly.
+# ui
+- https://github.com/BlueprintLabIO/markdown-ui /412Star/MIT/202509/ts
+  - https://markdown-ui.blueprintlab.io/
+  - https://markdown-ui.com/
+  - An open standard for rendering interactive widgets in plain Markdown
+  - Readable everywhere: Preview rich UI, but if unsupported, it's still legible Markdown
+  - Zero lock-in: Pure spec—works with any Markdown parser + any UI framework
+  - [Show HN: Turn Markdown into React/Svelte/Vue UI at runtime, zero build step | Hacker News _202508](https://news.ycombinator.com/item?id=45024532)
 # apps
 - https://github.com/motifland/markprompt
   - Markprompt is a platform for building GPT-powered prompts. 

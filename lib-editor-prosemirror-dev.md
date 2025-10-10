@@ -92,6 +92,7 @@ modified: 2021-05-06T09:39:53.522Z
   - diff for tiptap extensions/schema(rewrite tiptap diff)
   - diff for version-history-timeline
   - streamable diff
+  - ⚖️ diff for rich-text
 
 - collab
   - codemirror in prosemirror: all collaborative

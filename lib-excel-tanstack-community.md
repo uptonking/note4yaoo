@@ -89,6 +89,21 @@ modified: 2023-03-01T13:00:27.664Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Why TanStack Router Requires Manual Route Tree Configuration : r/reactjs _202510](https://www.reddit.com/r/reactjs/comments/1o210lp/why_tanstack_router_requires_manual_route_tree/)
+- Get the vite plugin
+  - It’s for file-based routing; I want to use code-based routing instead.
+
+- Cause tanstack router is unaware of the structure of your tree, it's just like the same thing with react router, declarative, only difference is you're not using JSX.
+  - I think what you're looking for is the file based routing, similar to NextJS app router. Tanstack Router can also do that, just search for it.
+
+- Routing is a developer concern, not framework's responsibility. It's hard to do programmatically things that devs know better.
+
 - ## Introducing a new package that automates SSR dehydration/hydration and streaming between TanStack Router / Start and TanStack Query.
 - https://x.com/schanuelmiller/status/1953941380121739485
   - with this integration, if you execute a query on the server during SSR, the query data will be sent to the client automatically next to the SSR HTML. this works for queries that block the SSR requests as well as ones that resolve later.
