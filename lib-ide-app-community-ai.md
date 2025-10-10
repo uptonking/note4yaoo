@@ -418,6 +418,15 @@ modified: 2024-08-24T16:28:20.515Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [ValTown - What we learned copying all the best code assistants _202501](https://blog.val.town/blog/fast-follow)
+- Looking back over 2024, our efforts have mostly been a series of fast-follows, copying the innovation of others.
+  - This article is a historical account of our efforts, giving credit where it is due.
+- it still feels like there’s a lot to be gained with a fully-integrated web AI code editor experience in Val Town – even if we can only get 80% of the features that the big dogs have, and a couple months later. It doesn’t take that much work to copy the best features we see in other tools. The benefits to a fully integrated experience seems well worth that cost. In short, we’ve had a lot of success fast-following so far, and think it’s worth continuing to do so.
+
 - ## 🚀 Augment Code: We spent the past few months building a production-grade AI coding agent from scratch. _202504
 - https://x.com/augmentcode/status/1915049816268366268 
   - we learned what actually matters—and open-sourced the whole stack.

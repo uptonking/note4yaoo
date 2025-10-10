@@ -1637,7 +1637,16 @@ ollama run hf.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF:Q6_K
 
 - ## 
 
-- ## 
+- ## [Local LLMs vs. cloud for coding : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o2efiq/local_llms_vs_cloud_for_coding/)
+- Aider has their leaderboard. gpt-oss-120b scores fairly decent. 
+  - I'm running gpt-oss-120B on just under 64GB at full context (131k tokens) which I don't even need because my project is only 16k tokens.
+  - I do like being able to dump an entire manual into it if I need to though. For instance, a raylib cheatsheet converted to markdown.
+- Tested on the 48 CPU with 96GB RAM at DO and, 31.59 tokens per second prompt processing, 6.31 tokens per second generation.
+
+- I found that the only open weight model that is close to Claude performance is Alibaba's QWEN Coder 480B. Neither GLM 4.5 nor DeepSeek V3.2 (which themselves are impossible to run locally) produced satisfactory results for me. Even with 4-bit quantization it requires a whopping 300 GB of memory. It means 10 x RTX 5090 GPUs or 3 x RTX 6000 96 GB which would make the budget well above $30k at which point it makes sense to look at H100.
+
+- > 9950X3D, RTX 4070, and 64 GB DDR5 RAM. I assume the GPU (RTX 4070) will be the biggest bottleneck. 
+  - No, the biggest bottleneck is DDR5. It's just inadequate for massive scale of data that is moved around during inference. VRAM is much superior.
 
 - ## [What is the current best python coding model? : r/LocalLLaMA _202408](https://www.reddit.com/r/LocalLLaMA/comments/1epjget/what_is_the_current_best_python_coding_model/)
 - CodeQwen-1.5-7b is a powerful coding model according to livecodebench.

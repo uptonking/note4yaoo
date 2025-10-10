@@ -1602,6 +1602,27 @@ modified: 2023-06-23T12:46:53.288Z
   - https://github.com/andy0130tw/codemirror-lsp-client-demo /202507/ts
     - Demo on wiring up tsserver with CodeMirror's lsp-client module
 
+- https://github.com/val-town/vtlsp /72Star/MIT/202510/ts
+  - https://blog.val.town/vtlsp
+  - Val Town's LSP powered editor. 
+  - A Codemirror LSP client implementation and LSP proxy and WebSocket server
+  - VTLSP provides a complete solution to running a language server on a server, and stream messages to an editor in your browser. 
+  - Usually LSP is done via payloads over standard in and standard out to a language server process running on your computer, typically spawned by your editor. 
+  - this repo provides a way to run language servers as WebSocket servers, and a client library for the Codemirror editor to act as a LSP frontend client.
+  - Our Codemirror client library provides various extensions to serve as a client to a language server. It propagates code edits to the language server, and displays things like code diagnostics and tooltips. It uses some extensions from Codemirror's official client library with modification, and was originally based on Monaco's client.
+  - Our Codemirror Client is intentionally agnostic about the type of transport used, but we provide a reference WebSocket transport in our client library.
+  - This general LSP architecture of having a proxy and relaying messages over a WebSocket"ification" server is partially inspired by Qualified's `lsp-ws-proxy` project. 
+    - The main difference here is that we make it easy to add additional, arbitrary logic at the LS proxy layer, and we handle chunking WebSocket messages differently.
+  - [Building a better online editor for TypeScript | Val Town Blog _202509](https://blog.val.town/vtlsp)
+    - Our previous language integration was entirely client-side. We ran a TypeScript Language Service Host in a Web Worker, to isolate it from the top frame's thread, and communicated between the Web Worker and top frame using Comlink. And we bundled it into codemirror-ts, a CodeMirror extension, and Deno-ATA, an incomplete implementation of Deno's import resolution logic grafted onto TypeScript's capabilities.
+    - This solution worked great in the simplest cases, but stumbled when importing certain NPM packages, and required more and more workarounds. 
+    - The main two issues we were facing were these:
+    - 🐛 TypeScript isn't written for Deno. At Val Town, we run Deno, a modern JavaScript runtime that differs from standard TypeScript. Deno supports URL imports, provides server-side APIs through the Deno global (like environment variables), and introduces its own quirks. 
+    - 🐛 NPM modules can be gigantic and installing dependencies is no joke. Huge import trees for NPM modules are nothing new, to install the minimal number of packages by comparing semver ranges. We didn't have that luxury, and often referencing an NPM module would trigger an avalanche of HTTP requests and bytes downloaded, which would overload the Web Worker and make the editor's language tools unresponsive.
+    - So, we redesigned our editor's TypeScript handling. Instead of running TSserver in a Web Worker, we now run the official Deno Language Server remotely in cloud containers.
+    - Now, when you visit our editor, we launch a containerized server that exposes a WebSocket and speaks the LSP protocol. The architecture was partially inspired Mahmud Ridwan's great writeup of connecting CodeMirror & an LSP, with the main difference being that we directly map `stdio` to the WebSocket rather than serializing messages, because `vscode-jsonrpc` can do that for us.
+    - Our implementation uses a stream WebSocket wrapper and pipes stdio directly, and manages multicasting connections so many clients can talk to the same process at once
+
 - https://github.com/FurqanSoftware/codemirror-languageserver /161Star/BSD/202502/ts/inactive
   - Language Server integration for CodeMirror6
   - This plugin enables code completion, hover tooltips, and linter functionality by connecting a CodeMirror 6 editor with a language server over WebSocket.
@@ -2667,11 +2688,20 @@ modified: 2023-06-23T12:46:53.288Z
   - open-source code snippet & notebook app for developers.
   - It is a web/cloud based open-source application made in React/Next.js that you can easily deploy on Appwrite and Vercel for free.
   - 依赖tiptap、appwrite
-# pm-coding-ai
+# pm-coding-ai 👾
 - https://github.com/asadm/codemirror-copilot /MIT/202401/ts/inactive
   - https://copilot.asadmemon.com/
   - CodeMirror extension to add GPT autocompletion like GitHub's Copilot
   - This code is based on codemirror-extension-inline-suggestion
+
+- https://github.com/sparrow-js/an-codeAI /724Star/apache2/202506/ts
+  - https://www.needware.dev/
+  - open-source AI-powered code generation tool that provides an isolated sandbox environment preview for each generated application
+  - AI-powered full-stack web development for NodeJS based applications directly in your browser.
+  - Attach images to prompts for better contextual understanding.
+  - Download projects as ZIP for easy portability Sync to a folder on the host.
+  - Isolated sandbox environment for running code: @webcontainer/api
+  - 依赖 @webcontainer/api、codemirror6、@ai-sdk.v1、@nanostores/react、zustand、@supabase/supabase-js、@neondatabase/serverless、radix-ui、@remix-run/node、xterm、drizzle、react-dnd
 
 - https://github.com/continuedev/continue /21.3kStar/apache2/202508/ts
   - https://docs.continue.dev/

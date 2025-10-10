@@ -1,11 +1,11 @@
 ---
-title: lib-editor-app-community-diff-patch
-tags: [community, diff, diff-match-patch, editor]
+title: lib-ai-app-community-model-diff-patch
+tags: [community, diff, diff-match-patch, editor, large-language-model]
 created: 2025-10-08T06:33:26.386Z
-modified: 2025-10-08T06:34:09.600Z
+modified: 2025-10-10T02:45:45.941Z
 ---
 
-# lib-editor-app-community-diff-patch
+# lib-ai-app-community-model-diff-patch
 
 # guide
 
@@ -96,6 +96,46 @@ modified: 2025-10-08T06:34:09.600Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 💡 [advise on agent text editing : r/LLMDevs _202509](https://www.reddit.com/r/LLMDevs/comments/1nd330j/advise_on_agent_text_editing/)
+  - I’m using ProseMirror (TipTap) to build an LLM edit feature. 
+  - The hardest part is handling diff and preview in rich text (Markdown/HTML). 
+  - In code editors like Cursor or Windsurf, the line-by-line structure makes this straightforward. 
+  - But in a rich-text editor, mapping cursor positions and highlighting changes is far trickier.
+  - Even OpenAI, in its canvas, refreshes the entire document instead of showing granular diffs, which I think misses the skeuomorphic experience writers actually need. Notion has only partly addressed this, and even then just for chunks of text, it doesn’t handle long docs really well
+
+- 🤔 hey i had implemented this and it worked reasonably well. you need to look into json patching. you can use ai to generate the edit patch
+
+- ## [GLM-4.6 and other models tested on diff edits - data from millions of Cline operations : r/ChatGPTCoding _202510](https://www.reddit.com/r/ChatGPTCoding/comments/1nwj7zq/glm46_and_other_models_tested_on_diff_edits_data/)
+  - If you're not familiar with what "diff edits" are, it's when an LLM needs to modify existing code rather than write from scratch. 
+  - An important caveat is that diff edits aren't everything. Models might excel at other tasks like debugging, explaining code, or architectural decisions. This is just one metric we can measure at scale.
+
+- ## [[D] Best way to make LLMs return a valid code diff : r/MachineLearning _202502](https://www.reddit.com/r/MachineLearning/comments/1iklsoo/d_best_way_to_make_llms_return_a_valid_code_diff/)
+- Counting is hard for LLMs. You might have more success asking for the code that's on the line where the changes start, and the code that is on the line where the replacements end.
+- Basically what I think will help is not relying on counting but on something LLMs are typically good at - language, words. So instead of trusting the numbers from the LLM, you would ask for the actual lines of code and triangulate from there. Duplicate lines are something you can detect in your triangulation code, and then ask the LLM for more context ("This line is repeated in the code. What is the line before this line?").
+  - I think if you can feed both the line numbers and the code in the same prompt, then your chances are much better. If the LLM already has access to the line numbers and just has to select the correct start and end, it doesn't actually need to rely on counting, so that will probably yield good results.
+
+- Instead of having it generate diffs directly, tell it to output the old code block before the edit, then write a program that converts that to a diff by finding the original block in the code file.
+  - +1 that having instead provide a full code section and then post-process this into a diff is going be much more effective.
+  - This is similar to how Cursor (and my IDE sparkstack.app) does it.
+
+- My best approach till now is to give numbered lines. Ask to return numbered lines with edited content
+
+- ## [How do I get an LLM to edit a few lines of code? : r/ChatGPTCoding _202502](https://www.reddit.com/r/ChatGPTCoding/comments/1ivnqmd/how_do_i_get_an_llm_to_edit_a_few_lines_of_code/)
+- What everyone seems to be doing (and I'm working on my own version of this) is using multiple partial diffs. 
+  - for each fragment you want to replace. On your client, you can do find-and-replace. 
+  - Make this more precise by embedding line numbers
+  - Then you can rely on Levenshtein Distance matching to give a bit of flexibility to the (old code) searching, and presto, you're golden. (Though when I say 'presto', it doesn't seem like anyone has this perfect yet, so...)
+
+- Using partial diffs is a great idea but I think that still wouldn't work if you're editing lines which are not unique in the source code.
+  - Although as I'm writing this I realize one option could be to tell the LLM to include more lines to the diff if the code portion to be edited is not unique. Not sure if this is a good option at all though.
+- I'm thinking you'd use something like tree-sitter (which Aider uses to provide code maps to the LLMs) to tag entities like functions with hashes/ids behind the scenes before sending. Then only do diffs on whole individual functions.
+
+- Just replying as I have also been searching for this for over a year, and finally found the answer: I started testing Claude for the first time this week and it looks like it has this functionality built in by default.
+  - If you ask it to modify something that requires changing only a single paragraph of code, it will leave the rest of the codebase untouched and edit only what it needs to.
+  - It's insane that that the majority of LLM's and frontends out there can't do this yet. Even Google's Gemini 2.5 pro fails dysmally.
 
 - ## 🌰 [Improving Diff Edits by 10% - Cline Blog _202506](https://cline.bot/blog/improving-diff-edits-by-10)
   - https://github.com/cline/cline/tree/main/evals/diff-edits

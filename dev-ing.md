@@ -238,6 +238,26 @@ use vanilla html/css/javascript to create a personal profile landing page: homep
 use react to create a homepage shows a list of frontend frameworks like react/vue/angular, when clicking the framework, navigate to the route to show its introduction
 ```
 
+## 1010
+
+- The terms `pp512` and `tg128` are specific performance metrics used in the benchmarking of Large Language Models (LLMs), particularly in tools like llama-bench.
+  - pp512 = prompt processing test with a 512-token prompt. It measures how fast the model processes context (tokens/sec) before starting generation. 
+  - tg128 = text-generation test that generates 128 tokens and reports generation speed (tokens/sec). 
+
+- when running llm locally, what's the difference between rocm and vulkan?
+  - ROCm is AMD’s ML-focused GPU stack (drivers + HIP/CUDA-compat libraries + ML primitives). It’s a higher-level, ML-optimized platform you pick when you want native PyTorch/TensorFlow support and AMD’s tuned kernels (training and heavy inference on supported AMD datacenter GPUs). 
+  - Vulkan is a low-level, cross-vendor graphics + compute API (compute shaders). It’s vendor-agnostic and very portable — great for inference on consumer/embedded devices (Steam Deck, Intel iGPUs, Windows, Linux, Android) or when you need to target mixed GPUs. But it’s lower level, so frameworks/tooling for ML are less “batteries included” and you’ll often rely on project-specific backends (ggml/MLC/GPT4All, Vulkan compute delegates).
+
+- when using amd gpu, can i use vulkan instead of rocm?
+  - yes, often. 
+  - For inference on many AMD consumer / desktop GPUs (and on Windows), Vulkan-based backends are a practical and widely-used alternative to ROCm. 
+  - But for native PyTorch/TensorFlow training or heavy, multi-GPU workloads on AMD datacenter cards, ROCm is the better (often necessary) choice
+  - `llama.cpp` has an excellent, well-supported Vulkan backend
+
+- when using amd gpu and llama.cpp cli to run llm locally, how to run with rocm and vulkan?
+  - ./build/bin/llama-cli -m path/to/model.gguf --device ROCm0 -ngl 4 -p "Hello"
+  - ./build/bin/llama-cli -m path/to/model.gguf --device Vulkan0 -ngl 4 -p "Hello"
+
 ## 1008
 
 - [How to get Screen Time data on macOS? - Stack Overflow](https://stackoverflow.com/questions/66935741/how-to-get-screen-time-data-on-macos)

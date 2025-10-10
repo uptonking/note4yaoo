@@ -184,6 +184,320 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
+- ## 
+
+- ## [4x64 DDR5 - 256GB consumer grade build for LLMs? : r/LocalLLaMA _202504](https://www.reddit.com/r/LocalLLaMA/comments/1k6p20z/4x64_ddr5_256gb_consumer_grade_build_for_llms/)
+  - I have recently discovered that there are 64GB single sticks of DDR5 available - unregistered, unbuffered, no ECC, so the should in theory be compatible with our consumer grade gaming PCs.
+  - Both AMD 7950x specs and most motherboards (with 4 DDR slots) only list 128GB as their max supported memory - I know for a fact that its possible to go above this, as there are some Ryzen 7950X dedicated servers with 192GB (4x48GB) available.
+
+- I have 64GB of DDR5-6000 and it is great at inference - of models that don't take more than around 16GB (preferably 10GB) - anything bigger becomes too slow to use.
+
+- If you're going for a CPU based build, you want to go for epyc, not a consumer CPU.
+  - It won't be super fast; expect memory speed of around 200GB/s, so about 1/5th the performance of a 3090 or 4090 in token generation, and maybe 1/10th in processing speed.
+
+- Yeah, I've got 128Gb of DDR4 3200, now I am running 110Gb models with 0.3t/s
+
+- On desktop Zen 4/Zen 5, I wouldn't recommend doing that.
+  - You're quite limited by the Infinity fabric bandwidth, limiting you to a max of 62-68GB/s on DDR5-6000 to 6400, while theoritical DDR5 6000 128-bit is 100GB/s.
+
+- I'm running a Ryzen 9 7900X on MSI PRO B650M-A WIFI AM5 Micro-ATX with 256GB using 4 of those 64GB DDR5 sticks. So it is possible. Your memory bandwidth drops, as you need to slow the memory down to stay stable. If you are building from scratch you may want to use a CPU with more memory channels.
+
+- ## [Did someone ever benchmark how cpu inference performs with quad and eight channel memory ? : r/LocalLLaMA _202401](https://www.reddit.com/r/LocalLLaMA/comments/1920l93/did_someone_ever_benchmark_how_cpu_inference/)
+  - Since people always say that bandwidth is the problem. And a full 8 channel memory board with ddr4 3200 would be about 200gb/s per second i was wondering if anyone ever benchmarks that stuff and how it scales with cores ?
+
+- I have a 8ch epyc build, after some experiments i have found that the effective bandwidth is about 135 gb/s, so a 40gb model is ~ 3, 3 t/s, a 20gb is twice the speed.
+
+- Intel Xeon E5-2680 v4, 128GB DDR4 2400 RAM 4 chanels. llama.cpp, model: mixtral8x7b Q5_K_M 6 tokens/sec
+
+- R720 2x xeon 2670, 192gb ddr3-1333 dram, llama.cpp running mixtral q3_k_m quant w/ 10k context, pure cpu inference: 3.6 t/s. If use installed P40: 9.1 t/s
+
+- ## [Thread for CPU-only LLM performance comparison : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nj4axf/thread_for_cpuonly_llm_performance_comparison/)
+  - I could not find any recent posts about CPU only performance comparison of different CPUs. 
+  - With recent advancements in CPUs, we are seeing incredible memory bandwidth speeds with DDR5 6400 12 channel EPYC 9005 (614.4 GB/s theoretical bw). 
+  - AMD also announced that Zen 6 CPUs will have 1.6TB/s memory bw. The future of CPUs looks exciting. 
+  - For this CPU only comparison, I want to use ik_llama 
+  - use CPU only inference (No APUs, NPUs, or build-in GPUs allowed)
+- llama-bench benchmark (make sure GPUs are disabled with CUDA_VISIBLE_DEVICES="" just in case if you compiled for GPUs):
+  - qwen3moe 30B Q4_1: 38.9
+  - GPT-OSS 120B Q8_0: 24.7
+
+- those dusty EPYCs/Xeons with fat memory channels you see on eBay suddenly look like budget LLM toys..it; s crazy that decommissioned gear can outpace shiny new desktop CPUs for this niche.
+
+- That's my server, I think there are some config issue here as using thread 64 would be much slower, maybe I should enable HT.
+  - CPU: 1S Epyc 7B13(64c, HT disabled manually)
+  - RAM: 8 x 64GB DDR4 2666
+  - Motherboard: Tyan S8030GM2NE
+  -  qwen3moe 30B Q4_K: 31.0 
+  -  gpt-oss 120B F16: 14.9
+-  Yes, there is definitely something wrong with the server in your case. You should get better results than my server.
+
+- ## [Looks like Intel Arrow Lake can support 4 DIMMs @ up to 6400 speeds : r/LocalLLaMA _202411](https://www.reddit.com/r/LocalLLaMA/comments/1gindy1/looks_like_intel_arrow_lake_can_support_4_dimms/)
+  - After searching through a few boards, it looks like Arrow Lake can do 4 Dimms @ 6400. For an ASrock example, see below - select vendor "Corsair", and there is a 24GB per DIMM options @ 6400. Crucial and ADATA have 48GB "4 channel" options @ 5600.
+  - Anyway just wanted to pass along that we may see "certified" 6400+ speed 4 DIMM setups become common with Arrow Lake (Core Ultra 200 series). An x86 way to have 192GB-256GB (when DIMMs are available) on a standard desktop at reasonable speed.
+
+- But they are only dual channel, so you can expect at most around 100 GB/s of memory bandwidth.
+  - Missed opportunity...
+
+- I’m running 6200 stable on 128gb 4 dimms with Ryzen 7950x3D since 1+ year lol
+
+- 4 dimms does not mean 4 channels. MBs have had 4 slots forever. Arrow Lake is dual channel.
+- Arrow lake is dual channel. 4 dimms does not mean 4 channels. MBs have had 4 slots forever.
+
+- it actually has 4 channels. It has the ability to address each half of the ram seperately. And it's a 4 channel controller, for 4x 32Bit. It's just that that's the same bandwidth as 2x 64 bit.
+
+- [Is 96GB of DDR5 6800Hz RAM enough for training? : r/LocalLLaMA _202402](https://www.reddit.com/r/LocalLLaMA/comments/1b1e4z8/is_96gb_of_ddr5_6800hz_ram_enough_for_training/)
+  - I went with 96GB of fast RAM thinking that it would be more than enough, but I've been seeing that people recommend at least 128GB for training and interfacing.
+- What is your ram capacity and ram speed, I'm running 4x32gb at 6200mhz which speeds up inference. You can run AIDA to benchmark your ddr memory speed bandwidth
+  - I want to get 128 gb of ram 6000MT/s. Cl30. But most people say that there is no way the ryzen 9 7950x3d could reach that at all without it melting or being unstable. Even 5200 would be a miracle. Apparently for am5, 4 DIMMS should not be used. You shouldn’t quadrank. The most you can go for is 96 gb ram 6400MT/s (2x48). So how did you do it? Please teach me
+
+- ## [CPU RAM only speeds on 65B? : r/LocalLLaMA _202307](https://www.reddit.com/r/LocalLLaMA/comments/14q4d0a/cpu_ram_only_speeds_on_65b/)
+- I have both Dual RTX 3090s+NVLink and 128GB RAM (@3200) and for 65B models, using the CPU (i have a 3rd gen 8 core Ryzen) is just too slow. It's around 1 token per second, far from 7/s. From what i've seen getting a better CPU (16 cores) doesn't help much.
+
+- The 7950x with DDR5 6000 on a 65b_4_ks model is 1.75t/s.
+  - When it comes to token generation speed, the core count doesn't really matter. What does matter is the RAM bandwidth.
+  - However, if you don't have a GPU, then the core count becomes important for prompt evaluation speed. But it's not worth buying a high-end CPU just for this.
+  - In my opinion, if you can tolerate a speed of 2t/s on 65b models, the most cost-effective option would be to go for the 13400f($170)processor (disable the E-cores), paired with 64GB of high-frequency DDR5 RAM, and a second hand RTX 2060 for just $100. This GPU can be used for prompt processing and offloading as many layers as possible.
+
+- I have CPU Ryzen 9 3950X and 64Gb RAM at 3600MHZ. The airoboros-65b-gpt4-1.4.ggmlv3.q5_K_M.bin generates at the average of 1077ms per token, with very small variance actually.
+
+- ## [Is RAM latency very relevant for LLMs (Ollama)? : r/LocalLLaMA _202411](https://www.reddit.com/r/LocalLLaMA/comments/1gws9yp/is_ram_latency_very_relevant_for_llms_ollama/)
+- No overclocking will not produce notable gains. When you offload to CPU your major bottleneck is the processing not memory bandwidth. You'll do a lot of work and adding potential instability for something that you won't really notice, maybe an extra token per hundred generated.
+  - You are confidently wrong. I went from 3.45 tokens/s to 5.29 tokens/s just by enabling XMP profile (2666 MHz to 3600 MHz).
+
+- ## [Will DDR6 be the answer to LLM? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o0i4fz/will_ddr6_be_the_answer_to_llm/)
+  - Bandwidth doubles every generation of system memory. And we need that for LLMs.
+
+- I think the combination of smart quantization, smarter small models and rapidly improving RAM will make local LLM's inevitable in 5 years.
+
+- Prompt processing will be even more critical with faster RAM - you need lots of compute for larger models, DDR6 will be used for, and CPUs do not have enough compute. You still absolutely would need GPU.
+
+- Isn't Apple unified memory just multi channel RAM? It does deepseek fairly well.
+  - Unified memory without upgradable ram is such a double-edge sword. I want it but I don't want it to be "The future"
+
+- ## [How fast big LLMs can work on consumer CPU and RAM instead of GPU? : r/LocalLLaMA _202407](https://www.reddit.com/r/LocalLLaMA/comments/1edryd2/how_fast_big_llms_can_work_on_consumer_cpu_and/)
+  - Would not it be cheaper to build a PC with 256-512 GB of RAM and run very big models on it than buying two Rtx 3090 and having only 48gb of VRAM?
+
+- I'll get some example numbers with Llama 3.1 8B Instruct Q6_K with a context size of 8192 tokens.
+  - Running on my RTX 4060 Ti: 25.46 tokens/s
+  - Running on my Ryzen 5 7600: 6.66 tokens/s
+  - As you can see, CPUs are the devil.
+  - The RTX 4060 Ti's memory bandwidth is 288 GB/s, and my RAM is 81.25 GB/s (dual-channel DDR5 5200), and dividing those numbers comes out to close to the same ratio--while the GPU memory is 3.54x as fast, using the GPU for inference is 3.82x as fast.
+  - Using shared memory with the GPU is far worse because PCI-e 4.0 x8 is only about 16 GB/s one way (PCI-e 5.0 is only twice that fast).
+
+- I built a pc with 128G RAM , I9 14900K and one 4090 GPU. I have loaded Llama3.1 70B Q2 with Ollama, and test it, the token per second is about 9. Then I loaded Mistral Large 2 123B Q2, the token per second is about 2
+
+- 14900K has only two memory channels which gets bandwidth bottleneck at 6 threads alone! So you get almost same CPU performance as me with 12700H in a laptop. I wish you researched more before building such a system there was no point of buying 14900K at all neither for LLMs or gaming expect you use it for something else ofc..
+
+- For running LLMs on CPU you must buy something with at least 8 memory channels. Dual channel CPUs get bandwidth bottleneck at 6 threads alone and begin loosing performance severely as you increase thread count. Not cores rather only threads! So with 8 memory channels you can use 24 threads and gain around 4 times more performance. (Exact performance depends on clock, memory speed etc ofc but it is roughly like this.)
+
+- ## [Running LLMs partially on cpu. DDR5 R1(single rank) vs R2(dual rank) : r/LocalLLaMA _202403](https://www.reddit.com/r/LocalLLaMA/comments/1b3vhc7/running_llms_partially_on_cpu_ddr5_r1single_rank/)
+  - 2x32gb, dual rank(8x32bit/256bit), 6800mhz, 13600 MT/s, total bandwidth 217.6 GBps
+  - 2x24gb, single rank(4x32bit/128bit), 7800mhz, 15600 MT/s , total bandwidth 124.8 GBps
+
+- I would go for the first one with much more bandwith. As far as I know this usually is the bottleneck. But I haven't benchmarked anything like it myself.
+  - 217 GBps sounds almost too good to be true. Only 3.5x slower than 4080's bandwidth.
+
+- ## [Anyone actully try to run gpt-oss-120b (or 20b) on a Ryzen AI Max+ 395? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nabcek/anyone_actully_try_to_run_gptoss120b_or_20b_on_a/)
+- people post actual good benchmarks, 49T/s on TG and 700T/s on PP. 
+  - Better than my 14900k (96GB 6800) + RTX3090: (32T/s on TG and 220-280T/s on PP).
+
+- Ryzen 7950X + 3080 + 96GB DDR5-6000 gets me around 330T/s on PP and 15 on TG for the 120b
+
+- ## [Most economical way to run GPT-OSS-120B? : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1n13rsq/most_economical_way_to_run_gptoss120b/)
+- I get 100t/s on short (2-3k) context and ~85t/s on longer context (12-14k) using three 3090s.
+  - Two Mi50s and a Cascade Lake ES Xeon get me ~25t/s on the same 12-14k context. 
+
+- Framework PC - 128GB LPDDR5x-8000 ! I have 5090 + DDR4-2933 = 18 t/s for GPT-OSS-120B
+
+- Also 5090 + DDR5-6000 (offloading 22 layers) = ~35 t/s for GPT-OSS-120B (full precision ≈ 60GB)
+
+- Given that you already have a PC, I think, the most economical way to run gpt-oss 120b at good speeds is to buy 3 used rtx 3090. It will give you 72gb of vram and it will cost you around 1800 + PSU. It will be roughly the x4 speed of the Framework. 
+
+- I have a Framework Desktop with 64GB. It almost explodes with GPT-OSS-120b loaded but I can actually run the 4bit version for a question or two until it fails and it runs at 50 tokens/s, even with the system having been exiled to SWAP. (openSUSE Tumbleweed, llama.cpp)
+
+- ## [gpt-oss-120b on CPU and 5200Mt/s dual channel memory : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mj6xif/gptoss120b_on_cpu_and_5200mts_dual_channel_memory/)
+  - I have run gpt-oss-120b on CPU, I am using 96GB dual channel DDR5 5200Mt/s memory, Ryzen 9 7945HX CPU. I am getting 8-11 tok/s. I am using CPU llama cpp Linux runtime.
+
+- 5800x with 96gb of system ram DDR4 3200 in dual channel. Getting just over 5t/s with the 120, nothing offloaded to GPU
+
+- ## [How to run gpt-oss-120b faster? 4090 and 64GB of RAM. : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mnsg6d/how_to_run_gptoss120b_faster_4090_and_64gb_of_ram/)
+  - llama-server --hf-repo unsloth/gpt-oss-120b-GGUF --hf-file gpt-oss-120b-F16.gguf ^ -c 16384 -ngl 99 -ot ".ffn_.*_exps.=CPU" -fa ^
+  - with 16k context here, I am getting around 14tps 
+
+- I'm getting 35T/s and 120T/s prefill on a 3090 and 14900K but that is with 96GB of fast DDR5 (6800)
+
+- ## [gpt-oss-120b performance with only 16 GB VRAM- surprisingly decent : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1miprwe/gptoss120b_performance_with_only_16_gb_vram/)
+  - GPU: RTX 4070 TI Super (16 GB VRAM)
+  - CPU: i7 14700K
+  - System RAM: 96 GB DDR5 @ 6200 MT/s (total usage, including all Windows processes, is 61 GB, so only having 64GB RAM is probably sufficient)
+  - Model runner: LM Studio
+  - 13 t/s is a speed that I'd consider "usable"
+
+- Just posting my numbers too! 5090 + 60GB of DDR5, 22 cpu moe layers offloaded:
+  - 36.61 tokens per second
+
+- ## [10.48 tok/sec - GPT-OSS-120B on RTX 5090 32 VRAM + 96 RAM in LM Studio (default settings + FlashAttention + Guardrails: OFF) : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mk9c1u/1048_toksec_gptoss120b_on_rtx_5090_32_vram_96_ram/)
+  - Just tested GPT-OSS-120B (MXFP4) locally using LM Studio v0.3.22 (Beta build 2) on my machine with an RTX 5090 (32 GB VRAM) + Ryzen 9 9950X3D + 96 GB RAM.
+  - Everything is mostly default. I only enabled Flash Attention manually and adjusted GPU offload to 30/36 layers + Guardrails OFF + Limit Model Offload to dedicated GPU Memory OFF.
+
+- Try llama.cpp with-ot ".ffn_(up|down)_exps.=CPU" This offloads up and down projection MoE layers instead of full MoE layers. You should get 30 t/s
+  - I have a budget workstation that costs less than your GPU alone and I get 20 t/s with Unsloth their 120b. That is 20 t/s for the first 1K tokens, it slows down to 13 t/s at 30K context.
+  - My specs: 16 GB RTX 5060 Ti + 16 GB P5000 + 64 GB DDR5 6000
+
+- I can second that: With the same (short) prompt I get 17.9 t/s
+  - Specs: 16 GB RTX 5060 Ti + 128 GB DDR5 5600 / Ryzen 9 9900X
+  - .\llama-server.exe -c 60000 --chat-template-kwargs "{\"reasoning_effort\": \"low\"}" -fa -ctk f16 -ctv f16 -m "c:/....../gpt-oss-120b-GGUF/gpt-oss-120b-BF16.gguf" -ub 512 --temp 1.0 --top-p 1.0 --top-k 0 --min-p 0 --repeat-penalty 1.0 --no-mmap -sm none -ngl 99 --n-cpu-moe 44
+
+- Thats really bad. I get 30T/s for 3090 + 14900K 96GB. 25T/s for the 14900K with just 8GB VRAM usage.
+  - This is the trick: 
+  - --n-cpu-moe 36 \    #this model has 36 MOE blocks. So cpu-moe 36 means all moe are running on the CPU. You can adjust this to move some MOE to the GPU, but it doesn't even make things that much faster.
+  - --n-gpu-layers 999 \   #everything else on the GPU, about 8GB
+
+- I get 9 t/s on integrated gpu in my thinkpad, you are doing something wrong
+
+- I'll trade my 4070 Ti Super that gets 50 tokens/second for your ridiculously slow 5090.
+
+- GPU: NVIDIA RTX 4000 SFF Ada Generation GPU: AMD ATI 04:00.0 Raphael Memory: 54.6GiB / 94.2GiB
+  - eval rate: 8.03 tokens/s 
+
+- ## [16→31 Tok/Sec on GPT OSS 120B : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1ndit0a/1631_toksec_on_gpt_oss_120b/)
+  - CPU: Intel 13600k
+  - GPU: NVIDIA RTX 5090
+  - Old RAM: DDR4-3600MHz - 64gb
+  - New RAM: DDR5-6000MHz - 96gb
+  - Model: unsloth gpt-oss-120b-F16.gguf
+  - 16 tok/sec with LM Studio → ~24 tok/sec by switching to llama.cpp → ~31 tok/sec upgrading RAM to DDR5
+  - `llama-server --n-gpu-layers 999 --n-cpu-moe 22 --flash-attn on --ctx-size 48768 --jinja --reasoning-format auto -m C:\Users\Path\To\models\unsloth\gpt-oss-120b-F16\gpt-oss-120b-F16.gguf  --host 0.0.0.0 --port 6969 --api-key "redacted" --temp 1.0 --top-p 1.0 --min-p 0.005 --top-k 100  --threads 8 -ub 2048 -b 2048`
+
+- You can get more speed on computers with hybrid cores (a mix of p and e cores) by pinning llama.cpp to p-cores only. 
+
+- Maybe even some more speed to win by offloading only up and down projection MoE layers: https://docs.unsloth.ai/basics/gpt-oss-how-to-run-and-fine-tune#improving-generation-speed
+  - In my testing, the suggestion in that link is outdated.
+
+- You should spend money on unified memory systems for models like this instead of on a strong GPU like 5090. For example, M4 Max has GPU equivalent to 4070 mobile, which is not super fast, but it can run this model at 75 t/s on llama.cpp and 95 t/s on mlx (though mlx implementation currently has slow PP speed).
+
+- You want to only use 2 lanes if possible so 48x2. If you use all 4 ram slots your speed will be limited.
+
+- For more "long running" sessions, servers, permanent agent running etc, llama.cpp, vLLM and especially ktransformers are FAAAAR better options.
+
+- I am getting 10-11 tokens per second with GPT-OSS-120b on DDR5 4800, 7940HS CPU, 96GB RAM in LM Studio. Guessing I could get at least another 50% performance based on what you're saying
+  - GLM 4.5 Air is running at 4-5 TPS with this setup. Qwen3 30b-A3B runs at about the same speed as GPT-OSS-120b.
+
+- ## [gpt-oss-120b in 7840HS with 96GB DDR5 : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nf3fof/gptoss120b_in_7840hs_with_96gb_ddr5/)
+  - With this setting in LM Studio Windows, I am able to get high context length and 7 t/s speed (noy good, but still acceptable for slow reading).
+  - Is there a better configuration to make it run faster with iGPU (vulkan) & CPU only? I tried to decrease/increase GPU offload but got similar speed.
+  - I read that using llama.cpp will guarantee a better result. Is it significantly faster?
+
+- Don't force the experts onto CPU, just load them all in gpu, that's why you have the iGPU in the first place! You should be able to load ALL the layers on GPU as well.
+
+- Loading all layer to iGPU will result unable to load vulkan0 buffer, I think because only 48GB can be allocated to my iGPU
+  - No, . Put them all there, it will work. If dont, put 23 or so, do a tryout load. VRAM is also your shared ram, all equal. I got ryzen 7940hs, runing unsloth Q4-K-XL, with 20K context, its about 63Gb of space, i just put all on the GPU on LMstudio, ans just one processor on inference. I get 11 tokens per second, linux mint.
+
+- Thoughts from someone who has the same iGPU and used to have 96GB memory:
+  - Your offload config looks about right for your memory size (I wrote a comment about it on a lower message thread)
+
+- ## [Managed to get GPT-OSS 120B running locally on my mini PC! : r/selfhosted _202508](https://www.reddit.com/r/selfhosted/comments/1mk6jlt/managed_to_get_gptoss_120b_running_locally_on_my/)
+  - I was able to get the GPT-OSS 120B model running locally on my mini PC with an Intel U5 125H CPU and 96GB of RAM to run this massive model without a dedicated GPU, and it was a surprisingly straightforward process. The performance is really impressive for a CPU-only setup. 
+  - MINIPC: Minisforum UH125 Pro
+  - CPU: Intel u5 125H
+  - RAM: 96GB
+  - Model: GPT-OSS 120B (Ollama)
+  - prompt eval rate: 31.83 tokens/s
+  - eval rate: 2.77 tokens/s
+  - This is running on a mini pc with a total cost of $460 ($300 uh125p + $160 96gb ddr5)
+
+- ## [You can now run OpenAI's gpt-oss model on your local device! (14GB RAM) : r/selfhosted _202508](https://www.reddit.com/r/selfhosted/comments/1mjbwgn/you_can_now_run_openais_gptoss_model_on_your/)
+  - The 20B model runs at >10 tokens/s in full precision, with 14GB RAM/unified memory. Smaller versions use 12GB RAM.
+  - The 120B model runs in full precision at >40 token/s with ~64GB RAM/unified mem.
+  - There is no minimum requirement to run the models as they run even if you only have a 6GB CPU, but it will be slower inference.
+  - Thus, no is GPU required, especially for the 20B model, but having one significantly boosts inference speeds (~80 tokens/s). With something like an H100 you can get 140 tokens/s throughput which is way faster than the ChatGPT app
+
+- ## [What hardware to run gpt-oss-120b? : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1miggb2/what_hardware_to_run_gptoss120b/)
+- 64GB RAM with ~16GB - 24GB VRAM offloading, or just 128GB RAM.
+
+- Is it really possible to run it with just 128 GB RAM and no VRAM?
+  - I'm running it with 96GB RAM and 12GB VRAM and it's usable
+  - my setup: 2x RTX 4070, 96GB DDR5 6400MHz RAM, Ryzen 9 7900X
+  - It's not a memory issue with WSL (I know that an I've allocated 80 GB of memory to WSL), it just doesn't run very fast. I hit around 10-15 tokens/sec with CPU on Windows using LM Studio, but running it in the same LM Studio (or Ollama) on Linux does not go well. I'm getting around 0.8 tokens/sec, not sure why.
+  - I'm running the 20B version at around 200-250 tokens/sec though, which is great
+  - I can run it straight from CPU on 96GB and it seems to run about the same. I'm not sure. to stop LM Studio from using my GPUs, I ran it on a WSL instance without GPU access, it got the same-issue Tok/s, maybe slightly lower by the token per second, but really not that big of a difference when it's already that slow
+
+- I was able to run gpt-oss-120b in LM-studio on a 5060ti 16Gb video card + 64Gb DDR4 RAM. I placed 8 layers in video memory, the rest in RAM. The performance was 10 tokens per second, for comparison, the younger model worked at a speed of 85 tokens per second.
+
+- ## 💡🚧 [gpt-oss 120B is running at 20t/s with $500 AMD M780 iGPU mini PC and 96GB DDR5 RAM : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nxztlx/gptoss_120b_is_running_at_20ts_with_500_amd_m780/)
+  - Everyone here is talking about how great AMD Ryzen AI MAX+ 395 128GB is. But mini PCs with those specs cost almost $2k. 
+  - I searched for mini PCs that supported removable DDR5 sticks and had PCIE4.0 slots for future external GPU upgrades. 
+  - I focused on AMD CPU/iGPU based setups since Intel specs were not as performant as AMD ones. The iGPU that came before AI MAX 395 (8060S iGPU) was AMD Radeon 890M (still RDNA3.5). Mini PCs with 890M iGPU were still expensive.
+  - The cheapest I could find was Minisforum EliteMini AI370 (32GB RAM with 1TB SSD) for $600. Otherwise, these AI 370 based mini PCs are still going for around $1000.
+  - Next, I looked at previous generation of AMD iGPUs which are based on RDNA3. I found out AMD Radeon 780M iGPU based mini PC start from $300 for barebone setup (no RAM and no SSD). 780M iGPU based mini PCs are 2x times cheaper and is only 20% behind 890M performance metrics. 
+  - I checked many online forums if there was ROCm support for 780M. Even though there is no official support for 780M, I found out there were multiple repositories that added ROCm support for 780M (gfx1103)
+  - 🖥️ I bought MINISFORUM UM870 Slim Mini PC barebone for $300 and 2x48GB Crucial DDR5 5600Mhz for $200. I already had 2TB SSD, so I paid $500 in total for this setup.
+  - There was no guidelines on how to install ROCm or allocate most of the RAM for iGPU for 780M. So, I did the research and this is how I did it.
+  - I know ROCm support is not great but vulkan is better at text generation for most models (even though it is 2x slower for prompt processing than ROCm).
+  - Mini PCs with 780M are great value and enables us to run large MoE models at acceptable speeds. Overall, this mini PC is more than enough for my daily LLM usage (mostly asking math/CS related questions, coding and brainstorming).
+  - I was getting great numbers that aligned with dual DDR5 5600Mhz speeds (~80GB/s).
+  - I know ROCm support is not great but vulkan is better at text generation for most models (even though it is 2x slower for prompt processing than ROCm).
+
+- ROCM with gpt-oss 120B mxfp4
+  - tg128: 18.7 
+- VULKAN (RADV only) all with Flash attention enabled
+  - qwen3moe 30B. A3B Q4_1:  32.6, 22.3
+  - gpt-oss 20B MXFP4 MoE: 28.1, 24.8
+  - gpt-oss 120B MXFP4 MoE:  20.4, 18.1
+  - qwen3moe 235B. A22B Q3_K:4.3
+  - glm4moe 106B. A12B Q4_1:9.1
+
+- just in case someone wants to compare with strix halo:
+- STRIX-HALO @ Debian 13 6.16.3+deb13-amd64 (kernel >= 6.16.x for optimal memory sharing)
+- ROCm
+  - gpt-oss 120B MXFP4 MoE: 47.8
+- Vulkan
+  - gpt-oss 120B MXFP4 MoE: 51.5
+
+- For me also same but the problem is when context become big speed decrease
+  - I get 18t/s at 8k context 
+
+- DDR5 is almost 2x faster than my DDR4 tower PC with AMD Ryzen 5950x CPU. DDR6 should come soon (2026 or 2027?). Also, It is high time that consumer PC industry embraced quad channel memory setup (e.g. DDR5 with 4 channels in mini PC would be amazing).
+
+- Pretty incredible is 96gb the max or can it go 128?
+  - it can potentially go up to 256GB but I could not find SO-DIMM DDR5 with that size. But yes, 2x64GB = 128GB is possible but those sticks are expensive! From $200 for 96GB to $400 for 128GB. So, 96GB is cost effective.
+
+- with 90GB RAM allocated to iGPU, gpt-oss-120b-GGUF should comfortably fit 64k context. Also, running with that context will be slow for the initial cache loading (it may take hours).
+  - Update: just laoded gpt-oss 120b with 130k context. With flash attention, that context took extra 5GB only. So, I would say it is possible to load the full context.
+
+- 2x64GB dual channel near or above 6000 mt/s are not seen yet. 2x48GB dual channle can go up to 6800mst/s and some may overclock(超频) it to even higher speed depending your luck, may not be stable.
+  - The key is to use 2 slots only. 4 slots will drop the speed significantly even from the exact same brand model spec.
+
+- Is this a one-off for only running gpt-oss 120B or is this platform expected to be somewhat future proof and newer models a likely to work on it?
+  - Yes. This is future proof as long as llama.cpp and vulkan exist. Yes, this will run Qwen3 235B. Q3 should run at 6t/s.
+
+- did you also compare the performance against running it on the CPU only, without iGPU? If I remember correctly, using the iGPU mostly improves pp performance while tg is still limited by the (shared) memory bandwidth speed? Is that (still) true?
+  - Also, since you seem into getting the most out of (relatively) limited hardware, I think it could be an interesting experiment to run a bigger MoE using mmap and a PCIe Gen 4 NVMe SSD (max. ~8 GB/s). I think this might be surprisingly usable for use cases without limited context, etc.
+- Yes, I tested with ik-llama for CPU. The best I got for gpt-oss 120b with CPU was 13t/s. So, iGPU improves TG by ~65-70%. I also tried glm 4.5 air in vulkan. I got 9t/s TG. I haven't tried SSD offloading. But yes, I could try qwen3 235B Q4 for that.
+
+- Excellent results! My M4 Max 128GB was more like $6k and is only about 2.5X faster (55tok/s) with flash attention. Without flash attention, it’s down around <10tok/sec.
+  - What a cool budget option you found! gpt-oss-120b is a great tool-using, private, safe LLM.
+
+- I squeeze 11 tokens/ s with mini pc ryzen 7940hs, 780M and 64 GB 5600 mhz ddr5. Vulkan cpp. I fit 21 Layers. The rest goes to cpu. Inference 6 cpu cores. Context 18000. Maybe 20000. Linux mint mate latest version. Do not use last vulcan cpp 1.51. Use 1.50.2
+  - I get 13 t/s with CPU only in ik-llama cpp
+
+- Can you give AMDVLK a try in addition to RADV for your Vulkan perf? On my (completely different but still AMD so it may transfer to yours) hardware AMDVLK basically matches ROCm in PP while still being slightly faster than ROCm at TG (not as fast as RADV though).
+  - you're right, RADV starts off slower, but then doesn't slow down as much when context increases.
+
+- Can someone do the same with a Ryzen AI HX 370? They are on Alibaba for around 400$ now (Mini PCs incl an Oculink port) and can be equipped with 128GB DDR5.
+
+- Whats the max context it can run?
+  - I have not tested it yet. But with 90GB RAM allocated to iGPU, gpt-oss-120b-GGUF should comfortably fit 64k context. Also, running with that context will be slow for the initial cache loading (it may take hours).
+  - Update: just laoded gpt-oss 120b with 130k context. With flash attention, that context took extra 5GB only. So, I would say it is possible to load the full context.
+- The problem with context is not at the ininitial run, it tends to deminish the infererence speed as the context filled up.
+
+- I wonder what speedup you would get if you slapped a 3060 12gb EGPU onto it
+  - much slower. I have a mini PC with an even older iGPU (680m), and I run almost all MoE models > 20B sometimes faster than folks with 12GB vRAM
+
+- Would a similar approach work with say an Intel iGPU on a desktop motherboard using vulkan? I've got an older 12th Gen i7 but 4x64gb DDR4 (will be slow I know) and wondering how it would compare to just CPU-only.
+  - It should be possible but ddr4 will be 2 times slower
+- No, desktop iGPUs are very weak, usually. They just exist to provide video out. AMD has some large desktop iGPUs (the G series processors), but I don't think Intel does. Intel iGPUs are also generally not as good as AMD's, at least for llama.cpp.
+
 - ## [More RAM or faster RAM? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nzf0zf/more_ram_or_faster_ram/)
   - If I were to run LLMs off the CPU and had to choose between 48GB 7200MHz RAM (around S$250 to S$280) or 64GB 6400MHz (around S$380 to S$400), which one would give me the better bang for the buck? This will be with an Intel Core Ultra.
 - Little to no difference in speed. You need to optimize for the number of memory channels you have to ensure the highest bandwidth possible.
@@ -1638,6 +1952,121 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🧩 [为什么都没有人推荐准系统笔记本？ - 知乎](https://www.zhihu.com/question/432305670)
+- 先说结论：当前环境下，已经没必要再推荐准系统笔记本
+  - 售后稀烂，全看商家良心，准系统要求用户有一定解决问题的能力
+  - CPU来路不正，暴利且不稳定，准系统因为不是正规的OEM厂商，无法从英特尔采购正规的笔记本CPU，因此只能使用测试版
+  - 厂家准备亲自下场角逐，当时准系统主要为微星和蓝天两家，看到高性能笔记本这么一块大蛋糕，有研发实力又有渠道又有推广能力的厂家自然不甘心给人做嫁衣。后来的微星大家也看到了，已经成为几大Gaming笔记本品牌之一，蓝天则抱紧神舟大腿。这些原本的准系统供货商开始更新自有品牌，对公模的投入越来越少，以至逐渐衰落。
+  - 笔记本产品的拓展性趋近于0，现在除极少数笔记本，CPU和显卡已经不可更换，准系统也是如此，曾经引以为傲的拓展性也风光不再。
+  - 价格优势不复，拿题主的参考，我找到了淘宝某准系统店家模具为NH55(是同级别散热最好的模具，堆热管加暴力扇嘛)，以R7-3700X（8核16线程，对位R7-4800H） 16GB内存 512G固态 RTX 2060配置举例，这个价位的产品都有哪些呢
+
+- 现在国内蓝天准的代理只有船准和掏粪准，前者同模具，神舟拼好的sku比准划算不少，神船虽然也是喜欢抠固态，但至少也给你保修。tf准就不说了只有更贵。
+  - 这年头良心准商不是没有，某个温州萌妹和南京海鲜似乎还在坚持，但是价格你也看得到，大多数准商破产的破产跑路的跑路，转型台式机的也有，自己申请了一个牌子试图洗白的也有。
+  - 总而言之，就是时代变了，有靠谱正规蓝天代理商，为啥要去买连税都不交的没有保障的小店产品。。。
+
+- 准系统的死亡阶段主要经历了2次暴击。
+  - 第一次暴击，来自芯片厂商。有心的玩家应该都知道，从酷睿4代之后，再无PGA封装的CPU，全部焊接在主板上，而MXM的显卡，从GTX980M之后，也慢慢退出了历史的舞台。
+    - 虽然之后蓝天另辟蹊径将桌面级CPU搞到了笔记本上，使笔记本有了LGA插槽，然而并没有什么卵用，英特尔2年一换接口，这谁顶得住。笔记本的BIOS更新还不如台式主板来的快。纵然LGA1151撑了6、7、8、9这4代，但是其中的幺蛾子与骚操作，只有经历的人才懂那种痛。
+    - 而虽然10系显卡还有MXM的，但是异型卡大行其道，几乎没有标准版的卡型了。以前可升级的显卡一去不复返。
+  - 第二个暴击，来自神船。从前的准系统厂商，以搞蓝天和微星准系统为主，准系统商家的蓝天的货源主要来自神船与未来人类，微星的大概就是来自微盟，还有独立一派的镭波、海鲅，现在也死了吧？没咋关注。
+    - 纵然准商可以提供的定制化需求多样，但是架不住神船下场打这个架。准商只能靠着比神船更好的屏幕、网卡、SSD来抗衡，但是越精细的定制，越要花钱。神船就用一招便宜，打的准商毫无还手之力。神船的提货量本身就庞大，自然会拿到更好的价格，神船还吃着英特尔给的饭，准商哪个打得过价格战？
+- 买个笔记本，花这么多钱，承担这么大的风险，哪个小白愿意铤而走险？隔壁神船好歹还有个售后，好歹还是个国内“知名二线品牌”。
+- 现阶段，神船也算是吧准系统的那碗饭抢过去了。题主贴的图，本身问题也不小。还是老生常谈的杂牌配件问题，但凡标明好点型号的，都要加钱。其实一点不算便宜。
+  - 精打细算一下，甚至跟买个神船没啥区别，神船至少还有个7天15天退换和相对完整的售后服务。
+
+- 中肯，现在想入蓝天模具最好就是上船
+  - 但是神船基本都是低端模具上高配。。。实际性能并不行。。。高端模具神船以前有，现在基本绝迹
+- Gx10 x170不过价格嘛望而却步
+
+- ## [为什么所有笔记本电脑都设计成不能升级cpu？ - 知乎](https://www.zhihu.com/question/666682172/answers/updated)
+- 最精髓的两条，一是不省空间很难压薄；二是有金属盖导热效率更低。
+
+- 不划算，台式到了换cpu的时候基本主板和u都一起换了，
+  - 笔记本你换主板，每个牌子的主板还要匹配对应牌子外模，而且主板扩展性很低，硬盘内存接口就那么多，升级也只是用回原来的配件。
+  - 如果只是单纯换cpu，相当于为了醋包饺子。不像台式你一个机箱什么主板都能安装。
+
+- 以前是可以的，后来发现没意义，你看现在大家升级台式机，都不像以前，慢慢升级了。基本上换就是一套全换了。
+
+- 其实台式机也不能，因为每几代[CPU架构]会换，等你想换了CPU了，多半主板上的 [CPU插槽] 已经不适配最新的CPU了，而且CPU很可能是电脑最不容易坏的玩意儿了
+
+- 以前的很多笔记本电脑都能换cpu。我大学的时候本来想买台式电脑，但是寝室空间太小而且台式电脑不方便携带，考虑再三入了准系统笔记本的坑。
+  - 当时买的是神舟战神zx7sp5d1，蓝天模具准系统笔记本电脑。大学期间我给这台电脑加了个固态硬盘当系统盘，加了条8g内存条，又加了个1T机械硬盘用来给老师们安家（这个笔记本电脑有两个固态接口，两个机械硬盘接口，四个内存条接口）。
+  - 这台笔记本电脑我一直用到现在，1060显卡玩巫师3、老头环还都可以中低画质60帧，因为太耐用了导致我组台式电脑的计划一直没能落实。
+
+- 2020年左右，我买的炫龙M7，cpu是台式机的 cpu，可以更换的。
+
+- 当年蓝天模具可是整过逆天操作的，设计了带CPU插槽的主板，笔记本自带，用户可以买到手以后更换i5-9400
+  - 更多的原因是英特尔太鸡贼了。例如新出12代处理器，就要用新的，和旧的不通用。例如你真的弄到手一个笔记本，处理器是11400，你想把处理器换成12400？没门！
+
+- 2014年之前，大部分笔记本电脑都是可升级CPU的
+  - 真正把行业取消可更换插槽式CPU的，一是上游的推动，二是笔记本整体设计趋向于轻薄化
+  - 上游的推动很简单粗暴，从酷睿5代开始，英特尔就取消了笔记本产品线所有的PGA封装插槽式CPU，全部改用[BGA封装] ，直接焊在主板上
+  - AMD也在类似的时间点砍掉了所有插槽式产品线
+  - 这时候才只剩下蓝天、微星等具备LGA/PGA插槽，使用桌面处理器的准系统机型
+  - 另一方面，这种可更换的设计需要在主板上设置一个基座，再把CPU装到上面，整体占用的厚度就会有所增加
+
+- 2015年之前的还是都是可以换cpu的，英特尔最后一代移动端可换CPU是第四代酷睿，采用了FCPGA946插槽
+
+- 蓝天以前有的是。不做的原因有很多，一是Intel和AMD强推hx55取代了原来桌面u生态位，不给笔记本厂插槽了，二是蓝天一条懒狗摆烂基本上不更bios，出后续u也不支持。
+
+- 准系统笔记本都是可以的
+  - 不光CPU，显卡都能换
+  - 但不管是换CPU还是换显卡，这样的准系统的笔记本，包括IBM的老本子，模块化设计的都有一个共同特点就是厚、沉
+
+- ## [有没有什么笔记本是和台式机一样可以进行扩展升级的？ - 知乎](https://www.zhihu.com/question/567261427)
+- 蓝天NH50JNR了解一下？X170了解一下？
+  - 这才叫和台式机一样：CPU [显卡] 内存硬盘全都可以换，甚至你够闲够有钱，还可以把风扇换了，散热改VC甚至上水，当然，后面那些要自己去定制/DIY。
+  - 话说X170的正统继任者是啥？似乎没下文了？（好久没去了解准了）别说是X270，那破烂不配。
+- 可惜显卡这块，老黄已经不给做MXM了，显卡可更换大概要成为历史了。
+
+- X170之后确实就再也没有顶级准系统机了老黄毕竟不做mxm了。
+  - 事实上我觉得应该说，超级肌肉本这种产品本身就已经可以说濒临死亡了，毕竟受众只有生产力狂人和玩机佬。
+- 一眼望去，现在还能坚持做出真正强大的超级肌肉本的也只有微星一家了，而尽管如此今年的超级旗舰GT77虽然堪比X170，但是天生330W单孔电源直接就限制了不额外扩适配器的情况下她的上限，更不要说GT77的核心组件都没法更换了，一代末代机皇的痛啊。
+
+- 市场决定了厚重的模具越来越少，不管是蓝天的厚重x170设计，rog的超神，微星的gt8，都已经没有新品好多年了
+  - 蓝天新模具越来越倾向于薄，rog高端交给了轻薄的冰刃系列，微星只有gt7系列，rog也没有厚重设计了，估计日后也不会有了
+  - 主要是成本太大 销量太差，这种顶级本动辄三万往上，本来市场就小，投入进去基本回不来
+
+- 一般的轻薄本、超极本部分可以替换硬盘，或者添加内存。
+  - 标压笔记本电脑基本都可以自行替换硬盘，部分可以添加内存。早期CPU为[BGA接口]，能够自行替换，近年的已经改成板载，不能替换。
+- 使用桌面CPU的肌肉本，可以基于主板，自己更换CPU、[MXM显卡] 、硬盘和内存条。这种肌肉本可以买成品，典型例如神舟笔记本的GX、TX、K系列等。
+- 还有一些只有主板和外壳，一般称为[准系统笔记本]，要自己选配桌面CPU、MXM显卡、硬盘、内存条、屏幕等等。
+- 采用蓝天模具的游戏本厂商有雕牌，未来人类，神舟战神，炫龙，雷神（海尔），机械师（海尔）等等。
+  - 而采用微星模具的则有机械革命（清华同方），火影（清华同方），镭波等等。
+  - 游戏本厂商除了贴牌出售整机，有些还会直接出售准系统，其中大部分以蓝天模具为主。
+  - 国外有不少可选零配件的蓝天模具准系统销售网站，而国内只有铁头（未来人类）和神船（神舟）在出货。
+- 如果想购买能够像台式一样升级的笔记本电脑，就选准系统好了。
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
+- ## [后期升级空间大的笔记本有哪些？ - 知乎](https://www.zhihu.com/question/314565920)
+- 笔记本只能升级硬盘和内存。约等于没有升级空间。
+
+- 你有没有听过MXM笔记本？
+
+- 以前的很多封装称之为pga封装 已经不在生产了 现在的笔记本除了部分是台式机使用的lga封装 其他的都是bag封装了 也就是焊锡的 pga封装是插针的 比较老了 可以轻易更换CPU
+
+- 外星人m51笔记本啊，台式机的构架
+
+- 据说后来能换cpu的笔记本很少了。将来再买笔记本，第一考虑可升级性
+
 - ## [惠普暗影精灵10slim对比上一代9slim有什么提升吗？ - 知乎](https://www.zhihu.com/question/661490891)
 - 暗影精灵10 Slim 16等于便携、拓展、性能哪一样都想要，但哪一样都没顾上。说到底还是上代的产品思路，在2024年跟不上市场了，毕竟竞品有后发优势。
   - 要性能+拓展，有重量差不多、干到200W性能释放、拓展性更好的ThinkBook 16p
@@ -1679,14 +2108,21 @@ modified: 2022-01-16T15:52:31.293Z
 
 - 能不用笔记本别用笔记本。Linux对硬件性能没有太大限制，所以，你的硬件越强~你得到的就越多。
   - 显卡，如果搞AI的话，只选NVIDIA独立显卡，现在3090二手货也不贵了，千万别信什么N卡驱动难搞，那都是不会英文的原始人才会信的话术。Linux用其他卡才叫灾难，要啥啥没有，只能显示，还不如亮机卡。
-# discuss-laptop-macbook
+# discuss-laptop-mac
 - ## 
 
 - ## 
 
 - ## 
 
-- ## 
+- ## [M4 Max 128 GB vs Binned M3 Ultra 96 GB Mac Studio? : r/LocalLLM _202503](https://www.reddit.com/r/LocalLLM/comments/1j8tyjr/m4_max_128_gb_vs_binned_m3_ultra_96_gb_mac_studio/)
+- What do you mean “binned”?
+  - Some of the GPU cores are not enabled. M3 Ultra has 60 core and 80 core GPU versions. The first one is 4 grand and second one costs 5.3 grand
+
+- i think for these models, 96GB is more than enough and the GPU, NPU and RAM bandwidth are doubled on the M3 ultra vs M4 max. you would get 1.5-2X the tokens per second with the M3 ultra.
+
+- Go with the M3 Ultra 60 core GPU 96 G 1TB variant. It is faster for LLM inference compared to M4 Max and has more memory bandwidth.
+  - Note: Don't go for 80 core GPU variant. It is not value for money deal. Also go with 1TB variant. If you need more storage space, get an external SSD.
 
 - ## [Is mac best for local llm and ML? : r/LocalLLM _202509](https://www.reddit.com/r/LocalLLM/comments/1ndhu25/is_mac_best_for_local_llm_and_ml/)
 - Mac is best for energy efficiency for sure. Idle power is super low.
@@ -1979,6 +2415,445 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Upgraded self-hosted AI server - Epyc, Supermicro, RTX3090x3, 256GB : r/LocalLLaMA _202405](https://www.reddit.com/r/LocalLLaMA/comments/1d3dh4c/upgraded_selfhosted_ai_server_epyc_supermicro/)
+  - moving from AM4 to Epyc. CPU/mb/GPU/RAM/frame purchased on Ebay. 
+  - CPU - AMD Epyc 7F52 CPU
+  - Motherboard - Supermicro H12SSL-i
+  - RAM - 8x32GB DDR4 ECC Reg 3200 Mhz, DDR5 is only supported on Epyc 8000/9000 series, the Epyc 7001/7002/7003 lines only support DDR4.
+  - 3 x RTX3090 Founders Edition, all on PCIE 4.0 x16 risers
+  - Veddha 6GPU miner open frame
+  - Proxmox RAID Z1 (mirrored) on 2 x Kingston 256GB SSD
+  - Samsung 1TB m.2 NVME for VMs
+  - Samsung 4TB SSD for models & data
+  - Intel X540 T2 2 x RJ45 10GBe nic
+  - Corsair HX1500i, 34.6 x 23.8 x 13.2 cm, 10.8L
+  - Ollama running command-r-plus:latest eval rate 12 t/s, llama3:70b Q4_0 17 t/s, llama3:70b-instruct-q6_K 13.06 t/s
+
+- ## [What’s the deal with all the cheap EPYC mobo +cpu + ram bundles selling from China? : r/homelab _202210](https://www.reddit.com/r/homelab/comments/yemiap/whats_the_deal_with_all_the_cheap_epyc_mobo_cpu/)
+  - There are hundreds of these kinds of offers on eBay and elsewhere - at ridiculously low seeming prices Eg: AMD EPYC 7551P CPU 32 Cores + Supermicro H11SSL-i Motherboard +8x 8GB 2133P RAM
+  - Are these a scam?
+- More likely they're decommissioned hardware from data centre.
+  - This has been asked multiple times. The answer is they're old and being decommissioned. 1st gen stuff has been available for cheap for a couple years, while second gen is starting to get cheap. It's not like people are shocked when they see a 1950x for less than a quarter of the original MSRP.
+
+- ## [AMD EPYC 9004 series 1U chassis : r/homelab _202311](https://www.reddit.com/r/homelab/comments/17nopmx/amd_epyc_9004_series_1u_chassis/)
+  - EPYC 4th AMD EPYC™ 9354P
+  - Motherboard Supermicro H13SSL-NT
+  - 256 GB RAM + M2 storage.
+  - [The new EPCY 9004 CPU's look like a great option for a low(ish) power build. : r/homelab](https://www.reddit.com/r/homelab/comments/181e2u2/the_new_epcy_9004_cpus_look_like_a_great_option/)
+
+- The board is listed as ATX so any case thats takes that size motherboard is on the table except for one thing - trying to find a suitable case.
+
+- ## [Xeon 6230 or Epyc 8124P or 9124 for Homelab? - Hardware Hub / Build a PC - Level1Techs Forums _202502](https://forum.level1techs.com/t/xeon-6230-or-epyc-8124p-or-9124-for-homelab/225592)
+  - I’m looking to build a server for my homelab (HV + NAS). I don’t see many comparisons or benchmarks for the 8004’s and lower end 9004’s. 
+  - Epyc 8004 motherboards are still pretty limited. For various IO reasons, I don’t really love the current 8004 options (ie: ME03-CE0 & SIENAD8-2L2T), making me lean toward the 9124.
+  - Used DDR4 ECC is so cheap that I can max out all six memory channels (6x64GB) right away. Which would be great for TrueNAS and my VM’s. With the Epyc’s, I would start with 2x64GB and wait for DDR5 ECC prices to drop, meaning more cost later. And who knows how long until they actually drop.
+
+- ASUS S14NA-U12 is another 8004 motherboard option. I’ve no experience with any Epyc motherboard, but this looks nice and is a bit cheaper in EU
+
+- I have a 8024P AMD EPYC running in my home lab on a Gigabyte ME03-CE0 motherboard with 6 16GB ECC DDR5 RDIMMs and storage.
+  - It’s a bit weak (wish I had found a 8124P or even a 8324P if it was somewhat affordable), but gets the job done.
+
+- ## [Asrock vs Supermicro - AMD Epyc Genoa : r/truenas _202406](https://www.reddit.com/r/truenas/comments/1dekxey/asrock_vs_supermicro_amd_epyc_genoa/)
+  - I am looking to buy a new motherboard for my server (TrueNAS Scale) and am considering the following models: ASRock GENOAD8UD-2T/X550, Supermicro H13SSL-NT
+  - My previous experiences with Supermicro motherboards have been very unpleasant. The IPMI port didn’t work, the PCIe card I installed for the network didn’t appear in BIOS, and a RAID card (purchased from a trusted company) had the same issue.
+
+- I use the Supermicro H13SSL-NT with windows at this point, in a desktop case and everything is working fine. I have the epyc 9124. And windows desktop doesn't support the 10gbe broadcom adapter.  
+
+- ## [What are the cheapest Intel/AMD CPUs supporting Quad-channel RAM in 2023? - Quora](https://www.quora.com/What-are-the-cheapest-Intel-AMD-CPUs-supporting-Quad-channel-RAM-in-2023)
+- xeon w3 2423 the latest its like 400$ but has 4 channel memory
+
+- There are a few different candidates, depending on whether you include old or second-hand components, and how you define “quad-channel”.
+- Technically the Xeon E5 2620 is the cheapest CPU you can buy in 2023 with quad-channel support.
+  - It’s a very weak 6-core server CPU from 2012, and you can buy one second-hand from Aliexpress for about $2 or £1.50
+  - It supports quad-channel DDR3, both registered and unbuffered, but because it only supports DDR3, it’s not a good option
+- Most modern laptop CPUs support quad-channel LPDDR RAM, because LPDDR channels are half as wide as DDR channels (32 bits vs 64 bits), so you can fit twice as many channels on a given CPU, though each channel has half as much bandwidth. 
+
+- If you want a current-gen CPU with support for at least 4 full memory channels (at least 256-bit memory bus, at least 8 DDR5 sub-channels), the cheapest option is a 6-core Intel Xeon W3-2423 (4 channels) or 8-core AMD EPYC 8024P (6 channels) which both cost about $400 or £400.
+
+- ## [Ryzen DDR5 Quad channel resources - Hardware Hub - Level1Techs Forums _202412](https://forum.level1techs.com/t/ryzen-ddr5-quad-channel-resources/221787)
+- Check your motherboard’s QVL list for compatible memory kits.
+  - It’s not the number of sticks, it’s the number of memory ranks. So you can typically do 4 single rank sticks or 2 dual rank sticks at EXPO speeds. 
+  - The problem is consumer memory rarely specifies the number of ranks as they may swap suppliers based on what’s cheap/available.
+
+- ## [Does a CPU with 2 memory channels support using 4 sticks of RAM? : r/buildapc](https://www.reddit.com/r/buildapc/comments/13d83mt/does_a_cpu_with_2_memory_channels_support_using_4/)
+- It CAN use up to four sticks, yes. It's still dual channel, it's just double-populated dual-channel (true quad-channel RAM CPUs do exist, but it's highly unlikely you have one).
+  - Finally, if it's a situation of DDR4, RAM is so goddamn cheap right now that if you want to go from 16GB (2x8GB) to 32GB (2x16GB), you can usually just sell your old kit on like ebay, and even after the fees, it's within a few dollars of the same net cost as if you bought another 2x8GB kit.
+
+- ## 🆚 [Framework strix halo vs Epyc 9115 -- is Epyc better value? : r/LocalLLaMA _202503](https://www.reddit.com/r/LocalLLaMA/comments/1jo50iz/framework_strix_halo_vs_epyc_9115_is_epyc_better/)
+  - I've put in a reservation for the Framework desktop motherboard, which is about $1800 with 128GiB ram, 256 GiB/sec bandwidth. 
+- However, I was going through some server configurations, and found this:
+  - Epyc 9115 -- 16-core, 12-channel memory, $799
+  - Supermicro Motherboard w/ 12 DIMM slots -- $639
+  - DDR5 6400 16GiB x 12 -- $1400
+  - That would give me (12 channel x 64 bit wide per channel * 6400) 614.4 GiB/sec bandwidth, about 2.5x the Strix Halo motherboard configuration. Cost would be about 1k more, but getting 50% more memory too.
+  - Now this would be doing CPU only inference, which I understand is mostly memory bandwidth bound anyway. Prompt processing would suffer, but I can also throw in a smaller sized GPU to use for prompt processing.
+
+- That Epyc has just two CCD. Even if it uses 2 GMI3 links per CCD, it would be limited to 240 GB/s.
+  - AMD has this fraud of advertising bandwidth between RAM and memory controller, even when it's severly bottlenecked by bandwidth between CPU and controller.
+  - In order to obtain the advertised 9005 bandwidth you need to use the 12 or 16 CCD SKUs.
+
+- 9115 costs less than 1k, not 10k. But it has just 2 CCD and probably its actual performance is much lower than expected. A way better choice would be the 9175F, which goes for 4k.
+  - Or I would consider 9274F, if the price has reduced after 9275F launch.
+
+- I was just going to reply 9175F is $2650 on Newegg and 16CCD. I might go for that instead. Thanks for the reply! Any RAM recommendations? And amount?
+  - 9175F supports 12 channel memory, so you should look for a single-CPU 12-channel mobo. Theoretically, it should be able to benefit of memory up to 7200 MT/s, but without benchmarks is hard to say.
+
+- The cheapest Epyc Turin that will give you more bandwidth would the 9225 at 2, 500 usd. (4 ccd)
+
+- I regularly find the previous EPYC 9554 64-core CPU with 8x CCDs (measured at 390GB/sec on STREAM) listed for $2500-2900. This is the most value for money configuration I believe and it offers more computation FLOPs for prompt processing (~5 TFLOPS in AVX2 is my estimate).
+
+- The reason to choose Epyc is for the PCIe lanes or amount of memory, i.e. you are planning to load up GPUs in it or want to run something that requires a lot of memory.
+  - 🤔 If you only want the lanes you can go cheaper with an SP3, something like 7532 which is the cheapest 8 CCD second gen you can buy, an ATX motherboard gets you 7 total PCIe slots, and in something like the H12SSL 5 of which are 16x - you could put in 5 x16 GPUs and still have lanes to spare. Placing them will be tricky because two would have to be single width but you can use cables.
+  - If amount of memory matters and you can live with lower speed then SP3 wins again, because you can easily get 512Gb RAM+ for less than the cost of pretty much anything in DDR5 - DDR5 RDIMMs are eye wateringly expensive. Depending on what you're doing you may get similar or better memory bandwidth out of a 7532 compared to the low CCD count SP5.
+
+- If you want to get a versatile CPU for other tasks as well, the previous gen AMD Epyc 9554 is better value imo (regularly under $2900) with 64 cores (~5 TFLOPS) and measured at 390GB/sec on STREAM. It achieves this with DDR5 4800 which is cheaper as well.
+
+- Just get 5 7900 XTX. Strix Halo sucks big time in those machine where the motherboard does not support ECC. I hope some Strix Halo provider will finally create a ECC memory supported device
+  - The HP Z2 G1a has ECC
+
+- Early leaks point to Medusa Halo using a 384 bit bus, posdibly even LPDDR6.
+
+- The 9015 was tested at 240GB/s on STREAM. I doubt that the 9115 will be much higher than that so you should temper your expectations
+
+- ## 🧮💡 [Is DDR4 3200 MHz Any Good for Local LLMs, or It's Just Too Slow Compared to GDDR6X/7 VRAM and DDR5 RAM? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1ndg19v/is_ddr4_3200_mhz_any_good_for_local_llms_or_its/)
+- For those wondering DRAM memory bandwidth can usually be calculated using following formula:
+  - MT/s x 8bytes x memory channels / 1024 
+  - So 3200MT/s x 8bytes x 2 channels / 1024 = 50GB/s
+
+- Well, not only is DDR4 considered slow, it's more a question of how many memory channels you have got. 
+  - Chances are that it's not going to be very many, it but really depends on the hardware you have. 
+  - The rule is that each transaction is 64 bits or 8 bytes wide, so 3200 MT/s where T is for transactions means 3.2 GT/s can be performed by the hardware, and 3.2 GT/s * 8 B/T gives you 25.6 GB/s per channel. 
+  - DDR5 is not hugely faster in this scale, e.g. you might have 6400 MT/s DDR5, which also has 64-bit transactions and thus double the data rate. 
+  - Multiple memory channels is how you take these raw results in 50 GB/s order to the 200+ GB/s data transfer rates where inference starts to become practical. 4 are probably required, 8 or 12 is better.
+
+- A common mistake is that something like am5 has only 2 memory channels but 4 slots for ram. This means that even with 4 sticks you only get 2 stick bandwidth (probably at an even lower speed). Make sure you check what your cpu is capable of.
+
+- It isn't going to be as fast as pure vram obviously, but if you're using moe models it works better than you'd think. Having 256GB of ram with a large moe will do good, even with just 24GB of vram. You also can partially offload a dense model but still have super fast input prompt processing. 
+  - My desktop computer for example is 96GB of system ram and 24GB of vram. I can run a 70B or a 100B model, process 200, 000 tokens of input within a couple minutes, and wait for slower tk/s but much shorter output.
+  - I also use llms on my laptop that only has 2 channel 64GB ddr4 at 3200mhz. No gpu. I'm getting 2.5 tokens/sec with GLM 4.5 air @ 3Q right now. Not fast by any means but not impractical. I just let it do it's thing for a couple minutes and come back for the answer.
+
+- I've was here not long ago as I upgraded to 128 GB of ddr4 3200 ram. The Qwen3 235B Q2 (Need 96GB ram) runs at 3.7 tk/s and with the Qwen3 235B Q4 (128GB ram) I get 2.2 tk/s. So yes very slow.
+
+- VRAM > [LPDDR5X > DDR5 > DDR4] > Disk
+
+- [What is the theoretical data rate limit of a DDR5 DIMM slot? : r/hardware _202106](https://www.reddit.com/r/hardware/comments/nxvsk7/what_is_the_theoretical_data_rate_limit_of_a_ddr5/)
+- ram is overclockable. But first theres something you need to understand about ram speed: the MHZ speed you see listed on ram is not the actual clockspeed , the real clock is half but since modern ram is DDR (Double Data Rate), everyone advertises the 'effective clockspeed ' , which is actually the transfer rate as measured in MT/s (Mega transfers per second).
+- Now each dimm slot is a 64 bit wide bus so to get the theoretical data rate, you simply take the transfer rate times the bus width , so for example with 1 dimm of '3200 mhz ram' aka 3200 MT/s ram, thats 3200 * 64 = 204, 800 Mbps or 25, 600 MBps.
+
+- ## [Which motherboards support quad channel memory : r/buildapc](https://www.reddit.com/r/buildapc/comments/sw22cg/which_motherboards_support_quad_channel_memory/)
+- Note that it's not enough for the board to support it. The CPU has to as well. Most consumer ones do not.
+  - Boards that support quad channel only support CPUs that also support quad channel. 
+
+- ## [主流的 ITX 主板有哪些，那一个牌子或者型号比较好? - 知乎](https://www.zhihu.com/question/350786479)
+  - 微星技嘉华硕华擎这四家
+- 华擎是所有品牌里价位最低的，平均低100元左右，这个要说不是优势，那绝对是胡说。
+  - 供电上比微星少了一相，但考虑到itx不需要考虑超频需求，上个3700X甚至更高也毫无压力，因此没有必要考虑这一点。
+  - 该有的全都有，不该有的，可能它也有，比如光纤音频
+- 华擎B450I最好？？看得我一头问号，供电比不上微星，无线比不上技嘉，信仰比不上ROG，还没灯，就一并联“3+2”，也就忽悠忽悠小白吧
+
+- 微星的B450i卖的比华擎B450i多得多啊，不知道啥原因，难道只是为了内存超频？
+  - 华擎挖矿板出的很多，消费市场这几年很疲软，都打算进军商用产品了。我说的是防掉压，不过3代AU超频性能很一般，确实没必要，所以说不考虑pcie4.0，X570都没啥意思。
+- 华擎没出过多少挖矿版。他比别人可以便宜也赚钱的原因是工厂在越南，而且不需要营销。ITX独孤求败。你说的防掉电我刚才没看到，那个是处理器部分的防掉压吧？
+
+- itx 首推妖板 华勤····· 价格便宜 华硕兄弟品牌
+
+- ## [FormD T1 - sub-10L 64-core Epyc with 7x Gen4 NVMe : r/sffpc _202506](https://www.reddit.com/r/sffpc/comments/1l48tsm/formd_t1_sub10l_64core_epyc_with_7x_gen4_nvme/)
+  - FormD T1 Sandwich V2.1 (silver, CNC): 13.5 x 22 x 33.5cm, 10L
+  - AsRock Rack ROMED4ID-2T deep-ITX motherboard
+  - AMD Epyc Milan 7Y83 64 cores 128 threads (OEM of 7763)
+  - NVIDIA Quadro RTX A4000 16GB
+  - Samsung 2S2Rx4 DDR4 ECC RDIMM 256GB (4x64GB)
+  - Samsung PM9A1 2TB (OEM 980 Pro, heatsink)
+  - 6x Gen4 M.2 NVMe on 3x carrier cards/heatsinks connected via SlimSAS (PCIe Gen4 8x per card)
+  - Custom GPU-side fan bracket (Xianyu)
+  - Corsair SF850
+
+- ## 🌰 [An Epyc FormD T1 : r/sffpc _202504](https://www.reddit.com/r/sffpc/comments/1k1grum/an_epyc_formd_t1/)
+  - Asrock Rack ROMED4ID-2T
+  - Epyc 7532
+  - 4 x 64GB 3200MHz RDIMMs
+  - Corsair H100i Elite Capellix with slim Noctua A12x15s
+  - Runs Proxmox with a bunch of VMs
+  - Despite having no GPU, this leaves a lot of room for more U.2 drives
+
+- Be careful with U.2s, you usually need some decent airflow to keep them cool. I would use the gpu hole to push or pull some more airflow.
+
+- ## [Built a Powerful and Silent AMD EPYC Home Server with My Kids (for a Fraction of the Price!) : r/homelab _202412](https://www.reddit.com/r/homelab/comments/1hmnnwg/built_a_powerful_and_silent_amd_epyc_home_server/)
+  - we built a beast of a home server powered by an AMD EPYC 7C13 (3rd gen).
+  - CPU - AMD EPYC Milan 7C13 64C/128T 2.2GHz SP3 (100-000000335 7763 7713)	
+  - Motherboard - Supermicro H12SSL-NT SP3 AMD EPYC DDR4 ECC	
+  - RAM - Samsung 64GB DDR4 LRDIMM ECC x8 (512GB Total), DDR4 RAM: Delivers 130GB/sec bandwidth.
+  - Case - Fractal Design North (White/Oak)	
+  - CPU Cooler - Noctua NH-U14S TR4-SP3 (Premium-Grade)	
+  - PSU - 850W SFX (ATX 3.0, PCIE 5.0 Ready, 80 Plus Gold)	
+  - SSD - Samsung 990 Pro 1TB (7450 MB/s Read)	
+
+- Regarding the CPU, I see some active listings on eBay – try searching for "AMD EPYC Milan 7B13" (or 7C13) for the same price range. Just a heads-up, though – there are engineering sample (ES) listings on eBay. Keep in mind that confidential computing (AMD SEV-SNP) won’t work on those CPUs, and there might be other feature limitations or performance issues that I’m not fully aware of.
+
+- ## [Mini ITX EPYC 64 core 128 thread SFF Build : r/homelab _202311](https://www.reddit.com/r/homelab/comments/182i7k3/mini_itx_epyc_64_core_128_thread_sff_build/)
+  - Case Cooler Master Nr200: 360 x 185 x 274mm, 18.25L
+  - ASRock Rack ROMED4ID-2T Deep Mini ITX motherboard.
+  - Noctua NH-U12S TR4-SP3 cooler. 猫头鹰 风扇
+  - AMD EPYC ROME SP3 ZEN2 7662 64-Core 128 thread
+  - 256gb DDR4 RAM.
+  - 4tb NVME Drive.
+  - Running ESXI vSphere 8 with VCenter Server 8.
+  - Ruining like a champ temps in the 40-50c range, headless server with IPMI OOB management and remote console.
+  - Putting these similar spec parts in a cart on Newegg says $5101.52.
+- I’m guessing the cpu / mb / memory probably cost around $1000 on the used market. I just built a similar system second hand.. hard to beat the value!
+
+- They make Mini ITX EPIC boards? That is wild.
+  - They’re not true ITX. They are Deep ITX (wider than ITX, closer to mATX, but the same height as ITX).
+
+- 🆚 what's the difference between RDIMM and LRDIMM?
+  - [UDIMM, RDIMM, and LRDIMM | Exxact Blog](https://www.exxactcorp.com/blog/HPC/differences-between-dual-in-line-memory-modules-rdimm-vs-lrdimm)
+  - A DIMM (Dual In-line Memory Module) is the physical memory stick that houses DRAM (Dynamic Random-Access Memory) chips. These chips serve as RAM, the volatile memory pool CPUs use to quickly access data during tasks.
+  - UDIMM (Unbuffered DIMM): Standard in desktops and laptops. Affordable, simple, and designed for everyday tasks like browsing, content consumption, and productivity.
+  - RDIMM & LRDIMM: Specialized modules designed for servers and enterprise workloads, offering higher capacity and stability. These will be the focus of this guide.
+  - Registered DIMMs (RDIMMs) are designed for greater stability and scalability than standard UDIMMs. They include a register buffer that improves signal integrity and reduces the electrical load on the memory controller. 
+  - Load-Reduced DIMMs (LRDIMMs) push performance further by using advanced buffering to minimize electrical load and maximize capacity. They are built for systems that demand extreme memory density and efficiency.
+
+- For the price of this even 2nd hand (~$1500 for 7662, $300 mobo) -- you could build three separate i9-12900k/ryzen-7900x systems which combined would be about 2.5x-3x the total compute of this
+  - This motherboard doesn't even get you the PCIe lanes.
+  - 3x the compute but also a lot more power and maintenance. There's a reason hyperscalers use Epycs for x86.
+
+- How's the noise?
+  - I put in 4 noctua fans, and it's silent. Along with the 2 cooler master fans that came with the case and its dead silent. Although I need to put more VMS and put it to the test.
+
+- ## [[PC] AMD EPYC Milan (7763) 64c/128t Build : r/homelabsales _202501](https://www.reddit.com/r/homelabsales/comments/1ht1fdu/pc_amd_epyc_milan_7763_64c128t_build/)
+  - Got an email yesterday saying electricity rates in my area are increasing. My wife gave me the look after looking at the power bill for this month (and looking over previous months...) so I'm looking into downsizing my homelab.
+  - AMD EPYC 7J13 (Oracle rebrand of the 7763 with slightly higher clocks) 64 core / 128 thread CPU
+  - ASRock Rack ROMED8-2T motherboard (with Intel NICs)
+  - 512GB (8x64GB) DDR4 3200 Registered ECC RAM (MICRON MTA36ASF8G72PZ)
+  - ARCTIC Freezer 4U heatsink
+  - ICY DOCK ToughArmor MB720MK-B 4x NVMe enclosure w/ OCuLink PCIe splitter card
+  - ASUS Hyper M2 PCIe 4.0 card with 2x Optane P1600X 118GB + 2x Samsung 970 EVO 1TB
+  - Intel X710-DA2 10G card
+  - Intel Arc A380
+  - Corsair HX1000i 1000W power supply
+  - Prices seem to be all over the place for the CPU and motherboard, but the RAM prices seem to be stable. I was thinking in the ballpark of $3000 for everything?
+
+- My energy rates went up too. My solution was to buy 8 more solar panels.
+
+- ["Sleepy Chungus"... AMD EPYC 7763 w/ 64x cores, 128 threads @ 2.450GHz in a GEEEK A30 V2 && 128GB of Quad Channel, Dual Rank, 3200MT ECC REG RAM (linux sffpc, btw) : r/sffpc _202209](https://www.reddit.com/r/sffpc/comments/x6phtn/sleepy_chungus_amd_epyc_7763_w_64x_cores_128/)
+- I'm not sure if it is called sffpc with that psu and chonky cooler.
+
+- ## 🌰 [AMD EPYC mini-ITX build : r/sffpc _202207](https://www.reddit.com/r/sffpc/comments/w81afy/amd_epyc_miniitx_build/)
+  - Case: Streacom DA2 V2, 340 x 286 x 180mm, 17.5L
+  - Motherboard: Asrock ROMED4ID-2T
+  - CPU: AMD EPYC 7443P, 24 Core, 48 Thread
+  - RAM: 4x 64GB DDR4 PC4-25600 3200MHz LRDIMM ECC
+  - PSU: Corsair SF Series SF600 SFX 600W
+  - Boot SSD: Micron 3400 512GB NVMe M.2
+  - Storage SSD: Samsung PM1723b 15.36TB NVMe U.2
+  - CPU Cooler: Noctua NH-D9 DX-3647 w/ NM-AFB7b bracket for SP3
+  - Exhaust Fan: Noctua NF-A9
+  - Side Intake Fan: Noctua NF-F12
+  - M.2 Cooler: Sabrent SB-HTSK
+  - U.2 Cable: HighPoint Slim SAS SFF-8654 to 2x SFF-8639
+  - TPM: Asrock TPM2-SLI
+- About $5650 USD new, plus the cost of the bracket which I couldn't find. OP mentioned they bought the SSD slightly used, so probably closer to $5500
+
+- With that PSU where it is, is it even possible to fit a GPU in there?
+  - It's all been measured, 2x 40Gbps QSFP+ card is coming later
+
+- Those are some absolutely eye watering specs (24 cores, 256gb, and a 15.36 TB ssd, I'm so jealous lmao). Truly a cut above. It's so cool to see enterprise hardware crammed into a boutique SFF.
+
+- Only ASRock would make a mini ITX SP3 motherboard
+  - Asrock rack is a true miracle, at least when I did my epyc server build, it was the only company that was selling mobos for epyc that wasn't stupidly overpriced, or required you to at least buy a barebones server (looking at you supermicro).
+
+- Does epyc have igpu?
+  - No, but the motherboard has a basic onboard GPU
+
+- [AMD EPYC mini-ITX home hypervisor : r/homelab _202207](https://www.reddit.com/r/homelab/comments/w81bxe/amd_epyc_miniitx_home_hypervisor/)
+- Some of the best features of Epyc are wasted in this configuration though. PCIE lanes, 8 channel memory etc..
+
+- What is the power requirement for that?
+  - The verdict @ 240V AC (I'm in the UK): 60-70W idle and 235W maxed out
+
+- [如何在本地部署DeepSeek-R1模型？ - 知乎](https://www.zhihu.com/question/10630134422/answer/89240187608)
+- 国外这个博主Matthew Carrigan 提供了在本地运行 Deepseek-R1 的完整硬件和软件配置，成本差不多是6000美元，token的output大概在6-8个每秒。
+- 注意：这是纯CPU版本，GPU版本得10万美元+，所以也可以理解为穷鬼套餐。
+  - 主板：技嘉MZ73-LM0/LM1（双路EPYC插槽，解锁24通道DDR5带宽）
+  - 处理器：双路AMD EPYC 9004/9005系列（推荐9115/9015，性价比之选）
+  - 内存：24×32GB DDR5-RDIMM（总量768GB，必须占满24通道！
+  - 参考型号：vColor/Neumax）
+  - 机箱：Enthoo Pro 2 Server版(支持服务器主板安装的消费级方案), 240 x 580 x 560 mm, 77L
+  - 电源：实测功耗<400W，但需双CPU供电。海盗船HX1000i为稳妥选择（兼容型号可平替）
+  - 散热：SP5插槽需特殊散热器（Ebay/Aliexpress专供型号实测可用），静音改造方案见Newegg
+  - 存储：1TB+ NVMe SSD（700GB模型加载考验持续读写，PCIe4.0为佳）
+  - BIOS设置：NUMA组数量设为0 → 内存全交错访问 → 吞吐性能翻倍
+
+- ## [Is quad channel simply 4 sticks of ram together? | guru3D Forums _201203](https://forums.guru3d.com/threads/is-quad-channel-simply-4-sticks-of-ram-together.360222/)
+- No, dual channel and quad channel are different.
+  - To put this very simply, think of it like a road, dual channel gives you 2 lanes and quad channel gives you 4 lanes. This enables twice the traffic (data) to be sent because you've doubled the number of lanes (channels) the traffic can use to get where it's going.
+  - For memory to work in dual channel you need a pair (or 2 pairs) of memory sticks and for quad channel you need 4 memory sticks (or 8 if there will be any motherboards that support 8 sticks?)
+
+- but as you know lga775 and 1155 for eg have 4 dimm slots so if you put in 4 sticks of ram why is that still dual and not quad channel?
+  - That's because it's what's supported by the chipset. X79 will be able to run quad channel, just like my x58 chipset supports tri channel and your x48 chipset only supports dual channel.
+  - Just because you have 4 dimm slots doesn't mean you can run quad channel.
+
+- quad is not just 4 sticks.
+
+- ## [Memory Channels: Single, Dual, Triple, and Quad Channel Memory](https://storedbits.com/types-of-memory-channels/)
+- Memory channels matter mainly for bandwidth and not directly the speed. It also doesn’t double your RAM size — but it can double the bandwidth, meaning more data can travel at once. That helps especially in tasks like gaming, video editing, or multitasking.
+
+- What is a Memory Channel?
+  - The CPU connects to the memory through a pathway. It is a dedicated data path between the CPU (or memory controller) and RAM modules (DIMMs). On the physical level, it is composed of copper traces (wires) etched into the motherboard, connecting the CPU socket (specifically, the memory controller) to the RAM slots (DIMMs).
+
+- ## [为什么AMD霄龙EPYC最多只支持双路运行？ - 知乎](https://www.zhihu.com/question/7936434502)
+- 处理器之间是需要高速信号互联的，每个都要和其他所有处理器有直接联系线（否则就准备好延迟爆表吧）。双路只要一根联系线。四路需要6根。八路需要。。。。每个u和其他7个一根，8*7根，由于A到B和B到A重复计算了，除以2，得到28根。这些连接线都是和内存布线一个难度的高速信号线，而且由于CPU插座的物理尺寸巨大，这些信号线还不得不变得极长，并且8路布线几乎无可避免地要与内存布线发生冲突，以至于根本没办法控制主板的成本。 
+
+- 因为OEM厂家都反馈 4路，八路系统，全球一年卖不出100套。
+
+- 霄龙单片处理器就是十二通道二十四条内存，俩处理器就是四十八条
+  - 单个处理器就是128条pcie通道，两个就是256条，哪怕全塞都能塞32个，如果做成常规pciex16接口能塞16根，一般是不会配置这么多x16
+  - 再多……主板塞不下啊，霄龙的设计本来就是单处理器塞海量核心和海量扩展，多ccd设计它单个处理器就类似多路处理器了
+
+- ## 💡 [Local LLM Build with CPU and DDR5: Thoughts on how to build a Cost Effective Server : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kjvo1t/local_llm_build_with_cpu_and_ddr5_thoughts_on_how/)
+  - DDR5 RAM: 576GB (4800MHz, 6 lanes) - Total Cost: $3, 500(230.4 gb of bandwidth)
+  - CPU: AMD Epyc 8534p (64-core) - Cost: $2, 000 USD
+  - 8xx Gen EPYC CPUs: Chosen for low TDP (thermal design power), resulting in minimal monthly electricity costs.
+  - ASUS S14NA-U12 (imported from Germany) Features include 2x 25GB NICs for future-proof networking.
+  - qwen3:32b-fp16: 1.14 tokens/s
+  - qwen3:235b-a22b-q8_0: 2.70 tokens/s
+  - deepseek-r1:671b_1.58bit: 3.26 tokens/s
+
+- Older EPYC models (e.g., 9124) offer a balance between PCIe lane support and affordability.
+
+- The GPU could be used to run attention layers and host kv cache. llama.cpp's -ot 'ffn=CPU' (or -ot 'exps=CPU' for MoE) is worth a try.
+
+- While the hexa-channel DDR5 4800MHz configuration provides similar bandwidth to Epyc Milan's 8x 3200MHz DDR4 (204.8GB/s), Zen4 (c) might offers faster prefill performance due to AVX512 support.
+  - You might want to offload MoE tensors using: `--override-tensor 'blk\.\d?\d\.ffn_.*_exps.weight=CPU'`
+
+- Additionally, frameworks like ktransformers or ik-llamacpp are optimized for CPU-GPU hybrid inference.
+
+- In China, there are OEM server processor options that offer comparable pricing to entry-level models while delivering significantly better prefill performance than 16-core alternatives. Notable affordable options include:
+  - - **Intel**: Xeon 8455C (48C SPR 8xDDR5 4800MHz ~¥6, 000), 8481C (56C SPR ~¥7, 500), 8581C (60C EMR 8xDDR5 5600MHz ~¥9, 000)
+ - **AMD**: Epyc 7B13 (64C Zen3 8xDDR4 3200MHz ~¥3, 800), Epyc 9v74 (80C Zen4 12xDDR5 4800MHz ~¥8, 500)
+  - Beyond OEM models, the Epyc 9375F (32C Zen5 12x6000MHz) offers exceptional single-core performance and memory bandwidth, making it better for some tasks. 
+- When comparing Intel and AMD platforms:
+  - Intel's advantage lies in AMX instructions for prefill acceleration
+  - AMD offers 12-channel DDR5 bandwidth and more PCIe lanes for multi-GPU setups
+
+- ## 🆚📌 [Memory Bandwidth Comparisons - Planning Ahead : r/LocalLLaMA _202402](https://www.reddit.com/r/LocalLLaMA/comments/1amepgy/memory_bandwidth_comparisons_planning_ahead/)
+- Epyc actually has 12 channels of ram. The latest 9004 series has 460.8 GB/s. Threadripper is the one that comes with quad and octa channel variants.
+  - Note: The upcoming Epycs(zen 5) are supposed to have even more bandwidth due to the new out-of-the-box ram speed being 6000mhz instead of the current 4800mhz
+- 6000 MT/s would be nice, giving 4090-like memory bandwidth over 24 channels in a 2P system, but with a minimum of 384GB instead of a maximum of 24GB. That's assuming all else is equal/negligible, which isn't quite the case.
+- Yeah, an ideal environment for sparse MoE like Mixtral
+
+- Lpddr5x at 120gb/s I have a core ultra 7 155h with lpddr5 at 100gb/s. You can ask me for some tests if you want
+
+- Is there any reason that regular consumer motherboards can't support quad or 8 channel RAM? I feel like if we can have 8 channels DDR6, we'd be at around 600 to 800GB/s, which is very similar to gpu vram speeds. Maybe this is what we should ask AMD to do instead of GPU's with 46gb or 96gb RAM for consumers at reasonable prices.
+  - It would normalize everyone potentially having great bandwidth for local inference, wouldn't require a GPU at all, and would basically explode the number of devices that could locally inference at reasonable speed. This would open the flood gates for local llm's - open or closed source, because now everyone and their grandma would be able to use it effectively.
+  - And unlike GPU's, you'd never be limited by how many GB's of RAM you want to install, and therefore not be dependent on NVIDIA (or whomever) to hopefully one day release a card with more VRAM. The power would go back to consumer. And the bandwidth would double again for DDR7 and so on.
+  - I just don't know if putting quad or 8 channels on a motherboard is somehow difficult and can only done at high price to the consumer, which is why only pro-sumer or server level mobos do it.
+- They could, but the main limiting factor is the memory controllers are on the CPU. Intel, AMD, and the others use number of channels as a market segmentation method. But ultimately it boils down to memory channels equal $$.
+
+- The bandwidth numbers for the Apple M1/2/3 SoC are just the raw totals from the memory, but depending one which cluster is using it (P-cores, E-cores, GPU) they have their own limitations. Here is the explanation for the M1 series
+  - On the M1 Max with 400GB/s the CPU can get maximum 204GB/s when using the P cores only or 243GB/s when using both the P and E cores.
+
+- ## ⚡️📊 [有人可以做一个epyc服务器CPU的天梯榜吗？ - 知乎](https://www.zhihu.com/question/596966739)
+- cpu, cinebench-r23, pricing
+  - AMD Ryzen 9 7900x, 3.0w, 2469
+  - AMD Ryzen 5 7500F, 1.4w, 938
+  - AMD EPYC 7742/7B12, 5w, 6k
+  - AMD EPYC 7552, 4.4w, 6k
+  - AMD EPYC 7702, 4.9w, 7k
+  - AMD EPYC 7b13/7c13/7v13/7763/7j13, 6.1w, 5850
+  - AMD EPYC 9V74, 10.5w, 1.2w 
+  - AMD EPYC 9654 ES, 11w, 1w 
+
+- [AMD Server Processor Specifications](https://www.amd.com/en/products/specifications/server-processor.html)
+
+- [Ryzen Threadripper - AMD - WikiChip](https://en.wikichip.org/wiki/amd/ryzen_threadripper)
+  - 🎯 zen2(2019):
+    - [Template:AMD Epyc 7002 series - Wikipedia](https://en.wikipedia.org/wiki/Template:AMD_Epyc_7002_series)
+  - 🎯 zen3(202103): uni epyc 7313p/7443p/7543p/7713p; 
+    - multi epyc 7313/7343/7443/7543/7713/7763
+    - EPYC 7003 "Milan"
+    - 8 channels per socket, up to 16 DIMMs, max. 4 TiB
+    - Up to PC4-25600L (DDR4-3200)
+    - [Template:AMD Epyc 7003 series - Wikipedia](https://en.wikipedia.org/wiki/Template:AMD_Epyc_7003_series)
+  - 🎯 zen4(202211): uni epyc 9354P/9554p/9654p; 
+    - multi epyc 9124/9174F/9224/9254/9454/9634/9654
+    - lp/edge: 8324p/8324pn/8434p/8534p
+    - EPYC 9004 "Genoa": 12 channels per socket, two 40-bit (32 data, 8 ECC)
+    - DDR5 subchannels per channel
+    - Up to 24 DIMMs, max. 6 TiB
+    - Ryzen 7000 "Raphael"
+    - 9124: 16-core (32-threads), 4 × CCD, I/OD, Base Clock3.0GHz, DDR5-4800, p-200w
+    - 9224: 24-core (48-threads), 4 × CCD, I/OD, Base Clock2.5GHz, DDR5-4800, p-200w
+    - 9254: 24-core (48-threads), 4 × CCD, I/OD, Base Clock2.9GHz, DDR5-4800, p-220w
+    - EPYC 4004: 16 AMD ”Zen 4” cores, 32 threads, an L3 cache of 128MB, DDR5 memory support, and 28 PCIe® 5 lanes
+      - Max DDR5 Freq (MHz) (1DPC): 5200
+      - EPYC 4004 is just a rebrand of the Ryzen 7000 series, designed to make it clearer about ECC support mainly.
+    - [Template:AMD Epyc 9004 Genoa - Wikipedia](https://en.wikipedia.org/wiki/Template:AMD_Epyc_9004_Genoa)
+  - 🎯 zen5(202411): uni epyc 9015p/9125p/9355p/9755p
+    - multi epyc 9005/9015/9115/9125/9175F/9335/9665/9755F
+    - The series offers core counts ranging from 8 cores to 192 cores, 
+    - with support for up to 12 channels of DDR5-6000 memory (up to 6 TiB per socket) and 128 PCIe 5.0 lanes
+    - [Template:AMD Epyc 9005 series - Wikipedia](https://en.wikipedia.org/wiki/Template:AMD_Epyc_9005_series)
+    - [Template:AMD EPYC 9000 Series - Wikipedia](https://en.wikipedia.org/wiki/Template:AMD_EPYC_9000_Series)
+
+- [如何评价AMD EPYC 7B13, 7K83, 7T83, 7763? - 知乎](https://www.zhihu.com/question/542414897)
+  - 这些都是7763的马甲，另外还有7J13，7V13等等。。。。可能频率设置上略有不同，TDP也都是280W，基本上满载性能是差不多的。
+  - 各种云的定制版，云厂商有功耗，性能的需求，amd就帮他们定制
+
+- 性能真强，说起来7r13最近好像降价了，感觉好像比7c13还强点。
+
+- EPYC服务器基本上不需要调优，7003还有NPS设置，9004开始就没有了，内存频率只需要自动，自己调高必蓝屏。
+
+- epyc很多都是用来跑cfd的，用这种跑分软件得出的结论完全是错的。都是用openfoam做benchmark对比，别说7950x了，我的9950x和我的epyc工作站比起来，都被秒到渣都不剩
+
+- epyc系列的CPU，根本不需要做天梯图，性价比最高的应该就是7？83（7T83、7W83等）。1w出头就能拿下板+64核U。
+
+- [EPYC或线程撕裂者或XEON有没有单核性能强又廉价的U? - 知乎](https://www.zhihu.com/question/1947237447466464324)
+  - 目前是看了q30h/q2t7和ms03还有256g d内存，预算刚好卡的很死，不知道有没有啥更优的选择
+
+- ## [DDR5 2 vs 4 sticks, different speeds, same bandwidth? Confused : r/overclocking _202502](https://www.reddit.com/r/overclocking/comments/1ih0rfe/ddr5_2_vs_4_sticks_different_speeds_same/)
+- 4 sticks will still run in dual channel. So 4x sticks @3600 will always be much slower than 2x sticks @6000
+  - There are thousand of posts like this one Every week.
+  - Just return 2x sticks or all 4x and just get 2x48 6000-6400MTs if you need high capacity & speed
+
+- 2 sticks is the same bandwidth as 4 because each channel shares 2 lanes. You’re only getting half the bandwidth on each stick with 4. Not really all that much to it.
+
+- ## [do you think i could run the new Qwen3-235B-A22B-Instruct-2507 quantised with 128gb ram + 24gb vram? : r/LocalLLM _202507](https://www.reddit.com/r/LocalLLM/comments/1m5wgcg/do_you_think_i_could_run_the_new/)
+  - i am thinking about upgarding my pc from 96gb ram to 128gb ram. do you think i could run the new Qwen3-235B-A22B-Instruct-2507 quantised with 128gb ram + 24gb vram? it would be cool to run such a good model locally
+
+- The old qwen3 235b model ran, at UD-Q4_K_XL, on my system with a R9 7950x and 96gb ram and a 4090 with 24 gb vram. ~5 t/s once it was warmed up. Processing speed was about the same though (X_X).
+  - That's the best I got, so far. I tried a few different off-loading strategies, but just offloading to cpu for most of it and MMAPing the file was what did the best on my system with its constraints.
+
+- You should be able to run the Q4 with that. How fast will it be will depend on what speed RAM you have.
+
+- Someone ran qwen235b at iq4 on 2 sticks of 64gb ddr5 5600 with 3.5-4 tokens/s on cpu only (7950X).
+
+- two amd mi50 & 128 gb ddr5 could gen 7 t/s With Qwen235b-Q4
+
+- ## [How large models can I run with 128GB RAM? : r/LocalLLaMA _202405](https://www.reddit.com/r/LocalLLaMA/comments/1cjtzft/how_large_models_can_i_run_with_128gb_ram/)
+  - I currently have 16GB VRAM and 32GB RAM. I would be fine upgrading to 128GB RAM.
+  - I can run 8B/13B-models without issues. Can I run larger models if I upgrade to 128GB? I would want to avoid buying more RAM unless it has any effect.
+
+- I get 1.9 tokens/sec generation speed on wizardlm2 8x22b q5_k_m 128gb quad channel ddr 4 2133. No offloading to gpu.
+
+- Adding more RAM will just allow you to run larger models ...on the CPU, which will be incredibly slow.
+
+- ## [Mini-PC Dilemma: 96GB vs 128GB. How Much RAM is it worth buying? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nmlluu/minipc_dilemma_96gb_vs_128gb_how_much_ram_is_it/)
+  - I'm planning to pick up one of the new mini-PCs powered by the AMD Ryzen AI Max+ 395 CPU, specifically the Bosgame M5. The 96GB RAM model looks more cost-effective, but I'm weighing whether it's worth spending ~15% more for the 128GB version.
+
+- Get the 128 GB one. It's soldered RAM so not upgradable.
+- Under Linux, you can use all the RAM with the GPU at full speed (215 GB/s).
+  - That means qwen 235B A22B at Q3_K_XL at 15 tokens per second at 54 Watts.
+- The ability to run up to 120 GB MoE models is likely to be increasingly useful as more are released.
+  - It's also possible to run other models in Comfy UI but slow and unstable. This may improve when AMD makes rocm less uncompetitive with cuda.
+
+- I have a pc with 192GB and I would use 256 if I would have purchase 4x64 instead. I run huge model (like DeepSeek-V3.1-UD-TQ1_0.gguf) on a 3090 + 172gb pc ram (ddr5) and I can get 'decent' around 3T/s, which I find acceptable since I can configure many parameters.
+  - If you use GGUF versions of a model, you don't need 'pc' ram to be dedicated as a gpu, since the model can put part of the model on the pc ram by itself.
+
 - ## 🆚 [Any downside to having 128GB of RAM on two 64GB sticks? : r/buildapc _202510](https://www.reddit.com/r/buildapc/comments/1nyso1u/any_downside_to_having_128gb_of_ram_on_two_64gb/)
   - should I split it into four 32GB sitcks or get two 64GB sticks? Is there a difference to performance? 
   - The specific product I am looking at is: Corsair Vengeance 128 GB (2 x 64 GB) DDR5-6400 CL42 Memory
@@ -2130,6 +3005,14 @@ modified: 2022-01-16T15:52:31.293Z
 - AMD 的锐龙 AI Max 300 "Strix Halo" 平台 ODM 伙伴六联智能推出了一款板载该系列处理器和 DRAM 内存颗粒的 Thin Mini ITX 主板 STHT1。
 - 这一主板目前已被六联智能的 2L 迷你主机、8L 紧凑型台式机、一体机解决方案采用，而其兼容外形规格使之存在直接安装于标准台式机机箱的可能。
 - 该主板包含 8 个 LPDDR5x 焊盘，支持至高 128GB 内存容量；配备 2 个 M.2 2280 PCIe 4.0×4 盘位；提供 1 个 M.2 2230 无线网卡位。
+
+- ## [Is a mini-itx first homelab a good idea? : r/homelab _202207](https://www.reddit.com/r/homelab/comments/w6dzji/is_a_miniitx_first_homelab_a_good_idea/)
+- At the time I was fine with just one PCIe and 2 memory slots but now the lack of expansion is a pain.
+  - Was also limited in the number of drives that could be connected and has a distinct lack of fan headers (not sure if newer boards would have any more - there's really no space).
+
+- Unless you absolutely need the smallest footprint, Mini-ITX is always a bad choice, regardless of application. 
+  - There's always a hardware tax, you generally lose out on features (e.g. you get fewer PCIe slots, DIMM slots, M.2 slots), you (almost) always have worse cooling, and the actual build or modifying process is more painful (literally and figuratively).
+  - I'd advise going for microATX instead, which allows you to put together a relatively compact build, but should give you more value for money and more freedom than Mini-ITX.
 
 - ## [Are there any ITX motherboards that can handle 128GB RAM? : r/buildapc _202307](https://www.reddit.com/r/buildapc/comments/15cazh5/are_there_any_itx_motherboards_that_can_handle/)
 - Are there ones that you, right now, as an average consumer or even business can buy? No.
@@ -3619,28 +4502,6 @@ modified: 2022-01-16T15:52:31.293Z
   - 具体包括：RX 7900 XTX、RX 7900 XT、RX 7900 GRE、PRO W7900(双插槽)、PRO W7900、PRO W7800。
   - 其中，7900 XTX、PRO W7900可以双卡并行，首次正式支持的PRO W7900(双插槽)可以最多四卡并行。
   - 以上所有都仅限Ubuntu 22.04.3 HWE操作系统，需要搭配Linux 24.10.3版显卡驱动
-
-- ## [gpt-oss 120B is running at 20t/s with $500 AMD M780 iGPU mini PC and 96GB DDR5 RAM : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nxztlx/gptoss_120b_is_running_at_20ts_with_500_amd_m780/)
-  - Everyone here is talking about how great AMD Ryzen AI MAX+ 395 128GB is. But mini PCs with those specs cost almost $2k. 
-  - I searched for mini PCs that supported removable DDR5 sticks and had PCIE4.0 slots for future external GPU upgrades. 
-  - I focused on AMD CPU/iGPU based setups since Intel specs were not as performant as AMD ones. The iGPU that came before AI MAX 395 (8060S iGPU) was AMD Radeon 890M (still RDNA3.5). Mini PCs with 890M iGPU were still expensive.
-  - The cheapest I could find was Minisforum EliteMini AI370 (32GB RAM with 1TB SSD) for $600. Otherwise, these AI 370 based mini PCs are still going for around $1000.
-  - Next, I looked at previous generation of AMD iGPUs which are based on RDNA3. I found out AMD Radeon 780M iGPU based mini PC start from $300 for barebone setup (no RAM and no SSD). 780M iGPU based mini PCs are 2x times cheaper and is only 20% behind 890M performance metrics. 
-  - I checked many online forums if there was ROCm support for 780M. Even though there is no official support for 780M, I found out there were multiple repositories that added ROCm support for 780M (gfx1103)
-  - I bought MINISFORUM UM870 Slim Mini PC barebone for $300 and 2x48GB Crucial DDR5 5600Mhz for $200. I already had 2TB SSD, so I paid $500 in total for this setup.
-  - There was no guidelines on how to install ROCm or allocate most of the RAM for iGPU for 780M. So, I did the research and this is how I did it.
-  - I know ROCm support is not great but vulkan is better at text generation for most models (even though it is 2x slower for prompt processing than ROCm).
-  - Mini PCs with 780M are great value and enables us to run large MoE models at acceptable speeds. Overall, this mini PC is more than enough for my daily LLM usage (mostly asking math/CS related questions, coding and brainstorming).
-- DDR5 is almost 2x faster than my DDR4 tower PC with AMD Ryzen 5950x CPU. DDR6 should come soon (2026 or 2027?). Also, It is high time that consumer PC industry embraced quad channel memory setup (e.g. DDR5 with 4 channels in mini PC would be amazing).
-
-- Pretty incredible is 96gb the max or can it go 128?
-  - it can potentially go up to 256GB but I could not find SO-DIMM DDR5 with that size. But yes, 2x64GB = 128GB is possible but those sticks are expensive! From $200 for 96GB to $400 for 128GB. So, 96GB is cost effective.
-
-- with 90GB RAM allocated to iGPU, gpt-oss-120b-GGUF should comfortably fit 64k context. Also, running with that context will be slow for the initial cache loading (it may take hours).
-  - Update: just laoded gpt-oss 120b with 130k context. With flash attention, that context took extra 5GB only. So, I would say it is possible to load the full context.
-
-- Maybe I've missed it, but did you also compare the performance against running it on the CPU only, without iGPU? If I remember correctly, using the iGPU mostly improves pp performance while tg is still limited by the (shared) memory bandwidth speed? Is that (still) true?
-  - Also, since you seem into getting the most out of (relatively) limited hardware, I think it could be an interesting experiment to run a bigger MoE using mmap and a PCIe Gen 4 NVMe SSD (max. ~8 GB/s). I think this might be surprisingly usable for use cases without limited context, etc.
 
 - ## [how’s inference looking now in AMD GPUs? I don’t have one so that’s why asking here. : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nw9tny/hi_hows_inference_looking_now_in_amd_gpus_i_dont/)
 - if you can do with a single AMD AI 395 128GB do it, that's the dirty cheapest solution.

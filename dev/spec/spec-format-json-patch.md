@@ -120,3 +120,17 @@ modified: 2023-02-26T21:03:56.167Z
 - Overlapping writes are last-write-wins
 - Merges are idempotent
 # more
+
+# discuss
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [JSON Patch | Hacker News _202410](https://news.ycombinator.com/item?id=41871850)
+- 
+- 
+- 
+- 

@@ -130,6 +130,8 @@ modified: 2025-09-16T12:36:12.968Z
 
 - ## 
 
+- ## 
+
 - ## [I did not realize how easy and accessible local LLMs are with models like Qwen3 4b on pure CPU. : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o1z3hj/i_did_not_realize_how_easy_and_accessible_local/)
   - I hadn't tried running LLMs on my laptop until today. I thought CPUs were too slow and getting the old igpu working (AMD 4650U, so Vega something) would be driver hell. So I never bothered.
   - I downloaded LM Studio, downloaded Qwen3 4b q4, and I was getting 5 tok/sec generation with no hassle at all with the automatic Vulkan setup. Not bad

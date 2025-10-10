@@ -398,7 +398,7 @@ modified: 2020-12-28T12:24:09.275Z
   - No-code and Low-code all-in-one platform to build landing pages, websites, web applications, APIs, automations. 
   - An alternative for Wix, Webflow
 
-- https://github.com/sparrow-js/sparrow /MIT/202107/ts/vue/ast/inactive
+- https://github.com/sparrow-js/sparrow /3.2kStar/MIT/202107/ts/vue/ast/inactive
   - https://sparrow-js.github.io/sparrow-vue-site/
   - 场景化低代码（LowCode）搭建工作台，实时输出源代码
   - 基于vue、element-ui组件库中后台项目的实践，实时输出源代码
@@ -775,9 +775,6 @@ modified: 2020-12-28T12:24:09.275Z
 - https://github.com/open-rpa/openrpa /2.7kStar/MPL/202506/csharp
   - https://app.openiap.io/
   - Open Source Robotic Process Automation Software
-
-
-
 # json-builder
 - https://github.com/redgeoff/mson /apache2/202401/js
   - The MSON compiler allows you to generate apps from JSON

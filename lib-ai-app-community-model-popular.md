@@ -43,9 +43,9 @@ modified: 2025-09-16T19:59:57.856Z
   - Llama-3.3-70B-Instruct-abliterated-Q2-mlx  22.07gb
   - Qwen3-Next-80B-A3B-Instruct-q2-mlx  24.95gb
   - Mistral-Large-Instruct-2411-Q2-MLX  45.99gb
-  - gpt-oss-120b-mlx-2Bit  36.61gb
-  - GLM-4.5-Air-2bit  33.45gb
-  - GLM-4.5-Air-4bit  62gb
+  - gpt-oss-120b-mlx-2Bit(116.8B A5.1B)  36.61gb
+  - GLM-4.5-Air-2bit(106b A12B)  33.45gb
+  - GLM-4.5-Air-4bit(106b A12B)  62gb
   - DeepSeek-V3.1-Terminus-mlx-2Bit  209.89gb
   - DeepSeek-R1-2bit  251.82gb
 
@@ -520,6 +520,16 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 - ## 
 
 - ## 
+
+- ## [GPT-OSS-120B vs GLM 4.5 Air... : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mifzqz/gptoss120b_vs_glm_45_air/)
+- Same total parameter number, but OpenAI’s OSS 120b is half the size due to being offered natively in q4 precision and has 1/3 active prameters, so it’s performance is really impressive!
+  - So, GPT-OSS-120b requires half the memory to host and generates token 3 times faster than GLM4.5-Air
+  - I don’t know if there are any bugs in the inference of GPT-OSS-120B because it was released just today, but GLM4.5 Air is much better in coding and agentic workloads (tool calling). For the time it seems GPT-OSS-120B performs good only on benchmarks, I hope I am wrong
+
+- Gpt-oss is native fp4 so its more like a 70GB model vs a 230GB model, and also about 10 times faster because the experts of gpt are tiny.
+  - 10x faster is an exaggeration, maybe a bit over twice as fast though.
+
+- Im currently running both models. They are about the same speed, lol, because GLM can run quantized at the same quality as GPT-OSS-120B unquantized, so speed is about the same, 80~90 tok/s on 3090s.
 
 - ## [Granite-4.0-H-Tiny vs. OLMoE: Rapid AI improvements : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nwovv8/granite40htiny_vs_olmoe_rapid_ai_improvements/)
 - Idk why everyone is so excited about this thing, it's pretty awful. Nemotron Nano is a much more exciting hybrid, for 1B extra params you get a model that actually works..
