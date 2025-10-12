@@ -38,6 +38,10 @@ modified: 2025-09-16T13:29:11.327Z
 
 - ## 
 
+- ## [What are some prompts/tasks you don't believe state of the art LLMs are capable of doing or solving at the moment? : r/LocalLLaMA _202403](https://www.reddit.com/r/LocalLLaMA/comments/1bpj4to/what_are_some_promptstasks_you_dont_believe_state/)
+- If a regular hexagon has a short diagonal of 64, what is its long diagonal?
+  - waiting for one of them to get it right. The answer is 73.9 by the way.
+
 - ## [测试人惊喜！50个AI高效提示词，让你告别无效加班 _202508](https://blog.csdn.net/weixin_43489601/article/details/150106784)
   - [测试人员专用AI提示词库](https://www.testwo.com/article/2183)
   - [总结优秀的prompt案例，学习更有效的prompt提示词工程写法，值得收藏 - 知乎](https://zhuanlan.zhihu.com/p/694869515)
@@ -63,7 +67,7 @@ modified: 2025-09-16T13:29:11.327Z
   - 关于[App的权限设置]，有哪些用户容易忽略但可能存在隐私风险的测试点？
   - 请扮演一个对计算机操作不熟练的用户，描述你在使用[某个在线银行系统]时可能遇到的困难和困惑点
 
-- 脚本生成与重构
+- 脚本生成与重构 🔡
   - 使用 [Python + Selenium]，编写一个自动化测试脚本，完成以下操作：1. 打开[URL] 2. 输入用户名'admin' 3. 输入密码'password123' 4. 点击登录按钮 5. 验证页面是否包含文本'欢迎回来'。请添加详细注释。
   - 将以下Selenium Java代码转换为使用Playwright和TypeScript的等效代码：[粘贴Java代码片段]
   - 重构以下Python函数，使其逻辑更清晰，并增加异常处理机制：[粘贴Python函数代码]
@@ -77,17 +81,17 @@ modified: 2025-09-16T13:29:11.327Z
   - 我正在学习[JMeter]进行性能测试，请为我设计一个包含线程组、HTTP请求和断言的简单测试计划（JMX结构）。
   - 解释什么是“Page Object Model (POM)”设计模式，并用[Java]给出一个简单的代码示例。
 
-- 常规数据
-  - 生成10个符合中国大陆身份证号码格式的虚拟号码。
-  - 以JSON格式生成20条用户数据，每条包含'name'(中文名), 'email'(虚拟邮箱), 'phone'(手机号)和'address'(中文地址)。
+- 常规数据 🔡
+  - 以JSON格式生成 12 条用户数据，每条包含'name'(中文名), 'email'(虚拟邮箱), 'phone'(手机号)和'address'(中文地址)。
   - 创建一个SQL INSERT语句，为'products'表（字段：id, name, price, created_at）插入15条随机但合理的商品数据。
-  - 生成一个包含100行、4列（姓名, 部门, 职位, 入职日期）的CSV文件内容。
+  - 生成一个包含50行、4列（姓名, 部门, 职位, 入职日期）的CSV文件内容。
   - 我需要一个长度为5000的、包含中英文、数字和特殊字符的字符串，用于测试文本框的最大长度限制。
+  - 生成10个符合中国大陆身份证号码格式的虚拟号码。
 
-- 特定格式与边界数据
+- 特定格式与边界数据 🔡
   - 生成5个有效的、符合RFC 5322规范的电子邮件地址，以及5个无效的地址。
   - 提供3个符合ISO 8601标准但处于不同时区的日期时间字符串。
-  - 生成一个嵌套层级很深（例如10层）的JSON对象，用于测试解析器的性能和鲁棒性。
+  - 生成一个嵌套层级很深（例如 8 层）的JSON对象，用于测试解析器的性能和鲁棒性。
   - 我需要一张1x1像素的透明PNG图片的Base64编码。
   - 创建一个包含SQL注入攻击payload的字符串列表，用于安全测试。
 
@@ -114,11 +118,13 @@ modified: 2025-09-16T13:29:11.327Z
 - 解释“测试左移”和“测试右移”的概念，并说明它们对测试工程师能力要求的变化。
 - 我正在准备面试，请模拟面试官，向我提出3个关于自动化测试策略的深入问题。
 
-- ## [What are some prompts/tasks you don't believe state of the art LLMs are capable of doing or solving at the moment? : r/LocalLLaMA _202403](https://www.reddit.com/r/LocalLLaMA/comments/1bpj4to/what_are_some_promptstasks_you_dont_believe_state/)
-- If a regular hexagon has a short diagonal of 64, what is its long diagonal?
-  - waiting for one of them to get it right. The answer is 73.9 by the way.
-
 - ## 🖼️ svg prompts/resources
+
+- Generate the SVG code for a button with glowing border
+- Generate the SVG code for a butterfly
+  - Just to watch a model struggle and fail
+  - Both also made a relatively good-looking butterfly in SVG, although GPT4o's looked better.
+
 - [Best SVG AI Prompts - DocsBot AI](https://docsbot.ai/prompts/tags?tag=SVG)
   - Design a high-quality logo in SVG format for an e-commerce brand named 'Selct'. The logo should reflect the nature of e-commerce, incorporating modern design elements that convey trust, convenience, and innovation. Use a color palette that is visually appealing and suitable for online shopping platforms. Make sure the design is scalable and maintains clarity when resized. 
 
@@ -129,8 +135,29 @@ modified: 2025-09-16T13:29:11.327Z
 - Cartoon rocket soaring past planets and stars, flat style, blue space, red rocket, orange flames.
 - 3 kawaii stickers: smiling cat with heart, cheerful corgi, happy cloud raining hearts, pastel colors.
 
-- ## 💄 ui prompts/resources
+- [‌​⁢⁢​​⁡SVG海报设计专家Prompt - 飞书云文档](https://xiangyangqiaomu.feishu.cn/wiki/Rb9Mw25hni1SPXktJcGc2RBynyb)
+
+- ## 💄 ui/landing prompts/resources
   - https://huggingface.co/Tesslate/UIGEN-X-4B-0729
+
+- [快手开源代码模型KAT-Dev-32B，性能如何？ - 知乎 _202509](https://zhuanlan.zhihu.com/p/1955939676792820170)
+
+- 你是前端工程师。请用单文件写一个用户反应力测试网页（仅用原生 HTML/CSS/JS，不引第三方库，不联网）。需求规则：
+  - 1、初始显示“点击开始”；点击后进入等待状态，随机 800–2000ms 后背景变绿；
+  - 2、变绿后用户点击，显示这次反应时间（ms）；重复 3 次，显示平均值；
+  - 3、设计要美观：居中卡片、柔和配色、微动效（过渡/阴影/按钮态）；
+  - 4、适配手机（576px）和桌面（1280px）；
+  - 5、交互有防误触：变绿前点击判为“太早了”；
+  - 6、代码整洁，可以包含少量注释。
+  - 请直接写出完整的可运行的单文件 HTML
+
+- 请创建一个现代化的登录页面，包含以下功能：
+  - 邮箱和密码输入框
+  - 登录按钮
+  - "记住我"和"忘记密码"选项  
+  - Google第三方登录
+  - 注册链接
+  - 要求：深色主题，现代简约风格，居中布局，良好的用户体验。
 
 - Create a navigation bar using React + Tailwind CSS with logo, menu items, and mobile hamburger menu
 
@@ -189,24 +216,20 @@ modified: 2025-09-16T13:29:11.327Z
 
 - 行内补全的能力 很难测试
 
-- Not a prompt, but an auto eval suite:
-  - Take this repo (or similar) https://github.com/trekhleb/javascript-algorithms
-  - Walk all files with AST parser, remove bodies in random functions
-  - Feed to FIM version of the model
-  - Run original tests to see if the generation was correct
-  - Percentage of the tests passed is a score
-  - I've started evaluating them to find specific models and workflows that performed the best in my specific tasks. I built harbor bench to aid myself in that (as a simpler alternative to lm evaluation harness)
+- coding的prompt尽量遵循 plan + act 的结构
 
 - [Magistral vs Devstral vs DeepSeek R1: Which is best? ](https://blog.getbind.co/2025/07/20/magistral-vs-devstral-vs-deepseek-r1-which-is-best/)
-  - Implement a Python function to perform a breadth-first search (BFS) on an arbitrarily nested dictionary representing a graph, returning the shortest path between two specified nodes.
-  - Develop a React component that fetches and displays real-time stock data from a mock API, dynamically updating charts and highlighting significant price changes.
-  - Construct a full-stack web application using Node.js (Express), MongoDB, and React, enabling users to create, read, update, and delete (CRUD) blog posts with user authentication.
+- Develop a React component that fetches and displays real-time stock data from a mock API, dynamically updating charts and highlighting significant price changes.
+- Implement a Python function to perform a breadth-first search (BFS) on an arbitrarily nested dictionary representing a graph, returning the shortest path between two specified nodes.
+- Construct a full-stack web application using Node.js (Express), MongoDB, and React, enabling users to create, read, update, and delete (CRUD) blog posts with user authentication.
 
 - [What do most of your coding prompts look like? Example inside. : r/ChatGPTCoding](https://www.reddit.com/r/ChatGPTCoding/comments/187g3ql/what_do_most_of_your_coding_prompts_look_like/)
 
 - Write django models for a twitter clone
 
-- Write a Makefile to convert JPEG images to PNG.
+- write a Python class that implements a PyTorch trainer capable of training a model on a toy dataset
+
+- Write a Makefile to convert JPEG images to PNG
 
 - Write a program that removes the first 1 KiB of a file in golang
 
@@ -214,16 +237,38 @@ modified: 2025-09-16T13:29:11.327Z
   - This has a deceptively(迷惑人的; 误导的) specific answer
   - I asked both GPT4o and DeepSeek R1, and both managed to generate Oracle SQL code for the Fibonacci Sequence first try.
 
-- Generate the SVG code for a butterfly
-  - Just to watch a model struggle and fail
-  - Both also made a relatively good-looking butterfly in SVG, although GPT4o's looked better.
-
 - https://github.com/mwinteringham/llm-prompts-for-testing
   - Create a JSON object with random data that contains the following fields: firstname, lastname, totalprice, deposit paid. Also, include an object called booking dates that contains checkin and checkout dates.
 
 - https://github.com/langgptai/wonderful-prompts
   - https://langgptai.feishu.cn/wiki/JCZHwwrsOizzaOktD4fcuGbFnzg
   - 中文 prompts 精选，提升 ChatGPT 可玩性和可用性
+
+- [Qwen3-Coder 测试 - 知乎 _202508](https://zhuanlan.zhihu.com/p/1935639098774774795)
+- 将下面这段逻辑转换为 JavaScript 工具函数
+
+```python
+def slugify(text):
+    return text.lower().replace(" ", "-")
+```
+
+- [我用Qwen3-Coder和Kimi k2打了个PK，它真的更强了 ](https://www.163.com/dy/article/K56JHD7505566Y1D.html)
+
+- 一道经典测试题，天气卡片
+- Create a single HTML file containing CSS and JavaScript to generate an animated weather card. 
+  - The card should visually represent the following weather conditions with distinct animations: 
+  - Wind: (e.g., moving clouds, swaying trees, or wind lines) 
+  - Rain: (e.g., falling raindrops, puddles forming) Sun: (e.g., shining rays, bright background) 
+  - Snow: (e.g., falling snowflakes, snow accumulating) 
+  - Show all the weather card side by side 
+  - Provide all the HTML, CSS, and JavaScript code within this single HTML file. The JavaScript should include a way to switch between the different weather conditions
+  - The card should have a dark background. 
+
+- js生成2048小游戏有，规则如下：游戏场地：2048游戏在一个4x4的方格中进行，初始时会随机生成两个数字（通常是2或4）。
+  - 操作方式：玩家可以通过上下左右滑动来移动所有方块。每次滑动后，所有方块会向滑动的方向靠拢。相同数字的方块在碰撞时会合并成它们的和。例如，两个2会合并成一个4，两个4会合并成一个8，依此类推。 
+  - 生成新数字：每次滑动后，系统会在空白格子中随机生成一个新的数字（通常是2或4）。 
+  - 胜利条件：当玩家成功合并出一个2048的方块时，游戏胜利。 
+  - 失败条件：如果所有格子都被数字填满，并且没有相邻的格子可以合并，游戏结束。
 
 - [玩转"汉语新解"？我用通义AI直出爆款文字卡片](https://langgptai.feishu.cn/wiki/WKaEwX5LMirfJlkenf6cKGDGnJg)
   - 你是新汉语老师，你年轻, 批判现实, 思考深刻, 语言风趣"。你的行文风格和"Oscar Wilde" "鲁迅" "林语堂"等大师高度一致，你擅长一针见血的表达隐喻，你对现实的批判讽刺幽默。
@@ -270,6 +315,53 @@ modified: 2025-09-16T13:29:11.327Z
 }]
 
 \###
+
+- [My test prompt that only the og GPT-4 ever got right. No model after that ever worked, until Qwen-Coder-32B. Running the Q4\_K\_M on an RTX 4090, it got it first try. : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1gp46j9/my_test_prompt_that_only_the_og_gpt4_ever_got/)
+- You are an expert JavaScript developer that uses ParticleJS to write cutting edge particle visualizations. 
+  - Write a .js code to visualize particles blowing in random gusts of wind. 
+  - The particles should move from left to right across the browser view and react to the mouse pointer in interesting ways. 
+  - The particles should have trails and motion blur to simulate wisps of wind. 
+  - The animation should continue indefinitely. 
+  - The script must import all dependencies and generate all html tags including tags to import dependencies. Do not use ES modules. 
+  - The visualization should overlay on top of the existing browser view and take up the entire view, and include an exit button on the top right that removes the element so we can view the previous view before the script was executed. 
+  - Only return the Javascript code in a single code block. 
+  - Remember the script MUST import its own JS dependencies and generate all elements necessary. The script should run as-is. Import all dependencies from a CDN. DO NOT GENERATE HTML. THE JS CODE MUST GENERATE ALL NECESSARY ELEMENTS. Only output the .js code.
+
+- [Qwen2.5-Coder-32B-Instruct Quantization Experiments : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1gyk1om/qwen25coder32binstruct_quantization_experiments/)
+- Provide complete working code for a realistic-looking tree in Python using the Turtle graphics library and a recursive algorithm.
+
+- 🌍 [Try This Prompt on Qwen2.5-Coder:32b-Instruct-Q8_0 : r/LocalLLaMA _202411](https://www.reddit.com/r/LocalLLaMA/comments/1gpkm63/try_this_prompt_on_qwen25coder32binstructq8_0/)
+- Create a single HTML file that sets up a basic Three.js scene with a rotating 3D globe. The globe should have high detail (64 segments), use a placeholder texture for the Earth's surface, and include ambient and directional lighting for realistic shading. Implement smooth rotation animation around the Y-axis, handle window resizing to maintain proper proportions, and use antialiasing for smoother edges.
+  - Explanation:
+  - Scene Setup : Initializes the scene, camera, and renderer with antialiasing.
+  - Sphere Geometry : Creates a high-detail sphere geometry (64 segments).
+  - Texture : Loads a placeholder texture using THREE. TextureLoader.
+  - Material & Mesh : Applies the texture to the sphere material and creates a mesh for the globe.
+  - Lighting : Adds ambient and directional lights to enhance the scene's realism.
+  - Animation : Continuously rotates the globe around its Y-axis.
+  - Resize Handling : Adjusts the renderer size and camera aspect ratio when the window is resized.
+
+- [Qwen-2.5-Coder 32B – The AI That's Revolutionizing Coding! - Real God in a Box? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1gp84in/qwen25coder_32b_the_ai_thats_revolutionizing/)
+
+- Create a full 3D earth, with mouse rotation and zoom features using three js
+  - The implementation provides:
+  • Realistic Earth texture with bump mapping
+  • Smooth orbit controls for rotation and zoom
+  • Proper lighting setup
+  • Responsive design that handles window resizing
+  • Performance-optimized rendering
+  You can interact with the Earth by:
+  • Left click + drag to rotate
+  • Right click + drag to pan
+  • Scroll to zoom in/out
+
+- 🏠 Not a prompt, but an auto eval suite:
+  - Take this repo (or similar) https://github.com/trekhleb/javascript-algorithms
+  - Walk all files with AST parser, remove bodies in random functions
+  - Feed to FIM version of the model
+  - Run original tests to see if the generation was correct
+  - Percentage of the tests passed is a score
+  - I've started evaluating them to find specific models and workflows that performed the best in my specific tasks. I built harbor bench to aid myself in that (as a simpler alternative to lm evaluation harness)
 
 - ## 📄 [Favorite test prompts : r/ollama _202407](https://www.reddit.com/r/ollama/comments/1dtydjc/favorite_test_prompts/)
 - Converting time zones, or asking for commonly used CLI commands in Linux.
@@ -531,6 +623,50 @@ modified: 2025-09-16T13:29:11.327Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [DiffuCoder 7B - New coding diffusion LLM by Apple : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1lpoqlu/diffucoder_7b_new_coding_diffusion_llm_by_apple/)
+- it’s a qwen2.5 coder finetune. Also, how can an auto regressive model be turned into a diffusion model?
+  - DiffuLLaMA's adaptation approach
+  - Scaling Diffusion Language Models via Adaptation from Autoregressive Models https://arxiv.org/abs/2410.17891
+
+- One of the largest companies in the world releases a small model finetunee on Chinese company's base model using previously published methods. I like to see it. But it's also interesting to see how much Apple hype is pulled from everything. To me, releasing a model like this at this point shows they treat AI more as a curiosity than a focus, and it doesn't seem to suggest that the game is on from Apple's side.
+
+- Transformers are famously weak on “fill in the middle” type problems, and diffusion models should be much better about this
+
+- One of the biggest issues with autoregressive models is that, unlike how humans think and speak, the tokens generated at the start of the sequence are generated with little to no knowledge of what the tokens at the end of the sequence will be. Also diffusion lets us refine the idea, which is similar to reasoning.
+
+- [model : add support for apple/DiffuCoder-7B-cpGRPO by gabriellarson · Pull Request · ggml-org/llama.cpp _202507](https://github.com/ggml-org/llama.cpp/pull/14502)
+- Also really puzzled by the fact that it's just a finetuned Qwen2.5 model while at the same time being based on Dream which claims to be a diffusion model?!
+  - According to PDF they started from Qwen but it's not just a finetune
+
+- ## [I Fine-Tuned a Tiny LLM to Write Git Commits Offline—Check It Out! : r/ollama _202503](https://www.reddit.com/r/ollama/comments/1j7ntrn/i_finetuned_a_tiny_llm_to_write_git_commits/)
+  - I created a dedicated model for writing commit messages
+  - https://huggingface.co/Tavernari/git-commit-message
+
+- ## [Any experience yet coding with KAT-Dev? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nzt09c/any_experience_yet_coding_with_katdev/)
+- I just tested it, my goto test is to code some Statistical functions in a 4 GL. Being just 32B I thought it would fail spectacularly, but it came close.
+  - The only models that ever could pass the test are DeepSeek, Kimi K2, GLM 4.5, Qwen3 480B, so this thing is daring, punching well about its weight.
+  
+
+- hard fail on html+js raycasting engine
+
+- Not in agentic, running it in chat as AI assistant, it's a very capable model and quite fast with speculative decoding too. I would say it's close to Seed OSS 36b but it's almost 2 times faster for me.
+
+- ## [Kwaipilot/KAT-Dev-72B-Exp model released : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o31rdl/kwaipilotkatdev72bexp_model_released/)
+  - The model makers claim it's second on coding only to Sonnet 4.5 at only 72B parameters.
+
+- It's qwen 2.5 72B right? It means we will have ggufs
+  - Yup, Qwen2 arch. No mentions of a transformers fork or anything so looks like should be the same old as far as model support goes.
+  
+- Have tried the 32b q4 GGUF in LM Studio. From my coding tests, it's dumber than Qwen3-coder-30b, and runs at about the same speed with flash attention ON at 55-60tok/s. But turning flash attention OFF gets me 180tok/s on Qwen3 coder but no speed change with KAT Dev.
+  - KAT Dev has a higher vram footprint than Qwen3 coder, despite smaller file size. Conclusion: No reason to use this over Qwen3 coder
+  
+- There is also the 32B version. its qwen3 architecture with 128K context
+
+- I just gave it a quick run, it has an interesting sort of templating to a response. Sort of like how modern webchat models are consistant in starting the response with pumping you up and structuring every argument with a "Why this matters:" sort of header.
+  - The model likes to kick things off with bowing to you to say it will follow your instructions and help you. Very uncensored. Then it uses lots of headers for the content itself. If it's asked for a story, it caps it off with a "Summary" header. Asked for troubleshooting, it caps it off with a "Next steps" header. Very organized in its responses, but totally dead tone and to the point like Kimi K2. Which is great. But obviously not very good prose at all.
 
 - ## 🆚 [AMD tested 20+ local models for coding & only 2 actually work (testing linked) : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nufu17/amd_tested_20_local_models_for_coding_only_2/)
   - tldr; qwen3-coder (4-bit, 8-bit) is really the only viable local model for coding; if you have 128gb+ of RAM, check out GLM-4.5-air (8-bit)

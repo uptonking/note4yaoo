@@ -701,7 +701,17 @@ modified: 2024-08-24T16:28:20.515Z
 
 - ## 
 
-- ## 
+- ## ✏️ [Unnecessary Full-File Edits for Small Code Changes · Issue · cline/cline _202410](https://github.com/cline/cline/issues/583)
+  - I’ve noticed a behavior that feels like a bug when working with large code files. When I need to make small changes—perhaps modifying only a few dozen lines—cline often invokes the `edit file` tool to update the entire file from the beginning, even when 99% of the file doesn’t need any changes.
+  - this behavior of editing the entire file seems unnecessary and inefficient when only small parts are being modified.
+- My previous experience with patch file syntax is less than ideal - tricky to manage, tricky for the LLM's to get right, so I've been playing around with an alternative implementation, inspired by Aider's logic, added two tools: Search And Replace and Insert Code Block to try to work around this issue.
+  - As a side note, it seems the previous PR #158 is stale, since it used the previous JSON Schema style of tools - should be simple to adapt to the new XML notation though, haven't tested it - it uses the patch logic, could also work.
+
+- I've experimented with structured output like editing certain lines or unified diff format like aider, but I've found the results aren't nearly as good as whole file outputs. 
+  - The reason is these models are trained on significantly more whole code files than say diff patches, and there's been studies showing drops in performance whenever you force the models to output in a structured way ie diff or json.
+  - OpenAI just released a new API featured called predicted outputs that would fix this issue entirely.
+
+- I don't understand how you expect this to be solved by OpenAI's upcoming API feature. This project is meant to be compatible with most models, whether hosted locally or by dedicated providers.
 
 - ## ⚡️ [Add a 'compact prompt' option for local LLMs · Issue · RooCodeInc/Roo-Code _202508](https://github.com/RooCodeInc/Roo-Code/issues/7550)
   - When using Roocode with local llm providers (like LM Studio ), API requests regularly stall and hit the 300s timeout This happens with browser/mcp tools disabled

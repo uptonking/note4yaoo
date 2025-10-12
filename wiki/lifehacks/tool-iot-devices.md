@@ -184,7 +184,27 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## 🆚 [What laptop would you choose? Ryzen AI MAX+ 395 with 128GB of unified RAM or Intel 275HX + Nvidia RTX 5090 (128GB of RAM + 24GB of VRAM)? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o3evon/what_laptop_would_you_choose_ryzen_ai_max_395/)
+- more net RAM = more net model + context size, at whatever speed.
+
+- The Ryzen and run the larger models like gpt oss 120b or glm 4.5 air. The 5090 will run models that fit much faster like Qwen3 30b variants.
+  - The Ryzen may be very slow on promo processing. A big deal if you are dropping 50k or more tokens. You may be waiting a few minutes before the output starts.
+
+- Depends, do you want to run larger models somewhat slowly - 395 Or do you want to run smaller models and larger MoE models very quickly - 5090
+
+- depends what you want to do, if you are gaming then the 5090 makes more sense, for ai the 395 makes more sense since you will be able to run better stuff.
+
+- For LLMs the Ryzen can run large MOE models much faster, but the one with the 5090 can run smaller models that fit into the 24 GB vram really really fast. For image or video generation, Nvidia unfortunately is still the top choice, it usually takes some time until new models are supported on Amd 
+
+- I have GMK x2 and I'm killing this machine with everything you can think about, run everything even Q2 GLM4.6 with 10 tokens (not bad for 115G) model all in ram.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 - ## [4x64 DDR5 - 256GB consumer grade build for LLMs? : r/LocalLLaMA _202504](https://www.reddit.com/r/LocalLLaMA/comments/1k6p20z/4x64_ddr5_256gb_consumer_grade_build_for_llms/)
   - I have recently discovered that there are 64GB single sticks of DDR5 available - unregistered, unbuffered, no ECC, so the should in theory be compatible with our consumer grade gaming PCs.
@@ -1400,7 +1420,11 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## [AMD MI50 32GB better buy than MI100? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o2x0bv/amd_mi50_32gb_better_buy_than_mi100/)
+  - While it's officially dropped from ROCm 7, we can still get it to work if we copy some files manually.. obviously this will sooner or later stop working but then we'll have Vulkan.. which (with llama.cpp at least) seems to be almost at a performance-parity with ROCm (or faster?).
+- Mi100 is still too expensive. I thought they all have vulkan support.
+
+- As Mi50 owner, I would say this: ROCm is a pain in the ass. I see no reasons to buy better AMD cards cause you'll will constantly search for solutions for some software bugs. Vulcan won't save you on Mi50, as performance is equal or worse - vulcan seem do be not as optimized for that chip. With Mi100, you'll be in ever rpugher shape because this card is not popular amongst the enthusiasts, so nobody will optimize the software for it. Given that Mi50 33GB costs $120, buying Mi100 over it is a useless waste of money; Mi100 should go down in price significantly before it becomes reasonable for a homelabber.
 
 - ## [rtx 4090 vs rtx 5090 vs rtx 4090 48gb vram? : r/StableDiffusion _202505](https://www.reddit.com/r/StableDiffusion/comments/1km4snx/rtx_4090_vs_rtx_5090_vs_rtx_4090_48gb_vram/)
 - across various benchmarks rtx5090 is around 30% faster than rtx4090 in terms of "raw power". It also has native FP4 support, which can increase speed by ~x2 and reduce memory usage ~x2 for use-cases where fp4 models available.
@@ -2417,9 +2441,303 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## 🛝 [Smallest possible ATX case that can fit a full size GPU : r/buildapc _202406](https://www.reddit.com/r/buildapc/comments/1djnxe3/smallest_possible_atx_case_that_can_fit_a_full/)
+  - I currently have a mini itx setup with an i5 10400, and an rx 6700xt. It’s feeling like it’s time for an upgrade and microcenter’s CPU, MOBO, RAM combos are too good to pass up. ($370 for a Ryzen 7 7700x and 32gb of ram) Especially compared to the $700+ I would have to spend on those parts, an itx mobo and a capable SFX PSU.
+- A case like the GameMax Meshbox Pro is probably the smallest you’re going to get without needing an SFX power supply, at about 33.5L in volume. Can still fit GPU’s up to 335mm in length, and is a very reasonable $62.
 
-- ## [Upgraded self-hosted AI server - Epyc, Supermicro, RTX3090x3, 256GB : r/LocalLLaMA _202405](https://www.reddit.com/r/LocalLLaMA/comments/1d3dh4c/upgraded_selfhosted_ai_server_epyc_supermicro/)
+- [Choose A Case - PCPartPicker](https://pcpartpicker.com/products/case/)
+
+- ## [Looking for a compact case for my H11SSL-i - Hardware Hub / Build a PC - Level1Techs Forums _202311](https://forum.level1techs.com/t/looking-for-a-compact-case-for-my-h11ssl-i/203506)
+  - I just received my H11SSL-i Supermicro motherboard with an Epyc CPU that has 16 cores and 256 GB of RAM. However, I am yet to find a suitable case for it. I am looking for a compact case that has at least 3 to 4 bays for 3.5-inch hard drives and another 3 to 4 bays for 2.5-inch drives. 
+- Fractal Design Node 804 has really cornered this market, available for ~$140
+
+- H11SSL-i is ATX, so no, it won’t fit in mATX cases.
+
+- I can’t give advice about a case that fits your requirements, but for a reference, I’m currently using Fractal Define 7 Compact for my H11SSL-i + 7551P. The case only has 2x 3.5" drive bay with a cage underneath the bottom cover and 2x 2.5" drive behind the motherboard. I think if you don’t use the bottom PCIe slot, you may be able to fit two more 2.5" above the PSU. A standard Fractal Define 7 should fit, but it’s not compact 
+
+- ## [求一款atx紧凑型机箱? - 知乎](https://www.zhihu.com/question/328153905)
+- 最近我装了一台AMD平台的游戏PC，为了更好的扩展性我选择了ATX大板，但我又追求小巧机身和扩展性，所以还是有点难办的，在机箱的选择方面我也是研究了许久，最终结合实际、选择了设计非常独到的紧凑机箱：机械大师C34 Pro。
+  - 这个机箱支持ATX/EATX板子，但尺寸只有429x205x349mm，比常规的ATX机箱小了很多，但模块化的独特设计让它具备了非常棒的扩展性和可维护性
+  - CPU：AMD RYZEN 7 9700X
+  - 主板：蓝宝石NiTRO+氮动B850A WIFI
+  - 内存：佰维DW100 DDR5 6800C32
+  - 显卡：公版RTX 4080
+  - 硬盘：系统盘·西部数据SN750 500GB；游戏盘·致态TiPro9000 4TB
+  - 机箱：机械大师C34 Pro, 429*205*349mm, 30.6L
+  - CPU散热器：追风者Polar伯乐T6
+  - 电源：安耐美白金竞蝠PK1000W
+  - 机械大师C34 Pro这个机箱正面金属质感尽显，看起来极为优雅
+
+- Jonsbo D40  	31.6 L
+- Jonsbo U4 Plus  	31.7 L
+- Jonsbo D41 MESH  	35.4 L
+- Cooler Master Elite 361  25.1L
+- KOLINK Inspire K4  33.4L
+- GameMax MeshBox Pro  33.5L
+- KOLINK Observatory MX Mesh ARGB  30.8L
+- Silverstone RM42-502  35.4L
+
+- [有没有什么体积比较小的ATX机箱推荐. 台式机？ - 知乎](https://www.zhihu.com/question/51668457/answers/updated)
+
+- ## [2024年最新ATX小机箱推荐 - 知乎 _202401](https://zhuanlan.zhihu.com/p/680148767)
+- 既想要主机够小，又想要ATX主板的拓展性是很难达成的，于是很多人退而求其次选择MATX主板和MATX机箱。但ATX小机箱依然是很多人的执着所在。作者对市面上目前在售的ATX机箱进行了粗略的梳理，发现目前较小的ATX机箱主要有以下这些
+
+- 缔誓科技L59p 体积13.2 L 售价：499
+  - 尺寸数据：400x90x368
+
+- Ssupd Meshroom S 体积：14.93 L
+  - 尺寸数据：247x167x362
+
+- 傻瓜超人K99air 体积：21.48 L 售价：129
+  - 尺寸数据：348x186x328
+
+- 机械大师C34 体积：21.65 售价：799
+  - 尺寸数据：342X85X342
+
+- 乔思伯RM2 体积：22.34 L 售价：299
+  - 尺寸数据：209x302x354
+
+- 铝小宝p100 体积：24.9 L 售价：179
+  - 尺寸数据：375x185x359
+
+- 巧美 云雀plus 体积：25.03L 售价：217
+  - 尺寸数据：394x165x385
+
+- SKTC Q5 体积：27.97 L 售价：299
+  - 尺寸数据：370x210x360
+
+- [2023年ATX小机箱推荐](https://www.zhihu.com/tardis/zm/art/632965955?source_id=1003)
+- 傻瓜超人K99 青春版，体积约为19L，售价：159
+  - 尺寸 375x158x325mm
+
+- 机械大师C34视界 体积21.6L 售价：729
+  - 尺寸：342x342x185mm
+
+- 机械大师c34 pro 体积30.6L 售价899
+  - 尺寸：205x349x429
+
+- 乔斯伯rm2 体积约为21.5L 售价：245
+  - 尺寸：209x302x354mm
+
+- 乔思伯 u4 体积约为30L 售价299
+  - 尺寸：340x205x428
+
+- 乔思伯 u4pro 体积34.5L 售价299
+  - 尺寸：205x395x426
+
+- 乔思伯D41 体积35.4L 售价249
+  - 尺寸：205x392x440
+
+- 魔神m90pro 体积约为20L 售价199
+  - 尺寸：157x325x395mm
+
+- ## [New server build : r/homelab _202509](https://www.reddit.com/r/homelab/comments/1lve852/new_server_build/)
+  - CPU: AMD Epyc 7443P
+  - Motherboard: Supermicro H12SSL-i
+  - Memory: 8x SK Hynix 32GB 3200MT/s ECC (265GB)
+  - SAS HBA: Broadcom 9400-16i
+  - NVME HBA: Supermicro AOC-SLG4-4E4T
+  - NIC: Mellanox ConnectX-4 dual 25G
+  - NVME Backplane: Silverstone RAC-BP-304N
+  - CPU Cooler: ARCTIC Freezer 4U-M
+  - PSU: Corsair RM850x
+  - Case Silverstone RM43-320-RS: 442  x 175 x 660 mm, 51L
+
+- ## [[FS][USA-NY] EPYC 7232 ROME CPU + H12SSL-NT PCIe 4 Motherboard + 4U 24 Bay server case + Add ons : r/homelabsales _202501](https://www.reddit.com/r/homelabsales/comments/1idbdvk/fsusany_epyc_7232_rome_cpu_h12sslnt_pcie_4/)
+  - ATX 850 Bronze PSU: 850W 80+ Gold
+  - Epyc Rome 7232 8 core processer 
+  - Supermicro H12SSL-NT
+  - 88GB RAM DDR4 2133
+  - OWC Quad NVME 3.5HDD adaptor
+  - LSI 9300-16i HBA
+  - Jeyi PCIe 4x16 Quad NVME Bifurcation adaptor 
+  - Generic Brand PCIe 3x8 QUAD NVME adaptor
+  - 40G Mellanox QSFP NIC
+  - NO CPU cooler provided
+  - PRICE $1150 + Shipping based on location
+  - Moved to a sliger case with an EPYC Siena build, so looking to off load his server
+
+- ## [[W] Supermicro H12SSL / Epyc / DDR4 3200Mhz : r/homelabsales _202308](https://www.reddit.com/r/homelabsales/comments/163s183/w_supermicro_h12ssl_epyc_ddr4_3200mhz/)
+- Yeah, that board has 2x M.2 and 1x Slimline x8. So that's pretty decent, because that 1 slimline port can handle 2 U.2 drives or even 2 M.2 with an adapter. (Or you can get a cable that goes to 8x SATA or 2x Mini SAS, for a backplane) I like those connectors a lot, but the cables aren't cheap.
+
+- I have 128GB ram, 7343 CPU
+  LSI 9300 HBA 10w
+  a GTX 1660 Super that idles at 13-15w
+  2x U.2 that are a bit power hungry, but fast. 10-20w each
+  2x M.2 at about 9w each
+  and 20 WD HC530 HDD's.
+
+- Take a look at the Gigabyte MZ32-AR0. Just got one with a 7502. It's a very nice board with a ton of features
+
+- ## ["The Talking Cube" 4x3090 local AI server : r/LocalLLaMA _202402](https://www.reddit.com/r/LocalLLaMA/comments/1aux2es/the_talking_cube_4x3090_local_ai_server/)
+  - Supermicro H12SSL-i AMD EPYC 7262 256GB RAM 4xEVGA RTX 3090 FTW3 ULTRA Completely DIY / custom mounting solution for the 3 gpus on top
+
+- ## [Cooling a server motherboard in a desktop case. : r/homelab _202403](https://www.reddit.com/r/homelab/comments/1bgpzno/cooling_a_server_motherboard_in_a_desktop_case/)
+  - I have a Supermicro H12SSL-i  with an Epyc 7762 that has 64 cores. It's installed in the Fractal Define XL 7 case and is an all purpose server.
+  - Fractal Design Define 7 XL: 604 x 240 x 566 mm, 82L
+  - It runs well in a typical workload, but if I run the cpu full throttle, it will crash, likely due to the lack of ventilation blowing over the VRMs and such when there's such a huge spike in watts.
+  - Anyway, do any of you DIYers know what could be done? The quieter, the better. It's full (19) of 3.5 inch drives so ventilation is a bit tricky.
+
+- server boards need air flow, the more the better. I would make sure all of the fans are pushing/moving the air one way, i.e. in from the front and out the back, make sure that the cpu heatsink fans are not fighting this needed air flow, and I would max out on fans and sizes, like the Fractal will take the 140mm fans, I would go with the Noctua NF-A14 Industrial PPC-3000, yeah they will be louder than the slower 1500rpm fans but they move twice the air.
+
+- I ended up downgrading the CPU to a lower tdp - AMD EPYC 7302P.
+
+- ## [What other supermicro boards are as good or better than: SUPERMICRO MBD-H12SSL-I-O ATX Server Motherboard AMD : r/homelab _202412](https://www.reddit.com/r/homelab/comments/1h59xtp/what_other_supermicro_boards_are_as_good_or/)
+  - Using Epyc processors. Is there a better board? In this generation?
+
+- Standard ones: H12dsi: dual processor, more PCIe and more ram slots
+- Nonstandard:
+  - H12ssw-ntr: 12 Ram slots on a single socket board
+  - H12dsu: for u(ultra) server. Dual sockets with 24 Ram slots. 4 GPU power connectors.
+
+- ## [Amd Epyc Genoa : r/LocalLLaMA _202406](https://www.reddit.com/r/LocalLLaMA/comments/1d5u33o/amd_epyc_genoa/)
+  - I’m contemplating between buying a mac studio m2 192gb(or maybe waiting for the m4) or an amd epyc with about 750gb Ram.
+- I have such a system with Epyc 9374F and 12 x 32GB of RAM. I'm quite pleased with its stability and performance, but remember that its 460.8 GB/s memory bandwidth is a theoretical value. On Aida64 I had around 375 GB/s. It's possible that Genoa CPUs with 12 CCDs (mine has 8 CCDs) will perform a bit better. Avoid CPUs with 4 CCDs, they have limited memory bandwidth. If you want estimated Q8 LLM generation performance simply divide the memory bandwidth value by the number of model parameters. So for Epyc Genoa and 400b model it will be around 1 t/s.
+
+- Do you know if getting two sockets will double the speed?
+  - I have no experience with dual-socket Epyc Genoa systems, but I remember talking to u/MadSpartus who ran llama.cpp on a dual Epyc Genoa system and it performed worse than my single-socket machine. You can ask him if he found any settings that improved the performance.
+- I managed to just barely beat the single socket genoa with a dual socket by using numa tuning. Not worth it unfortunately. Only using llama.cpp though.
+
+- Im running 9374F with 12x64gb dimms.
+  - Deepseek R1 0528 with 671b runs on ollama at 7-8 tokens/s.
+  - Deepseek R1 0528 8b qwen3, runs on ollama at ~45 tokens/s
+
+- ## [My ugly beast - 64 core AMD EPYC 7763 w/ 160GB 8-channel DDR4 RAM, 3x3090 (72GB VRAM) & 6TB NVME storage : r/LocalLLaMA _202411](https://www.reddit.com/r/LocalLLaMA/comments/1gy7xp5/my_ugly_beast_64_core_amd_epyc_7763_w_160gb/)
+  - All used parts, all in just under $4000 (technically about $3300 but I already had a 3090 prior to building this).
+  - The EPYC 7763 is an engineering sample I found for $600, board is an open box supermicro h12ssl-i w/ 128 PCIE lanes. 
+  - The 2 3090s I just waited patiently for deals and never paid over $650. $100 Used 1600W EVGA power supply on a dedicated 20A 120V branch circuit. DDR4 RAM is crazy cheap used, though I didn't go for the fastest. No thermal or power issues, I didn't even need to power limit the cards. 
+- llm
+  - 15.6 tokens/sec on qwen 72b (Q4_K_M w/ 32k context) 
+  - 27.5 tokens/sec on qwen 32b (Q6_K w/ 32k context)
+
+- ## [ATX LGA 2011 single cpu motherboard with 8 DDR3 slots supporting 256GB RAM? : r/buildapc _202309](https://www.reddit.com/r/buildapc/comments/1682clw/atx_lga_2011_single_cpu_motherboard_with_8_ddr3/)
+  - I am looking for an affordable ATX LGA 2011 motherboard with 8 DDR3 slots that will safely fit into normal ATX case (e.g., Chieftec ba-01) and support 1 CPU, ideally Xeon v2 or maybe v3 if needed
+  - Chieftec ba-01: 540mm x 205mm x 650mm
+
+- I found the following ATX motherboards with 8 DDR3 slots that could work, although not all of them will support 256GB RAM, depending mostly on their latest BIOS updates. On top of that, given that most of them are consumer boards, they usually do not support ECC memories.
+  - MSI X79A-GD45 Plus
+  - MSI Big Bang-XPower II
+  - Gigabyte GA-X79-UP4
+  - Gigabyte GA-X79S-UP5-WIFI (does not support registered ecc, only unbuffered)
+  - ASUS X79-Deluxe
+  - ASUS P9X79, P9X79-E WS
+  - ASRock X79 Extreme6, X79 Extreme9
+  - Supermicro X9SRi-F
+  - Supermicro X9SRA
+- Due to the potential ECC issues, I eventually went with Supermicro X9SRi-F, which works really well for my purposes (256 GB RAM with no problem) and later got my hands on Supermicro X9DRI-F, which I haven't tested properly, but should work fine too.
+  - In the meantime, I experienced a short episode with Jingsha X99, that is in some ways more modern (m2 ports, for example) and worked semi-well, but in comparison to Supermicro, I found the lack of support and fiddling with drivers rather discouraging.
+- Same, the problem was with AliExpress x79 cheap dual socket mbrd, problem was with USB 3.0 ports(which in my case was very important).so I was searching something to change
+
+- ## [DDR5-compatible motherboards with 8 RAM slots? : r/buildapc _202312](https://www.reddit.com/r/buildapc/comments/18lmms0/ddr5compatible_motherboards_with_8_ram_slots/)
+- you'll need hedt or server hardware.
+
+- Get a threadripper 7000 motherboard. It’s a really expensive platform, but I doubt cost is your primary concern here.
+  - Recent epyc and xeon platforms are also options, but Threadripper would be my recommendation.
+
+- ## [Epyc Turin (9355P) + 256 GB / 5600 mhz - Some CPU Inference Numbers : r/LocalLLaMA _202502](https://www.reddit.com/r/LocalLLaMA/comments/1ihpzn2/epyc_turin_9355p_256_gb_5600_mhz_some_cpu/)
+  - I decided that three RTX 3090s janked together with brackets and risers just wasn’t enough; I wanted a cleaner setup and a fourth 3090.
+  - My requirements were: at least four double-spaced PCIe x16 slots, ample high-speed storage interfaces, and ideally, high memory bandwidth to enable some level of CPU offloading without tanking inference speed. Intel’s new Xeon lineup didn’t appeal to me, the P/E core setup seems more geared towards datacenters, and the pricing was brutal. Initially, I considered Epyc Genoa, but with the launch of Turin and its Zen 5 cores plus higher DDR5 speeds, I decided to go straight for it.
+  - Due to the size of the SP5 socket and its 12 memory channels, boards with full 12-channel support sacrifice PCIe slots. The only board that meets my PCIe requirements, the ASRock GENOAD8X-2T/TCM, has just 8 DIMM slots, meaning we have to say goodbye to four whole memory channels.
+  - Getting it up and running was an adventure. At the time, ASRock hadn’t released any Turin-compatible BIOS ROMs, despite claiming that an update to 10.03 was required
+  - CPU: Epyc Turin 9355P - 32 Cores (8 CCD), 256 MB cache, 3.55 GHz Boosting 4.4 GHz - $3000 USD from cafe.electronics on Ebay (now ~$3300 USD).
+  - RAM: 256 GB Corsair WS (CMA256GX5M8B5600C40) @ 5600 MHz - $1499 CAD (now ~$2400 - WTF!)
+  - Asrock GENOAD8X-2T/TCM Motherboard - ~$1500 CAD but going up in price
+
+- Please add the likwid-bench memory bandwidth test results, as PassMark is known for its tendency to overstate the value in its memory threaded test. 
+  - Theoretical max for 8-channel 5600 RAM is 358.4 GB/s and it shows 431 GB/s. This may be misleading.
+
+- ## 🧮💡 [Comparing Threadripper 7000 memory bandwidth for all models : r/threadripper _202402](https://www.reddit.com/r/threadripper/comments/1azmkvg/comparing_threadripper_7000_memory_bandwidth_for/)
+  - 7945WX and 7955WX (2 CCDs, 8 memory channels) have the lowest Memory Threaded test results (~102 GB/s). 
+  - Next, we have 7960X and 7970X (4 CCDs, 4 memory channels), and we can observe a moderate increase in test results (167 GB/s, 179 GB/s). 
+  - The results for 7965WX and 7975WX (4 CCDs, 8 memory channels) again are a little higher (236 GB/s, 246 GB/s) compared to the non-PRO models, It's definitely not a 2x bandwidth increase compared to the corresponding non-PRO models. 
+  - Only when we compare the models with 8 CCDs: 7980X and 7985X, there is around 90% increase in the test result (240 GB/s vs 453 GB/s). Finally, 7995WX (12 CCDs) has the best performance in this test.
+  - The overall conclusion is that the lower-end models with 2-4 CCDs have limited memory bandwidth. We had the same situation in previous Threadripper generations. If you need a lot of bandwidth, you probably should use EPYC.
+
+- we need to make a distinction between
+  - the bandwidth between memory modules and the memory controller, 
+  - the bandwidth between the memory controller and CCDs (where CPU cores are).
+- These bandwidths are two independent things and they both affect the total available memory bandwidth in the system. Overall theoretical available memory bandwidth is the lower value from the two.
+- First, we have the bandwidth between memory modules and the memory controller. 
+  - I calculated the total available bandwidth for various numbers of memory modules (for 4x, 8x, and 12x configurations) and memory speeds (4800 MT/s is the default for EPYC Genoa, 5200 MT/s is the default for Threadripper 7000, 7200 MT/s is commercially available overclocked memory for TRX50 and WRX90).
+  - This is how much bandwidth is theoretically available. It's nice that we can use overclocked memory in Threadripper since 8 7200 MT/s sticks will give us the same bandwidth as 12 4800 MT/s sticks in Epyc.
+- The second bandwidth is the bandwidth of the GMI3 links between the memory controller and CCDs. 
+  - Let's calculate how much bandwidth we have depending on the number of CCDs in the CPU. I assumed an FCLK of 1.8 GHz, so a single GMI3 link has 57.6 GB/s read bandwidth.
+- Each CCD is connected with I/O die containing the memory controller with a GMI3 link, and this link has limited bandwidth. All CPU cores within a single CCD use this GMI3 link for memory access. So the more CCDs in CPU, the higher is the number of GMI3 links to the I/O die
+
+- To get the best memory bandwidth, (theoretically) you should:
+  - Increase FCLK for 8-channel configurations with 2 or 4 CCDs (7945WX, 7955WX, 7965WX, 7975WX), 
+  - Use overclocked memory in all remaining Threadripper models, 
+  - For Epyc, purchase a motherboard with 12 memory slots and an Epyc 9004 processor with at least 8 CCDs. Fill all memory slots.
+
+- Another site (userbenchmark) mostly verifies what fairydreaming posted, shows a bit more improvement from 3000 to 7000, but lacks information on highly overclocked builds
+
+- I can tell you the results of the threaded memory test that I found the PassMark database:
+  - AMD EPYC 7F52 (16c Rome): ~145 GB/s (with 8 DDR4 RAM modules)
+  - AMD EPYC 74F3 (24c Milan): ~217 GB/s (unknown number of DDR4 RAM modules)
+  - AMD EPYC 9174F (16c Genoa) ~402 GB/s (with 8 DDR5 RAM modules)
+  - AMD EPYC 9274F (32c Genoa) ~588 GB/s (with 12 DDR5 RAM modules)
+  - All models have 8 CCDs.
+
+- I checked a few performance EPYC 9004 models that could be used in workstation builds: 
+  - 9174F (16c) achieved 402 GB/s with 8 RAM modules, 
+  - 9274F (32c) around 588 GB/s with 12 RAM modules, 
+  - 9474F (64c) achieved 449 GB/s with unknown number of RAM modules.
+
+- ## 🤔 [EPYC/Threadripper CCD Memory Bandwidth Scaling : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nesi8g/epycthreadripper_ccd_memory_bandwidth_scaling/)
+  - There's been a lot of discussion around how EPYC and Threadripper memory bandwidth can be limited by the CCD quantity of the CPU used. What I haven't seen discussed is how that scales with the quantity of populated memory slots. 
+  - Would populating 2 dimms on an 8 channel or 12 channel capable system only give you 1/4 or 1/6th of the GMILink-Limited bandwidth (25 GB/s or 17GB/s) or would it be closer to the bandwidth of dual channel 6400MT memory (also ~100GB/s) that consumer platforms like AM5 can achieve.
+
+- Theoretical total memory bandwidth is straightforward. For example, AMD EPYC 9XXX with 12 memory channels is 614 GB/s with 6400 MT/s DIMM
+  - (64 (DQ pins per DIMM) * 6.4Gbps speed per DQ pin * 12 channels ) / 8 = 614 GB/s
+  - If there are 3 channels in each NUMA quad, that's 153.6GB/s already, well over 100GB/s BW available to CCD over GMI. CCD can access all 12 channels, but not all at once, so there is the memory wall.
+
+- Ccd numbers is easy to tell. The desktop gaming cpu maxes out a dual channel ram system and this cpu has just 1 ccd. Which means you need atleast 1 ccd per 2 channels. So for a 12 channel epyc motherboard you need a cpu with atleast 6 ccds, although higher ccd options are preferable if you can afford them.
+
+- I’m curious to ask, have you considered Intel Xeon? I myself am in the process of comparing Xeon 6 and EPYC 9005, and I hear conflicting reports on both. EPYC has more memory channels and higher bandwidth, whereas Intel has AMX instructions. So on the face of it, assuming that prompt processing happens on VRAM, EPYC appears to be the choice. However, I still hear from some people that Xeon is more widely deployed in inference infra due to inherent advantages in its architecture and less issues with NUMA, particularly in dual-socket configurations. I’d be interested to hear what you’ve come up with in regard to this during your own search.
+  - I've been eyeing Xeon W7-3565X or AMD Epyc 9355P (same price tag), equivalent 32 core TR is just too expensive. From what I could tell Intel AMX does seem promising and further research suggest has much better memory BW/latency due to monolithic die for MCC CPU CKU (like 32 core).
+
+- [AI: Memory Bandwidth comparison for selected DDR4 CPU’s _202410](https://phoenixgamedevelopment.com/blog/ai-memory-bandwidth-comparision-for-selected-ddr4-cpus/)
+- I have purchased a Threadripper PRO 3955WX CPU for the purposes of building an LLM inference machine.
+  - However, I have since discovered that there is a serious issue with using some Threadripper and Epyc CPU’s (Including the 3955wx) for this purpose.
+- The issue is that these CPU’s use 2 CCD’s (Core Chiplet Dies), which substantially reduces the memory bandwidth.
+
+- The fundamental issue is that in order to reach the maximum bandwidth of 8-Channel RAM (About 200 GB/s) it is necessary to have not just 8 Channels supported, but 8 CCD’s as well.
+- Only extremely expensive CPU’s have 8 CCD’s.
+  - The cheaper CPU’s have only 2, which effectively limits their ram bandwidth to quad channel speeds (Around 80-100 GB/s) or slightly more.
+
+- At my price point, it seems that 4 CCDs with 8 Channels is basically the best that can be achieved. This means that the actual read/write speeds in the real world are in the region of 150 GB/s read 100 Gb/s Write.
+  - It seems, based on my research, that there is no inherent difference between Threadripper/Pro and Epyc CPUs that have the same number of CCDs.
+
+- ## 👀 [Filling up 12 memory channels on EPYC server with 6x dual-channel kits : r/homelab _202501](https://www.reddit.com/r/homelab/comments/1i0oait/filling_up_12_memory_channels_on_epyc_server_with/)
+  - Anyone foresee any issues filling up the 12 channels on a 32-core 9384x EPYC cpu build with 6 kits of identical consumer grade non-ecc memory such as these?
+- You can use normal desktop memory with Epyc but why spend all of that money on a Epyc cpu just to stick it with cheap non-ecc memory? It's like putting a RTX4090 with an i3 cpu. I'm also fairly certain that 12 DIMs would limit you to 2933MT/s or maybe 3200MT/s, I can't remember off the top of my head, but there is a limit.
+  - Only RDIMMs and LRDIMMs work in any SP5 CPU. You absolutely cannot use UDIMMs or CUDIMMs and if you think you can, please link to a motherboard specs that shows it supported.
+  - 1DPC is 4800MT for Genoa and is a 12 channel CPU, motherboards with 1 CPU and 24 DIMMs are 2DPC
+  - 🧐 9384x is an 8 CCD CPU and will gain no performance benefit from having more than 8 DIMMs installed, although you can for more RAM
+  - EDIT: e.g. motherboard showing 12DIMMs/1DPC at 4800 and only RDIMMs supported https://www.supermicro.com/en/products/motherboard/h13ssl-n
+- Thanks. Good to know about lanes being tied to ccds.
+
+- ## [AMD Epyc 4004 line - General Discussion - TrueNAS Community Forums _202405](https://forums.truenas.com/t/amd-epyc-4004-line/5183)
+  - AMD recently released an Epyc CPU which fits into the AM5 socket. It does have the light weight iGPU and supports ECC memory, as well as lower power than some of the newer Epycs, (which seem to make great house heaters!).
+  - When I brought up a thread in the old forum for ideal, low end CPU, one thing was I thought was required, were about 40 PCIe lanes. The AM5 socket only supports 28 lanes, 4 of which appear dedicated to the companion chip. For a lower end desktop, which is what the AM5 is designed for, 24 PCIe lanes for the user is fine.
+
+- I agree about wanting 40 PCIe lanes. Especially when you may want to add a couple of 16x or 8x NVMe bifurcation cards, and maybe an 8x dGPU for transcoding or image analysis.
+
+- Existing boards use the B650(E) chipset. Supermicro, AsRock Rack and Gigabyte have added “EPYC 4004” to the specifications of thier existing server Ryzen boards. SATA and USB ports would then depend on the chipset (typically 6 SATA with B650, and I don’t see much use for the X chipset here); USB4 would require an additional Maple Ridge or ASM4242 controller.
+
+- ## [Do Epyc Processors Have Integrated Graphics? : r/AMDHelp](https://www.reddit.com/r/AMDHelp/comments/cgztk3/do_epyc_processors_have_integrated_graphics/)
+- Epyc processors do not have integrated GPU's, even vGPU, or however you call them.
+
+- I got EPYC 4124 have Integrated GPU but didn't get any after that, is that true?
+
+- [AMD Epyc Rome Server CPUs - iGPU inside, support for hypervisors like ESX? : r/Amd](https://www.reddit.com/r/Amd/comments/ctcgf8/amd_epyc_rome_server_cpus_igpu_inside_support_for/)
+- > all blue servers i saw got somewhere a iGPU in the CPU or on the Motherboard
+  - IIRC all server motherboards have a small GPU chip, no server CPU has an iGPU, but I might be wrong. (Epyc doesn't have iGPU, motherboards do).
+
+- [Why does this Amd Epyc motherboard (SuperMicro H11SSL-i) have a VGA out, if the cpu has no onboard graphics? It would also need a GPU card too right? : r/homelab](https://www.reddit.com/r/homelab/comments/u17mnu/why_does_this_amd_epyc_motherboard_supermicro/)
+  - Many server boards have onboard graphics. Just a small 2D chip.
+
+- ## 🌰 [Upgraded self-hosted AI server - Epyc, Supermicro, RTX3090x3, 256GB : r/LocalLLaMA _202405](https://www.reddit.com/r/LocalLLaMA/comments/1d3dh4c/upgraded_selfhosted_ai_server_epyc_supermicro/)
   - moving from AM4 to Epyc. CPU/mb/GPU/RAM/frame purchased on Ebay. 
   - CPU - AMD Epyc 7F52 CPU
   - Motherboard - Supermicro H12SSL-i
@@ -2582,12 +2900,12 @@ modified: 2022-01-16T15:52:31.293Z
 
 - Be careful with U.2s, you usually need some decent airflow to keep them cool. I would use the gpu hole to push or pull some more airflow.
 
-- ## [Built a Powerful and Silent AMD EPYC Home Server with My Kids (for a Fraction of the Price!) : r/homelab _202412](https://www.reddit.com/r/homelab/comments/1hmnnwg/built_a_powerful_and_silent_amd_epyc_home_server/)
+- ## 🌰 [Built a Powerful and Silent AMD EPYC Home Server with My Kids (for a Fraction of the Price!) : r/homelab _202412](https://www.reddit.com/r/homelab/comments/1hmnnwg/built_a_powerful_and_silent_amd_epyc_home_server/)
   - we built a beast of a home server powered by an AMD EPYC 7C13 (3rd gen).
   - CPU - AMD EPYC Milan 7C13 64C/128T 2.2GHz SP3 (100-000000335 7763 7713)	
   - Motherboard - Supermicro H12SSL-NT SP3 AMD EPYC DDR4 ECC	
   - RAM - Samsung 64GB DDR4 LRDIMM ECC x8 (512GB Total), DDR4 RAM: Delivers 130GB/sec bandwidth.
-  - Case - Fractal Design North (White/Oak)	
+  - Case - Fractal Design North Tempered Glass ATX Mid-Tower Computer Case - White/Oak: 433 x 215 x 450 mm, 41L
   - CPU Cooler - Noctua NH-U14S TR4-SP3 (Premium-Grade)	
   - PSU - 850W SFX (ATX 3.0, PCIE 5.0 Ready, 80 Plus Gold)	
   - SSD - Samsung 990 Pro 1TB (7450 MB/s Read)	
@@ -2778,6 +3096,7 @@ modified: 2022-01-16T15:52:31.293Z
     - EPYC 7003 "Milan"
     - 8 channels per socket, up to 16 DIMMs, max. 4 TiB
     - Up to PC4-25600L (DDR4-3200)
+    - [Zen 3 - Wikipedia](https://en.wikipedia.org/wiki/Zen_3)
     - [Template:AMD Epyc 7003 series - Wikipedia](https://en.wikipedia.org/wiki/Template:AMD_Epyc_7003_series)
   - 🎯 zen4(202211): uni epyc 9354P/9554p/9654p; 
     - multi epyc 9124/9174F/9224/9254/9454/9634/9654
@@ -2792,6 +3111,7 @@ modified: 2022-01-16T15:52:31.293Z
     - EPYC 4004: 16 AMD ”Zen 4” cores, 32 threads, an L3 cache of 128MB, DDR5 memory support, and 28 PCIe® 5 lanes
       - Max DDR5 Freq (MHz) (1DPC): 5200
       - EPYC 4004 is just a rebrand of the Ryzen 7000 series, designed to make it clearer about ECC support mainly.
+    - [Zen 4 - Wikipedia](https://en.wikipedia.org/wiki/Zen_4)
     - [Template:AMD Epyc 9004 Genoa - Wikipedia](https://en.wikipedia.org/wiki/Template:AMD_Epyc_9004_Genoa)
   - 🎯 zen5(202411): uni epyc 9015p/9125p/9355p/9755p
     - multi epyc 9005/9015/9115/9125/9175F/9335/9665/9755F
@@ -2814,6 +3134,9 @@ modified: 2022-01-16T15:52:31.293Z
 
 - [EPYC或线程撕裂者或XEON有没有单核性能强又廉价的U? - 知乎](https://www.zhihu.com/question/1947237447466464324)
   - 目前是看了q30h/q2t7和ms03还有256g d内存，预算刚好卡的很死，不知道有没有啥更优的选择
+
+- ## [I want a compact case. But the question is the motherboard Mini ITX there is 2 channels of RAM. 16+16 and 8+8+8+8 what is the difference in performance? : r/buildapc _202508](https://www.reddit.com/r/buildapc/comments/1msjal1/i_want_a_compact_case_but_the_question_is_the/)
+- They're both dual channel. The four module configuration has two DIMMs per channel (2DPC). That config puts more stress on the memory controller, usually leading to slower speeds or reduced stability.
 
 - ## [DDR5 2 vs 4 sticks, different speeds, same bandwidth? Confused : r/overclocking _202502](https://www.reddit.com/r/overclocking/comments/1ih0rfe/ddr5_2_vs_4_sticks_different_speeds_same/)
 - 4 sticks will still run in dual channel. So 4x sticks @3600 will always be much slower than 2x sticks @6000

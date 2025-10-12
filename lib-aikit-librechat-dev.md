@@ -53,6 +53,7 @@ modified: 2025-09-01T05:52:34.241Z
 
 - docs/knowledgebase
   - granite-docling
+  - model for data like statistics/papers
 
 - comfyui-local: ollama与comfyui结合的产品形态应该是怎样的
   - support tool config: steps, sampler, scheduleer, style-preset

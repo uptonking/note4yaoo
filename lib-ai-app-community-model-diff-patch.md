@@ -44,6 +44,23 @@ modified: 2025-10-10T02:45:45.941Z
   - Limitations
     - Cannot delete files
     - Cannot edit too many files at once (> 3 files)
+
+  - https://github.com/jlevy/chopdiff /MIT/202508/python 
+    - chopdiff is a small library of tools I've developed to make it easier to do fairly complex transformations of text documents, especially for LLM applications
+    - it lets you parse, diff, and transform text at the level of words, sentences, paragraphs, and "chunks" (paragraphs grouped in an HTML tag like a <div>). It aims to have minimal dependencies.
+    - All this is done very simply in memory, and with only regex or basic Markdown parsing to keep things simple and with few dependencies.
+    - Filter diffs: Diff two documents and only accept changes that fit a specific filter. For example, you can ask an LLM to edit a transcript, only inserting paragraph breaks but enforcing that the LLM can't do anything except insert whitespace. Or let it only edit punctuation, whitespace, and lemma variants of words. Or only change one word at a time (e.g. for spell checking).
+    - Backfill information: Match edited text against a previous version of a document (using a word-level LCS diff), then pull information from one doc to another. For example, say you have a timestamped transcript and an edited summary. You can then backfill timestamps of each paragraph into the edited text.
+    - Windowed transforms: Walk through a large document N paragraphs, N sentences, or N tokens at a time, processing the results with an LLM call, then "stitching together" the results, even if the chunks overlap.
+    - 🤔 There are full-blown Markdown and HTML parsing libs (such as Marko and BeautifulSoup) but these tend to focus specifically on fully parsing documents as parse trees. On the other end of the spectrum, there are NLP libraries (like spaCy) that do more expensive, full language parsing and sentence segmentation.
+      - This is a lightweight alternative to those approaches when you are just focusing on processing text, don't want a big dependency (like a full XML parser or NLP toolkit) 
+
+- https://github.com/kordless/gnosis-evolve/blob/main/contrib_tools/core/file_diff_editor.py
+  - Gnosis Evolve turns Claude Desktop from a passive assistant into an active developer
+  - Extend Claude's capabilities via natural language
+  - The File Diff Editor can be run separately from Gnosis Evolve! This powerful tool provides sophisticated file editing capabilities with regex support, fuzzy matching, and versioning. Perfect for precise code modifications and bulk operations.
+  - [File Diff Editor - Advanced Pattern-Based File Editing Tool](https://github.com/kordless/gnosis-evolve/blob/main/FILE_DIFF_EDITOR_HOWTO.md)
+    - The File Diff Editor v2.1.1 is a revolutionary MCP (Model Context Protocol) tool that provides advanced file editing capabilities with powerful regex support, fuzzy matching, and enterprise-grade versioning
 # discuss-stars
 - ## 
 
@@ -99,6 +116,117 @@ modified: 2025-10-10T02:45:45.941Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🚀 [Launch HN: Morph (YC S23) – Apply AI code edits at 4, 500 tokens/sec | Hacker News _202507](https://news.ycombinator.com/item?id=44490863)
+  - We’ve built a blazing-fast model for applying AI-generated code edits directly into your files at 4, 500+ tokens/sec. No more slow full-file rewrites or brittle search-and-replace hacks.
+- Morph's approach:
+  - Your agent outputs edits “lazily”, referencing unmodified lines in the existing file (ex: // ...existing code...)
+  - Morph instantly applies these edits to a file using our Fast Apply model + speculative decoding against the original file, making AI patches fast, reliable, and production-ready.
+  - This approach was pioneered by Cursor last year, but their models aren’t available as APIs—so we built Morph for developers everywhere (with a large free tier!)
+  - We have 2 Fast Apply models: morph-v3-fast - 4500+ tok/sec, and morph-v3-large - 2500+ tok/sec. These models power Fast Apply at create.xyz, databutton, continue.dev, and more!
+
+- Morph is a tool for integrating the output of other LLMs and not an LLM itself? It doesn't generate 4500 tok/sec, it can edit 4500 tok/sec?
+  - Correct, but morph is a LLM as well. In practice its basically Big LLM using small LLM as a tool call
+- It's more expensive than Gemini flash which can actually write pretty decent code (not just apply a diff). Fast AI edit application is definitely great but that's pretty expensive
+  - Morph v3 fast: Input: $1.20 / M tokens, Output $2.70 / M tokens
+  - Gemini 2.5 Flash: $0.30 / M tokens, Output $2.50 / M tokens
+  - (Source: OpenRouter)
+- Thats for 0 data retention - on the Morph website its: 0.80 /1M token input, $1.20 /1M token output. We have discounts for large volumes/reserved instances as well
+
+- Edit speed is definitely not a bottleneck for dev UX, quality is.
+- I would happily take 10 tok/sec of a correct answer instead of wasting an hour curating 4500 tok/sec throwaway answers. Benchmark performance matters 100x more than your latency.
+
+- Really impressive. I'm in the market for such a solution for our internal AI coding systems - how do you compare to the opensource https://huggingface.co/osmosis-ai/Osmosis-Apply-1.7B?
+  - You should give both a try! key difference is our models are faster and more accurate by a large margin
+
+- I’d just like to put a pitch in here for someone to do “smart rebase+merge” with AI. Now THAT would really speed up development
+  - You can do that with Claude Code. Just tell it to merge in another branch and fix the merge conflicts.
+
+- For anyone more curious about how this works, Fireworks wrote a blog post about it last year (I think): https://fireworks.ai/blog/cursor
+
+- I'm also really curious about the XML tool calls in the documentation. I have not heard of this being the norm for tools like Cursor. Is that still the case? 
+  - Its true - Cursor, Cline, and many others still use xml for tool calls. In JSON, the model needs to "focus" on escaping characters correctly while also sampling from a reduced token distribution.
+  - https://aider.chat/2024/08/14/code-in-json.html
+
+- This is what I use and it's free for anyone to use individually: https://github.com/kordless/gnosis-evolve/blob/main/contrib_tools/core/file_diff_editor.py
+
+- Is there anyway to bring this into Claude Code?
+  - Make an MCP server, and turn off the Write|Edit|MultiEdit tools?
+  - Actually - that's what this company should do. It should be an MCP server so anyone could plug it into any agent with a url and an API key.
+
+- Can't you ask these LLMs to simply output a patch file? https://man7.org/linux/man-pages/man1/patch.1.html
+  - you can - but they dont work reliably in practice. Common issues include search match fails, missing commas in replaced items (model doesnt have surround context while replacing), and a few other error cases. This issues are much worse for scattered edits across a file from real world queries (ex: make this page look nicer). Patches tend to work fine for single line or extremely focused edits though - Cursor uses s&r/patches for single line edits
+  - https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/Cursor%20Prompts/Agent%20Prompt%20v1.2.txt
+
+- How does this compare to Google Diffusion? Diffusion writes out at seemingly the speed of thought.
+  - we're quite a bit faster and specifically training for merging code edits.
+  - Google diffusion is a swing at a generalist model. Super cool work nonetheless
+
+- Is this similar to Gemini Diffusion? Thanks
+  - No, we use autoregressive llms. Diffusion models would be super interesting here. Mercury is doing some interesting work with diffusion in code gen but still too early to tell if it'll get good enough for production usage
+
+- ## [Does Claude Code use diff-based editing like Cline, or does it have a specialized model like Cursor? : r/ClaudeAI _202506](https://www.reddit.com/r/ClaudeAI/comments/1lhouua/does_claude_code_use_diffbased_editing_like_cline/)
+- The built in tool uses the line number then a search replace based on exact match. Plenty of MCP options if you want diffs.
+  - Install `rg (ripgrep)` and tell it to use that, it's much faster than grep and it uses it often.
+  - I also have `ast-grep` which is much more powerful than rg and it also knows how to use it, but it requires a more complex setup and instructions... but can be worth it on a large codebase.
+
+- ## [Why can't Cline edit a file and instead rewrites all lines? : r/CLine _202503](https://www.reddit.com/r/CLine/comments/1jgwao7/why_cant_cline_edit_a_file_and_instead_rewrites/)
+  - When I ask Claude to add just one or two lines of code, it rewrites the entire thing instead of just adding those few lines , is that normal and any way to fix it?
+
+- CLINE works like this:
+  - It instructs Claude to use the `replace-in-file` tool, which is the efficient one.
+  - When Claude tells CLINE to make a change using this tool, CLINE makes the change and then compares the previous / current versions to make sure there were changes.
+  - If CLINE detects no changes, then CLINE assumes something went wrong and tells Claude again to make whatever change was needed and use the `write-file` tool instead, which is more expensive indeed, but then again - we want the task delivered.
+
+- I noticed Cline would do this when my files were getting too large, like over 500 lines. You have to be careful when it rewrites entire files because sometimes it overwrites important code and breaks your app. Whenever it starts rewriting, I'll stop it and tell it to use `replace_in_file` tool instead.
+
+- Cline does make pointed edits like you are describing, but not every time.
+  - Basically -- making those pointed edits is more complicated under the hood, and Cline will often default to writing the whole file (which is actually much more accurate).
+  - We're still improving on this process as it's one of the core tenets of AI coding.
+
+- I keep getting my files cut off randomly at 834 lines or so
+  - You're hitting an output cap on the model. Thats not Cline doing it, but the underlying LLM running out of output tokens.
+- If you use Claude 3.7 with extended output on you can generate up to 64k tokens.
+
+- ## [Roo Code 3.4 with NEW Lightning Fast DIFF Edits : r/ChatGPTCoding _202501](https://www.reddit.com/r/ChatGPTCoding/comments/1ibsich/roo_code_34_with_new_lightning_fast_diff_edits/)
+- Are they doing what aider does?
+  - That is a very broad question. Yes it is doing a search and replace like they are doing but they do so much differently. Aider is truly an amazing piece of software.
+
+- You know what I like best about roo is there is less issue with truncation. Cline will delete huge blocks of code and I have the manually move the valid code over with copy paste because the new code Cline made literally is smack dab in the middle of a current code block. How were you able to figure this out when Cline people still haven't figured that out? 
+  - The trick Roo uses is to ask the model to both write out the full content of the file AND include the total number of lines in the file. They’re not perfect at counting lines, but in cases where the number of lines predicted versus the number of lines returned differ significantly, we assume the write was truncated.
+
+- get the ai to generate a patchfile and then apply the patch using old fashioned patch application - im not too sure how to do it in vscode but intellij has patch applier as a shortcut
+
+- my Roo Code is still very slow, just like the one on the left. Any idea when we’ll get the lightning-fast version? Adding the following line to the global rules fixed the issue for me: "Prefer using the apply_diff tool to make changes.". I wonder why it defaults to slow line-by-line editing without this line? 
+  - It does not always default to that way without those lines but it depends on the models. For some reason it does sometimes the model itself choose write to file over apply diff and we're working on a fix for that.
+
+- ## [🚀 Introducing Fast Apply - Replicate Cursor's Instant Apply model : r/LocalLLaMA _202410](https://www.reddit.com/r/LocalLLaMA/comments/1ga25gj/introducing_fast_apply_replicate_cursors_instant/)
+- 
+- 
+- 
+- 
+
+- ## [I made LLMs respond with diff patches rather than standard code blocks and the result is simply amazing! : r/Jetbrains _202506](https://www.reddit.com/r/Jetbrains/comments/1l1r0o7/i_made_llms_respond_with_diff_patches_rather_than/)
+- I've been developing a coding assistant called ProxyAI (previously CodeGPT), and I wanted to experiment with an idea where LLM is instructed to produce diffs as opposed to regular code blocks, which ProxyAI then applies directly to your project.
+
+- All other solutions done this and better. Why this one?
+
+- ## [Looking for diffing tools : r/LocalLLaMA _202412](https://www.reddit.com/r/LocalLLaMA/comments/1hfzrv9/looking_for_diffing_tools/)
+  - I’m curious how tools like cursor and Lovable do their code diffing where the LLM suggests a change to some code and when approved it only changes the specific snippet rather than rewriting the full code file.
+
+- One option was posted here: Introducing Fast Apply - Replicate Cursor's Instant Apply model
+
+- Prompt engineering and Formatting, lots and lots of formatting. And then a “parser” of some sorts that will decode your custom formatting syntax into the patched changes into the file. Of course this means that whatever method you use to modify a file you need to be able to extract the parameters/data from your formatted content.
+  - https://github.com/mckaywrigley/o1-xml-parser
+
+- 💡 I made an open source parallel code editor tool (think codex but open source) recently, and I found that unified diffs + Google's diff-match-patch (this locally applies a diff using the line numbers and a fuzzy search... which helps when the LLM messes up line numbers) works well. You can also have the LLM output a full new file. In practice I expose both options to the LLM and carefully prompt it on when to use each.
+  - You can see the prompts I use for this here: https://github.com/cairn-dev/cairn
+
 - ## 💡 [advise on agent text editing : r/LLMDevs _202509](https://www.reddit.com/r/LLMDevs/comments/1nd330j/advise_on_agent_text_editing/)
   - I’m using ProseMirror (TipTap) to build an LLM edit feature. 
   - The hardest part is handling diff and preview in rich text (Markdown/HTML). 
@@ -111,6 +239,52 @@ modified: 2025-10-10T02:45:45.941Z
 - ## [GLM-4.6 and other models tested on diff edits - data from millions of Cline operations : r/ChatGPTCoding _202510](https://www.reddit.com/r/ChatGPTCoding/comments/1nwj7zq/glm46_and_other_models_tested_on_diff_edits_data/)
   - If you're not familiar with what "diff edits" are, it's when an LLM needs to modify existing code rather than write from scratch. 
   - An important caveat is that diff edits aren't everything. Models might excel at other tasks like debugging, explaining code, or architectural decisions. This is just one metric we can measure at scale.
+
+- ## [[D] Better system prompt for generating coding diffs? : r/ChatGPTCoding _202501](https://www.reddit.com/r/ChatGPTCoding/comments/1ht88xx/d_better_system_prompt_for_generating_coding_diffs/)
+- many projects require repeated modification of a python file.
+  - Generating python code in unified diff format seems to be pretty crappy in gemini, and marginally better in claude.
+
+- Have you checked out Aider? It uses several diff formats for applying patches to files. It’s open-source, so you can review the system prompts. Additionally, their blog provides statistics on how different models perform with various formats.
+
+- Generating diffs are hard directly from an LLM given an un-deterministic nature of output unless they have the capability to run the code.
+  - 💡 What I found working really effective is to let an LLM generate the full implementation of the smallest understandable unit of code. It could be a function or class depending on your code structure. Then you could apply it yourself or generate diff if required.
+- Please note that this works very well with Python so please adapt if any change is required for a different language.
+
+```prompt
+As instructed before
+If a change is required in an existing code.
+Identify all the methods where change is required.
+Then you should display the output like this.
+List all imports first if needed
+Then For each method
+Display the method name along with the class name if that method belongs to a class.
+Display FULL source code of the method even if the change is miniscule.
+
+If the method belongs to a class then make sure to indent it to help the user paste it directly in the IDE
+
+Do not add any explanation at the end. Keep it as concise as possible and always answer in English
+
+Example When Imports are not needed and Change is in a method belonging to a class
+
+Class: Foo
+Method: Bar
+
+"""
+Code
+"""
+
+Example When Imports are not needed and Change is in a method which doesn't belong to a class
+
+Class: None
+Method: Bar
+
+"""
+Code
+"""
+
+```
+
+- Here is a cool nugget from the aider codebase u/temofey and others: https://github.com/Aider-AI/aider/blob/37ad4758a1bca2ce5001cf7212c2d7ff49b49845/aider/website/docs/unified-diffs.md?plain=1#L213C16-L213C31 But I am unable to find where in the code base the system prompt actually encourages such a separation of +'s and -'s so well.
 
 - ## [[D] Best way to make LLMs return a valid code diff : r/MachineLearning _202502](https://www.reddit.com/r/MachineLearning/comments/1iklsoo/d_best_way_to_make_llms_return_a_valid_code_diff/)
 - Counting is hard for LLMs. You might have more success asking for the code that's on the line where the changes start, and the code that is on the line where the replacements end.
@@ -292,7 +466,7 @@ modified: 2025-10-10T02:45:45.941Z
 
 - adding line numbers on each line is one of the ideas we've been considering trying
 
-- Aider actually prompts the LLM to use search/replace blocks rather than actual diffs. And then has a bunch of regex, fuzzy search, indent fixing etc code to handle inconsistent respnses.
+- Aider actually prompts the LLM to use search/replace blocks rather than actual diffs. And then has a bunch of regex, fuzzy search, indent fixing etc code to handle inconsistent responses.
   - Aider's author has a bunch of benchmarks and found this to work best with modern models.
 - What we found was that error handling on the client side was also very important. There's a bunch of that in Aider too for inspiration. Fuzzy search, indent fixing, that kind of stuff.
   - And also just to clarify, aider landed on search/replace blocks for gpt-4o and claude rather than actual diffs. We followed suit. And then we showed those in a diff UI client side
@@ -315,7 +489,9 @@ modified: 2025-10-10T02:45:45.941Z
   - What are some potential pitfalls or edge cases I should be aware of?
   - Has anyone implemented something similar? What were your experiences?
 
-- Applying instructions/changes to an existing codebase is by far the hardest part of making something like Cursor. The Cursor guys notoriously trained their own model for this. That's why you can't use your own API keys to have the Apply button work in Cursor.
+- Applying instructions/changes to an existing codebase is by far the hardest part of making something like Cursor. The Cursor guys notoriously trained their own model for this. That's why you can't use your own API keys to have the Apply button work in Cursor. Using Claude/ChatGPT for complex instructions and multiple code edits in one pass just doesn't work.
+  - I know because I'm making a Cursor competitor myself and tried that. My first iteration of applying changes used this prompt to formalize changes. It did not work well.
+  - prompt  https://pastebin.com/2fx4miv0
   - I never really tried using actual diff formats like you suggest - I saw Aider did that and their Apply Changes results weren't great either.
   - My latest version I'm trying to break up code into 'top level scopes' using `Treesitter` AST parser, and match the first line of those top level scopes to lines in files in the existing codebase. Once I have those I make sliding windows to tell the LLM just focus on changing this code in this file in this window keeping everything else in this snippet working but making the appropriate changes. But breaking up changes is rough - there are so many unexpected cases of what the LLM gives you, I've been writing edge cases for months now. It's a rough problem. I don't think anyone is getting great results for complex diffs - even Cursor messes up often and they have a team of MIT grads working full-time on this.
 
@@ -324,6 +500,9 @@ modified: 2025-10-10T02:45:45.941Z
   - It either ignored part of the instructions that it needed to follow or it generated erroneous diff. 
   - Asking to get the code right, and then, making that code a diff, was better. Trying to use chain of thought to keep it in one prompt didn't make a difference, as it would say it was gonna do x, y, z... But then suck at some of the steps.
   - With Claude, giving info in XML tags worked very well (to classify parts of the prompt as "original code" "instructions" and so). My attempts to use JSON and function calling were less successful, I felt it "dumbed down" the coding part when asking for that. But your mileage(用处, 好处) may vary and I may have been doing something wrong. In another project the JSON/function calling works without issues (but what I ask sonnet 3.5 is simpler, not much "thinking" needed).
+  
+  
+
 # discuss-edit-format/protocol ⚖️
 - ## 
 
@@ -335,7 +514,78 @@ modified: 2025-10-10T02:45:45.941Z
 
 - ## 
 
-- ## 
+- ## ⚖️ [DiffX – Next-Generation Extensible Diff Format | Hacker News _202506](https://news.ycombinator.com/item?id=44176737)
+- I really don’t like the highly hierarchical format, that there’s a “..meta” and a “…meta” somewhere else. I can imagine we want to annotate the whole diff, each file and each chunk. That’s a total of 3 levels of depth. Let’s just give them distinct names and not go full yaml with a format for once?
+  - This helps with readability (if one of the “meta” blocks is missing, for example, I could still tell at a glance what it refers to without counting dots), and is less error prone (it make little sense to me why the metadata associated with a whole diff should have the same fields as the metadata of a file).
+  - Furthermore, why do we have two formats? Json and key=value pairs? Having a single structure makes it much easier to write parsers or integrate with existing tooling (grep, sed or jq - but not both at once)
+- In the early drafts, we played with a number of approaches for the structure. Things like "commit-meta", etc. In the end, we broke it down into `#<section_level><section_type>` , just to simplify the parsing requirements. Every meta block is a meta block, and knowing what section level you're supposed to be in and comparing to what section level you get become a matter of "count the dots".
+  - The header formats are meant to be very simple key/value pairs that are known by the parser, and not free-form bits of metadata. That's what the "meta" blocks are for. The parsing rules for the header are intentionally very simple
+  - JSON was chosen after a lot of discussion between us and outside parties and after experimentation with other grammars. The header for a meta block can specify a format used to serialize the data, in case down the road something supplants JSON in a meaningful way. We didn't want to box ourselves in, but we also don't want to just let any format sit in there
+
+- diffs are inherently splittable. I can grab half of a diff and apply it. How does your format influence that? I guess it breaks because I would need to copy the preamble, then skip 20 lines, then copy the block I need?
+  - If your goal is to simply feed to GNU patch (or similar), you can still split it. This extra data is in the Unified Diff "garbage" areas, so they'll be ignored anyway (so long as they don't conflict, and we take care to ensure that in our recommendations on encoding).
+  - If your goal is to split into two DiffX files, it does become more complicated in that you'd need to re-add the leading headers.
+  - That said, not all diff formats used in the wild can be split and still retain all metadata. Mercurial diffs, for example, have a header that must be present at the top to indicate parent commit information. You can remove that and still feed to GNU patch, but Mercurial (or tools supporting the format) will no longer have the information on the parent commit.
+  
+
+- A staggering amount of unnecessary and counterproductive scope creep in just 4 items:
+  - A single diff can’t represent a list of commits
+  - There’s no standard way to represent binary patches
+  - Diffs don’t know about text encodings (which is more of a problem than you might think)
+  - Diffs don’t have any standard format for arbitrary metadata, so everyone implements it their own way.
+  - Of these, only a notation for binary patches would be a reasonable generalization of diff files. Everything else is the internal data structure or protocol of some specific revision control system, only exchanged between its clients and servers and backups.
+
+- 💡 The patch format addresses all of these issues, no? https://git-scm.com/docs/git-format-patch
+  - It might solve it for git, but this looks like something the Review Board team came up with, and they have to integrate with many other version control systems like SVN, CVS, Perforce..etc
+  - Seems like this is meant to address supporting many different version control systems with a single format.
+
+- So, self-delimitered format (JSON) is embedded in format with lengths? I change one space in JSON, JSOM is valid, whole DiffX file is invalid.
+  - Format looks very clunky and messy, to be honest, mixture of self-invented headers and JSON payloads, strange structure (without comments here I will not notice different number of dots in `.meta`), need essentialy two parsers.
+
+- One of my issues that remains unsolved with diff tools is they are dependent on new line attributes. Reviewing changes on a long line (like compressed json or long array) is too difficult.
+  - Absolutely agree. I think there's a lot of avenues to explore for better diff representations for structured data (which would also be great for ASTs, something we've been thinking about).
+  - This format is meant to be an extension of Unified Diffs (much like the diff formats of most SCMs), and not something entirely new and focusing on other areas. But if more specific diff formats become widespread, we could directly support encoding them within DiffX as well, as we do for binary diffs formats.
+  
+  
+
+- 💡 git does have word diffing if you need something more granular than line diffing, the default delimiter being whitespace.
+  - I didnt' realize that. that seems pretty close to what I want, but the git tools (cli or Github Desktop) still print the entire line.
+  - For line diffing, it clips to only show the ~3 line before and after the change. But the word diff still prints the entire line and you have to scroll to find the change in the line wrapping.
+- You can use `delta` as a diff pager and it includes word-diff-syntax-highlight.
+
+  
+  
+
+- The most general and unambiguous way to represent a diff is to just include the contents of the two files. It's more data, but that's rarely an issue these days. There's really no need to ever transmit a diff and deal with all the format vagaries when you can just send the two files.
+  - A diff between two files isn’t unique, meaning there can be better or worse diffs between the same two versions of a file, depending on the file format and possibly the purpose of the diff. Similarly, there can be different strategies for applying a diff as a patch.
+  - Having a diff format allows decoupling the implementation of diff creation from the implementation of diff application, turning a potential n*m problem into an n+m problem.
+  
+  
+
+- difftastic: https://difftastic.wilfred.me.uk/ uses tree-sitter for better diff-info, and is, imho, superior to this.
+  - difftastic is great! This isn't a tool for viewing changes to files or to ASTs. 
+  - This is a way of being able to generate a single diff file for processing or patching that addresses the kinds of problems we've encountered in over 20 years of building diff parsing tooling and working with over a dozen SCMs with varying levels of completeness or brokenness of bespoke custom diff formats. 
+  - It's not an end user tool, but a useful format for tools like code review products to use.
+- This looks great. The diff is quite inefficient for patching with the C preprocessor branches.
+  - Since it patches the code, looking at its tree structure, is the diff human readable, and can it be edited directly? This is a major contributor to why I opt for sed for patching.
+
+- One of the interesting point of diff files is that all commands are on single lines. You can easily parse or manipulate with simple shell tools just stripping lines out.
+
+- > They don’t standardize encodings, revisions, metadata, or even how filenames or paths are represented!
+  - Sure, but some unified diffs, e.g. the ones produced by git, are quite regular. It's also common practice to express diffs as RFC822 email messages (often because they come that way), with headers and descriptive text.
+  - I can't see DiffX getting traction. It's too alien. Too divorced from present practice, no matter how theoretically robust. It's like XHTML2.
+  
+
+- They could have built on top of git’s header syntax for metadata (which itself is based on email headers) instead of reinventing it in a new flavour of pseudo-JSON.
+
+- For stuff like commit histories or complex changes, isn't the real power in the tools around the diff (think Git itself, or code review platforms) rather than trying to cram everything into one super-format?
+  - It is. However, first the tools need to be able to grab the necessary information from the diff to, say, locate that file or its metadata in a repository.
+
+- This is trying to do multiple things (commit info & file diff) in one. Not a good idea. Commit info should live in the repo metadata (no matter which form this takes), and diff should be its own thing.
+  - The repository metadata absolutely should own the commit information.
+  - Diff files are there to represent a delta state of the repository, a difference between a range of changes. Those may be one or more commits, or one more changes across individual files (not all SCMs manage state in terms of atomic commits). File changes, file attribute changes, SCM-specific metadata changes, and commit history information.
+  - That delta state should be able to be applied to another tree in order to get the same end result. This is what diff files are ultimately there for.
+  - Git diffs do this today, and they do it well (but they're pretty Git-specific). Many SCMs (and there are a lot of them) don't include a format on that level, or a format at all. Hence DiffX.
 
 - ## JetBrains is adopting ACP.
 - https://x.com/zeddotdev/status/1975241285796552816
@@ -434,7 +684,48 @@ modified: 2025-10-10T02:45:45.941Z
 
 - ## 
 
-- ## 
+- ## 🆚 [Unified versus Split Diff | Hacker News _202310](https://news.ycombinator.com/item?id=37995155)
+- A third (fourth?) option worth mentioning here is difftastic, which uses "structural" diffing (as opposed to line diffing) for more granular diff highlighting.
+- A fourth (fifth?) option worth mentioning is patdiff: https://opensource.janestreet.com/patdiff/ From what I remember, it sometimes (35%) made diffs easier to read, usually (60%) made no difference, and rarely (5%) made them harder to read. The only reason I stopped using it was because I started using magit for git diffs.
+  - Based on Bram Cohen’s patience diff algorithm, patdiff is optimized for diffing code and config files.
+  - Patdiff includes both an OCaml library (Patdiff_lib) as well as a command-line tool (patdiff).
+  - Word-level refinement: Rather than displaying a small change to a line as a wholesale removal and addition of that line, patdiff shows the word-level diff of that line.
+  - Recursive diffing of directories
+  - Whitespace-aware diffing
+- I agree that the patience diff algorithm generally produces better results, but you don’t need the patdiff tool for that. You can configure Git’s own diffs to use patience
+  - patdiff also provides word-level diffing. You could instead get that feature with `git diff --word-diff` or Delta (https://github.com/dandavison/delta).
+  
+- Git doesn't store diffs on logical level. Git operates on snapshots of trees. Commit is not "a collection of changes", it's a snapshot of a tree with attached predecessor of it.
+  - Then the another layer (which can be git, but also can be any other tool, adding custom diff tool to git is very easy) uses that to generate diffs.
+  - There is zero stopping anyone from adding contextual diffs to Git. Just ask it for content of both commits and feed it to the algorithm.
+  - Yes, git underneath stores data as diffs but they are only vaguely related to logical structure of commits
+- And that's why we call that lower level compression trick "delta", not "diff".
+
+  
+  
+- Wonder if something like that can be used to make git cleverer about merges for example.
+  - Git’s merge algorithm looks at three versions of the code: the two branch tips being merged, and their common ancestor. It might be better at resolving conflicts if it looked at some of the intermediate commits as well, but I don’t know of anything that does so.
+- Merge part isn't pluggable like that IIRC. Would be interesting if that was given stable interface, then supposed "smart merge" tool could iterate with few ways to merge code while running tests to check which one produces least/no errors
+
+  
+
+- ediff in emacs does this. Refine is what highlights the words that are different.
+
+- Meld works pretty well for these use cases. https://meldmerge.org/
+- A honorable mention is also https://kdiff3.sourceforge.net/ which has a lot of nice views.
+  - https://invent.kde.org/sdk/kdiff3
+- I often hear KDiff3 recommended in these cases. There are many graphical diff visualizers. I often use the ediff functions in Emacs.
+
+- Looks a lot like FileMerge, which comes with the Apple developer tools.
+
+- For me, it's always unified diff if i'm making changes to entire blocks of code, but split, if it's just parts of it. Easier to read, in my opinion
+- In my experience unified diff is good for small changes. Split diff like meld is good for many changes in a long file. Many diffs in a long long file, you should not have such a file.
+
+- What the author wants is git blame with highlights. IntelliJ does this very good. On the margin to your left you can see the age of each line. Recent changes - the one you are reviewing - will be be bright white, while older proven code more faded. All inside the already powerful editor you need to navigate bigger pieces of code. 
+  - Except that will not show you removed lines. Forget it, just use the diff feature.
+  
+  
+- The only real solution to this is "avoid big diffs at all cost". This is why the industry as a whole has mostly dropped git flow and moved back to trunk based development.
 
 - ## [Diff Models – A New Way to Edit Code | Hacker News _202301](https://news.ycombinator.com/item?id=34556688)
 - From the safety perspective (may get important soon), it is perhaps a very bad idea to allow easy execution/injection of arbitrary code into random places with little review.
