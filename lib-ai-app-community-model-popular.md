@@ -27,6 +27,8 @@ modified: 2025-09-16T19:59:57.856Z
   - [UGI Leaderboard](https://huggingface.co/spaces/DontPlanToEnd/UGI-Leaderboard)
   - https://huggingface.co/open-llm-leaderboard /archived
   - [Find a leaderboard](https://huggingface.co/spaces/OpenEvals/find-a-leaderboard)
+  - [SuperCLUE中文大模型测评基准-AI评测榜单](https://www.superclueai.com/)
+  - [CLUE中文语言理解基准测评](https://www.cluebenchmarks.com/)
 # model-usage-xp
 - models-comparison
   - 🤔 LMs are tools. Describe your use cases.
@@ -81,6 +83,7 @@ modified: 2025-09-16T19:59:57.856Z
   - 在多轮聊天时，输出内容也会逐渐变长?
   - 输出html页面时能添加复杂的svg代码，形状类图标的位置能准确生成svg
   - 生成的html页面风格有点tailwind，也有点bootstrap
+  - 生成的slider/carousel比qwen3更准确
 
 - glm-z1 👀 /思考非常久/不擅长代码
   - z1会think5-15min，think不支持disable，输出内容的长度会比glm4多20行左右，多一些外部链接，多用很多表格，质量较好
@@ -113,6 +116,7 @@ modified: 2025-09-16T19:59:57.856Z
 
 - kat-dev-32B
   - 页面简洁
+  - 比qwen3更擅长样式、能显示部分图标
   - 页面不是典型的tailwind风格，风格有点陈旧
   - 不擅长显示外部图片
   - 不擅长生成形状类图标，经常生成重复图标，有时会缺失部分图标

@@ -623,7 +623,7 @@ modified: 2022-01-16T15:52:31.293Z
 - I feel like this shouldn't require too much special consideration. I have a standard mid-tower case and it fits 2 3090s in it just fine.
 
 - If you can afford it, phanteks enthoo pro 2 server edition is amazing. Internal fan bracket lets you direct air onto the gpus. My 2x3090s stay below 30 C at idle, and never go above 70 on load.
-  - 24 x 56 x 58
+  - 24 x 56 x 58, 77L
 
 - I can just barely fit 3 MSI 3090s in my Corsair 7000D Airflow, 2 horizontal and one vertical with riser. Tons of fans.
   - 24 x 55 x 60
@@ -2441,6 +2441,135 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
+- ## [Is the difference between CL28 and CL30 6000MHz RAM noticable? : r/buildapc _202506x](https://www.reddit.com/r/buildapc/comments/1lo5iu2/is_the_difference_between_cl28_and_cl30_6000mhz/)
+  - And is the difference worth an additional 20 euros?
+
+- Nope, definitely not worth that amount. Just stick with 6000mhz CL30.
+
+- You get a couple more FPS at most, not worth the 20 euros. Spend that money on a game with the current Steam summer sales instead.
+
+- It depends on the game engine design too. Sometimes it does and sometimes not so much. As that video mentions, it’s much less relevant on x3d CPUs. Extra cpu cache hides latency issues with ram for some workloads.
+  - If you don’t run x3d parts or do an Intel build, ram latency matters a lot more
+
+- Not really but will be slightly faster in a few games. 6000/30 is sweet spot according to AMD too. Cheap and a nobrainer for most people.
+- 6400/28 or even 26 might give you a few percent however 6000/30 and 28 is pretty much the same.
+- If used with a X3D CPU the memory is even less important. Don't overpay on memory!
+
+- ## [贵的机箱和便宜的机箱，在使用体验上到底有多大区别？ - 知乎](https://www.zhihu.com/question/589948503)
+- 真正好用的机箱，往往不算非常贵，其实是“[Silver Bullet]”级别的设计，假如题主需要个非常能“装”的机箱，那么无脑推荐追风者PK620，仅仅699的[E-AT]机箱，超级能装，比什么1499的酷冷H500M，两千多块的酷冷C700M都能装。
+- 贵的机箱和便宜的机箱往往在功能方面区别不大，设计这个东西，不是简单用钱就能买到的。在机箱上花更多钱买到的一般是闪亮的钢化玻璃侧透，阳极氧化彩色铝合金外壳，RGB灯板等等并不是机箱内涵的主要成分。炫彩透亮的海景房，雪景房机箱。但是这不代表使用体验优秀。
+
+- 一般来说200左右及以内的机箱撑死了就是个样子货。主要作用是把零件组合成一个箱子方便你搬走。
+  - 用料实在太差。铁皮薄，塑料基本上都是二次料，脆的一批而且极易老化，接口质量差，这些大家可能都在说。不重复。
+  - 基础结构设计不合理。比如[显卡] 装好后，[HDMI] 会把接口挡一半；背板空间狭小走不了大线；前面板线跳线长不够只能斜拉飞线（往往还不是全黑线）；等等类似的情况。太常见了。
+  - 公差大。这个装机的人才能体会到……如果你玩模型的话就会知道一个东西叫做“组合度”，200左右的机箱基本都有这个毛病。从内到外的那种。你会发现主板上螺丝的时候螺丝孔位都对不上，需要稍微用一点点力才能把螺丝钻进去。
+- 如果你预算再高一点，能提到500左右，一般能在上面1-3中改善或者解决一部分
+  - 使用起来说实话，绝大多数人四五百的机箱就可以了。到这个价位，做工用料——尤其是接口和开关的质量基本就靠谱了。
+- 更高价格的机箱更多的是给你更好的外形和功能，在“满足使用需求”方面没有什么更大的优势。
+  - 静音全塔
+  - 有说法是静音箱比侧透箱的电磁屏蔽能力要好一些。但实际上使用起来没有收集到什么肉眼可见的差异。
+
+- 一般来说200左右及以内的机箱撑死了就是个样子货。这句话放在以前我高低给你举例反驳一下，现在反驳不了
+  - 自从开始流行侧透之后基本就全是一天比一天烂，所以我才放心说这话的
+
+- 大的安装的时候很方便，小机箱要是机器要维修故障了你会想砸了它
+  - 所以不是特殊需求我都推荐买全塔机箱，或者上面或者前面能拆开的中塔
+
+- ## [机械大师C34 Pro机箱好用吗？缺点是什么？ - 知乎](https://zhuanlan.zhihu.com/p/642308682)
+- 机箱使用了模块化设计，无论是上置电源还是下置电源，直插显卡还是竖装显卡，我们只需调节相应的模块即可，对硬件的包容性极高。
+  - 比如尾部的7个PCIe槽位设计，中间的第2与3挡板是可以拆卸的，然后通过移动来实现ATX/MATX主板规格的转换。
+
+- 在设计细节上，机箱最大可支持420mm显卡，让我后续在升级时也有了一定的选择。并且自带显卡支撑架设计，不必担心显卡太长会产生变形。不过显卡长度超过336mm的话，电源就不能下置安装。
+
+- 作为一款适合摆放在桌面的机箱，其I/O面板放在了右下角处。从上至下依次为两个USB3.0 TypeA口、Type-C插口、3.5mm耳麦二合一孔、电源开关（内置白色LED）。
+
+- 机械大师C34 Pro预留有2个3.5/2.5寸硬盘支架以及后置2个2.5寸固盘位，达成共计4个硬盘位的支持，满足不同用户的需求。考虑到我现在多是使用M.2 SSD固态硬盘，机箱通常也就只会用到后置的2.5寸硬盘位而已。
+
+- 机箱底部预留了两个散热风扇安装位，可以进一步加速机箱内部的热量排出。
+
+- 机箱背面拥有18mm理线空间，并且配备了穿线孔，线材走向不用过于拘谨，利于理线。
+
+- C34 Pro是我见过配件方面最走心的机箱。第一次见螺丝钉自带配件盒，还附赠了磁吸螺丝刀、ATX/MATX切换组件以及防尘网。至于便携提手我并没有安装到机箱上，因为装入电源和显卡后的整体重量太大，单手提拿不动。
+
+- [【方糖机械大师C34 Pro AIR版参数】方糖机械大师 C34 Pro AIR版机箱参数 -ZOL中关村在线](https://detail.zol.com.cn/2114/2113024/param.shtml)
+  - 429×205×349mm, 30.7L
+  - 台式机箱（中塔），吸音降噪机箱，玻璃侧透机箱
+  - 适用主板	E-ATX（加强型），ATX（标准型），M-ATX（紧凑型）
+  - 显卡限长	420mm
+  - CPU散热器限高	165mm
+  - USB接口	2×USB3.0接口，1×USB3.1 Type-C接口纠
+  - 至多支持：8×120mm风扇位
+  - 支持：360/280mm水冷排
+  - 我的atx的板子加170长的大电源加7900xtx超白金的显卡都塞进去了，而且用电源自带的线不带定制线也可以塞下。整个机箱大部分地方都可以卸掉螺丝拆下来，大大降低了装机难度。就是防尘网的孔太大了，感觉挡不住灰尘额。
+  - 内部一个大双塔完全没问题
+  - 机箱比较紧凑，就是冷排水管只有走右边，建议左边开孔稍微宽一点，其他还是很完美
+  - 什么是万能机箱，这就是万能机箱，机箱永远的神，各种组装卡卡一弄很酷炫很方便便捷，ATX也能很小巧，推荐购买，物超所值，散热也很好
+  - 34pro长一点比34好装多了，还能走下背线你敢信？
+  - 可装下 ATX 主板 + 360 水冷 + 超长显卡的方案挺实用。
+  - 这是我目前看到的，能装下atx主板和4080显卡的最小机箱
+  - 这款机箱已经看了好久，因为贵，没舍得买，买了D40。无奈D40只支持240水冷，夹了汉堡也压不住13900f。还是选了这款，再折腾一遍
+  - 适配vertex+4090公版+360水这种组合
+
+- 🤔 [C34Pro装机兼容性完美，CS2终于跑满360决赛圈TK2和C34Pro，想到放桌下大部分时间看不到，对光污染也不感冒，选了更冷峻硬朗的机械大师，机箱兼容性吹爆，尺寸在ATX机箱中绝对算极限压缩hz - 小红书](https://www.xiaohongshu.com/explore/684bae9a000000002300fe85?xsec_token=ABDPZc4kz4GSpMhS22KwCsX8BjChgpSLV5ZsDCfogMlOE=&xsec_source=pc_search&source=web_search_result_notes)
+  - 决赛圈TK2和C34Pro，想到放桌下大部分时间看不到，对光污染也不感冒，选了更冷峻硬朗的机械大师，机箱兼容性吹爆，尺寸在ATX机箱中绝对算极限压缩
+  - 主板：B850战斧导弹大板，黑色机甲风配魔爪绿LOGO点缀恰到好处，遇到有线网连不上的通病
+  - 显卡：瞄准5070ti，7.3K买到ADOC也算好价就当缘分
+  - CPU：9800X3D对CS、吃鸡、魔兽三栖玩家致命吸引，叠券后板U套4.6K入手
+  - 固态：三星990Pro 5090D富哥装机必选闭眼入
+  - 电源：AMP GH850W颜值搭调，价格合适，蟒纹线和自带线梳脱颖而出
+  - 风扇：联力猫头鹰超预算，龙鳞光效清爽，圆角矩形有辨识度，价格适中，两点不足：①光效不够均匀（LED少或匀光板不够厚）②噪音大带耳机都听得到，不过我能忍受
+  - 水冷：5.31钛钽首发新品LG600，3.95英寸大屏出彩，差点装不下，C34Pro又是刚好兼容，屏幕跟上方风扇就1~2mm间隙
+
+- ## 📌 [有哪些巨好看的机箱？ 机械大师 - 知乎](https://www.zhihu.com/question/347824157/answer/1841037981)
+- 机械大师C系列全金属机箱了解一下
+- 目前机械大师C系列有C24、C26、C28、C34一共四款机箱，这四款机箱由小到大，涵盖了从ITX超小体积到最高ATX双水冷的性能支持。
+  - 不同的尺寸，统一的设计思路。全系列采用家族式设计，除了兼容硬件的不同和多变的用法外，框架材质、设计思路均保持高度的一致。
+  - 全系列均采用可拆卸外壳与主体框架分离式设计
+  - 因外壳的可更换替代性，所以延伸出了更多的的色彩方案
+  - 为了增加便携性和更好更方便的移动机箱，在机箱的顶部均设置了一个铝合金的可拆卸式提手
+  - 适应各类电源的不同朝向，电源位置均设计了不同大小的可变角度电源支架
+  - 机箱除了标配的金属前面板和玻璃侧透外，还可以选择更换为带散热开孔的铝侧板和斜开孔的AIR前面板
+- C24小方糖 9.9L
+  - C24不仅是整个C系列中尺寸最小的一款，也是便携性最好的。实测大一点的的非分仓式双肩包都可以放的下。
+  - 249 x 249 x 155 mm, 9.6L
+  - 支持130mm的塔式散热，还包括显卡直插、SFX电源支持和多硬盘多风扇位的支持。不仅能保证储存空间，还能最大限度的构建有效散热风道
+- C26声波 13.3L
+  - 支持M-ATX主板，还增加了显卡选择上的宽容度。
+  - 并且在搭配水冷硬盘拓展支架时，使用ITX主板可以安装更多的硬盘；还可以安装240水冷，实现更强散热。
+  - C26 Plus 15.1L
+- C28 脉冲/小视界 17.9L
+  - 243 x 284 x 185 mm, 12.7L
+  - C28是C系列里可手提的M-ATX机箱中体积最大的一款，但即便这样，在和市面上其他品牌的部分ITX机箱或者是紧凑型的M-ATX机箱比，C28的体积也是小的多
+  - 可以在顶部和底部支持安装240水冷，即使使用风冷散热，C28最高也可支持到162MM的塔式风冷散热，丝毫不妥协散热的规格
+  - 335mm的显卡长度和高塔散热的支持，保证了旗舰级性能的稳定释放
+- C34视界 22.8L
+  - 342 x 342 x 185 mm, 21.6L
+  - C34是整个C系列中最大的存在，也是唯一一个标配没有带提手的型号，因为他相较与另外三款机箱，装满后会比较重
+- [C34 Pro](http://www.m-master.cn/pd.jsp?id=22) 30.8L
+  - 429mm x205mm x349mm, 30.6L
+  - 显卡支持 420mm以内
+  - 主板支持 ATX/EATX/MATX/ITX
+  - 散热支持 165mm风冷/360水冷/280水冷
+  - 电源支持 ATX(200mm长以内）
+  - 2.5寸硬盘位 至多4个
+  - 3.5寸硬盘位 至多2个
+  - 净重6.2KG，支持ITX、MATX、ATX和EATX主板，水冷也能安装360尺寸，风冷最大165mm塔式。
+  - 外壳为2mm铝合金，内壳是1mm钢板，全身使用白色喷漆
+
+- https://www.zhihu.com/question/391355479/answer/2789629897
+- 此外C26是只支持SFX电源，C26PLUS和C28为了安装长显卡或者水冷等等情况，也只能安装SFX电源，所以在电源方面会增加一些成本。
+- 另外机箱安装方面，这些机箱都不算非常好安装，基本都得拆卸所以的板材才能进行安装，所以有螺丝大师这么一个称号。此外还没有背线空间，所以最好是做定制线，才能得到一个比较完美的装机效果。
+- 这几款可以背后理线吗
+  - 这几款都不可以
+
+- [用绝版机箱打造极致生产力——9950X+192G大内存 - 知乎](https://zhuanlan.zhihu.com/p/1943668215206122278)
+  - 【主板】微星 B850M MORTAR WIFI 迫击炮 （1499￥）
+  - 【CPU】AMD R9 9950X 全新盒装 （3999￥）
+  - 【内存】海盗船 (196G) 48G*4 6000MHz C30 （5398￥）
+  - 【显卡】微星 万图师 4070 Super 2X （5499￥）
+  - 【机箱】机械大师 C26PLUS （停产）
+  - 【散热】猫头鹰 C14S + 猫头鹰 NF-A14 PWM （579+180￥）
+
 - ## 🛝 [Smallest possible ATX case that can fit a full size GPU : r/buildapc _202406](https://www.reddit.com/r/buildapc/comments/1djnxe3/smallest_possible_atx_case_that_can_fit_a_full/)
   - I currently have a mini itx setup with an i5 10400, and an rx 6700xt. It’s feeling like it’s time for an upgrade and microcenter’s CPU, MOBO, RAM combos are too good to pass up. ($370 for a Ryzen 7 7700x and 32gb of ram) Especially compared to the $700+ I would have to spend on those parts, an itx mobo and a capable SFX PSU.
 - A case like the GameMax Meshbox Pro is probably the smallest you’re going to get without needing an SFX power supply, at about 33.5L in volume. Can still fit GPU’s up to 335mm in length, and is a very reasonable $62.
@@ -2479,7 +2608,105 @@ modified: 2022-01-16T15:52:31.293Z
 
 - [有没有什么体积比较小的ATX机箱推荐. 台式机？ - 知乎](https://www.zhihu.com/question/51668457/answers/updated)
 
-- ## [2024年最新ATX小机箱推荐 - 知乎 _202401](https://zhuanlan.zhihu.com/p/680148767)
+- ## [乔思伯发布松果 D31 紧凑型 M-ATX 机箱，支持到 360 水冷排, 散热性能怎么样？ - 知乎 _202210](https://www.zhihu.com/question/562398994)
+- 机箱副屏是一个亮点，紧凑型机身能放下360一体水冷，想法不错。但是目测会有些问题，比如我购买就是乔思伯TF360一体水冷散热器，水泵在水管上，距离冷排进出水口不到10厘米（可能不准）位置上。若使用D31的话，电源可能无法安装在LV1或者LV2的位置
+
+- [乔思伯松果D31机箱简介。含D31机箱推荐的装机配置方案 - 知乎](https://zhuanlan.zhihu.com/p/583985999)
+- 乔思伯松果D31的总体结构和D30相似。支持M-ATX主板，电源前置，顶部安装水冷。区别在于D31更大，顶部和底部可以安装360水冷，TYPE-C接口也改成了真正的（D30是和USB并线的）。
+- 目前类似结构，支持顶部安装360水冷的机箱还有华硕的冰立方AP201。
+
+- 乔思伯松果D31仅有一个机械硬盘位置，并且这个位置是底部的一个风扇位，风扇和硬盘只能二选一安装。
+  - 有2个2.5寸SATA固态硬盘位。
+
+- ## 📌 [2025年5月更新，电脑机箱推荐。推荐一波高颜值的机箱。包含ITX, M-ATX, ATX, E-ATX机箱 - 知乎](https://zhuanlan.zhihu.com/p/210537601)
+  - [2025年5月更新，电脑机箱推荐。推荐一波高颜值的机箱。包含ITX, M-ATX, ATX, E-ATX机箱](https://www.zhihu.com/tardis/zm/art/210537601)
+
+- 迷你小钢炮ITX机箱推荐
+
+- 酷冷至尊魔方NR200P
+  - 箱体长宽高（mm）376 x 185 x 292mm, 20.3L
+  - 支持ITX和DTX规格的主板
+  - 只能用SFX电源。ATX电源需要自己DIY支架，而且会限制显卡长度
+  - 酷冷最近推出了NR200P MAX版本。顶部预装了280水冷。自带850W电源，显卡只能竖装。设计不错。
+
+- 分形工艺Torrent Nano
+  - 支持310mm的显卡
+  - 支持20CM长的ATX电源
+  - 这款属于体型偏大的ITX机箱，散热设计优秀，价格稍贵。这款机箱比较适合做风冷散热方案。
+
+- 乔思伯（JONSBO）A4 Ver1.1版本
+  - 340MM (深) x 169MM (宽) x 273MM (高)
+  - 使用SFX或AFX-L电源
+
+- M-ATX机箱推荐
+
+- [乔思伯 Z20](https://www.jonsbo.com/products/Z20--.html)
+  - 370*186*295mm, 20.3L
+  - 显卡支持长度：≤363mm
+  - 支持240水冷，或最高160mm的风冷
+  - 1个机械硬盘位
+
+- 乔思伯C6 MAX
+  - 202 x 349 x 295mm, 20.8L
+  - 显卡: ≤  300mm-335mm
+
+- 先马（SAMA）趣造I'm Mini
+  - 391（长）*185（宽）*303（高）mm
+  - 显卡限长：≤33cm
+  - 支持M-ATX和ITX主板
+
+- 联力A3
+  - 443 x 194 x 396 mm, 34L
+  - 最高支持165mm的风冷。支持360水冷
+  - 最长支持415mm的显卡。底部支持安装一个机械硬盘
+
+- 华硕AP201 冰立方
+  - 205mm*350mm*460mm
+  - 显卡（连供电头总长度）限长≤32cm
+  - 硬盘位3个
+  - 支持的是M-ATX主板，总体布局和乔思伯D30类似，但是华硕AP201采用的是全打孔面板，且顶部支持360水冷，散热非常的不错，支持TYPE-C USB 3.2 GEN2（乔思伯D30的type-C是和USB并在一起的）。
+
+- 乔思伯 D31 🌹
+  - 产品尺寸：205 (宽) *347.5 (高) *440mm (深)（31.3L） 
+    - 205mm（宽）*363mm（高）*452mm（深）（机箱总尺寸）
+  - 电源类型：ATX
+  - 主板支持：ITX / DTX / M-ATX
+  - 显卡长度：330-400mm
+  - 机械硬盘位：2.5〞SSD*2 + 3.5〞HDD*1
+  - PCI扩展槽：4
+
+- 方糖机械大师 C+Max
+  - 392*185*284mm
+  - 支持M-ATX和ITX主板。
+  - 电源可以用SFX或14cm长的ATX电源。
+  - 支持240水冷或162mm高的风冷
+  - 价格小贵，在800元附近
+
+- ATX（中塔）机箱推荐
+  - ATX（中塔）机箱是目前大部分用户的选择，这类的机箱尺寸偏大，基本都支持ATX，M-ATX，ITX版型，部分支持包括E-ATX在内的所有版型。
+  - 优点在于散热好，ATX机箱基本都支持240及360水冷，对大型双塔风冷散热的支持也更好。扩展位多，方便安装更多的硬盘等设备。
+
+- 乔思伯 D40 /无mesh导致散热差
+  - 204mm (W) *401mm (D) *386mm (H), 31.51L
+  - 硬盘位：2.5〞*3+3.5〞*1 or 2.5〞*4
+  - 显卡支持长度：293-374mm
+  - 主板支持：ATX/M-ATX
+  - 前置接口：USB3.2 Gen 1 Type-C*1(5Gbps)     USB3.2 Gen 1 Type-A*1(5Gbps)     复合式音频接口*1
+  - PCI扩展槽：7
+  - 电源：ATX PSII≤140-200mm
+
+- 乔思伯 D41 /mesh
+  - 205mm (宽) *392mm (高) *440mm (深)（容积：35.4L）
+  - 显卡支持长度：330-400mm
+  - 主板支持：ATX / M-ATX
+
+- 乔思伯 U4 Pro
+  - 205mm(W) * 395mm(D) * 426mm(H)（含脚垫）, 34.5L
+  - 显卡支持长度：≤280-330mm
+  - 主板支持类型：ITX / M-ATX / ATX
+  - 电源支持：ATX≤170-190mm
+
+- [2024年最新ATX小机箱推荐 - 知乎 _202401](https://zhuanlan.zhihu.com/p/680148767)
 - 既想要主机够小，又想要ATX主板的拓展性是很难达成的，于是很多人退而求其次选择MATX主板和MATX机箱。但ATX小机箱依然是很多人的执着所在。作者对市面上目前在售的ATX机箱进行了粗略的梳理，发现目前较小的ATX机箱主要有以下这些
 
 - 缔誓科技L59p 体积13.2 L 售价：499
@@ -2519,8 +2746,9 @@ modified: 2022-01-16T15:52:31.293Z
 - 乔斯伯rm2 体积约为21.5L 售价：245
   - 尺寸：209x302x354mm
 
-- 乔思伯 u4 体积约为30L 售价299
-  - 尺寸：340x205x428
+- 乔思伯 u4 体积约为30L 售价299, 已停产
+  - 尺寸：205MM (W) * 340MM (D) * 428MM (H), 29.8L 
+  - [乔思伯JONSBO](https://www.jonsbo.com/products/qiaosiboU4baiban.html)
 
 - 乔思伯 u4pro 体积34.5L 售价299
   - 尺寸：205x395x426
@@ -2531,7 +2759,61 @@ modified: 2022-01-16T15:52:31.293Z
 - 魔神m90pro 体积约为20L 售价199
   - 尺寸：157x325x395mm
 
-- ## [New server build : r/homelab _202509](https://www.reddit.com/r/homelab/comments/1lve852/new_server_build/)
+- ## [24年市售微小型atx机箱速查表大全，最小也是最大 - 知乎](https://zhuanlan.zhihu.com/p/715494773)
+- 小是体积小，大是能够容纳ATX主板和ATX电源
+
+- 方糖机械大师 c34体积22.6L，c34pro体积30.6L
+  - 特点是他有6种电源摆放方式，根据个人需求进行摆放
+
+- 酷冷至尊特警365
+  - 25.6L
+  - 酷冷至尊Q500L
+  - 27.9L
+
+- 乔思伯C5, 停产型号
+  - 218MM (W) * 360MM (D) * 439MM (H), 34.5L
+- 乔思伯（JONSBO）U4 Pro
+  - 34.5L
+
+- 先马（SAMA）黑洞7
+- 长城（Great Wall）本色K13
+
+- ## 🤔 [Can you use an ATX server board with a consumer tower case and power supply? : r/HomeServer _202006](https://www.reddit.com/r/HomeServer/comments/gy4i70/can_you_use_an_atx_server_board_with_a_consumer/)
+- If it is true ATX, then yes. ATX is ATX. For a board to claim to be ATX, it needs to fit in the standard ATX size with standard ATX standoff locations and a standard ATX motherboard and CPU connector.
+  - Looking at these, they all say they are ATX formfactor and have either 20 or 24-pin mainboard power and 4 or 8 pin CPU power connectors. So yes they will work.
+  - For cooling, generally the board itself doesn't need any special cooling requirements, but the motherboard may list a minimum airflow rate in the manual. Remember not all servers are rack servers.
+
+- I think/know you can wire up and get a supermicro mobo running with a consumer psu. Many supermicro are e-atx. They do have matx boards however. It says atx so its atx. You may need a fan controller for a supermicro hacking box. Looks like it would fit. Power wont be an issue.
+
+- The first thing I would look out for is the form factor. Some boards are larger than ATX size, e-atx is sort of a nebulous non-standard, sometimes the server boards have screws laid out in a different location than a typical computer case 
+  - The second thing is power, especially if the motherboard is dual CPU, it may have one or two 8-pin EPS connectors, which can be hard to find on a consumer power supply
+
+- [Epyc, supermicro motherboard and ram, cheap on ebay... What else to consider? Or refurbed z840 dual xeon : r/homelab _202401](https://www.reddit.com/r/homelab/comments/1989fsp/epyc_supermicro_motherboard_and_ram_cheap_on_ebay/)
+  - Im not sure if the supermicro h11ssl needs some special case/ mounts? Do I need a special PSU? I'll need a heatsink fan etc for the CPU. I'll be able to reuse my graphics card, I think it's a GTX 1080.
+
+- Supermicro H11SSL-i should be standard ATX. There is a link on the page to the motherboard manual. It will specify PSU requirements.
+
+- supermicro h11ssl is a standard atx board. any atx chassis shall allow you mount it without issue. PSU is also standard. The board requires standard ATX power and a 8-pin CPU power.
+
+- The H11SSL is a standard ATX board, I've got mine in a Phanteks Enthoo Pro case with no issues as far as mount holes lining up, running off a Thermaltake 1050w PSU. The 1080 will be fine on that board as well, it's new enough to support UEFI firmware, I've run a 2060S, P100, and 4080 on mine with zero issues.
+
+- Running a 7302P here, you'd want an H12SSL for PCIe4.0 as far as I'm aware, seeing as my 4080 is still on a 3.0 link with the H11SSL.
+
+- ## [Supermicro + 4x 3090 build: Idle Power Consumption, Case, Cooling, PCIe 4.0 riser, Noise : r/LocalLLaMA _202410](https://www.reddit.com/r/LocalLLaMA/comments/1g54h9l/supermicro_4x_3090_build_idle_power_consumption/)
+  - Supermicro H12SSL-i motherboard (5x PCIe 4.0 x16)
+  - AMD EPYC 7282 CPU (128 PCIe lanes)
+  - 256GB (8x32GB) 2133P DDR4 ECC RAM
+  - Noctua NH-U14S TR4-SP3 CPU Cooler
+  - 4x RTX 3090 GPUs SilverStone HELA Series HELA 2050R Platinum 2050W ATX 3.0 Power Supply
+  - 4x PCIe Riser Cables 2TB NVMe M.2 SSD
+  - Case: I'm still unsure about the case - how to pack all these components while ensuring good airflow and cooling? What would you recommend to ensure proper cooling? It seems to me that there are no perfectly fitting enclosures available. It looks like I might have to build the case myself, or what do you think?
+
+- I have a build with dual 3090s, and I’ve encountered an issue with the H12SSL-i motherboard. The Noctua fans don’t spin fast enough at low RPMs, which causes the motherboard to constantly ramp them up to 100%, then stop, then ramp them up again. I’ve tried various IPMI configurations available online, but nothing seems to work, even with settings like this:
+  - Not with the H12SSL, but I have a few X11DPIs and I had your same issue initially. I can check the IPMI command I'm using tomorrow if you want, it solved it for me. Basically, you need to change the minimum rpm setting as a percentage, IIRC.
+
+- Quad setups are physically tricky. Reconsider open frames, they give you significantly more flexibility with positioning of GPUs and risers. Airflow is fine the cards have their own coolers and at most need an intake or two aimed at them depending on how you position.
+
+- ## 🌰 [New server build : r/homelab _202509](https://www.reddit.com/r/homelab/comments/1lve852/new_server_build/)
   - CPU: AMD Epyc 7443P
   - Motherboard: Supermicro H12SSL-i
   - Memory: 8x SK Hynix 32GB 3200MT/s ECC (265GB)
@@ -2542,6 +2824,14 @@ modified: 2022-01-16T15:52:31.293Z
   - CPU Cooler: ARCTIC Freezer 4U-M
   - PSU: Corsair RM850x
   - Case Silverstone RM43-320-RS: 442  x 175 x 660 mm, 51L
+
+- [Academic/Cryo-EM Build: EPYC 7402 with Supermicro H12 : r/Amd](https://www.reddit.com/r/Amd/comments/ij0h5k/academiccryoem_build_epyc_7402_with_supermicro_h12/)
+  - CPU	EPYC 7402
+  - Motherboard	H12SSL-CT
+  - Case: be quiet! Dark Base Pro 900 Rev. 2 ATX Full Tower Case, 52L
+
+- [Finally got around to building my home server! (AMD EPYC Proxmox Build) : r/homelab](https://www.reddit.com/r/homelab/comments/10egnxx/finally_got_around_to_building_my_home_server_amd/)
+  - I was hoping to get the Meshify 2 (or Meshify 2 XL) but I couldn't find a single one in stock in Europe so I settled for the Define R6 (543 x 233 x 465 mm, 58L).
 
 - ## [[FS][USA-NY] EPYC 7232 ROME CPU + H12SSL-NT PCIe 4 Motherboard + 4U 24 Bay server case + Add ons : r/homelabsales _202501](https://www.reddit.com/r/homelabsales/comments/1idbdvk/fsusany_epyc_7232_rome_cpu_h12sslnt_pcie_4/)
   - ATX 850 Bronze PSU: 850W 80+ Gold
@@ -2556,6 +2846,7 @@ modified: 2022-01-16T15:52:31.293Z
   - NO CPU cooler provided
   - PRICE $1150 + Shipping based on location
   - Moved to a sliger case with an EPYC Siena build, so looking to off load his server
+  - RM43-324-RS: 4U 24-bay 2.5"/3.5" HDD , 442mm (W) x 175mm (H) x 660mm (D), 51.1L
 
 - ## [[W] Supermicro H12SSL / Epyc / DDR4 3200Mhz : r/homelabsales _202308](https://www.reddit.com/r/homelabsales/comments/163s183/w_supermicro_h12ssl_epyc_ddr4_3200mhz/)
 - Yeah, that board has 2x M.2 and 1x Slimline x8. So that's pretty decent, because that 1 slimline port can handle 2 U.2 drives or even 2 M.2 with an adapter. (Or you can get a cable that goes to 8x SATA or 2x Mini SAS, for a backplane) I like those connectors a lot, but the cables aren't cheap.
@@ -2569,12 +2860,16 @@ modified: 2022-01-16T15:52:31.293Z
 
 - Take a look at the Gigabyte MZ32-AR0. Just got one with a 7502. It's a very nice board with a ton of features
 
+- Hey mind sharing what cooler have you been using? Trying to find something quiet but it seems Noctua''s are the only option? Wondering if the BeQuiet DarkPro for TR4 would fit this board
+  - I love Noctua and have several of them, but for EPYC and TR it seems the ARCTIC Freezer 4U for AMD TR4 is the way to go. It's very quiet and should be able to handle 300 Watts.
+  - I think one reason I ended up going with it was because the Noctuas didn't fit into my 4U case.
+
 - ## ["The Talking Cube" 4x3090 local AI server : r/LocalLLaMA _202402](https://www.reddit.com/r/LocalLLaMA/comments/1aux2es/the_talking_cube_4x3090_local_ai_server/)
   - Supermicro H12SSL-i AMD EPYC 7262 256GB RAM 4xEVGA RTX 3090 FTW3 ULTRA Completely DIY / custom mounting solution for the 3 gpus on top
 
 - ## [Cooling a server motherboard in a desktop case. : r/homelab _202403](https://www.reddit.com/r/homelab/comments/1bgpzno/cooling_a_server_motherboard_in_a_desktop_case/)
   - I have a Supermicro H12SSL-i  with an Epyc 7762 that has 64 cores. It's installed in the Fractal Define XL 7 case and is an all purpose server.
-  - Fractal Design Define 7 XL: 604 x 240 x 566 mm, 82L
+  - Fractal Design Define 7 XL: 604 x 240 x 566 mm, 82L 📦
   - It runs well in a typical workload, but if I run the cpu full throttle, it will crash, likely due to the lack of ventilation blowing over the VRMs and such when there's such a huge spike in watts.
   - Anyway, do any of you DIYers know what could be done? The quieter, the better. It's full (19) of 3.5 inch drives so ventilation is a bit tricky.
 
@@ -2582,7 +2877,7 @@ modified: 2022-01-16T15:52:31.293Z
 
 - I ended up downgrading the CPU to a lower tdp - AMD EPYC 7302P.
 
-- ## [What other supermicro boards are as good or better than: SUPERMICRO MBD-H12SSL-I-O ATX Server Motherboard AMD : r/homelab _202412](https://www.reddit.com/r/homelab/comments/1h59xtp/what_other_supermicro_boards_are_as_good_or/)
+- ## 🧩 [What other supermicro boards are as good or better than: SUPERMICRO MBD-H12SSL-I-O ATX Server Motherboard AMD : r/homelab _202412](https://www.reddit.com/r/homelab/comments/1h59xtp/what_other_supermicro_boards_are_as_good_or/)
   - Using Epyc processors. Is there a better board? In this generation?
 
 - Standard ones: H12dsi: dual processor, more PCIe and more ram slots
@@ -2743,7 +3038,7 @@ modified: 2022-01-16T15:52:31.293Z
   - Motherboard - Supermicro H12SSL-i
   - RAM - 8x32GB DDR4 ECC Reg 3200 Mhz, DDR5 is only supported on Epyc 8000/9000 series, the Epyc 7001/7002/7003 lines only support DDR4.
   - 3 x RTX3090 Founders Edition, all on PCIE 4.0 x16 risers
-  - Veddha 6GPU miner open frame
+  - Veddha 6GPU miner open frame: Veddha V3C 6-GPU Mining Case Aluminum Stackable
   - Proxmox RAID Z1 (mirrored) on 2 x Kingston 256GB SSD
   - Samsung 1TB m.2 NVME for VMs
   - Samsung 4TB SSD for models & data
@@ -2900,17 +3195,19 @@ modified: 2022-01-16T15:52:31.293Z
 
 - Be careful with U.2s, you usually need some decent airflow to keep them cool. I would use the gpu hole to push or pull some more airflow.
 
-- ## 🌰 [Built a Powerful and Silent AMD EPYC Home Server with My Kids (for a Fraction of the Price!) : r/homelab _202412](https://www.reddit.com/r/homelab/comments/1hmnnwg/built_a_powerful_and_silent_amd_epyc_home_server/)
+- ## 🌰🖥️ [Built a Powerful and Silent AMD EPYC Home Server with My Kids (for a Fraction of the Price!) : r/homelab _202412](https://www.reddit.com/r/homelab/comments/1hmnnwg/built_a_powerful_and_silent_amd_epyc_home_server/)
   - we built a beast of a home server powered by an AMD EPYC 7C13 (3rd gen).
   - CPU - AMD EPYC Milan 7C13 64C/128T 2.2GHz SP3 (100-000000335 7763 7713)	
   - Motherboard - Supermicro H12SSL-NT SP3 AMD EPYC DDR4 ECC	
   - RAM - Samsung 64GB DDR4 LRDIMM ECC x8 (512GB Total), DDR4 RAM: Delivers 130GB/sec bandwidth.
-  - Case - Fractal Design North Tempered Glass ATX Mid-Tower Computer Case - White/Oak: 433 x 215 x 450 mm, 41L
+  - Case - Fractal Design North Tempered Glass ATX Mid-Tower Computer Case - White/Oak: 433 x 215 x 450 mm, 41L; 从图片看，机箱有点大
   - CPU Cooler - Noctua NH-U14S TR4-SP3 (Premium-Grade)	
   - PSU - 850W SFX (ATX 3.0, PCIE 5.0 Ready, 80 Plus Gold)	
   - SSD - Samsung 990 Pro 1TB (7450 MB/s Read)	
 
 - Regarding the CPU, I see some active listings on eBay – try searching for "AMD EPYC Milan 7B13" (or 7C13) for the same price range. Just a heads-up, though – there are engineering sample (ES) listings on eBay. Keep in mind that confidential computing (AMD SEV-SNP) won’t work on those CPUs, and there might be other feature limitations or performance issues that I’m not fully aware of.
+
+- I've worked as a pc technician for a few years and built & repaired many machines over the years. In my experience, I would turn the cooler 90° that the airflow matches the direction of the intake fans in the front. If you ever want to add a gpu, then this layout works great. Depending on the temps, you might want an exhaust fan in the back or top
 
 - ## [Mini ITX EPYC 64 core 128 thread SFF Build : r/homelab _202311](https://www.reddit.com/r/homelab/comments/182i7k3/mini_itx_epyc_64_core_128_thread_sff_build/)
   - Case Cooler Master Nr200: 360 x 185 x 274mm, 18.25L

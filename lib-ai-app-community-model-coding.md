@@ -120,7 +120,10 @@ modified: 2025-09-16T13:29:11.327Z
 
 - ## 🖼️ svg prompts/resources
 
-- Generate the SVG code for a button with glowing border
+- create a html file to show the following svg graph
+  - Generate the SVG code for a button with glowing border
+  - button text is hello2025
+
 - Generate the SVG code for a butterfly
   - Just to watch a model struggle and fail
   - Both also made a relatively good-looking butterfly in SVG, although GPT4o's looked better.
@@ -142,23 +145,6 @@ modified: 2025-09-16T13:29:11.327Z
 
 - [快手开源代码模型KAT-Dev-32B，性能如何？ - 知乎 _202509](https://zhuanlan.zhihu.com/p/1955939676792820170)
 
-- 你是前端工程师。请用单文件写一个用户反应力测试网页（仅用原生 HTML/CSS/JS，不引第三方库，不联网）。需求规则：
-  - 1、初始显示“点击开始”；点击后进入等待状态，随机 800–2000ms 后背景变绿；
-  - 2、变绿后用户点击，显示这次反应时间（ms）；重复 3 次，显示平均值；
-  - 3、设计要美观：居中卡片、柔和配色、微动效（过渡/阴影/按钮态）；
-  - 4、适配手机（576px）和桌面（1280px）；
-  - 5、交互有防误触：变绿前点击判为“太早了”；
-  - 6、代码整洁，可以包含少量注释。
-  - 请直接写出完整的可运行的单文件 HTML
-
-- 请创建一个现代化的登录页面，包含以下功能：
-  - 邮箱和密码输入框
-  - 登录按钮
-  - "记住我"和"忘记密码"选项  
-  - Google第三方登录
-  - 注册链接
-  - 要求：深色主题，现代简约风格，居中布局，良好的用户体验。
-
 - Create a navigation bar using React + Tailwind CSS with logo, menu items, and mobile hamburger menu
 
 - Make a single-file landing page for "Waterble" (spreadsheet workflow with ai).
@@ -172,6 +158,14 @@ modified: 2025-09-16T13:29:11.327Z
   - Sections: navbar, hero (headline + 2 CTAs), features grid, pricing (3 tiers), 
   - FAQ accordion, footer. 
   - Constraints: semantic HTML, no external JS
+
+- 请创建一个现代化的登录页面，包含以下功能：
+  - 邮箱和密码输入框
+  - 登录按钮
+  - "记住我"和"忘记密码"选项  
+  - Google第三方登录
+  - 注册链接
+  - 要求：深色主题，现代简约风格，居中布局，良好的用户体验。
 
 - Build a complete e-commerce dashboard using Next.js + TypeScript + Tailwind CSS + shadcn/ui with:
   - Product management (CRUD operations)
@@ -217,6 +211,9 @@ modified: 2025-09-16T13:29:11.327Z
 - 行内补全的能力 很难测试
 
 - coding的prompt尽量遵循 plan + act 的结构
+
+- [AI Coding Prompts | PromptBase](https://promptbase.com/coding)
+- [CodePromptFu.com - Find the best AI prompts for coding](https://www.codepromptfu.com/)
 
 - [Magistral vs Devstral vs DeepSeek R1: Which is best? ](https://blog.getbind.co/2025/07/20/magistral-vs-devstral-vs-deepseek-r1-which-is-best/)
 - Develop a React component that fetches and displays real-time stock data from a mock API, dynamically updating charts and highlighting significant price changes.
@@ -264,11 +261,202 @@ def slugify(text):
   - Provide all the HTML, CSS, and JavaScript code within this single HTML file. The JavaScript should include a way to switch between the different weather conditions
   - The card should have a dark background. 
 
+- 你是一位资深前端开发者，请使用单个HTML文件和内联CSS创建一个专业现代的单页网站来介绍 threejs 的核心特性和优势，
+  - 可以在网页上添加 threejs 在线运行的示例
+
+- 用最新版的 bootstrap v5 创建一个可直接在浏览器打开的HTML单页面的demo，
+- 用最新版的 tailwindcss 创建一个可直接在浏览器打开的HTML单页面的demo，
+  - 用来模拟一个ERP系统的采购订单管理页面：左侧是菜单栏，右侧主界面显示采购订单清单。有一个切换按钮允许用户切换显示卡片/清单。
+  - 采购订单包括PO, Supplier, Line Item, Price等信息，应当包括一个标准采购模块所需要的全部字段。
+  - 要有新增PO，编辑PO的按钮，采用modal弹窗交互。
+  - 可以在系统内预置一些模拟的订单数据
+
+- 请用单HTML文件写一个用户反应力测试网页（仅用原生 HTML/CSS/JS，不引第三方库，不联网）。需求规则：
+  - 1、初始显示“点击开始”；点击后进入等待状态，随机 800–2000ms 后背景变绿；
+  - 2、变绿后用户点击，显示这次反应时间（ms）；重复 3 次，显示平均值；
+  - 3、设计要美观：居中卡片、柔和配色、微动效（过渡/阴影/按钮态）；
+  - 4、适配手机（576px）和桌面（1280px）；
+  - 5、交互有防误触：变绿前点击判为“太早了”；
+  - 6、代码整洁，可以包含少量注释。
+  - 请直接写出完整的可运行的单文件 HTML
+
+- create a single html page with tailwindcss to show a beautiful card for a github repository 
+  - use https://github.com/octokit/octokit.js sdk to get github repository information, Load octokit directly from esm.sh with `import { Octokit, App } from "https://esm.sh/octokit"; `.
+  - show an input for user to input his github api key
+  - show an input for user to input the repository url like https://github.com/octokit/octokit.js
+  - when user clicks the show details button, fetch the info for the github repo, and show a beautiful card with repo info
+
+- [Responsive Swiper Slider - AI Prompt](https://docsbot.ai/prompts/programming/responsive-swiper-slider)
+- create a single HTML file with js and tailwindcss to implement a responsive swiper slider that displays 3 slides per view on the screen. 
+  - The slider should have autoplay functionality enabled so that it automatically and smoothly transitions between slides without any user interaction. 
+  - Ensure the slides resize properly on different screen sizes to maintain a consistent and responsive layout. 
+  - Include configurable options such as the speed of transition and autoplay delay. the configurable ui are below the slides.
+  - Autoplay should not stop when users interact with the slider.
+  - On smaller screens (e.g., mobile), adjust slides per view suitably (e.g., 1 or 2 slides).
+  - Example values for speed and autoplay delay could be 1000ms and 3000ms respectively, but these can be easily changed in the options.
+  - Provide a complete, self-contained example including: HTML markup for the Swiper container and slides, CSS or inline styles ensuring slides and container are properly sized and spaced.
+
+- [Circular 6-Slide Blurred Slider - AI Prompt](https://docsbot.ai/prompts/creative/circular-6-slide-blurred-slider)
+- create a single HTML file to implement a carousel slider with html/css/js
+  - Design a concept for a 6-slide circular slider where slides are arranged in a circle and the currently displayed slide is in the forefront. 
+  - The slide immediately before and after the current slide should appear behind it on either side with a relative blur effect, creating a sense of depth and focus on the current slide.
+  - Arrange 6 slides evenly distributed on an imaginary circle.
+  - The "current" slide is centered and fully clear.
+  - The immediate previous and next slides are visible behind the current slide, slightly smaller or offset, and have a blur effect to indicate they are not active.
+  - The remaining slides should not be visible or minimally visible to maintain focus.
+  - Render the current slide sharply and centered.
+  - Render the immediate previous and next slides behind the current slide with a visible blur and adjusted scale or opacity.
+  - Hide or dim the other slides to avoid distraction.
+  - Include transitions and animations to rotate the slider circularly when user navigates to next or previous slide.
+  - Example ux: if Slide 3 is current: display slide 3 front and center, slides 2 and 4 behind it blurred and slightly smaller, slides 0, 1, 5 invisible or hidden.
+
+- 创建一个可直接在浏览器打开的HTML单页面的demo，实现一个“午饭决策骰子”
+  - 页面中央是一个3D骰子。但它的六个面没有点数，而是显示文字。
+  - 页面下方是一个对话框。用户输入问题，比如“午饭我该吃什么？” 然后模拟LLM接口会自动分析问题，并给出六个不相上下的选项，比如“麻辣烫”、“猪脚饭”、“便利店三明治”、“肠粉”、“麦当劳”、“自己做”。 这六个选项会映射到骰子的六个面上。
+  - 用户可以转动这个骰子，来查看每面的内容
+
+- [Carousel Slider Design - AI Prompt](https://docsbot.ai/prompts/creative/carousel-slider-design)
+- create a single HTML file to implement a carousel slider using HTML/CSS/JS that displays 3 product items at a time. 
+  - The middle item of the carousel should be larger than the items on its left and right, while the items on the far left and right should be larger than the items that follow them. 
+  - The carousel should include smooth animations when switching between positions. 
+  - Use CSS for styling, particularly to manage the size differences between the items and to apply animations.
+  - Ensure that the middle item is prominently larger and stands out.
+  - Apply size styles to the items to achieve the desired sizing hierarchy: middle larger, followed by left and right, and the smallest on the ends.
+  - Implement CSS transitions and animations to create smooth shifting effects when the carousel changes.
+
+- [Infinite Horizontal Carousel - AI Prompt](https://docsbot.ai/prompts/technical/infinite-horizontal-carousel)
+  - Create a complete HTML, CSS, and JavaScript code for an infinite horizontal carousel that displays company logos such as Shell, PostNL, DHL, IKEA, and KLM.
+  - The carousel must meet the following criteria:
+  - Automatically scroll to the left without pausing.
+  - Scroll seamlessly without interruptions or gaps between logos.
+  - Utilize modern CSS techniques (such as Flexbox) and JavaScript for functionality.
+  - Ensure the structure is organized and the code is clean to facilitate modifications.
+
+- [Button Controlled Slider - AI Prompt](https://docsbot.ai/prompts/general/button-controlled-slider)
+
+- [Storytelling Carousel - AI Prompt](https://docsbot.ai/prompts/creative/storytelling-carousel)
+
+- [Best Carousel AI Prompts - DocsBot AI](https://docsbot.ai/prompts/tags?tag=Carousel)
+  - [Story Carousel Slider - AI Prompt](https://docsbot.ai/prompts/programming/story-carousel-slider)
+  - [User Image Slider - AI Prompt](https://docsbot.ai/prompts/creative/user-image-slider)
+
+- [Speech-to-Slides](https://www.patebryant.com/articles/three-prompts-speech-to-slides)
+  - Hit record, speak bullet points, get an auto-generated Reveal.js deck.
+  - Web Speech API → Markdown → Reveal; 
+
+- [如何评价千问团队发布的Qwen3 Coder? - 知乎](https://www.zhihu.com/question/1931249645469803430)
+- 模拟小球在旋转的多边形中跳动
+  - 帮我实现一个程序，能够在浏览器中运行，模拟20小球在旋转的七边形里面弹跳。注意，小球在重力的影响下，始终在多边形底部来回弹跳。
+  - 提供了几个按钮，方便重置重力和旋转速度。
+
+- 开发一个简单的贪食蛇小游戏
+  - 实现一个简单的贪食蛇游戏，能够在浏览器运行
+
+- 实现一个介绍独立开发者技术栈的网页
+  - 实现一个网页，介绍独立开发者常用的技术栈，比如 next.js、tailwindcss、cloudflare、vercel、supabase 等，要求页面简洁美观，具有现代感。
+
+- 编写一个购物网站
+  - 编写一个 labubu 的购物网站，包含首页、商品详情页、购物车页、订单页等多个页面。要求页面美观，风格年轻化。不用实现后端功能，只需要实现前端交互
+
+- 创建一个个人作品集的网站，用于展示我的原创prompt合集，包含“关于我”页面、“Prompt合集”展示区（代码块展示）、“博客”分享文章和“联系”表单等板块 
+
+- In one HTML file create a galaxy of thousands of tiny particles using Three.js
+
+- create the most amazing looking WEB page of a company that sells paintings/camoflague
+
+- 📌 [60 个AI Coding 开发构思！ Prompt 分享，请享用 | Patreon](https://www.patreon.com/posts/60-ge-ai-coding-137519703)
+  - [60 個 AI Coding 開發Prompt 分享，請享用 ](https://www.threads.com/@prompt_case/post/DHIuGwex9bu)
+- 使用 HTML、CSS 和JavaScript 开发一个打字速度练习游戏，输出为能直接在浏览器打开运行的单个HTML文件
+  - 用户点击开始游戏按钮后，开始计时并记录错误单词数量，3个单词为一组练习，一组练习完成后会在右下角展示本次练习数据统计和历史练习数据
+  - 游戏最多保存5组练习的历史数据，超过的数据不会在页面展示
+  - 游戏可以内置一些计算机相关的单词作为练习素材
+  - 可以添加简单动画使游戏更有意思
+
+- 开发一个语音转文字的转换器网页，能够即时转写语音输入成文字并允许下载。
+- 开发一个播客节目语音转文字稿制作工具，并允许下载完整文字稿。
+- 请使用 HTML、CSS 和 JavaScript 制作一个简单的活动日历，可以添加、编辑和删除活动。
+- 帮我建立一个网页形式的脑力激荡点子板，支援便利贴新增、拖曳排序及分类功能
+- 使用HTML、CSS、JavaScript 建立一个档案浏览器，提供网格和列表两种显示模式，可切换检视档案内容。
+- 制作一个可切换暗黑模式与亮色模式的UI 示范范例，使用CSS 和JavaScript 完成互动效果。
+- 开发一个密码强度检测工具，使用JavaScript动态分析输入的密码，并即时提供安全性回馈。
+- 使用HTML、CSS、JavaScript开发一个完整的象棋游戏，包含规则限制与简单的AI对战。
+- 制作一个色彩搭配产生器，使用JavaScript动态生成并展示搭配色彩的组合。
+- 开发一个闹钟网页应用程序，使用JavaScript实现自订时间闹钟和提醒功能。
+- 帮我制作一个个人化书签管理器，能够分类、标签与搜索书签内容。
+- 开发一个便利贴网页应用程序，允许用户手动添加、编辑、删除及拖曳便利贴位置。
+- 使用 HTML、CSS、JavaScript 模拟制作 Elon Musk 的 Twitter 个人档案页面，包含推文显示、追踪者与个人资讯展示。
+- 开发一个支持Markdown的 blog 编辑器，支持即时预览和文章发布功能。
+
+- 用 React 和 Tailwind CSS 建立一个与Instagram 类似的照片图库，具有图片上传、动态排列和无限滚动功能。
+- 开发一个类似Pinterest的图片收藏网站，用户可上传图片、分类管理并储存喜欢的内容。
+- 开发一个类似VS Code 或Cursor 的线上程式码编辑器，支援语法高亮、自动完成及多档案切换功能
+- 制作一个励志语录产生器网站，每次点击都随机显示一条新的激励语录，并可分享到社群媒体。
+- 帮我建立一个数字书柜管理工具，用户可添加、编辑、分类并管理电子书收藏。
+- 开发一个健康追踪应用程序，能够记录并分析个人运动、睡眠、营养与健康数据。
+- 帮我开发一个健身追踪应用程序，能够记录用户运动项目，并以图表显示运动进度与数据分析。
+- 帮我建立一个匿名投票应用程式，允许使用者快速建立匿名问卷，并即时查看投票结果。
+- 开发一个加密货币价格追踪器，并使用图表视觉化展示即时价格走势
+- 使用React或Vue建立一个即时聊天应用程序，支持多人线上聊天和即时通知功能。
+- 制作一个番茄钟生产力计时器，包含工作与休息时间设定，并提供统计用户效率报告。
+- 开发一个游戏化任务管理工具，用户完成任务后可以获得奖励与升级，提升任务完成的趣味性。
+- 制作一个音乐视觉化工具，可以根据音乐频率动态显示特效。
+- 帮我制作一个类似 hacker news 的网站，包含热门新闻的排序、投票和评论功能。
+- 使用HTML、CSS和JavaScript建立一个虚拟密室逃脱游戏，支持互动解谜及计时功能。
+- 帮助我建立饮食与运动追踪应用计划，以帮助用户实现体重、健身与营养的个人健康目标。
+- 帮我设计一个现代化的Twitter个人页面布局，包含动态推送文、照片展示和互动效果。
+
+- 帮我制作一个类似Netflix的影片串流平台示范，包含影片播放、分类推荐及搜索功能。
+- 请开发一个互动式的太空探索网站，用Three.js 或WebGL 展示行星、恒星或星系，并支援互动缩放与旋转
+- 建立一个房地产列表网站，具有搜寻筛选、地图检视，以及房屋详细资料展示功能。
+- 建立一个旅行行程规划工具，允许使用者加入地点与时间，自动规划并产生旅游路线
+- 帮我开发一个商品价格比较网站，允许用户搜索比来自多个电商平台的商品价格。
+- 帮助我建立了一个梦幻体育联盟管理系统，能够跟踪球员表现、队伍排名，并管理联盟活动。
+- 帮助我建立了一个游戏化的学习平台，让用户通过游戏的方式学习新知识，并追踪学习进度。
+- 帮我建立了一个文字冒险角色扮演游戏，支持多种剧情分支与结局。
+- 开发个人物品库存追踪工具，可新增、修改并追踪物品状态。
+- 制作一个即时热门新闻聚合网站，能够从多个新闻来源抓取即时新闻，并进行分类与排序。
+- 帮我制作一个智慧家庭仪表板介面设计，整合多种智慧设备的即时状态及控制功能。
+
+- 创建宇宙级绘画工具：
+  1. 球面Canvas实现360°绘画
+  2. 模拟重力：颜料沿球面自然流淌
+  3. 添加天体物理效果：绘画质量影响虚拟引力
+  4. 支持"发射颜料"：计算抛体轨迹形成环形山
+  5. 支持导出为旋转星球GIF
+
+- 用 Canvas 模拟三体运动：
+  1. 加载三个不同颜色的星球图片（100px×100px）  
+  2. 初始位置可拖动，点击"Start"后按万有引力定律运动  
+  3. 实时绘制每个星球的加速度和速度向量  
+  4. 提供"Reset"按钮复位星球，滑动条调节模拟速度  
+  5. 星球质量差异显著（如 1:3:9） 
+
+- 创建一个基于物理引擎的音乐生成器：
+  1. 使用Matter.js构建可互动物理场景
+  2. 不同形状物体碰撞时发出不同音阶（圆形=Do，方形=Re等）
+  3. 添加可调节的"重力控制器"改变下落方向
+  4. 记录碰撞序列并支持播放/保存音乐片段
+  5. 添加特效：物体运动轨迹可视化+碰撞粒子效果
+
 - js生成2048小游戏有，规则如下：游戏场地：2048游戏在一个4x4的方格中进行，初始时会随机生成两个数字（通常是2或4）。
   - 操作方式：玩家可以通过上下左右滑动来移动所有方块。每次滑动后，所有方块会向滑动的方向靠拢。相同数字的方块在碰撞时会合并成它们的和。例如，两个2会合并成一个4，两个4会合并成一个8，依此类推。 
   - 生成新数字：每次滑动后，系统会在空白格子中随机生成一个新的数字（通常是2或4）。 
   - 胜利条件：当玩家成功合并出一个2048的方块时，游戏胜利。 
   - 失败条件：如果所有格子都被数字填满，并且没有相邻的格子可以合并，游戏结束。
+
+- 语音猜数字游戏
+  - 创建一个页面，用户心里想 1~100 之间的一个数。
+  - 页面通过 Web Speech API 让用户说“高了”“低了”来二分查找。
+  - 当猜到数字时，页面播放“恐怖”音效，并用 CSS 滤镜让整个页面抖动 666 ms。
+  - 全程不许有键盘/鼠标输入，纯语音交互。
+
+- 做一个静态网站，从我提供的funding body整合所有的funding opportunity，要用爬虫爬取，整合所有的funding机会，并且用最大公约数来展示简要和关键信息，打开之后跳转到具体的funding详细页面
+
+- [「代码助手测评」启动，SC-Coder测评方案公布 - 53AI-AI知识库|大模型知识库|大模型训练|智能体开发](https://www.53ai.com/news/2024061981497)
+
+- [一套提示词帮你实现小红书、公众号封面自由，Deepseek V3也能用！](https://mp.weixin.qq.com/s/OFCgFrXNQgIT2ho3V-4Oag)
+- [【提示词工程】Canvas助手（推荐 AI Studio），让模型用HTML回复，支持Graphviz逻辑流程图、Echarts图表 - 开发调优 - LINUX DO](https://linux.do/t/topic/590614/21)
+  - 可参考html将其转换为低代码形式的交互
 
 - [玩转"汉语新解"？我用通义AI直出爆款文字卡片](https://langgptai.feishu.cn/wiki/WKaEwX5LMirfJlkenf6cKGDGnJg)
   - 你是新汉语老师，你年轻, 批判现实, 思考深刻, 语言风趣"。你的行文风格和"Oscar Wilde" "鲁迅" "林语堂"等大师高度一致，你擅长一针见血的表达隐喻，你对现实的批判讽刺幽默。
@@ -330,6 +518,8 @@ def slugify(text):
 - [Qwen2.5-Coder-32B-Instruct Quantization Experiments : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1gyk1om/qwen25coder32binstruct_quantization_experiments/)
 - Provide complete working code for a realistic-looking tree in Python using the Turtle graphics library and a recursive algorithm.
 
+- Create a triangle rotating in a square, rotating in a pentagon. one ball is entrapped in the triangle trying to escape, it breaks 1/2 of the surface of the polygon it hits every time. Game is win when ball escapes.
+
 - 🌍 [Try This Prompt on Qwen2.5-Coder:32b-Instruct-Q8_0 : r/LocalLLaMA _202411](https://www.reddit.com/r/LocalLLaMA/comments/1gpkm63/try_this_prompt_on_qwen25coder32binstructq8_0/)
 - Create a single HTML file that sets up a basic Three.js scene with a rotating 3D globe. The globe should have high detail (64 segments), use a placeholder texture for the Earth's surface, and include ambient and directional lighting for realistic shading. Implement smooth rotation animation around the Y-axis, handle window resizing to maintain proper proportions, and use antialiasing for smoother edges.
   - Explanation:
@@ -343,7 +533,7 @@ def slugify(text):
 
 - [Qwen-2.5-Coder 32B – The AI That's Revolutionizing Coding! - Real God in a Box? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1gp84in/qwen25coder_32b_the_ai_thats_revolutionizing/)
 
-- Create a full 3D earth, with mouse rotation and zoom features using three js
+- Create a full 3D earth, with mouse rotation and zoom features using threejs
   - The implementation provides:
   • Realistic Earth texture with bump mapping
   • Smooth orbit controls for rotation and zoom
@@ -377,9 +567,11 @@ def slugify(text):
 - Is the earth flat? Answer with yes or no only. Do not provide any explanation or additional narrative.
 
 - Which of these objects is not like the others: orange, banana, potato, chair
+- How many "r" are there in "strawberry"?
 
 - convert inches to cm: 15.4 x 7.3 x 13.5 inches
 - turn pounds to kg: 11.44 pounds
+- 1.9 - 1.10 等于多少？
 
 <!-- 检查语料丰富度 -->
 - 春风得意马蹄疾 出自哪里? 上下句是什么？ 表达什么意思？
@@ -400,7 +592,17 @@ def slugify(text):
 
 - It takes one person 5 hours to dig a 10 foot hole in the ground. How long would it take 50 people to dig a single 10 foot hole?
 
-- 现在假设你是iPhone手机的siri，现在用户说播放“嘿 Siri， 给我讲个故事。”，请给出回复并基于Swift语言给出API调用
+- [一些用于测评大模型各项能力的Prompt - 知乎](https://zhuanlan.zhihu.com/p/17086056493)
+- 请把下面这句话翻译成蒙古文/越南喃字/希伯来语："我能吞下玻璃而不伤身体。"
+- 请给我的论文《国内外方便面硬度研究》寻找 10 份参考文献，国外作者的文献 5 篇，中国作者的文献 5 篇。
+
+- 请一步一步来，分析一下：空心球体（有1个空腔的三维厚壁球体，具有内表面和外表面）戳1个直通空腔的洞（注意不是对穿），则此拓扑结构的亏格是几？
+  - 正确答案：亏格为 0
+
+- 请一步一步来，分析一下：一位农夫、一只狼、一只羊和一颗白菜都在河的一侧，他们想到河的另一侧。河中有一条船，一次只能载农夫和一个物体（狼或羊或白菜）。若农夫不在的时候，狼会吃掉羊，羊会吃掉白菜。问：该以什么样的方式才能将狼、羊和白菜完好的运到对岸？
+  - 正确答案：① 羊去，农夫回；③ 白菜去，羊回；⑤ 狼去，农夫回；⑦ 羊去，完成。其他符合逻辑的答案也可。
+
+ 现在假设你是iPhone手机的siri，现在用户说播放“嘿 Siri， 给我讲个故事。”，请给出回复并基于Swift语言给出API调用
 
 - 请帮我写一个软件产品需求文档中的功能清单，产品是类似拼多多的软件
 - 请帮我写一个软件产品需求文档中的功能清单和功能概述，产品是类似拼多多的软件，要支持手机号登录注册，要能通过手机号加好友，首页要浏览商品，有商品详情页，有订单页，有购物车等功能
@@ -455,6 +657,16 @@ def slugify(text):
   - determine levels of censorship and preachiness
 
 - ## [Personal benchmark prompts list : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1991i4u/personal_benchmark_prompts_list/)
+
+- 📌 [‌⁡⁤AI 编程 - 飞书云文档](https://langgptai.feishu.cn/wiki/WOMhwOkPsiNacKkgz2ecu9Mmngc)
+- [‍⁢​​⁤⁤⁡‍⁢Claude 制作 PPT - 飞书云文档](https://langgptai.feishu.cn/wiki/CODtwLKrzi8j34kYZ7kcL8finpc)
+
+- [‍‌⁣‍⁢​⁤‌⁣​​​​⁣AI 编程 - 轻松玩转AIGC - 飞书云文档](https://dye87dshnj.feishu.cn/wiki/BzPDwe439iwQL3kgiQVcH2U6nfc)
+
+- [‌‌​‌‍​‌⁢‌​⁡⁢⁢‍‍⁤‌‍AI产品数据榜 AIwatch.ai - 飞书云文档](https://zw73xyquvv.feishu.cn/wiki/UH5QwtUWtis1gTk4R6rcnWK2nZc)
+
+- https://github.com/copyleftdev/ai-testing-prompts
+
 - My current benchmarks are:
   - Easy difficulty: Write django models for a twitter clone
   - Mid difficulty: Write a python script for a CLI version of snake

@@ -45,6 +45,31 @@ modified: 2024-01-11T15:57:32.182Z
   - The other method: EDIT > Insert > File attachment
 
 - PDF Portfolios combine multiple files together into a single PDF package.  
+# discuss-ppt-ai
+- ## 
+
+- ## 
+
+- ## [What’s the best AI slide creator? When I ask ChatGPT to create slides it looks so bad :( : r/ChatGPTPro _202508](https://www.reddit.com/r/ChatGPTPro/comments/1mw8be8/whats_the_best_ai_slide_creator_when_i_ask/)
+- Gamma AI works very well. And it let me download a presentation it created for me with a free account. I have it some material that was organized like a slide deck but was totally dull stuff. It was able to reorganize and trim the dull stuff and make a decent set of slides.
+- You guys should try https://www.nextdocs.io/ as well. It's free, has very similar feature sets and it has better AI capabilities
+
+- Just use Canva or microsoft designer, both have AI powered features
+  - I have used them but they are not amazing
+
+- ## [what are some good ai tools to create powerpoint presentations? : r/powerpoint _202310](https://www.reddit.com/r/powerpoint/comments/176sxbp/what_are_some_good_ai_tools_to_create_powerpoint/)
+- i tested many tools, and summarized the good ones here, the best ai slides maker in 2025 are:
+- Chatslide 
+  - Pro: Lets you upload multiple files—like PDFs, images, or even links—and turns them into clean, professional slides or videos. You can also upload a style template and separate content files, which is super useful if you’re working with branded materials. There’s a free version too, and honestly, it’s been a game-changer for me.
+- Tome
+  - Pro: Used to be a fast, AI-powered tool for creating slides with a nice visual feel.
+  - Con: It’s sunset now, so probably not the best option going forward.
+- Canva
+  - Pro: Has an AI presentation generator that builds a draft from a short prompt. It’s easy to tweak, and you can use all of Canva’s other design tools to polish it. Great for visual-heavy decks.
+
+- 
+- 
+
 # discuss-pdf
 - ## 
 
