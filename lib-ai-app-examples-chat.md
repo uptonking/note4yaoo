@@ -28,6 +28,9 @@ modified: 2025-03-22T18:49:15.634Z
     - Not sure about the moat, it's mostly a SvelteKit web app with extra utils after all. But it has a rather unique combination of advanced features (RAG integrations, workspaces, pipelines, code execution, MCP integration, etc.) and a user-friendly "production grade" interface. 
     - They swapped out MIT for BSD-3 just five months ago
   - [Why is it so difficult to add providers to openwebui? : r/OpenWebUI _202505](https://www.reddit.com/r/OpenWebUI/comments/1kbox4y/why_is_it_so_difficult_to_add_providers_to/)
+  - [Implement a Queue System  ](https://github.com/open-webui/open-webui/discussions/4256)
+    - Setting the olama environment configs will solve this problem, it does not seem to be an open-webui issue
+  - [Feature: Queue multiple messages _202502](https://github.com/open-webui/open-webui/discussions/10845)
     - It's in settings, no it's in admin panel, it's a pipeline - no sorry, it's actually a function.
     - If you use LiteLLM to configure the providers and don't go through Open WebUI pipe functions at all, it is much easier.
     - back in the early days of open-webui, LiteLLM was bundled along. It's better that it's installed separately of course, since both projects are moving along nicely.
