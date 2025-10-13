@@ -996,7 +996,17 @@ curl http://localhost:11434/api/chat -d '{
 
 - ## 
 
-- ## 
+- ## 🆚 [LM Studio no new runtimes since weeks..? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o4m7yt/lm_studio_no_new_runtimes_since_weeks/)
+- Given Jan is actually open source and development is progressing more rapidly AND it's consistently more up-to-date, I don't see a reason to use LM Studio anymore other than nostalgia.
+  - Do you know why Jan lags behind in making the latest models accessible through their model hub? GOtta give it to LM Studio for their super neat integration that lists models as soon as they appear on HF, whether you can run them or not...
+
+- LM Studio gets kickbacks for promoting certain models in their model hub. For example, OpenAI paid them to promote the GPT-OSS rollout and it was one of the largest chunks of money they've ever made for anything they've ever done.
+  - So Jan doesn't care as much about funneling people to their "hub" to download specific hand-picked models. I agree it's something LM Studio does much better and Jan could do better though. Until Jan allows actual search of Hugging Face and a similar compatibility screen to help new users, it will continue to be worse in this area.
+
+- I was one of the first supporters of Jan and love to hear those great news. I saw that it is possible to import .ggufs into Jan, but with super large models such as GLM-4.6 that I downloaded through LMStudio, it is split into three .gguf files. Do you know how I can reuse them instead of re-downloading them?
+  - cat model.gguf-split-a model.gguf-split-b model.gguf-split-c > model.gguf
+  - [or on windows powershell] Get-Content model.gguf-split-a, model.gguf-split-b, model.gguf-split-c -Raw | Set-Content model.gguf -NoNewline
+- If they're legitimately split models, I don't think that works. That method was for manual split.
 
 - ## [Is it possible to use Jan AI server instead of LM Studio server in Obsidian Copilot? : r/LocalLLaMA _202409](https://www.reddit.com/r/LocalLLaMA/comments/1f5vswt/is_it_possible_to_use_jan_ai_server_instead_of_lm/)
 - You could also try changing Jan port to 1234 to attempt to use original (unchanged) LM Studio option. If Obsidian doesn't use any uncommon API features, maybe it could work.

@@ -55,6 +55,7 @@ https://meeting.tencent.com/p/9606972663
 
 - ai-play
   - https://www.ibm.com/granite/playground
+  - https://playground.liquid.ai/chat
 
 - play-examples
   - https://playground.powerbi.com/en-us/
@@ -237,6 +238,19 @@ use vanilla html/css/javascript to create a simplistic personal profile landing 
 use vanilla html/css/javascript to create a personal profile landing page: homepage shows a cool welcoming animation, then shows 4 example personal projects, then a simple get in touch form below it
 use react to create a homepage shows a list of frontend frameworks like react/vue/angular, when clicking the framework, navigate to the route to show its introduction
 ```
+
+## 1013
+
+- “rig” is informal slang for a computer / hardware setup.
+  - "rig" is a common slang term for a computer setup, specifically a desktop computer.
+  - The word "rig" implies a sense of customization, power, and purpose. You typically wouldn't call a standard office pre-built computer a "rig." You use it for machines that have been built or configured for a specific task, like gaming, video editing, or in this case, running local AI models.
+
+- 🧩 In the context of PC building, AIO stands for "All-in-One" liquid cooler
+  - It is a self-contained unit designed to cool the computer's processor (CPU), and its size (like the 360 mm you mentioned) refers to the dimensions of the radiator
+  - They typically consist of a radiator (with a fan or fans attached), a water block (which sits on the CPU), and tubes connecting them. The size (e.g., 360mm) refers to the radiator's length, which determines how many fans can be attached (e.g., a 360mm AIO usually has three 120mm fans).
+
+- GLM-Z1-32B-0414 is a reasoning model with deep thinking capabilities. This was developed based on GLM-4-32B-0414 through cold start and extended reinforcement learning, as well as further training of the model on tasks involving mathematics, code, and logic. 
+  - GLM-Z1-Rumination-32B-0414 is a deep reasoning model with rumination(反刍, 倒嚼) capabilities (benchmarked against OpenAI's Deep Research). Unlike typical deep thinking models, the rumination model employs longer periods of deep thought to solve more open-ended and complex problems (e.g., writing a comparative analysis of AI development in two cities and their future development plans). 
 
 ## 1010
 

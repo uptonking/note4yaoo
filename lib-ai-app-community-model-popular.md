@@ -100,6 +100,22 @@ modified: 2025-09-16T19:59:57.856Z
   - 对于ai按用户提供的模版输出html的场景，用户提供和ai输出的代码通常都是偏短的、偏静态的
   - coding模型必须要用新版才能使用最新框架的架构写法，如tailwind.v4, reactjs.v19
 
+- test-cases 🆚
+  - landing-page + tailwind: 基本都能实现页面, 🌹 glm擅长图标和图片
+    - kat-dev和qwen3都不擅长图标和图片
+  - landing + threejs: 基本都能实现, 
+    - qwen3-32b有时无法运行demo
+  - 🤔 game-reaction-for-click: kat-dev能正确实现， qwen3-think能实现
+    - glm异常，qwen3异常
+  - game-typing: glm/kat-dev行, qwen3非think也行
+  - 🤔 dashboard-crud: qwen3小bug，glm能做ui，kat-dev失败
+  - 🤔 weather: glm大多能实现
+    - kat-dev部分异常，qwen3异常
+  - slider: glm擅长css动画效果，其他ai的ux效果一般
+  - threejs-earth: qwen3行, glm部分异常, kat-dev异常
+  - vocabulary-card: 基本都能正确调整页面, 
+    - kat-dev有时样式异常
+
 - qwen3-coder-30b-a3b 🌹 /速度快
   - 生成单页面的效果好速度快
   - 擅长用渐变色块代替图片占位符
@@ -1300,6 +1316,24 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [What is the most creative open-weight model for story writing? Whether they are heavily aligned is irrelevant I am asking about pure prose and flavor of writing. : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nmp5jc/what_is_the_most_creative_openweight_model_for/)
+- I've experimented with a few of the models. Each model has it's own strength, so it's up to you to find a model that has a writing style you vibe with. General rule of thumb though is to avoid reasoning models. 
+  - GLM and GPT-OSS are not very good at creative writing, and GPT-OSS just loses track of basic creative writing.
+
+- GLM4-32b is interesting so that it has only 2 KV heads. That makes it extremely economical at KV (32K consumes 2 GiB only) cache but also forgetful. Performance-wise it is smarter than Mistral Small 3.2, but in terms of fluidity, stays between Mistral Small 3.1 and 3.2.
+
+- Qwen 3 <= 32b are boring true. MoE qwen 3 priduce non-boring but strange, poorly structured prose. GLM4 is dry but not exactly boring, compared to old Mistral Small 3.0 or 3.1 which are dry and boring. Properly prompted glm4 with long very detailed prompt is interesting. At short prompts it is not good at all
+
+- 
+- 
+- 
+- 
+- 
 
 - ## [What models do you find yourself actually using, and what for? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o1eac0/what_models_do_you_find_yourself_actually_using/)
   - I wanted to gauge what people actually use instead of just going off benchmarks. What models are you running/ which ones are your favorites? 

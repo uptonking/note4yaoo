@@ -567,6 +567,7 @@ def slugify(text):
 - Is the earth flat? Answer with yes or no only. Do not provide any explanation or additional narrative.
 
 - Which of these objects is not like the others: orange, banana, potato, chair
+
 - How many "r" are there in "strawberry"?
 
 - convert inches to cm: 15.4 x 7.3 x 13.5 inches
@@ -684,8 +685,10 @@ def slugify(text):
 
 - give it map coordinates and ask it where that is. In theory this could also be easily automated.
 
-- 
-- 
+- I'm standing at XXXXX street and I need to use public transport to get from here to XXXX street. I need to know my options and how much each will cost.
+
+- I need to build an AI system with two 5090s, 4 large SSDs and at least 128 gig of DDR5. I need to know a motherboard and power supply that will support this.
+
 - 
 - 
 - 
@@ -1050,7 +1053,8 @@ def slugify(text):
 - The current GLM4-0414(short for GLM-4.1) is a model I quite like. Its performance is fair, and it offers extremely lightweight context due to having only 2 KV heads (although I suspect that this model's poor long-context performance might also be related to this architecture). 
   - It also avoids the mixed reasoning approach similar to Qwen3 (I believe Qwen3's mixed reasoning makes some SFT more difficult, and doesn't always bring benefits; Qwen3-2507, which separates the two modes, seems more appropriate).
 - The performance of GLM4.1-9B is generally acceptable and can run locally on a 8GB GPU
-  - Compared to 9B models, I find the advantages of GLM4.1-32B more pronounced. Their 10K context only occupies 2 (KV heads) x 128 (head dim) x 61 (hidden layers) x 2 (K/V) x 2 (BF16) x 10000 = 624MB of VRAM. Considering the VRAM occupied by context, it's even lighter than the smaller Gemma3-27B (for example, you can run GLM4-32B-Q4 with 32K context on a single 3090 card, but you cannot run Gemma3-27B-Q4 with 32K context w/o KV cache quantization), while roughly being able to compete with Qwen3-32B with \nothink.
+- Compared to 9B models, I find the advantages of GLM4.1-32B more pronounced. 
+  - Their 10K context only occupies 2 (KV heads) x 128 (head dim) x 61 (hidden layers) x 2 (K/V) x 2 (BF16) x 10000 = 624MB of VRAM. Considering the VRAM occupied by context, it's even lighter than the smaller Gemma3-27B (for example, you can run GLM4-32B-Q4 with 32K context on a single 3090 card, but you cannot run Gemma3-27B-Q4 with 32K context w/o KV cache quantization), while roughly being able to compete with Qwen3-32B with `\nothink` .
   - However, I think GLM-4.1's reasoning version(GLM-Z1) is bad as it exhibiting very significant hallucinations and hoping that improves in later releases.
 
 - ## [Honestly, THUDM might be the new star on the horizon (creators of GLM-4) : r/LocalLLaMA _202504](https://www.reddit.com/r/LocalLLaMA/comments/1kbaecl/honestly_thudm_might_be_the_new_star_on_the/)
@@ -2037,6 +2041,10 @@ ollama run hf.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF:Q6_K
 - GLM-4 0414 9b or Qwen 2.5 Coder 14b are probably your best bets around that size. They are surprisingly good as long you can break your problem down into focused bite-sized pieces.
 - there is a GLM-4 0414 32b and I really like it. Even at brain-damaged quantizations like IQ2_XXS it is still surprisingly functional.
   - That said, I've mostly shifted to Qwen 3 Coder 30b a3b since it is so much faster and sits right in the ability sweet spot between the 9b and 32b GLM-4 models.
+
+- Seed-Coder-8B-Instruct works quite well for me. There's also a reasoning version but I find that version is worse than the instruct version.
+
+- There arent particularly good ones around 10B in my experience. The one i havent been able to find a gguf for yet is Nvidia's Nemotron 9b v2 it's punching way above it's weight limit.
 
 - ## [What is the Best coding LLM for my system? : r/ollama _202508](https://www.reddit.com/r/ollama/comments/1mmu24w/what_is_the_best_coding_llm_for_my_system/)
 - Devstral with Pixtral layers baked in is a lot more precise than Qwen3-coder 30B. 

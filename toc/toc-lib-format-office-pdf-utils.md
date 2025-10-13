@@ -21,6 +21,30 @@ modified: 2022-11-11T10:46:41.519Z
   - https://github.com/pdf-association/pdf-differences /apache2/202502
     - The PDF files in this repository are targeted test files highlighting specific issues seen across multiple widely-used implementations.
 
+- https://github.com/alam00000/bentopdf /14Star/apache2/202510/ts
+  - https://bentopdf.com/
+  - privacy-first, client-side PDF toolkit that allows you to manipulate, edit, merge, and process PDF files directly in your browser. No server-side processing is required
+  - Merge PDFs	Combine multiple PDF files into one.
+  - Split PDFs	Extract specific pages or divide a document into smaller files.
+  - Extract Pages	Save a specific range of pages as a new PDF.
+  - Organize Pages	Reorder, duplicate, or delete pages with a simple drag-and-drop interface.
+  - N-Up PDF	Combine multiple pages onto a single page.
+  - BentoPDF was originally built using HTML, CSS, and vanilla JavaScript
+    - As the project grew, it was migrated to a modern stack: ts,vite, tailwindcss
+    - Some parts of the codebase still use legacy structures from the original implementation
+  - thanks
+    - PDFLib.js – For enabling powerful client-side PDF manipulation.
+    - PDF.js – For the robust PDF rendering engine in the browser.
+    - PDFKit – For creating and editing PDFs with ease.
+    - EmbedPDF – For seamless PDF embedding in web pages.
+    - Cropper.js – For intuitive image cropping functionality.
+  - 📡 Roadmap
+    - Edit PDF Content: Directly edit text and other content within your PDF.
+    - HTML to PDF
+    - Markdown to PDF
+    - Convert to PDF/A
+    - Linearize PDF: Optimize PDFs for fast web viewing.
+
 - https://github.com/Stirling-Tools/Stirling-PDF /20.4kStar/MIT(core)+GPL/202403/java/js
   - https://www.pdfdrills.com/
   - locally hosted web application that allows you to perform various operations on PDF files

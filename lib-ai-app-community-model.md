@@ -269,6 +269,23 @@ e) 最终评论者(Final Critic)
 
 - TOML is actually more verbose when it comes to complex data structures.
   - Which makes sense since it was designed to be a JSON/YAML mappable language for better human readability.
+# discuss-local-llm-xp/tips
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [What's the missing piece in the LLaMA ecosystem right now? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o5dh3v/whats_the_missing_piece_in_the_llama_ecosystem/)
+  - For me, it's the data prep and annotation tools. The models are getting powerful, but cleaning and structuring quality training data for fine-tuning is still a major, manual bottleneck.
+
+- Training-Data is the biggest issue for local ecosystem right now i think. There is so many datasets, but who knows about their real quality.
+  - For me personally, finetuning an LLM is like 500x harder than a diffusion model, simply due to the lack of tooling. Unsloth is nice and all, but i dont want to run fucking Jupyter Notebooks, i want something akin to kohya_ss with as many of the relevant hyperparameters exposed.
+- Hardware accessibility is only secondary. If you have a small Model, e.g. the Qwen3 0.6B full finetune should be possible on local hardware. If that proves to be effective, renting a GPU machine somewhere for a few bucks shouldnt be the issue.
+
+- llms are very bad at image recognition, give it a civ or other strategy game screenshot and it gets nearly everything wrong.
+
+- Benchmarks. There has been little to no progress in the past two years regarding how LLMs are evaluated. It’s still mostly huge catalogues of questions with predetermined answers. That’s a very poor system for testing intelligence.
 # discuss
 - ## 
 

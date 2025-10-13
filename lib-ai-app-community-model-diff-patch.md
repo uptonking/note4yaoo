@@ -682,7 +682,17 @@ Code
 
 - ## 
 
-- ## 
+- ## [Editing text files with LLMs : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o592o0/editing_text_files_with_llms/)
+- It's about tools. Make file editing tools, tools to open/create a file, edit a file, rename/delete a file, search a file, etc. 
+  - If your stuff has MCP, you can download tons of mcp file editing tools, 
+  - if you want to implement yours, you can peek at the source of a few of those, plenty python and javascript examples to inspire you.
+
+- Any of the current agentic coders work fine for this - claude code, crush, codex cli, gemini cli, qwen code, etc. You can make a simple python file as well that can call an API and take the returned text and save it to a text file if you wanted to get right down to the metal with it.
+
+- Personally, I use the Obsidian MCP server with Claude Desktop. This way Claude has full access to my notes — it can search, add, edit, summarize, and more. 
+  - Since Obsidian uses plain text Markdown files, you can simply use MCP Filesystem (or Desktop Commander) and point it to your Obsidian folder ("vault").
+
+- Easiest way is to write an MCP to edit files and let your LLM have tool access to it. I do the same with a SQL database so that my LLM can do arbitrary reads to the database to pull information.
 
 - ## 🆚 [Unified versus Split Diff | Hacker News _202310](https://news.ycombinator.com/item?id=37995155)
 - A third (fourth?) option worth mentioning here is difftastic, which uses "structural" diffing (as opposed to line diffing) for more granular diff highlighting.

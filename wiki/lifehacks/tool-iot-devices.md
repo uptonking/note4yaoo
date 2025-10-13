@@ -184,6 +184,21 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Orange Pi AI Studio Pro mini PC with 408GB/s bandwidth : r/LocalLLaMA _202502](https://www.reddit.com/r/LocalLLaMA/comments/1im141p/orange_pi_ai_studio_pro_mini_pc_with_408gbs/)
+- As always, hardware is only one part. Where's the software support? Is there a Linux kernel driver? Is it supported in any good inference engine? Will it keep working 6 months after launch? Orange Pi are traditionally really really bad at the software side of their devices.
+  - For all their fruit clone boards they release one distro once and never update it ever again. The device tree or GPU drivers were proprietary so you can't just compile your own either.
+
+- Rumored to have an Atlas 300I Duo inference card inside, but with double memory and a better price. Now the 192GB version is pre-ordering at ¥15, 698 (~USD $2150).
+  - 12-channel 64-bit 4266 MHz LPDDR4X = 409.5 GB/s
+  - Atlas 300I Duo specs: 408 GB/s
+- So it’ll be about 10-15% slower than M4 Max and about 80-90% faster than M4 Pro. If that’s really true than 2100$ is an amazing price point provided we also get the needed software support.
+
 - ## 🆚 [What laptop would you choose? Ryzen AI MAX+ 395 with 128GB of unified RAM or Intel 275HX + Nvidia RTX 5090 (128GB of RAM + 24GB of VRAM)? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o3evon/what_laptop_would_you_choose_ryzen_ai_max_395/)
 - more net RAM = more net model + context size, at whatever speed.
 
@@ -231,7 +246,34 @@ modified: 2022-01-16T15:52:31.293Z
 
 - R720 2x xeon 2670, 192gb ddr3-1333 dram, llama.cpp running mixtral q3_k_m quant w/ 10k context, pure cpu inference: 3.6 t/s. If use installed P40: 9.1 t/s
 
-- ## [Thread for CPU-only LLM performance comparison : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nj4axf/thread_for_cpuonly_llm_performance_comparison/)
+- ## 🤔 [Budget LLM pc builds, new CPU only approaches : r/LocalLLaMA _202410](https://www.reddit.com/r/LocalLLaMA/comments/1fycnc1/budget_llm_pc_builds_new_cpu_only_approaches/)
+  - iGPU and lot's of memory: Like using 192gb of DDR5 RAM on the AMD Ryzen 9 7950x iGPU, or the budget Ryzen 5 8500G?
+  - AVX-512: Llamafile now has AVX-512 Support, meaning 10x Faster Prompt Eval Times For AMD Zen 4, like AMD Ryzen 9 5900X?
+
+- Unfortunately the answer is no. Even if you can build a consumer PC with a lot of DDR5 Ram, they cannot take advantage of it for LLMs, for the following reasons:
+  - they have limited memory bandwidth for large models.
+  - they have limited compute throughput for long context.
+- Only 64-96 core Genoa EPYCs with 12-channel DDR5 RAM (and the new Intel Granite Rapids) can approach practical levels of performance, and this is only for models up to 70GB . But these are certainly not budget options.
+
+- 2 channels of ddr5 9000/10000 should be something like 150 GB/s. Thats more than enough to have a real time conversation with the current gen 10B class models. Even the 30B+.
+
+- Faster RAM, more channels (e.g. Strix Halo and HEDT with 4, EPYC with 8-12), and faster/more cores+AVX512 can enable the practical use of slightly bigger models but still far smaller than the 96-192GB people are discussing about.
+
+- let's define model performance first. There are 2 stages: Prompt Processing (the model reading your input) which is compute bound, and Token Generation (the model writing its response) which is memory bound.
+- The rule of thumb for token generation is:
+  - `tokens/sec = memory_bandwidth_in_gb_per_sec / model_size_in_gb`
+- The actual bandwidth which can be achieved is ~70-75% of the theoretical.
+  - A dual-channel 3600MT/s DDR4 system has 51.2 GB/s theoretical memory bandwidth. Therefore, the actual achievable bandwidth is between 35.8 - 38.4 GB/sec.
+  - An example model: Qwen2.5 7b when quantized to 8 bits is 8.1GB (by default models are shipped to FP16 which is double that).
+  - So, you may expect a token generation speed between 4.4 and 4.7 tokens/sec (38.4 / 8.1) for this model. Half of that for the FP16 version of the model, and double of that for the Q4 version of the model.
+- That's why large (dense) models don't make sense in CPUs. A 70GB model (e.g. Llama-3.1 70b q8_0) would be slower than 1 t/s. You need 8+ channel memory to reach practical speeds.
+- 🤔 But if you need to process long context (summarize documents, explain/debug/enhance code, continue a story, have long chat sessions) then the Prompt processing is compute bound, therefore compute throughput is very important and this is where modern GPUs seriously outperform CPUs by 25-100x due to their tensor cores.
+  - For the above model, you may achieve 60 tokens/sec for prompt processing with a CPU and about 2500 tokens/sec with a RTX 3090. Therefore, if you want to summarize a 1500 words document, it will take 1 second in the GPU and 40 seconds in the CPU (just for the model to ingest your input).
+- P. S. CPUs become practical with Mixture of Experts (MOE) models because the active parameters are usually 15-25% of the total, therefore the speed is 4-6x of that of a dense model.
+
+- My understanding is that due to the memory bandwidth being a bottleneck, using a NPU or iGPU isn't any faster than simply using the normal CPU cores themselves when you're limited to two channel memory. CPU only can certainly be useful, and I think people are too quick to discount it as an option for small context sizes and smaller models 
+
+- ## 🆚 [Thread for CPU-only LLM performance comparison : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nj4axf/thread_for_cpuonly_llm_performance_comparison/)
   - I could not find any recent posts about CPU only performance comparison of different CPUs. 
   - With recent advancements in CPUs, we are seeing incredible memory bandwidth speeds with DDR5 6400 12 channel EPYC 9005 (614.4 GB/s theoretical bw). 
   - AMD also announced that Zen 6 CPUs will have 1.6TB/s memory bw. The future of CPUs looks exciting. 
@@ -1359,10 +1401,12 @@ modified: 2022-01-16T15:52:31.293Z
   - 配置nvlink需要单独的bridge连接线
   - 选显卡要注意尺寸，公版一般尺寸适中，其他场景的定制显卡有的长宽比较大，如三风扇卡会明显大雨涡轮卡
 
-- 可考虑用大容量单卡如4090-48gb配合20L以下的小机箱, 
+- 可考虑用大容量单卡如4090-48gb配合小机箱, 
+  - 👀 大机箱不方便携带或放进背包(功能 vs 成本), 
+    - 🎒 特大号的双肩包的高度可以满足450mm, 底部长宽难以满足 205x403
   - 4090公版尺寸304x137mm, 涡轮版267x111x38mm, ⚡️ 三风扇版350x140x53mm
   - 可考虑itx机箱包括, 机械大师c28(18)/cmax(20), 闪鳞g300(17)/g350(20), 乔思伯z20(20)
-  - 机箱散热要注意cpu功耗和显卡功耗，可选用低功耗cpu+高功耗显卡，双塔风冷
+  - 机箱散热要注意cpu功耗和显卡功耗，可选用低功耗cpu+高功耗显卡，双塔风冷, 尽量选mesh网孔版
   - 暂时选择机械大师cmax(392*185*284mm, 20.5L), 因为能支持较长的三风扇显卡，显卡支持 385*160mm 以内
     - 乔思伯, 公开资料最多, t6(13.6L), tk-o(16.45L),c6(18.4L), z20(20.2L)
   - 想要128GB的内存，机箱的空间够大且满足散热需求是前提，还需要主板提供4个内存插槽，cpu的和内存的频率是能和谐工作，频率都不能太高
@@ -1420,7 +1464,16 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## [AMD MI50 32GB better buy than MI100? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o2x0bv/amd_mi50_32gb_better_buy_than_mi100/)
+- ## [NVLINK port support for RTX 3090 Ti, RTX 4080/4090 - Gaming and Visualization Technologies / Raytracing - NVIDIA Developer Forums _202210](https://forums.developer.nvidia.com/t/nvlink-port-support-for-rtx-3090-ti-rtx-4080-4090/231140)
+- I just checked RTX 3090 Ti, that also does not have NVlink port. Am I right?
+  - Yes, still there is no support but data transmission over PCIe board
+
+- Until NVIDIA thinks about bringing NVlink bridge back, RTX 3090 is the last gpu of this tech.
+
+- ## [3090 and 3090ti sli/nvlink : r/nvidia _202203](https://www.reddit.com/r/nvidia/comments/tslbxy/3090_and_3090ti_slinvlink/)
+- Nope, SLI/ NVLink needs the exact same card to be paired with in order for it to work and pool the memory. I meant to say that you need the exact same series of card, cant mix and match a 3090 with a 3090ti. But yeah it doesnt matter which brand of a particular series you get. 
+
+  - ## [AMD MI50 32GB better buy than MI100? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o2x0bv/amd_mi50_32gb_better_buy_than_mi100/)
   - While it's officially dropped from ROCm 7, we can still get it to work if we copy some files manually.. obviously this will sooner or later stop working but then we'll have Vulkan.. which (with llama.cpp at least) seems to be almost at a performance-parity with ROCm (or faster?).
 - Mi100 is still too expensive. I thought they all have vulkan support.
 
@@ -2441,7 +2494,117 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## [Is the difference between CL28 and CL30 6000MHz RAM noticable? : r/buildapc _202506x](https://www.reddit.com/r/buildapc/comments/1lo5iu2/is_the_difference_between_cl28_and_cl30_6000mhz/)
+- ## 🧩 [旅行的好搭子拉杆背包，ta来了！ - 小红书](https://www.xiaohongshu.com/explore/6810462000000000230145b2?xsec_token=AB_QqkK7_ZF3_KbwyW1ZB1W-e9_xlRmGRCX97e_tYARKI=&xsec_source=pc_search&source=unknown)
+  - 扩容书包泰格斯拉杆箱
+
+- 日常通勤35L，出差一键扩容到40L，不用托运！
+  - 拉链全可上锁，防盗设计太适合机场用了！
+
+- ## [平替行李箱的商务双肩包，40L！还能扩容 - 小红书](https://www.xiaohongshu.com/explore/6835bf120000000021002156?xsec_token=ABatORMjMwyzFmPxDjEJEf-p8c6FH-fG8_XdNtue8G_L0=&xsec_source=pc_search&source=unknown)
+  - 容量超大：主仓+扩容层40L容量，5-7天衣物+电脑+洗漱包全塞下，侧面还能插行李箱杆，赶车超方便
+  - 贴心分区：电脑隔层带缓冲+独立文组仓+暗格防盗，连充电宝都有专属位和外接口
+
+- [求一个40l左右的双肩包推荐 有背负系统的 唯一附加要求 好看！！！！ 求求 #背包客 #户外徒步 - 小红书](https://www.xiaohongshu.com/explore/6842cbd0000000002100057b?xsec_token=ABT9L2VXltMP-GUaPSRafreWyko5UR63i8ehZlDenL0as=&xsec_source=pc_search&source=unknown)
+  - 神农radix47（白色）、格里高利琥珀44（红色）、始祖鸟aerios35（黑色、紫色）
+
+- [一个人旅行系列之可登机双肩包 - 小红书](https://www.xiaohongshu.com/explore/65e1833800000000040027ab?xsec_token=ABIG1oshPpa6-_2S9Eiadw0dwjUN6w5GF6LRXEljnCLc0=&xsec_source=pc_search&source=unknown)
+  - 一般来说国内航空是115原则，既55厘米×40厘米×20厘米，重量一般为7KG，（具体还是要看航司规定）。
+  - 有些也分享过45，48，50l登机的，实际上我也看到过，但是！但是！但是！也有人被拦下的！所以航空公司不同，地方不同，可能导致不一样的结果。
+
+- Peak Design backpack 45l ，2.09kg
+  - 优缺点：30l模式下可登机，拉链式的可扩容45l模式（几乎没超）大容量，多用途可搭配内胆（自行购买），他是最好的旅行双肩相机包，可能没有之一。
+
+- 最大容量的包Osprey Farpoint 40L和Osprey Porter 46L
+  - 瘦长的包不合适，能放进去但是容量会比较少。
+
+- 迪卡侬299的50l也可以上
+
+- 
+- 
+- 
+- 
+- 
+
+- ## [家用级主板能不能插双显卡？ - 知乎 _](https://www.zhihu.com/question/595962358)
+- 这段时间正好在研究这个，也是想找个双显卡的方案。御三家的主板看了个遍，三家intel 7系主板里支持双显卡的最便宜的主板是 ￼￼[华硕ProArt Z790-CREATOR] ，4200元，支持 [PCIe 5.0]  16x/0 和 8x/8x 两种模式。其他支持双显卡的主板都要5000以上了。
+  - 其他品牌的主板也看了些，华擎太极看介绍也能支持双显卡，但没看到哪里有卖，估计也不便宜的。
+- 确实如此。想双显卡主板不能差了，最好得是双PCIe5.0 16X的，要不然第二个显卡速度直接慢一截，但价位直接5000了。
+
+- 你这个需求应该去买X570带pcie bifurcation的主板，因为z690、z790和amd新的x670上了pcie5.0，5.0的拆分芯片非常昂贵，只有旗舰才会用，4.0的拆分芯片相对便宜。买个rog strix x570e就行了
+
+- ## [双 RTX 5060 Ti 白色家庭工作站 - 小红书](https://www.xiaohongshu.com/explore/687ab0d4000000002203d812?xsec_token=ABsbkh11yQDdy4hEUo0ho9xZjLdOVOCgvh31n3gg0Yyw8=&xsec_source=pc_search&source=web_explore_feed)
+  - 主板：华硕 Z690 Formula
+  - 机箱：乔思伯 D41 MESH
+  - CPU：i7-14700
+  - 显卡1：微星 RTX 5060 ti 16GB TRIO
+  - 显卡1：技嘉 RTX 5060 Ti 16G
+  - 内存：64GB DDR5 6400 CL32
+  - 硬盘：Kioxia KXG80ZN84T09 4TB
+  - 电源：海盗船 RM750e ATX 3.1
+  - AIO：酷凛 FX360 PRO
+  - 风扇：8 x Arctic BioniX P120
+
+- ## 🌰 [CoolerMaster Qube 500 with dual GPUs : r/mffpc _202507](https://www.reddit.com/r/mffpc/comments/1m3x31m/coolermaster_qube_500_with_dual_gpus/)
+  - CPU: Ryzen 5 9600X 
+  - GPU1: RTX 5070 12Gb 
+  - GPU2: RTX 5060 16Gb 
+  - Mboard: ASRock B650M 
+  - RAM: Crucial 32Gb DDR5 6400 CL32 
+  - SSD: Lexar NM1090 Pro 2Tb 
+  - Cooler: Thermalright Peerless Assassin 120 风冷
+  - PSU: Lian Li Edge 1200W Gold
+  - case: QUBE 500 Flatpack Black & White Edition | Cooler Master, 33.5L
+  - Will be updating it to a Core Ultra 9 285K, Z890 mobo and 96Gb RAM next week, but already doing productive work and having fun with it.
+
+- Did you mount the PSU to the front panel of the case?
+  - Yep, t’s the standard PSU bracket, in the top position, giving more room underneath for cables and gpu. It sits right up close to front panel, yes. Very nice case, super easy to build in.
+
+- [Dual GPU set up was surprisingly easy : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1m3xgjo/dual_gpu_set_up_was_surprisingly_easy/)
+- How's your temperatures with that thing during use?
+  - Excellent so far with this biggish case and the decent size air cooler for the CPU, and plenty of room to add more fans if needed.
+
+- is there any reason you're going for an Intel core ultra? 
+  - For LLMs, Intel can have a bit of an edge with DDR5 bandwidth.
+  - Ryzen memory bandwidth on AM5 is bottlenecked by the infinity fabric, which means you don’t get the full speed of dual channel DDR5. Intel doesn’t have this bottleneck, so you’d get the full bandwidth.
+  - Of course this is only relevant if you’re wanting to load models larger than your VRAM. In my case I got 96GB of DDR5-6000 for occasionally loading massive models (eg Mistral Large 123B), but I don’t get the full 96GB/s theoretical bandwidth, it’s closer to 60GB/s due to the infinity fabric bottleneck.
+
+- [Updated: Dual GPUs in a Qube 500 : r/mffpc _202508](https://www.reddit.com/r/mffpc/comments/1mmebz9/updated_dual_gpus_in_a_qube_500/)
+  - CPU: Core Ultra 9 285K, 
+  - MBD: Gigabyte Z890 Aero G ATX, 
+  - RAM: 256Gb (4x64) Crucial DDR5 5600MHz CL46 ( with four memory sticks it’s stabilised at 5200MHz), 
+  - GPU1: RTX 5070ti 16Gb, 
+  - GPU2: RTX 5060ti 16Gb, both GPUs run at x8 smoothly
+  - ssd * 3
+  - PSU: Lian Li Edge 1200W 80+ Gold, 
+  - Case: CoolerMaster Qube 500 (33 litres).
+  - Getting 125+ TPS with GPT-OSS 20b, so pretty happy.
+
+- I just bought the Qube 500 and plan on putting my rig into it. I have similar specs to yours, including a Lian Li Edge PSU (mine is 1000W). I’m worried about its size and fit in the case, especially with my 5070ti Gigabyte Gaming OC gpu. Did you run into a lot of issues from the size of the PSU? Did you have to mod anything to make it all work?
+  - Yes it fits and works, no mods required, but there’s two options. There a series of rungs for the placement of the psu. 1. The top rung is harder to do, you have to push and shove the clips and the cables from the front panel a bit to get it in, but then as the psu is higher in the case, there’s better clearance of all the psu cables above the gpu. 2. Or, the second from the top rung, which is easier to fit in, but as the psu is lower then the power cables may be a bit cramped by the gpu.
+  - I started with 2, then changed to 1, and recommend you start the same way. Depending on the length of your gpu, option 2 may be just fine.
+
+- ## [为什么光威这个牌子的内存这么便宜? - 知乎](https://www.zhihu.com/question/310230307/answers/updated)
+- 便宜的原因也不外乎于牌子新，品控略不如巨头。
+  - 但是内存终身质保啊，你怕啥。我甚至遇到过停产的型号他们还给原价退款的，还要什么自行车。
+
+- 有稳定性需求的用户可以买ECC用不上普通内存
+
+- 我家的，全天24小时开机，一直用的都是光威内存，从来没出过问题，
+  - 光威内存在京东的销量超过20万条，销量仅次于市场第一品牌金士顿，
+  - 再加上质保是“终身质保”只换不修，根本不用担心。
+
+- 嘉合劲威旗下只有阿斯加特和光威
+
+- 内存天下三分，美光副厂出品
+
+- ## [Who builds PCs that can handle 70B local LLMs? : r/LocalLLaMA _202502](https://www.reddit.com/r/LocalLLaMA/comments/1io811j/who_builds_pcs_that_can_handle_70b_local_llms/)
+- Ryzen Threadripper CPU with 4x 3090 (with used parts it was close to $3, 000)
+
+- For setup #2, how do you run 4x 3090 and a Threadripper cpu with a single 1600w psu? Don't the 3090's power spike from what I hear?
+  - Yes that's accurate, I have one 1600 watts PSU to power it all.
+  - If you see my setup guide, I also power limit 3090s to 270 watts using nvidia-smi. 270 watts per 3090 is that sweet spot that I found. I walk through it in the video and it is linked in the video, but here it is for easy reference:
+
+- ## 🆚 [Is the difference between CL28 and CL30 6000MHz RAM noticable? : r/buildapc _202506x](https://www.reddit.com/r/buildapc/comments/1lo5iu2/is_the_difference_between_cl28_and_cl30_6000mhz/)
   - And is the difference worth an additional 20 euros?
 
 - Nope, definitely not worth that amount. Just stick with 6000mhz CL30.
@@ -2454,6 +2617,10 @@ modified: 2022-01-16T15:52:31.293Z
 - Not really but will be slightly faster in a few games. 6000/30 is sweet spot according to AMD too. Cheap and a nobrainer for most people.
 - 6400/28 or even 26 might give you a few percent however 6000/30 and 28 is pretty much the same.
 - If used with a X3D CPU the memory is even less important. Don't overpay on memory!
+
+- [6400mhz cl30 or 6000mhz cl28 for 9800x3d? (gaming) : r/overclocking](https://www.reddit.com/r/overclocking/comments/1gxzstd/6400mhz_cl30_or_6000mhz_cl28_for_9800x3d_gaming/)
+  - DDR5-6400 CL30 > DDR5-6000 CL28, but its more likely your chip will run the 6000CL28 or 30, than 6400CL30 1:1. You are the mercy of the silicon lotery, its better to bet to lose.
+  - I run that 6400 kit at 6200 cl26, zero stability issues.. just depends on how much you wana fiddle. It ran 6400 cl30 expo no problem. Also run 1:1 with infinity fabric at 2067 and 1.6V. Also this kit is Hynix A-die.
 
 - ## [贵的机箱和便宜的机箱，在使用体验上到底有多大区别？ - 知乎](https://www.zhihu.com/question/589948503)
 - 真正好用的机箱，往往不算非常贵，其实是“[Silver Bullet]”级别的设计，假如题主需要个非常能“装”的机箱，那么无脑推荐追风者PK620，仅仅699的[E-AT]机箱，超级能装，比什么1499的酷冷H500M，两千多块的酷冷C700M都能装。
@@ -2475,7 +2642,7 @@ modified: 2022-01-16T15:52:31.293Z
 - 大的安装的时候很方便，小机箱要是机器要维修故障了你会想砸了它
   - 所以不是特殊需求我都推荐买全塔机箱，或者上面或者前面能拆开的中塔
 
-- ## [机械大师C34 Pro机箱好用吗？缺点是什么？ - 知乎](https://zhuanlan.zhihu.com/p/642308682)
+- ## 📦 [机械大师C34 Pro机箱好用吗？缺点是什么？ - 知乎](https://zhuanlan.zhihu.com/p/642308682)
 - 机箱使用了模块化设计，无论是上置电源还是下置电源，直插显卡还是竖装显卡，我们只需调节相应的模块即可，对硬件的包容性极高。
   - 比如尾部的7个PCIe槽位设计，中间的第2与3挡板是可以拆卸的，然后通过移动来实现ATX/MATX主板规格的转换。
 
@@ -2491,7 +2658,7 @@ modified: 2022-01-16T15:52:31.293Z
 
 - C34 Pro是我见过配件方面最走心的机箱。第一次见螺丝钉自带配件盒，还附赠了磁吸螺丝刀、ATX/MATX切换组件以及防尘网。至于便携提手我并没有安装到机箱上，因为装入电源和显卡后的整体重量太大，单手提拿不动。
 
-- [【方糖机械大师C34 Pro AIR版参数】方糖机械大师 C34 Pro AIR版机箱参数 -ZOL中关村在线](https://detail.zol.com.cn/2114/2113024/param.shtml)
+- [方糖机械大师 C34 Pro AIR版机箱参数 -ZOL中关村在线](https://detail.zol.com.cn/2114/2113024/param.shtml)
   - 429×205×349mm, 30.7L
   - 台式机箱（中塔），吸音降噪机箱，玻璃侧透机箱
   - 适用主板	E-ATX（加强型），ATX（标准型），M-ATX（紧凑型）
@@ -2520,7 +2687,7 @@ modified: 2022-01-16T15:52:31.293Z
   - 风扇：联力猫头鹰超预算，龙鳞光效清爽，圆角矩形有辨识度，价格适中，两点不足：①光效不够均匀（LED少或匀光板不够厚）②噪音大带耳机都听得到，不过我能忍受
   - 水冷：5.31钛钽首发新品LG600，3.95英寸大屏出彩，差点装不下，C34Pro又是刚好兼容，屏幕跟上方风扇就1~2mm间隙
 
-- ## 📌 [有哪些巨好看的机箱？ 机械大师 - 知乎](https://www.zhihu.com/question/347824157/answer/1841037981)
+- ## 📌💡 [有哪些巨好看的机箱？ 机械大师 - 知乎](https://www.zhihu.com/question/347824157/answer/1841037981)
 - 机械大师C系列全金属机箱了解一下
 - 目前机械大师C系列有C24、C26、C28、C34一共四款机箱，这四款机箱由小到大，涵盖了从ITX超小体积到最高ATX双水冷的性能支持。
   - 不同的尺寸，统一的设计思路。全系列采用家族式设计，除了兼容硬件的不同和多变的用法外，框架材质、设计思路均保持高度的一致。
@@ -2545,8 +2712,9 @@ modified: 2022-01-16T15:52:31.293Z
 - C34视界 22.8L
   - 342 x 342 x 185 mm, 21.6L
   - C34是整个C系列中最大的存在，也是唯一一个标配没有带提手的型号，因为他相较与另外三款机箱，装满后会比较重
-- [C34 Pro](http://www.m-master.cn/pd.jsp?id=22) 30.8L
-  - 429mm x205mm x349mm, 30.6L
+-  🌹 [C34 Pro](http://www.m-master.cn/pd.jsp?id=22)
+  - 429mm x205mm x349mm, 30.6L; 产品尺寸 429*205*403mm, 35.4L
+  - 🎒 特大号的双肩包的高度可以满足450mm, 底部长宽难以满足 205x403
   - 显卡支持 420mm以内
   - 主板支持 ATX/EATX/MATX/ITX
   - 散热支持 165mm风冷/360水冷/280水冷
@@ -2574,7 +2742,13 @@ modified: 2022-01-16T15:52:31.293Z
   - I currently have a mini itx setup with an i5 10400, and an rx 6700xt. It’s feeling like it’s time for an upgrade and microcenter’s CPU, MOBO, RAM combos are too good to pass up. ($370 for a Ryzen 7 7700x and 32gb of ram) Especially compared to the $700+ I would have to spend on those parts, an itx mobo and a capable SFX PSU.
 - A case like the GameMax Meshbox Pro is probably the smallest you’re going to get without needing an SFX power supply, at about 33.5L in volume. Can still fit GPU’s up to 335mm in length, and is a very reasonable $62.
 
-- [Choose A Case - PCPartPicker](https://pcpartpicker.com/products/case/)
+- ## [Looking for a Compact, Silent Server Case : r/homelab _202504](https://www.reddit.com/r/homelab/comments/1k6nbse/looking_for_a_compact_silent_server_case/)
+  - Motherboard: ATX (specifically the Supermicro H13SSL, which I plan to use)
+  - Support for 8 or more HDDs
+
+- The N5 might check all the boxes—except for noise. It lacks any sound-dampening material.
+  - 50L
+- I'd use a Jonsbo n5 and dynamat the hell out of it if I found it too noisy. 
 
 - ## [Looking for a compact case for my H11SSL-i - Hardware Hub / Build a PC - Level1Techs Forums _202311](https://forum.level1techs.com/t/looking-for-a-compact-case-for-my-h11ssl-i/203506)
   - I just received my H11SSL-i Supermicro motherboard with an Epyc CPU that has 16 cores and 256 GB of RAM. However, I am yet to find a suitable case for it. I am looking for a compact case that has at least 3 to 4 bays for 3.5-inch hard drives and another 3 to 4 bays for 2.5-inch drives. 
@@ -2584,7 +2758,7 @@ modified: 2022-01-16T15:52:31.293Z
 
 - I can’t give advice about a case that fits your requirements, but for a reference, I’m currently using Fractal Define 7 Compact for my H11SSL-i + 7551P. The case only has 2x 3.5" drive bay with a cage underneath the bottom cover and 2x 2.5" drive behind the motherboard. I think if you don’t use the bottom PCIe slot, you may be able to fit two more 2.5" above the PSU. A standard Fractal Define 7 should fit, but it’s not compact 
 
-- ## [求一款atx紧凑型机箱? - 知乎](https://www.zhihu.com/question/328153905)
+- ## 📌 [求一款atx紧凑型机箱? - 知乎](https://www.zhihu.com/question/328153905)
 - 最近我装了一台AMD平台的游戏PC，为了更好的扩展性我选择了ATX大板，但我又追求小巧机身和扩展性，所以还是有点难办的，在机箱的选择方面我也是研究了许久，最终结合实际、选择了设计非常独到的紧凑机箱：机械大师C34 Pro。
   - 这个机箱支持ATX/EATX板子，但尺寸只有429x205x349mm，比常规的ATX机箱小了很多，但模块化的独特设计让它具备了非常棒的扩展性和可维护性
   - CPU：AMD RYZEN 7 9700X
@@ -2597,16 +2771,34 @@ modified: 2022-01-16T15:52:31.293Z
   - 电源：安耐美白金竞蝠PK1000W
   - 机械大师C34 Pro这个机箱正面金属质感尽显，看起来极为优雅
 
-- Jonsbo D40  	31.6 L
-- Jonsbo U4 Plus  	31.7 L
-- Jonsbo D41 MESH  	35.4 L
-- Cooler Master Elite 361  25.1L
-- KOLINK Inspire K4  33.4L
-- GameMax MeshBox Pro  33.5L
-- KOLINK Observatory MX Mesh ARGB  30.8L
-- Silverstone RM42-502  35.4L
-
 - [有没有什么体积比较小的ATX机箱推荐. 台式机？ - 知乎](https://www.zhihu.com/question/51668457/answers/updated)
+
+- ## 🌰 [5k2k 144Hz Dual GPU LSFG Setup : r/losslessscaling _202504](https://www.reddit.com/r/losslessscaling/comments/1k837cb/5k2k_144hz_dual_gpu_lsfg_setup/)
+  - Just here to share my completed dual GPU build, managed to get stable 144fps in MH Wilds with LSFG 3.0 Fixed x3 with 80 flow scale, HDR enabled. And my goodness the gameplay looks incredible smooth.
+  - CPU: AMD Ryzen 7 5800X3D 
+  - GPU for Rendering: ASRock RX 9070 XT Steel Legend 
+  - GPU for LSFG: VASTARMOR RX 7650 GRE (I bought it from China Taobao) 
+  - GPU Undervolt settings: 9070 XT -80mV, -10% PL, 2700MHz Memory 7650 GRE -60mV, -6% PL
+  - RAM: 4 x 16GB DDR4 3200MHz CL16
+  - power: FSP Hydro Ti PRO 1000W
+  - case: Jonsbo D41 Mesh Screen (White)
+  - Fun fact: The total cost of getting these 2 GPU is still lower than any rtx5080 I can find in my region ffs.
+  - My top GPU takes like 2.9 slot (only left about 2mm clearance between GPU), bottom GPU takes 2.4 slot, if I removed the bottom fans it can easily fit a full size 3 slot card, but the air flow will be worse obviously.
+  - I should have mentioned my case fans arrangements too: 1 x front intake, 2 x bottom intake, 1 x top (front) intake, 1 x rear exhaust, 2 x top (rear) exhaust
+
+- Nice looking build but that top GPU will be starving for fresh air. I tried the same with my build and ended up getting another case so I could move the bottom card into a vertical mount on a riser.
+
+- I'm interested about temps after ~1 hour or longer game session
+  - So far my top GPU hotspot temp can be kept below 83C range, VRAM temp around 95C worst case, from I have seen 9070XT memory temp is hot across all AIB partner, I will just live with it..
+  - So far my top GPU hotspot temp can be kept below 83C range, VRAM temp around 95C worst case, from I have seen 9070XT memory temp is hot across all AIB partner, I will just live with it..
+
+- ## [乔思伯推出松果 D41 ATX 系列机箱，该产品都有哪些亮点设计？ - 知乎 _202212](https://www.zhihu.com/question/572085484)
+- 乔思伯为CR3000风冷散热器标成了260瓦的热解能力
+  - CR3000风冷散热器为非常传统的双塔结构，整体尺寸为120x132x160mm，在选配机箱时请注意散热器兼容高度，像D41这种就能完美装入。 
+
+- https://www.zhihu.com/question/477140818/answer/3215457076
+  - 这不就是我的乔思伯D41嘛！我也在考虑风道问题。目前最合理的安置方式就是：1. 底部风扇吸气兼给显卡供风；2. 电源风扇朝前，往上吹风；3. 前置小风扇里吹气，兼吹显卡；4. CPU及后置风扇往后吹。
+  - 另一种不合理的方式就是，整体从后往前吹，调转电源风扇从机箱内部吸气，前置风扇从内部吸气。
 
 - ## [乔思伯发布松果 D31 紧凑型 M-ATX 机箱，支持到 360 水冷排, 散热性能怎么样？ - 知乎 _202210](https://www.zhihu.com/question/562398994)
 - 机箱副屏是一个亮点，紧凑型机身能放下360一体水冷，想法不错。但是目测会有些问题，比如我购买就是乔思伯TF360一体水冷散热器，水泵在水管上，距离冷排进出水口不到10厘米（可能不准）位置上。若使用D31的话，电源可能无法安装在LV1或者LV2的位置
@@ -2618,12 +2810,56 @@ modified: 2022-01-16T15:52:31.293Z
 - 乔思伯松果D31仅有一个机械硬盘位置，并且这个位置是底部的一个风扇位，风扇和硬盘只能二选一安装。
   - 有2个2.5寸SATA固态硬盘位。
 
-- ## 📌 [2025年5月更新，电脑机箱推荐。推荐一波高颜值的机箱。包含ITX, M-ATX, ATX, E-ATX机箱 - 知乎](https://zhuanlan.zhihu.com/p/210537601)
+- ## 📌💡 [2025年5月更新，电脑机箱推荐。推荐一波高颜值的机箱。包含ITX, M-ATX, ATX, E-ATX机箱 - 知乎](https://zhuanlan.zhihu.com/p/210537601)
   - [2025年5月更新，电脑机箱推荐。推荐一波高颜值的机箱。包含ITX, M-ATX, ATX, E-ATX机箱](https://www.zhihu.com/tardis/zm/art/210537601)
+
+- [Choose A Case - PCPartPicker](https://pcpartpicker.com/products/case/)
+
+- Cooler Master Elite 361  25.1L
+- Jonsbo D40  	31.6 L
+- Jonsbo U4 Plus  	31.7 L
+- Jonsbo D41 MESH  	35.4 L
+- KOLINK Observatory MX Mesh ARGB  30.8L
+- KOLINK Inspire K4  33.4L
+- GameMax MeshBox Pro  33.5L
+- Silverstone RM42-502  35.4L
+
+- Cooler Master 
+- Cooler Master 400L
+  - 411 x 218 x 410mm, 36.7L
+  - 主板: itx/matx
+- Cooler Master Qube 500 / Q500L
+  - 380 x 231 x 381mm, 33.4L
+- Cooler Master MasterBox 600L V2 智瞳600 🤔 /非mesh版
+  - 400 x 204 x 455mm, 37.15L, 仅比d41高1.5cm
+- Cooler Master QUBE 500 Flatpack  38.9L
+- Cooler Master Elite 371  38.7L
+- Cooler Master CMP 320  38.6L
+- Cooler Master Elite 330/334/500  38.2L
+- Cooler Master MasterBox MB600L V2  37.7L
+- DIYPC Solo-T1  38.9L
+- Deepcool MACUBE 110  38.8L
+- Deepcool CC360 ARGB  38.7L
+- Deepcool CH370  38.3L
+- Zalman P10 NAMU  38.6L
+- Zalman Z1 Iceberg  38.5L
+- Zalman S3/S2/Z3  38.4L
+- Thermaltake V3   38.5L
+- Silverstone Lucid 04  38.2L
+- Lian Li PC-V650  38.2L
+- Lian Li PC-C32B  37.4L
+- Lian Li PC-V359W  36.6L
+- Jonsbo UMX4/U5/VR4  38.0L
+- Phanteks Eclipse P300  36L
+- Fractal Design Core 2300/2500  37.8L
+- Fractal Design Meshify C Mini  36.6L
+- Fractal Design Pop Mini Air  36.5L
+- Fractal Design Focus G Mini  36.4L
+- Fractal Design Define Mini C /Tg  35.7L
 
 - 迷你小钢炮ITX机箱推荐
 
-- 酷冷至尊魔方NR200P
+- 酷冷至尊魔方 NR200/NR200P
   - 箱体长宽高（mm）376 x 185 x 292mm, 20.3L
   - 支持ITX和DTX规格的主板
   - 只能用SFX电源。ATX电源需要自己DIY支架，而且会限制显卡长度
@@ -2666,14 +2902,43 @@ modified: 2022-01-16T15:52:31.293Z
   - 硬盘位3个
   - 支持的是M-ATX主板，总体布局和乔思伯D30类似，但是华硕AP201采用的是全打孔面板，且顶部支持360水冷，散热非常的不错，支持TYPE-C USB 3.2 GEN2（乔思伯D30的type-C是和USB并在一起的）。
 
-- 乔思伯 D31 🌹
+- 乔思伯 D31 mesh 🌹
   - 产品尺寸：205 (宽) *347.5 (高) *440mm (深)（31.3L） 
     - 205mm（宽）*363mm（高）*452mm（深）（机箱总尺寸）
-  - 电源类型：ATX
-  - 主板支持：ITX / DTX / M-ATX
   - 显卡长度：330-400mm
+  - 主板支持：ITX / DTX / M-ATX, 🐛 不支持atx
   - 机械硬盘位：2.5〞SSD*2 + 3.5〞HDD*1
   - PCI扩展槽：4
+  - 电源类型：ATX
+
+- 乔思伯 D32 STD MESH
+  - 384mm * 207mm* 302mm， 24L
+  - 兼容主板：MINI-ITX / MICRO-ATX标准型 / MICRO-ATX背插型
+
+- 乔思伯 D32 PRO MESH
+  - 384mm * 207mm* 302mm， 24L
+  - 兼容主板：MINI-ITX / MICRO-ATX标准型 / MICRO-ATX背插型(机箱需切换至B模式)
+
+- 乔思伯 D40 /无mesh导致散热差
+  - 204mm (W) *401mm (D) *386mm (H), 31.51L
+  - 硬盘位：2.5〞*3+3.5〞*1 or 2.5〞*4
+  - 显卡支持长度：293-374mm
+  - 主板支持：ATX/M-ATX
+  - 前置接口：USB3.2 Gen 1 Type-C*1(5Gbps)     USB3.2 Gen 1 Type-A*1(5Gbps)     复合式音频接口*1
+  - PCI扩展槽：7
+  - 电源：ATX PSII≤140-200mm
+
+- 乔思伯 D41 mesh 🌹 /放不进背包
+  - 205mm (宽) *392mm (高) *440mm (深)（容积：35.4L）
+    - 总尺寸  205mm*407mm*452mm, 37.7L
+  - 显卡支持长度：330-400mm
+  - 主板支持：ATX / M-ATX
+
+- 乔思伯 U4 Pro
+  - 205mm(W) * 395mm(D) * 426mm(H)（含脚垫）, 34.5L
+  - 显卡支持长度：≤280-330mm
+  - 主板支持类型：ITX / M-ATX / ATX
+  - 电源支持：ATX≤170-190mm
 
 - 方糖机械大师 C+Max
   - 392*185*284mm
@@ -2686,25 +2951,25 @@ modified: 2022-01-16T15:52:31.293Z
   - ATX（中塔）机箱是目前大部分用户的选择，这类的机箱尺寸偏大，基本都支持ATX，M-ATX，ITX版型，部分支持包括E-ATX在内的所有版型。
   - 优点在于散热好，ATX机箱基本都支持240及360水冷，对大型双塔风冷散热的支持也更好。扩展位多，方便安装更多的硬盘等设备。
 
-- 乔思伯 D40 /无mesh导致散热差
-  - 204mm (W) *401mm (D) *386mm (H), 31.51L
-  - 硬盘位：2.5〞*3+3.5〞*1 or 2.5〞*4
-  - 显卡支持长度：293-374mm
-  - 主板支持：ATX/M-ATX
-  - 前置接口：USB3.2 Gen 1 Type-C*1(5Gbps)     USB3.2 Gen 1 Type-A*1(5Gbps)     复合式音频接口*1
-  - PCI扩展槽：7
-  - 电源：ATX PSII≤140-200mm
+- 分形 North /支持全mesh且无玻璃
+  - 4.33*2.15*4.5, 41.9L; 整机尺寸 4.47*2.15*4.69, 45.07L
 
-- 乔思伯 D41 /mesh
-  - 205mm (宽) *392mm (高) *440mm (深)（容积：35.4L）
-  - 显卡支持长度：330-400mm
-  - 主板支持：ATX / M-ATX
+- 鑫谷无尽1 /单面玻璃侧透/有点小
+  - 3.6x2.3x4.35, 36L; 整机尺寸 3.95×2.3×4.55, 41L
 
-- 乔思伯 U4 Pro
-  - 205mm(W) * 395mm(D) * 426mm(H)（含脚垫）, 34.5L
-  - 显卡支持长度：≤280-330mm
-  - 主板支持类型：ITX / M-ATX / ATX
-  - 电源支持：ATX≤170-190mm
+- 鑫谷无界1 /2面玻璃海景房/无mesh
+  - 4.2x2.1x4.65, 41L; 整机尺寸 4.38x2.1x4.85, 44L
+
+- 航嘉 GX750A 
+  - 4.3x2.18x4.35, 40.7L; 产品尺寸 4.65x2.18x4.61, 46L
+  - 侧边网孔散热
+
+- 爱国者 yogo t21
+  - 4.08×2.3×4.6, 43.1L
+
+- 朱雀air
+
+- 追风者xt523 信仰版
 
 - [2024年最新ATX小机箱推荐 - 知乎 _202401](https://zhuanlan.zhihu.com/p/680148767)
 - 既想要主机够小，又想要ATX主板的拓展性是很难达成的，于是很多人退而求其次选择MATX主板和MATX机箱。但ATX小机箱依然是很多人的执着所在。作者对市面上目前在售的ATX机箱进行了粗略的梳理，发现目前较小的ATX机箱主要有以下这些
@@ -2928,6 +3193,15 @@ modified: 2022-01-16T15:52:31.293Z
 
 - Get a threadripper 7000 motherboard. It’s a really expensive platform, but I doubt cost is your primary concern here.
   - Recent epyc and xeon platforms are also options, but Threadripper would be my recommendation.
+
+- ## [Show me your AI rig! : r/LocalLLaMA _202409](https://www.reddit.com/r/LocalLLaMA/comments/1fqwler/show_me_your_ai_rig/)
+- With enough memory bandwidth and a recent CPU you can run very large models like Llama 405B in main memory and get 4 tp/s or so. You can roughly calculate it by dividing model size by memory bandwidth. Make sure you get fast RDIMMs, ideally 3200 otherwise your TPS will suffer. Without enough RAM you'll be running smaller, usually inferior models.
+
+- I bought a used Epyc 7282, but your 7F52 looks a bit nicer! 
+  - Definitely try to populate all 8 slots of RAM, this board/CPU supports 8 channels, so you can really up your memory bandwidth doing that. I am going to run 8x 32GB PC 3200 RDIMMS. 
+  - If you are running DDR4 3200, you get 25.6 GB/s of memory bandwidth per channel, so if you are only single channel or dual channel now, going to 8 could take you from 25 or 50 GB/s to 205 GB/s!
+
+- You should fill all 8 slots with a Ram module of the same size, so your total Ram would be either 128 or 256 GB. Your Cpu has a maximal memory bandwidth of 200 GB/s.
 
 - ## [Epyc Turin (9355P) + 256 GB / 5600 mhz - Some CPU Inference Numbers : r/LocalLLaMA _202502](https://www.reddit.com/r/LocalLLaMA/comments/1ihpzn2/epyc_turin_9355p_256_gb_5600_mhz_some_cpu/)
   - I decided that three RTX 3090s janked together with brackets and risers just wasn’t enough; I wanted a cleaner setup and a fourth 3090.
@@ -3257,6 +3531,30 @@ modified: 2022-01-16T15:52:31.293Z
 - ["Sleepy Chungus"... AMD EPYC 7763 w/ 64x cores, 128 threads @ 2.450GHz in a GEEEK A30 V2 && 128GB of Quad Channel, Dual Rank, 3200MT ECC REG RAM (linux sffpc, btw) : r/sffpc _202209](https://www.reddit.com/r/sffpc/comments/x6phtn/sleepy_chungus_amd_epyc_7763_w_64x_cores_128/)
 - I'm not sure if it is called sffpc with that psu and chonky cooler.
 
+- ## [Need expert recommendations for a scalable, portable midrange AI hardware setup (2025) : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o3p83a/need_expert_recommendations_for_a_scalable/)
+  - My goal is to start with a solid midrange setup that is truly expandable — meaning I want to be able to add more GPUs, RAM, and storage later on without major hassle
+  - CPU: AMD Threadripper PRO or EPYC 7004 series for high core count and ECC support
+  - GPU: NVIDIA RTX 4090 or RTX 6000 Ada for strong AI performance and CUDA compatibility
+  - RAM: Minimum 128GB DDR5 ECC with at least 8 slots for future upgrades
+  - Storage: NVMe SSDs (1TB system drive + multiple TBs for data with RAID options)
+  - Mainboard: Supports multiple PCIe 5.0 x16 slots for GPU expansion, robust VRM for stable power delivery
+  - Chassis: Portable midtower or flight case with good airflow and room for multiple GPUs
+  - Power supply: 1200W or higher modular platinum rated PSU, with capacity for future GPU additions
+
+- CPU & Motherboard: Maybe Epyc 9B14/9V84, or anything higher than 9354 if these "cloud" varients are not available, and pair it with a supermicro H13SSL-N(not sure whether MZ33-AR0 works). I think EMR Xeons (Xeon 6530 or "cloud" ones like 8555C) can be a cheaper replacement of Epyc, with fewer bandwidth, but it has AMX support.
+  - RAM: Maybe 12x48=576GB DDR5 4800(for Zen4) or 8x 48GB=384GB DDR5 5600(for EMR)
+  - Chassis: Maybe phanteks enthoo pro 2(or any ATX/E-ATX case with >=8 PCIe slots) or second hand server chassis.
+  - Power supply: >=1600W platinum, depending on GPU
+- why should the pc case have over 8 PCIE slots?
+  - 4 x dual slot GPUs lead to 8, you can go standard ATX case with 7 slots if you only need dual GPUs.
+  - For most single-socket modern server processors (Rome or later Epyc, Sapphire Rapids or later Xeon), 4 GPUs are a sweet spot. As the 80-128 PCIe lanes provided by server processor can adequately support 4 GPUs.
+
+- If its for inference only i wouldnt put a lot of value on ECC, id prioritise ram speed . If youre going with threadripper pro it needs to be one of the top models to utilise the ram bandwith, if you cant afford those youll get more bang for your buck with a regular threadripper 
+
+- For potable, Go to Mac Ultra M3 512 or await DGX Spark x2 EA
+
+- I've been building systems for other people, sort of a "just-in-case" inference in a rugged case with 64-128gb vram, preloaded with models and data (wikipedia, army trauma medic guides, etc), and literally solar powered. Some customers have particular power budgets, so I'm not necessarily aiming for highest tok/s but lowest power per token/s or lowest idle power. It's not exactly in big demand, but I can speak more about it if there's interest..
+
 - ## 🌰 [AMD EPYC mini-ITX build : r/sffpc _202207](https://www.reddit.com/r/sffpc/comments/w81afy/amd_epyc_miniitx_build/)
   - Case: Streacom DA2 V2, 340 x 286 x 180mm, 17.5L
   - Motherboard: Asrock ROMED4ID-2T
@@ -3372,7 +3670,7 @@ modified: 2022-01-16T15:52:31.293Z
 - The bandwidth numbers for the Apple M1/2/3 SoC are just the raw totals from the memory, but depending one which cluster is using it (P-cores, E-cores, GPU) they have their own limitations. Here is the explanation for the M1 series
   - On the M1 Max with 400GB/s the CPU can get maximum 204GB/s when using the P cores only or 243GB/s when using both the P and E cores.
 
-- ## ⚡️📊 [有人可以做一个epyc服务器CPU的天梯榜吗？ - 知乎](https://www.zhihu.com/question/596966739)
+- ## ⚡️📊📌 [有人可以做一个epyc服务器CPU的天梯榜吗？ - 知乎](https://www.zhihu.com/question/596966739)
 - cpu, cinebench-r23, pricing
   - AMD Ryzen 9 7900x, 3.0w, 2469
   - AMD Ryzen 5 7500F, 1.4w, 938
