@@ -410,6 +410,27 @@ modified: 2025-02-21T18:20:42.624Z
   - Built-in Chat: Conversational interface with context-aware responses
   - Pluggable LLMs: Works with OpenAI, Anthropic, or local models
   - Offline-First: No internet required after video generation
+
+## llm-streaming
+
+- https://github.com/globalaiplatform/langdiff /225Star/apache2/202509/python/ts
+  - https://langdiff.readthedocs.io/en/latest/
+  - https://globalaiplatform.github.io/langdiff/
+  - LangDiff provides intelligent partial parsing with granular, type-safe events as JSON structures build token by token, plus automatic JSON Patch generation for efficient frontend synchronization.
+  - Streaming Parsing
+    - Define schemas for streaming structured outputs using Pydantic-style models.
+    - Receive granular, type-safe callbacks (on_append, on_update, on_complete) as tokens stream in.
+    - Derive Pydantic models from LangDiff models for seamless interop with existing libraries and SDKs like OpenAI SDK.
+  - Change Tracking
+    - Track mutations without changing your code patterns by instrumenting existing Pydantic models, or plain Python dict/list/objects.
+    - Generate JSON Patch diffs automatically for efficient state synchronization between frontend and backend.
+  - The Problem with Traditional Streaming Approaches
+    - Even partial JSON parsing libraries that "repair" incomplete JSON don't fully solve the issues
+  - The Coupling Problem
+    - tightly coupling frontend UIs to LLM output schemas.
+  - ✨ LangDiff solves these problems through two key innovations:
+    - Intelligent Streaming Parsing: Define schemas that understand the streaming nature of LLM outputs. Get type-safe callbacks for partial updates, complete fields, and new array items as they arrive.
+    - Change-Based Synchronization: Instead of streaming raw JSON, track mutations on your application objects and send lightweight JSON Patch diffs to frontends. This decouples UI state from LLM output format.
 # proxy
 - https://github.com/lymanzhao/Ollama-serve /202503/python
   - 一个 Ollama转发代理，用于为原生 Ollama 服务添加 API 密钥认证功能。

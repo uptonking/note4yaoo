@@ -51,6 +51,12 @@ modified: 2025-09-01T07:58:29.058Z
 
 - ## 
 
+- ## [Using LLMs for Code Generation: A Guide to Improving Accuracy and Addressing Common Issues _202508](https://www.prompthub.us/blog/using-llms-for-code-generation-a-guide-to-improving-accuracy-and-addressing-common-issues)
+- Some of the most common problems are:
+  - Logical Errors: LLMs often misinterpret the logical requirements of a task, leading to incorrect or nonsensical code behavior.
+  - Incomplete Code: Important sections of code can be left out
+  - Misunderstanding Context: Models may fail to grasp the full context of the prompt, causing them to generate code that doesn't align with the intended use
+
 - ## 📌 [Yek: Serialize your code repo (or part of it) to feed into any LLM | Hacker News _202501](https://news.ycombinator.com/item?id=42753302)
 - There are a lot of them. I collected a list of cli tools that does this: https://prompt.16x.engineer/cli-tools
 

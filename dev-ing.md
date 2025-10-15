@@ -57,6 +57,9 @@ https://meeting.tencent.com/p/9606972663
   - https://www.ibm.com/granite/playground
   - https://playground.liquid.ai/chat
 
+- ai-deep-research
+  - chat: openai, gemini, mistral, qwen, glm
+
 - play-examples
   - https://playground.powerbi.com/en-us/
 # dev-review

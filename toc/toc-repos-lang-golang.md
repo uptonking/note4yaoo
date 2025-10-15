@@ -57,6 +57,12 @@ modified: 2025-04-17T08:17:04.770Z
   - Route grouping
   - Middleware support
   - Built-in rendering
+
+- https://github.com/SteveCastle/modelpad /MIT/202509/go/ts
+  - Modelpad is an Open Source AI assisted writing app with Notepad like features. 
+  - Connect to cloud assisted writing models, or to your own locally hosted LLMs using Ollama.
+  - 依赖gin、sonic、pgvector、supertokens
+  - [How to Run an Open Source AI Text Editor - YouTube _202409](https://www.youtube.com/watch?v=InxEMuPLCx4)
 # utils
 
 ## filesystem

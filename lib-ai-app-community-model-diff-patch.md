@@ -47,6 +47,21 @@ modified: 2025-10-10T02:45:45.941Z
     - The changes are then streamed back to the user in the form of a diff. The diff looks like `<r:l1s1>` string to find || string to replace.
   - [How to use LLM for efficient text outputs longer than 4k tokens? - DEV Community _202406](https://dev.to/theluk/how-to-use-llm-for-efficient-text-outputs-longer-than-4k-tokens-1glc)
 
+- https://www.npmjs.com/package/@deepaste/partial-edit /NoDeps
+  - 一个纯 TypeScript 工具，用于应用人类可读的伪差异补丁文件，具有由 LLM 驱动的部分编辑功能。
+  - Patch Processing: Apply human-readable pseudo-diff patches to text files
+  - Partial Editing: Make context-aware edits to code using LLM
+  - DeePaste 应用补丁的方式与 OpenAI 的 GPT-4.1 提示指南中讨论的技术类似。该指南提到，在代码修改任务中，同时提供需要替换的确切代码和带有明确分隔符的替换代码可以产生高成功率。像伪差异这样不依赖行号的格式对于 LLM 驱动的代码编辑特别有效。
+  - [GPT-4.1 Prompting Guide Appendix: Generating and Applying File Diffs](https://cookbook.openai.com/examples/gpt4-1_prompting_guide#appendix-generating-and-applying-file-diffs)
+
+- https://github.com/dceluis/ln-diff /MIT/202410/prompt
+  - The ln-diff format is a specialized diff format designed for precise line-based code modifications. 
+  - It uses "editblocks" to explicitly define code changes while maintaining strict line number references.
+  - 🤔 基于line-number的方案要取舍
+  - If you are working with LLMs and to generate code, you have probably faced the challenge that while they may be good at generating new code, they struggle much more to apply it to existing files and codebases. 
+  - Having tried multiple approaches like instructing it to generate edits in the well known unidiff format or some variation of diff-match-patch. These formats are too algorithmically complex for LLMs
+  - I propose a different approach here: to leverage LLMs strong recitation capabilities to generate patches that apply cleanly to the source format and provide enough it with enough context for generating high-quality replacements.
+
 - https://github.com/paradite/ai-file-edit /14Star/MIT/202506/ts
   - A library for editing files using AI models such as GPT, Claude, and Gemini.
   - Edit files using natural language
@@ -82,11 +97,23 @@ modified: 2025-10-10T02:45:45.941Z
     - To solve this, we propose AnyEdit, a new autoregressive editing paradigm. It decomposes long-form knowledge into sequential chunks and iteratively edits the key token in each chunk, ensuring consistent and accurate outputs. 
     - AnyEdit serves as a plug-and-play framework, enabling current editing methods to update knowledge with arbitrary length and format, significantly advancing the scope and practicality of LLM knowledge editing.
 
+- https://github.com/SalesforceAIResearch/inksync /apache2/202408/python/inactive
+  - [[2309.15337] Beyond the Chat: Executable and Verifiable Text-Editing with LLMs](https://arxiv.org/abs/2309.15337)
+  - To give the author more agency when editing with an LLM, we present InkSync, an editing interface that suggests executable edits directly within the document being edited. 
+  - Because LLMs are known to introduce factual errors, Inksync also supports a 3-stage approach to mitigate this risk: Warn authors when a suggested edit introduces new information, help authors Verify the new information’s accuracy through external search, and allow an auditor to perform an a-posteriori verification by Auditing the document via a trace of all auto-generated content. 
+
 - https://github.com/Banner-Z/G-SPEED /apache2/202310/python/inactive
   - The official repository of paper G-SPEED: General SParse Efficient Editing MoDel (Findings of EMNLP-2023).
   - [[2310.10480] G-SPEED: General SParse Efficient Editing MoDel](https://arxiv.org/abs/2310.10480)
 
+- more-editing-solutions
+  - [[2502.13358] Bridging the Editing Gap in LLMs: FineEdit for Precise and Targeted Text Modifications](https://arxiv.org/abs/2502.13358)
+
 ## diff-toolchain
+
+- https://github.com/255BITS/gptdiff /MIT/202508/python
+  - Make changes to your project with natural language using diffs (generated and smartapplied). 
+  - CLI and API available.
 
 - https://github.com/afnanenayet/diffsitter /MIT/202510/rust
   - A tree-sitter based AST difftool to get meaningful semantic diffs
@@ -145,18 +172,71 @@ modified: 2025-10-10T02:45:45.941Z
 
 - ## 
 
-- ## 
+- ## [How do LLM-powered tools in IDEs edit files? · community · Discussion _202508](https://github.com/orgs/community/discussions/171782)
+- diffs over overwrites 
+  - they generate targeted diffs to edit specific lines, not overwrite whole files. keeps unrelated code safe. IDEs use ASTs or text diffs for precision.
+  - safety stuff Git for rollbacks, sandboxed temp buffers, and syntax checks to catch dumb mistakes.
 
-- ## 
+- Patch / Diff Generation
+  - Most implementations generate a diff (similar to a Git patch) rather than rewriting the whole file. This ensures only the intended section changes, which reduces the risk of clobbering unrelated code.
+  - For example, some editors capture the current buffer → send a slice of it to the LLM → apply a unified diff back into the editor.
+- under the hood it’s really a careful orchestration of: capture → prompt → generate → diff → apply → let Git/editor handle undo.
+- Different tools may vary, but the pattern is mostly consistent: LLM as a suggester, IDE/plugin as the executor, Git/editor as the safety net.
 
-- ## [The Edit Trick: Efficient LLM Annotation of Documents _202504](https://waleedk.medium.com/the-edit-trick-efficient-llm-annotation-of-documents-d078429faf37)
-- 
-- 
-- 
-- 
-- 
-- 
-- 
+- ## 🌰 [Generating and editing structured output (JSON) with LLM's _202505](https://www.devhelpr.com/technical-articles/generating-and-editing-structured-output-with-llms/)
+- llm can also output JSON directly according to a JSON schema, which makes it much more reliable.
+- One step further is to use the LLM to edit existing JSON data. 
+  - JSON data can be edited with the JSON Patch standard RFC 6902. This is a standard for editing JSON data in a structured way. 
+  - The LLM can be used to create a JSON Patch based on a description of the changes that need to be made to the JSON data. This way you can use the LLM to edit existing JSON data in a structured way.
+
+- ## [CoEdIT: State-of-the-Art Text Editing With Fewer Parameters | Grammarly _202312](https://www.grammarly.com/blog/engineering/coedit-text-editing/)
+  - https://github.com/vipulraheja/coedit
+  - CoEdIT, an instruction-tuned LLM for text editing. 
+  - CoEdIT is an open-source LLM that is not only up to 60 times smaller than popular LLMs like GPT-3-Edit (175 billion parameters) and ChatGPT, it also outperforms them on a range of writing assistance tasks.
+- We thought that fine-tuning LLMs using text editing tasks, rather than a broader list of general tasks, could do a lot to address the gaps we identified
+
+- ## 🌰💡 [The Edit Trick: Efficient LLM Annotation of Documents _202504](https://waleedk.medium.com/the-edit-trick-efficient-llm-annotation-of-documents-d078429faf37)
+- TL; DR: The “edit trick”, like many good ideas, is simultaneously obvious and not. When annotating documents using LLMs, don’t send the whole document in and generate a modified version. Rather, generate a list of edits that are applied to the original document. It’s much faster and cheaper.
+
+- https://github.com/waleedkadous/edit_trick /202504/python
+  - This project demonstrates the "edit trick" - a more efficient approach to using LLMs for document modification tasks that reduces token usage, processing time, and handles longer documents.
+
+- 🤔 what happens when you want Claude to add section headings to a 5, 000-word article? The obvious approach involves sending the entire document and asking for the whole thing back with headings added. But that’s not the best way to do it. 
+- The issue boils down to three critical bottlenecks:
+  - Token usage (and therefore cost) skyrockets
+  - Processing time drags on unnecessarily
+  - Context window limitations become a real headache.
+- I decided to build a small project to demonstrate a much better approach I’ve used a few times now. 
+  - I didn’t invent this, I reverse-engineered it from watching Claude Code, but realized it had much broader applicability. 
+  - The concept is simple yet powerful: why have the LLM regurgitate the entire document when all you need are the edits?
+- Here’s how the “edit trick” works:
+  - Send your document to the LLM
+  - Instead of asking for the modified document back, ask for a list of specific edits in sed-like format (or json if you prefer)
+  - Apply those edits locally without requiring the LLM to generate duplicate content
+- The syntax is beautifully straightforward: `s/unique text marker/## Heading Text\n\n$0/`; 
+  - Where the unique text marker identifies where to add the heading, and $0 preserves the original text. Of course you have to make sure that your edit is totally unique, but you can prompt the LLM to make sure that it really is.
+
+- I created a small benchmark to measure the difference between the traditional approach and the edit trick.
+  - I tested both approaches on the same document — adding section headings to a 7, 000-character article. The numbers don’t lie — the results were striking
+  - That’s an 86% reduction in output tokens! Since output tokens are typically more expensive than input tokens, this translates to dramatic cost savings — almost 70% cheaper.
+
+- The edit trick shines in several scenarios:
+  - Any task where the original content mostly stays intact
+  - Document formatting tasks (adding headings, standardizing formatting)
+  - Text enhancement (expanding sections, adding citations)
+  - Content organization (restructuring paragraphs, adding section breaks)
+
+- Implementing It Yourself
+  - The implementation is surprisingly simple. A sed-like edit pattern gives you tremendous flexibility while keeping the LLM’s task focused. 
+- The key is crafting a clear prompt that instructs the LLM to:
+  - Identify positions in the document that need modification
+  - Generate specific edit commands rather than the full document
+  - Use a consistent format that’s easy to parse programmatically
+- I found this works remarkably well across different LLMs, though Claude’s precision makes it particularly suited for generating these kinds of targeted edits.
+
+- The edit trick isn’t just about saving tokens — it’s about developing a more thoughtful, precise approach to working with LLMs
+
+- The next time you’re about to send a large document to an LLM for modification, ask yourself: “Do I need the entire document back, or just the changes?” Your users — and your budget — will thank you.
 
 - ## 🌰 [When LLMs give *almost* correct code, fix it with targeted line edits instead of a full rewrite  _202505](https://medium.com/@pYdeas/when-llms-give-almost-correct-code-fix-it-with-targeted-line-edits-instead-of-a-full-rewrite-af3329e42010)
 - This idea came from [Introducing FixIt: an unreasonably effective AI error fixer for SQL - MotherDuck Blog _202401](https://motherduck.com/blog/introducing-fixit-ai-sql-error-fixer/) and adapted with Python to work with not just SQL, but text in general
@@ -582,7 +662,20 @@ Code
 
 - ## 
 
-- ## 
+- ## ⚖️ [RFC: Token-Efficient and Consistent AI Code Generation Through GNU Unified Diff _202411](https://medium.com/@zackisland/rfc-token-efficient-and-consistent-ai-code-generation-through-gnu-unified-diff-md-a07f676c975a)
+- A strategy to enhance AI-driven code editing in multi-agent systems using the GNU unified diff format. This format standardizes output from code-generating language models. In testing, diff-based changes reduced output tokens and speed of inference by up to 90%.
+
+- Why?
+  - Token Efficiency: Maximize output token utility, optimizing performance and costs
+  - Structured Output: Maintain output consistency over multiple iterations or across large code bases with many files
+  - Modularity: Standardization of output for models to operate independently, creating patches that can be directly applied or processed by other agents or even integrated directly with git
+- What?
+  - GNU Unified Patch Output Prompt: An XML (or JSON) context to be appended to a larger `<System Prompt>` that generates text or code. The appended context configures the model’s output structure as a GNU unified patch, outputting only the diff change needed for the generated code (as opposed to returning the entire file/text block). Handles: new files, edits to existing files, and deletions to files, and works for simulated files in memory and real files.
+  - (Optional) Patch Command: JavaScript implementation of the `patch` command that can be used for the tool call out if the agent doesn’t have access to native `patch` in Unix or Windows systems, or if custom patching is required (e.g in a virtualized environment such as a sandbox for agent execution).
+- NOTE: This prompt has been optimized and tested against Claude 3.5 Sonnet Beta, and ChatGPT 4o + with virtually 100% consistent output. You must only ensure these prompts are appended to a genuine system prompt. 
+
+- a JavaScript implementation of the patch command is provided. This function can be invoked either by a) the AI agent generating the code through a tool call to apply the diffs generated by the AI code generating agent or b) through a virtualized terminal shell provided to the agent or another agent tasked with applying changes to files.
+  - The function reads the diff from the JSON output, parses it, and applies the changes to the target file, handling all edge cases such as path issues, line endings, and cross-platform compatibility.
 
 - ## ⚖️ [DiffX – Next-Generation Extensible Diff Format | Hacker News _202506](https://news.ycombinator.com/item?id=44176737)
 - I really don’t like the highly hierarchical format, that there’s a “..meta” and a “…meta” somewhere else. I can imagine we want to annotate the whole diff, each file and each chunk. That’s a total of 3 levels of depth. Let’s just give them distinct names and not go full yaml with a format for once?
@@ -747,10 +840,78 @@ Code
 
 - I would love it, but please don't add JSON-RPC to the world... It's too heavy for editor.
   - To write that JSON-RPC is "too heavy for editor", you have to not only misunderstand the cost of JSON encoding (trivial) but also the frequency of editor-tool interaction (seldom) and volume of data transferred (negligible). In addition, you have to look at LSP, MCP, and other JSON-y protocols and say "yep. There's where the UI latency is. Got it.". (Nope)
+# discuss-rich-text-editing
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🌰 [LLM stream to generate markdown text and insert to editor · facebook/lexical _202404](https://github.com/facebook/lexical/discussions/5967)
+  - I'm quite new to Lexical and have been experimenting with using AI streams to create markdown text in an editor.
+- What you might need is a markdown to lexical state transformer and vice versa (optional). As the text streams in markdown, the editors internal state can be constructed.
+
+- For anyone else trying to implement this, I got a version working that supports markdown with tables using lexical's HTML converter and showdown, and vercel AI sdk
 # discuss
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Text Editing, AI and Problems that Go Away _202508](https://terrycrowley.medium.com/text-editing-ai-and-problems-that-go-away-ad73a4993ca4)
+- The standard best-practice architecture for an interactive application (since the mid-seventies with full-screen display applications like emacs and VI and continuing into the GUI and web/mobile era of today) is one where the application maintains a data model that is rendered into a view. 
+- A rich component makes this basic architecture unworkable. 
+  - In order to leverage the rich editing capabilities of the component, the application needs to map its data model on to the rich components data model. Then, user editing actions either are directly interpreted by the component, resulting in changes to its data model, or follow the more standard path from application data model to the components model. 
+  - So sometimes editing changes flow from the component to the application and sometimes from the application to the component. This two-way flow is really hard to get right (“sync is hard”), and really hard to keep stable over time as component and application capabilities evolve.
+
+- ## [How LLMs Are Transforming Rich Text Editors | Built In _202407](https://builtin.com/articles/llms-transforming-rich-text-editors)
+
+- how integrating LLMs can improve RTEs:
+  - Enhanced content creation.
+  - Improved content quality.
+  - Personalized recommendations. 
+    - LLMs can provide tailored suggestions based on the writer’s style, audience and purpose
+  - Efficient research and fact-checking. 
+
+- Challenges in Integrating LLMs into RTEs
+  - Writing Effective Prompts
+    - Users often struggle to create prompts that generate accurate and useful AI responses, leading to suboptimal outputs.
+    - Solution: Empower users with a curated library of pre-engineered prompts designed for common writing scenarios. For example, CKEditor’s AI Assistant offers intuitive options
+  - Unpredictable Responses
+    - LLM outputs can be inconsistent, sometimes straying from the intended context or purpose.
+    - Solution: Implement continuous testing and refinement. Analyze usage logs and user feedback to iteratively improve the prompt-response mechanism. 
+    - For instance, if your RTE’s “Summarize” feature is underperforming, adjust the prompt to emphasize brevity and A/B test the new prompt against the original.
+  - Inconsistent Response Formatting
+    - Solution: Embed format specifications directly into AI prompts. 
+    - Markdown for Developers: “Explain this concept in a code block, using Markdown triple backticks for formatting.”
+    - Structured Data: “Generate a product description and return it as a JSON object with ‘title’, ‘description’, and ‘key_features’ fields.”
+  - Understanding and Handling Errors
+    - Solution: Provide clear, jargon-free explanations and actionable next steps for errors. For instance, instead of displaying a cryptic “Error 429,” present a user-friendly message like: “Oops! We’ve reached our AI usage limit for the moment. "
+  - Lack of Standardized AI UI
+    - Solution: Integrate AI functionalities that complement existing user workflows. 
+    - Context-aware suggestions
+    - Smart formatting tools
+    - Intelligent autocomplete
+    - AI-powered revision assistant
+    - Dynamic style guide enforcement
+  - Differentiating in a Crowded Market
+    - Solution: Focus on adding unique value rather than merely listing AI as a feature.
+    - Industry-specific intelligence: Tailor AI to understand sector-specific jargon and style.
+    - Adaptive learning: Implement AI that evolves with each user, learning their writing quirks and preferences.
+    - Workflow optimization: Create AI features that streamline users’ specific processes.
+    - Collaborative intelligence: Develop AI features that enhance team collaboration.
+
+- Key strategies for effective LLM integration include:
+  - Offering intuitive, accessible AI tools
+  - Implementing continuous refinement based on user feedback
+  - Seamlessly embedding AI into existing workflows
+  - Developing industry-specific, value-adding features
+  - Balancing AI capabilities with human creativity
 
 - ## [Automated Patch Diff Analysis using LLMs | SySS Tech Blog _202509](https://blog.syss.com/posts/automated-patch-diff-analysis-using-llms/)
 - https://github.com/SySS-Research/diffalayze /MIT/202509/python

@@ -44,6 +44,14 @@ modified: 2022-11-11T10:46:41.519Z
     - Markdown to PDF
     - Convert to PDF/A
     - Linearize PDF: Optimize PDFs for fast web viewing.
+  - [BentoPDF is now open sourced : r/webdev _202510](https://www.reddit.com/r/webdev/comments/1o6lkwf/bentopdf_is_now_open_sourced/)
+  - What does it do better / different compared to Stirling pdf?
+    - Runs fully client side
+    - You can merge pdf with ranges
+    - You can crop each pdf page differently
+    - You can fill and create form
+  - i wonder if you can add "sign" feature using both imported signature or digital signature like in FoxitPDF. 
+    - As a Linux user it's very difficult to find a decent application for digital signatures/certificates.
 
 - https://github.com/Stirling-Tools/Stirling-PDF /20.4kStar/MIT(core)+GPL/202403/java/js
   - https://www.pdfdrills.com/

@@ -112,7 +112,16 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
-- ## 
+- ## 🤔 [I built an AI orchestration platform that breaks your promot and runs GPT-5, Claude Opus 4.1, Gemini 2.5 Pro, and 17+ other models together - with an Auto-Router that picks the best approach : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o76n9d/i_built_an_ai_orchestration_platform_that_breaks/)
+  - I've been frustrated with choosing between AI models - GPT-5 is great at reasoning, Claude excels at creative writing, Gemini handles data well, Perplexity is best for research - so I built LLM Hub to orchestrate them all intelligently.
+  - [LLM HUB - AI Pipeline Orchestration](https://llm-hub.tech/)
+  - The Core Problem: Each AI has strengths and weaknesses. Using just one means compromising on quality.
+  - 💡 The Solution: LLM Hub coordinates 20+ models across 4 execution modes:
+- 4 EXECUTION MODES:
+  - Single Mode - One model, one response (traditional chat)
+  - Sequential Mode - Chain models where each builds on the previous (research → analysis → writing)
+  - Parallel Mode - Multiple models tackle the same task, synthesized by a judge model
+  - 🌟 Specialist Mode (the game-changer) - Breaks complex tasks into up to 4 specialized segments, routes each to the expert model, runs them in parallel, then synthesizes everything
 
 - ## Code2Video - 通过代码生成教育视频的 AI Agent 框架，来自新加坡国立大学 Show Lab 的最新研究，论文和开源项目都发布了。
 - https://x.com/shao__meng/status/1974280130420961548

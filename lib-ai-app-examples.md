@@ -8,7 +8,8 @@ modified: 2023-02-08T07:20:48.475Z
 # lib-ai-app-examples
 
 # guide
-
+- not-yet ❓
+  - model routing
 # popular
 - https://github.com/mudler/LocalAI /MIT/202403/cpp
   - https://localai.io/
@@ -180,6 +181,8 @@ modified: 2023-02-08T07:20:48.475Z
   - Run LLM Agents on Ryzen AI PCs in Minutes
   - GAIA is specifically designed for AMD Ryzen AI systems and uses Lemonade Server for optimal hardware utilization
   - GAIA UI is an optional, modern web-based interface for GAIA, built on the RAUX (Open-WebUI fork) platform.
+
+- [Reproducing Karpathy’s NanoChat on a Single GPU — Step by Step with AI Tools : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o76ev6/reproducing_karpathys_nanochat_on_a_single_gpu/)
 
 ## api
 

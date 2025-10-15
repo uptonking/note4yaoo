@@ -259,7 +259,31 @@ HMACSHA256(
 
 - ## 
 
-- ## 
+- ## [In web development projects, should JWT tokens be stored in cookies or localStorage? : r/reactjs _202510](https://www.reddit.com/r/reactjs/comments/1o66nnf/in_web_development_projects_should_jwt_tokens_be/)
+  - In web development projects, should the tokens used by JWT be stored in cookies or localStorage? If they are stored in cookies, there is no need for the front end to operate on them, and the front end cannot obtain them. Storage in localStorage still requires manual operation at the front end
+
+- HTTP only cookie
+  - Don't forget SameSite to prevent CSRF attacks, and if you use Lax instead of Strict, don't ever have GET requests in your API that mutate anything.
+  - And if you're using some kind of shared domain hosting where your site is on a subdomain, you should also be wary of that, since sites sharing the same top level domain are considered "SameSite". (Technically it's same eTLD+1, but that's getting into the weeds).
+- Prefix the cookie's name with __Host to fix the subdomain issue.
+
+- Tldr: unless you're a bank, or a large enterprise, it doesn't really matter, focus on preventing xss, because that's what actually matters.
+  - We, on a smaller project, for example, went for local storage, because you actually have control over that, when to send it, when not and how to sync browser sessions and parallel auth/refresh requests. The bank I work at uses very short lived http cookies.
+  - I've researched this up and down, and fundamentally, the security benefit of using http cookies is very minimal. If your site suffers any kind of xss, it makes it slightly more difficult for an attacker to use the auth token. Essentially, once your site is compromised, http cookies prevent the attacker from copying the token, but they can still make requests on behalf of the user.
+  - But they also give a false sense of security for developers, because, first off, you need to deal with csrf, which some people straight up don't know about, and second, the biggest risk factor, once your site is compromised, is how long an attacker can use the comprosied tokens. With local storage, you'll generally set auth tokens to expire in 1-5 minutes, and refresh token theft can be detected with refresh rotations, but auth tokens in http cookies are generally considered the "safe" option, so you'll often see very long session durations there.
+  - But this discussion is also a red herring. It ultimately matters little where you store your auth tokens. As soon as the site is compromised through xss, the attacker can do whatever they want, regardless of where you store it: http cookies, local/session storage, memory, etc. The attacker can use the auth token in each case, the only difference is the amount of work they'd need to do in each case, with local storage being the easiest.
+  - Work on preventing xss, and ensuring it can't slip in through random small mistakes. And store your cookies where it's more comfortable.
+
+- It seems like `SameSite: Strict` mitigates most of the concerns you might have around cookies opening up CSRF attacks, am I missing something there? I do agree that sometimes there are benefits to keeping it in local storage, like allowing a site to juggle multiple logins. I'd be interested in how sites like Google are doing that currently, you can certainly do it with either option, but I feel like it's more straightforward and flexible in Local Storage.
+  - My point was people are not even aware of the csrf issue, they just ask the AI what to use, it says http cookies, or get the top voted answer from Reddit, which is "use http cookies", and completely forget about that aspect.
+  - But yes, SameSite mitigates most, but not all csrf vulnerabilities, but it should be enough for most sites.
+
+- if you use local or session storage, you need to make the token lifespan short, and store a refresh token in an http-only cookie to refresh the access token frequently.
+  - this method leaves you’re site vulnerable to XSS attacks, which react is a bit resistant to, but not fully. this is why the short lifespan and refresh token are recommended for this method.
+  - the better method is using an http-only cookie.
+
+- 
+- 
 
 - ## How can you safely store passwords in a database? With Salt
 - https://x.com/Franc0Fernand0/status/1906994701951000682

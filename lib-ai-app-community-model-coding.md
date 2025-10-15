@@ -128,6 +128,8 @@ modified: 2025-09-16T13:29:11.327Z
   - Just to watch a model struggle and fail
   - Both also made a relatively good-looking butterfly in SVG, although GPT4o's looked better.
 
+- 绘制一个骑自行车的鹈鹕的 SVG 图像
+
 - [Best SVG AI Prompts - DocsBot AI](https://docsbot.ai/prompts/tags?tag=SVG)
   - Design a high-quality logo in SVG format for an e-commerce brand named 'Selct'. The logo should reflect the nature of e-commerce, incorporating modern design elements that convey trust, convenience, and innovation. Use a color palette that is visually appealing and suitable for online shopping platforms. Make sure the design is scalable and maintains clarity when resized. 
 
@@ -309,6 +311,18 @@ def slugify(text):
   - Hide or dim the other slides to avoid distraction.
   - Include transitions and animations to rotate the slider circularly when user navigates to next or previous slide.
   - Example ux: if Slide 3 is current: display slide 3 front and center, slides 2 and 4 behind it blurred and slightly smaller, slides 0, 1, 5 invisible or hidden.
+
+- [实测蚂蚁万亿新思考模型Ring-1T，跟DeepSeek V3.2拼一把](https://mp.weixin.qq.com/s/luSNCRZVdCbyPD3DXYFsqA)
+- 用 HTML、CSS 和 JavaScript 实现这样一个效果：一个小球被困在一个旋转的六边形内部。
+  - 小球受到地球重力的作用，并与六边形内壁产生摩擦。
+  - 小球的弹跳需要看起来逼真自然。
+
+- 帮我做一个 Microsoft Word 的克隆版本，但只需要前端部分。
+  - 除了加粗、斜体、下划线，Ring-1T还可以实现字体大小调整，左中右对齐。这种case测起来就有种惊喜感，明明没有期待它能完成除了前端外的别的功能，但是抽盲盒能抽出来。
+- 帮我做一个 Microsoft Excel 的克隆版本，但只需要前端部分。
+
+- Create animated cards in HTML, JS, and CSS with hover effects, transitions, and responsive design. Include 3-5 cards with different content.
+  - 这个属于是天气组件的变体，不做任何限制，就让模型出卡，它们都选择了带放大特效和按钮变色。我发现DeepSeek V3.2特别喜欢用暖色，Ring-1T反而喜欢用冷色调，有点想测测它们的16人格了。
 
 - 创建一个可直接在浏览器打开的HTML单页面的demo，实现一个“午饭决策骰子”
   - 页面中央是一个3D骰子。但它的六个面没有点数，而是显示文字。
@@ -569,6 +583,7 @@ def slugify(text):
 - Which of these objects is not like the others: orange, banana, potato, chair
 
 - How many "r" are there in "strawberry"?
+- What is the value of pi?
 
 - convert inches to cm: 15.4 x 7.3 x 13.5 inches
 - turn pounds to kg: 11.44 pounds
@@ -578,7 +593,7 @@ def slugify(text):
 - 春风得意马蹄疾 出自哪里? 上下句是什么？ 表达什么意思？
   - dengkehou
 - 大漠孤烟直 出自哪里? 上下句是什么？ 表达什么意思？ 有其他地方引用过这句吗?
-  - wangwei
+  - wangwei shizhisaishang
 - 何心意之忡忡，若寤寐之栩栩 出自哪里? 上下句是什么？ 表达什么意思？
   - storyofstone 芙蓉女儿诔(lei)
 
@@ -593,6 +608,11 @@ def slugify(text):
 
 - It takes one person 5 hours to dig a 10 foot hole in the ground. How long would it take 50 people to dig a single 10 foot hole?
 
+- help me find a solution for ai models to edit the text from prompt instead of generating full text from scratch
+  - Whenever we provide a text to an LLM and ask it to do some changes, it will always stream the full text back to us. This is not ideal for large texts, as it can be slow and expensive. 
+  - I want to find a way to stream only the changes made by the LLM back to the user, rather than regenerate full text from scratch
+  - is there any popular approaches to solve this problem? maybe you can analyze and summarize the solutions, and also give me some blogs/discussions for reference
+
 - [一些用于测评大模型各项能力的Prompt - 知乎](https://zhuanlan.zhihu.com/p/17086056493)
 - 请把下面这句话翻译成蒙古文/越南喃字/希伯来语："我能吞下玻璃而不伤身体。"
 - 请给我的论文《国内外方便面硬度研究》寻找 10 份参考文献，国外作者的文献 5 篇，中国作者的文献 5 篇。
@@ -603,7 +623,7 @@ def slugify(text):
 - 请一步一步来，分析一下：一位农夫、一只狼、一只羊和一颗白菜都在河的一侧，他们想到河的另一侧。河中有一条船，一次只能载农夫和一个物体（狼或羊或白菜）。若农夫不在的时候，狼会吃掉羊，羊会吃掉白菜。问：该以什么样的方式才能将狼、羊和白菜完好的运到对岸？
   - 正确答案：① 羊去，农夫回；③ 白菜去，羊回；⑤ 狼去，农夫回；⑦ 羊去，完成。其他符合逻辑的答案也可。
 
- 现在假设你是iPhone手机的siri，现在用户说播放“嘿 Siri， 给我讲个故事。”，请给出回复并基于Swift语言给出API调用
+- 现在假设你是iPhone手机的siri，现在用户说播放“嘿 Siri， 给我讲个故事。”，请给出回复并基于Swift语言给出API调用
 
 - 请帮我写一个软件产品需求文档中的功能清单，产品是类似拼多多的软件
 - 请帮我写一个软件产品需求文档中的功能清单和功能概述，产品是类似拼多多的软件，要支持手机号登录注册，要能通过手机号加好友，首页要浏览商品，有商品详情页，有订单页，有购物车等功能

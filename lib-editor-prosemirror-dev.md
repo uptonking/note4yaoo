@@ -94,6 +94,15 @@ modified: 2021-05-06T09:39:53.522Z
   - streamable diff
   - ⚖️ diff for rich-text
 
+- ✨ custom-elements
+- code
+- table
+- image
+
+- 👾 ai
+- stream
+- edit
+
 - collab
   - codemirror in prosemirror: all collaborative
 
@@ -111,9 +120,12 @@ modified: 2021-05-06T09:39:53.522Z
   - migrate prosemirror-dev-toolkit features to prosemirror-devtools
   - rewrite prosemirror-devtools in tanstack-devtools style
 # dev-xp
-
+- 🤔 deep-research 的产物形态是不是使用rich-text-editor更好，甚至产出ppt
+  - gemini的deep-research支持直接导入google-docs显示为在线文档且可编辑
+  - 可以突出重点文本
+  - 可以加入脑图/大纲
+  - 可以加入图片
 # faq-not-yet
-
 - 待确认
   - 嵌入画板的体验和性能，参考 tldraw/PPTist
 

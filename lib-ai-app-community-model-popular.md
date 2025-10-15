@@ -61,7 +61,6 @@ modified: 2025-09-16T19:59:57.856Z
   - 27b 和 12b 都能较好遵循带结构的instruct输出， 27b能主动给出更多外部网页链接而12b给的链接很少
 
 - qwen3 🌹 /能力全/thinking开关/内容丰富
-  - think 2-3min
   - 4b及14b的输出内容都比较详细，经常包含表格📈
 
 - gpt-oss-20B-A3.6B 👀 /业界标杆/输出快
@@ -543,7 +542,6 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-
 - ## 🆚 [Qwen3-VL Instruct vs Thinking : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nuhgxw/qwen3vl_instruct_vs_thinking/)
   - I am working in Vision-Language Models and notice that VLMs do not necessarily benefit from thinking as it applies for text-only LLMs. 
   - I created the following Table asking to ChatGPT (combining benchmark results found here), comparing the Instruct and Thinking versions of Qwen3-VL. You will be surprised by the results.
@@ -670,6 +668,10 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
   - This small mod is based on Unsloth's Jinja template: Magistral model will answer without any thinking by default, but if you add "/think" tag anywhere in system prompt, model with start thinking as usual, quick and simple solution for LM Studio etc.
 
 - ## [Magistral 1.2 is incredible. Wife prefers it over Gemini 2.5 Pro. : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nmii5y/magistral_12_is_incredible_wife_prefers_it_over/)
+  - The model is incredible. It doesn't overthink and waste tokens unnecessarily in the reasoning chain.
+  - The responses are focused, concise and to the point. No fluff, just tells you what you need to know.
+  - The censorship is VERY minimal. My wife has been asking it medical-adjacent questions and it always gives you a solid answer.
+
 - I tested the latest release of Magistral Small 2509 in three case scenarios using LM Studio.
   - Extract text from an educational YouTube video using an MCP server
   - Create a summary
@@ -690,6 +692,8 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 - For me, the vision capabilities exceed anything I've found on something I can run locally. Better than gemma 3, better than qwen 2.5vl, better than llava. It can read handwritten text and think about what it should be when it's a little sloppy. Can identify pictures with great accuracy and the contents and asking about the picture. The thoughts give helpful information.
 
 - I pretty much only use VLMs for chart analysis and Magistral Small 1.2 seems comparable to Qwen2.5VL 72B, but I prefer Qwen's output 
+
+- at lower temp it’s more likely to get stuck in loops
 
 - ## [Just dropped: Qwen3-4B Function calling on just 6GB VRAM : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nmkswn/just_dropped_qwen34b_function_calling_on_just_6gb/)
   - Fine-tuned on 60K function calling examples

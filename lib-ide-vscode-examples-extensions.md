@@ -595,6 +595,11 @@ modified: 2024-08-24T16:17:26.715Z
 - https://github.com/tnesbitt210/interactive-smartlog-issues
   - This repo is just for issue tracking — the extension itself is not open source (at least for now).
 
+- https://github.com/ryu1kn/vscode-partial-diff /MIT/202104/ts/inactive
+  - Take a diff of 2 parts of text(s)
+  - You can compare (diff) text selections within a file, across different files, or to the clipboard.
+  - User defined text normalization rules to reduce the noise in the diff (e.g. replace tab characters to spaces).
+
 ## ext-history
 
 - https://github.com/nagavineerpasam/code-time-machine /202509/ts

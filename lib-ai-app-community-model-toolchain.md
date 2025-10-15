@@ -735,7 +735,14 @@ sudo launchctl load /Library/LaunchDaemons/io.yaoo.sysctl.plist
 
 - ## 
 
-- ## 
+- ## [In LM Studio + MoE Model, if you enable this setting with low VRAM, you can achieve a massive context length at 20 tok/sec. : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o6dnzc/in_lm_studio_moe_model_if_you_enable_this_setting/)
+  - enable: Force Model Expert Weights onto CPU, Flash Attention
+  - Worked for my 3060
+- Since you offload on cpu ram the speed decrease significantly.
+
+- If you use llamacpp directly, you can further fine tune the number of expert layers pushed to CPU rather than pushing them all out. With careful adjustment and if there is enough headroom on your GPU, you might double your t/s vs the option used by lm studio.
+
+- You can set KVcache to Q8 and double the context size. Q8 has a very small loss in quality but might be worth it to you. 
 
 - ## [Is there any all-in-one app like LM Studio, but with the option of hosting a Web UI server? : r/LocalLLaMA _202506](https://www.reddit.com/r/LocalLLaMA/comments/1larzxz/is_there_any_allinone_app_like_lm_studio_but_with/)
 - llama.cpp's llama-server hosts a very basic webUI by default. It's hosted at the server root, without the API endpoint.

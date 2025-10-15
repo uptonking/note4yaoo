@@ -12,6 +12,7 @@ modified: 2023-07-23T07:05:19.441Z
 # usage
 - clean-mac
   - 清理空间很有用的工具 onyx, 在没怎么清理 `~/Library/Caches` 文件夹的情况下都能释放大约6GB空间
+  - ~/Library/Application Support/Google/Chrome/Default/Service Worker/CacheStorage
 
 ## macbook
 
@@ -236,6 +237,11 @@ echo "nameserver 223.5.5.5" >> domain.tld
 
 - Why would you use clean my Mac where there is another tool which is free and open like onyx. 
   - Also this tool do nothing to Mac, clearing cache you can do on the command line easily and no risk to expose your data to shady companies.
+
+- ## [Should i Delete this massive cache storage? its taking up 41 gb : r/MacOS _202506](https://www.reddit.com/r/MacOS/comments/1l91l93/should_i_delete_this_massive_cache_storage_its/)
+- Delete it! I have to do this for my clients from time to time. Chrome is horrible at wasting storage and memory. It's gotten better, but I still see this stuff. Check the seize of Chrome itself as well, I've found that it'll often store old versions of the app inside of itself.
+
+- Use PearCleaner to uninstall chrome and delete all associated files.
 
 - ## [macos - Is it safe to delete `~/Library/Caches` ? - Ask Different](https://apple.stackexchange.com/questions/118941/is-it-safe-to-delete-library-caches)
 - It's generally safe, though a little dangerous depending, to do it but often not worth the effort.

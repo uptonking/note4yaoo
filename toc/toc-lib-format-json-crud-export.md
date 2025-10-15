@@ -20,7 +20,7 @@ modified: 2022-11-06T16:47:43.444Z
 
 - https://github.com/mongodb-js/jsonpatch-to-mongodb
   - Convert JSON patches into a MongoDB update
-# json-patch-diff
+# json-patch-diff ⚖️
 - https://github.com/chbrown/rfc6902 /MIT/202312/ts
   - https://chbrown.github.io/rfc6902/
   - Complete implementation of RFC6902 in TypeScript
@@ -107,6 +107,13 @@ modified: 2022-11-06T16:47:43.444Z
 
 - https://github.com/corps/json-delta
   - Json object diff / patching with configurable short-circuit tolerance
+
+## diff-patch-examples
+
+- https://github.com/sanity-io/diff-patch /MIT/202506/ts
+  - Generates a set of Sanity patches by comparing two JSON structures
+  - This library creates conflict-resistant patches designed for collaborative editing environments where multiple users may be editing the same document simultaneously.
+  - When comparing strings, the library attempts to use `diff-match-patch` to generate granular text patches instead of simple replacements. This preserves editing intent and enables better conflict resolution.
 # export/import
 - https://github.com/zheeeng/export-from-json
   - Export to plain text, css, html, json, csv, xls, xml files from JSON.

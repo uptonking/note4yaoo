@@ -9,6 +9,9 @@ modified: 2025-08-11T08:47:56.335Z
 
 # guide
 
+- not-yet ❓
+  - model routing
+
 - resources
   - [langgraph Examples](https://langchain-ai.github.io/langgraph/examples/)
 # popular
@@ -404,6 +407,12 @@ modified: 2025-08-11T08:47:56.335Z
   - Self-hosted LangGraph Platform alternative that actually lets you use real auth (Supabase, Firebase, whatever).
   - Agent Protocol Compliant: Aegra implements the Agent Protocol specification, an open-source standard for serving LLM agents in production.
   - Works seamlessly with LangChain's Agent Chat UI
+  - [Open-source LangGraph Platform alternative hits 200 stars - now doing Hacktoberfest : r/LangChain](https://www.reddit.com/r/LangChain/comments/1o6acfc/opensource_langgraph_platform_alternative_hits/)
+  - How it uses langgraph-sdk if you compose it requests license key how did you use that ?
+    - langgraph-sdk is open source under the MIT license, so you can use it freely. what you’re referring to is langgraph-api, which is under the elastic 2.0 license and does require a license key. it’s used locally when you run langgraph dev, providing an in-memory setup, while the langgraph platform uses the same api with postgres, redis, and other components for persistence and scaling.
+    - aegra is an open source alternative to the licensed langgraph-api, so we’re not using any restricted or proprietary code.
+  - So i can use langgraph-sdk without that api just wrap everything in fastapi?
+    - Pretty sure that’s how N8N does it.
 
 - https://github.com/langchain-ai/open-agent-platform /1.6kStar/MIT/202508/ts
   - https://oap.langchain.com/

@@ -543,9 +543,28 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [The “new RAG every week” problem — do we really need to switch frameworks this often? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o764lj/the_new_rag_every_week_problem_do_we_really_need/)
+  - It feels like every couple of weeks, there’s a brand-new “next-generation” RAG framework popping up — R2R, LightRAG, RAGFlow, and now a few others that just launched on GitHub.
+  - But when you look closer, most of them aren’t new paradigms at all.
+  - They’re slight variations of existing pipelines — same retrieval backbone, same chunking strategies — maybe with a bit of optimization in one step (say, hybrid retriever logic, graph-based context linking, or compression on long contexts).
 
-- ## 
+- AI is a rapidly growing tech space. There will be 10 technologies that mildly differ each other and then there will be that 1 that will make some kind of a breakthrough. That's how it is. It's far too early for any real standards yet, and honestly that's the exciting part of following the AI space.
+
+- ## 🆚 [Tested 9 RAG query transformation techniques – HydE is absurdly underrated : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o6s89n/tested_9_rag_query_transformation_techniques_hyde/)
+  - Your RAG system isn't bad. Your queries are.
+- I just tested 9 query transformation techniques. Here's what actually moved the needle
+- Top 3:
+  - HydE – Generate a hypothetical answer, search for docs similar to that. Sounds dumb, works incredibly well. Solves the semantic gap problem.
+  - RAG-Fusion – Multi-query + reranking. Simple, effective, production-ready.
+  - Step-Back – Ask abstract questions first. "What is photosynthesis?" before "How do C4 plants fix carbon?"
+- Meh tier:
+  - Multi-Query: Good baseline, nothing special
+  - Decomposition: Works but adds complexity
+  - Recursive: Slow, minimal quality gain for simple queries
+- Key insight: You're spending time optimizing embeddings when your query formulation is the actual bottleneck.
+
+- Many larger RAG platforms I've worked on or seen in use are making embeddings from the text to be retrieved and also generating a couple of questions that can be answered by the same chunk, saving those embeddings as well (so you have several embeddings pointing at the same chunk).
+  - This performs a lot like HydE, but shifting the extra compute (generation step) to the ingestion stages instead of query time for better latency/performance in exchange for a larger index to store and query, which is usually the desired tradeoff for interactive systems.
 
 - ## 🤔 [Is RAG system actually slow because of tool calling protocol? : r/Rag _202509](https://www.reddit.com/r/Rag/comments/1ntc1ky/is_rag_system_actually_slow_because_of_tool/)
   - Just came across few wild comparison between MCP and UTCP protocols and honestly... my mind is blown.

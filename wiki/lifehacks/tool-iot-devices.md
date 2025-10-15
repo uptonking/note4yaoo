@@ -188,7 +188,28 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## 🆚 [DGX Spark vs AI Max 395+ : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o6izz2/dgx_spark_vs_ai_max_395/)
+- I just ran some benchmarks to compare the M2 ultra.
+- OSS-120B
+  - DGX PP=817, TG=41
+  - 395 PP512=350, TG=34 (Vulkan)
+  - 395 PP512=645, TG=46 (Rocm) *per Sillylilbear’s tests
+  - M2U PP=590, TG=70
+- OSS-20B
+  - DGX PP512=2053, TG=48
+  - 395 PP512=1000, TG=47
+  - M2U PP512=1000, TG=80
+- Llama 3
+  - DGX PP512=7991, TG=21
+  - 395 PP512=1000, TG=47
+  - M2U PP512=2500, TG=70
+
+- NVIDIA didn't build this for our community. It's a dev platform for GB200 clusters, meant to be purchased by institutions. For an MLE prototyping a training loop, it's much more important that they can complete 1 training step to prove that it's working than that they can run inference on it or even train at a different pace. 
+  - If you want to replicate GB200 environment as closely as possible, you need three things: NVIDIA Grace ARM CPU, Infiniband, and CUDA support. RTX 6000 Pro Blackwell only provides one of those three. Buy two DGX Sparks and you've nailed all three requirements for under $10k.
+
+- If you want LLMs with working speeds and diffusion models with slow speeds, both devices are fine. Vulkan support for AI Max 395+ is really good, so you can get better performance with most llms than DGX Sparks (or at least the same) for LLM uses.
+  - However, the main problem arrives when you try to use the latest non-LLM models such as TTS, openmcp, and omni models with video support, where you are dependent on ROCm for HIP. Most of these latest models are optimized and tested for CUDA, and they usually fail on Halo (even with ROCm 7.0).
+  - I own a 395+, and since I am a developer, I am really happy with my purchase. I can keep multiple 30B MOE models in memory and can get a very fast response. Every day, I try to run new AI models on my system, but the success rate for non-LLMs is 40% compared to my 4090, where it is 90%.
 
 - ## [Fast loading and initialization of LLMs : r/LocalLLaMA _202407](https://www.reddit.com/r/LocalLLaMA/comments/1e3hknt/fast_loading_and_initialization_of_llms/)
   - Now normally I use vLLM to serve LLMs, but it seems to be very slow at loading up models. For Llama 8 FP16 it takes 8s to be ready from a warm cache. Qwen 14 takes 11s with a warm cache. Way too slow.
@@ -301,6 +322,11 @@ modified: 2022-01-16T15:52:31.293Z
   -  qwen3moe 30B Q4_K: 31.0 
   -  gpt-oss 120B F16: 14.9
 -  Yes, there is definitely something wrong with the server in your case. You should get better results than my server.
+
+- [CPU Only OSS 120 : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o6d4a6/cpu_only_oss_120/)
+  - just try it on CPU only (gulp) on my home lab server and actually it's more than usable at a fraction of the power cost too. This is also running in a VM with only half cores given.
+  - prompt eval time = 260.39 ms / 13 tokens ( 20.03 ms per token, 49.92 tokens per second)
+  - eval time = 51470.09 ms / 911 tokens ( 56.50 ms per token, 17.70 tokens per second)total time = 51730.48 ms / 924 tokens
 
 - ## [Looks like Intel Arrow Lake can support 4 DIMMs @ up to 6400 speeds : r/LocalLLaMA _202411](https://www.reddit.com/r/LocalLLaMA/comments/1gindy1/looks_like_intel_arrow_lake_can_support_4_dimms/)
   - After searching through a few boards, it looks like Arrow Lake can do 4 Dimms @ 6400. For an ASrock example, see below - select vendor "Corsair", and there is a 24GB per DIMM options @ 6400. Crucial and ADATA have 48GB "4 channel" options @ 5600.
