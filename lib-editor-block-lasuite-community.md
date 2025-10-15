@@ -240,6 +240,14 @@ modified: 2025-07-17T14:40:07.230Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [✨ List and restore deleted docs _20251014](https://github.com/suitenumerique/docs/pull/1450)
+
 - ## [✨(frontend) add multi columns support for editor _20250725](https://github.com/suitenumerique/docs/commit/11d0bafc94ff277232bcc4cfedbf80f6fc97e24f)
 
 - ## I saw the feature for Subpages got merged into main. v3.4.0 _20250710

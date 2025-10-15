@@ -190,6 +190,15 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
+- ## [Fast loading and initialization of LLMs : r/LocalLLaMA _202407](https://www.reddit.com/r/LocalLLaMA/comments/1e3hknt/fast_loading_and_initialization_of_llms/)
+  - Now normally I use vLLM to serve LLMs, but it seems to be very slow at loading up models. For Llama 8 FP16 it takes 8s to be ready from a warm cache. Qwen 14 takes 11s with a warm cache. Way too slow.
+  - The above is for a single 3090 on PCIe 4.0 x16, 4 sticks of DDR4 RAM rated at 3200 on a X570s motherboard with a Ryzen 5600X CPU.
+
+- A co-worker and I are building a local LLM server for testing (see my profile) and we have looked at various ways to maximize loading of LLM files across different CPU brands/architecture for a customer.
+  - We did consult with one of our biggest customers who has a few dozen local LLM workstations and they all have AMD Threadripper 7980X boxes, 192GB of RAM (4x48GB) with a pair of RTX A6000 48GB cards w/ NVLink bridge and dual 15TB U.2 NVMe drives. They have moved to ZFS w/o L2ARC and storing all their LLM files on 30TB worth of U.2 NVMe drives and a 168GB ARC.
+  - We are building a Splunk app for them to monitor their usage of LLM apps and models.
+  - TL; DR: Use ZFS and set ARC to cache as many LLMs as you can for faster transfer to VRAM. Or if you only need to test a coupe of LLM constantly, then create a RAM disk and copy your LLM files there.
+
 - ## [Orange Pi AI Studio Pro mini PC with 408GB/s bandwidth : r/LocalLLaMA _202502](https://www.reddit.com/r/LocalLLaMA/comments/1im141p/orange_pi_ai_studio_pro_mini_pc_with_408gbs/)
 - As always, hardware is only one part. Where's the software support? Is there a Linux kernel driver? Is it supported in any good inference engine? Will it keep working 6 months after launch? Orange Pi are traditionally really really bad at the software side of their devices.
   - For all their fruit clone boards they release one distro once and never update it ever again. The device tree or GPU drivers were proprietary so you can't just compile your own either.
@@ -2492,7 +2501,101 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## [20寸行李箱尺寸长宽高（20寸拉杆箱到底到底有多大）](https://www.zhihu.com/tardis/zm/art/320648263?source_id=1003)
+- 不管是行李箱还是电视，统一用的都是这个斜对角尺寸测量方法。
+  - 1寸=2.54cm
+  - 20寸=50.8cm
+- 20英寸并没有一个固定的长宽高，但是我们可以给一个相对标准的拉杆箱尺寸作为参照。
+  - 20inch: 50 x 34 x 19 cm, 32.3L
+  - 22inch: 55 x 42 x 23 cm, 53.1L(可用约47L)
+  - 28inch: 70 x 47 x 27 cm
+
+- ## 🐛 [为什么华南、精粤这种寨厂不做EPYC主板？ - 知乎](https://www.zhihu.com/question/4214916755)
+- EPYC还真是流出来的多，但是能用的却不多
+  - 看zen3同款epyc主板的架构图。是不是很简单，连个桥片都不用。
+  - 为什么廉价的EPYC比较少呢？
+  - 因为 EPYC 在OEM厂商那帮有个 PBS绑定政策，OEM商可以设定唯一秘钥绑定，也就是首次使用可以把CPU和主板绑定，当CPU更换主板时，触发PBS策略拒绝启动。
+
+- 板U绑定这个策略，又不仅仅是epyc有，Core和Xeon部分OEM厂的货也有。某一线大牌的Core商用整机我就遇到过
+
+- tb上能找到的大部分都是无锁，黄鱼上就不知道了
+- 闲鱼上有很多有锁的，不过如果是双路主板的话只检测第一个CPU有没有锁，第二个CPU即使有锁也不影响使用
+- 因为epyc boot只用cpu0吧
+  - cpu1的io die在启动链里面不负责安全校验
+
+- 性能够用，还没到大规模淘汰期，已经流出来的部分很多又被ai炼丹师给收走，它的PCIe通道比同期Intel Xeon多。
+- epyc铺开来才几年啊，云服务器能租到epyc的u也是这两年的事
+- AMD第一代第eypc和第二代eypc都是试水，开始卖起来都是第三代了，现在上游淘汰没那么快，未来大概率还算买整机嘛，其二现在你要搞64核的方案，amd的可以DDR4，6k左右搞定大内存方案，intel要大内存只能用es版的上ddr4，如果上ddr5价格就飞天了。
+
+- 好像，据说Ryzen Pro和Tr Pro也开始上锁了？这类U也是专供OEM不零售的
+- 这对于垃圾佬+A炮而言是个噩耗。Ryzen APU从8000G开始，核显的编码解码能力已经比较好了，加上它优秀的功耗和性能，以及Pro版支持ECC内存，未来很有潜力成为种子NAS DIY/软路由等家庭服务器的神U。但带锁可就。。。
+
+- 主要原因是CPU不够便宜，实际上也做了几款，但没多少人去买。
+  - E5装机市场繁荣，前提是性能够用+相对廉价，从核心多频率偏低的服务器用，到核心少频率高的单路工作站版本都有提供，还有利用v3系列E5的bug，强制全核睿频跑的鸡血补丁，属于多开挂机、单机玩游戏，都能上。
+  - EYPC霄龙是 [锐龙] 同代，要比E5晚上好几年，性能自然是更好，也因为如此，大规模从 [IDC] 下架的时间还早，货源不多，依旧达不到“垃圾价格”。本来一代的7601配合国鑫平台便宜过一段时间，但因为QU之类的CPU矿又涨回去，后来AI火热，EPYC的核心和PCIe通道巨幅优势，又让二手市场价格难以骤降。
+  - 最终结果就是，因为CPU不够便宜，下架数量少，尽管EYPC是不需要南北桥芯片组，而是基于PCIe HUB做扩展即可，但寨板们没动力和能力去做主板。
+  - 抄板的话，大厂主板多层PCB，成本高到让寨厂抄不动。实际上华南已经出了的EYPC和C621主板，实际零售都是两千块一片，比超微、泰安便宜有限， 难以做到E5寨板那般热卖。
+
+- 成本高，设计难度高，量小，还是去伺候又没啥钱又事多的垃圾佬，何苦呢？
+
+- ## 🆚💡 AMD Threadripper PRO 7985WX and Threadripper 7980X  have the same cores/threads/chiplets-ccd-numbers
+- [AMD Ryzen™ Threadripper™ 7980X Drivers](https://www.amd.com/en/support/downloads/drivers.html/processors/ryzen-threadripper/ryzen-threadripper-7000-series/amd-ryzen-threadripper-7980x.html?utm_source=chatgpt.com)
+  - Memory Channels: 4
+  - System Memory Specification: DDR5 Up to 5200 MT/s
+  - ECC Support: Yes (Default Enabled)
+
+- [AMD Ryzen™ Threadripper™ PRO 7985WX Drivers](https://www.amd.com/en/support/downloads/drivers.html/processors/ryzen-threadripper-pro/amd-ryzen-threadripper-pro-7000-wx-series/amd-ryzen-threadripper-pro-7985wx.html)
+  - Memory Channels: 8
+  - System Memory Specification: DDR5 Up to 5200 MT/s
+  - ECC Support: Yes (Default Enabled)
+
+- [AMD EPYC™ 9354](https://www.amd.com/en/products/processors/server/epyc/4th-generation-9004-and-8004-series/amd-epyc-9354.html)
+  - Memory Channels: 12
+  - System Memory Specification: DDR5 Up to 4800 MT/s
+  - Per Socket Mem BW: 460.8 GB/s
+
+- [同样16核32线程64M缓存，EPYC 7282为什么比5950X贵很多？ - 知乎](https://www.zhihu.com/question/513604769)
+  - 去看看目前海鲜市场的价格，7282价格260的样子，5950X价格还在1800左右
+  - 不过配套的板子价格就一个天一个地了，EPYC二代板子1000起，能跑满5950X的 B450高配板子300起，整机还是5950X 稍贵点儿
+  - 7282全核频率3.2G，5950X散热好的话可以单核4.85G, 多核4.4G
+  - 对游戏性能有要求的人，远比对128个PCIE通道有要求的人多，打游戏的给个 PCIE4.0 16X + 4X NVME 就够了
+
+- ## 🤔 [Thoughts on older/used threadripper for deep learning machine build : r/threadripper _202410](https://www.reddit.com/r/threadripper/comments/1g3meqp/thoughts_on_olderused_threadripper_for_deep/)
+- what’s the difference between epyc and threadripper? It seems perfect for me and it’s a lot cheaper than a threadripper. What’s the catch?
+  - Threadripper was designed for workstation users. Threadripper CPUs generally have faster cores with higher boost clocks, as they are designed to be used interactively in real-time.
+  - Epyc is designed for servers. Slower cores, less boost, perhaps more outright(全部的, 彻底的) compute per watt, but not designed to maximize responsiveness for real-time user interaction.
+
+- just saw Epyc doesn’t support windows. 
+  - Epyc runs on Windows 10/11 Pro for Workstations
+  - At work we use Windows VMs running on Epyc processors in Azure, and the underlying host would be Windows Server, not Linux.
+  - I read somewhere that you can use the Workstation version for that
+  - I've seen that option when installing from the Windows installation USB image
+  - Windows 11 Pro for Workstations
+
+- Another option is an EPYC system, which will have lower CPU performance than TR Pro, but the same memory capacity and PCIe lane count.
+
+- ## [Where to look for cheap PCIE gen 4+ threadripper cpus at a low price on the EU : r/threadripper _202505](https://www.reddit.com/r/threadripper/comments/1kbvmfs/where_to_look_for_cheap_pcie_gen_4_threadripper/)
+- I switched from tr consumer to tr pro to epyc. Originally mostly VMs and some cpu heavy work. Then mostly VMs with some AI. Now all AI. Just running a 7313p (previously 3960x and 3970x boxes, then 3975wx and 5965wx). Epyc is lower power, supports u2/sas, tons of cheap ecc ram. Worth a look. Bought a few TR combos from tugm, good seller who has both platforms.
+
+- ## [Testing Ryzen 8700G LLama3.1 : r/LocalLLaMA _202407](https://www.reddit.com/r/LocalLLaMA/comments/1efhqol/testing_ryzen_8700g_llama31/)
+- I think for a lot of gaming tasks, memory bandwidth isn't necessarily the limiter, and they're trying to max out what they can do in a 'normal' desktop. Threadripper has quad and octa channel ram, so putting one of these in that could make for a very potent LLM system as they can address something like 2TB and the 7995wx can hit like 700GB/S of ram bandwidth. I'm sure that'd make for an interesting memory controller setup on there...
+  - I don't have a 7995wx but I do have a 7980x and I was disappointed in the LLM speed. That 700GB/S figure is very misleading in the marketing its the CCD to Controller Speed not the RAM. Real bandwidth is closer to 300 on 7995wx and 150-180ish on mine. I guess if you could find a 7200 RDIMM ECC module for less than a house it might do better but I paid over 1400 for 256 GB of 6000, I wouldn't want to think of what a 7200 would cost if I could even get it to run at that.
+
+- ## [Why is EPYC faster but cheaper than Threadripper? : r/buildapc _202404](https://www.reddit.com/r/buildapc/comments/1buf060/why_is_epyc_faster_but_cheaper_than_threadripper/)
+
+- Threadripper PRO 5955WX is a 64-core Zen 3 CPU (2020 architecture). EPYC 9654 is a 96-core Zen 4 CPU (2022 architecture). That's why the EPYC is faster.
+  - Under normal circumstances, the 5995WX should be much cheaper. In my area, the 5995WX is available for ~1500 USD. And EPYC 9654 normally costs many times more than $4K, so confirm that it's legit before buying.
+  - There are Zen 4 Threadripper PROs available as well. The 7995WX is faster than the EPYC 9654 thanks to higher clock speeds and higher power limits.
+
+- First of all, Threadripper and EPYC are based upon the scalability of Ryzen CPUs and Dies. 
+  - But while Ryzen CPUs offer the highest single-core performance and are suitable for desktop use, the use of a Threadripper demands very special hardware: special Mainboard, RAM, CPU cooling solution and a much higher PSU requirement. Also, Threadripper CPUs are selected Dies that offer higher clock speeds under lower voltages. To get a max. of 96 cores to work with a TDP of 350W while a 16 core 7950X asks for 170W, should show the difference in Die quality. Also, Threadripper work great in Windows and other desktop OS and even in games they work - although less optimal, as any Ryzen 7 and upwards will be faster due to higher single-core clock speeds. Scientific laboratories, professional workers (CAD, architecture, engineering, ...) love this kind of power in the machines.
+  - EPYC CPUs however are designed to work very efficiently, very stable and offer basically unmatched performance in data centers. They really shouldn't be used in a desktop environment as boards are usually way less beautiful (most important point), designed to be mounted in a rack, way more expensive and not optimized to run any desktop stuff without a virtualization environment. The single core boost is 1, 4GHz slower than that of a Threadripper Pro. Also, support is business orientated. Meaning: No special support contract, no or basically no support. An adequate cooling solution is also a problem.
+  - The probably best way to spend money if you have it is a Threadripper Pro 7975WX. 4GHz base clock, 5, 3GHz turbo boost and with 64 cores more than enough for basically everything you throw at it.
+
+- The Threadripper should spank(用手掌或扁平物掴) the EPYC in workloads that don't utilize a lot of cores.
+  - If your workloads can utilize all the cores (make sure they can!) the EPYC is significantly better. It does use a lot more power but that doesn't sound like a concern for you.
+  - Also, that 9654 is suspiciously cheap. Like waaaaaaay too cheap. That's why the TR looks like crap in comparison.
+  - You really shouldn't be looking at canned benchmarks in a situation like this. You need to find benchmarks that represent the workload(s) you'll be doing.
 
 - ## 🧩 [旅行的好搭子拉杆背包，ta来了！ - 小红书](https://www.xiaohongshu.com/explore/6810462000000000230145b2?xsec_token=AB_QqkK7_ZF3_KbwyW1ZB1W-e9_xlRmGRCX97e_tYARKI=&xsec_source=pc_search&source=unknown)
   - 扩容书包泰格斯拉杆箱
@@ -2672,7 +2775,7 @@ modified: 2022-01-16T15:52:31.293Z
   - 机箱比较紧凑，就是冷排水管只有走右边，建议左边开孔稍微宽一点，其他还是很完美
   - 什么是万能机箱，这就是万能机箱，机箱永远的神，各种组装卡卡一弄很酷炫很方便便捷，ATX也能很小巧，推荐购买，物超所值，散热也很好
   - 34pro长一点比34好装多了，还能走下背线你敢信？
-  - 可装下 ATX 主板 + 360 水冷 + 超长显卡的方案挺实用。
+  - 可装下 ATX主板 + 360水冷 + 超长显卡的方案挺实用。
   - 这是我目前看到的，能装下atx主板和4080显卡的最小机箱
   - 这款机箱已经看了好久，因为贵，没舍得买，买了D40。无奈D40只支持240水冷，夹了汉堡也压不住13900f。还是选了这款，再折腾一遍
   - 适配vertex+4090公版+360水这种组合
@@ -2686,57 +2789,6 @@ modified: 2022-01-16T15:52:31.293Z
   - 电源：AMP GH850W颜值搭调，价格合适，蟒纹线和自带线梳脱颖而出
   - 风扇：联力猫头鹰超预算，龙鳞光效清爽，圆角矩形有辨识度，价格适中，两点不足：①光效不够均匀（LED少或匀光板不够厚）②噪音大带耳机都听得到，不过我能忍受
   - 水冷：5.31钛钽首发新品LG600，3.95英寸大屏出彩，差点装不下，C34Pro又是刚好兼容，屏幕跟上方风扇就1~2mm间隙
-
-- ## 📌💡 [有哪些巨好看的机箱？ 机械大师 - 知乎](https://www.zhihu.com/question/347824157/answer/1841037981)
-- 机械大师C系列全金属机箱了解一下
-- 目前机械大师C系列有C24、C26、C28、C34一共四款机箱，这四款机箱由小到大，涵盖了从ITX超小体积到最高ATX双水冷的性能支持。
-  - 不同的尺寸，统一的设计思路。全系列采用家族式设计，除了兼容硬件的不同和多变的用法外，框架材质、设计思路均保持高度的一致。
-  - 全系列均采用可拆卸外壳与主体框架分离式设计
-  - 因外壳的可更换替代性，所以延伸出了更多的的色彩方案
-  - 为了增加便携性和更好更方便的移动机箱，在机箱的顶部均设置了一个铝合金的可拆卸式提手
-  - 适应各类电源的不同朝向，电源位置均设计了不同大小的可变角度电源支架
-  - 机箱除了标配的金属前面板和玻璃侧透外，还可以选择更换为带散热开孔的铝侧板和斜开孔的AIR前面板
-- C24小方糖 9.9L
-  - C24不仅是整个C系列中尺寸最小的一款，也是便携性最好的。实测大一点的的非分仓式双肩包都可以放的下。
-  - 249 x 249 x 155 mm, 9.6L
-  - 支持130mm的塔式散热，还包括显卡直插、SFX电源支持和多硬盘多风扇位的支持。不仅能保证储存空间，还能最大限度的构建有效散热风道
-- C26声波 13.3L
-  - 支持M-ATX主板，还增加了显卡选择上的宽容度。
-  - 并且在搭配水冷硬盘拓展支架时，使用ITX主板可以安装更多的硬盘；还可以安装240水冷，实现更强散热。
-  - C26 Plus 15.1L
-- C28 脉冲/小视界 17.9L
-  - 243 x 284 x 185 mm, 12.7L
-  - C28是C系列里可手提的M-ATX机箱中体积最大的一款，但即便这样，在和市面上其他品牌的部分ITX机箱或者是紧凑型的M-ATX机箱比，C28的体积也是小的多
-  - 可以在顶部和底部支持安装240水冷，即使使用风冷散热，C28最高也可支持到162MM的塔式风冷散热，丝毫不妥协散热的规格
-  - 335mm的显卡长度和高塔散热的支持，保证了旗舰级性能的稳定释放
-- C34视界 22.8L
-  - 342 x 342 x 185 mm, 21.6L
-  - C34是整个C系列中最大的存在，也是唯一一个标配没有带提手的型号，因为他相较与另外三款机箱，装满后会比较重
--  🌹 [C34 Pro](http://www.m-master.cn/pd.jsp?id=22)
-  - 429mm x205mm x349mm, 30.6L; 产品尺寸 429*205*403mm, 35.4L
-  - 🎒 特大号的双肩包的高度可以满足450mm, 底部长宽难以满足 205x403
-  - 显卡支持 420mm以内
-  - 主板支持 ATX/EATX/MATX/ITX
-  - 散热支持 165mm风冷/360水冷/280水冷
-  - 电源支持 ATX(200mm长以内）
-  - 2.5寸硬盘位 至多4个
-  - 3.5寸硬盘位 至多2个
-  - 净重6.2KG，支持ITX、MATX、ATX和EATX主板，水冷也能安装360尺寸，风冷最大165mm塔式。
-  - 外壳为2mm铝合金，内壳是1mm钢板，全身使用白色喷漆
-
-- https://www.zhihu.com/question/391355479/answer/2789629897
-- 此外C26是只支持SFX电源，C26PLUS和C28为了安装长显卡或者水冷等等情况，也只能安装SFX电源，所以在电源方面会增加一些成本。
-- 另外机箱安装方面，这些机箱都不算非常好安装，基本都得拆卸所以的板材才能进行安装，所以有螺丝大师这么一个称号。此外还没有背线空间，所以最好是做定制线，才能得到一个比较完美的装机效果。
-- 这几款可以背后理线吗
-  - 这几款都不可以
-
-- [用绝版机箱打造极致生产力——9950X+192G大内存 - 知乎](https://zhuanlan.zhihu.com/p/1943668215206122278)
-  - 【主板】微星 B850M MORTAR WIFI 迫击炮 （1499￥）
-  - 【CPU】AMD R9 9950X 全新盒装 （3999￥）
-  - 【内存】海盗船 (196G) 48G*4 6000MHz C30 （5398￥）
-  - 【显卡】微星 万图师 4070 Super 2X （5499￥）
-  - 【机箱】机械大师 C26PLUS （停产）
-  - 【散热】猫头鹰 C14S + 猫头鹰 NF-A14 PWM （579+180￥）
 
 - ## 🛝 [Smallest possible ATX case that can fit a full size GPU : r/buildapc _202406](https://www.reddit.com/r/buildapc/comments/1djnxe3/smallest_possible_atx_case_that_can_fit_a_full/)
   - I currently have a mini itx setup with an i5 10400, and an rx 6700xt. It’s feeling like it’s time for an upgrade and microcenter’s CPU, MOBO, RAM combos are too good to pass up. ($370 for a Ryzen 7 7700x and 32gb of ram) Especially compared to the $700+ I would have to spend on those parts, an itx mobo and a capable SFX PSU.
@@ -2810,8 +2862,89 @@ modified: 2022-01-16T15:52:31.293Z
 - 乔思伯松果D31仅有一个机械硬盘位置，并且这个位置是底部的一个风扇位，风扇和硬盘只能二选一安装。
   - 有2个2.5寸SATA固态硬盘位。
 
+- ## 📌💡 [有哪些巨好看的机箱？ 机械大师 - 知乎](https://www.zhihu.com/question/347824157/answer/1841037981)
+- 机械大师C系列全金属机箱了解一下
+- 目前机械大师C系列有C24、C26、C28、C34一共四款机箱，这四款机箱由小到大，涵盖了从ITX超小体积到最高ATX双水冷的性能支持。
+  - 不同的尺寸，统一的设计思路。全系列采用家族式设计，除了兼容硬件的不同和多变的用法外，框架材质、设计思路均保持高度的一致。
+  - 全系列均采用可拆卸外壳与主体框架分离式设计
+  - 因外壳的可更换替代性，所以延伸出了更多的的色彩方案
+  - 为了增加便携性和更好更方便的移动机箱，在机箱的顶部均设置了一个铝合金的可拆卸式提手
+  - 适应各类电源的不同朝向，电源位置均设计了不同大小的可变角度电源支架
+  - 机箱除了标配的金属前面板和玻璃侧透外，还可以选择更换为带散热开孔的铝侧板和斜开孔的AIR前面板
+- C24小方糖 9.9L
+  - C24不仅是整个C系列中尺寸最小的一款，也是便携性最好的。实测大一点的的非分仓式双肩包都可以放的下。
+  - 249 x 249 x 155 mm, 9.6L
+  - 支持130mm的塔式散热，还包括显卡直插、SFX电源支持和多硬盘多风扇位的支持。不仅能保证储存空间，还能最大限度的构建有效散热风道
+- C26声波 13.3L
+  - 支持M-ATX主板，还增加了显卡选择上的宽容度。
+  - 并且在搭配水冷硬盘拓展支架时，使用ITX主板可以安装更多的硬盘；还可以安装240水冷，实现更强散热。
+  - C26 Plus 15.1L
+- C28 脉冲/小视界 17.9L
+  - 243 x 284 x 185 mm, 12.7L
+  - C28是C系列里可手提的M-ATX机箱中体积最大的一款，但即便这样，在和市面上其他品牌的部分ITX机箱或者是紧凑型的M-ATX机箱比，C28的体积也是小的多
+  - 可以在顶部和底部支持安装240水冷，即使使用风冷散热，C28最高也可支持到162MM的塔式风冷散热，丝毫不妥协散热的规格
+  - 335mm的显卡长度和高塔散热的支持，保证了旗舰级性能的稳定释放
+- C34视界 22.8L
+  - 342 x 342 x 185 mm, 21.6L
+  - C34是整个C系列中最大的存在，也是唯一一个标配没有带提手的型号，因为他相较与另外三款机箱，装满后会比较重
+
+-  🌹 [C34 Pro](http://www.m-master.cn/pd.jsp?id=22)
+  - 429mm x205mm x349mm, 30.6L; 产品尺寸 429*205*403mm, 35.4L
+    - 🎒 特大号的双肩包的高度可以满足450mm, 底部长宽难以满足 205x403
+  - 显卡支持 420mm以内
+  - 主板支持 ATX/EATX/MATX/ITX
+  - 散热支持 165mm风冷/360水冷/280水冷
+  - 电源支持 ATX(200mm长以内）
+  - 2.5寸硬盘位 至多4个
+  - 3.5寸硬盘位 至多2个
+  - 支持ITX、MATX、ATX和EATX主板，水冷也能安装360尺寸，风冷最大165mm塔式。
+  - 外壳为2mm铝合金，内壳是1mm钢板，全身使用白色喷漆
+  - 净重：6.2KG / 毛重：7.4KG, 🐛 比普通机箱重很多
+
+- https://www.zhihu.com/question/391355479/answer/2789629897
+- 此外C26是只支持SFX电源，C26PLUS和C28为了安装长显卡或者水冷等等情况，也只能安装SFX电源，所以在电源方面会增加一些成本。
+- 另外机箱安装方面，这些机箱都不算非常好安装，基本都得拆卸所以的板材才能进行安装，所以有螺丝大师这么一个称号。此外还没有背线空间，所以最好是做定制线，才能得到一个比较完美的装机效果。
+- 这几款可以背后理线吗
+  - 这几款都不可以
+
+- [用绝版机箱打造极致生产力——9950X+192G大内存 - 知乎](https://zhuanlan.zhihu.com/p/1943668215206122278)
+  - 【主板】微星 B850M MORTAR WIFI 迫击炮 （1499￥）
+  - 【CPU】AMD R9 9950X 全新盒装 （3999￥）
+  - 【内存】海盗船 (196G) 48G*4 6000MHz C30 （5398￥）
+  - 【显卡】微星 万图师 4070 Super 2X （5499￥）
+  - 【机箱】机械大师 C26PLUS （停产）
+  - 【散热】猫头鹰 C14S + 猫头鹰 NF-A14 PWM （579+180￥）
+
 - ## 📌💡 [2025年5月更新，电脑机箱推荐。推荐一波高颜值的机箱。包含ITX, M-ATX, ATX, E-ATX机箱 - 知乎](https://zhuanlan.zhihu.com/p/210537601)
   - [2025年5月更新，电脑机箱推荐。推荐一波高颜值的机箱。包含ITX, M-ATX, ATX, E-ATX机箱](https://www.zhihu.com/tardis/zm/art/210537601)
+
+- 背包的可选尺寸
+  - 50L: 3.6 x 1.8 x 5.4
+  - 60L: 3.8 x 2.0 x 5.6
+  - 65L: 3.8 x 2.2 x 5.8   ==> 48.5L
+  - 80L: 4.0 x 2.2 x 6.5   ==> 57.2L
+  - 85L: 4.2 x 2.4 x 6.6   ==> 66.5L
+  - 朗斐双肩包男背包 / 三栖虎 / 袋鼠旅行背包
+    - 85L: 4.2 x 2.4 x 6.6 
+  - 守护者70L变85升
+    - 70L: 4.8 x 2.7 x 6.8  , 款式运动 ✅
+    - 多处挂载系统
+  - 金利来（Goldlion）长途旅行打工大容量
+    - 85L: 4.3 x 2.4 x 6.7 , 上方很窄
+  - 黑色85升1920# /防滑胸扣/减负腰带
+    - 85L: 4.3 x 2.6 x 6.9 ==> 77.1L ,  太高了
+    - 70L: 4.1 x 2.3 x 6.0 ==> 56.6L
+    - 55L: 3.8 x 2.0 x 5.5 ==> 41.8L
+  - 酷奇袋鼠大号80L超大容量登山包双肩包
+    - 80L: 4.3 x 2.6 x 6.7 ==> 74.9L
+    - 80L: 4.1 x 2.3 x 6.7
+    - 80L: 4.0 x 3.0 x 6.6
+  - 85升超大容量加
+    - 85L: 4.2 x 3.5 x 6.2
+
+- tips-cases
+  - 找机箱时在知乎或论坛找效率低，可直接在京东店铺找，优秀的商家会把各系列的机箱尺寸都在商品详情页并排列出，对比看尺寸/功能/价格效率更高
+  - 寻找产品时，直接按销量排序，然后根据热门产品的评论内容搜索竞品更快
 
 - [Choose A Case - PCPartPicker](https://pcpartpicker.com/products/case/)
 
@@ -2876,6 +3009,13 @@ modified: 2022-01-16T15:52:31.293Z
 
 - M-ATX机箱推荐
 
+- 方糖机械大师 C+Max
+  - 392*185*284mm, 20.5L
+  - 支持M-ATX和ITX主板。
+  - 电源可以用SFX或14cm长的ATX电源。
+  - 支持240水冷或162mm高的风冷
+  - 价格小贵，在800元附近
+
 - [乔思伯 Z20](https://www.jonsbo.com/products/Z20--.html)
   - 370*186*295mm, 20.3L
   - 显卡支持长度：≤363mm
@@ -2887,19 +3027,20 @@ modified: 2022-01-16T15:52:31.293Z
   - 显卡: ≤  300mm-335mm
 
 - 先马（SAMA）趣造I'm Mini
-  - 391（长）*185（宽）*303（高）mm
+  - 391（长）*185（宽）*303（高）mm, 21.9L
   - 显卡限长：≤33cm
   - 支持M-ATX和ITX主板
 
-- 联力A3
+- 联力 A3
   - 443 x 194 x 396 mm, 34L
   - 最高支持165mm的风冷。支持360水冷
   - 最长支持415mm的显卡。底部支持安装一个机械硬盘
 
 - 华硕AP201 冰立方
-  - 205mm*350mm*460mm
+  - 205mm*350mm*460mm, 33L
   - 显卡（连供电头总长度）限长≤32cm
   - 硬盘位3个
+  - 支持的主板：M-ATX，ITX, 🐛 不支持ATX
   - 支持的是M-ATX主板，总体布局和乔思伯D30类似，但是华硕AP201采用的是全打孔面板，且顶部支持360水冷，散热非常的不错，支持TYPE-C USB 3.2 GEN2（乔思伯D30的type-C是和USB并在一起的）。
 
 - 乔思伯 D31 mesh 🌹
@@ -2928,11 +3069,17 @@ modified: 2022-01-16T15:52:31.293Z
   - PCI扩展槽：7
   - 电源：ATX PSII≤140-200mm
 
-- 乔思伯 D41 mesh 🌹 /放不进背包
+- 乔思伯 D41 mesh 🌹 /~~放不进背包~~
   - 205mm (宽) *392mm (高) *440mm (深)（容积：35.4L）
     - 总尺寸  205mm*407mm*452mm, 37.7L
-  - 显卡支持长度：330-400mm
+  - 显卡支持长度: 330-400mm
   - 主板支持：ATX / M-ATX
+  - 电源：ATX电源
+  - CPU散热器：168mm
+  - 水冷支持：顶部：240/280/360*1        后部：120*1      底部：240/360*1
+  - 硬盘位：2.5〞SSD*3 + 3.5〞HDD*2
+  - 前置接口：USB3.2 Gen 2 Type-C*1         USB3.0*1/Audio & Mic*1
+  - 净重：6.6KG        外箱+机箱：7.6KG
 
 - 乔思伯 U4 Pro
   - 205mm(W) * 395mm(D) * 426mm(H)（含脚垫）, 34.5L
@@ -2940,38 +3087,108 @@ modified: 2022-01-16T15:52:31.293Z
   - 主板支持类型：ITX / M-ATX / ATX
   - 电源支持：ATX≤170-190mm
 
-- 方糖机械大师 C+Max
-  - 392*185*284mm
-  - 支持M-ATX和ITX主板。
-  - 电源可以用SFX或14cm长的ATX电源。
-  - 支持240水冷或162mm高的风冷
-  - 价格小贵，在800元附近
-
 - ATX（中塔）机箱推荐
   - ATX（中塔）机箱是目前大部分用户的选择，这类的机箱尺寸偏大，基本都支持ATX，M-ATX，ITX版型，部分支持包括E-ATX在内的所有版型。
   - 优点在于散热好，ATX机箱基本都支持240及360水冷，对大型双塔风冷散热的支持也更好。扩展位多，方便安装更多的硬盘等设备。
 
+- 先马（SAMA）朱雀se 🌹 /前板网孔散热
+  - 3.96*2.15*4.82mm, 41.03L
+  - 主板兼容: ATX/MATX/ITX
+  - hdd*2, ssd*1
+  - 显卡限长 345mm
+  - 散热限高 163cm
+  - 水冷支持 360/280/240
+  - 支持显卡竖装
+  - 机箱重量 <5kg
+  - [朱雀se - 先马官网](http://www.sama.cn/archives/9452)
+  - [【先马 朱雀SE（黑）】先马（SAMA）朱雀SE黑色 台式电脑主机箱 前板散热网孔/支持ATX主板/360水冷/竖装显卡/双面防尘/Type-C预留孔【行情 报价 价格 评测】-京东](https://item.jd.com/100135456146.html)
+
+- 先马（SAMA）朱雀air 
+  - 4.08×2.33×4.62mm, 43.9L
+
+- 先马（SAMA）黑洞7pro 🌹
+  - 4.05×2.15×4.82mm, 41.97L
+  - 显卡限长 345mm
+  - [【先马 黑洞7 PRO（黑）】先马（SAMA）黑洞7pro中塔式吸音降噪电脑主机箱黑色 标配2把降噪风扇/高分子树脂棉/支持ATX主板/竖装显卡【行情 报价 价格 评测】-京东](https://item.jd.com/100075167747.html)
+  - 先马（SAMA）小黑洞pro  /MATX
+    - 4.17×2.15×4.25mm, 38.1L
+  - 先马（SAMA）黑洞7 
+    - 3.9×2×4.46mm, 34.8L
+
+- 先马（SAMA）平头哥M2 Pro
+  - 4×2.1×4.45, 37.38L
+  - 显卡限长 325mm
+  - ATX/MATX/ITX
+  - 钢化玻璃侧透
+
+- 酷冷至尊 600L v2 🌹 /无mesh
+  - 400x204x455.3mm, 37L
+    - 包括突出物	405.5x204x455.3mm, 37.6L
+  - 主板兼容性	Mini-ITX, Micro-ATX, ATX
+  - 显卡	 350mm (w/o front fans & radiator)
+  - 电源	160mm
+  - CPU 散热器	161mm
+
+- 酷冷至尊 Q500L /比D41小
+  - 386 x 230 x 381mm, 33.8L
+  - 主板兼容	Micro-ATX, Mini-ITX, ATX
+  - 显卡限长	360mm
+  - CPU散热器限高	160mm
+  - 硬盘位	1*HDD+2*SSD
+  - 电源支持	顶部前支架, ATX PS2
+  - 净重	3.83kg
+
+- 酷冷至尊 酷方500
+  - 380 x 231 x381mm， 33.4L; 
+    - 包含凸起 406 x 231 x 415mm, 38.9L
+  - 主板兼容性	ATX / Micro ATX / ITX / E-ATX最大 280mm
+  - CPU 散热器	164mm~172mm (移除侧面水冷支架)
+  - 电源	与GPU无干涉 ：173mm, 最大尺寸：216mm(不计理线空间) 
+    - 底部安装时：332mm (不计理线空间)
+  - 显卡 365mm
+
+- 酷冷至尊 MB400L
+  - 411 x 218 x 410mm, 36.74L
+  - MATX
+
 - 分形 North /支持全mesh且无玻璃
-  - 4.33*2.15*4.5, 41.9L; 整机尺寸 4.47*2.15*4.69, 45.07L
+  - 4.33*2.15*4.5, 41.9L; 
+    - 整机尺寸 4.47*2.15*4.69, 45.07L
 
-- 鑫谷无尽1 /单面玻璃侧透/有点小
-  - 3.6x2.3x4.35, 36L; 整机尺寸 3.95×2.3×4.55, 41L
+- 长城（Great Wall）商逸R40/R41
+  - 4.09×2.03×4.4, 36.5L
+- 长城（Great Wall）商逸R50
+  - 4.25×2.03×4.65, 
 
-- 鑫谷无界1 /2面玻璃海景房/无mesh
-  - 4.2x2.1x4.65, 41L; 整机尺寸 4.38x2.1x4.85, 44L
+- 长城（Great Wall）本色K13 v6
+  - 3.94×2×4.56, 35.9L
+- 长城（Great Wall）本色K13
+  - 3.96×2×4.51, 35.7L
+  - 显卡限长 340mm
 
-- 航嘉 GX750A 
-  - 4.3x2.18x4.35, 40.7L; 产品尺寸 4.65x2.18x4.61, 46L
-  - 侧边网孔散热
+- 爱国者（aigo）A15
+  - 3.7*1.9*4.38, 30.8L
 
 - 爱国者 yogo t21
   - 4.08×2.3×4.6, 43.1L
 
-- 朱雀air
+- 鑫谷无尽1 /单面玻璃侧透/有点小
+  - 3.6x2.3x4.35, 36L; 
+    - 整机尺寸 3.95×2.3×4.55, 41L
 
-- 追风者xt523 信仰版
+- 鑫谷无界1 /2面玻璃海景房/无mesh
+  - 4.2x2.1x4.65, 41L; 
+    - 整机尺寸 4.38x2.1x4.85, 44L
 
-- [2024年最新ATX小机箱推荐 - 知乎 _202401](https://zhuanlan.zhihu.com/p/680148767)
+- 航嘉 GX750A 
+  - 4.3x2.18x4.35, 40.7L; 
+    - 产品尺寸 4.65x2.18x4.61, 46L
+  - 侧边网孔散热
+
+- 游戏帝国（GAMEMAX）冰魔方mesh
+  - 401 x 204 x 386mm, 31.57L
+
+- ## [2024年最新ATX小机箱推荐 - 知乎 _202401](https://zhuanlan.zhihu.com/p/680148767)
 - 既想要主机够小，又想要ATX主板的拓展性是很难达成的，于是很多人退而求其次选择MATX主板和MATX机箱。但ATX小机箱依然是很多人的执着所在。作者对市面上目前在售的ATX机箱进行了粗略的梳理，发现目前较小的ATX机箱主要有以下这些
 
 - 缔誓科技L59p 体积13.2 L 售价：499
@@ -3220,7 +3437,7 @@ modified: 2022-01-16T15:52:31.293Z
   - Next, we have 7960X and 7970X (4 CCDs, 4 memory channels), and we can observe a moderate increase in test results (167 GB/s, 179 GB/s). 
   - The results for 7965WX and 7975WX (4 CCDs, 8 memory channels) again are a little higher (236 GB/s, 246 GB/s) compared to the non-PRO models, It's definitely not a 2x bandwidth increase compared to the corresponding non-PRO models. 
   - Only when we compare the models with 8 CCDs: 7980X and 7985X, there is around 90% increase in the test result (240 GB/s vs 453 GB/s). Finally, 7995WX (12 CCDs) has the best performance in this test.
-  - The overall conclusion is that the lower-end models with 2-4 CCDs have limited memory bandwidth. We had the same situation in previous Threadripper generations. If you need a lot of bandwidth, you probably should use EPYC.
+  - 🤔 The overall conclusion is that the lower-end models with 2-4 CCDs have limited memory bandwidth. We had the same situation in previous Threadripper generations. If you need a lot of bandwidth, you probably should use EPYC.
 
 - we need to make a distinction between
   - the bandwidth between memory modules and the memory controller, 
@@ -3233,12 +3450,20 @@ modified: 2022-01-16T15:52:31.293Z
   - Let's calculate how much bandwidth we have depending on the number of CCDs in the CPU. I assumed an FCLK of 1.8 GHz, so a single GMI3 link has 57.6 GB/s read bandwidth.
 - Each CCD is connected with I/O die containing the memory controller with a GMI3 link, and this link has limited bandwidth. All CPU cores within a single CCD use this GMI3 link for memory access. So the more CCDs in CPU, the higher is the number of GMI3 links to the I/O die
 
-- To get the best memory bandwidth, (theoretically) you should:
+- 📌 To get the best memory bandwidth, (theoretically) you should:
   - Increase FCLK for 8-channel configurations with 2 or 4 CCDs (7945WX, 7955WX, 7965WX, 7975WX), 
   - Use overclocked memory in all remaining Threadripper models, 
   - For Epyc, purchase a motherboard with 12 memory slots and an Epyc 9004 processor with at least 8 CCDs. Fill all memory slots.
 
 - Another site (userbenchmark) mostly verifies what fairydreaming posted, shows a bit more improvement from 3000 to 7000, but lacks information on highly overclocked builds
+  - Results are thin for the 7000 series (no 7945WX results) but the improvement from 3000 to 7000 appears more significant than using PassMark. Single-core more than doubled and multi-core up about 80%.
+
+- Can you repeat this excercise for epyc processors?
+  - I checked a few performance EPYC 9004 models that could be used in workstation builds: 
+    - 9174F (16c) achieved 402 GB/s with 8 RAM modules, 
+    - 9274F (32c) around 588 GB/s with 12 RAM modules, 
+    - 9474F (64c) achieved 449 GB/s with unknown number of RAM modules.
+- Thank you so much. Okay. So the 16 core epyc has 8 ccd… so the number of ccd is the memory bandwidth bottleneck. —- ryzen 7950x3d has memory threaded score of 54 MBytes/s. So the threadripper 7960x is the sweet spot for cost/clock speed/cores/167 MB bandwidth with around 3x mem bandwidth at a little over 2x cost of 8950x3d
 
 - I can tell you the results of the threaded memory test that I found the PassMark database:
   - AMD EPYC 7F52 (16c Rome): ~145 GB/s (with 8 DDR4 RAM modules)
@@ -3251,6 +3476,18 @@ modified: 2022-01-16T15:52:31.293Z
   - 9174F (16c) achieved 402 GB/s with 8 RAM modules, 
   - 9274F (32c) around 588 GB/s with 12 RAM modules, 
   - 9474F (64c) achieved 449 GB/s with unknown number of RAM modules.
+
+- Really wish I had seen this BEFORE I picked up my 7955WX. It's insane to me that this isn't more openly communicated somehow. Now I'm debating what my next path is. Switch to Epyc for additional bandwidth, or wait for a deal on Ebay to get a 7985WX or 7995WX.
+  - I feel your pain. I purchased all components already and now IM LOST AS SHIT. Hoping vcolor will let me exchange the 256 6400 ram.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 - ## 🤔 [EPYC/Threadripper CCD Memory Bandwidth Scaling : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nesi8g/epycthreadripper_ccd_memory_bandwidth_scaling/)
   - There's been a lot of discussion around how EPYC and Threadripper memory bandwidth can be limited by the CCD quantity of the CPU used. What I haven't seen discussed is how that scales with the quantity of populated memory slots. 

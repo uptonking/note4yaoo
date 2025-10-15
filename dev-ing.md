@@ -239,6 +239,12 @@ use vanilla html/css/javascript to create a personal profile landing page: homep
 use react to create a homepage shows a list of frontend frameworks like react/vue/angular, when clicking the framework, navigate to the route to show its introduction
 ```
 
+## 1014
+
+- ❓ [[BUG] Image features and image tokens do not match on full finetuning · Issue · unslothai/unsloth _202504](https://github.com/unslothai/unsloth/issues/2251)
+  - everytime you get this type of errors ValueError: Image features and image tokens do not match: tokens: 0, features 169
+  - It's almost always a combination between Dataset Format and what the model is expecting in terms of input.
+
 ## 1013
 
 - “rig” is informal slang for a computer / hardware setup.

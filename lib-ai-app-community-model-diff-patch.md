@@ -13,7 +13,7 @@ modified: 2025-10-10T02:45:45.941Z
   - 可直接参考已有编辑器的方案，如codemirror
 
 - 考虑编辑的场景
-  - shorter/longer/improve/check/translate 都可实现为 一次性替换
+  - shorter/longer/improve/check/translate 都可实现为对明确输入范围内容的 一次性替换
 
 - [Edit formats | aider](https://aider.chat/docs/more/edit-formats.html)
   - Aider uses various “edit formats” to let LLMs edit source files. 
@@ -34,6 +34,19 @@ modified: 2025-10-10T02:45:45.941Z
     - These are streamlined versions of the diff and whole formats, intended to be used with --editor-edit-format when using architect mode. 
     - The actual edit format is the same, but aider uses a simpler prompt that is more narrowly focused on just editing the file as opposed to solving the coding task.
 # examples-ai-editing
+- https://github.com/theluk/llm-patcher /apache2/2022406/ts/inactive
+  - https://llm-patcher.vercel.app/
+  - An open-source AI find-and-replace workflow template built with Next.js, the Vercel AI SDK and OpenAI.
+  - Whenever we provide a text to an LLM and ask it to do some changes, it will always stream the full text back to us. This is not ideal for large texts, as it can be slow and expensive. 
+  - This project aims to solve this problem by providing a way to stream only the changes made by the LLM back to the user.
+  - How does it work?
+    - The user provides a text and a find-and-replace query.
+    - The text is split into lines and sentences.
+    - Each line and sentence is then prefixed with a identifier that looks like `<l1s1>` for line 1, sentence 1.
+    - The LLM is then asked to find-and-replace the query in each line and sentence.
+    - The changes are then streamed back to the user in the form of a diff. The diff looks like `<r:l1s1>` string to find || string to replace.
+  - [How to use LLM for efficient text outputs longer than 4k tokens? - DEV Community _202406](https://dev.to/theluk/how-to-use-llm-for-efficient-text-outputs-longer-than-4k-tokens-1glc)
+
 - https://github.com/paradite/ai-file-edit /14Star/MIT/202506/ts
   - A library for editing files using AI models such as GPT, Claude, and Gemini.
   - Edit files using natural language
@@ -45,15 +58,15 @@ modified: 2025-10-10T02:45:45.941Z
     - Cannot delete files
     - Cannot edit too many files at once (> 3 files)
 
-  - https://github.com/jlevy/chopdiff /MIT/202508/python 
-    - chopdiff is a small library of tools I've developed to make it easier to do fairly complex transformations of text documents, especially for LLM applications
-    - it lets you parse, diff, and transform text at the level of words, sentences, paragraphs, and "chunks" (paragraphs grouped in an HTML tag like a <div>). It aims to have minimal dependencies.
-    - All this is done very simply in memory, and with only regex or basic Markdown parsing to keep things simple and with few dependencies.
-    - Filter diffs: Diff two documents and only accept changes that fit a specific filter. For example, you can ask an LLM to edit a transcript, only inserting paragraph breaks but enforcing that the LLM can't do anything except insert whitespace. Or let it only edit punctuation, whitespace, and lemma variants of words. Or only change one word at a time (e.g. for spell checking).
-    - Backfill information: Match edited text against a previous version of a document (using a word-level LCS diff), then pull information from one doc to another. For example, say you have a timestamped transcript and an edited summary. You can then backfill timestamps of each paragraph into the edited text.
-    - Windowed transforms: Walk through a large document N paragraphs, N sentences, or N tokens at a time, processing the results with an LLM call, then "stitching together" the results, even if the chunks overlap.
-    - 🤔 There are full-blown Markdown and HTML parsing libs (such as Marko and BeautifulSoup) but these tend to focus specifically on fully parsing documents as parse trees. On the other end of the spectrum, there are NLP libraries (like spaCy) that do more expensive, full language parsing and sentence segmentation.
-      - This is a lightweight alternative to those approaches when you are just focusing on processing text, don't want a big dependency (like a full XML parser or NLP toolkit) 
+- https://github.com/jlevy/chopdiff /MIT/202508/python 
+  - chopdiff is a small library of tools I've developed to make it easier to do fairly complex transformations of text documents, especially for LLM applications
+  - it lets you parse, diff, and transform text at the level of words, sentences, paragraphs, and "chunks" (paragraphs grouped in an HTML tag like a `<div>`). It aims to have minimal dependencies.
+  - All this is done very simply in memory, and with only regex or basic Markdown parsing to keep things simple and with few dependencies.
+  - Filter diffs: Diff two documents and only accept changes that fit a specific filter. For example, you can ask an LLM to edit a transcript, only inserting paragraph breaks but enforcing that the LLM can't do anything except insert whitespace. Or let it only edit punctuation, whitespace, and lemma variants of words. Or only change one word at a time (e.g. for spell checking).
+  - Backfill information: Match edited text against a previous version of a document (using a word-level LCS diff), then pull information from one doc to another. For example, say you have a timestamped transcript and an edited summary. You can then backfill timestamps of each paragraph into the edited text.
+  - Windowed transforms: Walk through a large document N paragraphs, N sentences, or N tokens at a time, processing the results with an LLM call, then "stitching together" the results, even if the chunks overlap.
+  - 🤔 There are full-blown Markdown and HTML parsing libs (such as Marko and BeautifulSoup) but these tend to focus specifically on fully parsing documents as parse trees. On the other end of the spectrum, there are NLP libraries (like spaCy) that do more expensive, full language parsing and sentence segmentation.
+    - This is a lightweight alternative to those approaches when you are just focusing on processing text, don't want a big dependency (like a full XML parser or NLP toolkit) 
 
 - https://github.com/kordless/gnosis-evolve/blob/main/contrib_tools/core/file_diff_editor.py
   - Gnosis Evolve turns Claude Desktop from a passive assistant into an active developer
@@ -61,6 +74,22 @@ modified: 2025-10-10T02:45:45.941Z
   - The File Diff Editor can be run separately from Gnosis Evolve! This powerful tool provides sophisticated file editing capabilities with regex support, fuzzy matching, and versioning. Perfect for precise code modifications and bulk operations.
   - [File Diff Editor - Advanced Pattern-Based File Editing Tool](https://github.com/kordless/gnosis-evolve/blob/main/FILE_DIFF_EDITOR_HOWTO.md)
     - The File Diff Editor v2.1.1 is a revolutionary MCP (Model Context Protocol) tool that provides advanced file editing capabilities with powerful regex support, fuzzy matching, and enterprise-grade versioning
+
+- https://github.com/jianghoucheng/AnyEdit /MIT/202510/python
+  - AnyEdit: Edit Any Knowledge Encoded in Language Models, ICML 2025
+  - [AnyEdit: Edit Any Knowledge Encoded in Language Models | USTC Lab for Data Science _202505](https://data-science.ustc.edu.cn/_upload/tpl/15/04/5380/template5380/publication/icml25-jhc.html)
+    - Current model editing methods, however, struggle with long-form knowledge in diverse formats, such as poetry, code snippets, and mathematical derivations. These limitations arise from their reliance on editing a single token’s hidden state, a limitation we term efficacy barrier. 
+    - To solve this, we propose AnyEdit, a new autoregressive editing paradigm. It decomposes long-form knowledge into sequential chunks and iteratively edits the key token in each chunk, ensuring consistent and accurate outputs. 
+    - AnyEdit serves as a plug-and-play framework, enabling current editing methods to update knowledge with arbitrary length and format, significantly advancing the scope and practicality of LLM knowledge editing.
+
+- https://github.com/Banner-Z/G-SPEED /apache2/202310/python/inactive
+  - The official repository of paper G-SPEED: General SParse Efficient Editing MoDel (Findings of EMNLP-2023).
+  - [[2310.10480] G-SPEED: General SParse Efficient Editing MoDel](https://arxiv.org/abs/2310.10480)
+
+## diff-toolchain
+
+- https://github.com/afnanenayet/diffsitter /MIT/202510/rust
+  - A tree-sitter based AST difftool to get meaningful semantic diffs
 # discuss-stars
 - ## 
 
@@ -68,7 +97,11 @@ modified: 2025-10-10T02:45:45.941Z
 
 - ## 
 
-- ## 
+- ## 🧩 [What is `git diff --patience` for? - Stack Overflow](https://stackoverflow.com/questions/4045017/what-is-git-diff-patience-for)
+- The patience diff algorithm is a slower diff algorithm that shows better results in some cases.
+  - Patience Diff, instead, focuses its energy on the low-frequency high-content lines which serve as markers or signatures of important content in the text. It is still an LCS-based diff at its core, but with an important difference, as it only considers the longest common subsequence of the signature lines
+
+- You can also use it for merges (worked really well here for some XML conflicts)
 
 - ## 🌵🆚 better diff views for AI agents _202506
 - https://x.com/geoffreylitt/status/1938239983464140920
@@ -116,11 +149,35 @@ modified: 2025-10-10T02:45:45.941Z
 
 - ## 
 
-- ## 
+- ## [The Edit Trick: Efficient LLM Annotation of Documents _202504](https://waleedk.medium.com/the-edit-trick-efficient-llm-annotation-of-documents-d078429faf37)
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
-- ## 
+- ## 🌰 [When LLMs give *almost* correct code, fix it with targeted line edits instead of a full rewrite  _202505](https://medium.com/@pYdeas/when-llms-give-almost-correct-code-fix-it-with-targeted-line-edits-instead-of-a-full-rewrite-af3329e42010)
+- This idea came from [Introducing FixIt: an unreasonably effective AI error fixer for SQL - MotherDuck Blog _202401](https://motherduck.com/blog/introducing-fixit-ai-sql-error-fixer/) and adapted with Python to work with not just SQL, but text in general
 
-- ## 
+- 
+- 
+- 
+- 
+
+- ## [How to generate automatically applicable file diffs with ChatGPT? - Prompting - OpenAI Developer Community _202305](https://community.openai.com/t/how-to-generate-automatically-applicable-file-diffs-with-chatgpt/227822)
+  - Have any of you succeeded to have ChatGPT output suggested changes to a file in a way that can be automatically applied to the file?
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 - ## 🚀 [Launch HN: Morph (YC S23) – Apply AI code edits at 4, 500 tokens/sec | Hacker News _202507](https://news.ycombinator.com/item?id=44490863)
   - We’ve built a blazing-fast model for applying AI-generated code edits directly into your files at 4, 500+ tokens/sec. No more slow full-file rewrites or brittle search-and-replace hacks.
@@ -500,8 +557,21 @@ Code
   - It either ignored part of the instructions that it needed to follow or it generated erroneous diff. 
   - Asking to get the code right, and then, making that code a diff, was better. Trying to use chain of thought to keep it in one prompt didn't make a difference, as it would say it was gonna do x, y, z... But then suck at some of the steps.
   - With Claude, giving info in XML tags worked very well (to classify parts of the prompt as "original code" "instructions" and so). My attempts to use JSON and function calling were less successful, I felt it "dumbed down" the coding part when asking for that. But your mileage(用处, 好处) may vary and I may have been doing something wrong. In another project the JSON/function calling works without issues (but what I ask sonnet 3.5 is simpler, not much "thinking" needed).
-  
-  
+# discuss-toolchain-diff
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Difftastic, a structural diff tool that understands syntax | Hacker News _202403](https://news.ycombinator.com/item?id=39778412)
+- For those who don't already know, this is built on tree-sitter which does for parsing what LSP does for analysis. 
+  - 
+  - That is, it provides a standard interface for turning code into an AST and then making that AST available to clients like editors and diff tools. Instead of a neat tool like this having to support dozens of languages, it can just support tree-sitter and automatically work with anything that tree-sitter supports. And if you're developing a new language, you can create a tree-sitter parser for it, and now every tool that speaks tree-sitter knows how to support your language.
+
+- 
+- 
+- 
 
 # discuss-edit-format/protocol ⚖️
 - ## 
@@ -682,6 +752,38 @@ Code
 
 - ## 
 
+- ## [Automated Patch Diff Analysis using LLMs | SySS Tech Blog _202509](https://blog.syss.com/posts/automated-patch-diff-analysis-using-llms/)
+- https://github.com/SySS-Research/diffalayze /MIT/202509/python
+  - diffalayze is a versatile toolkit for automating patch diffing of binary targets and enriching the results with deep-dive analysis from large language models (LLMs). 
+  - It is designed for reverse engineers, vulnerability researchers, and security teams who need to track software changes
+
+- Patch diffing is great for finding what changed between two versions of a binary, but the volume on typical patch days is high and manual triage costs a lot of time. 
+  - The shown approach pipelines a binary diff, extracts the relevant changes, and lets an LLM score and summarize security relevance so a researcher can focus on the promising parts first.
+
+- Patch diffing is a powerful technique for identifying code changes and understanding what a patch actually affects. While diffing with access to source code is relatively straightforward, it becomes much more challenging when working with native binaries.
+- Fortunately, several tools exist to address this problem and support binary-level diffing, for example BinDiff, Diaphora, or ghidriff. ghidriff is a great open-source tool developed by clearbluejar, which combines multiple techniques to detect and visualize code differences in binaries.
+- However, there is an obvious bottleneck: finding the needle in the haystack. On a typical Mictrosoft Patch Tuesday, thousands of lines of code (LOC) change across many binaries. Manually skimming all diffs is time-consuming and this is where LLMs can help with triage.
+
+- ## [The evolution of a structural code editor | Hacker News _202501](https://news.ycombinator.com/item?id=42608923)
+- for diffing syntax trees, I've been trying out diffsitter, and it feels pretty good so far https://github.com/afnanenayet/diffsitter
+
+- Plain Text diffing has some obvious drawbacks:
+  1. If you rearrange your functions you will see a lot of additions and deletions while semantically there is no change in the program. It's just noise.
+  2. If you rename a variable you don't really have any actual change in places where it is referenced but text diff will again show a lot of noise. But the code references is still the same code.
+
+- ## [Fifty Years of Diff | Hacker News _202406](https://news.ycombinator.com/item?id=40692926)
+- I wish more engineering tools had an equivalent of diff. Manually redlining schematics and drawings is such a pain.
+  - that's a really interesting idea. Many formats representing drawings like SVG and Kicad Schematics are text formats, not binary. They can be diffed, and it's a matter of rendering the diff as part of the drawing, not as text. I wonder if anyone is working on such a thing.
+
+- AllSpice.io provides graphical diffs for KiCad schematic and PCB files (and others) in a Gitea-based forge: https://allspice.io/. Disclosure: I work there (mostly on binary formats), it's a paid service
+
+- ## [Developer tool 'diff' is 40 years old: can it be improved? | Hacker News _202408](https://news.ycombinator.com/item?id=41360874)
+- https://github.com/dandavison/delta is nice for a prettier presentation of the same information as `git diff` .
+  - This may or may not qualify, since I think GNU diff supports it with an option, as does Git diff, but "Color-words" diff can be nice, where changes in the middle of the line are highlighted and whitespace is ignored.
+  - Somebody already recommended https://github.com/Wilfred/difftastic, which I second. It uses treesitter and is very interesting. Surprisingly, in practice difftastic is not always noticeably better than color words diff (don't expect miracles), but occasionally it is much better.
+
+- Difftastic's wiki has more related tools: https://github.com/Wilfred/difftastic/wiki/Structural-Diffs.
+
 - ## [Editing text files with LLMs : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o592o0/editing_text_files_with_llms/)
 - It's about tools. Make file editing tools, tools to open/create a file, edit a file, rename/delete a file, search a file, etc. 
   - If your stuff has MCP, you can download tons of mcp file editing tools, 
@@ -711,13 +813,9 @@ Code
   - Yes, git underneath stores data as diffs but they are only vaguely related to logical structure of commits
 - And that's why we call that lower level compression trick "delta", not "diff".
 
-  
-  
 - Wonder if something like that can be used to make git cleverer about merges for example.
   - Git’s merge algorithm looks at three versions of the code: the two branch tips being merged, and their common ancestor. It might be better at resolving conflicts if it looked at some of the intermediate commits as well, but I don’t know of anything that does so.
 - Merge part isn't pluggable like that IIRC. Would be interesting if that was given stable interface, then supposed "smart merge" tool could iterate with few ways to merge code while running tests to check which one produces least/no errors
-
-  
 
 - ediff in emacs does this. Refine is what highlights the words that are different.
 
@@ -742,4 +840,7 @@ Code
   - When designing such systems, please do keep that in mind. Make sure code changes are properly signed and the originating models are traceable.
   - Same applies to datasets generated by models.
 
+- It would have been helpful to show some example generations of the model, unless I've missed them.
+- [CarperAI/diff-codegen-6b-v2 · Hugging Face _202301](https://huggingface.co/CarperAI/diff-codegen-6b-v2)
+  - diff-codegen-6b-v2 is a diff model for code generation, released by CarperAI. A diff model is an autoregressive language model trained on edits to a piece of text, formatted in Unified Diff Format. 
 - My understanding is you have in training dataset the original code, diff + commit message. So you train the LM to: Input: code+commit output: diff

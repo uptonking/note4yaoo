@@ -149,6 +149,14 @@ modified: 2025-09-16T19:59:57.856Z
 
 ## models-exploring
 
+- 专用模型
+  - ocr
+  - tool-calling
+  - edit-apply
+  - devops
+  - graphics
+  - computer-use
+
 - [starvector/starvector-1b-im2svg · Hugging Face _202503](https://huggingface.co/starvector/starvector-1b-im2svg)
   - StarVector is a foundation model for generating Scalable Vector Graphics (SVG) code from images and text
   - It utilizes a Vision-Language Modeling architecture to understand both visual and textual inputs, enabling high-quality vectorization and text-guided SVG creation.
@@ -526,6 +534,28 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+
+- ## 🆚 [Qwen3-VL Instruct vs Thinking : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nuhgxw/qwen3vl_instruct_vs_thinking/)
+  - I am working in Vision-Language Models and notice that VLMs do not necessarily benefit from thinking as it applies for text-only LLMs. 
+  - I created the following Table asking to ChatGPT (combining benchmark results found here), comparing the Instruct and Thinking versions of Qwen3-VL. You will be surprised by the results.
+
+- I just want qwen3-30b-a3b-2507 with a vision component so I dont have to load multiple models. 
+
+- I wonder how hybrid vision models do — GLM4.5V comes from the Air version which is hybrid.
+
+- [Qwen3-VL-30B-A3B-Instruct & Thinking are here : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1nxhfcq/qwen3vl30ba3binstruct_thinking_are_here/)
+- I wonder why the thinking version got worse IFEval than the instruct and even the previous, non-vision, thinking model.
+  - yes they don't discuss yet why thinking version, that uses way more inference token budget, performs worse than the Instruct. Imo Thinking for VLMs is not necessarily beneficial
+- It seems to improve reasoning in the non-thinking model and hurt it in the thinking? Besides that I guess the difference is only slight and completely mixed. Except for coding, VL makes that worse.
 
 - ## [moondream 0.5B - the world's smallest vision language model : r/LocalLLaMA _202412](https://www.reddit.com/r/LocalLLaMA/comments/1h7ivts/moondream_05b_the_worlds_smallest_vision_language/)
   - https://github.com/vikhyat/moondream

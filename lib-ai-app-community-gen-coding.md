@@ -49,6 +49,37 @@ modified: 2025-09-01T07:58:29.058Z
 
 - ## 
 
+- ## 
+
+- ## 📌 [Yek: Serialize your code repo (or part of it) to feed into any LLM | Hacker News _202501](https://news.ycombinator.com/item?id=42753302)
+- There are a lot of them. I collected a list of cli tools that does this: https://prompt.16x.engineer/cli-tools
+
+- Here is a benchmark comparing it to [Repomix] serializing the Next.js project
+- Maybe I don't understand the usecase but I'm curious why speed matters given that LLMs are so slow (?)
+
+- you might be interested in seeing how tools like Aider do their "repo serializing" (they call it a repomap), which tries to be more intelligent by only including "important lines" (like function definitions but not bodies).
+
+- i guess I shouldn’t be surprised that many of us have approached this in different ways. it’s neat to see already multiple replies of the sort I’m going to make too, which is to share the approach I’ve been taking, which is to concatenate or to “summarize” the code, with particular attention on dependency resolution. [chimeracat](https://github.com/scottvr/chimeracat)
+
+- Adding my take to the mix, which has been working well for me: https://github.com/ClaireGSB/project-context.
+  - It outputs both a file tree of your repo, a list of the dependancies, and a select list of files you want to include in your prompt for the LLM, in a single xml file. 
+
+- How does this compare to a tool like RepoPrompt? https://repoprompt.com
+
+- https://github.com/simonw/files-to-prompt/ seems to work fine especially for Claude as it follows the recommendations and format.
+
+- There is also https://repo2txt.simplebasedomain.com/local.html which doesn't require to download anything
+
+- I have to add https://github.com/simonw/files-to-prompt as a marker guid.
+
+- Like many people, I built something similar, llmctx, but the chunking feature seems really interesting, I have to look into that for llmctx.
+
+- i wrote something similar https://github.com/dwrtz/sink
+
+- You can do this all in the browser: https://dropnread.io/
+
+- https://gitingest.com/
+
 - ## 🆚🏠 [why does cline not apply multiple agent approach? : r/CLine _202508](https://www.reddit.com/r/CLine/comments/1mtnwgp/why_does_cline_not_apply_multiple_agent_approach/)
   - Roo has default 5 agents, and has more agents in mode market, including code techear and document writer, that's cool when the modes are managed by orchestrator.
   - why does cline not take this way?

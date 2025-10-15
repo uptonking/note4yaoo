@@ -40,9 +40,94 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
+- ## 🖼️📄📈 [Multi-modal RAG at scale: Processing 200K+ documents (pharma/finance/aerospace). What works with tables/Excel/charts, what breaks, and why it costs way more than you think : r/LLMDevs _202510](https://www.reddit.com/r/LLMDevs/comments/1o5oaas/multimodal_rag_at_scale_processing_200k_documents/)
+  - TL; DR: Built RAG systems for 10+ enterprise clients where 40-60% of critical information was locked in tables, Excel files, and diagrams. Standard text-based RAG completely misses this. 
+  - This covers what actually works, when to use vision models vs traditional parsing, and the production issues nobody warns you about.
+- Here's what nobody tells you: most enterprise knowledge isn't in clean text. It's in Excel spreadsheets with 50 linked sheets, tables buried in 200-page PDFs, and charts where the visual layout matters more than any text.
+- Why Text-Only RAG Fails
+- Quick context: pharmaceutical client had 50K+ documents where critical dosage data lived in tables. Banks had financial models spanning 50+ Excel sheets. Aerospace client's rocket schematics contained engineering specs that text extraction would completely mangle.
+  - When a researcher asks "what were cardiovascular safety signals in Phase III trials?" and the answer is in Table 4 of document 8, 432, text-based RAG returns nothing useful.
+- The Three Categories (and different approaches for each)
+- 📌 Simple Tables
+  - Standard tables with clear headers. Financial reports, clinical trial demographics, product specifications.
+  - What works: Traditional parsing with `pymupdf or pdfplumber` , extract to CSV or JSON, then embed both the structured data AND a text description. Store the table data, but also generate something like "Table showing cardiovascular adverse events by age group, n=2, 847 patients." Queries can match either.
+  - Production issue: PDFs don't mark where tables start or end. Used heuristics like consistent spacing and grid patterns, but false positives were constant. Built quality scoring - if table extraction looked weird, flag for manual review.
+- 📌 Complex Visual Content
+  - Rocket schematics, combustion chamber diagrams, financial charts where information IS the visual layout.
+  - Traditional OCR extracts gibberish. What works: Vision language models. Used Qwen2.5-VL-32b for aerospace, GPT-4o for financial charts, Claude 3.5 Sonnet for complex layouts.
+  - The process: Extract images at high resolution, use vision model to generate descriptions, embed the description plus preserve image reference. During retrieval, return both description and original image so users can verify.
+  - The catch: Vision models are SLOW and EXPENSIVE. Processing 125K documents with image extraction plus VLM descriptions took 200+ GPU hours.
+- 📌 Excel Files (the special circle of hell)
+  - Not just tables - formulas, multiple sheets, cross-sheet references, embedded charts, conditional formatting that carries meaning.
+  - Financial models with 50+ linked sheets where summary depends on 12 others. Excel files where cell color indicates status. Files with millions of rows.
+  - 💡 For simple Excel use pandas. 
+  - For complex Excel use `openpyxl` to preserve formulas, build a dependency graph showing which sheets feed into others. 
+  - For massive files, process in chunks with metadata, use filtering to find right section before pulling actual data.
+  - 💡 Excel files with external links to other workbooks. Parser would crash. Solution: detect external references during preprocessing, flag for manual handling.
+  - Vision model trick: For sheets with complex visual layouts like dashboards, screenshot the sheet and use vision model to understand layout, then combine with structured data extraction. Sounds crazy but worked better than pure parsing.
+
+- When to Use What
+  - Use traditional parsing when: clear grid structure, cleanly embedded text, you need exact values, high volume where cost matters.
+  - Use vision models when: scanned documents, information IS the visual layout, spatial relationships matter, traditional parsers fail, you need conceptual understanding not just data extraction.
+  - Use hybrid when: tables span multiple pages, mixed content on same page, you need both precise data AND contextual understanding.
+  - Real example: Page has both detailed schematic (vision model) and data table with test results (traditional parsing). Process twice, combine results. 
+  - 💡 Vision model explains schematic, parser extracts exact values.
+
+- Production Issues Nobody Warns You About
+  - Tables spanning multiple pages: My hacky solution detects when table ends at page boundary, checks if next page starts with similar structure, attempts to stitch. Works maybe 70% of the time.
+  - Image quality degradation: Client uploads scanned PDF photocopied three times. Vision models hallucinate. 
+    - 💡 Solution: document quality scoring during ingestion, flag low-quality docs, warn users results may be unreliable.
+  - Memory explosions: Processing 300-page PDF with 50 embedded charts at high resolution ate 10GB+ RAM and crashed the server. 
+    - 💡 Solution: lazy loading, process pages incrementally, aggressive caching.
+  - Vision model hallucinations: This almost destroyed client trust. Bank client had a chart, GPT-4o returned revenue numbers that were close but WRONG. Dangerous for financial data. 
+    - 💡 Solution: Always show original images alongside AI descriptions. For critical data, require human verification. Make it clear what's AI-generated vs extracted.
+
+- The Metadata Architecture
+  - This is where most implementations fail. You can't just embed a table and hope semantic search finds it.
+  - For tables I tag content_type, column_headers, section, what data it contains, parent document, page number. 
+  - For charts I tag visual description, diagram type, system, components. 
+  - For Excel I tag sheet name, parent workbook, what sheets it depends on, data types.
+  - Why this matters: When someone asks "what were Q3 revenue projections, " metadata filtering finds the right Excel sheet BEFORE semantic search runs. Without this, you're searching through every table in 50K documents.
+
+- Cost Reality Check
+  - Multi-modal processing is EXPENSIVE. For 50K documents with average 5 images each, that's 250K images. At roughly one cent per image with GPT-4o, that's around $2, 500 just for initial processing. Doesn't include re-processing or experimentation.
+  - Self-hosted vision models like from Qwen need around 80GB VRAM. Processing 250K images takes 139-347 hours of compute. Way slower but cheaper long-term for high volume.
+  - My approach: Self-hosted models for bulk processing, API calls for real-time complex cases, aggressive caching, filter by relevance before processing everything.
+
+- What I'd Do Differently
+  - Start with document quality assessment - don't build one pipeline for everything. 
+  - Build the metadata schema first - spent weeks debugging retrieval issues that were actually metadata problems. Always show the source visual alongside AI descriptions. 
+  - Test on garbage data early - production documents are never clean. Set expectations around accuracy - vision models aren't perfect.
+
+- Multi-modal RAG pays off when critical information lives in tables and charts, document volumes are high, users waste hours manually searching, and you can handle the complexity and cost.
+  - Skip it when most information is clean text, small document sets work with manual search, budget is tight and traditional RAG solves 80% of problems. 
+  - Real ROI: Pharma client's researchers spent 10-15 hours per week finding trial data in tables. System reduced that to 1-2 hours. Paid for itself in three months.
+- Multi-modal RAG is messy, expensive, and frustrating. But when 40-60% of your client's critical information is locked in tables, charts, and Excel files, you don't have a choice. The tech is getting better, but production challenges remain.
+
+- My questions would be as a provider/consultant, how do provide support and maintenance moving forward? Long term, how do you ensure the old way of them putting data in tables is easily digested into the new RAG system automatically or that someone owns the knowledge base? The “data cleaning” and organization seems like a full time contract just by itself. Then, how do you test for accuracy and showcase those results to stakeholders for renewal or as case studies for other businesses?
+  - support and maintenance was something i completely underestimated early on. did the typical "build it and hand off" approach with my first few clients. total disaster. systems would work great for 2-3 months then drift, new document types would break the pipeline, accuracy would drop. now i do hybrid - initial build plus ongoing support contract. usually quarterly check-ins, pipeline updates when they add new document types, on-call for critical issues.
+  - for data cleaning i train someone on their team to own document quality. they become the gatekeeper, i provide the tooling. the alternative where i do it forever doesn't scale and they know their domain way better anyway. built quality detection into the ingestion pipeline that flags problematic docs automatically but someone still needs to make decisions about what to do with garbage scans from the 90s.
+  - testing is golden test sets with domain experts - 100-200 real questions with known answers. run these quarterly but focus stakeholder reports on business metrics they actually care about like "researchers spend 2 hours per week searching vs 15 hours before" or "regulatory response time dropped from 5 days to 6 hours."
+  - initial builds were $50k+ (currently 100k+) but support contracts run $3k-5k monthly. way more profitable long-term plus you learn edge cases that feed back into the product and i'm full-time on this, but trying to build something in the rag space as well.
+
+- i’ve battled the same multi‑modal rag pain at scale in pharma/finance/aerospace. if you want this to survive production, bake in lineage, governance, and observability from day one, not after it drifts.
+  - table-first retrieval: tag content_type, column_headers, section, page, and parent doc; prefilter by metadata before semantic search so “q3 revenue projections” lands on the right sheet/table.
+  - excel lineage and verification: parse formulas with openpyxl, build a cross‑sheet dependency graph, bind screenshots of dashboards to underlying cells when layout matters, and require human verification for any financial figures the vlm “reads.”
+  - vlm governance and cost controls: quality-score every image/page, batch and cache captions, separate “conceptual” descriptions from “numeric” extraction, and run a quarterly golden test set that mixes tables, scanned PDFs, and charts.
+  - production observability: trace every ingestion step (parse, stitch, caption, embed), cap memory per page, add fallbacks for multi‑page table stitching, and alert on eval drift rather than waiting for user complaints.
+- maxim ai helps here with end‑to‑end evaluation, simulation, experimentation, and observability for agents and rag pipelines: scenario-based tests at scale, prompt/version experiments, live tracing with online evaluations, ci/cd hooks, and enterprise deploy options. (builder here!)
+
+- I'm currently working on a solution to address product cataloging issues for an ecommerce platform. Right now, analysts manually review Excel files and images, then fill out Excel templates with product attributes (title, description, features, etc.). My proposed solution would automatically extract attributes from files, populate templates, validate images, and extract attributes from images (like dimensions in cm, brand, model, and others). Also check images if this image is "main", "lateral", "left view", "right view" for an SKU and if these images contains a QR code.
+  - The main challenge I'm facing is that the image processing workflow is too slow and expensive (using GPT-4o model). 
+  - The goal is to scale up to processing 1, 000, 000 product reviews daily. I'm currently using AWS with Fargate jobs that launch dockerized processes for image processing, orchestrated by Step Functions.
+  - Currently handling <1, 000 SKUs daily, which is far from the 1, 000, 000 target.
+  - Any recommendations or advice for optimizing this process?
+
+- If table with headers , and each table column is well aligned , in most scenarios, you can check the column alignment condition and assuming that table schema did not change to determine whether table contents flow over pages
+
 - ## [Using LMStudio for RAG/File Search with LibreChat? · danny-avila/LibreChat _202506](https://github.com/danny-avila/LibreChat/discussions/7713)
   - I run LibreChat locally inside Docker, I run local models in LMStudio, and want to use LMStudio's nomic (or otherwise) embedding capabilities instead of an external provider like OpenAI.
-  - (A) i want to do it for free/private locally, and B ) especially because when I tested file upload directly within LMStudio [using its RAG] it correctly pulled all text from the PDF, but when I used OpenAI cloud embedding it missed a huge chunk of the text—perhaps because the API version uses a text-only embedding model without vision
+  - (A) i want to do it for free/private locally, and (B) especially because when I tested file upload directly within LMStudio [using its RAG] it correctly pulled all text from the PDF, but when I used OpenAI cloud embedding it missed a huge chunk of the text—perhaps because the API version uses a text-only embedding model without vision
 - UPDATE / SOLUTION:
   - Making a copy of the config.py file in my LibreChat root folder and pointing the compose-override to it did solve the problem and allowed me to use the openai embeddings with LMStudio. I seconded the feature request to make this an easy option for people to opt into
 
@@ -158,6 +243,48 @@ modified: 2024-09-08T20:08:16.088Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Nanonets-OCR2: An Open-Source Image-to-Markdown Model with LaTeX, Tables, flowcharts, handwritten docs, checkboxes & More : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o5nlli/nanonetsocr2_an_opensource_imagetomarkdown_model/)
+  - We're excited to share Nanonets-OCR2, a state-of-the-art suite of models designed for advanced image-to-markdown conversion and Visual Question Answering (VQA).
+  - It is trained on tons of financial documents. Since the output is in markdown with the tables as html, they can be converted to CSVs also. We have some samples examples for bank statements in the docstrange demo. 
+  - `Nanonets-OCR2-1.5B-exp` is experimental model. Full training is not complete yet. We will release the final model when the full training is done.
+  - We will add support for Ollama in coming days. Meanwhile you can use the Docstrange (https://docstrange.nanonets.com/). We do have api support there, incase of large volume.
+
+- Can you tell me what are the exact advances over nanonets-ocr-s ? Specifically the 3B model.
+  - Thanks. We have scaled our datasets by a lot (close to 3 million documents). New model should work better on multilingual, handwritten data, flowcharts, financial complex tables. 
+  - This time we have added Visual Question Answering support. 
+  - Fixed some of the edge-cases where model used to give infinite generation for empty tables and stuff. 
+  - Also you should be able to change the prompt based on your use case. Nanonets-ocr-s does not work if you change the prompt much.
+
+- tables will already be in html format. You can use this prompt for both getting complex table and header and footer.
+  - Also for tables you should use `repetition_penalty=1` for best result. You can try in docstrange 
+  - `user_prompt = """Extract the text from the above document as if you were reading it naturally. Return the tables in html format. Return the equations in LaTeX representation. If there is an image in the document and image caption is not present, add a small description of the image inside the <img></img> tag; otherwise, add the image caption inside <img></img>. Watermarks should be wrapped in brackets. Ex: <watermark>OFFICIAL COPY</watermark>. Page numbers should be wrapped in brackets. Ex: <page_number>14</page_number> or <page_number>9/22</page_number>. Prefer using ☐ and ☑ for check boxes."""`
+
+- Can this model provide bboxes with recognized box types (header, text, table) via special prompts or special formats like it did qwen2-vl / qwen3-vl ?
+  - We don't support boxes yet. That's in plan for next release.
+
+- I do not see a comparison with the Docling document understanding pipeline from IBM.
+  - We will add more evals. But generally in all evals Gemini models are in top. Thats why we first evaluated against Gemini. But for complex document these models, specially the 3B one should be better than docling.
+- It will be better than mistral ocr. Our last model was better than mistral. This one is improvement on top of the last model.
+
+- Small models like this one or Docling deliver phenomenal results when the PDFs you are dealing with are not overly complex. While they handle TeX-equations well, the difference to large LLMs becomes very obvious when presenting them graphics. 
+  - Default model is trained to give small description. You can change the prompt to have detailed description. Since the model also supports VQA you can do multi-turn multiple questions.
+
+- The issue of any ocr model its wide multilingual support. What about your model?
+  - We have trained on multilingual as well as handwritten data.
+
+- Did you also incorporate historical texts? I tried with 18th century fraktur and it often mixed up long s and f. There are quite good sets of historical training data available: https://zenodo.org/records/15764161
+  - No we have not trained on historical texts, all the handwritten and multi-lingual datasets are recent data. This is because old text fonts are quite different from recent documents and texts, and these models were mainly used on recents documents. But if there is enough annotated datasets we can definitely include those in next iteration. Thanks for sharing!
+
+- Tested with my handwritten diary (that none other model could parse anything at all) - and all text was extracted! Thank you
+
+- Very cool and excited to see these models keep getting smaller! FWIW I've been building a collection of uv scripts that aim to make it easier to run these new VLM based OCR models across a whole dataset using vLLM for inference. They can be run locally or using HF Jobs. Just added this model to that repo! https://huggingface.co/datasets/uv-scripts/ocr
 
 - ## [Are vision models (like qwen3-vl) good for OCR? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nu7vw8/are_vision_models_like_qwen3vl_good_for_ocr/)
 - Your concern about hallucination is totally valid but honestly the accuracy issues with traditional OCR like tesseract are way worse than occasional VL model hallucinations, especially for real world documents. 
@@ -408,6 +535,14 @@ modified: 2024-09-08T20:08:16.088Z
 
 - Yes, though if I tried generating the embeddings through the SentenceTransformers module instead, I got the state-of-the-art results I was hoping for on my benchmark. A code snippet for how to do so is listed on their HF page.
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

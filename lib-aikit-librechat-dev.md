@@ -123,6 +123,9 @@ modified: 2025-09-01T05:52:34.241Z
   - backend/api: Koboldcpp(包括fe)
   - all-in-one: lmstudio, janai
 
+- lmstudio-xp
+  - 可以单独更新mlx-engine, 但不可以单独更新llama.cpp
+
 - 自定义模型工具链的优点
   - 后台运行llm、自动切换llm、加入task queue及异常恢复 都需要自定义工具链的支持
   - 针对硬件自动选择合适参数

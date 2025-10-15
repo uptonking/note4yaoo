@@ -12,6 +12,23 @@ modified: 2023-12-15T17:50:49.509Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Diff-match-patch. Feature Bloat? - Discussion - Talk TW _202412](https://talk.tiddlywiki.org/t/diff-match-patch-feature-bloat/11477)
+  - I’m working with the later versions of TiddlyWiki, and I’m seeing that there are filters to making and applying patches. These rely on a minified utility module of not-small size.
+
+- I do think that the diff match patch library is unnecessary for the core, since it doesn’t have much use case in the core (We already have the `difftextwidget` for comparing, while applying diff files to tiddlers isn’t widely used ). Perhaps making them independent as a plugin and add some more features (like registering `text/x-diff` as a tiddler type) is better.
+
+- The diff-match-patch library was added 6 years ago, to be able to identify changes with the $:/Import dialogue. It is possible to show the difference between an existing and a new plugin or tiddler.
+
+- The difftext-widget uses the diff-match-patch library. So without the library, there would be no widget.
+
 - ## 🤝🏻 [Multi User Alternative to TiddlyWiki - Discussion - Talk TW _202203](https://talk.tiddlywiki.org/t/multi-user-alternative-to-tiddlywiki/2899)
 - TiddlyWiki needs an auth system to enable a real multi-user experience. We can store username and salted password in a tiddler that only the admin can see and modify.
 
