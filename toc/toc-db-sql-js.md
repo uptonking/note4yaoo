@@ -63,7 +63,7 @@ modified: 2021-08-30T18:56:14.863Z
   - A web app for writing and running SQL queries and visualizing the results. 
   - Supports Postgres, MySQL, SQL Server, ClickHouse, Crate, Vertica, Trino, Presto, SAP HANA, Cassandra, Snowflake, Google BigQuery, SQLite
 
-- https://github.com/drawdb-io/drawdb /MIT > AGPL/202501/js
+- https://github.com/drawdb-io/drawdb /33.1kStar/MIT > AGPL/202510/js
   - https://drawdb.vercel.app/
   - https://drawdb.app/
   - DrawDB is a robust and user-friendly database entity relationship (DBER) editor right in your browser. 

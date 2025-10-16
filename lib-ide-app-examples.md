@@ -130,6 +130,13 @@ modified: 2024-08-24T16:30:20.218Z
     - Manus 背后最核心的技术 CodeAct 论文发布
     - 让 Agent 自己编写 Tool 然后完成 Tool 的调用，形成强大的自给自足机制
 # coding-ai
+- https://github.com/oraios/serena /14.3kStar/MIT/202510/python
+  - A powerful coding agent toolkit providing semantic retrieval and editing capabilities (MCP server & other integrations)
+  - Serena is a powerful coding agent toolkit capable of turning an LLM into a fully-featured agent that works directly on your codebase. 
+  - Unlike most other tools, it is not tied to an LLM, framework or an interface
+  - Serena provides essential semantic code retrieval and editing tools that are akin to an IDE's capabilities
+  - You can think of Serena as providing IDE-like tools to your LLM/coding agent. With it, the agent no longer needs to read entire files, perform grep-like searches or string replacements to find and edit the right code. Instead, it can use code centered tools like find_symbol, find_referencing_symbols and insert_after_symbol.
+
 - https://github.com/vizhub-core/editcodewithai /MIT/202503/ts
   - The premise of this project is to build and iterate an open source AI code editing system. 
   - The core idea is that you can feed this system a set of source code files and high level instructions, and it will return the edited code after some time. 

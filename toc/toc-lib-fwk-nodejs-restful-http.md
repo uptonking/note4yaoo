@@ -54,8 +54,10 @@ modified: 2022-12-19T01:51:01.389Z
   - There are actually three separate clients shipped in restify: JsonClient, StringClient, HttpClient
   - One of the coolest features of restify is that it automatically creates DTrace probes for you whenever you add a new route/handler.
 
-- https://github.com/typicode/json-server /202211/js
+- https://github.com/typicode/json-server /75.2kStar/MIT > FSL/202509/js
   - Get a full fake REST API with zero coding in less than 30 seconds (seriously)
+  - [V1 by typicode · Pull Request · typicode/json-server _202401](https://github.com/typicode/json-server/pull/1468/files#diff-c693279643b8cd5d248172d9c22cb7cf4ed163a3c98c8a3f69c2717edd3eacb7)
+    - license: MIT > FSL
 
 - https://github.com/thiagobustamante/typescript-rest /202106/ts
   - annotation-based expressjs extension for typescript.
@@ -190,6 +192,13 @@ modified: 2022-12-19T01:51:01.389Z
 - https://github.com/pratiksh404/adminetic /202309/php/js
   - https://pratikdai404.gitbook.io/adminetic/
   - Admin starter kit with user, role and permission, activity, settings and preference management along with CRUD, ACL, BREAD Permission, Repo Pattern, SuperAdmin Generator
+
+- https://github.com/flipped-aurora/gin-vue-admin /23.8kStar/apache2+logo/202510/go/ts/vue
+  - http://demo.gin-vue-admin.com/
+  - Vite+Vue3+Gin拥有AI辅助的基础开发平台，企业级业务AI+开发解决方案，支持TS和JS混用。
+  - 它集成了JWT鉴权、权限管理、动态路由、显隐可控组件、分页封装、多点登录拦截、资源权限、上传下载、代码生成器、表单生成器和可配置的导入导出等开发必备功能
+  - 依赖gin、gorm、casbin、fsnotify、jwt、minio、excelize
+  - 如果您将此项目用于商业用途，请遵守Apache2.0协议并保留作者技术支持声明。您需保留如下版权声明信息，以及日志和代码中所包含的版权声明信息。所需保留信息均为文案性质，不会影响任何业务内容，如决定商用【产生收益的商业行为均在商用行列】或者必须剔除请购买授权
 # web-framework
 - https://github.com/mjackson/remix-the-web/tree/main/packages/node-fetch-server /MIT/202409/ts/单文件
   - node-fetch-server allows you to build servers for Node.js that use the web Fetch API primitives (namely `Request` and `Response`) instead of the traditional `req/res` API used in libraries like Express.

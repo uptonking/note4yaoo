@@ -1376,7 +1376,17 @@ curl http://localhost:11434/api/chat -d '{
 
 - ## 
 
-- ## 
+- ## 🧩 [Qwen3-30B-A3B 2507 Instruct vs Thinking : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1o8529x/qwen330ba3b_2507_instruct_vs_thinking/)
+- My understanding is that 
+  - GPQA is general knowledge, 
+  - AIME25 is Math, 
+  - LiveCodeBench is coding, 
+  - Arena-Hard is a predictor of how well it will perform at LMArena 
+  - and BCFL is about tool calling.
+
+- i'm guessing the t/s will be low if you use CPU (~5t/s) so just use instruct if you don't want to wait like 5 minutes for an answer with reasoning
+
+- Reasoning only helps on logic-intensive tasks. On anything else, it’s a waste of time at best, and can actually make things worse if the chain of thought focuses on the wrong thing.
 
 - ## [Why do people like Ollama more than LM Studio? : r/LocalLLaMA _202501](https://www.reddit.com/r/LocalLLaMA/comments/1icta5y/why_do_people_like_ollama_more_than_lm_studio/)
 - I think many of us are programmers, personally I prefer open-source applications. Of course as a programmer, I have no problems with using command line.

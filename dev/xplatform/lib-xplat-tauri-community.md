@@ -17,6 +17,19 @@ modified: 2023-01-14T17:22:00.810Z
 - ## 
 
 - ## 
+# discuss-issues
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🛢️ [FEAT: Use Tauri or Pake instead of Electron. · Issue · dbgate/dbgate _202409](https://github.com/dbgate/dbgate/issues/905)
+  - Frameworks like Tauri/Pake give us the same product as Electron but better product.
+
+- Probably this is not possible, because native DB driver packages have only support for electron, eg. SQLite here
+
+- It's a pity, hopefully DB Drivers will provide more support in the future. Looks like we have to use pure Rust libraries. launchbadge/sqlx docs.rs/gluesql/latest/gluesql
 # discuss-tauri-chromium
 - ## 
 

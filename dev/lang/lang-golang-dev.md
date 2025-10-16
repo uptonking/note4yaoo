@@ -13,8 +13,9 @@ modified: 2023-08-28T06:08:27.303Z
   - crdt
   - git-like: 🌹 gitea, git-lfs, dolt, zoekt(code-search)
   - flomo-like: usememos, 
-  - cloud-drive: 🌹 opencloud-be+filebrowser-web, minio
-  - monitoring: openreplay
+  - cloud-drive: 🌹 opencloud-be, filebrowser, minio
+  - monitoring: openreplay, highlight, grafana(AGPL)
+  - cloud-native: gitpod, coder, devpod, LiveKit
   - ai: ollama
   - apps: apache-answer, mattermost
   - more: json-parser, tree

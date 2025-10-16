@@ -54,9 +54,7 @@ modified: 2023-02-08T10:46:26.912Z
   - https://wangchujiang.com/github-rank/repos.html
   - Github 全球/中国用户排名，全球仓库 Star 最多排名，通过 Github API v3 来生成页面数据，排行榜预览。
 
-  - [Github User Ranking 中国和全球用户排名](https://github.com/jaywcjlove/github-rank)
-
-- https://github.com/k0kubun/gitstar-ranking /MIT/202311/ruby/kotlin/js
+- https://github.com/k0kubun/gitstar-ranking /MIT/202311/ruby/kotlin/js/inactive
   - https://gitstar-ranking.com/
   - GitHub star ranking for users, organizations and repositories
 

@@ -333,6 +333,17 @@ modified: 2025-02-21T18:20:42.624Z
     - 实际上是一个 xface 桌面环境的 Ubuntu，通过 VNC 或浏览器来管理访问
     - 结合 CF 即将到来的无状态容器化！
 # mcp
+- https://github.com/upstash/context7 /34kStar/MIT/202510/ts
+  - https://context7.com/
+  - Context7 MCP - Up-to-date Code Docs For Any Prompt
+  - Context7 MCP pulls up-to-date, version-specific documentation and code examples straight from the source — and places them directly into your prompt.
+  - require Context7 API Key (Optional) for higher rate limits and private repositories 
+  - [Feature Request: Option to Self-Host Documentation Backend _202504](https://github.com/upstash/context7/issues/59)
+    - interesting idea. I will think about this. the biggest obstacle would be licensing. we aim to make this service free for developers and open source projects. but we want to commercialize if a company like cursor needs it.
+    - but we can keep parser private and web backend open.
+    - maybe you can store all the docs in a public database, that way anyone can self-host.
+    - Another option is to allow companies to host their documentation on context7's servers privately, and support authentication.
+
 - https://github.com/jlowin/fastmcp /MIT/202503/python
   - https://github.com/modelcontextprotocol/python-sdk
   - The fast, Pythonic way to build Model Context Protocol servers

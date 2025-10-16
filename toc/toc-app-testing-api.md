@@ -39,7 +39,7 @@ modified: 2023-02-08T10:25:14.173Z
   - https://chrome.google.com/webstore/detail/insomnia-rest-client/gmodihnfibbjdecbanmpmbmeffnmloel?hl=en-US
     - not updated
 
-- https://github.com/usebruno/bruno /MIT/202405/js/tauri
+- https://github.com/usebruno/bruno /37.6kStar/MIT/202510/js/tauri
   - https://www.usebruno.com/
   - Opensource IDE For Exploring and Testing Api's (lightweight alternative to postman/insomnia)
   - Bruno stores your collections directly in a folder on your filesystem. 

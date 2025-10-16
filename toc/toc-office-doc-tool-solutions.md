@@ -295,8 +295,14 @@ modified: 2021-07-21T18:07:43.056Z
   - http://ashkenas.com/docco/
   - Docco is a quick-and-dirty, hundred-line-long, literate-programming-style documentation generator in Literate CoffeeScript.
   - It produces an HTML document that displays your comments intermingled with your code. 
-- https://github.com/mindoc-org/mindoc
-  - Golang实现的基于beego框架的接口在线文档管理系统
+
+- https://github.com/mindoc-org/mindoc /6.7kStar/apache2/202308/go
+  - 基于beego框架的接口在线文档管理系统, 针对IT团队开发的简单好用的文档管理系统
+  - 前身是 SmartWiki 文档系统。SmartWiki 是基于 PHP 框架 laravel 开发的一款文档管理系统。因 PHP 的部署对普通用户来说太复杂，所以改用 Golang 开发。可以方便用户部署和实用
+  - 其功能和界面源于 kancloud
+  - https://github.com/TruthHun/BookStack
+    - 基于MinDoc，使用Beego开发的在线文档管理系统，功能类似Gitbook和看云
+- 
 - https://github.com/TruthHun/BookStack
   - 基于MinDoc，使用Beego开发的在线文档管理系统，功能类似Gitbook和看云
 - https://github.com/phachon/mm-wiki

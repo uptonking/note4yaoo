@@ -229,6 +229,14 @@ modified: 2021-01-04T17:26:25.032Z
   - `stream` function to render and highlight a stream of markdown
     - stream streams the result of a markdown stream through the renderer/highlighter.
     - The result will come in chunks of elements instead of by word since the entire element needs to be present to render and highlight correctly.
+
+- https://github.com/lixpi/markdown-stream-parser /MIT/202509/ts
+  - https://markdown-stream-parser.lixpi.org/
+  - A library designed to incrementally parse Markdown text from a stream of tokens.
+  - It's built to handle the ambiguities of LLM-generated streams, which often produce imperfect or invalid Markdown.
+  - It combines a finite state machine with regex patterns to determine the best match for each segment.
+  - [Evaluate whether continuing with completely custom parser implementation is reasonable, or shall we leverage lexers? _202505](https://github.com/Lixpi/markdown-stream-parser/issues/5)
+    - My initial implementation was extremely naive. Currently working on a complete reimagined version that uses `Tree-sitter` for parsing, but provides the same interface for the stream of parsed chunks.
 # ui
 - https://github.com/BlueprintLabIO/markdown-ui /412Star/MIT/202509/ts
   - https://markdown-ui.blueprintlab.io/

@@ -49,20 +49,38 @@ modified: 2024-02-11T15:11:31.598Z
   - Fastify - event api
   - Redis - cache layer, pub/sub and queue
 
+- https://github.com/SigNoz/signoz /23.9kStar/MIT+EE/202403/go/ts
+  - open-source observability platform native to OpenTelemetry with logs, traces and metrics in a single application
+  - An open-source alternative to DataDog, NewRelic, etc
+
+- https://github.com/highlight/highlight /8.9kStar/apache2+EE/202510/go/ts
+  - https://app.highlight.io/
+  - open source, full-stack monitoring platform.
+  - Error monitoring, session replay, logging, distributed tracing, and more.
+  - [add enterprise license _202309](https://github.com/highlight/highlight/pull/6562)
+
+- https://github.com/openreplay/openreplay /8.2kStar/AGPL/202412/ts/go/python
+  - https://openreplay.com/
+  - a session replay suite you can host yourself, that lets you see what users do on your web app, helping you troubleshoot issues faster.
+
+- https://github.com/ccfos/nightingale /12.5kStar/apache2/202510/go
+  - 夜莺 Nightingale 是中国计算机学会接受捐赠并托管的第一个开源项目，是一个 All-in-One 的云原生监控工具，
+  - 集合了 Prometheus 和 Grafana 的优点，你可以在 WebUI 上管理和配置告警策略，也可以对分布在多个 Region 的指标、日志、链路追踪数据进行统一的可视化和分析。
+  - Nightingale is an open-source monitoring project that focuses on alerting. 
+    - Similar to Grafana, Nightingale also connects with various existing data sources. 
+    - However, while Grafana emphasizes visualization, Nightingale places greater emphasis on the alerting engine, as well as the processing and distribution of alarms.
+    - initially developed and open-sourced by DiDi.inc. On May 11, 2022, it was donated
+
+- https://github.com/perses/perses /1.6kStar/apache2/202510/go/ts
+  - https://demo.perses.dev/
+  - The CNCF candidate for observability visualisation. 
+  - Perses is first and foremost a dashboard tool that you can use to display a variety of observability data. It currently supports Prometheus metrics & Tempo traces, with plans to expand its capabilities in the future to include logging, profiling, additional technologies for monitoring and tracing, and more.
+
 - https://github.com/quickwit-oss/quickwit /AGPLv3/202403/rust
   - https://quickwit.io/
   - Cloud-native search engine for observability. 
   - An open-source alternative to Datadog, Elasticsearch, Loki, and Tempo.
   - Elasticsearch-compatible API, use Quickwit with any Elasticsearch or OpenSearch client
-
-- https://github.com/openreplay/openreplay /8.2kStar/AGPL/202412/ts/go/python
-  - https://openreplay.com/
-  - a session replay suite you can host yourself, that lets you see what users do on your web app, helping you troubleshoot issues faster.
-- https://github.com/SigNoz/signoz /202403/go/ts
-  - open-source observability platform native to OpenTelemetry with logs, traces and metrics in a single application. 
-  - An open-source alternative to DataDog, NewRelic, etc
-- https://github.com/highlight/highlight /202403/go/ts
-  - open source, full-stack monitoring platform.
 
 - https://github.com/parseablehq/parseable /AGPLv3/202402/rust
   - https://parseable.com/
@@ -86,16 +104,6 @@ modified: 2024-02-11T15:11:31.598Z
 - https://github.com/del-systems/swatcher /202311/js
   - https://del.systems/2021/06/22/swatcher.html
   - This project aimed to collect screenshots from UI tests and store them to S3 compatible storage.
-
-- https://github.com/perses/perses /apache2/202403/go/ts
-  - https://demo.perses.dev/
-  - The CNCF candidate for observability visualisation. 
-  - Already supports Prometheus - more data sources to come
-  - we want to promote the project to the Cloud Native Computing Foundation and be part of the monitoring tools like Prometheus or Thanos.
-
-- https://github.com/ccfos/nightingale /go/python
-  - 夜莺 Nightingale 是中国计算机学会接受捐赠并托管的第一个开源项目，是一个 All-in-One 的云原生监控工具，
-  - 集合了 Prometheus 和 Grafana 的优点，你可以在 WebUI 上管理和配置告警策略，也可以对分布在多个 Region 的指标、日志、链路追踪数据进行统一的可视化和分析。
 # google-analytics-like
 - https://github.com/umami-software/umami /19.3kStar/MIT/202406/ts
   - https://umami.is/
@@ -123,9 +131,10 @@ modified: 2024-02-11T15:11:31.598Z
   - open-source product analytics, session recording, feature flagging and A/B testing that you can self-host.
   - Analyze data with ready-made visualizations, or do it yourself with SQL
 
-- https://github.com/flipt-io/flipt /go
+- https://github.com/flipt-io/flipt /4.6kStar/FSL >> MIT/202510/go/ts
   - https://flipt.io/
   - open source, self-hosted feature flag solution
+  - Flipt v2 is the first truly Git-native feature management platform that treats your feature flags as code. Store your flags in your own Git repositories
 
 - https://github.com/growthbook/growthbook
   - Open Source Feature Flagging and A/B Testing

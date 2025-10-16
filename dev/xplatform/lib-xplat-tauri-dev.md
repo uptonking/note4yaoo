@@ -20,6 +20,8 @@ modified: 2023-01-14T17:21:28.975Z
 
 - who is using #tauri
   - janai
+  - NextChat
+  - apps: chatwise
 # dev
 
 # dev-xp

@@ -254,7 +254,7 @@ modified: 2023-01-20T21:59:47.792Z
   - The OpenStax CMS, built using Wagtail on top of Django.
   - SQLite is supported as an alternative to PostgreSQL
 # erp/crm
-- https://github.com/twentyhq/twenty /AGPLv3/202411/ts
+- https://github.com/twentyhq/twenty /AGPLv3+EE/202411/ts
   - https://twenty.com/
   - https://demo.twenty.com/
   - Building a modern alternative to Salesforce, powered by the community

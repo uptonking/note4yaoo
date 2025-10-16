@@ -392,6 +392,7 @@ modified: 2025-03-22T18:49:15.634Z
 - https://github.com/dontizi/rlama /1.1kStar/apache2/202508/go/js
   - https://rlama.dev/
   - a powerful AI-driven question-answering tool for your documents, seamlessly integrating with your local Ollama models.
+  - It enables you to create, manage, and interact with Retrieval-Augmented Generation (RAG) systems tailored to your documentation needs.
   - This project is currently on pause due to my work and university commitments that take up a lot of my time
   - [RLAMA -- A document AI question-answering tool that connects to your local Ollama models. : r/ollama _202503](https://www.reddit.com/r/ollama/comments/1j66pg3/rlama_a_document_ai_questionanswering_tool_that/)
     - I developed RLAMA to solve a straightforward but frustrating problem: how to easily query my own documents with a local LLM without using cloud services.
@@ -431,10 +432,6 @@ modified: 2025-03-22T18:49:15.634Z
     - Use both an expensive and cheap LLM to make recall as high as possible because we can afford fetching a lot of documents per query (via embeddings)
   - Extensible: this is both a tool and a library. It was even turned into an Open-WebUI Tool
   - Web Search: Preliminary web search support using DuckDuckGo (via the ddgs library)
-
-- https://github.com/dontizi/rlama /202503/go
-  - RLAMA is a powerful AI-driven question-answering tool for your documents, seamlessly integrating with your local Ollama models. 
-  - It enables you to create, manage, and interact with Retrieval-Augmented Generation (RAG) systems tailored to your documentation needs.
 
 - https://github.com/kqlade/dory-frontend /AGPL/202504/ts/inactive
   - [Dory – AI Knowledge Base Powered by Browser History | Hacker News _202504](https://news.ycombinator.com/item?id=43619021)

@@ -224,6 +224,7 @@ modified: 2025-09-16T13:29:11.327Z
 
 - [What do most of your coding prompts look like? Example inside. : r/ChatGPTCoding](https://www.reddit.com/r/ChatGPTCoding/comments/187g3ql/what_do_most_of_your_coding_prompts_look_like/)
 
+- write quick sort algorithm in es6
 - Write django models for a twitter clone
 
 - write a Python class that implements a PyTorch trainer capable of training a model on a toy dataset
@@ -588,6 +589,9 @@ def slugify(text):
 - convert inches to cm: 15.4 x 7.3 x 13.5 inches
 - turn pounds to kg: 11.44 pounds
 - 1.9 - 1.10 等于多少？
+
+- is there a seahorse emoji?
+  - 🐛 容易导致loop
 
 <!-- 检查语料丰富度 -->
 - 春风得意马蹄疾 出自哪里? 上下句是什么？ 表达什么意思？

@@ -59,6 +59,7 @@ modified: 2020-07-14T09:27:30.503Z
   - suite-docs
   - openedx
   - baserow
+  - plane
 
 - resources
   - [django-admin and manage.py commands](https://docs.djangoproject.com/en/5.2/ref/django-admin/)

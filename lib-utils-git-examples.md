@@ -258,9 +258,11 @@ modified: 2023-08-29T10:12:22.345Z
 - https://github.com/gogs/gogs /45.1kStar/MIT/202411/go
   - https://gogs.io/
   - aims to build a simple, stable and extensible self-hosted Git service that can be set up in the most painless way. 
-  - 依赖gorm、xorm、tablewriter
+  - 依赖gorm、xorm、tablewriter、otp
   - Access repositories via SSH, HTTP and HTTPS protocols.
   - Rich database backend, including PostgreSQL, MySQL, SQLite3 and TiDB.
+  - [Cannot use spaces in password for PostgreSQL ](https://github.com/gogs/gogs/issues/6755)
+    - wait until the finish of on-going refactoring of the DB layer, which uses GORM to 100% replace XORM in the Gogs codebase.
   - https://github.com/gogs/git-module /MIT/202210/go
     - a Go module for Git access through shell commands
 

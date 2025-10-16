@@ -31,8 +31,11 @@ modified: 2020-10-22T10:22:55.878Z
   - [diagram-js vs gojs vs jointjs vs jsplumb vs mxgraph | npm trends](https://npmtrends.com/diagram-js-vs-gojs-vs-jointjs-vs-jsplumb-vs-mxgraph)
   - [流程图制作: BPMN流程图在线绘制](https://segmentfault.com/a/1190000019385581)
 # flowchart
-- mermaid /32.1kStar/MIT/202009/js
+- mermaid /83.5kStar/MIT/202510/ts
   - https://github.com/mermaid-js/mermaid
+  - https://mermaid.js.org/
+  - https://www.mermaidchart.com/
+  - https://mermaid.live/
   - Generation of diagram and flowchart from text in a similar manner as markdown
   - [Poll - next diagram type addition: PlantUML](https://github.com/mermaid-js/mermaid/issues/177)
 
@@ -449,6 +452,29 @@ modified: 2020-10-22T10:22:55.878Z
   - GraphAI is an asynchronous data flow execution engine, which allows developers to build agentic applications by describing agent workflows as declarative data flow graphs in YAML or JSON.
   - agentic applications require making multiple asynchronous API calls (e.g., OpenAI's chat-completion API, database queries, web searches) and managing data dependencies among them
   - GraphAI allows developers to describe dependencies among those agents (asynchronous API calls) in a data flow graph in YAML or JSON, which is called declarative data flow programming
+# task-scheduler
+- https://github.com/hatchet-dev/hatchet /6.1kStar/MIT/202510/go
+  - https://hatchet.run/
+  - Hatchet is a platform for running background tasks, built on top of Postgres. 
+  - Instead of managing your own task queue or pub/sub system, you can use Hatchet to distribute your functions between a set of workers with minimal configuration or infrastructure.
+  - Hatchet is a full-featured background task management platform, with built-in support for chaining complex tasks together into workflows, alerting on failures, making tasks more durable, and viewing tasks in a real-time web dashboard.
+  - Hatchet is built on a durable task queue that enqueues your tasks and sends them to your workers at a rate that your workers can handle.
+  - 依赖sqlc、cobra、viper、tink-go、otel
+  - [Migrating to sqlc for better performance _202411](https://github.com/hatchet-dev/hatchet/blob/main/frontend/docs/pages/blog/migrating-off-prisma.mdx)
+    - we're removing Prisma entirely from Hatchet's codebase in favor of sqlc.
+  - [refactor: separate api and engine repositories, change ticker logic _202403](https://github.com/hatchet-dev/hatchet/pull/281)
+    - This refactor removes the dependency on the Prisma ORM for the engine
+    - We did this for a number of reasons - to reduce query load on the database and have more control over query latency, and because connections pools were unpredictable and spiking with Prisma.
+    - We will still be modeling all database changes via the Prisma DSL, and running migrations through Prisma.
+
+- https://github.com/riverqueue/river /4.5kStar/MPL/202510/go
+  - https://riverqueue.com/
+  - River is a robust high-performance job processing system for Go and Postgres.
+  - Being built for Postgres, River encourages the use of the same database for application data and job queue.
+  - River was in large part inspired by our experiences with other background job libraries over the years, most notably: Oban in Elixir; Que, Sidekiq, Delayed:: Job, and GoodJob in Ruby; Hangfire in . NET.
+  - db操作似乎使用sqlc
+  - [Gorm integration _202311](https://github.com/riverqueue/river/issues/58)
+    - River now has a database/sql driver. Here’s the doc on using that with GORM: riverqueue.com/docs/gorm
 # more
 - https://github.com/aislelabs/react-flowchart-editor
   - http://data.aislelabs.com/demo/index.html

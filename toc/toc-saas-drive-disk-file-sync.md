@@ -135,6 +135,7 @@ modified: 2024-03-31T17:45:16.789Z
   - Developer API support: create long-lived API Tokens
   - Login support for OIDC, password + 2FA, and proxy
   - Multiple sources support
+  - 依赖go-cmp、image、jwt
   - Simplified configuration via `config.yaml` config file.
   - 🔍 Ultra-efficient indexing and real-time updates
   - 🆚 readme最后提供了产品对比图

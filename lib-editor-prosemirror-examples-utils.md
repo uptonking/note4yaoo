@@ -437,7 +437,7 @@ modified: 2022-08-18T16:57:29.058Z
 # tooltip/autocomplete/ai
 - https://github.com/emergence-engineering/prosemirror-suggestcat-plugin-react /202412/ts
   - Basic UI for prosemirror-suggestcat-plugin in React.
-  - https://github.com/emergence-engineering/prosemirror-suggestcat-plugin /MIT/202410/ts
+  - https://github.com/emergence-engineering/prosemirror-suggestcat-plugin /MIT/202410/ts/inactive
     - Adds AI features to your ProseMirror editor
 
 - https://github.com/curvenote/editor/tree/main/packages/prosemirror-autocomplete

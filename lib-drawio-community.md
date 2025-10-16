@@ -9,6 +9,13 @@ modified: 2024-04-12T11:59:11.017Z
 
 # guide
 
+# dev-xp
+
+# usage-xp
+- 自由画笔 [Draw freehand shapes and annotate diagrams](https://www.drawio.com/blog/freehand-drawing)
+  - Select Arrange > Insert > Freehand
+  - freehand模式下，如果启用brush，则不可以给所画图形填充颜色，否则可以
+  - 用画笔自由绘画闭合图形如不规则的圆后， drawio/tldraw/excalidraw 都支持填充颜色
 # resources/templates
 
 - 

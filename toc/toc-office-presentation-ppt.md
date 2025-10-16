@@ -86,7 +86,7 @@ modified: 2021-04-30T20:14:17.669Z
 - https://github.com/patarapolw/reveal-md /201912/ts/vue
   - View markdown files as a presentation in Reveal.js with CLI
 
-- https://github.com/impress/impress.js /37.5kStar/MIT/202404/js/inactive
+- https://github.com/impress/impress.js /37.5kStar/MIT/202404/js/提交少/inactive
   - http://impress.js.org/
   - http://impress.github.io/impress.js/examples/classic-slides/
   - 🌓 a presentation framework based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com

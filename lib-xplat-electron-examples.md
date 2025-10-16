@@ -95,6 +95,13 @@ modified: 2024-01-31T19:13:11.286Z
   - File-based (adding, deleting, modifying icons in app get reflected in file-system as well.)
   - 依赖codemirror6、dexie3、react-query4、dnd-kit
 
+- https://github.com/jgraph/drawio-desktop /apache2/202503/js
+  - Official electron build of draw.io
+  - drawio-desktop is a diagramming desktop app based on Electron that wraps the core draw.io editor.
+  - draw.io Desktop is designed to be completely isolated from the Internet, apart from the update process.
+  - draw.io is closed to contributions (unless a maintainer permits it, which is extremely rare).
+  - If we were to receive a PR, we'd have to basically throw it away and write it how we want it to be implemented.
+
 - https://github.com/sprout2000/leafview /MIT/202412/ts/提交多
   - Minimalist image viewer based on Leaflet.js and Electron.
   - 示例不是地图，而是普通图片

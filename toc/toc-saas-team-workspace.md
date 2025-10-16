@@ -55,7 +55,7 @@ modified: 2023-02-07T17:38:05.336Z
   - 功能和样式都很普通
   - 依赖mongoose、es、redis、swig、Elasticsearch(optional)
 
-- https://github.com/makeplane/plane /AGPLv3/python/ts
+- https://github.com/makeplane/plane /39.4kStar/AGPLv3/202510/python/ts
   - https://plane.so/
   - Open Source JIRA, Linear and Height Alternative.
   - 后端依赖django、djangorestframework

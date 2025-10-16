@@ -10,50 +10,77 @@ modified: 2021-01-12T18:49:13.490Z
 # guide
 
 # popular/most-starred
+- leaderboard
+  - https://github.com/EvanLi/Github-Ranking
+    - https://github.com/EvanLi/Github-Ranking/blob/master/Top100/Top-100-stars.md
+    - https://github.com/EvanLi/Github-Ranking/blob/master/Top100/TypeScript.md
+  - https://github.com/jaywcjlove/github-rank
+    - https://wangchujiang.com/github-rank/repos.html
+
 - fe: 
   - vscode(MIT)/atom/theia, code-server(MIT), excalidraw(MIT), reveal.js(MIT/js), pdfjs(apache2/js), 
   - redux/zustand, react-router, quilljs(BSD), tanstack-query, uppy, localForage
   - strapi(MIT), docusaurus(MIT), outline
 
-- js: 
+- js/ts: 
   - react, vue, svelte, d3, axios, threejs, ts, mui/antd/shadcn(MIT), tailwindcss(MIT/ts/rust), storybook(MIT/ts), animate.css, pm2(AGPL/js), typeorm, formik, marked, solidjs, immutable-js, video.js(apache2/js), tesseract.js(apache2/js)
   - slidev(MIT/ts/vue), impress.js(MIT/js), mermaid(MIT/ts), chartjs(MIT/js/ts), echarts(apache2), Leaflet(BSD/js), monaco-editor(MIT)
 
 - saas: 
-  - dify(apache2/python/ts), NextChat(MIT), lobe-chat(apache2), superset(apache2), Stirling-PDF(MIT/java/js), drawio-desktop(apache2/js), nocodb(AGPL/ts/vue), marktext(MIT/js/vue), joplin(AGPL), siyuan(AGPL/go), novu(MIT/ts)
+  - dify(apache2/python/ts), NextChat(MIT), lobe-chat(apache2), superset(apache2), Stirling-PDF(MIT/java/js), drawio-desktop(apache2/js), nocodb(AGPL/ts/vue), marktext(MIT/js/vue), joplin(AGPL), novu(MIT/ts)
   - payload(MIT/ts), n8n(FSL/ts/vue), cal.com(AGPL/ts), plane(AGPL/python/ts), ToolJet(AGPL/ts), Ghost(MIT/js), appsmith(apache2/java/ts)
-  - immich(AGPL/ts/dart/svelte), gitea/gogs(MIT/go), RocketChat(MIT/ts), odoo(LGPLv3/python/js), mattermost(AGPL/go), discourse(GPL/ruby)
+  - immich(AGPL/ts/dart/svelte), RocketChat(MIT/ts), odoo(LGPLv3/python/js), discourse(GPL/ruby)
 
 - lang: 
-  - python, linux, electron, nodejs, go, rust, godot(MIT/cpp), frp(apache2/go), tauri(MIT/rust), redis, rails, git(GPL/c), pandas(BSD)
+  - python, linux, electron, nodejs, go, rust, godot(MIT/cpp), redis, rails, git(GPL/c), 
+- python
+  - pandas(BSD), 
+  - langflow, langchain, ragflow(apache2)
+  - dify, firecrawl(AGPL)
+  - ComfyUI(GPL), stable-diffusion-webui(AGPL)
+  - fastapi(MIT)
+- golang
+  - ollama(MIT), esbuild
+  - siyuan(AGPL), syncthing(MPL), rclone(MIT), fsnotify
+  - gitea/gogs(MIT), mattermost(AGPL), authelia(apache2), ZITADEL
+  - gin(MIT), pocketbase(MIT/go/svelte), hugo(apache2), gin-vue-admin(apache2)
+  - tidb(apache2), dolt, milvus, CockroachDB, vitess(apache2), rqlite, FerretDB
+  - minio(AGPL), SeaweedFS(apache2)
+  - k8s/docker/k3s, frp(apache2), caddy(apache2), traefik(MIT), devpod
+  - grafana(AGPL), prometheus(apache2), 1Panel(GPL), CasaOS(apache2)
+- rust
+  - tauri(MIT), pake
+  - rustdesk(AGPL/rust/dart)
 
 - api: 
-  - django(BSD), fastapi(MIT), flask(BSD), gin(MIT), pocketbase(MIT/go/svelte), laravel(MIT), supabase(apache2/ts), spring-boot, nestjs(MIT), expressjs, trpc, fastify
+  - django(BSD), fastapi(MIT), flask(BSD), gin(MIT), laravel(MIT), supabase(apache2/ts), spring-boot, nestjs(MIT), expressjs, trpc, fastify
 
 - fwk: 
   - hugo(apache2/go), nuxt, astro, jekyll(MIT/ruby), JeecgBoot(apache2/java/vue)
+  - nextjs
 
 - ai: 
-  - tensorflow, langchain, DeepSeek-V3, pytorch, whisper, keras, scikit-learn, OpenHands(MIT), cline(apache2/ts)
+  - tensorflow(cpp), langchain, DeepSeek-V3, pytorch, whisper, keras, scikit-learn, OpenHands(MIT), cline(apache2/ts)
   - langflow(MIT), ragflow(apache2), Flowise(apache2/ts)
+  - open-webui(logo), jan
 
 - apps: 
-  - rustdesk(AGPL/rust/dart), syncthing(MPL/go), rclone(MIT/go), localsend(apache2/dart), spacedrive(AGPL/rust/ts)
+  - syncthing(MPL/go), rclone(MIT/go), localsend(apache2/dart), spacedrive(AGPL/rust/ts)
   - obs-studio(GPL/c), AppFlowy(AGPL/dart), upscayl(AGPL/ts)
   - carbon(MIT/js)
 
 - devtools: 
   - puppeteer(apache2/ts), playwright(apache2/ts), zed(GPL), prettier(MIT/js), zx, dbeaver(apache2)
-  - vite(MIT/ts), webpack, json-server(FSL/js), hoppscotch(MIT/ts/vue), insomnia(apache2/ts), bruno(MIT/js)
+  - vite(MIT/ts), webpack, json-server(MIT>FSL/js), hoppscotch(MIT/ts/vue), insomnia(apache2/ts), bruno(MIT/js)
 
 - devops: 
-  - grafana(AGPL/go), prometheus(apache2/go), uptime-kuma(MIT/js/vue)
+  - uptime-kuma(MIT/js/vue)
   - ansible(GPL/python), caddy(apache2/go), traefik(MIT/go)
   - portainer(zlib/go/ts), localstack(apache2/python)
 
 - utils: 
   - protobuf(BSD/cpp), grpc(apache2/cpp), socket.io(MIT)
-  - ripgrep(MIT/rust), minio(AGPL/go), elasticsearch(AGPL), meilisearch(MIT/rust)
+  - ripgrep(MIT/rust), elasticsearch(AGPL), meilisearch(MIT/rust)
   - scrapy(BSD), EasySpider(AGPL/python)
 # quickstart
 - https://github.com/eleme/duang

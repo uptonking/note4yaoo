@@ -587,6 +587,7 @@ modified: 2022-08-18T16:57:46.405Z
   - Mathematical symbols with LaTeX expression
   - [feat: IS THIS REPO BEING MAINTAINED? _202412](https://github.com/steven-tey/novel/issues/469)
     - No, it is not.
+  - [Here’s how AI-powered autocompletion is implemented in Novel, an open-source text editor - DEV Community _202412](https://dev.to/ramunarasinga-11/heres-how-ai-powered-autocompletion-is-implemented-in-novel-an-open-source-text-editor-44oh)
 
 - https://github.com/aieditor-team/AiEditor /1.5kStar/LGPLv2/202506/ts
   - https://gitee.com/aieditor-team/aieditor
@@ -641,6 +642,20 @@ modified: 2022-08-18T16:57:46.405Z
 
 - https://github.com/mastra-ai/mastra/blob/main/examples/crypto-chatbot/lib/editor/diff.js
   - 使用diff_match_patch计算差异
+
+## streaming
+
+- https://github.com/gjc14/tiptap-streaming-preview /MIT/202410/ts/inactive
+  - A compact demo of streaming Markdown from Google AI Gemini and save to Tiptap Extension demo
+  - `/app/extensions/stream/markdown-component.tsx` handling ai call and streaming markdown
+  - Dataflow
+    - [Tiptap] Send prompt to Streaming Preview extension
+    - [StreamingPreview] Get prompt from attributes (node.attrs.prompt)
+    - [StreamingPreview] Call Gemini @ai/api/completions with ai-sdk
+    - [StreamingPreview] Rendering completion stream
+    - [StreamingPreview] Choosing to discard or save the response
+    - [StreamingPreview] Transform data and execute editor's api (commands)
+    - [Tiptap] Tiptap get's HTML and automatically transform it to visible format
 
 ## ai-pattern
 

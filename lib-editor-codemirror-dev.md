@@ -185,13 +185,14 @@ modified: 2021-05-06T09:38:31.520Z
   - table/database: multi-views, user-defined
 
 - roadmap
-  - 🛝 markdown parser/highlight (lezer <> unified/remark)
-  - markdown sync scroll
   - codemirror devtools
   - migrate monaco-playground to codemirror
   - 尝试集成redux-devtools
   - vscode fork with codemirror
   - EditorView without virtualized viewport, 存在业务需求
+- 🛝 markdown parser/highlight (lezer <> unified/remark)
+  - markdown sync scroll
+  - markdown-partial: treesitter as markdown stream parser
 
 - later
   - port to server side lang like prosemirror-go/python

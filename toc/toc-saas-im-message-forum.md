@@ -62,12 +62,13 @@ modified: 2021-05-14T15:04:15.333Z
   - Spectrum aims to be the best platform to build any kind of community online by combining the best of forums and real-time chat apps.
   - RethinkDB: Data storage
 
-- https://github.com/apache/incubator-answer /apache2/202401/go/ts
+- https://github.com/apache/answer /15kStar/apache2/202509/go/ts
   - https://answer.apache.org/
   - https://meta.answer.dev/
   - A Q&A platform software for teams at any scales. 
   - Plugins: redis/es/algolia
   - 依赖注入使用wire
+  - 依赖gin、xorm
 - https://github.com/casbin/casnode /apache2/202312/go
   - Open-Source Forum and Social Platform, Alternative to StackOverflow & Flarum
   - Go (Beego) + MySQL
@@ -805,6 +806,10 @@ modified: 2021-05-14T15:04:15.333Z
   - Markdown based Notebook with todo lists
   - A log of client history
 
+- https://github.com/django-helpdesk/django-helpdesk /1.6kStar/BSD/202510/python
+  - A Django application to manage tickets for an internal helpdesk. Formerly known as Jutda Helpdesk.
+  - django-helpdesk includes a basic demo Django project so that you may easily get started with testing or developing django-helpdesk. 
+
 - https://github.com/polonel/trudesk /apache2/202311/js/inactive
   - http://trudesk.io/
   - an open-source help desk/ticketing solution
@@ -818,12 +823,14 @@ modified: 2021-05-14T15:04:15.333Z
   - https://fider.io/
   - Open platform to collect and prioritize feedback
 # notification
-- https://github.com/novuhq/novu /MIT/202402/ts
+- https://github.com/novuhq/novu /38kStar/MIT+EE/202510/ts
   - The open-source notification infrastructure for products. 
   - Novu provides a unified API that makes it simple to send notifications through multiple channels, including In-App, Push, Email, SMS, and Chat. 
   - With Novu, you can create custom workflows and define conditions for each channel, ensuring that your notifications are delivered in the most effective way possible.
   - Single API for all messaging providers (In-App, Email, SMS, Push, Chat)
   - Equipped with a CMS for advanced layouts and design management
+  - "Open Core", where the core technology is fully open source, licensed under MIT license, and the enterprise code is covered under a commercial license
+  - [Clarity/notes regarding the project license _202411](https://github.com/novuhq/novu/issues/6820)
   - https://github.com/novuhq/blog/tree/main/forum-system-with-react-novu-node
     - [Building a forum with React, NodeJS - DEV Community](https://dev.to/novu/building-a-forum-with-react-nodejs-6pe)
 # meetings

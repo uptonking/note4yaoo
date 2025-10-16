@@ -11,14 +11,30 @@ modified: 2022-01-16T15:52:31.293Z
 
 - 不使用录音笔，而使用录音手表
 
-- [智能手表录音功能总结 - 知乎](https://zhuanlan.zhihu.com/p/592180358)
+- [智能手表录音功能总结 - 知乎 _202212](https://zhuanlan.zhihu.com/p/592180358)
+  - 后台
   - 社畜们需求很简单 能息屏一键录音 录到没电 能同步到手机 且可以导出文件 有血氧 心率监控等健康功能 手表分运动产品线和商务产品线 质感做到最好 这表我出3000
-  - 后台录音
-  - [胖表哥小课堂：Amazfit GTS4>R4手表录音功能测评，能否息屏录音？音质如何？\_哔哩哔哩\_bilibili](https://www.bilibili.com/video/BV1vm4y1v7yY/?vd_source=deff4d2e2efa3273948dd6911a08fd39)
+  - 华米gtr4 可录音且无法退出录音界面 质感好
+  - 小米watch s1 pro 同华米gtr4
+  - ticwatch pro3开始录音后可以退出录音界面 持续录音30分钟, 退出后屏幕有红色录音提示 但不易观察 切换省电屏幕后看不出来, 效果还可以 录音文件可通过app同步到手机, 但手表质感一般 轻飘飘
+  - oppo watch3和3pro同ticwatch 区别是无法导出录音 质感好
+  - 华为手表全系没有录音功能, 华为watch5下软件可以实现录音了……但是续航也太短了……两天一充不能接受
+
+- [胖表哥小课堂：Amazfit GTS4>R4手表录音功能测评，能否息屏录音？音质如何？_哔哩哔哩](https://www.bilibili.com/video/BV1vm4y1v7yY/)
 
 - [分析华米Amazfit T-Rex和GTR对比区别？](http://bbs.mydigit.cn/read.php?tid=2831142)
   - GTR支持录音
   - 功能是一样的，就是外观不同的，我自己也是才购的，新品trex的，样式很不错，很运动的感觉
+
+- [教你将OPPO Watch X/X2 变为随时一键录音笔 无需触控启动 超隐蔽_哔哩哔哩 ](https://www.bilibili.com/video/BV1eE421M7gJ/)
+  - 已推出启动录音自动息屏版本，启动录音自动息屏，隐蔽性更高
+  - 需要使用adb等方式把这个app装到手表上，然后绑定按键启动这个app，就会立刻启动手表自带的录音app并开始录音，全程无需点击手表，息屏也可用
+  - 华为手表商城现有的一个第三方录音软件，录音文件都不能上传到手机，而且做不到熄屏录音
+  - OPPO watch 3pro 可以用
+  - 店员说这个录音32G的只能录2个小时就满了。还是不太实用
+  - 不可能，我手机录两个小时也才几个g而已
+  - 亲测，2小时会自动断。后面的都没录上。不过话说回来，录的效果也太差了，聊胜于无，远不不上Applewatch.
+  - 推荐手机使用Hi-Q MP3 Recorder，支持打开即录音，支持多种录音格式，可以设定剩余多大内存自动关停
 # U盘
 - U盘的优点主要在于，
   - U盘的使用不需要依赖网络，
@@ -2526,6 +2542,16 @@ modified: 2022-01-16T15:52:31.293Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Will apple make a macbook pro with an ultra chip? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1o8ax0f/will_apple_make_a_macbook_pro_with_an_ultra_chip/)
+  - Just imagine 1 tb of ram on a m5 or m6 ultra MacBook Pro? The price will be absurd and the battery will be short? Maybe they will restrict the ram, since it will use more power? 
+- It's well known for people that work with computing hardware that RAM requires a lot of power and consumption grows as RAM increases. 
+  - The issue is that data in RAM has a short life and has to be refreshed regularly or it gets corrupted/disappears. That's why laptops are always RAM constrained and desktops are not. 
+  - There's more to it about scale and speed that requires workstation class machines to get to have extremely large RAM.
 
 - ## [20寸行李箱尺寸长宽高（20寸拉杆箱到底到底有多大）](https://www.zhihu.com/tardis/zm/art/320648263?source_id=1003)
 - 不管是行李箱还是电视，统一用的都是这个斜对角尺寸测量方法。

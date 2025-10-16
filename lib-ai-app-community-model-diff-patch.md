@@ -47,6 +47,14 @@ modified: 2025-10-10T02:45:45.941Z
     - The changes are then streamed back to the user in the form of a diff. The diff looks like `<r:l1s1>` string to find || string to replace.
   - [How to use LLM for efficient text outputs longer than 4k tokens? - DEV Community _202406](https://dev.to/theluk/how-to-use-llm-for-efficient-text-outputs-longer-than-4k-tokens-1glc)
 
+- https://github.com/nocapro/apply-multi-diff /202509/ts/NoDeps
+  - library to apply standard unified diffs or semantic search-and-replace patches to source files with fuzzy-matching, indentation-preserving insertions, and hunk-splitting fallbacks.
+  - for Node.js and browser environments
+  - TL; DR for agents
+    - Use Search-Replace when you want precise, targeted edits (add import, rename function, delete block). 
+    - Use Standard Diff when you have a complete diff from git (multi-hunk, moved code). 
+    - When in doubt, start with Search-Replace—its fuzzy matcher is more forgiving of small source drift.
+
 - https://www.npmjs.com/package/@deepaste/partial-edit /NoDeps
   - 一个纯 TypeScript 工具，用于应用人类可读的伪差异补丁文件，具有由 LLM 驱动的部分编辑功能。
   - Patch Processing: Apply human-readable pseudo-diff patches to text files
@@ -105,6 +113,10 @@ modified: 2025-10-10T02:45:45.941Z
 - https://github.com/Banner-Z/G-SPEED /apache2/202310/python/inactive
   - The official repository of paper G-SPEED: General SParse Efficient Editing MoDel (Findings of EMNLP-2023).
   - [[2310.10480] G-SPEED: General SParse Efficient Editing MoDel](https://arxiv.org/abs/2310.10480)
+
+- https://github.com/zjunlp/EasyEdit /MIT/202510/python
+  - https://zjunlp.github.io/project/KnowEdit
+  - [ACL 2024] An Easy-to-use Knowledge Editing Framework for LLMs.
 
 - more-editing-solutions
   - [[2502.13358] Bridging the Editing Gap in LLMs: FineEdit for Precise and Targeted Text Modifications](https://arxiv.org/abs/2502.13358)
@@ -171,6 +183,27 @@ modified: 2025-10-10T02:45:45.941Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Why don’t we have tiny, single-purpose LLMs that just output search-and-replace rules? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nhqxzl/why_dont_we_have_tiny_singlepurpose_llms_that/)
+  - Why can't I find any LLM fine-tuned solely to produce search-and-replace blocks (regex or structured patterns + replacement templates). 
+  - Almost each editing workflow comes down to some flavor of “find X, replace with Y, ” even if the syntax varies.
+
+- I think they’re looking for a semantic regex, e.g. “find all instances of typical dog names and replace them with an English Literature character’s name”.
+  - TBH out of the box small models perform fairly well on this type of thing. OP: you can create a benchmark and see how the LLMs compare.
+
+- I think the problem is duplication, if the larger model can handle it perfectly well, there's no need to have a dedicated search-and-replacer do the task for it.
+  - That's the thing. I don't want larger general-purpose model to handle this. I'm gonna create the plan first, and then I just want a smaller niche model to execute it (i.e. generate the edits)
+
+- Nearly every tool like codex or Claude code do this all day long. Structured output and tool calling, not just hoping a model tuned for one very specific purpose is the way to go
+
+- If it's a procedural task, shouldn't a script/application handle the job--instead of a language model?
+  - Manipulating strings directly is significantly less complicated than having a language model try to recite blocks of text verbatim from context.
 
 - ## [How do LLM-powered tools in IDEs edit files? · community · Discussion _202508](https://github.com/orgs/community/discussions/171782)
 - diffs over overwrites 
@@ -434,7 +467,7 @@ Code
 
 - My best approach till now is to give numbered lines. Ask to return numbered lines with edited content
 
-- ## [How do I get an LLM to edit a few lines of code? : r/ChatGPTCoding _202502](https://www.reddit.com/r/ChatGPTCoding/comments/1ivnqmd/how_do_i_get_an_llm_to_edit_a_few_lines_of_code/)
+- ## 💡 [How do I get an LLM to edit a few lines of code? : r/ChatGPTCoding _202502](https://www.reddit.com/r/ChatGPTCoding/comments/1ivnqmd/how_do_i_get_an_llm_to_edit_a_few_lines_of_code/)
 - What everyone seems to be doing (and I'm working on my own version of this) is using multiple partial diffs. 
   - for each fragment you want to replace. On your client, you can do find-and-replace. 
   - Make this more precise by embedding line numbers
@@ -840,18 +873,73 @@ Code
 
 - I would love it, but please don't add JSON-RPC to the world... It's too heavy for editor.
   - To write that JSON-RPC is "too heavy for editor", you have to not only misunderstand the cost of JSON encoding (trivial) but also the frequency of editor-tool interaction (seldom) and volume of data transferred (negligible). In addition, you have to look at LSP, MCP, and other JSON-y protocols and say "yep. There's where the UI latency is. Got it.". (Nope)
-# discuss-rich-text-editing
+# discuss-rich-text-editing ✏️
 - ## 
 
 - ## 
 
-- ## 
+- ## [Can I get advice on how to work with streaming AI LLMs? - Yjs Community _202404](https://discuss.yjs.dev/t/can-i-get-advice-on-how-to-work-with-streaming-ai-llms/2604)
+  - I’m building an editor that assists you with the help of an AI LLM.
+  - TipTap Editor (which uses y-prosemirror bindings), for the editor
+  - LiveBlocks for the synchronization of the Yjs doc.
+  - However, I’m having a bit of trouble figuring out exactly how to make the LLM streaming feature work with Liveblocks and a TipTap editor.
+  - The LLM streams markdown content to my backend. From there I need to find a way to sync that content to the Yjs doc that’s hosted in LiveBlocks.
+  - However the conversion to a Yjs doc is not straightforward at all. Or at least I’m not figuring out the exact sequence of steps on how to convert a chunk of markdown (which may be invalid still, because remember it’s just a chunk for now!) to the correct yXmlFragment, and from there to push it to liveblocks.
+- I think the only viable solution right now is to:
+  - 1. Have my users get the streamed markdown from the backend into their browser’s client
+  - 2. Automatically populating the TipTap editor content with the setContent hook. Which will then do all the heavy lifting, transform it to a valid Yjs doc and push it to LiveBlocks (thanks to the Collaboration extension)
+- HOWEVER, this latter approach blocks the ability of generating content in the background. Meaning that if one of my users close the editor’s tab. The content stops being pushed to LiveBlocks.
+- Is there a correct or recommended way to stream content (markdown) from an LLM into an existing Yjs doc?
 
-- ## 🌰 [LLM stream to generate markdown text and insert to editor · facebook/lexical _202404](https://github.com/facebook/lexical/discussions/5967)
+- Sure, you can insert Y. XmlElements directly into the Yjs document. However, it really depends on your setup how to insert content.
+  - Let’s say, you want to insert LLM content as paragraphs using the paragraph block type. 
+  - I recommend stripping the markdown part for now.
+  - If you want to keep it, you could parse the markdown content (you need a parser for that, you can’t do that manually) and transform it to the delta format (a rich-text format that Y. Text understands, it supports bold, italic, etc…). TipTap should be able to pick-up the richtext from Y. Text. The formatting attributes in Yjs will be picked up by TipTap as “marks”.
+
+- My main issue with parsing markdown in a streamed way is that I can’t know whether we’ve finished a block.
+  - One idea that I had was to keep a string in memory of the whole article that the LLM streams to my server. 
+  - Meaning, as soon as the LLM sends a new text chunk I do `let fullArticle += newTextChunk`; 
+  - Then each time we get an update I’d like to completely erase the Yjs doc, and replace it with the new contents of fullArticle on its entirety.
+
+- You can replace the `Y.XmlElement` that contains the current LLM answer with a new one. That sounds like a good idea. Then it shouldn’t be a problem to have temporary parsing issues.
+  - However, you shouldn’t replace the whole Yjs document on every change, that might lead to some issues down the line. 
+  - For once, there is no method to erase all content in Yjs. 
+  - Furthermore, large amounts of generated text will result in a lot of overhead (especially for Yjs) that can easily be avoided. 
+  - Also, the client has to rerender everything on every LLM update (which is unnecessary, if the previous paragraph didn’t change).
+
+- ## [Can't figure out how to stream markdown into tiptap _202408](https://github.com/ueberdosis/tiptap/discussions/5563)
+  - I am having a hard time figuring out how to stream markdown generated from an LLM into tiptap.
+  - If I insert content as it comes, it fails in many ways. If I wait til the result is complete and just insert the full string, it works perfectly.
+  - I have been trying a middle ground, spliting the markdown by lines, so I make sure format like bold are handled correctly.
+
+- It is very difficult to get streaming of formatted content into the editor it took me two weeks to get everything right for the content Ai pro extension. I would not say that there is an easy answer to this at all. 
+  - 💡 I would recommend streaming into a preview element instead and only inserting the content into the editor afterwards.
+- I will try your approach, I am going to stream HTML instead of markdown, directly into a decorator, and replace with the final content when complete. Does that make sense?
+  - Yea into a decoration sounds like a good plan
+
+- if the LLM is returning markdown content, you can use a markdown to html converter and pass the results to setContent
+
+- ## 🔡 [LLM stream to generate markdown text and insert to editor · facebook/lexical _202404](https://github.com/facebook/lexical/discussions/5967)
   - I'm quite new to Lexical and have been experimenting with using AI streams to create markdown text in an editor.
 - What you might need is a markdown to lexical state transformer and vice versa (optional). As the text streams in markdown, the editors internal state can be constructed.
 
 - For anyone else trying to implement this, I got a version working that supports markdown with tables using lexical's HTML converter and showdown, and vercel AI sdk
+# discuss-llm-streaming
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [How streaming LLM APIs work | Hacker News _202409](https://news.ycombinator.com/item?id=41615404)
+- When you ask to return JSON data using streaming, you will notice that the response is incomplete and unparseable by JSON libraries, resulting in malformed errors. 
+  - You will have to wait for the entire stream to complete. 
+  - To solve this problem I tried to define a spec and built a lib for it: 
+  - [lib] https://github.com/st3w4r/openai-partial-stream /MIT/202406/ts/inactive
+  - Turn a stream of token into a parsable JSON object as soon as possible. Enable Streaming UI for AI app based on LLM.
+- Why do you wait for the entire stream to be complete? Some objects in the JSON structure can be shown to be complete before the stream ends.
+  - Yeah, it's an interesting problem to solve. The library is designed to parse incomplete json without waiting for the stream to finish.
+
 # discuss
 - ## 
 

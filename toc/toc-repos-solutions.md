@@ -85,7 +85,7 @@ modified: 2020-12-12T19:32:36.255Z
   - 更小巧、更实时的中国大陆 GeoIP2 数据库及 IP 地址段，基于 chnroutes2
   - 提供下载txt、mmdb
 # screen-sharing
-- https://github.com/screego/server /ts/go
+- https://github.com/screego/server /9.8kStar/GPL/202506/ts/go/inactive
   - https://screego.net/
   - share your screen with good quality and low latency.
 

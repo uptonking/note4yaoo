@@ -209,10 +209,11 @@ modified: 2022-11-11T11:04:29.007Z
   - frontend uses with Angular and Angular CLI.
   - backend uses ExpressJS with MongoDB and Keycloak. OpenAPI
 
-- https://github.com/go-shiori/shiori /MIT/202312/go/js
+- https://github.com/go-shiori/shiori /11kStar/MIT/202509/go/js
   - bookmark manager built with Go
   - Intended as a simple clone of Pocket. 
   - You can use it as a command line application or as a web application. 
+  - 依赖httprouter、sqlx、go-sqlbuilder、goquery
 
 - https://github.com/clebert/bookmark.wtf
   - A free and open-source bookmark manager that uses GitHub Gist as database.

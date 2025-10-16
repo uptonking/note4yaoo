@@ -394,7 +394,7 @@ modified: 2020-12-28T12:24:09.275Z
     - Webflow is doing the same thing, and it works fine for them. When implementing an app you choose the window size, small, medium, large. I believe you can even change between sizes from within the app (if I remember correctly).
     - IFrames are the safest way to integrate 3rd party application into a web-app. Importing 3rd party scripts into the main-window would be a security nightmare.
 
-- https://github.com/dotenx/dotenx /apache2/202402/ts/go
+- https://github.com/dotenx/dotenx /640Star/apache2/202404/ts/go/inactive
   - No-code and Low-code all-in-one platform to build landing pages, websites, web applications, APIs, automations. 
   - An alternative for Wix, Webflow
 
@@ -556,14 +556,15 @@ modified: 2020-12-28T12:24:09.275Z
   - Manage relational database
   - A Local plugin means that the code lives in your home directory and when you edit it, the plugin updates in the instance after a restart (which will happen automatically on save, when running the dev server)
 
-- illa-builder /10.5kStar/apache2/202403/ts/go
+- illa-builder /10.5kStar/apache2/202408/ts/go/inactive
   - https://github.com/illacloud/illa-builder
   - https://www.illacloud.com/
   - https://fast-try.illacloud.com/
   - 一个强大的开源低代码平台
   - 本地部署： 支持Docker和k8s 
   - 实时协作： 我们可以一起实时创建内容
-  - https://github.com/illacloud/builder-backend /go
+  - https://github.com/illacloud/builder-backend /202407/go/inactive
+    - 依赖gin、gorm、minio
 
 - https://github.com/jet-admin/jet-bridge /python
   - Jet Admin is a SaaS service that automatically generates extendable back office for your application
