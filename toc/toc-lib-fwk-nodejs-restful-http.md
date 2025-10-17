@@ -100,14 +100,19 @@ modified: 2022-12-19T01:51:01.389Z
 - https://github.com/jbreckmckye/node-typescript-architecture /202307/ts/inactive
   - Hexagonal architecture / ports-and-adapters for Node.js using simple functional programming
   - 依赖newtype-ts、monocle-ts、fp-ts、express
-# crud/admin
-- api-server-nodejs /178Star/MIT/202212/ts
+# admin/crud
+- api-server-nodejs /239Star/MIT/202211/ts/inactive
   - https://github.com/app-generator/api-server-nodejs
   - Express Starter with JWT authentication, and SQLite persistance - Provided by AppSeed App Generator. 
   - 依赖Express, SQLite, TypeORM, passport-jwt
+  - 产品技术栈包含js/python，不包含golang
   - Authentication Flow uses json web tokens via Passport library - passport-jwt strategy.
   - TypeScript, Joy for validation
   - https://github.com/app-generator/api-server-nodejs-demo
+  - https://github.com/app-generator/api-server-nestjs
+  - https://github.com/app-generator/api-server-fastapi
+  - https://github.com/app-generator/api-server-django
+  - https://github.com/app-generator/api-server-flask
 - api-server-nodejs-mongo /11Star/MIT/202212/ts/代码简单
   - https://github.com/app-generator/api-server-nodejs-mongo
   - 典型的dashboard的后端示例
@@ -130,13 +135,13 @@ modified: 2022-12-19T01:51:01.389Z
   - 依赖mongoose
   - https://github.com/heerey525/express_mongodb_web /202012/js/vue
 
-- fast-crud /512Star/MIT/202311/ts/vue
+- fast-crud /1.1kStar/MIT/202510/ts/vue
   - https://github.com/fast-crud/fast-crud
   - http://fast-crud.docmirror.cn/
   - 面向配置的crud开发框架，快速开发crud功能，可作为低代码平台的基础框架
   - 可以直接使用示例中的fs-admin，特点是简单
   - 也可以采用其他的admin开源项目，然后集成fast-crud
-  - 基于目前市面上开源的高星admin项目fork，集成fast-crud，Antdv 3x 、Element-Plus 、NaiveUI 三选一
+  - 基于目前市面上开源的高星admin项目fork，集成fast-crud，Antd v3/v4/vben-admin、Element-Plus 、NaiveUI
     - https://github.com/fast-crud/fs-admin-antdv /vue
 
 - https://github.com/thomas4019/expressa /MIT/202401/js/vue
@@ -193,12 +198,53 @@ modified: 2022-12-19T01:51:01.389Z
   - https://pratikdai404.gitbook.io/adminetic/
   - Admin starter kit with user, role and permission, activity, settings and preference management along with CRUD, ACL, BREAD Permission, Repo Pattern, SuperAdmin Generator
 
+- https://github.com/go-admin-team/go-admin /12.3kStar/MIT/202509/go/ts/inactive
+  - https://www.go-admin.pro/
+  - 基于Gin + Vue + Element UI & Arco Design & Ant Design 的前后端分离权限管理系统脚手架（包含了：多租户的支持，基础用户管理功能，jwt鉴权，代码生成器，RBAC资源控制，表单构建，定时任务等）3分钟构建自己的中后台项目
+    - 不依赖wire-di
+  - 基于Casbin的 RBAC 访问控制模型
+  - 基于 GORM 的数据库存储，可扩展多种类型数据库
+  - 多租户：系统默认支持多租户，按库分离，一个库一个租户。
+  - Element UI vue demo：https://vue2.go-admin.dev
+  - Arco Design vue3 demo：https://vue3.go-admin.dev
+  - antd demo：https://antd.go-admin.pro
+  - [可以公开下Antd beta的前端代码吗？ _202210](https://github.com/go-admin-team/go-admin/issues/663)
+    - antd是go-admin的订阅版, 一年88元
+  - [这个项目连个维护的人都没有吗XD _202507](https://github.com/go-admin-team/go-admin/issues/841)
+    - 应该是教程年久失修，还有几个前情提要没写上。 我用的mysql5.7，原配置文件用的utf8，我按要求建立数据库用的utf8，应该是后来数据库更新了，但是配置和说明都没有变更，直接跑，直接挂了，
+    - 把数据库改成utf8mb4, 连接也改了utf8mb4 立马就可以运行了
+
 - https://github.com/flipped-aurora/gin-vue-admin /23.8kStar/apache2+logo/202510/go/ts/vue
   - http://demo.gin-vue-admin.com/
   - Vite+Vue3+Gin拥有AI辅助的基础开发平台，企业级业务AI+开发解决方案，支持TS和JS混用。
   - 它集成了JWT鉴权、权限管理、动态路由、显隐可控组件、分页封装、多点登录拦截、资源权限、上传下载、代码生成器、表单生成器和可配置的导入导出等开发必备功能
   - 依赖gin、gorm、casbin、fsnotify、jwt、minio、excelize
-  - 如果您将此项目用于商业用途，请遵守Apache2.0协议并保留作者技术支持声明。您需保留如下版权声明信息，以及日志和代码中所包含的版权声明信息。所需保留信息均为文案性质，不会影响任何业务内容，如决定商用【产生收益的商业行为均在商用行列】或者必须剔除请购买授权
+    - 不依赖wire-di
+  - 💰 如果您将此项目用于商业用途，请遵守Apache2.0协议并保留作者技术支持声明。您需保留如下版权声明信息，以及日志和代码中所包含的版权声明信息。所需保留信息均为文案性质，不会影响任何业务内容，如决定商用【产生收益的商业行为均在商用行列】或者必须剔除请购买授权
+  - 采用MySql > (5.7) 版本 数据库引擎 InnoDB，使用 gorm 实现对数据库的基本操作。
+  - 缓存：使用Redis实现记录当前活跃用户的jwt令牌并实现多点登录限制。
+  - 配置文件：使用 fsnotify 和 viper 实现yaml格式的配置文件。
+
+- https://github.com/GoAdminGroup/go-admin /8.7kStar/apache2/202506/go/inactive
+  - https://www.go-admin.com/
+  - http://doc.go-admin.cn/zh/quick_start/
+  - 基于 golang 面向生产的数据可视化管理平台搭建框架
+  - 一般开发一套管理后台需要至少一个后台工程师，一个前端工程师，花费至少一周时间才能搭建完成，搭建完成后我们需要分别去部署前端代码和后端代码。 而利用 GoAdmin，只需要一名golang后端工程师。在先花一点点时间了解掌握GoAdmin后，即可开发好一个面向生产环境的管理后台。而且所有的框架代码（包括前端文件）都将编译成一个二进制文件，直接部署到正式服务器即可运行，测试分发和部署十分便捷
+  - 内置支持对主流SQL数据库（mysql/postgresql/sqlite/mssql）增删改查的管理插件，更多的功能插件如：服务器文件管理，数据监控系统等等会陆续开发并开放。
+  - 内置完善的rbac权限系统
+  - 支持多个web框架接入
+  - GoAdmin通过各种适配器使得你在各个web框架中使用都十分的方便。目前支持的web框架有： gin / beego / fasthttp / buffalo / echo / gorilla/mux / iris / chi / gf
+  - 框架的插件内容包括：控制器，路由以及视图
+
+- https://github.com/LyricTian/gin-admin /2.8kStar/apache2/202506/go
+  - 基于 Golang + Gin + GORM 2.0 + Casbin 2.0 + Wire DI 的轻量级、灵活、优雅且功能齐全的 RBAC 脚手架。
+
+- https://github.com/mikestefanello/pagoda /2.8kStar/MIT/202508/go/ent
+  - easy full-stack web development starter kit and admin panel in Go
+  - Pagoda is not a framework but rather a base starter-kit for rapid, easy full-stack web development in Go
+  - This project aims to highlight that Go alone can be powerful and easy to work with as a full-stack solution and ssr html
+  - Echo: High performance, extensible, minimalist Go web framework.
+  - HTML components written in pure Go. They render to HTML 5
 # web-framework
 - https://github.com/mjackson/remix-the-web/tree/main/packages/node-fetch-server /MIT/202409/ts/单文件
   - node-fetch-server allows you to build servers for Node.js that use the web Fetch API primitives (namely `Request` and `Response`) instead of the traditional `req/res` API used in libraries like Express.

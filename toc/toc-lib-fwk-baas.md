@@ -162,6 +162,142 @@ modified: 2021-05-25T09:40:55.797Z
   - https://jampyapplicationbuilder.com/
     - https://jampyapp.pythonanywhere.com/
     - https://northwind.pythonanywhere.com/
+# scaling
+- tips
+  - feathears提供了 [框架级scaling方案](https://feathersjs.com/cookbook/general/scaling)
+  - scaling参考: hocuspocus, strapi, dify
+
+- https://github.com/piyush-repo/scaling-nodejs-services-loadbalancing /apache2/202204/js/inactive
+  - [Scaling a Node JS Application](https://dzone.com/articles/scaling-a-node-js-application)
+  - In this blog, we will mainly focus on horizontal scaling and we will build up a small Node JS application, and then we will scale it horizontally.
+
+- https://github.com/vbarzokas/scalable-rest-api-boilerplate /MIT/202210/js/inactive
+  - A sample system demonstrating a highly scalable and fault tolerant application that implements a REST API for product ordering, by leveraging node.js, mongoDB replica sets and `nginx` as a load balancer, wrapped with docker-compose.
+
+- https://github.com/Maximization/scaling-nodejs-with-docker /MIT/202509/js/inactive
+  - Sample Node.js project showing how to scale horizontally with Docker
+  - [From PM2 to Docker: Cluster Mode - Maxim Orlov](https://maximorlov.com/from-pm2-to-docker-cluster-mode/)
+
+- https://github.com/bytesleo/nodetomic /202108/MIT/js/inactive
+  - https://bytesleo.github.io/nodetomic/
+  - Minimalist boilerplate for nodejs, designed for vertical and horizontal scalability.
+  - 依赖mongo、socket、redis
+  - Add Redis to shared state
+  - Added multiple servers and pm2 load balancing
+  - Added database and load balancer
+  - Added redis cluster and mongodb sharded clusters
+  - https://github.com/bytesleo/nodetomic-api-swagger /MIT/202005/js/legacy
+
+- https://github.com/Nehonix-Team/XyPriss /MIT/202510/ts
+  - https://docs.xypriss.nehonix.space/
+  - powerful, TypeScript-first, open-source Node.js web framework that enhances your development experience with built-in security middleware, clustering, and performance optimizations.
+  - Built-in Security: Includes 12+ security middleware modules for common protections like CSRF, XSS, and rate limiting.
+  - File Upload Support: Seamless integration with multer and other multipart form-data parsers.
+  - Multi-Server Mode: Run multiple server instances with different configurations from a single setup.
+  - Flexible Routing: Supports parameters, wildcards, and modular routers.
+  - Works Great With Express: XyPriss is designed to complement the Node.js ecosystem, not replace it
+  - XyPriss is the successor to FortifyJS, which will be deprecated
+  - [Multi-Server - XyPriss Documentation](https://docs.xypriss.nehonix.space/multi-server.html)
+    - XyPriss supports running multiple server instances with different configurations, ports, and route scopes. 
+
+- https://github.com/TanishValesha/Scalable-Realtime-Multiplayer-System /202509/ts
+  - A cloud-native, horizontally scalable real-time multiplayer WebSocket server implementation built with Node.js, TypeScript, Redis Pub/Sub, and Redis Queues. 
+  - It supports room-based matchmaking, low-latency state synchronization, and dynamic scaling via Kubernetes’ Horizontal Pod Autoscaler (HPA). 
+  - Deployed on AWS EKS with an AWS Load Balancer, Redis (for Pub/Sub and task queues), and Docker.
+  - Real-time, bidirectional multiplayer communication
+  - Room/Matchmaking support with fast state sync
+  - Horizontally scalable with HPA on Kubernetes
+  - Redis Pub/Sub for event distribution
+  - Redis Queues for matchmaking task
+  - Dockerized for easy CI/CD and portability
+  - Cloud-native deployment using Kubernetes
+- https://github.com/omkargade04/Scalable-Websocket-Server /MIT/202411/ts/与上面的repo架构图相同
+  - A Scalable WebSocket server implementation using Redis Pub/Sub for message distribution across multiple server instances. 
+  - This architecture allows for horizontal scaling via kubernetes' horizontal pod auto-scaler while maintaining real-time message delivery across all connected clients.
+
+- https://github.com/The-ForgeBase/forgebase-ts /MIT/202505/ts/vue/inactive
+  - A flexible, scalable Backend as a Service (BaaS) framework that works with multiple backend frameworks. 
+  - Built to overcome the limitations of existing BaaS solutions with support for horizontal scaling and robust database integrations.
+  - Our mission is to simplify backend development by providing a highly flexible, language-agnostic BaaS framework that developers can plug into their existing server setup.
+  - While we are 70% inspired by Pocketbase, we recognized its limitations—particularly its dependency on SQLite and its inability to scale horizontally.
+
+- https://github.com/civilcoder55/scalable-nest-websockets /MIT/202501/ts/inactive
+  - A demonstration project showcasing a scalable Socket. IO implementation using NestJS. 
+  - This project implements a horizontally scalable WebSocket server architecture that can handle real-time communications across multiple server instances.
+  - Socket. IO Server: NestJS-based WebSocket server with adapter for horizontal scaling
+  - Adapters: Used for Socket. IO pub/sub between multiple server instances. eg. Redis
+  - Message Brokers: for handling event distribution. eg. RabbitMQ
+  - Microservice architecture using NestJS
+
+- https://github.com/mutasim77/fast-redis-chat /MIT/202408/ts/inactive
+  - calable real-time chat app with WebSockets and Redis, featuring horizontal scaling and live connection tracking.
+  - Live user connection count across multiple instances using Redis Pub/Sub
+  - Horizontally scalable architecture with multiple backend instances
+  - Load balancing with Caddy as a reverse proxy
+
+- https://github.com/rajneesh069/scaling-in-node.js /202409/ts/偏理论/inactive
+  - This repo is about Vertical and Horizontal scaling. It contains information about ASGs(Auto Scaling Groups)
+  - Comparison: Single-threaded Async vs Cluster-based Multi-Processing
+
+- https://github.com/francescocartelli/wss-for-horizontal-scaling-back-end /
+202509/js
+  - [Developing WebSocket for Horizontal Scaling: Using Redis as Message Queue _202405](https://blog.stackademic.com/developing-websocket-for-horizontal-scaling-using-redis-as-message-queue-a97cabd769d7)
+
+- https://github.com/Wittline/RESTful-APIs-Nodejs /MIT/202010/js/inactive
+  - https://wittline.github.io/RESTful-APIs-Nodejs/
+  - Building RESTful API REST services with Node.js, Express.js and Mongoose.js
+  - Scalable The existing code is non-blocking code, because of this, it can be easily scaled, if there is an APIs that are more in demand than others, it could be separated in another server or container, this allows copying the code quickly because each api is related to a set of separate modules
+
+## utils-scaling
+
+- https://github.com/aldrinjenson/node-balancer /202208/ts/inactive
+  - Load balancer system for horizontal scaling implemented in Node. Js
+  - The system consists of one master server and a template slave server
+  - As shown in the demo, you can run as many instances of slave servers as needed. This can be run in multiple computers/nodes.
+  - The system will poll the slave server at regular intervals to check if they are alive
+
+- https://github.com/faranalytics/socketnaut /MIT/202501/ts/inactive
+  - Socketnaut makes scaling native Node.js servers easy. 
+  - A Socketnaut Service typically consists of a TCP proxy and a pool of HTTP servers.
+  - Socketnaut will uniformly distribute incoming TCP sockets across the pool of allocated servers. This strategy allows for both distribution and parallel processing of incoming requests.
+  - Socketnaut can be used in order to scale the main module of web applications built on performant Node.js web frameworks (e.g., Fastify, Koa, Express).
+  - Socketnaut requires 0 out-of-org dependencies. Socketnaut's dependencies are published and maintained by the FAR Analytics & Research org
+  - The Socketnaut ServiceProxy and ServiceAgent constructors consume native Node net. Server, http. Server, https. Server, and tls. Server instances; you can configure them however you choose.
+
+## utils-socket
+
+- https://github.com/socketio/socket.io-redis-adapter /MIT/202403/ts/inactive
+  - https://socket.io/docs/v4/redis-adapter/
+  - Adapter to enable broadcasting of events to multiple separate socket.io server nodes.
+  - 🍴 forks
+  - https://github.com/arunp0/socket.io-multi-redis
+    - Horizontally scale up servers with multiple redis server.
+
+- https://github.com/gsllucas/scaling-sockets-rabbitmq /202404/ts/inactive
+  - This a proof of concept to scaling websockets application with messaging broker.
+  - ws-service: service that has a messaging broker consumer that listens to a queue to send a custom socket event according to necessity
+  - ws-client: service that has a socket client to listen to socket events emitted by ws-service throught the socket channel
+  - broker-publisher: service that is emitting events through a messaging broker publisher
+  - Any another service can connect to ws-service through messaging HOST URL to send real time messages in socket as broker publisher (rabbitMQ chosen here).
+
+- https://github.com/veliovgroup/josk /BSD/202404/js/inactive
+  - "JoSk" is a Node.js task manager for horizontally scaled apps and apps that would need to scale horizontally quickly at some point of growth.
+  - "JoSk" mimics the native API of setTimeout and setInterval and supports CRON expressions. 
+  - All queued tasks are synced between all running application instances via Redis, MongoDB, or a custom adapter.
+  - The "JoSk" package is made for a variety of horizontally scaled apps, such as clusters, multi-servers, and multi-threaded Node.js instances, that are running either on the same or different machines or even different data centers. ✨ JoSk ensures that the only single execution of each task occurs across all running instances of the application.
+  - "JoSk" is not just for multi-instance apps. It seamlessly integrates with single-instance applications as well, showcasing its versatility and adaptability.
+  - Note: JoSk is the server-only package.
+
+- https://github.com/kesimo/groWs /MIT/202402/go/inactive
+  - Framework for building Structured and scalable Websocket Servers
+  - It is built on top of the gobwas/ws library, that provides a performant API for working with Websocket connections.
+  - The Idea behind groWs is to provide a simple and easy to use API for building Websocket Servers, that are Structured, Horizontally Scalable by default, and Maintainable.
+  - Multi-Router support, that allows you to create multiple routers for different purposes.
+  - Rooms support, that allows you to group connections into rooms, and broadcast messages to them.
+  - Redis Pub-Sub support, that allows you to broadcast messages to multiple servers.
+
+- https://github.com/bytesleo/redis-jwt /MIT/201709/js/inactive
+  - Management of sessions by Redis and JWT for horizontal scalability, with the possibility of having one session at a time or multiple for the same user
 # ha/high-availability
 - https://github.com/dashersw/cote /MIT/202406/js
   - http://cote.js.org/

@@ -565,6 +565,7 @@ modified: 2020-12-28T12:24:09.275Z
   - 实时协作： 我们可以一起实时创建内容
   - https://github.com/illacloud/builder-backend /202407/go/inactive
     - 依赖gin、gorm、minio
+  - https://github.com/illacloud/illa-design /react
 
 - https://github.com/jet-admin/jet-bridge /python
   - Jet Admin is a SaaS service that automatically generates extendable back office for your application
@@ -740,15 +741,11 @@ modified: 2020-12-28T12:24:09.275Z
   - With just a few lines of code, data teams can confidently automate any data process with features such as scheduling, caching, retries, and event-based automations.
   - Workflow activity is tracked and can be monitored with a self-hosted Prefect server instance or managed Prefect Cloud dashboard.
 
-- https://github.com/jitsucom/jitsu /MIT/202401/go/ts
-  - a tool for collecting event data from your websites, apps and stream them to your data warehouse or other services. 
-  - It is a self-hosted, open-source alternative to Segment.
-  - Jitsu is based on Bulker(golang), an open-source data warehouse ingestion engine. Bulker can be used as a standalone tool
 
 - https://github.com/kestra-io/kestra /apache2/202503/java/vue
   - https://kestra.io/
-  -  Workflow Automation Platform. Orchestrate & Schedule code in any language, run anywhere, 500+ plugins. 
-  -  Alternative to Zapier, Rundeck, Camunda, Airflow...
+  - Workflow Automation Platform. Orchestrate & Schedule code in any language, run anywhere, 500+ plugins. 
+  - Alternative to Zapier, Rundeck, Camunda, Airflow...
 
 - https://github.com/cptn-io/el-cptn /java/js/inactive
   - an open source platform that helps develop and deploy integrations and data pipelines quickly and easily.

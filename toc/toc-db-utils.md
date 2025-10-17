@@ -86,6 +86,22 @@ modified: 2022-11-06T11:21:27.612Z
 - https://github.com/MrSmallLiu/node-datax /202012/ts
   - 使用TypeScript开发的Node的数据提取工具
   - 仅支持postgres
+
+- https://github.com/jitsucom/jitsu /4.6kStar/MIT/202510/go/ts
+  - a tool for collecting event data from your websites, apps and stream them to your data warehouse or other services. 
+  - It is a self-hosted, open-source alternative to Segment.
+  - Jitsu is based on Bulker(golang), an open-source data warehouse ingestion engine. Bulker can be used as a standalone tool
+  - https://github.com/jitsucom/bulker /198star/MIT/202510/go
+    - Bulker is a tool for streaming and batching large amount of semi-structured data into data warehouses. 
+    - It uses Kafka internally
+    - Bulker will put the object to `Kafka` Queue immediately, so if datawarehouse is down, data won't be lost
+    - Streaming or Batching. Bulker will send data to datawarehouse either as soon it become available in Kafka (streaming) or after some time (batching). Most data warehouses won't tolerate large number of inserts, that's why we implemented batching
+    - Bulker supports the following databases: pg/mysql/s3/clickhouse
+
+- https://github.com/rudderlabs/rudder-server /4.3kStr/Elastic/202510/go
+  - https://www.rudderstack.com/
+  - As the leading open source Customer Data Platform (CDP), RudderStack provides data pipelines that make it easy to collect data from every application, website and SaaS platform, then activate it in your warehouse and business tools.
+  - fully compatible with the Segment API. So you don't need to change your app if you are using Segment
 # migrate
 - https://github.com/wekan/minio-metadata /202304/js
   - Transfer files from MongoDB GridFS to Minio file server, and MongoDB text to SQLite

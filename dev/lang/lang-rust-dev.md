@@ -10,6 +10,7 @@ modified: 2022-11-11T06:57:09.670Z
 # guide 🦀
 
 - classic-examples-rust
+  - tips: 比cpp更安全的语言, 在 编辑器/ide/存储层 有探索，业务开发速度慢
   - editor: kilo-editor, treesitter, ripgrep, xi-editor/lapce/zed
   - db: 🌹 turso, rust-kv, terminusdb-store, 
   - crdt
@@ -18,6 +19,11 @@ modified: 2022-11-11T06:57:09.670Z
   - toolchain: rspack+unplugin
   - ui: gpui(by zed), tauri/pake
   - more: wasm, json-parser, tree, kanban, remark
+
+- tutorials 🧑‍🏫
+  - [Rust Language Cheat Sheet](https://cheats.rs/)
+  - https://github.com/donbright/rust-lang-cheat-sheet
+  - [The Complete(sh) Rust Cheat Sheet - DEV Community](https://dev.to/moekatib/the-completesh-rust-cheat-sheet-4fnn)
 
 - who is using #rust
   - 国内: tikv
@@ -36,8 +42,6 @@ modified: 2022-11-11T06:57:09.670Z
   - https://github.com/google/comprehensive-rust
   - https://google.github.io/comprehensive-rust/index.html
   - 👨🏻‍🏫 Rust course used by the Android team at Google
-
-- [Rust Language Cheat Sheet](https://cheats.rs/)
 
 - [This Week in Rust](https://this-week-in-rust.org/)
 

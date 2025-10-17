@@ -17,6 +17,75 @@ modified: 2023-01-14T17:22:00.810Z
 - ## 
 
 - ## 
+# discuss-alternatives-wails/like
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [We decided to use Golang with Wails instead of Rust with Tauri for building Krater desktop app. : r/golang _202311](https://www.reddit.com/r/golang/comments/17koicc/we_decided_to_use_golang_with_wails_instead_of/)
+  - We were building Krater, a desktop app for debugging Laravel apps, with Rust using Tauri. However, this is no longer the case because a few months ago we made the decision to migrate the entire project to Wails
+  - Better developer experience! Way easier to understand.
+
+- whether you choose Fyne, Wails, or Tauri you'll still be way more lightweight than Electron
+
+- We are using golang in production. It is simple and code looks fresh. In production its important that code must need to be understandable by other developers for long term maintainability. Though I appreciate rust for bringing new concepts
+
+- I developed two project one on Tauri one on Wails, Wails is just enough for a desktop app based web. Tauri is intersted but in real life project it sometime take to much time to resolve a traaditional issue (I faced with the CORS) To me, for now I will choose Wails for desktop app development.
+
+- Rust's ability to interop fairly easily with C (and to some extent, C++ apis) can make tauri a good choice for adding a GUI layer to existing library projects
+
+- Go's GC stops have minimal impact on those kind of standalone apps, because the UI is rendered in a webview, with its own JS process.  The STW only happens in the backend side, which won't be noticible given Go has optimised GC stops to sub millisecond
+
+- ## [Comparison with wails · tauri-apps/tauri _202202](https://github.com/tauri-apps/tauri/discussions/3521)
+- here is my take on WAILS/Tauri and Neutralino/NWjs as well.
+- Uptil now NW.js has done this quite well - custom builds of the distributed binary can be done by developers if they wish (not necessarily easy) but otherwise apps can be developed using just HTML/JS/CSS/Node technologies. 
+  - Core features such as windowing/notifications/events/etc are implicit within the binary but made available via the nw API to the JS/Node world so no need to get to grips with lower level languages such as C++/Rust/Go/etc. 
+  - The downside of NW.js is the size of the shipped binary because a browser is always being bundled (Chrome).
+- This led me to look at Neutralino/WAILS/Tauri which all offer the advantage of a vastly smaller shipped binary package by using the OS'es inbuilt webview interface.
+
+- Neutralino (uses C++ for backend)
+- Pros:
+  - Easy to use with distributed compiled binaries. Server binary using C++ code and Client library using JS.
+  - The server binary controls the Native API and core features and every HTML file in the app code need to reference the Client library to work with the Server binary via the Native API.
+  - It has a CLI that will package app assets/resources into a file called resources.neu that can be used with the server binaries. App assets/resources can also be used as plain source along with the binaries and this is how I usually package my mac apps which can be done manually without toolchains.
+  - This is an advantage for Neutralino because both WAILS and Tauri package the app resources within the shipped binary so compilation is required.
+  - Mac app - resources can be available in Resources folder or as bundled package.
+- Cons:
+  - Native menus not available.
+  - Newly introduced websocket not robust.
+  - Lot of dependence on upstream libraries that don't get enough attention.
+  - Multi-window management not implicit needs to be done by dev however can be done in JS using the API.
+  - Node not supported directly - only via extensions somehow.
+  - Raw binaries are produced (compilation is easy) but no packaging/bundling code is included.
+
+- WAILS (uses Go for backend)
+- Pros:
+  - App bundling done with builds.
+  - Go is meant to be easier than Rust from what I have heard (can't see until the dust settles on that one).
+  - Main dev is very responsive to queries/etc.
+- Cons:
+  - Multi-window still on roadmap
+  - Notifications still on roadmap
+  - Native menus not available to JS context.
+  - App bundling appears to only support modules for JS
+  - Mac app - resources always compiled into binary rather than available in Resources folder.
+
+- Tauri (uses Rust for backend - other languages on roadmap)
+- Pros:
+  - App bundling done with builds.
+  - Native Menus supported
+  - Multi-windows supported
+  - Notifications supported
+- Cons:
+  - Native Menus require Rust coding
+  - Multi-windows require Rust coding
+  - Notifications require Rust coding
+  - No DMG customisation
+  - Mac app - resources always compiled into binary rather than available in Resources folder.
 # discuss-issues
 - ## 
 

@@ -83,6 +83,7 @@ modified: 2022-08-21T10:03:52.222Z
   - https://gridstudio.io/
   - a high-performance, spreadsheet-like calculation engine for web applications
   - a web-based application for data science with full integration of open source data science frameworks and languages.
+  - It intends to provide an integrated workflow for loading, cleaning, manipulating, and visualizing data. This is achieved through a spreadsheet backend written in Go with integration of the Python runtime to manipulate its contents.
   - [How I built a spreadsheet app with Python to make data science easier | HackerNoon_201907](https://hackernoon.com/introducing-grid-studio-a-spreadsheet-app-with-python-to-make-data-science-easier-tdup38f7)
     - While this project was originally intended for commercial release, I've decided it might be better off as an open source project
     - The reason for this is that during the initial development of the project I've discovered a number of projects that offer similar functionality to Grid studio.

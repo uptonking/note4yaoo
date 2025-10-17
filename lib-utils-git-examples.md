@@ -50,6 +50,12 @@ modified: 2023-08-29T10:12:22.345Z
   - Our goal is not to create a 100% replica of Git (for those interested in such a project, please refer to the gitoxide)
   - A key feature of libra is the replacement of the original Git internal storage architecture with SQLite.
 
+- https://github.com/go-git/go-git /6.9kStar/apache2/202510/go
+  - A highly extensible Git implementation in pure Go.
+  - It can be used to manipulate git repositories at low level (plumbing) or high level (porcelain), through an idiomatic Go API. 
+  - It also supports several types of storage, such as in-memory filesystems, or custom implementations, thanks to the Storer interface.
+  - It's being actively developed since 2015 and is being used extensively by Keybase, Gitea or Pulumi
+
 - https://github.com/gitbutlerapp/gitbutler /FSL-1.0-MIT(2y)/202409/rust/ts/svelte
   - https://gitbutler.com/
   - The GitButler version control client, backed by Git, powered by Tauri/Rust/Svelte
@@ -258,13 +264,15 @@ modified: 2023-08-29T10:12:22.345Z
 - https://github.com/gogs/gogs /45.1kStar/MIT/202411/go
   - https://gogs.io/
   - aims to build a simple, stable and extensible self-hosted Git service that can be set up in the most painless way. 
-  - 依赖gorm、xorm、tablewriter、otp
+  - 依赖gorm、tablewriter、otp, 只有极少数据库类型如int/date使用了xorm定义
   - Access repositories via SSH, HTTP and HTTPS protocols.
   - Rich database backend, including PostgreSQL, MySQL, SQLite3 and TiDB.
   - [Cannot use spaces in password for PostgreSQL ](https://github.com/gogs/gogs/issues/6755)
     - wait until the finish of on-going refactoring of the DB layer, which uses GORM to 100% replace XORM in the Gogs codebase.
   - https://github.com/gogs/git-module /MIT/202210/go
     - a Go module for Git access through shell commands
+  - [What is the best self-hosted Github alternative? : r/selfhosted _202307](https://www.reddit.com/r/selfhosted/comments/15a0lic/what_is_the_best_selfhosted_github_alternative/)
+    - I was going to try gogs, but yeah there was something with gogs that had me go to Gitea. It might have been a lack of 3d model preview GitHub uses threejs, Gitea uses Madeleine, and I believe gogs didn't have one.
 
 - https://codeberg.org/forgejo/forgejo /go
   - https://forgejo.org/
@@ -276,6 +284,7 @@ modified: 2023-08-29T10:12:22.345Z
   - [Gitea vs Gogs on Ubuntu Server : r/selfhosted _202403](https://www.reddit.com/r/selfhosted/comments/1bptz7n/gitea_vs_gogs_on_ubuntu_server/)
     - Forgejo is a fork of Gitea, which is a fork of Gogs and is indeed similar in feature set. Opinions are going to be mixed on Gitea and Forgejo because some dont like the owners of Gitea attempting to monetize
     - Gogs is basically one dude working slowly (albeit very admirably!) on his own. Gitea is a fork of Gogs with a huge community of developers behind it. Gitea has shot far ahead of Gogs for quite some time now.
+    - Gitea is good. You won't regret it. Being mostly compatible with github actions is lovely
 
 - https://github.com/harness/gitness /apache2/202402/go/ts
   - https://gitness.com/

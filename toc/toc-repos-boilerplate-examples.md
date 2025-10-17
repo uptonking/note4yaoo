@@ -572,8 +572,6 @@ modified: 2023-11-16T15:00:11.503Z
   - An admin dashboard using VanillaJS and Jquery
   - This admin dashboard provides CRUD functionality for user profiles.
 
-## admin-fwk
-
 - https://github.com/jetlinks/jetlinks-ui-antd
   - 演示地址：http://demo.jetlinks.cn
   - 项目多处采用了SSE接口交互，开发需要使用dev环境变量（生产环境使用nginx代理了EventSource接口）

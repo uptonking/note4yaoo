@@ -69,6 +69,9 @@ modified: 2021-05-14T15:04:15.333Z
   - Plugins: redis/es/algolia
   - 依赖注入使用wire
   - 依赖gin、xorm
+  - [Elasticsearch is a good candidate for the underlying database? _202210](https://github.com/apache/answer/issues/29)
+    - In Answer project, we use XORM to be the abstraction layer of database, so all data operations are designed for relational database. 
+    - If you want to use ElasticSearch, you need to write your own data access layer. 
 - https://github.com/casbin/casnode /apache2/202312/go
   - Open-Source Forum and Social Platform, Alternative to StackOverflow & Flarum
   - Go (Beego) + MySQL
@@ -247,6 +250,11 @@ modified: 2021-05-14T15:04:15.333Z
 - https://gitlab.com/tildes/tildes /AGPLv3/202306/python/jinja
   - https://tildes.net/
   - a non-profit community site
+
+- https://github.com/rocboss/paopao-ce /4.4kStar/MIT/202508/go
+  - An artistic "twitter like" community built on gin+zinc+vue+ts 清新文艺微社区
+  - 配置文件中的 Features 小节是声明paopao-ce运行时开启哪些功能项
+  - 依赖gin、gorm、resty、lumberjack、jwt
 # forum-nodejs
 - jixialunbi /12Star/GPLv3/202211/ts
   - https://github.com/bs32g1038/jixialunbi
@@ -451,6 +459,35 @@ modified: 2021-05-14T15:04:15.333Z
   - written in Go and React and runs as a single Linux binary with MySQL or PostgreSQL.
   - A new compiled version is released under an MIT license every month on the 16th.
   - You are licensed to use compiled versions of the Mattermost platform produced by Mattermost, Inc. under an MIT LICENSE
+
+- https://github.com/openimsdk/open-im-server /15.3kStar/AGPL > apache2/202510/go
+  - https://openim.io/
+  - Unlike standalone chat applications such as Telegram, Signal, and Rocket. Chat, OpenIM offers an open-source instant messaging solution designed specifically for developers rather than as a directly installable standalone chat app
+  - Comprising OpenIM SDK and OpenIM Server, it provides developers with a complete set of tools and services to integrate instant messaging functions into their applications
+  - 依赖gin、gorm、rockscache、jwt、websocket、grpc、gokit、cobra
+  - 202311改为使用mongodb，未使用gorm，[Feat/mongo pr](https://github.com/openimsdk/open-im-server/pull/1447)
+  - 🏠 Microservices Architecture: Supports cluster mode, including a gateway and multiple rpc services.
+  - Diverse Deployment Options: Supports source code, Kubernetes, or Docker deployment.
+  - Supports large-scale groups with hundreds of thousands, millions of users, and billions of messages.
+  - OpenIM aims to provide developers with the necessary tools and framework to implement efficient instant messaging solutions in their applications.
+  - OpenIMSDK, designed for OpenIMServer, is an IM SDK created specifically for integration into client applications.
+  - [[FEATURE REQUEST] Proposal for Integration of FerretDB as an Alternative Database Backend for OpenIM _202404](https://github.com/openimsdk/open-im-server/issues/2250)
+    - OpenIM currently relies on MongoDB for data storage. This proposal aims to integrate FerretDB, a MongoDB-compatible open-source database that avoids licensing constraints and offers more backend storage options, enhancing OpenIM's adaptability and performance.
+  - [[Deployment] Could im change mongdb to another database？ _202505](https://github.com/openimsdk/open-im-server/issues/2868)
+    - we don’t have that plan at the moment.
+    - This is typically not a small task; you’ll need to implement all of the database interfaces under `Open-IM-Server\pkg\common\storage\database`.
+    - [How to modify the code to use PostgreSQL instead of MySQL _202309](https://github.com/openimsdk/open-im-server/issues/1138)
+    - We plan to replace MySQL with MongoDB
+  - [[FEATURE REQUEST] Can Openim use PGMQ as the message queue processor to minimize middleware? _202412](https://github.com/openimsdk/open-im-server/issues/2921)
+    - pgmq can be used as a replacement for Kafka, abandoning heavy components such as Kafka. Kafka is too resource-intensive.
+    - If the community plans to implement all of this in the future, I will reopen it
+  - [Multi-tenant _202505](https://github.com/openimsdk/open-im-server/issues/3373)
+    - The multi-tenant feature obviously has many benefits. Unfortunately, we don't plan to develop this in the open-source version.
+  - https://github.com/openimsdk/openim-sdk-core /447Star/AGPL/202509/go
+    - the core SDK of OpenIM, serving as the cross-platform foundation for all open-source OpenIM SDKs (excluding mini web).
+    - All open-source OpenIM SDKs (except mini web) are built upon this core layer, ensuring consistency, stability, and seamless cross-platform integration.
+  - https://github.com/openimsdk/openim-electron-demo /AGPL
+    - Instant Messaging web desktop Windows/Mac/Linux
 
 - https://github.com/juravlevdima/PERN-chat /ISC/202212/ts/inactive
   - Chat made with PERN Stack & Socket. IO

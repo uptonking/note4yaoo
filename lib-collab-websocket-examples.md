@@ -214,7 +214,7 @@ modified: 2023-01-23T19:27:46.948Z
     - Stateroom has a modular architecture. 
     - stateroom-server provides an Axum-based WebSocket server that runs a Stateroom service.
 
-## socket-k8s
+## scaling-websocket
 
 - [kubernetes-ingress websockets with nodejs](https://gist.github.com/jsdevtom/7045c03c021ce46b08cb3f41db0d76da)
 
@@ -253,6 +253,10 @@ modified: 2023-01-23T19:27:46.948Z
   - Prerequisites Apache Kafka / Nats Mongodb Nginx Firebase project Redisl
   - 使用了firebase的auth/notify
   - [Vartalap: Open Source Personal Messaging App | One9x _202106](https://blog.one9x.org/vartalap/2021/04/04/vartalap-personal-messaging-app.html)
+
+- https://github.com/Codename-404/socket.io-express.js-horizontal-scaling /202408/js/单文件/inactive
+  - [Horizontal Scaling Socket. IO Applications Using Express.js and Redis, a Step-by-Step Guide _202409](https://medium.com/@nayeemurrahman/horizontal-scaling-socket-io-applications-using-express-js-and-redis-a-step-by-step-guide-ba3b1bb2f8e5)
+  - https://github.com/Codename-404/socket.io-react-front
 # more
 - https://github.com/well-known-components/template-server
   - Template Node.js server using well-known-components library.

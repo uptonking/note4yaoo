@@ -276,12 +276,61 @@ modified: 2023-09-17T17:37:19.913Z
 
 - Having a simple database it a great feature for prototyping, but I think having custom Dockerfile support would be even better.
 # discuss-storage-compute-separation
+- 分离案例
+  - known: clickhouse, quickwit, kafka, neondatabase, yugabytedb, Doris v3+, xtdb v2, OrioleDB, PolarDB
+  - 可参考前端状态管理/db的持久化方案
+- tips
+  - [Ramifications and status of 'Separation of Storage and Compute' (mentioned in 2022 Roadmap) · Issue · ClickHouse/ClickHouse](https://github.com/ClickHouse/ClickHouse/issues/41791)
+  - [A Comparative Study of Storage and Compute Decoupling - RisingWave: Real-Time Event Streaming Platform _202407](https://risingwave.com/blog/a-comparative-study-of-storage-and-compute-decoupling/)
+
+- ## 
+
 - ## 
 
 - ## 
 
-- ## Every time we separate compute from storage, we bring it back together it seems. And then we do it again a decade later.
+- ## 
+
+- ## 
+
+- ## [Ramifications and status of 'Separation of Storage and Compute' (mentioned in 2022 Roadmap) · Issue · ClickHouse/ClickHouse _202209](https://github.com/ClickHouse/ClickHouse/issues/41791)
+- ClickHouse already support the usage of S3 and HDFS as table engine. By using them, you are effectively separating compute and storage, and you can scale either of them independently.
+
+- [Clickhouse计算与存储分离调研 · Issue · cloudnativecube/octopus _202103](https://github.com/cloudnativecube/octopus/issues/48)
+- mergetree引擎支持S3
+  - replicatedmergetree 引擎支持S3
+- insert：
+  - 用户直接将数据插入到某一个replica后，其他replica会通过zookeeper进行感知，将元数据从该replica fetch过来加载到内存和写入本地以保持同步（同理，新加入replica也会如此而进行同步），元数据文件存储在本地磁盘，但是文件里的内容其实是s3的文件名，真实的数据统统存储在s3上，所有replica共享这些数据，当有多个replica同时操作共享文件时会对文件进行加锁，从而保证数据的一致性。
+- merge:
+  - 多个replica可以让其中一个replica做merge操作，其他replica等他其merge操作完成后，向其索要merge后的元数据文件保存到本地，从而减少性能损耗。
+- select:
+  - 经过验证目前是可以支持分布式表查询多个shards(均共用底层s3存储)，从而支持并发查询，查询请求可以落到多个replicas(水平扩缩)，底层共用s3存储。
+- delete:
+  - 在进行删除操作时，clickhouse内部会有share data lock机制，该机制确保所有的replica的元数据全都删除后才会真正的去删除s3对象存储上的数据。
+
+- cloud.tencent.com/developer/article/1759109 腾讯云CK计算存储分离的经验
+
+- ## It's wild that @databricks chose to pay $1 billion (with a 200x multiple) for the slowest Postgres, @neondatabase _202506
+- https://x.com/pucchkaa/status/1933650926365257993
+- I think this is because of their decoupled architecture where they separate the storage and the compute. This gives them benefits like autoscaling, serverless, branching etc. but comes with an unavoidable network hop from compute to pageservers. They use WAL for decoupling.
+  - This does remind me of @isamlambert tweet where he mentioned why it might be bad to separate storage and compute. Planetscale got some really good raw performance with NVMes.
+
+- But it's serverless
+
+- https://x.com/nikitabase/status/1725394868619342198
+  - It's MUCH easier to scale stateless systems - so let's separate storage and compute. Storage is a glorified key value store (okay a bit more than that but close). So now we can turn Postgres on and off and move it from one machine to another and not lose state. This is key!
+  - When a query comes in it hits our proxy which forwards it to the right Postgres process. But where should the Postgres process live? VM, container, bare metal?
+  - There are many reasons to use VMs. Primarily due to security boundary and live VM migrations (more on that later)
+  - You can also use containers. In this case you need to be sure that an attacker won't break out of the process. Postgres and its extensions are NOT secure by default and hence container didn't work for us.
+
+- [Why separating storage and compute can be a problem for OLTP workloads. | PlanetScale posted on the topic | LinkedIn _202506](https://www.linkedin.com/posts/planetscale_while-separating-storage-and-compute-has-activity-7333155501230243843-ONWt)
+
+- ## Every time we separate compute from storage, we bring it back together it seems. And then we do it again a decade later. _202503
 - https://x.com/kellabyte/status/1900649147234955489
+- is this about the PlanetScale’s?
+  - Yup but also just a general observation
+- I know the planetscale folks are pushing hard on Metal, but Aurora/AlloyDB/SQL Hyperscale are all tiered systems already.  They cache hot data on fast local NVMe disks on the same machine as the SQL compute ("SSD Cache" in the diagram here)
+
 - That's a natural cycle, I think. 
   - 1) Separate to get perf from parallel access, then 
   - 2) combine again when HW has caught up and remove complexity.

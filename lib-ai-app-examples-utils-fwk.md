@@ -22,6 +22,15 @@ modified: 2025-02-21T18:20:42.624Z
   - license 💰
     - Unless explicitly authorized by Dify in writing, you may not use the Dify source code to operate a multi-tenant environment.
     - In the process of using Dify's frontend, you may not remove or modify the LOGO or copyright information in the Dify console or applications. 
+  - https://github.com/YFGaia/dify-plus /dify-lic
+    - Dify-Plus 是 Dify 的企业级增强版，集成了基于 gin-vue-admin 的管理中心，并针对企业场景进行了功能优化。
+    - Dify-Plus = 管理中心 + Dify 二开 
+    - 在原有 Dify 的基础中，该项目做了一些二开以及新增了管理中心的功能，原先这些功能只是在我们企业内部使用，对外交流后发现很多伙伴也遇到我们相同一些痛点，故将我们的二开内容进行开源
+    - 新增：用户额度
+    - 新增：密钥额度设置
+    - 新增 ：Web 公开页登录鉴权
+    - 新增：后台创建用户，自动邀请进管理员空间
+    - 新增：sandbox-full，以放开代码执行节点函数限制
 
 - https://github.com/cloudflare/agents /MIT/202502/ts
   - https://developers.cloudflare.com/agents/
@@ -392,6 +401,14 @@ modified: 2025-02-21T18:20:42.624Z
   - https://www.maxun.dev/
   - Open-source no-code web data extraction platform. 
   - Maxun lets you create custom robots which emulate user actions and extract data. A robot can perform any of the actions: Capture List, Capture Text or Capture Screenshot. Once a robot is created, it will keep extracting data for you without manual intervention
+
+- https://github.com/dylan-sutton-chavez/llm-web-crawler /202510/python
+  - A horizontally scalable web crawling engine designed for structured content extraction. 
+  - It performs URL normalization, HTML parsing, Markdown conversion, and LLM post-processing (using xai_sdk with grok). 
+  - Output is serialized in line-delimited JSON (`.jsonl`).
+  - A crawler functions similarly to how a graph works. Basically, each web page behaves like a node, where a single node can point to n number of websites, and multiple nodes can point to the same website. The navigation of a crawler is based on the same principle as a graph traversal; in this case, I will base it on a breadth-first search (`BFS`) model.
+  - The Crawler module implements a horizontal-scalable architecture, where you can create one Crawler module with hundreds of nodes (sharing the same memmory, but managing hundreds of asynchronous processes).
+  - 依赖 requests、html-to-markdown、jsonlines、xai_sdk
 # github-repo
 - https://github.com/ahmedkhaleel2004/gitdiagram /MIT/202503/python/ts
   - https://gitdiagram.com/

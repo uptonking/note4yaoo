@@ -49,9 +49,19 @@ modified: 2024-02-11T15:11:31.598Z
   - Fastify - event api
   - Redis - cache layer, pub/sub and queue
 
-- https://github.com/SigNoz/signoz /23.9kStar/MIT+EE/202403/go/ts
+- https://github.com/SigNoz/signoz /23.9kStar/MIT+EE/202510/go/ts
+  - https://signoz.io/
   - open-source observability platform native to OpenTelemetry with logs, traces and metrics in a single application
   - An open-source alternative to DataDog, NewRelic, etc
+  - Built on top of OpenTelemetry, the open-source standard which frees you from any type of vendor lock-in
+  - 依赖httpsnoop、go-sqlbuilder
+  - Use SigNoz APM to monitor your applications and services. It comes with out-of-box charts for key application metrics like p99 latency, error rate, Apdex and operations per second. You can also monitor the database and external calls made from your application
+  - SigNoz can be used as a centralized log management solution. We use ClickHouse as a datastore
+  - Monitor exceptions automatically in Python, Java, Ruby, and Javascript. For other languages, just drop in a few lines of code and start monitoring exceptions.
+  - [Is Signoz really open-source or not? _202312](https://github.com/SigNoz/signoz/discussions/4231)
+    - SigNoz is fully open-source. However, ee folder is under SigNoz Enterprise license, while the rest of the code is under MIT Expat license.
+    - Yes, you can self host SigNoz and use it in production. Only features in community edition will be available in the open source self hosted version. Some features will be only unlocked once you take the enterprise license.
+    - n update on this! With the demand from the community we removed any restrictions on number of dashboards and alert panels in community edition from v0.47.0
 
 - https://github.com/highlight/highlight /8.9kStar/apache2+EE/202510/go/ts
   - https://app.highlight.io/
@@ -70,6 +80,9 @@ modified: 2024-02-11T15:11:31.598Z
     - Similar to Grafana, Nightingale also connects with various existing data sources. 
     - However, while Grafana emphasizes visualization, Nightingale places greater emphasis on the alerting engine, as well as the processing and distribution of alarms.
     - initially developed and open-sourced by DiDi.inc. On May 11, 2022, it was donated
+  - Nightingale itself does not provide monitoring data collection capabilities. We recommend using Categraf as the collector
+    - Categraf can collect monitoring data from operating systems, network devices, various middleware, and databases. It pushes this data to Nightingale via the Prometheus Remote Write protocol. 
+    - Nightingale then stores the monitoring data in a time-series database (such as Prometheus, VictoriaMetrics, etc.) and provides alerting and visualization capabilities.
 
 - https://github.com/perses/perses /1.6kStar/apache2/202510/go/ts
   - https://demo.perses.dev/

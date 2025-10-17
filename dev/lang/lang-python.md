@@ -10,12 +10,18 @@ modified: 2020-07-14T09:27:30.503Z
 # guide 🐍
 
 - classic-examples-python
+  - tips: 数据与ai计算的主力语言，也能快速开发业务
   - editor: lasuite-docs, jupyter(framework)
   - ai: 🌹 langgraph
+  - data: superset
   - crdt
   - git-like
   - apps: docling
-  - more: flask, superset, json-parser, tree
+  - more: json-parser, tree
+
+- tutorials 🧑‍🏫
+  - [Python Cheatsheet](https://www.pythoncheatsheet.org/cheatsheet/basics)
+  - https://github.com/gto76/python-cheatsheet
 
 - who is using #python
   - 国内: 
@@ -27,8 +33,6 @@ modified: 2020-07-14T09:27:30.503Z
   - https://github.com/pyenv/pyenv
 
 - resources-python
-  - [Python Cheatsheet](https://www.pythoncheatsheet.org/cheatsheet/basics)
-  - https://github.com/gto76/python-cheatsheet
   - [Built-in Functions — Python documentation](https://docs.python.org/3/library/functions.html)
 # python3
 

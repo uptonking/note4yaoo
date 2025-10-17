@@ -31,6 +31,8 @@ modified: 2023-11-23T09:56:33.507Z
   - [Support custom elements 已支持](https://github.com/snabbdom/snabbdom/issues/141)
   - [Isomorphic snabbdom](https://github.com/snabbdom/snabbdom/issues/86)
     - I have put together a little starter kit that does SSR with snabbdom-to-html
+  - [TodoMvc perfs comparison _202507](https://github.com/snabbdom/snabbdom/issues/7)
+    - I think the performance boost is mainly due to debounced updates. the vdom-patch-live used by @ismail-codar is based on vdom-live which is said to "use `requestAnimationFrame` to queue and debounce re-renders". To verify that i modified unReact to debounce patch calls within requestAnimationFrame. here are the new results
 - https://github.com/ged-odoo/blockdom
   - Owl framework 1.x is based on a fork of snabbdom
   - version 2 is not ready yet, but will be based on blockdom.
@@ -48,6 +50,24 @@ modified: 2023-11-23T09:56:33.507Z
   - examples
     - https://github.com/irony/pureact-todo
     - https://github.com/iteam1337/mandatkollen
+- https://github.com/d6u/example-redux-update-nested-props /201605/js
+  - snabbdom-thunk
+- https://github.com/CIUK/snabbdom-react-components /MIT/201904/js
+  - React like, Snabbdom based, Virtual Dom framework for JavaScript Web Applications
+  - React Based lifecycle mechanism which makes it so much easier to use in comparation to snabbdom hooks.
+- https://github.com/joyqi/snabbful /MIT/202305/ts/inactive
+  - simple, fast, and flexible library for building user interfaces by using Snabbdom.
+  - We add a state management layer on top of Snabbdom, and we provide a simple API for building user interfaces.
+  - There's no need to use useState or useReducer hooks, you can change the state directly
+- https://github.com/tinchoz49/snabbmitt /MIT/201704/js
+  - Stateful components in Snabbdom using Mitt and a subtree patching algorithm implementation
+- https://github.com/yelouafi/elm-arch-with-snabbdom /201802/js
+  - [Elm Architecture & Side Effects: example with Snabbdom/JSX _201511](https://medium.com/@yelouafi/elm-architecture-side-effect-examples-with-snabbdom-and-jsx-3732219d9995)
+  - https://github.com/yelouafi/snabbdom-todomvc
+- https://github.com/AlexGalays/kaiju /MIT/201808/js/inactive
+  - kaiju is a view layer used to build an efficient tree of stateless/stateful components and help you manage that tree data.
+  - kaiju comes with an implementation of observables (also known as streams) so that components can more easily declare how their state should change based on user input and any other observable changes in the application.
+  - Observables are completely optional: If you are more confident with just sending messages around every time the state should update, you can do that too
 
 - https://github.com/livoras/simple-virtual-dom /MIT/202003/js
   - Simple virtual-dom algorithm. It has only ~500 lines of code

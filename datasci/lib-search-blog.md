@@ -105,6 +105,8 @@ modified: 2023-01-03T14:52:51.355Z
 
 - 本文主要讲解了在 Elasticsearch 中是如何利用倒排索引来进行数据检索的，并讲述了倒排索引中的 FOR 和 RBM 两种压缩算法的原理以及使用场景，最后对比了字典树（前缀树）和 FST 两种数据结构存储的区别，并最终得出了为什么 es 中选择 FST 而不是选择字典树来进行存储索引数据的原因。
 
+## [The technology behind GitHub’s new code search | Hacker News _202302](https://news.ycombinator.com/item?id=34680903)
+
 ## [The technology behind GitHub’s new code search | The GitHub Blog_202302](https://github.blog/2023-02-06-the-technology-behind-githubs-new-code-search/)
 
 - To solve code search at GitHub's scale, we built a search engine from scratch in Rust that can run regex searches across 45 million repositories in seconds. Learn how.

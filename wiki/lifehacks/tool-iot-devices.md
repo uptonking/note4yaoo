@@ -2241,7 +2241,14 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## 🆚 [Apple MacBook Pro Geekbench performance compared (M1 to M5) : r/mac _202510](https://www.reddit.com/r/mac/comments/1o916qg/apple_macbook_pro_geekbench_performance_compared/)
+- Apple has strong GPU and Neural Engine capabilities. What they don’t have is the software stack. 
+  - Nvidia built a lot of software tools to take advantage of their GPU, including helping science and engineering codes port and optimize for their CUDA libraries.
+- Apple helped both TensorFlow and PyTorch ML libraries move to Metal, but I’m hoping there will be a broader effort to handle CUDA much like the Game Porting Toolkit, etc
+
+- Depends what you meant by that.
+  - Apple is working on CUDA backend for MLX, so you will be able to write programs which will be run on CUDA compatible GPUs.
+  - However in other direction - running CUDA code on Apple - probably never. Well, it doesnt make much sense as CUDA is designed for enterprise solutions and Apple focus is on consumer grade hardware.
 
 - ## [M4 Max 128 GB vs Binned M3 Ultra 96 GB Mac Studio? : r/LocalLLM _202503](https://www.reddit.com/r/LocalLLM/comments/1j8tyjr/m4_max_128_gb_vs_binned_m3_ultra_96_gb_mac_studio/)
 - What do you mean “binned”?

@@ -29,6 +29,12 @@ modified: 2025-09-23T09:28:08.532Z
   - open-source authentication and authorization server providing two-factor authentication and single sign-on (SSO) for your applications via a web portal. 
   - It acts as a companion for reverse proxies by allowing, denying, or redirecting requests.
   - Authelia can be installed as a standalone service from the AUR, APT, FreeBSD Ports, or using a static binary, .deb package, as a container on Docker or Kubernetes.
+  - 依赖fasthttp 、fasthttp/router、fsnotify、webauthn、sqlx、koanf/v2
+
+- https://github.com/ory/kratos /12.4kStar/apache2/202510/go
+  - Headless cloud-native authentication and identity management written in Go.
+  - 依赖httprouter、sqlx
+  - https://github.com/ory/hydra
 
 - https://github.com/casdoor/casdoor /12.3kStar/apache2/202509/go/国人主导
   - https://casdoor.org/

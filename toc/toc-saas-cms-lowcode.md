@@ -249,6 +249,15 @@ modified: 2023-01-20T21:59:47.792Z
     - Atomic Data is Linked Data, as it is a strict subset of RDF.
     - The default serialization format for Atomic Data is JSON-AD
 
+- https://github.com/wagtail/wagtail /19.7kStar/BSD/202510/python/django
+  - https://wagtail.org/
+  - A Django content management system focused on flexibility and user experience
+  - Content API for 'headless' sites with decoupled front-end
+  - StreamField encourages flexible content without compromising structure
+  - integrated search, using Elasticsearch or PostgreSQL
+  - Excellent support for images and embedded content
+  - Runs on a Raspberry Pi or a multi-datacenter cloud platform
+
 - https://github.com/openstax/openstax-cms /AGPLv3/202501/python
   - https://openstax.org/
   - The OpenStax CMS, built using Wagtail on top of Django.
@@ -306,8 +315,6 @@ modified: 2023-01-20T21:59:47.792Z
   - https://erxes.io/
   - source available experience management infrastructure.
   - erxes is composed of 2 main components: XOS & Plugins
-
-
 # in-memory/json-cms/dashboard
 - TiddlyWiki5 /7.5kStar/BSD/202311/js
   - https://github.com/Jermolene/TiddlyWiki5

@@ -518,6 +518,7 @@ modified: 2023-11-21T10:17:34.596Z
   - [React-less Virtual DOM with Snabbdom_201507](https://medium.com/@yelouafi/react-less-virtual-dom-with-snabbdom-functions-everywhere-53b672cb2fe3)
 - https://github.com/yelouafi/elm-examples-js /201511/js
   - examples for the article [Elm Architecture & Side Effects: example with Snabbdom/JSX_201511](https://medium.com/@yelouafi/elm-architecture-side-effect-examples-with-snabbdom-and-jsx-3732219d9995)
+  - https://github.com/yelouafi/elm-arch-with-snabbdom /201802/js
 
 - https://github.com/huytd/kanelm /201904/elm
   - Kanban board built with Elm

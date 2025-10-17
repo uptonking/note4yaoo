@@ -14,7 +14,7 @@ modified: 2025-04-17T08:17:04.770Z
 # starter/template
 
 - https://github.com/gothinkster/golang-gin-realworld-example-app /MIT/202208/go/inactive
-  - Exemplary real world application built with Golang + Gin
+  - Exemplary real world application built with Golang + Gin/gorm
   - 🍴 forks
   - https://github.com/alphawy45/golang-gin-realworld-example-app /202407
   - https://github.com/Alero-Awani/golang-gin-realworld-example-app /202405/ci
@@ -67,9 +67,39 @@ modified: 2025-04-17T08:17:04.770Z
   - 依赖gin、sonic、pgvector、supertokens
   - [How to Run an Open Source AI Text Editor - YouTube _202409](https://www.youtube.com/watch?v=InxEMuPLCx4)
 # utils
+- https://github.com/go-echarts/go-echarts /7.4kStar/MIT/202510/go
+  - https://go-echarts.github.io/go-echarts/
+  - go-echarts aims to provide a simple yet powerful data visualization library for Golang.
+  - there have many program languages interactive with Echarts, such as pyecharts, which go-echarts learns and has evolved a lot from, and the echarts4j either.
 
 ## filesystem
 
 - https://github.com/orbstack/fsnotify-macvirt
   - fsnotify is a Go library to provide cross-platform filesystem notifications on Windows, Linux, macOS, BSD, and illumos.
+# gin
+- https://github.com/appleboy/gorush /8.6kStar/MIT/202509/go
+  - A push notification micro server using Gin framework written in Go (Golang) and see the demo app.
+  - Support Firebase Cloud Messaging using go-fcm library for Android.
+  - Support different Queue as backend like NSQ, NATS or Redis streams, defaut engine is local Channel.
+  - 依赖gin、httpsnoop、nsq、nats
+
+- https://github.com/openimsdk/open-im-server /15.3kStar/AGPL > apache2/202510/go
+  - https://openim.io/
+  - Unlike standalone chat applications such as Telegram, Signal, and Rocket. Chat, OpenIM offers an open-source instant messaging solution designed specifically for developers rather than as a directly installable standalone chat app
+  - Comprising OpenIM SDK and OpenIM Server, it provides developers with a complete set of tools and services to integrate instant messaging functions into their applications
+  - 依赖gin、gorm、rockscache、jwt、websocket、grpc、gokit、cobra、kafka
+  - 202311改为使用mongodb，未使用gorm，[Feat/mongo pr](https://github.com/openimsdk/open-im-server/pull/1447)
+  - 依赖多，有点乱
+  - 🏠 Microservices Architecture: Supports cluster mode, including a gateway and multiple rpc services.
+  - Diverse Deployment Options: Supports source code, Kubernetes, or Docker deployment.
+  - Supports large-scale groups with hundreds of thousands, millions of users, and billions of messages.
+  - OpenIM aims to provide developers with the necessary tools and framework to implement efficient instant messaging solutions in their applications.
+  - OpenIMSDK, designed for OpenIMServer, is an IM SDK created specifically for integration into client applications.
+  - https://github.com/openimsdk/openim-sdk-core /447Star/AGPL/202509/go
+    - the core SDK of OpenIM, serving as the cross-platform foundation for all open-source OpenIM SDKs (excluding mini web).
+    - All open-source OpenIM SDKs (except mini web) are built upon this core layer, ensuring consistency, stability, and seamless cross-platform integration.
+  - https://github.com/openimsdk/openim-electron-demo /AGPL
+    - Instant Messaging web desktop Windows/Mac/Linux
+# examples
+
 # more

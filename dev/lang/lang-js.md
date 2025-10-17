@@ -11,6 +11,7 @@ modified: 2020-07-14T09:26:50.808Z
 
 # guide ⤴️
 - classic-examples-js/ts
+  - tips: 交互丰富，editor/excel/workflow，存储层网络层要使用偏系统底层语言
   - editor: 🌹 codemirror, prosemirror, typewriter
   - excel-model: grist
   - flow-graph: maxgraph, litegraph
@@ -22,11 +23,13 @@ modified: 2020-07-14T09:26:50.808Z
   - utils: persistent-data-structure
   - more: wasm, json-parser, tree, kanban
 
-- js vm bytecode
-- Replace `arr.filter().map()` with `arr.reduce()`
-  - 可以减少遍历次数
-- tutorial
+- tutorial 🧑‍🏫
+  - https://github.com/mudssrali/typescript-cheatsheet
   - [mdn: JavaScript's basic grammar, variable declarations, data types and literals.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types)
+  - [Hooks | React TypeScript Cheatsheets](https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/hooks)
+  - [TypeScript: Cheat Sheets](https://www.typescriptlang.org/cheatsheets/)
+
+- js vm bytecode
 
 - [Runtime compatibility across JavaScript runtimes](https://runtime-compat.unjs.io/)
   - allows you to easily visualize the compatibility of different APIs (including WinterCG) across different JavaScript runtimes
@@ -53,7 +56,7 @@ modified: 2020-07-14T09:26:50.808Z
   - 把命令操作函数化
   - Proxy支持
 
-- `Object.getOwnPropertyDescriptor`,                        `Object.keys`等方法对应的就是强类型语言的反射，它们分散各自类型的静态方法上并不合适，ES6收敛到Reflect上是对语言的进一步规范化。
+- `Object.getOwnPropertyDescriptor`,                                       `Object.keys`等方法对应的就是强类型语言的反射，它们分散各自类型的静态方法上并不合适，ES6收敛到Reflect上是对语言的进一步规范化。
 
 - 对象上定义了14种接口，比如访问属性`[[GET]]`之类的，这些接口是内部C++使用的，我们代码访问不到。但是通过其他方式，比如js中的元老级对象Object，它的一些属性就可以间接调用这些接口。
   - 为什么要Reflect呢？因为Object这个函数上的属性太杂了，大概有20种左右，虽然其中包含了对象接口。但是这不太好，我们需要一个专门的对象来做这个事情。显然不可能重新设计Object，毕竟兼容性才是大哥。

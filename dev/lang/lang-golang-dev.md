@@ -9,16 +9,21 @@ modified: 2023-08-28T06:08:27.303Z
 
 # guide 🐭
 - classic-examples-golang
+  - tips: 比js擅长底层, 比rust擅长应用: gitea, answer
   - office: focalboard
   - crdt
   - git-like: 🌹 gitea, git-lfs, dolt, zoekt(code-search)
   - flomo-like: usememos, 
   - cloud-drive: 🌹 opencloud-be, filebrowser, minio
-  - monitoring: openreplay, highlight, grafana(AGPL)
+  - monitoring: openreplay(AGPL), highlight(apache2), grafana(AGPL)
   - cloud-native: gitpod, coder, devpod, LiveKit
   - ai: ollama
   - apps: apache-answer, mattermost
   - more: json-parser, tree
+
+- tutorials 🧑‍🏫
+  - https://github.com/a8m/golang-cheat-sheet
+  - [Golang Cheat Sheet - DEV Community](https://dev.to/elmyrockers/golang-cheat-sheet-3d20)
 
 - who is using #golang
   - 国内: 

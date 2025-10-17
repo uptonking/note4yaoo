@@ -167,4 +167,23 @@ modified: 2023-10-26T15:29:40.053Z
   - Opinionated SQL-powered productive roll-forward migration tool for PostgreSQL.
   - roll-forward only — maintaining rollbacks is a chore, and in 10 years of API development I've never ran one in production
   - fully functional — sending SQL commands directly to PostgreSQL means you can use all of PostgreSQL's features
+# scaling
+- https://github.com/pgdogdev/pgdog /2.7kStar/AGPL/202510/rust
+  - https://pgdog.dev/
+  - Horizontal scaling for PostgreSQL with automatic sharding.
+  - PgDog is a transaction pooler and logical replication manager that can shard PostgreSQL. 
+  - Written in Rust, PgDog is fast, secure and can manage hundreds of databases and hundreds of thousands of connections.
+  - PgDog is an application layer (OSI Level 7) load balancer for PostgreSQL. 
+    - It understands the Postgres protocol, can proxy multiple replicas (and primary) and distributes transactions evenly between databases. 
+    - It supports multiple strategies, like round robin, random and least active connections. 
+    - PgDog can also inspect queries and send `SELECT` queries to replicas, and all others to the primary. This allows to proxy all databases behind a single PgDog deployment.
+  - Like PgBouncer, PgDog supports transaction (and session) pooling, allowing 100, 000s of clients to use just a few PostgreSQL server connections.
+  - PgDog is able to handle databases with multiple shards by routing queries automatically to one or more shards. 
+  - PgDog does its best to minimize its impact on overall database performance. 
+    - Using Rust and Tokio is a great start for a fast network proxy, but additional care is also taken to perform as few operations as possible while moving data between client and server sockets. 
+
+- https://github.com/MollsReis/postgresql-horizontal /201904/js/inactive
+  - Horizontal PostgreSQL v11 scaling using FDWs and partition tables
+  - This is a proof-of-concept for a PostgreSQL logical+phsyical sharding strategy. 
+  - Taking advantage of postgres_fdw and table partitioning, this pattern allows for spreading the data from a partition table among multiple physical servers.
 # more

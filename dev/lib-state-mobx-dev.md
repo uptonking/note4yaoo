@@ -51,10 +51,6 @@ modified: 2023-04-07T03:10:46.225Z
   - because changes can be detected on a fine-grained level, JSON patches are supported out of the box.
   - because it supports snapshots, action middlewares and replayable actions out of the box, it is possible to replace a Redux store and reducer with a MobX data model. This makes it possible to connect the Redux devtools to mobx-keystone.
 
-- https://github.com/EasyWebApp/WebCell /202402/ts
-  - https://web-cell.dev/WebCell/
-  - Web Components engine based on VDOM, JSX, MobX & TypeScript
-
 ## mobx-view
 
 - https://github.com/botverse/vdom-mobx-example /201606/js
@@ -70,6 +66,12 @@ modified: 2023-04-07T03:10:46.225Z
   - Alternatively supports Tagged Template Literals or HyperScript
   - Tagged Template solution is much more performant that the HyperScript version, but HyperScript opens up compatibility with some companion tooling
   - [Solid and mobx-jsx comparison _202005](https://github.com/ryansolid/mobx-jsx/issues/17)
+
+- https://github.com/EasyWebApp/WebCell /AGPL/202509/ts
+  - https://web-cell.dev/WebCell/
+  - Web Components engine based on VDOM, JSX, MobX & TypeScript
+  - 语法使用decorator
+  - https://github.com/EasyWebApp/WebCell-scaffold
 
 ## undo/time-travel
 

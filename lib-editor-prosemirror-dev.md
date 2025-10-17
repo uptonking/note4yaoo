@@ -106,18 +106,20 @@ modified: 2021-05-06T09:39:53.522Z
 - markdown-partial
   - treesitter as markdown stream parser
 
-- collab
-  - codemirror in prosemirror: all collaborative
-
 - prosemirror-markdown
   - rewrite with remark
   - rewrite with codemirror/lezer
+
+- collab
+  - codemirror in prosemirror: all collaborative
 
 - chart
   - markdown-chart + llm
 
 - tiptap
   - ai-extension open version
+
+- 兼容obsidian extension
 
 - devtools
   - migrate prosemirror-dev-toolkit features to prosemirror-devtools
