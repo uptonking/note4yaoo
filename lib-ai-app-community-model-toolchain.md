@@ -32,7 +32,25 @@ modified: 2025-09-16T12:36:12.968Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🏠 [Scaling with Open WebUI + Ollama and multiple GPUs? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o9ssqd/scaling_with_open_webui_ollama_and_multiple_gpus/)
+  - At our organization, I am in charge of our local RAG System using Open WebUI and Ollama. So far, we only use a single GPU, and provide access to only our own department with 10 users. Because it works so well
+  - The final goal will be to provide all our around 1000 users access to Open WebUI (and LLMs like Mistral 24b, Gemma3 27b, or Qwen3 30b, 100% on premises).
+  - To provide sufficient VRAM and compute for this, we are going to buy a dedicated GPU server, for which currently the Dell Poweredge XE7745 in a configuration with 8x RTX 6000 Pro GPUs (96GB VRAM each) looks most appealing atm.
+  - However, I am not sure how well Ollama is going to scale over several GPUs. Is Ollama going to load additional instances of the same model into additional GPUs automatically to parallelize execution when e.g. 50 users perform inference at the same time? Or how should we handle the scaling?
+  - Would it be beneficial to buy a server with H200 GPUs and NVLink instead?
+
+- Instead of complicating and getting overkill hardware, just check and learn out vLLM. Its much suitable for these usecases.
+  - yep vLLM just `--data-parallel-size 8` out the entire system, and works well with Ray cluster so it has internal model router and LB for multiple model. and it has KV store backend, so multiple GPU can access the same already compute KV Cache
+  - although you can use NGINX as model router (as in api router, not internal of MoE model)
+
+- We just went through this exact scaling problem at Anthromind - started with one GPU for our internal team, then had to figure out multi-GPU serving when other departments wanted in. Ollama doesn't automatically parallelize across GPUs the way you're thinking.. it'll load one model instance per GPU but won't split a single request across multiple cards.
+  - For 1000 users you're gonna need to run multiple ollama instances behind a load balancer, each managing different GPUs. 
+  - The H200s with NVLink would be overkill for just inference honestly - those RTX 6000s should handle it fine if you set up proper request routing. 
+  - We ended up using a simple nginx setup to distribute requests across ollama instances, each pinned to specific GPUs.
+
+- I use LiteLLM to distribute my LLM requests to different ollama instances, running on different servers. This will solve your scaling challenge of the GPU. Also make sure, your embedding is also using a LLM instance, afaik default is cpu embedding in openweb zu instance
+
+- Maybe vllm or sglang with some load balancer, although a single RTX 6000 Blackwell may have enough FLOPS for 50 concurrent requests.
 
 - ## [What is your primary reason to run LLM’s locally : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1nsjwv1/what_is_your_primary_reason_to_run_llms_locally/)
 - For me, it is independence from Big Tech and venture capital. Open weight models can never be taken away from us.
@@ -409,7 +427,9 @@ modified: 2025-09-16T12:36:12.968Z
 
 - ## 
 
-- ## 
+- ## 🔧 [There is a space on HF where you can convert models to MLX without downloading them : r/LocalLLaMA _202503](https://www.reddit.com/r/LocalLLaMA/comments/1j3k8o8/there_is_a_space_on_hf_where_you_can_convert/)
+  - Well I just learned that there is a space on HF where you can convert models, you just enter the model name and the quant and it uploads it straight to your HF profile! No need to download or do anything at all. This also means I'm not limited by my ram, I can convert any model now and so should you :)
+  - https://huggingface.co/spaces/mlx-community/mlx-my-repo
 
 - ## [Best Local LLM for MacBook Air M3 with 24GB RAM : r/LocalLLaMA _202404](https://www.reddit.com/r/LocalLLaMA/comments/1bu65s6/best_local_llm_for_macbook_air_m3_with_24gb_ram/)
 - Rough rule of thumb is 2xParam Count in B = GB needed for model in FP16.
@@ -735,6 +755,11 @@ sudo launchctl load /Library/LaunchDaemons/io.yaoo.sysctl.plist
 
 - ## 
 
+- ## 
+
+- ## [LM Studio not reading document correctly. But why? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1o98vqd/lm_studio_not_reading_document_correctly_but_why/)
+- So rag-v1 plugin LM Studio is using has a simple rule: if file fits into 70% of remaining context, it will be fully injected - and this is what you want. Otherwise it resorts to RAG retrieval.
+
 - ## [In LM Studio + MoE Model, if you enable this setting with low VRAM, you can achieve a massive context length at 20 tok/sec. : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o6dnzc/in_lm_studio_moe_model_if_you_enable_this_setting/)
   - enable: Force Model Expert Weights onto CPU, Flash Attention
   - Worked for my 3060
@@ -793,7 +818,7 @@ sudo launchctl load /Library/LaunchDaemons/io.yaoo.sysctl.plist
 
 - because it's not open source, you cannot view their code or fork it to change it. the open source direct alternative to lmstudio is jan ai
 
-- ## [Is there an alternative to LM Studio with first class support for MLX models? : r/LocalLLaMA _202506](https://www.reddit.com/r/LocalLLaMA/comments/1l0ct34/is_there_an_alternative_to_lm_studio_with_first/)
+- ## 🍎 [Is there an alternative to LM Studio with first class support for MLX models? : r/LocalLLaMA _202506](https://www.reddit.com/r/LocalLLaMA/comments/1l0ct34/is_there_an_alternative_to_lm_studio_with_first/)
   - I've been using LM Studio for the last few months on my Macs due to it's first class support for MLX models (they implemented a very nice MLX engine which supports adjusting context length etc.
 - While it works great, there are a few issues with it:
   - it doesn't work behind a company proxy, which means it's a pain in the ass to update the MLX engine etc when there is a new release, on my work computers

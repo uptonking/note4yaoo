@@ -51,6 +51,14 @@ modified: 2025-04-17T08:17:04.770Z
 
 - https://github.com/techschool/simplebank
   - Backend master class: build a simple bank service in Go
+
+- https://github.com/restuwahyu13/go-rest-api /202105/go/inactive
+  - Example golang using gin framework everything you need, i create this tutorial special for beginner.
+  - Protected Route Using JWT
+  - Integerasi ORM Database Using Gorm
+
+- https://github.com/qaware/cloud-native-weather-golang /MIT/202208/go/inactive
+  - A simple weather REST service using Golang, Gin and GORM.
 # web-fwk
 - https://github.com/gin-gonic/gin /81.8kStar/MIT/202504/go
   - https://gin-gonic.com/
@@ -67,6 +75,16 @@ modified: 2025-04-17T08:17:04.770Z
   - 依赖gin、sonic、pgvector、supertokens
   - [How to Run an Open Source AI Text Editor - YouTube _202409](https://www.youtube.com/watch?v=InxEMuPLCx4)
 # utils
+- https://github.com/torabian/fireback /AGPL/202508/go/inactive
+  - Define yaml, generate code, generate sdks for fronts.
+  - Fireback is a microservice-oriented backend framework written in Go. 
+  - It's designed for developers who want to build fast, scalable, and modular systems without boilerplate
+  - https://github.com/kangourouuu/backend_template_personal
+    - A backend code scaffolding tool built in Go — enabling developers to instantly generate full-featured RESTful projects and CRUD logic using flexible API inputs.
+
+- https://github.com/singhdurgesh/rednote /MIT/202406/go/inactive
+  - Boilerplate Web Application with Go, Postgres, Redis, RabbitMQ, and CI/CD Integration
+
 - https://github.com/go-echarts/go-echarts /7.4kStar/MIT/202510/go
   - https://go-echarts.github.io/go-echarts/
   - go-echarts aims to provide a simple yet powerful data visualization library for Golang.
@@ -100,6 +118,11 @@ modified: 2025-04-17T08:17:04.770Z
     - All open-source OpenIM SDKs (except mini web) are built upon this core layer, ensuring consistency, stability, and seamless cross-platform integration.
   - https://github.com/openimsdk/openim-electron-demo /AGPL
     - Instant Messaging web desktop Windows/Mac/Linux
+
+- https://github.com/apache/dubbo-admin /4kStar/apache2/202510/go
+  - https://dubbo.apache.org/
+  - Dubbo Admin is the console designed for better visualization of Dubbo applications.
+  - 依赖gin、go-restful
 # examples
 
 # more

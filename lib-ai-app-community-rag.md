@@ -541,7 +541,21 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## 🆚 [I tested local models on 100+ real RAG tasks. Here are the best 1B model picks : r/Rag _202510](https://www.reddit.com/r/Rag/comments/1o60ib6/i_tested_local_models_on_100_real_rag_tasks_here/)
+- Best model by real-life file QA tasks (Tested on 16GB Macbook Air M2)
+  - I’m building this local file agent for RAG - Hyperlink. The idea of this test is to really understand how models perform in privacy-concerned real-life tasks
+- tests result
+  - A — Find facts + cite sources → Qwen3–1.7B-MLX-8bit
+  - B — Compare evidence across files → LMF2–1.2B-MLX
+  - C — Build timelines → LMF2–1.2B-MLX
+  - D — Summarize documents → Qwen3–1.7B-MLX-8bit & LMF2–1.2B-MLX
+  - E — Organize themed collections → stronger models needed
+- Tasks Types (High Frequency, Low NPS file RAG scenarios)
+  - Find facts + cite sources — 10 PDFs consisting of project management documents
+  - Compare evidence across documents — 12 PDFs of contract and pricing review documents
+  - Build timelines — 13 deposition transcripts in PDF format
+  - Summarize documents — 13 deposition transcripts in PDF format.
+  - Organize themed collections — 1158 MD files of an Obsidian note-taking user.
 
 - ## [The “new RAG every week” problem — do we really need to switch frameworks this often? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o764lj/the_new_rag_every_week_problem_do_we_really_need/)
   - It feels like every couple of weeks, there’s a brand-new “next-generation” RAG framework popping up — R2R, LightRAG, RAGFlow, and now a few others that just launched on GitHub.

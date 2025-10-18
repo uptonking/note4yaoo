@@ -23,12 +23,16 @@ modified: 2025-02-21T17:17:42.225Z
   - an open-source AI-native creation engine powered by 13+ leading AI models. 
   - Its intuitive free-form canvas interface integrates multi-threaded conversations, multimodal inputs (text/images/files), RAG 
 # workflow-ai
-- https://github.com/FlowiseAI/Flowise /42.5kStar/apache2+EE/202508/ts
+- https://github.com/FlowiseAI/Flowise /42.5kStar/apache2+EE/202510/ts
   - https://flowiseai.com/
   - https://docs.flowiseai.com/
   - Drag & drop UI to build your customized LLM flow
   - Open source low-code tool for developers to build customized LLM orchestration flow & AI agents
   - 大量使用 LangchainJS, 支持langchain的各种组件
+
+- https://github.com/simstudioai/sim /17.1kStar/apache2/202510/ts
+  - https://www.sim.ai/
+  - Open-source platform to build and deploy AI agent workflows.
 
 - https://github.com/browser-use/workflow-use /AGPL/python
   - Create and run workflows (RPA 2.0)
@@ -52,7 +56,7 @@ modified: 2025-02-21T17:17:42.225Z
   - Flexible Orchestration: Equipped with a powerful workflow engine, function library and MCP tool-use, enabling the orchestration of AI processes to meet the needs of complex business scenarios.
 
 - https://github.com/PySpur-Dev/PySpur /5.4kStar/apache2/202507/python/ts
-  - https://pyspur.dev/
+  - https://www.pyspur.dev/
   - A visual playground for agentic workflows: use it to build agents, execute them step-by-step and inspect past runs.
   - Build the agent in Python code or via UI
   - Human in the Loop: Persistent workflows that wait for human approval.

@@ -61,12 +61,36 @@ modified: 2024-02-11T15:11:31.598Z
   - [Is Signoz really open-source or not? _202312](https://github.com/SigNoz/signoz/discussions/4231)
     - SigNoz is fully open-source. However, ee folder is under SigNoz Enterprise license, while the rest of the code is under MIT Expat license.
     - Yes, you can self host SigNoz and use it in production. Only features in community edition will be available in the open source self hosted version. Some features will be only unlocked once you take the enterprise license.
-    - n update on this! With the demand from the community we removed any restrictions on number of dashboards and alert panels in community edition from v0.47.0
+    - update on this! With the demand from the community we removed any restrictions on number of dashboards and alert panels in community edition from v0.47.0
+  - [SigNoz | Pricing](https://signoz.io/pricing/)
+    - Anomaly Detection
+    - Pre-built integrations & dashboards (AWS ElastiCache Redis, AWS RDS MySQL/PostgreSQL, ClickHouse, MongoDB, NGINX, PostgreSQL, Redis)
+    - Support for Rate Limits based on Ingestion keys
+    - Custom retention for different sources of logs
+    - Finer RBAC with custom roles
+    - Multi-tenancy
 
 - https://github.com/highlight/highlight /8.9kStar/apache2+EE/202510/go/ts
   - https://app.highlight.io/
   - open source, full-stack monitoring platform.
   - Error monitoring, session replay, logging, distributed tracing, and more.
+  - Dom-based High-fidelity Replay: powered by rrweb
+  - 依赖rrweb、chi、gorm、go-sqlbuilder、httpsnoop、go-retryablehttp、httpcc、kafka-go
+  - [Application Architecture](https://www.highlight.io/docs/general/company/open-source/contributing/architecture)
+  - [Is Kafka the Key? The Evolution of Highlight's Ingest _202209](https://www.highlight.io/blog/scalable-data-processing-with-apache-kafka)
+    - At Highlight, we face a unique challenge when it comes to adapting to the load of our customers. Because we record our customers' web apps, we need to be able to handle bursts of traffic as they come from their users.
+    - When we first started, our data ingested was simple: we would stream data from our recording client to our backend and perform updates as it came in. Our data handlers would perform metadata updates and write session recordings to PostgreSQL via SQL queries
+    - The initial approach worked fine for a while. But as our customer base grew, we ran into key issues with this implementation. We had to run some database migrations that ran an ALTER command with an aggressive table lock. 
+    - Since we needed a way to buffer data, we considered various techniques that could accomplish the task. One idea was to abstract each backend payload into a 'message' to be put into a buffer and consumed by a worker. 
+    - As we evaluated our options, we settled on a producer-consumer message strategy. Our architecture would have our backend HTTP request handlers produce 'task' messages that would block until the data was sent to our chosen broker. The messages would arrive at the broker quickly and reside until a worker machine could consume them and process their data. 
+    - Focusing on the specifics of Apache Kafka, we had to define partitions that would store the sets of messages. 
+  - [Self-hosted [Enterprise] paid](https://www.highlight.io/docs/general/company/open-source/hosting/self-host-enterprise)
+    - Platform Integrations (Teams, Slack, Sendgrid, etc..)
+    - Email Integrations (Sendgrid, SMTP, etc..)
+    - User Management Support (RBAC, SSO, SSL, etc..)
+    - HA Deploy & Persistent Storage
+    - Custom Retention Policies
+    - Automatic Upgrades
   - [add enterprise license _202309](https://github.com/highlight/highlight/pull/6562)
 
 - https://github.com/openreplay/openreplay /8.2kStar/AGPL/202412/ts/go/python
@@ -139,19 +163,53 @@ modified: 2024-02-11T15:11:31.598Z
   - Unleash is the open source feature toggle service.
   - Unleash increases efficiency and gives teams full control of how and when they enable new functionality for end users.
 
-- https://github.com/PostHog/posthog /MIT/202402/python/ts
+- https://github.com/PostHog/posthog /29.7kStar/MIT+EE/202510/python/ts
   - https://posthog.com/
   - open-source product analytics, session recording, feature flagging and A/B testing that you can self-host.
   - Analyze data with ready-made visualizations, or do it yourself with SQL
+  - [Consider use redpanda to replace kafka _202502](https://github.com/PostHog/posthog/issues/29283)
+    - give a investigation to replace kafka with redpanda（kafka api compatible）, i think there may have a significant performance improve, self host are too much heavy use `kafka and clickhouse`
+    - i use this to replace rocketMQ on my own project, it's simplicity for maintain
+
+- https://github.com/growthbook/growthbook /7kStar/MIT+EE/202510/ts
+  - https://www.growthbook.io/
+  - Open Source Feature Flagging and A/B Testing Platform
+
+- https://github.com/Flagsmith/flagsmith /6kStar/BSD/202510/python/ts
+  - https://www.flagsmith.com/
+  - open source feature flagging and remote config service. 
+  - A/B testing: Use segments to run A/B and multivariate tests on new features
+  - Segments: Release features to beta testers, collect feedback, and iterate
+  - The majority of our platform is open source under the BSD-3-Clause license. A small number of repositories are under the MIT license.
+    - Our core functionality stays open, always
+    - Enterprise-level governance and management features are available with a valid Flagsmith Enterprise license.
+
+- https://github.com/thomaspoignant/go-feature-flag /1.8kStar/MIT/202510/go/js
+  - https://gofeatureflag.org/
+  - a simple, complete and lightweight self-hosted feature flag solution 100% Open Source
+  - Run A/B testing experimentation.
+  - 依赖pubsub、echo、go-render
+  - ⚖️ With the new standardization of feature flags by the [Openfeature](https://openfeature.dev/) project, the solution is now available for multiple languages (list of supported languages) through a simple API server called the relay proxy, which can be hosted.
+  - Originally GO Feature Flag was built to be a GOlang only library, but it limits the ecosystem too much. To be compatible with more languages we have implemented the GO Feature Flag Relay Proxy. It is a service you can host that provides an API to evaluate your flags, you can call it using HTTP to get your variation.
+  - [Store your flags’ configuration ](https://gofeatureflag.org/docs/integrations/store-flags-configuration)
+    - The easiest way to get started with GO Feature Flag is to store your flags' configuration in a file. you can create your own custom retriever.
+  - [GO Feature Flag flag edition API proposal _202409](https://github.com/thomaspoignant/go-feature-flag/discussions/2431)
+    - Some developers (but also POs, SREs, DSs) may prefer a more visual interface for managing feature flags.
+    - there is a common need to build an API aiming to provide a flexible and extensible solution that allows for the creation of user interfaces on top of the existing feature flag management system.
+  - The repository containing a raw version of this API is available here https://github.com/go-feature-flag/flag-management
+
+- https://github.com/openflagr/flagr /2.5kStar/apache2/202510/go/vue
+  - https://openflagr.github.io/flagr
+  - a feature flagging, A/B testing and dynamic configuration microservice
+  - 依赖gorm、simplebox、grpc、pubsub、httpsnoop
+  - [Question: Any Plans to support the Cloud Native Foundation's Open Feature standard? _202302](https://github.com/openflagr/flagr/issues/527)
 
 - https://github.com/flipt-io/flipt /4.6kStar/FSL >> MIT/202510/go/ts
   - https://flipt.io/
   - open source, self-hosted feature flag solution
   - Flipt v2 is the first truly Git-native feature management platform that treats your feature flags as code. Store your flags in your own Git repositories
-
-- https://github.com/growthbook/growthbook
-  - Open Source Feature Flagging and A/B Testing
-  - SDKs for React, Javascript, PHP, Ruby, Python, Go, and Kotlin (Android) with more coming soon
+  - [chore(v2): lay groundwork for v2 _202501](https://github.com/flipt-io/flipt/pull/3829/files#diff-c693279643b8cd5d248172d9c22cb7cf4ed163a3c98c8a3f69c2717edd3eacb7)
+    - license: GPL > FSL
 
 - https://github.com/marcellothiry/feature-flags
   - This is the complementary repository for our video series Implementing Feature Flags from Scratch

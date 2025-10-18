@@ -68,6 +68,7 @@ modified: 2021-07-20T13:50:23.433Z
   - rspack: js plugin; rspack/rolldown-wasm
   - 考虑维护/fork旧版项目: codemirror5-lang/demo, atlaskit-editor-eg, mxgraph-demo
   - 考虑把port主流项目: codemirror-go/rust
+  - techstacks: editor, excel, workflow, drive, whiteboard
   - ~~animation: motion(dom/svg)~~
 
 - 技术细节(editor): virtualized, draggable, table(eav)

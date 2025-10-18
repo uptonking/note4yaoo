@@ -40,7 +40,36 @@ modified: 2023-04-25T17:48:06.146Z
 - [Understanding Distributed Tracing with a Message Bus | Honeycomb _202302](https://www.honeycomb.io/blog/understanding-distributed-tracing-message-bus)
   - That's the blog I wrote for .net and servicebus, but the process is the same for others.
 
+# discuss-ai-monitoring
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [This is how I track usage and improve my AI assistant without exposing sensitive data : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o7v8bi/this_is_how_i_track_usage_and_improve_my_ai/)
+  - As I stepped into Engineering Manager role (a transition from all day of developing/hacking/analyzing/cleaning data pipelines to limited time of doing that and more time on connecting engineering efforts to business output), it became my duty to prove ROI of the engineering efforts I and my team puts in. I realized the importance of tracking key metrics for the project because You can't improve what you don't measure
+  - Track from day 1: Don't wait until things "settle down"
+  - Standardize the tracking schema: Don't reinvent the wheel in each project, save time and energy with the standardized tracking schema for tracking events. These are the key events and their properties that I track
+  - I track following metrics primarily: Engagement metrics, Latency and cost, Ratings and feedback
+  - AI assistants contain prompts which has a lots of PII and we do need to send the tracking data to downstream tools (e.g. mixpanel, power BI, etc.) for different kinds of analysis such as user behavior, conversion, ROI, engineering metrics, etc
+  - in order to avoid sending this PII to these downstream tools, I used LLM to classify intent from the prompt, and replaced prompt with that intent category, good enough for the analytics I need and does not expose my customer's sensitive data with these downstream tools.
+  - one more thing : Keep things simple. It is tempting to overengineer and track too much data we don't really need or setup tooling we don't really need. For a hobby side project, I might even skip the warehouse setup but in a professional business setting, I usually have it as the first step (or push the team to do this first).
+
+- If you want privacy-first analytics that actually drives roadmap, version events, pseudonymize deterministically, and log RAG quality signals, not just clicks.
+  - Use salted hashes for user_id and response_id so you can stitch sessions without PII; 
+  - store raw prompts encrypted with a short TTL and only fan out derived fields.
+  - Add event_version and schema_version, and fail CI when payloads don’t match the spec to stop property drift.
+  - For intent classification, keep a fixed taxonomy and a confidence score; fall back to rules under a threshold; review a small random sample weekly; cache by prompt fingerprint to cut cost.
+  - For RAG and agents, track retrieval hit rate, overlap, tool-call retries, token_cost_by_stage, and final resolution; those explain bad ratings better than latency alone.
+  - In short, measure from day one with a versioned schema, deterministic privacy, and RAG-aware metrics so the numbers steer the product.
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 维护+暴露在公网的服务已经超过 10 个了，需要有一个监控所有服务的服务了，找了一圈后我选中了“Uptime Kuma”。

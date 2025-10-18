@@ -211,11 +211,21 @@ modified: 2020-10-22T10:22:55.878Z
 - https://github.com/towersxu/draft-flow
   - 基于LogicFlow和rough.js实现的手绘风格流程图
 
-- https://github.com/bytedance/flowgram.ai /MIT/202505/ts
+- https://github.com/bytedance/flowgram.ai /MIT/202505/ts/功能全面
   - https://flowgram.ai/
+  - https://flowgram.ai/examples/playground.html
   - a node-based flow building engine that helps developers quickly create workflows in either fixed layout or free connection layout modes.
+  - 基于dom实现的节点图方案
+  - 支持plugin、物料
+  - core依赖inversify、@phosphor/messaging、@@tweenjs/tween.js、reflect-metadata
+  - runtime支持js/nodejs, 其中nodejs依赖@fastify/websocket、@trpc/server
   - Fixed layout: where nodes can be dragged to specified positions, with support for compound nodes like branches and loops.
   - Free layout: where nodes can be placed anywhere and connected using free-form lines.
+  - Motion 动画在 Web 端应用可追溯到 Material Design，里边提到元素的变化如宽高或位置需要一个过渡过程，画布引擎会把线条和节点拆分单独绘制，使实现 Motion 过渡动画成本大大降低
+  - 💫 https://flowgram.ai/en/examples/fixed-layout/fixed-feature-overview.html
+    - 提供了执行进度的示例动画
+  - 线上应用: 扣子工作流、飞书多维表格工作流、飞书低代码平台工作流
+  - 官方物料目前底层基于 Semi Design 实现，业务如果有底层组件库的诉求，可以通过 CLI 复制源码进行替换
 
 - https://github.com/alibaba/butterfly /js
   - 基于JS的数据驱动的节点式编排组件库

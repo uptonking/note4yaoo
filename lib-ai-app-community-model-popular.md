@@ -540,7 +540,16 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## 🆚 [[Experiment] Qwen3-VL-8B VS Qwen2.5-VL-7B test results : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1o9xf4q/experiment_qwen3vl8b_vs_qwen25vl7b_test_results/)
+  - TL; DR: I tested the brand-new Qwen3-VL-8B against Qwen2.5-VL-7B on the same set of visual reasoning tasks — OCR, chart analysis, multimodal QA, and instruction following.
+  - Qwen3-VL shows a clear generation-to-generation leap and delivers more accurate, nuanced, and faster multimodal reasoning.
+
+- [Qwen3-VL testout - open-source VL GOAT : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1o9eo4f/qwen3vl_testout_opensource_vl_goat/)
+  - I’ve been waiting on Qwen3-VL and finally ran the 4B on scanned tables, color-blind plates, UI screenshots, and small “sort these images” sets.
+  - Tables came out clean with headers and merged cells handled better than Qwen2.5-VL.
+  - Variant behavior matters. The Think build tends to over-explain and sometimes lands wrong. The Instruct build stays steadier for perception, grounding, and “read + point” jobs. 
+  - My pattern is simple: let 4B handle recognition and coordinates, then hand multi-step reasoning or code-gen to a larger text model. That stays stable.
+  - Net take: big lift in perception, grounding, and visual math; still weak on faithful webpage replication and hard spatial transforms. As of today, it feels like the top open-source VL at this size.
 
 - ## 🆚 [Qwen3-VL Instruct vs Thinking : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nuhgxw/qwen3vl_instruct_vs_thinking/)
   - I am working in Vision-Language Models and notice that VLMs do not necessarily benefit from thinking as it applies for text-only LLMs. 

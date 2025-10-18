@@ -12,8 +12,9 @@ modified: 2020-07-14T09:27:30.503Z
 - classic-examples-python
   - tips: 数据与ai计算的主力语言，也能快速开发业务
   - editor: lasuite-docs, jupyter(framework)
-  - ai: 🌹 langgraph
+  - ai: 🌹 langgraph, comfyui, mlx
   - data: superset
+  - devops: airflow, posthog
   - crdt
   - git-like
   - apps: docling

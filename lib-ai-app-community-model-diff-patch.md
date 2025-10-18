@@ -940,6 +940,14 @@ Code
 - Why do you wait for the entire stream to be complete? Some objects in the JSON structure can be shown to be complete before the stream ends.
   - Yeah, it's an interesting problem to solve. The library is designed to parse incomplete json without waiting for the stream to finish.
 
+- I have been working with streaming LLMs and Server Sent Events. It provides a very simple interface to work with, but you can feel SSE was never designed for this use case. As mentioned in the blog post:
+  - > Annoyingly these can't be directly consumed using the browser EventSource API because that only works for GET requests, and these APIs all use POST.
+  - It is not designed to send data to open a connection. You will then struggle to work with this streaming approach using frameworks and libraries that are based on the EventSource API.
+- EventSource is really really limited. However, you can instead use Fetch via something like https://github.com/Azure/fetch-event-source to consume SSEs.
+
+- OpenAI streaming has many peculiarities at production scale. e.g. you will get “half-chunks” occasionally which are not parseable on their own and must be concatenated with the previous or subsequent chunk for parsing.
+
+- should really be titled streaming output, as full duplex streaming isn't mentioned at all. that'd be necessary for things low latency things like speech etc.
 # discuss
 - ## 
 

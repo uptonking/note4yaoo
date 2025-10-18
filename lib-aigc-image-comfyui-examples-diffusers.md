@@ -1761,6 +1761,10 @@ modified: 2025-08-23T11:43:35.904Z
   - Improves GPU utilization efficiency through advanced Stochastic Similarity Filter.
   - https://github.com/jesenzhang/ComfyUI_StreamDiffusion
     - a simple implemention StreamDiffusion for ComfyUI
+- https://github.com/rudyaa-sd/ScreenDiffusion /202510/python
+  - https://screendiffusion.itch.io/screen-diffusion-v01
+  - Real-time screen-to-image generator built around StreamDiffusion.
+  - [Introducing ScreenDiffusion v01 — Real-Time img2img Tool Is Now Free And Open Source : r/StableDiffusion _202510](https://www.reddit.com/r/StableDiffusion/comments/1o99lt6/introducing_screendiffusion_v01_realtime_img2img/)
 
 - https://github.com/joanrod/star-vector /apache2/202503/python
   - https://starvector.github.io/

@@ -12,6 +12,10 @@ modified: 2025-03-25T19:15:23.591Z
   - k8s
   - sandbox
   - bpmn
+
+- workflow-ux
+  - progress
+  - human in the loop
 # pm-workflow
 - tips
   - 与外部系统通信可考虑使用统一workflow平台, 内部模块间通信优先events/rpc
@@ -77,6 +81,35 @@ modified: 2025-03-25T19:15:23.591Z
 - ## 
 
 - ## 
+# discuss-flow-progress
+
+- tips
+  - 动画进度比较成熟的是comfyui，但体验待改进
+- ## 
+
+- ## 
+
+- ## 💫 Motia - All-new Workbench UI: sleeker, faster, and easier on the eyes. _202507
+- https://x.com/motiadev/status/1942667635847753885
+  - 示例场景包含 parallel-tasks
+  - Flow, endpoints, and logs visualization got a major glow-up.
+  - Real-time traces, logs, and state are now even more beautiful and usable.
+
+- https://x.com/motiadev/status/1944704219639947485  _202507
+  - Our aim with Traces in Motia is to provide you with granular observability, allowing you to see every execution, every state change, and every log, all mapped out. 
+  - Debugging that’s actually fun (yes, really).
+  - fast root cause analysis.
+  - Confidence that your workflows are working as designed.
+
+- ## 💫 triggerdotdev - Move your background jobs to the foreground with Realtime _20250402
+- https://x.com/triggerdotdev/status/1907117019713122749
+  - ✨ task执行的进度动画非常友好, 示例场景是sequential-tasks
+  - Stream AI responses, with full observability built-in
+  - Show progress states on your frontend by subscribing to your runs
+  - Use metadata to provide detailed context for your users
+  - Forward streams through the Realtime API to provide real-time updates to your users from any AI providers ( @aisdk , @openai , @AnthropicAI etc).
+  - We also provide Realtime React hooks that allow you to securely interact with the Trigger API from your @reactjs apps.
+
 # discuss-automation-vendors
 - ## 
 
@@ -109,6 +142,15 @@ modified: 2025-03-25T19:15:23.591Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## we're announcing Preview Branches  _20250605
+- https://x.com/triggerdotdev/status/1930641939780546820
+  - Every pushed git branch now gets its own isolated Trigger environment
+  - Preview branches are auto-archived when Pull Requests are closed on GitHub. 
+
 - ## Trigger v4 is now in beta! With heaps of new features _20250410
 - https://x.com/triggerdotdev/status/1910006122616066339
 - Warm starts
@@ -122,15 +164,6 @@ modified: 2025-03-25T19:15:23.591Z
 - Prioritize runs
   - Jump the queue when it matters. Set time offsets in seconds to push critical runs ahead—perfect for prioritizing premium users or urgent tasks. A simple but powerful way to control what runs first when things get busy.
 - MCP server
-
-- ## 💫 Move your background jobs to the foreground with Realtime _20250402
-- https://x.com/triggerdotdev/status/1907117019713122749
-  - Stream AI responses, with full observability built-in
-  - Show progress states on your frontend by subscribing to your runs
-  - Use metadata to provide detailed context for your users
-  - ✨ task执行的进度动画非常友好
-  - Forward streams through the Realtime API to provide real-time updates to your users from any AI providers ( @aisdk , @openai , @AnthropicAI etc).
-  - We also provide Realtime React hooks that allow you to securely interact with the Trigger API from your @reactjs apps.
 
 - ## 🚀 [Trigger.dev - Show HN: We built a developer-first open-source Zapier alternative | Hacker News _202302](https://news.ycombinator.com/item?id=34610686)
 - Trigger.dev looks like it would be amazing if you want a simplified temporal that is still 100% code based and exclusively in Typescript.

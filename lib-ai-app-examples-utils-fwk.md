@@ -122,6 +122,7 @@ modified: 2025-02-21T18:20:42.624Z
 
 - https://github.com/mastra-ai/mastra /15.8kStar/apache2/202508/ts
   - https://mastra.ai/
+  - 💫 https://mastra.ai/en/docs/server-db/local-dev-playground
   - an opinionated TypeScript framework that helps you build AI applications and features quickly.
   - It gives you the set of primitives you need: workflows, agents, RAG, integrations and evals.
   - 不依赖langchain/langflow
@@ -140,8 +141,11 @@ modified: 2025-02-21T18:20:42.624Z
 - https://github.com/MotiaDev/motia /5.8kStar/MIT/202508/ts
   - https://motia.dev/
   - Modern Backend Framework that unifies APIs, background jobs, workflows, and AI agents into a single cohesive system with built-in observability and state management.
+  - a modern backend framework for building event-driven applications with built-in observability and state management.
   - Motia gives you full, code-first control of your agents and automations with the simplicity of a visual interface, letting you focus on what truly matters: your business logic
   - 不依赖langchain/langflow
+  - 执行时进度动画显示在任务画布下方的水平条形图，ux设计不符合主流
+    - 但支持在水平条形图显示各节点的执行时间，数据更具体
   - Use any LLM, vector store, or reasoning pattern without restrictions.
   - Zero Infrastructure Headaches - No Kubernetes expertise required. Deploy agents with a single command
   - Code-First Development - Write agent logic in familiar languages, not proprietary DSLs.

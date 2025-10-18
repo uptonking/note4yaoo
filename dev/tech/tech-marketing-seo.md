@@ -52,6 +52,45 @@ modified: 2020-12-20T12:36:17.694Z
   - 无需任何复杂技巧或黑客手段，只需简单的脚本和 Google API，即可让我们的网站在 48 小时内在 Google 上建立索引。
   - https://github.com/goenning/google-indexing-script
 
+# discuss-seo-tips/tricks
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🧩💡 [2/3 of my website traffic comes from LLM bots. : r/webdev _202510](https://www.reddit.com/r/webdev/comments/1o9d6w2/23_of_my_website_traffic_comes_from_llm_bots/)
+  - If I were hosting my website with a serverless provider, I'd be spending two-thirds of my hosting fee on bots. 
+  - I'm currently hosting my SQLite + Golang website on a $3 VPS, so I'm not experiencing any problems, but I really dislike the current state of the web. If I block bots, my website becomes invisible. 
+  - Meanwhile, LLMs are training on my content and operating in ways that don’t require any visits. What should I do about this situation?
+
+- Set up a sinkhole(污水井，污水池). Make it too expensive for these bots to crawl your website. Won't solve your problem personally, but if enough of us do it, not only will these companies spend thousands to crawl useless pages, they'll also have to spend hundreds of thousands to try and clean up their now-garbage-ridden data. Because fuck em.
+- Interesting, can you tell us more? By a sinkhole do you mean a page with a huge wall of garbage text? How would you hide this from users? 
+  - [Nepenthes](https://zadzmo.org/code/nepenthes/)
+    - This is a tarpit(难题，困境) intended to catch web crawlers. Specifically, it targets crawlers that scrape data for LLMs - but really, like the plants it is named after, it'll eat just about anything that finds it's way inside.
+    - It works by generating an endless sequences of pages, each of which with dozens of links, that simply go back into a the tarpit. Pages are randomly generated, but in a deterministic way, causing them to appear to be flat files that never change. 
+    - Intentional delay is added to prevent crawlers from bogging down your server, in addition to wasting their time. 
+    - Lastly, Markov-babble is added to the pages, to give the crawlers something to scrape up and train their LLMs on, hopefully accelerating model collapse.
+- This says it blocks all crawlers. Are you really willing to get your website off of search engines just to get back at LLMs?
+  - The ethical way to do this would be to serve it under a route that is explicitly disallowed for scraping in robots.txt. That way you're only catching the bad bots.
+
+- Cloudflare has designed such a feature "AI Labyrinth"
+  - [Trapping misbehaving bots in an AI Labyrinth _202503](https://blog.cloudflare.com/ai-labyrinth/)
+  - we’re excited to announce AI Labyrinth(迷宫, 曲径), a new mitigation approach that uses AI-generated content to slow down, confuse, and waste the resources of AI Crawlers and other bots that don’t respect “no crawl” directives. 
+  - When you opt in, Cloudflare will automatically deploy an AI-generated set of linked pages when we detect inappropriate bot activity, without the need for customers to create any custom rules.
+  - AI Labyrinth is available on an opt-in basis to all customers, including the Free plan.
+
+- I mean... bot traffic should be trivial to manage with basic caching. Nginx can serve pages from memory or even disk at incredible speeds.
+  - My website has more than 152.000 pages. Bots crawl each page at regular intervals. Caching it would be like caching my entire website.
+
+- First and foremost, look into installing a WAF (Web Application Firewall). CloudFlare, AWS .etc all provide products like this.
+  - Secondly, you can also create a Honey Pot trap. Essentially this involves creating a link to another area on your site that isn’t visible to humans, and trapping the bots there with randomly generated nonsense web pages. 
+  - Finally, if you really wanted to screw with bots, specifically MLMs — you could try your hand at prompt injection attacks, imbedded in your site.
+
+- People are searching via LLM for solutions now and the LLM is searching the internet. Don't block it. It's the new Google.
+  - Yeah but Google gave you visits which translates to money from ads. LLMs dont give you visits so you gain nothing. They dont even mention the site they fetched the info from
 # discuss-seo
 - ## 
 
