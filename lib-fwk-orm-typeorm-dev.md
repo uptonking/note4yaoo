@@ -33,7 +33,9 @@ modified: 2023-01-20T18:42:28.952Z
   - You can use QueryBuilder to build SQL queries of almost any complexity. 
 
 - who is using #typeorm
+  - think, hedgedoc
   - grist
   - spacebar(discord-like)
-  - hedgedoc
+  - n8n, activepieces
+  - saas: tooljet(AGPL)
 # dev

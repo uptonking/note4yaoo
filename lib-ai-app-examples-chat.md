@@ -250,7 +250,7 @@ modified: 2025-03-22T18:49:15.634Z
 - https://github.com/kangfenmao/cherry-studio /NonCommercial/202409/ts
   - https://cherry-ai.com/
   - a desktop client that supports for multiple LLM providers, available on Windows, Mac and Linux
-# ai-sdk
+# ai-sdk/vendors
 - https://github.com/moeru-ai/xsai /MIT/202502/ts
   - https://xsai.js.org/
   - extra-small AI SDK for Browser, Node.js, Deno, Bun or Edge Runtime

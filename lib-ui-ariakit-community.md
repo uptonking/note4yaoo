@@ -9,7 +9,17 @@ modified: 2023-06-22T05:33:12.658Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 
 # discuss-news
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 🌰 Here's a demo that combines Tag with Combobox:
@@ -26,6 +36,67 @@ modified: 2023-06-22T05:33:12.658Z
   - Prefetching
   - Preview link on mobile
 
+# discuss-ui-a11y
+- ## 
+
+- ## 
+
+- ## 
+# discuss-baseui
+- ## 
+
+- ## 
+
+- ## [[discussion] Create codemod to ease Radix Primitives migration? _202510](https://github.com/mui/base-ui/issues/2970)
+
+- ## [[discussion] Base UI Integration with SolidJS · Issue · mui/base-ui _202507](https://github.com/mui/base-ui/issues/2200)
+- 👷: We're focusing solely on React now, as it's the most popular library by far. We want to do it right, and we don't have the capacity to work on multiple implementations.
+  - We may consider other integrations in the future, but I believe it won't be a matter of writing an adapter layer but building the library from scratch to achieve the best performance 
+
+- Our general stance (written in 2025) around non-React framework support is:
+  - React is already a LOT to focus on. It's much better to be world-class at 1 thing, than OK-ish at 3.
+
+- ## [[RFC] Base UI customization API change · mui/base-ui _202402](https://github.com/mui/base-ui/discussions/157)
+- I would promote the usage of the Radix Slot Component (literally or trying to follow @nihgwu nihgwu/create-slots or please take ownership of creating a RFC) and hopefully align the Mui, Radix, Headless, and React Aria ecosystem to optimize such components and patterns to a point where the React team would take ownership of providing a built-in capability to have Slots
+  - The browser itself already has this developer.mozilla.org/en-US/docs/Web/HTML/Element/slot, and many other ecosystems (like Vue) are given to have the Slot pattern.
+
+- Interesting, so you eventually chose the same approach AriaKit ariakit.org/guide/composition, and I like it
+  - The most ergonomic approach is RAC's style, I had the same idea about 3 years ago, but given the context of RSC, all those context base solution don't seem so plausible, and I'm leaning to render style more, as it just requires React basics to implement it while the other solutions are full of hidden black magics
+
+- ## [Need Help: MUI for Our Design System? : r/reactjs _202407](https://www.reddit.com/r/reactjs/comments/1drxu78/need_help_mui_for_our_design_system/)
+- So the big plan is to invest into headless with Base UI, and to make both MUI Material and MUI Joy themes, so the logic & features of all components are shared, and then styling/customization is independent and easily swappable.
+  - The driver for all that is that we're aware that Material Design is losing popularity because people aren't blind and google is not very good at design. But we can't just switch to a more modern look because, well, it's not MUI Material if it's not Material Design. So we want to make theming much more convenient so we're not tied to MD.
+  - But that means MUI Joy is a bit slowed down at the moment until we figure out all the pieces of the big plan.
+
+- ## 🚀 Introducing @base_ui _20241218
+- https://x.com/colmtuite/status/1869053012712550819
+  - ✔️ 25 accessible UI components
+  - ✔️ Unstyled. Compatible with any styling engine.
+  - ✔️ Fully composable with an open API
+  - First awesome feature is nested dialogs
+- Potentially a controversial one, but after literally a a year of research and debate, we settled on the `render` prop for component replacement and composition.
+- Curious whether there is a public record of why it was chosen over `asChild` ? Would be interested to read why `render` was chosen instead
+  - We actually researched about 7 or 8 different APIs. Long story short: `asChild` can be a footgun, `render` is more obvious what's going on in the code, and it's more inline with React's vibes.
+
+- 🆚 what's the the distinction/direction of these compared to what's going on with radix ui?
+  - There's not much going on with radix rn. Almost 2 years since the last new radix component, just 1 part-time maintainer. All original devs left a long time ago.
+  - So rather than a new direction, the idea is to provide a familiar alternative.
+  - It's not built on Radix
+  - Radix has not been actively maintained for a long time. None of the original team have been working on it for 1–2 years. Issues often take a long time to be resolved. It's been 4 years since launch, and still no Combobox, Carousel, DatePicker etc. The project is effectively dead
+
+- 🆚 When comparison with React Aria?
+  - Spoiler alert: it will be prioritised like: 1. stability 2. radix parity (Toast, Menubar, NavigationMenu etc.), then Combobox and other comps
+- Looks like a strong competition to React Aria from Adobe, I guess. What’s the main difference of Base UI?
+  - RA is streets ahead in terms of number of components, especially the complex components. It's also more stable and mature. I'd say the main difference would be DX + API design. Lots and lots of small differences across the board.
+
+- How is it related to MUI base UI? Has it been split out? Confused because some of the authors are MUI (former?) employees
+  - It is funded by the same company, just a different brand. All current MUI employees, not former.
+
+- I can see lots of familiarities coming from @ark_ui_
+
+- https://x.com/colmtuite/status/1869424949758439919
+  - When a small startup creates OSS as a side project, there is always the risk that it will go away at some point. 
+  - The main reason I chose MUI is so that the project won't be a side hustle. Components are the business model here, and the company has been profitable for years.
 # discuss
 - ## 
 

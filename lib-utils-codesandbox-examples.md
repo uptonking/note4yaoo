@@ -36,6 +36,7 @@ modified: 2023-09-02T09:17:22.992Z
   - Sandpack React: React components that give you the power of editable sandboxes that run in the browser
   - https://github.com/AaronPowell96/sandpack-file-explorer /MIT/202312/ts
     - Enhanced File Explorer for Sandpack. Providing immense flexibility to Sandpack's capabilities.
+  - https://github.com/fewismuch/sandpack-file-explorer
 
 - https://github.com/ameerthehacker/blazepack /LGPLv3/202106/js/inactive
   - Blazing fast dev server powered by sandpack

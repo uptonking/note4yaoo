@@ -21,6 +21,39 @@ modified: 2024-01-11T15:57:32.182Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [How do I efficiently zip and serve 1500–3000 PDF files from Google Cloud Storage without killing memory or CPU? : r/node _202510](https://www.reddit.com/r/node/comments/1o6497g/how_do_i_efficiently_zip_and_serve_15003000_pdf/)
+  - I’ve got around 1500–3000 PDF files stored in my Google Cloud Storage bucket, and I need to let users download them as a single .zip file.
+  - Compression isn’t important, I just need a zip to bundle them together for download.
+- Here’s what I’ve tried so far:
+  - Archiver package : completely wrecks memory (node process crashes).
+  - zip-stream : CPU usage goes through the roof and everything halts.
+  - Tried uploading the zip to GCS and generating a download link, but the upload itself fails because of the file size.
+- So… what’s the simplest and most efficient way to just provide the .zip file to the client, preferably as a stream?
+
+- You can try the route of cloud function which can create the zip of pdf files for you and upload it to the bucket itself. You can then provide a signed url of the zip file to the user to download
+
+- We just had exactly this problem, streaming files into a zip download from a database. The problem was with node creating buffer objects and not being able to free them in time - GC never catches up - so memory just expands. 
+  - The solution in our case was to stream into the zip file directly from an HTTP response without creating an intermediate buffer. 
+  - Maybe you can find a way to do this with Google Cloud as a source. We use archiver to make the zip stream.
+
+- I am not deeply familiar with the GCS SDK, but I am assuming you can read each object as a stream. If that is true, you can solve this with pure streaming so memory stays flat and CPU stays reasonable.
+  - There are two approaches. 
+  - Stream the zip on the fly as you read files from GCS, or prebuild the zip into GCS and then serve it. 
+  - On-the-fly is usually best unless many users will download the exact same bundle, in which case prebuilding once and serving a signed URL can be cheaper.
+  - Keep compression low to reduce CPU. If your library supports “store only” (no compression) or a compression level of 0, start there. You will trade larger output for much lower CPU, which is often the right call at this scale. Still, measure both memory and CPU in your environment.
+  - Libraries to consider: yazl and archiver. Both let you append file streams to a zip without buffering entire files. Enable ZIP64 if the total size or file count can exceed legacy limits.
+  - Why this works: only one object stream is active at a time, the zip writer pushes backpressure to GCS reads, memory stays small, and CPU stays low with compression disabled.
+
+- pipe the zip stream to the response stream
+
+- 
+- 
+- 
+
 - ## [Lessons learned from 15 years of SumatraPDF, an open source Windows app (2021) | Hacker News _202303](https://news.ycombinator.com/item?id=35065785)
 - Notably, the roll-your-own parts do not include core PDF parsing and rendering, which are outsourced to (possibly a fork of?) mupdf.
   - Mupdf is the key. Sadly there's no user-friendly mupdf wrapper like Sumatra on Linux.

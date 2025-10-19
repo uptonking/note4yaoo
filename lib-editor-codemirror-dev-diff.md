@@ -51,6 +51,27 @@ modified: 2024-07-29T11:49:33.248Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Applying a "standard" text diff patch to editor content? - v6 - discuss. CodeMirror _202509](https://discuss.codemirror.net/t/applying-a-standard-text-diff-patch-to-editor-content/9506)
+  - Is there an extension (or even built in functions) for applying “standard” text diff patches to content in an editor, so that you don’t have to grab the content as string, patch that, then overwrite the content with that update?
+- I’m not aware of such code. I could imagine there existing a JS library for applying patches that exposes the ranges it actually replaces (or can be modified to do so), which would make it pretty easy to generate the appropriate editor changes, but with a quick search I didn’t actually locate such a thing.
+
+- ## 💥 [incorrect diff for large files in merge view - v6 - discuss. CodeMirror _202311](https://discuss.codemirror.net/t/incorrect-diff-for-large-files-in-merge-view/7411)
+  - I’ve noticed that when using very large files with the MergeView editor, the computed diff between the files is incorrect.
+  - More specifically for my case, I have 2 ~1500+ loc files that have just a couple changes between them (not more than 40-50 loc) spread out throughout the whole document (small diffs at the beginning, middle, and end of the document).
+  - this is how it’s rendered in CM using the MergeView. The whole document is basically flagged as one large diff.
+
+- Computing the diff for such large (and different) files is too expensive to do interactively, so the editor falls back to an overapproximation of the diff.
+- Is there a way I can prevent the editor from falling back to the approximation?
+  - If people are allowed to edit the document, it seems that having a slow (and this is super-linear, so it gets very slow quite quickly) UI update cycle would make it unusable pretty quickly.
+  - If users aren’t allowed to edit, maybe just statically rendering the text is easier than having it in a CodeMirror editor.
+
+- The longer time it takes to compute the diffs (10-20 seconds) is acceptable in principle, but I would like to inform the user with a spinner/block screen. Is there an event I can listen to to know when the computation is finished? 
+  - Computing the diff is a synchronous process. So a spinner wouldn’t spin, and the UI would be entirely frozen. I don’t think that a 20 second freeze is really going to be acceptable in any circumstance, unfortunately.
+
 - ## ✨ [Suggestion: Support true inline diff in unified merge view _202408](https://github.com/codemirror/dev/issues/1419)
   - VS Code just added this in the July 2024 update
 - I don't intend to work on this.
@@ -135,15 +156,18 @@ modified: 2024-07-29T11:49:33.248Z
 - Maybe the merge view (example) is what you mean?
 
 - ## 💡 [Using merge w/ collab? - v6 - discuss. CodeMirror _202401](https://discuss.codemirror.net/t/using-merge-w-collab/7648)
-  - I’m trying to make something like a collaborative editor that also uses @codemirror/merge (specifically, unifiedMergeView). I’m currently rolling my own synchronisation logic using JSON, rather than the @codemirror/collab module. 
-  - However, I feel like it’s not possible to get change to the original document that were made in a transaction, since the updateOriginalDoc StateEffect isn’t public.
+  - I’m trying to make something like a collaborative editor that also uses @codemirror/merge (specifically, `unifiedMergeView` ). 
+  - I’m currently rolling my own synchronisation logic using JSON, rather than the `@codemirror/collab` module. 
+  - However, I feel like it’s not possible to get change to the original document that were made in a transaction, since the `updateOriginalDoc` StateEffect isn’t public.
+  - Also, `originalDoc` not being public makes it so you have to retrieve and set the original document separately, instead of being able to use `EditorState.to/fromJSON` .
+  - Also it seems like StateEffects don’t have a toJSON/fromJSON? Is there a recommended way of sending them between clients?
 
 - There’s no build-in way to serialize effects. You’ll have to query their type and do your own thing. Because they rely on local `StateEffectType` objects, deserializing them across environments in a generic way is awkward.
-- You can compare the old value of getOriginalDoc to the new one to see if the document changed, but you don’t get access to the changes themselves, which makes it hard to update other clients without recomputing the full diff.
 
-- i see that originalDocChangeEffect allows me to make changes to the original doc in a transaction, but with only those two functions I don’t see a way to retrieve the changes made in a transaction (e.g. from accepting/rejecting a hunk).
+- i see that `originalDocChangeEffect` allows me to make changes to the original doc in a transaction, but with only those two functions I don’t see a way to retrieve the changes made in a transaction (e.g. from accepting/rejecting a chunk).
+  - You can compare the old value of getOriginalDoc to the new one to see if the document changed, but you don’t get access to the changes themselves, which makes it hard to update other clients without recomputing the full diff.
 
-- is there a way to get the initial value of a StateField in the provide() function?
+- is there a way to get the initial value of a StateField in the provide() function? I’m trying to have a set of extensions that are conditionally enabled based on the value of a state field, by having a compartment that is returned from provide() and changing using a transaction extender. But I can’t see any way of having the compartment have the right value initially if StateField.init() is used, or I’m using EditorState.fromJSON
   - No. The state configuration can’t directly depend on field/facet values. You’d have to set up some logic that reconfigures at the appropriate moment.
 
 - If you dispatch a normal change to a unified merge view, you’re just changing the document in the editor. 

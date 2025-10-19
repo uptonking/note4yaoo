@@ -177,10 +177,19 @@ modified: 2025-02-21T17:17:42.225Z
 - https://github.com/TesslateAI/Builder-Lite /202504/ts/inactive
   - A web application that allows you to generate React components using an AI chat interface and view/edit them live in a Sandpack sandbox environment.
   - Describe the component you need, and the AI will attempt to generate the code, which is then rendered instantly for preview.
-  - Live Sandbox Environment: Uses @codesandbox/sandpack-react to provide an instant preview
+  - Live Sandbox Environment: Uses `@codesandbox/sandpack-react` to provide an instant preview
   - Integrated Code Editor: View and modify the generated Component.tsx code directly in the 'Editor' tab.
   - Dependencies Included: The sandbox automatically includes react, react-dom, framer-motion, and @heroicons/react for richer component possibilities.
   - Optional Proxy: Built-in logic to route API requests through a local proxy (/llm-proxy) if the target API is not on localhost (requires separate proxy setup).
+
+- https://github.com/cameronking4/nextjs-ai-page-generator /apache2/202403/ts/inactive
+  - https://nextjs-page-generator.vercel.app/
+  - Design, generate, iterate and live preview Nextjs pages with GPT
+  - Quick hack to generate & serve Next apps quickly in the browser using Next, Prisma, OpenAI & Sandpack
+
+- https://github.com/reidbarber/gen-ui /202312/ts/inactive
+  - Use text or image prompts to generate UI components and apps built with React. 
+  - Powered by OpenAI's Assistants API and CodeSandbox's Sandpack.
 # ai-apps
 
 # more

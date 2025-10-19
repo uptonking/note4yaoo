@@ -223,6 +223,7 @@ modified: 2021-05-06T09:38:31.520Z
   - replace lezer with tree-sitter
 
 - diff-view
+  - diff compute: sync to async
   - diff左侧显示原文行号和最新行号
   - 支持隐藏绿色部分或红色部分，隐藏后显示为普通文档且显示行号，切换显示隐藏时不用刷新页面
   - 红色部分支持copy和选中
@@ -377,7 +378,9 @@ edd.contentDOM.cmView.view === edd // true
 }]
 ```
 
-## dev-ai-coding/diff
+# dev-ai-coding/diff
+
+## diff-com-smbug
 
 - diff视图的结果是红色删除行在上、绿色增加行在下
 

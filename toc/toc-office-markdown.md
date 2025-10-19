@@ -237,6 +237,14 @@ modified: 2021-01-04T17:26:25.032Z
   - It combines a finite state machine with regex patterns to determine the best match for each segment.
   - [Evaluate whether continuing with completely custom parser implementation is reasonable, or shall we leverage lexers? _202505](https://github.com/Lixpi/markdown-stream-parser/issues/5)
     - My initial implementation was extremely naive. Currently working on a complete reimagined version that uses `Tree-sitter` for parsing, but provides the same interface for the stream of parsed chunks.
+
+- https://github.com/karminski/streaming-json-js /MIT/202409/js/inactive
+  - This library allows for the parsing of JSON as it is being streamed (this means JSON stream can stops at any position), significantly cutting down the time-to-first-token.
+  - https://github.com/karminski/streaming-json-go
+  - https://github.com/karminski/streaming-json-py
+  - handling multiple blobs or JSON with interspersed non-JSON strings can be quite tricky. This library is more focused on handling JSON strings themselves, so users need to manually separate JSON blobs for input or filter out non-JSON structured strings.
+  - [I Created a Library to Streamline JSON stream Handling: Introducing streaming-json : r/LocalLLaMA _202407](https://www.reddit.com/r/LocalLLaMA/comments/1e9m5wh/i_created_a_library_to_streamline_json_stream/)
+    - We wrote a similar algorithm in rust (that have bindings to Python/TS/Ruby) as well ( https://github.com/BoundaryML/baml ) if anyone is interested in a rust implementation.
 # ui
 - https://github.com/BlueprintLabIO/markdown-ui /412Star/MIT/202509/ts
   - https://markdown-ui.blueprintlab.io/

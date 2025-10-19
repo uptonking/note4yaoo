@@ -23,6 +23,19 @@ modified: 2025-08-08T07:35:49.535Z
   - Generative UI: allow a LLM to go beyond text and "generate UI"
     - Generative UI is the process of connecting the results of a tool call to a React component.
 
+- who is using #vercelAiSdk
+  - voltagent
+  - opencode
+
+- ai-framework-comparison
+  - observability/debugging: supports langfuse?
+  - vendor-agnostic
+  - integrations
+  - memory: locked?
+  - workflow conceptions/architecture
+  - lowcode ux
+  - use-cases/courses/tutorials
+
 - tips
   - 🤔 ai-sdk或许是错误的架构, ai输出放在后端实现是更可靠的方案，后端python工具链更完善
   - 不要在ai fwk选型上浪费太多时间，直接分析具体业务场景的需求和现有案例，然后尝试理解方案并改进

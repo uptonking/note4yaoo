@@ -211,6 +211,8 @@ modified: 2025-02-21T18:20:42.624Z
   - Agentic Coding: Let AI Agents (e.g., Cursor AI) build Agents—10x productivity boost!
   - https://github.com/The-Pocket/PocketFlow-Typescript
   - https://github.com/The-Pocket/PocketFlow-Go
+  - [I Built Pocket Flow, an LLM Framework in just 100 Lines — Here is Why _202503](https://medium.com/@zh2408/i-built-an-llm-framework-in-just-100-lines-83ff1968014b)
+  - [Streaming LLM Responses — Tutorial For Dummies (Using PocketFlow!) _202505](https://medium.com/@zh2408/streaming-llm-responses-tutorial-for-dummies-using-pocketflow-417ad920c102)
 
 - https://github.com/Osly-AI/Pocket-Flow-Framework /664Star/MIT/202502/ts/inactive
   - https://Osly-AI.github.io/Pocket-Flow-Framework
@@ -443,7 +445,7 @@ modified: 2025-02-21T18:20:42.624Z
   - Pluggable LLMs: Works with OpenAI, Anthropic, or local models
   - Offline-First: No internet required after video generation
 
-## llm-streaming
+## streaming-llm
 
 - https://github.com/globalaiplatform/langdiff /225Star/apache2/202509/python/ts
   - https://langdiff.readthedocs.io/en/latest/
@@ -463,6 +465,11 @@ modified: 2025-02-21T18:20:42.624Z
   - ✨ LangDiff solves these problems through two key innovations:
     - Intelligent Streaming Parsing: Define schemas that understand the streaming nature of LLM outputs. Get type-safe callbacks for partial updates, complete fields, and new array items as they arrive.
     - Change-Based Synchronization: Instead of streaming raw JSON, track mutations on your application objects and send lightweight JSON Patch diffs to frontends. This decouples UI state from LLM output format.
+
+- [Smooth a stream of LLM tokens into a stream of characters while reducing jitter by stabilising output timing. Explorations of different approaches.](https://gist.github.com/sebinsua/76fc5eb6fc498636bc637b9f10b7e6bf)
+  - This approach slows the stream down a little and does generally reduce the jitter (such as pauses and bursts in the token stream). The approach was made based on educated guess-work about what might work and evaluated by eye-balling it instead of in a systematic manner. It is not perfect and sometimes the queue is exhausted only to find that we are waiting on a token. 
+  - Another approach might be to extend the function that calculates the delay length by looking at the rate of increase/decrease of the queue size, as this would allow the algorithm to consider 'the future' in its decisions.
+  - I experimented trying to put this on the back-end using ai in a Next.js app and a client-side React library on the UI. In order to do so, I had to transform to and from AsyncIterator and ReadableStream
 # proxy
 - https://github.com/lymanzhao/Ollama-serve /202503/python
   - 一个 Ollama转发代理，用于为原生 Ollama 服务添加 API 密钥认证功能。

@@ -814,6 +814,12 @@ modified: 2022-08-21T10:02:27.788Z
   - A headless UI component libray for managing complex table state in React.
   - Inspired by react-table but with Typescript support built in and a simpler API.
 
+- https://github.com/petera2c/simple-table /202510/ts
+  - https://www.simple-table.com/docs/quick-start
+  - a lightweight, high-performance React data grid component
+  - 仅依赖react，无其他依赖
+  - Free for individuals & startups, affordable PRO tier for growing businesses 
+
 - react-table-library /563Star/MIT/202305/ts
   - https://github.com/table-library/react-table-library
   - yet another table library for React

@@ -112,6 +112,32 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [I Built Pocket Flow, an LLM Framework in just 100 Lines — Here is Why _202503](https://medium.com/@zh2408/i-built-an-llm-framework-in-just-100-lines-83ff1968014b)
+- After a year of struggling with bloated frameworks, I decided to strip away anything unnecessary. The result is Pocket Flow, a minimalist LLM framework in just 100 lines of code.
+
+- After a year of building LLM applications from scratch, I had a revelation: beneath all the complexity, LLM systems are fundamentally just simple directed graphs.
+  -  By stripping away the unnecessary layers, I created Pocket Flow — a framework with zero bloat, zero dependencies, and zero vendor lock-in, all in just 100 lines of code.
+- We also support batch processing, asynchronous execution, and parallel processing for both nodes and flows.
+
+- Unlike other frameworks, Pocket Flow deliberately avoids bundling vendor-specific APIs. 
+  - No Vendor Lock-in: You’re free to use any model you want, including local models like OpenLLaMA, without changing your core architecture.
+
+- [I Built an LLM Framework in 179 Lines—Why Are the Others So Bloated?  : r/LangChain _202502](https://www.reddit.com/r/LangChain/comments/1iwrhuu/i_built_an_llm_framework_in_179_lineswhy_are_the/)
+- I had a look at the code. You've built a simple state machine. 
+  - State machine are almost aways the worst time of choice when it comes to composition. 
+  - In other words organising everything in flows of Nodes while still writing code is worse then for example carefully providing the data structures yourself and deal with the concurrency and dataflow based on the application specific requirements.
+- Thanks for the feedback and example. I opted for a state machine for its simplicity! I'm open to finding a way to balance simple state transitions with tailored data structures though
+
+- how is this different to the approach LangGraph took?
+  - We think LangGraph’s approach can feel rigid and tends to enforce a strictly linear, single-threaded execution model! We also want to do more than just manage state transitions!!
+  - For example, we can handle asynchronous capabilities—like node cloning to avoid race conditions and dedicated AsyncParallelBatchNodes and AsyncParallelBatchFlows—to enable parallel execution. This means you can run I/O-bound tasks concurrently (such as multiple LLM calls) without being restricted to a single-threaded, linear flow.
+
 - ## 🤔 [I built an AI orchestration platform that breaks your promot and runs GPT-5, Claude Opus 4.1, Gemini 2.5 Pro, and 17+ other models together - with an Auto-Router that picks the best approach : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o76n9d/i_built_an_ai_orchestration_platform_that_breaks/)
   - I've been frustrated with choosing between AI models - GPT-5 is great at reasoning, Claude excels at creative writing, Gemini handles data well, Perplexity is best for research - so I built LLM Hub to orchestrate them all intelligently.
   - [LLM HUB - AI Pipeline Orchestration](https://llm-hub.tech/)

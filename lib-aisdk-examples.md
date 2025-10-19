@@ -72,6 +72,19 @@ modified: 2025-08-11T20:15:18.297Z
   - Deep research loop with planning, web search, iterative supervision, and final report generation
   - UI components that render intermediate updates (queries, results, thoughts, writing) in the chat
   - Requirements: Tavily, Optional Redis for resumable, persistent SSE streams
+
+- https://github.com/Egham-7/adaptive-ai-provider /202510/ts
+  - https://llmadaptive.uk/
+  - The Adaptive AI Provider for the AI SDK contains language model support for adaptive provider selection across multiple AI services
+  - Intelligent Model Selection - Automatically picks optimal models
+  - Multi-Provider - OpenAI, Anthropic, Google, DeepSeek, Groq, etc.
+  - [Adaptive AI Provider for the Vercel AI SDK — real-time model routing using UniRoute (Google Research) : r/vercel _202510](https://www.reddit.com/r/vercel/comments/1o5itci/adaptive_ai_provider_for_the_vercel_ai_sdk/)
+    - It’s based on UniRoute, Google Research’s new framework for universal model routing across unseen LLMs.
+    - Adaptive automatically chooses which LLM to use for every request based on prompt complexity and live model performance.
+    - It runs automated evals continuously in the background, clusters prompts by domain, and routes each query to the smallest feasible model that maintains quality.
+    - it performs live eval-based routing using UniRoute’s cluster-based generalization method, which can handle unseen LLMs without retraining.
+    - Typical savings: 60–90% lower inference cost.
+    - Routing overhead: ~10 ms.
 # starter
 - https://github.com/vercel-labs/ai-sdk-reasoning-starter /202507/ts
   - https://ai-sdk-reasoning.vercel.app/

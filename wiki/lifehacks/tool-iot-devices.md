@@ -2552,7 +2552,19 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## [如何评价intel放弃NUC产品线？ - 知乎 _202307](https://www.zhihu.com/question/611600066)
+- 虽然NUC是Next Unit of Computing的简称，可以理解为“下一代准系统”。
+  - 即通常提供一个足够迷你的主板+CPU，而内存和存储部分你可以DIY，包含了主板和CPU的平台我们一般就叫“准系统”，不过准系统并不完全一定是主板+CPU的绑定；比如后期妖板华擎做的系列就是可以自己选择CPU，且支持桌面级CPU，只是CPU有一定的功耗限制等。
+- NUC本身是介于办公电脑和一体式电脑之间的产物
+  - NUC就感觉是一体式电脑把显示器和主机部分又剥离出来，只不过把主机做得足够小
+  - 所以一开始NUC的设计就支持把NUC 挂在显示器后面，只需要一个扩展铁皮就行了。
+
+- NUC我也买了, 性能很普通. 看中的就是一个小巧和稳定. 大家可以看下网上同样的小电脑的对比, 能支持7*24H当个人服务器的运行的, 也就Intel的了.(Dell惠普的那些机器也行, 但是发热低的性能还是比intel差一点)
+
+- NUC大部分产品线 miniPC（除开独显部分）在产品定义上都是很好的产品：性能够用/扩展性够用/体积小/可靠性也不错/整体持有成本低
+  - 但市场营销的用户教育存在问题，大部分用户甚至都不了解这条产品线存在，即使知道，对其性能和持有成本也没正确认知，想当然的认为小机器性能差/价格贵。
+
+- 作为解决方案的制定者，又不能完全霸占市场，需要给合作伙伴们分一杯羹，所以，英特尔的NUC溢价非常高，如果不是像我一样入了魔，就是想要那个LOGO，只是需要一台小巧的迷你主机的化，其实有非常多的品牌和产品可以选
 
 - ## [Will apple make a macbook pro with an ultra chip? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1o8ax0f/will_apple_make_a_macbook_pro_with_an_ultra_chip/)
   - Just imagine 1 tb of ram on a m5 or m6 ultra MacBook Pro? The price will be absurd and the battery will be short? Maybe they will restrict the ram, since it will use more power? 
@@ -2693,18 +2705,6 @@ modified: 2022-01-16T15:52:31.293Z
 - 确实如此。想双显卡主板不能差了，最好得是双PCIe5.0 16X的，要不然第二个显卡速度直接慢一截，但价位直接5000了。
 
 - 你这个需求应该去买X570带pcie bifurcation的主板，因为z690、z790和amd新的x670上了pcie5.0，5.0的拆分芯片非常昂贵，只有旗舰才会用，4.0的拆分芯片相对便宜。买个rog strix x570e就行了
-
-- ## [双 RTX 5060 Ti 白色家庭工作站 - 小红书](https://www.xiaohongshu.com/explore/687ab0d4000000002203d812?xsec_token=ABsbkh11yQDdy4hEUo0ho9xZjLdOVOCgvh31n3gg0Yyw8=&xsec_source=pc_search&source=web_explore_feed)
-  - 主板：华硕 Z690 Formula
-  - 机箱：乔思伯 D41 MESH
-  - CPU：i7-14700
-  - 显卡1：微星 RTX 5060 ti 16GB TRIO
-  - 显卡1：技嘉 RTX 5060 Ti 16G
-  - 内存：64GB DDR5 6400 CL32
-  - 硬盘：Kioxia KXG80ZN84T09 4TB
-  - 电源：海盗船 RM750e ATX 3.1
-  - AIO：酷凛 FX360 PRO
-  - 风扇：8 x Arctic BioniX P120
 
 - ## 🌰 [CoolerMaster Qube 500 with dual GPUs : r/mffpc _202507](https://www.reddit.com/r/mffpc/comments/1m3x31m/coolermaster_qube_500_with_dual_gpus/)
   - CPU: Ryzen 5 9600X 
@@ -2891,6 +2891,18 @@ modified: 2022-01-16T15:52:31.293Z
   - 机械大师C34 Pro这个机箱正面金属质感尽显，看起来极为优雅
 
 - [有没有什么体积比较小的ATX机箱推荐. 台式机？ - 知乎](https://www.zhihu.com/question/51668457/answers/updated)
+
+- ## [双 RTX 5060 Ti 白色家庭工作站 乔思伯 - 小红书](https://www.xiaohongshu.com/explore/687ab0d4000000002203d812?xsec_token=ABsbkh11yQDdy4hEUo0ho9xZjLdOVOCgvh31n3gg0Yyw8=&xsec_source=pc_search&source=web_explore_feed)
+  - 主板：华硕 Z690 Formula
+  - 机箱：乔思伯 D41 MESH
+  - CPU：i7-14700
+  - 显卡1：微星 RTX 5060 ti 16GB TRIO
+  - 显卡1：技嘉 RTX 5060 Ti 16G
+  - 内存：64GB DDR5 6400 CL32
+  - 硬盘：Kioxia KXG80ZN84T09 4TB
+  - 电源：海盗船 RM750e ATX 3.1
+  - AIO：酷凛 FX360 PRO
+  - 风扇：8 x Arctic BioniX P120
 
 - ## 🌰 [5k2k 144Hz Dual GPU LSFG Setup : r/losslessscaling _202504](https://www.reddit.com/r/losslessscaling/comments/1k837cb/5k2k_144hz_dual_gpu_lsfg_setup/)
   - Just here to share my completed dual GPU build, managed to get stable 144fps in MH Wilds with LSFG 3.0 Fixed x3 with 80 flow scale, HDR enabled. And my goodness the gameplay looks incredible smooth.

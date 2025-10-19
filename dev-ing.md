@@ -242,6 +242,11 @@ use vanilla html/css/javascript to create a personal profile landing page: homep
 use react to create a homepage shows a list of frontend frameworks like react/vue/angular, when clicking the framework, navigate to the route to show its introduction
 ```
 
+- goal-to 增强特色
+  - editor
+  - crud
+  - 业务系统与架构增强: lasuite-docs, cms
+
 ## 1014
 
 - ❓ [[BUG] Image features and image tokens do not match on full finetuning · Issue · unslothai/unsloth _202504](https://github.com/unslothai/unsloth/issues/2251)

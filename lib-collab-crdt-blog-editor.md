@@ -13,6 +13,10 @@ modified: 2023-10-28T09:03:33.687Z
 
 # blogs-text
 
+## 📌 [Some notes on editor frameworks (eg. Monaco, Lexical, Codemirror, etc) + collaborative editing/conflict resolution technologies (eg. OT, CRDT, etc)](https://gist.github.com/0xdevalias/2fc3d66875dcc76d5408ce324824deab)
+
+- [Some thoughts RE: Copy on Write + Event Sourcing for edit history](https://gist.github.com/0xdevalias/20cfaaeb33698440b58b00ab97dd3bbc)
+
 ## [Why RichText facets in Bluesky | Paul's Dev Notes _202401](https://www.pfrazee.com/blog/why-facets)
 
 - Why not Markdown

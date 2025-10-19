@@ -342,8 +342,14 @@ async function getEmbeddings(text) {
 
 # discuss
 - ## 
+
 - ## 
-- ## 
+
+- ## [does LangGraph provide any support to stream the LLM's output？ _202501](https://github.com/langchain-ai/langgraph/discussions/3207)
+  - In many cases, a LangGraph node is an LLM call. For such nodes, does LangGraph provide any support to stream the LLM's output through methods like `graph.stream()` ? 
+- Yes. The LLM calls hook into the underlying callback system so if you say to stream we then connect to those hooks.
+  - Each node adds its own metadata for calls made within it so you can filter based on that
+
 - ## [What is the other best alternative to LangGraph? : r/LangChain _202411](https://www.reddit.com/r/LangChain/comments/1ggrqis/what_is_the_other_best_alternative_to_langgraph/)
 - No surprise there, every senior dev, techlead and CTO despises most current frameworks like langgraph, langchain, crewai, ... Due to being overly complex...
 - The whole Lang* ecosystem is a repackaging of existing ideas under the banner of generative AI. LangChain is an elaborate library for string formatting and web requests; 

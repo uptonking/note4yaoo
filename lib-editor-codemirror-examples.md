@@ -468,7 +468,9 @@ modified: 2023-06-23T12:46:53.288Z
 
 - https://github.com/rennzhang/codemirror-editor-vue3 /MIT/202204/ts
   - https://rennzhang.github.io/codemirror-editor-vue3
-  - CodeMirror component for Vue3
+  - CodeMirror5 component for Vue3
+  - [Merge Mode | codemirror-editor-vue3](https://rennzhang.github.io/codemirror-editor-vue3/guide/prepattern/merge)
+    - The merge mode works with the diff-match-patch plug-in(Only 6.3k after compression)
   - https://github.com/cloudacy/vue-markdown-edit /202112/ts
     - simple markdown editor based on CodeMirror built for VueJS.
 - https://github.com/logue/vue-codemirror6 /MIT/202407/ts

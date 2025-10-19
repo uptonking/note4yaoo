@@ -177,7 +177,7 @@ modified: 2023-01-20T21:59:47.792Z
     - Docs are in-memory only, YJS state will be lost on server restart
     - **No tie-in with saved lexical state**. Lexical state is updated in the post model via normal API requests from Admin which can mean the multiplayer doc and the saved lexical state become out of sync but there's no detection/indication of that state at present. Will also trigger the "someone else is editing" errors because multiplayer doesn't yet override the default post update collision detection
 
-- https://github.com/burdy-io/burdy /MIT/202202/ts/inactive
+- https://github.com/burdy-io/burdy /234Star/MIT/202202/ts/inactive
   - Headless CMS built in NodeJS and React. Written in Typescript
   - Node.js, TypeORM, Express
   - React, Fluent UI

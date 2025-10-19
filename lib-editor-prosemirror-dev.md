@@ -96,12 +96,19 @@ modified: 2021-05-06T09:39:53.522Z
 
 - ✨ custom-elements
 - code
+  - code-diff
+  - sandbox: sandpack
 - table
+  - group
+  - views
 - image
+  - img-editor
+  - img-gen
 
 - 👾 ai
-- stream
+- stream-text/md
 - partial-edit
+- pdf-edit-with-vlm/ocr
 - graphics-by-text: mermaid-editor, drawio-xml
 - markdown-partial
   - treesitter as markdown stream parser
@@ -112,6 +119,9 @@ modified: 2021-05-06T09:39:53.522Z
 
 - collab
   - codemirror in prosemirror: all collaborative
+
+- examples
+  - 迁移docling在线识别文档的示例
 
 - chart
   - markdown-chart + llm

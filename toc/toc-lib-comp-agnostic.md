@@ -232,12 +232,34 @@ modified: 2020-11-13T07:28:27.824Z
   - All of the elements are built using the utility classes from Tailwind CSS and vanilla JavaScript with support for TypeScript.
   - Flowbite also offers an API for using the components programmatically with vanillajs
 
+- https://github.com/franken-ui/ui /2.4kStar/MIT/202509/ts
+  - https://franken-ui.dev/
+  - an HTML-first UI component library built on UIkit 3 and extended with LitElement, inspired by shadcn/ui.
+  - Is this project dead? Let’s settle this. Just because you haven't seen recent activity doesn't mean it's abandoned. The project is feature complete.
+
 - https://github.com/pqina/filepond /202311/js/NoDeps/active
   - https://pqina.nl/filepond/
   - A flexible JavaScript file upload library that can upload anything you throw at it, optimizes images for faster uploads, and offers a great, accessible, silky smooth user experience.
   - Accepts directories, files, blobs, local URLs, remote URLs and Data URIs.
   - https://github.com/pqina/react-filepond
   - https://github.com/pqina/vue-filepond
+
+- https://github.com/AmadeusITGroup/AgnosUI /77Star/MIT/202510/ts
+  - https://www.agnosui.dev/
+  - Multiframework Frontend Component Libraries, including Headless and Bootstrap
+  - Inspired by the success of ng-bootstrap, AgnosUI takes the concept a step further by offering components that can seamlessly integrate with any front-end framework of your choice. With support for popular frameworks like Angular, React, and Svelte
+
+- https://github.com/zayne-labs/ui /MIT/202510/ts
+  - https://zayne-labs-ui.netlify.app/
+  - A collection of multi-framework UI utilites and unstyled components
+  - Headless components - bring your own styles
+  - Composable API design
+  - Built on top of @zayne-labs/toolkit
+
+- https://github.com/getgoui/go-ui /MIT/202407/ts/inactive
+  - https://go-ui.com/
+  - Pattern-first, framework-agnostic, a11y focused, adaptive design system
+  - Go UI utilise modern browser features such as Web Components and CSS custom properties so that the components and patterns can be used in any JavaScript framework, or no framework at all.
 
 - https://github.com/xtendui/xtendui /362Star/MIT/202309/js/inactive
   - https://xtendui.com/

@@ -40,7 +40,26 @@ modified: 2025-08-08T07:36:31.265Z
 
 - ## 
 
-- ## 
+- ## 🤔 [Any concrete drawbacks from using Vercel's AI SDK? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nxmfz7/any_concrete_drawbacks_from_using_vercels_ai_sdk/)
+  - I was researching what I would deem to be "good" open source code in this area to try and find some interesting abstractions and noticed that nearly all the projects are using Vercel's AI SDK for connecting to LLMs. 
+
+- Keep your own thin provider interface and treat Vercel’s AI SDK as an optional UI/streaming helper, not the core. 
+- Concrete gotchas I’ve hit: 
+  - the SDK leans hard on an OpenAI-shaped schema, so Anthropic/Gemini/Ollama quirks (tool_choice, parallel tool calls, reasoning tokens, JSON strict modes, logprobs) need shims and you can lose feature parity. 
+  - Streaming can blur tool boundaries and partial deltas, which makes extracting structured state annoying. 
+  - Their retry/rate-limit controls are basic, and observability hooks are light; 
+  - you’ll likely bolt on your own token accounting, tracing, and redaction. 
+  - Version churn is real; small upgrades have broken message types and server components for me. 
+  - It’s also very Next.js/Edge flavored-testing outside that stack and running local-first (Ollama) is smoother with your own adapter. 
+- What worked well: a ports/adapters layer that normalizes messages/tools, your own SSE parser, and per-provider cost/telemetry, then use the SDK’s `useChat` only for front-end UX. 
+  - I’ve paired Cloudflare Workers and Temporal for orchestration, with DreamFactory to expose stable REST tools over legacy DBs. 
+  - In short, keep your adapter layer and use the SDK at the edges only.
+
+- Every abstraction seems to have its pros and cons.
+  - Vercel AI SDK: easy to use, Next compatible, simple agent concept, adapters for LangChain.js so you can use AI SDK front end primitives (but you could choose AG UI instead too).  Easiest path to supporting both server and client side tools
+  - LangChain.js: widest support, lots of agent tools, worst API
+  - LlamaIndex. TS: weakest support, nice API and RAG primitives
+- In the end you can kind of adapt some parts of these to another.  For example, I have a custom LlamaIndex. TS adapter for Vercel AI SDK language and embedding models.  You can adapt LangChain.js tools to Vercel AI SDK fairly easily.
 
 - ## [Is it worth using LangGraph with NextJS and the AI SDK? : r/LangChain _202506](https://www.reddit.com/r/LangChain/comments/1lnsoud/is_it_worth_using_langgraph_with_nextjs_and_the/)
 - Integrating LangGraph with Next.js and Vercel's AI SDK can be tricky due to limited docs, especially for streaming. 
@@ -92,6 +111,49 @@ modified: 2025-08-08T07:36:31.265Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 🆚 [LangChain: JavaScript or Python? : r/LangChain](https://www.reddit.com/r/LangChain/comments/1mtq9e4/langchain_javascript_or_python/)
+- I am biased; I find Python is the simplest and most intuitive for me. There are more examples out there. The data libraries available work well.
+
+- When i tried the js version last time (few months ago), few features i was looking for not there. It was only available in the python one, so i had to switch. Not sure if it is the case right now.
+  - The redischeckpointer for one. I did the same thing.
+
+- We did it fully in JS/TS, contrary to any advice from partners, "experts", friends. And we are very happy. Simply because it integrates better in our ecosystem of apps, tools, frameworks. The rule of thumb: The best programming language is the one you know best.
+
+- In python you can write jupyter notebooks. Very useful for ML stuff and when you are new to something. In js you would need to rerun/recompile all your code. This can take long depending on your preprocessing, volume of data, etc. Also python has a very large ML ecosystem.
+
+- I have struggled with the same questions. From what ive seen LangChain and Lang* have more support for python. For example, chunking for RAG? LangChain has more text splitters in python (Semantic for example). Also LangMem isnt in TS. Which is odd since its never been more easier to port over code from python to TS with the advent of LLMs. Go figure.
+
+- ## [Which AI agent framework do you find most practical for real projects ? : r/AI_Agents _202509](https://www.reddit.com/r/AI_Agents/comments/1nfz717/which_ai_agent_framework_do_you_find_most/)
+  - I have been testing out different AI agent frameworks recently like LangGraph, CrewAI, and AutoGen.
+  - Each of them seems strong in certain areas but weak in others. For example, one feels easier to set up while another handles memory better.
+
+- I have bounced between crew ai and langgraph but honestly what mattered most for me was how painful debugging got in production. I ended up using mastra for TS projects because it gave me structure without all the overhead
+
+- Google ADK is great so far Just worried if they totally shove us towards only using gcp stuff. Example the only other memory service is Vertex AI Memory Bank. No local or third party db support for this like how Autogen does. Open it up Google pls!
+
+- I prefer Agno for its simplicity, clean documentation, speed over langraph in execution, and lastly stable APIs.
+
+- I used OpenAI Agents SDK. It's super simple and flexible. I prefer it over more opinionated frameworks such as Crewai and LangGraph. Those tend to to be difficult to work with if what you're trying to do doesn't fit their template.
+
+- The core pattern is simple but production reality hits different.
+  - Built agents for months and the real killer wasn't picking frameworks - it was debugging when things went sideways. Tracing through multi-step workflows is always a pain point.
+  - Most frameworks optimize for demos, not for "why did this break at 2am" moments.
+  - We ran into the same wall at Adopt, so we built our own tooling layer. Instead of black box agent reasoning, you define workflows declaratively. When stuff breaks, you can see exactly which step failed.
+
+- In many cases you are trading simple problems for complex ones using those SDKs. It may be easier to start with AI sdk, but as you go, the overhead of dealing with them may outweigh the benefits, e.g. Langgraph python SDK has a bizarre approach to working with postgresql checkpointers or to how they store messages in the DB. Also most AI SDKs force you into python or typescript, both of which come with huge maintenance pain and a baggage of inefficiency.
+
+- What you actually want is to just use a traditional for loop with an LLM with tool calls.
+
+- I think the “best” framework really depends on the project’s goals. For quick prototyping, something like LangGraph feels lighter to set up, while frameworks like AutoGen seem better when you need strong memory and more complex coordination. CrewAI looks promising for team-based workflows, but it can feel heavier at the start. 
+  - For me, ease of integration and community support make the biggest difference. 
+  - Curious to hear what trade-offs others have noticed.
+
+- LangGraph. they have great free academy courses. this framework lets to squeeze everything from agents
+
+- tbh if you're building for a production use case, the frameworks add an unnecessary layer of abstraction in exchange for awful debugging, observability, and so-so performance. I'd recommend just using OpenAI Agents SDK. We spent about a month debugging Mastra and then just decided to code the thing ourselves and it's been a huge unlock.
 
 - ## [Why are people hating LangChain so much, organisations are also not preferring projects built on top of LangChain : r/LangChain _202411](https://www.reddit.com/r/LangChain/comments/1gmfyi2/why_are_people_hating_langchain_so_much/)
 - The original versions of LangChain were released at an early stage of LLMs when the APIs were new. They got some of the abstractions wrong and it was unnecessarily complex.
@@ -325,6 +387,32 @@ modified: 2025-08-08T07:36:31.265Z
   - maxSteps overall hands _so_ much control over to the AI SDK, I almost find it hard to recommend.
 
 - You can use prepareStep and implement this idea now
+
+- ## [Groq API always returns 404 - Forum - Groq Community _202507](https://community.groq.com/t/groq-api-always-returns-404/426)
+  - For quite some reason, when I do requests to the API, I always get this: `{ error: { message: 'Not Found' } }`
+
+- 👷: 实测groq api请求有时失败，有时成功
+
+- one thing to check, if you’re behind a firewall and/or a VPN, the API calls might be blocked. Could you do a simple cUrl call from the same machine to see if you get a response? Could you try using a serverless system like Cloudflare workers to see if you get different results?
+
+```sh
+curl -X POST https://api.groq.com/openai/v1/chat/completions \
+-H "Authorization: Bearer gsk_xxxx" \
+-H "Content-Type: application/json" \
+-d '{
+"model": "meta-llama/llama-4-scout-17b-16e-instruct",
+"messages": [{
+    "role": "user",
+    "content": "tell a joke"
+}]
+}'
+
+```
+
+- Same issue here. The API worked a few days ago, but now it consistently returns { error: { message: ‘Not Found’ } } .
+
+- Appears that its all because of my location…. I have to use a vpn, i guess… theres nothing else i can do Oh well, unless someone finds a solution vpn-less, i will have to use one.
+  - yes we block certain IP ranges and countries like Iran and North Korea from accessing Groq for legal reasons, sorry
 
 - ## 👀 [PR 974 introduces unspecified Redis dependency · Issue · vercel/ai-chatbot _202505](https://github.com/vercel/ai-chatbot/issues/977)
 - The issue is that I was using `redis://` as provided by Upstash.

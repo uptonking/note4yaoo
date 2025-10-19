@@ -116,10 +116,11 @@ modified: 2025-09-25T16:24:05.355Z
   - upscale, anime, faceswap, bg-remove, ocr, ...
 - extension-manager: batch enable/disable
 
-## comfyui-devops
+## devops-comfyui
 
 - build comfyui from source
   - [Adding UV installation instructionsUI](https://github.com/comfyanonymous/ComfyUI/pull/6349)
+  - [I stick to manual installation, not Desktop : r/comfyui](https://www.reddit.com/r/comfyui/comments/1oa69d9/do_not_install_the_newest_comfyui_desktop_update/)
 
 ```sh
 uv add --requirements requirements.txt

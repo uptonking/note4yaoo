@@ -924,12 +924,19 @@ Code
 - What you might need is a markdown to lexical state transformer and vice versa (optional). As the text streams in markdown, the editors internal state can be constructed.
 
 - For anyone else trying to implement this, I got a version working that supports markdown with tables using lexical's HTML converter and showdown, and vercel AI sdk
+
+- maybe you can do by separating streamed markdown into blocks and insert as Element Node.
+  - This will help how to separate blocks.
+  - https://github.com/vercel/streamdown/blob/main/packages/streamdown/lib/parse-blocks.tsx
 # discuss-llm-streaming
 - ## 
 
 - ## 
 
-- ## 
+- ## 📝 [How streaming LLM APIs work | Simon Willison’s TILs _202409](https://til.simonwillison.net/llms/streaming-llm-apis)
+- I decided to have a poke around and see if I could figure out how the HTTP streaming APIs from the various hosted LLM providers actually worked. Here are my notes so far.
+- All three of the APIs I investigated worked roughly the same: they return data with a `content-type: text/event-stream` header, which matches the server-sent events mechanism, then stream blocks separated by `\r\n\r\n` . Each block has a `data: ` JSON line. Anthropic also include a `event:` line with an event type.
+  - Annoyingly these can't be directly consumed using the browser `EventSource` API because that only works for GET requests, and these APIs all use POST.
 
 - ## [How streaming LLM APIs work | Hacker News _202409](https://news.ycombinator.com/item?id=41615404)
 - When you ask to return JSON data using streaming, you will notice that the response is incomplete and unparseable by JSON libraries, resulting in malformed errors. 
