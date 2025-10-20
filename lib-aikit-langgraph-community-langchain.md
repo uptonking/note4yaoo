@@ -11,18 +11,44 @@ modified: 2025-09-05T07:18:16.308Z
 
 # discuss-stars
 - ## 
+
 - ## 
+
 - ## 
+
 - ## 
 # discuss-roadmap
 - ## 
+
 - ## 
+
 - ## 
+
 - ## 
 # discuss-internals
 - ## 
+
 - ## 
+
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Need help in streaming the graph's agent response from backend to frontend _202411](https://github.com/langchain-ai/langgraphjs/issues/668)
+- 👷 202509: Please use `useStream()` for first-class streaming handling from LangGraph to your FE of choice
+
+- ## ⚖️ [Data stream protocol support · Issue · langchain-ai/langgraphjs _202409](https://github.com/langchain-ai/langgraphjs/issues/504)
+  - It would be fantastic if langgraph supported vercels new data stream protocol so that langgraph could basically be drop in for react apps already using the vercel ai SDK client side
+
+- langgraph provided an example https://www.assistant-ui.com/examples/stockbroker
+  - It adopted Stream Protocol, however using langgraph server is required
+
+- 👷 202506: Closing this as Won't Fix
+  - Upcoming AI SDK v5 will likely steer away from custom streaming protocol in favour of SSE 
+  - We do now have a `useStream` hook that is tailor made for integrating LangGraph into React apps
+
 - ## [如何评价LangChain LCEL? - 知乎](https://www.zhihu.com/question/634584770)
 - LangChain的表达式语言（LCEL）通过重载__or__运算符的思路，构建了类似Unix管道运算符的设计，实现更简洁的LLM调用形式。
   - 另外，Chain也可以分叉、合并，组合出更复杂的DAG计算图结构。
@@ -38,7 +64,8 @@ modified: 2025-09-05T07:18:16.308Z
 - 👷:  when using local LM Studio, you have to turn off global mode for proxy like clash, you can use rule/direct mode
 - ## [Langchain throws an error when generating structured output using Qwen3-32B deployed via vllm. · Issue · langchain-ai/langchain _202505](https://github.com/langchain-ai/langchain/issues/31335)
 - This was not a langchain issue, but an issue that was caused by a bug in the Qwen3/early Qwen2.x chat template, which assumed that `message.content` would always be present in every assistant/tool call message. 
-  - When running structured outputs or tool calling via OpenAI-compatible APIs (e.g., LangChain, Roo, LM Studio, etc.), this would throw errors such as:` key 'content' not found` or `Input should be a valid string [type=string_type, input_value=None, ...]`
+  - When running structured outputs or tool calling via OpenAI-compatible APIs (e.g., LangChain, Roo, LM Studio, etc.), this would throw errors such as: ` key 'content' not found` or `Input should be a valid string [type=string_type, input_value=None, ...]`
+
 - ## [Local LLM with LM Studio Server: Error in POST payload when using langchain_openai. OpenAIEmbeddings for embedding API. · Issue · langchain-ai/langchain _202405](https://github.com/langchain-ai/langchain/issues/21318)
   - [ERROR] 'input' field must be a string or an array of strings
 - Setting `check_embedding_ctx_length` to False fixes the problem.
@@ -68,9 +95,10 @@ model = init_chat_model(
 - I found the spot where I think the OpenAI compatibility may not be working. With the OpenAIEmbeddings. 
   - In the below code, if I switch to using the Ollama variant, this works fine. The OpenAI variant gives me a bad request error from LMStudio.
   - I tried different models too - I still get the same “input” field error.
-  - I found on some random page from google - adding `check_embedding_ctx_length=False`, to the embedding constructor fixes the error.
+  - I found on some random page from google - adding `check_embedding_ctx_length=False` , to the embedding constructor fixes the error.
 - ## 🔡 [ChatOpenAI — LangChain documentation](https://python.langchain.com/api_reference/openai/chat_models/langchain_openai.chat_models.base.ChatOpenAI.html)
 - `ChatOpenAI` can be used with OpenAI-compatible APIs like LM Studio, vLLM, Ollama, and others. 
+
 # discuss
 - ## 
 - ## 

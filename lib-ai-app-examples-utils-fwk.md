@@ -79,6 +79,7 @@ modified: 2025-02-21T18:20:42.624Z
   - https://langfuse.com/docs
   - Langfuse is an open source LLM engineering platform. 
   - It helps teams collaboratively develop, monitor, evaluate, and debug AI applications. 
+  - 系统元数据存储在pg, 观测数据存储在clickhouse，附件存储在s3
   - Observability: tracking LLM calls and other relevant logic in your app such as retrieval, embedding, or agent actions
   - Prompt Management 
   - Evaluations: supports LLM-as-a-judge, user feedback collection
@@ -86,6 +87,7 @@ modified: 2025-02-21T18:20:42.624Z
   - LLM Playground is a tool for testing and iterating on your prompts and model configurations
   - [All Langfuse Product Features now Free Open-Source : r/LangChain _202506](https://www.reddit.com/r/LangChain/comments/1l36tte/all_langfuse_product_features_now_free_opensource/)
     - 💡 Langfuse is an open-source LangSmith alternative that helps teams collaboratively build, debug, and improve their LLM applications
+  - [Self-host Langfuse (Open Source LLM Observability)](https://langfuse.com/self-hosting)
 
 - https://github.com/K-Mistele/swarm /GPLv3/202501/ts/inactive
   - Model-agnostic typescript implementation of OpenAI's Swarm framework with the Vercel AI SDK

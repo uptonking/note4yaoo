@@ -1433,6 +1433,8 @@ modified: 2022-01-16T15:52:31.293Z
 - tips-gpu
   - 使用场景的要求: 🤔 文多还是图多, 显存大(VRAM), 速度快(带宽)
     - 大显存的方案: mac, amd-ai-max, nvidia, intel-arc
+    - N卡参考资料多，能减少后期调参的工作量
+    - 32GB/48GB大显存单卡能减少运维的工作量, 👀 comfyui使用多gpu变复杂
   - 显存、带宽、位宽, 显存够大才能运行模型，运行模型时的速度主要考虑内存带宽
   - 估算文本模型速度用 `内存带宽如260GBpSec / 模型实际体积如13GB`, 还要考虑context的影响
     - MoE模型对内存带宽的要求会低很多
@@ -1514,6 +1516,232 @@ modified: 2022-01-16T15:52:31.293Z
 - ## 
 
 - ## 
+
+- ## 🤔 [1x4090 24GB or 3x3060 12Gb for Comfy? : r/comfyui _202409](https://www.reddit.com/r/comfyui/comments/1fql7if/1x4090_24gb_or_3x3060_12gb_for_comfy/)
+- 3x3060 won’t give you 36GB. The model can’t be split. There are variations of putting the T5 or clip into another card, but the multi GPU aspect will complicate it so much, it will drive you nuts. Especially since you say yourself you are a beginner. Don’t do it. Go for 4090, comfy ui is complicated enough, you don’t want to deal with anymore hardware setup issues on top of that. If you are tight on cash, go for a used 3090.
+
+- In terms of AI a 4090 would still kill 3x 3060 and VRAM does not work as you think it does, you will not get 36GB VRAM with 3x 3060s
+
+- 3x 3060 only if you're in production and your workflow can fit into 12GB VRAM and you're doing loads of parallel generations.
+
+- 4090, speed is the key point, and there are many ways to reduce VRAM needs.
+
+- ## [Sanity check: Using multiple GPUs in one PC via ComfyUI-MultiGPU. Will it be a benefit? : r/comfyui _202504](https://www.reddit.com/r/comfyui/comments/1k4xjxh/sanity_check_using_multiple_gpus_in_one_pc_via/)
+- I own the ComfyUI-MultiGPU custom node. The two most common ways I see ComfyUI-MultiGPU are the following:
+  - Moving parts of the process to a secondary GPU - typically CLIP/VAE
+  - Using Distorch to offload the entirety of the UNet to another GPU or CPU (preferred).
+  - In doing those two things, most people can get to a "naked" compute card, giving users the most latent space at the cost of speed. It is the way I use ComfyUI most of the time with a 2x3090 NVLink setup.
+  - "Naked" in the sense that there is nothing taking up VRAM on the main compute card other than latent space. In a typical one-GPU setup, VAE, CLIP, and UNet are all resident on the card and take up VRAM that cant't be used for generations. Even a highly-quantized Q3 GGUF takes up (mostly) dead space in your card's VRAM as only one part of it is being dequantized at a time to be used actively during inference, then discarded until the next inference step.
+  - In an optimal MultiGPU setup, all three componenets have been moved off the compute video card's VRAM entirely, allowing the card to be completely filled by latent spece. In this case, a 12G VRAM card can do video that fills that entire 12G of latent space, meaning either higher resolution or longer generations than if half (or more) of that VRAM was being used for component storage.
+
+- ## [有哪些二手显卡值得玩? - 知乎](https://www.zhihu.com/question/1955229739569619499)
+- 纯玩游戏还可以加个mi50刷镭7bios，比vega64新一点
+
+- 2080ti，刚刚跌了一大波，dy叠券最便宜1100-1200就能收一张，你能得到：默认5060/3070，超频5060ti，极限摸3080屁股的游戏性能
+  - 相比更早的卡如v100，有DLSS4，有光追，可以跑渲染器，甚至可以4kDLSS超级性能+插帧mod，60-70帧玩一玩2077路径追踪
+  - 几乎最完美的显存扩容体验，20系显卡显存扩容只需要把显存颗粒从1G GDDR6换成2G就可以
+  - 这一代的vbios还没有上锁，扩容没有驱动bug（3070 16g有），无需拆BGA（3080、4090需要），所有品牌vbios任意互刷（3080、4090需要特制vbios），完全不影响超频（3080、4090改后锁功耗），完全不影响散热（3080、4090改装后变成双面显存大火炉）
+  - 没有vega系列HBM缩肛问题，没有6800系列炸核心问题
+  - 唯一要担心的就是别买到早期镁光显存和黄皮股大修卡
+- 说实话不如直接买5060，这玩意功耗快到5060两倍了，二手能用多久也很难说。
+
+- 为什么3060还能卖1300吗？我觉得这个破卡根本不值钱，现在3070也是1300
+  - 2g大显存，2k3a新游戏能反杀4060持平5060这种8g的卡
+  - AI绘图入门卡，已经没有比它性价比还高的卡了，另外3060不建议买二手，矿卡太多，建议还是买个正规牌子的2000左右的新卡
+
+- v100 32g 现在约2100 ；期盼降到1500 。
+  - v100 16g约500；配一套水冷 900块。
+  - x99 e5一套双显卡槽主机不过千元。
+  - 3500搭一套32g单卡主机；
+  - 但功耗难绷300-600w，所以最后用mac玩api了；
+
+- 别折腾V100这种垃圾了，现在越来越多的新模型，都使用BF16、FP8甚至NVFP4训练模型了，就算推理，算力要求也是8.0起步，有AI需求，老老实实买新卡。
+
+- ## [AMD 发布 AI 显卡 R9700，性能号称同级 5 倍，实际表现如何？ - 知乎 _202509](https://www.zhihu.com/question/1946144571521234533)
+  - R9700的AI性能表现却引起了大家的关注，作为一款RDNA4架构的显卡，拥有32GB GDDR6、256-bit位宽、峰值带宽约640 GB/s、300W TDP，以及最多约1531 TOPS（INT4）和FP16约96 TFLOPS的AI/矩阵运算能力。
+
+- 这个是RDNA4应该比395max那个RDNA3.5的魔改强不少吧
+
+- 兼容性恐怕不乐观，虽然rocm7发布了，但听说有的东西只有cuda才能运行？
+
+- [AMD发布AI神卡R9700！性能是同级5倍，英伟 - 小红书](https://www.xiaohongshu.com/explore/68c58dcb000000001c008551?xsec_token=ABxWJEP3Vpkb636xx2y79C0FRNAwvEq6parZO6uJSDPkM=&xsec_source=pc_search&source=web_search_result_notes)
+- 人话：32g版本9070
+- 没有 CUDA 生态支持，也就玩玩现成的 toy model
+  - 用vulkan或者ZLUDA或者HIP跑呗，反正8k块的卡肯定是个人用，不需要集群，不考虑多并发或者交火啥的，能玩
+
+- 只能在Linux平台用，llm可能还行，AIGC估计是各种不兼容报错。图便宜6000的3090就挺好的。r9700跌到6000也还是只推荐3090。
+  - 补充一点，r9700性能同等级的游戏显卡是5070，跟5080不是一个级别产品，显存大确实是个亮点，但又不够大只有32GB，记得不错wan的权重好像是35GB，折腾一圈到最后还是只能选48GB的4090。
+  - 不要为了推理llm，选来选去只能选m4 max，128GB 400多的带宽，苹果头一次有性价比。
+
+- 没意义，a卡的ai卡如果性价比干不过2080ti 22g根本没出路
+
+- 必须用HBM，试问按摩店2019年的HBM显存为什么悄咪咪的跑到老黄专业卡上了？为什么之后按摩店为什么不出HBM显存的显卡……这群幕后交易……呵呵呵！还是资本会玩
+
+- ## [RTX 4080 SUPER 32 GB量产？显卡日报10月6日 - 知乎 _202510](https://zhuanlan.zhihu.com/p/1958257251954452012)
+
+- [英伟达RTX4080S 32G涡轮显卡新鲜出炉 - 小红书 _202510](https://www.xiaohongshu.com/explore/68dc7ac30000000005031f93?xsec_token=ABF5bwSFkHhKX5sU6IgENqtkol2WzQxpTy_DJscw_OC8M=&xsec_source=pc_search&source=web_explore_feed)
+- 那4080s是不是要涨价了
+  - 多半不会，4090涨价虽然一方面有显存魔改的原因，但最主要禁售，而且也不产了，存量某种程度肯定少, 但4080市面上还是很多的
+- 要是有三风扇版的就好了，涡轮的声音受不了
+
+- [现在上4080super是不是49年入国军？ - 知乎 _202408](https://www.zhihu.com/question/664986798)
+  - 除非4080s 跌倒6k 不然真的不值得购买了，顶天也就5070ti的性能， 问题人家有 大力水手4啊。
+
+- [4080Super买哪个好？不超频，但求省心不折腾? - 知乎](https://www.zhihu.com/question/651409618)
+- 区别主要就是用料、外观、品牌和售后
+
+- 主要设计处区别：供电、散热规格
+  - 华硕 ROG 猛禽：18+3 70A供电，单16PIN供电，4*8mm+3*6mm铜管，均热板
+  - 华硕 TUF 电竞特工：12+2 50A供电，单16PIN供电，5*8mm+3*6mm铜管，分体式镜面铜底
+- 整体而言，华硕溢价严重，规格一般，而微星只有旗舰型号能看，七彩虹的全系用料都不错，影驰显卡的性价比高，还有影驰HOF名人堂是RTX4080Super规格里面供电最高的型号，还有，万丽盖拉多虽然是价格最低的，但不是用料最丐的。
+  - 下面两款为良心型号，可无脑入： 
+  - **影驰RTX4080 SUPER 星耀OC，七彩虹RTX4080 SUPER AD OC**
+  - 旗舰型号推荐：七彩虹火神和水神、微星超龙（降价高可考虑）、影驰名人堂
+
+- 每个品牌也有旗舰和次旗舰之分
+  - 比如微星就有万图师，魔龙，超龙之分，分别对应的入门款，进阶和期间，价格相差几百。
+  - 另外就是支持个人送保的七彩虹，对于售后这块来说简直不要太省心了， 七彩虹一款Ultra W OC，另外一款AD OC 区别不是很大，主要是外观区别
+
+- 很多都是推荐微星、华硕、七彩虹的，把御三家的技嘉给漏了？
+  - 因为技嘉辱华啊
+
+- ## [如何评价RTX2080Ti 22G魔改版？ - 知乎](https://www.zhihu.com/question/8164944069)
+  - 这张卡的价格在2600上下。同价位或预算内的N卡还有RTX 4060 8G（价格差不多），TESLA P100（这张只要1600左右）
+
+- [我买计算卡时做的功课 对比表](https://www.zhihu.com/question/8164944069/answer/1940267056307077954)
+
+- [What are your /r/LocalLLaMA "hot-takes"? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1obb4c4/what_are_your_rlocalllama_hottakes/)
+  - Currently, no so-called AI PC or unified memory device can match the performance of a similarly priced combination of GPUs and server CPUs.
+  - vLLM and CUDA 13 are dropping support for GPUs with SM7.5 and below, so buying any pre-Ampere GPU (e.g., 2080 Ti, V100) is not a sustainable long-term choice. In my opinion, only NVIDIA's Ampere (and newer) architectures and AMD's RDNA 4 are truly viable for AI workloads.
+
+- 2080Ti~22g：目前(2024年12月底)，可以找到2400-2500店保一年的，尽量选口碑好的。
+  - 这张卡能力均衡，是平民/垃圾佬的Ai神器，同样也是来路不明nv骑士的典范，生产力老手。
+  - 大显存，高算力，高带宽，功耗合理，噪音散热可接受，还支持nvlink扩展。
+  - 它的唯一缺点就是Turing架构有一丢丢老了，但比volta又要好一丢丢。至于矿不矿
+
+- 2500附近的同一价位，能买到：
+  - V100-sxm2-16g~PCIe(转接卡，训练向)
+  - V100-pcie-16g-定制(核心搬板，训练向)
+  - 2080Ti~22g(显存扩容，训练推理兼顾)
+  - 3070~16g(显存扩容，推理日常兼顾)
+  - 4060ti-8g(16g要捡漏，推理日常环保)
+- 2025年5月加几块卡
+  - A3000m~pcie(12G显存，移动版魔改，挑主板， ¥1400)
+  - T10(16G显存，推理性价比高，一定要搞好散热， ¥1400)
+  - 3080~20G(搬板扩容，应对3090涨价，注意散热，¥3500)
+  - 5060Ti-16G(代替4060ti，兼容性逐渐好转， ¥3500)
+
+- 我认为，深度学习的生产力提升关键在于混合精度训练(mixed-precision-training)和低精度推理
+  - 除非你有非常明确的目标，比如依赖显存大小的传统单精度计算，并且有严格的预算，才考虑p100/p40
+  - V100可以提供超越3090/4080的混合精度算力，适合深度学习训练，但因为volta作为最初代tensor core，不支持int8/int4加速，量化推理没有优势。目前SXM版本价格不错，但转接pcie需要折腾。
+  - 2080Ti~22g，特点如前，推荐。精度不支持tf32/bf16/fp8/fp4，库不支持flash-attn:2+(已有移植版本可见)，影响需要根据实际研判。
+  - 3070~16g或者择机捡漏上4060ti-16g，更适合入门选手，什么都想试试，推荐新架构。这个价位上目前还能买到A2，但只有3050的性能明显不太够看
+- Ampere和Ada架构相比Turing的优势，一是工艺改进带来的能耗优化，二是支持更多的数据类型在tensor加速，比如bf16甚至fp8，附带就是flash-attention(2+)依赖硬件架构
+- 从CUDA **12.8**开始，英伟达官方不再对maxwell(cc 5.2/5.3)、pascal(cc 6.0/6.1)、volta(cc 7.0) 提供更新，**驱动还可以正常安装，加速卡也可以正常使用**，但它们被标记为过时架构，选择时需要评估。
+
+- 魔改技术已经非常成熟了，稳的一批，我上了4块涡轮散热的，卖家送了NVlink, 不到1w块钱，服务器就有了88G显存
+
+- 只能相邻两张卡互联，而且两条nvlink速率一般~当然比PCIe还是好多了
+  - 实际跑ollama推理，nvlink没起什么作用
+
+- cuda12 用不了这个2080ti
+  - 能用，20系要说有啥弊端那就是不支持bf16，而且这卡现在看性能也不行了，也就5060的性能
+- p106这个10系的都能装cuda12
+- 别说p架构了，我tesla m40都装上了12
+
+- 20系不支持bf16和fp8，有些新模型根本就跑不了
+  - 我用的2080反正现在啥模型都能跑，主要是绘画
+
+- 推荐，性价比是真的高，作为推理卡十分优秀，但训练的话要慎重。前段时间买了六张在家搭了一个六卡机器，用了快一年了没出过问题，总共加起来132g显存最终花费才不到2w。
+  - 缺点也是有的，最大的问题就是架构比较老，不支持bf16以及一些比较新的算法。目前准备换成3080改20g或者搞两张4090改48g跑跑训练，顺便把之前2080ti的nvlink搭上
+  - 最后，如果要搞训练，建议还是上30系以上的。不然会因为架构太老遇到很多坑。
+  - 待机每天5度电，火力全开每张卡250w，一小时就1.5度
+
+- 2080ti是二代NVLink，和3090三代nvlink不通用吧。
+
+- 4090没有sli或者nvlink
+  - lz的六卡机也没有往SLI上插东西啊。
+
+- Turing架构的tensor core能跑fp16和int8，但是目前看bf16是趋势，还是得慎重
+  - 30系以上的可以跑flash attention
+
+- 4090 48G服务器都有了，我现在就在用8卡的
+  - 大致讲下体验，支持bf16的混和精度模型训练在参照80GA100的batch-size的情况下，虽然4090要开grad_accumulation=2，但是速度比a100快一些，能到5.5:7.3 s/step。 不支持混和精度的模型就要慢a100一倍了
+  - 没nvlink, 跑的是VLA的训练，一个是RDT，一个pi0，根本不能全参数，虽然io没卡住，但是如果模型没开bf16的混和精度训练的话慢一倍多了
+
+- 魔改的2080ti你记得买三风不要买涡轮卡，温度高，噪音大，容易受不了的，我就是从涡轮卡换成了三风，噪音问题基本解决
+
+- 3000以内魔改的2080ti确实就是最佳选择，
+  - 这小一年群里几百号人翻来覆去讨论过无数次，最终结论都是魔改2080ti性价比最高
+  - 这是你能得到的最便宜的20g以上显存且性能过得去的卡了，我自己也炼丹玩儿，卡钱是赚回来了的
+
+- 不支持bf16是硬伤，剩下的就是你买了大概率就是接盘侠了，这卡在未来不仅打游戏的看不上，炼丹的也看不上。
+
+- 在2k出头的价位不算差，但是V100 16GB和3080 20GB的性价比更高
+
+- 3080 20g要3千多了
+  - 能跑BF16就值回多的600-700了。如果不要保修的话闲鱼有2600左右的
+
+- ## [2025年AI本地部署性价比之王！双卡V100！32G显存，低价高能，碾压2080Ti 22G - 知乎](https://zhuanlan.zhihu.com/p/1927666998030078159)
+- 千问3 32B模型在V100上的token生成速度为每秒20.34个，2080Ti则为13.43个；DeepSeek R1 32B模型在V100上的速度为每秒21.28个，2080Ti为18个。
+
+- V100不支持flash- attention、bf16、awq、sglang新版本也不支持v100了，显卡太老了，新的加速策略用不了，速度还不如消费卡呢。
+- 对SD跑图来说，不支持int4、fp8、fp4，不能用nanchaku加速。SD也不能多卡显存叠加。
+- stable Diffusion跑图，很多模型都用不了的。没啥意思
+
+- 很多推理特性不支持，远远没有2080ti好
+
+- V100确定一千就能买到？
+  - 核心板吧，散热转接加起来16g的3k，32g的5k，毕竟是6年前的东西了
+- 大概1000左右可以搞定的。我都1000一套卖的，还是改的水冷。nvlink 32g，也就2300卖了
+
+- ## [聊一聊Mi50这张显卡（自费购入） - 知乎 _202508](https://zhuanlan.zhihu.com/p/1935428196653838934)
+- 在500元价位，这张卡拥有其独有的16G大显存，想本地部署LLM的可以冲一冲。贴心的卖家已经帮我刷好了RadeonProVll的vbios（提示：这张卡只有在镭7的vbios下才会主动进行视频输出，很重要！），
+  - 本地部署DeepSeek32B的模型略显吃力，毕竟架构挺老了而且我只有一张卡，有条件的可以多卡交火（支持的，有接口），
+  - 游戏方面流畅运行倒是不赖，1080P下，搭配E5-2680V4、DDR4 2400的情况下，CS2高画质全局稳定150帧，流畅运行肯定称得上，
+- 对我最有影响的应该就是这个沃伦卡的 噪！音！ 真的很TM吵，跟体育老师不停吹口哨一样
+  - 但好在已经有双风扇版本，当时图便宜加上没买过涡轮卡，脑子一热，一失足成千古恨啊 
+- 显卡光有硬件是不行的，软件层面也得打磨打磨
+  - 这张卡在这个价位段，就作为一张专业生产力卡来说，我可以拍着胸脯说出AMD YES！毕竟这个价位的N卡不是1065、1063就是40hx这种要么显存小，要么视频编解码能力被砍得比路易十六还惨再或者是魔改锁驱，我是喜欢小机箱的人，小板这种只有一下x16槽的无头骑士可用不了
+
+- 这卡的minidp好像不带音频输出
+  - 我插耳机用的
+
+- 功耗太高了，不适合看视频上网用。
+
+- https://www.zhihu.com/question/628771017/answer/1928750084457230617
+  - 关于LLM模型生成速度：N卡CUDA强，A卡一般。个人用途一般更在乎模型智商水平而不在乎生成速度，因此显存大小就是王道，无脑选大显存/内存配置，CPU推理性价比更高，可以运行超高参数，如deepseek 671B，CPU推理吃内存带宽，通道数一定要满。如有生产力速度需求，无脑选4090 48G。
+  - AMD MI50 32G一代神卡，在windows下只能用Vulkan跑，在linux下可以用ROCm，70Bq4生成速度10tk/s，性价比非常高，可惜跑不了comfyUI，想要画图必须自己手组散装webui。
+  - SDXL模型占用显存不大，仍然是8GB够跑。但是只能在N卡上跑的好，A卡优化很差。
+  - 文生视频模型占用显存巨大，一般消费级显卡只能生成480p清晰度1分钟以内时长的视频，720p及以上必须用大于48G显存的N卡。
+
+- [大船靠岸，AMD MI50 16/32G显卡晚来一步 - 知乎](https://zhuanlan.zhihu.com/p/1896388031436530191)
+
+- [MI50 32g 我说这个就是史 - 知乎 _202504](https://zhuanlan.zhihu.com/p/1893227599272067712)
+- 价格是720包圆，现在被jsq炒作老高了
+- 这个卡刷不了bios，不可能 显示输出
+- amd通病，你想玩ai生态支持稀烂
+- 总结：鸡肋中的鸡肋，不如mi50，2080ti 22g
+- 貌似反转了，这个卡听说能刷bios有视频输出，这个特性导致他可能不会太fw，但是我觉得32g的显存还是太大了没必要，作为低廉算力卡来说确实还可以
+  - 2080Ti 22g在前面顶着呢。GCN架构玩游戏真的不错但计算性能太低，即便不考虑功耗散热噪音，玩游戏16G版够够的
+
+- 如果生态好的话 32g 显存怎么可能才不到一千，2080 ti 22g 现在都要快三千了。一张 2080 ti 22g能买三张 mi 50 32g。
+
+- 你忘了提一个弱点，300瓦的功耗，100瓦的性能
+  - 倒不只是电费的问题，这样电源散热噪音都会增加，太麻烦了
+
+- ROCm的支持说不定啥时候就没了，到时候干瞪眼
+
+- 我的结论是目前单卡运行 gemma3 27B 或者 qwq 32B，Mi 50 32G 显卡就是答案。1000 元显卡带来 20tokens/s，还有谁？
+  - 按 AMD 官方教程安装一下 rocm 和驱动，rocm 版本 6.3.3 已经验证， 一定是可以的。
+  - 按 ollama 官方教程，手动安装 ollama 和 ollama-rocm。
+- 用LMStudio的Vulkan后端即可，免折腾ROCm，Qwen3和Gemma3都能跑，速度比ROCm打七折
+
+- 现在ktransformer支持amd显卡了，弄个512的ddr4内存+四张MI50应该可以跑通Deepseek671b，等一手最强性价比的Deepseek满血版方案，希望大佬可以试试
+
+- 32G的，双卡可以运行70B模型，6-8tokens/S，基本上属于可以用的范畴了，如果是VLLM估计还能更快，我用的ollama，就是散热要搞好，我里面插涡轮，外面风扇吸，勉强可以控制
+
+- 我觉得其实蛮好的, 大容量并且大带宽的显存, 并且还有服务器的稳定性, 这个卡的32 64算力高的夸张, 和V100一样, 作为一张专业卡是相当够用的
 
 - ## [NVLINK port support for RTX 3090 Ti, RTX 4080/4090 - Gaming and Visualization Technologies / Raytracing - NVIDIA Developer Forums _202210](https://forums.developer.nvidia.com/t/nvlink-port-support-for-rtx-3090-ti-rtx-4080-4090/231140)
 - I just checked RTX 3090 Ti, that also does not have NVlink port. Am I right?
@@ -4718,6 +4946,15 @@ modified: 2022-01-16T15:52:31.293Z
 
 - 这u降压单塔也能压，一般双塔都是够的，只要不降频没啥好焦虑 你这个温度高主要是机箱差+乱装风扇，前置电源小箱本身进风受阻风道难构，底下也没有风扇进风纯靠显卡抽风(显卡下超过3cm，完全可以尝试上15mm薄扇进风)，上部的风扇尤其是前部的更是把cpu所剩不多的冷气抽走，cpu直接无气可用巧妇难为无米之炊，pa120的塔体是很优秀的
 
+- [2024 伦敦自用手提4090 小主机 - 小红书](https://www.xiaohongshu.com/explore/6766dd2400000000130083af?xsec_token=ABboPWE_YbGyIsohkIYlHUozqKDRjLeUQCouU2QZY1chQ=&xsec_source=pc_search&source=web_search_result_notes)
+  - 机箱：乔思伯 Z20, 180mm*298mm*370mm, 20L 📌
+  - 风扇：乔思伯 ZK120W x3 + ZK120WR x3
+  - 厂家应该出个带屏幕的风冷，把这个显示温度的换掉
+
+- [Can the jonsbo Z20 support a quad-slot GPU? What is the GPU height clearance of the case? : r/mffpc _202501](https://www.reddit.com/r/mffpc/comments/1i8o5rp/can_the_jonsbo_z20_support_a_quadslot_gpu_what_is/)
+  - Idk if this is considered 3 or 4 slots 4090? 360 mm length and 70mm height. I added 15mm fans on the bottom but honestly they are unnecessary as the temps were virtually the same before with less noise/interference.
+  - Asus b850 strix I think it’s called. Itx. If I could do it again with this case I’d get a m atx board. Only thing you gotta watch out for is the pcie placement needs to be above any m.2 slots. So most of the msi boards are not an option.
+
 - [黑橙风冷手提式小电脑 - 小红书](https://www.xiaohongshu.com/explore/66d19e28000000001d01b98b?xsec_token=AB38kMIt8DJB5wbhI53QOtqJMabGeUPzQy1DfS21GmOko=&xsec_source=pc_search&source=web_search_result_notes)
 - 底部可以同时装两个风扇和一个3.5寸硬盘
 - 我装了这个机箱，提醒一下，买主板看一下 pcie 槽的位置，微星迫击炮有点偏下，显卡厚了就贴底了，我看别人华硕 tuf 都挺好
@@ -5203,11 +5440,6 @@ modified: 2022-01-16T15:52:31.293Z
   - 这就是我们 itx 玩家，盯着丐版买哈哈
   - 我用来生产力的虽然不是每时每分都在跑任务
     - 那建议上个好点的水冷或者双塔风冷
-
-- [2024 伦敦自用手提4090 小主机 - 小红书](https://www.xiaohongshu.com/explore/6766dd2400000000130083af?xsec_token=ABboPWE_YbGyIsohkIYlHUozqKDRjLeUQCouU2QZY1chQ=&xsec_source=pc_search&source=web_search_result_notes)
-  - 机箱：乔思伯 Z20, 180mm*298mm*370mm, 20L 📌
-  - 风扇：乔思伯 ZK120W x3 + ZK120WR x3
-  - 厂家应该出个带屏幕的风冷，把这个显示温度的换掉
 
 - [闲置配件重组，小机箱里塞一张4090 - 小红书](https://www.xiaohongshu.com/explore/679000e6000000002900d92c?xsec_token=ABMD6mhQ-2BymdWDpwL5hvfM8OOubZz_p0mUadq6O7lw8=&xsec_source=pc_search&source=web_search_result_notes)
   - C+MAX的箱子，白猛禽4090 oc

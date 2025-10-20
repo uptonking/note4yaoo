@@ -1707,6 +1707,14 @@ modified: 2025-08-23T11:43:35.904Z
   - The graph editor front-end is here: https://github.com/cozy-creator/graph-editor
   - The graph editor is currently not yet functional
 
+- https://github.com/dovvnloading/Sapphire-Image-GenXL /MIT/202510/python
+  - PrismXL Image Generator is a standalone desktop application designed to harness the power of diffusion models, specifically leveraging the `RunDiffusion/Juggernaut-XL-v9` model.
+  - [I built a (opensource) UI for Stable Diffusion focused on workflow and ease of use - Meet PrismXL! : r/StableDiffusion _202510](https://www.reddit.com/r/StableDiffusion/comments/1oawx5t/i_built_a_opensource_ui_for_stable_diffusion/)
+    - It's a standalone desktop GUI built from the ground up with PySide6 and Diffusers, currently running the fantastic Juggernaut-XL-v9 model.
+    - My goal wasn't to reinvent the wheel, but to refine the experience. 
+    - Live Render Preview: For 512x512 generations, you can enable a live preview that shows you the image as it's being refined at each step
+    - Grid Generation & Zoom: Easily generate a grid of up to 4 images to compare subtle variations. The image viewer includes a zoom-on-click feature and thumbnails for easy switching.
+
 - https://github.com/leejet/stable-diffusion.cpp /4.3kStar/MIT/202508/cpp/NoDeps
   - Inference of Stable Diffusion and Flux in pure C/C++
   - Plain C/C++ implementation based on ggml, working in the same way as llama.cpp

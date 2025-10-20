@@ -290,6 +290,9 @@ modified: 2025-03-22T18:49:15.634Z
   - Multi-modal by default - First-class support for text, images, files, and structured outputs across all providers
   - Extensible architecture - Clean interfaces make it easy to add new providers while maintaining backward compatibility
 
+- https://github.com/futurxlab/golanggraph /apache2/202509/go/inactive
+  - Lightweight AI Agent SDK inspired from LangGraph, written in Golang, so called golanggraph.
+
 - https://github.com/ClickHouse/ai-sdk-cpp /87Star/apache2/202507/cpp
   - a modern C++ toolkit designed to help you build AI-powered applications with popular model providers like OpenAI and Anthropic. 
   - [Show HN: A modern C++20 AI SDK (GPT‑4o, Claude 3.5, tool‑calling) | Hacker News _202506](https://news.ycombinator.com/item?id=44412726)

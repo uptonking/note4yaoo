@@ -239,6 +239,32 @@ modified: 2024-09-08T20:08:16.088Z
 - ## 📌 A list of software that allows searching the web with the assistance of AI.
 - https://x.com/tom_doerr/status/1856778512612667838
 
+# discuss-pdf
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Best way to extract data from PDFs and HTML : r/Rag _202510](https://www.reddit.com/r/Rag/comments/1oavnx4/best_way_to_extract_data_from_pdfs_and_html/)
+- During my experience extracting data from PDFs and HTML files for use in RAG systems, I usually follow one of the two approaches shown in this notebook I created (VLM or docling/paddleOCR)— I hope you find it helpful. 
+
+- Have you looked at Pinecone Assistant? You can upload PDFs (up to 100MB) and it manages the chunking, embedding, and search for you. If you already have chat/model generation, you could use just the /context API to get search results to feed into your own model.
+
+- At PipesHub, we use docling, pymupdf (faster than docling but need to use layout parser on top of it), ocrmupdf/Azure DI (scanned pdfs).
+  - On top of docling, we have specialized logic for extracting metadata, deep understanding of document, tables, etc. 
+  - We use VLM/Mulitimodal AI models for handling images, diagrams and more.
+  - You can use docling (only issue it's parsing is slow) if you are looking for open source, free solution.
+  - If you are looking for Higher Accuracy, Visual Citations, Cleaner UI, Direct integration with Google Drive, OneDrive, SharePoint Online, Dropbox and more. PipesHub is free and fully open source, extensible. 
+
+- I have done two approaches so far. Docling was good, but I was not happy that it took long on larger PDFs. 
+  - Another approach was converting the pdf to docx, then docx to html and finally to markdown. This approach was quite fast, but `pdf2docx` library had some trouble converting certain documents.
+  - Docling to me was quite a good solution, and if you are okay with the amount of time to process larger documents.
+  - Overall, a hybrid approach is always the best solution.
 # discuss-ocr
 - ## 
 
@@ -249,6 +275,16 @@ modified: 2024-09-08T20:08:16.088Z
 - ## 
 
 - ## 
+
+- ## [What is the best ocr model for converting PDF pages to markdown (or any text based format) for embedding? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1obha86/what_is_the_best_ocr_model_for_converting_pdf/)
+- https://github.com/opendatalab/OmniDocBench
+  - MinerU is best but bit annoying to get going
+  - Dolphin and Marker are next best
+
+- For the regular pdfs why not just use typical pdf text extraction tools? It is more accurate and has been done for forever. For the pdf images then yeah ocr makes sense.
+  - I tried this, and some of my PDFs have corrupted text layers. I got a 114k line text file for a 10 page pdf, so I’d like to just ocr if possible for consistency
+
+- Why even use a model for the OCR part itself? There are multiple tools designed specifically for that which will be far less consuming in both time and resources. I'm not being condescending, I'm just genuinely curious as to what's the benefits of using a model for that.
 
 - ## [Nanonets-OCR2: An Open-Source Image-to-Markdown Model with LaTeX, Tables, flowcharts, handwritten docs, checkboxes & More : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o5nlli/nanonetsocr2_an_opensource_imagetomarkdown_model/)
   - We're excited to share Nanonets-OCR2, a state-of-the-art suite of models designed for advanced image-to-markdown conversion and Visual Question Answering (VQA).

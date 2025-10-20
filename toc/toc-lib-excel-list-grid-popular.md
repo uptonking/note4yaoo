@@ -1309,7 +1309,7 @@ modified: 2022-08-21T10:02:27.788Z
   - This is largely a re-write of Handsontable's https://github.com/handsontable/ruleJS, and https://github.com/sutoiku/formula.js/.
   - The parser was derived from Handsontable's, and many of the formulas were created with FormulaJS's formulas as a reference point.
 
-- https://github.com/ironcalc/IronCalc /2.4kStar/MIT/202505/rust/ts/canvas
+- https://github.com/ironcalc/IronCalc /2.6kStar/MIT/202510/rust/ts/canvas
   - https://www.ironcalc.com/
   - https://playground.ironcalc.com/
   - IronCalc is a spreadsheet engine and ecosystem
@@ -1317,6 +1317,18 @@ modified: 2022-08-21T10:02:27.788Z
   - Excel compatible
   - https://github.com/ironcalc/web-skin
     - React frontend for IronCalc
+  - [IronCalc: a new selfhosted spreadsheet engine and ecosystem : r/selfhosted _202510](https://www.reddit.com/r/selfhosted/comments/1oavgbi/ironcalc_a_new_selfhosted_spreadsheet_engine_and/)
+    - where does it store the spreadsheets? Are those local files on the server or in-browser storage?
+      - The local files are in browser localstorage. Unless you share they are not public
+    - It would be great to have some kind of server-side support for storing files per user. Is this something in the project roadmap?
+      - There is a really simple server. But you can expand it anyway you want
+    - How many rows of data can it handle? Modern xslz can handle about 1mil.
+      - Same as Excel for now. 1 million
+    - Is there a roadmap to something larger, perhaps utilizing something like chunked / lazy loading (e.g. Dask on Python)
+      - For the time being we are not thinking in going beyond Excel although there might be good reasons to do so.
+    - Can the sheets be stored on the server and accessed from anywhere? Do you support accounts? Collaboration? I want to share sheets with my wife.
+      - Not yet, we are working on that. If you share a workbook it would be visible to anyone with the link. We are working on the collaboration layer, but we are months away from that. Also we will want to support users. Very early stages
+    - Works great, even on mobile. Well done!
 
 - https://github.com/hoplon/javelin /clojure
   - Spreadsheet-like dataflow programming in ClojureScript.

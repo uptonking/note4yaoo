@@ -149,12 +149,13 @@ modified: 2025-09-16T19:59:57.856Z
 ## models-exploring
 
 - 专用模型
-  - ocr
-  - tool-calling
-  - edit-apply
-  - devops
-  - graphics
-  - computer-use
+- ocr
+- tool-calling
+  - lfm2-1.2b-tool
+- edit-apply
+- devops
+- graphics
+- computer-use
 
 - [starvector/starvector-1b-im2svg · Hugging Face _202503](https://huggingface.co/starvector/starvector-1b-im2svg)
   - StarVector is a foundation model for generating Scalable Vector Graphics (SVG) code from images and text
@@ -529,7 +530,7 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 - ERNIE 4.5 (?) 0.3B: It's a really small model that maintains coherence, I personally like it and use it in places with low amount of RAM.
 
 - Small models don't take Quantization well, they can get really dumbed down.
-# discuss-vision-llm
+# discuss-vision-vlm 🖼️
 - ## 
 
 - ## 
@@ -538,7 +539,16 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [Practical takeaways from recent hands-on use of PaddleOCR‑VL 0.9B : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1obfwt9/practical_takeaways_from_recent_handson_use_of/)
+  - Bottom line up front: I care most about whether complex layouts can be restored into structured data, whether handwriting tables and formulas are stable, and local inference speed and cost. 
+  - Paddleocr‑VL 0.9B feels purpose built for production, especially for multi column PDFs, table structures, and formulas. 
+  - Cloud models like GPT‑4o and Gemini 2.5 Pro are more general for commonsense cross domain understanding and conversational interaction, but you need to factor in cost and privacy compliance.
+  - On multi column complex layouts and whether they can be directly restored into structured data, which I value highly because it decides how much human cleanup downstream automation needs. Paddleocr‑VL takes an engineering first approach: a NaViT dynamic visual encoder plus a lightweight ERNIE, combining layout understanding with structured outputs.
+
+- I had similar experiences when we were testing different OCR solutions for Docstrange, and your point about structured outputs being more important than pretty-looking text really hits home. 
+  - We found that PaddleOCR-VL's engineering-first approach does seem to handle the weird edge cases better than the general VLMs, especially when you're dealing with those nightmare scenarios like financial reports where a single misplaced table cell can mess up your entire downstream pipeline. 
+  - The thing that caught my attention in our testing was how much more predictable the failure modes are with specialized models like PaddleOCR-VL compared to something like GPT-4o which might give you beautiful conversational output but completely miss that a footnote belongs to a specific table cell three pages back.
+  - The cost factor you mentioned is huge too, especially if you're processing thousands of documents daily where those API calls add up fast.
 
 - ## 🆚 [[Experiment] Qwen3-VL-8B VS Qwen2.5-VL-7B test results : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1o9xf4q/experiment_qwen3vl8b_vs_qwen25vl7b_test_results/)
   - TL; DR: I tested the brand-new Qwen3-VL-8B against Qwen2.5-VL-7B on the same set of visual reasoning tasks — OCR, chart analysis, multimodal QA, and instruction following.

@@ -10,10 +10,10 @@ modified: 2025-08-11T08:47:56.335Z
 # guide
 
 - not-yet ❓
-  - model routing
+  - model routing: 可参考 UniRoute
 
 - resources
-  - [langgraph Examples](https://langchain-ai.github.io/langgraph/examples/)
+  - [langgraph examples | docs](https://langchain-ai.github.io/langgraph/examples/)
 # popular
 - https://github.com/google-gemini/gemini-fullstack-langgraph-quickstart /apache2/202506/python/ts
   - Get started with building Fullstack Agents using Gemini 2.5 and LangGraph
@@ -70,6 +70,17 @@ modified: 2025-08-11T08:47:56.335Z
   - allowing you to start the session with your existing content, instead of being forced to start with a chat interaction.
   - ⏳ Artifact versioning: All artifacts have a "version" tied to them, allowing you to travel back in time and see previous versions of your artifact.
   - [is this repo still active? _202507](https://github.com/langchain-ai/open-canvas/issues/356)
+
+- https://github.com/langchain-ai/open-agent-platform /1.6kStar/MIT/202508/ts/inactive
+  - https://oap.langchain.com/
+  - open-source, no-code agent building platform.
+  - Open Agent Platform provides a modern, web-based interface for creating, managing, and interacting with LangGraph agents.
+  - RAG Integration: First-class support for Retrieval Augmented Generation with LangConnect.
+  - Agent Supervision: Orchestrate multiple agents working together through an Agent Supervisor.
+  - Authentication: Built-in authentication and access control.
+  - An agent is a custom configuration on-top of an existing LangGraph graph. This is the same concept as an `assistant`, in the LangGraph API.
+  - OAP does not require a standalone backend server to be running in order for the web app to work. However, if you want to use the RAG features, you will need to have the LangConnect server running on its own. 
+  - All agents you intend to use with OAP must be LangGraph agents, deployed on LangGraph Platform.
 
 - https://github.com/langchain-ai/open-swe /3kStar/MIT/202508/ts
   - https://swe.langchain.com/
@@ -308,10 +319,6 @@ modified: 2025-08-11T08:47:56.335Z
   - https://github.com/blaxel-templates/template-corporate-cortex
     - This repository is a template implementation of a Corporate Knowledge Agent using the Blaxel SDK and LangChain.
 
-- https://github.com/ahmad2b/customer-feedback-analysis-ai-agent /202410/python/ts/inactive
-  - This project is a Customer Feedback Analysis AI Agent that generates insights and action items based on customer feedback.
-  - It is powered by LangGraph, Vercel AI SDK, gpt-4o-mini, FastAPI, and Next.js.
-
 - https://github.com/mayooear/ai-company-researcher /202501/ts/inactive
   - An AI agent that automates company research and lead prospecting (powered by langgraph and firecrawl)
 
@@ -397,6 +404,41 @@ modified: 2025-08-11T08:47:56.335Z
   - The easiest way to build apps from your Python code
   - With Davia, you define your logic in Python, and Davia generates the user interface, handles real-time updates, and manages the backend.
   - Works with any Python application, including LangGraph agents.
+
+## eg-vercel-aisdk
+
+- https://github.com/lokeswaran-aj/next-langgraph-example /MIT/202411/ts/inactive
+  - an example Gen AI app built with Langgraph.js, Next.js and Vercel's AI SDK
+
+- https://github.com/ahmad2b/customer-feedback-analysis-ai-agent /202410/python/ts/inactive
+  - This project is a Customer Feedback Analysis AI Agent that generates insights and action items based on customer feedback.
+  - It is powered by LangGraph, Vercel AI SDK, gpt-4o-mini, FastAPI, and Next.js.
+
+- https://github.com/Ashot72/Multi-Modal-Chat /202503/ts/inactive
+  - Multi-Modal Next.js Chat App with Vercel AI SDK & LangGraph.js
+  - Users can ask questions, analyze uploaded images, convert content to audio, generate and download charts, display videos, and create AI-generated images.
+  - A key feature is the use of custom LangChain.js callback events, enabling seamless streaming. 
+  - 使用了langchain message/runnable/tools
+  - [Multi-Modal Next.js Chat App with Vercel AI SDK & LangGraph.js - YouTube](https://www.youtube.com/watch?v=6ZWi-TQI-l8)
+
+- https://github.com/StabRise/scaledp-chat /AGPL/202505/python/inactive
+  - This is backend project for ScaleDP Chat. Chat over the ScaleDP git repository.
+  - It is FastAPI RAG backend based on (LangGraph and LangCain) for the frontend chat based on AI SDK
+
+- https://github.com/Redpandanot/GenUI-SalesAgent /202509/ts/inactive
+  - Uses langgraph and ai/sdk to create a generate UI
+
+- https://github.com/auth0-samples/auth0-assistant0 /MIT/202510/python/ts
+  - Assistant0: An AI Personal Assistant Secured with Auth0
+  - [Build an AI Assistant with LangGraph, Vercel, and Next.js: Use Gmail as a Tool Securely _202504](https://auth0.com/blog/genai-tool-calling-build-agent-that-calls-gmail-securely-with-langgraph-vercelai-nextjs/)
+  - [How to build an AI Assistant with LangGraph and Next.js _202508](https://auth0.com/blog/genai-tool-calling-build-agent-that-calls-calender-with-langgraph-nextjs/)
+    - We will no longer need Vercel's AI SDK, as we will be using LangGraph's React SDK to stream response tokens to the client
+
+- https://github.com/bracesproul/gen-ui-python /202407/python/ts/inactive
+  - Generative UI web application built with LangChain Python, AI SDK & Next.js
+
+- eg
+  - https://medium.com/@sirsho29/build-smarter-ai-apps-with-this-langgraph-vercel-ai-sdk-starter-template-8d150e484bf8
 # utils/fwk
 - https://github.com/ibbybuilds/aegra /124Star/apache2/202509/python
   - https://aegra.dev/
@@ -414,25 +456,15 @@ modified: 2025-08-11T08:47:56.335Z
   - So i can use langgraph-sdk without that api just wrap everything in fastapi?
     - Pretty sure that’s how N8N does it.
 
-- https://github.com/langchain-ai/open-agent-platform /1.6kStar/MIT/202508/ts
-  - https://oap.langchain.com/
-  - open-source, no-code agent building platform.
-  - Open Agent Platform provides a modern, web-based interface for creating, managing, and interacting with LangGraph agents.
-  - RAG Integration: First-class support for Retrieval Augmented Generation with LangConnect.
-  - Agent Supervision: Orchestrate multiple agents working together through an Agent Supervisor.
-  - Authentication: Built-in authentication and access control.
-  - An agent is a custom configuration on-top of an existing LangGraph graph. This is the same concept as an `assistant`, in the LangGraph API.
-  - OAP does not require a standalone backend server to be running in order for the web app to work. However, if you want to use the RAG features, you will need to have the LangConnect server running on its own. 
-  - All agents you intend to use with OAP must be LangGraph agents, deployed on LangGraph Platform.
-
 - https://github.com/keboola/langgraph-chat-transport /MIT/202508/ts
+  - https://github.com/fork-archive-hub/langgraph-chat-transport
   - A transport adapter that bridges LangGraph API streaming events to Vercel AI SDK's `useChat` hook format
   - Transforms LangGraph's SSE message format into the chunk protocol that useChat understands, enabling seamless integration between LangGraph agents and React chat interfaces.
   - Message Types: ai, human, system, tool
   - Tool Calls: Full tool invocation and result streaming
   - SSE Parsing: Robust Server-Sent Events parsing
 
-- https://github.com/mlhommet/LangGraphAdapterVercel /202504/ts
+- https://github.com/mlhommet/LangGraphAdapterVercel /202504/ts/inactive
   - LangGraph Adapter for Next.js / Vercel AI SDK 4
   - Shows how to create a next.js Server Route that connects to a LangGraph server and streams the output to a useChat hooked component 
   - The nodes to stream from are passed to the langgraph invocation (as far as I know, this has to be done client-side, there are no mechanism on Langgraph side to specify which nodes are streamable or not).
@@ -597,12 +629,6 @@ modified: 2025-08-11T08:47:56.335Z
 - https://github.com/Grecil/Corrective-RAG /202503/python/inactive
   - https://github.com/Grecil/Corrective-RAG
   - Implementation of Corrective RAG using LangChain and LangGraph.
-# ai-coding
-- https://github.com/langchain-ai/langgraph-codeact /598Star/MIT/202505/python/inactive
-  - This library implements the CodeAct architecture in LangGraph. This is the architecture is used by Manus.im.
-  - https://x.com/tuturetom/status/1905605150884200871
-    - Manus 背后最核心的技术 CodeAct 论文发布
-    - 让 Agent 自己编写 Tool 然后完成 Tool 的调用，形成强大的自给自足机制
 # rag/memory
 - https://github.com/0xPratikPatil/langgraph-db /MIT/202505/ts/inactive
   - A powerful memory backend for LangGraph.js that provides short-term and long-term memory for your agents using flexible storage providers.
@@ -626,6 +652,12 @@ modified: 2025-08-11T08:47:56.335Z
   - Python SDK (memx-sdk) for easy integration
   - Modern multi-agent setups—whether using LangGraph, Autogen, or custom orchestration—lack a reliable way to share evolving context (state, goals, thoughts) between agents. 
   - memX provides a simple and secure memory layer that agents can read/write from in real-time — no message-passing or controller required.
+# ai-coding
+- https://github.com/langchain-ai/langgraph-codeact /598Star/MIT/202505/python/inactive
+  - This library implements the CodeAct architecture in LangGraph. This is the architecture is used by Manus.im.
+  - https://x.com/tuturetom/status/1905605150884200871
+    - Manus 背后最核心的技术 CodeAct 论文发布
+    - 让 Agent 自己编写 Tool 然后完成 Tool 的调用，形成强大的自给自足机制
 # langchainjs
 - https://github.com/IBJunior/fullstack-langgraph-nextjs-agent /202509/ts
   - Next.js template for building AI agents with LangGraph.js. 
@@ -675,12 +707,6 @@ modified: 2025-08-11T08:47:56.335Z
   - Onyx comes loaded with advanced features like Agents, Web Search, RAG, MCP, Deep Research, Connectors to 40+ knowledge sources, and more.
   - [Introducing Onyx - a fully open source chat UI with RAG, web search, deep research, and MCP : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1nw52ad/introducing_onyx_a_fully_open_source_chat_ui_with/)
     - I’ve tried many other open-source chat tools, and I found that none of them had the mix of things I wanted: a beautiful chat UI + great RAG + deep research.
-
-- https://github.com/Ashot72/Multi-Modal-Chat /202503/ts/inactive
-  - Multi-Modal Next.js Chat App with Vercel AI SDK & LangGraph.js
-  - Users can ask questions, analyze uploaded images, convert content to audio, generate and download charts, display videos, and create AI-generated images.
-  - A key feature is the use of custom LangChain.js callback events, enabling seamless streaming. 
-  - 使用了langchain message/runnable/tools
 
 - https://github.com/apocas/restai /431Star/apache2/202508/python
   - https://apocas.github.io/restai/
@@ -739,6 +765,9 @@ modified: 2025-08-11T08:47:56.335Z
   - Enterprise-Grade Connectors – Scalable, reliable, and built for secure access across your organization.
   - Modular & Scalable Architecture – Every service is loosely coupled to scale independently and adapt to your needs.
   - [Work AI for all - AI platform for agents, assistant, search](https://www.glean.com/)
+  - [Best way to extract data from PDFs and HTML : r/Rag _202510](https://www.reddit.com/r/Rag/comments/1oavnx4/best_way_to_extract_data_from_pdfs_and_html/)
+    - At PipesHub, we use docling, pymupdf (faster than docling but need to use layout parser on top of it), ocrmupdf/Azure DI (scanned pdfs).
+    - If you are looking for Higher Accuracy, Visual Citations, Cleaner UI, Direct integration with Google Drive, OneDrive, SharePoint Online, Dropbox and more. PipesHub is free and fully open source, extensible. 
 
 - https://github.com/StreetLamb/tribe /1kStar/MIT/202501/python/ts/inactive
   - Low code tool to rapidly build and coordinate multi-agent teams 

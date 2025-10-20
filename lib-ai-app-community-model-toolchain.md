@@ -1399,7 +1399,10 @@ curl http://localhost:11434/api/chat -d '{
 
 - ## 
 
-- ## 
+- ## 🆚 [[Experiment] Three identical Qwen2.5:7b runs, three distinct behavioral strategies. One hit max reported metrics and started failing to execute actions. [Full data + code] : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1obkn0d/experiment_three_identical_qwen257b_runs_three/)
+- 
+- 
+- 
 
 - ## 🧩 [Qwen3-30B-A3B 2507 Instruct vs Thinking : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1o8529x/qwen330ba3b_2507_instruct_vs_thinking/)
 - My understanding is that 

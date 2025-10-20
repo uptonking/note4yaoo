@@ -303,6 +303,14 @@ modified: 2025-08-11T20:15:18.297Z
   - A powerful middleware for the Vercel AI SDK that adds safety, quality control, and cost management to your AI applications by intercepting prompts and responses.
   - Block harmful inputs, filter low-quality outputs, and gain observability, all in just a few lines of code.
 
+- https://github.com/microfox-ai/ai-router /202509/ts/inactive
+  - https://docs.microfox.app/ai-router
+  - express.js styled agent orchestration Library for typescript community
+  - AI Router brings a familiar middleware-style architecture to the world of AI Agents. 
+  - It provides a robust foundation for orchestrating complex AI workflows with multiple agents, tools, and dynamic routing, all while integrating seamlessly with the Vercel AI SDK.
+  - [Agentic Framework for ai-sdk Developers ( alternative to langgraph ) _202509](https://github.com/vercel/ai/discussions/8615)
+    - AiRouter support all features of ai-sdk v5
+
 - https://github.com/vercel-labs/ai-sdk-persistence-db /202507/ts
   - This example demonstrates how to persist chat messages using Vercel AI SDK with a Postgres database in a Next.js application.
   - Drizzle ORM for database queries

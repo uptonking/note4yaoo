@@ -245,7 +245,11 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
 - goal-to 增强特色
   - editor
   - crud
-  - 业务系统与架构增强: lasuite-docs, cms
+  - 业务系统与架构增强: lasuite-docs, knowledgebase, cms
+
+## 1020
+
+- He’s a bit reclusive/introverted(隐居的：想要或愿意隐居或独处的) and not the sort of person who tries to please others.
 
 ## 1014
 

@@ -11,6 +11,43 @@ modified: 2025-08-08T07:36:16.802Z
 
 # overview
 
+# ⚖️ [AI SDK UI: Stream Protocols](https://ai-sdk.dev/docs/ai-sdk-ui/stream-protocol)
+
+- AI SDK UI functions such as `useChat` and `useCompletion` support both text streams and data streams. 
+  - The stream protocol defines how the data is streamed to the frontend on top of the HTTP protocol.
+- This page describes both protocols and how to use them in the backend and frontend.
+  - You can use this information to develop custom backends and frontends for your use case, e.g., to provide compatible API endpoints that are implemented in a different language such as Python.
+
+- Text Stream Protocol
+- A text stream contains chunks in plain text, that are streamed to the frontend. 
+  - Each chunk is then appended together to form a full text response.
+- Text streams are supported by `useChat, useCompletion, and useObject`. 
+- You can generate text streams with `streamText` in the backend. When you call `toTextStreamResponse()` on the result object, a streaming HTTP response is returned.
+- 👀 Text streams only support basic text data. 
+  - If you need to stream other types of data such as tool calls, use data streams.
+
+- Data Stream Protocol
+- A data stream follows a special protocol that the AI SDK provides to send information to the frontend.
+- The data stream protocol uses Server-Sent Events (SSE) format for improved standardization, keep-alive through ping, reconnect capabilities, and better cache handling.
+
+- Message Start Part: Indicates the beginning of a new message with metadata.
+- Text Parts: Text content is streamed using a start/delta/end pattern with unique IDs for each text block.
+- Reasoning Parts: Reasoning content is streamed using a start/delta/end pattern with unique IDs for each reasoning block.
+- Source Parts: Source parts provide references to external content sources.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
 # docs-ai-sdk
 - AGI refers to models that predict and generate various types of outputs (such as text, images, or audio) based on what’s statistically likely, pulling from patterns they’ve learned from their training data. 
 

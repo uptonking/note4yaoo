@@ -93,6 +93,31 @@ modified: 2025-09-05T07:18:34.805Z
 - 
 - 
 
+# langfuse-docs
+- 注意不同sdk配置的环境变量名
+
+- Langfuse is an open-source LLM engineering platform that helps teams collaboratively debug, analyze, and iterate on their LLM applications. 
+
+- Observability
+  - Traces include all LLM and non-LLM calls, including retrieval, embedding, API calls, and more
+  - Support for tracking multi-turn conversations as sessions and user tracking
+  - Agents can be represented as graphs
+  - Capture traces via our native SDKs for Python/JS, 50+ library/framework integrations, OpenTelemetry, or via an LLM Gateway such as LiteLLM
+
+- Prompt Management
+  - Manage, version, and optimize your prompts throughout the development lifecycle
+  - Test prompts interactively in the LLM Playground
+
+- Evaluation
+  - Get started with different evaluation methods: LLM-as-a-judge, user feedback, manual labeling, or custom
+  - Create and manage Datasets for systematic testing in development that ensure your application performs reliably across different scenarios
+
+- 
+- 
+- 
+- 
+- 
+
 # rag
 - Corrective-RAG (CRAG) is a recent paper that introduces an interesting approach for self-reflective RAG.
   - The framework grades retrieved documents relative to the question

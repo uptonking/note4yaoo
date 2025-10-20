@@ -109,6 +109,7 @@ modified: 2021-05-06T09:39:53.522Z
 - stream-text/md
 - partial-edit
 - pdf-edit-with-vlm/ocr
+  - pdf-image upscale
 - graphics-by-text: mermaid-editor, drawio-xml
 - markdown-partial
   - treesitter as markdown stream parser

@@ -16,7 +16,10 @@ modified: 2021-01-06T14:40:11.360Z
 
 - ## 
 
-- ## 
+- ## [React Compiler - can I now remove all useCallback/useMemo hooks? : r/reactjs _202510](https://www.reddit.com/r/reactjs/comments/1obfncq/react_compiler_can_i_now_remove_all/)
+- The only thing I stopped memo-izing was whole components
+
+- I love that we‘re in a ‚use react compiler for new stuff, but feel free to use useMemo/callback when our shit does not work‘ state right now
 
 - ## Today I learned you can pass generic type params to react components and I almost vomited
 - https://x.com/joshmanders/status/1919524052022014416
@@ -371,7 +374,7 @@ useEffect(() => {
 
 - What are your issues exactly with unserializable data in this case?
   - Specifically: Replay's codebase is 80% a copy-paste of the FF DevTools. 
-  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                                                                     `ValueFront`,                                                                     `Pause`, etc. 
+  - This uses classes as abstractions for DOM nodes and displayable values - `NodeFront`,                                                                          `ValueFront`,                                                                          `Pause`, etc. 
   - We currently parse JSON and instantiate those classes, _then_ put them into Redux.
   - The Replay codebase started with very legacy Redux patterns (hand-written reducers, etc), and no Redux DevTools integration. When I added the DevTools setup, that began to choke on the class instances. So, I had to sanitize those out from being sent to the DevTools.
   - I've been modernizing our reducers to RTK's `createSlice`, which uses Immer. Immer recursively freezes all values by default. Unfortunately, those `SomeFront` instances are mutable, and _do_ get updated later. This now causes "can't update read-only field X" errors
