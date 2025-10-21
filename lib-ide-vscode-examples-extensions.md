@@ -389,6 +389,9 @@ modified: 2024-08-24T16:17:26.715Z
   - use codemirror and vscode webview to achieve a vscode extension
   - Convert Json to Typescript
 
+- https://github.com/albertromkes/tabout /MIT/202210/ts/inactive
+  - Tab out of quotes, brackets, etc for Visual Studio Code
+
 ## ext-markdown
 
 - https://github.com/Jekwwer/markdown-template /MTI/202501/js

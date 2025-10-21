@@ -141,8 +141,10 @@ modified: 2025-08-11T20:15:18.297Z
   - Built with TypeScript and the Vercel AI SDK for robust performance and seamless integration with the Blaxel platform.
   - Custom web crawling function with markdown conversion
 
-- https://github.com/vercel-labs/ai-sdk-preview-python-streaming /202411/python/ts
-  - This template demonstrates the usage of Data Stream Protocol to stream chat completions from a Python endpoint (FastAPI) and display them using the useChat hook in your Next.js application.
+- https://github.com/vercel-labs/ai-sdk-preview-python-streaming /280Star/202510/python/ts
+  - https://ai-sdk-preview-python-streaming.vercel.app/
+  - This template demonstrates the usage of Data Stream Protocol to stream chat completions from a Python endpoint (FastAPI) and display them using the `useChat` hook in your Next.js application.
+  - use gateway and update ai sdk to v5
 
 - https://github.com/JamesSloan/VercelGenUI_MCP /MIT/202503/ts/inactive
   - Proof of concept chat AI combining the Model Context Protocol (MCP) with Vercel's AI SDK UI
@@ -342,6 +344,7 @@ modified: 2025-08-11T20:15:18.297Z
   - Think of it as a simpler alternative to LangGraph, focused on streaming and agent coordination.
   - Built for Streaming - Native support for Vercel's streamText and AI SDK
   - Similar patterns to OpenAI's Swarm, but more flexible
+  - [Adding Streaming support to Vercel AI Swarm _202502](https://martinbarreto.com/blog/swarm-stream)
 
 - https://github.com/stevef24/Agentic-patterns /202504/ts
   - Agentic patterns with Vercel AI SDK
@@ -411,6 +414,33 @@ modified: 2025-08-11T20:15:18.297Z
   - Automated Indexing: Includes tools to fetch, process, and index the latest Vercel AI SDK documentation
   - VectorStoreManager: Creates and manages the `FAISS` vector index for semantic search
   - AgentService: Provides AI-powered answers to questions using the Google Gemini model
+
+## port-lang
+
+- https://github.com/python-ai-sdk/sdk /MIT/202508/python
+  - https://pythonaisdk.mintlify.app/
+  - The Vercel AI SDK, in Python
+  - A pure Python re-implementation of Vercel's popular AI SDK for TypeScript. 
+  - Zero-configuration functions that work consistently across providers with first-class streaming, tool-calling, and structured output support.
+  - Strong Pydantic types throughout: Strict structured-output generation and streaming via Pydantic models
+  - Provider-agnostic embeddings with built-in batching & retry logic
+  - Tiny dependency footprint - no bloated external frameworks
+
+- https://github.com/jetify-com/ai /115Star/apache2/202508/go
+  - https://www.jetify.com/
+  - a unified interface for interacting with multiple AI providers including OpenAI, Anthropic, and more. 
+  - Inspired by Vercel's AI SDK for TypeScript, we bring a similar developer experience to the Go ecosystem.
+  - Provider abstraction - Common interfaces for language models, embeddings, and image generation
+  - Multi-modal by default - First-class support for text, images, files, and structured outputs across all providers
+  - Extensible architecture - Clean interfaces make it easy to add new providers while maintaining backward compatibility
+
+- https://github.com/kylecarbs/aisdk-go /MIT/202509/go
+  - A Go implementation of Vercel's AI SDK Data Stream Protocol.
+
+- https://github.com/ClickHouse/ai-sdk-cpp /87Star/apache2/202507/cpp
+  - a modern C++ toolkit designed to help you build AI-powered applications with popular model providers like OpenAI and Anthropic. 
+  - [Show HN: A modern C++20 AI SDK (GPT‑4o, Claude 3.5, tool‑calling) | Hacker News _202506](https://news.ycombinator.com/item?id=44412726)
+    - inspired by Vercel's AI SDK, and litellm
 # integrations
 - https://github.com/jotaijs/jotai-ai /MIT/202508/ts
   - a utility package compatible with Vercel AI SDK.

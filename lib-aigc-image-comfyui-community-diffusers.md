@@ -147,6 +147,23 @@ problem is when software like InvokeAI or some else are using the diffusers form
 
 - ## 
 
+- ## 
+
+- ## 💰 [InvokeAI was just acquired by Adobe! : r/StableDiffusion _202510](https://www.reddit.com/r/StableDiffusion/comments/1obws1z/invokeai_was_just_acquired_by_adobe/)
+  - [Invoke is Joining Adobe](https://invoke.ai/)
+  - We'll be shutting down the existing Invoke online services on October 31, 2025
+  - Tl; dr from the discord member weiss:
+  - Some people from invoke team joined Adobe and no longer working for invoke
+  - Invoke will cease all business operations and no longer make money. Only people with passion will work on the OSS project.
+
+- Invoke itself as the free, GitHub, apache 2.0 is going nowhere. At worst, it stops being maintained. But nobody is stopping you or any of us to fork it and just do our thing. Just like A1111, Forge died a few times and there are dozens of forks of it.
+
+- Adobe, like most other big companies, buy talent and IP to remove competition and lock it away. Not to push the market forward. Both Apple and Google have spent millions to relegate engineers to watercooler jockies simply to prevent competition and don't think for a second Adobe doesn't do the same.
+
+- You care about open source tooling to support cloud models. Meanwhile you refuse to implement Hunyuan 3.0 while bending over backwards to support shitty API like recraft and stability ultra, which nobody cares about. Your actions continue to push companies towards API-only. 
+  - The only way to run the hunyuan 3.0 model quickly is the cloud with server tier GPUs. If we wanted to promote our cloud we would have a day zero implementation but this is a bad huge inefficient model only good at generating the most generic AI slop so I just don't like it.
+- I agree that Hunyuan isn’t an impressive model for its size, but we are losing more and more local model providers. Many former local model providers (Stability. WAN) have shifted to API only. Local image models are barely scratching the top-20 in arenas. We’re lucky to get any local releases at all at this point, and publicly lambasting the only local image release in months does nothing to help the situation. All it does is push model providers further towards API only
+
 - ## Can I transfer ComfyUI workflows to Invoke? _202503
 - https://discord.com/channels/1020123559063990373/1350456642759692378/1350461612808601652
   - You can not because ComfyUI workflow != invokeai workflow.

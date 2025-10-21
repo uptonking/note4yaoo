@@ -139,6 +139,13 @@ modified: 2025-02-21T18:20:42.624Z
     - 使用diff_match_patch计算差异
   - https://x.com/dingyi/status/1893329741060489438
     - 以前非常喜欢且深度使用的 Gatsby，他们团队原班人马做的新产品，The TypeScript Agent Framework
+  - 🎯 [The next evolution of Mastra streaming _202509](https://mastra.ai/blog/mastra-streaming)
+    - When we first built Mastra, we relied entirely on Vercel's AI SDK for streaming. It was a pragmatic choice that let us focus on what made Mastra unique: the orchestration layer that sits above language models.
+    - But as developers started building more complex apps with Mastra, we kept hitting the same limitations. What happens when an agent calls another agent? How do you stream results from a workflow that contains multiple agents? 
+    - Our old implementation worked beautifully for single model calls, but Mastra needed something more.
+    - So we built our own streaming layer.
+    - The new `format` option we're introducing (like `format: 'aisdk'`) establishes a pattern where Mastra can output streams in whatever format your frontend needs. Today it's AI SDK v5. Tomorrow it could be `copilotkit`, assistant-ui, or a format we haven't even imagined yet.
+    - We've written before about nested streaming, but it bears repeating: modern AI applications are compositional. Agents call other agents. Workflows orchestrate multiple models. Tools can be entire applications themselves. Our custom streaming protocol makes these patterns not just possible but elegant.
 
 - https://github.com/MotiaDev/motia /5.8kStar/MIT/202508/ts
   - https://motia.dev/

@@ -1466,11 +1466,18 @@ modified: 2022-01-16T15:52:31.293Z
     - 内存条的频率要考虑cpu支持、主板支持
     - 大内存对跑MoE模型有用
 
+- mac
+  - ultra的内存带宽最高达到800, 但不要急, amd strix halo的下一代和mac studio的下一代都会升级, 选择256GB版本合适的
+
 - nvidia性能对比
   - [大模型GPU算力卡汇总 - 知乎](https://zhuanlan.zhihu.com/p/1904206218748236301)
   - [Sable Diffusion WebUI Benchmark Data: nvidia/amd/torch](https://vladmandic.github.io/sd-extension-system-info/pages/benchmark.html)
   - [Which GPU should I buy for ComfyUI · comfyanonymous/ComfyUI Wiki](https://github.com/comfyanonymous/ComfyUI/wiki/Which-GPU-should-I-buy-for-ComfyUI)
   - https://www.zhihu.com/question/615946801/answer/3156016610
+
+- amd
+  - [ROCm Compatibility matrix](https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html)
+  - [Linux support matrices by ROCm version](https://rocm.docs.amd.com/projects/radeon-ryzen/en/latest/docs/compatibility/compatibilityrad/native_linux/native_linux_compatibility.html)
 
 - 🆚🔥 [英伟达热门 GPU 对比：H100、A6000、L40S、A100 - 知乎](https://zhuanlan.zhihu.com/p/5041686924)
   - [Memory Bandwidth Comparisons - Planning Ahead : r/LocalLLaMA _202402](https://www.reddit.com/r/LocalLLaMA/comments/1amepgy/memory_bandwidth_comparisons_planning_ahead/)
@@ -1517,6 +1524,60 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [8年了，为何eGPU外置显卡不能被玩家接受 - 知乎 _202507](https://zhuanlan.zhihu.com/p/1930776574258549666)
+- 初代外置显卡（eGPU）曾许下诸多豪言壮语。这些看似新颖炫酷的显卡外置盒本应彻底改变游戏本市场
+  - 如今，距离面向普通消费者的第一代外置显卡问世，已过去了八年，可笔记本电脑市场却没多大变化。
+- 雷蛇Core并非首款外置显卡（第一款真正意义上的笔记本专用eGPU是2008年华硕推出的XG Station），但雷蛇Core是第一款引起轰动的产品。
+- 外置显卡终究是一件需要额外随身携带的设备。背包里的空间本来就宝贵，完全可以用来装其他配件。更何况，还得折腾半天设置选项，确保游戏能识别外置显卡并调用它来渲染画面，这无疑增加了不少麻烦。总的来说，还不如降低画质要求，用电脑自带显卡来得便捷。
+- 2025年，华硕、雷蛇和技嘉都推出了新款外置显卡。今年的各类科技展和游戏展上，主流厂商一下子拿出了四款新的外置显卡。
+  - 这次算是时隔8年后，厂商们对外置显卡市场最大规模的一次发力。这一切都要归功于雷电5接口
+
+- egpu的真正价值在于你和你的家人可以共享一块显卡，这样你们就可以把钱攒起来买一个5070一起用，而不是每个人都去买一个5090显卡。
+
+- 网上那些做外接显卡视频的，几乎透露出兼容差、稳定性差的问题，相比起来性能损耗都是小问题。不能普及显而易见。
+
+- 体验过一次，再也没买过。当时xps15配了个1080的egpu，结果性能还比如台式机直插的1060直接心态崩了
+  - 雷电3性能缩水30%是小意思
+
+- ## [Dual GPU, AMD & Nvidia together? : r/losslessscaling _202504](https://www.reddit.com/r/losslessscaling/comments/1jpelqr/dual_gpu_amd_nvidia_together/)
+- I tested a 4090 (4.0x16) with rx6600 (4.0x4) setup a while ago. While i was too lazy to find the perfect settings for it, i did not see any issues with drivers.
+  - I just tested it for a day or two and couldn't overcome some issues with the performance. I think that it had something to do with using the chipset 4x4 line rather than cpu's.
+
+- I rock a 4090 with 6600XT. I have both full drivers installed and run win 11. They don’t clash.
+
+- The main limitation is Nvidia's lower FP16 performance, but a 3080 TI is very good (30 TFLOPs), enough for 4k. Driver conflicts are a possibility, but nowadays everything conflicts with everything already. I've not heard of issues so far and it wouldn't do l so stop me from using the 3080. I would just get the minimal drivers for each GPU if possible.
+
+- [Is it possible to use both and nVidia and AMD GPU? : r/LocalLLaMA _202407](https://www.reddit.com/r/LocalLLaMA/comments/1dt367v/is_it_possible_to_use_both_and_nvidia_and_amd_gpu/)
+- Tested RX 7900 XTX and 4060 Ti (16GB) running together in LM Studio via Vulkan. Tried it with two models:
+  - DS r1 70B Q5 — 10.05 tok/sec
+  - QWQ 32b — 15.67 tok/sec
+  - For comparison, RX 7900 XTX solo gets around 24.55 tok/sec in QWQ 32b.
+- So you saying that dual is slower?
+  - Exactly — a single 7900 XTX is better than a 7900 XTX + RTX 4060 Ti combo when the model requires less than 24GB of VRAM. In my configuration ofc, mb I did something wrong)
+
+- ## 💡🧩 [AMD and Nvidia GPUs in the same machine. IT WORKS. : r/linuxhardware _202006](https://www.reddit.com/r/linuxhardware/comments/he9nhe/amd_and_nvidia_gpus_in_the_same_machine_it_works/)
+  - TLDR: Nvidia Card in slot 2 with proprietary driver (v. 440xx) + AMD card in slot 1 open source driver (mesa v20.1), no configuration needed, just prime-run what you need to run with Nvidia card as the back-end renderer. Enjoy the smooth desktop and Nvidia/proprietary bond applications
+  - The solution is a simple prime-run command. No messy xorg config files. In fact no manual configuration at all.
+
+- What software requires proprietary Nvidia drivers?
+  - In my case it's Davinci Resolve. A video editing software. It only runs with proprietary driver (AMD and Nvidia). I paid for the studio version.
+
+- My laptop has an Intel iGPU and a GTX 1650, and I use an RX 5700 XT in an eGPU enclosure. I also use Mesa and the Nvidia proprietary driver simultaneously or alternating without issues (mostly).
+  - It's a little different on a laptop trying to push external graphics but it still works
+- So I suppose you use hybrid driver? iGPU as default OpenGL renderer and DRI_PRIME to use dGPU or eGPU? I'm curious how you access different GPUs.
+  - I have pop OS, which includes a super handy GPU mode switcher tool (Integrated/Hybrid/Dedicated). You have to reboot each time (unless doing Hybrid and telling applications to run using dGPU).
+  - I also installed the gswitch tool from egpu.io, and use it to switch between internal and external graphics when connected to my Thunderbolt 3 dock.
+  - The only thing that really doesn't work is staying in "internal" graphics mode and trying to drive the external monitor (or vice versa; can't drive the internal display with external GPU). It "works" but the performance hit is so bad that even GNOME's desktop is unusable.
+  - Other than that the whole setup is so easy that it takes me maybe 5 minutes to do on a fresh popOS install (or Ubuntu 20.04 with system76-power tool installed).
+  - I highly recommend this setup if you ever plan on going the Nvidia laptop route and don't mind needing to use the prop drivers (even if your egpu is Nvidia it works perfectly).
+
+- I’m trying to do the same - XPS 9500 with i7 CPU and GTX1650ti dGPU… i have a razer core X enclosure and want to try an AMD RX 6600
+  - basically plug and play, the drivers auto-installed and everything works smoothly!
+
 - ## 🤔 [1x4090 24GB or 3x3060 12Gb for Comfy? : r/comfyui _202409](https://www.reddit.com/r/comfyui/comments/1fql7if/1x4090_24gb_or_3x3060_12gb_for_comfy/)
 - 3x3060 won’t give you 36GB. The model can’t be split. There are variations of putting the T5 or clip into another card, but the multi GPU aspect will complicate it so much, it will drive you nuts. Especially since you say yourself you are a beginner. Don’t do it. Go for 4090, comfy ui is complicated enough, you don’t want to deal with anymore hardware setup issues on top of that. If you are tight on cash, go for a used 3090.
 
@@ -1561,8 +1622,6 @@ modified: 2022-01-16T15:52:31.293Z
   - R9700的AI性能表现却引起了大家的关注，作为一款RDNA4架构的显卡，拥有32GB GDDR6、256-bit位宽、峰值带宽约640 GB/s、300W TDP，以及最多约1531 TOPS（INT4）和FP16约96 TFLOPS的AI/矩阵运算能力。
 
 - 这个是RDNA4应该比395max那个RDNA3.5的魔改强不少吧
-
-- 兼容性恐怕不乐观，虽然rocm7发布了，但听说有的东西只有cuda才能运行？
 
 - [AMD发布AI神卡R9700！性能是同级5倍，英伟 - 小红书](https://www.xiaohongshu.com/explore/68c58dcb000000001c008551?xsec_token=ABxWJEP3Vpkb636xx2y79C0FRNAwvEq6parZO6uJSDPkM=&xsec_source=pc_search&source=web_search_result_notes)
 - 人话：32g版本9070

@@ -225,6 +225,8 @@ console.log('; ; task ', taskState, runningTaskAction, task?.task_steps)
 ```
 ```log //ai
 - give an brief intro to reactjs in less than 90 words
+- count from 1 to 80, every number on a separate line
+- count from 1 to 80, every number on a separate line  /no_think
 - when did deepseek v3.1 model release?
 - when did qwen3-coder model release?
 - what's the weather in guangzhou china? give me some food and outdoor-activities suggestions according to weather temperature
@@ -246,6 +248,13 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
   - editor
   - crud
   - 业务系统与架构增强: lasuite-docs, knowledgebase, cms
+
+## 1021
+
+- `\n` is Unicode `U+000A` (LINE FEED, LF).
+  - it won’t produce a visible line break in normal HTML rendering — browsers treat it as whitespace. Use `<br>, a <pre>` (or white-space CSS) to show real line breaks.
+  - \n → U+000A (LINE FEED, LF)
+  - \r → U+000D (CARRIAGE RETURN, CR) — Windows newlines are \r\n (CRLF)
 
 ## 1020
 

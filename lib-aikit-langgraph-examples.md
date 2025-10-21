@@ -440,11 +440,12 @@ modified: 2025-08-11T08:47:56.335Z
 - eg
   - https://medium.com/@sirsho29/build-smarter-ai-apps-with-this-langgraph-vercel-ai-sdk-starter-template-8d150e484bf8
 # utils/fwk
-- https://github.com/ibbybuilds/aegra /124Star/apache2/202509/python
+- https://github.com/ibbybuilds/aegra /265Star/apache2/202510/python
   - https://aegra.dev/
   - Open source LangGraph Platform alternative - Self-hosted AI agent backend with FastAPI and PostgreSQL. 
   - Zero vendor lock-in, full control over your agent infrastructure.
   - Drop-in Replacement: Use existing LangGraph Client SDK, API Compatibile
+  - FastAPI + PostgreSQL backend
   - Custom auth: JWT/OAuth/Firebase/NoAuth
   - Self-hosted LangGraph Platform alternative that actually lets you use real auth (Supabase, Firebase, whatever).
   - Agent Protocol Compliant: Aegra implements the Agent Protocol specification, an open-source standard for serving LLM agents in production.
@@ -455,6 +456,10 @@ modified: 2025-08-11T08:47:56.335Z
     - aegra is an open source alternative to the licensed langgraph-api, so we’re not using any restricted or proprietary code.
   - So i can use langgraph-sdk without that api just wrap everything in fastapi?
     - Pretty sure that’s how N8N does it.
+  - [Open-source Agent Protocol implementation - LangGraph Platform alternative : r/LangChain _202508](https://www.reddit.com/r/LangChain/comments/1mgoa6o/opensource_agent_protocol_implementation/)
+    - a2a is a protocol for agents to talk to each other. 
+    - This is a backend to serve LangGraph agents through HTTP (FastAPI).
+    - still uses LangGraph and is backward compatible with LangGraph client SDKs.
 
 - https://github.com/keboola/langgraph-chat-transport /MIT/202508/ts
   - https://github.com/fork-archive-hub/langgraph-chat-transport
@@ -565,7 +570,12 @@ modified: 2025-08-11T08:47:56.335Z
   - It includes a LangGraph agent, a FastAPI service to serve it, a client to interact with the service, and a Streamlit app that uses the client to provide a chat interface. 
   - Data structures and settings are built with Pydantic.
   - Advanced Streaming: A novel approach to support both token-based and message-based streaming
-  - RAG Agent: A basic RAG agent implementation using ChromaDB 
+  - RAG Agent: A basic RAG agent implementation using ChromaDB
+
+## port-lang
+
+- https://github.com/futurxlab/golanggraph /apache2/202509/go/inactive
+  - Lightweight AI Agent SDK inspired from LangGraph, written in Golang, so called golanggraph.
 # deep-research
 - https://github.com/bytedance/deer-flow /16.1kStar/MIT/202508/python/ts
   - https://deerflow.tech/

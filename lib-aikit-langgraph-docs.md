@@ -31,6 +31,48 @@ modified: 2025-08-11T08:47:32.124Z
 - 
 - 
 
+# ⚖️ [Agent Protocol: Interoperability for LLM agents _202411](https://blog.langchain.com/agent-protocol-interoperability-for-llm-agents/)
+- resources
+  - https://github.com/langchain-ai/agent-protocol
+
+- Agent Protocol is our attempt at codifying the framework-agnostic APIs that are needed to serve LLM agents in production.
+  - LangGraph Platform implements a superset of this protocol
+
+- What is the right API to serve an LLM application in production? We believe it’s centered around 3 important concepts:
+  - Runs: APIs for executing an agent
+  - Threads: APIs to organize multi-turn executions of agents
+  - Store: APIs to work with long-term memory
+
+- Stateless Runs: one-shot interactions
+  - This is useful for ephemeral or stateless interactions, where you don’t need to keep track of the thread’s state.
+
+- Threads: multi-turn interactions
+  - Persistent state
+  - Concurrency controls
+  - CRUD endpoints for threads
+
+- Agents: Introspection
+  - Before you make use of an agent, it's sometimes useful to know what it can do, what inputs it accepts, what it returns, etc. This is where the introspection endpoints come in.
+
+- Background Runs: Atomic agent executions
+  - Support the two paradigms for launching a run
+    - Fire and forget, ie. launch a run in the background, but don’t wait for it to finish
+    - Waiting on a reply (blocking or polling), ie. launch a run and wait/stream its output
+  - Support CRUD for agent executions
+    - List and get runs
+    - Cancel and delete runs
+
+- Store: Long-term memory
+  - Customizable memory scopes
+  - Flexible storage
+
+- Messages have emerged as a core primitive in dealing with LLMs, and as such we have first-class support for messages in Agent Protocol. 
+  - We define a Message spec, which is a subset of the message formats supported by major LLM providers, such as OpenAI and Anthropic. 
+
+- Roadmap
+  - 〰️ Add detailed specification for each stream mode (currently this is left open to the implementer)
+  - Add Store endpoint to perform a vector search over memory entries
+  - Add param to POST `/threads/{thread_id}/runs`  to optionally allow concurrent runs on the same thread (current spec makes this forbidden)
 # docs
 
 - 

@@ -35,6 +35,42 @@ modified: 2025-08-08T07:36:31.265Z
 - check out smol agents for a middleground option.
 
 - If you want the benefits of a framework with the leanness of an SDK (and being able to have defined REST APIs), you should check out Letta (runs an agents service that manages state/context on top of LLM providers). We support both Node and Python SDKs.
+# discuss-ai-protocol
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [How do I create a stream from scratch? _202501](https://github.com/vercel/ai/discussions/4268)
+  - I want to create a stream from scratch in the backend, stream that, and consume that using the same React APIs from the frontend. 
+  - Please note that this is different from sending additional data with the stream, although I might need to do that as well.
+  - I feel like something like that should already be available/or the streams are pretty close to NodeJS streams? But haven't figured it out yet. Any help/sample code/references is appreciated.
+  - P. S.: Not using NextJS; assume express/react.
+
+- This might be close to what you want (but is intended for testing): 
+  - https://ai-sdk.dev/docs/ai-sdk-core/testing#simulate-data-stream-protocol-responses
+# discuss-ai-sdk-integartions
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [How to use toUIMessageStream from @ai-sdk/langchain with a @langchain/langgraph agent stream? · Issue · vercel/ai _202508](https://github.com/vercel/ai/issues/7932)
+  - I’m trying to convert a langgraph agent stream into a UIMessageStream using toUIMessageStream from @ai-sdk/langchain.
+
+- Different hosts may have different settings. For example the `'Content-Encoding': 'identity'`. part is needed if your hosting this with CloudFlare workers or Fly.io as is the content type.
+  - One more note, you may need to manually convert AI SDK UIMessage tool parts into something usable for LangChain/LangGraph.
+
+- I'm a bit confused because LangChain with LangGraph especially of upcoming v1 apparently does provide a way to easily build UIs or a standard way to stream data to the client. Seems more and more the two frameworks are overlapping each other. I sincerely want to know what still is the point of using AI SDK when you're already using or planning to use LangChain/LangGraph ecosystem. 
+  - LangGraph itself, can be setup on pretty much any node based server setup (Express, Next. JS, Hono, Remix, etc...)
+  - The `useStream` functionality is dependent on using the LangGraph Platform with a LangGraph server.
+  - Keep the above in mind. It's like you can run Next. JS on many hosting platforms, but certain functionality really works best only on Vercel Hosting.
 # discuss-ai-sdk/platform
 - ## 
 
@@ -112,7 +148,13 @@ modified: 2025-08-08T07:36:31.265Z
 
 - ## 
 
-- ## 
+- ## 🆚 [AI-SDK vs LangChain vs LlamaIndex : r/VercelAISDK _202508](https://www.reddit.com/r/VercelAISDK/comments/1mork1w/aisdk_vs_langchain_vs_llamaindex/)
+  - LlamaIndex's Typescript version was much better but it seemed to be using AI-SDK's streaming protocol under the hood...
+
+- When it comes to AI frameworks its all about abstraction - few frameworks & libraries abstracts more than others.
+  - When tested 3 months ago, what AI SDK can natively do is limited compared to using langgraph can do with multiple agents. So for my usecase went with LanggraphJS + AI SDK UI.
+  - PS: Don't get me wrong, if you use NextJS, have AI SDK UI and want a small agent with multiple tools, then AI SDK maybe the right thing. You can even move from LangChainJS to AI SDK.
+  - 
 
 - ## 🆚 [LangChain: JavaScript or Python? : r/LangChain](https://www.reddit.com/r/LangChain/comments/1mtq9e4/langchain_javascript_or_python/)
 - I am biased; I find Python is the simplest and most intuitive for me. There are more examples out there. The data libraries available work well.
