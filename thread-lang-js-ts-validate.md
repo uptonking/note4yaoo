@@ -24,6 +24,20 @@ modified: 2023-08-16T15:50:16.335Z
 - ## Did you know you can use the built-in browser validation API with JavaScript to control how error messages are rendered? Besides the simplicity, you also get i18n for free.
 - https://twitter.com/diegohaz/status/1526874008049811461
 
+# discuss-zod/arktype
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Introducing Zod 4 : r/typescript _202505](https://www.reddit.com/r/typescript/comments/1kqka6e/introducing_zod_4/)
+- In what situations would you use zod mini over regular? 
+  - zod mini allows for a smaller bundle size, which is good for client side usage.
+  - the main reason for continuing the "classic" API is preference - the creator of zod has said he still much prefers to use the original API.
+
 # discuss
 - ## 
 

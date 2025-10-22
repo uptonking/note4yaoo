@@ -280,13 +280,21 @@ async function getEmbeddings(text) {
 
 # discuss-roadmap
 - ## 
+
 - ## 
+
 - ## 
 # discuss-changelog
 - ## 
+
+- ## 
+
+- ## 
+
 - ## [DOC: support for a2a with langchain/langgraph · Issue · langchain-ai/langgraph _202508](https://github.com/langchain-ai/langgraph/issues/5987)
   - what’s the plan from langchain to support a2a protocol natively? Agent2Agent (A2A) Protocol
 - We just rolled out support for an A2A endpoint in LG platform!
+
 - ## 🎯 Today we are announcing alpha releases of v1.0 for langgraph and langchain, in both Python and JS. _20250903
 - https://x.com/LangChainAI/status/1962934869065191457
   - 1. LangGraph is largely the same as before, no breaking changes. 
@@ -312,6 +320,7 @@ async function getEmbeddings(text) {
 - Would internal things like Runnables remain
   - not really
 - Interesting that LangGraph has evolved from being built on LangChain to being the foundations of LangChain itself.
+
 - ## langgraph: we've spent a lot of time on the langgraph persistence/state layer _202501
 - https://x.com/hwchase17/status/1874486239723712939
   - enables production ready short term & long term memory, checkpointing, human-in-the-loop, time travel, etc

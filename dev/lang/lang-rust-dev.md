@@ -24,6 +24,7 @@ modified: 2022-11-11T06:57:09.670Z
   - [Rust Language Cheat Sheet](https://cheats.rs/)
   - https://github.com/donbright/rust-lang-cheat-sheet
   - [The Complete(sh) Rust Cheat Sheet - DEV Community](https://dev.to/moekatib/the-completesh-rust-cheat-sheet-4fnn)
+  - [Rust Cheat Sheet + PDF | Zero To Mastery](https://zerotomastery.io/cheatsheets/rust-cheat-sheet/)
 
 - who is using #rust
   - 国内: tikv

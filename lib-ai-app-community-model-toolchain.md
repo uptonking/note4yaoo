@@ -727,7 +727,11 @@ sudo launchctl load /Library/LaunchDaemons/io.yaoo.sysctl.plist
 
 - ## 
 
-- ## 
+- ## 🖼️ [Qwen3-VL kinda sucks in LM Studio : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1ock0lc/qwen3vl_kinda_sucks_in_lm_studio/)
+- LM Studio apparently downscales to 500x500 ish. llama.cpp is better for multimodal for now until LM Studio fixes this.
+- LM Studio downscales images to just 1024x and gives you no way to increase it.
+- LM Studio used to downscale the image to just 512x512 and it was giving terrible results at times. Now they have increased it to 1024x1024. But I still find it not as good as just running it directly on MLX.
+- I believe lmstudio (currently) downscales/resizes images, while qwen3-vl can accept (and performs better with) arbitrary image sizes. There was a post a few days ago about how they were going to make it optional, but I don't know if they've done that yet.
 
 - ## [LM Studio Fails to Load 32B 4bit Models on macOS M4 (Freezes System) While Ollama Works Normally · Issue · lmstudio-ai/lmstudio-bug-tracker _202503](https://github.com/lmstudio-ai/lmstudio-bug-tracker/issues/484)
 - It seems like LM Studio isn't correctly utilizing swap memory, as there's a small spike in usage when the model is initially loaded, but afterwards it doesn’t exceed 24GB of memory.

@@ -1559,6 +1559,11 @@ modified: 2022-01-16T15:52:31.293Z
 - So you saying that dual is slower?
   - Exactly — a single 7900 XTX is better than a 7900 XTX + RTX 4060 Ti combo when the model requires less than 24GB of VRAM. In my configuration ofc, mb I did something wrong)
 
+- [AMD + NVIDIA GPU : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1obgm8u/amd_nvidia_gpu/)
+- I've got a RTX 5070 Ti (PCIe 5.0x16, CPU) and a RX 5500 XT (PCIe 4.0x4, CPU) in my AM5 PC. Is there a way to use both GPUs and the CPU to run the same gguf model?
+  - You can compile multiple backends into Llamacpp and use them all at once.
+  - Yup, the easiest way is to use Vulkan. Any llama.cpp-based software can do this (ie Lmstudio). Ollama not yet - experimental.
+
 - ## 💡🧩 [AMD and Nvidia GPUs in the same machine. IT WORKS. : r/linuxhardware _202006](https://www.reddit.com/r/linuxhardware/comments/he9nhe/amd_and_nvidia_gpus_in_the_same_machine_it_works/)
   - TLDR: Nvidia Card in slot 2 with proprietary driver (v. 440xx) + AMD card in slot 1 open source driver (mesa v20.1), no configuration needed, just prime-run what you need to run with Nvidia card as the back-end renderer. Enjoy the smooth desktop and Nvidia/proprietary bond applications
   - The solution is a simple prime-run command. No messy xorg config files. In fact no manual configuration at all.

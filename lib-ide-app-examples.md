@@ -293,6 +293,19 @@ modified: 2024-08-24T16:30:20.218Z
   - You need an underscore `lm_studio/...` in the prefix
   - `aider --model lm_studio/<your-model-name>`
 
+- https://github.com/sst/opencode /28.7kStar/MIT/202510/go/ts
+  - https://opencode.ai/
+  - The AI coding agent built for the terminal
+  - It's very similar to Claude Code in terms of capability. Here are the key differences:
+    - 100% open source
+    - Not coupled to any provider. Although Anthropic is recommended
+    - Out of the box LSP support
+    - A client/server architecture. support remote control
+  - 🍴 forks
+  - https://github.com/IgorWarzocha/opencode-chat
+    - [OpenCode Chat - a slimmer version of OC. From 20k tokens init to 5k. : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1oclqet/opencode_chat_a_slimmer_version_of_oc_from_20k/)
+    - The entire prompt stack and tool descriptions have been rewritten around chatting instead of coding. 
+
 - https://github.com/shareAI-lab/Kode /2.2kStar/apache2/202509/ts
   - Like Claude Code, but Koding with DeepSeek V3.1, Kimi2, GLM4.5, Qwen Coder etc.
   - Kode proudly supports the `AGENTS.md` standard protocol initiated by OpenAI - a simple, open format for guiding programming agents that's used by 20k+ open source projects.

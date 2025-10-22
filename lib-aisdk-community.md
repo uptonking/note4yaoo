@@ -35,6 +35,46 @@ modified: 2025-08-08T07:36:31.265Z
 - check out smol agents for a middleground option.
 
 - If you want the benefits of a framework with the leanness of an SDK (and being able to have defined REST APIs), you should check out Letta (runs an agents service that manages state/context on top of LLM providers). We support both Node and Python SDKs.
+# discuss-internals-aisdk
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🌰 [How to Build LLM Streams That Survive Reconnects, Refreshes, and Crashes | Upstash Blog _202504](https://upstash.com/blog/resumable-llm-streams)
+- 
+- 
+- 
+
+- ## 🚀〰️ The @vercel Chat SDK now features stream resumption. _20250510
+- https://x.com/rauchg/status/1921168985900372081
+  - This makes AI conversations resilient to network hiccups and reloading or sharing a chat mid-generation. 
+  - This is especially valuable for long responses (e.g.: Deep Research). 
+  - No proprietary APIs, no sticky load balancing, just Redis pubsub.
+  - If you try that example with ChatGPT, it dies and never recovers, unless you wait for long enough for the generation to have completed and refresh the page again
+- 提供了2个示例场景
+  - 简单刷新页面
+  - 多个tab同时打开同一页面，都能恢复流式输出
+
+- For serverless Redis it might get expensive, but if you’re running your own Redis instance in a cluster, then this would be extremely cheap. 
+  - Redis pub-sub scales very well, so you’d probably only need a single node to handle many nodes of your chat service.
+- Cool design if pricing works. I was also a little worried about latency of pushing into redis. I know redis is fast, but for this application the ms count. A design with a sticky session seems to make sense since the number of users in a chat is going to be very, very small.
+  - It makes O(1) Redis writes per stream in the common case. 
+  - If you use Upstash it would cost $4 per million streams which seems very fine. Especially, if you just spent $50K per million AI streams
+- I don't understand. Why doesn't every token have to be  written to the stream?
+  - Because it only writes if there are any listeners. By default (no client network error, no second tab opened, etc.) there is no listeners
+- Now I'm wondering how common resumption is. Part of the motivation for this feature is mobile where switching away from the app/tab is common and will often disconnect.
+  - This is gonna depend on the app, but there is also no cost if you switch tabs and don't come back until the tab is done. And if it isn't done, you only have cost for the remainder of the stream, not all tokens.
+
+- How will the client be notified if a third-party sdk, such as openai, fails during generation or has a timeout?
+  - What would you like to happen? The current idea is that this is not a concern of this library but rather should be handled one layer above.
+
+- why use specifically pubsub - and not Redis Streams? IMO it's an inferior approach, no?
+
+- how does stream resumption work if the client disconnects for a bit does it replay missed messages or buffer them using redis pubsub
 # discuss-ai-protocol
 - ## 
 
