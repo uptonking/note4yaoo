@@ -40,8 +40,28 @@ modified: 2025-08-08T07:36:16.802Z
 - 
 - 
 - 
-- 
-- 
+
+# [streamdown](https://streamdown.ai/)
+- features
+  - built-in Tailwind classes for common Markdown components — headings, lists, code blocks, and more
+  - GitHub Flavored Markdown: table, task-list, Strikethrough
+  - interactive code blocks: shiki, copy button
+  - supports LaTeX math expressions through remark-math and KaTeX
+  - supports Mermaid diagrams with customizable themes
+  - built-in support for parsing unterminated Markdown blocks (# headings `inline code`, **bold**, _italic_, [links]() and more)
+  - Built-in security hardening: unexpected origins
+
+- Streamdown fully supports custom components through the `components` prop, just like react-markdown.
+  - You can override any markdown element with your own React components to customize the rendering.
+
+- How does the incomplete markdown parsing work?
+  - When `parseIncompleteMarkdown` is enabled (default), Streamdown automatically detects and fixes common issues in incomplete markdown like unclosed code blocks, incomplete lists, and partial formatting. 
+  - This ensures smooth rendering even as markdown is being streamed from AI models.
+
+- Is Streamdown compatible with all react-markdown plugins?
+  - Streamdown supports both remark and rehype plugins, making it compatible with most react-markdown plugins. 
+  - It includes popular plugins like remarkGfm, remarkMath, and rehypeKatex by default, and you can add your own through the `remarkPlugins` and `rehypePlugins` props.
+
 - 
 - 
 - 
@@ -217,4 +237,24 @@ modified: 2025-08-08T07:36:16.802Z
 - 
 - 
 
+# blogs
+
+## [Streaming in web applications _202508](https://vercel.com/guides/what-is-streaming)
+
+- With the Web Streams API, the server generates data and splits it into chunks. 
+  - Each chunk is sent to the client as soon as it's ready. 
+  - The client processes each chunk on arrival, so users can start seeing and interacting with content immediately. 
+  - It is supported in most major web browsers and popular runtimes, such as Node.js and Deno.
+
+- Chunks in web streams are fundamental data units that can be of various types, such as strings, ArrayBuffers, or typed arrays, depending on the content (for example, String for text or Uint8Array for binary data).
+
+- Chunk sizes can be out of your control, so it's important that your code can handle chunks of any size. 
+- Chunks sizes are influenced by the following factors:
+  - Data source: Sometimes the original data is already broken up. For example, OpenAI's language models produce responses in tokens, or chunks of words
+  - Stream implementation: The server could be configured to stream small chunks quickly or large chunks at a lower pace
+  - Network: Factors like a network's Maximum Transmission Unit setting, or its geographical distance from the client, can cause chunk fragmentation and limit chunk size
+
+- When the server streams data faster than the client can process it, excess data will queue up in the client's memory. 
+  - This issue is called backpressure, and it can lead to memory overflow errors, or data loss when the client's memory reaches capacity.
+- You can handle backpressure with flow control. This technique manages data transfer rates between sender and receiver, often by pausing the stream or buffering data until the client is ready to process more.
 # more

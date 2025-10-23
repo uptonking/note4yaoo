@@ -33,6 +33,10 @@ modified: 2025-03-22T16:10:24.856Z
   - network agnostic
   - 发挥端侧计算的能力，如总结/查询，而不侧重端侧聊天
 
+- roadmap-ai
+  - 针对国内免费api定制的chat/ppt: 魔搭, 快手万擎
+    - 可以~~fork janai,然后扩展provider~~, janai默认支持openai-like api，已经支持了国内models
+
 - local-ai-challenges 🐛
   - 运行大模型需要较多硬件资源，如GPU/CPU/RAM
   - 本地模型的api很多通过gui如ollama/LMStudio提供，需要适配，同时不同GPU在默认token数、RAG处理方式上有差异
@@ -221,7 +225,93 @@ modified: 2025-03-22T16:10:24.856Z
   - 有时使用搜索引擎默认的ai结果又快又好，可以尝试解决类似stackoverflow类型的问题
 
 - 让ai将从日志平台复制来的残缺字符串补全为合法字符串并格式化缩进，速度很快很好用
-# ai/llm-api
+# ai/llm-api 💰
+- [OpenRouter API Rate Limits ](https://openrouter.ai/docs/api-reference/limits)
+  - Free usage limits: If you’re using a free model variant (with an ID ending in `:free`), you can make up to 20 requests per minute. 
+  - If you have purchased less than 10 credits, you’re limited to 50 :free model requests per day.
+  - If you purchase at least 10 credits, your daily limit is increased to 1000 :free model requests per day.
+  - If your account has a negative credit balance, you may see `402` errors, including for free models.
+
+- [Cerebras Inference Rate Limits](https://inference-docs.cerebras.ai/support/rate-limits)
+  - Model	TPM	TPH	TPD	
+  - gpt-oss-120b	60K	1M	1M
+  - llama-3.3-70b	60K	1M	1M
+  - qwen-3-32b	60K	1M	1M
+  - qwen-3-235b-a22b-instruct-2507	60K	1M	1M
+  - qwen-3-235b-a22b-thinking-2507	60K	1M	1M
+  - qwen-3-coder-480b	150K	1M	1M
+
+- [Groq Rate Limits - Docs](https://console.groq.com/docs/rate-limits)
+  - MODEL ID	RPM	RPD	TPM	TPD
+  - groq/compound	30	250	70K	No limit
+  - qwen/qwen3-32b	60	1K	6K	500K
+  - openai/gpt-oss-120b	30	1K	8K	200K
+  - llama-3.3-70b-versatile	30	1K	12K	100K
+  - moonshotai/kimi-k2-instruct-0905	60	1K	10K	300K
+  - meta-llama/llama-4-scout-17b-16e-instruct	30	1K	30K	500K
+
+- [Gemini Developer API Pricing  ](https://ai.google.dev/gemini-api/docs/pricing)
+  - 国内不可用
+  - gemini-2.5-pro: Grounding with Google Search	Not available
+  - gemini-2.5-flash: Grounding with Google Search, up to 500 RPD (limit shared with Flash-Lite RPD)
+  - [Rate limits  |  Gemini API  ](https://ai.google.dev/gemini-api/docs/rate-limits)
+    - model,          RPM,   TPM,      RPD
+    - Gemini 2.5 Pro	  5	   125,000	  100
+    - Gemini 2.5 Flash	10	 250,000	  250
+    - Gemini 2.0 Flash	15	 1,000,000	200
+
+- [Mistral Rate Limits & Usage tiers ](https://docs.mistral.ai/deployment/ai-studio/tier)
+  - Maximum requests per second: 1
+  - Tokens per Minute: 500, 000
+  - Tokens per Month: 1 billion
+
+- [魔搭推理API-Inference API推理介绍 · 文档中心](https://modelscope.cn/docs/model-service/API-Inference/intro)
+  - 免费推理API由阿里云提供算力支持，要求您的ModelScope账号必须绑定阿里云账号后才能正常使用。
+  - 每位魔搭注册用户，当前每天允许进行总数为2000次的API-Inference调用，其中每单个模型不超过500次，具体每个模型的限制可能随时动态调整。
+  - 在每个模型每天不超过500次调用的基础上，平台可能对于部分模型再进行单独的限制，例如，deepseek-ai/DeepSeek-R1-0528，deepseek-ai/DeepSeek-V3.1等规格较大模型，当前限制单模型每天200次调用额度。
+  - 在上述调用次数限制的基础上，不同模型允许的调用并发，会根据平台的压力进行动态的速率限制调整，原则上以保障开发者单并发正常使用为目标。
+  - 实际单模型可用次数以及允许的并发，以平台实时调整为准。
+  - 🖼️ 当前API-Inference为魔搭平台上的部分开源大语言模型（LLM），多模态模型（MLLM），以及AIGC专区文生图模型等，提供了可直接使用的API。
+
+- [硅基流动 SiliconFlow - 大模型 API 价格方案](https://www.siliconflow.cn/pricing)
+  - llm: Qwen/Qwen3-8B, deepseek-ai/DeepSeek-R1-0528-Qwen3-8B, THUDM/GLM-Z1-9B-0414, THUDM/GLM-4-9B-0414, Qwen/Qwen2.5-Coder-7B-Instruct
+  - vlm: THUDM/GLM-4.1V-9B-Thinking
+  - image: Kwai-Kolors/Kolors
+  - asr: TeleAI/TeleSpeechASR
+  - [Rate Limits - SiliconFlow](https://docs.siliconflow.cn/cn/userguide/rate-limits/rate-limit-and-upgradation)
+    - 语言模型(Chat)	 RPM=1000-10000 TPM=50000-5000000
+    - 🖼️ 图像生成模型(Image)	 IPM:2 IPD:400
+
+- [DeepSeek API Docs - 模型 & 价格](https://api-docs.deepseek.com/zh-cn/quick_start/pricing/)
+  - 扣减费用 = token 消耗量 × 模型单价，对应的费用将直接从充值余额或赠送余额中进行扣减。
+  - 百万tokens输入（缓存命中）	0.2元
+  - 百万tokens输入（缓存未命中）	2元
+  - 百万tokens输出	3元
+
+- [Z. AI DEVELOPER DOCUMENT](https://docs.z.ai/guides/overview/pricing)
+  - GLM-4.5-Flash	Free Fre ✅
+  - GLM-4-32B-0414-128K	$0.1  	$0.1
+  - GLM-4.5-Air	$0.2  $1.1
+
+- [KAT-Coder开发工具接入指南-快手万擎-StreamLake](https://www.streamlake.com/document/WANQING/me6ymdjrqv8lp4iq0o9)
+  - ✅ [KAT-Coder-Air V1 模型免费使用规则 ](https://www.streamlake.com/document/WANQING/mh1g9y6knewv5sft54k)
+  - 非高峰时段: 02:00-08:00 每6小时内您将可以发起200次对话请求，超过此请求数后，您可能会经历更长的排队等待时间或更严格的速率限制
+  - 高峰时段: 08:00-02:00（次日） 每6小时内您将可以发起120次对话请求。在此时段，KAT-Coder-Air V1 的请求优先级可能会降低。您可能会经历更长的排队等待时间或更严格的速率限制。
+
+- [Moonshot AI 开放平台 - Kimi 大模型 API 服务](https://platform.moonshot.cn/docs/pricing/chat)
+
+- [Cohere API Keys and Rate Limits](https://docs.cohere.com/docs/rate-limits)
+  - all endpoints are limited to 1, 000 calls per month with a trial key
+
+- [huggingface Pricing and Billing](https://huggingface.co/docs/inference-providers/pricing)
+  - [Inference Providers](https://huggingface.co/docs/inference-providers/index)
+  - Hugging Face provides a Serverless Inference API as a way for users to quickly test and evaluate thousands of publicly accessible (or your own privately permissioned) machine learning models with simple API calls for free
+  - Every Hugging Face user receives monthly credits to experiment with Inference Providers
+  - Account Type	Monthly Credits	Extra usage (pay-as-you-go)
+  - Free Users	$0.10, subject to change	no
+  - [HuggingFace changes to PRO subscription Inference limits, should I switch providers now? : r/LocalLLaMA _202502](https://www.reddit.com/r/LocalLLaMA/comments/1ii4nst/huggingface_changes_to_pro_subscription_inference/)
+    - The $2 credit limit is pretty weak for a $9 subscription. RunPod gives you way more bang for your buck - just pay for what you use and test as many models as you want.
+
 - [现在做大模型，还有靠谱且免费的 api 接口吗？ - 知乎](https://www.zhihu.com/question/662092970)
   - 纯粹免费的API也是有的，但是多限于轻量级的大模型，比如智谱AI的flash模型，Google的 Gemini 1.5 Flash。
   - 目前主流的 API 接口都是采用相同的套路，即免费注册送固定的额度，然后再收费的策略。我反正是没有看到纯免费一直可用的 API 接口。

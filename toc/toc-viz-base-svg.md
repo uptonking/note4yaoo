@@ -68,6 +68,15 @@ modified: 2020-10-05T06:18:21.639Z
 - https://github.com/SVG-Edit/svgedit /js
   - web-based, JavaScript-driven SVG drawing editor that works in any modern browser. 
   - SVGEdit is based on a powerful SVG canvas @svgedit/svgcanvas
+# examples
+- https://github.com/whiteSHADOW1234/MergeSVG /MIT/202510/ts
+  - https://mergesvg.vercel.app/
+  - Combine SVGs like a designer: free-form drag & drop, pixel-perfect alignment, deep styling, and one-click merge.
+  - README’s limited Markdown makes it hard to get banner layouts to look exactly the way I want. So I built MergeSVG: a browser-based, drag-and-drop tool that merges SVGs into a single, self-contained file and lets you position, resize and style graphics visually.
+  - Customizable canvas background — Control background color, transparency, and patterns (grid, dots, checkerboard).
+  - Real-time preview — See your composition as you build it.
+  - Client-side processing — Fast, secure, and private—everything runs in your browser.
+  - No more broken links — The app embeds raw SVG content into a single file so external resources can’t break your layout.
 # more-repos
 - https://github.com/ngti/svg-grabber /MIT/201803/js/inactive
   - Open source chrome extension to quickly preview, download or copy inline or embedded SVG images from a website

@@ -933,6 +933,38 @@ Code
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Introducing Streamdown - A drop-in replacement for react-markdown _20250820
+- https://x.com/haydenbleasel/status/1957851370381553880
+- Does this also include the added link sanitizations? Like in the hardened react markdown? 
+  - Yes it does! All domains are enabled by default, then you can choose to opt-in by specifying an allowlist. 
+
+- does it also support smooth streaming or is there a plan to add that?
+  - We’re exploring it currently. The trick is in finding a solution that doesn’t increase the overall response time
+
+- is it possible to disable the streaming part? I know that sounds funny but i have a lot of non-streaming AI (+ other non-AI) use cases for this where streaming is not needed.
+  - It will still work fine with regular, non-streamed Markdown
+- What is I have static content being rendered (like an html code block that’s not streamed in)? Can I still use this?
+  - You can certainly use it with non-streamed Markdown responses e.g. from AI SDK `generateText()`!
+
+- Does it also allow to render custom blocks as well, e.g. how ChatGPT shows a link preview block when I hover over a link? or this does too require involving something like unified.js
+  - You can do this with some system prompt magic
+
+- Is there any plan to support mdx or add plugins to it, so that the AI can generate UI elements as JSX and I can display them to the user? Like code sandboxes, callouts, etc.?
+  - Currently it feels like the best way to do it is with a specific system prompt detailing a "custom HTML component" that you can then render in `components`, but still exploring.
+
+- Does it support memoization per Markdown block?
+  - Yes it does! We haven't listed it on the website yet though as we're looking for a way to reliably test, measure and demonstrate it first.
+  - current implementation is good, but not good enough. especially when it comes to code block, it will still render the whole syntax highlighter. If AI elements/streamdown from vercel can optimize it to only render per words, even better.
+
+- 
+- 
+- 
+- 
+
 - ## 📝 [How streaming LLM APIs work | Simon Willison’s TILs _202409](https://til.simonwillison.net/llms/streaming-llm-apis)
 - I decided to have a poke around and see if I could figure out how the HTTP streaming APIs from the various hosted LLM providers actually worked. Here are my notes so far.
 - All three of the APIs I investigated worked roughly the same: they return data with a `content-type: text/event-stream` header, which matches the server-sent events mechanism, then stream blocks separated by `\r\n\r\n` . Each block has a `data: ` JSON line. Anthropic also include a `event:` line with an event type.

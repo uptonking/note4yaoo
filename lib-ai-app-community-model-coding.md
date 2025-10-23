@@ -863,7 +863,32 @@ def slugify(text):
 
 - ## 
 
-- ## 
+- ## [Devs, what are your experiences with Qwen3-coder-30b? : r/LocalLLM _202510](https://www.reddit.com/r/LocalLLM/comments/1odf46t/devs_what_are_your_experiences_with_qwen3coder30b/)
+  - From code completion, method refactoring, to generating a full MVP project, how well does Qwen3-coder-30b perform?
+
+- I run a Q3 Quant in my 9070XT, and it's actually pretty usable. Definitely wouldn't trust it to one shot important work, but it's very fast and performs much better than smaller models for me. It's great at tool calling, so a pretty flexible little model. Qwen3-30B-A3B-2507 instruct and thinking perform a tad better, however, so also consider them.
+
+- Extremely good for small one offs or functions. Sadly it's insufficient for larger processes or even microservices at the scale of something you'd want to actually deploy, but it's certainly getting there.
+
+- [Devs, what are your experiences with Qwen3-coder-30b? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1odf4ei/devs_what_are_your_experiences_with_qwen3coder30b/)
+- I've gotten more mileage out of Qwen3-30b-a3b than Qwen3-30b-Coder-a3b. The main reason is that I primarily use chat window and code completion, and similar to the bigger 480b qwen3 coder, I find this model is likely overfitted on agentic toolcalling training.
+  - If I was running a local agent? I'd use coder, either 480b or 30b. But if I'm chatting with it about code, I've had far better responses and higher quality from normal 235b and 30b instructs.
+
+- I think the instruct version is actually a better coder than the coder-specific version, and certainly does tool calling better, weirdly. I'm not a huge fan of the qwen 30 30b coder and it's just not strong enough as a code-model to really get the job done.
+  - Exactly this, they did some very strange tool calling in this model, and the actual thinking instruct model is way way better.
+
+- I use Qwen3-Coder-30B extensively, for FIM mostly, but since that means that it's typically already in vRAM I use it for most local (code related) queries. I would recommend going for at least 24GB vRAM (which is what I have), and preferably 32GB to avoid having to quantize kv-cache aggressively
+
+- qwen3-coder-30b is largely a dud for me. yeah, it runs fast on my 4090, but id rather not get weak answers so I use the big qwen coder via a token broker like openrouter.
+
+- I use vs code and cline, with qwen3 30 a3b thinking 2507 for plan mode, and qwen3 coder 30b a3b for act mode. Both at q8 quantization. With good prompts and short tasks it's good enough for local.
+
+- I've been using Qwen2.5-coder 32B a lot (for Swift/SwiftUI projects), and was hoping Alibaba would release Qwen3-coder 32B, because Qwen3-coder 30B is way dumber.
+  - I'm still using Qwen2.5-coder 32B for Swift projects, and switched to Devstral Small 24B for JS/TS.
+
+- I have struggled getting tool calling working so I have given up on it in an agentic flow. But I do have it hooked up to do FIM compettion and I really like it there since it runs really fast and has pretty good coding taste
+
+- I like it, have tried other coder models and often their code does poorly compared to big tek like gpt and gemini, but qwen3 coder 30b, has actually useable code and most of time if I write the prompt properly it works without needing to fix stuff. But spec wise, I have 16gb ram and rtx 3060 12gb, getting usable token rate of 15-25 tk/s, so ur rig should be getting better rates and definetly useable.
 
 - ## [DiffuCoder 7B - New coding diffusion LLM by Apple : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1lpoqlu/diffucoder_7b_new_coding_diffusion_llm_by_apple/)
 - it’s a qwen2.5 coder finetune. Also, how can an auto regressive model be turned into a diffusion model?

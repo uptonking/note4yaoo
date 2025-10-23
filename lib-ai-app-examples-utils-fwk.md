@@ -255,6 +255,43 @@ modified: 2025-02-21T18:20:42.624Z
   - [Local Open Deep Research with Offline Wikipedia Search Source : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nx5w8m/local_open_deep_research_with_offline_wikipedia/)
     - I created my own branch of the deep research repo and added functionality to enable fully offline Wikipedia search to decrease the per-report cost even further
     - [Wikipedia Deep Research](https://publish.obsidian.md/neutron/Published/Projects/10-03-25+Wikipedia+Deep+Research)
+
+## router/gateway
+
+- https://github.com/Egham-7/adaptive-ai-provider /202510/ts
+  - https://llmadaptive.uk/
+  - The Adaptive AI Provider for the AI SDK contains language model support for adaptive provider selection across multiple AI services
+  - Intelligent Model Selection - Automatically picks optimal models
+  - Multi-Provider - OpenAI, Anthropic, Google, DeepSeek, Groq, etc.
+  - [Adaptive AI Provider for the Vercel AI SDK — real-time model routing using UniRoute (Google Research) : r/vercel _202510](https://www.reddit.com/r/vercel/comments/1o5itci/adaptive_ai_provider_for_the_vercel_ai_sdk/)
+    - It’s based on UniRoute, Google Research’s new framework for universal model routing across unseen LLMs.
+    - Adaptive automatically chooses which LLM to use for every request based on prompt complexity and live model performance.
+    - It runs automated evals continuously in the background, clusters prompts by domain, and routes each query to the smallest feasible model that maintains quality.
+    - it performs live eval-based routing using UniRoute’s cluster-based generalization method, which can handle unseen LLMs without retraining.
+    - Typical savings: 60–90% lower inference cost.
+    - Routing overhead: ~10 ms.
+
+- https://github.com/maximhq/bifrost /718Star/apache2/202510/go/ts
+  - https://www.getmaxim.ai/bifrost
+  - Fastest LLM gateway (50x faster than LiteLLM) with adaptive load balancer, cluster mode, guardrails, 1000+ models support & <100 µs overhead at 5k RPS.
+  - Bifrost is a high-performance AI gateway that unifies access to 12+ providers (OpenAI, Anthropic, AWS Bedrock, Google Vertex, and more) through a single OpenAI-compatible API.
+  - Multi-Provider Support - OpenAI, Anthropic, AWS Bedrock, Google Vertex, Azure, Cohere, Mistral, Ollama, Groq, and more
+  - Automatic Fallbacks - Seamless failover between providers and models with zero downtime
+  - Multimodal Support - Support for text, images, audio, and streaming, all behind a common interface.
+
+- https://huggingface.co/katanemo/Arch-Router-1.5B /LlamaLic/qwen2
+  - [I built the HuggingChat Omni Router : r/ollama _202510](https://www.reddit.com/r/ollama/comments/1odn14n/i_built_the_huggingchat_omni_router/)
+  - HuggingFace relaunched their chat app called Omni with support for 115+ LLMs.
+  - The critical unlock in Omni is the use of a policy-based approach to model selection. I built that policy-based router: https://huggingface.co/katanemo/Arch-Router-1.5B
+  - The core insight behind our policy-based router was that it gives developers the constructs to achieve automatic behavior, grounded in their own evals of which LLMs are best for specific coding tasks like debugging, reviews, architecture, design or code gen
+  - Essentially, the idea behind this work was to decouple task identification (e.g., code generation, image editing, q/a) from LLM assignment.
+  - The model is also integrated as a first-class primitive in archgw: a models-native proxy server for agents. 
+  - https://github.com/katanemo/archgw /4.2kStar/apache2/202510/rust/python
+    - https://archgw.com/
+    - Arch is a models-native proxy server that handles the plumbing work in AI: agent routing & hand off, guardrails, end-to-end logs and traces, unified access to LLMs from OpenAI, Anthropic, Ollama, etc.
+    - Arch handles the pesky plumbing work in building AI agents — like applying guardrails, routing prompts to the right agent, generating hyper-rich information traces for RL, and unifying access to any LLM.
+    - Arch runs alongside app servers as a containerized process, and builds on top of `Envoy`'s proven HTTP management and scalability features to handle ingress and egress traffic related to prompts and LLMs.
+    - Arch was built by the contributors of Envoy Proxy with the belief that: Prompts are nuanced and opaque user requests, which require the same capabilities as traditional HTTP requests including secure handling, intelligent routing, robust observability, and integration with backend (API) systems to improve speed and accuracy for common agentic scenarios – all outside core application logic.
 # ai-api
 
 # browser-use

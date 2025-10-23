@@ -208,8 +208,13 @@ modified: 2021-01-04T17:26:25.032Z
   - Code syntax highlighting - Beautiful code blocks with Shiki
   - Security-first - Built on harden-react-markdown for safe rendering
   - [Introducing Streamdown: Open source Markdown for AI streaming - Vercel _202508](https://vercel.com/changelog/introducing-streamdown)
+  - 🍴 forks
+  - https://github.com/phaserjs/streamdown-lite
+    - A lightweight drop-in replacement for react-markdown, designed for AI-powered streaming with code highlighting.
+- https://github.com/goutham-subramanyam/streamdown-poc /202510/ts
+  - An interactive playground for Vercel Streamdown - a markdown renderer optimized for AI streaming.
 
-- https://github.com/Simon-He95/vue-markdown-render /430Star/MIT/202510/ts/vue
+- https://github.com/Simon-He95/vue-markdown-renderer /430Star/MIT/202510/ts/vue
   - https://vue-markdown-renderer.netlify.app/
   - A Vue 3 renderer specifically built for AI-powered streaming Markdown: Monaco incremental, Mermaid progressive, and KaTeX formula speed, with real-time updates and no jitter, ready to use out of the box.
   - Streaming diff code blocks: show diffs as they arrive for instant feedback.
@@ -217,6 +222,11 @@ modified: 2021-01-04T17:26:25.032Z
   - Streaming-first rendering: render partial or incrementally-updated Markdown content without re-parsing the whole document each time. 
   - [Show HN: Vue-Markdown-render – up to 100× faster streaming Markdown for Vue 3 | Hacker News _202509](https://news.ycombinator.com/item?id=45238350)
     - Streamdown targets server-side streaming; our results are for client rendering. Ideal for AI chatbot UIs.
+  - https://github.com/Saluana/streamdown-vue
+    - Streamdown style streaming Markdown to Vue 3 & Nuxt 3
+
+- https://github.com/beynar/svelte-streamdown
+  - Svelte port of Streamdown
 
 - https://github.com/thetarnav/streaming-markdown /266Star/MIT/202505/js
   - https://thetarnav.github.io/streaming-markdown/
@@ -245,6 +255,25 @@ modified: 2021-01-04T17:26:25.032Z
   - handling multiple blobs or JSON with interspersed non-JSON strings can be quite tricky. This library is more focused on handling JSON strings themselves, so users need to manually separate JSON blobs for input or filter out non-JSON structured strings.
   - [I Created a Library to Streamline JSON stream Handling: Introducing streaming-json : r/LocalLLaMA _202407](https://www.reddit.com/r/LocalLLaMA/comments/1e9m5wh/i_created_a_library_to_streamline_json_stream/)
     - We wrote a similar algorithm in rust (that have bindings to Python/TS/Ruby) as well ( https://github.com/BoundaryML/baml ) if anyone is interested in a rust implementation.
+
+- https://github.com/ddaras/melony /202510/ts
+  - https://melony.dev/
+  - Generate React UIs from AI responses in real-time.
+  - Zero Latency - Components render progressively during streaming
+  - Smart Parsing - Identifies component JSON with delimited blocks
+  - Built-in Components - 20+ ready-to-use UI components
+  - Markdown Support - Built-in GFM rendering
+  - 使用时需要使用 MELONY_UI_GUIDE system prompt
+
+- https://github.com/brillout/react-streaming /MIT/202510/ts
+  - HTML Streaming with React — batteries-included and made easy
+  - The React team is working on high-level APIs that will eventually make parts of react-streaming obsolete
+
+- https://github.com/nikomatt69/streamdown-tty /MIT/202510/ts
+  - Streamtty is inspired by Streamdown but built specifically for terminal/TTY environments using blessed.
+  - It handles the unique challenges of streaming Markdown content from AI models in terminals, providing seamless formatting even with incomplete or unterminated Markdown blocks
+  - Advanced Tables - Full table support with alignment, borders, and navigation
+  - Plugin System - Remark/Rehype compatible plugin architecture
 # ui
 - https://github.com/BlueprintLabIO/markdown-ui /412Star/MIT/202509/ts
   - https://markdown-ui.blueprintlab.io/

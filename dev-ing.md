@@ -56,6 +56,8 @@ https://meeting.tencent.com/p/9606972663
 - ai-play
   - https://www.ibm.com/granite/playground
   - https://playground.liquid.ai/chat
+  - https://huggingface.co/chat/
+  - https://huggingface.co/playground
 
 - ai-deep-research
   - chat: openai, gemini, mistral, qwen, glm

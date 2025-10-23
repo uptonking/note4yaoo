@@ -126,7 +126,7 @@ modified: 2025-03-22T18:49:15.634Z
   - 基于langchain实现
 
 - https://github.com/huggingface/chat-ui /9.2kStar/apache2/202510/ts/svelte
-  - https://huggingface.co/chat
+  - https://huggingface.co/chat/
   - A chat interface for LLMs. 
   - It is a SvelteKit app and it powers the HuggingChat app on hf.co/chat.
   - Chat UI only supports OpenAI-compatible APIs via OPENAI_BASE_URL and the /models endpoint.
