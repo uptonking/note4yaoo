@@ -265,6 +265,14 @@ modified: 2024-08-24T16:30:20.218Z
   - [Gemini CLI: your open-source AI agent | Hacker News _202506](https://news.ycombinator.com/item?id=44373754)
   - [Whats is the quota limit? 1000 of gemini 2.5 pro? You have reached your daily gemini-2.5-pro quota limit. ](https://github.com/google-gemini/gemini-cli/issues/4300)
     - The limit for Gemini 2.5 Pro for free is 100 requests per day, with the reset time approximately at 5:00 AM UTC
+- https://github.com/iOfficeAI/AionUi /2.6kStar/apache2/202510/ts
+  - https://www.aionui.com/
+  - open-source GUI app for Gemini CLI — Better Chat UI, multi-agent support, multi-LLMs & apikey polling, Workspace Management, AI image editing & more
+  - While the official Gemini CLI is powerful, its command-line interface has limitations for daily use. AionUi provides a GUI alternative that addresses these key pain points
+  - Seamlessly integrate multiple terminal AI agents - Gemini CLI, Claude Code, Qwen Code, Codex and more
+  - image generation, editing, and recognition powered by Gemini 2.5 Flash Image Preview
+  - Batch renaming, auto organization, smart classification, file merging
+  - Handle Multiple Tasks at Once: Multiple conversations, no task confusion, independent memory, double efficiency
 
 - https://github.com/QwenLM/qwen-code /11.9kStar/apache2/202509/ts
   - https://qwenlm.github.io/qwen-code-docs/zh/
@@ -321,6 +329,12 @@ modified: 2024-08-24T16:30:20.218Z
   - an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster
   - [open source? · Issue #59 · anthropics/claude-code _202502](https://github.com/anthropics/claude-code/issues/59)
     - We currently don't have plans to open source it.
+
+- https://github.com/vinhnx/vtcode /MIT/202510/rust
+  - VT Code is a Rust-based terminal coding agent with semantic code intelligence via `Tree-sitter` (parsers for Rust, Python, JavaScript/TypeScript, Go, Java) and `ast-grep` (structural pattern matching and refactoring).
+  - Multi-Provider AI: Support for OpenAI, Anthropic, Gemini, xAI, DeepSeek, Z. AI, Moonshot AI, OpenRouter, and Ollama (local)
+  - [VT Code — Rust terminal coding agent doing AST-aware edits + local model workflows : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1oe6y1a/vt_code_rust_terminal_coding_agent_doing_astaware/)
+    - Most of the features I planned to build are completed. For local models, I had planned to do ollama integration firsthand. I also do plan to integrate with llama.cpp and lmstudio next
 
 ## vscode-ext-ai
 

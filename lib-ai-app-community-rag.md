@@ -272,9 +272,23 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## 在和客户沟通的时候，不在一线干活的某些专家也会说：OCR 问题已经被解决了。 直到我祭出真实场景的图。 Mistral OCR 连表格都识别成图片了
+- https://x.com/9hills/status/1981603450254503992
+- mineru和paddleocr应该都有试卷训练数据，可以试试。最保底的是gemini-2.5-pro
 
-- ## 
+- Mistral识别表格的能力很强，你这个图其实不是OCR的问题，是还原被混淆图片的问题，如果非要OCR，那应该先用nano banana把公章去除。
+
+- gemini-2.5-pro是通用模型，可能内部有些额外步骤，纯OCR的话Mistral已经做的非常好了，高质高速低价，你可以比较一下Gemini和Mistral OCR的速度
+
+- 我觉得小的vlm 直接做端到端的 pdf->markdown  永远不会解决问题，稍微复杂点的edge case  就出错。最后可能还是得回到传统图像处理+vlm 的路子，先识别出格子和文字，然后连通坐标输到大模型生成markdown
+
+- ## [State of Open OCR models : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1oe7orf/state_of_open_ocr_models/)
+  - [Supercharge your OCR Pipelines with Open Models _202510](https://huggingface.co/blog/ocr-open-models)
+- I just tried PaddleOCR and zero-shot worked super well
+  - Indeed, that tiny 0.9B model does a perfect transcription and even beats the latest DeepSeek OCR. Impressive.
+- for now you could try with vLLM I think, because PaddleOCR-VL comes in two models (one detector for layout and the actual model itself) it's sort of packaged nicely with vLLM AFAIK
+
+- MinerU 2.5 and PaddleOCR both pretty much nail it. They don't do the subscripts but that's not native markdown so fair enough imo.
 
 - ## [What is the best ocr model for converting PDF pages to markdown (or any text based format) for embedding? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1obha86/what_is_the_best_ocr_model_for_converting_pdf/)
 - https://github.com/opendatalab/OmniDocBench
@@ -383,7 +397,19 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## 🔢 [How to dynamically prioritize numeric or structured fields in vector search? : r/LangChain _202510](https://www.reddit.com/r/LangChain/comments/1oclpn4/how_to_dynamically_prioritize_numeric_or/)
+- This will not happen automatically. Either you have to rewrite the query or do a query classification and let this be handled by a database query.
+  - You may be able to store the numerics as metadata and use the metadata to rerank, but to do even that, you need to classify the query first.
+  - You can have a set of ranking attributes as metadata, and classify the query using a pretrained classification model, to find which ranking attributes to use and implement the reranking on those metada attributes.
+
+- Yeah, this is a common puzzle when you move beyond basic semantic search. Post-processing reranking is probably your cleanest bet.
+- The general idea is to do a two-step retrieval:
+  - Use the vector search to get a broad set of semantically relevant candidates (e.g., the top 20-50 documents).
+  - Then, in your application layer, iterate over just those candidates. You can parse the query to see if it mentions "top" or "most, " then extract the relevant numeric field (ranking, publications, etc.) from the metadata of those candidates and re-score them.
+- This way you're not trying to cram structured logic into the embedding space. 
+  - LlamaIndex has postprocessors for exactly this kind of thing, you can even write a custom one. It's way more flexible than trying to make the vector DB do everything.
+
+- milvus supports hybrid search (vector + bm25) with reranking strategies. you can filter metadata pre-search using comparison operators on numeric fields, or build a custom llamaindex postprocessor that combines vector similarity with dynamic metadata scoring. retrieve top-k, then rescore as: new_score = similarity_weight * vector_score + metadata_weight * normalize(field). this avoids hardcoding thresholds. alternatively use llmrerank to let the llm judge relevance based on metadata context, but slower/costlier.
 
 - ## [RAG over Database : r/LangChain _202407](https://www.reddit.com/r/LangChain/comments/1efnx5u/rag_over_database/)
   - I have been trying to build a RAG over a database that has mulitple tables. Often times, for a user query, the data has to be searched by joining multiple tables. I followed this approach as mentioned in Langchain documents.
@@ -570,6 +596,24 @@ modified: 2024-09-08T20:08:16.088Z
 - Would you believe I was just trying it out today and it was all messed up. Swapped from Q3 4B and 0.6B to granite 278m and all my problems went away.
 
 - Yes, though if I tried generating the embeddings through the SentenceTransformers module instead, I got the state-of-the-art results I was hoping for on my benchmark. A code snippet for how to do so is listed on their HF page.
+# discuss-rag-elements
+- ## 
+
+- ## 
+
+- ## [How to Intelligently Chunk Document with Charts, Tables, Graphs etc? : r/LangChain _202510](https://www.reddit.com/r/LangChain/comments/1oe4wh4/how_to_intelligently_chunk_document_with_charts/)
+- when i was working on extraction, i faced the same issue with tables. a simple parsing tool was not enough, so we added a prompt before processing the document by saying that whenever you encounter a table, first mark it by saying #Table Start# and end it with a #Table End# and take a screenshot of the whole table , feed it to the llm for ocr operation and get a parseable text based table. then during chunking, we made sure that a separate logic was being used for cases when we encounter the #Table Start# and #Table End# cause we would want to keep the whole table as one big chunk else it would lose context for the other half of the table since it would be starting with just some numbers and no context even with the overlaps. 
+  - Other than this you can use MarkdownHeaderTextSplitter since it helps with the other part of documents aswell
+
+- It is really simple. First split each pdf into multiple files, one page = one file.
+  - Then, write a program that detects pages with tables, graphs etc and move them into a separate folder. When you move, assign a meaningful filename.
+  - Then chunk all other pages. Only meaningful chunking is hierarchical.while chunking, build a graph or a tree view, and visualise this. This verifies that you have preserved the hierarchical integrity of the document.
+  - Now, using an LLM, process each visual page to provide summary. Insert these chunks in the tree view at their correct location. The image page should be available as a link in metadata.
+  - Now design a context template. It should have document id, current chunk, prev chunk, subtitle summary, title and book title.
+  - Embed the chunk with this template into a vectordb. Then also embed a sparse vector.
+  - While querying use both vectors and rerank them.
+
+- For complex documents (with tables, charts, and images), RAGFlow works surprisingly well — it can intelligently recognize and preserve layouts like tables and embedded figures during parsing.
 # discuss
 - ## 
 

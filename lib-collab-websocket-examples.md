@@ -47,6 +47,21 @@ modified: 2023-01-23T19:27:46.948Z
 - https://github.com/maxnachlinger/redux-websocket-example /202008/js/inactive
   - Preact/Redux + Websocket Example: For Fun
   - Show idle users with idle times ("idle for N minutes" etc)
+
+## sse-eg
+
+- eg
+  - 单文件示例 [Understanding Server-Sent Events (SSE) with Node.js _202409](https://itsfuad.medium.com/understanding-server-sent-events-sse-with-node-js-3e881c533081)
+  - [How to Use Server-sent Events in Node.js _202402](https://www.sitepoint.com/server-sent-events-node-js/)
+  - [Server-Sent Events vs Streamable HTTP: Complete Developer Guide _202507](https://zivukushingai.medium.com/server-sent-events-vs-streamable-http-complete-developer-guide-ff55bb0d76d4)
+  - [Implement HTTP Streaming with Node.js and Fetch API _202204](https://www.loginradius.com/blog/engineering/guest-post/http-streaming-with-nodejs-and-fetch-api)
+
+- https://github.com/rcarubbi/nodejs-server-sent-events-example /201803/js/inactive
+  - An simple example showing how to user server sent events with node.js
+
+- https://github.com/tom-takeru/sse-demo /202411/go/ts/gin/inactive
+  - a project that demonstrates a simple setup for a React frontend and a Go backend using Server-Sent Events (SSE).
+  - [The simplest demo on SSE(Server-Send Events) - DEV Community _202411](https://dev.to/tom-takeru/the-simplest-demo-on-sseserver-send-events-1mib)
 # websocket-react/vue/fwk
 - https://github.com/robtaussig/react-use-websocket /MIT/202402/ts
   - https://robtaussig.com/socket

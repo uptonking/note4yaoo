@@ -178,6 +178,7 @@ modified: 2025-03-22T18:49:15.634Z
   - pr已关闭 [feat: ollama support _202501](https://github.com/OvidijusParsiunas/deep-chat/pull/333)
     - I am very keen to implement it properly myself
   - [Adding ollama api connection _202409](https://github.com/OvidijusParsiunas/deep-chat/issues/262)
+    - 202510 pr合并
 
 - https://github.com/microsoft/vscode-copilot-chat /8.3kStar/MIT/202508/ts
   - GitHub Copilot Chat (this extension) - A companion extension that provides conversational AI assistance.

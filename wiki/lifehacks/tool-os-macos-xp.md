@@ -302,7 +302,7 @@ du -h /System/Volumes/Data | grep "G\t" | sort -rh
 
 - ## 
 
-- ## 
+- ## [Such a missed opportunity to show the custom folder icons on the sidebar : r/MacOS](https://www.reddit.com/r/MacOS/comments/1oeorox/such_a_missed_opportunity_to_show_the_custom/)
 
 - ## [How to use keyboard shortcuts to navigate the OS X Finder sidebar? - Super User](https://superuser.com/questions/90378/how-to-use-keyboard-shortcuts-to-navigate-the-os-x-finder-sidebar)
 - cmd+shift+G Then just fill in the filepath: ~/Desktop | /Backups | and so on.

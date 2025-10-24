@@ -139,6 +139,120 @@ modified: 2025-09-16T12:36:12.968Z
   - However, the "official" quants were often released without imatrix or broken / different in some other way. That's why those unofficial quants are usually preferred.
   - Also, unsloth made large MoE models usable on non-server machines with their dynamic Q2_XXS quants.
 - The biggest difference I would say isn't the quants, but rather our bug fixes for every model
+# discuss-model-speed ⚡️
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [M2 Ultra Mac Studio with 64GB RAM and Ilama3.1 70b : r/ollama _202410](https://www.reddit.com/r/ollama/comments/1g0gycc/m2_ultra_mac_studio_with_64gb_ram_and_ilama31_70b/)
+- I have M3 Max with 64 GB RAM and it can handle 70B (4 bit quantized) models. However, in my case, inference with 70B models isn’t at a comfortable speed.
+  - Here’s the benchmark for Qwen2.5:72B with Ollama and MLX-ML:
+  - • MLX (mlx-community/Qwen2.5-72B-Instruct-4bit): 8.14 t/s
+  - • Ollama (Qwen2.5:72B): 6.95 t/s
+  - • Ollama (Gemma2:27B): 19.39 t/s
+- How much RAM does it use to run that 70B model?
+  - About 55 out of 64Gb. I have the browser open at the same time, but it doesn’t slow down web browsing.
+
+- ## [Any m3 ultra test requests for MLX models in LM Studio? : r/LocalLLaMA _202503](https://www.reddit.com/r/LocalLLaMA/comments/1jdvk7c/any_m3_ultra_test_requests_for_mlx_models_in_lm/)
+  - Got my 512 gb. Happy with it so far. Prompt processing is not too bad for 70b models -- with about 7800 tokens of context, 8 bit MLX Llama 3.3 70b processes at about 145 t/s per second. It then generates at about 8.5 t/s.
+  - 70b 8 bit llama 3 at 7800 context: 8.5 t/s generation; 150 t/s prompt eval; 
+  - 70b 4 bit llama 3 at 7800 context: 15.5 t/s generation; 150 t/s prompt eval; 
+  - 70b 4 bit llama 3 fine-tune at low context with speculative decoding (and coding related prompt): 23.89 t/s generation; 
+  - Gemma 3 27b 4 bit at 2317 context: 331 t/s processing; 29.20 t/s generation
+  - Gemma 3 27b 8 bit at 3310 context: 255 t/s processing; 18.71 t/s generation 
+
+- ## [M3 Ultra Mac Studio Benchmarks (96gb VRAM, 60 GPU cores) : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kvd0jr/m3_ultra_mac_studio_benchmarks_96gb_vram_60_gpu/)
+  - I loaded each model freshly in LMStudio, and input 30-40k tokens of Lorem Ipsum text (the text itself shouldn't matter, all that matters is token counts)
+  - Input Context Size (tokens): 32k ~ 40k
+  - Model Name & Size	Time to First Token (s)	Tokens / Second
+  - Mistral Large 123B (4-bit/dense)	900.61	7.75
+  - Gemma 3 27B (4-bit)	108.15	29.55
+  - Qwen3 30b-a3b (8-bit)	67.74	34.62
+
+- I have the same machine as the OP (96GB, 60 cores) and am running Qwen3-30B-A3B 8bit and Qwen3-32b 6bit concurrently - great combo to use in Aider architect mode. Which two models have you chosen to work with in Roo Code? What has been your experience?
+  - I typically use Qwen3 32b as Orchestrator and Architect, Qwen 2.5 32b 128 K as coder and debugger. I use Unsloth versions of all. They can handle certain projects just fine. Especially languages like python. If I run into issues, I mix in deepseek r1 or v3 from openrouter.
+
+- Are you generally satisfied? Or would you rather have the 256GB version? Or the one with 80 GPU?
+  - I have the 256 GB version with 60 cores. I would go for the 80 core if given the choice again. Every little bit helps with inference speed. However I can load several 32b 8 bit models concurrently which is great for things like orchestrator mode in Roo Code. Everything works, just could be faster.
+- I have the 256 / 60 too. I’m not sure that the 80 would make such a big différence. With lama4 scout it would probably amount to 25 secs of pp time gain in the exemple given. But you still have to wait 80 seconds, which makes it too slow for conversational inférence.
+
+- I also have the 96GB/60 core. I am just a casual user and I couldn't justify another 2000€ for 256GB Ram or 80 core. And I think 256GB is not worth it for my purpose. I can use dense models up to 70B (at Q5) for chatting. Mistral Large and Command A (at Q4) are okayish but everything larger will be way too slow. So the only benefit of 256GB is for MoE models.
+  - Shortly after I bought mine, Qwen3 235B A22B came out. Right now, this is the only reason (for me) wanting 256GB. But is it worth 2000€? No, not right now. If that model becomes everybodies darling for finetuning, then maybe.
+
+- Can you explain how to load several models?
+  - I use LM Studio, and you just keep loading models until you’ve either loaded all of the ones that you need, or when you reach 85% of your memory capacity. It’s a good practice not to fill more than that.
+
+- That's quite slow, on my 2x3090 I have
+  - google_gemma-3-12b-it-Q8_0 - 30.68 t/s
+  - Qwen_Qwen3-30B-A3B-Q8_0 - 90.43 t/s
+
+- ## 🆚 [[Benchmark] Quick‑and‑dirty test of 5 models on a Mac Studio M3 Ultra 512 GB (LM Studio) – Qwen3 runs away with it : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kfi8xh/benchmark_quickanddirty_test_of_5_models_on_a_mac/)
+  - M3 Ultra, 128 CPU / 80 GPU cores, 512 GB unified RAM
+- Model	Quant. / RAM footprint 	Speed (tok/s)	Tokens out	1st‑token latency
+  - MLX Deepseek‑R1‑4bit	402.17 GB	16.55	 2 062	 15.01 s
+  - MLX deepseek‑V3‑0324‑4bit	355.95 GB	19.34	 755	17.29 s
+  - MLX Qwen3‑235‑A22B‑8bit	233.79 GB	18.86	 3 096	 9.02 s
+  - GGFU Qwen3‑235‑A22B‑8bit	 233.72 GB	14.35	 2 883	 4.47 s
+  - MLX Gemma‑3‑27b‑it‑bf16	 52.57 GB	11.19	 1 317	 1.72 s
+- TL; DR
+  - Qwen3‑8bit dominates – PhD‑level answers, fast enough, reasoning quick.
+  - Thinking time isn’t the bottleneck; quantization + memory bandwidth are (if any expert wants to correct or improve this please do so).
+  - Mac Studio M3 Ultra is a silence‑loving, power‑sipping, tiny beast—just not the rig for GPU fiends or upgrade addicts.
+
+- Useful test as far as the raw numbers, but not an eval. Not even for quick and dirty. You can give a model the same prompt and get a "bad answer" once, then an amazing answer the next time. This is why some of the tests will run the same prompt 3 or 5 times.
+
+- One thing I'd like to know is how you compare the MLX vs GGFU performance (for same models)?
+  - I just run a simple test, based only on that I would only use ggfu if a MLX doesn't exist. It gave me almost the same output, definitely same quality, but almost 30% more fast.
+
+- ## [M2 Ultra 192 gb + GLM Air 4.5/4.6 for local coding agents? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o7k78o/m2_ultra_192_gb_glm_air_4546_for_local_coding/)
+- M2 Ultra 192 GB Running GLM 4.5 Air Q8_0 with flashattention in llama.cpp. 10k token prompt, responding with ~400 tokens.
+  - prompt eval time =   29693.60 ms / 10565 tokens (2.81 ms per token, 355.80 tokens per second)
+  - eval time =   14221.61 ms /   374 tokens ( 38.03 ms per token, 26.30 tokens per second)
+
+- 4.6 at 4bit will need more than 192gb vram, you could use a 3 bit quant though.
+
+- ## [GLM 4.6 already runs on MLX : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nujx4x/glm_46_already_runs_on_mlx/)
+- My Epyc workstation has 12 RAM channels and I have 8 sticks of 16GB each so I'll max at 192 GB sadly. To run this you'll want 12 sticks of 32 GB to get to 384GB. The RAM will cost roughly $2400.
+  - I have DDR5-4800 which is the slowest DDR-5 (base JDEC standard) does 38.4GB/s
+  - DDR4-3200, the highest supported speed on EPYC 7003 Milan, does 25.6 GB/s.
+  - If you use DDR5-6400 on a 9005 series CPU it is roughly twice as fast. But the new EPYC processors support 12 channels vs 8 with DDR4, so you get an additional 50% bump.
+
+- what's the prompt-processing speed? It sucks to wait 10 minutes every request.
+  - As lim context->infinity, pp rate is proportional to attention speed, which is O(n2) and dominates the equation
+  - Attention is usually tensor fp16 non-sparse, so 142 TFLOPs on a RTX 3090, or 57.3 TFLOPs on the M3 Ultra.
+  - So about 40% the perf of a 3090. In practice, since FFN performance does matter, you'd get ~50% performance.
+- Here is my M2 Ultra’s performance: context/prompt: 69780 tokens Result: 31.43tokens/second, 6574 tokens, 151.24s to first token. 
+  - Model: Qwen-Next 80B at FP16
+  - That is 500/s, but using full precision sparse MoE.
+  - About 300/s for a dense 70b model, which you are not using to code. It will be faster for a 30b dense model which many use to code. Same for a 235billion sparse MoE, or in the case of GLM4.6 taking up 165gb, it is about 400/s. 
+
+- CLine/Roo regularly uses up to 100k tokens on the context, it's slow even with GPUs.
+
+- ## [I know nobody has asked before, but what is GLM 4.5 like on an M3 Ultra? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1n80nxn/i_know_nobody_has_asked_before_but_what_is_glm_45/)
+  - Google claims m3 ultra ram bandwidth is barely slower than 3090 bandwidth. Does this mean I would get barely lower tps compared to a machine with 20 x 3090?
+- I just tested 4bit MLX quant with simple task of creating calculator in single html page. This is a standard test I run to see how the model works with one shot tasks that are very well specified.
+  - Compared to Air (I tested 4, 6 and 8 bit MLX quants there), it provided better working result on the first prompt.
+  - Mac Studio M3 ultra with 256GB ram
+  - 19.08 tok/sec • 10013 tokens • 14.29s to first token
+
+- People suggesting Macs for LLMs are often not mentioning that they can have prompt processing times of ten minutes for every single large prompt. Personally I think that it is rather negligent to not mention this to people.
+  - I have an M3 Ultra and based on how slow things are with any non-trivially sized context length, I am not even bothering to try a model as big as GLM 4.5
+- Not to mention switching models to test different parameters. It is only strictly better than pure RAM setup
+
+- 10 minutes would imply a prompt of around 200, 000 tokens. Is that actually a common use case for you?
+- You need to factor in the prompt processing speed of the model/gpu and how big the context is, because pp speed slows down as context gets bigger.
+  - Reaching 10 minutes of pp time is pretty easy on my 512 m3u, for example 60k of context with gguf deepseek.
+  - But for smaller models it can be quite decent. Mlx gpt oss will be maybe only 1-2 minutes for that same prompt.
+
+- M3 Ultra RAM bandwidth is 819.2 Gb/s while 3090 RAM bandwidth is 936 Gb/s 
+  - So it’s probably true that for token generation, which is largely RAM bandwidth limited, that the M3 Ultra is “comparable” to a 3090
+  - What’s actually different here is prompt processing speed which is compute bound.  In this realm a 3090 would be many multiples faster.  
+
+- M3 Ultra, 512 GB RAM, 32/80-core variant.
+  - I have a script processing files roughly 30-50k tokens in length, which I cache, and then ask subsequent questions of. I just fired it up on GLM4.5 4 bit MLX quant. For a 35000 token document, prompt processing took ~247 seconds. In subsequent turns of conversation generation speed was 10 tokens per second roughly speaking.
+  - GLM4.5 Air, same document was ~104 seconds for prompt processing, and then generation is at 30 tokens per second or so.
 # discuss-llm-tools-tips/tricks
 - ## 
 
@@ -148,7 +262,19 @@ modified: 2025-09-16T12:36:12.968Z
 
 - ## 
 
-- ## 
+- ## [Cerebras REAP'd GLM4.6: 25%, 30%, 40% pruned FP8 checkpoints on HF! : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1oefu29/cerebras_reapd_glm46_25_30_40_pruned_fp8/)
+  - The models deployed in Cerebras prod inference API are not pruned, and we don't have such plans for GLM4.6. The REAP pruning work is for research purposes and to give more efficient models to the community
+
+- The MoE is sparse, yes. But the REAP technique appears to leverage the fact that “experts” are more or less just certain parameters highly correlated with other parameters. It’s not like there’s a programming expert, a language expert, etc. it’s more like you have some number of tokens that seem to be the strongest correlated to other sets of tokens, so an invocation of that token or closely related tokens results in that particular part of the neural net lighting up.
+
+- I actually have the opposite question. Can we reduce the number of experts from 8 to 6 or 4 and still maintain good performance. Experts are largely CPU bound and would go a long way in speeding up the models.
+  - my experience with qwen3 30b a3b
+  - with 7 things are ok , but it fails sometimes (i would say 10% of the times you noticed is worse than the default)
+  - with 6 it fails more often
+  - with 4 it lose coherence in the majority of times
+  - but increasing also doesnt help a lot
+  - with 9-10 i barely see an improvement over 8
+  - with 12-16 the output gets worse
 
 - ## [I did not realize how easy and accessible local LLMs are with models like Qwen3 4b on pure CPU. : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o1z3hj/i_did_not_realize_how_easy_and_accessible_local/)
   - I hadn't tried running LLMs on my laptop until today. I thought CPUs were too slow and getting the old igpu working (AMD 4650U, so Vega something) would be driver hell. So I never bothered.

@@ -14,6 +14,12 @@ modified: 2022-10-11T09:02:26.869Z
   - feathers框架为实时类应用而设计
   - more: 
 
+- who is using #sse
+  - vercel ai sdk data stream protocol uses Server-Sent Events (SSE) format
+
+- who is using #streamable-http
+  - ?
+
 - tips
   - usecase: realtime, collaborative, multiplayer
 # draft

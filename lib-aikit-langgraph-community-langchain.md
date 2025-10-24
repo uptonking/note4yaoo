@@ -39,7 +39,7 @@ modified: 2025-09-05T07:18:16.308Z
 - ## [Need help in streaming the graph's agent response from backend to frontend _202411](https://github.com/langchain-ai/langgraphjs/issues/668)
 - 👷 202509: Please use `useStream()` for first-class streaming handling from LangGraph to your FE of choice
 
-- ## ⚖️ [Data stream protocol support · Issue · langchain-ai/langgraphjs _202409](https://github.com/langchain-ai/langgraphjs/issues/504)
+- ## ⚖️〰️ [Data stream protocol support · Issue · langchain-ai/langgraphjs _202409](https://github.com/langchain-ai/langgraphjs/issues/504)
   - It would be fantastic if langgraph supported vercels new data stream protocol so that langgraph could basically be drop in for react apps already using the vercel ai SDK client side
 
 - langgraph provided an example https://www.assistant-ui.com/examples/stockbroker

@@ -191,6 +191,43 @@ modified: 2023-12-12T08:45:31.670Z
 # discuss-sse
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Comparison of data before and after using Streamable HTTP | by Higress_ai | Medium _202504](https://medium.com/@higress_ai/comparison-of-data-before-and-after-using-streamable-http-b094db8b414e)
+- Recently, the MCP repository’s PR #206 introduced a brand new Streamable HTTP transport layer to replace the original HTTP+SSE transport layer. 
+- The two protocols are simply compared as follows:
+  - HTTP+SSE: The client sends requests via HTTP POST, and the server pushes responses through a separate SSE (Server-Sent Events) endpoint, requiring the maintenance of two separate connections.
+  - Streamable HTTP: It uses a single HTTP endpoint to handle requests and responses uniformly, allowing the server to choose between returning standard HTTP responses or enabling SSE streaming as needed.
+- Streamable HTTP offers better stability compared to HTTP + SSE, performing better under high concurrency scenarios.
+  - In terms of performance, Streamable HTTP has clear advantages over HTTP + SSE, with shorter and more stable response times.
+  - The client implementation of Streamable HTTP is simpler than HTTP + SSE, requiring less code and lower maintenance costs.
+
+- Problems with HTTP + SSE
+  - The server must maintain long connections, which can lead to significant resource consumption under high concurrency.
+  - Server messages can only be transmitted via SSE, which creates unnecessary complexity and overhead.
+  - Infrastructure compatibility: Many existing network infrastructures may not correctly handle long-term SSE connections. Enterprise firewalls may forcefully terminate timed-out connections, making the service unreliable.
+
+- Improvements in Streamable HTTP
+  - Streamable HTTP removes the dedicated /sse endpoint for establishing connections, integrating all communication into a single endpoint
+  - The server can flexibly choose to return standard HTTP responses or stream them via SSE based on the type and content of the request
+  - Powerful Session Management: Supports the Last-Event-ID mechanism to ensure that messages not received after a disconnection can be recovered.
+
+- ## 🆚 [SSE vs. Streamable HTTP - which will be the standard for remote servers? : r/mcp _202505](https://www.reddit.com/r/mcp/comments/1kdyse2/sse_vs_streamable_http_which_will_be_the_standard/)
+- SSE is effectively legacy now and is basically unworkable for truly distributed MCP anyway. The new world (when the SDKs catch up) will be Streamable HTTP. Of course, how many of the 8000 odd servers that already exist will be updated is debatable.
+
+- Sse is not the problem. The Problem is the stateful connection mcp mandates.
+  - The new approach still uses `text/event-stream`, but stateless.
+- Exactly. SSE was never the problem. People are complaining about SSE servers being stateful.
+  - SSE (i.e. stateful) servers are not going anywhere. There is space for streamable servers, but I don't see them as comparable or functionally equivalent to SSE servers.
+
+- Why did MCP go SSE and then http streaming instead of just starting with something like websockets
+  - "We ultimately decided not to pursue WS right now because:
+  - Wanting to use MCP in an "RPC-like" way (e.g., a stateless MCP server that just exposes basic tools) would incur a lot of unnecessary operational and network overhead if a WebSocket is required for each call.
+  - From a browser, there is no way to attach headers (like Authorization), and unlike SSE, third-party libraries cannot reimplement WebSocket from scratch in the browser.
+  - Only GET requests can be transparently upgraded to WebSocket (other HTTP methods are not supported for upgrading), meaning that some kind of two-step upgrade process would be required on a POST endpoint, introducing complexity and latency."
+
 - ## 🌰 did you know that there is another technologie, simpler, native and that use HTTP you can use to do real-time?
 - https://twitter.com/soubiran_/status/1773634287918608804
 - SSE is great. A lot of apps just don't need bi-directional communication that WS provide.

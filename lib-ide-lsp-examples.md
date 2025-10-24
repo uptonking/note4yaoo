@@ -124,6 +124,15 @@ modified: 2025-04-12T19:18:28.788Z
   - pyright with yapf and ruff
   - a new Python meta-LSP that includes tools such as pyright, ruff, and yapf.
 
+- https://github.com/facebook/pyrefly /4.1kStar/MIT/202510/rust
+  - http://pyrefly.org/
+  - Pyrefly is a type checker and language server for Python, which provides lightning-fast type checking along with IDE features such as code navigation, semantic highlighting, and code completion
+  - It is available as a command-line tool and a VSCode extension.
+  - Flow Types: Pyrefly can understand your program's control flow to refine static types.
+  - We are taking inspiration from Pyre1, Pyright and MyPy. Some notable choices:
+    - We infer types in most locations, apart from parameters to functions.
+    - We use flow types which refine static types
+
 ## go-server/gopls
 
 ## rust-server

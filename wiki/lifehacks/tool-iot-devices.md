@@ -202,7 +202,9 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## [Running DeepSeek-R1 671B (Q4) Locally on a MINISFORUM MS-S1 MAX 4-Node AI Cluster : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1oevvyu/running_deepseekr1_671b_q4_locally_on_a/)
+
+- So you spend $20, 000 to get 5 TPS. You could have spent $1000 and run it on ram/cpu and got the same speed.
 
 - ## 🆚 [DGX Spark vs AI Max 395+ : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o6izz2/dgx_spark_vs_ai_max_395/)
 - I just ran some benchmarks to compare the M2 ultra.
@@ -1437,7 +1439,7 @@ modified: 2022-01-16T15:52:31.293Z
     - 32GB/48GB大显存单卡能减少运维的工作量, 👀 comfyui使用多gpu变复杂
   - 显存、带宽、位宽, 显存够大才能运行模型，运行模型时的速度主要考虑内存带宽
   - 估算文本模型速度用 `内存带宽如260GBpSec / 模型实际体积如13GB`, 还要考虑context的影响
-    - MoE模型对内存带宽的要求会低很多
+    - MoE模型对内存带宽的要求会低很多, 主流模型如deepseek-v3/Qwen3-235B-A22B/glm-4.5-355b-a32b都是moe架构
     - 文本大模型的免费api更容易获取
   - ❓ 文生图的场景是否也用此公式计算, 
     - 注意文生图能通过lora加速，所以内存带宽重要性降低
@@ -1468,6 +1470,7 @@ modified: 2022-01-16T15:52:31.293Z
 
 - mac
   - ultra的内存带宽最高达到800, 但不要急, amd strix halo的下一代和mac studio的下一代都会升级, 选择256GB版本合适的
+  - [Performance of llama.cpp on Apple Silicon M-series · ggml-org/llama.cpp _202311](https://github.com/ggml-org/llama.cpp/discussions/4167)
 
 - nvidia性能对比
   - [大模型GPU算力卡汇总 - 知乎](https://zhuanlan.zhihu.com/p/1904206218748236301)
@@ -1526,7 +1529,35 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## [AMD Officially Prices Radeon AI PRO R9700 At $1299 - 32GB VRAM - Launch Date Oct 27 : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1oeg2g6/amd_officially_prices_radeon_ai_pro_r9700_at_1299/)
+- 640GB/s
+  - yes, for the same price, i can get 2x3090 for 900 gb/s and 48gb vram and cuda compatibility
+- Specs sheet says int4 only, not Fp4...
+- 640 GB/s Memory Bandwidth - slower than the 5 year old rtx 3090 and 1/3rd of a 5090. No FP4 or CUDA.
+
+- They're Rx 9070's with blower fans and twice the VRAM.
+
+- FYI R9700 is slim 300W card with ECC VRAM, can easily fit 2 on any motherboard.
+  - Also make no sense to buy €750 RTX3090 when R9700 is €1000 if you can deduct the sales tax (normal price €1250-€1300) in Europe.
+
+- Used 3090 are 500-550$. Even good ones from asus or msi.
+
+- All the AMD pro series GPUs have official ROCm support.
+  - Oh I know. I just mean Vulkan actually works.
+- Full ROCm works and they have ECC VRAM.
+
+- MI50s are good after fresh updates, although R9700 has lots of new things - FP8, matrix cores, etc.
+
+- 70% slower than 5090
+- Fp16 seems much closer
+  - Only when sparse
+
+- 4 of these in parallel is a compelling alternative to an RTX Pro 6000
+  - Wins on VRAM Quantity 128GB VRAM vs. 96GB VRAM
+  - Wins on Price ~5200 vs ~8200
+  - Wins on Collective Bandwidth (if you user tensor parallel) 640x4=2.56TB/s vs 1.8TB/s
+  - Only obvious loss is power usage 300x4 = 1200W vs 600x2 or 300x2 (600 or 1200W depending which model)
+  - And upgradability. Few cases/motherboards are going to support more than 4 cards unless you start getting jank with it.
 
 - ## [8年了，为何eGPU外置显卡不能被玩家接受 - 知乎 _202507](https://zhuanlan.zhihu.com/p/1930776574258549666)
 - 初代外置显卡（eGPU）曾许下诸多豪言壮语。这些看似新颖炫酷的显卡外置盒本应彻底改变游戏本市场
@@ -2567,15 +2598,6 @@ modified: 2022-01-16T15:52:31.293Z
   - M2U/60 - 39.9
   - M3U/60 - 42.2
 
-- ## [M3 Ultra Mac Studio Benchmarks (96gb VRAM, 60 GPU cores) : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kvd0jr/m3_ultra_mac_studio_benchmarks_96gb_vram_60_gpu/)
-  - I loaded each model freshly in LMStudio, and input 30-40k tokens of Lorem Ipsum text (the text itself shouldn't matter, all that matters is token counts)
-
-- I have the same machine as the OP (96GB, 60 cores) and am running Qwen3-30B-A3B 8bit and Qwen3-32b 6bit concurrently - great combo to use in Aider architect mode. Which two models have you chosen to work with in Roo Code? What has been your experience?
-  - I typically use Qwen3 32b as Orchestrator and Architect, Qwen 2.5 32b 128 K as coder and debugger. I use Unsloth versions of all. They can handle certain projects just fine. Especially languages like python. If I run into issues, I mix in deepseek r1 or v3 from openrouter.
-
-- Can you explain how to load several models?
-  - I use LM Studio, and you just keep loading models until you’ve either loaded all of the ones that you need, or when you reach 85% of your memory capacity. It’s a good practice not to fill more than that.
-
 - ## [Mac Studio for LLMs: M4 Max (64GB, 40c GPU) vs M2 Ultra (64GB, 60c GPU) : r/LocalLLM _202506](https://www.reddit.com/r/LocalLLM/comments/1l702x2/mac_studio_for_llms_m4_max_64gb_40c_gpu_vs_m2/)
 - The ultimate decision comes down to: (a) Do you want to run smaller models a little faster or (b) Do you want to be able to run larger models for less money? 
   - In my experience, the larger models are almost ALWAYS better. They just win.
@@ -2597,14 +2619,15 @@ modified: 2022-01-16T15:52:31.293Z
   - Nvidia has CUDA, and there aren't words to describe how far other vendors are from providing something that works like CUDA does. I use ROCm and took a month to get acceleration running on Comfy UI. With metal my collogue gets maybe 5 % of the theoretical performance, it takes minutes to diffuse somethings that take literally 2 seconds on my 7900XTX.
 - No, the RTX 3090 is 4X faster for prompt evaluation and 2X faster for token generation. Because whatever they say, compute power is important too.
 
-- ## [What models can't I run with 128gb (M4 Max) vs 256gb (M3 Ultra)? : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mkip7t/mac_llm_users_what_models_cant_i_run_with_128gb/)
+- ## 🆚 [What models can't I run with 128gb (M4 Max) vs 256gb (M3 Ultra)? : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mkip7t/mac_llm_users_what_models_cant_i_run_with_128gb/)
 - I got the 256GB
   - Remember that the Ultra will have twice the memory bandwidth of the M4 for more speed.
   - I hate running the very largest, because it makes it so I can't run image generation at the same time with a decent sized context.
 
 - Technically the M3 Ultra has only about 1.5x more the mem bandwidth than M4 Max (812 vs 546 GB/s)
 
-- I have the M3 Ultra 256 gb. The problem with really large models is that inference speed is super slow. However, you can load several smaller models concurrently. Which can be useful.
+- I have the M3 Ultra 256 gb. The problem with really large models is that inference speed is super slow. 
+  - However, you can load several smaller models concurrently. Which can be useful.
 
 - ## [need a “M4 Max 128GB” vs “M3 Ultra 96GB” comparison please! : r/MacStudio _202503](https://www.reddit.com/r/MacStudio/comments/1ja5xyc/need_a_m4_max_128gb_vs_m3_ultra_96gb_comparison/)
   - M4 Max [unbinned] with 16‑core CPU, 40‑core GPU, 16‑core Neural Engine, 128GB unified memory.

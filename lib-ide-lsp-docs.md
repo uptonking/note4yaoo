@@ -164,4 +164,77 @@ modified: 2025-01-05T15:00:20.963Z
 - 
 - 
 
+# docs-acp(Agent Client Protocol) ⚖️
+- resources
+  - [Overview - Agent Client Protocol](https://agentclientprotocol.com/protocol/overview)
+
+- The Agent Client Protocol standardizes communication between code editors/IDEs, and coding agents (programs that use generative AI to autonomously modify code).
+- AI coding agents and editors are tightly coupled but interoperability isn’t the default. 
+  - Integration overhead: Every new agent-editor combination requires custom work
+  - Limited compatibility: Agents work with only a subset of available editors
+  - Developer lock-in: Choosing an agent often means accepting their available interfaces
+
+- ACP solves this by providing a standardized protocol for agent-editor communication, similar to how the Language Server Protocol (LSP) standardized language server integration.
+
+- ACP assumes that the user is primarily in their editor, and wants to reach out and use agents to assist them with specific tasks.
+  - Agents run as sub-processes of the code editor, and communicate using JSON-RPC over stdio. 
+  - The protocol re-uses the JSON representations used in MCP where possible, but includes custom types for useful agentic coding UX elements, like displaying diffs.
+  - The default format for user-readable text is Markdown, which allows enough flexibility to represent rich formatting without requiring that the code editor is capable of rendering HTML.
+
+- When the user tries to connect to an agent, the editor boots the agent sub-process on demand, and all communication happens over stdin/stdout.
+  - Each connection can support several concurrent sessions
+  - one editor can connect to multiple agents
+- ACP makes heavy use of JSON-RPC notifications to allow the agent to stream updates to the UI in real-time. 
+  - It also uses JSON-RPC’s bidirectional requests to allow the agent to make requests of the code editor: for example to request permissions for a tool call.
+- Commonly the code editor will have user-configured MCP servers. When forwarding the prompt from the user, it passes configuration for these to the agent. This allows the agent to connect directly to the MCP server.
+- The code editor may itself also wish to export MCP based tools. Instead of trying to run MCP and ACP on the same socket, the code editor can provide its own MCP server as configuration. As agents may only support MCP over stdio, the code editor can provide a small proxy that tunnels requests back to itself
+
+- The Agent Client Protocol allows Agents and Clients to communicate by exposing methods that each side can call and sending notifications to inform each other of events.
+
+- The protocol follows the JSON-RPC 2.0 specification with two types of messages:
+  - Methods: Request-response pairs that expect a result or error
+  - Notifications: One-way messages that don’t expect a response
+
+- A typical flow follows this pattern:
+- Initialization Phase
+  - Client → Agent: `initialize` to establish connection
+  - Client → Agent: `authenticate` if required by the Agent
+- Session Setup - either:
+  - Client → Agent: `session/new` to create a new session
+  - Client → Agent: `session/load` to resume an existing session if supported
+- Prompt Turn
+  - Client → Agent: `session/prompt` to send user message
+  - Agent → Client: `session/update` notifications for progress updates
+  - Agent → Client: File operations or permission requests as needed
+  - Client → Agent: `session/cancel` to interrupt processing if needed
+  - Turn ends and the Agent sends the `session/prompt` response with a stop reason
+
+- Agents are programs that use generative AI to autonomously modify code. They typically run as subprocesses of the Client.
+- Clients provide the interface between users and agents. 
+  - They are typically code editors (IDEs, text editors) but can also be other UIs for interacting with agents. 
+  - Clients manage the environment, handle user interactions, and control access to resources.
+
+- The Agent Client Protocol provides built-in extension mechanisms that allow implementations to add custom functionality while maintaining compatibility with the core protocol. 
+- All types in the protocol include a `_meta` field that implementations can use to attach custom information. 
+  - This includes requests, responses, notifications, and even nested types like content blocks, tool calls, plan entries, and capability objects.
+
+- Custom Requests
+  - The protocol reserves any method name starting with an underscore (_) for custom extensions. 
+  - In addition to the requests specified by the protocol, implementations MAY expose and call custom JSON-RPC requests as long as their name starts with an underscore (`_`).
+- Custom Notifications
+  - Custom notifications are regular JSON-RPC notifications that start with an underscore (_). Like all notifications, they omit the id field
+
+- ACP uses JSON-RPC to encode messages. JSON-RPC messages MUST be UTF-8 encoded.
+
+- The protocol currently defines the following transport mechanisms for agent-client communication:
+  - stdio, communication over standard in and standard out
+  - Streamable HTTP (draft proposal in progress)
+
+- Agents and clients MAY implement additional custom transport mechanisms to suit their specific needs. The protocol is transport-agnostic and can be implemented over any communication channel that supports bidirectional message exchange.
+
+- 
+- 
+- 
+- 
+
 # more

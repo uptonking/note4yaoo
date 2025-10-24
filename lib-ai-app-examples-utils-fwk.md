@@ -431,8 +431,22 @@ modified: 2025-02-21T18:20:42.624Z
 - https://github.com/mark3labs/mcp-filesystem-server /go
   - Go server implementing Model Context Protocol (MCP) for filesystem operations.
   - 通过这个MCP就可以操作本地文件系统了，由于这个是go编写的，go能交叉编译的架构特别多，所以理论上大部分系统都能运行这个MCP Server。
+
+- https://github.com/mcpc-tech/mcpc /MIT/202510/ts
+  - https://mcpc.tech/
+  - MCPC is the SDK for building agentic MCP (Model Context Protocol) Servers.
+  - Build Multi-Agent Systems: By defining each agent as a MCP tool, you can compose and orchestrate them to construct sophisticated, collaborative multi-agent systems
+  - Compose MCP servers as building blocks, select and customize tools, or modify their descriptions and parameters
+  - Logging and tracing: Built-in MCP logging and OpenTelemetry tracing support
+  - https://github.com/mcpc-tech/ai-elements-remix-template /MIT/202510/ts
+    - https://ai-elements-remix-template.pages.dev/
+    - A modern chat interface template built with AI SDK and customizable UI components.
+    - React Router V7 - Full-stack React framework
+    - ACP Support - Connect to any Agent Client Protocol compatible agent like Gemini CLI, Claude Code, or Codex CLI
+    - Uses AI SDK with `acp-ai-provider` to enable seamless integration with ACP-compatible AI agents on the web platform using `streamText` and `useChat`
 # protocols-ai
-- https://github.com/zed-industries/agent-client-protocol /871Star/apache2/202510/rust/ts
+- https://github.com/agentclientprotocol/agent-client-protocol /871Star/apache2/202510/rust/ts
+  - https://github.com/zed-industries/agent-client-protocol
   - https://agentclientprotocol.com/
   - A protocol for connecting any editor to any agent
   - [Bring Your Own Agent to Zed — Featuring Gemini CLI — Zed's Blog _202508](https://zed.dev/blog/bring-your-own-agent-to-zed)

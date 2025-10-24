@@ -245,7 +245,11 @@ for {
 
 - ## 
 
-- ## 
+- ## [ `useStream` Hook Not Updating Messages During Streaming with Proxy · Issue · langchain-ai/langgraphjs _202506](https://github.com/langchain-ai/langgraphjs/issues/1295)
+  - The LangGraph SDK's useStream React hook fails to populate its messages array or values object during streaming when used through a Next.js API proxy, despite receiving and processing SSE events correctly.
+
+- 
+- 
 
 - ## [OpenAIEmbeddings does not allow setting encoding_format, causing incompatibility with LM Studio (returns float[], not base64) · Issue · langchain-ai/langchainjs _202505](https://github.com/langchain-ai/langchainjs/issues/8221)
   - DOES NOT WORK with `OpenAIEmbeddings` – no way to set `encoding_format`
