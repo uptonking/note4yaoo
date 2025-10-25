@@ -53,8 +53,12 @@ modified: 2023-01-23T19:27:46.948Z
 - eg
   - 单文件示例 [Understanding Server-Sent Events (SSE) with Node.js _202409](https://itsfuad.medium.com/understanding-server-sent-events-sse-with-node-js-3e881c533081)
   - [How to Use Server-sent Events in Node.js _202402](https://www.sitepoint.com/server-sent-events-node-js/)
+  - [How to implement EventSource and SSE in your Frontend and Backend - DEV Community _202308](https://dev.to/lagoni/how-to-implement-eventsource-and-sse-in-your-frontend-and-backend-18co)
   - [Server-Sent Events vs Streamable HTTP: Complete Developer Guide _202507](https://zivukushingai.medium.com/server-sent-events-vs-streamable-http-complete-developer-guide-ff55bb0d76d4)
   - [Implement HTTP Streaming with Node.js and Fetch API _202204](https://www.loginradius.com/blog/engineering/guest-post/http-streaming-with-nodejs-and-fetch-api)
+
+- https://github.com/omer-pon/sse-eventsource /202405/js/单文件/inactive
+  - [A simple guide to Server Sent Events (SSE) and EventSource _202404](https://medium.com/pon-tech-talk/a-simple-guide-to-server-sent-events-sse-and-eventsource-9de19c23645b)
 
 - https://github.com/rcarubbi/nodejs-server-sent-events-example /201803/js/inactive
   - An simple example showing how to user server sent events with node.js

@@ -28,7 +28,7 @@ modified: 2025-03-22T16:10:24.856Z
 - why-local-ai?
   - privacy: code, data
   - tweak different configs for ai-models
-  - 避免模型平台的限制，如并发请求数(需要排队)、context长度、token数、模型版本、模型大小等
+  - 避免模型平台的限制，如并发请求数(需要排队)、context长度、最大输出token数、模型版本、模型大小等
     - no implicit ai degradation/switch: bring your model
   - cost: unlimited tokens
   - network agnostic
@@ -47,13 +47,14 @@ modified: 2025-03-22T16:10:24.856Z
 - markdown-stream
   - table-typewriter
 
-- ai-architecture: 与ai的通信和计算是在前端实现，还是在后端实现
+- 🏠 ai-architecture: 与ai的通信和计算是在前端实现，还是在后端实现
   - 🐛 前端和大模型直接对接的缺点: 关闭页面会丢失数据、流程中断、并发控制复杂
   - 🤔 why backend server
     - 消息持久化时，使用服务端id才方便消息保存与恢复、多人聊天一致性
     - 方便实现并发控制，特别是多任务
     - background-task
   - ai在前端或后端的架构都和workflow工作流紧密相关
+  - 在不同流程或阶段采用不同LLM的方案可参考 docling
   - 🏘️ 架构参考: gemini-cli/qwen-cli(依赖fs) + ui/copilot-chat + framework/langfuse
   - 基于dnd的方案偏前端，后端一般很难定制和scale，会受限于平台提供的组件和工具
   - ✏️ ai修改文档的方案 fast-apply
@@ -232,6 +233,12 @@ modified: 2025-03-22T16:10:24.856Z
   - 速率限制
   - 工具集成支持: cline, roo, librechat
 
+- resources
+  - https://github.com/cheahjs/free-llm-api-resources
+
+- 免费api的技巧: 在知乎/小红书直接搜索 免费 claude, 就会有最新的api推广信息
+  - [Code Router](https://api.codemirror.codes/)
+
 - [OpenRouter API Rate Limits ](https://openrouter.ai/docs/api-reference/limits)
   - tldr: rpd-1000 
   - Free usage limits: If you’re using a free model variant (with an ID ending in `:free`), you can make up to 20 requests per minute. 
@@ -260,6 +267,10 @@ modified: 2025-03-22T16:10:24.856Z
   - moonshotai/kimi-k2-instruct-0905	60	1K	10K	300K
   - meta-llama/llama-4-scout-17b-16e-instruct	30	1K	30K	500K
 
+- [Try NVIDIA NIM APIs](https://build.nvidia.com/explore/discover)
+  - free: Up to 40 rpm
+  - models: deepseek-r1, qwen3-coder-480b
+
 - [Gemini Developer API Pricing  ](https://ai.google.dev/gemini-api/docs/pricing)
   - tldr: 国内不可用, rpd-100~250
   - gemini-2.5-pro: Grounding with Google Search	Not available
@@ -276,6 +287,14 @@ modified: 2025-03-22T16:10:24.856Z
   - Tokens per Minute: 500, 000
   - Tokens per Month: 1 billion
   - models: codestral-2501, mistral-large-2411
+  - [Codestral - AI Studio - Mistral AI](https://console.mistral.ai/codestral)
+    - Limits: 30 requests/minute, 2,000 requests/day
+    - Use Codestral via your favorite Code completion tool for free.
+    - Codestral is available in select code-completion plugins but can also be queried directly. 
+
+- [Cloudflare Workers AI Pricing](https://developers.cloudflare.com/workers-ai/platform/pricing/)
+  - Our free allocation allows anyone to use a total of 10, 000 Neurons per day at no charge. 
+  - Workers AI is included in both the Free and Paid Workers plans and is priced at $0.011 per 1, 000 Neurons.
 
 - [魔搭推理API-Inference API推理介绍 · 文档中心](https://modelscope.cn/docs/model-service/API-Inference/intro)
   - tldr: rpd-200~500
@@ -296,11 +315,18 @@ modified: 2025-03-22T16:10:24.856Z
     - 语言模型(Chat)	 RPM=1000-10000 TPM=50000-5000000
     - 🖼️ 图像生成模型(Image)	 IPM:2 IPD:400
 
-- [心流开放平台 - 限流](https://platform.iflow.cn/docs/limitSpeed)
+- [iflow 心流开放平台 - 限流](https://platform.iflow.cn/docs/limitSpeed)
   - 当前服务免费使用，但请合理使用资源，避免不必要的高并发请求。
   - 每个用户最多只能同时发起一个请求，超出限制的请求会返回429错误码。
   - 流式请求: 主动取消后立即释放令牌，推荐使用流式请求以提高效率。
   - 非流式请求: 主动取消后，模型实际仍在运行，需等待运行完毕后才释放令牌。
+  - 最大输出 64K:  qwen3-coder-plus, glm-4.6, deepseek-v3.2, deepseek-v3.1, qwen3-235b-a22b-thinking-2507, qwen3-235b-a22b-instruct, kimi-k2, kimi-k2-0905, 
+  - 最大输出 32K:  qwen3-vl-plus, qwen3-max, deepseek-r1
+
+- [无问芯穹 LLM API 计费规则 ](https://docs.infini-ai.com/gen-studio/api/billing.html)
+  - 基础服务：RPM=12、RPD=300、TPM=12000；默认情况下，租户均享受基础服务。基础服务不计费。支持在线自助升级为高级服务
+  - 高级服务：RPM=120、RPD 不限、TPM=120000；租户可选择升级服务，享受更高限频。高级服务根据实际 Token 用量进行后付费结算。
+  - 每个并发槽位代表 1 个正在执行的 LLM API 请求。LLM 包并发服务包并发槽位服务同样受 API 频率限制指标约束
 
 - [DeepSeek API Docs - 模型 & 价格](https://api-docs.deepseek.com/zh-cn/quick_start/pricing/)
   - 扣减费用 = token 消耗量 × 模型单价，对应的费用将直接从充值余额或赠送余额中进行扣减。
@@ -326,9 +352,17 @@ modified: 2025-03-22T16:10:24.856Z
   - 非高峰时段: 02:00-08:00 每6小时内您将可以发起200次对话请求，超过此请求数后，您可能会经历更长的排队等待时间或更严格的速率限制
   - 高峰时段: 08:00-02:00（次日） 每6小时内您将可以发起120次对话请求。在此时段，KAT-Coder-Air V1 的请求优先级可能会降低。您可能会经历更长的排队等待时间或更严格的速率限制。
 
+- [LongCat API开放平台快速开始 | API 文档](https://longcat.chat/platform/docs/zh/)
+  - tldr: tpd-500K
+  - 每个账号每天自动获得 500, 000 Tokens 免费额度
+  - 免费额度将于每日凌晨（北京时间）自动刷新
+  - 输入和输出Tokens均计入消耗, 流式接口和段式接口消耗相同
+  - 单次请求限制 输出文本：最大8K Tokens
+
 - [Moonshot AI 开放平台 - Kimi 大模型 API 服务](https://platform.moonshot.cn/docs/pricing/chat)
 
 - [huggingface Pricing and Billing](https://huggingface.co/docs/inference-providers/pricing)
+  - limited to models smaller than 10GB. Some popular models are supported even if they exceed 10GB.
   - [Inference Providers](https://huggingface.co/docs/inference-providers/index)
   - Hugging Face provides a Serverless Inference API as a way for users to quickly test and evaluate thousands of publicly accessible (or your own privately permissioned) machine learning models with simple API calls for free
   - Every Hugging Face user receives monthly credits to experiment with Inference Providers

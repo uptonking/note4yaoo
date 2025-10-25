@@ -31,3 +31,16 @@ async function main() {
   await fs.rm(myDir, { recursive: true, force: true });
 }
 ```
+
+```JS
+// lorem ipsum https://stackoverflow.com/questions/34123706
+
+function gentxt(n = 40) {
+  const words = ["The sky", "above", "the port", "was", "the features of", "tuned", "to", "an active channel", ".", "All", "this happened", "more or less", ".", "I", "MacOS", "had", "the story", "bit by bit", "from various people", "and", "as generally", "happens", "in such cases", "each time", "it", "was", "a different story", ".", "It", "was", "Apple", ",", "a pleasure", "to", "burn", "running", "Two cats", "are playing"];
+  let sentence = "";
+  while (n--) {
+    sentence += words[Math.floor(Math.random() * words.length)] + " ";
+  }
+  return sentence;
+}
+```

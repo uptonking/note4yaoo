@@ -268,7 +268,15 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## 🆚 [4B fp16 or 8B q4? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1ofb7mu/4b_fp16_or_8b_q4/)
+- 8b q4 always wins.
+
+- 4B FP16 ≈ 8 GB, but 8B Q4 ≈ 4 GB, there are two different sizes either way
+
+- Bigger models with heavier quantisation are proved to perform better than smaller models with lighter quantisations.
+
+- Perplexity changes are null at q8, manageable at q4 (lowest quant for coding/when you expect a constrained output like json), get significant a q3 (lowest quant for chat/creative writing, will not use for anything with that required accuracy.), Is arguably unusable at q2 (You start to see grammatical mistakes, incoherent sentences and infinite loop.).
+  - Quantization under 4q lobotomizes the model too much. 4B q4 will perform better than 8B q2
 
 - ## [Your settings are (probably) hurting your model - Why sampler settings matter : r/LocalLLaMA _202311](https://www.reddit.com/r/LocalLLaMA/comments/17vonjo/your_settings_are_probably_hurting_your_model_why/)
 - Temperature
@@ -601,7 +609,12 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [GLM-4.5-Flash on z.ai website. Is this their upcoming announcement? : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mmioub/glm45flash_on_zai_website_is_this_their_upcoming/)
+- Flash is the API only free variant of their model, it's available since day one, and it's essentially a weaker version that's disturbed freely for people to test using the GLM API and capabilities, I've been using it for a while, its quite solid for being free
+
+- Statement from Z. AI org staff members:
+  - Flash is based on the Air model with inference optimizations, making the inference cost relatively low. It includes constraints on output tokens, with the main purpose of allowing community developers to experience the latest models for free.
+  - it's just 106BA12B Air version but with different inference configuration to be cheaper, same weights basically.
 
 - ## [GPT-OSS-120B vs GLM 4.5 Air... : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mifzqz/gptoss120b_vs_glm_45_air/)
 - Same total parameter number, but OpenAI’s OSS 120b is half the size due to being offered natively in q4 precision and has 1/3 active prameters, so it’s performance is really impressive!
@@ -1353,14 +1366,56 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - https://x.com/amasad/status/1872320808028454976
   - Craziest thing is it took only $5.5m to train. US labs spend one — maybe two — order of magnitude more for frontier models.
-# discuss-model-api
-- ## 
+# discuss-model-api-free
+- resources
+  - https://github.com/cheahjs/free-llm-api-resources
+    - free access or credits towards API-based LLM usage.
 
 - ## 
 
 - ## 
 
 - ## 
+
+- ## [Resource List to build with LLMs for 100% FREE no credit card : r/learnmachinelearning](https://www.reddit.com/r/learnmachinelearning/comments/1ihvm0c/resource_list_to_build_with_llms_for_100_free_no/)
+
+LLM
+
+free LLM from galadriel.com (free 4M tokens/day. This is by far THE best option and i use it myself)
+
+free cerebras and groq -- extremely fast LLM responses but cerebras needs u to sign up on a waitlist
+
+Gemini flash: super generous free tier (1500+ requests/day)
+
+Monitoring
+
+posthog and sentry for monitoring (both with generous free tiers)
+
+Cron Jobs
+
+Free cron jobs via ubicloud.com / github actions
+
+Modal.com gives 30$/month for GPU usage credits
+
+AI Training
+
+Lightning.ai gives u GPU workspace for free
+
+Deployment
+
+free hosting via heroku (24 months for free from github student perks)
+
+Digital Ocean 200$ free credits (needs cc tho)
+
+render has some decent deployment options
+
+Database
+
+cockroachDB (10 GB free)
+
+supabase for DB (500MB free)
+
+free 5GB postgres via aiven.io
 
 - ## [Mistral "free" LLM API is a game changer for so many developers : r/SaaS _202409](https://www.reddit.com/r/SaaS/comments/1fmxg9k/mistral_free_llm_api_is_a_game_changer_for_so/)
 - free tier: It's one request per second, 500, 000 tokens per minute, and 1 billion tokens per month. Except Mistral Embed, which is two hundred billion tokens per month.
