@@ -26,6 +26,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 对多语言支持很好
 
 - why-local-ai?
+  - stable model and stable api
   - privacy: code, data
   - tweak different configs for ai-models
   - 避免模型平台的限制，如并发请求数(需要排队)、context长度、最大输出token数、模型版本、模型大小等
@@ -340,7 +341,7 @@ modified: 2025-03-22T16:10:24.856Z
   - moonshotai/kimi-k2-instruct-0905	60	1K	10K	300K
   - meta-llama/llama-4-scout-17b-16e-instruct	30	1K	30K	500K
 
-- [Try NVIDIA NIM APIs](https://build.nvidia.com/explore/discover)
+- [NVIDIA NIM APIs](https://build.nvidia.com/explore/discover)
   - free: Up to 40 rpm
   - models: deepseek-r1, qwen3-coder-480b
 

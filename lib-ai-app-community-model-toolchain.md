@@ -885,7 +885,26 @@ sudo launchctl load /Library/LaunchDaemons/io.yaoo.sysctl.plist
 
 - ## 
 
-- ## 
+- ## 🔀 is it possible in MLX-LM to have inference from multiple LLMs at the same time? 
+- https://x.com/OrganicGPT/status/1982460752507085256
+  - I'd like to serve multiple AI agents on MStudio simultaneously but last I checked with llama.cpp the GPU could handle only one request at a time even with multiple threads/processes
+  - Mac Studio M3 Ultra's massive 512GB memory is perfect for parallel agent calling! Here I used @lmstudio to run *40* instances of @openai 's gpt-oss-20b-mlx and got 35% performance boost compared to sequential API calling. @awnihannun , next I'll do it with batching like you said!
+
+- Running 40 instances in parallel sounds very promising for performance.
+
+- 2 LM Studio on 2 different ports and you get it.
+
+- Yea, you can do this with different processes. But it's much better to batch requests with the same model using a single process.
+  - Each request uses up most of the memory bandwidth so having two models run simultaneously on two processes won't be much faster than running them sequentially. 
+  - When you batch properly with the same model (as in `mlx_lm.batch_generate`) you don't double the memory i/o because the model weights are the same.
+  - Note, this is not specific to MLX or Apple silicon. This is a general property of LLM inference on GPUs. If you have a low latency implementation it should be using most of the memory bandwidth even at batch size 1 so multi-process with multiple models *running at the same time* on the same GPU is not optimal.
+
+- If you’re using Linux OS in production you can use vLLM which maximizes hardware utilization to handle many concurrent requests with low latency using an OpenAI-compatible API.
+  - vLLM performs automatic continuous (dynamic) batching of incoming requests via its scheduler to maximize throughput.
+
+- Yesterday I have written python script for M3 Ultra which tries to do that with batch_generate function, depends on the batch size, you can process requests in batch, other requests have to wait until batch is finished, and then another batch is processed… and so on
+
+- If you need a load balancer, you can try https://github.com/autolocalize/lm-studio-loadbalancer
 
 - ## [LM Studio not reading document correctly. But why? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1o98vqd/lm_studio_not_reading_document_correctly_but_why/)
 - So rag-v1 plugin LM Studio is using has a simple rule: if file fits into 70% of remaining context, it will be fully injected - and this is what you want. Otherwise it resorts to RAG retrieval.

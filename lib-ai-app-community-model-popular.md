@@ -1371,7 +1371,17 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## [Why You Need an LLM Request Gateway in Production : r/LLMDevs _202504](https://www.reddit.com/r/LLMDevs/comments/1jp6ot7/why_you_need_an_llm_request_gateway_in_production/)
+- ## 
+
+- ## [Too many LLM API keys to manage!!?! : r/LLMDevs _202502](https://www.reddit.com/r/LLMDevs/comments/1irpjjk/too_many_llm_api_keys_to_manage/)
+- Check openrouter.ai
+  - It’s expensive but has some really nice features like providing costs in each response. (Why actual providers don’t do that mystifies me.)
+
+- LiteLLM does require API key from the providers
+
+- Check out stashbase.dev, it will help you manage all your API Keys as well as other secrets.
+
+- ## 🤔 [Why You Need an LLM Request Gateway in Production : r/LLMDevs _202504](https://www.reddit.com/r/LLMDevs/comments/1jp6ot7/why_you_need_an_llm_request_gateway_in_production/)
 - I only adopt abstractions when they prove genuinely useful. Among all the possible abstractions in the LLM ecosystem, a proxy server is likely one of the first you should consider when building production applications.
 - This is where a proxy server comes in. It provides one unified interface that all your applications can use, typically mimicking the OpenAI chat completion endpoint since it's become something of a standard.
   - Your applications connect to this single API with one consistent API key. All requests flow through the proxy, which then routes them to the appropriate LLM provider behind the scenes. 
@@ -1381,6 +1391,25 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
   - Building resilient applications with fallback routing
   - Optimizing costs through token optimization and semantic caching
   - Simplifying authentication and key management
+
+- ## 🤼 [why are llm gateways becoming important : r/LLMDevs](https://www.reddit.com/r/LLMDevs/comments/1notvwd/why_are_llm_gateways_becoming_important/)
+  - 网管层 vs 应用层
+- the idea (from what i understand) is that prompts + agent requests are becoming as critical as normal http traffic, so they need similar infra:
+  - routing / load balancing → spread traffic across providers + fallback when one breaks
+  - semantic caching → cache responses by meaning, not just exact string match, to cut latency + cost
+  - observability → track token usage, latency, drift, and errors with proper traces
+  - guardrails / governance → prevent jailbreaks, manage budgets, set org-level access policies
+  - unified api → talk to openai, anthropic, mistral, meta, hf etc. through one interface
+  - protocol support → things like claude’s multi-context protocol (mcp) for more complex agent workflows
+  - what are people here using for this gateway layer these days are you rolling your own or plugging into projects like litellm / bifrost / others curious what setups have worked best
+
+- llm gateways are critical once you need reliability and observability across multiple providers. bifrost handles routing, semantic caching, and governance in one openai-compatible api. you get health-based failover, embedding-keyed cache, and org-level policies with zero-config startup. for production teams, this means consistent uptime, traceable requests, and budget control.
+  - For a brief comparison with LiteLLM: Bifrost delivers 100 percent success at 500 rps; litellm drops below 90 percent. bifrost median latency is 804 ms, litellm is 38 seconds at scale. bifrost throughput is 424 rps, litellm is 44 rps. bifrost uses 120 mb memory, litellm uses 372 mb
+
+- honestly I’m on the other side of the equation so i have adapters that enforce defensive strategies to deal with llm responses and tools and things. But you can see right in your diagram why the other half finds value to add in the gateway. It’s written in your diagram
+
+- We looked at using a router but it was a single point of failure.
+  - We are a node shop and we went with the Vercel AI SDK. Built some custom fallbacks, simple retries, and it's built in telemetry. I haven't been yearning for an LLM router since.
 
 - ## [What’s the Fastest and Most Reliable LLM Gateway Right Now? : r/LLMDevs _202508](https://www.reddit.com/r/LLMDevs/comments/1mh962r/whats_the_fastest_and_most_reliable_llm_gateway/)
 - I’ve been testing out different LLM gateways for agent infra and wanted to share some notes. Most of the hosted ones are fine for basic key management or retries, but they fall short once you care about latency, throughput, or chaining providers together cleanly.

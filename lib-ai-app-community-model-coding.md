@@ -2018,7 +2018,7 @@ ollama run hf.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF:Q6_K
   - But although I do believe code is perfect for rag ( basically you could create a file-overview, then function overview per file and then a code overview per function, so you can rag for 3 levels deep easily) I have not seen any rag implementation which is made for code. And general rag will not work good, general rag will just take x characters and in doing so loose all coherence code has.
 - Basically I believe you need specialized rag and large context for what you want, that way you can also do it on real-time git code updated after every commit instead of constant finetuning
 
-- ## [Too Afraid to Ask: Why don't LoRAs exist for LLMs? : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kzg3yv/too_afraid_to_ask_why_dont_loras_exist_for_llms/)
+- ## 🤔 [Too Afraid to Ask: Why don't LoRAs exist for LLMs? : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kzg3yv/too_afraid_to_ask_why_dont_loras_exist_for_llms/)
 - Unsloth allows you to train your own lora on some LLMs. 
 
 - RAG and increased context windows eliminated many people's use cases for LoRA (myself included) but it's still very much real and around
@@ -2033,6 +2033,17 @@ ollama run hf.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF:Q6_K
 
 - LORAs do exist for LLMs, but as opposed to Diffusion, which only has SD 1.5, SDXL, SD3.5, and Flux, in the LLM space we seem to be getting a different model every week, each with a new architecture. Hence, it's generally considered impractical to have a separate LORA for every model and have the end user manage it. We also don't have a CivitAI-like website where we can distribute such things easily.
   - In LLMs, most of the time, fine-tuners train a LORA, and merge it into the checkpoint, then distribute the new checkpoint and its quants.
+
+- [Why didn't LoRA catch on with LLMs? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1ogg6sz/why_didnt_lora_catch_on_with_llms/)
+- It is a big thing for LLMs. In fact Unsloth is one of the most starred Github projects and it's whole purpose is for training LLM LoRAs.
+- it is because they won't work very well on quantized models, so they just merge it into the model instead
+  - They work fine and you can train on quantized models too. The issue is software support is half baked outside of transformers. A cycle of lora is inconvenient -> people don't use lora -> devs don't improve lora support. We're on year 3 of this.
+
+- Each LoRA is base model specific.
+
+- more accurately, not all fine tunes are a model + LoRA merge.
+- Finetunes are not a model+LoRa merge. It's the other way around: LoRAs are made by subtracting the base model from a fine-tune, so the LoRA remains.
+  - There are a lot of ways to fine-tune a model. What you're describing is called full fine-tuning (FFT). Some people use PEFT (parameter-efficient fine-tuning) which includes, but isn't limited to, a model+LoRa merge.
 # discuss
 - ## 
 
