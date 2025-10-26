@@ -49,6 +49,15 @@ modified: 2022-11-07T10:25:12.034Z
   - elm
   - more: d3, prisma
 
+- underrated-sites
+  - [LINUX DO - 新的理想型社区](https://linux.do/)
+    - 是否还记得十多年前互联网的模样？那时候的人们乐于分享自己的见识，不以有钱为成功标准。
+  - [NodeLoc - 自由、平等、友好、开放、有趣的交流社区](https://www.nodeloc.com/)
+    - 致力于为网络爱好者、开发者、站长和基础设施运营者提供一个交流经验、共享资源、探索技术的温暖港湾
+    - 参与网络运维、服务器配置、DNS、邮件系统、虚拟化等技术的深入讨论
+
+- [LinuxDo商家评价平台](https://rate.linux.do/)
+
 - forum-site
   - prosemirror
   - [TiddlyWiki: Talk TW - Community discussion forum about TiddlyWiki](https://talk.tiddlywiki.org/)

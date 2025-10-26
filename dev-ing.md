@@ -216,7 +216,8 @@ next dev -H 0.0.0.0 -p 3000
 - dev-log
   - ?
 - dev-to
-  - ?
+  - aisdk + streamdown without ai-elements
+  - streamdown + resume-with-redis
  
 ```log //dev-xp
 console.log('; ; task ', taskState, runningTaskAction, task?.task_steps)

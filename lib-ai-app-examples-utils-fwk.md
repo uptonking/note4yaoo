@@ -292,6 +292,36 @@ modified: 2025-02-21T18:20:42.624Z
     - Arch handles the pesky plumbing work in building AI agents — like applying guardrails, routing prompts to the right agent, generating hyper-rich information traces for RL, and unifying access to any LLM.
     - Arch runs alongside app servers as a containerized process, and builds on top of `Envoy`'s proven HTTP management and scalability features to handle ingress and egress traffic related to prompts and LLMs.
     - Arch was built by the contributors of Envoy Proxy with the belief that: Prompts are nuanced and opaque user requests, which require the same capabilities as traditional HTTP requests including secure handling, intelligent routing, robust observability, and integration with backend (API) systems to improve speed and accuracy for common agentic scenarios – all outside core application logic.
+
+- https://github.com/songquanpeng/one-api /27.7kStar/MIT/202502/go/js/inactive
+  - LLM API 管理 & 分发系统，支持 OpenAI、Azure、Anthropic Claude、Google Gemini、DeepSeek、字节豆包
+  - 支持配置镜像以及众多第三方代理服务。
+  - 支持令牌管理，设置令牌的过期时间、额度、允许的 IP 范围以及允许的模型访问。
+  - 🍴 forks
+  - https://github.com/MartialBE/one-hub /apache2/202510/go/js
+    - https://one-hub.xiao5.info/
+    - OpenAI 接口管理 & 分发系统，改自songquanpeng/one-api。支持更多模型，加入统计页面，完善非openai模型的函数调用。
+- https://github.com/QuantumNous/new-api /11.7kStar/AGPL+LOGO/202510/go/js
+  - https://www.newapi.ai/
+  - AI模型聚合管理中转分发系统，支持将多种大模型转为统一格式调用，支持OpenAI、Claude、Gemini等格式，可供个人或者企业内部管理与分发渠道使用
+  - 新一代大模型网关与AI资产管理系统
+  - 在One API的基础上进行二次开发
+  - https://github.com/Veloera/Veloera /GPL/202510/go/js
+    - 优秀的 AI API 网关系统
+    - 原汁原味的 New API 体验, 对界面无大改动, 遵循 GPL 3.0 协议, 无商用限制
+    - 支持礼品码, 全局每用户一次, 可控制总使用次数
+    - 渠道 Key 不再加密, 发送到前端显示
+    - 本程序基于 new-api 二开, 数据库结构基本兼容, 会自动运行迁移.
+
+- https://github.com/tbphp/gpt-load /5.4kStar/MIT/202510/go/ts/vue
+  - https://www.gpt-load.com/
+  - 智能密钥轮询的多渠道 AI 代理
+
+- https://github.com/qixing-jk/all-api-hub /MIT/202510/ts
+  - https://qixing-jk.github.io/all-api-hub/
+  - 一个开源的浏览器插件，聚合管理所有中转站账号的余额、模型和密钥，告别繁琐登录。
+  - 本项目为开源项目，在One API Hub的基础上进行二次开发
+  - https://github.com/fxaxg/one-api-hub /MIT
 # ai-api
 
 # browser-use

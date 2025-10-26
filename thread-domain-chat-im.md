@@ -141,6 +141,53 @@ modified: 2024-01-04T01:28:58.097Z
 
 - Using namespaced IDs is somewhat pointless if you can simply define all the schemas in the core protocol spec and call it a day.
 - the other significant point of evolvability (that's in practice now) is the RPC methods. New ones can be defined, returning new schemas, and so on.
+# discuss-discourse
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Understanding Discourse Trust Levels _201806](https://blog.discourse.org/2018/06/understanding-discourse-trust-levels/)
+  - Sandboxing new users in your community so that they cannot accidentally hurt themselves, or other users 
+  - Granting experienced users more rights over time, so that they can help everyone maintain and moderate the community
+
+- Users at trust level 0 cannot …
+  - Send personal messages to other users
+  - Post more than 1 image
+  - Post any attachments
+  - Flag posts
+
+- Get to trust level 1 by…
+  - Entering at least 5 topics
+  - Reading at least 30 posts
+  - Spend a total of 10 minutes reading posts
+
+- Get to trust level 2 by…
+  - Visiting at least 15 days, not sequentially
+  - Receiving at least 1 like
+  - Replying to at least 3 different topics
+  - Reading at least 100 posts
+  - Spend a total of 60 minutes reading posts
+- Users at trust level 2 can…
+  - Invite outside users to PMs making a group PM
+  - Daily like, edit, and flag limits increased by 1.5×
+  - Ignore other users
+  - Edit their own posts for up to 30 days after posting
+
+- To get to trust level 3, in the last 100 days…
+  - Must have visited at least 50% of days
+  - Of topics created in the last 100 days, must have viewed 25% (capped at 500)
+  - Of posts created in the last 100 days, must have read 25% (capped at 20k)
+  - Must have received 20 likes, and given 30 likes.*
+  - Must not have received more than 5 spam or offensive flags
+  - Must not have been suspended or silenced in the last 6 months
+- Users at trust level 3 can…
+  - Recategorize and rename topics
+  - Make their own posts wiki (that is, editable by any TL1+ users)
+
+- Get to trust level 4 by…
+  - Manual promotion by staff only
 # discuss
 - ## 
 

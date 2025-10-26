@@ -1366,6 +1366,36 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - https://x.com/amasad/status/1872320808028454976
   - Craziest thing is it took only $5.5m to train. US labs spend one — maybe two — order of magnitude more for frontier models.
+# discuss-model-api-gateway
+- ## 
+
+- ## 
+
+- ## [Why You Need an LLM Request Gateway in Production : r/LLMDevs _202504](https://www.reddit.com/r/LLMDevs/comments/1jp6ot7/why_you_need_an_llm_request_gateway_in_production/)
+- I only adopt abstractions when they prove genuinely useful. Among all the possible abstractions in the LLM ecosystem, a proxy server is likely one of the first you should consider when building production applications.
+- This is where a proxy server comes in. It provides one unified interface that all your applications can use, typically mimicking the OpenAI chat completion endpoint since it's become something of a standard.
+  - Your applications connect to this single API with one consistent API key. All requests flow through the proxy, which then routes them to the appropriate LLM provider behind the scenes. 
+  - The proxy handles all the provider-specific details: authentication, retries, formatting, and other logic.
+- Four Reasons You Need an LLM Proxy Server in Production
+  - Using the best available models with minimal code changes
+  - Building resilient applications with fallback routing
+  - Optimizing costs through token optimization and semantic caching
+  - Simplifying authentication and key management
+
+- ## [What’s the Fastest and Most Reliable LLM Gateway Right Now? : r/LLMDevs _202508](https://www.reddit.com/r/LLMDevs/comments/1mh962r/whats_the_fastest_and_most_reliable_llm_gateway/)
+- I’ve been testing out different LLM gateways for agent infra and wanted to share some notes. Most of the hosted ones are fine for basic key management or retries, but they fall short once you care about latency, throughput, or chaining providers together cleanly.
+  - Bifrost (Go, self-hosted): Surprisingly fast even under high load. Saw around 11µs overhead at 5K RPS and significantly lower memory usage compared to LiteLLM. Has native support for many providers and includes fallback, logging, Prometheus monitoring, and a visual web UI. You can integrate it without touching any SDKs, just change the base URL.
+  - Portkey: Decent for user-facing apps. It focuses more on retries and usage limits. Not very flexible when you need complex workflows or full visibility. Latency becomes inconsistent after a few hundred RPS.
+  - Kong and Gloo: These are general-purpose API gateways. You can bend them to work for LLM routing, but it takes a lot of setup and doesn’t feel natural. Not LLM-aware.
+  - Cloudflare’s AI Gateway: Pretty good for lightweight routing if you're already using Cloudflare. But it’s a black box, not much visibility or customization.
+  - Aisera’s Gateway: Geared toward enterprise support use cases. More of a vertical solution. Didn’t feel suitable for general-purpose LLM infra.
+  - LiteLLM: Super easy to get started and works well at small scale. But once we pushed load, it had around 50ms overhead and high memory usage. No built-in monitoring. It became hard to manage during bursts or when chaining calls.
+
+- i think if you're self-hosting on kubernetes, the kgateway + agentgateway combo crushes the rest of the competition, by a pretty large margin. (it's not just a LLM gateway, they're pioneers of the kubernetes gateway api, which is the agreed upon standard for kubernetes)
+  - I think the only thing they lose to other AI gateway implementations at, is the variety of use cases that are currently supported. For example, a gateway like LiteLLM will have a broad range of supported endpoints (that aren't built well, but exist).
+
+- [Best LLM gateway? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1mh9r0z/best_llm_gateway/)
+- Litellm is easy to setup but difficult to scale when you are building for production. I have seen litellm fail around 250-300 RPS. It is also quite resource hungry leading to unnecessary infra complexity.
 # discuss-model-api-free
 - resources
   - https://github.com/cheahjs/free-llm-api-resources
@@ -1376,6 +1406,121 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [感觉大厂 2api 才是长期公益站的最好方案 - 搞七捻三 - LINUX DO _202508](https://linux.do/t/topic/919087)
+  - 2api御三家 grok，qwen，z.ai
+  - 都有共同点：注册简单，token 刷新简单/长期有效，高并发，稳定，0成本…
+  - 反观其它大部分api羊毛的共同点：很难长期，渠道一公开就活不久，上某三字脚本大概率封号…
+  - 不过2api缺点也明显，只能聊天，很难用于科研/代码领域
+
+- 只是占有率还不高的吧, 占有率高了可能就去反2api了
+  - 2api本来就不是很稳定的 而且还不支持很多功能
+
+- 最好的方案当然是aws, 官转啦
+
+- 2大厂的也有可能被封号，而且随便改点参数上点验证2就失效了
+
+- grok4和qwen一堆新模型上线，都没改过已有模型的参数 老项目直接用
+  - 有验证的只有grok一家，貌似只有亚洲ip才会触发
+
+- 我跟佬友们保持长期良好关系，是我最好的方案
+
+- ## 🤔 [各位运营公益站的佬，想请教公益站的key一般怎么来及封号策略 - 开发调优 - LINUX DO](https://linux.do/t/topic/838799)
+- 免费轮询较多，或者2api（哪来的这么多富哥）
+
+- 站内的稳定公益站都做的很有原则，没遇到随意封号，现在慢慢的只用稳定站了。本来是想均匀用，各站都用一点，不逮着一家薅羊毛 
+
+- ## [关于站内各种公益站的一点困惑 - 资源荟萃 - LINUX DO](https://linux.do/t/topic/846699)
+  - 首先感谢各位佬的大义，提供各种key，但是站内各种漫天飞的公益帖子 ，试过不少配置好了之后发现过几天就失效了，都让我产生一种是不是来骗赞的感觉。
+
+- 3 级的就比较稳
+
+- 公益站这种东西很多是朝生夕灭，毕竟免费的东西也没法要求，如果真的有持久的需求还是用正式的东西，公益的适合用在一时兴起的玩具上
+
+- 看公益站渠道来源、大方程度（随便发个一千刀的大概就是来玩票的），其他的也区分不了，不排除部分公益是集合 L 站公益或者找个某个 2api 渠道后练手部署的，见仁见智
+  - 再加上可能有号商打击，所以公益死得快是情理之中的事
+
+- 不要对免费的东西有太多执念
+- 既然公益，放出来免费用一段时间就可以，这时间可能长或短
+
+- 可以用这样的逻辑理解：支付一个赞用以换取一个短时间的服务。这就好比淘宝上一毛钱一个的wps账号，便宜吗？确实便宜。长久吗？肯定不长久。我觉得编辑帖子花费的时间精力以及信息差本身自带的价值还是值一个赞的。
+
+- 一个人从各种渠道获得了自己用不完的资源，打算贡献出来无偿分享给大家。这是一种美德。 对于这类人，我们应该赞扬他，而不是妄加揣测。 至于你想要找寻的稳定的公益站， @tbphp 的公益站做的非常出色，推荐。
+- 放下对公益站的执念就好了，心态放稳，用的时候做好下一秒就消失的准备。当然，也有稳定的，所以T佬公益站的口碑就出来了不是。
+
+- ## [公益站好多！已经对额度麻木了 - 搞七捻三 / 搞七捻三, Lv1 - LINUX DO](https://linux.do/t/topic/1091221/25)
+- 我之前也注册了很多，后来慢慢的只剩几个主力了。因为稳定性是个大问题，工作中被打断这件事比较头疼
+
+- 感觉kyx里面claude code不好用，上下文太短，根本写不了代码
+
+- 没几个能用cc 的，没几个额度超过 10 刀的，没几个不是高负载、号池没号的
+- 真能干活的没几个，现在用这ang。。。其他几个要么没额度，要么不能直接调用，要么截断。
+
+- [Augment没了，接下来用啥呢  - LINUX DO](https://linux.do/t/topic/1090749)
+- 能用claude code最好，不然droid凑合也行，
+  - 现在cc中转站因为封号要么涨价要么降智掺水，体验可能还不如droid这个cc下位了，
+  - codex我今天试了下，太慢了而且我ubuntu和他那个沙盒模式有兼容问题，这也运行不了那也没权限
+- codex我因为这个沙盒问题体验很糟糕，但我看很多人也认为codex和cc是一个级别的，droid我是用了几天，我感觉比cc是能感觉出差距的，但droid免费用claude4.5+gpt5，而且速度很快，codex抛开那个在我电脑上的沙盒兼容问题外，速度也是太慢了，因为我没买那种特别贵的cc中转站，现在用的我感觉是降智很明显，所以我觉得目前我最舒服的是droid
+
+- ## [求推荐稳定的聚合AI大模型平台 - 开发调优 - LINUX DO _202510](https://linux.do/t/topic/1084727/1)
+- 满足你的要求的只有openrouter
+
+- 公益站好像都不稳定吧？
+
+- 站内公益站很多都很稳定啊，薄荷佬的，翰林文苑的，都稳定呀
+  - 收费的那就看看富可敌国吧
+
+- 我看现在富可敌国都是做codex和cc，没几个开放api呢
+
+- 如果要稳定又要便宜，低价的是没怎么，原价的倒是有挺多
+
+- www.hubagi.ai, 这个有国内的模型，比官网价格便宜，可以用api调用，也很稳定
+
+- ## [如何聚合各家公益站的api - 开发调优 - LINUX DO _202510](https://linux.do/t/topic/1005534)
+  - 站内有非常多佬提供的公益站，同时各家公益站又会有很多一样的模型，我的想法是本地搭建一个new，然后配置对接各家的公益站，通过让各家的api轮询，这样子用ai的时候就能雨露均沾了，各家api通过同一个模型名称调用，实现负载均衡
+- 怎么实现的？我现在是用newapi重定向功能，的确是集合了，但是不能自动切换，还需要手动切换模型
+
+- 之前有这个讨论，不过要注意，有些公益站是不能用new api聚合，怕二次分发，所以佬友记得要看一下公益站说明
+
+- 很简单的, 模型名一样就可以配置负载均衡了, 自己配置一下模型名到id 的映射就行了
+
+- 目前的方案是gpt-load+newapi, 等gpt-load更新聚合分组和重定向，自用就不用再搞个newapi了
+
+- GitHub - atopos31/llmio: llm接口负载均衡工具 我自己写过一个
+
+- ## [求推荐免费模型api，公益站付费的太慢了，只是用于ai中文翻译成英文，速度有要求 - 搞七捻三 - LINUX DO](https://linux.do/t/topic/1061766)
+- 免费的还要快准的 那就薅平台羊毛吧，或者本地搭建一个小模型，肯定嘎嘎快
+
+- 4396佬的cerebras，嘎嘎快
+
+- cerebras的快, ollama cloud的速度也很快 就是上下文砍了
+
+- ## [佬，有哪些好用的公益站llm（个人对话，用量小） - 搞七捻三 - LINUX DO _202509](https://linux.do/t/topic/930055)
+- 很多佬的公益站是不让公开的，多水水或许就遇到了呢
+
+- 都是站内的，只要到了等级就能看到了, 你如果的等级不够才看不到，多水就行了
+
+- 所有公益站默认均不支持和对外分享。 除非站长本人同意了。 所有公益站发布原帖子有级别限制的， 默认不转发给级别不够的佬友。 还请新加入的佬友用心升级。
+
+- [[KYX API 公益站] 红绿榜也来了 kunkun 背景也加上了 是ikun就来抽 - 搞七捻三 - LINUX DO](https://linux.do/t/topic/1093602)
+
+- ## [好奇这些公益站的商业模式是怎样的，如何赚钱维持运营 _202508](https://linux.do/t/topic/833661)
+  - 论坛里一堆各种api网站，b4u inst anyrouter之类，频繁提供免费api，我一天就能嫖1k左右的货币（不知道是cny还是usd），很好奇这些网站是如何保持生存的，这种行为的目的是什么。
+
+- 一般可能是有别的业务来回血 比如区分等级 免费付费用户之类的
+
+- 都是玩流量的，“公益”往往都是自己用不上的资源，你白嫖他，他白嫖别人。简单几个字：倒买倒卖
+  - 所以，早些时候就看到有些人吐槽“零度解说”毁资源，其实这只是愤怒的一种说辞，其实很多资源分享的人，从一开始就知道这资源分享出来不会长久，也不会刻意去想着保护资源，他有自己的目的，可能是商业性的，也可能是兴趣之余回报别人。想保护资源的往往是白嫖了，又不愿意继续分享下去的中间人，这就是人性，面对利益，都想据为己有的心态。
+  - 真“公益”也有的，但往往这种极少，本身作者已经是处于社会的佼佼者了，真正能做一点自己理想中的事情了，比如linuxdo，我们看一个人怎么样，往往是这个人做了什么，从论坛创建初期，到现在为止，linuxdo始终在用金钱和责任感为大家提供着一个好的交流氛围环境，这种公益目的就不那么商业化了，主要在于作者的心态，比较随心
+
+- b4u是逆向的，就算通过ccr用在cc也不稳定吧
+- b4u是普号池啊，时boom时好的 塞进去都不知道啥时候断
+
+- 靠爱发电啊, 我公益站流量超了都是自己掏钱的, 但实在顶不住了，一天20G流量，只好关停撤啦
 
 - ## [Resource List to build with LLMs for 100% FREE no credit card : r/learnmachinelearning](https://www.reddit.com/r/learnmachinelearning/comments/1ihvm0c/resource_list_to_build_with_llms_for_100_free_no/)
 

@@ -230,14 +230,87 @@ modified: 2025-03-22T16:10:24.856Z
 # ai/llm-api 💰
 - api-choices
   - 支持的优质大模型、热门模型、vlm
+  - api稳定: 稳定时用的api稳定性必须要高，否则产品体验差
   - 速率限制
   - 工具集成支持: cline, roo, librechat
 
 - resources
   - https://github.com/cheahjs/free-llm-api-resources
 
-- 免费api的技巧: 在知乎/小红书直接搜索 免费 claude, 就会有最新的api推广信息
-  - [Code Router](https://api.codemirror.codes/)
+- 免费api的技巧: 在知乎/小红书直接搜索 免费 claude (公益站), 就会有最新的api推广信息, 可以用小号邀请自己
+  - tips: 公益站不稳定(3个月就倒闭一批), 来源不明可能导致效果差, 需要经常确认和维护, 不要浪费过多时间
+  - 公益站 [Search results for '公益站' - LINUX DO](https://linux.do/search?q=%E5%85%AC%E7%9B%8A%E7%AB%99%20order%3Alatest)
+  - 📌 [Agent Router](https://agentrouter.org/), 每日签到获取$25
+    - 支持 Claude Code、Codex、RooCode、Qwen Code、Gemini Cli 等多款工具
+    - 似乎不支持claude ❓
+    - > 签到功能在哪里呀？ 退出登录重新登陆就好了. 
+    - https://github.com/aceHubert/newapi-ai-check-in
+    - https://github.com/millylee/anyrouter-check-in
+    - [AgentRouter 问题汇总 · Issue · millylee/anyrouter-check-in](https://github.com/millylee/anyrouter-check-in/issues/48)
+      - agent 是在登录的时候签到的，并没有额外的 sign_in 接口，是在登录的那个接口是返回了一个check_in 的字段判断的，所以才把cookie 时间给调短了，就是让重新登录签到才有效
+  - [Any Router](https://anyrouter.top/), 无法签到和更多额度
+    - 无充值，邀请注册来获得更多额度
+    - 本站直接接入官方 Claude Code 转发，无法转发非 Claude Code 的 API 流量
+    - tg群讨论的内容看，作者似乎精力不在anyrouter而在开发商用产品
+    - 用户较多，有提供vscode插件无法使用的解决方案
+  - [Code Router](https://api.codemirror.codes/), 无法签到和更多额度
+    - 支持 Claude Code & CodeX
+  - [b4u API](https://b4u.qzz.io/)
+    - 仅每周六晚21:00至21:30限时开放注册
+    - 会不会增加其他模型：不会，本站专注于Claude
+    - 渠道技术： Claude-SessionKey号池→claude2api→FC使能
+    - [【B4U公益站】是克劳德，我们有救了！（每周六限时开放注册） ](https://linux.do/t/topic/801848)
+  - [tbai API](https://tbai.xin/)
+    - API 调用频率限制为 10 RPM
+    - gpt-load 作者
+    - 使用兑换码兑换余额后的账号视为激活用户, 激活用户可长期使用，额度用完后可无条件联系我增加额度
+    - [【T佬公益】TBAI公益站主贴-爽用Gemini|OpenAI|DeepSeek模型 ](https://linux.do/t/topic/683726)
+  - 📌 [23公益站](https://sdwfger.edu.kg/), 不用签到
+    - 平台将于每周五、周六统一发放额度兑换码。 额度申请：如您的额度提前用尽，可联系管理员进行补充申请
+    - 模型丰富: claude, gpt
+  - [KYX-API](https://api.kkyyxx.xyz/), 不用签到
+    - Claude和gpt 暂时不支持工具调用
+    - API 调用频率限制为 12RPM，公益站永久免费，采用公平限流策略以保障服务稳定
+    - [KYX API Refueling Station 公益站额度加油站](https://quota.kyx03.de/)
+  - [learn-ai 公益站点](http://free.learn-ai.top/), 需要签到
+    - 支持很少一部份claude模型
+    - 可以加入付费站点：https://learn-ai.top/
+  - [Privnode](https://privnode.com/)
+    - free分组不支持claude，但支持gpt-5-nano
+    - [【Cone 公益站】找个佬共同维护  ](https://linux.do/t/topic/1035525)
+    - [Cone 公益站更新 ](https://linux.do/t/topic/1002152)
+  - [cone Veloera Zone](https://zone.veloera.org/)
+    - 此服务完全免费提供，并仅在 LINUX DO 社区宣传
+    - 不定期删除 0 额度，0 消耗，且注册超过一周的用户。
+  - [薄荷 API](http://x666.me/)
+    - 仅提供gemini模型
+  - [ZenscaleAi](https://gy.zenscaleai.com/)
+    - 仅提供gemini模型
+  - [小丑Ai公益站](https://gy.jiubanai.com/)
+    - 仅提供gemini模型
+  - [翰林文苑公益API站点](https://aiapi.hlwy2025.me/)
+    - 价格太高了 我决定攒到1000再用
+  - [linjinpeng Veloera](https://linjinpeng-veloera.hf.space/)
+    - 现在rpm是6，模型全部免费，1级即可注册
+    - 一次一美元的调用，但是这个1美元是无限刷新的，你用了就知道了
+    - 聊天记录均留样检测，违规直接封禁，请不要对话任何隐私信息
+    - [能否成为全站用量最大的claude 4.1 opus公益站 _202509](https://linux.do/t/topic/956435)
+  - [TudouAPI](https://www.tudou.chat/), 签到复杂
+    - 如果账户连续3天以上都是只有5-10条，会判定为屯额度账号签到失败
+  - [LLM API 公益站](https://llm.indrin.cn/)
+    - 本站永久运营，服务免费提供个人使用,禁止高并发,禁止高输入, 高并发会封号
+    - 额度不限量,注册送$30，邀请送$5,正常用户额度快用完时会给后台增加
+    - 不支持claude，支持openai, xai
+  - [88code - 企业级Claude Code/Codex中转](https://www.88code.org/)
+    - 添加客服领取 10 美元免费额度, 每个用户仅限领取一次
+  - [AICodeMirror官方共享平台 - 中国用户专属AI编程助手](https://www.aicodemirror.com/)
+  - [packycode：全部服务指南，包含 claude code codex 公益、付费全部站点～ - 福利羊毛 - LINUX DO](https://linux.do/t/topic/933715)
+  - [cto.new ](https://cto.new/)
+  - [Claude 4.5 国内免费使用指南 | 最全访问方式汇总 2025 - 知乎](https://zhuanlan.zhihu.com/p/1956204058139431066)
+    - 镜像、中转、合租、代充
+  - [2025年10月 Claude 国内使用指南（支持 Claude Sonnet 4.5） - 知乎](https://zhuanlan.zhihu.com/p/1940070586635223559)
+  - [白嫖最强AI编程模型Claude 4.5，暨一哥Claude Code的免费下位替代（10月22亲测可用） - 知乎](https://zhuanlan.zhihu.com/p/81947374736)
+  - [求推荐免费模型api，公益站付费的太慢了，只是用于ai中文翻译成英文，速度有要求 - 搞七捻三 - LINUX DO](https://linux.do/t/topic/1061766)
 
 - [OpenRouter API Rate Limits ](https://openrouter.ai/docs/api-reference/limits)
   - tldr: rpd-1000 
@@ -359,7 +432,8 @@ modified: 2025-03-22T16:10:24.856Z
   - 输入和输出Tokens均计入消耗, 流式接口和段式接口消耗相同
   - 单次请求限制 输出文本：最大8K Tokens
 
-- [Moonshot AI 开放平台 - Kimi 大模型 API 服务](https://platform.moonshot.cn/docs/pricing/chat)
+- [Moonshot AI 开放平台 - 充值与限速](https://platform.moonshot.cn/docs/pricing/limits)
+  - 赠送用完后需要充值
 
 - [huggingface Pricing and Billing](https://huggingface.co/docs/inference-providers/pricing)
   - limited to models smaller than 10GB. Some popular models are supported even if they exceed 10GB.
