@@ -200,7 +200,18 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## [DGX Spark Benchmarks (Stable Diffusion edition) : r/StableDiffusion _202510](https://www.reddit.com/r/StableDiffusion/comments/1ogjjlj/dgx_spark_benchmarks_stable_diffusion_edition/)
+  - tl; dr: DGX Spark is slower than a RTX5090 by around 3.1 times for diffusion tasks.
+  - I happened to procure a DGX Spark (Asus Ascent GX10 variant). This is a cheaper variant of the DGX Spark costing ~US$3k, and this price reduction was achieved by switching out the PCIe 5.0 4TB NVMe disk for a PCIe 4.0 1TB one.
+  - Based on profiling this variant using llama.cpp, it can be determined that in spite of the cost reduction the GPU and memory bandwidth performance appears to be comparable to the regular DGX Spark baseline.
+  - Now on to the benchmarks focusing on diffusion models. Because the DGX Spark is more compute oriented, this is one of the few cases where the DGX Spark can have an advantage compared to its other competitors such as the AMD's Strix Halo and Apple Sillicon.
+  - While the DGX Spark is not as fast as the Blackwell desktop GPU, its performance puts it close in performance to a RTX3090 for diffusion tasks, but having access to a much larger amount of memory.
+
+- 3 times slower than a 5090 so…. Roughly the equivalent of a 5060ti?
+  - Their benchmark for SDXL 3.13it/s makes it roughly equal to 3090, that also has about 3it/s.
+- If we did the math purely based on TFLOPs/ in FP16/BF16, it would indicate closer to 5070-like performance.
+
+- You can find many benchmarks for AMD AI MAX and compare. Nothing spectacular here, because inference performance limited by memory bandwidth, and DGX has 270Gb/s while AMD thingy has 250Gb/s.
 
 - ## [Running DeepSeek-R1 671B (Q4) Locally on a MINISFORUM MS-S1 MAX 4-Node AI Cluster : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1oevvyu/running_deepseekr1_671b_q4_locally_on_a/)
 

@@ -252,6 +252,16 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
   - crud
   - 业务系统与架构增强: lasuite-docs, knowledgebase, cms
 
+## 1027
+
+- [I am getting an "Invalid Host header" message when connecting to webpack-dev-server remotely - Stack Overflow](https://stackoverflow.com/questions/43619644/i-am-getting-an-invalid-host-header-message-when-connecting-to-webpack-dev-ser)
+  - The problem occurs because `webpack-dev-server` 2.4.4 adds a host check. 
+  - You can disable it by adding this to your webpack config
+  - `disableHostCheck: true`
+
+- [Webpack 5: disableHostCheck - Stack Overflow](https://stackoverflow.com/questions/69246770/webpack-5-disablehostcheck)
+  - The `disableHostCheck` option was removed in favor `allowedHosts: 'all'`
+
 ## 1022
 
 - this project tries to implement langgraph stream with vercel ai sdk ui

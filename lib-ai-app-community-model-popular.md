@@ -1438,7 +1438,11 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## 看到一个同行退了，所以还是 A 厂“胜利”了
+- https://x.com/tuzi_ai/status/1982641845575589987
+- 这行当是时间窗口期生意, 无限开卡白嫖撬信息差杠杆, 1美金开个codex团队账号, 上百人民币往国内卖, 持续补号, 直到对手开始补漏, 生意就会进入消退期
+  - 但这种信息差用不了多久就会出现一次, 跑通了渠道后就可以一直换品了
+  - 最不济最后就是转成正规军呗
 
 - ## [感觉大厂 2api 才是长期公益站的最好方案 - 搞七捻三 - LINUX DO _202508](https://linux.do/t/topic/919087)
   - 2api御三家 grok，qwen，z.ai

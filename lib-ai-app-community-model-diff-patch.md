@@ -996,7 +996,23 @@ Code
 
 - ## 
 
-- ## 
+- ## [How I Built An Agent that can edit DOCX/PDF files perfectly. : r/aiagents _202510](https://www.reddit.com/r/aiagents/comments/1ogwhwn/how_i_built_an_agent_that_can_edit_docxpdf_files/)
+- The `find_and_replace` tool
+  - My first try. I thought I could map simple document edits to tools like `add_paragraph` . It failed fast - the agent couldn’t see the document, messed up formatting, and needed too many tools ( `add_bullet_point` , etc.). I still think this is one of the best options, though.
+- Direct XML edits
+  - Terrible idea. Editing DOCX XML is painful - it used tons of context and rarely worked. The main issue is that document styles are inherited (just like in the DOM) so you never really know how edits will turn out.
+- Code editing agent
+  - I tried this next (this is how the new Claude agent edits files). But again, the agent couldn’t see the document, so wrote code that made bad edits / broke formatting. It was also v slow because I needed to spin up a code sandbox every time the agent needed to edit the file.
+- How I built a solution
+  - I realised I needed to finetune one of the open source models, specifically a VLM. I collected lots of examples of natural language edit requests and their corresponding file changes (including what they looked like). Then I built a system that fuzzy-matches where the edit should occur (grabbing the relevant XML chunks), rendered those parts of the document, and sent the rendered images, plus the edit instruction and chunks, to the model. The model returns the updated XML chunks, which I then use to patch the raw XML content of the document.
+  - So far, this approach has worked extremely well - well enough that I decided to release it as a dev tool so others can build their own agents. If you’d like to try the model or need your agent to edit DOCX/PDF files, you can check it out here: https://www.agentoffice.dev/
+  - The main thing skipped is the fact that I wrote a lossless HTML-like mapping from XML for the model to suggest edits in.
+
+- I didn't fully understand what is the flow when using your API. I load the docx, request and edition, and it returns me a new docx with the editions?
+  - Not quite. You load the docx. After that, you can request as many editions as you want (they are applied sequentially (FCFS). You can download the document through a separate endpoint at any given time.
+  - This setup allows the API to support both live document editing (for use in a GUI editor) and asynchronous editing (for agents or background processes). But thanks for flagging I will try and make it a more clear. 
+
+- Make one for Microsoft Excel
 
 - ## [Text Editing, AI and Problems that Go Away _202508](https://terrycrowley.medium.com/text-editing-ai-and-problems-that-go-away-ad73a4993ca4)
 - The standard best-practice architecture for an interactive application (since the mid-seventies with full-screen display applications like emacs and VI and continuing into the GUI and web/mobile era of today) is one where the application maintains a data model that is rendered into a view. 

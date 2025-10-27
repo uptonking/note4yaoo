@@ -12,13 +12,29 @@ modified: 2021-09-30T07:43:25.286Z
 - 关于组件与文档设计
   - 复用文本过于灵活，需要各种解析器
   - 复用js函数则设计更清晰、复用更简单(特别是纯函数)
-# spec
+# specs
 - markdown
   - https://daringfireball.net/projects/markdown/
+
 - GitHub Flavored Markdown Spec
   - https://github.github.com/gfm/
+  - ✨ extensions: table, task list, strikethrough, autolinks, no-raw-html
   - https://guides.github.com/features/mastering-markdown/
   - [Basic writing and formatting syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+
+- [GitLab Flavored Markdown (GLFM) | GitLab Docs](https://docs.gitlab.com/user/markdown/)
+  - Alerts
+  - Footnotes
+  - Front matter
+  - Inline diffs
+  - Wiki-specific Markdown
+  - Extended Markdown in GitLab
+    - Multiline blockquotes
+    - Colored code and syntax highlighting
+    - Linkable heading IDs
+    - Embedded videos and audio: Image tags that link to files with a video/audio extension
+    - Automatically linking URLs
+
 - ReadMe-flavored markdown 
   - https://rdmd.readme.io/docs/syntax-extensions
   - Code Tabs, Callouts, @embed

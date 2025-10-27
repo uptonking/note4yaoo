@@ -220,7 +220,15 @@ redis-cli shutdown
 # discuss-macos-tricks
 - ## 
 
-- ## 
+- ## 📃 不要在 macOS 上乱改 git 仓库里文件名的大小写，会变得不幸
+- https://x.com/Megabits_mzq/status/1982496477537800594
+- 因为 macOS 的文件系统底层拿大小写当放屁，直接改文件名大小写不会触发更新。有个小技巧是先给文件名随便加个字，再改成正确的，这样一来一回文件就被保存成正确的大小写了。我已经养成习惯了，每次都这么改。
+
+- 当然也可以独立分一个区出来设置成大小写敏感的 APFS(Case-sensitive) 放项目文件
+  - 会带来一些其他的问题，不是所有的程序都考虑了这种情况
+
+- git config --global core.ignorecase false
+  - 没用。windows/osx默认环境下修改路径大小写不会触发变更通知，git根本就不知道文件名有变化。撞上了就老老实实用git mv处理
 
 - ## [Change DNS Server From Terminal (or script) on Mac OS X - Super User](https://superuser.com/questions/86184/change-dns-server-from-terminal-or-script-on-mac-os-x)
 

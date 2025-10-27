@@ -243,13 +243,13 @@ modified: 2025-03-22T16:10:24.856Z
   - 公益站 [Search results for '公益站' - LINUX DO](https://linux.do/search?q=%E5%85%AC%E7%9B%8A%E7%AB%99%20order%3Alatest)
   - 📌 [Agent Router](https://agentrouter.org/), 每日签到获取$25
     - 支持 Claude Code、Codex、RooCode、Qwen Code、Gemini Cli 等多款工具
-    - 似乎不支持claude ❓
+    - 模型支持不稳定, 似乎不支持claude
     - > 签到功能在哪里呀？ 退出登录重新登陆就好了. 
     - https://github.com/aceHubert/newapi-ai-check-in
     - https://github.com/millylee/anyrouter-check-in
     - [AgentRouter 问题汇总 · Issue · millylee/anyrouter-check-in](https://github.com/millylee/anyrouter-check-in/issues/48)
       - agent 是在登录的时候签到的，并没有额外的 sign_in 接口，是在登录的那个接口是返回了一个check_in 的字段判断的，所以才把cookie 时间给调短了，就是让重新登录签到才有效
-  - [Any Router](https://anyrouter.top/), 无法签到和更多额度
+  - 📌 [Any Router](https://anyrouter.top/), 每日签到获取$25
     - 无充值，邀请注册来获得更多额度
     - 本站直接接入官方 Claude Code 转发，无法转发非 Claude Code 的 API 流量
     - tg群讨论的内容看，作者似乎精力不在anyrouter而在开发商用产品
@@ -266,7 +266,7 @@ modified: 2025-03-22T16:10:24.856Z
     - gpt-load 作者
     - 使用兑换码兑换余额后的账号视为激活用户, 激活用户可长期使用，额度用完后可无条件联系我增加额度
     - [【T佬公益】TBAI公益站主贴-爽用Gemini|OpenAI|DeepSeek模型 ](https://linux.do/t/topic/683726)
-  - 📌 [23公益站](https://sdwfger.edu.kg/), 不用签到
+  - 📌 [23公益站](https://sdwfger.edu.kg/console), 不用签到
     - 平台将于每周五、周六统一发放额度兑换码。 额度申请：如您的额度提前用尽，可联系管理员进行补充申请
     - 模型丰富: claude, gpt
   - [KYX-API](https://api.kkyyxx.xyz/), 不用签到
@@ -313,14 +313,14 @@ modified: 2025-03-22T16:10:24.856Z
   - [白嫖最强AI编程模型Claude 4.5，暨一哥Claude Code的免费下位替代（10月22亲测可用） - 知乎](https://zhuanlan.zhihu.com/p/81947374736)
   - [求推荐免费模型api，公益站付费的太慢了，只是用于ai中文翻译成英文，速度有要求 - 搞七捻三 - LINUX DO](https://linux.do/t/topic/1061766)
 
-- [OpenRouter API Rate Limits ](https://openrouter.ai/docs/api-reference/limits)
+- 📌 [OpenRouter API Rate Limits ](https://openrouter.ai/docs/api-reference/limits)
   - tldr: rpd-1000 
   - Free usage limits: If you’re using a free model variant (with an ID ending in `:free`), you can make up to 20 requests per minute. 
   - If you have purchased less than 10 credits, you’re limited to 50 :free model requests per day.
   - If you purchase at least 10 credits, your daily limit is increased to 1000 :free model requests per day.
   - If your account has a negative credit balance, you may see `402` errors, including for free models.
 
-- [Cerebras Inference Rate Limits](https://inference-docs.cerebras.ai/support/rate-limits)
+- 📌 [Cerebras Inference Rate Limits](https://inference-docs.cerebras.ai/support/rate-limits)
   - tldr: tpd-1m, rpd-14.4K
   - 注意免费模型的context长度最大为64k
   - Model	TPM	TPH	TPD	
@@ -331,6 +331,10 @@ modified: 2025-03-22T16:10:24.856Z
   - qwen-3-235b-a22b-thinking-2507	60K	1M	1M
   - qwen-3-coder-480b	150K	1M	1M, rpd-100
 
+- 📌 [NVIDIA NIM APIs](https://build.nvidia.com/explore/discover)
+  - free: Up to 40 rpm
+  - models: deepseek-r1, qwen3-coder-480b
+
 - [Groq Rate Limits - Docs](https://console.groq.com/docs/rate-limits)
   - tldr: tpd-100k~500k
   - MODEL ID	RPM	RPD	TPM	TPD
@@ -340,10 +344,6 @@ modified: 2025-03-22T16:10:24.856Z
   - llama-3.3-70b-versatile	30	1K	12K	100K
   - moonshotai/kimi-k2-instruct-0905	60	1K	10K	300K
   - meta-llama/llama-4-scout-17b-16e-instruct	30	1K	30K	500K
-
-- [NVIDIA NIM APIs](https://build.nvidia.com/explore/discover)
-  - free: Up to 40 rpm
-  - models: deepseek-r1, qwen3-coder-480b
 
 - [Gemini Developer API Pricing  ](https://ai.google.dev/gemini-api/docs/pricing)
   - tldr: 国内不可用, rpd-100~250
@@ -370,7 +370,7 @@ modified: 2025-03-22T16:10:24.856Z
   - Our free allocation allows anyone to use a total of 10, 000 Neurons per day at no charge. 
   - Workers AI is included in both the Free and Paid Workers plans and is priced at $0.011 per 1, 000 Neurons.
 
-- [魔搭推理API-Inference API推理介绍 · 文档中心](https://modelscope.cn/docs/model-service/API-Inference/intro)
+- 📌 [魔搭推理API-Inference API推理介绍 · 文档中心](https://modelscope.cn/docs/model-service/API-Inference/intro)
   - tldr: rpd-200~500
   - 免费推理API由阿里云提供算力支持，要求您的ModelScope账号必须绑定阿里云账号后才能正常使用。
   - 每位魔搭注册用户，当前每天允许进行总数为2000次的API-Inference调用，其中每单个模型不超过500次，具体每个模型的限制可能随时动态调整。
@@ -389,7 +389,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 语言模型(Chat)	 RPM=1000-10000 TPM=50000-5000000
     - 🖼️ 图像生成模型(Image)	 IPM:2 IPD:400
 
-- [iflow 心流开放平台 - 限流](https://platform.iflow.cn/docs/limitSpeed)
+- 📌 [iflow 心流开放平台 - 限流](https://platform.iflow.cn/docs/limitSpeed)
   - 当前服务免费使用，但请合理使用资源，避免不必要的高并发请求。
   - 每个用户最多只能同时发起一个请求，超出限制的请求会返回429错误码。
   - 流式请求: 主动取消后立即释放令牌，推荐使用流式请求以提高效率。
@@ -408,7 +408,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 百万tokens输入（缓存未命中）	2元
   - 百万tokens输出	3元
 
-- [Z. AI DEVELOPER DOCUMENT](https://docs.z.ai/guides/overview/pricing)
+- 📌 [Z. AI DEVELOPER DOCUMENT](https://docs.z.ai/guides/overview/pricing)
   - tldr: 请求并发数量（在途请求任务数量）-flash-200/air-50
   - GLM-4.5-Flash	Free Free ✅
   - GLM-4-32B-0414-128K	$0.1  	$0.1
@@ -435,6 +435,14 @@ modified: 2025-03-22T16:10:24.856Z
 
 - [Moonshot AI 开放平台 - 充值与限速](https://platform.moonshot.cn/docs/pricing/limits)
   - 赠送用完后需要充值
+
+- [七牛 AI 大模型推理服务 - 七牛云](https://www.qiniu.com/ai/chat)
+  - 采用按量计费的模式，根据实际使用的 token 数量收费，每月初出账。新用户享有免费额度
+
+- [GitHub: Prototyping with AI models ](https://docs.github.com/en/github-models/use-github-models/prototyping-with-ai-models#rate-limits)
+  - 限制很严格
+  - Requests per day	50~150
+  - Tokens per request	8000 in, 4000 out
 
 - [huggingface Pricing and Billing](https://huggingface.co/docs/inference-providers/pricing)
   - limited to models smaller than 10GB. Some popular models are supported even if they exceed 10GB.

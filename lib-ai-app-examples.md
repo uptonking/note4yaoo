@@ -148,14 +148,28 @@ modified: 2023-02-08T07:20:48.475Z
   - https://github.com/KolosalAI/kolosal-server /apache2/202509/cpp
     - inference server for large language models with OpenAI-compatible API endpoints. Now available for both Windows and Linux systems
 
+- https://github.com/iBz-04/offeline /MIT/202510/ts
+  - https://offeline.site/
+  - Offeline is a privacy-first desktop & web app for running LLMs locally on your hardware using multiple backend options
+  - All AI models run locally on your hardware. No data is sent
+  - Multi-Platform: Use via browser (web app) or native desktop application with Electron
+  - Offline-Capable: Download models once, use them offline indefinitely (WebGPU mode)
+  - Multiple AI Backends: Choose your preferred inference engine:
+    - Ollama - Manage and run models with Ollama backend
+    - llama.cpp - CPU/GPU optimized inference on desktop
+    - WebGPU - Run models directly in your browser using GPU acceleration
+  - File Embeddings: Load and ask questions about documents (PDF, MD, DOCX, TXT, CSV, RTF) - fully locally
+  - Voice Support: Interact with the AI using voice messages
+  - Export Conversations: Save your chats as JSON or Markdown
+
 - https://github.com/binary-husky/gpt_academic /GPLv3/202405/python/js
   - https://github.com/binary-husky/gpt_academic/wiki/online
   - 为GPT/GLM等LLM大语言模型提供实用化交互接口，特别优化论文阅读/润色/写作体验，模块化设计，支持自定义快捷按钮&函数插件，支持Python和C++等项目剖析&自译解功能，PDF/LaTex论文翻译&总结功能，支持并行问询多种LLM模型，支持chatglm3等本地模型。
   - 接入通义千问, deepseekcoder, 讯飞星火, 文心一言, llama2, rwkv, claude2, moss等。
 
-- 写了个基于 ChatGPT 的 AI 维权律师，根据事实和诉求帮当事人生成起诉书。
+- https://github.com/imyuanx/ai-lawyer
+  - 写了个基于 ChatGPT 的 AI 维权律师，根据事实和诉求帮当事人生成起诉书。
   - https://twitter.com/imyuanx/status/1641715695762436098
-  - https://github.com/imyuanx/ai-lawyer
 
 - https://github.com/nicepkg/gpt-runner
   - Conversations with your files! Manage and run your AI presets!

@@ -293,6 +293,11 @@ modified: 2024-08-24T16:30:20.218Z
     - This project is currently using the /responses endpoint from OpenAI's API. Ollama has compatibility with some OpenAI API endpoints, but the /responses endpoint is not included yet.
   - [Codex CLI is Going Native · openai/codex · Discussion _202505](https://github.com/openai/codex/discussions/1174)
     - We're planning to continue merging bugfixes in the TypeScript implementation, while we get the Rust implementation to experience and feature parity in the coming weeks.
+  - 🍴 forks
+  - https://github.com/just-every/code /apache2
+    - a community-driven fork of `openai/codex` focused on real developer ergonomics: Browser integration, multi-agents, theming, and reasoning control — all while staying compatible with upstream.
+    - Auto Drive runs the whole play – hand `/auto` a task and it now plans, coordinates agents, reruns checks, and recovers from hiccups without babysitting.
+    - [I got tired of GPT-5 being limited by codex, so I forked it : r/OpenAI _202508](https://www.reddit.com/r/OpenAI/comments/1mtqww5/i_got_tired_of_gpt5_being_limited_by_codex_so_i/)
 
 - https://github.com/Aider-AI/aider /37.1kStar/apache2/202508/python
   - https://aider.chat/

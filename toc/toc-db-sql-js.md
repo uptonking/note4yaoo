@@ -44,7 +44,7 @@ modified: 2021-08-30T18:56:14.863Z
 # db-sql-tools
 - [SQL Workbench - Rapid prototyping SQL Queries & Data Visualizations](https://sql-workbench.com/)
 
-- https://github.com/chartdb/chartdb /AGPLv3/202501/ts
+- https://github.com/chartdb/chartdb /19.9kStar/AGPLv3/202510/ts
   - https://chartdb.io/
   - a powerful, web-based database diagramming editor
   - Instantly visualize your database schema with a single "Smart Query." Customize diagrams, export SQL scripts, and access all features—no account required.

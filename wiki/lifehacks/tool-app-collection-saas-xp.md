@@ -14,8 +14,12 @@ modified: 2022-11-07T10:25:12.034Z
   - [names.org - The Meaning Of Names](https://www.names.org/)
   - address
     - West Hollywood Park: 647 N San Vicente Blvd, West Hollywood, CA 90069
-    - +1 323 8486534
-    - West Hollywood is a city in Los Angeles County, California, United States
+      - +1 323 8486534
+      - West Hollywood is a city in Los Angeles County, California, United States
+    - 佛山市顺德区
+      - 528311
+      - 广教地铁站C出口美的小区
+      - 3栋6楼
 
 - 提高feed内容流中有效信息的密度
   - 暂停浏览较长时间后，平台recsys推荐流的信息更有效
@@ -49,18 +53,56 @@ modified: 2022-11-07T10:25:12.034Z
   - elm
   - more: d3, prisma
 
-- underrated-sites
-  - [LINUX DO - 新的理想型社区](https://linux.do/)
-    - 是否还记得十多年前互联网的模样？那时候的人们乐于分享自己的见识，不以有钱为成功标准。
-  - [NodeLoc - 自由、平等、友好、开放、有趣的交流社区](https://www.nodeloc.com/)
-    - 致力于为网络爱好者、开发者、站长和基础设施运营者提供一个交流经验、共享资源、探索技术的温暖港湾
-    - 参与网络运维、服务器配置、DNS、邮件系统、虚拟化等技术的深入讨论
-
-- [LinuxDo商家评价平台](https://rate.linux.do/)
-
 - forum-site
   - prosemirror
   - [TiddlyWiki: Talk TW - Community discussion forum about TiddlyWiki](https://talk.tiddlywiki.org/)
+# vps-dns-domain
+- sites
+  - [LINUX DO - 新的理想型社区](https://linux.do/)
+    - 是否还记得十多年前互联网的模样？那时候的人们乐于分享自己的见识，不以有钱为成功标准。
+  - [IDC Flare - 域名、主机等信息集散地](https://idcflare.com/about)
+    - 站长是linux.do的管理员
+  - [NodeLoc - 自由、平等、友好、开放、有趣的交流社区](https://www.nodeloc.com/about)
+    - 致力于为网络爱好者、开发者、站长和基础设施运营者提供一个交流经验、共享资源、探索技术的温暖港湾
+    - 参与网络运维、服务器配置、DNS、邮件系统、虚拟化等技术的深入讨论
+  - [NodeSeek](https://www.nodeseek.com/about)
+    - 旨在为主机爱好者打造高品质社区
+
+- [LinuxDo商家评价平台](https://rate.linux.do/)
+
+- [风萧萧公益机场再度开放 ](https://linux.do/t/topic/1083315)
+  - 注册限制：需要达到 信任等级 2 或以上
+
+- 博客列车 https://blogtrain.com/
+  - [免费博客主机➕免费域名 手快有！ - Benefits - IDC Flare](https://idcflare.com/t/topic/32449)
+  - 1GB 存储
+  - 5GB 每月流量
+  - 支持FTP账户(可用于静态博客部署)
+  - 自带CloudFlare防护
+  - 支持WordPress一键安装
+  - 关于免费续期 (理论永久免费)
+  - 需要支持URL伪静态的佬，请在面板->高级功能->Nginx Url重写功能中设置即可
+  - 对`Cpanel`或者`DirectAdmin`熟悉的佬应该是很好上手的
+  - 先免费主机dns管理添加自己的域名，然后cf添加cnname记录，具体在邮件Account Information里。直接指向ip不行应该是cf防护的原因
+  - https://yaoo.vn.kg/
+
+- [DigitalPlatDev/FreeDomain](https://github.com/DigitalPlatDev/FreeDomain/blob/main/documents/domains/faq.md)
+  - How many free domain names can be registered? 
+    - Currently, the limit is 3.
+    - you can set up subdomains via your DNS panel (e.g., `example.foo.us.kg`).
+  - You can use it with virtually any DNS management system
+  - [免费域名DPDNS. ORG 可托管CF - Tutorial - IDC Flare](https://idcflare.com/t/topic/10731)
+  - https://dash.domain.digitalplat.org/
+  - dpdns.org  可託管CF
+  - qzz.io     可託管CF
+  - https://www.zhihu.com/question/29886750/answer/1949599887197975626
+    - 域名每180天可免费续订一次, 需要手动点击续订
+  - https://www.zhihu.com/question/606055938/answer/1933090414195347812
+    - 可用在内网穿透的场景
+    - [手把手教你怎么用 Cloudflare Tunnel 穿透 HTTP / SSH / TCP 服务 _202510](https://linux.do/t/topic/1091998)
+    - [使用 Cloudflare Tunnel 作為低成本的 ngrok 替代品：可自訂 domain 的 reverse tunneling 解決方案，讓外網連上本地 server | Medium](https://medium.com/@zetavg/%E4%BD%BF%E7%94%A8-cloudflare-tunnel-%E4%BD%9C%E7%82%BA%E4%BD%8E%E6%88%90%E6%9C%AC%E7%9A%84-ngrok-%E6%9B%BF%E4%BB%A3%E5%93%81-6b0aaef97557)
+
+- [关于YE. GS的免费域名的开放注册时间定在11.01 - 情报 - IDC Flare](https://idcflare.com/t/topic/35595)
 # search-google
 - [Tips for efficiently Googling. Search by:](https://twitter.com/addyosmani/status/1444195449095737346)74570622/does-mastodon-has-advance-search)
   - This is not possible (intentionally / by design).
