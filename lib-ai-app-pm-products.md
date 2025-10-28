@@ -49,6 +49,7 @@ modified: 2025-03-22T16:10:24.856Z
   - table-typewriter
 
 - 🏠 ai-architecture: 与ai的通信和计算是在前端实现，还是在后端实现
+  - 🤔 一种思路: tool-call时使用擅长tool-call的模型，分析时使用公益站的优质聊天模型
   - 🐛 前端和大模型直接对接的缺点: 关闭页面会丢失数据、流程中断、并发控制复杂
   - 🤔 why backend server
     - 消息持久化时，使用服务端id才方便消息保存与恢复、多人聊天一致性
@@ -238,8 +239,9 @@ modified: 2025-03-22T16:10:24.856Z
 - resources
   - https://github.com/cheahjs/free-llm-api-resources
 
+- tips: 公益站不稳定(3个月就倒闭一批), 来源不明可能导致效果差, 需要经常确认和维护, 不要浪费过多时间
+  - 🤔 一种思路: tool-call时使用擅长tool-call的模型，分析时使用公益站的优质聊天模型
 - 免费api的技巧: 在知乎/小红书直接搜索 免费 claude (公益站), 就会有最新的api推广信息, 可以用小号邀请自己
-  - tips: 公益站不稳定(3个月就倒闭一批), 来源不明可能导致效果差, 需要经常确认和维护, 不要浪费过多时间
   - 公益站 [Search results for '公益站' - LINUX DO](https://linux.do/search?q=%E5%85%AC%E7%9B%8A%E7%AB%99%20order%3Alatest)
   - 📌 [Agent Router](https://agentrouter.org/), 每日签到获取$25
     - 支持 Claude Code、Codex、RooCode、Qwen Code、Gemini Cli 等多款工具
@@ -274,10 +276,18 @@ modified: 2025-03-22T16:10:24.856Z
     - API 调用频率限制为 12RPM，公益站永久免费，采用公平限流策略以保障服务稳定
     - [KYX API Refueling Station 公益站额度加油站](https://quota.kyx03.de/)
   - [learn-ai 公益站点](http://free.learn-ai.top/), 需要签到
-    - 支持很少一部份claude模型
+    - 支持的模型质量较低: 很少一部份claude模型, gpt-mini/nano
     - 可以加入付费站点：https://learn-ai.top/
+  - [RawChat公益站点](https://chatgptplus.cn/)
+    - 免费的共享ChatGPT账号
+    - [RawChat公益站点](https://sharedchat.fun/)
+    - [HammerAI公益站](https://hammerai.vip/)
+  - [Claude免费镜像号池](https://share.claude.best/)
+    - 若无法对话了，说明对话额度被其他朋友用完了（需要你更换其他账号或者等待额度刷新）
+    - [RawChat公益站点 kelaode](https://kelaode.ai/)
   - [Privnode](https://privnode.com/)
     - free分组不支持claude，但支持gpt-5-nano
+    - https://pro.privnode.com/
     - [【Cone 公益站】找个佬共同维护  ](https://linux.do/t/topic/1035525)
     - [Cone 公益站更新 ](https://linux.do/t/topic/1002152)
   - [cone Veloera Zone](https://zone.veloera.org/)
@@ -285,26 +295,37 @@ modified: 2025-03-22T16:10:24.856Z
     - 不定期删除 0 额度，0 消耗，且注册超过一周的用户。
   - [薄荷 API](http://x666.me/)
     - 仅提供gemini模型
+  - [小松公益站 New API](http://api.lanapi.top/pricing)
+    - 仅提供gemini模型， 满血版
+    - 默认分组只有5分钟3次的请求速率，至尊分组无上限分组
   - [ZenscaleAi](https://gy.zenscaleai.com/)
     - 仅提供gemini模型
   - [小丑Ai公益站](https://gy.jiubanai.com/)
     - 仅提供gemini模型
   - [翰林文苑公益API站点](https://aiapi.hlwy2025.me/)
     - 价格太高了 我决定攒到1000再用
+  - [ThatAPI](https://gyapi.zxiaoruan.cn/pricing)
   - [linjinpeng Veloera](https://linjinpeng-veloera.hf.space/)
     - 现在rpm是6，模型全部免费，1级即可注册
     - 一次一美元的调用，但是这个1美元是无限刷新的，你用了就知道了
     - 聊天记录均留样检测，违规直接封禁，请不要对话任何隐私信息
     - [能否成为全站用量最大的claude 4.1 opus公益站 _202509](https://linux.do/t/topic/956435)
-  - [TudouAPI](https://www.tudou.chat/), 签到复杂
-    - 如果账户连续3天以上都是只有5-10条，会判定为屯额度账号签到失败
   - [LLM API 公益站](https://llm.indrin.cn/)
     - 本站永久运营，服务免费提供个人使用,禁止高并发,禁止高输入, 高并发会封号
     - 额度不限量,注册送$30，邀请送$5,正常用户额度快用完时会给后台增加
     - 不支持claude，支持openai, xai
+  - [归一](https://ai.luuu71.dpdns.org/pricing)
+    - gpt5
+  - [TudouAPI](https://www.tudou.chat/), 签到复杂
+    - 如果账户连续3天以上都是只有5-10条，会判定为屯额度账号签到失败
+    - 支持claude, gpt
+  - [YesCode](https://co.yes.vg/)
+    - [YesCode test](https://cotest.yes.vg/)
+  - [Becode 公益站](https://becode.be-a.dev/)
   - [88code - 企业级Claude Code/Codex中转](https://www.88code.org/)
     - 添加客服领取 10 美元免费额度, 每个用户仅限领取一次
   - [AICodeMirror官方共享平台 - 中国用户专属AI编程助手](https://www.aicodemirror.com/)
+    - 每月 2000积分
   - [packycode：全部服务指南，包含 claude code codex 公益、付费全部站点～ - 福利羊毛 - LINUX DO](https://linux.do/t/topic/933715)
   - [cto.new ](https://cto.new/)
   - [Claude 4.5 国内免费使用指南 | 最全访问方式汇总 2025 - 知乎](https://zhuanlan.zhihu.com/p/1956204058139431066)

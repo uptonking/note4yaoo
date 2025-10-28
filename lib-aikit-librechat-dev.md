@@ -43,6 +43,8 @@ modified: 2025-09-01T05:52:34.241Z
 - roadmap
   - 支持直接在界面上配置大模型url, 可参考openwebui/janai
 
+- 🤔 一种思路: tool-call时使用擅长tool-call的模型，分析时使用公益站的优质聊天模型
+
 - ❓ chat-queue: 对于很慢的本地模型，一次只能处理一个task，需要支持添加多个task到queue, 不同task可能需要切换不同模型
   - message queue, image queue
   - queue的必要性: ollama能设置并发数, 其他provider能吗

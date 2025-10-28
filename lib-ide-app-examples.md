@@ -161,6 +161,11 @@ modified: 2024-08-24T16:30:20.218Z
     - 🏠 Plan & Act modes represent Cline’s approach to structured AI development, emphasizing thoughtful planning before implementation. 
     - Workflows: a series of steps to guide Cline through a repetitive set of tasks
     - Automatic Context Summarization: When your conversation approaches the model’s context window limit, Cline automatically summarizes it to free up space and keep working
+  - https://github.com/cline/cline/tree/main/cli /apache2/go
+    - https://docs.cline.bot/cline-cli/overview
+    - coding agent CLI - capable of creating/editing files, running commands, using the browser, and more
+    - Multi-Model Support: Works with Anthropic Claude, OpenAI GPT, and other AI models
+    - 依赖grpc、better-sqlite3
 
 - https://github.com/RooCodeInc/Roo-Code /19.2kStar/apache2/202509/ts
   - https://roocode.com/
@@ -248,11 +253,45 @@ modified: 2024-08-24T16:30:20.218Z
   - goose is your on-machine AI agent, capable of automating complex development tasks from start to finish. More than just code suggestions, goose can build entire projects from scratch, write and execute code, debug failures, orchestrate workflows, and interact with external APIs - autonomously.
   - Designed for maximum flexibility, goose works with any LLM and seamlessly integrates with MCP-enabled APIs, making it the ultimate AI-powered assistant
 
+- https://github.com/winfunc/opcode /18.4kStar/AGPL/202510/ts/rust
+  - https://opcode.sh/
+  - A powerful GUI app and Toolkit for Claude Code - Create custom agents, manage interactive Claude Code sessions, run secure background agents, and more.
+
 ## terminal-ai
 
 - tips
   - 对于模型厂商推出的cli-coding，会尽可能多的使用token来实现更好的效果
     - 对于类似cursor应用层推出的coding产品，会偏向减少token用量来降低成本
+  - cli的实现经常与模型厂商自己的sdk紧密结合，但只要兼容openai的协议就可通用，目前不通用的是gemini-cli, 可考虑开发patch
+  - ui类型的工具逐渐开始支持cli, 如cline-cli
+
+- https://github.com/QwenLM/qwen-code /11.9kStar/apache2/202509/ts
+  - https://qwenlm.github.io/qwen-code-docs/zh/
+  - Qwen Code 将先进的代码模型能力带入你的终端，提供交互式的 Read-Eval-Print Loop (REPL) 环境
+  - Qwen Code is a powerful command-line AI workflow tool adapted from Gemini CLI
+  - Qwen Code 由一个客户端应用 (packages/cli) 和一个本地 server (packages/core) 组成。
+  - Qwen Code 还包含多种工具，用于执行文件系统操作、运行 shell 命令和网络请求等任务，这些工具由 packages/core 管理。
+  - Mainland China: ModelScope offers 2, 000 free API calls per day
+    - Qwen Code may issue multiple API calls per cycle, resulting in higher token usage (similar to Claude Code). We're actively optimizing API efficiency.
+  - [Clicking `esc` will not escape ](https://github.com/QwenLM/qwen-code/issues/496)
+    - New line? That’s Ctrl+J. (esc to cancel, 6s)
+  - 📴 [有人尝试过本地部署吗？ _202507](https://github.com/QwenLM/qwen-code/discussions/828)
+    - 可以连接，我现在连了本地部署的 Ollama，用 qwen3:14b 是可以正常工作的，就是 14b 能力太弱，等于请了个弱智来干活。
+    - 能正常调用OLLAMA模型，试过很多模型，大都不能调用工具，只有今天新出的QWEN3:30B,配合的非常好，正常调用工具，但所有模型没有对话历史。 
+  - 📌 [qwen-code/CHANGELOG.md](https://github.com/QwenLM/qwen-code/blob/main/CHANGELOG.md)
+    - Synced upstream `gemini-cli` to v0.x.x
+    - [sync upstream gemini-cli Pull request search results](https://github.com/search?q=repo%3AQwenLM%2Fqwen-code+gemini-cli&type=pullrequests&s=updated&o=desc)
+  - [Standardize Tool Output Format for Better LLM Communication _202510](https://github.com/QwenLM/qwen-code/pull/881)
+    - This PR refactors the tool output format across the codebase to use plain text with system reminders instead of JSON structures. This change improves LLM comprehension and makes tool responses more natural and actionable.
+    - Previously, tools returned structured JSON responses (e.g., `{"success": true, "output": "..."}`) 
+    - Verbose and unnatural: JSON structures add cognitive overhead for LLMs
+    - Inconsistent parsing: The LLM had to parse and interpret JSON semantics
+    - Less human-like: Plain text is more aligned with how LLMs naturally process information
+
+- https://github.com/Piebald-AI/gemini-cli-desktop /MIT/202510/rust/ts
+  - powerful desktop and web interface for Gemini CLI and Qwen Code with visual tool confirmation, real-time thought processes, code diff viewing, chat history management & search, a file tree browser, and file @-mentions. 
+  - Built with Rust and React for performance and reliability.
+  - Multi-model support - Gemini 2.5 Pro/Flash, Qwen Code, custom OpenAI providers
 
 - https://github.com/google-gemini/gemini-cli /15.2kStar/apache2/202506/ts
   - a command-line AI workflow tool that connects to your tools, understands your code and accelerates your workflows.
@@ -265,6 +304,14 @@ modified: 2024-08-24T16:30:20.218Z
   - [Gemini CLI: your open-source AI agent | Hacker News _202506](https://news.ycombinator.com/item?id=44373754)
   - [Whats is the quota limit? 1000 of gemini 2.5 pro? You have reached your daily gemini-2.5-pro quota limit. ](https://github.com/google-gemini/gemini-cli/issues/4300)
     - The limit for Gemini 2.5 Pro for free is 100 requests per day, with the reset time approximately at 5:00 AM UTC
+  - 📴 [pr已关闭 Add OpenRouter support for Gemini models _202506](https://github.com/google-gemini/gemini-cli/pull/2319)
+    - 👷202508: I appreciate the desire to support models through open router, but we are fully focused on gemini models and endpoints right now, and do not plan to support the differences between the model access on open router vs our own endpoints.
+  - [Add support for local/offline language models (Ollola, LM Studio, etc.) ](https://github.com/google-gemini/gemini-cli/issues/5938)
+    - I made a patch script to make it work with LM Studio OpenAI compatible API
+  - [Open AI API compatible ?  ](https://github.com/google-gemini/gemini-cli/discussions/1974)
+    - At this time, we're optimizing Gemini CLI for Gemini models, and not building direct support for other LLM providers.
+    - The latest release of `LiteLLM` supports gemini cli. So you can configure a local proxy, configure any model providers you want, and then use them in Gemini CLI. Works great
+
 - https://github.com/iOfficeAI/AionUi /2.6kStar/apache2/202510/ts
   - https://www.aionui.com/
   - open-source GUI app for Gemini CLI — Better Chat UI, multi-agent support, multi-LLMs & apikey polling, Workspace Management, AI image editing & more
@@ -274,30 +321,38 @@ modified: 2024-08-24T16:30:20.218Z
   - Batch renaming, auto organization, smart classification, file merging
   - Handle Multiple Tasks at Once: Multiple conversations, no task confusion, independent memory, double efficiency
 
-- https://github.com/QwenLM/qwen-code /11.9kStar/apache2/202509/ts
-  - https://qwenlm.github.io/qwen-code-docs/zh/
-  - Qwen Code 将先进的代码模型能力带入你的终端，提供交互式的 Read-Eval-Print Loop (REPL) 环境
-  - Qwen Code is a powerful command-line AI workflow tool adapted from Gemini CLI
-  - Qwen Code 由一个客户端应用 (packages/cli) 和一个本地 server (packages/core) 组成。
-  - Qwen Code 还包含多种工具，用于执行文件系统操作、运行 shell 命令和网络请求等任务，这些工具由 packages/core 管理。
-  - Mainland China: ModelScope offers 2, 000 free API calls per day
-    - Qwen Code may issue multiple API calls per cycle, resulting in higher token usage (similar to Claude Code). We're actively optimizing API efficiency.
-  - [Clicking `esc` will not escape ](https://github.com/QwenLM/qwen-code/issues/496)
-    - New line? That’s Ctrl+J. (esc to cancel, 6s)
+- https://github.com/vybestack/llxprt-code /202510/ts
+  - open-source multi-provider (including local) fork of gemini-cli. 
+  - a powerful fork of Google's Gemini CLI, enhanced with multi-provider support and improved theming.
+- https://github.com/PardusAI/Pardus-CLI /202510/ts
+  - [Pardus CLI: Ollama Support Gemini CLI. : r/ollama _202510](https://www.reddit.com/r/ollama/comments/1of0vcq/pardus_cli_ollama_support_gemini_cli/)
+    - the same as Gemini CLI, except you don’t have to log in and can use a local host model.
+  - https://github.com/ConardLi/easy-llm-cli /202507/ts/inactive
+- https://github.com/gen-cli/gen-cli /202509/ts/inactive
+  - custom ContentGenerator for SiliconFlow
+
+- https://github.com/tcsenpai/ollama-code /apache2/202508/ts/inactive
+  - forked from Qwen Code, designed to work with locally-hosted Ollama models for enhanced privacy and data sovereignty.
+- https://github.com/tinfoilsh/qwen-code /202509/ts/inactive
+  - all AI inference to the Qwen3 Coder model is performed using Tinfoil's private AI infrastructure
+- https://github.com/AIPowerGrid/grid-code /202508/ts/inactive
+  - a coding agent powered by the grid, a decentralized network of AI workers
 
 - https://github.com/openai/codex /29.7kStar/apache2/202506/rust/ts
   - Lightweight coding agent that runs in your terminal
   - [Introducing Codex | OpenAI _202505](https://openai.com/index/introducing-codex/)
-  - [Support for local / other LLMs _202504](https://github.com/openai/codex/issues/26)
-    - The current logic supports the openai sdk, but we are excited to review contributions that would decouple this if done without introducing significant complexity to the project.
-    - This project is currently using the /responses endpoint from OpenAI's API. Ollama has compatibility with some OpenAI API endpoints, but the /responses endpoint is not included yet.
+  - 📴 [Support for local / other LLMs _202504](https://github.com/openai/codex/issues/26)
+    - This project is currently using the `/responses` endpoint from OpenAI's API. Ollama has compatibility with some OpenAI API endpoints, but the /responses endpoint is not included yet.
+    - [Codex - Ollama](https://docs.ollama.com/integrations/codex)
   - [Codex CLI is Going Native · openai/codex · Discussion _202505](https://github.com/openai/codex/discussions/1174)
     - We're planning to continue merging bugfixes in the TypeScript implementation, while we get the Rust implementation to experience and feature parity in the coming weeks.
   - 🍴 forks
-  - https://github.com/just-every/code /apache2
+  - https://github.com/just-every/code /apache2/202510/rust
     - a community-driven fork of `openai/codex` focused on real developer ergonomics: Browser integration, multi-agents, theming, and reasoning control — all while staying compatible with upstream.
     - Auto Drive runs the whole play – hand `/auto` a task and it now plans, coordinates agents, reruns checks, and recovers from hiccups without babysitting.
     - [I got tired of GPT-5 being limited by codex, so I forked it : r/OpenAI _202508](https://www.reddit.com/r/OpenAI/comments/1mtqww5/i_got_tired_of_gpt5_being_limited_by_codex_so_i/)
+  - https://github.com/a5c-incubator/codex /202508/rust/inactive
+    - Add a5c agent workflow template
 
 - https://github.com/Aider-AI/aider /37.1kStar/apache2/202508/python
   - https://aider.chat/
@@ -318,6 +373,14 @@ modified: 2024-08-24T16:30:20.218Z
   - https://github.com/IgorWarzocha/opencode-chat
     - [OpenCode Chat - a slimmer version of OC. From 20k tokens init to 5k. : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1oclqet/opencode_chat_a_slimmer_version_of_oc_from_20k/)
     - The entire prompt stack and tool descriptions have been rewritten around chatting instead of coding. 
+
+- https://github.com/MoonshotAI/kimi-cli /1.9kStar/apache2/202510/python
+  - Kimi CLI is a new CLI agent that can help you with your software development tasks and terminal operations.
+  - https://x.com/yihong0618/status/1982032672559096232
+    - 代码写的真挺好
+    - RisingWave Labs的实力
+    - pyright没有一个warning
+    - python 代码不都这样？
 
 - https://github.com/shareAI-lab/Kode /2.2kStar/apache2/202509/ts
   - Like Claude Code, but Koding with DeepSeek V3.1, Kimi2, GLM4.5, Qwen Coder etc.

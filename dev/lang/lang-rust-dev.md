@@ -14,7 +14,7 @@ modified: 2022-11-11T06:57:09.670Z
   - editor: kilo-editor, treesitter, ripgrep, xi-editor/lapce/zed
   - db: 🌹 turso, rust-kv, terminusdb-store, 
   - crdt
-  - git-like
+  - git-like: codex-cli
   - utils: mdx, mdBook/rustdoc, persistent-data-structure, arrow
   - toolchain: rspack+unplugin
   - ui: gpui(by zed), tauri/pake

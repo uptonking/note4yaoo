@@ -29,6 +29,10 @@ modified: 2025-09-16T19:59:57.856Z
   - [Find a leaderboard](https://huggingface.co/spaces/OpenEvals/find-a-leaderboard)
   - [SuperCLUE中文大模型测评基准-AI评测榜单](https://www.superclueai.com/)
   - [CLUE中文语言理解基准测评](https://www.cluebenchmarks.com/)
+
+- leaderboard-tool-call
+  - [Berkeley Function Calling Leaderboard (BFCL)](https://gorilla.cs.berkeley.edu/leaderboard.html)
+    - claude, gpt, glm, grok, kimi, qwen3-235b, gemini-pro,watt-tool-70B,deepseek-r1
 # model-usage-xp
 - models-comparison
   - 🤔 LMs are tools. Describe your use cases.
@@ -602,6 +606,39 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 - https://x.com/vista8/status/1862696894172209476
 - Vision 建议换成用 Llama 3.2 Vision 11b，比llava要好很多，且支持多语言（包括中文）的文字识别
 
+# discuss-tool-call
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🤔 [What’s the smallest, most effective model for function calling and AI agents? : r/LocalLLaMA _202503](https://www.reddit.com/r/LocalLLaMA/comments/1jd8lwp/whats_the_smallest_most_effective_model_for/)
+
+- Small models don't do well with FC as a rule. They simply lack the reasoning. That said, there is the Hammer2.1-3b model at #26 on the BFCL
+
+- From my experience, smaller models struggle with consistent tool usage, especially when multiple tools need to be chosen based on context. Even larger models like the 14b Qwen are underwhelming. That's the reality.
+  - And yes, I've tried many small models 4B, 7B, 8B, 14B and adjusted context sizes and prompts without much success.
+
+- [Open source model which good at tool calling? : r/ollama](https://www.reddit.com/r/ollama/comments/1ku4ejf/open_source_model_which_good_at_tool_calling/)
+- Im using qwen3/Qwen3-30B-A3B with a specific systempromt. Works like a charm
+- massive +1 Qwen3 has been way better for tool calling than Gemma3, Qwen2.5, and watt-tool
+- Qwen3:8b with good prompts and examples worked great for me. Also tried mistral:7b, llama3.2, llama3.1, none of them even came close. The closet competitor in the 8B range was Qwen2.5
+- We use gemma 3 and phi4 and they work really well for us. The issue we had before of the models always opting to use a tool, we solved it by adding a “send response” tool that breaks the loop.
+
+- ## 🆚 [Why do reasoning models perform worse on function calling benchmarks than non-reasoning models ? : r/LLMDevs _202504](https://www.reddit.com/r/LLMDevs/comments/1kbj0bg/why_do_reasoning_models_perform_worse_on_function/)
+- Function calling is finetuned behavior. Test time compute uses CoT behavior finetuning and RL-based rewards that weaken the function calling ability (via catastrophic forgetting?). A lot of the “thinking” chatter is also probably not improving the lost-in-the-middle attention problem either.
+
+- ## [For local models, has anyone benchmarked tool calling protocols performance? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1ntcr1k/for_local_models_has_anyone_benchmarked_tool/)
+  - I’ve been researching tool-calling protocols and came across comparisons claiming UTCP is 30–40% faster than MCP.
+  - UTCP: Direct tool calls; native support for WebSocket, gRPC, CLI
+  - MCP: All calls go through a JSON-RPC server (extra overhead, but adds control)
+
+- UTCP seems to try and remove all of the QoL MCP has, and is just an imaginary "ok but imagine how cool it would be", but not practical.
+
+- The communication overhead from tool calls will literally be the least relevant part of an LLM pipeline when it comes to performance. I do not see a point in using UTCP because none of the key players in the ecosystem (ie LLM front ends or APIs) are investing in it. It provides no additional value and instead just becomes an unnecessary wrapper or abstraction layer because some non-key players want to standardize an API that needs to be allowed to move incredibly fast.
 # discuss-models-hot/features
 - ## 
 
@@ -1434,9 +1471,80 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [CC封号太严重了，上车就翻车，平替用CC+GLM还是CodeX ？友友们有经验吗 - 开发调优 - LINUX DO _202510](https://linux.do/t/topic/1092260/10)
+- glm用着用着，会有问题解决不了的。还是需要一个能力更强的AI
 
-- ## 
+- 有几个渠道
+  - 1. 最省钱的 直接咸鱼买 尼日利亚 app store充值卡, 差不多89 RMB = 15000 货币, 刚好14990 可以订阅claude
+  - 2. Google play 绑定国内visa 卡 , 应该也可以直接订阅claude
+  - 3. 虚拟卡, bybit之类的就可以随便订阅了吧
+  - 我现在是方案1 , 什么时候这个不好使了我就用虚拟卡订阅, 梯子是要的, 但是这个网站里面不是到出都分享免费的梯子吗
+
+- GLM4.6现在都敢和GPT-5并肩了？这几乎没什么可选的吧，CODEX CLI，除了慢点起码在做事, GLM4.6超卖严重，你愿意和其他人一起抢卡和抽奖可以试试。
+
+- ## [目前有哪些公益站支持codex？ - 开发调优 - LINUX DO _202510](https://linux.do/t/topic/1095599)
+  - 国庆节之后用了一段时间codex，感觉不错，期间也用了一些公益站的。不过自从openai减量之后好像都用不了了。使用team也会报账号关联的问题。
+- No available OpenAI accounts support实际上是由CRS导致的BUG，原先只需管理员在后台手动重置状态即可，同时她适配的也有问题，我是使用OAI-KEY的形式接入，居然也会被限流拦截，然后不走企业微信推送
+
+- 大多数公益站的gpt-5只能聊天，不能工具调用。偶尔有公益站用的是官逆的gpt-5，属于站长用爱发电了。 
+
+- [公益站codex要怎么配置呀 - 开发调优 / 开发调优, Lv1 - LINUX DO](https://linux.do/t/topic/1017195)
+  - 公益站里有一些余额，想使用codex。但是不知道怎么使用。下面的办法都不行，是不是有些压根就不支持？这个配了也用不了，大佬知道怎么弄吗？比如23公益和 xmdbd
+- 有些公益站不支持Codex的，支持的在文档或者公告里都会说明
+
+- [第一種： 用上env_key，需export api key as environment variable]
+  - [第二種：用http_headers，需在 auth.json加上api key，但不用export env var]
+- 我用的佬的23公益站，方法二调用成功了，感谢佬提供的方法
+
+- 不知道你是怎么调用的，如果是调用作为mcp的话，那就偶尔才能成功。因为这个只有基本的chat功能，你可以找一些支持fc功能的站点
+
+- ## [一个 Claude Code 公益站，支持 GLM, DS 3.1, Qwen 3, K2 等 - 资源荟萃 - LINUX DO](https://linux.do/t/topic/895380/1)
+- 虽然我创建了 Veloera。但用 new api 而不是 veloera 原因很简单，veloera 还没有 cc 支持  
+
+- [公益站的api来源是什么 - 搞七捻三 - LINUX DO](https://linux.do/t/topic/1099545)
+  - 2API和投喂为主
+- Gemini-2.5Pro和绘图系列为GeminiCli逆向，可以自行部署使用较为稳定的，不做项目推荐，因为在用系统系Claude魔改版本
+  - Gemini-2.5-flash有个轮询分组，来源于其名称一模一样
+  - GLM系类为官转，转接与官方渠道
+  - GPT系类为官转，其中5-Codex来源于逆向Codex，5来源于微软AZ
+  - KAT来源于快手官方平台转接
+- OpenRouter、OaiPro 这种是正价官转（不过这俩不是公益），是纯官方 API
+  - 其他公益站就是明确告诉你主要渠道就是 2api，公益站一般是免费站 2api，付费站则主要是 Pro/Max 2api，当然还有 GLM ￥0.01 亿万 Tokens 这种不是 2api 的随机羊毛。偶尔也有大善人 Azure、AWS 等赠金快过期了捐给公益站这种也是纯官转 API。
+
+- ## 🤔 [深入浅出，解密 L 站内中转站的秘密 - 搞七捻三 / 搞七捻三, Lv1 - LINUX DO _202509](https://linux.do/t/topic/981851)
+- 目前据我所知的中转站分为两类：
+  - 1 是通过类似 new api 进行转发的
+  - 2 是直接提供官方账号的 sk 的
+
+- 通过类似 new api 进行转发的，本质上连接到 claude 或者 openai，都是同一出口，中间过了中转站站长的号池，这里会出现一个差别 ** 缓存命中 **，也就是说如果同一个人，短期内都用一个模型，模型会更加容易记住自己要做什么，效率更高，费用更低
+  - 改成多队列，按人分列, 提高了缓存的命中率，从而降低成本
+- claude的plus和max套餐，区别在于使用的tokens，那站长们除了提高缓存命中，减少tokens消耗之外，当然就要给你的账户限制额度啦，假设一个claude max一天可以瞪1000美刀，那么一般的站长就会超发，会拆成每个人100美刀，卖15个人左右，因此你会看到中转站大多数都是按月套餐，每日限额
+- 优势：轻度使用时，费用低，使用简单【不需要管节点和号池】
+- 劣势：重度使用时，费用高，非同key比同key效果差【本人用中转站codex和gpt-team codex对比结果】
+
+- 接提供官方账号的 sk 的
+  - 除了缓存优势外，就是不限额，这个key只有自己在用
+  - 优势：重度使用时，费用低，缓存命中高，效率高，效果好，稳定性高
+  - 劣势：需要自备干净节点，具备一定的基础
+
+- 少了一种：二开插件或者包装插件的，这种就是黑盒了。
+
+- 公益站就多了，还是得分类
+  - 如果只对编程来说，几乎比较少公益站能稳定运行，因为编程的封号概率极低，他们这些号主要来源于，别人想要激发退款流，而抛出来的账号，例如max用户，订阅是1个月，大概使用20天之后，就会抛出他们的账号，让大家刷，便于退款，公益站多数收集这些账号，途径包含L站或者隔壁站点之类的，甚至飞机上会有相对于的群聊
+  - codex的途径相对简单，目前都是来自1刀team的比较多
+  - 其余就是富可敌国的中转站们放出来的公益，比较没人用就是沉没成本，还不如趁机推广
+  - 有以前一些AI中转站推广的时候送的余额+注册机堆积起来的，像火山，openrouter，硅基之类的，也有gpc300剩余的余额用于公益站的，渠道较多，稳定性也较高，打野的除外
+
+- 目前的codex来源大多数是用野卡1美金开了一个月team，相当于成本很低，所以大家都拿来做公益
+- 其实都是辛苦费，因为你不知道什么时候，号就掉了，掉了又要担心会不会黑卡，会不会风控，如果是境外卡，风控被冻结了，人是要去国外解冻的
+
+- 野卡连卡都是野的，没有人在乎这个的，而且1刀team的途径很多，还有通过google pay去开通，另外openai没有claude监管严格了，应该知道自己热度不行了，封号的越来越少
+- 国外一堆野鸡银行的信用卡，野卡目前也只能用来开1刀team，卡未必就真的是你的实名，月末你不还款，卡就被冻结了，但是野鸡银行申请卡非常简单，一般一次能申请20-30张
+
+- 2API只能被拿去镜像站和酒馆，因为2API的没有function call，调用不了工具
+- 不能调 function call的 还有一种，就是逆向的，说白了中转的背后和你在网页版聊天一样，这样就没有按tokens计费，这种在一些特定情况下就会不太好用
+
+- 可以看看亚马逊对这个缓存的介绍，不是简单的问题，他默认的周期是5分钟， 系统会自动检测重复的代码模式、上下文和请求，同人同key命中率能达到90%。
 
 - ## 看到一个同行退了，所以还是 A 厂“胜利”了
 - https://x.com/tuzi_ai/status/1982641845575589987

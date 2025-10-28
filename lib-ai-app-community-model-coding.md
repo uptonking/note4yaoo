@@ -620,6 +620,8 @@ def slugify(text):
 - DigitalPlat provides Free Domain For Everyone. how many domains can i register?
   - 文档里面是3但过时了，实际初始数量为1，github收藏后为2
 
+- 让AI将文章中典型的四六级词汇挑选出来
+
 - [一些用于测评大模型各项能力的Prompt - 知乎](https://zhuanlan.zhihu.com/p/17086056493)
 - 请把下面这句话翻译成蒙古文/越南喃字/希伯来语："我能吞下玻璃而不伤身体。"
 - 请给我的论文《国内外方便面硬度研究》寻找 10 份参考文献，国外作者的文献 5 篇，中国作者的文献 5 篇。

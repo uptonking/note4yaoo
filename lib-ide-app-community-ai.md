@@ -13,21 +13,6 @@ modified: 2024-08-24T16:28:20.515Z
 
 - products
   - [Top 6 Devin AI Alternatives for Developer to Automate Codings](https://analyticsindiamag.com/top-6-devin-alternatives-to-automate-your-coding-tasks/)
-# ide-ai-pm
-- ai工作使用服务端架构的优点
-  - 方便实现关闭页面或刷新页面后，也能看到ai工作结果的效果
-  - 方便实现多个ai并行执行多个任务的效果，提高效率
-- devin偏服务端方案而偏向创作力工作，cursor偏向工具
-# ide-ai-xp
-- ide的自动补全和多人实时协作似乎是冲突的
-
-- ai生成的代码的缩进有时与原代码不同
-  - 解决方案是在服务端执行 prettier ?
-
-- 
-- 
-- 
-
 # codellama
 - https://github.com/meta-llama/codellama /202401/python
   - Code Llama is a family of large language models for code based on Llama 2 providing state-of-the-art performance among open models, infilling capabilities, support for large input contexts, and zero-shot instruction following ability for programming tasks.
@@ -51,13 +36,6 @@ modified: 2024-08-24T16:28:20.515Z
 - [CodeLlama huggingface](https://huggingface.co/docs/transformers/en/model_doc/code_llama)
   - The Llama2 family models, on which Code Llama is based, were trained using bfloat16, but the original inference uses float16
 # code-ai
-- https://github.com/WisdomShell/codeshell
-  - http://se.pku.edu.cn/kcl
-  - CodeShell是北京大学知识计算实验室联合四川天府银行AI团队研发的多语言代码大模型基座。
-  - CodeShell具有70亿参数，在五千亿Tokens进行了训练，上下文窗口长度为8192。
-  - 在权威的代码评估Benchmark（HumanEval与MBPP）上，CodeShell取得同等规模最好的性能。
-  - CodeShell CPP：CodelShell对话模型CPP版本，支持开发者在没有GPU的个人电脑中使用。注意，CPP版本同样支持量化操作，用户可以在最小内存为8G的个人电脑中运行CodeShell。
-
 - https://github.com/princeton-nlp/SWE-bench /MIT/202405/jupyter
   - https://www.swebench.com/
   - [ICLR 2024] SWE-Bench: Can Language Models Resolve Real-world Github Issues?
@@ -174,6 +152,50 @@ modified: 2024-08-24T16:28:20.515Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Gemini is so far behind : r/GeminiCLI _202509](https://www.reddit.com/r/GeminiCLI/comments/1n7q049/gemini_is_so_far_behind/)
+- totally agree. I tested the CLI and the "improved" Gemini agent, and ohh boy, what a nightmare. I gave it a simple task, and it ended up in a loop and wasn't able to fix anything. It was over and over, "I make it worse" or "I make a mistake, " and so on.
+- I feel this. It's crazy because 2.5 Pro is an incredible model, but Gemini CLI is a mess.
+
+- Gemini CLI is unusable for me. Qwen code is way better than Gemini CLI, though still not comparable to Claude or Codex.
+
+- I wonder how much of the drop is due to your prompts (and configs) being optimized for Claude. I think somebody switching from Gemini to Claude runs into similar issues.
+
+- ## [Qwen Code > Gemini CLI : r/Qwen_AI _202509](https://www.reddit.com/r/Qwen_AI/comments/1nk0wzj/qwen_code_gemini_cli/)
+  - Compared to Gemini CLI, Qwen is a much better experience. Although Gemini 2.5 Pro can be very intelligent, it almost always fails a tool call once or twice, or formats the code it's adding wrong and apologizes over and over again. Qwen Code using Qwen 3 Coder Plus almost never fails tool calls and over all seems to understand the codebase better. I know Gemini 2.5 Pro tops benchmarks often but Qwen Coder has been much better to use in my experience. I use them both on the free tier.
+
+- I agree Qwen seems better. Gemini-CLI honestly seems to function better when you use 2.5 Flash (In my opinion anyhow).
+  - For features that need multiple files and lots of code to be written, Flash is not very good compared to Pro. Flash will also often dismiss instructions and execute a previous task that was cancelled. 
+  - I feel that codex gpt5-medium > gemini 2.5 pro > qwen > flash 2.5 overall. Flash needs very specific prompts with small changes to work well, in m'y experience.
+
+- Qwen CLI is extremely slow for me after a few messages. 
+
+- ## 🆚 [Qwen3 Coder vs. Kimi K2 vs. Sonnet 4 Coding Comparison (Tested on Qwen CLI) : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mi8lbl/qwen3_coder_vs_kimi_k2_vs_sonnet_4_coding/)
+  - Claude Sonnet 4 was the most reliable across all tasks, with complete, production-ready outputs. It was also the fastest, usually taking 5–7 minutes.
+  - Qwen3-Coder surprised me with solid results, much faster than Kimi, though not quite on Claude’s level.
+  - Kimi K2 writes good UI and follows standards well, but it is slow (20+ minutes on some tasks) and sometimes non-functional.
+  - On tool-heavy prompts like MCP + Composio, Claude was the only one to get it right in one try.
+  - Qwen3-Coder feels like the best middle ground if you want budget-friendly coding without massive compromises. 
+
+- I am absolutely baffled by all of these posts that claim Qwen3-Coder is better than kimi-k2. I've used both for weeks at Q4_K_XL and I keep returning to kimi-k2 every time. It's smarter and solves more problems than Qwen3-Coder in my experience.
+
+- I just tried qwen-code + llama.cpp (unsloth's last update seems to have fixed tool calls?) + 30B-A3B on a real task. Based on my query, it did a SearchText tool call, after which qwen-code tried a 1.8M token API request, which of course immediately errored out. I am not impressed.
+
+- I rotate between all of these. R1-0528 is still usually what fixes my code.
+  - I'll use Qwen3-Coder when a task is simple and when there are cheap providers, but otherwise asking V3-0324 and R1-0528 still feel like asking the adult in the room
+
+- I've tried 480b qwen, but GLM-4.5 Air 8bit blows that away. Its miles ahead in quality and speed.
+
+- I think qwen-coder will have an advantage since they most likely did RL through it. Since the GLM team recommended Claude Code Router I have a feeling they may have done the same. So I would assume to see GLM perform better in Claude Code vs Qwen Code.
+
+- ## [Let’s sync on CLI agents! What’s actually working for you? : r/ChatGPTCoding _202507](https://www.reddit.com/r/ChatGPTCoding/comments/1m73qb8/lets_sync_on_cli_agents_whats_actually_working/)
+- The only model that works for agentic tasks is sonnet 4. Doesn't matter what cli I use. I've been using opencode with sonnet 4 via my copilot subscription and it works well.
+
+- 100% not Gemini CLI. It was embedding hidden binary code and corrupting my files.
 
 - ## [Google introduces Gemini CLI, a light open-source AI agent that brings Gemini directly into the terminal : r/singularity _202506](https://www.reddit.com/r/singularity/comments/1lk5h19/google_introduces_gemini_cli_a_light_opensource/)
 - 
@@ -413,14 +435,31 @@ modified: 2024-08-24T16:28:20.515Z
 - 聊天模式：一个边缘的功能
 - AutoDev 的思想是将 LLM（Large Language Model）作为辅助开发者的 Copilot，通过提供辅助工具来解决一些繁琐的任务，让工程师能够更专注于有创造性的设计和思考。
 
-# discuss-code-ai
+# discuss-coding-ai
 - ## 
 
 - ## 
 
 - ## 
 
-- ## 
+- ## 现在各种编程的Vibe CLI多到程序和程序员都不够了。我列下，还来不及进行ranking。 _202510
+- https://x.com/mranti/status/1981381099889840358
+  - 1）CC系的：Claude、Deepseek、GLM（包月）、Kimi、KAT-coder（限免）；
+  - 2）Codex
+  - 3）Gemini系的：Gemini、Qwen Code（限免）、iflow（限免）、Qodercli（限免）、Cursor-Agent。
+- 不同的开源方法啊，CC是开放了大模型接口，大家都可以接入。Gemini是开源了整个框架，所以大家都学了。
+
+- 你漏了：Droid、AmpCode、Opencode
+
+- 本质上还是自己用的舒服的，然后对自己学习和工作效率提升最高的就行，没啥必要太关注ranking，如果觉得他们做的不好也可以自己手搓一个，对context engineering有更加深入的理解
+  - 数千个meta prompt, 自己手搓不太现实吧。再说，个人没有那么多数据和资源进行系统测试。
+- 是的是的，但是大致构建一个类似的会对coding agent有更好地理解，会去更好地使用，光看anthropic或者其他blog不去做就有点虚空索敌的感觉
+
+- Cli开发其实不是特别适合开发者，调用工具和上下文累计消耗的token太快，不如按次计费的ai ide，Claude code我放弃了可能是因为成本，即使是接入glm4.6到cc也不能是长期之举，写代码一天消耗个几百万token，成本都快超过6美元
+
+- GitHub Copilot CLI 算哪一系？
+  - 简单试了下copilot cli，工具本身少了cc经常用的plan mode，还有checkpoint对代码或聊天的回滚，好像也没有多chat session的管理，没有安全感。cc更新太勤快了又有先发优势，目前感觉其他家还抄不过来
+- CC 的 checkpoint 实在太好用了。Session 的支持好像在计划中了。
 
 - ## [ValTown - What we learned copying all the best code assistants _202501](https://blog.val.town/blog/fast-follow)
 - Looking back over 2024, our efforts have mostly been a series of fast-follows, copying the innovation of others.
@@ -632,310 +671,6 @@ modified: 2024-08-24T16:28:20.515Z
 - 广告就太 low 了，等待时间可能会让你做图片识别来训练AI用，以换取 token
 
 - 首行代码免广告，每一个人通过你的邀请码加入，你每次看广告时间缩短0.01秒
-# discuss-cline
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 
-
-- ## [Is the Memory Bank pattern deprecated/superceded now? : r/CLine _202510](https://www.reddit.com/r/CLine/comments/1ny9zpz/is_the_memory_bank_pattern_deprecatedsuperceded/)
-  - Not sure with all the updates Cline has had if this usage pattern is still recommended? u/nick-baumann was suggesting deprecating it a while back
-
-- No, and it's still extremely useful imo, i have different rules i use for different vertical slices and tasks that can get a new session up-to-speed very quickly. The ability to turn those rules on and off easily is a huge timesaver and Clines recent other improvements have done nothing to deprecate this use-case
-
-- I believe that post was just asking for options if it should be deprecated and he suggested that the focus chain https://docs.cline.bot/features/focus-chain might provide a better workflow now.
-
-- You gotta remember, memory bank works with your custom instructions, even with the updates even though we can't access those at the GUI in VSCode, it currently still refers to it as that file lives in /cline/rules... technically you don't even need Cline, just any LLM with a filesystem MCP server.
-
-- ## [What happened to context compression every 6 prompts? : r/CLine _202509](https://www.reddit.com/r/CLine/comments/1np8vjk/what_happened_to_context_compression_every_6/)
-
-- ## 🏠 [Why Cline cannot edit multiple files at once? : r/CLine _202509](https://www.reddit.com/r/CLine/comments/1njhygc/why_cline_cannot_edit_multiple_files_at_once/)
-
-- RooCode can do multi-file reads and edits.
-
-- This is actually a fundamental architectural constraint, not a performance oversight. The sequential approach exists because:
-  - Context consistency - LLMs work with potentially outdated file states. Parallel edits would create conflicting contexts the model can't reconcile.
-  - Dependency management - Code files have complex interdependencies. When refactoring a class name across multiple files, you need to ensure all references update consistently.
-  - Error handling - When a diff edit fails (which happens), sequential processing allows immediate feedback and correction before issues cascade.
-- The workflow is fundamentally: LLM generates change → Tool applies → File system updates → Feedback → Next decision. Each step needs the previous one to complete for the model to make informed decisions about what to do next.
-
-- Cline has instructed the model in its system prompt to execute only one tool at a time.
-  - I would guess that back then it really worked far better. Even today it works very well.
-  - But indeed - it has its drawbacks - speed, and expensive (for those paying per request)
-  - Can cline do better on this front ? I’d say definitely - Claude Code does very well , while supporting executing multiple tools in a single call. And it makes Claude Code dramatically faster, with the same provider and model compared to Cline.
-- Cursor also executes multiple tools at once.
-# discuss-RooCode
-
-## docs-RooCode
-
-- Can Roo Code access the internet?
-  - Yes, if you are using a provider with a model that support web browsing. Be mindful of the security implications of allowing this.
-
-- Codebase Indexing creates a semantic search index of your project using AI embeddings. 
-  - This enables Roo Code to better understand and navigate large codebases by finding relevant code based on meaning rather than just keywords.
-
-- Roo Code made changes I didn't want. How do I undo them?
-  - Roo Code uses VS Code's built-in file editing capabilities. You can use the standard "Undo" command (Ctrl/Cmd + Z) to revert changes. 
-  - Also, if experimental checkpoints are enabled, Roo can revert changes made to a file.
-
-- ## 
-
-- ## 
-
-- ## [Claude Code hangs at API Request on VsCode/Code-Server · Issue  · RooCodeInc/Roo-Code _202506](https://github.com/RooCodeInc/Roo-Code/issues/5097)
-  - I use roo on Trae with Claude Code and doesnt have this problem. Every command is executed and API Reqeustr works
-  - On Code-Server - VsCode, Roo just hangs when using claude code and once in a while it manage to completes the task, but most of the time it just hangs at API Request and nothing happens.
-  - Code-Server VSCode on my server accessed through browser.
-  - Im running debian
-
-- I created a PR that solves this issue on my machine. The cause was (in Windows using Claude Code through the WSL) trying to send all the context as part of the command-line arguments, and Windows PowerShell wouldn't accept more than 8191 characters, which was being vastly outstripped. The PR changes the approach to use stdin and Claude Code's expected schema. There is a lot being passed in just the system prompts, and that alone was hitting that limit on my machine, never mind any open files.
-# discuss-Roo-roadmap
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 
-
-- ## ✏️ [Unnecessary Full-File Edits for Small Code Changes · Issue · cline/cline _202410](https://github.com/cline/cline/issues/583)
-  - I’ve noticed a behavior that feels like a bug when working with large code files. When I need to make small changes—perhaps modifying only a few dozen lines—cline often invokes the `edit file` tool to update the entire file from the beginning, even when 99% of the file doesn’t need any changes.
-  - this behavior of editing the entire file seems unnecessary and inefficient when only small parts are being modified.
-- My previous experience with patch file syntax is less than ideal - tricky to manage, tricky for the LLM's to get right, so I've been playing around with an alternative implementation, inspired by Aider's logic, added two tools: Search And Replace and Insert Code Block to try to work around this issue.
-  - As a side note, it seems the previous PR #158 is stale, since it used the previous JSON Schema style of tools - should be simple to adapt to the new XML notation though, haven't tested it - it uses the patch logic, could also work.
-
-- I've experimented with structured output like editing certain lines or unified diff format like aider, but I've found the results aren't nearly as good as whole file outputs. 
-  - The reason is these models are trained on significantly more whole code files than say diff patches, and there's been studies showing drops in performance whenever you force the models to output in a structured way ie diff or json.
-  - OpenAI just released a new API featured called predicted outputs that would fix this issue entirely.
-
-- I don't understand how you expect this to be solved by OpenAI's upcoming API feature. This project is meant to be compatible with most models, whether hosted locally or by dedicated providers.
-
-- ## ⚡️ [Add a 'compact prompt' option for local LLMs · Issue · RooCodeInc/Roo-Code _202508](https://github.com/RooCodeInc/Roo-Code/issues/7550)
-  - When using Roocode with local llm providers (like LM Studio ), API requests regularly stall and hit the 300s timeout This happens with browser/mcp tools disabled
-  - The cause seems to be that roo always builds a very large prompt/context, which local models (running at 7–10 tok/sec) cannot process fast enough
-  - Other Vscode extensions i tested (Cline, Void, Kilocode) remain usable under the same conditions because they send by default a more compact prompt, Cline also introduced a 'compact prompt' option that reduces context size when a local provider is selected
-
-- This is a complex and interesting proposal. We do not have enough internal conviction to commit right now.
-  - If someone in the community can put together a small MVP, we will revisit.
-
-- ## [Support for Alternative Vector Databases in Codebase Indexing _202507](https://github.com/RooCodeInc/Roo-Code/issues/6223)
-  - Users are limited to Qdrant as the only vector database option for codebase indexing
-- thank you for the proposal. At the moment, we're not looking to add in-process vector storage solutions. However, we are open to supporting external vector stores like ChromaDB.
-
-- That makes perfect sense - external vector stores are definitely the better approach for production environments and offer much more flexibility and scalability.
-- Phase 1: Core Architecture
-  Implementation of a generic vector store adapter/interface
-  Initial concrete implementation for Qdrant as reference
-  Corresponding tests and documentation
-- Phase 2+: Additional Stores (separate PRs)
-  ChromaDB integration
-  Further vector stores as needed (Pinecone, Weaviate, etc.)
-- This incremental approach will allow us to refine the interface based on learnings from the first implementation and review each integration in isolation.
-
-- [Add Sqlite with sqlite-vec as an alternative for Codebase Indexing _202508](https://github.com/RooCodeInc/Roo-Code/discussions/7280)
-  - What you need is already there, but you have to wait
-
-- ## [Indexing Code Base _202501](https://github.com/RooCodeInc/Roo-Code/discussions/411)
-  - Is it possible to have an indexing codebase feature, similar like Cursor. This allows analyzing & Grep searching of codebase files much more efficiently and super fast too. 
-- Perhaps MCP could be adapted for this? There is an MCP sever for qdrant - perhaps we could use a script to periodically ingest the codebase (and preferred documentation?) into Qdrant, and Cline could reference it using MCP?
-
-- it could be done, but glob search is easier, but only useful for finding related files based on task.
-  - the problem is we need to maintain this embed somewhere, we could potentially provide it via 3rd party.
-  - but MCP server is good option for now to do this 
-
-- Why Not just use LanceDB like Continue.dev? or Sqlite3 with Vector Extensions? or TursoDB which has Vector Embeddings Support?
-
-- ## [Layered and modular memory management _202508](https://github.com/RooCodeInc/Roo-Code/issues/6602)
-  - Currently, Roo Code’s memory mechanism suffers from the following issues:
-  - When using a prompt-based “memory bank, ” two problems arise: • When the AI is expected to read memories automatically, it often skips or fails to retrieve relevant memories because of prompt-compliance failures or retrieval shortcomings. If the entire memory bank (or all documents) is placed directly in .roocode/rules/, every memory is forcibly sent to the AI. This wastes tokens
-  - The RAG-based code-semantic indexing feature is worth mentioning, After a few initial trials I abandoned it because retrieval quality was poor
-
-- This isn’t currently on the Roo Code roadmap
-  - this behavior can be closely replicated using [custom modes](docs.roocode.com/features/custom-modes). You can define a workflow that reads memory files based on directory structure, giving you most of the hierarchical memory functionality described here.
-
-- ## [Roo Memories feature and Internal Memory Bank feature _202505](https://github.com/RooCodeInc/Roo-Code/discussions/3264)
-- Check the MCPs, there are too many options for "memory bank" as a concept in general
-  - but direct integration would be nice rather than mcps
-
-- [Please Add Memory Bank  ](https://github.com/RooCodeInc/Roo-Code/discussions/1954)
-  - Please add a memory bank feature—like “cline” and Roo Code Memory Bank—that stores code snippets and context across sessions. This would help users quickly reuse important info and streamline development.
-- If it is an MCP, better to find ways to optimize the link between Cline/RooCode and different tools... even Task Masters don't link well with memory tools, including the graph-based ones, and that is slightly frustrating
-
-- ## 🧠🏠 [Implement memory bank directly in Roo Code instead of configuring system instructions _202505](https://github.com/RooCodeInc/Roo-Code/issues/3312)
-  - Memory bank (See here: GreatScottyMac/roo-code-memory-bank) helps Roo code have a better project understanding by writing a detailed project brief. This way, Roo code has more context about your project. The memory bank is also updated on the fly. 
-  - The problem is that you need to go out and configure Roo's system instructions (You have per mode instructions) and initialize Memory bank by asking Roo code to do it for you. 
-  - You also need to add the memory bank directory to your .gitignore.
-
-- I have avoided using any of the various memory bank solutions. While things like this do work and do improve the experience of using Roo, if anything is going to be officially supported by Roo, I would hope that it would be some kind of `Vector/Graph RAG` storage system, something that isn't just shuffling around `.md` files. It would certainly reap long term benefits for Roo and the Roo Community .
-
-- While a full-blown RAG would be awesome, an optional memory bank with a somewhat standardized structure is a step in the right direction. I'm using Roo within something like a DDD (documentation-driven development) and have to implement something like this with custom prompts.
-
-- 💡 I think of the memory bank `.md` as a notepad for a person with amnesia. In that it does not solve the problem but provides a meaningful workaround at the expense of maintenance cost and time. Real memory solutions (ones closer to human long-term memory) will exist alongside documentation.
-  - Likely all the difficult things (competing in memory benchmarks, etc.) can be offloaded to memory providers and all Roo needs to do is connect with API credentials. Roo avoids rolling its own and focuses efforts on meaningful integration.
-
-- I'm about to release a type of memory MCP server that works along with custom instructions for the LLM. The custom instructions can be tailored to many different IDE extensions and agentic AI interfaces.
-  - There's a chance that this might work well enough so that Roo Code could use a dedicated "Documentarian" mode which will handle all interactions with the MCP. For instance, when another mode is ready to attempt completion, it will instead switch to documentarian, which will determine what if any data should be logged from that task. The it will do the attempt completion.
-
-- I don't think adding memory bank to Roo is/will be necessary with some features that are being worked on recently like codebase indexing the Roo Marketplace.
-
-- Playing with multiple "project memory" frameworks, and ending up inventing my own version anyway, I've come to believe that any implementation (i.e. what to consider important enough to keep in the memory and how to categorize it) will by definition be very opinionated. I think this shouldn't be a part of the general-purpose system such as Roo.
-
-- ## [[Feature Request] Improve Code Index search results by implementing Reranking _202507](https://github.com/RooCodeInc/Roo-Code/discussions/5539)
-  - Proposal to implement a robust, efficient reranking module. Building on the momentum from completing Code Index, the objective is to enhance search result precision, optimize token usage, and implement yet another common feature that is implemented in other mature tools.
-  - Reranking is the logical next step to undertake after completion of the Code Index project.
-
-- if you wanna use a massive model to do the work of what a smaller model can do more effectively--the brute force method always suits.
-  - But embed+rerank model pairs are still being released (see Qwen3-Embedding and Qwen3-Reranker as just one SOTA example, and currently top of MTEB leaderboard).
-  - I mean so many other parts of this project are about really finessing the actual instruction and context given to each task, so there really isn't a reason not to do rerank next.
-
-- ## 🤔 [autocomplete function cannot used · Issue · RooCodeInc/Roo-Code _202509](https://github.com/RooCodeInc/Roo-Code/issues/7591)
-- Roo Code is a chat-based AI assistant that helps with coding tasks through a sidebar interface. It doesn't provide inline code autocomplete/IntelliSense features like some other extensions do.
-
-- We have no plans to implement something like this at the moment
-
-- ## [Add features from the Continue project: Autocomplete, Embeding indexing, Rerank _202503](https://github.com/RooCodeInc/Roo-Code/discussions/2004)
-- Autocomplete & here so I can choose a different model for this task such as Qwen Coder or Codestral.
-  - Embed model for indexing local files and context retreval.
-  - Reranking model to improve Embedding retreval quality.
-
-- ## [Add Autocomplete support · RooCodeInc/Roo-Code _202501](https://github.com/RooCodeInc/Roo-Code/discussions/446)
-  - Is it possible to add autocomplete support?
-  - And ability to configure a separate (weak) model for that.
-
-- just like Continue but with a better UI/UX 
-
-- In general soe of the Continue's features are helpefull in addition to Autocomplete: Embedding for indexing local files ad retreval for context & Reranking to improve the embed.
-
-- auto-complete requires utilising a good FIM model.
-# discuss-vscode-ext-ai
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 
-
-- ## [Recommendations for Local LLMs (Under 70B) with Cline/Roo Code : r/LocalLLaMA _202506](https://www.reddit.com/r/LocalLLaMA/comments/1lco9ik/recommendations_for_local_llms_under_70b_with/)
-- For me Devstral q8 works well in Cline's planning mode with tool calls. For code mode I like to use Qwen coder 32b q8. This works only on Cline for me; I could not get anything useful out of Roo Code with these models: it is always running into loops
-
-- devstral without quants works , but you need 40k context size I would guess.
-
-- why not try the qwen2.5-coder variants instead of the general Qwen 3?
-  - I tried!!! Not a good experience, but is very capable when ask to code a specific function direct in webui chat
-
-- ## [Cline vs Roo Code - currently? : r/ChatGPTCoding _202506](https://www.reddit.com/r/ChatGPTCoding/comments/1ljlpei/cline_vs_roo_code_currently/)
-- Roo has eclipsed Cline in just about every way. If you don't mind spending though, Claude code. Then take it ome step further and use Claude code with Roo
-- I still use and prefer Cline — the plan/act mode is just more straightforward and easier to work with.
-  - Doesn't Roo have equivalent modes though?
-- Not quite. Roo has more and it has a decent set built in with "boomerang" tasks. You can create your own custom modes. Plenty of flexibility.
-
-- ## [Cline vs Roo : r/CLine _202505](https://www.reddit.com/r/CLine/comments/1kgy185/cline_vs_roo/)
-- Roo has grown more powerful and configurable than Cline. But this embrace of complexity has made Roo less approachable for beginners, I suspect.
-- I’m switching from cline to roo now and it’s a small learning curve. I do prefer Roo more now due to the better UI and boomerang mode. I miss the /newtask amd /smol commands from cline though.
-  - Roo does this automatically when the it reaches the end of the context window
-- FYI you can create a .clinerule that tells Cline to "use the new_task tool when reaching 50% of the context window"
-
-- Aider much more better it use less token if you are experienced programmer that can include all context correctly.
-
-- ## [Which is best( Cline or Roo code or Kilocode) : r/CLine _202507](https://www.reddit.com/r/CLine/comments/1m307gr/which_is_best_cline_or_roo_code_or_kilocode/)
-- Roo is hands-down the best tool I’ve ever used. I’ve tried Cursor, Windsurf (you name it) but nothing comes close. 
-
-- Roo Code. Cline feels too restrictive. It's the best for learning, but as soon as you know how to use LLM code generation, then Roo feels more powerful.
-
-- I second this while I can agree to other opinions especially about Cline's rather stable releases. Personally I prefer Roo Code's adventurous/agile updates but YMMV.
-
-- I recently switched to Roo for one reason--they added embedding for search in the codebase and I had Azure credits to burn. That made it worth the switch for me and I had moved away from using memory-bank. I'm liking Roo but I feel like there's a complexity level that doesn't always provide a best fit depending on your situation.
-
-- I think Roo is best, but the system prompt has mistakes/is not ideal, so you have to fork it, change it and compile it yourself or you will get a very annoying yellow banner which makes the ui ugly af.
-
-- Cline: is best for small changes or changes that edit 1-2 files. It isnt too good for complex that requires to edit 2-4 files
-  - Roo code: 1- It is best for complex tasks that needs to edit multiple files as it uses to do list but its burning tokens when the task is small. 
-  - 2- its best for debugging without any doubt 
-  - 3- ask mode is veryyyy useful 
-  - 4- it gives you best experience if you use too many models or trying to stay on free side as it has profiles that you can set ( multiple google accounts = multiple api keys) u can change them easily with profiles as you hit the limits
-
-- ## 🆚 [RooCode vs Cline  : r/RooCode _202503](https://www.reddit.com/r/RooCode/comments/1jn372q/roocode_vs_cline_updated_march_29/?share_id=8QGnCavUI2VCyv7oNIryz&utm_content=2&utm_medium=ios_app&utm_name=ioscss&utm_source=share&utm_term=1)
-- Features Roo Code offers that Cline doesn't:
-  - Diff Mode Toggle**: Enable or disable diff editing
-  - Diff Match Precision**: Control how precisely (1-100) code sections must match when applying diffs
-  - Wildcard Command Auto-Approval**: Use * to auto-approve all command executions (use with caution).
-  - Boomerang Tasks (task orchestration / subtasks): Create new tasks from within existing ones, allowing for automatic context continuation. Child tasks can return summaries to parent tasks upon completion ("Boomerang"). Includes option for automatic approval.
-  - Temperature Control**: Configure model temperature per Provider Configuration.
-  - Custom Rate Limiting**: Configure minimum delay between API requests to prevent provider overload.
-  - Auto-Retry Failed API Requests**: Configure automatic retries with customizable delays between attempts.
-  - Human Relay Provider**: Manually relay information between Roo Code and external Web AIs.
-  - Footgun Prompting (Overriding System Prompt)**: Allows advanced users to completely replace the default system prompt for a specific Roo Code mode.
-  - Terminal Output Control: Limit terminal lines passed to the model to prevent context overflow.
-
-- Features Cline offers that Roo Code doesn't YET:
-  - MCP Marketplace: Browse, discover, and install MCP servers directly within the extension interface
-  - Notifications: Optional system notifications for task completion.
-
-- ## [Roo Code vs Cline - Feature Comparison : r/ChatGPTCoding _202502](https://www.reddit.com/r/ChatGPTCoding/comments/1imtvv4/roo_code_vs_cline_feature_comparison/)
-- hy is Roo a fork vs. pushing improvements into Cline
-  - Different approach. Cline focuses on making like a more polished and tested product while roo code is focused on the speed of improvement accepting a lot of PRs from contributors. Which makes sense since Cline guys are working also on the enterprise version (at least they say so in their website)
-- because cline is not community friendly for devs who have provided PRs, only 5% of all PR get implemented. Roo is developer friendly.
-
-- Aider is much different but an amazing piece of software. Less autopilot and more manual involvement. Also aider uses way less tokens.
-
-- ## [Does Cline do tab autocompletion? : r/ChatGPTCoding _202501](https://www.reddit.com/r/ChatGPTCoding/comments/1id5pcm/does_cline_do_tab_autocompletion/)
-- it looks like they do not
-  - [Tab Autocomplete (line-autocomplete, such as Cursor Tab) · cline/cline _202412](https://github.com/cline/cline/discussions/1083)
-  - it looks like I can configure continue.dev to use openrouter and put some of those credits I initially bought for cline to good use.
-
-- You can also try Supermaven, which is quite good for a free offering.
-  - I second Supermaven. I used to use continue.dev with the free codestral api, but I’ve found it to not be very comparable to Cursor.
-- It looks like Supermaven is acquired by Cursor:
-
-- ## [Cline Vs Roo Code is the only comparison that makes sense if code quality is important for you, IMO : r/ChatGPTCoding _202504](https://www.reddit.com/r/ChatGPTCoding/comments/1k3q8z7/cline_vs_roo_code_is_the_only_comparison_that/)
-- I work with 7k C++ and 3k Java files, and I see little difference between Cursor/Windsurf/Cline/Roo. Currently, I use the Windsurf plugin in IntelliJ.
-  - I switched to Cline from Cursor because I didn't like Cursor's handling of external file changes. However, I saw little to no improvement in code generation. But I lost autocomplete, which is incredibly useful at times
-
-- try Gemini 2.5 Pro in Plan + DeepSeek V3 in Act mode. Very good cost benefit.
-
-- RooCode Boomerang + Memory Bank makes lots of different. I tried Windsurf during 4.1 free week & it generate codes with limited context or search. 
-
-- you can run vscode + roo code in a webpage using code-server
-
-- I have really gotten to like the Github Copilot way of handling file edits in agent mode. It saves the files, so you can test if everything works, but there is an immediate rollback button. It's also very clear which files in lines in them are modified. This is I think the main reason for me to use it over Roo. 
-  - Roo does have a rollback button but I have to do some digging to see what has been altered where and how to roll back a specific change.
-
-- ## [My experience with Cursor vs Cline after 3 months of daily use : r/ChatGPTCoding _202502](https://www.reddit.com/r/ChatGPTCoding/comments/1inyt2s/my_experience_with_cursor_vs_cline_after_3_months/)
-- Cline doesnt understand shit by default. But once you add memory bank and populate it + keep each file under ~250 lines of code it works like magic
-  - You can also utilise google gemini think for writing complex tasks for cline. Repopack code + memory bank and load into ai studio. Tell it to write MD plan for your task
-  - PS Keep each module (isolated part) of your project under 100k tokens
-- You cant optimize much. Disable MCP, keep memory bank under 15k tokens, keep project modularized and low coupled
-
-- Should add “keep each file under ~250 lines of code” to the rules
-  - Now its different. Even flash thinking can handle 500-1000 lines files
-  - I mostly use task-master -> claude-code / roo code (2.5 flash think as orchestrator, 4.1 as code from VS LM API)
-
-- Cline , Roo Cline an Even Cool Cline are abased off Cline.
-
-- I've had a lot of luck with gemini flash, but yeah claude still seems to be the best for complex coding tasks
-
-- ## [I Use Cline for AI Engineering | Hacker News _202502](https://news.ycombinator.com/item?id=42900137) 
-- I think Aider, Cline and Cursor are not far from each other in their capabilities.
-  - Cursor was probably the most polished experience - especially their `Tab` autocomplete.
-  - Cline does the job really well if you're in VSCode. Aider is great if you prefer terminal based workflow
-  - Another great thing in Aider is `//AI!` comment. You can start Aider in --watch-files mode and it will watch for instructions, and start executing them. This way I can work in my preferred editor and have a tool in the background performing AI tasks.
-- How has no one pointed out the business models are different and result in entirely different products and priorities?
-  - Cursor charges $20/mo. So their whole business model revolves around using less than $20 worth of tokens and cheaper models.
-  - With Cline, you pay for your own tokens and can choose whichever model you like (uses openrouter).
-  - You can see the difference almost immediately - everything is better. Context management isn’t kneecapped, edits are comprehensive, cline reads every file that is relevant into the context, and the UX is intuitive.
-
-- The architect mode in aider is basically a one step planning pass.
-  - RA. Aid goes way beyond this. It will run fuzzy find, ripgrep, directory listings, web search via, ask the expert (reasoning models), multiple task planning, execution of shell commands and unit tests, etc.
-  - It essentially follows a research, planning, and implementation cycle much like a human SWE would.
-- As far as I can tell aider does most, if not all, of that as well. The only things I'm unsure about is "ask the expert" and "multiple task planning"
-
-- Roo Code (formerly Roo Cline) is a fork of Cline that gets rave reviews
-  - People (well, me in that case) were asking for more fine grained options like per project instructions, and the Cline author's response was basically "not interested in the added complexity but feel free to fork". So somebody did.
-- I find RooCodes mode selector drop down inferior to the way Cline handles Plan and Act mode.
 # discuss
 - ##
 
