@@ -21,6 +21,7 @@ modified: 2025-09-16T13:29:11.327Z
   - [BigCodeBench Leaderboard 数据旧](https://bigcode-bench.github.io/)
   - [LiveCodeBench Leaderboard _停更于202505](https://livecodebench.github.io/leaderboard.html)
   - [Evals | Roo Code](https://roocode.com/evals)
+  - [AI Benchmark Tool - Best AI Models 2025 | AI Performance Tests & Rankings](https://aistupidlevel.info/)
 # discuss-stars
 - ## 
 
@@ -864,9 +865,23 @@ def slugify(text):
 
 - ## 
 
-- ## 
+- ## [Sonnet 4.5 is good. Thoughts on Codex and GLM 4.6 : r/ClaudeCode _202510](https://www.reddit.com/r/ClaudeCode/comments/1o13np0/sonnet_45_is_good_thoughts_on_codex_and_glm_46/)
+  - Tried Codex and GLM 4.6 (through claude code), to try and see what other options are out there.
+  - Codex is okay, the UI is nowhere near the level of claude code. no plan mode, and how it edits and makes changes to files is a bit strange (executing python scripts to update the code).
+  - GLM 4.6 is very very good for a cheap model, but doens't compare to Claude (the past few days of claude anyway).
+  - Sonnet 4.5, especially using ultrathink, has been fantastic for me. The past couple of days, it's been great.
 
-- ## 
+- I use Claude Code for 90% of stuff then Codex if it gets stuck
+  - Codex CLI just isn’t quite as polished and reliable. But it can often solve stuff, albeit much slower, than Claude Code
+  - Honestly having multiple options is great
+
+- ## [Which is the best model for codex cli? : r/ChatGPTCoding _202509](https://www.reddit.com/r/ChatGPTCoding/comments/1nomdoy/which_is_the_best_model_for_codex_cli/)
+- there is no "best" model - it depends on task and what are you optimising. if you want speed, you go low. if you want smarts go high. generally the longer the task will take, the smarter the model you will need.
+  - coder models tend to better for more pure coding, such as when giving a detailed spec to implement. probably less good for planning.
+
+- if you don't want to wait 2 min for a small change go with low, if you have written a 2 paragraph story about a feature you want made, use high. If you are doing most things like bug fix, always default back to medium or high.
+
+- I get the best results with gpt-5 high and inserting "use maximum reasoning effort" in the actual prompt text. gpt-5-codex disobeys explicit instructions written in all caps in AGENTS.md like NEVER USE GIT CHECKOUT. DO NOT DESTROY UNCOMMITTED CHANGES. ; )
 
 - ## [Devs, what are your experiences with Qwen3-coder-30b? : r/LocalLLM _202510](https://www.reddit.com/r/LocalLLM/comments/1odf46t/devs_what_are_your_experiences_with_qwen3coder30b/)
   - From code completion, method refactoring, to generating a full MVP project, how well does Qwen3-coder-30b perform?

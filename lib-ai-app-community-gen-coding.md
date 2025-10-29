@@ -105,32 +105,6 @@ modified: 2025-09-01T07:58:29.058Z
 - I just use plain roo.. but only because I don’t need more (yet). Would be nice if there were presets for different tech stacks, like coder-node-react or coder-cplus coder-serverless etc. as I’m sure things for me would be smoother if I took the time to add guardrails around the stacks I’m using
 
 - SPARC enabled me to do one complex project and taught me so much about system architecture/design. That being said, now that I developed my own understanding of how to architect, I no longer need it.
-
-- ## 🧠🤼 [Should we deprecate Memory Bank? Looking for some feedback from the Cline Community. : r/CLine _202508](https://www.reddit.com/r/CLine/comments/1mu4lej/should_we_deprecate_memory_bank_looking_for_some/)
-  - memory bank is a prompt that I wrote (and to some degree have maintained) over the last year or so. 
-  - It's original purpose was to instruct Cline to create/edit/read these context files that gave it an understanding of the project and where it was headed. 
-  - And to do this via a single prompt that any user could paste into Cline and have work out of the box.
-  - Here are the main benefits I see: - keeps the agent on track - creates project context that persists between tasks - useful documentation across teams
-  - However, it does bloat the context quite a bit. And with our most recent Focus Chain feature, I'm not sure where/how it fits.
-  - What parts of Memory Bank are actually useful to you? What is not useful? What does the ideal version of Memory Bank look like for you?
-
-- My favorite part of memory bank was the tracking of progress. It knew what was done. What still had to be done. How certain parts were set to work. Etc.
-- is this not covered by the focus chain & its todo list?
-  - Only for a task basis. The memory bank keeps the context about the whole project and work which has been done recently. It allows me to start a new task with a description of what's needed and in which parts of the repo. Cline will find everything necessary on its own (mostly), and I can refine it.
-  - It's also super helpful when using plan mode or deep planning to basically get everything pulled into the task.
-
-- Focus chain is for a single Cline task/conversation.
-  - Memory bank is to share basis about the project, the service, the roles, , between Cline conversations, so I do not have to remind it about it everytime my task needs a lot of context to be shared.
-
-- I stopped using the Memory Bank a while ago. It ate too many tokens and no model was very good at keeping it updated. Instead, I have a markdown file that I keep in Obsidian that I manually keep updated, and keep brief for the times when I think the AI needs some more context.
-
-- I love the memory bank, and still consider it a major strength of Cline. The progress is my most used file by far, and I heavily rely on it. Though the product and project contexts are also both helpful.
-
-- in my work, Plan leans heavily on Memory Bank.
-
-- In terms of context usage, memory bank is wasteful, it's mostly the reason I do not use it anymore, though I still create manually specs files and use rules.
-
-- Sharing context with another dev to take up can be super handy.
 # discuss-coding-tools/tricks
 - ## 
 

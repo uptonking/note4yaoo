@@ -363,6 +363,13 @@ modified: 2023-02-08T07:20:48.475Z
   - https://github.com/searxng/searxng /AGPL/202510/python
     - https://docs.searxng.org/
     - SearXNG is a free internet metasearch engine which aggregates results from various search services and databases. Users are neither tracked nor profiled.
+# webgpu-ai
+- https://huggingface.co/spaces/ibm-granite/Granite-4.0-Nano-WebGPU/tree/main /202510/ts
+  - the demo uses Transformers.js to run the models 100% locally in your browser with WebGPU acceleration.
+  - [Granite 4.0 Nano: Just how small can you go? _202510](https://huggingface.co/blog/ibm-granite/granite-4-nano)
+  - [IBM releases Granite-4.0 Nano (300M & 1B), along with a local browser demo showing how the models can programmatically interact with websites and call tools/browser APIs on your behalf. : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1oifmg6/ibm_releases_granite40_nano_300m_1b_along_with_a/)
+    - What will be interesting is how they handle permissioning, if the model can open URLS or trigger browser calls, sandboxing becomes key. 
+    - `llama.cpp` has webasm support so they probably compiled it to webasm binary and run it via javascript.
 # ml-neural-network
 - https://github.com/AlloyTeam/netural
   - JavaScript的前向神经网络和反向传播的实现。

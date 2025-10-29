@@ -423,6 +423,13 @@ modified: 2024-08-24T16:30:20.218Z
 - https://github.com/julesmons/recline /MPLv2/202501/ts
   - The AI assistant that seamlessly integrates with VSCode to autonomously create, edit, and run terminal commands; redefining how you code.
 
+- https://github.com/Joouis/agent-maestro /MIT/202510/ts
+  - Turn VS Code into your compliant AI playground
+  - With Agent Maestro, spin up Cline or Roo on demand and plug Claude Code or Codex straight in through an OpenAI/Anthropic-compatible API.
+  - Universal API Compatibility: Anthropic (/messages) and OpenAI (/chat/completions) compatible endpoints - use Claude Code, Codex or any LLM client seamlessly
+  - Headless AI Agent Control: Create and manage tasks through REST APIs for Roo Code and Cline extensions
+  - Parallel Execution: Run up to 20 concurrent RooCode (and its variants like Kilo Code) tasks with built-in MCP server integration
+
 ## background-ai
 
 - https://github.com/ishaan1013/shadow /MIT/202508/ts

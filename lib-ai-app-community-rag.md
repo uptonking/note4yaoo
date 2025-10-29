@@ -532,7 +532,8 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [what free model should i use for codebase indexing with speed indexing : r/RooCode](https://www.reddit.com/r/RooCode/comments/1oiw4w7/what_free_model_should_i_use_for_codebase/)
+- Use text-embedding-004 model from google (fast and free)
 
 - ## [Open-source embedding models: which one's the best? : r/Rag _202509](https://www.reddit.com/r/Rag/comments/1nro65j/opensource_embedding_models_which_ones_the_best/)
 - tried embeddinggemma:300m and qwen3-embedding-0.6b and 4b

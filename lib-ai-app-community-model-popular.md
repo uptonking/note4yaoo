@@ -646,6 +646,24 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
+- ## 🆚 [GLM-4.6 vs Minimax-M2 : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1ohq5bc/glm46_vs_minimaxm2/)
+- Not even close in my use cases at least. Its still sonnet 4.5 / GPT5 codex > glm4.6 > everything else.
+  - GLM4.6 is very comparable to sonnet 4 in real world use, I hope they later make a bigger model. If they made a deepseek / kimi sized model they could 100% slaughter the competition imo.
+
+- So GLM 4.6 is better than Kimi K2?
+  - For coding yes, for creative writing no.
+
+- In this revision they reduced the number of parameters for M2 almost in half compared to M1. In my tests, using a non mainstream coding language, GLM 4.5 is better than M2. I have tried several times to get M2 to code a statistical function and it doesn't get it. GLM in the first shot nailed it
+
+- Try it for your project. With 10B active for a size under 250B, I think knowledge is lacking and the expert won't be able to cover very edge cases. But, if they introduce something like GLM coding plan, it is properly worth to try as coding agent, not planner.
+
+- People are always hyping whatever is the most recent. Seemingly every release crushes benchmarks, it's marketing and doesn't say much about model real world performance. Test the models in your use case and see if you like them.
+
+- ## [🚀 New Model from the MiniMax team: MiniMax-M2, an impressive 230B-A10B LLM. : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1oh5asg/new_model_from_the_minimax_team_minimaxm2_an/)
+- Is it just me, or have the ratios of MoE models' active to total parameters grown very wane of late? Qwen3-Next is about 1:27 (80B-A3B), and this one is 1:23 (230B-A10B), which is a far cry from 235B-A22B, or 30B-A3B, let alone ye olde 8x7B (56B-A14B, a 1:4 ratio).
+  - Yup, that's the direction. It's cheaper to train.
+- Sparse MoE is also theoretically appealing as a research direction. The holy grail is a sparse MoE that can add new experts and tune routing online.
+
 - ## [GLM-4.5-Flash on z.ai website. Is this their upcoming announcement? : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mmioub/glm45flash_on_zai_website_is_this_their_upcoming/)
 - Flash is the API only free variant of their model, it's available since day one, and it's essentially a weaker version that's disturbed freely for people to test using the GLM API and capabilities, I've been using it for a while, its quite solid for being free
 

@@ -252,6 +252,13 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
   - crud
   - 业务系统与架构增强: lasuite-docs, knowledgebase, cms
 
+## 1029
+
+- your goal is to add tailwind css v4 with rspack to this react project
+  - update the rspack config to use tailwind css v4, especially to support run "npm run dev"
+  - existing usage of css/scss should still work
+  - beautify landing page react component at  @src/app.tsx with tailwind css
+
 ## 1027
 
 - [I am getting an "Invalid Host header" message when connecting to webpack-dev-server remotely - Stack Overflow](https://stackoverflow.com/questions/43619644/i-am-getting-an-invalid-host-header-message-when-connecting-to-webpack-dev-ser)

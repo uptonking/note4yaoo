@@ -49,7 +49,7 @@ modified: 2025-03-22T16:10:24.856Z
   - table-typewriter
 
 - 🏠 ai-architecture: 与ai的通信和计算是在前端实现，还是在后端实现
-  - 🤔 一种思路: tool-call时使用擅长tool-call的模型，分析时使用公益站的优质聊天模型
+  - 🤔 一种思路: tool-call时使用擅长tool-call的模型，分析时使用公益站的聊天优质但无法tool-call的模型
   - 🐛 前端和大模型直接对接的缺点: 关闭页面会丢失数据、流程中断、并发控制复杂
   - 🤔 why backend server
     - 消息持久化时，使用服务端id才方便消息保存与恢复、多人聊天一致性
@@ -240,7 +240,7 @@ modified: 2025-03-22T16:10:24.856Z
   - https://github.com/cheahjs/free-llm-api-resources
 
 - tips: 公益站不稳定(3个月就倒闭一批), 来源不明可能导致效果差, 需要经常确认和维护, 不要浪费过多时间
-  - 🤔 一种思路: tool-call时使用擅长tool-call的模型，分析时使用公益站的优质聊天模型
+  - 🤔 一种思路: tool-call时使用擅长tool-call的模型，分析时使用公益站的聊天优质但无法tool-call的模型
 - 免费api的技巧: 在知乎/小红书直接搜索 免费 claude (公益站), 就会有最新的api推广信息, 可以用小号邀请自己
   - 公益站 [Search results for '公益站' - LINUX DO](https://linux.do/search?q=%E5%85%AC%E7%9B%8A%E7%AB%99%20order%3Alatest)
   - 📌 [Agent Router](https://agentrouter.org/), 每日签到获取$25
@@ -295,13 +295,13 @@ modified: 2025-03-22T16:10:24.856Z
     - 不定期删除 0 额度，0 消耗，且注册超过一周的用户。
   - [薄荷 API](http://x666.me/)
     - 仅提供gemini模型
-  - [小松公益站 New API](http://api.lanapi.top/pricing)
-    - 仅提供gemini模型， 满血版
-    - 默认分组只有5分钟3次的请求速率，至尊分组无上限分组
   - [ZenscaleAi](https://gy.zenscaleai.com/)
     - 仅提供gemini模型
   - [小丑Ai公益站](https://gy.jiubanai.com/)
     - 仅提供gemini模型
+  - [小松公益站 New API](http://api.lanapi.top/pricing)
+    - 仅提供gemini模型， 满血版
+    - 默认分组只有5分钟3次的请求速率，至尊分组无上限分组
   - [翰林文苑公益API站点](https://aiapi.hlwy2025.me/)
     - 价格太高了 我决定攒到1000再用
   - [ThatAPI](https://gyapi.zxiaoruan.cn/pricing)
@@ -395,7 +395,7 @@ modified: 2025-03-22T16:10:24.856Z
   - tldr: rpd-200~500
   - 免费推理API由阿里云提供算力支持，要求您的ModelScope账号必须绑定阿里云账号后才能正常使用。
   - 每位魔搭注册用户，当前每天允许进行总数为2000次的API-Inference调用，其中每单个模型不超过500次，具体每个模型的限制可能随时动态调整。
-  - 在每个模型每天不超过500次调用的基础上，平台可能对于部分模型再进行单独的限制，例如，deepseek-ai/DeepSeek-R1-0528，deepseek-ai/DeepSeek-V3.1等规格较大模型，当前限制单模型每天200次调用额度。
+  - 在每个模型每天不超过 500 次调用的基础上，平台可能对于部分模型再进行单独的限制，例如，deepseek-ai/DeepSeek-R1-0528，deepseek-ai/DeepSeek-V3.1等规格较大模型，当前限制单模型每天200次调用额度。
   - 在上述调用次数限制的基础上，不同模型允许的调用并发，会根据平台的压力进行动态的速率限制调整，原则上以保障开发者单并发正常使用为目标。
   - 实际单模型可用次数以及允许的并发，以平台实时调整为准。
   - 🖼️ 当前API-Inference为魔搭平台上的部分开源大语言模型（LLM），多模态模型（MLLM），以及AIGC专区文生图模型等，提供了可直接使用的API。
@@ -430,13 +430,15 @@ modified: 2025-03-22T16:10:24.856Z
   - 百万tokens输出	3元
 
 - 📌 [Z. AI DEVELOPER DOCUMENT](https://docs.z.ai/guides/overview/pricing)
-  - tldr: 请求并发数量（在途请求任务数量）-flash-200/air-50
+  - tldr: 请求并发数量（在途请求任务数量）flash-2
   - GLM-4.5-Flash	Free Free ✅
-  - GLM-4-32B-0414-128K	$0.1  	$0.1
-  - GLM-4.5-Air	$0.2  $1.1
+  - free: GLM-4-Flash-250414, GLM-4.1V-Thinking-Flash, GLM-4V-Flash, Cogview-3-Flash, CogVideoX-Flash
+  - 免费模型: [福利专区](https://bigmodel.cn/dev/activities/free/glm-4-flash)
+  - [模型实时调用专属权益 及 标准单价 (很多免费)](https://bigmodel.cn/usercenter/equity-mgmt/user-rights)
   - [Z.ai - Rate Limits](https://z.ai/manage-apikey/rate-limits)
     - GLM-4.5-Flash	2
   - [智谱AI - pricing](https://bigmodel.cn/pricing)
+  - [智谱AI开放平台 - 速率限制 - 用户等级](https://bigmodel.cn/usercenter/proj-mgmt/rate-limits)
   - [智谱AI开放平台 - 速率限制](https://www.bigmodel.cn/dev/howuse/rate-limits)
     - 当前我们限制的维度是请求并发数量（在途请求任务数量）
     - GLM-4-Flash	200

@@ -13,6 +13,7 @@ modified: 2025-10-28T20:02:16.727Z
   - ide-agnostic, no ide ui restriction
   - lightweight and fast, less RAM requirement
   - easier to implement parallel agents
+  - 限制少，更容易实现模型/厂商无关
 
 - cli-coding-cons
   - gui has less features
@@ -23,6 +24,7 @@ modified: 2025-10-28T20:02:16.727Z
   - 支持本地模式下高强度压缩context, 本地运行更友好
   - cline cli with client/server architecture as ai infra
   - 架构上更解耦，提供了不依赖vs code而standalone运行的产物
+  - voice coding
 
 - cline-cons
   - reject github contributions
@@ -39,7 +41,7 @@ modified: 2025-10-28T20:02:16.727Z
 
 - roo-cons
   - token cost more
-  - Roomote Control is available in paid plans.
+  - Roomote Control is available in paid plans
 
 - features-roocode
 
@@ -51,6 +53,9 @@ modified: 2025-10-28T20:02:16.727Z
   - 方便实现多个ai并行执行多个任务的效果，提高效率
 - devin偏服务端方案而偏向创作力工作，cursor偏向工具
 # ide-ai-xp
+- ai-llm
+  - 🤔 一种思路: tool-call时使用擅长tool-call的模型，分析时使用公益站的聊天优质但无法tool-call的模型
+
 - ide的自动补全和多人实时协作似乎是冲突的
 
 - ai生成的代码的缩进有时与原代码不同
@@ -95,12 +100,18 @@ modified: 2025-10-28T20:02:16.727Z
 
 - ## 
 
-- ## 
+- ## Is there any advantage to using the CLI over the IDE extension?
+- https://discord.com/channels/1275535550845292637/1392662920982171738/1431071030725709824
+- you can use CLI in scripts, for automation, CI/CD, benchmarks ...  Also some people prefer CLI UX
+- On the CLI. I suspect core would give me more flexibility
 
-- ## 
+- ## Do we also have any examples how to setup project Indexing?
+- https://discord.com/channels/1275535550845292637/1392662920982171738/1393446018795704464
+- Cline does not currently do indexing of the codebase, he just searches around using `ripgrep`
 
 - ## 🏠 已合并pr [Run the cline extension as a standalone process outside of vscode. by sjf · Pull Request · cline/cline _202505](https://github.com/cline/cline/pull/3535)
-  - Adds a new build target npm run compile-standalone for the standalone version of the cline extension. The standalone cline server runs a gRPC service that provides the protobus API.
+  - Adds a new build target npm run compile-standalone for the standalone version of the cline extension. 
+  - The standalone cline server runs a gRPC service that provides the protobus API.
 
 - ## [We're releasing a scriptable CLI (Preview) that turns Cline into infrastructure you can build on (+ subagents) : r/CLine](https://www.reddit.com/r/CLine/comments/1o8c6zw/were_releasing_a_scriptable_cli_preview_that/)
   - Use it standalone in the terminal for any coding task
@@ -166,6 +177,29 @@ modified: 2025-10-28T20:02:16.727Z
   - The "Presentation Layer" (aka user interface) connects as a gRPC client to Cline Core and tells him what to do. Cline Core sends back a subscription of state changes & LLM messages, which allows the presentation layer to display stuff.
   - Cline Core connects as a gRPC client to the "Host Provider Layer" which implements integration into what he's being embedded into. So, for example, Cline Core can ask VS Code to provide the linter output.
 
+- ## [Cline for JetBrains IDEs is GA : r/CLine _202509](https://www.reddit.com/r/CLine/comments/1njjjku/cline_for_jetbrains_ides_is_ga/)
+  - Cline has always been model agnostic and inference agnostic. Today we're completing the picture: platform agnosticism. Cline is now available for all JetBrains IDEs.
+  - we rebuilt Cline using cline-core, a headless process that communicates through gRPC messaging. This gives us true native integration with JetBrains APIs.
+  - The cline-core architecture is our path to ubiquity. This same foundation will power our upcoming CLI, an SDK for embedding Cline in internal tools, and expansion to additional development environments. One brain, many interfaces. We're not just adding IDE support; we're building true platform agnosticism.
+
+- ## 👷🏠 Over the past 6 months, we've rearchitected @cline 's agentic loop into a standalone "cline core" gRPC service that runs independently of any editor. _202509
+- https://x.com/pashmerepat/status/1969076772575629799
+- This enabled us to decouple from VS code and build  
+  - JetBrains (released in GA this week)
+  - CLI built in Go (releasing soon)
+- The CLI is our newest product and will ship without a TUI. 
+  - Our focus is to release a true primitive. something close to the metal that pipes cleanly into RL environments, CI/CD systems, scripts, and automation workflows.
+  - Any "presentation layer" mentioned above can connect to the same running cline core - maintaining full feature parity (e.g. checkpoints, settings, api configurations), context, and conversation state.
+  - There's an SQLite-based instance and file/directory lock registry that prevents port conflicts and coordinates graceful shutdowns between paired processes - so you can start up thousands of cline instances in parallel with no conflicts or dangling processes.
+  - What's remarkable is that this cline core architecture opens Cline to any interface imaginable: mobile apps, web dashboards, custom tools - all powered by the same intelligent core that understands your codebase.
+
+- have any plans for a cline SDK? something I can plugin to my existing system and it just... works?
+  - SDK will come soon after the CLI is released
+
+- Do you plan to support ACP from @zeddotdev ?
+
+- so like @opencode server model?
+
 - ## [Is the Memory Bank pattern deprecated/superceded now? : r/CLine _202510](https://www.reddit.com/r/CLine/comments/1ny9zpz/is_the_memory_bank_pattern_deprecatedsuperceded/)
   - Not sure with all the updates Cline has had if this usage pattern is still recommended? u/nick-baumann was suggesting deprecating it a while back
 
@@ -192,12 +226,99 @@ modified: 2025-10-28T20:02:16.727Z
   - But indeed - it has its drawbacks - speed, and expensive (for those paying per request)
   - Can cline do better on this front ? I’d say definitely - Claude Code does very well , while supporting executing multiple tools in a single call. And it makes Claude Code dramatically faster, with the same provider and model compared to Cline.
 - Cursor also executes multiple tools at once.
+
+- ## 🧠🤼 [Should we deprecate Memory Bank? Looking for some feedback from the Cline Community. : r/CLine _202508](https://www.reddit.com/r/CLine/comments/1mu4lej/should_we_deprecate_memory_bank_looking_for_some/)
+  - memory bank is a prompt that I wrote (and to some degree have maintained) over the last year or so. 
+  - It's original purpose was to instruct Cline to create/edit/read these context files that gave it an understanding of the project and where it was headed. 
+  - And to do this via a single prompt that any user could paste into Cline and have work out of the box.
+  - Here are the main benefits I see: - keeps the agent on track - creates project context that persists between tasks - useful documentation across teams
+  - However, it does bloat the context quite a bit. And with our most recent Focus Chain feature, I'm not sure where/how it fits.
+  - What parts of Memory Bank are actually useful to you? What is not useful? What does the ideal version of Memory Bank look like for you?
+
+- My favorite part of memory bank was the tracking of progress. It knew what was done. What still had to be done. How certain parts were set to work. Etc.
+- is this not covered by the focus chain & its todo list?
+  - Only for a task basis. The memory bank keeps the context about the whole project and work which has been done recently. It allows me to start a new task with a description of what's needed and in which parts of the repo. Cline will find everything necessary on its own (mostly), and I can refine it.
+  - It's also super helpful when using plan mode or deep planning to basically get everything pulled into the task.
+
+- Focus chain is for a single Cline task/conversation.
+  - Memory bank is to share basis about the project, the service, the roles, , between Cline conversations, so I do not have to remind it about it everytime my task needs a lot of context to be shared.
+
+- I stopped using the Memory Bank a while ago. It ate too many tokens and no model was very good at keeping it updated. Instead, I have a markdown file that I keep in Obsidian that I manually keep updated, and keep brief for the times when I think the AI needs some more context.
+
+- I love the memory bank, and still consider it a major strength of Cline. The progress is my most used file by far, and I heavily rely on it. Though the product and project contexts are also both helpful.
+
+- in my work, Plan leans heavily on Memory Bank.
+
+- In terms of context usage, memory bank is wasteful, it's mostly the reason I do not use it anymore, though I still create manually specs files and use rules.
+
+- Sharing context with another dev to take up can be super handy.
 # discuss-cline-roadmap
 - ## 
 
 - ## 
 
 - ## 
+
+- ## 🤔 if there is any other way of invoking cline installed in vscode as extension remotely? _20250822
+- https://discord.com/channels/1275535550845292637/1392662920982171738/1408510775726706950
+- Not currently, but that's in the pipeline as well. 
+  - We're moving our architecture onto a new way of doing things, in particular: the VSC extension used to be a tightly interwoven thing with VSC, but now we have Cline Core, which can be run standalone. 
+  - Our new IDE integrations are using this Cline Core server directly to build their features over gRPC. 
+  - 📡 Eventually we'll have to move VSC onto this paradigm as well, at which point you'll be able to directly connect to VSC's underlying Cline Core and add extra UIs/remote control
+
+- Will cline core  cli have a command line interactive mode like other cli ?or only `cline <command>`  ? 
+  - We may do a TUI in a following phase, but I acutally think that scriptability is way more exciting than putting user interfaces into terminal -- since we already have real UIs. 
+  - Of course, you'll be able to easily have two terminals open, one that is a live feed of Cline's output (cline task follow), and one that you're using to send commands into it (cline task send)
+
+- https://discord.com/channels/1275535550845292637/1392662920982171738/1402304912628514857
+- are there any plans for Cline to also run via CLI? 
+  - Yes! Check this out
+
+- ## the cline-core system is pretty mature now. Here's some rough info, and lmk if you need further support: _20250828
+- https://discord.com/channels/1275535550845292637/1392662920982171738/1410324327445827686
+  - 1) Use npm run compile-standalone to be able to run node ./dist-standalone/cline-core.js
+  - 2) There are three parts to a working Cline integration: (a) the presentation layer defined in ./proto/cline (b) Cline Core (c) the host provider defined in ./proto/host
+  - 3) Cline Core acts as (a) a gRPC server that the presentation layer can connect to (b) a gRPC client that connects to the host provider
+  - 4) The host provider is effectively the equivalent of the vscode apis that are provided by VSCode. You need to implement stuff like the diff-edit experience, read/write, showing error messages etc
+  - 5) The presentation layer mostly just receives state using subscribeToState and can send commands like newTask
+
+- If you wait about another month, we should have an early release of the Cline CLI, which can act as both reference code for these elements, and provide a generic host implementation that you could use. The CLI can also be a base layer for integration, and includes Go versions of the protos & clients you would need
+
+- ## Right now, it takes a lot of knowledge to be able to do something useful with Cline Core, since you have to control it using the gRPC APIs. 
+- https://discord.com/channels/1275535550845292637/1392662920982171738/1400977345447465000
+  - But the direct answer is `cd dist-standalone && node cline-core.js` after you do the build. 
+  - It's possible to use Postman or something like that to manually control it
+
+- Is there going to be an API server for the core? 
+  - there is an API already
+
+- Is there a way to implement a version of cline for libreoffice / openoffice / onlyoffice? 
+  - Yes, that'll totally be possible with Cline Core, and those less obvious usecases are very exciting to me. Same thing goes for embedding Cline into note taking systems
+  -  I want the core to be flexible enough to create various kinds of agents with it, though right now it's certainly very coding oriented. But there's a lot of overlap to editing notes/documents and code, it's kinda the same read/write idea ... instead of folders you have notebooks, etc. It'll take a while for our system to be fully customizable like that, but I think it's a worthy goal
+
+- https://discord.com/channels/1275535550845292637/1392662920982171738/1392942543813083176 _20250711
+- here's the gist of the WIP Cline Core system:
+  - 1) Check out `npm run compile-standalone` -- this packages a Cline that runs as a node.js process
+  - 2) To communicate with Cline Core, we have two gRPC bridges, one that runs from the presentation layer (ex webview, cli) to Cline Core, and one that runs from Cline Core to the host environment (ex vscode, neovim, etc). This means that the presentation layer can trigger actions in CC (ex. newTask), and CC can trigger actions in the host environment (ex. showWarningDialog). Check out the ./proto folder for all the definitions of the Cline API and Host API
+  - 3) Settings are now stored in `~/.cline` as JSON for CC
+  - 4) We're currently working on implementations of JetBrains & a generic CLI 
+
+- to the best of your knowledge, is this the first library that implements this concept with CC? or are you following the lead of others elsewhere?
+  - Afaik we’re the only ones using grpc, but the pattern is fairly common for agents that need to interface with many different hosts and presentation layers. Different flavors of the same architecture
+- Continue & Cody has something similar, i don’t think claude code does.
+
+- ## ☁️ [Cline outside VSCode? : r/CLine _202508](https://www.reddit.com/r/CLine/comments/1n0w4x4/cline_outside_vscode/)
+  - Are there ways to let Cline run in the cloud / plans that would enable the described UX?
+
+- 👷 it's Pash from the Cline team. Yep, this is exactly what Cline Core is for. 
+  - Cline core is the standalone gRPC-based engine that lets Cline run outside VSCode. 
+  - It already exists in a WIP form, and you could write your own integration with it now, but the team’s advice has been to hold off on building serious integrations until the upcoming CLI release, since that’ll give you a stable, scriptable surface for exactly these async/cloud/mobile workflows.
+  - If you’re interested in the latest progress and roadmap, the `#cline-core` channel in Discord is the place to watch (Andrei is leading the initiative, posting CLI specs, integration details, and answering questions there).
+
+- ## [Standalone Cline? : r/CLine _202505](https://www.reddit.com/r/CLine/comments/1kfcid1/standalone_cline/)
+  - Is the only option with this library to run it in Vscode? Can it be run in a standalone mode where one can interact with it via a different pipe? Perhaps using protocol buffers?
+
+- After investigating this in cline repo, there appears to be heavy coupling to vscode in cline's core. It doesn't seem to be feasible to run it independently, and this seems like a much better option.
 
 - ## [Expose API/CLI for Remote Control · cline/cline _202504](https://github.com/cline/cline/discussions/2622)
 - I build an extension to do so from the beginning of this month, and just released a version on VS Marketplace. I intended to build it on Cline. 
@@ -211,9 +332,35 @@ modified: 2025-10-28T20:02:16.727Z
   - The primary motivation was to enable remote control, and this experiment confirms that you can create a mobile-friendly interface to interact with your development environment. While it's just a WIP/quick test, It makes the idea of being truly productive on a phone feel suddenly within reach.
 
 - are you planning on making vscode not a requirement by any chance? I would love for cline to be a standalone tool that I can use in my scripts instead of having to install vscode.
-  - looking at src/standalone/ source code, this seems to be the case 
-# discuss-RooCode
+  - looking at src/standalone/ source code, this seems to be the case
+
+- https://discord.com/channels/1275535550845292637/1392662920982171738/1403858110166339616
+- vscode cline remote connection for anyone still interested
+  - https://github.com/0xlws2/cline/tree/vscode-remote
+
+- ## [External API Integration for Cline [Feature proposal] _202507](https://github.com/cline/cline/issues/4886)
+- this functionality is already covered by our gRPC system (which supersedes the need for websockets and json). It's already pretty easy to tap into, and can function to provide multiple UIs to a vscode cline instance (running in vscode + a remote control for example). 
+  - As we get closer to a standalone implementation with a CLI remote control, it'll be easy to simply write a shell script around the CLI to do features like this telegram integration very easily. 
+
+# discuss-Roo
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Roomote suggestions : r/RooCode _202509](https://www.reddit.com/r/RooCode/comments/1ndiqly/roomote_suggestions/)
+- i feel the logic of remote is quite reverse or retard(使减速; 妨碍, 阻碍). The host is users vscode, so it requires your personal machine to be running to remote control it.
+  - Why not a cli based or sdk logic. Observer pattern : cli/sdk is a host so this can be run in any machine e.g. linux. Then from vscode and to roo remote app, users can enter ws api to listen to that host/server. But i believe this requires major architectural refactoring.
+  - i believe cline is moving towards to this path. I think they are planning to use cline sdk into the vscode extension as a core. So it's flexible to many features including remote controlling.
+  - I hope roo follows that path, you can build roo sdk, then it can be used to vscode, terminal agent etc it has so many possible applications.
+
+- Developers currently use VS Code to work on their code so this compliments their existing use of Roo Code. Not backwards at all.
+  - In terms of Roomote Cloud Agents, they’re coming. We don’t need a CLI to achieve this.
 
 - ## [Monitoring Roo Code while afk? : r/RooCode _202505](https://www.reddit.com/r/RooCode/comments/1kdzesz/monitoring_roo_code_while_afk/)
 - So you’re looking for Roomote control?
@@ -400,6 +547,25 @@ modified: 2025-10-28T20:02:16.727Z
 
 - ## 
 
+- ## 
+
+- ## [Anyone tried Cline, Roo code, Kilo Code. Which was the best and productive among them? : r/CLine _202509](https://www.reddit.com/r/CLine/comments/1nqy92m/anyone_tried_cline_roo_code_kilo_code_which_was/)
+- I like Roo for the different custom modes and the codebase indexing myself. And the Copilot experimental integration. It burns more tokens on the 1x models, but works well on the 0x.
+
+- kilo works best for my needs. I've primarily stuck with free models for Development, and Kilo's plug-in is the only one that seems to reliably detect when Chutes is rate limiting and retries with an exponential backoff.
+
+- Tried Roo Code then migrated to Cline. Feels too many knobs to turn in Roo to get satisfying result, Cline is just work out of the box.
+
+- Cline just added voice transcription which is pretty cool.
+
+- Roo seems to follow rules better and encounters fewer errors related to context window overflow. I like how easy it is to set up different model profiles.
+  - Although Cline seems to be able to transfer context to a new task more easily and roll back to an earlier point in the task to clear context more easily.
+
+- Been a cline user for a long time. I have been using Copilot more and more - with the addition to automatic task tracking, it's gotten much better.
+  - yes, tested cline for a while but ultimately switched back to Github Copilot. In the end it was faster and more efficient. Cline always patches / edits were slow and error prone
+
+- For pure coding tasks I like codex. For tasks that require a mix of some "devops" as well, I prefer Cline. I try Roo every so often, because it looks like it has all kinds of cool features. But in the end Cline is just that more robust.
+
 - ## [Experiences Using Cline and Roocode with Different AI Models : r/RooCode _202508](https://www.reddit.com/r/RooCode/comments/1mxxiob/experiences_using_cline_and_roocode_with/)
 - I’ve been working the past few months with both Cline and Roocode at the same time.
 - Using the same modes, I’ve also tested which AI engine handles tasks better. Here’s the trend I noticed:
@@ -534,10 +700,95 @@ modified: 2025-10-28T20:02:16.727Z
 - Roo Code (formerly Roo Cline) is a fork of Cline that gets rave reviews
   - People (well, me in that case) were asking for more fine grained options like per project instructions, and the Cline author's response was basically "not interested in the added complexity but feel free to fork". So somebody did.
 - I find RooCodes mode selector drop down inferior to the way Cline handles Plan and Act mode.
+# discuss-claude-code
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [How do you use Claude Code? One big session for an entire project, or one session per task. : r/ClaudeAI _202507](https://www.reddit.com/r/ClaudeAI/comments/1m763t5/how_do_you_use_claude_code_one_big_session_for_an/)
+  - One big session for an entire project, or one session per task, or do you use one session until something gets messed up, then create another session?
+- One session per task but I manage them in Crystal https://github.com/stravu/crystal
+
+- Usually large chunks
+
+- One session for a piece of work: read handover document (created previous session), plan next steps etc etc using the many approaches detail here already eg think carefully, don’t assume - verify first, ask me any questions…go towards work. At 10% context remaining I will stop work, ask for a detailed handover plan, rinse and repeat. Still encounter problems though! Claims things are done but not, so I’ve introduced a new step, verify and confirm handover document
+  - Interesting approach. What is the difference between this approach and auto compacting? Did you get better results with that compared to /compact?
+- You don’t know what Claude has compacted eg it could have carried over irrelevant or aged info. I just want it to focus on the task at hand with the latest context. It seems to work better for me, especially using the handover > review and confirm approach as the new session catches out BS.
+
+- Claude is going to do a bunch of searching and crap that fills up the context anyway. So I do one session per task and /clear after a summary of what was just done is updated.
+  - However I use sub-agents that get fed instructions from the main session, so my main session lasts a pretty long time. 
+
+- If I'm building something complex, with many features, I use Context Engineering with https://github.com/marcelsud/spec-driven-agentic-development
+  - In a clean session I use the spec commands to help me plan the features, requirements, technical design and the tasks to be implemented.
+  - I start a fresh session and start the implementstion by loading the feature context engineered with spec driven development and iterate with it. Then I go with it until the end, compacting the context before it reaches 3% left.
+  - I use a clean session to help me double check the features completion, to prevent cobtext bias (the model saying it is correct because it thinks it built it corretcly)
+
+- One session per task. If small enough, one session per feature to keep the flow and context, but if I'm close to needing to compact, then I will split on microservice boundaries like we do tasks.
+  - I have a shared documentation repo. So, the end of each session is to maintain the documentation, which makes it easy for new sessions to pick up on architecture from previous tasks.
+
+- It depends on the size of the task, IMO the sweet spot is using a context until it's about 50% full. So if there are a series of small related tasks then I might use the same session to do a bunch of them. Large tasks get a fresh session.
+
+- Claude Code does not reread Claude.md after compaction or /clear command. For this reason I put the content of Claude.md into a slash command like /dev. When done with a bigger task I use /clear followed by /dev and have a proper context for the next big thing (I’m too lazy to restart CC).
+# discuss-web-coding
+- ## 
+
+- ## 
+
+- ## [Remote management options : r/CLine _202502](https://www.reddit.com/r/CLine/comments/1ixke6k/remote_management_options/)
+  - I am looking for the ability to interact with cline running on my local computer via my cellphone. I am using cline heavily, and often have it confirm its changes are working by running a testing suite.
+
+- Vnc has worked for me
+
+- Get a server (Contabo as low as $5 per month) > Install Docker > Install VS Code Sever > install Cline Extension > Set reverse proxy on your VS Code Server (e, g code-server.mydomain.com) > Access it on any browser > Do your thing!
+
+- ## [Can I run a relay for cline or roo etc for web chat. Anyone done this? : r/vscode _202509](https://www.reddit.com/r/vscode/comments/1nn8x2d/can_i_run_a_relay_for_cline_or_roo_etc_for_web/)
+  - I’m wondering if anyone has success or experience in running a relay to code extension like cline or roo to a external web chat etc.
+
+- Yep—people are doing this, but the paths differ:
+  - Roo Code: Easiest. Use Roo Cloud (Roomote Control) — it gives you a web chat that talks to your local Roo in VS Code. No extra glue needed.
+  - Cline: No built-in web chat/relay. Two workarounds:
+    - OpenAI-compatible proxy (LiteLLM, Vercel AI Gateway, Portkey, OpenRouter). Point both Cline and your external web chat at the same proxy → shared models, centralized keys/rate limits/logs. Doesn’t “control” Cline UI, just unifies the backend.
+    - DIY bridge via MCP (Model Context Protocol). Run/make an MCP server that your web chat talks to, and wire it to Cline/browser-use. Works, but you’ll write glue code and handle auth/state yourself.
+- If you want true remote control (start tasks, see plan, approve steps) without touching VS Code, Roo’s cloud is the clean option today. For Cline, it’s proxy or DIY.
+# discuss-internals-coding
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## because we built opencode as a client/server model from day one, 100% of it's functionality is available as an API _20251026
+- https://x.com/thdxr/status/1982129382106816535
+  - this includes non-LLM functionality like searching for files
+
+- All logic server side. Deploy it locally for free use => Land & Expand on dev laptops
+  - The same API can be deployed as a SaaS product or self-hosted enterprise for governance
 # discuss
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Codex CLI vs Claude Code vs Claude Code + Z.ai API — which one’s worth it? : r/ClaudeCode _202509](https://www.reddit.com/r/ClaudeCode/comments/1nepo9y/codex_cli_vs_claude_code_vs_claude_code_zai_api/)
+- I use CC to analyze and generate tasks, which I then use with GLM to complete. It works quite well and does a more than acceptable job.
+
+- Codex CLI is genuine crap. Anything is better than codex CLI as tool.
+  - Codex cli uses freaking toml, huge red flag.
+  - There is not local mcp config, no way to share it or version it for project.
+  - And tool configuration... I didn't comprehend it.
+  - their SDKs are nightmare to work with, literally made by smartasses who never worked with direct clients.
+- literally every cli tool tries to be compatible, where codex just being special.
 
 - ## [Cline vs Claude Code with the same model? Which one wins? : r/CLine _202510](https://www.reddit.com/r/CLine/comments/1nvvt81/cline_vs_claude_code_with_the_same_model_which/)
   - So cline (or roocode) vs claude code cli - while using sonnet of GLM4.5 - is there a difference between using the same model with different tools?
