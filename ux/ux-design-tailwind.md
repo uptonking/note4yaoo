@@ -51,6 +51,16 @@ modified: 2021-01-03T17:11:47.916Z
 - you might need to start buying some of these SaaS starter kits/courses
 
 - Tailwindui is in stalled mode for years now. Start charging for yearly updates and ship new ui every few months. Also include a vanila javascript library for interactivity - just like preline, so that we can use it on any framework. Current react only offering is not enough.
+# discuss-v4
+- ## 
+
+- ## 
+
+- ## [Padding and margin are not working on Vue.js _ TW v4.0 · tailwindlabs/tailwindcss _202501](https://github.com/tailwindlabs/tailwindcss/discussions/15728)
+  - I had a similar issue where a lot of my styles seemed to be alright but margin and padding were obviously very wrong. 
+  - In v3, my main CSS file had reset styles like the ones below. I like to reset all margin and padding to 0 and handle those manually for each element and this worked fine in v3. 
+  - I think v4 brought quite a few specificity changes because of the substantial use of CSS `@layer` and this made it so all my elements always had 0 margin and padding, even when using a tailwind class like `<div class="p-4"></div>` .
+
 # discuss
 - ## 
 

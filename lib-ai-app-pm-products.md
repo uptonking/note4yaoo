@@ -50,6 +50,7 @@ modified: 2025-03-22T16:10:24.856Z
 
 - 🏠 ai-architecture: 与ai的通信和计算是在前端实现，还是在后端实现
   - 🤔 一种思路: tool-call时使用擅长tool-call的模型，分析时使用公益站的聊天优质但无法tool-call的模型
+  - 支持类似 roocode 的 model profile 切换
   - 🐛 前端和大模型直接对接的缺点: 关闭页面会丢失数据、流程中断、并发控制复杂
   - 🤔 why backend server
     - 消息持久化时，使用服务端id才方便消息保存与恢复、多人聊天一致性
@@ -241,6 +242,7 @@ modified: 2025-03-22T16:10:24.856Z
 
 - tips: 公益站不稳定(3个月就倒闭一批), 来源不明可能导致效果差, 需要经常确认和维护, 不要浪费过多时间
   - 🤔 一种思路: tool-call时使用擅长tool-call的模型，分析时使用公益站的聊天优质但无法tool-call的模型
+  - coding方案还可使用 ccr 转换 qwen-code-cli
 - 免费api的技巧: 在知乎/小红书直接搜索 免费 claude (公益站), 就会有最新的api推广信息, 可以用小号邀请自己
   - 公益站 [Search results for '公益站' - LINUX DO](https://linux.do/search?q=%E5%85%AC%E7%9B%8A%E7%AB%99%20order%3Alatest)
   - 📌 [Agent Router](https://agentrouter.org/), 每日签到获取$25
@@ -275,7 +277,7 @@ modified: 2025-03-22T16:10:24.856Z
     - Claude和gpt 暂时不支持工具调用
     - API 调用频率限制为 12RPM，公益站永久免费，采用公平限流策略以保障服务稳定
     - [KYX API Refueling Station 公益站额度加油站](https://quota.kyx03.de/)
-  - [learn-ai 公益站点](http://free.learn-ai.top/), 需要签到
+  - [learn-ai 公益站点](http://free.learn-ai.top/), 需要签到且额度很少
     - 支持的模型质量较低: 很少一部份claude模型, gpt-mini/nano
     - 可以加入付费站点：https://learn-ai.top/
   - [RawChat公益站点](https://chatgptplus.cn/)
@@ -431,17 +433,16 @@ modified: 2025-03-22T16:10:24.856Z
 
 - 📌 [Z. AI DEVELOPER DOCUMENT](https://docs.z.ai/guides/overview/pricing)
   - tldr: 请求并发数量（在途请求任务数量）flash-2
-  - GLM-4.5-Flash	Free Free ✅
-  - free: GLM-4-Flash-250414, GLM-4.1V-Thinking-Flash, GLM-4V-Flash, Cogview-3-Flash, CogVideoX-Flash
-  - 免费模型: [福利专区](https://bigmodel.cn/dev/activities/free/glm-4-flash)
+  - GLM-4.5-Flash Free ✅
+  - free: glm-4-flash-250414(20), glm-4-flash(200), glm-4.1v-thinking-flash(5), glm-4v-flash(10), cogview-3-flash, cogvideox-flash, glm-experimental-preview(5)
   - [模型实时调用专属权益 及 标准单价 (很多免费)](https://bigmodel.cn/usercenter/equity-mgmt/user-rights)
+  - [智谱AI - pricing](https://bigmodel.cn/pricing)
+  - 免费模型: [福利专区](https://bigmodel.cn/dev/activities/free/glm-4-flash)
   - [Z.ai - Rate Limits](https://z.ai/manage-apikey/rate-limits)
     - GLM-4.5-Flash	2
-  - [智谱AI - pricing](https://bigmodel.cn/pricing)
   - [智谱AI开放平台 - 速率限制 - 用户等级](https://bigmodel.cn/usercenter/proj-mgmt/rate-limits)
   - [智谱AI开放平台 - 速率限制](https://www.bigmodel.cn/dev/howuse/rate-limits)
     - 当前我们限制的维度是请求并发数量（在途请求任务数量）
-    - GLM-4-Flash	200
 
 - [KAT-Coder开发工具接入指南-快手万擎-StreamLake](https://www.streamlake.com/document/WANQING/me6ymdjrqv8lp4iq0o9)
   - tldr: rphour-20~30

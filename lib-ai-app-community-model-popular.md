@@ -1489,6 +1489,26 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🤔 [如何最大化利用社区key（自动故障转移切换） - 开发调优 - LINUX DO _202510](https://linux.do/t/topic/1098166)
+  - 现在各家 ClaudeCode 中转都难保障 24 小时稳定性，自动切换显得灰常重要
+
+- Claude Code Hub 虽然目前还不支持 auth token, 但是负载均衡和故障重试这一块儿绝对是杠杠的
+
+- claude-relay-service: CRS暂不支持自动切换重试
+
+- 感觉无论key还是token都可以全塞http请求头里，让中转商服务端自行忽略处理
+  - 那样就不符合请求透传的原则了, CCH 的原则是除必要头部外不对请求做任何处理
+
+- [怎么看每个公益站的RPM呢 - 搞七捻三 - LINUX DO _202510](https://linux.do/t/topic/1108753)
+  - 公益别逮着一个薅，开轮询负载均衡一下
+  - 我也想问一下关于轮询的问题，很多公益站的模型命名都不同，应该如何导航到同一个id，我尝试在veloera里手动把渠道模型id改为同样的id，但是当我调用的时候，当一个渠道的模型无法使用，也不会给我自动轮询到下一个渠道
+
 - ## [CC封号太严重了，上车就翻车，平替用CC+GLM还是CodeX ？友友们有经验吗 - 开发调优 - LINUX DO _202510](https://linux.do/t/topic/1092260/10)
 - glm用着用着，会有问题解决不了的。还是需要一个能力更强的AI
 

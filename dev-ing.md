@@ -213,12 +213,7 @@ next dev -H 0.0.0.0 -p 3000
   - 做完tailwind-table就面试
 - dev-to 提炼核心`需求+产出`工作流，不能在产品中检验的技术不玩
 # dev-10
-- dev-log
-  - ?
-- dev-to
-  - aisdk + streamdown without ai-elements
-  - streamdown + resume-with-redis
- 
+
 ```log //dev-xp
 console.log('; ; task ', taskState, runningTaskAction, task?.task_steps)
 ^((?!(42\["heartbeat|resourceMonit|refreshXtermCols)).)*$
@@ -245,12 +240,70 @@ add action to create quickSort1.mjs and try to implement quick sort algorithm in
 use vanilla html/css/javascript to create a simplistic personal profile landing page: homepage shows a big welcoming greeting, then shows 2 example personal projects, then a simple get in touch example email below it
 use vanilla html/css/javascript to create a personal profile landing page: homepage shows a cool welcoming animation, then shows 4 example personal projects, then a simple get in touch form below it
 use react to create a homepage shows a list of frontend frameworks like react/vue/angular, when clicking the framework, navigate to the route to show its introduction
+
+- 你是一个专业且友善的 AI 助手。你的回应应该： 1. 使用简体中文回答 2. 当需要展示代码时，使用适当的语法高亮（如 typescript, python, javascript 等） 3. 当需要解释复杂概念时，可以使用 Mermaid 图表 4. 当涉及数学公式时，使用 LaTeX 语法 5. 保持回应简洁明确，适时使用列表和表格来组织信息. 
+  - 请按以上要求介绍reactjs前端框架
+
 ```
 
 - goal-to 增强特色
   - editor
   - crud
   - 业务系统与架构增强: lasuite-docs, knowledgebase, cms
+
+- dev-log
+  - ?
+- dev-to
+  - aisdk + streamdown without ai-elements
+  - streamdown + resume-with-redis
+ 
+
+## 1030
+
+- when should i configure `transpilepackages` for nextjs
+  - For performance reasons, Next.js (and its underlying bundlers, Webpack and Turbopack) does not transpile code inside node_modules. It assumes that all published packages are already compiled down to a universal, browser-compatible version of JavaScript (typically CommonJS).
+  - One of the most frequent use cases for transpilePackages is in a monorepo setup where you have shared local packages. These local packages, often containing UI components or utility functions, are typically written in modern JavaScript or TypeScript and are not pre-compiled before being used by your Next.js application.
+  - Without transpilation, Next.js would treat these packages as external node_modules and wouldn't process their source code, leading to syntax errors. By adding your local package names to the transpilePackages array, you instruct Next.js to run its compilation process on them, just like it does for your application code.
+  - Under the hood, transpilePackages leverages the Next.js Compiler (which uses SWC) to process the specified packages. This compilation is significantly faster than traditional methods that relied on Babel
+
+- [Guides: Package Bundling | Next.js](https://nextjs.org/docs/pages/guides/package-bundling)
+  - By default, packages imported into your application are not bundled. This can impact performance or might not work if external packages are not pre-bundled, for example, if imported from a monorepo or `node_modules`.
+  - To automatically bundle all packages (default behavior in the App Router), you can use the `bundlePagesRouterDependencies` option in your next.config.js.
+
+- [@property - CSS | MDN //caniuse-2024](https://developer.mozilla.org/en-US/docs/Web/CSS/@property)
+  - part of the CSS Houdini set of APIs. 
+  - It allows developers to explicitly define CSS custom properties, allowing for property type checking and constraining, setting default values, and defining whether a custom property can inherit values or not.
+
+- [color-mix() - CSS | MDN //caniuse-2023](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix)
+  - enables mixing two `<color>` values of any type, in a specific ratio, in a given colorspace, using either a shorter or longer hue interpolation method
+
+- [Detecting classes in source files - Core concepts - Tailwind CSS](https://tailwindcss.com/docs/detecting-classes-in-source-files)
+  - Tailwind treats all of your source files as plain text, and doesn't attempt to actually parse your files as code in any way.
+  - Since Tailwind scans your source files as plain text, it has no way of understanding string concatenation or interpolation in the programming language you're using.
+  - Always use complete class names
+  - Always map props to static class names
+  - If you need to scan any files that Tailwind is ignoring by default, you can explicitly register those sources.
+    - Use `@source` to explicitly register source paths relative to the stylesheet
+
+- 🤔 in a `globals.css` file, i see the following code
+  - explain the css directives to me
+
+```css
+@source "../node_modules/streamdown/dist/index.js";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "./_variables.scss";
+@import "./_keyframe-animations.scss";
+```
+
+- 👾 @source "../node_modules/streamdown/dist/index.js"; 
+  - Not a standard browser CSS rule — it’s a Tailwind/PostCSS build-time at-rule introduced in Tailwind v4 to explicitly register external files (content/styles) with the Tailwind toolchain. 
+  - It’s commonly used by packages (like Streamdown) to tell Tailwind to include/scan that package’s files so styles and class names are picked up or the package’s styles are applied. This line will be handled by Tailwind/PostCSS during your build
+  - If you don’t want to `use @source`, you can often import the package’s CSS directly
+  - This is a custom Tailwind CSS directive. The `@source` directive explicitly tells Tailwind's content scanner to look inside the specified JavaScript file. By default, Tailwind scans your HTML, JS, and component files to find which utility classes you're using (like text-blue-500 or flex). It does this to create a minimal CSS file containing only the styles you need. However, it usually skips `node_modules`. This `@source` rule forces Tailwind to also scan streamdown/dist/index.js to ensure any classes used by that third-party library are included in your final stylesheet.
+- @tailwind base; This is a directive for Tailwind CSS
+  - It injects Tailwind's "base styles, " also known as "Preflight." Preflight is a modern CSS reset built into Tailwind. It smooths out cross-browser inconsistencies
 
 ## 1029
 

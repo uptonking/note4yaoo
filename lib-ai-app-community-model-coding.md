@@ -119,7 +119,12 @@ modified: 2025-09-16T13:29:11.327Z
 - 解释“测试左移”和“测试右移”的概念，并说明它们对测试工程师能力要求的变化。
 - 我正在准备面试，请模拟面试官，向我提出3个关于自动化测试策略的深入问题。
 
-- ## 🖼️ svg prompts/resources
+- ## 🖼️ vlm
+
+- Detect all **text** in the image and return their locations in the form of coordinates. The format of output should be like {"bbox_2d": [x1, y1, x2, y2], "label": "object name or value"}.
+- Detect all **handwritten text** objects in the image and return their locations in the form of coordinates. The format of output should be like {"bbox_2d": [x1, y1, x2, y2], "label": "object name or value"}.
+
+- ## svg prompts/resources
 
 - create a html file to show the following svg graph
   - Generate the SVG code for a button with glowing border
@@ -864,6 +869,21 @@ def slugify(text):
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## cognition: we’re releasing SWE-1.5, our fast agent model. _202510
+- https://x.com/xeophon_/status/1983764023108890806
+- They didn't disclose the underlying model which makes it seem like they are trying to pretend to have made a "novel" model that competes at SOTA level, when in actual fact its probably a lightly fine tuned GLM-4.6 with some coding based prompting on it.
+
+- Probably the same for Cursor's compose. But at least  this model tested on a public benchmark, not "Internal Cursor Bench".
+  - SWE-bench Pro is not entirely public, either. They likely used the private set
+
+- This makes a bit of sense. Both AI coding tools did not add any Chinese models after GLM 4.5's release.
 
 - ## [Sonnet 4.5 is good. Thoughts on Codex and GLM 4.6 : r/ClaudeCode _202510](https://www.reddit.com/r/ClaudeCode/comments/1o13np0/sonnet_45_is_good_thoughts_on_codex_and_glm_46/)
   - Tried Codex and GLM 4.6 (through claude code), to try and see what other options are out there.

@@ -28,6 +28,7 @@ modified: 2025-10-28T20:02:16.727Z
 
 - cline-cons
   - reject github contributions
+  - plan/act 只支持切换同一provider的不同model，不支持不同provider的不同model
 
 - features-cline
 
@@ -700,7 +701,7 @@ modified: 2025-10-28T20:02:16.727Z
 - Roo Code (formerly Roo Cline) is a fork of Cline that gets rave reviews
   - People (well, me in that case) were asking for more fine grained options like per project instructions, and the Cline author's response was basically "not interested in the added complexity but feel free to fork". So somebody did.
 - I find RooCodes mode selector drop down inferior to the way Cline handles Plan and Act mode.
-# discuss-claude-code
+# discuss-claude-code/codex
 - ## 
 
 - ## 
@@ -708,6 +709,31 @@ modified: 2025-10-28T20:02:16.727Z
 - ## 
 
 - ## 
+
+- ## 🐛 [Does Codex do sub agents? : r/codex _202510](https://www.reddit.com/r/codex/comments/1ohto4f/does_codex_do_sub_agents/)
+- Codex only works problems sequentially.
+  - Claude has sub agents where you can spin up other agents with specific instructions and have them operate in parallel, directed by Claude or another subagents (or no other agent).
+
+- no but Codex doesn't do dom agents either
+  - what we need is an agent that can switch between the two roles
+
+- ## [Claude Code as a Sysadmin - Surprisingly good! : r/ClaudeCode _202510](https://www.reddit.com/r/ClaudeCode/comments/1oil25z/claude_code_as_a_sysadmin_surprisingly_good/)
+- Here's my experience with using it as my sysadmin that i'd like to share:
+- The task: Take a bare Ubuntu 22.04 VPS and turn it into a fully provisioned, multi-domain web and email hosting server.
+- I made an account that can sudo, and without using it for production I've asked Claude Code to make three scripts:
+- init_system.sh: that sets up the core stuff, my components were: nodejs, mariadb, PM2 and Nginx
+  - it made me that script, it had everything, checked if it runs as root first etc...
+  - Surprise: I ran it and everything was set up!!
+- the next challenge: How do I add a domain, i want it in Nginx, and a web-root directory for it. plus a port where nodejs runs on, for PM2. So i asked Claude Code to make me another script:
+  - that makes the config changes for Nginx and PM2 and creates a web root directory
+- Once i had them. I made a fresh install, put the scripts there, and now this works perfectly.
+- I even got it to make a security assessment of my server, where it has found a few issues, which i applied and iteratively patched the initial scripts that it had made.
+
+- I used to spend days pulling my hair out about issues that are beyond my expertise (as most are regarding sysadmin), often having to hire somebody on Upwork to fix it, where now just copy pasting errors and logs fixes it within an hour.
+
+- Claude Code is very helpful for troubleshooting and writing scripts for daily sysadmin / SRE tasks. For example, I haven't worked with Windows at all (100% Unix — Linux and FreeBSD), but created a couple of pretty complex scripts in Powershell.
+
+- You're absolutely right! I shouldn't have run `rm -rf /`
 
 - ## [How do you use Claude Code? One big session for an entire project, or one session per task. : r/ClaudeAI _202507](https://www.reddit.com/r/ClaudeAI/comments/1m763t5/how_do_you_use_claude_code_one_big_session_for_an/)
   - One big session for an entire project, or one session per task, or do you use one session until something gets messed up, then create another session?
