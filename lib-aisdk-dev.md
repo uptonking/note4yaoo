@@ -76,14 +76,31 @@ modified: 2025-08-08T07:35:49.535Z
 
 - 
 - 
+- 
 
+- ## [AI SDK 6 Beta _202510](https://v6.ai-sdk.dev/docs/announcing-ai-sdk-6-beta)
+- AI SDK 6 is a major version due to the introduction of the v3 Language Model Specification that powers new capabilities like agents and tool approval.
+  - However, unlike AI SDK 5, this release is not expected to have major breaking changes for most users.
+  - AI SDK 6 is expected to have minimal breaking changes. The version bump is due to the v3 Language Model Specification, but most AI SDK 5 code will work with little or no modification.
+  - ⚖️ https://github.com/vercel/ai/tree/main/packages/provider/src/language-model
+
+- 🧩 Agent Abstraction: A new unified interface for building agents with full control over execution flow, tool loops, and state management.
+
+- Tool Execution Approval: Request user confirmation before executing tools, enabling native human-in-the-loop patterns.
+- Structured Output (Stable): Generate structured data alongside tool calling with generateText and streamText - now stable and production-ready.
+- Reranking Support: Improve search relevance by reordering documents based on their relationship to a query using specialized reranking models
+- Native support for image editing (coming soon).
+
+- ## [AI SDK 5 release blog _20250731](https://vercel.com/blog/ai-sdk-5)
 - [Migrate AI SDK 4.0 to 5.0](https://ai-sdk.dev/docs/migration-guides/migration-guide-5-0)
   - `maxTokens` parameter has been renamed to `maxOutputTokens` for clarity.
   - Core Type Renames: CoreMessage → ModelMessage, Message → UIMessage
   - For UIMessages (previously called Message), the `.content` property has been replaced with a parts array structure.
   - AI SDK 5.0 introduces dynamic tools for handling tools with unknown types at development time, such as MCP tools without schemas or user-defined functions at runtime.
 
-- [Migrate AI SDK 3.4 to 4.0](https://ai-sdk.dev/docs/migration-guides/migration-guide-4-0)
+- v5/rename `toDataStreamResponse` to `toUIMessageStreamResponse`
+
+- ## [Migrate AI SDK 3.4 to 4.0](https://ai-sdk.dev/docs/migration-guides/migration-guide-4-0)
   - `baseUrl` option has been removed from all providers. Please use the `baseURL` option instead.
   - `streamText` returns immediately: Instead of returning a Promise, the streamText function now returns immediately. 
 # more

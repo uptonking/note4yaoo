@@ -162,7 +162,22 @@ Their main job is sending client requests to several servers. The goal is to spr
 # discuss-tunnel/gateway
 - ## 
 
-- ## 
+- ## [Is there any reason not to use the free cloudflare ssl, and dns management? : r/selfhosted _202510](https://www.reddit.com/r/selfhosted/comments/1oknia1/is_there_any_reason_not_to_use_the_free/)
+- Assuming you mean the Cloudflare Tunnels: There is a cap on transfers of around 100 mb. Sometimes it works, sometimes they drop those connections.
+  - Also, you’re giving away free unencrypted access to you home infrastructure to an American company, including all data that is being sent between the app clients and servers. You can of course encrypt that yourself, but it is still a nasty backdoor
+
+- For anyone serious about exposing a homelab to the internet, take a look at NPMplus: https://github.com/ZoeyVid/NPMplus
+  - They support Crowdsec out of the box and it makes managing and securing a reverse proxy a lot easier.
+- Or just use a TCP reverse-proxy to pass fully TLS-encrypted to your home, where your home's reverse-proxy terminates TLS. HAProxy and Nginx support it, maybe Caddy and Traefik.
+
+- You can of course encrypt that yourself
+  - I'm not aware of any method to encrypt traffic inside TLS. Unless you mean using E2EE like client-side encryption for the traffic's content, or using a remote desktop?
+
+- Yes, privacy. Since they have the private key to your SSL certificates, they technically can look at all the data that is coming into your system. If it is free, you are the customer/product.
+
+- Other than whatever privacy concerns you may have with Cloudflare sitting in the middle, no not really. Fwiw I don't really mind letting cloudflare be my monkey in the middle since their services provide a good benefit to me, but up to you.
+
+- I just use them for my DNS registrar, domain renewals are the same price as the initial registration (unless there are general price increases) - they don't have a separate pricing tier for initial and renewal like how other sites get you. I use ddns to update the IP address to home and then connect directly with wireguard
 
 - ## 你目前在用哪种方式翻墙呢？ 🆚️
 - https://x.com/__Inty__/status/1905650995750649966

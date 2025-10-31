@@ -117,6 +117,7 @@ modified: 2021-05-06T09:39:53.522Z
 - prosemirror-markdown
   - rewrite with remark
   - rewrite with codemirror/lezer
+  - mdx
 
 - collab
   - codemirror in prosemirror: all collaborative

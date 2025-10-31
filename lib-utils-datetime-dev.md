@@ -40,6 +40,12 @@ modified: 2023-10-13T16:44:29.825Z
 
 - ## 
 
+- ## 
+
+- ## [Why is 'getTimezoneOffset' implemented in the Date.prototype and not as a static method of Date? - Stack Overflow](https://stackoverflow.com/questions/50141269/why-is-gettimezoneoffset-implemented-in-the-date-prototype-and-not-as-a-static)
+- Because of Daylight Saving Time. The UTC offset will be different in the same time zone depending on whether the date is before or after the DST change.
+  - The time zone offset returned is the one that applies for the Date that it's called on. Where the host system is configured for daylight saving, the offset will change depending on the date and time that the Date represents and that daylight saving applies.
+
 - ## I'm in the middle of replacing date-fns with temporal-polyfill.
 - https://twitter.com/evoluhq/status/1749545877545378011
 

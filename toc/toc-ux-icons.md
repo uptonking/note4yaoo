@@ -341,6 +341,19 @@ modified: 2021-05-06T09:58:23.803Z
 - https://github.com/jaywcjlove/icongo /MIT/202405/ts
   - https://icongo.github.io/
   - Search SVG Icons. Easily include popular icons in your React projects and provide an easy tool to convert SVG into React components
+
+- https://github.com/vemetric/favicon-api /MIT/202511/ts
+  - https://vemetric.com/favicon-api
+  - Free and open-source API to fetch favicons from any website.
+  - [I built an open source Favicon API : r/selfhosted _202510](https://www.reddit.com/r/selfhosted/comments/1oj4uzr/i_built_an_open_source_favicon_api/)
+    - Is this different to the one DuckDuckGo offers? For example, the Reddit icon is: https://icons.duckduckgo.com/ip3/www.reddit.com.ico
+    - main difference is that my API lets you control the returned size and convert the image into different formats (png, jpg, webp)
+    - it also lets you define a custom fallback image and always tries to find the image in the best quality possible
+    - in the end I just wanted to create a (more flexible) alternative to the available APIs
+  - 💡 By the way, there’s a neat trick to use emojis as favicons via (inline) SVG. I like using that for small (internal) sites to quickly have a nice looking favicon.
+  - https://css-tricks.com/emoji-as-a-favicon/
+  
+
 # icons-anime
 - https://icons.pqoqubbw.dev/
   - animated icons i’ve been working on lately are now open source

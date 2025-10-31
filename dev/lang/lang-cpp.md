@@ -112,6 +112,36 @@ modified: 2020-07-14T09:26:25.358Z
 - CMake's problem is not just the documentation, it's its constant changing APIs, the growing amount of code required to just get something seemingly simple going on, over-complicating the build process, the syntax, and so on! CMake is too big to be too good!
 
 - CMake needs to be decomposed: config | make | cache
+# discuss-dll
+- ## 
+
+- ## 
+
+- ## 我之前也想了很久如何实现：在静态链接的程序里调用动态链接库的函数。
+- https://x.com/hemashushu/status/1983873764501909646
+  - 之所以有这样的想法是想让程序尽可能减少库依赖，但诸如GPU驱动、GTK/Webkit 等库显然没法将它们通通做静态链接。
+  - 然后这个项目 （https://github.com/graphitemaster/detour） 用了一个很巧妙的方法实现了。
+  - 简单来说，主程序一开始就加载 http://ld-linux.so（该库是静态链接的），然后多准备了一个只有 main 函数的副程序，让 ld-linux 加载这个副程序，main 函数的作用是获取 dlopen/dlsym 等 dl* 函数的地址，然后返回到主程序。如此一来主程序就可以使用 dl* 等动态加载函数了。
+  - 这么绕的原因是你无法直接将动态链接库（/usr/lib/*.so）加载到内存，然后通过寻找函数地址的方式来调用其中的函数。
+  - 因为这些库在设计上实际上都是由 ld-linux 加载的，加载器会做很多初始化工作，如加载依赖的依赖，它其实就是一个 runtime，所以函数自然没法在缺少 runtime 的情况下正常运行。
+  - 当然这个方法要求主程序在运行中“静悄悄地”释放一个可执行程序，也不算非常优雅，但确实是最简单且可行的方法。
+  - 早前我还想过能不能在程序里嵌入一个动态加载器（即类似ld-linux的角色），如果目标动态库没有再依赖其他库，倒是可行，但这样通用性就大打折扣了，就不知道还有没其他优雅的方法
+
+- 为什么ld-linux没有设计出可被调用的库呢 实在搞不懂  照理说 也不是那么难实现查找与加载
+  - 应该跟设计哲学有关，linux 以及 c 的设计就是让大家尽量用动态链接，以减少内存占用（同一个库全局只加载一份）和磁盘空间占用，理想很好。只是这种方式对最终用户并不友好，典型的如一个已编译的linux应用程序大概率没法直接copy到另一台linux上运行，即使同一个发行版遇到系统版本不同也不行。
+- 我感觉责任在库作者那 尤其是libc 另外不是有appimage么
+
+- 自己实现了一个 loader 吧
+  - 理论上是可以把glibc或者musl的动态链接器包含在主程序里，但比较稳健的做法还是使用当前系统的链接器，毕竟不确定最终运行环境的是哪一个以及版本是什么，不同加载器和版本不太通用（用 musl 加载器加载基于 glibc 的共享库好像会出错）话说我挺强烈赞成全部用rust重写的，真受够这些部署的依赖问题
+
+- 这种方法是给木马准备的吗 
+
+- 为啥这么做呢？
+  - 让程序变成 portable （绿色软件）
+
+- 直接for枚举所有可能的glibc，然后构建O(N)个不同版本，让用户自己根据本地的版本选择
+
+- 你是不是在找“插件系统”？
 # discuss
 - ## 
 

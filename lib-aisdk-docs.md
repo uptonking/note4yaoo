@@ -68,6 +68,24 @@ modified: 2025-08-08T07:36:16.802Z
 - 
 - 
 
+# api-ai-sdk
+- streamText
+  - `result.textStream` is both a `ReadableStream` and an `AsyncIterable`.
+  - streamText immediately starts streaming and suppresses errors to prevent server crashes. Use the `onError` callback to log errors.
+  - `result.toTextStreamResponse()`: Creates a simple text stream HTTP response.
+  - result.toDataStreamResponse(): Creates a data stream HTTP response (with tool calls etc.) that can be used in a Next.js App Router API route.
+
+- generateText
+  - This function is ideal for non-interactive use cases where you need to write text (e.g. drafting email or summarizing web pages) and for agents that use tools.
+  - The result object of generateText contains several promises that resolve when all required data is available
+
+- 
+- 
+- 
+- 
+- 
+- 
+
 # docs-ai-sdk
 - AGI refers to models that predict and generate various types of outputs (such as text, images, or audio) based on what’s statistically likely, pulling from patterns they’ve learned from their training data. 
 
@@ -174,7 +192,7 @@ modified: 2025-08-08T07:36:16.802Z
 - `useObject` is a hook that allows you to consume streamed JSON objects, providing a simple way to handle and display structured data in your application.
 
 - The `useChat` message format is different from the `ModelMessage` format. 
-  - The `useChat` message format is designed for frontend display, and contains additional fields such as `id` and `createdAt`. 
+  - The `useChat` message format is designed for frontend display, and contains additional fields such as `id` and `createdAt` . 
   - We recommend storing the messages in the `useChat` message format.
 
 - In addition to a chat ID, each message has an ID. 
@@ -216,6 +234,8 @@ modified: 2025-08-08T07:36:16.802Z
 
 - With the lazy approach, this is taken care of for you. Because the stream will only request new data from AIBot when the consumer requests it, navigating away from the page naturally frees all resources. 
 
+- 
+- 
 - 
 - 
 - 

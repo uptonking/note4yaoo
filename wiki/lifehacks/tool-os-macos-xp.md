@@ -127,6 +127,8 @@ modified: 2023-07-23T07:05:19.441Z
   - Mac: Ctrl + -
 - 左右括号之间跳转： ctrl/cmd + shift + \
 
+- 自动换行(line wrapping): alt + z
+
 ## devtools
 
 - terminal
@@ -199,6 +201,8 @@ redis-cli shutdown
 
 - monitor
   - network: sniffnet
+
+- [coconutBattery Plus 4.1.0 破解版 - 电池信息查看工具 | MacKed ](https://macked.app/coconutbattery-plus-crack.html)
 # arm-mac
 
 # intel-mac

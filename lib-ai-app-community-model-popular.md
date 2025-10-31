@@ -270,7 +270,24 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## 🤔 [Why the hype around ultra small models like Granite4_350m? What are the actual use cases for these models? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1oku9og/why_the_hype_around_ultra_small_models_like/)
+- They're super useful for testing! And almost all the new TTS architectures these days include an LLM backbone.
+- So are you saying it would be good for the LLM for a super low latency STT-LLM-TTS stack?
+  - No, the LLM is incorporated into the TTS itself, either by modifying the model to receive/output audio tokens, or by using the LLM as part of a larger architecture.
+- ah, this is a good usage actually, they are much better than NER models.
+
+- You can use it as a draft. Or finetune it for really simple tasks, especially for classification (although other approaches might be better). Probably useful for older devices too (again, for simple tasks).
+
+- I have a huge Rag Faiss + BM25 database. When I need to filter results, I use small models. Even for tools. so you have embedding model + main llm and other small llm for rerank, classification, etc..
+
+- I have a large multi agent system. With SLMs I can run everything locally.
+  - No n8n or any other framework, just code for the orchestration of distributing a prompt to a multitude of other things, either agents, tools or SLM, coalescing and judging the responses of those things, and looping in the human.
+  - SLMs let me run it all, to a limit obviously, locally. Even if I need to talk to 10 agents, which would be beyond what my machine can handle, I just queue them up, and the orchestrator waits for all to complete.
+
+- It's all about context engineering. Use small models for trivial tasks that keep your orchestrator clean and focused. I use granite for detecting intent, parsing of pdf content like book indexes, summaries. I've even seen someone build a totally local mcp security "firewall" tool using SLMs.
+
+- except embedding, i think they barely do anything good. classification, they do shit in my test. tool call?? they can't understand context at all.
+  - so, in my test, the smallest usable model is qwen3 4B instruct. For embedding, nomic-1.5 can do a decent job. But i prefer embeddinggemma 300m. For 1B, I guess you have to finetune it with your own data from your real tasks.
 
 - ## 🆚 [4B fp16 or 8B q4? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1ofb7mu/4b_fp16_or_8b_q4/)
 - 8b q4 always wins.
@@ -1539,7 +1556,33 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 - ## [一个 Claude Code 公益站，支持 GLM, DS 3.1, Qwen 3, K2 等 - 资源荟萃 - LINUX DO](https://linux.do/t/topic/895380/1)
 - 虽然我创建了 Veloera。但用 new api 而不是 veloera 原因很简单，veloera 还没有 cc 支持  
 
-- [公益站的api来源是什么 - 搞七捻三 - LINUX DO](https://linux.do/t/topic/1099545)
+- ## [B4U公益站的Claude是只能对话吗 - 开发调优 - LINUX DO _202510](https://linux.do/t/topic/1066446)
+- 算是b4u的技术问题，没有部署用原生工具调用的版本，所以效果不太稳定
+
+- 也不支持图片呢
+- 接 roocode 用挺好的。 cc 是不行。
+
+- [B4U公益站接入Claude Code尝试(CCR接入) - 开发调优 / 开发调优, Lv1 - LINUX DO _202509](https://linux.do/t/topic/921779)
+  - 在站内查看相关的帖子，站长也开了接cc的研究贴，效果不太满意
+  - 当前缺点上下文太小，导致经常触发上下文压缩，损失项目信息，回应也更慢。上下文小可能是其他原因，还得研究研究。更新：最新尝试64K上下文也行，mcp调用没啥问题，但文件编辑错误次数有点多
+
+- 上下文好像是最近A社限制了免费对话上下文的原因，以前如果开启网络搜索是可以128k，现在都是20k了似乎
+
+- b4u之前就提供了实验性claude code，用这个不需要用ccr
+
+- 直接配置用CC的话，前几次试过，体验不好，错误率太高了。各种报错
+
+- 之前用这个公益 ＋ cc 的时候经常不能调用工具，体感不是很好
+
+- B4U用的应该是Toolify，原先对Claude Code的tools支持确实有限。这几天Toolify做了几次比较重要的更新，包括工具调用的格式强调、tool_call消息的处理等等，现在工具调用的体验应该会好很多
+
+- 1，上下文绝大部分时间仍是128K+（每天有半个小时会降至10K）
+  - 2，newapi:v08660之后，就已经支持直接cc以及其他代理工具，基础功能、文件读写编辑都可以通过测试，稳定性、速度、智商我都不满意，所以不推荐接入cc
+  - 3，一直用的是杯佬的toolify旧版本，新版0827经测试b4u的适配性、稳定性不如旧版
+
+- kilo使用b4u，发现大概120k附近就会开始报错了。
+
+- ## [公益站的api来源是什么 - 搞七捻三 - LINUX DO](https://linux.do/t/topic/1099545)
   - 2API和投喂为主
 - Gemini-2.5Pro和绘图系列为GeminiCli逆向，可以自行部署使用较为稳定的，不做项目推荐，因为在用系统系Claude魔改版本
   - Gemini-2.5-flash有个轮询分组，来源于其名称一模一样

@@ -316,6 +316,11 @@ modified: 2025-03-22T16:10:24.856Z
     - 本站永久运营，服务免费提供个人使用,禁止高并发,禁止高输入, 高并发会封号
     - 额度不限量,注册送$30，邀请送$5,正常用户额度快用完时会给后台增加
     - 不支持claude，支持openai, xai
+  - [黑与白chatAPI](https://ai.hybgzs.com/), 每日转盘
+    - 模型: claude, openrouter
+    - 本站完全免费！暂无任何充值通道
+    - 绝大部分模型倍率换算后与官方价格相同，为缓解服务器资源压力，所有免费模型实际扣除配额均按付费标准计算。
+    - [黑与白chatAPI福利站](https://cdk.hybgzs.com/)
   - [归一](https://ai.luuu71.dpdns.org/pricing)
     - gpt5
   - [TudouAPI](https://www.tudou.chat/), 签到复杂

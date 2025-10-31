@@ -193,6 +193,7 @@ modified: 2021-05-06T09:38:31.520Z
 - 🛝 markdown parser/highlight (lezer <> unified/remark)
   - markdown sync scroll
   - markdown-partial: treesitter as markdown stream parser
+  - mdx
 
 - later
   - port to server side lang like prosemirror-go/python

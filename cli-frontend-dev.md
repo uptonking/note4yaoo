@@ -79,6 +79,12 @@ async function test() {
     console.log("hi ", i);
   }
 }
+
+// https://stackoverflow.com/questions/10830357
+// 2025-11-01T03:19:02.082Z
+new Date(Date.now() - (new Date().getTimezoneOffset() * 60000)).toISOString()
+
+new Date(Date.now() - (new Date().getTimezoneOffset() * 60000)).toISOString().replaceAll('-', '').replaceAll(':', '').replaceAll('.', '')
 ```
 
 # npm-cli

@@ -96,6 +96,27 @@ modified: 2025-02-21T17:17:42.225Z
   - Supervision was designed to be model agnostic. Just plug in any classification, detection, or segmentation model.
     - we have created connectors for the most popular libraries like Ultralytics, Transformers, or MMDetection.
 # ai-designer/lovable
+- https://github.com/TesslateAI/Studio /apache2/202510/python/ts
+  - Open Source Locally Hosted Lovable with Full Stack Support
+  - Includes support for llama.cpp, LM Studio, Ollama, Openrouter, and any provider you choose.
+  - Run anywhere: Your machine, your cloud, your datacenter
+  - Container isolation: Each project runs in its own sandboxed Docker container
+  - Subdomain routing: Clean URLs (`project.studio.localhost`) for easy project access
+  - Tool Registry: File operations (read/write/patch), persistent shell sessions, web fetch, planning tools
+  - Multi-agent orchestration: Built on TframeX framework - agents collaborate across frontend, backend, database concerns
+  - What Makes Tesslate Studio Different?
+    - Tesslate Studio isn't just another code generation tool - it's a complete development platform architected from the ground up for self-hosting and data sovereignty
+  - https://github.com/TesslateAI/TFrameX /MIT/python
+    - TFrameX empowers you to build sophisticated, multi-agent LLM applications with unparalleled ease and flexibility.
+  - [Self hosted Multi User Loveable with Full Stack Support : r/selfhosted _202510](https://www.reddit.com/r/selfhosted/comments/1ok5gde/self_hosted_multi_user_loveable_with_full_stack/)
+    - I built Tesslate Studio. Its open sourced, Apache 2.0. Bring your own models
+    - Bring your own agents (you can define the system prompt or tools or add in a new agent with the factory), and bring your own github urls to start with.
+    - Would this be also a tool for python code or other types? Specific to web applications?
+      - You can put whatever container + runtime + initial starting repository. The default development container supports python so that works out, just pull in your github repo and you're good to go
+  - [Locally hosted Loveable with full stack support and llama.cpp, and more : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1ok5rn2/locally_hosted_loveable_with_full_stack_support/)
+    - I'm surprised that tesslate ai is a one-man project.
+    - Its not one man! We have a few people on discord training models now and Ernest and I built Studio. We've had other contributors help us for our other projects like: Agent Builder, TframeX, Designer
+
 - https://github.com/mendableai/open-lovable /8.3kStar/MIT/202508/ts
   - Clone and recreate any website as a modern React app in seconds
   - Chat with AI to build React apps instantly. Made by the Firecrawl team.

@@ -44,6 +44,7 @@ modified: 2025-07-17T14:39:41.606Z
     - pc版的架构还是vscode更合适，具备diff/timeline/fileTree/web等强大功能
   - open-chat for lasuite
   - doc-api-for-ai, 参考notion的实现方式
+  - 参考切换chat的ux和逻辑，来优化切换docs的体验
 
 - docs-editor  + image-gen
   - comfyui: text-to-image

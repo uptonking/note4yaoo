@@ -116,7 +116,33 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
-- ## 
+- ## Every LangGraph user I know is making the same mistake! They all use the popular supervisor pattern to build conversational agents.
+- https://x.com/akshay_pachaar/status/1983874390149484881
+  - The pattern defines a supervisor agent that analyzes incoming queries and routes them to specialized sub-agents. Each sub-agent handles a specific domain (returns, billing, technical support) with its own system prompt.
+  - This works beautifully when there's a clear separation of concerns.
+  - The problem is that it always selects just one route.
+  - For instance, if a customer asks: "I need to return this laptop. Also, what's your warranty on replacements?"
+  - The supervisor routes this to the Returns Agent, which knows returns perfectly but has no idea about warranties.
+  - This gets worse as conversations progress because real users don't think categorically. They mix topics, jump between contexts, and still expect the agent to keep up.
+  - This isn't a bug you can fix since this is fundamentally how router patterns work.
+  - Now, let's see how we can solve this problem.
+  - Instead of routing between Agents, first, define some Guidelines.
+  - Each guideline has two parts: - Condition: When it gets activated? - Action: What should the agent do?
+  - Based on the user's query, relevant guidelines are dynamically loaded into the Agent's context.
+  - This approach is actually implemented in Parlant - a recently trending open-source framework (15k+ stars).
+  - Instead of routing between specialized agents, Parlant uses dynamic guideline matching. At each turn, it evaluates ALL your guidelines and loads only the relevant ones, maintaining coherent flow across different topics.
+  - Another key advantage is that dynamic guidelines keep the system prompt clean, ensuring the agent receives only the right instructions at the right time.
+
+- Hmm won’t a fully connected sub agent flow with planning enabled work here where one agent can route to any sub agent if it can’t handle the task. So if realize the user needs more than one thing to be done the agent plans the steps and assigns to the required agent , task is executed result return until the final agent and one agent gives a combined answer
+
+- It's written in python, nothing is stopping a string split and route two agents and join intelligently at the end.
+
+- This seems like another form of "skills" that claude just released. Where the different skills are used to solve the flows and problems independently.  Its just making sure that all the parts are handled.
+  - Yes the ideas are certainly relatable
+
+- You can have the supervisor select a set of relevant agents instead of just one though
+  - I get your point. However, real users don't think categorically. They mix topics, jump between contexts, and still expect the agent to keep up at every turn of the conversation. You need something that can dynamically load context at every turn. That's where @ParlantIO shines!
+- I agree that this per turn dynamic context loading for the supervisor is effective however if there are agents added as tools to one of these guidelines then effectively its like dynamically selecting a subset of composite agents and then ReAct on this context. I actually did something very similar in one of my agents about data analysis where the per turn strategy would be selected dynamic (model, prompt and tools). I think as i said subset selection is just one of the possible single route out of all possible subset routes.
 
 - ## [I Built Pocket Flow, an LLM Framework in just 100 Lines — Here is Why _202503](https://medium.com/@zh2408/i-built-an-llm-framework-in-just-100-lines-83ff1968014b)
 - After a year of struggling with bloated frameworks, I decided to strip away anything unnecessary. The result is Pocket Flow, a minimalist LLM framework in just 100 lines of code.
