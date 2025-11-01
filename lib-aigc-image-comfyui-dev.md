@@ -82,6 +82,7 @@ modified: 2025-09-25T16:24:05.355Z
 - roadmap
   - docs-editor  + image-gen
   - image-editor + image-gen
+  - 支持多backends的架构可参考 
 
 - google-photos-like + google-drive + preview workflow
 

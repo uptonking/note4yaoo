@@ -34,6 +34,7 @@ modified: 2025-03-22T16:10:24.856Z
   - cost: unlimited tokens
   - network agnostic
   - 发挥端侧计算的能力，如总结/查询，而不侧重端侧聊天
+  - mlx的并发端侧计算能力非常强, 多个mlx并行计算
 
 - roadmap-ai
   - 针对国内免费api定制的chat/ppt: 魔搭, 快手万擎
@@ -260,12 +261,17 @@ modified: 2025-03-22T16:10:24.856Z
     - 用户较多，有提供vscode插件无法使用的解决方案
   - [Code Router](https://api.codemirror.codes/), 无法签到和更多额度
     - 支持 Claude Code & CodeX
-  - [b4u API](https://b4u.qzz.io/)
-    - 仅每周六晚21:00至21:30限时开放注册
-    - 会不会增加其他模型：不会，本站专注于Claude
+  - 📌 [b4u API](https://b4u.qzz.io/), 每日转盘
+    - 会不会增加其他模型: 不会，本站专注于Claude
+    - https://b4u.qzz.io/v1
+    - 支持工具调用、上下文 128K+、支持 RooCode，不推荐接入 ClaudeCode
+    - 普通用户：每次 1 刀、RPM=10
     - 渠道技术： Claude-SessionKey号池→claude2api→FC使能
+    - 仅每周六晚21:00至21:30限时开放注册
     - [【B4U公益站】是克劳德，我们有救了！（每周六限时开放注册） ](https://linux.do/t/topic/801848)
+    - [转盘抽奖 / 投喂 Claude Session Key](https://tw.b4u.qzz.io/)
   - [tbai API](https://tbai.xin/)
+    - 模型支持gemini/gpt, 不支持claude
     - API 调用频率限制为 10 RPM
     - gpt-load 作者
     - 使用兑换码兑换余额后的账号视为激活用户, 激活用户可长期使用，额度用完后可无条件联系我增加额度
@@ -273,13 +279,15 @@ modified: 2025-03-22T16:10:24.856Z
   - 📌 [23公益站](https://sdwfger.edu.kg/console), 不用签到
     - 平台将于每周五、周六统一发放额度兑换码。 额度申请：如您的额度提前用尽，可联系管理员进行补充申请
     - 模型丰富: claude, gpt
-  - [KYX-API](https://api.kkyyxx.xyz/), 不用签到
+  - 📌 [KYX-API](https://api.kkyyxx.xyz/), 每日转盘
     - Claude和gpt 暂时不支持工具调用
     - API 调用频率限制为 12RPM，公益站永久免费，采用公平限流策略以保障服务稳定
     - [KYX API Refueling Station 公益站额度加油站](https://quota.kyx03.de/)
-  - [learn-ai 公益站点](http://free.learn-ai.top/), 需要签到且额度很少
-    - 支持的模型质量较低: 很少一部份claude模型, gpt-mini/nano
-    - 可以加入付费站点：https://learn-ai.top/
+  - [黑与白chatAPI](https://ai.hybgzs.com/), 每日转盘
+    - 模型丰富: claude, openrouter
+    - 本站完全免费！暂无任何充值通道
+    - 绝大部分模型倍率换算后与官方价格相同，为缓解服务器资源压力，所有免费模型实际扣除配额均按付费标准计算。
+    - [黑与白chatAPI福利站](https://cdk.hybgzs.com/)
   - [RawChat公益站点](https://chatgptplus.cn/)
     - 免费的共享ChatGPT账号
     - [RawChat公益站点](https://sharedchat.fun/)
@@ -312,34 +320,36 @@ modified: 2025-03-22T16:10:24.856Z
     - 一次一美元的调用，但是这个1美元是无限刷新的，你用了就知道了
     - 聊天记录均留样检测，违规直接封禁，请不要对话任何隐私信息
     - [能否成为全站用量最大的claude 4.1 opus公益站 _202509](https://linux.do/t/topic/956435)
+  - [learn-ai 公益站点](http://free.learn-ai.top/), 需要签到且额度很少
+    - 支持的模型质量较低: 很少一部份claude模型, gpt-mini/nano
+    - 可以加入付费站点：https://learn-ai.top/
   - [LLM API 公益站](https://llm.indrin.cn/)
     - 本站永久运营，服务免费提供个人使用,禁止高并发,禁止高输入, 高并发会封号
     - 额度不限量,注册送$30，邀请送$5,正常用户额度快用完时会给后台增加
     - 不支持claude，支持openai, xai
-  - [黑与白chatAPI](https://ai.hybgzs.com/), 每日转盘
-    - 模型: claude, openrouter
-    - 本站完全免费！暂无任何充值通道
-    - 绝大部分模型倍率换算后与官方价格相同，为缓解服务器资源压力，所有免费模型实际扣除配额均按付费标准计算。
-    - [黑与白chatAPI福利站](https://cdk.hybgzs.com/)
   - [归一](https://ai.luuu71.dpdns.org/pricing)
     - gpt5
   - [TudouAPI](https://www.tudou.chat/), 签到复杂
-    - 如果账户连续3天以上都是只有5-10条，会判定为屯额度账号签到失败
+    - 如果账户连续3天以上都是只有5-10条， 会判定为屯额度账号签到失败
     - 支持claude, gpt
   - [YesCode](https://co.yes.vg/)
     - [YesCode test](https://cotest.yes.vg/)
+    - [【YesCode公益测试站】Claude Code/Codex 长期免费测试 ](https://linux.do/t/topic/964164)
   - [Becode 公益站](https://becode.be-a.dev/)
   - [88code - 企业级Claude Code/Codex中转](https://www.88code.org/)
     - 添加客服领取 10 美元免费额度, 每个用户仅限领取一次
   - [AICodeMirror官方共享平台 - 中国用户专属AI编程助手](https://www.aicodemirror.com/)
     - 每月 2000积分
-  - [packycode：全部服务指南，包含 claude code codex 公益、付费全部站点～ - 福利羊毛 - LINUX DO](https://linux.do/t/topic/933715)
+    - 因成本大幅上升，免费用户暂不开放体验。后续开放时间另行通知
+  - [packycode：全部服务指南，包含 claude code codex 公益、付费全部站点 ](https://linux.do/t/topic/933715)
+  - [一叶知秋API](https://88996.cloud/)
+    - 本站已勉强运行 1020 天
   - [cto.new ](https://cto.new/)
   - [Claude 4.5 国内免费使用指南 | 最全访问方式汇总 2025 - 知乎](https://zhuanlan.zhihu.com/p/1956204058139431066)
     - 镜像、中转、合租、代充
   - [2025年10月 Claude 国内使用指南（支持 Claude Sonnet 4.5） - 知乎](https://zhuanlan.zhihu.com/p/1940070586635223559)
   - [白嫖最强AI编程模型Claude 4.5，暨一哥Claude Code的免费下位替代（10月22亲测可用） - 知乎](https://zhuanlan.zhihu.com/p/81947374736)
-  - [求推荐免费模型api，公益站付费的太慢了，只是用于ai中文翻译成英文，速度有要求 - 搞七捻三 - LINUX DO](https://linux.do/t/topic/1061766)
+  - [求推荐免费模型api，公益站付费的太慢了，只是用于ai中文翻译成英文，速度有要求 ](https://linux.do/t/topic/1061766)
 
 - 📌 [OpenRouter API Rate Limits ](https://openrouter.ai/docs/api-reference/limits)
   - tldr: rpd-1000 

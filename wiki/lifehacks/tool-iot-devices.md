@@ -198,7 +198,15 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## [Building PC in 2026 for local LLMs. : r/LocalLLM _202511](https://www.reddit.com/r/LocalLLM/comments/1ol3lcy/building_pc_in_2026_for_local_llms/)
+- you can run a quantized deepseek-v3.1-terminus with 671b params at roughly 20 t/s, with full 128k context, using a single 5090 if your CPU + RAM is beefy enough, and if you're using `ik_llama.cpp` .
+  - 2x AMD Epyc 9355 and a shit ton of RAM ought do it. My server build has 768 gb RAM and I use it to power Roo Code and SillyTavern
+
+- You will get much closer to your goal with an nVidia RTX pro 5000 blackwell, with 72 gb of vram, >$6K. Another option is something like strix halo computers, ~$2k. Will be slow around 10 tps, but is faster than most can read.
+  - Rumor has it that in more than a year, AMD will release medusa halo, that has twice the memory and twice the speed of strix halo
+
+- No. No local model running on a single GPU (or even several) can match the huge professional cloud models in quality. We do local models for privacy and for the fun of hobbying.
+  - local models can be fine tuned locally into very specialized models that can do specific things much better than the SoTA cloud models. This gets pretty niche
 
 - ## [DGX Spark Benchmarks (Stable Diffusion edition) : r/StableDiffusion _202510](https://www.reddit.com/r/StableDiffusion/comments/1ogjjlj/dgx_spark_benchmarks_stable_diffusion_edition/)
   - tl; dr: DGX Spark is slower than a RTX5090 by around 3.1 times for diffusion tasks.

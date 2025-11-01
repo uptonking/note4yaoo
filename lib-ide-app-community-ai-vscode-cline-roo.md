@@ -99,7 +99,16 @@ modified: 2025-10-28T20:02:16.727Z
 
 - ## 
 
-- ## 
+- ## We've migrated our system prompt tool calling format to native tool calling and split that out for different model families. _202511
+- https://x.com/cline/status/1984334385626411397  
+  - Here's why this results in a better experience using Cline
+  - Models now return tool calls in their native JSON format, which they were specifically trained to produce. You'll notice fewer "invalid API response" errors - this particularly improves gpt-5-codex performance with significant reduction in failed operations.
+  - Parallel tool execution is now enabled. When Cline needs to read three files, it can execute them simultaneously instead of sequentially. System prompts are also smaller since tool definitions moved to API parameters, reducing token usage by approximately 15% per request.
+  - Native tool calling is currently supported for next-generation models: Claude 4+, Gemini 2.5, Grok 4, Grok Code, and GPT-5 (excluding gpt-5-chat) across supporting providers including Cline, Anthropic, Gemini, OpenRouter, xAI, OpenAI-native, and Vercel AI Gateway.
+
+- Roo lacking behind now officially
+
+- Native tool calling with model-specific formats should significantly improve response quality and reduce parsing errors.
 
 - ## Is there any advantage to using the CLI over the IDE extension?
 - https://discord.com/channels/1275535550845292637/1392662920982171738/1431071030725709824

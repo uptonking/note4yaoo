@@ -65,13 +65,13 @@ modified: 2022-11-07T10:58:24.512Z
 - 
 
 # datable/数据整理
-- 高质量数据
+- 高质量数据 + AI ( + 技术文档 )
   - wikipedia
   - hackernews
   - reddit-tech
   - stackoverflow
 
-- 技术文档
+- 技术文档 + AI
   - mdn
   - languages apis
 

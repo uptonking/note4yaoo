@@ -211,6 +211,17 @@ modified: 2025-02-21T17:17:42.225Z
 - https://github.com/reidbarber/gen-ui /202312/ts/inactive
   - Use text or image prompts to generate UI components and apps built with React. 
   - Powered by OpenAI's Assistants API and CodeSandbox's Sandpack.
+
+## ai-card
+
+- https://github.com/Rpeng666/Ant-Card /apache2/202510/ts
+  - 现代化的在线卡片编辑器 - 支持多种精美模板，实时预览，PDF导出，AI 智能生成
+  - 15+ 精美模板 - 从简约到创意，满足各种场景需求
+  - 实时编辑 - 所见即所得的卡片编辑体验
+  - AI 集成 - 智能内容生成和优化
+  - 多格式导出 - PNG、JPEG、PDF 等多种格式
+  - 支持 Model Context Protocol，可在 Claude Desktop 等工具中使用
+  - 本地存储 - 支持保存和加载卡片项目
 # ai-apps
 
 # more

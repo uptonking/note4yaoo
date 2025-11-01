@@ -32,7 +32,36 @@ Bottom Line: Success isn’t just about good code. It’s about presentation, ac
   - Yeah that things used all over institutional financial apps. High performance grid for trading desk apps etc, those things could be updating a table of 200 items with an update every row a few times a second. People will pay for that
 
 - We’re working on a new brand called Fair Source that is basically this. http://fair.io 
+# discuss-toolchain
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Vue & Vite+ 作者 尤雨溪 @yuxiyou 创建 VoidZero 拿下 1250 万美元 A 轮融资
+- https://x.com/AppSaildotDEV/status/1984616482152857668
+  - 尤雨溪 应该是目前融资金额最高的个人开源作者之一，也可能是全球第一。
+  - 下一步计划：🦀 用 Rust 重写前端工具链。
+
+- 融资由 Accel 领投，还有一大票优秀公司的创始人都投了：
+  Tom Preston-Werner（GitHub 创始人）
+  Eric Simons（StackBlitz 创始人）
+  Paul Copplestone（Supabase 联合创始人）
+  David Cramer（Sentry 联合创始人）
+  Matt Biilmann & Christian Bach（Netlify 联合创始人）
+  Sébastien Chopin（NuxtLabs 创始人）
+  Johannes Schickling（Prisma 创始人）
+  Zeno Rocha（Resend 创始人）
+
+- laravel 融资了 5700 万，也是从 Accel 拿的钱，创始人最喜欢的就是兰博基尼
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## [Ask HN: what are examples of successful "open-source alternatives"? | Hacker News _202407](https://news.ycombinator.com/item?id=40848998)

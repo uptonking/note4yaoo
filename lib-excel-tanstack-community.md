@@ -124,6 +124,16 @@ modified: 2023-03-01T13:00:27.664Z
 
 - What do u mean component route?
   - Components as nested routes.
+
+- ## [Does Tanstack Start use rspack and rsbuild by default? · TanStack/router  _202410](https://github.com/TanStack/router/discussions/2582)
+  - Does Tanstack Start use rspack and rsbuild for file-based routing by default?
+- TanStack Start is vite only since Vinxi relies on vite-specific features for its bundling.
+  - TanStack Start is a framework on its own, so the bundler option isn't opened to the user. Unless Vinxi, opens up switching their bundler to something else, I don't see this changing anytime soon.
+
+- ## 🏠 [Devinxi by tannerlinsley · Pull Request · TanStack/router _202505](https://github.com/TanStack/router/pull/4111)
+  - Remove vinxi dependency
+
+- [Start BETA - Tracking · TanStack/router · Discussion #2863](https://github.com/TanStack/router/discussions/2863?utm_source=chatgpt.com)
 # discuss-store/db
 - ## 
 

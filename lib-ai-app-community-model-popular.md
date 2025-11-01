@@ -1510,7 +1510,12 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [目前哪个公益站claude code体验比较好呢？ - 开发调优 - LINUX DO _202511](https://linux.do/t/topic/1114843)
+- 付费站体验都没几个好的
+
+- 收费的都崩，公益现在也难，别勉强了。 搞个 GLM 4-6 勉强蹬一蹬吧。 我用魔搭的 KEY，小蹬也算够用。
+
+- gemini pro 只能用 5 次。 超额就变成了 gemini flash 。
 
 - ## 🤔 [如何最大化利用社区key（自动故障转移切换） - 开发调优 - LINUX DO _202510](https://linux.do/t/topic/1098166)
   - 现在各家 ClaudeCode 中转都难保障 24 小时稳定性，自动切换显得灰常重要
@@ -1561,6 +1566,12 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - 也不支持图片呢
 - 接 roocode 用挺好的。 cc 是不行。
+
+- ## [【B4U公益站】是克劳德，我们有救了！（每周六限时开放注册） ](https://linux.do/t/topic/801848)
+  - 渠道技术： Claude-SessionKey号池→claude2api→FC使能
+  - 模型特点：支持工具调用、上下文 128K+、支持 RooCode，不推荐接入 ClaudeCode
+
+- 大转盘是彩蛋，在投喂站里，投喂站从主贴进去就好了
 
 - [B4U公益站接入Claude Code尝试(CCR接入) - 开发调优 / 开发调优, Lv1 - LINUX DO _202509](https://linux.do/t/topic/921779)
   - 在站内查看相关的帖子，站长也开了接cc的研究贴，效果不太满意

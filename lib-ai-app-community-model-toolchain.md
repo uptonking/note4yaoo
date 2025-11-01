@@ -1170,6 +1170,15 @@ curl http://localhost:11434/api/chat -d '{
 
 - sudo systemctl daemon-reload
 - sudo systemctl restart ollama
+# discuss-janai-roadmap
+- ## 
+
+- ## 
+
+- ## [idea: MLX support · Issue · janhq/jan _202506](https://github.com/janhq/jan/issues/5485)
+  - Jan does not currently support MLX as an inference engine
+- Once we finish with the llama.cpp extension, I think supporting MLX won't be too difficult. We already bundle `uvx` with Jan.
+
 # discuss-janai
 - ## 
 
@@ -1417,7 +1426,25 @@ curl http://localhost:11434/api/chat -d '{
 
 - ## 
 
-- ## 
+- ## [TIL: For long-lived LLM sessions, swapping KV Cache to RAM is \~10x faster than recalculating it. Why isn't this a standard feature? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1olouiw/til_for_longlived_llm_sessions_swapping_kv_cache/)
+  - TIL: For long-lived LLM sessions, swapping KV Cache to RAM is ~10x faster than recalculating it. Why isn't this a standard feature?
+  - I was diving into how vLLM and similar inference servers work and had a thought about optimizing memory for long-lived but inactive chat sessions. 
+  - The standard approach seems to be either keeping the KV Cache in precious VRAM or evicting it and recalculating from scratch when the user returns. I think there might be a better way.
+  - Here's the core idea: Implement a swapping mechanism for the KV Cache of inactive sessions, moving it from VRAM to system RAM (and back), instead of deleting it.
+  - We always focus on the high cost of moving data between CPU and GPU, but we often forget the cost of recalculating that data.
+  - The math is pretty compelling. Swapping is roughly 7-15x faster than a full recalculation. For a user, waiting 200ms for their chat history to "wake up" is a much better experience than waiting 2+ seconds.
+  - This wouldn't be for high-throughput, always-online inference, but specifically for managing many long-lived sessions (e.g., support chatbots, document analysis with breaks, multi-user systems with intermittent activity). It's a classic space-time tradeoff, but in this case, using slightly more "space" (system RAM) saves a huge amount of "time" (latency on reactivation).
+
+- i had the same concern op. the cache saving should work. - https://docs.vllm.ai/en/stable/examples/others/lmcache.html?h=lmcache this exists i want to test it with moon shot ai db. i feel like kimi k2 guys uses the same
+
+- Seems to be compatible with vllm now - https://docs.vllm.ai/en/stable/examples/others/lmcache.html?h=lmcache
+  - awesome finding! I should have studied better how to Google properly
+
+- It depends on the backend... vLLM has https://github.com/LMCache/LMCache for example (as someone already mentioned here), but it is mostly limited to GPU-only inference.
+  - For CPU+GPU inference for a single user, I find ik_llama.cpp to be the best choice though.
+
+- Llama.cpp does not work like that. It evicts cache only you suplly a prompt with no common prefix with what is in cache already.
+  - "inactive" in this context means when the VRAM is not enough to store existing pages of KV cache when new requests are coming, with different prompts. As far as I understand this is how vllm works - it just evicts older pages. A sort of LRU ( least recently used ) buffer
 
 - ## [大模型推理框架，SGLang和vLLM有哪些区别？ - 知乎](https://www.zhihu.com/question/666943660)
 - PagedAttention vs RadixAttention：内存管理的两种哲学

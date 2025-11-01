@@ -343,6 +343,9 @@ flatpak run com.discordapp.Discord --proxy-server="socks5://127.0.0.1:1080"
   - mail.protonmail.com
   - ref
     - [请问现在有什么不用手机号可以注册的邮箱](https://v2ex.com/t/683308)
+
+- [Pamir University](https://mail.ryanvan.com/inbox)
+  - linux.do
 # 图片资源
 - unsplash镜像战
   - https://unsplash.dogedoge.com/

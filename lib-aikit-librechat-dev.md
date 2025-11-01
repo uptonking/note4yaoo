@@ -42,6 +42,7 @@ modified: 2025-09-01T05:52:34.241Z
 # draft
 - roadmap
   - 支持直接在界面上配置大模型url, 可参考openwebui/janai
+  - 支持多backends的架构可参考 
 
 - 🤔 一种思路: tool-call时使用擅长tool-call的模型，分析时使用公益站的聊天优质但无法tool-call的模型
   - 支持类似 roocode 的 model profile 切换

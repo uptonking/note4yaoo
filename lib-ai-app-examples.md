@@ -11,7 +11,7 @@ modified: 2023-02-08T07:20:48.475Z
 - not-yet ❓
   - model routing
 # popular
-- https://github.com/mudler/LocalAI /MIT/202403/cpp
+- https://github.com/mudler/LocalAI /36.2kStar/MIT/202511/go
   - https://localai.io/
   - free, Open Source OpenAI alternative. 
   - Self-hosted, community-driven and local-first. 
@@ -181,22 +181,24 @@ modified: 2023-02-08T07:20:48.475Z
   - 付费方案配置，一键对接支付接口
   - 关键词过滤、替换保证文本安全
 
-- https://github.com/lordmathis/llamactl /MIT/202509/go/ts
-  - http://llamactl.org/
-  - Unified management and routing for llama.cpp, MLX and vLLM models with web dashboard.
-  - llamactl sits on top of popular LLM backends (llama.cpp, MLX, and vLLM) and provides a unified interface to manage model instances through a web dashboard or REST API.
-  - [I built llamactl - Unified management and routing for llama.cpp, MLX and vLLM models with web dashboard. : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nr06en/i_built_llamactl_unified_management_and_routing/)
-    - I got tired of SSH-ing into servers to manually start/stop different LLM instances, so I built a web-based management layer for self-hosted language models.
-    - Great for running multiple models at once or switching models on demand.
-  - What differentiates this project from `llama-swap`?
-    - The main thing is that you can create instances via web dashboard. With llama-swap you need to edit the config file. There's also API key auth which llama-swap doesn't have at all as far as I know.
-
 - https://github.com/amd/gaia /MIT/202510/python
   - Run LLM Agents on Ryzen AI PCs in Minutes
   - GAIA is specifically designed for AMD Ryzen AI systems and uses Lemonade Server for optimal hardware utilization
   - GAIA UI is an optional, modern web-based interface for GAIA, built on the RAUX (Open-WebUI fork) platform.
 
 - [Reproducing Karpathy’s NanoChat on a Single GPU — Step by Step with AI Tools : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o76ev6/reproducing_karpathys_nanochat_on_a_single_gpu/)
+
+- https://github.com/LostRuins/koboldcpp /AGPL/cpp
+  - KoboldCpp is an easy-to-use AI text-generation software for GGML and GGUF models, inspired by the original KoboldAI. 
+  - It's a single self-contained distributable that builds off llama.cpp and adds many additional powerful features.
+  - Single file executable, with no installation required and no external dependencies
+  - Runs on CPU or GPU, supports full or partial offloaded
+  - Image Generation (Stable Diffusion 1.5, SDXL, SD3, Flux)
+  - Speech-To-Text (Voice Recognition) via Whisper
+- https://github.com/lone-cloud/gerbil /AGPL/202511/ts
+  - A desktop app for running Large Language Models locally.
+  - [Gerbil: An open source desktop app for running LLMs locally : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1ol9cai/gerbil_an_open_source_desktop_app_for_running/)
+    - Under the hood it runs llama.cpp (via koboldcpp) backends and allows easy integration with the popular modern frontends like Open WebUI, SillyTavern, ComfyUI, StableUI (built-in) and KoboldAI Lite (built-in).
 
 ## api
 
@@ -294,13 +296,17 @@ modified: 2023-02-08T07:20:48.475Z
   - Agent framework and applications built upon Qwen>=2.0, featuring Function Calling, Code Interpreter, RAG, and Chrome extension
   - 基于Qwen2.0的agent框架：Qwen-Agent，它有指令遵循、工具使用、做规划和记忆能力
   - 基于Qwen-Agent的一个Chrome浏览器扩展，一个智能浏览器助手：BrowserQwen, 它可以基于当前页面或文档跟你对话、能记住你浏览过的内容进行总结、可以解决数学问题、数据图表可视化
-# llama
-- https://github.com/pamelafox/ollama-python-playground /jupyter
-  - A dev container with ollama and ollama examples with the Python OpenAI SDK
-  - This project is designed to be opened in GitHub Codespaces as an easy way for anyone to try out SLMs (small language models) entirely in the browser.
-  - https://x.com/pamelafox/status/1801678164969853034
-    - To make it super easy for anyone to try out Ollama (esp teachers/students)
-    - I've included an example notebook that walks through completions, prompt eng, few-shots, and RAG
+# llama.cpp
+- https://github.com/yazon/flexllama /BSD/202510/python
+  - Lightweight self-hosted tool for running multiple llama.cpp server instances with OpenAI v1 API compatibility and multi-GPU support
+
+- https://github.com/xorbitsai/xllamacpp /MIT/202511/python/fork
+  - a Python wrapper of llama.cpp
+  - This project forks from cyllama and provides a Python wrapper for @ggerganov's llama.cpp which is likely the most active open-source compiled LLM inference engine.
+  - https://github.com/xorbitsai/inference /apache2/202511/python
+    - Xinference gives you the freedom to use any LLM you need.
+    - Xllamacpp: New llama.cpp Python binding, maintained by Xinference team, supports continuous batching and is more production-ready
+    - Support MLX backend for Apple Silicon chips
 
 ## llama-rewrite
 
@@ -363,6 +369,13 @@ modified: 2023-02-08T07:20:48.475Z
   - https://github.com/searxng/searxng /AGPL/202510/python
     - https://docs.searxng.org/
     - SearXNG is a free internet metasearch engine which aggregates results from various search services and databases. Users are neither tracked nor profiled.
+
+- https://github.com/pamelafox/ollama-python-playground /jupyter
+  - A dev container with ollama and ollama examples with the Python OpenAI SDK
+  - This project is designed to be opened in GitHub Codespaces as an easy way for anyone to try out SLMs (small language models) entirely in the browser.
+  - https://x.com/pamelafox/status/1801678164969853034
+    - To make it super easy for anyone to try out Ollama (esp teachers/students)
+    - I've included an example notebook that walks through completions, prompt eng, few-shots, and RAG
 # webgpu-ai
 - https://huggingface.co/spaces/ibm-granite/Granite-4.0-Nano-WebGPU/tree/main /202510/ts
   - the demo uses Transformers.js to run the models 100% locally in your browser with WebGPU acceleration.
