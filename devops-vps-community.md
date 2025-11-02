@@ -14,7 +14,18 @@ modified: 2024-11-16T10:52:53.263Z
 
 - ## 
 
-- ## 
+- ## 🆚 [自己买vps和ytb上面用cf搭建有什么区别啊 ](https://linux.do/t/topic/1105829)
+- 选机场最好，稳定性有保障，不用你天天维护天天看着，专事专干
+
+- 说白了都是流量转发，cf 只是使用 cf 的无服务语法编写了协议。协议支持比较少，cf 节点需要节点优选，而且部署代理容易 cf 封号。
+
+- 如果按照现在说的话，那就是自己小鸡自己负责，cf 部署容易封号
+
+- 原理都一样，自己买 vps 可以买更优路线
+
+- 建议小号，真封了很麻烦。优选也是。
+
+- VPS，IP 不乱跳才是最重要的啊！有一些网站服务检测到 IP 变化，就得重新登录。 而且 VPS 自己搭建的也安全啊！
 # discuss-dns/domain
 - ## 
 
@@ -26,13 +37,49 @@ modified: 2024-11-16T10:52:53.263Z
   - 最具杀伤力的还是便宜，这个没的说。就域名注册而言，大家也没啥区别。反而CF家还有一些限制比如DNS必须用他家的。集成方便也是真的。
 
 # discuss-vps-awesome
-- ## 
+- resources
+  - https://github.com/cloudcommunity/Cloud-Free-Tier-Comparison
+    - Comparing the free tier offers of the major cloud providers like AWS, Azure, GCP, Oracle Cloud etc.
 
 - ## 
 
 - ## 
 
 - ## 
+
+- ## [Basic free VPS : r/VPS](https://www.reddit.com/r/VPS/comments/1mud4dp/basic_free_vps/)
+- Cloudflare does not offer any VM services that I’m aware of. Workers is not a VPS.
+  - GitHub has their code spaces, but they’re also not a VPS in the traditional sense, since they are intended to be used as coding apps in the cloud.
+  - Oracle has the only “forever free” stuff, but as you said it’s complicated to set up.
+  - On a side note, why would you go with a VPS if you already have compute at home? A VPS is just a computer hosted by someone else. It’s nothing special.
+
+- Cloudflare doesn’t give you actual VMs, just edge functions and Workers with storage options. Oracle Free Tier does provide proper VPS instances, though the setup can feel clunky at first. GitHub Codespaces is another route but it’s more for dev work than a true always-on server.
+
+- ## [Free VPS. low performance is fine : r/VPS](https://www.reddit.com/r/VPS/comments/1l05w5g/free_vps_low_performance_is_fine/)
+- Yes, you can get a free VPS using Oracle Cloud or Google Cloud that offer a 'free forever' instance. Those do require a card, and I recommend using privacy.com to create a $1-2 limit card for verification just incase you don't get an unintended charge.
+
+- There is no “free” VPS that is usable. I don’t like using Google Cloud, Oracle, and others because you have to use a card to sign up and risk being billed a ton of money accidentally.
+
+- ## [Is this true? GCP provides e2-micro always free : r/googlecloud _202505](https://www.reddit.com/r/googlecloud/comments/1kjw4u7/is_this_true_gcp_provides_e2micro_always_free/)
+  - Does this mean that GCP provides e2-micro one instance free every month for always even after 300USD credits gets over?
+
+- If I create more than 1 VM and each VM usage does not exceed the limit - is it still Free?
+  - Yes, you are charged on the basis of time not on instance. Your limit is 730 hours
+  - Your Free Tier e2-micro instance limit is by time, not by instance. Each month, eligible use of all of your e2-micro instances is free until you have used a number of hours
+  - Compute Engine free tier does not charge for an external IP address.
+
+- I follow the above to create the VM Instance and I somehow still get charged
+  - Turnoff scheduled snapshot, and delete all existing snapshots, then you won't be charged by compute engine.
+- Thank you . It works now. Filtered by SDK and found that snapshot actually grouped under compute engine.
+
+- [Free VPS really exist ? : r/selfhosted](https://www.reddit.com/r/selfhosted/comments/14p8qq9/free_vps_really_exist/)
+  - they wont accept my credit card, just like oracle
+  - it says only 1gb outbound/ month?
+
+- ## [有没有比较好的免费云服务器推荐？ - 知乎](https://www.zhihu.com/question/638923115/answers/updated)
+- aws里面有一款2核2g的免费套餐，可以用一年
+
+- 免费套餐：阿里云提供了“飞天加速计划”，针对学生和开发者提供免费的云服务资源，包括ECS云服务器、对象存储OSS等。这些资源通常有一定的使用期限和资源限制。
 
 - ## [常见各种线路VPS的推荐和碎碎念 - 开发调优 - LINUX DO _202510](https://linux.do/t/topic/920034)
 - 搬瓦工
@@ -83,6 +130,45 @@ modified: 2024-11-16T10:52:53.263Z
 - HK 地区的低价非常难做，性价比高必定挨打，必定被薅，最后清退，HK 低价鸡大致结局如此，claw 已经清退，Y 系挨打最后限速。作为整个亚太的核心中转地区，性价比高的小鸡基本是存量，没有什么增量了，所以大量的 MJJ 在从直连转向专线 (IEPL/IPLC/IXP)，专线又有点通报严重，直连目前基本上也只剩下正价了，所以 HK 推荐是专线为主，直连为辅。对于预算不高不想折腾的佬来说，美西才是归宿。
 
 - 亚太最昂贵的区域，JP 地区的最佳建议就是：能玩专线别玩直连。基本上所有线路晚高峰都是爆炸的，太拥挤了。如果还是选择直连，很难推荐出一款完美的产品，只能说性价比不错，各有千秋。
+# discuss-vpn-awesome
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [求各位佬推荐靠谱的机场 _202510](https://linux.do/t/topic/1071814)
+- 可以考虑 $3 买台落地 VPS 自建，套 cloudflarecn2 提速
+- cf 在国内不是很慢吗？
+  - 所以要优选啊，有些 cf 节点是香港新加坡的 cn2 线路，或者找反代了 cf 的 IP
+
+- 如果佬对梯子都要求不高，低价机场就可以满足
+
+- 便宜的有一元机场或者油管不良林的直播有免费公益的，贵的有奶昔等一线机场，也可以自建。
+
+- 用的一元机场马马虎虎，可以尝试一些免费的一些节点网址 [免费节点 - v2rayShare](https://v2rayshare.net/f/freenode)
+
+- 要求不高的话，宝可梦免费的应该就够
+  - 这两个都是大机场，谷歌一下就能搜到，价格会比较高
+
+- ## [关于机场节点多年使用以及深度测试的一点经验 _202509](https://linux.do/t/topic/967981)
+- 作为一个机场重度应用者，一些经验与看法跟大家聊一聊。
+  - 1 市场上至少有不下于 100 家节点机场我有试用过。
+  - 2 软件除了 V2R 不怎么使用其它的主流都有日常使用.
+  - 3 基于热爱，每天还会去搜集各种节点，包括开源公益网站。
+
+- 如果对于机场要求不是很高，平时搜集一些公益节点足够使用。如果每天需要用来工作，至少要购买两家节点以上。一家常态化使用。一家长期流量备用。特殊时期容易出问题，就比如最近。节点不要买太长时间，如果试用过稳定的时间。最多一次性买一年。不熟悉的节点先买一个月试用，跑路节点多不胜数，一定要选择全员在外落地的机场。
+
+- 本人最近收集的节点比较多，但昨天来了一个大暴击，可能是城墙又厚了。发现之前好多优秀的节点不经打。最后蓦然回首，发现之前自己买的订阅坚挺得很。
+
+- 机场才是最终的归宿，一二线机场一般都不会出问题
+
+- 另外还有一点补充，选机场的时候就看机场的导出订阅。是不是有多协议可选？如果只有一个通用订阅那一般是个人搭的小机场没实力。
+
+- 我试过二三十家机场，后来发现还是一线机场牛逼，贵就是好
+  - 毕竟花了钱人家才会花大精力去维护。正向循环，但真的购买时间不要太长，太多跑路的了。
 # discuss
 - ## 
 

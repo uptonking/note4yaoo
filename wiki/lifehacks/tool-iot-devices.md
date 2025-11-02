@@ -198,6 +198,41 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
+- ## 
+
+- ## [If I want to train, fine tune, and do image gen then... DGX Spark? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1om7ccz/if_i_want_to_train_fine_tune_and_do_image_gen/)
+- Apple is no good for finetuning/training, only for inference afaik.
+  - AMD works, I guess. Story of their hardware in AI.
+  - Both Apple and AMD probably don't work for image stuff (especially for anything niche, less supported). It's usually based on CUDA.
+  - If you just want to "do everything AI", DGX will work and it will be slow-ish and if you can live with that (or optimize using MXFP4 etc.), it's perfect for you. If you got dem cash of course.
+
+- ## 🤔 [Best setup for running local LLMs? Budget up to $4, 000 : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1olsh0j/best_setup_for_running_local_llms_budget_up_to/)
+- Depends on what kind of route you want to go. Do you want an open mining rack style build with the potential to have 8 GPUs? Do you want a system that fits into a standard ATX case? What size models do you want to run? Do you want to do image or video generation?
+- I've done a few builds recently and the two best value routes I found are for a DDR4 based system:
+  - Huananzhi H12D-8D  华南金牌
+  - AMD EPYC 7532 (The cheapest EPYC Rome that gives you full memory bandwidth.)
+  - AMD EPYC 7D12 (Best value EPYC, downside is missing half of the memory bandwidth.)
+  - DDR4 2133 to 3200 RDIMM 8x16GB (128GB) or 8x32GB (256GB).
+- For a DDR5 system:
+  - GIGABYTE MS03-CE0
+  - Intel 8480+ QYFS 
+  - DDR5 4800 RDIMM 8x16GB (128GB) or 8x32GB (256GB)
+  - I built/purchased the above parts with 256GB of memory for around $2, 000, the price of the memory was half of the build. Currently the memory price has risen by +50% and 256GB of memory is around $1, 500.
+- For the GPUs the best value for text only inference is still the MI50 16GB (~$150) and the MI50 32GB (~$250-300, price has risen could have been had for around ~$150 1-2 months ago). 
+  - If you want a more plug and play experience or want to do image/video generation, then you're probably still looking at getting 3090s (~$700). 
+  - There are other GPUs to look for, but I'm sure they'll be recommended by others in this thread.
+- With the above parts you have two routes. 
+  - You can either go for GPUs and run smaller models fast, or you can go for a hybrid approach with a single 3090 for prompt processing and put the rest of the money into memory to run a larger model at a slower speed (Deepseek at home). 
+  - If you want an example build of the top end you can have with CPU+GPU hybrid, then this video is a good comparison point. The video showcases 12-channels of DDR5 5600 with a 3090 getting 15t/s with DeepSeek_V3_0324 Q4_K_M. Using that as a comparison point, you'd expect the DDR5 4800 system above to be around ~7-9t/s and the DDR4 3200 system to get ~4-6t/s.
+
+- 4x 3090s and whatever else supports this
+- My 4x3090 rig is loud, uses a lot of power, puts off a lot of heat, and seems to require constant care and feeding. The DGX Spark sits on my desk, is quiet, and "just works". Unless you need to eek out the absolute most inference performance per $ spent, I would go with the turn-key solution and call it a day.
+
+- If you go with multiple GPUs, you need a server mobo in order to get a server CPU that has enough pci-e lanes. GPUs want 16x each even though you can get by on less
+  - Server motherboards are meant to run in very loud 2U chasis' with high airflow. I stuffed mine into a large PC case but have extra fans and an AIO CPU cooler for SP5.
+  - Also, server CPUs a generally woser at gaming and single threaded performance than consumer CPUs.
+  - If money is no object a ThreadRipper is the way to go.
+
 - ## [Building PC in 2026 for local LLMs. : r/LocalLLM _202511](https://www.reddit.com/r/LocalLLM/comments/1ol3lcy/building_pc_in_2026_for_local_llms/)
 - you can run a quantized deepseek-v3.1-terminus with 671b params at roughly 20 t/s, with full 128k context, using a single 5090 if your CPU + RAM is beefy enough, and if you're using `ik_llama.cpp` .
   - 2x AMD Epyc 9355 and a shit ton of RAM ought do it. My server build has 768 gb RAM and I use it to power Roo Code and SillyTavern
@@ -2915,6 +2950,18 @@ modified: 2022-01-16T15:52:31.293Z
   - 22inch: 55 x 42 x 23 cm, 53.1L(可用约47L)
   - 28inch: 70 x 47 x 27 cm
 
+- ## [AMD EPYC 9654的主板为什么这么贵？单路9654能打7763双路吗？ - 知乎](https://www.zhihu.com/question/598929770)
+- 多项测试里单路 96核 9654 都优于 双路 128核 7003（7763/7773x）。
+  - 架构制程升级、频率（大幅）提升（全核满载提升0.5GHz+）、12通道DDR5 4800、单路本就更低的多的CCD间通讯延迟等，都是不小的优势
+- 现在9004主板也没那么贵了，**单路板子5k价位就能拿下**，没比双路7003贵多少，ddr5 reg价格也在下降，整套还是比较超值的。
+
+- 5k真的不会赔本么？每个内存通道是不是72跟信号线，12通道是864，除此以外还有那么些PCI-E，这些还要和电源线地线混在一起，感觉很不容易了。当然了，要说每根信号线频率其实不算高，跟nvlink之类的没得比
+
+- ## [震惊！华南金牌对标超微H12SSL干了一个EPYC单路主板H12D-8D - 知乎](https://www.zhihu.com/zvideo/1883448198976218443)
+  - 这款H12D-8D是直接对标H12SSL，支持AMD EPYC 7002/7003 ，Rome和Milan
+  - 8个 DDR4 内存插槽
+  - 4个 PCIe 3.0/4.0 x16 插槽
+
 - ## 🐛 [为什么华南、精粤这种寨厂不做EPYC主板？ - 知乎](https://www.zhihu.com/question/4214916755)
 - EPYC还真是流出来的多，但是能用的却不多
   - 看zen3同款epyc主板的架构图。是不是很简单，连个桥片都不用。
@@ -2932,6 +2979,14 @@ modified: 2022-01-16T15:52:31.293Z
 - epyc铺开来才几年啊，云服务器能租到epyc的u也是这两年的事
 - AMD第一代第eypc和第二代eypc都是试水，开始卖起来都是第三代了，现在上游淘汰没那么快，未来大概率还算买整机嘛，其二现在你要搞64核的方案，amd的可以DDR4，6k左右搞定大内存方案，intel要大内存只能用es版的上ddr4，如果上ddr5价格就飞天了。
 
+- 刚刚查了一下，华南金牌出3647主板了。
+  - 价格不便宜，对应的架构不过是skylake而已。
+- 再次更新，支持EPYC的主板来了。
+  - 华南金牌 H12D 单路epyc主板 可以用来满血deepseek的装机主板 pcie4.0主板
+
+- 成本高，设计难度高，量小，还是去伺候又没啥钱又事多的垃圾佬，何苦呢？
+  - 超微x13 单路板看起来很丐只有8相供电基本没散热是不是，用下来它可以持续稳定385w输出 mos温度也就80。不是消费级那些整了十几相上超重散热装甲200w还奔七八十的垃圾供电mos能比的。
+
 - 好像，据说Ryzen Pro和Tr Pro也开始上锁了？这类U也是专供OEM不零售的
 - 这对于垃圾佬+A炮而言是个噩耗。Ryzen APU从8000G开始，核显的编码解码能力已经比较好了，加上它优秀的功耗和性能，以及Pro版支持ECC内存，未来很有潜力成为种子NAS DIY/软路由等家庭服务器的神U。但带锁可就。。。
 
@@ -2940,8 +2995,6 @@ modified: 2022-01-16T15:52:31.293Z
   - EYPC霄龙是 [锐龙] 同代，要比E5晚上好几年，性能自然是更好，也因为如此，大规模从 [IDC] 下架的时间还早，货源不多，依旧达不到“垃圾价格”。本来一代的7601配合国鑫平台便宜过一段时间，但因为QU之类的CPU矿又涨回去，后来AI火热，EPYC的核心和PCIe通道巨幅优势，又让二手市场价格难以骤降。
   - 最终结果就是，因为CPU不够便宜，下架数量少，尽管EYPC是不需要南北桥芯片组，而是基于PCIe HUB做扩展即可，但寨板们没动力和能力去做主板。
   - 抄板的话，大厂主板多层PCB，成本高到让寨厂抄不动。实际上华南已经出了的EYPC和C621主板，实际零售都是两千块一片，比超微、泰安便宜有限， 难以做到E5寨板那般热卖。
-
-- 成本高，设计难度高，量小，还是去伺候又没啥钱又事多的垃圾佬，何苦呢？
 
 - ## 🆚💡 AMD Threadripper PRO 7985WX and Threadripper 7980X  have the same cores/threads/chiplets-ccd-numbers
 - [AMD Ryzen™ Threadripper™ 7980X Drivers](https://www.amd.com/en/support/downloads/drivers.html/processors/ryzen-threadripper/ryzen-threadripper-7000-series/amd-ryzen-threadripper-7980x.html?utm_source=chatgpt.com)

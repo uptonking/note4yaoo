@@ -25,7 +25,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 能通过tool-call使用工具
   - 对多语言支持很好
 
-- why-local-ai?
+- why-local-ai? 🌹
   - stable model and stable api
   - privacy: code, data
   - tweak different configs for ai-models
@@ -35,6 +35,12 @@ modified: 2025-03-22T16:10:24.856Z
   - network agnostic
   - 发挥端侧计算的能力，如总结/查询，而不侧重端侧聊天
   - mlx的并发端侧计算能力非常强, 多个mlx并行计算
+- 🌹 pros-local-ai-mobile
+  - 容易通过摄像头获取图像数据
+- 🐛 cons-local-ai-mobile
+  - 小模型不够智能
+  - 移动端计算能力差, 速度慢, ipad的M系芯片非gpu方案也不快
+  - 耗电量大, 对手机端不友好
 
 - roadmap-ai
   - 针对国内免费api定制的chat/ppt: 魔搭, 快手万擎

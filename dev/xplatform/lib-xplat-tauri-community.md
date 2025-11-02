@@ -16,7 +16,15 @@ modified: 2023-01-14T17:22:00.810Z
 
 - ## 
 
-- ## 
+- ## zed gpui 和 electron 就没啥可比性，gpui 里的 webview 依然是 system webview（套用的 tauri wry） _202511
+- https://x.com/lencx_/status/1984833232664424704
+  - [WebView | GPUI Component](https://longbridge.github.io/gpui-component/docs/components/webview)
+  - 支持替换的 verso，真就比 chromium 强吗？
+- [Experimental Tauri Verso Integration | Tauri](https://tauri.app/blog/tauri-verso-integration/)
+  - Verso is a browser based on Servo, a web browser rendering engine written in Rust
+  - https://github.com/versotile-org/verso /202510/rust/archived
+
+    - Several major contributions from this project have been integrated into Servo
 # discuss-alternatives-wails/like
 - ## 
 

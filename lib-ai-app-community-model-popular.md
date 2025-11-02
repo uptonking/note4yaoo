@@ -180,7 +180,18 @@ modified: 2025-09-16T19:59:57.856Z
 
 - ## 
 
-- ## 
+- ## 🤔 [Can China’s Open-Source Coding AIs Surpass OpenAI and Claude? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1omm6bf/can_chinas_opensource_coding_ais_surpass_openai/)
+- Maybe one day, but probably not in the short term (1 year, and of course I may be wrong).
+- Chinese LLM's have been catching up through (what I would say) 3 main ways:
+  - Mixture of Experts and Reinforcement Learning
+  - Synthetic data generation
+  - Huge amounts of government and corporate funding.
+- But I would argue that the main source of success is through #2, or synthetic data generation. 
+  - And, often, much of that synthetic data is generated through western LLM's, a prime example being z.ai using the Gemini API for data, discovered through the similarities in word choices (also known as a "slop pattern") between Gemini flash and the glm 4 model. 
+  - So, as Chinese LLM's are often trained off of western LLM's, it would be hard to ever truly get ahead. 
+  - I will note, though, that this practice is slowly going away in favor of finding more efficiency gains (moe) and using RL for fine tuning. And, with strong government funding, it's possible that in the long term Chinese AI outperforms western AI.
+
+- what china is not doing currently, but should : use mix of the models for each request, they basically should link glm/qwen/deepseek/kimi and stop fighting each other, instead colloborate
 
 - ## [How to use Qwen2.5-Coder-Instruct without frustration in the meantime : r/LocalLLaMA _202411](https://www.reddit.com/r/LocalLLaMA/comments/1gpwrq1/how_to_use_qwen25coderinstruct_without/)
   - Don't use high repetition penalty! Open WebUI default 1.1 and Qwen recommended 1.05 both reduce model quality. 
@@ -661,7 +672,18 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [What is the difference between qwen3-vl-4b & qwen3-4b-2507 ? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1ollh15/what_is_the_difference_between_qwen3vl4b/)
+- On their github and huggingface pages for the model they have a comparison of their benchmarks for the two versions.
+  - tldr; for the 4b model for text it improves only pure subjective measurements, the others get worse.
+  - for the 8b model it is a slight improvement across the board since there is no comparable -2507 release
+
+- I was looking at the four 30B-A3B models - instruct, thinking, vision instruct and vision thinking.
+  - I realized that the class of problems that I could address with Qwen3-30B-A3B-Thinking that I could not with Qwen3-VL-30B-A3B-Instruct was very small.
+  - I said fuck it and now run the instruct vision model as my workhorse. For the everyday always on llm things that matter to me like ocr, simple questions, creative writing, summarization etc it is fast and good enough.
+  - The thinking ones are good at math, stem, coding - and I need much more powerful models for those anyways. 
+  - If a problem really needed thar extra knowledge, intelligence, reasoning and instruction following oomph I will have better luck at the rung up heavier model, not another 30B variant.
+
+- The 8B VL instruct seems pretty good, and maybe better than the original Qwen 3 8B non-VL. The 30B-A3B VL instruct seems to be roughly on par with the 2507 30B-A3B instruct model for text tasks, I don’t notice any significant difference.
 
 - ## 🆚 [GLM-4.6 vs Minimax-M2 : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1ohq5bc/glm46_vs_minimaxm2/)
 - Not even close in my use cases at least. Its still sonnet 4.5 / GPT5 codex > glm4.6 > everything else.

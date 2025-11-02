@@ -14,18 +14,24 @@ modified: 2020-12-19T13:04:40.865Z
   - 没必要寻找前后端通用的router，前端、后端框架都有自己的，routing常和prefetch耦合
   - 有的方案支持首屏ssr，之后spa，基于不同的render mode
 # ssr
-- https://github.com/vikejs/vike /3.4kStar/MIT/202402/ts/js
+- https://github.com/vikejs/vike /5.2kStar/MIT/202511/ts
   - https://vike.dev/
   - https://vike.land/
   - Like Next.js/Nuxt but as do-one-thing-do-it-well Vite plugin.
-  - The vite-plugin-ssr project has been renamed Vike
+  - The `vite-plugin-ssr` project has been renamed Vike
   - do-one-thing-do-it-well architecture: Vike focuses on being an excellent frontend framework while not interfering with the rest of your stack.
-    - 🎨 Any UI framework (React/Vue/Solid/...)
+    - 💄 Any UI framework (React/Vue/Solid/...)
     - Any server (Express.js, Deno, HatTip, ...)
     - Any deployment (AWS, Cloudflare Workers, Vercel, ...)
   - Filesystem Routing, Data fetching, Pre-rendering, Layouts, HMR, i18n, Link Prefetching, HTML Streaming.
   - ✨ All render modes: SSR, SPA, MPA, SSG, HTML-only. Each page can use a different mode.
-  - 🆚️ [Comparison with NextJS](https://github.com/vikejs/vike/issues/158)
+  - [Vike + a different bundler other than Vite? (Farm, RsPack) _202407](https://github.com/vikejs/vike/discussions/1737)
+    - Actually, the vast majority of Vike's logic is Vite agnostic (more than 99%). So, in principle, making Vike bundler agnostic is much easier than it seems. That said, there is still a lot of glue code so it's a significant endeavour.
+    - So, yea, while it's possible to make Vike bundler agnostic it clearly isn't a priority for now.
+  - 🆚️ [Comparison with NextJS _202110](https://github.com/vikejs/vike/issues/158)
+    - you can use other rendering frameworks, not only React
+    - development speed is better because is Vite based plugin (no bundling, native ESM)
+    - you can use every possible routing library
   - [Show HN: Vite-plugin-ssr – Do-one-thing-do-it-well alternative to Next.js/Nuxt | Hacker News _202210](https://news.ycombinator.com/item?id=33188372)
 
 - https://github.com/ElMassimo/iles /MIT/202309/ts

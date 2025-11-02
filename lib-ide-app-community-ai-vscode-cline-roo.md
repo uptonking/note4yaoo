@@ -397,6 +397,10 @@ modified: 2025-10-28T20:02:16.727Z
 
 - ## 
 
+- ## 
+
+- ## [[ENHANCEMENT] Text size setting for Roo UI (Small/Medium/Large, no VS Code zoom) _202509](https://github.com/RooCodeInc/Roo-Code/issues/8100)
+
 - ## [Preliminary Work for Roo Code to Support JetBrains and CLI _202504](https://github.com/RooCodeInc/Roo-Code/discussions/2536)
   - Currently, the Roo Code project is only a VS Code extension and is tightly coupled with the VS Code platform
   - To move in this direction, a few tasks are required:

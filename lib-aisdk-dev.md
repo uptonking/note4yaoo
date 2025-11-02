@@ -72,6 +72,8 @@ modified: 2025-08-08T07:35:49.535Z
 
 # dev-xp
 
+- 流式输出刷新页面的示例，redis保存的数据如下
+  - key是 `resumable-stream:rs:sentinel:msgstream-DdQimqJ1M`, value在输出阶段是`1`， 输出完成时是`DONE`
 # changelog
 
 - 

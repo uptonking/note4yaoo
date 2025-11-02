@@ -404,6 +404,10 @@ modified: 2023-09-02T09:17:22.992Z
   - CompileBox is a Docker based sandbox to run untrusted code and return the output to your app. 
   - The client-side app submits the code and the languageID to the server through the API. The API then creates a new Docker container and runs the code using the compiler/interpreter of that language. 
   - Once the output is ready it is sent back to the client-side app. The Docker container is destroyed and all the files are deleted from the server.
+
+- https://github.com/BinSquare/ERA /202511/python/go
+  - Open source secure sandboxing for running Agents.
+  - [Building an opensource local sandbox to run agents : r/LocalLLM](https://www.reddit.com/r/LocalLLM/comments/1okfrp6/building_an_opensource_local_sandbox_to_run_agents/)
 # browser-emulator 🧭
 - https://github.com/thecodacus/OpenWebContainer /MIT/202501/ts
   - https://open-web-container.vercel.app/
