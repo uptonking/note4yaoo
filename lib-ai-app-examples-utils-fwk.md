@@ -313,6 +313,12 @@ modified: 2025-02-21T18:20:42.624Z
     - 渠道 Key 不再加密, 发送到前端显示
     - 本程序基于 new-api 二开, 数据库结构基本兼容, 会自动运行迁移.
 
+- https://github.com/deanxv/done-hub /apache2/202510/go/js
+  - 基于one-hub二次开发而来的
+  - [基于 One-Hub 的二开项目 Done-Hub ](https://linux.do/t/topic/712560)
+    - 支持 /gemini 原生生图请求的额外参数透传
+    - 支持 gemini-2.0-flash-preview-image-generation 文生图 / 图生图，并兼容 OpenAI 对话接口
+
 - https://github.com/tbphp/gpt-load /5.4kStar/MIT/202510/go/ts/vue
   - https://www.gpt-load.com/
   - 智能密钥轮询的多渠道 AI 代理

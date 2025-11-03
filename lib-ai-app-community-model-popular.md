@@ -672,6 +672,21 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
+- ## 
+
+- ## 🆚 [Any changes for the worse in deepseek V3 versions? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1on6y2b/any_changes_for_the_worse_in_deepseek_v3_versions/)
+- It is not worth saving the older versions, the newer releases reason better, follow instructions better, tool call accurately, hallucinate less, they are obviously superior. (V3.1 Terminus, V3.2 is slightly worse because of sparse attention)
+
+- You missed one version: OG V3 (Dec 2024), V3 0324 and only then V3.1, Terminus, V3.2.
+  - If used for creative fiction the all are very different. OG V3 AFAIR felt like classical LLM from 2024, say Mistral Large; V3 0324 is wittier and more unhinged; 3.1 is clinical but less sloppy, more natural sounding; terminus was creepy a bit; 3.2 IMHO is closer to OG V3 than to any other version.
+
+- ## 🆚 [gemma-3-27b-it vs qwen3-32B (non-thinking) : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1onbqtv/gemma327bit_vs_qwen332b_nonthinking/)
+- Gemma3 still gets clobbered(痛打, 挫败), even in Western knowledge.
+
+- Qwen destroys Gemma in every way, Gemma has the advantage of having a QAT model, so it would use less vram than qwen but even still I would pick qwen 
+
+- Well you could try the newer Qwen3-VL-32B model, that has its own Instruct and Thinking models separate. And I guess it will be better than those older ones.
+
 - ## [What is the difference between qwen3-vl-4b & qwen3-4b-2507 ? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1ollh15/what_is_the_difference_between_qwen3vl4b/)
 - On their github and huggingface pages for the model they have a comparison of their benchmarks for the two versions.
   - tldr; for the 4b model for text it improves only pure subjective measurements, the others get worse.

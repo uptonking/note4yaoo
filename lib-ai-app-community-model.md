@@ -335,7 +335,15 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
-- ## 
+- ## [Which model do you wish could run locally but still can’t? : r/LocalLLM _202511](https://www.reddit.com/r/LocalLLM/comments/1omoodc/which_model_do_you_wish_could_run_locally_but/)
+- It's not really about particular models at this point. I'm way more interested in the local infrastructure around it. The main thing I'm still missing is simple knowledge-base integration for something like Open-WebUI. I would really like to just point the front-end at my local Kiwix-server and a 1TB-eBook collection, let it index to its heart's content for a few weeks and then have any model be able to reference and integrate all those information.
+
+- Qwen3 Omni, how come no one is talking about a 30B model that can do video and speech?
+
+- Something which I can install with just a dmg or exe file please
+  - I tried a couple but I am not tech savvy and had to install a lot of other stuff to my laptop
+
+- For me, it’s not that it’s a single model I can’t run… it’s the fact that I can’t run multiple models.
 
 - ## [What's the missing piece in the LLaMA ecosystem right now? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o5dh3v/whats_the_missing_piece_in_the_llama_ecosystem/)
   - For me, it's the data prep and annotation tools. The models are getting powerful, but cleaning and structuring quality training data for fine-tuning is still a major, manual bottleneck.

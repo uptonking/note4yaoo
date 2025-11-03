@@ -74,6 +74,23 @@ modified: 2025-08-08T07:35:49.535Z
 
 - 流式输出刷新页面的示例，redis保存的数据如下
   - key是 `resumable-stream:rs:sentinel:msgstream-DdQimqJ1M`, value在输出阶段是`1`， 输出完成时是`DONE`
+# codebase
+
+## resumable-stream
+
+- createResumableStreamContext 会建立redis连接
+- streamContext.createNewResumableStream
+  - new ReadableStream
+- streamContext.resumeExistingStream
+  - new ReadableStream
+- When a new resumable stream is created, the producer (the first consumer) sets up a subscription to listen for requests from additional consumers
+  - await ctx.subscriber.subscribe( `${ctx.keyPrefix}:request:${streamId}`, 
+- The producer buffers all stream chunks in memory as they arrive
+- When a new consumer requests to join the stream (via the `resumeStream` function), it publishes a request message:
+  - await ctx.publisher.publish( `${ctx.keyPrefix}:request:${streamId}`, JSON.stringify({ listenerId, skipCharacters, }) ); 
+  - The producer receives this request through its subscription and immediately publishes all buffered chunks to the new consumer
+- After sending the buffered content, the producer continues to publish new chunks as they arrive to all connected listeners:
+  - promises.push(ctx.publisher.publish(`${ctx.keyPrefix}:chunk:${listenerId}`, value)); 
 # changelog
 
 - 

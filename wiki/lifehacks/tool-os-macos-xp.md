@@ -9,6 +9,8 @@ modified: 2023-07-23T07:05:19.441Z
 
 # guide
 
+- mac-shop
+  - [MacRumors Buyer's Guide: Know When to Buy iPhone, Mac, iPad](https://buyersguide.macrumors.com/)
 # usage
 - clean-mac
   - 清理空间很有用的工具 onyx, 在没怎么清理 `~/Library/Caches` 文件夹的情况下都能释放大约6GB空间

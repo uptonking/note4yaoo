@@ -30,6 +30,19 @@ modified: 2023-04-04T22:36:31.529Z
   - dependence
   - dynamic-add-task
 # popular
+- https://github.com/vercel/resumable-stream /438Star/MIT/202510/ts
+  - https://ai-sdk.dev/docs/ai-sdk-ui/chatbot-resume-streams
+  - Library for wrapping streams of strings (Like for example SSE web responses) in a way that a client can resume them after they lost a connection, or to allow a second client to follow along.
+  - Designed for use in serverless environments without sticky load balancing.
+  - The library relies on a pubsub mechanism and is designed to be used with Redis. It was designed to minimize latency impact and Redis usage for the common case that stream recovery is not needed. In that common case the library performs a single `INCR` and `SUBSCRIBE` per stream.
+  - How it works
+    - The first time a resumable stream is invoked for a given streamId, a standard stream is created. This is now the producer.
+    - The producer will always complete the stream, even if the reader of the original stream goes away.
+    - the producer starts listening on the pubsub for additional consumers.
+    - When a second resumable stream is invoked for a given streamId, it publishes a messages to alert the producer that it would like to receive the stream.
+    - The second consumer now expects messages of stream content via the pubsub.
+    - The producer receives the request, and starts publishing the buffered messages and then publishes additional chunks of the stream.
+
 - https://github.com/EloquentStudio/StreamTable.js /201604/js
   - streams data for tables in the background, updates and renders them using templating frameworks like Mustache.js, HandleBars.js
   - The idea behind StreamTable.js is to initially populate minimum rows (maybe 10 or 20) and after that it streams data silently in the background and update the table.

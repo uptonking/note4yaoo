@@ -2613,7 +2613,10 @@ modified: 2022-01-16T15:52:31.293Z
 
 - 能不用笔记本别用笔记本。Linux对硬件性能没有太大限制，所以，你的硬件越强~你得到的就越多。
   - 显卡，如果搞AI的话，只选NVIDIA独立显卡，现在3090二手货也不贵了，千万别信什么N卡驱动难搞，那都是不会英文的原始人才会信的话术。Linux用其他卡才叫灾难，要啥啥没有，只能显示，还不如亮机卡。
-# discuss-laptop-mac
+# discuss-mac
+
+- resources
+  - [MacRumors Buyer's Guide: Know When to Buy iPhone, Mac, iPad](https://buyersguide.macrumors.com/)
 - ## 
 
 - ## 

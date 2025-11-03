@@ -453,6 +453,17 @@ modified: 2020-10-22T10:22:55.878Z
   - a JavaScript library to visualise gridded data (or any tabular dataset with x/y position) in the browser in a large variety of advanced cartographic styles
   - a JavaScript library to visualise gridded data (or any tabular dataset with x/y position) in the browser in a large variety of advanced cartographic styles
 # flow-ai
+- https://github.com/liujuntao123/smart-excalidraw-next /202511/js
+  - https://smart-excalidraw-next.vercel.app/
+  - [新的excalidraw画图神器来了！ - 社区孵化 - LINUX DO](https://linux.do/t/topic/1119379)
+    - 之前开发了一个 smart-mermaid，可以轻松的通过自然语言进行 mermaid 和 excalidraw 的绘制，获得了很多人的认可。
+    - 经过一段时间的使用和用户反馈，依然存在了一些问题： 
+      - 由于 mermaid 本身的限制，生成的图表类型受限，图表的灵活性也不够高; 
+      - mermaid 转化为 excalidraw 后，经常出现一些莫名其妙的箭头折向问题，美观性实在堪忧
+    - 出于灵活性和美观性这两方面的原因，诞生了一个新的项目：smart-excalidraw。
+    - 采用了独创的箭头连接算法，能够很好的修正 AI 绘制过程中出现的箭头乱飘的现象。
+    - 除了箭头连接算法和提示词是我自己研究出来的外。 其他的功能均为 vibe-coding 所得，难免会有 bug
+
 - https://github.com/Tiledesk/tiledesk-dashboard /MIT/202406/ts
   - https://www.tiledesk.com/
   - full-stack Open Source Live Chat with built-in Chatbots, written in Node.js and Angular.

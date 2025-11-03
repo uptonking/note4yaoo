@@ -354,6 +354,14 @@ modified: 2025-08-23T11:43:35.904Z
 - tips
   - midjourney alternative
 
+- https://github.com/LastLighter/Dreamifly /MIT/202511/ts
+  - https://dreamifly.com/
+  - 基于 Next.js 与 ComfyUI API 的开源 AI 图像生成平台，支持文生图（Text-to-Image）和图生图（Image-to-Image），无需注册，专为开发者与创意者打造
+  - 集成多种先进 AI 模型（如 HiDream-I1、Flux.1-Dev、Stable Diffusion 3.5、Qwen-Image 等），通过调用 ComfyUI 后端 API 实现快速入门的图像生成
+  - 生图时默认进入排队状态
+  - [我开源了月浏览量 70K+ 的AI绘画网站 _202510](https://linux.do/t/topic/1022006)
+    - 我们的网站近期一个月内发访问数据如下，浏览量 70k+, 访问次数 40K+，访客量 23K+
+
 - https://github.com/google-gemini/gemini-image-editing-nextjs-quickstart /484Star/apache2/202505/ts/inactive
   - https://ai.google.dev/gemini-api/docs/image-generation
   - Nextjs quickstart for to generating and editing images with Google Gemini 2.0 Flash
@@ -447,6 +455,14 @@ modified: 2025-08-23T11:43:35.904Z
 - https://github.com/dabasajay/Image-Caption-Generator /183Star/MIT/202307/js/inactive
   - A very simple placeholder image generator with zero dependencies. 
   - Returns a data URI (or raw SVG source) as a string for use in templates.
+
+- https://github.com/huarzone/Text2img-Cloudflare-Workers /202505/js/inactive
+  - https://text2img.huarzone.com/
+  - 基于 CloudFlare AI & Workers 的免费在线文生图服务
+  - 该项目为通过简单调用 Cloudflare 官方提供的 文生图 - Text-to-Image 模型，可以快速实现随时随地无需登录的图像生成需求。
+  - https://github.com/zhumengkang/cf-ai-image /202508/js/inactive
+    - 进行二次开发和功能增强
+  - [基于cloudflare搭建的免费在线文生图服务 ](https://linux.do/t/topic/886265)
 # examples
 - https://github.com/d4N-87/ComfyUI-Workflow-Inspector /7Star/MIT/202508/ts
   - https://d4n-87.github.io/ComfyUI-Workflow-Inspector/
@@ -1737,6 +1753,13 @@ modified: 2025-08-23T11:43:35.904Z
 - https://github.com/Stability-AI/stablediffusion /Stable Diffusion Version 2
   - https://github.com/CompVis/stable-diffusion
   - A latent text-to-image diffusion model
+
+## image-gen-api
+
+- https://github.com/iptag/jimeng-api /GPL/202511/ts
+  - Free AI Image and Video Generation API Service - Based on reverse engineering of Jimeng AI (China site) and Dreamina (international site).
+  - [【即梦jimeng/dreamina官网2api】10/20更新：双站均支持文生图和图生图 - 开发调优 / 开发调优, Lv1 - LINUX DO](https://linux.do/t/topic/995691)
+  - 即梦 jimeng 和 dreamina 文生图和图生图的官网 api，借鉴了几位大佬的项目，但他们的参数都有些小问题，稍加改进下，稳定性强了不少，目前只测试了文生图和图生图功能
 # models/loras/controlnet
 - https://github.com/guoyww/AnimateDiff /11.7kStar/apache2/202407/python/inactive
   - https://animatediff.github.io/

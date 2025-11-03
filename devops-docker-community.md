@@ -228,7 +228,26 @@ modified: 2024-06-30T11:17:28.971Z
 
 - ## 
 
-- ## 
+- ## 🆚 [Why do so many people use Docker over Podman, even though Podman is theoretically better? : r/selfhosted _202511](https://www.reddit.com/r/selfhosted/comments/1olt7op/why_do_so_many_people_use_docker_over_podman_even/)
+- alias docker=podman
+  - It used to be once upon a time, when podman was merely trying to be a fully open reimplementation of docker. They have diverged quite a bit since then.
+
+- I do use Podman, but I think the answer here is clear: Podman has changed a lot in the last couple of years. Especially in terms of rootless containers, there's a bunch of gotchas in terms of networking, starting on boot ("lingering"), etc. which have changed significantly since version 3.
+  - Also, people love Docker Compose. And Podman doesn't really have that. I think Podman's solutions with systemd and Kubernetes-compatible YAML might actually be better than Docker Compose, but that doesn't change the fact that most people use Docker Compose, and switching from that to Podman is a pain in the ass.
+- Yeah, it's pretty insane how many people still use Docker compose in actual production setups.
+  - It's really intended more for development. You miss out on many of the advantages of containerization by using it instead of a more robust solution like Kubernetes or Docker Swarm. Single point of failure if the host goes down, no zero downtime deployments, no auto-scaling, etc.
+
+- Podman compose is a great shim but it doesn't always work with every project. It's not as reliable as Docker compose itself. I've ran into Podman compose crashes in certain configs.
+  - Also some basic features. I tried to migrate a script that used "docker-compose cp" for instance. Nope. Not implemented.
+
+- Lots of reasons, but three that are important:
+  - Other than Fedora, Arch, and other distros that receive updates frequently, there are no repositories for slower cadence distros like Debian that you can add to update Podman.
+  - Podman is NOT a drop in replacement for Docker. It will work for the most part, but there are differences that will cause issues 
+  - A lot of container apps have instructions for getting up and running with Docker, but not as much for Podman. If there are differences, YOU are responsible for figuring out why Podman doesn't work with the Docker configuration if it doesn't work or breaks.
+
+- does podman have a modern swarm mode?
+- Try Nomad
+  - Not FOSS.
 
 - ## [Docker socket notification appearing continuously when podman VM stopped _202504](https://github.com/podman-desktop/podman-desktop/issues/12262)
 - 

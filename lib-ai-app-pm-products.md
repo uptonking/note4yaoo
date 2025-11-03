@@ -252,6 +252,7 @@ modified: 2025-03-22T16:10:24.856Z
   - coding方案还可使用 ccr 转换 qwen-code-cli
 - 免费api的技巧: 在知乎/小红书直接搜索 免费 claude (公益站), 就会有最新的api推广信息, 可以用小号邀请自己
   - 公益站 [Search results for '公益站' - LINUX DO](https://linux.do/search?q=%E5%85%AC%E7%9B%8A%E7%AB%99%20order%3Alatest)
+  - [L站免费AI汇总 ](https://linux.do/t/topic/638821)
   - 📌 [Agent Router](https://agentrouter.org/), 每日签到获取$25
     - 支持 Claude Code、Codex、RooCode、Qwen Code、Gemini Cli 等多款工具
     - 模型支持不稳定, 似乎不支持claude
@@ -284,9 +285,9 @@ modified: 2025-03-22T16:10:24.856Z
     - [【T佬公益】TBAI公益站主贴-爽用Gemini|OpenAI|DeepSeek模型 ](https://linux.do/t/topic/683726)
   - 📌 [23公益站](https://sdwfger.edu.kg/console), 不用签到
     - 平台将于每周五、周六统一发放额度兑换码。 额度申请：如您的额度提前用尽，可联系管理员进行补充申请
-    - 模型丰富: claude, gpt
+    - 模型丰富: claude, gpt, gemini
   - 📌 [KYX-API](https://api.kkyyxx.xyz/), 每日转盘
-    - Claude和gpt 暂时不支持工具调用
+    - Claude和gpt 暂时不支持工具调用, gemini模型没有pro
     - API 调用频率限制为 12RPM，公益站永久免费，采用公平限流策略以保障服务稳定
     - [KYX API Refueling Station 公益站额度加油站](https://quota.kyx03.de/)
   - [黑与白chatAPI](https://ai.hybgzs.com/), 每日转盘
@@ -294,6 +295,10 @@ modified: 2025-03-22T16:10:24.856Z
     - 本站完全免费！暂无任何充值通道
     - 绝大部分模型倍率换算后与官方价格相同，为缓解服务器资源压力，所有免费模型实际扣除配额均按付费标准计算。
     - [黑与白chatAPI福利站](https://cdk.hybgzs.com/)
+  - [Cats API](https://catsapi.com/)
+    - API调用频率限制为 15 RPM
+    - 输入输出都很贵
+    - [【猫猫公益】API使用说明 ](https://linux.do/t/topic/851028)
   - [RawChat公益站点](https://chatgptplus.cn/)
     - 免费的共享ChatGPT账号
     - [RawChat公益站点](https://sharedchat.fun/)
@@ -356,6 +361,18 @@ modified: 2025-03-22T16:10:24.856Z
   - [2025年10月 Claude 国内使用指南（支持 Claude Sonnet 4.5） - 知乎](https://zhuanlan.zhihu.com/p/1940070586635223559)
   - [白嫖最强AI编程模型Claude 4.5，暨一哥Claude Code的免费下位替代（10月22亲测可用） - 知乎](https://zhuanlan.zhihu.com/p/81947374736)
   - [求推荐免费模型api，公益站付费的太慢了，只是用于ai中文翻译成英文，速度有要求 ](https://linux.do/t/topic/1061766)
+
+- image-gen 🖼️
+  - [最新公益绘画API ](https://linux.do/t/topic/599258)
+    - 百度绘画
+    - 豆包绘画
+  - [Dreamifly - 免费AI绘画在线生成工具 | 一键生成动漫、插画、艺术图](https://dreamifly.com/zh)
+    - 由全国30台家用电脑的闲置4090显卡，免费无限制提供分布式算力支持
+  - [FluxEz - 免费的文生图网站](https://flux.comnergy.com/zh)
+    - 提供完全免费的生图服务, 无需注册
+  - [Seedream AI - 免费在线AI图像生成器](https://seedream.pro/zh)
+  - [Cloudflare Workers AI Models](https://developers.cloudflare.com/workers-ai/models/)
+    - 提供免费的文生图模型: sdxl, sdv1-5
 
 - 📌 [OpenRouter API Rate Limits ](https://openrouter.ai/docs/api-reference/limits)
   - tldr: rpd-1000 

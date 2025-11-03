@@ -426,7 +426,7 @@ modified: 2025-08-08T07:36:31.265Z
   - AI SDK 5 works with Zod 4 and Zod Mini giving you faster validation, better TypeScript performance, and reduced bundle size.
   - [AI SDK 5 - Vercel](https://vercel.com/blog/ai-sdk-5)
 
-- ## The @vercel Chat SDK now features stream resumption _202505
+- ## 〰️ The @vercel Chat SDK now features stream resumption _202505
 - https://x.com/cramforce/status/1921211838110593310
   - This is based on https://github.com/vercel/resumable-stream /MIT
   - A core feature is that while it uses Redis, the actual Redis usage is minimal unless you actually need to resume a stream (which should be rare in practice).

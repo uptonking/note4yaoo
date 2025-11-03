@@ -623,6 +623,18 @@ def slugify(text):
   - I want to find a way to stream only the changes made by the LLM back to the user, rather than regenerate full text from scratch
   - is there any popular approaches to solve this problem? maybe you can analyze and summarize the solutions, and also give me some blogs/discussions for reference
 
+- 解析一下这部微小说:
+题目 自驾游
+当年我自驾游
+不小心压死了一头羊 羊的主人好热情
+宰了羊给我们吃 还送我们到火车站
+在回来的路上
+看着火车外的风景
+真的好感人
+- [qwen3max thinking试了3次，也没有通过测试，似乎 - 国产替代 - LINUX DO](https://linux.do/t/topic/1117657)
+  - 通过测试的情况是输出的结果提到车被扣了，没有通过测试的情况是没有提到车被扣了
+  - 国内模型都非常正能量, 大多不能推理出讽刺结局, 能推理出的包括: deepseek-r1/v3.1-thinking, glm/kimi有时能推理出
+
 - DigitalPlat provides Free Domain For Everyone. how many domains can i register?
   - 文档里面是3但过时了，实际初始数量为1，github收藏后为2
 
