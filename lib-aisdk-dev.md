@@ -81,6 +81,7 @@ modified: 2025-08-08T07:35:49.535Z
 - createResumableStreamContext 会建立redis连接
 - streamContext.createNewResumableStream
   - new ReadableStream
+  - 创建时会将 `${ctx.keyPrefix}:sentinel:${streamId}` 设为1，结束时设为DONE
 - streamContext.resumeExistingStream
   - new ReadableStream
 - When a new resumable stream is created, the producer (the first consumer) sets up a subscription to listen for requests from additional consumers

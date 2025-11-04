@@ -254,9 +254,46 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
 - dev-log
   - ?
 - dev-to
+  - ?
+
+## 1104
+
+- 🤔 is there a standard format for text diff ? 
+  - two formats are popular now.
+  - one format is the output from `git diff` commands, the content contains `@` file and `++--` characters 
+  - the other format is like contents from git merge conflicts, the content contains `>>>`/`<<<` characters
+  - are there standard specs/definitions for diff formats above? 
+  - which format is better for editing with llm?
+- 👾 The unified diff format from `git diff` is standardized and machine-readable, while the merge conflict markers are a specific format for guiding manual resolution.
+- Unified Diff (from git diff)
+  - Showing changes between file versions in a standard, compact way
+  - The unified diff format was originally popularized by GNU `diffutils`. Git extends this format with additional headers and metadata
+  - widely adopted by Git, SVN, and other version control systems.
+  - `diff3` style includes the common ancestor text, providing a third version for better context during merges
+
+- Merge Conflict Markers
+  - a standardized format used by Git and other version control systems
+  - This format is standardized by Git for marking conflicts during merges. It is documented in Git's git-merge and merge-config manuals 
+
+## 1103
+
+- dev-log
   - aisdk + streamdown without ai-elements
   - streamdown + resume-with-redis
- 
+
+- 🤔 this is a library for wrapping streams of strings in a way that a client can resume them after they lost a connection, or to allow a second client to follow along. 
+  - The library relies on a pubsub mechanism and is designed to be used with Redis.
+  - The first time a resumable stream is invoked for a given streamId, a standard stream is created. This is now the producer.
+  - When a second resumable stream is invoked for a given streamId, it publishes a messages to alert the producer that it would like to receive the stream.
+  - my question: is redis pub/sub a good way to implement resumable stream? can i use nodejs `EventEmitter` to implement this? 
+  - you should not modify any code, just analyze the current codebase and help me make the decision whether it's worth to use redis pub/sub or not. personllay i think nodejs is clean and powerful.
+- 👾 EventEmitter Limitations
+  - Single process only: Won't work across multiple instances
+  - No persistence: If the process crashes or restarts, all stream state is lost
+  - Memory overhead: All buffered data lives in process memory
+  - Not distributed: Cannot coordinate between separate deployments
+    - No cross-machine scaling: Cannot distribute across servers
+    - Load Balancing Issues: Without sticky sessions, different requests might hit different servers
 
 ## 1102
 

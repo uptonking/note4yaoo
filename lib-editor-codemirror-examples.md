@@ -1238,7 +1238,7 @@ modified: 2023-06-23T12:46:53.288Z
   - It is also available in React and Vue.
   - 示例是基于textarea实现合并代码
 
-- https://github.com/Wilfred/difftastic /MIT/202408/rust
+- https://github.com/Wilfred/difftastic /23.5kStar/MIT/202510/rust
   - https://difftastic.wilfred.me.uk/
   - a structural diff tool that compares files based on their syntax
   - Difftastic supports over 30 programming languages

@@ -117,10 +117,14 @@ modified: 2025-02-21T17:17:42.225Z
     - I'm surprised that tesslate ai is a one-man project.
     - Its not one man! We have a few people on discord training models now and Ernest and I built Studio. We've had other contributors help us for our other projects like: Agent Builder, TframeX, Designer
 
-- https://github.com/mendableai/open-lovable /8.3kStar/MIT/202508/ts
+- https://github.com/firecrawl/open-lovable /8.3kStar/MIT/202508/ts
+  - https://github.com/mendableai/open-lovable
   - Clone and recreate any website as a modern React app in seconds
   - Chat with AI to build React apps instantly. Made by the Firecrawl team.
   - 基于e2b sandbox实现
+  - 🍴 forks
+  - https://github.com/fstandhartinger/chutes-webcoder
+    - A Chutes-flavoured fork of firecrawl/open-lovable that keeps pace with the upstream features (Vercel sandboxing, GitHub integration, new builder UI) while defaulting to the Chutes LLM platform.
 
 - https://github.com/dyad-sh/dyad /14.2kStar/apache2/202508/ts
   - https://dyad.sh/

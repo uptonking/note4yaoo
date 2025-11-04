@@ -26,7 +26,7 @@ modified: 2023-09-02T09:17:22.992Z
     - react-sandpack uses codemirror but we're looking into having monaco as an option as well
   - [Add a collaborative mode _201709](https://github.com/codesandbox/codesandbox-client/issues/206)
     - it's here now _201803
-- https://github.com/codesandbox/sandpack /4.5kStar/apache2/202405/ts
+- https://github.com/codesandbox/sandpack /5.8kStar/apache2/202502/ts/inactive
   - https://sandpack.codesandbox.io/
   - https://sandpack.codesandbox.io/docs
   - Sandpack is a component toolkit for creating your own live running code editing experience powered by CodeSandbox.
@@ -34,8 +34,12 @@ modified: 2023-09-02T09:17:22.992Z
   - 未实现跳转到定义的功能
   - Sandpack Client: This is a small foundation package that sits on top of the bundler. It is framework agnostic and facilitates the handshake between your context and the bundler iframe.
   - Sandpack React: React components that give you the power of editable sandboxes that run in the browser
-  - https://github.com/AaronPowell96/sandpack-file-explorer /MIT/202312/ts
-    - Enhanced File Explorer for Sandpack. Providing immense flexibility to Sandpack's capabilities.
+  - [Is sandpack as a project dead/legacy? _202501](https://github.com/codesandbox/sandpack/issues/1243)
+    - 👷: I think that we have been slow on this repo in particular. We have been mostly working on CodeSandbox itself and completely forgot about the Sandpack repo. This slipped through the cracks when Danilo left.
+      - I think that running NodeJS in the browser is still a valid and interesting space. The challenge here is that all revenue (in CodeSandbox's case) comes from our VM offering (and indeed, specifically for AI agents & text->app builders). Because of this, there has been less focus on Sandpack lately.
+    - Given that huge leap forwards in Ai capabilities re. software engineering, together with huge speed and cost improvements in cloud-based containerisation, I am starting to wonder if running NodeJs in the browser is itself somewhat of a dead end?
+- https://github.com/AaronPowell96/sandpack-file-explorer /MIT/202312/ts
+  - Enhanced File Explorer for Sandpack. Providing immense flexibility to Sandpack's capabilities.
   - https://github.com/fewismuch/sandpack-file-explorer
 
 - https://github.com/ameerthehacker/blazepack /LGPLv3/202106/js/inactive

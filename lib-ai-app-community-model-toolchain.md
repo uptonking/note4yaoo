@@ -546,6 +546,30 @@ modified: 2025-09-16T12:36:12.968Z
   - ollama pull llama3
 
 - 我说的本地，指的不是一台个人电脑上，跑一个7B、13B参数的大模型。而是在企业本地算力服务器上，私有化部署的700亿参数以上规模的大模型，这种参数规模的大模型，才有更好的指令依从性，结合RAG、Agent等技术，能有效的完成你分配给他的任务。 
+# discuss-formats-models
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Why does it seem like GGUF files are not as popular as others? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1ood0kn/why_does_it_seem_like_gguf_files_are_not_as/)
+  - I feel like it’s the easiest to setup and it’s been around since the beginning I believe, why does it seem like HuggingFace mainly focuses on Transformers, vLLM, etc which don’t support GGUF
+
+- It's pretty easy to support gguf, it's honestly weird that they haven't bothered.
+  - The issue isn't really the format so much as all the possible quants. There's very little value in "supporting GGUF" if the code can't, say, multiply IQ3_XXS matrices. Supporting all those qants (which can be different per-matrix too, BTW) adds code complexity and can make optimizing difficult.
+  - Also, I believe that GGUF doesn't support FP8 and only somewhat supports FP4. (IIRC some tenors are forced to FP32 in GGUF, but that might be wrong.) So for an engine is focused on only providing GPU floating point inference supporting gguf would be silly since it would basically be the bf16 .safetensors but worse.
+
+- My guess because large scale inference providers need efficient inference for a multi-user environment and only care about GPU inference, and vLLM provides that. As of transformers, it is much easier to add support for new architectures there in most cases.
+  - So, implementation complexity to support GGUF is generally higher. Vision models and Qwen Next are good example when it takes a while to get support for GGUF.
+  - the main reason why I use GGUF is because `ik_llama.cpp` is good for CPU+GPU inference for a single user.
+  - I am sure it will get there in time, but the point is, adding GGUF support is very hard, and requires either hiring professional programmer(s) or relying on the community to implement the support themselves.
+
+- Transformers is going to be running the original, unmodified model; it was trained, tested, etc for this experience. You're getting the purest experience.
+  - GGUF is a conversion to make it more compatible for the rest of us. The way inferencing occurs, there is a possibility of differences between gguf and the original intended experience, and also a possibility of speed differences as well.
+  - ggufs are VERY popular amongst individual users and runners, and folks with limited/specific hardware. But if you're serving to other users, and you have the base hardware expected for Transformers, then you're probably doing that.
 # discuss-mac-mlx 🍎
 - ## 
 

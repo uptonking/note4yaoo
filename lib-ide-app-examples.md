@@ -404,6 +404,11 @@ modified: 2024-08-24T16:30:20.218Z
   - [VT Code — Rust terminal coding agent doing AST-aware edits + local model workflows : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1oe6y1a/vt_code_rust_terminal_coding_agent_doing_astaware/)
     - Most of the features I planned to build are completed. For local models, I had planned to do ollama integration firsthand. I also do plan to integrate with llama.cpp and lmstudio next
 
+- https://github.com/synthetic-lab/octofriend /202510/ts
+  - Octo is a small, helpful, cephalopod-flavored coding assistant that works with any OpenAI-compatible or Anthropic-compatible LLM API, and allows you to switch models at will mid-conversation
+  - Octo has helped write some of its own source code, but the codebase is human-first
+  - Octo has built-in Docker support, and can attach to any Docker container without needing special configuration or editing the image or container. 
+
 ## vscode-ext-ai
 
 - https://github.com/continuedev/continue /21.3kStar/apache2/202508/ts
@@ -411,6 +416,8 @@ modified: 2024-08-24T16:30:20.218Z
   - Continue is the leading open-source AI code assistant. You can connect any models and any context to build custom autocomplete and chat experiences inside VS Code and JetBrains
   - Tab to autocomplete code suggestions
   - [Continue 实现原理 · Pines-Cheng/blog _202505](https://github.com/Pines-Cheng/blog/issues/108)
+  - [docs: added the fastapply model to the recommendations by Olyray · Pull Request · continuedev/continue](https://github.com/continuedev/continue/pull/8249)
+    - [Feature Request: Support FastApply model format parsing _202411](https://github.com/continuedev/continue/issues/2801)
 
 - https://github.com/twinnydotdev/twinny /MIT/202408/ts
   - https://twinny.dev/

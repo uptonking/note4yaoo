@@ -36,8 +36,11 @@ modified: 2023-09-01T03:56:10.056Z
 - https://github.com/NPCDW/HtmlDiff
   - Html文本比对实现，基于google的diff_match_patch
 
-- https://github.com/ace-diff/ace-diff
+- https://github.com/ace-diff/ace-diff /MIT/202507/js/inactive
+  - https://ace-diff.github.io/ace-diff/
   - A diff/merging wrapper for Ace Editor built on google-diff-match-patch
+  - This is a wrapper for Ace Editor to provide a 2-panel diffing/merging tool that visualizes differences in two documents and allows users to copy changes from to the other.
+  - It's built on top of google-diff-match-patch library. That lib handles the hard part: the computation of the document diffs. `ace-diff` just visualizes that information as line-diffs in the editors.
 # diff
 - https://github.com/icflorescu/textdiff-patch /ISC/js
   - simple module for applying lean text diff delta patches created by textdiff-create.

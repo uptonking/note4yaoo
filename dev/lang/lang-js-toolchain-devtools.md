@@ -78,6 +78,29 @@ modified: 2025-04-09T02:49:16.372Z
 - ## [How to compile a specific file with tsc using the paths compiler option - Stack Overflow](https://stackoverflow.com/questions/44676944/how-to-compile-a-specific-file-with-tsc-using-the-paths-compiler-option)
 - what you can do is overwrite the include property of your tsconfig with something like this: `"include": [ "src/root/index.ts" ]`
 
+# discuss-tsgo
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [When "tsgo" is released, will it be able to execute typescript directly like ts-node, or will executers like ts-node and tsx be updated to use it? : r/typescript _202506](https://www.reddit.com/r/typescript/comments/1l6l8nh/when_tsgo_is_released_will_it_be_able_to_execute/)
+- `tsgo` is a replacement for `tsc` . It'll do what tsc currently does. It also replaces the custom `tsserver` with a standard LSP interface.
+
+- No, tsgo won't execute typescript code just like the current tsc doesn't. 
+  - It will compile it to check for errors and optionally emit JavaScript, and provide language server protocol services.
+  - I would expect that yes execturos like ts-node and tsx will either be updated to use it, or tsgo will be merged into the main typescript project so that it just works and the executors start using it without even knowing they're using something different.
+
+- It's substantially slower than the swc based alternatives and Go is much harder to use as a "plugin" due to its poor FFI capabilities so it's unlikely it will be used by tools as a type-stripping back end.
+  - That said, Nodejs has TypeScript support built in now (swc backed) so ts-node, tsx and such are effectively redundant. It's also much better than tsx/ts-node because it doesn't have leaky transforms.
+
+- probably not. that is not really typescripts job
+  - ts-node exposes you to the trouble of runtime node.js esm resolution, and cjs/esm incompatibility, which is frequently troublesome, so this is indeed common what you are seeing
+  - tsx helps by using a bundler, esbuild, under the hood. the bundler basically removes the need to do runtime esnext/nodenext module resolution, since it is all just bundled. can be helpful for cases where cjs vs esm is causing trouble 
+  - you should consider using node with --experimental-strip-types. it replaces 90+% of reasons ts-node or tsx is needed. it is more similar to ts-node than tsx in spirit, as it does do normal runtime module resolution, no 'bundling', it just removes ts types so that it can ingest .ts files
+
+- these tools do different things. tsgo is for type checking. People typically don't check types when using something like tsx to execute code. You just do that in your IDE / CI.
 # discuss
 - ## 
 

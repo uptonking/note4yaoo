@@ -283,6 +283,14 @@ modified: 2024-03-31T17:45:16.789Z
   - Optimized Binary: Uses Link Time Optimization (LTO) for maximum performance
   - PostgreSQL 13+ database, 512MB RAM minimum (1GB+ recommended)
   - I built OxiCloud because I wanted a simpler, faster file storage solution than existing options. After struggling with NextCloud's performance on my home server, I decided to create something that prioritizes speed and simplicity while still being robust enough for daily use.
+
+- https://github.com/cloudreve/cloudreve /25.4kStar/GPL/202510/go
+  - https://cloudreve.org/
+  - Self-hosted file management and sharing system, supports multiple storage providers
+  - Support storing files into Local, Remote node, OneDrive, S3 compatible API, Qiniu, Aliyun OSS, Tencent COS, Upyun.
+  - Compress/Extract files, download files in batch.
+  - WebDAV support covering all storage providers.
+  - Multi-users with multi-groups.
 # cloud-drive-sync
 - https://github.com/syncthing/syncthing /75.9kStar/MPL/202509/go
   - https://syncthing.net/

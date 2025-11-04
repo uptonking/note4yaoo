@@ -17,6 +17,93 @@ modified: 2025-10-10T02:44:49.634Z
 - ## 
 
 - ## 
+# discuss-md-table
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🤔 [LLM has trouble understanding tabular data (.csv) relationships with RAG : r/LocalLLaMA _202501](https://www.reddit.com/r/LocalLLaMA/comments/1hymyky/llm_has_trouble_understanding_tabular_data_csv/)
+  - I'm currently having trouble getting a LLM to understand relationships in a table using RAG
+  - One idea was to turn this into a text document and sentences such as "alice is 1 year old and her favorite color is blue." But since i have quite a bit of data (~10k rows), I was wondering if anyone else had something better. 
+
+- One solution that can work for advanced cases is to use the LLM to generate a query (sql, pandas...) instead of the answer. This way you will be able to also extract more complex relations. 
+  - Generating a query for this is easy, while putting everything into the context window for the llm to calculate it will not work.
+
+- As mentioned by others you’re better off using a tool that enables the LLM to generate pandas or sql queries on the table. E.g you can have a look at the TableChatAgent in Langroid 
+  - https://github.com/langroid/langroid/blob/main/examples/data-qa/table_chat.py /MIT/202510/python
+    - lightweight, extensible and principled Python framework to easily build LLM-powered applications, from CMU and UW-Madison researchers
+
+- ## 🧪 [Which Format is Best for Passing Tables of Data to LLMs? : r/LLMDevs _202510](https://www.reddit.com/r/LLMDevs/comments/1nw3jha/which_format_is_best_for_passing_tables_of_data/)
+  - For anyone feeding tables of data into LLMs, I thought you might be interested in the results from this test I ran.
+  - I tested how well an LLM (GPT-4.1-nano in this case) could answer simple questions about a set of data in JSON format. I then transformed that data into 10 other formats and ran the same tests.
+  - I wanted to understand whether how you format a table of data affects how well an LLM understands it.
+- [Which Table Format Do LLMs Understand Best? (Results for 11 Formats _202509)](https://www.improvingagents.com/blog/best-input-data-format-for-llms)
+  - markdown kv: 60.7%
+  - xml: 56.0%
+  - yaml: 54.7%
+  - html: 53.6%
+  - json: 52.3%
+  - markdown table: 51.9%
+  - csv: 44.3%
+  - If you make heavy use of tabular data, consider testing whether transforming that data into a different format gives you improved accuracy.
+  - Consider markdown tables when you need a balance between readability and cost.
+  - Be wary of defaulting to CSV or JSONL - these common formats could hurt your system’s accuracy.
+
+- Markdown-KV was markdown with "key: value" (KV) pairs, like this:
+
+```md
+# Employee Database
+
+## Record 1
+
+\`\`\`
+id: 1
+name: Charlie A0
+age: 56
+city: New York
+department: Operations
+salary: 67896
+years_experience: 7
+project_count: 1
+\`\`\`
+
+## Record 2
+
+\`\`\`
+id: 2
+name: Grace B1
+age: 59
+city: Mumbai
+department: Marketing
+salary: 47248
+years_experience: 0
+project_count: 43
+\`\`\`
+
+```
+
+- That's not a table format, it's a map format for each row, but thanks for the tip anyways! Best table format: do not use table to format your data.
+
+- It’s interesting that your bespoke Markdown-KV outperforms established formats like JSON and YAML despite presumably having far less training data.
+  - I suspect the markdown headers act as positional fences that constrain the attention mechanism's search. Once the model finds the right record, relevant values are bounded between headers rather than scattered across 1000 records.
+
+- Short answer: for real apps, generate SQL and let the DB do the work; only stuff rows into context or a vector index when you must.
+
+- Parquet is a binary columnar format, so the model can’t parse it directly. You’d still need to convert it into a text format like JSON or Markdown, etc.
+
+- I worked out how to ingest CSV files and turn into an index which builds a knowledge graph. You can tag demographics, filter by age, gender whatever the data has. Is this cool or useless?
+
+- what about nested json? is there value in converting it to markdown?
+  - [Which Nested Data Format Do LLMs Understand Best? JSON vs. YAML vs. XML vs. Markdown _202510](https://www.improvingagents.com/blog/best-nested-data-format)
+    - yaml: 62.1%
+    - markdown: 54.3%
+    - json: 50.3%
+    - xml: 44.4%
+    - effects varying by model
+    - YAML is a good default if you don’t know which format your specific model prefers
+    - Avoid XML for large-scale nested data in LLM contexts
 # discuss-output-structured
 - ## 
 
@@ -116,7 +203,8 @@ modified: 2025-10-10T02:44:49.634Z
 
 - ## 
 
-- ## 
+- ## [What's the best format to pass data to an LLM for optimal output? : r/PromptEngineering _202507](https://www.reddit.com/r/PromptEngineering/comments/1mb80ra/whats_the_best_format_to_pass_data_to_an_llm_for/)
+- chatgpt likes markdown, claude likes xml
 
 - ## [LLMs pose an interesting problem for DSL designers | Hacker News _202506](https://news.ycombinator.com/item?id=44302797)
 - The title should be "DSLs pose an interesting problem for LLM users".

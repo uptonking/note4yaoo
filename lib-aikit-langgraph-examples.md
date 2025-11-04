@@ -70,6 +70,11 @@ modified: 2025-08-11T08:47:56.335Z
   - allowing you to start the session with your existing content, instead of being forced to start with a chat interaction.
   - ⏳ Artifact versioning: All artifacts have a "version" tied to them, allowing you to travel back in time and see previous versions of your artifact.
   - [is this repo still active? _202507](https://github.com/langchain-ai/open-canvas/issues/356)
+  - [Support Diff-based edits _202412](https://github.com/langchain-ai/open-canvas/issues/210)
+    - Many models support Search + Replace blocks that would make edits faster and make using more powerful and expensive models practical.
+    - You can do this with the highlight to edit feature. On the backend, that takes the highlighted text, along with 200 (if I remember correctly, it's somewhere around there) characters before & after and only regenerates that.
+    - Why did you choose to have the DOM show where the highlighted content (text or code) on the canvas was rather than using the CodeMirror API?
+      - I wasn't aware it existed haha. We use the built in API and not DOM for the markdown renderer
 
 - https://github.com/langchain-ai/open-agent-platform /1.6kStar/MIT/202508/ts/inactive
   - https://oap.langchain.com/
