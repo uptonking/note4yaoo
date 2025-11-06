@@ -17,6 +17,15 @@ modified: 2025-09-16T19:59:57.856Z
   - 📱 端侧模型还要考虑电源及功耗问题, 实测macbook-air在跑模型时掉电很快
     - 端侧最好用 api-key + tiny-local-llm
 
+- https://github.com/sst/models.dev /MIT/202511/ts
+  - https://models.dev/
+  - open-source database of AI model specifications, pricing, and capabilities
+  - We also use it internally in opencode.
+  - [OpenCode开发了一个所有AI模型(LLM)的数据库，完全开源并且可以免费通过API使用 - 知乎](https://www.zhihu.com/pin/1955588229391709336)
+    - 按价格从低到高排序，你就能发现各个供应商都提供大量的免费模型。当然，免费模型都一定的额度限制。
+    - 可以通过一个API路由（比如New-API：链接 ），来轮流使用这些免费模型，额度耗尽就自动切换下一家
+    - 对Agent应用来说，获得一个模型的参数，比如上下文大小，可以作为程序决策的依据
+
 - leaderboard-llm
   - [Artificial Analysis LLM Leaderboard - Comparison of over 100 AI models from OpenAI, Google, DeepSeek & others](https://artificialanalysis.ai/leaderboards/models)
   - [Vellum LLM Leaderboard 2025](https://www.vellum.ai/llm-leaderboard)
@@ -150,6 +159,37 @@ modified: 2025-09-16T19:59:57.856Z
   - 似乎不擅长tailwind, 生成页面的风格偏非tailwind样式的传统网页
   - 经常出现部分元素样式错乱的问题
 
+## models-ocr
+
+- deepseek-ocr-3b
+  - 不能识别mermaid流程图
+  - 不能正确识别页眉页脚，默认忽略了
+  - 识别图片中的代码块输出的内容不是codeblock而是普通文本
+  - 🌹
+    - 识别中文的正确率高
+    - 识别图片中的表格能准确输出文本，每行内容正确
+
+- nanonets-ocr2-3b
+  - 输出的内容markdown优先，格式非常准确
+    - 表格中的代码也能正确输出为markdown inline code
+    - 外部链接能直接输出为markdown链接
+  - 识别图片中的代码块输出codeblock
+  - 识别mermaid流程图，输出流程图文本
+  - 能正确识别页眉页脚
+  - 能识别图文混排元素，输出内容时能提供方位，如插图旁边是...
+  - 能识别表格，但 表格行内容有时会错位而在中间插入空行
+
+- granite-docling-258m
+  - 能输出带语意的自定义标签, 如 page_header, code, list_item, loc_99, text
+  - 默认markdown不友好，需要手动转换自定义标签
+  - 部分中文识别的错误率较高
+
+- 
+- 
+- 
+- 
+- 
+
 ## models-exploring
 
 - 专用模型
@@ -177,6 +217,12 @@ modified: 2025-09-16T19:59:57.856Z
   - a specialized language model specifically for DevOps tasks and operations only.
   - designed EXCLUSIVELY for DevOps-related tasks. It has robust filtering that will NOT respond to general questions about movies, weather, cooking, sports, music
   - [Meet the first Small Language Model built for DevOps : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1ndm44z/meet_the_first_small_language_model_built_for/)
+
+- https://huggingface.co/Alibaba-EI/SmartResume /apache2/202510
+  - 一个面向版面结构的智能简历解析系统，系统支持 PDF、图片及常见 Office 文档格式，融合 OCR 与 PDF 元数据完成文本提取
+  - 本仓库包含 SmartResume 项目所需的两个核心权重文件，用于简历信息提取和版面分析。
+  - Qwen3-0.6B: 简历文本信息提取和结构化处理
+  - YOLOv10: 简历版面布局检测和区域分割
 # discuss-stars
 - ## 
 
@@ -572,70 +618,6 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 - ERNIE 4.5 (?) 0.3B: It's a really small model that maintains coherence, I personally like it and use it in places with low amount of RAM.
 
 - Small models don't take Quantization well, they can get really dumbed down.
-# discuss-vision-vlm 🖼️
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 
-
-- ## [Practical takeaways from recent hands-on use of PaddleOCR‑VL 0.9B : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1obfwt9/practical_takeaways_from_recent_handson_use_of/)
-  - Bottom line up front: I care most about whether complex layouts can be restored into structured data, whether handwriting tables and formulas are stable, and local inference speed and cost. 
-  - Paddleocr‑VL 0.9B feels purpose built for production, especially for multi column PDFs, table structures, and formulas. 
-  - Cloud models like GPT‑4o and Gemini 2.5 Pro are more general for commonsense cross domain understanding and conversational interaction, but you need to factor in cost and privacy compliance.
-  - On multi column complex layouts and whether they can be directly restored into structured data, which I value highly because it decides how much human cleanup downstream automation needs. Paddleocr‑VL takes an engineering first approach: a NaViT dynamic visual encoder plus a lightweight ERNIE, combining layout understanding with structured outputs.
-
-- I had similar experiences when we were testing different OCR solutions for Docstrange, and your point about structured outputs being more important than pretty-looking text really hits home. 
-  - We found that PaddleOCR-VL's engineering-first approach does seem to handle the weird edge cases better than the general VLMs, especially when you're dealing with those nightmare scenarios like financial reports where a single misplaced table cell can mess up your entire downstream pipeline. 
-  - The thing that caught my attention in our testing was how much more predictable the failure modes are with specialized models like PaddleOCR-VL compared to something like GPT-4o which might give you beautiful conversational output but completely miss that a footnote belongs to a specific table cell three pages back.
-  - The cost factor you mentioned is huge too, especially if you're processing thousands of documents daily where those API calls add up fast.
-
-- ## 🆚 [[Experiment] Qwen3-VL-8B VS Qwen2.5-VL-7B test results : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1o9xf4q/experiment_qwen3vl8b_vs_qwen25vl7b_test_results/)
-  - TL; DR: I tested the brand-new Qwen3-VL-8B against Qwen2.5-VL-7B on the same set of visual reasoning tasks — OCR, chart analysis, multimodal QA, and instruction following.
-  - Qwen3-VL shows a clear generation-to-generation leap and delivers more accurate, nuanced, and faster multimodal reasoning.
-
-- [Qwen3-VL testout - open-source VL GOAT : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1o9eo4f/qwen3vl_testout_opensource_vl_goat/)
-  - I’ve been waiting on Qwen3-VL and finally ran the 4B on scanned tables, color-blind plates, UI screenshots, and small “sort these images” sets.
-  - Tables came out clean with headers and merged cells handled better than Qwen2.5-VL.
-  - Variant behavior matters. The Think build tends to over-explain and sometimes lands wrong. The Instruct build stays steadier for perception, grounding, and “read + point” jobs. 
-  - My pattern is simple: let 4B handle recognition and coordinates, then hand multi-step reasoning or code-gen to a larger text model. That stays stable.
-  - Net take: big lift in perception, grounding, and visual math; still weak on faithful webpage replication and hard spatial transforms. As of today, it feels like the top open-source VL at this size.
-
-- ## 🆚 [Qwen3-VL Instruct vs Thinking : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nuhgxw/qwen3vl_instruct_vs_thinking/)
-  - I am working in Vision-Language Models and notice that VLMs do not necessarily benefit from thinking as it applies for text-only LLMs. 
-  - I created the following Table asking to ChatGPT (combining benchmark results found here), comparing the Instruct and Thinking versions of Qwen3-VL. You will be surprised by the results.
-
-- I just want qwen3-30b-a3b-2507 with a vision component so I dont have to load multiple models. 
-
-- I wonder how hybrid vision models do — GLM4.5V comes from the Air version which is hybrid.
-
-- [Qwen3-VL-30B-A3B-Instruct & Thinking are here : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1nxhfcq/qwen3vl30ba3binstruct_thinking_are_here/)
-- I wonder why the thinking version got worse IFEval than the instruct and even the previous, non-vision, thinking model.
-  - yes they don't discuss yet why thinking version, that uses way more inference token budget, performs worse than the Instruct. Imo Thinking for VLMs is not necessarily beneficial
-- It seems to improve reasoning in the non-thinking model and hurt it in the thinking? Besides that I guess the difference is only slight and completely mixed. Except for coding, VL makes that worse.
-
-- ## [moondream 0.5B - the world's smallest vision language model : r/LocalLLaMA _202412](https://www.reddit.com/r/LocalLLaMA/comments/1h7ivts/moondream_05b_the_worlds_smallest_vision_language/)
-  - https://github.com/vikhyat/moondream
-  - Moondream 0.5B offers a significantly lower download size and memory usage than moondream 2B.
-  - It is intended to be used as a distillation target—start building with moondream 2B, and distill your use-cases onto the 0.5B model before deployment.
-  - This model was built using structured pruning on 2B with quantization-aware training. This means we can easily distill from 2B to recover accuracy on the specific target tasks an application needs, and run with int8 quantization without any loss of accuracy.
-  - Today we are releasing int8 and int4 weights for moondream 0.5B, as well as fast CPU inference support in the Python client library. 16-bit weights and distillation support will be coming soon, so stay tuned!
-
-- doesnt look like this new model has been added to ollama as yet (and no GGUFs available)
-
-- Awesome. Florence is nice and small too, but could only really handle a finite list of specific prompts. It seems this small models retains the ability to ask free-form questions, which would make it extremely useful for mobile devices.
-  - Florence 2 base is smaller. You can also fine tune it to work with any specific prompt you like if you have consistent prompts.
-
-- ## LGM：生成高质量3D模型，支持文字生成模型、图片生成模型，分辨率512*512，5秒内即可生成。
-- https://x.com/Gorden_Sun/status/1784230776311284205
-  - https://github.com/3DTopia/LGM
-
-- ## 免费玩的本地大模型，本地搭建环境推荐用Ollama和ChatbotAI
-- https://x.com/vista8/status/1862696894172209476
-- Vision 建议换成用 Llama 3.2 Vision 11b，比llava要好很多，且支持多语言（包括中文）的文字识别
-
 # discuss-tool-call
 - ## 
 

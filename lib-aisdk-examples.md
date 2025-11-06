@@ -415,6 +415,10 @@ modified: 2025-08-11T20:15:18.297Z
   - VectorStoreManager: Creates and manages the `FAISS` vector index for semantic search
   - AgentService: Provides AI-powered answers to questions using the Google Gemini model
 
+- https://github.com/paradite/send-prompt /202509/ts
+  - A TypeScript library for interacting with models across providers with standardized interfaces and tool calling.
+  - Custom providers with OpenAI-compatible API
+
 ## port-lang
 
 - https://github.com/python-ai-sdk/sdk /MIT/202508/python

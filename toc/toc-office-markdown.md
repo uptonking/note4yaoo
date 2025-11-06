@@ -112,6 +112,18 @@ modified: 2021-01-04T17:26:25.032Z
     - Loading them all in memory at once (like `highlight.js` allows) results in a MB big minified js file which i very much like to prevent.
     - But the render mechanism in markdown-it seems to be not so happy about a on-demand highlighter.
     - I fixed this by, at parse time, "remembering which fenced blocks" went through the parser and then, once parsed, go over those blocks again and load the syntax highlighting files. That works as lazy enough. It's quite a bit more involved then this but it works. 
+- https://github.com/serkodev/markdown-exit /1kStar/MIT/202511/ts
+  - https://markdown-exit.pages.dev/
+  - A TypeScript rewrite of markdown-it with first-class typings, modern tooling, and enhancements.
+  - Async rendering for all rules includeing syntax highlighting and more.
+  - Extend the markdown syntax, custom rendering with Plugins.
+  - Compatible with markdown-it v14.1.0 and plugin API.
+- https://github.com/Simon-He95/markdown-it-ts /MIT/202511/ts
+  - A modern, type-safe rewrite of markdown-it in TypeScript: pluggable rules, split parse/render, CommonMark-compatible; fast one-shot parsing and even faster streaming/incremental updates.
+  - A TypeScript migration of markdown-it with modular architecture for tree-shaking and separate parse/render imports.
+  - Ruler-based rule system
+  - API compatibility with original markdown-it
+  - https://x.com/simon_he1995/status/1986315649031995633
 
 - snarkdown /2kStar/MIT/202201/js/单文件
   - https://github.com/developit/snarkdown

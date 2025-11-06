@@ -445,6 +445,9 @@ modified: 2025-08-11T08:47:56.335Z
 - eg
   - https://medium.com/@sirsho29/build-smarter-ai-apps-with-this-langgraph-vercel-ai-sdk-starter-template-8d150e484bf8
 # utils/fwk
+- https://github.com/pguso/ai-agents-from-scratch /MIT/202511/js
+  - [Building LangChain & LangGraph Concepts From Scratch (Next Step in My AI Agents Repo) : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1opt2q9/building_langchain_langgraph_concepts_from/)
+
 - https://github.com/ibbybuilds/aegra /265Star/apache2/202510/python
   - https://aegra.dev/
   - Open source LangGraph Platform alternative - Self-hosted AI agent backend with FastAPI and PostgreSQL. 

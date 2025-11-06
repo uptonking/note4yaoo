@@ -92,7 +92,26 @@ modified: 2022-12-16T01:52:33.729Z
 - copy column data
 # more
 
+# discuss-table-ux/styling
+
+- ## 
+
+- ## 
+
+- ## [conditional colors on single cells (not entire entry lines) : r/Notion _202511](https://www.reddit.com/r/Notion/comments/1oq3mxd/conditional_colors_on_single_cells_not_entire/)
+  - I have a database and I want every cell to have a color if >48 green and <48 red.
+
+- I don’t believe that that is something that Notion can do currently.
+
+- A clunky but possible version would be adding an additional formula property for each property that you want to have this kind of color coating for. 
+
+- Currently not possible for manually entered information. We can give formula outputs a colored background and that is it.
+
+- I agree that this should be implemented. Conditional styling at the database level for rows and at the property level for individual cells (which would also make column colors very easy)
 # discuss-table
+- ## 
+
+- ## 
 
 - ## 
 

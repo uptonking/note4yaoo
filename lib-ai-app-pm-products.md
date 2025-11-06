@@ -31,7 +31,7 @@ modified: 2025-03-22T16:10:24.856Z
   - tweak different configs for ai-models
   - 避免模型平台的限制，如并发请求数(需要排队)、context长度、最大输出token数、模型版本、模型大小等
     - no implicit ai degradation/switch: bring your model
-  - cost: unlimited tokens
+  - cost: unlimited tokens, 利用本地模型ocr/文生图
   - network agnostic
   - 发挥端侧计算的能力，如总结/查询，而不侧重端侧聊天
   - mlx的并发端侧计算能力非常强, 多个mlx并行计算
@@ -231,6 +231,8 @@ modified: 2025-03-22T16:10:24.856Z
     - Analyze files and images
     - Access information across your integrated apps like Slack & Google Drive
     - Limit your search to trusted knowledge sources
+
+- [Project Idea: Using an AI face search to find data leakage in RAG source repositories. : r/ChatGPTCoding](https://www.reddit.com/r/ChatGPTCoding/comments/1oq4p2s/project_idea_using_an_ai_face_search_to_find_data/)
 # ai-dev-xp 🚧
 - 当一个复杂问题让ai折腾了1h还没解决，不要继续纠结，赶紧换更强的模型
   - 让ai动手前自己先拆分任务，不要让ai分析复杂的任务，ai分析不清会乱改增加工作量，自己可以主动mock状态和对象

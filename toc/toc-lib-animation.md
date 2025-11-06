@@ -320,6 +320,10 @@ modified: 2020-10-05T06:22:02.107Z
 - https://github.com/3b1b/manim /MIT/202405/python
   - Animation engine for explanatory math videos
   - System requirements are FFmpeg, OpenGL and LaTeX (optional, if you want to use LaTeX). For Linux, Pango along with its development headers are required
+# 3d-anime
+- [Shader Ripple - Ali Imam](https://aliimam.in/docs/backgrounds/shader-ripple)
+  - A full-screen animated background built with Three.js shaders
+  - 💫 基于shadcn的ui组件，适合作为网站动态背景
 # more
 - awesome-web-animation /202006
   - https://github.com/sergey-pimenov/awesome-web-animation

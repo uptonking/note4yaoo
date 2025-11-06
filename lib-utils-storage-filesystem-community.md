@@ -139,7 +139,19 @@ modified: 2024-05-22T11:24:07.511Z
 # discuss-file-sync/transfer
 - ## 
 
-- ## 
+- ## ⚖️ [Why is ssh not used for file storaging and transfer and instead switch to another things like samba? or can it be actually decent? : r/selfhosted _202511](https://www.reddit.com/r/selfhosted/comments/1oq3zoc/why_is_ssh_not_used_for_file_storaging_and/)
+- SFTP exists
+
+- Really depends on what clients are connecting, for Windows, Samba is often recommended because Windows File Sharing is already baked into the OS.
+  - However, if your environment mainly have Linux or Mac clients, you can use SSH to do the file transfer or even NFS. 
+  - Personally I don't run Samba as I use SSH and NFS for network shares as most of my connecting clients are Linux machines. For Windows machines, I have SSHFS-Win installed on them. There is a native NFS client for Windows but haven't tried it yet.
+  - Each protocol has their pros/cons, really depends on your use case.
+
+- SMB is known to have more overhead VS NFS
+  - SSHFS less performant than NFS, especially under heavy load or for large file operations
+
+- Ssh is not a file sharing protocol. It is Secure SHell. Using sshfs is clunky and inefficient.
+  - NFS and SMB are file sharing protocols and I never had issues with both of them
 
 - ## 需要记笔记做沉淀，也没法远程连自己的电脑（有监控软件），有没有好的解决方法？只能自带电脑了吗
 - https://x.com/using_YueCheng/status/1902534987758628995

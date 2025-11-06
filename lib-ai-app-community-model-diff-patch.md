@@ -10,7 +10,7 @@ modified: 2025-10-10T02:45:45.941Z
 # guide
 
 - tips
-  - 可直接参考已有编辑器的方案，如codemirror
+  - 可直接参考主流编辑器已实现的方案，如codemirror/monaco
 
 - 考虑编辑的场景
   - shorter/longer/improve/check/translate 都可实现为对明确输入范围内容的 一次性替换
@@ -51,8 +51,18 @@ modified: 2025-10-10T02:45:45.941Z
     - The text is split into lines and sentences.
     - Each line and sentence is then prefixed with a identifier that looks like `<l1s1>` for line 1, sentence 1.
     - The LLM is then asked to find-and-replace the query in each line and sentence.
-    - The changes are then streamed back to the user in the form of a diff. The diff looks like `<r:l1s1>` string to find || string to replace.
+    - The changes are then streamed back to the user in the form of a diff(e.g., `<r:l1s1> string to find || string to replace`).
   - [How to use LLM for efficient text outputs longer than 4k tokens? - DEV Community _202406](https://dev.to/theluk/how-to-use-llm-for-efficient-text-outputs-longer-than-4k-tokens-1glc)
+
+- https://github.com/deepaste-ai/partial-edit /202504/ts/inactive/NoDeps
+  - This project is a TypeScript implementation of the approach described in OpenAI's GPT-4.1 prompting guide
+  - 一个纯 TypeScript 工具，用于应用人类可读的伪差异补丁文件，具有由 LLM 驱动的部分编辑功能。
+  - 依赖langchain、@langchain/core
+  - 提供了cli示例
+  - Patch Processing: Apply human-readable pseudo-diff patches to text files
+  - Partial Editing: Make context-aware edits to code using LLM
+  - DeePaste 应用补丁的方式与 OpenAI 的 GPT-4.1 提示指南中讨论的技术类似。该指南提到，在代码修改任务中，同时提供需要替换的确切代码和带有明确分隔符的替换代码可以产生高成功率。像伪差异这样不依赖行号的格式对于 LLM 驱动的代码编辑特别有效。
+  - [GPT-4.1 Prompting Guide Appendix: Generating and Applying File Diffs](https://cookbook.openai.com/examples/gpt4-1_prompting_guide#appendix-generating-and-applying-file-diffs)
 
 - https://github.com/nocapro/apply-multi-diff /202509/ts/NoDeps
   - library to apply standard unified diffs or semantic search-and-replace patches to source files with fuzzy-matching, indentation-preserving insertions, and hunk-splitting fallbacks.
@@ -62,27 +72,32 @@ modified: 2025-10-10T02:45:45.941Z
     - Use Standard Diff when you have a complete diff from git (multi-hunk, moved code). 
     - When in doubt, start with Search-Replace—its fuzzy matcher is more forgiving of small source drift.
 
-- https://www.npmjs.com/package/@deepaste/partial-edit /NoDeps
-  - 一个纯 TypeScript 工具，用于应用人类可读的伪差异补丁文件，具有由 LLM 驱动的部分编辑功能。
-  - Patch Processing: Apply human-readable pseudo-diff patches to text files
-  - Partial Editing: Make context-aware edits to code using LLM
-  - DeePaste 应用补丁的方式与 OpenAI 的 GPT-4.1 提示指南中讨论的技术类似。该指南提到，在代码修改任务中，同时提供需要替换的确切代码和带有明确分隔符的替换代码可以产生高成功率。像伪差异这样不依赖行号的格式对于 LLM 驱动的代码编辑特别有效。
-  - [GPT-4.1 Prompting Guide Appendix: Generating and Applying File Diffs](https://cookbook.openai.com/examples/gpt4-1_prompting_guide#appendix-generating-and-applying-file-diffs)
-
-- https://github.com/dceluis/ln-diff /MIT/202410/prompt
+- https://github.com/dceluis/ln-diff /MIT/202411/prompt/inactive
   - The ln-diff format is a specialized diff format designed for precise line-based code modifications. 
   - It uses "editblocks" to explicitly define code changes while maintaining strict line number references.
+  - ln-diff stands for line-number-diff. 
   - 🤔 基于line-number的方案要取舍
   - If you are working with LLMs and to generate code, you have probably faced the challenge that while they may be good at generating new code, they struggle much more to apply it to existing files and codebases. 
   - Having tried multiple approaches like instructing it to generate edits in the well known unidiff format or some variation of diff-match-patch. These formats are too algorithmically complex for LLMs
   - I propose a different approach here: to leverage LLMs strong recitation capabilities to generate patches that apply cleanly to the source format and provide enough it with enough context for generating high-quality replacements.
+  - Line numbers in both the source and editblocks helps llms recite(背诵；列举) the exact line more accurately.
+    - Source files need to be prefixed the line numbers so that the lines to REMOVE can be recited accurately and sequentially.
+  - A[ The "pipe" symbol used is not your regular keyboard pipe but actually unicode's U+2502 called "Box drawings light vertical". This is a common symbol used to draw lines in text-only applications and may be understood by LLMs (TODO: verify this) to be the divider between the line number and the actual line contents. Alignment may help with reducing indentation errors in generated code.
+  - https://github.com/dceluis/kznllm.nvim/tree/dev/lua/kznllm/lndiff /lua
 
-- https://github.com/paradite/ai-file-edit /14Star/MIT/202506/ts
+- https://github.com/NeaByteLab/AI-NES /MIT/prompt
+  - Next Edit Suggestion (NES) - A conceptual methodology for AI coding assistants that learn from editing patterns and predict the next logical edit using `unified diff format` and real-time streaming.
+  - Instead of just completing what you're typing, the LLM learns from your editing patterns and predicts what you'll want to change next in your coding workflow.
+  - Pattern Learning: The environment sends context to the LLM (Large Language Model) by analyzing what should be edited. 
+  - Streams suggestions as you work
+
+- https://github.com/paradite/ai-file-edit /14Star/MIT/202506/ts/inactive
   - A library for editing files using AI models such as GPT, Claude, and Gemini.
   - Edit files using natural language
+  - 提供了cli示例
   - Overwrite existing files
   - Support for multiple file edits in a single operation
-  - The tool generates both forward and reverse diffs for all file changes. 
+  - 🆚 The tool generates both forward and reverse diffs for all file changes. 
     - The forward diff shows what was changed, while the reverse diff can be used to revert the changes.
   - Limitations
     - Cannot delete files
@@ -105,18 +120,6 @@ modified: 2025-10-10T02:45:45.941Z
   - [File Diff Editor - Advanced Pattern-Based File Editing Tool](https://github.com/kordless/gnosis-evolve/blob/main/FILE_DIFF_EDITOR_HOWTO.md)
     - The File Diff Editor v2.1.1 is a revolutionary MCP (Model Context Protocol) tool that provides advanced file editing capabilities with powerful regex support, fuzzy matching, and enterprise-grade versioning
 
-- https://github.com/jianghoucheng/AnyEdit /MIT/202510/python
-  - AnyEdit: Edit Any Knowledge Encoded in Language Models, ICML 2025
-  - [AnyEdit: Edit Any Knowledge Encoded in Language Models | USTC Lab for Data Science _202505](https://data-science.ustc.edu.cn/_upload/tpl/15/04/5380/template5380/publication/icml25-jhc.html)
-    - Current model editing methods, however, struggle with long-form knowledge in diverse formats, such as poetry, code snippets, and mathematical derivations. These limitations arise from their reliance on editing a single token’s hidden state, a limitation we term efficacy barrier. 
-    - To solve this, we propose AnyEdit, a new autoregressive editing paradigm. It decomposes long-form knowledge into sequential chunks and iteratively edits the key token in each chunk, ensuring consistent and accurate outputs. 
-    - AnyEdit serves as a plug-and-play framework, enabling current editing methods to update knowledge with arbitrary length and format, significantly advancing the scope and practicality of LLM knowledge editing.
-
-- https://github.com/SalesforceAIResearch/inksync /apache2/202408/python/inactive
-  - [[2309.15337] Beyond the Chat: Executable and Verifiable Text-Editing with LLMs](https://arxiv.org/abs/2309.15337)
-  - To give the author more agency when editing with an LLM, we present InkSync, an editing interface that suggests executable edits directly within the document being edited. 
-  - Because LLMs are known to introduce factual errors, Inksync also supports a 3-stage approach to mitigate this risk: Warn authors when a suggested edit introduces new information, help authors Verify the new information’s accuracy through external search, and allow an auditor to perform an a-posteriori verification by Auditing the document via a trace of all auto-generated content. 
-
 ## ai-edit-papers
 
 - https://github.com/kortix-ai/fast-apply /apache2/202509/python
@@ -130,7 +133,17 @@ modified: 2025-10-10T02:45:45.941Z
   - FastApply MCP Server delivers comprehensive code analysis through local model execution and intelligent pattern recognition.
   - Local Model Architecture: Uses edit_file functionality like MorphLLM through (Kortix/FastApply-1.5B-v1.0_GGUF)
 
-- [EfficientEdit: Accelerating Code Editing via Edit-Oriented Speculative Decoding | Abstract _202506](https://arxiv.org/abs/2506.02780v2)
+- https://github.com/jianghoucheng/AnyEdit /MIT/202510/python
+  - AnyEdit: Edit Any Knowledge Encoded in Language Models, ICML 2025
+  - [AnyEdit: Edit Any Knowledge Encoded in Language Models | USTC Lab for Data Science _202505](https://data-science.ustc.edu.cn/_upload/tpl/15/04/5380/template5380/publication/icml25-jhc.html)
+    - Current model editing methods, however, struggle with long-form knowledge in diverse formats, such as poetry, code snippets, and mathematical derivations. These limitations arise from their reliance on editing a single token’s hidden state, a limitation we term efficacy barrier. 
+    - To solve this, we propose AnyEdit, a new autoregressive editing paradigm. It decomposes long-form knowledge into sequential chunks and iteratively edits the key token in each chunk, ensuring consistent and accurate outputs. 
+    - AnyEdit serves as a plug-and-play framework, enabling current editing methods to update knowledge with arbitrary length and format, significantly advancing the scope and practicality of LLM knowledge editing.
+
+- https://github.com/SalesforceAIResearch/inksync /apache2/202408/python/inactive
+  - [[2309.15337] Beyond the Chat: Executable and Verifiable Text-Editing with LLMs](https://arxiv.org/abs/2309.15337)
+  - To give the author more agency when editing with an LLM, we present InkSync, an editing interface that suggests executable edits directly within the document being edited. 
+  - Because LLMs are known to introduce factual errors, Inksync also supports a 3-stage approach to mitigate this risk: Warn authors when a suggested edit introduces new information, help authors Verify the new information’s accuracy through external search, and allow an auditor to perform an a-posteriori verification by Auditing the document via a trace of all auto-generated content. 
 
 - https://github.com/Banner-Z/G-SPEED /apache2/202310/python/inactive
   - The official repository of paper G-SPEED: General SParse Efficient Editing MoDel (Findings of EMNLP-2023).
@@ -141,6 +154,7 @@ modified: 2025-10-10T02:45:45.941Z
   - [ACL 2024] An Easy-to-use Knowledge Editing Framework for LLMs.
 
 - more-editing-solutions
+  - [EfficientEdit: Accelerating Code Editing via Edit-Oriented Speculative Decoding | Abstract _202506](https://arxiv.org/abs/2506.02780v2)
   - [[2502.13358] Bridging the Editing Gap in LLMs: FineEdit for Precise and Targeted Text Modifications](https://arxiv.org/abs/2502.13358)
 
 ## diff-utils
@@ -150,6 +164,12 @@ modified: 2025-10-10T02:45:45.941Z
   - A diff/merging wrapper for Ace Editor built on google-diff-match-patch
   - This is a wrapper for Ace Editor to provide a 2-panel diffing/merging tool that visualizes differences in two documents and allows users to copy changes from to the other.
   - It's built on top of google-diff-match-patch library. That lib handles the hard part: the computation of the document diffs. `ace-diff` just visualizes that information as line-diffs in the editors.
+
+- https://github.com/davidkjeremiah/patchai /MIT/202510/python
+  - LLM-powered structured file editor - edit JSON/YAML with natural language, see diffs, use any AI model
+  - PatchAI lets you edit JSON, YAML, and config files using natural language instructions.
+  - Visual Diff - See exactly what changed with beautiful unified or side-by-side diffs
+  - Undo/Reset - Full history tracking with easy undo
 
 - https://github.com/radekstepan/apply-llm-changes /202510/ts
   - A command-line tool that applies file changes from LLM output to your local filesystem.

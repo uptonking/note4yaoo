@@ -48,11 +48,19 @@ modified: 2024-08-24T16:15:11.456Z
   - 参考设计 capabilities
   - [Visual Studio Code for Education](https://vscodeedu.com/)
 
-- [VS Code: Open Source AI Editor](https://code.visualstudio.com/blogs/2025/05/19/openSourceAIEditor)
+- [VS Code: Open Source AI Editor _202505](https://code.visualstudio.com/blogs/2025/05/19/openSourceAIEditor)
   - [Open-source AI functionality provided by the Copilot Chat extension _202505](https://github.com/microsoft/vscode/issues/249031)
     - is agent mode also part of the open source plan?
     - yes, everything but ghost text completions
     - [Copilot Chat web support _202504](https://github.com/microsoft/vscode/issues/245860)
+  - [Open Source AI Editor: Second Milestone _202511](https://code.visualstudio.com/blogs/2025/11/04/openSourceAIEditorSecondMilestone)
+    - inline suggestions are now open source.
+    - For the past few years, GitHub Copilot in VS Code has been split across two extensions: the GitHub Copilot extension (for ghost text suggestions) and the GitHub Copilot Chat extension (for chat and next edit suggestions). 
+    - We are working towards providing all Copilot functionality in a single VS Code extension: Copilot Chat.
+    - To achieve this, we are now testing disabling the Copilot extension and serving all inline suggestions from Copilot Chat. 
+    - We have ported the vast majority of features into the chat extension
+    - we now use inline suggestions to refer to all AI-generated code suggestions that appear as you type (including ghost text and next edit suggestions).
+    - The next phase of our OSS journey is to refactor some AI features and components from the Copilot Chat extension into VS Code core. 
 # draft
 - toys
   - wiki: prosemirror/tiptap

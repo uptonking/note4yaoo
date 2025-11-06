@@ -51,6 +51,17 @@ modified: 2023-08-28T06:14:28.873Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [In which cases you use custom middlewares : r/djangolearning _202511](https://www.reddit.com/r/djangolearning/comments/1onq17b/in_which_cases_you_use_custom_middlewares/)
+- You can add custom code in your middleware so you can add a condition to whether to do something or not do anything.
+
+- Check the django-htmx package to see a real practical use case for custom middleware.
+
+- We use it to active timezone to the users in order to return datetime correctly from the database, other uses case i found: authn, authz, audit logs, error handling, etc.
+
 - ## 🆚 django-admin flush vs migrate
 - flush
   - Deletes all data from the database but preserves the database schema (tables, columns, etc.).

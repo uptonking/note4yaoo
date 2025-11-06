@@ -311,7 +311,7 @@ modified: 2022-08-21T10:02:05.129Z
   - https://docs.getgrist.com/
   - Grist is a modern relational spreadsheet. 
   - 表格不支持视图切换，支持各种widgets，类似dashboard
-  - 前端依赖backbone-model/events、knockout-observable、jquery、bootstrap3、ace-builds、exceljs
+  - 前端依赖backbone-model/events、knockout-observable、jquery、bootstrap3、ace-builds、exceljs、marked
   - 后端依赖typeorm、express、grain-rpc
   - 示例使用sqlite
   - 用户在界面上创建表T1时，server会在主数据库会添加数据元信息记录，表T1的实际数据在本地`grist-core/docs`文件夹，🧐 用户创建的每个document对应一个sqlite格式的`.grist`文件，用户创建的每张表对应.grist数据库中的一张表，.grist数据库中还包含视图、权限、action等业务数据和元数据

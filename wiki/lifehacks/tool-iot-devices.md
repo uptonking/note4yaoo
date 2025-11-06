@@ -198,7 +198,19 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## [Mac vs. Nvidia Part 2 : r/LocalLLM _202511](https://www.reddit.com/r/LocalLLM/comments/1opo89e/mac_vs_nvidia_part_2/)
+  - I recently purchased a Mac Studio M4 Max w/ 64GB (128 was out of my budget). I also was able to get my hands on a laptop at work with a 24GB Nvidia GPU (I think it’s a 5090?).
+  - I was shocked how less capable the Nvidia GPU is! I loaded gpt-oss-20B with 4096 token context window and was only getting 13tok/sec max. Loaded the same model on my Mac and it’s 110tok/sec. I’m running LM Studio on both machines with the same model parameters. 
+- The laptop 5090 has 24gb
+  - Yep and it is essentially a 5080 desktop crammed into a laptop (Nvidia always does this).
+
+- 13 tokens/second sounds right if you load gpt-oss-20b into some dual channel DDR5 system memory. I don't use LM Studio personally but by any chance did you not tell the 5090 rig to load any layers into the GPU?
+  - So I had that problem at first where LM studio was not loading all the layers into the GPU and the utilization stayed low. But I changed a setting that forces the model to be loaded exclusively to the GPU and utilization when up, but the gain was only like 3-4tok/sec speed up
+- You must be running that model with layers on the CPU or you're mistaken about which GPU your laptop has
+
+- Remember the 5090 mobile is the 5080 desktop chip (GB203) but upgraded to use 3GB memory modukes instead of 2GB like the 5080. Like most laptop gpus it is comparably power and heat limited compared to the desktop equivalent (5080).
+
+- Make sure you have all the layers of the model loaded onto the GPU. 
 
 - ## [If I want to train, fine tune, and do image gen then... DGX Spark? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1om7ccz/if_i_want_to_train_fine_tune_and_do_image_gen/)
 - Apple is no good for finetuning/training, only for inference afaik.

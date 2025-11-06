@@ -165,13 +165,16 @@ modified: 2020-11-17T13:38:19.107Z
   - Drag and drop website builder javascript library.
   - 依赖jquery、bootstrap4
 
-- grapesjs /19.1kStar/BSD/202404/ts
+- grapesjs /25.1kStar/BSD/202510/ts/依赖少
   - https://github.com/GrapesJS/grapesjs
   - https://github.com/artf/grapesjs
   - https://grapesjs.com/
   - a free and open source Web Builder Framework 
-  - 依赖backbone、codemirror5、underscore
+  - 依赖backbone.v1、backbone-undo、codemirror5、underscore
   - GrapesJS was designed to be used inside a CMS to speed up the creation of dynamic templates. 
+  - [Proprietary VS open source _202508](https://github.com/GrapesJS/grapesjs/discussions/6586)
+    - This whole repo still has the same exact license so nothing has changed from that perspective.
+    - we added SDK docs on top
 
 - react-page /8.3kStar/MIT/202304/ts/redux/inactive
   - https://github.com/react-page/react-page

@@ -97,6 +97,21 @@ modified: 2023-07-26T11:23:38.282Z
   - 具体的业务如ospreadsheet会禁用框架内部的reactivity，自己管理数据和状态，以便实现undo、协作等功能
   - reactive编程模式大多会引入operator的复杂度
 
+- https://github.com/warp-drive-data/warp-drive /3.1kStar/MIT/202510/ts
+  - https://warp-drive.io/
+  - lightweight data library for web apps — universal, typed, reactive, and ready to scale.
+  - Seamless Reactivity in any Framework: reactive的核心基于 `new Proxy` 实现
+  - Works with any API
+  - SSR Ready
+  - Built with ♥️ by Ember
+  - WarpDrive is the data framework for building ambitious applications.
+  - Our innovative approach to fine grained reactivity enables rapidly developing robust, performant web applications using any Signals compatible framework such as Ember, Svelte, Angular, Vue.js, SolidJS, Preact or Lit. event React
+    - The component API is a thin framework-specific binding overtop of the framework-agnostic JS API.
+  - Schema Driven Reactivity
+  - By building around the same interface as the `Fetch` API, WarpDrive makes powerful request management features like caching, deduping, errors and data normalization feel simple to use.
+  - ORM Powers Without ORM Problems
+  - [Ember Data is now WarpDrive. This data framework can be used in any JS framework. : r/javascript _202511](https://www.reddit.com/r/javascript/comments/1opuj48/ember_data_is_now_warpdrive_this_data_framework/)
+
 - https://github.com/modderme123/js-reactivity-benchmark
   - Current reactivity benchmarks (S.js, CellX) are focused on creation time, and update time for a static graph.
   - We've created a new benchmark that allows library authors to compare their frameworks against each other, and against the existing benchmarks, as well as against a new configurable benchmark with dynamically changing sources.

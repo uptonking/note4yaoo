@@ -7,8 +7,15 @@ modified: 2020-12-08T14:24:07.931Z
 
 # toc-lib-comp-design-examples
 
-# design-examples
+# design-effects
 
+- [Shader Ripple - Ali Imam](https://aliimam.in/docs/backgrounds/shader-ripple)
+  - A full-screen animated background built with Three.js shaders
+  - 💫 基于shadcn的ui组件，适合作为网站动态背景
+
+- [Aceternity UI](https://ui.aceternity.com/)
+  - [Aceternity UI Pro](https://pro.aceternity.com/)
+# design-examples
 - Eva Design System /Akveo team
   - /873Star/MIT/202107/ts
   - https://github.com/eva-design/eva
