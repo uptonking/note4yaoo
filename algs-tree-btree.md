@@ -55,3 +55,15 @@ high-concurrency B-tree management algorithm
 # more
 - Hackreels 这个动画效果真不错
   - https://twitter.com/Hooopo/status/1736743804810768784
+# discuss-btree
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Want to understand B-trees better?
+- https://x.com/BenjDicken/status/1986098285875261766
+  - Try http://btree.app and http://bplustree.app
+  - These are standalone sandboxes of the visuals I built for my "B-trees and database indexes" article.
+  - [B-trees and database indexes — PlanetScale](https://planetscale.com/blog/btrees-and-database-indexes)

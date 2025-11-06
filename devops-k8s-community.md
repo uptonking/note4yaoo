@@ -168,6 +168,12 @@ modified: 2024-06-30T11:15:28.002Z
 
 - ## 
 
+- ## 
+
+- ## 忠告不要在 root 下面安装 k3s/k8s ，排查两个小时，原因又是 API Server 地址问题
+- https://x.com/Lan_zhijiang/status/1985700665491145205
+- k8s扔docker里面单独跑或者开VM, 日志跑出来会很麻烦的
+
 - ## Why Kubernetes remains so popular:
 - https://x.com/GergelyOrosz/status/1923869661713793342
   1. It avoids cloud vendor lock-in. Using cloud vendor autoscaling doesn’t!

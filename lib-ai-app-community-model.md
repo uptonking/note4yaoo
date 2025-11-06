@@ -335,6 +335,33 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
+- ## 
+
+- ## [Why we shifted to Spec-Driven Development (and how we did it) : r/ClaudeCode _202511](https://www.reddit.com/r/ClaudeCode/comments/1op8b6i/why_we_shifted_to_specdriven_development_and_how/)
+  - Over the last few months we came up with our own Spec-Driven Development (SDD) flow that we feel has some benefits over other approaches out there. 
+  - Specifically, using a structured execution workflow and including the results of the agent work. 
+- In short: you design your docs/specs first, then use them as input into implementation. And then you capture what happens during the implementation (research, agent discussion, review etc.) as output specs for future reference. 
+- The cycle is:
+  - Input specs: product brief, technical brief, user stories, task requirements.
+  - Workflow: research → plan → code → review → revisions.
+  - Output specs: research logs, coding plan, code notes, review results, findings.
+- By making the docs (both input and output) first-class artifacts, you force understanding, and traceability. The goal isn’t to create a mountain of docs. 
+  - The goal is to create just enough structure so your decisions are traceable and the agent has context for the next iteration of a given feature area.
+- First, worth mentioning this approach really only applies to a decent sized feature. Bug fixes, small tweaks or clean up items are better served just by giving a brief explanation and letting the agent do its thing.
+- How we implemented it (step-by-step)
+  - Define your prd.md**:** goals for the feature, user journey, basic requirements.
+  - Define your tech_brief.md: high-level architecture, constraints, tech-stack, definitions.
+  - For each feature/user story, write a requirements.md file: what the story is, acceptance criteria, dependencies.
+  - For each task under the story, write an instructions.md: detailed task instructions
+  - To start implementation, create a custom set of commands that do the following for each task
+  - Commit these spec files alongside code so future folks (agents, humans) have full context.
+  - Use folder conventions: e.g., project/story/task/requirements.md, …/instructions.md etc. So it’s intuitive.
+- Bonus: If you want a tool that automates this kind of workflow opposed to doing it yourself (input specs creation, task management, output specs), I’m working on one called Devplan that might be interesting for you.
+
+- Bmad does exactly this: https://github.com/bmad-code-org/BMAD-METHOD
+
+- have you tried any of BMAD, GitHub/Spec-kit or Privacy-AI/spec-kitty for a community fork with extensive git worktree support
+
 - ## [Which model do you wish could run locally but still can’t? : r/LocalLLM _202511](https://www.reddit.com/r/LocalLLM/comments/1omoodc/which_model_do_you_wish_could_run_locally_but/)
 - It's not really about particular models at this point. I'm way more interested in the local infrastructure around it. The main thing I'm still missing is simple knowledge-base integration for something like Open-WebUI. I would really like to just point the front-end at my local Kiwix-server and a 1TB-eBook collection, let it index to its heart's content for a few weeks and then have any model be able to reference and integrate all those information.
 

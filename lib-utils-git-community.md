@@ -345,7 +345,6 @@ modified: 2023-08-29T10:13:31.070Z
 - 
 - 
 
-
 # discuss-git-versioning/vcs
 - ## 
 
@@ -415,6 +414,28 @@ modified: 2023-08-29T10:13:31.070Z
   - the commit graph itself is conflict free; it's only if you choose to try to merge the content of the tree you get conflicts
   - but if you don't (like with tracking refs or `git merge -s ours` ), the storage, replication, etc are all conflict free.
 
+# discuss-internals-git
+- ## 
+
+- ## 
+
+- ## 🕸️ Did you know Git implements its own network protocol?
+- https://x.com/NeelShetty6/status/1985781254177091745
+  - it doesn't utilize HTTP, it has its own binary wire format built on pkt-line communication over raw TCP
+  - you can check it by setting the `GIT_TRACE_PACKET=1` environment variable, here you can see git negotiate with the remote in real time.
+  - A pkt-line is a variable length binary string.  The first four bytes of the line, the pkt-len, indicates the total length of the line, in hexadecimal.  The pkt-len includes the 4 bytes used to contain the length’s hexadecimal representation.
+  - Git sends a series of want and have lines to describe which objects it needs, and the server responds with compressed packfiles containing only the missing data. The result is a minimal, binary-efficient data stream designed for low latency and huge repositories.
+  - 🆚 Compared to HTTPS, this native protocol is faster because it avoids the overhead of HTTP headers, TLS handshakes, and stateless request cycles. It’s a persistent, full-duplex channel optimized for Git’s data model
+  - Git’s own protocol exists because sometimes you need a transport designed around your object graph
+
+- Git also supports another non-HTTP protocol: SSH
+  - Yes, it uses pkt line format even with an ssh connection. Ssh is just for establishing the connection, auth n stuff
+
+- `GIT_TRACE_PACKET=1` also works with ssh remotes, so I guess it's the same protocol either it's raw TCP or tunneled through ssh
+  - Yes, http is different
+
+- Does it avoid TLS completely here ? Would that not be sec concern though i suppose the protocol could handle that on its own maybe
+  - Yes, they address this and recommend to use it alongside ssh or making it read only
 # discuss
 - ## 
 

@@ -18,7 +18,7 @@ modified: 2025-08-23T11:43:35.904Z
 - resources
   - https://github.com/search?type=repositories&q=stable-diffusion
 # popular
-- https://github.com/invoke-ai/InvokeAI /25.8kStar/apache2/202508/python/ts
+- https://github.com/invoke-ai/InvokeAI /25.8kStar/apache2/202511/python/ts
   - https://invoke-ai.github.io/InvokeAI/
   - Invoke is a leading creative engine for Stable Diffusion models 
   - 交互逻辑很特别，支持canvas/workflow/form/queue-list-log
@@ -27,6 +27,7 @@ modified: 2025-08-23T11:43:35.904Z
   - 软件元数据在sqlite `invokeRoot/databases/invokeai.db`, 生成的图片在文件夹 invokeRoot/outputs/images
   - Invoke has a Community Edition that is freely available under a commercially-friendly license (Apache 2) and a Professional Edition available
   - Invoke is a powerful, secure, and easy-to-deploy generative AI platform for professional studios that provides a flexible workflow builder with multi-user sharing and permissions, a step-by-step custom AI model trainer
+  - 💰 [InvokeAI was just acquired by Adobe : r/StableDiffusion _202510](https://www.reddit.com/r/StableDiffusion/comments/1obws1z/invokeai_was_just_acquired_by_adobe/)
   - 🆚 [Why Invoke AI is the Best ComfyUI Alternative](https://www.invoke.com/comparisons/comfyui-vs-invokeai)
   - 🎯 [Invoke AI 3.0 Release : r/StableDiffusion _202307](https://www.reddit.com/r/StableDiffusion/comments/155sm30/invoke_ai_30_release/)
     - As of 3.0, all of the developments we’ve been working on are now available to install and use - And, to demonstrate our commitment to open-source, we’ve updated our license to the most explicitly permissive license available - Apache 2.0.

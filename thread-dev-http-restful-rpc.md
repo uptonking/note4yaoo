@@ -14,6 +14,17 @@ modified: 2021-09-20T18:38:00.319Z
 # discuss-protobuf
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🌰 How Jira became 33x faster by using Protobuf _202509
+- https://x.com/milan_milanovic/status/1963127320538931461
+  - Their Issue Service was drowning in JSON, and they knew they had to make a change.
+  - The problem wasn't apparent at first. JSON worked perfectly fine when they had thousands of issues. But as they scaled to millions, then hundreds of millions, those "harmless" JSON payloads became their bottleneck.
+  - Every request was carrying unnecessary payload and burning CPU cycles.
+  - They built 𝗱𝘂𝗮𝗹 𝗲𝗻𝗱𝗽𝗼𝗶𝗻𝘁𝘀 - one for JSON, one for Protobuf, and used feature flags with three modes
+
 - ## Unpopular opinion: use Protocol Buffers, not because the format is that great (it isn't), but because the range of supported languages for codegen can't be beat.
 - https://x.com/JustDeezGuy/status/1917589307113537664
   - Further unpopular opinion: Protocol Buffers plus named pipes (Windows) or UNIX-domain sockets (everything else) are a great IPC mechanism for isolated processes on single hosts.

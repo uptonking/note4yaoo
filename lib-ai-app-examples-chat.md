@@ -100,6 +100,9 @@ modified: 2025-03-22T18:49:15.634Z
   - https://github.com/naga-ai-hub/naga-chat /202508/单文件修改
   - https://github.com/e-gineering/LibreChat /202508
     - Commented out Perplexity by default
+  - 💰 [ClickHouse has acquired LibreChat : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1ooms3e/clickhouse_has_acquired_librechat/)
+    - they are planning to keep the MIT + OSS model which is nice to see
+    - I've been using it for a year, I set it up for our team at work. It's a great multi-user self-hosted ChatGPT clone that works with any provider (OpenAI, OpenRouter, your local llama, etc).
 
 - koishi /5.2kStar/MIT/202507/ts
   - https://github.com/koishijs/koishi

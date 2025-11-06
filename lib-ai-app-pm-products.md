@@ -250,11 +250,14 @@ modified: 2025-03-22T16:10:24.856Z
 - tips: 公益站不稳定(3个月就倒闭一批), 来源不明可能导致效果差, 需要经常确认和维护, 不要浪费过多时间
   - 🤔 一种思路: tool-call时使用擅长tool-call的模型，分析时使用公益站的聊天优质但无法tool-call的模型
   - coding方案还可使用 ccr 转换 qwen-code-cli
+  - 有的api不能显示thinking内容
+  - 模型不断更新，落后的公益站会逐渐淘汰
 - 免费api的技巧: 在知乎/小红书直接搜索 免费 claude (公益站), 就会有最新的api推广信息, 可以用小号邀请自己
   - 公益站 [Search results for '公益站' - LINUX DO](https://linux.do/search?q=%E5%85%AC%E7%9B%8A%E7%AB%99%20order%3Alatest)
   - [L站免费AI汇总 ](https://linux.do/t/topic/638821)
   - 📌 [Agent Router](https://agentrouter.org/), 每日签到获取$25
     - 支持 Claude Code、Codex、RooCode、Qwen Code、Gemini Cli 等多款工具
+    - 仅支持coding工具，不支持使用api聊天
     - 模型支持不稳定, 似乎不支持claude
     - > 签到功能在哪里呀？ 退出登录重新登陆就好了. 
     - https://github.com/aceHubert/newapi-ai-check-in
@@ -262,6 +265,7 @@ modified: 2025-03-22T16:10:24.856Z
     - [AgentRouter 问题汇总 · Issue · millylee/anyrouter-check-in](https://github.com/millylee/anyrouter-check-in/issues/48)
       - agent 是在登录的时候签到的，并没有额外的 sign_in 接口，是在登录的那个接口是返回了一个check_in 的字段判断的，所以才把cookie 时间给调短了，就是让重新登录签到才有效
   - 📌 [Any Router](https://anyrouter.top/), 每日签到获取$25
+    - 仅支持coding工具，不支持使用api聊天
     - 无充值，邀请注册来获得更多额度
     - 本站直接接入官方 Claude Code 转发，无法转发非 Claude Code 的 API 流量
     - tg群讨论的内容看，作者似乎精力不在anyrouter而在开发商用产品
@@ -274,9 +278,13 @@ modified: 2025-03-22T16:10:24.856Z
     - 支持工具调用、上下文 128K+、支持 RooCode，不推荐接入 ClaudeCode
     - 普通用户：每次 1 刀、RPM=10
     - 渠道技术： Claude-SessionKey号池→claude2api→FC使能
+    - [转盘抽奖 / 投喂 Claude Session Key](https://tw.b4u.qzz.io/)
     - 仅每周六晚21:00至21:30限时开放注册
     - [【B4U公益站】是克劳德，我们有救了！（每周六限时开放注册） ](https://linux.do/t/topic/801848)
-    - [转盘抽奖 / 投喂 Claude Session Key](https://tw.b4u.qzz.io/)
+  - 📌 [薄荷 API](http://x666.me/), 每日签到
+    - 仅提供gemini模型
+    - 改了下速率限制。现在变成5分钟25次，对自动化和roocode这些用户变好了很多
+    - [薄荷公益站签到](https://qd.x666.me/)
   - [tbai API](https://tbai.xin/)
     - 模型支持gemini/gpt, 不支持claude
     - API 调用频率限制为 10 RPM
@@ -291,10 +299,26 @@ modified: 2025-03-22T16:10:24.856Z
     - API 调用频率限制为 12RPM，公益站永久免费，采用公平限流策略以保障服务稳定
     - [KYX API Refueling Station 公益站额度加油站](https://quota.kyx03.de/)
   - [黑与白chatAPI](https://ai.hybgzs.com/), 每日转盘
-    - 模型丰富: claude, openrouter
+    - 模型丰富: claude, openrouter, 但没有gpt5
     - 本站完全免费！暂无任何充值通道
     - 绝大部分模型倍率换算后与官方价格相同，为缓解服务器资源压力，所有免费模型实际扣除配额均按付费标准计算。
     - [黑与白chatAPI福利站](https://cdk.hybgzs.com/)
+  - [包子铺](https://api.5202030.xyz/)
+    - 只开放linuxdo lv2以上注册
+    - 支持gpt5,claude,gemini
+    - [包子公益 - Baozi DoneHub](https://lucky.5202030.xyz/)
+    - 每日普通用户可自行划转 200$ 到 newapi 站点
+    - [【包子公益站】更新一个总的汇总贴。现在上线了newapi的分站 ](https://linux.do/t/topic/1124776)
+  - [mmkg API](https://api.mmkg.cloud/)
+    - 仅在每周五下午 18:00 至 21:00 开放，每周限量 100 人
+    - 支持claude,gemini, 不支持gpt
+  - [一个小站的 API 商店](https://one-api.ygxz.in/), 每日签到1刀内随机
+    - 提供半公益的高质量 API 中转服务，始于202406
+    - 无调用频率限制
+    - 支持gpt5,claude,gemini
+  - [VoAPI公益站](https://demo.voapi.top/), 每日签到
+    - [【首发更新】全新API分发和管理系统-VoAPI ](https://linux.do/t/topic/218662)
+    - 曾经的帐号已注销，需要重新注册
   - [Cats API](https://catsapi.com/)
     - API调用频率限制为 15 RPM
     - 输入输出都很贵
@@ -306,6 +330,12 @@ modified: 2025-03-22T16:10:24.856Z
   - [Claude免费镜像号池](https://share.claude.best/)
     - 若无法对话了，说明对话额度被其他朋友用完了（需要你更换其他账号或者等待额度刷新）
     - [RawChat公益站点 kelaode](https://kelaode.ai/)
+  - [cupsfunny API](https://free-llm.cupsfunny.com/)
+    - 支持cluade, gpt5, 其中gpt5全免费(但经常429响应异常)
+    - 每位用户RPM为2
+    - 借助Toolify项目实现了函数调用，可以用于Claude Code
+    - Sonnet模型每次调用消耗两次使用次数，Opus每次调用消耗四次使用次数
+    - [公益大模型API接口 - 小欢博客 - Fly your dreams](https://www.cups.moe/archives/free-llm-api.html)
   - [Privnode](https://privnode.com/)
     - free分组不支持claude，但支持gpt-5-nano
     - https://pro.privnode.com/
@@ -314,8 +344,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [cone Veloera Zone](https://zone.veloera.org/)
     - 此服务完全免费提供，并仅在 LINUX DO 社区宣传
     - 不定期删除 0 额度，0 消耗，且注册超过一周的用户。
-  - [薄荷 API](http://x666.me/)
-    - 仅提供gemini模型
+  - [SLA API](https://www.sla-api.zone.id/)
   - [ZenscaleAi](https://gy.zenscaleai.com/)
     - 仅提供gemini模型
   - [小丑Ai公益站](https://gy.jiubanai.com/)
@@ -326,6 +355,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [翰林文苑公益API站点](https://aiapi.hlwy2025.me/)
     - 价格太高了 我决定攒到1000再用
   - [ThatAPI](https://gyapi.zxiaoruan.cn/pricing)
+  - [SillyDream 公益站](http://ff.sillydream.top/pricing)
   - [linjinpeng Veloera](https://linjinpeng-veloera.hf.space/)
     - 现在rpm是6，模型全部免费，1级即可注册
     - 一次一美元的调用，但是这个1美元是无限刷新的，你用了就知道了
@@ -361,6 +391,11 @@ modified: 2025-03-22T16:10:24.856Z
   - [2025年10月 Claude 国内使用指南（支持 Claude Sonnet 4.5） - 知乎](https://zhuanlan.zhihu.com/p/1940070586635223559)
   - [白嫖最强AI编程模型Claude 4.5，暨一哥Claude Code的免费下位替代（10月22亲测可用） - 知乎](https://zhuanlan.zhihu.com/p/81947374736)
   - [求推荐免费模型api，公益站付费的太慢了，只是用于ai中文翻译成英文，速度有要求 ](https://linux.do/t/topic/1061766)
+  - [长期收录靠谱稳定长期免费AI （API）Claudecode等 实现 AI 自由](https://www.nodeseek.com/post-450243-1)
+    - https://github.com/CyYxl2024/freeai
+    - 只收录商业平台。
+  - [【项目自荐】一个免费使用Claude AI纯公益号池镜像站 ](https://github.com/ruanyf/weekly/issues/8047)
+  - https://x.com/search?q=claude%20%E5%85%AC%E7%9B%8A%E7%AB%99&src=typed_query&f=live     /搜索最新公益站
 
 - image-gen 🖼️
   - [最新公益绘画API ](https://linux.do/t/topic/599258)
@@ -373,6 +408,11 @@ modified: 2025-03-22T16:10:24.856Z
   - [Seedream AI - 免费在线AI图像生成器](https://seedream.pro/zh)
   - [Cloudflare Workers AI Models](https://developers.cloudflare.com/workers-ai/models/)
     - 提供免费的文生图模型: sdxl, sdv1-5
+
+- llm-ui
+  - [SmallAI](https://free.smallai.asia/chat)
+    - 基于lobechat实现
+    - [【网站自荐】SmallAI公益站——免费使用GPT4o mini，支持多模态 ](https://github.com/ruanyf/weekly/issues/4969)
 
 - 📌 [OpenRouter API Rate Limits ](https://openrouter.ai/docs/api-reference/limits)
   - tldr: rpd-1000 

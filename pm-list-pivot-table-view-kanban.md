@@ -9,6 +9,9 @@ modified: 2023-01-22T18:45:58.936Z
 
 # guide
 
+# draft
+- filter by select
+  - 支持选择多个值来组成看板, 需要计算排列组合的方式
 # blogs
 
 ## more-blogs

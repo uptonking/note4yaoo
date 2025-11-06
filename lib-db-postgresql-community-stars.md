@@ -31,7 +31,13 @@ modified: 2023-10-26T19:17:54.537Z
 # discuss-performance
 - ## 
 
-- ## 
+- ## If you care about performance, get comfortable running `explain` and `explain analyze` commands regularly, and learn how to interpret its output.
+- https://x.com/BenjDicken/status/1985723366532399215
+  - [Explaining the unexplainable – select * from depesz; _201304](https://www.depesz.com/2013/04/16/explaining-the-unexplainable/)
+- One of my favorite prompts as of recent is: "Below is explain output, optimize query to happen in 1ns, dont make any mistakes"
+  - I have claude optimize our most complicated production queries, running EXPLAINs for it to have ideas, and using the costs as the benchmark for if it actually made an improvement! It kept going until it found an optimization that made things better by 60x!
+
+- one of that I use a lot and liked a lot is using the "join lateral" thats solve a lot of stuff for me 
 
 - ## Interesting perf problem with Postgres 9. 
 - https://twitter.com/MarkCallaghanDB/status/1744385306475040911

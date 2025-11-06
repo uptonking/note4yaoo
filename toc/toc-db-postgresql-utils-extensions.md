@@ -154,6 +154,11 @@ modified: 2023-10-26T15:29:40.053Z
   - Based on original pgtune. Illustration by Kate.
   - https://github.com/gregs1104/pgtune /python/inactive
 # devops
+- https://github.com/RostislavDugin/postgresus /1.8kStar/apache2/202511/go/ts
+  - https://postgresus.com/
+  - PostgreSQL monitoring and backups (with UI and self hosted)
+  - [Postgresus - self-hosted PostgreSQL backup tool with UI : r/selfhosted](https://www.reddit.com/r/selfhosted/comments/1oo7yps/postgresus_selfhosted_postgresql_backup_tool_with/)
+
 - https://github.com/Vonng/pigsty /2.2kStar/AGPLv3/202401/plpgsql
   - https://pigsty.cc/
   - A battery-included, local-first, open-source PostgreSQL RDS alternative.

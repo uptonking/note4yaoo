@@ -310,6 +310,13 @@ modified: 2023-02-08T07:20:48.475Z
 
 ## llama-rewrite
 
+- https://github.com/projektjoe/gpt-oss /MIT/202511/python/cpp
+  - From-scratch implementation of OpenAI's GPT-OSS model in Python. No Torch, No GPUs.
+  - [GPTOSS: From-Scratch Implementation _202511](https://www.projektjoe.com/blog/gptoss)
+    - We will rely completely on the CPU, so no need for special hardware here.
+  - [I implemented GPT-OSS from scratch in pure Python, without PyTorch or a GPU : r/LLMDevs _202511](https://www.reddit.com/r/LLMDevs/comments/1ookn7f/i_implemented_gptoss_from_scratch_in_pure_python/)
+  - [I implemented GPT-OSS from scratch in pure Python, without PyTorch or a GPU : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1oogvcw/i_implemented_gptoss_from_scratch_in_pure_python/)
+
 - https://github.com/naklecha/llama3-from-scratch /MIT/202405/jupyter/inactive
   - llama3 implementation one matrix multiplication at a time
 # ollama/lmstudio-like

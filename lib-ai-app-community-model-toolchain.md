@@ -1490,6 +1490,17 @@ curl http://localhost:11434/api/chat -d '{
   - 各种内存泄漏，oom，crash，代码规模不大，就开始屎山堆屎，生产别用，也别追更，merge master基本的回归测试都会直接跳过的。做开源的，就这
 
 - vllm 仅支持 NVIDIA GPU、部署复杂、显存需求大
+# discuss-cpu-llm
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [llama.cpp and llama-server VULKAN using CPU : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1ooyr6r/llamacpp_and_llamaserver_vulkan_using_cpu/)
+  - llama.cpp and llama-server VULKAN appears to be using CPU. I only noticed when i went back to LM Studio and got double the speed and my Computer didnt sound like it was about to take off.
+- First, it doesn't hurt to set ngl 99. Second, cache quantization hurts speed. Other than these two points, I don't know why llama.cpp could get slower than lms.
+
 # discuss-ai-api/tools
 - ## 
 

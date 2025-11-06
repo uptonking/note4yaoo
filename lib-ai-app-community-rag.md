@@ -620,7 +620,10 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [After Building Multiple Production RAGs, I Realized — No One Really Wants "Just a RAG" : r/Rag _202511](https://www.reddit.com/r/Rag/comments/1oly866/after_building_multiple_production_rags_i/)
+- I get asked to RAGify :) company documents, but just RAG isn't enough. It needs to be able to analyze code without a single click, able to produce similar documents similar to provided document, able to chat with documents, and needs to completely run offline, no data outside. More requirements keep coming as the week go on.
+
+- thanks mr chatgpt
 
 - ## 🆚 [I tested local models on 100+ real RAG tasks. Here are the best 1B model picks : r/Rag _202510](https://www.reddit.com/r/Rag/comments/1o60ib6/i_tested_local_models_on_100_real_rag_tasks_here/)
 - Best model by real-life file QA tasks (Tested on 16GB Macbook Air M2)

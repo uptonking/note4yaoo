@@ -21,6 +21,31 @@ modified: 2023-08-28T06:14:28.873Z
 - ## 
 
 - ## 
+# discuss-django-drf
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Sync Vs Async Views in DRF : r/django _202511](https://www.reddit.com/r/django/comments/1onfnyo/sync_vs_async_views_in_drf/)
+  - I was recently doing a poc on whether we should or shouldn't try using the Async Views in our api. There is a flow where we have to call 3-4 internal APIs, one is called twice with different params, then that called another api which calls another api.
+  - I tried doing a benchmarking test today. Made a view with time.sleep(15) for synchronous and asyncio.sleep(15) for Async view.
+  - Used JMeter with users = 100, ramp up time = 1 and loop count = 50. Interesting result was that throughput of sync view and Async view were same, 6.6 per second.
+  - Like even with python manage.py runserver, the sync apiview was behaving like Async.
+  - To sate my curiosity, I wrote the same thing for a FastApi, and results were same.
+
+- Did you use only manage.py runserver? Or you also tried to use daphine with asgi or uvicorn? If you only used manage.py runserver so definitely you'll get the same results because you still use the traditional way of how Django handles the requests which is dedication of a worker per request
+  - I did three things -
+  - Normal runserver for sync view
+  - Another project, with unicorn for Async view
+  - Same logic in fastApi.
+  - I got same results for all 3.
+  - I think I should maybe look into the memory usage by all and also the number requests to be more per second.
+- I did a similar tests for my graphql api recently ust to compare sync and async calls. Adding some results for the same api query and mutations. Test is run with locust 100 users with 10 spawn rate:
+  - Even tough the tests are not exactly identical, I decided to go with async for my needs. Hope this helps.
+
+- You will need to use an async development server: https://docs.djangoproject.com/en/5.2/howto/deployment/asgi/daphne/
 # discuss-django
 - ## 
 

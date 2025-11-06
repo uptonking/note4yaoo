@@ -22,6 +22,31 @@ modified: 2023-04-25T17:48:06.146Z
   - NOT c	返回结果需要不包含关键字 c
 
 - [特殊字符转义查询 - 观测云文档](https://docs.guance.com/platform-capabilities/special-character-query/)
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [What widgets do you find most important on your dashboard? : r/selfhosted _202511](https://www.reddit.com/r/selfhosted/comments/1op0iu5/what_widgets_do_you_find_most_important_on_your/)
+- RSS Feeds for sure (with customizable view such as horizontal/vertical)
+  - Custom wallpaper
+  - Custom API integration (such as RandomFact)
+  - Calenders, search bar (search engine choice), speedtest stats, etc would also be cool
+- For RSS feeds, I'm also thinking of adding an extra page to the app to aggregate them.
+
+- quick overview of ram/cpu/storage usage
+
+- Jellyseerr download progress bar and requests
+
+- None. I make things work for me. I have links to my services but no widgets. If a CPU is overloading, or a container is unhealthy or down, or a backup fails, I receive a Telegram message. 
+
+- I like integrations with jellyfin and Jellyseerr. With jellyfin, to have it show me if someone and who is streaming currently. With Jellyseerr, I like to see recently requested shows, and an ability to accept or decline right from the widget. Also a docker integration to be able to monitor, restart and stop containers.
+
+- Uptime Kuma, para validar de forma rápida si existen sitios o servicios caídos.
+
+- Id like to hide stuff like time and weather for more space for buttons or more useful widgets
 # discuss-OpenTelemetry
 - ## 
 

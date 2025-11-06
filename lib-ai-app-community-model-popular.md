@@ -160,6 +160,8 @@ modified: 2025-09-16T19:59:57.856Z
 - devops
 - graphics
 - computer-use
+- cpu
+  - [NanoAgent — A 135M Agentic LLM with Tool Calling That Runs on CPU : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1oomy4t/nanoagent_a_135m_agentic_llm_with_tool_calling/)
 
 - [starvector/starvector-1b-im2svg · Hugging Face _202503](https://huggingface.co/starvector/starvector-1b-im2svg)
   - StarVector is a foundation model for generating Scalable Vector Graphics (SVG) code from images and text
@@ -672,7 +674,18 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## 🆚 [GLM 4.5 Air vs GLM 4.6 vs Minimax M2 on 120gb VRAM : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1ooq9q3/glm_45_air_vs_glm_46_vs_minimax_m2_on_120gb_vram/)
+  - I've been using 4.5 Air AWQ 4-bit and it fits comfortably with a fairly high context limit and is quite usable for coding. However I'm wondering if it makes sense to try a low quant GLM 4.6 or if a quant of Minimax M2 would be a better coding assistant.
+- As far as GLM Air, the REAP is working well for me for agentic coding. I run it at 6 bit with 96G vram and 145k context. You could probably fit 8 bit REAP in 128G depending on how much context you need. I feel it is a better tradeoff than lowering the bits.
+  - it's really not, reap models lose way more knowledge than dropping quantization down a bit or two.
+
+- I'm running GLM Air 4-bit mode with 96GB of RAM, and I'm encountering an out-of-memory error with a 120k context timer. I'm using llama.cpp. 
+
+- Q2 GLM 4.6 will be much smarter than Air, but if you also want to fit a lot of context it will be a tight fit indeed. possibly REAP can work, but I have heard mixed results to say the least.
+
+- In the last couple of days I’ve been testing Minimax M2, Q4 MLX, and Q4 UD Unsloth. GLM Air full quant surprised me, but Minimax M2 feels on par with commercial models—tool-calling and instruction-following are excellent, and its knowledge is solid. It’s my favorite now
+
+- stick with 4.5 air for now. GLM 4.6 doesnt offer enough improvement to justify lower quants or RAM offloading, you'll lose more in infeence speed than you gain in quality tbh. Only worth upgrading it if you're hitting specific limitations with 4.5 air's coding abilities
 
 - ## 🆚 [Any changes for the worse in deepseek V3 versions? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1on6y2b/any_changes_for_the_worse_in_deepseek_v3_versions/)
 - It is not worth saving the older versions, the newer releases reason better, follow instructions better, tool call accurately, hallucinate less, they are obviously superior. (V3.1 Terminus, V3.2 is slightly worse because of sparse attention)
@@ -1545,7 +1558,34 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## 💰 [有没有大佬搞一个靠广告盈利的免费大模型api站 _202510](https://linux.do/t/topic/1045546)
+- 广告费远不够覆盖 ai 成本的。既砸了公益口碑，还要自己往里面垫钱，何苦来哉
+
+- 参考腾讯元宝现状
+
+- API 站不是用户界面啊。 文本里自动插入广告会导致大量场景无法使用。
+- 可以是每天隔几个小时去站点页面上看广告获取额度，但不能是在客户端输出广告。
+
+- 把签到改成看广告了是吧。
+
+- 我们做过这种站点，目前已经关停了，我个人认为这个模式不健康， 或者广告人需要摸索出一个新的良好模式。
+  - fmvp 大佬建议的这种模式和 x 果短剧等流媒体平台类似，大家一定知道，这种注意力剥夺式的广告，并不适合 ai-api 调用，因为开发者需要保持很强的专注度，如果一个开发者在一个 case 中，刷了 3 个广告之后，思想一定无法腾空。
+  - ai-api 站点如果间接瞄准用户怎么样？ 也就是开发者需要按照 api 站点给出的接口示例，将自己的产品打造成多次请求中，固定向用户展示一次广告的方式。 这样开发者成本降低、用户为 api 供应商直接献力。—— 这个玩法就太新颖了，首先很多供应商不懂广告，广告的模式也很粗暴，开发者不仅需要向供应商妥协，还破坏了用户的使用体验，这样的产品就难生存了。这一点我们以后可能会看到有人破局。
+  - ai-api 广告的植入方式，有个新玩意，那就是根据 prompt-keywords 的关联度，触发一些预设语，让本次输出结果除了 “顺利交差”，还 “夹带私货”。 AI 搜索引擎产品，在结果中根据广告主投放，修改权重，就是很典型的例子。这个相对优雅，但是也差强人意 —— 这样的产品竞争力不行，用户信任度低（为什么纳米搜索狗都不用）
+  - 以上是几个简单的分析，有很强的主观色彩，但有很多现货的案例可以佐证，后期可以细聊。我们运营改旗更张，现阶段也在调研公益站点的生存之道 —— 调研 —— 你需要什么样的公益站
+
+- 结尾插广告不影响使用，广告就没效果，自然不会有广告商投钱；影响使用可能就转向别的了
+
+- 我作为程序员，不太能接受广告的形式，在上班中弹个广告出来
+  - 宁愿付费，公司还能申请报销
+
+- ## [各位佬的公益站点是不是都不支持上传文件 _202509](https://linux.do/t/topic/971390)
+  - 我摸索了几天 添加了好几个佬的公益站 发现都不支持上传文件
+- 我知道的只有官方 Gemini 和 OpenAI 的 Responses API 支持传文件呀, 而且大部分公益站用的还是 2api
+
+- 模型原生支持文件的不多，换个支持文件处理的软件解决更快
+
+- 很多 2api 都没处理图片 
 
 - ## [目前哪个公益站claude code体验比较好呢？ - 开发调优 - LINUX DO _202511](https://linux.do/t/topic/1114843)
 - 付费站体验都没几个好的
@@ -1564,7 +1604,7 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 - 感觉无论key还是token都可以全塞http请求头里，让中转商服务端自行忽略处理
   - 那样就不符合请求透传的原则了, CCH 的原则是除必要头部外不对请求做任何处理
 
-- [怎么看每个公益站的RPM呢 - 搞七捻三 - LINUX DO _202510](https://linux.do/t/topic/1108753)
+- [怎么看每个公益站的RPM呢  _202510](https://linux.do/t/topic/1108753)
   - 公益别逮着一个薅，开轮询负载均衡一下
   - 我也想问一下关于轮询的问题，很多公益站的模型命名都不同，应该如何导航到同一个id，我尝试在veloera里手动把渠道模型id改为同样的id，但是当我调用的时候，当一个渠道的模型无法使用，也不会给我自动轮询到下一个渠道
 
@@ -1630,7 +1670,17 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - kilo使用b4u，发现大概120k附近就会开始报错了。
 
-- ## [公益站的api来源是什么 - 搞七捻三 - LINUX DO](https://linux.do/t/topic/1099545)
+- ## [请问公益站就是有老板免费提供API意思吗？  _202510](https://linux.do/t/topic/1036007)
+- 有一部分是
+  - 用限时免费的渠道，转到公益站
+  - 批量注册薅的免费新人福利羊毛，转到公益站
+  - 批量 2api 转的
+  - 低成本薅注册羊毛，转到公益站，比如批量虚拟卡开号，或者用接码平台批量注册硅基获取邀请余额之类的
+
+- 公益站稳定性非常一般。经常回答问题一半就挂掉了。做项目的话老老实实买吧。
+  - 我只知道我后台的 GLM-4.6 和 Gemini-2.5-Pro 的报错率不到 2%，绝大部分报错都是传了敏感内容
+
+- ## [公益站的api来源是什么 ](https://linux.do/t/topic/1099545)
   - 2API和投喂为主
 - Gemini-2.5Pro和绘图系列为GeminiCli逆向，可以自行部署使用较为稳定的，不做项目推荐，因为在用系统系Claude魔改版本
   - Gemini-2.5-flash有个轮询分组，来源于其名称一模一样
@@ -1639,6 +1689,16 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
   - KAT来源于快手官方平台转接
 - OpenRouter、OaiPro 这种是正价官转（不过这俩不是公益），是纯官方 API
   - 其他公益站就是明确告诉你主要渠道就是 2api，公益站一般是免费站 2api，付费站则主要是 Pro/Max 2api，当然还有 GLM ￥0.01 亿万 Tokens 这种不是 2api 的随机羊毛。偶尔也有大善人 Azure、AWS 等赠金快过期了捐给公益站这种也是纯官转 API。
+
+- [观23公益 翰林文苑有感 麻烦佬友们进来指点一二 ](https://linux.do/t/topic/1115602)
+- 大部分都是平台薅羊毛或者 2api，但是都不稳定，很麻烦，没点信息渠道或者手段很难维持的，我的已经停摆了。2api 就不说了，站内一大堆，平台薅羊毛一般都是批量注册号来白嫖免费 api，再放到中转站轮询调用，我知道的有 iflow, 硅基，七牛云之类的，不过薅多了平台风控就严重了，后两个已经限制的很严重了。然后有手段的话海外的某些平台应该也能薅。你要搞的话可以试试薅快手国际版的，站内好像没见人薅，国际版的注册一个号给两千万 tokens，单邮箱就能注册，写个程序批量注册应该不难，不过只有 90 天有效期。
+  - 总之我觉得搞这玩意信息差很重要呢，有些东西发站里会被蝗虫般薅秃，或者门槛高，违 f，所以比较少人分享
+
+1. 首先你要有渠道，没有别往下看了
+2. 你要有闲置资金，时间。至少要有自己的服务器吧，没有就得各种薅，折腾。
+3. 有渠道，有时间，有资金。那就开始造。
+4. 可以接入，newapi/one-hub/done-hub。记得在 Linuxdo connect 中申请应用接入，配置好 L 站登入。差不多就完事了。
+5. 奔着公益去开公益，不是很推荐。我们都是奔着折腾，玩弄的。就比如我的，智谱年包 lite 230 / 年，netcup 服务器 55 / 月，各种七七八八还得 100 / 月。就这都还有人贴脸说各种不行。不过我很少回应。不行别用
 
 - ## 🤔 [深入浅出，解密 L 站内中转站的秘密 - 搞七捻三 / 搞七捻三, Lv1 - LINUX DO _202509](https://linux.do/t/topic/981851)
 - 目前据我所知的中转站分为两类：
@@ -1681,7 +1741,7 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
   - 但这种信息差用不了多久就会出现一次, 跑通了渠道后就可以一直换品了
   - 最不济最后就是转成正规军呗
 
-- ## [感觉大厂 2api 才是长期公益站的最好方案 - 搞七捻三 - LINUX DO _202508](https://linux.do/t/topic/919087)
+- ## [感觉大厂 2api 才是长期公益站的最好方案  _202508](https://linux.do/t/topic/919087)
   - 2api御三家 grok，qwen，z.ai
   - 都有共同点：注册简单，token 刷新简单/长期有效，高并发，稳定，0成本…
   - 反观其它大部分api羊毛的共同点：很难长期，渠道一公开就活不久，上某三字脚本大概率封号…
@@ -1762,21 +1822,21 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - GitHub - atopos31/llmio: llm接口负载均衡工具 我自己写过一个
 
-- ## [求推荐免费模型api，公益站付费的太慢了，只是用于ai中文翻译成英文，速度有要求 - 搞七捻三 - LINUX DO](https://linux.do/t/topic/1061766)
+- ## [求推荐免费模型api，公益站付费的太慢了，只是用于ai中文翻译成英文，速度有要求 ](https://linux.do/t/topic/1061766)
 - 免费的还要快准的 那就薅平台羊毛吧，或者本地搭建一个小模型，肯定嘎嘎快
 
 - 4396佬的cerebras，嘎嘎快
 
 - cerebras的快, ollama cloud的速度也很快 就是上下文砍了
 
-- ## [佬，有哪些好用的公益站llm（个人对话，用量小） - 搞七捻三 - LINUX DO _202509](https://linux.do/t/topic/930055)
+- ## [佬，有哪些好用的公益站llm（个人对话，用量小）  _202509](https://linux.do/t/topic/930055)
 - 很多佬的公益站是不让公开的，多水水或许就遇到了呢
 
 - 都是站内的，只要到了等级就能看到了, 你如果的等级不够才看不到，多水就行了
 
 - 所有公益站默认均不支持和对外分享。 除非站长本人同意了。 所有公益站发布原帖子有级别限制的， 默认不转发给级别不够的佬友。 还请新加入的佬友用心升级。
 
-- [[KYX API 公益站] 红绿榜也来了 kunkun 背景也加上了 是ikun就来抽 - 搞七捻三 - LINUX DO](https://linux.do/t/topic/1093602)
+- [[KYX API 公益站] 红绿榜也来了 kunkun 背景也加上了 是ikun就来抽 ](https://linux.do/t/topic/1093602)
 
 - ## [好奇这些公益站的商业模式是怎样的，如何赚钱维持运营 _202508](https://linux.do/t/topic/833661)
   - 论坛里一堆各种api网站，b4u inst anyrouter之类，频繁提供免费api，我一天就能嫖1k左右的货币（不知道是cny还是usd），很好奇这些网站是如何保持生存的，这种行为的目的是什么。
@@ -1842,7 +1902,16 @@ free 5GB postgres via aiven.io
 
 - ## 
 
-- ## 
+- ## [What is the best LLM for large context under 30B? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1op1h9h/what_is_the_best_llm_for_large_context_under_30b/)
+- almost all LLMs, local or not, struggle really hard with prompt adherence. 150k is beyond what most models work well, even the really big ones. 
+  - If you split it into smaller batches, i'd imagine Mistral Small 3.2 or other mistral models of your choosing to be extremely good at this.
+
+- There are 1M, 2M and 4M llama nemotrons. Test'em out may work.
+
+- Gemma 12b - wtf is that? Gemma 3 starts to fall apart at 5k tokens, and by 16k tokens it starts confusing things left and right.
+  - Degrade after 5k, unusable after 16k. SWA is a killer of long context performance.
+
+- unsloth has posted the Qwen3-VL models with a 1M context. Maybe try them out. As for how useful it actually is, I don't know. Usually even when closing in at the 256k original limit, it's pushing it and they usually are not so coherent.
 
 - ## [What is the most creative open-weight model for story writing? Whether they are heavily aligned is irrelevant I am asking about pure prose and flavor of writing. : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nmp5jc/what_is_the_most_creative_openweight_model_for/)
 - I've experimented with a few of the models. Each model has it's own strength, so it's up to you to find a model that has a writing style you vibe with. General rule of thumb though is to avoid reasoning models. 

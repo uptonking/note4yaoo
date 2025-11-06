@@ -64,4 +64,9 @@ modified: 2020-12-12T19:01:56.749Z
   - https://sniffnet.net/
   - comfortably monitor your Internet traffic. Cross-platform.
   - import and export comprehensive capture reports as PCAP files
+
+- https://github.com/tinkink-net/devns /202511/js
+  - a lightweight local DNS server for development purposes, it listens on UDP port 53 (configurable) and answers DNS queries by resolving them via Node's built-in dns module, with support for local hosts file overrides.
+  - DevNS is developed by AI
+  - Minimal dependencies, built on Node.js built-in modules
 # more
