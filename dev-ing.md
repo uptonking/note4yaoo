@@ -223,6 +223,7 @@ console.log('; ; task ', taskState, runningTaskAction, task?.task_steps)
 ```
 ```log //ai
 - give an brief intro to reactjs in less than 90 words
+- give a brief intro to reactjs with hello world code example
 - count from 1 to 80, every number on a separate line
 - count from zz1 to zz40, every item on a separate line  /no_think
 - when did deepseek v3.1 model release?

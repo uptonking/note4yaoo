@@ -226,7 +226,16 @@ modified: 2025-09-16T19:59:57.856Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🧩 [Can someone explain what a Mixture-of-Experts model really is? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1oqttg0/can_someone_explain_what_a_mixtureofexperts_model/)
+- The core idea is that up to a certain point, more parameters means better performance through more stored information per parameter. However, activating every single neuron across every single layer in the model is extremely computationally expensive and turns out to be wasteful. So MOE tries to have the best of both worlds: a really large high parameter model, but only a fraction of them active so that uses less computation/energy per token.
+  - During training, a routing network learns to send similar types of tokens to the same experts, and those experts become specialized through repetition. 
+  - Nobody explicitly tells the experts what to specialize in. Instead, the specialization emerges because it's more efficient for the model to develop focused expertise. It's all happens emergently(在过程中，新兴的, 兴起的), and letting experts specialize produces lower training loss, so that's what naturally happens through gradient descent.
+  - So the outcome is you get to have a relatively huge model but one that is still pretty sparse in terms of activation. So very high-performance at relatively low cost and there you go.
+
+- The model has a router (fancy name for an FFN in MoE models) which decides which expert to use. This router is trained with the main model itself.
+  - Activation parameters are just the (small portion of all parameters)/(expert) which are chosen by the router. To clarify these "small portion of all parameters" are just small FFNs nothing too fancy.
+
+- An MoE model uses a normal embeddings and attention system, then a gate model selects n experts to pass those attended vectors to, then the output of the experts are merged into a final vector, which goes through a softmax(1 x vocab size) layer to get the probability for each possible token, same as normal models.
 
 - ## 🤔 [Can China’s Open-Source Coding AIs Surpass OpenAI and Claude? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1omm6bf/can_chinas_opensource_coding_ais_surpass_openai/)
 - Maybe one day, but probably not in the short term (1 year, and of course I may be wrong).

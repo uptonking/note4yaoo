@@ -543,10 +543,13 @@ sudo systemctl start minidlna
   - Rixcloud/喵帕斯/Blinkload/速蛙云/世外桃源等等一系列已经跑路的机场告诉我们，机场的尽头就是跑路。
   - 本跑路名单未记录但实际已跑路的机场还有很多，改头换面重复收割韭菜的也有。
 
+- tips
+  - 一直在活跃社区里面使用活跃的公益机场也是轻度使用的一种方案
+
 - 机场free
-  - https://ikuuu.club/
+  - 🌹 https://ikuuu.club/
     - 免费版: 50G/月, 签到随机赠送流量, 大部分节点限速50M(6MB/s)
-    - 仅日本节点
+    - 🐛 仅日本节点
     - 12￥/月: 300G/月
     - 连续三个月未使用的会被删号处理
     - 免费节点一直在被墙，没有可用性保障，会尽力维护
@@ -563,9 +566,9 @@ sudo systemctl start minidlna
     - 美区经常不可用
   - 🌹 [马铃薯](https://mlshu.com/)
     - 免费流量：50G（每月重置）， 可无限续杯
+    - 线路仅3条，地区不详
     - 适合长期使用
     - 不限速、不限制设备
-    - 线路仅3条
   - [小蜜蜂机场](https://xiaomifengjc.top/)
     - 自动选择 not found
   - [瑶瑶领先 ](https://yyssr.org/)
@@ -575,12 +578,28 @@ sudo systemctl start minidlna
     - 每月30.00 GB
     - 每月手动更新
     - 延迟低
+  - [榴莲加速器](https://www.liulianvpn.org/)
+    - 100G/月
   - [Free Cloud](https://bento.me/freecloud)
+    - https://kokk.cn/
     - 100GB️/30 天套餐 | 可无限续杯
     - 需要每月输入优惠码
-    - 自动选择 not found
+    - 质量差，用的人多
+    - 节点多，需要经常更新订阅地址
   - [乐猫 · 官方导航](https://now.lemao.app/)
-    - 500G 1 年
+    - [仪表盘 | 乐猫](https://a1.lemao888.top/#/dashboard)
+    - 500G /月， 可以输入白嫖码重置套餐
+    - 每月手动更新
+    - 无美区, 只有日本/香港/越南
+    - 质量不好
+    - 禁止测速／多开／滥用 → 秒封IP
+    - 长时间占用带宽 → 限速1 Mbps，持续10分钟
+    - tg频道创建于202510
+  - [水牛云](https://bbs.nnpy.org/)
+    - 100GB /每月, 每月手动更新
+    - 无美区，免费3节点为 英国、俄国、巴西
+  - [公益网络](https://gy888.xyz/)
+    - 使用支持 TUIC跟hy2 + 端口跳跃 的最新版代理工具
   - [漏网之鱼](https://www.louwangzhiyu.org/)
     - 质量差，一片红
     - 100GB️/30 天套餐 | 可无限续杯
@@ -590,14 +609,18 @@ sudo systemctl start minidlna
     - 可无限续杯，禁止滥用
     - 质量差，一片红
     - [曲径通幽导航 - 可访问性检测](https://dh.221345.xyz/)
-  - [飞升三级了，来点免费机场 ](https://linux.do/t/topic/1110449)
+  - 📌 [飞升三级了，来点免费机场 ](https://linux.do/t/topic/1110449)
     - 给大家实测了一下，红杏 榴莲 还行，其他都不咋地
     - [【免费机场】可无限续杯，推荐当作备用 ](https://linux.do/t/topic/1117200)
     - 马铃薯, 曲径通幽,  漏网之鱼, Free Cloud
-  - [2024 免费机场 + 跑路](https://topstip.com/2024-free-proxy/)
   - [蒲公英公益机场】单开一贴，郑重声明 ](https://linux.do/t/topic/901662)
     - 蒲公英机场为本人个人出资购买机器，提供节点服务，里面无任何团队协同，也没有任何的商业版块内容，也没有对接任何一种支付方式
     - 机场里面的所有套餐，均只能通过，发放优惠券的形式进行全额抵扣 (因为这样才能防止被滥用)
+  - [2024 免费机场 + 跑路](https://topstip.com/2024-free-proxy/)
+  - https://github.com/hwanz/SSR-V2ray-Trojan-vpn
+    - 免费机场公益机场收集/免费vpn-定时更新
+  - https://github.com/DiningFactory/panda-vpn-pro
+    - 购买两三个机场足矣，不要贪多，且不要年付（即使有活动也不建议年付）
 
 - [风萧萧公益机场再度开放 ](https://linux.do/t/topic/1083315)
   - 注册限制：需要达到 信任等级 2 或以上

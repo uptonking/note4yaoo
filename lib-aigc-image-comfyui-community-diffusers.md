@@ -554,7 +554,13 @@ export COMMANDLINE_ARGS="--skip-torch-cuda-test --disable-nan-check --upcast-sam
 
 - ## 
 
-- ## 
+- ## [The average ComfyUI experience when downloading a new workflow : r/StableDiffusion _202511](https://www.reddit.com/r/StableDiffusion/comments/1oqwj6t/the_average_comfyui_experience_when_downloading_a/)
+- Ten nodes are obsolete. Five are uneeded because creator doesn't understand what he was doing, another five are unneeded because they add some superficial stuff only he likes. One breaks the output on your system. One is miner backdoor. Six fingers in the end.
+
+- You just need a degree in Computer science a background in programming then it will be truly comfy.
+
+- Is there any type of standardization of good practices when creating flows? As they don't have linear connections it's kind of difficult to understand
+  - Left to right, top to bottom.
 
 - ## 🤔 [Comfyui前景如何？ - 知乎](https://www.zhihu.com/question/14481050317/answers/updated)
 - 没前景，说是AI，然而比传统软件还繁琐，最主要，连一大堆线，没有一条线是跟创作有关的，都是调用这个调用哪个，那么，可商用的东西一定是要有创作工程文件和明确的版权的，它，两者都没有

@@ -462,6 +462,24 @@ modified: 2025-08-08T07:36:31.265Z
 
 - ## 
 
+- ## [allow user to override ChatConfig when creating LanguageModel for LMStudio (openAiCompatible) Provider by Sewdn · Pull Request · vercel/ai _202503](https://github.com/vercel/ai/pull/5262)
+  - This PR now allows to optionally override languageModel configuration properties defaultObjectGenerationMode and supportStructuredOutputs.
+- 202509: Still have the same issue using lm studio (0.3.25) :
+  - "error": "'response_format.type' must be 'json_schema' or 'text'"
+
+- [feat(openai-compatible): add `supportsStructuredOutputs` to provider settings by gr2m · Pull Request · vercel/ai _202509](https://github.com/vercel/ai/pull/8546)
+
+```JS
+ const togetherai = createOpenAICompatible({
+   baseURL: 'https://api.together.xyz/v1',
+   name: 'togetherai',
+   headers: {
+     Authorization: `Bearer ${process.env.TOGETHER_AI_API_KEY}`,
+   },
+   supportsStructuredOutputs: true,
+ });
+```
+
 - ## Things I don't like about the AI SDK #1
 - https://x.com/mattpocockuk/status/1915840893917032521
   - You can specify 'maxSteps' on streamText & generateText to toggle from a single LLM call to an agentic loop.

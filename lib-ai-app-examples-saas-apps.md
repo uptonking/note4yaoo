@@ -154,6 +154,30 @@ modified: 2025-02-21T17:17:42.225Z
   - The open source Cursor for Designers. 
   - Design directly in your live React app and publish your changes to code.
 
+## ai-gen-ui
+
+- https://github.com/itzcrazykns/epoch /MIT/202511/ts
+  - Epoch transforms traditional text-based AI conversations into interactive, component-driven experiences. 
+  - Every response is rendered as a living interface with clickable elements, dynamic forms, live data visualizations, and explorable UI
+  - Epoch eliminates llm text constraint through a structured component architecture. The LLM generates type-safe JSON schemas representing UI component trees, which are recursively rendered into fully interactive React interfaces.
+  - 此方案和主流框架兼容性不好，memory/rag的pipeline都要定制处理
+    - 但用来实现固定布局layout的card/bg等局部组件很方便
+  - 依赖 aisdk, shadcn/ui + Radix UI, recharts
+  - This architecture transforms LLMs from text generators into interface compilers, where every response is a composable tree of interactive components rather than static markup.
+  - It's bidirectional. You can click a button or submit a form -> that interaction gets serialized back into conversation history -> LLM generates new UI in response.
+  - streaming: Server-Sent Events stream partial object updates as the LLM generates component trees, with progressive rendering on the client
+  - UIRenderer recursively traverses component trees, maintaining form state and action handlers through the entire tree depth
+  - Local LLM Support: Run completely offline with Ollama integration
+  - [Epoch: LLMs that generate interactive UI instead of text walls : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1oqc01w/epoch_llms_that_generate_interactive_ui_instead/)
+  - Structured output schema doesn't take context, but I also included it in the system prompt for better performance with smaller Ollama models (system prompt is a bit bigger now, finding a workaround later)
+  - Interesting, but the LLM can already spit it HTML if you instruct it. what is the failure rate on these? I presume you append all info in the system prompt to assure the LLM doesn't write poorly formatted interface, but it could easily output straight up wrong commands? Would it just error out? 
+    - LLMs can spit out HTML but you cannot be sure of the consistency, styling, layout and everything but in my approach I used grammar (to force the model in generating in the format I want) which significantly reduces the error rate and can perform quite well without taking up much context (I can remove the entire examples from the system prompt and it'd still work on larger models since they have better attention distribution).
+    - The error rate is very low, in my testing models less than 4B-6B params gave a few errors (that too bad UI not a failure), larger models and cloud models never really generated a bad UI. 
+  - HTML itself is a structured declarative syntax. If you think about what the training corpus for a particular model looks like, it has seen WAY more HTML than a custom structured grammar. Don't overengineer for the sake of it. See if you can accomplish the same thing with simpler methods.
+  - Can this support standard OpenAI Compatible API?
+    - If your inference provider fully supports the OpenAI format and `grammar enforced decoding` then it can be used.
+  - i tried more or less the same, but in some cases output generated would have valid schema, but maybe contain null values, which kind of defeats the whole purpose
+
 ## ai-webapp
 
 - https://github.com/admineral/Reactor /202405/ts/inactive

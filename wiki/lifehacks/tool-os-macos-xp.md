@@ -206,9 +206,24 @@ redis-cli shutdown
 
 - [coconutBattery Plus 4.1.0 破解版 - 电池信息查看工具 | MacKed ](https://macked.app/coconutbattery-plus-crack.html)
 # arm-mac
-
+- https://github.com/scriptingosx/utiluti /apache2/202507/swift
+  - macOS command line utility to work with default apps.
+  - utiluti app id '/Applications/Adobe Acrobat DC/Adobe Acrobat.app'
+    - io.github.clash-verge-rev.clash-verge-rev
+    - com.west2online.ClashXPro
+  - utiluti url clash --bundle-id
+    - Get the current default app for a given url scheme
+  - utiluti url list clash --bundle-id
+    - List all apps registered for a given url scheme
+  - `utiluti url set clash com.west2online.ClashXPro` ; 
+    - Set the default app for a given URL scheme
+  - utiluti app schemes com.apple.safari
+    - List the URL schemes for a given app with app
+  - utiluti app types com.apple.safari
+    - Some apps declare file extensions instead of UTIs
+  - utiluti file list-apps ReadMe.md
+    - List all apps that can open the file
 # intel-mac
-
 - [If you need to install Rosetta on Mac - Apple Support](https://support.apple.com/en-us/102527)
   - Open any app that needs Rosetta. If the app opens, Rosetta is already installed and working.
   - If Rosetta is not installed, you're automatically asked to install it.
@@ -225,6 +240,19 @@ redis-cli shutdown
 - 按住Option，点按小三角，自动展开访达文件夹内的所有子文件夹，所有文件一览无余
 # discuss-macos-tricks
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [macos - Adding timestamp to each line on Zsh - Stack Overflow](https://stackoverflow.com/questions/40076573/adding-timestamp-to-each-line-on-zsh)
+
+```sh
+PROMPT='%{$fg[yellow]%}[%D{%f/%m/%y} %D{%L:%M:%S}] '$PROMPT
+
+# If you just want a 24 hour timestamp, you can use this 
+PROMPT='%{$fg[yellow]%}[%D{%T}] '$PROMPT
+```
 
 - ## 📃 不要在 macOS 上乱改 git 仓库里文件名的大小写，会变得不幸
 - https://x.com/Megabits_mzq/status/1982496477537800594

@@ -37,7 +37,9 @@ modified: 2025-03-22T16:10:24.856Z
   - mlx的并发端侧计算能力非常强, 多个mlx并行计算
 - 🌹 pros-local-ai-mobile
   - 容易通过摄像头获取图像数据
-- 🐛 cons-local-ai-mobile
+- 🐛 cons-local-ai
+  - 对计算资源的要求高，否则速度慢或效果差
+  - 不同本地api provider实现的逻辑有差异, 有的api只支持ollama而不支持lmstudio
   - 小模型不够智能
   - 移动端计算能力差, 速度慢, ipad的M系芯片非gpu方案也不快
   - 耗电量大, 对手机端不友好
@@ -300,6 +302,7 @@ modified: 2025-03-22T16:10:24.856Z
     - Claude和gpt 暂时不支持工具调用, gemini模型没有pro
     - API 调用频率限制为 12RPM，公益站永久免费，采用公平限流策略以保障服务稳定
     - [KYX API Refueling Station 公益站额度加油站](https://quota.kyx03.de/)
+      - 别玩至尊场，1000积分一次警告扣16x，风险太高; 高级场的高积分也可以获得高收益
   - [黑与白chatAPI](https://ai.hybgzs.com/), 每日转盘
     - 模型丰富: claude, openrouter, 但没有gpt5
     - 本站完全免费！暂无任何充值通道
@@ -314,6 +317,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [mmkg API](https://api.mmkg.cloud/)
     - 仅在每周五下午 18:00 至 21:00 开放，每周限量 100 人
     - 支持claude,gemini, 不支持gpt
+    - Gemini系列模型永久免费， 与Gemini对话不会消耗帐号余额（可忽视帐号余额）
   - [一个小站的 API 商店](https://one-api.ygxz.in/), 每日签到1刀内随机
     - 提供半公益的高质量 API 中转服务，始于202406
     - 无调用频率限制
