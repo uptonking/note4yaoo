@@ -38,6 +38,21 @@ modified: 2020-10-22T10:22:55.878Z
   - https://mermaid.live/
   - Generation of diagram and flowchart from text in a similar manner as markdown
   - [Poll - next diagram type addition: PlantUML](https://github.com/mermaid-js/mermaid/issues/177)
+- https://github.com/mermaid-js/mermaid-live-editor /5.8kStar/MIT/202510/ts/svelte
+  - https://mermaid-js.github.io/mermaid-live-editor/
+  - https://mermaid.live/
+  - Edit, preview and share mermaid charts/diagrams. 
+  - New implementation of the live editor.
+  - 左侧代码，右侧流程图，整体类似markdown编辑器
+  - 依赖@mermaid-js/layout-elk、@mermaid-js/mermaid-zenuml、monaco-editor、@codemirror/lang-markdown、svg2roughjs、svg-pan-zoom
+  - Edit and preview flowcharts, sequence diagrams, gantt diagrams in real time.
+  - Save the result as a svg
+  - Get a link to a viewer of the diagram so that you can share it with others.
+  - https://github.com/mermaid-js/zenuml-core
+    - The ZenUML renderer
+    - DSL 解析器和渲染器都在这个代码库中。
+    - DSL 解析器是基于 Antlr4 构建的。其定义文件位于src/g4。生成的解析器位于 src/generated-parser。 对解析器的增强相关的代码位于src/parser文件夹。
+    - 所有其他的文件基本上都是跟渲染器相关的。渲染器是基于 VueJs 2.x 开发的。
 
 - maxGraph /500Star/apache2/202504/ts
   - https://github.com/maxGraph/maxGraph

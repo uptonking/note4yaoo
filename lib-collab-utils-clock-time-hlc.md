@@ -461,3 +461,22 @@ else {
   - 什么久经考验，都是草台班子
   - 不能这么说，设计好的发号器的可靠性非常高
   - 我写的 snowflake 版本 guid 跑 4 年，除了一次时间回拨被坑到，平时没人在意这个东西，用 zk 下发 node_id
+# discuss-clocks
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## In a distributed system, server clocks can't be trusted. 
+- https://x.com/asmah2107/status/1986804331832852574
+  - You need to know what event could have influenced another. Relying on timestamps is a bug waiting to happen.
+  - Vector Clocks solve this. They stamp each event with a logical counter.
+  - By comparing the clocks, you can mathematically prove if event A happened before B, B before A, or if they happened concurrently.
+  - The real question isn't "What time did this happen?" but "Can I prove that this event could have been influenced by that other event?"
+
+- The sequence of events is one thing. The fact that a lot of requests are signed with the local time, it could even break your cloud authentication, if your clocks aren't syncronised. I'd start with NTP before going all in on this (obvious; Just wanted to add)
+
+- We can expand this even further: when we do updates in a distributed system, we can use the Vector Clock as a version "stamp" and reject, rebase and retry updates whose new version != old version + 1. This is optimistic locking. Useful for packet ordering in distributed systems.

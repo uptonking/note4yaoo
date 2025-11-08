@@ -253,6 +253,23 @@ modified: 2024-06-30T11:17:28.971Z
 - 
 - 
 
+# discuss-docker-devops
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Everyone uses Docker, but very few people know how debug a Docker container.
+- https://x.com/livingdevops/status/1986873209262907485
+  - I’m not talking about "docker logs", or "docker inspect", or "docker exec"
+  - I’m talking about "docker events".
+  - it streams low-level, real-time event logs from the Docker daemon; not just your container.
+  - `docker events --filter container=<your_container_id>`
+
+- In terms of debugging, it's cleaner to see error events or logs first, then to hop on the host and look for specifics.
 # discuss
 - ## 
 

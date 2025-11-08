@@ -11,14 +11,24 @@ modified: 2025-10-10T02:45:45.941Z
 - tips
   - llm-edit-pattern: editing-prompts > changes > applying-changes
   - 可直接参考主流编辑器已实现的方案，如codemirror/monaco
+
+- openai v4a diff format ⚖️
+  - supported: gpt4.1+, claude 3.7+, gemini-2.5-pro, deepseek-v3.1, kimi-k2, minimax-m2
+  - local-ok: qwen3-14b-no_think
+  - no-support: qwen3-coder-480b, qwen3-235b-a22b-thinking/instruct, glm-4.6, longcat-flash
+
+- aider-diff-search/replace
+
 - 考虑编辑的场景
   - shorter/longer/improve/check/translate 都可实现为对明确输入范围内容的 一次性替换
+
 - [Fast-Apply API Research Summary · edobry/minsky](https://github.com/edobry/minsky/blob/main/docs/phase1-fast-apply-api-research.md)
   - Integration Architecture Recommendations
   - ApplyProvider Abstraction Layer
   - Fallback Strategy
   - Session Integration
   - https://colab.research.google.com/drive/1BNCab4oK-xBqwFQD4kCcjKc7BPKivkm1?usp=sharing
+
 - [Edit formats | aider](https://aider.chat/docs/more/edit-formats.html)
   - Aider uses various “edit formats” to let LLMs edit source files. 
     - Different models work better or worse with different edit formats. 
@@ -50,6 +60,7 @@ modified: 2025-10-10T02:45:45.941Z
     - The LLM is then asked to find-and-replace the query in each line and sentence.
     - The changes are then streamed back to the user in the form of a diff(e.g., `<r:l1s1> string to find || string to replace`).
   - [How to use LLM for efficient text outputs longer than 4k tokens? - DEV Community _202406](https://dev.to/theluk/how-to-use-llm-for-efficient-text-outputs-longer-than-4k-tokens-1glc)
+
 - https://github.com/deepaste-ai/partial-edit /202504/ts/inactive/NoDeps
   - This project is a TypeScript implementation of the approach described in OpenAI's GPT-4.1 prompting guide
   - 一个纯 TypeScript 工具，用于应用人类可读的伪差异补丁文件，具有由 LLM 驱动的部分编辑功能。
@@ -59,6 +70,14 @@ modified: 2025-10-10T02:45:45.941Z
   - Partial Editing: Make context-aware edits to code using LLM
   - DeePaste 应用补丁的方式与 OpenAI 的 GPT-4.1 提示指南中讨论的技术类似。该指南提到，在代码修改任务中，同时提供需要替换的确切代码和带有明确分隔符的替换代码可以产生高成功率。像伪差异这样不依赖行号的格式对于 LLM 驱动的代码编辑特别有效。
   - [GPT-4.1 Prompting Guide Appendix: Generating and Applying File Diffs](https://cookbook.openai.com/examples/gpt4-1_prompting_guide#appendix-generating-and-applying-file-diffs)
+
+- https://github.com/tokenring-ai/apply-patch /apache2/202510/ts
+  - a TypeScript implementation of the OpenAI Codex file-oriented diff format for safe code editing. 
+  - It converts the original Rust implementation to native TypeScript
+  - File Safety: Operations are atomic where possible
+  - Path Handling: Only relative paths supported for security
+  - 侧重文件操作: it uses native Node.js APIs for file operations.
+
 - https://github.com/nocapro/apply-multi-diff /202509/ts/NoDeps
   - library to apply standard unified diffs or semantic search-and-replace patches to source files with fuzzy-matching, indentation-preserving insertions, and hunk-splitting fallbacks.
   - for Node.js and browser environments
@@ -66,6 +85,7 @@ modified: 2025-10-10T02:45:45.941Z
     - Use Search-Replace when you want precise, targeted edits (add import, rename function, delete block). 
     - Use Standard Diff when you have a complete diff from git (multi-hunk, moved code). 
     - When in doubt, start with Search-Replace—its fuzzy matcher is more forgiving of small source drift.
+
 - https://github.com/dceluis/ln-diff /MIT/202411/prompt/inactive
   - The ln-diff format is a specialized diff format designed for precise line-based code modifications. 
   - It uses "editblocks" to explicitly define code changes while maintaining strict line number references.
@@ -78,11 +98,13 @@ modified: 2025-10-10T02:45:45.941Z
     - Source files need to be prefixed the line numbers so that the lines to REMOVE can be recited accurately and sequentially.
   - A[ The "pipe" symbol used is not your regular keyboard pipe but actually unicode's U+2502 called "Box drawings light vertical". This is a common symbol used to draw lines in text-only applications and may be understood by LLMs (TODO: verify this) to be the divider between the line number and the actual line contents. Alignment may help with reducing indentation errors in generated code.
   - https://github.com/dceluis/kznllm.nvim/tree/dev/lua/kznllm/lndiff /lua
+
 - https://github.com/NeaByteLab/AI-NES /MIT/prompt
   - Next Edit Suggestion (NES) - A conceptual methodology for AI coding assistants that learn from editing patterns and predict the next logical edit using `unified diff format` and real-time streaming.
   - Instead of just completing what you're typing, the LLM learns from your editing patterns and predicts what you'll want to change next in your coding workflow.
   - Pattern Learning: The environment sends context to the LLM (Large Language Model) by analyzing what should be edited. 
   - Streams suggestions as you work
+
 - https://github.com/paradite/ai-file-edit /14Star/MIT/202506/ts/inactive
   - A library for editing files using AI models such as GPT, Claude, and Gemini.
   - Edit files using natural language
@@ -483,23 +505,24 @@ file.py
 - I found this works remarkably well across different LLMs, though Claude’s precision makes it particularly suited for generating these kinds of targeted edits.
 - The edit trick isn’t just about saving tokens — it’s about developing a more thoughtful, precise approach to working with LLMs
 - The next time you’re about to send a large document to an LLM for modification, ask yourself: “Do I need the entire document back, or just the changes?” Your users — and your budget — will thank you.
+
 - ## 🌰 [When LLMs give *almost* correct code, fix it with targeted line edits instead of a full rewrite  _202505](https://medium.com/@pYdeas/when-llms-give-almost-correct-code-fix-it-with-targeted-line-edits-instead-of-a-full-rewrite-af3329e42010)
 - This idea came from [Introducing FixIt: an unreasonably effective AI error fixer for SQL - MotherDuck Blog _202401](https://motherduck.com/blog/introducing-fixit-ai-sql-error-fixer/) and adapted with Python to work with not just SQL, but text in general
 - 
 - 
 - 
-- 
+
 - ## [How to generate automatically applicable file diffs with ChatGPT? - Prompting - OpenAI Developer Community _202305](https://community.openai.com/t/how-to-generate-automatically-applicable-file-diffs-with-chatgpt/227822)
   - Have any of you succeeded to have ChatGPT output suggested changes to a file in a way that can be automatically applied to the file?
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
+
+- Using diff implies numbers and cartesian logic, and GPT doesn’t perform well in these fields. It will -very often- output broken diff.
+  - The more I look at this problem, the more I think about using a structured approach instead. i.e. Pushing a very rigid JSON schema to the function parameter in the prompt, and forcing GPT to create methods, variables, etc, that are strong because they respect this very specific JSON schema.
+
+- [Feature Request: Enhanced Diff Format Support in ChatGPT for Streamlined Code Integration - Prompting - OpenAI Developer Community _202312 ](https://community.openai.com/t/feature-request-enhanced-diff-format-support-in-chatgpt-for-streamlined-code-integration/545910/9)
+- I think it’s a good idea. However, the diff format involves numbers and some logic to them. From my experience, the LLM is not very good at stating exact line numbers and this produces invalid diffs. It’d be interesting to think of a solution to that.
+
+- This is precisely what the project does behind the scenes: GitHub - paul-gauthier/aider 
+
 - ## 🚀 [Launch HN: Morph (YC S23) – Apply AI code edits at 4, 500 tokens/sec | Hacker News _202507](https://news.ycombinator.com/item?id=44490863)
   - We’ve built a blazing-fast model for applying AI-generated code edits directly into your files at 4, 500+ tokens/sec. No more slow full-file rewrites or brittle search-and-replace hacks.
 - Morph's approach:
@@ -596,10 +619,12 @@ file.py
   - But in a rich-text editor, mapping cursor positions and highlighting changes is far trickier.
   - Even OpenAI, in its canvas, refreshes the entire document instead of showing granular diffs, which I think misses the skeuomorphic experience writers actually need. Notion has only partly addressed this, and even then just for chunks of text, it doesn’t handle long docs really well
 - 🤔 hey i had implemented this and it worked reasonably well. you need to look into json patching. you can use ai to generate the edit patch
+
 - ## [GLM-4.6 and other models tested on diff edits - data from millions of Cline operations : r/ChatGPTCoding _202510](https://www.reddit.com/r/ChatGPTCoding/comments/1nwj7zq/glm46_and_other_models_tested_on_diff_edits_data/)
   - If you're not familiar with what "diff edits" are, it's when an LLM needs to modify existing code rather than write from scratch. 
   - An important caveat is that diff edits aren't everything. Models might excel at other tasks like debugging, explaining code, or architectural decisions. This is just one metric we can measure at scale.
 - If you don’t get double lead, nobody is switching for 2% rate that may be within error margins
+
 - ## [[D] Better system prompt for generating coding diffs? : r/ChatGPTCoding _202501](https://www.reddit.com/r/ChatGPTCoding/comments/1ht88xx/d_better_system_prompt_for_generating_coding_diffs/)
 - many projects require repeated modification of a python file.
   - Generating python code in unified diff format seems to be pretty crappy in gemini, and marginally better in claude.

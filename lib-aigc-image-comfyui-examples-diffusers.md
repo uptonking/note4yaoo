@@ -1755,7 +1755,10 @@ modified: 2025-08-23T11:43:35.904Z
   - https://github.com/CompVis/stable-diffusion
   - A latent text-to-image diffusion model
 
-## image-gen-api
+## image-gen-api/router
+
+- https://github.com/shulinbao/stable-diffusion-api-to-openai /AGPL/202411/python/inactive
+  - 这个项目可以把 AUTOMATIC1111/stable-diffusion-webui 格式的图片生成 API /sdapi/v1/txt2img 转发为 OpenAI 的通用 API 格式 /v1/images/generations，并转发为 dall-e-3 等指定模型。
 
 - https://github.com/iptag/jimeng-api /GPL/202511/ts
   - Free AI Image and Video Generation API Service - Based on reverse engineering of Jimeng AI (China site) and Dreamina (international site).

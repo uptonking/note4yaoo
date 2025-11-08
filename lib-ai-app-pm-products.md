@@ -358,6 +358,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [小松公益站 New API](http://api.lanapi.top/pricing)
     - 仅提供gemini模型， 满血版
     - 默认分组只有5分钟3次的请求速率，至尊分组无上限分组
+  - [素墨API —— AI公益站](https://apifree.rensumo.top/)
   - [翰林文苑公益API站点](https://aiapi.hlwy2025.me/)
     - 价格太高了 我决定攒到1000再用
   - [ThatAPI](https://gyapi.zxiaoruan.cn/pricing)

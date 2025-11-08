@@ -177,6 +177,11 @@ modified: 2025-02-21T17:17:42.225Z
   - Can this support standard OpenAI Compatible API?
     - If your inference provider fully supports the OpenAI format and `grammar enforced decoding` then it can be used.
   - i tried more or less the same, but in some cases output generated would have valid schema, but maybe contain null values, which kind of defeats the whole purpose
+  - Where does it take images?
+    - The images are fetched via the serp API. I plan to add SearxNG support.
+  - Arent ag-ui frameworks like copilotkit exactly for this?
+    - Copilotkit renders predefined components in predefined style via function calling. I gave it the ability to generate how it wants the user to see its responses and it is done via grammar enforced decoding (structured outputs). 
+    - In copilotkit, you might see the same structure again but with my approach you cannot say
 
 ## ai-webapp
 

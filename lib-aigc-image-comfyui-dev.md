@@ -102,6 +102,10 @@ modified: 2025-09-25T16:24:05.355Z
 
 - lm studio for comfyui
 
+- image-editor
+  - 通过vlm/ocr还原布局和文本，通过comfyui优化bg
+
+- 
 - 
 - 
 - 

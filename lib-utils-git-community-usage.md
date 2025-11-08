@@ -133,6 +133,18 @@ git log --online --graph --decorate
 
 - ## 
 
+- ## GitChat - 用自然语言去做 Git
+- https://x.com/hwwaanng/status/1986674586696798271
+  - 要做的足够简单，只满足切分支、合并分支、解决冲突的基础功能。
+  - 目标的用户是产品/设计师 。
+  - 顺带可以把分支预览之类的工作做了（接个 vercel 
+  - 难点： UX 层面让普通用户在不理解 git 的情况下，能够自然的完成一套简单的 git flow
+- 这个场景很窄，大部分人只是需要版本管理，不需要引入 git 的抽象概念, 只有那些不懂 git 又要强制使用 git 的产品来有这个需求。
+  - 就是你说的，下层是git flow上层是对用户可见的版本管理。这样的 产品/设计 可以在这个东西上继续协同。不需要理解git，不需要了解git。并且合理的git记录，可以交付给合作者。
+- 如果设计师需要git，那么Photoshop早就有版本管理的功能了，但是事实是设计师只需要ctrl-z
+  - 一年以前的设计师也不需要 vibe demo。只能说，时代变了
+- gitchat 这事 codex 做的确实蛮好了。 我最近的一些冲突都是它自己解决的。
+
 - ## The next hypermedia platform should be based on Git. Creating a text file in a Git repo should be all you need to participate. 
 - https://x.com/msimoni/status/1884333920080257053
   - In contrast to plain HTTP, Git also solves incremental updates efficiently, so everyone can locally store a complete copy of the sites they follow.

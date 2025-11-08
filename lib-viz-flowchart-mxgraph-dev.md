@@ -38,6 +38,10 @@ modified: 2023-05-29T15:09:30.865Z
   - maxgraph-mcp
   - drawio-mcp
 
+- mxgraph-desktop
+  - graph-workspace
+  - llm + xml
+
 - mermaid-editor using drawio/tldraw
 
 - [Migration of mxGraph GraphEditor Demo to MaxGraph · maxGraph/maxGraph · Discussion _202502](https://github.com/maxGraph/maxGraph/discussions/695)

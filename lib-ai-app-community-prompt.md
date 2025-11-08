@@ -9,6 +9,8 @@ modified: 2024-09-08T18:57:12.231Z
 
 # guide
 
+# blogs
+- 🧑‍🏫 [OpenAI 官方 GPT-4.1 Prompt 指南 - 知乎 _202504](https://zhuanlan.zhihu.com/p/1895544303784294231)
 # discuss-stars
 - ## 
 
@@ -84,6 +86,16 @@ modified: 2024-09-08T18:57:12.231Z
   - As I understand, it happens for 2 reasons:
   - The previous messages are reprocessed, the more messages, the longer it takes.
   - Especially on the Macs, the longer the context, the slower the generation speed.
+
+# discuss-prompt-usecases
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [My go-to prompt for analyzing stocks. Share yours! : r/PromptEngineering](https://www.reddit.com/r/PromptEngineering/comments/1oqa30m/my_goto_prompt_for_analyzing_stocks_share_yours/)
+- Act as a senior equity research analyst. Your task is to compile a comprehensive investment analysis report on [Company Name] (Ticker: [Ticker Symbol]). The report should be detailed, objective, and data-driven, using financial data from the last five full fiscal years and the most recent trailing twelve months (TTM).
 
 # discuss
 - ## 

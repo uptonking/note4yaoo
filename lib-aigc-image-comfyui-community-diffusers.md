@@ -164,6 +164,9 @@ problem is when software like InvokeAI or some else are using the diffusers form
   - The only way to run the hunyuan 3.0 model quickly is the cloud with server tier GPUs. If we wanted to promote our cloud we would have a day zero implementation but this is a bad huge inefficient model only good at generating the most generic AI slop so I just don't like it.
 - I agree that Hunyuan isn’t an impressive model for its size, but we are losing more and more local model providers. Many former local model providers (Stability. WAN) have shifted to API only. Local image models are barely scratching the top-20 in arenas. We’re lucky to get any local releases at all at this point, and publicly lambasting the only local image release in months does nothing to help the situation. All it does is push model providers further towards API only
 
+- https://x.com/Ramonnavarro/status/1980554380559487197
+  - They didn't get bought. adobe just hired their whole dev team and prevent them from doing open source contributions. That's what adobe does, hire poorly performing dev teams to work on their shit products
+
 - ## Can I transfer ComfyUI workflows to Invoke? _202503
 - https://discord.com/channels/1020123559063990373/1350456642759692378/1350461612808601652
   - You can not because ComfyUI workflow != invokeai workflow.

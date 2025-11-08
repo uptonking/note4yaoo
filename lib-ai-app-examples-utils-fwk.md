@@ -546,6 +546,7 @@ modified: 2025-02-21T18:20:42.624Z
 - https://github.com/globalaiplatform/langdiff /225Star/apache2/202509/python/ts
   - https://langdiff.readthedocs.io/en/latest/
   - https://globalaiplatform.github.io/langdiff/
+  - LangDiff is a Python library that solves the hard problems of streaming structured LLM outputs to frontends
   - LangDiff provides intelligent partial parsing with granular, type-safe events as JSON structures build token by token, plus automatic JSON Patch generation for efficient frontend synchronization.
   - Streaming Parsing
     - Define schemas for streaming structured outputs using Pydantic-style models.

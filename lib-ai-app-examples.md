@@ -319,6 +319,9 @@ modified: 2023-02-08T07:20:48.475Z
 
 - https://github.com/naklecha/llama3-from-scratch /MIT/202405/jupyter/inactive
   - llama3 implementation one matrix multiplication at a time
+
+- https://github.com/karpathy/minGPT /MIT/202207/python/inactive
+  - A minimal PyTorch re-implementation of the OpenAI GPT (Generative Pretrained Transformer) training
 # ollama/lmstudio-like
 - https://github.com/menloresearch/jan /37.5kStar/agpl > apache2/202508/ts/rust/tauri
   - https://jan.ai/

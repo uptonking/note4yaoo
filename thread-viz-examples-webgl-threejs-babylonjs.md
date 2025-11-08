@@ -7,6 +7,10 @@ modified: 2021-08-07T16:44:32.377Z
 
 # thread-viz-examples-webgl-threejs-babylonjs
 
+# guide
+
+- threejs vs babylonjs
+  - https://npm-compare.com/babylonjs,three/#timeRange=ALL
 # repos
 - https://github.com/brunosimon/my-room-in-3d
   - https://my-room-in-3d.vercel.app/

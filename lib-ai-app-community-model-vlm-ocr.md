@@ -9,6 +9,45 @@ modified: 2025-11-06T18:49:13.977Z
 
 # guide
 
+# models-vlm/ocr
+- qwen3-vl-4b
+  - 适合作为通用图片文字识别方案，识别完后一般还会解释一段，有时解释文字会冗长
+
+- nanonets-ocr2-3b
+  - 输出的内容markdown优先，内容及格式都很准确
+    - 表格中的代码也能正确输出为markdown inline code
+    - 外部链接能直接输出为markdown链接
+    - 同一区域的内容会输出为同一个段落，不会按原文本显示换行
+  - 识别图片中的代码块输出codeblock
+  - 识别mermaid流程图，输出流程图文本
+  - 能正确识别页眉页脚
+  - 能识别图文混排元素，输出内容时能提供方位，如插图旁边是...
+  - 能识别表格，但 表格行内容有时会错位而在中间插入空行
+
+- deepseek-ocr-3b
+  - 适合识别文档，对于普通图片文本的识别有时需要特别的prompt，实测 `extact text` 会导致模型乱回复, 而 `extact text in image` 可以准确回复图片中的文本
+  - 不能识别mermaid流程图
+  - 不能正确识别页眉页脚，默认忽略了
+  - 同一区域的内容有时不会输出为同一个段落，会按图片中的换行输出换行，适合用来还原pdf布局
+  - 识别图片中的代码块输出的内容不是codeblock而是普通文本
+  - 🌹
+    - 识别中文的正确率高
+    - 识别图片中的表格能准确输出文本，每行内容正确
+
+- granite-docling-258m
+  - 能输出带语意的自定义标签, 如 page_header, code, list_item, loc_99, text
+  - 默认markdown不友好，需要手动转换自定义标签
+  - 部分中文识别的错误率较高
+
+- PaddleOCR-VL
+
+- MinerU2.5
+
+- 
+- 
+- 
+- 
+
 # discuss-stars
 - ## 
 

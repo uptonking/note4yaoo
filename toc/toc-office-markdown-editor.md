@@ -194,12 +194,16 @@ modified: 2022-11-09T11:53:13.093Z
   - 依赖codemirror6、lezer、solidjs
   - ui部分代码少
 
-- https://github.com/mermaid-js/mermaid-live-editor /MIT/202403/ts/svelte
+- https://github.com/mermaid-js/mermaid-live-editor /5.8kStar/MIT/202510/ts/svelte
   - https://mermaid-js.github.io/mermaid-live-editor/
   - https://mermaid.live/
   - Edit, preview and share mermaid charts/diagrams. 
   - New implementation of the live editor.
   - 左侧代码，右侧流程图，整体类似markdown编辑器
+  - 依赖@mermaid-js/layout-elk、@mermaid-js/mermaid-zenuml、monaco-editor、@codemirror/lang-markdown、svg2roughjs、svg-pan-zoom
+  - Edit and preview flowcharts, sequence diagrams, gantt diagrams in real time.
+  - Save the result as a svg
+  - Get a link to a viewer of the diagram so that you can share it with others.
 
 - https://github.com/maqi1520/mdx-notes /GPL/202410/ts/web+pc/inactive
   - https://mdxnotes.com/
