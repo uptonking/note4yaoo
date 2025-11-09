@@ -398,7 +398,7 @@ modified: 2020-10-22T10:22:55.878Z
   - It works well with libraries like D3.js, svg.js, and Cytoscape.js. 
   - Note: While D3 adaptor supports both D3 v3 and D3 v4, WebCoLa's interface is styled like D3 v3.
 
-- https://github.com/jacomyal/sigma.js /ts
+- https://github.com/jacomyal/sigma.js /ts/WebGL
   - https://www.sigmajs.org/
   - JavaScript library aimed at visualizing graphs of thousands of nodes and edges
   - Since version v2,  `sigma.js` focuses on the management of graph display: rendering, interaction... 

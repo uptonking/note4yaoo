@@ -79,6 +79,9 @@ modified: 2025-09-23T09:28:08.532Z
   - User management and audit logs help you understand user identity-related information and keep your security on track.
   - https://github.com/logto-io/js
     - The monorepo for SDKs and working samples written in JavaScript (Well, mostly in TypeScript).
+  - [feature request: Unified App Page for Logged-in Users _202406](https://github.com/logto-io/logto/issues/5721)
+    - It would be incredibly beneficial to introduce a unified app page for logged-in users. This page would function similarly to Authentik, providing users with a comprehensive view of all the applications they're currently associated with in one centralized location.
+    - 🐛 close as not planned
 
 - https://github.com/panva/node-oidc-provider /3.5kStar/MIT/202509/js
   - OpenID Certified™ OAuth 2.0 Authorization Server implementation for Node.js

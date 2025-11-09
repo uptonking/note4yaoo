@@ -290,7 +290,7 @@ modified: 2025-08-11T08:47:56.335Z
   - An AI agent demo that can execute JavaScript code using LangGraph.js
   - [Building your first AI Agent with LangGraph _202504](https://www.notjust.dev/blog/langgraph-ai-agent-genezio)
 
-- https://github.com/iinm/coding-agent-langgraph /202503/ts
+- https://github.com/iinm/coding-agent-langgraph /202503/ts/inactive
   - An example implementation of a CLI coding agent built with LangGraph.js.
   - Tools: exec_command, write_file, patch_file, tmux, tavily_search
 

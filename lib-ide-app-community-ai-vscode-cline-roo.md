@@ -721,7 +721,9 @@ modified: 2025-10-28T20:02:16.727Z
 
 - ## 
 
-- ## 
+- ## [why nobody ads codex in vibe code platforms ? : r/codex _202511](https://www.reddit.com/r/codex/comments/1os38ox/why_nobody_ads_codex_in_vibe_code_platforms/)
+- Because Codex is more of an engineers tool. It’s slow, but with proper instruction, does well.
+  - Vibe coders don’t know what to tell the AI, they depend on the AI figuring it out for them. And because codex is so slow, it just wouldn’t be very useful for the vast majority of them.
 
 - ## 🐛 [Does Codex do sub agents? : r/codex _202510](https://www.reddit.com/r/codex/comments/1ohto4f/does_codex_do_sub_agents/)
 - Codex only works problems sequentially.

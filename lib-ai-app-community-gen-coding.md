@@ -17,6 +17,10 @@ modified: 2025-09-01T07:58:29.058Z
     - 甚至针对场景的微调模型，如ios/android, mobile-responsive
   - 🏠 continue.dev相对于cline/aider更擅长inline-autocomplete, 但架构设计可以参考rag/embedding/rerank
 
+- prompts-coding
+  - https://github.com/tallesborges/agentic-system-prompts
+    - A curated collection of system prompts and tool definitions from production AI coding agents
+
 - leaderboard-pm
   - [LLM Rankings | OpenRouter](https://openrouter.ai/rankings?view=month)
 # discuss-stars

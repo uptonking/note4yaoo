@@ -9,6 +9,8 @@ modified: 2023-02-07T10:48:41.342Z
 
 # guide
 
+- [快速查看您的连接位址在cloudflare的印象 - 教程 - IDC Flare](https://idcflare.com/t/topic/39100)
+  - [Test Page · Cloudflare Tools](https://cloudflare.manfredi.io/test/)
 # discuss-stars
 - ## 
 

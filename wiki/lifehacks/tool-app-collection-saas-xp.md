@@ -564,6 +564,8 @@ sudo systemctl start minidlna
     - [宝可梦机场 关于免费线路升级通知 ](https://linux.do/t/topic/1063626)
     - L站每月发放兑换码
     - 美区经常不可用
+  - [风萧萧公益机场](https://gucci.weyolo.com/#/dashboard)
+    - 需要 lv2 + 不定时优惠券
   - 🌹 [马铃薯](https://mlshu.com/)
     - 免费流量：50G（每月重置）， 可无限续杯
     - 线路仅3条，地区不详
@@ -617,6 +619,7 @@ sudo systemctl start minidlna
     - 蒲公英机场为本人个人出资购买机器，提供节点服务，里面无任何团队协同，也没有任何的商业版块内容，也没有对接任何一种支付方式
     - 机场里面的所有套餐，均只能通过，发放优惠券的形式进行全额抵扣 (因为这样才能防止被滥用)
   - [2024 免费机场 + 跑路](https://topstip.com/2024-free-proxy/)
+  - [一个朋友 | 免费机场推荐](https://ygpy.net/)
   - https://github.com/hwanz/SSR-V2ray-Trojan-vpn
     - 免费机场公益机场收集/免费vpn-定时更新
   - https://github.com/DiningFactory/panda-vpn-pro

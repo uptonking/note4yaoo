@@ -469,6 +469,12 @@ modified: 2025-03-22T18:49:15.634Z
 - https://github.com/PKU-YuanGroup/ChatLaw
   - https://chatlaw.cloud/lawchat/
   - 中文法律大模型
+# vscode-chat
+- https://github.com/rusiaaman/chat.md /MIT/202509/ts
+  - chat.md is a Visual Studio Code extension that reimagines AI interaction through plain text files. 
+  - chat.md embraces a file-first approach where your conversations with AI are just markdown files with a `.chat.md` extension. Edit them, version control them, share them - they're your files. The AI directly writes its response in the file.
+  - chat.md treats conversations as first-class files in your workspace
+  - Custom APIs: Any OpenAI-compatible endpoint (Azure, Google Gemini, etc.)
 # more-chat
 - https://github.com/microsoft/TypeChat /MIT/202405/python/ts
   - https://microsoft.github.io/TypeChat/

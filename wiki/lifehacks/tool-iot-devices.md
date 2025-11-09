@@ -1595,6 +1595,23 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
+- ## 
+
+- ## [Does AMD AI Max 395+ have 8 channel memory like image says it does? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1os6t6w/does_amd_ai_max_395_have_8_channel_memory_like/)
+- 4 channels * 64-bit interface * 8000 MT/s = 256 GB/s.
+  - It’s LPDDR5x not DDR5 so it’s technically 8 channels at 32 bit, but the effective bit width and bandwidth is the same.
+
+- Probably a typo, but technically DDR5 has 2 32 bit channels per module x four dimm channels would make 8 *32-bit* channels, but it would be disingenuous to advertise it that way.
+
+- My understanding is Halo Strix has quad channel DDR5.
+
+- ## [AMD R9700: yea or nay? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1os2756/amd_r9700_yea_or_nay/)
+- It's slower than a 3090 and doesn't offer fp4. 3090 can emulate fp8 and it's almost twice as fast. Also less of a headache...
+- 3090 doesn't offer FP4 nor FP8, needs emulator and the perf tanks doing so. INT4, FP16, BF16, INT8, INT4.
+  - Only Blackwell supports FP4, FP32, FP16, BF16, INT8, INT4, FP8.
+- On R9700 FP8 and BF8 are fully supported, with improved perf.
+  - FYI, FSR4 is FP8.
+
 - ## [AMD Officially Prices Radeon AI PRO R9700 At $1299 - 32GB VRAM - Launch Date Oct 27 : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1oeg2g6/amd_officially_prices_radeon_ai_pro_r9700_at_1299/)
 - 640GB/s
   - yes, for the same price, i can get 2x3090 for 900 gb/s and 48gb vram and cuda compatibility
@@ -1660,6 +1677,12 @@ modified: 2022-01-16T15:52:31.293Z
 - I've got a RTX 5070 Ti (PCIe 5.0x16, CPU) and a RX 5500 XT (PCIe 4.0x4, CPU) in my AM5 PC. Is there a way to use both GPUs and the CPU to run the same gguf model?
   - You can compile multiple backends into Llamacpp and use them all at once.
   - Yup, the easiest way is to use Vulkan. Any llama.cpp-based software can do this (ie Lmstudio). Ollama not yet - experimental.
+
+- [Is it possible to run my 9070 XT with my old RTX 3070? : r/losslessscaling _202511](https://www.reddit.com/r/losslessscaling/comments/1osolqu/is_it_possible_to_run_my_9070_xt_with_my_old_rtx/)
+  - You can, but the top card will roast. And you’ll lose the AMD specific 9070XT features.
+  - when mixing Nvidia and AMD GPUs, since the monitor is always connected to the 2nd GPU(3070 in your case), on desktop you will only be able to use Nvidia App for stuff like color profiles, but in game it will be using FSR4 upscaling.
+  - Personally I have used all combinations, AMD 1st GPU and Nvidia 2nd GPU, vise versa, and now im using 5070ti + 3060ti. I gotta say there is no real difference, all the small features like anti lag, RSR, make negligible differences.
+  - Right now my setup is 3440x1440 HDR 165hz with 5070ti and 3060ti(PCIE4.0 x4). I can comfortably boost from 50-80fps to 160fps with 3060ti usage no more than 75%.
 
 - ## 💡🧩 [AMD and Nvidia GPUs in the same machine. IT WORKS. : r/linuxhardware _202006](https://www.reddit.com/r/linuxhardware/comments/he9nhe/amd_and_nvidia_gpus_in_the_same_machine_it_works/)
   - TLDR: Nvidia Card in slot 2 with proprietary driver (v. 440xx) + AMD card in slot 1 open source driver (mesa v20.1), no configuration needed, just prime-run what you need to run with Nvidia card as the back-end renderer. Enjoy the smooth desktop and Nvidia/proprietary bond applications

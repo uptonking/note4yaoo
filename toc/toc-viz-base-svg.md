@@ -77,6 +77,11 @@ modified: 2020-10-05T06:18:21.639Z
   - Real-time preview — See your composition as you build it.
   - Client-side processing — Fast, secure, and private—everything runs in your browser.
   - No more broken links — The app embeds raw SVG content into a single file so external resources can’t break your layout.
+# ai-svg 👾
+- https://github.com/CompendiumLabs/gum /MIT/202509/js/inactive
+  - Iterative graphic design with AI. Based on gum.js, a grammar for SVG creation.
+  - Gum provides a visual language for creating figures and diagrams. This gives LLMs the ability to rapdily express themselves visually in a way that can be integrated with their text output.
+  - The key here relative to diffusion models is the ability to rapidly generate pricise visualizations that can be animated or modified on the fly. 
 # more-repos
 - https://github.com/ngti/svg-grabber /MIT/201803/js/inactive
   - Open source chrome extension to quickly preview, download or copy inline or embedded SVG images from a website

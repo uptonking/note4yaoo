@@ -67,7 +67,16 @@ modified: 2025-11-06T18:49:13.977Z
 
 - ## 
 
-- ## 
+- ## 💡 [Qwen3-VL works really good with Zoom-in Tool : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1osiog7/qwen3vl_works_really_good_with_zoomin_tool/)
+  - While Qwen3-VL-30B-A3B(Q6_ud) performs better than previous open-source models in general image recognition, it still has issues with hallucinations and inaccurate recognition.
+  - On my own frontend implementation with zoom_in, Qwen3-VL can zoom in on the image, significantly improving the accuracy of content recognition. 
+  - For those who haven't tried it, qwen team has released a reference implementation: https://github.com/QwenLM/Qwen-Agent/blob/main/examples/cookbook_think_with_images.ipynb
+
+- This is what o3 did with it's visual reasoning agent, I think it should be incorporated with every VLM system it's that good - outperforms pretty much every other model in complex problems (even ones better at full-size native image comprehension like Gemini and Opus).
+  - I agree that every VLM should have such tools. The official Qwen website provides these tools for Qwen-Max, but not for the 30B model. I suspect that the smaller Qwen models may suffer from repetition issues, which could cause tool usage to fail at high probabilities. (30B-A3B tends to repeat when calling multiple tools in my daily usage.)
+
+- tools are allowed to return images???
+  - MCP protocol does not work well with images. Qwen-Agent saves picture to local disks and tools receive their filenames then go to read the file.
 
 - ## [MinerU 到底是模型还是工程产品 - V2EX](https://v2ex.com/t/1170882#reply10)
 - MinerU 分为两个 backend

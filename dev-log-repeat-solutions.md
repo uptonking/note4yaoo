@@ -53,6 +53,8 @@ modified: 2021-07-20T13:50:23.433Z
     - 网盘: 数据展示和回收站，经典使用场景，大多数cms都有且用来存储资源
 
 - lts-tech-stack 可协作/同步(离线)、版本历史、自动化
+  - techstacks: editor, excel, workflow/ai, drive, whiteboard
+  - products: knowledgebase + workflow, 卖工具(铲子)比卖产品更长久
   - 🌰 lts: vscode/ide/~~office~~, git/vcs(history/sync), LSP/MCP(backlink)/auto
     - 20230630: editor/slate  + table   + collab
     - 20250129: editor/vscode + triplit + sync(powersync/zerosync)
@@ -66,9 +68,9 @@ modified: 2021-07-20T13:50:23.433Z
   - office: suite-docs, outline, handsontable, xlsx, revealjs-ts+PPTist, pdf-lib
   - plugin/extension: sandbox, e2b
   - rspack: js plugin; rspack/rolldown-wasm
+  - ai: 擅长text-gen
   - 考虑维护/fork旧版项目: codemirror5-lang/demo, atlaskit-editor-eg, mxgraph-demo
-  - 考虑把port主流项目: codemirror-go/rust
-  - techstacks: editor, excel, workflow, drive, whiteboard
+  - 考虑port主流项目: codemirror-go/rust
   - ~~animation: motion(dom/svg)~~
 
 - 技术细节(editor): virtualized, draggable, table(eav)

@@ -353,6 +353,8 @@ modified: 2024-08-24T16:30:20.218Z
     - [I got tired of GPT-5 being limited by codex, so I forked it : r/OpenAI _202508](https://www.reddit.com/r/OpenAI/comments/1mtqww5/i_got_tired_of_gpt5_being_limited_by_codex_so_i/)
   - https://github.com/a5c-incubator/codex /202508/rust/inactive
     - Add a5c agent workflow template
+  - https://github.com/epuerta9/codex-go /apache2/202504/go/inactive
+    - codex port in Go
 - https://github.com/codexia-team/codexia /MIT/202511/ts/tauri
   - A powerful GUI and Toolkit for Codex CLI
   - fork chat, file-tree integration, notepad, git diff, build-in pdf csv/xlsx viewer, and more.

@@ -12,12 +12,25 @@ modified: 2025-10-10T02:45:45.941Z
   - llm-edit-pattern: editing-prompts > changes > applying-changes
   - 可直接参考主流编辑器已实现的方案，如codemirror/monaco
 
-- openai v4a diff format ⚖️
-  - supported: gpt4.1+, claude 3.7+, gemini-2.5-pro, deepseek-v3.1, kimi-k2, minimax-m2
-  - local-ok: qwen3-14b-no_think
-  - no-support: qwen3-coder-480b, qwen3-235b-a22b-thinking/instruct, glm-4.6, longcat-flash
+- ⚖️ aider-diff-search/replace format prompt
+  - https://github.com/asadm/vibemode/blob/main/source/editor.js
+  - https://github.com/sorendunn/Agentless-Lite/blob/main/agentless_lite/repair.py
+  - https://github.com/profullstack/ai/blob/master/lib/enhanced-agent.js
+  - https://github.com/wheeyls/remote-pair-programmer/blob/main/src/prompts/codeModification.txt
+  - https://github.com/ggml-org/llama.vscode/blob/master/src/prompts.ts
+  - https://github.com/XAI-liacs/LLaMEA/blob/main/llamea/llamea.py
 
-- aider-diff-search/replace
+- ⚖️ openai v4a diff format 多尝试几种测试用例来判断成功率; 不如aider-diff流行
+  - supported: gpt-4.1-mini, claude 3.7+, gemini-2.5-pro, deepseek-v3.1, kimi-k2, minimax-m2
+  - local-ok: qwen3-14b-no_think
+  - no-support: qwen3-coder-480b, qwen3-235b-a22b-thinking/instruct, glm-4.6(有时会成功), longcat-flash
+  - https://github.com/openai/codex/blob/main/codex-rs/core/prompt.md
+    - https://github.com/openai/codex/blob/main/codex-rs/apply-patch/src/parser.rs
+  - https://github.com/microsoft/vscode-copilot-chat/blob/main/src/extension/tools/node/applyPatchTool.tsx
+  - https://github.com/sst/opencode/blob/dev/packages/opencode/src/patch/index.ts
+  - https://github.com/buchuleaf/fry-cli/blob/master/src/tools.tsx
+  - https://github.com/khpbvo/SingleAgent/blob/main/scripts/apply_patch_prompt.py
+  - https://github.com/computabeast/qernel/blob/main/src/exe/core/src/tool_apply_patch.rs
 
 - 考虑编辑的场景
   - shorter/longer/improve/check/translate 都可实现为对明确输入范围内容的 一次性替换
@@ -70,6 +83,15 @@ modified: 2025-10-10T02:45:45.941Z
   - Partial Editing: Make context-aware edits to code using LLM
   - DeePaste 应用补丁的方式与 OpenAI 的 GPT-4.1 提示指南中讨论的技术类似。该指南提到，在代码修改任务中，同时提供需要替换的确切代码和带有明确分隔符的替换代码可以产生高成功率。像伪差异这样不依赖行号的格式对于 LLM 驱动的代码编辑特别有效。
   - [GPT-4.1 Prompting Guide Appendix: Generating and Applying File Diffs](https://cookbook.openai.com/examples/gpt4-1_prompting_guide#appendix-generating-and-applying-file-diffs)
+
+- https://github.com/Rolilink/unshallow/tree/main/src/core/patch-diff /202507/ts
+  - Unshallow is being rebuilt as a CLI tool for migrating Enzyme tests to React Testing Library
+  - The patch-diff system provides a robust, context-based approach to applying code changes using the V4A (Version 4A) diff format
+  - The system automatically handles Unicode variants
+  - Context matching uses a 3-pass algorithm
+
+- https://github.com/talesofai/python_replace_string /MIT/202508/python/inactive
+  - 从kilo的ts代码中获取replace_string功能，由kilo编辑器迁移到python实现
 
 - https://github.com/tokenring-ai/apply-patch /apache2/202510/ts
   - a TypeScript implementation of the OpenAI Codex file-oriented diff format for safe code editing. 
@@ -183,6 +205,16 @@ modified: 2025-10-10T02:45:45.941Z
   - AI-Powered Path Detection: Uses LLM to determine file paths from markdown code blocks
   - Preserves code context and formatting
 
+- https://github.com/PyneSys/patch-file-mcp /MIT/202504/python/inactive
+  - An MCP Server to patch existing files using block format. This allows AI agents (like Claude) to make precise changes to files in your projects.
+  - You can include multiple search-replace blocks in a single request
+  - 依赖fastmcp实现
+  - `patch_file(file_path: str, patch_content: str)`
+
+- https://github.com/ucsb-mlsec/PatchPilot /MIT/202506/python/inactive
+  - A Stable and Cost-Efficient Agentic Patching Framework
+  - PatchPilot is an innovative rule-based planning patching tool that strikes the excellent balance between patching efficacy, stability, and cost-efficiency.
+
 ## diff-vscode
 
 - https://github.com/dsj7419/patch-pilot /MIT/202505/ts/inactive
@@ -192,6 +224,29 @@ modified: 2025-10-10T02:45:45.941Z
     - Offline-first: No data ever leaves your machine.
 
 ## diff-toolchain
+
+- https://github.com/chen893/agent-x /202507/ts/inactive
+  - 基于 T3 Stack 构建的智能 AI 代码生成平台，集成多个大语言模型，提供从需求分析到代码实现的全流程自动化开发体验。
+  - tRPC, Prisma, NextAuth.js
+
+- https://github.com/asadm/vibemode /apache2/202505/js/inactive
+  - Pack your entire repository (or selected files) into an AI-friendly format and also apply AI suggested changes back with ease, all from your terminal.
+  - vibemode is a CLI-based code companion to help when you are coding 
+  - Take the diff-like output provided by an AI (in any format it gives it back to you) and apply those changes directly back to your local files using the Gemini API.
+  - I usually resort to using the model directly using the official UI they provide by copying relevant (or all) my code into the chat UI. The model then suggests changes in chat. I then want to apply the suggested changes back to my repo. vibemode is the missing glue for this workflow!
+
+- https://github.com/sorendunn/Agentless-Lite /MIT/202504/python/inactive
+  - RAG-based SWE-Bench software engineering scaffold
+  - lightweight adaptation of the Agentless framework for solving software development issues
+  - https://github.com/OpenAutoCoder/Agentless /MIT/202412/inactive
+    - Agentless is an agentless approach to automatically solve software development problems. 
+    - To solve each issue, Agentless follows a simple three phase process: localization, repair, and patch validation.
+  - https://github.com/Dylan-Harden3/Agentless
+    - Refactor model to use gemini api
+  - https://github.com/huyuelin/agentless_MCTS
+    - 将MCTS蒙特卡洛树决策算法和agentless结合，添加了定位文件名、定位函数、定位行数、修复四个action，以及在每一步action后会有一步self evaluation给这一步评分。每一步都需要gpt-4o的api。
+  - https://github.com/OmmyPatalonian/proggtagentless
+    - Add ground truth testing functionality as a replacement for synthetic tests
 
 - https://github.com/yoshiko-pg/difit /1.5kStar/MIT/202511/ts
   - difit is a CLI tool that lets you view and review local git diffs with a GitHub-style viewer

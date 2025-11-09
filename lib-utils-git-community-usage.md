@@ -149,6 +149,27 @@ git log --online --graph --decorate
 - https://x.com/msimoni/status/1884333920080257053
   - In contrast to plain HTTP, Git also solves incremental updates efficiently, so everyone can locally store a complete copy of the sites they follow.
 
+# disccuss-git-submodule/monorepo
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🧩 [Git Monorepo vs Multi-repo vs Submodules vs subtrees : Explained : r/git _202511](https://www.reddit.com/r/git/comments/1orcznk/git_monorepo_vs_multirepo_vs_submodules_vs/)
+  - [Monorepo vs Multi-repo vs Git submodule vs Git Subtree: A Complete Guide for Developers ](https://levelup.gitconnected.com/monorepo-vs-multi-repo-vs-git-submodule-vs-git-subtree-a-complete-guide-for-developers-961535aa6d4c?gi=4131dafc18a3&sk=f78b740c4afbf7e0584eac0c2bc2ed2a)
+
+- What's more important than monorepo vs multirepo is how the code is architected.
+  - If the dependencies between projects are a mess such that a minor change will trigger a rebuild of hundreds of projects, then both options are going to be a nightmare.
+  - Monorepos put more pressure on infrastructure developers. Multirepos put more pressure on product developers.
+- The main rule of thumb that has worked for me is, if everything has the same release cycle, such that a git tag versions all products as a whole, then yes, a monorepo makes sense. 
+  - If you start having a need to have different sets of tags, then that's probably a hint that you should have separate repositories.
+  - It's always easier to merge things together than to split them apart.
+- 100% agree. I just built a hybrid with submodules. Each repo is individually compilable. But when you setup the right directory structure, it becomes a mono repo.
+
+- I am going to explore subtrees. In certain CI tooling, submodules are simply not downloaded / recognized. This is even after initializing the submodules. The simple git clone from subtrees would fix these issues.
+
+- Submodules are a GD nightmare. If you are using Python. It makes imports for anything a frick'n nightmare. For Go it is a hard no to. It is an antipattern - use separate repos packages. And the same for AWS CDK and probably Terraform.
 # disccuss-lfs/large-file
 - ## 
 
