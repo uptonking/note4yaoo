@@ -489,6 +489,13 @@ modified: 2020-10-22T10:22:55.878Z
   - agentic applications require making multiple asynchronous API calls (e.g., OpenAI's chat-completion API, database queries, web searches) and managing data dependencies among them
   - GraphAI allows developers to describe dependencies among those agents (asynchronous API calls) in a data flow graph in YAML or JSON, which is called declarative data flow programming
 # task-scheduler
+- https://github.com/openworkflowdev/openworkflow /apache2/202511/ts
+  - https://openworkflow.dev/
+  - a TypeScript framework for building durable, resumable workflows that can pause for seconds or months, survive crashes and deploys
+  - Workflows are durable functions. They can contain multiple steps, make external API calls, query databases, and perform complex logic
+  - Steps are the building blocks of workflows. Each step is executed exactly once and its result is memoized. 
+  - Workers are long-running processes that poll your database for pending workflows and execute them. You can run multiple workers for high availability and scale.
+
 - https://github.com/hatchet-dev/hatchet /6.1kStar/MIT/202510/go
   - https://hatchet.run/
   - Hatchet is a platform for running background tasks, built on top of Postgres. 

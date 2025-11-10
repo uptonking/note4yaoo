@@ -198,6 +198,35 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
+- ## 🆚 [Benchmark Results: GLM-4.5-Air (Q4) at Full Context on Strix Halo vs. Dual RTX 3090 : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1osuat7/benchmark_results_glm45air_q4_at_full_context_on/)
+  - I benchmarked the GLM-4.5-Air (Q4) model running at a near-maximum context on two very different systems: a Strix Halo APU and a dual RTX 3090 server. Both tests were conducted under Debian GNU/Linux with the latest llama.cpp 
+- Why is the prompt processing for RTX is so low? It should be hundreds if not thousands. The model is too big and you have to spill some part to regular system RAM? These prompt processing figures make it unusable in such setup then
+  - This is essentially a pp119702 test. I'm sure their numbers are MUCH higher at 0 context.
+
+- Numbers from my system: RTX 5090 + pcie5 x16 + DDR5-6000 and 46 MoE layers offloaded to the CPU:
+  - PP 31.2x faster than your Strix Halo machine
+  - PP 10.7x faster than your Dual 3090 machine (you are prob limited by slow pcie)
+  - TG 2.1x faster than your Strix Halo machine
+  - TG 1.7x faster than your Dual 3090 machine
+
+- vllm will be much faster for dual GPUs.
+
+- ## [I tested Strix Halo clustering w/ ~50Gig IB to see if networking is really the bottleneck : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1ot3lxv/i_tested_strix_halo_clustering_w_50gig_ib_to_see/)
+  - TLDR: While InfiniBand is cool, 10 Gbps Thunderbolt is sufficient for llama.cpp.
+  - During inference, I observed that the network was never used at more than maybe ~100 Mbps or 10 MB/s most of the time, suggesting the gain might not come from bandwidth—maybe latency? But I don't have a way to prove what exactly is affecting the performance gain from 2.5 Gbps to 10 Gbps IP over Thunderbolt.
+
+- Llama cpp doesn’t use tensor parallel so everything is done sequentially. This test was meaningless. You need to test it with TP on VLLM or Sglang
+  - As I state in the post, there is no RCCL support. Without RCCL support, frameworks like vLLM and PyTorch can't perform collective operations (all-reduce, all-gather, etc.) across multiple nodes. This is the fundamental blocker for tensor-parallel inference on Strix Halo—you literally can't split a model across nodes without these primitives. It's always the software support that's lacking on the AMD side
+- It's meaningless because:
+  - Pipeline parallelism only help you run models that you can't fit in a single node. It can't be faster than the single slowest node. So there is no sense testing it for performance, unless you want to test for performance bugs in implementation.
+  - Using pipeline parallelism, the network transfer between nodes are minimal. Each token only has 2880 elements of embedding. Even you use 100Mbps network it's only like 1ms time for a token. So what are you trying to test?
+
+- I believe you can use GLOO instead if NCCL is not available (I assume RCCL is the rocm version).
+
+- It is not meaningless at all. It's quite meaningful since network speed is a topic that often comes up. You don't have just be doing TP for it to be of interest.
+
+- As expected. I don't find the difference to be substantial between 2.5 to 10 to 50. Sure, it gets a little faster but not nearly as much as the increase in network speed would suggest. Not enough for me to pay several times more for a 10GBE network versus 2.5GBE.
+
 - ## [Mac vs. Nvidia Part 2 : r/LocalLLM _202511](https://www.reddit.com/r/LocalLLM/comments/1opo89e/mac_vs_nvidia_part_2/)
   - I recently purchased a Mac Studio M4 Max w/ 64GB (128 was out of my budget). I also was able to get my hands on a laptop at work with a 24GB Nvidia GPU (I think it’s a 5090?).
   - I was shocked how less capable the Nvidia GPU is! I loaded gpt-oss-20B with 4096 token context window and was only getting 13tok/sec max. Loaded the same model on my Mac and it’s 110tok/sec. I’m running LM Studio on both machines with the same model parameters. 
@@ -2654,7 +2683,7 @@ modified: 2022-01-16T15:52:31.293Z
   - [MacRumors Buyer's Guide: Know When to Buy iPhone, Mac, iPad](https://buyersguide.macrumors.com/)
 - ## 
 
-- ## 
+- ## [M4 Max vs M3 Ultra for Adobe Premiere, After Effects, Resolve, Photoshop, Capture One : r/MacStudio _202511](https://www.reddit.com/r/MacStudio/comments/1ot6kkt/m4_max_vs_m3_ultra_for_adobe_premiere_after/)
 
 - ## 🆚 [Apple MacBook Pro Geekbench performance compared (M1 to M5) : r/mac _202510](https://www.reddit.com/r/mac/comments/1o916qg/apple_macbook_pro_geekbench_performance_compared/)
 - Apple has strong GPU and Neural Engine capabilities. What they don’t have is the software stack. 
@@ -2957,7 +2986,12 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## [What Mini PC is best for gaming? : r/MiniPCs _202511](https://www.reddit.com/r/MiniPCs/comments/1os3dc7/what_mini_pc_is_best_for_gaming/)
+- The 780m will NOT do most games med-high settings 1080p 50-60fps, it will run older games fine and emulators fine but mid high in 2020 and newer games come on
+
+- I just received my GMKtec Evo-X1 which I paid 800 before tax. Haven’t done extensive testing yet but it’s performing much better than my Z1E Ally.
+
+- Budget wise you'll be far better off getting a used desktop rig. Older gen desktop GPUs will beat the pants off integrated GPU for less money You could try a mini with an egpu
 
 - ## [如何评价intel放弃NUC产品线？ - 知乎 _202307](https://www.zhihu.com/question/611600066)
 - 虽然NUC是Next Unit of Computing的简称，可以理解为“下一代准系统”。

@@ -351,6 +351,12 @@ modified: 2025-08-23T11:43:35.904Z
     - Pocket Comfy wraps the best comfy mobile apps out there and runs them in one python console
     - Pocket Comfy unifies the best web apps currently available for mobile first content creation including: ComfyUI, ComfyUI Mini (Created by ImDarkTom), and smart-comfyui-gallery (Created by biagiomaf) into one web app that runs from a single Python window. 
     - Launch, monitor, and manage everything from one place at home or on the go.
+
+- https://github.com/jikkuatwork/FaceLooker /MIT/202511/js
+  - A modern ES6 modular implementation of interactive face tracking that follows cursor movement or autonomous animation patterns.
+  - [Built an open source viewer for face looker project! : r/comfyui](https://www.reddit.com/r/comfyui/comments/1osskyi/built_an_open_source_viewer_for_face_looker/)
+  - whats your process to regenerate face ? it is super fast
+    - I have provided the way to do it the about; its using a model hosted in Replicate; it can be done for free.
 # ai-image-generator
 - tips
   - midjourney alternative

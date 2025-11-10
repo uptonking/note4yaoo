@@ -293,6 +293,8 @@ modified: 2025-08-11T08:47:56.335Z
 - https://github.com/iinm/coding-agent-langgraph /202503/ts/inactive
   - An example implementation of a CLI coding agent built with LangGraph.js.
   - Tools: exec_command, write_file, patch_file, tmux, tavily_search
+  - https://github.com/iinm/dotfiles/tree/main/agent
+    - A more lightweight version without LangGraph
 
 - https://github.com/zedems01/AutoX-app /202507/python/ts/提交多
   - https://achillenguessie.vercel.app/

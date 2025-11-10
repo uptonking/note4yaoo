@@ -396,10 +396,11 @@ modified: 2021-05-14T15:04:42.225Z
 - https://github.com/mobz/elasticsearch-head
   - A web front end for an elasticsearch cluster
 # nodejs
-- https://github.com/OptimalBits/node_acl /201805/js/inactive
-  - This module provides a minimalistic ACL implementation inspired by Zend_ACL.
-  - When you develop a web site or application you will soon notice that sessions are not enough to protect all the available resources. Avoiding that malicious users access other users content proves a much more complicated task than anticipated. ACL can solve this problem in a flexible and elegant way.
-  - Create roles and assign roles to users.
+- https://github.com/vercel/ncc /MIT/202509/js/inactive
+  - Simple CLI for compiling a Node.js module into a single file, together with all its dependencies, gcc-style.
+  - Compile a Node.js project into a single file. Supports TypeScript, binary addons, dynamic requires.
+  - Only supports Node.js programs as input / output
+  - Support all Node.js patterns and npm modules
 
 - https://gitee.com/weolar_admin/mininodejs20 /GPL/202312/cpp
   - 基于quickjs、nodejs14实现的山寨版nodejs

@@ -308,6 +308,12 @@ modified: 2023-02-08T07:20:48.475Z
     - Xllamacpp: New llama.cpp Python binding, maintained by Xinference team, supports continuous batching and is more production-ready
     - Support MLX backend for Apple Silicon chips
 
+- https://github.com/airnsk/proxycache /202511/python
+  - Smart OpenAI‑compatible proxy for llama.cpp: manages slots, saves/restores KV cache to disk, routes requests by prefix similarity
+  - [Faster Prompt Processing in llama.cpp: Smart Proxy + Slots + Restore : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1ostdcn/faster_prompt_processing_in_llamacpp_smart_proxy/)
+    - This service is a smart proxy in front of llama.cpp that makes long‑context chat and IDE workflows much faster by managing llama.cpp slots, reusing cached context, and restoring saved caches from disk when needed.
+    - llama.cpp provides “slots,” each holding a conversation’s KV cache so repeated requests with the same or very similar prefix can skip recomputing the whole prompt and continue from the first mismatching token, which dramatically cuts latency for large prompts. In real teams the number of users can easily exceed the number of available slots (e.g., 20 developers but only 4 slots), so naive routing causes random slot reuse and cache overwrites that waste time and GPU/CPU cycles. This proxy solves that by steering requests to the right slot, saving evicted caches to disk, and restoring them on demand, so long prompts don’t need to be recomputed from scratch each time.
+
 ## llama-rewrite
 
 - https://github.com/projektjoe/gpt-oss /MIT/202511/python/cpp

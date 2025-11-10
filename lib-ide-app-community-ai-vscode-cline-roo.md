@@ -397,7 +397,9 @@ modified: 2025-10-28T20:02:16.727Z
 
 - ## 
 
-- ## 
+- ## [Feature Suggestion: Enhancing Extensibility with a Modular Framework : r/RooCode _202511](https://www.reddit.com/r/RooCode/comments/1ot7qwp/feature_suggestion_enhancing_extensibility_with_a/)
+  - Observing the ecosystem, agents like Claude Code are leveraging skills, sub-agents, and plugins, while tools like cline have implemented hooks. These mechanisms are proving to be crucial for extending the core functionality of coding agents.
+  - I would like to suggest that roo code consider adopting a similar modular approach to enhance its extensibility.
 
 - ## [[ENHANCEMENT] Text size setting for Roo UI (Small/Medium/Large, no VS Code zoom) _202509](https://github.com/RooCodeInc/Roo-Code/issues/8100)
 

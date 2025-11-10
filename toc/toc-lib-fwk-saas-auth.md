@@ -464,4 +464,9 @@ modified: 2025-09-23T09:28:08.532Z
   - The simplest way to add authentication to your React app.
   - You'll need an account with Auth0 or Netlify Identity and the appropriate access keys.
   - We use XState behind the scenes to manage authentication state for you.
+# RBAC
+- https://github.com/OptimalBits/node_acl /201805/js/inactive
+  - This module provides a minimalistic ACL implementation inspired by Zend_ACL.
+  - When you develop a web site or application you will soon notice that sessions are not enough to protect all the available resources. Avoiding that malicious users access other users content proves a much more complicated task than anticipated. ACL can solve this problem in a flexible and elegant way.
+  - Create roles and assign roles to users.
 # more

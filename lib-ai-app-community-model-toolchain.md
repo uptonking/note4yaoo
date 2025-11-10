@@ -140,6 +140,10 @@ modified: 2025-09-16T12:36:12.968Z
   - Also, unsloth made large MoE models usable on non-server machines with their dynamic Q2_XXS quants.
 - The biggest difference I would say isn't the quants, but rather our bug fixes for every model
 # discuss-model-speed ⚡️
+- resources
+  - [LocalScore - Local AI Benchmark](https://www.localscore.ai/)
+    - LocalScore is an open benchmark which helps you understand how well your computer can handle local AI tasks.
+
 - ## 
 
 - ## 
@@ -865,7 +869,14 @@ sudo launchctl load /Library/LaunchDaemons/io.yaoo.sysctl.plist
 
 - ## 
 
-- ## 
+- ## [Question about "./llama-server" prompt caching : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1lujz2h/question_about_llamaserver_prompt_caching/)
+  - Does `./llama-server` support prompt caching (like `--prompt-cache` in the CLI), and if not, what’s the correct way to persist or reuse context between chat turns to avoid recomputing the full prompt each time in API-based usage (e.g., with Open WebUI)?
+- Yes, it's enabled by default but only for one chat: If you have stuff in Open WebUI that makes use of the same model (title and tag generation, autocomplete, etc.) then it will be sending different requests which invalidates the main chat.
+
+- Yes, llama-server supports it, no parameter needed. It's up to the client to make use of it. Works fine with Open WebUI (GUI) but you're asking for API. I guess you'll have to initiate a chat and send the chat_id in all your subsequent API calls. I did not test this yet.
+
+- 🧑‍🏫 [Tutorial: KV cache reuse with llama-server · ggml-org/llama.cpp _202505](https://github.com/ggml-org/llama.cpp/discussions/13606)
+  - This tutorial demonstrates how to use the slots management feature in llama-server to optimize repeated prompt processing through KV cache reuse.
 
 - ## 🆚⚡️ [Performance of llama.cpp on Apple Silicon M-series · ggml-org/llama.cpp _202311](https://github.com/ggml-org/llama.cpp/discussions/4167)
   - 提供了各种mac, air的模型测试数据

@@ -361,6 +361,32 @@ modified: 2024-09-08T20:08:16.088Z
 # discuss-code-rag
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🆚 [Does grep perform better than vector DB + embeddings in large code bases? : r/ClaudeCode _202511](https://www.reddit.com/r/ClaudeCode/comments/1osyrpu/does_grep_perform_better_than_vector_db/)
+  - Unlike Cursor or Github Copilot, I see that Claude Code seems to leave it up to the user to either do the indexing or not. Is there a reason? Does it perform better?
+- Short answer: grep ≠ BM25 ≠ vectors. They each win on different axes.
+  - grep/ripgrep — exact string/regex scan over files. Zero indexing, blazing on rare tokens and precise patterns (“def foo(|GUIDs|error codes”). Great for “I know the string.”
+  - BM25 (inverted index) — lexical retrieval with ranking. It tokenizes code/text and returns files that share the same terms, weighted by `tf-idf` . Faster than grep on huge repos (no full scan) and returns a ranked list, but it’s still keyword-based (no synonym/semantics unless you add query expansion). Think Zoekt/Sourcegraph style code search.
+  - Embeddings (vector DB) — semantic retrieval. Finds conceptually similar code/comments (e.g., “exponential backoff retry” locating retry_with_jitter() in another lang with no “backoff” keyword). Costs an index build + memory, but best when you don’t know exact strings.
+- Trade-offs:
+  - Speed: grep (no index) < BM25 (indexed) < vectors (indexed + compute)
+  - Recall: grep (exact) < BM25 (lexical fuzzy) < vectors (semantic)
+  - Precision out-of-the-box: grep high for exact needles; BM25 good for term overlap; vectors need a reranker to avoid drift.
+- Best practice in large codebases:
+  - Hybrid: BM25 (or Zoekt) for lexical + a small vector index for semantics.
+  - Fuse results (Reciprocal Rank Fusion or LLM rerank) so you get both “known string” hits and conceptual matches.
+  - Keep grep/ripgrep handy for one-off precise hunts; use the indexes when scale/recall matter.
+- So “does grep perform better?” 
+  - For exact, known strings on your machine, often yes. 
+  - For concept queries across languages/renames, vectors win. 
+  - For day-to-day, hybrid > either alone. Edit: reworded
+
+- People @Cursor have written a bunch about their belief that strong semantic embeddings are way better for coding tasks perf  [Improving agent with semantic search · Cursor _202511](https://cursor.com/blog/semsearch)
+  - Closed benchmark, proprietary embeddings model... Even if it works  (the improvements aren't huge to begin with ) there is no way to reproduce their setup. 
+
 - ## [Cline doesn't index your codebase. No RAG, no embeddings, no vector databases. : r/CLine _202505](https://www.reddit.com/r/CLine/comments/1kwhcz0/cline_doesnt_index_your_codebase_no_rag_no/)
 - Does Roo Code also do that or is this just a Cline thing?
   - Roo recently added it for code search. It works with local models

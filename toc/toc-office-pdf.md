@@ -169,6 +169,25 @@ modified: 2021-01-04T17:26:43.784Z
   - https://github.com/PDFMathTranslate/PDFMathTranslate-next /AGPLv3
     - pdf2zh 2.0 does not currently provide an online demo
 # pdf-editor
+- https://github.com/BDenizKoca/Tideflow-md-to-pdf /MIT/202511/ts/tuari
+  - https://bdenizkoca.studio/projects/tideflow/
+  - Turn Markdown into beautiful PDFs with Tideflow instantly - offline, portable desktop app
+  - offline-first Markdown → PDF desktop app powered by Typst. Write on the left, get a beautifully typeset PDF on the right – instantly.
+  - Typst (bundled binary) for PDF: Tideflow bundles the official Typst CLI (currently v0.13.1) for macOS, Windows, and Linux so the app works offline out of the box.
+  - Zustand store (single slice: editor state, preferences, UI flags)
+  - Export Formats: Primarily PDF, but also exports to PNG, SVG, and clean Markdown. No HTML export yet.
+  - two-way scroll sync between editor & PDF preview (Has around %70 accuracy)
+  - Clean, distraction‑lite editor (CodeMirror 6)
+  - I wanted a dead-simple, elegant writing tool that outputs print‑ready PDFs without relying on a web service, LaTeX toolchains, or heavy exports. 
+  - [Why Markdown at All?](https://bdenizkoca.studio/notes/creating-tideflow/)
+  - [I created a free Markdown to PDF editor with true pagination and live preview. : r/Markdown _202511](https://www.reddit.com/r/Markdown/comments/1oq644g/i_created_a_free_markdown_to_pdf_editor_with_true/)
+    - A lot of the elements are similar to KeenWrite (themes, real-time preview panel, synchronized scrolling, automatic ToC).
+    - KeenWrite's architecture is as you describe in your blog post: Markdown to XHTML to TeX to PDF, which affords the possibility of a wide variety of themes.
+    - Tideflow is positioned a bit differently. I built it to be dead simple for everyday use cases. The goal was: open the app, write Markdown, get a beautiful PDF instantly. No configuration complexity, no TeX knowledge needed, no giant toolchain to manage.
+    - does KeenWrite support rowspan and colspan In tables?
+      - No, is the short answer. The longer answer is more involved.
+      - KeenWrite uses `flexmark-java` to convert Markdown into XHTML. The Tables Extension for flexmark-java supports column spans. So, technically, you could use its column span syntax to generate XHTML with colspans.
+
 - https://github.com/luke-browning/pdf-web-edit /MIT/202309/ts/c#/ng/inactive
   - a web-based application for manipulating PDF files. 
   - It's main purpose is to pre-process documents before they are imported into a Document Management System (DMS) such as Paperless (-ng and -ngx) or stored in a directory based structure.

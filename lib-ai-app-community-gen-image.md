@@ -314,7 +314,22 @@ modified: 2025-08-16T14:12:24.416Z
 
 - ## 
 
-- ## 
+- ## [Haven’t used SD in a while, is illustrious/pony still the go to or has there been better checkpoints lately? : r/StableDiffusion _202511](https://www.reddit.com/r/StableDiffusion/comments/1osv278/havent_used_sd_in_a_while_is_illustriouspony/)
+- SD1.5 and SDXL are not obsolete - even SD1.5 still has value of being very fast model. It depends on what you want to achieve.
+
+- NoobAI (an Illustrious finetune) has one-upped Pony quite a lot in its niche.
+  - Chroma is the Flux equivalent of NoobAI and Pony, but it's very picky about sampler settings to make good-quality images. It has the advantage of being overall better at prompt adherence and supporting a ton of different styles out-of-the-box (including photography), but it is also much larger and slower than the SDXL-based models.
+
+- For anime/cartoon/2.5D/semi-real - Illustrious is still king.
+  - For realism - Wan 2.2 Low Noise and Flux Krea. Haven't tested Chroma, but honestly haven't seen any impressive enough images to warrant me giving it a go.
+  - For editing - Qwen Image Edit (with multi-angle edit LoRA) and Flux Kontext in that order.
+  - For video - Wan 2.2 bar none. LTX-2 release on the horizon. Keep a watch out.
+  - For Audio - I haven't tested around enough. Last I checked, Chatterbox gave me really good results on voice cloning, but a few new contenders have dropped since then and I haven't had a chance to test them. But Chatter beat alltalk and a bunch of others in cloning; matched references perfectly.
+
+- Feel like everyone sleeping on Chroma. To me, it’s the SOTA model right now. Needs some handholding, and needs an extra pass with an upscaler or Flux or something, but it hits the balance for prompt following, creativity, and realism to me. Yes, Flux is better for realism, an Qwen is better at prompt following, but none of them seem to demonstrate the creativity I’m seeing out of Chroma. I have a huge Comfy script I run my prompt though every major model before starting a project, almost always Chroma wins. Bonus that it’s commercially open too versus Flux.
+
+- Pony v6 and Illustrious are still solid options for 2D/2.5D. Flux is pretty much community choice for realism (though you can get decent results approaching realism with Pony v6 and Illustrious fine tunes as well.)
+  - If you’ve got the hardware for it, Chroma is worth trying out. It’s got the prompt adherence of Flux but the potential to be more flexible, depending on what the community does with it, since it’s not a distilled model (easier to fine-tune.)
 
 - ## [ComfyUI vs A1111 : r/StableDiffusion _202401](https://www.reddit.com/r/StableDiffusion/comments/191u7oh/comfyui_vs_a1111/)
 - Automatic1111 - all rounder, tons of extensions, lot of support and development, finicky when updated, uses more memory and extensions break. However, for ease of use when moving between tabs, it's unrivalled.

@@ -13,6 +13,9 @@ modified: 2025-10-10T02:45:45.941Z
   - 可直接参考主流编辑器已实现的方案，如codemirror/monaco
 
 - ⚖️ aider-diff-search/replace format prompt
+  - local-models: ?
+  - supported: claude, gemini, deepseek, glm, kimi, minimax
+  - no-support: gpt, qwen3-coder
   - https://github.com/asadm/vibemode/blob/main/source/editor.js
   - https://github.com/sorendunn/Agentless-Lite/blob/main/agentless_lite/repair.py
   - https://github.com/profullstack/ai/blob/master/lib/enhanced-agent.js
@@ -21,8 +24,8 @@ modified: 2025-10-10T02:45:45.941Z
   - https://github.com/XAI-liacs/LLaMEA/blob/main/llamea/llamea.py
 
 - ⚖️ openai v4a diff format 多尝试几种测试用例来判断成功率; 不如aider-diff流行
+  - local-models: qwen3-14b-no_think, gpt-oss-20b
   - supported: gpt-4.1-mini, claude 3.7+, gemini-2.5-pro, deepseek-v3.1, kimi-k2, minimax-m2
-  - local-ok: qwen3-14b-no_think
   - no-support: qwen3-coder-480b, qwen3-235b-a22b-thinking/instruct, glm-4.6(有时会成功), longcat-flash
   - https://github.com/openai/codex/blob/main/codex-rs/core/prompt.md
     - https://github.com/openai/codex/blob/main/codex-rs/apply-patch/src/parser.rs

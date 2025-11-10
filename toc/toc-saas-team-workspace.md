@@ -320,6 +320,11 @@ modified: 2023-02-07T17:38:05.336Z
     - It was written when I needed a kanban board done to my specs in a minimum amount of time using whatever things I was most comfortable with.
   - https://github.com/justinpchang/nullboard-agent-express /js
     - Local backup agent for Nullboard (MacOS/Linux compat)
+- https://github.com/ioniks/MarkdownTaskManager /MPL/202511/html
+  - A single-file HTML app (~144 KB) that turns Markdown files into an interactive Kanban board
+  - One HTML file stored centrally (e.g., ~/tools/task-manager.html)
+  - Each project has its own kanban.md + archive.md in its Git repository
+  - [Markdown Task Manager is now public! 📋 Thanks for your feedback! : r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1ot8nh2/markdown_task_manager_is_now_public_thanks_for/)
 
 - https://github.com/khanh-devos/Capstone2-Kanban /js
   - https://khanh-devos.github.io/Capstone2-Kanban/

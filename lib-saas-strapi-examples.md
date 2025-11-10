@@ -1281,8 +1281,15 @@ modified: 2023-12-15T19:30:23.094Z
 - https://github.com/mparramont/strapi-starter /202404/ts
   - Strapi Starter with PostgreSQL, Typescript and test setup
   - Simple Access Role setup as a Strapi Content-Type
-
-## auth/register
+# auth/register
+- https://github.com/Schero94/Magic-Sessionmanager /MIT+paid/202511/js
+  - [Magic Session Manager - Now on NPM! : r/Strapi](https://www.reddit.com/r/Strapi/comments/1ossc1b/magic_session_manager_now_on_npm/)
+  - a plugin that lets you see and control all user sessions in your Strapi v5 app.
+  - Homepage widget showing online users
+  - Dashboard with all active sessions
+  - When users login: Automatically tracks the session, Records IP, device, browser, location
+  - JWT Encryption - Tokens encrypted in database (AES-256)
+  - IP Geolocation - See login locations (Premium)
 
 - https://github.com/Kazdan1994/strapi-custom-register-endpoint /202312/js
   - You can overwrite strapi register and / or login endpoint

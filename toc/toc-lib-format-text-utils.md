@@ -10,7 +10,17 @@ modified: 2023-09-01T03:56:10.056Z
 # guide
 
 # popular
-
+- https://github.com/google/magika /9.4kStar/apache2/202511/rust
+  - https://securityresearch.google/magika/
+  - Magika is a novel AI-powered file type detection tool that relies on the recent advance of deep learning to provide accurate detection.
+  - Magika employs a custom, highly optimized model that only weighs about a few MBs, and enables precise file identification within milliseconds, even when running on a single CPU.
+  - Magika is used at scale to help improve Google users' safety by routing Gmail, Drive, and Safe Browsing files to the proper security and content policy scanners
+  - Available as a command line tool written in Rust, a Python API, and additional bindings for Rust, JavaScript/TypeScript 
+  - [Announcing Magika 1.0: now faster, smarter, and rebuilt in Rust _202511](https://opensource.googleblog.com/2025/11/announcing-magika-10-now-faster-smarter.html)
+  - [Over 40% of the Magisk's code has been rewritten in Rust : r/rust](https://www.reddit.com/r/rust/comments/1l1o7x1/over_40_of_the_magisks_code_has_been_rewritten_in/)
+    - Did they generate the rust code initially from the c++/c and then manually massage it to be efficient?
+      - 👷 author here. The transition is fully manual, all code is slowly migrated one small component by a time, using cxx as the FFI mechanism. First I rewrite functions/subsystems that are fully independent with no dependencies on other parts of the codebase. After that, I rewrite components that do not have dependencies on other C++ code, and keep doing so iteratively. At some point, bidirectional FFI is less of a pain so I can just pick any random part of the codebase and rewrite it with little friction.
+    - I don't use rust because it's faster or safer or whatever other hype. I use it because it has an incredibly good tool chain and the compiler tells me exactly what I did wrong, and sometimes even exactly how to fix it.
 # examples
 
 # utils

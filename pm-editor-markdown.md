@@ -72,6 +72,13 @@ modified: 2021-05-14T14:33:33.975Z
 
 - code highlighting
 
+- table
+  - markdown-table 不支持rowspan/colspan, 但html table支持
+
+- 
+- 
+- 
+
 - 允许半个符号而不抛出异常，如`>, 1)`
   - wolai支持将某些中文符号转换成常用md语法，如 `1。`也能转换成数字列表
 

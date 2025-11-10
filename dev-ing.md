@@ -229,6 +229,10 @@ console.log('; ; task ', taskState, runningTaskAction, task?.task_steps)
 - when did deepseek v3.1 model release?
 - when did qwen3-coder model release?
 - what's the weather in guangzhou china? give me some food and outdoor-activities suggestions according to weather temperature
+
+- explain code at ./playground/quick-sort.js
+- for file ./playground/quick-sort.js, add a simple test case
+
 - image-lawn
   - a big park for resting and relaxing, there are little trees around a big lawn, some birds are resting in the lawn, The lawn and the trees around it both need pruning
 - image-logo-excel-like
@@ -256,6 +260,17 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
   - ?
 - dev-to
   - ?
+
+## 1110
+
+- [tmux使用指南：比screen好用n倍！ - 知乎](https://zhuanlan.zhihu.com/p/386085431)
+  - 首先screen是Linux中比较常用的可以“接入”和“离开”的shell对话框，很大的方便了我们ssh登录服务器跑任务，如果不用screen，我们合上电脑，ssh就断开了，相应的服务器运行任务也断开了，会非常令人头疼。
+  - 但是screen在使用中很多问题，如：使用zsh时和插件不兼容显示乱码，操作失误套娃了就进不去这个窗口，只能命令控制无法交互，翻页查看功能非常有限等局限。
+  - 而tmux是screen的替代品，它比screen有很多方便的地方
+  - tmux服务可以开启多个session, 一个session可以开多个window, 一个window可以分多个subwindow
+
+- [手把手教你使用终端复用神器 Tmux，丢掉鼠标不是梦[视频] - 知乎](https://zhuanlan.zhihu.com/p/43687973)
+  - Tmux 是一个终端复用工具，用于在一个终端窗口中运行多个终端会话
 
 ## 1104
 
