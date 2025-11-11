@@ -114,7 +114,10 @@ modified: 2025-09-01T07:58:29.058Z
 
 - ## 
 
-- ## 
+- ## [Does anyone use spec-driven development? : r/ChatGPTCoding _202511](https://www.reddit.com/r/ChatGPTCoding/comments/1otf3xc/does_anyone_use_specdriven_development/)
+- Yes, this has been my approach since May-ish. You have to review and adjust, though. You can't just generate a spec and then copy/paste without looking at anything.
+
+- Yes, people who build software for a living have long realized having requirements before you start is helpful. Same with things like testing, intentional design of data schemas, and more. 
 
 - ## [What's the best way to get the most out of LLMs for "vibe coding"? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1n8kadm/whats_the_best_way_to_get_the_most_out_of_llms/)
 - I like creating a product requirement document and then use AI to expand, analyse and refine it ( 2 or 3 rounds, using diferent llms) and  creating a file with a list of tasks/functions that need to be coded to create the script. After that i ask them to implement a task and review the code
@@ -396,6 +399,20 @@ modified: 2025-09-01T07:58:29.058Z
 - I do not use any IDE/editor's AI feature for coding. They feel pretty much useless even with full context. My personal opinion is, a developer should fully understand their code before committing, AI powered editors destroys this habit
 
 - I’ve had much better luck with keeping the AI open in a browser and chatting with it, then manually editing the code in an IDE. 
+# discuss-gen-ui
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Where your product UI is dynamically generated, based on user intent and context.
+- https://x.com/Prathkum/status/1988172654872834204
+  - 演示效果不错
+  - C1 API by @thesysdev is building the infra to make this possible.
+  - C1 fixes this by turning LLM responses into an adaptive, interactive UI in real time.
+  - cards, charts, table, forms
+
 # discuss
 - ## 
 

@@ -95,6 +95,9 @@ modified: 2025-10-10T02:45:45.941Z
 
 - https://github.com/talesofai/python_replace_string /MIT/202508/python/inactive
   - 从kilo的ts代码中获取replace_string功能，由kilo编辑器迁移到python实现
+  - 字符串替换: 支持精确匹配、正则表达式 和 模糊匹配(基于 Levenshtein 距离的相似度计算)
+  - 完整兼容 Kilo Code 的 apply_diff 工具格式
+  - 支持并发和顺序批量任务执行
 
 - https://github.com/tokenring-ai/apply-patch /apache2/202510/ts
   - a TypeScript implementation of the OpenAI Codex file-oriented diff format for safe code editing. 

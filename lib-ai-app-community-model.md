@@ -335,7 +335,20 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
-- ## 
+- ## [Are any of you using local llms for "real" work? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1otnj2k/are_any_of_you_using_local_llms_for_real_work/)
+- The most "real" work I've done is that Qwen3-VL-30B-A3B-Thinking is currently going through videos 10-seconds at a time. 
+  - Based on the bot's True/False boolean output a wrapping program keeps track of what segments `<thing I'm looking for>` is within. At the end, we're done using Qwen3-VL and the wrapping program uses the segment information to use FFMPEG to make a clipped version where `<thing I'm looking for>` should always be present.
+  - A general example is you could have the bot look for every explosion in an action film. Maybe it considers muzzle flash from a gun to be an explosion, not technically wrong as far as I know. So you could prompt that it should only be explosions not from gunfire and try that.
+
+- I use an LLM, a scraper to fetch security vulnerabilities (CVEs), and an internal API that lists my running services, and the LLM generates a daily report for me about whether any of the software I'm running might have been mentioned.
+
+- Using qwen3 vl to parse vids to extract car plate numbers snd other vehicle markings
+
+- I used a local LLM and a vector database to help me with my corporate taxes. I first fed all past 3 or 4 years of expenses along with their categorizations (meals, fuel, office supplies etc.) into a Postgres PG Vector database and embedded the data using the Nomic model. I then classified several hundred transactions for the past tax year using this vector set of data to categorized the transactions.
+
+- I use nvidia/Llama3-ChatQA-1.5-8B to index 2M similar insurance docs using ollama. I load the index into Meilisearch and sell access to it. I did this after a trip to micro center and a little over $3k.
+
+- I use them as zeroshot NER/Classification models. They're pretty decent at it out of the box. Training isn't too complicated, but for small repetitive tasks, they're often good enough.
 
 - ## [Why we shifted to Spec-Driven Development (and how we did it) : r/ClaudeCode _202511](https://www.reddit.com/r/ClaudeCode/comments/1op8b6i/why_we_shifted_to_specdriven_development_and_how/)
   - Over the last few months we came up with our own Spec-Driven Development (SDD) flow that we feel has some benefits over other approaches out there. 

@@ -18,6 +18,7 @@ modified: 2025-03-22T16:10:24.856Z
 
 - ai-dev-xp
   - 难复现好的效果，同样的prompt+context，有时输出的效果就是不好
+  - agent框架的tool-use实现对最新llm的支持，llm-provider的部署 都会影响llm的效果
 
 - ai相对于搜索引擎的优势 🌹
   - ai能推理和计算, 分析复杂问题，给出更准确的方案
@@ -29,7 +30,7 @@ modified: 2025-03-22T16:10:24.856Z
   - stable model and stable api
   - privacy: code, data
   - tweak different configs for ai-models
-  - 避免模型平台的限制，如并发请求数(需要排队)、context长度、最大输出token数、模型版本、模型大小等
+  - 避免模型平台的限制rate limits，如并发请求数(rpm/tpm/需要排队)、context长度、最大输出token数、模型版本、模型大小等
     - no implicit ai degradation/switch: bring your model
   - cost: unlimited tokens, 利用本地模型ocr/文生图
   - network agnostic
@@ -47,6 +48,9 @@ modified: 2025-03-22T16:10:24.856Z
 - roadmap-ai
   - 针对国内免费api定制的chat/ppt: 魔搭, 快手万擎
     - 可以~~fork janai,然后扩展provider~~, janai默认支持openai-like api，已经支持了国内models
+  - 利用chrome最新的侧边栏，实现类似cline/roocode的页面ai助理/office编辑
+    - 基于cline-cli的client/server架构，支持多种工具如 wps/飞书/腾讯文档/notion
+    - 甚至结合文生图
 
 - local-ai-challenges 🐛
   - 运行大模型需要较多硬件资源，如GPU/CPU/RAM
@@ -292,7 +296,7 @@ modified: 2025-03-22T16:10:24.856Z
     - [薄荷公益站签到](https://qd.x666.me/)
   - [tbai API](https://tbai.xin/), 即将关闭
     - 模型支持gemini/gpt, 不支持claude
-    - API 调用频率限制为 10 RPM
+    - API调用频率限制为 10 RPM
     - gpt-load 作者
     - 使用兑换码兑换余额后的账号视为激活用户, 激活用户可长期使用，额度用完后可无条件联系我增加额度
     - [【T佬公益】TBAI公益站主贴-爽用Gemini|OpenAI|DeepSeek模型 ](https://linux.do/t/topic/683726)

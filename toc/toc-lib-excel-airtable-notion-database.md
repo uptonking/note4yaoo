@@ -206,7 +206,7 @@ modified: 2022-08-21T10:02:05.129Z
     - Word and Excel are distinct tools, and different types of data should have separate containers. I don't want to mix them up just to fit the concept of 'everything is x'. When you have a lot of CSV/Excel files, you definitely don't want to create a markdown document for every row.
     - Actually, my initial goal was to build an offline Airtable/Notion database. I would focus more on the tables.
 
-- teable /19.5kStar/AGPLv3-app+MIT-pkg/202509/ts
+- teable /19.5kStar/AGPLv3-app+MIT-pkg+LOGO/202509/ts
   - https://github.com/teableio/teable
   - https://teable.io/
   - https://app.teable.io/share/shrVgdLiOvNQABtW0yX/view

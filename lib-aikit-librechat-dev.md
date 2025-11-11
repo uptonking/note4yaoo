@@ -50,6 +50,10 @@ modified: 2025-09-01T05:52:34.241Z
 
 - 针对 vlm 优化的 agent/工作流
 
+- 利用chrome最新的侧边栏，实现类似cline/roocode的页面ai助理/office编辑
+  - 基于cline-cli的client/server架构，支持多种工具如 wps/飞书/腾讯文档/notion
+  - 甚至结合文生图
+
 - 🤔 一种思路: tool-call时使用擅长tool-call的模型，分析时使用公益站的聊天优质但无法tool-call的模型
   - 支持类似 roocode 的 model profile 切换
 

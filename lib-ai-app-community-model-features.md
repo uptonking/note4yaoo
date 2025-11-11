@@ -47,7 +47,19 @@ modified: 2025-11-05T19:04:50.350Z
 
 - ## 
 
-- ## 
+- ## ✨ [Open-dLLM: Open Diffusion Large Language Models : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1otihl1/opendllm_open_diffusion_large_language_models/)
+  - https://github.com/pengzhangzhi/Open-dLLM
+  - the most open release of a diffusion-based large language model to date — including pretraining, evaluation, inference, and checkpoints.
+
+- what are the benefits of a diffusion language model over the normal sequential-inference variety?
+  - flexibility in terms of generation orders, parallel decoding etc.
+
+- How much training time did this require?
+  - im working on the next release, which will be 8A100 for a few days and you can see how a decent pass@1/10 perf. Currently it takes 100k steps, using like 16A100s with bs 6 per gpu
+- What library did you use to train and how many gpus / type of gpus?
+  - veomini, native pytorch DDP mostly, im working on the next release, which will be 8A100 for a few days and you can see how a decent pass@1/10 perf.
+
+- There is actually a better diffusion-based LLM, but it's proprietary: https://chat.inceptionlabs.ai/ It is very cool to use especially if you turn on the "Diffusion Effect". Blazing fast too.
 
 - ## [Instead of predicting one token at a time, CALM (Continuous Autoregressive Language Models) predicts continuous vectors that represent multiple tokens at once : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1opabzi/instead_of_predicting_one_token_at_a_time_calm/)
 

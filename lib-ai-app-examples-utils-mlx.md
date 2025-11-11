@@ -68,5 +68,9 @@ modified: 2025-11-01T10:54:26.044Z
 # examples
 
 # utils
-
+- https://github.com/mzau/mlx-knife /112Star/apache2/202511/python
+  - ollama like cli tool for MLX models on huggingface (pull, rm, list, show, serve etc.)
+  - [[Update] mlx-knife 2.0 stable — MLX model manager for Apple Silicon : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1otwdq0/update_mlxknife_20_stable_mlx_model_manager_for/)
+    - Can you help me understand how this is better than simply using: mlx_lm.server
+      - Yeah. Unless it supports vision, mlx_lm.server plus llama swap is much better.
 # more

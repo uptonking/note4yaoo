@@ -32,7 +32,16 @@ modified: 2023-01-14T17:22:00.810Z
 
 - ## 
 
-- ## 
+- ## [Wails? Why or Why Not? : r/golang _202503](https://www.reddit.com/r/golang/comments/1jkvym6/wails_why_or_why_not/)
+- wails might be best in windows because native WebView is perfect there .. but in linux ? linux WebView is terrible. I don't have any others complaining about Wails yet
+
+- I don't think you can use go as backend language in tauri right?
+  - Nope. Tauri is all Rust.
+
+- Wails is great in my case. I have a RESTApi server with web interface. And i dont need to create desktop app from scratch, just wrap frontend to Wails.
+
+- Why = It is web based, easier to build complex gui application 
+  - Why not = It is using system browser, almost all time it is good but sometimes occurs bug that never happen in your end.
 
 - ## [We decided to use Golang with Wails instead of Rust with Tauri for building Krater desktop app. : r/golang _202311](https://www.reddit.com/r/golang/comments/17koicc/we_decided_to_use_golang_with_wails_instead_of/)
   - We were building Krater, a desktop app for debugging Laravel apps, with Rust using Tauri. However, this is no longer the case because a few months ago we made the decision to migrate the entire project to Wails
@@ -42,7 +51,7 @@ modified: 2023-01-14T17:22:00.810Z
 
 - We are using golang in production. It is simple and code looks fresh. In production its important that code must need to be understandable by other developers for long term maintainability. Though I appreciate rust for bringing new concepts
 
-- I developed two project one on Tauri one on Wails, Wails is just enough for a desktop app based web. Tauri is intersted but in real life project it sometime take to much time to resolve a traaditional issue (I faced with the CORS) To me, for now I will choose Wails for desktop app development.
+- I developed two project one on Tauri one on Wails, Wails is just enough for a desktop app based web. Tauri is intersted but in real life project it sometime take too much time to resolve a traditional issue (I faced with the CORS) To me, for now I will choose Wails for desktop app development.
 
 - Rust's ability to interop fairly easily with C (and to some extent, C++ apis) can make tauri a good choice for adding a GUI layer to existing library projects
 

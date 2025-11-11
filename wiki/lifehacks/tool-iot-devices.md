@@ -198,6 +198,27 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [What is the best hardware under 10k to run local big models with over 200b parameters? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1otdr19/what_is_the_best_hardware_under_10k_to_run_local/)
+  - Short term I will use this to refactor codebases, coding features, etc. I don't mind if it runs slow, but I need to be able to run thinking/high quality models that can follow long processes (like splitting big tasks into smaller ones, and following procedures). 
+  - But long term I just want to learn and experiment, so anything that can actually run big models would be good enough, even if slow.
+
+- Caution: buying hardware to run specific models is not sustainable unless you are 110% satisfied with the model at hand and will not find the urge to upgrade to something even better. Its a race against big datacenters and you might as well just rent the hardware.
+  - Actual answer: Stack 3090s, 4090s, however cheap you can get them. thats how you run big models fast and "cheap" (relatively speaking). RAM Prices are skyrocketing and it is entirely unfeasable imo to buy (64gb 6000mhz is $360+++). 3090s for 700-800 are way higher performance. 
+  - Rule of thumb i use: DDR5 6000Mhz is 10x slower than a 4070's VRAM. If u can get 10x more RAM than VRAM for the same price, speeds *can* be compared, but then u start looking at 6-channel motherboards etc.
+  - tl; dr: due to ram situation, just stack 3090s while you can. nothing else beats its price/performance. good luck
+
+- A good alternative to the 3090 for running large MoE models is the AMD Mi50 32gb, much cheaper and has 1tb memory bandwidth due to the HBM2 memory
+- 8xMI50: qwen3 235B Q4_1 runs at ~21t/s with 350t/s prompt processing (llama.cpp)
+
+- an M3 ultra will have very bad prompt processing, so if you use any prompts longer than 8k or so, get ready for a world of pain. MoE only helps so much too.
+  - Partial offloading, especially with MoE, is still mainly RAM Bandwidth bound, im not 100% sure what 4 or 6 channel motherboards are available, and if you can get enough high speed RAM at any price below 10k to make that worthwhile.
+  - If you want an out of the box option that isnt speed optimized, m3 ultra works. If you at all have speed requirements (and by that i mean, not waiting half an hour for a big response), i dont think 10k will cut it without some heavy DIY (e.g. crazy motherboard with tons of PCIe, think older threadrippers, to use all those gpus)
+- Remember there are models such as Qwen 3 Next with closer to linear prompt processing time, and more such models will continue to appear over the coming years :) also even with large system prompts (ie for agentic uses), you can cache those and get decent performance. At the moment we're just throwing compute at everything, but the algorithms and implementations will become more efficient over time.
+
 - ## 🆚 [Benchmark Results: GLM-4.5-Air (Q4) at Full Context on Strix Halo vs. Dual RTX 3090 : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1osuat7/benchmark_results_glm45air_q4_at_full_context_on/)
   - I benchmarked the GLM-4.5-Air (Q4) model running at a near-maximum context on two very different systems: a Strix Halo APU and a dual RTX 3090 server. Both tests were conducted under Debian GNU/Linux with the latest llama.cpp 
 - Why is the prompt processing for RTX is so low? It should be hundreds if not thousands. The model is too big and you have to spill some part to regular system RAM? These prompt processing figures make it unusable in such setup then
@@ -2678,10 +2699,28 @@ modified: 2022-01-16T15:52:31.293Z
 - 能不用笔记本别用笔记本。Linux对硬件性能没有太大限制，所以，你的硬件越强~你得到的就越多。
   - 显卡，如果搞AI的话，只选NVIDIA独立显卡，现在3090二手货也不贵了，千万别信什么N卡驱动难搞，那都是不会英文的原始人才会信的话术。Linux用其他卡才叫灾难，要啥啥没有，只能显示，还不如亮机卡。
 # discuss-mac
-
 - resources
   - [MacRumors Buyer's Guide: Know When to Buy iPhone, Mac, iPad](https://buyersguide.macrumors.com/)
+
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Five Years of Apple Silicon: M1 to M5 Performance Comparison : r/apple _202511](https://www.reddit.com/r/apple/comments/1otq54t/five_years_of_apple_silicon_m1_to_m5_performance/)
+  - [Five Years of Apple Silicon: M1 to M5 Performance Comparison - MacRumors _202511](https://www.macrumors.com/2025/11/10/apple-silicon-m1-to-m5-comparison/)
+- The best decision Apple made with the Mac since 1984 was to switch from Intel CPUs and AMD GPUs to their own ARM64-based chips, after it became clear that Intel CPUs were stagnating when Apple’s were getting a lot better year over year on the iPhone side.
+  - Oddly enough, the second best decision was to switch from PowerPC CPUs to Intel CPUs, after it became clear that IBM wasn’t interested in making PowerPC CPUs that ran faster while consuming less power.
+
+- TLDR Twice the performance in 5 years.
+
+- M1 Pro mbp is still going strong with 0 issues. I’ll upgraded in a few more years. They made these things too good.
+
+- The thing is, how does the software support will go, knowing that MacOS26 is the last supported Intel chips.
+  - I'd assume it'll be similar to iPhones which run ale Silicon. So about 7 years of major updates, followed by security patches.
 
 - ## [M4 Max vs M3 Ultra for Adobe Premiere, After Effects, Resolve, Photoshop, Capture One : r/MacStudio _202511](https://www.reddit.com/r/MacStudio/comments/1ot6kkt/m4_max_vs_m3_ultra_for_adobe_premiere_after/)
 

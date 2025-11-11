@@ -88,7 +88,7 @@ modified: 2025-02-26T15:04:15.883Z
 
 ## django-fwk
 
-- https://github.com/vitalik/django-ninja /MIT/202504/python
+- https://github.com/vitalik/django-ninja /8.7kstar/MIT/202511/python
   - https://django-ninja.dev/
   - a web framework for building APIs with Django and Python 3.6+ type hints.
   - Very high performance thanks to Pydantic and async support.

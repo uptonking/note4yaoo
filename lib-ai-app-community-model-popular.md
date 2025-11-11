@@ -641,6 +641,29 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
+- ## [Benchmark Results: GLM-4.5-Air (Q4) at Full Context on Strix Halo vs. Dual RTX 3090 : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1osuat7/benchmark_results_glm45air_q4_at_full_context_on/)
+  - Both tests were conducted under Debian GNU/Linux with the latest llama.cpp builds from the day of testing.
+  - 3090: 5 tops
+  - strix: 4 tops
+
+- Why is the prompt processing for RTX is so low? It should be hundreds if not thousands. The model is too big and you have to spill some part to regular system RAM? These prompt processing figures make it unusable in such setup then
+  - Because of offloading. It should be immediately obvious that air Q4 requires offloading for 48gb vram, yet even with offloading it still beats Strix halo. Imo energy efficiency doesn't matter too much here since <2kw is still not a significant amoun
+
+- Prefill with cpu offload still runs pp on the GPU. The bottleneck is your pcie speed as it needs to upload all experts. I'll get you numbers for my rtx 5090 with pcie5 x16 to compare. Sounds like you did 119702 tokens? I'll do that.
+
+- ## 🆚 [Imagine you’re stuck with one local model forever: GPT-OSS 120B or GLM 4.5 Air. Which one are you picking and why? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1otreir/imagine_youre_stuck_with_one_local_model_forever/)
+- What speeds do you get on strix with glm air?
+  - i did some tests recently, it's with full context which drops to around 5ts when you saturate context with ~130k, but lower than that it's fine. 
+  - starting from around 24ts and going down with context grow 
+
+- GPT OSS 120B on Strix Halo. The native format (MXFP4) runs at 40+ TPS with small context windows, and still fast with higher context windows.
+  - GLM Air 4.5 is much slower (about half the speed)
+
+- GLM 4.5 Air because it's more versatile. And GPT-OSS 120B gives a lot of refusals on benign things.
+  - Easily fixed with a system prompt. That being said, I prefer Air.
+
+- 120b is stronger at STEM but heavily aligned, refusals are not difficult to trigger
+
 - ## 🆚 [GLM 4.5 Air vs GLM 4.6 vs Minimax M2 on 120gb VRAM : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1ooq9q3/glm_45_air_vs_glm_46_vs_minimax_m2_on_120gb_vram/)
   - I've been using 4.5 Air AWQ 4-bit and it fits comfortably with a fairly high context limit and is quite usable for coding. However I'm wondering if it makes sense to try a low quant GLM 4.6 or if a quant of Minimax M2 would be a better coding assistant.
 - As far as GLM Air, the REAP is working well for me for agentic coding. I run it at 6 bit with 96G vram and 145k context. You could probably fit 8 bit REAP in 128G depending on how much context you need. I feel it is a better tradeoff than lowering the bits.

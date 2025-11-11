@@ -85,6 +85,13 @@ modified: 2025-08-11T20:15:18.297Z
     - it performs live eval-based routing using UniRoute’s cluster-based generalization method, which can handle unseen LLMs without retraining.
     - Typical savings: 60–90% lower inference cost.
     - Routing overhead: ~10 ms.
+
+- https://github.com/The-Context-Company/observatory /MIT/202511/ts
+  - https://docs.thecontext.company/
+  - Local-first observability for @aisdk on @nextjs in 10 lines of code
+  - Displays all AI SDK generations, tool calls, and failures in real-time
+  - https://x.com/ksw_arman/status/1987941977539903978
+    - No more adding `console.log` everywhere or scrubbing through UIMessage objects just to debug your AI agent.
 # starter
 - https://github.com/vercel-labs/ai-sdk-reasoning-starter /202507/ts
   - https://ai-sdk-reasoning.vercel.app/

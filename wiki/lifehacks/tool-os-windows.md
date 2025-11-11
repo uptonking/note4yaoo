@@ -11,6 +11,8 @@ modified: 2020-12-29T17:48:26.735Z
 - diskmgmt.msc
   - 打开 disk management 磁盘管理工具
 # guide
+- apps
+  - [吾爱破解 - 52pojie.cn](https://www.52pojie.cn/)
 
 ## win缺点
 

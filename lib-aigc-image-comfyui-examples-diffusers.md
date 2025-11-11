@@ -932,6 +932,7 @@ modified: 2025-08-23T11:43:35.904Z
   - Browse and manage your images/videos/workflows in the output folder.
   - Some useful custom nodes like xyz_plot, inputs_select.
   - Install ComfyUI Manager, search comfyui-browser in Install Custom Node and install it.
+  - https://github.com/talesofai/comfyui-supersave
 
 - https://github.com/hayden-fr/ComfyUI-Image-Browsing /GPL/202508/ts/vue
   - Browsing Output Images in ComfyUI
