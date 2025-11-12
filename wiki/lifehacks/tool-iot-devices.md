@@ -198,9 +198,23 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## [Kimi K2 Thinking Q4_K_XL Running on Strix Halo : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1ouuko3/kimi_k2_thinking_q4_k_xl_running_on_strix_halo/)
+- When file size is larger than your mem+vram, there's little you can do since bottleneck is the disk read speed(besides bad system managed caching). You can buy 3 more machine and use RPC to speed up
 
-- ## 
+- ## [Half-trillion parameter model on a machine with 128 GB RAM + 24 GB VRAM : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1oueiuj/halftrillion_parameter_model_on_a_machine_with/)
+  - CPU: Intel i9-13900KS
+  - RAM: 128 GB (DDR5 4800 MT/s)
+  - GPU: RTX 4090 (24 GB VRAM)
+  - I’ve successfully run Qwen3-Coder-480B on llama.cpp
+  - UD-Q3_K_XL: ~2.0 tokens/sec (generation)
+  - UD-Q4_K_XL: ~1.0 token/sec (generation)
+
+- Be careful with any method of running a model that heavily leverages swapping in and out of your SSD, it can kill it prematurely. Enterprise grade SSD can take more of a beating but even then it's not a great practice.
+  - This is only half correct. Repeatedly writing to an ssd shortens its lifespan. But repeatedly reading from an ssd is not harmful.
+  - When you use mmap() for models exceeding RAM capacity, 100% of the activity on the ssd will be read activity. No writing is involved other than initially storing the model on the ssd.
+- writing and erasing data on ssd’s are intensive, and ssd’s generally have a limit on how many times you can do that before they become read only or inoperable.
+- Memory mapping is reading to memory and discarded as needed. It isn't writing to disk so no concern on excessive writing like swap space / Windows virtual memory.
+- It is not swapping! It is using mmap (memory-map model). So it is only reading from SSD (there are no writes, context is kept in RAM).
 
 - ## [What is the best hardware under 10k to run local big models with over 200b parameters? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1otdr19/what_is_the_best_hardware_under_10k_to_run_local/)
   - Short term I will use this to refactor codebases, coding features, etc. I don't mind if it runs slow, but I need to be able to run thinking/high quality models that can follow long processes (like splitting big tasks into smaller ones, and following procedures). 

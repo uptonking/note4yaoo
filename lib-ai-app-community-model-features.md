@@ -42,7 +42,21 @@ modified: 2025-11-05T19:04:50.350Z
   - cognee - Strong at semantic understanding and graph-based reasoning, useful when relationships, entities, and multi-step logic matter; requires a bit more setup but scales well with complexity.
   - mem0 - Lightweight, simple to integrate, and fast for personalization or “assistant remembers what you said” use cases; less focused on structured or relational reasoning.
   - zep - Optimized for evolving conversations and timelines, making it good for session history and narrative continuity; not primarily aimed at deep semantic graph reasoning.
-# discuss-news-model
+# discuss-llm-monitor/Observability
+- ## 
+
+- ## 
+
+- ## [Compared 5 LLM observability platforms after production issues kept hitting us - here's what works : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1ouknj3/compared_5_llm_observability_platforms_after/)
+  - LangSmith - Best if you're already deep in LangChain ecosystem. Full-stack tracing, prompt management, evaluation workflows. Python and TypeScript SDKs. OpenTelemetry integration is solid.
+  - Langfuse - Open-source option with self-hosting. Session tracking, batch exports, SOC2 compliant. Good if you want control over your deployment.
+  - Arize - Strong real-time monitoring and cost analytics. Good guardrail metrics for bias and toxicity detection. Focuses heavily on debugging model outputs.
+  - Braintrust - Simulation and evaluation focused. External annotator integration for quality checks. Lighter on production observability compared to others.
+  - Maxim - Covers simulation, evaluation, and observability together. Granular agent-level tracing, automated eval workflows, enterprise compliance (SOC2). They also have their open source `Bifrost` LLM Gateway with ultra low overhead at high RPS (~5k) which is wild for high-throughput deployments.
+  - 📌 Biggest learning: you need observability before things break, not after. Tracing at the agent-level matters more than just logging inputs/outputs. Cost and quality drift silently without proper monitoring.
+
+- I honestly think this is an ad for Maxim.
+# discuss-news-model 🆕
 - ## 
 
 - ## 
@@ -63,7 +77,7 @@ modified: 2025-11-05T19:04:50.350Z
 
 - ## [Instead of predicting one token at a time, CALM (Continuous Autoregressive Language Models) predicts continuous vectors that represent multiple tokens at once : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1opabzi/instead_of_predicting_one_token_at_a_time_calm/)
 
-# discuss-memory
+# discuss
 - ## 
 
 - ## 

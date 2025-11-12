@@ -19,6 +19,26 @@ modified: 2025-09-24T14:53:03.421Z
 - ## [OAuth login without database and Sign-up? · better-auth/better-auth _202503](https://github.com/better-auth/better-auth/discussions/1934)
 - sure with the generic OAuth plugin
 
+# discuss-news
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## You’ll be able to import the `/minimal` version of Better Auth starting from v1.4. _202511
+- https://x.com/imbereket/status/1988355012146430460
+  - In the first iteration, the main advantage is that we won’t bundle `kysely` . going forward, we’ll be adding more features to make simpler use cases easier to handle
+
+- A database-less approach like next-auth only for JWT session handling would be much appreciated
+  - Stateless auth is coming in 1.4
+
+- 
+- 
+- 
+
 # discuss-roadmap
 - ## 
 

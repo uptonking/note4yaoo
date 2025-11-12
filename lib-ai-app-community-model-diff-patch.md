@@ -13,9 +13,9 @@ modified: 2025-10-10T02:45:45.941Z
   - 可直接参考主流编辑器已实现的方案，如codemirror/monaco
 
 - ⚖️ aider-diff-search/replace format prompt
-  - local-models: ?
-  - supported: claude, gemini, deepseek, glm, kimi, minimax
-  - no-support: gpt, qwen3-coder
+  - local-models: qwen3-14b, gpt-oss-20b
+  - 几乎都支持: gpt, claude, gemini, deepseek, qwen, glm, kimi, minimax
+  - 失败率较高: qwen3-coder, glm-4.6, mimimax-m2
   - https://github.com/asadm/vibemode/blob/main/source/editor.js
   - https://github.com/sorendunn/Agentless-Lite/blob/main/agentless_lite/repair.py
   - https://github.com/profullstack/ai/blob/master/lib/enhanced-agent.js

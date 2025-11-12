@@ -48,6 +48,8 @@ modified: 2025-10-28T20:02:16.727Z
 
 - who is using #roocode
   - ?
+# draft
+- cline + acp(agent-client-protocol)
 # ide-ai-pm
 - ai工作使用服务端架构的优点
   - 方便实现关闭页面或刷新页面后，也能看到ai工作结果的效果
@@ -66,17 +68,14 @@ modified: 2025-10-28T20:02:16.727Z
 - 
 - 
 
-## docs-cline
-
+# docs-cline
 - [CLI Reference - Cline](https://docs.cline.bot/cline-cli/cli-reference)
   - cline is a command-line interface for orchestrating multiple Cline AI coding agents.  
   - Cline is an autonomous AI agent who can read, write, and execute code across your projects.  
   - 🏠 He operates through a client-server architecture where Cline Core runs as a standalone service, and the CLI acts as a scriptable interface for managing tasks, instances, and agent interactions. 
   - The CLI is designed for both interactive use and automation, making it ideal for CI/CD pipelines, parallel task execution, and terminal-based workflows.  
   - Multiple frontends (CLI, VSCode, JetBrains) can attach to the same Cline Core instance, enabling seamless task handoff between environments.
-
-## docs-RooCode
-
+# docs-RooCode
 - Can Roo Code access the internet?
   - Yes, if you are using a provider with a model that support web browsing. Be mindful of the security implications of allowing this.
 

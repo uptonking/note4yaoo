@@ -69,4 +69,7 @@ modified: 2020-12-12T19:01:56.749Z
   - a lightweight local DNS server for development purposes, it listens on UDP port 53 (configurable) and answers DNS queries by resolving them via Node's built-in dns module, with support for local hosts file overrides.
   - DevNS is developed by AI
   - Minimal dependencies, built on Node.js built-in modules
+# nginx
+- https://github.com/Adewagold/nginx-server-manager /202509/python
+  - web interface that transforms nginx administration from complex command-line operations into simple point-and-click actions. 
 # more

@@ -148,7 +148,34 @@ modified: 2025-09-16T12:36:12.968Z
 
 - ## 
 
-- ## 
+- ## [Most used models and performance on M3u 512 gb : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1ouogiq/most_used_models_and_performance_on_m3u_512_gb/)
+  - Overall GLM 4.6 is queen right now.
+- Model: GLM 4.6
+  - Token Gen speed: generally 10-20
+Use Case: vibe coding (slow but actually can create working software semi-autonomously with Cline); creative writing; expository/professional writing; general quality-sensitive use
+PP Speed: 4 bit MLX 50-70 t/s at large context sizes (greater than 40k)
+- Model: Kimi K2 thinking
+  - Token gen speed: 3ish to 2
+Use case: idk it's just cool having a huge model running local. I guess I will use it for brainstorming stuff, medical stuff, other questionable activities like academic writing. PP speed/context size is too limited for a lot of agentic workflows but it's a modest step above other open source models for pure smarts
+PP speed: Q3 GGUF 19 t/s (26k context) faster with lower context; 
+- Model: Minimax-m2
+  - Token gen speed: 40-50 at modest sizes
+Use case: Document review, finance, math. Like a smarter OSS 120.
+PP Speed: MLX 4 bit 3-400 at modest sizes (10k ish)
+- Model: GPT-OSS-120
+  - Token gen speed: about 80 at medium context sizes
+Use case: Agentic searching, large document ingesting; general medium-quality, fast use
+PP speed: 4 bit MLX near 1000 at modest context sizes. But context caching doesn't work, so has to reprocess every turn.
+- Model: Deepseek 3.1:
+  - Token gen speed: 3-20 depending on context size
+Use case: Used to be for roleplay, long context high quality slow work. Might be obsoleted by glm 4.6... not sure it can do anything better
+PP Speed: Q3 GGUF: 50 t/s
+
+- I’m ngl 4.6 running around 10-20tps is kinda disappointing for a $10k+ computer when you can run the same model on cpu for 2-3tps on a $1500~ ddr5 rig (pre price jump).
+  - Don't get me wrong I’d still love those speeds, but idk if that’s worth spending an extra $500 per token in extra speed (at least for my use case); definitely reshapes my perspective of everything.
+  - if the main reason of buying an expensive computer is to run big models faster, it’s a valid metric; how much value are you getting out of a $10k computer when a computer at 10% of the cost can do the same thing, just barely slower. I’d want to see at least 30-40tps out of a $10k computer.
+
+- For comparison 12 3090 gets me 12k prompt processing with VLLM and 20 tokens per second for GLM and Minimax.
 
 - ## [M2 Ultra Mac Studio with 64GB RAM and Ilama3.1 70b : r/ollama _202410](https://www.reddit.com/r/ollama/comments/1g0gycc/m2_ultra_mac_studio_with_64gb_ram_and_ilama31_70b/)
 - I have M3 Max with 64 GB RAM and it can handle 70B (4 bit quantized) models. However, in my case, inference with 70B models isn’t at a comfortable speed.

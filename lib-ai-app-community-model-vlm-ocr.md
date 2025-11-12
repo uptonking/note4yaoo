@@ -211,7 +211,17 @@ modified: 2025-11-06T18:49:13.977Z
 
 - ## 
 
-- ## 
+- ## [I've just ordered an RTX 6000 Pro. What are the best models to use in its 96GB for inference and OCR processing of documents? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1ouq7oe/ive_just_ordered_an_rtx_6000_pro_what_are_the/)
+- For medical and legal docs you really want something that can handle tables and complex layouts. I've seen people get burned using generic OCR models on medical forms where the layout matters as much as the text.
+  - The 6000 Pro should handle most models fine but for production use with multiple users... you might want to think about caching and load balancing. We had a client try to run everything on one GPU for their legal team and it became a bottleneck real quick. 
+  - Maybe start with something like LayoutLMv3 or Donut for the document understanding part - they're built for this kind of structured extraction rather than just reading text.
+
+- The suggestion of an OCR specific model is probably a good one. I'll mention the granite docling models. Tiny but will be blazing fast for you.
+  - Expect to do a lot of downloading and testing. You need to find what works for you. Then there is the never ending stream of new models to try.
+
+- You don’t really need a fancy LLM for this, if they’re high quality documents you could easily use tesseract. Regarding inference, any RAG approach should work
+  - Any handwriting would be out. Tesseract is too old and I think shouldn't be the gold standard anymore.
+- Tesseract should work well enough with high quality documents that were originally generated in Office, etc. There are plenty of other solutions out there, tesseract included, that would be drastically quicker and less resource intensive than an LLM whether tesseract, OCRopus, Calamari, Kraken.. it all depends on the nature of the documents, langauge, etc.
 
 - ## [model : add PaddleOCR by ngxson · Pull Request · ggml-org/llama.cpp _202510](https://github.com/ggml-org/llama.cpp/pull/16701)
   - Model generate hallucinated text, likely because of the projector being incorrect

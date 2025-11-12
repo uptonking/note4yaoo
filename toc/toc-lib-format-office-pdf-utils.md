@@ -61,6 +61,15 @@ modified: 2022-11-11T10:46:41.519Z
   - 除了能给PDF打水印之外，还可以轻松批量给扫描的PDF文件瘦身，1秒钟搞定，太好用了
   - [refactor: move modules under app/ directory and update file paths _202507](https://github.com/Stirling-Tools/Stirling-PDF/pull/3938)
 
+- https://github.com/mrmn2/PdfDing /1.4kStar/AGPL/202511/python
+  - https://www.pdfding.com/
+  - a selfhosted PDF manager, viewer and editor offering a seamless user experience on multiple devices.
+  - designed be to be minimal, fast, and easy to set up using Docker.
+  - The name is a combination of PDF and ding. Ding is the German word for thing. Thus, PdfDing is a thing for your PDFs. Initially inspired by linkding.
+  - browser based PDF viewing on multiple devices. Remembers current position - continue where you stopped reading
+  - Edit PDFs by adding comments, highlighting and drawings
+  - SSO support via OIDC
+
 - https://github.com/SimplePDF/simplepdf-embed /280Star/NonOpen/202502/ts
   - https://simplepdf.eu/embed
   - PDF editor in the browser – add text, checkboxes, pictures, signatures to PDF files. 

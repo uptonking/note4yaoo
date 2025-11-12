@@ -151,8 +151,58 @@ modified: 2023-11-10T08:05:25.474Z
   - 代码能跑，但结果不符合期待
 
 - 我知道js只支持到2**53 但是我之前记得在那看过 新特性解决了这个问题 还支持有无符号 难道是我记忆错位
-# discuss-feat-enum 📍
+# discuss-feat-enum 🧩
 - ## 
+
+- ## 
+
+- ## 
+
+- ## Enums add hidden code to your final file, while `as const` adds zero code.
+- https://x.com/thinkbuildnext/status/1988305467463135697
+- Or just string unions: Much better dev UX as well since you don’t have to register those on your component first before you can use them in a template
+  - I tend to agree. But something like `status === Status.pending` Looks better than `status === "pending"` .
+  - The problem with this approach is that you need to create two things: the map and extract the type from the map
+
+- `as const` allows you to add `satisfies never` in a switch statement and make sure you handle all possible cases which is so fucking good probably my favorite feature
+
+- as long as you don’t develop libraries,  `const enum` as also nice. better types, no bundle
+  - Const enums add negative code.
+- Numeric enums are not type safe
+
+- https://x.com/DanielGlejzner/status/1836881538354381253
+
+```ts
+enum Types {
+  
+}
+
+// R 
+
+export const someKindOfType = {
+  AdminEnabled: “AdminEnabled”,
+  ModEnabled: “ModEnabled”,
+  UserEnabled: “UserEnabled”
+} as const 
+
+export type someKindOfType =
+keyof typeof someKindOfType
+
+// OR
+
+type foo = 'adminEnabled' | 'modenabled' | 'userenabled'
+
+// OR
+export const WIDGET_KINDS = [
+"Chart",
+"QuoteSpreadSheet",
+"QuoteBoard"
+] as const;
+export type WidgetKind = typeof WIDGET_KINDS[number];
+
+```
+
+- Enum. Cause String enum transpiled js  would be almost the same as the const option. 
 
 - ## TS 5.8 just shipped a flag to disable all the features I don't like in TypeScript.
 - https://x.com/mattpocockuk/status/1882844674924347418
