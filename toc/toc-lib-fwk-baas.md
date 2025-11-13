@@ -318,6 +318,11 @@ modified: 2021-05-25T09:40:55.797Z
   - CapRover is an extremely easy to use app/database deployment & web server manager for your NodeJS, Python, PHP, ASP. NET, Ruby, MySQL, MongoDB, Postgres, WordPress (and etc...) applications!
   - It's blazingly fast and very robust as it uses Docker, nginx, LetsEncrypt and NetData under the hood behind its simple-to-use interface
   - Docker Swarm under the hood for containerization and clustering
+# wasm
+- https://github.com/trailbaseio/trailbase /3.4kStar/OSL(LGPL)/202511/rust/ts
+  - https://trailbase.io/
+  - open-source application server with type-safe APIs, built-in WebAssembly runtime, realtime, auth, and admin UI built on Rust, SQLite & Wasmtime.
+  - single-executable Firebase alternative with type-safe REST & realtime APIs, built-in WebAssembly runtime, SSR, auth and admin UI built on Rust, SQLite & Wasmtime.
 # more
 - https://github.com/nils-simons/spackoDB /202206/js/starter
   - Firestore Alternative

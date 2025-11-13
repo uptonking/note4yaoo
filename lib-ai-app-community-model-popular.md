@@ -641,6 +641,40 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [We put a lot of work into a 1.5B reasoning model — now it beats bigger ones on math & coding benchmarks : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1ou1emx/we_put_a_lot_of_work_into_a_15b_reasoning_model/)
+  - We’re just a small team, and this model isn’t really meant to be a general chatbot right now. It was designed mainly for competitive-style math and coding problems. (You can see our table, the GPQA metric is not too high. Small models don’t have much knowledge, but they can still reason really well.)
+  - We released it to support this idea: https://x.com/karpathy/status/1814038096218083497?s=20 (maybe reasoning doesn’t actually need huge parameter counts)
+- Reasoning may not need huge parameter count, but knowledge does and good reasoning requires good knowledge, otherwise you're reasoning over factually incorrect hallucinations.
+  - Yes, I totally agree with you. This round was just an extreme test to see if a 1.5B model can show strong reasoning ability. We’ll train a more practical version for general use and reasoning with knowledge later, which will be larger than 1.5B.
+
+- Can you give examples of math/coding problems that this model works well with? Does it have to be prompted in a certain way?
+  - For math questions: You can start with the prompt:“Let’s think step by step and output the final answer within \boxed{}.” Then input your question after that.
+  - For coding problems: You can ask it to “write a Python program to achieve [your goal].” It helps if you can provide some input/output examples — or you can just describe the function to implement, similar to how problems are defined on LeetCode, AtCoder, or Codeforces.
+  - Still recommend you to use competitive style math / python algorithm tasks
+
+- With the default system prompt this model always puts the result into a box. This seems to be geared towards(调节来达到) common benchmarks where the result is expected to be boxed.
+  - Good catch. Yes, the boxed output comes from math data, since most of them expect that format for easier verification.
+  - Right now this version is more of a technical exploration, we’re testing how far small models can go in reasoning through training techniques. The token usage is something we’ll optimize in future, more practical versions.
+
+- The token consumption seems rather high for simple tasks. 
+  - VibeThinker is slightly larger than that Granite model and uses more tokens - on easy tasks. One reasonable thing to do during post training would be not not just show the model extensive reasoning, but also sufficient cases where this can be kept shorter. Still, it'd be an optimization. Get it right first, optimize while maintaining correctness later.
+
+- why did you use qwen 2.5 as the base model instead of 3 series?
+  - We’re mainly exploring how far small models can go in reasoning compared to large ones, and Qwen2.5 already fit our research goal.
+  - Also, a lot of related work is based on Qwen2.5, so it made comparisons much easier (like DeepSeek-R1-Distill-1.5B is originated from Qwen2.5-Math-1.5B). That’s why we didn’t switch to Qwen3 for this round.
+- why start with Qwen2.5-Math if it had weak math and coding ability to start with? Why not go with a Qwen3 base? 
+  - Currently, a large amount of post-training work on 1.5B models is based on either Qwen2.5 1.5B or DS-distilled 1.5B (based on the Qwen2.5 Math). To ensure a fair comparison with existing work, we adopt the Qwen2.5 Math.
+
+- I tested it and its coding skills seems similar to qwen-2.5-coder 7B or better, for my first rounds.
+
+- Roo appears to be stuck in a loop, attempting the same action (update_todo_list) repeatedly. 
+  - Not rly surprised that a 1.5B math model cannot code
+- It's better suited for competitive programming, for example, you could try participating in LeetCode weekly contests.
+
 - ## [Benchmark Results: GLM-4.5-Air (Q4) at Full Context on Strix Halo vs. Dual RTX 3090 : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1osuat7/benchmark_results_glm45air_q4_at_full_context_on/)
   - Both tests were conducted under Debian GNU/Linux with the latest llama.cpp builds from the day of testing.
   - 3090: 5 tops
@@ -1904,7 +1938,23 @@ free 5GB postgres via aiven.io
 
 - ## 
 
-- ## 
+- ## [What's a surprisingly capable smaller model (<15B parameters) that you feel doesn't get enough attention? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1ouy2a6/whats_a_surprisingly_capable_smaller_model_15b/)
+- Gemma 3 is also a great one for a variety of languages apart from English.
+
+- Qwen2.5 0.5B in Q8 is surprisingly good for utility work, like summarization and search query generation. It's so tiny basically anyone can keep it loaded permanently alongside bigger models, and so fast its responses are nearly instant (400+ t/s on mid-range Ryzen CPU).
+
+- All of the Qwen3 small models are incredibly capable for their size.
+
+- Qwen3 4B Thinking 2507, and all the finetuned models people have made from it. Even in benchmarks, you look at all the Qwen models and this one has more than the 8B model (though it does use thinking tokens a lot. But thats apparently needed for reasoning.
+
+- Check VibeThinker, for 1.5B is huge in reasoning, math and coding. Can't wait to try4B or 8B.
+  - 基于 Qwen/Qwen2.5-Math-1.5B
+
+- I believe that highly specialised small models will eventually replace the jack of all trades master of none small models. Large models can afford to be jack of all trades but small cannot and should specialise more.
+  - I mean it depends on what you want. When it comes to writing for example there are mistral 12b fine-tunes that are better than some 70b+ models. There is medgemma 4b which sucks at everything else but gives better medical information than most other models under 100b excluding medgemma 27b.
+  - A model trained solely on math and physics or a model trained only on vhdl or python for maximal effectiveness in a single field.
+
+- IBM Granite Tiny with web search, scout-4b/scout-4b. Q8_0.gguf - great for summaries and RAG
 
 - ## [What is the best LLM for large context under 30B? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1op1h9h/what_is_the_best_llm_for_large_context_under_30b/)
 - almost all LLMs, local or not, struggle really hard with prompt adherence. 150k is beyond what most models work well, even the really big ones. 

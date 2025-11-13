@@ -555,6 +555,24 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Stop fine-tuning your model for every little thing. You're probably wasting your time. : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1ov7ogq/stop_finetuning_your_model_for_every_little_thing/)
+  - confession time. I just wasted three weeks and a chunk of my compute budget trying to fine-tune a model to answer questions about our internal API. The results were... mediocre(平庸的；普通的；不够好的) at best. It kinda knew the stuff, but it also started hallucinating in new and creative ways, and forgot how to do basic things it was good at before.
+  - I feel like "fine-tuning" has become this default magic wand people wave when an LLM isn't perfect. But 80% of the time, what you actually need is RAG
+  - RAG is like giving your AI a cheat sheet. You've got a mountain of internal docs, PDFs, or knowledge that the model wasn't trained on? Don't shove it down the model's throat and hope it digests it. Just keep it in a database (a "vector store, " if we're being fancy) and teach the AI to look things up before it answers. 
+  - It's faster, cheaper, and the AI can't "forget" or misremember the source material. Fine-tuning is for changing the AI's personality or teaching it a new skill. This is when you need the model to fundamentally write or reason differently. 
+  - So, the dumb-simple rule I go by now: · Problem:- "The AI doesn't know about X." -> Use RAG. "The AI doesn't act or sound the way I want." -> Consider Fine-Tuning.
+
+- RAG is for knowledge
+  - Finetuning is best for style
+  - Don't mix up the two
+
+- I thought you can't SFT modern reasoning LLMs anymore? all this does is fuck up their complex post train since GRPO/RLHF happens after SFT and you can't replicate that with a simple pipe.
+  - I think it depends on the model? Like, Qwen3 models are pretty good for SFT training.
+
 - ## [After Building Multiple Production RAGs, I Realized — No One Really Wants "Just a RAG" : r/Rag _202511](https://www.reddit.com/r/Rag/comments/1oly866/after_building_multiple_production_rags_i/)
 - I get asked to RAGify :) company documents, but just RAG isn't enough. It needs to be able to analyze code without a single click, able to produce similar documents similar to provided document, able to chat with documents, and needs to completely run offline, no data outside. More requirements keep coming as the week go on.
 

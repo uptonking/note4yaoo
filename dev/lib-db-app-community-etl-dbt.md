@@ -14,7 +14,21 @@ modified: 2023-12-15T18:03:33.503Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 💥 [Best way to read 100k rows from DB and write it to Excel/CSV file? : r/golang](https://www.reddit.com/r/golang/comments/1ovoj9l/best_way_to_read_100k_rows_from_db_and_write_it/)
+- Fetch query results in batches (1k or more, needs benchmarks).
+  - Write each batch to CSV (use streaming).
+  - Don't forget to compress CSV file (compression streaming is also a good idea).
+  - Compressed file may be uploaded into online storage part by part.
+
+- Read a row from the db.
+  - Write a row to the csv.
+  - Make sure I/o operations are buffered.
+  - Profit.
+
+- This is a simple producer-consumer problem that concurrency will handle nicely in Go. You can just use one goroutine to essentially be a generator for reading the DB results, then another goroutine can read from the channel and do the writes. In that case, it wouldn't matter how many rows you had to read and write.
+- There are huge benefits in multiple go routines because they are waiting for different things on the outside world eg DB access on one side and writing to a file on the other side. This is especially true if it's not a simple read /write but actually a read / process (eg formatting) / write. In those situations you may want multiple threads running. Does the CSV data have to be in a certain order if not then you can really increase throughput.
+
+- Yes. Don’t read everything in the memory first, write into the file as you read from the db. This alone should be enough. You can even gzip it on the fly.
 
 - ## Today dbt announced column level lineage... but it's not open source and only available for paying cloud users. _202402
 - https://twitter.com/Captaintobs/status/1757601463852023876

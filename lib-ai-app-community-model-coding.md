@@ -599,6 +599,9 @@ def slugify(text):
 - is there a seahorse emoji?
   - 🐛 容易导致loop
 
+- I have 7 apples. Yesterday I ate one apple. how many apples do i have now?
+  - 适合测试4b一下模型
+
 <!-- 检查语料丰富度 -->
 - 春风得意马蹄疾 出自哪里? 上下句是什么？ 表达什么意思？
   - dengkehou
@@ -2100,6 +2103,17 @@ ollama run hf.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF:Q6_K
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Best coding model for 192GB VRAM / 512GB RAM : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1ov1w8j/best_coding_model_for_192gb_vram_512gb_ram/)
+  - what would be your choice if you had 4x RTX A6000 with nvlink and 512GB DDR4 RAM as your llm host?
+- I’ve had that exact setup and by far my favorite was Qwen3 235B A22B Instruct 2507 GPTQ INT4 in vLLM tensor parallel. 256k context, fast as blazes, practically SOTA for open weights, and it all fits in GPU. It’s amazing.
+
+- I’ve done quite a bit of testing and found Qwen2.5 Instruct to be better at coding (at least for my use-case) than Qwen2.5 Coder 
+- The coder variant was over 400B and wasn’t any better than 235B Instruct in my tests.
 
 - ## [Local LLMs vs. cloud for coding : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o2efiq/local_llms_vs_cloud_for_coding/)
 - Aider has their leaderboard. gpt-oss-120b scores fairly decent. 

@@ -17,6 +17,9 @@ modified: 2025-11-01T10:54:26.044Z
   - Distributed inference and fine-tuning with mx.distributed
   - [MLX Community Projects · ml-explore/mlx _202402](https://github.com/ml-explore/mlx/discussions/654)
 
+- https://github.com/Blaizzy/mlx-vlm /1.8kStar/MIT/202511/python
+  - a package for inference and fine-tuning of Vision Language Models (VLMs) and Omni Models (VLMs with audio and video support) on your Mac using MLX
+
 - https://github.com/lordmathis/llamactl /MIT/202509/go/ts
   - http://llamactl.org/
   - Unified management and routing for llama.cpp, MLX and vLLM models with web dashboard.

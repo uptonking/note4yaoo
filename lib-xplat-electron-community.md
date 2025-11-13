@@ -122,12 +122,23 @@ modified: 2023-01-02T10:30:19.459Z
 
 - ## [Bindings not found error · Issue · vitejs/vite-plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc/issues/74)
 - We have fixed the problem with running this command: `npm i -D @swc/cli @swc/core`
+
 # discuss
 - ## 
 
 - ## 
 
-- ## 
+- ## 🆚 Made the hard decision to migrate a native (React Native Windows) app to Electron myself.
+- https://x.com/birch_js/status/1988433012321853736
+  - We could deliver more frequent updates
+  - bugs went down dramatically
+  - support calls went down
+  - the customer got a far better product
+  - easier to sell
+  - 🤔 Disk and RAM bloat is a small price to pay in the face of that.
+
+- Why not use something like Tauri which DOESN'T ship chromium?
+  - Because Electron gives us production-ready clock-synchronised loopback audio + microphone recording on macOS, Windows, and Linux for free, all in under 100 lines of JavaScript code. System WebView wrappers like Tauri don't give that.
 
 - ## [Basic Electron Framework Exploitation | Hacker News _201908](https://news.ycombinator.com/item?id=20636805)
 - > The problem lies in the fact that Electron ASAR files themselves are not encrypted or signed

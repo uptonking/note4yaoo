@@ -16,7 +16,10 @@ modified: 2022-11-21T15:27:20.974Z
 
 - ## 
 
-- ## 
+- ## 你现在可以轻松用纯 css 实现小米 logo 的圆角，gemini logo，以及曾经让你头疼的优惠券挖凹角效果
+- https://x.com/dongnaebi/status/1988794318539354505
+- 兼容性
+  - 没事，样式问题不会导致崩溃，只是回退到普通圆角
 
 - ## 3个box在hover时切换布局的示例
 - https://twitter.com/nanxiaobei/status/1719748228483330462

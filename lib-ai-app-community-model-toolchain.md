@@ -608,6 +608,19 @@ PP Speed: Q3 GGUF: 50 t/s
 
 - ## 
 
+- ## [Any experience serving LLMs locally on Apple M4 for multiple users? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1ov5bpe/any_experience_serving_llms_locally_on_apple_m4/)
+- vLLM, or any production grade multi user inference engine, does not support this platform.. I think the Apple multi user story is effectively "buy each user their own mac"
+  - vllm works on metal now, sort of. not currently worth the trade offs in my opinion, though
+
+- I have no experience with it, but considering how poorly it handles context I think it's safe to say it isn't going to work well at all with multiuser concurrency. It's really designed to be a single user device.
+
+- Prompt processing is significantly slower on the Mac platform compared to nvidia so if the users are sending large contexts, they're going to see a big delay before they see output tokens. 
+  - I use an m3 512 with qwen vl 30ba3b which is 1-2 seconds before outputting even with 2-3k contexts, but then also use deepseek 3.1 q4 (370 gigs) which can take up to 30 seconds to prompt process a 400-500 token input. Subsequent same requests (literally identical because of many text to image prompts) are much faster. Doing that with multiple users who are all submitting unique requests would be unbearably slow unless you submit and walk away. This is with lm studio and the mlx versions of the models. 
+  - Vllm isn't correctly supported on mac, and you get a 25% speed reduction if you use ggufs compared to the mlx versions.
+
+- ## [MLX added support for MXFP8 and NVFP4 : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1ojpfwl/mlx_added_support_for_mxfp8_and_nvfp4/)
+- I dont think native fp4 supportwill come until m6 or m7. M5 didnt have fp4 or fp8 accelerators. maybe m5 max will have dedicated fp8 support, if not then m6
+
 - ## 🔧 [There is a space on HF where you can convert models to MLX without downloading them : r/LocalLLaMA _202503](https://www.reddit.com/r/LocalLLaMA/comments/1j3k8o8/there_is_a_space_on_hf_where_you_can_convert/)
   - Well I just learned that there is a space on HF where you can convert models, you just enter the model name and the quant and it uploads it straight to your HF profile! No need to download or do anything at all. This also means I'm not limited by my ram, I can convert any model now and so should you :)
   - https://huggingface.co/spaces/mlx-community/mlx-my-repo
@@ -894,7 +907,8 @@ sudo launchctl load /Library/LaunchDaemons/io.yaoo.sysctl.plist
 # discuss-llama.cpp
 - ## 
 
-- ## 
+- ## [Mastering llama.cpp: A Comprehensive Guide to Local LLM Integration : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1ov2ll9/mastering_llamacpp_a_comprehensive_guide_to_local/)
+- no mention of override tensor, CPU MoE offloading, API keys, and a lot more stuff. To the people who found this Reddit post, this guide pretty surface level.
 
 - ## [Question about "./llama-server" prompt caching : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1lujz2h/question_about_llamaserver_prompt_caching/)
   - Does `./llama-server` support prompt caching (like `--prompt-cache` in the CLI), and if not, what’s the correct way to persist or reuse context between chat turns to avoid recomputing the full prompt each time in API-based usage (e.g., with Open WebUI)?
@@ -1486,7 +1500,14 @@ curl http://localhost:11434/api/chat -d '{
 
 - ## 
 
-- ## 
+- ## [Best frontend for vllm? : r/LocalLLaMA _202506](https://www.reddit.com/r/LocalLLaMA/comments/1ldokl7/best_frontend_for_vllm/)
+  - I use LM studio for an easy inference of llama.cpp but was wondering if there is a gui for more optimised inference.
+
+- I've been using text-generation-webui as a combo back-end & front-end since I started with local models over two years ago now, and IMO nothing else comes close as an all-rounder for LLM work. You can also use it as a server, exposing an OpenAI API endpoint to utilize elsewhere if you want to use another front-end or need to make API calls from other programs.
+
+- Been using Lmstudio as well but you could try https://jan.ai/docs as a free open source alternative.
+
+- What we do is build Gradio UIs. Nowadays with LLMs it's super easy to create them and customize them to your liking.
 
 - ## [TIL: For long-lived LLM sessions, swapping KV Cache to RAM is \~10x faster than recalculating it. Why isn't this a standard feature? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1olouiw/til_for_longlived_llm_sessions_swapping_kv_cache/)
   - TIL: For long-lived LLM sessions, swapping KV Cache to RAM is ~10x faster than recalculating it. Why isn't this a standard feature?

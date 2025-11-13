@@ -115,7 +115,10 @@ modified: 2021-09-20T18:38:00.319Z
 
 - ## 
 
-- ## 
+- ## ⚖️ Google 的 AIP 是更新的 REST API 规范
+- https://x.com/vikingmute/status/1987808934392992055
+  - API Improvement Proposals，值得大家看看，也是比较简洁高效的 API 设计规范。
+  - [API Improvement Proposals](https://google.aip.dev/)
 
 - ## 🆚️ REST APIs are outdated. GraphQL is overrated. Just send JSON over WebSockets and be done with it
 - https://x.com/_trish_07/status/1901695896745914395

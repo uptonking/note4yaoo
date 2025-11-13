@@ -424,6 +424,28 @@ modified: 2022-01-16T15:52:31.293Z
 
 - R720 2x xeon 2670, 192gb ddr3-1333 dram, llama.cpp running mixtral q3_k_m quant w/ 10k context, pure cpu inference: 3.6 t/s. If use installed P40: 9.1 t/s
 
+- ## [AI setup for cheap? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1ovbzi3/ai_setup_for_cheap/)
+  - My current setup is: i7-9700f, RTX 4080, 128GB RAM, 3745MHz. In GPT, I get ~10.5 tokens per second with 120b OSS, and only 3.0-3.5 tokens per second with QWEN3 VL 235b A22b Thinking. 
+- If you're only getting 10 tok/s, you're probably not using GPU at all. I have i7 13700k with a 4090. I get 38 tok/s with GPU, and 11 tok/s with only CPU.
+  - If you're running llama.cpp, did you compile with CUDA support. Did you remember to set your -ngl 99 flag? using --n-cpu-moe instead of -ot exps=CPU?
+  - Try llama-server -ngl 99 --n-cpu-moe 32 -ngl 99 -c 50000 -fa on -m file/to/model.gguf --no-mmap -t 8 -ub 2048 -b 2048 --jinja
+
+- The CPU doesn't matter, the CPU's memory speed (i.e. your ram) determines TPS
+
+- ## [AI LLM Workstation setup - Run up to 100B models : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1ov7idh/ai_llm_workstation_setup_run_up_to_100b_models/)
+  - Planning to buy 320GB DDR5 RAM (5 * 64GB) first. Also with high MT/s(6000-6800 minimum) as much as possible to get better CPU-only performance. In future, I'll buy some more DDR5 RAM to make that 320GB to 512GB or 1TB.
+
+- 50+t/s with 30-50B Dense models is not possible for CPUs. As you need 20GB(32B Q4)x 50 ~= 1000GB/s of bandwidth, which is impossible before Epyc Venice or Diamond Rapids Xeon.
+
+- Planning to buy 320GB DDR5 RAM (5 * 64GB) first
+  - Don't do 5. In order to get maximum bandwidth you need to have an even number of DIMMs all the same size (and there might be some restrictions beyond that depending on CPU). If you have 5 you'll have 4*64GB of 'fast' memory and 64GB of slow memory. Keep in mind also that if you only have 5 out of 8 DIMMs installed you only get 5/8 the maximum memory bandwidth for the platform which directly impact your performance.
+
+- "50+t/s with 30-50B Dense models"? A 6000 Blackwell can barely do that: I get 58t/s with Qwen3-32B-Q4. My 400W Epyc with 12x 5200MHz RAM only gets 14-18t/s.
+  - The only reason CPU is usable with MoE is because the amount of RAM needed and the fact that bandwidth is often the bottleneck before compute and even then it's medeocre unless you offload the attention calculations which are more compute than memory bound.
+
+- Optimized Power saving Setup
+  - You seem to be confusing power draw with efficiency. Running a 200W CPU for 5min is not better than a 600W GPU for 1min. Get a RTX 6000 Max-Q, which runs the models you want and is one of the most efficient inference engines that are available. My Epyc system idles at ~90W while a Max-Q idles at ~15W and can be put in some <40W desktop.
+
 - ## 🤔 [Budget LLM pc builds, new CPU only approaches : r/LocalLLaMA _202410](https://www.reddit.com/r/LocalLLaMA/comments/1fycnc1/budget_llm_pc_builds_new_cpu_only_approaches/)
   - iGPU and lot's of memory: Like using 192gb of DDR5 RAM on the AMD Ryzen 9 7950x iGPU, or the budget Ryzen 5 8500G?
   - AVX-512: Llamafile now has AVX-512 Support, meaning 10x Faster Prompt Eval Times For AMD Zen 4, like AMD Ryzen 9 5900X?
@@ -1657,9 +1679,51 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## [Ollares one: miniPC with RTX 5090 mobile (24GB VRAM) + Intel 275HX (96GB RAM) : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1ov3x0m/ollares_one_minipc_with_rtx_5090_mobile_24gb_vram/)
+  - Processor: Intel® Ultra 9 275HX 24 Cores, 5.4GHz
+  - GPU: NVIDIA GeForce RTX 5090 Mobile 24GB GDDR7
+  - Memory: 96GB RAM (2×48GB) DDR5 5600MHz
+  - Initial price seems it would be around $4000
 
-- ## 
+- the 5090 mobile is based on the 5080 desktop chip, is a bit less compute and bandwidth than a 5080 desktop owing to being a mobile part, but with 24GB instead of 16GB. The 5080 desktop is already about half the speed of a 5090. The system is still a dual channel DDR5 system after you run out of VRAM, just like a normal desktop. 
+  - It feels to me like a very narrow market for the particular combination of very tiny form factor, good diffusion and smaller LLM performance (<32B), and low power usage. 
+  - Otherwise, a better value is probably found for large (80-120B) MOE LLM in the 395/Spark, or a desktop 5090 which you can at least cram into a "smallish" mini ITX case like the Corsair 2000D.
+
+- it cant compete with unified memory machines since its ram is slower by 4-8x compared to them. 
+
+- ## 🆚 [Why Ampere Workstation/Datacenter/Server GPUs are still so expensive after 5+ years? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1ove1px/why_ampere_workstationdatacenterserver_gpus_are/)
+- ada
+  RTX 6000 Ada (48GB), on ebay for about 5000 USD.
+  RTX 5000 Ada (32GB), on ebay for about 2800-3000 USD.
+  RTX 4000 Ada (24GB), on ebay for about 1200 USD.
+  NVIDIA L40 (48GB), on ebay for about 7000 USD.
+  NVIDIA L40S (48GB), on ebay for about 7000USD.
+  NVIDIA L4 (24 GB), on ebay for about 2200 to 2800 USD.
+
+- ampere
+  RTX A6000 (48GB), on ebay for about 4000-4500 USD.
+  RTX A5000 (24GB), on ebay for about 1400 USD.
+  RTX A4000 (16GB), on ebay for about 750 USD.
+  NVIDIA A40 (48GB), on ebay for about 4000 USD.
+  NVIDIA A100 (40GB) PCIe, on ebay for about 4000 USD.
+  NVIDIA A100 (80GB) PCIe, on ebay for about 7000 USD.
+  NVIDIA A10 (24GB), on ebat for about 1800 USD.
+
+- ADA generation killed nvlink for pro level gpus. This means for multi-gpu training particularly bandwidth intensive tasks the ampere generation is superior.
+  - Blackwell is also a big leap over ADA generation in both compute, but crucially VRAM as well.
+  - As a result if you want multi-gpu ampere can often win, and if you want single GPU Blackwell is a no brainer vs Ada, so ADA doesn't have a market niche.
+
+- Ampere cards are slower (about half perf compared to Ada), some less VRAM and don't support FP8.
+
+- Their memory bandwidth is stil above what is available for the consumer market + their power consumption is even lower.
+
+- What MOBO do you recommend for 5-6 cards? If possible AMD AM5.
+  - Threadripper/threadripper pro/xeon workstation or server motherboard like amd epyc or intel xeon.
+  - Only workstation/server motherboards have enough pcie lanes to satisfy your needs.
+  - Consumer motherboards won't properly support that much gpus A z790-p supports 4 gpu, 1 with x16 lanes from the cpu and 3 x4 from the chipset (acting link a switch).
+  - You could split the x16 (if bifurcation is supported). But still this is x4 pcie 4.0, could be a bottleneck.
+
+- Ampere cards are still pretty good all-rounders that can handle AI workloads well, they support BF16 training and inference and that's not dead.
 
 - ## [Does AMD AI Max 395+ have 8 channel memory like image says it does? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1os6t6w/does_amd_ai_max_395_have_8_channel_memory_like/)
 - 4 channels * 64-bit interface * 8000 MT/s = 256 GB/s.

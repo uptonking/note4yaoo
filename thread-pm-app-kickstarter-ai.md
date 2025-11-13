@@ -276,6 +276,50 @@ modified: 2023-04-04T03:59:40.928Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 📌 我觉得企业内AI落地场景基本是下面几个了
+- https://x.com/bozhou_ai/status/1988506484200927510
+01. 问答类
+主要是是企业内知识库问答和ToC的智能客服
+02. 审核类
+合同审核，然后一些流程审核
+03. 写报告类
+比如写PRD，研报，季度汇报，规划等等
+04. 问述类
+TextToSQL这种，比如老板直接说一句要第一季度报表，会查询数据库这种
+
+- 我正在搞你说的第四个，理想状态是啥也不用管，直接把问题、表结构扔给AI，AI直接出结果，但实际情况是，表多、字段多，字段含义不清，表关联关系不清，还有术语的问题，也就是如果只是表结构提供给llm，只能去问聚合类的问题，但是设计到字段值的问题就无效了，所以必须进行语义层的建设
+  - 第四个我也试了下，我用的方法是把自然语言让LLM转sql去查询，简单数据返回很准，问题是不能连续提问。
+- 我们也在做，字段总是找不准，翻译出错，然后sql生成就不对
+  - 所以要建设语义层
+
+- nl2sql, 或者说结构化数据llamaindex里基本够用了....， 非结构化还是chroma .. 但前提是企业里有个会用这些的人， 就是你的数据入库要“干净”.. 目测门槛非常高
+
+- text2sql 前几年也行，但现在基于llm 的语义理解做面向运营的BI 非常强大。
+  - BI 一般是大宽表，这些很多都落地了，很好用的。 比如知乎
+
+- 还有监控预警类：对企业运营的特定指标和所在行业的某些指标进行实时监控，并在出现异常时可以自动预警。
+
+- 短期来看是这样，这些场景全都是服务于AI时代之前的生产关系。做这种AI工具在接下来2年内可以有现金流，但需求必然会逐渐萎缩。
+
+- 内部知识库：不做不知道，一做全是脏数据
+
+- 基本能重复性劳动的地方就能有AI, 关键还是如何降低企业内部的沟通成本。
+  1、培训的SOP
+  2、不同部门的信息同步和会议安排
+  3、统一叫外卖
+
+- 业务流程要重新设计。市场数字营销的创作和自动化，销售流程的agent盒CRM统合，售后服务的自动化，企业人事，财务，总务的自动化，再加上IT产品中AI产品的组合。蜕变成AI原生企业而不是传统企业打个AI补丁。
+
+- 我在企业内做的是第一种，但是有关键差别，那就是我不读取企业内部知识库（因为根本没有或者太乱），我直接读外部更理想的结构化数据。落地例子是各类技术软件的用户指南生成机。Autocad，Openroads的step by step的how to指南，带视频，带分级可验证reference。
+
+- 三个方向，内部管理的降本增效，市场的精准营销，对外商业的机会挖掘，目前的落地应用都集中在内部管理上，因为流程通用，而后两个方向需要依赖对业务有全流程的理解及对市场和行业的敏感度和分析方法论的掌握，门槛较高，目前只看到个别公司做出成熟产品
+
+- 结果是都不好用，还不如直接招两个人
+
 - ## cua可以在 Mac 上开一个虚拟机，然后提供 cua-agent 让 AI 能够操作虚拟机中的 Mac 系统。
 - https://x.com/karminski3/status/1906500214288162841
   - 详细可以直接看视频，不但能操作系统，还能使用内部的程序比如浏览器， VSCode 等等
@@ -418,11 +462,11 @@ modified: 2023-04-04T03:59:40.928Z
 
 - ## 5 new market maps in AI
 - https://x.com/chiefaioffice/status/1799766662746398851
-  01.                     AI code generation tools from Greylock
-  02.                     AI legal tools from Battery Ventures
-  03.                     AI agent infrastructure from Madrona
-  04.                     AI marketing tools from a16z
-  05.                     Conversational AI from Cobus Greyling
+  01.                                   AI code generation tools from Greylock
+  02.                                   AI legal tools from Battery Ventures
+  03.                                   AI agent infrastructure from Madrona
+  04.                                   AI marketing tools from a16z
+  05.                                   Conversational AI from Cobus Greyling
 
 - ## Google 最近新出了两个 Code 相关的 Agent 非常有意思：
 - https://x.com/tuturetom/status/1798350275314581670
