@@ -37,6 +37,11 @@ modified: 2025-02-21T18:20:42.624Z
   - Build and deploy AI Agents on Cloudflare
   - https://x.com/threepointone/status/1895097050439593993
     - an event bus for ai agents
+
+- https://github.com/mozilla-ai/any-agent /1kStar/apache2/202511/python
+  - https://mozilla-ai.github.io/any-agent/
+  - A single interface to use and evaluate different agent frameworks.
+  - Multi-agent can be implemented using Agents-As-Tools.
 # agent-framework/backend
 - https://github.com/langchain-ai/langchain /113kStar/MIT/202508/python
   - https://python.langchain.com/

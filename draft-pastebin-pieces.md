@@ -284,7 +284,7 @@ $if($gt(%totaldiscs%,1),%discnumber%-,)$if($and(%albumartist%,%tracknumber%),$nu
 - 360借条 /本金在减少
   - 本金: 12900
   - 本金+利息: 37500
-  - 950?
+  - 4006030360
 
 - 头条放心借
   - 本金: 8476

@@ -11,9 +11,10 @@ modified: 2025-03-22T16:10:24.856Z
 
 # ai-dev-xp
 - tips
-  - aisdk + docs/excel/image
+  - 🤔 不要执着于ai框架，主流模型厂商都会推广包含厂商特性的框架及产品(codex/claude-code/gemini-cli), 可专注于主流开源业务系统实现 或 厂商无关的实现
   - frontend: ai-sdk/chatbot, assistant-ui, librechat
   - backend: langgraph + python/nodejs
+  - aisdk + docs/excel/image
   - ai-apps as ref: lasuite
 
 - ai-dev-xp
@@ -170,11 +171,13 @@ modified: 2025-03-22T16:10:24.856Z
 - 不适合流式的数据
   - markdown-table
   - mermaid-graph
-# ai-designing
+# ai-designing/image
 - cursor for design: logo creator
   - 形态是否要基于vscode，产物是否要直接在vscode打开
 
 - 使用ai实现高仿设计，是否可以绕过版权限制
+
+- 版权过期书籍绘画的二创
 # ai-lowcode
 - tips
   - 基于dnd的方案偏前端，后端一般很难定制和scale
@@ -326,10 +329,6 @@ modified: 2025-03-22T16:10:24.856Z
     - 无调用频率限制
     - 支持gpt5,claude,gemini
     - 部分模型倍率很高，可选按次计算版本, 如claude
-  - [mmkg API](https://api.mmkg.cloud/)
-    - 仅在每周五下午 18:00 至 21:00 开放，每周限量 100 人
-    - 支持claude,gemini, 不支持gpt
-    - Gemini系列模型永久免费， 与Gemini对话不会消耗帐号余额（可忽视帐号余额）
   - [随时跑路公益](https://runanytime.hxi.me/), 每天签到 10-25 刀
     - 完全支持 cc，主要是 sonnet 4.5，haiku 4.5 会自动重定向到 sonnet 4.5
     - RPM 暂时定为 5，之后看情况调整
@@ -337,6 +336,11 @@ modified: 2025-03-22T16:10:24.856Z
   - [我爱996公益](https://529961.com/)
     - 仅限 L 站 2 级以上用户注册
     - [【公益站我爱996一次】测试上线已接入LinuxDo ](https://linux.do/t/topic/1147448)
+  - [mmkg API](https://api.mmkg.cloud/)
+    - 仅在每周五下午 18:00 至 21:00 开放，每周限量 100 人
+    - 支持claude,gemini, 不支持gpt
+    - Gemini系列模型永久免费， 与Gemini对话不会消耗帐号余额（可忽视帐号余额）
+  - [逆水寒公益API站正式扬帆启航 ](https://linux.do/t/topic/1171730)
   - [VoAPI公益站](https://demo.voapi.top/), 每日签到
     - [【首发更新】全新API分发和管理系统-VoAPI ](https://linux.do/t/topic/218662)
     - 曾经的帐号已注销，需要重新注册

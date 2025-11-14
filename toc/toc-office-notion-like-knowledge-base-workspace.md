@@ -579,7 +579,7 @@ modified: 2022-06-03T21:34:54.893Z
   - Full-text search powered by Lunr
   - [Raneto – Markdown Knowledgebase Platform | Hacker News_201707](https://news.ycombinator.com/item?id=14839371)
 
-- https://github.com/wikimedia/mediawiki /GPL/php
+- https://github.com/wikimedia/mediawiki /4.8kStar/GPLv2/202511/php
   - https://www.mediawiki.org/
   - open-source wiki software package written in PHP. 
   - It serves as the platform for Wikipedia and the other Wikimedia projects
@@ -599,12 +599,12 @@ modified: 2022-06-03T21:34:54.893Z
   - PHP implementation of the Wikibase Data Model
   - It is primarily used by the Wikibase MediaWiki extensions, though has no dependencies whatsoever on these or on MediaWiki itself.
 
-- https://github.com/dokuwiki/dokuwiki /GPL/php
+- https://github.com/dokuwiki/dokuwiki /4.5kStar/GPLv2/202511/php
   - http://www.dokuwiki.org/
   - a simple to use and highly versatile Open Source wiki software that doesn't require a database
   - Built in access controls and authentication connectors make DokuWiki especially useful in the enterprise context 
 
-- https://github.com/BookStackApp/BookStack /php
+- https://github.com/BookStackApp/BookStack /17.7kStar/MIT/202511/php
   - https://www.bookstackapp.com/
   - A platform to create documentation/wiki content built with PHP & Laravel
 

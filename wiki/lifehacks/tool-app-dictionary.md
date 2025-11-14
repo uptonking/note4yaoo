@@ -179,6 +179,16 @@ modified: 2023-07-08T12:47:00.141Z
   - [无限下载的免费Zlib镜像](https://forum.freemdict.com/t/topic/15961)
   - A lot of people choose to upload books to Zlibrary which leads to Zlibrary has a larger collection than LibGen.
 # books
+- [书格](https://www.shuge.org/)
+  - Shuge.org 是一个自由开放的数字图书馆。致力于开放式分享、介绍、推荐有价值的古籍善本，并鼓励将文化艺术作品数字化归档。
+  - 分享内容限定为公共版权领域的书籍（参照标准 伯尔尼公约）；我们最大限度地还原书籍品貌、内容
+  - 书格发布的书籍主要以高清彩色影像版本 PDF 格式，大部分书籍书籍单页宽度在 1400 像素以上，跨页宽度在 2400 像素以上。书籍刊行年代有从宋元珍本，明清善本到近代刊本。
+  - 书格建立于 2013 年 5 月 22 日，它的起源是我（未曾）在 2012 年在豆瓣建立的 PDF 小站（已更名为书格）：一个收集整理散落世界各地的中文古籍或绘画的小站。但是豆瓣小站广播有文字限制以及严苛的审核制度。
+  - 由于我们的经费有限，我们使用了网盘作为主要下载方式，经过几年的调整，我们使用过：~~115 、迅雷快传、微盘、 360 云盘、微云、百度网盘、~~ OneDrive 、 Google Drive 等存储。其中因为诸多网盘项目本身关停，划线部分已经不再支持
+  - 网站资源存放于：filerun(自建)X5 、 Onedrive 、 Google Drive 、阿里云盘
+  - 网站内容发布系统 基于开源的 WordPress 以及付费主题 Enfold 修改建立
+  - 由于财力有限，网站一直是我一个人在管理和发布。我能坚持多久，世寿所许
+
 - books-forum
   - [哪个网站的电子书最多？ - 知乎](https://www.zhihu.com/question/30026587/answers/updated)
   - [读秀电子书免费分享，秒传代码方式，不限次数](https://forum.freemdict.com/t/topic/15461)

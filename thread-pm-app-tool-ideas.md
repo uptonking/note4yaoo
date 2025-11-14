@@ -135,6 +135,8 @@ modified: 2022-11-07T10:58:24.512Z
     - By support I mean, since it's a tier 1 product feature and so will support sync'ing all relevant settings, extensions, and themes. I don't have to worry about it getting abandoned (like I worry about most of the Sublime ecosystem).
   - I would be happy even to be able to change the location of the settings json file to a shared folder (dropbox or google drive or apple cloud or whatever) to be able to keep the settings in sync between my two machines.
 # sharing
+- 版权过期书籍绘画的二创
+
 - 规避版权问题的内容讨论平台
   - 科技分享，类似hacker-news
   - 产品讨论，类似product-hunt

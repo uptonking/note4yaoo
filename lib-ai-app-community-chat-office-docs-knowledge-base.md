@@ -9,6 +9,9 @@ modified: 2025-08-30T18:16:57.201Z
 
 # guide
 
+- knowledgebase
+  - 对通用的知识库的需求，类似于需要一个通用的搜索引擎，很难做好
+  - 本地知识库 + 在线搜索 能减少幻觉、紧急结合本地
 # discuss-stars
 - ## 
 
@@ -37,7 +40,7 @@ modified: 2025-08-30T18:16:57.201Z
 - 搭起来很简单，做到效果好很难，做一套评测标准也很难
 - 就是chatbot这个形态有点不三不四
 
-# discuss-local/llama/models
+# discuss-local/llama
 - ## 
 
 - ## 
@@ -231,6 +234,53 @@ Switch anytime for cost, speed, or privacy.
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 🤔 [How useful are llm's as knowledge bases? : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kderkz/how_useful_are_llms_as_knowledge_bases/)
+- They are not very useful, really. Use RAG and web search with it and all of a sudden it's a different story.
+  - they can be really useful. But the answers needs to be validated after the fact. Often I ask them to answer based on their own knowledge and understanding of a subject, and then I ask them to google it to verify what they said is factually correct and correct any inaccuracies.
+
+- LLMs strictly speaking do not have "knowledge", they represent (with loss) a large amount of textual information from multiple sources, some which are considered by most human as knowledge, others of questionable reliability.
+  - LLMs are great as a fuzzy index to massive amounts of information, once you get a results you need to cross check with actual sources. That is why cross checking (even of automatically, using the LLM) with actual full documents you get better results. After that, only human review, and even with humans you can get different interpretations or hallucinations
+
+- ## 📌 [Top AI Knowledge Management Tools : r/PKMS _202505](https://www.reddit.com/r/PKMS/comments/1km72fp/top_ai_knowledge_management_tools/)
+- https://textcortex.com is also a good European solution for AI knowledge management
+
+- [Top AI knowledge management tools : r/PromptEngineering _202508](https://www.reddit.com/r/PromptEngineering/comments/1mqvte7/top_ai_knowledge_management_tools/)
+- If your knowledge base lives in PDFs, emails, and scattered notes, most tools on this list hit limits.. file sizes, online access, or rigid formats. 
+  - A local-first Mac setup elephas that I use avoids that. You just drop your files into a folder and they become instantly searchable, summarized, or explorable without opening a browser.
+
+- Recently tried NotebookLM for summarise few videos to give insights. It’s does good job and also give brain map also.
+
+- I’d also add EZFolders - it’s more focused on document structuring and folder generation than traditional PKM, but it saves a ton of time if you’re building organized knowledge spaces. Instead of manually creating hierarchies, you can either paste a list, upload a CSV, or even chat with AI to generate a clean folder structure in seconds. Super handy if you want your knowledge base files to stay audit-ready and easy to navigate.
+
+- ## [What are the best self-hosted or open-source knowledge base solutions you've used (or recommend) for internal documentation or customer support? : r/selfhosted _202506](https://www.reddit.com/r/selfhosted/comments/1l6zr1a/what_are_the_best_selfhosted_or_opensource/)
+  - Good category management
+  - Role-based access control
+  - Customizable design
+  - Search-friendly structure
+  - Easy setup and maintenance
+
+- there really is nothing that rivals Dokuwiki. The base template looks old, kinda bad, but it has that “fast” look to it. 
+  - Plaintext based, lightning fast (about 1000 pages, about 700 media files, about 17 gigabyte). Plugins are good, stable.
+  - I’ve tried migrating so many times but I have found nothing that I can deploy as quickly tha Dokuwiki. Backup is a breeze. Restoring is a breeze.
+  - It is all about the content not the tool.
+
+- I used Notion but miss the self-hosted possibility and offline use (maybe it is now available).
+  - I used Obsidian and kinda love it but miss an easy way to share a page and maybe collaborate without extra cost. The edition experience on mobile was not what I liked.
+  - I used Outline but got issues using from work because the websocket was blocked by my employer. It also does not have a mobile app and is "online only". It is otherwise pretty good.
+  - Affine is self-hosted, with a web front-end but also native apps working offline and syncing in the background, collaboration, multi user with easy way to share online or export. It has all and mobile app are in beta (hopefully coming soon). It seems that even tablet+pencil works nicely with it. This is the best obsidian-outline I found.
+
+- We’re using bookstack internally for all our company documents. We’re fairly proficient in markdown so that was a plus. Prior to that we used dokuwiki for years, but found documentation and some pages could end up lost or even duplicated with a couple of us not finding the right pages.
+
+- Outline is the best that i've seen for internal documentation. Have it integrated with my Authentik setup for role based access control.
+  - For "customer" documentation, it has the ability to create links to pages and to set a tree as "public". 
+  - The downside is there isn't a great way to give users an easy web accessible URL like "wiki.domain.com", so i've instead built a 301 to point the "wiki.domain.com" to the "docs.domain.com/s/wiki".
+
+- I currently use Obsidian...it's wonderful for local notes. tons of plug-ins too.
+  - in the past, I've used bookstack and it was fine, nothing special just worked.
+  - but here's my hot take: don't self host your documentation/knowledge base tool. If you're ever needing to fix/recover your homelab setup and your docs are on that homelab setup, you're in trouble
 
 - ## [Ask HN: Local RAG with private knowledge base | Hacker News _202410](https://news.ycombinator.com/item?id=41968366)
 - The key to accuracy is use case specific knowledge graphs. 

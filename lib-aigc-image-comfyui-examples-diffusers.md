@@ -1706,6 +1706,13 @@ modified: 2025-08-23T11:43:35.904Z
 
 - https://github.com/QuickPoser/ComfyUI_Worker /8Star/apache2/202508/python 
   - ComfyUI_Worker 仅仅是一个连接到云端服务的客户端。要使其正常工作，您必须首先联系闪报工作人员为您开通云端租户账户。
+# mlx-image-gen
+- https://github.com/filipstrand/mflux /1.6kStar/MIT/202511/python
+  - A MLX port of FLUX and other state of the art diffusion image models based on the Huggingface Diffusers implementation.
+  - Run the powerful FLUX and Qwen Image models locally on your Mac
+  - MFLUX is a line-by-line port of the FLUX and Qwen implementations in the Huggingface Diffusers and Huggingface Transformers libraries to Apple MLX.
+  - All models are implemented from scratch in MLX and only the tokenizers are used via the Huggingface Transformers library. 
+  - 速度慢: Mac Mini	2024 M4 (16GB)	@wnma3mz	~97s	512 x 512, 8-bit quantization
 # diffusers
 - https://github.com/huggingface/diffusers /30.4kStar/apache2/202508/python
   - https://huggingface.co/docs/diffusers

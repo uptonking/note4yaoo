@@ -130,6 +130,10 @@ modified: 2022-11-07T10:25:12.034Z
 
 - dogedoge 多吉搜索被知乎屏蔽了
 
+- 知乎在google seo的链接和知乎内的地址不同
+  - https://zhuanlan.zhihu.com/p/339261803
+    - https://www.zhihu.com/tardis/zm/art/339261803
+
 - [知乎违规记录](https://www.zhihu.com/community/reported)
 
 - https://github.com/liuyubing233/zhihu-custom
