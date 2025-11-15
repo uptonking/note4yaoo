@@ -198,6 +198,27 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Why aren't there cheap NVLink adapters for RTX 3090s? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1owxob9/why_arent_there_cheap_nvlink_adapters_for_rtx/)
+  - Is the NVLink only a wire jumper linking both cards together? Can I make my own homemade connections?
+- 4 slot bridges go for $600-700 on eBay
+
+- I believe they are passive but contain 128x high speed lanes with two 90 degree connectors, that's a signal integrity nightmare all those traces need to be matched in length. Does this justify them being $600 tho? Not at all
+  - This is the correct answer. You can't just jumper a high-speed interconnect. They went from flexible ribbon to PCB for a reason.
+  - That being said, it IS 100% supply and demand (similar to current DDR4/DDR5 prices). The 4-slot adapters were $59-$79 when I got mine a few years back. The 3-slot were like $120-150. BECAUSE gamers didn't care about them. The current demand is from people re-using 3090's for compute work.
+
+- ## [Nvidia Tesla H100 80GB PCIe vs mac Studio 512GB unified memory : r/LocalLLM _202511](https://www.reddit.com/r/LocalLLM/comments/1owy5sm/nvidia_tesla_h100_80gb_pcie_vs_mac_studio_512gb/)
+  - A Nvidia Tesla H100 80GB PCIe costs about ~30, 000
+  - A max out mac studio with M4 ultra with 512 gb unified memory costs $13, 749.00 CAD
+
+- H100 is not 10, 000 times faster, more like 10X for training and 20X for inference, so one order of magnitude.
+
+- H100 costs $30, 000 because they allow clustering with HBM 3tb/s allowing you to combine multiple H100s into a single giant GPU super computer. Cant do that with the Mac. Can't do that with the Pro 6000.
+  - These LLMs are trained with clusters as large at 500 - 15, 000 H100s...
+
 - ## [Kimi K2 Thinking Q4_K_XL Running on Strix Halo : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1ouuko3/kimi_k2_thinking_q4_k_xl_running_on_strix_halo/)
 - When file size is larger than your mem+vram, there's little you can do since bottleneck is the disk read speed(besides bad system managed caching). You can buy 3 more machine and use RPC to speed up
 
@@ -4262,7 +4283,7 @@ modified: 2022-01-16T15:52:31.293Z
 - It CAN use up to four sticks, yes. It's still dual channel, it's just double-populated dual-channel (true quad-channel RAM CPUs do exist, but it's highly unlikely you have one).
   - Finally, if it's a situation of DDR4, RAM is so goddamn cheap right now that if you want to go from 16GB (2x8GB) to 32GB (2x16GB), you can usually just sell your old kit on like ebay, and even after the fees, it's within a few dollars of the same net cost as if you bought another 2x8GB kit.
 
-- ## 🆚 [Framework strix halo vs Epyc 9115 -- is Epyc better value? : r/LocalLLaMA _202503](https://www.reddit.com/r/LocalLLaMA/comments/1jo50iz/framework_strix_halo_vs_epyc_9115_is_epyc_better/)
+- ## 🆚👀 [Framework strix halo vs Epyc 9115 -- is Epyc better value? : r/LocalLLaMA _202503](https://www.reddit.com/r/LocalLLaMA/comments/1jo50iz/framework_strix_halo_vs_epyc_9115_is_epyc_better/)
   - I've put in a reservation for the Framework desktop motherboard, which is about $1800 with 128GiB ram, 256 GiB/sec bandwidth. 
 - However, I was going through some server configurations, and found this:
   - Epyc 9115 -- 16-core, 12-channel memory, $799

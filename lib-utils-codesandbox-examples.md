@@ -489,6 +489,16 @@ modified: 2023-09-02T09:17:22.992Z
   - A web remote debugging tools, based on Chrome DevTools.
   - DevTools-pro 是基于chrome-devtools-frontend进行开发的，通过自建 WebSocket 通道实现 Frontend 和 Backend 的通信。
   - 可扩展，支持自定义插件
+# ai-sandbox
+- https://github.com/anthropic-experimental/sandbox-runtime /1.6kStar/apache2/202511/ts
+  - A lightweight sandboxing tool for enforcing filesystem and network restrictions on arbitrary processes at the OS level, without requiring a container.
+  - `srt` uses native OS sandboxing primitives (`sandbox-exec` on macOS,  `bubblewrap` on Linux) and proxy-based network filtering. 
+    - The sandbox uses OS-level primitives to enforce restrictions that apply to the entire process tree
+  - It can be used to sandbox the behaviour of agents, local MCP servers, bash commands and arbitrary processes.
+  - This package provides a standalone sandbox implementation that can be used as both a CLI tool and a library.
+  - Network restrictions: Control which hosts/domains can be accessed via HTTP/HTTPS and other protocols
+  - Filesystem restrictions: Control which files/directories can be read/written (defaulting to allowing writes to the current working directory)
+  - Unix socket restrictions: Control access to local IPC sockets
 # playground
 - https://github.com/nalgeon/codapi /1.2kStar/apache2/202411/go
   - https://codapi.org/

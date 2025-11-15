@@ -9,9 +9,16 @@ modified: 2025-08-30T18:16:57.201Z
 
 # guide
 
-- knowledgebase
+- kb-patterns
   - 对通用的知识库的需求，类似于需要一个通用的搜索引擎，很难做好
   - 本地知识库 + 在线搜索 能减少幻觉、紧急结合本地
+  - 基于文档和基于数据库的知识库在实现层面区别不大, 都需要chunking+embedding+vector-search, 难点都是更新问题
+
+- pm-kb
+  - 通用的聊天系统在处理大文档/ocr的能力方面性能差
+  - doc search + source(wikipedia/books/journals)
+  - image-gen/editing: 还原低质量绘本
+  - image rag + search
 # discuss-stars
 - ## 
 
@@ -112,6 +119,12 @@ modified: 2025-08-30T18:16:57.201Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [Show HN: RedactMyPDF.com - AI-assisted PDF redaction with human review | Hacker News](https://news.ycombinator.com/item?id=44930853)
+  - uses AI (Gemini) + OCR + human review to make redaction fast but safe
+  - Works on scanned PDFs (OCR with Tesseract)
 
 - ## [Ask HN: I have many PDFs – what is the best local way to leverage AI for search? | Hacker News _202405](https://news.ycombinator.com/item?id=40528192)
 - RAG cli from llamaindex, allow you to do it 100% locally when used with ollama or llamacpp instead of OpenAI.
@@ -235,7 +248,122 @@ Switch anytime for cost, speed, or privacy.
 
 - ## 
 
-- ## 
+- ## 🤔 pipeshub: [Stop converting full documents to Markdown directly in your indexing pipeline : r/Rag _202510](https://www.reddit.com/r/Rag/comments/1o261nz/stop_converting_full_documents_to_markdown/)
+  - I've been working on document parsing for RAG pipelines since the beginning, and I keep seeing the same pattern in many places: parse document → convert to markdown → feed to vector db. I get why everyone wants to do this. 
+  - You want one consistent format so your downstream pipeline doesn't need to handle PDFs, Excel, Word docs, etc. separately.
+  - But here's the thing you’re losing so much valuable information in that conversion.
+  - Our solution: Blocks (e.g. Paragraph in a pdf, Row in a excel file) and Block Groups (Table in a pdf or excel, List items in a pdf, etc). Individual Blocks encoded format could be markdown, html
+  - We've been working on a concept we call "blocks" (not really unique name :) ). This is essentially keeping documents as structured blocks with all their metadata intact. 
+  - Everything then gets stored in blob storage (raw Blocks), vector db (embedding created from blocks), graph db, and you maintain that rich structural information throughout your pipeline. We do store markdown but in Blocks
+  - So far, this approach has worked quite well for us. We have seen real improvements in both accuracy and flexibility. For e.g. ragflow fails for these kind of queries (as like many other just dumps chunks to the LLM)- find key insights from last quarterly report or Summarize document or compare last quarterly report with this quarter but our implementation works because of agentic capabilities.
+  - Do you think this should be an open standard? A lot of projects are already doing similar indexing work. Imagine if we could reuse already-parsed documents instead of everyone re-indexing the same stuff.
+
+- Basically your new format "Blocks" is simply more extensive than "MarkDown" but the rest of the principle is the same. I would agree with you here, MarkDown is somewhat limited.
+  - Docling has tried to solve same problem and is using actually DocTags and then converts DocTags to MarkDown when asked.
+- Blocks isn't really a "format" like markdown. It's more of a schema/structure for storing content (which could be markdown, HTML, or whatever) alongside its metadata. Think of it as a container.
+  - You mentioned Docling's DocTags - that's a perfect example! Docling has their own internal representation, then converts to markdown. LlamaIndex has theirs. Unstructured has theirs. The problem is they're all different. It's not easy to switch from one format to another, there is a learning curve for developers and there is zero reusability. What I'm proposing is a standard schema so these tools can interoperate.
+
+- nice approcach, and we already have it in our lib https://github.com/managedcode/markitdown
+
+- Consider carefully the tradeoff between using Docling and/or Docling Document format and rolling your own and maintaining it. What does your custom thing offer? Is it t really worth the effort?
+  - There are some things missing in docling format (just to name a few - memory layout, semantic metadata extracted using LLM and VLM, relationships between blocks) which is why there is need of an open standard. Everyone is rolling out their own implementation which is not good.
+
+- I felt this. Markitdown is pretty good, but only for structured documents such as docx. and xlsx. Sometimes I can save some time by converting to docx from pdf by using ocr based converters but it is still a very far cry.
+
+- That is why i think RAG is useless. We need to have data in various formats, not just text. I have not seen any RAG that give out images. imagine an architect firms what to RAGed their drawings?
+  - We haven’t tested it with architectural drawings yet, but we do support images embedded in PDF and DOCX files. When a user submits a query, we highlight the relevant images as well as the text.
+
+- ## [PipesHub - Open Source Enterprise Search Engine(Generative AI Powered) : r/LangChain](https://www.reddit.com/r/LangChain/comments/1kr714l/pipeshub_open_source_enterprise_search/)
+- How does this compare to SurfSense's RAG-as-a-service feature?
+  - We’re building PipesHub as an enterprise-ready RAG platform with scalability, reliability, and high availability from day one. Unlike SurfSense, which uses federated search and depends on each app’s native search (so it struggles with unstructured data like files or attachments), PipesHub actually indexes both structured and unstructured data across all your tools.
+  - Plus, PipesHub creates a rich knowledge graph that understands your organization—people, teams, and context—so it gives much more accurate answers. And every answer comes with pinpointed citations. If something comes from a PDF, we don’t just say “it’s in this file”—we scroll you to the exact sentence or paragraph.
+
+- How do you guys handle tabular data, both csv/xlxs type and tables embedded in pdfs?
+  - We try to detect all the tables in a file first — sometimes there are multiple tables in one Excel sheet, just separated by empty rows or columns. 
+  - Once we identify a table, we run it through the AI model which figures out the headers and rows. The AI then converts the each table row into a clean paragraph format(Denormalized using headers and row cells), which we use for generating embeddings. 
+  - We also store metadata like header and row info for citation purposes. 
+  - There are a few more steps in the pipeline, but that’s the gist of how we handle tabular data.
+- What kinds of use cases does that kind of parsing and indexing support? At best, with amazing semantic enrichment and supremely tuned search algorithm, you can retrieve some facts or numbers. But more complex analyses (filtering, aggregation, pivot) are off the table, no?
+  - Rows themselves are incomplete without headers and what table represents(sometimes context from previous rows also). This method of indexing ensures that the retrieval works fine.
+  - There are few other things that are also evaluated as part of the pipeline, like Categorization, Sub-categorization and Entities detection(detecting relationships between entities is also in the process). All of these things, ensure when the user does query, we are able to accurately retrieve correct table/records.
+  - As for more advanced analysis like filtering, aggregation, or pivots — those will be handled at query time. We're building out a deep research agent to support complex use cases and eventually more complex analyses will be added in couple of months.
+
+- ## [PipesHub - The Open Source Alternative to Glean : r/selfhosted _202505](https://www.reddit.com/r/selfhosted/comments/1kgwy2m/pipeshub_the_open_source_alternative_to_glean/)
+- If you can convert the script output into any standard file format like .txt, .pdf, .csv, .xlsx, .docx, .html, or even .md, PipesHub can easily pick it up(with automatic sync from connectors like Google Drive) and index it through our AI pipeline. This way, even scattered script outputs can become part of your organization’s searchable knowledge base.
+
+- 🆚 How does this compare to Onyx? It doesn't look like you have as many connectors. 
+  - Yes, we build our connectors with exact permissions as the source app and handle both user and user group access.
+  - Our platform is an end-to-end multi-agent system where search is just one part of the workflow. Our indexing layer serves as the context foundation for agents, but agents themselves require much more than just access to search.. they need tools, actions, and the ability to interact with other agents.
+  - Another key difference is how we approach indexing. When we index data, we capture and understand the relationships between multiple data points. For example, with a Jira ticket, indexing is not just about the ticket itself.. it also includes comments, attachments, and descriptions, and the relationships among them. This relational understanding is crucial for high accuracy (Agents need full context not just chunks) and is missing in some of the other platforms.
+
+- [PipesHub - The Open Source Alternative to Glean : r/Rag](https://www.reddit.com/r/Rag/comments/1kgy501/pipeshub_the_open_source_alternative_to_glean/)
+  - Unlike Glean and most other tools that only cite documents, PipesHub gives pinpoint citations—like exact paragraphs in PDFs/DOCX or row numbers in XLSX/CSV—so humans can instantly verify AI answers and also scroll to the exact location in the document. Onyx currently doesn’t leverage Knowledge Graphs, which we’ve found essential for accurate and contextual responses. 
+  - Also, several cutting-edge features are in the pipeline and coming out shortly. 
+  - Onyx is search platform where as PipesHub is an end to end Multi-agent platform that developers can use to build Agents that need enterprise context to answer queries and tools to perform actions and automate workflows
+  - What does it use for vector storage? I saw in the docs you can set an s3 bucket for storage- does that mean it uses pgvector?
+    - We use Qdrant. S3 bucket(Storage service) is used for storing things like Document Summary, Text layered OCR document and more
+
+- [PipesHub - Open Source Enterprise Search Platform(Generative-AI Powered) : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1l2afie/pipeshub_open_source_enterprise_search/)
+- 1) How many documents can it ingest and is there a practical limit? 2) Can it mingle its search results with those from the open Web - e.g. you feed it a list of 3, 000 website URLs, it goes and downloads those sites and ingests them as well?
+  - PipesHub is built to be highly scalable and fault-tolerant — it can handle millions of documents without issues.
+  - Support for ingesting content from the open web (like a list of URLs) is coming soon! You’ll be able to crawl and index any webpage as part of your search.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
+- ## [Designing NotebookLM | Hacker News _202509](https://news.ycombinator.com/item?id=45315312)
+- This post has the same issues as NotebookLM for me -- overdesigned, overengineered for what at its core is a simple and valuable UX.
+  - NotebookLM: obviously useful, but I just wanna select some files and chat w/ them or have them summarized for me. It's got low info density, way too many cards/buttons/sections/icons, and it makes the core UX really difficult for me to navigate.
+
+- Took me ages to figure out you can copy paste simple text. Editing any text isn't great either.
+
+- What do you use it for? Aside from audio overviews, what does it do better for you compared to vanilla chat interfaces or docs integration?
+  - I am a post sales consultant. Meaning I’m the first deeply technical person that a client talks to after they sign the contract that pre-sales has worked on. Pre-sales has already had a couple of meetings by the time it gets to me. I put the transcripts of their calls and the contract (statement of work) into Notebook LLM to ask the high level questions like the objectives, the challenges, priorities, risks they have already surfaced etc. After my set of discovery sessions, I put those transcripts into the notebook too. I can then use Notebook LLM to give me a first draft of the management style assessment report
+- I use it for asking questions about a specific board games. It is INVALUABLE for learning very complex games. Instead of hunting through a rulebook trying to find an obscure rule, I just ask it and it answers, citing where it finds it.
+- Video explainers, for me, are better than the audio overviews.
+- NotebookLM gives you sources across powerpoints, pdfs, etc.
+- I like the mindmap tool
+
+- When working with documents, the citations that NotebookLM provide increase the confidence in answers. This allows to use NotebookLM for team-level knowledge bases.
+
+- ## [Best LLM or program for large amounts of document parsing (read + write) : r/LocalLLM _202501](https://www.reddit.com/r/LocalLLM/comments/1i32o6j/best_llm_or_program_for_large_amounts_of_document/)
+- Ive been working on similar projects, and my workflow for efficiency has been to use vLLMs (colpali/byaldi) for quick embeddings or pypdf4llm for md files. My next steps are querying, generating relevant metadata & summaries to make it more cohesive for llm (so basically in the same boat as you - posting for updates to see how people are tackling this).
+
+- From what you described I think an LLM is overkill. Topic classification and summarization can be done with models specific to those tasks.
+  - What you are looking for is zero-shot classification. Hugging face has models you can run locally. The only caveat is that you need to be able to define the categories before hand. The benefit is that you can also save a “confidence score” or how closely the text matches the topics.
+  - Summarization has a problem as well. Your summarization is only as good as the prompt and model. And for small models like Llama 8b, I have found that even a “good” prompt can still return some garbage.
+
+- ## [AI and Knowledge Base? : r/CustomerSuccess _202507](https://www.reddit.com/r/CustomerSuccess/comments/1lp13br/ai_and_knowledge_base/)
+- Results can be great but what I’ve seen is fully dependent on how good the knowledge is and if you can get the AI any other relevant data (order tracking info, scheduling services, product catalogues). Otherwise it’s garbage in/garbage out.
+  - Upvoting this. We built an agent for internal knowledge base for retail operations (to speed up onboarding and FAQ), totally dependent on quality of the underlying KB.
+- Most modern AI support agent solutions supports tool use, so you should be able to plug in Shopify, Calcom, Paddle, etc. to get that information at the time the chatbot requires it.
+
+- how to make sure the KB is kept up to date / high quality?
+  - Data stewardship (as a function) for key knowledge items/domains. The most difficult part is to find a person who will take the topic of knowledge accuracy and completeness seriously, borderline personally.
+- We have success metrics we can review by topic area and can drill in to review convos to see which KBs or data was leveraged. Helps in reviewing unsuccessful conversations and finding opportunities to improve or add knowledge.
+
+- I think this is table stakes in customer support these days. People should at a minimum be able to "speak" to the KB. But yes, garbage in, garbage out. From what I've seen of people's KBs, they are outdated and often times inaccurate. If I were to start an AI program from scratch, this is where I would start.
+
+- From my personally experience, incredibly shitty and frustrating as a customer (ATT, xcel, and Allstate).
+  - Internally, we use notepad so we can minimize pinging product/engineering for questions. It requires a decent amount of maintenance to stay accurate.
+  - The only roi I could see from these tools is keeping overhead down by having less support reps.
+
+- Definitely using AI with KBs is common now. Tools like SiteSpeak, Intercom or even custom RAG setups can power chatbots and speed up support.
+  - It's all going to depend on what data and how much you are able to get into the chatbot to use as context. 
+  - With the larger context windows of newer LLMs it becomes easy to feed a lot of data in and get pretty good results.
+
+- ## [How would I build a highly specific knowledge base resource? : r/AI_Agents _202502](https://www.reddit.com/r/AI_Agents/comments/1ig7251/how_would_i_build_a_highly_specific_knowledge/)
+- RAG is your best solution, and then a data pipeline to update your vector db
+
+- Id suggest chunked and heavily tagged content, use a retrieval agent for the actual lookup, another agent to actually decide what content should get returned, and your final (original) agent delivering that back to the user.
+  - If you keep the bots focused on a single task it's often more reliable and if you are dealing with data that requires precision answers (all or nothing, where partial data is bad data) a rag isn't going to perform how you would like, hence my suggestion for tagged and chunked into sections content.
+  - A search ends up getting related tags, then uses a second step to get data tied to that tag, then a bot that decides on the best answer(s), finally providing multiple choices narrowed down to the original bot that makes its own judgement call and returns the answer.
+  - To me the RAG approach you see all over is overblown and not as practical in practice when it comes to specific data vs broad market knowledge.
 
 - ## 🤔 [How useful are llm's as knowledge bases? : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kderkz/how_useful_are_llms_as_knowledge_bases/)
 - They are not very useful, really. Use RAG and web search with it and all of a sudden it's a different story.
@@ -328,6 +456,8 @@ Switch anytime for cost, speed, or privacy.
 
 - ## 
 
+- ## 
+
 - ## Excited to share Latticework, a text-editing environment aimed to help synthesize freeform, unstructured documents _202408
 - https://x.com/andy_matuschak/status/1828928979656683581 
   - It aims to help with making sense of messy piles of unstructured documents. 
@@ -352,7 +482,7 @@ Switch anytime for cost, speed, or privacy.
 ✅ 开源免费、处理速度快（比同类快 4 倍）
 ❌ 缺乏复杂布局解析能力，依赖本地 GPU 资源
 
-2. MinerU /AGPLv3
+1. MinerU /AGPLv3
 技术架构
 · 集成 LayoutLMv3、YOLOv8 等模型，支持多模态解析（表格/公式/图像），依赖 Docker 和 CUDA 环境
 功能特性
@@ -364,7 +494,7 @@ Switch anytime for cost, speed, or privacy.
 ✅ 企业级安全合规，支持 API 和图形界面
 ❌ 依赖 GPU，表格处理速度较慢，配置复杂
 
-3. Docling /MIT
+1. Docling /MIT
 技术架构
 · 模块化设计，集成 Unstructured、LayoutParser 等库，支持本地化处理
 功能特性
@@ -376,7 +506,7 @@ Switch anytime for cost, speed, or privacy.
 ✅ 与 IBM 生态兼容，支持多格式混合处理
 ❌ 需 CUDA 环境，部分功能依赖商业模型
 
-4. Markitdown /MIT
+1. Markitdown /MIT
 技术架构
 · 微软开源项目，集成 GPT-4 等模型实现 AI 增强处理，支持多格式转换
 功能特性
@@ -388,7 +518,7 @@ Switch anytime for cost, speed, or privacy.
 ✅ 格式支持最全，开发者友好（Python API/CLI）
 ❌ 依赖外部 API，部分功能需付费模型
 
-5. Llamaparse /CloudOnly/NonOpen
+1. Llamaparse /CloudOnly/NonOpen
 技术架构
 · 专为 RAG 设计，结合 Azure OpenAI 和 KDB AI 向量数据库，优化语义检索
 功能特性

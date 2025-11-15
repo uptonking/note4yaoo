@@ -306,6 +306,32 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🤔 [Companies need to stop applauding vanilla RAG : r/Rag](https://www.reddit.com/r/Rag/comments/1mj0tlh/companies_need_to_stop_applauding_vanilla_rag/)
+  - I built a RAG system for internal documents pulled from a mix of formats, like PDFs and wikis. At first, the results were clean and useful.
+  - But that was at the start. as the document set grew, the answers werent as reliable. Some of them werent using the most up to date policy section, or they were mixing information when it shouldnt be.
+  - We had been using Jamba for generation. It worked well in most cases because it tended to preserve the phrasing from retrieved chunks, which made answers easier to trace. 
+  - You have to keep your documentation up to date and/or have a more structured retrieval layer. If you want your setup to reason about the task, RAG is not enough. It’s retrieval, not orchestration, not a multi-layered workflow.
+
+- vanilla RAG probably means your typical quick langchain setup (fixed chunk, embed, hybrid search). A step upwards would be something like hierarchical chunking and embedding, and then more advanced stuffs like Hyde, agentic, or even just rule based retrieval
+
+- A more structured approach so that the LLM can understand the key entities of the business (companies, customers, projects, etc) and the key artifacts that make up your store of documents/knowledge (sales presentation, quotes, meeting notes, etc). And then the ability to connect the dots between those items… eg this sales deck mentions this company, which matches to this record in our CRM.
+  - The main difference with all these new tools we have is that you don’t have to do all that definition as part of some crazy data orchestration flow… but rather can do a lot of it at retrieval time.
+
+- Semantic chunking is basically a way of using document context like headings as part of the chunking process and than retaining a contextual map across all chunks in json format to help have more context when you. Retrieve chunks in searches.
+
+- I agree completely. The core issue with RAG is that it's a passive system, it can only retrieve what's already there. I saw this exact problem at my last job, and now I'm building an MVP to solve it.
+  - My approach is to make a better RAG system that not only retrieves information but also identifies knowledge gaps and initiates a question workflows for employees to verify and answer, creating a truly dynamic and complete knowledge base.
+- Bottleneck is the rag that's limiting the amount of queries, it'll probably be fixed if we went towards higher tier but that cost isn't justified yet.
+
+- This is a realistic issue in practice. There can be various ways to make the system smarter. One is to use an agentic design and give agents hints to decide whether newer contents should be retrieved (some people may prefer this way to leverage "the I in AI" more). On the other hand, you may also design your database tables and refine the query, for example by adding a timestamp with each vector when it's injected, then during query, sort the top K results by timestamp, or even make a cut off by the timestamp.
+
+- rag needs reranking folks
+  - yes reranking folks is a brilliant way to phrase it, other people need to feed it in!
+
 - ## 🔢 [How to dynamically prioritize numeric or structured fields in vector search? : r/LangChain _202510](https://www.reddit.com/r/LangChain/comments/1oclpn4/how_to_dynamically_prioritize_numeric_or/)
 - This will not happen automatically. Either you have to rewrite the query or do a query classification and let this be handled by a database query.
   - You may be able to store the numerics as metadata and use the metadata to rerank, but to do even that, you need to classify the query first.

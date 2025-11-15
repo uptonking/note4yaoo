@@ -161,7 +161,7 @@ modified: 2021-01-04T17:26:43.784Z
   - Paged.js is a free and open-source library that paginates any HTML content to produce beautiful print-ready PDF. 
   - The library fragments the content, reads your CSS print declarations and presents a paginated preview in your browser that you can save as PDF.
 
-- https://github.com/Byaidu/PDFMathTranslate /26.7kStar/AGPL/202508/python 
+- https://github.com/Byaidu/PDFMathTranslate /29.8kStar/AGPLv3/202511/python 
   - https://pdf2zh.com/
   - 基于 AI 完整保留排版的 PDF 文档全文双语翻译，支持 Google/DeepL/Ollama/OpenAI 等服务，提供 CLI/GUI/MCP/Docker/Zotero
   - Preserve formulas, charts, table of contents, and annotations
@@ -537,7 +537,7 @@ modified: 2021-01-04T17:26:43.784Z
 - https://github.com/sumatrapdfreader/sumatrapdf /14.7kStar/GPL/202505/C
   - http://www.sumatrapdfreader.org/
   - SumatraPDF reader for windows only
-# pdf-doc/rag
+# pdf-doc/rag 👾
 - https://github.com/docling-project/docling /39.3kStar/MIT/202509/python
   - https://docling-project.github.io/docling
   - Docling simplifies document processing, parsing diverse formats
@@ -597,6 +597,13 @@ modified: 2021-01-04T17:26:43.784Z
   - Optionally boost accuracy with LLMs (and your own prompt)
   - For the highest accuracy, pass the `--use_llm` flag to use an LLM alongside marker. This will do things like merge tables across pages, handle inline math, format tables properly, and extract values from forms. 
   - It can use any gemini or ollama model. 
+  - [Ingesting PDFs and why Gemini 2.0 changes everything | Hacker News](https://news.ycombinator.com/item?id=42952605)
+    - Marker output will be higher quality than docling output across most doc types, especially with the `--use_llm` flag. A few specific things we do differently:
+    - We have hybrid mode with gemini that merges tables across pages, improves quality on forms, etc.
+    - we run an ordering model, so ordering is better for docs where the PDF order is bad
+    - OCR is a lot better, we train our own model, surya
+    - References and links
+    - Better equation conversion (soon including inline)
 
 - https://github.com/lumina-ai-inc/chunkr /AGPLv3/202410/python/ts/rust
   - https://chunkr.ai/

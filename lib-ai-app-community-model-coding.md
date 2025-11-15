@@ -365,6 +365,8 @@ def slugify(text):
   - Hit record, speak bullet points, get an auto-generated Reveal.js deck.
   - Web Speech API → Markdown → Reveal; 
 
+- Create the best visualization of a spur gear in 3D possible, without external libraries. It should be fully math-based and include a stress analysis and contact analysis
+
 - [如何评价千问团队发布的Qwen3 Coder? - 知乎](https://www.zhihu.com/question/1931249645469803430)
 - 模拟小球在旋转的多边形中跳动
   - 帮我实现一个程序，能够在浏览器中运行，模拟20小球在旋转的七边形里面弹跳。注意，小球在重力的影响下，始终在多边形底部来回弹跳。

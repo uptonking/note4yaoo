@@ -229,6 +229,7 @@ console.log('; ; task ', taskState, runningTaskAction, task?.task_steps)
 - when did deepseek v3.1 model release?
 - when did qwen3-coder model release?
 - what's the weather in guangzhou china? give me some food and outdoor-activities suggestions according to weather temperature
+- what's the dom api compatibility in common browsers
 
 - explain code at ./playground/quick-sort.js
 - for file ./playground/quick-sort.js, add a simple test case

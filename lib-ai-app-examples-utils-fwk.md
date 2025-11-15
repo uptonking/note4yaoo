@@ -261,6 +261,10 @@ modified: 2025-02-21T18:20:42.624Z
     - I created my own branch of the deep research repo and added functionality to enable fully offline Wikipedia search to decrease the per-report cost even further
     - [Wikipedia Deep Research](https://publish.obsidian.md/neutron/Published/Projects/10-03-25+Wikipedia+Deep+Research)
 
+- https://github.com/assafelovic/gpt-researcher /24.1kStar/apache2/202511/python/ts
+  - https://gptr.dev/
+  - An LLM agent that conducts deep research (local and web) on any given topic and generates a long report with citations.
+
 ## router/gateway
 
 - https://github.com/Egham-7/adaptive-ai-provider /202510/ts

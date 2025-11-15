@@ -186,16 +186,6 @@ modified: 2025-03-22T18:49:15.634Z
 - https://github.com/microsoft/vscode-copilot-chat /8.3kStar/MIT/202508/ts
   - GitHub Copilot Chat (this extension) - A companion extension that provides conversational AI assistance.
 
-- https://github.com/samdenty/react-ai-flow /202503/ts
-  - https://react-ai-flow.com/
-  - smooth React AI chatbot primitives
-  - 支持多种打字动画效果 per character/word/line, 支持react/vanillajs
-  - This library uses a single canvas-rendered mask-image, so we can do pixel-level fade-in effects.
-  - Other libraries can accomplish at most a per-character opacity animation with a HTML soup
-  - This library also features a super customizable text splitter API. Pick a built-in splitter (character, word, line, sentence) or provide you own function that splits the visually rendered text on screen.
-  - https://x.com/samddenty/status/1905843003471581337
-    - I just created a demo website for https://react-ai-flow.com a super advanced cross-framework library for smooth LLM text streaming effects & also text-staggers.
-
 - https://github.com/langchain-ai/chat-langchain /6kStar/MIT/202508/python/ts
   - https://chat.langchain.com/
   - an implementation of a chatbot specifically focused on question answering over the LangChain documentation. 
@@ -254,6 +244,16 @@ modified: 2025-03-22T18:49:15.634Z
 - https://github.com/kangfenmao/cherry-studio /NonCommercial/202409/ts
   - https://cherry-ai.com/
   - a desktop client that supports for multiple LLM providers, available on Windows, Mac and Linux
+
+- https://github.com/samdenty/react-ai-flow /202503/ts
+  - https://react-ai-flow.com/
+  - smooth React AI chatbot primitives
+  - 支持多种打字动画效果 per character/word/line, 支持react/vanillajs
+  - This library uses a single canvas-rendered mask-image, so we can do pixel-level fade-in effects.
+  - Other libraries can accomplish at most a per-character opacity animation with a HTML soup
+  - This library also features a super customizable text splitter API. Pick a built-in splitter (character, word, line, sentence) or provide you own function that splits the visually rendered text on screen.
+  - https://x.com/samddenty/status/1905843003471581337
+    - I just created a demo website for https://react-ai-flow.com a super advanced cross-framework library for smooth LLM text streaming effects & also text-staggers.
 # ai-sdk/vendors
 - https://github.com/moeru-ai/xsai /MIT/202502/ts
   - https://xsai.js.org/
@@ -274,8 +274,23 @@ modified: 2025-03-22T18:49:15.634Z
   - lets you use Claude via the Vercel AI SDK through the official `@anthropic-ai/claude-code` SDK/CLI.
   - Vercel AI SDK community provider for Claude Code SDK - Use Pro/Max Subscription via SDK
   - This is the v5-beta compatible version. For AI SDK v4 support, use version 0.2.x.
-# chat-docs/knowledge-base
-- https://github.com/PromtEngineer/localGPT /21.8kStar/MIT/202507/python/ts
+# chat-docs/knowledgebase
+- https://github.com/arc53/DocsGPT /17.4kStar/MIT/202511/python/ts/提交多
+  - https://app.docsgpt.cloud/
+  - https://docsgpt.arc53.com/
+  - GPT-powered chat for documentation, chat with your documents
+  - open-source AI platform for building intelligent agents and assistants. 
+  - 使用langchain的代码不多
+  - Wide Format Support: Reads PDF, DOCX, CSV, XLSX, EPUB, MD, RST, HTML, MDX, JSON, PPTX, and images.
+  - Web & Data Integration: Ingests from URLs, sitemaps, Reddit, GitHub and web crawlers.
+  - Reliable Answers: Get accurate, hallucination-free responses with source citations 
+  - Flexible Deployment: Works with major LLMs (OpenAI, Google, Anthropic) and local models (Ollama, llama_cpp).
+  - Pre-built Integrations: Use readily available HTML/React chat widgets, search tools, Discord/Telegram bots, and more.
+  - Secure & Scalable: Run privately and securely with Kubernetes support
+  - Manually updating chunks in the app UI (Feb 2025)
+  - [Show HN: DocsGPT, open-source documentation assistant, fully aware of libraries | Hacker News _202302](https://news.ycombinator.com/item?id=34648266)
+
+- https://github.com/PromtEngineer/localGPT /22kStar/MIT/202507/python/ts/提交少/inactive
   - LocalGPT is a fully private, on-premise Document Intelligence platform. 
   - Ask questions, summarise, and uncover insights from your files with AI—no data ever leaves your machine.
   - LocalGPT features a hybrid search engine that blends semantic similarity, keyword matching, and Late Chunking for long-context precision
@@ -295,22 +310,7 @@ modified: 2025-03-22T18:49:15.634Z
   - Intuitive Web UI: Clean, responsive design
   - Real-time Chat: Streaming responses for immediate feedback
 
-- https://github.com/arc53/DocsGPT /17kStar/MIT/202508/python/ts/提交多
-  - https://app.docsgpt.cloud/
-  - https://docsgpt.arc53.com/
-  - GPT-powered chat for documentation, chat with your documents
-  - open-source AI platform for building intelligent agents and assistants. 
-  - 使用langchain的代码不多
-  - Wide Format Support: Reads PDF, DOCX, CSV, XLSX, EPUB, MD, RST, HTML, MDX, JSON, PPTX, and images.
-  - Web & Data Integration: Ingests from URLs, sitemaps, Reddit, GitHub and web crawlers.
-  - Reliable Answers: Get accurate, hallucination-free responses with source citations 
-  - Flexible Deployment: Works with major LLMs (OpenAI, Google, Anthropic) and local models (Ollama, llama_cpp).
-  - Pre-built Integrations: Use readily available HTML/React chat widgets, search tools, Discord/Telegram bots, and more.
-  - Secure & Scalable: Run privately and securely with Kubernetes support
-  - Manually updating chunks in the app UI (Feb 2025)
-  - [Show HN: DocsGPT, open-source documentation assistant, fully aware of libraries | Hacker News _202302](https://news.ycombinator.com/item?id=34648266)
-
-- https://github.com/Cinnamon/kotaemon /23kStar/apache2/202507/python
+- https://github.com/Cinnamon/kotaemon /23kStar/apache2/202507/python/提交少/inactive
   - https://cinnamon.github.io/kotaemon/
   - https://huggingface.co/spaces/cin-model/kotaemon-demo
   - open-source clean & customizable RAG UI for chatting with your documents. Built with both end users and developers in mind.
@@ -419,6 +419,19 @@ modified: 2025-03-22T18:49:15.634Z
   - DORY also builds a cognitive context graph to organize your work into auto-updating workflows and serve them to you in real time based on your browsing context.
   - DORY uses Neo4j to store browsing data with weighted edge relationships (semantic, behavioral, temporal) then applies stochastic block modeling for community detection and temporal-behavioral profiling.
   - It's an approach similar to how banks analyze transaction networks to detect fraud but works surprisingly well for teasing apart browser workflows.
+
+- https://github.com/Zipstack/unstract /5.9kStar/AGPL/202511/python
+  - https://unstract.com/
+  - No-code LLM Platform to launch APIs and ETL Pipelines to structure unstructured documents
+
+- https://github.com/Tencent/WeKnora /7.5kStar/MIT/202511/go/ts/vue
+  - https://weknora.weixin.qq.com/
+  - LLM-powered framework for deep document understanding, semantic retrieval, and context-aware answers using RAG paradigm
+
+- https://github.com/freeCodeCamp/devdocs /37.9kStar/MPL/202511/ruby
+  - https://devdocs.io/
+  - DevDocs combines multiple developer documentations in a clean and organized web UI with instant search, offline support, mobile version, dark theme, keyboard shortcuts, and more
+  - DevDocs was created by Thibaut Courouble and is operated by freeCodeCamp.
 # chat-excel
 - https://github.com/huggingface/aisheets /1.5kStar/apache2/202510/python/ts
   - https://huggingface.co/spaces/aisheets/sheets
@@ -460,6 +473,94 @@ modified: 2025-03-22T18:49:15.634Z
   - 依赖prisma, shadcn-ui, react-pdf, AWS S3 buckets
   - https://github.com/khaledmk20/quill
     - Quill redefines PDF interaction with intelligent conversations.
+
+- https://github.com/Byaidu/PDFMathTranslate /29.8kStar/AGPLv3/202511/python 
+  - https://pdf2zh.com/
+  - 基于 AI 完整保留排版的 PDF 文档全文双语翻译，支持 Google/DeepL/Ollama/OpenAI 等服务，提供 CLI/GUI/MCP/Docker/Zotero
+  - Preserve formulas, charts, table of contents, and annotations
+  - Support multiple languages, and diverse translation services.
+  - https://github.com/PDFMathTranslate/PDFMathTranslate-next /AGPLv3
+    - pdf2zh 2.0 does not currently provide an online demo
+# chat-workspace
+- https://github.com/MODSetter/SurfSense /10.6kStar/apache2/202511/python/ts
+  - https://www.surfsense.com/
+  - Open source alternative to NotebookLM, Perplexity, and Glean.
+  - Connects to search engines, Slack, Linear, Jira, ClickUp, Notion, YouTube, GitHub, Discord, and more. 
+  - Save content from your own personal files (Documents, images, videos and supports 50+ file extensions) to your own personal knowledge base .
+  - ⛓️ Get Cited answers just like Perplexity.
+  - Works Flawlessly with Ollama local LLMs.
+  - 后端: FastAPI, SQLAlchemy, pgvector, LangGraph, LangChain, Hybrid Search, Rerankers, Redis
+  - 前端: next, Vercel AI SDK Kit UI Stream Protocol, Shadcn, Framer Motion, React Hook Form, tanstack/table
+  - 👇 xp
+    - 跨workspace不能共享source-document
+    - 聊天时~~只能选择全部文档或不选文档，不~~可以只选择部分文档
+    - 支持根据场景配置不同llm: fast, long, reasoning
+    - 🐛 聊天中的内容支持点击跳转到文档的chunk位置，而不是源文件，且中文文档的chunk经常是乱码
+
+- https://github.com/lfnovo/open-notebook /10.2kStar/MIT/202511/python/ts/提交少
+  - https://www.open-notebook.ai/
+  - Open Source implementation of Notebook LM with more flexibility and features
+  - AI-powered note-taking/research platform that respects your privacy
+
+- https://github.com/rmusser01/tldw_server /1.1kStar/GPL/202511/python
+  - https://tldwproject.com/
+  - Too Long; Didn't Watch - API-first media analysis & research platform
+  - tldw_server is an open-source research multi-tool / backend for ingesting, transcribing, analyzing, and retrieving knowledge from video, audio, documents, websites, and more.
+  - It consists of a FastAPI API-first server architecture backed by SQLite or Postgres depending on user choice, with OpenAI-compatible Chat and Audio APIs, a unified RAG pipeline, knowledge management, and integrations with local or hosted LLM providers (with cost/usage tracking).
+  - https://github.com/the-crypt-keeper/tldw /inactive
+
+- https://github.com/CaviraOSS/PageLM /NonCommercial/202511/ts
+  - https://pagelm.spotit.dev/
+  - a community driven version of NotebookLM & a education platform that transforms study materials into interactive resources like quizzes, flashcards, notes, and podcasts.
+
+- https://github.com/pipeshub-ai/pipeshub-ai /2kStar/apache2/202511/python/ts
+  - https://pipeshub.com/
+  - The OpenSource Alternative to Glean's Workplace AI
+  - PipesHub AI helps you quickly find the right information using natural language search—just like Google.
+  - The platform not only delivers the most relevant results but also shows where the information came from, with proper citations, using Knowledge Graphs and Page Ranking
+  - Beyond search, our platform allows enterprises to create custom apps and AI agents using a No-Code interface.
+  - Knowledge Graph Backbone – All data is seamlessly structured into a powerful knowledge graph.
+  - Enterprise-Grade Connectors – Scalable, reliable, and built for secure access across your organization.
+  - Modular & Scalable Architecture – Every service is loosely coupled to scale independently and adapt to your needs.
+  - 前端: Material UI、React Hook Form、zod
+  - 后端: fastapi, LangGraph, LangChain, Qdrant(vector), ArangoDB(graph), Kafka, Redis, Docling, PyMuPDF, OCRmyPDF
+  - [Work AI for all - AI platform for agents, assistant, search](https://www.glean.com/)
+  - [Best way to extract data from PDFs and HTML : r/Rag _202510](https://www.reddit.com/r/Rag/comments/1oavnx4/best_way_to_extract_data_from_pdfs_and_html/)
+    - At PipesHub, we use docling, pymupdf (faster than docling but need to use layout parser on top of it), ocrmupdf/Azure DI (scanned pdfs).
+    - If you are looking for Higher Accuracy, Visual Citations, Cleaner UI, Direct integration with Google Drive, OneDrive, SharePoint Online, Dropbox and more. PipesHub is free and fully open source, extensible. 
+
+- https://github.com/souzatharsis/podcastfy /5.6kStar/apache2/202510/python
+  - Open Source Python alternative to NotebookLM's podcast feature: Transforming Multimodal Content into Captivating Multilingual Audio Conversations with GenAI
+  - https://github.com/gabrielchua/open-notebooklm
+    - Convert any PDF into a podcast episode
+
+- https://github.com/run-llama/notebookllama /1.6kStar/MIT/202508/python/inactive
+  - open-source, LlamaCloud-backed alternative to NotebookLM
+  - [NotebookLlama: An open source version of NotebookLM | Hacker News _202410](https://news.ycombinator.com/item?id=41964980)
+
+- https://github.com/xynehq/xyne /635Star/apache2/202511/ts
+  - https://xynehq.com/
+  - AI-first Search & Answer Engine for work. 
+  - Open-source alternative to Glean, Gemini and MS Copilot
+  - Your work information has become fragmented — across so many SaaS apps, docs, files, repos
+  - Xyne connects to your applications (Google Workspace, Atlassian suite, Slack, Github, etc), securely indexes your data, and maps a graph of relationships.
+  - Model Agnostic: Plugs into any LLM of your choice. You can even point it to a local Deepseek via ollama.
+
+- https://github.com/deta/surf /2.7kStar/apache2/202511/rust/ts/svelte
+  - https://deta.surf/
+  - Personal AI Notebooks. Organize files & webpages and generate notes from them. 
+  - built in Svelte, TypeScript and Rust, runs on MacOS, Windows & Linux, stores data locally in open formats 
+  - PDF Notes: open a PDF and ask a question
+  - Create an applet: use the "app generation" tool and ask for an app
+  - [Show HN: Deta Surf – An open source and local-first AI notebook | Hacker News _202510](https://news.ycombinator.com/item?id=45680937)
+    - We took inspiration from analog notebooks as a tool for thought, but wanted something for multi-media. We also see NotebookLM as the closest mainstream product to Surf.
+    - 🆚 The big difference UX wise between chatbots and Surf is that Surf is built entirely on editable documents that you can mold / craft into an output (vs chat).
+      - We actually had a chatbot, but our explorations showed that notes were a more effective in many cases!
+    - Is this an open source equivalent to google’s NotebookLM? I can tell. How does it stack up features wise?
+      - Surf is built entirely on editable WYSIWYG documents, NotebookLM's main AI is built on chat. Surf is built to be a bit more open, NotebookLM was a bit locked down for our taste.
+      - An example I'd highlight is taking notes against a PDF.
+      - NotebookLM will convert the PDF to simple text, and the chat responses are read only. NotebookLM also has a lot of strict walls between chat, artifacts & sources. You have to "save" responses as (read only) notes, and move notes to sources.
+      - With Surf you can generate notes that deep link to specific pages in the PDF, and Surf will open those pages in the original PDF. You can remove the fluff you don't want in your notes. The intention is to be a little more open -- all notes are sources from the get go, you don't have to save or migrate anything.
 # chat-coding-toolchain
 - https://github.com/sqlchat/sqlchat /BSL/202406/ts
   - https://sqlchat.ai/
@@ -475,6 +576,11 @@ modified: 2025-03-22T18:49:15.634Z
   - chat.md embraces a file-first approach where your conversations with AI are just markdown files with a `.chat.md` extension. Edit them, version control them, share them - they're your files. The AI directly writes its response in the file.
   - chat.md treats conversations as first-class files in your workspace
   - Custom APIs: Any OpenAI-compatible endpoint (Azure, Google Gemini, etc.)
+# citation/sourcing
+- https://github.com/Future-House/paper-qa /7.8kStar/apache2/202511/python
+  - https://futurehouse.gitbook.io/futurehouse-cookbook
+  - PaperQA2 is a package for doing high-accuracy retrieval augmented generation (RAG) on PDFs, text files, Microsoft Office documents, and source code files, with a focus on the scientific literature.
+  - PaperQA2 is engineered to be the best agentic RAG model for working with scientific papers. 
 # more-chat
 - https://github.com/microsoft/TypeChat /MIT/202405/python/ts
   - https://microsoft.github.io/TypeChat/

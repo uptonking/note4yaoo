@@ -707,10 +707,10 @@ modified: 2022-06-03T21:34:54.893Z
   - We never store your code, but your code does leave your machine.
   - [Mintlify raises $18M Series A led by Andreessen Horowitz - Mintlify _202409](https://mintlify.com/blog/series-a)
 
-- https://github.com/KnowledgeCanvas/knowledge /apache2/202401/ts
+- https://github.com/KnowledgeCanvas/knowledge /apache2/202401/ts/inactive
   - a tool for saving, searching, accessing, exploring and chatting with all of your favorite websites, documents and files.
 
-- https://github.com/khoj-ai/khoj /AGPLv3/202405/python
+- https://github.com/khoj-ai/khoj /31.6kStar/AGPLv3/202511/python/ts
   - https://khoj.dev/
   - Khoj is an application that creates always-available, personal AI agents for you to extend your capabilities
   - Your AI agents have access to the internet, allowing you to incorporate realtime information.
@@ -882,6 +882,10 @@ modified: 2022-06-03T21:34:54.893Z
   - https://github.com/signorecello/paperless-docling /202504/js/inactive
     - A service that automatically processes documents in Paperless using docling and updates their content.
     - [Better OCR with Docling : r/Paperlessngx _202504](https://www.reddit.com/r/Paperlessngx/comments/1jqqsly/better_ocr_with_docling/)
+- https://github.com/clusterzx/paperless-ai /4.6kStar/MIT/202511/python/js
+  - https://clusterzx.github.io/paperless-ai/
+  - an AI-powered extension for Paperless-ngx that brings automatic document classification, smart tagging, and semantic search using OpenAI-compatible APIs and Ollama.
+  - [Paperless-AI: Now including a RAG Chat for all of your documents : r/selfhosted _202505](https://www.reddit.com/r/selfhosted/comments/1kqbouu/paperlessai_now_including_a_rag_chat_for_all_of/)
 
 - https://github.com/papra-hq/papra /2.4kStar/AGPL/202509/ts
   - https://demo.papra.app/

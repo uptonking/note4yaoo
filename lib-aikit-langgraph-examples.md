@@ -722,6 +722,7 @@ modified: 2025-08-11T08:47:56.335Z
   - Dependency Injection: Uses a robust dependency injection container (ioc/container.ts) for managing services and their implementations, adhering to Clean Architecture principles.
 # langchain
 - https://github.com/onyx-dot-app/onyx /15.1kStar/MIT+EE/202510/python/ts
+  - https://github.com/danswer-ai/danswer /legacy
   - https://onyx.app/
   - Onyx is a feature-rich, self-hostable Chat UI that works with any LLM.
   - Onyx comes loaded with advanced features like Agents, Web Search, RAG, MCP, Deep Research, Connectors to 40+ knowledge sources, and more.
@@ -775,7 +776,7 @@ modified: 2025-08-11T08:47:56.335Z
   - Fred agents are LangGraph-based conversational experts
   - 使用了InMemoryLangchainVectorStore, langchain-message/tools
 
-- https://github.com/pipeshub-ai/pipeshub-ai /1.2kStar/apache2/202508/python/ts
+- https://github.com/pipeshub-ai/pipeshub-ai /2kStar/apache2/202511/python/ts
   - https://pipeshub.com/
   - The OpenSource Alternative to Glean's Workplace AI
   - PipesHub AI helps you quickly find the right information using natural language search—just like Google.
@@ -784,6 +785,7 @@ modified: 2025-08-11T08:47:56.335Z
   - Knowledge Graph Backbone – All data is seamlessly structured into a powerful knowledge graph.
   - Enterprise-Grade Connectors – Scalable, reliable, and built for secure access across your organization.
   - Modular & Scalable Architecture – Every service is loosely coupled to scale independently and adapt to your needs.
+  - fastapi, LangGraph, LangChain, Qdrant(vector), ArangoDB(graph)
   - [Work AI for all - AI platform for agents, assistant, search](https://www.glean.com/)
   - [Best way to extract data from PDFs and HTML : r/Rag _202510](https://www.reddit.com/r/Rag/comments/1oavnx4/best_way_to_extract_data_from_pdfs_and_html/)
     - At PipesHub, we use docling, pymupdf (faster than docling but need to use layout parser on top of it), ocrmupdf/Azure DI (scanned pdfs).
