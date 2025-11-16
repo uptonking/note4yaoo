@@ -320,6 +320,16 @@ modified: 2023-04-04T22:36:31.529Z
   - https://www.zenko.io/
   - the core engine for asynchronous replication, optimized for queuing metadata updates and dispatching work to long-running tasks in the background.
   - Backbeat is an engine with a messaging system at its heart. It's part of Zenko, Scality’s Open Source Multi-Cloud Data Controller
+
+- https://github.com/coleifer/huey /5.7kStar/MIT/202510/python
+  - https://huey.readthedocs.io/
+  - a little task queue for python
+  - examples: mini, falsk, django
+  - Although Huey was designed with Redis in mind, the storage system implements a simple API and many other tools could be used instead of Redis if that's your preference.
+    - redis, sqlite, file-system, or in-memory storage
+  - multi-process, multi-thread or greenlet task execution models
+  - schedule tasks to execute at a given time, or after a given delay
+  - 实现使用装饰器: `@huey.task(retries=2, retry_delay=60)`.
 # concurrency/async
 - https://github.com/sindresorhus/p-queue
   - Promise queue with concurrency control

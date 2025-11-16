@@ -468,9 +468,14 @@ modified: 2020-10-22T10:22:55.878Z
   - a JavaScript library to visualise gridded data (or any tabular dataset with x/y position) in the browser in a large variety of advanced cartographic styles
   - a JavaScript library to visualise gridded data (or any tabular dataset with x/y position) in the browser in a large variety of advanced cartographic styles
 # flow-ai
+- https://github.com/yunshenwuchuxun/smart-drawio-next /MIT/202511/js
+  - https://smart-drawio-next.vercel.app/
+  - 用自然语言生成专业 Draw.io 图表
+  - [分享一个AI科研绘图神器 ](https://linux.do/t/topic/1171836)
+
 - https://github.com/liujuntao123/smart-excalidraw-next /202511/js
   - https://smart-excalidraw-next.vercel.app/
-  - [新的excalidraw画图神器来了！ - 社区孵化 - LINUX DO](https://linux.do/t/topic/1119379)
+  - [新的excalidraw画图神器来了 ](https://linux.do/t/topic/1119379)
     - 之前开发了一个 smart-mermaid，可以轻松的通过自然语言进行 mermaid 和 excalidraw 的绘制，获得了很多人的认可。
     - 经过一段时间的使用和用户反馈，依然存在了一些问题： 
       - 由于 mermaid 本身的限制，生成的图表类型受限，图表的灵活性也不够高; 

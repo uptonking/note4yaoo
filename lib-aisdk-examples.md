@@ -394,15 +394,15 @@ modified: 2025-08-11T20:15:18.297Z
   - Flexible Memory Modes - Support for session-based memory or stateless, one-off queries
   - Extensible Tool Support - Incorporate external APIs and custom tools within dialogs
 
-- https://github.com/zaidmukaddam/scira /10.4kStar/apache2/202508/ts
+- https://github.com/zaidmukaddam/scira /11.4kStar/apache2/202511/ts
   - https://scira.ai/
   - Scira (Formerly MiniPerplx) is a minimalistic AI-powered search engine that helps you find information on the internet and cites it too. 
   - Powered by Vercel AI SDK
   - using multiple AI models including xAI's Grok, Anthropic's Claude, Google's Gemini, and OpenAI's GPT models
   - Search the web using Exa's API with support for multiple queries, search depths, and topics
   - Extract and analyze content from any URL using Exa AI with live crawling capabilities
-  - Search Reddit content with time range filtering using Tavily API
-  - Search X posts with date ranges and specific handle filtering using xAI Live Search
+    - Search Reddit content with time range filtering using Tavily API
+    - X (Twitter) search: Search X posts with date ranges and specific handle filtering using xAI Live Search
   - Advanced multi-step search capability for complex queries
   - Academic search: Search for academic papers and research using Exa AI with abstracts and summaries
   - YouTube search: Find YouTube videos with detailed information, captions, and timestamps powered by Exa AI

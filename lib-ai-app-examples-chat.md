@@ -432,6 +432,13 @@ modified: 2025-03-22T18:49:15.634Z
   - https://devdocs.io/
   - DevDocs combines multiple developer documentations in a clean and organized web UI with instant search, offline support, mobile version, dark theme, keyboard shortcuts, and more
   - DevDocs was created by Thibaut Courouble and is operated by freeCodeCamp.
+
+- https://github.com/AdyTech99/volo /GPL/202501/python/inactive
+  - combining AI with Wikipedia knowledge via a RAG pipeline
+  - It utilizes an offline database of Wikipedia created by Kiwix, ensuring fast and reliable access to information without requiring constant internet connectivity.
+  - Volo uses a tiny model (Qwen2.5:3b) and gives it the knowledge of nearly 7 million Wikipedia articles, making it a more reliable source of information than giant closed-source models like OpenAI's GPT4o and Anthropic's Claude 3.5 Sonnet, which are prone to hallucinations.
+  - Offline Wikipedia Database: Leverages a `.zim` file from Kiwix, offering a snapshot of Wikipedia for offline access.
+  - OpenAI-Compatible REST APIs: Use Volo with interfaces like Open WebUI or your own API client.
 # chat-excel
 - https://github.com/huggingface/aisheets /1.5kStar/apache2/202510/python/ts
   - https://huggingface.co/spaces/aisheets/sheets
@@ -482,6 +489,26 @@ modified: 2025-03-22T18:49:15.634Z
   - https://github.com/PDFMathTranslate/PDFMathTranslate-next /AGPLv3
     - pdf2zh 2.0 does not currently provide an online demo
 # chat-workspace
+- https://github.com/pipeshub-ai/pipeshub-ai /2kStar/apache2/202511/python/ts
+  - https://pipeshub.com/
+  - The OpenSource Alternative to Glean's Workplace AI
+  - PipesHub AI helps you quickly find the right information using natural language search—just like Google.
+  - The platform not only delivers the most relevant results but also shows where the information came from, with proper citations, using Knowledge Graphs and Page Ranking
+  - Beyond search, our platform allows enterprises to create custom apps and AI agents using a No-Code interface.
+  - Knowledge Graph Backbone – All data is seamlessly structured into a powerful knowledge graph.
+  - Enterprise-Grade Connectors – Scalable, reliable, and built for secure access across your organization.
+  - Modular & Scalable Architecture – Every service is loosely coupled to scale independently and adapt to your needs.
+  - 前端: Material UI、React Hook Form、zod
+  - 后端: fastapi, LangGraph, LangChain, Qdrant(vector), ArangoDB(graph), Kafka, Redis, Docling, PyMuPDF, OCRmyPDF
+  - 🛢️ 应用层数据在python侧和nodejs侧都大量使用arangodb来存储图结构的关系
+  - 🐛 不支持外部搜索引擎如 Tavily/EXA/SearxNG, 但方便纯本地部署
+  - [Work AI for all - AI platform for agents, assistant, search](https://www.glean.com/)
+  - [Best way to extract data from PDFs and HTML : r/Rag _202510](https://www.reddit.com/r/Rag/comments/1oavnx4/best_way_to_extract_data_from_pdfs_and_html/)
+    - At PipesHub, we use docling, pymupdf (faster than docling but need to use layout parser on top of it), ocrmupdf/Azure DI (scanned pdfs).
+    - If you are looking for Higher Accuracy, Visual Citations, Cleaner UI, Direct integration with Google Drive, OneDrive, SharePoint Online, Dropbox and more. PipesHub is free and fully open source, extensible. 
+  - pr已合并 [Backend Support for Ollama Models · Pull Request _202507](https://github.com/pipeshub-ai/pipeshub-ai/pull/475)
+    - [Ollama Embedding model support · Pull Request ](https://github.com/pipeshub-ai/pipeshub-ai/pull/480)
+
 - https://github.com/MODSetter/SurfSense /10.6kStar/apache2/202511/python/ts
   - https://www.surfsense.com/
   - Open source alternative to NotebookLM, Perplexity, and Glean.
@@ -491,11 +518,17 @@ modified: 2025-03-22T18:49:15.634Z
   - Works Flawlessly with Ollama local LLMs.
   - 后端: FastAPI, SQLAlchemy, pgvector, LangGraph, LangChain, Hybrid Search, Rerankers, Redis
   - 前端: next, Vercel AI SDK Kit UI Stream Protocol, Shadcn, Framer Motion, React Hook Form, tanstack/table
+  - ETL Service (choose one)
+    - Docling (local processing, no API key required, supports PDF, Office docs, images, HTML, CSV)
+    - LlamaIndex API key (enhanced parsing, supports 50+ formats)
   - 👇 xp
     - 跨workspace不能共享source-document
     - 聊天时~~只能选择全部文档或不选文档，不~~可以只选择部分文档
     - 支持根据场景配置不同llm: fast, long, reasoning
     - 🐛 聊天中的内容支持点击跳转到文档的chunk位置，而不是源文件，且中文文档的chunk经常是乱码
+  - https://discord.com/channels/1359368468260192417/1359416865939787837/1409642464792412220
+    - I was considering installing Surfsense but it needs API keys, doesn't it? How much does it cost to use it?
+    - Every service has a local alternative other than Speech to Text service. No need to put any API keys if you use everything local.
 
 - https://github.com/lfnovo/open-notebook /10.2kStar/MIT/202511/python/ts/提交少
   - https://www.open-notebook.ai/
@@ -513,22 +546,6 @@ modified: 2025-03-22T18:49:15.634Z
   - https://pagelm.spotit.dev/
   - a community driven version of NotebookLM & a education platform that transforms study materials into interactive resources like quizzes, flashcards, notes, and podcasts.
 
-- https://github.com/pipeshub-ai/pipeshub-ai /2kStar/apache2/202511/python/ts
-  - https://pipeshub.com/
-  - The OpenSource Alternative to Glean's Workplace AI
-  - PipesHub AI helps you quickly find the right information using natural language search—just like Google.
-  - The platform not only delivers the most relevant results but also shows where the information came from, with proper citations, using Knowledge Graphs and Page Ranking
-  - Beyond search, our platform allows enterprises to create custom apps and AI agents using a No-Code interface.
-  - Knowledge Graph Backbone – All data is seamlessly structured into a powerful knowledge graph.
-  - Enterprise-Grade Connectors – Scalable, reliable, and built for secure access across your organization.
-  - Modular & Scalable Architecture – Every service is loosely coupled to scale independently and adapt to your needs.
-  - 前端: Material UI、React Hook Form、zod
-  - 后端: fastapi, LangGraph, LangChain, Qdrant(vector), ArangoDB(graph), Kafka, Redis, Docling, PyMuPDF, OCRmyPDF
-  - [Work AI for all - AI platform for agents, assistant, search](https://www.glean.com/)
-  - [Best way to extract data from PDFs and HTML : r/Rag _202510](https://www.reddit.com/r/Rag/comments/1oavnx4/best_way_to_extract_data_from_pdfs_and_html/)
-    - At PipesHub, we use docling, pymupdf (faster than docling but need to use layout parser on top of it), ocrmupdf/Azure DI (scanned pdfs).
-    - If you are looking for Higher Accuracy, Visual Citations, Cleaner UI, Direct integration with Google Drive, OneDrive, SharePoint Online, Dropbox and more. PipesHub is free and fully open source, extensible. 
-
 - https://github.com/souzatharsis/podcastfy /5.6kStar/apache2/202510/python
   - Open Source Python alternative to NotebookLM's podcast feature: Transforming Multimodal Content into Captivating Multilingual Audio Conversations with GenAI
   - https://github.com/gabrielchua/open-notebooklm
@@ -544,7 +561,12 @@ modified: 2025-03-22T18:49:15.634Z
   - Open-source alternative to Glean, Gemini and MS Copilot
   - Your work information has become fragmented — across so many SaaS apps, docs, files, repos
   - Xyne connects to your applications (Google Workspace, Atlassian suite, Slack, Github, etc), securely indexes your data, and maps a graph of relationships.
+  - 🐛 必须使用google账户登录才能使用?
+    - 似乎不支持上传本地pdf文件
   - Model Agnostic: Plugs into any LLM of your choice. You can even point it to a local Deepseek via ollama.
+  - 使用自研ai框架 jaf  结合 aisdk
+  - https://github.com/xynehq/jaf
+    - functional agent framework built on immutable state, type safety, and composable policies.
 
 - https://github.com/deta/surf /2.7kStar/apache2/202511/rust/ts/svelte
   - https://deta.surf/
@@ -561,6 +583,31 @@ modified: 2025-03-22T18:49:15.634Z
       - An example I'd highlight is taking notes against a PDF.
       - NotebookLM will convert the PDF to simple text, and the chat responses are read only. NotebookLM also has a lot of strict walls between chat, artifacts & sources. You have to "save" responses as (read only) notes, and move notes to sources.
       - With Surf you can generate notes that deep link to specific pages in the PDF, and Surf will open those pages in the original PDF. You can remove the fluff you don't want in your notes. The intention is to be a little more open -- all notes are sources from the get go, you don't have to save or migrate anything.
+
+- https://github.com/ItzCrazyKns/Perplexica /27.3kStar/MIT/202511/ts
+  - Open source alternative to Perplexity AI
+  - a privacy-focused AI answering engine that runs entirely on your own hardware. It combines knowledge from the vast internet with support for local LLMs (Ollama) and cloud providers (OpenAI, Claude, Groq), delivering accurate answers with cited sources while keeping your searches completely private
+  - Web search powered by SearxNG - Support for Tavily and Exa coming soon
+  - Upload documents and ask questions about them. PDFs, text files, images - Perplexica understands them all.
+    - 未使用docling/libreoffice
+  - Get intelligent search suggestions as you type, helping you formulate better queries.
+  - Perplexica also provides an API for developers looking to integrate its powerful search engine into their own applications.
+  - Perplexica runs on Next.js and handles all API requests.
+  - 🐛 官方未提供外部数据源的集成，如slack/notion/gmail
+    - [Add private search connectors _202508](https://github.com/ItzCrazyKns/Perplexica/issues/856)
+
+- https://github.com/zaidmukaddam/scira /11.4kStar/apache2/202511/ts
+  - https://scira.ai/
+  - Scira (Formerly MiniPerplx) is a minimalistic AI-powered search engine that helps you find information on the internet and cites it too. 
+  - Powered by Vercel AI SDK
+  - using multiple AI models including xAI's Grok, Anthropic's Claude, Google's Gemini, and OpenAI's GPT models
+  - Search the web using Exa's API with support for multiple queries, search depths, and topics
+  - Extract and analyze content from any URL using Exa AI with live crawling capabilities
+    - Search Reddit content with time range filtering using Tavily API
+    - X (Twitter) search: Search X posts with date ranges and specific handle filtering using xAI Live Search
+  - Advanced multi-step search capability for complex queries
+  - Academic search: Search for academic papers and research using Exa AI with abstracts and summaries
+  - YouTube search: Find YouTube videos with detailed information, captions, and timestamps powered by Exa AI
 # chat-coding-toolchain
 - https://github.com/sqlchat/sqlchat /BSL/202406/ts
   - https://sqlchat.ai/

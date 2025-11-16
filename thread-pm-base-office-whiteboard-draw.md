@@ -21,7 +21,19 @@ modified: 2023-05-30T21:36:55.391Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🤔 [Why Are LLM Chats Still Linear When Node-Based Chats Are So Much Better? : r/LLMDevs _202511](https://www.reddit.com/r/LLMDevs/comments/1oxrz24/why_are_llm_chats_still_linear_when_nodebased/)
+- I think you could have a nice UI where it expands to a tree view with path summaries expose style. Getting the experience right would be a lot of work and it's such a niche workflow that I don't know if any company would put in the effort to build it.
+
+- I built something similar for myself but it's based on highlights in a message. You highlight, a popup appears that provides custom prompt choices (e.g elaborate / simplify / critique etc), it takes you to a new chat window that can link back to the chat window where the original message was branched from. Then you can click on that highlight anytime to go back to the branched view
+
+- It’s just a UX problm, not really an engineer issue. Basiclly you’re expecting the AI to talk to you in one singe chat, remember everything forever, jump back and forth between topics and still never halluciante or loose track of your ideas. But LLMs aren’t built like that. They proces context in a linear way because that’s how language input works, but it’s not how we actualy think. So the thing you want isn’t something AI can do in that format. Still, your idea is cool — build more stuf like this, make the AI enhance your knowldge, not think instead of you.
+
+- I think it's too unintuitive to use, I'll also easily lose my train of thought and not be able to keep track of things after a while as I'll definitely open too many branches and then I'll need to re-organize. I think the current system of projects is good enough, better than unlabeled chats and not too messy as this format.
+
+- Linear chat kicked off the current AI hype cycle. Therefore most people could only make the obvious leap from that into sequential workflow automation and more unthreaded chat-centric designs.
+  - AI applications that diverge into many path like this are seriously overlooked. There is a UX part to this, but the AI aspects of this branching behavior are very interesting.
+
+- If you use obsidian there is a plugin called cannoli which implements this. I use it a lot.
 
 - ## What if a graph view and text editor were just two ends of a continuous spectrum? 
 - https://twitter.com/OrionReedOne/status/1790263523857019227

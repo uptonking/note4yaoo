@@ -81,6 +81,14 @@ modified: 2025-09-01T05:52:34.241Z
 - chart
   - markdown-chart + llm
 
+- chat-sources
+  - wikipedia + kiwix
+  - dictionaries
+  - ebooks
+
+- llm-ui/client
+  - 可参考 ollama/lmstudio/janai 封装 llama.cpp 的逻辑
+
 - code interpreter 如何实现
   - open source alternative
 - [【提示词工程】Canvas助手（推荐 AI Studio），让模型用HTML回复，支持Graphviz逻辑流程图、Echarts图表 - 开发调优 - LINUX DO](https://linux.do/t/topic/590614/21)

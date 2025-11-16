@@ -320,6 +320,11 @@ modified: 2023-02-08T07:20:48.475Z
   - Fast offline inference - Comparable inference speeds to vLLM
   - Optimization Suite - Prefix caching, Tensor Parallelism, Torch compilation, CUDA graph, etc.
 
+- https://github.com/lemonade-sdk/lemonade /1.6kStar/apache2/202511/python/cpp
+  - https://lemonade-server.ai/
+  - Lemonade helps users run local LLMs with the highest performance by configuring state-of-the-art inference engines for their NPUs and GPUs.
+  - Lemonade supports both GGUF and ONNX models. You can also import custom GGUF and ONNX models from Hugging Face by using our Model Manager (requires server to be running).
+
 ## llama-rewrite
 
 - https://github.com/projektjoe/gpt-oss /MIT/202511/python/cpp

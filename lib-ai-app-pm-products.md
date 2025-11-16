@@ -267,6 +267,7 @@ modified: 2025-03-22T16:10:24.856Z
 - 免费api的技巧: 在知乎/小红书直接搜索 免费 claude (公益站), 就会有最新的api推广信息, 可以用小号邀请自己
   - 公益站 [Search results for '公益站' - LINUX DO](https://linux.do/search?q=%E5%85%AC%E7%9B%8A%E7%AB%99%20order%3Alatest)
   - [L站免费AI汇总 ](https://linux.do/t/topic/638821)
+  - [最新福利羊毛/福利羊毛, Lv2话题 - LINUX DO](https://linux.do/c/welfare/welfare-lv2/61)
   - 📌 [Agent Router](https://agentrouter.org/), 每日签到获取$25
     - 模型支持 Claude Code、Codex、RooCode、Qwen Code、Gemini Cli 等多款工具
     - 仅支持coding工具，不支持使用api聊天
@@ -301,7 +302,6 @@ modified: 2025-03-22T16:10:24.856Z
     - 模型支持gemini/gpt, 不支持claude
     - API调用频率限制为 10 RPM
     - gpt-load 作者
-    - 使用兑换码兑换余额后的账号视为激活用户, 激活用户可长期使用，额度用完后可无条件联系我增加额度
     - [【T佬公益】TBAI公益站主贴-爽用Gemini|OpenAI|DeepSeek模型 ](https://linux.do/t/topic/683726)
   - 📌 [23公益站](https://sdwfger.edu.kg/console), 不用签到
     - 平台将于每周五、周六统一发放额度兑换码。 额度申请：如您的额度提前用尽，可联系管理员进行补充申请
@@ -333,6 +333,8 @@ modified: 2025-03-22T16:10:24.856Z
     - 完全支持 cc，主要是 sonnet 4.5，haiku 4.5 会自动重定向到 sonnet 4.5
     - RPM 暂时定为 5，之后看情况调整
     - [【随时跑路公益站】就是那个稳了一个月的AmazonQ2API公益，开放注册 ](https://linux.do/t/topic/1154353)
+  - [逆水寒](https://api.sxxe.net/)
+    - [逆水寒公益API——扬帆起航 ](https://linux.do/t/topic/1173036)
   - [我爱996公益](https://529961.com/)
     - 仅限 L 站 2 级以上用户注册
     - [【公益站我爱996一次】测试上线已接入LinuxDo ](https://linux.do/t/topic/1147448)
@@ -340,13 +342,11 @@ modified: 2025-03-22T16:10:24.856Z
     - 仅在每周五下午 18:00 至 21:00 开放，每周限量 100 人
     - 支持claude,gemini, 不支持gpt
     - Gemini系列模型永久免费， 与Gemini对话不会消耗帐号余额（可忽视帐号余额）
-  - [逆水寒公益API站正式扬帆启航 ](https://linux.do/t/topic/1171730)
   - [VoAPI公益站](https://demo.voapi.top/), 每日签到
     - [【首发更新】全新API分发和管理系统-VoAPI ](https://linux.do/t/topic/218662)
     - 曾经的帐号已注销，需要重新注册
-  - [Cats API](https://catsapi.com/)
+  - [~~Cats API~~](https://catsapi.com/), 已关闭
     - API调用频率限制为 15 RPM
-    - 输入输出都很贵
     - [【猫猫公益】API使用说明 ](https://linux.do/t/topic/851028)
   - [RawChat公益站点](https://chatgptplus.cn/)
     - 免费的共享ChatGPT账号
@@ -443,6 +443,17 @@ modified: 2025-03-22T16:10:24.856Z
   - [SmallAI](https://free.smallai.asia/chat)
     - 基于lobechat实现
     - [【网站自荐】SmallAI公益站——免费使用GPT4o mini，支持多模态 ](https://github.com/ruanyf/weekly/issues/4969)
+  - [AI对话 - db的AIGC站](https://ai.feles.town/chat)
+  - 💰 [GoAmzAI - 个人、团队、企业私有化、运营的AIGC平台解决方案](https://d.goamzai.com/)
+    - https://github.com/Licoy/GoAmzAI /非开源
+    - https://github.com/VoAPI/VoAPI /仅提供docker-compose.yml
+    - [AI对话 - GoAmzAI Plus](https://demo6.goamzai.com/chat)
+    - [对话 - GoAmzAI Pro](https://prodemo6.goamzai.com/chat)
+    - [【公益AIGC】最适合日常使用的公益站，高级AI工具一网打尽 ](https://linux.do/t/topic/1175890/37)
+      - volo api 吧，基于 new api 改的，但是 v1 开始好像就完全重写了
+      - VoAPI 一直是闭源的，甚至好像只放出 Docker 的部署方式，连编译后的可执行文件都不发布的，截止到我最后一次看时是这样的，不知道后续有没有改变和有没有收费计划
+
+## llm-api-public
 
 - 📌 [OpenRouter API Rate Limits ](https://openrouter.ai/docs/api-reference/limits)
   - tldr: rpd-1000 

@@ -262,6 +262,27 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
 - dev-to
   - ?
 
+## 1116
+
+- [Getting Errors using MIstral AI API: im getting a "too many requests" error even though i haven't used MIstral for a long while : r/MistralAI](https://www.reddit.com/r/MistralAI/comments/1lwg4na/getting_errors_using_mistral_ai_api_im_getting_a/)
+  - Free tier 429 is almost always about the shared pool being full, not your personal usage counter. During euro daytime I get it every other call. A few things that help: add a 2–3 s delay between messages and back-off with jitter when you see 429; SillyTavern fires off retries pretty aggressively, so tweak its timeout to at least 15 s.
+  - If you’re building something server-side, spin up a simple queue (I use Supabase for storage and a tiny Cloudflare Worker to pop jobs) and cache responses so you’re not slamming the endpoint twice.
+
+- No solution found when resolving dependencies for split (markers: python_full_version >= '3.13'):
+  ╰─▶ Because only the following versions of numpy{python_full_version >= '3.13'} are available:
+  - 限制python版本 `requires-python = ">=3.10,<3.11"`
+
+- for shell commands `docker run -d --name redis --restart always -p 6379:6379 redis:bookworm`, explain it, especially what does `redis:bookworm` do?
+  - The format is `IMAGE_NAME:TAG`.
+  - redis: This is the name of the image. In this case, it refers to the official Docker image for Redis
+  - bookworm: This is the tag of the image. Tags are used to differentiate between versions or variants of an image. "Bookworm" is the codename for Debian 12.
+
+- [Why can't I access the http://localhost:6333/dashboard, Java client 6334 after the Windows qdrant.exe starts? The documentation for Windows was also not found · Issue · qdrant/qdrant](https://github.com/qdrant/qdrant/issues/6691)
+  - when using a qdrant.exe binary directly, you'll have to provide the Web UI files yourself.
+  - https://github.com/qdrant/qdrant-web-ui/releases
+- [Cannot access /dashboard (HTTP 404) · Issue · qdrant/qdrant](https://github.com/qdrant/qdrant/issues/5315)
+  - Wasn't clear that `qdrant.exe` requires you also to create a `static` folder with the contents of the latest release of https://github.com/qdrant/qdrant-web-ui.
+
 ## 1110
 
 - [tmux使用指南：比screen好用n倍！ - 知乎](https://zhuanlan.zhihu.com/p/386085431)

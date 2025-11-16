@@ -44,6 +44,20 @@ modified: 2024-01-06T13:48:42.969Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [How do you secure a linux desktop? : r/linux](https://www.reddit.com/r/linux/comments/1oy3vkg/how_do_you_secure_a_linux_desktop/)
+  - we hear a lot about linux such as "linux is safe and most servers run on linux". but i came to realize that its only true for server installation or headless system. out of the box it maybe super secure.
+  - i use ufw and fail2ban but are these enough. what precautions do you take
+  - edit: what i learned from the comments is i have to learn SElinux or apparmor like things as a guard to actions done by even if i have su.
+
+- Why do you have fail2ban on a desktop? Anyway, the easiest thing you can do to secure your Linux desktop is to only install packages from your distribution's repo. The main threat targeting desktops is an infostealer. Stick to trusted package sources and don't save credentials in your browser.
+
+- `fail2ban` is for public servers where those servers are getting hammer by bruteforcing ssh ports. You don't need it for a client desktop. You're not even serving anything to get bruteforce. 
+  - Firewall, no sketchy package installations, keep up to date with security updates and package updates should be it imo. Don't have port open that aren't needed to be open.
+
 - ## etcd这个傻逼2G的设计可以坑多少公司
 - https://x.com/ayanamist/status/1918483674334687505
   - 根因：未开启 etcd 自动压实功能，且默认仅为 2GB 容量。

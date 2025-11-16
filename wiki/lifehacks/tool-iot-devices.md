@@ -200,7 +200,41 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## [Is it possible we ever get CPU native LLMs? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1oyj16n/is_it_possible_we_ever_get_cpu_native_llms/)
+- CPUs aren't really suitable for the type of calculations AI uses. "CPU native LLMs" will be just regular LLMs that are running in NPU unit inside of a regular cpu. One day, when NPUs will get decent, it'll be normal.
+
+- MoE models run pretty well on CPU, I have a 21B running on an SBC at 15 tps.
+
+- it's common knowledge on machine learning 101 . Machine learning /AI is mostly about matrix calculations , and which can be done by CPU’s as well however it depends on your CPU core size. Meanwhile GPU is meant todo this operation for each pixel 100times per second. CPU is costly consumes a lot more power per core and its core isn’t scalable . You can’t have cpu with 1million core. If you do it will be size of a watermelon and cost you 10million dolar to buy and 10K electric bill.
+
+- ## [Mac studio ultra M3 512GB : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1oy9kkv/mac_studio_ultra_m3_512gb/)
+  - Is there anyone use it in production environment? I didn't find serious benchmark data about it, is it possible to run such as kimi-k2 thinking with two Mac studio 512GB ? 
+- Yes, you can run a quantized version of Kimi K2 on two clustered Mac Studio M3 Ultras, but it's not ideal for a production environment. 
+  - The main issue is that processing a large 256k context window will be extremely slow, as the M3 Ultra's GPU performance creates a bottleneck despite the large amount of unified memory. 
+  - While tools like MLX or Exo can link the machines, this setup is better suited for a single developer's workstation than for serving multiple requests with low latency.
+
+- I recently saw a post showing someone getting 15 tps on Kimi-K2 on two linked M3 Ultra Mac Studios. So it can be done, and 15 tps is certainly usable.
+  - I just finished building a server using an EPYC 9455P and RTX Pro 6000 (just one) which can hit the same 15 tps on Kimi-K2 for about the same price and without any of the other drawbacks of the Mac (like trying to link two machines, being stuck on a Mac, etc.).
+  - The EPYC 9005 series has 12 independent DDR5 channels at 6400 MT/s, giving it 614 GB/s of memory bandwidth. Not quite as high as the M3 Ultra's 800 GB, but not far off, especially considering you aren't limited to 512 GB and you have 96 lanes of PCIe 5.0 to use for whatever you feel like.
+
+- Problems is with lack of continuous batching. you have to queue incoming requests, vLLM does them in async way but do it support Apple GPU. I do a lot of tests with aider and prefill was never a problem.. but I test only small models
+
+- ## [Model recommendations for 128GB Strix Halo and other big unified RAM machines? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1oy1v7q/model_recommendations_for_128gb_strix_halo_and/)
+
+- GPT-OSS-120B is the best model you can run on the Strix Halo. 
+  - GLM Air fits, but it runs less than half the speed, and GPT-OSS-120B is already super slow in practice. 
+  - You can get 50 tokens/sec, but in real use the prompt processing is so slow it feels like 1 token/second for anything but light chatting.
+
+- ## [Ryzen AI MAX+ 395 - LLM metrics : r/ollama _202511](https://www.reddit.com/r/ollama/comments/1oxw4ir/ryzen_ai_max_395_llm_metrics/)
+  - MACHINE: AMD Ryzen AI MAX+ 395 "Strix Halo" (Radeon 8060s) 128GB Ram
+  - OS: Windows 11 pro 25H2 build 26200.7171 (15/11/25)
+  - INFERENCE ENGINES: Lemonade V9.0.2, LMstudio 0.3.31 (build7)
+  - I would reccomend Lemonade (supported by AMD) but the python API is the generic OpenAI style while LMstudio Python API is more friendly. Up to you.
+  - LMstudio (No NPU) is faster with Vulkan llama.cpp engine rather than Rocm llama.cpp engine (bad bad AMD).
+  - Lemonade offers also NPU only mode (very power efficient but at 20% of GPU speed) perfect for overnight activities, and Hybrid mode (NPU+GPU) useful for large context/complex prompts.
+
+- Framework has an ITX sized board which you can put in a server or desktop case. It even has 1 PCIE4x4 slot. The CPU doesn't have enough PCIe lanes for more slots
+  - Easy, buy a Xeon or a threadripper server. Dual CPU with lots of lanes.
 
 - ## [Why aren't there cheap NVLink adapters for RTX 3090s? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1owxob9/why_arent_there_cheap_nvlink_adapters_for_rtx/)
   - Is the NVLink only a wire jumper linking both cards together? Can I make my own homemade connections?

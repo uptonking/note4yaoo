@@ -315,6 +315,7 @@ modified: 2025-02-21T18:20:42.624Z
   - AI模型聚合管理中转分发系统，支持将多种大模型转为统一格式调用，支持OpenAI、Claude、Gemini等格式，可供个人或者企业内部管理与分发渠道使用
   - 新一代大模型网关与AI资产管理系统
   - 在One API的基础上进行二次开发
+  - [有没有什么能够聚合中转站api的项目呢？ - 开发调优 - LINUX DO](https://linux.do/t/topic/1172062)
   - https://github.com/Veloera/Veloera /GPL/202510/go/js
     - 优秀的 AI API 网关系统
     - 原汁原味的 New API 体验, 对界面无大改动, 遵循 GPL 3.0 协议, 无商用限制
@@ -337,6 +338,13 @@ modified: 2025-02-21T18:20:42.624Z
   - 一个开源的浏览器插件，聚合管理所有中转站账号的余额、模型和密钥，告别繁琐登录。
   - 本项目为开源项目，在One API Hub的基础上进行二次开发
   - https://github.com/fxaxg/one-api-hub /MIT
+
+- https://github.com/eraycc/API-Gateway-Manager /202511/ts
+  - 基于 Next.js 的 AI API 中转站管理系统
+  - 支持多用户、API 站点管理、模型测试与统一认证
+  - 双系统登录：用户系统 + 管理员系统, 管理员可无缝切换用户/管理系统
+  - 多站点支持：管理多个 AI API 中转站
+  - 额度查询：实时查询 API 使用额度（目前仅限 newapi）
 # ai-api
 
 # browser-use
