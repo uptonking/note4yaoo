@@ -52,6 +52,12 @@ modified: 2025-03-22T18:49:15.634Z
   - https://github.com/ssc-dsai/canchat-v2 /202508/BSD
     - Granular Permissions and User Groups
     - Offline Mode
+- https://github.com/xxnuo/open-coreui /202511/rust
+  - A rewritten Open WebUI in Rust, significantly reducing memory and resource usage, requiring no dependency services, no Docker, with both a server version and a Tauri-based desktop client. (formerly Open WebUI Lite)
+  - https://github.com/knoxchat/open-webui-rust
+    - High‑Performance Rust Implementation of Open WebUI
+  - https://github.com/knoxchat/knoxchat /MIT/ts
+    - a vigilant supervisor and management tool that ensures LLM teams rigorously develop reliable AI Agent programming extensions for VSCode and compatible editors
 
 - https://github.com/danny-avila/LibreChat /29kStar/MIT/202508/ts前端/cjs后端
   - https://librechat.ai/

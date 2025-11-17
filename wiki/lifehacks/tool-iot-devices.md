@@ -200,6 +200,42 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
+- ## 
+
+- ## 🧩 [Apple is considering putting miniHBM on iPhones in 2027 : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1oz9vs3/apple_is_considering_putting_minihbm_on_iphones/)
+- Mobile HBM will be very expensive though, i think it is possible they will do a hybrid for macs
+  - At 20 watts tdp don't expect gpu type performance, probably like nvidia orin order of magnitude
+- It will probably be slower due to the battery constraints but they will improve the battery too. However when hbm reaches the mac studio, there will be way less power constraints , it will run real fast like 2.8-8TB/s.. even on the m7 or m8 max macnooks, it will be fast
+
+- What's mini-HBM?
+  - Mini-HBM isn’t “VRAM stacked on a wafer” and it isn’t literally on top of the GPU. It’s a small HBM-style DRAM stack placed next to the SoC on a silicon interposer.
+
+- Looking at mobile devices, the memory bandwidth for the most part is less than 100GB/s so they really need to up those. And companies are too focused on getting their proprietary models to run well rather than let people just run the open weights models.
+  - I do agree, but there is a world that models are introduced in the background before users are able to directly chat with them. Small models can unlock categorization and data collection workflows that are not time sensitive, and will give users improved recommendations and insights without sending data off site. Realistically they could even have a nightly processing step that runs through data over night so it doesn't affect UX.
+
+- I fear on-device inference will greatly reduce battery life which is quite important on a mobile device.
+
+- HBM for bandwidth, Neural block in each GPU core for prefill, 3nm and arm64 for energy efficiency. Apple is shaping up to be a good consumer AI company.
+  - Yeah, it is gonna be good, the 2nm process ( 20 nm metal pitch) will come in 2026 and fp 8 native compute will likely come too.. they make good hardware but real expensive on the ram and ssd configs But still so much cheaper than nvidia.
+
+- Ironically Huawei uses LPDDR phone RAM on GPU.
+
+- I don’t understand why it’s Iphone first and then Mac not the other way around.
+  - Apple is a mobile first company, they usually test on iphones first then implement it for ipads and macs … if it works on iphones, it will be easier and better on macs. M series chips are essentially scaled up iphone chipa
+
+- ## [AMD Ryzen AI Max 395+ 256/512 GB Ram? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1oyy0fy/amd_ryzen_ai_max_395_256512_gb_ram/)
+  - I’m looking at the new AI boxes using the Ryzen AI Max+ 395 (GMKtec EVO-X2, Minisforum’s upcoming units, etc.) and I’m wondering if we’ll actually see higher-end RAM configs — specifically 256GB or even 512GB LPDDR5X.
+
+- There’s little point in producing a box with more RAM if the bandwidth isn’t sufficient. 
+- Will not see higher RAM configs for Strix Halo. The 256 bit bus width and available LPDDR5X density prohibit this. Even if somehow someone would make a more dense module, the limited bandwidth would not make it useful for LLMs.
+
+- AMD to my knowledge has no interest in supporting this SoC with a 128GB+ config, and the more likely result is a more bespoke SoC in a successor that goes up to 256GB/512GB, possibly with higher bandwidth or a better programming model.
+- AMD will never do any powerful AI consumer products, that they wont eat their workststion/server shit
+
+- AMD's next iteration of this chip, Medusa Halo, and that is expected to use either 384-bit LPDDR6 or 256-bit LPDDR5X meaning possible configurations of: 273, 342, and all the way up to 691GB/s in the extreme case.
+
+- Samsung is releasing lpddr6x modules with more 10k mhz modules, which if utilized would increase the memory bandwidth for more than 330 Gb/s. Another way is if AMD uses octa channel method as used in threadripper pro, it can be a game changer. It can increase the memory bandwidth to more than 650 gb/s. With octa channel they can easily go upto 256gb using 32gb modules or 192gb with 24gb modules. It would increase cost, but AMD can capture numerous clients from mac lineup.
+
 - ## [Is it possible we ever get CPU native LLMs? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1oyj16n/is_it_possible_we_ever_get_cpu_native_llms/)
 - CPUs aren't really suitable for the type of calculations AI uses. "CPU native LLMs" will be just regular LLMs that are running in NPU unit inside of a regular cpu. One day, when NPUs will get decent, it'll be normal.
 

@@ -1647,12 +1647,17 @@ curl http://localhost:11434/api/chat -d '{
 - https://x.com/scomper/status/1791804644332908646
 - 好像都是小模型为主吧
 
-# discuss-model-tuning
+# discuss-model-internals/tuning
 - ## 
 
 - ## 
 
-- ## 
+- ## [In light of Kimi Linear, reposting Minimax's article on Linear Attention : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1oorvd0/in_light_of_kimi_linear_reposting_minimaxs/)
+  - MiniMax M2 Tech Blog 3: Why Did M2 End Up as a Full Attention Model?
+
+- until we have some gated delta net models with way more active parameters, i don't think we can really come to any solid conclusions right now. gpt-oss is 100% transformer and also sucks the same way as these really sparse hybrid models.
+
+- Feels like "You never really know what’s going to happen until you scale up." might be one big reason why qwen will keep with Next type models for the time being. The reasoning could have been: their some performance penalty at inference, but for the gpu/time cost of one 32b dense, we can train 10+ different "good enough" 80b hybrid MoE. Allows us to iterate faster, detect issues faster, experiment more (more parameters? more experts? different training methods?). All of which could benefit full attention down the line.
 
 - ## [What’s the training cost for models like Qwen3 coder 30b and is the code for training it is open source or close source? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1njws3n/whats_the_training_cost_for_models_like_qwen3/)
 - You can do fine tunes on the 4B real easy with Unsloth. LoRAs and QLoRAs, too. It won’t take much VRAM. You can fine tune a LoRA for Qwen3 30B A3B Instruct 2507 in BF16 on a single 96GB 6000 Pro in just a few hours.

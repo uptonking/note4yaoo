@@ -335,6 +335,40 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
+- ## 
+
+- ## [What do you use local LLMs for? What is your use case? : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1ms4gmz/what_do_you_use_local_llms_for_what_is_your_use/)
+- They are best used for small context tasks like classification/sentiment, asking it summarize, pull out keywords, grammar, etc.
+  - Not for long conversations or complex tasks, but system prompt, user request, and then get a single response.
+  - For example, I've been experimenting with a local LLM checking chat messages for rule-breaking in a Discord server, flag the suspicious once, and then I checked the flagged messages and take action myself.
+
+- I used it to generate a synthetic dataset for training my first neural network, with successful results.
+
+- Structured data extraction from private documents (millions of documents)
+  - We have produced an annotated dataset of a few thousand records. We used this to fine tune a model and evaluate performance. We are getting >0.98 F1 score which is a margin of error we are willing to tolerate given the scale and time saved... It's for a very specific type of short documents. Our extraction pipeline has multiple extraction and validation steps.
+
+- Data extraction and classification.
+
+- ## [What are you using your local models for ? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1oz6k5j/what_are_you_using_your_local_models_for/)
+- Confidential research. In SillyTavern. Just yet with a quantized Skyfall-31b from Drummer, apparently some blend of Mistral Small or whatever. It's fun.
+
+- Qwen3-VL-30B-A3B-Thinking is heating my home by processing video. I've posted about it before but llm-ffmpeg-edit.bash handles the logic & llm-python-vision-multi-images.py handles sending the images/frames to the LLM backend.
+  - I was using Mistral 3.2 (24B dense) before Qwen3-VL got support. The speed increase from 24B -> 30B-A3B has been incredible, while maintaining accuracy.
+
+- I'm bound by the legal terms of my employment to not discuss the technologies we use there, but am free to talk about my personal use-cases.
+- STEM research assistant -- I give it my technical notes (usually physics and/or math) and a question, and get back helpful replies. My go-to is Phi-4-25B, and when it's not smart enough I escalate to Tulu3-70B, sometimes Qwen3-235B pipelined with Tulu3-70B.
+- Creative writing -- Cthulhu-24B, Big-Tiger-Gemma-27B-v3, or Valkyrie-49B-v2. Mostly sci-fi (space opera or Murderbot fanfic).
+- Evol-Instruct and synthetic dataset generation or augmentation -- again, mostly Phi-4-25B or Tulu3-70B, though recently I have been using Valkyrie-49B-v2 to bulk up a RAG database of technical troubleshooting advice/solutions. To my surprise Valkyrie is a lot better at this than Tulu3-70B, even though they are derived from similar models (Tulu3 from Llama-3.1, Valkyrie from Llama-3.3-Nemotron-Super-49B-v1.5 which in turn is based on Llama-3.3).
+- Persuasion research -- studying the capacity for LLM inference to change people's minds. Big-Tiger-Gemma-27B-v3 is excellent at this.
+- Wikipedia-backed RAG for general question-and-answer. I use Big-Tiger-Gemma-27B-v3 for this as well.
+- Describing images so I can index them in a locally hosted search engine. Qwen2.5-VL-72B is still the best vision model I've yet used, but I haven't had a chance yet to compare it against Qwen3-VL-32B. I am hoping Qwen3 is better, despite having fewer than half as many parameters.
+- I also run an IRC bot for a technical support channel, which is mostly GOFAI-driven but I've been working on a plugin for it to be RAG/LLM-driven too. That, too, uses Big-Tiger-Gemma-27B-v3.
+- Recently I've been trying to use Phi-4 (14B) as a synthetic dataset rewriter, to salvage low-quality inferred data I would normally prune from the dataset. I read a paper suggesting even very small models (4B) are effective at this. So far my results have been mixed. I've been meaning to try Tiger-Gemma-12B-v3 as well; possibly Phi-4 just isn't the right model for this.
+- GLM-4.5-Air for slow inference of entire programming projects (which I don't do much, since I don't want my coding skills to atrophy) or to find bugs in my own code.
+- Qwen3-Coder-REAP-25B-A3B for fast FIM code inference. The model doesn't have to be smart to figure out what my "for"-statement is going to look like, but it does need to be fast enough that it can suggest a completion before I've finished typing the "for"-statement myself. I use the REAPed version of this model so that it fits in my GPU's VRAM (at Q4_K_M); the original 30B-A3B didn't quite fit.
+- I'm also tentatively using Phi-4 as a judge, comparing two replies to the same prompt and telling me which is better. It's early days yet, for this project, and it might not be the right model for this. We will see.
+- Sometimes I use Big-Tiger-Gemma-27B-v3 or Phi-4 (14B) for language translation (mostly Spanish to English, but sometimes German or Russian to English). Overall Big Tiger is better at this, though Phi-4 does surprisingly well, and is better than Big Tiger at taking situational context into account with its replies. It's also a lot faster than Big Tiger, which is sometimes important for translation tasks.
+
 - ## [Are any of you using local llms for "real" work? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1otnj2k/are_any_of_you_using_local_llms_for_real_work/)
 - The most "real" work I've done is that Qwen3-VL-30B-A3B-Thinking is currently going through videos 10-seconds at a time. 
   - Based on the bot's True/False boolean output a wrapping program keeps track of what segments `<thing I'm looking for>` is within. At the end, we're done using Qwen3-VL and the wrapping program uses the segment information to use FFMPEG to make a clipped version where `<thing I'm looking for>` should always be present.

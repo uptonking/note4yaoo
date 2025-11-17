@@ -101,6 +101,10 @@ modified: 2025-04-17T08:17:04.770Z
   - Support different Queue as backend like NSQ, NATS or Redis streams, defaut engine is local Channel.
   - 依赖gin、httpsnoop、nsq、nats
 
+- https://github.com/CooperJiang/PixelPunk /Noncommercial/202511/go/ts/vue
+  - https://pixelpunk.cc/
+  - 赛博图床 - 一款酷炫的现代化图床、结合AI实现智能标签、审核、使用方便智能、且持续免费更新
+
 - https://github.com/openimsdk/open-im-server /15.3kStar/AGPL > apache2/202510/go
   - https://openim.io/
   - Unlike standalone chat applications such as Telegram, Signal, and Rocket. Chat, OpenIM offers an open-source instant messaging solution designed specifically for developers rather than as a directly installable standalone chat app

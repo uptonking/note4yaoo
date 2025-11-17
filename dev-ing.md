@@ -262,6 +262,15 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
 - dev-to
   - ?
 
+## 1117
+
+- [Casual-Autopsy/snowflake-arctic-embed-l-v2.0-gguf · GGML_ASSERT Error when running llama-embedding with this model](https://huggingface.co/Casual-Autopsy/snowflake-arctic-embed-l-v2.0-gguf/discussions/1)
+  - OK found the fix, we must specify the context and batch length, i.e. 512 or 8192, i.e. `./llama-embedding --batch-size 8192 --ctx-size 8192 -m ...`
+
+- 中国的四大名著是家喻户晓的小说和文学作品，那美国和欧洲类似 四大名著 的作品分别是什么? 如果没有公认的答案，就列举些最知名的作品
+  - 白鲸、哈利贝恩历险记、了不起的盖茨比、汤姆叔叔的小屋
+  - 战争与和平、哈姆雷特、荷马史诗、堂吉诃德
+
 ## 1116
 
 - [Getting Errors using MIstral AI API: im getting a "too many requests" error even though i haven't used MIstral for a long while : r/MistralAI](https://www.reddit.com/r/MistralAI/comments/1lwg4na/getting_errors_using_mistral_ai_api_im_getting_a/)

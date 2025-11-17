@@ -338,6 +338,8 @@ modified: 2025-03-22T16:10:24.856Z
   - [我爱996公益](https://529961.com/)
     - 仅限 L 站 2 级以上用户注册
     - [【公益站我爱996一次】测试上线已接入LinuxDo ](https://linux.do/t/topic/1147448)
+  - [FovtAPI](https://api.voct.top/console)
+    - [NewAPI签到系统](https://gift.voct.top/)
   - [mmkg API](https://api.mmkg.cloud/)
     - 仅在每周五下午 18:00 至 21:00 开放，每周限量 100 人
     - 支持claude,gemini, 不支持gpt

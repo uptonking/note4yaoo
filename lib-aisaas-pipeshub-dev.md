@@ -7,22 +7,50 @@ modified: 2025-11-16T15:34:02.881Z
 
 # lib-aisaas-pipeshub-dev
 
-# guide
+> extensible and explainable workplace AI platform for enterprise search and workflow automation
 
+# guide
 - pros
-  - 支持使用本地llm
+  - license: apache2
+  - 🔗 insights with citations: traceable source in every answer combined with confidence scores
+  - 支持使用本地llm, 包括ollama/lmstudio
   - AGI内容中包含知识库中的内容引用，点击时能自动打开原文pdf并高亮原文位置
   - create custom apps and AI agents using a No-Code interface
+  - Modular & Scalable Architecture – Every service is loosely coupled to scale independently
+  - 支持上传本地文件: pdf, docx, xlsx, csv, markdown, images, audio, video
+  - 官方提供很多外部数据源的集成: google-drive/gmail/docs, OneDrive, slack, notion, airtable, github
 
 - cons
   - AGI内容只包含知识库中的内容，不包含llm自身知识，经常拒绝用户 I cannot answer your query 
   - ai回复的内容简短不够丰富，体验不如 SurfSense
+  - 未实现online search集成，如tavily/exa/SearxNG
+  - roadmap
+    - Code Search
+    - Workplace AI Agents
+    - MCP
+    - APIs and SDKs
+    - Personalized Search
+    - Highly available and scalable Kubernetes deployment
+    - PageRank
 
 - features
-  - ?
+  - 使用 arangodb 实现图结构的数据关系逻辑
+  - Real-Time or Scheduled Indexing – Index data as it flows or schedule it to run exactly when you need
+  - Source-level permissions ensure every document is shown only to those who are authorized
+# not-yet ❓
+- 为何启动后端要在4个terminal运行4个端口不同的服务, indexing/query/docling/connectors
+  - 为什么不是一个api，然后使用4个不同的route url
 # draft
+- topics
+  - Wikipedia
+  - developer docs: react/vue/ecmascript/python/golang/pg
+
 - 不选择kb知识库时，不支持随意聊天
 
+- search
+  - 不仅支持sources, 还支持搜索 comments/discussions
+
+- 
 - 
 - 
 - 

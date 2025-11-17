@@ -38,6 +38,7 @@ modified: 2025-09-16T19:59:57.856Z
   - [Find a leaderboard](https://huggingface.co/spaces/OpenEvals/find-a-leaderboard)
   - [SuperCLUE中文大模型测评基准-AI评测榜单](https://www.superclueai.com/)
   - [CLUE中文语言理解基准测评](https://www.cluebenchmarks.com/)
+  - [EQ-Bench 3 Leaderboard](https://eqbench.com/)
 
 - leaderboard-tool-call
   - [Berkeley Function Calling Leaderboard (BFCL)](https://gorilla.cs.berkeley.edu/leaderboard.html)
@@ -201,6 +202,19 @@ modified: 2025-09-16T19:59:57.856Z
   - YOLOv10: 简历版面布局检测和区域分割
 # discuss-stars
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 💡 [The missing LLM size sweet-spot 18B : r/LocalLLaMA _202504](https://www.reddit.com/r/LocalLLaMA/comments/1jt9ig2/the_missing_llm_size_sweetspot_18b/)
+- Yesh I think 16-24b is really a great sweet spot, hope we get some models of that size.
+
+- Up your Phi4-14B quant or lower your Mistral3-24B quant. You'll probably get the effect that you're after.
+
+- Just run an IQ3_XXS imatrixed of a 32b or similar.
 
 - ## 🧩 [Can someone explain what a Mixture-of-Experts model really is? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1oqttg0/can_someone_explain_what_a_mixtureofexperts_model/)
 - The core idea is that up to a certain point, more parameters means better performance through more stored information per parameter. However, activating every single neuron across every single layer in the model is extremely computationally expensive and turns out to be wasteful. So MOE tries to have the best of both worlds: a really large high parameter model, but only a fraction of them active so that uses less computation/energy per token.
@@ -645,6 +659,55 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
+- ## [Thoughts on Apriel-1.5-15b-Thinker ? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nw0m6u/thoughts_on_apriel1515bthinker/)
+- Tested it on multiple tasks , thinks fo way way way too long and is not as good as people make it to be.
+
+- Based on my testing, this ai is mind blowing. It excels in Reasoning and maths, i was very impressed. It was not that great in coding.
+  - The only downside is that it thinks a looooooootttttttt. I made this complaint to the creator of this ai model and he/she said we have currently set the thinking budget to high in the official space (which is where i tested it). So they might release an instruct or low/mid thinking budget one soon.
+
+- this seems to be more tailored to reasoning and maths, not coding or creative writing 
+
+- [So has anyone actually tried Apriel-v1.5-15B? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1nvbu3h/so_has_anyone_actually_tried_aprielv1515b/)
+- What's the modern model of choice in 12-30b range? Outside GPT-OSS? 
+- exaone-4.0-32b
+  magistral-small-2509
+  mistral-small-3.2
+  qwen3-30b-a3b-thinking-2507
+  seed-oss-36b-instruct'
+
+- Its reasoning is indeed interesting, but the model is severely censored. Plus, it can go off the rails trying to "reason" through conflicting instructions. Magistral, Qwen3 (both 4b and 30b) and aquif-3.5-8B-Think are much more stable.
+
+- [don't sleep on Apriel-1.5-15b-Thinker and Snowpiercer : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1nv5uw8/dont_sleep_on_apriel1515bthinker_and_snowpiercer/)
+  - their previous model was https://huggingface.co/ServiceNow-AI/Apriel-Nemotron-15b-Thinker which is a base model for https://huggingface.co/TheDrummer/Snowpiercer-15B-v3
+- From my tests it works around Qwen3-4B-Thinking-2507 level. Only Snowpiercer 3 is kinda fun as NeMo 12b alternative. It is not even close to Qwen 3 30B A3B 2507 q6k.
+
+- ## [What's the current best local model for function calling with low latency? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1ofg6w9/whats_the_current_best_local_model_for_function/)
+- Generally, 3-4b models today are quite capable. I'd recommend trying out below models and picking one that works best:
+  - Granite 4.0 tiny (MoE, 8b total 1b active) (should be fastest)
+  - Granite 4 micro (3b, dense model)
+  - Qwen3-30b-a3b Instruct-2507 (MoE, 30b total 3b active)
+  - GPT-OSS-20b (MoE, 20b total 3.6b active)
+  - Qwen3-4B-Instruct-2507 (4b, dense model)
+
+- Gpt-oss-20b will be very fast even with thinking and is pretty good with tools. 
+  - Another option is a non-thinking qwen model, Depending on the complexity thinking may not be needed.
+  - 3bit glm air may be an option, but 3 bit quanization is pushing it.
+
+- ## [Datarus-R1-14B-Preview, an adaptive multi-step reasoning LLM for automated data analysis : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mve5hp/datarusr114bpreview_an_adaptive_multistep/)
+  - 14B-parameter open-weights language model fine-tuned from Qwen2.5-14B-Instruct, designed to act as a virtual data analyst and graduate-level problem solver.
+  - Unlike traditional models trained on isolated Q&A pairs, Datarus learns from complete analytical trajectories—including reasoning steps, code execution, error traces, self-corrections, and final conclusions—all captured in a ReAct-style notebook format.
+- we're been working on this project for almost a year even before Qwen3 was released, there'll be new releases of that might have a different base model
+
+- ## [What is Gemma 3 270M actually used for? : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mwwr87/what_is_gemma_3_270m_actually_used_for/)
+- Small models are terrible at storing facts and world knowledge.
+  - On the other hand, they can be great at doing a specific task - summarization, translation, query rewriting, using tools, data extraction, etc.
+
+- I am just impressed by the fact that a 270M model, which is smaller than encoder-only models like DaBERTa, can generate coherent sentences that are relevant to the input text, and not a random bunch of words put together.
+
+- It’s meant to be fine-tuned for a specific task and from what I’ve read performs fairly well when it has been fine-tuned.
+
+- either speculative decoding or low-resource fine-tuning.
+
 - ## [We put a lot of work into a 1.5B reasoning model — now it beats bigger ones on math & coding benchmarks : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1ou1emx/we_put_a_lot_of_work_into_a_15b_reasoning_model/)
   - We’re just a small team, and this model isn’t really meant to be a general chatbot right now. It was designed mainly for competitive-style math and coding problems. (You can see our table, the GPQA metric is not too high. Small models don’t have much knowledge, but they can still reason really well.)
   - We released it to support this idea: https://x.com/karpathy/status/1814038096218083497?s=20 (maybe reasoning doesn’t actually need huge parameter counts)
@@ -823,6 +886,42 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
   - That is true for basically all common inference engines like vllm though. It encodes the images to tokens and has those in context, sure thats not 100% safe in long chats, but for that you need high-level multimodal orchestration. As far as I understand most inference engines work that way, Encode the image to tokens and then insert them into the model context so even multi step works, but like with everything else it degrades over time.
 
 - Yeah the inference is catastrophic. Even if you manage to use vllm on unquant variant (>60GB VRAM), you can't use the streaming input audio feature, you have to write that code yourself. (transformers on unquant is stupidly slow, CPU bound). The model looks very good, and pretty cool, but "batteries not included" would be an understatement.
+
+- ## 🤔 [I think I'm falling in love with how good mistral is as an AI.  : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1oyaz1h/i_think_im_falling_in_love_with_how_good_mistral/)
+  - It follows instructions very well
+  - doesn't hallucinate (almost zero)
+  - gives short answers for short questions and long answers for properly long questions
+  - is tiny compared to SOTA while also feeling like I'm talking to something actually intelligent rather than busted up keyword prediction
+  - But the benchmarks of it don't show it as impressive as phi4 or phi3 even, Qwen3, Qwen2 vl etc also. Putting it insanely lower than them. Like this is insane how awful the current benchmarks are. Completely skewed.
+
+- How do you benchmark on writing style?
+  - [EQ-Bench 3 Leaderboard](https://eqbench.com/)
+  - you need to select "creative writing" and "longform writing" on the top. The would be judging the style.
+
+- Mistral Large 123B was great for its time, and it’s a real shame they haven’t published an open-weights successor, especially with all the recent advances in MoE models in the ~100B size class.
+
+- Mistral-24b-3.1 (I believe it's the 2503 release) is one of the best and most reliable local models I use on a daily basis. The other is Magistral-24b-2509 (based on Mistral 3.2).
+  - The reason for this is that Mistral models are not as overfitted as most others.
+  - When I write with Mistral-Small, I really feel that this is a damn smart model that is also most aware of its own limitations. I see less tricks and bechmaxxing with Mistral and more "real" intelligence.
+  - A real example from a few days ago: I asked < 70b models about the meaning of a certain abbreviation. I tested about 10 models, and all of them simply invented a definition of the term (with overwhelming confidence), except for Mistral, which told me that it was unsure about the term and needed more context.
+- We are using mistral small 3.1 2503 in production too it's great even in agentic mode. My only problem is the repetition sometimes. Have you figured a way to solve this?
+  - Use Mistral Small 3.2 or even Cydonia.
+
+- Magistral-Small-2509 gang represent. Fantastic little model. If you've got 25GB of VRAM to run it in Q8, it's really impressive for conversational English. I'm building a little toy Swift app with it as the central "talk to me to do stuff" orchestrator of other models that specialize in code, summarization, safety evaluation, privacy evaluation, etc. Magistral-Small-2509 seems to "get" me better than other models. Wish I could figure out exactly what that means LOL
+
+- I got the best results when I switched from the Magistral 3.2 Q4_k_m to Magistral 3.2 Q6_K. It changed everything - it is way better in understanding long stories drafts and could generate text almost without skipping or distorting. It makes mistakes sometimes, though. But much less so than previous versions. P. S.: And new versions seems more uncensured, then older.
+  - Your experience mirrors mine. I find Magistral-Small-2509 at Q8 to be indistinguishable from FP16 on my Mac for conversational English. It just runs twice as fast. But every quant below that? The loss of precision is palpable and the quality goes way down quickly.
+
+- Have you tried the UGI-Leaderboard? 
+  - Mistral models tend to better than qwen models at things like overall intelligence and writing ability. 
+  - Qwen models tend to be focused on standard textbook info like math, wiki info, and logic, while lacking in non-academic knowledge.
+  - Older models like Kunoichi-7B and Fimbulvetr-11B-v2 score particularly well compared to newer models in the Writing section's Originality ranking.
+
+- It is no where close to Qwen 3 for my use case (RAG chatbot), but the more options the merrier
+
+- My top local conversational models on my Mac are Magistral-Small-2509 -- even Q8 is really quite good, 
+  - Magistral fails tool calls infrequently, and with just a fetch/search MCP and the ability to read the Web it is competitive... IMHO it's a better conversational partner than Grok 4 Fast, more insightful than GPT5.1 in voice mode 
+  - It lacks quite a bit of world knowledge, but searching & fetching seems to make up for that a lot.
 
 - ## [Mistral 3.2-24B quality in MoE, when? : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mxmyhx/mistral_3224b_quality_in_moe_when/)
   - While the world is distracted by GPT-OSS-20B and 120B, I’m here wasting no time with Mistral 3.2 Small 2506. An absolute workhorse, from world knowledge to reasoning to role-play, and the best of all “minimal censorship”. 
@@ -1938,10 +2037,37 @@ free 5GB postgres via aiven.io
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Best sub 14b llm for long text summaries? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nj78fl/best_sub_14b_llm_for_long_text_summaries/)
+- I've done a lot of these tests and the winner in that size range is almost always Llama 3.1 8B for sub-128k and Nemotron-Ultralong-8B for anything higher.
+  - They're older now, but nothing recent has come out in that size that handles massive context so well.
+- Thanks for pointing out Nemotron-Ultralong-8B! My usual go-to for long summary is Gemma3-12B or 27B, but their competence drops off sharply after 90K of context. When I get home next week I'll compare them to Nemotron-Ultralong-8B. Having a better long-context summarizer will be great!
+
+- Accuracy is hardly defined for a summary, and summarization is basically among the easiest things for an LLM. Context size matters only a little since RAG has become standard and you can guide any LLM to use RAG. Hallucination mainly happens when the LLM has nothing to work with; here you have too much to work with. Just use qwen3 8b with /nothink, or use the "so cheap it's basically free" gemini flash 2.0 on openrouter for incredible context size and speed.
+
+- ## [Best current dense, nonthinking models in the 8b-14b range? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1oim98t/best_current_dense_nonthinking_models_in_the/)
+- gemma-3-12b-it-q4_0_s - creative tasks and general tasks
+  gpt-oss-20b-Q8_0 - cuz work fast even on cpu, working tasks
+  Qwen3-30B-A3B-Instruct-2507-Q6_K - cuz work fast even on cpu, working tasks and general tasks
+  Llama-3.1-SuperNova-Lite-Q6_K - fast, smart for light tasks
+  MN-12B-Mag-Mell-R1. Q6_K - RP tasks and general tasks
+  NemoMix-Unleashed-12B-Q6_K - RP tasks and general tasks
+  phi-4-Q5_K_M - working tasks / JSON tasks
+  Qwen3-4B-Instruct-2507-Q6_K - insanely fast, smart for light tasks
+  Qwen3-14B - working tasks and general tasks
+
+- ## [Best Local LLMs - October 2025 : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1obqkpe/best_local_llms_october_2025/)
+- If something beats Qwen3-30B-A3B-Thinking-2507 that's feasible on <=24GB Vram and <=64GB Memory, let me know.
+  - I also think nothing under 36B parameters (dense or not) gets close to the performance and knowledge of Qwen3-30B-a3B family of models.
+
 - ## [What's a surprisingly capable smaller model (<15B parameters) that you feel doesn't get enough attention? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1ouy2a6/whats_a_surprisingly_capable_smaller_model_15b/)
 - Gemma 3 is also a great one for a variety of languages apart from English.
 
-- Qwen2.5 0.5B in Q8 is surprisingly good for utility work, like summarization and search query generation. It's so tiny basically anyone can keep it loaded permanently alongside bigger models, and so fast its responses are nearly instant (400+ t/s on mid-range Ryzen CPU).
+- Qwen2.5 0.5B in Q8 is surprisingly good for utility work, like summarization and search query generation. 
+  - It's so tiny basically anyone can keep it loaded permanently alongside bigger models, and so fast its responses are nearly instant (400+ t/s on mid-range Ryzen CPU).
 
 - All of the Qwen3 small models are incredibly capable for their size.
 

@@ -44,6 +44,7 @@ modified: 2025-09-01T05:52:34.241Z
   - 支持直接在界面上配置大模型url, 可参考openwebui/janai
   - 支持多backends的架构可参考 
   - 有一类给website添加search的产品，可参考实现添加chat的产品，特别是支持主流ssg工具的 search/chat
+  - 快捷常用语
 
 - 🖼️ 对话时如何无缝插入图片(mistral网页版支持)
   - 方案1: 预置unsplash图片，或外部图片搜索工具/MCP
@@ -139,7 +140,10 @@ modified: 2025-09-01T05:52:34.241Z
 
 - [[Bug]: error: [getAvailableTools] MCPManager has not been initialized. _202509](https://github.com/danny-avila/LibreChat/issues/9437)
   - 导致添加stable-diffusion工具失败，更新到最新代码就可以了
-# ollama/lmstudio/llama.cpp 🔧
+# ollama/lmstudio/llama.cpp 🔧🤔
+- 用不同lm工具链(llama.cpp/mlx-lm/mlx-vlm)处理不同模型文件(gguf/mlx)的逻辑
+  - 可参考vscode用不同编辑器打开不同文件的逻辑
+
 - 工具链功能
   - model management: Ollama(支持api)
   - frontend: openwebui, librechat
