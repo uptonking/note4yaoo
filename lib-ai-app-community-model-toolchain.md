@@ -618,7 +618,7 @@ PP Speed: Q3 GGUF: 50 t/s
   - ollama pull llama3
 
 - 我说的本地，指的不是一台个人电脑上，跑一个7B、13B参数的大模型。而是在企业本地算力服务器上，私有化部署的700亿参数以上规模的大模型，这种参数规模的大模型，才有更好的指令依从性，结合RAG、Agent等技术，能有效的完成你分配给他的任务。 
-# discuss-formats-models ⚖️ 
+# discuss-model-file-formats ⚖️ 
 - ## 
 
 - ## 
@@ -1168,7 +1168,10 @@ curl http://localhost:11434/api/chat -d '{
 
 - ## 
 
-- ## 
+- ## 🏠 [Web front end for Ollama? Is llama.cpp what I'm looking for? : r/ollama](https://www.reddit.com/r/ollama/comments/1p0p1pm/web_front_end_for_ollama_is_llamacpp_what_im/)
+- Ollama is a wrapper and somewhat of a fork of llama.cpp. Ollama runs on a core version of llama.cpp but doesn't have the same capabilities or features as far as granular controls.
+  - But they're at their heart inference engines first thst happen to have their own options front ends. I've used both with Open WebUI for about 8 months.
+  - Ollama has a chat interface now that is not cli. But it's just chat and some basic rag. If you want pipelines, oauth, in depth RAG etc., you need something like OWUI, Libre Chat, AnythingLLM or LocalAI
 
 - ## [502 Bad Gateway · Issue · ollama/ollama _202407](https://github.com/ollama/ollama/issues/5437)
 - you're right, I ignored the proxy.

@@ -55,7 +55,9 @@ modified: 2024-08-24T16:15:47.613Z
 
 - ## 
 
-- ## 
+- ## The VS Code Private Marketplace is now generally available _202511
+- https://x.com/code/status/1990827386430992403
+  - Enterprises can finally self-host and control extension distribution for their dev teams. Secure, compliant, and seamless - right inside @code .
 
 - ## Windows Subsystem for Linux is now Open Source _20250520
 - https://x.com/msdev/status/1924506589496496488

@@ -21,7 +21,7 @@ modified: 2023-11-28T14:48:45.910Z
   - 📱 mobile-editor: phone/pad, 自定义编辑器可以是主特性，也可以是锦上添花
     - mobile-app-generator
     - image-gen
-  - 📈 end-user database: 支持用户自定义数据和流程, multi views, ob-bases
+  - 📈 end-user database: 支持用户自定义数据和流程, multi views, obsidian-bases
   - 💫 animated-text/code sharing: playback with different speed
   - markdown: hotkeys, table-builder
   - github修改文档要提pr很繁琐; 可协作的workspace可直接改或用审阅修订模式

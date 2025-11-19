@@ -67,7 +67,15 @@ modified: 2023-12-15T18:02:01.825Z
 
 - ## 
 
-- ## 
+- ## 经常看到吐槽大Excel很难打开、读取和分析，有DuckDB的话就迎刃而解了。
+- https://x.com/TooooooBug/status/1990984223839207774
+  - 让AI写代码包了一下UI，5680行的Excel读取2ms，统计指标10ms。
+
+- 是的，我们写的端侧excel分析功能用的就是duckdb，pandas先读excel，再转duckdb，然后大模型只用写sql就好了。实测qwen3 8b的模型，准确率也能在85以上。
+- 为啥没考虑直接用duckdb的read_xlsx呢？
+  - 在传入excel的时候，会先用pandas做一些描述性统计给上下文，更方便一些，当然用duckdb也能做。
+
+- 这是个数据库，可以写sql那种；pandas不是数据库，只是个库
 
 - ## Core DuckDB has 0 dependencies to keep things simple, but now it is simple to add dependencies in DuckDB extensions if you would like
 - https://twitter.com/__AlexMonahan__/status/1771247480576852462

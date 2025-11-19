@@ -222,8 +222,8 @@ console.log('; ; task ', taskState, runningTaskAction, task?.task_steps)
 
 ```
 ```log //ai
-- give an brief intro to reactjs in less than 90 words
-- give a brief intro to reactjs with hello world code example
+- provide a brief overview of reactjs in less than 90 words
+- provide a brief overview of reactjs with hello world code example
 - count from 1 to 80, every number on a separate line
 - count from zz1 to zz40, every item on a separate line  /no_think
 - when did deepseek v3.1 model release?
@@ -261,6 +261,25 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
   - ?
 - dev-to
   - ?
+
+## 1119
+
+- 🤔 which expression is more natural in english, or  do you have a better one : 
+  - please give a self introduction 
+  - please give an introduction to yourself
+- Neither of your options sounds very natural to a native English speaker
+  - "Please give a self introduction": This is grammatically okay but sounds very robotic and "foreign"
+- more natural:
+  - Please introduce yourself
+  - Could you please introduce yourself?
+
+- 🤔 which expression is more natural in english, or  do you have a better one : 
+  - please give an introduction to the novel "the great gatsby"
+  - please introduce the novel "the great gatsby"
+- Neither of your options is very natural for a native speaker.
+  - "Please give an introduction to the novel..." is better, but it sounds like an exam question, not a request for information.
+- more natural:
+  - Can you give me an overview of The Great Gatsby?
 
 ## 1118
 

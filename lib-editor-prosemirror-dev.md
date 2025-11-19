@@ -109,14 +109,18 @@ modified: 2021-05-06T09:39:53.522Z
 
 - 👾 ai
 - stream-text/md
-- partial-edit
-- pdf-edit-with-vlm/ocr
+- partial-edit: not whole rewrite, aider-diff, openai-v4a-diff
+- pdf-edit-with-vlm/ocr:
+  - restore pdf layout
   - pdf-image upscale
 - graphics-by-text: 
   - mermaid-editor
   - drawio-xml
   - mermaid-text + drawio-editor
+  - chart-viz
 - markdown-partial
+  - stream-diff
+  - stream-table
   - treesitter as markdown stream parser
 
 - prosemirror-markdown
@@ -132,6 +136,7 @@ modified: 2021-05-06T09:39:53.522Z
 
 - chart
   - markdown-chart + llm
+  - streamable chart spec: 类似mermaid支持逐渐添加关系, 可逐步添加折线/条形/扇形
 
 - tiptap
   - ai-extension open version

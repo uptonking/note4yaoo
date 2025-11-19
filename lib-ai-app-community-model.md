@@ -346,6 +346,18 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
+- ## 
+
+- ## [Why do you use open-source LLMs ? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p16kxx/why_do_you_use_opensource_llms/)
+- Freedom. I can do whatever I want without having my data stolen.
+
+- The benefit of open source LLMs for me is that you can access the internal layers to do things like attention injection, intermediate layer feature extraction, attention map extraction, token-wise early stoppage, adaptive layer skips, conversion to latent attention, conversion to mamba or gated delta net hybrid etc
+  - This is it. Intervening mathematically in something that can talk like a human is an otherworldly experience. I do it almost every day and it makes me feel like an alchemist tinkering with a homunculus. There’s nothing else like it. Most other intellectual activities feel shallow by comparison.
+
+- I just think it's very cool to have a summary of the vast wealth of human text and knowledge in a 30GB file on my computer.
+
+- I want to own my capabilities. I don’t want my coding skills to be tied to some external service that I have zero control over.
+
 - ## [What do you use local LLMs for? What is your use case? : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1ms4gmz/what_do_you_use_local_llms_for_what_is_your_use/)
 - They are best used for small context tasks like classification/sentiment, asking it summarize, pull out keywords, grammar, etc.
   - Not for long conversations or complex tasks, but system prompt, user request, and then get a single response.

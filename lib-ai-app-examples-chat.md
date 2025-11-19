@@ -260,6 +260,15 @@ modified: 2025-03-22T18:49:15.634Z
   - This library also features a super customizable text splitter API. Pick a built-in splitter (character, word, line, sentence) or provide you own function that splits the visually rendered text on screen.
   - https://x.com/samddenty/status/1905843003471581337
     - I just created a demo website for https://react-ai-flow.com a super advanced cross-framework library for smooth LLM text streaming effects & also text-staggers.
+
+## llm-md-ext
+
+- https://github.com/zhs007/adarender /apache2/202101/js/inactive
+  - 一个开箱即用的markdown渲染器，除了对github的markdown语法支持外，它还有一套自己扩展的图表语法。
+  - 可以通过命令行或 grpc 服务 2 种方式来渲染页面。
+  - 作为 `markdown-it` 的插件使用
+  - adarender插件分为2部分，一部分是node.js这边的模板解析模块，一部分是前端页面js代码。
+    - 最初选择的模板引擎是handlebars，实际使用中发现这个引擎太过于古老，有非常多的不方便，后来逐步替换为ejs
 # ai-sdk/vendors
 - https://github.com/moeru-ai/xsai /MIT/202502/ts
   - https://xsai.js.org/

@@ -32,6 +32,7 @@ modified: 2025-09-16T19:59:57.856Z
   - [SuperCLUE中文大模型测评基准-AI评测榜单](https://www.superclueai.com/)
   - [CLUE中文语言理解基准测评](https://www.cluebenchmarks.com/)
   - [EQ-Bench 3 Leaderboard](https://eqbench.com/)
+  - [UGI Leaderboard - Uncensored General Intelligence](https://huggingface.co/spaces/DontPlanToEnd/UGI-Leaderboard)
 
 - leaderboard-tool-call
   - [Berkeley Function Calling Leaderboard (BFCL)](https://gorilla.cs.berkeley.edu/leaderboard.html)
@@ -517,7 +518,13 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## Gemini 3 明确不是 Gemini 2.5 的微调，它是全新训练的 sparse MoE 。 _202511
+- https://x.com/dongxi_nlp/status/1990878844442583532
+  - 也就是说，在 Gemini 2.5 已经非常出色的 RL 后训练和 parallel thinking 基础上，崭新的 backbone 让 Gemini 3 非常出色，总结这半年 Gemini 的工作：
+  - 出色的 RL 后训练
+  - parallel thinking
+  - 崭新的 backbone
+  - 一个又一个公开的对行业有益的benchmark，如 IMO-Bench
 
 - ## [Who is using Granite 4? What's your use case? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1og2k8e/who_is_using_granite_4_whats_your_use_case/)
 - I created a sexbot agent to test other compliance related filters etc. and surprisingly Granite handles this very well lol.
@@ -912,6 +919,11 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - So, the combo Qwen3-14b-thinking as architect with Qwen3-14b no-thinking as coder, surpasses¹ the combo QwQ-32B as architect + Qwen 2.5-32b Coder (26.2%). It also surpasses² plain Qwen3-32b no-thinking (no architect) which scored 40%. That's impressive.
 
+- ## [The phi family model: Acing tests but failing real use cases? : r/LocalLLaMA _202501](https://www.reddit.com/r/LocalLLaMA/comments/1hwsuuf/the_phi_family_model_acing_tests_but_failing_real/)
+- The Phi family is going to be awful for 90%+ of Local Llama user’s use cases - it wasn’t tuned for multi-turn interactions (chats), it is too small to have an encyclopedic knowledge of things, and it doesn’t take well to fine tuning for chat, role play, or other home use cases.
+  - It is very good for its size at single turn reasoning with provided context. We usually use it as a single step in larger, multi-model workflows.
+  - While its primary purpose is as a research model for Microsoft to explore the limitations of synthetic data model creation, I believe the future of Phi is as a model used by larger reasoning models during their tree search for specific tasks.
+
 - ## [Why is Phi4 considered the best model for structured information extraction? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1oejb8p/why_is_phi4_considered_the_best_model_for/)
   - curious, i have read multiple times in this sub that, if you want your output to fit to a structure like json, go. with Phi4, wondering why this is the case
 
@@ -921,6 +933,21 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 - It trained in structured formats and Microsoft has lots of formats. It’s not ocnsidtent but it consistent enough to treat certain types of things as objects.
 
 - In my testing nothing of its size comes close. Qwen3-32B (with thinking) is probably the smallest model that gets that good at structured outputs.
+
+- ## [Phi-4 has been released : r/LocalLLaMA _202501](https://www.reddit.com/r/LocalLLaMA/comments/1hwmy39/phi4_has_been_released/)
+- this model is very smart when it comes to logical tasks, and instruction following. But do not use this for creative tasks and factual(事实的：真实的) tasks, it's awful at those.
+
+- Still 16k, was hoping for a 128k version. 
+
+- why "SimpleQA" score is dropped to 3.0 from 7.5 of phi 3?!
+  - They explain this in the paper. 
+  - Phi-4 post-training includes data to reduce hallucinations, which results in the model electing to not "guess" more often. Here's a relevant figure from the technical report. You can see that the base model skips questions very rarely, while the post-trained model has learned to skip most questions it would get incorrect. This comes at the expense of not attempting some questions where the answer would have been correct, leading to that drop in the score.
+- Apparently, lowering hallucinations lowers ability to answer questions it actually knows the answer for. Tradeoff.
+- They fine-tuned it to refuse answering questions it doesn't know the answer to, thereby reducing its score quite drastically.
+
+- Previous iterations of Phi were okay, but never good enough to be one of my go-to models, but I think Phi-4 breaks away in this regard.
+  - It underperforms Qwen2.5-14B-Instruct for some skills, but outperforms it in others. In particular, Qwen2.5 has very poor self-critique skills, but Phi-4 performs self-critique beautifully. I've been using Big-Tiger-Gemma-27B for self-critique, but Phi-4 will do about as good a job of it, much faster, and with twice as much context (16K vs 8K), so I'm thinking Phi-4 will be my go-to for self-critique.
+- Oh yeah, qwen is impossible to argue with. It would keep saying that data is from like sources 
 
 - ## [Phi4 vs qwen3 : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kcxmrw/phi4_vs_qwen3/)
 - I would say Qwen 3. They have explicitly stated that Phi 4 reasoning was only trained on math reasoning, not any other reasoning dataset, so for anything but math, Qwen 3 is your better go to! If it's math, though, Phi4 kills it.
@@ -1977,20 +2004,15 @@ free 5GB postgres via aiven.io
 
 - ## 
 
-- ## 
+- ## [I locally benchmarked 41 open-source LLMs across 19 tasks and ranked them : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1n57hb8/i_locally_benchmarked_41_opensource_llms_across/)
+  - Ranks were computed by taking the simple average of task scores (scaled 0–1).
+
+- Please do phi-4. I am Stuck on it because I have not been able to find anything that comes close to it in following instructions and not hallucinating
+
+- This is really awesome! I would also add a column to "normalize" by size-see which model offers the most performance given it's size
 
 - ## [Best uncensored open-source models (2024–2025) for roleplay + image generation? : r/LocalLLM _202510](https://www.reddit.com/r/LocalLLM/comments/1o7qxwx/best_uncensored_opensource_models_20242025_for/)
 - Midnight Rose and MythoMax are solid uncensored models for roleplay. For 10GB VRAM you'll need heavy quantization which hurts quality.
-
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
 
 - ## [What is the best LLM with 1B parameters? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1nsu154/what_is_the_best_llm_with_1b_parameters/)
 - In my experience LFM2 1.2B is the clear winner by a huge margin. In terms of coherence, reasoning, and creativity it's better than most 4B models.

@@ -9,6 +9,18 @@ modified: 2024-08-24T16:52:53.996Z
 
 # guide
 
+# resources
+
+# forks-of-vscode
+- [Enable Marketplace on non MS VSCode Forks.](https://gist.github.com/anxkhn/9ae7b2248999168b73f303dec5851460)
+
+```sh
+export VSCODE_GALLERY_SERVICE_URL="https://marketplace.visualstudio.com/_apis/public/gallery"
+export VSCODE_GALLERY_ITEM_URL="https://marketplace.visualstudio.com/items"
+export VSCODE_GALLERY_CACHE_URL="https://vscode.blob.core.windows.net/gallery/index"
+export VSCODE_GALLERY_CONTROL_URL=""
+```
+
 # discuss-stars
 - ## 
 

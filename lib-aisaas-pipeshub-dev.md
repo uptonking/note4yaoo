@@ -50,7 +50,10 @@ modified: 2025-11-16T15:34:02.881Z
 - search
   - 不仅支持sources, 还支持搜索 comments/discussions
 
-- 
+- open source alternative
+  - Google just dropped the Gemini File Search API (RAG-as-a-Service)
+    - It allowed me to build a RAG chatbot in 31 min. No coding
+
 - 
 - 
 - 

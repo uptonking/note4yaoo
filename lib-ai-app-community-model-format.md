@@ -17,12 +17,209 @@ modified: 2025-10-10T02:44:49.634Z
 - ## 
 
 - ## 
-# discuss-md-table
+# discuss-ai-chart/flow/viz-gen 📊
 - ## 
 
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [MermaidMistral: A Work In Progress Model for Flow Maps : r/Oobabooga _202401](https://www.reddit.com/r/Oobabooga/comments/192qb2c/mermaidmistral_a_work_in_progress_model_for_flow/)
+  - I'm an unemployed recent college graduate aspiring to specialize in fine-tuning AI models and build useful software around AI.
+  - During my brief stint at Bito AI after graduating college, I developed an AI Documentation Agent that creates code documentation and flow maps for an entire codebase using Code2Flow which I further developed to use Mermaid js to support more programming languages. Customer Feedback revealed that GPT-4 struggles to reliably produce mermaid.js syntax with function calls that have parameters especially when the parameters are strings, hindering reliable flow chart generation for code documentation. I implemented retry logic to address inaccuracies, before proposing the idea of training a model for this scenario.
+  - In the past few weeks, I dedicated my time to handcrafting MermaidMistral on HuggingFace as a Proof of Concept, demonstrating that small models can specialize in tasks overlapping with the original base model's latent abilities from only a small, diverse set of manually created Python-to-mermaid flow map examples using Mermaid Flow Map Web Editor Online
+  - MermaidMistral_v2 which is a merge of all of my MermaidMistral Variants into one model which seems to be even better at creating knowledge graphs from input.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
+- ## 👾 i want to extend markdown syntax to support rendering charts like pie/line/bar/...
+  - are there any existing extensions for markdown charts? 
+  - especially for llm output with markdown charts, are there any experiments and solutions?
+
+- tips
+  - vega-lite json to markdown
+
+- For integration, plugins like `markdown-chart` for `VuePress` allow you to enable multiple chart libraries (including Chart.js, ECharts, and Mermaid) simultaneously within your documentation site
+- There are plugins (like markdown-it-chart or vuepress-plugin-chart) that allow you to write JSON configurations for these libraries directly in Markdown.
+
+- When generating charts with LLMs, the challenge is not just the syntax, but how to render it reliably in a chat interface (streaming) and handle errors.
+- A. The "Code Block" Pattern (Standard Solution)
+  - Most production LLM apps (ChatGPT, Claude, open-source UIs) use this pattern
+  - Prompting: Instruct the LLM to "Output the chart using Mermaid.js syntax inside a markdown code block."
+  - Parsing: On the frontend, use a Markdown parser (like react-markdown or markdown-it).
+  - Component Mapping: Write a custom component for the code block renderer.
+  - Extension: Use `rehype-mermaid` or write a custom components prop for the code block.
+
+- [Google Gemini](https://gemini.google.com/app/51914f331eb6f22c)
+- chart visualization support is achieved not through an intrinsic, universally recognized Markdown syntax, but rather through the use of fenced code block extensions. 
+  - These specialized blocks serve as containers for Domain-Specific Languages (DSLs)—such as Mermaid—or declarative JSON specifications—such as Vega-Lite or Chart.js—that are interpreted by dedicated client-side JavaScript rendering engines. 
+- The universal, pragmatic mechanism adopted for integrating complex, structured visualization data into Markdown involves leveraging the fenced code block
+  - This shifts the role of the Markdown processor from a passive translator of text to an Active Content Loader that initiates client-side JavaScript execution. 
+  - This architectural shift significantly increases implementation complexity, introduces client-side dependencies, and creates portability risks, as rendering success is entirely dependent on the specific processor supporting the required extension (e.g., mermaid, chart, or vega-lite).
+
+- Mermaid's DSL allows users to define complex structures, such as flow charts, sequence diagrams, and pie charts, through highly structured, yet expressive, plain text. The syntax is designed for readability and requires minimal overhead compared to writing a full JSON specification
+  - However, the analysis shows that Mermaid's core strength lies in generating diagrams that illustrate relationships and flows. Line and bar charts, common in statistical reporting, are often approximated using the flow chart (graph) or Gantt chart syntax for timeline visualizations. 
+  - This is a crucial distinction: Mermaid is optimized for Process Documentation (sequence, flow, mind maps) rather than complex statistical plotting.
+  - While simple, the Mermaid DSL is syntactically strict. Configuration details, such as themes, layout algorithms (dagre, elk), and specific rendering options, can be managed using a frontmatter configuration block within the fenced code.
+
+- Vega-Lite is recommended for advanced users tackling complex calculations, custom time filters, nested aggregations, and unsupported visualization types like scatter or Sankey charts.
+  - Vega-Lite specifications are declarative JSON objects, often simplified using HJSON (which allows optional quotes, comments, and missing commas). The specification dictates the visualization by mapping data fields to visual encoding channels (e.g., x, y, color)
+  - Vega-Lite supports a rich variety of statistical visualizations, including complex line charts with markers, varying size/dash attributes, and slope graphs. 
+  - Due to its statistical sophistication, Vega-Lite is deeply integrated within the data science ecosystem through language bindings like Altair (Python), ipyvega (Jupyter), and Julia bindings.
+
+- Chart.js's integration into Markdown typically involves a custom extension that wraps the Chart.js configuration JSON—a structure detailing type, data, and extensive options—within a language-specific fenced code block 
+
+- [Le Chat](https://chat.mistral.ai/chat/25d895f6-22de-40cc-9569-73d1054dcfb4)
+  - R Markdown is a variant of Markdown that integrates R programming code chunks to generate statistical plots and charts using R libraries such as plotly and rCharts. 
+
+- Ditaa: ASCII art-based diagrams converted to images, supported in some Markdown editors.
+
+- PlantUML uses its own domain-specific language and typically requires a command-line tool or integrations within build tools (like Maven) or IDEs (like IntelliJ) to generate static image files such as SVG or PNG 
+  - This differs from Mermaid's client-side, dynamic rendering approach.
+
+- A primary technique for guiding LLMs to produce chart-ready Markdown involves the use of carefully constructed system prompts or specific instructions within the user's query.
+  - This approach leverages the LLM's ability to follow instructions and mimic patterns it has learned during its training, provided those patterns (in this case, Mermaid syntax) were sufficiently represented in its training data or can be effectively described in the prompt.
+
+- ## [Graphing visualization options : r/LocalLLM _202505](https://www.reddit.com/r/LocalLLM/comments/1kziili/graphing_visualization_options/)
+  - My hope is to use a prompt like "Show me how many creative ways the data file can be visualized as a scatter plot" or "Creatively plot the data in row six only as an amortization using several graph types and layouts"...
+- Describe the data (list of columns and descriptions if name is not obvious). Write a prompt to provide step be step guide to build charts and tables in graphana / kibana / excel. Should work in most of the cases. You can also ask it to generate code for a Jupyter notebook
+
+- ## [Markdown-ui v0.2: Let AI output charts using React/Svelte/Vue in realtime : r/ChatGPTCoding _202509](https://www.reddit.com/r/ChatGPTCoding/comments/1n6jng1/markdownui_v02_let_ai_output_charts_using/)
+  - For v0.2 I’ve included support of chart widgets using the beautiful chart.js, allowing users to plot line, bar, pie and scatter charts by specifying data in the familiar csv format.
+  - Under the hood markdown-ui uses web components. Some people have expressed the wish for a vanilla JS implementation, this is still being considered
+
+- ## [Diffusion model for generating infographics : r/StableDiffusion _202506](https://www.reddit.com/r/StableDiffusion/comments/1lkuzya/diffusion_model_for_generating_infographics/)
+- HiDream somewhat can generate infographics. But the text for description 80% accurate
+
+- as far as I'm aware there's not any open source models currently trained for this kind of a thing. Its completely a feasible thing to do thought, but you'll have to use flux models for it as sd1.5 and sdxl dont handle text or graphs really. ChatGPT's image generation currently works really well for this use case though.
+
+- ## [Charts generation : r/OpenWebUI _202502](https://www.reddit.com/r/OpenWebUI/comments/1iicoec/charts_generation/)
+- Ask it to generate mermaid diagrams and it will render them automatically. Mermaid.js supports all kinds of graphs, charts and mind maps. I use it for this purpose constantly, it’s awesome for architectural diagrams
+
+- which LLM are you using?
+  - Any works
+  - O1-mini, qwen2.5 and deepseek all returned basically the same
+
+- A couple pointers:
+  - You do need to be somewhat explicit in your prompt with "generate a mermaid.js diagram..."
+  - Also, in my experience, smaller models have difficulty doing this often and just wind up producing something that looks like it should have been to create a mermaid diagram but never did.
+
+- Mermaid.js. Md files and thing like obsidian are used. Like the git pages graphs and flowcharts.
+
+- ## [Vision models that can read charts correctly? : r/LocalLLaMA _202403](https://www.reddit.com/r/LocalLLaMA/comments/1bm7wsz/vision_models_that_can_read_charts_correctly/)
+- Better to convert the charts into textual data for LLMs than use a LMM.
+  - This is what I've been doing. Whenever my data analysis bot spits out a chart, it also pulls the data (or a sample in the case of a busy scatter plot) in tabular form. I eventually want to be able to understand papers and notebooks, which communicate alot with data viz.
+  - 可参考comfyui在图片中嵌入数据的方式
+
+- 🤔 LLMs aren't particularly good at size or proportion. They're good at classification. "This is a dog" is a lot easier than "This rectangle is 10 units long"
+
+- ## [Discussion: Best Way to Plot Charts Using LLM? : r/LocalLLaMA _202409](https://www.reddit.com/r/LocalLLaMA/comments/1foph33/discussion_best_way_to_plot_charts_using_llm/)
+  - how are you plotting charts or graphs? 
+  - Currently, I am using structured output from the LLM with the data and sending it to the frontend to plot with Plotly React. In my current approach, I get the data from an API and then pass it to the LLM, which formats the data and the structure for the chart. However, this is currently slow.
+  - I've seen chat2plot use a dataframe with the data, querying it from the LLM and then structuring the output, but it only uses the dataframe to plot the chart. The LLM never directly accesses that data, just pass the structure with the filters
+  - What approach do you recommend for handling chart generation in this kind of setup?
+
+- Apparently Phi 3.5 Vision is good at this. There is also ChartGemma.
+
+- I had decent luck asking an LLM to write some code for matplotlib
+
+- I asked the LLM to generate JavaScript code to display the chart using plotly. It worked OK however it took 20 to 30 seconds. When it has to generate a lot of tokens for the JavaScript on the json data, it takes a while. I have to think about how to optimize the main reason for going to the LLM is that I can ask the type of the chart the color, the style everything in natural language. I just got it working now. I had to figure out a way to optimize.
+- Do you pass your data to the LLM? I think except for the framework and library we are doing the same
+  - Yes. I pass the data to the LLM. I think that slows down. I should only pass the data schema and let the llm generate the JavaScript and the I have to embed the json after the llm process.
+  - An alternate approach would be predefined chart format and llm pick the chart type and field/series based the user question. This will make it faster. But this will lack flexibility.
+
+- What I did is, I asked the llm to output a chartjs codeblock. And in the frontend, since we are rendering it as a codeblock, when the language is chartjs. I use the chartjs renderer, boom. I get dynamic plots.
+
+- ## [PlantUML vs Mermaid? : r/ExperiencedDevs _202504](https://www.reddit.com/r/ExperiencedDevs/comments/1k7ki6k/plantuml_vs_mermaid/)
+- I like how mermaid diagrams are rendered on GitHub.com, always add them to my README.md files.
+  - I thought, plantuml is doing the same. Atleast on gitlab both works
+- only for gitlab. GitHub needs additional tooling last time I checked
+
+- I use PlantUML+CoPilot to draw UML diagrams. For system diagrams I usually use draw.io
+
+- PlantUML is better for the simple reason that you can render as ASCII art and nothing beats that.
+  - Jokes aside, from a point of writing both work fine. PlantUML is more feature rich and more complex.
+  - Mermaid is simpler. So it's also supported in more default setups like GitHub or Obsidian.
+
+- I use PlantUML in markdown for most everything--it's extremely flexible with lots of different kinds of diagrams.
+  - Though it's a bit more limited, Mermaid is more user-friendly, and more likely to be implemented as a plugin in whichever editor you're using.
+
+- ## [MermaidMistral: A Work In Progress Model for Flow Maps : r/Oobabooga _202401](https://www.reddit.com/r/Oobabooga/comments/192qb2c/mermaidmistral_a_work_in_progress_model_for_flow/)
+- MermaidMistral_v2 which is a merge of all of my MermaidMistral Variants into one model which seems to be even better at creating knowledge graphs from input.
+  - Recently this model was made private as it's currently being fine-tuned in collaboration. These partners have provided proprietary code to enhance the model's ability to generate detailed flow diagrams for system design documentation. 
+  - Due to the specialized nature of this data and our commitment to confidentiality and model integrity, MermaidMistral_v2 will remain private for the time being.
+
+- ## [Any open-source models for generating diagrams? : r/LocalLLaMA _202412](https://www.reddit.com/r/LocalLLaMA/comments/1hhmgnl/any_opensource_models_for_generating_diagrams/)
+  - I know existing LLMs can do this, but they frequently get the syntax wrong or hallucinate elements of the diagram. Wondering if there's an open-source model that’s especially good at this task.
+- LLMs that are good at coding are also quite good at creating MedmaidJS and PlantUML diagrams.
+  - I usually use the BigAGI frontend for this since it auto-renders both types of diagrams directly within the chat.
+- Even smaller LLMs manage to output mermaid quite ok, syntactically that is. But they tend to hallucinate. So you might have to carefully craft your prompts in order for it to work properly. In general favor bigger models. Or use claude sonnet, which should be your most capable option overall.
+
+- Look into using Qwen, but give it an example of the diagram in the prompt for consistency.
+
+- You can use ToDiagram for diagramming any json data.
+# discuss-ai-graphics-gen 🖼️
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Any good open-source model for SVG image generation? : r/svg _202505](https://www.reddit.com/r/svg/comments/1kx8jhy/any_good_opensource_model_for_svg_image_generation/)
+- AFAIK no. I think anyone using generative AI to create vector art or vector illustrations is using something like Stable Diffusion to make vector illustration looking PNGs, then converting them to vector.
+
+- I did some more research, found one that gives 20 free credits to generate SVG images, the images look pretty cool. https://svgmaker.io
+
+- ## [I tested various models' ability to generate SVG unicorns. : r/singularity _202502](https://www.reddit.com/r/singularity/comments/1ixe5yu/i_tested_various_models_ability_to_generate_svg/)
+  - 3.7 sonnet was initially a bit dissapointing here, but after giving it another attempt it's definetly the best one.
+
+- we need to start with an SVG Benchmark test when new AIs come out 
+  - They can perform the "most difficult human exams" but they can't do a simple 2D vectorized image.
+
+- ## [Can Flux Models generate SVG images? : r/StableDiffusion _202409](https://www.reddit.com/r/StableDiffusion/comments/1fcsy8x/can_flux_models_generate_svg_images/)
+- Text to image models produce images. They can produce vector-style graphics, which you can often run through a vectorizer for passable results.
+- Illustrator has a text-to-vector feature, but I'm not sure what it's doing in the background. I assume it's doing a text-to-image-to-vector.
+
+- It might sound counterintuitive, but your best bet might be fine-tuning an LLM (such as Llama 3.1) on a big dataset of text prompts with SVG outputs.
+
+- SVG-like images yes, actual SVGs no. There are no AI vector solutions yet, even Adobe's AI vector thing is arguably also auto vector using Illustrator or whatever.
+
+- Inkscape is open source and can convert images to SVG vectors.
+# discuss-md-table/excel 📈
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Which LLM is best at understanding information in spreadsheets? : r/LocalLLaMA _202506](https://www.reddit.com/r/LocalLLaMA/comments/1l1lqdm/which_llm_is_best_at_understanding_information_in/)
+- I think you need to make the LLM write code to process the spreadsheet. Something like:
+  - Read top n rows, summarise as plain text, so the basic structure of the file is in context.
+  - Have the LLM plan what operations it needs to perform.
+  - Have it write and execute python code, reading the data into variables in memory and doing work on them.
+  - Python code to write back out to a spreadsheet, or summarise totals in plain text, etc.
+- llms have near zero comprehension of a bunch of numbers in rows. They can barely manage simple addition, if they're lucky, but ask them to write code and they're pretty close to solid (you still likely need somebody who's not code-illiterate to give it a once- over and make sure it hasn't done something silly)
+
+- Have LLM build the formulas you need for Excel/Google sheet.
+
+- There are MCPs out there that can spin up a small python environment to do data analysis. just provide a code executor tool to your model, tell it about the spreadsheet's schema and tell it to write and execute python code to do the analysis.
+
+- Claude is GREAT at Excel, it's one of the rare instances when letting it create on its own at the outset means improved output later, because it built the formulas. Human created spreadsheets may contain eccentricities in the formulas and formatting that will roadblock later accurate data extraction.
 
 - ## 🤔 [LLM has trouble understanding tabular data (.csv) relationships with RAG : r/LocalLLaMA _202501](https://www.reddit.com/r/LocalLLaMA/comments/1hymyky/llm_has_trouble_understanding_tabular_data_csv/)
   - I'm currently having trouble getting a LLM to understand relationships in a table using RAG
@@ -203,8 +400,25 @@ project_count: 43
 
 - ## 
 
-- ## [What's the best format to pass data to an LLM for optimal output? : r/PromptEngineering _202507](https://www.reddit.com/r/PromptEngineering/comments/1mb80ra/whats_the_best_format_to_pass_data_to_an_llm_for/)
-- chatgpt likes markdown, claude likes xml
+- ## 
+
+- ## 
+
+- ## [What's the best format to pass data to an LLM for optimal output? : r/Rag _202511](https://www.reddit.com/r/Rag/comments/1oo3fg8/whats_the_best_format_to_pass_data_to_an_llm_for/)
+  - I’ve been testing different methods for feeding structured and semi-structured data into open-source LLMs(mostly open-source), trying to find which formats produce the most accurate and contextually aware results.
+  - Has anyone done systematic testing or found reliable patterns in how LLMs interpret various data formats?
+
+- I recently ran some tests on several non-open-source models, aimed at seeing which of several formats of some structured data they understood best: https://www.improvingagents.com/blog/best-nested-data-format
+  - Results varied considerably between models/providers, so results with any specific open source model could be different again.
+
+- It can be model dependent. Some models like markdown. L, some like bulleted lists (dashes), numbered lists, and XML. Even though it doesn’t get mentioned as much as it used to, XML is still the safest bet across all models (Gemini and Anthropic models still strongly prefer it). Only problem is XML is a verbose structure.
+  - One way to get a clue as to this is to look at the papers published by whoever created the model. They usually have prompts in the appendix of the model release papers.
+
+- The real shift is when you need the LLM to take an action based on the data. Trying to get it to parse raw text and then format an API call is a nightmare.
+  - we lean heavily on function calling for this at eesel AI. It basically forces the model to give you a structured output you can actually use reliably. It's way less flaky than prompt-based formatting for complex tasks.
+
+- [What's the best format to pass data to an LLM for optimal output? : r/PromptEngineering _202507](https://www.reddit.com/r/PromptEngineering/comments/1mb80ra/whats_the_best_format_to_pass_data_to_an_llm_for/)
+  - chatgpt likes markdown, claude likes xml
 
 - ## [LLMs pose an interesting problem for DSL designers | Hacker News _202506](https://news.ycombinator.com/item?id=44302797)
 - The title should be "DSLs pose an interesting problem for LLM users".

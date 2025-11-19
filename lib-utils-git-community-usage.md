@@ -214,6 +214,17 @@ git log --online --graph --decorate
 
 - ## 
 
+- ## 
+
+- ## 询问面试官加班情况，但得到的答案往往不太真实。但是代码的提交时间不会骗人，因此就有了这个工具。
+- https://x.com/yuki_yang0202/status/1990996580930105478
+  - https://github.com/hellodigua/code996
+  - 统计 Git 项目的 commit 时间分布，进而推导出项目的编码工作强度。
+
+- 不同时区的话这个就没什么参考价值了
+
+- 加不加班，待一周就知道了
+
 - ## [gpg: Screen or window too small · Issue · kovidgoyal/kitty _202302](https://github.com/kovidgoyal/kitty/issues/6018)
 
 ```sh

@@ -287,7 +287,7 @@ modified: 2021-01-04T17:26:25.032Z
   - Advanced Tables - Full table support with alignment, borders, and navigation
   - Plugin System - Remark/Rehype compatible plugin architecture
 # ui
-- https://github.com/BlueprintLabIO/markdown-ui /412Star/MIT/202509/ts
+- https://github.com/BlueprintLabIO/markdown-ui /412Star/MIT/202509/ts/inactive
   - https://markdown-ui.blueprintlab.io/
   - https://markdown-ui.com/
   - An open standard for rendering interactive widgets in plain Markdown

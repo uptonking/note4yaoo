@@ -37,6 +37,7 @@ modified: 2023-01-01T13:24:35.994Z
   - launched in 2005 by A9.com, an Amazon subsidiary, as a means for sharing search queries and search results in a standardized format.
   - The specification has been unchanged and stable for over a decade
   - The OpenSearch protocol lets you describe a search engine for your website, so that browsers or other search clients can use that search engine.
+  - https://github.com/opensearch-project/OpenSearch-Dashboards /apache2/ts
 
 - elasticsearch /62.3kStar/ElasticLic/202301/java
   - https://github.com/elastic/elasticsearch

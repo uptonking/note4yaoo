@@ -19,6 +19,18 @@ modified: 2021-03-24T14:13:19.830Z
   - https://www.data-to-viz.com/ is a classification of chart types based on their input format
   - It also provides link to R, Python and D3 examples.
 
+# discuss-chart-usecases
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [That jump in ARC-AGI-2 score from Gemini 3 : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1p0kdqf/that_jump_in_arcagi2_score_from_gemini_3/)
+  - 折线图 + 离散点
+
 # discuss
 - ## 
 

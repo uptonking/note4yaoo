@@ -387,6 +387,17 @@ modified: 2023-08-29T10:12:22.345Z
   - a simple repository browser for Git repositories, built on JGit.
   - Its guiding principle is simplicity: it has no formal access controls, no write access, no fancy Javascript, etc.
   - Gitiles automatically renders *.md Markdown files into HTML for simplified documentation
+
+- https://github.com/mdhruvil/gitvex /MIT/202511/ts
+  - https://gitvex.mdhruvil.page/
+  - open-source serverless git hosting platform. 
+  - No VMs, No Containers, Just Durable Objects and Convex.
+  - Built using: @Cloudflare @tan_stack @convex @coderabbitai @Sentry
+  - https://x.com/mdhruvill/status/1990152234513182812
+    - Is there a specific reason for going with convex vs d1 db or even the durable object SQLite db?
+      - I am submitting GitVex to the Convex Tanstack Start Hackathon. That's why I have used Convex. D1 would have worked too.
+      - Currently, GitVex does not support D1 but in future GitVex will support D1. And Yes, D1 works with Tanstack Start and better auth.
+  - [Infinite Git repos on Cloudflare workers | Hacker News _202410](https://news.ycombinator.com/item?id=41947513)
 # apps-by-git
 - https://github.com/w4/rgit /public/202402/rust
   - https://git.inept.dev/

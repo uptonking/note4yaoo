@@ -198,6 +198,12 @@ modified: 2020-12-09T09:30:24.694Z
   - Data is loaded from files (CSV, Excel or JSON) to the browser's IndexedDB or a local CouchDB through Koia itself
   - It is recommended to use CouchDB 3.n since the data scenes in Koia will be lost when the browser cache is emptied when using the IndexedDB.
 # bi-ai
+- https://github.com/Canner/WrenAI /13kStar/AGPL/202511/python/ts
+  - https://getwren.ai/oss
+  - GenBI (Generative BI) queries any database in natural language, generates accurate SQL (Text-to-SQL), charts (Text-to-Chart), and AI-powered business intelligence in seconds
+  - Semantic Layer: MDL models encode schema, metrics, joins
+  - support Ollama
+
 - https://github.com/looker-open-source/looker-explore-assistant /153Star/MIT/202504/ts/jupyter
   - A React Application for interacting with Looker data through natural language.
   - This is an extension or API plugin for Looker that integrates LLM's hosted on Vertex AI into a natural language experience powered by Looker's modeling layer.

@@ -38,11 +38,6 @@ modified: 2022-11-21T15:27:20.974Z
 - stroke-dashoffset from 0% to 100%?
   - Yup! Tied to scroll via CSS variable and a JS listener
 
-- ## one way to animate borders with CSS: animate an element along the border of another and mask it
-- https://x.com/httpfleck/status/1894866501049430457
-  - offset-path: border-box; 
-  - https://codepen.io/andrewf3009/pen/oNrxXKP
-
 - ## Steps animation
 - https://x.com/ln_dev7/status/1928457950152077492
 
@@ -65,6 +60,19 @@ modified: 2022-11-21T15:27:20.974Z
   - [Marquee! - Ko-fi](https://ko-fi.com/post/Marquee-M4M0132D70)
   - https://codepen.io/thebabydino/pen/bGPzdaM
   - https://codepen.io/t_afif/pen/MWZxXWB
+
+- ## 突然想看看谷歌是怎么实现这个彩色边框的
+- https://x.com/hanawa_hinata/status/1314394235613798400
+- https://jsfiddle.net/jojuniori/mqw8v0n5/
+- Github 也是这么玩的
+
+- 我以为是border属性，所以好奇…真没想到是背景
+- 四个色块。。。。醉了
+
+- ## one way to animate borders with CSS: animate an element along the border of another and mask it
+- https://x.com/httpfleck/status/1894866501049430457
+  - offset-path: border-box; 
+  - https://codepen.io/andrewf3009/pen/oNrxXKP
 
 - ## Conic gradients can be so beautiful.
 - https://twitter.com/JoshWComeau/status/1367492015836049413

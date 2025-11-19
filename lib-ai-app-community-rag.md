@@ -493,7 +493,31 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## 🤔 [[Discussion] Anyone else doing “summary-only embeddings + full-text context” for RAG? : r/Rag _202511](https://www.reddit.com/r/Rag/comments/1p05u0f/discussion_anyone_else_doing_summaryonly/)
+  - 1) For each doc/section: I generate a tiny synthetic text (title + LLM summary). → This is the ONLY thing I embed.
+  - 2) At query time: I search over those short summaries.
+  - 3) For answering: I take all retrieved sections and feed the full original text straight into the LLM. No reranking, no chunk scoring, nothing fancy.
+  - Because chunking was slow, expensive, and honestly ruined the semantic boundaries of my data. Summary vectors are way cleaner, and long-context LLMs can handle the raw text way better.
+  - Anyone else trying this “lightweight retriever + heavy context input” style?
+
+- I wouldn’t blindly trust the summarizer though. The summaries are lossy by design but the good news is there’s models dedicated to this task.
+  - Adding a sumeval model of some variety will give you much greater debugability and interpretability. It can help you surface where the summarizer is struggling or even better serve as the backbone for an RL loop.
+
+- This is very similar to the contextual chunking anthropic proposed. Yes, this is standard now. Problem is still going to be latency and cost with the LLMs
+
+- The idea works because one of the techniques used in chunking enrichment is adding keywords and summaries to the chunks. However, relying only on the summaries may work in some contexts but can still be less accurate, as you might lose information. Imagine 20-page sections where you have, for example, 5 chunks; in this case, they would be compressed into a single summary, which could not be enough.
+
+- You are doing what industry needed but still their are room to improve the latency by implementing cache and have more meta data for the docs to get better context before going to LLM
+
+- I've tried this- performed worse in my case. I would run an eval and decide for myself.
+
+- I did follow the same approach to feed more context to MCP client hosted in IDEs through RAG. Vectorize the only metadata and source is returned as a result which contains the full document to feed to the LLM
+
+- I didn't test it myself but I read about 'voyage-context-3' which seems to address the issue of global context without the need for an extra summarization step.
+
+- This is almost the same as what the RAPTOR paper from last year suggested: https://arxiv.org/abs/2401.18059
+  - Create summaries, cluster based on summary, then create a summary of those, etc. 
+  - It’s a solid approach, especially since, when summarizing, you can ensure the LLM uses a consistent style.
 
 - ## 🆚 [Embedding models have converged : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1ozf9al/embedding_models_have_converged/)
   - I ran 13 models on 8 datasets and checked latency, accuracy, and an LLM-judged ELO score. Honestly, the results were not what I expected - most models ended up clustered pretty tightly.

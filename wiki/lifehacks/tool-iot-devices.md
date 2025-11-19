@@ -202,6 +202,17 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
+
+- ## [Macbook pro 128gb RAM owners, whats the best AI you're running for reasoning & knowledge? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p0yu23/macbook_pro_128gb_ram_owners_whats_the_best_ai/)
+- GLM-4.5-Air
+  - minimax is next to it but it’s hard to fit in the good quant. 
+- Agree! I use MiniMax-M2 @ Q3 and it works mostly great, with a relatively long context. But I am not sure it’s better than GLM-4.5-Air @Q6. Both on par for my coding and agentic tasks. MMM2 is faster though.
+- what do you serve GLM with? I really like using LM Studio for tools parsing on MLX quants, but LM Studio doesn’t offer native tools parsing for GLM which causes issues for opencode and zed.
+  - I serve GLM-4.5-Air with LM Studio. Use this fixed Jinja template to replace the original one in LM Studio for GLM
+  - I really don't get why they never fixed it officially for such popular and useful local model. Maybe with the GLM-4.6-Air release
+
+- I actually use GPT-OSS 120b and GLM 4.5 Air a lot. Qwen Next is pretty good too. Was running an unsloth IQ2 of Minimax M2 today- fun model to chat with but makes a lot of small mistakes at that quantization. Can do similar with Qwen3 235b a22b. Those are cool big models, and nice for low stakes, lower context stuff, but that may not be right for your uses.
+
 - ## 🧩 [Apple is considering putting miniHBM on iPhones in 2027 : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1oz9vs3/apple_is_considering_putting_minihbm_on_iphones/)
 - Mobile HBM will be very expensive though, i think it is possible they will do a hybrid for macs
   - At 20 watts tdp don't expect gpu type performance, probably like nvidia orin order of magnitude

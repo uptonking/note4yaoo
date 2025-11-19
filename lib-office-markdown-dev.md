@@ -30,6 +30,12 @@ modified: 2025-09-21T18:39:13.776Z
   - 文生图包含元数据，方便复现
   - ai-friendly format: 图片/图形中带有元数据
 
+- markdown-flowchart
+  - Mermaid
+
+- markdown-chart-viz
+  - ?
+
 - markdown-extensions
   - mdx
   - [R Markdown](https://rmarkdown.rstudio.com/)

@@ -49,6 +49,15 @@ modified: 2025-11-01T10:54:26.044Z
   - NexaSDK is an easy-to-use developer toolkit for running any AI model locally — across NPUs, GPUs, and CPUs — powered by our NexaML engine, built entirely from scratch for peak performance on every hardware stack.
   - Unlike wrappers that depend on existing runtimes, NexaML is a unified inference engine built at the kernel level.
   - NexaML supports 3 model formats: GGUF, MLX, and Nexa AI's own .nexa format.
+  - [Running the latest LLMs like Granite-4.0 and Qwen3 fully on ANE (Apple NPU) : r/LocalLLM](https://www.reddit.com/r/LocalLLM/comments/1p0tmew/running_the_latest_llms_like_granite40_and_qwen3/)
+    - TL;DR Well-built wrapper around proprietary engine. "Apache 2.0" is marketing—the ML inference core is closed source. Great for NPU/mobile where there's no real option. Terrible for learning/auditing/contributing.
+    - 🏠 how it works: Your CLI → Go wrapper → CGo → nexasdk-bridge (??) → Hardware
+    - What you clone: Apache 2.0 Go/Python wrappers (~20k lines)
+    - What the license covers: Just the wrapper
+    - What you actually run: Closed-source `nexasdk-bridge` binary curled from their S3
+    - What does the work: Mystery C library, unknown license
+    - features: Clean Go structure, multiple NPU backends (Qualcomm, Apple, Intel, AMD)
+    - Can't build tests without downloading proprietary binary first
 
 - https://github.com/DAMO-NLP-SG/Multipurpose-Chatbot /apache2/202404/python/inactive
   - A chatbot UI for RAG, multimodal, text completion. (support Transformers, llama.cpp, MLX, vLLM)

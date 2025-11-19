@@ -9,4 +9,8 @@ modified: 2023-02-05T19:07:08.925Z
 
 # guide
 
-# dev
+# draft
+- streamable chart spec: 类似mermaid支持逐步添加关系, 可逐步添加折线/条形/扇形
+# dev-xp
+
+# more
