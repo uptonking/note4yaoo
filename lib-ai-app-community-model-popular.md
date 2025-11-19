@@ -10,13 +10,6 @@ modified: 2025-09-16T19:59:57.856Z
 
 # guide
 
-- models-variants
-  - watching: openai, claude, qwen, deepseek, gemini/gemma, glm, mistral/codestral
-  - variants: mlx, unsloth, quants
-  - 测试模型时可能更希望速度快，但做任务或规划时更希望质量好，所以偏向选择大B参数的模型
-  - 📱 端侧模型还要考虑电源及功耗问题, 实测macbook-air在跑模型时掉电很快
-    - 端侧最好用 api-key + tiny-local-llm
-
 - https://github.com/sst/models.dev /MIT/202511/ts
   - https://models.dev/
   - open-source database of AI model specifications, pricing, and capabilities
@@ -43,163 +36,6 @@ modified: 2025-09-16T19:59:57.856Z
 - leaderboard-tool-call
   - [Berkeley Function Calling Leaderboard (BFCL)](https://gorilla.cs.berkeley.edu/leaderboard.html)
     - claude, gpt, glm, grok, kimi, qwen3-235b, gemini-pro,watt-tool-70B,deepseek-r1
-# model-usage-xp
-- models-comparison
-  - 🤔 LMs are tools. Describe your use cases.
-    - 分析清楚核心需求: 需要reasoning/coding/large/faster
-  - moe模型的实际效果大概只有dense模型的一半，如qwen3-30B-A3B 相当于 Qwen3-14b
-  - 模型占用VRAM不能太大，还要为context处理、应用程序如nextjs/comfyui预留RAM/VRAM
-  - 选择模型时多用官方版/主流版，小众微调的版本可能存在tool-call/overthink/多语言multilingual/对话风格/llama.cpp不支持等问题/loop
-    - 选用主流版还方便与其他用户对比速度/配置
-    - 非主流版可能出现vision/rag等被去掉的问题
-  - 多agent架构时，可使用不同架构的agent相互验证
-  - non-thinking或输出简洁的模型适合coding
-
-- 超大模型的极小量化版
-  - Llama-3.3-70B-Instruct-abliterated-Q2-mlx  22.07gb
-  - Qwen3-Next-80B-A3B-Instruct-q2-mlx  24.95gb
-  - Mistral-Large-Instruct-2411-Q2-MLX  45.99gb
-  - gpt-oss-120b-mlx-2Bit(116.8B A5.1B)  36.61gb
-  - GLM-4.5-Air-2bit(106b A12B)  33.45gb
-  - GLM-4.5-Air-4bit(106b A12B)  62gb
-  - DeepSeek-V3.1-Terminus-mlx-2Bit  209.89gb
-  - DeepSeek-R1-2bit  251.82gb
-
-- donts
-  - 很多带thinking的大模型不擅长计数，如within 18 words， 有的模型真的会逐个token打印出来逐个数一遍
-
-- mac 🍎
-  - 👀 在low power mode省电模式下, 模型的输出速度会比非省电模式慢2-3倍
-
-- gemma3 🌹 /多语言/创意文本/vision
-  - 27b 和 12b 都能较好遵循带结构的instruct输出， 27b能主动给出更多外部网页链接而12b给的链接很少
-
-- qwen3 🌹 /能力全/thinking开关/内容丰富
-  - 4b及14b的输出内容都比较详细，经常包含表格📈
-
-- gpt-oss-20B-A3.6B 👀 /业界标杆/输出快
-  - 输出的内容特别喜欢用表格📈, 讨论代码相关问题也喜欢用表格
-  - unsloth-Q5的输出速度为 11.8 tops, offcial-Q4的输出速度为 11.2 tops, 速度比qwen3-14b更快
-
-- magistral-small-2509-24b  👀 /可以用/think+vision/欧洲多语言/产品线丰富/censor弱
-  - 回复一般很短，感觉质量不高
-  - mistral系列模型的知识丰富度很高, 可以降低对RAG的依赖 🤔
-  - thinking时间在~~3-10~~min(2509已改进)左右，或许对于plan制定计划有用
-  - 输出内容几乎不提供外部链接，2507不也提供外部链接
-  - 输出内容中几乎不提供表格
-  - 带thinking的模型不擅长计数，如 within 18 words
-
-- glm4 👀 /可以用/是否善长html代码?
-  - 🖼️ html中支持显示外部图片，需要形状类图标的位置能准确生成svg
-  - glm4不会think，输出内容质量感觉一般
-  - 输出的长度大概在30-60行，简洁是特色，对代码有用?
-  - 在多轮聊天时，输出内容也会逐渐变长?
-  - 输出html页面时能添加复杂的svg代码，形状类图标的位置能准确生成svg
-  - 生成的html页面风格有点tailwind，也有点bootstrap
-  - 生成的slider/carousel比qwen3更准确
-
-- glm-z1 👀 /思考非常久/不擅长代码
-  - z1会think5-15min，think不支持disable，输出内容的长度会比glm4多20行左右，多一些外部链接，多用很多表格，质量较好
-  - z1的think时间比qwen3长很多，
-  - 输出内容的长度比qwen3更少, 输出内容会有表格📈
-
-- resources
-  - [Qwen3: How to Run & Fine-tune | Unsloth Documentation](https://docs.unsloth.ai/models/qwen3-how-to-run-and-fine-tune)
-
-## models-coding
-
-- tips
-  - ⚖️ coding的prompt尽量遵循 plan + act 的结构
-  - 对于ai按用户提供的模版输出html的场景，用户提供和ai输出的代码通常都是偏短的、偏静态的
-  - coding模型必须要用新版才能使用最新框架的架构写法，如tailwind.v4, reactjs.v19
-
-- test-cases 🆚
-  - landing-page + tailwind: 基本都能实现页面, 🌹 glm擅长图标和图片
-    - kat-dev和qwen3都不擅长图标和图片
-  - landing + threejs: 基本都能实现, 
-    - qwen3-32b有时无法运行demo
-  - 🤔 game-reaction-for-click: kat-dev能正确实现， qwen3-think能实现
-    - glm异常，qwen3异常
-  - game-typing: glm/kat-dev行, qwen3非think也行
-  - 🤔 dashboard-crud: qwen3小bug，glm能做ui，kat-dev失败
-  - 🤔 weather: glm大多能实现
-    - kat-dev部分异常，qwen3异常
-  - slider: glm擅长css动画效果，其他ai的ux效果一般
-  - threejs-earth: qwen3行, glm部分异常, kat-dev异常
-  - vocabulary-card: 基本都能正确调整页面, 
-    - kat-dev有时样式异常
-
-- qwen3-coder-30b-a3b 🌹 /速度快
-  - 生成单页面的效果好速度快
-  - 擅长用渐变色块代替图片占位符
-  - 写完代码后一般还会讲解说明一段
-
-- devstral-2507-24b /欧洲多语言/instruct
-
-- qwen2.5-coder-32b /微调多
-
-- qwen3-32b /thinking开关/能力全
-  - 擅长渐变色文字
-  - 生成单页html时， 需要形状类图标的地方会乱码
-  - 不擅长显示外部图片，需要图片的地方会显示缺省占位符
-
-- kat-dev-32B
-  - 页面简洁
-  - 比qwen3更擅长样式、能显示部分图标
-  - 页面不是典型的tailwind风格，风格有点陈旧
-  - 不擅长显示外部图片
-  - 不擅长生成形状类图标，经常生成重复图标，有时会缺失部分图标
-
-- uigen-fx-4b /擅长ui框架/能写js
-  - 擅长渐变色按钮
-  - 不擅长用渐变色块代替图片占位符
-  - 有时能写很多js代码
-
-- webgen-4b /擅长html页面不擅长框架和js
-  - webgen生成单页面的效果远不如uigen/qwen3-coder
-  - 似乎不擅长tailwind, 生成页面的风格偏非tailwind样式的传统网页
-  - 经常出现部分元素样式错乱的问题
-
-## models-variant
-
-- reap
-- https://huggingface.co/cerebras/GLM-4.6-REAP-268B-A32B
-  - [I think the dataset is gonna have to be more diverse.](https://huggingface.co/cerebras/GLM-4.6-REAP-268B-A32B/discussions/1)
-    - The method looks promising but as in other prunes, it may have REAPed too much to be viable.
-
-## models-exploring
-
-- 专用模型
-- ocr
-- tool-calling
-  - lfm2-1.2b-tool
-- edit-apply
-- devops
-- graphics
-- computer-use
-- cpu
-  - [NanoAgent — A 135M Agentic LLM with Tool Calling That Runs on CPU : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1oomy4t/nanoagent_a_135m_agentic_llm_with_tool_calling/)
-
-- [starvector/starvector-1b-im2svg · Hugging Face _202503](https://huggingface.co/starvector/starvector-1b-im2svg)
-  - StarVector is a foundation model for generating Scalable Vector Graphics (SVG) code from images and text
-  - It utilizes a Vision-Language Modeling architecture to understand both visual and textual inputs, enabling high-quality vectorization and text-guided SVG creation.
-  - https://github.com/joanrod/star-vector /apache2/202504/python
-    - StarVector Accepted at CVPR 2025
-  - [感觉不太行。。](https://huggingface.co/starvector/starvector-1b-im2svg/discussions/2)
-    - This checkpoint is designed for converting images into SVGs. While we do have a text-to-SVG model, we plan to release it at a later stage.
-    - The current model performs well with simple icons but has limitations with more complex images. Improving performance on complex cases is a key focus of our ongoing work.
-
-- [lakhera2023/devops-slm-v1 · Hugging Face _202509](https://huggingface.co/lakhera2023/devops-slm-v1)
-  - Based on Qwen2.5
-  - a specialized language model specifically for DevOps tasks and operations only.
-  - designed EXCLUSIVELY for DevOps-related tasks. It has robust filtering that will NOT respond to general questions about movies, weather, cooking, sports, music
-  - [Meet the first Small Language Model built for DevOps : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1ndm44z/meet_the_first_small_language_model_built_for/)
-
-- https://huggingface.co/Alibaba-EI/SmartResume /apache2/202510
-  - 一个面向版面结构的智能简历解析系统，系统支持 PDF、图片及常见 Office 文档格式，融合 OCR 与 PDF 元数据完成文本提取
-  - 本仓库包含 SmartResume 项目所需的两个核心权重文件，用于简历信息提取和版面分析。
-  - Qwen3-0.6B: 简历文本信息提取和结构化处理
-  - YOLOv10: 简历版面布局检测和区域分割
 # discuss-stars
 - ## 
 
@@ -207,7 +43,23 @@ modified: 2025-09-16T19:59:57.856Z
 
 - ## 
 
-- ## 
+- ## [为什么感觉deepseek“泯然众人”了，甚至被国内一些大模型赶超了 ](https://linux.do/t/topic/1182991)
+- 不认同泯然众人，Qwen、GLM、KIMI 的最新模型都沿用来自 DeepSeek 的 MLA、DeepSeek-MoE、GRPO 等技术，虽然 “DeepSeek” 可能用的不多，但实际上处处是 “DeepSeek” 的影子。
+  - 最近的 DeepSeek-OCR 从技术上一定程度补充了 “多模态” 的短板，并且一贯延续了 DeepSeek 的 “性价比” 路线，感觉可以期待下一代多模态模型表现。
+  - 另外，从模型或产品体验上，DeepSeek 确实不如其他 LLM 大厂，个人认为战略定位应该更注重技术上的研发，背靠幻方或许也不急商业上的盈利。
+- 认同，只看 benchmark 和效果确实可能不如那些堆算力几个月一更新的模型，但技术上确实是给国产的一系列模型很大的改变和效率提升了，本来国内进口 N 卡就受管制。
+
+- 从 r1 开始到目前的几次更新，思维链、蒸馏、dsa 机制、vlm 等等。这些技术的目的都是在往死里压低成本。 现在国内的多模态、cli 式助手等等功能都发展得很快，但也不能因为这个去忽视 deepseek 这个模型是能够称得上有 “历史地位” 的。 没人压成本，都是 a / 那样的 opus 级别，你会用吗？4.1opus 刚出那时候，我为了尝鲜做一些试用，很简单地烧了 70 刀。对于 ai 的推广这个层面来说，贵得一笔的顶尖 ai，绝对比不上廉价而水平及格的 ai。
+
+- 还好吧，ds 还是很好用的，泯然众人那到不至于，dsv3.2 翻译效果好而且便宜，回答小问题也不输给 qwen，就是看着没多模，属于水桶型选手，没有什么突出的点，但是遇到随机问题的效果不错
+
+- 很正常，开创者通常不会最后的顶流
+
+- Grok 得益于强大的社区资源，要搜集一些东西的最新情况、部分用户的小体验，非常有效。例如一些平台账号的防风控机制。
+
+- Sam Altman 差不多每周现身频道发布新东西、参与大家讨论。 deepseek 我好像连一个主创人讲话的发布会视频都没见过。 单看品牌吸引力，我喜欢 OpenAI 和 Apple 这样的 有个明星企业人。
+
+- LLM 想押中发展方向很难的，一个公司能押中一次都是极大的幸运了。 gpt 系列押中了数据规模的力大砖飞，deepseek 押中了 MLA 和 GRPO 的成本优化。 可你说后续你还想继续端出来这么大的提升，那太难了，全世界多少实验室多少科研人员都在努力，没道理成果都是一家出的。
 
 - ## 💡 [The missing LLM size sweet-spot 18B : r/LocalLLaMA _202504](https://www.reddit.com/r/LocalLLaMA/comments/1jt9ig2/the_missing_llm_size_sweetspot_18b/)
 - Yesh I think 16-24b is really a great sweet spot, hope we get some models of that size.
@@ -326,7 +178,11 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [How come Qwen is getting popular with such amazing options in the open source LLM category? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1oziszl/how_come_qwen_is_getting_popular_with_such/)
+- I think that Qwen will remain on top of opensource purely because of their small model sizes, almost all of their models can be run on consumer grade hardware (1 graphics card, under 16gb vram) and even when quants are needed it's usually higher than Q4 leading to less intelligence falloff.
+  - I think another reason Qwen is doing so well is because they understand what the community needs, people don't want a 1trillion parameter model that *might* perform well but not be runnable on 99.8% of user hardware, they understand that most people will only be able to run
+
+- In the image and video space, I also like that their models work together. For example, the Qwen Image latent is 100% compatible with the Wan video latent, so you can jump between them without decoding out to an image, then back to the latent space. They complement each other too, with different strengths, and if I need image edit capabilities, I can go to Qwen Image Edit, which again, keeps a large amount of compatibility, and is the best out there for that task in my opinion. Same goes for Wan.
 
 - ## 🤔 [Why the hype around ultra small models like Granite4_350m? What are the actual use cases for these models? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1oku9og/why_the_hype_around_ultra_small_models_like/)
 - They're super useful for testing! And almost all the new TTS architectures these days include an LLM backbone.
@@ -659,6 +515,48 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Who is using Granite 4? What's your use case? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1og2k8e/who_is_using_granite_4_whats_your_use_case/)
+- I created a sexbot agent to test other compliance related filters etc. and surprisingly Granite handles this very well lol.
+  - I am testing Granite Guardian 3.3 in my setup for both input and output. To test the output gets filtered, I told the agent to be an extremely vulgar and sexual dominatrix. Other models will reject this kind of system prompt, but not Granite 4.
+
+- Using Small model to test MCPs I'm developing, it's very good at tool calling
+
+- IBM recently showcased a “contract analysis” use case powered by their Granite 4.0 models. Has anyone tried these use cases yet?
+
+- ## [Granite4 Small-h 32b-A9b (Q4_K_M) at FULL 1M context window is using only 73GB of VRAM - Life is good! : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nzozpg/granite4_smallh_32ba9b_q4_k_m_at_full_1m_context/)
+- It’s one of the few models I’ve found to actually execute multiple native tool calls in response to a single prompt as well as GPT-OSS does, so it’s already impressed me I that regard already. It’s Mamba-based so that’s a different animal as well. It’s passing some basic RAG vibe checks, right now, but haven’t tried it with anything truly big yet.
+
+- Totally can't code
+
+- [Granite 4 (gguf) is useless if you try to use the full 128k context. : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1nzzurf/granite_4_gguf_is_useless_if_you_try_to_use_the/)
+- Since IBM didn't provide recommended sampling params and said to try different ones for your usecase, I found that lowering the temperature from Unsloth's recommended 1.0 to 0.1 greatly increased its ability to do logic/math type stuff. You may want to experiment with temperature for your use-case as there is no actual reason to keep it at 1.0 besides a "default" that unsloth settled on in the absence of official guidance.
+  - Yeah, this model definitely needs low temps. I noticed they added a recommended temp of 0 in their docs. https://www.ibm.com/granite/docs/models/granite
+  - The Granite 4 models work best with temperature set to 0 for most inferencing tasks.
+
+- ## [How's granite 4 small 32B going for you? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nwr6sb/hows_granite_4_small_32b_going_for_you/)
+  - Accuracy on some hard questions is a little challenging ( less smart than SEED OSS ) but it does good with clarifications.
+  - Output length is short and to the point, doesn't spam you with emojis, fancy formatting or tables ( i like this )
+  - Memory consumption is extremely low per K of context, I don't understand how i can jack the context up to 512k and run it on a 5090. Memory usage doesn't seem to climb as i fill up the context either.
+
+- I tried pushing its context limits dumping a repo of code of about 48k and asking questions until the context filled up to 128k. The fuller its context, the “spacier” it would behave. At full, asking questions about specific files it would tend to hallucinate instead of remember what it read.
+  - It’s incredibly fast. There is virtually no difference speed-wise between empty and full.
+
+- It is fast and does not eat memory per unit context because it is not a transformer, it is a Mamba.
+
+- I used it to summarize some Wikipedia articles and it was a lot better than GPT-OSS-20B, less chatty than Qwen 30B-A3B. I'd say it's the best of the smaller MOEs so far for RAG and text understanding. Ask it to summarize important points and it outputs just that list of points, without the usual "Here's a list of points" or some emoji nonsense.
+
+- Pretty solid on my usual vibe check and general knowledge questions, lacking on creative writing.
+
+- i don't really believe SSM blocks are as capable as transformer blocks. they use less resources, so that's why they are popular, but even really well designed SSM and hybrids just don't have that spark for me. that said, maybe your task will work ok? the capability difference varies per task and stuff like data extraction should be fine.
+
+- [How has everyone been liking Granite 4? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1nwnlp8/how_has_everyone_been_liking_granite_4/)
+  - How's the creative writing quality compared to other models in this size range? I'm interested in whether it feels more natural or still has that AI voice.
+    - Bad, it's an IBM model, it's dry, as any office clerk
+
 - ## [Thoughts on Apriel-1.5-15b-Thinker ? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nw0m6u/thoughts_on_apriel1515bthinker/)
 - Tested it on multiple tasks , thinks fo way way way too long and is not as good as people make it to be.
 
@@ -848,7 +746,7 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
   - granite-4.0-micro-3B (Dense)
   - 模型中的"h" 的意思是 hybrid (混合)，标志着模型采用了Mamba/Transformer 混合架构。
   - Mamba是一种状态空间模型（State Space Model, SSM），相比传统的 Transformer 架构在处理长文本时效率更高，能显著降低内存需求。 这种混合设计使得模型在保持高性能的同时，内存需求降低了70%以上，并能以更低的成本在更经济的 GPU 上运行。
-  - reddit上有人测试 granite-4.0-h-small 可以输出1M大小上下文。但是！内容是不能用的，输出到100K左右就炸了，开始胡乱输出了......
+  - reddit上有人测试 granite-4.0-h-small 可以输出1M大小上下文。但是！内容是不能用的，输出到100K左右就炸了，开始胡乱输出了
 
 - small那款我测完就顺手删了，32B  A9B 还不如qwen3 30B A3B系列，而且看信息也看不出这是mamba还是mamba2
 
@@ -1014,6 +912,19 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - So, the combo Qwen3-14b-thinking as architect with Qwen3-14b no-thinking as coder, surpasses¹ the combo QwQ-32B as architect + Qwen 2.5-32b Coder (26.2%). It also surpasses² plain Qwen3-32b no-thinking (no architect) which scored 40%. That's impressive.
 
+- ## [Why is Phi4 considered the best model for structured information extraction? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1oejb8p/why_is_phi4_considered_the_best_model_for/)
+  - curious, i have read multiple times in this sub that, if you want your output to fit to a structure like json, go. with Phi4, wondering why this is the case
+
+- Phi is great it's arguably the best local AI. But it was trained on only university notebooks (smart people's notes) so you don't get exactly the same level of prompt understanding off the bat.
+  - For phi you wanna treat it like it's in an exam, talk about hunceforths and explain what will make it 'lose marks' etc
+
+- It trained in structured formats and Microsoft has lots of formats. It’s not ocnsidtent but it consistent enough to treat certain types of things as objects.
+
+- In my testing nothing of its size comes close. Qwen3-32B (with thinking) is probably the smallest model that gets that good at structured outputs.
+
+- ## [Phi4 vs qwen3 : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kcxmrw/phi4_vs_qwen3/)
+- I would say Qwen 3. They have explicitly stated that Phi 4 reasoning was only trained on math reasoning, not any other reasoning dataset, so for anything but math, Qwen 3 is your better go to! If it's math, though, Phi4 kills it.
+
 - ## [Qwen3-14B vs Phi-4-reasoning-plus : r/LocalLLM _202505](https://www.reddit.com/r/LocalLLM/comments/1kbzsdo/qwen314b_vs_phi4reasoningplus/)
 - It will depend strongly on your use case. So test and check.
 
@@ -1021,18 +932,31 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - To me phi4 plus thinks too long. Personally, I slightly prefer qwen
 
-- ## [Qwen3 14b vs the new Phi 4 Reasoning model : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kg5m5a/qwen3_14b_vs_the_new_phi_4_reasoning_model/)
+- ## 🆚 [Qwen3 14b vs the new Phi 4 Reasoning model : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kg5m5a/qwen3_14b_vs_the_new_phi_4_reasoning_model/)
 - Qwen3 14B is smarter and can punch higher.
   - Phi4-Reasoning will follow the craziest instructions perfectly. It is near perfect at following instructions/formatting.
   - Phi4 will hopefully make fewer assumptions when explicitly instructed in its system prompt to quote only the provided information. This should make it more accurate for retrieving information instead of inserting its own ideas.
 
+- Qwen3 14B feels more versatile overall—great reasoning + decent creativity. 
+  - Phi-4 is scary good at precision tasks though, especially when formatting or strict following is needed. Depends on the use case
+
 - I found Phi-4-reasoning to be a bit smarter (but not code), but requires almost 3x more tokens than Qwen3-14B to be so.
   - In terms of real usability, Qwen3-14B will be the better choice for the vast majority of people.
+  - In terms of vibe, Phi felt like a dry brute force benchmaxxer.
 
 - Phi4 uses a significant amount more tokens while the output is of less quality than Qwen3.
-- Qwen3 is the first local model that I can comfortabel use on my own hardware that gives me major GPT4 vibes, despite the weights being significantly lower.
+  - Qwen3 is the first local model that I can comfortabel use on my own hardware that gives me major GPT4 vibes, despite the weights being significantly lower.
 
 - phi-4 spend more token than qwen3, so i prefer qwen3
+
+- We evaluated Phi-4-reasoning vs Qwen3-32B in our internal application (unstructured sales data analyze). 
+  - Phi-4-reasoning was a bit better: 14% failures vs qwen 17%. But Phi was 10 times slower. All testing was performed on OpenRouter.
+  - Currently we are using QwQ which also have 14% percent failures and give reasonable performance. About 3 times slower compared to Qwen3.
+  - Commerical Grok-3-beta and Gemini-2.5-pro have 12% failures, but much higher cost compared to QwQ.
+  - P. S. qwen3-30b-a3b and qwen3-235b-a22b both gave above 20% of failures, which was a bit surprising.
+  - google/gemma-3-27b-it: 11% failures and crazy fast.
+  - meta-llama/llama-4-scout: 14% failures. (maverick didn't work, gave too long output)
+  - Update: That's more complex. The test gave answer "should we buy" in boolean and while gemma gave "correct" results, the internal calculations were absurdly wrong. So, gemma high results is coincidence/luck and bad testing set.
 
 - I recently tried qwen3-14b and aider.chat . Sometimes had trouble following format and would start doing weird things. Even qwen3-32b-q8 was hard to work with. Sometimes reasoning is off, also following exact directives and producing simpler solutions is a bit off. Of course that is compared to chatgpt-4o or claude 3.7
 
@@ -1550,10 +1474,8 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 - Phi-4 isn't that small (14B) and it seems to punch above its weight. 
   - I've been enjoying Phi-4-25B rather a lot. It's a self-merge of Phi-4, and benefits quite a bit from the extra layers.
   - There's also a Phi-4-45B, but it's brain-damaged to the point of uselessness. Self-merges don't always work out.
-
-- In my evaluation it really depended on the kind of task performed.
-  - For many tasks Phi-4 and Phi-4-25B performed identically, but Phi-4-25B performed significantly better for code gen, science, summarization, politics, psychology, self-critique, evol-instruct, and editing tasks.
-  - Neither model performs well at multi-turn chat, and their creative writing competence is okay but not great.
+- I've tested Phi-4-25B, cant say that it really a lot better, maybe about 10% at some specific cases.
+  - In my evaluation it really depended on the kind of task performed. For many tasks Phi-4 and Phi-4-25B performed identically, but Phi-4-25B performed significantly better for code gen, science, summarization, politics, psychology, self-critique, evol-instruct, and editing tasks. Neither model performs well at multi-turn chat, and their creative writing competence is okay but not great.
 
 - Im MS term, it seems SLM is below 10B. And yes, Phi-4-mini and multimodal is small, not 14B.
 
@@ -2032,6 +1954,22 @@ free 5GB postgres via aiven.io
 - ## [Mistral "free" LLM API is a game changer for so many developers : r/SaaS _202409](https://www.reddit.com/r/SaaS/comments/1fmxg9k/mistral_free_llm_api_is_a_game_changer_for_so/)
 - free tier: It's one request per second, 500, 000 tokens per minute, and 1 billion tokens per month. Except Mistral Embed, which is two hundred billion tokens per month.
 
+# discuss-model-abliterated/uncensored
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Best uncensored open-source models (2024–2025) for roleplay + image generation? : r/LocalLLM _202510](https://www.reddit.com/r/LocalLLM/comments/1o7qxwx/best_uncensored_opensource_models_20242025_for/)
+- Midnight Rose and MythoMax are solid uncensored models for roleplay. For 10GB VRAM you'll need heavy quantization which hurts quality.
+
+- The SillyTavern subreddit has a weekly megathread on current models (sorted by parameter range).
+  - With 10GB of VRAM, you'd probably want to stick in the 8B-16B category (running around Q4).
+
+- if you’re going fully local, open source LLMs like Mistral, LLaMA 2, or Falcon handle uncensored roleplay well, especially when paired with a lightweight frontend. For image generation, Stable Diffusion forks with ComfyUI or Flux work fine on a 10GB 3080 
 # discuss
 - ## 
 
@@ -2040,6 +1978,36 @@ free 5GB postgres via aiven.io
 - ## 
 
 - ## 
+
+- ## [Best uncensored open-source models (2024–2025) for roleplay + image generation? : r/LocalLLM _202510](https://www.reddit.com/r/LocalLLM/comments/1o7qxwx/best_uncensored_opensource_models_20242025_for/)
+- Midnight Rose and MythoMax are solid uncensored models for roleplay. For 10GB VRAM you'll need heavy quantization which hurts quality.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
+- ## [What is the best LLM with 1B parameters? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1nsu154/what_is_the_best_llm_with_1b_parameters/)
+- In my experience LFM2 1.2B is the clear winner by a huge margin. In terms of coherence, reasoning, and creativity it's better than most 4B models.
+  - Whenever I want to run LLM in CPU I usually try:
+  - LFM2 1.2B or the new 2.6B
+  - Qwen3 4B 2507 (and the old 0.6B but it's pretty outdated by now, there are better options)
+  - Gemma3 270M or 1B
+  - Among these Qwen3 4B 2507 is the smartest, but it's a big (4B) model, and it'll be pretty slow. I think LFM2 1.2B is the sweet spot at the moment for a generic usecase.
+
+- Try MoE models, OlmoE 1B-7B, Phi-mini-Moe, Granite-4-tiny-preview, SmallThinker 4BA0.6B, EuroMoE-2.6B-A0.6B, all with active parameters under 1b
+
+- Gemma 3 1b is pretty capable, I have also read good things about facebok mobilellm
+
+- ## [What MoE model sizes and capabilities are currently missing in the open weight ecosystem? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o86h5j/what_moe_model_sizes_and_capabilities_are/)
+- The knowledge depth of ~70B models has been totally lost in the last few months with very few releases in this size range, MoE or otherwise.
+
+- for sizes: 14b a2b (ish), 50b a5b (ish).
 
 - ## [Best sub 14b llm for long text summaries? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nj78fl/best_sub_14b_llm_for_long_text_summaries/)
 - I've done a lot of these tests and the winner in that size range is almost always Llama 3.1 8B for sub-128k and Nemotron-Ultralong-8B for anything higher.

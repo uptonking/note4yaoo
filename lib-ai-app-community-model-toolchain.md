@@ -293,6 +293,47 @@ PP Speed: Q3 GGUF: 50 t/s
 
 - ## 
 
+- ## 
+
+- ## 🆚 [Comparing Unsloth's GLM-4.6 IQ2_M -vs- GLM-4.6-REAP-268B Q2_K_XL : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1ozq14d/comparing_unsloths_glm46_iq2_m_vs_glm46reap268b/)
+  - During my limited coding testing I'm seeing:
+  - REAP_Q2_K_XL sometimes perform better but fail more often, including sometimes looping and some broken code outputs.
+  - Full_IQ2_M retains more general and contextual knowledge and seems more consistent, but perhaps less chance of a great output.
+
+- Tested REAP vs IQ a lot. IQ always better. Minimax M2 ---> same
+- I had the same experience with GLM 4.6 and GLM 4.5 air. Eventually I think reap will work but at the current stage I view it as a tech demo.
+
+- The trade‑offs you describe mirror the differences between quantization and Mixture‑of‑Experts pruning at a systems level.
+  - A Runpod overview notes that moving from FP32 to INT8 or 4‑bit quantization can cut memory use by 60–80 % while preserving over 95 % of model accuracy. 
+  - By contrast, REAP (Router‑weighted Expert Activation Pruning) evaluates the router’s gate values and expert activation norms to remove low‑impact experts, achieving near‑lossless compression even after pruning 50 % of experts on code‑generation tasks.
+
+- All the reaps I tried were slower and dumber. Then again i didn't use them for code as intended.
+
+- Far as roleplay goes, I personally find that REAP loses a ton of flavor and personality. It just doesn't feel good.
+
+- ## [What tools or workflows save you hours every week? : r/PKMS](https://www.reddit.com/r/PKMS/comments/1p00u1x/what_tools_or_workflows_save_you_hours_every_week/)
+- A digital file cabinet (PKMS) to store/organize my notes/documents/files
+  - For enhanced features, I use pkms app Devonthink; accessed with a Mac and iPad
+  - Integrated scripting for workflow automations
+  - I use AppleScript on my Mac
+
+- Knowledge management: Mostly Note app + NotebookLM for long and hard PDF (I put that into the app and it turns that to podcasts!)
+  - Daily planning: Brain dump + Saner: I basically just offload my thoughts and the app turn it to tasks with reminders automatically
+
+- Zettelkasten for idea incubation/research/serendipity, PARA as archiving method, GTD/ZTD for running tasks. A personal combination of them
+
+- ## [Best small LLM (≤4B) for function/tool calling with llama.cpp? : r/LocalLLM _202505](https://www.reddit.com/r/LocalLLM/comments/1kdva3y/best_small_llm_4b_for_functiontool_calling_with/)
+- So far qwen3 is really the only game in town for consistent tool calling for me at small sizes. 
+  - when I test I do not tell the model exactly what tools to use and try to keep my prompts sort of vague because I want to be able to ask for something without for example knowing a table name in a database.
+  - I’ve only really tried 4b and up. I had downloaded 1.7b and it worked like once out of the 3 runs I tried with it. I’d imagine a smaller model would do worse. If you’re very instructionally verbose it may work better though.
+  - 4b, 8b, 14b, 32b all call functions really well and consistently.
+  - 8b, 14b, 32b can digest the returned agent information and transform it.
+  - 14b, 32b can transform it well and provide better context.
+  - 32b is not noticeably better for agentic at least for my use cases than 14b
+  - Sweet spot for me is 8b/14b. I’ve used 8b extensively. It fails like 10% depending on instruction vagueness and how strict I am with temperature.
+
+- Everyone’s talking about Qwen which makes sense due to its recent release but for an alternative, I’ve had good success with the Gemma 3 4B and 12B models. Once you get around the Google ReAct logic it’s pretty manageable and it seems to be smart enough for my use cases
+
 - ## [Cerebras REAP'd GLM4.6: 25%, 30%, 40% pruned FP8 checkpoints on HF! : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1oefu29/cerebras_reapd_glm46_25_30_40_pruned_fp8/)
   - The models deployed in Cerebras prod inference API are not pruned, and we don't have such plans for GLM4.6. The REAP pruning work is for research purposes and to give more efficient models to the community
 
@@ -577,14 +618,22 @@ PP Speed: Q3 GGUF: 50 t/s
   - ollama pull llama3
 
 - 我说的本地，指的不是一台个人电脑上，跑一个7B、13B参数的大模型。而是在企业本地算力服务器上，私有化部署的700亿参数以上规模的大模型，这种参数规模的大模型，才有更好的指令依从性，结合RAG、Agent等技术，能有效的完成你分配给他的任务。 
-# discuss-formats-models
+# discuss-formats-models ⚖️ 
 - ## 
 
 - ## 
 
 - ## 
 
-- ## 
+- ## There are two FP4 formats circulating right now: MXFP4 and NVFP4 (NV for Nvidia).
+- https://x.com/awnihannun/status/1961500133990043967
+  - Both formats quantize weights to 4-bit floating point (e2 m1) with a unique scale per group. 
+  - The difference is the group size and how the scale for each group is encoded. 
+  - MXFP4 uses an e8m0 scale (fixed-point, 8-bit) with a group size of 32. It gets raised to the power of 2 before multiplying the weight. 
+  - NVFP4 uses an e4m3 (fp8) scale with a group size of 16. It is multiplied with the weight directly
+  - The scale encoding in MXFP4 is pretty suboptimal because it doesn't have representations for a lot of values in the range we need.
+
+- ah, the eternal battle of formats. MXFP4 might be the underdog, but NVFP4 sounds like the crowd favorite. Just wait till someone tries to quantify their existential dread, then we'll really see some innovation. 
 
 - ## [Why does it seem like GGUF files are not as popular as others? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1ood0kn/why_does_it_seem_like_gguf_files_are_not_as/)
   - I feel like it’s the easiest to setup and it’s been around since the beginning I believe, why does it seem like HuggingFace mainly focuses on Transformers, vLLM, etc which don’t support GGUF
@@ -714,7 +763,7 @@ PP Speed: Q3 GGUF: 50 t/s
 - ## [Adjust VRAM/RAM split on Apple Silicon · ggml-org/llama.cpp _202307](https://github.com/ggml-org/llama.cpp/discussions/2182)
 - just do: `sudo sysctl iogpu.wired_limit_mb=<mb>` from Terminal. You’d have to do it every boot as it’s not sticky
 
-- ## [MLX now has MXFP4 quantization support for GPT-OSS-20B, a 6.4% faster toks/sec vs GGUF on M3 Max. : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1n4mxrj/mlx_now_has_mxfp4_quantization_support_for/)
+- ## 🤔 [MLX now has MXFP4 quantization support for GPT-OSS-20B, a 6.4% faster toks/sec vs GGUF on M3 Max. : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1n4mxrj/mlx_now_has_mxfp4_quantization_support_for/)
 - The speed increase is pretty noticeable, tested with short prompts, on M4 MAX 128GB
   - mlx-community's gpt-oss-120b-MXFP4-Q8: 80tps
   - ggml 120b: 75tps, with fa enabled
@@ -927,7 +976,16 @@ sudo launchctl load /Library/LaunchDaemons/io.yaoo.sysctl.plist
 
 - ## 
 
-- ## 
+- ## [Phi 3.5 Vision Instruct Fails to Load "Trust remote code" error · Issue · lmstudio-ai/mlx-engine _202411](https://github.com/lmstudio-ai/mlx-engine/issues/29)
+- 👷: If you're seeing a `Trust remote code` issue, it means that the model is not (yet) supported by `mlx-engine` . Specifically, support for that model's tokenizer and/or config has not been merged into huggingface transformers.
+  - We choose to block loading a model instead of enabling remote code because we are wary of letting users download and run potentially malicious code.
+
+- [when load mlx-community/Kimi-VL-A3B-Thinking-4bit, it prompts trust_remote_code=True. · Issue #607 · lmstudio-ai/lmstudio-bug-tracker](https://github.com/lmstudio-ai/lmstudio-bug-tracker/issues/607)
+- 
+- 
+- 
+- 
+- 
 
 - ## 🖼️ [Qwen3-VL kinda sucks in LM Studio : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1ock0lc/qwen3vl_kinda_sucks_in_lm_studio/)
 - LM Studio apparently downscales to 500x500 ish. llama.cpp is better for multimodal for now until LM Studio fixes this.

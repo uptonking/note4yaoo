@@ -262,6 +262,15 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
 - dev-to
   - ?
 
+## 1118
+
+- i want to download a  llm model to use on my macbook, which one should i use: granite-4.0-h-small-MLX-4bit vs ibm-granite-4.0-h-small-mlx-mxfp4
+  - MXFP4 (Microscaling 4-bit Floating Point)
+  - A more advanced 4-bit floating-point format that uses "microscaling". It groups weights into small blocks and uses a shared scaling factor for each block
+  - MXFP4 is designed to preserve a wider dynamic range of values, leading to better model quality
+
+- Abliteration: 这是 AI 社区的一个术语（Ablation + Obliteration），指通过技术手段移除模型的拒绝机制/安全护栏。这里译为“单纯的‘去限制’产物”，意指原版不只是为了搞黄色或暴力而存在的无脑模型，而是有深度的。
+
 ## 1117
 
 - [Casual-Autopsy/snowflake-arctic-embed-l-v2.0-gguf · GGML_ASSERT Error when running llama-embedding with this model](https://huggingface.co/Casual-Autopsy/snowflake-arctic-embed-l-v2.0-gguf/discussions/1)

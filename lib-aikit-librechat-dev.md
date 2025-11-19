@@ -62,6 +62,7 @@ modified: 2025-09-01T05:52:34.241Z
 - ❓ chat-queue: 对于很慢的本地模型，一次只能处理一个task，需要支持添加多个task到queue, 不同task可能需要切换不同模型
   - message queue, image queue
   - queue的必要性: ollama能设置并发数, 其他provider能吗
+  - 通过queue自动收集不同模型对同一prompt的输出，最终汇总结果并自动分析
 
 - librechat-custom-agent
   - custom comfyui workflow as custom agent
@@ -182,6 +183,9 @@ modified: 2025-09-01T05:52:34.241Z
 
 - janai-xp
   - 不支持直接使用已有的.safetensors文件
+
+- local-model-features
+  - 
 
 - 
 - 

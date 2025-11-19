@@ -493,6 +493,28 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
+- ## 
+
+- ## 🆚 [Embedding models have converged : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1ozf9al/embedding_models_have_converged/)
+  - I ran 13 models on 8 datasets and checked latency, accuracy, and an LLM-judged ELO score. Honestly, the results were not what I expected - most models ended up clustered pretty tightly.
+  - rank 1 → 10 is around a 3% gap
+
+- This is a case of saturated benchmarks not a case of the quality being the same
+  - 100% this. It's like saying LLMs have converged because they all ace SuperGLUE.
+
+- Why use LLM as a judge for this? You have a query and a matching document. You know which document you want for which query. What matters is the rank of that document for that particular query. I'm not sure I get what do the LLM's have to judge here.
+  - Because a lot of the datasets in real life don’t have a single correct doc. And LLM judge evaluates the quality of the retrieved list, not just "did u hit the label".
+  - We used 2 private datasets and 6 public datasets. Publc datasets that do have perfect ground truth also have ncdg and recall for accuracy. So we calculated both elo score and classical metrics.
+
+- Did you try with different judge models and slightly different judge prompts, just to see if the judge influence on the results might be larger than the actual score differences?
+  - great suggestion, will try that!
+
+- Interesting - do we have a similar subset of benchmarks for rerankers?
+  - yess! before embedding models, I also ran rerankers on multiple datasets and pretty much used the same elo scoring. check this out: https://agentset.ai/rerankers
+
+- I've found embedding model benchmarks... Useless as of late? Qwen 3 models especially, they are killer on paper, but I found them near useless after a top_k of 5 in my semantic search engine use case. The first couple of results are great, but seemed almost random after about 5 results, which is a no-go for our search pages returning ~40 items per page. We found "worse" models have much more consistent results, we went with e5-large-v2
+  - yes, agree! using ELO actually helps with that, it basically checks how consistent a model(looks at the win rate) is across all datasets, not just the first few hits
+
 - ## [what free model should i use for codebase indexing with speed indexing : r/RooCode](https://www.reddit.com/r/RooCode/comments/1oiw4w7/what_free_model_should_i_use_for_codebase/)
 - Use text-embedding-004 model from google (fast and free)
 

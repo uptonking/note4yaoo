@@ -114,7 +114,16 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
-- ## 
+- ## [Instead of either one huge model or one multi-purpose small model, why not have multiple different "small" models all trained for each specific individual use case?   r/LocalLLM _202511](https://www.reddit.com/r/LocalLLM/comments/1ovsb2x/instead_of_either_one_huge_model_or_one/)
+- This is already how MoE (Mixture of Experts) models work. There are plenty of them on huggingface, though I think the separation of the 'experts' often isn't quite so clean. You also have to consider some other things -- your 20B param 'python only' expert model is almost unusable if it doesn't also understand variable names and comments and instructions in natural language, there does have to be some baseline knowledge to make a coding model actually useful, not *just* code in the training data.
+- That's kinda what a MOE model is/does. Each of the "experts" are specialists in different trained things and it picks the active ones to use based on the prompt from the user.
+
+- some people mentioned MoE, but MoE works differently. MoE makes decisions for each token separately, not for whole answers. So training many small, specialized models is not the same thing as using MoE.
+
+- Your idea is exactly what Microsoft is attempting with its Phi series of models. They intend to build an ecosystem of models trained on very specific tasks, and then have an agentic system that uses a simple model to process the users request, decide the best model to use, and use that model to answer the question.
+  - I believe Google is doing something similar with Gemini, and there are rumors that GPT 5 functions the same way.
+
+- Perfect routing is not a solved problem. In general you have to get part of the way through solving a problem before figuring out exactly what is necessary to solve it.
 
 - ## Every LangGraph user I know is making the same mistake! They all use the popular supervisor pattern to build conversational agents.
 - https://x.com/akshay_pachaar/status/1983874390149484881

@@ -246,6 +246,15 @@ modified: 2025-11-06T18:49:13.977Z
   - The thing that caught my attention in our testing was how much more predictable the failure modes are with specialized models like PaddleOCR-VL compared to something like GPT-4o which might give you beautiful conversational output but completely miss that a footnote belongs to a specific table cell three pages back.
   - The cost factor you mentioned is huge too, especially if you're processing thousands of documents daily where those API calls add up fast.
 
+- ## 🆚 [Comparison new qwen 32b-vl vs qwen 30a3-vl : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1ocko1m/comparison_new_qwen_32bvl_vs_qwen_30a3vl/)
+- Dense 32b vl is better in most benchmarks
+  - Yeah but the difference is negligible in most of them. I don't know the implications behind that small gap in performance.
+- 32B VL seems to be significantly better in multilingual benchmarks, at least that's a good usecase.
+
+- So a slight increase in quality for the 32b, sacrificing a lot of speed from the MoE
+
+- What surprises me is that the 30B is so close, knowing inference should be around 6x faster.
+
 - ## 🆚 [[Experiment] Qwen3-VL-8B VS Qwen2.5-VL-7B test results : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1o9xf4q/experiment_qwen3vl8b_vs_qwen25vl7b_test_results/)
   - TL; DR: I tested the brand-new Qwen3-VL-8B against Qwen2.5-VL-7B on the same set of visual reasoning tasks — OCR, chart analysis, multimodal QA, and instruction following.
   - Qwen3-VL shows a clear generation-to-generation leap and delivers more accurate, nuanced, and faster multimodal reasoning.
