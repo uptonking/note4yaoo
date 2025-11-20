@@ -244,7 +244,11 @@ modified: 2025-07-17T14:40:07.230Z
 
 - ## 
 
-- ## 
+- ## 💬 [Comments on text editor _202408](https://github.com/suitenumerique/docs/issues/156)
+  - Erwan Legal recommended Hypothes.is. @hypothesis (W3C Web anotation) compatible. Comments are stored in an external database. The service could be used in other softwares.
+  - Comments are out in the latest BlockNotejs release _202503
+
+- ✅ 已合并pr_202511 [Comments ! by AntoLC · Pull Request · suitenumerique/docs](https://github.com/suitenumerique/docs/pull/1330)
 
 - ## [✨ List and restore deleted docs _20251014](https://github.com/suitenumerique/docs/pull/1450)
 

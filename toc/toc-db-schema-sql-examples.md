@@ -20,6 +20,9 @@ modified: 2021-08-30T18:57:27.645Z
 
 - [Database Examples - Wikiversity](https://en.wikiversity.org/wiki/Database_Examples)
 # popular-db-schema-examples
+- resources
+  - [SQL Project for Portfolio: Northwind Store | LearnSQL.com _202407](https://learnsql.com/blog/sql-project-northwind-store/)
+
 - [IMDb Non-Commercial Datasets](https://developer.imdb.com/non-commercial-datasets/)
   - Subsets of IMDb data are available for access to customers for personal and non-commercial use.
   - [IMDb data files available for download](https://datasets.imdbws.com/)
@@ -191,14 +194,20 @@ modified: 2021-08-30T18:57:27.645Z
   - 前后端都依赖breeze-client
   - Breeze Client (breeze-client) is a JavaScript library for managing data on the client, much as an ORM manages it on the server.
 
+- https://github.com/shreyaswankhede/Northwind-Sales-Analysis /MIT/201905/xlsx
+  - The primary objective of the project is to Analyse sales for Northwind data using QlikSense & Tableau.
+  - Northwinds.xls file has 32 columns and 2305 rows.
+  - The data contains Northwind Sales for the period Apr-2013 to Mar-2015.
+
 ## apps-northwind
 
 - https://github.com/Musili-Adebayo/Northwind-Database /202308
   - This repository contains 50 queries and answers to the popular northwind database using MySQL
   - [50 SQL Practice Queries and Answers _202101](https://musiliadebayo.medium.com/50-sql-practice-queries-and-answers-3fc896650b2e)
 
-- https://github.com/ndleah/northwind /202111
+- https://github.com/ndleah/northwind /202111/inactive
   - perform an analysis for 10 Business Questions
+  - 🤔 准备了10个问题
 - https://github.com/biancashiromoto/basic-sql-queries /202310/sql
   - A set of SQL queries to retrieve and manipulate data from the "Northwind" database
 

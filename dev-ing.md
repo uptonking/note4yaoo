@@ -262,6 +262,16 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
 - dev-to
   - ?
 
+## 1120
+
+- [ModuleNotFoundError: No module named 'distro' - Stack Overflow](https://stackoverflow.com/questions/56652200/modulenotfounderror-no-module-named-distro)
+  - pip3 install distro
+
+- [Simpson's paradox - Wikipedia](https://en.wikipedia.org/wiki/Simpson%27s_paradox)
+  - 辛普森悖论是这样一种现象：在每个子群（分组）中，A 相对于 B 的效果更好，但当把所有子群的数据合并在一起后，整体结论却变成 B 比 A 更好。看起来像“矛盾”，但本质上是聚合时忽略了一个或多个混杂变量（lurking/confounding variable）造成的权重变化。
+  - 警惕“平均数”和“总数”： 总体数据往往会掩盖内部的结构性差异。
+  - 寻找“潜伏变量”： 当你看到A导致B时，要问问自己，是不是有一个背后的C（如年龄、性别、病情严重程度、购买力等）在同时影响A和B？
+
 ## 1119
 
 - 🤔 which expression is more natural in english, or  do you have a better one : 

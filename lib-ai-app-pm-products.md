@@ -34,6 +34,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 避免模型平台的限制rate limits，如并发请求数(rpm/tpm/需要排队)、context长度、最大输出token数、模型版本、模型大小等
     - no implicit ai degradation/switch: bring your model
   - cost: unlimited tokens, 利用本地模型ocr/文生图
+  - 🤔 能充分利用本地文件系统和命令行的资源，进行数据分析/文件修改/...
   - network agnostic
   - 发挥端侧计算的能力，如总结/查询，而不侧重端侧聊天
   - mlx的并发端侧计算能力非常强, 多个mlx并行计算

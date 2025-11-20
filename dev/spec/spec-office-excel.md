@@ -18,10 +18,22 @@ modified: 2021-09-30T07:44:25.136Z
 # guide
 - features
   - csv based sheet, like mdx based doc, 简单读写无需借助专业软件
-# pieces
+# resources
+- data
+  - [Sample Sales Data Excel Download – 5 Free Datasets | Excelx.com](https://excelx.com/practice-data/sales-retail/)
+
+## tutorials
+
+- [#1 Excel Tutorial on the Net - Excel Easy](https://www.excel-easy.com/)
+  - 300 Examples to Excel like a Pro
+
+- [ExcelChamp](https://excelchamp.com/)
+  - Join our Excel courses, improve your knowledge and skills
+  - [ExcelChamp | Solving Everyday Problems With Excel](https://www.excelchamp.net/)
+    -  Excel Tips and Tricks, Formulas and shortcuts
+# more
 
 # discuss
-
 - ## a standard that extends CSV files to have formulas, 
 - https://twitter.com/andrestaltz/status/1344320355960299520 
   - and to slice huge CSVs into multiple files so to allow scalability, 

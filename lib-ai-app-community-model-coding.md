@@ -645,6 +645,8 @@ def slugify(text):
 - 何心意之忡忡，若寤寐之栩栩 出自哪里? 上下句是什么？ 表达什么意思？
   - storyofstone 芙蓉女儿诔(lei)
 
+- 解释下统计学上的 Simpson's paradox
+
 - Jane is faster than Joe. Joe is faster than Sam. Is Sam faster than Jane? Explain your reasoning step by step.
 
 - How would you stack these items to be carried in one hand across a room? Laptop, tennis ball, pen and notebook.

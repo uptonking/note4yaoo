@@ -24,7 +24,10 @@ modified: 2025-10-10T02:44:49.634Z
 
 - ## 
 
-- ## 
+- ## DeepAnalyze-8B, the first agentic LLM designed for autonomous data science, capable of automatically completing the end to end pipeline _202510
+- https://x.com/Dr_Singularity/status/1981010771338498241
+- If tools like this can generate full research reports on their own, the next big question is: who’s building the framework for agents to take real-world actions from those insights? I keep seeing mentions of @GetActionModel and #LAM wondering if that’s where the space is headed?
+  - What @getactionmodel is doing with LAMs runs in parallel, building agents that don’t just analyze but act, reason, and coordinate on-chain. When AI can think and do, acceleration becomes inevitable.
 
 - ## [MermaidMistral: A Work In Progress Model for Flow Maps : r/Oobabooga _202401](https://www.reddit.com/r/Oobabooga/comments/192qb2c/mermaidmistral_a_work_in_progress_model_for_flow/)
   - I'm an unemployed recent college graduate aspiring to specialize in fine-tuning AI models and build useful software around AI.
@@ -196,16 +199,40 @@ modified: 2025-10-10T02:44:49.634Z
 - SVG-like images yes, actual SVGs no. There are no AI vector solutions yet, even Adobe's AI vector thing is arguably also auto vector using Illustrator or whatever.
 
 - Inkscape is open source and can convert images to SVG vectors.
-# discuss-md-table/excel 📈
+# discuss-md-table/excel/csv 📈
 - ## 
 
 - ## 
 
 - ## 
 
-- ## 
+- ## [Pandalyst-13B-V1.0 released!!! Your first local LLM for mastering data analysis using pandas. : r/LocalLLaMA _202309](https://www.reddit.com/r/LocalLLaMA/comments/16v5aj4/pandalyst13bv10_released_your_first_local_llm_for/)
+- 7B is uploading https://huggingface.co/pipizhao/Pandalyst-7B-V1.1 
+  - This 7b version is trained based on Codellama-python-7B, and achieve competitive performance with our 13B !!! (witch was trained on wizardcoder-python-13B)
 
-- ## 
+- how to make it read charts? E.g. Excel sheets.
+  - In fact, we don't need the model to see the entire table of data.
+  - In our implementation, we just feed the model the description of the table, as well as the type and enumeration value of each column, and we found that the model can handle the contents of the table well.
+
+- can it return json reliably?
+  - In the V1.x version, our model was trained to return the answer as a string reliably.
+  - Responses in json format will be considered in the V2 version.
+
+- ## [LLM recommendations for working with CSV data? : r/LocalLLM _202505](https://www.reddit.com/r/LocalLLM/comments/1ktzdrd/llm_recommendations_for_working_with_csv_data/)
+  - Is there an LLM that is fine-tuned to manipulate data in a CSV file? 
+  - I've tried a few (deepseek-r1:70b, Llama 3.3, gemma2:27b) with the following task prompt: In the attached csv, the first row contains the column names. Find all rows with matching values in the "Record Locator" column and combine them into a single row by appending the data from the matched rows into new columns. Provide the output in csv format.
+  - None of the models mentioned above can handle that task... Llama was the worst; it kept correcting itself and reprocessing... and that was with a simple test dataset of only 20 rows.
+  - However, if I give an anonymized version of the file to ChatGPT with 4.1, it gets it right every time. But for security reasons, I cannot use ChatGPT.
+  - So is there an LLM or workflow that would be better suited for a task like this?
+
+- Can’t you ask an LLM to give you python code to do that?
+  - Yes. Asking any LLM about CSVs is asking for trouble. If you care about accuracy and repeatability, always use code to answer such questions. Use an LLM to generate such code.
+
+- For structured data it is often easy to generate code and then analyse it using that code. Or you can put it in a db and use text to sql for analysis.
+
+- I’m not sure you need an LLM to do this. Feels like something a python script could achieve. Perhaps get an LLM to help write the script?
+
+- ChatGPT is using a library like Pandas. What it does really is passinng your data to Pandas, and creating a query. Is not an easy task to do locally.
 
 - ## [Which LLM is best at understanding information in spreadsheets? : r/LocalLLaMA _202506](https://www.reddit.com/r/LocalLLaMA/comments/1l1lqdm/which_llm_is_best_at_understanding_information_in/)
 - I think you need to make the LLM write code to process the spreadsheet. Something like:

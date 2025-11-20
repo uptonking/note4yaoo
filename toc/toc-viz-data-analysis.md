@@ -58,6 +58,18 @@ modified: 2021-05-23T18:45:59.139Z
   - https://chat2db.ai/
   - AI-powered app builder that creates professional applications in minutes, no coding required
 
+- https://github.com/ruc-datalab/DeepAnalyze /2.2kStar/MIT/202511/python
+  - https://ruc-deepanalyze.github.io/
+  - 你的AI数据分析师，自动分析大量数据，一键生成专业分析报告
+  - DeepAnalyze is the first agentic LLM for autonomous data science. It can autonomously complete a wide range of data-centric tasks without human intervention
+  - Entire data science pipeline: Automatically perform any data science tasks such as data preparation, analysis, modeling, visualization, and report generation.
+  - 🤔 数据分析基于文件系统实现，ai生成使用pandas操作数据的python代码并自动执行
+  - 定制的 DeepAnalyze-8B 模型不适合聊天对话，会乱说且loop，但适合执行数据分析任务
+  - Fully open-source: The model, code, training data, and demo of DeepAnalyze are all open-sourced, allowing you to deploy or extend your own data analysis assistant.
+  - [添加 DeepAnalyze 详细部署教程文档_基于MacBook Air M4 · ruc-datalab/DeepAnalyze](https://github.com/ruc-datalab/DeepAnalyze/pull/16)
+  - ❓ ai分析玩数据的结果如 `final_result.to_csv('category_price_performance.csv', index=False)` 在本地找不到保存的文件
+    - 是否通过sandbox进行文件io
+
 ## viz-charting
 
 - https://github.com/geodaai/openassistant /MIT/202510/ts

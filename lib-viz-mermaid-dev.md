@@ -29,6 +29,9 @@ modified: 2025-11-19T17:50:09.072Z
   - https://huggingface.co/mermaidchart/merged-mermaid-7b  /202509
 # draft
 - streamable chart spec: 类似mermaid支持逐步添加关系, 可逐步添加折线/条形/扇形
+
+- themes/styleing
+  - ppt-shapes
 # dev-xp
 
 # ai-mermaid
