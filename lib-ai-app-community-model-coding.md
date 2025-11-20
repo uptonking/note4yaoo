@@ -35,7 +35,27 @@ modified: 2025-09-16T13:29:11.327Z
 
 - ## 
 
-- ## 
+- ## prompts samples from vendors
+- [Generative AI prompt samples |  Google Cloud Documentation](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery)
+  - [Google AI Gemini API | Prompt Gallery ](https://ai.google.dev/gemini-api/prompts)
+
+- [Microsoft 365 Copilot Prompts Gallery](https://m365.cloud.microsoft/copilot-prompts)
+
+- 
+- 
+- 
+- 
+
+- [Ultimate AI Prompt Library: ChatGPT, Gemini, Claude - DocsBot AI](https://docsbot.ai/prompts)
+
+- [Examples of Prompts | Prompt Engineering Guide](https://www.promptingguide.ai/introduction/examples)
+
+- [PromptBase: The #1 Marketplace for AI Prompts](https://promptbase.com/)
+
+- 
+- 
+- 
+- 
 
 - ## flow chart
 

@@ -10,14 +10,20 @@ modified: 2025-11-19T17:50:09.072Z
 # guide
 - pros
   - 图表类型丰富, 除流程图外，还支持 kanban, gantt, Timeline, Mindmap, pie, xy(line/bar), Quadrant, git-branching, radar, Treemap, ...
+
 - cons
   - ?
+
 - features
   - ?
+
 - who is using #mermaid
   - github README
   - integrations: 
+
 - resources
+  - ?
+
 - mermaid-models
   - https://huggingface.co/mermaidchart/models
   - https://huggingface.co/mermaidchart/merged-mermaid-7b  /202509
@@ -26,22 +32,9 @@ modified: 2025-11-19T17:50:09.072Z
 # dev-xp
 
 # ai-mermaid
-- prompts
-  - [The ChatGPT prompt list for Software Engineers: Prompts to generate software diagrams in Mermaid _202405](https://medium.com/@martin-jurran/chatgpt-prompt-list-for-software-engineers-prompts-to-generate-software-diagrams-in-mermaid-deaf2f373104)
-  - https://github.com/fladdict/llmermaid
-    - LLMermaid is a framework that enhances the capabilities of Large Language Models (LLMs) by integrating markdown-style diagram charts.
-
-```
-Write the Mermaid code for a sequence diagram describing a process. Flowchart diagrams in Mermaid start with "sequenceDiagram". Stricly follow this format:
-
-sequenceDiagram
-  Alice --> John: Hello John, how are you?
-  John  --> Alice: Great!
-  Alice --> John: See you later!
-
-Only use the provided information. 
-
-- write mermaid code for this workflow:  user login with email
-```
-
+- mermaid-ai-builder
+  - [I Built an AI Mermaid Diagram Generator That Fixes Its Own Mistakes _202510](https://djajafer.medium.com/i-built-an-ai-mermaid-diagram-generator-that-fixes-its-own-mistakes-26552047c37a)
+    - 源码直接在文章末尾，而不在github
+  - [Fun project of the week, Mermaid flowcharts generator _202507](https://alain-airom.medium.com/fun-project-of-the-week-mermaid-flowcharts-generator-0bc74404e9e6)
+    - 源码直接在文章末尾，而不在github
 # more

@@ -15,6 +15,9 @@ modified: 2025-11-19T17:59:15.580Z
 - https://github.com/skovy/llm-markdown /MIT/202309/ts/inactive
   - https://llm-markdown.vercel.app/
   - A Nextjs app demonstrating how to display rich-text responses from Large Language Models (LLMs) by prompting and rendering Markdown formatting, Mermaid diagrams, and LaTeX equations.
+
+- https://github.com/jgordley/MermaidGPT /202405/python/inactive
+  - simple ChatGPT and Mermaid.js integration that allows you to generate diagrams using natural language
 # utils
 
 # integrations
