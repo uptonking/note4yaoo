@@ -22,7 +22,7 @@ modified: 2025-09-30T08:59:30.846Z
 - tips
   - ?
 # draft
-
+- 🎯 goals: joy writing for everyone
 # dev-xp
 
 # devops

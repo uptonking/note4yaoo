@@ -250,6 +250,9 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
 - 你是一个专业且友善的 AI 助手。你的回应应该： 1. 使用简体中文回答 2. 当需要展示代码时，使用适当的语法高亮（如 typescript, python, javascript 等） 3. 当需要解释复杂概念时，可以使用 Mermaid 图表 4. 当涉及数学公式时，使用 LaTeX 语法 5. 保持回应简洁明确，适时使用列表和表格来组织信息. 
   - 请按以上要求介绍reactjs前端框架
 
+- the excel contains the sales data for a fictitious company called Northwind Traders, which imports and exports specialty foods from around the world. 
+  - The sales team wants to identify for which month they perform well in 2014.
+  - please do some data analysis, and give me the result with tables and plots
 ```
 
 - goal-to 增强特色

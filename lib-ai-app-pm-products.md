@@ -38,6 +38,7 @@ modified: 2025-03-22T16:10:24.856Z
   - network agnostic
   - 发挥端侧计算的能力，如总结/查询，而不侧重端侧聊天
   - mlx的并发端侧计算能力非常强, 多个mlx并行计算
+  - 📕 local vlm ocr + pdf
 - 🌹 pros-local-ai-mobile
   - 容易通过摄像头获取图像数据
 - 🐛 cons-local-ai
@@ -304,7 +305,7 @@ modified: 2025-03-22T16:10:24.856Z
     - API调用频率限制为 10 RPM
     - gpt-load 作者
     - [【T佬公益】TBAI公益站主贴-爽用Gemini|OpenAI|DeepSeek模型 ](https://linux.do/t/topic/683726)
-  - 📌 [23公益站](https://sdwfger.edu.kg/console), 不用签到
+  - [23公益站](https://sdwfger.edu.kg/console), 不用签到
     - 平台将于每周五、周六统一发放额度兑换码。 额度申请：如您的额度提前用尽，可联系管理员进行补充申请
     - 模型丰富: claude, gpt, gemini
   - 📌 [KYX-API](https://api.kkyyxx.xyz/), 每日转盘
@@ -316,7 +317,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 模型丰富: claude/gemini, 但没有gpt5(有mini)
     - 很多openrouter渠道的模型
     - 本站完全免费！暂无任何充值通道
-    - 绝大部分模型倍率换算后与官方价格相同，为缓解服务器资源压力，所有免费模型实际扣除配额均按付费标准计算。
+    - 绝大部分模型倍率换算后与官方价格相同，为缓解服务器资源压力，所有免费模型实际扣除配额均按付费标准计算
     - [黑与白chatAPI福利站](https://cdk.hybgzs.com/)
   - [包子公益](https://api.codeqaq.com/)
     - [包子铺](https://api.5202030.xyz/)
@@ -325,17 +326,17 @@ modified: 2025-03-22T16:10:24.856Z
     - [包子公益 - Baozi DoneHub](https://lucky.5202030.xyz/)
     - 每日普通用户可自行划转 200$ 到 newapi 站点
     - [【包子公益站】更新一个总的汇总贴。现在上线了newapi的分站 ](https://linux.do/t/topic/1124776)
+  - [随时跑路公益](https://runanytime.hxi.me/), 每天签到 10-25 刀
+    - 完全支持 cc，主要是 sonnet 4.5，haiku 4.5 会自动重定向到 sonnet 4.5
+    - RPM 暂时定为 5，之后看情况调整
+  - [逆水寒](https://api.sxxe.net/)
+    - [逆水寒公益API——扬帆起航 ](https://linux.do/t/topic/1173036)
   - [一个小站的 API 商店](https://one-api.ygxz.in/), 每日签到1刀内随机
     - 提供半公益的高质量 API 中转服务，始于202406
     - 无调用频率限制
     - 支持gpt5,claude,gemini
     - 部分模型倍率很高，可选按次计算版本, 如claude
-  - [随时跑路公益](https://runanytime.hxi.me/), 每天签到 10-25 刀
-    - 完全支持 cc，主要是 sonnet 4.5，haiku 4.5 会自动重定向到 sonnet 4.5
-    - RPM 暂时定为 5，之后看情况调整
     - [【随时跑路公益站】就是那个稳了一个月的AmazonQ2API公益，开放注册 ](https://linux.do/t/topic/1154353)
-  - [逆水寒](https://api.sxxe.net/)
-    - [逆水寒公益API——扬帆起航 ](https://linux.do/t/topic/1173036)
   - [我爱996公益](https://529961.com/)
     - 仅限 L 站 2 级以上用户注册
     - [【公益站我爱996一次】测试上线已接入LinuxDo ](https://linux.do/t/topic/1147448)
@@ -546,6 +547,17 @@ modified: 2025-03-22T16:10:24.856Z
   - 基础服务：RPM=12、RPD=300、TPM=12000；默认情况下，租户均享受基础服务。基础服务不计费。支持在线自助升级为高级服务
   - 高级服务：RPM=120、RPD 不限、TPM=120000；租户可选择升级服务，享受更高限频。高级服务根据实际 Token 用量进行后付费结算。
   - 每个并发槽位代表 1 个正在执行的 LLM API 请求。LLM 包并发服务包并发槽位服务同样受 API 频率限制指标约束
+
+- [火山方舟大模型服务平台-免费推理额度](https://www.volcengine.com/docs/82379/1399514?lang=zh)
+  - ⚠️ 规则复杂, 注意每日超额使用token需付费, 部分模型名需要使用自动生成的id别名才能被采集和限免而不能使用预置的名称
+  - rpm/tpm各模型不同，一般rpm为1w， tpm为500w
+  - 单模型默认免费50w, 协作计划可奖励单模型200w
+  - 免费额度仅适用于抵扣模型推理消耗的 token（50w 免费 token），不能抵扣使用各类插件、知识库等产生的费用
+  - 免费推理额度，基础模型和精调后模型共享。
+  - 模型支持deepseek/kimi/doubao/seedream
+  - 协作奖励计划规则（第二期）和数据授权协议
+    - 将在每日额度内自动按顺序采集授权模型推理接入点对应的调用数据，次日根据每个模型的前一日采集量返还等量的每日奖励包
+    - 奖励包将在发放到您账号后的 30 个自然日内有效，到期后清零
 
 - [DeepSeek API Docs - 模型 & 价格](https://api-docs.deepseek.com/zh-cn/quick_start/pricing/)
   - 扣减费用 = token 消耗量 × 模型单价，对应的费用将直接从充值余额或赠送余额中进行扣减。

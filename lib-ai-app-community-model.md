@@ -339,6 +339,27 @@ e) 最终评论者(Final Critic)
 
 - TOML is actually more verbose when it comes to complex data structures.
   - Which makes sense since it was designed to be a JSON/YAML mappable language for better human readability.
+# discuss-local-llm-usecases
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [My Journey to finding a Use Case for Local LLMs : r/LocalLLM _202511](https://www.reddit.com/r/LocalLLM/comments/1p1xy0q/my_journey_to_finding_a_use_case_for_local_llms/)
+  - I have a lot of phone pictures of recipes, and a lot of inherited cookbooks. The thought of gathering the ones I really liked into one place was daunting. The recipes would get buried in mountains of photos of cats (yes, it happens), planes, landscapes etc. Google photos is pretty good at identifying recipe images, but not the greatest.
+  - I landed on qwen3-vl:8b. It was able to take the image (with very strict prompting) and output the exact text from the image. I did have to verify and do some editing here and there. I was happy
+  - I then turned to GPT-OSS:20b since it is newer, and asked it to convert the recipe text to json-ld recipe schema compatible format.
+  - Now I can take a pic of any recipe I want, run it through the qwen-vl:8b model for OCR, verify the text, then have GPT-OSS:20b spit out json-ld recipe schema text that can be imported into the mealie database. (And verify the json-ld text again, of course).
+  - I'm not using any system prompts at this time. Here is the prompt
+
+- You could now take this even further and query it with a prompt on your cell phone.
+
+- My use case is that I use local vlm to the content of the download file, then rename following the format I define and use bash script to route it to the its dedicated folder. Now every time a file is downloaded, it is renamed and route to its location automatically.
 # discuss-local-llm-xp/tips
 - ## 
 

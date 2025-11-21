@@ -54,6 +54,17 @@ modified: 2025-11-06T18:49:13.977Z
 - ## 
 
 - ## 
+
+- ## LlamaIndex - We’ve written a new blog post on the specific areas in which LLMs are useful for document OCR - beyond the naive answer of “screenshot everything into a VLM”
+- https://x.com/jerryjliu0/status/1991624512656535664
+  - Existing techniques were hand-tuned, brittle/didn’t generalize, and lacked general semantic understanding
+  - LLMs are helpful for zero-shot semantic layout reconstruction
+  - VLMs are helpful for both visual layout understanding as well as specialized element understanding (tables, charts)
+  - So LLMs and VLMs are both more general and zero-shot. By themselves they don’t solve PDF parsing, but the trick is to incorporate them in targeted ways as part of this next-gen OCR pipeline.
+
+- LLMs and VLMs aren’t magic alone but combining them smartly really moves the needle for document parsing
+
+- How do you solve the issue of "off by one row" kind of problems when there is a table in page and the rows are kinda close to each other?
 # discuss-tips
 - ## 
 

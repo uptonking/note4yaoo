@@ -1561,6 +1561,35 @@ curl http://localhost:11434/api/chat -d '{
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🆚 [Has vLLM made Ollama and llama.cpp redundant? : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1mb6i7x/has_vllm_made_ollama_and_llamacpp_redundant/)
+- vLLM: Extremely well optimized code. Made for enterprise, where latency and throughput is the highest importance. 
+  - Only loads a single model per instance. 
+  - Uses a lot of modern GPU features for speedup, so it doesn't work on older GPUs. 
+  - It has great multi-GPU support (spreading model weights across the GPUs and acting as if they're one GPU with combined VRAM). 
+  - Uses very fast caching techniques (its major innovation being a paged KV cache which massively reduces VRAM usage for long prompt contexts). 
+  - It pre-allocates 90% of your VRAM to itself for speed regardless of how small the model is. 
+  - 🐛 It does NOT support VRAM offloading or CPU-split inference. It's designed to keep the ENTIRE model in VRAM. So if you are able to fit the models in your VRAM, then vLLM is better, but since it was made for dedicated enterprise servers it has the downside that you have to restart vLLM if you want to change model.
+- Ollama: Can change models on the fly and automatically unloads the old model and loads the new one. 
+  - It works on pretty much any GPU. 
+  - It's able to do split inference and RAM offloading so that models which don't fit on the GPU will use offloading and still be able to run even if you have too little VRAM. 
+  - And it's also very easy for beginners.
+- they serve two totally different purposes. Ollama is way better and way more convenient for most home users. And vLLM is way better for servers and people who have tons of VRAM and want the fastest inference. That's it. 
+  - I found a nice post where someone did a detailed benchmark of vLLM vs Ollama. The result was simple: vLLM was up to 3.23x faster than Ollama in an inference throughput/concurrency test
+
+- vLLM has become the inference back-end of choice for the corporate world (Red Hat has based RHEAI on it). Because of that, hardware companies with a vested interest in making inference work well on their hardware have poured engineering-hours into making it maximally performant for corporate use-cases. It seems like the obvious back-end in which to invest one's time and efforts, if one expects to develop corporate LLM applications for a living.
+  - Meanwhile, llama.cpp is becoming the swiss army pocketknife of LLM inference, the neatly self-contained do-it-all (with training/finetuning coming back to the project soon). It isn't always the most performant, and it's not great for concurrent inference, but it's very reliable.
+  - vLLM by comparison is not very self-contained. It has many sprawling external dependencies, which can make it difficult to get working. 
+
+- Does vLLM support switching models on the fly yet? if not, that’s a very important feature
+  - That's a really good question and it seems the answer is no. I read something saying that vLLM is tightly optimized for high-throughput serving of a single model loaded into memory, using shared KV cache and GPU-accelerated paging (which allows it to support very long input contexts while reducing VRAM usage).
+  - And that it therefore loads 1 model per instance and cannot switch without restarting vLLM.
+
 - ## [Best frontend for vllm? : r/LocalLLaMA _202506](https://www.reddit.com/r/LocalLLaMA/comments/1ldokl7/best_frontend_for_vllm/)
   - I use LM studio for an easy inference of llama.cpp but was wondering if there is a gui for more optimised inference.
 

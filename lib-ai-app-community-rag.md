@@ -631,6 +631,26 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
+- ## 💥 [Best RAG Architecture & Stack for 10M+ Text Files? (Semantic Search Assistant) : r/LangChain _202511](https://www.reddit.com/r/LangChain/comments/1p2klni/best_rag_architecture_stack_for_10m_text_files/)
+  - I am building an AI assistant for a dataset of 10 million text documents (PostgreSQL). The goal is to enable deep semantic search and chat capabilities over this data.
+  - Scale: The system must handle 10M files efficiently (likely resulting in 100M+ vectors).
+  - Updates: I need to easily add/remove documents monthly without re-indexing the whole database.
+
+- Most RAG pipelines suck at two main points processing unstructured data while splitting and context aware retrieval
+
+- [Best RAG Architecture & Stack for 10M+ Text Files? (Semantic Search Assistant) : r/Rag](https://www.reddit.com/r/Rag/comments/1p2kkua/best_rag_architecture_stack_for_10m_text_files/)
+- To get any decent results, you need to build a distributed RAG, if there is such a thing.
+  First create a taxonomy of the assets. This is like Table contents for the entire collection. You can keep this in a graph db.
+  Then build a classifier with positive and negative targets. Use this to classify the query first to determine which groups/clusters of the documents are the best to use. Once you know the target collections you can focus only on those.
+  You can perhaps supply the classifier as an MCP service to the LLM.
+  For each asset, create a chunking model. Keep in mind, not all documents would fit the same model. Store chunks in a vectordb.
+  Along with chunks, extract entities. Build a BM25S database (relational) with these keywords.
+  Then extract entities and relationships from the documents and build a ER knowledge graph for each of the documents.
+  All databases should have the same metadata to enable reranking or hybridization.
+  How to manage the CDC on the document mountain is another post.
+
+- If you are generating vectors, you can track signatures of your text chunks and reuse vectors if the text chunk didn't change. That saves you cost of new vectors when you reindex.
+
 - ## [Stop fine-tuning your model for every little thing. You're probably wasting your time. : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1ov7ogq/stop_finetuning_your_model_for_every_little_thing/)
   - confession time. I just wasted three weeks and a chunk of my compute budget trying to fine-tune a model to answer questions about our internal API. The results were... mediocre(平庸的；普通的；不够好的) at best. It kinda knew the stuff, but it also started hallucinating in new and creative ways, and forgot how to do basic things it was good at before.
   - I feel like "fine-tuning" has become this default magic wand people wave when an LLM isn't perfect. But 80% of the time, what you actually need is RAG

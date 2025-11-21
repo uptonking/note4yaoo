@@ -25,10 +25,14 @@ modified: 2025-11-19T17:50:09.072Z
   - ?
 
 - mermaid-models
+  - qwen3-14b和qwen3-vl-30b的效果非常接近, 但30b的速度高达42tops, 14b的速度只有11tops
   - https://huggingface.co/mermaidchart/models
   - https://huggingface.co/mermaidchart/merged-mermaid-7b  /202509
 # draft
 - streamable chart spec: 类似mermaid支持逐步添加关系, 可逐步添加折线/条形/扇形
+
+- mermaid-editor browser extension, like markdown-viewer
+  - 现有的浏览器扩展不支持 mermaid.live 官方网站的新图形或新特性
 
 - themes/styleing
   - ppt-shapes

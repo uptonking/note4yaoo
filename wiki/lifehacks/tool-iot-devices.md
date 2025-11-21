@@ -202,7 +202,6 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-
 - ## [Macbook pro 128gb RAM owners, whats the best AI you're running for reasoning & knowledge? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p0yu23/macbook_pro_128gb_ram_owners_whats_the_best_ai/)
 - GLM-4.5-Air
   - minimax is next to it but it’s hard to fit in the good quant. 
@@ -1780,6 +1779,47 @@ modified: 2022-01-16T15:52:31.293Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 🏠🤔 [1x 6000 pro 96gb or 3x 5090 32gb? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p2540n/1x_6000_pro_96gb_or_3x_5090_32gb/)
+- 1x 6000 not 3x 5090. 
+  - A single chunk of vram is always better than a divided one - unless your intention is to run multiple concurrent small models, then the 5090s give you more compute. 
+  - And Epyc 9xxx over Threadripper for more ram channels, as long as you go for the high clockspeed versions (F). Go for 9575F, 64 cores, high clockspeed, 12 channels. Only disadvantage is having to use a server board.
+- RTX 6000 Pro has the ability to split into (up to) 7 independent virtual graphics cards. There is really no advantage to 3x 5090.
+  - There is. Since if you run TP, then those 2x 5090s can be faster. The 3rd 5090 will have to wait for a partner.
+- That is absolutely wrong. Maybe because you havent used vLLM in tensor parallel and only have used llama.cpp or Ollama? 2x5090 or 4x5090 is way faster than 1x rtx 6000 if used in tensor parallel (which Ollamas and other hoobyist inference engines cant do)
+
+- people dont realize that bandwidth between GPU and memory IS the bottleneck. a model can not load efficiently into separate cards. you end up with three tines only 32gb usable memory
+  - No, thats not true. In tensor parallel 2 or 4 pcie 5.0 16x is enough for most of the tasks. So 2 or 4 5090 connected with pcie 5.0 16x is enough fast pcie link between gpus. I have tested this and was never able to fill the full bandwidth totally. The speed does not increase lineary but 2nd gpu gives 60% more inference speed when enough simultaneous requests.
+
+- Can’t -tp 3 with vllm
+  - Pp3(Pipeline parallelism w 3 cards) works fine and is better with consumer gpus anyways since it requires less communication between cards. Data center card are connected with infinity band so tp is better
+
+- I have 3x 5090 and 1x Pro 6000 as well as a Threadripper with 512GB RAM (and a second Threadripper and 3 3090), and my recommendation for running LLMs of that size locally is: Don't.
+  - At least don't expect it to be good value or fast. 
+  -  I use local for parallel workloads. 10k t/s throughput - now we are talking.
+
+- A lot of people here are assuming the 5090 behaves like a normal single-GPU setup. It doesn’t — not with the current software stack.
+  - If your workload needs contiguous VRAM (anything 70B+, large context, MoE with large expert blocks, diffusion XL, video gen, etc.), a single 96 GB slab always beats 3× 32 GB islands, regardless of raw TFLOPs.
+  - Multi-GPU only wins if you’re bulk-processing smaller jobs in parallel. 
+
+- why I vote Epyc instead of Threadripper:
+  - The higher singlethread perf of Threadripper isnt worth the extra cost.
+  - EPYC DDR4 platform could save you a couple thousand over DDR5. 
+- Why RtX 6000 Pro and not 3x5090:
+  - The convenience and simplicity of a having 1 x GPU with less wiring and less grief with management and maintenance, PCIE risers and cases and PSU selections and power draw etc its worth the little bit extra spend. (Plus with 3x GPU you cant use tensor parallel in VLLM)
+
+- I have both a 6000 Pro (typically using llama.cpp) and a 2x3090 setup (using vllm). 
+  - 3 is an awkward number since I don't think you can run tensor parallel. Moving to 4 you'd definitely want the Epyc/TR/Xeon4+ type platform and may need things like PCIe extensions and a mining rig chassis, etc.
+  - If you are just using naive layer splitting (llama.cpp) you only really get the speed of what a single 5090 bandwidth is limiting you to and poor GPU utilization, and you should think seriously about getting sufficient PCIe lanes/bandwidth to a power of 2 number of GPUs (2, 4, 8) to use tensor parallel in VLLM if you are messing with this as it unlocks utilizing all the GPUs more fully. I also tested llama.cpp on the 2x3090 setup but it was substantially slower than using vllm with tensor parallel and GPU utilization hovers around 50%, which is sort of expected, still taking full power according to nvtop. VLLM with tensor parallel I peg both GPUs and even setting them down all the way to ~200W costs very little performance. I'd probably want to confirm with power draw at the wall but I think this is ultimately very wasteful not to try to use tensor parallel plus the massive performance difference.
+  - tldr: as a RTX 6000 enjoyer myself having also worked on multi-gpu setups, I'd probably push you more toward 3x5090, then you have a good upgrade path later if you want to Epyc/TR + 4x5090 and that will ultimately be far superior and at least roughly similar in total cost. It is more complicated, you need to move off llama.cpp to vllm, you need a giant mining chassis and maybe PCIe extensions, more PSUs (even if you set power down, you need to physically connect everything), etc. One RTX 6000 is "simpler."
+
+- Also, come the future selling 5090s will be easier than a single 6000.
+
+- 5090s will give ~3x the heat, ~3x the power, ~3x the memory bandwidth, ~3x the flops and will require ~3x the physical space.
 
 - ## [Ollares one: miniPC with RTX 5090 mobile (24GB VRAM) + Intel 275HX (96GB RAM) : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1ov3x0m/ollares_one_minipc_with_rtx_5090_mobile_24gb_vram/)
   - Processor: Intel® Ultra 9 275HX 24 Cores, 5.4GHz
