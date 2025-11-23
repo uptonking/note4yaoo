@@ -1557,7 +1557,12 @@ curl http://localhost:11434/api/chat -d '{
 
 - Is it some kind of electron app bundled with llama.cpp? Can it be used as a web UI over network?
 # discuss-vllm
-- ## 
+
+```shell
+vllm serve google/gemma-3-270m  --max-num-batched-tokens 32768 --chat-template /Users/yaoo/Documents/opt/configs/llm/chatemplates/template_chatml.jinja
+
+vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model-len 28000
+```
 
 - ## 
 
@@ -1566,6 +1571,10 @@ curl http://localhost:11434/api/chat -d '{
 - ## 
 
 - ## 
+
+- ## ValueError: To serve at least one request with the models's max seq len (60000), (8.24 GiB KV cache is needed, which is larger than the available KV cache memory (4.00 GiB). 
+  - Based on the available memory, the estimated maximum model length is 29056. 
+  - Try increasing `gpu_memory_utilization` or decreasing `max_model_len` when initializing the engine.
 
 - ## 🆚 [Has vLLM made Ollama and llama.cpp redundant? : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1mb6i7x/has_vllm_made_ollama_and_llamacpp_redundant/)
 - vLLM: Extremely well optimized code. Made for enterprise, where latency and throughput is the highest importance. 

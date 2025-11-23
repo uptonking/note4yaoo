@@ -69,6 +69,10 @@ modified: 2021-05-23T18:45:59.139Z
   - [添加 DeepAnalyze 详细部署教程文档_基于MacBook Air M4 · ruc-datalab/DeepAnalyze](https://github.com/ruc-datalab/DeepAnalyze/pull/16)
   - ❓ ai分析玩数据的结果如 `final_result.to_csv('category_price_performance.csv', index=False)` 在本地找不到保存的文件
     - 是否通过sandbox进行文件io
+  - 替代方案
+  - https://github.com/modelscope/ms-agent/blob/main/projects/fin_research/analyst.yaml
+    - You are a professional Data & Financial Analysis Agent operating inside an isolated Docker sandbox
+    - You solve analytic tasks through systematic tool usage and step-by-step reasoning.
 
 ## viz-charting
 

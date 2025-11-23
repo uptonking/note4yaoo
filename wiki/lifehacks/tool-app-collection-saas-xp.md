@@ -568,7 +568,7 @@ sudo systemctl start minidlna
     - [宝可梦机场 关于免费线路升级通知 ](https://linux.do/t/topic/1063626)
     - L站每月发放兑换码
     - 美区经常不可用
-  - [风萧萧公益机场](https://gucci.weyolo.com/#/dashboard)
+  - [风萧萧公益机场](https://chanel.weyolo.com/#/dashboard)
     - 需要 lv2 + 不定时优惠券
   - 🌹 [马铃薯](https://mlshu.com/)
     - 免费流量：50G（每月重置）， 可无限续杯
@@ -628,6 +628,10 @@ sudo systemctl start minidlna
     - 免费机场公益机场收集/免费vpn-定时更新
   - https://github.com/DiningFactory/panda-vpn-pro
     - 购买两三个机场足矣，不要贪多，且不要年付（即使有活动也不建议年付）
+
+- 感谢提供公益的科学上网工具，让我有更多机会查看新信息、新知识
+  - 我日常主要用来逛 L站/reddit/twitter 这些社交论坛，使用频率适中，很少看youtube视频
+  - 我本人购买过搬瓦工，但有时也不稳定，所以想用公益机场作为备用
 
 - [风萧萧公益机场再度开放 ](https://linux.do/t/topic/1083315)
   - 注册限制：需要达到 信任等级 2 或以上

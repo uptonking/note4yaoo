@@ -83,10 +83,11 @@ modified: 2022-11-11T10:46:41.519Z
     - I want to keep it for free for individuals, but there's a paid service for companies
     - I am resting on the shoulders of giants: I used every possible help (read open source work from others) and combined them into the result you're able to use. So I haven't luckily had to spend a lot of time dealing with the complexity of PDFs.
 
-- https://github.com/tabulapdf/tabula /js
+- https://github.com/tabulapdf/tabula /MIT/201802/js/inactive
   - http://tabula.technology/
   - Tabula is a tool for liberating data tables trapped inside PDF files
   - Tabula only works on text-based PDFs, not scanned documents
+  - Tabula allows you to extract that data in CSV format, through a simple web interface.
 # examples
 - https://github.com/xitanggg/open-resume /AGPLv3/202308/ts
   - https://open-resume.com/

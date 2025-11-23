@@ -1520,6 +1520,9 @@ modified: 2025-08-23T11:43:35.904Z
     - The AI Horde is a free community service that lets anyone create AI-generated images and text.
     - AI Horde lets volunteers share their computer power through workers to help others create AI art and writing.
     - When you make a request - like asking for "a painting of a sunset over mountains" - the AI Horde system finds available volunteer computers that can handle your job.
+
+- https://github.com/dwrodri/ComfyUI-headless /202401/inactive
+  - A fork of ComfyUI with better support for headless execution
 # sd-ui/webapp
 - https://github.com/ImDarkTom/ComfyUIMini /288Star/AGPL/202501/ts/inactive
   - A mobile-friendly WebUI to run ComfyUI workflows.

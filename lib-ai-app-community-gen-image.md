@@ -223,7 +223,7 @@ modified: 2025-08-16T14:12:24.416Z
 - I usually want the best image possible on the initial text to image generation; then maybe inpaint pre-upscale if its something major; then upscale to inpaint small details for a final image
 
 - As few steps as possible. Ideally it’s one generation plus an upscale. Things break when sd doesn’t have the full freedom to draw a completely new image on a blank canvas, even more so when you’re not using the base models preferred dimensions (512 etc)
-# discuss-comfyui/sd ⛓️🖼️
+# discuss-toolchain-comfyui/sd ⛓️🖼️
 - https://github.com/nerdyrodent/AVeryComfyNerd
   - A variety of ComfyUI related workflows
   - https://github.com/nerdyrodent/AVeryComfyNerd/blob/main/workflows/SDXL/SSD1B-SDXL-8GB.png
@@ -312,7 +312,18 @@ modified: 2025-08-16T14:12:24.416Z
 
 - ## 
 
-- ## 
+- ## [What is the Ollama or llama.cpp equivalent for image generation? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p3ntta/what_is_the_ollama_or_llamacpp_equivalent_for/)
+- Technically stable-diffusion.cpp is the "equivalent" to llama.cpp.
+  - But its slower and supports fewer capabilities than the undisputed number one project ComfyUI.
+  - You can run Comfy headless, so thats likely the thing you want
+- Comfy supports the most models by quite a margin compared to other UIs or solutions.
+
+- ComfyUI has an API.
+  - A1111 also has an API
+
+- Actually custom python scripts are very easy to do. Almost every model readme includes a code snippet on how to use it, and that usually works out of the box. And for image models I found it to be performant enough.
+
+- diffusers + torchao, not sure what your beef with a script is. aside from the import, it's like 4 lines of code
 
 - ## [Haven’t used SD in a while, is illustrious/pony still the go to or has there been better checkpoints lately? : r/StableDiffusion _202511](https://www.reddit.com/r/StableDiffusion/comments/1osv278/havent_used_sd_in_a_while_is_illustriouspony/)
 - SD1.5 and SDXL are not obsolete - even SD1.5 still has value of being very fast model. It depends on what you want to achieve.

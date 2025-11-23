@@ -250,9 +250,15 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
 - 你是一个专业且友善的 AI 助手。你的回应应该： 1. 使用简体中文回答 2. 当需要展示代码时，使用适当的语法高亮（如 typescript, python, javascript 等） 3. 当需要解释复杂概念时，可以使用 Mermaid 图表 4. 当涉及数学公式时，使用 LaTeX 语法 5. 保持回应简洁明确，适时使用列表和表格来组织信息. 
   - 请按以上要求介绍reactjs前端框架
 
-- the excel contains the sales data for a fictitious company called Northwind Traders, which imports and exports specialty foods from around the world. 
-  - The sales team wants to identify for which month they perform well in 2014.
+- the northwinds excel contains the sales data for a fictitious company called Northwind Traders, which imports and exports specialty foods from around the world. 
+  - The sales team wants to identify for which month they perform well and bad in 2014.
   - please do some data analysis, and give me the result with tables and plots
+
+```
+
+```sh
+
+vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model-len 28000
 ```
 
 - goal-to 增强特色
@@ -264,6 +270,37 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
   - ?
 - dev-to
   - ?
+
+## 1122
+
+- vllm api 400 
+  - As of transformers v4.44, default chat template is no longer allowed, so you must provide a chat template if the tokenizer does not define one.
+  - [[Usage]: run gguf model need template，how to write？ · Issue · vllm-project/vllm _202408](https://github.com/vllm-project/vllm/issues/7978)
+- [vllm启动大语言模型时指定chat_template vllm启动命令-CSDN博客](https://blog.csdn.net/yuanlulu/article/details/142929234)
+- [As of transformers v4.44, default chat template is no longer allowed - Transformers - Hugging Face Forums](https://discuss.huggingface.co/t/as-of-transformers-v4-44-default-chat-template-is-no-longer-allowed/134431)
+
+- 🤔 Value error, max_num_batched_tokens (2048) is smaller than max_model_len (128000). This effectively limits the maximum sequence length to max_num_batched_tokens and makes vLLM reject longer sequences. Please increase max_num_batched_tokens or decrease max_model_len. [type=value_error, input_value=ArgsKwargs((), {'runner_t..., 'stream_interval': 1}), input_type=ArgsKwargs] 
+  - vllm serve LiquidAI/LFM2-350M --max-num-batched-tokens 128000
+  - vllm serve LiquidAI/LFM2-350M --max-model-len 2048
+
+- [[Usage]: why max-num-batched-tokens can smaller than max-model-len · Issue · vllm-project/vllm](https://github.com/vllm-project/vllm/issues/18681)
+  - `max_model_len` refers to the maximun length of a sequence processed by the model, which includes both the input tokens and the output tokens. 
+  - On the other hand,  `max_num_batchd_tokens` in vLLM represents the total length of all sequences in a batch. 
+  - if you set `max_num_batched_tokens` equal to `max_model_len`, the model will have no space left to store the output tokens.
+  - Generally, it is more reasonable to set `max_num_batched_tokens` to about one quarter of `max_model_len`. Not entirely accurate, for reference only.
+
+- [How to Run vLLM on Apple M4 Mac Mini - by Shamsher Ansari _202507](https://aipmbriefs.substack.com/p/how-to-run-vllm-on-apple-m4-mac-mini)
+  - 和官方文档步骤一直，但 vllm --version 输出的信息与本人本地测试不同
+- [Installing vLLM on macOS: A Step-by-Step Guide _202503](https://medium.com/@rohitkhatana/installing-vllm-on-macos-a-step-by-step-guide-bbbf673461af)
+
+- [Dateutil & Pytz missing dependencies - Python - Stack Overflow](https://stackoverflow.com/questions/42193030/dateutil-pytz-missing-dependencies-python)
+  - dateutil can get confused with python-dateutil, try the following:
+  - pip install python-dateutil pytz --force-reinstall --upgrade
+
+- when i buy something, what's the difference betwwen orderDate and requiredDate?
+  - requiredDate = The target date by which the order must be delivered to the customer (or ready for pickup). It's the deadline for the entire fulfillment process.
+- freight is the cost of shipping and handling the goods from the seller's location to your location.
+  - Think of it as a fee for the physical delivery of your order. It's often labeled as "Shipping, " "Shipping & Handling, " or "Delivery Charge" on modern e-commerce websites.
 
 ## 1120
 
