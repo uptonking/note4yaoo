@@ -128,6 +128,10 @@ modified: 2021-05-06T09:39:53.522Z
   - rewrite with codemirror/lezer
   - mdx
 
+- pdf
+  - search pdf
+  - citations from pdf
+
 - collab
   - codemirror in prosemirror: all collaborative
 

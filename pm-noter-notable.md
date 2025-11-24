@@ -10,7 +10,7 @@ modified: 2023-11-28T14:48:45.910Z
 
 > make something people want to pay for futuristically. ~~easy to read， easy to write, content-centric notebook~~
 
-# guide(for notable/noter/paper)
+# guide(for notable/noter/paper(create+search+collab))
 - features
   - 💰 market: lowcode(editor/automation), playground(preview+code+pdf)
   - ⏳ versioning and branching (reproducible/traceable): git-timeline, diff, draft/public

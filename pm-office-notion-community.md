@@ -547,6 +547,10 @@ modified: 2023-11-28T14:48:45.910Z
 
 - ## 
 
+- ## 
+
+- ## 
+
 - ## Now you can build apps with @Replit (frontend) and host all the content in Notion (backend) _202505
 - https://x.com/NotionHQ/status/1920892584987074908
 
@@ -621,6 +625,31 @@ modified: 2023-11-28T14:48:45.910Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [Notion AI chat/research for pdf attachments - best workarounds? : r/Notion _202508](https://www.reddit.com/r/Notion/comments/1mfgw4e/notion_ai_chatresearch_for_pdf_attachments_best/)
+  - I uploaded pdfs and Notion has them in a page as attachments - which is the best it can do I believe (it can't pull out the text and make each PDF a page). But what I am finding - is that Notion AI can't use those PDFs as sources
+  - Notion: while I can identify and reference these uploaded files, I do not have the ability to directly read or extract text content from inside the PDFs themselves in this environment.
+  - If you need insights or summaries from the contents of these PDFs, you would need to provide the text or excerpts you want analyzed, or use a tool that enables direct PDF content extraction. 
+
+- Forget Notion AI and simpy use Notebook LM. It's the best AI for tnis type of research.
+
+- ## [How do y’all handle in-document search (or lack of it) : r/Notion _202507](https://www.reddit.com/r/Notion/comments/1m52l6s/how_do_yall_handle_indocument_search_or_lack_of_it/)
+  - one thing keeps me in Devonthink: Notion’s inability to search inside any kind of document. Not even OCR’d PDF files.
+
+- have you considered Obsidian? It works great with iCloud folders (if that's what you mean by macOS integration), and combined with a plugin like Omnisearch should do exactly what you want.
+
+- Content of embedded PDFs (/pdf - embed) are searchable, but attached pdfs are not. Also, I have Google Drive connected to Notion and in Research mode, Notion AI will search within PDF content stored in Google Drive. This might help illustrate how embedded PDFs work with Notion AI
+
+- ## [PDF search with Notion 2.51 : r/Notion _202505](https://www.reddit.com/r/Notion/comments/1kras5y/pdf_search_with_notion_251/)
+- From what I can read, they can only be read through using AI credits.
+  - PDFs have always been the major weakness in Notion. And the main reason I have been staying with Evernote for many of my use cases.
+
+- ## [Notion AI unable to search embedded pdfs : r/Notion _202410](https://www.reddit.com/r/Notion/comments/1gbmfsm/notion_ai_unable_to_search_embedded_pdfs/)
+- It would be nice if we could have an experience similar to Google's NotebookLM, not just for PDFs, but for all file types, including videos and images.
+
+- Unfortunately I think this would be a huge amount of compute to do for their whole user base.
 
 - ## Notion 的数据库竟然不支持粘贴图片
 - https://x.com/oran_ge/status/1916027755122332065
