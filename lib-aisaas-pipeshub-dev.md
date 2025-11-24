@@ -16,6 +16,7 @@ modified: 2025-11-16T15:34:02.881Z
     - AGI内容中包含知识库中的内容引用，点击时能自动打开原文pdf并高亮原文位置
   - 支持使用本地llm, 包括ollama/lmstudio
   - create custom apps and AI agents using a No-Code interface
+  - graph: All data is structured into a powerful knowledge graph
   - Modular & Scalable Architecture – Every service is loosely coupled to scale independently
   - 支持上传本地文件: pdf, docx, xlsx, csv, markdown, images, audio, video
   - 官方提供很多外部数据源的集成: google-drive/gmail/docs, OneDrive, slack, notion, airtable, github
@@ -25,6 +26,7 @@ modified: 2025-11-16T15:34:02.881Z
   - AGI内容只包含知识库中的内容，不包含llm自身知识，经常拒绝用户 I cannot answer your query
   - ai回复的内容简短不够丰富，体验不如 SurfSense
   - ai思考时间过长, 界面上没有交互反馈
+  - 💥 本地lmstudio, 无法embedding大文档
   - 架构复杂，依赖 kafka
   - 未实现online search集成，如tavily/exa/SearxNG
   - roadmap
@@ -41,6 +43,7 @@ modified: 2025-11-16T15:34:02.881Z
   - Real-Time or Scheduled Indexing – Index data as it flows or schedule it to run exactly when you need
   - Source-level permissions ensure every document is shown only to those who are authorized
   - 基于langchain/langgraph实现
+  - 能以用户提问的语言回复用户
 
 - SurfSense
   - 架构简单，依赖不多, 主要依赖PGVector/Redis
@@ -86,6 +89,9 @@ modified: 2025-11-16T15:34:02.881Z
 - 
 
 # dev-xp
+- 💥 无法embedding大文档, 本地lmstudio提示
+  - [lmstudio-llama-cpp] Error in predictTokens: The number of tokens to keep from the initial prompt is greater than the context length. Try to load the model with a larger context length, or provide a shorter input
+
 - 使用本地model时，不要使用global proxy, lmstudio/langchain存在问题
 
 - 
@@ -171,8 +177,22 @@ uv run python -m app.docling_main
 - 
 - 
 - 
-- 
-- 
+
+# SurfSense
+- pros
+  - 通过LiteLLM的配置支持本地Ollama/LMStudio
+
+- cons
+  - citation点击后查看的事chunk文本, 体验不如pdf
+  - 上传pdf后不支持查看pdf原文, sources中保存的数据是处理过的文本内容, citation
+  - 聊天对话不支持流式输出，等待时间较长
+  - 不能以用户提问的语言回复用户
+  - 整个回复内容有时citation的编号都是同1处
+
+## draft
+
+- 是否使用了本地embedding
+
 - 
 - 
 - 

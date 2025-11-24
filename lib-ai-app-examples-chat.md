@@ -531,8 +531,10 @@ modified: 2025-03-22T18:49:15.634Z
   - Save content from your own personal files (Documents, images, videos and supports 50+ file extensions) to your own personal knowledge base .
   - ⛓️ Get Cited answers just like Perplexity.
   - Works Flawlessly with Ollama local LLMs.
+    - 🐛 embedding模型必须使用azure, 不支持本地模型
   - 后端: FastAPI, SQLAlchemy, pgvector, LangGraph, LangChain, Hybrid Search, Rerankers, Redis
   - 前端: next, Vercel AI SDK Kit UI Stream Protocol, Shadcn, Framer Motion, React Hook Form, tanstack/table
+  - 依赖chonkie对doc进行embedding
   - ETL Service (choose one)
     - Docling (local processing, no API key required, supports PDF, Office docs, images, HTML, CSV)
     - LlamaIndex API key (enhanced parsing, supports 50+ formats)
@@ -544,6 +546,9 @@ modified: 2025-03-22T18:49:15.634Z
   - https://discord.com/channels/1359368468260192417/1359416865939787837/1409642464792412220
     - I was considering installing Surfsense but it needs API keys, doesn't it? How much does it cost to use it?
     - Every service has a local alternative other than Speech to Text service. No need to put any API keys if you use everything local.
+  - https://discord.com/channels/1359368468260192417/1359416891831222362/1437030441910669403  _202511
+    - how does embedding work for large documents (not chunks)  if my embedding model’s context window is only 256 or 512 tokens, but the document is tens of thousands of tokens long? 
+    - We generate embedding of the summary of doc.
 
 - https://github.com/lfnovo/open-notebook /10.2kStar/MIT/202511/python/ts/提交少
   - https://www.open-notebook.ai/

@@ -283,6 +283,11 @@ VLLM_LOGGING_LEVEL=debug VLLM_CONFIGURE_LOGGING=1 vllm serve RUC-DataLab/DeepAna
 
 ## 1124
 
+- [LM Studio | liteLLM](https://docs.litellm.ai/docs/providers/lm_studio)
+  - Provider Route on LiteLLM	`lm_studio/`
+
+- [Bug: `AutoEmbedding` routing fails for OpenAI's `text-embedding-3-large` (match error) · Issue · chonkie-inc/chonkie](https://github.com/chonkie-inc/chonkie/issues/116)
+
 - when i run `uv run python -m spacy download en_core_web_sm `, the error is ``` /Users/yaoo/Documents/repos/libfwk/ai-llm/pipeshub-ai/backend/python/.venv/bin/python3: No module named pip ``` - how can i run it
 
 ```sh
