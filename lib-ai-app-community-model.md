@@ -112,7 +112,18 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
-- ## 
+- ## [Experimenting with Multiple LLMs at once? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p4pre3/experimenting_with_multiple_llms_at_once/)
+- I do mostly coding, so different families of models get wildly different python training data. Having each do the same coding task and then have another model pick the best components of the script for a new third script works really well.
+  - Open web UI also has channels, which is a discord style chat room. You can tell the models you have to collaborate with each other on a project and they will take turns with sections of code.
+
+- I had them do a few rounds of back and forth checking each other's work. It produced noticably better results than either model could on their own - but the time it took made it pointless. It was faster to just use a larger/slower model, allow a reasoning model to go nuts with thinking tokens, or just iterate myself. 
+  - For tasks that aren't time sensitive there's some value there. 
+
+- I like the idea of this and have experimented. I don’t have a great way to have them collaborate in real time, but using two to check each others work just seems smart to me.
+
+- Andrej Karpathy just posted about a vibe coded project he did called LLM Council that seems pretty cool: https://github.com/karpathy/llm-council
+
+- Here's mine: GitHub.com/irthomasthomas/llm-consortium It's cli based but you can also save a multi-model consortium and use it like a regular model. Then you can use llm-model-gateway to serve that on a openai proxy and use it like a normal model in your tools.
 
 - ## [Instead of either one huge model or one multi-purpose small model, why not have multiple different "small" models all trained for each specific individual use case?   r/LocalLLM _202511](https://www.reddit.com/r/LocalLLM/comments/1ovsb2x/instead_of_either_one_huge_model_or_one/)
 - This is already how MoE (Mixture of Experts) models work. There are plenty of them on huggingface, though I think the separation of the 'experts' often isn't quite so clean. You also have to consider some other things -- your 20B param 'python only' expert model is almost unusable if it doesn't also understand variable names and comments and instructions in natural language, there does have to be some baseline knowledge to make a coding model actually useful, not *just* code in the training data.

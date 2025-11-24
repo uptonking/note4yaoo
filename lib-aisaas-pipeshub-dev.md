@@ -13,15 +13,16 @@ modified: 2025-11-16T15:34:02.881Z
 - pros
   - license: apache2
   - 🔗 insights with citations: traceable source in every answer combined with confidence scores
+    - AGI内容中包含知识库中的内容引用，点击时能自动打开原文pdf并高亮原文位置
   - 支持使用本地llm, 包括ollama/lmstudio
-  - AGI内容中包含知识库中的内容引用，点击时能自动打开原文pdf并高亮原文位置
   - create custom apps and AI agents using a No-Code interface
   - Modular & Scalable Architecture – Every service is loosely coupled to scale independently
   - 支持上传本地文件: pdf, docx, xlsx, csv, markdown, images, audio, video
   - 官方提供很多外部数据源的集成: google-drive/gmail/docs, OneDrive, slack, notion, airtable, github
 
 - cons
-  - AGI内容只包含知识库中的内容，不包含llm自身知识，经常拒绝用户 I cannot answer your query 
+  - AGI内容只包含知识库中的内容，不包含llm自身知识，经常拒绝用户 I cannot answer your query
+  - 架构复杂，依赖 kafka
   - ai回复的内容简短不够丰富，体验不如 SurfSense
   - 未实现online search集成，如tavily/exa/SearxNG
   - roadmap
@@ -37,6 +38,22 @@ modified: 2025-11-16T15:34:02.881Z
   - 使用 arangodb 实现图结构的数据关系逻辑
   - Real-Time or Scheduled Indexing – Index data as it flows or schedule it to run exactly when you need
   - Source-level permissions ensure every document is shown only to those who are authorized
+  - 基于langchain/langgraph实现
+
+- SurfSense
+  - 架构简单，依赖不多, 主要依赖PGVector/Redis
+  - file formats (Documents, images, videos and supports 50+ file extensions)
+  - External Sources: Tavily, SearxNG, Slack, Linear, Jira, Notion
+  - Powerful Search
+  - Get Cited answers just like Perplexity
+  - Local LLM Support
+  - 提供了浏览器扩展
+  - fast podcast generation agent. (Creates a 3-minute podcast in under 20 seconds.)
+  - Advanced RAG Techniques
+    - Uses Hierarchical Indices (2 tiered RAG setup).
+    - Supports all major Rerankers (Pinecode, Cohere, Flashrank etc)
+    - Utilizes Hybrid Search (Semantic + Full Text Search combined with Reciprocal Rank Fusion).
+  - Work together effortlessly with real-time collaboration
 # not-yet ❓
 - 为何启动后端要在4个terminal运行4个端口不同的服务, indexing/query/docling/connectors
   - 为什么不是一个api，然后使用4个不同的route url
@@ -85,6 +102,7 @@ docker run -d --name kafka --link zookeeper:zookeeper -p 9092:9092 \
 uv run python -m spacy download en_core_web_sm
 uv run python -c "import nltk; nltk.download('punkt')"
 
+# 限制python版本 `requires-python = ">=3.10,<3.11"`
 # Run each service in a separate terminal
 uv run python -m app.connectors_main
 uv run python -m app.indexing_main

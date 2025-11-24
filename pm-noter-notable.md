@@ -28,6 +28,7 @@ modified: 2023-11-28T14:48:45.910Z
   - local-first storage with optional sync: 兼容git-commits, 浏览器多tab在断网时sync
   - office viewer
   - 👾 产品设计阶段可将 AI 作为用户，用来onboarding引导操作及问答，还可以在系统内预置数据并将owner设为AI，可用来提供模版及引导用户测试
+  - search/chat for static-sites/note-taking/papers
 
 - selling-point-knowledge-base
   - 通用或单一的builder价值不大，但针对业务平台特别是app-store的builder对平台方和开发者的价值都很大
@@ -162,6 +163,11 @@ modified: 2023-11-28T14:48:45.910Z
   - mandroid (from android+manus)
 
 ## inspirations
+
+- willing-to-pay
+  - obsidian-bases
+  - notebooklm: doc search with citations
+  - DeepAnalyze: data analysis automation; + mermaid
 
 - obsidian-mobile, notion-mobile
   - obsidian-open-rewrite compatible with obsidian plugin, 主流插件已达到百万下载

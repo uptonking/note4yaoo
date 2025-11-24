@@ -200,7 +200,15 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## 🏠 [Most Economical Way to Run GPT-OSS-120B for ~10 Users : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p4evyr/most_economical_way_to_run_gptoss120b_for_10_users/)
+- A quad of 3090s will get you there cheapest, assuming you have a way of mounting four 3-slot GPUs in a reasonably secure manner! It’s probably going to need a bunch of PCIe riser cables and a mining frame to accommodate the space, noise and cooling requirements… you’d have 1500W of GPU alone!
+
+- 4x 3090 with vLLM
+
+- What's your use case? Are you running documents through it (RAG)? or just Q&A to the base model?
+  - If its the latter, you mainly need something with sufficient VARM. As once the model its loaded in VRAM it can server multiple users. I'm running 20B on RTX 4090. For 120B you can do it on 4x 3090
+
+- 3 x Radeon R 9700 AI PRO 32 GB = 96 GB total mit Vulkan. Cards will be around 4K USD. Then u need some reasonble CPU and some 128 GB RAM.
 
 - ## [Macbook pro 128gb RAM owners, whats the best AI you're running for reasoning & knowledge? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p0yu23/macbook_pro_128gb_ram_owners_whats_the_best_ai/)
 - GLM-4.5-Air
@@ -1782,7 +1790,27 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## 🆚 [V100 vs 5060ti vs 3090 - Some numbers : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1p4b6ti/v100_vs_5060ti_vs_3090_some_numbers/)
+- Speed specs put the 3090 in first place in raw compute
+  - 3090 - 35.6 TFlops FP16 (936Gb/s bandwidth)
+  - V100 - 31.3 TFlops FP16 (897 Gb/s bandwidth)
+  - 5060ti - 23.7 TFlops FP16 (448 Gb/s bandwidth)
+- Machines:
+  - 8x V100 SXM2 16G. This was the machine that I started on Vast with. Picked it up post ETH mining craze for dirt cheap. 2x E5-2690 v4 (56 threads) 512G RAM
+  - 8x 5060ti 16G. Got the board and processors from a guy in the CPU mining community. Cards are running via MCIO cables and risers - Gen 5x8. 2x EPYC 9654 (384 threads) 384G RAM
+  - 4x 3090, 2 NVLINK Pairs. Older processors 2x E5-2695 v3 (56 threads) 512G RAM
+- Ran llama-bench with llama3.1 70B Instruct Q4 model with n_gen set to 256 (ran n_prompt numbers as well but they are just silly)
+
+| Card    | T/s   | Relative | TFlops | Relative |
+|---------|-------|----------|--------|----------|
+| 3090    | 19.09 | 100%     | 36.6   | 100%     |
+| V100    | 16.68 | 87.4%    | 31.3   | 87.9%    |
+| 5060ti  | 9.66  | 50.6%    | 23.7   | 66.6%    |
+
+- llm generation mostly scale with memory bandwidth rather than compute capability, for dense mode, if u use vllm and enable tensor parallel, u will get double that speed
+- TG numbers do not depend much on compute capacity but almost completely on memory bandwidth
+
+- Need prompt processing speed. Batch speeds. Tensor parallelism? Just post the raw llama bench tables and settings you used to run it. Also would be useful to have power numbers.
 
 - ## 🏠🤔 [1x 6000 pro 96gb or 3x 5090 32gb? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p2540n/1x_6000_pro_96gb_or_3x_5090_32gb/)
 - 1x 6000 not 3x 5090. 

@@ -9,6 +9,11 @@ modified: 2025-11-06T18:49:13.977Z
 
 # guide
 
+- leaderboard
+  - [SpatialBench - AI Spatial Reasoning Benchmark](https://spicylemonade.github.io/spatialbench/)
+    - Evaluating multimodal model performance on complex 3D and 2D spatial tasks.
+    - https://github.com/spicylemonade/spatialbench
+    - designed to evaluate the next generation of multimodal AI models on their ability to reason about space, structure, and pathing
 # models-vlm/ocr
 - qwen3-vl-4b
   - 适合作为通用图片文字识别方案，识别完后一般还会解释一段，有时解释文字会冗长

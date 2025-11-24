@@ -16,6 +16,10 @@ modified: 2024-09-08T20:08:16.088Z
 - cons
   - extra infra like vectordb/retrive-api
 
+- who is using #PGVector
+  - SurfSense
+  - colanode
+
 - usecases-rag
   - long-docs/pdf
   - chat-history
@@ -29,8 +33,13 @@ modified: 2024-09-08T20:08:16.088Z
     - top202509: gemini-embedding-001, embeddinggemma-300m, Qwen3-Embedding-8B/4B/0.6B, linq-mistral, jina, granite, nomic
     - 👷实测, embeddinggemma在Ollama结果差, 在LM Studio结果还行 ~~在 similaritySearch 时很差~~
       - 跟推荐qwen/granite
+
 - resources
   - [RAG+AI工作流+Agent：LLM框架该如何选择，全面对比MaxKB、Dify、FastGPT、RagFlow、Anything-LLM, 以及更多推荐 - 知乎 _202407](https://zhuanlan.zhihu.com/p/711761781)
+# draft
+- rag as a service(细分市场)
+  - doc-search as a service, for static-sites/note-taking/papers
+  - code-search
 # discuss-stars
 - ## 
 
@@ -629,7 +638,30 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [Which model is good for making a highly efficient RAG? : r/LocalLLM _202506](https://www.reddit.com/r/LocalLLM/comments/1l0pncp/which_model_is_good_for_making_a_highly_efficient/)
+- Founder of agentset here. I'd say the quality of the embedding model + vector db caries a lot more weight than the generation model. We generally found any non trivially small model to be able to answer questions as long as the context is short and concise.
+- What embeddings approach would you recommend?
+  - Most of the working is in the parsing and chunking strategy. Embedding just comes down to choosing a model. If you're doing multi-lingual or technical work, you should go with a big embedding model like text-large-3. If you're doing english only there are plenty of cheaper and lighter weight models.
+
+- Qwen3 14B and Qwen3 32B (crazy good, they fetch, think then provide a comprehensive answer) and those boys are not afraid of follow up questions either.. ask away!
+  - 32B uses citations functions following every statement he says. 14B does not for some reason.. but that does not mean it's bad or anything. Still a very decent RAG AI.
+
+- I found Qwen 3 and Gemma 3 work the best.
+
+- I use Linq-Embed-Mistral because it's high on MTEB. But I haven't compared it with other models.
+
+- [What's the best model for RAG with docs? : r/ollama _202506](https://www.reddit.com/r/ollama/comments/1l9wvnr/whats_the_best_model_for_rag_with_docs/)
+- I've had good success with simple models such as Qwen3 4B using Open WebUI and Ollama. There are probably better RAG backends though (planning to try LightRag).
+  - Basically you need a good embedding engine (try bge-m3, which is actually available through Ollama if that is your poison).
+  - Then you also need a good content extraction engine, to suck out the right information out of your specific type of document. Try Tika, which is working great.
+  - Then you'll need a good re-ranking model to do some magic on the proposal the RAG comes up with. Try BAAI/bge-reranker-v2-m3.
+  - Those are the main things you need.
+  - Then there are some settings of course that you can toy around with (temperature, top k, min probability, for example), but with those main components you'll be able to ask detailed questions.
+  - Then .. depending on your knowledge base, you should structure the data (documents, contents) in a smart way. But if you just want to ask questions on a pdf-specification or such then you'll fine with the above components.
+  - That works for me at least, feeding lots of specifications, requirements, manuals etc. into my system.
+  - Try it out in Open-Webui (frontend and backend solution). It works, but you'll probably want a separate backend solution going forward (with GPU re-ranking support for instance, since it's slow).
+
+- Try out granite3.3:8b - its designed specifically for enterprise tool use & rag. Really slept on & everyone else defaults to the text gen llms, but youll be pleasantly surprised especially since its so efficient your video card would be overkill.
 
 - ## 💥 [Best RAG Architecture & Stack for 10M+ Text Files? (Semantic Search Assistant) : r/LangChain _202511](https://www.reddit.com/r/LangChain/comments/1p2klni/best_rag_architecture_stack_for_10m_text_files/)
   - I am building an AI assistant for a dataset of 10 million text documents (PostgreSQL). The goal is to enable deep semantic search and chat capabilities over this data.

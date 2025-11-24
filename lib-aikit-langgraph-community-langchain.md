@@ -101,9 +101,15 @@ model = init_chat_model(
 
 # discuss
 - ## 
+
 - ## 
+
 - ## 
-- ## 
+
+- ## [How do you test multi-turn conversations in LangChain apps? Manual review doesn't scale : r/LangChain _202511](https://www.reddit.com/r/LangChain/comments/1p2726e/how_do_you_test_multiturn_conversations_in/)
+- Manually reviewing conversation flows doesn’t scale, and static scripts break whenever prompts or context change. Using autonomous testing agents like your Penelope approach is a strong solution, especially when combined with an LLM judge to evaluate outcomes.
+  - Frameworks like CoAgent (coa.dev) complement this by providing structured evaluation, monitoring, and observability for multi-turn interactions. They help teams detect regressions, track context management issues, and ensure agent decisions remain consistent as prompts, tools, and workflows evolve.
+
 - ## [Disadvantages of Langchain/Langgraph in 2025 : r/LangChain _202507](https://www.reddit.com/r/LangChain/comments/1m2skwu/disadvantages_of_langchainlanggraph_in_2025/)
 - As it has always been, the best thing you can do is learn to understand what the tool solves and how that tool particularly solves it. If you know why you would need to use it and how it solves that problem, then pivoting to different system will become just understanding how they specifically do it, as concepts often transfer between tools.
 - Langchain has a lot of features, but honestly, most of them don’t do much for me. The only parts I really like are the abstractions for:

@@ -12,6 +12,10 @@ modified: 2023-02-08T10:47:19.056Z
   - https://open-vsx.org/
   - The Open VSX Registry offers a community driven, fully open platform for publishing and consuming VS Code extensions. 
   - The Registry is built on Eclipse Open VSX
+
+- [vscode.dev(!) _202110](https://code.visualstudio.com/blogs/2021/10/20/vscode-dev)
+  - github.dev is a customized instance of VS Code for the Web that is deeply integrated into GitHub. Login is automatic, the URL format follows github.com's /organization/repo model so that you can simply change .com to .dev to edit a repo, and it is customized for GitHub with the light and dark themes.
+  - VS Code for the Web supports two routes, vscode.dev/github and vscode.dev/azurerepos
 # nice-to-have
 - search-通过ctrl+p搜索文件名时，没有像在左边搜索文字那样方便，左边搜文字时可以一次性展示所有文件及匹配点
 

@@ -250,15 +250,25 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
 - 你是一个专业且友善的 AI 助手。你的回应应该： 1. 使用简体中文回答 2. 当需要展示代码时，使用适当的语法高亮（如 typescript, python, javascript 等） 3. 当需要解释复杂概念时，可以使用 Mermaid 图表 4. 当涉及数学公式时，使用 LaTeX 语法 5. 保持回应简洁明确，适时使用列表和表格来组织信息. 
   - 请按以上要求介绍reactjs前端框架
 
-- the northwinds excel contains the sales data for a fictitious company called Northwind Traders, which imports and exports specialty foods from around the world. 
+- the northwinds excel contains the sales data for a company called Northwind Traders, which imports and exports specialty foods from around the world. 
   - The sales team wants to identify for which month they perform well and bad in 2014.
-  - please do some data analysis, and give me the result with tables and plots
+  - please give me the result with tables and plots
 
 ```
 
+- [guide : running gpt-oss with llama.cpp · ggml-org/llama.cpp · Discussion _202508](https://github.com/ggml-org/llama.cpp/discussions/15396)
+
 ```sh
 
-vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model-len 28000
+# llama-server -m model.gguf --port 8080 --alias name
+./build/bin/llama-server -m ~/.lmstudio/models/mradermacher/merged-mermaid-7b-GGUF/merged-mermaid-7b.Q6_K.gguf 
+
+# llama-cli -m model.gguf -cnv --chat-template chatml
+
+./build/bin/llama-cli -m ~/.lmstudio/models/mradermacher/merged-mermaid-7b-GGUF/merged-mermaid-7b.Q6_K.gguf
+llama-cli -hf ggml-org/gemma-3-1b-it-GGUF
+
+VLLM_LOGGING_LEVEL=debug VLLM_CONFIGURE_LOGGING=1 vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model-len 28000 --enable-log-requests --enable-log-outputs --enable-prompt-tokens-details --uvicorn-log-level debug 
 ```
 
 - goal-to 增强特色
@@ -270,6 +280,13 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
   - ?
 - dev-to
   - ?
+
+## 1123
+
+- By default, vLLM prints a status log every 5-10 seconds.
+  - You can verify your prompt is being processed by looking at the `Avg prompt throughput` value
+- --enable-chunked-prefill
+  - If you are sending very large prompts (e.g., 10k+ tokens) and vLLM seems to "freeze" for a long time before answering, you can enable Chunked Prefill. This breaks the prompt into smaller pieces so the server stays responsive, though it doesn't print a "10%, 20%..." log line.
 
 ## 1122
 

@@ -150,6 +150,10 @@ modified: 2025-03-22T18:23:37.602Z
   - Code for the Youtube video on building excalidraw clone using React and Konva.js
   - [Excalidraw or Figma Clone using React and Konva - YouTube](https://www.youtube.com/watch?v=LXlE1y5PQsk)
 # canvas-drawing
+- https://github.com/ZimengXiong/ExcaliDash /AGPL/202511/ts
+  - A self-hosted dashboard and organizer for Excalidraw with live collaboration features.
+  - 提供了一个清爽的管理界面（仪表盘），永久保存你画的每一张图。你可以搜索、整理文件一样，把不同的画稿拖拽到“收藏夹”里分类
+
 - https://infinitecanvas.tools/gallery/
   - 画板类产品列表
   - The infinite canvas is the foundation of a new class of apps from design tools, to code editors, and workspaces.

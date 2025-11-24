@@ -543,7 +543,7 @@ modified: 2023-01-01T13:24:35.994Z
     - Ocular AI 产品的核心初衷是因为目前各种 SaaS 软件信息查找很困难，这个领域的用户诉求是：
     1. 在工作中快速找到需要的信息：比如任务、文档、Slack threads
     2. 管理复杂的工程工具：比如很多软件、程序的使用文档、日志等
-# search-ai/llm
+# search-ai/llm 👾
 - https://github.com/xynehq/xyne /apache2/202502/ts
   - https://xynehq.com/
   - AI-first Search & Answer Engine for work. Open-source alternative to Glean.
@@ -570,6 +570,12 @@ modified: 2023-01-01T13:24:35.994Z
   - https://www.turboseek.io/
   - AI search engine inspired by Perplexity
   - An open source AI search engine. Powered by Together.ai.
+
+- https://github.com/Ryandonofrio3/osgrep /apache2/202511/ts
+  - Natural-language search that works like grep. Fast, local, and works with coding agents.
+  - Semantic: Finds concepts ("auth logic"), not just strings.
+  - Local & Private: 100% local embeddings via transformers.js.
+  - Adaptive: Runs fast on desktops, throttles down on laptops to prevent overheating.
 # more-search
 - https://github.com/typicode/json-server
   - Get a full fake REST API with zero coding

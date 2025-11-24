@@ -679,7 +679,7 @@ modified: 2025-08-11T08:47:56.335Z
     - Manus 背后最核心的技术 CodeAct 论文发布
     - 让 Agent 自己编写 Tool 然后完成 Tool 的调用，形成强大的自给自足机制
 # langchainjs
-- https://github.com/IBJunior/fullstack-langgraph-nextjs-agent /202509/ts
+- https://github.com/IBJunior/fullstack-langgraph-nextjs-agent /MIT/202511/ts
   - Next.js template for building AI agents with LangGraph.js. 
   - Features MCP integration for dynamic tool loading, human-in-the-loop tool approval, persistent conversation memory with PostgreSQL, and real-time streaming responses. 
   - Built with TypeScript, React, Prisma, and Tailwind CSS.

@@ -98,6 +98,13 @@ modified: 2025-02-26T15:04:15.883Z
 
 ## django-apps
 
+- https://github.com/FarhanAliRaza/django-repl /202511/ts/svelte
+  - https://django.farhana.li/
+  - Experimental - Run Django in your browser using WebAssembly
+  - an experimental browser-based IDE that runs Django using Pyodide (Python in WebAssembly).
+  - This is a first version exploring what's possible with Django in the browser - no server required.
+  - Live Code Editor - CodeMirror-based Python editor with syntax highlighting
+
 - https://github.com/yoonge/conduit-drf /MIT/202406/python
   - Exemplary back-end realworld application (called Conduit) in Python, built with Django + DRF + MySQL + MySQLClient + SimpleJWT, managed by PDM.
   - https://github.com/yoonge/conduit-react

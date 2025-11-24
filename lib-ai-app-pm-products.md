@@ -37,7 +37,8 @@ modified: 2025-03-22T16:10:24.856Z
   - 🤔 能充分利用本地文件系统和命令行的资源，进行数据分析/文件修改/...
   - network agnostic
   - 发挥端侧计算的能力，如总结/查询，而不侧重端侧聊天
-  - mlx的并发端侧计算能力非常强, 多个mlx并行计算
+  - 本地容易实现多种模型的切换和协作，如plan/act/ocr
+    - mlx的并发端侧计算能力非常强, 多个mlx并行计算
   - 📕 local vlm ocr + pdf
 - 🌹 pros-local-ai-mobile
   - 容易通过摄像头获取图像数据
@@ -63,6 +64,12 @@ modified: 2025-03-22T16:10:24.856Z
 
 - markdown-stream
   - table-typewriter
+
+- coding-based ai products
+  - 数据分析类，ai写代码、可视化，由代码驱动
+  - 🐛 由代码驱动方案的缺点
+    - 本地文件数据过大，无法读取完整数据
+    - 数据字段如sales/Sales拼写错误
 
 - 🏠 ai-architecture: 与ai的通信和计算是在前端实现，还是在后端实现
   - 🤔 一种思路: tool-call时使用擅长tool-call的模型，分析时使用公益站的聊天优质但无法tool-call的模型

@@ -471,10 +471,36 @@ modified: 2023-02-08T07:20:48.475Z
   - Free Commercial Use. Starting from April 2024, both V2 and V1 are released under MIT License. 
   - OpenVoice has been powering the instant voice cloning capability of myshell.ai since May 2023. 
   - 即时语音克隆工具，只需从参考资料中截取一段简短的音频即可实现克隆。可详细控制语音风格，包括情感、口音、节奏、停顿和语调。生成多种语言的语音。
+# rag-examples
+- https://github.com/datawhalechina/all-in-rag /202511/python
+  - https://datawhalechina.github.io/all-in-rag/
+  - 大模型应用开发实战一：RAG 技术全栈指南，在线阅读
+  - https://github.com/yksanjo/all-in-rag
 # rag-utils
 - https://github.com/rag-web-ui/rag-web-ui /apache2/202502/python/ts
   - RAG Web UI is an intelligent dialogue system based on RAG
-# rag-search
+# rag-fwk
+- https://github.com/infiniflow/ragflow /68.2kStar/apache2/202511/python/ts/华人团队
+  - https://ragflow.io/
+  - https://demo.ragflow.io/
+  - open-source RAG (Retrieval-Augmented Generation) engine based on deep document understanding
+  - Template-based chunking: Plenty of template options to choose from
+  - Grounded citations with reduced hallucinations
+  - Supports Word, slides, excel, txt, images, scanned copies, structured data, web pages, and more.
+  - Multiple recall paired with fused re-ranking.
+  - 依赖 Crawl4AI、elasticsearch、flask-login、minio、pandas、voyageai、pyobvector
+  - 未使用langchain/aisdk, 多model-provider的集成完全自定义实现
+  - Prerequisites: RAM >= 16 GB
+    - gVisor: Required only if you intend to use the code executor (sandbox) feature of RAGFlow.
+  - 🤔 实测, rag后的chunk文本可查看细节
+    - 聊天的回答中, hover图标能显示引文，并可点击引文后可在页面遮罩侧面弹窗中查看pdf原文位置
+    - 整个 知识库/聊天/查询 的创建及使用交互过于复杂， 不够简洁和自然
+  - [HARD -- Efficient way to use enterprise dataset without uploading all files? _202509](https://github.com/orgs/infiniflow/discussions/10388)
+    - You have to upload the data from Azure to RAGFlow. And currently you can do that through API. From 0.22 which is going to be launched in this Nov, we will provide some data sources and you can ingest data by just click several buttons. And more data sources could be easily added.
+  - [[Question]: Why can't knowledge graphs be used? _202509](https://github.com/infiniflow/ragflow/issues/10017)
+    - Knowledge graphs can’t currently be used with the Table chunking method in RAGFlow. The reason is that table chunking treats each row as a separate chunk and stores field mappings for retrieval, but it does not run those chunks through the knowledge graph extraction pipeline. As a result, entity–relationship extraction is skipped for tables.
+    - If you need a knowledge graph from table data, you’d have to implement a custom post-processing step (e.g., parsing the rows yourself and generating triples).
+
 - https://github.com/chunkhound/chunkhound /118Star/MIT/202509/python
   - https://chunkhound.github.io/
   - Deep Research for Code & Files
@@ -505,9 +531,13 @@ modified: 2023-02-08T07:20:48.475Z
   - A toolkit to create optimal Production-readyRetrieval Augmented Generation(RAG) setup for your data
   - By performing hyperparameter tuning on various RAG parameters (Eg: chunking strategy: semantic, character etc., chunk size: 1000, 2000 etc.), RagBuilder evaluates these configurations against a test dataset to identify the best-performing setup for your data.
 
-- https://github.com/infiniflow/ragflow /apache2/202502/python/ts
-  - https://ragflow.io/
-  - open-source RAG (Retrieval-Augmented Generation) engine based on deep document understanding
+- https://github.com/llmware-ai/llmware /14.5kStar/apache2/202507/python/inactive
+  - https://llmware-ai.github.io/llmware/
+  - a unified framework for building LLM-based applications (e.g., RAG, Agents), using small, specialized models that can be deployed privately
+  - llmware has two main components:
+    - RAG Pipeline - integrated components for the full lifecycle of connecting knowledge sources to ai models
+    - 50+ small, specialized models fine-tuned for key tasks in enterprise process automation, including fact-based question-answering, classification, summarization, and extraction
+  - RAG-Optimized Models - 1-7B parameter models designed for RAG workflow integration and running locally.
 # rag-memory
 - https://github.com/mem0ai/mem0 /apache2/202409/python
   - https://mem0.ai/

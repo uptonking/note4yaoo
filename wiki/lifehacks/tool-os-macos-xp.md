@@ -205,6 +205,11 @@ redis-cli shutdown
   - network: sniffnet
 
 - [coconutBattery Plus 4.1.0 破解版 - 电池信息查看工具 | MacKed ](https://macked.app/coconutbattery-plus-crack.html)
+
+- https://github.com/X1a0He/Adobe-Downloader /2.5kStar/GPL/202511/swift
+  - macOS Adobe apps download & installer
+  - [Adobe Activation Tool - Macked](https://macked.app/adobe-activation-tool-crack.html)
+    - Adobe激活工具离线版 使用上面的下载器
 # arm-mac
 - https://github.com/scriptingosx/utiluti /apache2/202507/swift
   - macOS command line utility to work with default apps.

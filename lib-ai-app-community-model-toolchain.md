@@ -1564,6 +1564,19 @@ vllm serve google/gemma-3-270m  --max-num-batched-tokens 32768 --chat-template /
 vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model-len 28000
 ```
 
+- vllm处理prompt的典型日志
+
+```log
+[entrypoints/logger.py:37] Request chatcmpl-7ada460412e8448999ef5c40b74f9f3d details: prompt: '<｜begin▁of▁sentence｜><｜User｜># Instruction\nthe northwinds excel contains the sales data for
+
+[entrypoints/logger.py:47] Received request chatcmpl-7ada460412e8448999ef5c40b74f9f3d: params: SamplingParams(n=1, presence_penalty=0.0, frequency_penalty=0.0, repetition_penalty=1.0, temperature=0.4
+127.0.0.1:55718 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[v1/engine/async_llm.py:360] Added request chatcmpl-7ada460412e8448999ef5c40b74f9f3d
+[v1/engine/core.py:880] EngineCore loop active.
+
+[entrypoints/logger.py:76] Generated response chatcmpl-7ada460412e8448999ef5c40b74f9f3d (streaming delta): output: '<Understand>', output_token_ids: [151673], finish_reason: None
+```
+
 - ## 
 
 - ## 

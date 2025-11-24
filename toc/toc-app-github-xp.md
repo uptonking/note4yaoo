@@ -347,6 +347,23 @@ language:JavaScript  language:TypeScript
 - https://github.com/devhubapp/devhub /ts
   - TweetDeck for GitHub - Filter Issues, Activities & Notifications 
   - Web, Mobile & Desktop with 99% code sharing between them
+# discuss-github-extensions
+- ## 
+
+- ## 
+
+- ## [I forked VS Code to make global search actually useful : r/vscode _202511](https://www.reddit.com/r/vscode/comments/1p3s4gj/i_forked_vs_code_to_make_global_search_actually/)
+  - https://github.com/zigcBenx/storm-search /MIT
+
+- I don't get how this is different than the built in global search. Like, you can search terms, a list of matches appears, you click on a match and it appears.
+  - Its aboit the preview of search result without actually opening a new tab. It’s inspired by phpstorm, and it is very opinionated, so it might not be a good fit if you already enjoy existing search
+
+- 🌰 I went through some similar distaste for vscode search and really other things like Visual Studio. You should take a look at my solution too, which creates a floating window in addition to most of these things. It's also very inspired by Jetbrains IDE (PHPStorm) search.
+  - https://github.com/Natestah/BlitzSearch /csharp
+    - A Universal improvement to Find/Replace in files for any Text Editor / IDE
+
+- Is it possible to show this search in a floating window like in JetBrains' IDEs?
+  - Unfortunatelly not. I manages to achieve this only by forking VS code. The extension doesn’t support such behaviour
 # discuss-xp-github
 - ## 
 

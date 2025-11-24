@@ -85,6 +85,25 @@ modified: 2025-09-21T13:58:46.548Z
   - A RAG system designed for efficient processing of diverse content types with minimal computational overhead.
   - This solution won 1st place in the Secure RAG Challenge by UnderstandTech
 # utils
+- https://github.com/messkan/rag-chunk /MIT/202511/python
+  - A Python CLI to test, benchmark, and find the best RAG chunking strategy for your Markdown documents.
+  - Multiple chunking strategies: fixed-size, sliding-window, paragraph
+  - Recall-based evaluation with test JSON files
+  - [Roadmap Discussion: Is LangChain's "RecursiveCharacterSplitter" actually better? I'm building v0.3.0 to find out. : r/Rag](https://www.reddit.com/r/Rag/comments/1p2xhjq/roadmap_discussion_is_langchains/)
+
+- https://github.com/2dogsandanerd/smart-ingest-kit /202511/python
+  - [I extracted my production RAG ingestion logic into a small open-source kit (Docling + Smart Chunking) : r/Rag](https://www.reddit.com/r/Rag/comments/1p4ku3q/i_extracted_my_production_rag_ingestion_logic/)
+  - Most tutorials tell you to use `RecursiveCharacterTextSplitter(chunk_size=1000)`. That's fine for demos, but in production, it breaks
+    - PDF tables get shredded into nonsense.
+    - Code blocks get cut in half.
+    - Markdown headers lose their hierarchy.
+  - I stripped out all the business logic from my app and left just the "Smart Loader".
+  - It uses Docling (by IBM) for layout-aware parsing and applies heuristics to choose the optimal chunk size based on file type.
+    - PDFs: Uses semantic splitting with larger chunks (800 chars) to preserve context.
+    - Code: Uses small chunks (256 chars) to keep functions intact.
+    - Markdown: Respects headers and structure.
+    - Output: Clean Markdown that your LLM actually understands.
+
 - https://github.com/ghodsizadeh/pdf2csv /MIT/202501/python
   - https://pdf2csv-py.streamlit.app/
   - This project provides a tool to convert tables from PDF files into CSV or XLSX format using the Docling library. 
@@ -106,4 +125,12 @@ modified: 2025-09-21T13:58:46.548Z
   - a library that defines core data types and transformations in Docling.
   - Docling Core provides the foundational `DoclingDocument` data model and API, as well as additional APIs for tasks like serialization and chunking
   - Docling Core defines the `DoclingDocument` as a Pydantic model, allowing for advanced data model control, customizability, and interoperability.
+# code-rag
+- https://github.com/starthackHQ/contextinator /apache2/202511/python
+  - Turning messy repos into weapons of mass structured context.
+  - It uses Abstract Syntax Tree (AST) parsing to extract semantic code chunks, generates embeddings, and stores them in a vector database-enabling AI agents to understand, navigate, and reason about codebases with unprecedented precision.
+  - AST-Powered Chunking - Extract functions, classes, and methods from 23+ programming languages
+  - Semantic Search - Find relevant code using natural language queries
+  - Full Pipeline Automation - One command to chunk, embed, and store
+  - 🛢️ Docker (for ChromaDB)
 # more

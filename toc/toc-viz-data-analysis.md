@@ -63,7 +63,14 @@ modified: 2021-05-23T18:45:59.139Z
   - 你的AI数据分析师，自动分析大量数据，一键生成专业分析报告
   - DeepAnalyze is the first agentic LLM for autonomous data science. It can autonomously complete a wide range of data-centric tasks without human intervention
   - Entire data science pipeline: Automatically perform any data science tasks such as data preparation, analysis, modeling, visualization, and report generation.
+  - uv run python backend.py
+    - npm run dev -- -p 4000
   - 🤔 数据分析基于文件系统实现，ai生成使用pandas操作数据的python代码并自动执行
+    - 实测进行脏数据处理的工作很难自动化
+    - 对模型的coding能力要求高
+  - 🐛 
+    - 在画完图表后的 `<Understand>` 部分，fastapi会突然停止接受llm输出数据，然后整个程序进入卡死/假死状态, 但vllm那边会正常输出完chat结果
+    - 有时假死状态持续10min后
   - 定制的 DeepAnalyze-8B 模型不适合聊天对话，会乱说且loop，但适合执行数据分析任务
   - Fully open-source: The model, code, training data, and demo of DeepAnalyze are all open-sourced, allowing you to deploy or extend your own data analysis assistant.
   - [添加 DeepAnalyze 详细部署教程文档_基于MacBook Air M4 · ruc-datalab/DeepAnalyze](https://github.com/ruc-datalab/DeepAnalyze/pull/16)
@@ -73,6 +80,22 @@ modified: 2021-05-23T18:45:59.139Z
   - https://github.com/modelscope/ms-agent/blob/main/projects/fin_research/analyst.yaml
     - You are a professional Data & Financial Analysis Agent operating inside an isolated Docker sandbox
     - You solve analytic tasks through systematic tool usage and step-by-step reasoning.
+
+- https://github.com/eosphoros-ai/DB-GPT /17.7kStar/MIT/202511/python/华人团队
+  - http://docs.dbgpt.cn/
+  - https://www.yuque.com/eosphoros/dbgpt-docs/bex30nsv60ru0fmx
+  - 一个开源的AI原生数据应用开发框架
+  - 通过开发多模型管理(SMMF)、Text2SQL效果优化、RAG框架以及优化、Multi-Agents框架协作、AWEL(智能体工作流编排)等多种技术能力，让围绕数据库构建大模型应用更简单，更方便
+  - 私域问答&数据处理&RAG
+  - 支持自然语言与Excel、数据库、数仓等多种数据源交互，并支持分析报告。
+  - 围绕大语言模型、Text2SQL数据集、LoRA/QLoRA/Pturning等微调方法构建的自动化微调轻量框架, 让TextSQL微调像流水线一样方便。
+  - 支持自定义插件执行任务，原生支持Auto-GPT插件模型，Agents协议采用Agent Protocol标准
+
+- https://github.com/Canner/WrenAI /13kStar/AGPL/202511/python/ts
+  - https://getwren.ai/oss
+  - GenBI (Generative BI) queries any database in natural language, generates accurate SQL (Text-to-SQL), charts (Text-to-Chart), and AI-powered business intelligence in seconds
+  - Semantic Layer: MDL models encode schema, metrics, joins
+  - support Ollama
 
 ## viz-charting
 
