@@ -16,7 +16,34 @@ modified: 2025-09-05T07:18:16.308Z
 
 - ## 
 
-- ## 
+- ## [I deleted 400 lines of LangChain and replaced it with a 20-line Python loop. My AI agent finally works. : r/AI_Agents](https://www.reddit.com/r/AI_Agents/comments/1p227ra/i_deleted_400_lines_of_langchain_and_replaced_it/)
+  - I rewrote the entire logic using: Raw Python (for control flow). Standard OpenAI API (for the intelligence). A simple while loop (for the agentic behavior).
+  - Here is the dumb `while` loop that replaced my entire stack
+
+- You’re not alone. I hit the same wall with LangChain and later with Autogen. Once the abstractions get too clever, you spend more time debugging the framework than building the agent.
+  - I moved back to raw Python for the same reasons you mentioned. A simple loop with explicit messages and tool calls is honestly the cleanest mental model. You control the tokens, the reasoning, the retries, everything.
+  - The only place where I still lean on external tools is when the agent needs to interact with real sites. I use Hyperbrowser there because I don’t want to maintain Playwright sessions or proxies myself. Everything else runs in plain Python.
+  - In my experience, frameworks are great for demos but raw control flow is what makes agents predictable in production. Curious if you plan to add memory or retries next.
+- Yeah this matches my experience. Once the abstractions start getting clever you spend half the day figuring out what the framework is doing behind the scenes.
+  - The simple loop with explicit messages has been the easiest mental model for me too. I am thinking about adding a small memory layer next but still deciding how to keep it lightweight.
+
+- Been there done that. Try OpenAI Agent SDK. Is quite simple and no abstractions. That's one of the reason I did this small framework: agente. Is quite simple and practical and do the job for simple agents.
+
+- LangChain is solid when it comes to utilities like document loaders, text splitters and all the integrations. My only real trouble was with the AgentExecutor and the reasoning loop.
+  - I would not use Langchain for control flow, that's why they created langgraph. If you're using Langchain for control flow, you're using Langchain for the wrong purpose. AgentExecutor is quite outdated for building agents, especially if you want to build multi agents that work together in the background with human in the loop feedback, time travel, llm structured output, multi threads for in chat memory management as well as memory store for long term / overall profile memory. Langchain is good for rag, embedding, easy way to switch llm, etc
+
+- Did you try Google's ADK ? If so how do you think it compares to OpenAI's ?
+  - Google abstractions are a bit more rigid in terms of their workflow agents but there’s ways to do more fine grained control flows. More gluing on OpenAI. Both are pretty good, we’re using adk in prod
+  - When the agent got stuck or started inventing arguments, the abstraction made it much harder to debug than simply checking the raw message list.
+
+- I spent hours debugging a LangChain agent that kept looping only to realized the agent executor was hiding a system prompt that confused the model. Then I switched to a solution like yours and it worked like a charm. Honestly I feel frameworks are great for prototyping but when it comes to production code they become black boxes.
+  - I had a similar experience. The moment the agent executor hid the real system prompt I spent more time debugging the framework than the agent itself. Switching to a simple loop made everything clearer. I agree that frameworks are great for prototyping but once things get serious the black box feeling becomes a problem.
+
+- I get the idea behind LangGraph and the workflow control but that was exactly where I kept running into trouble. For simple agents it felt heavier than what I needed. Raw Python gave me the same control with fewer moving parts, so for now I am keeping things minimal.
+
+- I ripped LangChain out of my system 6 months ago and never looked back. The abstractions were built way before we knew what the abstractions should be and they kind of just get in the way. I spend more time debugging LangChain than debugging my agent.
+
+- Same though using smolagents from huggingface now and it’s pretty lightweight. Really not too different then what I was building in the past
 # discuss-roadmap
 - ## 
 

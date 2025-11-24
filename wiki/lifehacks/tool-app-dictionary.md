@@ -172,6 +172,8 @@ modified: 2023-07-08T12:47:00.141Z
 - site/mirrors
   - https://z-library.se/
 
+- [Anna’s Archive: LibGen (Library Genesis), Sci-Hub, Z-Library in one place - Anna’s Archive](https://annas-archive.org/)
+
 - resources
   - [这个合并了Z-Library、Library Genesis和Sci-Hub](https://forum.freemdict.com/t/topic/18836)
   - [如何解决Z-Library每日限额已用完](https://forum.freemdict.com/t/topic/14445)
@@ -179,6 +181,16 @@ modified: 2023-07-08T12:47:00.141Z
   - [无限下载的免费Zlib镜像](https://forum.freemdict.com/t/topic/15961)
   - A lot of people choose to upload books to Zlibrary which leads to Zlibrary has a larger collection than LibGen.
 # books
+- topics/感兴趣的主题
+  - 红楼梦
+  - 地图
+  - 统计学/statistics
+  - 数据类
+  - 可视化
+  - svg/canvas
+  - 图解xx
+  - python/数据处理
+
 - [书格](https://www.shuge.org/)
   - Shuge.org 是一个自由开放的数字图书馆。致力于开放式分享、介绍、推荐有价值的古籍善本，并鼓励将文化艺术作品数字化归档。
   - 分享内容限定为公共版权领域的书籍（参照标准 伯尔尼公约）；我们最大限度地还原书籍品貌、内容

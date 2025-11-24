@@ -79,6 +79,10 @@ modified: 2022-11-07T10:58:24.512Z
   - 论文一条龙: arxiv/paper, huggingface-data, github-code
   - 中科院PubScholar公益学术平台
 
+- 版权过期文档
+  - [免费阅览全文！国图等6家联合发布古籍数字资源 - 资源分享 - FreeMdict Forum](https://forum.freemdict.com/t/topic/18274)
+  - [Anna’s Archive: LibGen (Library Genesis), Sci-Hub, Z-Library in one place ](https://annas-archive.org/)
+
 - pm-data
   - 类似企查查/天眼查的政府数据整合平台
 
@@ -154,6 +158,8 @@ modified: 2022-11-07T10:58:24.512Z
 - sharing-ai
   - ai-model config
   - image workflow
+
+- 类似 异步社区、图灵社区 的社科类书籍分享平台
 # integrations
 - search-filters
 

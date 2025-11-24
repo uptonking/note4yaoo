@@ -19,11 +19,13 @@ modified: 2025-11-16T15:34:02.881Z
   - Modular & Scalable Architecture – Every service is loosely coupled to scale independently
   - 支持上传本地文件: pdf, docx, xlsx, csv, markdown, images, audio, video
   - 官方提供很多外部数据源的集成: google-drive/gmail/docs, OneDrive, slack, notion, airtable, github
+  - 支持直接在界面上配置第三方依赖 redis/kafka/mongo/qdrant
 
 - cons
   - AGI内容只包含知识库中的内容，不包含llm自身知识，经常拒绝用户 I cannot answer your query
-  - 架构复杂，依赖 kafka
   - ai回复的内容简短不够丰富，体验不如 SurfSense
+  - ai思考时间过长, 界面上没有交互反馈
+  - 架构复杂，依赖 kafka
   - 未实现online search集成，如tavily/exa/SearxNG
   - roadmap
     - Code Search
@@ -62,14 +64,21 @@ modified: 2025-11-16T15:34:02.881Z
   - Wikipedia
   - developer docs: react/vue/ecmascript/python/golang/pg
 
+- 删除文档时，未实现回收站
+
 - 不选择kb知识库时，不支持随意聊天
 
 - search
   - 不仅支持sources, 还支持搜索 comments/discussions
 
+- local-models
+  - 本地的prompt-processing速度非常慢
+
 - open source alternative
   - Google just dropped the Gemini File Search API (RAG-as-a-Service)
     - It allowed me to build a RAG chatbot in 31 min. No coding
+
+- ~~未实现流式输出~~
 
 - 
 - 
@@ -77,17 +86,28 @@ modified: 2025-11-16T15:34:02.881Z
 - 
 
 # dev-xp
+- 使用本地model时，不要使用global proxy, lmstudio/langchain存在问题
+
+- 
+- 
+- 
+- 
 
 ## devops
 
 ```sh
+# qdrant vector, 6333
+cd ~/Documents/opt/compiled/qdrant && ./qdrant
+
 # ArangoDB
-docker run -d --name arangodb -p 8529:8529 -e ARANGO_ROOT_PASSWORD=11111111 arangodb/arangodb:latest
+docker run --name arangodb -p 8529:8529 -e ARANGO_ROOT_PASSWORD=11111111 arangodb/arangodb:latest
+docker start arangodb
 
 docker run -d --name zookeeper -p 2181:2181 \
   -e ZOOKEEPER_CLIENT_PORT=2181 \
   -e ZOOKEEPER_TICK_TIME=2000 \
   confluentinc/cp-zookeeper:7.9.0
+docker start zookeeper
 
 docker run -d --name kafka --link zookeeper:zookeeper -p 9092:9092 \
   -e KAFKA_BROKER_ID=1 \
@@ -97,16 +117,38 @@ docker run -d --name kafka --link zookeeper:zookeeper -p 9092:9092 \
   -e KAFKA_INTER_BROKER_LISTENER_NAME=PLAINTEXT \
   -e KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1 \
   confluentinc/cp-kafka:7.9.0
+docker start kafka
 
-# python -m spacy download en_core_web_sm
+# Starting Node.js Backend Service
+cd backend/nodejs/apps
+cp ../../env.template .env 
+npm install
+# 3000
+npm run dev
+
+# Setting Up Frontend
+cd frontend
+cp env.template .env
+# 3001
+npm run dev
+
+# Starting Python Backend Services
+cd backend/python
+cp ../env.template .env
+# uv venv
+# source .venv/bin/activate #uv会自动激活，仅首次需要
 uv run python -m spacy download en_core_web_sm
 uv run python -c "import nltk; nltk.download('punkt')"
 
 # 限制python版本 `requires-python = ">=3.10,<3.11"`
 # Run each service in a separate terminal
+# 8088
 uv run python -m app.connectors_main
+# 8091
 uv run python -m app.indexing_main
+# 8000
 uv run python -m app.query_main
+# 8081
 uv run python -m app.docling_main
 
 ```

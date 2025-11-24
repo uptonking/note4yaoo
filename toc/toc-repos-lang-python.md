@@ -84,6 +84,11 @@ modified: 2025-02-26T15:04:15.883Z
   - https://github.com/liamcoatman/fastapi-realworld-example-app /202401
     - 被改造用来sklearn
   - https://github.com/SourceryAI/fastapi-realworld-example-app /202207/simplify
+
+- https://github.com/allmonday/fastapi-voyager /MIT/202511/python/js
+  - https://www.newsyeah.fun/voyager/
+  - Visualize your FastAPI endpoints, and explore them interactively.
+  - This repo is still in early stage, it supports pydantic v2 only
 # django
 
 ## django-fwk

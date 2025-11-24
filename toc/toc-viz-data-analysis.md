@@ -65,6 +65,7 @@ modified: 2021-05-23T18:45:59.139Z
   - Entire data science pipeline: Automatically perform any data science tasks such as data preparation, analysis, modeling, visualization, and report generation.
   - uv run python backend.py
     - npm run dev -- -p 4000
+    - 未使用ai框架如langgraph, 基于简单的 python `while` loop 实现
   - 🤔 数据分析基于文件系统实现，ai生成使用pandas操作数据的python代码并自动执行
     - 实测进行脏数据处理的工作很难自动化
     - 对模型的coding能力要求高

@@ -198,7 +198,16 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## [Need some honest opinions on GPU Ai in a box : r/ollama](https://www.reddit.com/r/ollama/comments/1p4z140/need_some_honest_opinions_on_gpu_ai_in_a_box/)
+  - For my use case my models and software burn about $2000 per month if I rent a pod using runpod and I have to be extra careful due to rate limits. I want to consider running my models using llamacpp or ollama or offering direct inference for customer using their own on prem machine shipped by me.
+
+- The DGX Spark and similar are not meant to be servers. Could you use them? I guess. But for 8b models you don’t need $3000 of anything. At full 16bit you’d need 16GB of memory plus some context. 24GB tops. Less with quants.
+  - And don’t deploy with llama.cpp based anything. Those are personal use tools. Use vLLM, SGLang or TensorRT.
+- Why can’t you use it as a server? Is it only for inference via vLLM?
+  - tldr the ones I mentioned are built for production and high parallel work loads.
+
+- Have you tried your models on various Mac minis or studios? Very stable and speedy enough.
+  - Yes i run my models on Mac mini m4 but running multiple models at the same time is a pain
 
 - ## 🏠 [Most Economical Way to Run GPT-OSS-120B for ~10 Users : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p4evyr/most_economical_way_to_run_gptoss120b_for_10_users/)
 - A quad of 3090s will get you there cheapest, assuming you have a way of mounting four 3-slot GPUs in a reasonably secure manner! It’s probably going to need a bunch of PCIe riser cables and a mining frame to accommodate the space, noise and cooling requirements… you’d have 1500W of GPU alone!

@@ -398,7 +398,20 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [How vscode team is making copilot smarter with “less” tools : r/vscode _202511](https://www.reddit.com/r/vscode/comments/1p4ucl5/how_vscode_team_is_making_copilot_smarter_with/)
+  - how RAG came back into fashion after being declared “dead, ” and how that revival gives new life to another technology people are prematurely burying — tool calling, or by its full name: MCP.
+  - All the tools that make an agent actually agentic - searching, editing, creating files, and more - are built directly into agents and exposed through classic tool calling. It’s very similar to MCP, and it brings the same problem with it: every tool consumes context in every single request.
+  - So what did the Visual Studio Code team do?
+  - They combined two approaches:
+  - Adaptive Tool Clustering - They use embeddings to compute a vector for each tool, then cluster similar tools based on cosine similarity. This creates “virtual groups” of tools that belong together.
+  - Embedding-Guided Tool Routing - When the user asks something, the embedding of the query is compared to the group vectors, routing the agent straight to the relevant group without scanning all of them. Less trial-and-error, less wasted context.
+  - What does that give us? A real reduction: from 40 tools the agent could call - down to 13 smart clusters.
+  - And what’s next? They’re aiming for long-term memory - the ability to remember which clusters and tools worked for similar tasks, prioritize them, and understand how to use each tool optimally.
+  - And what about MCP? If this mechanism is expanded into the MCP client layer (not just the built-in Copilot tools), it could also solve the well-known context overload issue in MCP.
+  - The interesting question: will this become part of the official spec, or remain in userland where each client implements it differently?
+  - In the meantime, sub-agents with clearly defined tool scopes are a solid workaround - which, honestly, is exactly what we’d want the agent to learn to do by itself.
+
+- The first thing I do is to disable all this crap from VS.
 
 - ## 🆚 [Does grep perform better than vector DB + embeddings in large code bases? : r/ClaudeCode _202511](https://www.reddit.com/r/ClaudeCode/comments/1osyrpu/does_grep_perform_better_than_vector_db/)
   - Unlike Cursor or Github Copilot, I see that Claude Code seems to leave it up to the user to either do the indexing or not. Is there a reason? Does it perform better?
@@ -498,6 +511,12 @@ modified: 2024-09-08T20:08:16.088Z
 - Did you experiment with other retrieval methods besides or in addition to semantic similarity? I've done some work using different techniques, like parsing dependency trees out of the current file, with promising results for code RAG.
   - We did look into BM25 for FT search but did not see measurable benefits for our use cases. Our approach relies on getting a lot of documents first and then pruning - it would be better to get just what's needed in the first place, I still hope BM25 can help there. Worth another look!
 # discuss-embedding
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

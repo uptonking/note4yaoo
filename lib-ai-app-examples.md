@@ -492,9 +492,9 @@ modified: 2023-02-08T07:20:48.475Z
   - 未使用langchain/aisdk, 多model-provider的集成完全自定义实现
   - Prerequisites: RAM >= 16 GB
     - gVisor: Required only if you intend to use the code executor (sandbox) feature of RAGFlow.
-  - 🤔 实测, rag后的chunk文本可查看细节
+  - ✨ 实测, rag后的chunk文本可查看chunk与原文对应的细节
     - 聊天的回答中, hover图标能显示引文，并可点击引文后可在页面遮罩侧面弹窗中查看pdf原文位置
-    - 整个 知识库/聊天/查询 的创建及使用交互过于复杂， 不够简洁和自然
+  - 🐛 整个 知识库/聊天/查询 的创建及使用交互过于复杂， 不够简洁和自然
   - [HARD -- Efficient way to use enterprise dataset without uploading all files? _202509](https://github.com/orgs/infiniflow/discussions/10388)
     - You have to upload the data from Azure to RAGFlow. And currently you can do that through API. From 0.22 which is going to be launched in this Nov, we will provide some data sources and you can ingest data by just click several buttons. And more data sources could be easily added.
   - [[Question]: Why can't knowledge graphs be used? _202509](https://github.com/infiniflow/ragflow/issues/10017)

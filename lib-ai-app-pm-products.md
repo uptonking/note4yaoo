@@ -336,6 +336,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [随时跑路公益](https://runanytime.hxi.me/), 每天签到 10-25 刀
     - 完全支持 cc，主要是 sonnet 4.5，haiku 4.5 会自动重定向到 sonnet 4.5
     - RPM 暂时定为 5，之后看情况调整
+    - [【随时跑路公益站】就是那个稳了一个月的AmazonQ2API公益，开放注册 ](https://linux.do/t/topic/1154353)
   - [逆水寒](https://api.sxxe.net/)
     - [逆水寒公益API——扬帆起航 ](https://linux.do/t/topic/1173036)
   - [一个小站的 API 商店](https://one-api.ygxz.in/), 每日签到1刀内随机
@@ -343,7 +344,6 @@ modified: 2025-03-22T16:10:24.856Z
     - 无调用频率限制
     - 支持gpt5,claude,gemini
     - 部分模型倍率很高，可选按次计算版本, 如claude
-    - [【随时跑路公益站】就是那个稳了一个月的AmazonQ2API公益，开放注册 ](https://linux.do/t/topic/1154353)
   - [我爱996公益](https://529961.com/)
     - 仅限 L 站 2 级以上用户注册
     - [【公益站我爱996一次】测试上线已接入LinuxDo ](https://linux.do/t/topic/1147448)

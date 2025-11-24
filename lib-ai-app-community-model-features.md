@@ -28,7 +28,19 @@ modified: 2025-11-05T19:04:50.350Z
 
 - ## 
 
-- ## 
+- ## [Universal LLM Memory Doesn't Exist : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1p5jh9l/universal_llm_memory_doesnt_exist/)
+  - TL; DR: I benchmarked Mem0 and Zep as “universal memory” layers for agents on MemBench (4, 000 conversational QA cases with reflective memory), using gpt-5-nano and comparing them to a plain long-context baseline.
+  - My takeaway:
+
+    - Working memory / execution state (tool outputs, logs, file paths, variables) wants simple, lossless storage (KV, append-only logs, sqlite, etc.).
+    - Semantic memory (user prefs, long-term profile) can be a fuzzy vector/graph layer, but probably shouldn’t sit in the critical path of every message.
+
+- The problem with _retrieval_ is that you're trying to guess intent and what information the model needs, and it's not perfect. Get it wrong and it just breaks down - managing it is a moving target since you're forced to endlessly tune a recommendation system for your primary model..
+  - I ran 2 small tools (bm25 search + regex search) against the context window and it worked better. Think this is why every coding agent/tool out there is using grep instead of indexing your codebase into RAG
+
+- I went all-in on Graph RAG like 3 years ago and haven’t looked back since TBH. Its not actually always advantageous, but I think in graphs now so for me its just natural now. The original project was a knowledge graph node and edge prediction system using Bert models for the graph database Neo4j
+  - It's a similar setup to what zep graphiti is built on! Do you run any reranking on top or just do a wide crawl / search and shove the data into the context upfront?
+- Where possible I try to do multi-hop reasoning on the graph itself. This is often quite difficult and is situational to the data being used
 
 - ## [What are some approaches taken for the problem of memory in LLMs? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1op7kmw/what_are_some_approaches_taken_for_the_problem_of/)
   - Long-term memory is currently one of the most important problems in LLMs. What are some approaches taken by you or researchers to solve this problem?

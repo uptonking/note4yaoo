@@ -105,7 +105,14 @@ modified: 2023-10-26T18:47:22.664Z
 
 - ## 
 
-- ## 
+- ## [Do you ssl for your databases? (Db not exposed in the internet scenario) : r/selfhosted](https://www.reddit.com/r/selfhosted/comments/1p4z7j5/do_you_ssl_for_your_databases_db_not_exposed_in/)
+- Most of my databases are just in an internal docker network per stack so not even directly exposed to the LAN network.
+
+- My dbs are never exposed out of the docker network
+
+- Think of it another way: do you want your VM hoster to see all of your database traffic? If you're running it on a local NAS then it should be fine but still best practice to encrypt. For fun, start up a VM, enable promiscuous mode and see what you can see over wireshark.
+
+- TLS is data transport confidentiality. Usually my instances are behind VPN's either way. Although, there's a case to be made about any intruders that could be there listening in and exfiltrating the data. 
 
 - ## Every field being optional in Protobufs is actually the only scalable solution for schema migrations
 - https://twitter.com/ChShersh/status/1783873173190009168

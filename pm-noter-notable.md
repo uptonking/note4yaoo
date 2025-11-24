@@ -22,7 +22,9 @@ modified: 2023-11-28T14:48:45.910Z
     - mobile-app-generator
     - image-gen
   - 📈 end-user database: 支持用户自定义数据和流程, multi views, obsidian-bases
-  - 💫 animated-text/code sharing: playback with different speed
+  - 🔍 search results with citation from existing documents
+    - 搜索结果的交互包含 双向链接、 侧边pdf查看器
+  - animated-text/code sharing: playback with different speed
   - markdown: hotkeys, table-builder
   - github修改文档要提pr很繁琐; 可协作的workspace可直接改或用审阅修订模式
   - local-first storage with optional sync: 兼容git-commits, 浏览器多tab在断网时sync

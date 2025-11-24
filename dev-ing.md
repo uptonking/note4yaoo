@@ -281,6 +281,24 @@ VLLM_LOGGING_LEVEL=debug VLLM_CONFIGURE_LOGGING=1 vllm serve RUC-DataLab/DeepAna
 - dev-to
   - ?
 
+## 1124
+
+- when i run `uv run python -m spacy download en_core_web_sm `, the error is ``` /Users/yaoo/Documents/repos/libfwk/ai-llm/pipeshub-ai/backend/python/.venv/bin/python3: No module named pip ``` - how can i run it
+
+```sh
+uv add pip
+uv run python -m spacy download en_core_web_sm
+```
+
+- i have run a docker container a week ago by `docker run -d --name arangodb -p 8529:8529 -e ARANGO_ROOT_PASSWORD=11111111 arangodb/arangodb:latest`
+  - now if i just run `docker start arangodb`, will the port 8529 and ARANGO_ROOT_PASSWORD the same as before
+- Yes. docker start does not recreate the container.
+  - It simply starts the existing container with its original configuration.
+  - The port mapping -p 8529:8529 and the env var ARANGO_ROOT_PASSWORD=11111111 were stored in the container’s configuration at creation time.
+  - You can confirm the settings with: `docker inspect arangodb`
+- The port mapping (-p host_port:container_port) is part of the container's configuration, which is set only when you create it with `docker run`.
+  - When you run docker start arangodb, you are not re-creating the container. You are just starting an existing, stopped container. Docker will look up its saved configuration and apply it
+
 ## 1123
 
 - By default, vLLM prints a status log every 5-10 seconds.

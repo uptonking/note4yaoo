@@ -514,9 +514,49 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [Benchmark: Self-Hosted Qwen-30B (LoRA) vs. Llama-3.1-8B vs. GPT-4.1-nano. Comparison of parsing success rates and negative constraints. : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1p5e7mv/benchmark_selfhosted_qwen30b_lora_vs_llama318b_vs/)
+  - I recently migrated a production workload off Claude Sonnet 4 ($45/1k requests) to cut costs. 
+  - I ran a three-way experiment to find the best replacement: Qwen3-Coder-30B (Self-hosted) vs. Llama-3.1-8B vs. GPT-4.1-nano.
+  - I expected Qwen3-Coder-30B to win on quality. It didn't.
+  - The Task: Rewriting generic LeetCode problems into complex, JSON-structured engineering scenarios (Constraints, Role, Company Context).
+  - My Takeaway / Question for the Community: I was surprised that Qwen3-Coder-30B couldn't beat the GPT-4.1-nano (a smaller model) on instruction adherence.
 
-- ## 
+- Get a normal 30B A3B 2507 Thinking qwen instead of Coder.
+  - In hindsight, you're likely right. Qwen-Coder failed on reasoning (negative constraints), not coding.
+
+- ## [It been 2 years but why llama 3.1 8B still a popular choice to fine tune? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p56v22/it_been_2_years_but_why_llama_31_8b_still_a/)
+  - Llama 3.1 8b was releases in July 2024, so just over a year ago.
+
+- Llama 3.1 8B is/was just kind of a known, fixed object particularly for researchers, and when reproducibility is a major factor, it makes sense to use the model organism so to speak. Think of it like a standard lab rat. 
+  - I do think Olmo3 7B is likely to become the new mouse in the lab though. It’s a good model, just off the bat, but the multiple checkpoints and open data make it the perfect research model.
+- In comparison to Llama 3.1 8B or Qwen 3 8B or Mistral 7B it uses way more memory than expected.
+
+- I once finetuned qwen2.5-7b on a math dataset and it performed worse compared to a funetuned llama3.1-8b
+  - Same, Qwens have too much knowledge baked in so don't fine tune as well.
+
+- When Meta trained Llama-3, they started by training the 405B on fifteen trillion tokens, and then distilled the 70B and 8B from that. That means their training tokens to parameter ratio was only about 37:1, marginally above the Chinchilla threshold.
+  - They didn't know it at the time, because this study hadn't been published yet, but that resulted in a model with a large set of memorized knowledge and fairly weak generalized knowledge (fewer parameters encoding heuristics), which is reflected in its skillset.
+  - That makes it an excellent candidate for continued training, which cannibalizes the parameters for memorized knowledge and replaces them with more generalized knowledge the more it is trained.
+  - I don't think this was deliberate, but researchers have learned by practice that Llama-3 provides an excellent vessel for whatever skills they want to pour into it.
+- you’re right they are pretrained separately. just that 405b’s output is used to instruct fine tune 8b and 70b.
+
+- It's supported everywhere and not only well characterized, but also super well supported. When training w/ Liger kernels, it is fast in a way even other supported models aren't. Every trainer has example files for Llama 3. It's also a "good enough" base (wheareas, something like Llama 2 or Mistral 7B isn't) even in late 2025 for working on (assuming you don't need to solve AIME 2025 problems).
+  - Gemma 2/3 9B are way more capable, but the license makes it basically unusable IMO 
+  - Qwen 3 8B is also a much smarter (benchmaxxed) model, however it has Qwen's particular trait of leaking random Chinese (and English for other language output!) - this is harder than you'd expect to fix and not a problem w/ most other models. At the the same size, Qwen models also simply train slower
+  - Nemotron Nano 9B v2 - a good model, but Mamba2-Transformer Hybrid - OOTB perf was a little disappointing for things I cared about, but it's reasoning/STEM is also far beyond Llama 3
+  - Olmo 3 7B - I think it's probably useful for a lot of cases (open license, easy to work with, open data/checkpoints), but I found initial eval perf for my purposes underwhelming
+  - Granite 4.0 Tiny / H Tiny - I'll mention this one as another contender that left me less than whelmed w/ its OOTB perf. I find the MoEs more interesting, but the 7B didn't hit the spot for me (even the Small/H Small punched below my expectations, but I like what the Granite guys are doing)
+- The other nice thing is that actually you can move down to Llama 3.2 1/3B with basically the same recipe (anything where you can move across size classes in the same family w/ is actually a big bonus).
+- While you get a lot more capabilities going up to 14B class, 7-8B is realistically what you can fit in most desktop/consumer GPUs, and can even inference acceptably fast on most laptop APUs.
+
+- I think Ministral was sort of forgotten by everyone because it was so forgettable. It wasn't so bad, but Tekken 3, interleaved SWA, ever so slightly better scores than Llama 3, wrapped in a license that basically makes it a non-starter if you're not an academic or home user.
+  - While I liked Small and Magistral, and I think Voxtral is actually super neat, I'm not sure what Ministral's sell really was for anyone that wasn't Mistral. 
+  - I actually recently did an eval of it on a lark when comparing 8B class base models and it's JA at least wasn't very impressive.
+- I think we're actually seeing more 3-4B dense models climb into the old 7-8B class, than any new advanced 8Bs... (probably partly driven by how MoEs have been changing the landscape).
+
+- Gemma 12B is far superior in my experience, and Solar-10.7B (NousResearch) is better for erotica, so I consider Llama 8B, and any of its finetunes, as obsolete for me.
+  - Llama is still better at long context than Gemma, which was frankly abysmal in my tests.
+- Fair enough, but if long context matters that much, then I'd use the 70B model.
 
 - ## Gemini 3 明确不是 Gemini 2.5 的微调，它是全新训练的 sparse MoE 。 _202511
 - https://x.com/dongxi_nlp/status/1990878844442583532
