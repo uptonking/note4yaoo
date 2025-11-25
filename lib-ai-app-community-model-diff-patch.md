@@ -12,6 +12,9 @@ modified: 2025-10-10T02:45:45.941Z
   - llm-edit-pattern: editing-prompts > changes > applying-changes
   - 可直接参考主流编辑器已实现的方案，如codemirror/monaco
 
+- 使用markdown格式作为ai编辑的输入输出优点是ai擅长markdown，缺点是markdown扩展标准不统一
+  - 另一种思路是用prompt指示ai输出html, 各种富文本编辑器对html的复制粘贴都很成熟
+
 - ⚖️ aider-diff-search/replace format prompt
   - local-models: qwen3-14b, gpt-oss-20b
   - 几乎都支持: gpt, claude, gemini, deepseek, qwen, glm, kimi, minimax
@@ -956,7 +959,29 @@ Code
   - To write that JSON-RPC is "too heavy for editor", you have to not only misunderstand the cost of JSON encoding (trivial) but also the frequency of editor-tool interaction (seldom) and volume of data transferred (negligible). In addition, you have to look at LSP, MCP, and other JSON-y protocols and say "yep. There's where the UI latency is. Got it.". (Nope)
 # discuss-rich-text-editing ✏️
 - ## 
+
 - ## 
+
+- ## 
+
+- ## [ai快速排版word文章的一个通用思路，字体/字号/缩进什么的都可以 - 开发调优 - LINUX DO](https://linux.do/t/topic/1217729)
+  - 让 AI 写大几千字的内容，把它直接复制粘贴到 Word 文档里时，格式，字体，字号，缩进全都是乱七八糟的（相较于 word 前文的排版）
+  - 用 AI 节省了文章撰写的时间，但还续花了大把时间在手动调整 word 格式排版上 
+  - 在这里我分享一个 “利用 ai 生成 HTML 代码来解决 Word 排版问题” 的思路，能让你 AI 生成内容可以直接复制粘贴到 word 中，并且是一键完成 “格式，字体，字号，缩进” 的排版
+  - 直接把 AI 生成的文本粘贴到 Word，本质上是在粘贴 “纯文本” 或 “Markdown”，Word 对这些格式的兼容性并不完美，所以你粘贴进去的东西大概率和前文的内容排版完全对不上。 但是，Word 和 HTML 的底层富文本结构是有极高通用性的
+  - ✨ 那么思路就是不让 AI 直接给文本，而是让 AI 生成 “带有排版样式的 HTML 代码”，然后在浏览器中打开 HTML 文件，在浏览器界面全选复制，就可以直接保留所有的排版样式直接粘贴到 word 中
+  - 这里根据不同需要有不一样的提示，例子如下：完成课题报告中要填写的内容，新加的内容的字体为宋体小 4 号（要不要加粗由你决定）其他已有的文本的格式不要改变，然后生成带有排版样式的 HTML 代码
+  - 总之，这些提示词都有个共同点就是要求 “生成带有排版样式的 HTMl 代码”
+  - 将 AI 生成的 HTML 代码复制下来， 在电脑上新建一个文本文档，粘贴代码然后将后缀名改为 html, 在浏览器里看到一篇具有排版的文章
+  - 在浏览器页面中全选然后复制, 回到 Word 文档在对应位置按粘贴（如果发现没有粘贴文本格式的话，可以到左上角的这个粘贴界面展开，选择保留原格式粘贴）
+  - 这个方法的本质就是利用了 HTML 可以完美渲染 word 富文本内容的功能，将 HTML 作为文本复制的中介以及 ai 看 word 排版的方式，来让 ai 可以输出排版合理且可以快速粘贴到 word 中的文本
+
+- 思路挺不错的，如果有一些大量的内容，排完之后还是要仔细的校对
+
+- 另一种思路，在google-docs侧边栏聊天生成内容后，直接点击apply将带格式的内容插入文档中的光标位置
+
+- 如果遇到公式如何处理呢？我前端时间也在研究如何用 ai 进行排版，我的思路是写一个 python，把 WORD 内容不布局提交给 ai，ai 思考之后下发指令给本地程序去调控每个内容块的位置大小等属性，但因为时间原因，目前还来得及弄了
+
 - ## [Can I get advice on how to work with streaming AI LLMs? - Yjs Community _202404](https://discuss.yjs.dev/t/can-i-get-advice-on-how-to-work-with-streaming-ai-llms/2604)
   - I’m building an editor that assists you with the help of an AI LLM.
   - TipTap Editor (which uses y-prosemirror bindings), for the editor
@@ -975,7 +1000,7 @@ Code
   - If you want to keep it, you could parse the markdown content (you need a parser for that, you can’t do that manually) and transform it to the delta format (a rich-text format that Y. Text understands, it supports bold, italic, etc…). TipTap should be able to pick-up the richtext from Y. Text. The formatting attributes in Yjs will be picked up by TipTap as “marks”.
 - My main issue with parsing markdown in a streamed way is that I can’t know whether we’ve finished a block.
   - One idea that I had was to keep a string in memory of the whole article that the LLM streams to my server. 
-  - Meaning, as soon as the LLM sends a new text chunk I do `let fullArticle += newTextChunk`; 
+  - Meaning, as soon as the LLM sends a new text chunk I do `let fullArticle += newTextChunk` ; 
   - Then each time we get an update I’d like to completely erase the Yjs doc, and replace it with the new contents of fullArticle on its entirety.
 - You can replace the `Y.XmlElement` that contains the current LLM answer with a new one. That sounds like a good idea. Then it shouldn’t be a problem to have temporary parsing issues.
   - However, you shouldn’t replace the whole Yjs document on every change, that might lead to some issues down the line. 
@@ -998,6 +1023,7 @@ Code
 - maybe you can do by separating streamed markdown into blocks and insert as Element Node.
   - This will help how to separate blocks.
   - https://github.com/vercel/streamdown/blob/main/packages/streamdown/lib/parse-blocks.tsx
+
 # discuss-llm-streaming
 - ## 
 - ## 
@@ -1012,11 +1038,11 @@ Code
 - is it possible to disable the streaming part? I know that sounds funny but i have a lot of non-streaming AI (+ other non-AI) use cases for this where streaming is not needed.
   - It will still work fine with regular, non-streamed Markdown
 - What is I have static content being rendered (like an html code block that’s not streamed in)? Can I still use this?
-  - You can certainly use it with non-streamed Markdown responses e.g. from AI SDK `generateText()`!
+  - You can certainly use it with non-streamed Markdown responses e.g. from AI SDK `generateText()` !
 - Does it also allow to render custom blocks as well, e.g. how ChatGPT shows a link preview block when I hover over a link? or this does too require involving something like unified.js
   - You can do this with some system prompt magic
 - Is there any plan to support mdx or add plugins to it, so that the AI can generate UI elements as JSX and I can display them to the user? Like code sandboxes, callouts, etc.?
-  - Currently it feels like the best way to do it is with a specific system prompt detailing a "custom HTML component" that you can then render in `components`, but still exploring.
+  - Currently it feels like the best way to do it is with a specific system prompt detailing a "custom HTML component" that you can then render in `components` , but still exploring.
 - Does it support memoization per Markdown block?
   - Yes it does! We haven't listed it on the website yet though as we're looking for a way to reliably test, measure and demonstrate it first.
   - current implementation is good, but not good enough. especially when it comes to code block, it will still render the whole syntax highlighter. If AI elements/streamdown from vercel can optimize it to only render per words, even better.
@@ -1038,6 +1064,7 @@ Code
 - EventSource is really really limited. However, you can instead use Fetch via something like https://github.com/Azure/fetch-event-source to consume SSEs.
 - OpenAI streaming has many peculiarities at production scale. e.g. you will get “half-chunks” occasionally which are not parseable on their own and must be concatenated with the previous or subsequent chunk for parsing.
 - should really be titled streaming output, as full duplex streaming isn't mentioned at all. that'd be necessary for things low latency things like speech etc.
+
 # discuss
 - ## 
 - ## 
@@ -1053,35 +1080,49 @@ Code
   - Enhanced content creation.
   - Improved content quality.
   - Personalized recommendations. 
+
     - LLMs can provide tailored suggestions based on the writer’s style, audience and purpose
+
   - Efficient research and fact-checking. 
 - Challenges in Integrating LLMs into RTEs
   - Writing Effective Prompts
+
     - Users often struggle to create prompts that generate accurate and useful AI responses, leading to suboptimal outputs.
     - Solution: Empower users with a curated library of pre-engineered prompts designed for common writing scenarios. For example, CKEditor’s AI Assistant offers intuitive options
+
   - Unpredictable Responses
+
     - LLM outputs can be inconsistent, sometimes straying from the intended context or purpose.
     - Solution: Implement continuous testing and refinement. Analyze usage logs and user feedback to iteratively improve the prompt-response mechanism. 
     - For instance, if your RTE’s “Summarize” feature is underperforming, adjust the prompt to emphasize brevity and A/B test the new prompt against the original.
+
   - Inconsistent Response Formatting
+
     - Solution: Embed format specifications directly into AI prompts. 
     - Markdown for Developers: “Explain this concept in a code block, using Markdown triple backticks for formatting.”
     - Structured Data: “Generate a product description and return it as a JSON object with ‘title’, ‘description’, and ‘key_features’ fields.”
+
   - Understanding and Handling Errors
+
     - Solution: Provide clear, jargon-free explanations and actionable next steps for errors. For instance, instead of displaying a cryptic “Error 429,” present a user-friendly message like: “Oops! We’ve reached our AI usage limit for the moment. "
+
   - Lack of Standardized AI UI
+
     - Solution: Integrate AI functionalities that complement existing user workflows. 
     - Context-aware suggestions
     - Smart formatting tools
     - Intelligent autocomplete
     - AI-powered revision assistant
     - Dynamic style guide enforcement
+
   - Differentiating in a Crowded Market
+
     - Solution: Focus on adding unique value rather than merely listing AI as a feature.
     - Industry-specific intelligence: Tailor AI to understand sector-specific jargon and style.
     - Adaptive learning: Implement AI that evolves with each user, learning their writing quirks and preferences.
     - Workflow optimization: Create AI features that streamline users’ specific processes.
     - Collaborative intelligence: Develop AI features that enhance team collaboration.
+
 - Key strategies for effective LLM integration include:
   - Offering intuitive, accessible AI tools
   - Implementing continuous refinement based on user feedback

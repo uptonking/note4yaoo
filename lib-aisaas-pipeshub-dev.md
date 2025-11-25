@@ -180,19 +180,63 @@ uv run python -m app.docling_main
 
 # SurfSense
 - pros
+  - 支持超大文档(系统限制500页)的分批summary和chunking
   - 通过LiteLLM的配置支持本地Ollama/LMStudio
+  - 支持通过UI来配置llm provider url, 但不同workspace的url非全局, 不能共享需要重新配置一次
 
 - cons
-  - citation点击后查看的事chunk文本, 体验不如pdf
-  - 上传pdf后不支持查看pdf原文, sources中保存的数据是处理过的文本内容, citation
-  - 聊天对话不支持流式输出，等待时间较长
-  - 不能以用户提问的语言回复用户
-  - 整个回复内容有时citation的编号都是同1处
+  - chunk的内容是summary，而不是原文，准确度不够高, (❓ 原文似乎未在系统中无法查看)
+    - 上传pdf后不支持查看pdf原文, sources中保存的数据是处理过的文本内容
+  - citation点击后查看的是chunk文本, 体验不如pdf原文
+  - 聊天对话不支持流式输出，体验很慢
+  - 上传中文pdf后，chunk的内容是英文summary，设置了workspace级的语言为中文后chunk仍是英文
+  - 有时不能以用户提问的语言回复用户
+  - 有时整个回复内容citation的编号都是同1处, 特别是回复中文内容时
+  - 点击chat列表切换聊天记录时，容易出现ai重新regenerate内容的问题
+
+## not-yet
+
+- ❓是否使用了本地embedding? 
+  - 似乎使用了，但配置使用本地lmstudio的embedding模型错误
+
+- 上传文档后， 原文似乎未在系统中无法查看
+  - RAG Pipeline Implementation for PDFs
+    - 1. Full Content Processing
+      - PDFs are processed through ETL services (Unstructured/LlamaCloud/Docling) in file_processors.py:131
+      - The complete extracted content is stored in the `Document.content` field
+      - This content is then chunked using create_document_chunks from document_converters.py
+    - 2. Dual-Level Embedding System
+      - Document-level: Summary embedding stored in Document.embedding 
+      - Chunk-level: Each chunk gets its own embedding in Chunk.embedding 
+    - Hybrid Search Implementation
+      - Both levels use hybrid search combining
+      - Vector similarity search (embeddings)
+      - Full-text search
+      - Reciprocal Rank Fusion (RRF) for result ranking
+  - Document-level search uses summary embeddings (more efficient for finding relevant documents)
+    - Chunk-level search provides access to the full original content through individual chunks
+  - The system supports both SearchMode. CHUNKS and SearchMode. DOCUMENTS
+    - The default search mode might be set to DOCUMENTS which searches document summaries instead of chunk content
+  - document.content: 存储 LLM 生成的摘要，不是原始内容
+    - document.embedding: 存储文档摘要的嵌入向量
+  - document.chunks: 存储原始内容的分块，每个块都有自己的嵌入向量
 
 ## draft
 
-- 是否使用了本地embedding
+- 💥 大文档页数限制
+  - Failed task process_file_upload: Page limit exceeded before processing
 
 - 
+- 
+- 
+- 
+- 
+- 
+- 
+
+## dev-xp-surfsense
+
+- lm studio的配置为 lm_studio
+
 - 
 - 

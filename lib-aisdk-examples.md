@@ -92,6 +92,19 @@ modified: 2025-08-11T20:15:18.297Z
   - Displays all AI SDK generations, tool calls, and failures in real-time
   - https://x.com/ksw_arman/status/1987941977539903978
     - No more adding `console.log` everywhere or scrubbing through UIMessage objects just to debug your AI agent.
+
+- https://github.com/buremba/1mcp /apache2/202511/ts
+  - 1mcp lets agents compose MCP tool calls and run code safely via WASM, cutting token usage by up to 96%.
+  - 1mcp maps every MCP tool to sandboxed TypeScript stubs mcp__mcpName_toolName.ts.d, exposing only 4 core tools to the LLM. 
+    - Instead of making individual MCP tool calls, agents write JavaScript code that chains MCP calls together, reducing token usage significantly. 
+    - Instead of LLM making two separate tool calls, it can execute code, 1mcp dispatches calls, takes care of retries automatically.
+  - Code Execution Tool: Code is compiled to WASM using esbuild, then executed in a sandboxed QuickJS runtime (per session). You can opt-in to run code in the browser client or fall back to backend execution, both with policy-enforced safety.
+  - Filesystem Tool: Each MCP client session has a virtual filesystem (OPFS in the browser, or a sandboxed filesystem in the backend).
+  - 🆚 Why not just use Cloudflare/Vercel/Daytona sandboxes?
+    - ✨ Native AI SDK bridge. `@onemcp/ai-sdk` turns AI SDK tools into MCP tools automatically—no extra glue code—so your agent stays inside the same execution story across backend and browser.
+    - Chained execution = fewer tokens. Inspired by Anthropic’s “Code Execution with MCP” pattern, 1mcp runs whole tool chains in a single capsule, so you see the same ~96% token reduction without hand-wiring Cloudflare Workers or Vercel Functions per call.
+    - Session-scoped policies. Each agent session gets strict network, filesystem, and runtime limits, rather than the global project settings Cloudflare/Vercel/Daytona enforce.
+    - run inside the client’s browser worker via SSE, letting you save server-side compute
 # starter
 - https://github.com/vercel-labs/ai-sdk-reasoning-starter /202507/ts
   - https://ai-sdk-reasoning.vercel.app/

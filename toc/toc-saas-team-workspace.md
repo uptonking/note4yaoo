@@ -61,6 +61,9 @@ modified: 2023-02-07T17:38:05.336Z
   - 后端依赖django、djangorestframework
   - 前端依赖blueprintjs、nivo-chart、remirror、nextjs、swr
   - https://github.com/makeplane/plane-mobile /dart
+  - [Plane 1.0: Community Edition is GA + why we migrated the frontend (Next.js → React Router + Vite) : r/selfhosted _202511](https://www.reddit.com/r/selfhosted/comments/1p5fpde/plane_10_community_edition_is_ga_why_we_migrated/)
+    - a single fast single-page application (SPA) communicating with an API, with simpler self‑hosting and faster builds.
+    - Paid SSO? No thanks
 
 - https://github.com/hcengineering/platform /19.8kStar/EPLv2/202503/ts/svelte/Huly
   - https://huly.io/

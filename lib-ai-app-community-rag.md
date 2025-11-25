@@ -657,6 +657,17 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [How to make a RAG pipeline near real-time : r/LangChain](https://www.reddit.com/r/LangChain/comments/1p623zt/how_to_make_a_rag_pipeline_near_realtime/)
+- There are specific models that exceeds at this. I know AWS’s Nova Sonic can do this well. Although for RAG 3-4 seconds ain’t bad especially for a voice bot.
+
+- RAG latency is usually a combination of retrieval tuning and orchestration choices, so try reducing candidate counts, sharding vectors for faster nearest neighbor lookups, precomputing and caching top-k results for common queries, and parallelizing embedding and retrieval steps so STT and retrieval overlap.
+  - Also check chunk sizes and embedding model choice because those affect recall and speed, and consider a lightweight semantic cache to answer repeated context queries instantly.
+  - People mix FAISS tuning or an alternative vector store with a caching layer and async streaming to get sub-second responses, and teams that need observability and easy orchestration prototype these flows in visual builders or frameworks like LlmFlowDesigner, while others tune Milvus or FAISS directly.
+
 - ## [Which model is good for making a highly efficient RAG? : r/LocalLLM _202506](https://www.reddit.com/r/LocalLLM/comments/1l0pncp/which_model_is_good_for_making_a_highly_efficient/)
 - Founder of agentset here. I'd say the quality of the embedding model + vector db caries a lot more weight than the generation model. We generally found any non trivially small model to be able to answer questions as long as the context is short and concise.
 - What embeddings approach would you recommend?

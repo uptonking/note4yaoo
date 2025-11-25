@@ -49,6 +49,11 @@ modified: 2025-03-22T16:10:24.856Z
   - 移动端计算能力差, 速度慢, ipad的M系芯片非gpu方案也不快
   - 耗电量大, 对手机端不友好
 
+- 基于ai coding实现产品
+  - 优点: 功能强大，依赖模型的coding能力
+    - 甚至可以考虑基于opfs的能力, 让ai实现类似文件转换的功能、python可视化导出, 甚至充分发挥compiler/interpreter的能力
+  - 缺点: 输出的code缺乏类似markdown/xml的标准, 难debug/测试
+
 - roadmap-ai
   - 针对国内免费api定制的chat/ppt: 魔搭, 快手万擎
     - 可以~~fork janai,然后扩展provider~~, janai默认支持openai-like api，已经支持了国内models
@@ -347,6 +352,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [我爱996公益](https://529961.com/)
     - 仅限 L 站 2 级以上用户注册
     - [【公益站我爱996一次】测试上线已接入LinuxDo ](https://linux.do/t/topic/1147448)
+  - [WONG公益站](https://newapi.netlib.re/), 每日签到
   - [FovtAPI](https://api.voct.top/console)
     - [NewAPI签到系统](https://gift.voct.top/)
   - [mmkg API](https://api.mmkg.cloud/)

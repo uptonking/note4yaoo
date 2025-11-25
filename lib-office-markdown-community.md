@@ -333,6 +333,26 @@ marked.use({ renderer });
 export default marked;
 ```
 
+# discuss-md-toolchain
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## rumdl 是用 Rust 做的 Markdown 格式化 + Lint 工具，速度非常快。
+- https://x.com/alswl/status/1993247516507488560
+  - 安装也没啥门槛： brew install rumdl
+  - 能直接把原来的 .markdownlint.yml 规则导进去: rumdl import .markdownlint.yml
+  - rumdl fmt http://YOUR-FILE.md
+  - 文件立刻变得干干净净，列表缩进、空行、标题结构全自动整理
+  - 之前我一直用 markdownlint-cli，rumdl 换上来几乎没适应成本，但体验更顺——尤其适合团队写文档时保持风格统一，还能减少 PR 上因为格式问题来回扯皮 
+
+- https://github.com/zhlint-project/zhlint /MIT/202507/ts/inactive
+  - https://zhlint.jinjiang.dev/
+  - A linting tool for Chinese text content.
 # discuss-md-parser/generator
 - ## 
 

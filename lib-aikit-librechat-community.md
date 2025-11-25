@@ -20,7 +20,27 @@ modified: 2025-09-01T05:53:05.266Z
 
 - ## 
 
-- ## 
+- ## 🆚 [Self-hosted Open WebUI vs LibreChat for internal company apps? : r/OpenWebUI _202511](https://www.reddit.com/r/OpenWebUI/comments/1p5obax/selfhosted_open_webui_vs_librechat_for_internal/)
+  - I’m running Open WebUI in our company (~1500 employees). Regular chat runs inside Open WebUI, while all other models are piped to n8n due to the lack of control over embedding and retrieval.
+  - What I really like about Open WebUI is how easy it is to configure, the group handling, being able to configure via API, and creating URLs directly to specific models. That’s gold for internal workflows, plus folders for ad-hoc chatbots.
+  - Since I’ve moved most of the logic into n8n, Open WebUI suddenly feels like a pretty heavy setup just to serve as a UI.
+  - I’m now considering moving to LibreChat, which in my testing feels snappier and more lightweight. Can groups, direct URLs, and folders be replicated here?
+
+- I’m also looking to break away from OWUI’s RAG implementation.. are you saying you moved even the Workspace > Knowledgebase RAG to n8n or are you just creating a new pipeline to n8n and using it as a “model” for per-chat-session rag?
+  - I have shut down possibility for user to create knowledge, specially after folders implementation. My experience is that people don't give a shit about selecting models. Most just want ad hoc plain Chat. As I see it a quality internal chatbot is a special service. So rather few excellent paired with folders for users that.
+
+- OpenWebUI is releasing much more often than LibreChat, it has twice as many discussions, imo for a big org, there’s risk reduction there - bugs are more likely to be resolved faster.
+
+- I find that strange, because my open webui feel snappy. I think you should be looking into optimizing your stacks and database, because replacing is not always the right approach. 
+  - LibreChat doesn’t feel professional, so I don’t know how your users will feel about relearning the different platform.
+
+- Just curious why you don't implement RAG as MCP tool (n8n has MCP trigger) so that model can call it as needed instead of using pipes that call n8n workflows? That way it might be faster and more Openwebui native.
+  - Also now thinking that if you use eg. Qdrant, you might use OWUI to manage knowledgebase (qdrant ingestion) but MCP server (via n8n workflow) to perform retrievals.
+- The thing is that I work with codes that have cross references, and I want to control the chunking + adding metadata per chunk when embedding. The reason I also use n8n is to have a better overview. But a good tip to use it as a tool too.
+
+- How do you use rag for retrieving documents? Native open WebUI RAG has very bad results for me.
+  - In my opinion you need quality rag for quality results. I was too blinded by owui out of the box rag, but at the end of the day you need agentic rag and control over the embedding. As I see it the simplest path for me was to set up n8n for this.
+  - I have shut down possibility for user to create knowledge, specially after folders implementation. My experience is that people don't give a shit about selecting and creating models. Most just want ad hoc plain Chat. As I see it a quality internal chatbot is a special service. So rather few excellent paired with folders than Manny shitty + complaints.
 
 - ## [Anyone running Open Webui with llama.cpp as backend? does it handles model switching by itself? : r/LocalLLaMA _202504](https://www.reddit.com/r/LocalLLaMA/comments/1k5w6gg/anyone_running_open_webui_with_llamacpp_as/)
 

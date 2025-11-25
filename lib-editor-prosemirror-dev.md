@@ -108,6 +108,7 @@ modified: 2021-05-06T09:39:53.522Z
   - img-gen
 
 - 👾 ai
+- rich-text with formats
 - stream-text/md
 - partial-edit: not whole rewrite, aider-diff, openai-v4a-diff
 - pdf-edit-with-vlm/ocr:
@@ -122,6 +123,8 @@ modified: 2021-05-06T09:39:53.522Z
   - stream-diff
   - stream-table
   - treesitter as markdown stream parser
+  - 使用markdown格式作为ai编辑的输入输出优点是ai擅长markdown，缺点是markdown扩展标准不统一
+    - 另一种思路是用prompt指示ai输出html, 各种富文本编辑器对html的复制粘贴都很成熟
 
 - prosemirror-markdown
   - rewrite with remark

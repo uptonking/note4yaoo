@@ -280,6 +280,7 @@ $if($gt(%totaldiscs%,1),%discnumber%-,)$if($and(%albumartist%,%tracknumber%),$nu
   - 本金+利息: 17487
   - 95766
   - 投诉处理 4001098067
+  - 金城银行 400-6161-888 , 95364
   - ⏳ 处理进度
 
 - 美团借钱
@@ -301,7 +302,6 @@ $if($gt(%totaldiscs%,1),%discnumber%-,)$if($and(%albumartist%,%tracknumber%),$nu
     - 没有减免政策
   - 投诉处理 021-6151-5143
   - 国瑞金资
-  - 金城银行 400-6161-888
   - 剩下的债务360处理
   - ⏳ 处理进度
     - 1118: 需要自己去找银行处理
