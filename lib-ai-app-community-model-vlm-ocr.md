@@ -227,6 +227,12 @@ modified: 2025-11-06T18:49:13.977Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Feature Request: Support HunyuanOCR-1B · Issue · ggml-org/llama.cpp _202511](https://github.com/ggml-org/llama.cpp/issues/17509)
+
 - ## [I've just ordered an RTX 6000 Pro. What are the best models to use in its 96GB for inference and OCR processing of documents? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1ouq7oe/ive_just_ordered_an_rtx_6000_pro_what_are_the/)
 - For medical and legal docs you really want something that can handle tables and complex layouts. I've seen people get burned using generic OCR models on medical forms where the layout matters as much as the text.
   - The 6000 Pro should handle most models fine but for production use with multiple users... you might want to think about caching and load balancing. We had a client try to run everything on one GPU for their legal team and it became a bottleneck real quick. 

@@ -17,6 +17,20 @@ modified: 2025-11-16T15:34:38.658Z
 - ## 
 
 - ## 
+# discuss-surfsense
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Scope: Documents vs Chunks in Search Spaces _202508](https://github.com/MODSetter/SurfSense/discussions/264)
+  - I am trying to understand the difference between these 2 options in search space. After I upload a document in search space, it is chunked and stored in the vector database. I don't see any meaningful difference in output when selecting either of these options.
+
+- Internally, we use RAPTOR: arxiv.org/html/2401.18059v1
+  - It provides document-mode hybrid search over your content and embeddings.
+  - The impact becomes clear when working with a large number of documents.
+  - This mode is still somewhat buggy, and I’ll be working on stabilizing it this month.
 # discuss-issues
 - ## 
 

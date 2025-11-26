@@ -131,7 +131,8 @@ modified: 2025-09-23T09:28:08.532Z
   - https://github.com/better-auth/examples
     - framework-specific projects that demonstrate how to implement authentication with Better Auth
 
-- https://github.com/daveyplate/better-auth-ui /1kStar/MIT/202509/ts
+- https://github.com/better-auth-ui/better-auth-ui /1kStar/MIT/202509/ts
+   - https://github.com/daveyplate/better-auth-ui
   - https://better-auth-ui.com/
   - shadcn/ui components built for better-auth
   - Sign In/Up, Forgot Password, UserAvatar, Email Template, Settings Cards

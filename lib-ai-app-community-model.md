@@ -359,7 +359,13 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
-- ## 
+- ## [The curious case of Qwen3-4B (or; are <8b models *actually* good?) : r/LocalLLM _202511](https://www.reddit.com/r/LocalLLM/comments/1p76wtf/the_curious_case_of_qwen34b_or_are_8b_models/)
+  - how good are the smaller models at answering some of the sort of questions I might ask of them, chatting, instruction following etc?
+  - I ran each model's output against the "council of AI elders", then got GPT 5.1 (my paid account craps out today, so as you can see I am putting it to good use) to run a tally and provide final meta-commentary.
+  - The results, per GPT 5.1: GPT-OSS 20B and Qwen 3-4B emerged as the strongest overall performers. Mid-tier models like DeepThink 7B and Qwen 2.5 7B produced competent technical content but struggled severely with the style transform, while Phi-Mini 4B showed the weakest combination of accuracy, coherence, and instruction adherence.
+  - The results align closely with real-world use cases: larger or better-trained models excel at technical clarity and instruction-following, whereas smaller models require caution for detail-sensitive or persona-driven tasks, underscoring that the most reliable workflow continues to be “strong model for substance, optional model for vibe.”
+
+- I’m using qwen3-4b 2507 instruct for simple tasks such as meeting summarization, keeping track of to-do’s and the likes. So far, it has performed quite well
 
 - ## [My Journey to finding a Use Case for Local LLMs : r/LocalLLM _202511](https://www.reddit.com/r/LocalLLM/comments/1p1xy0q/my_journey_to_finding_a_use_case_for_local_llms/)
   - I have a lot of phone pictures of recipes, and a lot of inherited cookbooks. The thought of gathering the ones I really liked into one place was daunting. The recipes would get buried in mountains of photos of cats (yes, it happens), planes, landscapes etc. Google photos is pretty good at identifying recipe images, but not the greatest.
@@ -489,7 +495,29 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
-- ## 
+- ## 💰 [How are Chinese AI models claiming such low training costs? Did some research : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p6cf2p/how_are_chinese_ai_models_claiming_such_low/)
+  - deepseek claims $6M training cost. Everyones losing their minds cause ChatGPT-4 cost $40-80M and Gemini Ultra hit $190M.
+  - glm-4.6: $8-12M estimated, 357B parameters (thats model size)
+  - Kimi K2-0905: $25-35M estimated, 1T parameters total (MoE architecture, only ~32B active at once)
+  - MiniMax: $15-20M estimated, Mid-range model, mid-range cost
+  - 🧮 Training cost = GPU hours × GPU price + electricity + data costs.
+  - 真实的成本数字都应该接近上面的公式
+  - deepseeks $6M feels like marketing. You cant rent enough H100s for months and only spend $6M unless youre getting massive subsidies or cutting major corners.
+  - glms $8-12M is more realistic. Still cheap compared to Western models but not suspiciously fake-cheap.
+  - Kimi at $25-35M shows you CAN build competitive models for less than $100M+ but probably not for $6M.
+
+- One difference could be the accounting methodology. I can for sure guarantee that not every training attempt is successful, and companies spend a fortune of gpu-hours on practice runs training smaller models; and then there might be a rollback or two to earlier checkpoints in the big run. Then imagine one company counting the entire cost, while the other accounts only for the end run, and boom - you got drastically different reported figures while effectively the same amount of spent money.
+- In the paper for Deepseek they are actually never claiming 6 million - there saying at an assumed price per GPU hour (can’t remember from the top of my head) the final run would be around 6 million.
+  - OpenAI also estimated GPT-OSS final training cost like this too iirc. They just didn't for other models.
+
+- They were very transparent about this, and have stated multiple times that it was just the final training run in that estimate and explicitly did not include prior incremental runs.
+
+- The costs listed are likely just the literal hardware cost for the final training run for the model. Every other aspect of the model training process is ignored.
+
+- metas new ai team are getting 9 figure salaries lol makes it hard to profit when you’re paying people such insane salaries.
+
+- Because they're leveraging Western frontier models. Let's be clear, the Chinese labs aren't doing any hard training. All they're really doing is distilling the hard work done by Western labs.
+  - I remember it being reported that Western frontier models trained on copyrighted data (even pirated material).
 
 - ## 做产品级搜索以后发现 3.7 效果特好但是特别贵，所以必须得做 content cache 降低成本。
 - https://x.com/arvin17x/status/1896922111505285484

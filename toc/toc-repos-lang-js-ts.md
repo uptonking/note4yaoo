@@ -405,6 +405,11 @@ modified: 2021-05-14T15:04:55.849Z
   - You may use it to validate the HTTP request body in your backend applications.
   - VineJS performance is the outcome of our pre-compiling API. Both Yup and Zod have no option for pre-compiling schemas.
 # ts-toolchain
+- https://github.com/nodejs/amaro /MIT/202511/ts
+  - a wrapper around `@swc/wasm-typescript`, a WebAssembly port of the SWC TypeScript parser. 
+  - It's used as an internal in Node.js for Type Stripping but can also be used as a standalone package.
+  - `const { code } = amaro.transformSync("const foo: string = 'bar';", { mode: "strip-only" });`
+
 - https://github.com/webpro-nl/knip /ISC/202410/ts
   - https://knip.dev/
   - Find unused files, dependencies and exports in your JavaScript and TypeScript projects. Knip it before you ship it

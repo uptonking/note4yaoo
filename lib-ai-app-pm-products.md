@@ -49,13 +49,8 @@ modified: 2025-03-22T16:10:24.856Z
   - 移动端计算能力差, 速度慢, ipad的M系芯片非gpu方案也不快
   - 耗电量大, 对手机端不友好
 
-- 基于ai coding实现产品
-  - 优点: 功能强大，依赖模型的coding能力
-    - 甚至可以考虑基于opfs的能力, 让ai实现类似文件转换的功能、python可视化导出, 甚至充分发挥compiler/interpreter的能力
-  - 缺点: 输出的code缺乏类似markdown/xml的标准, 难debug/测试
-
 - roadmap-ai
-  - 针对国内免费api定制的chat/ppt: 魔搭, 快手万擎
+  - 针对国内免费api定制的chat/ppt/mermaid: 魔搭, 快手万擎
     - 可以~~fork janai,然后扩展provider~~, janai默认支持openai-like api，已经支持了国内models
   - 利用chrome最新的侧边栏，实现类似cline/roocode的页面ai助理/office编辑
     - 基于cline-cli的client/server架构，支持多种工具如 wps/飞书/腾讯文档/notion
@@ -70,11 +65,20 @@ modified: 2025-03-22T16:10:24.856Z
 - markdown-stream
   - table-typewriter
 
+- 基于ai coding实现产品
+  - 优点: 功能强大，依赖模型的coding能力
+    - 甚至可以考虑基于opfs的能力, 让ai实现类似文件转换的功能、python可视化导出, 甚至充分发挥compiler/interpreter的能力
+  - 缺点: 输出的code缺乏类似markdown/xml的标准, 难debug/测试
+
 - coding-based ai products
   - 数据分析类，ai写代码、可视化，由代码驱动
   - 🐛 由代码驱动方案的缺点
     - 本地文件数据过大，无法读取完整数据
     - 数据字段如sales/Sales拼写错误
+
+- 🔡 可是尝试用code generation的思路来实现ai产物如ppt
+  - web sandbox + ai-coding > lovable ❓
+  - sandpack ai? react-live ai?
 
 - 🏠 ai-architecture: 与ai的通信和计算是在前端实现，还是在后端实现
   - 🤔 一种思路: tool-call时使用擅长tool-call的模型，分析时使用公益站的聊天优质但无法tool-call的模型
@@ -92,10 +96,6 @@ modified: 2025-03-22T16:10:24.856Z
   - 偏展示型的项目考虑采用ai-coding的思路来更新ui，如sandpack/react-live+ai，更灵活
 - 📡 roadmap
   - coding不适合同时编辑多个文件，但同时执行多个project的任务存在需求，特别是在本地硬件资源有限的条件下
-
-- 🔡 可是尝试用code generation的思路来实现ai产物如ppt
-  - web sandbox + ai-coding > lovable ❓
-  - sandpack ai? react-live ai?
 
 - 🏘️ ai-backend/platform
   - providers-wrapper: models, communication+state, structured in/output
@@ -131,6 +131,7 @@ modified: 2025-03-22T16:10:24.856Z
   - excel/database generator
   - mindmap/drawio generator
   - ai-friendly format: 图片/图形中带有元数据
+  - 用 ai ppt 的思路来编辑长文档，实现类似deep-research的文档
 
 - image-gen-by-code
   - 文生图难度高，但基于文本的流程图难度低很多，如集成 mermaid
@@ -470,7 +471,7 @@ modified: 2025-03-22T16:10:24.856Z
       - volo api 吧，基于 new api 改的，但是 v1 开始好像就完全重写了
       - VoAPI 一直是闭源的，甚至好像只放出 Docker 的部署方式，连编译后的可执行文件都不发布的，截止到我最后一次看时是这样的，不知道后续有没有改变和有没有收费计划
 
-## llm-api-public
+## llm-api-official-router
 
 - 📌 [OpenRouter API Rate Limits ](https://openrouter.ai/docs/api-reference/limits)
   - tldr: rpd-1000 

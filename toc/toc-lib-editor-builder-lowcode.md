@@ -741,7 +741,6 @@ modified: 2020-12-28T12:24:09.275Z
   - With just a few lines of code, data teams can confidently automate any data process with features such as scheduling, caching, retries, and event-based automations.
   - Workflow activity is tracked and can be monitored with a self-hosted Prefect server instance or managed Prefect Cloud dashboard.
 
-
 - https://github.com/kestra-io/kestra /apache2/202503/java/vue
   - https://kestra.io/
   - Workflow Automation Platform. Orchestrate & Schedule code in any language, run anywhere, 500+ plugins. 
@@ -759,6 +758,32 @@ modified: 2020-12-28T12:24:09.275Z
   - https://pipelineui.dev/
   - Open source editor for visualizing, creating and managing GitHub Actions workflows. 
   - Built with SolidStart and Appwrite
+
+## durable-workflow
+
+- https://github.com/dbos-inc/dbos-transact-py /MIT/202511/pyton
+  - https://docs.dbos.dev/
+  - https://www.dbos.dev/dbos-transact
+  - DBOS provides lightweight durable workflows built on top of Postgres. 
+  - Instead of managing your own workflow orchestrator or task queue system, you can use DBOS to add durable workflows and queues to your program in just a few lines of code.
+  - 用法基于decorator
+  - You should consider using DBOS if your application needs to reliably handle failures. 
+  - DBOS workflows make your program durable by checkpointing its state in Postgres
+  - 🆚 DBOS vs. Celery/BullMQ
+    - DBOS provides a similar queue abstraction to dedicated queueing systems like Celery or BullMQ: you can declare queues, submit tasks to them, and control their flow with concurrency limits, rate limits, timeouts, prioritization, etc. However, DBOS queues are durable and Postgres-backed and integrate with durable workflows
+    - DBOS checkpoints the workflow and each of its tasks in Postgres, guaranteeing that even if failures or interruptions occur, the tasks will complete and the workflow will collect their results. 
+    - By contrast, Celery/BullMQ are Redis-backed and don't provide workflows, so they provide fewer guarantees but better performance.
+  - 🆚 DBOS vs. Airflow
+    - DBOS and Airflow both provide workflow abstractions. Airflow is targeted at data science use cases, providing many out-of-the-box connectors but requiring workflows be written as explicit DAGs and externally orchestrating them from an Airflow cluster. 
+    - Airflow is designed for batch operations and does not provide good performance for streaming or real-time use cases. 
+    - DBOS is general-purpose, but is often used for data pipelines, allowing developers to write workflows as code and requiring no infrastructure except Postgres.
+  - 🆚 DBOS vs. Temporal
+    - Both DBOS and Temporal provide durable execution, but DBOS is implemented in a lightweight Postgres-backed library whereas Temporal is implemented in an externally orchestrated server.
+    - You can add DBOS to your program by installing this open-source library, connecting it to Postgres, and annotating workflows and steps. By contrast, to add Temporal to your program, you must rearchitect your program to move your workflows and steps (activities) to a Temporal worker, configure a Temporal server to orchestrate those workflows, and access your workflows only through a Temporal client. 
+  - https://github.com/dbos-inc/dbos-transact-ts /MIT/ts
+  - https://github.com/dbos-inc/dbos-demo-apps
+    - https://docs.dbos.dev/examples
+  - [DAG-style sync engine in Django : r/django _202511](https://www.reddit.com/r/django/comments/1p6hgid/dagstyle_sync_engine_in_django/)
 
 ## rpa
 

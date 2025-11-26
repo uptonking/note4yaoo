@@ -39,6 +39,9 @@ modified: 2025-08-16T14:12:24.416Z
   - emojis: people/body, faces/emotion, animals, nature, food/drink, travel/places, activities, objects, symbols, flags
   - bing-wallpaper, unsplash-wallpaper: people, nature, photo, film
 
+- tools
+  - [Can I gen it? | AI Hardware Checker](https://canigenit.com/)
+
 - tips
   - [Sable Diffusion WebUI Benchmark Data: nvidia/amd/torch](https://vladmandic.github.io/sd-extension-system-info/pages/benchmark.html)
   - [Stable Diffusion Benchmarks: 45 Nvidia, AMD, and Intel GPUs Compared | Tom's Hardware _202312](https://www.tomshardware.com/pc-components/gpus/stable-diffusion-benchmarks)
@@ -310,7 +313,15 @@ modified: 2025-08-16T14:12:24.416Z
 
 - ## 
 
-- ## 
+- ## [Adobe launched Graph - heavily inspired by Comfy : r/comfyui _202511](https://www.reddit.com/r/comfyui/comments/1p71ufk/adobe_launched_graph_heavily_inspired_by_comfy/)
+- Node graphs are nothing new. Houdini, Davinci, Blender, C4D, Nuke, all had node graphs prior to anything ai.
+  - What makes comfy comfy isn’t the nodes, it’s how foundational they are to everything we do in it and how flexible and open they make the entire process of building. It’s the closest thing to programming.
+  - Many tried emulating it, from Flora to Weavy, and none actually managed to come close to the rich open standard platform it is today. When everything you do is closed and limited, there’s not a whole lot of autonomy and potential you’re truly putting in the hands of your users.
+  - Adobe seems to be doing the same here. The only thing that is heavily inspired from comfy is the surface level appeal of nodes. The rest is locked behind their walls. 
+
+- Node based image compositing workflows were not invented by Comfy. Nuke, Blender, BlackMagic fusion, ect have been around for way longer.
+
+- weavy got bought by figma
 
 - ## [What is the Ollama or llama.cpp equivalent for image generation? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p3ntta/what_is_the_ollama_or_llamacpp_equivalent_for/)
 - Technically stable-diffusion.cpp is the "equivalent" to llama.cpp.

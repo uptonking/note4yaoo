@@ -504,6 +504,22 @@ modified: 2024-08-24T16:30:20.218Z
 - https://github.com/adobe/brackets /MIT/202003/js/archived
   - http://brackets.io/
   - a modern open-source code editor for HTML, CSS and JavaScript that's built in HTML, CSS and JavaScript.
+# codebase-utils
+- https://github.com/yamadashy/repomix /20.4kStar/MIT/202511/ts/vue
+  - https://repomix.com/
+  - a powerful tool that packs your entire repository into a single, AI-friendly file.
+  - AI-Optimized: Formats your codebase in a way that's easy for AI to understand and process.
+  - Token Counting: Provides token counts for each file and the entire repository, useful for LLM context limits.
+  - Customizable: Easily configure what to include or exclude.
+  - Code Compression: The --compress option uses Tree-sitter to extract key code elements, reducing token count while preserving structure.
+
+- https://github.com/403errors/repomind /202511/ts
+  - https://repomind-ai.vercel.app/
+  - AI-powered coding assistant using Agentic RAG to chat with any public GitHub repository or developer profile, offering deep code analysis, visual architecture maps, and security audits
+  - Using an advanced Context-Aware Engine, RepoMind performs deep code analysis without requiring you to clone repositories.
+  - Smart Context Loading: Instead of dumping entire files, RepoMind intelligently selects relevant code snippets based on your query.
+  - Multi-File Understanding: Traces dependencies and imports to understand how different parts of the codebase interact.
+  - RepoMind uses Context Augmented Generation (CAG), not traditional RAG. We don't chop your code into fragmented vectors; we load full, relevant files into the model's long context window for superior understanding.
 # code-search
 - https://github.com/BurntSushi/ripgrep /55.1kStar/MIT/202507/rust
   - ripgrep recursively searches directories for a regex pattern while respecting your gitignore

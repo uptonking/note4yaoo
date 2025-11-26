@@ -159,6 +159,7 @@ modified: 2021-05-06T09:39:53.522Z
   - 可以突出重点文本
   - 可以加入脑图/大纲
   - 可以加入图片
+- 用 ai ppt 的思路来编辑长文档，实现类似deep-research的文档
 # faq-not-yet
 - 待确认
   - 嵌入画板的体验和性能，参考 tldraw/PPTist

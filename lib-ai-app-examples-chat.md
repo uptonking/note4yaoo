@@ -543,6 +543,7 @@ modified: 2025-03-22T18:49:15.634Z
     - 聊天时~~只能选择全部文档或不选文档，不~~可以只选择部分文档
     - 支持根据场景配置不同llm: fast, long, reasoning
     - 🐛 聊天中的内容支持点击跳转到文档的chunk位置，而不是源文件，且中文文档的chunk经常是乱码
+  - 📡 [【Feature Request】 Streaming Response for Research Agent _202505](https://github.com/MODSetter/SurfSense/issues/86)
   - https://discord.com/channels/1359368468260192417/1359416865939787837/1409642464792412220
     - I was considering installing Surfsense but it needs API keys, doesn't it? How much does it cost to use it?
     - Every service has a local alternative other than Speech to Text service. No need to put any API keys if you use everything local.

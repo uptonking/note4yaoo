@@ -17,6 +17,12 @@ modified: 2024-01-11T15:57:32.182Z
   - design-to-code
   - code-to-design
 # ppt-ai
+- 实现方案
+  - coding with html
+  - markdown convertion + predefined-templates
+- html-editor vs react-page-editor vs svg-generator
+  - 基于markdown的编辑器方案可参考mermaid/rich-text-editor
+
 - [Presentations and Slide Decks with AI | Gamma](https://gamma.app/)
 # discuss-stars
 - ## 
@@ -260,6 +266,54 @@ PDF 文件只记录字符位置，需后期处理将字符组合成行。在表�
 - ## 
 
 - ## 
+
+- ## [An ode to reveal.js | Daniel Roelfs _202510](https://danielroelfs.com/posts/ode-to-revealjs/)
+- 🤔 html的兼容性很好, 几乎所有环境都可查看，不需要安装专门的ppt查看器
+
+- Efficiency
+  - lets me work efficiently and focus on improving the content of the presentation and pedagogical challenges
+- Shareability
+  - A reveal.js presentation is essentially just an HTML website. 
+- Integrations
+  - ssg
+- Templating  
+  - separating the content from the style makes it exceptionally easy to create nice and consistent-looking templates
+- Reliability
+  - Using an open source tool also ensures the independence of your project
+- Creativity
+  - the overwhelming amount of creatives that write and share their HTML/CSS/Javascript code with others 
+
+- ## [Slidev – Presentation Slides for Developers | Hacker News _202105](https://news.ycombinator.com/item?id=27050687)
+  - Slidev uses an extended Markdown format, while Reveal.js encourages you to write HTML
+- Missing from markdown/web based slides is a way to auto resize text content to fit on a page, like powerpoint does. I didn't find a way to manage this correctly with reveal, remark or marp and from what I'm seeing, slidevjs won't do it either.
+  - have run into the same problem of sizing/positioning issues. Usually can just manually tweak so it will be okay on typical sizes for presentations, but not optimal.
+
+- ## [Reveal.js: HTML presentation framework | Hacker News _202011](https://news.ycombinator.com/item?id=25233136)
+  - reveal.js was first released in 2011. A few years later I also launched a visual editing environment for reveal.js called Slides (slides.com). It has some pretty unique features targeted at developers, like a built-in CSS editor, access to the HTML source, and stepped line-by-line code highlighting.
+
+- I'm using RISE, a reveal.js implementation within Jupyter notebooks and it's so cool. Wish there was more support for the jupyter lab extension, making work presentation in this way is easy and very effective
+
+- I tend to think that page-based presentation is becoming a thing of the past. I usually write a big sprawling one-page HTML, magnify it, and do a presentation by gradually scrolling them. The advantages are obvious:
+  - No need to tweak the content to fit the page boundary.
+  - Highly accessible (adjustable to any screen).
+  - No JS.
+  - All figures are in SVGs.
+  - Can also support printing (just insert CSS page break).
+  - (edit) The scroll bar always shows where you are in the slides.
+  - I keep recommending this to my colleagues, but they're still sticking with PDFs and PowerPoints.
+- If you turn off JS, a revealjs slideshow will naturally degrade into a one-page HTML file.
+
+- ClickHouse presentations are almost 100% in HTML. All of them are based on Shower and to prepare a new presentation I just copy-paste previous presentation and edit HTML directly... actually very understandable and convenient even for C++ developer.
+
+- My favorite Reval.js trick is to iframe my public demo site. I give a quick look into the actual thing being presented, without switching windows.
+
+- Slideshow (S9) is basically a static website generator / compiler for (web) presentations.
+
+- 
+- 
+- 
+- 
+- 
 
 - ## 刚试用了 Gamma，被惊艳到了，这生成网页的效果不亚于 bolt 啊，没细看代码，但视觉效果，包括动效跟响应式绝对出彩
 - https://x.com/msjiaozhu/status/1867546304769049051

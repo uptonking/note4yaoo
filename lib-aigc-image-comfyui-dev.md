@@ -24,6 +24,7 @@ modified: 2025-09-25T16:24:05.355Z
   - license: GPLv3
   - 一些复杂的workflow难以理解和维护
   - 对于嵌入式文生图/改图的场景，comfyui的工作流图不如invokeAI的canvas易用
+  - 不是针对comfyui，而是所有文生图的方案, 都存在交互性差的缺点
 
 - who is using #comfyui
   - jaaz, comflowy

@@ -85,6 +85,7 @@ modified: 2023-11-28T14:48:45.910Z
   - office editor
     - pagable
     - pdf anno
+    - 不要在ppt-editor上纠结过多时间，先专注于mermaid
   - encryption: 有权限的用户或有密码的用户才可看到的数据
     - paid-only elements: paragraphs/sentences
     - 只对部分段落或部分文字加密
@@ -191,6 +192,9 @@ modified: 2023-11-28T14:48:45.910Z
   - 医疗行业对本地ai的需求较高
 
 ## saas/cloud
+
+- office
+  - google slides缺少开源替代, 特别是包含pdf
 
 - cloud-pros
   - unattended

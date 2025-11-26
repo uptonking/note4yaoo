@@ -2027,7 +2027,27 @@ ollama run hf.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF:Q6_K
 
 - ## 
 
-- ## 
+- ## 🆚 [I tested a few local hosted coding models with VSCode / cline so that you don't have to : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p6gruv/i_tested_a_few_local_hosted_coding_models_with/)
+  - Setup: Ubuntu 24.04, 2x 4060 Ti 16 GB (32 GB total VRAM), VS Code + Cline, models served via Ollama / GGUF. Context for local models was usually ~96k tokens (anything much bigger spilled into RAM and became 7-20x slower). 
+  - Tasks ranged from YOLO prompts ("Write a Space Invaders game in a single HTML file") to a moderately detailed spec for a modernized Space Invaders.
+  - Headline result: Qwen 3 Coder 30B is the only family I tested that consistently worked well with Cline and produced usable games. At 4-bit it's already solid; quality drops noticeably at 3-bit and 2-bit (more logic bugs, more broken runs). With 4-bit and 32 GB VRAM you can keep ~ 100k context and still be reasorably fast. If you can spare more VRAM or live with reduced context, higher-bit Qwen 3 Coder (e.g. 6-bit) does help. But 4-bit is the practical sweet spot for 32 GiB VRAM.
+  - Merges/prunes of Qwen 3 Coder generally underperformed the original. The cerebras REAP 25B prune and YOYO merges were noticeably buggier and less reliable than vanilla Qwen 3 Coder 30B, even at higher bit widths. They sometimes produced runnable code, but with a much higher "Cline has to rerun / you have to hand-debug or giveup" rate. TL; DR: for coding, the unmodified coder models beat their fancy descendants.
+  - Non-coder 30B models and "hot" general models mostly disappointed in this setup. Qwen 3 30B (base/instruct from various sources), devstral 24B, Skyfall 31B v4, Nemotron Nano 9B v2, and Olmo 3 32B either: (a) fought with Cline (rambling, overwriting their own code, breaking the project), or (b) produced very broken game logic that wasn't fixable in one or two debug rounds. Some also forced me to shrink context so much they stopped being interesting for larger tasks.
+  - My current working hypothesis: to do enthusiast-level Al-assisted coding in VS Code with Cline, one really needs to have at least 32 GB VRAM for usable models. Preferably use an untampered Qwen 3 Coder 30B (Ollama's default 4-bit, or an unsloth GGUF at 4-6 bits). Avoid going below 4-bit for coding, be wary of fancy merges/prunes, and don't expect miracles without a decent spec.
+  - I documented all runs (code + notes) in a repo on GitHub (https://github.com/DrMicrobit/lllm_suit)
+
+- Building retro games isn't representative of real software development.
+  - A proper evaluation should test: Configuration, planning, execution
+
+- glm 4.5 air fp8, did perform well in my local testing. Wanted to call that out as it's a non coding model but does feel still mile away from actual claudecode/codex. Still need to do testing on same setup using qwen3
+
+- If using small models, Qwen3 Code 30B-A3B is one of the best ones for coding. Qwen family also has great vision models.
+
+- Most of the time I use Kimi K2 though, it is my favorite local model so far. It works very well with Cline and Roo Code.
+
+- GLM 4.5 Air 3.14bpw EXL3 with Cline is pretty good, I'd guess probably better than Qwen 3 30B Coder q4 GGUF (no tests done, just guess), and it runs within 48GB of VRAM at 60k ctx fine.
+
+- One thing I have noticed, at least from Qwen 3 Coder 30B and its REAPed variant, is that the mileage I get from it can depend on the tool that I use. I haven't tried many of them, but at the very least I can say my personal experience has been a lot better with Aider than Kilo Code
 
 - ## [Best coding model for 192GB VRAM / 512GB RAM : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1ov1w8j/best_coding_model_for_192gb_vram_512gb_ram/)
   - what would be your choice if you had 4x RTX A6000 with nvlink and 512GB DDR4 RAM as your llm host?

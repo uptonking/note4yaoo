@@ -166,6 +166,10 @@ modified: 2023-04-04T22:39:45.442Z
   - Compare two images using a slider, an overlay, or a side by side split view.
   - This webcomponent follows the open-wc recommendation
 
+- https://github.com/jotform/before-after.js /MIT/202203/js/inactive
+  - http://www.jotform.com/formscentral/
+  - before-after is now a jquery plugin
+
 - OpenSeadragon /3.1kStar/BSD/202503/js
   - https://github.com/openseadragon/openseadragon
   - http://openseadragon.github.io/

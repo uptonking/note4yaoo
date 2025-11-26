@@ -24,6 +24,34 @@ modified: 2022-04-23T18:48:32.550Z
 # discuss-excel-ai 👾
 - ## 
 
+- ## 
+
+- ## 
+
+- ## we made Claude for Excel is now live for all Max, Team, and Enterprise users. Opus 4.5 makes it meaningfully better at complex spreadsheet tasks. _202511
+- https://x.com/alexalbert__/status/1993349203935084861
+- This is the underrated moat: domain-specific LLM wrappers that understand context. Excel has 1.2B+ users, most doing repetitive, rule-based tasks. Claude understanding "make me a summary" in spreadsheet terms = removing friction from 80% of spreadsheet workflows. The real profit pool for AI tools is domain expertise, not generalization.
+
+- This is awesome. The real test for these tools is always cross-sheet dependencies. Is it able to trace a formula back through 3 different tabs to find the source data, or does it mostly operate on the active sheet?
+  - It does, worked on 20 tab excel workbook and it finds all the cross dependency
+- The limitation isn’t cross-sheet, rather cross-file.
+
+- ## [LlamaSheets | AI Parsing and Extraction for Spreadsheets _202511](https://www.llamaindex.ai/blog/announcing-llamasheets-turn-messy-spreadsheets-into-ai-ready-data-beta)
+- https://x.com/jerryjliu0/status/1993366579632115752
+  - https://x.com/jerryjliu0/status/1993419298900263243
+  - We launched a new API today to let you parse any Excel sheet in a structured table.
+  - This lets you directly run text-to-pandas/SQL over this data if you’re building an AI agent, or do ETL yourself over it.
+
+- Data prep is the invisible 80% of ML pipelines. The magic isn't "run ML on raw Excel"—it's "automatically infer schemas from chaos". 
+  - LLMs bridging natural language intent → structured outputs is how we scale data ingestion from enterprises stuck in manual ETL hell. This unlocks self-service analytics at scale.
+  - Semi-structured data is the Achilles heel of AI workflows. LlamaSheets solves the parsing problem that kills automation at scale. Standardized data feeds > complex agent logic. This unlocks enterprise automation for every business stuck with Excel. Game changer.
+
+- Love this direction. Excel is basically “ad‑hoc schema as UI”, and most agents still treat it as plain text. Curious if LlamaSheets is (1) learning layout → schema → records, then (2) validating against a domain ontology, or more like few-shot layout cloning?
+
+- Nice. The hierarchical column layout is a tough one. How does it handle the other classic spreadsheet nightmare: merged cells? Curious if it un-merges and fills down or preserves the span info.
+
+- can you talk at all about approaches to benchmarking or evals for complex formulas and interdependencies?
+
 - ## 有人搞了个Excel的AI插件，可以直接在单元格与AI聊天让它帮你写公式或者宏。
 - https://x.com/karminski3/status/1955103864400777414
   - 我看了下源代码，也是宏实现的，估计用的时候可能杀软会报。感兴趣的朋友可以看看。

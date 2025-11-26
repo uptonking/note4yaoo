@@ -12,6 +12,7 @@ modified: 2021-04-30T20:14:17.669Z
   - 商业化的演示更偏向类似tableau的图形编辑器，而不是文字
   - 侧重信息的ppt上更多的是文字数字，而不是花里胡哨的图形，此时pdf比ppt更合适，很多pdf由ppt转换得到
   - 技术栈基于svg容易实现缩放，基于dom不容易缩放, ppt需要缩放吗
+  - 基于markdown的编辑器方案可参考mermaid
 
 - dev-xp
   - ui组件都可分为state、view2部分，editor框架的核心是通过view更新state
@@ -22,8 +23,11 @@ modified: 2021-04-30T20:14:17.669Z
   - 只需ppt的viewer，presentation常是各个系统的核心功能
   - ✨ pdf-editor与ppt-editor的相似点: 支持批注、左侧页面缩略图
   - 可参考: svg-editor, pdf-editor, drawio
+
+- resources
+  - [List of markdown presentation tools](https://gist.github.com/johnloy/27dd124ad40e210e91c70dd1c24ac8c8)
 # popular
-- https://github.com/gitbrent/PptxGenJS /3.3kStar/MIT/202305/ts/inactive
+- https://github.com/gitbrent/PptxGenJS /4.2kStar/MIT/202506/ts/inactive
   - https://gitbrent.github.io/PptxGenJS/
   - Create PowerPoint presentations with a powerful, concise JavaScript API.
   - This library creates Open Office XML (OOXML) Presentations which are compatible with Microsoft PowerPoint, Apple Keynote, and other applications.
@@ -44,7 +48,7 @@ modified: 2021-04-30T20:14:17.669Z
     - https://wyozi.github.io/react-pptx/
     - React wrapper for PptxGenJS. Works both in browser and node
 
-- reveal.js /66.4kStar/MIT/202503/js/官方editor未开源
+- reveal.js /69.9kStar/MIT/202510/js/官方editor未开源
   - https://github.com/hakimel/reveal.js
   - https://revealjs.com/
   - 🌓 open source HTML presentation framework. It enables anyone with a web browser to create beautiful presentations for free.
@@ -86,7 +90,11 @@ modified: 2021-04-30T20:14:17.669Z
 - https://github.com/patarapolw/reveal-md /201912/ts/vue
   - View markdown files as a presentation in Reveal.js with CLI
 
-- https://github.com/impress/impress.js /37.5kStar/MIT/202404/js/提交少/inactive
+- https://github.com/mklilley/slidee /MIT/202210/js/inactive
+  - Slidee turns a folder of markdown files into Reveal.js presentations.
+  - [Slidee: A presentation tool powered by Reveal.js _202209](https://mattlilley.com/posts/slidee/)
+
+- https://github.com/impress/impress.js /38.5kStar/MIT/202509/js/提交少/inactive
   - http://impress.js.org/
   - http://impress.github.io/impress.js/examples/classic-slides/
   - 🌓 a presentation framework based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com
@@ -126,7 +134,7 @@ modified: 2021-04-30T20:14:17.669Z
     - https://swiperjs.com/
     - Most modern mobile touch slider with hardware accelerated transitions
 
-- https://github.com/netless-io/netless-app /MIT/202312/ts
+- https://github.com/netless-io/netless-app /MIT/202312/ts/inactive
   - https://netless-io.github.io/netless-app
   - Official Apps for the Agora Interactive Whiteboard.
   - https://github.com/netless-io/flat /MIT/202401/ts
@@ -146,6 +154,15 @@ modified: 2021-04-30T20:14:17.669Z
   - The package provides framework-agnostic core and renderer and framework wrappers for Vue and React.
   - 依赖diff-match-patch-es、ohash
   - [The Magic in Shiki Magic Move _202403](https://antfu.me/posts/shiki-magic-move)
+
+- https://github.com/shower/shower /4.8kStar/MIT/202411/html/inactive
+  - https://shwr.me/
+  - Shower HTML presentation engine
+  - Built on HTML, CSS and vanilla JavaScript.
+
+- https://github.com/webslides/WebSlides /MIT/201801/js/inactive
+  - https://webslides.tv/
+  - everything you need to make HTML presentations, landings, and longforms in a beautiful way.
 # ppt-editor
 - PPTist /6.9kStar/apache2 > AGPLv3/202504/ts/vue/基于DOM
   - https://github.com/pipipi-pikachu/PPTist
@@ -172,11 +189,11 @@ modified: 2021-04-30T20:14:17.669Z
   - [feat: 支持移动端/更换开源协议 _202206](https://github.com/pipipi-pikachu/PPTist/commit/704192508247085d327577848691634a925623b8)
     - apache2 > GPLv3
 
-- https://github.com/jotform/dnd-builder /43Star/MIT/202402/js
+- https://github.com/jotform/dnd-builder /57Star/MIT/202511/js
   - https://www.jotform.com/open-source/dnd-builder/
   - accessible drag and drop page builder with React
   - 依赖use-gesture、fuse.js、react-dnd-cjs、react-quill、react-sortable-hoc、react-zoom-pan-pinch、react-window、recharts
-  - 示例丰富，支持preview/ppt/print
+  - 示例丰富，支持preview/print
 
 - https://github.com/tantaman/strut /AGPLv3/202312/ts
   - https://strut.io/
@@ -304,7 +321,14 @@ modified: 2021-04-30T20:14:17.669Z
   - [We made open source AI presentation generator (Gamma Alternative) : r/selfhosted _202505](https://www.reddit.com/r/selfhosted/comments/1kn6btt/we_made_open_source_ai_presentation_generator/)
     - We've actually archived electron project for now. We'll only support docker for now. Most wanted in docker format to run on web, and it was hard to maintain both. Hopefully, if we prove useful to many, we will go back to desktop as well.
 
-- https://github.com/allweonedev/presentation-ai /471Star/MIT/202508/ts
+- https://huggingface.co/spaces/barunsaha/slide-deck-ai/tree/main /MIT/202511/python
+  - Describe your topic and let SlideDeck AI generate a PowerPoint slide deck for you
+  - Given a topic description, it uses a Large Language Model (LLM) to generate the initial content of the slides. The output is generated as structured JSON data based on a pre-defined schema.
+    - next, it uses the keywords from the JSON output to search and download a few images with a certain probability.
+    - it uses the `python-pptx` library to generate the slides, based on the JSON data from the previous step, from predefined ppt templates
+    - may provide additional instructions to refine/modify the content
+
+- https://github.com/allweonedev/presentation-ai /2kStar/MIT/202511/ts/提交少
   - https://presentation.allweone.com/
   - AI Presentation Generator (Gamma Alternative)
   - Editable Outlines: Review and modify AI-generated outlines before finalizing
@@ -342,6 +366,14 @@ modified: 2021-04-30T20:14:17.669Z
   - [ollama本地连接一直显示错误，服务器500 _202507](https://github.com/sligter/LandPPT/issues/5)
     - ollama测试一直失败，尝试修复了很久也没有成功，最后发现其实可以直接运行。
     - 我也是一直测试失败，跨域调了好久，结果发现配置好了可以直接运行。
+
+- https://github.com/icip-cas/PPTAgent /2.3kStar/MIT/202511/python
+  - Generating and Evaluating Presentations Beyond Text-to-Slides [EMNLP 2025]
+  - We present PPTAgent, an innovative system that automatically generates presentations from documents.
+  - PPTAgent follows a two-phase approach: 
+    - Analysis Phase: Extracts and learns from patterns in reference presentations
+    - Generation Phase: Develops structured outlines and produces visually cohesive slides
+  - https://huggingface.co/Forceless/PPTAgent-coder-3B /qwen2/202508
 
 - https://github.com/YOYZHANG/ai-ppt /144Star/MIT/202410/ts/inactive
   - Generated ppt by AI based on RevealJS synax
@@ -425,6 +457,9 @@ modified: 2021-04-30T20:14:17.669Z
   - https://github.com/qrpcode/wordgo /apache2/202306/java/inactive
     - 传统的Java生成word通常需要先手动创建模板文件，之后导入。如果不希望创建模板，还想少些点代码，选Word GO是个好主意
 
+- https://github.com/lesteroliver911/ai-pdf-ppt-generator-openai /MIT/202410/python/inactive
+  - a Flask-based application that generates presentations from documents
+
 - [ChatSlide | Build your Slides and Videos from Documents in one click](https://chatslide.ai/landing)
 # ai-canvas
 - https://github.com/open-webui/open-webui /104kStar/BSD+LOGO/python/ts/svelte
@@ -469,5 +504,10 @@ modified: 2021-04-30T20:14:17.669Z
     - CopilotKit seems to be fairly tightly coupled to LangGraph AFAIK. If I wanted to use Mastra instead, is that fairly easy?
       - Yes we have a tight integration with LangGraph but also CewAI, and soon Mastra + others
 # more
+- https://github.com/sozi-projects/Sozi /1.7kStar/MPL/202411/js/inactive
+  - http://sozi.baierouge.fr/
+  - a presentation tool for SVG documents
+  - 支持win/linux/mac
+
 - https://github.com/nimeshnayaju/tlslides /202204/ts/inactive
   - Create slides using tldraw (Unmaintained)

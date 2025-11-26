@@ -470,6 +470,11 @@ modified: 2025-08-23T11:43:35.904Z
   - https://github.com/zhumengkang/cf-ai-image /202508/js/inactive
     - 进行二次开发和功能增强
   - [基于cloudflare搭建的免费在线文生图服务 ](https://linux.do/t/topic/886265)
+
+- https://github.com/HisMax/RedInk /CC-BY-NC/202511/python/ts/vue
+  - 一句话一张图片生成小红书图文
+  - 前段时间默子在 Linux.do 发了一个用 Nano banana Pro 做 PPT 的帖子, 收获了 600 多个赞
+  - 依赖 Flask、Nano banana Pro、pinia
 # examples
 - https://github.com/d4N-87/ComfyUI-Workflow-Inspector /7Star/MIT/202508/ts
   - https://d4n-87.github.io/ComfyUI-Workflow-Inspector/

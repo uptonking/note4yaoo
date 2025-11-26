@@ -75,6 +75,40 @@ At a high level, it supports:
   - The basic storage unit in the OS is a file. The basic storage unit in Kafka is a replica.
   - A replica is really just an ordered bunch of files - a linked list where each node is a file.
 
+# discuss-queue-fwk/tools
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 原来现在TypeScript已经可以写后端了，队列可以用BullMQ来做
+- https://x.com/Jiaxi_Cui/status/1993456193168380256
+  - 比go简洁，和python差不多的MVP速度，比python的组件维护更勤
+  - 但涉及到CPU IO重的操作，可能在性能上还是比不上传统后端语言
+
+- 用是能用，kafkajs 和 rabbitmq 都很好接，而且mongodb天然符合js生态，用TypeScript最大的缺陷就是人，慢慢变成any script基本就难搞了，语言只是个工具 连用户都没几个的产品不用考虑那么多，成功项目也是逢河搭桥搞起来的
+
+- TS 诞生之初那一刻起就能写后端。 越是 IO 密集的操作反而越适合写，不适合的是 CPU 密集型应用。
+
+- bullmq还需要引入redis，稍微重了一点儿，可以用pg-boss，啥中间件都可以省了
+
+- 当他使用 Redis 作为 backend 的时候，就注定只能适用小规模场景了
+
+- 比go简洁？不可能
+  - 很正常的事情。Go 只能说语法简陋，实现相同的功能，代码量未必很少。
+
+- node的线程模型根本就没有问题。它在本质上是跟高性能电信服务器是同一种模型。node worker 加message queue完全可以轻松应对大流量
+
+- https://github.com/13RTK/java-nodejs-performance
+
+- https://x.com/xicilion/status/1993535301835538919
+  - 后端 ts 不是编译或者直接执行的，是使用一种抹除代码的黑魔法快速转换为 js 执行的，缺陷十分多，并且转换程序要在 wasm 里运行。
+  - node 将 ts 转换为 js 的核心模块是 https://github.com/swc-project/swc，为了避免引入 rust，它是被编译为 wasm 嵌入到 node 里的。
+
+- 最新的 Prisma 版本就是这样优化的，从 js + rust 升级成了 ts + wasm
 # discuss
 - ## 
 

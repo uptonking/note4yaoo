@@ -180,19 +180,27 @@ uv run python -m app.docling_main
 
 # SurfSense
 - pros
-  - 支持超大文档(系统限制500页)的分批summary和chunking
-  - 通过LiteLLM的配置支持本地Ollama/LMStudio
+  - ~~支持超大文档~~(系统限制500页)的分批summarizing/chunking/embedding
+    - 实测上传400页文档时, 处理1h后仍然出现异常 [lmstudio-llama-cpp] Error in predictTokens: The number of tokens to keep from the initial prompt is greater than the context length. 
   - 支持通过UI来配置llm provider url, 但不同workspace的url非全局, 不能共享需要重新配置一次
+    - 通过LiteLLM的配置支持本地Ollama/LMStudio
 
-- cons
+- cons(bug特别多)
   - chunk的内容是summary，而不是原文，准确度不够高, (❓ 原文似乎未在系统中无法查看)
     - 上传pdf后不支持查看pdf原文, sources中保存的数据是处理过的文本内容
   - citation点击后查看的是chunk文本, 体验不如pdf原文
-  - 聊天对话不支持流式输出，体验很慢
+  - chat聊天对话不支持流式输出，体验很慢
+  - chat不支持export
   - 上传中文pdf后，chunk的内容是英文summary，设置了workspace级的语言为中文后chunk仍是英文
   - 有时不能以用户提问的语言回复用户
   - 有时整个回复内容citation的编号都是同1处, 特别是回复中文内容时
   - 点击chat列表切换聊天记录时，容易出现ai重新regenerate内容的问题
+
+- features
+  - Multiple File Formats
+  - Cited Answers
+  - Local LLM Support
+  - External Sources: Tavily/SearxNG, slack, linear, notion, github, discord...
 
 ## not-yet
 
@@ -223,8 +231,12 @@ uv run python -m app.docling_main
 
 ## draft
 
-- 💥 大文档页数限制
+- 💥 大文档页数限制, 似乎对summary建立index成功了，但未对chunk建立index， 功能bug多
   - Failed task process_file_upload: Page limit exceeded before processing
+  - [lmstudio-llama-cpp] Error in predictTokens: The number of tokens to keep from the initial prompt is greater than the context length. Try to load the model with a larger context length, or provide a shorter input
+- 未完全建立index的情况下仍然可以聊天，但聊天会出现如下超限的异常
+  - The number of tokens to keep from the initial prompt is greater than the context length. Try to load the model with a larger context length, or provide a shorter input
+  - Token indices sequence length is longer than the specified maximum sequence length for this model (340362 > 262144). Running this sequence through the model will result in indexing errors
 
 - 
 - 
@@ -236,7 +248,7 @@ uv run python -m app.docling_main
 
 ## dev-xp-surfsense
 
-- lm studio的配置为 lm_studio
+- lm studio的配置为 `lm_studio`
 
 - 
 - 
