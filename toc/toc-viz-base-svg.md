@@ -65,9 +65,11 @@ modified: 2020-10-05T06:18:21.639Z
   - Teselagen's Open Source Vector/Plasmid Editor Component
   - Built With React & Redux
 # svg-editor
-- https://github.com/SVG-Edit/svgedit /js
+- https://github.com/SVG-Edit/svgedit /7.4kStar/MIT/202509/js
   - web-based, JavaScript-driven SVG drawing editor that works in any modern browser. 
-  - SVGEdit is based on a powerful SVG canvas @svgedit/svgcanvas
+  - SVGEdit is based on a powerful SVG canvas `@svgedit/svgcanvas`.
+  - https://github.com/SVG-Edit/svg-edit-react /MIT/202407/js/inactive
+    - React based editor based on SVG-edit svgcanvas
 # examples
 - https://github.com/whiteSHADOW1234/MergeSVG /MIT/202510/ts
   - https://mergesvg.vercel.app/

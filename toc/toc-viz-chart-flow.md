@@ -31,7 +31,7 @@ modified: 2020-10-22T10:22:55.878Z
   - [diagram-js vs gojs vs jointjs vs jsplumb vs mxgraph | npm trends](https://npmtrends.com/diagram-js-vs-gojs-vs-jointjs-vs-jsplumb-vs-mxgraph)
   - [流程图制作: BPMN流程图在线绘制](https://segmentfault.com/a/1190000019385581)
 # flowchart
-- mermaid /83.5kStar/MIT/202510/ts
+- mermaid /83.5kStar/MIT/202510/ts/svg
   - https://github.com/mermaid-js/mermaid
   - https://mermaid.js.org/
   - https://www.mermaidchart.com/
@@ -54,7 +54,7 @@ modified: 2020-10-22T10:22:55.878Z
     - DSL 解析器是基于 Antlr4 构建的。其定义文件位于src/g4。生成的解析器位于 src/generated-parser。 对解析器的增强相关的代码位于src/parser文件夹。
     - 所有其他的文件基本上都是跟渲染器相关的。渲染器是基于 VueJs 2.x 开发的。
 
-- maxGraph /500Star/apache2/202504/ts
+- maxGraph /500Star/apache2/202504/ts/svg
   - https://github.com/maxGraph/maxGraph
     - https://maxgraph.github.io/maxGraph/
     - https://jgraph.github.io/mxgraph/
@@ -109,7 +109,7 @@ modified: 2020-10-22T10:22:55.878Z
   - core无依赖，支持vanillajs、React
   - @gitgraph/core contains the main logic for manipulating git-like API and compute the graph that should be rendered.
 
-- jsplumb /7.3kStar/MIT/202302/ts/NoDeps
+- jsplumb /7.3kStar/MIT/202302/ts/NoDeps/dom
   - https://github.com/jsplumb/jsplumb
   - https://jsplumbtoolkit.com/
   - https://jsplumbtoolkit.com/features
@@ -184,8 +184,9 @@ modified: 2020-10-22T10:22:55.878Z
   - [is Dynamic auto layouting using dagre possible?](https://github.com/wbkd/react-flow/issues/1113)
     - Dynamic auto layout with dagre is possible. As explained you need to re-layout your graph when you add a node. The easiest way is to have pre-defined dimensions for your nodes. If that's not possible you need to wait for the first render and then do a re-calculation of the layout.
 
-- LogicFlow /4.5kStar/apache2/202404/ts
+- LogicFlow /10.8kStar/apache2/202511/ts/svg
   - https://github.com/didi/LogicFlow
+  - http://logicflow.cn/
   - https://docs.logic-flow.cn/examples/#/gallery
   - http://logic-flow.org/examples/
   - 专注于业务自定义的流程图编辑框架，支持实现脑图、ER图、UML、工作流等各种图编辑场景
@@ -195,6 +196,7 @@ modified: 2020-10-22T10:22:55.878Z
   - 部分使用class组件
   - 🔌 兼容各种产品自定义的流程编辑需求，绝大部分模块以插件的形式实现，支持各模块自由插拔
   - 本地开发时，使用node.v16
+  - 动画示例多，支持折线动画
   - 支持minimap
   - ⌛️ 支持undo/redo
   - 支持pause/resume
@@ -226,7 +228,7 @@ modified: 2020-10-22T10:22:55.878Z
 - https://github.com/towersxu/draft-flow
   - 基于LogicFlow和rough.js实现的手绘风格流程图
 
-- https://github.com/bytedance/flowgram.ai /MIT/202505/ts/功能全面
+- https://github.com/bytedance/flowgram.ai /7.3kStar/MIT/202511/ts/dom/功能全面
   - https://flowgram.ai/
   - https://flowgram.ai/examples/playground.html
   - a node-based flow building engine that helps developers quickly create workflows in either fixed layout or free connection layout modes.

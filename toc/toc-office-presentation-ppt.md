@@ -12,7 +12,6 @@ modified: 2021-04-30T20:14:17.669Z
   - 商业化的演示更偏向类似tableau的图形编辑器，而不是文字
   - 侧重信息的ppt上更多的是文字数字，而不是花里胡哨的图形，此时pdf比ppt更合适，很多pdf由ppt转换得到
   - 技术栈基于svg容易实现缩放，基于dom不容易缩放, ppt需要缩放吗
-  - 基于markdown的编辑器方案可参考mermaid
 
 - dev-xp
   - ui组件都可分为state、view2部分，editor框架的核心是通过view更新state
@@ -22,7 +21,9 @@ modified: 2021-04-30T20:14:17.669Z
   - 很多ppt的每页是一张图片
   - 只需ppt的viewer，presentation常是各个系统的核心功能
   - ✨ pdf-editor与ppt-editor的相似点: 支持批注、左侧页面缩略图
-  - 可参考: svg-editor, pdf-editor, drawio
+  - 可参考: svg-editor, pdf-editor, drawio(可插入丰富元素/集成)
+    - mxgraph视图层支持svg/html
+  - 基于markdown的编辑器方案可参考mermaid
 
 - resources
   - [List of markdown presentation tools](https://gist.github.com/johnloy/27dd124ad40e210e91c70dd1c24ac8c8)
@@ -189,25 +190,26 @@ modified: 2021-04-30T20:14:17.669Z
   - [feat: 支持移动端/更换开源协议 _202206](https://github.com/pipipi-pikachu/PPTist/commit/704192508247085d327577848691634a925623b8)
     - apache2 > GPLv3
 
-- https://github.com/jotform/dnd-builder /57Star/MIT/202511/js
-  - https://www.jotform.com/open-source/dnd-builder/
-  - accessible drag and drop page builder with React
-  - 依赖use-gesture、fuse.js、react-dnd-cjs、react-quill、react-sortable-hoc、react-zoom-pan-pinch、react-window、recharts
-  - 示例丰富，支持preview/print
-
-- https://github.com/tantaman/strut /AGPLv3/202312/ts
-  - https://strut.io/
-  - An Impress.js and Bespoke.js Presentation Editor
-  - 依赖lexical、vlcn、remark.v10、react-draggable
-  - The original project is ancient (2011/2013) and dated. It is now coming back with a facelift, collaborative editing
-
-- react-design-editor /1.4kStar/MIT/202401/ts
+- react-design-editor /1.7kStar/MIT/202507/ts/canvas
   - https://github.com/salgum1114/react-design-editor
   - https://salgum1114.github.io/react-design-editor/
   - a module for React, written in Javascript/Typescript which provides two primary features: image-editor, bpm-workflow
   - 画布区是canvas，其余地方是dom，直接导出图片或json
   - developed direct manipulation of editable design tools like Powerpoint
   - primarily uses the Ant Design, Fabric.js and React, React-Ace
+  - 提供了 image-canvas-editor 和 workflow-editor
+
+- https://github.com/jotform/dnd-builder /57Star/MIT/202511/js
+  - https://www.jotform.com/open-source/dnd-builder/
+  - accessible drag and drop page builder with React
+  - 依赖use-gesture、fuse.js、react-dnd-cjs、react-quill、react-sortable-hoc、react-zoom-pan-pinch、react-window、recharts
+  - 🌰 示例丰富，支持preview/print, 典型的ppt布局和交互
+
+- https://github.com/tantaman/strut /1.9kStar/AGPLv3/202312/ts/inactive
+  - https://strut.io/
+  - An Impress.js and Bespoke.js Presentation Editor
+  - 依赖lexical、vlcn、remark.v10、react-draggable
+  - The original project is ancient (2011/2013) and dated. It is now coming back with a facelift, collaborative editing
 
 - deckdeckgo /1kStar/AGPLv3+MIT/202301/ts/web-comp/stencil/inactive
   - https://github.com/deckgo/deckdeckgo
