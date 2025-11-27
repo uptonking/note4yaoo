@@ -260,6 +260,9 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
 
 ```sh
 
+ollama run --verbose gemma3:4b
+OLLAMA_DEBUG=1 ollama serve gemma3:4b
+
 # llama-server -m model.gguf --port 8080 --alias name
 ./build/bin/llama-server -m ~/.lmstudio/models/mradermacher/merged-mermaid-7b-GGUF/merged-mermaid-7b.Q6_K.gguf 
 
@@ -280,6 +283,19 @@ VLLM_LOGGING_LEVEL=debug VLLM_CONFIGURE_LOGGING=1 vllm serve RUC-DataLab/DeepAna
   - ?
 - dev-to
   - ?
+
+## 1127
+
+- openai. BadRequestError: Error code: 400 - {'error': "Cannot read properties of null (reading 'type')"}
+  - why lm studio doesnot support openai api
+- LM Studio does provide an OpenAI-compatible API (including function/tool use and structured JSON output) — but it’s not a 100% drop-in clone. Function-calling / structured output are relatively new / beta in LM Studio and there are subtle differences and a few bugs that can make OpenAI-style requests fail with weird 400 errors like the one you see
+- While LM Studio supports "Function Calling" and "JSON Mode, " its local inference server (which acts as an OpenAI proxy) cannot currently handle the strict: true enforcement logic. It tries to read a property of the schema, finds null where it expects a strict type definition, and throws that 400 error.
+
+- No solution found when resolving dependencies for split (markers: python_full_version == '3.11.*'
+  - uv run --index-strategy unsafe-best-match --env-file .env -- python server.py
+
+- [greenlet is not installed on Apple M1 · Issue #7714 · sqlalchemy/sqlalchemy](https://github.com/sqlalchemy/sqlalchemy/issues/7714)
+  - I solved with this `sqlalchemy[asyncio]>=2.0.43`
 
 ## 1124
 

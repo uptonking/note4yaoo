@@ -22,6 +22,14 @@ modified: 2020-10-05T06:18:21.639Z
   - /12.9kStar/Apache2/201710/js
   - http://snapsvg.io/
   - JS library for modern SVG graphics
+
+- https://github.com/hehehai/tiny-svg /MIT/202511/ts
+  - https://tiny-svg.actnow.dev/
+  - lightning-fast SVG optimizer and code generator
+  - SVG Optimization - SVGO-powered with 40+ configurable plugins
+  - Code Generation - React (JSX/TSX), Vue, Svelte, React Native, Flutter
+  - Transformations - Rotate, flip, resize with proportional scaling
+  - Visual Preview - Real-time preview with zoom (20%-400%) and pan
 # svg-utils
 - https://github.com/vercel/satori /MPLv2/202411/ts
   - https://og-playground.vercel.app/
@@ -84,6 +92,8 @@ modified: 2020-10-05T06:18:21.639Z
   - Iterative graphic design with AI. Based on gum.js, a grammar for SVG creation.
   - Gum provides a visual language for creating figures and diagrams. This gives LLMs the ability to rapdily express themselves visually in a way that can be integrated with their text output.
   - The key here relative to diffusion models is the ability to rapidly generate pricise visualizations that can be animated or modified on the fly. 
+# toolchain
+
 # more-repos
 - https://github.com/ngti/svg-grabber /MIT/201803/js/inactive
   - Open source chrome extension to quickly preview, download or copy inline or embedded SVG images from a website

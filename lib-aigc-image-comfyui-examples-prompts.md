@@ -12,6 +12,8 @@ modified: 2025-09-13T09:32:22.969Z
 # resources
 - prompts
   - [Stable Diffusion - Prompts examples](https://stablediffusion.fr/prompts)
+  - https://github.com/ZeroLu/awesome-nanobanana-pro
+    - image prompts sourced from X (Twitter), WeChat, Replicate, and top prompt engineers
 # prompts
 - Prompt: the perfect bonsai
   - Parameters: Steps: 20, Sampler: Euler a, CFG scale: 7, Seed: 3796997824, Size: 512x512, Model hash: 7460a6fa

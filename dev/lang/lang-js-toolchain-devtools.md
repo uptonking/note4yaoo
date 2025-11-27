@@ -9,6 +9,18 @@ modified: 2025-04-09T02:49:16.372Z
 
 # guide
 
+# toolchain
+- 可在github code search搜索各种cli工具的使用示例
+
+- webpack > rspack/esbuild
+- tsc > tsgo
+
+- Node.js built-in ts stripping
+
+- 
+- 
+- 
+
 # discuss-stars
 - ## 
 

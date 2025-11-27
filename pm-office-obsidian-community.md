@@ -195,6 +195,18 @@ modified: 2024-01-23T02:52:23.932Z
 
 - ## 
 
+- ## 
+
+- ## [Do you all know how I can get something like this? : r/ObsidianMD](https://www.reddit.com/r/ObsidianMD/comments/1p7qs4p/do_you_all_know_how_i_can_get_something_like_this/)
+  - 类似仪表大盘
+
+- With the Dataview plugin you can query your vault and render whatever content you want with it with JavaScript. The sky's the limit if you're willing to put in the time.
+  - there's not a lot of actual dataview code online, at least not on public repos. I would suggest referring to the dataview plugin's documentation and trying by yourself. 
+
+- Don't hold me to this because its been awhile since I looked at financial type plugins but there used to be a couple called Obsidian Ledger and another Hledger but I don't know if they are still active.
+
+- Google sheet looks sufficient for this
+
 - ## [Obsidian alternatives that are open source (free) and sync feature as well : r/ObsidianMD _202209](https://www.reddit.com/r/ObsidianMD/comments/x95y56/obsidian_alternatives_that_are_open_source_free/)
 - The only good opensource alternative to Obsidian right now is Logseq. I don't think it supports sync though.
 

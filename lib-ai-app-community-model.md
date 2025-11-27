@@ -495,6 +495,28 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [China just passed the US in open model downloads for the first time : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p7alka/china_just_passed_the_us_in_open_model_downloads/)
+- This analysis includes all models on HuggingFace, not just LLMs. The most downloaded models (by far) are smaller stuff like embedding models, classifiers, VAD, etc., and small base models like BERT and GPT-2. The most popular properly large instruction-tuned LLM is Qwen2.5-VL-3B-Instruct in 24th place.
+  - I suspect a lot of downloads are coming from poorly configured CI/CD pipelines and stuff, rather than individual users
+
+- I'm surprised this hasn't happened earlier, the only good open weight models from the US in the past like 6 months has been Gpt-oss.
+
+- How tf Germany is third place?
+  - They have Black Forest Labs
+  - stable diffusion guys (now bfl aka flux) are from germany
+- Sentence Transformers (SBERT) is originally German. Gets an ungodly number of downloads, and because the models are small people just grab it directly from HF instead of running a local mirror.
+  - (Also LAION (CLAP, some popular CLIP-ViT models) and Stable Diffusion/Black Forest Labs (FLUX), though I don't think those get nearly as many downloads.)
+
+- Chinese users predominantly go to modelscope
+
 - ## 💰 [How are Chinese AI models claiming such low training costs? Did some research : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p6cf2p/how_are_chinese_ai_models_claiming_such_low/)
   - deepseek claims $6M training cost. Everyones losing their minds cause ChatGPT-4 cost $40-80M and Gemini Ultra hit $190M.
   - glm-4.6: $8-12M estimated, 357B parameters (thats model size)
@@ -518,6 +540,9 @@ e) 最终评论者(Final Critic)
 
 - Because they're leveraging Western frontier models. Let's be clear, the Chinese labs aren't doing any hard training. All they're really doing is distilling the hard work done by Western labs.
   - I remember it being reported that Western frontier models trained on copyrighted data (even pirated material).
+
+- [Are Chinese AI models really that cheap to train? Did some research. : r/LLMDevs](https://www.reddit.com/r/LLMDevs/comments/1p77x5k/are_chinese_ai_models_really_that_cheap_to_train/)
+  - It’s a combo of all those things, especially lying, plus they used a ton of distillation techniques - i.e. they trained a ton on the output of ChatGPT and other established models. 
 
 - ## 做产品级搜索以后发现 3.7 效果特好但是特别贵，所以必须得做 content cache 降低成本。
 - https://x.com/arvin17x/status/1896922111505285484

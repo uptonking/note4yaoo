@@ -29,6 +29,11 @@ modified: 2025-11-01T10:54:26.044Z
     - Great for running multiple models at once or switching models on demand.
   - What differentiates this project from `llama-swap`?
     - The main thing is that you can create instances via web dashboard. With llama-swap you need to edit the config file. There's also API key auth which llama-swap doesn't have at all as far as I know.
+
+- https://github.com/RamboRogers/mlx-gui /GPL/202508/python/inactive
+  - https://mlxgui.com/
+  - A lightweight Inference Server for Apple's MLX engine with a GUI.
+  - TLDR - OpenRouter-style v1 API interface for MLX with Ollama-like model management, featuring auto-queuing, on-demand model loading, and multi-user serving capabilities via single mac app.
 # mlx/llama.cpp
 - https://github.com/Michael-A-Kuykendall/shimmy /3.3kStar/MIT/202510/rust
   - Python-free Rust inference server — OpenAI-API compatible

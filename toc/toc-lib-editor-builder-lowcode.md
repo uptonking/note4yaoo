@@ -785,6 +785,12 @@ modified: 2020-12-28T12:24:09.275Z
     - https://docs.dbos.dev/examples
   - [DAG-style sync engine in Django : r/django _202511](https://www.reddit.com/r/django/comments/1p6hgid/dagstyle_sync_engine_in_django/)
 
+- https://github.com/vercel/workflow /1.3kStar/apache2/202511/ts/rust
+  - https://useworkflow.dev/
+  - Workflow Development Kit lets you easily add durability, reliability, and observability to async JavaScript.
+  - https://x.com/rauchg/status/1993419412247134530  _202511
+    - Outputs `𝚞𝚜𝚎 𝚠𝚘𝚛𝚔𝚏𝚕𝚘𝚠` code 
+
 ## rpa
 
 - https://github.com/robocorp/rpaframework /1.4kStar/apache2/202503/python

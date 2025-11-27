@@ -26,7 +26,13 @@ modified: 2022-04-23T18:48:32.550Z
 
 - ## 
 
-- ## 
+- ## [How to analyze data from Excel with NotebookLM? : r/notebooklm](https://www.reddit.com/r/notebooklm/comments/1p6mu92/how_to_analyze_data_from_excel_with_notebooklm/)
+- You can't. You can load XLSX files but it will only read the text chunks. NotebookLM = RAG, and it is not made for data analysis. You can use a Python kernel in ChatGPT, Mistral etc...
+
+- You can add Google sheets as a source, but support pages say they are limited to 100k tokens currently (however much that is!)
+- In theory, you should just be able to import the Excel into Google Sheets and then use it as a source in NotebookLM
+
+- Convert the excel document into a markdown file using google scripts. Chatgpt can help with the script
 
 - ## we made Claude for Excel is now live for all Max, Team, and Enterprise users. Opus 4.5 makes it meaningfully better at complex spreadsheet tasks. _202511
 - https://x.com/alexalbert__/status/1993349203935084861

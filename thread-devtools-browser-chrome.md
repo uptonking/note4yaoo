@@ -87,7 +87,9 @@ modified: 2023-02-20T19:41:08.506Z
 
 - ## 
 
-- ## 
+- ## 原来在开发者工具里面勾选「仅限选定的上下文」就可以隐藏掉各种插件打印出来的日志，还你一个清爽的日志！
+- https://x.com/luoling8192/status/1993686847663313195
+- 怎么屏蔽插件的请求呢
 
 - ## If you ever do UI debugging in Chromium go and enable this setting right away, it will make your life so much easier. 
 - https://x.com/tommoor/status/1877390846665830867

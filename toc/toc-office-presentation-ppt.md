@@ -312,6 +312,23 @@ modified: 2021-04-30T20:14:17.669Z
   - Open-Source AI Presentation Generator and API (Gamma, Beautiful AI, Decktopus Alternative)
   - generating presentations with AI — all running locally on your device.
   - using models like OpenAI and Gemini, or use your own hosted models through Ollama.
+    - 只支持ollama，不支持lmstudio
+  - 处理pdf的体验非常慢
+  - 🌹 可以并行生成幻灯片, 生成顺序不是按从头到尾
+    - 支持拖拽调整幻灯片顺序
+    - 支持导出pptx/pdf
+  - 🐛 编辑能力特别弱
+    - 幻灯片内容不能自由移动文本/图片的位置，也不能改变大小尺寸，只能使用预设排版, 甚至不能删除图片/色块
+    - 不支持缩放后显示自适应的分栏布局
+    - 不支持编辑现有ppt
+  - 端口 nextjs 3000
+    - fastapi 8000
+    - mcp 8001
+  - 👾 
+  - i'm running this project locally without nginx, instead of using docker and nginx. 
+    - frontend is started by `cd servers/nextjs && npm run dev`.
+    - backend is started by `cd servers/fastapi && uv run --env-file .env -- python server.py --port 8000`.
+    - i'm using local ollama for llm api
   - custom layouts with HTML and Tailwind, support any presentation design
   - Support for accessing custom templates over API
   - Support external SQL database
@@ -322,6 +339,9 @@ modified: 2021-04-30T20:14:17.669Z
   - Save as PowerPoint (PPTX) and PDF
   - [We made open source AI presentation generator (Gamma Alternative) : r/selfhosted _202505](https://www.reddit.com/r/selfhosted/comments/1kn6btt/we_made_open_source_ai_presentation_generator/)
     - We've actually archived electron project for now. We'll only support docker for now. Most wanted in docker format to run on web, and it was hard to maintain both. Hopefully, if we prove useful to many, we will go back to desktop as well.
+  - database_url vs container_db_url in servers/fastapi/services/database.py
+    - database_url: The main database (which uses your DATABASE_URL from .env): 存储应用的主要业务数据
+    - container_db_url: 存储容器内部的临时或特定数据, 硬编码路径 `/app/container.db`
 
 - https://huggingface.co/spaces/barunsaha/slide-deck-ai/tree/main /MIT/202511/python
   - Describe your topic and let SlideDeck AI generate a PowerPoint slide deck for you
@@ -345,7 +365,7 @@ modified: 2021-04-30T20:14:17.669Z
   - Together AI API key (for Image generation)
   - Google Client ID and Secret for authentication feature
 
-- https://github.com/sligter/LandPPT /962Star/apache2/202508/python
+- https://github.com/sligter/LandPPT /1.5kStar/apache2/202511/python
   - https://landppt.pages.dev/
   - 一个基于大语言模型（LLM）的智能演示文稿生成平台，能够自动将文档内容转换为专业的PPT演示文稿
   - 从主题到完整PPT，全程AI自动化处理
@@ -362,7 +382,7 @@ modified: 2021-04-30T20:14:17.669Z
   - 深度研究：集成 Tavily API 和 SearXNG 的多源研究功能
   - 多格式导出：PDF/HTML/PPTX 多种格式导出支持
   - 智能解析：使用 MinerU 和 MarkItDown 进行高质量内容提取
-  - 丰富的模板系统: 统一的HTML模板系统，支持响应式设计
+  - 🎨 丰富的模板系统: 统一的HTML模板系统，支持响应式设计
     - 场景化模板：通用、旅游、教育等多种专业场景模板
   - 用户友好的响应式Web界面
   - [ollama本地连接一直显示错误，服务器500 _202507](https://github.com/sligter/LandPPT/issues/5)

@@ -818,6 +818,22 @@ modified: 2025-08-16T14:12:24.416Z
 
 - ## 
 
+- ## 
+
+- ## [I just got b***hslapped by Z-Image-Turbo : r/comfyui](https://www.reddit.com/r/comfyui/comments/1p7j7mi/i_just_got_bhslapped_by_zimageturbo/)
+  - prompt
+  - Photorealistic candid snapshot of four people standing side by side holding a fifth person in their arms. The fifth person is laying down in their arms which they have stretched out before them. A: Blonde slim young woman, wearing a white summer dress and red high heels shoes. B: Punk rocker with a blue mohawk, a jeans jacket with spikes, ripped jeans and Dr. Martens shoesC. Gray haired doctor with whit doctors attire, stetoscope and a pencil in his chest pocket. D. Teenage mutant ninja turtle.
+  - Comfy just released an update today and an example workflow.
+
+- It's way better and faster than Flux 2. It's better and faster than QWEN nunchaku. It's unreal.
+  - I'm finding it far easier to prompt too. With Flux.2 I struggled to get good looking results (style/lighting) unlessI used an LLM to generate a huge word salad, with Z-Image it deems happy to take a simple description and do it.
+
+- im using it on my 4090 laptop now 16gb vram eats 84% and takes 24 seconds @ 1024x1024
+
+- It is a weird model. Not bad for its size but very overfit on a few topics like skin texture. Not very flexible at all compared to Qwen Image or Flux2 and it kind of gives SDXL vibes texturally. I think the community will like it because it’s resource light even though it isn’t close to SOTA even in the open weights arena.
+
+- It is an uncensored model, oh my god, maybe this is a probelm
+
 - ## [The 4-Step lightening lora for Qwen Image is available now : r/StableDiffusion _202508](https://www.reddit.com/r/StableDiffusion/comments/1mngtnn/the_4step_lightening_lora_for_qwen_image_is/)
   - 提供了workflow示例
 

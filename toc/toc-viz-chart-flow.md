@@ -233,7 +233,8 @@ modified: 2020-10-22T10:22:55.878Z
   - https://flowgram.ai/examples/playground.html
   - a node-based flow building engine that helps developers quickly create workflows in either fixed layout or free connection layout modes.
   - 基于dom实现的节点图方案
-  - 支持plugin、物料
+  - 支持plugin
+  - 🔌 物料非常丰富，支持CodeEditor
   - core依赖inversify、@phosphor/messaging、@@tweenjs/tween.js、reflect-metadata
   - runtime支持js/nodejs, 其中nodejs依赖@fastify/websocket、@trpc/server
   - Fixed layout: where nodes can be dragged to specified positions, with support for compound nodes like branches and loops.

@@ -859,6 +859,11 @@ modified: 2021-05-14T15:04:15.333Z
 - https://github.com/getfider/fider /AGPLv3/202307/go/ts/inactive
   - https://fider.io/
   - Open platform to collect and prioritize feedback
+
+- https://github.com/letsrevel/revel-backend /MIT/202511/python
+  - Revel is an event management and ticketing platform designed with community at its heart
+  - Django REST API, business logic, database models
+  - https://github.com/letsrevel/revel-frontend /MIT/svelte
 # notification
 - https://github.com/novuhq/novu /38kStar/MIT+EE/202510/ts
   - The open-source notification infrastructure for products. 
