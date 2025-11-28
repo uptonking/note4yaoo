@@ -17,6 +17,9 @@ modified: 2025-08-23T11:43:35.904Z
 
 - resources
   - https://github.com/search?type=repositories&q=stable-diffusion
+# image-gen-playground
+- https://huggingface.co/spaces/Tongyi-MAI/Z-Image-Turbo
+  - An Efficient Image Generation Foundation Model with Single-Stream Diffusion Transformer
 # popular
 - https://github.com/invoke-ai/InvokeAI /25.8kStar/apache2/202511/python/ts
   - https://invoke-ai.github.io/InvokeAI/
@@ -1566,6 +1569,10 @@ modified: 2025-08-23T11:43:35.904Z
     - DNNE is a visual programming environment for building neural networks and robotics control systems.
     - It transforms ComfyUI's visual node-based interface from a diffusion model platform into a comprehensive ML/robotics development environment with code export capabilities.
 
+- https://github.com/Tavris1/ComfyUI-Easy-Install/tree/MAC-Linux /MIT/202511
+  - Portable ComfyUI for Windows, macOS and Linux 🔹 Pixaroma Community Edition
+  - Python 3.12.10 Embedded
+
 - https://github.com/lllyasviel/stable-diffusion-webui-forge /11.4kStar/AGPL/202506/python
   - a platform on top of Stable Diffusion WebUI (based on Gradio)
   - Forge is currently based on SD-WebUI 1.10.1 at this commit. (Because original SD-WebUI is almost static now, Forge will sync with original WebUI every 90 days, or when important fixes.)
@@ -1839,6 +1846,23 @@ modified: 2025-08-23T11:43:35.904Z
   - We use various formatting information from rich text, including font size, color, style, and footnote, to increase control of text-to-image generation. 
   - Our method enables explicit token reweighting, precise color rendering, local style control, and detailed region synthesis
   - This code was tested with Python 3.8, Pytorch 1.11 and supports a Stable Diffusion v1-5 or Stable Diffusion XL or ANIMAGINE-XL 
+# models
+- https://github.com/ivanfioravanti/z-image-mps /MIT/202511/python
+  - Generate images locally with Tongyi-MAI/Z-Image-Turbo using a tiny CLI that works on Apple Silicon (MPS), CUDA, or CPU. 
+  - The project mirrors the qwen-image-mps workflow but uses the new Z-Image Diffusers pipeline.
+  - Sensible defaults for Z-Image-Turbo (9 steps, CFG 0.0)
+  - There is a basic gradio app if you prefer. 
+  - https://x.com/ivanfioravanti/status/1993974291009048889
+
+- https://github.com/newideas99/Ultra-Fast-Image-Generation-Mac-Silicon-Z-Image /202511/python
+  - 6B parameter AI image generation that actually runs fast on your Mac. No cloud. No GPU rental.
+  - [I got a Z-Image running in 14 seconds on my Mac : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1p88yp6/i_got_a_zimage_running_in_14_seconds_on_my_mac/)
+    - Been working on getting Z-Image Turbo (Alibaba's 6B diffusion transformer) to run fast on Apple Silicon. Finally got it working with the 4-bit quantized model.
+    - Uses the SDNQ uint4 quantized weights from Disty0 on HuggingFace, which brings the model from ~24GB down to ~3.5GB.
+    - Includes a Gradio web UI and CLI script. Also has experimental CUDA support if you want to run it on NVIDIA.
+
+- https://github.com/mzbac/zimage.swift /202511/swift
+  - Swift port of Z-Image-Turbo using mlx-swift for Apple Silicon.
 # InvokeAI
 - https://github.com/CodeGandee/invokeai-py-client /MIT/202508/python
   - A Python client library to operate InvokeAI system through its web API

@@ -258,20 +258,26 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
 
 - [guide : running gpt-oss with llama.cpp · ggml-org/llama.cpp · Discussion _202508](https://github.com/ggml-org/llama.cpp/discussions/15396)
 
-```sh
+```sh /llm
 
 ollama run --verbose gemma3:4b
 OLLAMA_DEBUG=1 ollama serve gemma3:4b
 
 # llama-server -m model.gguf --port 8080 --alias name
-./build/bin/llama-server -m ~/.lmstudio/models/mradermacher/merged-mermaid-7b-GGUF/merged-mermaid-7b.Q6_K.gguf 
+
+./build/bin/llama-server -m ~/.lmstudio/models/mradermacher/merged-mermaid-7b-GGUF/merged-mermaid-7b. Q6_K.gguf 
 
 # llama-cli -m model.gguf -cnv --chat-template chatml
 
-./build/bin/llama-cli -m ~/.lmstudio/models/mradermacher/merged-mermaid-7b-GGUF/merged-mermaid-7b.Q6_K.gguf
+./build/bin/llama-cli -m ~/.lmstudio/models/mradermacher/merged-mermaid-7b-GGUF/merged-mermaid-7b. Q6_K.gguf
 llama-cli -hf ggml-org/gemma-3-1b-it-GGUF
 
 VLLM_LOGGING_LEVEL=debug VLLM_CONFIGURE_LOGGING=1 vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model-len 28000 --enable-log-requests --enable-log-outputs --enable-prompt-tokens-details --uvicorn-log-level debug 
+
+```
+
+```sh /image
+./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o ~/Pictures/test11.png -W 512 -H 512 -s 6 -p "一位帅哥和他的宠物狗穿着配套的服装参加狗狗秀节目，室内灯光，背景中有观众。"
 ```
 
 - goal-to 增强特色

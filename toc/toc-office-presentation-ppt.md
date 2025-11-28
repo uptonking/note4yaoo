@@ -313,6 +313,7 @@ modified: 2021-04-30T20:14:17.669Z
   - generating presentations with AI — all running locally on your device.
   - using models like OpenAI and Gemini, or use your own hosted models through Ollama.
     - 只支持ollama，不支持lmstudio
+  - 基本流程是: text-extract > gen-outlines > template-styling > gen-slides
   - 处理pdf的体验非常慢
   - 🌹 可以并行生成幻灯片, 生成顺序不是按从头到尾
     - 支持拖拽调整幻灯片顺序

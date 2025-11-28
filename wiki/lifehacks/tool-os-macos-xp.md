@@ -192,6 +192,9 @@ redis-cli shutdown
     - 支持Excel Diff&Merge，支持单元格内容、公式，暂不支持表格样式
   - [Sourcetree | Free Git GUI for Mac and Windows](https://www.sourcetreeapp.com/)
 
+- [Microsoft Office LTSC 2019/2021/2024/Office 365 系列全家桶破解激活教程/官方激活工具(安全无毒) | MacKed ](https://macked.app/microsoft-office-crack-activation-tutorial)
+
+- 
 - 
 - 
 - 

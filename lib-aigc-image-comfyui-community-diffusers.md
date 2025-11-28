@@ -557,6 +557,41 @@ export COMMANDLINE_ARGS="--skip-torch-cuda-test --disable-nan-check --upcast-sam
 
 - ## 
 
+- ## [No module named 'triton' on Mac · Issue #179 · facebookresearch/sam3](https://github.com/facebookresearch/sam3/issues/179)
+- 
+
+- [Build Triton on MacOS with Apple silicon. · Issue · triton-lang/triton](https://github.com/triton-lang/triton/issues/3443)
+  - 202501: We don't support apple's accelerator, but you should be able to run with `TRITON_INTERPRET=1` to debug kernels.
+
+- [Getting Started with Triton: A Step-by-Step Tutorial ](https://medium.com/ai-insights-cobet/getting-started-with-triton-a-step-by-step-tutorial-ddc18a186295)
+  - Triton is also not officially supported on macOS at this time. The primary reason is that Triton targets NVIDIA’s CUDA GPU backend, and NVIDIA GPUs are generally not available on modern Macs (Apple Silicon Macs use Apple GPUs, and older Intel Macs might have AMD GPUs).
+
+- https://discord.com/channels/1218270712402415686/1348761919917523069/1442315850219524169
+  - Cannot import /Volumes/WD-Black8TB/ComfyUI-Easy-Install/ComfyUI-Easy-Install/ComfyUI/custom_nodes/ComfyUI-FlashVSR_Ultra_Fast module for custom nodes: No module named 'triton'
+- 
+- 
+
+- ## [I get Triton error on ComfyUI desktop · Issue · comfyanonymous/ComfyUI _202505](https://github.com/comfyanonymous/ComfyUI/issues/8266)
+- For ComfyUI Desktop, you can run `pip install triton-windows` in the bottom panel terminal
+
+- ## [No module named 'sageattention'. How to fix? : r/comfyui](https://www.reddit.com/r/comfyui/comments/1krfl8p/no_module_named_sageattention_how_to_fix/)
+- [KSamplerAdvanced No module named 'sageattention' · Issue · comfyanonymous/ComfyUI _202508](https://github.com/comfyanonymous/ComfyUI/issues/9414)
+  - [Can't import SageAttention: No module named 'sageattention' · Issue · comfyanonymous/ComfyUI](https://github.com/comfyanonymous/ComfyUI/issues/10761)
+
+- python.exe -m pip install sageattention triton-windows 
+  - solved it
+
+```sh
+source .venv/bin/activate
+
+uv pip install triton
+
+# 🐛 默认安装 v2.2.0 not working
+uv pip install sageattention
+
+uv pip install sageattention==1.0.6
+```
+
 - ## [The average ComfyUI experience when downloading a new workflow : r/StableDiffusion _202511](https://www.reddit.com/r/StableDiffusion/comments/1oqwj6t/the_average_comfyui_experience_when_downloading_a/)
 - Ten nodes are obsolete. Five are uneeded because creator doesn't understand what he was doing, another five are unneeded because they add some superficial stuff only he likes. One breaks the output on your system. One is miner backdoor. Six fingers in the end.
 

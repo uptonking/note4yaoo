@@ -820,6 +820,43 @@ modified: 2025-08-16T14:12:24.416Z
 
 - ## 
 
+- ## [The best thing about Z-Image isn't the image quality, its small size or N. S. F. W capability. It's that they will also release the non-distilled foundation model to the community. : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1p7ykw8/the_best_thing_about_zimage_isnt_the_image/)
+  - Z-Image-Turbo – A distilled version of Z-Image that matches or exceeds leading competitors with only 8 NFEs (Number of Function Evaluations). 
+  - Z-Image-Base – The non-distilled foundation model. By releasing this checkpoint, we aim to unlock the full potential for community-driven fine-tuning and custom development.
+  - Z-Image-Edit – A variant fine-tuned on Z-Image specifically for image editing tasks
+
+- Does this mean we can use Qwen3-4B-Thinking as the text encoder, or is it just plain prompt upsampling
+  - It means you can use an external LLM to expand your prompt before feeding it to the Z-Image.
+
+- I think that the text encoder is Qwen3-4B and not Qwen3-VL-4B. 
+  - They probably use the VL one on the Edit model.
+
+- ## 🌰 [Z-Image Test on 126 Portrait Prompts : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1p83wgf/zimage_test_on_126_portrait_prompts/)
+  - I wanted to share a simple test dataset I put together to demonstrate the capabilities of the new Z-Image Turbo text-to-image model.
+  - Dataset: https://huggingface.co/datasets/k-mktr/z-image-examples
+  - It contains 126 portrait prompts (in .jsonl format) along with their corresponding generated outputs. It's a great way to quickly see how the model handles detailed portrait descriptions, lighting, and textures.
+
+- It's so good. None of them have that standardized face like flux has
+
+- ## 🌰 [Z image turbo (Low vram workflow) GGUF : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1p7nklr/z_image_turbo_low_vram_workflow_gguf/)
+  - GGUF text encoder : https://huggingface.co/unsloth/Qwen3-4B-GGUF/tree/main
+
+- On my 16GB VRAM I've used Qwen3-4B-UD-Q8_K_XL.gguf and this file is generated in a few seconds.
+
+- The model is very very good, it is way better than FLUX 1 dev in my opinion, btw try this prompt you will get a random realistic image each time : IMG_1018. CR2
+
+- 🆚 What's the difference between the e4m3fn and de e5m2 version of the fp8?
+  - e5m2 if you are using rtx 3000 or older. e4m3fn should be better otherwise.
+  - I think even rtx 3000 can run e4m3fn no problem. I'm not sure what souce I read that recommended the above but it may not be correct.
+
+- Has anyone tried this on a GTX 10 series gpu? Gonna try this on my 1080ti when I get home.
+  - I have. It's got JPEG-like compression artifacts, it's kinda blurry, and doesn't follow the prompt closely, but it works
+
+- I don't have any experience with GGUF text encoders around when does it start losing quality
+  - Don’t go below Q5
+
+- [For those that use Z-Image Turbo in Comfy with 8gb VRAM, how long do your generations take? : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1p87j2s/for_those_that_use_zimage_turbo_in_comfy_with_8gb/)
+
 - ## [I just got b***hslapped by Z-Image-Turbo : r/comfyui](https://www.reddit.com/r/comfyui/comments/1p7j7mi/i_just_got_bhslapped_by_zimageturbo/)
   - prompt
   - Photorealistic candid snapshot of four people standing side by side holding a fifth person in their arms. The fifth person is laying down in their arms which they have stretched out before them. A: Blonde slim young woman, wearing a white summer dress and red high heels shoes. B: Punk rocker with a blue mohawk, a jeans jacket with spikes, ripped jeans and Dr. Martens shoesC. Gray haired doctor with whit doctors attire, stetoscope and a pencil in his chest pocket. D. Teenage mutant ninja turtle.

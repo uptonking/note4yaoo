@@ -52,6 +52,8 @@ modified: 2020-11-17T13:38:19.107Z
   - core依赖react、lodash，layers依赖react-contenteditable、s-c
   - 富文本编辑器和页面编辑器的区别，主要在是否使用conetenteditable
   - 支持分栏布局，支持容器嵌套，支持layers图层显示
+  - 🐛 
+    - 拖拽移动改变分栏内的顺序时，不会自动调整宽度和布局
   - 支持undo
   - Craft.js solves this problem by modularising the building blocks of a page editor. It ships with a drag-n-drop system and handles the way user components should be rendered, updated and moved
   - Craft.js is an abstraction where you implement your own page editor upon. 
