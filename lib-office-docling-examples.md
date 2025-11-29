@@ -84,6 +84,13 @@ modified: 2025-09-21T13:58:46.548Z
 - https://github.com/Abdoulaye-Sayouti/Secure-Offline-RAG-System /MIT/202412/python/inactive
   - A RAG system designed for efficient processing of diverse content types with minimal computational overhead.
   - This solution won 1st place in the Secure RAG Challenge by UnderstandTech
+
+- https://github.com/AKSarav/pdfstract /202509/python/inactive
+  - web application built with FastAPI and HTML that converts PDF files to Markdown format using various conversion libraries.
+  - [Built a small tool to compare PDF → Markdown libraries (for RAG / LLM workflows) : r/Rag _202507](https://www.reddit.com/r/Rag/comments/1m1j10e/built_a_small_tool_to_compare_pdf_markdown/)
+  - I’ve been exploring different libraries for converting PDFs to Markdown to use in a Retrieval-Augmented Generation (RAG) setup.
+  - But testing each library turned out to be quite a hassle — environment setup, dependencies, version conflicts, etc.
+  - Currently, it supports: docling pymupdf4llm markitdown marker
 # utils
 - https://github.com/messkan/rag-chunk /MIT/202511/python
   - A Python CLI to test, benchmark, and find the best RAG chunking strategy for your Markdown documents.
@@ -110,7 +117,7 @@ modified: 2025-09-21T13:58:46.548Z
   - It extracts tables from PDFs and saves them as CSV or XLSX files, optionally reversing text for right-to-left languages.
   - This project heavily depends on the Docling library for PDF table extraction, it will be installed automatically when you install this package.
 
-- https://github.com/shoryasethia/markdrop /GPL/202507/python
+- https://github.com/shoryasethia/markdrop /GPL/202507/python/inactive
   - A Python package for converting PDFs to markdown while extracting images and tables, generate descriptive text descriptions for extracted tables/images using several LLM clients.
   - PDF to Markdown conversion with formatting preservation using Docling
   - Automatic image extraction with quality preservation using XRef Id

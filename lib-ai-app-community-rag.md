@@ -311,6 +311,45 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
+- ## 🔡 [MongoDBAtlasVectorSearch the PDF exceeding 100 pages cannot be processed. How can this be resolved? · Issue · langchain-ai/langchain _202409](https://github.com/langchain-ai/langchain/issues/26518)
+- We tried splitting a long PDF using this code
+
+- ## [Best practices for handling large-scale RAG implementation with thousands of lengthy PDF documents _202508](https://community.latenode.com/t/best-practices-for-handling-large-scale-rag-implementation-with-thousands-of-lengthy-pdf-documents/34950)
+  - Many of these documents are quite large, with some containing up to 300 pages each. All the PDFs have been processed through OCR, so I’m dealing with plain text content.
+  - My main challenge is with the document ingestion phase into the knowledge base. I initially attempted to use an open webui setup with an ollama backend, but the performance was unacceptably slow for this volume of data.
+
+- Been there with similar document volumes - the ingestion bottleneck will absolutely kill your project if you don’t handle it right.
+  - Break this into parallel chunks instead of processing everything sequentially. Split those 300-page docs into smaller sections (10-20 pages each), then run multiple processing pipelines at once.
+  - Don’t build this manually. Coordinating document splitting, embedding generation, vector storage, and error handling gets messy fast. You’ll debug pipeline issues more than actually using your RAG system.
+  - I handled 25k documents last year using automation for the entire flow. Set up parallel streams processing ~500 documents simultaneously, with automatic retry for failed chunks and smart batching for vector database writes.
+  - Latenode makes complex document pipelines like this really straightforward to build and manage. Check it out at https://latenode.com
+
+- Had the same scalability nightmare building a RAG system for legal docs last year. Game changer was ditching sequential processing for parallel with a proper queue system. Used Celery + Redis to spread the work across multiple workers - cut processing time from weeks down to 2 days for ~25k documents. Also stopped using fixed-size chunks and parsed by sections/paragraphs instead to keep the meaning intact. Switched from Chroma to Weaviate for the vector DB - handles scale way better. Heads up on memory requirements - you’ll need tons of RAM or go with disk-based storage. Pro tip: test retrieval quality early because what works for hundreds of docs can fall apart at this scale.
+
+- ## 🌰 [Chatting with Large PDFs (100–500 Pages): Using RAG with OpenAI Embeddings (Local vs. API) _202504](https://medium.com/coxit/chatting-with-large-pdfs-100-500-pages-using-rag-with-openai-embeddings-local-vs-api-2be2a73c20d4)
+
+- COXIT decided to invest resources to evaluate research and develop a prototype
+- COXIT wanted to validate and then evaluate approaches to consciously embed large documents (100–500 pages) into LLM’s context, how to make LLM operate, refer to, quote information from those PDFs, what document extraction and processing pipelines should look like.
+- I keep intentionally avoiding Agentic Frameworks like LangChain, as they show no benefit from a long-term perspective, as they are generally poorly optimized and overbloated.
+
+- Speaking about App’s Architecture (Figure 1): I designed it to consist of 4 microservices:
+  - ChatUI — React-powered WebUI. I declare that the React code is notoriously badly written
+    - https://github.com/v4ler11/llm-chat
+  - Chat Tools Service — Handles completion requests, implements message history limiting, local tools execution and model validation, and files handling, including file stream uploads.
+    - https://github.com/v4ler11/llm-tools-server
+  - Chat Proxy Streamer — re-routes incoming chat completion requests to various LLM Providers e.g. OpenAI, Anthropic, Google using a standardized OpenAI Format, provides authentication, usage stats collecting.
+    - https://github.com/v4ler11/llm-portal
+  - Document Search MCP — a dedicated service that is only used to perform operations with documents: extraction, processing, storage, and vector search.
+    - https://github.com/COXIT-CO/chat-with-pdf-poc
+
+- Approach 1: OpenAI-based vector search
+  - For each text-chunk or a paragraph (in case you are OK with OpenAI’s chunking strategies), you’d need to perform 2 requests to upload a paragraph as a file
+- Approach 2: local vector search and storage, external embedding requests
+  - an approach that is based on storing vectors locally and, consequently, performing vector search also locally, uses only 6* requests to fully process a given document. That’s a 200x improvement over the previous approach. Total waiting time for processing a document resulted in 11s — that’s 14x improvement.
+  - For 100-page document embeddings requests with batch-size = 128 were sent. For documents of other sizes, batch-size should also be adjusted to keep a minimal response time from an external embedding model. E.g., for 400-page document you might try 128 × 4 = 512 batch-size.
+
+- When this prototype is used in real-life projects, we’d have to set up a more precise validation pipeline, taking into account documents’ domain. That pipeline should be centered about the same idea: measure the difference between model response in 2 cases: when the model has all context needed to answer a question e.g., provide a complete document and a 2nd case: when the model will have to use RAG calls to retrieve that context.
+
 - ## [Best Python library for fast and accurate PDF text extraction (PyPDF2 vs alternatives) : r/LangChain _202508](https://www.reddit.com/r/LangChain/comments/1mxye53/best_python_library_for_fast_and_accurate_pdf/)
 - Pymupdf is faster than docling. 10-50x
 
@@ -374,7 +413,15 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## 💡 [I built RAG for a rocket research company: 125K docs (1970s-present), vision models for rocket diagrams. Lessons from the technical challenges : r/LLMDevs _202509](https://www.reddit.com/r/LLMDevs/comments/1nr59iw/i_built_rag_for_a_rocket_research_company_125k/)
+  - 125K documents from typewritten 1970s reports to modern digital standards
+  - 40% weren't properly digitized - scanned PDFs that had been photocopied, faxed, and re-scanned over decades
+  - Going Vision-First with Local Models
+  - Dual embedding strategy
+  - Fine-Tuning for Domain Knowledge
+
+- 
+- 
 
 - ## 🤔 [Companies need to stop applauding vanilla RAG : r/Rag](https://www.reddit.com/r/Rag/comments/1mj0tlh/companies_need_to_stop_applauding_vanilla_rag/)
   - I built a RAG system for internal documents pulled from a mix of formats, like PDFs and wikis. At first, the results were clean and useful.

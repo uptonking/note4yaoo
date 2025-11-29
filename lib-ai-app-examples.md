@@ -472,14 +472,133 @@ modified: 2023-02-08T07:20:48.475Z
   - OpenVoice has been powering the instant voice cloning capability of myshell.ai since May 2023. 
   - 即时语音克隆工具，只需从参考资料中截取一段简短的音频即可实现克隆。可详细控制语音风格，包括情感、口音、节奏、停顿和语调。生成多种语言的语音。
 # rag-examples
+- https://github.com/pymupdf/pymupdf4llm /1.2kStar/AGPL/202511/python
+  - https://pymupdf.readthedocs.io/en/latest/pymupdf4llm
+  - a specialized extension of PyMuPDF designed specifically for extracting content from PDFs in a format that's optimized for Large Language Models (LLMs).
+  - Converts PDFs to clean, structured Markdown format
+  - Automatically identifies headers, paragraphs, tables, and images
+  - Extracts images from PDFs
+  - [Build a Multimodal RAG using — PyMuPDF4LLM-llamaindex-Qdrant _202411](https://ai.gopubby.com/build-a-multimodal-rag-using-pymupdf4llm-llamaindex-qdrant-e9d23a4409cc)
+
+- https://github.com/danny-avila/rag_api /MIT/202508/python
+  - [RAG API - Chat with files](https://www.librechat.ai/docs/features/rag_api)
+  - This project integrates Langchain with FastAPI in an Asynchronous, Scalable manner, providing a framework for document indexing and retrieval, using PostgreSQL/pgvector.
+  - Files are organized into embeddings by `file_id`. The primary use case is for integration with LibreChat, but this simple API can be used for any ID-based use case.
+  - The main reason to use the ID approach is to work with embeddings on a file-level. This makes for targeted queries when combined with file metadata stored in a database, such as is done by LibreChat.
+  - [[Enhancement] Reduce memory consumption greatly, and speed up process slighlty by processing file async and inserting to vectordb in chunks rather than all at once _202510](https://github.com/danny-avila/rag_api/issues/213)
+    - Currently RAG creates embeddings for the file holding them all in memory then bulk inserts them all into the vectordb. When embedding very large files this consumes a vast amount of memory
+    - This is largely solved by changing the logic such that it breaks the file up into chucks and embeds each separately, and asynchronously bulk inserting each chunk individually as the embedding process completes each chunk. 
+    - pr未合并
+  - [[Issue] `/health` endpoint becomes unresponsive during large file processing _202510](https://github.com/danny-avila/rag_api/issues/216)
+    - When uploading and processing large files, the /health endpoint becomes unresponsive until the processing is complete.
+
+- https://github.com/clusterzx/paperless-ai /4.6kStar/MIT/202511/python/js
+  - https://clusterzx.github.io/paperless-ai/
+  - an AI-powered extension for Paperless-ngx that brings automatic document classification, smart tagging, and semantic search using OpenAI-compatible APIs and Ollama.
+  - [Paperless-AI: Now including a RAG Chat for all of your documents : r/selfhosted _202505](https://www.reddit.com/r/selfhosted/comments/1kqbouu/paperlessai_now_including_a_rag_chat_for_all_of/)
+  - [Paperless-ai runs well on local chatgpt-oss installation  _202510](https://github.com/clusterzx/paperless-ai/discussions/749)
+    - I installed chatgpt-oss-20b FP16 model, using koboldcpp on a Ryzen 7 7840HS mini pc with 32G RAM. Using -- usevulkan all 25 layers of the model can offloaded to gpu using VRAM. There is no major speed reduction when using FP16, as compared to Q4 etc.! Running on proxmox / debian LXC.
+    - For the first 100 docs, the results are very good for my mostly German documents. Processing time is mostly below 10 seconds per document for smaller 1-3 page and 30-40 seconds for larger documents. Works fine for me.
+
+- https://github.com/ari99/lm_studio_big_rag_plugin /202511/ts
+  - LM Studio Plugin to mark a directory full of documents as a RAG source and another directory as the Vectorstore and build a RAG for use in your queries. Built using Cursor.
+  - Massive Scale: Designed to handle large document collections (GB to TB scale)
+  - Deep Directory Scanning: Recursively scans all subdirectories
+  - PDF parsing via pdf-parse
+  - Multiple File Formats: Supports HTM, HTML, XHTML, PDF, EPUB, TXT, TEXT, Markdown variants (MD/MDX), BMP, JPEG, PNG
+  - OCR Support: Optional OCR for image files using Tesseract.js
+  - Vector Search: Uses LanceDB for efficient vector storage and retrieval
+  - Persistent Storage: Vector embeddings are stored locally and persist across sessions
+  - Incremental Indexing: Automatically detects and skips already-indexed files
+  - Concurrent Processing: Configurable concurrency for optimal performance
+  - Disk Space: The vector store requires additional disk space (typically 10-20% of original document size)
+  - Initial Indexing: Can take several hours for TB-scale collections
+  - Memory Usage: Scales with concurrent processing (reduce maxConcurrentFiles if needed)
+  - Limitations
+    - RAR Archives: Not yet implemented (files are skipped)
+    - Very Large Files: Individual files >100MB may cause memory issues
+    - Non-English OCR: Currently only English OCR is configured
+
+- https://github.com/renton4code/pdf-rag /AGPL/202502/ts/inactive
+  - A production-ready template for building Retrieval-Augmented Generation (RAG) applications. 
+  - This template provides a complete setup for document processing, vector storage, and AI-powered question answering with kickass UI.
+  - PDF document processing with OCR
+  - Milvus DB with billions of vectors scale support: Vector DB for storing embeddings
+  - PostgreSQL: Relational DB for metadata storage
+  - Click-to-view document references with highlighting
+  - Large documents processing and status updates
+  - AI/ML: Google Gemini (LLM), HuggingFace Transformers (Embeddings)
+  - Based on Q&A with a large document (700+ pages) in comparison to RagFlow
+
+- https://github.com/Future-House/paper-qa /7.9kStar/apache2/202511/python
+  - https://futurehouse.gitbook.io/futurehouse-cookbook
+  - PaperQA2 is a package for doing high-accuracy retrieval augmented generation (RAG) on PDFs, text files, Microsoft Office documents, and source code files, with a focus on the scientific literature.
+  - A usable full-text search engine for a local repository of PDF/text files.
+  - You can use llama.cpp to be the LLM. You won't get good performance with 7B models.
+  - [usage with large local paper results exceeding `text-embeeded`'s maximium prompt limit _202409](https://github.com/Future-House/paper-qa/issues/453)
+    - I'm using paperqa with CLI frontend, while this could apply to code usage too. just run pqa ask cusum in a directory with a 10MiB Chinese paper pdf, results an error 'exceeding 8192 tokens limit' using OpenAI third-party proxy API (did some trick in litellm to actually set api_base)
+    - We could call tokenizer, or ask litellm to support pre-check before api call (this will be better)
+
+- https://github.com/in-tech-gration/LangChain-RAG /202503/js/inactive
+  - A simple RAG application for doing question-answering on a PDF document
+  - This repository contains the JavaScript version of the python RAG implementation by Jodie Burchell using LangChain as demoed in her Beyond the Hype: A Realistic Look at Large Language Models GOTO 2024 presentation.
+  - Uses LangChain.js v0.2
+  - Key differences between the original python repository and the JavaScript version
+    - This code uses two types of Vector stores instead of one. The original code used the ChromaDB vector store, whereas this repo contains code using ChromaDB but also code using the In-memory vector store module provided by LangChain.js.
+    - The original repo contains a large PDF (pycharm-documentation.pdf which is around 174MB) that is used in the demo. This is a great source to test and also compare the results with the demo, but it turns out that it takes quite a lot of time to get vectorized. 
+    - https://github.com/slvg01/90.10d_RAG_OnTheFly
+      - you can upload any PDF document, with a limit of 200 MB per file. You can upload as many PDFs as you'd like.
+      - Upload PDF files which are combined into one big text chunk.
+    - [Machine-Learning/Optimizing RAG with Document Chunking Techniques Using Python.md at main · xbeat/Machine-Learning](https://github.com/xbeat/Machine-Learning/blob/main/Optimizing%20RAG%20with%20Document%20Chunking%20Techniques%20Using%20Python.md)
+
+- https://github.com/Gopendranath/Rag-pdf-chat-backend /202511/js
+  - This backend server provides comprehensive file upload functionality for handling images, documents, and messages in a chat application.
+  - Multiple File Upload: Support for uploading multiple images and documents simultaneously
+  - File Size Limits: 10MB maximum file size per file
+  - Static File Serving: Uploaded files are served statically via /uploads/* endpoint
+  - This project can use a vector-enabled PostgreSQL (pgvector) for embeddings and MongoDB for document storage.
+  - https://github.com/Gopendranath/frontend-rag-chat-agent /ts
+
+- https://github.com/iamarunbrahma/rag-ingest /MIT/202411/python/inactive
+  - tool designed to seamlessly convert PDF documents into markdown format while preserving the original layout and formatting
+  - The extracted content is indexed in a vector database (Qdrant) to enhance RAG
+  - Advanced text extraction with layout preservation using PyMuPDF
+  - Uses Ollama model for contextual enhancement of document chunks
+  - Combines dense and sparse embeddings via Qdrant for improved retrieval
+  - Memory Issues: Process large PDFs in smaller batches
+
+- https://github.com/yash1912/colpali-rag /202410/python/单文件/inactive
+  - RAG solution leveraging cutting-edge AI models like ColPali and Qwen2VL.
+  - converts PDFs into searchable embeddings using ColPali's AI model
+
 - https://github.com/datawhalechina/all-in-rag /202511/python
   - https://datawhalechina.github.io/all-in-rag/
   - 大模型应用开发实战一：RAG 技术全栈指南，在线阅读
   - https://github.com/yksanjo/all-in-rag
+
+- https://github.com/ZohaibCodez/document-qa-rag-system /MIT/202509/python/inactive
+  - https://document-rag-system.streamlit.app/
+  - RAG project built with LangChain and Streamlit. Upload documents (PDF/TXT) and interact with them using natural language questions powered by embeddings and vector search.
+  - Vector-based similarity search using FAISS
+  - Frontend: Streamlit
+  - Limitations
+    - File Types: Currently supports only PDF and TXT formats
+    - Large documents (>50 pages) may take longer to process
+    - Scanned PDFs: Does not support OCR for image-based PDFs
+    - Large PDF files (>100MB) may cause memory issues
+    - Embedded images in PDFs are not processed
+    - Some complex PDF layouts may not parse correctly
 # rag-utils
 - https://github.com/rag-web-ui/rag-web-ui /apache2/202502/python/ts
   - RAG Web UI is an intelligent dialogue system based on RAG
 # rag-fwk
+- https://github.com/VectifyAI/PageIndex /4.1kStar/MIT/202511/pyhton
+  - https://pageindex.ai/
+  - Inspired by AlphaGo, we propose PageIndex — a vectorless, reasoning-based RAG system that builds a hierarchical tree index for long documents and reasons over that index for retrieval. 
+  - [RAG without Vectors – PageIndex: Reasoning-Based Document Indexing · run-llama/llama_index _202504](https://github.com/run-llama/llama_index/discussions/18360)
+    - We were frustrated by vector-based RAG systems that rely on semantic similarity and often fail on long, domain-specific documents.
+    - PageIndex, a hierarchical indexing system that transforms large documents (like financial reports, regulatory documents, or textbooks) into semantic trees optimized for reasoning-based RAG.
+
 - https://github.com/infiniflow/ragflow /68.2kStar/apache2/202511/python/ts/华人团队
   - https://ragflow.io/
   - https://demo.ragflow.io/
@@ -490,6 +609,9 @@ modified: 2023-02-08T07:20:48.475Z
   - Multiple recall paired with fused re-ranking.
   - 依赖 Crawl4AI、elasticsearch、flask-login、minio、pandas、voyageai、pyobvector
   - 未使用langchain/aisdk, 多model-provider的集成完全自定义实现
+  - 实测本地运行很不友好
+    - elasticsearch/infinity 数据层还在迁移与优化
+    - 本地运行的入口依赖 libjemalloc.so
   - Prerequisites: RAM >= 16 GB
     - gVisor: Required only if you intend to use the code executor (sandbox) feature of RAGFlow.
   - ✨ 实测, rag后的chunk文本可查看chunk与原文对应的细节
@@ -534,6 +656,12 @@ modified: 2023-02-08T07:20:48.475Z
     - Ollama supports very few rerank models and is not recommended.
   - [FAQs | RAGFlow](https://ragflow.io/docs/dev/faq)
     - RAGFlow supports MinerU (>= 2.6.3) as an optional PDF parser with multiple backends. RAGFlow acts only as a client for MinerU, calling it to parse documents, reading the output files, and ingesting the parsed content.
+  - [[Question]: Big File Parsing ](https://github.com/infiniflow/ragflow/issues/10986)
+  - [[Question]: High Memory and CPU Usage During PDF Parsing _202505](https://github.com/infiniflow/ragflow/issues/7602)
+    - 原因找到了，用了deepdoc解析方式，就非常消耗资源，我用native就没问题。目前不需要图片识别，就不需要deepdoc
+  - [Questions about Ragflow _202507](https://github.com/orgs/infiniflow/discussions/8904)
+    - RAGFlow uses Elasticsearch by default. Is Elasticsearch your recommendation over Infinity (at version 0.19.1)?
+    - Pls choose Elasticsearch. We're refactoring Infinity.
 
 - https://github.com/chunkhound/chunkhound /118Star/MIT/202509/python
   - https://chunkhound.github.io/

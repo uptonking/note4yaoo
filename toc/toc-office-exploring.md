@@ -74,4 +74,7 @@ modified: 2021-01-04T17:31:49.998Z
   - Built with Vercel Storage and Vercel Edge Functions.
   - Share your document securely by sending a custom link
   - Get insights via document tracking and soon page-by-page analytics
+# doc-gen 👾
+- https://github.com/022122/academic-doc-generator /MIT/202511/js
+  - A realistic academic document simulator for testing and verification flows. React + HeroUI.
 # more

@@ -944,10 +944,17 @@ modified: 2025-08-16T14:12:24.416Z
   - A person in a barren landscape with a heavy storm approaching, their posture and expression showing deep contemplation.
   - A visual representation of the concept of "time".
   - A Renaissance-style painting depicting a modern-day cityscape.
+- [Z-Image Turbo vs. Flux.2 dev (style comparison) : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1p9ruya/zimage_turbo_vs_flux2_dev_style_comparison/)
+  - 1152x768; Z-Image, 9 steps, cfg 1.0, normal, euler; Flux 2, 20 steps, cfg 1.0, normal, euler
+  - https://huelake.com/en/ai-images/compare?model0=Flux2dev&model1=ZImage
 
 - Even though I have a 4090 I still vastly prefer Z-Image. To be honest I don't see ANY extra image quality in Flux 2 despite taking FAR more processing power and time to complete an image. If anything its Z-image that has the edge in skin texture and being uncensored.
   - The ONLY advantage Flux 2 currently has (from what I've seen so far) is its ability to edit and use multiple reference images.
   - ....and Z-image edit is being released soon.
+
+- pixel-art and vector-art looks better on ZImage; Flux2 is too refined for such things.
+
+- I like the flux2, which has a wider dynamic range, 
 
 - ### [Fashion photography comparison. Nano Banana Pro vs Z Image Turbo. Who did it better? : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1p8wbgj/fashion_photography_comparison_nano_banana_pro_vs/)
 
@@ -957,6 +964,10 @@ modified: 2025-08-16T14:12:24.416Z
   - It contains 126 portrait prompts (in .jsonl format) along with their corresponding generated outputs. It's a great way to quickly see how the model handles detailed portrait descriptions, lighting, and textures.
 
 - It's so good. None of them have that standardized face like flux has
+
+- [Z-Image Prompt Enhancer Comparison : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1p9efo1/zimage_prompt_enhancer_comparison/)
+  - Turns out the problem was the translated English prompt template. Using the original Chinese prompt template (with either English or Chinese input) actually enhances the prompt properly. The translated English version prompt template doesn’t behave as intended for PE it makes the things worse
+  - 一位年轻女性背对镜头站立，身体向后扭转约45度，头部侧向镜头正视相机，手持圆形团扇置于身侧。面部皮肤光滑细腻，额头与耳朵完全裸露，黑色长发盘成低髻，佩戴玉质发簪。嘴角微扬形成含蓄微笑，上排牙齿轻微可见。身高约170厘米，腰短腿长，沙漏型身材，腰部纤细，胸部丰满。身着浅青绿色汉服，古风剪裁，布料为薄透纱质半透明材质，隐约透出皮肤轮廓；衣身覆盖全身，饰有通透白色花卉刺绣与银丝勾边，系带于胸前交叉固定。背景为简洁中式园林，包含虚化的石桥、静水池塘及三株翠竹，空中飘落白色樱花花瓣。柔光从左前方均匀照射，漫反射效果消除硬阴影，整体色彩以青绿色为主调，辅以花卉银丝细节。全身构图居中，主体清晰，背景元素低饱和度处理。
 
 - [【多图预警】Z-Image 最新开源模型16G显卡可跑10s一张，欢迎佬来品鉴 - 国产替代 / 国产替代, Lv1 - LINUX DO](https://linux.do/t/topic/1232057)
   - 一张真实风格的照片，一个狭小的大学男生寝室，房间极其凌乱，充满生活气息。上铺床铺未整理，被子堆成一团；下铺的书桌上，笔记本电脑还亮着屏幕，旁边堆着厚厚的专业书籍、草稿纸和几罐可乐；椅子上随意搭着外套和运动裤；地上散落着鞋子和零食包装袋，学生在座位上玩手机。下午的阳光透过窗户斜射进来，在布满灰尘的地面上形成长长的光影。画面有轻微的胶片颗粒感，超高细节。
@@ -1656,6 +1667,16 @@ Q8（8 位）	    16GB+	   接近原始版本
   - 示例图中，Hyper 画质表现优异，TCD 速度提升明显，但画面细节缺失较为严重
 - TGate提升出图速度的节点，无需额外模型，能明显减少出图用时，但也会有一定的质量损失。
   - 将 TGate Apply 节点连接在模型与采样器之间，start_at 设为 0.5，如果设为 1 的话，它将不起作用。
+# discuss-image-examples 🌰
+- ## 
+
+- ## 
+
+- ## [Even more improved Z-Image Turbo variation : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1p9mypu/even_more_improved_zimage_turbo_variation/)
+
+- ## [This is offiZially crazy! (Z_Image) : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1p9f7ic/this_is_offizially_crazy_z_image/)
+  - 手掌里面显示logo字母
+
 # discuss-image
 - ## 
 

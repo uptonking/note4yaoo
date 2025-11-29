@@ -45,6 +45,11 @@ modified: 2025-11-16T15:34:02.881Z
   - 基于langchain/langgraph实现
   - 能以用户提问的语言回复用户
 
+- tips 💡
+  - 虽然性能及功能上有缺点, 但功能较丰富、体验较友好、复杂度也不高, 值得深入优化
+    - 完善的方案很难找, 可以尝试改进现有的方案
+  - 文件内容提取工具或格式转换工具，缺少应用层chunking/embedding/vector的高性能调度逻辑
+
 - SurfSense
   - 架构简单，依赖不多, 主要依赖PGVector/Redis
   - file formats (Documents, images, videos and supports 50+ file extensions)
@@ -67,7 +72,9 @@ modified: 2025-11-16T15:34:02.881Z
   - Wikipedia
   - developer docs: react/vue/ecmascript/python/golang/pg
 
-- 删除文档时，未实现回收站
+- 
+- 
+- 
 
 - 不选择kb知识库时，不支持随意聊天
 
@@ -79,17 +86,48 @@ modified: 2025-11-16T15:34:02.881Z
 
 - 处理大pdf时chunking/embedding的进度反馈出来更好, 可重试可恢复更好, 目前的实现感觉一直卡在inprogress然后就失败了
 
+- 删除文档时，未实现回收站
+
+- 
+- 
+- 
+- 
+- 
+- 
+
 - open source alternative
   - Google just dropped the Gemini File Search API (RAG-as-a-Service)
     - It allowed me to build a RAG chatbot in 31 min. No coding
 
 - ~~未实现流式输出~~
 
-- 
-- 
-- 
-- 
+## large-pdf/docs 💥
 
+- 提升处理超大pdf的能力
+  - 可参考pymupdf4llm
+  - 可参考 https://github.com/v4ler11/llm-chat
+
+- https://github.com/renton4code/pdf-rag /AGPL/202502/ts/inactive
+  - A production-ready template for building Retrieval-Augmented Generation (RAG) applications. 
+  - This template provides a complete setup for document processing, vector storage, and AI-powered question answering with kickass UI.
+  - PDF document processing with OCR
+  - Milvus DB with billions of vectors scale support: Vector DB for storing embeddings
+  - PostgreSQL: Relational DB for metadata storage
+  - Click-to-view document references with highlighting
+  - Large documents processing and status updates
+  - AI/ML: Google Gemini (LLM), HuggingFace Transformers (Embeddings)
+  - Based on Q&A with a large document (700+ pages) in comparison to RagFlow
+
+- [How to Summarize Large Documents with LangChain and OpenAI _202405](https://medium.com/@myscale/how-to-summarize-large-documents-with-langchain-and-openai-4312568e80b1)
+  - We have over 466, 000 tokens in this book, and if we pass them all directly to the LLM, it would charge us a lot. So, to reduce the cost, we will implement K-means clustering to extract the important chunks from the book.
+  - We will split the book content into documents by using the SemanticChunker utility of LangChain.
+  - we’ll transform the document vectors into a format compatible with Faiss, cluster them into 50 groups using K-means, and then create a Faiss index for efficient similarity searches among documents.
+
+- [Late Chunking: Embedding First Chunk Later — Long-Context Retrieval in RAG Applications _202409](https://blog.stackademic.com/late-chunking-embedding-first-chunk-later-long-context-retrieval-in-rag-applications-3a292f6443bb)
+  - In late chunking, the process of embedding happens first for the entire document, ensuring that every token’s embedding retains the document’s full context. 
+  - Only after this embedding process do you chunk the embeddings into smaller parts, which are contextually rich because they preserve relationships between distant parts of the document. 
+  - This approach ensures that each chunk maintains the global document context, leading to more precise and meaningful retrieval results.
+  - [Late_Chunking_in_Long_Context_Embedding_Models.ipynb - Colab](https://colab.research.google.com/drive/19dZeMCx-7g0kPz35e5gEjtAIama38gGI?usp=sharing)
 # dev-xp
 - 💥 无法embedding大文档, 本地lmstudio提示
   - [lmstudio-llama-cpp] Error in predictTokens: The number of tokens to keep from the initial prompt is greater than the context length. Try to load the model with a larger context length, or provide a shorter input

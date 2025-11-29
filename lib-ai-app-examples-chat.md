@@ -343,6 +343,8 @@ modified: 2025-03-22T18:49:15.634Z
   - [Kotaemon: An open-source RAG-based tool for chatting with your documents | Hacker News _202501](https://news.ycombinator.com/item?id=42571272)
   - [Kotaemon-papers: an open-source web app to chat with your academic papers | Hacker News _202501](https://news.ycombinator.com/item?id=42603357)
     - Our team has been working on a public demo to showcase the new advanced citation features in our RAG
+  - [[BUG] Unable to index document in docker ](https://github.com/Cinnamon/kotaemon/issues/539)
+    - I think its PDF file size thing. Doesn't seem to happen on PDFs with <100 pages...
 
 - https://github.com/h2oai/h2ogpt /11.9kStar/apache2/202503/python/inactive
   - http://h2o.ai/
@@ -472,6 +474,13 @@ modified: 2025-03-22T18:49:15.634Z
     - 支付：Lemon Squeezy
     - 部署：Vercel
 # chat-pdf
+- https://github.com/AKSarav/pdfstract /202509/python/inactive
+  - web application built with FastAPI and HTML that converts PDF files to Markdown format using various conversion libraries.
+  - [Built a small tool to compare PDF → Markdown libraries (for RAG / LLM workflows) : r/Rag _202507](https://www.reddit.com/r/Rag/comments/1m1j10e/built_a_small_tool_to_compare_pdf_markdown/)
+  - I’ve been exploring different libraries for converting PDFs to Markdown to use in a Retrieval-Augmented Generation (RAG) setup.
+  - But testing each library turned out to be quite a hassle — environment setup, dependencies, version conflicts, etc.
+  - Currently, it supports: docling pymupdf4llm markitdown marker
+
 - https://github.com/bhaskatripathi/pdfGPT /7.1kStar/MIT/202305/python/过于简单/inactive
   - https://huggingface.co/spaces/bhaskartripathi/pdfChatter
   - PDF GPT allows you to chat with the contents of your PDF file by using GPT capabilities
@@ -486,10 +495,13 @@ modified: 2025-03-22T18:49:15.634Z
   - 优化了RAG准确率: Chinese chunk切分优化，适配中英文混合文档
   - 本项目基于`gradio`开发了RAG对话页面，支持流式对话
 
-- https://github.com/mayooear/ai-pdf-chatbot-langchain /15.8kStar/MIT/202502/ts
+- https://github.com/mayooear/ai-pdf-chatbot-langchain /15.8kStar/MIT/202502/ts/inactive
   - PDF chatbot agent built with LangChain & LangGraph
   - This monorepo is a customizable template example of an AI chatbot agent that "ingests" PDF documents, stores embeddings in a vector database (Supabase), and then answers user queries using OpenAI (or another LLM provider) utilising LangChain and LangGraph as orchestration frameworks.
   - This template is also an accompanying example to the book Learning LangChain (O'Reilly): Building AI and LLM applications with LangChain and LangGraph.
+  - [Support for BIG PDFs?(like 500pages) ](https://github.com/mayooear/ai-pdf-chatbot-langchain/issues/409)
+    - you must be mindful of the pinecone.io free tier's pod capacity, which may be exceeded
+  - https://github.com/mayooear/ai-pdf-chatbot-langchain/tree/feat/chroma
 
 - https://github.com/williamcaseylucas/quill-pdf-chat /202401/ts
   - 依赖prisma, shadcn-ui, react-pdf, AWS S3 buckets
@@ -503,6 +515,14 @@ modified: 2025-03-22T18:49:15.634Z
   - Support multiple languages, and diverse translation services.
   - https://github.com/PDFMathTranslate/PDFMathTranslate-next /AGPLv3
     - pdf2zh 2.0 does not currently provide an online demo
+
+- https://github.com/bhaskatripathi/pdfGPT /7.2kStar/MIT/202306/python/代码少/inactive
+  - chat with the contents of your PDF file by using GPT capabilities. 
+  - When you pass a large text to Open AI, it suffers from a 4K token limit. It cannot take an entire pdf file as an input
+  - The application intelligently breaks the document into smaller chunks and employs a powerful Deep Averaging Network Encoder to generate embeddings.
+  - A semantic search is first performed on your pdf content and the most relevant embeddings are passed to the Open AI.
+  - https://github.com/tuxxon/PDFGPT /202408/inactive
+    - I rebuilt it because I thought this repository was no longer being maintained.
 # chat-workspace
 - https://github.com/pipeshub-ai/pipeshub-ai /2kStar/apache2/202511/python/ts
   - https://pipeshub.com/

@@ -198,6 +198,25 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [AMD 395+ and NVIDIA GPU : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1p9dier/amd_395_and_nvidia_gpu/)
+  - Is there any reason I can’t put an NVIDIA GPU in an AMD 395+ machine?
+- It works fine simultaneously, several of us have done it
+- Nvidia dGPUs work better in the Strix Halo than do either Intel or AMD, apparently.
+
+- Is there a 395+ machine that you can fit an Nvidia GPU in?
+  - I'm looking into doing it with a Framework Desktop motherboard, which is mITX sized.
+
+- Physical space, cooling, power would be the first 3 problems...
+  - External GPU docks exist
+
+- NVIDIA GPUs work fine on 395 platform as long as you can put them together physically (with M.2 to PCIe adapters or 395 boards with standard PCIe slots). AMD dGPUs may be more problematic due to VBIOS compatibility issues.
+
 - ## [Need some honest opinions on GPU Ai in a box : r/ollama](https://www.reddit.com/r/ollama/comments/1p4z140/need_some_honest_opinions_on_gpu_ai_in_a_box/)
   - For my use case my models and software burn about $2000 per month if I rent a pod using runpod and I have to be extra careful due to rate limits. I want to consider running my models using llamacpp or ollama or offering direct inference for customer using their own on prem machine shipped by me.
 

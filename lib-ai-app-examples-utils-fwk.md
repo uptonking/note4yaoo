@@ -31,6 +31,12 @@ modified: 2025-02-21T18:20:42.624Z
     - 新增 ：Web 公开页登录鉴权
     - 新增：后台创建用户，自动邀请进管理员空间
     - 新增：sandbox-full，以放开代码执行节点函数限制
+  - 🐛 [Token Limit for full Document (10000 Token cut) _202506](https://github.com/langgenius/dify/issues/20604)
+    - Dify's Retrieval-Augmented Generation (RAG) module, especially when utilizing the Parent-Child mode with a full document, appears to have a rigid limitation of 10,000 tokens per document. This constraint means that any content exceeding this token count is effectively ignored or truncated before it enters the retrieval process.
+    - There is currently no apparent configuration option (for example, in the .env file) that allows users to adjust this maximum token length for RAG processing. 
+    - there is no configurable option (neither in .env nor in the UI) to increase the 10,000-token limit in Parent-Child mode.
+  - [Help： How to deal with the Doc Extractor output is too big in Knowledge template ](https://github.com/langgenius/dify/discussions/28889)
+    - If the pdf file content is too large and it exceed the max context length of LLM. How to deal with it? 
 
 - https://github.com/cloudflare/agents /MIT/202502/ts
   - https://developers.cloudflare.com/agents/

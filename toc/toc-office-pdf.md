@@ -33,6 +33,8 @@ modified: 2021-01-04T17:26:43.784Z
   - https://github.com/AaronClaes/jspdf-editor
     - https://jspdf-editor.vercel.app/
     - *WIP* Design pdfs and generate code for jspdf
+  - https://github.com/simonbengtsson/jsPDF-AutoTable
+    - adds the ability to generate PDF tables either by parsing HTML tables or by using Javascript data directly. 
 
 - pdfkit /8.5kStar/MIT/202311/js
   - https://github.com/foliojs/pdfkit
@@ -678,6 +680,7 @@ modified: 2021-01-04T17:26:43.784Z
   - Converts PDFs to clean, structured Markdown format
   - Automatically identifies headers, paragraphs, tables, and images
   - Extracts images from PDFs
+  - [Build a Multimodal RAG using — PyMuPDF4LLM-llamaindex-Qdrant _202411](https://ai.gopubby.com/build-a-multimodal-rag-using-pymupdf4llm-llamaindex-qdrant-e9d23a4409cc)
 # pdf-video
 - [PDF to Brainrot | MemenomeLM](https://www.memenome.gg/)
   - 把 PDF 转化为易上瘾的视频

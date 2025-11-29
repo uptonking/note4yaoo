@@ -384,7 +384,12 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
-- ## 
+- ## [What broke when you tried to take local LLMs to production? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p91p4k/what_broke_when_you_tried_to_take_local_llms_to/)
+- Ollama broke a lot of the time because we dev’d on a Mac but pushed production to nvidia. Switching to vllm has largely solved this and pushed it to more of an interface rather than model problem.
+
+- Hosting several Models on one GPU is always really annoying with vLLM. You basically have to fiddle with the memory utilisation until all models fit. There is no clean way I found to calculate memory usage. You just have two tweak, boot, look at the logs and repeat. And even if you got all models to fit, vLLM sometimes crashes with cuda out of memory exceptions when loading the models since there seems to be a peak in memory consumption on boot up.
+
+- Why doesn't anyone mention tabbyAPI/exllamav3? It's much more memory-efficient than AWQ, also it loads quicker, and the quantization is more optimized. Also K/V cache can be quantized between 2 and 8 bits seperately (=more room for context)
 
 - ## [Why do you use open-source LLMs ? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p16kxx/why_do_you_use_opensource_llms/)
 - Freedom. I can do whatever I want without having my data stolen.
@@ -501,7 +506,8 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
-- ## 
+- ## ⏳ [A Tribute to MetaAI and Stability AI - 2 Giants Who Brought us so Much Joy... And, 2025 is the Year they Die... So Sad! : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1p9ah2v/a_tribute_to_metaai_and_stability_ai_2_giants_who/)
+- People think the trillion dollar spend is for the r&d and scale. Research is a fraction of the opex, and the scale is not about breaking through new model features but to suck in as much actual human usage data as possible to train exclusively better models.
 
 - ## [China just passed the US in open model downloads for the first time : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p7alka/china_just_passed_the_us_in_open_model_downloads/)
 - This analysis includes all models on HuggingFace, not just LLMs. The most downloaded models (by far) are smaller stuff like embedding models, classifiers, VAD, etc., and small base models like BERT and GPT-2. The most popular properly large instruction-tuned LLM is Qwen2.5-VL-3B-Instruct in 24th place.

@@ -60,7 +60,20 @@ high-concurrency B-tree management algorithm
 
 - ## 
 
-- ## 
+- ## When explaining database B+ trees, so many resources focus solely on keys, but fail to discuss what the actual values are. 
+- https://x.com/gunnarmorling/status/1994711292309864667
+  - Does the tree store the actual row contents, or only references to rows stored elsewhere?
+  - Turns out, it can be both! 
+  - Some databases do the former, for instance MySQL with the InnoDB storage engine. The B+ tree _is_ the table in this case, storing the row contents in its leaf nodes.
+  - Other databases don't support clustered indexes, e.g. Postgres. Instead, data is laid out sequentially in an array-like structure (the "heap"). In this model, the primary key index is a B+ tree with pointers to row locations on the heap.
+  - B+ trees are also used for secondary indexes, allowing you to find data efficiently based on row contents other than the primary key. What's stored in such a secondary index B+ tree differs between the two models: either it's the key of the clustered index, or it's a heap reference.
+  - Finally, some databases also support both models. As an example, tables are heap-organized by default in Oracle. But it also lets you create index-organized tables, which essentially is a clustered index.
+
+- In Postgres you can include data in the index
+  - Yepp. That's in addition to the data on the heap, though. I.e. you can't have _only_ a B+ tree with the data.
+- fair enough ; ) just wanted to note you can avoid going to the heap.
+
+- So true. Many talk about the great O(log N) without realizing that their range scan has to get the rows scattered in a large table, for each index entry, and must do it one after the other if they want to preserve the order
 
 - ## Want to understand B-trees better?
 - https://x.com/BenjDicken/status/1986098285875261766

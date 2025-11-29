@@ -805,8 +805,15 @@ modified: 2022-06-03T21:34:54.893Z
   - For file formats not natively supported by the Rust core, we compile the well-known Apache Tika into native shared libraries using GraalVM ahead-of-time compilation
   - Extracts text from images and scanned documents with OCR through `tesseract-ocr`.
   - 〰️ Extract a content of a file(URL/ bytes) to a `StreamReader` and perform buffered reading
+- https://github.com/bzsanti/oxidizePdf /AGPL/202511/rust/NoDeps
+  - A pure Rust PDF generation and manipulation library with zero external PDF dependencies.
+  - Production-ready for basic PDF functionality with validated performance of 3, 000-4, 000 pages/second for realistic business documents
+  - Pure Rust Core - No C dependencies for PDF operations (OCR feature requires Tesseract)
+  - CJK Text Support - Chinese, Japanese, and Korean text rendering and extraction with ToUnicode CMap
+  - AI/RAG Integration - Document chunking for LLM pipelines with sentence boundaries and metadata (v1.3.0+)
+  - Low memory usage - Efficient streaming for large PDFs
 
-- https://github.com/ucbepic/docetl /MIT/202410/python
+- https://github.com/ucbepic/docetl /3.1kStar/MIT/202511/python
   - https://docetl.org/
   - DocETL is a tool for creating and executing data processing pipelines, especially suited for complex document processing tasks. 
   - It offers a low-code, declarative YAML interface to define LLM-powered operations on complex data.
@@ -919,6 +926,11 @@ modified: 2022-06-03T21:34:54.893Z
   - Python tool for converting files and office documents to Markdown.
   - a utility tool for converting various files to Markdown (e.g., for indexing, text analysis, etc.)
   - supports: PDF (.pdf) PowerPoint (.pptx) Word (.docx) Excel (.xlsx) Images (EXIF metadata, and OCR) Audio (EXIF metadata, and speech transcription) HTML (special handling of Wikipedia, etc.) Various other text-based formats (csv, json, xml, etc.)
+  - [PDF performance (PDFMiner) _202505](https://github.com/microsoft/markitdown/issues/1276)
+    - I've been using MarkItDown for conversion of some PDF files in a project I'm working on and I've noticed it performs really poorly with larger documents.
+    - This is in stark contrast to other libraries like PyMuPDF and specifically its markdown variant (PyMuPDF4LLM) which in my tests performed much faster.
+  - [[Feature Request] Magika Dependency Optional ](https://github.com/microsoft/markitdown/issues/1234)
+    - I'm trying to use MarkItDown in the browser via Pyodide and Magika's dependency on ONNX is causing trouble.
   - https://msftmd.replit.app/
     - Powered by Microsoft MarkItDown, this tool converts various file formats to clean, structured Markdown for easy analysis and indexing.
     - https://x.com/mattppal/status/1867703377888784880

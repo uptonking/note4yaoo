@@ -29,7 +29,7 @@ modified: 2025-03-22T16:10:24.856Z
 
 - why-local-ai? 🌹
   - stable model and stable api
-  - privacy: code, data
+  - privacy: code, data, 还可以跳过广告推广
   - tweak different configs for ai-models
   - 避免模型平台的限制rate limits，如并发请求数(rpm/tpm/需要排队)、context长度、最大输出token数、模型版本、模型大小等
     - no implicit ai degradation/switch: bring your model
@@ -327,7 +327,8 @@ modified: 2025-03-22T16:10:24.856Z
   - [23公益站](https://sdwfger.edu.kg/console), 不用签到
     - 平台将于每周五、周六统一发放额度兑换码。 额度申请：如您的额度提前用尽，可联系管理员进行补充申请
     - 模型丰富: claude, gpt, gemini
-  - 📌 [KYX-API](https://api.kkyyxx.xyz/), 每日转盘
+  - 📌 [KFC API](https://kfc-api.sxxe.net/)
+    - [KYX-API](https://api.kkyyxx.xyz/), 每日转盘
     - Claude和gpt 暂时不支持工具调用, gemini模型没有pro
     - API 调用频率限制为 12RPM，公益站永久免费，采用公平限流策略以保障服务稳定
     - [KYX API Refueling Station 公益站额度加油站](https://quota.kyx03.de/)
@@ -358,10 +359,12 @@ modified: 2025-03-22T16:10:24.856Z
     - 无调用频率限制
     - 支持gpt5,claude,gemini
     - 部分模型倍率很高，可选按次计算版本, 如claude
+  - [WONG公益站](https://newapi.netlib.re/), 每日签到
+    - rpm为30
+    - 高效连接 Claude Code CLI
   - [我爱996公益](https://529961.com/)
     - 仅限 L 站 2 级以上用户注册
     - [【公益站我爱996一次】测试上线已接入LinuxDo ](https://linux.do/t/topic/1147448)
-  - [WONG公益站](https://newapi.netlib.re/), 每日签到
   - [FovtAPI](https://api.voct.top/console)
     - [NewAPI签到系统](https://gift.voct.top/)
   - [mmkg API](https://api.mmkg.cloud/)
@@ -455,6 +458,7 @@ modified: 2025-03-22T16:10:24.856Z
 
 - image-gen 🖼️
   - [小白生图 - AI Image Generator](https://catsapi.com/)
+  - [Z-Image-Turbo | AI 绘图工作站](https://zzz.supxh.xin/)
   - [最新公益绘画API ](https://linux.do/t/topic/599258)
     - 百度绘画
     - 豆包绘画

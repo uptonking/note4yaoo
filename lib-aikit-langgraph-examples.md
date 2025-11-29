@@ -650,6 +650,14 @@ modified: 2025-08-11T08:47:56.335Z
   - https://github.com/Grecil/Corrective-RAG
   - Implementation of Corrective RAG using LangChain and LangGraph.
 # rag/memory
+- https://github.com/in-tech-gration/LangChain-RAG /202503/js/inactive
+  - A simple RAG application for doing question-answering on a PDF document
+  - This repository contains the JavaScript version of the python RAG implementation by Jodie Burchell using LangChain as demoed in her Beyond the Hype: A Realistic Look at Large Language Models GOTO 2024 presentation.
+  - Uses LangChain.js v0.2
+  - Key differences between the original python repository and the JavaScript version
+    - This code uses two types of Vector stores instead of one. The original code used the ChromaDB vector store, whereas this repo contains code using ChromaDB but also code using the In-memory vector store module provided by LangChain.js.
+    - The original repo contains a large PDF (pycharm-documentation.pdf which is around 174MB) that is used in the demo. This is a great source to test and also compare the results with the demo, but it turns out that it takes quite a lot of time to get vectorized. 
+
 - https://github.com/0xPratikPatil/langgraph-db /MIT/202505/ts/inactive
   - A powerful memory backend for LangGraph.js that provides short-term and long-term memory for your agents using flexible storage providers.
   - Multiple Storage Providers: Seamlessly integrate with Redis, MongoDB, Prisma, and more (Redis currently implemented)
