@@ -297,6 +297,10 @@ modified: 2021-01-04T17:26:43.784Z
   - True redaction (content is actually removed)
   - Pluggable architecture & tree-shakable plugins
   - Smooth, virtualized scrolling
+  - [PDF viewer using PDFium + WebAssembly — would love your input : r/opensource](https://www.reddit.com/r/opensource/comments/1kydm90/pdf_viewer_using_pdfium_webassembly_would_love/)
+  - open source PDF viewer called EmbedPDF, based on PDFium (the same rendering engine used in Chrome) compiled to WebAssembly.
+  - It’s meant to be an alternative to PDF.js, with a focus on rendering accuracy and customizability. You can use it with a full UI out of the box, or headless for full control.
+  - It’s MIT-licensed and framework-agnostic.
 
 - https://github.com/Stirling-Tools/Stirling-PDF /20.4kStar/GPL > MIT/202403/java/js
   - https://www.pdfdrills.com/
@@ -420,13 +424,18 @@ modified: 2021-01-04T17:26:43.784Z
   - Users can select a page from the uploaded PDF and view its content as text.
   - 依赖streamlit、pdf2image、pypdf2、pillow
 
-- https://github.com/chromium/pdfium /apache2/202509/cpp
+- https://github.com/chromium/pdfium /apache2/202509/cpp/chromium
   - https://pdfium.googlesource.com/pdfium/
   - The PDF library used by the Chromium project
   - PDFium uses the same build tooling as Chromium. PDFium is located in` third_party/pdfium` in Chromium's source code.
   - PDFium uses GN to generate the build files and Ninja to execute the build files.
   - PDFium may be built either with or without JavaScript support, and with or without XFA forms support. Both of these features are enabled by default.
   - By default, the entire project builds with C++20.
+  - https://github.com/embedpdf/embed-pdf-viewer /MIT/202511/ts
+    - [PDF viewer using PDFium + WebAssembly — would love your input : r/opensource](https://www.reddit.com/r/opensource/comments/1kydm90/pdf_viewer_using_pdfium_webassembly_would_love/)
+    - open source PDF viewer called EmbedPDF, based on PDFium (the same rendering engine used in Chrome) compiled to WebAssembly.
+    - It’s meant to be an alternative to PDF.js, with a focus on rendering accuracy and customizability. You can use it with a full UI out of the box, or headless for full control.
+    - It’s MIT-licensed and framework-agnostic.
 
 - https://github.com/pdfarranger/pdfarranger /GPL/202502/python
   - PDF Arranger is a small python-gtk application, which helps the user to merge or split PDF documents and rotate, crop and rearrange their pages using an interactive and intuitive graphical interface. 
@@ -524,8 +533,9 @@ modified: 2021-01-04T17:26:43.784Z
   - written in C, providing Java JNI
   - https://github.com/ArtifexSoftware/mupdf.js /AGPL
   - https://github.com/ArtifexSoftware/pdf2docx /AGPL
-- https://github.com/pymupdf/PyMuPDF /AGPL/202503/python
+- https://github.com/pymupdf/PyMuPDF /8.6kStar/AGPLv3/202511/python
   - a high performance Python library for data extraction, analysis, conversion & manipulation of PDF (and other) documents.
+  - PyMuPDF adds Python bindings and abstractions to MuPDF, a lightweight PDF, XPS, and eBook viewer, renderer, and toolkit. Both PyMuPDF and MuPDF are maintained and developed by Artifex Software, Inc.
 - https://github.com/andytango/mupdf-js /AGPLv3/202406/ts/c/inactive
   - another Webassembly PDF renderer for node and the browser
   - This is a port of MuPDF to javascript and webassembly
@@ -562,6 +572,51 @@ modified: 2021-01-04T17:26:43.784Z
   - 公式识别：使用UniMERNet进行公式识别；
   - 光学字符识别：使用PaddleOCR进行文本识别
   - [Update license from Apache 2.0 to AGPL-3.0 _20240914](https://github.com/opendatalab/PDF-Extract-Kit/commit/1471e22384d4b02e1357926e4908296ed31dac51)
+
+- https://github.com/py-pdf/pypdf /9.6kStar/BSD/202511/python
+  - https://pypdf.readthedocs.io/en/latest/
+  - A pure-python PDF library capable of splitting, merging, cropping, and transforming the pages of PDF files
+  - It can also add custom data, viewing options, and passwords to PDF files. 
+  - pypdf can retrieve text and metadata from PDFs as well.
+  - [Reading the PDF metadata on large files _202507](https://github.com/py-pdf/pypdf/discussions/3390)
+    - Is there a way to get the PDF attributes like Creation Date without loading the whole file into memory? We have large multi-gigabyte files and are trying to process them on a fleet of smaller ECS instances. The streaming features of pypdf have been great, but would love to get the same metadata without loading the whole file into memory.
+    - Have you tried to pass a buffered file stream as stream argument ?
+  - [Implementation of get_contents ](https://github.com/py-pdf/pypdf/discussions/3352)
+    - `get_data()` is accessing the (decoded) byte data of the corresponding content stream, thus this only relevant when reading from the original PDF file.
+    - skimming through the usages of self.pdf in ContentStream seems to indicate that this is used to avoid cloning if the content streams are both targeting the same PDF reference
+
+- https://github.com/pdfminer/pdfminer.six /6.8kStar/MIT/202511/python
+  - https://pdfminersix.readthedocs.io/
+  - Community maintained fork of pdfminer
+  - a tool for extracting information from PDF documents. It focuses on getting and analyzing text data. 
+  - Pdfminer.six extracts the text from a page directly from the sourcecode of the PDF. 
+  - It can also be used to get the exact location, font or color of the text.
+  - It is built in a modular way such that each component of pdfminer.six can be replaced easily. You can implement your own interpreter or rendering device that uses the power of pdfminer.six for other purposes than text analysis.
+  - Written entirely in Python.
+  - Support for PDF-1.7 specification (well, almost).
+  - Support for CJK languages and vertical writing.
+  - Automatic layout analysis.
+  - [For optimization of extracting text page by page  ](https://github.com/pdfminer/pdfminer.six/issues/533)
+    - I get that using `StringIO` is a bit cumbersome. But using input and output streams in the way it was setup and its difficult to change. Anyway, besides being cumbersome it doesn't give any performance penalty.
+  - https://github.com/euske/pdfminer /MIT/202001/archived
+- https://github.com/dhdaines/playa /MIT/202511/python
+  - The purpose of PLAYA is to provide a robust, efficent, parallel and parallelizable, pure-Python and Pythonic (for its author's definition of the term), lazy interface to the internals of PDF files.
+  - PLAYA allows you to take advantage of multiple CPUs. This parallelism currently operates at the page level since this is the most logical way to split up a PDF
+  - [Playa PDF: A strong pdfminer successor : r/Python](https://www.reddit.com/r/Python/comments/1jfk466/playa_pdf_a_strong_pdfminer_successor/)
+  - This library is similar in scope to pdfminer and its fork pdfminer.six
+  - It handles a broader range of PDFs and PDF issues, being very close to the (horrible) specification. For example, the author of the library (dhaines) has recently added an enormous test suite from PDF.js
+  - it is faster than the other Python libs by a factor of at least two, if not three, and not only when parallelizing.
+  - complete metadata extraction - this part is what got me into this since I am integrating this with Kreuzberg now 
+  - It uses modern and full-type hints and exports, proper dataclasses.
+  - https://github.com/dhdaines/paves /MIT/202511/python
+    - PLAYA is intended to get objects out of PDF, with no dependencies or further analysis. 
+    - The primary goal of PLAYA-PDF is to give access to all the objects and particularly the metadata in a PDF. 
+    - One goal of PAVÉS (because there are a few) is to give an easy way to visualise these objects and metadata.
+
+- https://github.com/jsvine/pdfplumber /9.2kStar/MIT/202511/python 
+  - Plumb a PDF for detailed information about each text character, rectangle, and line. Plus: Table extraction and visual debugging.
+  - Works best on machine-generated, rather than scanned, PDFs. 
+  - Built on pdfminer.six.
 
 - https://github.com/opendatalab/MinerU /44.2kStar/AGPLv3/202509/python
   - https://opendatalab.github.io/MinerU/
@@ -616,6 +671,13 @@ modified: 2021-01-04T17:26:43.784Z
 - https://github.com/CatchTheTornado/pdf-extract-api 
   - 一款可本地运行去除个人信息的PDF解析工具：pdf-extract-api，文档匿名化处理，可以识别表格数据、数字、数学公式，适合隐私性较强的处理需求，企事业单位、医疗机构等
   - 集成marker、surya-ocr、tessereact多种OCR策略，用LLM提高识别准确度, 支持输出JSON和Markdown
+
+- https://github.com/pymupdf/pymupdf4llm /1.2kStar/AGPL/202511/python
+  - https://pymupdf.readthedocs.io/en/latest/pymupdf4llm
+  - a specialized extension of PyMuPDF designed specifically for extracting content from PDFs in a format that's optimized for Large Language Models (LLMs).
+  - Converts PDFs to clean, structured Markdown format
+  - Automatically identifies headers, paragraphs, tables, and images
+  - Extracts images from PDFs
 # pdf-video
 - [PDF to Brainrot | MemenomeLM](https://www.memenome.gg/)
   - 把 PDF 转化为易上瘾的视频

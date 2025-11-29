@@ -33,7 +33,7 @@ modified: 2025-03-22T16:10:24.856Z
   - tweak different configs for ai-models
   - 避免模型平台的限制rate limits，如并发请求数(rpm/tpm/需要排队)、context长度、最大输出token数、模型版本、模型大小等
     - no implicit ai degradation/switch: bring your model
-  - cost: unlimited tokens, 利用本地模型ocr/文生图
+  - cost: unlimited tokens, local models支持超大context, 利用本地模型ocr/文生图
   - 🤔 能充分利用本地文件系统和命令行的资源，进行数据分析/文件修改/...
   - network agnostic
   - 发挥端侧计算的能力，如总结/查询，而不侧重端侧聊天
@@ -48,6 +48,9 @@ modified: 2025-03-22T16:10:24.856Z
   - 小模型不够智能
   - 移动端计算能力差, 速度慢, ipad的M系芯片非gpu方案也不快
   - 耗电量大, 对手机端不友好
+
+- 需要针对local本地优化
+  - 自动unload占用内存的image/llm模型, comfyui-lmstudio-node已实现了相关逻辑
 
 - roadmap-ai
   - 针对国内免费api定制的chat/ppt/mermaid: 魔搭, 快手万擎
@@ -137,12 +140,15 @@ modified: 2025-03-22T16:10:24.856Z
   - 文生图难度高，但基于文本的流程图难度低很多，如集成 mermaid
   - 基于代码的文生图方案，如sandpack, 可用于小红书卡片场景，可参考 https://langgptai.feishu.cn/wiki/JQVEwKJQkilWztkMLRGcA8zqngb
 
-- image-generator/editor
+- 🖼️ image-generator/editor
+  - 拆分图片和文字，提供更灵活的修改和编辑体验
   - prompts: bg, person/object, text
   - 模型选择要考虑: 硬件限制、速度、质量， 只有成熟的model才会提供lite/turbo/精简版
   - 一次生成多幅图
-  - stream
-  - 在线图片生成或编辑的架构, 涉及到模型下载与扩展下载，目前没有类似ollama的统一方案, 还涉及到GPU/CPU硬件支持，只有成熟方案才处理过相关问题
+  - stream图片从模糊到高清的效果
+  - 在线图片生成或编辑的架构, 涉及到模型下载与扩展下载，目前没有类似ollama的统一方案, 还涉及到GPU/CPU硬件支持，只有成熟方案才处理过相关问题，特别是文生图结合本地llm优化和推理的场景
+  - 💡 针对AIGC优化的 image-editor 还存在市场生态位机会
+  - 类似 pexels/unsplash/站酷 的图片资源站, 手动下载免费， api调用付费
 
 - workflow
   - Zapier and n8n help to an extent, but they’re not designed for multi-tenant SaaS. They’re great for internal workflows—not product infrastructure.
@@ -343,7 +349,9 @@ modified: 2025-03-22T16:10:24.856Z
     - 完全支持 cc，主要是 sonnet 4.5，haiku 4.5 会自动重定向到 sonnet 4.5
     - RPM 暂时定为 5，之后看情况调整
     - [【随时跑路公益站】就是那个稳了一个月的AmazonQ2API公益，开放注册 ](https://linux.do/t/topic/1154353)
-  - [逆水寒](https://api.sxxe.net/)
+  - [KFC API](https://kfc-api.sxxe.net/console)
+    - [KFC API公益站 - 正式上线  ](https://linux.do/t/topic/1233747)
+    - [逆水寒](https://api.sxxe.net/), 即将关闭
     - [逆水寒公益API——扬帆起航 ](https://linux.do/t/topic/1173036)
   - [一个小站的 API 商店](https://one-api.ygxz.in/), 每日签到1刀内随机
     - 提供半公益的高质量 API 中转服务，始于202406
@@ -446,6 +454,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 免费API Key限制200请求/天/IP
 
 - image-gen 🖼️
+  - [小白生图 - AI Image Generator](https://catsapi.com/)
   - [最新公益绘画API ](https://linux.do/t/topic/599258)
     - 百度绘画
     - 豆包绘画

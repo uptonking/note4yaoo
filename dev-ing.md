@@ -277,7 +277,9 @@ VLLM_LOGGING_LEVEL=debug VLLM_CONFIGURE_LOGGING=1 vllm serve RUC-DataLab/DeepAna
 ```
 
 ```sh /image
-./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o ~/Pictures/test11.png -W 512 -H 512 -s 6 -p "一位帅哥和他的宠物狗穿着配套的服装参加狗狗秀节目，室内灯光，背景中有观众。"
+cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o ~/Pictures/test11.png -W 512 -H 512 -s 7 -p "一位帅哥和他的宠物狗穿着配套的服装参加狗狗秀节目，室内灯光，背景中有观众。"
+
+cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o ~/Pictures/test11.png -W 1024 -H 1024 -s 9 -p "
 ```
 
 - goal-to 增强特色
@@ -289,6 +291,13 @@ VLLM_LOGGING_LEVEL=debug VLLM_CONFIGURE_LOGGING=1 vllm serve RUC-DataLab/DeepAna
   - ?
 - dev-to
   - ?
+
+## 1128
+
+- [A Guide to Common Aspect Ratios & Image Sizes _202405](http://emcreative.ie/a-guide-to-common-aspect-ratios-image-sizes-and-photograph-sizes/)
+  - 1920 x 1080: This standard image size is widely seen across high definition TVs, presentations, and social media cover photos. It follows the 16:9 aspect ratio
+  - 1280 x 720: This size follows the standard HD format featured in photography and film. It fits the 4:3 aspect ratio
+  - 1080 x 1080: 1:1 ratio image size used widely across social media, namely Instagram and Facebook posts.
 
 ## 1127
 

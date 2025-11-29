@@ -295,6 +295,58 @@ PP Speed: Q3 GGUF: 50 t/s
 
 - ## 
 
+- ## 💡 [Suggestions to improve RAG with 200+ pdfs : r/Rag _202412](https://www.reddit.com/r/Rag/comments/1h8205b/suggestions_to_improve_rag_with_200_pdfs/)
+- I’m working on a company where we are running a RAG for a company with more than 4.000.000 documents (more than 200.000.000 embeddings) so this might help you.
+  - We start with an ingestion process where all PDFs or documents (regardless of source) are converted into markdown using LLMSherpa, an open-source library we’ve fine-tuned for our needs. The markdown is then subdivided into sections, which are further broken down into smaller chunks. These chunks undergo a context retrieval process to add additional relevant information before being stored.
+  - Next, we generate embeddings for these chunks using BAAI/bge-m3 and store them in a PostgreSQL database managed via pgvector.
+  - When a user interacts with our playground, they send a message, which includes the chat history. To handle this, we first make an initial LLM call to rephrase the prompt and incorporate additional context. This step is crucial for questions referencing prior chat history, ensuring clarity and proper fine-tuning before the main LLM call.
+  - The rephrased prompt is then matched against all the stored chunks in our database using inner product similarity, with a predefined threshold to filter the most relevant chunks. After retrieving these, a reranker further narrows the results to the top 50 most relevant chunks.
+  - Finally, the rephrased prompt and the refined chunks are sent to the LLM, which generates the user’s final answer. To ensure fast and efficient database queries, we use HNSW (Hierarchical Navigable Small World) indexing, enabling low-latency and scalable retrieval.
+
+- Converting the PDFs to images and using an LLM like Claude 3.5 Sonnet to convert it with custom instructions works quite well, though it's slower and pricier. I convert all my PDFs like that.
+
+- ## [Best AI to search in large folder of PDFs : r/AI_Agents _202503](https://www.reddit.com/r/AI_Agents/comments/1j1pum1/best_ai_to_search_in_large_folder_of_pdfs/)
+- You don’t want an AI, you want a robust indexing and search engine that feeds relevant docs/chunks to an LLM for a simple summarization. You can do that with RAG, vector DB, or just old school ELK stack. Plenty of options.
+
+- Notebooklm can take up to 50 files. And it has the great podcast summary.
+
+- I have efficient semantic chunking + STORM + meilisearch integration specifically for this problem.
+
+- ## [How does having a very long context window impact performance? : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1lxuu5m/how_does_having_a_very_long_context_window_impact/)
+- Basically, the longer the context window the more memory is needed to store the model and the KV cache. The more memory the model takes up, the longer it will take for the GPU to read the model from memory.
+  - keep in mind many models claim 128K context length, but their ability to recall information deep within a block of text will degrade as it fills up. QWQ appears to be one of best models for long context recall and creative writing.
+
+- You should not max out the context window. You should be extracting what's valuable and reinjection it when necessary.
+  - This is a lot more complex than it seems. But context summarization into RAG and MCP servers probably help get you there.
+
+- My experience with Gemma3 27B is that speed fell off the cliff once the context is more than 4 windows (ie over 4K). I’m using a 5070ti and I get 30t/s using Q3KM model under 4K. Beyond 4K context it requires a lot more compute to look back and remember things is my understanding. So you get loooong prompt processing time. In my case it’s 5t/s… Probably better off using Mistral Small which is what I’m doing, something a bit longer context and less cliff.
+  - You can also write in auto-summarizing function just before it hits context limit. Or use something that has it. And when the sessions get very long use RAG.
+
+- Gemma 3 had a very memory heavy context. Q4 quant with 32k context was barely fitting into 32gb vram. But people praised it for good attention to context. Then Google "fixed" it, introducing SWA, which made it lightweight, but after this I've seen many complaints about the model forgetting things very fast.
+- Gemma3 does not understand long context that well. Even at 8k it is becoming quite inconsistent (contradicting what was in context before).
+
+- ## [LLM with large context : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kdnbhj/llm_with_large_context/)
+- The current mainstream open-source LLMs have a context length of around 128K, but there are already some options that support longer contexts (Llama4, Minimax-Text, Qwen2.5-1M). 
+  - However, the GPU memory overhead for long contexts is substantial. For example, Qwen2.5-1M-7B mentions that it requires approximately 120GB of GPU memory to deploy a model supporting a 1M context. 
+  - It's difficult to fully run a model with a 1M context locally. However, such models might perform better than regular models in tasks requiring longer inputs(64K-128K) refer to Qwen2.5-1M.
+- A significant issue with using long-context LLMs is that most LLMs' long contexts are extrapolated (for instance, Qwen-2.5 has a pre-training length of 4K → long context training of 32K → Yarn extrapolation to 128K, and Llama3.1 has pre-training up to 8K → Rope scaling extrapolation to 128K), and only a small amount of long-context data is used during training. 
+  - As a result, performance may degrade in actual long conversations (I believe most models start to degrade above 8K length, and performance notably worsens beyond 32K). 
+  - Of course, if you only aim to extract some simple information from a long text, this performance degradation might be acceptable.
+
+- Attention mechanism right now just don't handle large context very well. If there's too much hard distractors within context, the model just won't do too well.
+
+- But fan of Qwen 3 8B or 32B. You can fit 128K with model in 24GB of VRAM, but you will have to trade Q8 for Q4 for KVcache on the 32B model. 
+
+- 32k is where all models degrade, even if stated otherwise.
+  - Qwen 3 are better ones though.
+  - There is also Llama 3.1 8b Nemotron 1M, 2M and 4M; I had mixed success with them - they are strange, weird models, but handle context well.
+
+- 1m context's kv cache takes too much vram for local use case. https://www.reddit.com/r/LocalLLaMA/comments/1jta5vj/vram_requirement_for_10m_context/
+
+- [How large is your local LLM context? : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1j6xpvt/how_large_is_your_local_llm_context/)
+  - Most local LLMs are massively degraded by 32K context. Both token quality and generation speed. I would say there's no point going over that, and you should try not to even get close. You have to do more work to fit in only the relevant context but that's the tradeoff with going local
+- No I don't unless it's required. Having large input tokens impacts the throughput, so it's better to optimize the input tokens length.
+
 - ## 🆚 [Comparing Unsloth's GLM-4.6 IQ2_M -vs- GLM-4.6-REAP-268B Q2_K_XL : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1ozq14d/comparing_unsloths_glm46_iq2_m_vs_glm46reap268b/)
   - During my limited coding testing I'm seeing:
   - REAP_Q2_K_XL sometimes perform better but fail more often, including sometimes looping and some broken code outputs.
@@ -409,7 +461,7 @@ PP Speed: Q3 GGUF: 50 t/s
 - Flash Attention works on Mac? I always thought CUDA only.
   - Not only does it work it seems to be giving a bigger performance boost, at least on some quick tests
 
-- ## [weighted/imatrix VS static quants? : r/LocalLLaMA _202405](https://www.reddit.com/r/LocalLLaMA/comments/1ck76rk/weightedimatrix_vs_static_quants/)
+- ## 🆚 [weighted/imatrix VS static quants? : r/LocalLLaMA _202405](https://www.reddit.com/r/LocalLLaMA/comments/1ck76rk/weightedimatrix_vs_static_quants/)
 - Imatrix quants were introduced a couple of months ago and are recommended over static quants because they have better output quality. 
   - For example, a Q4_K_M quant made with imatrix should be closer to a Q5_K_M non-imatrix quant in quality.
 
@@ -423,6 +475,10 @@ PP Speed: Q3 GGUF: 50 t/s
   - imatrix is distinct from i-quants.
   - i-quants are better if your hardware(CPU in this case, not GPU/RAM/VRAM) is beefy enough to run them at a speed you find usable.
   - K-quants if your CPU is struggling with i-quants.
+
+- [How does any of this work? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1p8up6n/how_does_any_of_this_work/)
+  - i-matrix quants use special calibration matrix, they essentially maintain quality on selected type of tasks sacrificing anything else. 
+  - My experience suggest that imatrix quants are ever so slightly messed up, especially for creative writing.
 
 - ## [Getting counter-intuitive results with local KV Cache Quantization Benchmark - am I doing something wrong? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nn2nqz/getting_counterintuitive_results_with_local_kv/)
   - I've been running some benchmarks on KV cache quantization for long-context tasks, and I'm getting results that don't make much sense to me. 

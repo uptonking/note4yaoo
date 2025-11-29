@@ -495,11 +495,45 @@ modified: 2023-02-08T07:20:48.475Z
   - ✨ 实测, rag后的chunk文本可查看chunk与原文对应的细节
     - 聊天的回答中, hover图标能显示引文，并可点击引文后可在页面遮罩侧面弹窗中查看pdf原文位置
   - 🐛 整个 知识库/聊天/查询 的创建及使用交互过于复杂， 不够简洁和自然
+  - DeepDoc (Default) - RAGFlowPdfParser
+    - Full OCR, Most comprehensive but slower
+    - Stream Reading Capability: ✅ YES
+    - Page-by-page processing with configurable page_from/page_to
+    - Uses `pdfplumber.open()` with `page_from` and `page_to` parameters
+    - 使用pdfplumber.open()和pypdf.PdfReader(), 一次性加载整个PDF文件到内存
+  - Plain Text Parser - PlainParser
+    - Uses `pypdf` for text extraction only
+    - Only for text-based PDFs
+    - Stream Reading Capability: ✅ YES
+    - Uses `pypdf.PdfReader` with page ranges
+    - Memory Usage: Very low - only text content loaded
+    - 可以逐页处理，但仍需要加载完整PDF
+  - Docling Parser - DoclingParser
+    -  Uses `docling.DocumentConverter` with full file
+  - MinerU Parser - MinerUParser
+    - External tool, entire file processing
+  - TCADP Parser - TCADPParser
+    - Tencent Cloud API integration
+    - Cloud-based, file upload to Tencent Cloud
+    - Reading Method: Converts entire file to `base64` and uploads, entire file loaded into memory for Base64 conversion
+  - Vision Parser - VisionParser
+    - Visual model processing, full file
+    - Higher memory requirements
+    - Uses `pdfplumber` with full file access
   - [HARD -- Efficient way to use enterprise dataset without uploading all files? _202509](https://github.com/orgs/infiniflow/discussions/10388)
     - You have to upload the data from Azure to RAGFlow. And currently you can do that through API. From 0.22 which is going to be launched in this Nov, we will provide some data sources and you can ingest data by just click several buttons. And more data sources could be easily added.
   - [[Question]: Why can't knowledge graphs be used? _202509](https://github.com/infiniflow/ragflow/issues/10017)
     - Knowledge graphs can’t currently be used with the Table chunking method in RAGFlow. The reason is that table chunking treats each row as a separate chunk and stores field mappings for retrieval, but it does not run those chunks through the knowledge graph extraction pipeline. As a result, entity–relationship extraction is skipped for tables.
     - If you need a knowledge graph from table data, you’d have to implement a custom post-processing step (e.g., parsing the rows yourself and generating triples).
+  - [Select PDF parser | RAGFlow](https://ragflow.io/docs/dev/select_pdf_parser)
+  - [Deploy local models | RAGFlow](https://ragflow.io/docs/dev/deploy_local_llm)
+    - RAGFlow supports deploying models locally using Ollama, Xinference, IPEX-LLM, or jina.
+  - 🐛 [[Bug]: Fail to access model(text-embedding-bge-reranker-v2-m3). The LmStudioRerank has not been implement _202502](https://github.com/infiniflow/ragflow/issues/5354)
+    - Unable to add reranker model for LM STUDIO，Fail to access model(text-embedding-bge-reranker-v2-m3).The LmStudioRerank has not been implement
+  - 🐛 [[Question]: Support for calling the OLLAMA Reranker models ？ _202509](https://github.com/infiniflow/ragflow/issues/8988)
+    - Ollama supports very few rerank models and is not recommended.
+  - [FAQs | RAGFlow](https://ragflow.io/docs/dev/faq)
+    - RAGFlow supports MinerU (>= 2.6.3) as an optional PDF parser with multiple backends. RAGFlow acts only as a client for MinerU, calling it to parse documents, reading the output files, and ingesting the parsed content.
 
 - https://github.com/chunkhound/chunkhound /118Star/MIT/202509/python
   - https://chunkhound.github.io/

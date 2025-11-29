@@ -752,7 +752,19 @@ modified: 2022-06-03T21:34:54.893Z
   - Open-source enterprise-level AI knowledge base and MCP (model-context-protocol)/A2A (agent-to-agent) management platform with admin UI, user management and Single-Sign-On
   - Golang + Beego + Python + Flask + MySQL
 
-## doc-etl
+## etl-doc
+
+- https://github.com/run-llama/llama_index /45.5kStar/MIT/202511/python
+  - https://developers.llamaindex.ai/
+  - LlamaIndex (GPT Index) is a data framework for your LLM application.
+  - [[Bug]: PDF parsing does not happen with `SimpleDirectoryReader`](https://github.com/run-llama/llama_index/issues/19260)
+    - I guess the default pdf reader (`pypdf`) couldn't parse your document? Feel free to swap it with anything else (like llama parse, docling, etc)
+    - The unreadable PDF content happens because `SimpleDirectoryReader` relies on external libraries to extract text from PDFs, but these dependencies (`PyMuPDF/fitz` or `pdfminer.six`) are not installed by default. When they're missing, you get raw PDF markup instead of extracted text details.
+  - [Add in-memory loading for non-default filesystems in PDFReader _202404](https://github.com/run-llama/llama_index/pull/12659)
+    - Loading documents for large PDF files in external file systems was taking a long time. After investigation, we found that we were making a lot of requests to the external filesystem in the process. To avoid this, we first load the content in-memory and then pass it to pypdf.
+    - Interesting, so this is because passing the file directly was making way too many requests, so now we fully download the file into memory and then pass it in? Is this only an issue for PDFReader?
+      - We've only run into that issue with pypdf as of now.
+      - it's way faster now. That's also what pypdf does if you pass it a path instead of a stream, but that only supports the default filesystem
 
 - https://github.com/google/langextract /15.5kStar/apache2/202509/python
   - https://pypi.org/project/langextract/
@@ -761,9 +773,11 @@ modified: 2022-06-03T21:34:54.893Z
   - Reliable Structured Outputs: Enforces a consistent output schema based on your few-shot examples
   - Optimized for Long Documents by using an optimized strategy of text chunking, parallel processing, and multiple passes for higher recall.
   - Flexible LLM Support: Supports your preferred models, from cloud-based LLMs like the Google Gemini family to local open-source models via the built-in Ollama interface.
-  - [Proposal: Add Docling Integration for End-to-End Document Extraction  _202508](https://github.com/google/langextract/issues/184)
+  - 🐛 [Proposal: Add Docling Integration for End-to-End Document Extraction  _202508](https://github.com/google/langextract/issues/184)
     - LangExtract today works only on raw text strings. In real-world workflows the source is usually a PDF , DOCX or PPTX. Users currently have to: Manually convert the file to text (losing layout & provenance).
     - Proposed Solution: Integrate Docling library as an optional front-end
+  - 🐛 [Is it able to work on large PDF files? ](https://github.com/google/langextract/issues/178)
+    - 👷 202508: PDF support is not available yet but it's something that I'm interested in. I have a small prototype running on my local and as the library has core aspects stabilized will work on adding this in.
   - [Question: Does Langextract work better on full documents or chunks? _202508](https://github.com/google/langextract/issues/206)
     - From my current tests it seems to work better when using docling to chunk it (at least in terms of building a knowledgegraph). I guess its due to contexual / visual chunking vs naive chunking.
 
@@ -776,7 +790,7 @@ modified: 2022-06-03T21:34:54.893Z
   - 基于Answer. AI的Byaldi、OpenAI的gpt-4o和Langchain 做结构化数据输出
   - 支持从PDF等非结构化文档中提取结构化信息，比如损失历史记录、基本应用程序信息等
 
-- https://github.com/yobix-ai/extractous /apache2/202411/rust
+- https://github.com/yobix-ai/extractous /1.6kStar/apache2/202412/rust/inactive
   - Fast and efficient unstructured data extraction. 
   - Written in Rust with bindings for many languages.
   - Extractous offers a fast and efficient solution for extracting content and metadata from various documents types such as PDF, Word, HTML, and many other formats. 
@@ -784,6 +798,13 @@ modified: 2022-06-03T21:34:54.893Z
   - 高性能非结构化数据提取工具：extractous，比unstructured-io快25倍，支持微软Office、PDF、网页、图片、电子书、邮件等多种格式
   - Extractous was born out of frustration with the need to rely on external services or APIs for content extraction from unstructured data. 
     - unstructured-io stood out as the popular and widely-used library for parsing unstructured content with in-process parsing. 
+    - unstructured-io wraps around numerous heavyweight Python libraries, resulting in slow performance and high memory consumption
+  - efficient solution for extracting content and metadata from various documents types such as PDF, Word, HTML, and many other formats.
+  - solution in Rust with bindings for many programming languages.
+  - Extractous maintains a dedicated focus on text and metadata extraction. It achieves significantly faster processing speeds and lower memory utilization through native code execution.
+  - For file formats not natively supported by the Rust core, we compile the well-known Apache Tika into native shared libraries using GraalVM ahead-of-time compilation
+  - Extracts text from images and scanned documents with OCR through `tesseract-ocr`.
+  - 〰️ Extract a content of a file(URL/ bytes) to a `StreamReader` and perform buffered reading
 
 - https://github.com/ucbepic/docetl /MIT/202410/python
   - https://docetl.org/
@@ -849,6 +870,7 @@ modified: 2022-06-03T21:34:54.893Z
   - Extract and convert data from any document, images, pdfs, word doc, ppt or URL into multiple formats (Markdown, JSON, CSV, HTML) with intelligent content extraction and advanced OCR.
   - Cloud Processing (Default): Instant free conversion with cloud API 
   - Local Processing: CPU/GPU options for complete privacy - no data sent anywhere
+  - 🐛 代码中未看到流式处理文件的逻辑, 对处理大文件不友好
   - Universal Input: PDFs, Word docs, Excel, PowerPoint, images, URLs, and raw text
   - URL Processing: Direct conversion from web pages
   - Smart Output: Markdown, JSON, CSV, HTML, and plain text formats

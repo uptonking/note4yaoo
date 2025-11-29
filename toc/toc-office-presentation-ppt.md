@@ -11,6 +11,7 @@ modified: 2021-04-30T20:14:17.669Z
 - tips
   - 商业化的演示更偏向类似tableau的图形编辑器，而不是文字
   - 侧重信息的ppt上更多的是文字数字，而不是花里胡哨的图形，此时pdf比ppt更合适，很多pdf由ppt转换得到
+  - 🤔 pdf-editor也需要支持排版与编辑, 优先级比ppt-editor高
   - 技术栈基于svg容易实现缩放，基于dom不容易缩放, ppt需要缩放吗
 
 - dev-xp

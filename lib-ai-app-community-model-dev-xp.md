@@ -175,6 +175,13 @@ modified: 2025-11-18T13:22:22.078Z
   - [【Pandalyst-7B-V1.2】 Now we can plot and much more powerful ! : r/LocalLLaMA _202310](https://www.reddit.com/r/LocalLLaMA/comments/178uxtf/pandalyst7bv12_now_we_can_plot_and_much_more/)
   - Pandalyst-7B-V1.2, which was trained on CodeLlama-7b-Python and it surpasses ChatGPT-3.5 (2023/06/13), Pandalyst-7B-V1.1 and WizardCoder-Python-13B-V1.0 in our PandaTest_V1.0.
   - 7b version is trained based on Codellama-python-7B, and achieve competitive performance with our 13B !!! (witch was trained on wizardcoder-python-13B)
+
+## image 🖼️
+
+- z-image-turbo 不擅长512尺寸的图片，感觉很糊
+  - 同样prompt+step生成1024尺寸就比较清晰
+  - 似乎只能生成长宽1:1比例的图片, 随机比例会抛出异常
+  - 生成 2048x2048 的图片时, macbook内存爆炸，电脑重启
 # models-features/variants
 - 专用模型
 - ocr
@@ -232,4 +239,8 @@ modified: 2025-11-18T13:22:22.078Z
   - DeepSeek-V3.1-Terminus-mlx-2Bit  209.89gb
   - DeepSeek-R1-2bit  251.82gb
 # more
+- https://github.com/NVIDIA/RULER /旧测评未更新
+  - What’s the Real Context Size of Your Long-Context Language Models?
+  - RULER generates synthetic examples to evaluate long-context language models with configurable sequence length and task complexity.
+
 - [Qwen3: How to Run & Fine-tune | Unsloth Documentation](https://docs.unsloth.ai/models/qwen3-how-to-run-and-fine-tune)

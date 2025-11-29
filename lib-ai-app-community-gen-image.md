@@ -53,8 +53,10 @@ modified: 2025-08-16T14:12:24.416Z
 - time cost for image-gen on macbook air m4(32gRAM)
   - prompts: lawn, rabbit, cat
 
+- 生成速度与prompt长度和复杂度都有关
+
 ```markdown
-- model,                       1st/s,  2nd/s, size/gb, license, year,  notes
+- model,                       1st/s,  2nd/s, size/gb,  year,  notes/lic
 - 🌹sdxs-512-dreamshaper/1step,6.1,    2.4,   1.26,     202403, sd15
 - 🌹sdxl-segmind-vega/2step,   12,     3.6,   3.29,     202401, sdxl
 - sdxl-lightning/1step,        18,     3.8,   6.94,     20240x, sdxl
@@ -74,6 +76,17 @@ modified: 2025-08-16T14:12:24.416Z
 - fluxQ3KS-gguf/8step,         350,    320,   5.21,     202404, model
 - flux-gguf-hyper/8step,       760,    770,   5.21+1,   202404, model
 - flux-gguf-turbo/8step,       760,    760,   5.21+0.6, 202404, model
+- z-image-t-8bit/512/7step,    51,     49,    7 + 3,    202511, qwen, 512都模糊
+- z-image-t-8bit/512/9step,    66,     ?,     7 + 3,    202511, qwen
+- z-image-t-8bit/512/12step,   85,     85,    7 + 3,    202511, 器官变形且模糊
+- z-image-t-8bit/512/16step,   120,    ?,     7 + 3,    202511, qwen
+- z-image-t-8bit/512/22step,   170,    ?,     7 + 3,    202511, 有时变形, 放大模糊
+- 🌹 z-image-t-8bit/1024/8step, 230,    270,  7 + 3,    202511, qwen, 放大模糊
+- z-image-t-8bit/1024/9step,   265,    ?,     7 + 3,    202511, qwen
+- z-image-t-8bit/1024/12step,  410,    420,   7 + 3,    202511, qwen
+- z-image-t-8bit/1024/16step,  560,    ?,     7 + 3,    202511, qwen
+- z-image-t-8bit/1024/22step,  640,    680,   7 + 3,    202511, qwen
+- z-image-t-8bit/1280/8step,   265,    ?,     7 + 3,    202511, qwen
 
 ```
 
@@ -820,6 +833,97 @@ modified: 2025-08-16T14:12:24.416Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Facial expressions in z-image: A fairly comprehensive test : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1p8ekbc/facial_expressions_in_zimage_a_fairly/)
+  - Prompt was: A beautiful woman with a _______ facial expression or something nearly the same depending on the way I phrased the prompt.
+  - I also did some different tests for same emotions written different ways like "a crying woman" and "A woman who has been crying"
+  - Same seed used on all.
+  - 9 steps.
+  - Euler_A sampler
+  - Simple scheduler
+
+- Same as HiDream, but you can take an image from another model output and do I2I to add realism.
+
+- How come it's a similar looking woman each time? Did you just keep the seed the same each time? If so, that's interesting as often just changing one word is enough to create a totally different person.
+  - Yes. Same seed. For most it’s just one word that changed.
+
+- ## [Z image tinkering tread : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1p8462z/z_image_tinkering_tread/)
+  - It's best to use chinese prompt where possible. Gives noticeable boost.
+  - ModelSamplingAuraFlow gives better result when set to 7
+  - I proposed to use resolution between 1 and 2 mp, as for now I am experimenting 1600x1056 and this the same quality and composition as with the 1216x832, but more pixels
+  - using vae of flux.dev
+
+- For the Chinese prompt you're absolutely right, it boosts the prompt adherence a lot
+
+- You can use the TAEF1 VAE to decode the latent a little faster. It also increases the saturation a bit, which seems to be a good thing most of the time.
+
+- I swapped the qwen3-4B for the qantized and abliterated one: This one is faster... And more uncensored even. https://huggingface.co/Mungert/Qwen3-4B-abliterated-GGUF/tree/main
+
+- Btw, i tried using Qwen3-4B-Instruct-2507 and Qwen3-4B-Thinking-2507 GGUF as Z-Image TE, it works too, but seems to only differs on the text color & background 
+
+- Another obvious observation. Don't forget to separate your negative prompts with commas. ComfyUI workflow don't have them, but it makes a huge difference. The second image is with commas
+
+- Z-Image responds predictably to hex colour values, and can associate a colour with an emotion. Try this:
+  - Imagine a person displaying emotions associated with #ff0000. The person must have this coloured hair.
+
+- 
+- 
+
+- ## [Qwen Z-Image V. S. Qwen Image - QUESTIONS : r/comfyui](https://www.reddit.com/r/comfyui/comments/1p81bim/qwen_zimage_vs_qwen_image_questions/)
+  - Is Z-Image - the NEW Qwen 2511 they teased last week?
+  - Is Qwen Z-Image (6B) better than Qwen (20B) quality? ...because it's split to Turbo / Base / Edit ? so together it's almost the same amount of parameters each variant?
+  - Another reason I'm confused is because I keep seeing lots of VERY impressive Z-Image results and even people compare to Flux.2 Dev (32B)
+
+- Z-Image is model from another team than is working on Qwen Image. So they are different models. They are just both funded by Alibaba.
+  - Z-Image is not better than Qwen Image in general. But it's much less VRAM demanding. And pretty fast. Z-Image-Turbo is even slightly faster than pi-Qwen-Image.
+  - Qwen Image is very robust model and it's hard to teach it new things and change it with Loras. With Z-Image it should be easier (but we will see).
+
+- Its a different model, by a different team within alibaba. Its crazy good for its size. It can do (some) celebs. It can do (some) NSFW.
+
+- ## [Here's the official system prompt used to rewrite z-image prompts, translated to english : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1p8mken/heres_the_official_system_prompt_used_to_rewrite/)
+- The original system prompt is pulled from this file in their official huggingface space: https://huggingface.co/spaces/Tongyi-MAI/Z-Image-Turbo/blob/main/pe.py
+- I used qwen3 and told him something like "...the text encoder is variant of you so write it in a way it will be easier for you do understand...", the results were really good.
+
+- ## [Z-Image-Base and Z-Image-Edit are coming soon! : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1p8rb93/zimagebase_and_zimageedit_are_coming_soon/)
+- What's the difference between base and edit?
+  - Base is the full model, probably where Turbo was distilled from.
+  - Edit is probably specialized in image-to-image
+
+- I assume base is bigger than turbo?
+  - As far as I understood no. Turbo is just primed for less steps. They explicitly said that all models are 6b.
+
+- The paper just mentioned something like 100 steps is recommended on base which seems kind of crazy.
+
+- If it does not fit at 12gb that community support will be vastly diminished. The Z-Image turbo works great at 12gb.
+
+- ## 💡 [Tongyi-MAI/Z-Image-Turbo · z-image models is specially only working with qwen3 4b ?](https://huggingface.co/Tongyi-MAI/Z-Image-Turbo/discussions/24)
+  - any other qwen3 version can be used ? if not , then why ?
+- Our model is trained with qwen3-4b, so yes, our diffusion model works exclusively with qwen3-4b.
+
+- [What additional models of QWEN 3 4B we can use with Z Image?](https://huggingface.co/Tongyi-MAI/Z-Image-Turbo/discussions/4)
+- text encoder `config.json` says `"rope_theta": 1000000`, so it's original 4B, not the 2507 one.
+
+- afaik, different models will generate different embeddings, not sure they would align well with DiT.
+
+- also I'm curious why they use Qwen3-4B pure text model, while qwen-image use a VL model.
+  - To put it simply, the Qwen-Image model utilizes the mmproj (the image encoding component) from the Qwen2.5-vl model. In contrast, the Z-image model does not use a multimodal model. Instead, it uses Qwen3 solely for embedding values to distinguish between text and image pairs, while image encoding is processed in a separate block.
+  - In other words, since Z-Image was originally trained based on Qwen3-4b, using other models that include additional tuning (such as Qwen3-Thinking or Qwen3-VL) could actually be counterproductive.
+  - This is because the Qwen3 model merely serves as a transformer to convey textual meaning, not as an inference engine directly involved in image generation.
+
+- ## [Z-Image Prompt Enhancer : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1p87xcd/zimage_prompt_enhancer/)
+  - Z-Image Team just shared a couple of advices about prompting and also pointed to Prompt Enhancer they use in HF Space.
+  - Z-Image-Turbo works best with long and detailed prompts. You may consider first manually writing the prompt and then feeding it to an LLM to enhance it.
+
+- 
+- 
+- 
+- 
+- 
+- 
+
 - ## [The best thing about Z-Image isn't the image quality, its small size or N. S. F. W capability. It's that they will also release the non-distilled foundation model to the community. : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1p7ykw8/the_best_thing_about_zimage_isnt_the_image/)
   - Z-Image-Turbo – A distilled version of Z-Image that matches or exceeds leading competitors with only 8 NFEs (Number of Function Evaluations). 
   - Z-Image-Base – The non-distilled foundation model. By releasing this checkpoint, we aim to unlock the full potential for community-driven fine-tuning and custom development.
@@ -831,12 +935,38 @@ modified: 2025-08-16T14:12:24.416Z
 - I think that the text encoder is Qwen3-4B and not Qwen3-VL-4B. 
   - They probably use the VL one on the Edit model.
 
+- ## 🆚🌰 [Z-Image Turbo vs. Flux.2 dev : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1p8uu6e/zimage_turbo_vs_flux2_dev/)
+  - I mean, some Flux2 results are better and some Z-Image results are better, but Flux took my 5090 a whole night to complete all my tests and Z-Image took about 20 min.
+  - Prompts
+  - A close-up of a snail with an old oriental city as its shell, mossy, flowers, colorful, sparkling.
+  - A cat dancing in a dynamic pose.
+  - A giant holding a person in his hand looking at each other. The person is standing on the hand.
+  - A person in a barren landscape with a heavy storm approaching, their posture and expression showing deep contemplation.
+  - A visual representation of the concept of "time".
+  - A Renaissance-style painting depicting a modern-day cityscape.
+
+- Even though I have a 4090 I still vastly prefer Z-Image. To be honest I don't see ANY extra image quality in Flux 2 despite taking FAR more processing power and time to complete an image. If anything its Z-image that has the edge in skin texture and being uncensored.
+  - The ONLY advantage Flux 2 currently has (from what I've seen so far) is its ability to edit and use multiple reference images.
+  - ....and Z-image edit is being released soon.
+
+- ### [Fashion photography comparison. Nano Banana Pro vs Z Image Turbo. Who did it better? : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1p8wbgj/fashion_photography_comparison_nano_banana_pro_vs/)
+
 - ## 🌰 [Z-Image Test on 126 Portrait Prompts : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1p83wgf/zimage_test_on_126_portrait_prompts/)
   - I wanted to share a simple test dataset I put together to demonstrate the capabilities of the new Z-Image Turbo text-to-image model.
   - Dataset: https://huggingface.co/datasets/k-mktr/z-image-examples
   - It contains 126 portrait prompts (in .jsonl format) along with their corresponding generated outputs. It's a great way to quickly see how the model handles detailed portrait descriptions, lighting, and textures.
 
 - It's so good. None of them have that standardized face like flux has
+
+- [【多图预警】Z-Image 最新开源模型16G显卡可跑10s一张，欢迎佬来品鉴 - 国产替代 / 国产替代, Lv1 - LINUX DO](https://linux.do/t/topic/1232057)
+  - 一张真实风格的照片，一个狭小的大学男生寝室，房间极其凌乱，充满生活气息。上铺床铺未整理，被子堆成一团；下铺的书桌上，笔记本电脑还亮着屏幕，旁边堆着厚厚的专业书籍、草稿纸和几罐可乐；椅子上随意搭着外套和运动裤；地上散落着鞋子和零食包装袋，学生在座位上玩手机。下午的阳光透过窗户斜射进来，在布满灰尘的地面上形成长长的光影。画面有轻微的胶片颗粒感，超高细节。
+  - 动态抓拍，一个四人徒步小组正在挑战一条湿滑的苔原山路，天空中飘着淡淡的云层。视线与山路段齐平，构图紧凑，富有张力。24-70mm镜头，快门速度1/500s凝固动作。照片级真实感，高动态范围，色彩饱和度适中，突出雨后岩石的质感。
+  - 一张写实风格的照片，一位JK女孩，白毛衣，白衬衫，马尾，厚黑裤袜，全身，站在深秋的枫叶林里，阳光透过树叶洒下，地面铺满红色和黄色的落叶，女孩正对镜头，踢着腿，歪着脑袋打趣，一片枫叶滑落到她的肩膀，画面温暖、色彩鲜艳。
+
+- [Z-Image-Turbo: Anime Generation Results : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1p7a800/zimageturbo_anime_generation_results/)
+  - For a 6-billion parameter model, it performs good in image generation. The model truly lives up to its name; during testing on the ModelScope platform (which uses NVIDIA A10 GPUs), most generations took a maximum of only 2 seconds. All images were generated just 9 steps. On high-end consumer GPUs (like an RTX 3090 or 4090), I think this would take roughly 2 to 3 seconds, while mid-range cards might take 4 to 5 seconds.
+  - I guess this is sort of a thing that people expected Pony v7 to be
+  - We would need an easily tuneable workflow, lora creation, and in depth controlnets before anyone can remotely claim it's over for SDXL.
 
 - ## 🌰 [Z image turbo (Low vram workflow) GGUF : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1p7nklr/z_image_turbo_low_vram_workflow_gguf/)
   - GGUF text encoder : https://huggingface.co/unsloth/Qwen3-4B-GGUF/tree/main

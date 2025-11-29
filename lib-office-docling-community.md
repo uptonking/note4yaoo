@@ -249,7 +249,28 @@ modified: 2025-09-21T13:57:50.332Z
 
 - ## 
 
-- ## 
+- ## [DocumentStream only accepts a BytesIO, but it should instead accept an abstract class like ` IO[bytes]` ](https://github.com/docling-project/docling/issues/2279)
+  - It appears that you can only construct a DocumentStream from a BytesIO concrete class. And this is great for most general purpose use cases, 
+  - but if you happen to have a custom type that implements the IO abstract class methods such as read, seek, etc, then DocumentStream should allow this as well.
+
+- ## [Improve backend resolution logic ](https://github.com/docling-project/docling/issues/802)
+  - Document conversion currently contains a logic for "guessing" / resolving the backend to use for a given input (ref).
+  - This logic has some limitations, e.g. when working with streams, it relies on the first 8KB to detect the backend to use — which may or may not be enough for a correct detection (e.g. deciding info could only appear at the end of a 10KB stream).
+- One possible high-level approach to examine could be to:
+  - remove the current layer of "guessing" a backend a priori and then committing to that guess, and
+  - instead, keep for each format, e.g. XML, a list of backends to try one after another, until one successfully parses (can have a default list, parametrizable by the user).
+
+- It turns out also the `filetype` library is loading only 8K bytes ref, so this happens also in file inputs.
+
+- 
+- 
+
+- ## [How to optimize PDF to Markdown extraction for large PDFs? ](https://github.com/docling-project/docling/issues/2120)
+
+- ## [Question regarding supporting file streaming _202506](https://github.com/docling-project/docling/discussions/1798)
+  - I am using docling for parsing long PDF documents (1000s of pages). I wanted to ask if docling supports parsing with file streams (i.e., not downloading the entire file into memory before starting the docling conversion).
+  - I saw that docling supports inputs of types Path, str or DocumentStream (which is basically a BytesIO object, but even this requires copying the entire file into BytesIO memory before sending it to docling?).
+  - Can you help clarify my question in this regard?
 
 - ## [LMStudio, Remote Services, smoldocling · docling-project/docling _202506](https://github.com/docling-project/docling/discussions/1849)
 - It looks like it got stuck in a loop. It seems to do well, then gets stuck over and over
@@ -309,7 +330,7 @@ modified: 2025-09-21T13:57:50.332Z
   - yes at least for tables in financial docs and 10k reports. It does take a minute or 2 for pdfs that are 50 page plus, but the quality of output in my testing was much better than markitdown.
 - MarkItDown completely sucks for PDFs (just tested today, wasted a bit of time to self-host it and link it to my AI automation workflow) - it outputs PDFs as text... Huge 'PDF' support 
 
-- Docling is at least 50x slower than PyMuPDF. But it does have categorization when you need structured output, the tradeoff.
+- 🆚 Docling is at least 50x slower than PyMuPDF. But it does have categorization when you need structured output, the tradeoff.
   - yes, for one task docling took 8mins something minutes but pymupdf did it in 8 seconds something, but I think the quality of extraction of docling is better but still the time taken is too much to be overseen.
 - PyMuPDF is AGPL, useless for any serious SaaS use case.
 

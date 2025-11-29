@@ -47,7 +47,41 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## 💥 i'm building a local rag webapp that supports to upload large pdfs, then convert to text , and doing chunking/embedding, then save to a vector db for retrieval with local llm.
+  - i cannot find a solution that supports very large pdf, the memory is often overflowed, even causing system crash
+  - is there any existing solution or better idea to do streaming pdf rag? I think streaming reading can lower the memory usage and achieve better performance.
+
+- goals: streaming, lazy
+- 可尝试在现有方案中找实现
+  - 基于vlm的识别方案，本身就是流式输出内容
+
+- LlamaIndex with Streaming
+  - Supports incremental ingestion with SimpleDirectoryReader
+  - Can process PDFs in chunks using file_extractor parameter
+  - Works with vector stores that support batch insertion
+
+- Unstructured.io
+  - Designed specifically for large document processing
+  - Supports streaming mode for PDFs
+
+- LangChain with PyMuPDF/PyPDF
+  - `PyMuPDFLoader` can load pages incrementally
+
+- Implementation Strategies
+  - Strategy 1: Page-by-Page Streaming
+  - Strategy 2: Batch Processing with Memory Limits
+    - Process N pages at a time, Flush to vector DB after each batch
+  - Strategy 3: Use Memory-Mapped Files
+    - Libraries like `pymupdf` support memory-mapped reading
+    - OS handles paging automatically
+    - Good for very large PDFs (GB+)
+
+- 
+- 
+- 
+- 
+- 
+- 
 
 - ## 🖼️📄📈 [Multi-modal RAG at scale: Processing 200K+ documents (pharma/finance/aerospace). What works with tables/Excel/charts, what breaks, and why it costs way more than you think : r/LLMDevs _202510](https://www.reddit.com/r/LLMDevs/comments/1o5oaas/multimodal_rag_at_scale_processing_200k_documents/)
   - TL; DR: Built RAG systems for 10+ enterprise clients where 40-60% of critical information was locked in tables, Excel files, and diagrams. Standard text-based RAG completely misses this. 
@@ -224,9 +258,29 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [Best open source document PARSER??!! : r/LlamaIndex](https://www.reddit.com/r/LlamaIndex/comments/1dicqkt/best_open_source_document_parser/)
+  - Right now I’m using LlamaParse and it works really well. I want to know what is the best open source tool out there for parsing my PDFs before sending it to the other parts of my RAG.
 
-- ## 
+- Marker is quite nice but not enough to get quality data from complex PDFs.
+
+- I'd look into Unstructured, PyMuPDF, PyPDF, PDF.js
+
+- Try RAGFlow https://github.com/infiniflow/ragflow which is based on deepdoc based document undertanding for better chunking results.
+
+- i made marker+pix2tex combo and lamaParser/mathpix for complex documents
+
+- Docling and Marker are really good open source document parsers. But obviously nothing compared to paid services. But is good enough. Docling especially works well with tabular data and layout analysis. And it also read images
+
+- ## [How to Efficiently Parse Large PDF and DOCX Files (in GBs) for Embeddings Without Loading Fully in Memory? : r/Rag _202411](https://www.reddit.com/r/Rag/comments/1gjz2dj/how_to_efficiently_parse_large_pdf_and_docx_files/)
+- Most pdf reading libraries use a .load function for each page. You can just control which pages it's called on and use garbage collectors if necessary
+
+- pymupdf can load by page I think
+
+- For handling massive PDFs or DOCX files, you’ll want to look into libraries that support lazy loading and streaming. For PDFs, PyMuPDF (with fitz) or PDFMiner allows you to read specific pages directly without loading the whole thing into memory. For DOCX, python-docx doesn’t have native streaming, but using it with smaller chunks of extracted text can work. If you’re embedding, try handling these chunks individually instead of full files, as it cuts down memory use.
+
+- Snapshot each page as an image > pixstral > markdown > chunk > use something like Antrhopics contextual retrieval to embed global context in each chunk
+
+- this might be exactly what you need. its very fast and has buffered streaming: https://github.com/yobix-ai/extractous
 
 - ## [I've been noticing more and more people are using GraphRAG instead of embedding and vector databases...is it really helpful or just the hype? : r/LangChain _202507](https://www.reddit.com/r/LangChain/comments/1e66e9r/graphrag/)
 - Been working with graphrag on my current project. It is good, but it has its fallbacks. The good thing is that you can model you data to preserve relations. 
@@ -257,7 +311,10 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [Best Python library for fast and accurate PDF text extraction (PyPDF2 vs alternatives) : r/LangChain _202508](https://www.reddit.com/r/LangChain/comments/1mxye53/best_python_library_for_fast_and_accurate_pdf/)
+- Pymupdf is faster than docling. 10-50x
+
+- Check out `pdfplumber` for its flexibility and ability to handle complex PDF layouts. It might improve efficiency if PyPDF2 isn't meeting your needs.
 
 - ## [Best way to extract data from PDFs and HTML : r/Rag _202510](https://www.reddit.com/r/Rag/comments/1oavnx4/best_way_to_extract_data_from_pdfs_and_html/)
 - During my experience extracting data from PDFs and HTML files for use in RAG systems, I usually follow one of the two approaches shown in this notebook I created (VLM or docling/paddleOCR)— I hope you find it helpful. 

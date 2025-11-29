@@ -104,7 +104,33 @@ modified: 2022-04-23T18:48:32.550Z
 - ## Here are 6 simple tips to help you design beautiful & usable tables
 - https://x.com/MichaelFilipiuk/status/1888890604392001834
 
+# discuss-automation
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [What Advanced Excel Techniques Do You Use for Automating Repetitive Tasks? : r/excel](https://www.reddit.com/r/excel/comments/1p8ptrf/what_advanced_excel_techniques_do_you_use_for/)
+- Power query! Perfect for combining same format sheets example (daily weekly reports ).. download file into target folder and refresh and boop - done
+- Power Query: Consolidate different files and apply desired formatting
+- Macro: Refresh the consolidated file, generate static files with the desired filename, then create an email with attachments (generated files)
+
+- We have an ERP that spits out CSVs of data. I made a little macro that, when you click it takes the csv data, makes it into a table and resizes all the columns to auto fit the data.
+
+- I embed a SQL query into a worksheet and then use powerquery to sort/format string and floats so I can calculate them properly. 
+
+- At my current job, when I started, most reporting was done via downloading reports in csv/xls format from the ERP then doing a bunch of manual transformations to get the data into the shape people wanted. I've replaced pretty much all of that by creating views in an SQL database that take data directly from the SQL back end of the ERP and do all of the transformations required so staff can just connect directly to the view in Excel and refresh. It's freed up so many hours per week
+  - Apart from that, I pretty much automate anything I do more than three times a week with macros - if there's a range I copy and paste to another workbook every day, I've got a keyboard shortcut for it.
+
+- a macro that switches the contents of 2 ranges of the same size
+
+- I use the most advanced trick of them all - use a language like Python and transcend Excel altogether. Excel has its (many many) use cases, but for programmatic, repetitive tasks your best bet is to learn to program and start implementing those steps in a proper data pipeline.
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

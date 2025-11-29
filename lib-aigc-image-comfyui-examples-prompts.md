@@ -15,6 +15,9 @@ modified: 2025-09-13T09:32:22.969Z
   - https://github.com/ZeroLu/awesome-nanobanana-pro
     - image prompts sourced from X (Twitter), WeChat, Replicate, and top prompt engineers
 # prompts
+- A visual representation of the concept of "time".
+- A Renaissance-style painting depicting a modern-day cityscape.
+
 - Prompt: the perfect bonsai
   - Parameters: Steps: 20, Sampler: Euler a, CFG scale: 7, Seed: 3796997824, Size: 512x512, Model hash: 7460a6fa
 
@@ -49,7 +52,7 @@ modified: 2025-09-13T09:32:22.969Z
 
 ## anime
 
-- Prompt: High quality 8K  painting impressionist style of a Japanese modern city street with a girl on the foreground wearing a traditional wedding dress with a fox mask, staring at the sky, daylight
+- Prompt: High quality painting impressionist style of a Chinese ancient city street with a girl on the foreground wearing a traditional dress with a fox mask, staring at the sky, daylight
   - Negative prompt: blur, cars, low quality
   - Parameters: Steps: 35, Sampler: Euler a, CFG scale: 7.0, Seed: 1974313210, Size: 512x512
 
@@ -82,6 +85,10 @@ modified: 2025-09-13T09:32:22.969Z
 
 - Prompt: highly detailed albert einstein playing minecraft, epic laboratory office, shelves with detailed items in background, ((long shot)), highly detailed realistic painting by grandmaster, unreal engine, octane render, 4k, by artgerm and Drew Struzan and Krenz Cushart, trending on artstation
   - Parameters: Steps: 50, Sampler: PLMS, CFG scale: 7, Seed: 1325962227, Size: 704x512, Model hash: 7460a6fa
+
+## chinoiserie
+
+- Exquisite Chinese Donghua art style. A young woman with long hair styled in an elaborate, traditional bun decorated with hairpins, wearing flowing white and  light mint green Hanfu robes, standing in a misty forest. She is wearing a flowing outfit primarily in light mint green and white, with a printed floral or botanical pattern. The sleeves are long and wide, and sheer, light fabric is billowing around her, giving a sense of movement. She is holding a flower in her right hand. The image captures a moment of elegance and grace, often associated with characters in historical Chinese dramas or fantasy Wuxia/Xianxia genres.
 # play-prompts
 - 一位帅哥和他的宠物狗穿着配套的服装参加狗狗秀节目，室内灯光，背景中有观众。
 

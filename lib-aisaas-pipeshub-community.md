@@ -38,7 +38,21 @@ modified: 2025-11-16T15:34:38.658Z
 
 - ## 
 
+- ## [Indexing of PDF documents regularly fails using default settings  ](https://github.com/pipeshub-ai/pipeshub-ai/issues/682)
+- Issue is identified. It is because of under resourcing(RAM available to docker container). We are preparing a patch and will update shortly.
+  - We are working on some optimizations to complete indexing faster
+
+# discuss-large-file
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Large excel databases cause overflow of context _202509](https://github.com/pipeshub-ai/pipeshub-ai/issues/661)
+  - Excel files with large databases complain about tokens in prompt exceeding context window. This was noticed in domain_extraction.py
+
+- fixed
 # discuss
 - ## 
 

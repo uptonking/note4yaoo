@@ -104,6 +104,38 @@ modified: 2022-11-11T10:46:41.519Z
   - offline-capable. It works even if you don't have a network connection.
   - Tweak the settings to make your PDF look better. See the preview in real time.
 # parser-generator
+- https://github.com/py-pdf/pypdf /9.6kStar/BSD/202511/python
+  - https://pypdf.readthedocs.io/en/latest/
+  - A pure-python PDF library capable of splitting, merging, cropping, and transforming the pages of PDF files
+  - It can also add custom data, viewing options, and passwords to PDF files. 
+  - pypdf can retrieve text and metadata from PDFs as well.
+  - [How pypdf parses PDF files ](https://pypdf.readthedocs.io/en/latest/dev/pypdf-parsing.html)
+    - Finding and reading the cross-reference tables / trailer: The cross-reference table (xref table) is a table of byte offsets that indicate the locations of objects within the file
+    - After locating the xref table and the trailer, pypdf proceeds to parse the objects in the PDF. 
+    - Decoding content streams: The content of a PDF is typically stored in content streams, which are sequences of PDF operators and operands. 
+  - [Reading the PDF metadata on large files _202507](https://github.com/py-pdf/pypdf/discussions/3390)
+    - Is there a way to get the PDF attributes like Creation Date without loading the whole file into memory? We have large multi-gigabyte files and are trying to process them on a fleet of smaller ECS instances. The streaming features of pypdf have been great, but would love to get the same metadata without loading the whole file into memory.
+    - Have you tried to pass a buffered file stream as stream argument ?
+  - [Implementation of get_contents ](https://github.com/py-pdf/pypdf/discussions/3352)
+    - `get_data()` is accessing the (decoded) byte data of the corresponding content stream, thus this only relevant when reading from the original PDF file.
+    - skimming through the usages of self.pdf in ContentStream seems to indicate that this is used to avoid cloning if the content streams are both targeting the same PDF reference
+
+- https://github.com/chromium/pdfium /apache2/202509/cpp/chromium
+  - https://pdfium.googlesource.com/pdfium/
+  - https://pdfium.googlesource.com/pdfium/+/HEAD/docs/getting-started.md
+  - The PDF library used by the Chromium project
+  - PDFium uses the same build tooling as Chromium. PDFium is located in` third_party/pdfium` in Chromium's source code.
+  - PDFium uses GN to generate the build files and Ninja to execute the build files.
+  - PDFium may be built either with or without JavaScript support, and with or without XFA forms support. Both of these features are enabled by default.
+  - By default, the entire project builds with C++20.
+  - https://github.com/bblanchon/pdfium-binaries /MIT
+    - Binary distribution of PDFium
+  - https://github.com/embedpdf/embed-pdf-viewer /MIT/202511/ts
+    - [PDF viewer using PDFium + WebAssembly — would love your input : r/opensource](https://www.reddit.com/r/opensource/comments/1kydm90/pdf_viewer_using_pdfium_webassembly_would_love/)
+    - open source PDF viewer called EmbedPDF, based on PDFium (the same rendering engine used in Chrome) compiled to WebAssembly.
+    - It’s meant to be an alternative to PDF.js, with a focus on rendering accuracy and customizability. You can use it with a full UI out of the box, or headless for full control.
+    - It’s MIT-licensed and framework-agnostic.
+
 - https://github.com/tradle/pdf-parse /js
   - Pure javascript cross-platform module to extract texts from PDFs.
 

@@ -23,7 +23,7 @@ modified: 2025-11-16T15:34:02.881Z
   - 支持直接在界面上配置第三方依赖 redis/kafka/mongo/qdrant
 
 - cons
-  - AGI内容只包含知识库中的内容，不包含llm自身知识，经常拒绝用户 I cannot answer your query
+  - AGI内容只包含知识库中的内容, 不包含llm自身知识，经常拒绝用户 I cannot answer your query
   - ai回复的内容简短不够丰富，体验不如 SurfSense
   - ai思考时间过长, 界面上没有交互反馈
   - 💥 本地lmstudio, 无法embedding大文档
@@ -77,6 +77,8 @@ modified: 2025-11-16T15:34:02.881Z
 - local-models
   - 本地的prompt-processing速度非常慢
 
+- 处理大pdf时chunking/embedding的进度反馈出来更好, 可重试可恢复更好, 目前的实现感觉一直卡在inprogress然后就失败了
+
 - open source alternative
   - Google just dropped the Gemini File Search API (RAG-as-a-Service)
     - It allowed me to build a RAG chatbot in 31 min. No coding
@@ -91,10 +93,15 @@ modified: 2025-11-16T15:34:02.881Z
 # dev-xp
 - 💥 无法embedding大文档, 本地lmstudio提示
   - [lmstudio-llama-cpp] Error in predictTokens: The number of tokens to keep from the initial prompt is greater than the context length. Try to load the model with a larger context length, or provide a shorter input
+  - libc++abi: terminating due to uncaught exception of type std::runtime_error: [METAL] Command buffer execution failed: Caused GPU Timeout Error (00000002:kIOGPUCommandBufferCallbackErrorTimeout)
 
 - 使用本地model时，不要使用global proxy, lmstudio/langchain存在问题
 
-- 
+- 上传大文件的场景
+- 场景1, 上传7M/400页的pdf, Content exceeds 108800 tokens (108881). Truncating to head.
+  - lmstudio的log感觉卡住, Prompt processing progress: 0.0%
+  - 整个mac系统都有卡死的感觉
+
 - 
 - 
 - 
@@ -143,7 +150,10 @@ cd backend/python
 cp ../env.template .env
 # uv venv
 # source .venv/bin/activate #uv会自动激活，仅首次需要
+# uv run python -m spacy download en_core_web_sm
+uv add pip
 uv run python -m spacy download en_core_web_sm
+
 uv run python -c "import nltk; nltk.download('punkt')"
 
 # 限制python版本 `requires-python = ">=3.10,<3.11"`
