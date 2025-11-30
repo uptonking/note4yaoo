@@ -1639,7 +1639,10 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 
 - ## 
 
-- ## 
+- ## 🆚 [Is vLLM worth it? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1p9t5c8/is_vllm_worth_it/)
+- vLLM currently has way too many bugs related to gpt-oss (or even qwen3) and other important features (such as structured outputs). 
+  - After trying multiple releases of their official docker images I gave up and moved onto sglang. And oh god I wish I did it much earlier because after an hour of setup it worked like a charm: 3x higher throughout and properly working structured outputs (for both qwen and gpt-oss). 
+  - So my advice is to try sglang docker image, key thing is to set the correct reasoning parser and you're good to go
 
 - ## ValueError: To serve at least one request with the models's max seq len (60000), (8.24 GiB KV cache is needed, which is larger than the available KV cache memory (4.00 GiB). 
   - Based on the available memory, the estimated maximum model length is 29056. 

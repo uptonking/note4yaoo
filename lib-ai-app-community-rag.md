@@ -309,7 +309,15 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [Practical (online & offline) RAG Setups for Long Documents on Consumer Laptops with <16GB RAM : r/LocalLLaMA _202412](https://www.reddit.com/r/LocalLLaMA/comments/1hq36dn/practical_online_offline_rag_setups_for_long/)
+  - there are a ton of different frameworks and libraries to implement a RAG system. For the purpose of my tests, I only focused on those with a UI or offering an already made RAG pipeline, because I did not yet learn how to implement RAG by myself.
+  - Various offline and online LLM models: phi-3.5-mini, gemma2-2b-it, mistral, phi-4, Hermes2.5, Ghost, Qwen2.5:1.5b, Qwen2.5:7b, 
+  - RAG Frontends: msty, anythingLLM, Witsy, RAGFlow, Kotaemon, khoj.dev, Dify, etc. (OpenWebUI failed to install on my machine, QwenAgent remains to be tested)
+  - Backend: ollama, ChatGPT, Gemini.
+  - I found only two working solutions for the multi-needles test to succeed 4 out of 4 (4/4):
+  - Either without RAG using LLM models that implement infini-attention. Although the method has been published openly, currently, only the Gemini models (online, including the free Flash models) implement it, offering 1M tokens context size. 
+  - Either with a RAG that somehow mimics infinite attention. 
+  - Note that in all successful cases, I found that making the prompt to be iterative (which is a change I did over ggerganov's original prompt) was necessary to increase the reliability of the retrieval, otherwise some questions (up to half of the questions) failed (even with Gemini IIRC).
 
 - ## 🔡 [MongoDBAtlasVectorSearch the PDF exceeding 100 pages cannot be processed. How can this be resolved? · Issue · langchain-ai/langchain _202409](https://github.com/langchain-ai/langchain/issues/26518)
 - We tried splitting a long PDF using this code

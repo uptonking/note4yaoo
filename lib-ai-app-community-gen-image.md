@@ -835,7 +835,10 @@ modified: 2025-08-16T14:12:24.416Z
 
 - ## 
 
-- ## 
+- ## [Anyone tried using Z-image with Qwen3-1.7B or any other different sized text-encoders? : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1pa534y/anyone_tried_using_zimage_with_qwen317b_or_any/)
+- I do not think ech qwen model share latent space? So even if you managed to run it it might not understand what Qwen3-1.7B says
+
+- I'm using the Qwen3-4B-Instruct-2507/Thinking-2507 GGUF, and it works fine. I get different compositions, but they match the prompt as well/unwell as the original text encoder.
 
 - ## [Facial expressions in z-image: A fairly comprehensive test : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1p8ekbc/facial_expressions_in_zimage_a_fairly/)
   - Prompt was: A beautiful woman with a _______ facial expression or something nearly the same depending on the way I phrased the prompt.

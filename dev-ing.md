@@ -292,6 +292,16 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-to
   - ?
 
+## 1130
+
+- [公牛智能开关无线遥控双控开关怎么装？免布线子母面板远程控制实操指南（2025新版）-双11-淘宝好物网](https://mgoods.taobao.com/t/shuang11_17012/b5b96e9bb3022e719eea0a18a79bf1b1.html)
+  - 虽然号称“免布线”，但母开关仍需接电操作，建议断电施工。
+    - 将火线接入母开关“L”端子，灯控线接入“L1”端子；
+  - 子开关完全电池供电，厚度仅8mm，可粘贴在任意干燥墙面。
+    - 长按子开关背面“配对键”3秒，LED红蓝交替闪烁；
+    - 子开关LED常绿即表示配对成功
+  - 2025款支持接入米家、华为HiLink等主流平台，联动更自由。
+
 ## 1128
 
 - [A Guide to Common Aspect Ratios & Image Sizes _202405](http://emcreative.ie/a-guide-to-common-aspect-ratios-image-sizes-and-photograph-sizes/)

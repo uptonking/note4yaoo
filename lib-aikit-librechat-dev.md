@@ -90,6 +90,7 @@ modified: 2025-09-01T05:52:34.241Z
 
 - llm-ui/client
   - 可参考 ollama/lmstudio/janai 封装 llama.cpp 的逻辑
+  - 还可参考LocalAi封装ollama/comfyui的逻辑
 
 - code interpreter 如何实现
   - open source alternative

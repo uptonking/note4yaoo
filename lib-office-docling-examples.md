@@ -55,6 +55,12 @@ modified: 2025-09-21T13:58:46.548Z
   - Powered by Docling (IBM's advanced document parser), this service is built with FastAPI, Celery, and Redis, ensuring fast, efficient processing.
   - Optimized for both CPU and GPU modes, with GPU highly recommended for production environments
 # examples
+- https://github.com/paazmaya/docling-japanese-books /MIT/202511/python
+  - A streamlined document processing tool that uses Docling to extract, process, and store Japanese books and documents for LLM training workflows.
+  - Extract and annotate images with SHA-256 hashing for deduplication
+  - Vector Storage: Milvus database with enhanced metadata
+  - LLM Ready: Multiple embedding models (Jina v4, BGE-M3, Snowflake Arctic, MiniLM) with Late Chunking optimization
+
 - https://github.com/mozilla-ai/document-to-markdown /MIT/202506/python
   - Convert unstructured documents to markdown using the Docling.
 

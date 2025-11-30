@@ -10,6 +10,12 @@ modified: 2025-03-22T16:10:24.856Z
 # guide
 
 # ai-dev-xp
+- selling-points
+  - local models support: mlx, lmstudio-alternative
+  - citations for search
+  - large pdf workflows: chunking-strategies, reindex
+  - pdf edit
+
 - tips
   - 🤔 不要执着于ai框架，主流模型厂商都会推广包含厂商特性的框架及产品(codex/claude-code/gemini-cli), 可专注于主流开源业务系统实现 或 厂商无关的实现
   - frontend: ai-sdk/chatbot, assistant-ui, librechat
@@ -125,10 +131,11 @@ modified: 2025-03-22T16:10:24.856Z
   - playground
   - dataset
 
-- rag
+- rag as a service
   - retrieval
   - code retrieval
   - text-matching
+  - 类似 词典软件+词典mdx 的形式, 搜索软件+书籍pdf/epub
 
 - office
   - excel/database generator

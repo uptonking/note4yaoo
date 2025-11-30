@@ -150,6 +150,11 @@ modified: 2022-08-21T10:37:01.349Z
     - https://github.com/zendricom/tableus-ui-bootstrap5
     - https://github.com/zendricom/tableus-fetcher-laravel-rest
 
+- https://github.com/sadmann7/tablecn /5.7kStar/MIT/202511/ts
+  - https://tablecn.com/
+  - a shadcn table component with server-side sorting, filtering, and pagination. 
+  - It is bootstrapped with create-t3-app.
+
 - https://github.com/Serkan-Ucakcioglu/React-Query-React-Table-Pagination /v7
   - Tanstack react query and react table and pagination.
 

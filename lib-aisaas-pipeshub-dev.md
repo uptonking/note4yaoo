@@ -128,6 +128,8 @@ modified: 2025-11-16T15:34:02.881Z
   - Only after this embedding process do you chunk the embeddings into smaller parts, which are contextually rich because they preserve relationships between distant parts of the document. 
   - This approach ensures that each chunk maintains the global document context, leading to more precise and meaningful retrieval results.
   - [Late_Chunking_in_Long_Context_Embedding_Models.ipynb - Colab](https://colab.research.google.com/drive/19dZeMCx-7g0kPz35e5gEjtAIama38gGI?usp=sharing)
+
+- [Building a PDF-Powered AI: Embeddings + ChromaDB + Ollama RAG Pipeline _202507](https://medium.com/@eliyaser3121/building-a-pdf-powered-ai-embeddings-chromadb-ollama-rag-pipeline-372aaab62aa8)
 # dev-xp
 - 💥 无法embedding大文档, 本地lmstudio提示
   - [lmstudio-llama-cpp] Error in predictTokens: The number of tokens to keep from the initial prompt is greater than the context length. Try to load the model with a larger context length, or provide a shorter input

@@ -25,6 +25,7 @@ modified: 2025-10-28T20:02:16.727Z
   - cline cli with client/server architecture as ai infra
   - 架构上更解耦，提供了不依赖vs code而standalone运行的产物
   - voice coding
+  - Adds `/smol` command to condense conversation history
 
 - cline-cons
   - reject github contributions
@@ -39,6 +40,7 @@ modified: 2025-10-28T20:02:16.727Z
   - rich features and more github contributions
   - model profile switching is easy
   - codebase indexing
+  - 支持手动 condense conversation history
 
 - roo-cons
   - token cost more

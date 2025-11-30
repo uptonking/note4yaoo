@@ -31,6 +31,9 @@ modified: 2025-11-19T17:50:09.072Z
 # draft
 - streamable chart spec: 类似mermaid支持逐步添加关系, 可逐步添加折线/条形/扇形
 
+- mermaid-chart-editor
+  - echarts-editor
+
 - mermaid-editor browser extension, like markdown-viewer
   - 现有的浏览器扩展不支持 mermaid.live 官方网站的新图形或新特性
 

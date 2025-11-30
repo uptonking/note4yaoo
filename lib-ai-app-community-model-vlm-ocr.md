@@ -76,7 +76,7 @@ modified: 2025-11-06T18:49:13.977Z
 - ## 
 
 - ## 
-# discuss-solutions/tools
+# discuss-solutions
 - ## 
 
 - ## 
@@ -312,6 +312,19 @@ modified: 2025-11-06T18:49:13.977Z
 
 - Awesome. Florence is nice and small too, but could only really handle a finite list of specific prompts. It seems this small models retains the ability to ask free-form questions, which would make it extremely useful for mobile devices.
   - Florence 2 base is smaller. You can also fine tune it to work with any specific prompt you like if you have consistent prompts.
+# discuss-toolchain-vlm/cor
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [How do I enable vision capabilities of a model ? Linux Mint 22.2, rx 6600. I ran this at bash/terminal to start the server: llama-server -m ./Qwen3-VL-8B-Instruct-Q4_K_M.gguf : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1p9t8tz/how_do_i_enable_vision_capabilities_of_a_model/)
+- `--mmproj <mmproj file>` grab `.mmproj` file where you've got your gguf
+
+- You should read the model card on hugging face https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct-GGUF#web-chat-using-llama-server
 # discuss
 - ## 
 

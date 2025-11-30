@@ -72,6 +72,22 @@ modified: 2025-09-01T05:53:05.266Z
 
 - ## 
 
+- ## 
+
+- ## [[Bug]: RAG reports an error when the attached document is very large _202407](https://github.com/danny-avila/LibreChat/discussions/3348)
+  - I uploaded a very large txt document and RAG reported an error
+
+- I encountered the same problem in my environment. I am using Azure OpenAI's `text-embedding-3-small` model for RAG embeddings. I believe this issue occurs because the embedding model is being called with input that exceeds its token limit. Below is the error message I encountered:
+  - ERROR - Error code: 429 - {'error': {'code': '429', 'message': 'Requests to the Embeddings_Create Operation under Azure OpenAI API version 2024-06-01 have exceeded call rate limit of your current OpenAI S0 pricing tier. Please retry after 86400 seconds. Please go here: https://aka.ms/oai/quotaincrease if you would like to further increase the default rate limit.'}}
+  - It would be very helpful if the system could return an explicit error message indicating that the input text is too long due to token limits. Would it be possible to implement such a fix?
+
+- ## [RAG API taking extremely long to process documents over 1mb? · danny-avila/LibreChat _202409](https://github.com/danny-avila/LibreChat/discussions/4081)
+- I can upload 10+ mb PDFs rather quickly. Really the main thing that affects upload time is the amount of text content from the files, no matter what size or file type it is.
+
+- Found out the source of this issue, It was the `PDF_EXTRACT_IMAGES` parameter in our `.env` file, this needs to be set to false, This parameter gets read into the "extract_images" parameter in the `pypdfloader` library, 
+  - When this was set to `True`, it would take 45seconds or more per page to get through the `loader.load()` function in main.py in `rag_api` repo. 
+  - When this is set to `False`, it completes this function in half a second or less.
+
 - ## [[openidStrategy] only requests to HTTPS are allowed · danny-avila/LibreChat _202507](https://github.com/danny-avila/LibreChat/discussions/8310)
 
 ```diff
