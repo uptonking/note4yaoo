@@ -258,6 +258,41 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 💡 [I spent 2 years building privacy-first local AI. My conclusion: Ingestion is the bottleneck, not the Model. (Showcase: Ollama + Docling RAG Kit) : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pamu5t/i_spent_2_years_building_privacyfirst_local_ai_my/)
+  - I’ve been working on strictly local, data-privacy-compliant AI solutions for about two years
+  - The biggest lesson I learned: We spend 90% of our time debating model quantization, VRAM, and context windows. But in real-world implementations, the project usually fails long before the prompt hits the LLM. It fails at Ingestion.
+  - I built a self-hosting starter kit that focuses heavily on fixing the Input Layer before worrying about the model.
+  - Ingestion: Docling (v2). I chose this over PyPDF/LangChain splitters because it actually performs layout analysis. It reconstructs tables and headers into Markdown, so the LLM isn't guessing when reading a row.
+  - I’d love to hear your thoughts on the "Ingestion First" approach. For me, switching from simple text-splitting to layout-aware parsing was the game changer for retrieval accuracy.
+
+- I chose Docling primarily for Structure and Integration.
+  - Structure vs. OCR: Paddle is great for raw OCR, but I needed Layout Analysis (reconstructing tables to Markdown). Paddle gives me text boxes; Docling gives me semantic context. For RAG, context is king.
+  - Simplicity: Since I'm building a local desktop app, Docling felt much more 'native' to integrate into a Python backend than the Mineru stack. However, I'm pragmatic, not married to a tool.
+  - I designed the ingestion pipeline to be modular. If Mineru proves to be significantly lighter or better at tables tomorrow, I can swap the engine. But right now, Docling hits the sweet spot between performance and setup pain.
+
+- It took me a few months to understand quality of OCR matters the most, and anyone working on RAG that has used VLMs for OCR knows in their heart and soul that VLMs make the best OCR. Obviously this means, in addition to LLMs/Embedding Models there is a new expensive overhead of VLMs, unless you use higher up models, then you can do text gen + OCR from a single model.
+  - How can you make an effective RAG project without decent hardware? 
+  - You need 98% accurate OCR or your pipeline fails. 
+  - You need a large context window so that full context of the document being retrieved can be loaded, granted, we can use chunking like we do with embeddings, but to me, this is an untested theory.
+  - 8, 000 tokens is a lot of tokens, requires just a little less than 24 GB VRAM, issue is, how may people doing this locally on their potato laptop actually have 24 GB VRAM.
+  - Not to mention re-rankers.
+- Sounds like in-depth knowledge from my point of view ; ) VLMs produce better OCR than traditional parsers, but I think you're optimizing for the wrong bottleneck.
+  - The 98% accuracy trap: You don't actually need 98% OCR accuracy if your pipeline is error-tolerant. A 90% accurate parse + a reranker + a small cleanup LLM can outperform a 98% parse that costs 10x more to run.
+  - Why I optimize for 'good enough' hardware: My clients are mostly in Germany (GDPR-heavy industries). They prioritize local/privacy over raw performance. For them, the ROI calculation is simple:
+  - The real question isn't 'How do I get 98% OCR?' It's: 'How do I build a system that works even when OCR fails 10% of the time, and runs 100% locally?'
+  - That's why I focus on the pipeline (repair -> parse -> cleanup -> chunk -> rerank) rather than just throwing a bigger GPU at the problem. I still believe we focused on the wrong side and were blindsided vor the longterm issues
+
+- looking at the flood of 'Why is my RAG hallucinating?' posts, it seems to be news for the 90% of developers who just joined the party via LangChain
+  - And yes, even Docling struggles. That's exactly why I argue for a 'Sanitized Pipeline' (repair -> parse -> post-process) rather than just looking for a magic OCR tool. The 'pain' never goes away completely, but you can engineer around it. There is more after docling and bevor db ; )
+
 - ## [Best open source document PARSER??!! : r/LlamaIndex](https://www.reddit.com/r/LlamaIndex/comments/1dicqkt/best_open_source_document_parser/)
   - Right now I’m using LlamaParse and it works really well. I want to know what is the best open source tool out there for parsing my PDFs before sending it to the other parts of my RAG.
 
@@ -419,7 +454,10 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [What’s your go-to combo of LLM + embedding model for RAG? : r/Rag _202512](https://www.reddit.com/r/Rag/comments/1pba2lt/whats_your_goto_combo_of_llm_embedding_model_for/)
+- Qwen3 8B is the current SOTA for embeddings with a 32k context size, which gives you much more flexibility when chunking text.
+  - Gemini 2.5 Flash has very good performance and is really cheap.
+  - Once you factor in maintenance costs, potential GPU issues, downtime, etc., it’s almost always better to just use Google’s service — it saves you a ton of headaches and is always online.
 
 - ## 💡 [I built RAG for a rocket research company: 125K docs (1970s-present), vision models for rocket diagrams. Lessons from the technical challenges : r/LLMDevs _202509](https://www.reddit.com/r/LLMDevs/comments/1nr59iw/i_built_rag_for_a_rocket_research_company_125k/)
   - 125K documents from typewritten 1970s reports to modern digital standards
@@ -771,7 +809,13 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [Successful RAGFlow in Prod : r/Rag _202512](https://www.reddit.com/r/Rag/comments/1pawrzj/successful_ragflow_in_prod/)
+- TL; DR: RAGFlow is powerful for complex documents but resource-hungry.
+  - Stress Testing: It is heavier than "vanilla" RAG because of the deep document understanding (OCR/Layout analysis). Expect higher ingestion latency. For query latency, it depends entirely on your backing vector database (e.g., Elasticsearch/Infinity). You must scale your parsing workers separately from your query services.
+  - Maintenance: The visual graph builder makes logic errors easy to spot, but debugging specific parsing failures (e.g., a specific weird PDF format) requires digging into container logs.
+  - Performance: Retrieval precision is significantly better than standard recursive chunking because it respects document structure (tables, headers, sections).
+  - The Killer Feature: Table Parsing/Layout Analysis. It handles complex tables in PDFs where other frameworks (like standard LangChain) produce garbage.
+  - Must-Know Tip: Don't rely on vector search alone. Configure Hybrid Search (Keyword + Vector) and Re-ranking from day one. It dramatically improves accuracy for technical jargon and specific IDs. 
 
 - ## [How to make a RAG pipeline near real-time : r/LangChain](https://www.reddit.com/r/LangChain/comments/1p623zt/how_to_make_a_rag_pipeline_near_realtime/)
 - There are specific models that exceeds at this. I know AWS’s Nova Sonic can do this well. Although for RAG 3-4 seconds ain’t bad especially for a voice bot.

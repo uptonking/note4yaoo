@@ -833,7 +833,11 @@ modified: 2025-08-16T14:12:24.416Z
 
 - ## 
 
-- ## 
+- ## [Why is z image so fast? : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1pay8y2/why_is_z_image_so_fast/)
+- I can partially answer it for you. It’s not just the image size that will beat up your HW but also the combination of CFG and steps. In general low CFG makes it fast to generate and terrible at prompt adherence. Fast generation means you need low steps. Low cfg plus low steps plus small model means much lower HW req.
+  - This is why all the turbo type models are low cfg and low step. You give up prompt following for speed. Flux krea for example needs 30-50 steps at a higher CRG to get good prompt following. Z-image runs at 9 steps. That’s between 20-30% of what you need for flux. A much larger model.
+  - How the F it’s also got the best prompt following I’ve ever seen at CFG1. No clue. It makes no sense to me either. Hopefully someone can figure it out soon because it really is revolutionary.
+- Setting CFG to 1 doubles the it/sec. Or, in case of Z Image, setting CFG to greater than 1 (Let's say, set it to 2) will half the it/sec. You can easily test it.
 
 - ## [Anyone tried using Z-image with Qwen3-1.7B or any other different sized text-encoders? : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1pa534y/anyone_tried_using_zimage_with_qwen317b_or_any/)
 - I do not think ech qwen model share latent space? So even if you managed to run it it might not understand what Qwen3-1.7B says
@@ -1674,6 +1678,11 @@ Q8（8 位）	    16GB+	   接近原始版本
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [Flux2: decreased style decay from long prompting! (part 1.5) : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1pb7hbf/flux2_decreased_style_decay_from_long_prompting/)
+  - 风格统一的插画
 
 - ## [Even more improved Z-Image Turbo variation : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1p9mypu/even_more_improved_zimage_turbo_variation/)
 

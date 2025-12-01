@@ -112,6 +112,19 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Finally DeepSeek supports interleave thinking : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pbal3o/finally_deepseek_supports_interleave_thinking/)
+  - If a thinking model supports multi-step tool calls and can incorporate thinking from historical steps during these calls, then this model supports interleaved thinking.
+  - So far, among open-source models, only GPT-OSS, Kimi K2 Thinking, and MiniMax M2 support it, and I believe this feature is crucial for agents.
+  - Interleave thinking lets an AI agent reason, act, and observe in tight loops, so it can adapt step-by-step to new information instead of blindly following a fixed plan.
+
+- Why is special support needed? Each request to an LLM is whole conversation, and you can eliminate previous thinking blocks at each request. What am I missing here?
+
 - ## [Experimenting with Multiple LLMs at once? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p4pre3/experimenting_with_multiple_llms_at_once/)
 - I do mostly coding, so different families of models get wildly different python training data. Having each do the same coding task and then have another model pick the best components of the script for a new third script works really well.
   - Open web UI also has channels, which is a discord style chat room. You can tell the models you have to collaborate with each other on a project and they will take turns with sections of code.
@@ -383,6 +396,15 @@ e) 最终评论者(Final Critic)
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## ["We're in an LLM bubble, not an AI bubble" - Here's what's actually getting downloaded on HuggingFace and how you can start to really use AI. : r/LlamaFarm _202512](https://www.reddit.com/r/LlamaFarm/comments/1pb2wr2/were_in_an_llm_bubble_not_an_ai_bubble_heres/)
+  - Encoder-only models (BERT family) account for 45% of HuggingFace downloads, nearly 5x more than decoder-only LLMs at 9.5%. 
+  - Every one of these model families exists because someone realized the "one model to rule them all" approach was failing for their use case
+  - This is "Mixture of Experts" at the application level. Many small, specialized models working together instead of one massive model trying to do everything.
 
 - ## [What broke when you tried to take local LLMs to production? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p91p4k/what_broke_when_you_tried_to_take_local_llms_to/)
 - Ollama broke a lot of the time because we dev’d on a Mac but pushed production to nvidia. Switching to vllm has largely solved this and pushed it to more of an interface rather than model problem.

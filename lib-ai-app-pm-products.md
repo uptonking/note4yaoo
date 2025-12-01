@@ -12,7 +12,7 @@ modified: 2025-03-22T16:10:24.856Z
 # ai-dev-xp
 - selling-points
   - local models support: mlx, lmstudio-alternative
-  - citations for search
+  - citations for search: 外部数据源如字典mdx/书籍epub/wikipedia公开db/统计年鉴
   - large pdf workflows: chunking-strategies, reindex
   - pdf edit
 
@@ -315,7 +315,6 @@ modified: 2025-03-22T16:10:24.856Z
     - 支持 Claude Code & CodeX
   - 📌 [b4u API](https://b4u.qzz.io/), 每日转盘
     - 会不会增加其他模型: 不会，本站专注于Claude
-    - https://b4u.qzz.io/v1
     - 支持工具调用、上下文 128K+、支持 RooCode，不推荐接入 ClaudeCode
     - 普通用户：每次 1 刀、RPM=10
     - 渠道技术： Claude-SessionKey号池→claude2api→FC使能

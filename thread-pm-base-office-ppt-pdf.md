@@ -89,6 +89,22 @@ modified: 2024-01-11T15:57:32.182Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [finally found a way to edit notebooklm slides lol : r/notebooklm _202512](https://www.reddit.com/r/notebooklm/comments/1pbeq8d/finally_found_a_way_to_edit_notebooklm_slides_lol/)
+  - i tried all the dumb hacks — copy/paste text, ocr screenshots, whatever. all super janky.
+  - i did try pdf gear + a few others. the issue is notebooklm treats most stuff as flattened images, so you can’t actually edit or realign the visuals. it’s basically one big baked slide.
+
+- I have been feeding the presentations that NotebookLM generates back into itself with reasonable success. Seems like they could implement a simple PDF to Google slides converter or at least offer that as an export option??
+  - yeah i’ve done the same loop-back trick too — feeding the slides back into notebooklm kinda works, but only up to a point.
+  - totally agree on the export thing. a simple “pdf → google slides” option would save sooo much pain. surprised it’s not built in yet.
+
+- How can you edit text on slides if it's not postscript fonts but rendered pictures?
+
+- Perhaps through Adobe Acrobat Pro DC, with the option to export to PPT.
+
 - ## [What’s the best AI slide creator? When I ask ChatGPT to create slides it looks so bad :( : r/ChatGPTPro _202508](https://www.reddit.com/r/ChatGPTPro/comments/1mw8be8/whats_the_best_ai_slide_creator_when_i_ask/)
 - Gamma AI works very well. And it let me download a presentation it created for me with a free account. I have it some material that was organized like a slide deck but was totally dull stuff. It was able to reorganize and trim the dull stuff and make a decent set of slides.
 - You guys should try https://www.nextdocs.io/ as well. It's free, has very similar feature sets and it has better AI capabilities

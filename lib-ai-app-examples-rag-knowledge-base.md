@@ -12,15 +12,17 @@ modified: 2025-11-30T17:27:16.720Z
 # popular
 
 # rag-examples
-- https://github.com/pymupdf/pymupdf4llm /1.2kStar/AGPL/202511/python
+- https://github.com/pymupdf/pymupdf4llm /1.2kStar/AGPL/202511/python/lib
   - https://pymupdf.readthedocs.io/en/latest/pymupdf4llm
-  - a specialized extension of PyMuPDF designed specifically for extracting content from PDFs in a format that's optimized for Large Language Models (LLMs).
+  - a specialized extension of PyMuPDF designed specifically for extracting content from PDFs in a format that's optimized for LLMs
   - Converts PDFs to clean, structured Markdown format
   - Automatically identifies headers, paragraphs, tables, and images
-  - Extracts images from PDFs
+  - Preserves document hierarchy (headers, lists, tables)
+  - Maintains document layout and reading order: process multi-column pages
+  - Extracts images from PDFs: save images separately or encode them inline
   - [Build a Multimodal RAG using — PyMuPDF4LLM-llamaindex-Qdrant _202411](https://ai.gopubby.com/build-a-multimodal-rag-using-pymupdf4llm-llamaindex-qdrant-e9d23a4409cc)
 
-- https://github.com/danny-avila/rag_api /MIT/202508/python
+- https://github.com/danny-avila/rag_api /710Star/MIT/202508/python/librechat
   - [RAG API - Chat with files](https://www.librechat.ai/docs/features/rag_api)
   - This project integrates Langchain with FastAPI in an Asynchronous, Scalable manner, providing a framework for document indexing and retrieval, using PostgreSQL/pgvector.
   - Files are organized into embeddings by `file_id`. The primary use case is for integration with LibreChat, but this simple API can be used for any ID-based use case.
@@ -59,6 +61,37 @@ modified: 2025-11-30T17:27:16.720Z
     - Very Large Files: Individual files >100MB may cause memory issues
     - Non-English OCR: Currently only English OCR is configured
 
+- https://github.com/2dogsandanerd/Knowledge-Base-Self-Hosting-Kit /MIT/202511/python
+  - A Docker-powered RAG system that understands the difference between code and prose. 
+  - Ingest your codebase and documentation, then query them with full privacy and zero configuration.
+  - Different chunking strategies for code vs. prose
+    - Code collections use AST-based chunking that respects function boundaries
+    - Document collections use semantic chunking optimized for prose
+  - Backend: FastAPI, LlamaIndex 0.12.9
+  - Vector DB: ChromaDB 0.5.23
+  - LLM/Embeddings: Ollama (configurable)
+  - Document Parser: Docling 2.13.0 (advanced OCR, table extraction)
+  - Frontend: Vanilla HTML/JS (no build step)
+  - Batch Ingestion — Process multiple files (sequential processing in Community Edition)
+  - 🧪
+    - uv run --env-file .env -- uvicorn src.main:app --port 8080
+    - chroma run --host 0.0.0.0 --port 8000 --path ~/Documents/repos/libfwk/ai-llm/all-rag/Knowledge-Base-Self-Hosting-Kit/backend/ENV/ingestdb
+  - [I spent 2 years building privacy-first local AI. My conclusion: Ingestion is the bottleneck, not the Model. (Showcase: Ollama + Docling RAG Kit) : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pamu5t/i_spent_2_years_building_privacyfirst_local_ai_my/)
+    - I’ve been working on strictly local, data-privacy-compliant AI solutions for about two years
+    - The biggest lesson I learned: We spend 90% of our time debating model quantization, VRAM, and context windows. But in real-world implementations, the project usually fails long before the prompt hits the LLM. It fails at Ingestion.
+    - I built a self-hosting starter kit that focuses heavily on fixing the Input Layer before worrying about the model.
+    - Ingestion: Docling (v2). I chose this over PyPDF/LangChain splitters because it actually performs layout analysis. It reconstructs tables and headers into Markdown, so the LLM isn't guessing when reading a row.
+    - I’d love to hear your thoughts on the "Ingestion First" approach. For me, switching from simple text-splitting to layout-aware parsing was the game changer for retrieval accuracy.
+
+- https://github.com/djleamen/doc-reader /MIT/202511/python/django
+  - A Django-based document Q&A system using Retrieval-Augmented Generation (RAG) to process and query large documents with AI-powered responses.
+  - Large Document Support: Handle documents up to 800k+ words
+  - Multiple Formats: PDF, DOCX, TXT, and Markdown support
+  - REST API: Django REST Framework for integrations
+  - Vector Search: FAISS/ChromaDB/Pinecone vector databases
+  - CLI Tools: Command-line interface for batch operations
+  - Memory issues with large docs: Reduce `CHUNK_SIZE` in `.env` or process documents individually
+
 - https://github.com/renton4code/pdf-rag /AGPL/202502/ts/inactive
   - A production-ready template for building Retrieval-Augmented Generation (RAG) applications. 
   - This template provides a complete setup for document processing, vector storage, and AI-powered question answering with kickass UI.
@@ -68,18 +101,10 @@ modified: 2025-11-30T17:27:16.720Z
   - Click-to-view document references with highlighting
   - Large documents processing and status updates
   - AI/ML: Google Gemini (LLM), HuggingFace Transformers (Embeddings)
+  - Backend: Bun
   - Based on Q&A with a large document (700+ pages) in comparison to RagFlow
 
-- https://github.com/djleamen/doc-reader /MIT/202511/python
-  - A Django-based document Q&A system using Retrieval-Augmented Generation (RAG) to process and query large documents with AI-powered responses.
-  - Large Document Support: Handle documents up to 800k+ words
-  - Multiple Formats: PDF, DOCX, TXT, and Markdown support
-  - REST API: Django REST Framework for integrations
-  - Vector Search: FAISS/ChromaDB/Pinecone vector databases
-  - CLI Tools: Command-line interface for batch operations
-  - Memory issues with large docs: Reduce `CHUNK_SIZE` in `.env` or process documents individually
-
-- https://github.com/gptme/gptme-rag /MIT/202511/python
+- https://github.com/gptme/gptme-rag /MIT/202511/python/cli
   - Local RAG as a simple CLI
   - Built primarily for gptme, but can be used standalone.
   - Document indexing with ChromaDB
@@ -141,7 +166,8 @@ modified: 2025-11-30T17:27:16.720Z
 
 - https://github.com/ZohaibCodez/document-qa-rag-system /MIT/202509/python/inactive
   - https://document-rag-system.streamlit.app/
-  - RAG project built with LangChain and Streamlit. Upload documents (PDF/TXT) and interact with them using natural language questions powered by embeddings and vector search.
+  - RAG project built with LangChain and Streamlit. 
+  - Upload documents (PDF/TXT) and interact with them using natural language questions powered by embeddings and vector search.
   - Vector-based similarity search using FAISS
   - Frontend: Streamlit
   - Limitations
@@ -390,6 +416,8 @@ modified: 2025-11-30T17:27:16.720Z
   - Secure & Scalable: Run privately and securely with Kubernetes support
   - Manually updating chunks in the app UI (Feb 2025)
   - [Show HN: DocsGPT, open-source documentation assistant, fully aware of libraries | Hacker News _202302](https://news.ycombinator.com/item?id=34648266)
+  - [When ingesting data, ingest using chunks. _202302](https://github.com/arc53/DocsGPT/issues/54)
+    - 似乎chunking的实现存在问题
 
 - https://github.com/PromtEngineer/localGPT /22kStar/MIT/202507/python/ts/提交少/inactive
   - LocalGPT is a fully private, on-premise Document Intelligence platform. 
@@ -410,6 +438,11 @@ modified: 2025-11-30T17:27:16.720Z
   - Query Decomposition: Breaks complex queries into sub-questions for better answers
   - Intuitive Web UI: Clean, responsive design
   - Real-time Chat: Streaming responses for immediate feedback
+  - [Ingest larger documents (over 800MB) _202306](https://github.com/PromtEngineer/localGPT/discussions/112)
+    - Im currently using a system with 16GB RAM, and 3 nvidia TESLA GPUs (16GBs each) but the localGPT only took 4-5 GB of GPU space.
+    - it took some time to finish the ingesting (I kept it running for a day). But the inferences from the model takes some time. Any way to reduce that?
+  - [I am running on CPU and I have 6.4GB worth of file _202309](https://github.com/PromtEngineer/localGPT/issues/448)
+    - The pdf size is too large. Please try using a smaller pdf. or export relevant text out of it (reduce the pdf size) and then use it. For this much big pdf you will certainly need NVIDIA cuda cores for faster processing.
 
 - https://github.com/Cinnamon/kotaemon /23kStar/apache2/202507/python/提交少/inactive
   - https://cinnamon.github.io/kotaemon/
@@ -431,6 +464,8 @@ modified: 2025-11-30T17:27:16.720Z
     - Our team has been working on a public demo to showcase the new advanced citation features in our RAG
   - [[BUG] Unable to index document in docker ](https://github.com/Cinnamon/kotaemon/issues/539)
     - I think its PDF file size thing. Doesn't seem to happen on PDFs with <100 pages...
+  - [[BUG] - Local Model LLM works, but not Embedding _202409](https://github.com/Cinnamon/kotaemon/issues/240)
+    - I tried to use the base URL that works for me in AnythingLLM but it still didn't work in kotaemon. 
 
 - https://github.com/h2oai/h2ogpt /11.9kStar/apache2/202503/python/inactive
   - http://h2o.ai/
@@ -442,6 +477,9 @@ modified: 2025-11-30T17:27:16.720Z
   - Efficient use of context using instruct-tuned LLMs (no need for LangChain's few-shot approach)
   - Parallel summarization and extraction, reaching an output of 80 tokens per second with the 13B LLaMa2 model
   - Gradio UI or CLI with streaming of all models
+  - [Feature request - to add support for nomic-ai/nomic-embed-text-v1 embeddings _202402](https://github.com/h2oai/h2ogpt/issues/1418)
+    - 83333 is very large. I made the max 4096. Or you can control via env `CHROMA_MAX_BATCH_SIZE`.
+    - 4096 is on high end, yes can make it smaller as required. If on CPU I expect should work pretty ok, but issue is bge-m3 has 8k context so uses alot more memory despite size if chunks are large.
 
 - https://github.com/GitHamza0206/simba /1.4kStar/apache2/202505/python/jupyter/inactive
   - https://simba.mintlify.app/
@@ -504,6 +542,9 @@ modified: 2025-11-30T17:27:16.720Z
     - Ready to use, providing a full implementation of the API and RAG pipeline.
   - The project provides an API offering all the primitives required to build private, context-aware AI applications. 
   - It follows and extends the OpenAI API standard, and supports both normal and streaming responses.
+  - [Ollama Embedding Fails with Large PDF files _202410](https://github.com/zylon-ai/private-gpt/discussions/2097)
+  - [Ingesting large number of files _202402](https://github.com/zylon-ai/private-gpt/issues/1660)
+    - Its using SQLLite as its using simple (filesystem based) indexes and doc stores. Once this #1706 is pulled, those things can be moved into Postgres.
 
 - https://github.com/thiswillbeyourgithub/WDoc /478Star/GPL/202511/python
   - https://wdoc.readthedocs.io/en/stable/
@@ -701,6 +742,12 @@ modified: 2025-11-30T17:27:16.720Z
   - built in Svelte, TypeScript and Rust, runs on MacOS, Windows & Linux, stores data locally in open formats 
   - PDF Notes: open a PDF and ask a question
   - Create an applet: use the "app generation" tool and ask for an app
+  - 📡 [Optimized Embeddings CPU Usage _202510](https://github.com/deta/surf/pull/43)
+    - Implemented Lazy Embeddings for Large Document Types
+    - Embeddings will then be generated on-demand when documents are accessed in chat/search
+    - Larger chunks (2000 → 2500): fewer embeddings to generate and store
+  - [[FEATURE] Migrate to a better browser engine _202510](https://github.com/deta/surf/issues/27)
+    - We understand the pros and cons of using Electron, and for the moment the pros outweigh the cons, specially for a small team.
   - [Show HN: Deta Surf – An open source and local-first AI notebook | Hacker News _202510](https://news.ycombinator.com/item?id=45680937)
     - We took inspiration from analog notebooks as a tool for thought, but wanted something for multi-media. We also see NotebookLM as the closest mainstream product to Surf.
     - 🆚 The big difference UX wise between chatbots and Surf is that Surf is built entirely on editable documents that you can mold / craft into an output (vs chat).
@@ -722,8 +769,10 @@ modified: 2025-11-30T17:27:16.720Z
   - Perplexica runs on Next.js and handles all API requests.
   - 🐛 官方未提供外部数据源的集成，如slack/notion/gmail
     - [Add private search connectors _202508](https://github.com/ItzCrazyKns/Perplexica/issues/856)
+  - [fix(uploads): Resolve the bug of large document attachment upload failure](https://github.com/ItzCrazyKns/Perplexica/pull/675)
+    - Resolve the bug where large document uploads prompt an "exceeded maximum allowed batch size" error. The error message is as follows: error: Error in uploading file results: 413 input batch size 512 > maximum allowed batch size 32 (request id: 2025031909320299661815003514673)
 
-- https://github.com/zaidmukaddam/scira /11.4kStar/apache2/202511/ts
+- https://github.com/zaidmukaddam/scira /11.4kStar/AGPL/202511/ts
   - https://scira.ai/
   - Scira (Formerly MiniPerplx) is a minimalistic AI-powered search engine that helps you find information on the internet and cites it too. 
   - Powered by Vercel AI SDK

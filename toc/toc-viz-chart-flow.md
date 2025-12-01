@@ -471,6 +471,18 @@ modified: 2020-10-22T10:22:55.878Z
   - a JavaScript library to visualise gridded data (or any tabular dataset with x/y position) in the browser in a large variety of advanced cartographic styles
   - a JavaScript library to visualise gridded data (or any tabular dataset with x/y position) in the browser in a large variety of advanced cartographic styles
 # flow-ai
+- https://github.com/DayuanJiang/next-ai-draw-io /1.4kStar/MIT/202512/ts
+  - https://next-ai-drawio.jiang.jp/
+  - A next.js web application that integrates AI capabilities with draw.io diagrams. 
+  - This app allows you to create, modify, and enhance diagrams through natural language commands and AI-assisted visualization.
+  - Diagram History: Comprehensive version control that tracks all changes, allowing you to view and restore previous versions of your diagrams before the AI editing.
+  - Image-Based Diagram Replication: Upload existing diagrams or images and have the AI replicate and enhance them automatically
+  - Animated Connectors: Create dynamic and animated connectors between diagram elements for better visualization
+  - @ai-sdk/react: For the chat interface and AI interactions
+  - react-drawio: For diagram representation and manipulation
+  - Ollama support: OpenAI / OpenAI-compatible APIs (via OPENAI_BASE_URL)
+  - Note that `claude-sonnet-4-5` has trained on draw.io diagrams with AWS logos, so if you want to create AWS architecture diagrams, this is the best choice.
+
 - https://github.com/yunshenwuchuxun/smart-drawio-next /MIT/202511/js
   - https://smart-drawio-next.vercel.app/
   - 用自然语言生成专业 Draw.io 图表
