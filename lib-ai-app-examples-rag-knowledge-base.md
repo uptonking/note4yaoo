@@ -9,8 +9,203 @@ modified: 2025-11-30T17:27:16.720Z
 
 # guide
 
+- 优化提取中文文档文字的方案
+  - 可参考华人团队的方案, 如 WeKnora, LightRAG
 # popular
+- https://github.com/pipeshub-ai/pipeshub-ai /2kStar/apache2/202511/python/ts
+  - https://pipeshub.com/
+  - The OpenSource Alternative to Glean's Workplace AI
+  - PipesHub AI helps you quickly find the right information using natural language search—just like Google.
+  - The platform not only delivers the most relevant results but also shows where the information came from, with proper citations, using Knowledge Graphs and Page Ranking
+  - Beyond search, our platform allows enterprises to create custom apps and AI agents using a No-Code interface.
+  - Knowledge Graph Backbone – All data is seamlessly structured into a powerful knowledge graph.
+  - Enterprise-Grade Connectors – Scalable, reliable, and built for secure access across your organization.
+  - Modular & Scalable Architecture – Every service is loosely coupled to scale independently and adapt to your needs.
+  - 前端: Material UI、React Hook Form、zod
+  - 后端: fastapi, LangGraph, LangChain, Qdrant(vector), ArangoDB(graph), Kafka, Redis, Docling, PyMuPDF, OCRmyPDF
+  - 🛢️ 应用层数据在python侧和nodejs侧都大量使用arangodb来存储图结构的关系
+  - 🐛 不支持外部搜索引擎如 Tavily/EXA/SearxNG, 但方便纯本地部署
+  - [Work AI for all - AI platform for agents, assistant, search](https://www.glean.com/)
+  - [Best way to extract data from PDFs and HTML : r/Rag _202510](https://www.reddit.com/r/Rag/comments/1oavnx4/best_way_to_extract_data_from_pdfs_and_html/)
+    - At PipesHub, we use docling, pymupdf (faster than docling but need to use layout parser on top of it), ocrmupdf/Azure DI (scanned pdfs).
+    - If you are looking for Higher Accuracy, Visual Citations, Cleaner UI, Direct integration with Google Drive, OneDrive, SharePoint Online, Dropbox and more. PipesHub is free and fully open source, extensible. 
+  - pr已合并 [Backend Support for Ollama Models · Pull Request _202507](https://github.com/pipeshub-ai/pipeshub-ai/pull/475)
+    - [Ollama Embedding model support · Pull Request ](https://github.com/pipeshub-ai/pipeshub-ai/pull/480)
 
+- https://github.com/MODSetter/SurfSense /10.6kStar/apache2/202511/python/ts
+  - https://www.surfsense.com/
+  - Open source alternative to NotebookLM, Perplexity, and Glean.
+  - Connects to search engines, Slack, Linear, Jira, ClickUp, Notion, YouTube, GitHub, Discord, and more. 
+  - Save content from your own personal files (Documents, images, videos and supports 50+ file extensions) to your own personal knowledge base .
+  - ⛓️ Get Cited answers just like Perplexity.
+  - Works Flawlessly with Ollama local LLMs.
+    - 🐛 embedding模型必须使用azure, 不支持本地模型
+  - 后端: FastAPI, SQLAlchemy, pgvector, LangGraph, LangChain, Hybrid Search, Rerankers, Redis
+  - 前端: next, Vercel AI SDK Kit UI Stream Protocol, Shadcn, Framer Motion, React Hook Form, tanstack/table
+  - 依赖chonkie对doc进行embedding
+  - ETL Service (choose one)
+    - Docling (local processing, no API key required, supports PDF, Office docs, images, HTML, CSV)
+    - LlamaIndex API key (enhanced parsing, supports 50+ formats)
+  - 👇 xp
+    - 跨workspace不能共享source-document
+    - 聊天时~~只能选择全部文档或不选文档，不~~可以只选择部分文档
+    - 支持根据场景配置不同llm: fast, long, reasoning
+    - 🐛 聊天中的内容支持点击跳转到文档的chunk位置，而不是源文件，且中文文档的chunk经常是乱码
+  - 📡 [【Feature Request】 Streaming Response for Research Agent _202505](https://github.com/MODSetter/SurfSense/issues/86)
+  - https://discord.com/channels/1359368468260192417/1359416865939787837/1409642464792412220
+    - I was considering installing Surfsense but it needs API keys, doesn't it? How much does it cost to use it?
+    - Every service has a local alternative other than Speech to Text service. No need to put any API keys if you use everything local.
+  - https://discord.com/channels/1359368468260192417/1359416891831222362/1437030441910669403  _202511
+    - how does embedding work for large documents (not chunks)  if my embedding model’s context window is only 256 or 512 tokens, but the document is tens of thousands of tokens long? 
+    - We generate embedding of the summary of doc.
+
+- https://github.com/infiniflow/ragflow /68.2kStar/apache2/202511/python/ts/华人团队
+  - https://ragflow.io/
+  - https://demo.ragflow.io/
+  - open-source RAG (Retrieval-Augmented Generation) engine based on deep document understanding
+  - Template-based chunking: Plenty of template options to choose from
+  - Grounded citations with reduced hallucinations
+  - Supports Word, slides, excel, txt, images, scanned copies, structured data, web pages, and more.
+  - Multiple recall paired with fused re-ranking.
+  - 依赖 Crawl4AI、elasticsearch、flask-login、minio、pandas、voyageai、pyobvector
+  - 未使用langchain/aisdk, 多model-provider的集成完全自定义实现
+  - 🌹 对中文的支持较好
+  - 实测本地运行很不友好
+    - elasticsearch/infinity 数据层还在迁移与优化
+    - 本地运行的入口依赖 libjemalloc.so
+  - Prerequisites: RAM >= 16 GB
+    - gVisor: Required only if you intend to use the code executor (sandbox) feature of RAGFlow.
+  - ✨ 实测, rag后的chunk文本可查看chunk与原文对应的细节
+    - 聊天的回答中, hover图标能显示引文，并可点击引文后可在页面遮罩侧面弹窗中查看pdf原文位置
+  - 🐛 整个 知识库/聊天/查询 的创建及使用交互过于复杂， 不够简洁和自然
+  - DeepDoc (Default) - RAGFlowPdfParser
+    - Full OCR, Most comprehensive but slower
+    - Stream Reading Capability: ✅ YES
+    - Page-by-page processing with configurable page_from/page_to
+    - Uses `pdfplumber.open()` with `page_from` and `page_to` parameters
+    - 使用pdfplumber.open()和pypdf.PdfReader(), 一次性加载整个PDF文件到内存
+  - Plain Text Parser - PlainParser
+    - Uses `pypdf` for text extraction only
+    - Only for text-based PDFs
+    - Stream Reading Capability: ✅ YES
+    - Uses `pypdf.PdfReader` with page ranges
+    - Memory Usage: Very low - only text content loaded
+    - 可以逐页处理，但仍需要加载完整PDF
+  - Docling Parser - DoclingParser
+    -  Uses `docling.DocumentConverter` with full file
+  - MinerU Parser - MinerUParser
+    - External tool, entire file processing
+  - TCADP Parser - TCADPParser
+    - Tencent Cloud API integration
+    - Cloud-based, file upload to Tencent Cloud
+    - Reading Method: Converts entire file to `base64` and uploads, entire file loaded into memory for Base64 conversion
+  - Vision Parser - VisionParser
+    - Visual model processing, full file
+    - Higher memory requirements
+    - Uses `pdfplumber` with full file access
+  - [HARD -- Efficient way to use enterprise dataset without uploading all files? _202509](https://github.com/orgs/infiniflow/discussions/10388)
+    - You have to upload the data from Azure to RAGFlow. And currently you can do that through API. From 0.22 which is going to be launched in this Nov, we will provide some data sources and you can ingest data by just click several buttons. And more data sources could be easily added.
+  - [[Question]: Why can't knowledge graphs be used? _202509](https://github.com/infiniflow/ragflow/issues/10017)
+    - Knowledge graphs can’t currently be used with the Table chunking method in RAGFlow. The reason is that table chunking treats each row as a separate chunk and stores field mappings for retrieval, but it does not run those chunks through the knowledge graph extraction pipeline. As a result, entity–relationship extraction is skipped for tables.
+    - If you need a knowledge graph from table data, you’d have to implement a custom post-processing step (e.g., parsing the rows yourself and generating triples).
+  - [Select PDF parser | RAGFlow](https://ragflow.io/docs/dev/select_pdf_parser)
+  - [Deploy local models | RAGFlow](https://ragflow.io/docs/dev/deploy_local_llm)
+    - RAGFlow supports deploying models locally using Ollama, Xinference, IPEX-LLM, or jina.
+  - 🐛 [[Bug]: Fail to access model(text-embedding-bge-reranker-v2-m3). The LmStudioRerank has not been implement _202502](https://github.com/infiniflow/ragflow/issues/5354)
+    - Unable to add reranker model for LM STUDIO，Fail to access model(text-embedding-bge-reranker-v2-m3).The LmStudioRerank has not been implement
+  - 🐛 [[Question]: Support for calling the OLLAMA Reranker models ？ _202509](https://github.com/infiniflow/ragflow/issues/8988)
+    - Ollama supports very few rerank models and is not recommended.
+  - [FAQs | RAGFlow](https://ragflow.io/docs/dev/faq)
+    - RAGFlow supports MinerU (>= 2.6.3) as an optional PDF parser with multiple backends. RAGFlow acts only as a client for MinerU, calling it to parse documents, reading the output files, and ingesting the parsed content.
+  - [[Question]: Big File Parsing ](https://github.com/infiniflow/ragflow/issues/10986)
+  - [[Question]: High Memory and CPU Usage During PDF Parsing _202505](https://github.com/infiniflow/ragflow/issues/7602)
+    - 原因找到了，用了deepdoc解析方式，就非常消耗资源，我用native就没问题。目前不需要图片识别，就不需要deepdoc
+  - [Questions about Ragflow _202507](https://github.com/orgs/infiniflow/discussions/8904)
+    - RAGFlow uses Elasticsearch by default. Is Elasticsearch your recommendation over Infinity (at version 0.19.1)?
+    - Pls choose Elasticsearch. We're refactoring Infinity.
+  - 🐛 [[Question]: Parsing resumes is not open source yet. Are there any plans to open source it in the future? ](https://github.com/infiniflow/ragflow/issues/1053)
+    - 202406: currently, we don't have such plan.
+  - [[Question]: How to using this "Team" option for open-source? ](https://github.com/infiniflow/ragflow/issues/7050)
+    - 202504: It's a feature of enterprise version.
+
+- https://github.com/Tencent/WeKnora /7.5kStar/MIT/202511/go/ts/vue
+  - https://weknora.weixin.qq.com/
+  - LLM-powered framework for deep document understanding, semantic retrieval, and context-aware answers using RAG paradigm
+  - 📡 [WeKnora Roadmap ](https://github.com/Tencent/WeKnora/issues/414)
+    - Vision: 独立部署个人知识库，支持文档、数据、图片，基于传统RAG框架拓展更多LLM应用场景
+  - [[Question]: 请问有计划支持MinerU、PP-Structure-V3等第三方解析服务的调用么? 以及是否支持更多像lightrag这种graph的构建？ _202509](https://github.com/Tencent/WeKnora/issues/248)
+    - 现在支持了PPOCR-V4.PP-Structure-V3当然也是可以的，具体解析逻辑在docreader这个模块中。
+    - MinerU这块暂时没有详细调研，docreader在设计上是一个Python的独立模块，理论上可以比较轻松的接入其他SDK。
+    - graphRag这块我们现在有按照我们的索引结构进行实现。如果有更好的方式，感觉可以按照多路索引的思路进行单独一路的实现
+  - 🐛 [文档解析失败 _202508](https://github.com/Tencent/WeKnora/issues/77)
+    - 刚刚找到解决方法了，疑似是调用通过本地ollama 模型的问题； 解决方法就是通过api去调用embedding模型，虽然配置时会提示报错，但是可以是保存的，保存后也可以使用。再次上传时就解析成功了
+  - [[Question]: 上传大文件怎么办？ _202510](https://github.com/Tencent/WeKnora/issues/348)
+    - 这个应该是nginx的配置问题吧。先进入前端文件夹，修改nginx.conf文件
+    - 比如，将最大文件修改为200M,将上传时间修改为300s;
+      - 将client_max_body_size 50M ;修改为200M;
+      - client_max_body_size 200M
+      - proxy_connect_timeout 300s;
+  - [[Question]: 解除了30M的限制之后解析失败了 ](https://github.com/Tencent/WeKnora/issues/245)
+    - 找到了问题了 给 gRPC 消息大小设置为 5GB 这好像是超范围了 修改为500M后 就能正常解析了，大概在65M左右的一个pdf解析了将近15分钟 不知道是不是我电脑性能的问题 m1 pro 32
+    - 目前有并发性能问题，后面会进一步优化
+  - [[Bug]: 使用bge-m3导入文本知识库超过一定字符就失败 ](https://github.com/Tencent/WeKnora/issues/410)
+    - 使用bge-m3向量化模型，本地txt文本文件导入知识库的过程中，当文档字符大于等于2w时，就会导入失败，而适当删除字符，比如19997，则可以正常导入。初步推测有一个2万的限制？从任务管理器的资源情况来看，机器资源在健康水位，所以不是机器资源的问题
+  - [[Feature]: 知识库是否能支持上传文件夹 _202511](https://github.com/Tencent/WeKnora/issues/388)
+    - 还没有计划放开这个功能，如果一次性上传文件过多，多服务负载来说不是一件好事情
+  - [[Question]: 知识图谱  ](https://github.com/Tencent/WeKnora/issues/364)
+    - 发现问题了，是模型的问题，知识图谱的构建需要json格式，之前使用的是推理模型，包含了think标签，所以一直失败。 
+    - 如果我想关闭知识图谱的构建以及禁止它依据知识图谱进行检索，只需要“ENABLE_GRAPH_RAG=False”就可以了吗？想做一下有无知识图谱情况下的检索性能的对比
+    - 是的。然后重启重新上传就好
+  - [[Question]: 只能通过知识库的内容问答，知识库中没有内容时，无返回 ](https://github.com/Tencent/WeKnora/issues/359)
+    - 期望在知识库检索不到时，大模型也可以输出
+    - 这样设计的目的是为了防止模型输出一些危险的，无法预测的内容
+    - 可以修改summary prompt, 把 NO_MATCH 的话术从 Prompt中去掉，改成你想要的
+
+- https://github.com/UnicomAI/wanwu /2.7kStar/apache2/202511/go/🆚
+  - 元景万悟智能体平台是一款面向企业级场景的一站式、商用license友好的智能体开发平台
+  - 多租户架构：提供多租户账号体系，满足用户成本控制、数据安全隔离、业务弹性扩展、行业定制化、快速上线及生态协同等核心需求
+  - 🆚 提供了竞品比较: dify, fastgpt, ragflow, coze
+  - 信创适配：已适配国产信创数据库TiDB和OceanBase
+  - model hub: 支持用户导入包括联通元景、OpenAI-API-compatible、Ollama、通义千问、火山引擎等模型供应商的LLM、Embedding、Rerank模型
+  - 提供 多推理后端支持（vLLM、TGI等）与 自托管解决方案，满足不同规模企业的算力需求
+  - 联网检索（Web Search）
+  - 可视化工作流（Workflow Studio）
+  - 企业级知识库、RAG Pipeline:  提供知识库创建→ 文档解析→向量化→检索→精排 的全流程知识管理能力，支持pdf/docx/txt/xlsx/csv/pptx等 多种格式 文档，还支持网页资源的抓取和接入
+  - 提供 RESTful API ，支持与企业现有系统（OA/CRM/ERP等）深度集成
+
+- https://github.com/pingcap/autoflow /2.6kStar/apache2/202507/python
+  - https://tidb.ai/
+  - a Graph RAG based and conversational knowledge base tool built with TiDB Serverless Vector Storage.
+  - An open source GraphRAG (Knowledge Graph) built on top of TiDB Vector and LlamaIndex and DSPy.
+  - UI交互类似chatgpt
+  - https://x.com/9hills/status/1862522244527972625
+    - RAG Demo 到 RAG Application 难度的完美表现，其实功能不算丰富（增加了 Graph RAG和 Agent RAG 的思想），
+    - 代码却不得不做的非常复杂，大部分其实是应用逻辑。 P. S. 代码已经成熟到可以直接抄了，直接复刻就完了
+
+- https://github.com/netease-youdao/QAnything /13.8kStar/apache2 > AGPL/202503/python/vue/inactive
+  - https://qanything.ai/
+  - 开源的企业级本地知识库问答解决方案，致力于支持任意格式文件或数据库的问答
+  - 模型数据全在本地，可断网使用
+  - Support selecting multiple knowledge bases for Q&A
+  - Currently supported formats include: PDF(pdf), Word(docx), PPT(pptx), XLS(xlsx), Markdown(md), Email(eml), TXT(txt), Image(jpg，jpeg，png), CSV(csv), Web links(html) and more
+  - https://github.com/netease-youdao/BCEmbedding /apache2/202409/python/inactive
+    - 由网易有道开发的中英双语和跨语种语义表征算法模型库，其中包含 EmbeddingModel和 RerankerModel两类基础模型
+    - EmbeddingModel专门用于生成语义向量，在语义搜索和问答中起着关键作用，而 RerankerModel擅长优化语义搜索结果和语义相关顺序精排。
+    - BCEmbedding作为有道的检索增强生成式应用（RAG）的基石，特别是在QAnything中发挥着重要作用
+    - 双语和跨语种能力：基于有道翻译引擎的强大能力，BCEmbedding实现强大的中英双语和跨语种语义表征能力
+    - 面向RAG做针对性优化，可适配大多数相关任务，比如翻译，摘要，问答等。此外，针对 问题理解（query understanding） 也做了针对优化
+
+- https://github.com/Future-House/paper-qa /7.9kStar/apache2/202511/python
+  - https://futurehouse.gitbook.io/futurehouse-cookbook
+  - PaperQA2 is a package for doing high-accuracy retrieval augmented generation (RAG) on PDFs, text files, Microsoft Office documents, and source code files, with a focus on the scientific literature.
+  - A usable full-text search engine for a local repository of PDF/text files.
+  - You can use llama.cpp to be the LLM. You won't get good performance with 7B models.
+  - [save and import embeddings for faster answer generation _202411](https://github.com/Future-House/paper-qa/issues/721)
+    - I’ve been able to use it to ask questions by providing over 100 papers as input, and I’ve been using only local models via Ollama. Everything is working well, but I’d like to know how I can avoid reloading the same files and retraining an embedding model each time I have a new Question.
+    - 🔡 需要手动修改embedding模型配置, 而不是使用默认openai模型
+  - [usage with large local paper results exceeding `text-embeeded`'s maximium prompt limit _202409](https://github.com/Future-House/paper-qa/issues/453)
+    - I'm using paperqa with CLI frontend, while this could apply to code usage too. just run pqa ask cusum in a directory with a 10MiB Chinese paper pdf, results an error 'exceeding 8192 tokens limit' using OpenAI third-party proxy API (did some trick in litellm to actually set api_base)
+    - We could call tokenizer, or ask litellm to support pre-check before api call (this will be better)
 # rag-examples
 - https://github.com/pymupdf/pymupdf4llm /1.2kStar/AGPL/202511/python/lib
   - https://pymupdf.readthedocs.io/en/latest/pymupdf4llm
@@ -74,14 +269,18 @@ modified: 2025-11-30T17:27:16.720Z
   - Frontend: Vanilla HTML/JS (no build step)
   - Batch Ingestion — Process multiple files (sequential processing in Community Edition)
   - 🧪
-    - uv run --env-file .env -- uvicorn src.main:app --port 8080
     - chroma run --host 0.0.0.0 --port 8000 --path ~/Documents/repos/libfwk/ai-llm/all-rag/Knowledge-Base-Self-Hosting-Kit/backend/ENV/ingestdb
+    - OLLAMA_DEBUG=2 ollama serve
+    - uv run --env-file .env -- uvicorn src.main:app --port 8080
   - [I spent 2 years building privacy-first local AI. My conclusion: Ingestion is the bottleneck, not the Model. (Showcase: Ollama + Docling RAG Kit) : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pamu5t/i_spent_2_years_building_privacyfirst_local_ai_my/)
     - I’ve been working on strictly local, data-privacy-compliant AI solutions for about two years
     - The biggest lesson I learned: We spend 90% of our time debating model quantization, VRAM, and context windows. But in real-world implementations, the project usually fails long before the prompt hits the LLM. It fails at Ingestion.
     - I built a self-hosting starter kit that focuses heavily on fixing the Input Layer before worrying about the model.
     - Ingestion: Docling (v2). I chose this over PyPDF/LangChain splitters because it actually performs layout analysis. It reconstructs tables and headers into Markdown, so the LLM isn't guessing when reading a row.
     - I’d love to hear your thoughts on the "Ingestion First" approach. For me, switching from simple text-splitting to layout-aware parsing was the game changer for retrieval accuracy.
+  - 👾 prompts-agent
+    - i have run this project fully locally without docker and nginx.
+    - the backend server starts by `cd backend && uv run --env-file .env -- uvicorn src.main:app --port 8080`.
 
 - https://github.com/djleamen/doc-reader /MIT/202511/python/django
   - A Django-based document Q&A system using Retrieval-Augmented Generation (RAG) to process and query large documents with AI-powered responses.
@@ -250,73 +449,58 @@ modified: 2025-11-30T17:27:16.720Z
 - https://github.com/snexus/llm-search /MIT/202506/python/inactive
   - RAG with a simple YAML-based configuration that enables interaction with a collection of local documents.
   - The package is designed to work with custom Large Language Models (LLMs) – whether from OpenAI or installed locally.
-# rag-utils
-- https://github.com/rag-web-ui/rag-web-ui /apache2/202502/python/ts
-  - RAG Web UI is an intelligent dialogue system based on RAG
+
+- https://github.com/swirlai/swirl-search /2.9kStar/apache2/202511/python
+  - https://swirlaiconnect.com/
+  - AI Search & RAG Without Moving Your Data. Get instant answers from your company's knowledge across 100+ apps
+  - Warning: The Docker version of Swirl does not retain any data or configuration when shut down
+  - Swirl comes configured to search Arxiv, European PMC and Google News right out of the box.
+
+- https://github.com/KeiranHome/Rag_demo /202505/python/inactive
+  - 本项目利用FAISS向量库和千问模型API构建了一个检索增强生成（RAG）系统，旨在为用户提供针对公司年度总结数据的智能问答服务
+  - 中文分词工具：Jieba/THULAC，用于断句和关键词提取，提升后续Embedding语义表征精度。
+  - 通义千问Embedding模型：专为中文优化，支持长文本语义编码（最长16K tokens），余弦相似度准确率较开源模型（如BERT-base）提升15%；
 # rag-fwk
-- https://github.com/infiniflow/ragflow /68.2kStar/apache2/202511/python/ts/华人团队
-  - https://ragflow.io/
-  - https://demo.ragflow.io/
-  - open-source RAG (Retrieval-Augmented Generation) engine based on deep document understanding
-  - Template-based chunking: Plenty of template options to choose from
-  - Grounded citations with reduced hallucinations
-  - Supports Word, slides, excel, txt, images, scanned copies, structured data, web pages, and more.
-  - Multiple recall paired with fused re-ranking.
-  - 依赖 Crawl4AI、elasticsearch、flask-login、minio、pandas、voyageai、pyobvector
-  - 未使用langchain/aisdk, 多model-provider的集成完全自定义实现
-  - 实测本地运行很不友好
-    - elasticsearch/infinity 数据层还在迁移与优化
-    - 本地运行的入口依赖 libjemalloc.so
-  - Prerequisites: RAM >= 16 GB
-    - gVisor: Required only if you intend to use the code executor (sandbox) feature of RAGFlow.
-  - ✨ 实测, rag后的chunk文本可查看chunk与原文对应的细节
-    - 聊天的回答中, hover图标能显示引文，并可点击引文后可在页面遮罩侧面弹窗中查看pdf原文位置
-  - 🐛 整个 知识库/聊天/查询 的创建及使用交互过于复杂， 不够简洁和自然
-  - DeepDoc (Default) - RAGFlowPdfParser
-    - Full OCR, Most comprehensive but slower
-    - Stream Reading Capability: ✅ YES
-    - Page-by-page processing with configurable page_from/page_to
-    - Uses `pdfplumber.open()` with `page_from` and `page_to` parameters
-    - 使用pdfplumber.open()和pypdf.PdfReader(), 一次性加载整个PDF文件到内存
-  - Plain Text Parser - PlainParser
-    - Uses `pypdf` for text extraction only
-    - Only for text-based PDFs
-    - Stream Reading Capability: ✅ YES
-    - Uses `pypdf.PdfReader` with page ranges
-    - Memory Usage: Very low - only text content loaded
-    - 可以逐页处理，但仍需要加载完整PDF
-  - Docling Parser - DoclingParser
-    -  Uses `docling.DocumentConverter` with full file
-  - MinerU Parser - MinerUParser
-    - External tool, entire file processing
-  - TCADP Parser - TCADPParser
-    - Tencent Cloud API integration
-    - Cloud-based, file upload to Tencent Cloud
-    - Reading Method: Converts entire file to `base64` and uploads, entire file loaded into memory for Base64 conversion
-  - Vision Parser - VisionParser
-    - Visual model processing, full file
-    - Higher memory requirements
-    - Uses `pdfplumber` with full file access
-  - [HARD -- Efficient way to use enterprise dataset without uploading all files? _202509](https://github.com/orgs/infiniflow/discussions/10388)
-    - You have to upload the data from Azure to RAGFlow. And currently you can do that through API. From 0.22 which is going to be launched in this Nov, we will provide some data sources and you can ingest data by just click several buttons. And more data sources could be easily added.
-  - [[Question]: Why can't knowledge graphs be used? _202509](https://github.com/infiniflow/ragflow/issues/10017)
-    - Knowledge graphs can’t currently be used with the Table chunking method in RAGFlow. The reason is that table chunking treats each row as a separate chunk and stores field mappings for retrieval, but it does not run those chunks through the knowledge graph extraction pipeline. As a result, entity–relationship extraction is skipped for tables.
-    - If you need a knowledge graph from table data, you’d have to implement a custom post-processing step (e.g., parsing the rows yourself and generating triples).
-  - [Select PDF parser | RAGFlow](https://ragflow.io/docs/dev/select_pdf_parser)
-  - [Deploy local models | RAGFlow](https://ragflow.io/docs/dev/deploy_local_llm)
-    - RAGFlow supports deploying models locally using Ollama, Xinference, IPEX-LLM, or jina.
-  - 🐛 [[Bug]: Fail to access model(text-embedding-bge-reranker-v2-m3). The LmStudioRerank has not been implement _202502](https://github.com/infiniflow/ragflow/issues/5354)
-    - Unable to add reranker model for LM STUDIO，Fail to access model(text-embedding-bge-reranker-v2-m3).The LmStudioRerank has not been implement
-  - 🐛 [[Question]: Support for calling the OLLAMA Reranker models ？ _202509](https://github.com/infiniflow/ragflow/issues/8988)
-    - Ollama supports very few rerank models and is not recommended.
-  - [FAQs | RAGFlow](https://ragflow.io/docs/dev/faq)
-    - RAGFlow supports MinerU (>= 2.6.3) as an optional PDF parser with multiple backends. RAGFlow acts only as a client for MinerU, calling it to parse documents, reading the output files, and ingesting the parsed content.
-  - [[Question]: Big File Parsing ](https://github.com/infiniflow/ragflow/issues/10986)
-  - [[Question]: High Memory and CPU Usage During PDF Parsing _202505](https://github.com/infiniflow/ragflow/issues/7602)
-    - 原因找到了，用了deepdoc解析方式，就非常消耗资源，我用native就没问题。目前不需要图片识别，就不需要deepdoc
-  - [Questions about Ragflow _202507](https://github.com/orgs/infiniflow/discussions/8904)
-    - RAGFlow uses Elasticsearch by default. Is Elasticsearch your recommendation over Infinity (at version 0.19.1)?
-    - Pls choose Elasticsearch. We're refactoring Infinity.
+- https://github.com/phbst/tinyRAG /202409/jupyter/inactive
+  - 全手写的一个RAG应用。Langchain的大部分库会很方便，但是你不一定理解其中原理，所以代码尽可能展现基本算法，主打理解RAG的原理
+
+- https://github.com/codemilestones/TinyCodeBase /apache2/202509/python
+  - 本项目是一个轻量级的代码智能系统，包含了RAG（检索增强生成）、Agent（智能代理）和评估系统的完整实现。
+  - 项目从[TinyRAG](https://github.com/KMnO4-zx/TinyRAG)扩展而来，专注于代码场景的优化和实践。
+  - [之前有多嫌弃大模型框架，现在用 LangGraph 就有多香 - 知乎 _202509](https://zhuanlan.zhihu.com/p/1946396924342177830)
+
+- https://github.com/wzdavid/ThinkRAG /MIT/202507/python/inactive
+  - 大模型检索增强生成系统，可以轻松部署在笔记本电脑上，实现本地知识库智能问答
+  - built on LlamaIndex and Streamlit, and has been optimized for Chinese users in various fields such as model selection and text processing.
+  - Supports locally deployed models and offline use
+  - a lot of customizations and optimizations for Chinese users:
+    - Uses Spacy text splitter for better handling of Chinese characters
+    - Uses Chinese prompt templates for Q&A and refinement processes
+    - Uses bilingual embedding models, such as `bge-large-zh-v1.5` from BAAI
+
+- https://github.com/HKUDS/RAG-Anything /10.7kStar/MIT/202511/python
+  - All-in-One Multimodal Document Processing RAG system built on LightRAG.
+  - As a unified solution, RAG-Anything eliminates the need for multiple specialized tools. It provides seamless processing and querying across all content modalities within a single integrated framework. 
+  - [[Question]: 我使用中文数据构建了RAG，但是为什么检索出来的内容是英文的？ _202510](https://github.com/HKUDS/RAG-Anything/issues/136)
+    - .env里好像有个语言设置，默认是英文，可以看看和这个是否有关
+  - [[Question]: 目前是否支持长表格的导入 _202509](https://github.com/HKUDS/RAG-Anything/issues/100)
+  - https://github.com/HKUDS/LightRAG /20.1kStar/MIT/202508/python
+    - Simple and Fast Retrieval-Augmented Generation
+    - [2025.06.16]🎯 Our team has released RAG-Anything an All-in-One Multimodal RAG System for seamless text, image, table, and equation processing.
+- https://github.com/xerrors/Yuxi-Know /2.6kStar/MIT/202512/python/vue
+  - https://xerrors.github.io/Yuxi-Know/
+  - 功能强大的智能体平台，融合了 RAG 知识库与知识图谱技术，基于 LangGraph v1 + Vue.js + FastAPI + LightRAG 架构构建
+  - 集成主流大模型、LightRAG、MinerU、PP-Structure、Neo4j 、联网检索、工具调用。
+
+- https://github.com/getzep/graphiti /20.6kStar/apache2/202511/python
+  - https://help.getzep.com/graphiti
+  - a framework for building and querying temporally-aware knowledge graphs
+  - Unlike traditional RAG, Graphiti continuously integrates user interactions, structured and unstructured enterprise data, and external information into a coherent, queryable graph. 
+  - The framework supports incremental data updates, efficient retrieval, and precise historical queries without requiring complete graph recomputation
+  - Graphiti powers the core of Zep, a turn-key context engineering platform for AI Agents.
+  - Traditional RAG approaches often rely on batch processing and static data summarization, making them inefficient for frequently changing data. 
+  - Real-Time Incremental Updates: Immediate integration of new data episodes without batch recomputation.
+  - Scalability: Efficiently manages large datasets with parallel processing, suitable for enterprise environments.
 
 - https://github.com/chunkhound/chunkhound /118Star/MIT/202509/python
   - https://chunkhound.github.io/
@@ -329,22 +513,6 @@ modified: 2025-11-30T17:27:16.720Z
   - Regex search - Pattern matching without API keys
   - Local-first - Your code stays on your machine
   - 22 languages with structured parsing, via Tree-sitter
-
-- https://github.com/HKUDS/LightRAG /20.1kStar/MIT/202508/python
-  - Simple and Fast Retrieval-Augmented Generation
-  - [2025.06.16]🎯 Our team has released RAG-Anything an All-in-One Multimodal RAG System for seamless text, image, table, and equation processing.
-  - https://github.com/HKUDS/RAG-Anything /MIT/202508/python
-    - All-in-One Multimodal Document Processing RAG system built on LightRAG.
-
-- https://github.com/getzep/graphiti /20.6kStar/apache2/202511/python
-  - https://help.getzep.com/graphiti
-  - a framework for building and querying temporally-aware knowledge graphs
-  - Unlike traditional RAG, Graphiti continuously integrates user interactions, structured and unstructured enterprise data, and external information into a coherent, queryable graph. 
-  - The framework supports incremental data updates, efficient retrieval, and precise historical queries without requiring complete graph recomputation
-  - Graphiti powers the core of Zep, a turn-key context engineering platform for AI Agents.
-  - Traditional RAG approaches often rely on batch processing and static data summarization, making them inefficient for frequently changing data. 
-  - Real-Time Incremental Updates: Immediate integration of new data episodes without batch recomputation.
-  - Scalability: Efficiently manages large datasets with parallel processing, suitable for enterprise environments.
 
 - https://github.com/memfreeme/memfree /MIT/202409/ts
   - https://www.memfree.me/
@@ -372,7 +540,41 @@ modified: 2025-11-30T17:27:16.720Z
   - [RAG without Vectors – PageIndex: Reasoning-Based Document Indexing · run-llama/llama_index _202504](https://github.com/run-llama/llama_index/discussions/18360)
     - We were frustrated by vector-based RAG systems that rely on semantic similarity and often fail on long, domain-specific documents.
     - PageIndex, a hierarchical indexing system that transforms large documents (like financial reports, regulatory documents, or textbooks) into semantic trees optimized for reasoning-based RAG.
+
+- https://github.com/dataelement/bisheng /10.5kStar/apache2/202511/python/ts
+  - http://www.bisheng.ai/
+  - open LLM devops platform 
+  - Powerful and comprehensive features include: GenAI workflow, RAG, Agent, Unified model management, Evaluation, SFT, Dataset Management, Enterprise-level System Management, Observability and more.
+  - [有计划将企业数据库作为数据源之一吗？ ](https://github.com/dataelement/bisheng/issues/500)
+    - 202509: 目前可以通过助手节点数据查询功能实现 nl2sql 能力
+
+- https://github.com/rag-web-ui/rag-web-ui /2.7kStar/apache2/202511/python/ts/提交少
+  - RAG Web UI is an intelligent dialogue system based on RAG
+
+- https://github.com/agentset-ai/agentset /1.6kStar/MIT/202512/ts
+  - https://agentset.ai/
+  - The open-source RAG platform: built-in citations, deep research, 22+ file formats, partitions, MCP server, and more.
+  - It provides end-to-end tooling: ingestion, vector indexing, evaluation/benchmarks, chat playground, hosting, and a developer-friendly API.
+  - Model agnostic: works with your choice of LLM, embeddings, and vector DB
+  - Chat playground with message editing and citations
+  - Built-in multi-tenancy
+  - Built with TypeScript, Next.js, AI SDK, Prisma, Supabase, and Trigger.dev
+
+- https://github.com/percent4/embedding_rerank_retrieval /202507/jupyter/inactive
+  - 本项目是针对RAG中的Retrieve阶段的召回技术及算法效果所做评估实验。使用主体框架为LlamaIndex.
+  - 使用Gradio实现中文Late-Chunking服务: late_chunking/late_chunking_gradio_server.py
 # rag-memory
+- https://github.com/jakops88-hub/Long-Term-Memory-API /202512/ts
+  - A Memory Server for AI Agents. Runs on Postgres + pgvector. 
+  - Now supporting 100% Local/Offline execution via Ollama.
+  - [I implemented Hybrid Search (BM25 + pgvector) in Postgres to fix RAG retrieval for exact keywords. Here is the logic. : r/Rag _202512](https://www.reddit.com/r/Rag/comments/1pcvtan/i_implemented_hybrid_search_bm25_pgvector_in/)
+    - I don't stick to just one framework myself, most people jump between LangChain (for quick prototyping) and **Vercel AI SDK** (for production/streaming). MemVault is built to work with both. Regarding state, yeah, MemVault handles the state layer.
+    - So the queries sent back to memvault are plain nlp texts ?
+      - Exactly. You just send raw text (e.g., "What is the user's budget?")
+      - The API handles the embedding/vectorization internally and matches it against the stored memories. So from the agent's perspective, it's just natural language in, relevant context out.
+    - Does it work well enough for other languages? Did you try that?
+      - you're right, 'english' is too aggressive with stemming. I haven't tested non-English languages extensively yet, but switching to the 'simple' config is the smart move to remove stemming issues, I'll update the config to that now.
+
 - https://github.com/mem0ai/mem0 /apache2/202409/python
   - https://mem0.ai/
   - Mem0 (pronounced as "mem-zero") enhances AI assistants and agents with an intelligent memory layer, enabling personalized AI interactions. 
@@ -511,15 +713,6 @@ modified: 2025-11-30T17:27:16.720Z
   - Any File: Quivr works with any file, you can use it with PDF, TXT, Markdown, etc and even add your own parsers.
   - Customize your RAG: Quivr allows you to customize your RAG, add internet search, add tools, etc.
 
-- https://github.com/pingcap/autoflow /2.6kStar/apache2/202507/python
-  - https://tidb.ai/
-  - a Graph RAG based and conversational knowledge base tool built with TiDB Serverless Vector Storage.
-  - An open source GraphRAG (Knowledge Graph) built on top of TiDB Vector and LlamaIndex and DSPy.
-  - UI交互类似chatgpt
-  - https://x.com/9hills/status/1862522244527972625
-    - RAG Demo 到 RAG Application 难度的完美表现，其实功能不算丰富（增加了 Graph RAG和 Agent RAG 的思想），
-    - 代码却不得不做的非常复杂，大部分其实是应用逻辑。 P. S. 代码已经成熟到可以直接抄了，直接复刻就完了
-
 - https://github.com/dontizi/rlama /1.1kStar/apache2/202508/go/js
   - https://rlama.dev/
   - a powerful AI-driven question-answering tool for your documents, seamlessly integrating with your local Ollama models.
@@ -582,21 +775,24 @@ modified: 2025-11-30T17:27:16.720Z
   - https://unstract.com/
   - No-code LLM Platform to launch APIs and ETL Pipelines to structure unstructured documents
 
-- https://github.com/Tencent/WeKnora /7.5kStar/MIT/202511/go/ts/vue
-  - https://weknora.weixin.qq.com/
-  - LLM-powered framework for deep document understanding, semantic retrieval, and context-aware answers using RAG paradigm
-
 - https://github.com/freeCodeCamp/devdocs /37.9kStar/MPL/202511/ruby
   - https://devdocs.io/
   - DevDocs combines multiple developer documentations in a clean and organized web UI with instant search, offline support, mobile version, dark theme, keyboard shortcuts, and more
   - DevDocs was created by Thibaut Courouble and is operated by freeCodeCamp.
 
-- https://github.com/AdyTech99/volo /GPL/202501/python/inactive
-  - combining AI with Wikipedia knowledge via a RAG pipeline
-  - It utilizes an offline database of Wikipedia created by Kiwix, ensuring fast and reliable access to information without requiring constant internet connectivity.
-  - Volo uses a tiny model (Qwen2.5:3b) and gives it the knowledge of nearly 7 million Wikipedia articles, making it a more reliable source of information than giant closed-source models like OpenAI's GPT4o and Anthropic's Claude 3.5 Sonnet, which are prone to hallucinations.
-  - Offline Wikipedia Database: Leverages a `.zim` file from Kiwix, offering a snapshot of Wikipedia for offline access.
-  - OpenAI-Compatible REST APIs: Use Volo with interfaces like Open WebUI or your own API client.
+- https://github.com/1Panel-dev/MaxKB /15.5kStar/GPL/202504/python/ts/vue
+  - https://maxkb.pro/
+  - 基于大模型和 RAG 的开源知识库问答系统
+  - it is a ready-to-use RAG chatbot that features robust workflow and MCP tool-use capabilities. 
+  - 依赖django、langchain、pgvector、Vue
+  - Flexible Orchestration: Equipped with a powerful workflow engine, function library and MCP tool-use, enabling the orchestration of AI processes to meet the needs of complex business scenarios.
+
+- https://github.com/chaitin/PandaWiki /8.3kStar/AGPL/202512/go/ts
+  - https://pandawiki.docs.baizhi.cloud/
+  - AI 大模型驱动的开源知识库搭建系统，帮助你快速构建智能化的 产品文档、技术文档、FAQ、博客系统，借助大模型的力量为你提供 AI 创作、AI 问答、AI 搜索等能力。
+  - 强大的富文本编辑能力：兼容 Markdown 和 HTML，支持导出为 word、pdf、markdown 等多种格式。
+  - 轻松与第三方应用进行集成：支持做成网页挂件挂在其他网站上，支持做成钉钉、飞书、企业微信等聊天机器人。
+  - 通过第三方来源导入内容：根据网页 URL 导入、通过网站 Sitemap 导入、通过 RSS 订阅、通过离线文件导入等。
 # chat-excel
 - https://github.com/huggingface/aisheets /1.5kStar/apache2/202510/python/ts
   - https://huggingface.co/spaces/aisheets/sheets
@@ -621,6 +817,13 @@ modified: 2025-11-30T17:27:16.720Z
   - I’ve been exploring different libraries for converting PDFs to Markdown to use in a Retrieval-Augmented Generation (RAG) setup.
   - But testing each library turned out to be quite a hassle — environment setup, dependencies, version conflicts, etc.
   - Currently, it supports: docling pymupdf4llm markitdown marker
+
+- https://github.com/weiwill88/Local_Pdf_Chat_RAG /202510/python/inactive
+  - 本地化智能问答系统 (FAISS版)
+  - 混合检索：结合FAISS进行语义检索和BM25进行关键词检索，提高检索召回率和准确性
+  - 结果重排序：支持交叉编码器（CrossEncoder）和LLM对检索结果进行重排序，优化相关性
+  - 可选择使用本地Ollama大模型（如DeepSeek-R1系列）或云端SiliconFlow API进行推理
+  - 基于Gradio构建交互式Web界面，支持多种主题界面
 
 - https://github.com/shibing624/ChatPDF /801Star/apache2/202409/python/inactive
   - 纯原生实现RAG功能，基于本地LLM、embedding模型、reranker模型实现，支持GraphRAG，无须安装任何第三方agent库。
@@ -661,53 +864,6 @@ modified: 2025-11-30T17:27:16.720Z
   - https://github.com/tuxxon/PDFGPT /202408/inactive
     - I rebuilt it because I thought this repository was no longer being maintained.
 # chat-workspace
-- https://github.com/pipeshub-ai/pipeshub-ai /2kStar/apache2/202511/python/ts
-  - https://pipeshub.com/
-  - The OpenSource Alternative to Glean's Workplace AI
-  - PipesHub AI helps you quickly find the right information using natural language search—just like Google.
-  - The platform not only delivers the most relevant results but also shows where the information came from, with proper citations, using Knowledge Graphs and Page Ranking
-  - Beyond search, our platform allows enterprises to create custom apps and AI agents using a No-Code interface.
-  - Knowledge Graph Backbone – All data is seamlessly structured into a powerful knowledge graph.
-  - Enterprise-Grade Connectors – Scalable, reliable, and built for secure access across your organization.
-  - Modular & Scalable Architecture – Every service is loosely coupled to scale independently and adapt to your needs.
-  - 前端: Material UI、React Hook Form、zod
-  - 后端: fastapi, LangGraph, LangChain, Qdrant(vector), ArangoDB(graph), Kafka, Redis, Docling, PyMuPDF, OCRmyPDF
-  - 🛢️ 应用层数据在python侧和nodejs侧都大量使用arangodb来存储图结构的关系
-  - 🐛 不支持外部搜索引擎如 Tavily/EXA/SearxNG, 但方便纯本地部署
-  - [Work AI for all - AI platform for agents, assistant, search](https://www.glean.com/)
-  - [Best way to extract data from PDFs and HTML : r/Rag _202510](https://www.reddit.com/r/Rag/comments/1oavnx4/best_way_to_extract_data_from_pdfs_and_html/)
-    - At PipesHub, we use docling, pymupdf (faster than docling but need to use layout parser on top of it), ocrmupdf/Azure DI (scanned pdfs).
-    - If you are looking for Higher Accuracy, Visual Citations, Cleaner UI, Direct integration with Google Drive, OneDrive, SharePoint Online, Dropbox and more. PipesHub is free and fully open source, extensible. 
-  - pr已合并 [Backend Support for Ollama Models · Pull Request _202507](https://github.com/pipeshub-ai/pipeshub-ai/pull/475)
-    - [Ollama Embedding model support · Pull Request ](https://github.com/pipeshub-ai/pipeshub-ai/pull/480)
-
-- https://github.com/MODSetter/SurfSense /10.6kStar/apache2/202511/python/ts
-  - https://www.surfsense.com/
-  - Open source alternative to NotebookLM, Perplexity, and Glean.
-  - Connects to search engines, Slack, Linear, Jira, ClickUp, Notion, YouTube, GitHub, Discord, and more. 
-  - Save content from your own personal files (Documents, images, videos and supports 50+ file extensions) to your own personal knowledge base .
-  - ⛓️ Get Cited answers just like Perplexity.
-  - Works Flawlessly with Ollama local LLMs.
-    - 🐛 embedding模型必须使用azure, 不支持本地模型
-  - 后端: FastAPI, SQLAlchemy, pgvector, LangGraph, LangChain, Hybrid Search, Rerankers, Redis
-  - 前端: next, Vercel AI SDK Kit UI Stream Protocol, Shadcn, Framer Motion, React Hook Form, tanstack/table
-  - 依赖chonkie对doc进行embedding
-  - ETL Service (choose one)
-    - Docling (local processing, no API key required, supports PDF, Office docs, images, HTML, CSV)
-    - LlamaIndex API key (enhanced parsing, supports 50+ formats)
-  - 👇 xp
-    - 跨workspace不能共享source-document
-    - 聊天时~~只能选择全部文档或不选文档，不~~可以只选择部分文档
-    - 支持根据场景配置不同llm: fast, long, reasoning
-    - 🐛 聊天中的内容支持点击跳转到文档的chunk位置，而不是源文件，且中文文档的chunk经常是乱码
-  - 📡 [【Feature Request】 Streaming Response for Research Agent _202505](https://github.com/MODSetter/SurfSense/issues/86)
-  - https://discord.com/channels/1359368468260192417/1359416865939787837/1409642464792412220
-    - I was considering installing Surfsense but it needs API keys, doesn't it? How much does it cost to use it?
-    - Every service has a local alternative other than Speech to Text service. No need to put any API keys if you use everything local.
-  - https://discord.com/channels/1359368468260192417/1359416891831222362/1437030441910669403  _202511
-    - how does embedding work for large documents (not chunks)  if my embedding model’s context window is only 256 or 512 tokens, but the document is tens of thousands of tokens long? 
-    - We generate embedding of the summary of doc.
-
 - https://github.com/lfnovo/open-notebook /10.2kStar/MIT/202511/python/ts/提交少
   - https://www.open-notebook.ai/
   - Open Source implementation of Notebook LM with more flexibility and features
@@ -795,15 +951,19 @@ modified: 2025-11-30T17:27:16.720Z
   - Academic search: Search for academic papers and research using Exa AI with abstracts and summaries
   - YouTube search: Find YouTube videos with detailed information, captions, and timestamps powered by Exa AI
 # citation/sourcing
-- https://github.com/Future-House/paper-qa /7.9kStar/apache2/202511/python
-  - https://futurehouse.gitbook.io/futurehouse-cookbook
-  - PaperQA2 is a package for doing high-accuracy retrieval augmented generation (RAG) on PDFs, text files, Microsoft Office documents, and source code files, with a focus on the scientific literature.
-  - A usable full-text search engine for a local repository of PDF/text files.
-  - You can use llama.cpp to be the LLM. You won't get good performance with 7B models.
-  - [save and import embeddings for faster answer generation _202411](https://github.com/Future-House/paper-qa/issues/721)
-    - I’ve been able to use it to ask questions by providing over 100 papers as input, and I’ve been using only local models via Ollama. Everything is working well, but I’d like to know how I can avoid reloading the same files and retraining an embedding model each time I have a new Question.
-    - 🔡 需要手动修改embedding模型配置, 而不是使用默认openai模型
-  - [usage with large local paper results exceeding `text-embeeded`'s maximium prompt limit _202409](https://github.com/Future-House/paper-qa/issues/453)
-    - I'm using paperqa with CLI frontend, while this could apply to code usage too. just run pqa ask cusum in a directory with a 10MiB Chinese paper pdf, results an error 'exceeding 8192 tokens limit' using OpenAI third-party proxy API (did some trick in litellm to actually set api_base)
-    - We could call tokenizer, or ask litellm to support pre-check before api call (this will be better)
+- https://github.com/stanford-oval/WikiChat /1.5kStar/apache2/202504/python/inactive
+  - https://wikichat.genie.stanford.edu/
+  - WikiChat is an improved RAG. It stops the hallucination of large language models by retrieving data from a corpus.
+  - WikiChat uses Wikipedia and the following 7-stage pipeline to makes sure its responses are factual. Each numbered stage involves one or more LLM calls.
+
+- https://github.com/AdyTech99/volo /GPL/202501/python/inactive
+  - combining AI with Wikipedia knowledge via a RAG pipeline
+  - It utilizes an offline database of Wikipedia created by Kiwix, ensuring fast and reliable access to information without requiring constant internet connectivity.
+  - Volo uses a tiny model (Qwen2.5:3b) and gives it the knowledge of nearly 7 million Wikipedia articles, making it a more reliable source of information than giant closed-source models like OpenAI's GPT4o and Anthropic's Claude 3.5 Sonnet, which are prone to hallucinations.
+  - Offline Wikipedia Database: Leverages a `.zim` file from Kiwix, offering a snapshot of Wikipedia for offline access.
+  - OpenAI-Compatible REST APIs: Use Volo with interfaces like Open WebUI or your own API client.
+
+- https://github.com/imDelivered/WikiRAG /202512/python/代码少
+  - [I built an offline AI chat app that automatically pulls Wikipedia articles for factual answers - runs completely locally with Ollama : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1pd2x8u/i_built_an_offline_ai_chat_app_that_automatically/)
+    - We really need a universal Kiwix API endpoint that Just Works with tools calls from whatever inference engine someone is using
 # more

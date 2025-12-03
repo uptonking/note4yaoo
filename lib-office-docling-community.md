@@ -20,6 +20,34 @@ modified: 2025-09-21T13:57:50.332Z
 - ## 
 
 - ## 
+# discuss-llamaIndex
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [[Feature Request]: Update BM25 Retriever to Fully Support bm25s Non-ASCII and UTF-8 Options · Issue · run-llama/llama_index _202501](https://github.com/run-llama/llama_index/issues/17461)
+  - The current implementation of `BM25Retriever` in LlamaIndex relies on an older version of bm25s (0.2.3 or 0.2.4), which does not support non-ASCII tokenization or UTF-8 encoding. 
+- May I ask if this has already been updated? Which version of `BM25Retriever` should I use？
+  - version 0.6.5 has encoding support. I used this version to handle persisting and loading Portuguese nodes.
+- Can it be used to process Chinese?
+  - Yep. Also, I advise you to use file_extractor to avoid losing any context, since if you don’t set return_full_document=True, each page will be treated as a separate document
+- I have some questions. I have upgraded llama-index-retrievers-bm25 to version 0.6.5 and found that the bm25s version is 0.2.14. Then I used a document with Chinese and English code to test retrievers and found that the retrievers results were inaccurate and not ideal. It works not fine with pure Chinese code also，I'm not sure where I went wrong. What is the file that "persists and from_persist_dir " mean in your code?
+  -  I think I have mislead you early, sorry, but apparently bm25 retriever does not support chinese, therefore you need to use another snippet of the code, there is a thread about it doesnt supporting chinese and japanese because of the stemmer and tokenizer
+- I've seen that comment, so I think the BM25S doesn't support Chinese. I felt the earliest article was a bit misleading. If you need Chinese support, you still need the jieba word segmenter. Also, I'd like to ask about using vectorized queries for Chinese
+
+- ## 🇨🇳 [[Bug]: BM25Retriever cannot work on chinese · Issue · run-llama/llama_index _202405](https://github.com/run-llama/llama_index/issues/13866)
+  - `BM25Retriever` cannot work on chinese.
+
+- In the version 0.10.57, the tokenizer option is marked as deprecated and suggest to use a stemmer instead. How can I make use of stemmer for Chinese?
+- this interests me. checked bm25s and a new BM25Retriever. my current understanding is below:
+  - bm25s has a built-in tokenizer but it does not support Chinese and also Japanese (in my case). so need to implement tokenizer by myself in some ways such as implemet tokenizer outside of bm25s, or making a subclass for bm25s and override tokenize method implemented by myself, etc.
+  - llamaindex's BM25Retriever imports bm25s and calls tokenizer method inside of BM25Retriever, this means other languages which bm25s does not support are not suppoted as default.
+  - only thing we can in current implementation, we can pass bm25s. BM25() object which contains an index created using bm25s, not llamaindex.
+  - as a result, we don't use llamaindex for indexing stage, only for querying stage.
+
+- Thanks for your suggestion. Yes, I agree with you that BM25Retriever and BM25SRetriever should be different things. And I made myself a Chinese vesion of BM25Retriver using bm25s finally.
 # discuss-solutions
 - ## 
 

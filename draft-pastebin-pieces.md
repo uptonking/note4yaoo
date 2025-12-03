@@ -271,6 +271,9 @@ $if($gt(%totaldiscs%,1),%discnumber%-,)$if($and(%albumartist%,%tracknumber%),$nu
 - hard
   - 让银行起诉我还款
 
+- 支付宝借呗花呗
+  - 花呗本金: 21332.12
+
 - 百度有钱花
   - 本金: 37910
   - 本金+利息: 66233

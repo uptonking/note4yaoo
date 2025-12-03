@@ -514,6 +514,33 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Ministral 14B vs Qwen 3 VL 30B vs Mistral Small vs Gemma 27B : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1pcgzkc/ministral_14b_vs_qwen_3_vl_30b_vs_mistral_small/)
+  - I used Artificial Analysis to compare common benchmark.
+  - I think Mistral did an awesome job: a 14B model performing almost on par with Mistral Small and Gemma and comparable with Qwen (Math apart where latest Qwen release is particularly good).
+
+- Unfortunately benchmarks are getting more and more useless. It took me less than 5 minutes to realize Ministral 14B is not even close to Mistral Small 3.2 24B. Not that I expected it given the parameter difference.
+
+- ## [Ministral-3 has been released : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pcb50r/ministral3_has_been_released/)
+  - Ministral 3 14B offers frontier capabilities and performance comparable to its larger Mistral Small 3.2 24B counterpart. 
+- Why would they not have a comparison to mistral small 24B? It makes no sense to not have a comparison to some larger sizes
+
+- I also recommend the superior SmolLM3 by Huggingface which used in "Thinking mode" is also top on the iPhone SE 2022
+
+- So it outperforms and basically replaces comparable qwen3 and gemma3 models, right?
+  - I tested the 3b and 8b, and it did worse in just about every test except for translation. It failed most logic puzzles. Vision and summarization had too many hallucinations to be trustworthy.
+- no, qwen3 30b vl severely outperforms ministral 14b while being faster.
+
+- its good, but qwen beat them to the punch
+  - qwen 3vl 30b just beats ministral 14b in every way. its better across the board, and its much faster, even for mixed CPU/GPU inference.
+
+- The 14B outperforming Qwen3-14B on AIME is impressive. Are you seeing similar gains in code generation tasks, or is this mostly reasoning-focused?
+
 - ## [Benchmark: Self-Hosted Qwen-30B (LoRA) vs. Llama-3.1-8B vs. GPT-4.1-nano. Comparison of parsing success rates and negative constraints. : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1p5e7mv/benchmark_selfhosted_qwen30b_lora_vs_llama318b_vs/)
   - I recently migrated a production workload off Claude Sonnet 4 ($45/1k requests) to cut costs. 
   - I ran a three-way experiment to find the best replacement: Qwen3-Coder-30B (Self-hosted) vs. Llama-3.1-8B vs. GPT-4.1-nano.

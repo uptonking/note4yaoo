@@ -220,6 +220,10 @@ modified: 2025-11-18T13:22:22.078Z
   - Qwen3-0.6B: 简历文本信息提取和结构化处理
   - YOLOv10: 简历版面布局检测和区域分割
 # models-exploring
+- [apple/CLaRa-7B-Instruct · Hugging Face](https://huggingface.co/apple/CLaRa-7B-Instruct)
+  - our instruction-tuned unified RAG model with built-in semantic document compression (16× & 128x).
+  - It supports instruction-following QA directly from compressed document representations.
+
 - [nvidia/Llama-3.1-Nemotron-8B-UltraLong-4M-Instruct · Hugging Face](https://huggingface.co/nvidia/Llama-3.1-Nemotron-8B-UltraLong-4M-Instruct)
   - a series of ultra-long context language models designed to process extensive sequences of text (up to 1M, 2M, and 4M tokens) while maintaining competitive performance on standard benchmarks. 
 

@@ -11,7 +11,7 @@ modified: 2025-09-25T16:24:05.355Z
 - pros-comfyui
   - easy ui to start image-gen
   - 可扩展: custom-node support
-  - 对最新模型的支持很快
+  - 对最新模型的支持很快, 且 **性能优化得很好**
   - 对各种硬件的支持较好，包括nvidia/amd/cpu
   - 支持 sub-graph
   - 支持 flow control，如conditional
@@ -25,6 +25,7 @@ modified: 2025-09-25T16:24:05.355Z
   - 一些复杂的workflow难以理解和维护
   - 对于嵌入式文生图/改图的场景，comfyui的工作流图不如invokeAI的canvas易用
   - 不是针对comfyui，而是所有文生图的方案, 都存在交互性差的缺点
+  - 基于 diffusers 的方案正在发展，有替代的趋势
 
 - who is using #comfyui
   - jaaz, comflowy

@@ -15,6 +15,7 @@ modified: 2025-11-16T15:34:02.881Z
   - 🔗 insights with citations: traceable source in every answer combined with confidence scores
     - AGI内容中包含知识库中的内容引用，点击时能自动打开原文pdf并高亮原文位置
   - 支持使用本地llm, 包括ollama/lmstudio
+  - 🇨🇳 对中文的支持较好
   - create custom apps and AI agents using a No-Code interface
   - graph: All data is structured into a powerful knowledge graph
   - Modular & Scalable Architecture – Every service is loosely coupled to scale independently

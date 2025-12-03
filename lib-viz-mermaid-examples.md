@@ -22,6 +22,12 @@ modified: 2025-11-19T17:59:15.580Z
     - 写文档的时候，把图表库 clone 到文档目录，把图表库路径告诉 agent，让它根据文档内容，自由选择最合适的图表。
     - 如果有特殊需求， 可以将指定图表的文件给 agent 要求它用。
     - 如果 agent 绘制图表出错， 可以把样本文件给它让它照抄。
+
+- https://github.com/gotoailab/modern_mermaid /MIT/202512/ts
+  - https://modern-mermaid.live/
+  - modern, beautiful Mermaid.js editor with live preview, multiple themes, and high-quality export. 
+  - [I built a modern Mermaid.js editor with custom themes + beautiful exports — looking for feedback! : r/Markdown _202512](https://www.reddit.com/r/Markdown/comments/1pc7e0p/i_built_a_modern_mermaidjs_editor_with_custom/)
+    - Nice work! Good selection of themes, backgrounds, fonts, example charts, etc.
 # examples
 - https://github.com/skovy/llm-markdown /MIT/202309/ts/inactive
   - https://llm-markdown.vercel.app/

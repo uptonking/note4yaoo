@@ -277,13 +277,6 @@ modified: 2022-06-03T21:34:54.893Z
   - [Not open-source](https://github.com/skiff-org/skiff-apps/issues/94)
     - This project is advertised as open-source despite that CC BY-NC-SA is clearly not an open-source license
 
-- https://github.com/netease-youdao/QAnything /apache2/202402/python/vue
-  - https://qanything.ai/
-  - 开源的企业级本地知识库问答解决方案，致力于支持任意格式文件或数据库的问答
-  - 模型数据全在本地，可断网使用
-  - Support selecting multiple knowledge bases for Q&A
-  - Currently supported formats include: PDF(pdf), Word(docx), PPT(pptx), XLS(xlsx), Markdown(md), Email(eml), TXT(txt), Image(jpg，jpeg，png), CSV(csv), Web links(html) and more
-
 - https://github.com/mayneyao/eidos /2.5kStar/AGPLv3/202503/ts
   - https://github.com/mayneyao/eidos-wiki
   - https://wiki.eidos.space/
@@ -753,6 +746,9 @@ modified: 2022-06-03T21:34:54.893Z
   - Golang + Beego + Python + Flask + MySQL
 
 ## etl-doc
+
+- https://github.com/NanoNets/docext /1.8kStar/apache2/202508/python/inactive
+  - An on-premises, OCR-free unstructured data extraction, markdown conversion and benchmarking toolkit
 
 - https://github.com/run-llama/llama_index /45.5kStar/MIT/202511/python
   - https://developers.llamaindex.ai/

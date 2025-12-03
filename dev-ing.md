@@ -247,7 +247,7 @@ use vanilla html/css/javascript to create a simplistic personal profile landing 
 use vanilla html/css/javascript to create a personal profile landing page: homepage shows a cool welcoming animation, then shows 4 example personal projects, then a simple get in touch form below it
 use react to create a homepage shows a list of frontend frameworks like react/vue/angular, when clicking the framework, navigate to the route to show its introduction
 
-- give a comprehensive overview of this project. analyze the project architecture and primary user journey use cases. then find some important source code to explain the core architecture and data flow.
+- provide a comprehensive overview of this project. analyze the project architecture and primary user journey use cases. then find some important source code to explain the core architecture and data flow.
 
 - I want to run this project fully locally without docker and nginx.
   - please read setup-related files like docker-compose.yaml and README.md, and tell me steps and shell commands to run frontend/backend locally.

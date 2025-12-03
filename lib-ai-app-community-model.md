@@ -114,9 +114,41 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
-- ## 
+- ## [Q: When will there be fast and competent SLMs for laptops? : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pcurp8/q_when_will_there_be_fast_and_competent_slms_for/)
+  - Qwen3-30B-A3B and GPT-OSS-20B both uses Mixture-of-Experts instead of dense layers for their SLM
+  - Kimi-Linear and Qwen3-Next-80B-A3B moved along to use "mixed attention" (majority of layers with linear attention) to speed things up AND have longer contexts
+  - Not enough people getting into ternary attention like BitNet a4.8 / BitNet v2 or ternary quantization (PTQ)
+  - Whatever layer routing is to reduce the amount of RAM needed, including Ouro-2.6B-Thinking these days and Mixture-of-Depths back in 2024
+  - Are all of these different techniques conflicting with one another? If it is just a lack of funding for fine-tuning/modding an existing SLM into something fast (assuming QAFT and RL), how much would it cost to crowdfund a project like this?
 
-- ## 
+- It depends on your standards, I believe that for the average Joe, something like Ling Mini 2.0 would already check those requirements (fast -> 1B active is doable for most modern laptops at 20+ tok/s) (Competent -> 16B total parameters makes it decent enough for 99% of the tasks an average person would likely use it for)
+
+- For most people, Llama3 8B was the moment where their laptop could handle a ton of their work and queries locally.
+
+- I use Ling mini to correctly format the ocr result of screenshots. Its the fastest and adheres well to long system prompt. All on cpu.
+
+- We already have that. Llama 3.2 3B for writing. Gemma 3 for multimodal. Qwen 3 4B for stem. Granite 4 for rag.
+  - The issue is that the active/ dense parameter count determines the limit of how intelligent the overall model is. The mixture of experts kinda determines how big the model's encyclopaedia is.
+  - Its possible to argue that llama 3.2 3B, gemma 3 4B and Qwen 3 30b are around the same level in writing. But Qwen 3 30b is clearly the one with more knowledge.
+  - There is also the requirement for AI to have ethics and emotions, which is frankly way too complex to fit into an SLM without lobotomising it.
+  - Laptop ram is just too limited in bandwidth and capacity
+
+- I am tempted to suggest RAG-ing an SLM into being better than just being slowed down by a 32B dense model (8B or 14B on higher-performance laptops), and since dense models are "more intelligent" compared to MoE... Maybe BitNet is a more or flexible layer activation is a workaround then?
+
+- Bitnet and ternary are out as they need specific hardware
+
+- ## [I'm surprised how simple Qwen3 VL's architecture is. : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pcomhi/im_surprised_how_simple_qwen3_vls_architecture_is/)
+- Most machine learning architecture isn’t really that complicated when you look at it in code. Plus, in software development simplicity = better.
+
+- training pipeline probably much more complicated
+
+- To be honest... The entire domain of LLMs and even VLMs are fairly simple... Working in self driving for over 5 years exposed to bespoke perception and multi task models, it shocked me how simple LLMs are, especially training it from the model side.
+  - The literal loss function for LLMs during pretraining and finetuning is just cross entropy... Compare that to something more complicated like YOLO, it's actually insane in terms of difference of complexity.
+  - Really the solution now.... Stack some transformers, use a LM head, chunk input for VLMs into patches... Pretty damn simple I have to say
+
+- The nicest part of Qwen3-VL is that most of the “magic” comes from small, well-chosen inductive biases rather than a baroque stack. It’s basically ViT → lightweight bridge → plain decoder LLM, with two tasteful upgrades: interleaved 3D positional encoding (i-MRoPE) and DeepStack feature fusion.
+
+- In my experience it is not very good at producing accurate coordinates of items it sees
 
 - ## [Finally DeepSeek supports interleave thinking : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pbal3o/finally_deepseek_supports_interleave_thinking/)
   - If a thinking model supports multi-step tool calls and can incorporate thinking from historical steps during these calls, then this model supports interleaved thinking.

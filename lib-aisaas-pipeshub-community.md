@@ -17,6 +17,28 @@ modified: 2025-11-16T15:34:38.658Z
 - ## 
 
 - ## 
+# discuss-ragflow
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [The first time the effect was excellent. After asking several others and then asking the first one again, the effect wasn't so good. _202503](https://github.com/orgs/infiniflow/discussions/5772)
+- 如果文章内容太多，rag的对话 会按关键字向量化后 去知识库，你的关键字匹配到的内容太多 ranker后就拿不到关键的块了， 拿不到关键块LLM就回答不出来了。 估计你要检查分块的情况， 看看你问题的关键字是不是命中块。
+
+- ## [对于不同语言的知识库的检索及运用，目前效果非常差 · infiniflow _202505](https://github.com/orgs/infiniflow/discussions/7470)
+  - 当我知识库中的语料为英语，我的提问语言是中文时，往往大模型就直接搜索网站从而给出答案了，对知识库中的知识运用为0。请问这个状况是否有好办法可以解除？
+
+- Based on my understanding of the source, this case is caused by the text matching in the index; in the index, the text is in a different language. From the information in the link #7376 (comment), it seems that the team plans to let users choose a language. This might be a viable solution, but in real - world scenarios, it's challenging for end - users to select the appropriate language. After all, it's reasonable that users may not be aware of the language of the documents stored in the database.
+  - I have an idea of partitioning the knowledge based on the primary language of the documents. In this way, during the retrieval process, retrieval can be carried out separately according to the settings of the knowledge base.
+- Thanks for sharing your thoughts—really appreciate the perspective!
+  - The design I’ve currently passed to the engineering team is to support a multi-select dropdown with major languages (e.g. English, Chinese, French, etc.), allowing developers to configure multiple target languages as needed.
+  - If no languages are selected, we’ll use the original query language for retrieval.
+  - If specific languages are selected, the query will be translated into those languages, and parallel searches will be performed with results merged before ranking.
+- Could you explain to me why you choose this strategy? It is supposed to directly retrieval correct chunks in original language with using multilingual embedding models , instead of translation, which could introduce some bias. Thanks!
+  - To clarify: when querying the vector database, we still use the original query language directly for retrieval, leveraging multilingual embedding models to avoid unnecessary translation.
+  - The translation step is only applied when performing full-text search, where language mismatches are more likely to affect keyword matching accuracy.
 # discuss-surfsense
 - ## 
 

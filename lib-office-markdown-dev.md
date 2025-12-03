@@ -24,7 +24,7 @@ modified: 2025-09-21T18:39:13.776Z
   - 另一种方案是参考obsidian-bases, 用yaml来输入table
 
 - markdown-layout
-  - pdf2markdown后支持渲染为分栏布局
+  - pdf2markdown后支持渲染为分栏布局, 自定义语法? 可参考 gitbook/YAMLResume?
 
 - markdown-ai
   - 文生图包含元数据，方便复现

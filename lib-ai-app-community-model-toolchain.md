@@ -1224,6 +1224,20 @@ curl http://localhost:11434/api/chat -d '{
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [feat: add trace log level by mxyng · Pull Request · ollama/ollama _202505](https://github.com/ollama/ollama/pull/10650)
+  - OLLAMA_DEBUG= or OLLAMA_DEBUG=0 or OLLAMA_DEBUG=false: unset or empty or falsy values sets default INFO level
+  - OLLAMA_DEBUG=1 or OLLAMA_DEBUG=true: set DEBUG level
+  - OLLAMA_DEBUG=2: set TRACE level
+
+- [OLLAMA_DEBUG=1 Not Showing Prompts in Logs ](https://github.com/ollama/ollama/issues/10950)
+  - OLLAMA_DEBUG=2
+
 - ## 🏠 [Web front end for Ollama? Is llama.cpp what I'm looking for? : r/ollama](https://www.reddit.com/r/ollama/comments/1p0p1pm/web_front_end_for_ollama_is_llamacpp_what_im/)
 - Ollama is a wrapper and somewhat of a fork of llama.cpp. Ollama runs on a core version of llama.cpp but doesn't have the same capabilities or features as far as granular controls.
   - But they're at their heart inference engines first thst happen to have their own options front ends. I've used both with Open WebUI for about 8 months.

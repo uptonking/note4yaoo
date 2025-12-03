@@ -98,6 +98,13 @@ modified: 2021-05-23T18:45:59.139Z
   - Semantic Layer: MDL models encode schema, metrics, joins
   - support Ollama
 
+- https://github.com/dataease/SQLBot /4.8kStar/GPL+LOGO/202512/python/ts
+  - https://sqlbot.org/
+  - 基于大模型和 RAG 的智能问数系统，对话式数据分析神器
+  - 开箱即用：仅需简单配置大模型与数据源，无需复杂开发，即可快速开启智能问数
+  - 依托大模型自然语言理解与 SQL 生成能力，结合 RAG 技术，实现高质量 Text-to-SQL 转换
+  - 易于集成：支持多种集成方式，提供 Web 嵌入、弹窗嵌入、MCP 调用等能力；能够快速嵌入到 n8n、Dify、MaxKB、DataEase 等应用
+
 ## viz-charting
 
 - https://github.com/geodaai/openassistant /MIT/202510/ts

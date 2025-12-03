@@ -297,7 +297,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 公益站 [Search results for '公益站' - LINUX DO](https://linux.do/search?q=%E5%85%AC%E7%9B%8A%E7%AB%99%20order%3Alatest)
   - [L站免费AI汇总 ](https://linux.do/t/topic/638821)
   - [最新福利羊毛/福利羊毛, Lv2话题 - LINUX DO](https://linux.do/c/welfare/welfare-lv2/61)
-  - 📌 [Agent Router](https://agentrouter.org/), 每日签到获取$25
+  - 📌 [Agent Router](https://agentrouter.org/console), 每日签到获取$25
     - 模型支持 Claude Code、Codex、RooCode、Qwen Code、Gemini Cli 等多款工具
     - 仅支持coding工具，不支持使用api聊天
     - 模型支持不稳定, 似乎不支持claude
@@ -326,11 +326,6 @@ modified: 2025-03-22T16:10:24.856Z
     - 仅支持gemini模型
     - 改了下速率限制。现在变成5分钟25次，对自动化和roocode这些用户变好了很多
     - [薄荷公益站签到](https://qd.x666.me/)
-  - [tbai API](https://tbai.xin/), 即将关闭
-    - 模型支持gemini/gpt, 不支持claude
-    - API调用频率限制为 10 RPM
-    - gpt-load 作者
-    - [【T佬公益】TBAI公益站主贴-爽用Gemini|OpenAI|DeepSeek模型 ](https://linux.do/t/topic/683726)
   - [23公益站](https://sdwfger.edu.kg/console), 不用签到
     - 平台将于每周五、周六统一发放额度兑换码。 额度申请：如您的额度提前用尽，可联系管理员进行补充申请
     - 模型丰富: claude, gpt, gemini
@@ -340,12 +335,6 @@ modified: 2025-03-22T16:10:24.856Z
     - API 调用频率限制为 12RPM，公益站永久免费，采用公平限流策略以保障服务稳定
     - [KYX API Refueling Station 公益站额度加油站](https://quota.kyx03.de/)
       - 别玩至尊场，1000积分一次警告扣16x，风险太高; 高级场的高积分也可以获得高收益
-  - [黑与白chatAPI](https://ai.hybgzs.com/), 每日转盘
-    - 模型丰富: claude/gemini, 但没有gpt5(有mini)
-    - 很多openrouter渠道的模型
-    - 本站完全免费！暂无任何充值通道
-    - 绝大部分模型倍率换算后与官方价格相同，为缓解服务器资源压力，所有免费模型实际扣除配额均按付费标准计算
-    - [黑与白chatAPI福利站](https://cdk.hybgzs.com/)
   - [包子公益](https://api.codeqaq.com/)
     - [包子铺](https://api.5202030.xyz/)
     - 只开放linuxdo lv2以上注册
@@ -372,12 +361,23 @@ modified: 2025-03-22T16:10:24.856Z
   - [我爱996公益](https://529961.com/)
     - 仅限 L 站 2 级以上用户注册
     - [【公益站我爱996一次】测试上线已接入LinuxDo ](https://linux.do/t/topic/1147448)
-  - [FovtAPI](https://api.voct.top/console)
-    - [NewAPI签到系统](https://gift.voct.top/)
+  - [FovtAPI](https://api.voct.top/console), 论坛发码
+    - [NewAPI签到系统](https://gift.voct.top/), 已失效
   - [mmkg API](https://api.mmkg.cloud/)
     - 仅在每周五下午 18:00 至 21:00 开放，每周限量 100 人
     - 支持claude,gemini, 不支持gpt
     - Gemini系列模型永久免费， 与Gemini对话不会消耗帐号余额（可忽视帐号余额）
+  - [黑与白chatAPI](https://ai.hybgzs.com/), 每日转盘
+    - 模型丰富: claude/gemini, 但没有gpt5(有mini)
+    - 很多openrouter渠道的模型
+    - 本站完全免费！暂无任何充值通道
+    - 绝大部分模型倍率换算后与官方价格相同，为缓解服务器资源压力，所有免费模型实际扣除配额均按付费标准计算
+    - [黑与白chatAPI福利站](https://cdk.hybgzs.com/)
+  - [tbai API](https://tbai.xin/), 即将关闭
+    - 模型支持gemini/gpt, 不支持claude
+    - API调用频率限制为 10 RPM
+    - gpt-load 作者
+    - [【T佬公益】TBAI公益站主贴-爽用Gemini|OpenAI|DeepSeek模型 ](https://linux.do/t/topic/683726)
   - [VoAPI公益站](https://demo.voapi.top/), 每日签到
     - [【首发更新】全新API分发和管理系统-VoAPI ](https://linux.do/t/topic/218662)
     - 曾经的帐号已注销，需要重新注册

@@ -18,6 +18,9 @@ modified: 2025-09-21T13:58:08.942Z
 
 - features
   - custom serialization: include pic caption, annotation
+
+- 优化提取中文pdf文字的方案
+  - 可参考华人团队的方案, 如 mineru
 # draft
 - 对于任意一个文件，如何自动选择pipeline来convert
 

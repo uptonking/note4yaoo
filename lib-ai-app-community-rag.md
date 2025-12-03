@@ -36,6 +36,7 @@ modified: 2024-09-08T20:08:16.088Z
 
 - resources
   - [RAG+AI工作流+Agent：LLM框架该如何选择，全面对比MaxKB、Dify、FastGPT、RagFlow、Anything-LLM, 以及更多推荐 - 知乎 _202407](https://zhuanlan.zhihu.com/p/711761781)
+  - [[RAG优化] 支持中文的开源 embedding models 综述 - 知乎](https://zhuanlan. zhihu.com/p/1888778722225681562)
 # draft
 - rag as a service(细分市场)
   - doc-search as a service, for static-sites/note-taking/papers
@@ -264,7 +265,34 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [28M Tokens Later: How I Unfucked My 4B Model with a smart distilled RAG : r/LocalLLM _202512](https://www.reddit.com/r/LocalLLM/comments/1pcwafx/28m_tokens_later_how_i_unfucked_my_4b_model_with/)
+  - I've recently been playing around with making my SLM's more useful and reliable. I'd like to share some of the things I did
+- TLDR
+  - Use a strong model to write clean, didactic notes from source docs.
+  - Distill + structure those notes with a local 8B model.
+  - Load distilled notes into RAG (I love you, Qdrant).
+  - Use a 4B model with low temp + strict style as the front‑end brain.
+  - Let it consult RAG both for facts and for “who should answer this?” policy.
+- With a GOOD initial summary (and distillation) you can make a VERY capable little brain, that will argue quite well from first principles. Be aware, this can be a lossy pipeline...so make sure you don't GIGO yourself into stupid. IOW, trust but verify and keep both the source material AND SUMM-file.md until you're confident with the pipeline. (And of course, re-verify anything critical as needed).
+  - I tested, and retested, and re-retest a lot (literally 28 million tokens on OR to make triple sure), doing a bunch of adversarial Q&A testing, side by side with GPT5, to triple check that this worked as I hoped it would.
+  - The results basically showed a 9/10 for direct recall of facts, 7-8/10 for "argue based on my knowledge stack" or "extrapolate based on knowledge stack + reference to X website" and about 6/10 on "based on knowledge, give me your best guess about X adjacent topic". That's a LOT better than just YOLOing random shit into Qdrant...and orders of magnitude better than relying on pre-trained data.
+- my RAG set up -
+  Chunk size: 600
+  Chunk o/lap: 175
+  Embedding model: e5-small-v2
+  Re-ranker: TinyBERT
+  Top K: 6
+  Top K_reranker: 4
+  Relv score: 0
+  BM25 weight: 0.6
+  Qdrant embeds at 384 DIM. 
+- TL; DR - everything is small and fast on hardware constrained rig (I7-8700, 32GB ram, 4GB Quadro P1000)
+
+- So I've been thinking about this a lot and might embark on the same journey. Been playing with RAG pipelines a bit and am not hating it.
+
+- Your distilled-notes-first approach is right; layer a strict retrieve-then-rerank, corpus hygiene, and automation to keep it sharp.
+  - Concrete tweaks that worked for me: chunk 800-1200 tokens with small overlap and rich metadata (doc_id, section, version, date). Generate multi-query variants or HyDE to lift recall, then rerank with a local cross-encoder (bge-reranker-v2) before the 4B synthesizes. Add a confidence gate: if top reranked scores fall below threshold, return “insufficient evidence” or escalate to the 8B. Use Qdrant payload filters to scope “buckets” and set MMR to avoid near-duplicate chunks. Hash paragraphs and re-embed only changed ones
+  - Bottom line: distill first, then tight retrieve-then-rerank with guardrails, thresholds, and evals.
 
 - ## 💡 [I spent 2 years building privacy-first local AI. My conclusion: Ingestion is the bottleneck, not the Model. (Showcase: Ollama + Docling RAG Kit) : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pamu5t/i_spent_2_years_building_privacyfirst_local_ai_my/)
   - I’ve been working on strictly local, data-privacy-compliant AI solutions for about two years
@@ -453,6 +481,22 @@ modified: 2024-09-08T20:08:16.088Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [I rewrote hybrid search four times - here's what actually matters : r/Rag](https://www.reddit.com/r/Rag/comments/1pd7tao/i_rewrote_hybrid_search_four_times_heres_what/)
+  - The actual problem Most resources tell you "combine vector search with keyword search" and show you a 0.5/0.5 weight split. That's it. But when you actually build it with real product data, you hit these issues: SKU codes like "MBP-M3MAX-32-1TB" return garbage from vector search; Score ranges don't match (vectors give you 0.3-0.4, BM25 gives you 15-50)
+  - How I approached it
+  - Each product has multiple fields - not just the description. This matters for multi-field indexing.
+  - You can't just add vector scores (0.3-0.4 range) to BM25 scores (15-50 range). I implemented three normalization methods in the example
+  - Query patterns should determine your weights. Instead of hardcoding 0.5/0.5, I built pattern detection
+  - Multi-field indexing is critical. For product search you need to index multiple fields separately
+  - When keyword search returns zero results (user searches "Microsoft laptop" but you only sell Apple/Dell), you need a fallback
+  - https://github.com/pguso/rag-from-scratch /MIT/js
 
 - ## [What’s your go-to combo of LLM + embedding model for RAG? : r/Rag _202512](https://www.reddit.com/r/Rag/comments/1pba2lt/whats_your_goto_combo_of_llm_embedding_model_for/)
 - Qwen3 8B is the current SOTA for embeddings with a 32k context size, which gives you much more flexibility when chunking text.

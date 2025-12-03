@@ -963,6 +963,10 @@ modified: 2025-08-16T14:12:24.416Z
 
 - I like the flux2, which has a wider dynamic range, 
 
+- [Flux 2 vs Z-turbo : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1pd6mu4/flux_2_vs_zturbo/)
+  - I have myself used/tested Flux 2 Dev and Z-Image quite a bit, and in my experience (as your examples also shows here imo), Z-Image is better at layout/scene composing, its images are often more pleasant to look at.
+  - Flux 2 Dev however has better prompt adherence and world knowledge, you can easier get it to do exactly what you want, and it understands more "knowledge"-things like characters and styles
+
 - ### [Fashion photography comparison. Nano Banana Pro vs Z Image Turbo. Who did it better? : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1p8wbgj/fashion_photography_comparison_nano_banana_pro_vs/)
 
 - ## 🌰 [Z-Image Test on 126 Portrait Prompts : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1p83wgf/zimage_test_on_126_portrait_prompts/)
@@ -1679,7 +1683,8 @@ Q8（8 位）	    16GB+	   接近原始版本
 
 - ## 
 
-- ## 
+- ## [New stealth model "microwave" now available - free during alpha : r/CLine](https://www.reddit.com/r/CLine/comments/1pcasak/new_stealth_model_microwave_now_available_free/)
+  - 饱和度很高的油画
 
 - ## [Flux2: decreased style decay from long prompting! (part 1.5) : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1pb7hbf/flux2_decreased_style_decay_from_long_prompting/)
   - 风格统一的插画
