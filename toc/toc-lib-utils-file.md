@@ -341,6 +341,15 @@ modified: 2023-04-05T19:35:14.347Z
     - Objects are both retrieved and cross-referenced using a structural hash of their contents as their id (a form of content-based addressing).
   - Mutability is implemented using CRDTs. Identities and data authentication are cryptographic.
   - Objects and their references form an immutable DAG, a fact that is used for data replication in HHS p2p mesh.
+
+## file-converter
+
+- https://github.com/VERT-sh/VERT /11.1kStar/AGPL/202511/ts/svelte
+  - The next-generation file converter. 
+  - Open source, fully local* and free forever.
+  - Convert files directly on your device using WebAssembly*
+  - Convert images, audio, documents, and video*
+  - Supports over 250+ file formats
 # undo/history
 - https://github.com/pomber/git-history /MIT/202303/js/inactive
   - https://githistory.xyz/

@@ -390,7 +390,17 @@ modified: 2025-11-30T17:27:16.720Z
   - With Zep, you can provide AI assistants with the ability to recall past conversations, no matter how distant, while also reducing hallucinations, latency, and cost.
   - Zep persists and recalls chat histories, and automatically generates summaries and other artifacts from these chat histories. 
   - Zep also provides a simple, easy to use abstraction for document vector search called Document Collections. This is designed to complement Zep's core memory features, but is not designed to be a general purpose vector database.
-# embedding
+# chunking/embedding
+- https://github.com/CoreyFransen08/chunk-forge /apache2/202512/python/ts
+  - A self-hosted document processing platform for converting PDFs to Markdown with semantic chunking, drag-and-drop editing, rich metadata management, and multi-format export.
+  - Upload PDFs and convert them to Markdown using LlamaParse, MarkItDown, or Docling.
+  - Multiple strategies (recursive, paragraph, heading, semantic, sentence, token, hierarchical) with configurable chunk sizes.
+  - Frontend: React + Vite + TypeScript + Tailwind CSS + dnd-kit
+  - Backend: Node.js + Express + TypeScript + Drizzle ORM
+  - Parser Service: Python + FastAPI + LlamaParse/MarkItDown/Docling
+  - Storage: Local filesystem
+  - Built-in export presets for popular vector databases: Pinecone, Chroma
+
 - https://github.com/sovit-123/local_file_search /MIT/202510/python
   - Scripts to replicate simple file search and RAG in a directory with embeddings and Language Models.
 

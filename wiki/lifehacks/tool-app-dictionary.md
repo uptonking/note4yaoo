@@ -169,10 +169,14 @@ modified: 2023-07-08T12:47:00.141Z
   - [第三次基本结束・Wiktionary2023 + OxfordreFerence+中英专业词典](https://forum.freemdict.com/t/topic/10746)
   - [中国文学大辞典[1991][马良春]](https://forum.freemdict.com/t/topic/13400)
 # zlibrary
+- tips
+  - [Z-Library使用指南（2025） - 知乎](https://zhuanlan.zhihu.com/p/1931114405795432010)
+
 - site/mirrors
   - https://z-library.se/
 
 - [Anna’s Archive: LibGen (Library Genesis), Sci-Hub, Z-Library in one place - Anna’s Archive](https://annas-archive.org/)
+  - 下载特别慢， 可通过外部链接到zlibrary下载
 
 - resources
   - [这个合并了Z-Library、Library Genesis和Sci-Hub](https://forum.freemdict.com/t/topic/18836)
@@ -190,6 +194,8 @@ modified: 2023-07-08T12:47:00.141Z
   - svg/canvas
   - 图解xx
   - python/数据处理
+  - 经济/金融原理/数学/程序员
+  - 辞典/辞典
 
 - [书格](https://www.shuge.org/)
   - Shuge.org 是一个自由开放的数字图书馆。致力于开放式分享、介绍、推荐有价值的古籍善本，并鼓励将文化艺术作品数字化归档。

@@ -1150,6 +1150,9 @@ modified: 2025-08-23T11:43:35.904Z
   - 不局限在 xyz 三维参数的交叉调试，而是 workflow 内的所有参数均可交叉，一次完成所有调试
   - 批量调试可以是多个参数的组合体，如「商品图 + 对应 prompt」 X 不同基模
   - 多维表格，自由抽卡预览或批量导出：不同参数的聚合浏览方式
+- https://github.com/TharindaMarasingha/ComfyUI-CSV-to-Prompt /202512/python
+  - custom node for ComfyUI that allows you to load prompts directly from CSV files. 
+  - It is specifically designed for Bulk/Batch Image Generation, allowing you to automate the creation of hundreds of images using a pre-defined list of prompts.
 
 - https://github.com/joenorton/comfyui-mcp-server /97Star/apache2/202503/python/inactive
   - lightweight Python-based MCP server that interfaces with a local ComfyUI instance to generate images programmatically via AI agent requests.

@@ -56,7 +56,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 耗电量大, 对手机端不友好
 
 - 需要针对local本地优化
-  - 自动unload占用内存的image/llm模型, comfyui-lmstudio-node已实现了相关逻辑
+  - 自动unload占用内存的image/llm模型, comfyui-lmstudio-node已实现了相关逻辑, 类似llama-swap 但同时支持文本/图片模型
 
 - roadmap-ai
   - 针对国内免费api定制的chat/ppt/mermaid: 魔搭, 快手万擎
@@ -148,6 +148,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 基于代码的文生图方案，如sandpack, 可用于小红书卡片场景，可参考 https://langgptai.feishu.cn/wiki/JQVEwKJQkilWztkMLRGcA8zqngb
 
 - 🖼️ image-generator/editor
+  - 风格: 古风, Q版, 手绘(灵感/创意/草稿), 自然植物
   - 拆分图片和文字，提供更灵活的修改和编辑体验
   - prompts: bg, person/object, text
   - 模型选择要考虑: 硬件限制、速度、质量， 只有成熟的model才会提供lite/turbo/精简版
@@ -464,6 +465,9 @@ modified: 2025-03-22T16:10:24.856Z
 
 - image-gen 🖼️
   - [小白生图 - AI Image Generator](https://catsapi.com/)
+  - [RyanVan Z-Image | AI 图像生成](https://ryanai.org/)
+    - 每天5张免费
+    - 排队时间可能较长
   - [Z-Image-Turbo | AI 绘图工作站](https://zzz.supxh.xin/)
   - [最新公益绘画API ](https://linux.do/t/topic/599258)
     - 百度绘画

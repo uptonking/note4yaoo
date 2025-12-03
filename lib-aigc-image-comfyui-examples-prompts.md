@@ -176,3 +176,6 @@ modified: 2025-09-13T09:32:22.969Z
 - 
 
 # more
+- [21 Gemini Prompts for Teen Boys - Imagine with Rashid](https://imaginewithrashid.com/21-gemini-prompts-for-teen-boys/)
+
+- [The Best 25 Stable Diffusion Prompts for Couple](https://openart.ai/blog/post/stable-diffusion-prompts-for-couple)

@@ -526,7 +526,20 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
-- ## 
+- ## 现在所有的大语言模型，无论它号称上下文窗口可以多少，输入是真的可以很长，但是输出不能太长，输出长了就幻觉严重，相对好一些的是 Gemini，
+- https://x.com/dotey/status/1995667479377707123
+  - 所以使用时，你可以输入很多资料给它参考，但是每次不要输出太多，比如一次最多输出几千字，多了就要分页。
+- 可以采用分几步，然后提供一个checklist确保他自己审核
+  - 对，todo list有助于拉回注意力好一些，但一样输出内容不能太长
+
+- 说下我的理解：每个token输出都是一个概率，举个例子：比如说“我”这个字后面跟着“们”还是“的”，对llm来说就是取概率高的。但是概率有2个问题：
+  1. 就算每次都取最高的，0.9*0.9*0.9…，整体来看，符合预期的概率越来越低，所以输出太多之后没法保证不走偏
+  2. 中间某一个位置，两个token的概率相近，llm选择不小心走偏了之后，后面输出的token会一直在这个走偏的token上继续输出
+  - 补充一点，现在LLM有温度设置，不是纯贪心取最大概率的。而且算力有限，无法做到全局最优。只能说篇幅越短，越准确。 现在大家做的CoT，以及利用Agentic workflow不断重写，其实都是在逼近全局最优。
+
+- 个人感觉：Gemini 号称有 100 万的上下文，其实一般跑到 20-30 万字左右就不行了
+
+- 输入和输出对模型来说都是一样的，只要上下文过长，模型或多或少都会出现指令不跟随。
 
 - ## ⏳ [A Tribute to MetaAI and Stability AI - 2 Giants Who Brought us so Much Joy... And, 2025 is the Year they Die... So Sad! : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1p9ah2v/a_tribute_to_metaai_and_stability_ai_2_giants_who/)
 - People think the trillion dollar spend is for the r&d and scale. Research is a fraction of the opex, and the scale is not about breaking through new model features but to suck in as much actual human usage data as possible to train exclusively better models.

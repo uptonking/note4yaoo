@@ -114,6 +114,20 @@ modified: 2025-09-01T07:58:29.058Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 认同这个CLAUDE md 实践，就两条：
+- https://x.com/9hills/status/1995308023578042844
+  - 1. 保持简短（不超过60行）
+  - 2. 将复杂的指令放到单独目录下，然后在 CLAUDE md 中增加索引（类似于 SKILL 的概念）
+
+- 第三条：不要用 /init
+  - 要分语言吧
+
 - ## [Does anyone use spec-driven development? : r/ChatGPTCoding _202511](https://www.reddit.com/r/ChatGPTCoding/comments/1otf3xc/does_anyone_use_specdriven_development/)
 - Yes, this has been my approach since May-ish. You have to review and adjust, though. You can't just generate a spec and then copy/paste without looking at anything.
 

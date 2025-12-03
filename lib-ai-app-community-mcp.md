@@ -9,10 +9,26 @@ modified: 2025-02-03T10:17:42.052Z
 
 # guide
 
+- mcp-alternatives
+  - restful api: api过于灵活, 需要自定义集成字段
+  - tool-use/function-calling
 # discuss-stars
 - ## 
 
-- ## 
+- ## [Is MCP actually better than REST for building AI agents, or is it just hype? : r/AI_Agents](https://www.reddit.com/r/AI_Agents/comments/1pbe2ua/is_mcp_actually_better_than_rest_for_building_ai/)
+  - MCP gives agents structured context and real tool discoverability, which REST never tried to solve. But wrapping APIs into MCP is still extra work. So does MCP deliver enough value to beat REST for agent tooling, or not really?
+- MCP repackages existing REST APIs for LLMs. Most REST APIs aren't natively built for LLMs and don't have to be. They often give too much flexibility for an LLM to handle error free. So I think it's a solid standard to put your REST API into a modular, LLM-ready, reusable package, while still keeping the original REST API.
+
+- Given the advances in tools, is MCP necessary? Can't the tool wrap an API invocation and return structured results?
+  - With coding agents this is the way
+
+- If you control both sides of the coin (client/server) the option is clear API wins hands down in my testing with full control over the endpoints and protocols; MCP is an overhead that is not needed.
+  - The protocol provides a contract both sides are building towards so when combine they just work. This is similar to Integrators of yester-year where you only need to build one side of the bridge and you can connect to whole world of existing services and applications (all without the man in the middle).
+
+- It isn't much different except for the instructions on how to use each tool, what would be each api endpoint. I agree that looking for a way to standardize is a solid move. Most APIs require bespoke, custom integration for each. I see MCPs as an attempt to integrate as many tools together as possible.
+  - Totally get that. The goal of MCP should be to streamline integration and reduce the chaos of custom setups. If it can really simplify the toolchain without adding too much overhead, it might be worth it in the long run.
+
+- Same thing only you have tool announcer endpoint in many ways. Stdio is insecure where api is a know security structure and url is universally to models from training so it’s just a door type to access. Everything else is just fitting security and pipes to api lines
 
 - ## 💥 各位做 chat bot 客户端、并最近在接入 MCP 协议的大佬们, 想请教一下大家是怎么做上下文压缩的呀, 
 - https://x.com/Shenqingchuan/status/1906987971703865804
