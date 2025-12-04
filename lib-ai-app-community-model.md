@@ -431,7 +431,19 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
-- ## 
+- ## [8 local LLMs on a single Strix Halo debating whether a hot dog is a sandwich : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pdh0sm/8_local_llms_on_a_single_strix_halo_debating/)
+  - https://github.com/lemonade-sdk/lemonade
+  - Lemonade v9.0.6 came out today, making it really easy to run many models at the same time... and this is the best demo I could think of. Hope it makes someone laugh today!
+  - This is a Ryzen AI MAX 395+ (aka Strix Halo). The models are between 3 and 8B parameters (size on disk is visible at the start of the video).
+  - Lemonade is a free and open local LLM server made by AMD to make sure we have something optimized for AMD PCs. Today we released a new version that lets many LLMs run at the same time.
+  - I made this quick HTML/CSS/JS app to demo the capability. It loads 8 LLMs, has them share a chat history, and then keeps prompting them until they vote yes or no on the user's question.
+  - In the backend, there are 8 llama-server processes running on the Strix Halo's GPU. The web app talks to lemonade server at http://localhost:8000, and then lemonade routes the request to the right llama-server process based on the model ID in the request.
+  - I thought it was funny the LLMs couldn't come to a final decision on this question. Just like people!
+
+- A tie? That's no good. There should have been 9 LLMs, like the Supreme Court.
+
+- Are they debating each other? Seems like they don’t spend much time disagreeing. I want to see one where they are forced into consensus or it doesn’t end (or maybe time it out and score it then)
+  - There’s 5 rounds of debate. First round they are supposed to give a hot take. Rounds 2 and 3 they’re supposed to react to each other (shared chat history). Rounds 4 and 5 they’re supposed to vote.
 
 - ## ["We're in an LLM bubble, not an AI bubble" - Here's what's actually getting downloaded on HuggingFace and how you can start to really use AI. : r/LlamaFarm _202512](https://www.reddit.com/r/LlamaFarm/comments/1pb2wr2/were_in_an_llm_bubble_not_an_ai_bubble_heres/)
   - Encoder-only models (BERT family) account for 45% of HuggingFace downloads, nearly 5x more than decoder-only LLMs at 9.5%. 

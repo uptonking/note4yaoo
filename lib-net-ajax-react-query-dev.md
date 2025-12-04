@@ -147,6 +147,36 @@ modified: 2023-03-05T08:55:03.696Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## Your app is probably 100-300ms slower than it needs to be... and it's CORS's fault.
+- https://x.com/euboid/status/1996263373739094389
+  - Every cross origin fetch can trigger an extra preflight round trip. Even to your api on a subdomain.
+  - Serve your API behind a proxy (ex /api) and those slow preflights disappear!
+
+- the preflight is fired concurrently ?
+  - Not true. For any request that needs a CORS preflight, the browser:
+  - 1. sends OPTIONS and waits
+  - 2. only then sends the real GET/POST.
+  - Those hops are sequential, so that request really is slower. You can have many requests in flight, but each one that preflights pays an extra RTT.
+  - You can see this in your network waterfall btw. 
+
+- A proxy hop also takes time
+  - Significantly less than a preflight request though! Especially if working via an internal network
+
+- This is a great point. We ran into this exact issue when calling external LLM APIs from the editor. Our solution was similar: a local proxy that forwards requests, stripping CORS headers. It's a bit of extra complexity but the latency win is worth it.
+
+- A proxy can cost more depending on how you deploy it, which is why Access-Control-Max-Age can come in handy. That said, the proxy solution will almost always remain faster but shifts security responsibility from the browser to your server.
+  - This won't matter much if you use query parameters as I found out that browsers will trigger a unique preflight request for each full url (including qp)
+
+- One variation I like to do - if your API is behind a CDN due to parts being cacheable for a certain TTL, it can be helpful to ask the CDN to generate a static CORS response for all endpoints. Keeps those at edge and away from real backend, and can enforce headers like Max-Age.
+
+- Http2 reduces this significantly and access-control-max-age prevents it on second request.
+
+- Doesn't CORS caching and wildcard accept headers solve this?
+
+- is it possible to proxy those requests with a service worker?
+
 - ## 🔡 I built React Query from scratch.
 - https://x.com/TAbrodi/status/1884571448670318883
   -  https://github.com/tigerabrodi/react-query-from-scratch

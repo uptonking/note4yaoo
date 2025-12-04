@@ -55,6 +55,12 @@ modified: 2023-05-07T18:35:50.897Z
 
 - ## 
 
+- ## 
+
+- ## [Favorite Self-Hosted Tools in 2025 (Looking for More Suggestions!) : r/selfhosted](https://www.reddit.com/r/selfhosted/comments/1pdui2u/favorite_selfhosted_tools_in_2025_looking_for/)
+
+- [What’s one tool you self-hosted that completely replaced a SaaS subscription for you? : r/selfhosted](https://www.reddit.com/r/selfhosted/comments/1pdwbvl/whats_one_tool_you_selfhosted_that_completely/)
+
 - ## 一款专注于哔哩哔哩直播切片和投稿的工具：BiliBili ShadowReplay。
 - https://x.com/GitHub_Daily/status/1895323043079299561
   - 支持直播缓存、历史回放、实时切片投稿，提供多直播间管理和多账号支持。

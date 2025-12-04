@@ -19,6 +19,10 @@ modified: 2020-11-03T06:55:09.225Z
   - 人脸识别	Yunnet
   - 人体识别	yolov8n-pose
   - 主体识别替换背景	RMBG-1.4/2.0
+# devtools
+- https://github.com/sharevb/it-tools /GPL/202512/ts/vue
+  - https://sharevb-it-tools.vercel.app/
+  - Collection of handy online tools for developers, with great UX
 # collection
 
  

@@ -1818,6 +1818,15 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Can M1/M2 Macbooks use ANY eGPU as a docking station? : r/eGPU _202212](https://www.reddit.com/r/eGPU/comments/zk8yzv/can_m1m2_macbooks_use_any_egpu_as_a_docking/)
+- unfortunately. The M2 MacBook Air only supports one external display up to 6K resolution. The only option is to use DisplayLink adapters/docking stations if you want more than one external display.
+
+- eGPUs work on Apple Silicon but the driver support on macOS is nonexistent because Apple no longer has any reason to listen to GPU manufacturers since they make their own now. You'd need to install Asahi Linux and wait for Thunderbolt support to be ready, but yes theoretically it should be doable
+
 - ## 🆚 [V100 vs 5060ti vs 3090 - Some numbers : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1p4b6ti/v100_vs_5060ti_vs_3090_some_numbers/)
 - Speed specs put the 3090 in first place in raw compute
   - 3090 - 35.6 TFlops FP16 (936Gb/s bandwidth)

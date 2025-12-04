@@ -217,6 +217,20 @@ modified: 2024-03-13T14:26:26.220Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 有很多人问我有什么开源替代，老实说，我觉得形势可能要至少等半年才能明朗。
+- https://x.com/RonVonng/status/1996501613180342463
+  - 其实台面上的就那么几个，Ceph，Garage，Seeweedfs，RustFS。RustFS 看上去很不错，但是 Alpha，Ceph 太重，Garage 性能太差，SeaweedFS 需要元数据集群。没有一个完美的选项。
+  - 如果让老冯来选择的话，目前最佳策略还是 锁死在 MinIO 20250422 UI 阉割前的版本。放在网络隔离的环境中用其实风险也相对可控；等待 RustFS GA，或者有人接手 MinIO 维护。 
+  - 如果是小文件场景的话，SeaweedFS 看上去也不错。
+  - 这个时间窗口 RustFS 如果能证明自己，应该可以抢占 MinIO 的生态位。
+
+- Elastic redis 有有完美的fork，为什么这玩意没有？
+  - 云厂商自己有自家的对象存储，没兴趣再来搞一个。但也不排除有谁来 fork 一个接盘下去，现在还是个挺好的机会 —— 从 20250422 Fork一下做个 LTS，也不用弄啥新功能，修下安全漏洞就行。
+
 - ## 🆚 [S3 implementation comparison — Vitastor _202405](https://vitastor.io/en/blog/2024-05-09-s3-comparison.html)
   - The main interest during comparison is comparing the S3 frontend, the external part of the server, because the storage layer will anyway be replaced with our own one (Vitastor).
 - Summary 

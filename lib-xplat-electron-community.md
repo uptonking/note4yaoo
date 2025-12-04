@@ -12,7 +12,13 @@ modified: 2023-01-02T10:30:19.459Z
 # discuss-electron-vs-tauri/nw
 - ## 
 
-- ## 
+- ## 🤔 做 windword 之前，稍微短暂的思考过，用 electron 还是 tauri。
+- https://x.com/wwwgoubuli/status/1996028487711556010
+  - 在模型下载后几百兆到几个G的情况下，那 100M 有什么关系吗？
+  - 尤其是要调用 native api 的时候，在 tauri 里，你真的搞的定吗？
+  - 折腾一个月下来，现在看来，选 electron 真是太明智了。
+
+- 我只考虑要不要用 native api ，用了就 electron
 
 - ## I love Tauri but I'd still choose Electron for a production app with thousands of users. 
 - https://twitter.com/timfishy/status/1672344034172362754

@@ -146,4 +146,11 @@ modified: 2025-09-21T13:58:46.548Z
   - Semantic Search - Find relevant code using natural language queries
   - Full Pipeline Automation - One command to chunk, embed, and store
   - 🛢️ Docker (for ChromaDB)
+# ocr-examples
+- https://github.com/Dogacel/deepseek-ocr-client-macos /MIT/202511/python/js
+  - A real-time Electron-based desktop GUI for DeepSeek-OCR
+  - [Dogacel/DeepSeek-OCR-Metal-MPS · Hugging Face](https://huggingface.co/Dogacel/DeepSeek-OCR-Metal-MPS)
+    - This repository uses the weights from the original DeepSeek-OCR and modifies model to support MPS and CPU inference
+# ocr-utils
+
 # more

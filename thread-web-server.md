@@ -9,6 +9,32 @@ modified: 2023-04-24T15:43:49.485Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 
+# discuss-architecture
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 看起来现在都倾向于Node做前后端的全栈，如果项目涉及到重计算 / 调模型的部分，再单独起一个python/Go的worker项目，通过 HTTP / gRPC / 队列互相调用
+- https://x.com/Jiaxi_Cui/status/1996564238551363676
+- 没错，而且目前来看趋势更加极端，vibe coding出来的大部分初始项目舍弃server端，从纯edge functions开始构建
+  - 是的，趋势是全都不自己做server，把这部分交给了saas，所以也不会用到GPU，甚至都不会用到服务器
+
+- 借楼问一下，node一般怎么做负载扩容，是横向给k8s加pod还是用pm2垂直起多worker
+  - 一般来说就是 k8s 的 ingress 到 pod，pod 里面启单进程
+  - 或者是用 openresty 也行，直接到 pod
+  - 如果是直接 ecs，那可以 pm2 启多个进程
+
+- 结合bun被收购来看, ai coding时代, 技术栈会迅速大一统
 # discuss
 - ## 
 

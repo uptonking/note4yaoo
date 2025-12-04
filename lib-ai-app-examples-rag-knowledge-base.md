@@ -11,6 +11,9 @@ modified: 2025-11-30T17:27:16.720Z
 
 - 优化提取中文文档文字的方案
   - 可参考华人团队的方案, 如 WeKnora, LightRAG
+
+- tips
+  - 没有持久化vector embeddings的示例都是demo, 每次启动都要将大文件index一遍
 # popular
 - https://github.com/pipeshub-ai/pipeshub-ai /2kStar/apache2/202511/python/ts
   - https://pipeshub.com/
@@ -285,11 +288,22 @@ modified: 2025-11-30T17:27:16.720Z
 - https://github.com/djleamen/doc-reader /MIT/202511/python/django
   - A Django-based document Q&A system using Retrieval-Augmented Generation (RAG) to process and query large documents with AI-powered responses.
   - Large Document Support: Handle documents up to 800k+ words
+  - 依赖langchain
+  - 🐛 实测查询效果很差, 很多关键词都搜不出内容 The provided context does not contain any information related to your query
+    - 页面显示score都是 1.0
   - Multiple Formats: PDF, DOCX, TXT, and Markdown support
   - REST API: Django REST Framework for integrations
   - Vector Search: FAISS/ChromaDB/Pinecone vector databases
   - CLI Tools: Command-line interface for batch operations
   - Memory issues with large docs: Reduce `CHUNK_SIZE` in `.env` or process documents individually
+  - 🧪
+    - chroma run --host 0.0.0.0 --port 8000 --path ~/Documents/repos/libfwk/ai-llm/all-rag/doc-reader/chroma_db
+    - OLLAMA_DEBUG=2 ollama serve
+    - uv run --env-file .env -- python main.py start
+    - 需要手动创建 创建默认的 DocumentIndex(找AI协助): DocumentIndex.objects.create(name='default'
+  - 👾 prompt
+    - i have run this django rag webapp fully locally by `uv run --env-file .env -- python main.py start`.
+    - when i open http://localhost:8000/ , the browser shows 
 
 - https://github.com/renton4code/pdf-rag /AGPL/202502/ts/inactive
   - A production-ready template for building Retrieval-Augmented Generation (RAG) applications. 
@@ -468,6 +482,11 @@ modified: 2025-11-30T17:27:16.720Z
   - 本项目是一个轻量级的代码智能系统，包含了RAG（检索增强生成）、Agent（智能代理）和评估系统的完整实现。
   - 项目从[TinyRAG](https://github.com/KMnO4-zx/TinyRAG)扩展而来，专注于代码场景的优化和实践。
   - [之前有多嫌弃大模型框架，现在用 LangGraph 就有多香 - 知乎 _202509](https://zhuanlan.zhihu.com/p/1946396924342177830)
+
+- https://github.com/Bessouat40/RAGLight /612Star/MIT/202512/python
+  - a lightweight and modular Python library for implementing RAG
+  - provides modular components to easily integrate various LLMs, embeddings, and vector stores
+  - supports: Ollama Google LMStudio vLLM OpenAI API Mistral API
 
 - https://github.com/wzdavid/ThinkRAG /MIT/202507/python/inactive
   - 大模型检索增强生成系统，可以轻松部署在笔记本电脑上，实现本地知识库智能问答
@@ -966,4 +985,7 @@ modified: 2025-11-30T17:27:16.720Z
 - https://github.com/imDelivered/WikiRAG /202512/python/代码少
   - [I built an offline AI chat app that automatically pulls Wikipedia articles for factual answers - runs completely locally with Ollama : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1pd2x8u/i_built_an_offline_ai_chat_app_that_automatically/)
     - We really need a universal Kiwix API endpoint that Just Works with tools calls from whatever inference engine someone is using
+# benchmark-rag ⚡️
+- https://huggingface.co/datasets/G4KMU/t2-ragbench
+  - [T2-RAGBench - Benchmark for RAG in Finance (10K Downloads on HF) : r/Rag](https://www.reddit.com/r/Rag/comments/1pde2au/t2ragbench_benchmark_for_rag_in_finance_10k/)
 # more

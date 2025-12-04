@@ -833,6 +833,38 @@ modified: 2025-08-16T14:12:24.416Z
 
 - ## 
 
+- ## 
+
+- ## 💡 [Zimage is nice but it gives me very little varation. : r/comfyui _202512](https://www.reddit.com/r/comfyui/comments/1pdu5d6/zimage_is_nice_but_it_gives_me_very_little/)
+  - I’ve been experimenting with Z image and really like the overall quality and prompt following, but I’m running into a strange issue: I get very little variation between generations. I mainly generate people, and unless I drastically change my prompt, face, scene and overall composition stay almost identical every time.
+  - Seed is set to randomize. Workflow is from ComfyUI templates, Z-Image-Turbo Text to Image.
+
+- add noise to latent and set denoise 0.8-0.9
+  - Used to use this method with older models, I used the Power Noise Suite though, works pretty good. Z has like a firm denoise cut-off where the latent really starts affecting the result, usually around 0.91-ish I think.
+
+- My current workaround for this problem right now is this workflow: latent -> latent rescale(0.25) -> ksampler with prompt_pos "a beautiful surreal garden" -> latent rescale(4.00) -> ksampler with denoise (0.8) with the real prompt and all shenanigans.
+  - CFG 0 doesnt work that good imo because it always generates portrait photos.
+  - TLDR: create some kind of latent from a different prompt and feed this into your real sampler with a high denoise so you get more variation.
+
+- I read a workaround here yesterday that involved skipping the first two steps in Ksampler advanced. It resulted in more variation
+
+- Zimage TURBO has little variation. I think the base model will be much better. Can't think of other 6B models that have better variation tbh
+
+- Same for me, even increasing CFG or steps and modifying prompt to force some variation leads to roughly the same “faces”
+
+- I had the same problem with chroma initially and found that a fun way to vary the output is to vary the prompt with wildcards. In the impact pack custom nodes there is a node called ImpactWildcardProcessor that will automatically pick the wildcards from each txt file you put in the wildcards folder in the impact packs custom node filestructure. It is easy to use and implement.
+
+- 🆚 [Unlock diversity of Z-image-Turbo, comparison : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1pdluxx/unlock_diversity_of_zimageturbo_comparison/)
+
+- ## 🌰 [Z-Image styles: 70 examples of how much can be done with just prompting. : r/StableDiffusion _202512](https://www.reddit.com/r/StableDiffusion/comments/1pdy78q/zimage_styles_70_examples_of_how_much_can_be_done/)
+  - Like SDXL, Z-Image is capable of a huge range of styles just by prompting. 
+  - In fact you can do use the style prompts originally created for SDXL and have most of them work just fine: twri's sdxl_prompt_styler is an easy way to do this; a lot of the prompts in these examples are from the SDXL list or TWRI's list. None of the artist-Like prompt use the actual artist name, just descriptive terms.
+  - Full listing of the prompts used in this images. Negative prompt was set to a generic "blurry ugly bad" for all images since negative prompts seem to do nothing at cfg 1.0.
+  - Workflow: euler/simple/cfg 1.0, four steps at half resolution/model shift 3.0 then upscale and over-sharpened followed by another 4 steps (10 steps w/ 40% denoise) with model shift 7.0. I find this gives both more detail and a big speed boost compared to just running 9 steps at full size.
+
+- https://github.com/twri/sdxl_prompt_styler /MIT/202403/python/inactive
+  - Custom prompt styler node for SDXL in ComfyUI
+
 - ## [Why is z image so fast? : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1pay8y2/why_is_z_image_so_fast/)
 - I can partially answer it for you. It’s not just the image size that will beat up your HW but also the combination of CFG and steps. In general low CFG makes it fast to generate and terrible at prompt adherence. Fast generation means you need low steps. Low cfg plus low steps plus small model means much lower HW req.
   - This is why all the turbo type models are low cfg and low step. You give up prompt following for speed. Flux krea for example needs 30-50 steps at a higher CRG to get good prompt following. Z-image runs at 9 steps. That’s between 20-30% of what you need for flux. A much larger model.
@@ -1681,7 +1713,8 @@ Q8（8 位）	    16GB+	   接近原始版本
 # discuss-image-examples 🌰
 - ## 
 
-- ## 
+- ## [Comparison of Seedream 4.5 vs Nano Banana Pro using the same prompt : r/createimg](https://www.reddit.com/r/createimg/comments/1pdxgl1/comparison_of_seedream_45_vs_nano_banana_pro/)
+  - Five shimmering goldfish weave through crevices between stones; four are red-and-white, while one is silver-white. By the pond's edge, a golden-shaded British Shorthair cat watches them intently, counting on blind luck. Watercolor style.
 
 - ## [New stealth model "microwave" now available - free during alpha : r/CLine](https://www.reddit.com/r/CLine/comments/1pcasak/new_stealth_model_microwave_now_available_free/)
   - 饱和度很高的油画

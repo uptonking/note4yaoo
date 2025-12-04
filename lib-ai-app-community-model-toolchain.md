@@ -1228,7 +1228,11 @@ curl http://localhost:11434/api/chat -d '{
 
 - ## 
 
-- ## 
+- ## [How does Ollama truncate the context when it's too long? : r/ollama _202512](https://www.reddit.com/r/ollama/comments/1pe18c7/how_does_ollama_truncate_the_context_when_its_too/)
+  - I'm trying to understand how prompts are truncated then they exceed the context limit. Let's say I have the num_ctx parameter set to 1000 tokens. I then send in a system prompt, and a whole bunch of user and assistant messages, but in total there are 2000 tokens in the context. What happens?
+
+- if your system prompt is 100 tokens, and your message history is 1000 tokens, and your context limit is 1000, Ollama will process the full system prompt and the most recent 900 message history tokens.
+  - You're supposed to manage your context yourself/using whatever app you may use Ollama with, to ensure it is within the limit.
 
 - ## [feat: add trace log level by mxyng · Pull Request · ollama/ollama _202505](https://github.com/ollama/ollama/pull/10650)
   - OLLAMA_DEBUG= or OLLAMA_DEBUG=0 or OLLAMA_DEBUG=false: unset or empty or falsy values sets default INFO level

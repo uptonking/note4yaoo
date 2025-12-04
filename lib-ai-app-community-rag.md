@@ -41,6 +41,8 @@ modified: 2024-09-08T20:08:16.088Z
 - rag as a service(细分市场)
   - doc-search as a service, for static-sites/note-taking/papers
   - code-search
+# dev-xp
+- 实测Ollama的embedding的过程对内存消耗小, 大文档chunk和embedding耗时可能较长
 # discuss-stars
 - ## 
 

@@ -322,7 +322,7 @@ modified: 2025-03-22T16:10:24.856Z
     - [转盘抽奖 / 投喂 Claude Session Key](https://tw.b4u.qzz.io/)
     - 仅每周六晚21:00至21:30限时开放注册
     - [【B4U公益站】是克劳德，我们有救了！（每周六限时开放注册） ](https://linux.do/t/topic/801848)
-  - 📌 [薄荷 API](http://x666.me/), 每日签到
+  - 📌 [薄荷 API](http://x666.me/console), 每日签到
     - 仅支持gemini模型
     - 改了下速率限制。现在变成5分钟25次，对自动化和roocode这些用户变好了很多
     - [薄荷公益站签到](https://qd.x666.me/)

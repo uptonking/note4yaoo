@@ -298,6 +298,50 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-to
   - ?
 
+## 1204
+
+- ["embedding generation failed: do embedding request: Post "http://127.0.0.1:33967/embedding": EOF" · Issue · ollama/ollama](https://github.com/ollama/ollama/issues/6094)
+  - For me the issue ended up being the input was too large for the model I was using.
+  - Similarly, I've encountered issues where certain embedding models throw errors when processing excessively long inputs: "Post "http://127.0.0.1:33967/embedding": EOF". This occurs even when the "truncate": true parameter is set. However, other embedding models handle such inputs without any problems.
+- Had the same experience. When manually truncating the input for models with relatively small input size, the error does not appear anymore. The `truncate` parameter did not help.
+- I had the same issue with `granite-embedding:278m` on version 0.9.0. ResponseError: do embedding request: Post "http://127.0.0.1:50544/embedding": EOF (status code: 500) For me, setting `num_ctx` to `512` resolved the issue.
+
+- i used `langchain==0.3.27 langchain-openai==0.2.8` to implement pdf rag webapp with online openai services. 
+  - now i want to migrate to local ollama chat models.
+  - i listed two approaches, please compare them
+
+```
+from langchain_openai import ChatOpenAI
+
+        llm = ChatOpenAI(
+            model=settings.chat_model,
+            temperature=settings.temperature,
+            max_tokens=settings.max_tokens,
+            base_url="http://localhost:11434/v1",
+            api_key="local",
+        )
+
+```
+
+```
+from langchain_ollama import ChatOllama
+
+llm = ChatOllama(
+    model=settings.chat_model,  # e.g., "llama3.2", "mistral"
+    temperature=settings.temperature,
+    num_predict=settings.max_tokens,
+)
+
+```
+
+- Choose ChatOllama (Recommended): If you want full feature support (multimodal, reliable structured output, correct parameter mapping) and are willing to update a few lines of code.
+  - Pros: Direct control over local-specific parameters (like num_ctx for context window, mirostat, repeat_penalty) that don't exist in OpenAI's API.
+  - Cons: You must rename parameters (e.g., max_tokens → → num_predict).
+
+- naming conventions
+  - Title Case
+  - Sentence case
+
 ## 1201
 
 - [[Bug]: `KeyError: _type` in `api/configuration.py:209` · Issue · chroma-core/chroma _202504](https://github.com/chroma-core/chroma/issues/4380)
