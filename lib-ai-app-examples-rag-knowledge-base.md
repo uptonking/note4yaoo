@@ -13,7 +13,10 @@ modified: 2025-11-30T17:27:16.720Z
   - 可参考华人团队的方案, 如 WeKnora, LightRAG
 
 - tips
+  - 定制或优化方案时, 早晚都需要深入rag的各个环节: parse > chunk > embed > retrieval > rerank > summarize
   - 没有持久化vector embeddings的示例都是demo, 每次启动都要将大文件index一遍
+  - 基于文件系统，还是基于数据库 来实现和优化rag
+  - rag是很多产品都需要的基础能力之一, 可替代text-search, 可参考成功的产品或针对场景/codebase/local优化的产品
 # popular
 - https://github.com/pipeshub-ai/pipeshub-ai /2kStar/apache2/202511/python/ts
   - https://pipeshub.com/
@@ -209,6 +212,15 @@ modified: 2025-11-30T17:27:16.720Z
   - [usage with large local paper results exceeding `text-embeeded`'s maximium prompt limit _202409](https://github.com/Future-House/paper-qa/issues/453)
     - I'm using paperqa with CLI frontend, while this could apply to code usage too. just run pqa ask cusum in a directory with a 10MiB Chinese paper pdf, results an error 'exceeding 8192 tokens limit' using OpenAI third-party proxy API (did some trick in litellm to actually set api_base)
     - We could call tokenizer, or ask litellm to support pre-check before api call (this will be better)
+
+- https://github.com/timescale/pgai /5.5kStar/PGLic/202512/python
+  - A suite of tools to develop RAG, semantic search, and other AI applications more easily with PostgreSQL
+  - A Python library that transforms PostgreSQL into a robust, production-ready retrieval engine for RAG and Agentic applications.
+  - Automatically create and synchronize vector embeddings from PostgreSQL data and S3 documents. Embeddings update automatically as data changes.
+  - Enable natural language to SQL with AI. 
+  - Works with any PostgreSQL database, including Timescale Cloud, Amazon RDS, Supabase and more.
+  - Architecture: The system consists of an application you write, a PostgreSQL database, and stateless vectorizer workers.
+    - data modifications made by the application are decoupled from the embedding process, ensuring that failures in the embedding service do not affect the core data operations.
 # rag-examples
 - https://github.com/pymupdf/pymupdf4llm /1.2kStar/AGPL/202511/python/lib
   - https://pymupdf.readthedocs.io/en/latest/pymupdf4llm
@@ -474,6 +486,9 @@ modified: 2025-11-30T17:27:16.720Z
   - 本项目利用FAISS向量库和千问模型API构建了一个检索增强生成（RAG）系统，旨在为用户提供针对公司年度总结数据的智能问答服务
   - 中文分词工具：Jieba/THULAC，用于断句和关键词提取，提升后续Embedding语义表征精度。
   - 通义千问Embedding模型：专为中文优化，支持长文本语义编码（最长16K tokens），余弦相似度准确率较开源模型（如BERT-base）提升15%；
+
+- https://github.com/jayshah5696/pravah /apache2/202409/python/inactive
+  - LLM powered Local Perplexity-Inspired Search Engine
 # rag-fwk
 - https://github.com/phbst/tinyRAG /202409/jupyter/inactive
   - 全手写的一个RAG应用。Langchain的大部分库会很方便，但是你不一定理解其中原理，所以代码尽可能展现基本算法，主打理解RAG的原理
@@ -510,6 +525,31 @@ modified: 2025-11-30T17:27:16.720Z
   - https://xerrors.github.io/Yuxi-Know/
   - 功能强大的智能体平台，融合了 RAG 知识库与知识图谱技术，基于 LangGraph v1 + Vue.js + FastAPI + LightRAG 架构构建
   - 集成主流大模型、LightRAG、MinerU、PP-Structure、Neo4j 、联网检索、工具调用。
+
+- https://github.com/agentset-ai/agentset /1.6kStar/MIT/202512/ts
+  - https://agentset.ai/
+  - The open-source RAG platform: built-in citations, deep research, 22+ file formats, partitions, MCP server, and more.
+  - It provides end-to-end tooling: ingestion, vector indexing, evaluation/benchmarks, chat playground, hosting, and a developer-friendly API.
+  - Model agnostic: works with your choice of LLM, embeddings, and vector DB
+  - Chat playground with message editing and citations
+  - Built-in multi-tenancy
+  - Built with TypeScript, Next.js, AI SDK, Prisma, Supabase, and Trigger.dev
+
+- https://github.com/neuml/txtai /11.9kStar/apache2/202512/python
+  - https://neuml.github.io/txtai
+  - an all-in-one AI framework for semantic search, LLM orchestration and language model workflows
+  - The key component of txtai is an embeddings database, which is a union of vector indexes (sparse and dense), graph networks and relational databases.
+  - Vector search with SQL, object storage, topic modeling, graph analysis and multimodal indexing
+  - Workflows to join pipelines together and aggregate business logic
+  - Run local or scale out with container orchestration
+  - built with Python 3.10+, Hugging Face Transformers, Sentence Transformers and FastAPI
+
+- https://github.com/SciPhi-AI/R2R /7.5kStar/MIT/202511/python
+  - an advanced AI retrieval system supporting RAG
+  - Built around a RESTful API, R2R offers multimodal content ingestion, hybrid search, knowledge graphs, and comprehensive document management.
+  - Multimodal Ingestion: Parse .txt, .pdf, .json, .png, .mp3, and more
+  - Hybrid Search: Semantic + keyword search with reciprocal rank fusion
+  - User & Access Management: Complete authentication & collection system
 
 - https://github.com/getzep/graphiti /20.6kStar/apache2/202511/python
   - https://help.getzep.com/graphiti
@@ -570,18 +610,17 @@ modified: 2025-11-30T17:27:16.720Z
 - https://github.com/rag-web-ui/rag-web-ui /2.7kStar/apache2/202511/python/ts/提交少
   - RAG Web UI is an intelligent dialogue system based on RAG
 
-- https://github.com/agentset-ai/agentset /1.6kStar/MIT/202512/ts
-  - https://agentset.ai/
-  - The open-source RAG platform: built-in citations, deep research, 22+ file formats, partitions, MCP server, and more.
-  - It provides end-to-end tooling: ingestion, vector indexing, evaluation/benchmarks, chat playground, hosting, and a developer-friendly API.
-  - Model agnostic: works with your choice of LLM, embeddings, and vector DB
-  - Chat playground with message editing and citations
-  - Built-in multi-tenancy
-  - Built with TypeScript, Next.js, AI SDK, Prisma, Supabase, and Trigger.dev
-
 - https://github.com/percent4/embedding_rerank_retrieval /202507/jupyter/inactive
   - 本项目是针对RAG中的Retrieve阶段的召回技术及算法效果所做评估实验。使用主体框架为LlamaIndex.
   - 使用Gradio实现中文Late-Chunking服务: late_chunking/late_chunking_gradio_server.py
+
+- https://github.com/devflowinc/trieve /2.6kStar/MIT/202510/rust/js/inactive
+  - https://trieve.ai/
+  - All-in-one platform for search, recommendations, RAG, and analytics offered via API
+
+- https://github.com/postgresml/korvus /1.5kStar/MIT/202501/rust/inactive
+  - a search SDK that unifies the entire RAG pipeline in a single database query. 
+  - Built on top of Postgres with bindings for Python, JavaScript, Rust and C.
 # rag-memory
 - https://github.com/jakops88-hub/Long-Term-Memory-API /202512/ts
   - A Memory Server for AI Agents. Runs on Postgres + pgvector. 
@@ -690,6 +729,7 @@ modified: 2025-11-30T17:27:16.720Z
   - Extensible: Being built on `Gradio`, you are free to customize or add any UI elements as you like.
   - require `Unstructured` if you want to process files other than .pdf, .html, .mhtml, and .xlsx documents.
     - We support both `lite` & `full` version of Docker images. With `full` version, the extra packages of `unstructured` will be installed, which can support additional file types (`.doc, .docx`, ...)
+  - Kotaemon has 3 GraphRAG options (NanoGraphRAG, LightRAG, and MS's hosted GraphRAG)
   - [Kotaemon: An open-source RAG-based tool for chatting with your documents | Hacker News _202501](https://news.ycombinator.com/item?id=42571272)
   - [Kotaemon-papers: an open-source web app to chat with your academic papers | Hacker News _202501](https://news.ycombinator.com/item?id=42603357)
     - Our team has been working on a public demo to showcase the new advanced citation features in our RAG

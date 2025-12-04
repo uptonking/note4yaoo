@@ -870,7 +870,7 @@ modified: 2024-09-08T20:08:16.088Z
   - Also check chunk sizes and embedding model choice because those affect recall and speed, and consider a lightweight semantic cache to answer repeated context queries instantly.
   - People mix FAISS tuning or an alternative vector store with a caching layer and async streaming to get sub-second responses, and teams that need observability and easy orchestration prototype these flows in visual builders or frameworks like LlmFlowDesigner, while others tune Milvus or FAISS directly.
 
-- ## [Which model is good for making a highly efficient RAG? : r/LocalLLM _202506](https://www.reddit.com/r/LocalLLM/comments/1l0pncp/which_model_is_good_for_making_a_highly_efficient/)
+- ## 🤔 [Which model is good for making a highly efficient RAG? : r/LocalLLM _202506](https://www.reddit.com/r/LocalLLM/comments/1l0pncp/which_model_is_good_for_making_a_highly_efficient/)
 - Founder of agentset here. I'd say the quality of the embedding model + vector db caries a lot more weight than the generation model. We generally found any non trivially small model to be able to answer questions as long as the context is short and concise.
 - What embeddings approach would you recommend?
   - Most of the working is in the parsing and chunking strategy. Embedding just comes down to choosing a model. If you're doing multi-lingual or technical work, you should go with a big embedding model like text-large-3. If you're doing english only there are plenty of cheaper and lighter weight models.
