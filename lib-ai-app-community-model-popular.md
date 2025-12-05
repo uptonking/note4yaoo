@@ -518,7 +518,17 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [Qwen3-4 2507 outperforms ChatGPT-4.1-nano in benchmarks? : r/LocalLLM _202512](https://www.reddit.com/r/LocalLLM/comments/1peav69/qwen34_2507_outperforms_chatgpt41nano_in/)
+  - I know it's good but it can't be that good, surely?
+  - Qwen3VL-4B Instruct just dropped. It's just as good as non VL version, and both out perf nano
+
+- I use Qwen3:30B A3B instruct for various workflows in N8N. They run extremely well. I also use it for a very basic replacement to the cloud based providers (OpenAI etc) for simple queries. brilliant.
+
+- ## 🆚 [Mistral 3 14b against the competition ? : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1peql6c/mistral_3_14b_against_the_competition/)
+- The instruct model is somewhat okay for non-reasoning use cases, but Qwen3 is better at the moment.
+  - The reasoning model is pretty bad - it tends to infinitely overthink and hallucinates a lot.
+  - In my experience in the same VRAM range gpt-oss-20B outperforms it on general tasks, and Qwen3 VL 8B is roughly on par with it for vision tasks and better for OCR. Idk about creative writing though, I think all creative writers have different opinions what a good writing is.
+- I'm a die hard Mistral guy myself and I agree with your observation. Last good mistral model I used was the latest magistral. That one is very good. 
 
 - ## [Ministral 14B vs Qwen 3 VL 30B vs Mistral Small vs Gemma 27B : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1pcgzkc/ministral_14b_vs_qwen_3_vl_30b_vs_mistral_small/)
   - I used Artificial Analysis to compare common benchmark.
@@ -2048,7 +2058,7 @@ free 5GB postgres via aiven.io
 - ## [Mistral "free" LLM API is a game changer for so many developers : r/SaaS _202409](https://www.reddit.com/r/SaaS/comments/1fmxg9k/mistral_free_llm_api_is_a_game_changer_for_so/)
 - free tier: It's one request per second, 500, 000 tokens per minute, and 1 billion tokens per month. Except Mistral Embed, which is two hundred billion tokens per month.
 
-# discuss-model-abliterated/uncensored
+# discuss-model-abliterated/uncensored/nsfw
 - ## 
 
 - ## 
@@ -2070,6 +2080,21 @@ free 5GB postgres via aiven.io
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [State of AI | OpenRouter | Paper : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pedmsi/state_of_ai_openrouter_paper/)
+- roleplay not programming dominates Open Source model usage, I would have never guessed that
+- Maybe because other uses only got good enough lately?
+  - Programming has emerged as the most consistently expanding category across all models, accounting for over 50% of total token volume in recent weeks.
+
+- And yet no big model maker has ever tried to optimise a model for creative use cases.
+
+- Just keep in mind open router is not fully representative. For example, grok code fast 1 has been dominating for months due to being free on Kilo code
 
 - ## [I locally benchmarked 41 open-source LLMs across 19 tasks and ranked them : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1n57hb8/i_locally_benchmarked_41_opensource_llms_across/)
   - Ranks were computed by taking the simple average of task scores (scaled 0–1).

@@ -528,7 +528,26 @@ modified: 2021-12-04T20:28:37.765Z
 
 - ## 
 
-- ## 
+- ## 👀 [我打电话给银行，所有正规网贷，在我们借款的时候，条款里都写了自动扣款协议，就算我们解绑支付宝和微粒贷扣款按钮，是没有用的。 ](https://www.xiaohongshu.com/explore/68bc2f83000000001c0119a2?xsec_token=ABoz0AdW-NDWSf7g252MCzhpLxM52pkggG6x5hKOvUL0s=&xsec_source=pc_search&source=unknown)
+  - 希望正在经历的人，一定要用亲人的卡放生活费，要不全部都会扣走。
+
+- [网贷自动扣款怎么弄，一个动作简单搞定 - 小红书](https://www.xiaohongshu.com/explore/66a260ae000000002701d0f2?xsec_token=ABnWUa-07kRNlOYJLtKfY4VTmmF0l1g8YJh48vXRuBwiw=&xsec_source=pc_search&source=unknown)
+- 农行app上都解绑完，就还是被扣走了，不知道啥情况
+  - 我刚才咨询银行客服，即使你在软件上解除代扣协议，必须第三方响应才行，如果他不解除，那仍然有可能发起代扣
+- 是这样的，我刚刚咨询了银行客服，她也是这么说的所以说根本解除不了。不知道重新办个银行卡行不行
+  - 只要不是司法划扣，重新办卡就没事
+- 如果你逾期的信用卡跟新办的储蓄卡是同一个银行的，我估计大概率会扣。
+
+- 我取消了快捷支付协议，一样还是被扣，为什么啊
+  - 还有个代付管理，这个解约
+
+- 这个只是取消快捷支付吧？还可以委托扣款的
+
+- [🐟期以后软件内不支持解除银行卡的可以按这个来操作解除自动扣款问题  - 小红书](https://www.xiaohongshu.com/explore/678ef2ee000000002902cbdb?xsec_token=ABNSEz6wF_HNalLT_oqtU0GlaP9_N9UUpwZphe44hAsIA=&xsec_source=pc_search&source=unknown)
+- 还是被划扣了，他们是跟银行签的协议，我就是大意了，过了几天以为不会扣了结果十号直接划走全部，所有快捷支付都关了的
+
+- 在银行上解绑，平台上还会扣钱吗
+  - 微粒贷能
 
 - ## [经过黑猫投诉 第八天给了方案 缓催六个月 客服回电态度超级好 六个月内不会有电话短信打扰 - 小红书](https://www.xiaohongshu.com/explore/68f5f7a20000000004029cca?xsec_token=ABjKIl4TWDlppTbqKVca5ZdRTxnmQTzhTandTjCPXBHoI=&xsec_source=pc_search&source=unknown)
 - 投诉了几次啊，是投诉平台还是资方

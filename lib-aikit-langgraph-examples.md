@@ -15,6 +15,9 @@ modified: 2025-08-11T08:47:56.335Z
 - resources
   - [langgraph examples | docs](https://langchain-ai.github.io/langgraph/examples/)
 # popular
+- https://github.com/Andrew-Jang/RAGHub
+  - A Directory of Tools for Retrieval-Augmented Generation (RAG)
+
 - https://github.com/google-gemini/gemini-fullstack-langgraph-quickstart /apache2/202506/python/ts
   - Get started with building Fullstack Agents using Gemini 2.5 and LangGraph
   - https://x.com/JvShah124/status/1933016336113791159
@@ -729,7 +732,7 @@ modified: 2025-08-11T08:47:56.335Z
   - Progress Tracking & Streaming: Provides real-time feedback on the report generation process, including progress steps and streaming text output.
   - Dependency Injection: Uses a robust dependency injection container (ioc/container.ts) for managing services and their implementations, adhering to Clean Architecture principles.
 # langchain
-- https://github.com/onyx-dot-app/onyx /15.1kStar/MIT+EE/202510/python/ts
+- https://github.com/onyx-dot-app/onyx /16.7kStar/MIT+EE/202512/python/ts
   - https://github.com/danswer-ai/danswer /legacy
   - https://onyx.app/
   - Onyx is a feature-rich, self-hostable Chat UI that works with any LLM.

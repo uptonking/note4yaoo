@@ -326,6 +326,22 @@ modified: 2025-08-16T14:12:24.416Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [NVIDIA DGX Spark - anybody has tried it for image generation or training? : r/StableDiffusion _202512](https://www.reddit.com/r/StableDiffusion/comments/1pe3uyv/nvidia_dgx_spark_anybody_has_tried_it_for_image/)
+- it was a lot slower than just using a dedicated GPU. The only real benefit is the memory size. Which is useful for training, if you're OK waiting a lot longer.
+
+- It's ok to have multiple LLM models loaded together for developing purposes. Inference is slower 3/4 times than a 4090.
+
+- It's just a 4060 Ti with 128GB of video memory.
+
+- the DGX Spark is a dev kit, meant to prototype before actually deploying on a DGX server. It's not really meant for end-users or operational tasks. Finally, you're also tied to a specific Linux distro created by Nvidia. 
+  - TLDR: if you didn't already know about it, it's not for you.
+
 - ## [Adobe launched Graph - heavily inspired by Comfy : r/comfyui _202511](https://www.reddit.com/r/comfyui/comments/1p71ufk/adobe_launched_graph_heavily_inspired_by_comfy/)
 - Node graphs are nothing new. Houdini, Davinci, Blender, C4D, Nuke, all had node graphs prior to anything ai.
   - What makes comfy comfy isn’t the nodes, it’s how foundational they are to everything we do in it and how flexible and open they make the entire process of building. It’s the closest thing to programming.

@@ -240,12 +240,12 @@ uv run python -m app.docling_main
   - chunk的内容是summary，而不是原文，准确度不够高, (❓ 原文似乎未在系统中无法查看)
     - 上传pdf后不支持查看pdf原文, sources中保存的数据是处理过的文本内容
   - citation点击后查看的是chunk文本, 体验不如pdf原文
-  - chat聊天对话不支持流式输出，体验很慢
   - chat不支持export
   - 上传中文pdf后，chunk的内容是英文summary，设置了workspace级的语言为中文后chunk仍是英文
   - 有时不能以用户提问的语言回复用户
   - 有时整个回复内容citation的编号都是同1处, 特别是回复中文内容时
   - 点击chat列表切换聊天记录时，容易出现ai重新regenerate内容的问题
+  - ~~chat聊天对话不支持流式输出，体验很慢~~, 20251205已支持
 
 - features
   - Multiple File Formats

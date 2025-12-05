@@ -265,7 +265,33 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [RAGFlow is an open-source RAG engine based on OCR and document parsing | Hacker News _202404](https://news.ycombinator.com/item?id=39896923)
+- Document processing is getting better and better with new tools leveraging LLMs. If anyone is interested in exploring this space, try another similar tool LLMWhisperer (https://llmwhisperer.unstract.com/). It is a part of Unstract, an open-source document processing tool (https://github.com/Zipstack/unstract)
+  - Actually we've tried almost all lof existing open source models for document processing, and none of them performs well for complex documents, especially those having complicated tables, such as tables cells without borders, cells need to be combined, ..., etc. Although adopting LLMs to perform such document understanding tasks is more scalable, it requires much more data and computation power to achieve similar results. That's why we design such models start from scratch.
+
+- I'm partly sad at the approach this and other engines take: reimplement each part (PDF parser, etc etc) in a way where they are pretty much useless except in their specific engine.
+  - If instead we had a PDF() class that did what RAGFlow is doing (dealing with all the different trade-offs of the different python PDF engines such as pdfplumber), then we could easily adapt it and improve it, and it can be useful for other projects as well.
+- It is open-source though. Just rip it off and make that PDF() class.
+
+- A lot of the yolo stuff from ultralytics is AGPL3 fyi. Recommend caution depending on what code or models / model lineage are used
+  - Thanks for your nice suggestion. We train the model using YOLO, but during inference, the model is converted into ONNX and we use ONNXRuntime for the model inference. As a result, YOLO itself is not included in the software package. We will open the training code in the repo soon.
+  - We've used YOLOv8 as the object detection model, and use some public datasets, such as PubTable, CDLA, together with some private data to train the model. The model on Huggingface is the one trained using public dataset, and we would open this work later. We use YOLOv8 just because we want to let the document parser run without GPU, I think you could also try any other object detection models such as Detectron, and use the public datasets to train the model as well. We've not used transfomers for this task, because given limited data, it could not outperform traditional CNN based models.
+
+- ## agentset - [Production RAG: what I learned from processing 5M+ documents | Hacker News _202510](https://news.ycombinator.com/item?id=45645349)
+- I must be missing something, this says it can be self-hosted. But the first page of the self-hosting docs say you need accounts with no less than 6 (!) other third-party hosted services.
+  - That was my observation as well. To be fair their business is to sell a hosted version, they’re under no obligation to release a truly self hosted version.
+
+- The big LLM-based rerankers (e.g. Qwen3-reranker) are what you always wanted your cross-encoder to be, and I highly recommend giving them a try. Unfortunately they're also quite computationally expensive.
+
+- Similar writeup I did about 1.5 years ago for processing millions of (technical) pages for RAG. Lots has stayed the same it seems
+
+- > Reranking: the highest value 5 lines of code you'll add. The chunk ranking shifted a lot. More than you'd expect. Reranking can many times make up for a bad setup if you pass in enough chunks. We found the ideal reranker set-up to be 50 chunk input -> 15 output.
+  - Reranking is a specialized LLM that takes the user query, and a list of candidate results, then re-sets the order based on which ones are more relevant to the query.
+- What is the difference between reranking versus generating text embeddings and comparing with cosine similarity?
+  - If you generate embeddings (of the query, and of the candidate documents) and compare them for similarity, you're essentially asking whether the documents "look like the question."
+  - If you get an LLM to evaluate how well each candidate document follows from the query, you're asking whether the documents "look like an answer to the question."
+- text similarity finds items that closely match. Reranking my select items that are less semantically "similar" but are more relevant to the query.
+- Because LLMs are a lot smarter than embeddings and basic math. Think of the vector / lexical search as the first approximation.
 
 - ## [28M Tokens Later: How I Unfucked My 4B Model with a smart distilled RAG : r/LocalLLM _202512](https://www.reddit.com/r/LocalLLM/comments/1pcwafx/28m_tokens_later_how_i_unfucked_my_4b_model_with/)
   - I've recently been playing around with making my SLM's more useful and reliable. I'd like to share some of the things I did
@@ -367,7 +393,13 @@ modified: 2024-09-08T20:08:16.088Z
 - ## 📌 A list of software that allows searching the web with the assistance of AI.
 - https://x.com/tom_doerr/status/1856778512612667838
 
-# discuss-pdf
+# discuss-pdf/docs
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 
@@ -449,6 +481,24 @@ modified: 2024-09-08T20:08:16.088Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [I tested what small LLMs (1B/3B) can actually do with local RAG - Here's what I learned : r/LocalLLaMA _202410](https://www.reddit.com/r/LocalLLaMA/comments/1gdqlw7/i_tested_what_small_llms_1b3b_can_actually_do/)
+  - Langchain RAG workflow
+  - Nomic's embedding model
+  - Chroma DB
+  - Llama3.2 3B instruct
+  - the smaller models (Llama3.2 3B in this case) start to break down with complex stuff. Ask it to compare year-over-year growth between different segments and explain the trends? Yeah... it start outputting nonsense.
+
+- My use case would be finding rules for board games and tabletop RPGs when I only have a vague idea of what the rule does, or the name. I haven't found one that works too well yet- lots of false positives and no page numbers.
+
+- While RAG systems typically search for relevant content from the source and pass it to an LLM as input for the LLM to write new content.  Maybe you just want to see the relevant content directly?  That's computationally cheap.
+
+- 137M parameters isn't tiny for an embedding model! Embedding models are naturally much smaller than LLMs since they only convert text to vectors, rather than generating text and reasoning.
+- Yes, I tested several small embedding models (under 1B parameters), including MXBai, but Nomic 1.5 performed the best. 
 
 - ## 💡 [Embedding With LM Studio - what am i doing wrong : r/LocalLLaMA _202506](https://www.reddit.com/r/LocalLLaMA/comments/1lharbh/embedding_with_lm_studio_what_am_i_doing_wrong/)
   - "text-embedding-nomic-embed-text-v1.5" loads fine and works with Anything.
@@ -715,7 +765,10 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [Show HN: We cut RAG latency ~2× by switching embedding model | Hacker News _202511](https://news.ycombinator.com/item?id=46043354)
+- I always feel that the choice of embedding model is quite important, but it's seldom mentioned. Most tutorials about RAG just tell you to use a common model like OpenAI's text embedding, making it seem as though it's okay to use anything else. But even though I'm somewhat aware of this, I lack the knowledge and methods to determine which model is best suited for my scenario.
+
+- The biggest latency improvement I saw was switching off OpenAI's API that would have a latency anywhere between 0.3 - 6 seconds(!) for the same two word search embedding...
 
 - ## 🤔 [[Discussion] Anyone else doing “summary-only embeddings + full-text context” for RAG? : r/Rag _202511](https://www.reddit.com/r/Rag/comments/1p05u0f/discussion_anyone_else_doing_summaryonly/)
   - 1) For each doc/section: I generate a tiny synthetic text (title + LLM summary). → This is the ONLY thing I embed.
@@ -854,6 +907,22 @@ modified: 2024-09-08T20:08:16.088Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Struggling with finding good RAG LLM : r/LocalLLaMA _202504](https://www.reddit.com/r/LocalLLaMA/comments/1jwtn6j/struggling_with_finding_good_rag_llm/)
+- Would strongly recommend reading up on the basic RAG process and the systems around it. The LLM itself typically isn't involved in the data lookup/search unless it's been extended to work as an agent. The quality of the sources will heavily influence the answer quality : garbage in/ garbage out sort of deal. Beyond that, check out mistral small 3.1, a bunch of the qwen models, and command-r series.
+- Your RAG has to return good results. So you should be querying the rag with the embedding model directly and looking at the top 10 results. Are they what you expected? If not, you need to change your embedding model, change the way you format/chunk the input data, increase metadata, etc.
+  - The info from the RAG results will be fed into the LLM for inference.
+
+- I think this is more to do with how RAG is implemented rather than the model itself, but of course you want to use a reliable model.
+
+- You need two models: one for embeddings and another for chat. For embeddings Llama-3.2-1B will be a good choice: reasonable fast and capable to understand anything in any language. And you will not use it to speak or think at all.
+  - Next use any strong model to chat and to ask questions to rag.
 
 - ## [Successful RAGFlow in Prod : r/Rag _202512](https://www.reddit.com/r/Rag/comments/1pawrzj/successful_ragflow_in_prod/)
 - TL; DR: RAGFlow is powerful for complex documents but resource-hungry.

@@ -37,7 +37,7 @@ brew services start nginx
 brew services start postgresql@17
 brew services start redis
 
-MINIO_ROOT_USER=impress MINIO_ROOT_PASSWORD=password minio server --address :9090 --console-address :9001  /Users/yaoo/Documents/repos/saas/lasuite-docs/data/media
+MINIO_ROOT_USER=impress MINIO_ROOT_PASSWORD=password minio server --address :9090 --console-address :9001  ~/Documents/repos/saas/lasuite-docs/data/media
 
 mc alias set impress http://localhost:9090 impress password 
 

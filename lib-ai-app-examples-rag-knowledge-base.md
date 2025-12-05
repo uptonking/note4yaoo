@@ -52,12 +52,13 @@ modified: 2025-11-30T17:27:16.720Z
   - ETL Service (choose one)
     - Docling (local processing, no API key required, supports PDF, Office docs, images, HTML, CSV)
     - LlamaIndex API key (enhanced parsing, supports 50+ formats)
-  - 👇 xp
+  - 👷 xp
     - 跨workspace不能共享source-document
     - 聊天时~~只能选择全部文档或不选文档，不~~可以只选择部分文档
     - 支持根据场景配置不同llm: fast, long, reasoning
     - 🐛 聊天中的内容支持点击跳转到文档的chunk位置，而不是源文件，且中文文档的chunk经常是乱码
-  - 📡 [【Feature Request】 Streaming Response for Research Agent _202505](https://github.com/MODSetter/SurfSense/issues/86)
+  - [【Feature Request】 Streaming Response for Research Agent _202505](https://github.com/MODSetter/SurfSense/issues/86)
+    - 202512 已合并pr
   - https://discord.com/channels/1359368468260192417/1359416865939787837/1409642464792412220
     - I was considering installing Surfsense but it needs API keys, doesn't it? How much does it cost to use it?
     - Every service has a local alternative other than Speech to Text service. No need to put any API keys if you use everything local.
@@ -188,6 +189,16 @@ modified: 2025-11-30T17:27:16.720Z
     - RAG Demo 到 RAG Application 难度的完美表现，其实功能不算丰富（增加了 Graph RAG和 Agent RAG 的思想），
     - 代码却不得不做的非常复杂，大部分其实是应用逻辑。 P. S. 代码已经成熟到可以直接抄了，直接复刻就完了
 
+- https://github.com/coze-dev/coze-studio /18.8kStar/apache2/202512/go/ts
+  - agent development platform with all-in-one visual tools, simplifying agent creation, debugging, and deployment like never before
+  - Provides all core technologies needed for AI agent development: prompt, RAG, plugin, workflow, enabling developers to focus on creating the core value of AI.
+  - https://github.com/cloudwego/eino /apache2/go
+    - ultimate LLM/AI application development framework in Golang
+  - https://github.com/bytedance/flowgram.ai /MIT/ts
+    - providing a high-quality workflow building engine for Coze Studio's frontend workflow canvas editor
+  - https://github.com/cloudwego/hertz /apache2/go
+    - Go HTTP framework with high-performance and strong-extensibility for building micro-services
+
 - https://github.com/netease-youdao/QAnything /13.8kStar/apache2 > AGPL/202503/python/vue/inactive
   - https://qanything.ai/
   - 开源的企业级本地知识库问答解决方案，致力于支持任意格式文件或数据库的问答
@@ -221,6 +232,11 @@ modified: 2025-11-30T17:27:16.720Z
   - Works with any PostgreSQL database, including Timescale Cloud, Amazon RDS, Supabase and more.
   - Architecture: The system consists of an application you write, a PostgreSQL database, and stateless vectorizer workers.
     - data modifications made by the application are decoupled from the embedding process, ensuring that failures in the embedding service do not affect the core data operations.
+- https://github.com/neondatabase-labs/pgrag /apache2/202510/rust
+  - Postgres extensions to support end-to-end Retrieval-Augmented Generation (RAG) pipelines
+  - Text extraction and conversion, using pdf-extract
+  - Text chunking
+  - Local embedding and reranking models
 # rag-examples
 - https://github.com/pymupdf/pymupdf4llm /1.2kStar/AGPL/202511/python/lib
   - https://pymupdf.readthedocs.io/en/latest/pymupdf4llm
@@ -283,7 +299,7 @@ modified: 2025-11-30T17:27:16.720Z
   - Document Parser: Docling 2.13.0 (advanced OCR, table extraction)
   - Frontend: Vanilla HTML/JS (no build step)
   - Batch Ingestion — Process multiple files (sequential processing in Community Edition)
-  - 🧪
+  - 🛝
     - chroma run --host 0.0.0.0 --port 8000 --path ~/Documents/repos/libfwk/ai-llm/all-rag/Knowledge-Base-Self-Hosting-Kit/backend/ENV/ingestdb
     - OLLAMA_DEBUG=2 ollama serve
     - uv run --env-file .env -- uvicorn src.main:app --port 8080
@@ -308,7 +324,7 @@ modified: 2025-11-30T17:27:16.720Z
   - Vector Search: FAISS/ChromaDB/Pinecone vector databases
   - CLI Tools: Command-line interface for batch operations
   - Memory issues with large docs: Reduce `CHUNK_SIZE` in `.env` or process documents individually
-  - 🧪
+  - 🛝
     - chroma run --host 0.0.0.0 --port 8000 --path ~/Documents/repos/libfwk/ai-llm/all-rag/doc-reader/chroma_db
     - OLLAMA_DEBUG=2 ollama serve
     - uv run --env-file .env -- python main.py start
@@ -498,6 +514,114 @@ modified: 2025-11-30T17:27:16.720Z
   - 项目从[TinyRAG](https://github.com/KMnO4-zx/TinyRAG)扩展而来，专注于代码场景的优化和实践。
   - [之前有多嫌弃大模型框架，现在用 LangGraph 就有多香 - 知乎 _202509](https://zhuanlan.zhihu.com/p/1946396924342177830)
 
+- https://github.com/onyx-dot-app/onyx /16.7kStar/MIT+EE/202512/python/ts/偏业务app
+  - https://github.com/danswer-ai/danswer /legacy
+  - https://onyx.app/
+  - Onyx is a feature-rich, self-hostable Chat UI that works with any LLM.
+  - Onyx comes loaded with advanced features like Agents, Web Search, RAG, MCP, Deep Research, Connectors to 40+ knowledge sources, and more.
+  - RAG: Best in class hybrid-search + knowledge graph for uploaded files and connectors
+  - Connectors: Pull knowledge, metadata, and access information from over 40 applications.
+  - 💰 enterprise: Knowledge Graph, Query History, Usage Dashboards, dev api, rbac
+  - 很多issue无人处理就自动关闭了
+  - 🐛 实测服务启动后首次上传文件会一直loading/processing, 此时重启服务就能正常上传了，原因待排查
+    - 对中文的embedding和search有问题，关键词搜不出来: The provided document does not contain any information about your query
+    - 回答能显示引用的文件，但点击引用文件的图标显示的是文本，而不是pdf原文
+  - Code Interpreter: Execute code to analyze data, render graphs and create files.
+  - Image Generation: Generate images based on user prompts.
+  - 👾 Onyx works with all LLMs (like OpenAI, Anthropic, Gemini, etc.) and self-hosted LLMs (like Ollama, vLLM, etc.)
+  - Enterprise Search: far more than simple RAG, Onyx has custom indexing and retrieval that remains performant and accurate for scales of up to tens of millions of documents.
+  - [Configure Onyx - Onyx Documentation](https://docs.onyx.app/deployment/configuration/configuration)
+    - Although Onyx assumes English by default, the system can be configured to support multiple languages
+  - 🐛 [Enable to work with other Vector Database ](https://github.com/onyx-dot-app/onyx/issues/1165)
+    - Danswer has both vector search and BM25, followed by re-ranking. Additionally, Vespa is not a database; it is more like an application server that handles both roles effectively.
+    - So, I want to say that it would not be possible to migrate to something else, as it is quite a big job due to much of the logic being handled by Vespa itself. Vespa is not just a dummy storage.
+  - 🐛🏠 [High memory consumption _202412](https://github.com/onyx-dot-app/onyx/issues/3427)
+    - we are experiencing a similar issue, is it expected that the index container's memory usage grows proportionately to number of indexed documents? that seems like a poor design decision if that's the case - acts more like a memory leak. isn't the Vespa database meant to prevent a need for loading every document in ram?
+      - Not really ... in fact being in memory is a key component of being able to perform similarity searches across documents quickly. There are probably some significant optimizations we can apply here, but generally speaking this is expected behavior.
+    - A solution is to use an external vector database instead of running it within the VM. To achieve this, a new class inheriting from DocumentIndex can be implemented
+    - Using an external vector database such as Qdrant Cloud, Elasticsearch, or Vespa Cloud etc. is often a better approach than running the vector index directly within the VM. The vector database is typically the component that demands the most memory.
+  - 🐛 [markdown files (.md / .mdx) not supported yet ](https://github.com/onyx-dot-app/onyx/issues/5621)
+  - [Feature Request: Support embedding via ollama _202511](https://github.com/onyx-dot-app/onyx/issues/6189)
+    - onyx expects the embedding models to return vectors of 1536 or 3072 dimensions, respectively. I don't think that I can work around this without building my own Onyx docker image.
+  - [Only getting 1 chunk per document _202402](https://github.com/onyx-dot-app/onyx/issues/1081)
+    - When im querying say a pdf document, the results shown to me are based solely on 1 chunk from that document. The one with the highest semantic proximity to the user query.
+  - [When I ask questions in Chinese, why are the responses always in English? _202401](https://github.com/onyx-dot-app/onyx/issues/1024)
+  - [Introducing Onyx - a fully open source chat UI with RAG, web search, deep research, and MCP : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nw52ad/introducing_onyx_a_fully_open_source_chat_ui_with/)
+    - Onyx actually is Danswer. We re-named the project ~6 months ago
+    - The way I think about it is that any/every feature needed to have a great chat experience should be completely free to use.
+      - The project actually started as a pure RAG/enterprise search system called Danswer, and the enterprise features were built for that world. I’m moving all features from ee to MIT that fit into the bucket above (e.g. advanced SSO).
+    - You have a list of what features are included and which are pay walled?
+      - Every chat/core experience feature is completely open-source! So custom assistants, RAG, web search, MCP, image gen, etc.
+      - Currently, the ee features are permission syncing (e.g. for RAG, pulling in permissions from enterprise tools and applying them within the tool), a few admin dashboards, and some whitelabeling (ofc the code is MIT, so you can just edit things yourself if you want).
+    - 🆚 What is the main differences between Openwebui besides being fully open source
+      - One of the biggest differences is native RAG/file indexing that scales. In my experience, it's a huge pain to set up OpenWebUI with private docs. Onyx has data connectors to apps like drive, a vector db, and indexing and retrieval pipelines pre-configured for documentation search. System can comfortably do a few hundred thousand docs order of magnitude.
+  - [Launch HN: Onyx (YC W24) – Open-source chat UI | Hacker News _202511](https://news.ycombinator.com/item?id=46045987)
+  - 🛝 
+    - minio server --address :9004 --console-address :9005  ~/Documents/repos/libfwk/ai-llm/all-rag/onyx/dataruntime/onyxs3
+    - docker compose up index , docker start 
+    - OLLAMA_DEBUG=2 ollama serve
+    - uv run --env-file .env -- alembic upgrade head
+    - uv run --env-file .env -- uvicorn model_server.main:app --reload --port 9000
+    - uv run --env-file .env -- python ./scripts/dev_run_background_jobs.py
+    - uv run --env-file .env -- uvicorn onyx.main:app --reload --port 8080
+  - 👾 prompts
+    - i have run this project fully locally without docker and nginx, only vespa is hosted using docker, all other services are running locally on my macos.
+    - the backend server starts by `cd backend && uv run --env-file .env -- uvicorn onyx.main:app --reload --port 8080`.
+
+- https://github.com/deepset-ai/haystack /23.5kStar/apache2/202512/python
+  - https://haystack.deepset.ai/
+  - https://docs.haystack.deepset.ai/docs
+  - Haystack is an end-to-end LLM framework that allows you to build applications powered by LLMs, Transformer models, vector search and more
+  - Haystack can orchestrate state-of-the-art embedding models and LLMs into pipelines to build end-to-end NLP applications 
+  - 👷 xp
+    - 是类似 langchain/llama_index 的框架，不是类似ragflow这样的带ui的可用产品
+  - Model agnostic: Allow users the flexibility to decide what vendor or technology they want. 
+  - Explicit: Make it transparent how different moving parts can “talk” to each other so it's easier to fit your tech stack and use case.
+  - Haystack provides all tooling in one place: database access, file conversion, cleaning, splitting, training, eval, inference, and more
+  - Extensible: Provide a uniform and easy way for the community and third parties to build their own components
+  - deepset AI Platform is our fully managed, end-to-end platform to integrate LLMs with your data, which uses Haystack for the LLM pipelines architecture.
+  - https://github.com/deepset-ai/haystack-cookbook /202511
+    - A collection of example notebooks using Haystack
+  - https://github.com/deepset-ai/haystack-demos
+  - https://github.com/deepset-ai/hayhooks /apache2/python
+    - Easily deploy Haystack pipelines as REST APIs and MCP Tools.
+  - [Ollama: support Embedders ](https://github.com/deepset-ai/haystack-core-integrations/issues/190)
+    - 202411: TextEmbedder done. Document Embedder has been merged some time ago.
+  - [Investigate support for images in `ToolCallResult` _202505](https://github.com/deepset-ai/haystack/issues/9432)
+    - Currently, providers that expose a tool role for messages (OpenAI, Gemini, Ollama) do not support images in the tool result.
+    - Conversely, Anthropic has no tool role and requires tool results to be included in a user message, which can contain images.
+    - Since multimodal support in Amazon Bedrock is mostly based on Anthropic, Bedrock supports this use case as well. 
+    - Supporting this use case would require refactoring our `ToolCallResult` dataclass.
+    - a simple workaround is to create a user message with the image returned by the tool.
+  - [Handling rich data files such as PDF/CSV/XLSX _202511](https://github.com/deepset-ai/haystack/discussions/10034)
+    - I’d like to ask how you usually handle document ingestion for large files — for example, CSVs, XLSX, or PDFs. I’m currently facing out-of-memory (OOM) issues when uploading rich data files. Our production server has 24 GB of GPU memory, but I’d like to make the process as optimized as possible.
+    - Reproducing: What's the batch size for embedder? I guess you could lower that to 4-5 and see? Your splitter looks good but still do for just one file and check if it is working as expected and breaking into proper chunks. But I guess batch size is the issue
+  - [Can this framework be used to Chinese full-text searches? _202307](https://github.com/deepset-ai/haystack/discussions/5471)
+    - 官方源码不支持。 可以通过改源码实现。 具体在分词分句部分， 其源码使用的nltk库，没有中文。 但是可以自己修改这部分的函数。使其支持中文的分词分句规则
+    - 202412: The support for Chinese is very poor. I hope v2 supports Chinese.
+    - 202508: We have a new integration for processing Chinese Text with Haystack https://haystack.deepset.ai/integrations/hanlp
+    - [for Chinese text processing, can we still only use regular expressions? I wonder if there is a new way now _202303](https://github.com/deepset-ai/haystack/discussions/4312)
+  - [Best pipeline for similarity question search _202205](https://github.com/deepset-ai/haystack/discussions/2516)
+    - Your advice saved me! Now I use `sentence-transformers/distiluse-base-multilingual-cased` for question embedding. It seems to have a nice result. 
+
+- https://github.com/neuml/txtai /11.9kStar/apache2/202512/python
+  - https://neuml.github.io/txtai
+  - an all-in-one AI framework for semantic search, LLM orchestration and language model workflows
+  - The key component of txtai is an embeddings database, which is a union of vector indexes (sparse and dense), graph networks and relational databases.
+  - Vector search with SQL, object storage, topic modeling, graph analysis and multimodal indexing
+  - Workflows to join pipelines together and aggregate business logic
+  - Run local or scale out with container orchestration
+  - built with Python 3.10+, Hugging Face Transformers, Sentence Transformers and FastAPI
+
+- https://github.com/agentset-ai/agentset /1.6kStar/MIT/202512/ts
+  - https://agentset.ai/
+  - The open-source RAG platform: built-in citations, deep research, 22+ file formats, partitions, MCP server, and more.
+  - It provides end-to-end tooling: ingestion, vector indexing, evaluation/benchmarks, chat playground, hosting, and a developer-friendly API.
+  - Model agnostic: works with your choice of LLM, embeddings, and vector DB
+  - Chat playground with message editing and citations
+  - Built-in multi-tenancy
+  - Built with TypeScript, Next.js, AI SDK, Prisma, Supabase, and Trigger.dev
+
 - https://github.com/Bessouat40/RAGLight /612Star/MIT/202512/python
   - a lightweight and modular Python library for implementing RAG
   - provides modular components to easily integrate various LLMs, embeddings, and vector stores
@@ -525,24 +649,6 @@ modified: 2025-11-30T17:27:16.720Z
   - https://xerrors.github.io/Yuxi-Know/
   - 功能强大的智能体平台，融合了 RAG 知识库与知识图谱技术，基于 LangGraph v1 + Vue.js + FastAPI + LightRAG 架构构建
   - 集成主流大模型、LightRAG、MinerU、PP-Structure、Neo4j 、联网检索、工具调用。
-
-- https://github.com/agentset-ai/agentset /1.6kStar/MIT/202512/ts
-  - https://agentset.ai/
-  - The open-source RAG platform: built-in citations, deep research, 22+ file formats, partitions, MCP server, and more.
-  - It provides end-to-end tooling: ingestion, vector indexing, evaluation/benchmarks, chat playground, hosting, and a developer-friendly API.
-  - Model agnostic: works with your choice of LLM, embeddings, and vector DB
-  - Chat playground with message editing and citations
-  - Built-in multi-tenancy
-  - Built with TypeScript, Next.js, AI SDK, Prisma, Supabase, and Trigger.dev
-
-- https://github.com/neuml/txtai /11.9kStar/apache2/202512/python
-  - https://neuml.github.io/txtai
-  - an all-in-one AI framework for semantic search, LLM orchestration and language model workflows
-  - The key component of txtai is an embeddings database, which is a union of vector indexes (sparse and dense), graph networks and relational databases.
-  - Vector search with SQL, object storage, topic modeling, graph analysis and multimodal indexing
-  - Workflows to join pipelines together and aggregate business logic
-  - Run local or scale out with container orchestration
-  - built with Python 3.10+, Hugging Face Transformers, Sentence Transformers and FastAPI
 
 - https://github.com/SciPhi-AI/R2R /7.5kStar/MIT/202511/python
   - an advanced AI retrieval system supporting RAG
@@ -621,6 +727,12 @@ modified: 2025-11-30T17:27:16.720Z
 - https://github.com/postgresml/korvus /1.5kStar/MIT/202501/rust/inactive
   - a search SDK that unifies the entire RAG pipeline in a single database query. 
   - Built on top of Postgres with bindings for Python, JavaScript, Rust and C.
+
+- https://github.com/autollama/autollama /26Star/MIT/202509/js
+  - https://autollama.io/
+  - Anthropic's Contextual Retrieval implementation with visual chunk comparison. Preview context enrichment before/after embedding.
+  - For too long, RAG has been about finding chunks, not understanding documents. AutoLlama changes that. 
+  - Built on Anthropic's breakthrough contextual retrieval methodology, it's the first JavaScript-first RAG framework that actually comprehends your documents the way humans do.
 # rag-memory
 - https://github.com/jakops88-hub/Long-Term-Memory-API /202512/ts
   - A Memory Server for AI Agents. Runs on Postgres + pgvector. 
@@ -671,6 +783,10 @@ modified: 2025-11-30T17:27:16.720Z
   - A blazing fast inference solution for text embeddings models.
   - From scratch implementation, no Vector DBs yet.
   - Steps to Chat with Any PDF in Gradio UI
+
+- https://github.com/mburaksayici/smallevals /202512/python
+  - A lightweight evaluation framework powered by tiny 0.6B models — runs 100% locally on CPU/GPU/MPS, attach any vector DB connection and run, fast and free.
+  - Evaluation tools requiring LLM-as-a-judge or external, that costs/doesn't scale easily. 
 # chat-docs/knowledgebase
 - https://github.com/arc53/DocsGPT /17.4kStar/MIT/202511/python/ts/提交多
   - https://app.docsgpt.cloud/
@@ -752,6 +868,15 @@ modified: 2025-11-30T17:27:16.720Z
     - 83333 is very large. I made the max 4096. Or you can control via env `CHROMA_MAX_BATCH_SIZE`.
     - 4096 is on high end, yes can make it smaller as required. If on CPU I expect should work pretty ok, but issue is bge-m3 has 8k context so uses alot more memory despite size if chunks are large.
 
+- https://github.com/khoj-ai/khoj /31.6kStar/AGPLv3/202511/python/ts
+  - https://khoj.dev/
+  - Khoj is an application that creates always-available, personal AI agents for you to extend your capabilities
+  - Your AI agents have access to the internet, allowing you to incorporate realtime information.
+  - Khoj is accessible on Desktop, Emacs, Obsidian, Web and Whatsapp.
+  - Khoj is open-source, self-hostable. Always.
+  - 支持私有化部署、本地模型、与 Obsidian 无缝整合
+  - 支持 github、pdf/markdown、notion 等内容源
+
 - https://github.com/GitHamza0206/simba /1.4kStar/apache2/202505/python/jupyter/inactive
   - https://simba.mintlify.app/
   - Portable KMS (knowledge management system) designed to integrate seamlessly with any RAG
@@ -764,7 +889,7 @@ modified: 2025-11-30T17:27:16.720Z
   - ⚖️ License
     - 允许作为后台服务直接商用，但不允许提供 SaaS 服务
 
-- https://github.com/QuivrHQ/quivr /38.4kStar/apache2/202506/python
+- https://github.com/QuivrHQ/quivr /38.7kStar/apache2/202506/python/inactive
   - https://core.quivr.com/
   - Opiniated RAG for integrating GenAI in your apps
   - Opiniated RAG: We created a RAG that is opinionated, fast and efficient so you can focus on your product
@@ -772,7 +897,7 @@ modified: 2025-11-30T17:27:16.720Z
   - Any File: Quivr works with any file, you can use it with PDF, TXT, Markdown, etc and even add your own parsers.
   - Customize your RAG: Quivr allows you to customize your RAG, add internet search, add tools, etc.
 
-- https://github.com/dontizi/rlama /1.1kStar/apache2/202508/go/js
+- https://github.com/dontizi/rlama /1.1kStar/apache2/202505/go/js/inactive
   - https://rlama.dev/
   - a powerful AI-driven question-answering tool for your documents, seamlessly integrating with your local Ollama models.
   - It enables you to create, manage, and interact with Retrieval-Augmented Generation (RAG) systems tailored to your documentation needs.
@@ -1029,3 +1154,9 @@ modified: 2025-11-30T17:27:16.720Z
 - https://huggingface.co/datasets/G4KMU/t2-ragbench
   - [T2-RAGBench - Benchmark for RAG in Finance (10K Downloads on HF) : r/Rag](https://www.reddit.com/r/Rag/comments/1pde2au/t2ragbench_benchmark_for_rag_in_finance_10k/)
 # more
+- https://github.com/tensorlakeai/tensorlake /817Star/apache2/202512/python
+  - https://tensorlake.ai/
+  - Tensorlake is a Document Ingestion API and a serverless platform for building data processing and orchestration APIs
+  - Parse documents (PDFs, DOCX, spreadsheets, presentations, images, and raw text) to markdown or extract structured data with schemas. This is powered by Tensorlake's state of the art layout detection and table recognition models.
+  - Deploy Agentic Applications and AI Workflows using durable functions, with sandboxed and managed compute infrastructure that scales your agents with usage.
+  - Sign up at cloud.tensorlake.ai and get your API key.

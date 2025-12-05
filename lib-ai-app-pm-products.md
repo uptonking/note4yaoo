@@ -89,7 +89,9 @@ modified: 2025-03-22T16:10:24.856Z
   - web sandbox + ai-coding > lovable ❓
   - sandpack ai? react-live ai?
 
-- 🏠 ai-architecture: 与ai的通信和计算是在前端实现，还是在后端实现
+- 🏠 ai-architecture: 
+  - 架构及功能偏向 RAG(ragflow/quivr), 还是偏向 automation/workflow(dify/flowise/coze/sim)
+  - 与ai的通信和计算是在前端实现，还是在后端实现
   - 🤔 一种思路: tool-call时使用擅长tool-call的模型，分析时使用公益站的聊天优质但无法tool-call的模型
   - 支持类似 roocode 的 model profile 切换
   - 🐛 前端和大模型直接对接的缺点: 关闭页面会丢失数据、流程中断、并发控制复杂

@@ -248,10 +248,12 @@ use vanilla html/css/javascript to create a personal profile landing page: homep
 use react to create a homepage shows a list of frontend frameworks like react/vue/angular, when clicking the framework, navigate to the route to show its introduction
 
 - provide a comprehensive overview of this project. analyze the project architecture and primary user journey use cases. then find some important source code to explain the core architecture and data flow.
+  - i want more details about rag ingest/chunking/embedding/persistence logic
+  - how to refactor related source code to support more vector db including qdrant/chromadb/pgvector? show me some code and explain the architecture migration
 
 - I want to run this project fully locally without docker and nginx.
-  - please read setup-related files like docker-compose.yaml and README.md, and tell me steps and shell commands to run frontend/backend locally.
-  - i have already installed python/uv/npm/chromadb/Ollama on my local macos
+  - please read setup-related files like docker-compose.yaml and README.md, and tell me step by step how to configure and run frontend/backend locally.
+  - i have already installed python/uv/npm/chromadb/Ollama/postgresql/mysql/redis on my local macos.
 
 - 你是一个专业且友善的 AI 助手。你的回应应该： 1. 使用简体中文回答 2. 当需要展示代码时，使用适当的语法高亮（如 typescript, python, javascript 等） 3. 当需要解释复杂概念时，可以使用 Mermaid 图表 4. 当涉及数学公式时，使用 LaTeX 语法 5. 保持回应简洁明确，适时使用列表和表格来组织信息. 
   - 请按以上要求介绍reactjs前端框架

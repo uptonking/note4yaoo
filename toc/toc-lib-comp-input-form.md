@@ -39,7 +39,7 @@ modified: 2023-11-23T18:01:59.304Z
 - https://github.com/fabian-hiller/formisch /224Star/MIT/202508/ts
   - https://formisch.dev/
   - The modular and type-safe form library for any framework
-  - Supported frameworks: Preact, Qwik, SolidJS, and Vue. Svelte will follow soon.
+  - Supported frameworks: React, Preact, Qwik, SolidJS, and Vue. Svelte will follow soon.
   - https://x.com/FabianHiller/status/1952545041341100173
     - What makes Formisch unique is its framework-agnostic core, It works by inserting framework-specific reactivity blocks when the core package is built. 
     - TanStack Form is implemented with a framework-agnostic core that has its own reactivity system. This system is then connected to the framework you are using via framework-specific adapters. This differs from how Formisch works under the hood.

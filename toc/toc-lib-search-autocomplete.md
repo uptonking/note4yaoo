@@ -89,13 +89,14 @@ modified: 2023-01-01T13:24:35.994Z
   - https://github.com/beekeeper-studio/flexsearch
     - FlexSearch v0.7.0 is a modern re-implementation and was newly developed from the ground up
 
-- orama/lyra /5.1kStar/apache2/202311/ts
+- orama/lyra /10kStar/apache2/202510/ts/inactive
   - https://github.com/oramasearch/orama
   - https://github.com/LyraSearch/lyra
   - https://docs.lyrasearch.io/
   - https://docs.oramasearch.com/
-  - Fast, in-memory, typo-tolerant, full-text search engine written in TypeScript.
-  - Lyra is an immutable, runtime-agnostic, edge, and in-memory full-text search engine that works both on client and server.
+  - A complete search engine and RAG pipeline in your browser, server or edge network with support for full-text, vector, and hybrid search in less than 2kb.
+  - ~~Fast, in-memory, typo-tolerant, full-text search engine written in TypeScript.~~
+  - ~~Lyra is an immutable, runtime-agnostic, edge, and in-memory full-text search engine that works both on client and server.~~
   - Lyra has been developed thinking of a simple way to add new features via a plugin system, leaving the core as small as possible.
   - Lyra will only index string properties, but will allow you to set and store additional data if needed.
 - https://github.com/xieyezi/lyra-cn
