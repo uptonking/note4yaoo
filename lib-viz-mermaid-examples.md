@@ -22,6 +22,8 @@ modified: 2025-11-19T17:59:15.580Z
     - 写文档的时候，把图表库 clone 到文档目录，把图表库路径告诉 agent，让它根据文档内容，自由选择最合适的图表。
     - 如果有特殊需求， 可以将指定图表的文件给 agent 要求它用。
     - 如果 agent 绘制图表出错， 可以把样本文件给它让它照抄。
+  - https://github.com/xicilion/markdown-viewer-extension
+    - 把前阵子写的 markdown 渲染工具改写成 chrome 插件发布出来了。支持浏览器阅读 markdown，并一键保存为 word
 
 - https://github.com/gotoailab/modern_mermaid /MIT/202512/ts
   - https://modern-mermaid.live/

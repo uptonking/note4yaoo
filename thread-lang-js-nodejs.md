@@ -18,6 +18,24 @@ modified: 2023-11-10T07:10:19.089Z
 
 - ## 
 
+- ## 
+
+- ## ⚖️ Use the standard Node.js "imports" field instead of TypeScript `paths` aliases:
+- https://x.com/diegohaz/status/1996628354179698873
+  - Node.js can run TS files now, but it won't work if you're using TS path aliases
+- TypeScript `paths` aliases only work at compile-time, but the "imports" field works at both compile-time and runtime.
+  - thus, using this field provides standard, runtime-safe module aliases that work for both TypeScript and Node without extra tooling.
+- however, there are limitations.
+  - subpath imports only work within your own package, require explicit `#` -prefixed mappings, and don’t support broad wildcard aliases. by “broad wildcard aliases”, i mean using a single alias with * to map an entire folder tree of imports, instead of defining each subpath explicitly.
+  - `tsconfig` paths are more flexible for development, but they only work at compile time and need extra tooling to work at runtime.
+  - that’s why I still use `tsconfig` in most of my projects.
+
+- What would happen if you changed "#​app/*" to "@/app/*"? 
+  - Node.js requires the alias to be prefixed with `#`. It’s honestly not that bad, you get used to it, and auto-import works too.
+
+- but Vite 8 may now read tsconfig.json to auto infer the aliases, so better keep them in tsconfig.json
+  - Vite has supported package.json subpath imports since v4. So why wait for v8?
+
 - ## node.config.json is now available in Node v22.
 - https://x.com/satanacchio/status/1925284506489016343
 - With the introduction of test runner, sea, and other feature that require a lot of flags, a json config flag would improve by a lot the developer experience and increase adoption.

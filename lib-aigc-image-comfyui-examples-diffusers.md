@@ -1890,6 +1890,11 @@ modified: 2025-08-23T11:43:35.904Z
   - Support for wide range of image formats, including Apple's HEIC
   - Integration with the InvokeAI AI image generation system
   - Extensible backend (FastAPI)
+# prompts-image
+- https://github.com/intelligencedev/PromptForge /MIT/202521/python
+  - A visual prompt management system for AI image generation. 
+  - Organize, browse, and manage artistic style prompts with visual references in an intuitive interface.
+  - [PromptForge EASY- EDIT - SAVE - VIEW- SHARE (PROMPTS) : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1pf7yjv/promptforge_easy_edit_save_view_share_prompts/)
 # more
 - https://github.com/Comfy-Org/registry-backend /GPL/202502/go
   - https://registry.comfy.org/

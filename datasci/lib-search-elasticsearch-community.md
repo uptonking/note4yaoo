@@ -67,7 +67,21 @@ modified: 2023-01-02T08:49:39.114Z
 
 - ## 
 
-- ## 
+- ## [macOS 15.2 M4: Unable to launch Elasticsearch Docker container _202412](https://github.com/elastic/elasticsearch/issues/118583)
+  - Unable to start docker container using the latest docker desktop (without Rosetta installed), see logs. MacBook Pro M4 Max
+
+- Neither of those options worked for me under docker compose environment variables using 8.16.1 but did work for me with 8.17.0. You have to specify both for them to work.
+
+```yaml
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.17.0
+    environment:
+      ES_JAVA_OPTS: -XX:UseSVE=0
+      CLI_JAVA_OPTS: -XX:UseSVE=0
+```
+
+- docker run -ti -e ES_JAVA_OPTS="-XX: UseSVE=0" -e CLI_JAVA_OPTS="-XX: UseSVE=0" docker.elastic.co/elasticsearch/elasticsearch:8.11.4
 
 - ## BM25+Embedding 混合检索是在不增加latency的情况下的无脑优化方法之一
 - https://x.com/9hills/status/1803159879512891876

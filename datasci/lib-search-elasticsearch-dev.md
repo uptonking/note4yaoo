@@ -13,6 +13,23 @@ modified: 2021-05-13T03:18:43.412Z
   - 不必过早在搜索上投入太多精力，类似vscode的ripgrep方案对大多数场景都够用
 
 - 从es5开始，默认打分算法从TF-IDF变为BM25
+# draft
+
+# dev-xp
+
+## devops
+
+- resources
+  - [Install Elasticsearch from archive on Linux or MacOS | Elastic Docs](https://www.elastic.co/docs/deploy-manage/deploy/self-managed/install-elasticsearch-from-archive-on-linux-macos)
+  - [Configure Elasticsearch | Elastic Docs](https://www.elastic.co/docs/deploy-manage/deploy/self-managed/configure-elasticsearch)
+
+```sh
+# for macos
+./bin/elasticsearch
+```
+
+# more
+
 # faq
 - elasticsearch vs solr
   - 当实时建立索引的时候，solr会产生IO阻塞，而es则不会，所以es查询性能要高于solr
@@ -92,4 +109,3 @@ modified: 2021-05-13T03:18:43.412Z
 - [OpenSearch vs Elasticsearch: An Up-to-Date Comparison - BigData Boutique blog _202304](https://bigdataboutique.com/blog/opensearch-vs-elasticsearch-an-up-to-date-comparison-5c1c71)
 # products-elk
 - [Online pivot tables (BI tool) | SeekTable](https://www.seektable.com/)
-# more

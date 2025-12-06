@@ -9,6 +9,8 @@ modified: 2023-06-14T00:53:15.226Z
 
 # guide
 
+- re-think
+  - 系统的 扩展性灵活性 和 高性能 似乎是冲突的
 # not-yet
 - ❓ hover的tooltip/popover如何调试
 

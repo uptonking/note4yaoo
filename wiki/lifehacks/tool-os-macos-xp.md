@@ -9,6 +9,12 @@ modified: 2023-07-23T07:05:19.441Z
 
 # guide
 
+- pros
+  - app store资源多, 易盈利, 商业软件丰富
+
+- cons
+  - ulimit难修改
+
 - mac-shop
   - [MacRumors Buyer's Guide: Know When to Buy iPhone, Mac, iPad](https://buyersguide.macrumors.com/)
 # usage

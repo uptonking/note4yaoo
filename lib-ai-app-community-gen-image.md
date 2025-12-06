@@ -1743,6 +1743,25 @@ Q8（8 位）	    16GB+	   接近原始版本
 - ## [This is offiZially crazy! (Z_Image) : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1p9f7ic/this_is_offizially_crazy_z_image/)
   - 手掌里面显示logo字母
 
+# discuss-video
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🌰 [I did all this using 4GB VRAM and 16 GB RAM : r/StableDiffusion _202512](https://www.reddit.com/r/StableDiffusion/comments/1pf7986/i_did_all_this_using_4gb_vram_and_16_gb_ram/)
+  - I was wondering what can be done with AI these days on a low-end computer, so I tested it on my older laptop with 4GB VRAM (NVIDIA Geforce GTX 1050 Ti) and 16 GB RAM (Intel Core i7-8750H).
+  - I used Z-Image Turbo to generate the images. At first I was using the gguf version (Q3) and the images looked good, but then I came across an all-in-one model (https://huggingface.co/SeeSee21/Z-Image-Turbo-AIO) that generated better quality and faster - thanks to the author for his work. 
+  - I generated images of size 1024 x 576 px and it took a little over 2 minutes per image. (~02:06) 
+  - I used Wan 2.2 5b to generate the videos. It was a real struggle until I figured out how to set it up properly so that the videos didn't just have slow motion and so that the generation didn't take forever.
+
+- I never made anything close to this in resolution with my 3060 12gb and 64gb ram...
+
+- For anyone wondering how long it would take to do this with a desktop 4090: couple of seconds per image and maybe 5-10 minutes per video.
+  - I also have desktop pc with 4080 RTX and with same workflows it takes 4 seconds for generating image (1024 x 576 px) and 33 seconds for generating video (also 1024 x 576 px, 97 frames). :) It is really fast, but the 5b model often misunderstands the prompts and doesn't have good motion.
+
+- I didn't know that the Wan 2.2 5b with a 4-step Lora turbo was such good quality!
 # discuss-image
 - ## 
 

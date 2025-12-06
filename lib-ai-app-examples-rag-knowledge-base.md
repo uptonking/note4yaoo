@@ -10,13 +10,14 @@ modified: 2025-11-30T17:27:16.720Z
 # guide
 
 - 优化提取中文文档文字的方案
-  - 可参考华人团队的方案, 如 WeKnora, LightRAG
+  - 可参考华人团队的方案, 如 ragflow/WeKnora/LightRAG
 
 - tips
   - 定制或优化方案时, 早晚都需要深入rag的各个环节: parse > chunk > embed > retrieval > rerank > summarize
   - 没有持久化vector embeddings的示例都是demo, 每次启动都要将大文件index一遍
   - 基于文件系统，还是基于数据库 来实现和优化rag
   - rag是很多产品都需要的基础能力之一, 可替代text-search, 可参考成功的产品或针对场景/codebase/local优化的产品
+  - features: large-file/pdf, ollama-embeddings, 中文
 # popular
 - https://github.com/pipeshub-ai/pipeshub-ai /2kStar/apache2/202511/python/ts
   - https://pipeshub.com/
@@ -76,7 +77,7 @@ modified: 2025-11-30T17:27:16.720Z
   - Multiple recall paired with fused re-ranking.
   - 依赖 Crawl4AI、elasticsearch、flask-login、minio、pandas、voyageai、pyobvector
   - 未使用langchain/aisdk, 多model-provider的集成完全自定义实现
-  - 🌹 对中文的支持较好
+  - 🇨🇳 对中文的支持较好
   - 实测本地运行很不友好
     - elasticsearch/infinity 数据层还在迁移与优化
     - 本地运行的入口依赖 libjemalloc.so

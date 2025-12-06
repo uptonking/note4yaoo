@@ -251,7 +251,7 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
   - i want more details about rag ingest/chunking/embedding/persistence logic
   - how to refactor related source code to support more vector db including qdrant/chromadb/pgvector? show me some code and explain the architecture migration
 
-- I want to run this project fully locally without docker and nginx.
+- I want to run this project fully locally without docker and nginx for local development and debugging.
   - please read setup-related files like docker-compose.yaml and README.md, and tell me step by step how to configure and run frontend/backend locally.
   - i have already installed python/uv/npm/chromadb/Ollama/postgresql/mysql/redis on my local macos.
 
@@ -299,6 +299,103 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
   - ?
 - dev-to
   - ?
+
+## 1206
+
+- [[Bug] 不兼容node24 · Issue · umijs/umi](https://github.com/umijs/umi/issues/13058)
+  - It appears there's a bug in Node 24.x that causes this issue (`Error: No such module: http_parser`). Until the dependency issue causing this is resolved you can downgrade node to 23.x (Current) to resolve
+- I encountered the same issue, node 22/23 also works.
+
+- from huggingface_hub import snapshot_download, ModuleNotFoundError: No module named 'huggingface_hub'
+  - The issue was that download_deps.py uses PEP 723 script metadata (lines 4-10) which defines its own dependencies separate from the project's dependencies. I added `huggingface-hub>=0.25.0,<0.26.0` to the script's dependency list, which now allows the script to import huggingface_hub successfully.
+
+- [macos - How to see vm.max_map_count and fs.file-max on Mac(Catalina) terminal - Unix & Linux Stack Exchange](https://unix.stackexchange.com/questions/670095/how-to-see-vm-max-map-count-and-fs-file-max-on-maccatalina-terminal)
+  - These are Linux-specific settings (see the documentation for vm.max_map_count and fs.file-max-nr).
+  - On macOS, the equivalent for `fs.file-max-nr` is `kern.maxfiles`. I don’t know if there’s an equivalent for `vm.max_map_count`.
+
+- [macOS 13.5 no longer allows setting system wide ulimits | Hacker News _202308](https://news.ycombinator.com/item?id=37233295)
+  - sudo launchctl limit maxfiles 65536 200000
+  - sudo launchctl limit maxfiles
+- So can it be “changed” and then sip turned back on, or does SIP reset it?
+  - I think these get reset at reboot?
+- That’s annoying. If you just had to disable SIP and change a value and reenable it wouldn’t be a major issue.
+  - I feel Apple is trying to force apps to handle this “the correct way” - remember UAC prompts all over the place when they were first introduced in Windows?
+
+- ### [Increasing File Handle Limit on macOS | RcloneView Support Center](https://rcloneview.com/support/howto/FAQ/increase-file-handle-limit-on-macos)
+  - ulimit -n             # Current shell session soft limit
+  - launchctl limit maxfiles  # System-wide soft and hard limits
+  - sudo vi /Library/LaunchDaemons/limit.maxfiles.plist
+  - sudo chmod 644 /Library/LaunchDaemons/limit.maxfiles.plist
+  - sudo reboot
+  - launchctl limit maxfiles
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+   <key>Label</key>
+   <string>limit.maxfiles</string>
+   <key>ProgramArguments</key>
+   <array>
+       <string>launchctl</string>
+       <string>limit</string>
+       <string>maxfiles</string>
+       <string>65536</string>
+       <string>65536</string>
+   </array>
+   <key>RunAtLoad</key>
+   <true/>
+</dict>
+</plist>
+```
+
+- ### 💡 [Too many open files :: Magnolia CMS Docs](https://docs.magnolia-cms.com/product-docs/administration/troubleshooting/too-many-open-files/)
+  - 提供了linux和macos上的设置方法
+
+#### Ubuntu Linux
+
+Find the current maximum number of open files per user in a single session:
+
+ulimit -n
+
+The number is 1024 by default, which is too small.
+A value higher than 1048576 (from Ubuntu LTS 24.01) is recommended.
+sudo gedit /etc/security/limits.conf
+
+* soft nofile 10000
+* hard nofile 50000
+
+This sets for all users a soft limit of 10000 open files and a hard limit of 50000. These are just examples. Set the limit according to your needs.
+Verify the new maximum number of open files:
+
+ulimit -n
+
+#### macos
+
+Find the current maximum number of open files per user in a single session:
+
+ulimit -n
+The number is 256 by default, which is too small.
+
+To check the current limits on your Mac OS X system, run the following:
+
+launchctl limit maxfiles
+The last two columns are the soft and hard limits, respectively.
+
+Add ulimit -n 65536 to your ~/.profile file. This increases the limit for the shell.
+
+Create a /etc/sysctl.conf file if it does not exist.
+Add the following lines to /etc/sysctl.conf:
+
+kern.maxfiles=65536
+kern.maxfilesperproc=65536
+
+restart your system to read the settings from the files you edited.
+
+Type ulimit -n. The response should be 65536 (if not, restart your system).
+
+The instructions above apply to Bash shell, not Zsh.
 
 ## 1204
 
