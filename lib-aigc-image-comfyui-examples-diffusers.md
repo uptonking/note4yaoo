@@ -478,6 +478,11 @@ modified: 2025-08-23T11:43:35.904Z
   - 一句话一张图片生成小红书图文
   - 前段时间默子在 Linux.do 发了一个用 Nano banana Pro 做 PPT 的帖子, 收获了 600 多个赞
   - 依赖 Flask、Nano banana Pro、pinia
+
+- https://github.com/iconben/z-image-studio /apache2/202512/python/js
+  - A web application and a command-line interface for the Z-Image-Turbo text-to-image generation model (Tongyi-MAI/Z-Image-Turbo).
+  - Utilizes the high-quality Tongyi-MAI/Z-Image-Turbo model via diffusers.
+  - [Should I change to a quantized model of z-image-turbo for mac machines? : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1pdz0ob/should_i_change_to_a_quantized_model_of/)
 # examples
 - https://github.com/d4N-87/ComfyUI-Workflow-Inspector /7Star/MIT/202508/ts
   - https://d4n-87.github.io/ComfyUI-Workflow-Inspector/
@@ -1731,6 +1736,11 @@ modified: 2025-08-23T11:43:35.904Z
   - MFLUX is a line-by-line port of the FLUX and Qwen implementations in the Huggingface Diffusers and Huggingface Transformers libraries to Apple MLX.
   - All models are implemented from scratch in MLX and only the tokenizers are used via the Huggingface Transformers library. 
   - 速度慢: Mac Mini	2024 M4 (16GB)	@wnma3mz	~97s	512 x 512, 8-bit quantization
+  - This unified interface mirrors how LoRA paths work, making it easy to switch between local and remote models.
+  - [Add support for Z-image Turbo & major improvements for weight loading and parameter resolution _20251129](https://github.com/filipstrand/mflux/pull/284)
+    - All critical weight handling have been rewritten unified (all models now use this new approach, including flux)
+  - https://github.com/rurounigit/Mflux-ComfyUI
+    - ComfyUI nodes for mflux 0.13.1 (Apple Silicon/MLX)
 # diffusers
 - https://github.com/huggingface/diffusers /30.4kStar/apache2/202508/python
   - https://huggingface.co/docs/diffusers
@@ -1864,7 +1874,7 @@ modified: 2025-08-23T11:43:35.904Z
     - Uses the SDNQ uint4 quantized weights from Disty0 on HuggingFace, which brings the model from ~24GB down to ~3.5GB.
     - Includes a Gradio web UI and CLI script. Also has experimental CUDA support if you want to run it on NVIDIA.
 
-- https://github.com/mzbac/zimage.swift /202511/swift
+- https://github.com/mzbac/zimage.swift /202512/swift
   - Swift port of Z-Image-Turbo using mlx-swift for Apple Silicon.
 # InvokeAI
 - https://github.com/CodeGandee/invokeai-py-client /MIT/202508/python

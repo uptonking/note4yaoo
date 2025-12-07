@@ -168,6 +168,12 @@ modified: 2023-07-08T12:47:00.141Z
 - wiki-like
   - [第三次基本结束・Wiktionary2023 + OxfordreFerence+中英专业词典](https://forum.freemdict.com/t/topic/10746)
   - [中国文学大辞典[1991][马良春]](https://forum.freemdict.com/t/topic/13400)
+
+- kiwix-xp
+  - 提供了很多下载资源，包括各种精选版的维基百科内容集合，还有开发者工具文档
+    - https://library.kiwix.org/
+  - 支持通用搜索来搜索所有文档库的内容, 也支持页面内搜索
+  - 支持开启Hotspot服务来使用浏览器访问
 # zlibrary
 - tips
   - [Z-Library使用指南（2025） - 知乎](https://zhuanlan.zhihu.com/p/1931114405795432010)
@@ -250,6 +256,23 @@ modified: 2023-07-08T12:47:00.141Z
 - ## 
 
 - ## 
+
+- ## [Reminder Amazon has free public domain books under "Amazon Classics" : r/kindle](https://www.reddit.com/r/kindle/comments/1hxfv6t/reminder_amazon_has_free_public_domain_books/)
+- Most of the Amazon Classics aren't free in India. I'd rather sideload these books from other sources ig.
+
+- I prefer to use the Knowledge Standard Foundation's ZWIBook flash drive (which includes all of the books from the Gutenberg Project and some amazing software to organize, keep notes and highligts, search, etc). It is not free but the price is nominal and goes towards the good cause of supporting organizations that intend to keep this information free and available forever. You can use this to side load things if needed as well.
+
+- It’s a good idea, but considering Standard eBooks exists, this is a pass for me.
+  - [Standard Ebooks: Free and liberated ebooks, carefully produced for the true book lover](https://standardebooks.org/)
+
+- ## [如何获取那些已经进入公共版权领域的书籍 - 知乎](https://zhuanlan.zhihu.com/p/375905464)
+- 你可以通过古登堡计划（ Project Gutenberg）获取已经进入公共版权领域的英文原版电子书，比如《傲慢与偏见》(Pride and Prejudice), 该网站收录了超过6000本免费的电子书。你可以直接在线阅读HTML版本，同时该网站也提供了多种文本格式(如EPUB/Kindle)供人下载。在这个网站你也能找到一些其他语言, 如中文/德语/日语的书籍。
+
+- 互联网档案馆(Internet Archive)提供大量数字数据，包括网页、音乐、动态图像和数百万书籍（有多种数据格式）的永久性免费存储及获取，基本属于公共版权图书。
+
+- 书格 起源于@未曾在 2012 年建立的豆瓣小站，这是一个收集整理散落世界各地的中文古籍或绘画的小站。书格是一个自由开放的在线古籍图书馆，致力于开放式分享、介绍、推荐有价值的古籍善本，并鼓励将文化艺术作品数字化归档。书格的分享内容限定为公共版权领域的书籍。如果你喜欢古籍的m，那么书格 是一个好去处。
+
+- 亚马逊也有免费公版电子书，按关键字搜索即可，比如一些中国古代和近代的典籍，还有一些外文经典书籍。
 
 - ## 👣 Anna's Archive 可以视为 Zlibrary 的超集，拥有比 Zlibrary 更多的图书资源，不需要登录即可下载。
 - https://twitter.com/OldPanda/status/1764871238282080549

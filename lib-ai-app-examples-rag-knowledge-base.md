@@ -18,6 +18,20 @@ modified: 2025-11-30T17:27:16.720Z
   - 基于文件系统，还是基于数据库 来实现和优化rag
   - rag是很多产品都需要的基础能力之一, 可替代text-search, 可参考成功的产品或针对场景/codebase/local优化的产品
   - features: large-file/pdf, ollama-embeddings, 中文
+# citation/backlinks
+- 权威数据源
+  - 国家统计局
+  - arxiv
+  - 类似 google-scholar, web-of-science
+  - 中国裁判文书网
+  - 国家哲学社会科学(所有文献免费下载)
+
+- 图书
+  - [Project Gutenberg - Free eBooks ](https://www.gutenberg.org/)
+    - focus on older works for which U.S. copyright has expired
+  - 国家数字图书馆
+    - [电子图书公益阅读](http://read.nlc.cn/gyyd/index)
+  - 书格, 版权过期图书
 # popular
 - https://github.com/pipeshub-ai/pipeshub-ai /2kStar/apache2/202511/python/ts
   - https://pipeshub.com/
@@ -506,6 +520,13 @@ modified: 2025-11-30T17:27:16.720Z
 
 - https://github.com/jayshah5696/pravah /apache2/202409/python/inactive
   - LLM powered Local Perplexity-Inspired Search Engine
+
+- https://github.com/ragpi/ragpi /MIT/202511/python
+  - https://docs.ragpi.io/
+  - open-source AI assistant that answers questions using your documentation, GitHub issues, and READMEs. 
+  - supports multiple providers like OpenAI, Ollama, and Deepseek, and has built-in integrations with Discord and Slack.
+  - A web widget integration is also available to embed the assistant in your website.
+  - After adding a source, documents will be synced automatically. You can monitor the sync process through the /tasks endpoint.
 # rag-fwk
 - https://github.com/phbst/tinyRAG /202409/jupyter/inactive
   - 全手写的一个RAG应用。Langchain的大部分库会很方便，但是你不一定理解其中原理，所以代码尽可能展现基本算法，主打理解RAG的原理
@@ -1140,6 +1161,8 @@ modified: 2025-11-30T17:27:16.720Z
   - https://wikichat.genie.stanford.edu/
   - WikiChat is an improved RAG. It stops the hallucination of large language models by retrieving data from a corpus.
   - WikiChat uses Wikipedia and the following 7-stage pipeline to makes sure its responses are factual. Each numbered stage involves one or more LLM calls.
+  - [WikiChat: Stopping the Hallucination of Large Language Model Chatbots by Few-Shot Grounding on Wikipedia _202401](https://www.reddit.com/r/LocalLLaMA/comments/1920hho/wikichat_stopping_the_hallucination_of_large/)
+  - [Is Wikipedia RAG possible entirely locally with a gaming machine? : r/ollama _202502](https://www.reddit.com/r/ollama/comments/1ihibp9/is_wikipedia_rag_possible_entirely_locally_with_a/)
 
 - https://github.com/AdyTech99/volo /GPL/202501/python/inactive
   - combining AI with Wikipedia knowledge via a RAG pipeline
@@ -1147,10 +1170,134 @@ modified: 2025-11-30T17:27:16.720Z
   - Volo uses a tiny model (Qwen2.5:3b) and gives it the knowledge of nearly 7 million Wikipedia articles, making it a more reliable source of information than giant closed-source models like OpenAI's GPT4o and Anthropic's Claude 3.5 Sonnet, which are prone to hallucinations.
   - Offline Wikipedia Database: Leverages a `.zim` file from Kiwix, offering a snapshot of Wikipedia for offline access.
   - OpenAI-Compatible REST APIs: Use Volo with interfaces like Open WebUI or your own API client.
+  - [Volo: An easy and local way to RAG with Wikipedia! : r/LocalLLaMA _202501](https://www.reddit.com/r/LocalLLaMA/comments/1hzsvkz/volo_an_easy_and_local_way_to_rag_with_wikipedia/)
 
-- https://github.com/imDelivered/WikiRAG /202512/python/代码少
+- https://github.com/moodlehq/wiki-rag /BSD/202512/python
+  - a project that leverages Mediawiki as a source for augmenting text generation tasks, enhancing the quality and relevance of generated content
+  - RAG system specialised in ingesting MediaWiki sites via their API and providing an OpenAI API interface to interact with them.
+  - Milvus 2.6.2 or later (for vector similarity search). Standalone or Distributed deployments are supported. Lite deployments are not supported.
+  - Uses `LangGraph` for orchestration of the whole LLM pipeline.
+  - Accepts virtually any Mediawiki site as a knowledge base (KB).
+  - Uses Mediawiki API to extract content and metadata (not web crawling).
+  - The whole KB is stored in a (dated) JSON file for later use, access and analysis.
+  - Loads the KB into a vector database (Milvus) for fast retrieval.
+  - Hybrid retrieval using both vector and keyword search with fusion reranking.
+  - Exposed as a model using standard OpenAI API endpoints (v1/models and v1/chat/completions). Optionally protected with local or remote bearer tokens. Supports streaming responses.
+
+- https://github.com/upstash/wikipedia-semantic-search /MIT/202504/ts
+  - https://wikipedia-semantic-search.vercel.app/
+  - [Indexing Millions of Wikipedia Articles With Upstash Vector | Upstash Blog _202408](https://upstash.com/blog/indexing-wikipedia)
+  - We've created a semantic search engine and Upstash RAG Chat SDK using Wikipedia data to demonstrate the capabilities of Upstash Vector and RAG Chat SDK.
+  - Indexed over 144 million vectors from Wikipedia articles in 11 languages
+  - Used BGE-M3 embedding model for multilingual support
+
+- https://github.com/ollmer/wikichat /202401/python/inactive
+  - Talk to Wikipedia offline using llama.cpp models and semantic search over the index of the whole English Wikipedia (44 million paragraphs).
+
+- https://github.com/imDelivered/KiwixRAG /202512/python
+  - A powerful offline-capable chatbot with Retrieval-Augmented Generation (RAG) that lets you chat with AI using local knowledge bases like Wikipedia, Python documentation, or any ZIM file archive.
+  - Note: This software is currently only available for Linux. Windows and macOS support may be added in the future.
+  - Download a ZIM file (e.g., from Kiwix), The chatbot will automatically detect and use it
+  - Beautiful GUI built with tkinter
+  - Hybrid Search: Semantic (FAISS) + keyword (BM25) search  
+  - Just-In-Time Indexing: Auto-indexes articles on-the-fly
+  - Multiple Models: Switch between any Ollama model
+  - KiwixRAG uses a multi-joint architecture where three small AI reasoning models work together to prevent hallucinations and ensure accurate responses.
+  - For faster retrieval on large ZIM files, you can pre-build an index
+  - [Kiwix RAG: Terminal Chat Interface with Local Kiwix Content Integration : r/Kiwix _202512](https://www.reddit.com/r/Kiwix/comments/1pdio0i/kiwix_rag_terminal_chat_interface_with_local/)
   - [I built an offline AI chat app that automatically pulls Wikipedia articles for factual answers - runs completely locally with Ollama : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1pd2x8u/i_built_an_offline_ai_chat_app_that_automatically/)
-    - We really need a universal Kiwix API endpoint that Just Works with tools calls from whatever inference engine someone is using
+
+- https://github.com/rouralberto/zim-llm /202508/python/inactive
+  - [Building an Offline Knowledge Base with Kiwix Zim and Docker Model Runner - Alberto Roura](https://albertoroura.com/building-an-offline-knowledge-base-with-zim-and-docker-model-runner/)
+  - This project provides a comprehensive system for processing ZIM files (compressed Wikipedia/offline content databases) and creating a vector database for Retrieval-Augmented Generation (RAG) with Large Language Models, effectively having an offline knowledge base.
+  - Dynamic ZIM Library: Automatically discovers and processes multiple ZIM files from a dedicated library directory
+  - Multi-format ZIM Support: Supports libzim, zimply, and CLI-based ZIM file reading
+  - Flexible Vector Databases: Choose between ChromaDB and FAISS for storage
+  - Local LLM Support: Docker Model Runner for offline LLM capabilities
+  - Export articles from multiple ZIM files to JSON
+
+- https://github.com/mozanunal/llm-tools-kiwix /202506/python/inactive
+  - [I made an LLM tool to let you search offline Wikipedia/StackExchange/DevDocs ZIM files (llm-tools-kiwix, works with Python & LLM cli) : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1l3fdv3/i_made_an_llm_tool_to_let_you_search_offline/)
+
+- https://github.com/tylertitsworth/multi-mediawiki-rag /202408/archived
+  - A simple RAG chatbot that can retrieve from a mediawiki data dump
+  - Mediawikis hosted by Fandom usually allow you to download an XML dump of the entire wiki as it currently exists
+  - Your XML data needs to be loaded and transformed into embeddings to create a Chroma VectorDB.
+
+- https://github.com/MauroAndretta/WikiRag /apache2/202408/python/inactive
+  - RAG system designed for question answering, it reduces hallucination thanks to the RAG architecture. 
+  - It leverages Wikipedia content as a knowledge base.
+  - It integrates various components like Ollama, HuggingFaceEmbeddings, and Qdrant to create a powerful system
+
+- https://github.com/zeyu-chen/Wikipedia-KG-RAG /202411/python/inactive
+  - An intelligent question-answering system powered by knowledge graphs, combining Neo4j database and Wikipedia data for efficient Retrieval-Augmented Generation (RAG).
+  - Hybrid vector and graph-based search
+  - Real-time Updates - Dynamic Wikipedia data synchronization
+
+- https://github.com/BurnyCoder/wikipedia-ai-agent /202501/inactive
+  - AI agent research assistant that uses Wikipedia's vast knowledge base to deliver comprehensive, well-researched answers to your questions.
+  - Built on a modern stack including LangChain's LangGraph's ReAct agent, Wikipedia API, FAISS vector storage, Microsoft's GraphRAG, support for leading LLM providers (OpenAI, Anthropic, Google), and Streamlit frontend.
+
+- https://github.com/spring-projects-2024/wiki-savvy-rag /202411/inactive
+  - build a Wikipedia-backed RAG system expert about STEM subjects. Features a streamlit demo.
+  - We downloaded, filtered and cleaned the English Wikipedia (~100GB) and built a vector database of semantic embeddings based on all STEM articles, using the FAISS library for efficient retrieval of embeddings and SQLite for accessing text chunks from disk
+
+- https://github.com/RUC-NLPIR/FlashRAG /MIT/202511/python
+  - A Python Toolkit for Efficient RAG Research (WWW2025 Resource)
+  - Features 23 advancing RAG algorithms with reported results, based on our framework.
+  - [If you want to use Wikipedia as your corpus, you can download the Wikipedia dump you require in XML format](https://github.com/RUC-NLPIR/FlashRAG/blob/main/docs/original_docs/process-wiki.md)
+  - https://github.com/RUC-NLPIR/FlashRAG-Paddle
+    - built on the PaddlePaddle framework and PaddleNLP, which is optimized for Chinese-developed chips and computing platforms.
+
+- https://github.com/TIGER-AI-Lab/LongRAG /202408/inactive
+  - code for "LongRAG: Enhancing Retrieval-Augmented Generation with Long-context LLMs"
+  - LongRAG, consisting of a "long retriever" and a "long reader". Our framework use a 4K-token retrieval unit, which is 30x longer than before. 
+  - We leverage open-sourced dense retrieval toolkit, Tevatron. 
+
+- https://github.com/neuml/txtchat /apache2/202505/python/inactive
+  - txtchat builds autonomous agents, retrieval augmented generation (RAG) processes and language model powered chat applications.
+  - Wikitalk: Retrieval Augmented Generation (RAG) with Wikipedia
+
+- https://github.com/neuml/txtai/tree/master/examples
+  - [Local RAG Streamlit Apps for querying Wikipedia and ArXiv : r/LocalLLaMA _202406](https://www.reddit.com/r/LocalLLaMA/comments/1dq6kem/local_rag_streamlit_apps_for_querying_wikipedia/)
+  - The data source is self contained. There is no direct querying of Wikipedia.
+
+- https://github.com/neuml/ragdata /apache2/202507/python/inactive
+  - ragdata builds knowledge bases for Retrieval Augmented Generation (RAG).
+  - The currently supported datasets are: ArXiv, Wikipedia
+  - This project has processes to build txtai embeddings databases for common datasets.
+- https://github.com/myscale/ChatData /MIT/202406/python/inactive
+  - a robust chat-with-documents application designed to extract information and provide answers
+  - The knowledge base is a snapshot on 2022-12.
+
+- https://github.com/achyuthkumarmiryala/Wikipedia-RAG-QA /MIT/202505/python
+  - RAG system that answers natural-language questions on any Wikipedia topic.
+  - It combines dense vector retrieval (FAISS + Sentence Transformers) with a Hugging Face question-answering model, wrapped in a friendly Gradio interface.
+  - Real-time Wikipedia retrieval – pulls the latest content directly from Wikipedia’s API.
+  - Semantic search – encodes text with all-mpnet-base-v2 and finds the most relevant passages using FAISS.
+  - run locally or publish to Hugging Face Spaces with the same app.py.
+
+- https://github.com/exowanderer/WikidataChat /202411/inactive
+  - RAG with for answering question with the Wikidata REST API
+  - Search and Download: Utilizes Google's Serapi search pipeline and Wikidata's REST API to fetch relevant JSON data.
+  - RAG Pipeline: Merges Wikidata string statements with user-provided questions to generate informed and accurate answers through an LLM.
+
+- https://github.com/ahmedo42/wikiqa /202409/inactive
+  - RAG pipeline built for answering questions by retrieving the most relevant wikipedia articles using the Wikipedia API and the Google Search API.
+
+- https://github.com/datastaxdevs/workshop-wikipedia-qa /202311/inactive
+  - Real-time document Q&A using Pulsar, Cassandra, LangChain, and open-source language models.
+  - This workshop code runs a Retrieval Augmented Generation (RAG) application stack that takes data from Wikipedia, stores it in a vector database (Astra DB), and provides a chat interface for asking questions about the Wikipedia documents.
+
+- https://github.com/Shreyjain203/Wikipedia-Continual-Learning-RAG /202404/python/inactive
+  - When a user asks a question, the model provides an answer. If the model is unable to answer, it uses get_data.py to fetch more information and fine-tunes itself before providing an appropriate answer.
+
+- https://github.com/wikimedia/wikipedia-preview /MIT/202512/js
+  - https://wikimedia.github.io/wikipedia-preview/main
+  - https://wikimedia.github.io/wikipedia-preview/main/storybook
+  - a JavaScript component that allows you to provide context from Wikipedia about words or phrases on any website. 
+  - It lets you show a popup card with a short summary from Wikipedia when a reader hovers over a link: Read full article on Wikipedia 
+  - Works with any link that has an article on Wikipedia
 # benchmark-rag ⚡️
 - https://huggingface.co/datasets/G4KMU/t2-ragbench
   - [T2-RAGBench - Benchmark for RAG in Finance (10K Downloads on HF) : r/Rag](https://www.reddit.com/r/Rag/comments/1pde2au/t2ragbench_benchmark_for_rag_in_finance_10k/)

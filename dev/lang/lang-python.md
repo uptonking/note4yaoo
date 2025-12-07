@@ -61,10 +61,14 @@ modified: 2020-07-14T09:27:30.503Z
 # django
 - who is using #django
   - zulip
-  - suite-docs
+  - lasuite-docs/drive/meet
+  - authentik
   - openedx
   - baserow
   - plane
+  - MrDoc, MaxKB, fiduswriter
+  - apps: librephotos, django-helpdesk
+  - fwk: django-eav2, wagtail-cms
 
 - resources
   - [django-admin and manage.py commands](https://docs.djangoproject.com/en/5.2/ref/django-admin/)

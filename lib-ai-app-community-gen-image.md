@@ -77,12 +77,12 @@ modified: 2025-08-16T14:12:24.416Z
 - flux-gguf-hyper/8step,       760,    770,   5.21+1,   202404, model
 - flux-gguf-turbo/8step,       760,    760,   5.21+0.6, 202404, model
 - z-image-t-8bit/512/7step,    51,     49,    7 + 3,    202511, qwen, 512都模糊
-- z-image-t-8bit/512/9step,    66,     ?,     7 + 3,    202511, qwen
+- z-image-t-4/8bit/512/9step,  66,     ?,     7 + 3,    202511, qwen
 - z-image-t-8bit/512/12step,   85,     85,    7 + 3,    202511, 器官变形且模糊
 - z-image-t-8bit/512/16step,   120,    ?,     7 + 3,    202511, qwen
 - z-image-t-8bit/512/22step,   170,    ?,     7 + 3,    202511, 有时变形, 放大模糊
 - 🌹 z-image-t-8bit/1024/8step, 230,    270,  7 + 3,    202511, qwen, 放大模糊
-- z-image-t-8bit/1024/9step,   265,    ?,     7 + 3,    202511, qwen
+- z-image-t-4/8bit/1024/9step,  265,    ?,    7 + 3,    202511, qwen
 - z-image-t-8bit/1024/12step,  410,    420,   7 + 3,    202511, qwen
 - z-image-t-8bit/1024/16step,  560,    ?,     7 + 3,    202511, qwen
 - z-image-t-8bit/1024/22step,  640,    680,   7 + 3,    202511, qwen
@@ -832,6 +832,29 @@ modified: 2025-08-16T14:12:24.416Z
   - 汇总一下大家的观点, 早期 ComfyUI 火是因为生图必须「会搭工作流」
   - 现在 通用模型就能解决 80% 的场景。搭节点的边际价值下降，而 ComfyUI 生态商业化分叉进一步拉大了用户和开发者学习和维护成本
   - 而开源世界里面又有很多一键化套件，ComfyUI 进一步成为了牛夫人。。。。
+# discuss-image-models
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+- [Looks like someone beat z-image to the punch in respect to a dedicated Anime style model. Very lightweight too, insanity. : r/StableDiffusion _202512](https://www.reddit.com/r/StableDiffusion/comments/1pgdzf1/looks_like_someone_beat_zimage_to_the_punch_in/)
+  - NewBieAI-Lab drops NewBie-image-Exp0.1 — a 3.5B open-source ACG-native DiT model built for precise, fast, and high-quality anime generation.
+- When it comes to anime style, does it better than Illustrious? Also, another important question... NSFW support?
+
+- It is based off Lumina (modified architecture so not directly compatible), which was a very promising architecture at the time. Lumina was, IMO, undertrained, but had great potential; I quite enjoyed experimenting with it at its time.
+
+- Z image is based on slightly enhanced lumina 2 arch, you can just compare papers of both models to see how close they are, also comfy in their blog mention it.
+
+- I mean, dedicated anime models are nothing new. We had that leaked SD1.5 model, then Pony, Illustrious and its offshoots… this is just a group rushing their model to market because they know that if Z-image does an anime model, theirs will probably be just another Pony V7 lost to time. 
+
+- NetaLumina, Z-Image and now this? looks like Lumina was the SDXL successor all along
 # discuss-qwen
 - qwen-image
   - https://huggingface.co/city96/Qwen-Image-gguf/tree/main

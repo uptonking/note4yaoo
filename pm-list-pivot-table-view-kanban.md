@@ -23,6 +23,16 @@ modified: 2023-01-22T18:45:58.936Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Kanban with Markdown formatting as Visual Studio Code Plugin : r/Markdown _202512](https://www.reddit.com/r/Markdown/comments/1pg353h/kanban_with_markdown_formatting_as_visual_studio/)
+  - It saves as Markdown, exports as markdown (marp) presentation formats, supports different diagram styles, etc.
+  - I use it daily to prepare and structure lectures. I created it in the last 16 weeks in a lot of work with claude code and extensive testing.
+
 - ## 💫 Designing for Kanban Page
 - https://x.com/barlydesign/status/1893294672564625461
   - 卡片内容出现动画

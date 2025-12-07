@@ -135,7 +135,18 @@ modified: 2022-04-23T18:48:32.550Z
 
 - ## 
 
-- ## 
+- ##  🧩 [What are the Best Practices for Using Named Ranges in Excel? : r/excel](https://www.reddit.com/r/excel/comments/1pg63nx/what_are_the_best_practices_for_using_named/)
+- Referencing named ranges by using the =indirect() function to create dependent data validation lists
+
+- The FAST standard tends to discourage them
+  - who/what tf is the FAST standard
+
+- I find it better to use Let() these days instead. Mean you have the named range within the formula so you know what it is
+  - Even then, it's harder to review all the formulas in a spreadsheet than if named ranges are used, because you still have to check all the lets point to the right ranges.
+
+- While the formula may look cleaner, I hate them from the standpoint I have no idea where that range is referring to without looking into it. I’d much rather see the actual reference than a name
+
+- I use named ranges extensively in workbooks I’m going to distribute. I use descriptive names and capitalize the first letters of words e.g. TotalCosts (spaces not allowed).
 
 - ## Notion: Type /database to try it with ai
 - https://x.com/NotionHQ/status/1890106240425918827

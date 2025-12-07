@@ -13,7 +13,7 @@ modified: 2024-09-08T20:08:16.088Z
   - solutions rich
   - save cost
 
-- cons
+- cons-rag
   - extra infra like vectordb/retrive-api
 
 - who is using #PGVector
@@ -642,7 +642,13 @@ modified: 2024-09-08T20:08:16.088Z
 # discuss-code-rag
 - ## 
 
-- ## 
+- ## [[D] What I learned building code RAG without embeddings : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pfxl6x/d_what_i_learned_building_code_rag_without/)
+  - I've been building a system to give LLMs relevant code context from any repo. The idea seemed simple: let an LLM look at the file tree + function signatures and pick which files to include. No embeddings, no vector DB.
+- File paths aren’t enough. I added AST-extracted symbols
+  - Retrieval quality jumped noticeably (NDCG went from ~0.85 to ~0.92). The model doesn’t need to read the full file to know “this smells like auth.”
+- Generic eval criteria reward BS
+  - Anchoring eval on specific symbols/files made it much easier to spot hand-wavy nonsense.
+- So the “LLM looks at the tree + symbols and picks files” setup landed roughly on par with embeddings on answer quality, without the indexing infrastructure. Good enough for me to keep using it.
 
 - ## [How vscode team is making copilot smarter with “less” tools : r/vscode _202511](https://www.reddit.com/r/vscode/comments/1p4ucl5/how_vscode_team_is_making_copilot_smarter_with/)
   - how RAG came back into fashion after being declared “dead, ” and how that revival gives new life to another technology people are prematurely burying — tool calling, or by its full name: MCP.
@@ -910,9 +916,42 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [Why RAG Fails on Tables, Graphs, and Structured Data : r/Rag _202512](https://www.reddit.com/r/Rag/comments/1pfuxis/why_rag_fails_on_tables_graphs_and_structured_data/)
+  - Most RAG pipelines are built for unstructured text, not for structured data.
+  - Tables don’t fit semantic embeddings well
+  - Graph-shaped knowledge gets crushed into linear chunks
+  - SQL-shaped questions don’t want vectors
+- The real fix is multi-engine retrieval, not “better vectors”
+  - Vectors for semantic meaning and fuzzy matches
+  - Sparse / keyword search for exact terms, IDs, codes, SKUs, citations
+  - SQL for structured fields, filters, and aggregations
+  - Graph queries for multi-hop and relationship-heavy questions
+  - Layout- or table-aware parsers for preserving structure in complex docs
 
-- ## 
+- Setting the questionable AI slop style aside, while the diagnosis is correct, the proposed solution is pretty generic and simplistic. Sure, tables belong into a relational DB. So, hybrid search. But if your docs have no unified table structure, well, that’s a problem this post fails to address. And that’s a very common situation.
+
+- At iGPT, we handle this by treating different data types as first-class citizens from ingestion onward. Emails get thread reconstruction and role detection, tables get parsed with column-header preservation, and attachments trigger format-specific pipelines before anything hits the vector layer.
+  - The retrieval stack uses hybrid search (semantic + keyword + metadata filters) with post-retrieval rescoring, so structured queries don't get drowned out by "relevant-ish" prose.
+
+- ## [My Experience with Table Extraction and Data Extraction Tools for complex documents. : r/Rag _202512](https://www.reddit.com/r/Rag/comments/1pfwfvy/my_experience_with_table_extraction_and_data/)
+- Tables:
+  - For documents with simple tables I mostly use Camelot. Other options are pdfplumber, pymupdf (AGPL license), tabula.
+  - For scanned documents or images I try using paddleocr or easyocr but recreating the table structure is often not simple. For straightforward tables it works but not for complex tables.
+  - Then when the above mentioned option does not work I use APIs like ParseExtract, MistralOCR.
+  - When Conversion of Tables to CSV/Excel is required I use ParseExtract and when I only need Parsing/OCR then I use either ParseExtract or MistralOCR. ExtractTable is also a good option for csv/excel conversion. 
+  - Apart from the above two options, other options are either costly for similar accuracy or subscription based.
+  - Google Document AI is also a good pay-as-you-go option but I first use ParseExtract then MistralOCR for table OCR requirement & ParseExtract then ExtractTable for CSV/Excel conversion.
+  - I have used open source options like Docling, DeepSeek-OCR, dotsOCR, NanonetsOCR, MinerU, PaddleOCR-VL etc. for clients that are willing to invest in GPU for privacy reasons. I will later share a separate post to compare them for table extraction.
+- Data Extraction:
+  - I have worked for use cases like data extraction from invoice, financial documents, images and general data extraction as this is one area where AI tools have been very useful.
+  - If document structure is fixed then I try using regex or string manipulations, getting text from OCR tools like paddleocr, easyocr, pymupdf, pdfplumber. But most documents are complex and come with varying structure.
+  - First I try using various LLMs directly for data extraction then use ParseExtract APIs due to its good accuracy and pricing. Another good option is LlamaExtract but it becomes costly for higher volume.
+  - ParseExtract do not provide direct solutions for multi page data extraction for which they provide custom solutions. I have connected with ParseExtract for such a multipage solution and they provided such a solution for good pay-as-you-go pricing. Llamaextract has multi page support but if you can wait for a few days then ParseExtract works with better pricing.
+
+- https://github.com/camelot-dev/camelot /MIT/python
+  - A Python library to extract tabular data from PDFs
+
+- I haven’t found a single thing, other than custom vision based LLM workflows, that is good at extracting tables with complex structures (spanning multiple pages, merger cells, hierarchical rows/column headings, etc…). But that is slow and expensive.
 
 - ## [Struggling with finding good RAG LLM : r/LocalLLaMA _202504](https://www.reddit.com/r/LocalLLaMA/comments/1jwtn6j/struggling_with_finding_good_rag_llm/)
 - Would strongly recommend reading up on the basic RAG process and the systems around it. The LLM itself typically isn't involved in the data lookup/search unless it's been extended to work as an agent. The quality of the sources will heavily influence the answer quality : garbage in/ garbage out sort of deal. Beyond that, check out mistral small 3.1, a bunch of the qwen models, and command-r series.

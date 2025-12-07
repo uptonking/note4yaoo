@@ -92,6 +92,9 @@ modified: 2020-10-05T06:18:21.639Z
   - Iterative graphic design with AI. Based on gum.js, a grammar for SVG creation.
   - Gum provides a visual language for creating figures and diagrams. This gives LLMs the ability to rapdily express themselves visually in a way that can be integrated with their text output.
   - The key here relative to diffusion models is the ability to rapidly generate pricise visualizations that can be animated or modified on the fly. 
+
+- https://github.com/ismail-kattakath/svg-generator-mcp /MIT/202507/python/ts/inactive
+  - AI-powered MCP server for generating high-quality SVG illustrations using FLUX/MFLUX with automatic dependency management.
 # toolchain
 
 # more-repos

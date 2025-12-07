@@ -1012,6 +1012,15 @@ sudo launchctl load /Library/LaunchDaemons/io.yaoo.sysctl.plist
 # discuss-llama.cpp
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## ["Router mode is experimental" | llama.cpp now has a router mode and I didn't know. : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pfssoo/router_mode_is_experimental_llamacpp_now_has_a/)
+- While this is cool, I still do think llama-swap is very mature and worth using rn.
+
 - ## [Mastering llama.cpp: A Comprehensive Guide to Local LLM Integration : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1ov2ll9/mastering_llamacpp_a_comprehensive_guide_to_local/)
 - no mention of override tensor, CPU MoE offloading, API keys, and a lot more stuff. To the people who found this Reddit post, this guide pretty surface level.
 
@@ -1839,7 +1848,10 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 # discuss-model-internals/tuning
 - ## 
 
-- ## 
+- ## [Convert Dense into MOE model? : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pfxrv5/convert_dense_into_moe_model/)
+- Contrary to many of the other answers here, it's definitely possible but usually not worth the trade-offs.
+  - The thing is, you are better off using a model that was trained from scratch to be an MoE (since MoE are cheaper to train anyway) or just using a smaller dense model with more predictable performance.
+  - They were able to convert a dense Llama model into an MoE with 25% activation and still have non-trivial performance without any retraining (and of course it does better with retraining). However, the MoE is not nearly as good as the original dense model.
 
 - ## [In light of Kimi Linear, reposting Minimax's article on Linear Attention : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1oorvd0/in_light_of_kimi_linear_reposting_minimaxs/)
   - MiniMax M2 Tech Blog 3: Why Did M2 End Up as a Full Attention Model?

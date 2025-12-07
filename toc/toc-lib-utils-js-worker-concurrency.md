@@ -147,6 +147,23 @@ modified: 2024-01-30T14:41:38.742Z
 - https://github.com/bloomberg/ipydatagrid
   - Fast Datagrid widget for the Jupyter Notebook and JupyterLab
   - [I see some cons using Web Workers like it is done in ipysheet](https://github.com/bloomberg/ipydatagrid/issues/3)
+# concurrency
+- https://github.com/W4G1/multithreading /888Star/MIT/202512/ts
+  - The missing standard library for multithreading in JavaScript (Works in the browser, Node.js, Deno, Bun)
+  - a TypeScript library that brings robust, Rust-inspired concurrency primitives to the JavaScript ecosystem. It provides a thread-pool architecture, strict memory safety semantics, and synchronization primitives like Mutexes, Read-Write Locks, and Condition Variables.
+  - JavaScript is traditionally single-threaded. To achieve true parallelism, this library uses Web Workers.
+  - This library is designed to abstract away the complexity of managing WebWorkers, serialization, and SharedArrayBuffer complexities, allowing developers to write multi-threaded code that looks and feels like standard asynchronous JavaScript.
+  - Browser Compatibility
+    - Core features (like `spawn` and `move`) work in all modern browsers without special configuration
+    - Synchronization primitives (Mutex, RwLock, SharedJsonBuffer, etc.) rely on `SharedArrayBuffer`, which requires your page to be Cross-Origin Isolated.
+  - For higher-level communication, this library provides a Multi-Producer, Multi-Consumer (MPMC) bounded channel. 
+    - This primitive mimics Rust's `std::sync::mpsc` but allows for multiple consumers. 
+    - It acts as a thread-safe queue that handles backpressure, blocking receivers when empty and blocking senders when full.
+    - Channels are the preferred way to coordinate complex workflows (like job queues or pipelines) between workers without manually managing locks.
+  - Technical Implementation Details
+    - Atomics: Synchronization is built on Int32Array backed by SharedArrayBuffer using Atomics.wait and Atomics.notify.
+    - Serialization Protocol: The library uses a custom "Envelope" protocol (PayloadType.RAW vs PayloadType.LIB). This allows complex objects like Mutex handles to be serialized, sent to a worker, and rehydrated into a functional object connected to the same SharedArrayBuffer on the other side.
+    - Import Patching: The spawn function analyzes the stack trace to determine the caller's file path. It then regex-patches import() statements within the worker code string to ensure relative paths resolve correctly against the caller's location, rather than the worker's location.
 # worker-utils
 - https://github.com/jimmywarting/await-sync /js
   - Perform async work synchronously using web worker and SharedArrayBuffer

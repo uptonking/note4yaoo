@@ -89,8 +89,9 @@ modified: 2025-09-01T05:52:34.241Z
   - ebooks
 
 - llm-ui/client
-  - 可参考 ollama/lmstudio/janai 封装 llama.cpp 的逻辑
+  - 可参考 ollama/lmstudio/janai 封装 llama.cpp/mlx-lm/vlm 的逻辑
   - 还可参考LocalAi封装ollama/comfyui的逻辑
+  - 类似lmstudio的模型市场, 但支持modelscope, 同时自动扫描本地已有的ollama/lmstudio模型
 
 - code interpreter 如何实现
   - open source alternative
@@ -145,6 +146,7 @@ modified: 2025-09-01T05:52:34.241Z
 # ollama/lmstudio/llama.cpp 🔧🤔
 - 用不同lm工具链(llama.cpp/mlx-lm/mlx-vlm)处理不同模型文件(gguf/mlx)的逻辑
   - 可参考vscode用不同编辑器打开不同文件的逻辑
+  - 还可参考LocalAi封装多种cli
 
 - 工具链功能
   - model management: Ollama(支持api)

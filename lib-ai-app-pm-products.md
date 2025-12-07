@@ -159,6 +159,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 在线图片生成或编辑的架构, 涉及到模型下载与扩展下载，目前没有类似ollama的统一方案, 还涉及到GPU/CPU硬件支持，只有成熟方案才处理过相关问题，特别是文生图结合本地llm优化和推理的场景
   - 💡 针对AIGC优化的 image-editor 还存在市场生态位机会
   - 类似 pexels/unsplash/站酷 的图片资源站, 手动下载免费， api调用付费
+  - 版权过期书籍: 绘画二创, rag搜索
 
 - workflow
   - Zapier and n8n help to an extent, but they’re not designed for multi-tenant SaaS. They’re great for internal workflows—not product infrastructure.
@@ -174,7 +175,9 @@ modified: 2025-03-22T16:10:24.856Z
   - speed testing app for models
   - 相同参数下大模型的output结果不确定性很高， 若修改参数或更换embedding也会导致结果变化， 需要记录每次结果环境参数并提供复现方案
 
-- 
+- 本地模型 + 数据下载/提供 的方案参考
+  - kiwix提供了wikipedia的各种子主题文章精选集合下载，如历史/地理/计算机/医学
+
 - 
 - 
 - 

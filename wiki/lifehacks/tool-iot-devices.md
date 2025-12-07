@@ -202,7 +202,23 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## 🆚 [Studio + Air combo vs MacBook Pro : r/MacStudio _202512](https://www.reddit.com/r/MacStudio/comments/1pfl6hk/studio_air_combo_vs_macbook_pro/)
+- I used to have a MBP for my work and travel machine. After three years I realized I had it docked 90% of the time as I didn’t like taking it when I traveled so I got a cheap M2 Air for travel. 
+  - In August of this year I moved to an M4 Max Studio plus M4 Air (24/512 version) combo. I don’t need heavy lifting when I travel so the Air meets all my needs. Most of my computing is done on my Studio. 
+  - For me, it’s worked out great. The Studio is awesome and I have everything synced to my Air with my NAS and iCloud. I have a nice and small Crucial 4TB external SSD hooked up to my Studio for large files and projects, and when I travel I just take it with me. 
+
+- Im going back and forth with the same question for years now and after quite a few MacBooks running as a main machine, I’d gladly stay with faster desktop and laptop you don’t need to care about.
+  - Price to performance with desktop
+  - Better cooling
+  - Better longevity
+  - and better workflow for your mind - now you have one work machine and other one for private use (and sometimes work related). Less time spend in front of main, work computer means less distractions when doing work. If you work and have fun with the same machine it’s pretty hard to differentiate work from having fun, which leads to burnout and other issues.
+
+- I’ve used Mac laptops exclusively since 1993, and MacBook Pros exclusively since 2012. I bought a Mac Studio M3 Ultra base model this summer and, when my MacBook Pro died, I replaced it with the base model M4 MacBook Air.
+  - One thing I haven’t really worked out yet is syncing the two machines. I’ve been meaning to try ChronoSync and its Agent application and have the trials downloaded. For now I just make sure I have the files I need on the Air. I think it’s a great combination.
+
+- Performance wise, the M4 Max Mac Studio and MacBook Pros can both be configured identically, though the M4 Max in the MacBook (especially the 14”) can thermal throttle, whereas the Studio has more robust cooling. Ultimately the right choice for you will depend on how you prefer to work.
+
+- I have this exact setup. 16GB M1 Air and a 64GB M4 Max. But the air is more of personal computer, I don't try to sync them. I use Rust Desk to phone into the studio with varying degrees of success.
 
 - ## [AMD 395+ and NVIDIA GPU : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1p9dier/amd_395_and_nvidia_gpu/)
   - Is there any reason I can’t put an NVIDIA GPU in an AMD 395+ machine?

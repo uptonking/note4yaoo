@@ -60,6 +60,7 @@ modified: 2025-09-25T16:24:05.355Z
   - comfyui-custom_nodes 移植到 diffusers 需要手动设置参数和转换
 
 - who is using #diffusers
+  - mflux
   - SDNext
   - InvokeAI
 
@@ -92,6 +93,8 @@ modified: 2025-09-25T16:24:05.355Z
   - 可参考aisdk来实现
 
 - lmstudio-mlx for stable-diffusion
+
+- mflux + ui: 参考comfyui, 可web使用, 也可桌面
 
 - booklet 画册
   - 红楼梦

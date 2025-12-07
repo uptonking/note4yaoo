@@ -52,7 +52,13 @@ modified: 2023-12-15T18:02:01.825Z
 # discuss-news
 - ## 
 
-- ## 
+- ## Handle datasets larger than RAM with DuckDB's automatic spillover 
+- https://x.com/KhuyenTran16/status/1996958049437626556
+  - When datasets exceed available RAM, most tools crash mid-operation.
+  - This forces manual data chunking or expensive hardware upgrades just to complete basic queries.
+  - DuckDB automatically spills intermediate results to temporary files when data exceeds configured memory limits.
+
+- So does PostgreSQL ....... since ages
 
 - ## 📈 We just released MotherDuck's first dataviz feature: the Column Explorer _202402
 - https://x.com/hamiltonulmer/status/1757793824649478149

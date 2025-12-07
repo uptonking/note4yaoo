@@ -82,6 +82,9 @@ modified: 2022-11-07T10:58:24.512Z
 - 版权过期文档
   - [免费阅览全文！国图等6家联合发布古籍数字资源 - 资源分享 - FreeMdict Forum](https://forum.freemdict.com/t/topic/18274)
   - [Anna’s Archive: LibGen (Library Genesis), Sci-Hub, Z-Library in one place ](https://annas-archive.org/)
+  - [文硕阁 – 公共版权电子书下载网站](https://www.wenshuoge.com/)
+    - [传硕公版书](https://www.reddit.com/r/publicbook/)
+  - 毛主席的文档版权即将过期
 
 - pm-data
   - 类似企查查/天眼查的政府数据整合平台
@@ -91,6 +94,8 @@ modified: 2022-11-07T10:58:24.512Z
   - 国外统计局
   - 统计年鉴
   - 中国裁判文书网
+  - 政府公报/报告， 如 [资料下载 - 中华人民共和国教育部政府门户网站](http://www.moe.gov.cn/jyb_sjzl/ziliao/)
+  - [国家数字图书馆](http://read.nlc.cn/)
 
 - public dataset
   - imdb
@@ -103,6 +108,11 @@ modified: 2022-11-07T10:58:24.512Z
   - 书籍epub
   - wikipedia公开db
   - 统计年鉴
+
+- 标准文档
+  - 工业技术
+  - 社科类: 
+    - [通用规范汉字表 - 维基文库，自由的图书馆](https://zh.wikisource.org/wiki/%E9%80%9A%E7%94%A8%E8%A7%84%E8%8C%83%E6%B1%89%E5%AD%97%E8%A1%A8)
 
 - 各大公司技术博客
   - mdn开发者文档，历史版本的作用不大，但可作为参考

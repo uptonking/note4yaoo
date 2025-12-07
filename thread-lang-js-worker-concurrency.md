@@ -31,7 +31,15 @@ modified: 2022-12-19T01:59:37.634Z
 
 - ## 
 
-- ## 
+- ## multithreading - [The missing standard library for multithreading in JavaScript : r/javascript](https://www.reddit.com/r/javascript/comments/1pf2q0f/the_missing_standard_library_for_multithreading/)
+- This looks good for handling the pain of multithreading in the browser, very nice. For server side multithreaded code I’d personally consider another language altogether.
+
+- It depends entirely on the nature of the workload. Multithreading by default is premature optimization
+
+- FP proved to the world that shared memory and mutation are the source of much evil.
+  - I didn't check the actual implementation of this library and I trust it may be a very good implementation, but don't you fear that encouraging the return of these patterns in general might lead to another dark era of deadlocks and similar bugs?
+
+- Ive had much issues with native worker threads implementation in typescript, any time i needed it, had to deploy a new service just for that. This looks like it works out of the box
 
 - ## [Napa.js: A multi-threaded JavaScript runtime | Hacker News _201710](https://news.ycombinator.com/item?id=15498219)
 - Multi-threading does well for some problems, but often, multi-machining or multi-processing is sufficient, which is why so many runtimes don't really do multi-threading: Node. JS, Python, Ruby.
@@ -42,9 +50,7 @@ modified: 2022-12-19T01:59:37.634Z
 
 - Context switching is expensive and very tempting to forget about in multi-threaded development. You eliminate that overhead constraining the execution code to a single thread context.
 
-- Node.JS, Python, and Ruby are in C/C++ so you can do multithreading in all three, if you are willing to write native modules.
-
-
+- Node. JS, Python, and Ruby are in C/C++ so you can do multithreading in all three, if you are willing to write native modules.
 
 - 
 - 

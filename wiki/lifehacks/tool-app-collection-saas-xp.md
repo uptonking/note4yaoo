@@ -139,6 +139,8 @@ modified: 2022-11-07T10:25:12.034Z
 - https://github.com/liuyubing233/zhihu-custom
   - 知乎修改器，目前适用于Tampermonkey，主要功能：页面模块自定义隐藏；列表及回答内容过滤；浏览内容历史记录；
 
+- [奇绩创坛 齐思 - 为科技创业探寻前沿认知](https://news.miracleplus.com/)
+
 - alternatives
   - B站博客
   - [CNode：Node.js专业中文社区](https://cnodejs.org/)

@@ -53,7 +53,14 @@ modified: 2023-08-28T06:14:28.873Z
 
 - ## 
 
-- ## 
+- ## [Forcing clients to use latest static assets served from S3 storage what are your strategies? : r/django](https://www.reddit.com/r/django/comments/1pggodf/forcing_clients_to_use_latest_static_assets/)
+  - What techniques/strategies do you use to force clients to use the latest css and other changing static assets from S3 compatible storage?
+  - I already separate assets with a development bucket and production bucket, but what is a good way to force clients to use the latest version in the production bucket instead of their cached version?
+
+- The asset files should have their content hash in the name ie project.{xyz}.css Webpack has things like [contenthash] etc to automatically do it, look into documentation of your bundler.
+
+- `<script source=my file.js?version=1> ` Pass it a random parameter instead. I use v for version.
+  - Whenever you change this it will force a client to download new assets. So if I know file is updated I increment the version clients use
 
 - ## [In which cases you use custom middlewares : r/djangolearning _202511](https://www.reddit.com/r/djangolearning/comments/1onq17b/in_which_cases_you_use_custom_middlewares/)
 - You can add custom code in your middleware so you can add a condition to whether to do something or not do anything.

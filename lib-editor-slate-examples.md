@@ -556,11 +556,15 @@ modified: 2023-02-05T19:03:12.723Z
   - https://github.com/eea/volto-slate-metadata-mentions
   - https://github.com/eea/volto-slate-footnote
 
-- https://github.com/sanity-io/sanity/tree/next/packages/%40sanity/portable-text-editor
+- https://github.com/portabletext/editor /MIT/202512/ts
+  - https://github.com/sanity-io/sanity/tree/next/packages/%40sanity/portable-text-editor /legacy
   - Sanity.io is the platform for structured content. 
   - It comes with an open-source editing environment called Sanity Studio that you can customize with JavaScript and a real-time hosted data store. 
   - 依赖slate.v0.72.3，自研slate-react
   - 包含test，但测试示例storybook效果过于简单
+  - [Question on Slate _202412](https://github.com/portabletext/editor/issues/635)
+    - 202505: The Portable Text Editor is almost as old as Sanity and the decision to use Slate was made many years ago when the project received active maintenance. It's only recently we've pulled PTE out of Sanity Studio as a standalone editor and really treating it as such.
+    - we are aware that relying on Slate might come to an end one day, and for the same reason we are actively working on encapsulating the framework and building core PTE functionality on our own APIs. One example is the Behavior API which you can use to hook into editor events and change the editor behavior
   - [V3 portable text editor_202208](https://github.com/sanity-io/sanity/pull/3465)
   - https://github.com/sanity-io/sanity  /MIT
     - Sanity.io is the platform for structured content. 
