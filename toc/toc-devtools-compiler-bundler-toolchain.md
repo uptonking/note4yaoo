@@ -44,6 +44,20 @@ modified: 2022-11-01T01:05:07.873Z
   - You can consider the module federation capabilities provided by this repository as "module federation 2.0".
   - "Module Federation 2.0" differs from the "Module Federation" built into Webpack 5 by offering not only the core features of module export, loading, and dependency sharing but also additional dynamic type hinting, a "Manifest", a "Federation Runtime", and a "Runtime Plugin System". 
   - These features make "Module Federation" more suitable for use as a micro-frontend architecture in large-scale web applications.
+# nodejs
+- https://github.com/poppinss/ts-exec /MIT/202512/ts
+  - Execute TypeScript on Node using SWC
+  - A JIT compiler for running TypeScript and JavaScript code in Node.js without compilation, built on top of SWC with full ESM support for Node.js 24 and above.
+  - ts-exec is a TypeScript execution engine that lets you run `.ts` and `.tsx` files directly in Node.js without a build step. 
+  - Unlike other popular solutions, ts-exec prioritizes compatibility with Node.js module resolution, ensuring that code running with ts-exec will work identically after compilation to JavaScript.
+  - ts-node is no longer actively maintained and has become bloated over time. While tsx offers a modern alternative, it makes a critical compromise: it allows extension-less imports and directory imports during development. because Node.js strictly requires explicit file extensions and cannot resolve directory imports.
+  - ts-exec takes a different approach. It provides the complete TypeScript feature set (including enums, legacy decorators, and JSX syntax) while strictly following Node.js file resolution rules. 
+  - https://x.com/AmanVirk1/status/1997926011699450346
+    - Node.js native support lacks JSX + decorators (table stakes for many). TSX has unsafe imports.
+    - Node.js implementation not supporting tsconfig.json is such a pain
+
+- https://github.com/swc-project/swc-node /MIT/202510/ts
+  - Faster ts-node without typecheck
 # frontend-compiler
 
 # dynamic-import

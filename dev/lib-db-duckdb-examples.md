@@ -33,11 +33,6 @@ modified: 2023-12-15T18:02:24.488Z
     - The core abstraction used in Tad for programmatically constructing and executing relational SQL queries.
     - This also defines the driver interface implemented by specific database back-ends, and a small, transport-agnostic remoting layer to allow queries and results to be transmitted between a web browser (or electron renderer process) and a reltab backend server.
 
-- https://github.com/duckdb/duckdb-wasm /cpp/rust/ts
-  - https://shell.duckdb.org/
-  - DuckDB-Wasm brings DuckDB to every browser thanks to WebAssembly.
-  - Duckdb-Wasm speaks Arrow fluently, reads Parquet, CSV and JSON files backed by Filesystem APIs or HTTP requests
-
 - https://github.com/cwida/ivm-extension /MIT/202309/cpp
   - Incremental View Maintenance support for DuckDB
 # examples
@@ -45,12 +40,26 @@ modified: 2023-12-15T18:02:24.488Z
   - https://whattheduck.incentius.com/
   - WhatTheDuck is an open-source web application built on DuckDB. 
   - It allows users to upload CSV files, store them in tables, and perform SQL queries on the data.
+# utils
+
+# duckdb-wasm
+
+- https://github.com/duckdb/duckdb-wasm /cpp/rust/ts
+  - https://shell.duckdb.org/
+  - DuckDB-Wasm brings DuckDB to every browser thanks to WebAssembly.
+  - Duckdb-Wasm speaks Arrow fluently, reads Parquet, CSV and JSON files backed by Filesystem APIs or HTTP requests
 
 - https://github.com/holdenmatt/duckdb-wasm-kit /202311/ts
   - Hooks and utilities to make it easier to use duckdb-wasm in React apps.
-# utils
 
-# duckdb-powered
+- https://github.com/Datakitpage/Datakit /AGPL/202512/ts
+  - https://datakit.page/
+  - a browser-based data analysis platform that processes multi-gigabyte files (Parquet, CSV, JSON, etc) locally (with the help of duckdb-wasm).
+  - All processing happens in your browser - no data is sent to external servers.
+  - You can also connect to remote sources like Motherduck and Postgres with a datakit server in the middle.
+  - Local File Support: Import CSV, Excel (XLSX), JSON, and Parquet files directly in your browser
+  - [DataKit: your all in browser data studio is open source now : r/dataengineering](https://www.reddit.com/r/dataengineering/comments/1phcw6h/datakit_your_all_in_browser_data_studio_is_open/)
+
 - https://github.com/nshiab/simple-data-analysis /MIT/202409/ts
   - https://nshiab.github.io/simple-data-analysis/
   - Easy-to-use and high-performance JavaScript library for data analysis. Works with tabular and geospatial data.

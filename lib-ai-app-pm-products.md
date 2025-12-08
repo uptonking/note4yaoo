@@ -468,6 +468,11 @@ modified: 2025-03-22T16:10:24.856Z
   - https://github.com/chatanywhere/GPT_API_free
     - 免费ChatGPT&DeepSeek API
     - 免费API Key限制200请求/天/IP
+  - [【Check-CX】监控站正式上线啦！现已加入LinuxDo元宇宙豪华套餐 ](https://linux.do/t/topic/1286480)
+    - https://check.linux.do/
+    - 之前 @Dean 佬做了一个富可敌国商家评价平台，我心血来潮：能不能做一个富可敌国商家模型渠道监控站呢？
+    - 前后端代码全部开放，检测逻辑一目了然
+    - https://github.com/BingZi-233/check-cx /MIT/ts
 
 - image-gen 🖼️
   - [小白生图 - AI Image Generator](https://catsapi.com/)

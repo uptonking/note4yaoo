@@ -9,6 +9,9 @@ modified: 2023-09-19T07:26:04.103Z
 
 # guide
 
+- tips
+  - alternatives: zim-reader
+  - doc/book reader的交互可参考网盘上传文件后默认显示icon/gallery view，而不是list view
 # popular
 - https://github.com/GitbookIO/gitbook /GPL/202503/ts
   - https://www.gitbook.com/
@@ -59,7 +62,7 @@ modified: 2023-09-19T07:26:04.103Z
   - Add newsletter articles via email (with substack support!)
   - Every single part is fully open source! deploy it to your own server.
 
-- https://github.com/readest/readest /AGPL/202503/ts/rust
+- https://github.com/readest/readest /AGPL/202503/ts/rust/tauri
   - https://readest.com/
   - an open-source ebook reader designed for immersive and deep reading experiences. 
   - Built as a modern rewrite of Foliate, it leverages Next.js 15 and Tauri v2 to deliver a smooth, cross-platform experience across macOS, Windows, Linux, Android, iOS, and the Web.
@@ -170,9 +173,23 @@ modified: 2023-09-19T07:26:04.103Z
   - https://github.com/koreader/koreader-sync-server
     - koreader is meant for kindle devices. It looks awful on Android.
 
+- https://github.com/btpf/Alexandria /GPL/202511/ts
+  - A minimalistic cross-platform eBook reader built with Tauri, Epub.js, and Typescript
+
 - https://github.com/BookStackApp/BookStack /php
   - https://www.bookstackapp.com/
   - A platform to create documentation/wiki content built with PHP & Laravel
+
+- https://github.com/gotson/komga /MIT/202512/kotlin/vue
+  - https://komga.org/
+  - a media server for your comics, mangas, BDs, magazines and eBooks.
+  - Import embedded metadata automatically
+  - KOReader Sync
+  - Kobo Sync with your Kobo eReader
+
+- https://github.com/booklore-app/booklore /GPL/202512/java
+  - https://demo.booklore.dev/
+  - A self-hosted, multi-user digital library with smart shelves, auto metadata, Kobo & KOReader sync, BookDrop imports, OPDS support, and a built-in reader for EPUB, PDF, and comics.
 
 ## epub
 

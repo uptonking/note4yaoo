@@ -862,6 +862,20 @@ modified: 2022-06-03T21:34:54.893Z
     - 支持176种语言的准确识别
   - https://huggingface.co/spaces/opendatalab/MinerU
 
+- https://github.com/microsoft/markitdown /MIT/202411/python
+  - Python tool for converting files and office documents to Markdown.
+  - a utility tool for converting various files to Markdown (e.g., for indexing, text analysis, etc.)
+  - supports: PDF (.pdf) PowerPoint (.pptx) Word (.docx) Excel (.xlsx) Images (EXIF metadata, and OCR) Audio (EXIF metadata, and speech transcription) HTML (special handling of Wikipedia, etc.) Various other text-based formats (csv, json, xml, etc.)
+  - [PDF performance (PDFMiner) _202505](https://github.com/microsoft/markitdown/issues/1276)
+    - I've been using MarkItDown for conversion of some PDF files in a project I'm working on and I've noticed it performs really poorly with larger documents.
+    - This is in stark contrast to other libraries like PyMuPDF and specifically its markdown variant (PyMuPDF4LLM) which in my tests performed much faster.
+  - [[Feature Request] Magika Dependency Optional ](https://github.com/microsoft/markitdown/issues/1234)
+    - I'm trying to use MarkItDown in the browser via Pyodide and Magika's dependency on ONNX is causing trouble.
+  - https://msftmd.replit.app/
+    - Powered by Microsoft MarkItDown, this tool converts various file formats to clean, structured Markdown for easy analysis and indexing.
+    - https://x.com/mattppal/status/1867703377888784880
+      - If you're wondering how I did this so fast, it was Agent + Assistant + deploy on Replit
+
 - https://github.com/getmaxun/maxun /AGPL/202503/ts
   - https://www.maxun.dev/
   - Open-source no-code web data extraction platform. 
@@ -917,20 +931,6 @@ modified: 2022-06-03T21:34:54.893Z
   - Search: Quickly search for documents with full-text search.
   - Authentication: User accounts and authentication.
   - SolidJS, shadcn-solid, honojs, drizzle
-
-- https://github.com/microsoft/markitdown /MIT/202411/python
-  - Python tool for converting files and office documents to Markdown.
-  - a utility tool for converting various files to Markdown (e.g., for indexing, text analysis, etc.)
-  - supports: PDF (.pdf) PowerPoint (.pptx) Word (.docx) Excel (.xlsx) Images (EXIF metadata, and OCR) Audio (EXIF metadata, and speech transcription) HTML (special handling of Wikipedia, etc.) Various other text-based formats (csv, json, xml, etc.)
-  - [PDF performance (PDFMiner) _202505](https://github.com/microsoft/markitdown/issues/1276)
-    - I've been using MarkItDown for conversion of some PDF files in a project I'm working on and I've noticed it performs really poorly with larger documents.
-    - This is in stark contrast to other libraries like PyMuPDF and specifically its markdown variant (PyMuPDF4LLM) which in my tests performed much faster.
-  - [[Feature Request] Magika Dependency Optional ](https://github.com/microsoft/markitdown/issues/1234)
-    - I'm trying to use MarkItDown in the browser via Pyodide and Magika's dependency on ONNX is causing trouble.
-  - https://msftmd.replit.app/
-    - Powered by Microsoft MarkItDown, this tool converts various file formats to clean, structured Markdown for easy analysis and indexing.
-    - https://x.com/mattppal/status/1867703377888784880
-      - If you're wondering how I did this so fast, it was Agent + Assistant + deploy on Replit
 # more
 - https://github.com/notea-org/notea
   - Self hosted note taking app stored on S3

@@ -499,6 +499,10 @@ modified: 2025-11-30T17:27:16.720Z
   - Exposing a port to a local LLM running on your desktop via Ollama.
   - Downloading weights into your browser and running via WebLLM.
 
+- https://github.com/joelhooks/pdf-library /MIT/202512/ts
+  - Local PDF knowledge base with vector search using PGlite + pgvector
+  - i've got a crazy deep pdf library so I vibed up this @opencode (et al) tool that slurps pdfs into a pglite database with pgvector using ollama for embeddings and gives me semantic search over library of alexandria for how i think
+
 - https://github.com/AvaAvarai/Local_Small_LM_Document_RAG /MIT/202409/python/inactive
   - Local Document Retrieval Augmented Generation (RAG) with sentence embedding context for cited question answering with small language models (LM).
   - Currently runs in terminal again, will add GUI back soon.
@@ -1070,10 +1074,17 @@ modified: 2025-11-30T17:27:16.720Z
   - https://github.com/tuxxon/PDFGPT /202408/inactive
     - I rebuilt it because I thought this repository was no longer being maintained.
 # chat-workspace
-- https://github.com/lfnovo/open-notebook /10.2kStar/MIT/202511/python/ts/提交少
+- https://github.com/lfnovo/open-notebook /13kStar/MIT/202512/python/ts/提交少
   - https://www.open-notebook.ai/
   - Open Source implementation of Notebook LM with more flexibility and features
-  - AI-powered note-taking/research platform that respects your privacy
+  - A private, multi-model, 100% local, full-featured alternative to Notebook LM
+  - Choose your AI models - Support for 16+ providers including OpenAI, Anthropic, Ollama, LM Studio, and more
+  - 依赖SurrealDB、fatspi、nextjs
+  - Organize multi-modal content - PDFs, videos, audio, web pages, and more
+  - 🐛: no citation, no connector
+  - https://github.com/lfnovo/esperanto
+    - Python library that provides a unified interface for interacting with various Large Language Model (LLM) providers.
+    - All providers communicate directly via HTTP APIs using httpx - no bulky vendor SDKs required
 
 - https://github.com/rmusser01/tldw_server /1.1kStar/GPL/202511/python
   - https://tldwproject.com/

@@ -147,6 +147,17 @@ modified: 2025-09-21T13:58:46.548Z
   - Full Pipeline Automation - One command to chunk, embed, and store
   - 🛢️ Docker (for ChromaDB)
 # ocr-examples
+- https://github.com/readur/readur /MIT/202512/rust/ts/Axum
+  - Quick, painless, intuitive OCR platform written in Rust and TypeScript. 
+  - Tesseract OCR for text extraction
+  - Axum for the web framework
+  - Drag-and-drop support for PDF, images, text files, and Office documents (DOCX, XLSX, DOC*)
+  - Automatic text extraction using Tesseract and Office document parsing
+  - WebDAV, Local Folders, and S3-compatible storage integration
+  - Beautiful React frontend with Material-UI components and responsive design
+  - Document tagging and categorization
+  - OIDC Setup - Single Sign-On integration
+
 - https://github.com/Dogacel/deepseek-ocr-client-macos /MIT/202511/python/js
   - A real-time Electron-based desktop GUI for DeepSeek-OCR
   - [Dogacel/DeepSeek-OCR-Metal-MPS · Hugging Face](https://huggingface.co/Dogacel/DeepSeek-OCR-Metal-MPS)

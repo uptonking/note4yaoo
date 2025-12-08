@@ -11,6 +11,8 @@ modified: 2021-10-29T15:02:28.882Z
 
 # guide
 - [The launchpad for YC startups](https://www.ycombinator.com/launches)
+# founders
+- [Arrfounder - Discover Founders with Real Revenue | MRR & ARR Data](https://arrfounder.com/)
 # ideas-stars
 - ## 
 

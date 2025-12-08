@@ -261,9 +261,35 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [Rebuilding RAG After It Broke at 10K Documents : r/LlamaIndex _202512](https://www.reddit.com/r/LlamaIndex/comments/1pgyedh/rebuilding_rag_after_it_broke_at_10k_documents/)
+  - What Broke at 10K
+- Latency Explosion: Went from 100ms to 2000ms per query.
+  - Root cause: scoring 10K documents with semantic similarity is expensive.
+- Memory Issues
+  - 10K embeddings in memory. Python process using 4GB RAM. Getting slow.
+- Semantic search on 10K documents = 10K LLM evaluations eventually = money.
+- What I Rebuilt To
+- Step 1: Two-Stage Retrieval
+  - Stage 1: Fast keyword filtering (BM25) 
+  - Stage 2: Accurate semantic ranking
+- Step 2: Vector Database
+  - Move embeddings to a proper vector database (not in-memory).
+- Step 3: Caching
+- Step 4: Metadata Filtering
+- Step 5: Quality Monitoring
 
-- ## 
+- What I Learned
+  - Two-stage retrieval is essential - Keyword filtering + semantic ranking
+  - Use a vector database - Not in-memory embeddings
+  - Cache aggressively - 40% hit rate is typical
+  - Monitor continuously - Catch quality degradation early
+  - Use metadata - Filtering improves quality and speed
+  - Test at scale - What works at 500 docs breaks at 10K
+
+- What you’re describing isn’t RAG fundamentally “breaking” at 10K docs, it’s your naive implementation breaking. 
+  - Brute-force similarity in pure Python, mis-modeled costs, and in-memory everything will obviously struggle as you scale. 
+  - The architecture you rebuilt (BM25 → vector DB → caching → metadata → monitoring) is solid and very standard, but 10K documents is not a meaningful scaling limit. The story is really “I started with a toy prototype and then replaced it with something closer to a normal production RAG stack, ” not “RAG inherently breaks beyond 10K docs.”
+- This could have been limited to: I replaced my own in memory solution with a vector database.
 
 - ## [RAGFlow is an open-source RAG engine based on OCR and document parsing | Hacker News _202404](https://news.ycombinator.com/item?id=39896923)
 - Document processing is getting better and better with new tools leveraging LLMs. If anyone is interested in exploring this space, try another similar tool LLMWhisperer (https://llmwhisperer.unstract.com/). It is a part of Unstract, an open-source document processing tool (https://github.com/Zipstack/unstract)
@@ -610,37 +636,19 @@ modified: 2024-09-08T20:08:16.088Z
 - dont use joins. use views or make stored procs to call for summaries etc you want.
 
 - I would use the traditional RAG-based approach more in cases when the knowledge base is made of documents instead of structured data.
-# discuss-rag-db
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 
-
-- ## [Best Vector Database for RAG : r/vectordatabase _202501](https://www.reddit.com/r/vectordatabase/comments/1hzovpy/best_vector_database_for_rag/)
-- All vector databases work well for RAG. The selection of a vector database usually depends on your preference: cloud based vs self-hosted, open source vs private, programming languages / clients, API access, already part of SQL etc.
-- Some common ones are (not in any order, I'm not affiliated with any):
-  - Pinecone: private, cloud based, very popular
-  - pgvector: Postres vector search extension, useful if you have already data in Postgres.
-  - Faiss: A library for efficient similarity search and clustering of dense vectors.
-  - Qdrant: Open source vector search engine written in Rust.
-  - Chroma: Yet another vector database
-  - Milvus: An open-source similarity search engine for embedding vectors.
-  - Weaviate: Open source vector database written in Go.
-
-- Pgvector because it is part of Postgres. In the end Vectors are just a data type in a databases. If you only need vectoring and not SQL then it is better to look search engine that does that I think.
-  - PGVector, is like PostGIS for geospatial ops, an extension for Postgre to support vector search, it is not a true vector-native DB, so it adds operational overhead and lacks advanced features that a vector DB provides. 
-
-- Quadrant, it's a vector DB designed specifically for RAG/AI workflows. It offers advanced filtering features (multi-tenancy) that are natively baked-in into its core architecture. These features would require more legwork using other data stores like Redis etc...
-- FAISS: great for vector search is not really a DB, it's a lib and not a true DB
 # discuss-code-rag
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [What’s the best way to chunk large Java codebases for a vector store in a RAG system? : r/Rag _202512](https://www.reddit.com/r/Rag/comments/1pgliqi/whats_the_best_way_to_chunk_large_java_codebases/)
+- AST-based chunking is definitely the way to go for Java codebases. Simple token or line-based splits will break methods and classes in weird places, making it harder for the model to understand context and relationships between code elements. Tree-sitter is solid for this, and there are some decent parsers out there, but honestly the tooling ecosystem for experimenting with different chunking strategies is pretty fragmented.
+
+- That’s not going to be particularly useful. Look at Claude code, Gemini cli, codex etc. none of them create embedding from your code
+
+- tree-sitter is great. https://cocoindex.io/docs/examples/code_index this project does codebase indexing and supporting java & large codebase, and is open sourced.
 
 - ## [[D] What I learned building code RAG without embeddings : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pfxl6x/d_what_i_learned_building_code_rag_without/)
   - I've been building a system to give LLMs relevant code context from any repo. The idea seemed simple: let an LLM look at the file tree + function signatures and pick which files to include. No embeddings, no vector DB.
@@ -762,6 +770,67 @@ modified: 2024-09-08T20:08:16.088Z
 
 - Did you experiment with other retrieval methods besides or in addition to semantic similarity? I've done some work using different techniques, like parsing dependency trees out of the current file, with promising results for code RAG.
   - We did look into BM25 for FT search but did not see measurable benefits for our use cases. Our approach relies on getting a lot of documents first and then pruning - it would be better to get just what's needed in the first place, I still hope BM25 can help there. Worth another look!
+# discuss-rag-vector-db
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Best Vector Database for RAG : r/vectordatabase _202501](https://www.reddit.com/r/vectordatabase/comments/1hzovpy/best_vector_database_for_rag/)
+- All vector databases work well for RAG. The selection of a vector database usually depends on your preference: cloud based vs self-hosted, open source vs private, programming languages / clients, API access, already part of SQL etc.
+- Some common ones are (not in any order, I'm not affiliated with any):
+  - Pinecone: private, cloud based, very popular
+  - pgvector: Postres vector search extension, useful if you have already data in Postgres.
+  - Faiss: A library for efficient similarity search and clustering of dense vectors.
+  - Qdrant: Open source vector search engine written in Rust.
+  - Chroma: Yet another vector database
+  - Milvus: An open-source similarity search engine for embedding vectors.
+  - Weaviate: Open source vector database written in Go.
+
+- Pgvector because it is part of Postgres. In the end Vectors are just a data type in a databases. If you only need vectoring and not SQL then it is better to look search engine that does that I think.
+  - PGVector, is like PostGIS for geospatial ops, an extension for Postgre to support vector search, it is not a true vector-native DB, so it adds operational overhead and lacks advanced features that a vector DB provides. 
+
+- Quadrant, it's a vector DB designed specifically for RAG/AI workflows. It offers advanced filtering features (multi-tenancy) that are natively baked-in into its core architecture. These features would require more legwork using other data stores like Redis etc...
+- FAISS: great for vector search is not really a DB, it's a lib and not a true DB
+
+- ## 🆚 [Vector db comparison : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1ph7njc/vector_db_comparison/)
+  - Key findings:
+  - RAG systems under ~10M vectors, standard HNSW is fine. Above that, you'll need to choose a different index.
+  - Large dataset + cost-sensitive*:* Turbopuffer. Object storage makes it cheap at scale.
+  - pgvector is good for small scale and local experiments. Specialized vector dbs perform better at scale.
+  - Chroma - Lightweight, good for running in notebooks or small servers
+  - [Best Vector Databases for RAG - Agentset](https://agentset.ai/blog/best-vector-db-for-rag)
+
+- My decision tree looks like this: Use pgvector until I have a very specific reason not to.
+
+- Missing from this is Vespa. But everything else is spot on. I think it goes into teh last column along with Qdrant, Milvus, Weaviate etc.
+  - For me Vespa is on another level. It is a production ready and very capable of "regular search" (textual). SO you can do very good hybrid serachs. For me is even leaps ahead of ElasticSearch. We migrate a medium workload(5 nodes) from ES to Vespa 4 years ago and was the best decision we ever made.
+- Agree with this assessment. But I think overall it's a lot more complex than others here too. It's a very steep hill to climb but once you do the power is there.
+
+- Our rag team (afaik) uses elastic / weaviate because of hybrid search, we have lots of cases where search could be about some named entity (like people = name + surname), so hybrid is a must. IDK on which basis they chose which one to use for cases. Also, Qdrant has bm42 hybrid search, by any chance you know anything about how it performs compared to other solutions?
+  - Hybrid search is incredible. But in my experience it's better to do parallel queries for semantic and keyword and then put all the results in a reranker
+
+- Or just use SQLite and don't overcomplicate things
+  - You need a vector search extension for it. And there aren't any particularly good ones that I know of.
+
+- Definitely Elasticsearch if you need extreme levels of horizontal scalability.
+
+- S3 vector is now a thing .
+# discuss-chunking
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
 # discuss-embedding
 - ## 
 

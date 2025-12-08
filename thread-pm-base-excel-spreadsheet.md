@@ -126,6 +126,26 @@ modified: 2022-04-23T18:48:32.550Z
 - a macro that switches the contents of 2 ranges of the same size
 
 - I use the most advanced trick of them all - use a language like Python and transcend Excel altogether. Excel has its (many many) use cases, but for programmatic, repetitive tasks your best bet is to learn to program and start implementing those steps in a proper data pipeline.
+# discuss-power-query/bi
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [I legitimately feel like I’ve wasted years of my life not knowing about Power Query. : r/excel _202512](https://www.reddit.com/r/excel/comments/1pgkdwm/i_legitimately_feel_like_ive_wasted_years_of_my/)
+  - For the last three years, my "end of month" routine involved opening about 15 different CSV files sent by regional managers, copy-pasting them into a master sheet, removing the top 3 header rows, and fixing the date formatting that always broke. It took me about 2 hours every time.
+  - I set it up once, and now I just drop the new files in the folder and hit "Refresh." It takes 10 seconds. I stared at my screen for a solid minute just feeling a mix of pure joy and absolute rage at my past self. If you are still manually combining data, please stop and learn this tool immediately.
+
+- say hello to Copilot Query where all your menus are gone and you just prompt whatever query you want Copilot to strive for while it hallucinates functions that don’t work.
+
+- In 3 more years you will learn SQL Query and feel the same way all over again... But seriously, congratulations on making it to the other side of Excel!
+  - Started using SQL queries to pull data into Excel recently, and it's been an absolute game-changer.
+  - For my next trick, I need to figure out how to use VBA to launch powershell cmdlets based on data on the spreadsheet 
+
+- Learn new skills and keep up with stuff or you will be left behind. I too learned this lesson. Right now it’s Al/automation tools. Now, you can for example, automatically send them a reminder email with a link, have them submit them use that to submit their files, and tools will do all the steps you mentioned, combining and email it to you, drop it onto one drive or send it to you in a telegram message when it’s done. All automated so you don’t have to do anything other than review the result or follow up on your slow submissions.
+
+- I’m a BI Engineer and PowerQuery is absolutely one of the strongest ETL tools on the market. 
 # discuss
 - ## 
 

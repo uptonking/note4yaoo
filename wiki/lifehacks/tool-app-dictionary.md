@@ -16,7 +16,7 @@ modified: 2023-07-08T12:47:00.141Z
 
 - tips
   - 书籍评分与高质量内容筛选: 豆瓣图书、Goodreads、[Amazon Book Review](https://www.amazon.com/amazonbookreview)
-# dict
+# dict-vendors
 - tips
   - 平时用谷歌就行了
 - 美式英语
@@ -132,7 +132,7 @@ modified: 2023-07-08T12:47:00.141Z
 
 - fonts
   - 默认英文18px，中文16px
-# goldendict
+# dict-apps
 - goldendict /GPLv3
   - 1.5.0-RC2 - 201907
   - win/linux
@@ -144,7 +144,21 @@ modified: 2023-07-08T12:47:00.141Z
     - support >4GB dictionary
     - support Qt5.15.2 and higher ,include latest Qt6
 
+- https://github.com/kiwix/kiwix-desktop /1.1kStar/GPL/202512/cpp
+  - Kiwix for Windows and GNU/Linux desktops
+
+- https://github.com/TheOpenDictionary/odict /147Star/GPL/202512/rust
+  - https://odict.org/
+  - open-source, modern alternative to dictionary file formats like StarDict, Babylon and Apple Dictionaries.
+  - Fast. Entry lookups take less than 1s and don't require indexing.
+  - Tiny. A single dictionary can store thousands of entries and stay under 1MB.
+  - Easy. ODict files are written using dead-simple XML and compiled to binary.
+  - Portable. ODict is a single executable written in Rust that can run almost anywhere.
+  - It's like Wiktionary, except fully backed by structured data and supported via the ODict file format.
+  - https://github.com/TheOpenDictionary/web /202401/ts/svelte/inactive
+
 - 欧路词典支持mdx
+
   - [欧路词典客户端实用大更新，在线词典和翻译引擎开源](https://forum.freemdict.com/t/topic/11002)
 
 ## usage

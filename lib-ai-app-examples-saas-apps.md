@@ -84,7 +84,13 @@ modified: 2025-02-21T17:17:42.225Z
   - [Pricing of Sequential Workflow Designer Pro](https://nocode-js.com/sequential-workflow-designer-pro-pricing)
     - Pro Step Components
     - Custom Theme
-# ai-figure/数字人
+# ai-figure/数字人/avatar
+- https://github.com/Alibaba-Quark/LiveAvatar /apache2/202512/python
+  - https://liveavatar.github.io/
+  - 阿里夸克开源的实时虚拟人模型能实时生成虚拟人视频，能生成无限长度的视频且画质不降低。
+  - 项目介绍写的推理需要 4090/A100，训练用了8个A100
+    - Sorry不是的，当前得用5*H800才能推理。但我们还在持续推进更友好的消费级方案，希望可以尽快降低使用门槛。
+
 - https://github.com/taoofagi/easegen-front
   - 开源的数字人课程制作项目：easegen，它提供从课程制作、视频管理、智能课件生成到智能出题全套方案
   - 支持ppt课件批量自动生成、数字人克隆、声音克隆、数字人课程设计、数字人视频渲染等

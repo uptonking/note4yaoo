@@ -484,6 +484,9 @@ modified: 2021-04-30T20:14:17.669Z
 - https://github.com/lesteroliver911/ai-pdf-ppt-generator-openai /MIT/202410/python/inactive
   - a Flask-based application that generates presentations from documents
 
+- https://github.com/Anionex/banana-slides /MIT/202512/python/ts
+  - [【已开源】一个基于banana pro的一站式PPT生成应用, 告别排版美化烦恼 - 资源荟萃 - LINUX DO](https://linux.do/t/topic/1285413)
+
 - [ChatSlide | Build your Slides and Videos from Documents in one click](https://chatslide.ai/landing)
 # ai-canvas
 - https://github.com/open-webui/open-webui /104kStar/BSD+LOGO/python/ts/svelte

@@ -19,6 +19,19 @@ modified: 2025-09-16T12:36:12.968Z
 
 - mlx
   - mlx的优点之一是方便支持在iphone上运行
+
+- ollama-pros
+  - stable and rich models
+  - 对 embedding 模型额支持更好
+
+- ollama-cons
+  - 对 mlx 模型的支持落后
+
+- lmstudio-pros
+  - ui操作体验友好
+
+- lmstudio-cons
+  - 对mlx格式的 embedding 模型额支持有问题, 但gguf格式模型支持好
 # lmstudio-xp
 - not-yet
   - 聊天内搜索
