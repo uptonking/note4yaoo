@@ -92,6 +92,7 @@ modified: 2025-09-01T05:52:34.241Z
   - 可参考 ollama/lmstudio/janai 封装 llama.cpp/mlx-lm/vlm 的逻辑
   - 还可参考LocalAi封装ollama/comfyui的逻辑
   - 类似lmstudio的模型市场, 但支持modelscope, 同时自动扫描本地已有的ollama/lmstudio模型
+  - 用户自己上传的pdf，就类似词典软件的词库
 
 - code interpreter 如何实现
   - open source alternative
