@@ -19,12 +19,13 @@ modified: 2021-04-30T20:14:17.669Z
   - ppt可以每页放一个画板或富文本编辑器
 
 - alternatives-ppt
-  - 很多ppt的每页是一张图片
-  - 只需ppt的viewer，presentation常是各个系统的核心功能
+  - 很多ppt的每页是一张图片, 缺点是交互弱、编辑弱
   - ✨ pdf-editor与ppt-editor的相似点: 支持批注、左侧页面缩略图
+    - pdf-editor和ppt-editor都支持缩放，没必要重复开发功能
   - 可参考: svg-editor, pdf-editor, drawio(可插入丰富元素/集成)
     - mxgraph视图层支持svg/html
   - 基于markdown的编辑器方案可参考mermaid
+  - 只需ppt的viewer，presentation常是各个系统的核心功能
 
 - resources
   - [List of markdown presentation tools](https://gist.github.com/johnloy/27dd124ad40e210e91c70dd1c24ac8c8)

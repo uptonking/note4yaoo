@@ -269,7 +269,7 @@ modified: 2023-02-08T07:20:48.475Z
   - OmAgent是一个多模态智能体系统，专注于利用多模态大语言模型能力以及其他多模态算法来做一些有趣的事
   - 包含一个专为解决多模态任务而设计的轻量级智能体框架omagent_core。我们利用这个框架搭建了超长复杂视频理解系统——OmAgent，当然你可以利用它实现你的任何想法。
   - DnCLoop: 受到经典算法思想Divide and Conquer启发，我们设计了一个递归的通用任务处理逻辑，它将复杂的问题不断细化形成任务树，并最终使复杂任务变成一组可解得简单任务。
-# agent-open
+# examples-ai
 - https://github.com/AIDC-AI/Pixelle-MCP /271Star/MIT/202508/python
   - https://pixelle.ai/
   - Open-Source Multimodal AIGC Solution based on ComfyUI + MCP + LLM
@@ -296,6 +296,11 @@ modified: 2023-02-08T07:20:48.475Z
   - Agent framework and applications built upon Qwen>=2.0, featuring Function Calling, Code Interpreter, RAG, and Chrome extension
   - 基于Qwen2.0的agent框架：Qwen-Agent，它有指令遵循、工具使用、做规划和记忆能力
   - 基于Qwen-Agent的一个Chrome浏览器扩展，一个智能浏览器助手：BrowserQwen, 它可以基于当前页面或文档跟你对话、能记住你浏览过的内容进行总结、可以解决数学问题、数据图表可视化
+
+- https://github.com/RICHQAQ/PasteMD /MIT/202512/python
+  - 一个常驻托盘的小工具： 从 剪贴板读取 Markdown，调用 Pandoc 转换为 DOCX，并自动插入到 Word/WPS 光标位置。
+  - 智能识别 Markdown 表格，一键粘贴到 Excel
+  - 智能识别 HTML富文本，方便直接复制网页上的ai回复，一键粘贴到 Word/WPS
 # llama.cpp
 - https://github.com/yazon/flexllama /BSD/202510/python
   - Lightweight self-hosted tool for running multiple llama.cpp server instances with OpenAI v1 API compatibility and multi-GPU support

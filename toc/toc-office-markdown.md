@@ -206,6 +206,11 @@ modified: 2021-01-04T17:26:25.032Z
   - This program can be used with editors like neovim, vscode and emacs to provide a similar experience to Dataview (but very barebones for now).
   - https://github.com/k-lar/vscode-dynomark
     - This extension is a wrapper around that engine, and provides a simple way to query your markdown files.
+
+- https://github.com/RICHQAQ/PasteMD /MIT/202512/python
+  - 一个常驻托盘的小工具： 从 剪贴板读取 Markdown，调用 Pandoc 转换为 DOCX，并自动插入到 Word/WPS 光标位置。
+  - 智能识别 Markdown 表格，一键粘贴到 Excel
+  - 智能识别 HTML富文本，方便直接复制网页上的ai回复，一键粘贴到 Word/WPS
 # streaming
 - https://github.com/vercel/streamdown /2.7kStar/apache2/202509/ts
   - https://streamdown.ai/

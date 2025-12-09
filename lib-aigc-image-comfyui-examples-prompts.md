@@ -14,6 +14,8 @@ modified: 2025-09-13T09:32:22.969Z
   - [Stable Diffusion - Prompts examples](https://stablediffusion.fr/prompts)
   - https://github.com/ZeroLu/awesome-nanobanana-pro
     - image prompts sourced from X (Twitter), WeChat, Replicate, and top prompt engineers
+  - 💡 [[Release] SID Z-Image Prompt Generator - Agentic Image-to-Prompt Node with Multi-Provider Support (Anthropic, Ollama, Grok) : r/comfyui](https://www.reddit.com/r/comfyui/comments/1phn65d/release_sid_zimage_prompt_generator_agentic/)
+    - 输入原图 > 生成prompt > 生成新图, 可用于解决版权问题
 # prompts
 - A flat design graphic of a modern workspace, with simplified objects like a laptop, coffee cup, and lamp arranged in a colorful, two-dimensional scene with minimal shading.
 - A realistic UI/UX mockup of a sleek mobile banking app interface, showing both light and dark modes, clean typography, and intuitive button layouts on a smartphone screen.

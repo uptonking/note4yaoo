@@ -17,7 +17,7 @@ modified: 2021-01-04T17:26:43.784Z
 - https://printcss.live/
   - 渲染pdf的多种js示例
 # popular
-- pdf.js /50.9kStar/apache2/202503/js
+- pdf.js /52.4kStar/apache2/202512/js
   - https://github.com/mozilla/pdf.js
   - https://mozilla.github.io/pdf.js/
   - PDF.js is a Portable Document Format (PDF) viewer that is built with HTML5.
@@ -25,7 +25,7 @@ modified: 2021-01-04T17:26:43.784Z
 - https://github.com/Osiris-Team/pdf.js-utils /MIT/202408/js
   - A collection of utility functions for pdf.js to make the lives of developers easier.
 
-- jsPDF /25.7kStar/MIT/202202/js/inactive
+- jsPDF /30.9kStar/MIT/202511/js
   - https://github.com/parallax/jsPDF
   - https://parall.ax/products/jspdf
   - A library to generate PDFs in JavaScript.
@@ -36,18 +36,18 @@ modified: 2021-01-04T17:26:43.784Z
   - https://github.com/simonbengtsson/jsPDF-AutoTable
     - adds the ability to generate PDF tables either by parsing HTML tables or by using Javascript data directly. 
 
-- pdfkit /8.5kStar/MIT/202311/js
+- pdfkit /10.5kStar/MIT/202512/js
   - https://github.com/foliojs/pdfkit
   - http://pdfkit.org/
   - http://pdfkit.org/demo/browser.html
   - A JavaScript PDF generation library for Node and the browser.
 
-- https://github.com/unjs/unpdf /ts
+- https://github.com/unjs/unpdf /950Star/MIT/202512/ts
   - Utilities to work with PDFs in Node.js, browser and workers
   - unpdf ships with a serverless build/redistribution of Mozilla's PDF.js for serverless environments. 
   - This library is also intended as a modern alternative to the unmaintained but still popular `pdf-parse`.
 
-- https://github.com/diegomura/react-pdf /MIT/202503/ts
+- https://github.com/diegomura/react-pdf /16.2kStar/MIT/202509/ts
   - React renderer for creating PDF files on the browser and server
   - This package is used to create PDFs using React. 
     - If you wish to display existing PDFs, you may be looking for https://github.com/wojtekmaj/react-pdf
@@ -56,31 +56,45 @@ modified: 2021-01-04T17:26:43.784Z
   - https://github.com/enescang/react-pdf-table /202210/js/inactive
     - Simple table generator for @react-pdf/renderer
 
-- https://github.com/wojtekmaj/react-pdf /MIT/202503/ts
+- https://github.com/wojtekmaj/react-pdf /10.7kStar/MIT/202512/ts
   - https://projects.wojtekmaj.pl/react-pdf
   - Display PDFs in your React app as easily as if they were images.
   - For React-PDF to work,  `PDF.js` worker needs to be provided.
   - https://x.com/xiaohanyu1988/status/1905077853785567258 🆚️
 
-- https://github.com/Alpovka/EasyPDF-React /MIT/202510/ts
+- https://github.com/Alpovka/EasyPDF-React /24Star/MIT/202501/ts/inactive
   - https://easypdf.vercel.app/
   - open source React library for generating beautiful PDFs from React components
   - [I built an open-source package 6 months ago to easily turn React components into PDFs _202510](https://www.reddit.com/r/reactjs/comments/1nun17d/i_built_an_opensource_package_6_months_ago_to/)
 
-- https://github.com/pdfslick/pdfslick /MIT/202503/ts
+- https://github.com/pdfslick/pdfslick /771Star/MIT/202511/ts
   - https://pdfslick.dev/
   - PDFSlick is a library that enables viewing of and interaction with PDF documents in React, SolidJS, Svelte and JavaScript apps. 
   - It's build on top of Mozilla's `PDF.js`, and utilises `Zustand` to provide a reactive store for the loaded documents.
   - @pdfslick/core package wraps PDF.js's functionality and links it to the store.
     - you can learn more about using PDFSlick's @pdfslick/core package with Vanilla JS apps and with libraries other than React and SolidJS
 
-- https://github.com/react-pdf-viewer/react-pdf-viewer /paid/202408/ts
-  - https://react-pdf-viewer.dev/
-  - React component to view a PDF document
-  - https://github.com/react-pdf-viewer/starter /js/electron
-  - [WARNING: Project no longer maintained - Do not use in virtual solutions _202406](https://github.com/react-pdf-viewer/react-pdf-viewer/issues/1768)
+- https://github.com/jkgenser/react-pdf-headless /50Star/MIT/202509/ts
+  - a React component for efficiently rendering and navigating PDF documents.
+  - It leverages virtualization to handle large documents smoothly and provides APIs for client-side interactions such as jumping to specific pages or highlighted areas.
+  - [Don't use this package, and a good mostly FREE alternative · Issue · react-pdf-viewer/react-pdf-viewer](https://github.com/react-pdf-viewer/react-pdf-viewer/issues/1858)
+    - I re-wrote it from scratch on top of wojtekmaj/react-pdf and tanstack.com/virtual
+    - My use case involves lazily rendering large PDFs, scrubbing to particular pages or offsets within a page, showing bounding boxes or highlights overlaid on the pages and more!
+  - https://github.com/react-pdf-viewer/react-pdf-viewer /paid/202408/ts/deprecated
+    - https://react-pdf-viewer.dev/
+    - React component to view a PDF document
+    - https://github.com/react-pdf-viewer/starter /js/electron
+    - [WARNING: Project no longer maintained - Do not use in virtual solutions _202406](https://github.com/react-pdf-viewer/react-pdf-viewer/issues/1768)
 
-- https://github.com/anaralabs/lector /MIT/202503/ts
+- https://github.com/Hopding/pdf-lib /8.1kStar/MIT/202111/ts/inactive
+  - Create and modify PDF documents in any JavaScript environment.
+  - Designed to work in any modern JavaScript runtime. Tested in Node, Browser, Deno, and React Native environments.
+  - [Is this thing still on?](https://github.com/Hopding/pdf-lib/issues/1423)
+  - 🍴 forks
+  - https://github.com/cantoo-scribe/pdf-lib
+    - This fork adds the support for svg to the pdf-lib project.
+
+- https://github.com/anaralabs/lector /355Star/MIT/202510/ts
   - https://lector-weld.vercel.app/
   - A composable, headless PDF viewer toolkit for React applications, powered by PDF.js
   - Page thumbnails and outline navigation
@@ -92,13 +106,6 @@ modified: 2021-01-04T17:26:43.784Z
 - https://github.com/OnedocLabs/pdfreader /MIT/202411/ts
   - https://pdfreader.fileforge.com/
   - Easy Radix-Style PDF Viewer for React.
-
-- https://github.com/jkgenser/react-pdf-headless /MIT/202412/ts
-  - react-pdf-headless is a React component for efficiently rendering and navigating PDF documents.
-  - It leverages virtualization to handle large documents smoothly and provides APIs for client-side interactions such as jumping to specific pages or highlighted areas.
-  - [Don't use this package, and a good mostly FREE alternative · Issue · react-pdf-viewer/react-pdf-viewer](https://github.com/react-pdf-viewer/react-pdf-viewer/issues/1858)
-    - I re-wrote it from scratch on top of wojtekmaj/react-pdf and tanstack.com/virtual
-    - My use case involves lazily rendering large PDFs, scrubbing to particular pages or offsets within a page, showing bounding boxes or highlights overlaid on the pages and more!
 
 - https://github.com/pdfme/pdfme /MIT/202503/ts
   - https://pdfme.com/
@@ -150,14 +157,6 @@ modified: 2021-01-04T17:26:43.784Z
   - images and vector graphics
   - tables and columns
   - page headers and footers
-
-- https://github.com/Hopding/pdf-lib /MIT/202111/ts/inactive
-  - Create and modify PDF documents in any JavaScript environment.
-  - Designed to work in any modern JavaScript runtime. Tested in Node, Browser, Deno, and React Native environments.
-  - [Is this thing still on?](https://github.com/Hopding/pdf-lib/issues/1423)
-  - 🍴 forks
-  - https://github.com/cantoo-scribe/pdf-lib
-    - This fork adds the support for svg to the pdf-lib project.
 
 - https://gitlab.coko.foundation/pagedjs/pagedjs
   - Paged.js is a free and open-source library that paginates any HTML content to produce beautiful print-ready PDF. 

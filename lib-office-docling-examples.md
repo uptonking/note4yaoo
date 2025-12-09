@@ -162,6 +162,16 @@ modified: 2025-09-21T13:58:46.548Z
   - A real-time Electron-based desktop GUI for DeepSeek-OCR
   - [Dogacel/DeepSeek-OCR-Metal-MPS · Hugging Face](https://huggingface.co/Dogacel/DeepSeek-OCR-Metal-MPS)
     - This repository uses the weights from the original DeepSeek-OCR and modifies model to support MPS and CPU inference
+
+- https://github.com/ocrmypdf/OCRmyPDF /32kStar/MPLv2/202512/python
+  - http://ocrmypdf.readthedocs.io/
+  - OCRmyPDF adds an OCR text layer to scanned PDF files, allowing them to be searched or copy-pasted.
+  - Generates a searchable PDF/A file from a regular PDF
+  - Distributes work across all available CPU cores
+  - Uses Tesseract OCR engine to recognize more than 100 languages
+  - Battle-tested on millions of PDFs.
+- https://github.com/FanQinFred/OCRmyPDF-Desktop /apache2/202312/js/vue/inactive
+  - 在OCRmyPDF的基础上，集成了所需环境，并使用Electron开发了桌面端
 # ocr-utils
 
 # more

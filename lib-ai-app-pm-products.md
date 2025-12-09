@@ -13,6 +13,7 @@ modified: 2025-03-22T16:10:24.856Z
 - selling-points
   - local models support: mlx, lmstudio-alternative
   - citations for search: 外部数据源如字典mdx/书籍epub/wikipedia公开db/统计年鉴
+  - 类似词典库/kiwix的预置模块, 可下载、可分享, 不必每次都全量索引
   - large pdf workflows: chunking-strategies, reindex
   - pdf edit
 
@@ -332,8 +333,6 @@ modified: 2025-03-22T16:10:24.856Z
     - 仅支持gemini模型
     - 改了下速率限制。现在变成5分钟25次，对自动化和roocode这些用户变好了很多
     - [薄荷公益站签到](https://qd.x666.me/)
-  - [23公益站](https://sdwfger.edu.kg/console), 不用签到
-    - 平台将于每周五、周六统一发放额度兑换码。 额度申请：如您的额度提前用尽，可联系管理员进行补充申请
     - 模型丰富: claude, gpt, gemini
   - 📌 [KFC API](https://kfc-api.sxxe.net/)
     - [KYX-API](https://api.kkyyxx.xyz/), 每日转盘
@@ -379,7 +378,9 @@ modified: 2025-03-22T16:10:24.856Z
     - 本站完全免费！暂无任何充值通道
     - 绝大部分模型倍率换算后与官方价格相同，为缓解服务器资源压力，所有免费模型实际扣除配额均按付费标准计算
     - [黑与白chatAPI福利站](https://cdk.hybgzs.com/)
-  - [tbai API](https://tbai.xin/), 即将关闭
+  - [23公益站](https://sdwfger.edu.kg/console), 已关闭
+    - 平台将于每周五、周六统一发放额度兑换码。 额度申请：如您的额度提前用尽，可联系管理员进行补充申请
+  - [tbai API](https://tbai.xin/), 已关闭
     - 模型支持gemini/gpt, 不支持claude
     - API调用频率限制为 10 RPM
     - gpt-load 作者

@@ -58,10 +58,13 @@ modified: 2020-07-14T09:27:30.503Z
   - python虚拟机的垃圾回收使用的是引用计数法
     - 频繁更新引用计数会降低运行效率
     - 引用计数无法解决循环引用问题
+# fastapi
+- who is using #fastapi 🌰
+  - papermerge
 # django
-- who is using #django
+- who is using #django 🌰
   - zulip
-  - lasuite-docs/drive/meet
+  - lasuite-docs/drive/meet, Paperless
   - authentik
   - openedx
   - baserow

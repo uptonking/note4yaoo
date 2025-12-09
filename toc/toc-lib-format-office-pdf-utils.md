@@ -21,9 +21,10 @@ modified: 2022-11-11T10:46:41.519Z
   - https://github.com/pdf-association/pdf-differences /apache2/202502
     - The PDF files in this repository are targeted test files highlighting specific issues seen across multiple widely-used implementations.
 
-- https://github.com/alam00000/bentopdf /14Star/apache2/202510/ts
+- https://github.com/alam00000/bentopdf /14Star/apache2 > AGPL/202510/ts/vanillajs
   - https://bentopdf.com/
   - privacy-first, client-side PDF toolkit that allows you to manipulate, edit, merge, and process PDF files directly in your browser. No server-side processing is required
+  - 依赖qpdf-wasm、pdfjs、jspdf、pdf-lib、pdfkit、tesseract.js、tiff
   - Merge PDFs	Combine multiple PDF files into one.
   - Split PDFs	Extract specific pages or divide a document into smaller files.
   - Extract Pages	Save a specific range of pages as a new PDF.
@@ -44,6 +45,7 @@ modified: 2022-11-11T10:46:41.519Z
     - Markdown to PDF
     - Convert to PDF/A
     - Linearize PDF: Optimize PDFs for fast web viewing.
+  - ⚖️ [Change Licence to AGPL v3 _20251025](https://github.com/alam00000/bentopdf/commit/e0a253be83af58325273de309f56589b31d52b92)
   - [BentoPDF is now open sourced : r/webdev _202510](https://www.reddit.com/r/webdev/comments/1o6lkwf/bentopdf_is_now_open_sourced/)
   - What does it do better / different compared to Stirling pdf?
     - Runs fully client side
@@ -52,6 +54,12 @@ modified: 2022-11-11T10:46:41.519Z
     - You can fill and create form
   - i wonder if you can add "sign" feature using both imported signature or digital signature like in FoxitPDF. 
     - As a Linux user it's very difficult to find a decent application for digital signatures/certificates.
+  - 🍴 forks
+  - https://github.com/GTEC-PUC-Rio/puc-pdf /i18n/AGPL
+  - https://github.com/tommyvange/bentopdf /AGPL
+  - https://github.com/xiongfh2008/pdf.ToolkitLife
+  - https://github.com/Han-Anonymous/bentopdf
+  - https://github.com/IT-BAER/bentopdf
 
 - https://github.com/Stirling-Tools/Stirling-PDF /20.4kStar/MIT(core)+GPL/202403/java/js
   - https://www.pdfdrills.com/
@@ -196,7 +204,7 @@ modified: 2022-11-11T10:46:41.519Z
   - 依赖chokidar、live-server、passport、puppeteer、react
   - Please note that React components are not required for web-to-pdf to work. It supports all frameworks, and even vanilla JS/HTML/CSS.
 # ocr-pdf
-- https://github.com/ocrmypdf/OCRmyPDF /22.6kStar/MPLv2/202503/python
+- https://github.com/ocrmypdf/OCRmyPDF /32kStar/MPLv2/202512/python
   - http://ocrmypdf.readthedocs.io/
   - OCRmyPDF adds an OCR text layer to scanned PDF files, allowing them to be searched or copy-pasted.
   - Generates a searchable PDF/A file from a regular PDF

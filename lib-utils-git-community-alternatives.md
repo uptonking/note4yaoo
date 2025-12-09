@@ -42,6 +42,20 @@ modified: 2025-01-01T17:05:58.461Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [I'm stuck with Gitea 1.25 now... should I do the work to migrate to Forgejo? : r/selfhosted _202512](https://www.reddit.com/r/selfhosted/comments/1pheg8p/im_stuck_with_gitea_125_now_should_i_do_the_work/)
+- [Forgejo makes a full break from Gitea _202402](https://lwn.net/Articles/963095/)
+  - Forgejo only exists because some contributors were upset that the founder decided to retake control over the domain and trademarks.
+  - For the last few years, Forgejo has regularly rebased on Gitea's source. Only recently has the project reduced their dependency on Gitea to occasional cherry-picking..
+
+- I remember trying this like 10 years ago with the community version of gitlab, and it worked fine but it chugged resources as crazy and I had no benefit to just using their free tier on their own site. So over the last 10 years I've been hosting all my code/IaC directly on gitlab without any issues at all.
+  - gitea is much lighter on resources than gitlab. you don't have to use gitea if you github is fine. it's also a good way to backup your repo's with the mirror function
+
+- Github Private repos are restricted from using some features. With my own Forgejo insurance, I can unlock those features.
+
 - ## [Any GitHub/GitLab alternatives built for non-technical users? : r/git _202101](https://www.reddit.com/r/git/comments/l2ae04/any_githubgitlab_alternatives_built_for/)
 - The difficulty, IMO, is that Git works best with plain-text files. But many non-IT (NIT) people are wedded to proprietary file formats like MS-Word. So, merely making Git more intuitive ain't going to help—NITs still won't be able to take advantage of Git.
 

@@ -16,6 +16,7 @@ modified: 2021-01-12T18:49:13.490Z
     - https://github.com/EvanLi/Github-Ranking/blob/master/Top100/TypeScript.md
   - https://github.com/jaywcjlove/github-rank
     - https://wangchujiang.com/github-rank/repos.html
+  - https://github.com/awesome-selfhosted/awesome-selfhosted
 
 - fe: 
   - vscode(MIT)/atom/theia, code-server(MIT), excalidraw(MIT), reveal.js(MIT/js), pdfjs(apache2/js), 

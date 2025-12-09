@@ -27,6 +27,7 @@ modified: 2022-06-03T21:34:54.893Z
   - search: knowledge-base/workspace/wiki/Personal Information Manager (PIM)
   - self-contained, in the browser
   - [17 Confluence Alternatives - Open Source, Free & Paid in 2024](https://rigorousthemes.com/blog/best-confluence-alternatives-free-paid/)
+  - https://github.com/awesome-selfhosted/awesome-selfhosted#document-management
 # notion-like-knowledge-base
 - siyuan /6.6kStar/AGPLv3/202208/ts/go/支持协作
   - https://github.com/siyuan-note/siyuan
@@ -895,8 +896,32 @@ modified: 2022-06-03T21:34:54.893Z
   - MCP Server: Integrate with Claude Desktop for intelligent document navigation
   - [Package for converting PDF, images and docs to structured data like JSON, markdown, HTML : r/node _202509](https://www.reddit.com/r/node/comments/1nqxada/package_for_converting_pdf_images_and_docs_to/)
     - I've published a Node.js client for DocStrange 
-# office
-- https://github.com/paperless-ngx/paperless-ngx /GPLv3/202412/ts/python
+# resource/library-management
+- https://github.com/papermerge/papermerge-core /400Star/apache2/202512/python
+  - https://papermerge.com/
+  - https://demo.papermerge.com
+  - open source document management system designed to work with scanned documents (also called digital archives). 
+  - It extracts text from your scans using OCR, indexes them, and prepares them for full text search. 
+  - It supports PDF, TIFF, JPEG and PNG document file formats
+  - ⏳ Document Versioning: Originally uploaded version is always retained. 
+  - Custom Fields (metadata) per document type
+  - Multi-User & Group ownership
+  - Page Management - delete, reorder, cut, move, extract pages
+  - OCRed text overlay (you can download document with OCRed text overlay)
+  - Full Text Search of the scanned documents
+  - Dual panel mode
+  - https://github.com/ciur/papermerge /2.8kStar/apahce2/202110/legacy
+
+- https://github.com/Mozzo1000/booklogr /435Star/apache2/202511/python/js
+  - https://booklogr.app/
+  - https://demo.booklogr.app/
+  - a web app designed to help you manage your personal book library with ease.
+  - Easily look up books by title or isbn. Powered by OpenLibrary
+  - Export your data in multiple formats, including CSV, JSON, and HTML.
+  - Supports SQLite (default) or PostgreSQL as databases.
+  - 功能简单, 专注于阅读
+
+- https://github.com/paperless-ngx/paperless-ngx /34.8kStar/GPLv3/202512/python/ts
   - https://docs.paperless-ngx.com/
   - https://demo.paperless-ngx.com/
   - Paperless-ngx is a document management system that transforms your physical documents into a searchable online archive so you can keep, well, less paper.
@@ -905,7 +930,11 @@ modified: 2022-06-03T21:34:54.893Z
     - OCR the Document
     - create an archivable PDF/A document from your document. 
     - performs automatic matching of tags, correspondents and types on the document before storing it in the database.
-    - The primary method of getting documents into your database is by putting them in the consumption directory. 
+    - The primary method of getting documents into your database is by putting them in the consumption directory.
+  - 🌹
+    - 支持删除到trash并恢复, trash中的文件默认会在30天后删除
+    - 查看纯文本pdf时，支持选择文字
+    - 上传文件后的文件processing是异步的
   - Paperless-ngx is the official successor to the original Paperless & Paperless-ng projects 
   - Utilizes the open-source `Tesseract` engine to recognize more than 100 languages.
   - Documents are saved as PDF/A format which is designed for long term storage, alongside the unaltered originals.
@@ -918,6 +947,8 @@ modified: 2022-06-03T21:34:54.893Z
   - https://github.com/signorecello/paperless-docling /202504/js/inactive
     - A service that automatically processes documents in Paperless using docling and updates their content.
     - [Better OCR with Docling : r/Paperlessngx _202504](https://www.reddit.com/r/Paperlessngx/comments/1jqqsly/better_ocr_with_docling/)
+    - [Has anybody tried Readur as a Paperless-ngx alternative? : r/selfhosted](https://www.reddit.com/r/selfhosted/comments/1lw0164/has_anybody_tried_readur_as_a_paperlessngx/)
+      - I am personally not a fan of Paperless’s tag-based approach. I have a folder-based approach that has worked well for me for years. I would love it if paperless (or an alternative) would simply interact with an existing folder structure, rather than consuming everything.
 - https://github.com/clusterzx/paperless-ai /4.6kStar/MIT/202511/python/js
   - https://clusterzx.github.io/paperless-ai/
   - an AI-powered extension for Paperless-ngx that brings automatic document classification, smart tagging, and semantic search using OpenAI-compatible APIs and Ollama.
@@ -931,6 +962,23 @@ modified: 2022-06-03T21:34:54.893Z
   - Search: Quickly search for documents with full-text search.
   - Authentication: User accounts and authentication.
   - SolidJS, shadcn-solid, honojs, drizzle
+
+- https://github.com/stumpapp/stump /1.8kStar/MIT/202510/rust/ts
+  - https://stumpapp.dev/
+  - open source comics, manga and digital book server with OPDS support (WIP)
+
+- https://github.com/jiisanda/docflow /MIT/202509/python/inactive
+  - a powerful Document Management API designed to streamline document handling, including seamless uploading, downloading, organization, versioning, sharing, and more
+
+- https://github.com/Open-Source-Legal/OpenContracts /1.1kStar/AGPL/202512/python/ts
+  - https://open-source-legal.github.io/OpenContracts/
+  - Open source document platform for document analysis, annotation, and collaboration.
+  - Document Processing — Upload PDFs and text files, automatically extract structure with ML-based parsers
+  - Annotation & Analysis — Highlight, label, and analyze documents with custom annotation schemas
+  - AI Agents — Chat with documents using configurable AI assistants that can search and analyze content
+  - Collaboration — Threaded discussions with @mentions, voting, and moderation at corpus and document levels
+  - Data Extraction — Extract structured data from hundreds of documents using agent-powered queries
+  - Version Control — Track document changes, restore previous versions, soft delete with recovery
 # more
 - https://github.com/notea-org/notea
   - Self hosted note taking app stored on S3

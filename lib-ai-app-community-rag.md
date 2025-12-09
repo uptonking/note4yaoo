@@ -770,6 +770,25 @@ modified: 2024-09-08T20:08:16.088Z
 
 - Did you experiment with other retrieval methods besides or in addition to semantic similarity? I've done some work using different techniques, like parsing dependency trees out of the current file, with promising results for code RAG.
   - We did look into BM25 for FT search but did not see measurable benefits for our use cases. Our approach relies on getting a lot of documents first and then pruning - it would be better to get just what's needed in the first place, I still hope BM25 can help there. Worth another look!
+# discuss-rag-graph
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Why do GraphRAGs perform worser than standard vector-based RAGs? : r/Rag](https://www.reddit.com/r/Rag/comments/1pi2q68/why_do_graphrags_perform_worser_than_standard/)
+  - You'd expect GraphRAG to win, right? Graphs capture relationships. Relationships are context. More context should mean better answers.
+  - that's not what they found. In several tests, GraphRAG actually degraded retrieval quality compared to plain old vector search.
+  - Because I've also seen production systems where knowledge graphs and graph neural networks massively improve retrieval. We're talking significant gains in precision and recall, with measurably fewer hallucinations.
+
+- In my experience, the issue isn't that graphs don't help - it's exactly what you said about the implementation approach. I've seen GraphRAG work incredibly well, but only when teams treat the graph construction as an ML problem that needs iteration and measurement.
+
+- Vector RAGs are based on Similarity. Graph RAGs are based on relationships. As such at the best they can compete with relational databases only
+
+- They model the statistical dependencies between data. Standard vector-based RAG assumes all day are independent and identically distributed (i.i.d.)
 # discuss-rag-vector-db
 - ## 
 
@@ -983,7 +1002,13 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [RAG beginner - Help me understand the "Why" of RAG. : r/Rag _202510](https://www.reddit.com/r/Rag/comments/1phkzw6/rag_beginner_help_me_understand_the_why_of_rag/)
+  - Is RAG even necessary for this usecase? Now LLM models have become so good that RAG is not required for tasks like this. (Evaluator asked me this question)
+
+- For evaluation I would treat “with RAG” and “no RAG” as two systems. Build a small gold set of quiz questions and grading decisions from a human teacher, then
+  - That gives you a concrete argument: RAG is not “philosophically nicer”, it either improves faithfulness and coverage on real data or it does not.
+
+- Where RAG becomes valuable is when correctness and grounding matter—ensuring questions and answers come only from the uploaded content and not from the model’s prior knowledge or hallucinations. That distinction is especially important in educational assessment.
 
 - ## [Why RAG Fails on Tables, Graphs, and Structured Data : r/Rag _202512](https://www.reddit.com/r/Rag/comments/1pfuxis/why_rag_fails_on_tables_graphs_and_structured_data/)
   - Most RAG pipelines are built for unstructured text, not for structured data.
