@@ -93,6 +93,12 @@ modified: 2025-09-01T05:52:34.241Z
   - 还可参考LocalAi封装ollama/comfyui的逻辑
   - 类似lmstudio的模型市场, 但支持modelscope, 同时自动扫描本地已有的ollama/lmstudio模型
   - 用户自己上传的pdf，就类似词典软件的词库
+  - llama.cpp ui + mlx/vllm
+- 🏘️ 可参考各大 coding-agent-cli 的实现, 有第三方开发者在cli上实现web/electron/tauri
+  - 同时需要支持 openai-compatible api, 这样方便低性能的电脑/客户端使用
+
+- model-api作为产品的非主要特性时, 没必要对标lm-studio/ollama将api暴露出去
+  - 参考cline/roocode/librechat支持配置与切换agent即可
 
 - code interpreter 如何实现
   - open source alternative

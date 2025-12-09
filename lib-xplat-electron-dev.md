@@ -22,17 +22,21 @@ modified: 2021-05-13T03:08:52.583Z
   - Build cross-platform apps with web tech(js/html/css/chromium)
   - Compatible with macOS, Windows, and Linux
 
-- who is using #electron
+- who is using #electron 🌰
   - popular: vscode/theia/opensumi, jupyter, postman-like(web+pc)
   - known: qq, slack, mattermost, zulip
   - db: mongodb-compass, dbgate, beekeeper, sqlectron
   - notes(web/pc): obsidian, joplin(AGPL), marktext(MIT), siyuan(AGPL), trilium(AGPL), notable(MIT), notesnook(GPL), Zettlr(GPL), yn(AGPL), tinywrite
   - open: drawio(apache2), tagspaces, medis
+  - ai: comfyui
   - 经典示例: file-manager, note-taking, reader-epub
 
 - tips
+  - 🏘️ 可参考各大 coding-agent-cli 的实现, 有第三方开发者在cli上实现web/electron/tauri
   - 要在侧重web(no-server)和侧重本地(c/s或b/s)的架构上做取舍，主要考虑数据源、数据量、性能
     - 还要在csr/ssr上做选择，没有大而全的架构
+  - 不要执着于web与桌面版mac/win/linux采用相同的架构, web版可针对速度优化, 桌面版可针对本地计算优化, 需求不同
+    - vscode的桌面版性能很好, web版就感觉很慢
   - 不建议基于electron实现自定义浏览器，要考虑支持各浏览器自带的扩展商店，可在自己的应用层实现
   - ? electron-for-android/ios vs apps
   - web+pc: vscode, jupyter, (rstudio)
@@ -44,6 +48,8 @@ modified: 2021-05-13T03:08:52.583Z
 # draft
 - nativefier(archived): webpage wrapper for electron
   - 可以复用pake的打包逻辑但产物为electron
+
+- 编辑器/笔记/llm-api的客户端都需要便捷的ui
 
 - clients for popular apps like notion-database
   - Stirling-PDF

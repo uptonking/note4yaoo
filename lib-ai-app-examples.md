@@ -24,10 +24,16 @@ modified: 2023-02-08T07:20:48.475Z
   - [Add Local ComfyUI/SD base diffusers step with "json API" PLZ _202502](https://github.com/mudler/LocalAI/issues/4818)
     - 不支持
 
-- https://github.com/janhq/jan /AGPLv3/202403/ts
+- https://github.com/menloresearch/jan /39.7kStar/agpl > apache2/202512/ts/rust/tauri
+  - https://github.com/janhq/jan
   - https://jan.ai/
-  - an open source alternative to ChatGPT that runs 100% offline on your computer
-  - Nitro is a high-efficiency C++ inference engine for edge computing. It is lightweight and embeddable
+  - an AI assistant that can run 100% offline on your device
+  - Local AI Models: Download and run LLMs (Llama, Gemma, Qwen, etc.) from HuggingFace
+  - Cloud Integration: Connect to OpenAI, Anthropic, Mistral, Groq, and others
+  - MCP integration for enhanced capabilities
+  - 提供了类似lm studio的模型下载简化版
+  - [chore: Jan's code is now under the Apache license _202505](https://github.com/menloresearch/jan/pull/5042)
+    - release/v0.5.18
 
 - https://github.com/Doriandarko/maestro /202406/python
   - ⛓️ A framework for Claude Opus to intelligently orchestrate subagents.
@@ -325,10 +331,14 @@ modified: 2023-02-08T07:20:48.475Z
   - Fast offline inference - Comparable inference speeds to vLLM
   - Optimization Suite - Prefix caching, Tensor Parallelism, Torch compilation, CUDA graph, etc.
 
-- https://github.com/lemonade-sdk/lemonade /1.6kStar/apache2/202511/python/cpp
+- https://github.com/lemonade-sdk/lemonade /1.8kStar/apache2/202512/python/cpp
   - https://lemonade-server.ai/
   - Lemonade helps users run local LLMs with the highest performance by configuring state-of-the-art inference engines for their NPUs and GPUs.
   - Lemonade supports both GGUF and ONNX models. You can also import custom GGUF and ONNX models from Hugging Face by using our Model Manager (requires server to be running).
+  - [How to run Lemonade server-router on an Apple Silicon mac _202510](https://github.com/lemonade-sdk/lemonade/issues/448)
+    - Lemonade is an open source server-router (like OpenRouter, but local) that auto-configures LLM backends for your computer. 
+    - The same Lemonade tool works across engines (llamacpp/ONNX/FLM), backends (vulkan/rocm/metal), and OSs (Windows/Ubuntu/macOS).
+    - One of our most popular requests was for macOS support, so we shipped it last week
 
 ## llama-rewrite
 
@@ -345,16 +355,6 @@ modified: 2023-02-08T07:20:48.475Z
 - https://github.com/karpathy/minGPT /MIT/202207/python/inactive
   - A minimal PyTorch re-implementation of the OpenAI GPT (Generative Pretrained Transformer) training
 # ollama/lmstudio-like
-- https://github.com/menloresearch/jan /37.5kStar/agpl > apache2/202508/ts/rust/tauri
-  - https://jan.ai/
-  - an AI assistant that can run 100% offline on your device
-  - Local AI Models: Download and run LLMs (Llama, Gemma, Qwen, etc.) from HuggingFace
-  - Cloud Integration: Connect to OpenAI, Anthropic, Mistral, Groq, and others
-  - MCP integration for enhanced capabilities
-  - 提供了类似lm studio的模型下载简化版
-  - [chore: Jan's code is now under the Apache license _202505](https://github.com/menloresearch/jan/pull/5042)
-    - release/v0.5.18
-
 - https://github.com/oobabooga/text-generation-webui /45.1kStar/AGPLv3/202509/python/js
   - https://oobabooga.gumroad.com/l/deep_reason
   - A Gradio web UI for Large Language Models.

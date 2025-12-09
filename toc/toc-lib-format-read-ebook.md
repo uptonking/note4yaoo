@@ -166,6 +166,9 @@ modified: 2023-09-19T07:26:04.103Z
     - Interestingly in the Electron/Chromium "print to PDF" API, `printSelectionOnly` (which is not available in the regular "print" feature)
     - A print feature would make Thorium Reader the only app in existence, as far as I know of, capable of converting a fixed layout epub3 file to a PDF (via the Save As PDF output option).
   - https://github.com/readium/ts-toolkit
+  - https://github.com/edrlab/thorium-web /BSD/202512/ts
+    - open-source ebook/audiobook/comics Web Reader
+    - 与桌面版架构不同
 
 - https://github.com/koreader/koreader /AGPLv3/lua
   - http://koreader.rocks/

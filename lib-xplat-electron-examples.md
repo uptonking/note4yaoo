@@ -66,6 +66,9 @@ modified: 2024-01-31T19:13:11.286Z
   - [consider to swap to mupdfjs ?](https://github.com/edrlab/thorium-reader/discussions/2742)
     - PDF.js may be a slower rendering engine, but it is a mature library, with a strong feature set (including text selection + annotations) and a page layout logic that integrates quite well in Thorium.
   - https://github.com/readium/ts-toolkit
+  - https://github.com/edrlab/thorium-web /BSD/202512/ts
+    - open-source ebook/audiobook/comics Web Reader
+    - 与桌面版架构不同
 
 - https://github.com/desktop/desktop /MIT/202502/ts
   - GitHub Desktop is an open-source Electron-based GitHub app. 

@@ -20,7 +20,7 @@ modified: 2025-11-01T10:54:26.044Z
 - https://github.com/Blaizzy/mlx-vlm /1.8kStar/MIT/202511/python
   - a package for inference and fine-tuning of Vision Language Models (VLMs) and Omni Models (VLMs with audio and video support) on your Mac using MLX
 
-- https://github.com/lordmathis/llamactl /MIT/202509/go/ts
+- https://github.com/lordmathis/llamactl /56Star/MIT/202512/go/ts
   - http://llamactl.org/
   - Unified management and routing for llama.cpp, MLX and vLLM models with web dashboard.
   - llamactl sits on top of popular LLM backends (llama.cpp, MLX, and vLLM) and provides a unified interface to manage model instances through a web dashboard or REST API.
@@ -85,6 +85,16 @@ modified: 2025-11-01T10:54:26.044Z
 # examples
 
 # utils
+
+- https://github.com/lemonade-sdk/lemonade /1.8kStar/apache2/202512/python/cpp
+  - https://lemonade-server.ai/
+  - Lemonade helps users run local LLMs with the highest performance by configuring state-of-the-art inference engines for their NPUs and GPUs.
+  - Lemonade supports both GGUF and ONNX models. You can also import custom GGUF and ONNX models from Hugging Face by using our Model Manager (requires server to be running).
+  - [How to run Lemonade server-router on an Apple Silicon mac _202510](https://github.com/lemonade-sdk/lemonade/issues/448)
+    - Lemonade is an open source server-router (like OpenRouter, but local) that auto-configures LLM backends for your computer. 
+    - The same Lemonade tool works across engines (llamacpp/ONNX/FLM), backends (vulkan/rocm/metal), and OSs (Windows/Ubuntu/macOS).
+    - One of our most popular requests was for macOS support, so we shipped it last week
+
 - https://github.com/mzau/mlx-knife /112Star/apache2/202511/python
   - ollama like cli tool for MLX models on huggingface (pull, rm, list, show, serve etc.)
   - [[Update] mlx-knife 2.0 stable — MLX model manager for Apple Silicon : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1otwdq0/update_mlxknife_20_stable_mlx_model_manager_for/)

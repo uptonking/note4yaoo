@@ -199,6 +199,17 @@ modified: 2025-03-22T18:49:15.634Z
   - https://github.com/langchain-ai/chat-langchainjs /MIT/202503/ts/inactive
     - https://chatjs.langchain.com/
     - Built with LangChainjs, and Next.js.
+
+- https://github.com/olegshulyakov/llama.ui /MIT/202510/ts/仅web
+  - https://llama-ui.js.org/
+  - open-source desktop application that provides a beautiful, user-friendly interface for interacting with large language models (LLMs) powered by llama.cpp.
+  - PWA support with offline capabilities
+  - a fork of llama.cpp WebUI with: Fresh new styles
+  - Multi-Provider Support: Works with llama.cpp, LM Studio, Ollama, vLLM, OpenAI, .. and many more
+  - IndexedDB storage for conversations
+  - Storage: IndexedDB via Dexie.js
+  - Import/export functionality
+  - File attachments (text, images, PDFs)
 # ui-ai 💄
 - https://github.com/ag-ui-protocol/ag-ui /8.4kStar/MIT/202510/python/ts
   - https://ag-ui.com/
