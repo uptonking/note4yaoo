@@ -114,6 +114,105 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Claude Skills are just .cursorrules, change my mind : r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1oj109n/claude_skills_are_just_cursorrules_change_my_mind/)
+- It's all just prompt really. Basically an LLM only has prompt and output.
+
+- Cursor rules are like CLAUDE.md files. They are loaded into context on every AI interaction. Claude Skills are executable capabilities that can be invoked _when needed_. 
+  - Nope, cursorrules have markdown header thingies with a description and can either be auto-loaded, or invoked by the LLM which will only see their descriptions before invoking them.
+
+- They can run packaged scripts when needed.
+
+- The marketplace/plugin system is the big differentiator, imo
+
+- 💡 I think it was presented as revolutionary because it's adaptable for more than just coding. It can execute the scripts and call tools to use for specific purposes. I think the fact that it's accessible to Claude that AI web means that it's accessible to more individuals that may not be using cursor or something else for coding so available for other use cases
+
+- I wish Claude Code could lazy load MCPs as same as skills.
+
+- I'm a Cursor user and I'd love to replicate what I see people getting out of skills.
+  - cursor rules are only loaded at the start of a chat. You can have 50 rules, and logic for which ones to load so that cursor only ever loads a few per chat, but it's still always at the start of a chat.
+  - My understanding of Claude Skills is that they can be accessed more-or-less at any time. If I want to e.g. file a bug midway through a chat, if the "File a bug" rule wasn't included at the start, Cursor doesn't seem to re-read its Cursor rules and pick up the newly-needed ones, whereas it sounds like Claude Code will.
+
+- ## [如何看Anthropic最新发布的Claude Skills？会替代MCP吗？ - 知乎 _202510](https://www.zhihu.com/question/1962512846630941008)
+- 说个暴论，AI Agent想要落地，需要的只有强大的模型基座，什么Skill、MCP、... 都只是添头，通过代码很容易实现。
+- Skill就是一个标准化的文件夹，用来打包Agent完成特定任务所需的知识和工具。
+  - 可以把它理解成给模型的说明书或标准作业程序（SOP，或者之前比较火的概念：SPEC的增强版）。
+  - Anthropic这次不仅发布了概念，还直接开源了一个GitHub仓库, 里面包含了所有20个左右的官方Skill的源码示例
+- 一个Skill文件夹通常包含这几部分：
+  - SKILL.md：核心文件，必须存在。里面用YAML写元数据（名字、描述），用Markdown写详细的指令，告诉Claude在什么情况下、以及如何使用这个Skill。
+  - scripts/：存放可执行的Python、Shell脚本。比如PDF处理Skill里，就有fill_fillable_fields.py这种确定性极强的代码。
+  - references/：存放参考文档。比如API文档、数据库Schema、公司政策等，这些是给Claude看的知识库。
+  - assets/：存放资源文件。比如PPT模板、公司Logo、React项目脚手架等，这些是Claude在执行任务时直接使用的文件，而不是阅读的
+- 一个Skill = 任务说明书 SKILL.md + 工具代码 (scripts) + 专业知识 (references) + 素材资源 (assets)。
+  - 它把完成一个特定任务所需的一切都打包好了，本质上就是一种代码和资源的组织方式，一种约定优于配置的理念。
+- 💡 Claude Skills设计的精髓，也是它和简单RAG/MCP/FunctionCalling的最大区别。它就是一套聪明的，为了节省上下文窗口而设计的分层加载策略。 
+  - 第一层：元数据（Name + Description）。这部分信息非常简短，会常驻在Claude的脑海里。当用户提出一个任务时，Claude会快速扫描所有可用Skill的描述，判断哪个可能相关。这是第一道筛选，成本极低。
+  - 第二层：SKILL.md。当Claude认为某个Skill相关时，它才会去加载SKILL.md里的详细指令。这部分内容告诉Claude完成任务的具体步骤、应该遵循的规则、以及如何使用文件夹里的其他资源。这步的上下文消耗中等。
+  - 第三层：脚本和参考文档。只有当SKILL.md里的指令明确要求，或者Claude在执行中判断需要时，它才会去读取scripts/里的代码或references/里的文档。这步的上下文消耗是按需的，避免了一次性把所有东西都塞进去。
+- 这个机制的好处显而易见，极大地节省了宝贵的上下文窗口。它先凭经验判断用哪个SOP，然后翻开SOP照着做，遇到具体问题再查阅附录或工具手册。这套逻辑，我们用代码当然也能实现，但Skills把它标准化了。
+
+- 它和MCP是什么关系，会替代吗？直接回答，完全不是一回事，不会替代，甚至是互补的。
+  - MCP是一种通信协议。它定义了Agent（客户端）如何与一个暴露了工具的服务（服务端）进行标准化的交流。它解决的是Agent与外部工具如何对话的问题。
+  - Claude Skills是一种能力封装格式。它定义了Agent自身应该具备哪些知识、工作流和内部工具。它解决的是Agent如何思考和行动的问题。
+  - Skill里的知识可以指导Agent如何更有效地去使用一个遵循MCP协议的工具。一个Agent完全可以加载一个Skill，然后根据Skill里的指令，去调用一个远程的MCP服务器
+
+- 最大的价值是：Anthropic把他们在生产环境中打磨出的一套Agent能力管理的设计模式开源了。我们完全可以把这个模式借鉴过来，用在自己的Agent体系里，不管你用的是Qwen、Deepseek，还是别的模型
+  - 当你的Agent能力越来越多时，怎么管理？一个几千行的System Prompt？一个包含几十个工具函数的大杂烩文件？这些都很难维护。
+  - 而Skills提供了一种解耦的、模块化的方案。你团队里的Agent不再是依赖一个巨大的、难以维护的system_prompt.txt，而是一个由几十个标准化的Skill文件夹组成的能力库，每个Skill都可以独立版本控制、测试和迭代。
+
+- 在字节实习做通用Agent研发的时候，Agent需要支持几十种不同 工具/接口/平台 来完成五花八门的任务，对此，同事们对知识的管理提出了一个knowledge范式：
+  - 每个knowledge定义好title, description, used when（在什么任务/工具/平台出现时，使用该knowledge）。这些作为metadata，每个knowledge的metadata也就三行字左右。knowledge的正文是一个markdown，会包含SOP、Dos、Don'ts、甚至简单的脚本。
+  - Agent启动一次任务时，先根据prompt让LLM根据提供的metadata主动召回其认为用得上的knowledge，再通过工程手段把完整的md拼进prompt里，支持完成后续任务。
+  - 看完Anthropic提出的Claude Skills，感叹当时同事理念的先进，也感叹行业霸主的生态话语权——如果是豆包或者seed提出这样一个范式，肯定得不到如此巨大的关注和跟进。
+  - 同时也承认，Claude Skills的定义内涵和规范比当时我们团队提出的knowledge更加全面和可循，只不过本质上没有太多进步，仍然是context engineering的一种。要想让模型充分发挥好Skills的能力，最终还是要依赖更好的模型，更强的推理。
+
+- 这种范式是开发AGENT的常规方式，没啥先进的。工程量大一点的AGENT都会构建自己的知识库范式，核心就是结构化自己的内容
+
+- 写 function call 的时候就会用到呀，不同的是只考虑到代码层面的封装
+
+- 从skill的文档描述来看 它就是单纯地把描述丢给大模型 至于大模型实际会不会follow 那就完全看心情了 从这一点来说 skill方案在性能与确定性这块必然是比真正的tools差不少的
+  - 总体来说 skill基本可以算是prompt之上的初级语法糖 虽然比较鸡肋 但对用户而言 总归是能解决一些场景下的问题的 起码有了一套指导大模型使用新工具的临时解决方案了
+
+- ## [OpenAI 谷歌联手推出 AGENTS.md，能否成为编程 Agent 的「官方说明书」？ - 知乎 _202508](https://zhuanlan.zhihu.com/p/1941669020068709122)
+- 争论一：AGENTS.md vs. CONTRIBUTING.md
+  - README.md 或 CONTRIBUTING.md 不够用吗？
+  - 这整件事本该在 CONTRIBUTING.md 里解决。AGENTS.md 里的内容，和人类贡献者想了解的东西没什么两样。
+  - 给 Agent 的文档必须 高度精炼，因为过多的内容会消耗宝贵的 API token，增加成本，甚至降低输出质量。
+
+- 争论二：文件 vs. 文件夹，单体 vs. 结构化
+  - 有经验的开发者提出，对于大型复杂项目，一个巨大的 Markdown 文件很快会变得难以维护。
+  - 许多开发者建议采用更有组织的文件夹结构，例如一个隐藏的 .agents 目录
+
+- 争论三：根目录污染问题
+
+- 争论四：继承还是覆盖？
+  - AGENTS.md 支持在子目录中嵌套，但其规则是 「最近文件优先」。
+
+- [告别混乱，用 AGENTS.md 统一你的 AI 开发工具规则 - 知乎](https://zhuanlan.zhihu.com/p/1951785160124109343)
+  - AGENTS.md 只是一个单独的文件，没法像 Cursor 的 `.cursor/rules` 一样支持非常多的独立的规则。
+  - 我的建议是，你可以和团队商定一个存放各类规则的公共目录，比如 `.ai/rules/`。 然后你可以在 AGENTS.md 中补充 rules 信息内容。
+
+- [Switching to AGENTS.md : r/cursor](https://www.reddit.com/r/cursor/comments/1nqwz02/switching_to_agentsmd/)
+  - Don't dump all rules into this file. You can link to other rules from this file. Agents should be able to reason about it and read the right documentation.
+
+- [Claude Code and Claude.md: Should you spread your product doumentation and plans and agent instructions over multiple files? : r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1lr1g0d/claude_code_and_claudemd_should_you_spread_your/)
+  - Yes, progressively split the knowledge across multiple md files.
+  - Rule of thumb that works for me. Claude.md is for nouns. Slash commands are for verbs. Meaning Claude.md is about where and what things are, and then slash commands are about how to do the thing.
+
+## 🌰 [How to write a great agents.md: Lessons from over 2, 500 repositories - The GitHub Blog _202511](https://github.blog/ai-and-ml/github-copilot/how-to-write-a-great-agents-md-lessons-from-over-2500-repositories/)
+
+- We recently released a new GitHub Copilot feature: custom agents defined in agents.md files. Instead of one general assistant, you can now build a team of specialists: a @docs-agent for technical writing, a @test-agent for quality assurance, and a @security-agent for security analysis
+
+- What works in practice: Lessons from 2, 500+ repos
+  - Put commands early: Put relevant executable commands in an early section: npm test, npm run build, pytest -v. Include flags and options, not just tool names.
+  - Code examples over explanations: One real code snippet showing your style beats three paragraphs describing it. 
+  - Set clear boundaries: Tell AI what it should never touch (e.g., secrets, vendor directories, production configs, or specific folders). “Never commit secrets” was the most common helpful constraint.
+  - Be specific about your stack: Say “React 18 with TypeScript, Vite, and Tailwind CSS” not “React project.” Include versions and key dependencies.
+  - Cover six core areas: Hitting these areas puts you in the top tier: commands, testing, project structure, code style, git workflow, and boundaries. 
+
 - ## [Q: When will there be fast and competent SLMs for laptops? : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pcurp8/q_when_will_there_be_fast_and_competent_slms_for/)
   - Qwen3-30B-A3B and GPT-OSS-20B both uses Mixture-of-Experts instead of dense layers for their SLM
   - Kimi-Linear and Qwen3-Next-80B-A3B moved along to use "mixed attention" (majority of layers with linear attention) to speed things up AND have longer contexts
@@ -429,7 +528,26 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
-- ## 
+- ## [和AI对话，不要使用“你” ](https://linux.do/t/topic/1293395)
+- AI 大神 Karpathy 分享了一个反直觉的观点：跟大模型聊天时，不要使用 “你” 这个字，也就是不要把它们当 “人”。
+  - Karpathy 指出，这种问法其实是在给 AI 降智。因为 LLM 本质上并没有自我意识，它更像是一个拥有海量知识的模拟器。
+  - 当使用 “你” 这个字的时候，比如问 “你的看法”，模型就会立刻被触发一种特定的人格嵌入。
+  - 它会强行让自己扮演一个礼貌、安全但有点无聊的 AI 助手。这时候它吐出来的往往是那些四平八稳、滴水不漏，但实际上没啥深度的车轱辘话，也就是大家常说的 “Al 味”。
+  - 相反，Karpathy 建议我们要转变思路，要想解锁 AI 真正的实力，就把 AI 当成模拟器用。
+  - 举个例子，不要问 “你怎么看”，而是要设定具体的情境和角色。你可以问 “如果是三位资深产品经理坐在一起讨论这个功能，他们会提出哪些尖锐的批评”，或者 “请以一位诺贝尔经济学奖得主的视角分析这个现象”。
+- 评论区也有不少高手补充，不仅要少用 “你”，也要少用 “我”。
+  - 因为当你表达 “我觉得.” 的时候，AI 为了讨好用户，往往会顺着你的话说，这就导致了所谓的阿谀奉承现象，而不是基于客观事实给出答案。
+- 下次写提示词的时候，试试戒掉 “你” 和 “我” 这两个字。让 AI 去模拟那些具体的专家、团队甚至反方辩手，你会发现它的回答质量能提升好几个档次。
+
+- 那么比如 “你是一个物理学领域专业人士”、“你是一个穿小裙子的算法高手”、“你是一个猫娘” 的 prompt，到底该不该用呢？以前我看很多人鼓励在需要特定工作场景时这么做，这里面有你，但是指定了人格的类型
+  - 我也在想这个问题，可以改写成 “作为一个 xxx”，“扮演一名 xxx”，然后后面全部用祈使句试一下
+- “你” 的话感觉是已经指定了一个人，而用 “请以” 的话感觉会从该领域中每个人不同视角来思考，可能会更全面一点？
+
+- 省流，多用角色扮演法。 此事在脑筋急转弯中亦有记录。 非思考模型你直接提问 脑筋急转弯类型的题目 大多模型很可能被欺骗。 但你强调这是脑筋急转弯， 让他去扮演类似领域的高手， 即使是非思考模型也能破解陷阱
+
+- “你是一个专业的 swift 程序员”  →  “请作为一个专业的 swift 程序员，xxxx” 这么理解对吗
+
+- 这些技巧直接调用 api 效果最明显吧？网页版的大模型和其他工具里调 API，基本都预设了角色。即使不用第一二人称，效果提升也不大吧？
 
 - ## [8 local LLMs on a single Strix Halo debating whether a hot dog is a sandwich : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pdh0sm/8_local_llms_on_a_single_strix_halo_debating/)
   - https://github.com/lemonade-sdk/lemonade

@@ -271,7 +271,7 @@ modified: 2025-11-30T17:27:16.720Z
   - [[Enhancement] Reduce memory consumption greatly, and speed up process slighlty by processing file async and inserting to vectordb in chunks rather than all at once _202510](https://github.com/danny-avila/rag_api/issues/213)
     - Currently RAG creates embeddings for the file holding them all in memory then bulk inserts them all into the vectordb. When embedding very large files this consumes a vast amount of memory
     - This is largely solved by changing the logic such that it breaks the file up into chucks and embeds each separately, and asynchronously bulk inserting each chunk individually as the embedding process completes each chunk. 
-    - pr未合并
+    - pr已合并 _202512
   - [[Issue] `/health` endpoint becomes unresponsive during large file processing _202510](https://github.com/danny-avila/rag_api/issues/216)
     - When uploading and processing large files, the /health endpoint becomes unresponsive until the processing is complete.
 

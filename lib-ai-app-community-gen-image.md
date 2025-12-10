@@ -49,6 +49,15 @@ modified: 2025-08-16T14:12:24.416Z
 # dev-xp
 - 生成图片时，一般批量生成10张起
   - 挑选图片的原则: 清晰、未变形， 最好光线足
+
+- ai生成海报时不擅长使用 中文艺术字体, 但会用 英文艺术字体
+
+- 
+- 
+- 
+- 
+- 
+
 # models-benchmark 🆚
 - time cost for image-gen on macbook air m4(32gRAM)
   - prompts: lawn, rabbit, cat
@@ -169,6 +178,18 @@ modified: 2025-08-16T14:12:24.416Z
 
 # discuss-stars
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 🖼️ Qwen-Image-i2L：可以“将任意一张图片转化为 LoRA 模型”
+- https://x.com/imxiaohu/status/1998593802320359640
+  - 给它一张图，它就能自动生成一个 LoRA（可微调AI风格模块）
+  - 你只需要提供某个画风、人物风格、艺术作品，Qwen-Image-i2L 就能分析这张图的视觉特征，自动生成一个 LoRA 模块。
+  - Qwen-Image-i2L 利用 SigLIP2 + DINOv3 + Qwen-VL 特征提取体系，
+  - 把图像分解成“风格 + 内容 + 构图 + 色调”等可学习特征， 并压缩成一个轻量级 LoRA 模块。
+  - 生成的 LoRA 可以直接加载到生成模型中使用，实现“单图风格迁移”。
 
 - ## [Is there a lightweight node that turns a regular prompt into natural language for FLUX? : r/comfyui _202408](https://www.reddit.com/r/comfyui/comments/1eovcb0/is_there_a_lightweight_node_that_turns_a_regular/)
 - I just use web based LLM for it. My personal preference is Claude. I just ask it to rewrite my prompt in the T5 format. Then I paste that into my ComfyUI positive prompt.
@@ -1751,6 +1772,58 @@ Q8（8 位）	    16GB+	   接近原始版本
   - 将 TGate Apply 节点连接在模型与采样器之间，start_at 设为 0.5，如果设为 1 的话，它将不起作用。
 # discuss-image-examples 🌰
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🖼️ 一键生成任何影视剧或者小说的场景海报提示词
+- https://x.com/Ali_TongyiLab/status/1998608853903036436
+  - We just used this prompt to generate classical scenes from the Four Great Classical Novels at Z-Image-Turbo, and the results are stunning.
+  - It’s actually capturing the vibe of ancient Chinese literature—Journey to the West, Dream of the Red Chamber, all of it. The cultural understanding is deep here.
+
+```prompt
+请为影视剧/小说《需要添加的名称》设计一张高品质的3D海报，需要先检索影视剧/小说信息和著名的片段场景。
+
+首先，请利用你的知识库检索这个影视剧/小说的内容，找出一个最具代表性的名场面或核心地点。在画面中央，将这个场景构建为一个精致的轴侧视角3D微缩模型。风格要采用梦工厂动画那种细腻、柔和的渲染风格。你需要还原当时的建筑细节、人物动态以及环境氛围，无论是暴风雨还是宁静的午后，都要自然地融合在模型的光影里。
+
+关于背景，不要使用简单的纯白底。请在模型周围营造一种带有淡淡水墨晕染和流动光雾的虚空环境，色调雅致，让画面看起来有呼吸感和纵深感，衬托出中央模型的珍贵。
+
+最后是底部的排版，请生成中文文字。居中写上小说名称，字体要有与原著风格匹配的设计感。在书名下方，自动检索并排版一句原著中关于该场景的经典描写或台词，字体使用优雅的衬线体。整体布局要像一个高级的博物馆藏品铭牌那样精致平衡。
+```
+
+- 我在此基础扩展了一下范围，效果依旧很不错：题材可以是电影、剧集、动画、游戏、小说等
+
+```prompt
+请为作品《在此输入作品名称》（可以是电影、剧集、动画、游戏、小说等）设计一张高品质 3D 海报，需要先检索该作品的信息和著名的片段场景。
+
+首先，请利用你的知识库检索这个作品的内容和世界观，找出一个最具代表性的名场面或核心地点（可以是关键战斗、转折剧情、标志性城市/建筑、初始村落、迷宫秘境等）。在画面中央，将这个场景构建为一个精致的轴侧视角 3D 微缩模型。风格采用梦工厂动画那种细腻、柔和的渲染质感。你需要还原当时的建筑细节、人物或角色动态，以及环境氛围：无论是暴风雨、末日黄昏，还是宁静午后、赛博夜景，都要自然地融合在模型的光影之中。
+
+背景部分，不要使用简单的纯白底。请在模型周围营造一种带有淡淡水墨晕染和流动光雾的虚空环境，色调雅致、层次柔和，让画面看起来有呼吸感和纵深感，像是漂浮在时间长河中的一件珍贵藏品，用来衬托中央微缩模型的独特与重要。
+
+底部排版请生成中文文字。居中写上作品名称，字体风格需与原作的类型和气质相匹配（例如奇幻、科幻、武侠、都市、悬疑、童话等），具有一定的设计感和辨识度。在标题下方，请自动检索并排版一句与该场景高度相关的经典台词、文本描写或官方设定语，字体使用优雅的衬线体或略带书卷气的印刷体。整体布局要像高级博物馆藏品铭牌一样精致、克制且平衡。
+
+```
+
+- 继续打磨了一下，提示词本身和效果几乎没变，只是调整了一下范围，也还是原来的风格和效果，只能说提示词写到最后面，考验的是语文功底和想象力跟审美。书籍、游戏、电影、甚至产品都能适用
+
+```prompt
+请为作品《在此输入作品名称》设计一张高品质的3D海报，需要先检索其背景信息和著名的经典场景。
+
+首先，请利用你的知识库检索这个作品的内容，找出一个最具代表性的名场面或核心地点。在画面中央，将这个场景构建为一个精致的轴侧视角3D微缩模型。风格要采用梦工厂动画那种细腻、柔和的渲染风格。你需要还原当时的建筑细节、人物动态以及环境氛围，无论是暴风雨还是宁静的午后，都要自然地融合在模型的光影里。
+
+关于背景，不要使用简单的纯白底。请在模型周围营造一种带有淡淡水墨晕染和流动光雾的虚空环境，色调雅致，让画面看起来有呼吸感和纵深感，衬托出中央模型的珍贵。
+
+最后是底部的排版，请生成中文文字。居中写上作品名称，字体要有与原著/原作风格匹配的设计感。在书名下方，自动检索并排版一句原著/原作中关于该场景的经典描写或台词，字体使用优雅的衬线体。整体布局要像一个高级的博物馆藏品铭牌那样精致平衡。
+```
+
+- 可以省一笔设计封面的费用了
+
+- 有一半以上都是原图抄袭的字体，还没办法自己设计
+
+- https://x.com/aarai666/status/1998732651851583896
 
 - ## [Comparison of Seedream 4.5 vs Nano Banana Pro using the same prompt : r/createimg](https://www.reddit.com/r/createimg/comments/1pdxgl1/comparison_of_seedream_45_vs_nano_banana_pro/)
   - Five shimmering goldfish weave through crevices between stones; four are red-and-white, while one is silver-white. By the pond's edge, a golden-shaded British Shorthair cat watches them intently, counting on blind luck. Watercolor style.

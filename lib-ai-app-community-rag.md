@@ -800,7 +800,38 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [Built a deterministic RAG database - same query, same context, every time (Rust, local embeddings, $0 API cost) : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1pisow5/built_a_deterministic_rag_database_same_query/)
+  - Built AvocadoDB to fix it
+  - Local embeddings via fastembed (6x faster than OpenAI)
+
+- In what situations is the same query giving different retrieved results ? If you have the literal exact query, why not cache the LLM response too? That is the more time consuming part and does give meaningful different results even with a temperature of 0 through providers.
+- Why Same Query Can Give Different Results in Traditional RAG
+  - Traditional vector databases (Qdrant, Pinecone, Weaviate, etc.) return non-deterministic results because:
+  - Approximate Nearest Neighbor (ANN): HNSW and similar algorithms trade exactness for speed. The search path through the graph can vary, especially with concurrent queries or after index updates. Floating point non-determinism: Different execution orders (parallelism, SIMD) can produce slightly different similarity scores, changing ranking.
+  - Index mutations: Adding/removing documents changes the HNSW graph structure, affecting which neighbors are found even for unchanged documents.
+  - Tie-breaking: When multiple chunks have identical/near-identical scores, the order is arbitrary.
+  - Embedding API variability: Some embedding providers return slightly different vectors for the same text across calls.
+- You're right that caching LLM responses is the logical next step - retrieval determinism is really just the foundation for response caching. Once you guarantee the same query produces the same context, you can cache the full response:
+  - cache_key = hash(query + context_hash + model + temperature + system_prompt)
+  - So the answer to "why not just cache LLM responses?" is: you can't safely cache responses if your retrieval is non-deterministic. You'd return cached answers that were generated from different context than what the current retrieval would produce.
+  - Consider an AI coding assistant exploring a large codebase. Without deterministic retrieval:
+    - User: "How does authentication work?"
+    - First ask - LLM reads 15 files, 4000 tokens of context
+    - Second ask (same question) - different retrieval, reads 12 different files
+    - LLM has to re-process everything from scratch
+  - With deterministic retrieval + caching: The LLM doesn't need to read entire files - it gets precise line-number citations (e.g., src/auth.rs:45-78) with just the relevant spans. 
+
+- How does this tool maintain contextual or metadata relationships between chunks? Can it maintain distinction between multiple documents on a similar topic, and identify which source makes which claim?
+  - Yes - this is core to how AvocadoDB works:
+  - Span-level tracking: Every chunk (span) is tied to its source file with exact line numbers. When you compile context, each span includes [1] docs/auth.md Lines 1-23 so you know exactly where every claim comes from. Citation in output: The compiled context includes a citations array mapping each span to its artifact (file), start/end lines, and relevance score. Your LLM can reference these directly. Cross-document deduplication: Hybrid retrieval (semantic + lexical) combined with MMR diversification ensures you get diverse sources, not 5 chunks from the same file saying the same thing.
+  - Metadata preservation: Each span stores the parent artifact ID, so you can always trace back which claim came from api-docs.md versus security-policy.md.
+  - The deterministic sort ensures the same sources appear in the same order every time, so you can reliably say source 1 said X, source 2 said Y.
+
+- Deterministic RAG is the right call; debugging and evals don’t work if the context shifts.
+  - I’ve run similar stacks with Qdrant and Tantivy; DreamFactory helped expose a read-only REST layer so agents hit stable endpoints, not raw DBs.
+  - Bottom line: end-to-end determinism plus explainable retrieval is the win.
+
+- Would be cool to have optional Postgres backend
 
 - ## [Best Vector Database for RAG : r/vectordatabase _202501](https://www.reddit.com/r/vectordatabase/comments/1hzovpy/best_vector_database_for_rag/)
 - All vector databases work well for RAG. The selection of a vector database usually depends on your preference: cloud based vs self-hosted, open source vs private, programming languages / clients, API access, already part of SQL etc.

@@ -1836,7 +1836,11 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## [Does ComfyUI work flawlessly with AMD graphics cards too? Which card is more stable? Is there anything that can be done with Nvidia but not with AMD? : r/comfyui _202512](https://www.reddit.com/r/comfyui/comments/1pi94ix/does_comfyui_work_flawlessly_with_amd_graphics/)
+- Using an AMD Graphics card is the difficult and treacherous road currently in the world of AI (I know, I primarily use a Radeon Pro w7800 32GB). Even installing basic Custom Nodes is fraught with dangers. One must examine each requirements.txt file to make sure it is not trying to install torch, torchaudio, and/or torchvision (which is rather unnecessary to put into the requirements file for a custom_node anyway.) Those lines will need to be commented out or erased after cloning the Git. If not done, then upon ComfyUI's next startup, it will uninstall the ROCm version of pytorch and install the Nvidia one instead breaking all inference functionality (this has happened to me a couple of times before. Blast my laziness!). 
+  - Furthermore, some attention algorithms currently are not compatible with AMD cards. It's a cold, hard AI world for AMD GPU users. However, it is getting better. ROCm is getting better. 
+  - Many AMD cards are great, especially for gaming. 
+  - However, for the time being, if you have a choice, I recommend using a Nvidia card for AI.
 
 - ## [Can M1/M2 Macbooks use ANY eGPU as a docking station? : r/eGPU _202212](https://www.reddit.com/r/eGPU/comments/zk8yzv/can_m1m2_macbooks_use_any_egpu_as_a_docking/)
 - unfortunately. The M2 MacBook Air only supports one external display up to 6K resolution. The only option is to use DisplayLink adapters/docking stations if you want more than one external display.

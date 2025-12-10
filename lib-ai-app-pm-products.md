@@ -12,10 +12,12 @@ modified: 2025-03-22T16:10:24.856Z
 # ai-dev-xp
 - selling-points
   - local models support: mlx, lmstudio-alternative
+    - 允许用户分享文档/插画中的模型配置，运行日志
   - citations for search: 外部数据源如字典mdx/书籍epub/wikipedia公开db/统计年鉴
-  - 类似词典库/kiwix的预置模块, 可下载、可分享, 不必每次都全量索引
+    - 类似词典库/kiwix的预置模块, 可下载、可分享, 不必每次都全量索引
   - large pdf workflows: chunking-strategies, reindex
   - pdf edit
+  - 插画复刻: Qwen-Image-i2L, image-to-prompt-to-image, 同时支持浏览comfyui生成图片的元数据、提示词
 
 - tips
   - 🤔 不要执着于ai框架，主流模型厂商都会推广包含厂商特性的框架及产品(codex/claude-code/gemini-cli), 可专注于主流开源业务系统实现 或 厂商无关的实现
@@ -361,6 +363,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 支持gpt5,claude,gemini
     - 部分模型倍率很高，可选按次计算版本, 如claude
   - [WONG公益站](https://newapi.netlib.re/), 每日签到
+    - [WONG公益站](https://wzw.de5.net/console)
     - rpm为30
     - 高效连接 Claude Code CLI
   - [我爱996公益](https://529961.com/)
@@ -480,7 +483,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [RyanVan Z-Image | AI 图像生成](https://ryanai.org/)
     - 每天5张免费
     - 排队时间可能较长
-  - [Z-Image-Turbo | AI 绘图工作站](https://zzz.supxh.xin/)
+  - [Z-Image 控制台](http://image.dx001.ggff.net:8080/dashboard)
   - [最新公益绘画API ](https://linux.do/t/topic/599258)
     - 百度绘画
     - 豆包绘画

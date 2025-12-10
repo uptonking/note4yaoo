@@ -200,6 +200,7 @@ modified: 2025-08-23T11:43:35.904Z
     - March 25, 2025 Our new open-source project, DiffSynth-Engine, is now open-sourced! Focused on stable model deployment. 
     - Dec 8, 2023. We decide to develop a new Project, aiming to release the potential of diffusion models, especially in video synthesis. The development of this project is started.
     - 🚀 Aug 29, 2023. We propose DiffSynth, a video synthesis framework.
+    - [Qwen-Image-i2L (Image to LoRA) · 模型库](https://www.modelscope.cn/models/DiffSynth-Studio/Qwen-Image-i2L/summary)
   - https://github.com/modelscope/DiffSynth-Engine /apache2/202508/python
     - a high-performance engine geared towards building efficient inference pipelines for diffusion models.
     - Thoughtfully-Designed Implementation: We carefully re-implemented key components in Diffusion pipelines, such as sampler and scheduler, without introducing external dependencies on libraries like k-diffusion, ldm, or sgm.

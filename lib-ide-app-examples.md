@@ -123,7 +123,7 @@ modified: 2024-08-24T16:30:20.218Z
 - products
   - https://x.com/0xrandomlabs
     - https://www.ycombinator.com/launches/Lnp-random-labs-an-open-source-agent-that-deeply-understands-you
-# ai-manus
+# agent-architecture
 - https://github.com/langchain-ai/langgraph-codeact /598Star/MIT/202505/python/inactive
   - This library implements the CodeAct architecture in LangGraph. This is the architecture is used by Manus.im.
   - https://x.com/tuturetom/status/1905605150884200871
@@ -143,7 +143,7 @@ modified: 2024-08-24T16:30:20.218Z
   - 依赖langchain、llm-code-format
   - It aims to be compatible with many LLMs, and flexible enough to adapt to future models as they come out.
 
-- https://github.com/cline/cline /50kStar/apache2/202509/ts
+- https://github.com/cline/cline /50kStar/apache2/202509/ts/cli使用go实现
   - https://docs.cline.bot/
   - Meet Cline, an AI assistant that can use your CLI aNd Editor.
   - Autonomous coding agent right in your IDE, capable of creating/editing files, executing commands, using the browser, and more with your permission every step of the way.
@@ -194,12 +194,12 @@ modified: 2024-08-24T16:30:20.218Z
   - We frequently merge features from open-source projects like Roo Code and Cline, while building our own vision. 
   - Automate the browser
 
-- https://github.com/kodu-ai/claude-coder /AGPL/202503/ts
+- https://github.com/kodu-ai/claude-coder /5.3kStar/AGPL/202504/ts/inactive
   - https://www.kodu.ai/
   - Kodu is an autonomous coding agent that lives in your IDE
   - It's a VS Code extension that adapts to your skill level, helping you bring ideas to life faster than ever before. 
 
-- https://github.com/nutlope/llamacoder /202409/ts
+- https://github.com/nutlope/llamacoder /6.8kStar/MIT/202512/ts
   - https://www.llamacoder.io/
   - open source Claude Artifacts – generate small apps with one prompt. 
   - Powered by Llama 3 405B & Together.ai.
@@ -214,12 +214,6 @@ modified: 2024-08-24T16:30:20.218Z
   - https://hide.sh/
   - Headless IDE for Coding Agents
   - Hide provides containerized development environments for codebases and exposes APIs for agents to interact with them. When given a code repo, Hide spins up a devcontainer, installs the dependencies and provides APIs for codebase interaction. Developers can craft custom toolkits using Hide APIs or use Hide's pre-built toolkits for popular frameworks like Langchain.
-
-- https://github.com/argilla-io/argilla /apache2/202408/python
-  - https://docs.argilla.io/
-  - Argilla is a collaboration tool for AI engineers and domain experts who need to build high-quality datasets for their projects.
-  - Argilla can be used for collecting human feedback for a wide variety of AI projects like traditional NLP (text classification, NER, etc.), LLMs (RAG, preference tuning, etc.), or multimodal models (text to image, etc.). Argilla's programmatic approach lets you build workflows for continuous evaluation and model improvement. 
-  - Take control of your data and models
 
 - https://github.com/TabbyML/tabby /apache2/202408/rust
   - https://tabbyml.github.io/tabby
@@ -249,13 +243,10 @@ modified: 2024-08-24T16:30:20.218Z
 - https://github.com/block/goose /apache2/202503/rust/ts
   - https://block.github.io/goose/
   - a local, extensible, open source AI agent that automates engineering tasks
+  - 提供了cli/desktop-gui
   - an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM
   - goose is your on-machine AI agent, capable of automating complex development tasks from start to finish. More than just code suggestions, goose can build entire projects from scratch, write and execute code, debug failures, orchestrate workflows, and interact with external APIs - autonomously.
   - Designed for maximum flexibility, goose works with any LLM and seamlessly integrates with MCP-enabled APIs, making it the ultimate AI-powered assistant
-
-- https://github.com/winfunc/opcode /18.4kStar/AGPL/202510/ts/rust
-  - https://opcode.sh/
-  - A powerful GUI app and Toolkit for Claude Code - Create custom agents, manage interactive Claude Code sessions, run secure background agents, and more.
 
 ## terminal-ai
 
@@ -265,81 +256,76 @@ modified: 2024-08-24T16:30:20.218Z
   - cli的实现经常与模型厂商自己的sdk紧密结合，但只要兼容openai的协议就可通用，目前不通用的是gemini-cli, 可考虑开发patch
   - ui类型的工具逐渐开始支持cli, 如cline-cli
 
-- https://github.com/QwenLM/qwen-code /11.9kStar/apache2/202509/ts
-  - https://qwenlm.github.io/qwen-code-docs/zh/
-  - Qwen Code 将先进的代码模型能力带入你的终端，提供交互式的 Read-Eval-Print Loop (REPL) 环境
-  - Qwen Code is a powerful command-line AI workflow tool adapted from Gemini CLI
-  - Qwen Code 由一个客户端应用 (packages/cli) 和一个本地 server (packages/core) 组成。
-  - Qwen Code 还包含多种工具，用于执行文件系统操作、运行 shell 命令和网络请求等任务，这些工具由 packages/core 管理。
-  - Mainland China: ModelScope offers 2, 000 free API calls per day
-    - Qwen Code may issue multiple API calls per cycle, resulting in higher token usage (similar to Claude Code). We're actively optimizing API efficiency.
-  - [Clicking `esc` will not escape ](https://github.com/QwenLM/qwen-code/issues/496)
-    - New line? That’s Ctrl+J. (esc to cancel, 6s)
-  - 📴 [有人尝试过本地部署吗？ _202507](https://github.com/QwenLM/qwen-code/discussions/828)
-    - 可以连接，我现在连了本地部署的 Ollama，用 qwen3:14b 是可以正常工作的，就是 14b 能力太弱，等于请了个弱智来干活。
-    - 能正常调用OLLAMA模型，试过很多模型，大都不能调用工具，只有今天新出的QWEN3:30B,配合的非常好，正常调用工具，但所有模型没有对话历史。 
-  - 📌 [qwen-code/CHANGELOG.md](https://github.com/QwenLM/qwen-code/blob/main/CHANGELOG.md)
-    - Synced upstream `gemini-cli` to v0.x.x
-    - [sync upstream gemini-cli Pull request search results](https://github.com/search?q=repo%3AQwenLM%2Fqwen-code+gemini-cli&type=pullrequests&s=updated&o=desc)
-  - [Standardize Tool Output Format for Better LLM Communication _202510](https://github.com/QwenLM/qwen-code/pull/881)
-    - This PR refactors the tool output format across the codebase to use plain text with system reminders instead of JSON structures. This change improves LLM comprehension and makes tool responses more natural and actionable.
-    - Previously, tools returned structured JSON responses (e.g., `{"success": true, "output": "..."}`) 
-    - Verbose and unnatural: JSON structures add cognitive overhead for LLMs
-    - Inconsistent parsing: The LLM had to parse and interpret JSON semantics
-    - Less human-like: Plain text is more aligned with how LLMs naturally process information
+- https://github.com/anthropics/claude-code /202506/NonOpen
+  - https://docs.anthropic.com/s/claude-code
+  - 📌 an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster
+  - [open source? _202502](https://github.com/anthropics/claude-code/issues/59)
+    - We currently don't have plans to open source it.
+  - [[DOCS] Open Source Licensing ](https://github.com/anthropics/claude-code/issues/8517)
+    - The Claude Code binaries distributed by Anthropic contain Open Source software.
+    - Some of that software is made available to Anthropic under the terms of the Apache-2.0 license, however there does not appear to be a notice of this in the distributed files, nor on the Claude Code documentation website
 
-- https://github.com/Piebald-AI/gemini-cli-desktop /MIT/202510/rust/ts
-  - powerful desktop and web interface for Gemini CLI and Qwen Code with visual tool confirmation, real-time thought processes, code diff viewing, chat history management & search, a file tree browser, and file @-mentions. 
-  - Built with Rust and React for performance and reliability.
-  - Multi-model support - Gemini 2.5 Pro/Flash, Qwen Code, custom OpenAI providers
-
-- https://github.com/google-gemini/gemini-cli /15.2kStar/apache2/202506/ts
-  - a command-line AI workflow tool that connects to your tools, understands your code and accelerates your workflows.
-  - Query and edit large codebases in and beyond Gemini's 1M token context window.
-  - Generate new apps from PDFs or sketches, using Gemini's multimodal capabilities.
-  - Automate operational tasks, like querying pull requests or handling complex rebases.
-  - Use tools and MCP servers to connect new capabilities, including media generation with Imagen, Veo or Lyria
-  - Ground your queries with the Google Search tool, built in to Gemini.
-  - [Google announces Gemini CLI: your open-source AI agent _202506](https://blog.google/technology/developers/introducing-gemini-cli-open-source-ai-agent/)
-  - [Gemini CLI: your open-source AI agent | Hacker News _202506](https://news.ycombinator.com/item?id=44373754)
-  - [Whats is the quota limit? 1000 of gemini 2.5 pro? You have reached your daily gemini-2.5-pro quota limit. ](https://github.com/google-gemini/gemini-cli/issues/4300)
-    - The limit for Gemini 2.5 Pro for free is 100 requests per day, with the reset time approximately at 5:00 AM UTC
-  - 📴 [pr已关闭 Add OpenRouter support for Gemini models _202506](https://github.com/google-gemini/gemini-cli/pull/2319)
-    - 👷202508: I appreciate the desire to support models through open router, but we are fully focused on gemini models and endpoints right now, and do not plan to support the differences between the model access on open router vs our own endpoints.
-  - [Add support for local/offline language models (Ollola, LM Studio, etc.) ](https://github.com/google-gemini/gemini-cli/issues/5938)
-    - I made a patch script to make it work with LM Studio OpenAI compatible API
-  - [Open AI API compatible ?  ](https://github.com/google-gemini/gemini-cli/discussions/1974)
-    - At this time, we're optimizing Gemini CLI for Gemini models, and not building direct support for other LLM providers.
-    - The latest release of `LiteLLM` supports gemini cli. So you can configure a local proxy, configure any model providers you want, and then use them in Gemini CLI. Works great
-
-- https://github.com/iOfficeAI/AionUi /2.6kStar/apache2/202510/ts
+- https://github.com/iOfficeAI/AionUi /3kStar/apache2/202512/ts
   - https://www.aionui.com/
   - open-source GUI app for Gemini CLI — Better Chat UI, multi-agent support, multi-LLMs & apikey polling, Workspace Management, AI image editing & more
   - While the official Gemini CLI is powerful, its command-line interface has limitations for daily use. AionUi provides a GUI alternative that addresses these key pain points
   - Seamlessly integrate multiple terminal AI agents - Gemini CLI, Claude Code, Qwen Code, Codex and more
-  - image generation, editing, and recognition powered by Gemini 2.5 Flash Image Preview
-  - Batch renaming, auto organization, smart classification, file merging
   - Handle Multiple Tasks at Once: Multiple conversations, no task confusion, independent memory, double efficiency
+  - WebUI Mode: Access AionUi from any device on your network
+  - Batch renaming, auto organization, smart classification, file merging
+  - image generation, editing, and recognition powered by Gemini 2.5 Flash Image Preview
+  - AI helps you create, organize, analyze, and beautify Excel files
+  - MCP Tool Management
+  - 📡 roadmap
+    - 可结合下面async-code和其他ui的优点, 优化 background-agents 后台任务/并发任务
 
-- https://github.com/vybestack/llxprt-code /202510/ts
-  - open-source multi-provider (including local) fork of gemini-cli. 
-  - a powerful fork of Google's Gemini CLI, enhanced with multi-provider support and improved theming.
-- https://github.com/PardusAI/Pardus-CLI /202510/ts
-  - [Pardus CLI: Ollama Support Gemini CLI. : r/ollama _202510](https://www.reddit.com/r/ollama/comments/1of0vcq/pardus_cli_ollama_support_gemini_cli/)
-    - the same as Gemini CLI, except you don’t have to log in and can use a local host model.
-  - https://github.com/ConardLi/easy-llm-cli /202507/ts/inactive
-- https://github.com/gen-cli/gen-cli /202509/ts/inactive
-  - custom ContentGenerator for SiliconFlow
+- https://github.com/ObservedObserver/async-code /apache2/202508/python/ts/inactive
+  - Use Claude Code / CodeX CLI to perform multiple tasks in parallel with a Codex-style UI.
+  - A code agent task management system that provides parallel execution of AI-powered coding tasks. 
+  - Users can run multiple Claude Code agents simultaneously through a Codex-style web interface, with support for different agents for comparison and evaluation.
+  - Multi-Agent Support: Run Claude Code and other AI agents in parallel
+  - Parallel Task Management: Execute multiple coding tasks simultaneously
+  - Git Integration: Automatic repository cloning, commits, and PR creation
+  - Backend: Python Flask API with Docker orchestration
 
-- https://github.com/tcsenpai/ollama-code /apache2/202508/ts/inactive
-  - forked from Qwen Code, designed to work with locally-hosted Ollama models for enhanced privacy and data sovereignty.
-- https://github.com/tinfoilsh/qwen-code /202509/ts/inactive
-  - all AI inference to the Qwen3 Coder model is performed using Tinfoil's private AI infrastructure
-- https://github.com/AIPowerGrid/grid-code /202508/ts/inactive
-  - a coding agent powered by the grid, a decentralized network of AI workers
+- https://github.com/siteboon/claudecodeui /5kStar/GPL/202512/js
+  - https://cloudcli.ai/
+  - A desktop and mobile UI for Claude Code, and Cursor CLI
+  - Use Claude Code or Cursor CLI on mobile and web with Claude Code UI. 
+  - Claude Code UI free open source webui/GUI that helps you manage your Claude Code session and projects remotely
+  - You can use it locally or remotely to view your active projects and sessions in Claude Code or Cursor and make changes to them
+  - Supports models including Claude Sonnet 4, Opus 4.1, and GPT-5
+  - Direct access to Claude Code or Cursor CLI through built-in shell functionality
+  - Session Management - Resume conversations, manage multiple sessions, and track history
+  - File Explorer - Interactive file tree with syntax highlighting and live editing
+  - Git Explorer - View, stage and commit your changes. You can also switch branches
+  - 🐛 [Feature Request: Support for Claude Code Proxy Tools (CCR Integration) _202511](https://github.com/siteboon/claudecodeui/issues/234)
+    - I'm using claude-code-router (CCR), a proxy tool that routes Claude Code requests to different AI models and providers (Gemini, DeepSeek, Ollama, etc.). However, claudecodeui currently doesn't support integration with CCR due to its architecture.
+    - Since the main chat functionality uses the SDK, it bypasses the claude CLI and connects directly to Anthropic's API, making it impossible to use proxy tools like CCR that work by intercepting CLI calls.
+  - [How feasible is it to add support for other CLI agents like Gemini? _202507](https://github.com/siteboon/claudecodeui/discussions/13)
+    - Gemini CLI is there yet. It's important to be able to work in non interactive mode for the Chat function to work.
+
+- https://github.com/winfunc/opcode /19.1kStar/AGPL/202510/ts/rust/tauri/inactive
+  - https://opcode.sh/
+  - A powerful GUI app and Toolkit for Claude Code
+  - Create custom agents, manage interactive Claude Code sessions, run secure background agents, and more.
+  - Session History: View and resume past coding sessions with full context
+  - Background Execution: Run agents in separate processes for non-blocking operations
+
+- https://github.com/RVCA212/claude-code-ui /GPL/202508/js/inactive
+  - an Electron-based desktop application for interacting with Claude Code in a 'Cursor' style view with features such as checkpointing.
+  - Native desktop application for macOS, Windows, and Linux
+  - Checkpoint system to undo changes
+  - Parrlel runs support
+  - Multi-process architecture with secure IPC (parralel claude code runs)
+
+- https://github.com/wbopan/cui /1kStar/apache2/202510/ts
+  - A web UI for Claude Code agents
+  - Start the server and access your agents anywhere in your browser. 
+  - Common Agent UI is powered by Claude Code SDK and supports all kind of LLMs with the most powerful agentic tools.
 
 - https://github.com/openai/codex /29.7kStar/apache2/202506/rust/ts
-  - Lightweight coding agent that runs in your terminal
+  - 📌 Lightweight coding agent that runs in your terminal
   - [Introducing Codex | OpenAI _202505](https://openai.com/index/introducing-codex/)
   - 📴 [Support for local / other LLMs _202504](https://github.com/openai/codex/issues/26)
     - This project is currently using the `/responses` endpoint from OpenAI's API. Ollama has compatibility with some OpenAI API endpoints, but the /responses endpoint is not included yet.
@@ -362,6 +348,70 @@ modified: 2024-08-24T16:30:20.218Z
   - Is there git worktree integration?
     - No, but in my plan
 
+- https://github.com/QwenLM/qwen-code /11.9kStar/apache2/202509/ts
+  - https://qwenlm.github.io/qwen-code-docs/zh/
+  - 📌 Qwen Code 将先进的代码模型能力带入你的终端，提供交互式的 Read-Eval-Print Loop (REPL) 环境
+  - a powerful command-line AI workflow tool adapted from Gemini CLI
+  - 由一个客户端应用 (packages/cli) 和一个本地 server (packages/core) 组成。
+  - 还包含多种工具，用于执行文件系统操作、运行 shell 命令和网络请求等任务，这些工具由 packages/core 管理。
+  - Mainland China: ModelScope offers 2, 000 free API calls per day
+    - Qwen Code may issue multiple API calls per cycle, resulting in higher token usage (similar to Claude Code). We're actively optimizing API efficiency.
+  - [Clicking `esc` will not escape ](https://github.com/QwenLM/qwen-code/issues/496)
+    - New line? That’s Ctrl+J. (esc to cancel, 6s)
+  - 📴 [有人尝试过本地部署吗？ _202507](https://github.com/QwenLM/qwen-code/discussions/828)
+    - 可以连接，我现在连了本地部署的 Ollama，用 qwen3:14b 是可以正常工作的，就是 14b 能力太弱，等于请了个弱智来干活。
+    - 能正常调用OLLAMA模型，试过很多模型，大都不能调用工具，只有今天新出的QWEN3:30B,配合的非常好，正常调用工具，但所有模型没有对话历史。 
+  - [qwen-code/CHANGELOG.md](https://github.com/QwenLM/qwen-code/blob/main/CHANGELOG.md)
+    - Synced upstream `gemini-cli` to v0.x.x
+    - [sync upstream gemini-cli Pull request search results](https://github.com/search?q=repo%3AQwenLM%2Fqwen-code+gemini-cli&type=pullrequests&s=updated&o=desc)
+  - [Standardize Tool Output Format for Better LLM Communication _202510](https://github.com/QwenLM/qwen-code/pull/881)
+    - This PR refactors the tool output format across the codebase to use plain text with system reminders instead of JSON structures. This change improves LLM comprehension and makes tool responses more natural and actionable.
+    - Previously, tools returned structured JSON responses (e.g., `{"success": true, "output": "..."}`) 
+    - Verbose and unnatural: JSON structures add cognitive overhead for LLMs
+    - Inconsistent parsing: The LLM had to parse and interpret JSON semantics
+    - Less human-like: Plain text is more aligned with how LLMs naturally process information
+
+- https://github.com/Piebald-AI/gemini-cli-desktop /MIT/202510/rust/ts
+  - powerful desktop and web interface for Gemini CLI and Qwen Code with visual tool confirmation, real-time thought processes, code diff viewing, chat history management & search, a file tree browser, and file @-mentions. 
+  - Built with Rust and React for performance and reliability.
+  - Multi-model support - Gemini 2.5 Pro/Flash, Qwen Code, custom OpenAI providers
+
+- https://github.com/google-gemini/gemini-cli /15.2kStar/apache2/202506/ts
+  - 📌 a command-line AI workflow tool that connects to your tools, understands your code and accelerates your workflows.
+  - Query and edit large codebases in and beyond Gemini's 1M token context window.
+  - Generate new apps from PDFs or sketches, using Gemini's multimodal capabilities.
+  - Automate operational tasks, like querying pull requests or handling complex rebases.
+  - Use tools and MCP servers to connect new capabilities, including media generation with Imagen, Veo or Lyria
+  - Ground your queries with the Google Search tool, built in to Gemini.
+  - [Google announces Gemini CLI: your open-source AI agent _202506](https://blog.google/technology/developers/introducing-gemini-cli-open-source-ai-agent/)
+  - [Gemini CLI: your open-source AI agent | Hacker News _202506](https://news.ycombinator.com/item?id=44373754)
+  - [Whats is the quota limit? 1000 of gemini 2.5 pro? You have reached your daily gemini-2.5-pro quota limit. ](https://github.com/google-gemini/gemini-cli/issues/4300)
+    - The limit for Gemini 2.5 Pro for free is 100 requests per day, with the reset time approximately at 5:00 AM UTC
+  - 📴 [pr已关闭 Add OpenRouter support for Gemini models _202506](https://github.com/google-gemini/gemini-cli/pull/2319)
+    - 👷202508: I appreciate the desire to support models through open router, but we are fully focused on gemini models and endpoints right now, and do not plan to support the differences between the model access on open router vs our own endpoints.
+  - [Add support for local/offline language models (Ollola, LM Studio, etc.) ](https://github.com/google-gemini/gemini-cli/issues/5938)
+    - I made a patch script to make it work with LM Studio OpenAI compatible API
+  - [Open AI API compatible ?  ](https://github.com/google-gemini/gemini-cli/discussions/1974)
+    - At this time, we're optimizing Gemini CLI for Gemini models, and not building direct support for other LLM providers.
+    - The latest release of `LiteLLM` supports gemini cli. So you can configure a local proxy, configure any model providers you want, and then use them in Gemini CLI. Works great
+
+- https://github.com/vybestack/llxprt-code /202510/ts
+  - open-source multi-provider (including local) fork of gemini-cli. 
+  - a powerful fork of Google's Gemini CLI, enhanced with multi-provider support and improved theming.
+- https://github.com/PardusAI/Pardus-CLI /202510/ts
+  - [Pardus CLI: Ollama Support Gemini CLI. : r/ollama _202510](https://www.reddit.com/r/ollama/comments/1of0vcq/pardus_cli_ollama_support_gemini_cli/)
+    - the same as Gemini CLI, except you don’t have to log in and can use a local host model.
+  - https://github.com/ConardLi/easy-llm-cli /202507/ts/inactive
+- https://github.com/gen-cli/gen-cli /202509/ts/inactive
+  - custom ContentGenerator for SiliconFlow
+
+- https://github.com/tcsenpai/ollama-code /apache2/202508/ts/inactive
+  - forked from Qwen Code, designed to work with locally-hosted Ollama models for enhanced privacy and data sovereignty.
+- https://github.com/tinfoilsh/qwen-code /202509/ts/inactive
+  - all AI inference to the Qwen3 Coder model is performed using Tinfoil's private AI infrastructure
+- https://github.com/AIPowerGrid/grid-code /202508/ts/inactive
+  - a coding agent powered by the grid, a decentralized network of AI workers
+
 - https://github.com/Aider-AI/aider /37.1kStar/apache2/202508/python
   - https://aider.chat/
   - aider is AI pair programming in your terminal
@@ -371,7 +421,7 @@ modified: 2024-08-24T16:30:20.218Z
 
 - https://github.com/sst/opencode /28.7kStar/MIT/202510/go/ts
   - https://opencode.ai/
-  - The AI coding agent built for the terminal
+  - 📌 The AI coding agent built for the terminal
   - It's very similar to Claude Code in terms of capability. Here are the key differences:
     - 100% open source
     - Not coupled to any provider. Although Anthropic is recommended
@@ -383,7 +433,7 @@ modified: 2024-08-24T16:30:20.218Z
     - The entire prompt stack and tool descriptions have been rewritten around chatting instead of coding. 
 
 - https://github.com/MoonshotAI/kimi-cli /1.9kStar/apache2/202510/python
-  - Kimi CLI is a new CLI agent that can help you with your software development tasks and terminal operations.
+  - a new CLI agent that can help you with your software development tasks and terminal operations.
   - https://x.com/yihong0618/status/1982032672559096232
     - 代码写的真挺好
     - RisingWave Labs的实力
@@ -400,14 +450,8 @@ modified: 2024-08-24T16:30:20.218Z
     - 源复现版会在这里发布 Kode
     - 项目包含超过 50,000 行混淆代码 的分析结果，覆盖了从UI交互到Agent核心引擎的完整技术栈
 
-- https://github.com/anthropics/claude-code /202506/NonOpen
-  - https://docs.anthropic.com/s/claude-code
-  - an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster
-  - [open source? · Issue #59 · anthropics/claude-code _202502](https://github.com/anthropics/claude-code/issues/59)
-    - We currently don't have plans to open source it.
-
 - https://github.com/vinhnx/vtcode /MIT/202510/rust
-  - VT Code is a Rust-based terminal coding agent with semantic code intelligence via `Tree-sitter` (parsers for Rust, Python, JavaScript/TypeScript, Go, Java) and `ast-grep` (structural pattern matching and refactoring).
+  - a Rust-based terminal coding agent with semantic code intelligence via `Tree-sitter` (parsers for Rust, Python, JavaScript/TypeScript, Go, Java) and `ast-grep` (structural pattern matching and refactoring).
   - Multi-Provider AI: Support for OpenAI, Anthropic, Gemini, xAI, DeepSeek, Z. AI, Moonshot AI, OpenRouter, and Ollama (local)
   - [VT Code — Rust terminal coding agent doing AST-aware edits + local model workflows : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1oe6y1a/vt_code_rust_terminal_coding_agent_doing_astaware/)
     - Most of the features I planned to build are completed. For local models, I had planned to do ollama integration firsthand. I also do plan to integrate with llama.cpp and lmstudio next
@@ -416,6 +460,32 @@ modified: 2024-08-24T16:30:20.218Z
   - Octo is a small, helpful, cephalopod-flavored coding assistant that works with any OpenAI-compatible or Anthropic-compatible LLM API, and allows you to switch models at will mid-conversation
   - Octo has helped write some of its own source code, but the codebase is human-first
   - Octo has built-in Docker support, and can attach to any Docker container without needing special configuration or editing the image or container. 
+
+- https://github.com/wonderwhy-er/DesktopCommanderMCP /MIT/202512/ts
+  - https://desktopcommander.app/
+  - MCP server for Claude that gives it terminal control, file system search and diff file editing capabilities
+  - Built on top of MCP Filesystem Server to provide additional search and replace file editing capabilities.
+
+## background-ai
+
+- https://github.com/ishaan1013/shadow /MIT/202508/ts
+  - https://shadowrealm.ai/
+  - Background coding agent and real-time web interface
+  - Sets up isolated execution environments for AI agents to work on GitHub repositories with tools to understand code, edit files, and much more.
+  - Automatic workspace setup and cleanup on Micro-VMs
+  - Kata QEMU containers for hardware-level isolation
+  - Multi-provider LLM support (Anthropic, OpenAI, OpenRouter)
+  - Tool execution with file operations, terminal commands, and code search
+  - Memory system for repository-specific knowledge retention
+  - Lightweight Shadow Wiki generation for comprehensive codebase documentation
+  - Shadow supports two execution modes through an abstraction layer:
+    - Local Mode: Direct filesystem execution on the host machine
+    - Remote Mode (For Deployment): Hardware-isolated execution in Kata QEMU containers, True VM isolation via QEMU hypervisor
+  - https://x.com/_rajanagarwal/status/1955075526621794716
+    - meet Shadow, a powerful open-source background coding agent
+    - 1.7K commits later, we think this is a great open source framework to build off of to make background coding agents. 
+    - shadow has contributed 1k+ lines to itself
+    - https://x.com/ElijahKurien/status/1955075209720967457
 
 ## vscode-ext-ai
 
@@ -444,36 +514,6 @@ modified: 2024-08-24T16:30:20.218Z
   - Universal API Compatibility: Anthropic (/messages) and OpenAI (/chat/completions) compatible endpoints - use Claude Code, Codex or any LLM client seamlessly
   - Headless AI Agent Control: Create and manage tasks through REST APIs for Roo Code and Cline extensions
   - Parallel Execution: Run up to 20 concurrent RooCode (and its variants like Kilo Code) tasks with built-in MCP server integration
-
-## background-ai
-
-- https://github.com/ishaan1013/shadow /MIT/202508/ts
-  - https://shadowrealm.ai/
-  - Background coding agent and real-time web interface
-  - Sets up isolated execution environments for AI agents to work on GitHub repositories with tools to understand code, edit files, and much more.
-  - Automatic workspace setup and cleanup on Micro-VMs
-  - Kata QEMU containers for hardware-level isolation
-  - Multi-provider LLM support (Anthropic, OpenAI, OpenRouter)
-  - Tool execution with file operations, terminal commands, and code search
-  - Memory system for repository-specific knowledge retention
-  - Lightweight Shadow Wiki generation for comprehensive codebase documentation
-  - Shadow supports two execution modes through an abstraction layer:
-    - Local Mode: Direct filesystem execution on the host machine
-    - Remote Mode (For Deployment): Hardware-isolated execution in Kata QEMU containers, True VM isolation via QEMU hypervisor
-  - https://x.com/_rajanagarwal/status/1955075526621794716
-    - meet Shadow, a powerful open-source background coding agent
-    - 1.7K commits later, we think this is a great open source framework to build off of to make background coding agents. 
-    - shadow has contributed 1k+ lines to itself
-    - https://x.com/ElijahKurien/status/1955075209720967457
-
-## ide-repo-ai
-
-- https://github.com/yamadashy/repopack /MIT/202411/ts
-  - Repopack is a powerful tool that packs your entire repository into a single, AI-friendly file.
-  - AI-Optimized: Formats your codebase in a way that's easy for AI to understand and process.
-  - Token Counting: Provides token counts for each file and the entire repository, useful for LLM context limits.
-  - Git-Aware: Automatically respects your .gitignore files.
-  - 可以将你的代码库打包成一个 AI 友好文件（带有文件的目录结构，文件内容以及提示词），然后可以方便的供给大模型进行分析和使用。思路非常有趣。
 # coding-saas
 - https://huggingface.co/spaces/enzostvs/deepsite/tree/main
   - DeepSite is a coding platform powered by DeepSeek AI, designed to make coding smarter and more efficient. 
@@ -513,6 +553,13 @@ modified: 2024-08-24T16:30:20.218Z
   - Customizable: Easily configure what to include or exclude.
   - Code Compression: The --compress option uses Tree-sitter to extract key code elements, reducing token count while preserving structure.
 
+- https://github.com/yamadashy/repopack /MIT/202411/ts
+  - Repopack is a powerful tool that packs your entire repository into a single, AI-friendly file.
+  - AI-Optimized: Formats your codebase in a way that's easy for AI to understand and process.
+  - Token Counting: Provides token counts for each file and the entire repository, useful for LLM context limits.
+  - Git-Aware: Automatically respects your .gitignore files.
+  - 可以将你的代码库打包成一个 AI 友好文件（带有文件的目录结构，文件内容以及提示词），然后可以方便的供给大模型进行分析和使用。思路非常有趣。
+
 - https://github.com/403errors/repomind /202511/ts
   - https://repomind-ai.vercel.app/
   - AI-powered coding assistant using Agentic RAG to chat with any public GitHub repository or developer profile, offering deep code analysis, visual architecture maps, and security audits
@@ -520,6 +567,12 @@ modified: 2024-08-24T16:30:20.218Z
   - Smart Context Loading: Instead of dumping entire files, RepoMind intelligently selects relevant code snippets based on your query.
   - Multi-File Understanding: Traces dependencies and imports to understand how different parts of the codebase interact.
   - RepoMind uses Context Augmented Generation (CAG), not traditional RAG. We don't chop your code into fragmented vectors; we load full, relevant files into the model's long context window for superior understanding.
+
+- https://github.com/argilla-io/argilla /apache2/202408/python
+  - https://docs.argilla.io/
+  - Argilla is a collaboration tool for AI engineers and domain experts who need to build high-quality datasets for their projects.
+  - Argilla can be used for collecting human feedback for a wide variety of AI projects like traditional NLP (text classification, NER, etc.), LLMs (RAG, preference tuning, etc.), or multimodal models (text to image, etc.). Argilla's programmatic approach lets you build workflows for continuous evaluation and model improvement. 
+  - Take control of your data and models
 # code-search
 - https://github.com/BurntSushi/ripgrep /55.1kStar/MIT/202507/rust
   - ripgrep recursively searches directories for a regex pattern while respecting your gitignore

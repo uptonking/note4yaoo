@@ -12,7 +12,14 @@ modified: 2024-09-16T11:11:14.989Z
 
 - ## 
 
-- ## 
+- ## [Should I generate images on the client or server side ? : r/django](https://www.reddit.com/r/django/comments/1piidtl/should_i_generate_images_on_the_client_or_server/)
+  - My business flow is as follows : The user uploads a picture I open the background picture I paste the user 's picture on it I then paste the overlay picture
+  - So I use pillow in the backend , but I feel this might be doing unnecessary and causing me too much memory and time . When I could just use the user 's browser and render the images .
+  - After I changes my code to do this on the client side using canvas , I noticed my memory usage went down by 10 MB , due to me not opening the background picture in memory and then pasting imag3s in it.
+
+- Are you charing them for the service? If so use it on the backend. If not, just let their computer do it. Although what youre describing SHOULDNT be expensive for either the server or client
+
+- I prefer rendering such things on the server, because on the client a user can manipulate it (ie. add a custom frame on their linkedin profile image if it would be done in js)
 # discuss-image-css
 - ## 
 

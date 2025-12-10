@@ -179,9 +179,14 @@ modified: 2025-11-18T13:22:22.078Z
 ## image 🖼️
 
 - z-image-turbo 不擅长512尺寸的图片，感觉很糊
+  - https://www.modelscope.cn/studios/Tongyi-MAI/Z-Image-Gallery
   - 同样prompt+step生成1024尺寸就比较清晰
   - 似乎只能生成长宽1:1比例的图片, 随机比例会抛出异常
   - 生成 2048x2048 的图片时, macbook内存爆炸，电脑重启
+
+- https://huggingface.co/AIDC-AI/Ovis-Image-7B
+  - https://github.com/AIDC-AI/Ovis-Image
+  - a 7B text-to-image model specifically optimized for high-quality text rendering 
 # models-features/variants
 - 专用模型
 - ocr

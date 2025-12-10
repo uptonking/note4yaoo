@@ -499,6 +499,9 @@ modified: 2020-10-22T10:22:55.878Z
     - 采用了独创的箭头连接算法，能够很好的修正 AI 绘制过程中出现的箭头乱飘的现象。
     - 除了箭头连接算法和提示词是我自己研究出来的外。 其他的功能均为 vibe-coding 所得，难免会有 bug
 
+- https://github.com/JerryKwan/drawio-live-editor /202512/svelte
+  - An AI-powered online diagram editor based on Draw.io, designed specifically for technical documentation.
+
 - https://github.com/Tiledesk/tiledesk-dashboard /MIT/202406/ts
   - https://www.tiledesk.com/
   - full-stack Open Source Live Chat with built-in Chatbots, written in Node.js and Angular.

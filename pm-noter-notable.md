@@ -165,12 +165,13 @@ modified: 2023-11-28T14:48:45.910Z
 - naming
   - mandroid (from android+manus)
 
-## inspirations
+## inspirations ✨
 
-- willing-to-pay
+- willing-to-pay ❤️
   - obsidian-bases
   - notebooklm: doc search with citations
-  - DeepAnalyze: data analysis automation; + mermaid
+  - DeepAnalyze: automatic data analysis; + mermaid
+  - 插画复刻: Qwen-Image-i2L, image-to-prompt-to-image, 同时支持浏览comfyui生成图片的元数据、提示词
 
 - obsidian-mobile, notion-mobile
   - obsidian-open-rewrite compatible with obsidian plugin, 主流插件已达到百万下载

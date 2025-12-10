@@ -77,6 +77,9 @@ modified: 2025-12-09T13:50:57.426Z
 
 - vlm
 
+- images
+  - 支持浏览comfyui生成图片的元数据
+
 - 迁移 paperless-ai 到 papermerge-ai
 # dev-xp
 - 🤔 上传的pdf文件会保存在server文件系统, 目录结构为 `docvers/ranNumber/uuid/原文件名`

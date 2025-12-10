@@ -22,6 +22,17 @@ modified: 2023-07-23T07:05:19.441Z
   - 清理空间很有用的工具 onyx, 在没怎么清理 `~/Library/Caches` 文件夹的情况下都能释放大约6GB空间
   - ~/Library/Application Support/Google/Chrome/Default/Service Worker/CacheStorage
 
+```sh
+npm cache clean --force
+# verify that the cache has been successfully cleared
+npm cache verify
+
+# removing all entries or those linked to specific packages
+uv cache clean
+uv cache size
+
+```
+
 ## macbook
 
 - mac-apps-loved

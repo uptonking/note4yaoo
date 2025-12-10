@@ -680,6 +680,11 @@ modified: 2022-06-03T21:34:54.893Z
   - Themes (light, dark, sepia, slate, black)
   - view history (quickly jump to articles you've previously viewed)
   - [chrome-ext](https://chrome.google.com/webstore/detail/modern-for-wikipedia/emdkdnnopdnajipoapepbeeiemahbjcn)
+# office-ai
+- https://github.com/iOfficeAI/OfficeAI /NonOpen
+  - https://office-ai.net/
+  - Make Office/WPS more powerful and easier to use with AI, similar to Office Copilot and WordGPT
+  - System Requirements: Windows 7/10/11 or later + Office 2013/2016/2019/Office 365
 # kb-ai/chatgpt
 - https://github.com/upstash/context7 /34kStar/MIT/202510/ts
   - https://context7.com/

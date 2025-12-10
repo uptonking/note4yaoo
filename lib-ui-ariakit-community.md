@@ -47,6 +47,21 @@ modified: 2023-06-22T05:33:12.658Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## v1.0.0-rc.0 _20251204
+- https://x.com/colmtuite/status/1996767313199083665
+- Looks nice but what’s the difference with shadcn?
+  - Base UI is not comparable to shadcn/ui, which is a set of styled comps with a high-level API surface, and a styling engine + theme.
+  - Base UI is comparable to Radix Primitives, which is an unstyled lib.
+  - You can use Base UI together with shadcn/ui.
+
+- Shadcn is built on top of Radix UI. Radix Ui provides a set of accessible ui primitives that are unstyled. Base UI does the same. So base Ui is comparable to Radix UI. Potentially, shadcn can use base ui. If I'm not mistaken the guys who made base ui made radix ui.
+  - Correct. You can use shadcn/ui with Base UI. It's especially easy with AI. You can ask an llm to install a shadcn/ui component but use Base UI, and it usually works pretty well.
+  - Base UI has more components, more features, better a11y, better edge-case handling, better perf, and is actively maintained by a full-time team.
+
 - ## [[discussion] Create codemod to ease Radix Primitives migration? _202510](https://github.com/mui/base-ui/issues/2970)
 
 - ## [[discussion] Base UI Integration with SolidJS · Issue · mui/base-ui _202507](https://github.com/mui/base-ui/issues/2200)
@@ -55,6 +70,23 @@ modified: 2023-06-22T05:33:12.658Z
 
 - Our general stance (written in 2025) around non-React framework support is:
   - React is already a LOT to focus on. It's much better to be world-class at 1 thing, than OK-ish at 3.
+
+- ## What exactly keeps you from using Radix in production? _202506
+- https://x.com/colmtuite/status/1935629877069172861
+- 👷: i mean there is nobody at the wheel. would you continue using react if the whole team left, fb stopped investing in it, issues/prs went ignored for ages, and 3 years passed without any significant improvements? it's just not an option for any serious company.
+  - there has been practically nobody working on it (besides one part-time maintainer). many issues have been ignored and/or closed, prs are being ignored. the whole radix team left years ago. the company who own the project told me they want to kill it.
+- Accessibility issues that have been unresolved for years too
+
+- So is base ui the drop in replacement for radix then?
+  - "drop-in replacement" is subjective. we designed base ui for an easy migration path from radix.
+
+- Is there something like @shadcn built on @base_ui ?
+- https://github.com/borabaloglu/9ui /MIT/202511/ts
+  - A collection of components that you can copy and paste into your project. Built with Base UI and Tailwind CSS.
+
+- Is Base UI funded?
+  - yes. the whole base ui team (currently 5 people) is employed full-time by MUI. MUI is doing many millions in ARR, has been profitable for years, and the whole business model is based on ui dev.
+  - this was the primary reason i chose the join mui + work on base ui here.
 
 - ## [[RFC] Base UI customization API change · mui/base-ui _202402](https://github.com/mui/base-ui/discussions/157)
 - I would promote the usage of the Radix Slot Component (literally or trying to follow @nihgwu nihgwu/create-slots or please take ownership of creating a RFC) and hopefully align the Mui, Radix, Headless, and React Aria ecosystem to optimize such components and patterns to a point where the React team would take ownership of providing a built-in capability to have Slots

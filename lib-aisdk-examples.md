@@ -173,6 +173,14 @@ modified: 2025-08-11T20:15:18.297Z
   - implement story generation with OpenRouter AI and chat UI
   - https://github.com/nicoalbanese/ai-sdk-alpha-hacking-data-parts
   - https://github.com/nicoalbanese/ai-sdk-data-parts-july-2025
+# tanstack-ai
+- https://github.com/osadavc/tanchat /apache2/202512/ts
+  - a port of AI SDK chat template to the @tan_stack ecosystem
+  - using tanstack start, tanstack forms, tanstack query and @better_auth with a ton of small bug fixes in multiple places.
+  - https://x.com/osadavc/status/1998391154107441382
+    - i might port it to use their tanstack ai pkg
+      - that's the final plan but right now it seems like it doesn't have all the features that's needed to make a lot of these artifacts work (custom data streaming for example)
+    - Not sure what you mean exactly with custom data streaming? If you mean your own streaming format we support that. 
 # image/multi-modal
 - https://github.com/vercel-labs/ai-sdk-image-generator /apache2/202501/ts
   - https://ai-sdk-image-generator.vercel.app/

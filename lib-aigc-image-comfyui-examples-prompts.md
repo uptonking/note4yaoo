@@ -11,11 +11,21 @@ modified: 2025-09-13T09:32:22.969Z
 
 # resources
 - prompts
+  - [魔搭社区 - 创意广场](https://modelscope.cn/aigc/inspiration)
+  - [Nano Banana Pro Prompts - 高质量 AI 提示词与图像生成 - YouMind](https://youmind.com/zh-CN/nano-banana-pro-prompts)
+  - [Banana Prompt Quicker - 提示词从未如此优雅](https://glidea.github.io/banana-prompt-quicker/)
+  - [AIART. PICS - AI 图像生成提示词](https://aiart.pics/)
+  - [Nano Banana - nanobanana, gpt4o, chatgpt 提示词案例库](https://opennana.com/awesome-prompt-gallery/)
+  - [Nanobanana 提示词收纳盒](https://www.bmzxdlj.cn/)
+  - [PromHub – AI 提示词库 & 优化工程工具 (2025版)](https://promhub.net/zh/prompt-database)
+  - [提示词库 - 探索 AI 图像提示词 | Nano Banana Pro](https://www.nanobananapro.site/zh/prompts)
   - [Stable Diffusion - Prompts examples](https://stablediffusion.fr/prompts)
   - https://github.com/ZeroLu/awesome-nanobanana-pro
     - image prompts sourced from X (Twitter), WeChat, Replicate, and top prompt engineers
+    - https://github.com/xianyu110/awesome-nanobananapro-prompts
   - 💡 [[Release] SID Z-Image Prompt Generator - Agentic Image-to-Prompt Node with Multi-Provider Support (Anthropic, Ollama, Grok) : r/comfyui](https://www.reddit.com/r/comfyui/comments/1phn65d/release_sid_zimage_prompt_generator_agentic/)
     - 输入原图 > 生成prompt > 生成新图, 可用于解决版权问题
+  - [​⁡​‌​Nano Banana一致性改图模型评测汇总@阿真 整理版 - 飞书云文档](https://uahbgrt760r.feishu.cn/wiki/OAW5wM95MiUhmPktFJVcchi8nHe)
 # prompts
 - A flat design graphic of a modern workspace, with simplified objects like a laptop, coffee cup, and lamp arranged in a colorful, two-dimensional scene with minimal shading.
 - A realistic UI/UX mockup of a sleek mobile banking app interface, showing both light and dark modes, clean typography, and intuitive button layouts on a smartphone screen.

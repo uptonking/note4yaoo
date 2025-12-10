@@ -1861,6 +1861,31 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 # discuss-model-internals/tuning
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Which small model is best for fine-tuning? We tested 12 of them by spending $10K - here's what we found : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pi8z74/which_small_model_is_best_for_finetuning_we/)
+  - TL; DR: We fine-tuned 12 small models to find which ones are most tunable and perform best after fine-tuning. Surprise finding: Llama-3.2-1B showed the biggest improvement (most tunable), while Qwen3-4B delivered the best final performance - matching a 120B teacher on 7/8 tasks and outperforming by 19 points on the SQuAD 2.0 dataset.
+  - 12 models total - Qwen3 (8B, 4B, 1.7B, 0.6B), Llama (3.1-8B, 3.2-3B, 3.2-1B), SmolLM2 (1.7B, 135M), Gemma (1B, 270M), and Granite 8B.
+  - Tested on 8 benchmarks: classification tasks (TREC, Banking77, Ecommerce, Mental Health), document extraction, and QA (HotpotQA, Roman Empire, SQuAD 2.0).
+  - I guess the title is a little click-baity. To get the total number, you have to account for the synthetic data we generated for each benchmark. That's the reason we could easily scale the training to many tasks and domains.
+  - You are right that the training itself was not 10k, but running the whole pipeline adds up to the number. We didnt think that _that_ would be the main discussion point.
+
+- i did this test back then with qwen 2.5 models for our work project, and interally we found that qwen2.5 7b was the most consistent model with the best result for its size, where the 2.5 3b had issues following instructions at times. did the qwen 3 4b model ever had this happen or was it able to execute all tasks without fail?
+  - I wouldn't say "without fail", it's definitely not perfect, but it's pretty good at following instructions overall. On some tasks there was little difference between the 8B & 4B Qwen3 models (the harder the task, the more important param count is).
+
+- Can this also apply to VL models? Qwen3 VL personally.
+  - Not yet, but doing this same for vision models is on our roadmap!
+
+- The Qwen team hit it out of the park with Qwen3-4B-Instruct-2507. This model keeps coming up all over the place and it deserves the praise it gets. I hope whatever secret sauce they used for that model is further propagated to their other models. Actually what I really would like is a deep dissection and a full whitepaper on why the hell this little model hits so much above its belt.
+
+- I recommend strongly HuggingFaceTB/SmolLM3-3B. Got the same perfs as Qwen3-4B-Instruct-2507 for my task but with faster inference 
+
+- [Which small model is best for fine-tuning? We tested 12 of them by spending $10K - here's what we found : r/LocalLLM](https://www.reddit.com/r/LocalLLM/comments/1pi98l9/which_small_model_is_best_for_finetuning_we/)
+
 - ## [Convert Dense into MOE model? : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pfxrv5/convert_dense_into_moe_model/)
 - Contrary to many of the other answers here, it's definitely possible but usually not worth the trade-offs.
   - The thing is, you are better off using a model that was trained from scratch to be an MoE (since MoE are cheaper to train anyway) or just using a smaller dense model with more predictable performance.
