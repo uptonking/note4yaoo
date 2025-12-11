@@ -722,6 +722,17 @@ modified: 2025-10-28T20:02:16.727Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [TIL that Claude Code has OpenTelemetry Metrics : r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1pjon1r/til_that_claude_code_has_opentelemetry_metrics/)
+  - I just now learned that the lines of code metric is a delta and so it wasn't tracking the actual number of lines of code correctly. My actual lines of code accepted (not necessarily generated, just accepted) is 27, 925. In 7.5 hours. And I've eaten food, taken a long walk, chatted with my kids, and done other stuff during that time, so it wasn't 7.5 hours of straight claude coding. It's just been 7.5 hours since I enabled the metrics.
+
+- I have been trying to learn more about these telemetry platforms. Can you make / point me to a tutorial about this?
+  - Grafana is the viz tool. If your app logs to stdout you can use a scraper like promtail or alloy to scrape it to prometheus/loki for grafana to viz. This is commonly known as grafana stack or lgtm
+  - This is a common observability setup. Do note it's relatively resource intensive
+
 - ## 🆚 [Codex or cline : r/CLine _202511](https://www.reddit.com/r/CLine/comments/1p3j75w/codex_or_cline/)
 - I need to spend more time with Codex, I’ll say that first but it is Cline for me atm because:
   - Can use multiple LLMs easily with openrouter

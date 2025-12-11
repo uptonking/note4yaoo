@@ -31,6 +31,16 @@ modified: 2021-05-13T03:08:52.583Z
   - ai: comfyui
   - 经典示例: file-manager, note-taking, reader-epub
 
+- web+pc: vscode, jupyter, (rstudio)
+  - git clients
+  - postman, hoppscotch
+  - bitwarden-passwords-clients
+  - otel
+  - ocr
+  - package-manager, downloader
+  - services: nginx, redis, pg/mysql/sqlite, sync, monitoring
+  - cases: wallpaper
+
 - tips
   - 🏘️ 可参考各大 coding-agent-cli 的实现, 有第三方开发者在cli上实现web/electron/tauri
   - 要在侧重web(no-server)和侧重本地(c/s或b/s)的架构上做取舍，主要考虑数据源、数据量、性能
@@ -39,7 +49,6 @@ modified: 2021-05-13T03:08:52.583Z
     - vscode的桌面版性能很好, web版就感觉很慢
   - 不建议基于electron实现自定义浏览器，要考虑支持各浏览器自带的扩展商店，可在自己的应用层实现
   - ? electron-for-android/ios vs apps
-  - web+pc: vscode, jupyter, (rstudio)
 
 - resources
   - [Cross platform software frameworks](https://blog.tomayac.com/2023/02/23/cross-platform-software-frameworks/)

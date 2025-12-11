@@ -79,6 +79,8 @@ modified: 2023-08-17T08:28:11.799Z
   - 扩展示例2: wikipedia, stock-connector, jira
 
 - [microsoft appsource](https://appsource.microsoft.com/en-us/marketplace/apps?product=office)
+# more
+- [Overview of Excel tables - Microsoft Support](https://support.microsoft.com/en-us/office/overview-of-excel-tables-7ab0bb7d-3a9e-4b56-a3c9-6c94334e492c)
 # discuss
 - ## 
 
@@ -87,4 +89,3 @@ modified: 2023-08-17T08:28:11.799Z
 - ## 
 
 - ## 
-# more

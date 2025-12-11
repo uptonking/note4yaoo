@@ -113,7 +113,21 @@ modified: 2023-02-05T19:12:13.098Z
 
 - If I'm correct, Gutenberg has an immutable data structure - similar to ProseMirror (another editor that Yjs supports)
   - yes
+# discuss-news
+- ## 
+
+- ## 
+
+- ## [Introduce responsive editing _202512](https://github.com/WordPress/gutenberg/pull/73888)
+  - This pull request introduces a responsive editing mode to the block editor, allowing users to hide blocks on specific viewports (desktop, tablet, mobile). 
+  - While it focuses on expanding the block visibility work, this editing mode is meant to be the seed to expand responsive editing to style attributes in general.
+  - Hidden blocks remain visible in the List View with visibility indicators showing which devices they're hidden on. 
+
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## [Choosing the JavaScript Framework for Gutenberg(~WordPress) if dropping react_201710](https://github.com/WordPress/gutenberg/issues/2733)

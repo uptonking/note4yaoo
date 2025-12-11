@@ -67,18 +67,15 @@ modified: 2025-10-10T02:45:45.941Z
     - These are streamlined versions of the diff and whole formats, intended to be used with --editor-edit-format when using architect mode. 
     - The actual edit format is the same, but aider uses a simpler prompt that is more narrowly focused on just editing the file as opposed to solving the coding task.
 # examples-ai-editing
-- https://github.com/theluk/llm-patcher /apache2/2022406/ts/inactive
-  - https://llm-patcher.vercel.app/
-  - An open-source AI find-and-replace workflow template built with Next.js, the Vercel AI SDK and OpenAI.
-  - Whenever we provide a text to an LLM and ask it to do some changes, it will always stream the full text back to us. This is not ideal for large texts, as it can be slow and expensive. 
-  - This project aims to solve this problem by providing a way to stream only the changes made by the LLM back to the user.
-  - How does it work?
-    - The user provides a text and a find-and-replace query.
-    - The text is split into lines and sentences.
-    - Each line and sentence is then prefixed with a identifier that looks like `<l1s1>` for line 1, sentence 1.
-    - The LLM is then asked to find-and-replace the query in each line and sentence.
-    - The changes are then streamed back to the user in the form of a diff(e.g., `<r:l1s1> string to find || string to replace`).
-  - [How to use LLM for efficient text outputs longer than 4k tokens? - DEV Community _202406](https://dev.to/theluk/how-to-use-llm-for-efficient-text-outputs-longer-than-4k-tokens-1glc)
+- https://github.com/vizhub-core/editcodewithai /3Star/MIT/202509/ts
+  - A lightweight, flexible library for AI-powered code editing.
+  - The core idea is that you can feed this system a set of source code files and high level instructions, and it will return the edited code after some time. 
+  - It provides a simple interface to send code files and instructions to an LLM (Large Language Model) and receive edited code in return.
+  - 依赖langchain、llm-code-format
+  - The library is designed to be model-agnostic, allowing you to use any LLM provider
+  - Edit formats inspired by Aider. This library supports several "edit formats" that instruct the LLM on how to specify file changes.
+    - Different models may perform better with different formats. 
+    - You can specify the format using the `editFormat` parameter 
 
 - https://github.com/deepaste-ai/partial-edit /202504/ts/inactive/NoDeps
   - This project is a TypeScript implementation of the approach described in OpenAI's GPT-4.1 prompting guide
@@ -116,6 +113,19 @@ modified: 2025-10-10T02:45:45.941Z
     - Use Search-Replace when you want precise, targeted edits (add import, rename function, delete block). 
     - Use Standard Diff when you have a complete diff from git (multi-hunk, moved code). 
     - When in doubt, start with Search-Replace—its fuzzy matcher is more forgiving of small source drift.
+
+- https://github.com/theluk/llm-patcher /apache2/2022406/ts/inactive
+  - https://llm-patcher.vercel.app/
+  - An open-source AI find-and-replace workflow template built with Next.js, the Vercel AI SDK and OpenAI.
+  - Whenever we provide a text to an LLM and ask it to do some changes, it will always stream the full text back to us. This is not ideal for large texts, as it can be slow and expensive. 
+  - This project aims to solve this problem by providing a way to stream only the changes made by the LLM back to the user.
+  - How does it work?
+    - The user provides a text and a find-and-replace query.
+    - The text is split into lines and sentences.
+    - Each line and sentence is then prefixed with a identifier that looks like `<l1s1>` for `line 1, sentence 1`.
+    - The LLM is then asked to find-and-replace the query in each line and sentence.
+    - The changes are then streamed back to the user in the form of a diff(e.g., `<r:l1s1> string to find || string to replace`).
+  - [How to use LLM for efficient text outputs longer than 4k tokens? - DEV Community _202406](https://dev.to/theluk/how-to-use-llm-for-efficient-text-outputs-longer-than-4k-tokens-1glc)
 
 - https://github.com/dceluis/ln-diff /MIT/202411/prompt/inactive
   - The ln-diff format is a specialized diff format designed for precise line-based code modifications. 

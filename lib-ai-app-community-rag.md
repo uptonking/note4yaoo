@@ -48,7 +48,37 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [【吐槽】大模型太强了，以至于很多人感觉自己行了 ](https://linux.do/t/topic/1296243)
+  - 最近在搞 RAG，疯狂找文章、跑 demo。 结果越跑越觉得：这些东西完全没讲到点子上。
+  - 大多数教程的内容就是： 文档随便加载、chunk 大小照抄默认、top-k 恒定 5、embedding 不解释、检索不分析、不做 rerank、不做 query rewrite、不谈 evaluation、不讲 error case、不讲优化
+  - 最后整个系统确实能跑，但仅限于能跑起来。
+- 真正难的地方，全都避而不谈，RAG 的痛点其实在教程基本不写的部分：
+  chunk 怎么切才不会丢信息
+  如何减少噪声检索
+  如何做混合检索（BM25 + embedding）
+  是否需要 rerank
+  如何提升召回
+  多文档融合怎么做
+  用户问句要不要改写
+  最终回答怎么 ground
+  怎么评测 RAG 好坏
+- 我发现不少标榜企业级 RAG 的项目：
+  chunk 策略没有
+  rerank 没有
+  多文档处理没有
+  query rewrite 没有
+  metadata 过滤没有
+  结构化知识处理没有
+
+- Rag 最难的不是数据清洗吗，反而把数据塞到数据库里比较简单吧
+  - 数据清洗工作量确实大，但怎么把有限的数据效用最大化也是手艺活
+
+- 个人理解 RAG 本身其实是个有点偏工程的方案，它分一个个模块，如何连接一个个模块，模块工作是否正常等等，chunk 切的好不好，rerank 能不能捞回来，捞回来了模型能不能做对，都是痛点。之前工作里试过一次，最后发现不如 gemini 力大砖飞来的快.
+
+- 数据量小，感觉工作量能克服一下，但是又因为数据量太小，幻觉严重。
+  - 数据量大，看着工作量就生无可恋，然后又没钱雇人，然后就没有然后了。
+
+- 一字不改只靠 rag 应该还是不行的，要在架构上做文章。 可以考虑结合 Elastic Search，通过 rag 知道是哪段以后，直接在相关文章全文检索。 返回 es 的相关文本段而不是 ai 给出来的。
 
 - ## 💥 i'm building a local rag webapp that supports to upload large pdfs, then convert to text , and doing chunking/embedding, then save to a vector db for retrieval with local llm.
   - i cannot find a solution that supports very large pdf, the memory is often overflowed, even causing system crash

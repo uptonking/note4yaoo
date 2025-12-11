@@ -20,11 +20,13 @@ modified: 2020-12-29T17:52:48.584Z
   - 在浏览器查看markdown时使用print pdf功能，linux的效果比macos好很多，比如简历markdown
 
 - 画板或批注类产品要参考规范 [Web Annotation Data Model](https://www.w3.org/TR/annotation-model/)
-# foxit-reader
-- ui阅读体验更好
-
-- bug
-  - bookmarks在别的平台会消失，甚至导致pdf异常损坏，在别的平台打不开
+# pdf-editor
+- [JOPDF | Free & Fast PDF Editor for Windows, Mac & Linux](https://www.jopdf.com/)
+# pdf-reader
+- foxit-reader
+  - ui阅读体验更好
+  - bugs
+    - bookmarks在别的平台会消失，甚至导致pdf异常损坏，在别的平台打不开
 # office-word
 
 # usage-xp

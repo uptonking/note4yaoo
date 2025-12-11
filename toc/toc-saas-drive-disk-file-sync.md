@@ -527,6 +527,13 @@ modified: 2024-03-31T17:45:16.789Z
 - https://github.com/oleksiyk/mongofs /201312/js
   - MongoFS is an implementation of MongoDB GridFS that emulates node.js fs module
 # fs-filesync
+- https://github.com/fccview/scatola-magica /LGPL/202512/ts
+  - A simple, self-hosted file storage/transfer app.
+  - a privacy first, lightweight alternative to overcomplicated, bloated file storage solutions, to transfer, manage, encrypt/decrypt your personal files and folders. 
+  - It's built with Next.js 14, is easy to deploy, and keeps all your data on your own server.
+  - It features optional PGP encryption for stored items and optional AES-256-GCM encryption for file transfer.
+  - [[beta] Scatola Magica - Self hosted file sharing system : r/selfhosted _202511](https://www.reddit.com/r/selfhosted/comments/1p8b80o/beta_scatola_magica_self_hosted_file_sharing/)
+
 - https://github.com/datopian/giftless /157Star/MIT/202507/python
   - https://giftless.datopian.com/
   - Giftless is a Python implementation of a Git LFS Server. 

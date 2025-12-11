@@ -210,4 +210,36 @@ modified: 2025-09-01T05:52:34.241Z
 - 
 - 
 
+# AionUi
+- cons
+  - 默认使用gemini-cli, 使用ollama时偶尔会碰到问题
+    - 虽然qwen-code支持ollama，但不支持使用配置的apikey
+
+- features
+  - ?
+
+- All conversations are saved locally:
+  - macOS: ~/Library/Application Support/AionUi/
+  - Windows: %APPDATA%/AionUi/
+  - Linux: ~/.config/AionUi/
+
+## draft-aionui
+
+- chat input 不是富文本
+
+- qwen-code支持ollama，但不支持使用配置的apikey
+
+- Supported Formats: Text files, images, code files, etc.
+  - 可增加: markdown优化, docx, xlsx, pdf
+
+- 模型列表不支持手动排序
+
+- switch projects/workspaces
+
+- 设置快捷键
+
+- 
+- 
+- 
+
 # more

@@ -178,6 +178,9 @@ modified: 2023-09-02T09:17:22.992Z
   - Standard ECMAScript features are implemented and not delegated to the underlying engine.
   - https://github.com/danielduarte/es-eval-playground /202409/js
 
+- https://github.com/boxlite-labs/boxlite-mcp /apache2/202512/python
+  - embeddable sandbox with hardware-level isolation and no daemon. The SQLite of sandbox, coming soon as open source
+
 ## iframe-sandbox
 
 - https://github.com/dabbott/javascript-playgrounds /1.4kStar/BSD/202411/ts/inactive
@@ -412,6 +415,13 @@ modified: 2023-09-02T09:17:22.992Z
 - https://github.com/BinSquare/ERA /202511/python/go
   - Open source secure sandboxing for running Agents.
   - [Building an opensource local sandbox to run agents : r/LocalLLM](https://www.reddit.com/r/LocalLLM/comments/1okfrp6/building_an_opensource_local_sandbox_to_run_agents/)
+
+- https://github.com/superagent-ai/vibekit /MIT/202511/ts
+  - Run Claude Code, Gemini, Codex — or any coding agent — in a clean, isolated sandbox with sensitive data redaction and observability baked in.
+  - Local sandbox - Runs agent output in isolated Docker containers
+  - Built-in redaction - Auto-removes secrets, api keys, and other sensitive data completions
+  - Universal agent support - Works with Claude Code, Gemini CLI, Grok CLI, Codex CLI, OpenCode, and more
+  - Works offline & locally - No cloud dependencies or internet required
 # browser-emulator 🧭
 - https://github.com/thecodacus/OpenWebContainer /MIT/202501/ts
   - https://open-web-container.vercel.app/

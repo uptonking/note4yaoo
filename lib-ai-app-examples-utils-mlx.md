@@ -100,4 +100,10 @@ modified: 2025-11-01T10:54:26.044Z
   - [[Update] mlx-knife 2.0 stable — MLX model manager for Apple Silicon : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1otwdq0/update_mlxknife_20_stable_mlx_model_manager_for/)
     - Can you help me understand how this is better than simply using: mlx_lm.server
       - Yeah. Unless it supports vision, mlx_lm.server plus llama swap is much better.
+
+- https://github.com/mlx-node/mlx-node /MIT/202512/rust
+  - MLX-Node brings Apple's MLX framework to JavaScript/TypeScript, enabling efficient on-device ML inference and training on Apple Silicon and CUDA devices. 
+  - Built with a Rust compute layer and TypeScript orchestration, it delivers production-ready GRPO training with 100% feature parity with HuggingFace's TRL library.
+  - Pure Rust/TypeScript implementation — no Python runtime required
+  - TypedArray-First API: Zero-copy operations using native JavaScript typed arrays
 # more

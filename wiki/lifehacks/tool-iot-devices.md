@@ -1834,7 +1834,15 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## 🆚 [Is it better to upgrade from 3080 to 3090 or 5080 for video generation? : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1pjfmrw/is_it_better_to_upgrade_from_3080_to_3090_or_5080/)
+- I have both the 3090 and 5080 hooked up to my computer as I am typing this. For majority of the task, including wan 720p 480p, qwen edit, z-image, and illustrious + 4k hires fix, 
+  - I find myself only use 5080 and vram has not been an issue unless I'm running a very large batch size. 
+  - The 5080 is twice as fast with support for fp8 and fp4. Since buying the 5080, the 3090 has only been used for llm when i need better prompt or gaming concurrently with running the workflow.
+
+- Just a headsup 3090 doest support 8bit calculation. You would be using fp16 versions or anything lower than 16bit will be transformed to fp16
+  - It does support INT8, just not FP8.
+
+- My vote is for more vram. Best advantage of the 5080 is speed, but with vram it opens up so much more possibilities (and that speed won't matter if it wont fit into memory).
 
 - ## [Does ComfyUI work flawlessly with AMD graphics cards too? Which card is more stable? Is there anything that can be done with Nvidia but not with AMD? : r/comfyui _202512](https://www.reddit.com/r/comfyui/comments/1pi94ix/does_comfyui_work_flawlessly_with_amd_graphics/)
 - Using an AMD Graphics card is the difficult and treacherous road currently in the world of AI (I know, I primarily use a Radeon Pro w7800 32GB). Even installing basic Custom Nodes is fraught with dangers. One must examine each requirements.txt file to make sure it is not trying to install torch, torchaudio, and/or torchvision (which is rather unnecessary to put into the requirements file for a custom_node anyway.) Those lines will need to be commented out or erased after cloning the Git. If not done, then upon ComfyUI's next startup, it will uninstall the ROCm version of pytorch and install the Nvidia one instead breaking all inference functionality (this has happened to me a couple of times before. Blast my laziness!). 

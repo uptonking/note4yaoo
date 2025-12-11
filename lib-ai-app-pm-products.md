@@ -43,6 +43,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 避免模型平台的限制rate limits，如并发请求数(rpm/tpm/需要排队)、context长度、最大输出token数、模型版本、模型大小等
     - no implicit ai degradation/switch: bring your model
   - cost: unlimited tokens, local models支持超大context, 利用本地模型ocr/文生图
+    - 简单的 tool call 使用本地模型更高效, 可考虑将tool call小模型内置在软件中
   - 🤔 能充分利用本地文件系统和命令行的资源，进行数据分析/文件修改/...
   - network agnostic
   - 发挥端侧计算的能力，如总结/查询，而不侧重端侧聊天
@@ -362,8 +363,8 @@ modified: 2025-03-22T16:10:24.856Z
     - 无调用频率限制
     - 支持gpt5,claude,gemini
     - 部分模型倍率很高，可选按次计算版本, 如claude
-  - [WONG公益站](https://newapi.netlib.re/), 每日签到
-    - [WONG公益站](https://wzw.de5.net/console)
+  - [WONG公益站](https://wzw.de5.net/console), 每日签到
+    - [WONG公益站](https://newapi.netlib.re/)
     - rpm为30
     - 高效连接 Claude Code CLI
   - [我爱996公益](https://529961.com/)
@@ -621,6 +622,7 @@ modified: 2025-03-22T16:10:24.856Z
   - tldr: 请求并发数量（在途请求任务数量）flash-2
   - GLM-4.5-Flash Free ✅
   - free: glm-4-flash-250414(20), glm-4-flash(200), glm-4.1v-thinking-flash(5), glm-4v-flash(10), cogview-3-flash, cogvideox-flash, glm-experimental-preview(5)
+  - 没找到 用量统计/token统计 的界面
   - [模型实时调用专属权益 及 标准单价 (很多免费)](https://bigmodel.cn/usercenter/equity-mgmt/user-rights)
   - [智谱AI - pricing](https://bigmodel.cn/pricing)
   - 免费模型: [福利专区](https://bigmodel.cn/dev/activities/free/glm-4-flash)

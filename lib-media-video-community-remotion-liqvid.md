@@ -146,6 +146,26 @@ modified: 2024-06-21T09:53:44.956Z
 - ## 
 
 - ## 
+# discuss-solutions-plex/jellyfin
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Plex vs. Jellyfin for New Install : r/selfhosted _202512](https://www.reddit.com/r/selfhosted/comments/1pjoamf/plex_vs_jellyfin_for_new_install/)
+- try jellyfin first since it’s free. i’ve used both plenty and much prefer jellyfin
+- Plex is commercial, your account, user auth, etc, are handled by plex.tv not your server. They also recently changes rules and locked down features that didn't require their service... so you never know the future.
+  - I switched to jellyfin... been happier. A few less features, but also a lot less bloat, and completely under your control and open source.
+
+- If jellyfin had good apps I would use it over plex
+
+- Jellyfin wasn't as polished as emby. At the time it didn't have decent intro detection with easy skipping on an android tv. That may have changed since then.
+- Emby is more stable and has better performance. It is reliable.
+  - Jellyfin has more features and infinitely better third party support. The intro skipper plugin is better than anything Emby offers. It detects intros, outros, recaps, previews.
+  - Jellyfin customization is way better through skins and other plugins.
+  - Currently the only Jellyfin drawback is related to performance, specifically with CPU usage being high and consuming a lot more RAM than Emby. The CPU thing isn't always an issue, but there is definitely something that causes Jellyfin to use way more CPU than it should. Likely something to do with DB read/write, but not positive.
+  - Overall I'm happy with the switch to Jellyfin. But I would say if the main or only thing you care about is reliability and smooth performance, Emby might be the better bet for now. I think in a few years time, these issues will be resolved.
 # discuss-remotion
 - ## 
 

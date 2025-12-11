@@ -484,6 +484,12 @@ modified: 2025-08-23T11:43:35.904Z
   - A web application and a command-line interface for the Z-Image-Turbo text-to-image generation model (Tongyi-MAI/Z-Image-Turbo).
   - Utilizes the high-quality Tongyi-MAI/Z-Image-Turbo model via diffusers.
   - [Should I change to a quantized model of z-image-turbo for mac machines? : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1pdz0ob/should_i_change_to_a_quantized_model_of/)
+
+- https://github.com/markfulton/NanoBananaEditor /521Star/AGPL/202509/ts/inactive
+  - Nano Banana image generator and editor application.
+  - Powered by Gemini 2.5 Flash images API.
+  - Conversational Editing - Modify images using natural language instructions
+  - Paint masks to target specific areas for editing
 # examples
 - https://github.com/d4N-87/ComfyUI-Workflow-Inspector /7Star/MIT/202508/ts
   - https://d4n-87.github.io/ComfyUI-Workflow-Inspector/

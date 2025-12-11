@@ -183,13 +183,24 @@ modified: 2025-08-16T14:12:24.416Z
 
 - ## 
 
-- ## 🖼️ Qwen-Image-i2L：可以“将任意一张图片转化为 LoRA 模型”
+- ## 🖼️ Qwen-Image-i2L：可以“将任意一张图片转化为 LoRA 模型” _202512
 - https://x.com/imxiaohu/status/1998593802320359640
   - 给它一张图，它就能自动生成一个 LoRA（可微调AI风格模块）
   - 你只需要提供某个画风、人物风格、艺术作品，Qwen-Image-i2L 就能分析这张图的视觉特征，自动生成一个 LoRA 模块。
   - Qwen-Image-i2L 利用 SigLIP2 + DINOv3 + Qwen-VL 特征提取体系，
   - 把图像分解成“风格 + 内容 + 构图 + 色调”等可学习特征， 并压缩成一个轻量级 LoRA 模块。
   - 生成的 LoRA 可以直接加载到生成模型中使用，实现“单图风格迁移”。
+
+- ### [[Demo] Qwen Image to LoRA - Generate LoRA in a minute : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1pjfbyr/demo_qwen_image_to_lora_generate_lora_in_a_minute/)
+- The LoRAs this is producing also work very well with Qwen_Image_Edit_2509 in image editing mode !
+- could this work with ZiT?
+  - Sadly no, different architecture.
+  - But if this becomes a trend, sooner or later a ZIT version will come.
+
+- Can it work with character creation?
+
+- this is kinda confusing to use? instructions could be a lot clearer
+  - You can try download the generated lora and plug it into qwen-image model in ComfyUI.
 
 - ## [Is there a lightweight node that turns a regular prompt into natural language for FLUX? : r/comfyui _202408](https://www.reddit.com/r/comfyui/comments/1eovcb0/is_there_a_lightweight_node_that_turns_a_regular/)
 - I just use web based LLM for it. My personal preference is Claude. I just ask it to rewrite my prompt in the T5 format. Then I paste that into my ComfyUI positive prompt.

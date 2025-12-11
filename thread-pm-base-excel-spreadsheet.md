@@ -155,7 +155,105 @@ modified: 2022-04-23T18:48:32.550Z
 
 - ## 
 
-- ##  🧩 [What are the Best Practices for Using Named Ranges in Excel? : r/excel](https://www.reddit.com/r/excel/comments/1pg63nx/what_are_the_best_practices_for_using_named/)
+- ## [Pros and Cons of Tables : r/excel _202202](https://www.reddit.com/r/excel/comments/t132zs/pros_and_cons_of_tables/)
+  - Tables are good if you don't expect to do much manipulation of the data. They are great for presentation purposes, but if you expect to do a lot of lookups, add a bunch of data, move things around, or generally do a decent amount of data manipulation, I wouldn't use a table.
+
+- Pros:
+  filters are automatically added, and you can have filters on more than one dataset
+  formulas automatically fill down the column
+  There are handy features like adding a total row
+  rows are automatically banded, which can be easier to look at
+  Table formula nomenclature. This one can be a pro or a con. I can be easier to read, but a lot of people will be confused by it
+  Being in a table will allow you to use the data in Power Query and other such tools that require import/export
+  Table styles are a nice and easy way to format your data
+  The headers stay visible as you scroll down, even if you don't freeze the row
+
+- Cons:
+  They can be confusing to people who are not used to them
+  table formula nomenclature. As I said, it can be confusing to beginners, and it can be a hindrance in other ways.
+  ~~They don't always play nice with lookups~~ Apparently, I'm the only one who has this issue
+  Complex formulas can cause problems and generally be difficult to write/use
+  They don't play nice with spilled ranges and dynamic arrays
+  ~~If you have two tables next to each other, filtering one will also collapse the same rows of the other table, so you need to stack them vertically if you want to filter one without affecting the other~~ Not a function of tables, but Excel itself
+  Table names are a pain to use and maintain if you have a lot of them
+  There's a real lack of flexibility with non-standardized data
+  Locking references is a huge pain (maybe this has been fixed in recent updates. I haven't tried it in a while)
+
+- Pro: You can reference them with the name of the table rather than by column/row, so downstream formulas will automatically update as data is added to/removed from it.
+
+- The only negatives I can think of is the lack of an F4 button, the inability to "get" the name of the table with native functions and tables/listobjects being a child of a worksheet rather than the workbook in vba
+- One negative to tables is related to using data from other rows in a formula. You can use something like OFFSET but this is a volatile function and can cause you problems in larger datasets.
+
+- Dynamic ranges is a major plus. A simple look up formula doesn’t use 1M rows as a range
+
+- Pivots are much easier with Tables since you don’t have to change the data range if the number of rows change.
+
+- The only real issue I have with tables (and I recommend to everyone to use Excel tables because of their dynamic referencing) is that to drag a formula and not have references update is a bit of a pain since there's no equivalent of $. It makes everything look so much more complicater to have Table1[[Column1] :[Column1]], especially when your table names or column names are longer.
+
+- Regarding Con #3: Filtering with always hide all the cells of the filtered out rows. That is not a feature of Tables. Its a feature of Excel.
+
+- The only consistent frustration I have with tables is that selecting a header will automatically generate an absolute reference to that specific header, instead of a relative reference that'll move along the header row.
+  - Apart from that, yeah, no, Excel tables are great, especially for lookup tables.
+
+- Acronyms, initialisms, abbreviations, contractions, and other phrases which expand to something larger, that I've seen in this thread:
+  Fewer Letters	More Letters
+  INDEX	Uses an index to choose a value from a reference or array
+  MATCH	Looks up values in a reference or array
+  NOT	Reverses the logic of its argument
+  OFFSET	Returns a reference offset from a given reference
+  ROW	Returns the row number of a reference
+  SUM	Adds its arguments
+  SUMIF	Adds the cells specified by a given criteria
+  VLOOKUP	Looks in the first column of an array and moves across the row to return the value of a cell
+
+- ## [Give me the pros and cons of using tables : r/excel _202512](https://www.reddit.com/r/excel/comments/1pj7h61/give_me_the_pros_and_cons_of_using_tables/)
+  - I’m self-taught in Excel and recently learned that for many of my projects, I should have been formatting my data as a table. I can see some of the advantages in terms of readability and formatting, but have also noticed frustrating things like the inability to have headers with the same name, and I sometimes find structured references to be confusing.
+
+- Easy callouts to other formulas/pivot tables/graphs
+  - Sorting is more reliable (can't forget to select a column when running a sort or filter) 
+  - The no two headers being the same is a good thing imo as it enforces better naming conventions. 
+
+- Cons - doesn’t take spill ranges from things like unique.
+
+- TEXTJOIN with CHAR(10) as the delimiter is my go-to workaround for this con
+  - This won't work for every purpose, but it basically condenses it down to one cell, and CHAR(10) is a line break. I most recently used it like this:
+  - =TEXTJOIN(CHAR(10), TRUE, FILTER(A: A, B: B="Rabbit", ""))
+
+- Excel Tables are intended to store data where each row is a record, and each column is a field.
+  - Excel Tables are not good for displaying reports. 
+  - One benefit of Tables is that you can reference the contents of the table using Structured References. Rather than referencing Transactions!: A2: A2138, you can simply reference Transactions[Date]. The return value of the structured reference will always contain the entire column of data. The primary benefit of this is that you no longer need to worry about updating references as you add data. If your data extends beyond row 2138, Transactions[Date] will automatically include new rows.
+  - Structured References allow us to refer to data using more natural language.
+  - Tables are also more easily accessible using tools like Power Query. Every Table in a workbook is available as a list of easily filtered records under the Excel. CurrentWorkbook connector. Sheets are not available to PQ within the current workbook.
+  - Some of the things you list as a disadvantage are also advantages. In order to make data easier to work with, you have to adhere to rules. 
+
+- Pros: They're the third greatest thing added to Excel. (The first greatest thing is Power Query, which loves Tables)
+- Cons: They're incompatible with Spill formulas, which is the second greatest thing added to Excel.
+
+- Tables can do distinct count.
+
+- Con- they suck up resources, especially in large worksheets.
+  - I can’t tell you how many times I’ve had someone complain about a spreadsheet taking a long time to calculate formulas and just by converting the data away from tables reduces the file size by 20-30%
+  - And in complicated nested formulas, having the column names instead of column references can make the formula overwhelming.
+- This is my issue. My workbooks become incredibly painfully slow to use for what I need with tables.
+
+- you can not move two or more sheets to a new workbook if they contain tables. This is a ridiculous limitation.
+  - Custom Views are disabled if you have a table
+  - the Subtotals command (far right side of the Data tab) is disabled in a table
+  - they don’t co-exist with spilling Dynamic Arrays
+
+- Tables are great for keeping things clean and organized. Auto-formatting and filters save a ton of time. The main downside is that structured references feel weird at first, but you get used to them pretty quickly.
+
+- It's only advantages, the only reason I have for not using tables is always the data is too small to need it. If I am ever going to need to sort, or if I am going to send the file to someone who may want to sort, it's always going to be a table.
+
+- Mega pron- you get the table into the power query where you can manipulate with it and merge with other tables instead of doing million of tabs with formulas
+- If the data is organized in a table structure, it make us reading, comparing, doing power query, making visuallaization more easier.
+
+- besides the many advantages already mentioned - when using VBA it so much easier to refers to tables.
+
+- Pro: automatically fill a column with a formula
+- Con: no spill formulas, the bane of my existence. Can’t use Hstack, vstack, filter, unique, etc.
+
+- ## 🧩 [What are the Best Practices for Using Named Ranges in Excel? : r/excel](https://www.reddit.com/r/excel/comments/1pg63nx/what_are_the_best_practices_for_using_named/)
 - Referencing named ranges by using the =indirect() function to create dependent data validation lists
 
 - The FAST standard tends to discourage them

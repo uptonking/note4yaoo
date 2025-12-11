@@ -323,7 +323,7 @@ modified: 2023-04-04T22:39:45.442Z
   - Optimized implementation for color-icon-matrix barcodes
   - cimbar is a high-density 2D barcode format. Data is stored in a grid of colored tiles
   - 一般二维码只能容纳 2.9KB 的数据，用来放超链接和文本足够了。libcimbar 开发了一个特殊的压缩和解压算法。可以把小于 33MB 的文件直接压缩到特殊的二维码里，用他们提供的 App 扫码解压即可得到文件。
-# image-ai
+# image-ai 👾
 - https://github.com/upscayl/upscayl /39.3kStar/AGPLv3/202508/ts
   - https://upscayl.org/
   - Upscayl lets you enlarge and enhance low-resolution images using advanced AI algorithms. Enlarge images without losing quality
@@ -334,6 +334,11 @@ modified: 2023-04-04T22:39:45.442Z
     - It uses Real-ESRGAN and Vulkan architecture to achieve this. 
     - Our backend is fully open-source under the AGPLv3 license.
   - https://github.com/upscayl/upscayl-ncnn /AGPL/202507/cpp/c/backend
+
+- https://github.com/karant-dev/AutoRedact /GPL/202512/ts
+  - Client-side, privacy-first image redaction tool. No server, no data leaks
+  - Automatically detects and blurs PII (Emails, IPs, Keys) using local OCR. 
+  - Tech Stack: React, Vite, Tesseract.js v6.
 # more
 - https://github.com/ascorbic/unpic-img
   - This library uses unpic to detect the image CDN, and then uses the CDN's URL API to resize and format images. 

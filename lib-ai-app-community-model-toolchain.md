@@ -90,6 +90,13 @@ modified: 2025-09-16T12:36:12.968Z
 - That’s not correct. You will get the best speed with q4_K_S oder q4_K_M. This is because 3-bit and 2-bit needs more calculations.
   - If memory bandwidth is your bottleneck and not processor speed, then smaller is faster.
 
+- [Is IQ4_XS closer to Q4 or Q3 in terms of quality? : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pk1zpq/is_iq4_xs_closer_to_q4_or_q3_in_terms_of_quality/)
+- it was accepted that IQ4_XS beat all Q3 quants, as well as the legacy Q4_0 quants. Bartowski has a table on every model that he uploads where he mentions that IQ4_XS is comparable in quality to Q4_K_S but smaller.
+
+- All IQ4_XS I've tried were worse than Q4_K_M at creative writing.
+
+- i1 means imatrix, IQ is the quantization type you are asking about, don't mix these concepts up. You can see that anything about about 5 bits with imatrix is getting quite close to max possible accuracy, and imatrix IQ4_something is very good as well.
+
 - ## [AMA with the Unsloth team : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1ndjxdt/ama_with_the_unsloth_team/)
 - What’s your go-to quant for most models? I usually pick Q4_K_XL dynamic, but if I have enough VRAM, is there another Q4 you’d recommend for better accuracy?
   - Yes correct, usually always got for the K_XL quants as they have the best ratios in terms of accuracy/speed/size etc 

@@ -32,6 +32,11 @@ modified: 2023-02-03T05:55:22.102Z
   - Built using Web APIs, this package can be executed with Node.js and on the edge. 
   - The difference to `@vercel/og` is that this package loads the WebAssembly module needed to convert SVG to PNG lazily at runtime and provides a framework agnostic workaround for defining the content of the image using `satori-html`.
 
+- https://github.com/chevereto/chevereto /827Star/AGPL/202512/php
+  - https://chevereto.com/
+  - The mature, battle-tested, high-end, OG self-hosted image and video hosting solution trusted since 2007
+  - Build your own Flickr or Imgur-style media sharing platform with complete control over your content, data, and platform rules.
+
 ## utils
 
 - https://github.com/jshemas/openGraphScraper /MIT/202310/ts

@@ -30,7 +30,15 @@ modified: 2022-12-16T01:57:20.630Z
 
 - ## 
 
-- ## 
+- ## [Someone asked a few weeks ago if a GitHub-style heatmap was possible in Notion… so I tried it with KaTeX : r/Notion](https://www.reddit.com/r/Notion/comments/1pjrczh/someone_asked_a_few_weeks_ago_if_a_githubstyle/)
+  - The heatmap squares are just KaTeX color boxes
+  - Intensity levels are just different KaTeX color props
+  - Daily vs multi-daily logic is literally a count()
+  - Filtering past months without breaking alignment
+  - The final formula is… a monster
+
+- Looks neat, but why are there 42 squares/days for one month?
+  - It’s a fixed 6×7 grid (42 cells), just like GitHub. Months can span up to 6 weeks, so this keeps everything aligned. The extra squares are simply overflow days - and honestly, it just looks cleaner and more balanced this way.
 
 - ## [The pivot table, the spreadsheet's most powerful tool (2020) | Hacker News_202310](https://news.ycombinator.com/item?id=37820877)
 - 
