@@ -274,6 +274,20 @@ modified: 2025-12-11T18:10:23.710Z
   - A WebSocket server that wraps the Claude Agent SDK, allowing real-time bidirectional communication with Claude through WebSockets. 
   - Deploy it as an E2B sandbox and connect via the TypeScript client library.
 
+- https://github.com/musistudio/claude-code-router /23.3kStar/MIT/202512/ts
+  - Use Claude Code as the foundation for coding infrastructure, allowing you to decide how to interact with the model
+  - Model Routing: Route requests to different models based on your needs (e.g., background tasks, thinking, long context).
+  - Supports various model providers like OpenRouter, DeepSeek, Ollama, Gemini, Volcengine, and SiliconFlow.
+  - Switch models on-the-fly within Claude Code using the /model command.
+  - The `activate` command allows you to set up environment variables globally in your shell, enabling you to use the claude command directly or integrate Claude Code Router with applications built using the Agent SDK.
+    - `eval "$(ccr activate)"`
+
+- https://github.com/UfoMiao/zcf /4.7kStar/MIT/202512/ts
+  - http://zcf.ufomiao.com/
+  - Zero-Config Code Flow for Claude code & Codex
+  - supports Claude Code and Codex, with both environments sharing one CLI
+  - API and proxy management: Supports official login, API Key, and CCR proxy three modes, with built-in presets for 302. AI, GLM, MiniMax, Kimi, etc.
+
 ## codex-cli
 
 - https://github.com/openai/codex /29.7kStar/apache2/202506/rust/ts

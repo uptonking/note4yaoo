@@ -161,8 +161,21 @@ modified: 2025-09-01T05:52:34.241Z
   - backend/api: Koboldcpp(包括fe)
   - all-in-one: lmstudio, janai
 
-- lmstudio-xp
+- ollama-pros
+  - ollama实现的api对openai api的兼容性更好，如支持parse
+
+- ollama-cons
+  - mac上模型运行时占用内存很大，4b模型都会占满32gb内存
+  - 不支持mlx
+
+- lmstudio-pros
+  - 模型运行时占用内存比ollama小很多
+  - 对mlx的支持比较完善，而ollama还不支持
+  - 使用本地小模型时，tool call成功率lmstudio比ollama感觉更高
+
+- lmstudio-cons
   - 可以单独更新mlx-engine, 但不可以单独更新llama.cpp
+  - prompt-processing的速度比ollama慢很多, 其实ollama速度也不快
 
 - 自定义模型工具链的优点
   - 后台运行llm、自动切换llm、加入task queue及异常恢复 都需要自定义工具链的支持
@@ -195,13 +208,12 @@ modified: 2025-09-01T05:52:34.241Z
   - 不支持直接使用已有的.safetensors文件
 
 - local-model-features
-  - 
 
 - 
 - 
 - 
 
-# janai-xp
+# 📌 janai-xp
 - 使用ollama或lmstudio的模型api时，需要关闭clash全局代理
   - http://localhost:11434/v1
   - http://localhost:1234/v1
@@ -210,7 +222,7 @@ modified: 2025-09-01T05:52:34.241Z
 - 
 - 
 
-# AionUi
+# 📌 AionUi
 - cons
   - 默认使用gemini-cli, 使用ollama时偶尔会碰到问题
     - 虽然qwen-code支持ollama，但不支持使用配置的apikey
@@ -225,19 +237,58 @@ modified: 2025-09-01T05:52:34.241Z
 
 ## draft-aionui
 
-- chat input 不是富文本
+- chat input 不是富文本, 但支持undo快捷键
 
-- qwen-code支持ollama，但不支持使用配置的apikey
+- 使用claude-code-router全局激活的claude，会提示Authentication required
+- 模型列表不支持手动排序
+
+- 未显示thinking内容，给人感觉很慢
+  - thinking类型的模型不展示thinking内容和状态时，容易误导用户系统故障了
+
+- 
 
 - Supported Formats: Text files, images, code files, etc.
   - 可增加: markdown优化, docx, xlsx, pdf
 
-- 模型列表不支持手动排序
+- 选择文件夹后，不支持取消/删除选择
 
 - switch projects/workspaces
 
 - 设置快捷键
 
+- search in page
+
+- 
+- 
+- 
+- 
+- 
+
+- qwen-code支持ollama，但不支持使用配置的apikey
+
+## dev-xp-aionui
+
+- 💡 本地模型经常读取文件失败, 原因是提示词没写好, 可用的提示词示例: 
+  - show current working directory
+  - summarize file   lib-db-postgresql-docs.md   in current working directory
+  - 比如可根据ai针对第一个问题的回答翔略程度来扩容或缩容第二个问题的提问方式
+
+- 使用本地ollama/lmstudio时，需要更详细更明确的提示词才能让8b模型执行, 4b模型很难成功执行
+  - 特别是4b模型的tool call经常失败，在读文件失败时经常导致agent loop失败
+
+- 
+- 
+- 
+- 
+
+# 📌 claude-code/codex
+- claude-code-router 使用ollama本地模型时，可能提示 
+  - "qwen3-vl:4b-instruct" does not support thinking
+  - think value "high" is not supported for this model "qwen3-vl:4b"
+  - 💡 使用gpt-oss-20b就无问题
+
+- 
+- 
 - 
 - 
 - 

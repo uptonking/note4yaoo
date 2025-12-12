@@ -55,6 +55,8 @@ modified: 2025-03-22T16:10:24.856Z
 - 🐛 cons-local-ai
   - 对计算资源的要求高，否则速度慢或效果差
   - 不同本地api provider实现的逻辑有差异, 有的api只支持ollama而不支持lmstudio
+  - mac设备的prompt-processing速度特别慢, mac studio ultra能加快token生成速度，但context很长prompt很多时，本地的速度太慢了，甚至不能接受
+    - 可通过支持外部大模型api来解决
   - 小模型不够智能
   - 移动端计算能力差, 速度慢, ipad的M系芯片非gpu方案也不快
   - 耗电量大, 对手机端不友好

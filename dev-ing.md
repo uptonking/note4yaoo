@@ -302,6 +302,21 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-to
   - ?
 
+## 1212
+
+- mlx - ValueError: Tokenizer class TokenizersBackend does not exist or is not currently imported.
+  - [Can't load Devstral 2 MLX · Issue · lmstudio-ai/lmstudio-bug-tracker](https://github.com/lmstudio-ai/lmstudio-bug-tracker/issues/1292)
+
+- mlx - AttributeError: 'list' object has no attribute 'keys'
+  - [Tokenizer loading fails for models with v5-style `extra_special_tokens` · Issue · ml-explore/mlx-lm](https://github.com/ml-explore/mlx-lm/issues/661)
+  - The model's tokenizer_config.json has extra_special_tokens as a list, but transformers v4.x expects a dict. transformers v5 changes this field to a list, and some models already use the new format.
+  - Upgrading to transformers v5 (which requires some migration work) would resolve this issue.
+
+- [Bug: Infinite loop caused by "params must have required property 'absolute_path'" on ReadFile tool call · Issue · google-gemini/gemini-cli _202507](https://github.com/google-gemini/gemini-cli/issues/4936)
+  - The gemini-cli tool can enter an infinite loop when the model decides to read a local file. It repeatedly fails to call the internal `ReadFile` tool, citing the error params must have required property 'absolute_path'.
+  - The model acknowledges the error and states its intention to correct the parameter name, but it immediately retries with the same faulty tool call, causing a loop. This continues until the request is halted by the "potential loop was detected" safeguard.
+  - [Track and remediate whem a model enters cognitive loops · Issue · google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli/issues/3929)
+
 ## 1209
 
 - in nodejs, how to use api to delete file to trash bin? is there built-in api, or can you give a best practice for deleting file to trash bin?
