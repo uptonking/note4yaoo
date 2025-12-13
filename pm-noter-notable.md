@@ -172,6 +172,7 @@ modified: 2023-11-28T14:48:45.910Z
   - notebooklm: doc search with citations
   - DeepAnalyze: automatic data analysis; + mermaid
   - 插画复刻: Qwen-Image-i2L, image-to-prompt-to-image, 同时支持浏览comfyui生成图片的元数据、提示词
+  - [GoAmzAI - 个人、团队、企业私有化、运营的AIGC平台解决方案](https://d.goamzai.com/)
 
 - obsidian-mobile, notion-mobile
   - obsidian-open-rewrite compatible with obsidian plugin, 主流插件已达到百万下载

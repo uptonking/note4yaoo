@@ -93,6 +93,16 @@ modified: 2024-01-11T15:57:32.182Z
 
 - ## 
 
+- ## [The Best AI Presentation Tools in 2026 - I tested all of them so you don't have to : r/powerpoint _202512](https://www.reddit.com/r/powerpoint/comments/1pjtkfh/the_best_ai_presentation_tools_in_2026_i_tested/)
+  - How I tested: Same prompt across all tools, judged on design quality, how much editing I had to do after, and whether the output looked like a template explosion or something I'd actually present.
+  - Need quality + speed: Alai
+  - Sharing async (not presenting live): Gamma
+  - Need templates for everything: Canva
+
+- As someone who spent their 10000 hours making slides - the short answer is use gpt, Gemini, Claude — for your bullets content, and copy and paste into existing templates .. this is the most accurate way to
+
+- I’m the co-founder of Slidely AI (https://slidely.ai), we ask you to upload your past pptx file as part of the flow and then our AI uses your company templates, brands, colors etc
+
 - ## [finally found a way to edit notebooklm slides lol : r/notebooklm _202512](https://www.reddit.com/r/notebooklm/comments/1pbeq8d/finally_found_a_way_to_edit_notebooklm_slides_lol/)
   - i tried all the dumb hacks — copy/paste text, ocr screenshots, whatever. all super janky.
   - i did try pdf gear + a few others. the issue is notebooklm treats most stuff as flattened images, so you can’t actually edit or realign the visuals. it’s basically one big baked slide.

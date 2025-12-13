@@ -116,7 +116,22 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
-- ## 
+- ## 🤔 [How to make LLM output deterministic? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1plbe8i/how_to_make_llm_output_deterministic/)
+  - I am working on a use case where i need to extract some entities from user query and previous user chat history and generate a structured json response from it. The problem i am facing is sometimes it is able to extract the perfect response and sometimes it fails in few entity extraction for the same input ans same prompt due to the probabilistic nature of LLM. I have already tried setting temperature to 0 and setting a seed value to try having a deterministic output.
+  - does setting seed value really work? In my case it seems it didn't improve anything.
+
+- Because of certain GPU optimizations, LLMs are technically random even at temperature = 0 IIRC. llama.cpp has a similar issue. And you can run into something similar in training as well for a given training seed unless you configure some knobs if I'm not misremembering.
+
+- Here's a really good blog post around LLM determinism: https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/
+  - If you were to host your LLM locally, both vLLM and SGLang have done work on providing deterministic / batch invariant inference
+
+- change your mindset, when you work with llm it is non-deterministic, whatever you do there is still tiny chance that it can't deliver deterministic response. always handling the non-deterministic part is crucial in all llm base application
+  - for me personally, try to prompt the model to wrap the anser around xml tag is quite reliable like `<Answer>what ever llm response</Answer>` and going from there
+
+- Literally impossible to make them fully deterministic because input itself affects the inference matrix.
+
+- The problem with using cloud LLM APIs is that your requests will get batched with others which introduces nondeterminism, even with temperature sampling disabled.
+  - It’s relatively easy to achieve this if you run a model yourself and set the batch size = 1, however.
 
 - ## [Claude Skills are just .cursorrules, change my mind : r/ClaudeAI](https://www.reddit.com/r/ClaudeAI/comments/1oj109n/claude_skills_are_just_cursorrules_change_my_mind/)
 - It's all just prompt really. Basically an LLM only has prompt and output.

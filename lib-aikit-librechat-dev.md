@@ -94,7 +94,8 @@ modified: 2025-09-01T05:52:34.241Z
   - 类似lmstudio的模型市场, 但支持modelscope, 同时自动扫描本地已有的ollama/lmstudio模型
   - 用户自己上传的pdf，就类似词典软件的词库
   - llama.cpp ui + mlx/vllm
-- 🏘️ 可参考各大 coding-agent-cli 的实现, 有第三方开发者在cli上实现web/electron/tauri
+- 🏘️ 参考主流厂商 coding-agent-cli 的实现, 有第三方在cli上实现web/electron/tauri, 如aionui
+  - 采用aionui封装cc/gemini-cli的思路来封装llama.cpp/mlx
   - 同时需要支持 openai-compatible api, 这样方便低性能的电脑/客户端使用
 
 - model-api作为产品的非主要特性时, 没必要对标lm-studio/ollama将api暴露出去
@@ -118,7 +119,8 @@ modified: 2025-09-01T05:52:34.241Z
 - oauth登录及退出登录的交互及ui需要针对框架定制
   - authentik切换到keycloak后, social login button的文字及图标未改变，但登录逻辑已顺利改变
 
-- 
+- 聊天类软件都可考虑自动添加标签/分组
+
 - 
 - 
 - 
@@ -202,93 +204,25 @@ modified: 2025-09-01T05:52:34.241Z
   - janai, Oobabooga
 
 - gui封装后端逻辑的参考
-  - comfyui, invokeai
-
-- janai-xp
-  - 不支持直接使用已有的.safetensors文件
+  - comfyui, invokeai, aionui
 
 - local-model-features
 
+- lmstudio for image generation
+
+- 
 - 
 - 
 - 
 
 # 📌 janai-xp
+- cons
+  - 不支持直接使用已有的.safetensors文件
+
 - 使用ollama或lmstudio的模型api时，需要关闭clash全局代理
   - http://localhost:11434/v1
   - http://localhost:1234/v1
 
-- 
-- 
-- 
-
-# 📌 AionUi
-- cons
-  - 默认使用gemini-cli, 使用ollama时偶尔会碰到问题
-    - 虽然qwen-code支持ollama，但不支持使用配置的apikey
-
-- features
-  - ?
-
-- All conversations are saved locally:
-  - macOS: ~/Library/Application Support/AionUi/
-  - Windows: %APPDATA%/AionUi/
-  - Linux: ~/.config/AionUi/
-
-## draft-aionui
-
-- chat input 不是富文本, 但支持undo快捷键
-
-- 使用claude-code-router全局激活的claude，会提示Authentication required
-- 模型列表不支持手动排序
-
-- 未显示thinking内容，给人感觉很慢
-  - thinking类型的模型不展示thinking内容和状态时，容易误导用户系统故障了
-
-- 
-
-- Supported Formats: Text files, images, code files, etc.
-  - 可增加: markdown优化, docx, xlsx, pdf
-
-- 选择文件夹后，不支持取消/删除选择
-
-- switch projects/workspaces
-
-- 设置快捷键
-
-- search in page
-
-- 
-- 
-- 
-- 
-- 
-
-- qwen-code支持ollama，但不支持使用配置的apikey
-
-## dev-xp-aionui
-
-- 💡 本地模型经常读取文件失败, 原因是提示词没写好, 可用的提示词示例: 
-  - show current working directory
-  - summarize file   lib-db-postgresql-docs.md   in current working directory
-  - 比如可根据ai针对第一个问题的回答翔略程度来扩容或缩容第二个问题的提问方式
-
-- 使用本地ollama/lmstudio时，需要更详细更明确的提示词才能让8b模型执行, 4b模型很难成功执行
-  - 特别是4b模型的tool call经常失败，在读文件失败时经常导致agent loop失败
-
-- 
-- 
-- 
-- 
-
-# 📌 claude-code/codex
-- claude-code-router 使用ollama本地模型时，可能提示 
-  - "qwen3-vl:4b-instruct" does not support thinking
-  - think value "high" is not supported for this model "qwen3-vl:4b"
-  - 💡 使用gpt-oss-20b就无问题
-
-- 
-- 
 - 
 - 
 - 

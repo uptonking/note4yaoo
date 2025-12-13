@@ -247,11 +247,12 @@ use vanilla html/css/javascript to create a simplistic personal profile landing 
 use vanilla html/css/javascript to create a personal profile landing page: homepage shows a cool welcoming animation, then shows 4 example personal projects, then a simple get in touch form below it
 use react to create a homepage shows a list of frontend frameworks like react/vue/angular, when clicking the framework, navigate to the route to show its introduction
 
-- provide a comprehensive overview of this project. analyze the project architecture and primary user journey use cases. then find some important source code to explain the core architecture and data flow.
+- You are a professional typescript/nodejs fullstack developer.
+  - provide a comprehensive overview of this project. analyze the project architecture and primary user journey use cases. then find some important source code to explain the core architecture and data flow.
   - i want more details about rag ingest/chunking/embedding/persistence logic
   - how to refactor related source code to support more vector db including qdrant/chromadb/pgvector? show me some code and explain the architecture migration
 
-- You are a professional typescript/nodejs fullstack programmer and a system administrator.
+- You are a professional typescript/nodejs fullstack developer and a system administrator.
   - I want to run this project fully locally without docker and nginx for local development and debugging.
   - please read setup-related files like docker-compose.yaml and README.md, and tell me step by step how to configure and run frontend/backend locally.
   - i have already installed python/uv/npm/chromadb/Ollama/postgresql/mysql/redis on my local macos.
@@ -301,6 +302,13 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
   - ?
 - dev-to
   - ?
+
+## 1213
+
+- tailwindcss vs UnoCSS, which one should i use for my reactjs/vuejs project?
+  - Tailwind 自 v3.0 起，其内置的 JIT (Just-in-Time) 编译器 成为核心。它会扫描你的项目文件，按需生成所需的 CSS，从而显著减小了生产环境下的文件体积
+  - Pick UnoCSS if you want a tiny shipped CSS bundle, blazing dev HMR and on-demand utility generation (especially with Vite), and the ability to compose/customize whatever utility set you like.
+  - Benchmarks show UnoCSS is 2–5x faster than Tailwind in build scenarios
 
 ## 1212
 

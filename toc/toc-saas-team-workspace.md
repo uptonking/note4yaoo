@@ -216,6 +216,13 @@ modified: 2023-02-07T17:38:05.336Z
   - Klarity is an issue tracker web application built with MySQL, React, TypeScript, Node.js, Express, and Tailwind CSS. 
   - It provides a platform for managing and tracking project issues, facilitating collaboration and organization within teams
   - 依赖express、sequelize.v6、mysql2、jsonwebtoken、@headlessui/react、@reduxjs/toolkit、recharts2、tailwind-merge
+
+- https://github.com/chrisvel/tududi /2kStar/MIT/202512/ts
+  - https://tududi.com/
+  - Self-hosted task management that combines the simplicity of personal with the power of professional project organization
+  - Subtasks: Break down complex tasks into smaller, manageable subtasks with progress tracking and seamless navigation.
+  - Recurring Tasks: Comprehensive recurring task system with intelligent parent-child relationships
+  - New Inbox flow so you can quickly dump tasks and process them later into the right area/project.
 # user/permissions/scrum/Inventory
 - https://github.com/pure-admin/pure-admin-backend /ts/echarts
   - pure-admin官方后端

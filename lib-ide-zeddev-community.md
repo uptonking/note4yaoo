@@ -27,7 +27,27 @@ modified: 2024-08-24T16:14:33.275Z
 - ##
 
 - ##
+# discuss-news
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🆚 We just shipped v0.216.0! Word-level diffing just landed.
+- https://x.com/zeddotdev/status/1998804461909639384
+  - You can now view the git commit history of any file. Select the `File History` option in the right-click editor context menu to open it.
+
+- Character diff when though? @code to @zeddotd here. The character diff makes things much more clear.
+  - There's currently a PR for AST-based diffing up for review
+
+- Split diff
+  - We're working on it
 # discuss
+- ##
+
+- ##
+
 - ##
 
 - ##

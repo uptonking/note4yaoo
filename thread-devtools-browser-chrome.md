@@ -25,6 +25,41 @@ modified: 2023-02-20T19:41:08.506Z
 
 - ## 
 
+- ## 
+
+- ## [不允许打开开发者工具？我偏要 ](https://linux.do/t/topic/115760)
+  - 首先发现网站屏蔽了 F12、右键等打开开发者工具的快捷键，使用浏览器的更多工具可破
+  - 打开之后发现当前页面会跳转到另一个禁止打开 dev tool 的页面，然后原来页面的内容清空掉了。通过 Initiator 分析一下请求链，发现是通过 app-XXXX.js 调用的。
+  - 通过浏览器直接请求 js 资源，拿到之后进行格式化，方便静态分析。
+  - 通过搜索 devtool，发现有一段这样的代码，看到了一个 GitHub 相关的链接，点开看了一下，是个开源的禁用浏览器打开开发者工具的一个仓库。到这里的话其实可以搜一下这个项目看下怎么破解了，不过我选择简单暴力的方式：直接把这段注释了。
+  - 这里通过浏览器的功能，直接重写响应，记得保存。改的时候发现还有一个清空控制台的设置项，一并注了
+
+- https://github.com/theajack/disable-devtool /MIT/ts
+  - Disable web developer tools from the f12 button, right-click and browser menu
+
+- 尊重公益大佬，这贴的意思就只是说靠前端防不住这个，做好后端限制吧
+
+- 安全方面还是得在后端做，前端能防的实在有限
+
+- GoAmzAI 授权 2400 定制5000+
+
+- 只禁止请求 disable-devtool/404.html 这个 url
+
+- 一样的，先打开控制台，记得勾选上 Preserve log，就能看到是怎样跳转的白页了
+  - 控制台勾一下 Preserve log，不然跳转新页面，原来页面的请求都会被清掉
+
+- 首先 firefox 不好防护这个。 我有个想法，那油猴注入一遍，强制开
+- firefox 拦截请求 简单快捷
+
+- 可以先开一个空白页，并打开控制台，再输入地址。
+
+- 在浏览器直接打开这个 js 地址，然后再重写, 因为原来的那个请求在跳转之后会被清空，直接打开 js 不会清空
+
+- 有个工具叫抓包软件，直接挂代理抓包就完了，比这个省事多了
+
+- 看看浏览器上面，地址栏下面是不是让你授权本地文件夹的访问权限。这个重写会保存一份 js 文件到本地，然后请求这个网站时候，不走网站返回的 js，直接取本地的 js。
+- 无限 debugger 使用类似的方法 [JS 逆向：常见无限 Debugger 以及绕过方法 - 腾讯云开发者社区 - 腾讯云] （抓包过滤，重写内容，覆盖方法），js 代码混淆和控制流 都是 AST 转换后进行替换和修改实现。
+
 - ## New in @ChromeDevTools : Accurately emulate CPU performance of a low/mid tier phone with Automatic CPU throttling calibration
 - https://x.com/addyosmani/status/1893201558952911200
   - This feature calculates slow-downs for your specific device. Wanted this for years! We just shipped it.

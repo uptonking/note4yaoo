@@ -906,6 +906,47 @@ modified: 2025-08-16T14:12:24.416Z
 
 - ## 
 
+- ## 
+
+- ## [What makes Z-image so good? : r/StableDiffusion _202512](https://www.reddit.com/r/StableDiffusion/comments/1pldusz/what_makes_zimage_so_good/)
+  - Question i had was what makes Z-image so good? I know it can run efficiently on older gpus and generate good images but what prevents other models from doing the same.
+  - tldr : what is Z-image doing differently?
+
+- It uses S3(Scalable Single-Stream)-DiT method as opposed to cross attention in terms of training the text encoder.
+  - Essentially both the text encoder and the image model is trained at the same time. So it understand context better than the previous models. The previous models use a "translation" of the caption using the text encoder, this model doesn't translate, it just understands it.
+  - When I said at the same time, I meant they used a Single Stream as opposed to Dual Stream. The LLM is still exactly the same.
+  - As a trade off, it doesn't do well with tags because the text encoder now relies on probability and sequence of words.
+  - What are the probability of the sequence "a girl wearing a white dress dancing in the rain" as opposed to the probability of "1girl, white dress, rain, dancing"
+  - The text encoder may understand the tagging but the sequence of the natural language has higher probability, so it understands it better
+- From paper the text encoder is frozen during the training and I did try to text encoder as standard llm it works fine, so proven it's a off shelf qwen models
+
+- Well for one - it has an actual text encoder, compared to older SD. Z-Image uses a small LLM for understanding text and passing such "understanding" (in a form of vectors) to the diffusion model. Previous models (like SD-based) couldn't understand text as much, so the CLIP encoders had to rely on tags.
+  - And since Z-Image is relatively small (10GB for complete FP8 model with bundled text encoder and VAE, compared to 6GB for the same but FP16 SDXL with everything), it gives us hope that SDXL-based tunes will no longer be used and instead we will get a much better base: Z-Image.
+
+- Tech stuff aside, I'd have to say it's one of the only models that comes close to doing what your asking for on the first try...not what IT thinks you're asking for after 20 tries.
+
+- [Looking for clarification on Z-Image-Turbo from the community here. : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1pl8yzr/looking_for_clarification_on_zimageturbo_from_the/)
+- in this order uncensored, prompt adherence, speed
+
+- It's photorealistic with very little processing power and excellent prompt adherence. My only issue is that Loras made for ZiT are a little inflexible (in my experience).
+- It also tends to produce the same image with the same prompt regardless of seed. The model is too "stable", which can be bad if you want to explore new concepts and expect the model to hallucinate a bit.
+  - There are a few ways around this, but the one I use the most is to use a SDXL or 1.5-based model for the first pass, then hand it off to Z for image-to-image. With a high enough denoise on Z, you get the understanding and quality of Z, with the variety of the other model. 0.75-0.8 denoise strength seems to work well.
+
+- Z-Image's "nsfw" capabilities are laughable. If you explore the loras available on civitai, male genitals are straight from the SD 1.5 days. They are COMPLETELY censored, and as such, you can train loras and bring these concepts back to the model. My lora works very well compared to the others, but only makes BBCs.
+  - For most normal stuff, yes, the model is great and definitely a step up compared to SDXL, but Chroma is still a better option and takes slightly longer to generate, with proper anatomy and fewer "same" images.
+
+- It can do excellent eurocomic style art and other lineart-based artistic styles with no glitches and perfect anatomy. Even for creatures (e.g. a wolf). Though unfortunately, it has no native idea who Moebius / Jean Giraud was.
+
+- ## [converted z-image to MLX (Apple Silicon) : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1pkkhn1/converted_zimage_to_mlx_apple_silicon/)
+  - As you know, the pipeline consists of a Tokenizer, Text Encoder, VAE, Scheduler, and Transformer. For this project, I specifically converted the Transformer—which handles the denoising steps—to MLX
+  - I’m running this on a MacBook Pro M3 Pro (18GB RAM). • MLX: Generating 1024x1024 takes about 19 seconds per step.
+
+- Hmm, standard (bf16) z-image on my M4 is much faster. About 6s/it on 1024x1024. What version of pytorch are you running? Severe performance degradation from v2.8.0 and newer. I am running 2.7.1. And cross-quad attention are faster than pytorch attention. (Comfyui)
+
+- I use z-image-studio, Q4 model with MPS on mac, got around 6~7s/step.
+
+- There's mflux for z imagr turbo support, the performance wise, mlx is around 25% faster since the Diffusion model are more compute bounded.
+
 - ## 💡 [Zimage is nice but it gives me very little varation. : r/comfyui _202512](https://www.reddit.com/r/comfyui/comments/1pdu5d6/zimage_is_nice_but_it_gives_me_very_little/)
   - I’ve been experimenting with Z image and really like the overall quality and prompt following, but I’m running into a strange issue: I get very little variation between generations. I mainly generate people, and unless I drastically change my prompt, face, scene and overall composition stay almost identical every time.
   - Seed is set to randomize. Workflow is from ComfyUI templates, Z-Image-Turbo Text to Image.

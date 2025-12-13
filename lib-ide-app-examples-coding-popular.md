@@ -394,6 +394,10 @@ modified: 2025-12-11T18:10:23.710Z
   - [Open AI API compatible ?  ](https://github.com/google-gemini/gemini-cli/discussions/1974)
     - At this time, we're optimizing Gemini CLI for Gemini models, and not building direct support for other LLM providers.
     - The latest release of `LiteLLM` supports gemini cli. So you can configure a local proxy, configure any model providers you want, and then use them in Gemini CLI. Works great
+
+- https://github.com/iOfficeAI/aioncli /apache2/202512/ts
+  - open-source AI agent that brings the power of Gemini directly into your terminal
+
 - https://github.com/vybestack/llxprt-code /202510/ts
   - open-source multi-provider (including local) fork of gemini-cli. 
   - a powerful fork of Google's Gemini CLI, enhanced with multi-provider support and improved theming.

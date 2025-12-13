@@ -566,7 +566,8 @@ sudo systemctl start minidlna
   - [紅葉](https://net.redleaf.cloud/dashboard)
     - 可用性比红杏差很多
     - 每月续期
-  - 🌹 [宝可梦加速器](https://web1.go52pokemon.com/)
+  - 🌹 [宝可梦加速器](https://love.go52pokemon.com/)
+    - https://web1.go52pokemon.com/
     - [宝可梦机场 关于免费线路升级通知 ](https://linux.do/t/topic/1063626)
     - L站每月发放兑换码
     - 美区经常不可用
@@ -586,6 +587,7 @@ sudo systemctl start minidlna
     - 每月30.00 GB
     - 每月手动更新
     - 延迟低
+    - nicejiasufree
   - [榴莲加速器](https://www.liulianvpn.org/)
     - 100G/月
   - [Free Cloud](https://bento.me/freecloud)

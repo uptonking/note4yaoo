@@ -484,6 +484,24 @@ modified: 2025-08-23T11:43:35.904Z
   - A web application and a command-line interface for the Z-Image-Turbo text-to-image generation model (Tongyi-MAI/Z-Image-Turbo).
   - Utilizes the high-quality Tongyi-MAI/Z-Image-Turbo model via diffusers.
   - [Should I change to a quantized model of z-image-turbo for mac machines? : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1pdz0ob/should_i_change_to_a_quantized_model_of/)
+  - [Acceptable performance on Mac : r/ZImageAI](https://www.reddit.com/r/ZImageAI/comments/1pf5fce/acceptable_performance_on_mac/)
+    - On my MBP of M4 Pro, 48G, I get such results (with q4 models, 7 steps):
+    - 512x512: 21s
+    - 768x768: 43s
+    - 1024x1024: 102s
+    - RTX 5080. Just checked: a 1024x1024 took 7 seconds (euler simple, 9 steps, cfg 1)
+
+- https://github.com/xdrshjr/ZImage-WebUI /apache2/202512/python/ts
+  - 一个完整的 AI 图像生成系统
+  - Backend Service: Flask-based Z-Image-Turbo model API service providing image generation endpoints
+  - Frontend Application: Modern web application built with Next.js 14, providing an elegant user interface
+  - The system adopts a frontend-backend separation architecture, supporting task queue management, real-time status tracking, batch generation, and other features suitable for production environment deployment.
+  - The system includes an AI-powered presentation generator that creates visually appealing, content-rich slides from textual input using Python and LangGraph.
+  - 依赖Diffusers
+  - [[OpenSource] WebUI for Z-Image - Production-Ready Frontend + Backend System : r/ZImageAI](https://www.reddit.com/r/ZImageAI/comments/1pklexw/opensource_webui_for_zimage_productionready/)
+    - ComfyUI objectively does offer more functionality and flexibility
+    - I freaking hate the complexity of Comfy, as do many. Many people will use ops tool, me included.
+    - This but with inpainting
 
 - https://github.com/markfulton/NanoBananaEditor /521Star/AGPL/202509/ts/inactive
   - Nano Banana image generator and editor application.

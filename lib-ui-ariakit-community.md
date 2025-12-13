@@ -42,6 +42,26 @@ modified: 2023-06-22T05:33:12.658Z
 - ## 
 
 - ## 
+# discuss-ui-components/shadcn
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Introducing shadcn/create – Build your own shadcn/ui _20251213
+- https://x.com/shadcn/status/1999530415653113871
+  - Customize Everything. Pick your component library, icons, base color, theme, fonts and build something that doesn’t look like everything else.
+  - 基于官方方案的定制，是否存在vendor lockin的问题
+  - Now available for Next.js, Vite, TanStack Start and v0.
+  - From the very first commit, the goal of shadcn/ui has been to give you solid defaults: spacing, color tokens, animations, accessibility, and let you take it from there.
+  - Start with a component library: Radix or Base UI.
+  - We rebuilt every component for Base UI, keeping the same abstraction. They are fully compatible with your existing components, even those pulled from remote registries.
+  - Your config doesn’t just change colors, it rewrites the component code to match your setup. Fonts, spacing, structure, even the libraries you use, everything adapts to your preferences. 
+  - The new CLI takes care of it all.
+
+- when ark-ui
+- Please consider adding support for react-aria
 # discuss-baseui
 - ## 
 

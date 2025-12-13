@@ -78,6 +78,18 @@ modified: 2025-03-22T18:23:37.602Z
   - 只依赖react
   - 画板元素都是svg元素
 
+- https://github.com/typsusan-zzz/canvas-drawing-editor /496Star/MIT/202512/ts/canvas/NoDeps
+  - https://typsusan-zzz.github.io/canvas-drawing-editor/
+  - https://typsusan-zzz.github.io/canvas-drawing-editor/demo.html
+  - 强大的 Canvas 画布编辑器 Web Component，零依赖，支持 Vue 2/3、React、Angular 和原生 HTML
+  - 图片支持 - 导入和编辑图片，支持亮度/对比度/模糊等滤镜
+  - 撤销/重做 - 完整的历史记录支持（Ctrl+Z / Ctrl+Y）
+  - 图层管理 - 图层上移/下移/置顶/置底，可见性和锁定控制
+  - 更多形状 - 星形、心形、三角形、菱形、贝塞尔曲线
+  - 富文本 - 支持部分加粗、部分改色、部分斜体
+  - 移动端支持 - 单指拖拽、双指缩放/旋转、长按选择、响应式布局
+  - 轻量级 - gzip 后约 33KB
+
 - https://github.com/gezilinll/blitz /202404/ts/vue
   - [Blitz：可以实时聊天的多人协同白板 _202307](https://zhuanlan.zhihu.com/p/643903971)
     - 无限画布 目前我是直接使用 Pixi 作为渲染引擎，因此只需要将视图中的 传递给 Pixi 的 Application 即可

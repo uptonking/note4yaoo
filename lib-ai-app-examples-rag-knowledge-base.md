@@ -532,6 +532,23 @@ modified: 2025-11-30T17:27:16.720Z
   - A web widget integration is also available to embed the assistant in your website.
   - After adding a source, documents will be synced automatically. You can monitor the sync process through the /tasks endpoint.
 # rag-fwk
+- https://github.com/run-llama/semtools /1.5kStar/MIT/202511/rust/ts
+  - Semantic search and document parsing tools for the command line
+  - A collection of high-performance CLI tools for document processing and semantic search, built with Rust for speed and reliability.
+  - parse - Parse documents (PDF, DOCX, etc.) using, by default, the `LlamaParse` API into markdown format
+  - search - Local semantic keyword search using multilingual embeddings with cosine similarity matching and per-line context matching
+  - ask - AI agent with search and read tools for answering questions over document collections (defaults to OpenAI, but see the config section to learn more about connecting to any OpenAI-Compatible API)
+  - By default, parse uses LlamaParse as a backend. search and workspace remain local-only. ask requires an OpenAI API key.
+  - Multi-format support for parsing documents (PDF, DOCX, PPTX, etc.)
+  - Fast semantic search using model2vec embeddings from minishlab/potion-multilingual-128M
+  - 🔀 Concurrent processing for better parsing performance
+  - 📡 roadmap
+    - More parsing backends (something local-only would be great!)
+  - https://x.com/jerryjliu0/status/1999163155898069206
+    - We made a simple cli command `ask` which lets you ask questions over any arbitrary folder in your filesystem. 
+    - It's a specialized agent that does super-efficient indexing/search. Can natively help you parse all your pdfs/powerpoints/word docs.
+    - You can also plug it into Claude Code to give it an efficient way to query your filesystem for context, without polluting the context window with a ton of raw file text. 
+
 - https://github.com/phbst/tinyRAG /202409/jupyter/inactive
   - 全手写的一个RAG应用。Langchain的大部分库会很方便，但是你不一定理解其中原理，所以代码尽可能展现基本算法，主打理解RAG的原理
 

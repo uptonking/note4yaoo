@@ -111,6 +111,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 基于dnd的方案偏前端，后端一般很难定制和scale，会受限于平台提供的组件和工具
   - ✏️ ai修改文档的方案 fast-apply
   - 偏展示型的项目考虑采用ai-coding的思路来更新ui，如sandpack/react-live+ai，更灵活
+  - 使用AI gateway 来验证客户端的有效性, 避免被2api滥用
 - 📡 roadmap
   - coding不适合同时编辑多个文件，但同时执行多个project的任务存在需求，特别是在本地硬件资源有限的条件下
 
@@ -326,7 +327,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 用户较多，有提供vscode插件无法使用的解决方案
   - [Code Router](https://api.codemirror.codes/), 无法签到和更多额度
     - 支持 Claude Code & CodeX
-  - 📌 [b4u API](https://b4u.qzz.io/), 每日转盘
+  - 📌 [b4u API](https://b4u.qzz.io/console), 每日转盘
     - 会不会增加其他模型: 不会，本站专注于Claude
     - 支持工具调用、上下文 128K+、支持 RooCode，不推荐接入 ClaudeCode
     - 普通用户：每次 1 刀、RPM=10
@@ -365,12 +366,15 @@ modified: 2025-03-22T16:10:24.856Z
     - 无调用频率限制
     - 支持gpt5,claude,gemini
     - 部分模型倍率很高，可选按次计算版本, 如claude
-  - [WONG公益站](https://wzw.de5.net/console), 每日签到
+  - [WONG公益站](https://wzw.de5.net/console), 每日签到, cc
     - [WONG公益站](https://newapi.netlib.re/)
     - rpm为30
     - 高效连接 Claude Code CLI
+  - [无言AI](https://aiai.li/panel), 每日签到
+    - 支持cc
   - [我爱996公益](https://529961.com/)
     - 仅限 L 站 2 级以上用户注册
+    - [我爱996公益附属站 - 每日签到领取奖励](https://hub.529961.com/)
     - [【公益站我爱996一次】测试上线已接入LinuxDo ](https://linux.do/t/topic/1147448)
   - [FovtAPI](https://api.voct.top/console), 论坛发码
     - [NewAPI签到系统](https://gift.voct.top/), 已失效
@@ -391,7 +395,7 @@ modified: 2025-03-22T16:10:24.856Z
     - API调用频率限制为 10 RPM
     - gpt-load 作者
     - [【T佬公益】TBAI公益站主贴-爽用Gemini|OpenAI|DeepSeek模型 ](https://linux.do/t/topic/683726)
-  - [VoAPI公益站](https://demo.voapi.top/), 每日签到
+  - [VoAPI公益站](https://demo.voapi.top/), 每日签到, 
     - [【首发更新】全新API分发和管理系统-VoAPI ](https://linux.do/t/topic/218662)
     - 曾经的帐号已注销，需要重新注册
   - [~~Cats API~~](https://catsapi.com/), 已关闭
@@ -416,6 +420,11 @@ modified: 2025-03-22T16:10:24.856Z
     - https://pro.privnode.com/
     - [【Cone 公益站】找个佬共同维护  ](https://linux.do/t/topic/1035525)
     - [Cone 公益站更新 ](https://linux.do/t/topic/1002152)
+  - [YesCode](https://co.yes.vg/)
+    - [YesCode test](https://cotest.yes.vg/)
+    - [【YesCode公益测试站】Claude Code/Codex 长期免费测试 ](https://linux.do/t/topic/964164)
+  - [duckcoding](https://free.duckcoding.com/)
+    - [DuckCoding Az-CC，单独开启公益站，只允许L站注册 ](https://linux.do/t/topic/1308120)
   - [cone Veloera Zone](https://zone.veloera.org/)
     - 此服务完全免费提供，并仅在 LINUX DO 社区宣传
     - 不定期删除 0 额度，0 消耗，且注册超过一周的用户。
@@ -449,9 +458,6 @@ modified: 2025-03-22T16:10:24.856Z
   - [TudouAPI](https://www.tudou.chat/), 签到复杂
     - 如果账户连续3天以上都是只有5-10条， 会判定为屯额度账号签到失败
     - 支持claude, gpt
-  - [YesCode](https://co.yes.vg/)
-    - [YesCode test](https://cotest.yes.vg/)
-    - [【YesCode公益测试站】Claude Code/Codex 长期免费测试 ](https://linux.do/t/topic/964164)
   - [Becode 公益站](https://becode.be-a.dev/)
   - [88code - 企业级Claude Code/Codex中转](https://www.88code.org/)
     - 添加客服领取 10 美元免费额度, 每个用户仅限领取一次
@@ -482,6 +488,7 @@ modified: 2025-03-22T16:10:24.856Z
     - https://github.com/BingZi-233/check-cx /MIT/ts
 
 - image-gen 🖼️
+  - modelscope对部分模型提供了免费生图的额度, 如z-image-turbo
   - [小白生图 - AI Image Generator](https://catsapi.com/)
   - [RyanVan Z-Image | AI 图像生成](https://ryanai.org/)
     - 每天5张免费
@@ -508,6 +515,7 @@ modified: 2025-03-22T16:10:24.856Z
     - https://github.com/VoAPI/VoAPI /仅提供docker-compose.yml
     - [AI对话 - GoAmzAI Plus](https://demo6.goamzai.com/chat)
     - [对话 - GoAmzAI Pro](https://prodemo6.goamzai.com/chat)
+    - [goamzai已集成LinuxDO Connect，演示站开放给L佬们使用 _202406](https://linux.do/t/topic/122462)
     - [【公益AIGC】最适合日常使用的公益站，高级AI工具一网打尽 ](https://linux.do/t/topic/1175890/37)
       - volo api 吧，基于 new api 改的，但是 v1 开始好像就完全重写了
       - VoAPI 一直是闭源的，甚至好像只放出 Docker 的部署方式，连编译后的可执行文件都不发布的，截止到我最后一次看时是这样的，不知道后续有没有改变和有没有收费计划
