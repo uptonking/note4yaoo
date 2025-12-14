@@ -1632,6 +1632,10 @@ modified: 2025-08-23T11:43:35.904Z
 
 - https://github.com/cmdr2/stable-diffusion-ui
   - The easiest way to install and use Stable Diffusion on your computer.
+
+- https://github.com/light-and-ray/Minimalistic-Comfy-Wrapper-WebUI /AGPL/202512/python/js
+  - This is a UI extension for ComfyUI adding an additional inference focused UI, that dynamically adapts to your workflows
+  - It's now available in ComfyUI Registry so you can install it from ComfyUI Manager
 # devops
 - https://github.com/Tavris1/ComfyUI-Easy-Install /170Star/MIT/202508/bat
   - Portable ComfyUI for Windows, macOS and Linux 
@@ -1822,6 +1826,10 @@ modified: 2025-08-23T11:43:35.904Z
   - https://github.com/CompVis/stable-diffusion
   - A latent text-to-image diffusion model
 
+- https://github.com/camenduru/TostUI /202512/ts
+  - This project is a collection of Docker-based web user interfaces designed to easily run various state-of-the-art generative AI models locally. 
+  - It simplifies the deployment of these AI tools by packaging them into ready-to-use containers with accessible front-end controls.
+
 ## image-gen-api/router
 
 - https://github.com/shulinbao/stable-diffusion-api-to-openai /AGPL/202411/python/inactive
@@ -1930,6 +1938,11 @@ modified: 2025-08-23T11:43:35.904Z
   - A visual prompt management system for AI image generation. 
   - Organize, browse, and manage artistic style prompts with visual references in an intuitive interface.
   - [PromptForge EASY- EDIT - SAVE - VIEW- SHARE (PROMPTS) : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1pf7yjv/promptforge_easy_edit_save_view_share_prompts/)
+
+- https://github.com/BesianSherifaj-AI/PromptCraft /apache2/202512/python/js
+  - A visual prompt management system for AI image generation. 
+  - Organize, browse, and manage artistic style prompts with visual references in an intuitive interface.
+  - [PromptCraft(Prompt-Forge) is available on github : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1plycql/promptcraftpromptforge_is_available_on_github/)
 # more
 - https://github.com/Comfy-Org/registry-backend /GPL/202502/go
   - https://registry.comfy.org/

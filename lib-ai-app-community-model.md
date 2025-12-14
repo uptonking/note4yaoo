@@ -541,7 +541,16 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
-- ## 
+- ## [Senior engineer struggles with learning LLMs foundations : r/LLMDevs _202512](https://www.reddit.com/r/LLMDevs/comments/1plxnq0/senior_engineer_struggles_with_learning_llms/)
+  - I've been using ollama and openai to create some interesting side projects and to learn more about LLMs, but I think I'm hugely lacking solid foundations. Please provide me with a structure learning material for a senior engineer with some knowledge of LLMs, thanks
+- Andrej Karpathy’s series on YouTube and Stanford’s CME course on LLMs and Transformers which is published to YouTube for free.
+  - I had a quick look at the Stanford's course and I think it's exactly what I needed, thanks
+
+- You need to learn four critical things
+  - Your agent's core product logic is the prompt/instructions you send to an LLM. You will be spending time here with domain experts too to construct good instructions so that the model aligns to your policy. There is no magic bullet. You iterate and evaluate until you are satisfied. Making investments in evals is worth it.
+  - If you want to build an agentic application, then you need to expose tools to different models. These are essentially APIs that you have today, both internal or external which the model will instruct you to run and return its results as string. 
+  - There are two agentic loops, one is called the inner loop where you agent interacts with an LLM until the LLM is done (stop_reason=finish). There is an outerloop which runs to route traffic to/from agents (if you have a multi-agent architecture), ensure that only good traffic is reaching your agents and that if multiple agents need to be engaged it would be handled outside your core product logic.
+  - You need exceptional observability to know what happens, how things fail, etc. And you need to account for different models in your stack so that you can easily improve performance, and/or latency and/or cost.
 
 - ## [和AI对话，不要使用“你” ](https://linux.do/t/topic/1293395)
 - AI 大神 Karpathy 分享了一个反直觉的观点：跟大模型聊天时，不要使用 “你” 这个字，也就是不要把它们当 “人”。

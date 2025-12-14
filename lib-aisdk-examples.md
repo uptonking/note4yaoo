@@ -181,6 +181,9 @@ modified: 2025-08-11T20:15:18.297Z
     - i might port it to use their tanstack ai pkg
       - that's the final plan but right now it seems like it doesn't have all the features that's needed to make a lot of these artifacts work (custom data streaming for example)
     - Not sure what you mean exactly with custom data streaming? If you mean your own streaming format we support that. 
+
+- https://github.com/rs-4/tanstack-ai-demo /MIT/202512/ts
+  - A modern AI chat template built with TanStack Start, featuring multi-model support, real-time streaming, and a clean, responsive UI.
 # image/multi-modal
 - https://github.com/vercel-labs/ai-sdk-image-generator /apache2/202501/ts
   - https://ai-sdk-image-generator.vercel.app/

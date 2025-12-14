@@ -294,6 +294,23 @@ modified: 2025-02-21T18:20:42.624Z
   - Automatic Fallbacks - Seamless failover between providers and models with zero downtime
   - Multimodal Support - Support for text, images, audio, and streaming, all behind a common interface.
 
+- https://github.com/Dominic-Shirazi/ConductorAPI /MIT/202512/python/js
+  - a powerful organization layer for your local AI API traffic. 
+  - A single OpenAI-compatible endpoint that routes AI API requests and spins local models up or down to manage VRAM
+  - Run Multiple Automation Tasks: Execute coding agents, chat bots, and summarizers simultaneously without conflict. The orchestrator queues them and switches models instantly.
+  - Resource Management: Only one VRAM-heavy model runs at a time. The system automatically unloads idle models and loads the next one required.
+  - Route Aliases: Use stable names like route:coding or route:chat. If your primary model is down or overloaded, the system can automatically fall back to another model (local or cloud).
+  - Extensibility: Add any OpenAI-compatible provider (Groq, weak-to-strong-generalization rigs, custom RAG APIs) just by dropping a YAML file in the providers/ folder.
+  - [Local AI: Managing VRAM by dynamically swapping models via API : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1pm36fl/local_ai_managing_vram_by_dynamically_swapping/)
+    - Dynamically loads and unloads models on demand (easy to add additional runtimes)
+      - Runs one request at a time using a queue to avoid VRAM contention, and groups requests for the same model together to reduce reload overhead
+      - The next step is intelligently running more than one model concurrently when VRAM allows.
+      - The core idea is treating models as on-demand workloads rather than long-running processes.
+    - 🤔 This is now natively supported by llama.cpp.
+      - llama.cpp can run image generation, video generation, audio generation and text generation?
+    - I'd want to 'set' the limit to be 92GB so I still have VRAM for the system, and for it to close down applications. I've been thinking how to make it more efficient.
+      - This is where I'm looking for either V2 or V3 to go. Although my system is much lighter, that assigned to this with concurrency and VRAM monitoring insight.
+
 - https://huggingface.co/katanemo/Arch-Router-1.5B /LlamaLic/qwen2
   - [I built the HuggingChat Omni Router : r/ollama _202510](https://www.reddit.com/r/ollama/comments/1odn14n/i_built_the_huggingchat_omni_router/)
   - HuggingFace relaunched their chat app called Omni with support for 115+ LLMs.
@@ -452,6 +469,14 @@ modified: 2025-02-21T18:20:42.624Z
   - https://x.com/zhangjintao9020/status/1911379146665603542
     - 实际上是一个 xface 桌面环境的 Ubuntu，通过 VNC 或浏览器来管理访问
     - 结合 CF 即将到来的无状态容器化！
+# acp/agent-client-protocol
+- https://github.com/RAIT-09/obsidian-agent-client /127Star/apache2/202512/ts
+  - Bring AI agents into Obsidian via Agent Client Protocol (ACP), such as Claude Code, Codex and Gemini CLI.
+  - This plugin lets you chat with Claude Code, Codex, Gemini CLI, and other AI agents right from your vault.
+  - Multi-Agent Support: Switch between Claude Code, Codex, Gemini CLI, and custom agents
+  - Note Mention Support: @notename to reference specific notes
+  - Use / commands to browse and trigger actions provided by your current agent
+  - Permission Management: Fine-grained control over agent actions
 # mcp
 - https://github.com/upstash/context7 /34kStar/MIT/202510/ts
   - https://context7.com/

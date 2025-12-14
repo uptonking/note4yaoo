@@ -272,6 +272,11 @@ modified: 2025-03-22T18:49:15.634Z
   - https://x.com/samddenty/status/1905843003471581337
     - I just created a demo website for https://react-ai-flow.com a super advanced cross-framework library for smooth LLM text streaming effects & also text-staggers.
 
+- https://github.com/one-man-studios/Shinzo-UI /NonComm/202512/html
+  - A robust, single standalone html file AI interface for Ollama and OpenAI.
+  - Features local RAG with vector search, real-time voice/video calls, document analysis (PDF/DOCX), and project workspaces. 
+  - Runs entirely in the browser using IndexedDB for privacy and speed—no external backend required.
+
 ## llm-md-ext
 
 - https://github.com/zhs007/adarender /apache2/202101/js/inactive

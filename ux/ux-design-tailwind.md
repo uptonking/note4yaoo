@@ -27,6 +27,12 @@ modified: 2021-01-03T17:11:47.916Z
     - 虽然在初次编写的时候使用预置的 token 很方便，但是第二次就麻烦了。上次用的颜色是什么
     - 怀念以前的做法，用 button--primary form__field 等样式可以确保整站的样式一致
   - Tailwind 的一大串样式很难阅读
+# unocss
+- tips
+  - 不推荐使用, 与很多第三方tooling工具的集成缺失, 会在工具集成上花费过多时间
+
+- [feat(webpack): support rspack/rsbuild · Pull Request · unocss/unocss _202409](https://github.com/unocss/unocss/pull/4173)
+  - `import { UnoCSSRspackPlugin } from "@unocss/webpack/rspack";`
 # discuss-usage-xp
 - ## 
 

@@ -191,14 +191,12 @@ Only use the provided information.
 
 - Make a single-file landing page for "Waterble" (spreadsheet workflow with ai).
   - Style: modern tech, muted palette, Tailwind, rounded-xl, subtle gradients.
-  - Sections: navbar, hero (big headline + 2 CTAs), logos row, features (3x cards), 
-  - code block (copyable), pricing (3 tiers), FAQ accordion, footer.
+  - Sections: navbar, hero (big headline + 2 CTAs), logos row, features (3x cards), code block (copyable), pricing (3 tiers), FAQ accordion, footer.
   - Constraints: semantic HTML, no external JS. Return ONLY the HTML code.
 
 - Make a single-file landing page for "Watarbase"(an embeddable and fast database using rust).
   - Style: modern, generous whitespace, Tailwind, rounded-xl, soft gradients.
-  - Sections: navbar, hero (headline + 2 CTAs), features grid, pricing (3 tiers), 
-  - FAQ accordion, footer. 
+  - Sections: navbar, hero (headline + 2 CTAs), features grid, pricing (3 tiers), FAQ accordion, footer. 
   - Constraints: semantic HTML, no external JS
 
 - 请创建一个现代化的登录页面，包含以下功能：
@@ -285,7 +283,7 @@ Only use the provided information.
   - 中文 prompts 精选，提升 ChatGPT 可玩性和可用性
 
 - [Qwen3-Coder 测试 - 知乎 _202508](https://zhuanlan.zhihu.com/p/1935639098774774795)
-- 将下面这段逻辑转换为 JavaScript 工具函数
+- 将下面这段代码转换为 JavaScript 工具函数
 
 ```python
 def slugify(text):

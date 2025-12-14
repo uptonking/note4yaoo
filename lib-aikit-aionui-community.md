@@ -52,6 +52,13 @@ modified: 2025-12-13T18:38:59.837Z
 
 ## dev-log-aionui
 
+- ## webpack > rspack
+- npm run webui 会启动express server后端服务器 http://localhost:25808
+
+- 前端使用不同端口时, chat history不会显示，因为存储在 localStorage ?
+- 
+- 
+
 - ## params must have required property 'file_path'
   - 部分本地模型经常执行tool call失败，就出现此问题
 

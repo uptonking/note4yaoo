@@ -62,6 +62,17 @@ modified: 2023-06-22T05:33:12.658Z
 
 - when ark-ui
 - Please consider adding support for react-aria
+
+- https://x.com/tanishqkan/status/1999598092987834573
+  - im tired of asking why not React Aria
+- base-ui has same api for people familiar with radix; react aria good but it has bit scarier api but more extensibility like async list and virtualization
+
+- Maybe there is also something going on with Adobe's brand, not even related to react-aria
+- radix did controlled/uncontrolled compound component primitives long before react aria, so it had the benefit of being first to market with that DX. and base-ui is an easier migration path from radix so, makes sense. react aria is fab tho.
+
+- i tried that few years back, components seem to interconnect to each other, seem to take much cognitive load to pull off something. not sure about current state.
+
+- We built on RA and even for someone pretty seasoned in design systems the APIs and primitives can def be confusing and a bit unpredictable. It sounds like there is a documentation refresh incoming so I’m hoping that helps. I like it overall but it is NOT intuitive for new devs
 # discuss-baseui
 - ## 
 

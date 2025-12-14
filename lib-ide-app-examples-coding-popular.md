@@ -157,6 +157,13 @@ modified: 2025-12-11T18:10:23.710Z
     - Add comprehensive ACP (Agent Client Protocol) support for Claude and Gemini backends
   - 📡 roadmap
     - 可结合下面async-code和其他ui的优点, 优化 background-agents 后台任务/并发任务
+- https://github.com/RAIT-09/obsidian-agent-client /127Star/apache2/202512/ts
+  - Bring AI agents into Obsidian via Agent Client Protocol (ACP), such as Claude Code, Codex and Gemini CLI.
+  - This plugin lets you chat with Claude Code, Codex, Gemini CLI, and other AI agents right from your vault.
+  - Multi-Agent Support: Switch between Claude Code, Codex, Gemini CLI, and custom agents
+  - Note Mention Support: @notename to reference specific notes
+  - Use / commands to browse and trigger actions provided by your current agent
+  - Permission Management: Fine-grained control over agent actions
 
 - https://github.com/ObservedObserver/async-code /apache2/202508/python/ts/inactive
   - Use Claude Code / CodeX CLI to perform multiple tasks in parallel with a Codex-style UI.

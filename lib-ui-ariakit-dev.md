@@ -36,6 +36,15 @@ modified: 2023-06-22T05:32:58.602Z
   - group-label + separator
   - portal
 
+- who is using #ariakit
+  - ?
+
+- who is using #react-aria
+  - ui: intentui
+
+- who is using #baseui
+  - ui: shadcn, basecn
+
 - tips
   - 从另一个角度看，对state/logic的复用，hooks本身就是一种实现方式，但hooks需放在组件内
   - 将state移出react的方案还可参考nanostores、redux、jotai

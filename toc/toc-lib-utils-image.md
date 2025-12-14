@@ -161,6 +161,9 @@ modified: 2023-04-04T22:39:45.442Z
   - https://uppload.js.org/
   - JavaScript image uploader and editor, no backend required
   - It's highly customizable with 30+ plugins
+
+- https://github.com/hst-Sunday/tubed /202512/ts
+  - 一个图床服务、文件托管服务，适合在VPS上的简单存储服务
 # images-utils
 - https://github.com/TonySpegel/image-comparison /lit
   - Compare two images using a slider, an overlay, or a side by side split view.

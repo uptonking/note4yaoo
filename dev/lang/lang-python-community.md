@@ -51,7 +51,14 @@ modified: 2023-08-28T06:14:28.873Z
 
 - ## 
 
-- ## 
+- ## 🤼 [Seriously underrated Django feature: database fixtures : r/django](https://www.reddit.com/r/django/comments/1plqyjr/seriously_underrated_django_feature_fixtures/)
+  - The reason for this is: it's exceptionally fast to populate the sqlite database with fixtures. It bypasses much of the ORM, resulting in much quicker database configuration. Also, you can create suites of fixtures that truly do model real-world information, and it makes testing a breeze. In particular, it makes test setup simple, because you simply affix the fixtures to the TestCase and you're off.
+  - One (strong) recommendation: use natural keys. They make writing the fixtures a lot easier, because you don't have to contend with manually setting primary/foreign keys (ultimately, you'll have collisions and it sucks, and it's terribly unclear what foreign key "12" means).
+
+- Have you tried the same test suite using factories instead? I suspect the end results won't be different and they avoid a lot of headaches when models change.
+  - I'm referring to https://factoryboy.readthedocs.io/en/stable/ - there are other libraries but Factory Boy is the de facto standard.
+
+- This is good and all but once your application grows it becomes a headache. Integration and mocking (although requiring more thought) is the way to go.
 
 - ## [Forcing clients to use latest static assets served from S3 storage what are your strategies? : r/django](https://www.reddit.com/r/django/comments/1pggodf/forcing_clients_to_use_latest_static_assets/)
   - What techniques/strategies do you use to force clients to use the latest css and other changing static assets from S3 compatible storage?

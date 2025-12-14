@@ -38,6 +38,8 @@ modified: 2025-12-13T18:38:27.763Z
 - 未显示thinking内容，给人感觉很慢
   - thinking类型的模型不展示thinking内容和状态时，容易误导用户系统故障了
 
+- default response for gemini is very slow
+
 - 
 
 - Supported Formats: Text files, images, code files, etc.
@@ -65,11 +67,11 @@ modified: 2025-12-13T18:38:27.763Z
 - 
 - 
 - 
-- 
 
 - 集成cluade-code相关的plugins/workflows
   - memory
   - rag
+  - 参考 Roo Code built a new Claude Code integration with Caching and Interleaved thinking
 
 - 
 - 

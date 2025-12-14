@@ -33,7 +33,9 @@ modified: 2023-01-02T10:30:19.459Z
 
 - ## 
 
-- ## 
+- ## [rspack support · Issue · electron/forge](https://github.com/electron/forge/issues/3450)
+- there's a community rspack electron forge template
+  - https://github.com/noshower/electron-forge-rspack-template
 
 - ## [Question: what's the relationship between electron-webpack and electron-forge? _202001](https://github.com/electron-userland/electron-webpack/issues/342)
 - there is no relationship.... 
