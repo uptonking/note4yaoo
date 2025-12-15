@@ -168,6 +168,9 @@ modified: 2024-06-30T03:20:21.444Z
     - Our inspiration comes from many places and projects, especially Pluto.jl, ObservableHQ, and Bret Victor's essays.
     - marimo is part of a greater movement toward reactive dataflow programming. From IPyflow, streamlit, TensorFlow, PyTorch, JAX, and React, the ideas of functional, declarative, and reactive programming are transforming a broad range of tools for the better.
   - Automatically convert Jupyter notebooks to marimo notebooks with the CLI
+  - https://github.com/riyavsinha/marimo-agents
+    - Marimo Agents is an experimental extension of Marimo pioneering agentic notebooks, allowing you to run notebooks with AI agents as first-class cells.
+    - [Upstreaming `marimo-agents` and agent cells _202502](https://github.com/marimo-team/marimo/issues/3916)
 
 - https://github.com/alishobeiri/thread /AGPL/202410/ts/js/inactive
   - AI-powered Jupyter Notebook — use local AI to generate and edit code cells, automatically fix errors, and chat with your data

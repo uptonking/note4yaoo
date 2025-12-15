@@ -368,6 +368,14 @@ modified: 2025-02-21T18:20:42.624Z
   - 双系统登录：用户系统 + 管理员系统, 管理员可无缝切换用户/管理系统
   - 多站点支持：管理多个 AI API 中转站
   - 额度查询：实时查询 API 使用额度（目前仅限 newapi）
+
+## agent-fwk-vendors
+
+- https://github.com/firebase/genkit /5.2kStar/apache2/202512/ts
+  - https://genkit.dev/
+  - open-source framework for building full-stack AI-powered applications, built and used in production by Google's Firebase
+  - It provides SDKs for js/python/go
+  - It offers a unified interface for integrating AI models from providers like Google, OpenAI, Anthropic, Ollama, and more. 
 # ai-api
 
 # browser-use
@@ -477,6 +485,11 @@ modified: 2025-02-21T18:20:42.624Z
   - Note Mention Support: @notename to reference specific notes
   - Use / commands to browse and trigger actions provided by your current agent
   - Permission Management: Fine-grained control over agent actions
+
+- https://github.com/marimo-team/use-acp /apache2/202510/ts
+  - https://marimo-team.github.io/use-acp/
+  - React hooks for Agent Client Protocol (ACP) over WebSockets.
+  - Reactive state management
 # mcp
 - https://github.com/upstash/context7 /34kStar/MIT/202510/ts
   - https://context7.com/

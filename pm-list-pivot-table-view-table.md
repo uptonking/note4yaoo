@@ -24,6 +24,9 @@ modified: 2022-12-16T01:52:33.729Z
   - name列的内容不能重复
   - undo/redo在删除一行后不能恢复一行
 # features
+- ai
+  - 针对系统级数据库和用户数据建表优化, 使用llm生成sql来执行查询, 是database的下一代产品
+
 - facets/multi-tables
 
 - table-in-table

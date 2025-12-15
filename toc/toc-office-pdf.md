@@ -314,6 +314,13 @@ modified: 2021-01-04T17:26:43.784Z
     - 一个本地的处理 PDF 的工具，界面是 Web UI，可以支持 Docker 部署。
   - https://twitter.com/geekbb/status/1739627252701450251
     - Docker 真是方便，刚刚在 NAS 上弄了一个本地 PDF 工具 ：Stirling PDF，并通过 Cloudflare Tunnels 建立连接方便自己外网访问，再也不用担心 PDF 资料泄漏的问题了
+  - [Fat VS Lite?  _202507](https://github.com/Stirling-Tools/Stirling-PDF/discussions/3940)
+    - Lite: Only Java code, no external dependencies (features that rely on them are disabled). Affected endpoints: Compress, File to PDF, Repair, etc.,
+    - Standard: Java + external dependencies (e.g., GhostScript, LibreOffice, qpdf), with this you have access to everything.
+    - Fat: Standard Java + external dependencies + a large set of fonts.
+  - [Editor needs a LOT of work _202512](https://github.com/Stirling-Tools/Stirling-PDF/discussions/5222)
+    - It messes up the fonts...puts random spaces in between words, it drops paragraphs on top of each other, and you can't scroll the whole document - you have to click on each page at the top (?) On a 300+ page book, this is impossible. The UI is horrible.
+    - we are working in it! As you mention it's not even beta but an alpha release as a concept to build on. We will get this improved! This is a top priority for us
 
 - https://github.com/TheWebDevel/electron-pdf-conversion-article-proj /js
   - [Converting an Electron view content to PDF - DEV Community](https://dev.to/sathish/converting-an-electron-view-content-to-pdf-caa)

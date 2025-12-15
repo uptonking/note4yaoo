@@ -228,6 +228,46 @@ modified: 2024-06-30T11:17:28.971Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🤔 [Is it worth switching some containers to Podman for security, or is Docker still king? : r/selfhosted _202512](https://www.reddit.com/r/selfhosted/comments/1pm8a1d/is_it_worth_switching_some_containers_to_podman/)
+- The big security gain from podman is from running as a user. If you're going to do the work to move services to their own users or your user then it can be worth it for security. 
+  - IMO the biggest upgrade is features. Running as a user being one of them, but pods and quadlets are the big draw too for qol.
+- To me one of the core security features of Podman is `--userns=auto` , not running as a separate user. I haven’t used Docker much, but I don’t think it has an equivalent.
+  - That is also nice. Most of my services share access to directories so I've had to mess with specifying users (zfs is a bitch). Being able to specify --userns is a big plus. 
+
+- Or just run docker rootless. It is possible and not too much work
+  - It looks like it's a bit more than one line of code but it's nice to see they moved away from user access to the rootful daemon.
+
+- Quadlets are not as nice to deal with as compose files.
+  - The files themselves are a bit more fiddly to handwrite, but them being functionally systemd units makes them more powerful. 
+- Systemd dependency and dealing with systemd, makes them useless as far as I'm concerned.
+  - Yeah, I mean if you don't use systemd then it won't be useful. 
+
+- I run all my containers with podman quadlets. The fact that they run rootless with systemd integration is the security boost for me.
+- Last time i switched I had problems with dependent containers. How do you deal with that?
+  - Networking between containers is a little different with podman. The easiest way to handle dependent containers is to put them all in a pod together where they share the same namespace and can communicate via localhost. I run immich in a pod for example, and all those containers communicate with localhost.
+  - Alternative is to use your host's IP address and the port that is bound to the container you want to reach with another container.
+
+- How easy is conversion from compose?
+  - Pretty easy, there's also tools like Podlet that can generate Quadlets from compose files.
+
+- Nope. It is only more secure out of box due to defaults. Nothing is stopping you from doing the same thing using Docker and there plenty of other ways to secure stuff in a way to make even their defaults moot.
+
+- A lot of docker images are not built with rootless operation in mind. Unless you are building your own docker images / using rootless images.
+  - The only reason I prefer Podman is due to the auto-update features built in without the use for additional tools compared to Docker.
+
+- Made the switch and am happy, because the systemd integration is great.
+
+- Containers are for packaging, not security.
+  - Podman, docker, lxc, all rely on the same set of namespaced syscalls, and all will be broken (to an extent) when a bug is found in the kernel.
+
+- Run a webserver with "podman run --network none ..." to improve security. The same is not possible with docker. Only podman supports socket activation of containers. 
+
+- Switched to podman. Dont use quadlets. Use compose files. Its possible to have the same level of security with docker but it requires some work.
+
 - ## 🆚 [Why do so many people use Docker over Podman, even though Podman is theoretically better? : r/selfhosted _202511](https://www.reddit.com/r/selfhosted/comments/1olt7op/why_do_so_many_people_use_docker_over_podman_even/)
 - alias docker=podman
   - It used to be once upon a time, when podman was merely trying to be a fully open reimplementation of docker. They have diverged quite a bit since then.

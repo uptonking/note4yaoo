@@ -14,6 +14,10 @@ modified: 2023-09-17T17:37:19.913Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
 - ## Poll: When your automated tests run on your CI server, what database does your app call?
 - https://x.com/housecor/status/1955624930487497212
 - Why run these tests at all? I ran them on my machine, we're good, right?

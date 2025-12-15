@@ -40,6 +40,9 @@ modified: 2022-11-04T14:20:37.172Z
   - https://github.com/simonw/simonwillisonblog-backup
     - Uses db-to-sqlite and sqlite-diffable to pull a backup of the Heroku PostgreSQL database running https://simonwillison.net/ and store it as newline-delimited JSON in this GitHub repository.
 # http
+- https://github.com/JayJamieson/libsql-rest /MIT/202405/go
+  - Expose libSQL (Turso) tables over http as a "RESTful" API. The concept is exactly the same as pRESTd or PostgREST.
+
 - https://github.com/proofrock/sqliterg /apache2/202312/go/rust
   - https://docs.sqliterg.dev/
   - a server-side application that, applied to one or more SQLite files, allows to perform SQL queries and statements on them via REST (or better, JSON over HTTP).

@@ -10,6 +10,30 @@ modified: 2023-11-23T18:01:59.304Z
 # guide
 
 # popular
+- https://github.com/open-circle/formisch /519Star/MIT/202512/ts
+  - https://github.com/fabian-hiller/formisch
+  - https://formisch.dev/
+  - https://stackblitz.com/edit/formisch-playground-solid
+  - The modular and type-safe form library for any framework
+  - Supported frameworks: React, Preact, Qwik, SolidJS, and Vue. Svelte will follow soon.
+  - a schema-based, headless form library for JS frameworks. It manages form state and validation. 
+  - its bundle size is small due to its modular design
+  - Schema-based validation with Valibot
+  - What makes Formisch unique is its framework-agnostic core, which is fully native to the framework you are using. It works by inserting framework-specific reactivity blocks when the core package is built
+  - https://x.com/FabianHiller/status/1998402978697425084
+    - how is it different from Tanstack form
+    - It’s much smaller (~2.5 kB vs. >10 kB), but it also has less functionality than TanStack Form in its current state. One of the biggest differences is our modular design. So only what you use ends up in your final bundle. When you choose Preact, Qwik, SolidJS, Svelte, or Vue as the framework, we use the native reactivity system (signals), which should result in better performance
+  - 🐛 [Support other schema libraries through Standard Schema _202507](https://github.com/open-circle/formisch/issues/2)
+    - Yes, I can replace the Valibot-specific code with the Standard Schema interface for v1. I am a Standard Schema co-creator by the way. However, I must point out that Formisch initializes the form store (each state of the form is a signal) based on the schema structure, but Standard Schema does not provide this information because each schema library is implemented differently. Supporting multiple schema libraries would therefore require us to use adapters for each one, which would decrease DX. 
+    - Until the library is more popular it is probably not worth investing time into supporting Zod or other schema libraries as I should probably focus on providing docs and support for meta frameworks first.
+  - https://x.com/FabianHiller/status/1952545041341100173
+    - What makes Formisch unique is its framework-agnostic core, It works by inserting framework-specific reactivity blocks when the core package is built. 
+    - TanStack Form is implemented with a framework-agnostic core that has its own reactivity system. This system is then connected to the framework you are using via framework-specific adapters. This differs from how Formisch works under the hood.
+  - https://github.com/fabian-hiller/modular-forms /同作者旧框架
+    - The modular and type-safe form library for SolidJS, Qwik and Preact
+    - [Support for Zod 4 _202509](https://github.com/fabian-hiller/modular-forms/issues/297)
+      - 👷 the zodForm function is a really simple function. Here is the code. I recommend copy it to your project and upgrade it as I am more focused on Formisch right now
+
 - https://github.com/jaredpalmer/formik /ts/react/代码少
   - https://formik.org/
   - Build forms in React, without the tears.
@@ -36,14 +60,6 @@ modified: 2023-11-23T18:01:59.304Z
   - type-safe form state management for the web.
   - Designed with first-class TypeScript support, headless UI components, and a framework-agnostic design
 
-- https://github.com/fabian-hiller/formisch /224Star/MIT/202508/ts
-  - https://formisch.dev/
-  - The modular and type-safe form library for any framework
-  - Supported frameworks: React, Preact, Qwik, SolidJS, and Vue. Svelte will follow soon.
-  - https://x.com/FabianHiller/status/1952545041341100173
-    - What makes Formisch unique is its framework-agnostic core, It works by inserting framework-specific reactivity blocks when the core package is built. 
-    - TanStack Form is implemented with a framework-agnostic core that has its own reactivity system. This system is then connected to the framework you are using via framework-specific adapters. This differs from how Formisch works under the hood.
-
 - https://github.com/final-form/react-final-form /js/vanillajs
   - https://github.com/final-form/final-form
   - react binding 代码也挺多
@@ -67,7 +83,7 @@ modified: 2023-11-23T18:01:59.304Z
 - https://github.com/charlzyx/da
   - https://charlzyx.github.io/da/
 
-- https://github.com/formkit/formkit /MIT/202403/ts
+- https://github.com/formkit/formkit /4.6kStar/MIT/202411/ts/inactive
   - https://formkit.com/
   - FormKit is a form-authoring framework for Vue
   - supports its whole feature set for native HTML inputs (like select, checkbox, and textarea) 

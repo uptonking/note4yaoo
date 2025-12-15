@@ -23,6 +23,7 @@ modified: 2025-09-16T13:29:11.327Z
   - [Evals | Roo Code](https://roocode.com/evals)
   - [AI Benchmark Tool - Best AI Models 2025 | AI Performance Tests & Rankings](https://aistupidlevel.info/)
   - [Introducing cline-bench: A Real-World, Open Source Benchmark for Agentic Coding - Cline Blog _202511](https://cline.bot/blog/cline-bench-initiative)
+  - [BIRD-bench (BIg Bench for LaRge-scale Database Grounded Text-to-SQL Evaluation) ](https://bird-bench.github.io/)
 # discuss-stars
 - ## 
 

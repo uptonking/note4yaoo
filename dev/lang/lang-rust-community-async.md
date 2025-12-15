@@ -32,6 +32,22 @@ modified: 2023-08-28T04:43:22.738Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 该说不说呢，Async Rust 的接口还是很抽象的。没有事实标准哈，标准库没有，rust-lang/futures-rs 也不是
+- https://x.com/tison1096/status/2000451554932052479
+  - 比如这里的 AsyncRead/AsyncWrite，在碰到 IOUring 这种要拿住 buffer 生命周期的，就要重新发明。然后 poll_xxx 很多时候我不得不吐槽库作者都没写状态机转移图，鬼知道你是怎么调度的。
+  - 比如 futures-rs 的 Sink，就是一个垃圾抽象。有些甚至『可悲』地是，这种垃圾实践在 Rust 生态里到处传播。所以我现在是看到一个项目，能接受 PR 的我都帮忙用正经的实践替换一下，别整天用一些莫名其妙的东西乱串。
+  - 这点 Netty 做的就很好，基本上整个调用周期都给你说明白了。Rust Async IO 当然本来就不一样，不是 callback pipeline 的模型，是 async/await 然后上层组合状态机处理读写结果的模型。但是我作为一个 Implementor，我要知道你那堆 poll_xxx 什么时候调用，里面哪些状态怎么维护，有时候读代码真是想死。叠加上 Rust Future pin 有问题，时不时要 pin_project 一下 .. 我只能说还好绝大部分 Rust 糊业务逻辑的人不用整天看这些，不然真的会谢。
+
 - ## 🆚️ As an async Rust based database, we are interested in more efficient async Rust disk I/O. 
 - https://x.com/tonboio/status/1904167784013070833
   - We took a deep dive into comparing tokio, io_uring (via monoio) and others in real-world scenarios, and the results might surprise you.

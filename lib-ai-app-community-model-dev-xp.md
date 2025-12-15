@@ -225,9 +225,27 @@ modified: 2025-11-18T13:22:22.078Z
   - Qwen3-0.6B: 简历文本信息提取和结构化处理
   - YOLOv10: 简历版面布局检测和区域分割
 # models-exploring
+- [LiquidAI/LFM2-1.2B-RAG · Hugging Face _202509](https://huggingface.co/LiquidAI/LFM2-1.2B-RAG)
+  - specialized in answering questions based on provided contextual documents, for use in RAG
+  - We recommend using greedy decoding with a `temperature=0`.
+  - The system prompt is optional. By default, the output's language follows the user prompt's language.
+  - ⚠️ The model supports both single-turn and multi-turn conversations.
+  - [Correct chat template ?](https://huggingface.co/LiquidAI/LFM2-1.2B-RAG/discussions/3)
+    - You can use any. As mentioned, the system prompt is optional.
+    - "[...]" symbolizes a truncation, which is why there's no question in the chat template example.
+- [LiquidAI/LFM2-1.2B-Extract · Hugging Face _202508](https://huggingface.co/LiquidAI/LFM2-1.2B-Extract)
+  - designed to extract important information from a wide variety of unstructured documents (such as articles, transcripts, or reports) into structured outputs like JSON, XML, or YAML.
+  - We strongly recommend using greedy decoding with a `temperature=0`.
+  - If no system prompt is provided, the model will default to JSON outputs. We recommend providing a system prompt with a specific format (JSON, XML, or YAML) and a given schema to improve accuracy 
+  - ⚠️ The model is intended for single-turn conversations.
+- [LiquidAI/LFM2-1.2B-Tool · Hugging Face _](https://huggingface.co/LiquidAI/LFM2-1.2B-Tool)
+  - designed for concise and precise tool calling.
+  - We recommend using greedy decoding with a `temperature=0`.
+
 - [apple/CLaRa-7B-Instruct · Hugging Face](https://huggingface.co/apple/CLaRa-7B-Instruct)
   - our instruction-tuned unified RAG model with built-in semantic document compression (16× & 128x).
   - It supports instruction-following QA directly from compressed document representations.
+  - ⚠️ The model supports both single-turn and multi-turn conversations.
 
 - [nvidia/Llama-3.1-Nemotron-8B-UltraLong-4M-Instruct · Hugging Face](https://huggingface.co/nvidia/Llama-3.1-Nemotron-8B-UltraLong-4M-Instruct)
   - a series of ultra-long context language models designed to process extensive sequences of text (up to 1M, 2M, and 4M tokens) while maintaining competitive performance on standard benchmarks. 
@@ -237,6 +255,58 @@ modified: 2025-11-18T13:22:22.078Z
   - This version shifts the focus slightly toward storytelling. Still emotionally complex, still powerful under duress, captivity, or obedience—but with a more narrative-friendly tone.
   - Based on Phi-4 Abliterated (40-layer model)
   - Inspired by @mlabonne's BigQwen2.5-Echo-47B-Instruct, added exact same layers to original Phi-4 14B(40-layer model) to the middle part while keep in tact first and last parts. Though its parameter count increased(14B --> 18B), it is a structural duplicate.
+
+- [RUC-DataLab/DeepAnalyze-8B · Hugging Face _202510](https://huggingface.co/RUC-DataLab/DeepAnalyze-8B)
+  - the first agentic LLM for autonomous data science. It can autonomously complete a wide range of data-centric tasks without human intervention
+  - https://github.com/ruc-datalab/DeepAnalyze
+
+- [DatarusAI/Datarus-R1-14B-preview · Hugging Face _202508](https://huggingface.co/DatarusAI/Datarus-R1-14B-preview)
+  - a 14B-parameter open-weights language model fine-tuned from Qwen2.5-14B-Instruct, designed to act as a virtual data analyst and graduate-level problem solver.
+  - Unlike traditional models trained on isolated Q&A pairs, Datarus learns from complete analytical trajectories—including reasoning steps, code execution, error traces, self-corrections, and final conclusions—all captured in a ReAct-style notebook format.
+  - https://github.com/DatarusAI/Datarus-JupyterAgent /MIT/python
+  - [Datarus-R1: An Adaptive Multi-Step Reasoning LLM for Automated Data Analysis | Abstract](https://www.arxiv.org/abs/2508.13382)
+
+- [Ellbendls/Qwen-3-4b-Text_to_SQL · Hugging Face _202509](https://huggingface.co/Ellbendls/Qwen-3-4b-Text_to_SQL)
+  - a fine-tuned version of Qwen/Qwen3-4B designed to convert natural language queries into SQL statements
+  - In scenarios where table schema context is missing, the model is trained to generate schema definitions along with the SQL query
+
+- [jupyter-agent/jupyter-agent-qwen3-4b-instruct · Hugging Face _202509](https://huggingface.co/jupyter-agent/jupyter-agent-qwen3-4b-instruct)
+  - a fine-tuned version of Qwen3-4B-Thinking-2507 specifically optimized for data science agentic tasks in Jupyter notebook environments
+  - This model can execute Python code, analyze datasets, and provide step-by-step reasoning with intermediate computations to solve realistic data analysis problems.
+  - Dataset domains: Primarily trained on Kaggle-style data science tasks
+  - https://github.com/huggingface/jupyter-agent /202509
+  - https://huggingface.co/spaces/lvwerra/jupyter-agent-2
+  - Context window: Limited to 32K tokens, may struggle with very large notebooks
+  - Tool calling format: Requires specific scaffolding for optimal performance
+  - [jupyter-agent/jupyter-agent-qwen3-4b-thinking · Hugging Face](https://huggingface.co/jupyter-agent/jupyter-agent-qwen3-4b-thinking)
+  - [Jupyter Agents: training LLMs to reason with notebooks](https://huggingface.co/blog/jupyter-agent-2)
+
+- [mlfoundations/tabula-8b · Hugging Face _202406](https://huggingface.co/mlfoundations/tabula-8b)
+  - model for prediction (classification and binned regression) on tabular data.
+  - fine-tuned from the Llama-3 8B model
+  - [TabuLa-8B: a foundation model for prediction on tabular data : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1dmnlv0/tabula8b_a_foundation_model_for_prediction_on/)
+
+- [defog/llama-3-sqlcoder-8b · Hugging Face _202405](https://huggingface.co/defog/llama-3-sqlcoder-8b)
+  - model for text to SQL generation for Postgres, Redshift and Snowflake 
+  - Finetuned from model: [Meta-Llama-3-8B-Instruct]
+  - 🆚 [Difference between the llama-3-sqlcoder-8b model vs. sqlcoder-7b-2 model.](https://huggingface.co/defog/sqlcoder-7b-2/discussions/47)
+    - 无回复
+  - https://x.com/rishdotblog/status/1788650171246551086 _202405
+    - Llama-3 based SQLCoder 8b is out! Open weights with a commercially friendly cc-by-sa license. Probably the best <10B param model for Postgres text to SQL right now.
+    - Our previous small model (sqlcoder-7b-2) was good at generating 0-shot SQL, but did terribly at following instructions. So while it was great in our evals, it was lacking in real-world use-cases where instruction following is much more important.
+    - To address this, we trained this model with much more instruction data. We also made our original eval much harder to make sure we stayed on the right track.
+    - Changes to prompt: You previously had to use our slightly idiosyncratic prompt for best results. Now, you can just use the standard Llama-3 instruct prompt.
+
+- [defog/sqlcoder-7b-2 · Hugging Face _202402](https://huggingface.co/defog/sqlcoder-7b-2)
+  - model for natural language to SQL generation.
+  - Finetuned from model: [CodeLlama-7B]
+  - [Use ReAct prompting with this model](https://huggingface.co/defog/sqlcoder-7b-2/discussions/37)
+    - unfortunately our model is not trained for such chain-of-thought (CoT) prompting; it is only meant to be used as a direct interpreter from your question + instructions + schema to the final SQL query. This is partly due to the small size of the model
+
+- [motherduckdb/DuckDB-NSQL-7B-v0.1 · Hugging Face _202401](https://huggingface.co/motherduckdb/DuckDB-NSQL-7B-v0.1)
+  - NSQL is a family of autoregressive open-source large foundation models (FMs) designed specifically for SQL generation tasks
+  - based on Meta's original Llama-2 7B model and further pre-trained on a dataset of general SQL queries and then fine-tuned on a dataset composed of DuckDB text-to-SQL pairs.
+  - 200k DuckDB text-to-SQL pairs, synthetically generated using Mixtral-8x7B-Instruct-v0.1, guided by the DuckDB v0.9.2 documentation
 # model-wiki/bookmarks
 - 超大模型的极小量化版
   - Llama-3.3-70B-Instruct-abliterated-Q2-mlx  22.07gb

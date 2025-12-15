@@ -17,12 +17,64 @@ modified: 2025-10-10T02:44:49.634Z
 - ## 
 
 - ## 
-# discuss-ai-chart/flow/viz-gen 📊
+# discuss-ai-chart/flow/viz/sql 📊
 - ## 
 
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [Anybody tried Codellama-70B, SQLCoder-70B; SQLCoder-7B? And Alphacodium framework? And perplexing HumanEval scores : r/LocalLLaMA _202402](https://www.reddit.com/r/LocalLLaMA/comments/1ajwhc8/anybody_tried_codellama70b_sqlcoder70b_sqlcoder7b/)
+- SQLCoder is not instruction fine-tuned yet! You will probably get better results with [this prompt](https://raw.githubusercontent.com/defog-ai/sqlcoder/c167d340ad16b925f87eef5530474c5a9405abce/prompt.md) for the 70b, and with your metadata in this format
+
+- ## [Best way to build a private Text-to-SQL app? : r/LangChain _202509](https://www.reddit.com/r/LangChain/comments/1n7ra5q/best_way_to_build_a_private_texttosql_app/)
+- My advice, do some data engineering on the tables and columns. Be ambitious, but careful. Don't try to have a solution that will answer every possible tricky questions.
+  - first advice : Start slowly, test, and add tables progressively.
+  - In our case, when made specific views in which we pick what selected fields we want to publish to the app.
+  - When you have something working, add some more views.
+  - Views give you a lot of flexibilities.
+
+- Based on experience the only way for you to make this work is to basically study Prompt Engineering. Providing a very vague prompt would not be sufficient to provide you the correct answer. I bet for sure that the users would think that the thing your building is like ChatGPT that would provide info and data on its own.
+
+- If the SQL part is part of your equation, I am doing the natural language to SQL right now and I have learned a few things—
+  - first, that SqlCoder as an LLM is not giving me better results than DeepSeek (both self hosted on a consumer PC with a 5080 and 16G VRAM). 
+  - Second that descriptions of tables etc. (our schema was well documented with comments on what tables and columns mean) are all but worthless! 
+  - And finally that natural language requests connected to the SQL that satisfy them are gold!
+- I'm working with natural language to SQL. Yes, sqlcoder did not work for me either, so I had to shift to llama3:instruct which is far better.
+
+- ## [We benchmarked 19 popular LLMs on SQL generation with a 200M row dataset : r/dataengineering _202505](https://www.reddit.com/r/dataengineering/comments/1khsiwd/we_benchmarked_19_popular_llms_on_sql_generation/)
+  - we tested how well different LLMs generate SQL queries against a large GitHub events dataset.
+  - We found some interesting patterns - Claude 3.7 dominated for accuracy but wasn't the fastest, GPT models were solid all-rounders, and almost all models read substantially more data than a human-written query would.
+  - https://github.com/tinybirdco/llm-benchmark /202512
+
+- Generating SQL against a curated dataset is not super useful.
+  - I think what most people (or at least the business) want out of llms is the ability to interpret a complex data model (that might not even fit in a context window) and generate complex queries that require joins across multiple tables.
+
+- This echoes my experience experimenting with text-to-sql using OpenAI a couple of months back: they are next to useless for all but the simplest queries against the simplest relational models. You seem to have made it easy for them by only providing a single table for querying. Imagine how bad they are in scenarios where they have to produce queries for more complex models.
+
+- dang and this is only one flat table — 99% of SQL users are trying to query relational dataset directly
+
+- ## [I have tested all the popular coding assistant for data science, here's what I found : r/datascience _202503](https://www.reddit.com/r/datascience/comments/1jo2gxt/i_have_tested_all_the_popular_coding_assistant/)
+  - I setup a test to find the best AI coding assistant to help with Data Science task.
+  - The result is a bit surprising for me: None of the popular AI agent works for data science. Although the demo looks gorgeous, Google Gemini in Colab fail pretty bad. But there are some tools that has potential and some are already a bit useful.
+  - [The Best AI Coding Agent for Data Science and Machine Learning _202503](https://medium.com/@DangTLam/the-best-ai-agent-for-data-science-and-machine-learning-march-2025-20a3cfee836d)
+
+- Gemini has repeatedly in my experience been the worse of all the AI agents.
+  - Used to be the same but 2.5 pro kinda changed my mind
+- Came here to say this. I shit on flash alllllll the time, it was unusable. But pro 2.5 is now my go to. Certainly easier to use than o3 mini.
+
+- TLDR; There’s no perfect AI assistant for data science and ML — yet.
+
+- A big problem with any of these tools is the data is not cleaned or curated for use by LLMs. An MCP only provides access to db functions; but each dataset has it's own relationships, semantics, and domain knowledge baked in.
+  - What would be amazing is a tool that used LLMs to scan the data and developed a metadata layer for it. I think that would make the outputs so much better.
+  - I think something like getanswerlayer.com is trying this, and I've seen others too. So much happening here, I think we'll see a lot of progress this year
+
+- Why are you so tied to Jupyter notebooks? Why is that a requirement for DS workflows?
+  - Seriously, I’m not happy with jupyter, but I haven’t found anything even close.
+
+- DS require more thought process which present LLM are not capable of
 
 - ## DeepAnalyze-8B, the first agentic LLM designed for autonomous data science, capable of automatically completing the end to end pipeline _202510
 - https://x.com/Dr_Singularity/status/1981010771338498241

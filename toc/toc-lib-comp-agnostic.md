@@ -13,10 +13,13 @@ modified: 2020-11-13T07:28:27.824Z
   - 基于css，但未解决a11y
   - 基于web-components，但仍未解决状态与视图的同步问题
 
-- 支持多种前端框架的实现
+- 支持多种前端框架的参考实现
   - tanstack-table/virtual
+  - formisch
   - slate-editor, wangEditor, editablejs
   - tiptap-editor, prosekit
+  - ark-ui
+  - 热门组件
 
 - 没必要执着于render agnostic
   - 具体场景需求不同，如ui组件、图表、动画
@@ -121,13 +124,23 @@ modified: 2020-11-13T07:28:27.824Z
 - https://github.com/DouyinFE/semi-design
   - https://semi.design/zh-CN/start/overview
   - 得益于 Foundation/Adapter 架构设计以及样式文件分层原则，Semi 非常易于迁移到其他前端框架
+  - https://github.com/DouyinFE/semi-design/tree/main/packages/semi-foundation
+    - Semi UI adopts a set of cross-front-end framework technical solutions to split the JavaScript of each component into two parts: Foundation and Adapter.
+    - Foundation contains the business logic that best represents Semi Design without actually referencing any DOM elements. 
+    - Foundation delegates Adapter methods for any logic that requires DOM manipulation
   - [Semi Design 设计系统管理](https://semi.design/dsm/landing)
     - 支持在线定制基于semi-design的主题样式，并发布npm包
   - [Semi Design - UI组件库如何分层设计，使其具备适配多种mvvm框架能力](https://bytedance.feishu.cn/wiki/wikcnOVYexosCS1Rmvb5qCsWT1f)
   - [希望官方支持 Vue 版本](https://github.com/DouyinFE/semi-design/issues/311)
     - 我们的工作重点依然是React体系。没有计划去重新实现一个Vue版本
-  - https://github.com/rashagu/semi-design-vue /202401/ts
+  - https://github.com/rashagu/semi-design-vue /MIT/202504/ts/inactive
     - Vue3 UI components based on semi-design and Vue
+
+- https://github.com/sriem/stellariX-ui /202506/ts/inactive/aicoded
+  - The DX-First Framework-Agnostic Headless Component Library
+  - This code is completely vibe coded with Anthropic's Claude Code
+  - StellarIX uses a pure three-layer architecture: state/logic/view
+  - Same component works in React 19, Vue 3.5+, Svelte 5, and more
 
 - https://github.com/carbon-design-system/carbon /3.5kStar/Apache2/202009/js
   - carbon-components: Component styles and Vanilla JavaScript
@@ -186,6 +199,16 @@ modified: 2020-11-13T07:28:27.824Z
     - Wrapper (top-down runtime approach): packages existing framework dependent components with a thin interoperability layer 
     - Primitive (bottom-up runtime approach): framework agnostic low-level building blocks.Each primitive acts as an adapter to plug framework dependent logic.
     - Compiler (build time approach): Use a build tool to generate, from a single source code, either web component (eg. via Stencil) or per framework implementations (eg. via Mitosis).
+
+- https://github.com/vuestorefront/storefront-ui /2.4kStar/MIT/202512/ts
+  - https://storefrontui.io/
+  - A frontend library for React and Vue that helps developers quickly build fast, accessible, and beautiful storefronts
+  - Framework-agnostic UI library and Design System for eCommerce based on TailwindCSS.
+  - Accessibility: Storefront UI components are WCAG AA 
+  - Focus on eCommerce - components specific to eCommerce like ProductCard, QuantitySelector and even checkout components
+  - https://github.com/vuestorefront/vue-storefront
+    - An ecosystem of developer tools that accelerate and simplify building eCommerce Storefronts
+    - Fully customizable, backend-agnostic with 3500+ Live Stores
 # adapters
 - https://github.com/plantain-00/schema-based-json-editor /MIT/202211/ts/inactive
   - https://plantain-00.github.io/schema-based-json-editor/packages/react/demo/
@@ -236,6 +259,11 @@ modified: 2020-11-13T07:28:27.824Z
   - https://franken-ui.dev/
   - an HTML-first UI component library built on UIkit 3 and extended with LitElement, inspired by shadcn/ui.
   - Is this project dead? Let’s settle this. Just because you haven't seen recent activity doesn't mean it's abandoned. The project is feature complete.
+
+- https://github.com/public-ui/kolibri /237Star/EUPL/202512/ts
+  - https://public-ui.github.io/
+  - Vision: make HTML accessible using reusable web components to ensure usability and accessibility.
+  - KoliBri themes expose a few CSS custom properties so consumers can adapt the look and feel.
 
 - https://github.com/pqina/filepond /202311/js/NoDeps/active
   - https://pqina.nl/filepond/

@@ -20,7 +20,8 @@ modified: 2025-12-06T13:25:29.309Z
 - tips
   - ?
 # draft
-
+- workspace-ai
+  - 针对系统级数据库和用户数据建表优化, 使用llm生成sql来执行查询, 是database的下一代产品
 # dev-xp
 
 ## devops

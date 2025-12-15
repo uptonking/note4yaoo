@@ -73,6 +73,9 @@ modified: 2025-12-13T18:38:27.763Z
   - rag
   - 参考 Roo Code built a new Claude Code integration with Caching and Interleaved thinking
 
+- 重命名文件或文件夹后, workspace信息会丢失? vscode也存在类似问题, 顶层文件夹重命名后，聊天记录会丢失
+
+- 
 - 
 - 
 - 

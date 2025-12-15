@@ -42,6 +42,27 @@ modified: 2023-04-04T22:36:31.529Z
     - When a second resumable stream is invoked for a given streamId, it publishes a messages to alert the producer that it would like to receive the stream.
     - The second consumer now expects messages of stream content via the pubsub.
     - The producer receives the request, and starts publishing the buffered messages and then publishes additional chunks of the stream.
+  - https://github.com/s2-streamstore/resumable-stream /apache2/202510/ts
+    - Durability for web streams powered by S2
+    - inspired by Vercel's take on Resumable Streams used in the Chat SDK, except instead of Redis, this relies on S2 to create and resume streams.
+
+- https://github.com/durable-streams/durable-streams /791Star/MIT/202512/ts
+  - The open protocol for real-time sync to client applications
+  - a persistent stream primitive and HTTP protocol for reliable, resumable, real-time data streaming into client applications.
+  - HTTP-based durable streams for streaming data reliably to web browsers, mobile apps, and native clients with offset-based resumability.
+  - Durable Streams provides a simple, production-proven protocol for creating and consuming ordered, replayable data streams with support for catch-up reads and live tailing.
+  - [Announcing Durable Streams | ElectricSQL _202512](https://electric-sql.com/blog/2025/12/09/announcing-durable-streams)
+    - We originally built Durable Streams as the delivery layer inside Electric, our Postgres-native sync engine, and are now standardizing it as a standalone protocol.
+    - The internet has strong primitives for server-to-server messaging: Kafka, RabbitMQ, NATS.
+    - Client streaming is different. WebSocket and SSE connections are easy to start, but they're fragile in practice: tabs get suspended, networks flap, devices switch, pages refresh. When connections break, you either lose in-flight data or you build a bespoke backend storage & client resume protocol on top.
+    - AI products make this painfully visible. Token streaming is the UI for chat and copilots, and agentic apps often stream progress events, tool outputs, and partial results over long-running sessions. 
+    - The core idea: streams are a first-class primitive that get their own URL. Each stream is an addressable, append-only log that clients can read from any position.
+  - How it works:
+    - Every position in a stream has an opaque, monotonic offset.
+    - Clients persist the last offset they've processed.
+    - The server doesn't need per-client session state; the stream is durable, and progress is tracked client-side.
+  - https://github.com/ahimsalabs/durable-streams-go /MIT/202512/go
+    - A Go implementation of ElectricSQL's Durable Streams primitive
 
 - https://github.com/EloquentStudio/StreamTable.js /201604/js
   - streams data for tables in the background, updates and renders them using templating frameworks like Mustache.js, HandleBars.js

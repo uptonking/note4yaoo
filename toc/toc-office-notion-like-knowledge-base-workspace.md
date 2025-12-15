@@ -825,7 +825,7 @@ modified: 2022-06-03T21:34:54.893Z
   - 结构化数据提取工具，它可以以自然语言查询的方式从非结构化文档中提取结构化数据，并以表格或图表的形式展现
   - 文档数据的结构化入库，比如从合同里提取关键交易信息，然后结构化展示
 
-- https://github.com/Goldziher/kreuzberg /2.4kStar/MIT/202509/python
+- https://github.com/Goldziher/kreuzberg /2.4kStar/MIT/202509/python>rust
   - https://kreuzberg.dev/
   - Kreuzberg is a modern Python library for text extraction from documents, designed for simplicity and efficiency
   - It provides a unified async interface for extracting text from a wide range of file formats including PDFs, images, office documents, and more.
@@ -839,6 +839,8 @@ modified: 2022-06-03T21:34:54.893Z
   - Extensibility: Plugin architecture for custom extractors via the Extractor base class
   - API Design: Synchronous and asynchronous APIs with consistent interfaces
   - Type Safety: Complete type annotations throughout the codebase
+  - [Kreuzberg v4.0.0-rc.8 is available : r/LLMDevs _202512](https://www.reddit.com/r/LLMDevs/comments/1pn2d2z/kreuzberg_v400rc8_is_available/)
+    - completely rewritten in Rust - leveraging Rust's memory safety, zero-cost abstractions, and native performance.
 
 ## web-etl
 

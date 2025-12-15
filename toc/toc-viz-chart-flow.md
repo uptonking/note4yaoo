@@ -471,7 +471,7 @@ modified: 2020-10-22T10:22:55.878Z
   - a JavaScript library to visualise gridded data (or any tabular dataset with x/y position) in the browser in a large variety of advanced cartographic styles
   - a JavaScript library to visualise gridded data (or any tabular dataset with x/y position) in the browser in a large variety of advanced cartographic styles
 # flow-ai
-- https://github.com/DayuanJiang/next-ai-draw-io /1.4kStar/MIT/202512/ts
+- https://github.com/DayuanJiang/next-ai-draw-io /11.3kStar/apache2/202512/ts
   - https://next-ai-drawio.jiang.jp/
   - A next.js web application that integrates AI capabilities with draw.io diagrams. 
   - This app allows you to create, modify, and enhance diagrams through natural language commands and AI-assisted visualization.

@@ -168,6 +168,9 @@ modified: 2025-03-22T16:10:24.856Z
   - 类似 pexels/unsplash/站酷 的图片资源站, 手动下载免费， api调用付费
   - 版权过期书籍: 绘画二创, rag搜索
 
+- data-analysis
+  - 基于cli的数据分析方案, 不与jupyter绑定
+
 - workflow
   - Zapier and n8n help to an extent, but they’re not designed for multi-tenant SaaS. They’re great for internal workflows—not product infrastructure.
 
@@ -185,6 +188,9 @@ modified: 2025-03-22T16:10:24.856Z
 - 本地模型 + 数据下载/提供 的方案参考
   - 用户自己上传的pdf，就类似词典软件的词库
   - kiwix提供了wikipedia的各种子主题文章精选集合下载，如历史/地理/计算机/医学
+
+- model-tuning
+  - 针对 中文表格/image 优化的模型
 
 - 
 - 
@@ -284,7 +290,7 @@ modified: 2025-03-22T16:10:24.856Z
     - Limit your search to trusted knowledge sources
 
 - [Project Idea: Using an AI face search to find data leakage in RAG source repositories. : r/ChatGPTCoding](https://www.reddit.com/r/ChatGPTCoding/comments/1oq4p2s/project_idea_using_an_ai_face_search_to_find_data/)
-# ai-dev-xp 🚧
+# ai-dev-xp
 - 当一个复杂问题让ai折腾了1h还没解决，不要继续纠结，赶紧换更强的模型
   - 让ai动手前自己先拆分任务，不要让ai分析复杂的任务，ai分析不清会乱改增加工作量，自己可以主动mock状态和对象
   - 有时使用搜索引擎默认的ai结果又快又好，可以尝试解决类似stackoverflow类型的问题

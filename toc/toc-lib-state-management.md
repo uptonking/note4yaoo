@@ -629,6 +629,13 @@ modified: 2020-07-14T11:03:53.196Z
     - Following ECS means the project won't be as easy as it is today to understand, copy/paste, and so on. 
   - https://github.com/coldi/r3f-game-demo
     - A demo on how to do a simple tile-based game with React and react-three-fiber
+# server-state
+- https://github.com/YidiDev/verity /MIT/202512/js
+  - http://verity.yidi.sh/
+  - Framework-agnostic data layer that enforces server-as-source-of-truth. 
+  - Handles caching, staleness, and directive-driven updates so UIs render truth-state without optimistic lies. Works with Alpine, React, Vue, and Svelte.
+  - One strong idea: the server is the only source of truth.
+  - It sits between your server and view layer, handling caching, staleness, fan-out, and directive processing so your UI can focus purely on rendering.
 # more-state
 - https://github.com/GantMan/ReactStateMuseum /js
   - A whirlwind tour of React state management systems by example

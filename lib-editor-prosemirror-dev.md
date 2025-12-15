@@ -106,19 +106,19 @@ modified: 2021-05-06T09:39:53.522Z
   - img-diff 使用slider对比交互
   - img-editor
   - img-gen
-
-- 👾 ai
-- rich-text with formats
-- stream-text/md
-- partial-edit: not whole rewrite, aider-diff, openai-v4a-diff
-- pdf-edit-with-vlm/ocr:
-  - restore pdf layout
-  - pdf-image upscale
 - graphics-by-text: 
   - mermaid-editor
   - drawio-xml
   - mermaid-text + drawio-editor
   - chart-viz
+
+- 👾 ai
+- rich-text formats/elements/protocols
+- resumable-stream text/md
+- partial-edit: not whole rewrite, aider-diff, openai-v4a-diff
+- pdf-edit-with-vlm/ocr:
+  - restore pdf layout
+  - pdf-image upscale
 - markdown-partial
   - stream-diff
   - stream-table
@@ -147,6 +147,9 @@ modified: 2021-05-06T09:39:53.522Z
 
 - tiptap
   - ai-extension open version
+
+- comments
+  - 👾 ai prompt as comment ?
 
 - 兼容obsidian extension
 

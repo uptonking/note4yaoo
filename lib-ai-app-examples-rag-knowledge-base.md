@@ -1326,6 +1326,12 @@ modified: 2025-11-30T17:27:16.720Z
   - a JavaScript component that allows you to provide context from Wikipedia about words or phrases on any website. 
   - It lets you show a popup card with a short summary from Wikipedia when a reader hovers over a link: Read full article on Wikipedia 
   - Works with any link that has an article on Wikipedia
+# data-rag
+- https://github.com/statespace-tech/toolfront /801Star/MIT/202512/python
+  - https://docs.toolfront.ai/
+  - Turn your data into shareable RAG apps in minutes. All in pure Markdown.
+  - [I built an MCP that finally makes your local AI models shine with SQL : r/LocalLLaMA _202506](https://www.reddit.com/r/LocalLLaMA/comments/1ll3qej/i_built_an_mcp_that_finally_makes_your_local_ai/)
+  - ToolFront equips AI models with a set of read-only database tools
 # benchmark-rag ⚡️
 - https://huggingface.co/datasets/G4KMU/t2-ragbench
   - [T2-RAGBench - Benchmark for RAG in Finance (10K Downloads on HF) : r/Rag](https://www.reddit.com/r/Rag/comments/1pde2au/t2ragbench_benchmark_for_rag_in_finance_10k/)
