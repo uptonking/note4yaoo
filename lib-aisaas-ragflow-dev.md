@@ -9,7 +9,7 @@ modified: 2025-12-06T13:25:29.309Z
 
 # guide
 - pros
-  - ?
+  - pdf parsing can be controlled/retried
 
 - cons
   - 从主流的 elasticsearch 迁移到自研的 infinity 数据库是否会降低系统的灵活性和扩展性

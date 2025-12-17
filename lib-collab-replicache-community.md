@@ -297,6 +297,36 @@ modified: 2024-01-07T05:09:14.413Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🆚 From the start, Zero had both "CRUD" and "Custom" mutators.
+- https://x.com/aboodman/status/2000814994607477026
+  - The custom ones were more powerful, and what users wanted.
+  - But we worried that the onboarding would never be *easy* with custom mutators, because they required writing custom integration code with your server.
+  - So we dithered and allowed both kinds of mutators.
+  - This created *tons* of extra complexity. The "easy" mutators required a way to do permissions. So we had to implement our own custom RLS-style permission system.
+  - The permissions had to run server-side which meant we needed custom deployment steps, to update the permissions.
+  - The latest release of Zero rips out the CRUD mutators and queries completely. With those gone, permissions and auth could also go.
+  - And in the end, we were totally wrong about the onboarding. Here is a complete example of the server integration for TanStack
+- Zero is now just three core concepts:
+  1. schemas
+  2. queries
+  3. mutators
+
+- I haven't used Zero, but I really like @convex style of doing things in terms api
+  - I think in many ways they are similar now. Convex also lacks a first-class concept of permissions
+- Yep this is intentional. The only way to access the database in Convex is via server functions so most Convex developers should just use server logic to enforce authorization rules instead of RLS.
+  - I find RLS policies difficult to apply to large codebases with multiple teams where there isn't an obvious mapping between auth domains and rows in dozens of tables. Using functions for auth checks allows them to leverage abstractions over different modules in the codebase and their respective schemas.
+- https://x.com/jamesacowling/status/2001081302574100718
+  - Convex has an RLS library, but unless you're using a platform that directly exposes the database to clients you probably don't need row-level security.
+  - It's nice idea but with large codebases it gets very hard to map auth domains cleanly onto rows in dozens of tables.
+  - If you're running server functions the simplest and most flexible approach is usually just to wrap them in explicit auth checks that leverage business logic and modularity.
+- Yeah, never looked back at RLS after using Convex server functions. We need another abstraction for authorization, though. It can be built on top of components now.
+
 - ## Sometimes that trade-off is ok and even what you want. How many direct conflicts are there in an issue tracker? 
 - https://x.com/aboodman/status/1934363459921309790
 - Eventual consistency is the big tradeoff as you say. It really is about having to expose concurrent edits in the UX vs higher latency/lower avail.

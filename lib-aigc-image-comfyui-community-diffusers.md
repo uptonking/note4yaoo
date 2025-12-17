@@ -510,7 +510,15 @@ export COMMANDLINE_ARGS="--skip-torch-cuda-test --disable-nan-check --upcast-sam
 
 - ## 
 
-- ## 
+- ## 🎯 [ComfyUI 2025: Quick Recap : r/comfyui _202512](https://www.reddit.com/r/comfyui/comments/1poeled/comfyui_2025_quick_recap/)
+- If they have stayed within the Blender model, it would grow them success in the long run, Blender foundation made it, but never compromised on their integrity, even over 20+ years. And they STILL run that model, and is one of the most used pieces of graphics software in the world.
+  - No commercial integration
+  - No built in forced upgrades
+  - LTS versions
+  - Always free
+  - And they STILL make it with a whole team that grows all the time.
+
+- even live streams only relying on api's , amd they can implement infinite talk , fantacy portrait or many thing that wrapper does they just want to spent some money on trash ui for showing investors that we did something with ur money
 
 - ## [Mobile Comfy Support : r/comfyui _202509](https://www.reddit.com/r/comfyui/comments/1npv1f5/mobile_comfy_support/)
   - I have been working on a mobile app that is the UI for comfy on the desktop or server. I finally got it to somewhat decent state and first version was published on App Store today

@@ -452,8 +452,13 @@ file.py
   - Leverage Existing Formats and Implementations: Consider established formats and study open-source systems (Aider, OpenHands, RooCode/Cline).
 # discuss-stars
 - ## 
+
 - ## 
-- ## 
+
+- ## Use OpenAI's apply patch tool to let GPT-5.2 create, update, and delete files using structured diffs. _202512
+- https://x.com/aisdk/status/2001297605775749312
+- 
+
 - ## 💡 [How I Built An Agent that can edit DOCX/PDF files perfectly. : r/aiagents _202510](https://www.reddit.com/r/aiagents/comments/1ogwhwn/how_i_built_an_agent_that_can_edit_docxpdf_files/)
 - The `find_and_replace` tool
   - My first try. I thought I could map simple document edits to tools like `add_paragraph` . It failed fast - the agent couldn’t see the document, messed up formatting, and needed too many tools ( `add_bullet_point` , etc.). I still think this is one of the best options, though.
@@ -494,7 +499,7 @@ file.py
   - In our work we've prototyped a "simple branching" model which gives a really lightweight way to fork/merge branches on any kind of document in a web-based collaboration environment - like branches on this essay
 - ✨ Diffs as platform infra: Unfortunately is a ton of work for app devs to implement in order to support AI agents well -- diff views, branching, comments...
   - As a concrete demo of this: in our `Patchwork` environment, you can view diffs on any kind of data using the same generic tooling. The UI dev has to define just a few domain-specific things like how to render diffs in their editor. And then the surrounding environment does the rest: supporting parallel branches, computing diffs, etc.
-  - The key to this magic is building on `Automerge`, a data sync / collaboration library developed in our lab which optimizes for version control use cases by efficiently storeing the entire granular history of every document, and handling merging of concurrent branches with CRDT algorithms.
+  - The key to this magic is building on `Automerge` , a data sync / collaboration library developed in our lab which optimizes for version control use cases by efficiently storeing the entire granular history of every document, and handling merging of concurrent branches with CRDT algorithms.
 - I like to say "collaboration with AI is a version control problem". 
   - An increasing part of everyone's job is going to be reviewing work from untrustworthy robots.
   - The way to solve that is with tools in the domain of "version control" - things like branching, diffing, history, and commenting tools that make it easier to collaborate on shared work.
@@ -505,6 +510,7 @@ file.py
 - While Diff views have been well explored for code & writing, visual mediums like video are a new ground. We recently prototyped a visual diff that lines up AI-suggested edits for videos
   - [[2502.10190] VideoDiff: Human-AI Video Co-Creation with Alternatives](https://arxiv.org/abs/2502.10190)
 - can these tools work with difficult data formats like word or PowerPoint?
+
 # discuss-ai-editing
 - ## 
 - ## 
@@ -560,7 +566,7 @@ file.py
   - Send your document to the LLM
   - Instead of asking for the modified document back, ask for a list of specific edits in sed-like format (or json if you prefer)
   - Apply those edits locally without requiring the LLM to generate duplicate content
-- The syntax is beautifully straightforward: `s/unique text marker/## Heading Text\n\n$0/`; 
+- The syntax is beautifully straightforward: `s/unique text marker/## Heading Text\n\n$0/` ; 
   - Where the unique text marker identifies where to add the heading, and $0 preserves the original text. Of course you have to make sure that your edit is totally unique, but you can prompt the LLM to make sure that it really is.
 - I created a small benchmark to measure the difference between the traditional approach and the edit trick.
   - I tested both approaches on the same document — adding section headings to a 7, 000-character article. The numbers don’t lie — the results were striking
@@ -813,6 +819,7 @@ Code
   - It either ignored part of the instructions that it needed to follow or it generated erroneous diff. 
   - Asking to get the code right, and then, making that code a diff, was better. Trying to use chain of thought to keep it in one prompt didn't make a difference, as it would say it was gonna do x, y, z... But then suck at some of the steps.
   - With Claude, giving info in XML tags worked very well (to classify parts of the prompt as "original code" "instructions" and so). My attempts to use JSON and function calling were less successful, I felt it "dumbed down" the coding part when asking for that. But your mileage(用处, 好处) may vary and I may have been doing something wrong. In another project the JSON/function calling works without issues (but what I ask sonnet 3.5 is simpler, not much "thinking" needed).
+
 # discuss-toolchain-diff
 - ## 
 - ## 
@@ -967,6 +974,7 @@ Code
 - One great reason is to avoid M*N problem: https://matklad.github.io/2022/04/25/why-lsp.html
 - I would love it, but please don't add JSON-RPC to the world... It's too heavy for editor.
   - To write that JSON-RPC is "too heavy for editor", you have to not only misunderstand the cost of JSON encoding (trivial) but also the frequency of editor-tool interaction (seldom) and volume of data transferred (negligible). In addition, you have to look at LSP, MCP, and other JSON-y protocols and say "yep. There's where the UI latency is. Got it.". (Nope)
+
 # discuss-rich-text-editing ✏️
 - ## 
 

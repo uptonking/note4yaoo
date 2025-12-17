@@ -303,6 +303,37 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-to
   - ?
 
+## 1217
+
+- Failed to build `pillow==10.2.0` ├─▶ The build backend returned an error ╰─▶ Call to `backend.build_wheel` failed (exit status: 1)
+  - The error is related to building Pillow version 10.2.0, which has compatibility issues with Python 3.13. Let me check the Python version and fix this by using Python 3.12
+
+- 🤔 i want to deploy my github python fastapi project with sqlite  to a free hosting platform. please compare verel and hugging face spaces . or do you have any other good advice?
+  - Most free cloud platforms (Vercel, Render Free Tier, Heroku) wipe your server's hard drive every time you deploy or restart.
+  - Another recommended path — migrate from SQLite → managed Postgres (Supabase/Neon/etc.). You get a reliably persistent free DB tier and can host your FastAPI on Vercel/HF/Render while keeping the DB remote. Supabase has a usable free Postgres tier for hobby projects
+- [Is SQLite supported in Vercel? | Vercel Knowledge Base](https://vercel.com/kb/guide/is-sqlite-supported-in-vercel?utm_source=chatgpt.com)
+  - While it can't be used with Vercel, we do offer other storage solutions.
+  - SQLite needs a local file system on the server to store the data permanently when write requests are made. 
+  - In a serverless environment, this central single permanent storage is not available because storage is ephemeral with serverless functions.
+  - As a function receives more concurrent traffic, the serverless environment will create new instances of the function and each instance will not be able to share the same storage. 
+- [Disk usage on Spaces](https://huggingface.co/docs/hub/en/spaces-storage)
+  - Every Space comes with a small amount of disk storage. This disk space is ephemeral, meaning its content will be lost if your Space restarts or is stopped.
+  - If you need to persist data that lives longer than your Space, you could use a dataset repo.
+- Better free alternatives for SQLite persistence — Render (Hobby/free tier) supports attaching a persistent disk and can host Python web services — this is a practical, low-friction way to keep using SQLite. 
+  - (Other options: Fly.io supports volumes but usually requires paid usage/credits.)
+- Switch to Postgres: Use Supabase or Neon or Turso
+
+- [PythonAnywhere - Plans and pricing](https://www.pythonanywhere.com/pricing/)
+  - Beginner: Free! A limited account with one web app at your-username.pythonanywhere.com, restricted outbound Internet access from your apps, low CPU/bandwidth, no IPython/Jupyter notebook support.
+  - 1 web apps, at ~~custom domains or~~ your-username.​pythonanywhere.com
+  - 1 web worker
+  - 1 daily task like cron
+  - CPU allowance: 100s
+    - The seconds are seconds of CPU time - so any time that the processor spends working on your code. 
+    - Internally, we measure it in nanoseconds.
+  - Private file storage: 512mb
+  - no ssh
+
 ## 1213
 
 - tailwindcss vs UnoCSS, which one should i use for my reactjs/vuejs project?

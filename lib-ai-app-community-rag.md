@@ -828,7 +828,8 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [I built a desktop GUI for vector databases (Qdrant, Weaviate, Milvus) - looking for feedback! : r/vectordatabase](https://www.reddit.com/r/vectordatabase/comments/1po6ela/i_built_a_desktop_gui_for_vector_databases_qdrant/)
+  - VectorDBZ - a desktop app for exploring and managing vector databases.
 
 - ## [Built a deterministic RAG database - same query, same context, every time (Rust, local embeddings, $0 API cost) : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1pisow5/built_a_deterministic_rag_database_same_query/)
   - Built AvocadoDB to fix it

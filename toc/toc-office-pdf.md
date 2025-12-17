@@ -107,11 +107,15 @@ modified: 2021-01-04T17:26:43.784Z
   - https://pdfreader.fileforge.com/
   - Easy Radix-Style PDF Viewer for React.
 
-- https://github.com/pdfme/pdfme /MIT/202503/ts
+- https://github.com/pdfme/pdfme /3.9kStar/MIT/202512/ts
   - https://pdfme.com/
+  - https://playground.pdfme.com/
   - Open-source PDF generation library built with TypeScript and React. 
   - Features a WYSIWYG template designer, PDF viewer, and powerful generation capabilities. 
-  - Create custom PDFs effortlessly in both browser and Node.js environments.
+  - Fast PDF Generator: Works on Node and in the browser. Use templates to generate PDFs
+  - Easy PDF Template Design: easily create templates using the designer.
+  - Templates are JSON data that is easy to understand
+  - pdfme will always remain open source. The cloud service is an optional offering for those who prefer a managed solution.
 
 - https://github.com/agentcooper/react-pdf-highlighter /1.2kStar/MIT/202409/ts
   - https://agentcooper.github.io/react-pdf-highlighter
@@ -162,13 +166,53 @@ modified: 2021-01-04T17:26:43.784Z
   - Paged.js is a free and open-source library that paginates any HTML content to produce beautiful print-ready PDF. 
   - The library fragments the content, reads your CSS print declarations and presents a paginated preview in your browser that you can save as PDF.
 
-- https://github.com/Byaidu/PDFMathTranslate /29.8kStar/AGPLv3/202511/python 
+- https://github.com/PDFMathTranslate-next/PDFMathTranslate-next /2kStar/AGPLv3/202512/python
+  - https://pdf2zh-next.com/zh/index.html
+  - PDF 科学论文翻译与双语对照。基于 BabelDOC
+  - 🐛 翻译图片pdf的异常 'Translation error: Babeldoc translation error: The document contains no paragraphs 
+  - [关于扫描版PDF & 图片的说明 _202508](https://github.com/PDFMathTranslate-next/PDFMathTranslate-next/issues/166)
+    - 目前 BabelDOC 技术路线 暂无计划支持扫描版 PDF
+    - 位图：方案仍在探索中，大概率会依赖闭源服务，优先级较低。
+    - 矢量图：最新版本的 BabelDOC 已经可以识别并翻译图中的文字。
+    - 不同 OCR 服务的输出格式差异较大，需要大量适配工作。
+  - [接入paddleocr vl呀 _202511](https://github.com/PDFMathTranslate-next/PDFMathTranslate-next/issues/285)
+    - 要吃饭的，基于OCR翻译闭源搞了
+  - https://github.com/PDFMathTranslate/PDFMathTranslate-next /AGPLv3
+    - pdf2zh 2.0 does not currently provide an online demo
+- https://github.com/PDFMathTranslate/PDFMathTranslate /29.8kStar/AGPLv3/202511/python 
   - https://pdf2zh.com/
   - 基于 AI 完整保留排版的 PDF 文档全文双语翻译，支持 Google/DeepL/Ollama/OpenAI 等服务，提供 CLI/GUI/MCP/Docker/Zotero
   - Preserve formulas, charts, table of contents, and annotations
   - Support multiple languages, and diverse translation services.
-  - https://github.com/PDFMathTranslate/PDFMathTranslate-next /AGPLv3
-    - pdf2zh 2.0 does not currently provide an online demo
+  - ✨ 可参考翻译后pdf布局不变的实现方式, 特别是表格中英文变中文但布局不变
+  - 支持双栏布局显示原文和翻译，体验非常好
+  - 🐛 [supports ocr on scanned document ](https://github.com/PDFMathTranslate/PDFMathTranslate/issues/19)
+    - 图片型的 PDF 文档暂时还没办法翻译，目前主要还是在优化电子书和论文的翻译效果
+    - 对于扫描版的pdf文件的翻译效果咋样呢？ 压根不支持
+    - sayura 就是 marker 的作者做的开源多国语言和表格的 OCR 模型，我只测试了 PaddleOCR 高精度模型，Sayura 效果比它好很多，而且支持多国语言效果很好。缺点就是 Sayura 对 GPU 显存要求有点高，头疼，不太会量化模型
+    - 💡 扫描件可以直接理解为图片，实际上是保持排版的图片翻译功能，可以参考微信的实现，长按图片点翻译可以自动翻译
+    - 👷 202505: 遇到此问题时，请尝试使用 2.0 预览版 并启用高级选项中的 OCR Workaround 来翻译。
+  - [为什么会出现完全重影？ ](https://github.com/PDFMathTranslate/PDFMathTranslate/issues/942)
+    - 重影用2.0，开ocr workaround就行
+  - 🎯 [pdf2zh 2.0 _202502](https://github.com/PDFMathTranslate/PDFMathTranslate/issues/586)
+    - Core: I am completely rewriting it, related code is at funstory-ai/BabelDOC
+  - https://github.com/funstory-ai/BabelDOC /6.2kStar/AGPL/202512/python
+    - https://funstory-ai.github.io/BabelDOC/
+    - Yet Another Document Translator
+    - Provides a simple command line interface.
+    - Provides a Python API.
+    - Mainly designed to be embedded into other programs, but can also be used directly for simple translation tasks.
+    - This project hopes to promote a standard pipeline and interface to solve the problem.
+      - We offer an intermediate representation of the results from parser and can be rendered into a new pdf or other format. The pipeline is also a plugin-based system which everybody can add their new model, ocr, renderer, etc.
+    - [部署 Babel DOC 到家用 NAS，PDF 自动翻译 _202504](https://zhuanlan.zhihu.com/p/1899886272828379973)
+    - [科研论文翻译神器！BabelDOC：开源AI工具让PDF论文秒变双语对照，公式图表全保留 - 知乎](https://zhuanlan.zhihu.com/p/1892003359227089736)
+
+- https://github.com/CBIhalsen/PolyglotPDF /2.1kStar/GPL/202509/python/js
+  - A multilingual eBook processing tool supporting all eBook formats. 
+  - Features online and offline translation while preserving original layouts.
+  - Compatible with both scanned and digital PDFs. 
+  - 目前效果，对于基于文本的pdf, polyglotpdf的解析方式依旧是最优解。 ocr和布局分析并不总是完美。
+  - 对于报告型表格文档，polyglotpdf效果相当完美，当然表格中的复杂矢量数学公式依旧无法正确处理
 # pdf-editor
 - https://github.com/BDenizKoca/Tideflow-md-to-pdf /MIT/202511/ts/tuari
   - https://bdenizkoca.studio/projects/tideflow/
@@ -283,6 +327,12 @@ modified: 2021-01-04T17:26:43.784Z
 - https://github.com/sschandi/create-resume /ts
   - Client Side, Private, PDF Resume Generator
 
+- https://github.com/Kozea/WeasyPrint /8.4kStar/BSD/202512/python
+  - https://weasyprint.org/
+  - WeasyPrint is a visual rendering engine for HTML and CSS that can export to PDF. 
+  - It aims to support web standards for printing. 
+  - It is based on various libraries but not on a full rendering engine like WebKit or Gecko. The CSS layout engine is written in Python, designed for pagination, and meant to be easy to hack on.
+
 - https://github.com/pdsuwwz/puppeteer-server
   - 基于 Puppeteer + Koa + Rollup + TypeScript, 将任意网页快速转换为 PDF, 图像, 支持将多个网页合并生成为一个 PDF 文件，支持 Cookie 的注入、PDF 水印和页眉页脚的插入
 
@@ -294,7 +344,7 @@ modified: 2021-01-04T17:26:43.784Z
   - https://www.embedpdf.com/
   - https://app.embedpdf.com/
   - EmbedPDF is a framework‑agnostic, MIT‑licensed PDF viewer that drops into any JavaScript project.
-  - Annotations (highlight, sticky notes, free text, ink)
+  - Annotations (highlight, sticky notes, free text, ink) + comment
   - True redaction (content is actually removed)
   - Pluggable architecture & tree-shakable plugins
   - Smooth, virtualized scrolling

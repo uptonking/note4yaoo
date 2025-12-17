@@ -100,6 +100,30 @@ uv pip install --system
 - ## 
 
 - ## 
+# discuss-lsp
+- ## 
+
+- ## 
+
+- ## Announcing the Beta release of ty: an extremely fast type checker and language server for Python, written in Rust. _202512
+- https://x.com/charliermarsh/status/2001038023434047623
+  - We now use ty exclusively in our own projects and are ready to recommend it to motivated users.
+  - 10x, 50x, even 100x faster than existing type checkers and LSPs.
+  - ty was designed from the ground up to power a language server. The entire ty architecture is built around "incrementality".
+  - ty also includes a best-in-class diagnostic system, inspired by the Rust compiler's own world-class error messages.
+  - we're targeting a Stable release next year, with the gap between Beta and Stable largely focusing on: stability and bug fixes
+  - On a longer time horizon, though, ty will power semantic capabilities across the Astral toolchain: dead code elimination, unused dependency detection, SemVer-compatible upgrade enforcement, CVE reachability analysis, type-aware linting, and more.
+
+- I previously tried ty, but it gave me a lot of false positives, so I temporarily used Pyrefly. I then started using Zuban, which I find to be a reasonable library. Could you please include this type checker in your benchmarks?
+
+- next up python runtime in rust
+  - Rustpython exist but the performance is not better and still have bugs
+
+- It looks interesting but I wasn't able to use it with Django. Has that changed recently? The idea of a near-instant type checking sounds wonderful
+
+- it's great, but on Zed it doesn't seem to be showing any completions/suggestions.
+
+- need pyright alternative in rust
 # discuss
 - ## 
 

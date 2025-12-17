@@ -114,6 +114,34 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 💡 [anthropic blog on code execution for agents. 98.7% token reduction sounds promising for local setups : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1powhy6/anthropic_blog_on_code_execution_for_agents_987/)
+  - instead of direct tool calls, model writes code that orchestrates tools
+  - basic idea: dont preload all tool definitions. let model explore available tools on demand. data flows through variables not context
+  - for local models this could be huge. context limits hit way harder when youre running smaller models
+  - the privacy angle is interesting too. sensitive data never enters model context, flows directly between tools
+  - cloudflare independently discovered this "code mode" pattern according to the blog
+  - main challenge would be sandboxing. running model-generated code locally needs serious isolation
+  - tools like cursor and verdent already do basic code generation. this anthropic approach could push that concept way further
+  - wondering if anyone has experimented with similar patterns locally
+
+- FYI, this pattern already exists in HFs smolagents, they use model-generated code to execute tools instead of JSON tool calls
+  - yep, smolagents is definitely already using this pattern.
+- it's up to you how you execute this. The whole approach should depend on strong sandboxing. smolagents can run generated code in a restricted executor, same assumption Anthropic makes in the blog
+- The searchable filesystem approach to tool definitions was the most interesting bit for me, very clean way to avoid preloading huge schemas, whether you use code or JSON
+
+- Yes, though in my case I have the model generating a DAG of steps it wants to run instead of arbitrary code, which reduces the sandboxing needed, avoids non-terminating constructs, etc.
+  - Token-efficiency is a side-benefit from my perspective. Moving to the plan->execute pattern also makes problems tractable for smaller models, many of which are able to understand instructions and produce "code" of some sort, but which may struggle to pluck details out of even a relatively short context window with the needed accuracy.
+- I really like the DAG / plan→execute approach , especially for sandboxing and small models. It feels aligned with the same idea of keeping data and state out of the model context, just with tighter structure. Do you generate the full DAG upfront, or refine it during execution?
+  - 2 modes. The model can propose a dag using a planning tool and then the user can discuss/iterate it, or auto mode where it just runs.
+
+- if you are writing the function why call an MCP server? Why not just do what the MCP does?
+  - MCP is more easily reusable.
+- I'd second that; any reasonably shaped API should work really, but this way you avoid installing any packages and browsing for the API docs. It's a way for the model to discover the API instead of being fed how to use it.
+
 - ## Use Anthropic's tool search to give your agent hundreds of tools without filling its context window.
 - https://x.com/aisdk/status/2000886249306120473
 - Or you could use http://mcpz.it which came out in Feb this year and was the first tool to actually identify and solve the tooling issues with MCPs 

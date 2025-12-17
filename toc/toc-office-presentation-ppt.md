@@ -368,6 +368,13 @@ modified: 2021-04-30T20:14:17.669Z
   - Together AI API key (for Image generation)
   - Google Client ID and Secret for authentication feature
 
+- https://github.com/ComposioHQ/open-gamma /202512/ts
+  - A production-ready AI Chat application featuring tool usage (Google Slides, etc.), Vercel AI SDK for chat streaming, and NextAuth v5 for authentication.
+  - Tool Integration: Connect with external tools like Google Slides.
+  - Database: PostgreSQL with Drizzle ORM.
+  - https://x.com/KaranVaidya6/status/2000966735672041772
+    - An Open Source Presentation Generator with @composio Tool Router and @aisdk
+
 - https://github.com/sligter/LandPPT /1.5kStar/apache2/202511/python
   - https://landppt.pages.dev/
   - 一个基于大语言模型（LLM）的智能演示文稿生成平台，能够自动将文档内容转换为专业的PPT演示文稿

@@ -2304,6 +2304,14 @@ modified: 2022-01-16T15:52:31.293Z
 
 - 我觉得其实蛮好的, 大容量并且大带宽的显存, 并且还有服务器的稳定性, 这个卡的32 64算力高的夸张, 和V100一样, 作为一张专业卡是相当够用的
 
+- ## [32GB Mi50's were getting so expensive that I ended up buying a 32GB w6800 for about the same price instead : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pob44f/32gb_mi50s_were_getting_so_expensive_that_i_ended/)
+  - Much better prompt-processing than the Vega iGPU's
+  - 512GB/s vs 1TB/s memory bandwidth on the Mi50. Per benchmarks the mi50 doesn't actually get 2x performance on token-gen, but it's definitely something. If TG is your highest priority this is reason to consider the Vega cards
+- What is the performance difference? Mi50 vs 6800. Mi50 is not very useful, outside of text inferencing, which is does great. RDNA actually has compute capability, and is supported going forward CDNA looks more and more like RDNA5 or 6.
+- the w6800 does pretty good. Its much faster in prompt processing. 6800 has more compute and modern design supported by amd, and works in windows without hacks. Its the much better generalist card.
+- where?
+  - eBay. Follow a bunch of the bigger hardware reseller accounts and you'll eventually find short-lived deals on workstation cards.
+
 - ## [NVLINK port support for RTX 3090 Ti, RTX 4080/4090 - Gaming and Visualization Technologies / Raytracing - NVIDIA Developer Forums _202210](https://forums.developer.nvidia.com/t/nvlink-port-support-for-rtx-3090-ti-rtx-4080-4090/231140)
 - I just checked RTX 3090 Ti, that also does not have NVlink port. Am I right?
   - Yes, still there is no support but data transmission over PCIe board

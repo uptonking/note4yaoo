@@ -168,7 +168,20 @@ modified: 2023-10-10T14:20:13.855Z
 
 - ## 
 
-- ## 
+- ## 当时沉浸式翻译整个公司才卖了一百多万 我是真的没想到
+- https://x.com/WingwingWa63671/status/1998277917093335474
+  - 现在是第二手了，一开始是一位独立开发者做的 23年卖的
+
+- https://x.com/marco_global/status/1850164497912299670
+  - 沉浸式翻译不错，但开发者卖了之后，现在价格高的离谱。
+  - 而且以前可以用openai的api自行翻译pdf，现在直接提醒要升级pro才行。而月付要六十多人民币！
+  - 文字版的pdf倒是可以翻译，但速度明显很缓慢，而且稍微带点图片，直接乱码了。
+
+- https://x.com/geekbb/status/1803077123604967511
+  - 听说卖了，然后他也加入了那个团队
+
+- 卖了的话，那我现在的数据和金钱都是喂给谁了？
+  - 数据不一定有，我看接口其实调用的微软API
 
 - ## My iOSClub buddy @tingwoooo did this super intuitive UI and didn't know how cool it is!! Please help me tell him this is awesome
 - https://x.com/janechao_dev/status/1793859771164164367

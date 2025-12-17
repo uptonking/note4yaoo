@@ -615,6 +615,7 @@ modified: 2024-01-30T20:56:45.773Z
     - Obsidian is a small company, we're not VC backed (100% user-supported), so the Sync pricing helps us stay in business and keep the lights on. 
 
 - https://github.com/gamosoft/NoteDiscovery /MIT/202511/python/js
+  - https://gamosoft-notediscovery-demo.hf.space/
   - a lightweight, self-hosted note-taking application, all running on your own server.
   - [NoteDiscovery: New free and open source self hosted alternative to Obsidian : r/selfhosted _202511](https://www.reddit.com/r/selfhosted/comments/1opxmud/notediscovery_new_free_and_open_source_self/)
     - For now allows markdown editing, automatic saving, undo/redo, custom themes, plugins (basic support for now)...

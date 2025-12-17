@@ -289,13 +289,22 @@ modified: 2023-04-04T22:39:45.442Z
 - https://github.com/EddieMachete/em-ui-quadrant
   - Quadrant is a tile based, JavaScript web component which allows viewing an image in different levels of detail while optimizing the download process. 
   - Quadrant is based on my interpretation of Google Maps applied to image viewing over the web.
-# image/cover-generator
+# image/cover-generator/open-graph
 - https://github.com/PJijin/Cover-Image-Generator /js
   - Generate a cover image for your blog post online.
 
 - https://github.com/daveearley/screenshot.rocks /ts
   - Screenshot.rocks is an online tool which allows you to create beautiful mobile & browser mockups from screenshots.
   - https://chrome.google.com/webstore/detail/screenshotrocks-one-click/oolmphedpohnagciifbnfpemadolahki
+
+- https://github.com/alvarcarto/url-to-pdf-api /7.1kStar/MIT/202303/js/inactive
+  - Converts any URL or HTML content to a PDF file or an image (PNG/JPEG)
+  - Rendered with Headless Chrome, using Puppeteer. The PDFs should match to the ones generated with a desktop Chrome.
+  - PDFs can be generated in many ways, but one of them is to convert HTML+CSS content to a PDF. This API does just that.
+
+- https://github.com/spatie/browsershot /MIT/202511/php
+  - https://spatie.be/docs/browsershot
+  - Convert HTML to an image, PDF or string
 # ocr
 - https://github.com/naptha/tesseract.js /js
   - a javascript library that gets words in almost any language out of images.
@@ -321,6 +330,19 @@ modified: 2023-04-04T22:39:45.442Z
   - cimbar is a high-density 2D barcode format. Data is stored in a grid of colored tiles
   - 一般二维码只能容纳 2.9KB 的数据，用来放超链接和文本足够了。libcimbar 开发了一个特殊的压缩和解压算法。可以把小于 33MB 的文件直接压缩到特殊的二维码里，用他们提供的 App 扫码解压即可得到文件。
 # image-ai 👾
+- https://github.com/LuqP2/Image-MetaHub /153Star/MPL/202512/ts
+  - https://imagemetahub.com/
+  - A desktop application for browsing, searching, and organizing AI-generated images locally. 
+  - It scans your folders, parses metadata from popular tools (Automatic1111, ComfyUI, Fooocus, SD. Next, Forge, SwarmUI, DrawThings) and online services like Midjourney / Nijijourney, whenever their metadata is present in the files. and lets you search, filter and organize your images by prompt, model, sampler, seed and more – all offline, on your machine.
+  - Rich metadata parsing for Stable Diffusion / A1111 / ComfyUI and other tools
+  - Powerful search & filters by prompt text, model, steps, CFG, sampler, seed, etc.
+  - Compare tools to inspect variations side‑by‑side (Pro)
+  - Analytics dashboard to see how you actually generate and use your models (Pro)
+  - The core app is free and open‑source (MPL 2.0) – this repository.
+  - Some advanced workflow features are Pro and require a license key to unlock in the desktop app.
+  - Pro currently unlocks:
+    - Automatic1111 integration (send prompts/settings back and forth)
+
 - https://github.com/upscayl/upscayl /39.3kStar/AGPLv3/202508/ts
   - https://upscayl.org/
   - Upscayl lets you enlarge and enhance low-resolution images using advanced AI algorithms. Enlarge images without losing quality

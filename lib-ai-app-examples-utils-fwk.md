@@ -493,6 +493,15 @@ modified: 2025-02-21T18:20:42.624Z
     - 实际上是一个 xface 桌面环境的 Ubuntu，通过 VNC 或浏览器来管理访问
     - 结合 CF 即将到来的无状态容器化！
 # acp/agent-client-protocol
+- https://github.com/mcpc-tech/mcpc/tree/main/packages/acp-ai-provider /MIT/202512/ts
+  - https://ai-sdk.dev/providers/community-providers/acp
+  - This package bridges ACP agents to the AI SDK. 
+  - It spawns ACP agents (Claude Code, Gemini, Codex CLI, and more) as child processes and exposes them through the AI SDK's `LanguageModelV2` protocol.
+  - Now you can start building your agent using `streamText` with Claude Code, Codex, OpenCode, and more
+  - https://github.com/mcpc-tech/dev-inspector-mcp
+    - AI-powered visual debugging for React, Vue, Svelte, SolidJS, Preact & Next.js via MCP and ACP.
+    - DevInspector connects your web app directly to your AI agent. Click any element to instantly send its source code, style, and network context to the AI for analysis and fixing.
+
 - https://github.com/RAIT-09/obsidian-agent-client /127Star/apache2/202512/ts
   - Bring AI agents into Obsidian via Agent Client Protocol (ACP), such as Claude Code, Codex and Gemini CLI.
   - This plugin lets you chat with Claude Code, Codex, Gemini CLI, and other AI agents right from your vault.
@@ -500,6 +509,15 @@ modified: 2025-02-21T18:20:42.624Z
   - Note Mention Support: @notename to reference specific notes
   - Use / commands to browse and trigger actions provided by your current agent
   - Permission Management: Fine-grained control over agent actions
+
+- https://github.com/daodao97/acpone /202512/go/ts/vue
+  - 基于 ACP 协议 - 同时调度多个 AI Agent 的 ChatBot。
+  - 多 Agent 支持 (Claude Code, Codex 等)
+  - markstream-vue (Markdown 渲染)
+  - 内嵌静态文件 (go:embed)
+  - JSON-RPC 2.0
+  - https://x.com/daodao97__/status/2000877211197567360
+    - 搓了个新玩具 ACPone :  一个基于 ACP 协议的小应用
 
 - https://github.com/marimo-team/use-acp /apache2/202510/ts
   - https://marimo-team.github.io/use-acp/

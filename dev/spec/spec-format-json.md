@@ -137,3 +137,57 @@ modified: 2020-10-15T13:41:01.275Z
   - 同时支持 HTTP/WebSocket
 # more
 - [Proof of concept: jsos - drop-in JSON replacement that produces smaller payloads](https://evanhahn.com/jsos-proof-of-concept/)
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 
+# discuss-spec
+- ## 
+
+- ## 
+
+- ## zod: The long-awaited Standard JSON Schema spec has been published _20251216
+- https://x.com/colinhacks/status/2000823401313964059
+  - Standard Schema for JSON Schema conversion
+  - vitally(必不可少的; 必要的), it unified runtime type information (in the form of JSON Schema) with inferred static types
+- given a spec-compliant entity, you can:  
+  - • extract a JSON representation of either its input or output type 
+  - • control the *draft version* of the produced JSON Schema 
+  - • pass library-specific config
+- https://x.com/colinhacks/status/2000704277606752450
+  - This is the first ecosystem-wide standard representation that unifies runtime and static type information
+  - It puts control in the hands of the *consuming library*. 
+- Note that some schemas directly implement the spec, while other libraries (for treeshaking reasons) provide conversion functions or adapters that return a spec-compliant result
+  - Zod and ArkType: direct implementation
+  - Valibot and Zod Mini: conversion functions
+
+- Standard JSON Schema support (AI SDK 6 beta)
+
+- drizzle indirectly support this via drizzle-zod
+
+- Finally, a schema worth its weight in bytes
+
+- [How to depend on standard-schema? · Issue · standard-schema/standard-schema](https://github.com/standard-schema/standard-schema/issues/26)
+  - The recommended way to depend on Standard Schema is to simply copy and paste the spec into your project. The entire spec is available in the README. The spec will not change at all without a new major version. It is 100% types only.
+
+- ### valibot: Excited to announce Standard JSON Schema
+- https://x.com/FabianHiller/status/2001016019918446917
+  - We launched Standard Schema ~1 year ago, and it's been a massive success—adopted across the ecosystem with libraries like Zod, Valibot, and ArkType leading the way.
+  - One big pain point remained: seamless JSON Schema support, especially for AI tools that needed custom hacks to integrate the spec somehow.
+  - Tools for structured AI outputs, OpenAPI docs, forms, etc. can now uniformly support Zod, Valibot, ArkType & more out of the box.
+
+- ### ArkType: Standard JSON Schema v1 just dropped
+- https://x.com/arktypeio/status/2001018281642336757
+  - libraries can now accept ArkType wherever they need JSON Schema
+- https://x.com/ssalbdivad/status/2001005025871716655
+  - Standard JSON Schema is already being adopted by AI SDK, Tanstack AI, and MCP SDK.
+
+- Next step: make ORM accepting it to define schema, and we'll really have one source of truth.
+# discuss
+- ## 
+
+- ## 
+
+- ## 

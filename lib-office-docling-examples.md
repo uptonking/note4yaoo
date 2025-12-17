@@ -32,10 +32,19 @@ modified: 2025-09-21T13:58:46.548Z
   - a demo which showcases the model running entirely in your browser with WebGPU acceleration
   - ✨ 此类demo可考虑实现类似图片对比的新旧对比滑块
   - [Granite Docling WebGPU: State-of-the-art document parsing 100% locally in your browser. : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o0php3/granite_docling_webgpu_stateoftheart_document/)
-  - I had a very good experience with granite-docling as my goto pdf processor for RAG knowledge base.
-  - Love this. WebGPU seems to be underutilized in general and could provide a better alternative to BYOK + cloud inference.
-  - If someone could add translation feature on top of this, it would be perfect
-  - It is first time I am seeing someone using Transformers.js
+    - I had a very good experience with granite-docling as my goto pdf processor for RAG knowledge base.
+    - Love this. WebGPU seems to be underutilized in general and could provide a better alternative to BYOK + cloud inference.
+    - If someone could add translation feature on top of this, it would be perfect
+    - It is first time I am seeing someone using Transformers.js
+  - https://github.com/PDFMathTranslate/PDFMathTranslate /29.8kStar/AGPLv3/202511/python 
+    - ✨ 可参考翻译后pdf布局不变的实现方式, 特别是表格中英文变中文但布局不变
+    - 支持双栏布局显示原文和翻译，体验非常好
+  - https://github.com/getomni-ai/zerox /MIT/202505/python/ts/inactive
+    - OCR & Document Extraction using vision models
+    - Convert that file into a series of images, Pass each image to GPT and ask nicely for Markdown
+    - [Upload your documents and see how OmniAI reads scans, PDFs](https://getomni.ai/ocr-demo)
+  - https://github.com/pdfme/pdfme /MIT
+    - 提供了机遇json模版生成pdf的方案
 
 - https://huggingface.co/spaces/PaddlePaddle/PaddleOCR/tree/main /apache2/202504/python
   - and i tested handwritten text for english. it got the numbers right...

@@ -514,7 +514,17 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [Nemotron 3 Nano 30B is Amazing! (TLDR) : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1pocsdy/nemotron_3_nano_30b_is_amazing_tldr/)
+- If you want something that is almost as fast as qwen3 30b A3B but thinking in English, this is perfect.
+  - it should be faster for long contexts solely because of using less than half as much memory per token of KV cache.
+- Generation yes. PP, not.
+
+- Out of curiosity, what are your use cases in which this model performed better than Qwen 3 Coder 30B A3B or Qwen 3 30B A3B 2507?
+  - I'm also curious to my preliminary tests Qwen 3 Coder 30B A3B is still superior and faster
+- I have something over 50 coding related prompts. I tested lots of different coding prompts with this and other Nemotron models. There was not a single AI response that would give me a code that would work out of the box.
+
+- It is a good and fast model. And the fact that is truly open source is amazing.
+  - But overall i think Qwen 30B 2507 is still better. In my tests it generated more functioning code and could follow very long conversations much better.
 
 - ## [NVIDIA releases Nemotron 3 Nano, a new 30B hybrid reasoning model! : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pn8upp/nvidia_releases_nemotron_3_nano_a_new_30b_hybrid/)
   - Nemotron 3 has a 1M context window and the best in class performance for SWE-Bench, reasoning and chat.

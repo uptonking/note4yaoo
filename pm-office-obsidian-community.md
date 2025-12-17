@@ -195,7 +195,28 @@ modified: 2024-01-23T02:52:23.932Z
 
 - ## 
 
-- ## 
+- ## [What's one improvement you'd like to see in Obsidian in 2026? : r/ObsidianMD](https://www.reddit.com/r/ObsidianMD/comments/1pogn6w/whats_one_improvement_youd_like_to_see_in/)
+- A good, comprehensive attachements/media management tool. 
+  - I know there are some good plugins out there, but imo it should be built in, to make sure it's properly maintain over time
+- Clean up orphaned attachments (using sync storage)
+
+- Lightweight for mobile would be my top choice, it’s too clunky and sync takes too long, and control too complicated to be used for mobile
+
+- Better search would be nice. Not only better relevance ranking but to be able to search for symbols like colons in between terms. And also presentation of results in the center of the screen.
+
+- advanced outliner options like nested code blocks, callouts etc. Obsidian can do a lot to make better UX regarding outline approach
+
+- editable block embeds is #1 for me
+
+- Embeddings that can be modified in-place would be lovely. I miss them from Roam, I loved them as a part of my workflows.
+
+- In general I’d like to see more work done to improve the experience of embedding one note in another. The ability to embed notes in other notes is one of Obsidian’s core strengths. But it’s like you are 90% of the way there and then the last 10% really stops me from being able to use this feature seriously.
+
+- All I want is a Kanban view for bases so I can make my Now Playing/Break/Finished notion Kansan again, and do my tier lists for what I played. (I know I can sort of get it with Kanban status updater but it's not the same)
+
+- Look forward to native PDF support for highlights and comments.
+
+- Make everything faster, even with plugins.
 
 - ## [Do you all know how I can get something like this? : r/ObsidianMD](https://www.reddit.com/r/ObsidianMD/comments/1p7qs4p/do_you_all_know_how_i_can_get_something_like_this/)
   - 类似仪表大盘

@@ -217,6 +217,8 @@ modified: 2024-08-24T16:30:20.218Z
     - In this module's `postinstall` task, it determines which platform it is being installed on and downloads the correct binary from `ripgrep-prebuilt` for the platform.
   - [Try ripgrep in Y minutes](https://codapi.org/try/ripgrep/)
   - [Ripgrep playground](https://codapi.org/ripgrep/)
+  - https://github.com/phiresky/ripgrep-all /rust
+    - rga: ripgrep, but also search in PDFs, E-Books, Office documents, zip, tar.gz, etc.
 
 - https://github.com/sourcebot-dev/sourcebot /1.9kStar/MIT+EE/202505/ts
   - https://sourcebot.dev/

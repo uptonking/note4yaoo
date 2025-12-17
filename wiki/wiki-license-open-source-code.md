@@ -262,7 +262,6 @@ modified: 2021-09-14T18:58:58.275Z
   - 产物可以不同license发布，**对修改友好**
   - 可以兼容GPL
   - https://tldrlegal.com/license/mozilla-public-license-2.0-(mpl-2)
-  - [MPL 2.0 FAQ — Mozilla](https://www.mozilla.org/en-US/MPL/2.0/FAQ/)
 
 - who is using #MPL-license
   - mozilla firefox/thunderbird
@@ -284,16 +283,26 @@ modified: 2021-09-14T18:58:58.275Z
   - 被许可方不得重新许可MPL许可的资源
   - 被许可方**必须将其衍生作品与MPL许可的源代码一起分发**
 
-- MPL虽然要求对于经MPL许可证发布的源代码的修改也要以MPL许可证的方式再许可出来，以保证其他人可以在MPL的条款下共享源代码。
-  - 但是，在MPL许可证中对“发布”的定义是“以源代码方式发布的文件”，这就意味着MPL允许一个企业在自己已有的源代码库上加一个接口，除了接口程序的源代码以MPL许可证的形式对外许可外，源代码库中的源代码就可以不用MPL许可证的方式强制对外许可。
-  - 这些，就为借鉴别人的源代码用做自己商业软件开发的行为留了一个方式
-- MPL许可证第三条第7款中允许被许可人将经过MPL许可证获得的源代码同自己其他类型的代码混合得到自己的软件程序。
-- 要求源代码的提供者不能提供已经受专利保护的源代码
-- 要求所有再发布者都得有一个专门的文件就对源代码程序修改的时间和修改的方式有描述
-- MPL 2.0与Apache许可证以及GPL第二版或更新、LGPL2.1版或更新，及AGPL第三版或更新兼容。而1.1版因为有“一些复杂的限制”造成与GPL的不兼容（从而阻止升级到MPL 2.0）
-
-- The MPL is a simple copyleft license. 
+- [MPL 2.0 FAQ — Mozilla](https://www.mozilla.org/en-US/MPL/2.0/FAQ/)
   - The MPL's "file-level" copyleft is designed to encourage contributors to share modifications they make to your code, while still allowing them to combine your code with code under other licenses (open or proprietary) with minimal restrictions.
+
+- Is "minified" JavaScript Source Code?
+  - No. Minified JavaScript, while not an "executable" in the software engineering sense of the word, is difficult for humans to read, edit, and modify. so it is not Source Code as defined by the license.
+  - Therefore, minified JavaScript is the Executable form, and the responsibilities set out in the license for distribution of the Executable form should be met when you distribute minified MPL-licensed JavaScript.
+  - This means, among other things, that you do not need to, and probably should not preserve the MPL boilerplate (which begins "This Source Code Form...") when minifying JavaScript. However, you do need to comply with section 3.2(a) by informing the recipients of the minified source how they can obtain a copy of the source code. 
+  - 💡 Note that treating minified JavaScript as an executable increases distributor flexibility by allowing MPL-licensed code to be combined into a single file with non-MPL JavaScript source code without requiring the non-MPL code to be distributed under the terms of the MPL.
+
+- ## [Could anyone explain the difference between LGPL and MPL to a non-dev? : r/opensource _202410](https://www.reddit.com/r/opensource/comments/1g2sprd/could_anyone_explain_the_difference_between_lgpl/)
+- MPL-2.0 applies copyright on a per-file basis. Software that integrates with it only needs to open source modifications made to the MPL files under the same license.
+- LGPL takes that a step further by requiring any code that depends on the LGPL library to open source itself with the same license up to the boundary of a dynamic link.
+- GPL takes that a step further by declaring that any application process that dynamically links to GPL libraries must be provided under the GPL license.
+- And AGPL takes that to the next step where any application process that interacts with an AGPL must be of the same license.
+
+- If something is licensed under LGPL the end-user (not only the developer who used the LGPL code for their own work but also everyone they give their work to) must be able to replace the LGPL parts with alternatives.
+  - MPL doesn't have the requirement that the end-user must be able to replace the already compiled code. So a png-loader under MPL would allow the programmer to directly include it in the same file and the end user couldn't replace it anymore.
+
+- [Is MPL copyleft actually useful? : r/opensource](https://www.reddit.com/r/opensource/comments/1istuay/is_mpl_copyleft_actually_useful/)
+  - I like the MPL2 precisely because the boundaries are clear, and I'm not hassling anyone too much about using my code with their code. But, when they change my code, then they have to contribute back.
 
 - ## [Mozilla Public License 2.0 - FOSSA](https://fossa.com/blog/open-source-software-licenses-101-mozilla-public-license-2-0/)
 - Weak copyleft licenses like the Mozilla Public License 2.0 also require users to disclose their changes to the source code, but requires sharing of a narrower set of code. 

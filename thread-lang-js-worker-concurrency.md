@@ -18,7 +18,20 @@ modified: 2022-12-19T01:59:37.634Z
 # discuss-concurrency-languages
 - ## 
 
-- ## 
+- ## 🤔 [Is multithreading basically dead now, or is async just the new default for scaling? : r/learnprogramming _202512](https://www.reddit.com/r/learnprogramming/comments/1pnuj7k/is_multithreading_basically_dead_now_or_is_async/)
+  - Lately, it feels like everything is async-first - async/await, event loops, non-blocking I/O, reactive frameworks, etc. A lot of blogs and talks make it sound like classic multithreading (threads, locks, shared state) is something people are actively trying to avoid.
+- Async doesn’t make multiple things happen at the same time. It only allows you to do other stuff while waiting.
+  - Async doesn’t need multithreading and multithreading doesn’t need to do anything asynchronous. Both have been around for a long time, just in different forms.
+
+- Async runtimes may send the different async futures to different threads though. This might be the reason one could see multi threading going away, because async abstracts it in those cases.
+  - The fact that the implementation of async and what async means changes from language to language is a problem. In some languages async is multithreaded (or at least can be), and in some it isn't. It's weird
+
+- Async just means "not synchronous" which means it does not exclude or include parallelity. In other words, async code can lead to code being run in parallel.
+  - The important part is that we move away from manually handling threads/cores/processes and rather using "tasks" (futures, promises or whatever your language and runtime call or) and have them executed by a scheduler, which might or might not use more than a single thread. 
+
+- Part of why async design is popular in Python and JavaScript is because threads really suck in those languages. The existence of the global interpreter lock in Python <3.14 severely limits how well threads can perform, and worker threads are a huge pain to manage in JavaScript. There's much less incentive to use async in languages where threads are efficient and the language has good thread management mechanisms.
+
+- Erlang, Elixir and Go .....got it right - green threads for the win.
 
 - ## My memory tells me there are two papers. First one that talks about how event-based concurrency is better than thread-based concurrency and a second one that makes tries to make the opposite claim. But I can't find them anymore! Did my mind hallucinate them?
 - https://x.com/penberg/status/1856605191002329461

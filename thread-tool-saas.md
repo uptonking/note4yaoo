@@ -12,7 +12,21 @@ modified: 2023-05-07T18:35:50.897Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [Why is hosting a mediaserver for movies and shows so popular : r/selfhosted _202512](https://www.reddit.com/r/selfhosted/comments/1poq56t/why_is_hosting_a_mediaserver_for_movies_and_shows/)
+  - I've been using Real Debrid without issues for years now. First with Kodi, then with Stremio. Setup has been quite easy. There are not really any downsides.
+  - Still, a lot of people(especially here) seem to prefer hosting a media server. To me, it seems like a lot of work to properly set up, just to have your storage bloated with media.
+  - Am I missing something? What are the pro's of hosting a media server over my current setup?
+
+- I host my media server to save money on subscriptions.
+
+- I trust my selection of downloads more than what Debrid services offer, I also host it all myself so that I am not reliant on any third parties (remember when there was the big scare about RD shutting off services a while ago).
+
+- My media server still works when cloudflare or AWS has issues for the 10th time this year
+
+- I tried stremio+RD for a few weeks, but availability of my preferred formats isn't really good, went back to usenet. 
+  - FWIW Stremio can stream directly from usenet as well.
+
+- I run a media server, because it allows me easy access, in one place, to all the media I’ve hoarded (and own) over the years.
 
 - ## Anna's Archive 可以视为 Zlibrary 的超集，拥有比 Zlibrary 更多的图书资源，不需要登录即可下载。
 - https://twitter.com/OldPanda/status/1764871238282080549

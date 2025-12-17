@@ -555,6 +555,13 @@ modified: 2025-03-22T16:10:24.856Z
 - 📌 [NVIDIA NIM APIs](https://build.nvidia.com/explore/discover)
   - free: Up to 40 rpm
   - models: deepseek-r1, qwen3-coder-480b
+  - [NVIDIA NIM FAQ - AI & Data Science / NVIDIA NIM - NVIDIA Developer Forums _202409](https://forums.developer.nvidia.com/t/nvidia-nim-faq/300317)
+    - NIM access through the NVIDIA Developer Program is for prototyping, research, development and testing purposes only and does not include enterprise features or support.
+  - https://www.threads.com/@bsunter/post/DP6atv7EdIL _202510
+    - Crazy that you can sign up for nvidia and get almost unlimited free access to their models and use them in OpenCode
+    - Once you exhaust free credits (1000-3000 credits), you basically have to purchase credits. Or use models locally if you have nvidia gpu
+    - I think there's a limit on number of days to use free credits. (~90 days)
+    - Nvidia speaks about this in their developer forums. Below you can find the details of limits on free credit
 
 - [Groq Rate Limits - Docs](https://console.groq.com/docs/rate-limits)
   - tldr: tpd-100k~500k

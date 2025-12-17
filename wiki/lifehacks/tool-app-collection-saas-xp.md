@@ -72,6 +72,12 @@ modified: 2022-11-07T10:25:12.034Z
 
 - [LinuxDo商家评价平台](https://rate.linux.do/)
 
+- [Hugging Face Spaces](https://huggingface.co/docs/hub/en/spaces-overview)
+  - Spaces stores your code inside a git repository, just like the model and dataset repositories. 
+  - Each time a new commit is pushed, the Space will automatically rebuild and restart.
+  - Each Spaces environment is limited to 16GB RAM, 2 CPU cores and 50GB of (not persistent) disk space by default, which you can use free of charge. 
+  - You can upgrade to better hardware, including a variety of GPU accelerators and persistent storage, for a competitive price.
+
 - 博客列车 https://blogtrain.com/
   - [免费博客主机➕免费域名 手快有！ - Benefits - IDC Flare](https://idcflare.com/t/topic/32449)
   - 1GB 存储
