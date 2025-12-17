@@ -28,16 +28,46 @@ modified: 2025-09-21T13:58:46.548Z
   - https://huggingface.co/ibm-granite/granite-docling-258M /apache2
     - a multimodal Image-Text-to-Text model engineered for efficient document conversion
 
-- https://huggingface.co/spaces/ibm-granite/granite-docling-258M-WebGPU
-  - [Granite Docling WebGPU: State-of-the-art document parsing 100% locally in your browser. : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o0php3/granite_docling_webgpu_stateoftheart_document/)
+- https://huggingface.co/spaces/ibm-granite/granite-docling-258M-WebGPU/tree/main /apache2/202510/html/vanillajs
   - a demo which showcases the model running entirely in your browser with WebGPU acceleration
-  - WebGPU seems to be underutilized in general and could provide a better alternative to BYOK + cloud inference.
+  - ✨ 此类demo可考虑实现类似图片对比的新旧对比滑块
+  - [Granite Docling WebGPU: State-of-the-art document parsing 100% locally in your browser. : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o0php3/granite_docling_webgpu_stateoftheart_document/)
   - I had a very good experience with granite-docling as my goto pdf processor for RAG knowledge base.
+  - Love this. WebGPU seems to be underutilized in general and could provide a better alternative to BYOK + cloud inference.
+  - If someone could add translation feature on top of this, it would be perfect
+  - It is first time I am seeing someone using Transformers.js
+
+- https://huggingface.co/spaces/PaddlePaddle/PaddleOCR/tree/main /apache2/202504/python
+  - and i tested handwritten text for english. it got the numbers right...
+
+- https://github.com/NanoNets/docstrange /460Star/MIT/202508/python
+  - https://docstrange.nanonets.com/
+  - Extract and convert data from any document, images, pdfs, word doc, ppt or URL into multiple formats (Markdown, JSON, CSV, HTML) with intelligent content extraction and advanced OCR.
+  - Cloud Processing (Default): Instant free conversion with cloud API 
+  - Local Processing: CPU/GPU options for complete privacy - no data sent anywhere
+  - 🐛 代码中未看到流式处理文件的逻辑, 对处理大文件不友好
+  - Universal Input: PDFs, Word docs, Excel, PowerPoint, images, URLs, and raw text
+  - URL Processing: Direct conversion from web pages
+  - Smart Output: Markdown, JSON, CSV, HTML, and plain text formats
+  - Advanced OCR: Multiple OCR engines with automatic fallback
+  - MCP Server: Integrate with Claude Desktop for intelligent document navigation
+  - [Package for converting PDF, images and docs to structured data like JSON, markdown, HTML : r/node _202509](https://www.reddit.com/r/node/comments/1nqxada/package_for_converting_pdf_images_and_docs_to/)
+    - I've published a Node.js client for DocStrange 
+  - [Nanonets-OCR2: An Open-Source Image-to-Markdown Model with LaTeX, Tables, flowcharts, handwritten docs, checkboxes & More : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o5nlli/nanonetsocr2_an_opensource_imagetomarkdown_model/)
+    - models designed for advanced image-to-markdown conversion and Visual Question Answering (VQA).
+    - 1.5b--apache2, 3b--Qwen2.5-VL-3B-research-only-lic
 
 - https://github.com/docling-project/docling-serve /725Star/MIT/202509/python
   - Running Docling as an API service.
   - The server is available at http://127.0.0.1:5001
   - An image for AMD ROCm 6.3 (docling-serve-rocm) is supported but not published due to its large size.
+
+- https://github.com/drmingler/docling-api /693Star/MIT/202503/python/inactive
+  - a highly scalable and lightweight backend for docling.
+  - deployable and scalable backend server that efficiently converts various document formats (pdf, docx, pptx, html, images, etc) into Markdown. 
+  - it offers text/table extraction, OCR, and batch processing with sync/async endpoints.
+  - Powered by Docling (IBM's advanced document parser), this service is built with FastAPI, Celery, and Redis, ensuring fast, efficient processing.
+  - Optimized for both CPU and GPU modes, with GPU highly recommended for production environments
 
 - https://github.com/docling-project/docling-mcp /210Star/MIT/202508/python
   - Making docling agentic through MCP
@@ -47,22 +77,16 @@ modified: 2025-09-21T13:58:46.548Z
   - Local document caching for improved performance
   - Support for local files and URLs as document sources
   - RAG applications with Milvus upload and retrieval
-
-- https://github.com/drmingler/docling-api /693Star/MIT/202503/python/inactive
-  - a highly scalable and lightweight backend for docling.
-  - deployable and scalable backend server that efficiently converts various document formats (pdf, docx, pptx, html, images, etc) into Markdown. 
-  - it offers text/table extraction, OCR, and batch processing with sync/async endpoints.
-  - Powered by Docling (IBM's advanced document parser), this service is built with FastAPI, Celery, and Redis, ensuring fast, efficient processing.
-  - Optimized for both CPU and GPU modes, with GPU highly recommended for production environments
 # examples
+- https://github.com/mozilla-ai/document-to-markdown /MIT/202506/python/inactive
+  - Convert unstructured documents to markdown using the Docling.
+  - We have built a simple Graphical Interface demo of Docling to showcase some basic functionality
+
 - https://github.com/paazmaya/docling-japanese-books /MIT/202511/python
   - A streamlined document processing tool that uses Docling to extract, process, and store Japanese books and documents for LLM training workflows.
   - Extract and annotate images with SHA-256 hashing for deduplication
   - Vector Storage: Milvus database with enhanced metadata
   - LLM Ready: Multiple embedding models (Jina v4, BGE-M3, Snowflake Arctic, MiniLM) with Late Chunking optimization
-
-- https://github.com/mozilla-ai/document-to-markdown /MIT/202506/python
-  - Convert unstructured documents to markdown using the Docling.
 
 - https://github.com/AI-Engineer-Skool/booktutor-ai /AGPL/202507/python/单文件
   - https://www.skool.com/ai-engineer/
@@ -158,11 +182,6 @@ modified: 2025-09-21T13:58:46.548Z
   - Document tagging and categorization
   - OIDC Setup - Single Sign-On integration
 
-- https://github.com/Dogacel/deepseek-ocr-client-macos /MIT/202511/python/js
-  - A real-time Electron-based desktop GUI for DeepSeek-OCR
-  - [Dogacel/DeepSeek-OCR-Metal-MPS · Hugging Face](https://huggingface.co/Dogacel/DeepSeek-OCR-Metal-MPS)
-    - This repository uses the weights from the original DeepSeek-OCR and modifies model to support MPS and CPU inference
-
 - https://github.com/ocrmypdf/OCRmyPDF /32kStar/MPLv2/202512/python
   - http://ocrmypdf.readthedocs.io/
   - OCRmyPDF adds an OCR text layer to scanned PDF files, allowing them to be searched or copy-pasted.
@@ -172,6 +191,20 @@ modified: 2025-09-21T13:58:46.548Z
   - Battle-tested on millions of PDFs.
 - https://github.com/FanQinFred/OCRmyPDF-Desktop /apache2/202312/js/vue/inactive
   - 在OCRmyPDF的基础上，集成了所需环境，并使用Electron开发了桌面端
+
+- https://github.com/ihatecsv/deepseek-ocr-client /MIT/202510/python/js
+  - A real-time Electron-based desktop GUI for DeepSeek-OCR
+  - GPU acceleration (CUDA)
+  - Flask backend manages the model, Electron frontend for the UI.
+  - [A quickly put together a GUI for the DeepSeek-OCR model that makes it a bit easier to use : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1ocx27p/a_quickly_put_together_a_gui_for_the_deepseekocr/)
+
+- https://github.com/Dogacel/deepseek-ocr-client-macos /MIT/202511/python/js
+  - A real-time Electron-based desktop GUI for DeepSeek-OCR
+  - [Dogacel/DeepSeek-OCR-Metal-MPS · Hugging Face](https://huggingface.co/Dogacel/DeepSeek-OCR-Metal-MPS)
+    - This repository uses the weights from the original DeepSeek-OCR and modifies model to support MPS and CPU inference
+
+- https://github.com/ikantkode/hunyuan-1b-ocr-app /202511/python
+  - [HunyuanOCR-1B - Dockerized Streamlit OCR App - Quite Amazing. : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1p6wios/hunyuanocr1b_dockerized_streamlit_ocr_app_quite/)
 # ocr-utils
 
 # more

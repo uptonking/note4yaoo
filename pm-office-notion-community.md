@@ -214,7 +214,12 @@ modified: 2023-11-28T14:48:45.910Z
 # discuss
 - ## 
 
-- ## 
+- ## [I Solved The Progress Bar issue! : r/Notion](https://www.reddit.com/r/Notion/comments/1pnu21w/i_solved_the_progress_bar_issue/)
+  - it kept showing too long on windows. So, I found easy solution to it.
+  - Step one: Go to your database setting and press layout option
+  - Step Two: Scroll down and click on compact layout
+
+- Adding to that, you can go to Compact card settings and enable Full line display for your progress bar property. This will make the progress bar as long as the card size, without it being cut off like in your first picture.
 
 - ##  If we have 5 employees in the agency, and for example we want two to see all the data in Notion, and the others to have access only to tasks and projects, what is the safest way to do it?
 - https://x.com/typeoneerror/status/1834260004414644558

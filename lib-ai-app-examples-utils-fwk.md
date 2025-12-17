@@ -371,6 +371,19 @@ modified: 2025-02-21T18:20:42.624Z
 
 ## agent-fwk-vendors
 
+- https://github.com/cuga-project/cuga-agent /341Star/apache2/202512/python/ts/ibm
+  - https://huggingface.co/spaces/ibm-research/cuga-agent/tree/main
+  - https://cuga.dev/
+  - CUGA is an open-source generalist agent for the enterprise, supporting complex task execution on web and APIs, OpenAPI/MCP integrations, composable architecture, reasoning modes, and policy-aware features.
+  - High-performing generalist agent — Benchmarked on complex web and API tasks. 
+  - integrate tools via OpenAPI specs, MCP servers, and Langchain, enabling rapid connection to REST APIs, custom protocols, and Python functions
+  - Integrates with Langflow — Low-code visual build experience for designing and deploying agent workflows
+  - composable — Built with modularity in mind, CUGA itself can be exposed as a tool to other agents, enabling nested reasoning and multi-agent collaboration
+  - Configurable policy and human-in-the-loop instructions (Experimental)
+  - Save-and-reuse capabilities (Experimental) — Capture and reuse successful execution paths (plans, code, and trajectories) for faster and consistent behavior across repeated tasks
+  - Cuga supports isolated code execution using Docker/Podman containers for enhanced security.
+  - [CUGA on Hugging Face: Democratizing Configurable AI Agents _202512](https://huggingface.co/blog/ibm-research/cuga-on-hugging-face)
+
 - https://github.com/firebase/genkit /5.2kStar/apache2/202512/ts
   - https://genkit.dev/
   - open-source framework for building full-stack AI-powered applications, built and used in production by Google's Firebase
@@ -440,6 +453,8 @@ modified: 2025-02-21T18:20:42.624Z
     - 从 TARS 的开源 repo 学到的两个架构特点
     - 1️⃣mcp 统一工具协议: 可插拔，可扩展非常关键，且 tool 定义和 tool 执行对外只暴露接口，agent 端不关心实现。
     - 2️⃣事件管理: 管理好所有流式输出、任何工具 update，都需要考虑到前端展示 event 的方式，提供更好交互。而且事件管理有利于模型统一管理上下文。以事件时间戳永远自增，便于时间回溯和用户观测。
+  - https://x.com/imwritingbugs/status/2000862713594195989
+    - 真不错啊，里面一堆好用的沙盒工具。基本上可以复制粘贴就实现 browser use，terminal use
   - [2025-03-18] We released a technical preview version of a new desktop app - Agent TARS, a multimodal AI agent that leverages browser operations by visually interpreting web pages and seamlessly integrating with command lines and file systems.
     - Comprehensive Tool Support: Integrates with search, file editing, command line, and Model Context Protocol (MCP) tools to handle complex workflows.
   - https://github.com/bytedance/UI-TARS /apache2

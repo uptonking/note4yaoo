@@ -388,6 +388,21 @@ du -h /System/Volumes/Data | grep "G\t" | sort -rh
 # discuss-macos-devtools
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 开发 macOS 应用时，为了给应用添加自动更新功能，集成 Sparkle 这类复杂框架，依赖多、配置繁琐，确实挺麻烦。
+- https://x.com/GitHub_Daily/status/2000385354973815183
+  - 在 GitHub 上找到了 AppUpdater 这个精简的开源库，专门利用 GitHub Releases 来为 macOS 应用提供静默更新能力。
+  - https://github.com/s1ntoneli/AppUpdater
+  - 重构自经典的同名项目，剔除了 PromiseKit 依赖，全面改用 async/await 语法，让代码更加现代化且易于维护。
+  - 兼容支持 SwiftUI，只需几行代码就能集成检查、下载与自动安装流程，并且支持多语言更新日志显示。
+
+- Sparkle配置不复杂，而且稳定
+
 - ## [MinIO Object Storage for MacOS](https://min.io/docs/minio/macos/index.html)
 
 ```sh

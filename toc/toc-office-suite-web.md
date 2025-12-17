@@ -76,6 +76,12 @@ modified: 2023-03-09T13:47:07.317Z
     - an example of a browser-based document converter using Web Assembly. 
   - https://github.com/xwiki-labs/netflux-spec2
 
+- https://github.com/ProtonMail/WebClients /5.1kStar/GPLv3/202512/ts
+  - This project is a monorepo hosting the Proton web clients. It includes the web applications, their dependencies & shared modules as well as all tooling surrounding development of the web clients
+  - 依赖lexical实现富文本编辑
+  - https://github.com/ProtonMail/WebClients/blob/main/applications/docs-editor/src/app/Containers/Spreadsheet/Spreadsheet.tsx
+    - 依赖 @rowsncolumns/toolkit 实现 excel
+
 - https://github.com/LibreOffice/core /GPLv3/cpp/java
   - [LibreOffice Online](https://www.libreoffice.org/download/libreoffice-online/)
     - LibreOffice Online is a server service built from the main LibreOffice project code, which provides display and collaborative visual editing of a range of document types in a web browser. 

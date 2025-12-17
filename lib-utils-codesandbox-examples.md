@@ -509,6 +509,10 @@ modified: 2023-09-02T09:17:22.992Z
   - Network restrictions: Control which hosts/domains can be accessed via HTTP/HTTPS and other protocols
   - Filesystem restrictions: Control which files/directories can be read/written (defaulting to allowing writes to the current working directory)
   - Unix socket restrictions: Control access to local IPC sockets
+
+- https://github.com/agent-infra/sandbox /1.7kStar/apache2/202512/python/ts/字节
+  - https://sandbox.agent-infra.com/
+  - All-in-One Sandbox for AI Agents that combines Browser, Shell, File, MCP and VSCode Server in a single Docker container.
 # playground
 - https://github.com/nalgeon/codapi /1.2kStar/apache2/202411/go
   - https://codapi.org/

@@ -68,6 +68,12 @@ modified: 2023-10-26T19:00:02.186Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
 - ## database performance tips 1. just index every column in your database
 - https://x.com/andrii_sherman/status/1878850779102224590
   - don't use indexes on writes

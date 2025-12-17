@@ -78,7 +78,31 @@ modified: 2023-02-20T19:41:08.506Z
 # discuss-net
 - ## 
 
-- ## 
+- ## We forked Chromium and bolted on a lock-free, zero-copy, low-latency shared memory ringbuffer written in Rust
+- https://x.com/davidgu/status/2000608790836854925
+  - We needed to IPC 100+ MB/s of raw video, and Chromium's WebSocket implementation is dreadfully inefficient
+  - Recall is the API for meeting recording. We capture millions of hours of meetings per week, and process over 3 TiB/sec of raw video at our peak load.
+  - We started out with a naive implementation using WebSockets on localhost, but our profile data showed that this was burning a ton of CPU cycles.
+  - We read through the WebSocket RFC, and Chromium's WebSocket implementation, dug through our profile data, and discovered two primary causes of slowness:
+- 1. Fragmentation
+  - The WebSocket specification supports fragmenting messages. This is the process of splitting a large message across several WebSocket frames.
+  - Looking into the Chromium WebSocket source code, messages larger than 131KB will be fragmented into multiple WebSocket frames.
+  - A single 1080p raw video frame would be 1080 * 1920 * 1.5 = 3110.4 KB in size, and therefore Chromium's WebSocket implementation would fragment it into 24 separate WebSocket frames.
+  - That's a lot of copying and duplicate work!
+- 2. Masking
+  - The WebSocket specification also mandates that data from client to server is masked.
+  - This has security benefits, because it prevents a client from controlling the bytes that appear on the wire.
+  - While this is great for security, the downside is masking the data means making an additional once-over pass over every byte sent over WebSocket -- insignificant for most web usages, but a meaningful amount of work when you're dealing with 100+ MB/s
+
+- We knew we need to move away from WebSockets, so we began our quest to find a new mechanism to get data out of Chromium.
+  - We realized pretty quickly that browser APIs are severely limited if we wanted something significantly more performant that WebSocket.
+  - This meant we'd need to fork Chromium and implement something custom. But this also meant that the sky was the limit for how efficient we could get.
+  - We considered 3 options: raw TCP/IP, Unix Domain Sockets, and Shared Memory.
+
+- Could you bring that to puppeteer as well, they transmit screenshots from Chrome to the runner via websocket and it's a huge performance bottleneck in practice. I didn’t build any of the system, I just found out sending screenshots over was super slow.
+  - That's really interesting. We previously ran puppeteer in the stack, too, and sent its screenshots to Rust over the FFI for telemetry.
+- have you tried using the pipe transport (not sure specific terminology)
+  - It uses stdout/in instead of websocket. It may still be a far cry from "highly performant". Playwright uses this by default, though it's usually slower (for other reasons)
 
 - ## A web application can be choked by Chrome’s HTTP/1.1 six connection per host limit.
 - https://x.com/hnasr/status/1886291288749908243

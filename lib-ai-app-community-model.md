@@ -114,7 +114,11 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
-- ## 
+- ## Use Anthropic's tool search to give your agent hundreds of tools without filling its context window.
+- https://x.com/aisdk/status/2000886249306120473
+- Or you could use http://mcpz.it which came out in Feb this year and was the first tool to actually identify and solve the tooling issues with MCPs 
+
+- Game-changer for multi-tool agents  Tool search + deferLoading = hundreds of tools without context explosion? Claude-Sonnet-4.5 agents just scaled massively—Vercel AI SDK making production agents real. 
 
 - ## 🤔 [How to make LLM output deterministic? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1plbe8i/how_to_make_llm_output_deterministic/)
   - I am working on a use case where i need to extract some entities from user query and previous user chat history and generate a structured json response from it. The problem i am facing is sometimes it is able to extract the perfect response and sometimes it fails in few entity extraction for the same input ans same prompt due to the probabilistic nature of LLM. I have already tried setting temperature to 0 and setting a seed value to try having a deterministic output.

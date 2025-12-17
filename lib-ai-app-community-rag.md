@@ -1036,6 +1036,21 @@ modified: 2024-09-08T20:08:16.088Z
 - Would you believe I was just trying it out today and it was all messed up. Swapped from Q3 4B and 0.6B to granite 278m and all my problems went away.
 
 - Yes, though if I tried generating the embeddings through the SentenceTransformers module instead, I got the state-of-the-art results I was hoping for on my benchmark. A code snippet for how to do so is listed on their HF page.
+# discuss-rerank
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Top Reranker Models: I tested them all so You don't have to : r/LangChain _202512](https://www.reddit.com/r/LangChain/comments/1pnos8a/top_reranker_models_i_tested_them_all_so_you_dont/)
+  - I've been working on LLM apps with RAG systems for the past 15 months as a forward deployed engineer. 
+  - I've used the following rerank models extensively in production setups: ZeroEntropy's zerank-2, Cohere Rerank 4, Jina Reranker v2, and LangSearch Rerank V1.
+  - Rerankers reorder initial retrieval results based on relevance to the query. This improves metrics like NDCG@10 and reduces irrelevant context passed to the LLM.
+  - ZeroEntropy zerank-2 emerges as a versatile leader, combining accuracy, affordability, and features like instruction-following for multilingual RAG challenges. Cohere Rerank 4 suits enterprise, Jina v2 real-time, LangSearch V1 free entry.
+
+- Great post but missing Qwen3-0.6B or Jina v3? How's zerank-2 vs bge-v2-gemma on self-host latency?
+  - I only focused on what I could test deep, qwen3 lightweight is dope for multi tho. zerank-2 wins on instructions/calibration for me
 # discuss-rag-elements
 - ## 
 

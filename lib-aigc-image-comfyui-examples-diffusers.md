@@ -503,6 +503,14 @@ modified: 2025-08-23T11:43:35.904Z
     - I freaking hate the complexity of Comfy, as do many. Many people will use ops tool, me included.
     - This but with inpainting
 
+- https://github.com/xianyu110/z-image /202512/python/js/NoDeps
+  - 一个兼容 OpenAI 格式的 Z-Image 图片生成 API 代理服务器，让你能够使用 OpenAI 的 SDK 和工具库来调用 Z-Image 的图片生成服务。
+  - 完全兼容 OpenAI Chat Completions API 格式
+  - 自动将 OpenAI 请求转换为 Z-Image API 格式
+  - 支持异步任务提交、状态检查和结果轮询
+  - 与现有 OpenAI SDK 无缝集成，无需修改代码
+  - 核心功能仅使用 Python 标准库，部署更轻量
+
 - https://github.com/markfulton/NanoBananaEditor /521Star/AGPL/202509/ts/inactive
   - Nano Banana image generator and editor application.
   - Powered by Gemini 2.5 Flash images API.

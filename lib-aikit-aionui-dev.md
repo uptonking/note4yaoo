@@ -30,6 +30,15 @@ modified: 2025-12-13T18:38:27.763Z
 
 ## draft-aionui
 
+- pdf-view-edit
+  - 支持docling/nanotes等模型解析pdf，并还原布局
+
+- cli-本地rag
+  - 可参考 https://github.com/run-llama/semtools /MIT/rust/ts
+  - Semantic search and document parsing tools for the command line
+  - We made a simple cli command `ask` which lets you ask questions over any arbitrary folder in your filesystem. 
+  - 迁移 主流rag-cli 或 claude-code-rag 的方案到aionui
+
 - chat input 不是富文本, 但支持undo快捷键
   - read-file 的tool-call 默认折叠或只显示部分文字
 
@@ -55,14 +64,7 @@ modified: 2025-12-13T18:38:27.763Z
 
 - 支持更多cli, 如 mistral-vibe, kimi-cli
 
-- cli-本地rag
-  - 可参考 https://github.com/run-llama/semtools /MIT/rust/ts
-  - Semantic search and document parsing tools for the command line
-  - We made a simple cli command `ask` which lets you ask questions over any arbitrary folder in your filesystem. 
-
 - 集成github上分享的claude-code workflow
-
-- 集成rag-cli相关工具
 
 - 
 - 

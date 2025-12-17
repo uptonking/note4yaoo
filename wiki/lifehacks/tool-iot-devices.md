@@ -1834,6 +1834,20 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
+- ## 
+
+- ## [They're finally here (Radeon 9700) : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pnd5uf/theyre_finally_here_radeon_9700/)
+- Fuck, I'm old. Radeon 9700 was a top tier GPU back in the 2000's. They have used all the code names and started a new loop
+  - Yeah search results are annoying. And AMD now has a 9700x CPU as well.
+
+- I have one R9700 and planning to get another (or whatever comes next--PRO 36GB or 72GB sku). The benefits of the R9700 isn't really for performance/price. The benefits I see:
+  - blower fan design lets you pack them side by side no no slot gaps needed
+  - 32GB per 300W GPU means fewer GPUs/lesser PSU for given total VRAM
+  - also fewer needed PCIe lanes to GPUs for given VRAM
+  - ECC memory operation can be enabled on Linux for longer/reliable operation
+  - PRO sku meant to be running continuously (with sufficient cooling)
+  - RDNA4 should have better long-term support than older gens.
+
 - ## 🆚 [Is it better to upgrade from 3080 to 3090 or 5080 for video generation? : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1pjfmrw/is_it_better_to_upgrade_from_3080_to_3090_or_5080/)
 - I have both the 3090 and 5080 hooked up to my computer as I am typing this. For majority of the task, including wan 720p 480p, qwen edit, z-image, and illustrious + 4k hires fix, 
   - I find myself only use 5080 and vram has not been an issue unless I'm running a very large batch size. 

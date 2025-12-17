@@ -211,6 +211,17 @@ modified: 2025-03-22T18:49:15.634Z
   - Import/export functionality
   - File attachments (text, images, PDFs)
 # ui-ai 💄
+- https://github.com/google/a2ui /543Star/apache2/202512/ts
+  - https://a2ui.org/
+  - open-source project, complete with a format optimized for representing updateable agent-generated UIs and an initial set of renderers, that allows agents to generate or populate rich user interfaces.
+  - A2UI is an open standard and set of libraries that allows agents to "speak UI." Agents send a declarative JSON format describing the intent of the UI. The client application then renders this using its own native component library (Flutter, Angular, Lit, etc.).
+  - The Client's A2UI Renderer parses the JSON.
+  - Transports: Compatible with A2A Protocol and AG UI.
+  - Note: A2UI is currently in v0.8 (Public Preview). The specification and implementations are functional but are still evolving.
+  - https://x.com/Saboo_Shubham_/status/2000631830526222592
+    - copilotkit: Check out our A2UI Widget builder
+    - [Create | A2UI Composer](https://a2ui-editor.ag-ui.com/)
+
 - https://github.com/ag-ui-protocol/ag-ui /8.4kStar/MIT/202510/python/ts
   - https://ag-ui.com/
   - AG-UI is an open, lightweight, event-based protocol that standardizes how AI agents connect to user-facing applications. 

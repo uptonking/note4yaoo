@@ -284,6 +284,10 @@ modified: 2023-01-17T19:14:47.611Z
 # cursor
 - https://github.com/mskelton/cursed /202402/ts
   - Multiplayer live cursors
+
+- [Figma-Style Live Cursors with Next.js 16 & Upstash Realtime | Upstash Blog](https://upstash.com/blog/realtime-cursors-next-16)
+  - https://x.com/joshtriedcoding/status/2000919570811375762
+  - next.js 16 + upstash realtime
 # utils
 - clientdb /506Star/apache2/202207/ts/同步未完成
   - https://github.com/clientdb/clientdb

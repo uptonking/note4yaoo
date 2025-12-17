@@ -48,6 +48,21 @@ modified: 2021-07-29T11:15:44.100Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Why isn't the html dialog element used in tools like @base_ui and @radix_ui to create a dialog like elements?
+- https://x.com/TomasJansson/status/2000843006140654046
+- It seems to have too many limitations to be used today.
+  - Was very excited to use Popover API for Bootstrap's dropdown, popover, and tooltip components, but **limiting to the top layer** seems like a deal breaker? Can't control layering, not reliable with sticky headers, and maybe a little jittery? This could also be the polyfill's fault?
+- This also dovetails with **anchor positioning**, also another polyfill for cross browser usage, which doesn't seem to account for some of this stuff either?
+- If you can't fully control component positioning, it could break your layout. The Popover API is not a suitable solution for a UI component creator at this time.
+
+- [[dialog] Use html `<dialog>` element · Issue #485 · mui/base-ui](https://github.com/mui/base-ui/issues/485)
+
 - ## TIL about `PointerEvent.getPredictedEvents()` . Apparently, web browsers can predict where the cursor could potentially move next
 - https://x.com/sebastienlorber/status/1869083536185331772
   - It's now supported everywhere starting Safari 18.2

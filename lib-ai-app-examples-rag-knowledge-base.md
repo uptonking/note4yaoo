@@ -710,18 +710,6 @@ modified: 2025-11-30T17:27:16.720Z
   - Real-Time Incremental Updates: Immediate integration of new data episodes without batch recomputation.
   - Scalability: Efficiently manages large datasets with parallel processing, suitable for enterprise environments.
 
-- https://github.com/chunkhound/chunkhound /118Star/MIT/202509/python
-  - https://chunkhound.github.io/
-  - Deep Research for Code & Files
-  - Transform your codebase into a searchable knowledge base for AI assistants using semantic search via cAST algorithm and regex search. 
-  - Integrates with AI assistants via the Model Context Protocol (MCP).
-  - cAST Algorithm - Research-backed semantic code chunking
-  - Multi-Hop Semantic Search - Discovers interconnected code relationships beyond direct matches
-  - Semantic search - Natural language queries like "find authentication code"
-  - Regex search - Pattern matching without API keys
-  - Local-first - Your code stays on your machine
-  - 22 languages with structured parsing, via Tree-sitter
-
 - https://github.com/memfreeme/memfree /MIT/202409/ts
   - https://www.memfree.me/
   - MemFree is a Hybrid AI Search Engine.
@@ -806,6 +794,18 @@ modified: 2025-11-30T17:27:16.720Z
   - Zep persists and recalls chat histories, and automatically generates summaries and other artifacts from these chat histories. 
   - Zep also provides a simple, easy to use abstraction for document vector search called Document Collections. This is designed to complement Zep's core memory features, but is not designed to be a general purpose vector database.
 # chunking/embedding
+- https://github.com/chunkhound/chunkhound /118Star/MIT/202509/python
+  - https://chunkhound.github.io/
+  - Deep Research for Code & Files
+  - Transform your codebase into a searchable knowledge base for AI assistants using semantic search via cAST algorithm and regex search. 
+  - Integrates with AI assistants via the Model Context Protocol (MCP).
+  - cAST Algorithm - Research-backed semantic code chunking
+  - Multi-Hop Semantic Search - Discovers interconnected code relationships beyond direct matches
+  - Semantic search - Natural language queries like "find authentication code"
+  - Regex search - Pattern matching without API keys
+  - Local-first - Your code stays on your machine
+  - 22 languages with structured parsing, via Tree-sitter
+
 - https://github.com/CoreyFransen08/chunk-forge /apache2/202512/python/ts
   - A self-hosted document processing platform for converting PDFs to Markdown with semantic chunking, drag-and-drop editing, rich metadata management, and multi-format export.
   - Upload PDFs and convert them to Markdown using LlamaParse, MarkItDown, or Docling.
@@ -815,6 +815,17 @@ modified: 2025-11-30T17:27:16.720Z
   - Parser Service: Python + FastAPI + LlamaParse/MarkItDown/Docling
   - Storage: Local filesystem
   - Built-in export presets for popular vector databases: Pinecone, Chroma
+
+- https://github.com/zirkelc/chunkdown /MIT/202512/ts
+  - a tree-based markdown text splitter to create semantically meaningful chunks for RAG applications.
+  - Unlike traditional splitters that use simple character or regex-based methods, this library leverages markdown's hierarchical structure for optimal chunking. 
+  - Chunkdown is built around a few core ideas that guide its design:
+    - Markdown as Hierarchical Tree
+  - https://x.com/zirkelc_/status/2000847712884068755
+    - Chunkdown now supports split rules for fenced code blocks and inline code
+  - https://x.com/zirkelc_/status/1992520261325771153
+    - Chunkdown now compacts markdown tables thanks to a one-line PR
+    - Markdown tables can be pretty formatted with additional dashes and spaces to align the columns vertically. This makes them easier for humans to read, but wastes tokens and embedding space on useless characters
 
 - https://github.com/sovit-123/local_file_search /MIT/202510/python
   - Scripts to replicate simple file search and RAG in a directory with embeddings and Language Models.
@@ -831,6 +842,20 @@ modified: 2025-11-30T17:27:16.720Z
   - A lightweight evaluation framework powered by tiny 0.6B models — runs 100% locally on CPU/GPU/MPS, attach any vector DB connection and run, fast and free.
   - Evaluation tools requiring LLM-as-a-judge or external, that costs/doesn't scale easily. 
 # chat-docs/knowledgebase
+- https://github.com/hyperbrowserai/hyperbooklm /MIT/202512/ts/仅云端模型
+  - https://hyperbrowser.ai/
+  - powerful research assistant built with Next.js 15, React 19, and Hyperbrowser. 
+  - It allows users to aggregate diverse sources (Web URLs, PDFs) and gain deep insights through interactive AI tools.
+  - Web Scraping: Hyperbrowser SDK
+  - React Flow (Mindmaps)
+  - https://x.com/hyperbrowser/status/2000655095764267050
+    - Ask questions across all your sources
+
+- https://github.com/MrSibe/KnowNote /54Star/GPL/202512/ts/Electron
+  - 一个本地优先的知识笔记工具，灵感来自 Google NotebookLM。它将你的 PDF、Word 文档、PowerPoint 和网页转化为可提问、可引用、可追溯的个人知识库。
+  - 自定义 LLM - 支持 OpenAI、Claude、本地模型等多种 AI 服务
+  - 使用 SQLite 本地数据库，快速可靠
+
 - https://github.com/arc53/DocsGPT /17.4kStar/MIT/202511/python/ts/提交多
   - https://app.docsgpt.cloud/
   - https://docsgpt.arc53.com/

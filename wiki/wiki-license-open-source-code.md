@@ -28,6 +28,8 @@ modified: 2021-09-14T18:58:58.275Z
   - [Open Source License Compliance](https://fossa.com/blog/tag/open-source-license-compliance/)
   - [OSI Approved Licenses](https://opensource.org/licenses/)
   - [GPL compatibility - Various Licenses and Comments about Them - GNU Project](https://www.gnu.org/licenses/license-list.en.html)
+  - [Is it really foss?](https://isitreallyfoss.com/projects/)
+    - https://codeberg.org/danb/isitreallyfoss /AGPLv3
 
 - Copyright”指软件的版权和其它一切权利归软件作者所私有，用户只有使用权，没有其它如复制、重新修改发布等权利。
 - 而“Copyleft”的特点是仅有版权归原作者所有，其他一切权利可以与任何人共享。

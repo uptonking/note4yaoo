@@ -1913,6 +1913,25 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
   - I estimate GPU-time needed for training Qwen 30B A3B to be around 800 000 hours for H100 SXM5, so around 1.6 million dollars. That's for pretraining on 20T tokens, assuming 40% MFU.
 
 - Stick to finetunes, you don't have the hardware or budget to pretrain models of practical size (believe me I have tried).
+# discuss-terminal/fs
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Introducing SQLite-Agent, a groundbreaking SQLite extension that allows your database to run autonomous AI agents directly inside SQLite itself. _202512
+- https://x.com/_marcobambini/status/2000599613271892369
+  - With SQLite-Agent, your data becomes active: agents can read, reason, act, and write back results without leaving the database engine. This turns SQLite into a fully self-contained automation and intelligence platform for apps, devices, and edge environments.
+- https://github.com/sqliteai/sqlite-agent /c
+  - A SQLite extension that enables SQLite databases to run autonomous AI agents, using other SQLite AI extensions. 
+
+- ## at @llama_index we came up with 𝗮𝗴𝗲𝗻𝘁𝗳𝘀-𝗰𝗹𝗮𝘂𝗱𝗲, a small demo that combines @claudeai and AgentFS by @tursodatabase with our Agent Workflows  _202512
+- https://x.com/itsclelia/status/2000623632629002579
+  - to create a harnessed and secure environment where the agent can perform all operations in a virtual filesystem without affecting your real one
+  - Coding Agents are great, but giving them unfiltered access to your filesystem might be a very bad idea
+  - Bonus: we also gave the agent understanding of unstructured documents, by parsing them with LlamaParse
+
 # discuss
 - ## 
 

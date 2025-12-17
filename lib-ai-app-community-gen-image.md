@@ -873,10 +873,16 @@ modified: 2025-08-16T14:12:24.416Z
 
 - ## 
 
-- ## 
+- ## [SVG-T2I: Text-to-Image Generation Without VAEs : r/StableDiffusion _202512](https://www.reddit.com/r/StableDiffusion/comments/1pn97kd/svgt2i_texttoimage_generation_without_vaes/)
+  - SVG: "Self-supervised representations for Visual Generation"
+- If I am not mistaken, this is similar to the Chroma Radiance principle, and if I remember correctly, they do not use VAE there either.
+  - Yes, Chroma Radiance is a pixel-space model
 
-- ## 
-- [Looks like someone beat z-image to the punch in respect to a dedicated Anime style model. Very lightweight too, insanity. : r/StableDiffusion _202512](https://www.reddit.com/r/StableDiffusion/comments/1pgdzf1/looks_like_someone_beat_zimage_to_the_punch_in/)
+- Limitations of SVG-T2I. While SVG-T2I demonstrates strong generation capability across diverse scenarios, several limitations remain. As shown in Figure 6, the model occasionally struggles to produce highly detailed human faces, particularly in regions requiring fine-grained spatial consistency, such as eyes, eyebrows. Similarly, the generation of anatomically accurate fingers continues to be challenging
+  - SVG-T2I also exhibits limited reliability in text rendering.
+- Sounds like they have the same problem with no VAE has they have with too big VAE patches (32x32+) that they don't have the low level features for fine detail reconstruction. I understand why it's not satisfying from a research/academic perspective to have a VAE doing low-level features and AR/diffusion doing high-level features and I'm sure they'll figure out some kind of universal feature generator eventually but this does not appear to be it.
+
+- ## [Looks like someone beat z-image to the punch in respect to a dedicated Anime style model. Very lightweight too, insanity. : r/StableDiffusion _202512](https://www.reddit.com/r/StableDiffusion/comments/1pgdzf1/looks_like_someone_beat_zimage_to_the_punch_in/)
   - NewBieAI-Lab drops NewBie-image-Exp0.1 — a 3.5B open-source ACG-native DiT model built for precise, fast, and high-quality anime generation.
 - When it comes to anime style, does it better than Illustrious? Also, another important question... NSFW support?
 
@@ -906,7 +912,12 @@ modified: 2025-08-16T14:12:24.416Z
 
 - ## 
 
-- ## 
+- ## [Z-Image Engineer - an LLM that specializes in z-image prompting. Anyone using this, any suggestions for prompting? Or other models to try out? : r/StableDiffusion _202512](https://www.reddit.com/r/StableDiffusion/comments/1pna4po/zimage_engineer_an_llm_that_specializes_in_zimage/)
+  - https://huggingface.co/BennyDaBall/qwen3-4b-Z-Image-Engineer
+- Thanks for sharing. I’ve been looking a model specifically fine tuned for z-image prompting
+
+- Do not trust anyone talking about how great these prompt enhancers are if they are not posting BEFORE AND AFTER images.
+  - 95% of this is just subjective. YES, and LLM might help a lot, but the examples here before and after are not showing it to me.
 
 - ## [What makes Z-image so good? : r/StableDiffusion _202512](https://www.reddit.com/r/StableDiffusion/comments/1pldusz/what_makes_zimage_so_good/)
   - Question i had was what makes Z-image so good? I know it can run efficiently on older gpus and generate good images but what prevents other models from doing the same.
@@ -1112,6 +1123,8 @@ modified: 2025-08-16T14:12:24.416Z
   - Flux 2 Dev however has better prompt adherence and world knowledge, you can easier get it to do exactly what you want, and it understands more "knowledge"-things like characters and styles
 
 - ### [Fashion photography comparison. Nano Banana Pro vs Z Image Turbo. Who did it better? : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1p8wbgj/fashion_photography_comparison_nano_banana_pro_vs/)
+
+- ### [70 Prompt txt2img Comparison: Z-Image Turbo vs Most Partner API Models in Comfy : r/comfyui](https://www.reddit.com/r/comfyui/comments/1pnoz2z/70_prompt_txt2img_comparison_zimage_turbo_vs_most/)
 
 - ## 🌰 [Z-Image Test on 126 Portrait Prompts : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1p83wgf/zimage_test_on_126_portrait_prompts/)
   - I wanted to share a simple test dataset I put together to demonstrate the capabilities of the new Z-Image Turbo text-to-image model.
@@ -1822,75 +1835,6 @@ Q8（8 位）	    16GB+	   接近原始版本
   - 示例图中，Hyper 画质表现优异，TCD 速度提升明显，但画面细节缺失较为严重
 - TGate提升出图速度的节点，无需额外模型，能明显减少出图用时，但也会有一定的质量损失。
   - 将 TGate Apply 节点连接在模型与采样器之间，start_at 设为 0.5，如果设为 1 的话，它将不起作用。
-# discuss-image-examples 🌰
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 🖼️ 一键生成任何影视剧或者小说的场景海报提示词
-- https://x.com/Ali_TongyiLab/status/1998608853903036436
-  - We just used this prompt to generate classical scenes from the Four Great Classical Novels at Z-Image-Turbo, and the results are stunning.
-  - It’s actually capturing the vibe of ancient Chinese literature—Journey to the West, Dream of the Red Chamber, all of it. The cultural understanding is deep here.
-
-```prompt
-请为影视剧/小说《需要添加的名称》设计一张高品质的3D海报，需要先检索影视剧/小说信息和著名的片段场景。
-
-首先，请利用你的知识库检索这个影视剧/小说的内容，找出一个最具代表性的名场面或核心地点。在画面中央，将这个场景构建为一个精致的轴侧视角3D微缩模型。风格要采用梦工厂动画那种细腻、柔和的渲染风格。你需要还原当时的建筑细节、人物动态以及环境氛围，无论是暴风雨还是宁静的午后，都要自然地融合在模型的光影里。
-
-关于背景，不要使用简单的纯白底。请在模型周围营造一种带有淡淡水墨晕染和流动光雾的虚空环境，色调雅致，让画面看起来有呼吸感和纵深感，衬托出中央模型的珍贵。
-
-最后是底部的排版，请生成中文文字。居中写上小说名称，字体要有与原著风格匹配的设计感。在书名下方，自动检索并排版一句原著中关于该场景的经典描写或台词，字体使用优雅的衬线体。整体布局要像一个高级的博物馆藏品铭牌那样精致平衡。
-```
-
-- 我在此基础扩展了一下范围，效果依旧很不错：题材可以是电影、剧集、动画、游戏、小说等
-
-```prompt
-请为作品《在此输入作品名称》（可以是电影、剧集、动画、游戏、小说等）设计一张高品质 3D 海报，需要先检索该作品的信息和著名的片段场景。
-
-首先，请利用你的知识库检索这个作品的内容和世界观，找出一个最具代表性的名场面或核心地点（可以是关键战斗、转折剧情、标志性城市/建筑、初始村落、迷宫秘境等）。在画面中央，将这个场景构建为一个精致的轴侧视角 3D 微缩模型。风格采用梦工厂动画那种细腻、柔和的渲染质感。你需要还原当时的建筑细节、人物或角色动态，以及环境氛围：无论是暴风雨、末日黄昏，还是宁静午后、赛博夜景，都要自然地融合在模型的光影之中。
-
-背景部分，不要使用简单的纯白底。请在模型周围营造一种带有淡淡水墨晕染和流动光雾的虚空环境，色调雅致、层次柔和，让画面看起来有呼吸感和纵深感，像是漂浮在时间长河中的一件珍贵藏品，用来衬托中央微缩模型的独特与重要。
-
-底部排版请生成中文文字。居中写上作品名称，字体风格需与原作的类型和气质相匹配（例如奇幻、科幻、武侠、都市、悬疑、童话等），具有一定的设计感和辨识度。在标题下方，请自动检索并排版一句与该场景高度相关的经典台词、文本描写或官方设定语，字体使用优雅的衬线体或略带书卷气的印刷体。整体布局要像高级博物馆藏品铭牌一样精致、克制且平衡。
-
-```
-
-- 继续打磨了一下，提示词本身和效果几乎没变，只是调整了一下范围，也还是原来的风格和效果，只能说提示词写到最后面，考验的是语文功底和想象力跟审美。书籍、游戏、电影、甚至产品都能适用
-
-```prompt
-请为作品《在此输入作品名称》设计一张高品质的3D海报，需要先检索其背景信息和著名的经典场景。
-
-首先，请利用你的知识库检索这个作品的内容，找出一个最具代表性的名场面或核心地点。在画面中央，将这个场景构建为一个精致的轴侧视角3D微缩模型。风格要采用梦工厂动画那种细腻、柔和的渲染风格。你需要还原当时的建筑细节、人物动态以及环境氛围，无论是暴风雨还是宁静的午后，都要自然地融合在模型的光影里。
-
-关于背景，不要使用简单的纯白底。请在模型周围营造一种带有淡淡水墨晕染和流动光雾的虚空环境，色调雅致，让画面看起来有呼吸感和纵深感，衬托出中央模型的珍贵。
-
-最后是底部的排版，请生成中文文字。居中写上作品名称，字体要有与原著/原作风格匹配的设计感。在书名下方，自动检索并排版一句原著/原作中关于该场景的经典描写或台词，字体使用优雅的衬线体。整体布局要像一个高级的博物馆藏品铭牌那样精致平衡。
-```
-
-- 可以省一笔设计封面的费用了
-
-- 有一半以上都是原图抄袭的字体，还没办法自己设计
-
-- https://x.com/aarai666/status/1998732651851583896
-
-- ## [Comparison of Seedream 4.5 vs Nano Banana Pro using the same prompt : r/createimg](https://www.reddit.com/r/createimg/comments/1pdxgl1/comparison_of_seedream_45_vs_nano_banana_pro/)
-  - Five shimmering goldfish weave through crevices between stones; four are red-and-white, while one is silver-white. By the pond's edge, a golden-shaded British Shorthair cat watches them intently, counting on blind luck. Watercolor style.
-
-- ## [New stealth model "microwave" now available - free during alpha : r/CLine](https://www.reddit.com/r/CLine/comments/1pcasak/new_stealth_model_microwave_now_available_free/)
-  - 饱和度很高的油画
-
-- ## [Flux2: decreased style decay from long prompting! (part 1.5) : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1pb7hbf/flux2_decreased_style_decay_from_long_prompting/)
-  - 风格统一的插画
-
-- ## [Even more improved Z-Image Turbo variation : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1p9mypu/even_more_improved_zimage_turbo_variation/)
-
-- ## [This is offiZially crazy! (Z_Image) : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1p9f7ic/this_is_offizially_crazy_z_image/)
-  - 手掌里面显示logo字母
-
 # discuss-video
 - ## 
 
@@ -1910,6 +1854,21 @@ Q8（8 位）	    16GB+	   接近原始版本
   - I also have desktop pc with 4080 RTX and with same workflows it takes 4 seconds for generating image (1024 x 576 px) and 33 seconds for generating video (also 1024 x 576 px, 97 frames). :) It is really fast, but the 5b model often misunderstands the prompts and doesn't have good motion.
 
 - I didn't know that the Wan 2.2 5b with a 4-step Lora turbo was such good quality!
+# discuss-pm-image-gen
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 刚去玩了下谷歌新出的AI虚拟试衣工具，
+- https://x.com/canghecode/status/2000413045127061631
+  - 底层使用的就是 Nano Banana 的能力，只需要简单的自拍就能试衣，然后打通购物。
+
+- 很适合做亚马逊联盟
+
+- 这个方向国内已经玩透了吧
+  - 咋没看见一个落地的入口
 # discuss-image
 - ## 
 

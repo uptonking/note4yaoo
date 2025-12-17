@@ -22,7 +22,18 @@ modified: 2024-03-30T05:55:54.349Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## the more I look how all javascript runtimes implement garbage-collection, the more I lose my hope in humanity. it’s a surprisingly hard task with too many edge cases.
+- https://x.com/yagiznizipli/status/2000728248607486172
+- Don't worry about it, we have the following package.json script before running any command.
+
+```json
+{
+  "node:memory:128gb": "cross-env NODE_OPTIONS='--max_old_space_size=131072 --max_semi_space_size=256'"
+}
+
+```
+
+- If it runs only once and exits, you don’t need any garbage collection 🤪
 
 - ## 🤔 Porffor: Compile JS to native code ahead of time. No need for V8.
 - https://x.com/mattpocockuk/status/1841549046772547840

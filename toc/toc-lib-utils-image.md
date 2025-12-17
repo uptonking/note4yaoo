@@ -314,12 +314,6 @@ modified: 2023-04-04T22:39:45.442Z
 - https://github.com/hiroi-sora/Umi-OCR /MIT/202403/python/qt-qml
   - 开源、免费的离线OCR软件。
   - 支持截屏/批量导入图片，PDF文档识别，排除水印/页眉页脚，扫描/生成二维码。内置多国语言库
-
-- https://github.com/ihatecsv/deepseek-ocr-client /MIT/202510/python/js
-  - A real-time Electron-based desktop GUI for DeepSeek-OCR
-  - GPU acceleration (CUDA)
-  - Flask backend manages the model, Electron frontend for the UI.
-  - [A quickly put together a GUI for the DeepSeek-OCR model that makes it a bit easier to use : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1ocx27p/a_quickly_put_together_a_gui_for_the_deepseekocr/)
 # qrcode
 - https://github.com/sz3/libcimbar /MPL/202407/cpp
   - https://cimbar.org/

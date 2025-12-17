@@ -187,6 +187,11 @@ modified: 2025-11-18T13:22:22.078Z
 - https://huggingface.co/AIDC-AI/Ovis-Image-7B
   - https://github.com/AIDC-AI/Ovis-Image
   - a 7B text-to-image model specifically optimized for high-quality text rendering 
+
+## ocr
+
+- deepseek-ocr
+  - 极少数的场景，会将图片中的英文翻译为中文输出, 并且LOOP
 # models-features/variants
 - 专用模型
 - ocr

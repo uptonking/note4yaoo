@@ -516,7 +516,32 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [NVIDIA releases Nemotron 3 Nano, a new 30B hybrid reasoning model! : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pn8upp/nvidia_releases_nemotron_3_nano_a_new_30b_hybrid/)
+  - Nemotron 3 has a 1M context window and the best in class performance for SWE-Bench, reasoning and chat.
+
+- It's MoE, 3B active of 30B. Try Qwen A3B 30b models
+  - this nvidia model is different architecture making it faster
+  - "The model employs a hybrid Mixture-of-Experts (MoE) architecture, consisting of 23 Mamba-2 and MoE layers, along with 6 Attention layers. Each MoE layer includes 128 experts plus 1 shared expert, with 5 experts activated per token. The model has 3.5B active parameters and 30B parameters in total."
+- There’s already DeepSeek V3.2, Granite 4, Qwen 3 Next, etc
+  - Not all of those are mamba, DS3.2 is 100% attention but with sparse attention, Granite 4 is mixed mamba, Qwen 3 next is mixed gated deltanet.
+
+- At first I though it'd be a nice drop-in replacement for Qwen3 30B A3B, but then I noticed that the Unsloth dynamic file sizes and normal quants are quite a bit larger.
+  - Qwen3-30B-A3B-Thinking-2507-UD-Q4_K_XL.gguf is  17.7 GB
+  - Nemotron-3-Nano-30B-A3B-UD-Q4_K_XL.gguf is      22.8 GB
+- This is because the model has an architecture like gpt-oss where some dimensions aren't divisible by 128 so some cannot be quantized to lower bits and thus bigger.
+  - That's also why we deleted some 1-bit and 2-bit sizes because they were exactly the same size
+
+- Qwen 30b-a3b is quite a bit better at code generation than this Nemotron model in my testing. I wonder if Nvidia might release a coding-specific version at some point... Didn't test regular chat though.
+
+- You still need as much memory as dense 30b model.
+  - no you dont, you need the active B in gpu ram, and the inactive in system ram. I can run a 30B moe, I can't run a 14B dense mdoel
+
+- I think people might be skipping over the fact that datasets are FULLY OPEN SOURCE!!!
+
+- Considering that Qwen 30b is almost half a year old, it still stands strong in comparison. Impressive.
+
+- What does it offer over Qwen3-30b?
+  - Fresher training data.
 
 - ## [Qwen3-4 2507 outperforms ChatGPT-4.1-nano in benchmarks? : r/LocalLLM _202512](https://www.reddit.com/r/LocalLLM/comments/1peav69/qwen34_2507_outperforms_chatgpt41nano_in/)
   - I know it's good but it can't be that good, surely?

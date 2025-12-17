@@ -162,6 +162,22 @@ Their main job is sending client requests to several servers. The goal is to spr
 # discuss-tunnel/gateway
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## ngrok 的一种替代方案: cloudflared tunnel --url <你的本地域名>
+- https://x.com/jaywcjlove/status/2000619356401606707
+- ngrok最大的问题是免费账户只能有一个域名。 你这个是支持多个域名么？ 不然调试不同程序的时候，还得切域名也麻烦。
+
+- 这个确实很香。 各种协议都支持，目前内网ssh默认用cf tunel 转发
+
+- 安全性如何？等于给自己电脑开了一个门
+
+- 如果传输的数据经过靠谱加密，还蛮有趣；否则的话，更倾向于选择直接通过 Cloudflare Pages 直接部署。
+
 - ## [Is there any reason not to use the free cloudflare ssl, and dns management? : r/selfhosted _202510](https://www.reddit.com/r/selfhosted/comments/1oknia1/is_there_any_reason_not_to_use_the_free/)
 - Assuming you mean the Cloudflare Tunnels: There is a cap on transfers of around 100 mb. Sometimes it works, sometimes they drop those connections.
   - Also, you’re giving away free unencrypted access to you home infrastructure to an American company, including all data that is being sent between the app clients and servers. You can of course encrypt that yourself, but it is still a nasty backdoor

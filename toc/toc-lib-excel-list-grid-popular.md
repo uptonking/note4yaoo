@@ -1309,7 +1309,7 @@ modified: 2022-08-21T10:02:27.788Z
   - This is largely a re-write of Handsontable's https://github.com/handsontable/ruleJS, and https://github.com/sutoiku/formula.js/.
   - The parser was derived from Handsontable's, and many of the formulas were created with FormulaJS's formulas as a reference point.
 
-- https://github.com/ironcalc/IronCalc /2.6kStar/MIT/202510/rust/ts/canvas
+- https://github.com/ironcalc/IronCalc /3.2kStar/MIT/202512/rust/ts/canvas
   - https://www.ironcalc.com/
   - https://playground.ironcalc.com/
   - IronCalc is a spreadsheet engine and ecosystem

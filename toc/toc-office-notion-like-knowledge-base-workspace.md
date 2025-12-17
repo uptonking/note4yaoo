@@ -842,6 +842,10 @@ modified: 2022-06-03T21:34:54.893Z
   - [Kreuzberg v4.0.0-rc.8 is available : r/LLMDevs _202512](https://www.reddit.com/r/LLMDevs/comments/1pn2d2z/kreuzberg_v400rc8_is_available/)
     - completely rewritten in Rust - leveraging Rust's memory safety, zero-cost abstractions, and native performance.
 
+- https://github.com/Moskize91/doc-page-extractor /MIT/202512/python
+  - Document page extraction tool powered by DeepSeek-OCR.
+  - This package requires PyTorch with CUDA support (GPU Required).
+
 ## web-etl
 
 - https://github.com/mendableai/firecrawl /AGPLv3/202502/python/rust/ts

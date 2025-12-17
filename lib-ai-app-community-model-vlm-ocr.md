@@ -112,6 +112,26 @@ modified: 2025-11-06T18:49:13.977Z
 # discuss-ocr
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🆚 [I benchmarked 7 OCR solutions on a complex academic document (with images, tables, footnotes...) : r/LocalLLaMA _202504](https://www.reddit.com/r/LocalLLaMA/comments/1jz80f1/i_benchmarked_7_ocr_solutions_on_a_complex/)
+  - I ran a comparison of 7 different OCR solutions using the Mistral 7B paper as a reference document (pdf), which I found complex enough to properly stress-test these tools. It's the same paper used in the team's Jupyter notebook, but whatever. The document includes footnotes, tables, figures, math, page numbers, ... making it a solid candidate to test how well these tools handle real-world complexity.
+  - Goal: Convert a PDF document into a well-structured Markdown file, preserving text formatting, figures, tables and equations.
+  - Results (Ranked):
+  - MistralAPI [cloud] → BEST
+  - Marker + Gemini (--use_llm flag) [cloud] → VERY GOOD
+  - Marker / Docling [local] → GOOD
+  - PyMuPDF4LLM [local] → OKAY
+  - Markitdown (without AzureAI) [local] → POOR* (doesn't extract images)
+
+- New version of gemini flash seems to have improved further in my test.
+
+- PyMuPdf uses Tesseract for OCR (just for OCR exactly, not whole process of reading document - so it's again the same "old" core solution - of course PyMuPdf have more features).
+
 - ## [Best open-source model for parsing messy PDFs on 16GB RAM (CPU only) - Models - Hugging Face Forums _202510](https://discuss.huggingface.co/t/best-open-source-model-for-parsing-messy-pdfs-on-16gb-ram-cpu-only/168890)
   - My issue is:
   - Larger models don’t fit in my 16GB RAM system.

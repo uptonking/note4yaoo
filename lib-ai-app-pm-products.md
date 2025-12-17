@@ -13,14 +13,17 @@ modified: 2025-03-22T16:10:24.856Z
 - selling-points
   - local models support: mlx, lmstudio-alternative
     - 允许用户分享文档/插画中的模型配置，运行日志
+    - 模型库: text模型, ocr模型,t2i生图模型, lmstudio在模型分类上做的不够好
   - citations for search: 外部数据源如字典mdx/书籍epub/wikipedia公开db/统计年鉴
     - 类似词典库/kiwix的预置模块, 可下载、可分享, 不必每次都全量索引
-  - large pdf workflows: chunking-strategies, reindex
+    - vector-marketplace, 支持用户选择任意数量的pdf文档创建embeddings, 并发布, 可作为一种变通方案解决数据隐私问题
+    - 查看原文pdf-parts时支持仅查看前后几页, 保护原文内容
+  - large pdf workflows: chunking-strategies, reindex, pdf-parts
   - pdf edit
   - 插画复刻: Qwen-Image-i2L, image-to-prompt-to-image, 同时支持浏览comfyui生成图片的元数据、提示词
 
 - tips
-  - 🤔 不要执着于ai框架，主流模型厂商都会推广包含厂商特性的框架及产品(codex/claude-code/gemini-cli), 可专注于主流开源业务系统实现 或 厂商无关的实现
+  - 🤔 不要执着于ai框架，主流模型厂商都会推广包含厂商特性的框架及产品(codex/claude-code/gemini-cli), 可专注于 主流 开源业务系统实现 或 厂商无关的实现
   - frontend: ai-sdk/chatbot, assistant-ui, librechat
   - backend: langgraph + python/nodejs
   - aisdk + docs/excel/image
@@ -29,6 +32,7 @@ modified: 2025-03-22T16:10:24.856Z
 - ai-dev-xp
   - 难复现好的效果，同样的prompt+context，有时输出的效果就是不好
   - agent框架的tool-use实现对最新llm的支持，llm-provider的部署 都会影响llm的效果
+  - ai适合快速生成草稿文本或原型, 但修改难
 
 - ai相对于搜索引擎的优势 🌹
   - ai能推理和计算, 分析复杂问题，给出更准确的方案
@@ -331,7 +335,8 @@ modified: 2025-03-22T16:10:24.856Z
     - 无充值，邀请注册来获得更多额度
     - tg群讨论的内容看，作者似乎精力不在anyrouter而在开发商用产品
     - 用户较多，有提供vscode插件无法使用的解决方案
-  - [Code Router](https://api.codemirror.codes/), 无法签到和更多额度
+  - [Code Router](https://api.code-relay.com/console) , 无法签到和更多额度
+    - [Code Router](https://api.codemirror.codes/)
     - 支持 Claude Code & CodeX
   - 📌 [b4u API](https://b4u.qzz.io/console), 每日转盘
     - 会不会增加其他模型: 不会，本站专注于Claude
@@ -359,7 +364,7 @@ modified: 2025-03-22T16:10:24.856Z
     - [包子公益 - Baozi DoneHub](https://lucky.5202030.xyz/)
     - 每日普通用户可自行划转 200$ 到 newapi 站点
     - [【包子公益站】更新一个总的汇总贴。现在上线了newapi的分站 ](https://linux.do/t/topic/1124776)
-  - [随时跑路公益](https://runanytime.hxi.me/), 每天签到 10-25 刀
+  - [随时跑路公益](https://runanytime.hxi.me/app/me), 每天签到 10-25 刀
     - 完全支持 cc，主要是 sonnet 4.5，haiku 4.5 会自动重定向到 sonnet 4.5
     - RPM 暂时定为 5，之后看情况调整
     - [【随时跑路公益站】就是那个稳了一个月的AmazonQ2API公益，开放注册 ](https://linux.do/t/topic/1154353)
@@ -376,7 +381,7 @@ modified: 2025-03-22T16:10:24.856Z
     - [WONG公益站](https://newapi.netlib.re/)
     - rpm为30
     - 高效连接 Claude Code CLI
-  - [无言AI](https://aiai.li/panel), 每日签到
+  - [无言AI](https://aiai.li/panel), 每日签到, 已关闭
     - 支持cc
   - [我爱996公益](https://529961.com/)
     - 仅限 L 站 2 级以上用户注册
@@ -421,6 +426,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 如果增加额度和申请Claude的留言我没有及时回复，可能只是我不在而已，可以再等等 
     - Sonnet模型每次调用消耗两次使用次数，Opus每次调用消耗四次使用次数
     - [公益大模型API接口 - 小欢博客 - Fly your dreams](https://www.cups.moe/archives/free-llm-api.html)
+  - [方舟API](https://www.yxaiapp.com/)
   - [Privnode](https://privnode.com/)
     - free分组不支持claude，但支持gpt-5-nano
     - https://pro.privnode.com/

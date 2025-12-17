@@ -31,7 +31,14 @@ modified: 2023-08-16T15:50:16.335Z
 
 - ## 
 
-- ## 
+- ## ⚖️ Introducing Standard JSON Schema _202512
+- https://x.com/colinhacks/status/2000704277606752450
+  - It's a sister spec to Standard Schema that provides a common interface for any entity that can be converted to JSON Schema
+  - This is the first ecosystem-wide standard representation that unifies runtime and static type information
+  - Essentially "JSON Schema with inferred types" — which unlocks totally new APIs for frameworks & AI tools
+  - Note that some schemas directly implement the spec, while other libraries (for treeshaking reasons) provide conversion functions or adapters that return a spec-compliant result
+  - Zod and ArkType: direct implementation
+  - Valibot and Zod Mini: conversion functions
 
 - ## [Introducing Zod 4 : r/typescript _202505](https://www.reddit.com/r/typescript/comments/1kqka6e/introducing_zod_4/)
 - In what situations would you use zod mini over regular? 

@@ -49,7 +49,16 @@ modified: 2023-08-28T06:14:28.873Z
 # discuss-django
 - ## 
 
-- ## 
+- ## [Strategies for removing django-polymorphic from codebase : r/django](https://www.reddit.com/r/django/comments/1pmow0e/strategies_for_removing_djangopolymorphic_from/)
+  - The codebase grew with polymorphic in place, but it is causing more headaches and testing nightmares than the little abstraction help it provides. Going about removing it from some rather central models, while keeping all data and transferring to inheriting from abstract base classes instead, has been veeeery painful to say the least.
+  - The biggest issue is not being able to get database fixtures for tests to work because of content type mismatches.
+
+- We've used factory-boy for creating test data. Works perfectly fine with polymorphic models. Also, the factory library can be used to created related data automatically. Also, tests can have just the data they need without everything else.
+  - Anyways, if you need to use fixtures, use natural foreign keys
+  - See natural keys and `dump data --natural-foreign` for more information.
+  - While the polymorphic library isn't exactly using generic foreign keys, the tip about using natural foreign keys still applies.
+
+- I've migrated some models to `django-model-utils` `InheritanceManager`. Mostly because I need to profetch relations that are not supported by django-polymorphic
 
 - ## 🤼 [Seriously underrated Django feature: database fixtures : r/django](https://www.reddit.com/r/django/comments/1plqyjr/seriously_underrated_django_feature_fixtures/)
   - The reason for this is: it's exceptionally fast to populate the sqlite database with fixtures. It bypasses much of the ORM, resulting in much quicker database configuration. Also, you can create suites of fixtures that truly do model real-world information, and it makes testing a breeze. In particular, it makes test setup simple, because you simply affix the fixtures to the TestCase and you're off.
