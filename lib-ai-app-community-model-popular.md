@@ -512,7 +512,11 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## 🆚 [GLM 4.6V vs. GLM 4.5 Air: Benchmarks and Real-World Tests? : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pp2wun/glm_46v_vs_glm_45_air_benchmarks_and_realworld/)
+  - Some argue that adding vision may reduce textual performance, while others believe multimodality could enhance the model’s overall understanding of the world.
+- I've been using 4.6V since support was added yesterday and the ggml-org gguf was released. Just using it for chat, not programming, I don't notice huge differences from 4.5 air. I think the outputs are marginally better but the model thinks longer before responding. Speeds are identical to 4.5 air with the same number of layers offloaded to CPU on my machine.
+
+- It might also be useful to add GLM 4.5V to the comparison. They released it after 4.5 and 4.5 Air, so it seems like it would basically be 4.5 Air with added vision.
 
 - ## [Nemotron 3 Nano 30B is Amazing! (TLDR) : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1pocsdy/nemotron_3_nano_30b_is_amazing_tldr/)
 - If you want something that is almost as fast as qwen3 30b A3B but thinking in English, this is perfect.

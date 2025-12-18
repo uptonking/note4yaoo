@@ -303,6 +303,17 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-to
   - ?
 
+## 1218
+
+- git-push error: GH013: Repository rule violations found for refs/heads/feat/image-pdf.
+  - To push, remove secret from commit(s) or follow this URL to allow the secret.
+  - 如果检测到多个key， 需要手动点击多个批准链接 https://github.com/uptonking/PolyglotPDF-translation/security/secret-scanning/unblock-secret
+
+- this project is multilingual eBook processing tool supporting all eBook formats. Features online and offline translation while preserving original layouts. Compatible with both scanned and digital PDFs. 
+- when i run this project locally by `source .venv/bin/activate && uv run python app.py`, text pdf translation works, but scanned-pdf or image-pdf translation does not work. I have already configured `ocr_model` at file ./config.json. i have tested `/opt/homebrew/bin/tesseract --version` works. 
+- after my pdf uploading, the file keeps showing loading and it seems stuck. 
+- please help me analyze and fix the issue. you can add some debug logs to help me retry and locate the issue.
+
 ## 1217
 
 - Failed to build `pillow==10.2.0` ├─▶ The build backend returned an error ╰─▶ Call to `backend.build_wheel` failed (exit status: 1)

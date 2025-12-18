@@ -809,7 +809,14 @@ def slugify(text):
 
 - ## 
 
-- ## 
+- ## [Claude Code, GPT-5.2, DeepSeek v3.2, and Self-Hosted Devstral 2 on Fresh SWE-rebench (November 2025) : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1pozr6f/claude_code_gpt52_deepseek_v32_and_selfhosted/)
+  - We’ve updated the SWE-rebench leaderboard with our November runs on 47 fresh GitHub PR tasks (PRs created in the previous month only). It’s a SWE-bench–style setup: models read real PR issues, run tests, edit code, and must make the suite pass.
+
+- Amazing to see open models, also those that are much smaller and can be run locally by many people here, to continue trending upwards in the leaderboard.
+
+- It seems pretty clear that Devstral specifically targeted the SWE benchmarks in their training. Their performance on other coding benchmarks isn't nearly as strong. Unfortunately we'll have to wait about two months for the November tasks to be removed from rebench, and by then it's unlikely anyone will retest. So they'll probably get to keep running with this stupid "24B model beats big models" headline indefinitely -even though it really doesn't.
+
+- The benchmark methodology matters a lot here though - fresh PRs from November means no training data contamination, which is why you see different rankings than synthetic benchmarks. Real world task performance is what matters for production.
 
 - ## cognition: we’re releasing SWE-1.5, our fast agent model. _202510
 - https://x.com/xeophon_/status/1983764023108890806

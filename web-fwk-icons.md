@@ -40,6 +40,74 @@ modified: 2021-07-28T19:22:07.339Z
 - ## 
 
 - ## 
+# discuss-svg-icons
+- ## 
+
+- ## 
+
+- ## 💡🔡 SVG icons have been "solved" myriad ways, but I find them all lacking.
+- https://x.com/fractaledmind/status/2001372075559391595
+  - Inline SVGs? Bloated DOM.
+  - `<img>` tags? Can't change colors.
+  - Icon fonts? Blurry at certain sizes, a11y issues.
+  - CSS background-image? Still can't change colors.
+  - But, today there's actually a perfect solution...
+  - CSS `mask-image` + `background-color: currentColor` .
+  - This technique was elegantly explained by @rikschennink back in 2022
+  - The key insight: instead of changing the SVG's fill, you mask the element and change its background-color. Simple, but powerful.
+  - @joeldrapper and I have talked about how to perfect the concept in that post for months. And we have a new NPM package / Tailwind plugin that is truly the *perfect* way to work with icons on the web.
+- https://github.com/joeldrapper/maskicons /MIT/202512/ts
+  - Tailwind CSS v4 utilities for popular icon sets. This lets you include icons with Tailwind LSP auto-complete and thanks to Tailwind’s tree-shaking, your output CSS will only include the icons you actually use.
+  - Supported icon sets: Bootstrap, tabler
+  - The icon inherits currentColor by default, or you can override it. Plus, the icon scales with font-size.
+  - The killer feature: Tailwind's tree-shaking means you only ship the icons you actually use. No icon sprite containing 2000 icons you'll never need. No runtime JS to load icons. No extra HTTP requests. Just the CSS for the icons in your markup.
+  - maskicons ships with Bootstrap Icons, Tabler, and Flag Icons—but the technique works with ANY icon set. 
+  - The utilities use `:where()` selectors, giving them zero specificity. This means ANY utility class overrides the defaults. 
+  - the  browser support? ~95% global coverage. Full support in Chrome 120+, Safari 15.4+, Firefox 53+, Edge 120+.
+
+- Sprites were my go-to approach previously, but you sent down the full icon set when you only will use 10-20% of the icons. The tree-shaking with the TW utilities is just lovely. And the simple accessible descriptions via text content is a cherry on top.
+- You just pick the ones you need in the sprite, c'mon.
+  - But you send the sprite sheet down over the wire I mean. Leveraging TW’s tree shaking means your CSS file only includes the icons you use out if the whole icon set. But again, I’m a fan of the svg sprite sheet approach. It does have a perf hit relative to inline SVGs or masks tho
+- Yeah but you craft the sprite by hand. 
+  - For sure, if you manually “tree shake” them you get lots of the benefits from the spritesheet. I need to find the details on the perf hit, but when dealing with a larger number of icons on a page, there is a perf difference. 
+
+- I would still use sprite instead of inlining svgs when dealing with many icons. Inlining them results in redownloading them every pagehit + chunked HTML = potentially delayed discovery of other (typically image) resources. All while sprite svg is cached after first pagehit
+
+- fwiw that's what we do on tldraw
+  - https://github.com/tldraw/tldraw/blob/main/packages/tldraw/src/lib/ui/components/primitives/TldrawUiIcon.tsx
+
+- I believe @antfu7 has brought this up back in 2021:  
+  - [Icons in Pure CSS](https://antfu.me/posts/icons-in-pure-css)
+
+- And the DX is just lovely. The tree-shaking, the accessible icon name/description, and the color control all together has been such a quality of life improvement over the other approaches I’ve tried over the years
+  - Yeah, svg->jsx with props that modify stroke are incredibly finicky. This solution sounds super, also in regards to tailwind treeshaking!
+
+- Only possible for mono colored svg
+  - yes
+  - 但是可支持css渐变色
+- You can even attain multicolor icons with stacked masks and animation!
+
+- Or just use SVG sprites, and you can do whatever you want with them via CSS.
+
+- svg容易支持react-native
+
+- That's how I use remote icons from iconify on web. Here's my cross-platform solution (react native + web)
+  - You don't need this with the official Iconify react library, but I don't use it, as it will only load on demand. I have a custom one for bundled icons so there is no FoC when an icon is rendered. But this is useful icons for icons you don't expect (user solicited)
+  - Looking back at it now would probably replace useEffect and useState with use. And ofc add an AbortController. But you get the idea.
+  - [Icon.base.tsx](https://gist.github.com/TheUltDev/cbd3fa36bb9df407e0e3041d83b0d66d)
+
+- Sprite svg might be a solution, but there are also “svg-use” package and “svgr” and Astro has its built-in icons management tool which allow to maintain each icon by storing its own svg file and everything is cached and has awesome developer experience as well. Typesafe too
+
+- I've been using SVG mask images for years with the -webkit- prefix 🤓 Which is even more exciting is that you can use those masks with gradients to fade the content or regular background images to get some fancy shapes.
+
+- 🐛 Potential issue with this approach is that you’re now front-loading potentially 10-100s of icon definitions inside your root css file, which blocks render. I seem to remember a noticeable LCP increase when we tried this approach on a project with tons of icons.
+  - There’s also the downside of more frequent cache misses. Especially with Tailwind, your root css shouldn’t change that often, if ever. This means you’re able to cache it for months. By adding icons to it, you’re increasing the likelyhood of it changing, thus invalidating cache.
+  - These reasons lead us in the direction of spritesheets, which lessened both of these issues. The issue with these however, was the lack of tooling around generating them.
+  - I’ve tried solving that issue with react-icons-sprite package. It automatically detects imports from popular icon packages, extracts them in to a spritesheet and replaces your inline icons with leaner `<svg>` + `<use>`. Result is the benefits you described + less issues we noticed.
+- https://github.com/jurerotar/react-icons-sprite /MIT/202512/ts
+  - a lightweight plugin for Vite and Webpack that turns React icon components into a single SVG spritesheet and rewrites your code to reference those symbols via `<use>`.
+
+- gradient fill on SVG icons has been a great pain. masked icon techniques looks neat.
 
 - ## what is the best performant and DX approach to import icons?
 - https://x.com/peer_rich/status/1868635934822138237

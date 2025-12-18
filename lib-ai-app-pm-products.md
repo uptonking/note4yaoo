@@ -20,6 +20,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 查看原文pdf-parts时支持仅查看前后几页, 保护原文内容
   - large pdf workflows: chunking-strategies, reindex, pdf-parts
   - pdf edit
+    - ✨ 翻译场景的多种布局一键切换: 双栏对比布局, 仅译文布局
   - 插画复刻: Qwen-Image-i2L, image-to-prompt-to-image, 同时支持浏览comfyui生成图片的元数据、提示词
 
 - tips

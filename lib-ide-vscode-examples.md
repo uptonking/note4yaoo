@@ -29,6 +29,14 @@ modified: 2024-08-24T16:15:54.137Z
     - Install extensions from your own sources
     - `> VSIX Manager: Install extensions`: install the extensions in the config json
     - [Cannot find extension in official Marketplace _202309](https://github.com/zokugun/vscode-vsix-manager/issues/17)
+  - 🧩 [What are reh and reh-web archives?](https://github.com/VSCodium/vscodium/blob/master/docs/others.md)
+    - Remote Host (`reh`) is the server component for remote ssh/wsl which runs it on a "remote" computer and makes that remote computer accessible via VSCodium.
+    - Web Host (`reh-web`) is the server component of the command `codium serve-web` which runs it locally and makes VSCodium accessible via a browser.
+  - [Provide REH & web builds _202305](https://github.com/VSCodium/vscodium/issues/1518)
+    - While the REH builds are great to interface with an existing VS Code installations, in very constrained environments where one is unable to even install a local build of VS Codium, it would be great to have access to the web variant of the REH builds mention in #1099 (comment) so that the setup could be fully self-contained, i.e. the web-variant of REH is deployed and made accessible via secured TLS connection and the user can immediately start working by accessing the web UI served by the REH host via a well-known URL.
+    - I support that,The vscode's server and `server-web` are different. May vscodium do same as vscode? 
+  - [Web UI not working _202510](https://github.com/VSCodium/vscodium/issues/2578)
+    - I have this same issue when installing from the snap
 
 - https://gitlab.com/gitlab-org/gitlab-web-ide-vscode-fork /MIT/202405/ts
   - GitLab Web IDE - VSCode Fork

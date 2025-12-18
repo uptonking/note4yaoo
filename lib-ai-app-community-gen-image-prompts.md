@@ -51,6 +51,19 @@ modified: 2025-12-16T06:34:43.005Z
 - 可以省一笔设计封面的费用了
 - 有一半以上都是原图抄袭的字体，还没办法自己设计
 - https://x.com/aarai666/status/1998732651851583896
+# discuss-video-prompts
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [This is how I generate AI videos locally using ComfyUI : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1pp8s9s/this_is_how_i_generate_ai_videos_locally_using/)
+  - I start by generating a base image using Z-Image Turbo, usually at around 1024 × 1536.
+  - I use Wan 2.2 FLF for the animation step at 816 × 1088 resolution.
+  - Running the video model at a lower resolution helps keep things stable on 16 GB VRAM.
+  - 动画小鹿
+
 # discuss-image-prompts
 - ## 
 
@@ -60,7 +73,9 @@ modified: 2025-12-16T06:34:43.005Z
 
 - ## 
 
-- ## 
+- ## 推荐一个专门收集 Prompt 的网站： [Share and Discover anything to do with AI | Snack Prompt](https://snackprompt.com/)
+- https://x.com/Penny777_eth/status/1997916272030527936
+  - 里面不只是设计、艺术类别的。也有很多功能性质的 Prompt，比如健身教练，或是日程安排之类的。部分接受定制化，可以改成适合自己的关键词！
 
 - ## 历史长河
 - https://x.com/Ali_TongyiLab/status/2000812431535399354

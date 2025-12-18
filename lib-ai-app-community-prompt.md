@@ -58,6 +58,24 @@ modified: 2024-09-08T18:57:12.231Z
 - Don’t make prompts static. Dynamically write the prompt in chain so you don’t have to craft a fucking system message that matters just preload hard rules and soft code other rules in the dynamic creating.
   - You guys don’t think right. System prompts are not what you think. They are not rules for the system. It’s stargate.
   - You dial up your destination with your user prompts. The system message is your origin. Your perspective it’s the things you believe as the environment.
+# discuss-toolchain-prompt
+- ## 
+
+- ## 
+
+- ## 写 Prompt 最头疼的往往不是构思，而是反复的 “试错”。改个词效果变差，加句话逻辑变乱，把大量时间耗在了手动调试上。
+- https://x.com/GitHub_Daily/status/2001140322026578430
+  - Salesforce AI 研究院开源了 Promptomatix 这个框架，目的就是终结这种低效的手工调优。
+  - 通过分析任务需求自动生成训练数据，并根据反馈不断修正，自动迭代优化提示词，直到产出最佳结果。
+  - https://github.com/SalesforceAIResearch/promptomatix /inactive
+
+- 我更关心它能不能解决三件事：
+  - •跨版本 prompt 回归（别今天好明天坏）
+  - •不同模型迁移（别换模型就全崩）
+  - •线上反馈闭环（别只在 notebook 里赢）
+  - 能做到，才是真正的“终结手调”。
+
+- 这个底层就是 dspy ，另外还有个 textgrad 好像也是做类似的事情，但看了几个demo似乎会生成非常复杂，非常长的 prompt，跟预期的精简高效的 prompt 有点差异
 # discuss-known
 - ## 
 

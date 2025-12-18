@@ -34,7 +34,7 @@ modified: 2021-06-02T15:26:39.741Z
 - Your post strengthened my conviction in this evolution of Observable. Interoperability for the win!! Thanks for trying Framework, too.
 - Probably worth mentioning @evidence_dev , a BI library integrating markdown and SQL for elegant data analytics and visualization
 
-- ## [Thoughts On Markdown](https://www.smashingmagazine.com/2022/02/thoughts-on-markdown/)
+- ## [Thoughts On Markdown _202202](https://www.smashingmagazine.com/2022/02/thoughts-on-markdown/)
 - At Sanity.io, we decided early that the block content format should never assume HTML as neither input nor output, and that we could use algorithms to synchronize text strings. 
   - More importantly, was it that block content and rich text should be deeply typed and queryable. 
   - The result was the open specification Portable Text. 
@@ -45,6 +45,11 @@ modified: 2021-06-02T15:26:39.741Z
   - Markdown is not great for the developer experience in modern stacks
   - Markdown is not great for editorial experience
   - Markdown is not great in block content age, and shouldn’t be forced into it. Block content needs to: Be untangled from HTMLisms and presentation agnostic.
+
+- https://x.com/kmelve/status/2001357524130574462
+  - markdown as a cms is a bad idea
+- Now do typst!  It seems to have so much potential (especially for print/pdf publishing)
+- You're clearly someone who is being paid off by SubStack, WordPress, and Sanity. 
 
 - ## You shouldn't use Markdown for content anymore.
 - https://twitter.com/kmelve/status/1494688125980798978

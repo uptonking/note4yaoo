@@ -226,6 +226,10 @@ modified: 2021-09-14T18:58:58.275Z
 - The LGPL does not permit sublicensing of the code, nor does it allow contributors to be held liable for legal issues or damages.
   - Like the MPL and CDDL, the EPL allows for sublicensing. 
 
+- ## [If LGPL 2.1 source code is in my project. Does the whole project need to be LGPL? Or just the class that call it? - Open Source Stack Exchange](https://opensource.stackexchange.com/questions/15078/if-lgpl-2-1-source-code-is-in-my-project-does-the-whole-project-need-to-be-lgpl)
+  - If you have copied the library code into your project folders primarily for convenience and you have not made any changes to that code, then your tool is just a user of the library and you only have to comply with a small part of the LGPL2.1 license. In essence, your tool can have any license you like, but you must give the recipients of the tool the right and ability to replace the LGPL library with a different version.
+  - If you have take portions of the library and built (some of) your tools out of them, then your code is a modification of the library and the full LGPLv2.1 license applies to you. This means that you must license your code also under the LGPLv2.1 license.
+
 - ## [Does compiling a JS bundle with webpack/browserify violate the LGPL license?](https://opensource.stackexchange.com/questions/5139/does-compiling-a-js-bundle-with-webpack-browserify-violate-the-lgpl-license)
   - In the case of Javascript, source code has to be understood as the source on which the programmer will make modifications, i.e. the non-minified source.
   - The compilation process is not going to produce a binary but a minified version of the code that should be considered "object code".

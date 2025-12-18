@@ -193,7 +193,12 @@ modified: 2024-01-23T02:52:23.932Z
 # discuss-pm-ob
 - ## 
 
-- ## 
+- ## 🤔 [I know many folks do not use folders… : r/ObsidianMD](https://www.reddit.com/r/ObsidianMD/comments/1ppcmic/i_know_many_folks_do_not_use_folders/)
+- Use folders. Stop worrying about what others do. Your assumption is on point. Obsidian can dissapear and even tho there are some other tools that can be an 'alternative', it's not the same. Folders will give you the peace of mind that even in a file browser you will find your files more easily than a bunch of files together. Don't overthink.
+
+- Folders are the way to go. Stop treating your own notes like you need a google spider to crawl, tag, index, and find them for you. 
+
+- The same logic used in the folder-less method can be applied with a very simple bash script to generate directories and assign files to them, should Obsidian vanish one day.
 
 - ## [What's one improvement you'd like to see in Obsidian in 2026? : r/ObsidianMD](https://www.reddit.com/r/ObsidianMD/comments/1pogn6w/whats_one_improvement_youd_like_to_see_in/)
 - A good, comprehensive attachements/media management tool. 
@@ -239,7 +244,8 @@ modified: 2024-01-23T02:52:23.932Z
 
 - ## 
 
-- ## 
+- ## [What are the best plugins in relation to bases already created for Obsidian so far? : r/ObsidianMD _202512](https://www.reddit.com/r/ObsidianMD/comments/1pp25ul/what_are_the_best_plugins_in_relation_to_bases/)
+- Virtual Content. You can add specific base views to files based on their property values without actually typing them in the note. It's great because if you want to change something in that base view, you can do it through the plugin settings tab and the change will happen in every file. Also, it doesn't alter the Markdown files.
 
 - ## [Obsidian Bases support in Flowershow (Alpha) : r/ObsidianMD _202512](https://www.reddit.com/r/ObsidianMD/comments/1pevh7g/obsidian_bases_support_in_flowershow_alpha/)
 
@@ -338,7 +344,27 @@ modified: 2024-01-23T02:52:23.932Z
 
 - ## 
 
-- ## 
+- ## [How do you decide what's a tag and what's a property? : r/ObsidianMD](https://www.reddit.com/r/ObsidianMD/comments/1pp6x5d/how_do_you_decide_whats_a_tag_and_whats_a_property/)
+- I use properties more as a way of compartmentalizing specific aspects of notes and not cluttering my tags which would eventually have so many tags that it would become a mess. When I am done with it, I change the property to Archive.
+  - I also have a property called type that I can then easily filter on in a base. I have many types; personal, company, document, note, task, etc.
+  - I only use tags to give me a broad categorization of what something is. I personally wouldn’t want to use nested tags, it feels more akin to getting bogged down in folders.
+
+- I think one variable is that tags end up in a cluster so they are hard to read on their own when reviewing a note. Meanwhile properties are separated out, one per line. So if the information is something you want to be able to easily reference/be aware of then making it a property lets you isolate it.
+  - Meanwhile tags are great for lots of single phrases where you might need them to create search results or to find information with; but where you don't really need to "read" that information specifically.
+  - Properties can also be things like image links (eg a cover image for a table) or links and so forth. However there I'd note that for those instances they really only work easily as single data entry points. So one link for the property. so if you've a variable which might have multiple links, that might be better as information in the main body of the note instead of as lots of endless link properties.
+
+- I have used zero tags so far but about 25 properties. I keep things lean. I am prefer folder over tag so have about 125 folders
+
+- Remember that these are tools. You can use them both, in the same note, for different purposes.
+
+- As for tags, I use them as intended: for search. A note may have dozens of tags, if needed. Tags are one of the main reasons for using a program like this. Otherwise, I would go back to bare folders.
+
+- I use tags for types of notes. I don’t put types of notes in folders because sometimes my notes are more than one kind of note (and some are more specific than others).
+  - I use properties when I have finer details that I would like to store for later use.
+
+- I use `properties` to define the formal type and content `tags` to define the purpose of notes.
+
+- Tags are categories, properties are data specific to that note. Some properties may also be categories, but only if it's specific. Or maybe property categories are more "permanent" and tags could be more ephemeral. Changing a property is changing the thing the note is about, but changing its tags doesn't. Something like that.
 
 - ## Obsidian is local, offline, and privacy-first, so we won't consider adding AI features until they can fit with the principles in our Manifesto. _202406
 - https://x.com/kepano/status/1799165623395881129

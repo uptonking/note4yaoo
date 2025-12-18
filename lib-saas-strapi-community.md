@@ -365,6 +365,19 @@ modified: 2023-12-15T17:04:36.589Z
 # discuss
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I just converted our blog from Strapi to MDX in ~40 minutes using cursor. 
+- https://x.com/ndrewpignanelli/status/2000985680801845603
+  - Headless CMS are dead. You should do everything you can in code now. Anyone technical enough to use strapi is technical enough to use cursor. 
+- there’s different approaches. CMS allows nontechnical teams to add content easily. you can solve this by eliminating nontechnical teams.
+
+- My main disagreement is that I have an almost pathological dislike of markdown and MDX as an authoring format, I’m all about rich text editors. I also don’t really like most headless CMSes, which is why I do the one thing you’re not supposed to do — build my own.
+
 - ## 🌰 Build an AI Knowledge Base App with @reactnative , @strapijs & Python
 - https://x.com/strapijs/status/1895454310944628944
   - [Build an AI Knowledge Base App with React Native & Strapi 5 _202502](https://strapi.io/blog/build-an-ai-knowledge-base-app-with-react-native-strapi-and-python)

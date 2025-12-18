@@ -73,6 +73,7 @@ modified: 2024-08-24T16:15:11.456Z
   - ripgrep for database
   - ext: comfyui
   - ui-skin as extension
+  - 缺少一个好用且功能丰富的 pdf-viewer
 
 - vscode提供了electron和web模式，未提供纯前端模式
   - vscode mobile

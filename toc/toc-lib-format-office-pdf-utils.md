@@ -173,21 +173,6 @@ modified: 2022-11-11T10:46:41.519Z
 
 # converters
 
-- https://github.com/oomol-lab/pdf-craft /3.7kStar/AGPL > MIT/202512/python
-  - convert PDF files into various other formats. This project will focus on processing PDF files of scanned books. 
-  - This project can read PDF pages one by one, and use `DocLayout-YOLO` mixed with an algorithm I wrote to extract the text from the book pages 
-  - 超过100页的，可转为EPUB，结合了本地OCR和云端LLM处理，兼顾效率和功能性，最终生成带目录分章节的EPUB
-  - Starting from the official v1.0.0 release, pdf-craft fully embraces DeepSeek OCR and no longer relies on LLM for text correction.
-    - removing the previous AGPL-3.0 dependency, allowing the entire project to be released under the more permissive MIT license
-    - Note that pdf-craft has a transitive dependency on easydict (LGPLv3) via DeepSeek OCR.
-  - [PDF Craft：一个更懂技术的开源 PDF 转换工具 _202512](https://linux.do/t/topic/1322118)
-    - 我们基于 DeepSeek-OCR 重写了一个转换引擎：pdf-craft
-    - 更智能的布局还原：特别优化了双栏和图文混排，目标是转成 Markdown 或 EPUB 后，还能有接近纸质书的阅读体验。
-    - 更完美的 LaTeX 公式支持：无论是行内公式还是独立公式，都能精准识别并还原
-    - 本地免费跑（我们最推荐的）
-  - https://github.com/oomol-lab/epub-translator
-    - uses AI large language models to automatically translate EPUB e-books while 100% preserving the original book's format, illustrations, table of contents, and layout. 
-
 - https://github.com/yWorks/svg2pdf.js /MIT/202503/ts
   - https://raw.githack.com/yWorks/svg2pdf.js/master/
   - A javascript-only SVG to PDF conversion utility that runs in the browser leveraging jsPDF.

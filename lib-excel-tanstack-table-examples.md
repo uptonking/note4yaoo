@@ -452,6 +452,10 @@ modified: 2022-08-21T10:37:01.349Z
 - https://github.com/mbrinkl/santorini
   - https://santorini.onrender.com/
   - Santorini Board Game Online with boardgame.io and three.js
+# table-examples/alternatives
+- https://github.com/gurujada/live_table /165Star/MIT/202512/elixir
+  - https://livetable.gurujada.com/
+  - Powerful Phoenix LiveView library that provides dynamic, interactive tables with built-in support for sorting, filtering, pagination, and data export capabilities.
 # more-table-repos
 - https://github.com/cjroth/vertex-solid
   - built a Virtualized table with @solid_js and @tan_stack virtual (also playing with @zag_js and Hope UI!):

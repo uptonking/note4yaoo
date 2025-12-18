@@ -12,6 +12,7 @@ modified: 2021-01-04T17:26:43.784Z
 - tips
   - 支持导出pdf是大多数产品的基本功能，如drawio/jsreport/thorium-reader/notesnook
   - pdf-editor 可参考 ppt-editor 的实现，都包含自由文本、标注
+    - 💡 可参考 overleaf, 支持典型的latex文本编辑、富文本编辑
   - pdf标注可参考 office-drawing, 还可参考: okular, foxit, canva, xournal, 各类电子书阅读器
 
 - https://printcss.live/
@@ -213,6 +214,12 @@ modified: 2021-01-04T17:26:43.784Z
   - Compatible with both scanned and digital PDFs. 
   - 目前效果，对于基于文本的pdf, polyglotpdf的解析方式依旧是最优解。 ocr和布局分析并不总是完美。
   - 对于报告型表格文档，polyglotpdf效果相当完美，当然表格中的复杂矢量数学公式依旧无法正确处理
+  - 本项目采用与 Adobe Acrobat DC 编辑 PDF 类似的基本原理，基于 PyMuPDF 识别和处理 PDF 文本块, 这种方式直接处理 PDF 文本块，保持原有布局不变，实现高效的文本提取和修改
+  - 🛝
+    - 实测图片pdf在ocr后底部是原文, 文字散乱排布在上方, 视觉上是重影, 但分栏布局可以还原, 且识别后的每行文本和原文位置基本都一致
+    - 💡🤔 更合理的流程是生成2个pdf image > text-pdf > translated-pdf, 这样就能既保持原有布局，又能无重影展示干净的译文pdf
+  - [关于·ocr识别 ](https://github.com/CBIhalsen/PolyglotPDF/issues/6)
+    - 请问考虑·添加·paddle作为OCR模型吗？ 文字PDF的翻译速度是我用过最快的，比pdfmathtran快几倍
 # pdf-editor
 - https://github.com/BDenizKoca/Tideflow-md-to-pdf /MIT/202511/ts/tuari
   - https://bdenizkoca.studio/projects/tideflow/
@@ -241,6 +248,28 @@ modified: 2021-01-04T17:26:43.784Z
   - https://jichang.github.io/unionpdf/
   - A universal pdf rendering/editing library
   - model, engine, react
+
+- https://github.com/oomol-lab/pdf-craft /3.7kStar/AGPL > MIT/202512/python
+  - convert PDF files into various other formats. This project will focus on processing PDF files of scanned books. 
+  - This project can read PDF pages one by one, and use `DocLayout-YOLO` mixed with an algorithm I wrote to extract the text from the book pages 
+  - 超过100页的，可转为EPUB，结合了本地OCR和云端LLM处理，兼顾效率和功能性，最终生成带目录分章节的EPUB
+  - Starting from the official v1.0.0 release, pdf-craft fully embraces DeepSeek OCR and no longer relies on LLM for text correction.
+    - removing the previous AGPL-3.0 dependency, allowing the entire project to be released under the more permissive MIT license
+    - Note that pdf-craft has a transitive dependency on easydict (LGPLv3) via DeepSeek OCR.
+  - [PDF Craft：一个更懂技术的开源 PDF 转换工具 _202512](https://linux.do/t/topic/1322118)
+    - 我们基于 DeepSeek-OCR 重写了一个转换引擎：pdf-craft
+    - 更智能的布局还原：特别优化了双栏和图文混排，目标是转成 Markdown 或 EPUB 后，还能有接近纸质书的阅读体验。
+    - 更完美的 LaTeX 公式支持：无论是行内公式还是独立公式，都能精准识别并还原
+    - 本地免费跑（我们最推荐的）
+  - https://github.com/oomol-lab/epub-translator
+    - uses AI large language models to automatically translate EPUB e-books while 100% preserving the original book's format, illustrations, table of contents, and layout. 
+
+- https://github.com/cosformula/mdxport /MIT/202512/ts/svelte
+  - https://www.mdxport.com/
+  - 左边文本可编辑，右边预览只读
+  - [Built a browser-based PDF exporter using Typst + WASM (No Pandoc/LaTeX setup required) : r/ObsidianMD _202512](https://www.reddit.com/r/ObsidianMD/comments/1ppmoql/built_a_browserbased_pdf_exporter_using_typst/)
+    - 100% Local (WASM): It uses the Typst engine compiled to WebAssembly. all rendering happens in your browser. No data is sent to any server
+    - Better Pagination: unlike the standard HTML-to-PDF print (which Obsidian uses), Typst handles page breaks smartly. It keeps table rows together and handles footnotes/math ($E=mc2$) beautifully.
 
 - https://github.com/awesome-yasin/PDF-Verse /MIT/202312/js/ejs/inactive
   - https://pdf-verse.vercel.app/

@@ -17,7 +17,15 @@ modified: 2025-11-30T17:27:16.720Z
   - 没有持久化vector embeddings的示例都是demo, 每次启动都要将大文件index一遍
   - 基于文件系统，还是基于数据库 来实现和优化rag
   - rag是很多产品都需要的基础能力之一, 可替代text-search, 可参考成功的产品或针对场景/codebase/local优化的产品
-  - features: large-file/pdf, ollama-embeddings, 中文
+
+- features: 
+  - citations
+  - local sources: pdf/docx
+  - external sources: slack, github
+  - external search: SearXNG, Tavily
+  - large-file/pdf
+  - ollama-embeddings
+  - 中文
 # citation/backlinks
 - 权威数据源
   - 国家统计局
@@ -1367,3 +1375,9 @@ modified: 2025-11-30T17:27:16.720Z
   - Parse documents (PDFs, DOCX, spreadsheets, presentations, images, and raw text) to markdown or extract structured data with schemas. This is powered by Tensorlake's state of the art layout detection and table recognition models.
   - Deploy Agentic Applications and AI Workflows using durable functions, with sandboxed and managed compute infrastructure that scales your agents with usage.
   - Sign up at cloud.tensorlake.ai and get your API key.
+
+- [LanceDB Demos - Wikipedia 41M Hybrid Search](https://lancedb-demos.vercel.app/demo/wikipedia-search)
+  - https://x.com/lancedb/status/2001327573968572579
+  - We built WikiSearch, a search engine that stores and searches through real Wikipedia entries. 
+  - The demo showcases how to use LanceDB’s full-text and hybrid search features to quickly find relevant information in a large dataset like Wikipedia.
+  - [LanceDB WikiSearch: Native Full-Text Search on 41M Wikipedia Docs _202508](https://lancedb.com/blog/feature-full-text-search/)

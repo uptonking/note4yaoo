@@ -592,6 +592,17 @@ modified: 2022-08-18T16:57:29.058Z
   - To correctly render the LaTeX expressions, you will also need to include the KaTeX CSS
   - KaTeX: A LaTeX rendering engine for the web, used to render LaTeX expressions.
 
+- https://github.com/dragonman225/prosemirror-equation /MIT/202512/ts
+  - https://prosemirror-equation.netlify.app/
+  - Write math equations with LaTeX in ProseMirror — block and inline nodes, render with KaTeX, edit with CodeMirror popover
+  - Opening or closing the equation editor should not cause any layout shift.
+  - Users should be able to see the rendered equation while they edit the TeX.
+  - Uses CodeMirror to provide syntax highlighting in the editor.
+  - Unstyled, framework-agnostic, fully customizable UI.
+  - Load KaTeX (264kB) and CodeMirror (242kB) dynamically—only when they’re actually needed—to keep your main JS bundle small.
+  - https://x.com/hialexwang/status/2001328885309624733
+    - I’ve turned it into a standalone library that works seamlessly with ProseMirror. It’s also easy to integrate with ProseMirror-based frameworks like ProseKit
+
 - https://github.com/mattberkowitz/prosemirror-find-replace /MIT/201606/js/inactive
   - Find & Replace plugin for ProseMirror
 
