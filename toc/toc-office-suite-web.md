@@ -88,7 +88,7 @@ modified: 2023-03-09T13:47:07.317Z
   - [LibreOffice for Android and iOS](https://www.libreoffice.org/download/android-and-ios/)
     - doesn’t currently offer an Android or iOS version of LibreOffice, there is a LibreOffice-based product in app stores from Collabora
 
-- CollaboraOnline /1kStar/MPLv2/202401/js/cpp/LibreOffice
+- CollaboraOnline /1kStar/MPLv2/202401/cpp/js/ts/LibreOffice
   - https://github.com/CollaboraOnline/online
   - https://www.collaboraoffice.com/
   - Collabora Online is a collaborative online office suite based on LibreOffice
@@ -191,7 +191,7 @@ modified: 2023-03-09T13:47:07.317Z
   - 文件在线预览及OFFICE(word, excel, ppt)的在线编辑
   - 对kkFileView进行了二次开发，整合了openOffice进来，项目体积更大了！但使用和配置更简单，只需要配置redis即可
 
-- https://github.com/sismics/docs /GPLv2/202403/js/java
+- https://github.com/sismics/docs /2.2kStar/GPLv2/202409/java/js/inactive
   - https://teedy.io/
   - open source, lightweight document management system for individuals and businesses.
   - Support image, PDF, ODT, DOCX, PPTX files

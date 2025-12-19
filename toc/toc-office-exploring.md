@@ -35,6 +35,12 @@ modified: 2021-01-04T17:31:49.998Z
   - Spreadsheet editor
   - Calendar
   - Data tables with CRUD API's
+
+- https://github.com/CoderWanFeng/python-office /1.2kStar/apache2/202512/python
+  - https://www.python-office.com/
+  - 一个 Python 自动化办公第三方库，能解决大部分自动化办公的问题。而且每个功能只需一行代码，不需要小白用户学习 Python 知识
+  - 一键搭建所有 Python + 自动化办公的编程环境。
+  - 很多朋友发现python-office这个库，下载很慢很大，是因为它集成了以下这些库
 # office4j
 - https://github.com/asciidocfx/asciidocfx
   - Asciidoc FX is a book/document editor to build PDF, Epub, Mobi and HTML books, documents and slides

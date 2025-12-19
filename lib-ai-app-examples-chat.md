@@ -211,6 +211,18 @@ modified: 2025-03-22T18:49:15.634Z
   - Storage: IndexedDB via Dexie.js
   - Import/export functionality
   - File attachments (text, images, PDFs)
+
+- https://github.com/eclaire-labs/eclaire /728Star/MIT/202512/ts
+  - https://eclaire.co/
+  - Local-first, open-source AI assistant for your data. Unify tasks, notes, docs, photos, and bookmarks. 
+  - Private by default: By default all AI models run locally, all data is stored locally.
+  - Layered architecture: frontend, backend, and workers are separate services. Run only the backend for API-only/data-processing use cases
+    - Backend for AI assistant (eg. Qwen3 model), 
+    - Workers for image and document processing (eg. Gemma3 multi-modal). 
+    - Docling for processing some of the document formats.
+  - Model backends: works with llama.cpp, vLLM, mlx-lm/mlx-vlm, LM Studio, Ollama, and more via the standard OpenAI-compatible API.
+  - Storage: all assets (uploaded or generated) live in Postgres or file/object storage.
+  - Documents: PDF, DOC/DOCX, PPT/PPTX, XLS/XLSX, ODT/ODP/ODS, MD, TXT, RTF, Pages, Numbers, Keynote, HTML, CSV, and more.
 # ui-ai 💄
 - https://github.com/google/a2ui /543Star/apache2/202512/ts
   - https://a2ui.org/

@@ -194,6 +194,9 @@ modified: 2023-09-19T07:26:04.103Z
   - https://demo.booklore.dev/
   - A self-hosted, multi-user digital library with smart shelves, auto metadata, Kobo & KOReader sync, BookDrop imports, OPDS support, and a built-in reader for EPUB, PDF, and comics.
 
+- https://github.com/shanleiguang/vRain /MIT/202511/perl
+  - 中文古籍刻本風格直排電子書製作工具 Chinese Ancient eBooks Generator
+
 ## epub
 
 - https://github.com/futurepress/epub.js /bsd/202305/js/inactive

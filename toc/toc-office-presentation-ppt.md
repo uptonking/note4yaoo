@@ -494,6 +494,7 @@ modified: 2021-04-30T20:14:17.669Z
 
 - https://github.com/Anionex/banana-slides /MIT/202512/python/ts
   - [【已开源】一个基于banana pro的一站式PPT生成应用, 告别排版美化烦恼 - 资源荟萃 - LINUX DO](https://linux.do/t/topic/1285413)
+  - 这个PPT神器真智能一张图就搞定全套模板太方便了
 
 - [ChatSlide | Build your Slides and Videos from Documents in one click](https://chatslide.ai/landing)
 # ai-canvas

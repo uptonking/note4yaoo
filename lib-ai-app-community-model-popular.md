@@ -2143,7 +2143,12 @@ free 5GB postgres via aiven.io
 
 - ## 
 
-- ## 
+- ## [Thoughts on recent small (under 20B) models : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1ppstef/thoughts_on_recent_small_under_20b_models/)
+  - Nemotron cascade 14B. Similar to Ministral 3 14B tends to overthink a lot. Although it has great coding benchmarks, I couldn't get good results out of it. GPT OSS 20B and QWEN3 8B VL seem to give better results. This was the most underwhelming for me.
+
+- Mistral 3 14b is the only solid one out of the lineup, but worse than qwen3 in every aspect except censoring. Qwen3 vl 8b has better vision too.
+
+- Phi-4 14b was my go-to general purpose model until I replaced it with Qwen3 30b and Gpt-Oss-20b. I know it is not exactly recent, but I didn't think Ministral or Nemotron were any better.
 
 - ## [State of AI | OpenRouter | Paper : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pedmsi/state_of_ai_openrouter_paper/)
 - roleplay not programming dominates Open Source model usage, I would have never guessed that

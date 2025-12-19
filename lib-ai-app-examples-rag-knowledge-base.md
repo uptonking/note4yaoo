@@ -356,6 +356,15 @@ modified: 2025-11-30T17:27:16.720Z
     - i have run this django rag webapp fully locally by `uv run --env-file .env -- python main.py start`.
     - when i open http://localhost:8000/ , the browser shows 
 
+- https://github.com/MLNativeAI/paperjet /AGPL/202512/ts
+  - https://getpaperjet.com/
+  - Open-source platform to securely extract data from any document. Build custom workflows while keeping your data private.
+  - Fully open-source - The web and self-hosted versions have the same feature set
+  - Zero cloud dependencies - PaperJet doesn’t depend on any cloud services. Everything is self-contained in Docker
+  - Built for large documents: easily ingest hundreds of pages at once
+  - Use any LLM with your own keys (BYOK)
+  - local providers: VLLM, LM Studio and Ollama
+
 - https://github.com/renton4code/pdf-rag /AGPL/202502/ts/inactive
   - A production-ready template for building Retrieval-Augmented Generation (RAG) applications. 
   - This template provides a complete setup for document processing, vector storage, and AI-powered question answering with kickass UI.
@@ -367,6 +376,13 @@ modified: 2025-11-30T17:27:16.720Z
   - AI/ML: Google Gemini (LLM), HuggingFace Transformers (Embeddings)
   - Backend: Bun
   - Based on Q&A with a large document (700+ pages) in comparison to RagFlow
+
+- https://github.com/Arterning/DeepParseX /MIT/202512/python
+  - 强大的多模态文档解析与知识管理平台，支持 PDF、Word、Excel、PPT、图片、视频、音频 等多种文件格式的智能解析，自动提取关键信息，并构建 检索增强生成（RAG） 和 知识图谱（Knowledge Graph） 系统，实现结构化数据的智能检索与推理
+  - 向量存储：ParadeDB
+  - 知识图谱：NetworkX
+  - 后端：FastAPI, Docker, MinIO
+  - https://github.com/Arterning/DeepParseXWeb
 
 - https://github.com/gptme/gptme-rag /MIT/202511/python/cli
   - Local RAG as a simple CLI
@@ -1071,12 +1087,12 @@ modified: 2025-11-30T17:27:16.720Z
     - 支付：Lemon Squeezy
     - 部署：Vercel
 # chat-pdf
-- https://github.com/AKSarav/pdfstract /202509/python/inactive
-  - web application built with FastAPI and HTML that converts PDF files to Markdown format using various conversion libraries.
+- https://github.com/AKSarav/pdfstract /apache2/202511/python/js
+  - web application for converting PDFs to multiple formats using various state-of-the-art extraction libraries. Built with FastAPI backend and React frontend
   - [Built a small tool to compare PDF → Markdown libraries (for RAG / LLM workflows) : r/Rag _202507](https://www.reddit.com/r/Rag/comments/1m1j10e/built_a_small_tool_to_compare_pdf_markdown/)
-  - I’ve been exploring different libraries for converting PDFs to Markdown to use in a Retrieval-Augmented Generation (RAG) setup.
-  - But testing each library turned out to be quite a hassle — environment setup, dependencies, version conflicts, etc.
-  - Currently, it supports: docling pymupdf4llm markitdown marker
+    - I’ve been exploring different libraries for converting PDFs to Markdown to use in a Retrieval-Augmented Generation (RAG) setup.
+    - But testing each library turned out to be quite a hassle — environment setup, dependencies, version conflicts, etc.
+    - Currently, it supports: docling pymupdf4llm markitdown marker
 
 - https://github.com/weiwill88/Local_Pdf_Chat_RAG /202510/python/inactive
   - 本地化智能问答系统 (FAISS版)
@@ -1135,6 +1151,18 @@ modified: 2025-11-30T17:27:16.720Z
   - https://github.com/lfnovo/esperanto
     - Python library that provides a unified interface for interacting with various Large Language Model (LLM) providers.
     - All providers communicate directly via HTTP APIs using httpx - no bulky vendor SDKs required
+
+- https://github.com/eclaire-labs/eclaire /728Star/MIT/202512/ts
+  - https://eclaire.co/
+  - Local-first, open-source AI assistant for your data. Unify tasks, notes, docs, photos, and bookmarks. 
+  - Private by default: By default all AI models run locally, all data is stored locally.
+  - Layered architecture: frontend, backend, and workers are separate services. Run only the backend for API-only/data-processing use cases
+    - Backend for AI assistant (eg. Qwen3 model), 
+    - Workers for image and document processing (eg. Gemma3 multi-modal). 
+    - Docling for processing some of the document formats.
+  - Model backends: works with llama.cpp, vLLM, mlx-lm/mlx-vlm, LM Studio, Ollama, and more via the standard OpenAI-compatible API.
+  - Storage: all assets (uploaded or generated) live in Postgres or file/object storage.
+  - Documents: PDF, DOC/DOCX, PPT/PPTX, XLS/XLSX, ODT/ODP/ODS, MD, TXT, RTF, Pages, Numbers, Keynote, HTML, CSV, and more.
 
 - https://github.com/rmusser01/tldw_server /1.1kStar/GPL/202511/python
   - https://tldwproject.com/
@@ -1217,6 +1245,10 @@ modified: 2025-11-30T17:27:16.720Z
   - Advanced multi-step search capability for complex queries
   - Academic search: Search for academic papers and research using Exa AI with abstracts and summaries
   - YouTube search: Find YouTube videos with detailed information, captions, and timestamps powered by Exa AI
+
+- https://github.com/H0NEYP0T-466/Pen2PDF /MIT/202511/js
+  - https://pen2-pdf.vercel.app/
+  - a modern web application that offers six powerful productivity tools: AI-powered text extraction and PDF conversion, intelligent timetable management with Excel/CSV import, comprehensive todo list management with subtasks, smart notes generation with a searchable library, a full-featured digital whiteboard, and an AI assistant (Bella) for intelligent help - all designed to streamline your academic and professional workflow.
 # citation/sourcing
 - https://github.com/stanford-oval/WikiChat /1.5kStar/apache2/202504/python/inactive
   - https://wikichat.genie.stanford.edu/
@@ -1381,3 +1413,6 @@ modified: 2025-11-30T17:27:16.720Z
   - We built WikiSearch, a search engine that stores and searches through real Wikipedia entries. 
   - The demo showcases how to use LanceDB’s full-text and hybrid search features to quickly find relevant information in a large dataset like Wikipedia.
   - [LanceDB WikiSearch: Native Full-Text Search on 41M Wikipedia Docs _202508](https://lancedb.com/blog/feature-full-text-search/)
+
+- [One of our engineers wrote a 3-part series on building a RAG server with PostgreSQL : r/Rag _202512](https://www.reddit.com/r/Rag/comments/1pq79v4/one_of_our_engineers_wrote_a_3part_series_on/)
+  - [Building a RAG Server with PostgreSQL - Part 1: Loading Your Content](https://www.pgedge.com/blog/building-a-rag-server-with-postgresql-part-1-loading-your-content)

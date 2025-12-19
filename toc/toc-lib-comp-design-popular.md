@@ -9,6 +9,14 @@ modified: 2020-11-13T07:29:55.201Z
 
 # guide
 
+# trending
+- https://github.com/mui/base-ui /7.2kStar/MIT/202512/ts
+  - https://base-ui.com/
+  - Unstyled UI components for building accessible web apps and design systems. 
+  - From the creators of Radix, Floating UI, and Material UI.
+  - https://github.com/MusKRI/pure-ui /ts
+    - https://pure.kam-ui.com/
+    - A design system built with Base UI
 # popular-storybook
 - resources
   - https://storybook.js.org/showcase/projects

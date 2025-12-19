@@ -21,49 +21,6 @@ modified: 2023-03-03T08:06:36.592Z
 
 - https://github.com/tech-podcasts/JinJinLeDao_QA_Dataset
   - 做了一个基于中文播客的问答数据集，这个数据集来自《津津乐道》播客，包含了18, 663个中文问答对，这些问答对根据281个播客节目字幕，配合GPT-3.5和提示词自动生成。
-# translation
-- https://github.com/mozilla/firefox-translations
-  - a webextension that enables client side translations for web browsers.
-  - 不支持中文
-  - [Support Chinese translations](https://github.com/mozilla/firefox-translations/issues/583)
-
-- https://github.com/jelmervdl/translatelocally-web-ext
-  - https://translatelocally.com/
-  - a web-extension that enables client side in-page translations for web browsers.
-  - 不支持中文
-  - Differences from Firefox Translations
-    - Uses models from https://github.com/browsermt/students
-    - Translation engine and memory is shared among all tabs and webpages
-  - [Google Chrome](https://github.com/jelmervdl/translatelocally-web-ext/issues/10)
-
-- https://github.com/Byaidu/PDFMathTranslate
-  - 一款可以保留原排版的PDF文档翻译工具：PDFMathTranslate，可以完整保留原文档中的公式、图表，支持双语对比
-  - 支持多种翻译服务，Google、DeepL、Ollama、OpenAI等
-
-- 使用Google翻译（Translate）的离线翻译功能？有前提：你必须先在联网状态下将需要且支持离线翻译的语言下载。
-  - 而离线翻译的结果会与联网翻译的结果存在结果差距。特别是翻译同一个字词语句下
-
-- 全文翻译比较期待类似firefox做的这种离线本地翻译
-  - [Firefox Translations – Get this Extension for 🦊 Firefox (en-US)](https://addons.mozilla.org/en-US/firefox/addon/firefox-translations/)
-
-## translate-examples
-
-- https://github.com/kanweiwei/translate-server
-  - 对接的是百度翻译api，需要 appid 和对应的密钥
-
-## translate-api
-
-- https://github.com/LibreTranslate/LibreTranslate
-  - https://libretranslate.com/
-  - Free and Open Source Machine Translation API. 
-  - Self-hosted, offline capable and easy to setup.
-  - its translation engine is powered by the open source Argos Translate library.
-  - 依赖flask
-
-- https://github.com/argosopentech/argos-translate /python
-  - Open-source offline translation library written in Python
-  - Argos Translate uses OpenNMT for translations
-  - 支持中日韩
 # blogs
 
 ## [Large language model - Wikipedia](https://en.wikipedia.org/wiki/Large_language_model)

@@ -165,6 +165,13 @@ modified: 2025-12-11T18:10:23.710Z
   - Use / commands to browse and trigger actions provided by your current agent
   - Permission Management: Fine-grained control over agent actions
 
+- https://github.com/coder/mux /774Star/AGPL/202512/ts
+  - https://mux.coder.com/
+  - A desktop app for isolated, parallel agentic development
+  - Isolated workspaces: local directory, worktree, ssh
+  - models: openrouter, Ollama
+  - mux has a custom agent loop but much of the core UX is inspired by Claude Code.
+
 - https://github.com/ObservedObserver/async-code /apache2/202508/python/ts/inactive
   - Use Claude Code / CodeX CLI to perform multiple tasks in parallel with a Codex-style UI.
   - A code agent task management system that provides parallel execution of AI-powered coding tasks. 

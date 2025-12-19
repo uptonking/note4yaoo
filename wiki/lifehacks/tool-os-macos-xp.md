@@ -263,6 +263,15 @@ redis-cli shutdown
 
 - 不按Option，移动文件是剪切，按住Option，移动文件变粘贴
 - 按住Option，点按小三角，自动展开访达文件夹内的所有子文件夹，所有文件一览无余
+# examples-mac
+
+## devtools
+
+- https://github.com/productdevbook/port-killer /2kStar/MIT/202512/swift
+  - A native macOS menu bar app for finding and killing processes on open ports.
+  - `brew install --cask productdevbook/tap/portkiller`
+  - https://x.com/productdevbook/status/2001594478524572124
+    - With Cloudflare tunnels via PortKiller, you can open any port you want with a single click.
 # discuss-macos-tricks
 - ## 
 

@@ -49,7 +49,7 @@ modified: 2021-05-13T16:14:15.415Z
 - https://github.com/yifanwu/diel
   - a declarative framework for scaling up your interactive visualizations with... SQL! (and some timesteps)
 # data-wasm
-- https://github.com/pyodide/pyodide /12kStar/MPLv2/202409/python/c/ts
+- https://github.com/pyodide/pyodide /14kStar/MPLv2/202512/python/c/ts
   - https://pyodide.org/en/stable/
   - Pyodide is a Python distribution for the browser and Node.js based on WebAssembly
   - Pyodide is a port of CPython to WebAssembly/Emscripten.

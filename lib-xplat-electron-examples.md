@@ -643,12 +643,6 @@ modified: 2024-01-31T19:13:11.286Z
   - Browser for Work
   - Wavebox gives you customizable toolbars, sleeping tabs, cookie containers and multiple profile
   - Wavebox 10, a complete **fork of Chromium** launched in 2019, but if you're looking for the Electron based Wavebox Classic, there's an archive of the code here
-
-## ocr
-
-- https://github.com/eastrd/ArchivEye /AGPL/202304/ts/inactive
-  - an offline PDF OCR tool developed to safeguard the privacy and confidentiality of sensitive documents.
-  - A GUI offline OCR tool for searching scanned PDF documents on a per-page basis, prioritizing accessibility, privacy, and user experience with Nextron and NodeJS
 # tauri
 - https://github.com/12joan/ping-ui
   - A simple GUI for the ping command-line utility built using Tauri.

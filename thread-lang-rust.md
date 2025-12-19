@@ -53,7 +53,86 @@ modified: 2023-10-06T16:26:57.557Z
 
 - ## 
 
-- ## 
+- ## still, you think Rust is “too new” to learn?
+- https://x.com/0xlelouch_/status/2001602140436058112
+
+> Linux kernel is gaining Rust
+> Windows kernel has Rust components
+> Android has Rust in system services
+> Firefox uses Rust (Servo, Stylo, parts of Gecko)
+> Chrome uses Rust (security-critical components)
+> AWS is writing core infra in Rust
+> Cloudflare rewrote hot paths in Rust
+> Discord backend uses Rust
+> Dropbox uses Rust for sync engine
+> Figma uses Rust for performance-critical code
+> Meta uses Rust in production tooling
+> Microsoft recommends Rust for new systems code
+> Linux drivers are being written in Rust
+> PostgreSQL extensions are being written in Rust
+> Wasm runtimes (Wasmtime, Wasmer) are Rust
+> Blockchain clients (Solana, Polkadot, Near) are Rust
+> Game engines (Bevy) are Rust
+> Databases (TiKV, Redpanda parts) are Rust
+> Observability tools (Vector) are Rust
+> CLI tools you use daily (ripgrep, fd, bat) are Rust
+
+> Ripgrep is Rust
+> Alacritty is Rust
+> Tokio (Discord backend) is Rust
+> Cloudflare edge is Rust
+> Firefox Quantum CSS is Rust
+> Deno is Rust
+> SWC is Rust
+> 1Password core is Rust
+> Signal protocol is Rust
+> Android Bluetooth is Rust
+> Linux kernel (6.1+) accepts Rust
+> npm (parts) is Rust
+> Windows (parts) is Rust
+
+- still, you are not convinced to learn C and C++
+
+> Linux is C
+> Git is C
+> Python interpreter (CPython) is C
+> Ruby interpreter (MRI) is C
+> PostgreSQL is C
+> SQLite is C
+> Redis is C
+> MySQL is C++
+> MongoDB is C++
+> Unreal Engine is C++
+> Chrome is C++
+> Firefox is C++
+> Windows kernel is C
+> macOS kernel (XNU) is C
+> Photoshop is C++
+> VMware is C++
+> TensorFlow (Core) is C++
+
+- https://x.com/0xlelouch_/status/2001603136180592647
+  - still, you think Go is “just a simple language”?
+
+Kubernetes is written in Go
+Docker (engine) is written in Go
+containerd is written in Go
+etcd is written in Go
+Prometheus is written in Go
+Grafana backend is written in Go
+Helm is written in Go
+Terraform is written in Go
+Consul is written in Go
+Vault is written in Go
+Istio control plane is written in Go
+Linkerd is written in Go
+Caddy web server is written in Go
+CockroachDB is written in Go
+InfluxDB is written in Go
+Loki is written in Go
+OTel collectors are written in Go
+Cloudflare systems heavily use Go
+Uber’s internal platforms use Go
 
 - ## Rust exists because C++ refused to admit it has problems.
 - https://x.com/davepl1968/status/1904324609232736542

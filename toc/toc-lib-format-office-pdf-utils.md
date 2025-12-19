@@ -198,16 +198,6 @@ modified: 2022-11-11T10:46:41.519Z
   - Convert any web technology to PDF (HTML to PDF, html2pdf)
   - 依赖chokidar、live-server、passport、puppeteer、react
   - Please note that React components are not required for web-to-pdf to work. It supports all frameworks, and even vanilla JS/HTML/CSS.
-# ocr-pdf
-- https://github.com/ocrmypdf/OCRmyPDF /32kStar/MPLv2/202512/python
-  - http://ocrmypdf.readthedocs.io/
-  - OCRmyPDF adds an OCR text layer to scanned PDF files, allowing them to be searched or copy-pasted.
-  - Generates a searchable PDF/A file from a regular PDF
-  - Distributes work across all available CPU cores
-  - Uses Tesseract OCR engine to recognize more than 100 languages
-  - Battle-tested on millions of PDFs.
-- https://github.com/FanQinFred/OCRmyPDF-Desktop /apache2/202312/js/vue/inactive
-  - 在OCRmyPDF的基础上，集成了所需环境，并使用Electron开发了桌面端
 # utils
 - https://github.com/RussCoder/djvujs /js
   - https://djvu.js.org/
@@ -222,6 +212,9 @@ modified: 2022-11-11T10:46:41.519Z
   - HTML自动分页插件。用于生成PDF, 前端WEB打印生成PDF或后端wkhtmltopdf、chrome headless生成
   - 主要解决，HTML生成PDF，分页可控的问题
   - 依赖 jquery、lodash、bookjs-eazy
+
+- https://github.com/lukaszliniewicz/PyCropPDF /MIT/202511/python
+  - A GUI application to crop PDF files. It is primarily designed for documents where multiple pages need the same cropping, such as removing headers, footers, or margins.
 # latex
 - https://github.com/dginev/ar5iv /MIT/rust
   - https://ar5iv.org/
@@ -231,7 +224,7 @@ modified: 2022-11-11T10:46:41.519Z
   - Goal: incremental improvement until worthy of native arXiv adoption.
   - View any arXiv article URL by changing the X to a 5
 
-- https://github.com/arxiv-vanity/arxiv-vanity /apache2/python
+- https://github.com/arxiv-vanity/arxiv-vanity /1.6kStar/apache2/202201/python/inactive
   - https://www.arxiv-vanity.com/
   - Renders papers from arXiv as responsive web pages so you don't have to squint(眯着眼看) at a PDF.
   - This is the web interface for viewing papers. 

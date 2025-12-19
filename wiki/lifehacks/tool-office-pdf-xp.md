@@ -19,6 +19,11 @@ modified: 2020-12-29T17:52:48.584Z
   - pdf-viewer或标注参考: okular, foxit, canva, xournal, 各类电子书阅读器
   - 在浏览器查看markdown时使用print pdf功能，linux的效果比macos好很多，比如简历markdown
 
+- pm-pdf
+  - 双栏布局对pdf特别有用，一方面在屏幕展示更多内容， 另一方面是利用双栏ux实现同步滚动 原文 和 翻译/评论 2个独立但位置相关的内容
+    - 实现思路1: editor-suggestion
+    - 实现思路2: two-doc-scroll
+
 - 画板或批注类产品要参考规范 [Web Annotation Data Model](https://www.w3.org/TR/annotation-model/)
 # pdf-editor
 - [JOPDF | Free & Fast PDF Editor for Windows, Mac & Linux](https://www.jopdf.com/)

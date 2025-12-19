@@ -80,4 +80,11 @@ modified: 2024-04-14T12:19:52.096Z
   - 查词查询：鼠标悬停生词可快速查询，不打断学习进程。
   - 视频下载：粘贴视频链接，下载视频。
   - 支持win/linux/mac
+# nsfw
+- https://github.com/stashapp/stash /11.5kStar/AGPLv3/202512/go/ts
+  - https://docs.stashapp.cc/
+  - https://stashapp.cc/
+  - a self-hosted webapp written in Go which organizes and serves your diverse content collection, catering to both your SFW and NSFW needs.
+  - supports a wide variety of both video and image formats.
+  - statistics about performers, tags, studios and more.
 # more

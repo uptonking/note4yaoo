@@ -166,60 +166,6 @@ modified: 2021-01-04T17:26:43.784Z
 - https://gitlab.coko.foundation/pagedjs/pagedjs
   - Paged.js is a free and open-source library that paginates any HTML content to produce beautiful print-ready PDF. 
   - The library fragments the content, reads your CSS print declarations and presents a paginated preview in your browser that you can save as PDF.
-
-- https://github.com/PDFMathTranslate-next/PDFMathTranslate-next /2kStar/AGPLv3/202512/python
-  - https://pdf2zh-next.com/zh/index.html
-  - PDF 科学论文翻译与双语对照。基于 BabelDOC
-  - 🐛 翻译图片pdf的异常 'Translation error: Babeldoc translation error: The document contains no paragraphs 
-  - [关于扫描版PDF & 图片的说明 _202508](https://github.com/PDFMathTranslate-next/PDFMathTranslate-next/issues/166)
-    - 目前 BabelDOC 技术路线 暂无计划支持扫描版 PDF
-    - 位图：方案仍在探索中，大概率会依赖闭源服务，优先级较低。
-    - 矢量图：最新版本的 BabelDOC 已经可以识别并翻译图中的文字。
-    - 不同 OCR 服务的输出格式差异较大，需要大量适配工作。
-  - [接入paddleocr vl呀 _202511](https://github.com/PDFMathTranslate-next/PDFMathTranslate-next/issues/285)
-    - 要吃饭的，基于OCR翻译闭源搞了
-  - https://github.com/PDFMathTranslate/PDFMathTranslate-next /AGPLv3
-    - pdf2zh 2.0 does not currently provide an online demo
-- https://github.com/PDFMathTranslate/PDFMathTranslate /29.8kStar/AGPLv3/202511/python 
-  - https://pdf2zh.com/
-  - 基于 AI 完整保留排版的 PDF 文档全文双语翻译，支持 Google/DeepL/Ollama/OpenAI 等服务，提供 CLI/GUI/MCP/Docker/Zotero
-  - Preserve formulas, charts, table of contents, and annotations
-  - Support multiple languages, and diverse translation services.
-  - ✨ 可参考翻译后pdf布局不变的实现方式, 特别是表格中英文变中文但布局不变
-  - 支持双栏布局显示原文和翻译，体验非常好
-  - 🐛 [supports ocr on scanned document ](https://github.com/PDFMathTranslate/PDFMathTranslate/issues/19)
-    - 图片型的 PDF 文档暂时还没办法翻译，目前主要还是在优化电子书和论文的翻译效果
-    - 对于扫描版的pdf文件的翻译效果咋样呢？ 压根不支持
-    - sayura 就是 marker 的作者做的开源多国语言和表格的 OCR 模型，我只测试了 PaddleOCR 高精度模型，Sayura 效果比它好很多，而且支持多国语言效果很好。缺点就是 Sayura 对 GPU 显存要求有点高，头疼，不太会量化模型
-    - 💡 扫描件可以直接理解为图片，实际上是保持排版的图片翻译功能，可以参考微信的实现，长按图片点翻译可以自动翻译
-    - 👷 202505: 遇到此问题时，请尝试使用 2.0 预览版 并启用高级选项中的 OCR Workaround 来翻译。
-  - [为什么会出现完全重影？ ](https://github.com/PDFMathTranslate/PDFMathTranslate/issues/942)
-    - 重影用2.0，开ocr workaround就行
-  - 🎯 [pdf2zh 2.0 _202502](https://github.com/PDFMathTranslate/PDFMathTranslate/issues/586)
-    - Core: I am completely rewriting it, related code is at funstory-ai/BabelDOC
-  - https://github.com/funstory-ai/BabelDOC /6.2kStar/AGPL/202512/python
-    - https://funstory-ai.github.io/BabelDOC/
-    - Yet Another Document Translator
-    - Provides a simple command line interface.
-    - Provides a Python API.
-    - Mainly designed to be embedded into other programs, but can also be used directly for simple translation tasks.
-    - This project hopes to promote a standard pipeline and interface to solve the problem.
-      - We offer an intermediate representation of the results from parser and can be rendered into a new pdf or other format. The pipeline is also a plugin-based system which everybody can add their new model, ocr, renderer, etc.
-    - [部署 Babel DOC 到家用 NAS，PDF 自动翻译 _202504](https://zhuanlan.zhihu.com/p/1899886272828379973)
-    - [科研论文翻译神器！BabelDOC：开源AI工具让PDF论文秒变双语对照，公式图表全保留 - 知乎](https://zhuanlan.zhihu.com/p/1892003359227089736)
-
-- https://github.com/CBIhalsen/PolyglotPDF /2.1kStar/GPL/202509/python/js
-  - A multilingual eBook processing tool supporting all eBook formats. 
-  - Features online and offline translation while preserving original layouts.
-  - Compatible with both scanned and digital PDFs. 
-  - 目前效果，对于基于文本的pdf, polyglotpdf的解析方式依旧是最优解。 ocr和布局分析并不总是完美。
-  - 对于报告型表格文档，polyglotpdf效果相当完美，当然表格中的复杂矢量数学公式依旧无法正确处理
-  - 本项目采用与 Adobe Acrobat DC 编辑 PDF 类似的基本原理，基于 PyMuPDF 识别和处理 PDF 文本块, 这种方式直接处理 PDF 文本块，保持原有布局不变，实现高效的文本提取和修改
-  - 🛝
-    - 实测图片pdf在ocr后底部是原文, 文字散乱排布在上方, 视觉上是重影, 但分栏布局可以还原, 且识别后的每行文本和原文位置基本都一致
-    - 💡🤔 更合理的流程是生成2个pdf image > text-pdf > translated-pdf, 这样就能既保持原有布局，又能无重影展示干净的译文pdf
-  - [关于·ocr识别 ](https://github.com/CBIhalsen/PolyglotPDF/issues/6)
-    - 请问考虑·添加·paddle作为OCR模型吗？ 文字PDF的翻译速度是我用过最快的，比pdfmathtran快几倍
 # pdf-editor
 - https://github.com/BDenizKoca/Tideflow-md-to-pdf /MIT/202511/ts/tuari
   - https://bdenizkoca.studio/projects/tideflow/
@@ -248,21 +194,6 @@ modified: 2021-01-04T17:26:43.784Z
   - https://jichang.github.io/unionpdf/
   - A universal pdf rendering/editing library
   - model, engine, react
-
-- https://github.com/oomol-lab/pdf-craft /3.7kStar/AGPL > MIT/202512/python
-  - convert PDF files into various other formats. This project will focus on processing PDF files of scanned books. 
-  - This project can read PDF pages one by one, and use `DocLayout-YOLO` mixed with an algorithm I wrote to extract the text from the book pages 
-  - 超过100页的，可转为EPUB，结合了本地OCR和云端LLM处理，兼顾效率和功能性，最终生成带目录分章节的EPUB
-  - Starting from the official v1.0.0 release, pdf-craft fully embraces DeepSeek OCR and no longer relies on LLM for text correction.
-    - removing the previous AGPL-3.0 dependency, allowing the entire project to be released under the more permissive MIT license
-    - Note that pdf-craft has a transitive dependency on easydict (LGPLv3) via DeepSeek OCR.
-  - [PDF Craft：一个更懂技术的开源 PDF 转换工具 _202512](https://linux.do/t/topic/1322118)
-    - 我们基于 DeepSeek-OCR 重写了一个转换引擎：pdf-craft
-    - 更智能的布局还原：特别优化了双栏和图文混排，目标是转成 Markdown 或 EPUB 后，还能有接近纸质书的阅读体验。
-    - 更完美的 LaTeX 公式支持：无论是行内公式还是独立公式，都能精准识别并还原
-    - 本地免费跑（我们最推荐的）
-  - https://github.com/oomol-lab/epub-translator
-    - uses AI large language models to automatically translate EPUB e-books while 100% preserving the original book's format, illustrations, table of contents, and layout. 
 
 - https://github.com/cosformula/mdxport /MIT/202512/ts/svelte
   - https://www.mdxport.com/
@@ -432,7 +363,8 @@ modified: 2021-01-04T17:26:43.784Z
   - https://github.com/praharshjain/Vudit-Desktop
     - cross-platform desktop file viewer
 
-- https://github.com/ollm/OpenComic /JS
+- https://github.com/ollm/OpenComic /GPL/202511/js
+  - https://opencomic.app/
   - Comic and Manga reader, written with Node.js and using Electron
 
 - pdf viewer
@@ -490,8 +422,32 @@ modified: 2021-01-04T17:26:43.784Z
   - creates PDF documents interactively using HTML or Pug (a shorthand for HTML). 
   - It allows complex layouts to be defined with CSS and JavaScript, while writing the content in a friendly, minimal syntax close to Markdown or LaTeX.
 
+- https://github.com/MarkPDFdown/markpdfdown /apache2/202509/python
+  - 一款基于大模型视觉识别的高质量PDF转Markdown工具
+  - Supports OpenAI and OpenRouter through LiteLLM
+  - Flexible CLI: Both file-based and pipe-based usage modes
+  - Modular Architecture: Clean, maintainable codebase with separation of concerns
+- https://github.com/emcf/thepipe /MIT/202510/python
+  - a package that can scrape clean markdown, multimodal media, and structured data from complex documents.
+  - It can extract well-formatted data from a wide range of sources, including PDFs, URLs, Word docs, Powerpoints, Python notebooks, videos, audio, and more.
+  - Accepts a wide range of sources, including PDFs, URLs, Word docs, Powerpoints, Python notebooks, GitHub repos, videos, audio, and more
+  - The default install only pulls in CPU-friendly dependencies so it is suitable for constrained environments and CI systems. GPU-enabled libraries such as PyTorch and Triton are left as optional extras.
+
 - https://github.com/USEPA/pdf-data-extraction /js
   - The purpose of this project is to further the research and development of tools that NCEA can use in their creation of machine-readable datasets and machine learning research. 
+
+- https://github.com/camelot-dev/camelot /MIT/202508/python/inactive
+  - https://camelot-py.readthedocs.io/
+  - A Python library to extract tabular data from PDFs
+  - https://github.com/camelot-dev/excalibur
+    - https://excalibur-py.readthedocs.io/
+    - A web interface to extract tabular data from PDFs. powered by Camelot.
+    - Note: Excalibur only works with text-based PDFs and not scanned documents
+    - control over your data. All file storage and processing happens on your own local or remote machine.
+    - Excalibur can be configured with MySQL and Celery for parallel and distributed workloads. By default, sqlite and multiprocessing are used for sequential workloads.
+    - Upload a PDF and enter the page numbers you want to extract tables from.
+    - Go to each page and select the table by drawing a box around it. (You can choose to skip this step since Excalibur can automatically detect tables on its own. )
+    - Click on "View and download data" to see the extracted tables.
 
 - https://github.com/Cimorexave/desktop-document-manager /js
   - a desktop ElectronJS app to extract and edit data and tables from pdf to other formats
@@ -545,6 +501,10 @@ modified: 2021-01-04T17:26:43.784Z
 - https://github.com/tithanayut/pagepdf-rendering-server /js
   - a service for generating PDF file from HTML (via URL) on server. It integrates electron-pdf with express and lowdb to serve client as a REST API.
   - https://github.com/fraserxu/electron-pdf
+
+- https://github.com/RyotaUshio/obsidian-pdf-plus /MIT/202508/ts
+  - https://ryotaushio.github.io/obsidian-pdf-plus/
+  - the most Obsidian-native PDF annotation & viewing tool ever.
 
 - https://github.com/85599/Desktop-PDF-Generator-Electron /js
   - an electron app used to generate pdf documents with some text for making labels

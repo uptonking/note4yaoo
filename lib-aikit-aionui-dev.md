@@ -32,6 +32,10 @@ modified: 2025-12-13T18:38:27.763Z
 
 - pdf-view-edit
   - 支持docling/nanotes等模型解析pdf，并还原布局
+  - 不与pdf软件厂商绑定
+
+- office
+  - word/excel不与软件厂商绑定的方案
 
 - cli-本地rag
   - 可参考 https://github.com/run-llama/semtools /MIT/rust/ts

@@ -132,6 +132,16 @@ modified: 2025-02-21T17:17:42.225Z
   - https://github.com/fstandhartinger/chutes-webcoder
     - A Chutes-flavoured fork of firecrawl/open-lovable that keeps pace with the upstream features (Vercel sandboxing, GitHub integration, new builder UI) while defaulting to the Chutes LLM platform.
 
+- https://github.com/buildermethods/design-os /MIT/202512/ts
+  - https://buildermethods.com/design-os
+  - Design OS is a product planning and design tool that helps you define your product vision
+  - The core issue: we're asking coding agents to figure out what to build and build it simultaneously. Design decisions get made on the fly, buried in code, impossible to adjust without starting over. There's no spec. No shared understanding. No source of truth for what "done" looks like.
+  - https://x.com/CasJam/status/2001675739930964199
+    - the missing design process between your idea and codebase.
+    - Step 1: Set your product vision
+    - Step 2: Design your screens
+    - Step 3: Export production-ready components
+
 - https://github.com/dyad-sh/dyad /14.2kStar/apache2/202508/ts
   - https://dyad.sh/
   - Free, local, open-source AI app builder 

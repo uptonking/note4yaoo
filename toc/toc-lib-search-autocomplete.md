@@ -306,7 +306,7 @@ modified: 2023-01-01T13:24:35.994Z
   - https://meilisearch-ui.riccox.com/
   - fast meilisearch admin dashboard UI for managing your meilisearch instances
 
-- https://github.com/paradedb/paradedb /AGPLv3/202402/rust/c
+- https://github.com/paradedb/paradedb /8.1kStar/AGPLv3/202512/rust
   - https://paradedb.com/
   - an ElasticSearch alternative built on PostgreSQL, engineered for lightning-fast full text, similarity, and hybrid search.
   - It offers the most comprehensive, Postgres-native search features of any Postgres database, so you don't need to glue cumbersome services like a search engine or vector database on top.
@@ -315,7 +315,7 @@ modified: 2023-01-01T13:24:35.994Z
   - Write search queries in SQL with ACID transactions.
   - Scale to millions of rows with support for distributed search, high availability, backups, and point-in-time-recovery.
 
-- https://github.com/valeriansaliou/sonic /18.9kStar/MPLv2/202312/rust
+- https://github.com/valeriansaliou/sonic /21.1kStar/MPLv2/202407/rust/inactive
   - lightweight & schema-less search backend. 
   - An alternative to Elasticsearch that runs on a few MBs of RAM.
 

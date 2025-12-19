@@ -313,7 +313,15 @@ PP Speed: Q3 GGUF: 50 t/s
 
 - ## 
 
-- ## 
+- ## [New functiongemma model: not worth downloading : r/ollama](https://www.reddit.com/r/ollama/comments/1pq69o5/new_functiongemma_model_not_worth_downloading/)
+  - I have a valid MCP toolset that works great with other very small models such as qwen3:1.7b. I obtain quite reliable function calls. So, an even smaller model that could do this with the same quality sounds great. 
+  - I downloaded the functiongemma:270m-it-fp16 version of 552MB and deleted after the second test
+- I believe the purpose of this model is to be fine-tuned further on your specific tool use case.
+
+- In practice I’ve had the best luck with models that were explicitly trained for tool use / JSON (and I still add strict schemas + validation + retry).
+  - If you want to stay local, I’d try Qwen2.5-Instruct (7B) or Llama 3.1 Instruct (8B) as a baseline and then see how far down you can compress without breaking tool calls.
+
+- It’s a 270m parameter model. MCP dumps massive JSONs. Comparing it to Qwen1.7b is literally 6x its size. I think this model is good for small, focused use cases - not something like MCP.
 
 - ## 💡 [Suggestions to improve RAG with 200+ pdfs : r/Rag _202412](https://www.reddit.com/r/Rag/comments/1h8205b/suggestions_to_improve_rag_with_200_pdfs/)
 - I’m working on a company where we are running a RAG for a company with more than 4.000.000 documents (more than 200.000.000 embeddings) so this might help you.

@@ -96,9 +96,12 @@ modified: 2021-05-06T09:58:23.803Z
     - https://feathericons.dev/
     - Remake of the classic Feather by @colebemis. 
     - Brand and payment icons by @thewolfkit (Twitter)
-  - https://github.com/lucide-icons/lucide
-    - https://lucide.dev/
-    - fork of Feather Icons, hundreds of icons more than Feather 
+- https://github.com/lucide-icons/lucide
+  - https://lucide.dev/
+  - fork of Feather Icons, hundreds of icons more than Feather 
+- https://github.com/pqoqubbw/icons /MIT/202512/ts
+  - https://lucide-animated.com/
+  - collection of smooth animated icons
 
 - iconpark
   - https://github.com/bytedance/iconpark

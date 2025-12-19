@@ -585,6 +585,14 @@ modified: 2025-08-11T08:47:56.335Z
   - Advanced Streaming: A novel approach to support both token-based and message-based streaming
   - RAG Agent: A basic RAG agent implementation using ChromaDB
 
+- https://github.com/fufankeji/vllm-ocr-server /202511/python/ts
+  - multimodal OCR system built with LangChain 1.0 and vLLM. 
+  - Integrates MinerU, PaddleOCR‑VL, and DeepSeek‑OCR with a unified REST API and frontend UI
+  - Unified parsing interface: pluggable selection of MinerU, PaddleOCR‑VL, and DeepSeek‑OCR
+  - Batch parsing: supports batch processing for PDFs and images; auto-splits multi‑page documents
+  - Standardized outputs: unified format with Markdown/JSON and image exports
+  - Multimodal support: extract text, tables, formulas, images, and more
+
 ## port-lang
 
 - https://github.com/futurxlab/golanggraph /apache2/202509/go/inactive

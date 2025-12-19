@@ -574,6 +574,22 @@ modified: 2025-02-21T18:20:42.624Z
     - React Router V7 - Full-stack React framework
     - ACP Support - Connect to any Agent Client Protocol compatible agent like Gemini CLI, Claude Code, or Codex CLI
     - Uses AI SDK with `acp-ai-provider` to enable seamless integration with ACP-compatible AI agents on the web platform using `streamText` and `useChat`
+
+## browser-mcp
+
+- https://github.com/hangwin/mcp-chrome /9.6kStar/MIT/202511/ts/vue
+  - a Chrome extension-based Model Context Protocol (MCP) server that exposes your Chrome browser functionality to AI assistants like Claude, enabling complex browser automation, content analysis, and semantic search.
+  - Unlike traditional browser automation tools (like Playwright), Chrome MCP Server directly uses your daily Chrome browser, leveraging existing user habits, configurations, and login states, allowing various large models or chatbots to take control of your browser and truly become your everyday assistant.
+  - Chatbot/Model Agnostic: Let any LLM or chatbot client or agent you prefer 
+  - Use Your Original Browser: Seamlessly integrate with your existing browser
+  - Fully Local: Pure local MCP server ensuring user privacy
+  - Streamable HTTP: Streamable HTTP connection method
+  - Cross-tab context
+  - Built-in vector database for intelligent browser tab content discovery
+  - 20+ Tools: Support for screenshots, network monitoring, interactive operations, bookmark management, browsing history, and 20+ other tools
+  - Custom WebAssembly SIMD optimization for 4-8x faster vector operations
+  - https://x.com/hang49911102/status/2001865778266804264
+    - 看了下Claude code里跟Chrome通信的方案，跟我之前实现的是一样的
 # protocols-ai
 - https://github.com/agentclientprotocol/agent-client-protocol /871Star/apache2/202510/rust/ts
   - https://github.com/zed-industries/agent-client-protocol

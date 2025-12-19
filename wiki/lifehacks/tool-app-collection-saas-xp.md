@@ -60,8 +60,6 @@ modified: 2022-11-07T10:25:12.034Z
 - [L站福利及项目信息汇总【综合篇】（不定时更新） - LINUX DO](https://linux.do/t/topic/487682)
 # vps-dns-domain
 - sites
-  - [LINUX DO - 新的理想型社区](https://linux.do/)
-    - 是否还记得十多年前互联网的模样？那时候的人们乐于分享自己的见识，不以有钱为成功标准。
   - [IDC Flare - 域名、主机等信息集散地](https://idcflare.com/about)
     - 站长是linux.do的管理员
   - [NodeLoc - 自由、平等、友好、开放、有趣的交流社区](https://www.nodeloc.com/about)
@@ -70,7 +68,13 @@ modified: 2022-11-07T10:25:12.034Z
   - [NodeSeek](https://www.nodeseek.com/about)
     - 旨在为主机爱好者打造高品质社区
 
-- [LinuxDo商家评价平台](https://rate.linux.do/)
+- [LINUX DO - 新的理想型社区](https://linux.do/)
+  - 是否还记得十多年前互联网的模样？那时候的人们乐于分享自己的见识，不以有钱为成功标准。
+  - [准则与介绍 - LINUX DO](https://linux.do/guidelines)
+  - [LinuxDo商家评价平台](https://rate.linux.do/)
+  - [LINUX DO CDK](https://cdk.linux.do/dashboard)
+    - [不懂问一下，佬们，用户分数在哪看呢？ ](https://linux.do/t/topic/1018046)
+    - 获得徽章越多，分数越高
 
 - [Hugging Face Spaces](https://huggingface.co/docs/hub/en/spaces-overview)
   - Spaces stores your code inside a git repository, just like the model and dataset repositories. 

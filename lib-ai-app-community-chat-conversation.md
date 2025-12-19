@@ -157,7 +157,17 @@ modified: 2023-04-16T10:02:58.738Z
 
 - ## 
 
-- ## 
+- ## 💄🤔 A2UI ---「AI 自动生成 UI」, 这个项目初看神奇，实际上是个死胡同。
+- https://x.com/brucexu_eth/status/2001784942486081774
+  - 本质上就是做一套动态 UI 渲染引擎，将网页和交互使用 JSON 等其他结构化的语言描述，配合 React 组件库实现无代码生成应用，甚至可以动态调整 UI。只不过当年需要拖拽或者人工编写 JSON，现在 Google 用了 AI 生成。
+  - 为什么说是死胡同呢？如果你做简单的页面和交互，这个肯定没问题，但是多少复杂一点的业务和定制化需求，就完蛋了。因为 JSON 不管你怎么设计数据结构，能表示的交互和功能永远无法达到 HTML + CSS + JS 代码组合所能实现的。也就是说针对真实自定义的需求，要么你生成一个无比复杂的 JSON 和渲染引擎去解析；要么降级需求只能用你限定的框架和功能；要么直接生成代码，现在生成代码并不复杂了。
+  - 所以当年那些低代码尝试在我看来比较鸡肋，要么你就是生成纯 UI 加简单 form 交互，例如：wix；要么你就是高度定制化的组件，针对特定业务场景例如问卷生成来自动生成，例如各种 form app。
+
+- 如果是类似http://v0.dev的方案呢，感觉他们生成的UI挺流畅的
+
+- 还有人记得 imgcook 吗
+
+- 现在应用场景变了，UI的目的和呈现逻辑也变了，你担心的问题应该不存在了
 
 - ## 🆚 [Librechat vs openwebui : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mmh6k8/librechat_vs_openwebui/)
 - Personally I prefer to use inference engines like vLLM because the speed is incredible and I find their openai compatibility is often the best on the market (especially around tool calling), and there is no built in UI in vLLM.

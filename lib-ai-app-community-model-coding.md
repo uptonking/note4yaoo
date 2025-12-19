@@ -2031,7 +2031,12 @@ ollama run hf.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF:Q6_K
 
 - ## 
 
-- ## 
+- ## [What's your favourite local coding model? : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1ppwylg/whats_your_favourite_local_coding_model/)
+  - mistralai_Devstral-Small-2-24B-Instruct-2512-Q8_0.gguf - works but it's kind of slow for coding
+  - nvidia_Nemotron-3-Nano-30B-A3B-Q8_0.gguf - text generation is fast, but the actual coding is slow and often incorrect
+  - Qwen3-Coder-30B-A3B-Instruct-Q8_0.gguf - works correctly and it's fast
+
+- Devstrall can do straightshot edits and generally keep up with agentic work, but the results as the context grows are terrible.
 
 - ## 🆚 [I tested a few local hosted coding models with VSCode / cline so that you don't have to : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p6gruv/i_tested_a_few_local_hosted_coding_models_with/)
   - Setup: Ubuntu 24.04, 2x 4060 Ti 16 GB (32 GB total VRAM), VS Code + Cline, models served via Ollama / GGUF. Context for local models was usually ~96k tokens (anything much bigger spilled into RAM and became 7-20x slower). 

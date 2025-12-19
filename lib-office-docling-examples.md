@@ -124,12 +124,12 @@ modified: 2025-09-21T13:58:46.548Z
   - A RAG system designed for efficient processing of diverse content types with minimal computational overhead.
   - This solution won 1st place in the Secure RAG Challenge by UnderstandTech
 
-- https://github.com/AKSarav/pdfstract /202509/python/inactive
-  - web application built with FastAPI and HTML that converts PDF files to Markdown format using various conversion libraries.
+- https://github.com/AKSarav/pdfstract /apache2/202511/python/js
+  - web application for converting PDFs to multiple formats using various state-of-the-art extraction libraries. Built with FastAPI backend and React frontend
   - [Built a small tool to compare PDF → Markdown libraries (for RAG / LLM workflows) : r/Rag _202507](https://www.reddit.com/r/Rag/comments/1m1j10e/built_a_small_tool_to_compare_pdf_markdown/)
-  - I’ve been exploring different libraries for converting PDFs to Markdown to use in a Retrieval-Augmented Generation (RAG) setup.
-  - But testing each library turned out to be quite a hassle — environment setup, dependencies, version conflicts, etc.
-  - Currently, it supports: docling pymupdf4llm markitdown marker
+    - I’ve been exploring different libraries for converting PDFs to Markdown to use in a Retrieval-Augmented Generation (RAG) setup.
+    - But testing each library turned out to be quite a hassle — environment setup, dependencies, version conflicts, etc.
+    - Currently, it supports: docling pymupdf4llm markitdown marker
 # utils
 - https://github.com/messkan/rag-chunk /MIT/202511/python
   - A Python CLI to test, benchmark, and find the best RAG chunking strategy for your Markdown documents.
@@ -179,41 +179,4 @@ modified: 2025-09-21T13:58:46.548Z
   - Semantic Search - Find relevant code using natural language queries
   - Full Pipeline Automation - One command to chunk, embed, and store
   - 🛢️ Docker (for ChromaDB)
-# ocr-examples
-- https://github.com/readur/readur /MIT/202512/rust/ts/Axum
-  - Quick, painless, intuitive OCR platform written in Rust and TypeScript. 
-  - Tesseract OCR for text extraction
-  - Axum for the web framework
-  - Drag-and-drop support for PDF, images, text files, and Office documents (DOCX, XLSX, DOC*)
-  - Automatic text extraction using Tesseract and Office document parsing
-  - WebDAV, Local Folders, and S3-compatible storage integration
-  - Beautiful React frontend with Material-UI components and responsive design
-  - Document tagging and categorization
-  - OIDC Setup - Single Sign-On integration
-
-- https://github.com/ocrmypdf/OCRmyPDF /32kStar/MPLv2/202512/python
-  - http://ocrmypdf.readthedocs.io/
-  - OCRmyPDF adds an OCR text layer to scanned PDF files, allowing them to be searched or copy-pasted.
-  - Generates a searchable PDF/A file from a regular PDF
-  - Distributes work across all available CPU cores
-  - Uses Tesseract OCR engine to recognize more than 100 languages
-  - Battle-tested on millions of PDFs.
-- https://github.com/FanQinFred/OCRmyPDF-Desktop /apache2/202312/js/vue/inactive
-  - 在OCRmyPDF的基础上，集成了所需环境，并使用Electron开发了桌面端
-
-- https://github.com/ihatecsv/deepseek-ocr-client /MIT/202510/python/js
-  - A real-time Electron-based desktop GUI for DeepSeek-OCR
-  - GPU acceleration (CUDA)
-  - Flask backend manages the model, Electron frontend for the UI.
-  - [A quickly put together a GUI for the DeepSeek-OCR model that makes it a bit easier to use : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1ocx27p/a_quickly_put_together_a_gui_for_the_deepseekocr/)
-
-- https://github.com/Dogacel/deepseek-ocr-client-macos /MIT/202511/python/js
-  - A real-time Electron-based desktop GUI for DeepSeek-OCR
-  - [Dogacel/DeepSeek-OCR-Metal-MPS · Hugging Face](https://huggingface.co/Dogacel/DeepSeek-OCR-Metal-MPS)
-    - This repository uses the weights from the original DeepSeek-OCR and modifies model to support MPS and CPU inference
-
-- https://github.com/ikantkode/hunyuan-1b-ocr-app /202511/python
-  - [HunyuanOCR-1B - Dockerized Streamlit OCR App - Quite Amazing. : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1p6wios/hunyuanocr1b_dockerized_streamlit_ocr_app_quite/)
-# ocr-utils
-
 # more

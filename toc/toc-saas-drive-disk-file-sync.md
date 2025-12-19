@@ -550,7 +550,7 @@ modified: 2024-03-31T17:45:16.789Z
   - BrowserFS is an in-browser filesystem that emulates the Node JS filesystem API and supports storing and retrieving files from various backends.
   - 支持 memory/localStorage/indexeddb/dropbox/Emscripten file systems
 # file-sharing/local-network
-- https://gitlab.com/timvisee/send /MPLv2/202306/js
+- https://gitlab.com/timvisee/send /5.6kStar/MPLv2/202507/js/inactive
 - https://github.com/timvisee/send
   - https://send.vis.ee/
   - Simple, private file sharing

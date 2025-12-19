@@ -220,6 +220,14 @@ modified: 2024-08-24T16:30:20.218Z
   - https://github.com/phiresky/ripgrep-all /rust
     - rga: ripgrep, but also search in PDFs, E-Books, Office documents, zip, tar.gz, etc.
 
+- https://github.com/mixedbread-ai/mgrep /2.3kStar/apache2/202512/ts
+  - https://demo.mgrep.mixedbread.com/
+  - CLI-native way to semantically grep everything, like code, images, pdfs and more.
+  - Natural-language search that feels as immediate as grep.
+  - Semantic, multilingual & multimodal (audio, video support coming soon!)
+  - Web search built-in — query the web alongside your local files with --web.
+  - Smooth background indexing via mgrep watch, designed to detect and keep up-to-date everything that matters inside any git repository.
+
 - https://github.com/sourcebot-dev/sourcebot /1.9kStar/MIT+EE/202505/ts
   - https://sourcebot.dev/
   - a fast code indexing and search tool for your codebases. 

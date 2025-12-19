@@ -660,12 +660,6 @@ modified: 2025-08-23T11:43:35.904Z
   - This project provides a Gradio interface for interacting with ComfyDeploy, allowing users to dynamically generate UI components based on deployment input definitions and submit jobs to ComfyDeploy.
   - Dynamic UI generation based on ComfyDeploy input definitions
   - Asynchronous job submission to ComfyDeploy
-
-- https://github.com/zyddnys/manga-image-translator /8.4kStar/GPL/202508/python
-  - https://cotrans.touhou.ai/
-  - 一键翻译各类图片内文字
-  - This project aims to translate images that are unlikely to be professionally translated, such as comics/images on various group chats and image boards, making it possible for Japanese novices like me to understand the content
-  - It mainly supports Japanese, but also supports Simplified and Traditional Chinese, English and 20 other minor languages.
 # comfyui/sd-llm
 - https://github.com/AIDC-AI/Pixelle-MCP /271Star/MIT/202508/python
   - https://pixelle.ai/
@@ -952,6 +946,8 @@ modified: 2025-08-23T11:43:35.904Z
   - ComfyUI node version of the SD Prompt Reader
   - https://github.com/receyuki/stable-diffusion-prompt-reader /202405/python/inactive
     - A simple standalone viewer for reading prompts from Stable Diffusion generated image outside the webui.
+    - https://github.com/revisionhiep-create/comfyui-history-guru /html
+      - a single-file HTML5 application that lets you browse, search, inspect, and now EDIT the hidden metadata (Prompts, LoRAs, Seeds, Models) inside your AI-generated images.
 
 - https://github.com/Firetheft/ComfyUI_Local_Image_Gallery /70Star/202508/python/js
   - 一个为 ComfyUI 打造的终极本地图片、视频、音频媒体管理器

@@ -531,6 +531,8 @@ modified: 2023-06-23T12:46:53.288Z
   - https://ai-code-translator-delta-six.vercel.app/
   - Use AI to translate code from one language to another
   - 依赖@uiw/react-codemirror、next
+  - https://github.com/mckaywrigley/ai-code-translator /4.2kStar/NALic/202304/ts/inactive
+    - Use AI to translate code from one language to another
 
 - https://github.com/EditableBlock/EditableBlock /NonOpen
   - https://editableblock.github.io/EditableBlock/
@@ -2650,7 +2652,7 @@ modified: 2023-06-23T12:46:53.288Z
   - Zero dependencies on React, Vue, or any other front-end framework.
     - Works with popular site generators like Astro and Next.js, as well as plain markdown and MDX
 
-- Starboard Notebook /889Star/MPLv2/202206/ts
+- Starboard Notebook /1.3kStar/MPLv2/202206/ts/inactive
   - https://github.com/gzuidhof/starboard-notebook
   - https://unpkg.com/starboard-notebook/dist/index.html
   - https://starboard.gg/

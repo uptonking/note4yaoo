@@ -13,11 +13,11 @@ modified: 2020-07-14T09:27:30.503Z
   - tips: 数据与ai计算的主力语言，也能快速开发业务
   - editor: lasuite-docs, jupyter(framework)
   - ai: 🌹 langgraph, comfyui, mlx
-  - data: superset
+  - data: superset, pyodide(MPL)
   - devops: airflow, posthog
   - crdt
   - git-like
-  - apps: docling
+  - apps: docling, OCRmyPDF(MPL)
   - more: json-parser, tree
 
 - tutorials 🧑‍🏫
