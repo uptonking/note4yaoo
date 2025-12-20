@@ -39,6 +39,12 @@ modified: 2024-08-24T16:17:47.677Z
   - The simple markdown editor. Use it through your browser, or download for desktop.
   - MKEditor fully supports the CommonMark spec  
   - MKEditor also includes a built-in, resizable preview renderer and support for exporting your markdown to HTML, with or without styles 
+
+- https://github.com/octree-labs/octree /MIT/202512/ts
+  - https://useoctree.com/
+  - An AI-powered collaborative LaTeX editor with real-time PDF compilation and intelligent editing suggestions.
+  - Supabase CLI (optional, for local database development)
+  - 依赖 ai-sdk、@monaco-editor/react、markdown-it、react-resizable-panels、zustand
 # extensions
 - https://github.com/trofimander/monaco-markdown /MIT/202111/ts/inactive
   - Port of vscode-markdown extension for Monaco web editor

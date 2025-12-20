@@ -22,6 +22,8 @@ modified: 2025-03-22T16:10:24.856Z
   - pdf edit
     - ✨ 翻译场景的多种布局一键切换: 双栏对比布局, 仅译文布局, 富文本页面布局
     - 甚至可以通过多栏布局的交互，来展示pdf聊天或补充信息，优点是能展示在原文位置
+    - pdf体验尽量与docs一致，包括view/edit
+  - translation+proofreading: 包括pdf文件, 普通文档、网页
   - 插画复刻: Qwen-Image-i2L, image-to-prompt-to-image, 同时支持浏览comfyui生成图片的元数据、提示词
 
 - tips
@@ -380,6 +382,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 支持gpt5,claude,gemini
     - 部分模型倍率很高，可选按次计算版本, 如claude
   - [WONG公益站](https://wzw.de5.net/console), 每日签到, cc
+    - [WONG公益站](https://wzw.pp.ua/console)
     - [WONG公益站](https://newapi.netlib.re/)
     - rpm为30
     - 高效连接 Claude Code CLI

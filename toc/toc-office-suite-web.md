@@ -21,6 +21,15 @@ modified: 2023-03-09T13:47:07.317Z
   - [精读《WOPI协议》 - 掘金](https://juejin.cn/post/7105322391597187103)
     - WOPI是微软基于REST API的协议，定义了一组Http操作，使客户端能够访问和改变服务器存储的文件。
 # office-popular
+- https://github.com/dream-num/univer /11.9kStar/apache2/202512/ts
+  - https://univer.ai/
+  - An Isomorphic Full-Stack Framework for Creating and Editing Spreadsheets Across Web and Server.
+  - Univer is designed to support spreadsheets, documents and presentation.
+  - Univer is isomorphic. It can run both on browsers and Node.js (in the future, mobile devices as well), with the same API.
+  - Univer is easily embeddable, allowing seamless integration into your applications
+  - highly extensible, thanks to its plug-in architecture 
+  - Univer is a highly integrated system. Documents, spreadsheets and slides can interoperate with each others and even rendered on the same canvas
+
 - onlyoffice-sdkjs /190Star/AGPLv3/202302/js
   - https://github.com/ONLYOFFICE/sdkjs
   - https://personal.onlyoffice.com/
@@ -52,6 +61,17 @@ modified: 2023-03-09T13:47:07.317Z
   - https://github.com/ONLYOFFICE/core /cpp
     - Server core components which are a part of ONLYOFFICE Document Server
 
+- https://github.com/ranuts/document /1.6kStar/AGPL/202512/js
+  - https://ranuts.github.io/document/
+  - A local web-based document editor based on `OnlyOffice`, allowing you to edit documents directly in your browser without server-side processing
+  - All document processing happens locally in your browser, with no uploads to any server
+  - Multi-Format Support: Supports DOCX, XLSX, PPTX, CSV, and many other document formats
+  - OnlyOffice SDK: Provides powerful document editing capabilities
+  - WebAssembly: Implements document format conversion through `x2t-wasm`.
+  - https://github.com/sweetwisdom/onlyoffice-web-local /AGPL/202507/ts/inactive
+    - https://sweetwisdom.github.io/onlyoffice-web-local/
+    - A purely local project based on OnlyOffice, supporting local opening and editing of Office documents.
+
 - cryptpad /4.3kStar/AGPLv3/202406/js/onlyoffice
   - https://github.com/cryptpad/cryptpad
   - https://github.com/xwiki-labs/cryptpad
@@ -76,25 +96,30 @@ modified: 2023-03-09T13:47:07.317Z
     - an example of a browser-based document converter using Web Assembly. 
   - https://github.com/xwiki-labs/netflux-spec2
 
+- CollaboraOnline /1kStar/MPLv2/202401/cpp/js/ts/LibreOffice
+  - https://github.com/CollaboraOnline/online
+  - https://www.collaboraoffice.com/
+  - https://www.collaboraonline.com/
+  - Collabora Online is a collaborative online office suite based on LibreOffice
+  - This is also the source for the Collabora Office apps for iOS and Android.
+  - Collaborative editing features
+  - [Collabora Office: The enterprise-ready edition of LibreOffice](https://news.ycombinator.com/item?id=26614654)
+  - [Based on LibreOffice - Collabora Online and Collabora Office](https://www.collaboraonline.com/based-on-libreoffice/)
+    - Our flagship products, Collabora Online and Collabora Office, are 100% Open Source
+
+- https://github.com/LibreOffice/core /3.5kStar/MPLv2/202512/cpp/java
+  - [LibreOffice Online](https://www.libreoffice.org/download/libreoffice-online/)
+    - LibreOffice Online is a server service built from the main LibreOffice project code, which provides display and collaborative visual editing of a range of document types in a web browser. 
+  - [LibreOffice for Android and iOS](https://www.libreoffice.org/download/android-and-ios/)
+    - doesn’t currently offer an Android or iOS version of LibreOffice, there is a LibreOffice-based product in app stores from Collabora
+  - [LibreOffice Licensing Blurb](https://github.com/LibreOffice/core/tree/master/readlicense_oo)
+    - `MPL_SUBSET`: If the variable is defined, then GPL and LGPL license text will not be included, because none of the built-in code need it.
+
 - https://github.com/ProtonMail/WebClients /5.1kStar/GPLv3/202512/ts
   - This project is a monorepo hosting the Proton web clients. It includes the web applications, their dependencies & shared modules as well as all tooling surrounding development of the web clients
   - 依赖lexical实现富文本编辑
   - https://github.com/ProtonMail/WebClients/blob/main/applications/docs-editor/src/app/Containers/Spreadsheet/Spreadsheet.tsx
     - 依赖 @rowsncolumns/toolkit 实现 excel
-
-- https://github.com/LibreOffice/core /GPLv3/cpp/java
-  - [LibreOffice Online](https://www.libreoffice.org/download/libreoffice-online/)
-    - LibreOffice Online is a server service built from the main LibreOffice project code, which provides display and collaborative visual editing of a range of document types in a web browser. 
-  - [LibreOffice for Android and iOS](https://www.libreoffice.org/download/android-and-ios/)
-    - doesn’t currently offer an Android or iOS version of LibreOffice, there is a LibreOffice-based product in app stores from Collabora
-
-- CollaboraOnline /1kStar/MPLv2/202401/cpp/js/ts/LibreOffice
-  - https://github.com/CollaboraOnline/online
-  - https://www.collaboraoffice.com/
-  - Collabora Online is a collaborative online office suite based on LibreOffice
-  - This is also the source for the Collabora Office apps for iOS and Android.
-  - Collaborative editing features
-  - [Collabora Office: The enterprise-ready edition of LibreOffice](https://news.ycombinator.com/item?id=26614654)
 
 - https://github.com/zserge/awfice /3.3kStar/MIT/202108/html
   - the world smallest office suite
@@ -263,7 +288,7 @@ modified: 2023-03-09T13:47:07.317Z
   - https://github.com/Ayush2966/Excel-Huh /202305/js
   - https://github.com/IslamShg/excel /202109/js
   - https://github.com/amanksdotdev/excel-clone /202307/js
-# EtherCalc/SocialCalc
+# EtherCalc/SocialCalc 📈
 - https://github.com/otetard/ownpad /AGPLv3/202401/js
   - a Nextcloud application that allows to create and open Etherpad and Ethercalc documents.
   - This application requires to have access to an instance of Etherpad and/or Ethercalc to work properly.

@@ -39,9 +39,12 @@ modified: 2023-01-09T11:03:32.533Z
 # examples
 
 # viewer
-- https://github.com/VolodymyrBaydalka/docxjs /apache2/202312/ts
+- https://github.com/VolodymyrBaydalka/docxjs /1.8kStar/apache2/202509/ts
   - https://volodymyrbaydalka.github.io/docxjs/
   - render/convert DOCX document into HTML document with keeping HTML semantic as much as possible
+  - Thumbnails is added only for example and it's not part of library. Library renders DOCX into HTML, so it can't be efficiently used for thumbnails.
+  - Table of contents is built using the TOC fields and there is no efficient way to get table of contents at this point, since fields is not supported yet (http://officeopenxml.com/WPtableOfContents.php)
+  - So far I can't come up with final approach of parsing documents and final structure of API. Only `renderAsync` function is stable and definition shouldn't be changed in future. Inner implementation of parsing and rendering may be changed at any point of time.
 # parser-generator
 - https://github.com/harshankur/officeParser /MIT/202401/js
   - Node.js library to parse text out of any office file. 
@@ -56,6 +59,10 @@ modified: 2023-01-09T11:03:32.533Z
 - https://github.com/gharibi/JsObjExporter /202201/js
   - https://gharibi.github.io/JsObjExporter/examples/example.html
   - A little JavaScript plugin to generate PDF, XLS, CSV and DOC from JavaScript Object or DOM element only from the frontend
+
+- https://github.com/guigrpa/docx-templates /1kStar/MIT/202512/ts
+  - Template-based docx report creation for both Node and the browser
+  - Supports `.docm` templates in addition to regular `.docx` files.
 # converter
 - https://github.com/Goran-Vukadinovic/xlsx2docx /202308/js
   - From .xls cell value into .doc files

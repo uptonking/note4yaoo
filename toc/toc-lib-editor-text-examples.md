@@ -106,6 +106,11 @@ modified: 2022-11-08T19:03:33.865Z
   - React based word processor for paged content
   - stylesheet for Paged.js used for paginating your document
 # utils
+- https://github.com/bvaughn/react-highlight-words /2.3kStar/MIT/202501/js
+  - https://bvaughn.github.io/react-highlight-words/
+  - React component to highlight words within a larger body of text.
+  - By default, this component uses an HTML Mark Text element (`<mark>`) to wrap matched text, but you can inject a custom tag
+
 - https://github.com/DenverCoder1/unicode-formatter
   - https://unicode-formatter.demolab.com/
   - Convert portions of text to fancy text using unicode fonts for use on Twitter and other sites that don't support rich text

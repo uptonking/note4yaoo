@@ -123,8 +123,9 @@ modified: 2024-01-31T19:13:11.286Z
 - https://github.com/wulkano/Kap /18.4kStar/MIT/202210/ts/inactive
   - open-source screen recorder built with web technology
 
-- https://github.com/xushengfeng/eSearch /5.4kStar/GPLv3/202503/ts
+- https://github.com/xushengfeng/eSearch /6.2kStar/GPLv3/202512/ts
   - https://esearch-app.netlify.app/
+  - 截屏+OCR+搜索+翻译+贴图+屏幕翻译+以图搜图+滚动截屏+录屏
   - eSearch 是Information-portal的:electron: 重写版(顺便加了亿些功能)
   - 主要是想在 Linux 上(win 和 mac 上也能用)实现锤子大爆炸或小米传送门这样的屏幕搜索功能，当然也是一款方便的截屏软件。
   - 截屏 离线OCR 搜索翻译 以图搜图 贴图 录屏 滚动截屏 

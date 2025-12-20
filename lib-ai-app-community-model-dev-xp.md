@@ -183,6 +183,7 @@ modified: 2025-11-18T13:22:22.078Z
   - 同样prompt+step生成1024尺寸就比较清晰
   - 似乎只能生成长宽1:1比例的图片, 随机比例会抛出异常
   - 生成 2048x2048 的图片时, macbook内存爆炸，电脑重启
+  - 不擅长渲染中文字体
 
 - https://huggingface.co/AIDC-AI/Ovis-Image-7B
   - https://github.com/AIDC-AI/Ovis-Image

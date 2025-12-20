@@ -2141,7 +2141,15 @@ free 5GB postgres via aiven.io
 
 - ## 
 
-- ## 
+- ## [Is Gemma 9B still the best dense model of that size in December 2025? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1pqndio/is_gemma_9b_still_the_best_dense_model_of_that/)
+- There is no such thing as the best model. It entirely depends on your use case and personal preference.
+  - In that size range, check out: GLM-4-0414, Qwen3 2507 & VL, Granite4.0 h Micro
+
+- I have not used Gemma in a long time. it’s not as good in agentic tasks as Qwen3/2507-4B or VL-8B, it is not as fast as oss20B, less improvement after finetuning than Qwen3-4B, and embedding inferior to Qwen as well. In terms of larger models, the Nemotron 3 Nano is 30ba3B and better than Gemma 27B.
+
+- Page 23 of the qwen3-vl tech report shows that the new small parameters dense vl models are stronger on text, reasoning and knowledge benchmarks compared to the older qwen3 models.
+
+- If NLP is really important, Gem3 without doubt. But its advantage is also its flaw, it's so good at conversational that it pass its time to lie if challenged. 
 
 - ## [Thoughts on recent small (under 20B) models : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1ppstef/thoughts_on_recent_small_under_20b_models/)
   - Nemotron cascade 14B. Similar to Ministral 3 14B tends to overthink a lot. Although it has great coding benchmarks, I couldn't get good results out of it. GPT OSS 20B and QWEN3 8B VL seem to give better results. This was the most underwhelming for me.

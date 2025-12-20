@@ -180,7 +180,9 @@ modified: 2024-01-04T01:28:58.097Z
 
 - ## 
 
-- ## 
+- ## [不小心免打扰的帖子怎么取消免打扰 _202410](https://linux.do/t/topic/247306)
+- 找到了，在 个人用户中心 - 偏好设置 - 跟踪 - 下面的已设为免打扰，点那个 “显示” 就会跳转到你设置免打扰的帖子列表页
+  - https://linux.do/latest?state=muted
 
 - ## [Understanding Discourse Trust Levels _201806](https://blog.discourse.org/2018/06/understanding-discourse-trust-levels/)
   - Sandboxing new users in your community so that they cannot accidentally hurt themselves, or other users 

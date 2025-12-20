@@ -172,6 +172,20 @@ modified: 2025-12-19T12:43:21.150Z
   - Works with PDF, images, word docs, and powerpoints
   - Our model weights use a modified AI Pubs Open Rail-M license (free for research, personal use, and startups under $2M funding/revenue) and our code is GPL. 
   - I've included a streamlit app that lets you interactively try Surya on images or PDF files. 
+
+- https://github.com/JaidedAI/EasyOCR /28.6kStar/apahce2/202409/python/cpp/inactive
+  - https://www.jaided.ai/
+  - Ready-to-use OCR with 80+ supported languages and all popular writing scripts including: Latin, Chinese, Arabic, Devanagari, Cyrillic, etc.
+  - In case you do not have a GPU, or your GPU has low memory, you can run the model in CPU-only mode by adding gpu=False.
+
+- https://github.com/junhoyeo/BetterOCR /597Star/MIT/202311/python/inactive
+  - Better text detection by combining multiple OCR engines with LLM.
+  - OCR Engines Currently supports EasyOCR (JaidedAI), Tesseract (Google), and Pororo (KakaoBrain).
+- https://github.com/wolfmanstout/screen-ocr /apache2/202510/python
+  - screen-ocr package makes it easy to perform OCR on portions of the screen
+  - WinRT is a Windows-only backend that is very fast and reasonably accurate.
+  - Tesseract is a cross-platform backend that is much slower and slightly less accurate than WinRT
+  - EasyOCR is a very accurate but slow backend and only runs on Python 64-bit
 # ocr
 - https://github.com/AKSarav/pdfstract /apache2/202511/python/js
   - web application for converting PDFs to multiple formats using various state-of-the-art extraction libraries. Built with FastAPI backend and React frontend
@@ -255,6 +269,9 @@ modified: 2025-12-19T12:43:21.150Z
 
 - https://github.com/ikantkode/hunyuan-1b-ocr-app /202511/python
   - [HunyuanOCR-1B - Dockerized Streamlit OCR App - Quite Amazing. : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1p6wios/hunyuanocr1b_dockerized_streamlit_ocr_app_quite/)
+  - https://github.com/neosun100/HunyuanOCR-WebUI /apahce2/python
+    - 基于腾讯混元OCR的完整Web界面解决方案
+    - This project uses Gradio to build the web interface and supports one-click Docker deployment
 
 - https://github.com/hiroi-sora/Umi-OCR /40.7kStar/MIT/202511/python/qt-qml
   - 开源、免费的离线OCR软件。
@@ -352,20 +369,71 @@ modified: 2025-12-19T12:43:21.150Z
   - It does not rely on any DOM APIs and can therefore be used in contexts where there is no built-in support for XML parsing, most notably in Web Workers and Service Workers.
   - Currently the library supports hOCR and ALTO OCR markup.
 
-- https://github.com/junhoyeo/BetterOCR /597Star/MIT/202311/python/inactive
-  - Better text detection by combining multiple OCR engines with LLM.
-  - OCR Engines Currently supports EasyOCR (JaidedAI), Tesseract (Google), and Pororo (KakaoBrain).
-
 - https://github.com/athrael-soju/Snappy /66Star/MIT/202512/python/ts
   - Snappy implements region-level document retrieval by unifying vision-language models with OCR through spatial coordinate mapping. 
   - Unlike traditional systems that return entire pages (VLMs) or lack semantic grounding (OCR-only), Snappy uses ColPali's patch-level similarity scores as spatial relevance filters over OCR-extracted regions; operating entirely at inference time without additional training.
 
 - https://github.com/Qianxia666/ocr /GPL/202511/python
   - 利用 OpenAI API 进行图片和 PDF 文档的 OCR 识别，支持异步任务处理、实时通信和完整用户机制的任务管理系统。
+
+- https://github.com/Fusyong/recover-layout-from-ocr /202509/python/inactive
+  - PDF OCR Utils and Examples, especially for workbook text extraction, layout recovery, and conversion to Markdown.
+  - 使用PyMuPDF进行PDF转换为图片
+  - 使用RapidOCR进行OCR识别
+  - 将OCR结果转换为文本行，过滤不需要的box和row
+    - 兼容 有道OCR/pymupdf/RapidOCR 的JSON格式
+  - 给文本行中的标题标出Markdown标记
+  - 保存为jpg后OCR效果比png好，不知何故
+
+## utils-tesseract
+
+- https://github.com/hertzg/tesseract-server /MIT/202406/ts/inactive
+  - lightweight HTTP server that converts photos, images and scanned documents to text using optical character recognition by utilizing the power of Google Tesseract.
+  - The service provides configurations as cli options.
+  - https://github.com/antonioanerao/ocr_pdf_api /MIT
+
+- https://github.com/CogStack/ocr-service /elastic/202512/python
+  - a python fast-api OCR service, attempting to resolve scalability and performance issues. 
+  - This is a python-replacement of the previous Tika-service in an attempt to resolve scalability and performance issues. It also relies on tesseract ocr but without the ambiguities of the Tika framework.
+  - Windows: this project can and should be run inside WSL (preferabily ubuntu) 
+  - 🔀 This service is fast but it is resource intensive, and will attempt to use all cores on your machine. You can spin up multiple docker services in the hopes of having multiple requests handled at the same time.
+  - limitations: You will notice that requests are handled sequentially rather than in parallel (one at a time), this is partly due to using libreoffice/soffice binary package (this is likely to change in the future) to convert most documents to a common format
+    - Because this background application does not handle parallelisation very well it is recommended to have multiple docker services running instead OR you can spin up multiple workers via the OCR_WEB_SERVICE_WORKERS variable
+    - Another cause for sequential request processing is the sharing of resources, one thread has access by default to all cores, this matters because the current implementation splits a document into multiple pages and attempts to ocr each page on a separate core, resulting in good speed but a competition for resources.
+  - https://github.com/CogStack/tika-service /java/inactive
+    - This project implements Apache Tika running as a web service using Spring Boot. 
+    - It exposes a REST API so that a client can send a document in binary format and receive back the extracted text.
+
+- https://github.com/robertknight/tesseract-wasm /349Star/BSD/202510/ts/wasm
+  - https://robertknight.github.io/tesseract-wasm/
+  - A WebAssembly build of the Tesseract OCR engine for use in the browser and Node.
+  - Using WebAssembly SIMD when available (Chrome >= 91, Firefox >= 90, Safari >= 16.4) to improve text recognition performance.
+  - 在线示例可输出 文本 和 hocr的html
 # translation
+- https://github.com/aikilan/Babel-Markdown /MIT/202511/ts
+  - provides real-time translation previews for VS Code, synchronizing the original Markdown and AI-translated content in a single view to help you efficiently proofread multilingual documents.
+  - Progressive translation preview: streams segments as they finish translating.
+  - Markdown fidelity: preserves headings, lists, tables, and code blocks exactly.
+  - OpenAI-compatible API support: customize base URL, model, language, and timeout for any compatible provider.
+
 - https://github.com/ogkalu2/comic-translate /2.3kStar/apache2/202512/python
   - Desktop app for automatically translating comics - BDs, Manga, Manhwa, Fumetti and more in a variety of formats (Image, Pdf, Epub, cbr, cbz, etc) and in multiple languages.
   - Many Automatic Manga Translators exist. Very few properly support comics of other kinds in other languages. This project was created to utilize the ability of State of the Art (SOTA) Large Language Models (LLMs) like GPT-4 and translate comics from all over the world.
+
+- https://github.com/meangrinch/MangaTranslator /apache2/202512/python/Gradio
+  - Web application for automating the translation of manga/comic page images using AI. 
+  - Targets speech bubbles and text outside of speech bubbles. 
+  - Supports 54 languages and custom font pack usage.
+  - Speech bubble detection, segmentation, cleaning (YOLO + SAM 2.1)
+  - LLM-powered OCR and translations (supports 54 languages)
+  - Upscaling (2x-AnimeSharpV4)
+  - Two interfaces: Web UI (Gradio) and CLI
+
+- https://github.com/huangusaki/PicLingo /MIT/202512/python
+  - AI-powered image translator with visual editing - Transform images with intelligent OCR and translation
+  - 智能 OCR 与翻译：基于大语言模型的文字识别与翻译
+  - 可视化编辑器：选中、移动、缩放、旋转文本块
+  - 依赖PyQt6、Pillow
 
 - https://github.com/zyddnys/manga-image-translator /9.1kStar/GPL/202512/python
   - https://cotrans.touhou.ai/
@@ -458,9 +526,212 @@ modified: 2025-12-19T12:43:21.150Z
   - Argos Translate uses OpenNMT for translations and can be used as either a Python library, command-line, or GUI application. 
   - 支持中日韩
 # examples
+- https://github.com/xushengfeng/eSearch /6.2kStar/GPLv3/202512/ts
+  - https://esearch-app.netlify.app/
+  - 截屏+OCR+搜索+翻译+贴图+屏幕翻译+以图搜图+滚动截屏+录屏
+  - eSearch 是Information-portal的:electron: 重写版(顺便加了亿些功能)
+  - 主要是想在 Linux 上(win 和 mac 上也能用)实现锤子大爆炸或小米传送门这样的屏幕搜索功能，当然也是一款方便的截屏软件。
+  - 截屏 离线OCR 搜索翻译 以图搜图 贴图 录屏 滚动截屏 
+  - 本地 OCR 由`PaddleOCR`的模型提供支持。
 
+- https://github.com/001kenji/document-ai-translator /apache2/202507/js/inactive
+  - https://document-ai-translator.netlify.app/
+  - An AI-powered document translation tool that converts text from images or PDFs into multiple languages with high accuracy using OCR and advanced machine translation.
+  - Tesseract.js-based text extraction
+  - Real-time preview of extracted text
+  - 提取出的text放在一个普通textarea中, 体验不是很好
+  - 上传图片/pdf后，手动点击 extract/translate 按钮来执行操作
+
+- https://github.com/adiKhan12/PDF-AnnotateAI /CC-NC/202507/js/inactive
+  - Advanced browser-based PDF annotation tool with AI capabilities. 
+  - Features drawing tools, text annotations, translation, summarization, OCR for scanned documents, and responsive design. 
+  - Built with HTML, CSS, and JavaScript, and leveraging the PDF.js library for rendering and jsPDF for generating PDF documents.
+  - OCR for scanned documents (via Tesseract.js)
+  - Docker support for easy deployment and consistency
+
+- https://github.com/Crivella/ocr_translate /GPL/202509/python
+  - Django based web server for running OCR + Translation of incoming images
+  - This is a Django app for creating back-end server aimed at performing OCR and translation of images received via a `POST` request.
+  - The server is designed to be used together with this browser extension, acting as a front-end providing the images and controlling the languages, models and plugins being used.
+  - The server is designed to only offer the basic functionalities, while the models that can be used and how they are used are defined by plugins.
+  - Different plugins will make different types of models available:
+    - BOX Model: EasyOcr, PaddleOCR
+    - OCR Model: PaddleOCR, Tesseract, HuggingFace
+    - Translation Model: HuggingFace, GoogleTranslate, Ollama
+  - https://github.com/Crivella/ocr_extension /GPL/202509/js
+    - Firefox browser extension for running in-place translation of images in an active tab
+
+- https://github.com/aayushmishramechatronics/ocr-translator /MIT/202506/ts
+  - https://image-text-extractor-seven.vercel.app/
+  - An API based Image-to-Text Converter and Translator Website. 
+  - Extract Text from Images and Translate it into any Language of your Convenience
+  - Create a Google Cloud Project: Enable Cloud Vision/Translation API
+
+- https://github.com/boysugi20/python-image-translator /202506/python/cli/inactive
+  - This project utilizes optical character recognition (OCR) and translation to translate text within images from one language to another. 
+  - The project extracts text and its bounding boxes from input images using the `EasyOCR` library.
+  - Translation: It translates the extracted text using the Google Translator API.
+  - Text Replacement: The translated text is then overlaid onto the image, replacing the original text while maintaining its position and style.
+  - Output: Finally, the modified image with translated text is saved to an output folder.
+- https://github.com/marcostolosa/OCRack /MIT/202509/python/cli
+  - Advanced PDF translation engine with OCR capabilities, intelligent chunking, and automated image extraction/reinsertion.
+  - Default Behavior: Automatic image extraction + translation + PDF generation
+  - Rich UI: Professional terminal interface with detailed progress tracking
+  - Tesseract OCR
+
+- https://github.com/KuoCT/BeeSeeR /GPL/202508/python/inactive
+  - A versatile OCR and LLM-powered GUI tool for instant text extraction, translation, and interaction.
+  - 支援多語言 OCR：整合 Surya OCR（90+ 種語言）、Manga OCR（日文漫畫專用）、 Google Vision API（輕量雲端辨識），靈活應對不同需求
+  - 依赖pyautogui
+  - PyAutoGUI通过Tkinter实现了4种纯Python的消息弹窗函数，和JavaScript类似
+
+- https://github.com/SystemVll/Montscan /202511/python
+  - https://systemvll.github.io/Montscan/
+  - Automated scanner document processor with OCR, AI-powered naming, and Nextcloud integration.
+  - FTP Server - Receives documents from network scanners
+  - Async Processing Queue - `ThreadPoolExecutor` with worker pool for non-blocking uploads
+  - SHA256 checksum tracking in SQLite to prevent duplicate processing
+  - Extracts text from scanned PDFs using Tesseract
+  - Automatically uploads processed documents via WebDAV
+  - Easy deployment with Docker Compose
+  - Configure your network scanner to send scans via FTP
+
+- https://github.com/Paullllllllllllllllll/ChronoTranscriber /MIT/202511/python
+  - A Python-based tool for researchers and archivists to transcribe historical documents from PDFs, EPUB ebooks, or image folders. 
+  - ChronoTranscriber supports multiple AI providers (OpenAI, Anthropic, Google, OpenRouter) via LangChain, local OCR with Tesseract, and provides structured JSON outputs with scalable batch processing for large-scale document digitization projects.
+  - designed to integrate with ChronoMiner and ChronoDownloader for a complete historical document retrieval, transcription, and data extraction pipeline.
+  - https://github.com/Paullllllllllllllllll/ChronoDownloader /MIT
+    - A Python tool for discovering and downloading digitized historical sources from 14+ major digital libraries worldwide
+  - https://github.com/Paullllllllllllllllll/ChronoMiner /MIT
+    - ChronoMiner leverages multiple LLM providers through LangChain with schema-based extraction to transform unstructured text into well-organized, analyzable datasets in multiple formats (JSON, CSV, DOCX, TXT).
+
+- https://github.com/Max-Lee-explore/agentic-ai-translation-company /CC-NC/202511/python/js
+  - Agentic AI Translation System with Specialized Translators and Editors
+  - Specialized Translation Agents: 不同类型的内容翻译所用大模型配置不同，特别是temperature
+# proofreading
+- tips
+  - 校对的流程和交互可参考code review的现有工具的最佳实践
+
+- https://github.com/chrisgrieser/obsidian-proofreader /30Star/MIT/202512/ts
+  - AI-based proofreading and stylistic improvements for your writing. 
+  - Changes are inserted as suggestions directly in the editor, similar to suggested changes in word processing apps.
+  - Suggested changes are inserted directly into the text: Additions as ==highlights== and removals as ~~strikethroughs~~.
+  - https://github.com/lucasmelin/red-pen /MIT/202308/ts/inactive
+    - Red Pen is implemented as a retext-based plugin for the Obsidian note-taking app.
+    - Red Pen acts as a proofreader for your writing.
+    - It highlights phrases that could use simplifying, identifies weasel words, hedges, filler, and many more.
+  - https://github.com/SahandMalaei/ai-writing-tools-obsidian /GPL/202511/ts
+    - A suite of AI-powered writing tools for Obsidian, including dictionary lookup, proofreading, and context-aware explainer
+    - 交互在弹窗
+
+- https://github.com/CZ600/AutoDocxProofread /MIT/202511/ts/vue
+  - 基于大模型的文档校对软件
+  - 基于 Electron、Vue 3 和 TypeScript 构建的智能长文档校对桌面应用程序
+  - 检测 Word 文档中的错别字、标点符号错误、语法问题和文本一致性问题，并提供修改建议。
+  - 采用了并行处理架构，显著提升大模型处理长文档的速度。新版本引入了本地知识库功能，支持RAG功能给模型校对参考
+  - Electron + Vue 3 + Element Plus + LanceDB(vector)
+  - 文档处理：Mammoth + Docxtemplater
+  - 多种校对模式：
+    - 逐句精校：适合需要高精度校对的短文本
+    - 逐段校正：适合长篇文献的校对
+  - 支持PDF、word和txt文档导入作为参考材料
+  - 兼容openai接口，支持多种大语言模型 API
+  - 软件会将校对的结果显示在右边栏，并在文本中高亮展示，以方便查看。然后可以选择是否接受这些修改，可以导出接受修改后的文档
+  - https://github.com/woniu9524/book-proofreading /202211/js/inactive
+    - [校对工具使用文档](https://www.yuque.com/woniu-avesf/tvyxhx/sg007f)
+    - 针对古籍的古籍校勘的工具；也可以用于普通的文本的校勘
+    - Vue3+Electron+lowdb+express+element plus
+    - 要命，烂代码太多，加新需求时候要崩溃了
+    - 上传支持txt和docx两种格式,第一次上传的是底稿，第二次上传的是校对稿
+
+- https://github.com/jack91620/AI-DocProofreader /MIT/202507/python/inactive
+  - 一个基于AI的中文文档校对工具，支持Microsoft Word文档的智能校对和修正。
+  - docx文档处理: 支持读取和写入Microsoft Word文档
+  - AI智能校对: 使用大语言模型进行语法、错别字、术语检查
+  - ✨ 多种校对模式: 支持批注、修订、跟踪更改和增强模式
+  - 专业领域优化: 针对计算机领域术语特别优化
+  - 配置管理: 支持自定义校对规则和术语词典
+
+- https://github.com/Inc44/CoFlu /MIT/202512/js
+  - https://inc44.github.io/CoFlu/
+  - CoFlu is a powerful text manipulation, generation, and comparison tool. It's designed for tasks like proofreading, editing, content creation, version control, and ensuring text consistency. 
+  - As of February 2025, CoFlu is the only website offering Microsoft Word (.docx) translation that fully preserves the original document's layout (fonts, styles, tables, images, and other elements) while using LLMs for superior translation quality.
+  - File Upload: Supports .epub, .txt, .html, .htm, .css, .xml, .json, and .docx.
+  - Calculates Levenshtein distance and percentage differences.
+  - Diff Views: Single-column (insertions/deletions highlighted) or double-column (side-by-side).
+  - Converts Markdown to HTML, including math (KaTeX or MathJax).
+  - Upload & Translate . DOCX, CoFlu maintains the exact original formatting (fonts, styles, tables, images), Download Translated . DOCX
+  - Local Storage: Saves text, chat, API keys, settings, and custom prompts in your browser.
+
+- https://github.com/not-implemented/hocr-proofreader /101Star/MIT/201701/js/NoDeps/inactive
+  - http://www.not-implemented.de/hocr-proofreader/
+  - Web based JavaScript GUI library for proofreading/editing hOCR.
+  - Two view concept: Original layout vs. hOCR text – linked together (i.e. hovering words etc. on both sides)
+  - Pure JavaScript without dependencies just using current browser features
+- https://github.com/milahu/hocr-editor-qt /MIT/202510/python
+  - graphical HOCR editor to produce minimal diffs for proofreading of tesseract OCR output
+
+- https://github.com/onderceylan/proofly /MIT/202511/ts
+  - Private AI Writing, Proofreading & Grammar Assistant
+  - Your privacy-first writing assistant powered by Chrome on-device AI
+  - open-source Chrome extension that brings professional-grade writing assistance directly to your browser—without compromising your privacy
+  - Unlike cloud-based alternatives like Grammarly, LanguageTool, or QuillBot, Proofly uses Chrome's Built-in AI APIs to proofread your writing entirely on-device
+
+- https://github.com/Fusyong/editor-assistant /202510/ts/inactive
+  - AI辅助图书编辑工具
+  - 一个基于VSCode扩展的多智能体AI应用，专门用于辅助编辑人员整理、编辑、校对图书稿件。
+  - 支持批量处理多个Markdown章节文件
+  - 本地AI模型：使用Ollama本地模型
+  - 前端：VSCode扩展 + TypeScript
+- https://github.com/Fusyong/ai-proofread-vscode-extension /MIT/202512/ts
+  - 一个用于文档和图书校对、基于大语言模型服务的VS Code扩展，支持选中文本直接校对和长文档切分后批量校对两种工作流，并集成了一些跟校对相关的辅助功能
+  - [大语言模型校对工具AI Proofreader - 嬉戏实验室](https://blog.xiiigame.com/2025-12-07-%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E6%A0%A1%E5%AF%B9%E5%B7%A5%E5%85%B7AI%20Proofreader%EF%BC%9A%E7%BC%96%E8%BE%91%E5%88%9B%E6%96%B0%E5%B7%A5%E4%BD%9C%E4%BB%8B%E7%BB%8D/)
+  - 本扩展与相应的Python校对工具库的功能大致相同。
+  - https://github.com/Fusyong/ai-proofread /
+    - 一个校对中文书稿的工具集。
+    - 主要功能是使用Deepseek、阿里云百炼和Google Gemini（后者测试不充分）平台的大语言模型服务，对文本进行一般语言文字和知识性校对。该主要功能、更新的功能已经做成vscode插件： ai-proofread-vscode-extension
+    - 直接使用vscode提供的比较工具，视觉清晰，操作方法。唯一的缺陷是无法保存为文档，作为审稿记录。
+    - PyMuPDF转换: pymupdf2md.py - 基于PyMuPDF的PDF转Markdown工具
+  - [比较AI模型用于中文校对的效果 - 嬉戏实验室 _202502](https://blog.xiiigame.com/2025-02-07-%E6%AF%94%E8%BE%83AI%E6%A8%A1%E5%9E%8B%E6%A0%A1%E5%AF%B9%E6%95%88%E6%9E%9C/)
+    - 最近这一年，我用生成式大语言模型校对了4本书稿，以及一些短篇文字。其间常用几个固定的文段来测试各模型，以选用效果最好的。
+    - Deepseek推出V3后用V3，其中文知识超过了Claude 3.5 sonnet。同时我也发现，谷歌的预览版Gemini 2.0 Pro与它不相上下，但速度比较慢
+    - 推理类模型的校对效果通常不佳，未作测试；在某些专项校对中也许值得尝试。
+    - 在以上测试中，gemini-2.0-pro-exp-02-05有明显优势，改正的知识性错误、文字性错误最多，优化处也相当有益，没有误改和冗余输出。老实说，就通常所能投入的精力而言，它肯定比我改得好很多。
+    - deepseek v3对指令的遵守度稍差。claude-3.5-sonnet-20241022也有错误转换引号这个老问题，此外还是比较遵守指令的。
+    - 以上测试自然是相当片面的。但参考以往经验，在用于中文校对这个使用场景中，我觉得结果还是蛮有参考价值。
+  - https://github.com/Fusyong/compare-image /python
+    - 一个用于比较两组图像差异的 Python 工具，特别适用于图书文档页面的比较。
+    - 该工具提供了多种比较模式，可以帮助用户快速发现图像之间的差异。
+    - 像素比较：直接比较两张图片的像素差异
+    - 叠置比较：将两张图片叠加显示，支持透明度调节
+    - OCR文字比较：识别并比较图片中的文字内容，生成差异报告
+    - 使用 OpenCV 进行图像处理
+    - 使用 RapidOCR 进行文字识别
+    - 使用 Tkinter 构建图形界面
+    - 使用 NumPy 进行数值计算
+  - https://github.com/Fusyong/LLM-prompts-from-a-book-editor
+    - 提示词，主要跟教育图书编辑、出版相关
+
+- https://github.com/Everydaaaaaaaaaaaaaaay/Auto-proofread /202510/python
+  - 这是一个双语翻译校对项目。可以将复杂的，不规则的双语文本对齐，并借助AI进行校对，最后自由选取是否应用AI的校对建议，生成导出正确的、整齐的文本。
+  - 示例的输入输出都是纯文本txt
+
+- https://github.com/apanly/proofreadv1 /201309/python/inactive
+  - 中文文本自动纠错
+
+- https://github.com/nalgeon/vscode-proofread /MIT/202511/js
+  - This extension offers Proofread, Translate and Check Grammar commands in VS Code. 
+  - It's a simple alternative to DeepL, Grammarly, and other similar tools.
+  - Uses Copilot, Ollama, or OpenAI for proofreading.
+# spellchecking
+- https://github.com/languagetool-org/languagetool /13.6kStar/LGPL/202509/java
+  - https://languagetool.org/
+  - Open Source proofreading software for English, Spanish, French, German, Portuguese, Polish, Dutch, and more than 20 other languages
+
+- https://github.com/sonnyp/Eloquent /183Star/GPL/202512/js
+  - Eloquent is a proofreading software for English, Spanish, French, German, Portuguese, Polish, Dutch, and more than 20 other languages.
+  - It works fully offline, powered by LanguageTool standalone server.
 # more
-
 - https://github.com/leplusorg/docker-pdf /apache2/202512/docker
   - Multi-platform Docker container with utilities to process PDF files (pdftk, ghostscript, ocrmypdf, pdfgrep, qpdf...).
 

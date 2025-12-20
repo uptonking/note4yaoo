@@ -17,6 +17,14 @@ modified: 2020-11-13T07:29:55.201Z
   - https://github.com/MusKRI/pure-ui /ts
     - https://pure.kam-ui.com/
     - A design system built with Base UI
+
+- https://github.com/heroui-inc/heroui /27.7kStar/MIT/202512/ts
+  - https://heroui.com/
+  - fast and modern React UI library. (Previously NextUI)
+  - [NextUI - Next move (v2) _202302](https://github.com/heroui-inc/heroui/discussions/1035)
+    - NextUI is making the switch from Stitches to Tailwindcss as our style engine. Stitches is no longer actively maintained 
+  - https://github.com/heroui-inc/tailwind-variants /MIT
+    - Tailwindcss first-class variant API
 # popular-storybook
 - resources
   - https://storybook.js.org/showcase/projects

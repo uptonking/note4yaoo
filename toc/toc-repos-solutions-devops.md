@@ -72,4 +72,10 @@ modified: 2020-12-12T19:01:56.749Z
 # nginx
 - https://github.com/Adewagold/nginx-server-manager /202509/python
   - web interface that transforms nginx administration from complex command-line operations into simple point-and-click actions. 
+# app-store
+- https://github.com/toolsetlink/upgradelink /233Star/apache2/202512/go/ts/vue
+  - https://www.toolsetlink.com/
+  - 为开发者和企业提供一站式应用升级解决方案
+  - 全端应用升级与分发平台 | 为开发者省去90%升级服务搭建成本
+  - 全端覆盖：Windows/Linux/Mac/安卓/Tauri/Electron等全场景支持
 # more

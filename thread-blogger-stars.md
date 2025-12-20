@@ -39,6 +39,12 @@ modified: 2021-02-09T19:27:07.664Z
 # pm-产品经理
 - 侯乔 兴趣是生产力工具
   - https://houjoe.notion.site/
+# editing
+- 黄复雄
+  - [嬉戏实验室](https://blog.xiiigame.com/about/)
+  - 毕业于山东大学中文系汉语言文学专业和北京师范大学中文系文艺学专业。
+  - 主业小学语文教材的编写、编辑和教学服务，学生用书的编辑，家庭教育音频内容的编辑和撰稿。
+  - 业余研究儿童语言文字启蒙和中国语文现代化，开发程序。
 # d3-notebook
 - Taras Novak
   - https://github.com/RandomFractals

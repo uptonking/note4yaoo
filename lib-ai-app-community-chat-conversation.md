@@ -169,6 +169,25 @@ modified: 2023-04-16T10:02:58.738Z
 
 - 现在应用场景变了，UI的目的和呈现逻辑也变了，你担心的问题应该不存在了
 
+- https://x.com/dotey/status/2002080595665371575
+  - AI 动态生成 UI 这个方向是没问题的，技术上不是当年低代码那套思路和技术方案了，也不需要 JSON，直接动态生成 HTML/CSS/JS 就可以了。
+  - 动态 UI 不需要满足所有场景，适合那种即用即走的场景。
+  - 另外现在动态 UI 其实有两个主要方向：
+  - 一个是 Google 的完全动态生成的 UI，这种灵活度高，稳定性差一些。
+  - 另一个方案是 OpenAI 正在做的 ChatGPT App，它其实是一个个做好的小程序，按需调用，比如你要订酒店，不需要跳出 ChatGPT，在聊天窗口会有个订酒店的小程序跳出来，根据你提供的信息填充好信息，你自己修改确认一下就可以完成酒店预订的操作。
+
+- 一种模式是GUI完全由通用agent自己按需动态生成，其中A2UI这样的只能生成「DSL」组装预制好的组件，GenTabs这样的能生成真实代码得到相对任意的GUI，但共同点都是第三方应用（Tool或垂直Agent）无法掌控GUI、无法实现那些依赖GUI的用户价值
+- 另一种模式是MCP-UI：
+  - GUI由通用 agent 基于第三方应用（MCP App）声明的GUI素材（HTML模版、URL、或组装原生组件的DSL描述）来按需生成，且生成的时候必须遵循Web标准等规范，第三方应用（Tool）能包含GUI，能对面向end user的GUI有一定掌控、能实现更多用户价值。ChatGPT最新的App商店里就都是这种
+
+- ChatGPT App的UI不是自动生成。现实现方式，是引入mcp方来提供的预制ui模版（可包成js包放npm），以一个iframe来展示。 chatgpt从mcp里取出数据后填充到（这里的填充也不是智能填充，就是实现定义好的字段）这个iframe里。 至少现在这个阶段，整个ui是没有任何组合性。外加有各种权限限制，比tg小程序自由度还低。
+
+- 我都没把这个当作是技术问题，就是头部生态布局抢占用户心智，做标准定义
+
+- 每一代人都有自己的低代码
+
+- 生成JSON有好处，因为JSON相当于定义描述界面要生成的东西，可以给大语言模型一个schema约束，这样子成功率更高。如果直接从NLP到UI界面的话，成功率会比走JSON，再转UI稳定性低
+
 - ## 🆚 [Librechat vs openwebui : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mmh6k8/librechat_vs_openwebui/)
 - Personally I prefer to use inference engines like vLLM because the speed is incredible and I find their openai compatibility is often the best on the market (especially around tool calling), and there is no built in UI in vLLM.
 

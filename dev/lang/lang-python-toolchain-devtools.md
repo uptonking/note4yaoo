@@ -100,6 +100,23 @@ uv pip install --system
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 🧩 What if you could get 37x faster Python with one line of code?
+- https://x.com/KhuyenTran16/status/2002031397330923845
+  - Slow Python functions in large codebases are painful to optimize. You might try Numba or Cython, 
+  - but Numba only works for numerical code with NumPy arrays.
+  - You might try Cython, but it needs .pyx files, variable type annotations, and build setup. That's hours of refactoring before you see any speedup.
+  - Codon solves this with a single @codon .jit decorator that compiles your Python to machine code.
+  - https://github.com/exaloop/codon /apache2/python/cpp
+
+- Yeah Codon has been my goto tool when I need to quickly speedup python, most of the time it's good enough..gets you 80% the performance. But to really squeeze every drop of performance, i always revert to C/Zig ~ the last 20%.
+
+- Just build a C++ Python module using pybind11.
+- Or could just do rust. If you squint, it can be pythonic.
+
+- Maybe just don't use Python?
 # discuss-lsp
 - ## 
 
@@ -125,6 +142,8 @@ uv pip install --system
 
 - need pyright alternative in rust
 # discuss
+- ## 
+
 - ## 
 
 - ## 

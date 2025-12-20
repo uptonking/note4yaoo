@@ -109,6 +109,7 @@ modified: 2025-09-25T16:24:05.355Z
 
 - image-editor
   - 通过vlm/ocr还原布局和文本，通过comfyui优化bg
+  - 很多image-model不擅长中文字体, 可通过定制的图片编辑器来优化效果
 
 - 
 - 

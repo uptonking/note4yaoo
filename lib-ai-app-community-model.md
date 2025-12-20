@@ -564,7 +564,20 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
-- ## 
+- ## [Real world use cases for small LLM on edge devices : r/LocalLLaMA _202409](https://www.reddit.com/r/LocalLLaMA/comments/1ffzsy0/real_world_use_cases_for_small_llm_on_edge_devices/)
+- Small local models can make many factual mistakes, because it's impossible to compress the entire world model into 2 GB. However, they can be great analyzers (for their size) of the existing text.
+  - Summarizing news articles, extracting insights from long web pages, finding a fact that you're searching for in a long text (a book?) and so on. Imagine it as a personal assistant in daily activities.
+
+- Function calling. If it can do basic language to function translation, this is a perfect use. So it allows human voice or text interaction with complicated systems that would otherwise require custom coding. Also, text to structured responses, like using embeds or RAG to return well-defined SQL queries that might result from a wide variety of human specifications.
+
+- All of these tasks involve LLM now, and are simple enough that they can be done on edge. In fact, most of them already do. Sure a cloud service can also do them, sometime better, but with a recurring cost that scale with usage. Most business that sell hardware, and user that buy it, will prefer the fixed upfront cost for R&D that small model.
+  - OCR
+  - Live transcription and translation
+  - Summarization
+  - Autocorrect
+  - Basic voice control
+
+- Analysis of secured data in offline mode . Maybe finance data , healthcare data , research data. Embed it on drone and check for suitable usecases
 
 - ## [The curious case of Qwen3-4B (or; are <8b models *actually* good?) : r/LocalLLM _202511](https://www.reddit.com/r/LocalLLM/comments/1p76wtf/the_curious_case_of_qwen34b_or_are_8b_models/)
   - how good are the smaller models at answering some of the sort of questions I might ask of them, chatting, instruction following etc?

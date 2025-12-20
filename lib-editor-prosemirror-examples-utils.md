@@ -347,6 +347,7 @@ modified: 2022-08-18T16:57:29.058Z
   - https://nullpointerexceptionkek.github.io/prosemirror-proofread/
   - a plugin for adding spell-check and grammar-checking capabilities to your ProseMirror editor.
   - Handles integration of spell-checking and proofreading services into ProseMirror
+  - 效果是多个变更块悬浮时显示suggestions/ignore
   - This library helps you integrate a variety of spell-check services, including LanguageTool. 
   - This library is designed to handle caching, ignore, and pop-ups. It is up to the developer's responsibility to implement UI and spell-checking services.
   - The main difficulty of creating a spell-checking library for ProseMirror, which handles ProseMirror's particular index. Most spell-checking services are designed to handle plain text, and mapping between a rich ProseMirror document to plain text and vice versa is complex. To do so, the library checks each node individually and caches the results.

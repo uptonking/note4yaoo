@@ -12,6 +12,22 @@ modified: 2025-02-03T10:17:42.052Z
 - mcp-alternatives
   - restful api: api过于灵活, 需要自定义集成字段
   - tool-use/function-calling
+# ⚖️ ai-protocols
+- [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro)
+  - [Introducing the Model Context Protocol - Anthropic _202411](https://www.anthropic.com/news/model-context-protocol)
+
+- [A2A Protocol](https://a2a-protocol.org/latest/)
+  - [Announcing the Agent2Agent Protocol (A2A) - Google Developers Blog _202504](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/)
+
+- [AGENTS.md](https://agents.md/)
+  - [AGENTS.md – Open format for guiding coding agents | Hacker News _202508](https://news.ycombinator.com/item?id=44957443)
+
+- [Agent Skills](https://agentskills.io/home)
+  - [Agent Skills - Claude Docs](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)
+  - [Introducing Skills | Claude _202510](https://claude.com/blog/skills)
+
+- [Agent Client Protocol](https://agentclientprotocol.com/overview/introduction)
+  - [ACP Brings JetBrains on Board — Zed's Blog _202510](https://zed.dev/blog/jetbrains-on-acp)
 # discuss-stars
 - ## 
 
@@ -251,7 +267,9 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
-- ## 
+- ## Agent Skills is now an open standard _202512
+- https://x.com/alexalbert__/status/2001760879302553906
+- Standardizing agent skills decouples capability definition from implementation, which is critical for composability across models, runtimes, and execution layers.
 
 - ## ai rules and mcp is madness. What are we doing!
 - https://x.com/shadcn/status/1955254151807635602

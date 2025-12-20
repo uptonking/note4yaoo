@@ -78,6 +78,10 @@ modified: 2020-10-05T06:18:21.639Z
   - SVGEdit is based on a powerful SVG canvas `@svgedit/svgcanvas`.
   - https://github.com/SVG-Edit/svg-edit-react /MIT/202407/js/inactive
     - React based editor based on SVG-edit svgcanvas
+
+- https://github.com/Yqnn/svg-path-editor /4.8kStar/apache2/202511/ts
+  - https://yqnn.github.io/svg-path-editor/
+  - Online editor to create and manipulate SVG paths
 # examples
 - https://github.com/whiteSHADOW1234/MergeSVG /MIT/202510/ts
   - https://mergesvg.vercel.app/

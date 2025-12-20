@@ -75,6 +75,7 @@ modified: 2022-11-07T10:25:12.034Z
   - [LINUX DO CDK](https://cdk.linux.do/dashboard)
     - [不懂问一下，佬们，用户分数在哪看呢？ ](https://linux.do/t/topic/1018046)
     - 获得徽章越多，分数越高
+  - 查看用户等级进度 [Connect - LINUX DO](https://connect.linux.do/)
 
 - [Hugging Face Spaces](https://huggingface.co/docs/hub/en/spaces-overview)
   - Spaces stores your code inside a git repository, just like the model and dataset repositories. 

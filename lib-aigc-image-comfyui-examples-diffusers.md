@@ -511,6 +511,18 @@ modified: 2025-08-23T11:43:35.904Z
   - 与现有 OpenAI SDK 无缝集成，无需修改代码
   - 核心功能仅使用 Python 标准库，部署更轻量
 
+- https://github.com/WaveSpeedAI/wavespeed-desktop /MIT/202512/ts
+  - https://wavespeed.ai/
+  - A cross-platform desktop application for running AI models from [WaveSpeedAI](https://wavespeed.ai), as well as many free local AI models including Z-Image.
+  - [New Desktop UI for Z-Image made by the creator of Stable-Fast! : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1pr5a03/new_desktop_ui_for_zimage_made_by_the_creator_of/)
+    - It is using `stable-diffusion.cpp` behind the scenes, which at least for me is much slower than ComfyUI
+      - With Comfyui 1024x1024 generation with ZImageTurbo using torch.compile + sage attention got to ~5.5s/it
+      - With stable-diffusion.cpp I cannot get faster than ~13s/it so not really worth it
+    - what's the point of people making or user learning those single purpose UI that is bound to has even fewer support in the future...
+      - If they only want to do a few things, and it can do those.
+    - its not free, you must use api from wavespeed.ai
+      - Well the Z-Image part is free, when you have a GPU. But yeah this whole post is an Ad for Wavespeed.
+
 - https://github.com/markfulton/NanoBananaEditor /521Star/AGPL/202509/ts/inactive
   - Nano Banana image generator and editor application.
   - Powered by Gemini 2.5 Flash images API.

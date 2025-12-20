@@ -23,6 +23,9 @@ modified: 2020-12-29T17:52:48.584Z
   - 双栏布局对pdf特别有用，一方面在屏幕展示更多内容， 另一方面是利用双栏ux实现同步滚动 原文 和 翻译/评论 2个独立但位置相关的内容
     - 实现思路1: editor-suggestion
     - 实现思路2: two-doc-scroll
+  - ✨ pdf-viewer很少实现多个独立文档的共用导航目录的交互, 在翻译/校对场景很有用
+  - 为扫描版书本自动添加目录toc: 目录内容为手动复制或自动检测, 然后自动关联到正文位置
+  - 对常见的多栏布局文本化适合较为固定的场景
 
 - 画板或批注类产品要参考规范 [Web Annotation Data Model](https://www.w3.org/TR/annotation-model/)
 # pdf-editor

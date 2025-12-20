@@ -1077,7 +1077,15 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [RAG failure story: our top-k changed daily. Root cause was ID + chunk drift, not the retriever. : r/Rag](https://www.reddit.com/r/Rag/comments/1pqvayx/rag_failure_story_our_topk_changed_daily_root/)
+  - We had a RAG system where top-k results would change day-to-day. People blamed embeddings. We kept tuning retriever params. Nothing stuck.
+  - Root cause: two boring issues.
+  - Doc IDs weren’t stable (we were mixing path + timestamps). Rebuilds created “new docs, ” so the index wasn’t comparable across runs.
+  - Chunking policy drifted (small refactors changed how headings were handled). The “same doc” became different chunks, so retrieval changed even when content looked the same.
+  - Changes we made: Stable IDs: derived from canonicalized content + stable source identifiers
+  - Retrieval regression: fixed query set + diff of top-k chunk IDs + “why changed” report
+
+- tldr noob coder learns how to do regression testing.
 
 - ## [RAG beginner - Help me understand the "Why" of RAG. : r/Rag _202510](https://www.reddit.com/r/Rag/comments/1phkzw6/rag_beginner_help_me_understand_the_why_of_rag/)
   - Is RAG even necessary for this usecase? Now LLM models have become so good that RAG is not required for tasks like this. (Evaluator asked me this question)
