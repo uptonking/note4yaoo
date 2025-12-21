@@ -23,7 +23,13 @@ modified: 2025-03-22T16:10:24.856Z
     - ✨ 翻译场景的多种布局一键切换: 双栏对比布局, 仅译文布局, 富文本页面布局
     - 甚至可以通过多栏布局的交互，来展示pdf聊天或补充信息，优点是能展示在原文位置
     - 考虑非多个文档的场景, 类似代码编辑器的 split view 也可以方便核对
+    - 方便原文和译文的跳转交互
+    - pdf to word: 显示summary-per-page, 适合教育场景
     - pdf体验尽量与docs一致，包括view/edit
+  - ai
+    - split-view: 显示summary-per-page, 适合教育场景
+      - summary的交互采用双栏布局交互还是类似comment面板交互需要考虑
+    - progressive doc processing: 能展示文件主页被处理如翻译的进度和内容交互
   - translation+proofreading: 包括pdf文件, 普通文档、网页
   - 插画复刻: Qwen-Image-i2L, image-to-prompt-to-image, 同时支持浏览comfyui生成图片的元数据、提示词
 

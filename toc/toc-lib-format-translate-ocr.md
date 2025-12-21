@@ -18,7 +18,7 @@ modified: 2025-12-19T12:43:21.150Z
 # popular
 - https://github.com/xunbu/docutranslate /555Star/MPLv2/202512/python
   - 文档（小说、论文、字幕）翻译工具（支持 pdf/word/excel/json/epub/srt...）
-  - Support Multiple Formats: Translates pdf, docx, xlsx, md, txt, json, epub, srt, ass, and more.
+  - Support Multiple Formats: Translates pdf, docx, xlsx, md, txt, json, epub, srt, ass, and more
   - PDF Table, Formula, Code Recognition: Leverages docling and mineru PDF parsing engines
   - JSON Translation: Supports specifying values to translate within JSON using paths (jsonpath-ng syntax).
   - Supports docx and xlsx files (currently does not support doc or xls) while maintaining original formatting.
@@ -27,8 +27,36 @@ modified: 2025-12-19T12:43:21.150Z
   - Provides an out-of-the-box Web UI and RESTful API for easy integration and usage.
   - Windows and Mac portable packages under 40MB (versions that do not use docling for local PDF parsing).
   - 👀 When translating pdf, it is first converted to markdown. This will lose the original layout. 
-  - DocuTranslate: Standard version. Uses the online `minerU` engine to parse PDF documents. Choose this version if you do not need local PDF parsing (Recommended). Version 1.5.1 and later support calling a locally deployed mineru service.
-  - DocuTranslate_full: Full version. Includes the built-in `docling` local PDF parsing engine. Choose this version if you need to parse PDFs locally.
+  - For users who want to get started quickly, we provide integration packages
+    - DocuTranslate: Standard version. Uses the online `minerU` engine to parse PDF documents. Choose this version if you do not need local PDF parsing (Recommended). Version 1.5.1 and later support calling a locally deployed mineru service.
+    - DocuTranslate_full: Full version. Includes the built-in `docling` local PDF parsing engine. Choose this version if you need to parse PDFs locally.
+  - The core of the new DocuTranslate is the Workflow. Each workflow is a complete end-to-end translation pipeline designed for a specific file type. 
+  - llm: ollama, lmstudio
+  - Q: Are scanned PDFs supported? 
+    - A: Yes. Please use the `mineru` parsing engine, which has powerful OCR capabilities.
+
+- https://github.com/gyunggyung/docling-translate /apache2/202512/python
+  - https://gyunggyung.github.io/docling-translate/
+  - Advanced PDF/Document Translator with interactive comparison. Built on IBM Docling.
+  - 双栏对比布局, 能高亮同一段文本
+
+- https://github.com/chaosen315/AIwork4translator /MIT/202512/python
+  - 一个专业的文档翻译工具，通过专有名词识别和正则过滤方法，确保大模型翻译时准确使用专业术语。它能够智能处理各种格式的技术文档，保留原文格式和专有名词，提供高质量的翻译结果
+  - 实现了全新的并发翻译架构，Queue + Worker Pool模式：采用asyncio. Queue + 工作池架构，支持6并发工作线程
+  - 专有名词识别与保护：使用 Aho-Corasick 自动机高效匹配术语，支持复数归一化与冠词智能处理，确保术语在翻译中保持一致。
+  - 支持.txt和.md格式文件的翻译，通过MarkItDown工具还可以支持PDF、PowerPoint、Word、Excel、HTML等更多格式
+  - 支持多种API翻译引擎，包括OpenAI、Kimi、DeepSeek、Ollama等
+  - 提供命令行和Web界面两种使用方式，满足不同场景需求
+  - 双栏Markdown编辑器：WebUI中提供左右分栏的原文/译文实时展示功能
+  - 实时翻译进度展示：翻译过程中实时显示当前处理的段落数/总段落数
+  - 中断保护与恢复：支持 Ctrl+C 安全中断，自动保存进度与未翻译内容
+  - https://github.com/python-fan/pdf2word /202407/python/inactive
+    - 60行代码实现多线程PDF转Word
+
+- https://github.com/jiananlan/PDFreformertool /AGPL/202507/python/inactive
+  - pdf文档翻译并重排版软件，支持利用llm-api进行翻译
+  - 利用 LLM 的高级语义处理能力，结合 pymupdf 和 pdfplumber 等库，提取 PDF 内容并生成高质量翻译结果。翻译数据存储在 MongoDB 中，同时实验性支持 HDF5（T5.py）作为替代存储方案。
+  - 格式保留：基于 `python-docx` 和 docxtpl 重构文档格式，确保翻译后文档格式一致。
 
 - https://github.com/PDFMathTranslate-next/PDFMathTranslate-next /2kStar/AGPLv3/202512/python
   - https://pdf2zh-next.com/zh/index.html
@@ -81,6 +109,14 @@ modified: 2025-12-19T12:43:21.150Z
       - 此文件确实是扫描件。虽然他能复制文本（是个双层PDF），但是也是扫描件。 建议启用 auto-enable-ocr-workaround 功能。这样会在检测到扫描版时自动启用对应的workaround。
     - [部署 Babel DOC 到家用 NAS，PDF 自动翻译 _202504](https://zhuanlan.zhihu.com/p/1899886272828379973)
     - [科研论文翻译神器！BabelDOC：开源AI工具让PDF论文秒变双语对照，公式图表全保留 - 知乎](https://zhuanlan.zhihu.com/p/1892003359227089736)
+  - https://github.com/aidayang/PDFMathTranslate-OneClick
+    - PDFMathTranslate一键启动整合包，基于 AI 完整保留排版的 PDF 文档全文双语翻译
+  - https://github.com/QxJai/PDFMathTranslate-next-qx
+    - PDFMathTranslate-next 改成http api
+  - https://github.com/nsmao-com/pdf_translate2pdf_api /202511
+    - 基于 Byaidu/PDFMathTranslate 改造的 FastAPI REST API 版本，用于科学文献PDF翻译，保留公式、图表和排版。
+  - https://github.com/YANG-Haruka/LinguaHaru /GPL/202512/python
+    - Next-Gen AI Translation Tool Powered by LLM. Support Office documents, PDF, TXT, and more format with just one click.
 
 - https://github.com/CBIhalsen/PolyglotPDF /2.1kStar/GPL/202509/python/js
   - A multilingual eBook processing tool supporting all eBook formats. 
@@ -94,6 +130,8 @@ modified: 2025-12-19T12:43:21.150Z
     - 💡🤔 更合理的流程是生成2个pdf image > text-pdf > translated-pdf, 这样就能既保持原有布局，又能无重影展示干净的译文pdf
   - [关于·ocr识别 ](https://github.com/CBIhalsen/PolyglotPDF/issues/6)
     - 请问考虑·添加·paddle作为OCR模型吗？ 文字PDF的翻译速度是我用过最快的，比pdfmathtran快几倍
+  - https://github.com/saurabhhbansal/polyglot-pdf /202507/inactive
+    - PDF translation tool that preserves document formatting while translating content using state-of-the-art AI models. 
 
 - https://github.com/discus0434/pdf-translator /CC-NC/202405/python/inactive
   - translates English PDF files into Japanese, preserving the original layout
@@ -102,6 +140,13 @@ modified: 2025-12-19T12:43:21.150Z
   - For PDF to text conversion, using PaddleOCR model.
   - For text translation, using FuguMT(CC-SA) model from HuggingFace.
   - https://github.com/ppisljar/pdf_translator /202409/与上面架构类似
+    - offers an WebUI and API endpoint that translates PDF files using openai GPT, preserving the original layout.
+  - https://github.com/poppanda/LLM_PDF_Translator /202512/python
+    - inspired by ppisljar/pdf-translator and adds the following features:
+    - [GUI] Add support for download-save-translation process on the server (better for mobile devices)
+    - Support of Ollama and QWEN for translation (by api)
+    - Support multi threading for translation
+    - Use single process for ocr / layout model to save vram
 
 - https://github.com/ocrmypdf/OCRmyPDF /32kStar/MPLv2/202512/python
   - http://ocrmypdf.readthedocs.io/
@@ -145,6 +190,78 @@ modified: 2025-12-19T12:43:21.150Z
     - 本地免费跑（我们最推荐的）
   - https://github.com/oomol-lab/epub-translator
     - uses AI large language models to automatically translate EPUB e-books while 100% preserving the original book's format, illustrations, table of contents, and layout. 
+
+- https://github.com/zstar1003/FreePDF /300Star/AGPL/202512/js
+  - 一个免费的PDF文献阅读器，支持将各语言的PDF文献转成中文，并支持接入大模型基于文献内容进行问答。
+  - 翻译完的PDF文件，会在其对应目录下生成-mono.pdf(翻译文件)
+  - 支持图片型PDF吗，比如扫描件？
+    - 回答： 不支持，本质上是借助`pdf2zh`检测文本块内容，再进行翻译替换，图片型无法直接替换，会导致内容重合叠加。
+  - 使用大模型翻译时，有些内容没有翻译？
+    - 回答： 低参数量的大模型本身的指令遵循能力很差，让它翻译，它可能不会完全听话，就会造成此现象。因此，本地用大模型翻译，必须保证大模型本身具备一定参数规模，建议7B以上
+  - 表格中的内容没有翻译？
+    - 回答： pdf2zh暂不支持表格内容翻译，如需翻译表格，可查看本仓库的dev分支，采用pdf2zh_next进行翻译，但由于速度较慢
+
+- https://github.com/WildDataX/suppr-mcp /202510/ts/仅云端?
+  - https://suppr.wilddata.cn/
+  - 超能文献|AI驱动的文档翻译与学术搜索服务。支持PDF、DOCX、PPTX等多格式文档的高质量翻译（支持11种语言），特别优化了数学公式翻译。同时提供PubMed学术文献智能搜索功能。
+  - 翻译时间取决于文档大小，通常几分钟到十几分钟不等。可以使用 `get_translation` 查询进度。
+  - https://github.com/WildDataX/PDFMathTranslate-vs-Suppr.ai-PDFtranslate
+    - 🆚 PDFMathTranslate vs Suppr.ai 超能文献 对比
+
+- https://github.com/phkhanhtrinh23/translation_layoutrecovery /110Star/NALic/202308/python/ts/inactive
+  - This is a project that translates a .pdf file, preserving the original layout of that .pdf file. [UPDATED] We have achieved the Second Prize of the Cinnamon AI Bootcamp 2023.
+  - Translation with Layout Recovery is a cutting-edge approach in the field of natural language processing that goes beyond traditional machine translation methods
+  - Frontend: NextJS, TailwindCSS, NodeJS, Yarn.
+  - Backend: Django REST Framework.
+  - Database: PostgreSQL.
+  - Storage: Firebase Cloud Storage.
+  - Layout Recovery: MaskRCNN.
+  - OCR: EasyOCR.
+  - NMT: envit5-translation.
+  - Spelling Correction (Japanese): JGEC
+
+- https://github.com/chaodreaming/layover-pdf /49Star/apache2/202503/python/代码少/inactive
+  - 一个使用layout overlay方式实现PDF英文翻译为中文的免费工具，使用智普api来完成ocr和翻译功能
+  - glm-4v-flash免费并且10QPS, 实测速度约为10s/页
+  - 启动gradio服务: python3 app.py
+
+- https://github.com/michaelbeijer/Supervertaler /16Star/MIT/202512/python/PyQt6
+  - https://supervertaler.com/
+  - AI-powered translation workbench with multi-LLM support (GPT-4, Claude, Gemini, Ollama).
+  - AI Providers - OpenAI GPT-4o/5, Claude 3.5 Sonnet, Google Gemini 2.0
+  - Local LLM (Ollama) - Run AI translation offline, no API keys needed, complete privacy
+  - Google Cloud Translation API integration
+  - Translation Results Panel - All match types (Termbase, TM, MT, LLM) in one view
+  - Bilingual Review Interface - Grid, List, and Document views
+  - Multiple Termbases - Glossary support per project
+  - OS: Windows, macOS, Linux
+  - Database: SQLite (built-in)
+  - Two Editions Available
+    - Qt Edition (Modern) - Recommended
+    - Tkinter Edition (Classic) - Stable
+
+- https://github.com/LunarTechAI/babel-extreme /202512/python
+  - Translate image-only PDFs while preserving layout, tables, diagrams, and formulas. 
+  - Built for engineering books and technical documents where existing tools fail.
+  - ocr-mineru > TRANSLATE-mistral > ReportLab-pdf-gen
+  - https://github.com/LunarTechAI/babel-extreme-arena
+    - Translate image-only PDFs while preserving layout, tables, diagrams, and formulas. 
+    - Built for engineering books and technical documents where existing tools fail.
+
+- https://github.com/wuwangzhang1216/DocTrans /MIT/202511/ts
+  - A powerful document translation system powered by Google Gemini AI, with both CLI and Web Application support. 
+  - Features dynamic parallel processing with up to 256 workers for high-performance translation.
+  - Smart Allocation: Up to 16 pages/slides concurrently, 64 workers per page
+  - Supports multiple file formats including PDF, Word, PowerPoint, Excel, and more.
+
+- https://github.com/tomorrow9913/PDF-Dual-Translate-Viewer /202506/python/inactive
+  - a desktop application that provides a dual-view (original/translated) PDF viewer, page navigation, highlight synchronization, translation integration, and style/layout preservation. 
+  - It is built with PySide6, PyMuPDF, and follows a clean architecture design.
+  - Main View: Default dual PDF viewer and translator screen.
+  - Thumbnail Preview: When clicking the bottom-left thumbnail, shows a preview of page 10.
+  - Table of Contents View: Main view with the left-side table of contents (outline) panel open.
+  - Synchronized highlighting (both views)
+  - PySide6 (Qt-based GUI), PyMuPDF
 # solutions/vendors
 - https://github.com/PaddlePaddle/PaddleOCR /66.5kStar/apache2/202512/python/cpp
   - https://www.paddleocr.ai/
@@ -328,6 +445,15 @@ modified: 2025-12-19T12:43:21.150Z
     - 答：根据 “连续的两个换行” 分割段落。只有空格和tab的行也看作单独的空行。
   - https://github.com/am009/dots.ocr
     - 本Fork提供Docker容器重新封装的API，支持20系等旧的 Turing GPU，以float32格式运行。测试机型：单2080ti 22GB。
+
+- https://github.com/error-wtf/pdf-translator-enhanced /202512/python
+  - Translate scientific PDFs with 100% formula preservation and professional quality
+  - Fork of thelanguagenerd/pdf-translator with improved formula protection, table detection, and 20 language support.
+  - https://github.com/thelanguagenerd/pdf-translator /CC0
+    - english scientific PDF to LaTeX and back to PDF translator
+
+- https://github.com/kv1830/fast_pdf_trans
+  - 基于`MinerU`实现pdf转markdown的功能，接着对markdown进行分割， 送给大模型翻译，最后组装翻译结果并由`pypandoc`生成结果pdf。
 
 ## utils-ocr
 

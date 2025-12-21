@@ -147,6 +147,17 @@ modified: 2022-11-11T10:46:41.519Z
 - https://github.com/tradle/pdf-parse /js
   - Pure javascript cross-platform module to extract texts from PDFs.
 
+- https://github.com/mehmet-kozan/pdf-parse /109Star/apache2/202512/ts
+  - https://mehmet-kozan.github.io/pdf-parse/
+  - Pure TypeScript, cross-platform module for extracting text, images, and tabular data from PDFs. 
+  - Run directly in your browser or in Node.js
+  - Can be integrated with React, Vue, Angular, or any other web framework.
+  - Supports: Next.js + Vercel, Netlify, AWS Lambda, Cloudflare Workers.
+  - [Not able to parse PDFs created with https://github.com/itext · Issue _202511](https://github.com/mehmet-kozan/pdf-parse/issues/50)
+    - Capture a screenshot for each page using getScreenshot(), then pass the buffer to Tesseract.js.
+  - https://github.com/dryor/translate-app /MIT/202409/ts/inactive
+    - Translate App using TypeScript, Tailwind CSS, NextJS, Bun, shadcn/ui, AI-SDK/OpenAI, Zod, Vercel Analytics, pdf-parse.
+
 - https://github.com/esbenp/pdf-bot /js
   - A Node queue API for generating PDFs using headless Chrome. 
   - Comes with a CLI, S3 storage and webhooks for notifying subscribers about generated PDFs
@@ -215,6 +226,10 @@ modified: 2022-11-11T10:46:41.519Z
 
 - https://github.com/lukaszliniewicz/PyCropPDF /MIT/202511/python
   - A GUI application to crop PDF files. It is primarily designed for documents where multiple pages need the same cropping, such as removing headers, footers, or margins.
+
+- https://github.com/Drakonis96/notypdf /GPL/202507/ts
+  - NotyPDF helps you read pdf, extract and save quotes (or their translation) from PDF documents to your Notion database
+  - A built-in document manager keeps everything organized while backups ensure your configuration is safe.
 # latex
 - https://github.com/dginev/ar5iv /MIT/rust
   - https://ar5iv.org/

@@ -555,6 +555,14 @@ modified: 2025-11-30T17:27:16.720Z
   - supports multiple providers like OpenAI, Ollama, and Deepseek, and has built-in integrations with Discord and Slack.
   - A web widget integration is also available to embed the assistant in your website.
   - After adding a source, documents will be synced automatically. You can monitor the sync process through the /tasks endpoint.
+
+- https://github.com/NotYuSheng/OmniPDF /MIT/202510/python/inactive
+  - OmniPDF is a PDF analyzer capable of translation, summarization, captioning and conversational capabilities through Retrieval-Augmented-Generation (RAG).
+  - OmniPDF follows a microservices architecture with centralized orchestration:
+    - pdf-processor-service: Main hub that coordinates all processing workflows
+    - Processing services: Specialized services for extraction, translation, rendering, and embedding
+    - Data layer: Redis (sessions), ChromaDB (vectors), MinIO (files)
+    - Service mesh layer: Istio for mTLS, traffic management, and observability (prestaging/staging/production)
 # rag-fwk
 - https://github.com/run-llama/semtools /1.5kStar/MIT/202511/rust/ts
   - Semantic search and document parsing tools for the command line
