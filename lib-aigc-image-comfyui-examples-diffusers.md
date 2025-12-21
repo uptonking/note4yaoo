@@ -958,8 +958,11 @@ modified: 2025-08-23T11:43:35.904Z
   - ComfyUI node version of the SD Prompt Reader
   - https://github.com/receyuki/stable-diffusion-prompt-reader /202405/python/inactive
     - A simple standalone viewer for reading prompts from Stable Diffusion generated image outside the webui.
-    - https://github.com/revisionhiep-create/comfyui-history-guru /html
-      - a single-file HTML5 application that lets you browse, search, inspect, and now EDIT the hidden metadata (Prompts, LoRAs, Seeds, Models) inside your AI-generated images.
+  - https://github.com/revisionhiep-create/comfyui-history-guru /html
+    - a single-file HTML5 application that lets you browse, search, inspect, and now EDIT the hidden metadata (Prompts, LoRAs, Seeds, Models) inside your AI-generated images.
+  - https://github.com/revisionhiep-create/Prompt_SQL_DB /html
+    - single-file HTML application for managing AI image generation prompts with SQLite database storage.
+    - work with Stable Diffusion, ComfyUI, Automatic1111, and other AI image generation tools.
 
 - https://github.com/Firetheft/ComfyUI_Local_Image_Gallery /70Star/202508/python/js
   - 一个为 ComfyUI 打造的终极本地图片、视频、音频媒体管理器

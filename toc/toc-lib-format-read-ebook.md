@@ -196,6 +196,8 @@ modified: 2023-09-19T07:26:04.103Z
 
 - https://github.com/shanleiguang/vRain /MIT/202511/perl
   - 中文古籍刻本風格直排電子書製作工具 Chinese Ancient eBooks Generator
+  - https://x.com/grgerwcwetwet/status/2002361413998919813
+    - 它专门用于制作中文古籍刻本风格的直排电子书，而且是免费开源。
 
 ## epub
 

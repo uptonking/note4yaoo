@@ -10,6 +10,8 @@ modified: 2025-11-06T18:49:13.977Z
 # guide
 
 - leaderboard
+  - [OCR Arena](https://www.ocrarena.ai/battle)
+    - [I made a free playground for comparing 10+ OCR models side-by-side _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p35f2c/i_made_a_free_playground_for_comparing_10_ocr/)
   - [SpatialBench - AI Spatial Reasoning Benchmark](https://spicylemonade.github.io/spatialbench/)
     - Evaluating multimodal model performance on complex 3D and 2D spatial tasks.
     - https://github.com/spicylemonade/spatialbench
@@ -77,8 +79,6 @@ modified: 2025-11-06T18:49:13.977Z
 
 - ## 
 # discuss-solutions
-- ## 
-
 - ## 
 
 - ## 

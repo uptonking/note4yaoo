@@ -299,11 +299,16 @@ modified: 2024-01-07T05:09:14.413Z
 
 - ## 
 
-- ## 
+- ## In Zero, writes are implemented with an endpoint on your own server, using your own code, your own ORM, etc. 
+- https://x.com/aboodman/status/2001754252038017418
+  - This makes it trivial to do whatever validation and business logic you want. You can also do side-effects, like notifications just as your normally would.
+  - We do all this without sacrificing the perf you expect from a sync engine.
+  - *All* mutations in Zero run first on the client instantly, and then authoritatively on your own server.
+  - Zero handles all the rollbacks, queueing, edge cases, etc.
 
-- ## 
+- The versions between CRUD mutators / query api to the current were very rough, I had lots of moments where I just wanted to rip it all out. Now with defineQuery and defineMutator it finally feels good again, even better than before.
 
-- ## 🆚 From the start, Zero had both "CRUD" and "Custom" mutators.
+- ## 🆚 From the start, Zero had both "CRUD" and "Custom" mutators. _202512
 - https://x.com/aboodman/status/2000814994607477026
   - The custom ones were more powerful, and what users wanted.
   - But we worried that the onboarding would never be *easy* with custom mutators, because they required writing custom integration code with your server.
@@ -326,6 +331,13 @@ modified: 2024-01-07T05:09:14.413Z
   - It's nice idea but with large codebases it gets very hard to map auth domains cleanly onto rows in dozens of tables.
   - If you're running server functions the simplest and most flexible approach is usually just to wrap them in explicit auth checks that leverage business logic and modularity.
 - Yeah, never looked back at RLS after using Convex server functions. We need another abstraction for authorization, though. It can be built on top of components now.
+
+- ## Sync engines enable instantly responsive UI. But the tradeoff is usually slow startup because all data must be pre-loaded. _20251030
+- https://x.com/aboodman/status/1983629577172754901
+  - Zero's query-driven sync enables precise control over when data syncs. To demonstrate, we scaled our "zbugs" demo up to 2.5M rows.
+  - Introducing Gigabugs: it's referring to the size of the dataset, which is 1GB.
+
+- This is a classic trade-off. The query-driven sync model seems like a great way to get the best of both worlds. I'm curious how you handle situations with rapidly changing data on the client. Does the query-driven model have built-in mechanisms for real-time updates?
 
 - ## Sometimes that trade-off is ok and even what you want. How many direct conflicts are there in an issue tracker? 
 - https://x.com/aboodman/status/1934363459921309790

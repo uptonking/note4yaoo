@@ -517,6 +517,16 @@ modified: 2023-12-15T19:30:23.094Z
   - Strapi v4 (work in progress)
   - https://github.com/Roslovets-Inc/ckeditor5-build-strapi-wysiwyg /202203/js/inactive
 
+- https://github.com/Schero94/Magic-Editor-X /MIT/202512/js
+  - Open-source block editor for Strapi v5 with real-time collaboration, 25+ tools, and freemium model. 
+  - Core features are 100% free forever. Includes awesome Webtools integration for link management.
+  - It's a feature-rich content editor built on Editor.js, with block-based editing similar to Notion or WordPress Gutenberg.
+  - Collaboration - Google Docs-style simultaneous editing with live cursors
+  - Premium
+    - Version History - Track all changes with snapshot restore
+    - Extended Collaboration - Up to unlimited concurrent users
+    - AI Assistant - Content suggestions and improvements (Advanced plan)
+
 - https://github.com/spalz/strapi-plugin-editorjs-field /MIT/202401/ts
   - This code was developed based on the strapi-plugin-react-editorjs
   - Add custom field in collection type or single type

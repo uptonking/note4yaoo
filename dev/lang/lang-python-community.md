@@ -49,6 +49,23 @@ modified: 2023-08-28T06:14:28.873Z
 # discuss-django
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Confused About Django Project Structure: Traditional vs Service–Repository — Which One Should I Use? : r/django _202512](https://www.reddit.com/r/django/comments/1prgz0j/confused_about_django_project_structure/)
+  - I’m working on a Django project and I’m confused about which project structure is best to follow. I see multiple approaches: Traditional Django structure (models, views, urls, etc.) Service + Repository pattern Controller-based or layered structure I want to understand: When should I stick with the traditional Django approach? At what point does using services and repositories make sense? Is it over-engineering for small or medium projects? 
+
+- Start with traditional Django structure. Enhance as needed.
+  - You can add in repository pattern type stuff with managers. https://docs.djangoproject.com/en/6.0/topics/db/managers/ And if you need something outside that, nothing stopping you adding it later.
+  - You can also add in services later as needed on a per module basis. I'd start with methods on the model until it gets unweildy.
+
+- Follow the approach recommended by Django, focusing domain logic in the models. Logic that depends on the instance should reside in the model itself. When the logic does not involve a specific instance, it can be placed in the Manager. For more specific, reusable, and chainable queries, it is ideal to create custom QuerySets. In practice, Managers and QuerySets already fulfill the role of repository in Django, so there is no need for extra abstractions.
+
+- Django or at least DRF already follows somewhat a very opinionated controller service repository pattern, the components are just named a bit differently. If you just have a general "service" file, it can grow extremely large so Django tries to break it down for you and ask you to just inject your classes in. 
+
 - ## [Strategies for removing django-polymorphic from codebase : r/django](https://www.reddit.com/r/django/comments/1pmow0e/strategies_for_removing_djangopolymorphic_from/)
   - The codebase grew with polymorphic in place, but it is causing more headaches and testing nightmares than the little abstraction help it provides. Going about removing it from some rather central models, while keeping all data and transferring to inheriting from abstract base classes instead, has been veeeery painful to say the least.
   - The biggest issue is not being able to get database fixtures for tests to work because of content type mismatches.

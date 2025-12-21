@@ -23,6 +23,21 @@ modified: 2025-12-18T12:27:14.982Z
 - ## 
 
 - ## 
+# discuss-opencode
+- ## 
+
+- ## 
+
+- ## opencode’s client/server architecture is very very clever, they’re planning on sneaking into every app
+- https://x.com/threepointone/status/2002506150819119542
+- yeah — it's a pretty sick model agnostic agent framework
+
+- I'm betting on distributed winning the long game. A server cannot contain my army (of agents).
+
+- They already got into gitlab
+
+- Not quite as robust as the sdk + runtime approach
+  - The SDK + runtime plugin system is the best feature 
 # discuss-qwen-code
 - ## 
 

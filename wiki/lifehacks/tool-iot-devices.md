@@ -1832,9 +1832,41 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## [NVIDIA RTX PRO 5000 Blackwell GPU with 72GB GDDR7 memory is now released : r/comfyui _202512](https://www.reddit.com/r/comfyui/comments/1prz95a/nvidia_rtx_pro_5000_blackwell_gpu_with_72gb_gddr7/)
+- Nvidia seems to have settled on $100/GB of vram. AMD will sell you a 7900xtx w/ 48gb of vram for $65/GB. But it's a triple slot and as far as rocm has come, the biggest improvements are kept back for the mi instinct series.
 
-- ## 
+- That might be great news for the LLM community. But we image guys here are usually compute bound. I.e. a 5090 might be more worth to us than a VRAM extended 5000
+
+- some of the WAN models go OOM even on a 6000 PRO for 1080p resolution and 1600+ frames, so this dosen't seem so interesting now.
+
+- Only 14k cuda cores, guys, that's a solid meh.
+
+- several hundred cheaper than the Max-Q RTX Pro with 24GB less RAM...
+
+- Stupid question, if you just had a stupid amount of money could you use this card for gaming and blow away a 5090 or does it not work like that?
+  - Yes you could, but not with the PRO 5000. PRO 6000 with 96GB is the one you want if you wanna beat the 5090. That one has the fully unlocked GB202 with 24064 cores, instead of "only" 21760 on the 5090, and it beats the 5090 in gaming by about 10%. But it starts at $7k.
+
+- Memory bus on these GPUs is only 384-bit, not 512-bit as the Nvidia datasheet claims.
+- I mean, the 5090 has 512-bit and GDDR7. So even with the higher memory capacity, it’ll be slower, but just have more Ram to work on larger models?
+  - Yes, bandwidth is severely reduced from 1792GB/s (512-bit) to 1344GB/s (384-bit).
+
+- ## [AMD Radeon AI PRO R9700 benchmarks with ROCm and Vulkan and llama.cpp : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1prgi41/amd_radeon_ai_pro_r9700_benchmarks_with_rocm_and/)
+  - Spec: AMD Ryzen 7 5800X (16) @ 5.363 GHz, 64 GiB DDR4 RAM @ 3600 MHz, AMD Radeon AI PRO R9700.
+  - Software is running on Arch Linux with ROCm 7.1.1 (my Comfy install is still using a slightly older PyTorch nightly release with ROCm 7.0).
+  - The LLM is instructed to summarise each chapter of a 120k-word novel individually, with a script parallelising calls to the local API to take advantage of batched inference. 
+  - Mistral Small: batch=3; 479s total time; ~14k output words
+  - gpt-oss 20B: batch=32; 113s; 18k output words (exluding reasoning)
+  - TLDR is that ROCm usually has slightly faster prompt processing and takes less performance hit from long context, while Vulkan usually has slightly faster tg.
+  - All using ComfyUI. 
+  - Z-image, prompt cached, 9 steps, 1024×1024: 7.5 s (6.3 s with torch compile), ~8.1 s with prompt processing.
+  - SDXL, v-pred model, 1024×1024, 50 steps, Euler ancestral cfg++, batch 4: 44.5 s (Comfy shows 1.18 it/s, so 4.72 it/s after normalising for batch size and without counting VAE decode). With torch compile I get 41.2 s and 5 it/s after normalising for batch count.
+  - Flux 2 dev fp8. Keep in mind that Comfy is unoptimised regarding RAM usage, and 64 GiB is simply not enough for such a large model — without --no-cache it tried to load Flux weights for half an hour, using most of my swap, until I gave up.
+  - I also successfully finished full LoRA training of Gemma 2 9B using Unsloth. It was surprisingly quick, but perhaps that should be expected given the small dataset (about 70 samples and 4 epochs). While I don’t remember exactly how long it took, it was definitely measured in minutes rather than hours. 
+
+- A lot of people considering 5080's/4090's for LLMs would probably be happier with this card. It's 32GB in a single slot with very reasonable prompt-processing speeds and good enough token-gen.
+  - also it's not bad at all with diffusion models, even with ROCm in its early days. Quite promising.
+
+- 4-bit quant/qlora support for Radeon cards just got merged into Unsloth a day or 2 ago. It's been added to Bitsandbytes for some time now, feel free to check it out 
 
 - ## [They're finally here (Radeon 9700) : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pnd5uf/theyre_finally_here_radeon_9700/)
 - Fuck, I'm old. Radeon 9700 was a top tier GPU back in the 2000's. They have used all the code names and started a new loop

@@ -1835,6 +1835,25 @@ Q8（8 位）	    16GB+	   接近原始版本
   - 示例图中，Hyper 画质表现优异，TCD 速度提升明显，但画面细节缺失较为严重
 - TGate提升出图速度的节点，无需额外模型，能明显减少出图用时，但也会有一定的质量损失。
   - 将 TGate Apply 节点连接在模型与采样器之间，start_at 设为 0.5，如果设为 1 的话，它将不起作用。
+# discuss-image-editing
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Editing images without masking or inpainting (Qwen's layered approach) : r/StableDiffusion _202512](https://www.reddit.com/r/StableDiffusion/comments/1prus2k/editing_images_without_masking_or_inpainting/)
+  - After spending 2 days with Qwen‑Image‑Layered, I think I finally understand why. Treating editing as repeated whole‑image regeneration is not it.
+  - This model takes a different approach. It decomposes an image into multiple RGBA layers that can be edited independently. I was skeptical at first, but once you try to recursively iterate on edits, it’s hard to go back.
+  - ComfyUI recently added support for layered outputs based on this model, which is great for power‑user workflows.
+  - I’ve been exploring a different angle: what layered editing looks like when the goal is speed and accessibility rather than maximal control e.g. upload -> edit -> export in seconds, directly in the browser.
+
+- Layered has been the editing way since the early days of photoshop. But what's the cost of having this auto PS in one mosel?
+  - Using their sample code, it's 65 GB VRAM, and it's not working very well. 
+
+- Inpainting does not undo previous changes, I don't know why you keep insisting that it does. Inpainting also has way, way less artifacts than this model when removing things, this model produces absolute horrid blurs, what are you talking about? Either Comfy screwed something up (I doubt it), or the model is so undertrained it will even sometimes have leftover noise, which is even worse for usability. Edit: This likely happens when it tries to separate out a vignette effect. Good effort, terrible result.
 # discuss-video
 - ## 
 

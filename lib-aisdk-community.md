@@ -42,7 +42,9 @@ modified: 2025-08-08T07:36:31.265Z
 
 - ## 
 
-- ## 
+- ## AI Elements is AI SDK agnostic
+- https://x.com/nicoalbanese10/status/2002382904291180988
+  - you can install any of the components with zero dependency on the AI SDK
 
 - ## 🌰 [How to Build LLM Streams That Survive Reconnects, Refreshes, and Crashes | Upstash Blog _202504](https://upstash.com/blog/resumable-llm-streams)
 - 

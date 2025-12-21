@@ -132,7 +132,19 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
-- ## 
+- ## 为什么现在 AI 写前端一下子这么强了，小米的 MiMo 论文的这段介绍了他们如何训练模型写前端的，关键是这句：
+- https://x.com/linexjlin/status/2002383307414409514
+  - 我们的基于视觉的验证器通过对录制的视频片段执行情况进行评分，综合评估视觉质量、功能准确性和可执行性，从而确保奖励机制能够同时兼顾外观表现与行为效果。
+  - 原理上就是模型根据 prompt 写好代码后再用 Playwright 操作录制成视频，然后，交给一个视觉验证器（应该是一个专门训练的视频理解模型） 进行打分，以提供奖励信号。
+
+- 还在捣鼓XXPO的我觉得自己望尘莫及了
+  - 重复性工作交接 AI  是对的，人多出的精力可以用在审美把关上。
+
+- 应该是训了一个很小的视觉判别模型，前期加了很多人工评判的数据，还是挺扎实的
+
+- 所以现在清楚了，其实还得依靠人为创建很多训练数据
+
+- 这次经过了多少工程师多少小时的打磨
 
 - ## 💡 [anthropic blog on code execution for agents. 98.7% token reduction sounds promising for local setups : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1powhy6/anthropic_blog_on_code_execution_for_agents_987/)
   - instead of direct tool calls, model writes code that orchestrates tools

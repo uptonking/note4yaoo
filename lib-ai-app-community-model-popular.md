@@ -512,6 +512,14 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [NVIDIA Nemotron-3-Nano-30B LLM Benchmarks Vulkan and RPC : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1prxpcx/nvidia_nemotron3nano30b_llm_benchmarks_vulkan_and/)
+  - GPUs: Nvidia 1080Ti 11GB, Nvidia P102-100 10GB, AMD Ryzen 6800H CPU, 64gb DDR5 RAM with iGPU 680M and AMD Radeon 7900 GRE 16GB.
+  - I'm impressed on being able to run the Q6_K model at a very respectable speed across 2 system and 3 GPUs.
+
 - ## 🆚 [GLM 4.6V vs. GLM 4.5 Air: Benchmarks and Real-World Tests? : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pp2wun/glm_46v_vs_glm_45_air_benchmarks_and_realworld/)
   - Some argue that adding vision may reduce textual performance, while others believe multimodality could enhance the model’s overall understanding of the world.
 - I've been using 4.6V since support was added yesterday and the ggml-org gguf was released. Just using it for chat, not programming, I don't notice huge differences from 4.5 air. I think the outputs are marginally better but the model thinks longer before responding. Speeds are identical to 4.5 air with the same number of layers offloaded to CPU on my machine.
@@ -1747,6 +1755,51 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 - ## 
 
 - ## 
+
+- ## [NVIDIA NIM - Free DeepSeek R1(0528) and more : r/SillyTavernAI _202507](https://www.reddit.com/r/SillyTavernAI/comments/1lxivmv/nvidia_nim_free_deepseek_r10528_and_more/)
+- Nvidia is much slower than the chutes
+
+- [My experience coding with open models (Qwen3, GLM 4.6, Kimi K2) inside VS Code : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1nzal91/my_experience_coding_with_open_models_qwen3_glm/)
+- K2 0905 and Qwen 3 Coder 485B are entirely free, for unlimited use up 40 RPM from nvidia api. This is exactly two times more requests than GLM 4.6 MAX plan if we devide their 5 hourly quota into minutes.
+  - The quota comparison is also wrong: the “40 RPM” and from what I could find with Qwen for their free CLI 2000 requests per day numbers are counting every single low‑level API call an agent makes, and a single non‑trivial agent run can easily fan out into dozens of those. GLM’s agent quota is per agent run, which can include a lot of internal sub‑calls, so you’re not even talking about the same unit of work. Like let me give you a close number of the value you get with GLM 4.6 Max, 2400 * 20-100 = 48000 - 240000 actual requests.
+
+- [Roo Code, Cline, Opencode, Codex, Qwen CLI, Claude Code, Aider etc. : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o54lfc/roo_code_cline_opencode_codex_qwen_cli_claude/)
+- Nvidia nim has free kimi k2 0905, unlimited use, 40 rpm, I highly recommend it.
+
+- https://www.threads.com/@bsunter/post/DP6atv7EdIL _202510
+  - Crazy that you can sign up for nvidia and get almost unlimited free access to their models and use them in OpenCode
+  - Once you exhaust free credits (1000-3000 credits), you basically have to purchase credits. Or use models locally if you have nvidia gpu
+  - droid is actually better in my use case lol. sometimes opencode just cant solve the problem but droid pass the case
+
+- ## [“Request More” (+4, 000 credits) option on build.nvidia.com - NVIDIA NIM / Access/Accounts - NVIDIA Developer Forums _202509](https://forums.developer.nvidia.com/t/request-more-4-000-credits-option-on-build-nvidia-com/344567)
+- 👷 We no longer use a credit-based system for build.nvidia.com. As you noted, this has been replaced by rate limits for trial usage. The rate limits vary for each model, and we do not publish those. However, you can see your maximum rate limit in the top right of build.nvidia.com
+- what do you mean by the trial usage? When I created an account and get API keys, does that count as “trial“ or should I do something else first? And about the trial “period“, is it limited by week, month, or else? 
+  - When you create the account and get the API key you are using the NIM as a trial. You don’t need to do anything else first. The trial period is not limited by a time period.
+  - We use ‘trial’ to mean any use for prototyping, research, development, testing, learning, etc.
+  - If you are looking to move an application from development or testing to production, you are no longer using it as a trial, so will need to get an NVIDIA AI Enterprise license in this case.
+
+- [Cannot find the amount of credits left on NIM API _202506](https://forums.developer.nvidia.com/t/cannot-find-the-amount-of-credits-left-on-nim-api/337051/2)
+  - we removed the credits system earlier this year. The NVIDIA API catalog is a trial experience of NVIDIA NIM, so the number of calls allowed during a certain period of time is designed to serve evaluation and prototyping needs only. The rate of requests will vary per model queried and may vary based on the number of concurrent users. To verify rate limits of the models being used, please check your account at the top right of the navigation bar of build.nvidia.com
+
+- [Getting 429 Too many request for NIM cloud api _202506](https://forums.developer.nvidia.com/t/getting-429-too-many-request-for-nim-cloud-api/335755)
+  - We are currently experiencing 429 (Too Many Requests) response codes when using the NVIDIA NIM cloud API. Previously, the same integration was working smoothly in our project. However, we are now encountering this issue even with as few as 10 requests in a loop.
+  - API Endpoint: https://integrate.api.nvidia.com/v1/chat/completions
+  - Please note that the API Endpoints are only to be used for experimentation, development, testing and research
+
+- [Model Limits - NVIDIA NIM / Models _202504](https://forums.developer.nvidia.com/t/model-limits/331075?utm_source=chatgpt.com)
+  - We do not plan to publish specific model limits, since the limits only apply to the APIs which are for trial experiences.
+  - For unlimited usage of NVIDIA NIM, check out NVIDIA AI Enterprise, the Hosted NIM endpoint providers (Together.ai, Baseten, Fireworks) or DGX Cloud Serverless Inference.
+
+- [Clarification on NVIDIA embedding/reranker API access and costs - Intelligent Video Analytics / Visual AI Agent - NVIDIA Developer Forums _202512](https://forums.developer.nvidia.com/t/clarification-on-nvidia-embedding-reranker-api-access-and-costs/354320)
+  - Are you running your embedding/reranker model locally? If so, it’s free; it only consumes the computing power of your local GPU.
+
+- ## [Deepseek V3.2 is now available on Nvidia NIM. : r/SillyTavernAI _202512](https://www.reddit.com/r/SillyTavernAI/comments/1poinrj/deepseek_v32_is_now_available_on_nvidia_nim/)
+- Does anybody know if there are any rate limits for Deepseek models on NVIDIA NIM?
+  - There's no daily limit, just a limit per minute; if I remember correctly, it's 40 requests per minute for everyone.
+
+- NIM has extra content moderation guardrails that the official API doesn't have - the official API is dirt cheap and works great so I don't see myself bothering with this
+  - Me neither, I actually prefer using the official API. But the Nvidia NIM models aren't censored, they're on par with the originals, so I don't think they have the protections you're probably looking for.
+- Ok now that I'm looking more closely it looks like the content moderation micro service is an optional component - but looking at their terms of service, NSFW is not allowed and they supposedly scan for it https://ngc.nvidia.com/legal/terms
 
 - ## [佬们，像这种缝合怪的AI应用聚合站，是不是有统一的源码啊，我已经看到好几个了 _202405](https://linux.do/t/topic/98476)
 - GoAmzAI, SparkAI, 奈斯猫 AI 你试试看这几个，以前见过的就这几个

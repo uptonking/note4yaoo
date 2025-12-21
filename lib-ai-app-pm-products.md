@@ -11,17 +11,18 @@ modified: 2025-03-22T16:10:24.856Z
 
 # ai-dev-xp
 - selling-points
-  - local models support: mlx, lmstudio-alternative
+  - ✈️ local models support: mlx, lmstudio-alternative
     - 允许用户分享文档/插画中的模型配置，运行日志
     - 模型库: text模型, ocr模型,t2i生图模型, lmstudio在模型分类上做的不够好
-  - citations for search: 外部数据源如字典mdx/书籍epub/wikipedia公开db/统计年鉴
+  - 🔗 citations for search: 外部数据源如字典mdx/书籍epub/wikipedia公开db/统计年鉴
     - 类似词典库/kiwix的预置模块, 可下载、可分享, 不必每次都全量索引
     - vector-marketplace, 支持用户选择任意数量的pdf文档创建embeddings, 并发布, 可作为一种变通方案解决数据隐私问题
     - 查看原文pdf-parts时支持仅查看前后几页, 保护原文内容
   - large pdf workflows: chunking-strategies, reindex, pdf-parts
-  - pdf edit
+  - 🌐 pdf edit
     - ✨ 翻译场景的多种布局一键切换: 双栏对比布局, 仅译文布局, 富文本页面布局
     - 甚至可以通过多栏布局的交互，来展示pdf聊天或补充信息，优点是能展示在原文位置
+    - 考虑非多个文档的场景, 类似代码编辑器的 split view 也可以方便核对
     - pdf体验尽量与docs一致，包括view/edit
   - translation+proofreading: 包括pdf文件, 普通文档、网页
   - 插画复刻: Qwen-Image-i2L, image-to-prompt-to-image, 同时支持浏览comfyui生成图片的元数据、提示词
@@ -78,6 +79,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 利用chrome最新的侧边栏，实现类似cline/roocode的页面ai助理/office编辑
     - 基于cline-cli的client/server架构，支持多种工具如 wps/飞书/腾讯文档/notion
     - 甚至结合文生图
+  - distributed ai: 限制显卡生图、计算
 
 - local-ai-challenges 🐛
   - 运行大模型需要较多硬件资源，如GPU/CPU/RAM
@@ -361,17 +363,29 @@ modified: 2025-03-22T16:10:24.856Z
     - API 调用频率限制为 12RPM，公益站永久免费，采用公平限流策略以保障服务稳定
     - [KYX API Refueling Station 公益站额度加油站](https://quota.kyx03.de/)
       - 别玩至尊场，1000积分一次警告扣16x，风险太高; 高级场的高积分也可以获得高收益
-  - [包子公益](https://api.codeqaq.com/)
-    - [包子铺](https://api.5202030.xyz/)
+  - [随时跑路公益](https://runanytime.hxi.me/app/me), 每天签到 10-25 刀
+    - 完全支持 cc，主要是 sonnet 4.5，haiku 4.5 会自动重定向到 sonnet 4.5
+    - RPM 暂时定为 5，之后看情况调整
+    - [【随时跑路公益站】就是那个稳了一个月的AmazonQ2API公益，开放注册 ](https://linux.do/t/topic/1154353)
+  - [WONG公益站](https://wzw.de5.net/console), 每日签到, cc
+    - [WONG公益站](https://wzw.pp.ua/console)
+    - [WONG公益站](https://newapi.netlib.re/)
+    - rpm为30
+    - 高效连接 Claude Code CLI
+  - [黑与白chatAPI](https://ai.hybgzs.com/), 每日转盘
+    - 模型丰富: claude/gemini, 但没有gpt5(有mini)
+    - 很多openrouter渠道的模型
+    - 本站完全免费！暂无任何充值通道
+    - 绝大部分模型倍率换算后与官方价格相同，为缓解服务器资源压力，所有免费模型实际扣除配额均按付费标准计算
+    - [黑与白chatAPI福利站](https://next-cdk.hybgzs.com/)
+  - [包子铺](https://api.5202030.xyz/)
+    - [包子公益](https://api.codeqaq.com/)
     - 只开放linuxdo lv2以上注册
     - 支持gpt,claude,gemini, 但没有gpt5(有mini)
     - [包子公益 - Baozi DoneHub](https://lucky.5202030.xyz/)
     - 每日普通用户可自行划转 200$ 到 newapi 站点
     - [【包子公益站】更新一个总的汇总贴。现在上线了newapi的分站 ](https://linux.do/t/topic/1124776)
-  - [随时跑路公益](https://runanytime.hxi.me/app/me), 每天签到 10-25 刀
-    - 完全支持 cc，主要是 sonnet 4.5，haiku 4.5 会自动重定向到 sonnet 4.5
-    - RPM 暂时定为 5，之后看情况调整
-    - [【随时跑路公益站】就是那个稳了一个月的AmazonQ2API公益，开放注册 ](https://linux.do/t/topic/1154353)
+  - [Elysiver](https://elysiver.h-e.top/app/me)
   - [KFC API](https://kfc-api.sxxe.net/console)
     - [KFC API公益站 - 正式上线  ](https://linux.do/t/topic/1233747)
     - [逆水寒](https://api.sxxe.net/), 即将关闭
@@ -381,15 +395,9 @@ modified: 2025-03-22T16:10:24.856Z
     - 无调用频率限制
     - 支持gpt5,claude,gemini
     - 部分模型倍率很高，可选按次计算版本, 如claude
-  - [WONG公益站](https://wzw.de5.net/console), 每日签到, cc
-    - [WONG公益站](https://wzw.pp.ua/console)
-    - [WONG公益站](https://newapi.netlib.re/)
-    - rpm为30
-    - 高效连接 Claude Code CLI
-  - [无言AI](https://aiai.li/panel), 每日签到, 已关闭
+  - 🗑️ [无言AI](https://aiai.li/panel), 每日签到, 已关闭
     - 支持cc
-  - [我爱996公益](https://529961.com/)
-    - 仅限 L 站 2 级以上用户注册
+  - 🗑️ [我爱996公益](https://529961.com/), 服务停止
     - [我爱996公益附属站 - 每日签到领取奖励](https://hub.529961.com/)
     - [【公益站我爱996一次】测试上线已接入LinuxDo ](https://linux.do/t/topic/1147448)
   - [FovtAPI](https://api.voct.top/console), 论坛发码
@@ -398,15 +406,9 @@ modified: 2025-03-22T16:10:24.856Z
     - 仅在每周五下午 18:00 至 21:00 开放，每周限量 100 人
     - 支持claude,gemini, 不支持gpt
     - Gemini系列模型永久免费， 与Gemini对话不会消耗帐号余额（可忽视帐号余额）
-  - [黑与白chatAPI](https://ai.hybgzs.com/), 每日转盘
-    - 模型丰富: claude/gemini, 但没有gpt5(有mini)
-    - 很多openrouter渠道的模型
-    - 本站完全免费！暂无任何充值通道
-    - 绝大部分模型倍率换算后与官方价格相同，为缓解服务器资源压力，所有免费模型实际扣除配额均按付费标准计算
-    - [黑与白chatAPI福利站](https://cdk.hybgzs.com/)
-  - [23公益站](https://sdwfger.edu.kg/console), 已关闭
+  - 🗑️ [23公益站](https://sdwfger.edu.kg/console), 已关闭
     - 平台将于每周五、周六统一发放额度兑换码。 额度申请：如您的额度提前用尽，可联系管理员进行补充申请
-  - [tbai API](https://tbai.xin/), 已关闭
+  - 🗑️ [tbai API](https://tbai.xin/), 已关闭
     - 模型支持gemini/gpt, 不支持claude
     - API调用频率限制为 10 RPM
     - gpt-load 作者
@@ -562,11 +564,6 @@ modified: 2025-03-22T16:10:24.856Z
   - models: deepseek-r1, qwen3-coder-480b
   - [NVIDIA NIM FAQ - AI & Data Science / NVIDIA NIM - NVIDIA Developer Forums _202409](https://forums.developer.nvidia.com/t/nvidia-nim-faq/300317)
     - NIM access through the NVIDIA Developer Program is for prototyping, research, development and testing purposes only and does not include enterprise features or support.
-  - https://www.threads.com/@bsunter/post/DP6atv7EdIL _202510
-    - Crazy that you can sign up for nvidia and get almost unlimited free access to their models and use them in OpenCode
-    - Once you exhaust free credits (1000-3000 credits), you basically have to purchase credits. Or use models locally if you have nvidia gpu
-    - I think there's a limit on number of days to use free credits. (~90 days)
-    - Nvidia speaks about this in their developer forums. Below you can find the details of limits on free credit
 
 - [Groq Rate Limits - Docs](https://console.groq.com/docs/rate-limits)
   - tldr: tpd-100k~500k

@@ -35,6 +35,97 @@ modified: 2024-11-16T10:52:53.263Z
 - 建议小号，真封了很麻烦。优选也是。
 
 - VPS，IP 不乱跳才是最重要的啊！有一些网站服务检测到 IP 变化，就得重新登录。 而且 VPS 自己搭建的也安全啊！
+# discuss-tunnel/gateway
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 在海南需要翻墙上网吗，我就关心这个
+- https://x.com/LuoSays/status/2001979463312302491
+- 普通大众需要。 白名单内的人才和公司在岛内可以直通海外，形式是 SDWAN。
+- 那这群白名单人才办的手机卡和别人不一样？
+  - 卡是一样的，但是运营商会根据你在白名单的手机号分配线路。
+
+- sdwan费用高吗
+  - 费用不需要你出，你就照常付流量费即可。
+
+- apn/Dnn, 扯啥sd-wan 
+
+- ## ngrok 的一种替代方案: cloudflared tunnel --url <你的本地域名>
+- https://x.com/jaywcjlove/status/2000619356401606707
+- ngrok最大的问题是免费账户只能有一个域名。 你这个是支持多个域名么？ 不然调试不同程序的时候，还得切域名也麻烦。
+
+- 这个确实很香。 各种协议都支持，目前内网ssh默认用cf tunel 转发
+
+- 安全性如何？等于给自己电脑开了一个门
+
+- 如果传输的数据经过靠谱加密，还蛮有趣；否则的话，更倾向于选择直接通过 Cloudflare Pages 直接部署。
+
+- ## [Is there any reason not to use the free cloudflare ssl, and dns management? : r/selfhosted _202510](https://www.reddit.com/r/selfhosted/comments/1oknia1/is_there_any_reason_not_to_use_the_free/)
+- Assuming you mean the Cloudflare Tunnels: There is a cap on transfers of around 100 mb. Sometimes it works, sometimes they drop those connections.
+  - Also, you’re giving away free unencrypted access to you home infrastructure to an American company, including all data that is being sent between the app clients and servers. You can of course encrypt that yourself, but it is still a nasty backdoor
+
+- For anyone serious about exposing a homelab to the internet, take a look at NPMplus: https://github.com/ZoeyVid/NPMplus
+  - They support Crowdsec out of the box and it makes managing and securing a reverse proxy a lot easier.
+- Or just use a TCP reverse-proxy to pass fully TLS-encrypted to your home, where your home's reverse-proxy terminates TLS. HAProxy and Nginx support it, maybe Caddy and Traefik.
+
+- You can of course encrypt that yourself
+  - I'm not aware of any method to encrypt traffic inside TLS. Unless you mean using E2EE like client-side encryption for the traffic's content, or using a remote desktop?
+
+- Yes, privacy. Since they have the private key to your SSL certificates, they technically can look at all the data that is coming into your system. If it is free, you are the customer/product.
+
+- Other than whatever privacy concerns you may have with Cloudflare sitting in the middle, no not really. Fwiw I don't really mind letting cloudflare be my monkey in the middle since their services provide a good benefit to me, but up to you.
+
+- I just use them for my DNS registrar, domain renewals are the same price as the initial registration (unless there are general price increases) - they don't have a separate pricing tier for initial and renewal like how other sites get you. I use ddns to update the IP address to home and then connect directly with wireguard
+
+- ## 你目前在用哪种方式翻墙呢？ 🆚️
+- https://x.com/__Inty__/status/1905650995750649966
+- 这图挺误导人的，而且已经有些过时了
+- v2RAY 很流行，软件多，节点多，提供商作坊多，trojan，提供的作坊比较少。支持的软件比较少
+- 最安全的是 ssh 隧道，不过一般人搞不来。
+
+- ## 一款内网穿透工具 Frp 的跨平台桌面客户端：Frpc-Desktop。
+- https://x.com/GitHub_Daily/status/1893616798718685446
+  - 开箱即用，提供简洁可视化配置界面，支持所有 Frp 版本，轻松实现内网穿透。
+  - 还支持开机启动、快速分享 frps、所有配置的导入导出、批量端口等功能。
+  - 兼容 Windows、macOS 和 Linux 系统安装使用。
+
+- ## 内网穿透方案之tailscale+cloudflare tunnel
+- https://x.com/Stv_Lynn/status/1878316656998649969
+  - 很多homelab玩家拿到机器遇到的第一个问题就是怎么把服务部署到公网。
+  - 有的人会选择frp，但考虑到国内服务器带宽和价格的情况下frp效果实在太差。
+  - 也有人使用tailscale这种p2p方案，但这种并没有把服务暴露到公网。这里分享一个我的解决方案。
+  - 首先你需要在本地机器和一台海外vps上都部署tailscale并且完成登录。关于vps的选择，推荐使用新加坡的vps（可以做到一机多用，能够正常代理ChatGPT，大多直连效果也不错），不推荐使用国内的vps，因为后面还要连接cloudflare。
+
+- ## 有人用过 tailscale 的开源实现 headscale 吗？感觉也不错…想折腾一下。 
+- https://x.com/tualatrix/status/1879877738733130087
+- 都用，这类工具的核心是要打洞成功率。我一直都是  tailscale 和 zerotier 一起用，在我场景下，zerotier 的成功率明显高于 tailscale
+
+- 没啥区别，到最后只要能打洞就行。headscale好就好在可以自建derp和无限机器。无限机器我们用不到，tailscale的就够用能直接打洞就不用自建，所以不如都有IPV6好
+
+- 不好用，我就是用过那个之后才换到 tailscale 的。 另外， zeronet 也没有 tailscale 好用
+
+- headscale只是tailscale的后端而已，用它可以不依赖tailscale的官方后台自由度高一点，客户端仍然还是用tailscale
+
+- 个人感觉 headscale 完全没有必要，直接用 tailscale + 自建 derp 就行。
+
+- 用过了，因为自建所以稳定性比不上官方，功能缺失挺多不好用，不如官方服务。
+
+- ## 🆚️ Proxy Vs reverse proxy
+- https://x.com/bytebytego/status/1885934707944345892
+  - 正向代理侧重客户端限制，反向代理侧重服务端
+- A forward proxy is a server that sits between user devices and the internet. A forward proxy is commonly used for: 
+  - Protect clients
+  - Block access to certain content
+  - Avoid browsing restrictions
+- A reverse proxy is a server that accepts a request from the client, forwards the request to web servers, and returns the results to the client as if the proxy server had processed the request. A reverse proxy is good for:
+  - Protect servers
+  - Load balancing
+  - Cache static contents
+  - Encrypt and decrypt SSL communications
+
 # discuss-dns/domain
 - ## 
 

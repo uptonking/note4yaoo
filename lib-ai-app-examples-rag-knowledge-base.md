@@ -851,6 +851,15 @@ modified: 2025-11-30T17:27:16.720Z
     - Chunkdown now compacts markdown tables thanks to a one-line PR
     - Markdown tables can be pretty formatted with additional dashes and spaces to align the columns vertically. This makes them easier for humans to read, but wastes tokens and embedding space on useless characters
 
+- https://github.com/speedyk-005/chunklet-py /MIT/202512/python
+  - https://speedyk-005.github.io/chunklet-py/
+  - One library to split them all: Sentence, Code, Docs. Chunk smarter, not harder
+  - Supports over 50 natural languages for text and document chunking 
+  - formats including .pdf, .docx, .epub, .txt, .tex, .html, .hml, .md, .rst, .rtf, .odt, .csv, and .xlsx.
+  - Triple Interface: CLI, Library & Web
+  - [[Release] Chunklet-py v2.1.0: Interactive Web Visualizer & Expanded File Support! : r/Rag](https://www.reddit.com/r/Rag/comments/1prjdjp/release_chunkletpy_v210_interactive_web/)
+    - Our `CodeChunker` is rule-based and language-agnostic, using clever patterns to identify functions, classes, and logical blocks without the overhead of heavy dependencies like tree-sitter.
+
 - https://github.com/sovit-123/local_file_search /MIT/202510/python
   - Scripts to replicate simple file search and RAG in a directory with embeddings and Language Models.
 
@@ -865,6 +874,15 @@ modified: 2025-11-30T17:27:16.720Z
 - https://github.com/mburaksayici/smallevals /202512/python
   - A lightweight evaluation framework powered by tiny 0.6B models — runs 100% locally on CPU/GPU/MPS, attach any vector DB connection and run, fast and free.
   - Evaluation tools requiring LLM-as-a-judge or external, that costs/doesn't scale easily. 
+
+- https://github.com/kannandreams/latentlens /202512/python
+  - https://latentlens.streamlit.app/
+  - a powerful visual debugger and educational tool for exploring vector embeddings. 
+  - It helps you peek inside the "black box" of semantic search by projecting high-dimensional vectors into an interactive 3D map.
+  - 3D Projection: PCA → UMAP reduction into an interactive 3D scatter plot.
+  - Multiple Embedders: Support for Demo (synthetic), local MiniLM (sentence-transformers), and OpenAI (text-embedding-3-small).
+  - Flexible Storage: Ships with an in-memory/local `ChromaDB` adapter.
+  - matplotlib (for heatmap rendering)
 # chat-docs/knowledgebase
 - https://github.com/hyperbrowserai/hyperbooklm /MIT/202512/ts/仅云端模型
   - https://hyperbrowser.ai/

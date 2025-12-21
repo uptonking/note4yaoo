@@ -16,6 +16,20 @@ modified: 2025-12-19T12:43:21.150Z
 - tips-translations
   - 翻译类型产品的形态需要根据场景进行设计，可双栏/上下紧邻/点击切换原文和译文
 # popular
+- https://github.com/xunbu/docutranslate /555Star/MPLv2/202512/python
+  - 文档（小说、论文、字幕）翻译工具（支持 pdf/word/excel/json/epub/srt...）
+  - Support Multiple Formats: Translates pdf, docx, xlsx, md, txt, json, epub, srt, ass, and more.
+  - PDF Table, Formula, Code Recognition: Leverages docling and mineru PDF parsing engines
+  - JSON Translation: Supports specifying values to translate within JSON using paths (jsonpath-ng syntax).
+  - Supports docx and xlsx files (currently does not support doc or xls) while maintaining original formatting.
+  - Designed for high-performance scenarios, providing full asynchronous support and interfaces for parallel multi-tasking.
+  - Supports simultaneous use by multiple users within a local area network (LAN).
+  - Provides an out-of-the-box Web UI and RESTful API for easy integration and usage.
+  - Windows and Mac portable packages under 40MB (versions that do not use docling for local PDF parsing).
+  - 👀 When translating pdf, it is first converted to markdown. This will lose the original layout. 
+  - DocuTranslate: Standard version. Uses the online `minerU` engine to parse PDF documents. Choose this version if you do not need local PDF parsing (Recommended). Version 1.5.1 and later support calling a locally deployed mineru service.
+  - DocuTranslate_full: Full version. Includes the built-in `docling` local PDF parsing engine. Choose this version if you need to parse PDFs locally.
+
 - https://github.com/PDFMathTranslate-next/PDFMathTranslate-next /2kStar/AGPLv3/202512/python
   - https://pdf2zh-next.com/zh/index.html
   - PDF 科学论文翻译与双语对照。基于 BabelDOC
@@ -80,6 +94,14 @@ modified: 2025-12-19T12:43:21.150Z
     - 💡🤔 更合理的流程是生成2个pdf image > text-pdf > translated-pdf, 这样就能既保持原有布局，又能无重影展示干净的译文pdf
   - [关于·ocr识别 ](https://github.com/CBIhalsen/PolyglotPDF/issues/6)
     - 请问考虑·添加·paddle作为OCR模型吗？ 文字PDF的翻译速度是我用过最快的，比pdfmathtran快几倍
+
+- https://github.com/discus0434/pdf-translator /CC-NC/202405/python/inactive
+  - translates English PDF files into Japanese, preserving the original layout
+  - This repository offers an WebUI and API endpoint that translates English PDF files into Japanese, preserving the original layout.
+  - For PDF layout analysis, using DiT.
+  - For PDF to text conversion, using PaddleOCR model.
+  - For text translation, using FuguMT(CC-SA) model from HuggingFace.
+  - https://github.com/ppisljar/pdf_translator /202409/与上面架构类似
 
 - https://github.com/ocrmypdf/OCRmyPDF /32kStar/MPLv2/202512/python
   - http://ocrmypdf.readthedocs.io/
@@ -189,7 +211,7 @@ modified: 2025-12-19T12:43:21.150Z
 # ocr
 - https://github.com/AKSarav/pdfstract /apache2/202511/python/js
   - web application for converting PDFs to multiple formats using various state-of-the-art extraction libraries. Built with FastAPI backend and React frontend
-  - [Built a small tool to compare PDF → Markdown libraries (for RAG / LLM workflows) : r/Rag _202507](https://www.reddit.com/r/Rag/comments/1m1j10e/built_a_small_tool_to_compare_pdf_markdown/)
+  - 🆚 [Built a small tool to compare PDF → Markdown libraries (for RAG / LLM workflows) : r/Rag _202507](https://www.reddit.com/r/Rag/comments/1m1j10e/built_a_small_tool_to_compare_pdf_markdown/)
     - I’ve been exploring different libraries for converting PDFs to Markdown to use in a Retrieval-Augmented Generation (RAG) setup.
     - But testing each library turned out to be quite a hassle — environment setup, dependencies, version conflicts, etc.
     - Currently, it supports: docling pymupdf4llm markitdown marker
@@ -428,6 +450,15 @@ modified: 2025-12-19T12:43:21.150Z
   - LLM-powered OCR and translations (supports 54 languages)
   - Upscaling (2x-AnimeSharpV4)
   - Two interfaces: Web UI (Gradio) and CLI
+
+- https://github.com/SUSYUSTC/MathTranslate /1.3kStar/apache2/202309/python/latex/inactive
+  - This is a project to translate LaTeX documents, especially scientific papers, from any language to any language. 
+  - LaTeX expressions like math expressions are perfectly kept unchanged. 
+  - it can be directly applied to translate arXiv papers since it provides the LaTeX source code of most of the papers.
+  - [submodule: extract text from pdf and translate ](https://github.com/SUSYUSTC/MathTranslate/issues/76)
+    - 如果您想翻译仅有 pdf 版本的论文，可以先通过 [mathpix](https://mathpix.com/) 将 pdf 转换为 latex 
+  - [使用 mathpix 将 PDF 转换成 latex 后，通过 Web Server 上传 zip 进行翻译，结果排版格式会有问题 ](https://github.com/SUSYUSTC/MathTranslate/issues/73)
+    - 这个情况我们目前也知道，主要是表格和图片大小的问题。我们也没有什么好的解决方法，只能参考原文或者手动调一下代码改大小。Latex语言过于flexible导致很难兼容所有的情况。
 
 - https://github.com/huangusaki/PicLingo /MIT/202512/python
   - AI-powered image translator with visual editing - Transform images with intelligent OCR and translation

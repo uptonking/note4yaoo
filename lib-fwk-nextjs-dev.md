@@ -74,7 +74,31 @@ modified: 2020-12-12T19:22:00.735Z
 - The only thing I dont like about remix is the amount of config to set it up, 95% of web apps behave the same, they can and should standarlize it and allow customization if the user requires.
 
 - Also remix allows traditional SPA paradigm in cases what that shined
+# discuss-internals
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Next.js 的 Image Optimization 也太逆天了，源码里 fetch 远程图片写死了 7s 的 timeout 限制，没有配置能修改。
+- https://x.com/skywt2003/status/2002367882533945406  
+  - 稍微大一点的图片就容易 timeout。
+  - 而且居然没有任何 fallback 逻辑！超时直接 500，图片看不了。
+
+- build 的时候fetch 超时不会打断编译吗或者给 warning吗
+  - fetch 远程图片并缓存、优化这个操作，不是 build 的时候发生的，是首次访问图片发生的, fetch 失败了，500，用户就看不到图片
+
+- 这玩意主要的存在价值，其实是为 Vercel 赚钱，因为它特别费资源
+
+- 好几年前发现类似的诡异情况，从此再不敢用`<Image>` 都是自己糊一个，或者直接`<img>`
+
+- 图片压缩服务独立出来，然后用 customLoader 方式接入 Next.js
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

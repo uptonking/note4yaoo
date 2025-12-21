@@ -35,6 +35,36 @@ modified: 2021-05-18T19:33:51.768Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Is model-building really only 10% of ML engineering? : r/MLQuestions _202512](https://www.reddit.com/r/MLQuestions/comments/1przbgh/is_modelbuilding_really_only_10_of_ml_engineering/)
+- Yes. It’s mostly data (or if you train the big things) data and infra.
+  - Depending on your team and Company size sprinkle in some deployment too.
+  - If you only wanna do modeling. Stay in academia.
+
+- I would say it’s 95% data, depending upon your domain and use case obviously, but in most companies there aren’t any pre build data collection pipelines (specially in medium to small size companies just getting into AI)
+
+- During my PhD and then at a startup I did almost a decade of mostly working with the model. As I always worked with the same kind of data and on the same problem, the data topic wasn't thaaat big. Of course we also did some tooling for that over time to make things a bit smoother but that wasn't a huge part. Also even during my PhD we had (in my case because speech data) linguistics and phonetics students or interns who enjoyed wading through the data to clean and annotate.
+  - That being said, things changed again when models changed from going through various RNNs to GANs to flow models to diffusion to... everyone just stuffing everything into autoregressive transformers. Not only it became about efficiently feeding more and more data to the almost same architecture, companies actually training models became scarce because expensive.
+  - I've been at a larger company when at some point the individual ML teams for speech and NLP and vision and so on gradually were disbanded and became just a single AI team and most of us don't even train any models anymore. It's more and more about grabbing CLIPs and BEATs and BERTs and VideoPrisms and SAMs and Llavas and Geminis and stick them together. I haven't touched a model architecture in 2 years now and the little bit of D-Fine or whatever fine-tuning some of our ML people are still doing is gradually being replaced by Open Vocabulary Detection models.
+
+- (As a data scientist, not DE): 80% of the time is people, understanding the problem and how to define it, and how any solution will be used. Of the remaining time, 80-90% is data munging (and implementation)
+
+- Short answer: yes, in most industry roles it’s ~10–20% modeling.
+  - The mistake students make is swinging too far the other way and ignoring models. You need both, but learned in the right order.
+  - I’ve helped a few juniors structure this transition (models → data → deployment → monitoring) in a way that actually aligns with interviews.
+
+- May be 20% but yes regarding engineering. If it is academia then it is 70%.
+
+- From my exp , I spent at most 1 week on building and fine tuning models for computer vision and object generation related to oil refining and oil rigs , I spent 3 months collecting , cleaning and segmenting data for it since this was a niche domain and had had almost no research or projects done on it which is publicly available
+
+- In my experience, modeling is not even close to 5%, companies don't spend much time on complex unmaintainable deep learning models, they keep it simple, if a simple regression models and 10 lines of code do the job, why spend hours of computing?
+  - If you want to land a job and follow the path to ML or anything related to AI, theoretical knowledge is desirable but MLOps is the hard skill that gets you hired.
+
 - ## 绝了，这就是强化学习，理论和实践可以完全不一样
 - https://x.com/JXQNHZr1yUAj5Be/status/1803779975595876548
 
