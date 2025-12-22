@@ -122,6 +122,11 @@ modified: 2023-09-19T07:26:04.103Z
   - https://standardebooks.org/
   - A collection of tools Standard Ebooks uses to produce its ebooks, including basic setup of ebooks, text processing, and build tools.
 
+- https://github.com/richardr1126/OpenReader-WebUI /249Star/MIT/202512/ts
+  - https://openreader.richardr.dev/
+  - open source text to speech document reader web app built using Next.js, offering a TTS read along experience with narration for EPUB, PDF, TXT, MD, and DOCX documents. 
+  - It supports multiple TTS providers including OpenAI, Deepinfra, and custom OpenAI-compatible endpoints like Kokoro-FastAPI and Orpheus-FastAPI
+
 - koodo-reader /21.4kStar/AGPLv3/202503/ts
   - https://github.com/koodo-reader/koodo-reader
   - https://github.com/troyeguo/koodo-reader /renamed

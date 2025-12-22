@@ -12,6 +12,15 @@ modified: 2021-07-25T12:49:10.410Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 💡 table of contents marker w/ modern css
+- https://x.com/jh3yy/status/2002945849509494936
+  - fun progressive enhancement, no js
+- You can do this with targeting the IDs too. We use this for generating table of content pages via gotenberg and pagedjs, then make that available for qpdf to generate an outline from it too. Super clean
+  - you can. you will still need something to update the position of the marker though, that’s what this snippet handles without any scripts. `:target-link` gives you the current active scrolled link
+- you could target the ID for sure but you still need a mechanism for updating the marker position
+
 - ## It looks like "position: sticky" is not implemented for ::before and ::after pseudo-elements in Chrome?
 - https://x.com/fabiospampinato/status/1866299411216695470
   - That's why in some way CSS is harder than JS, in practice you can run the JS in your head fairly reliably, but you can't always do that with CSS, it's a spaghetti blob of hundreds of properties interacting with each other in sometimes unpredictable way, with a sauce of limitations and quirks that are just unpredictable, you need to run an experiment to see what happens, for each different engine.

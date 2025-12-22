@@ -356,6 +356,16 @@ modified: 2025-11-30T17:27:16.720Z
     - i have run this django rag webapp fully locally by `uv run --env-file .env -- python main.py start`.
     - when i open http://localhost:8000/ , the browser shows 
 
+- https://github.com/itanishqshelar/SmartRAG /106Star/MIT/202512/python
+  - a privacy-first multimodal RAG system that lets you chat intelligently with your documents, images, and audio. 
+  - Documents: PDF, DOCX, TXT, MD with intelligent chunking
+  - Images: OCR + visual understanding via BLIP
+  - Local AI Stack
+    - Ollama (Llama 3.1 8B) for generation
+    - Nomic Embed Text (768-dim) for embeddings
+    - ChromaDB for vector storage
+    - Complete offline operation
+
 - https://github.com/MLNativeAI/paperjet /AGPL/202512/ts
   - https://getpaperjet.com/
   - Open-source platform to securely extract data from any document. Build custom workflows while keeping your data private.
@@ -867,6 +877,10 @@ modified: 2025-11-30T17:27:16.720Z
   - Triple Interface: CLI, Library & Web
   - [[Release] Chunklet-py v2.1.0: Interactive Web Visualizer & Expanded File Support! : r/Rag](https://www.reddit.com/r/Rag/comments/1prjdjp/release_chunkletpy_v210_interactive_web/)
     - Our `CodeChunker` is rule-based and language-agnostic, using clever patterns to identify functions, classes, and logical blocks without the overhead of heavy dependencies like tree-sitter.
+
+- https://github.com/xuzeyu91/AntSK-FileChunk /202512/python
+  - 一个基于语义理解的智能文本切片服务，专门用于处理PDF和Word文档，能够根据段落语义进行合理切片，避免传统基于Token数量切分导致的语义割裂问题。
+  - 支持PDF、Word（.docx/.doc）、纯文本等多种文档格式
 
 - https://github.com/sovit-123/local_file_search /MIT/202510/python
   - Scripts to replicate simple file search and RAG in a directory with embeddings and Language Models.

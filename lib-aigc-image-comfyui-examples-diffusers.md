@@ -1953,6 +1953,18 @@ modified: 2025-08-23T11:43:35.904Z
   - Integration with the InvokeAI AI image generation system
   - Extensible backend (FastAPI)
 # prompts-image
+- https://github.com/TanShilongMario/PromptFill /996Star/MIT/202512/js
+  - https://prompt-fill-olive.vercel.app/
+  - 一个专为 AI 绘画（Nano Banana 等）设计的“结构化提示词生成工具”。通过可视化的“填空”交互方式，帮助用户快速构建、管理和迭代复杂的 Prompt。
+  - 本项目初衷是解决 AI 绘画过程中提示词难记忆、难管理、修改繁琐的问题。通过将 Prompt 结构化，让创作变得像"填空"一样简单。
+  - 结构化 Prompt 引擎：支持 {{variable}} 语法，自动将文本模版转化为交互式表单
+  - 动态词库系统：预置数百个常用美术标签，支持分类管理、自定义扩充及批量导入
+  - 纯本地存储：基于浏览器 LocalStorage，无需注册登录，数据完全掌握在自己手中
+
+- https://github.com/choppu/prompt-base /apache2/202512/ts/vue
+  - a prompt manager that fully runs in your browser. It downloads in your browser the remote database but any edit you do will remain in your local storage.
+  - [PromptBase - Yet Another Prompt Manager (opensource, runs in browser) : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1pt2ncf/promptbase_yet_another_prompt_manager_opensource/)
+
 - https://github.com/intelligencedev/PromptForge /MIT/202521/python
   - A visual prompt management system for AI image generation. 
   - Organize, browse, and manage artistic style prompts with visual references in an intuitive interface.

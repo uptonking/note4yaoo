@@ -247,12 +247,12 @@ use vanilla html/css/javascript to create a simplistic personal profile landing 
 use vanilla html/css/javascript to create a personal profile landing page: homepage shows a cool welcoming animation, then shows 4 example personal projects, then a simple get in touch form below it
 use react to create a homepage shows a list of frontend frameworks like react/vue/angular, when clicking the framework, navigate to the route to show its introduction
 
-- You are a professional typescript/nodejs fullstack developer.
+- You are a professional python/typescript/nodejs fullstack developer.
   - provide a comprehensive overview of this project. analyze the project architecture and primary user journey use cases. then find some important source code to explain the core architecture and data flow.
   - i want more details about rag ingest/chunking/embedding/persistence logic
   - how to refactor related source code to support more vector db including qdrant/chromadb/pgvector? show me some code and explain the architecture migration
 
-- You are a professional typescript/nodejs fullstack developer and a system administrator.
+- You are a professional python/typescript/nodejs fullstack developer and a system administrator.
   - I want to run this project fully locally without docker and nginx for local development and debugging.
   - please read setup-related files like docker-compose.yaml and README.md, and tell me step by step how to configure and run frontend/backend locally.
   - i have already installed python/uv/npm/chromadb/Ollama/postgresql/mysql/redis on my local macos.

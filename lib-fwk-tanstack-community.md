@@ -25,6 +25,29 @@ modified: 2025-12-16T06:25:32.663Z
 - ## 
 
 - ## 
+# discuss-tanstack-router
+- ## 
+
+- ## 
+
+- ## With TanStack Router and Start gaining popularity, React Query may become optional.
+- https://x.com/YBenlemlih/status/2002846358609256932
+  - You can now load data directly in the router using a loader function. So you get built-in loading and error states.
+  - So should you load the data in React Query or TanStack Router?
+  - Bonus: you can combine both to get the best of both words.
+  - Using loaders also unlocks prefetching, i.e. faster navigation/loading times.
+- In Start you also unlock isomorphic features: 
+  - the page is initially rendered on server (instant UI thank to ssr) and SPA-like smooth navigation (client side subsequent navigation)
+  - better SEO: custom head fields based on the loader result 
+
+- query still gives you a whole suite of tools for mutations, revalidation, and optimistic updates. router loaders are great for initial fetches, but not a full replacement
+  - yep, I just use query in loader for initial fetch, then can do extra stuff with it if needed in actual function
+
+- use the two to get the best result. So loader function fetches the data while loading the page on server side, then I pass is as initialValue to TanstackQuery to handle refresh, invalidating, etc on the client side.
+
+- How will you handle the case when you need same data over different routes? route loaders are good for some specific cases but react query is good for almost all the cases.
+
+- Same was for server components and loaders in remix/react router. But if you need data fetching on client, react query is still the way to go
 # discuss-tanstack-db
 - ## 
 

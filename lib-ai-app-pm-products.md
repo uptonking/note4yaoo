@@ -283,6 +283,12 @@ modified: 2025-03-22T16:10:24.856Z
   - 甚至用ai将GPL协议的代码重写成自己的代码
 
 - ai写与第三方sdk集成的代码时，先写注释example，再写代码
+
+- [腾讯云代码助手 CodeBuddy](https://copilot.tencent.com/ide/)
+
+- [CodeFlicker ](https://www.codeflicker.ai/)
+
+- [通义灵码 ](https://lingma.aliyun.com/)
 # ai-office
 - 产品方向: ask、生成、集成
   - core-features: improve, shorter, longer, fix/checker, translate
@@ -391,27 +397,31 @@ modified: 2025-03-22T16:10:24.856Z
     - [包子公益 - Baozi DoneHub](https://lucky.5202030.xyz/)
     - 每日普通用户可自行划转 200$ 到 newapi 站点
     - [【包子公益站】更新一个总的汇总贴。现在上线了newapi的分站 ](https://linux.do/t/topic/1124776)
-  - [Elysiver](https://elysiver.h-e.top/app/me)
+  - [Elysiver](https://elysiver.h-e.top/app/me), 每日签到
+  - [莹のAPI](https://api.wpgzs.top/console)
+    - [公益站支持claude ](https://linux.do/t/topic/1351151)
+    - rpm15
+  - [FovtAPI](https://api.voct.top/console), 论坛发码
+    - [NewAPI签到系统](https://gift.voct.top/), 已失效
+  - [ThatAPI](https://gyapi.zxiaoruan.cn/pricing)
   - [KFC API](https://kfc-api.sxxe.net/console)
     - [KFC API公益站 - 正式上线  ](https://linux.do/t/topic/1233747)
     - [逆水寒](https://api.sxxe.net/), 即将关闭
     - [逆水寒公益API——扬帆起航 ](https://linux.do/t/topic/1173036)
-  - [一个小站的 API 商店](https://one-api.ygxz.in/), 每日签到1刀内随机
+  - [一个小站的 API 商店](https://one-api.ygxz.in/app/dashboard), 每日签到1刀内随机
     - 提供半公益的高质量 API 中转服务，始于202406
     - 无调用频率限制
     - 支持gpt5,claude,gemini
     - 部分模型倍率很高，可选按次计算版本, 如claude
+  - [mmkg API](https://api.mmkg.cloud/)
+    - 仅在每周五下午 18:00 至 21:00 开放，每周限量 100 人
+    - 支持claude,gemini, 不支持gpt
+    - Gemini系列模型永久免费， 与Gemini对话不会消耗帐号余额（可忽视帐号余额）
   - 🗑️ [无言AI](https://aiai.li/panel), 每日签到, 已关闭
     - 支持cc
   - 🗑️ [我爱996公益](https://529961.com/), 服务停止
     - [我爱996公益附属站 - 每日签到领取奖励](https://hub.529961.com/)
     - [【公益站我爱996一次】测试上线已接入LinuxDo ](https://linux.do/t/topic/1147448)
-  - [FovtAPI](https://api.voct.top/console), 论坛发码
-    - [NewAPI签到系统](https://gift.voct.top/), 已失效
-  - [mmkg API](https://api.mmkg.cloud/)
-    - 仅在每周五下午 18:00 至 21:00 开放，每周限量 100 人
-    - 支持claude,gemini, 不支持gpt
-    - Gemini系列模型永久免费， 与Gemini对话不会消耗帐号余额（可忽视帐号余额）
   - 🗑️ [23公益站](https://sdwfger.edu.kg/console), 已关闭
     - 平台将于每周五、周六统一发放额度兑换码。 额度申请：如您的额度提前用尽，可联系管理员进行补充申请
   - 🗑️ [tbai API](https://tbai.xin/), 已关闭
@@ -464,7 +474,6 @@ modified: 2025-03-22T16:10:24.856Z
   - [素墨API —— AI公益站](https://apifree.rensumo.top/)
   - [翰林文苑公益API站点](https://aiapi.hlwy2025.me/)
     - 价格太高了 我决定攒到1000再用
-  - [ThatAPI](https://gyapi.zxiaoruan.cn/pricing)
   - [SillyDream 公益站](http://ff.sillydream.top/pricing)
   - [linjinpeng Veloera](https://linjinpeng-veloera.hf.space/)
     - 现在rpm是6，模型全部免费，1级即可注册
@@ -529,6 +538,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [Seedream AI - 免费在线AI图像生成器](https://seedream.pro/zh)
   - [Cloudflare Workers AI Models](https://developers.cloudflare.com/workers-ai/models/)
     - 提供免费的文生图模型: sdxl, sdv1-5
+  - [Free AI Image Generator - AI Free Forever](https://aifreeforever.com/image-generators)
 
 - llm-ui
   - [SmallAI](https://free.smallai.asia/chat)

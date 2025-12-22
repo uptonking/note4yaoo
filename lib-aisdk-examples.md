@@ -318,6 +318,15 @@ modified: 2025-08-11T20:15:18.297Z
   - It provides detailed insights into Core Web Vitals and other performance metrics through interactive visualizations and AI-assisted recommendations.
   - Flame graph visualization for CPU profile analysis
 # utils
+- https://github.com/zirkelc/ai-retry /MIT/202512/ts
+  - https://x.com/zirkelc_/status/1970786310685122600
+  - Introducing `ai-retry`: retry and fallback mechanisms for the @aisdk
+  - This library wraps your AI SDK model with a set of retry strategies to handle failures with the appropriate fallback model
+  - There are built-in retryables for common scenarios:
+    - content filter triggered
+    - request timeout
+    - non-retryable API errors
+
 - https://github.com/jakobhoeg/built-in-ai /apache2/202508/ts
   - https://built-in-ai-provider-next-hybrid.vercel.app/
   - TypeScript library for using in-browser AI models with the Vercel AI SDK, with support for seamless fallback to server-side models

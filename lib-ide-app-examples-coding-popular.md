@@ -476,6 +476,14 @@ modified: 2025-12-11T18:10:23.710Z
   - A native application (Electron-based) with global shortcuts, deeper system integration, and a dedicated window.
   - We are also working on a lightweight, high-performance version built with Tauri. 
 
+- https://github.com/0xSero/open-orchestra /MIT/202512/ts
+  - Open Orchestra is a multi-agent orchestration plugin for OpenCode that enables you to spawn, manage, and coordinate specialized AI workers. 
+  - It implements a hub-and-spoke architecture where a central orchestrator coordinates multiple specialized workers, each optimized for specific tasks.
+  - Hub-and-Spoke Architecture - Central orchestrator with specialized workers
+  - 6 Built-in Worker Profiles - Vision, Docs, Coder, Architect, Explorer, Memory
+  - Optional Neo4j Memory - Persistent knowledge graph (advanced feature)
+  - Open Orchestra follows a hub-and-spoke pattern inspired by successful multi-agent systems like AutoGen and LangGraph, but optimized for OpenCode's plugin architecture.
+
 - https://github.com/milisp/opencode-gui /MIT/202510/ts/inactive
   - A lightweight Tauri GUI for Opencode CLI
 
@@ -506,6 +514,9 @@ modified: 2025-12-11T18:10:23.710Z
     - For those looking to play around with this, was able to get vibe working with ollama with the following diff, I imagine something similar would work for for llmstudio
   - [Local usage? ](https://github.com/mistralai/mistral-vibe/issues/4)
     - for now we support llama-server/llama.cpp for local deployment, currently devstral 2 models don't work well with GGUF format 
+  - https://github.com/nicksenger/revibe /apache2/202512/rust
+    - a Rust port of Mistral Vibe
+    - [Revibe is a Rust-rewrite of Mistral Vibe written by Devstral 2 : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pslzv6/revibe_is_a_rustrewrite_of_mistral_vibe_written/)
 
 - https://github.com/vinhnx/vtcode /MIT/202510/rust
   - a Rust-based terminal coding agent with semantic code intelligence via `Tree-sitter` (parsers for Rust, Python, JavaScript/TypeScript, Go, Java) and `ast-grep` (structural pattern matching and refactoring).

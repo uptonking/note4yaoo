@@ -29,7 +29,15 @@ modified: 2024-01-11T15:57:32.182Z
 
 - ## 
 
-- ## 
+- ## 宝玉老师总结的非常清晰。 我日常也是这样做 PPT 的。 ListenHub 的未来 PPT编辑功能也是这样，先编辑文本，确认没问题再生成。
+- https://x.com/oran_ge/status/2002594269937414554
+  - 这是新的PPT编辑法，而不是以前先做图，再分图层去编辑，那样不本质。
+
+- PPT的未来就是根据大纲去自动生成抽卡图片
+
+- 完全同意！这种先专注文本内容、确保逻辑和表达完美后再生成视觉的设计方式，才是真正高效的PPT制作本质。以前的那种先美化再反复改内容的做法，确实太折腾了。期待ListenHub的PPT功能上线，这应该会改变很多人的工作流！
+
+- 但也不能一次做所有的吧，能分片微调还是有必要的
 
 - ## [How do I efficiently zip and serve 1500–3000 PDF files from Google Cloud Storage without killing memory or CPU? : r/node _202510](https://www.reddit.com/r/node/comments/1o6497g/how_do_i_efficiently_zip_and_serve_15003000_pdf/)
   - I’ve got around 1500–3000 PDF files stored in my Google Cloud Storage bucket, and I need to let users download them as a single .zip file.

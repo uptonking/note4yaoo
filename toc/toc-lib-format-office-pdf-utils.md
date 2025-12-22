@@ -209,6 +209,94 @@ modified: 2022-11-11T10:46:41.519Z
   - Convert any web technology to PDF (HTML to PDF, html2pdf)
   - 依赖chokidar、live-server、passport、puppeteer、react
   - Please note that React components are not required for web-to-pdf to work. It supports all frameworks, and even vanilla JS/HTML/CSS.
+
+- https://github.com/ArtifexSoftware/pdf2docx /3.2kStar/AGPL/202409/python/mupdf/inactive
+  - Extract data from PDF with `PyMuPDF`, e.g. text, images and drawings
+  - Generate docx with python-docx
+  - https://github.com/sw3do/pdf-to-docx
+    - Built with PyPDF2 for PDF reading
+    - Built with python-docx for DOCX generation
+  -  https://github.com/python-fan/pdf2word /202407/python/inactive
+    - 60行代码实现多线程PDF转Word
+    - 基于pdf2docx实现
+  - https://github.com/fhaelmarinho/PDFtoDOCX
+- https://github.com/LianjiaTech/bella-domify /GPL/202511/python
+  - 一个贝壳开源的文档解析Python库。使用Python lib包形式引入，也可以服务化方式运行，支持多种文档格式的解析和转换。
+  - Markdown转换：将解析结果转换为Markdown格式
+  - 基于 pdf2docx 进行二次开发，基于 PyMuPDF 提取文本、图片、矢量等原始数据。并基于规则解析章节、段落、表格、图片、文本等布局及样式
+  - https://github.com/LianjiaTech/bella-rag /MIT/202512/python
+    - 基于llama-index框架的 RAG 最佳实践，通过业界领先的PDF结构化文档解析能力、混合检索、small2big、Contextual rag等策略实现了高精度的传统rag模式问答效果
+  - https://github.com/LianjiaTech/bella-knowledge /MIT/202512/java/ts
+    - Bella 体系内的知识管理中心，提供文件、数据集在内多类数据源的统一存储、管理能力
+    - 系统完全对标 OpenAI File API，在标准化接口的基础上，扩展了企业级的数据管理和知识处理功能
+
+- https://github.com/tmzncty/dots_ocr_suite /202512/python/js
+  - 基于 DotsOCR 库开发的 OCR（光学字符识别）处理工具箱，包含 PDF 转 Word (DOCX) 的完整应用
+  - 将 PDF 文档或图片转换为可编辑的 Word 文档或 Markdown 格式，支持复杂的版面分析（如表格、公式、图片等）。
+  - 批量转换：在“批量处理”标签页，您可以一次性拖入多个 PDF 文件。
+
+- https://github.com/rubensbraz/LogicPaper /CC-NC/202512/python
+  - https://rubensbraz.github.io/LogicPaper/
+  - LogicPaper is a high-performance document generation engine designed to automate complex reporting and contract workflows. 
+  - It merges structured data (Excel/JSON) with Microsoft Office templates (.docx, .pptx) or text-based files (.md, .txt) using an advanced Jinja2-based strategy system.
+  - Asynchronous Batch Processing: Handles large datasets via background workers to prevent request timeouts.
+  - State Persistence: Job tracking and session management powered by Redis.
+  - Multi-Format Support: Native rendering for Word, PowerPoint, Markdown, and Plain Text.
+  - PDF Engine: Integrated LibreOffice for high-fidelity conversion of Office documents to PDF.
+
+- https://github.com/NativeDocuments/docx-wasm-client-side /201902/js/inactive
+  - doc/docx to PDF conversion, client-side in-browser, using docx-wasm
+
+- https://github.com/Quorafind/typst-toolbox /apache2/202512/ts
+  - Convert Markdown to Typst and then to DOCX/PDF. Supports real-time preview and editing.
+
+- https://github.com/Prosperis/Resumier /apache2/202512/ts
+  - https://resumier.vercel.app/
+  - https://prosperis.github.io/Resumier/
+  - Modern resume/CV builder with themes, block editing, and PDF/DOCX export
+  - A modern, feature-rich resume builder application built with React, TypeScript, and TanStack Router.
+  - 依赖tanstack-router, zustand, jspdf, docx
+  - https://github.com/thomascrha/resume
+    - Anyone's personal resume pipeline; edit one markdown file and produce a release with a PDF and docx and publish the resulting HTML 
+  - https://github.com/hadishah123/resume-analyzer-ai
+    - Backend (FastAPI + NLP) A backend service that analyzes resumes and matches them with job descriptions using AI
+
+- https://github.com/adityadomle/ResearchX /202512/ts
+  - ResearchX is an AI-powered research document generator built with Next.js and TypeScript. 
+  - It uses modern UI (Tailwind + shadcn UI) and integrates AI (Gemini-style) to create complete research papers from customizable outlines, with export support to DOCX or PDF.
+
+- https://github.com/LeanerCloud/invoicr /MIT/202512/ts
+  - Tool that generates DOCX and PDF invoices from JSON configuration files
+  - Desktop GUI application (Tauri/React)
+  - LibreOffice (for PDF conversion)
+
+- https://github.com/pekrau/writethatbook /MIT/202512/python
+  - Web app for writing books using Markdown files allowing references and indexing, creating DOCX or PDF.
+
+- https://github.com/beladevo/libreoffice-docx-to-pdf /python
+  - Converting docx files to pdf using libreoffice engine, flask and docker
+
+- https://github.com/TrialAndErrorOrg/parsers /GPL/202512/ts
+  - https://convert.centeroftrialanderror.com/
+  - Monorepo for a suite of `unified`-compatible converters for converting between, from, and to .docx, JATS XML, LaTeX, and PDF
+  - Monorepo for a suite of parsers used in the Journal of Trial and Error.
+  - The goal is to automate the process of converting a manuscript from a word processor to a JATS XML file, which can then be used to generate a PDF and HTML version of the manuscript
+
+- https://github.com/cherfia/chromiumly /ts
+  - A lightweight Typescript library that interacts with Gotenberg's different modules to convert a variety of document formats to PDF files.
+
+- https://github.com/ChipiKaf/html-to-document /ISC/202512/ts
+  - https://html-to-document.vercel.app/
+  - A modular, open source library for converting HTML content into professional document formats. Initially focused on HTML-to-DOCX conversion, with planned support for PDF and XLSX.
+  - it features a core HTML parsing engine and separate format-specific modules, offering a unified API for seamless integration
+
+- https://github.com/tumbati/bukajs /MIT/202512/ts
+  - A document viewer library supporting PDF, DOCX, Images, XLSX, and PowerPoint files.
+  - Framework Agnostic: Works with React, Vue, Angular, or vanilla JS
+  - Advanced Image Editing: Professional-grade cropping, filtering, and aspect ratio controls
+  - Annotations: Highlights, notes, drawings with import/export
+  - Performance: Canvas rendering with text layer for PDFs
+  - Caching: Optional offline caching with LocalForage
 # utils
 - https://github.com/RussCoder/djvujs /js
   - https://djvu.js.org/
@@ -246,13 +334,6 @@ modified: 2022-11-11T10:46:41.519Z
   - The actual LaTeX to HTML conversion (the interesting bit) is done by Engrafo.
   - https://github.com/arxiv-vanity/engrafo
     - Convert LaTeX documents into beautiful responsive web pages using LaTeXML.
-# doc-parser-ai-llm
-- https://github.com/QuivrHQ/MegaParse /apache2/202408/python
-  - https://pypi.org/project/megaparse/
-  - a powerful and versatile parser that can handle various types of documents with ease
-  - Parse PDFs, Docx, PPTx in a format that is ideal for LLMs
-  - Files: ✅ PDF ✅ Powerpoint ✅ Word
-  - Content: ✅ Tables ✅ TOC ✅ Headers ✅ Footers ✅ Images
 # pdf-datasets
 - https://huggingface.co/datasets/HuggingFaceFW/finepdfs
   - https://github.com/huggingface/finepdfs /AGPL

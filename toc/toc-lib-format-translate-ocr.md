@@ -50,8 +50,6 @@ modified: 2025-12-19T12:43:21.150Z
   - 双栏Markdown编辑器：WebUI中提供左右分栏的原文/译文实时展示功能
   - 实时翻译进度展示：翻译过程中实时显示当前处理的段落数/总段落数
   - 中断保护与恢复：支持 Ctrl+C 安全中断，自动保存进度与未翻译内容
-  - https://github.com/python-fan/pdf2word /202407/python/inactive
-    - 60行代码实现多线程PDF转Word
 
 - https://github.com/jiananlan/PDFreformertool /AGPL/202507/python/inactive
   - pdf文档翻译并重排版软件，支持利用llm-api进行翻译
@@ -262,6 +260,14 @@ modified: 2025-12-19T12:43:21.150Z
   - Table of Contents View: Main view with the left-side table of contents (outline) panel open.
   - Synchronized highlighting (both views)
   - PySide6 (Qt-based GUI), PyMuPDF
+
+- https://github.com/zishengwu/vlm-ocr-webui /MIT/202508/python/ts/inactive
+  - using vlm to ocr pdf with user friendly ui
+  - parallel processing with multiple models to ensure high-precision recognition of diverse document content, including complex layouts
+  - Not only extracts standard text but also accurately recognizes and converts tables and mathematical formulas into LaTeX format
+  - Automatically organizes the extracted document content into clear, readable Markdown format, preserving the original layout and semantic structure
+  - Streaming Processing: Features advanced concurrent processing where multiple APIs work in parallel, while each API processes pages sequentially. Results are displayed immediately after each page is processed, eliminating the need to wait for the entire PDF to complete.
+  - The backend is built with FastAPI, supporting high-concurrency processing, while the frontend uses Next.js to provide a smooth user experience
 # solutions/vendors
 - https://github.com/PaddlePaddle/PaddleOCR /66.5kStar/apache2/202512/python/cpp
   - https://www.paddleocr.ai/
@@ -621,6 +627,9 @@ modified: 2025-12-19T12:43:21.150Z
   - https://readfrog.app/
   - 陪读蛙 - 开源沉浸式翻译
 
+- https://github.com/NEKOparapa/AiNiee /4.8kStar/AGPL/202512/python
+  - 一款专注于 AI 翻译的工具， 一键自动翻译游戏、书籍、字幕、文档等复杂长文本内容
+
 - https://github.com/PantsuDango/Dango-Translator /8.3kStar/LGPL > close/202510/python
   - https://translator.dango.cloud/
   - 基于OCR的生肉翻译软件
@@ -635,6 +644,12 @@ modified: 2025-12-19T12:43:21.150Z
 
 - https://github.com/nextai-translator/nextai-translator /24.8kStar/AGPL/202512/ts/rust
   - 基于 ChatGPT API 的划词翻译浏览器插件和跨平台桌面端应用
+
+- https://github.com/yihong0618/bilingual_book_maker /9kStar/MIT/202511/python
+  - an AI translation tool that uses ChatGPT to assist users in creating multi-language versions of epub/txt/srt files and books.
+  - This tool is exclusively designed for translating epub books
+  - [未来是否支持pdf格式 要是可以用这个看论文也会很快 ](https://github.com/yihong0618/bilingual_book_maker/issues/20)
+    - 核心还是 pdf 是不是可读的文版，而不只是图片？
 
 ## utils-translation
 

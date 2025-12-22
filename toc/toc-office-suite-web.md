@@ -190,14 +190,18 @@ modified: 2023-03-09T13:47:07.317Z
   - Vue 3 + TypeScript + Vite + Vitest + wsm + UnoCSS
   - 依赖vue3、pinia、naive-ui、handsontable.v12、nuxt、@vueuse/nuxt、unocss
 
-- https://github.com/Jarrettluo/all-docs /MIT/202401/js/vue
+- https://github.com/Jarrettluo/all-docs /MIT/202408/java/inactive
   - https://jiaruiblog.com/all-docs-page/
   - "All Docs" is a tool that enables online previewing, storage, and sharing of documents such as Word, Excel, PowerPoint, PDF, and images 
   - It supports full-text search for all document information. 
   - 开发了一个用于存储ppt、word、png等文档的，支持私有部属的知识库的检索。
-  - 后端技术：SpringBoot + MongoDB + ES
-  - https://github.com/Jarrettluo/all-docs-vue
-    - 前端技术：Vue + axios
+  - 后端技术：SpringBoot + MongoDB + ES + Redis
+  - https://github.com/Jarrettluo/all-docs-vue /MIT/202407/js/vue/inactive
+    - 前端技术：Vue + axios + iView
+    - pdf 预览方案: pdfjs-dist
+    - docx预览方案（对doc支持非常差）：docx-preview
+    - ppt预览方案（后端生成pdf后预览）：pdfjs-dist
+    - excel预览方案：vue-office/excel
 
 - https://github.com/react-office-viewer/react-office-viewer /MIT/202301/js
   - Temporary support 'pdf, xls, xlsx, docx'.
@@ -433,7 +437,7 @@ modified: 2023-03-09T13:47:07.317Z
   - [开源版和商业版有什么区别？ ](https://gitee.com/software-minister/jvs-knowledge-ui/issues/I839LC)
     - 无回答
 
-- https://github.com/phpk/godoos /AGPL/202502/go
+- https://github.com/phpk/godoos /358Star/AGPL/202510/go/ts/vue
   - https://gitee.com/godoos/godoos
   - https://godoos.com/
   - 一款高效的内网办公操作系统，内含word/excel/ppt/pdf/聊天/白板/思维导图等多个办公系统工具，支持AI创作/知识库和原生文件存储。

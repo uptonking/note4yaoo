@@ -200,7 +200,17 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## [Would a Ryzen AI Max+ 395 benefit from dedicated GPU? : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1ps2cjk/would_a_ryzen_ai_max_395_benefit_from_dedicated/)
+  - I just ordered a Framework desktop motherboard, first time I will have some hardware that let me play with some local AI.
+  - The motherboard has a 4x pci express port, so with an adapter I could put a gpu on it.
+  - I was wondering if it would benefit from a dedicated GPU like a 5060 or 5070 ti (or should it be an AMD GPU?)?
+
+- The 395 combined with the 128 GB of memory is a somewhat affortable System for use of "large" LLMs. It isn't the fasted, but it is a compromise and gets more t/s than LLMs larger than the VRAM of a regular GPU.
+  - A GPU combined with a 395 makes no real sense to me, except if you have a mix of models were some fit into the GPU VRAM. A real upgrade would be a GPU with similar sized VRAM than the 395 like a RTX 6000.
+
+- I guess an 395 together with an 5090 could be currently the best AI machine when it comes to cost and power consumption. It should do well with LLM (395 brings the RAM and the 5090 is a very capable extension) as well as with image generation tasks (5090 in lead, 395 is just the host). But at least the Framework case doesn't support it.
+  - The 5090 is limited to the 32 GB VRAM onboard. The performance advantage of the 5090 is lost by communication overhead.
+- Only when you have something communication heavy. When it's fitting in the 32 GB, like most text2image models, it'll work very well.
 
 - ## 🆚 [Studio + Air combo vs MacBook Pro : r/MacStudio _202512](https://www.reddit.com/r/MacStudio/comments/1pfl6hk/studio_air_combo_vs_macbook_pro/)
 - I used to have a MBP for my work and travel machine. After three years I realized I had it docked 90% of the time as I didn’t like taking it when I traveled so I got a cheap M2 Air for travel. 
@@ -1831,6 +1841,33 @@ modified: 2022-01-16T15:52:31.293Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Got me a 32GB RTX 4080 Super : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pstaoo/got_me_a_32gb_rtx_4080_super/)
+  - I took a risk and bought a modified RTX 4080 Super from the Chinese market for around 1200 USD / 1000 EUR. Which for me because I live in Europe, the cheapest RTX 5090 I can find is around 2500 USD / 2100 EUR.
+  - It's maybe not the best card for price per GB of VRAM considering the RTX 3090 is dropping a lot, but 32GB on one card for about half the price of a 5090 is nice. I do a lot of Diffusion model stuff, so it's great for that too.
+  - It works with the stock Nvidia driver, no messing around, it was just literally plug and play. Card seems really good quality, metal back plate and metal case. Fan sounds like a small jet engine.
+  - But running it around a month now and zero issues at all.
+  - I got mine from this seller, price went up 1000 RMB though since i bought it though. I used Superbuy to handle forwarding.
+
+- How is the temperature and what power limit. I am eyeing it for quite a while. It is about S$2400 in where i living.
+  - It gets around 70C max under load, seems to hit around 300W under full load. Hasn't been an issue, the blower is pretty loud though.
+
+- how’s the speed? 
+  - Same as a stock RTX 4080 super.
+
+- Look like they doubled the NAND chip on that GPU. Curious about how you set up the driver to receive all the VRAM.
+  - I didn't touch the driver, it's stock. I guess the RTX 4080 is special in that way, if you add bigger ~~NAND~~ GDDR VRAM chips, it gets recognized without much fuss.
+- the reason for this is that there is a 4090 Mobile with less vram for the gaming laptop market, and it uses the same chip as the desktop 4080. The 4080 super is just a more performant gpu compared to the stock 4080. The idea is that the vram size is "changeable" , so technically NVIDIA could put more vram in such cards, and they actually did it in professional gpu like the rtx 6000 ada series (same core as rtx 4090 desktop gpu with more vram). And such that the driver must be able to recognize the vram to function properly.
+
+- I hope NVIDIA doesn't disable it in the GPU mainboard in the future like Apple did in the mac studio ssd slot (mac studio has a ssd slot but it refuse to recognize any ssd even from other mac studio.)
+
+- it's not nand... it's gddr dram
 
 - ## [NVIDIA RTX PRO 5000 Blackwell GPU with 72GB GDDR7 memory is now released : r/comfyui _202512](https://www.reddit.com/r/comfyui/comments/1prz95a/nvidia_rtx_pro_5000_blackwell_gpu_with_72gb_gddr7/)
 - Nvidia seems to have settled on $100/GB of vram. AMD will sell you a 7900xtx w/ 48gb of vram for $65/GB. But it's a triple slot and as far as rocm has come, the biggest improvements are kept back for the mi instinct series.

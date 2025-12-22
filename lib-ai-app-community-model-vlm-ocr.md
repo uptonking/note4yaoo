@@ -270,7 +270,7 @@ modified: 2025-11-06T18:49:13.977Z
 - I was really looking forward to benchmarking this model, until I saw it's limitations, on your point here "Model generate hallucinated text, likely because of the projector being incorrect" I don't think it's due to the projector, I cloned your branch to see why it's hallucinating, it seems to be due to the lack of pre-processing input done by this model "PP-DocLayoutV2"... PaddleOCR-VL is not an end to end VLM, it relies on "PP-DocLayoutV2" for detection, it's basically a glorified version of LayoutLM.
   - Yes I also almost come to the same conclusion. The main issue is that PaddleOCR is not just one monolithic model like Qwen or Deepseek-OCR, but it's more like a pipeline of multiple models glued together. Therefore, I don't think we currently have the infrastructure to bring it into llama.cpp.
 
-- [PaddlePaddle/PaddleOCR-VL · GGUF or MLX support?](https://huggingface.co/PaddlePaddle/PaddleOCR-VL/discussions/2)
+- 🐛 [PaddlePaddle/PaddleOCR-VL · GGUF or MLX support?](https://huggingface.co/PaddlePaddle/PaddleOCR-VL/discussions/2)
   - We really would love to convert this model to gguf, mlx format, to make it more accessible. 
   - It has two components, one is a 0.9b VLM, another is a layout analysis model. 
   - For the VLM, it's in pytorch/transformer compatible format, and you can find the pytorch implementation in this repo, and you can run it using vLLM, and I think it's possible to convert it into gguf/mlx with not too much efforts. 

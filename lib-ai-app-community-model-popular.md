@@ -516,6 +516,8 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
+- ## 
+
 - ## [NVIDIA Nemotron-3-Nano-30B LLM Benchmarks Vulkan and RPC : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1prxpcx/nvidia_nemotron3nano30b_llm_benchmarks_vulkan_and/)
   - GPUs: Nvidia 1080Ti 11GB, Nvidia P102-100 10GB, AMD Ryzen 6800H CPU, 64gb DDR5 RAM with iGPU 680M and AMD Radeon 7900 GRE 16GB.
   - I'm impressed on being able to run the Q6_K model at a very respectable speed across 2 system and 3 GPUs.
@@ -2193,6 +2195,14 @@ free 5GB postgres via aiven.io
 - ## 
 
 - ## 
+
+- ## [As 2025 wraps up, which local LLMs really mattered this year and what do you want to see in 2026? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1psd918/as_2025_wraps_up_which_local_llms_really_mattered/)
+- This is the year when open source VLMs came of age. There are good, small (and large) open VLMs that can handle a ton of tasks, and it will be fun to see how they are productized in 2026 and beyond.
+  - This is the year when open source VLMs came of age. There are good, small (and large) open VLMs that can handle a ton of tasks, and it will be fun to see how they are productized in 2026 and beyond.
+
+- Both devstrals, gpt-oss releases along with GLM air and the lower param qwen  models pouch above their weight. 
+
+- Phi-4-25B (ehristoforu's Phi-4 self-merge) became my go-to for in-VRAM STEM Q&A (mostly physics questions), and it still is.
 
 - ## [Is Gemma 9B still the best dense model of that size in December 2025? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1pqndio/is_gemma_9b_still_the_best_dense_model_of_that/)
 - There is no such thing as the best model. It entirely depends on your use case and personal preference.

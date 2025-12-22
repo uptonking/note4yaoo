@@ -1895,7 +1895,21 @@ Q8（8 位）	    16GB+	   接近原始版本
 
 - ## 
 
-- ## 
+- ## ⏳ [Let’s reconstruct and document the history of open generative media before we forget it : r/StableDiffusion _202512](https://www.reddit.com/r/StableDiffusion/comments/1prp3cz/lets_reconstruct_and_document_the_history_of_open/)
+  - If you have been here for a while you must have noticed how fast things change. Maybe you remember that just in the past 3 years we had AUTOMATIC1111, Invoke, text embeddings, IPAdapters, Lycoris, Deforum, AnimateDiff, CogVideoX, etc. 
+  - So many tools, models and techniques that seemed to pop out of nowhere on a weekly basis, many of which are now obsolete or deprecated.
+  - Personally, I’ve been here since the early days of SD1.5 and I’ve observed the evolution of this community together with rest of the open source AI ecosystem. I’ve seen the impact that things like ComfyUI, SDXL, Flux, Wan, Qwen, and now Z-Image had in the community and I’m noticing a shift towards things becoming more centralized, less open, less local. 
+  - There are several reasons why this is happening, maybe because models are becoming increasingly bigger, maybe unsustainable businesses models are dying off, maybe the people who contribute are burning out or getting busy with other stuff, who knows? 
+  - ComfyUI is focusing more on developing their business side, Invoke was acquired by Adobe, Alibaba is keeping newer versions of Wan behind APIs, Flux is getting too big for local inference while hardware is getting more expensive…
+
+- Comfyui became big because it was the first webui that supported SDXL with only 8GB of VRAM (on the A1111 it took me more than 5 minutes to generate a single image, and at that time I was still excited lol)
+  - SD 1.5 was leaked. The company was very afraid because it wasn't secure enough, the dataset had almost no censorship.
+  - It took about a year / a year and a half until really good SDXL models appeared.
+  - SD 3 was the "end" of Stability. The model was terrible at anatomy, it generated deformed people.
+  - Emad, the former CEO of Stability, was very active on Reddit. He even answered a question of mine, stating that SD 3 cost 10 million to train.
+- Yeah comfyannonymous was hired by Stability AI and they were using ComfyUI internally to test things, so when SDXL came out, it was already implemented and optimized for ComfyUI. I think there was even a leaked version of SDXL before the official release.
+
+- I've been here since before the SD 1.5 days, and I don't mean Stable Diffusion 1.4. Back before transformer-based models were the hot new thing, there were Generative Adversarial Networks. They're not as controllable as transformer models, but they're the basis for things like https://www.thispersondoesnotexist.com. My personal experience with them involves doing things like turning a photograph I took in summer into a winter scene.
 
 - ## 有分析称，GPT-4o 图片生成效果这么好是因为采用了自回归模型（autoregressive model）而不再是扩散模型（diffusion model）。
 - https://x.com/jason2be/status/1905834259547361645

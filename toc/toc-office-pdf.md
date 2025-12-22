@@ -36,6 +36,8 @@ modified: 2021-01-04T17:26:43.784Z
     - *WIP* Design pdfs and generate code for jspdf
   - https://github.com/simonbengtsson/jsPDF-AutoTable
     - adds the ability to generate PDF tables either by parsing HTML tables or by using Javascript data directly. 
+  - https://github.com/Lulzx/tinypdf /MIT/202512/ts
+    - Minimal PDF creation library. <400 LOC, zero dependencies, makes real PDFs.
 
 - pdfkit /10.5kStar/MIT/202512/js
   - https://github.com/foliojs/pdfkit
@@ -233,6 +235,16 @@ modified: 2021-01-04T17:26:43.784Z
 
 - https://github.com/GoDinRyu/editor.md-electron /js
   - 基于Editor.md的markdown编辑客户端，支持docx转化md，导出到pdf文档。
+
+- https://github.com/JakubMelka/PDF4QT /1.2kStar/LGPLv3 > MIT/202512/cpp
+  - https://jakubmelka.github.io/
+  - Open source PDF editor.
+  - This software is consisting of PDF rendering library, and several applications, such as advanced document viewer, command line tool, and document page manipulator application. 
+  - Software is implementing PDF functionality based on PDF Reference 2.0. 
+  - Software works on Microsoft Windows / Linux.
+  - As of April 27, 2025, The change to the MIT License was made to provide greater freedom and flexibility for both open-source and commercial use
+  - qt LGPL
+  - libjpeg, OpenJPEG, Blend2D
 # generator
 - https://github.com/rkusa/pdfjs /MIT/202312/js
   - A Portable Document Format (PDF) generation library targeting both the server- and client-side.
@@ -372,7 +384,7 @@ modified: 2021-01-04T17:26:43.784Z
   - https://github.com/chastain1337/pdf_toolbox
     - An electron-react app for manipulating PDFs.
 
-- https://github.com/scribusproject/scribus /cpp
+- https://github.com/scribusproject/scribus /542Star/GPLv2/202512/cpp
   - open source page layout program which produces commercial grade output in PDF and Postscript, primarily, though not exclusively, for Linux.
 
 - https://github.com/sagargurtu/lector /201908/js
@@ -493,6 +505,17 @@ modified: 2021-01-04T17:26:43.784Z
 
 - https://github.com/plainlab/plainprinter /GPLv3/202309/ts
   - Take multiple screenshots and convert them into a PDF file
+
+- https://github.com/pi-dal/ebook-toc /202511/python
+  - a Python CLI that extracts a book’s Table of Contents (TOC) from PDFs using a Vision-Language Model (VLM), then optionally embeds the TOC back into the PDF as bookmarks. 
+  - The current implementation integrates SiliconFlow’s Qwen3‑VL‑32B‑Instruct for TOC detection and printed‑page offset estimation. 
+  - It supports scanned PDFs by falling back to page images when text is unavailable.
+  - Powered by `PyMuPDF` for PDF parsing and bookmark embedding.
+  - Input handling (ebooktoc/cli.py): validates local files or downloads remote PDFs
+  - Page extraction (ebooktoc/vlm_api.py): extracts per‑page text (or renders JPEG when text is empty), batches VLM requests, and parses JSON robustly.
+  - TOC parsing (ebooktoc/toc_parser.py): normalizes entries, deduplicates, filters, and infers missing trailing numeric targets.
+  - Offset and mapping (ebooktoc/fingerprints.py, ebooktoc/cli.py): computes dominant dimensions, builds a canonical index map (logical → PDF), and estimates printed‑page offsets by sampling pages with the VLM; stores toc, page_offset, fingerprints, and page_map in JSON.
+  - Apply phase (ebooktoc/pdf_writer.py, ebooktoc/cli.py): rebuilds the canonical map, refines the offset, resolves target pages, and writes bookmarks.
 # examples
 - https://github.com/AnsellMaximilian/electron-excel-to-pdf-invoice-generator /ts
   - A desktop invoice generator that turns excel files (with a specifically formatted workbook) into pdf invoices for every customer.
@@ -517,6 +540,14 @@ modified: 2021-01-04T17:26:43.784Z
 
 - https://github.com/surveyjs/survey-pdf
   - Supplementary component to the SurveyJS Form Library to download surveys as PDF files and generate editable PDF forms.
+
+- https://github.com/seanpedrick-case/doc_redaction /34Star/AGPL/202512/python
+  - https://huggingface.co/spaces/seanpedrickcase/document_redaction_vlm
+  - Redact PDF/image-based documents, Word, or CSV/XLSX files using a graphical user interface.
+  - To extract text from documents, the 'Local' options are `PikePDF` for PDFs with selectable text, and OCR with Tesseract. 
+    - Use AWS Textract to extract more complex elements e.g. handwriting, signatures, or unclear text. 
+    - `PaddleOCR` and VLM support is also provided 
+  - For PII(personally identifiable information) identification, 'Local' (based on `spaCy`) gives good results if you are looking for common names or terms, or a custom list of terms to redact 
 # office
 - databyss /39Star/AGPLv3/202409/ts/js/inactive
   - https://github.com/databyss-org/databyss
@@ -684,6 +715,12 @@ modified: 2021-01-04T17:26:43.784Z
   - Supports running in a pure CPU environment, and also supports GPU(CUDA)/NPU(CANN)/MPS acceleration
   - Compatible with Windows, Linux, and Mac platforms
   - https://huggingface.co/spaces/opendatalab/MinerU
+  - https://github.com/RapidAI/RapidDoc /apache2/202512/python
+    - RapidDoc 是一个轻量级、专注于文档解析的开源框架，支持 OCR、版面分析、公式识别、表格识别和阅读顺序恢复 等多种功能。
+    - 框架基于 `Mineru` 二次开发，移除 VLM，专注于 Pipeline 产线下的高效文档解析，在 CPU 上也能保持不错的解析速度。
+    - 基于 MinerU 改造而来，已移除原项目中的 YOLO 模型，并替换为 PP-StructureV3 系列 ONNX 模型。 由于已移除 AGPL 授权的 YOLO 模型部分，本项目整体不再受 AGPL 约束。
+    - 项目所使用的核心模型主要来源于 PaddleOCR 的 PP-StructureV3 系列（OCR、版面分析、公式识别、阅读顺序恢复，以及部分表格识别模型），并已全部转换为 ONNX 格式，支持在 CPU/GPU 上高效推理。
+    - 基于gradio开发的webui，界面简洁，仅包含核心解析功能，免登录
 
 - https://github.com/datalab-to/marker /27.3kStar/GPLv3/202508/python
   - https://www.datalab.to/
@@ -726,6 +763,13 @@ modified: 2021-01-04T17:26:43.784Z
   - Automatically identifies headers, paragraphs, tables, and images
   - Extracts images from PDFs
   - [Build a Multimodal RAG using — PyMuPDF4LLM-llamaindex-Qdrant _202411](https://ai.gopubby.com/build-a-multimodal-rag-using-pymupdf4llm-llamaindex-qdrant-e9d23a4409cc)
+
+- https://github.com/QuivrHQ/MegaParse /apache2/202408/python/inactive
+  - https://pypi.org/project/megaparse/
+  - a powerful and versatile parser that can handle various types of documents with ease
+  - Parse PDFs, Docx, PPTx in a format that is ideal for LLMs
+  - Files: ✅ PDF ✅ Powerpoint ✅ Word
+  - Content: ✅ Tables ✅ TOC ✅ Headers ✅ Footers ✅ Images
 # pdf-video
 - [PDF to Brainrot | MemenomeLM](https://www.memenome.gg/)
   - 把 PDF 转化为易上瘾的视频
