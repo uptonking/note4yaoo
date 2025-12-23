@@ -165,7 +165,31 @@ modified: 2023-04-04T22:39:45.442Z
 - https://github.com/hst-Sunday/tubed /202512/ts
   - 一个图床服务、文件托管服务，适合在VPS上的简单存储服务
 # images-utils
-- https://github.com/TonySpegel/image-comparison /lit
+- https://github.com/sneas/img-comparison-slider /822Star/MIT/202406/ts/inactive
+  - https://img-comparison-slider.sneas.io/examples.html
+  - Image comparison slider. Compare images before and after. 
+  - Supports React, Vue, Angular.
+  - Mobile friendly
+
+- https://github.com/kylewetton/image-compare-viewer /583Star/MIT/202410/js/NoDeps/inactive
+  - https://image-compare-viewer.netlify.com/
+  - A fully responsive slider to compare before and after images for grading, retouching and all else. 
+  - Mobile and fluid container friendly
+
+- https://github.com/nerdyman/react-compare-slider /MIT/202512/ts/NoDeps
+  - https://react-compare-slider.js.org/
+  - A slider component to compare any two React components in landscape or portrait orientation. 
+  - It supports custom images, videos... and everything else.
+  - Supports responsive images and any other React components (picture, video, canvas, iframe etc.)
+  - Supports landscape and portrait orientations
+  - Unopinionated & fully customizable – optionally use your own components and styles
+
+- https://github.com/tam315/react-compare-image /MIT/202507/ts/inactive
+  - https://react-compare-image.yuuniworks.com/
+  - React component to compare two images with a slider
+  - https://github.com/tam315/vue-compare-image /archived
+
+- https://github.com/TonySpegel/image-comparison /MIT/202304/ts/lit/inactive
   - Compare two images using a slider, an overlay, or a side by side split view.
   - This webcomponent follows the open-wc recommendation
 
@@ -205,7 +229,7 @@ modified: 2023-04-04T22:39:45.442Z
 
 ## annotation/labelling
 
-- mirador /400Star/Apache2/202105/js
+- mirador /593Star/apache2/202512/js
   - https://github.com/projectmirador/mirador
   - https://projectmirador.org/
   - https://mirador-dev.netlify.app/__tests__/integration/mirador/

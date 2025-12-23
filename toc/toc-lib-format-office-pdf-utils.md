@@ -318,6 +318,12 @@ modified: 2022-11-11T10:46:41.519Z
 - https://github.com/Drakonis96/notypdf /GPL/202507/ts
   - NotyPDF helps you read pdf, extract and save quotes (or their translation) from PDF documents to your Notion database
   - A built-in document manager keeps everything organized while backups ensure your configuration is safe.
+
+- https://github.com/vslavik/diff-pdf /4.1kStar/GPL/202409/cpp/inactive
+  - http://vslavik.github.io/diff-pdf
+  - A simple tool for visually comparing two PDF files
+  - produces a PDF file with visually highlighted differences:
+    - pdf上显示红绿色文字表示2个pdf的差异
 # latex
 - https://github.com/dginev/ar5iv /MIT/rust
   - https://ar5iv.org/

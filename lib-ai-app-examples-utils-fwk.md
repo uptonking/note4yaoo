@@ -683,6 +683,13 @@ modified: 2025-02-21T18:20:42.624Z
   - This approach slows the stream down a little and does generally reduce the jitter (such as pauses and bursts in the token stream). The approach was made based on educated guess-work about what might work and evaluated by eye-balling it instead of in a systematic manner. It is not perfect and sometimes the queue is exhausted only to find that we are waiting on a token. 
   - Another approach might be to extend the function that calculates the delay length by looking at the rate of increase/decrease of the queue size, as this would allow the algorithm to consider 'the future' in its decisions.
   - I experimented trying to put this on the back-end using ai in a Next.js app and a client-side React library on the UI. In order to do so, I had to transform to and from AsyncIterator and ReadableStream
+# eval/prompt
+- https://github.com/promptfoo/promptfoo /9.6kStar/MIT/202512/ts
+  - https://promptfoo.dev/
+  - promptfoo is a developer-friendly local tool for testing LLM applications. 
+  - Stop the trial-and-error approach - start shipping secure, reliable AI apps.
+  - Test your prompts and models with automated evaluations
+  - Compare models side-by-side (OpenAI, Anthropic, Azure, Bedrock, Ollama, and more)
 # model-proxy
 - https://github.com/lymanzhao/Ollama-serve /202503/python
   - 一个 Ollama转发代理，用于为原生 Ollama 服务添加 API 密钥认证功能。
