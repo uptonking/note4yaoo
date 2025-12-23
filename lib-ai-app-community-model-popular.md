@@ -516,7 +516,12 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [GLM 4.7 vs. Minimax M2.1. My test & subscription decision : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1ptq7rc/glm_47_vs_minimax_m21_my_test_subscription/)
+  - The Test: I ran both models on the same prompt (in Claude Code) to generate e2e tests for a new feature I'm implementing in an application I'm building. Nothing complicated, two tables (1: N relationship), model, repo, service, controller, validator, routes. Pretty standard stuff.
+  - I set up an agent with all the project's patterns, examples, and context for e2e testing. The models' job was to review the implementation done and instruct the agent to generate the new e2e.
+  - GLM 4.7: Ran for 70 minutes straight without finishing. Tests kept failing. I've had enough and stopped it.
+  - Minimax M2.1: Finished in 40 minutes with clean, working tests.
+  - The interesting part is, even though GLM 4.7 failed to finish, it actually caught a flaw in my implementation during testing. Minimax M2.1, on the other hand, just bent the tests to make them pass without flagging the design issue.
 
 - ## [NVIDIA Nemotron-3-Nano-30B LLM Benchmarks Vulkan and RPC : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1prxpcx/nvidia_nemotron3nano30b_llm_benchmarks_vulkan_and/)
   - GPUs: Nvidia 1080Ti 11GB, Nvidia P102-100 10GB, AMD Ryzen 6800H CPU, 64gb DDR5 RAM with iGPU 680M and AMD Radeon 7900 GRE 16GB.

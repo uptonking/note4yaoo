@@ -806,6 +806,10 @@ modified: 2025-11-30T17:27:16.720Z
   - Anthropic's Contextual Retrieval implementation with visual chunk comparison. Preview context enrichment before/after embedding.
   - For too long, RAG has been about finding chunks, not understanding documents. AutoLlama changes that. 
   - Built on Anthropic's breakthrough contextual retrieval methodology, it's the first JavaScript-first RAG framework that actually comprehends your documents the way humans do.
+
+- https://github.com/RapidFireAI/rapidfireai /apache2/python/ts
+  - https://rapidfire.ai/
+  - RapidFire AI is a new experiment execution framework that transforms your AI customization experimentation from slow, sequential processes into rapid, intelligent workflows with hyperparallelized execution, dynamic real-time experiment control, and automatic system optimization.
 # rag-memory
 - https://github.com/jakops88-hub/Long-Term-Memory-API /202512/ts
   - A Memory Server for AI Agents. Runs on Postgres + pgvector. 
@@ -919,6 +923,9 @@ modified: 2025-11-30T17:27:16.720Z
   - 一个本地优先的知识笔记工具，灵感来自 Google NotebookLM。它将你的 PDF、Word 文档、PowerPoint 和网页转化为可提问、可引用、可追溯的个人知识库。
   - 自定义 LLM - 支持 OpenAI、Claude、本地模型等多种 AI 服务
   - 使用 SQLite 本地数据库，快速可靠
+  - [I built a local-first NotebookLM-style app without Docker (Electron-based) : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1ptj78l/i_built_a_localfirst_notebooklmstyle_app_without/)
+    - One of the main reasons I started KnowNote was that many similar projects (including open-notebook) rely on Docker-based setups, which can be a bit intimidating for non-technical users.
+    - My goal here was to explore a lighter, desktop-first approach using Electron, so people can just download and run it without dealing with containers.
 
 - https://github.com/arc53/DocsGPT /17.4kStar/MIT/202511/python/ts/提交多
   - https://app.docsgpt.cloud/

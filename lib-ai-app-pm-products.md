@@ -353,7 +353,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 无充值，邀请注册来获得更多额度
     - tg群讨论的内容看，作者似乎精力不在anyrouter而在开发商用产品
     - 用户较多，有提供vscode插件无法使用的解决方案
-  - [Code Router](https://api.code-relay.com/console) , 无法签到和更多额度
+  - [Code Router](https://api.code-relay.com) , 无法签到和更多额度
     - [Code Router](https://api.codemirror.codes/)
     - 支持 Claude Code & CodeX
   - 📌 [b4u API](https://b4u.qzz.io/console), 每日转盘
@@ -555,7 +555,7 @@ modified: 2025-03-22T16:10:24.856Z
       - volo api 吧，基于 new api 改的，但是 v1 开始好像就完全重写了
       - VoAPI 一直是闭源的，甚至好像只放出 Docker 的部署方式，连编译后的可执行文件都不发布的，截止到我最后一次看时是这样的，不知道后续有没有改变和有没有收费计划
 
-## llm-api-official-router
+## llm-api-official/router/gateway
 
 - 📌 [OpenRouter API Rate Limits ](https://openrouter.ai/docs/api-reference/limits)
   - tldr: rpd-1000 
@@ -611,10 +611,6 @@ modified: 2025-03-22T16:10:24.856Z
     - Limits: 30 requests/minute, 2,000 requests/day
     - Use Codestral via your favorite Code completion tool for free.
     - Codestral is available in select code-completion plugins but can also be queried directly. 
-
-- [Cloudflare Workers AI Pricing](https://developers.cloudflare.com/workers-ai/platform/pricing/)
-  - Our free allocation allows anyone to use a total of 10, 000 Neurons per day at no charge. 
-  - Workers AI is included in both the Free and Paid Workers plans and is priced at $0.011 per 1, 000 Neurons.
 
 - 📌 [魔搭推理API-Inference API推理介绍 · 文档中心](https://modelscope.cn/docs/model-service/API-Inference/intro)
   - tldr: rpd-200~500
@@ -692,11 +688,35 @@ modified: 2025-03-22T16:10:24.856Z
   - 输入和输出Tokens均计入消耗, 流式接口和段式接口消耗相同
   - 单次请求限制 输出文本：最大8K Tokens
 
+- [腾讯混元大模型 混元生文计费概述 ](https://cloud.tencent.com/document/product/1729/97731)
+  - Hunyuan-lite 免费使用
+  - 经常拒绝用户的直接请求，而回答其他内容
+  - [腾讯混元大模型 混元 OpenAI 兼容接口相关调用示例](https://cloud.tencent.com/document/product/1729/111007)
+  - [腾讯混元大模型全面降价！混元-lite 即日起免费 _202405](https://cloud.tencent.com/developer/article/2419914)
+
+- [百度千帆 - 百度智能云控制台](https://console.bce.baidu.com/qianfan/modelcenter/model/buildIn/list)
+  - ERNIE-Lite 免费使用， 非开源， 上下文长度: 6K tokens + 2K tokens
+  - [百度千帆 - 百度智能云控制台](https://console.bce.baidu.com/qianfan/modelcenter/model/buildIn/detail/am-ju3hi4ts39u9?tab=version)
+
+- [讯飞星火大模型API](https://xinghuo.xfyun.cn/sparkapi)
+  - 免费1个模型: Spark Lite 
+  - QPS: 2
+  - [星火大模型，燃情双十一-讯飞开放平台](https://www.xfyun.cn/activities/discount)
+
 - [Moonshot AI 开放平台 - 充值与限速](https://platform.moonshot.cn/docs/pricing/limits)
   - 赠送用完后需要充值
 
 - [七牛 AI 大模型推理服务 - 七牛云](https://www.qiniu.com/ai/chat)
   - 采用按量计费的模式，根据实际使用的 token 数量收费，每月初出账。新用户享有免费额度
+
+- [Xiaomi MiMo 开放平台](https://platform.xiaomimimo.com/#/docs/pricing)
+  - 平台公测期间，模型推理服务免费
+
+- [Cloudflare Workers AI Pricing](https://developers.cloudflare.com/workers-ai/platform/pricing/)
+  - Our free allocation allows anyone to use a total of 10, 000 Neurons per day at no charge. 
+  - Workers AI is included in both the Free and Paid Workers plans and is priced at $0.011 per 1, 000 Neurons.
+  - gpt-oss-120b, 31818 neurons per M input tokens
+  - gpt-oss-20b, 18182 neurons per M input tokens
 
 - [GitHub: Prototyping with AI models ](https://docs.github.com/en/github-models/use-github-models/prototyping-with-ai-models#rate-limits)
   - 限制很严格
@@ -716,6 +736,12 @@ modified: 2025-03-22T16:10:24.856Z
 - [Cohere API Keys and Rate Limits](https://docs.cohere.com/docs/rate-limits)
   - all endpoints are limited to 1000 calls per month with a trial key
 
+- [AIHubMix - Models](https://aihubmix.com/models)
+  - 免费模型不多，大多coding相关
+  - free-per-model: 5rpm, 500rpd, 1Mtpd
+  - mimo-v2-flash-free
+  - coding-glm-4.7-free, coding-glm-4.6-free, coding-minimax-m2-free, kimi-for-coding-free
+
 - [现在做大模型，还有靠谱且免费的 api 接口吗？ - 知乎](https://www.zhihu.com/question/662092970)
   - 纯粹免费的API也是有的，但是多限于轻量级的大模型，比如智谱AI的flash模型，Google的 Gemini 1.5 Flash。
   - 目前主流的 API 接口都是采用相同的套路，即免费注册送固定的额度，然后再收费的策略。我反正是没有看到纯免费一直可用的 API 接口。
@@ -731,6 +757,14 @@ modified: 2025-03-22T16:10:24.856Z
     - 一句话来说，这个芯片就是玩了个用空间换时间的把戏，把模型权重和中间数据都放在了 SRAM 里面，而不是 HBM 或者 DRAM。
     - 这是我 8 年前在微软亚洲研究院（MSRA）就做过的事情，适用于当时的神经网络，但真的不适合现在的大模型。因为基于 Transformer 的大模型需要很多内存用来存储 KV Cache。
     - Groq 芯片虽然输出速度非常快，但由于内存大小有限，batch size 就没法很大，要是算起 $/token 的性价比来，未必有竞争力。
+
+## llm-2api
+
+- [OpenCode - Zen](https://opencode.ai/docs/zen/)
+  - Zen works like any other provider in OpenCode. You login to OpenCode Zen and get your API key.
+  - if you are using a model through something like OpenRouter, you can never be sure if you are getting the best version of the model you want.
+  - We tested a select group of models and talked to their teams about how to best run them.
+  - OpenCode Zen is an AI gateway that gives you access to these models.
 # ai-products-hunt
 
 # more

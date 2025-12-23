@@ -456,7 +456,7 @@ modified: 2025-12-11T18:10:23.710Z
   - 📱 [Mobile port _202506](https://github.com/hotovo/aider-desk/issues/242)
     - 👷 202511: Server solution has been added some time ago, so it's possible to use running AiderDesk instance from mobile.
 
-- https://github.com/sst/opencode /28.7kStar/MIT/202510/go/ts
+- https://github.com/sst/opencode /28.7kStar/MIT/202510/zig/ts
   - https://opencode.ai/
   - 📌 The AI coding agent built for the terminal
   - It's very similar to Claude Code in terms of capability. Here are the key differences:
@@ -464,7 +464,14 @@ modified: 2025-12-11T18:10:23.710Z
     - Not coupled to any provider. Although Anthropic is recommended
     - Out of the box LSP support
     - A client/server architecture. support remote control
+  - 🎯 [Release v1.0.0 _20251101](https://github.com/sst/opencode/releases/tag/v1.0.0)
+    - 1.0 is a complete rewrite of the TUI.
+    - We moved from the go+bubbletea based TUI which had performance and capability issues to an in-house framework (OpenTUI) written in zig+solidjs.
+    - https://github.com/sst/opentui /MIT/zig/ts
+    - The new TUI works like the old one since it connects to the same opencode server.
   - 🍴 forks
+  - https://github.com/AllAboutAI-YT/pi-terminal /MIT/202508/go/ts/inactive
+    - Prompt Injection Terminal
   - https://github.com/IgorWarzocha/opencode-chat
     - [OpenCode Chat - a slimmer version of OC. From 20k tokens init to 5k. : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1oclqet/opencode_chat_a_slimmer_version_of_oc_from_20k/)
     - The entire prompt stack and tool descriptions have been rewritten around chatting instead of coding. 
@@ -486,6 +493,8 @@ modified: 2025-12-11T18:10:23.710Z
 
 - https://github.com/milisp/opencode-gui /MIT/202510/ts/inactive
   - A lightweight Tauri GUI for Opencode CLI
+  - https://github.com/chriswritescode-dev/opencode-manager
+    - Mobile-first web interface for OpenCode AI agents. Manage, control, and code with multiple OpenCode agents from any device - your phone
 
 - https://github.com/chriswritescode-dev/opencode-web /MIT/202512/ts
   - A full-stack web application for running OpenCode in local processes, controllable via a modern web interface. 
@@ -496,6 +505,8 @@ modified: 2025-12-11T18:10:23.710Z
   - Tool execution display with enhanced diff viewing for code changes
 - https://github.com/marmotz-dev/opencode-ui /202511/ts/inactive
   - a simple yet powerful desktop client for Opencode
+  - https://github.com/hosenur/portal
+    - Access OpenCode through TailScale on your web browser. (Mobile First)
 
 - https://github.com/MoonshotAI/kimi-cli /1.9kStar/apache2/202510/python
   - a new CLI agent that can help you with your software development tasks and terminal operations.
@@ -547,6 +558,18 @@ modified: 2025-12-11T18:10:23.710Z
 
 - https://github.com/AIPowerGrid/grid-code /202508/ts/inactive
   - a coding agent powered by the grid, a decentralized network of AI workers
+
+- https://github.com/superset-sh/superset /apache2/202512/ts
+  - https://superset.sh/
+  - A Terminal Built for Coding Agents
+  - Run 10+ CLI coding agents like Claude Code, Codex, etc. in parallel on your machine. Spin up new coding tasks while waiting for your current agent to finish. Quickly switch between tasks as they need your attention.
+  - For each parallel tasks, Superset uses git worktrees to clone a new branch on your machine.
+
+- https://github.com/erans/lunaroute /apache2/202511/rust
+  - LunaRoute is a high-performance local proxy for AI coding assistants like Claude Code, OpenAI Codex CLI, and OpenCode. 
+  - Get complete visibility into every LLM interaction with zero-overhead passthrough, comprehensive session recording, and powerful debugging capabilities.
+  - Accepts both OpenAI and Anthropic formats simultaneously
+  - See Everything Your AI Does
 # background-ai
 - https://github.com/ishaan1013/shadow /MIT/202508/ts
   - https://shadowrealm.ai/

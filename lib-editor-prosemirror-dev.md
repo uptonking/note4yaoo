@@ -130,6 +130,7 @@ modified: 2021-05-06T09:39:53.522Z
   - rewrite with remark
   - rewrite with codemirror/lezer
   - mdx
+  - md文本在hover时 和 富文本渲染元素 自动高亮对应显示
 
 - pdf
   - search pdf

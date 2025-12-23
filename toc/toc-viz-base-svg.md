@@ -92,6 +92,16 @@ modified: 2020-10-05T06:18:21.639Z
   - Client-side processing — Fast, secure, and private—everything runs in your browser.
   - No more broken links — The app embeds raw SVG content into a single file so external resources can’t break your layout.
 # ai-svg 👾
+- https://github.com/antvis/Infographic /365Star/MIT/202512/ts
+  - https://infographic.antv.vision/
+  - AntV Infographic is AntV's next-generation declarative infographic visualization engine. 
+  - AI-friendly: Configuration and syntax are tuned for AI generation, provide concise prompts, and support AI streaming output and rendering
+  - ~200 built-in infographic templates, data-item components, and layouts to build professional infographics in minutes
+  - Theme system: Hand-drawn, gradients, patterns, multiple preset themes, plus deep customization
+  - Includes an editor for infographics so AI-generated results can be edited further
+  - Renders with SVG by default to ensure visual fidelity and easy editing
+  - 依赖 d3、@antv/hierarchy、culori、roughjs、round-polygon
+
 - https://github.com/CompendiumLabs/gum /MIT/202509/js/inactive
   - Iterative graphic design with AI. Based on gum.js, a grammar for SVG creation.
   - Gum provides a visual language for creating figures and diagrams. This gives LLMs the ability to rapdily express themselves visually in a way that can be integrated with their text output.

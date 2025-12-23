@@ -369,6 +369,12 @@ modified: 2025-02-21T18:20:42.624Z
   - 多站点支持：管理多个 AI API 中转站
   - 额度查询：实时查询 API 使用额度（目前仅限 newapi）
 
+- https://github.com/fruitbars/simple-one-api /2.3kStar/MIT/202506/go/js
+  - OpenAI 接口接入适配，支持千帆大模型平台、讯飞星火大模型、腾讯混元以及MiniMax、Deep-Seek，等兼容OpenAI接口，仅单可执行文件，配置超级简单，一键部署，开箱即用
+  - 目前市面上免费的使用国产的免费大模型越来越多，one-api对于个人用起来还是有点麻烦，就想要一个不要统计、流量、计费等等的适配程序即可。
+  - 即使有些厂商说兼容openai的接口，但是实际上还是存在些许差异的
+  - simple-one-api主要是解决以上2点，旨在兼容多种大模型接口，并统一对外提供 OpenAI 接口。
+
 ## agent-fwk-vendors
 
 - https://github.com/cuga-project/cuga-agent /341Star/apache2/202512/python/ts/ibm
@@ -677,10 +683,62 @@ modified: 2025-02-21T18:20:42.624Z
   - This approach slows the stream down a little and does generally reduce the jitter (such as pauses and bursts in the token stream). The approach was made based on educated guess-work about what might work and evaluated by eye-balling it instead of in a systematic manner. It is not perfect and sometimes the queue is exhausted only to find that we are waiting on a token. 
   - Another approach might be to extend the function that calculates the delay length by looking at the rate of increase/decrease of the queue size, as this would allow the algorithm to consider 'the future' in its decisions.
   - I experimented trying to put this on the back-end using ai in a Next.js app and a client-side React library on the UI. In order to do so, I had to transform to and from AsyncIterator and ReadableStream
-# proxy
+# model-proxy
 - https://github.com/lymanzhao/Ollama-serve /202503/python
   - 一个 Ollama转发代理，用于为原生 Ollama 服务添加 API 密钥认证功能。
   - 该项目解决了 Ollama 官方不提供 API 密钥验证的问题，使您可以更安全地部署 Ollama 服务并防止未授权访问
+# model-2api
+- https://github.com/star5o/reverse-check /MIT/202504/js/vue
+  - https://reverse-check.no-reverse-api.com/
+  - LLM API 逆向检测工具
+  - 本工具是一个基于是否支持官方参数的逆向检测工具。不能通过本工具检测的API极大概率是逆向的。
+  - 目前项目处于初步阶段，暂时需要人工对比响应结果与示例进行判断。
+  - 支持多种模型提供商的API检测: OpenAI, Claude, Gemini
+
+- https://github.com/router-for-me/CLIProxyAPI /3.4kStar/MIT/202512/go
+  - Wrap Gemini CLI, Antigravity, ChatGPT Codex, Claude Code, Qwen Code, iFlow as an OpenAI/Gemini/Claude/Codex compatible API service, allowing you to enjoy the free Gemini 2.5 Pro, GPT 5, Claude, Qwen model through API
+  - A proxy server that provides OpenAI/Gemini/Claude/Codex compatible API interfaces for CLI.
+  - It now also supports OpenAI Codex (GPT models) and Claude Code via OAuth.
+  - https://github.com/router-for-me/CLIProxyAPIPlus /MIT/202512/go
+    - the Plus version of CLIProxyAPI, adding support for third-party providers on top of the mainline project.
+    - Added GitHub Copilot support (OAuth login)
+    - Added Kiro (AWS CodeWhisperer) support (OAuth login)
+- https://github.com/automazeio/vibeproxy /688Star/MIT/202512/swift
+  - Native macOS menu bar app to use your Claude Code & ChatGPT subscriptions with AI coding tools - no API keys needed
+  - native macOS menu bar app that lets you use your existing Claude Code, ChatGPT, Gemini, Qwen, and Antigravity subscriptions with powerful AI coding tools like Factory Droids – no separate API keys required.
+  - Built on CLIProxyAPIPlus, it handles OAuth authentication, token management, and API routing automatically. One click to authenticate, zero friction to code.
+
+- https://github.com/justlovemaki/AIClient-2-API /1.9kStar/GPL/202512/js
+  - an API proxy service that breaks through client limitations, converting free large models originally restricted to client use only (such as Gemini, Antigravity, Qwen Code, Kiro) into standard OpenAI-compatible interfaces
+
+- https://github.com/aiclientproxy/proxycast /632Star/GPL/202512/rust/ts
+  - https://aiclientproxy.github.io/proxycast/
+  - 把你的 AI 客户端额度用到任何地方
+  - https://x.com/geekbb/status/2002235372345122842
+    - 服务是中午部署的，号是下午封的
+
+- https://github.com/axibayuit-a11y/2apifare /CC-NC/202512/python
+  - 将 GeminiCLI 转换为 OpenAI 和 GEMINI API 接口
+  - 多种认证方式：支持 Authorization Bearer、x-goog-api-key 头部、URL 参数等
+  - 多种流式支持
+  - 自动记录 IP 请求统计（仅统计成功的 AI 响应）
+
+- https://github.com/lza6/zai.is-2api-python /apache2/202512/python
+  - 解锁 Zai.is 的无限潜能 (Python版)
+
+- https://github.com/lza6/Qwen-2api /apache2/202510/python
+  - 通义千问高性能API代理
+  - 需自备 Cookie、采用 Nginx + FastAPI 高性能架构、支持粘性会话与多账号轮询、原生流式 API 转换、Docker 一键部署
+
+- https://github.com/BlueSkyXN/AI2API /GPL/202508/go
+  - Many AI-> API (OpenAI/DeepSeek)
+
+- https://github.com/ben-vargas/ai-sdk-provider-opencode-sdk /MIT/202512/ts
+  - A community provider for the Vercel AI SDK that enables using AI models through OpenCode and the @opencode-ai/sdk. 
+  - This provider enables you to use OpenCode's AI capabilities through the familiar Vercel AI SDK interface, supporting generateText(), streamText(), generateObject(), and streamObject().
+
+- https://github.com/lza6/notion-2api /apache2/202510/python
+  - 将你强大的 Notion AI 体验，无缝转换为兼容 OpenAI 格式的 API 服务的神奇项目。这意味着，你可以将 Notion AI 作为后端，驱动任何支持 OpenAI API 的应用程序、脚本或服务。
 # more
 - https://github.com/beuaaa/pywinauto_recorder /MIT/202411/python
   - https://pywinauto-recorder.readthedocs.io/

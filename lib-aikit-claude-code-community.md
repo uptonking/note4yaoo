@@ -34,7 +34,10 @@ modified: 2025-12-18T12:26:08.445Z
 
 - ## 
 
-- ## 
+- ## [佬们，问下在使用ai coding或vibe coding的时候如何防止工具执行危险命令 ](https://linux.do/t/topic/1354672)
+- 本来便利性和安全性就是一组平衡，似乎既要又要比较困难。现在大多是白名单或者黑名单机制。
+
+- 在.claude.config.json中设置deny常用的风险命令，然后别开dangerously skip permissions。我宁可次次审批也不要它误删。读写文件还好（rewind），命令执行了就麻烦，不可逆转。特别管好系统关键目录的权限（744，755），禁用sudo。
 
 - ## [claude code如何禁用haiku-4这个模型 _202511](https://linux.do/t/topic/1132983)
 - 这个是快速模型 一般小任务读文件之类的才会用到的。可以用环境变量指定模型，或者中转的时时候重定向模型

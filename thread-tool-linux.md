@@ -46,7 +46,11 @@ modified: 2024-01-06T13:48:42.969Z
 
 - ## 
 
-- ## 
+- ## 前有一堆 AI 厂商仿效 Plaud 做 AI 录音笔，今天钉钉却反其道行之，发布了一款让录音设备失效的干扰器
+- https://x.com/Ibrahim92796668/status/2003375071575048302
+- 什么原理？
+  - 应该是用的超声波干扰器。人耳听不到，但是麦克风听得巨大。
+  - 超声波干扰器利用的是麦克风硬件的“非线性特性”。当强大的超声波冲击麦克风振膜时，录音设备的电路无法处理这么高的频率，会在内部产生混频。
 
 - ## [How do you secure a linux desktop? : r/linux](https://www.reddit.com/r/linux/comments/1oy3vkg/how_do_you_secure_a_linux_desktop/)
   - we hear a lot about linux such as "linux is safe and most servers run on linux". but i came to realize that its only true for server installation or headless system. out of the box it maybe super secure.
