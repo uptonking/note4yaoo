@@ -61,7 +61,15 @@ modified: 2025-09-05T07:18:16.308Z
 
 - ## 
 
-- ## 
+- ## [is the openai package still the best approach for working with LLMs in Python? : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1puqqjv/is_the_openai_package_still_the_best_approach_for/)
+- It works well. You can recreate everything with the standard `requests` library, but why would you? It's just streaming requests and JSON at the end of the day
+
+- Their API is the de facto standard for interacting with LLMs, so it stands to reason their lib/package is the best for interacting with said API.
+  - If you're running everything on the same machine/VM/container, you can skip the whole API and integrate the inference code with your own code/logic directly without the added complexity of the API/client/serialization/deserialization.
+
+- Litellm is a defacto middleware that tries to support all the features of all the providers with no extra cruft
+
+- Yes I don’t like the agent frameworks like langchain or crewai either. Personally I went down the route of using raw CUDA some of the time, and writing compilers that compile DSLs to PTX some of the time.
 
 - ## [Need help in streaming the graph's agent response from backend to frontend _202411](https://github.com/langchain-ai/langgraphjs/issues/668)
 - 👷 202509: Please use `useStream()` for first-class streaming handling from LangGraph to your FE of choice

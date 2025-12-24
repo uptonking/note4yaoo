@@ -267,6 +267,39 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
+- ## 
+
+- ## agent.md + skills - both open standards, and can combined with an agent harness (claude code, codex, deepagents) can pretty much define a custom agent
+- https://x.com/hwchase17/status/2003599022871777467
+  - currently there's no way to package those together - claude plugins is close but i think lets you add an http://agent.md
+  - am i alone in wanting this? or do other people want as well?
+
+- AGENTS.md does not feels like a good place to define Agent, it is more like a description of environment where other Agents will run or use.
+  - As an idea, I think Custom Agent might be defined as skill with references or event includes others skills. https://agentskills.io do not encourage this, but from spec point of view nothing blocks this.
+
+- agent.md as the packaging layer feels right but the missing piece is a runtime that can resolve skills and harness deps across repos the way a package manager does, not just per project directory.
+
+- like, a package manager for agents?
+  - This is largely what a collection in https://prpm.dev is 
+  - Package skills and agents together into an installable package with dependency tracking and a lock file.
+
+- totally agree that there should be a consolidation but i think `agents.md` might not be the best place, rather a folder like `.agents` would be immensely helpful to standardize everything an agent normally has and could use: skills, hooks, settings, rules, plans, etc
+  - @prpmdev is cross platform and contains a manifest to define all the skills, hooks, agents. Collections also is a convenient way to specify all the dependencies in one go to install
+
+- 100%. This is the 'Containerization' moment for Agents.
+  - At ProdMoh, we view this 'package' as a Governance Artifact.
+  - We currently compile Policies (Constraints) + Stack (Skills) into .cursorrules or .windsurfrules to define that runtime behavior.
+  - A standardized http://agent.md that binds Constraints with Capabilities is the only way to make agents portable and safe.
+
+- feels like we're 90 percent of the way there on modular agents but still duct taping the last mile tbh. the second someone nails a clean way to bundle and ship these setups, it’s gonna explode usage rn.
+
+- Package manager for agents would unlock reuse. Start with a tiny spec: manifest with name version, list of skills, harness refs, env, and dependencies, plus a minimal registry. That boosts composability and versioning. Is a small spec enough to push this forward?
+  - @prpmdev has this minus the harness ref but is cross platform out of the box
+
+- I prefer using specialized subagents, so orchestrator can easily do longer tasks without filling context with nonsense system prompt that is altering behavior for whole conversation. 
+
+- Tag the right people that can fix this, I would if I knew who.
+
 - ## Agent Skills is now an open standard _202512
 - https://x.com/alexalbert__/status/2001760879302553906
 - Standardizing agent skills decouples capability definition from implementation, which is critical for composability across models, runtimes, and execution layers.

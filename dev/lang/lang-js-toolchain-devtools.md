@@ -74,7 +74,11 @@ modified: 2025-04-09T02:49:16.372Z
 # discuss-compiler/tsc
 - ## 
 
-- ## 
+- ## 最近因为 swc 1.13 有点 bug 就升级了到 1.15，然后跑测试发现他们竟然用了一种神奇的方式来判断某个变量是否存在 "u">typeof window
+- https://x.com/_justineo/status/2003528251868885025
+- esbuild 压缩也是这样的。但是这其实是一个很坏的做法，意味着 JS 一旦加了一个首字母在 u 后面的 primitive 值类型（比如 vector），代码就可能挂掉。当然，更可能的是因为这种小聪明的存在，JS 不能这样改了。
+
+- JS生态是这样的，加u加$就觉得完事了。 全都是知名项目在这么干，完全不考虑用户可能会写的东西
 
 - ## ts-node monkeypatches `require.extensions` (a internal that should not have been exposed and has been deprecated since Node.js v0.10) which conflicts with Node.js type stripping and boom
 - https://x.com/satanacchio/status/1902715349021204845

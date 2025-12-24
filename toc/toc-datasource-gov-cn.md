@@ -43,12 +43,22 @@ modified: 2021-01-01T15:57:59.157Z
 
 - [中国裁判文书网](https://wenshu.court.gov.cn/)
 # gis-cn
+
+# gov-cn
 - 自然资源部 标准地图服务
   - http://bzdt.ch.mnr.gov.cn/
   - 提供了全国、分省的各类地图
   - 未找到数据
 
 - [国家地理信息公共服务平台 天地图](https://www.tianditu.gov.cn/)
+
+- https://github.com/slightlee/regions_data /MIT/202512/python
+  - https://regions.fpic.top/
+  - 中国省市区县乡镇四级行政区划数据 | 支持 SQLite/JSON 格式 | 在线预览 | 数据同步于 2025年12月
+  - [时隔一年，国家行政区划开源项目终于更新了 _202512](https://linux.do/t/topic/1358746)
+    - 自 2024 年 10 月起，国家统计局不在公开区划代码数据。
+    - 民政部官方在今年 7 月份《行政区划代码》国家标准 第十六条提到 国务院民政部门应当在每年 1 月通过 ** 国家地名信息库 ** 发布截至上一年度末全国各级行政区划建制的行政区划代码信息。 新的获取数据的官方途径又出现了
+    - 这次项目修改摒弃了之前的代码，对代码进行了重构。展示页面也进行了美化。目前支持 JSON 格式的原始数据以及优化数据结构之后的 SQLite 数据库文件。
 # gov-enterprise
 - 国家企业信用信息公示系统
   - http://www.gsxt.gov.cn/

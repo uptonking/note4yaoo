@@ -777,6 +777,19 @@ export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890
     - 新版本换端口了，看设置里有端口显示。是7897
   - [[BUG]](https://github.com/clash-verge-rev/clash-verge-rev/issues/1379)
     - 请确保你的提供商提供的是clash的yaml格式订阅,这里不负责提供商导致的问题
+
+- https://github.com/MetaCubeX/ClashX.Meta/branches /5kStar/AGPL/202512/swift
+  - ClashX / ClashX Pro / ClashX Meta 只是一个代理工具，不提供任何代理服务器
+  - Clash. Meta Core
+  - Tun mode support
+  - [[Bug]Tun模式选项无法保存 _202401](https://github.com/MetaCubeX/ClashX.Meta/issues/58)
+    - 1.3.7的时候就反馈过了,tun模式在更改配置文件的时候会被配置文件覆盖
+    - 每次关闭应用后重新打开都要重新再把TUN模式勾选上，在config里把tun明确写出也不行
+  - [为什么 reload config 之后， tun mode 自动关了？ ](https://github.com/MetaCubeX/ClashX.Meta/issues/9)
+    - 以配置文件内设置为优先
+  - [tun模式无法上网[Bug] _202312](https://github.com/MetaCubeX/ClashX.Meta/issues/48)
+  - [[Feature]图形界面中，更多设置中，Tun DNS： 这个设置的值与配置文件中DNS设置的关系 ](https://github.com/MetaCubeX/ClashX.Meta/issues/103)
+    - 图形界面默认的 tun dns 是 8.8.8.8, 会导致都被解析成 ip, 基于域名的规则失效, 改成一个假的就正常了
 # law
 - [中国执行信息公开网](http://zxgk.court.gov.cn/index.jsp)
 

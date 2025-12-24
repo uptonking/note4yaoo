@@ -507,6 +507,28 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 - UTCP seems to try and remove all of the QoL MCP has, and is just an imaginary "ok but imagine how cool it would be", but not practical.
 
 - The communication overhead from tool calls will literally be the least relevant part of an LLM pipeline when it comes to performance. I do not see a point in using UTCP because none of the key players in the ecosystem (ie LLM front ends or APIs) are investing in it. It provides no additional value and instead just becomes an unnecessary wrapper or abstraction layer because some non-key players want to standardize an API that needs to be allowed to move incredibly fast.
+# discuss-models-translation
+- ## 
+
+- ## 
+
+- ## [Solid alternatives to AYA expanse 32b LLM for translation? : r/LocalLLaMA _202502](https://www.reddit.com/r/LocalLLaMA/comments/1ipq391/solid_alternatives_to_aya_expanse_32b_llm_for/)
+- My idea is that for asian languages like chinese and japanese the better local model always was QWEN.
+
+- The only model I found to be better at Japanese to English translation was Llama 3.1 405B. It more consistently understands the actual intended meaning of a sentence and tends to get the little nuances right. But it's very slow to run it locally
+
+- Maybe try a mistral family. I tried a mistral large finetune (monstral 123b) and it was much better than aya. 
+
+- ## [Which model is best for translation? : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1lykpo6/which_model_is_best_for_translation/)
+  - I want to translate english text to various languages, these include European as well as Asian languages. But since models have problems with asian languages, I trying to make my project work best for European Languages like Spanish, French, German, etc.
+- Gemma 3 is your best bet for this task, at least from my personal benchmark (https://huggingface.co/spaces/Thermostatic/TranslateBench-EN-ES) & personal usage for translation.
+
+- for translation and summarization tasks I only use Qwen3-32B. It's the best for me.
+  - My experience is that Qwen3-32B is quite a lot weaker than Gemma 3 27B when it comes to European languages (personal experience with Swedish, and third party assessments on Finnish). But for e.g. coding, I prefer Qwen3-32B (which really does give me high hopes for the soon-to-be-released coder version...).
+
+- From my usage of chinese to english translation, gemma 3 27b was one of the worst models I've used for the task.
+
+- I'd say Qwen3. It's trained on 119 languages and that's one of its hallmarks.
 # discuss-models-hot/features
 - ## 
 
@@ -1691,12 +1713,38 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - https://x.com/amasad/status/1872320808028454976
   - Craziest thing is it took only $5.5m to train. US labs spend one — maybe two — order of magnitude more for frontier models.
-# discuss-model-api-gateway
+# discuss-model-api-gateway/router
 - ## 
 
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 🤔 [请问大家有没有主流Ai综合平台推荐 ](https://linux.do/t/topic/1358867)
+  - Gemini学生会员，但是生图只有2k，而且感觉网页版性能受限，还是得付费。
+  - 目前主要在用lovart中的Nano Banana pro 4k的生图功能，每日白嫖一点点GPT5.2做提示词反推和一些设计策划分析。偶尔会需要写一些Python脚本快速批量处理文件。
+  - lovart生图没问题，但是提示词反推和生成，以及对话功能很差，而且每月220元也挺贵。
+  - GPT5.2目前每天白嫖用起来确实挺好用，很想开会员
+  - 买过302的token，但是功能都要手搓，playground能直接用，但是不保留记录， 关掉就没了，有点难用。
+  - 求助各位大佬，有没有合适的实惠的，能调用多种不同模型的平台推荐？需要有聊天对话界面，最好能包月的。万分感谢。
+
+- 直接买openrouter的credits也不失为一种选择
+  - 最全的模型个个满血保真。除了要花钱没有缺点。
+
+- 产品设计那些前端工具都可以，lovable什么的。生图的话lovart编辑能力无敌，提示词可以让chatgpt/claude/gemini生成好复制过去，毕竟术业有专攻
+- Lovart还是不适合一般对话的
+
+- ## [[公益] BetterClaude：更流畅的 Claude 使用体验，代理Anyrouter等公益站 ](https://linux.do/t/topic/1358893)
+  - 已经有很多优秀的公益站点，比如 anyrouter、薄荷等。但由于网络环境、线路等各种客观原因，国内访问的稳定性始终不太理想。
+  - BetterClaude 的初衷，就是“走完公益的最后一公里”。
+  - 我们做的事情很简单： 为 所有公益站提供统一代理, 针对国内与亚太地区，适配 Cloudflare 优选线路 + 亚太 CDN
+  - BetterClaude 完全基于 Cloudflare Workers 构建，并部署在全球的 **Cloudflare PPO ** 进行回源策略优化，从而尽可能 降低 BetterClaude 到任意上游服务的延迟。
+  - 对所有个人用户永久免费
+  - 永久支持公益站点的代理
+  - ⚠️ 同时，你也可以将 BetterClaude 用于部分商业站点的代理, 需要说明的是部分商业站点明确禁止转发或代理, 因违反上游站点规则导致的账号封禁，我们概不负责
+  - 在技术层面，我们会： 完整、透明地转发所有请求, 包括 客户端 IP、Headers 等信息, 确保请求格式 严格符合 Claude API 的要求
 
 - ## [Too many LLM API keys to manage!!?! : r/LLMDevs _202502](https://www.reddit.com/r/LLMDevs/comments/1irpjjk/too_many_llm_api_keys_to_manage/)
 - Check openrouter.ai

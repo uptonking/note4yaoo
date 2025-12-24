@@ -193,6 +193,16 @@ modified: 2025-11-18T13:22:22.078Z
 
 - deepseek-ocr
   - 极少数的场景，会将图片中的英文翻译为中文输出, 并且LOOP
+
+## translation
+
+- [nvidia/Riva-Translate-4B-Instruct · Hugging Face](https://huggingface.co/nvidia/Riva-Translate-4B-Instruct)
+  - mlx模型在lmstudio测试en2cn时，只会翻译第一段en英文文字
+  - [nvidia/Riva-Translate-4B-Instruct · Any-to-any](https://huggingface.co/nvidia/Riva-Translate-4B-Instruct/discussions/1)
+  - The model currently supports the following combinations (non-English to non-English is not supported):
+  - English to non-English
+  - Non-English to English
+  - German(de), European Spanish(es-ES), LATAM Spanish(es-US), France(fr), Brazillian Portugese(pt-BR), Russian(ru), Simplified Chinese(zh-CN), Traditional Chinese(zh-TW), Japanese(ja), Korean(ko), Arabic(ar).
 # models-features/variants
 - 专用模型
 - ocr

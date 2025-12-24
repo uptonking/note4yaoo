@@ -27,7 +27,10 @@ modified: 2021-08-28T11:49:05.730Z
 
 - ## 
 
-- ## 
+- ## I learned this from @tan_stack query codebase: add a interface wrapper for builtin globals like setTimeout
+- https://x.com/6onnykato/status/2003395932549972042
+- You might like a concept called dependency injection. It is much straightforward and solider way than working with implicit dependencies.
+  - +1 unfortunately, the dependency injection is largely overlooked in frontend development
 
 - ## Some times you just gotta admit defeat. System tests -- the end-to-end variety that drive a headless browser -- just aren't worth the effort. 
 - https://x.com/dhh/status/1892265453524803859

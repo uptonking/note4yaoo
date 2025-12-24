@@ -1234,6 +1234,18 @@ modified: 2023-06-23T12:46:53.288Z
     - You can use the similar `refractor` if you want to use `Prism` grammars instead. 
     - If you’re looking for a really good (but rather heavy) alternative, use `starry-night`.
 
+- https://github.com/pierrecomputer/pierre /apache2/202512/ts
+  - https://diffs.com/
+  - open source diff and code rendering library. It's built on Shiki for syntax highlighting and theming, is super customizable, and comes packed with features. 
+  - Choose from stacked (unified) or split (side-by-side). Both use CSS Grid and Shadow DOM under the hood, meaning fewer DOM nodes and faster rendering.
+  - Shiki for syntax highlighting and general theming. 
+  - Choose how changes are styled
+  - adapts to any font, font-size, line-height, and even font-feature-settings
+  - provide a flexible annotation framework for injecting additional content and context. Use it to render your own line comments, annotations from CI jobs, and other third-party content.
+  - Accept/Reject Changes
+  - When enabled, clicking a line number will select that line. 
+  - In addition to rendering standard Git diffs and patches, you can pass any two files in @pierre/diffs and get a diff between them. 
+
 - https://github.com/BearToCode/mismerge /MIT/202402/ts/svelte
   - https://beartocode.github.io/mismerge/
   - Mismerge is a modern two-way and one-way merge editor for the web, built with Svelte

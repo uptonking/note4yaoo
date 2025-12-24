@@ -544,6 +544,34 @@ modified: 2024-05-12T17:20:03.132Z
 
 - ## 
 
+- ## 
+
+- ## 🌰 Added an example of how to run Firecracker VM on top of AgentFS with copy-on-write overlay filesystem to the git repository
+- https://x.com/penberg/status/2003522274004206057
+- I know this was a lot of effort but I’ve been getting to work with microvm in QEMU and experience has been much better than firecracker. Look at the virtme-ng project by Andrea Righi, really nifty optimizations and recently he’s added mcp support for running it via Claude code
+  - Makes sense, have personal preference for QEMU too
+
+- I thought you had issues with firecracker working with NFS or not needed for this?
+  - The default kernel image of Firecracker has only NFS version 4 support, but -- of course -- the nfsserve crate we have in agentfs is v3. But yeah, lots of tokens and brain cells spent today, but got it finally working!
+
+- I know rust doesn’t have a nice server for it, but nfs v4.1 is wayyyy better (perf and correctness)
+
+- ## Why on earth does Firecracker not support NFS, 9p, or even virtio-fs out of the box? Sad.
+- https://x.com/MarcJBrooker/status/2003630318939701306
+- "Have fewer features" is one of the goals of Firecracker, and maybe the single largest motivation behind investing in building it (versus, say, embracing QEMU).
+  - So why not these ones? Well, filesystems are complex and large surface areas.
+  - Compare the complexity of the host-side implementation between, say, virtio-fs and virtio-blk. The latter is way simpler, which means a smaller surface to reason about, easier formal verification, easier to reason about performance isolation, etc.
+  - You can do NFS over TCP (through the net device), of course, but that requires trusting the NFS implementation.
+  - In our NSDI'20 paper we wrote: "Minimizing the feature set of the VMM helps reduce surface area, and controls the size of the TCB. Firecracker contains approximately 50k lines of Rust code (96% fewer lines than QEMU), "
+
+- I was genuinely surprised that Firecracker does not support accessing shared host files with virtio-fs, for example, because it's such an important part of light-weight virtualization. I am not sure I buy the security argument as it could be opt-in. 
+
+- the reason why i'm using qemu microvm. at least i can use block device.
+
+- Firecracker only supports the bare minimum to get Linux up and running. 
+
+- Isn't Firecracker whole stick that they sacrificed almost all Linux modules on the altar of fast startup?
+
 - ## ntroducing foreverVM, a Python REPL-as-a-service. 
 - https://x.com/JamsocketHQ/status/1884660472076513468
   - Under the hood, we swap between memory and durable storage

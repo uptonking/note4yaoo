@@ -89,6 +89,9 @@ modified: 2025-09-25T16:24:05.355Z
 
 - google-photos-like + google-drive + preview workflow
 
+- 免费文生图的api越来越多，但支持改图的不够多
+- 图片修复/放大这些固定场景需求多，但一般网站不支持免费生成 4K 图片，可以提供放大图片的工具/api
+
 - 需要一个类似openrouter/groq的api能支持多个服务生成image, 需要同时支持 sd-webui和comfyui
   - 可参考aisdk来实现
 

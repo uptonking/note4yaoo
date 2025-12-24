@@ -70,6 +70,28 @@ modified: 2025-09-16T12:36:12.968Z
 
 - New open weight models come out like every week and I want to be able to try the ones that can can run on my PC without waiting for a subscription service to add them or paying per use.
 
+- ## 🆚 [what is the bottom line difference between GGUF and FP8? : r/comfyui _202512](https://www.reddit.com/r/comfyui/comments/1pu6t8e/what_is_the_bottom_line_difference_between_gguf/)
+  - You should ask about regular FP8, scaled FP8, and mixed FP8, instead of comparing it to GGUF because those FP8 differences can affects the quality/accuracy vs the base BF16 model.
+  - Even FP8_e4 vs FP8_e5 can generates a different things on the same prompt & seed.
+  - Meanwhile, GGUF are designed for low VRAM with the ability to offload some part of it on RAM/CPU.
+
+- [Comparison of Qwen-Image-Edit GGUF models : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1my3lq0/comparison_of_qwenimageedit_gguf_models/)
+  - Based on those result FP8 is close to Q4_K_M
+
+- so what is the difference between fp8 and scaled fp8 (have not come across weights labeled mixed fp8 yet)?
+
+- FP8 (8-bit Floating Point): Uses 8 bits divided into a sign, exponent, and mantissa. It is a "native" format for modern GPUs (RTX 40-series and newer), meaning the hardware can do the math directly in this format without converting it first.
+- GGUF (e.g., Q5/Q6): These use integer-based quantization with "K-quants" (block-wise scaling). The model is broken into small blocks, and each block has its own scaling factor. This allows Q5 (5-bit) or Q6 (6-bit) to often retain more intelligence than a simple 8-bit float because it "allocates" precision more intelligently where it's needed most.
+- does it mean we should go for G8 over FP8 if we can, considering they're around the same size? I mean, if G5/G6 is better than FP8, then G8 should be even better, right?
+  - yes
+
+- from my personal experience, i'd go for a higher precision gguf over an fp8… i can't give u a technical explanation, but i think in a like for like quants, the gguf is a better option.
+  - It may be better Quality but it will likely be a lot slower, as thats how .gguf works.
+
+- there's no real difference between an fp8 safetensor and a Q8 gguf except that your gpu might natively accelerate the fp8. A gguf will unpack to the native data type your gpu supports (bf16/fp16/fp32). So that unpacking is negligible but not insignificant.
+
+-Depends on your GPU if it's 40xx or 50xx series with fp8 native acceleration fp8 is better (at lest for Wan 2.2 and ZiT), despite the model being over your VRAM it would be faster. If you're with older Nvidia card Q8 and Q6 are faster. I've done tests on RTX 3060 12GB and 5070ti... and 5070ti is faster with the fp8 models. 
+
 - ## 🧩 [The difference between quantization methods for the same bits : r/LocalLLaMA _202307](https://www.reddit.com/r/LocalLLaMA/comments/159nrh5/the_difference_between_quantization_methods_for/)
   - Using GGML quantized models, let's say we are going to talk about 4bit
   - I see a lot of versions suffixed with either 0, 1, k_s or k_m

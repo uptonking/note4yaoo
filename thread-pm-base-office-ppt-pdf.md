@@ -39,6 +39,13 @@ modified: 2024-01-11T15:57:32.182Z
 
 - 但也不能一次做所有的吧，能分片微调还是有必要的
 
+- https://x.com/AgiRay1015/status/2003457475899719970
+  - 磊叔说AI做ppt的思路和宝玉老师的想法如出一辙。
+  - 1） 首先，创建、优化 PPT 的提纲，这个是 PPT 的骨架。
+  - 2）其次，创建每页的内容和视觉，这个是 PPT 的灵魂。
+  - 3）最后，将初稿 PPT 进行深入检验和分析，进行深度优化和强化。
+  - 4）现在才可以出街。
+
 - ## [How do I efficiently zip and serve 1500–3000 PDF files from Google Cloud Storage without killing memory or CPU? : r/node _202510](https://www.reddit.com/r/node/comments/1o6497g/how_do_i_efficiently_zip_and_serve_15003000_pdf/)
   - I’ve got around 1500–3000 PDF files stored in my Google Cloud Storage bucket, and I need to let users download them as a single .zip file.
   - Compression isn’t important, I just need a zip to bundle them together for download.

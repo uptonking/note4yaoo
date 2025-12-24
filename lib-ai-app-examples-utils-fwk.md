@@ -375,6 +375,14 @@ modified: 2025-02-21T18:20:42.624Z
   - 即使有些厂商说兼容openai的接口，但是实际上还是存在些许差异的
   - simple-one-api主要是解决以上2点，旨在兼容多种大模型接口，并统一对外提供 OpenAI 接口。
 
+- https://github.com/lianwusuoai/img-router /MIT/202512/ts
+  - 三合一图像生成 API 中转服务- 一个接口，多渠道图像生成
+  - 三渠道支持 - 火山引擎、Gitee (模力方舟)、ModelScope (魔塔)
+  - OpenAI 兼容 - 完全兼容 /v1/chat/completions 接口格式
+  - 图片参考 - 支持上传参考图片进行图生图
+  - 开箱即用的容器化部署方案
+  - [开源：豆包和Z-Image对话生图/改图全免费且自由 ](https://linux.do/t/topic/1358465)
+
 ## agent-fwk-vendors
 
 - https://github.com/cuga-project/cuga-agent /341Star/apache2/202512/python/ts/ibm

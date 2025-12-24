@@ -150,6 +150,10 @@ modified: 2025-09-01T05:52:34.241Z
 - 文生图相关请求
   - GET http://localhost:3090/api/agents/tools/calls?conversationId=10198a1b-2fc3-47d0-966f-17d03dc8f3e1
 
+- 图文混排编辑的方案
+  - 基于coding的方案，参考lovable/lovart/mj-studio
+  - 文档元数据需要包含文档prompt、图片prompt、图片编辑prompt，以timeline的形式，尽量朝着reproducible内容的方向去探索
+
 - [[Bug]: error: [getAvailableTools] MCPManager has not been initialized. _202509](https://github.com/danny-avila/LibreChat/issues/9437)
   - 导致添加stable-diffusion工具失败，更新到最新代码就可以了
 # ollama/lmstudio/llama.cpp 🔧🤔

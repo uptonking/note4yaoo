@@ -1846,7 +1846,22 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## [Do any comparison between 4x 3090 and a single RTX 6000 Blackwell gpu exist? : r/LocalLLM _202512](https://www.reddit.com/r/LocalLLM/comments/1pu62uz/do_any_comparison_between_4x_3090_and_a_single/)
+- Just got here. 
+  - Setup on Blackwell is still a bit of a pain, by comparison the 3090s are easy peasy
+  - Prompt Processing performance - using GLM 4.6 quants in llama.cpp I get 3.5x the speed with the blackwell than I do with the 3090
+  - Token Generation - essentially no difference (I think I can get a little better performance here from the Pro 6000 but between system differences and kernel differences the raw power of the Pro doesn't make up the difference in perf)
+  - Power consumption - baseline consumption is very similar, with the pro sitting at around 3.5x one 3090. Under single query load the pro has been hitting 200 W
+  - Sound - The pro is in my living room, I can barely hear it. The 3090s are in my office.... I can *really* hear it. Not horrible but I know when it's running.
+  - I haven't played with vLLM much but for models that can be fully resident in 96 GB VRAM the Pro tentatively ran at 2x for both generation and prompt processing.
+- My conclusion is:
+  * For models fully resident in 96GB the Pro wins hands down (ignoring pricing)
+  * For models partially resident in 96GB the Pro wins on processing but not prompt generation
+  * When factoring in price, the 3090 is a great contender
+  * When factoring in future improvements and the ability to easily go to 2 or 4 gpus I think the Blackwell wins.
+
+- The 3090's will not give you 96gb of useable memory. There is VRAM overhead space being taken up to manage the communication between the cards, so you will only have about 88gb of actual useable VRAM. In addition it will run slower because it has to send information between cards.
+  - Not true. I have yet to see a benchmark where the Pro 6000 wins. 4x3090 with TP and vLLM is faster, especially at long context, than anything on the Pro 6000.
 
 - ## [Got me a 32GB RTX 4080 Super : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pstaoo/got_me_a_32gb_rtx_4080_super/)
   - I took a risk and bought a modified RTX 4080 Super from the Chinese market for around 1200 USD / 1000 EUR. Which for me because I live in Europe, the cheapest RTX 5090 I can find is around 2500 USD / 2100 EUR.

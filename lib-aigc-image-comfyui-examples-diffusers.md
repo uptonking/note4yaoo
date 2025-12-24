@@ -373,6 +373,12 @@ modified: 2025-08-23T11:43:35.904Z
   - [我开源了月浏览量 70K+ 的AI绘画网站 _202510](https://linux.do/t/topic/1022006)
     - 我们的网站近期一个月内发访问数据如下，浏览量 70k+, 访问次数 40K+，访客量 23K+
 
+- https://github.com/shellus/mj-studio /NALic/202512/ts/vue
+  - 绘图模块：支持 Midjourney、Gemini、Flux、DALL-E、GPT-4o、Grok、通义万相等主流图像生成模型
+  - 对话模块：支持多助手管理、流式输出、对话分叉、智能压缩、消息重放
+  - [MJ-Studio开源，让所有大模型生成“图文混排”内容 - 搞七捻三 - LINUX DO](https://linux.do/t/topic/1358773)
+    - 渲染插图原理 通过提示词让AI输出 mj-drawing 的代码块
+
 - https://github.com/google-gemini/gemini-image-editing-nextjs-quickstart /484Star/apache2/202505/ts/inactive
   - https://ai.google.dev/gemini-api/docs/image-generation
   - Nextjs quickstart for to generating and editing images with Google Gemini 2.0 Flash
@@ -1129,6 +1135,12 @@ modified: 2025-08-23T11:43:35.904Z
 - https://github.com/crystian/ComfyUI-Crystools /1.4kStar/MIT/202508/python/ts
   - A powerful set of tools for ComfyUI
   - you can see the resources monitor, progress bar & time elapsed, metadata and compare between two images, compare between two JSONs
+
+- https://github.com/MajoorWaldi/ComfyUI-Majoor-AssetsManager /MIT/202512/python/js
+  - A fast, modern, media manager for ComfyUI with native OS metadata integration
+  - Advanced asset browser for ComfyUI outputs (images/videos/audio/3D) with ratings & tags, full-text search, workflow fingerprinting, and advanced metadata management.
+  - I've tested several asset managers over time. Some are external tools. Some are partially integrated. Most of them are either too rigid, too opinionated, or disconnected from how ComfyUI is actually used in production.
+  - So I built an Assets Manager that lives directly inside ComfyUI.
 # utils
 - https://github.com/Comfy-Org/ComfyUI_devtools /21Star/202505/python/inactive
   - ComfyUI developer tools (Custom Node)

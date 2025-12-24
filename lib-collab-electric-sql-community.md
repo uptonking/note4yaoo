@@ -22,6 +22,32 @@ modified: 2024-02-12T03:22:23.769Z
 - ## 
 
 - ## 
+# discuss-durable-stream/state
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## ⚖️ Introducing the State Protocol—the first higher-level protocol built on Durable Streams. _202512
+- https://x.com/ElectricSQL/status/2003606111811977492
+  - Durable Streams = ordered, resumable byte delivery
+  - State Protocol = insert, update, delete operations on typed entities
+  - Database-style sync semantics over any durable stream.
+  - The separation is intentional:
+  - AI token streaming? Use Durable Streams directly—no CRUD needed
+  - Real-time database sync? Add State Protocol for typed collections
+  - Both in the same app? Different streams, different protocols
+  - Adopt what you need.
+  - State Protocol + @TanStack DB = reactive queries with incremental updates. 
+  - Differential dataflow under the hood. Dramatically faster than filtering in JS.
+
+- don't suppose there's any plans on a cloudflare / workers implementation?
+  - we're only going to be maintaining the reference implementations in the repo + clients. There's a lot of potential server implementations and it'd be too much burden to maintain versions we're not using ourselves.
 # discuss
 - ## 
 

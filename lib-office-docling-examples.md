@@ -91,6 +91,12 @@ modified: 2025-09-21T13:58:46.548Z
   - Convert unstructured documents to markdown using the Docling.
   - We have built a simple Graphical Interface demo of Docling to showcase some basic functionality
 
+- https://huggingface.co/spaces/AmineAce/pdf-tables-rag-demo/tree/main /202512/python/单文件
+  - https://amineace-pdf-tables-rag-demo.hf.space/
+    - I built a free demo using IBM's Docling – it handles merged cells and footnotes way better than most open-source options.
+    - Built with Gradio
+  - [Free PDF-to-Markdown demo that finally extracts clean tables from 10-Ks (Docling) : r/Rag](https://www.reddit.com/r/Rag/comments/1pupkkf/free_pdftomarkdown_demo_that_finally_extracts/)
+
 - https://github.com/paazmaya/docling-japanese-books /MIT/202511/python
   - A streamlined document processing tool that uses Docling to extract, process, and store Japanese books and documents for LLM training workflows.
   - Extract and annotate images with SHA-256 hashing for deduplication

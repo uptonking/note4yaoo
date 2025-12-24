@@ -136,6 +136,11 @@ modified: 2021-05-06T09:39:53.522Z
   - search pdf
   - citations from pdf
 
+- image 🖼️
+- 图文混排编辑的方案
+  - 基于coding的方案，参考lovable/lovart/mj-studio
+  - 文档元数据需要包含文档prompt、图片prompt、图片编辑prompt，以timeline的形式，尽量朝着reproducible内容的方向去探索
+
 - collab
   - codemirror in prosemirror: all collaborative
 
@@ -151,6 +156,9 @@ modified: 2021-05-06T09:39:53.522Z
 
 - comments
   - 👾 ai prompt as comment ?
+
+- search
+  - 🤔 旧的产品交互逻辑在旧的时代都需要调整, 用户大多不想手动搜索, 直接在聊天框里输入指令，将搜索+后续工作一起执行
 
 - 兼容obsidian extension
 

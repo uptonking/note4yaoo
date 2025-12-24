@@ -34,6 +34,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 插画复刻: Qwen-Image-i2L, image-to-prompt-to-image, 同时支持浏览comfyui生成图片的元数据、提示词
 
 - tips
+  - 🤔 旧的产品交互逻辑在旧的时代都需要调整, 用户大多不想手动搜索, 直接在聊天框里输入指令，将搜索+后续工作一起执行
   - 🤔 不要执着于ai框架，主流模型厂商都会推广包含厂商特性的框架及产品(codex/claude-code/gemini-cli), 可专注于 主流 开源业务系统实现 或 厂商无关的实现
   - frontend: ai-sdk/chatbot, assistant-ui, librechat
   - backend: langgraph + python/nodejs
@@ -521,8 +522,26 @@ modified: 2025-03-22T16:10:24.856Z
     - 前后端代码全部开放，检测逻辑一目了然
     - https://github.com/BingZi-233/check-cx /MIT/ts
 
-- image-gen 🖼️
-  - modelscope对部分模型提供了免费生图的额度, 如z-image-turbo
+- llm-ui/apps
+  - [SmallAI](https://free.smallai.asia/chat)
+    - 基于lobechat实现
+    - [【网站自荐】SmallAI公益站——免费使用GPT4o mini，支持多模态 ](https://github.com/ruanyf/weekly/issues/4969)
+  - [AI对话 - db的AIGC站](https://ai.feles.town/chat)
+  - 💰 [GoAmzAI - 个人、团队、企业私有化、运营的AIGC平台解决方案](https://d.goamzai.com/)
+    - https://github.com/Licoy/GoAmzAI /非开源
+    - https://github.com/VoAPI/VoAPI /仅提供docker-compose.yml
+    - [AI对话 - GoAmzAI Plus](https://demo6.goamzai.com/chat)
+    - [对话 - GoAmzAI Pro](https://prodemo6.goamzai.com/chat)
+    - [goamzai已集成LinuxDO Connect，演示站开放给L佬们使用 _202406](https://linux.do/t/topic/122462)
+    - [【公益AIGC】最适合日常使用的公益站，高级AI工具一网打尽 ](https://linux.do/t/topic/1175890/37)
+      - volo api 吧，基于 new api 改的，但是 v1 开始好像就完全重写了
+      - VoAPI 一直是闭源的，甚至好像只放出 Docker 的部署方式，连编译后的可执行文件都不发布的，截止到我最后一次看时是这样的，不知道后续有没有改变和有没有收费计划
+
+## image-gen 🖼️
+
+- modelscope对部分模型提供了免费生图的额度, 如z-image-turbo
+
+- image-saas
   - [小白生图 - AI Image Generator](https://catsapi.com/)
   - [RyanVan Z-Image | AI 图像生成](https://ryanai.org/)
     - 每天5张免费
@@ -539,21 +558,6 @@ modified: 2025-03-22T16:10:24.856Z
   - [Cloudflare Workers AI Models](https://developers.cloudflare.com/workers-ai/models/)
     - 提供免费的文生图模型: sdxl, sdv1-5
   - [Free AI Image Generator - AI Free Forever](https://aifreeforever.com/image-generators)
-
-- llm-ui
-  - [SmallAI](https://free.smallai.asia/chat)
-    - 基于lobechat实现
-    - [【网站自荐】SmallAI公益站——免费使用GPT4o mini，支持多模态 ](https://github.com/ruanyf/weekly/issues/4969)
-  - [AI对话 - db的AIGC站](https://ai.feles.town/chat)
-  - 💰 [GoAmzAI - 个人、团队、企业私有化、运营的AIGC平台解决方案](https://d.goamzai.com/)
-    - https://github.com/Licoy/GoAmzAI /非开源
-    - https://github.com/VoAPI/VoAPI /仅提供docker-compose.yml
-    - [AI对话 - GoAmzAI Plus](https://demo6.goamzai.com/chat)
-    - [对话 - GoAmzAI Pro](https://prodemo6.goamzai.com/chat)
-    - [goamzai已集成LinuxDO Connect，演示站开放给L佬们使用 _202406](https://linux.do/t/topic/122462)
-    - [【公益AIGC】最适合日常使用的公益站，高级AI工具一网打尽 ](https://linux.do/t/topic/1175890/37)
-      - volo api 吧，基于 new api 改的，但是 v1 开始好像就完全重写了
-      - VoAPI 一直是闭源的，甚至好像只放出 Docker 的部署方式，连编译后的可执行文件都不发布的，截止到我最后一次看时是这样的，不知道后续有没有改变和有没有收费计划
 
 ## llm-api-official/router/gateway
 
@@ -639,6 +643,12 @@ modified: 2025-03-22T16:10:24.856Z
   - 最大输出 64K:  qwen3-coder-plus, glm-4.6, deepseek-v3.2, deepseek-v3.1, qwen3-235b-a22b-thinking-2507, qwen3-235b-a22b-instruct, kimi-k2, kimi-k2-0905, 
   - 最大输出 32K:  qwen3-vl-plus, qwen3-max, deepseek-r1
 
+- [302. AI - API超市 cn](https://dash.302ai.cn/product/list?cate=api&tag=LLM)
+  - [302. AI - API超市 ww](https://302.ai/product/list?cate=api&tag=%E8%AF%AD%E8%A8%80%E5%A4%A7%E6%A8%A1%E5%9E%8B)
+  - 很多免费api, 国内版和国外版免费的api相同
+  - 很多api是直接转发的其他平台，如硅基流动/快手万擎平台本身就提供的小模型， 质量不高
+  - 有时会有限时免费的大模型
+
 - [无问芯穹 LLM API 计费规则 ](https://docs.infini-ai.com/gen-studio/api/billing.html)
   - 基础服务：RPM=12、RPD=300、TPM=12000；默认情况下，租户均享受基础服务。基础服务不计费。支持在线自助升级为高级服务
   - 高级服务：RPM=120、RPD 不限、TPM=120000；租户可选择升级服务，享受更高限频。高级服务根据实际 Token 用量进行后付费结算。
@@ -703,11 +713,17 @@ modified: 2025-03-22T16:10:24.856Z
   - QPS: 2
   - [星火大模型，燃情双十一-讯飞开放平台](https://www.xfyun.cn/activities/discount)
 
-- [Moonshot AI 开放平台 - 充值与限速](https://platform.moonshot.cn/docs/pricing/limits)
-  - 赠送用完后需要充值
-
 - [七牛 AI 大模型推理服务 - 七牛云](https://www.qiniu.com/ai/chat)
   - 采用按量计费的模式，根据实际使用的 token 数量收费，每月初出账。新用户享有免费额度
+  - [AI 大模型广场](https://www.qiniu.com/ai/models)
+    - 部分免费模型为其他厂商的免费模型
+
+- [模力方舟（Gitee AI）](https://ai.gitee.com/serverless-api)
+  - 提供了很多免费小模型，如 8b/4b, glm-4.6v-flash, 
+  - AI图片检测: 并发数不限制，根据负载动态调整
+
+- [Moonshot AI 开放平台 - 充值与限速](https://platform.moonshot.cn/docs/pricing/limits)
+  - 赠送用完后需要充值
 
 - [Xiaomi MiMo 开放平台](https://platform.xiaomimimo.com/#/docs/pricing)
   - 平台公测期间，模型推理服务免费

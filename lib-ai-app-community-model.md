@@ -643,6 +643,37 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Useful patterns for building HTML tools _202512](https://simonwillison.net/2025/Dec/10/html-tools/)
+- https://x.com/vista8/status/2003803470449787263
+  - 用大模型两年做了150个工具。这不奇怪，强的是他只用单页HTML做！
+  - 一个 HTML 文件，打开就能用，不需要安装，不需要注册。
+  - 他特别强调 "不要用 React"。 因为 JSX 需要构建，这会让整个流程变得麻烦。 保持简单，就是保持可维护。
+- 优势也很明显：
+  - 可以直接从 ChatGPT 或 Claude 里复制粘贴出来
+  - 扔到 GitHub Pages 上几秒钟就能用
+  - 不需要 npm，不需要构建步骤
+  - 两年后还能打开，不会因为依赖过期崩溃
+- 状态存在哪里？ 没有后端数据库怎么办？Simon 有两个办法：
+  - 把状态存在 URL 里。 比如，他做了一个 24x24 的图标编辑器，你画的图标直接编码在 URL 里。这样你可以收藏，可以分享，打开链接就能继续编辑。
+  - 把关键的信息存在 localStorage 里。 比如 API key 这种敏感信息，不能出现在 URL 里，也不能发到服务器。 localStorage 让数据只存在用户的浏览器里。 他还用 localStorage 做自动保存。 写字数统计工具时，每次输入都会保存，这样不小心关掉标签页也不会丢内容。
+- CORS（跨域资源共享）听起来很技术，但理解它很重要。
+  - iNaturalist 可以查动物的观察记录
+  - PyPI 可以获取 Python 包的信息
+  - GitHub 的公开仓库内容都可以直接获取
+  - Bluesky 和 Mastodon 的 API 也很开放
+  - Simon 甚至用 GitHub Gists 来持久化数据。 因为 Gist 的 API 支持 CORS，你可以做一个纯前端工具，把用户的数据保存到他们自己的 Gist 里。
+- 文件不需要上传 `<input type="file">` 不只是用来上传文件。 JavaScript 可以直接读取文件内容，在浏览器里处理。
+- Python 和 WebAssembly 这是最让人兴奋的部分。 Pyodide 让 Python 可以在浏览器里运行。
+  - 不是玩具级别的运行，是真正的 Python，包括 Pandas 和 matplotlib。
+- Tesseract OCR、SQLite、图片压缩库，这些原本用 C 或 C++ 写的软件，现在都能在浏览器里跑。
+- 这些工具真可以解决问题。更重要的是，这种方式让你能快速实验。想法到原型可能只需要几分钟。不用担心部署，不用担心维护，不用担心成本。
+- 怎么起步尝试？ 一个 GitHub 仓库，开启 GitHub Pages。 然后就可以开始了。 用 ChatGPT 或 Claude 生成一个工具，复制粘贴到仓库里，几秒钟后就能在网上访问。 不需要完美，不需要复杂。 从一个解决你自己问题的小工具开始。 然后慢慢积累，慢慢改进。 两年后你可能也会有几十个甚至上百个这样的工具。 每一个都在某个时刻帮到你，每一个都让下一个更容易做出来。
+- 这就是 HTML 工具的魅力：简单、实用、可持续。
+
 - ## [Senior engineer struggles with learning LLMs foundations : r/LLMDevs _202512](https://www.reddit.com/r/LLMDevs/comments/1plxnq0/senior_engineer_struggles_with_learning_llms/)
   - I've been using ollama and openai to create some interesting side projects and to learn more about LLMs, but I think I'm hugely lacking solid foundations. Please provide me with a structure learning material for a senior engineer with some knowledge of LLMs, thanks
 - Andrej Karpathy’s series on YouTube and Stanford’s CME course on LLMs and Transformers which is published to YouTube for free.
