@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watarbase - Fast Embeddable Rust Database</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#6366f1',
+            secondary: '#8b5cf6',
+            accent: '#ec4899',
+            dark: '#0f172a',
+            light: '#f8fafc'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #f8fafc;
+      min-height: 100vh;
+    }
+
+    .gradient-text {
+      background: linear-gradient(to right, #6366f1, #8b5cf6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .feature-card {
+      transition: all 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .accordion-content.active {
+      max-height: 500px;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen">
+  <!-- Navbar -->
+  <nav class="flex items-center justify-between p-6 lg:px-12">
+    <div class="flex items-center space-x-2">
+      <div class="w-10 h-10 rounded-lg bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+        <span class="font-bold text-xl">W</span>
+      </div>
+      <span class="text-2xl font-bold gradient-text">Watarbase</span>
+    </div>
+    <div class="hidden md:flex items-center space-x-8">
+      <a href="#features" class="hover:text-primary transition-colors">Features</a>
+      <a href="#pricing" class="hover:text-primary transition-colors">Pricing</a>
+      <a href="#faq" class="hover:text-primary transition-colors">FAQ</a>
+    </div>
+    <button
+      class="px-6 py-2 bg-gradient-to-r from-primary to-secondary rounded-lg font-medium hover:opacity-90 transition-opacity">
+      Get Started
+    </button>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="px-6 lg:px-12 py-16 md:py-24">
+    <div class="max-w-6xl mx-auto text-center">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6">
+        Fast, Embeddable <span class="gradient-text">Rust Database</span>
+      </h1>
+      <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10">
+        Watarbase is a high-performance, embeddable database written in Rust that combines speed and reliability for
+        modern applications.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <button
+          class="px-8 py-3 bg-gradient-to-r from-primary to-secondary rounded-xl font-medium text-lg hover:opacity-90 transition-opacity">
+          <i class="fas fa-download mr-2"></i> Download Now
+        </button>
+        <button
+          class="px-8 py-3 bg-dark border border-gray-700 rounded-xl font-medium text-lg hover:bg-gray-800 transition-colors">
+          <i class="fab fa-github mr-2"></i> View on GitHub
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="px-6 lg:px-12 py-16 bg-dark/30">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Powerful Features</h2>
+      <p class="text-gray-300 text-center max-w-2xl mx-auto mb-16">
+        Built for performance and reliability, Watarbase provides everything you need for modern database applications.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="feature-card bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-2xl border border-gray-700">
+          <div
+            class="w-14 h-14 rounded-xl bg-gradient-to-r from-primary to-secondary flex items-center justify-center mb-6">
+            <i class="fas fa-bolt text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Lightning Fast</h3>
+          <p class="text-gray-400">
+            Optimized for speed with minimal latency. Built in Rust for maximum performance.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-2xl border border-gray-700">
+          <div
+            class="w-14 h-14 rounded-xl bg-gradient-to-r from-secondary to-accent flex items-center justify-center mb-6">
+            <i class="fas fa-lock text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Secure & Reliable</h3>
+          <p class="text-gray-400">
+            ACID compliance with crash recovery and atomic operations for data integrity.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-2xl border border-gray-700">
+          <div
+            class="w-14 h-14 rounded-xl bg-gradient-to-r from-accent to-primary flex items-center justify-center mb-6">
+            <i class="fas fa-code text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Developer Friendly</h3>
+          <p class="text-gray-400">
+            Simple API with extensive documentation and examples for easy integration.
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-2xl border border-gray-700">
+          <div
+            class="w-14 h-14 rounded-xl bg-gradient-to-r from-primary to-secondary flex items-center justify-center mb-6">
+            <i class="fas fa-database text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Embedded Design</h3>
+          <p class="text-gray-400">
+            Zero-dependency embeddable solution that works in any Rust application.
+          </p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-card bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-2xl border border-gray-700">
+          <div
+            class="w-14 h-14 rounded-xl bg-gradient-to-r from-secondary to-accent flex items-center justify-center mb-6">
+            <i class="fas fa-sync-alt text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Real-time Sync</h3>
+          <p class="text-gray-400">
+            Built-in replication and real-time synchronization capabilities.
+          </p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="feature-card bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-2xl border border-gray-700">
+          <div
+            class="w-14 h-14 rounded-xl bg-gradient-to-r from-accent to-primary flex items-center justify-center mb-6">
+            <i class="fas fa-plug text-xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Extensible</h3>
+          <p class="text-gray-400">
+            Plugin architecture for custom extensions and optimizations.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="px-6 lg:px-12 py-16">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Simple, Transparent Pricing</h2>
+      <p class="text-gray-300 text-center max-w-2xl mx-auto mb-16">
+        Choose the plan that works best for you. All plans include our core features.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Basic Plan -->
+        <div class="bg-gradient-to-br from-gray-900 to-gray-800 p-8 rounded-2xl border border-gray-700">
+          <h3 class="text-xl font-bold mb-2">Starter</h3>
+          <p class="text-gray-400 mb-6">Perfect for small projects</p>
+          <div class="mb-6">
+            <span class="text-4xl font-bold">$0</span>
+            <span class="text-gray-400">/month</span>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center">
+              <i class="fas fa-check text-primary mr-2"></i>
+              <span>Up to 1GB storage</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-primary mr-2"></i>
+              <span>Basic query engine</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-primary mr-2"></i>
+              <span>Community support</span>
+            </li>
+            <li class="flex items-center text-gray-500">
+              <i class="fas fa-times mr-2"></i>
+              <span>Advanced features</span>
+            </li>
+          </ul>
+          <button
+            class="w-full py-3 bg-dark border border-gray-700 rounded-lg font-medium hover:bg-gray-800 transition-colors">
+            Get Started
+          </button>
+        </div>
+
+        <!-- Pro Plan -->
+        <div
+          class="bg-gradient-to-br from-primary/10 to-secondary/10 p-8 rounded-2xl border border-primary/30 relative">
+          <div
+            class="absolute top-0 right-0 bg-gradient-to-r from-primary to-secondary text-white px-4 py-1 rounded-bl-lg rounded-tr-lg font-bold">
+            Popular
+          </div>
+          <h3 class="text-xl font-bold mb-2">Professional</h3>
+          <p class="text-gray-400 mb-6">For growing businesses</p>
+          <div class="mb-6">
+            <span class="text-4xl font-bold">$29</span>
+            <span class="text-gray-400">/month</span>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center">
+              <i class="fas fa-check text-primary mr-2"></i>
+              <span>Up to 10GB storage</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-primary mr-2"></i>
+              <span>Advanced query engine</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-primary mr-2"></i>
+              <span>Priority support</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-primary mr-2"></i>
+              <span>Replication features</span>
+            </li>
+          </ul>
+          <button
+            class="w-full py-3 bg-gradient-to-r from-primary to-secondary rounded-lg font-medium hover:opacity-90 transition-opacity">
+            Get Started
+          </button>
+        </div>
+
+        <!-- Enterprise Plan -->
+        <div class="bg-gradient-to-br from-gray-900 to-gray-800 p-8 rounded-2xl border border-gray-700">
+          <h3 class="text-xl font-bold mb-2">Enterprise</h3>
+          <p class="text-gray-400 mb-6">For large organizations</p>
+          <div class="mb-6">
+            <span class="text-4xl font-bold">$99</span>
+            <span class="text-gray-400">/month</span>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center">
+              <i class="fas fa-check text-primary mr-2"></i>
+              <span>Unlimited storage</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-primary mr-2"></i>
+              <span>Full feature set</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-primary mr-2"></i>
+              <span>Dedicated support</span>
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-primary mr-2"></i>
+              <span>Custom integrations</span>
+            </li>
+          </ul>
+          <button
+            class="w-full py-3 bg-dark border border-gray-700 rounded-lg font-medium hover:bg-gray-800 transition-colors">
+            Contact Sales
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="px-6 lg:px-12 py-16 bg-dark/30">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Frequently Asked Questions</h2>
+      <p class="text-gray-300 text-center max-w-2xl mx-auto mb-16">
+        Everything you need to know about Watarbase.
+      </p>
+
+      <div class="space-y-4">
+        <!-- FAQ Item 1 -->
+        <div class="faq-item">
+          <button class="w-full flex justify-between items-center py-4 px-6 text-left bg-dark/50 rounded-xl">
+            <span class="font-medium">Is Watarbase compatible with other databases?</span>
+            <i class="fas fa-chevron-down text-primary"></i>
+          </button>
+          <div class="accordion-content">
+            <div class="p-6 pt-0">
+              <p>Yes, Watarbase is designed to be compatible with existing database systems. It supports SQL-like
+                queries and can integrate with other tools through its flexible API.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="faq-item">
+          <button class="w-full flex justify-between items-center py-4 px-6 text-left bg-dark/50 rounded-xl">
+            <span class="font-medium">How does Watarbase compare to SQLite?</span>
+            <i class="fas fa-chevron-down text-primary"></i>
+          </button>
+          <div class="accordion-content">
+            <div class="p-6 pt-0">
+              <p>Watarbase offers better performance than SQLite with more modern features. While SQLite is a great
+                choice for simple applications, Watarbase provides better concurrency handling and extensibility
+                options.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="faq-item">
+          <button class="w-full flex justify-between items-center py-4 px-6 text-left bg-dark/50 rounded-xl">
+            <span class="font-medium">Can I use Watarbase in production?</span>
+            <i class="fas fa-chevron-down text-primary"></i>
+          </button>
+          <div class="accordion-content">
+            <div class="p-6 pt-0">
+              <p>Absolutely! Watarbase is designed for production use with ACID compliance, crash recovery, and
+                performance optimizations. It's already being used in several production systems.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="faq-item">
+          <button class="w-full flex justify-between items-center py-4 px-6 text-left bg-dark/50 rounded-xl">
+            <span class="font-medium">What programming languages does Watarbase support?</span>
+            <i class="fas fa-chevron-down text-primary"></i>
+          </button>
+          <div class="accordion-content">
+            <div class="p-6 pt-0">
+              <p>Watarbase is written in Rust and provides a C API for integration with various programming languages.
+                It currently supports Rust, C/C++, Python (via bindings), and Go.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="px-6 lg:px-12 py-12 border-t border-gray-800">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="flex items-center space-x-2 mb-6 md:mb-0">
+          <div class="w-10 h-10 rounded-lg bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+            <span class="font-bold text-xl">W</span>
+          </div>
+          <span class="text-2xl font-bold gradient-text">Watarbase</span>
+        </div>
+
+        <div class="flex space-x-6">
+          <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+            <i class="fab fa-github text-xl"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+            <i class="fab fa-twitter text-xl"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+            <i class="fab fa-discord text-xl"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 mt-10 pt-8 text-center text-gray-500">
+        <p>© 2025 Watarbase. All rights reserved.</p>
+        <p class="mt-2">Built with ❤️ in Rust</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple accordion functionality
+    document.querySelectorAll('.faq-item button').forEach(button => {
+      button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        const icon = button.querySelector('i');
+
+        // Toggle active class
+        content.classList.toggle('active');
+
+        // Rotate icon
+        if (content.classList.contains('active')) {
+          icon.classList.remove('fa-chevron-down');
+          icon.classList.add('fa-chevron-up');
+        } else {
+          icon.classList.remove('fa-chevron-up');
+          icon.classList.add('fa-chevron-down');
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -273,6 +273,30 @@ PDF 文件只记录字符位置，需后期处理将字符组合成行。在表�
 - ## 吉光卡片，这是一款高颜值的文字排版设计 App，提供了丰富的模板以满足各种场景需求，符合我对 iOS 用户的想象。
 - https://x.com/austinit/status/1800390337082597519
 
+# discuss-pdf-edit
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Show HN: Nano PDF – A CLI Tool to Edit PDFs with Gemini's Nano Banana | Hacker News _202511](https://news.ycombinator.com/item?id=46090619)
+- Does this mean the text only pdf page is transformed into an image that covers the full page, but the text is still under there. So, any machine based extraction would still get the text, but would probably loose all the bounding box information and regular users cannot just use their mouse to select text anymore?
+  - The text is selectable after rehydration. 
+
+- So you convert the PDF into image, edit the image, then convert the image back into a PDF.
+  - This is the usual workflow dealing with pdfs (unfortunately)
+
+- A side effect of replacing entire pages with images is that the file size will expand dramatically. Most PDFs only contain a couple of images
+
+- Interesting approach. I've spent a lot of time wrangling PDF internals recently, and the issue is usually maintaining the xref table integrity when you inject new content streams.
+  - Does this approach rewrite the entire file structure on save, or are you appending incremental updates to the EOF? Incremental is safer for corruption, but file size bloats quickly with AI-generated diffs.
+
+- Very nice! I wonder whether that could be used to get LLMs to annotate pdfs. Say an "agentic" CLI like Claude Code or Gemini-cli reviews a pdf and finds typos, could it use this to annotate the pdf like underlining them in red or something of that sort? That could be nice.
+
+- I am disappointed that this doesn't modify the underlying pdf structure (which is a horror show, I know) but instead relies on fairly lossy OCR back&fourths.
 # discuss-pdf-format
 - ## 
 

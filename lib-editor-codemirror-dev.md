@@ -221,6 +221,7 @@ modified: 2021-05-06T09:38:31.520Z
 - markdown 支持gfm/wiki
   - markdown streamable
   - md文本在hover时 和 富文本渲染元素 自动高亮对应显示
+  - 将markdown-editor的交互逻辑复用到 typst-pdf-editor
 
 - lang
   - replace lezer with tree-sitter

@@ -391,15 +391,146 @@ width = 'this.parent.width - this.marginLeft - this.marginRight'
 
 ## 🆚️⚖️ [On Typesetting Engines: A Programmer's Perspective _202410](https://blog.ppresume.com/posts/on-typesetting-engines)
 
+- [排版引擎纵谈：程序员的视角](https://blog.ppresume.com/posts/zh-cn/on-typesetting-engines)
+
 - Spent two weeks writing a super looooong post: "On Typesetting Engines: A Programmer's Perspective", just to answer one question: why we chose LaTeX as the default typesetting engine.
   - In this post I compared 5 typesetting engines from a programmer's perspective: HTML/CSS, LaTeX, LaTeX.js, Typst and react-pdf with 4 judgement criteria: 1) line breaking, 2) CJK support, 3) pagination, 4) instant preview.
 
 - 📌 The goal of PPResume is to be a professional resume builder that offers top notch typesetting quality, with native support for multi languages.
-- in order to meet PPResume's requirements, the typesetting engine must:
+  - 必须生成顶级、高质量的 PDF
+  - 必须提供对多语言的原生支持
+- 为了生成顶级、高质量的 PDF，排版引擎必须具备优秀的换行算法，而为了实现多语言的原生支持，排版引擎必须能够处理具有庞大字符集的语言（如中文、日文和韩文，即 CJK）。
+  - 还有一点，排版引擎必须支持分页，才能生成 PDF。
+- 简而言之，我会通过检查排版引擎是否符合以下评估标准来对其进行评判：
   - adopt Knuth Plass line breaking algorithm
   - support CJK with respect to best typesetting practices
   - support pagination
   - (optional) support instant preview
+
+- 换行算法是排版引擎的核心技术之一。主要目的是决定段落中文本换行的最佳点。
+- 评估换行算法质量有三个关键指标：
+  - 对齐：换行算法与对齐技术结合使用，以创建间距均匀的文本行。
+  - 断词：许多高级算法都采用断词来改善换行，特别是对于长单词的语言。
+  - 优化：算法通常会尽量减少整段文字之间难看的间隙或过于紧凑的间距。
+- 换行算法有两类：
+  - 最少行数：一种贪婪算法，将尽可能多的单词放在一行上，然后移动到下一行并重复此过程，直到没有更多单词可放置。这种方法被许多现代文字处理器使用，如 LibreOffice Writer 和 Microsoft Word。
+  - 最小锯齿：一种动态规划算法，最早在 TeX 中使用，旨在最小化行末空格长度的平方和，以产生比贪婪算法更美观的结果，后者并不总是最大限度地减小行末空格长度的平方和。
+- 从技术上讲，最少行数算法速度更快，而最小锯齿算法则产生更具视觉吸引力的结果。
+- 在所有换行算法中，Knuth Plass 换行算法是最小锯齿方法的黄金标准。它被各种排版引擎广泛采用，如 TeX、SILE 和 Typst 等。
+
+- CJK（中文、日文和韩文）语言的排版通常被认为比拉丁字母语言更为复杂。这一点在 koreader 项目的经典讨论中得到了体现。
+  - [Chinese, Japanese and Korean typography: some questions · Issue · koreader/koreader _202505](https://github.com/koreader/koreader/issues/6162)
+  - 这种复杂性的根本原因在于 CJK 语言的字符集远远大于拉丁字母语言。根据 CJK 统一表意文字，截至 Unicode 16.0，Unicode 定义了总共 97680 个字符。这实在是庞大无比。相比之下，拉丁字母表的字符数量仅有几百个
+
+### HTML + CSS
+
+- 从技术上讲，HTML（超文本标记语言）并不是一个排版引擎，而是一种用于创建网页结构和内容的标记语言。它的主要目的是定义文档的结构，例如标题、段落、列表和链接等。
+  - 它无法处理复杂的排版任务，例如：
+  - 断词：HTML 不处理断词。
+  - 分页：HTML 不是为分页设计的。
+- 虽然 HTML 本身不能作为排版引擎使用，但结合 CSS（层叠样式表）后，可以视为一个初级的排版引擎。
+  - 从工程角度来看，HTML 和 CSS 并未实现 Knuth Plass 换行算法，因此无法满足 PPResume 的需求。
+  - 虽然也有一些 Knuth-Plass 换行算法的 JavaScript 实现，但似乎没有一个准备好用于生产环境
+- 建议在 CJK 和西文字符之间留出一些空格，而纯 HTML 和 CSS 无法自动做到这一点——这需要 JavaScript 的帮助。
+- 优点
+  - 普适性：HTML 和 CSS 是 web 的基础，使其在任何带有浏览器的设备上都可访问。
+  - 响应式：HTML 和 CSS 是响应式的，可以适应任何大小的视口。
+  - 灵活性：HTML 和 CSS 非常灵活，可以通过丰富的标准 API 进行编程。
+  - 实时预览：HTML 和 CSS 支持实时预览。
+- 缺点
+  - 排版控制有限：与专用排版引擎相比，HTML/CSS 在细微排版细节上提供的控制较少。
+  - 浏览器兼容性：不同的浏览器可能会以不同的方式渲染相同的 HTML 和 CSS，使得跨设备保持一致性具有挑战性。
+  - 无原生分页：HTML 和 CSS 不是为分页文档设计的，因此不提供导出为 PDF 的一流工具。
+  - 换行效果差：如前所述，HTML 和 CSS 未实现 Knuth Plass 换行算法。
+  - CJK 排版需要额外努力：HTML 和 CSS 需要额外的库和努力才能遵循 CJK 的最佳排版实践。
+
+### LaTeX
+
+- TeX 是由 Donald Knuth 在 20 世纪 70 年代末创建的排版系统。它专为创建高质量排版的文档而设计，特别是那些包含复杂数学和科学符号的文档。
+  - LaTeX 是一个建立在 TeX 之上的文档编制系统。它由 Leslie Lamport 在 20 世纪 80 年代初创建，以简化文档编制过程。LaTeX 在 TeX 的低级编程语言之上提供了一组更高级的宏，使其更易于使用和更直观。
+  - TeX 拥有黄金换行算法——Knuth Plass 换行算法。毕竟 Knuth 是 TeX 的作者，对吧？
+- LaTeX 在一些新引擎和一些宏包的帮助下对 CJK 提供了相当好的支持： 新引擎如 LuaTeX 和 XeTeX, 宏包如 xeCJK、CTeX 和 LuaTeX-ja
+- LaTeX 从一开始就是为排版分页文档而设计的，所以它对分页有出色的支持，你可以轻松调整纸张大小、方向、边距等。
+- LaTeX 默认在服务器端运行，因此从请求生成 PDF 到响应生成的 PDF 会有往返时间。
+  - 然而，确实有方法可以缓解这一问题。魔法在于WebAssembly。
+  - texlive.js：最初的将 LaTeX 编译为 wasm 的尝试，仅支持 pdfTeX 引擎
+  - SwiftLaTeX，一个最近的尝试，让 LaTeX 引擎在浏览器中运行，支持带有 CJK 的 XeTeX。
+  - TeXpresso：支持实时渲染和错误报告的 LaTeX，这里有一些 录屏演示
+- 市场上基于 LaTeX 的简历生成器选择非常少
+- 优点
+  - 精确和控制：LaTeX 提供无与伦比的文档布局和排版控制。
+  - 黄金换行算法：Knuth Plass 换行算法是最优换行算法的黄金标准，且其是由 TeX 作者发明的。
+  - 广泛的 CJK 支持：有大量的宏包扩展了 LaTeX 对 CJK 的支持。
+- 缺点
+  - 学习曲线陡峭：与所见即所得编辑器相比，LaTeX 对新用户的入门门槛更高。
+  - 没有实时预览：默认情况下，LaTeX 需要在服务器上进行编译，因此没有实时预览。
+  - 陈旧且晦涩的开发体验：LaTeX 的编译日志有时难以阅读，只能通过二分搜索方法进行调试。
+
+### LaTeX.js
+
+- LaTeX.js 是一个将 LaTeX 转换为 HTML5 的工具，旨在直接在浏览器中渲染 LaTeX 文档，而无需服务器端处理。
+  - [LaTeX.js Live Playground | LaTeX.js](https://latex.js.org/playground.html)
+    - 在线示例渲染的文档没有分页效果
+    - LaTeX.js 不使用 Knuth Plass 换行算法，而是采用 text-align: justify 来最小化段落的锯齿。
+    - 页面的概念不适用于 HTML，因此与分页相关的任何宏都会被忽略，也就是说，你无法使用 LaTeX.js 生成分页文档，这对于简历生成器应用来说是致命的。
+    - LaTeX.js 支持 CJK，因为它本质上是 HTML 和 CSS 的一个转译器。然而，和 HTML、CSS 一样，它并不遵循 CJK 的最佳排版实践，且想要调整它以便遵循这些最佳实践时，会更为困难。
+    - LaTeX.js 提供实时预览，因为它是一个客户端库，能够在浏览器中运行。
+- LaTeX.js 仅提供有限的 TeX/LaTeX 解析能力，换句话说，许多 LaTeX 宏包无法在 LaTeX.js 中使用。
+- 当我在 2022 年 12 月我开始创建 PPResume 时，我也尝试了一段时间 LaTeX.js，但在发现其致命限制后，我迅速放弃了它，转而使用服务器端 LaTeX。我个人认为，LaTeX.js 是一个很好的想法，但远未成为生产环境下的 LaTeX 替代品。
+- 优点
+  - 实时预览：LaTeX.js 完全在客户端处理 LaTeX 文档，这意味着它可以在浏览器中实时渲染文档，消除了对服务器端 LaTeX 安装和编译的需求。
+  - 可扩展性：该项目用 JavaScript 实现，易于集成到 Web 应用程序中。新的宏也可以很容易地通过 JavaScript 来添加。
+- 缺点
+  - 功能有限：LaTeX.js 仅涵盖有限的 LaTeX 功能，远未成为生产环境下的 LaTeX 替代品。许多 LaTeX 宏包无法与 LaTeX.js 一起使用。
+  - 缺乏分页：一些 LaTeX 功能，如粘连和分页，无法转换为 HTML，这对于生成像 PDF 这样的分页文档来说是一个致命缺点。
+  - 换行效果差：LaTeX.js 基于 HTML 和 CSS，并没有实现 Knuth Plass 换行算法。
+  - CJK 排版需要额外的工作：同样，由于 LaTeX.js 基于 HTML 和 CSS，因此需要额外的工作才能遵循 CJK 的最佳排版实践，而且比纯 HTML 和 CSS 更麻烦一些。
+
+### Typst
+
+- Typst 是一个现代排版系统，旨在成为 LaTeX 的直观高效替代品。它的语法深受 Markdown 的启发，使得那些觉得 LaTeX 语法复杂的用户更容易上手。
+- Typst 提供两种换行选项：
+  - #set par(linebreaks: "simple")：以简单的首次拟合风格进行换行。
+  - #set par(linebreaks: "optimized")：优化整个段落的换行，此选项实现了 Knuth Plass 换行算法。
+- Typst 的分页功能开箱即用，作为一个专用排版引擎，这一点相当不错。
+- CJK 支持尚不如 LaTeX 成熟。因此，Typst 社区中存在许多暂未解决的问题。
+- Typst 提供了 typst watch 命令，结合增量编译，PDF 可以在毫秒内更新。此外，还有一些扩展如 tinymist，可以在编辑器中实现实时预览。
+- 它也可以在浏览器中运行，因为该项目是用 Rust 编写的，并设计为能够编译为 WebAssembly。实际上，官方的 Typst web app 就是通过 WebAssembly 在浏览器中运行的。然而，这一部分并未开源, 但社区提供了开源替代方案
+
+- 优点
+  - 用户友好的语法：Typst 的语法比 LaTeX 更直接和一致，使初学者更容易学习和使用。
+  - 快速编译：Typst 具有增量编译，编译速度在毫秒级而非秒级。
+  - 可定制的换行：Typst 提供选项让用户选择 Knuth Plass 换行算法。
+- 缺点
+  - 有限的生态系统：作为一个较新的工具，Typst 缺乏 LaTeX 提供的丰富的宏包生态系统，这可能限制高级排版需求的功能。
+  - 不稳定的 CJK 排版：Typst 在 CJK 排版方面仍存在许多问题，并在不断演进中。
+  - 实时预览是私有的：Typst 并未开源其 WebAssembly 绑定，因此在浏览器中没有官方的实时预览功能。
+
+### react-pdf
+
+- React renderer for creating PDF files on the browser and server
+- react-pdf 内部实现了 Knuth Plass 换行算法。默认情况下，它会对英文单词进行断词处理。
+- 支持分页，因为它是一个生成 PDF 的库。它还提供选项来指定页面大小、DPI、样式等。
+- 在默认设置下，react-pdf 不支持 CJK 字符，你需要注册字体并在样式中引用它。
+- 如果在客户端使用，你就可以享受实时预览，你可以再次查看 playground 以获取实时演示。否则，如果在服务器端与 Node.js 一起使用，由于请求到响应的往返时间，就无法实现实时预览。
+
+- 看起来 react-pdf 将是简历生成器的理想排版引擎选择。
+  - 但并不是一个专用的排版引擎。它缺乏许多仅在专用排版引擎中可用或运行良好的功能。例如，它没有内置的列表项。
+  - 最重要的是，尽管它已经实现了 Knuth Plass 换行算法，但排版不仅仅是将段落断词换行，对吗？你仍然需要调整段落之间的间距、字体大小/样式，并遵循 CJK 最佳排版实践等。
+  - 所有这些调整都需要大量的工作，而 LaTeX 已经开箱即用地提供了这些功能。
+  - 实际上，有一个开源的简历生成器 open-resume，它使用这个库实时生成和更新简历 PDF，你可以自己检查其生成的 PDF，并与 LaTeX 生成的 PDF 进行比较。
+- 优点
+  - React 集成：react-pdf 允许开发者使用 React 创建 PDF 文档。
+  - 实时预览：在客户端运行时，react-pdf 提供实时预览。
+  - 良好的换行：react-pdf 内部实现了 Knuth Plass 换行算法，效果优于普通 HTML 和 CSS。
+  - 分页支持：react-pdf 开箱即用支持分页，具有可定制的页面大小、边距等。
+- 缺点
+  - 有限的排版能力：毕竟 react-pdf 是一个 React 库，既不是专业的也不是专用的排版引擎
+  - 对 CJK 的支持有限：react-pdf 可以通过手动注册字体渲染 CJK，但默认并不遵循 CJK 最佳排版实践。
+
+### 总结
+
+- HTML & CSS 和 LaTeX.js 都不支持 Knuth Plass 换行，而 react-pdf 和 Typst 的 CJK 支持尚未成熟，因此 LaTeX 是我们唯一的选择。
 
 | Typesetting Engine | Knuth Plass line breaking |   CJK   | Pagination | Instant Preview |
 |--------------------|---------------------------|---------|------------|-----------------|

@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tiny Typst Previewer Example</title>
+  <!-- Loads the full bundle or the lite version from jsdelivr -->
+  <!-- src="https://cdn.jsdelivr.net/npm/@myriaddreamin/typst.ts/dist/esm/contrib/all-in-one-lite.bundle.js" -->
+  <script type="module"
+    src="https://cdn.jsdelivr.net/npm/@myriaddreamin/typst-all-in-one.ts@0.7.0-rc2/dist/esm/index.js"
+    id="typst"></script>
+  <style>
+    body {
+      margin: 0px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #export {
+      /* width: 120px;
+      height: 20px; */
+      padding: 10px 20px;
+    }
+
+    #input {
+      width: 100%;
+      height: 25vh;
+      margin: 0;
+      padding: 0;
+      border-width: 0;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Provides a button to export to PDF after finish editing -->
+  <button id="export">Export To PDF</button>
+  <!-- Accepts user input using a text area element -->
+  <h2> typst source text </h2>
+  <textarea id="input">
+#set page(paper: "a4")
+#set heading(numbering: "1.")
+
+#show link: set text(fill: blue, weight: 700)
+#show link: underline
+
+= The Typst Playground
+
+Welcome to the Typst Playground! This is a sandbox where you can experiment with Typst. You can type anywhere in the editor panel on the left. The preview panel to the right will update live.
+
+= Basics <basics>
+
+Typst is a _markup_ language. You use it to express not just the content, but also the structure and formatting of your document. For example, surrounding a word with underscores _emphasizes_ it with italics and starting a line with an equals sign creates a section heading.
+
+Typst has lightweight syntax like this for the most common formatting needs. Among other things, you can use it to:
+
+- *Strongly emphasize* some text1
+- Refer to @basics
+- Typeset math: $a, b in { 1/2, sqrt(4 a b) }$
+
+That's just the surface though! Typst has powerful systems for scripting, styling, introspection, and more. In the realm of a Typst document, there is nothing you can't automate.
+
+- *Strongly emphasize* some text2
+- Refer to @basics
+- Typeset math: $a, b in { 1/2, sqrt(4 a b) }$
+
+That's just the surface though! Typst has powerful systems for scripting, styling, introspection, and more. In the realm of a Typst document, there is nothing you can't automate.
+
+- *Strongly emphasize* some text3
+- Refer to @basics
+- Typeset math: $a, b in { 1/2, sqrt(4 a b) }$
+
+That's just the surface though! Typst has powerful systems for scripting, styling, introspection, and more. In the realm of a Typst document, there is nothing you can't automate.
+
+= Examples <examples>
+
+Typst is a _markup_ language. You use it to express not just the content, but also the structure and formatting of your document. For example, surrounding a word with underscores _emphasizes_ it with italics and starting a line with an equals sign creates a section heading.
+
+Typst has lightweight syntax like this for the most common formatting needs. Among other things, you can use it to:
+
+- *Strongly emphasize* some text1
+- Refer to @basics
+- Typeset math: $a, b in { 1/2, sqrt(4 a b) }$
+
+That's just the surface though! Typst has powerful systems for scripting, styling, introspection, and more. In the realm of a Typst document, there is nothing you can't automate.
+
+
+= Next steps
+
+To learn more about Typst, we recommend you to check out our tutorial at https://typst.app/docs/tutorial.
+
+Once you've explored Typst a bit, why not set yourself up a proper editing environment?
+
+#import "@preview/tiaoma:0.3.0"
+#let next-step(url, body) = grid(
+  columns: 2,
+  gutter: 1em,
+  tiaoma.qrcode(url, width: 3em),
+  {
+    show strong: link.with(url)
+    body
+  }
+)
+
+#next-step("https://typst.app/signup")[
+  To get access to multi-file projects, live collaboration, and more, *sign up* to our web app for free.
+]
+
+#next-step("https://typst.app/open-source/#download")[
+  You can also *download* our free and open-source command line tool to continue your journey locally.
+]
+
+  </textarea>
+  <h2> PDF Preview </h2>
+  <div id="content"></div>
+  <script>
+    const input = document.getElementById('input');
+    const contentDiv = document.getElementById('content');
+
+    // Exports SVG and puts it into the `contentDiv`
+    const previewSvg = mainContent => {
+      $typst.svg({ mainContent }).then(svg => {
+        console.log(`rendered! SvgElement { len: ${svg.length} }`);
+        // append svg text
+        contentDiv.innerHTML = svg;
+
+        const svgElem = contentDiv.firstElementChild;
+        const width = Number.parseFloat(svgElem.getAttribute('width'));
+        const height = Number.parseFloat(svgElem.getAttribute('height'));
+        const cw = document.body.clientWidth - 40;
+        svgElem.setAttribute('width', cw);
+        svgElem.setAttribute('height', (height * cw) / width);
+      });
+    };
+
+    // Exports PDF and downloads it
+    const exportPdf = mainContent =>
+      $typst.pdf({ mainContent }).then(pdfData => {
+        var pdfFile = new Blob([pdfData], { type: 'application/pdf' });
+
+        // Creates element with <a> tag
+        const link = document.createElement('a');
+        // Sets file content in the object URL
+        link.href = URL.createObjectURL(pdfFile);
+        // Sets file name
+        link.target = '_blank';
+        // Triggers a click event to <a> tag to save file.
+        link.click();
+        URL.revokeObjectURL(link.href);
+      });
+
+    /// Listens the 'load' event to initialize after loaded the bundle file from CDN (jsdelivr).
+    document.getElementById('typst').addEventListener('load', function () {
+      /// Initializes the Typst compiler and renderer. Since we use "all-in-one-lite.bundle.js" instead of
+      /// "all-in-one.bundle.js" we need to tell that the wasm module files can be loaded from CDN (jsdelivr).
+      $typst.setCompilerInitOptions({
+        getModule: () =>
+          'https://cdn.jsdelivr.net/npm/@myriaddreamin/typst-ts-web-compiler/pkg/typst_ts_web_compiler_bg.wasm',
+      });
+      $typst.setRendererInitOptions({
+        getModule: () =>
+          'https://cdn.jsdelivr.net/npm/@myriaddreamin/typst-ts-renderer/pkg/typst_ts_renderer_bg.wasm',
+      });
+
+      /// Binds exportPdf action to the button
+      document.getElementById('export').onclick = () => exportPdf(input.value);
+      /// Binds previewSvg action to the textarea
+      input.oninput = () => {
+        previewSvg(input.value);
+      };
+      /// Triggers the first preview.
+      previewSvg(input.value);
+    });
+  </script>
+  <!-- <style>
+    body {
+      margin: 0px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #export {
+      width: 100%;
+      height: 20px;
+    }
+
+    #input {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      border-width: 0;
+      height: auto;
+    }
+  </style> -->
+</body>
+
+</html>

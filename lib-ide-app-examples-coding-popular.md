@@ -295,6 +295,10 @@ modified: 2025-12-11T18:10:23.710Z
   - Switch models on-the-fly within Claude Code using the /model command.
   - The `activate` command allows you to set up environment variables globally in your shell, enabling you to use the claude command directly or integrate Claude Code Router with applications built using the Agent SDK.
     - `eval "$(ccr activate)"`
+- https://github.com/Fast-Editor/Lynkr /MIT/202512/js
+  - https://fast-editor.github.io/Lynkr/
+  - Lynkr is a self-hosted Claude Code proxy that lets the CLI route requests through your own infrastructure. 
+  - It is a Cli tool which acts like a HTTP proxy that lets Claude Code CLI talk to non-Anthropic backends, manage local tools, and compose Model Context Protocol (MCP) servers with prompt caching, repo intelligence, and Git-aware automation
 
 - https://github.com/UfoMiao/zcf /4.7kStar/MIT/202512/ts
   - http://zcf.ufomiao.com/

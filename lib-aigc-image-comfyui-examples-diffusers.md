@@ -529,11 +529,27 @@ modified: 2025-08-23T11:43:35.904Z
     - its not free, you must use api from wavespeed.ai
       - Well the Z-Image part is free, when you have a GPU. But yeah this whole post is an Ad for Wavespeed.
 
+- https://github.com/shrimbly/node-banana /202512/ts
+  - node-based workflow application for generating images with NBP. Build image generation pipelines by connecting nodes on a visual canvas. Built mainly with Opus 4.5.
+  - AI Image Generation - Generate images using Google Gemini models
+  - Node Editor: @xyflow/react (React Flow)
+  - Canvas: Konva.js / react-konva
+
 - https://github.com/markfulton/NanoBananaEditor /521Star/AGPL/202509/ts/inactive
   - Nano Banana image generator and editor application.
   - Powered by Gemini 2.5 Flash images API.
   - Conversational Editing - Modify images using natural language instructions
   - Paint masks to target specific areas for editing
+  - [I built the best Nano Banana AI Image Editor, and I'm open-sourcing it : r/SideProject _202509](https://www.reddit.com/r/SideProject/comments/1n5mzas/i_built_the_best_nano_banana_ai_image_editor_and/)
+- https://github.com/etranHOLI/NanoBananaEditor /AGPL/202512/ts
+  - Nano Banana image generator and editor application. This tool provides a central hub for AI image generation and revisions.
+
+- https://github.com/hoodini/nano-banana-ui /202512/ts
+  - https://nano-banana-ui.vercel.app/
+  - web application for generating and editing images using Google's Gemini AI (Nano Banana Pro). 
+  - Built with Next.js, TypeScript, and Framer Motion
+  - Text-to-Image: Generate stunning images from text descriptions using Gemini 2.5 Flash
+  - Image Editing: Edit existing images with text prompts - add, remove, or modify elements
 # examples
 - https://github.com/d4N-87/ComfyUI-Workflow-Inspector /7Star/MIT/202508/ts
   - https://d4n-87.github.io/ComfyUI-Workflow-Inspector/

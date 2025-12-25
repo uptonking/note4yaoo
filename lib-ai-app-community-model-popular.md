@@ -1713,14 +1713,19 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - https://x.com/amasad/status/1872320808028454976
   - Craziest thing is it took only $5.5m to train. US labs spend one — maybe two — order of magnitude more for frontier models.
-# discuss-model-api-gateway/router
+# discuss-model-api-gateway/router/proxy
 - ## 
 
 - ## 
 
 - ## 
 
-- ## 
+- ## [CLIProxy反代Antigravity + 接入claude code教程 ](https://linux.do/t/topic/1362485)
+  - 认证成功后即可进入下一步，开始配置cc。建议使用cc-switch来管理配置
+  - 需要注意Antigravity提供的opus模型的ID比较特别
+
+- [CLIProxyAPI获取免费api+cline配置代码生成 ](https://linux.do/t/topic/1348585)
+  - zeabur 会有$5/月免费使用
 
 - ## 🤔 [请问大家有没有主流Ai综合平台推荐 ](https://linux.do/t/topic/1358867)
   - Gemini学生会员，但是生图只有2k，而且感觉网页版性能受限，还是得付费。

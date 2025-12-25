@@ -203,7 +203,25 @@ modified: 2025-03-22T18:23:37.602Z
   - Typography is a complex system of interrelated styles. 100s of style declarations on dozens of elements must be in harmonious order. Trying one design change can mean making dozens of tedious recalculations and CSS value changes. Creating new Typography themes with CSS feels hard.
   - You can provide configuration to the Typography.js JS api and it uses its Typography engine to generate CSS for block and inline elements.
   - Typography.js themes are simple Javascript objects. As such they're easy to share across projects
-# typesetting
+# typesetting-font
+- https://github.com/Myriad-Dreamin/typst.ts /907Star/apache2/202512/rust/ts
+  - https://myriad-dreamin.github.io/typst.ts
+    - 示例渲染为html元素，文字可选择，但没有视觉上的分页线
+  - a project dedicated to bring the power of typst to the world of JavaScript
+  - 效果类似付费版 [Typst: The new foundation for documents](https://typst.app/play)
+    - 此示例右侧预览pdf渲染为`<canvas>`元素
+  - [Use typst as library in browser? · Issue · typst/typst _202304](https://github.com/typst/typst/issues/909)
+    - Typst can be compiled to WASM, but no JS glue is available, you'd have to write that yourself. It's not as simple as compile(string) because you also need to provide fonts, and if you want a multi-file setup of course also files.
+  - https://github.com/Myriad-Dreamin/shiroa /590Star/apache2/202512/rust
+    - https://myriad-dreamin.github.io/shiroa/
+    - a simple tool for creating modern online books in pure typst
+    - heavily inspired by mdBook, but it is considered to be more adapted to Typst style, hence no guarantee of compatibility with mdBook
+
+- https://github.com/Lamkateh/richtext-typst /MIT/202509/python/inactive
+  - Convert rich text JSON documents (from editors like ProseMirror, Quill, Slate) to Typst markup.
+  - Supports multiple formats: Quill, Slate, ProseMirror (extensible)
+  - Custom parser support: Register your own parser for new formats
+
 - https://github.com/davidmerfield/Typeset
   - https://typeset.lllllllllllllllll.com/
   - An HTML pre-proces­sor for web ty­pog­ra­phy
@@ -228,9 +246,10 @@ modified: 2025-03-22T18:23:37.602Z
 - https://github.com/exogen/react-typesetting /js/inactive
   - https://exogen.github.io/react-typesetting/
   - React components for creating beautifully typeset designs.
-
-## cn/汉字与排版
-
+  - `TightenText` component is intended to give short runs of text (like titles, labels, etc.) some “give” before wrapping.
+  - `PreventWidows` component instead works by actually measuring the widths of lines, and can thus support many different ways to specify the desired minimum width
+  - `Justify` component solves this by conditionally setting text as justified only when there is enough room
+# cn/汉字与排版
 - tips
   - [The Type — 文字 / 设计 / 文化 » 中文排版网格系统的五大迷思](https://www.thetype.com/2020/01/16565/)
 
@@ -286,72 +305,6 @@ modified: 2025-03-22T18:23:37.602Z
 - https://github.com/heangfat/cjk-math-type
   - 中華數碼之排版工具與方法
   - 本庫提供一款可變字型，包含筭籌、花碼、筮數，並簡述其基本用法。
-# latex/printing
-- overleaf /10.5kStar/AGPLv3/202211/js/latex/ace>codemirror
-  - https://github.com/overleaf/overleaf
-  - https://github.com/overleaf/overleaf/wiki
-  - https://github.com/overleaf/overleaf/tree/main/services/web/frontend/js/features/source-editor
-  - A web-based collaborative LaTeX editor
-  - source-editor支持codemirror6、ace
-  - https://github.com/overleaf/ace /Ajax.org Cloud9 Editor
-  - [Compile Error and PDF Download Notifications](https://github.com/overleaf/overleaf/issues/1031)
-    - migrate from ACE to CodeMirror 6. Yes, the CM6 work will be coming to CE soon._202206
-
-  - https://github.com/overleaf/ace
-  - https://github.com/amitness/open-in-overleaf
-    - Open latex of any arxiv.org paper on overleaf
-
-- https://github.com/fiduswriter/fiduswriter /js/python
-  - https://fiduswriter.org/
-  - an online collaborative editor especially made for academics who need to use citations and/or formulas.
-
-- https://github.com/michael-brade/LaTeX.js /livescript
-  - https://latex.js.org/
-  - https://latex.js.org/playground.html
-  - a LaTeX to HTML5 translator written in JavaScript using PEG.js. 
-  - LaTeX.js tries to be absolutely and uncompromisingly exact and compatible with LaTeX. 
-  - If you need a LaTeX to HTML translator that also understands TeX to some extent, take a look at: tex4ht、latex2html
-
-- https://github.com/manuels/texlive.js /inactive
-  - http://manuels.github.com/texlive.js/
-  - Compiling LaTeX (TeX live) in your browser
-  - This is a port of TeX live 2016 to Javascript. It is based on the port of the pdftex TeX compiler to Javascript using emscripten. It creates PDF files from LaTeX code and supports packages.
-
-- https://github.com/SaswatPadhi/pseudocode.js /js
-  - https://saswatpadhi.github.io/pseudocode.js
-  - a JavaScript library that typesets pseudocode beautifully to HTML.
-  - Pseudocode.js takes a LaTeX-style input that supports the algorithmic constructs from LaTeX's algorithm packages
-  - The HTML output produced by pseudocode.js is (almost) identical with the pretty algorithms printed on publications that are typeset by LaTeX.
-  - pseudocode.js can render math formulas using either KaTeX, or MathJax.
-
-- https://github.com/James-Yu/LaTeX-Workshop
-  - an extension for Visual Studio Code, aiming to provide core features for LaTeX typesetting with Visual Studio Code.
-
-## tex-markdown
-
-- https://github.com/susam/texme /js
-  - a lightweight JavaScript utility to create self-rendering Markdown + LaTeX documents.
-
-- https://github.com/parpalak/upmath.me
-  - Markdown and LaTeX online editor - create text for web with equations and diagrams
-# math
-- https://github.com/cortex-js/compute-engine /ts
-  - https://cortexjs.io/
-  - An engine for symbolic manipulation and numeric evaluation of math formulas expressed with MathJSON
-  - MathJSON is a lightweight mathematical notation interchange format based on JSON.
-  - The Cortex Compute Engine can parse LaTeX to MathJSON, serialize MathJSON to LaTeX, format, simplify and evaluate MathJSON expressions.
-
-- https://github.com/KaTeX/KaTeX /js/NoDeps
-  - https://katex.org/
-  - Fast math typesetting for the web.
-  - KaTeX renders its math synchronously and doesn't need to reflow the page. See how it compares to a competitor in this speed test.
-  - KaTeX's **layout** is based on **Donald Knuth's TeX**, the gold standard for math typesetting.
-  - support ssr
-  - KaTeX supports much (but not all) of LaTeX and many LaTeX packages.
-
-- https://github.com/pyramation/LaTeX2JS /js
-  - Author interactive math equations and diagrams online using LaTeX and PSTricks
-  - thanks to MathJax
 # wireframe
 - https://github.com/tsx/shireframe
   - http://rawgit.com/tsx/shireframe/master/examples/doodle.html

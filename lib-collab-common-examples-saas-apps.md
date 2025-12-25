@@ -285,6 +285,9 @@ modified: 2023-01-17T19:14:47.611Z
 - https://github.com/mskelton/cursed /202402/ts
   - Multiplayer live cursors
 
+- https://github.com/tinkink-net/magicaret /202512/ts
+  - Turn your input caret into a beautiful and fantastic one.
+
 - [Figma-Style Live Cursors with Next.js 16 & Upstash Realtime | Upstash Blog](https://upstash.com/blog/realtime-cursors-next-16)
   - https://x.com/joshtriedcoding/status/2000919570811375762
   - next.js 16 + upstash realtime

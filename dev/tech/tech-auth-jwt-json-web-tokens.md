@@ -20,6 +20,9 @@ modified: 2021-08-12T14:36:02.148Z
 - todo
   - jwt的核心功能的示例
   - 切换 fake backend api的例子，不必执着，全局的替换需要考虑的场景太多
+
+- [JSON Web Tokens - jwt.io](https://www.jwt.io/)
+  - Decode, verify, and generate JSON Web Tokens, which are an open, industry standard RFC 7519 
 # dev-xp-auth
 - 集成的第三方登录如clerk宕机时，可以开启备用方案，通过环境变量禁止注册和旧的登录组件，使用临时的邮箱验证码ui登录
   - 此方案比转存clerk的jwt token更方便，无需管理token失效

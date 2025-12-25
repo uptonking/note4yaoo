@@ -816,6 +816,7 @@ modified: 2020-12-28T12:24:09.275Z
 # app-builder
 - https://github.com/AmruthPillai/Reactive-Resume /28.3kStar/MIT/202501/ts
   - https://rxresu.me/
+  - https://docs.rxresu.me/
   - A one-of-a-kind resume builder that keeps your privacy in mind. 
   - Completely secure, customizable, portable, open-source and free forever. 
   - A free and open-source resume builder that simplifies the process of creating, updating, and sharing your resume.

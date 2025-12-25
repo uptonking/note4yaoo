@@ -184,6 +184,12 @@ modified: 2020-07-17T10:54:16.341Z
   - 支持人名姓氏模式
   - 以下是 pinyin-pro、pinyin 及 @napi-rs/pinyin 包对于汉字转换的速度及准确率对比表
   - 应用 AC 自动机 + 贪心算法 + 动态规划等算法，可在 1 秒内完成数百万规模中文拼音的转换
+# fonts-utils
+- https://github.com/rust-gamedev/arewegameyet
+  - [Text Rendering | Are we game yet?](https://arewegameyet.rs/ecosystem/textrendering/)
+  - Libraries and tools for loading and rendering fonts
+# fonts-examples
+
 # discuss
 - ## 
 

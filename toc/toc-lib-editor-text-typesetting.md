@@ -32,14 +32,25 @@ modified: 2024-11-16T08:23:40.617Z
   - https://yamlresume.dev/
   - YAMLResume allows you to manage and version control your resumes using YAML and generate professional looking PDFs with beautiful typesetting in a breeze.
   - This project was started as the core typesetting engine for PPResume, a LaTeX based, pixel perfect resume builder. 
-  - YAMLResume adopts LaTeX as the default typesetting engine, which is the state of the art typesetting system in the academic and technical publishing industry.
+  - YAMLResume adopts `LaTeX` as the default typesetting engine, which is the state of the art typesetting system in the academic and technical publishing industry.
     - In the future we may support other typesetting engines like Typst, HTML/CSS, etc.
   - the resume content is drafted in plain text as YAML
   - the YAML plain text is then rendered into a PDF with a pluggable typesetting engine
   - the layout can be adjusted with options like font sizes, page margins, etc.
   - https://x.com/PPResumeX/status/1920294577497387493
     - This project is inspired by JSON Resume with many enhancements like rich text, layout and i18n, etc.
-# typesetting
+  - [Introducing YAMLResume _202505](https://yamlresume.dev/blog/introducing-yamlresume)
+  - YAMLResume works like a mini compiler, i.e, it takes an input, parses it to an AST and then generates an output.
+  - The core design principle of YAMLResume is separation of concerns. One of the most famous examples that follows this principle is HTML & CSS
+  - YAML is better than JSON because it is more human-readable and human-writable
+    - markdown is a general-purpose markup language for creating formatted text, while resumes only use a very limited set of markdown features.
+    - markdown is far too flexible, often giving users more freedom than they need. It would be pretty hard to reliably parse a generic markdown document as a resume.
+    - Third, features like templates switching, precise layout control (like \hfill and \hspace in LaTeX) is very hard to implement in markdown.
+  - LaTeX is a very mature and stable typesetting engine that can produce extremely high-quality PDFs. 
+    - YAMLResume is designed to support multi languages with the best possible typesetting quality, however, `typst` CJK support is still unstable and lacking.
+    - Later on I may add a new renderer backend to support typst.
+  - Although we have decided not to use markdown as the resume input format, we do support a limited set of markdown rich text syntax for the `summary` field in various sections.
+# typesetting-layout
 - https://github.com/chearon/dropflow /MIT/202412/ts
   - https://chearon.github.io/dropflow/
   - Dropflow is a CSS layout engine created to explore the reaches of the foundational CSS standards (that is: inlines, blocks, floats, positioning and eventually tables, **but not flexbox or grid**).

@@ -7,12 +7,7 @@ modified: 2020-12-29T17:52:48.584Z
 
 # tool-office-pdf-xp
 
-# pdf-studio
-
-- 编辑功能强大
-
-- bugs
-  - 高亮后的颜色可能不同，在win平台或使用不同的pdf阅读软件如acrobat
+# guide
 
 - tips
   - pdf-editor参考: acrobat, libre-draw, scribus, inkscape, master, pdf-studio, pdf-sam, edge浏览器, os自带工具
@@ -27,7 +22,20 @@ modified: 2020-12-29T17:52:48.584Z
   - 为扫描版书本自动添加目录toc: 目录内容为手动复制或自动检测, 然后自动关联到正文位置
   - 对常见的多栏布局文本化适合较为固定的场景
 
+- pdf-布局
+  - overleaf的Visual Editor支持以富文本的形式编辑内容，但布局与右侧预览的pdf不同，是简化版的布局和样式
+    - 仍显示latex文本形式的表示，而不是图形形式
+    - 未显示分页
+    - 表格更简单，但表格能可视化编辑内容
+
 - 画板或批注类产品要参考规范 [Web Annotation Data Model](https://www.w3.org/TR/annotation-model/)
+# draft
+- 基于 AI 的pdf review/suggestions
+# pdf-studio
+- 编辑功能强大
+
+- bugs
+  - 高亮后的颜色可能不同，在win平台或使用不同的pdf阅读软件如acrobat
 # pdf-editor
 - [JOPDF | Free & Fast PDF Editor for Windows, Mac & Linux](https://www.jopdf.com/)
 # pdf-reader

@@ -51,7 +51,9 @@ modified: 2021-01-04T17:26:43.784Z
   - This library is also intended as a modern alternative to the unmaintained but still popular `pdf-parse`.
 
 - https://github.com/diegomura/react-pdf /16.2kStar/MIT/202509/ts
+  - https://react-pdf.org/repl /示例渲染的页面内容为dom元素
   - React renderer for creating PDF files on the browser and server
+  - 使用了 pdfkit
   - This package is used to create PDFs using React. 
     - If you wish to display existing PDFs, you may be looking for https://github.com/wojtekmaj/react-pdf
   - https://github.com/ag-media/react-pdf-table /MIT/202501/ts
@@ -168,6 +170,32 @@ modified: 2021-01-04T17:26:43.784Z
 - https://gitlab.coko.foundation/pagedjs/pagedjs
   - Paged.js is a free and open-source library that paginates any HTML content to produce beautiful print-ready PDF. 
   - The library fragments the content, reads your CSS print declarations and presents a paginated preview in your browser that you can save as PDF.
+
+- https://github.com/gavrielc/Nano-PDF /903Star/MIT/202512/python
+  - A CLI tool to edit PDF slides using natural language prompts, powered by Google's Gemini 3 Pro Image ("Nano Banana") model.
+  - Natural Language Editing: "Update the graph to include data from 2025", "Change the chart to a bar graph".
+  - Add New Slides: Generate entirely new slides that match your deck's visual style.
+  - Non-Destructive: Preserves the searchable text layer of your PDF using OCR re-hydration.
+  - Multi-page & Parallel: Edit multiple pages in a single command with concurrent processing.
+    - The tool processes multiple pages in parallel for speed, with configurable resolution (4K/2K/1K) to balance quality vs. cost.
+  - 💡 How It Works
+    - Converts target PDF pages to images using Poppler
+    - Style References: Optionally includes style reference pages with generation request to understand visual style (fonts, colors, layout)
+    - Sends images + prompts to Gemini 3 Pro Image, which generates edited versions
+    - OCR Re-hydration: Uses Tesseract to restore searchable text layer to generated images
+    - PDF Stitching: Replaces original pages with AI-edited versions while preserving document structure
+  - https://x.com/GithubProjects/status/1995953642772500850
+    - Most PDFs can be converted to an editable formats. This feels like over engineering lowkey
+  - [Show HN: Nano PDF – A CLI Tool to Edit PDFs with Gemini's Nano Banana | Hacker News _202511](https://news.ycombinator.com/item?id=46090619)
+    - Does this mean the text only pdf page is transformed into an image that covers the full page, but the text is still under there. So, any machine based extraction would still get the text, but would probably loose all the bounding box information and regular users cannot just use their mouse to select text anymore?
+    - So you convert the PDF into image, edit the image, then convert the image back into a PDF.
+      - This is the usual workflow dealing with pdfs (unfortunately)
+    - A side effect of replacing entire pages with images is that the file size will expand dramatically. Most PDFs only contain a couple of images
+    - Interesting approach. I've spent a lot of time wrangling PDF internals recently, and the issue is usually maintaining the xref table integrity when you inject new content streams.
+    - Does this approach rewrite the entire file structure on save, or are you appending incremental updates to the EOF? Incremental is safer for corruption, but file size bloats quickly with AI-generated diffs.
+
+- https://github.com/yeahhe365/LongImg-Splitter /MIT/202512/ts
+  - [网页工具：长图转多页 PDF 文件工具，方便 AI 分析  ](https://linux.do/t/topic/1360957)
 # pdf-editor
 - https://github.com/BDenizKoca/Tideflow-md-to-pdf /MIT/202511/ts/tuari
   - https://bdenizkoca.studio/projects/tideflow/
@@ -548,6 +576,9 @@ modified: 2021-01-04T17:26:43.784Z
     - Use AWS Textract to extract more complex elements e.g. handwriting, signatures, or unclear text. 
     - `PaddleOCR` and VLM support is also provided 
   - For PII(personally identifiable information) identification, 'Local' (based on `spaCy`) gives good results if you are looking for common names or terms, or a custom list of terms to redact 
+
+- https://github.com/leedrake5/unredact /GPL/202512/python
+  - This repository contains a Python utility for extracting selectable (but visually redacted) text from PDF files and presenting it in a clear, human-readable format while preserving pagination and layout as closely as possible.
 # office
 - databyss /39Star/AGPLv3/202409/ts/js/inactive
   - https://github.com/databyss-org/databyss

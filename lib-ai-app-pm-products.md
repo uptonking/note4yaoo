@@ -377,6 +377,7 @@ modified: 2025-03-22T16:10:24.856Z
     - [KYX API Refueling Station 公益站额度加油站](https://quota.kyx03.de/)
       - 别玩至尊场，1000积分一次警告扣16x，风险太高; 高级场的高积分也可以获得高收益
   - [随时跑路公益](https://runanytime.hxi.me/app/me), 每天签到 10-25 刀
+    - [随时跑路福利站](https://fuli.hxi.me/)
     - 完全支持 cc，主要是 sonnet 4.5，haiku 4.5 会自动重定向到 sonnet 4.5
     - RPM 暂时定为 5，之后看情况调整
     - [【随时跑路公益站】就是那个稳了一个月的AmazonQ2API公益，开放注册 ](https://linux.do/t/topic/1154353)
@@ -398,7 +399,7 @@ modified: 2025-03-22T16:10:24.856Z
     - [包子公益 - Baozi DoneHub](https://lucky.5202030.xyz/)
     - 每日普通用户可自行划转 200$ 到 newapi 站点
     - [【包子公益站】更新一个总的汇总贴。现在上线了newapi的分站 ](https://linux.do/t/topic/1124776)
-  - [Elysiver](https://elysiver.h-e.top/app/me), 每日签到
+  - [Elysiver](https://elysiver.h-e.top/console), 每日签到
   - [莹のAPI](https://api.wpgzs.top/console)
     - [公益站支持claude ](https://linux.do/t/topic/1351151)
     - rpm15
@@ -546,6 +547,8 @@ modified: 2025-03-22T16:10:24.856Z
   - [RyanVan Z-Image | AI 图像生成](https://ryanai.org/)
     - 每天5张免费
     - 排队时间可能较长
+  - [AI 生图平台](https://ztu.ai/)
+    - 每天5张免费
   - [Z-Image 控制台](http://image.dx001.ggff.net:8080/dashboard)
   - [最新公益绘画API ](https://linux.do/t/topic/599258)
     - 百度绘画
@@ -781,6 +784,9 @@ modified: 2025-03-22T16:10:24.856Z
   - if you are using a model through something like OpenRouter, you can never be sure if you are getting the best version of the model you want.
   - We tested a select group of models and talked to their teams about how to best run them.
   - OpenCode Zen is an AI gateway that gives you access to these models.
+
+- [Zeabur](https://zeabur.com/)
+  - $5/月免费使用
 # ai-products-hunt
 
 # more

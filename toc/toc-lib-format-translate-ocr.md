@@ -199,6 +199,22 @@ modified: 2025-12-19T12:43:21.150Z
   - 表格中的内容没有翻译？
     - 回答： pdf2zh暂不支持表格内容翻译，如需翻译表格，可查看本仓库的dev分支，采用pdf2zh_next进行翻译，但由于速度较慢
 
+- https://github.com/gavrielc/Nano-PDF /903Star/MIT/202512/python
+  - A CLI tool to edit PDF slides using natural language prompts, powered by Google's Gemini 3 Pro Image ("Nano Banana") model.
+  - Natural Language Editing: "Update the graph to include data from 2025", "Change the chart to a bar graph".
+  - Add New Slides: Generate entirely new slides that match your deck's visual style.
+  - Non-Destructive: Preserves the searchable text layer of your PDF using OCR re-hydration.
+  - Multi-page & Parallel: Edit multiple pages in a single command with concurrent processing.
+    - The tool processes multiple pages in parallel for speed, with configurable resolution (4K/2K/1K) to balance quality vs. cost.
+  - 💡 How It Works
+    - Converts target PDF pages to images using Poppler
+    - Style References: Optionally includes style reference pages with generation request to understand visual style (fonts, colors, layout)
+    - Sends images + prompts to Gemini 3 Pro Image, which generates edited versions
+    - OCR Re-hydration: Uses Tesseract to restore searchable text layer to generated images
+    - PDF Stitching: Replaces original pages with AI-edited versions while preserving document structure
+  - https://x.com/GithubProjects/status/1995953642772500850
+    - Most PDFs can be converted to an editable formats. This feels like over engineering lowkey
+
 - https://github.com/WildDataX/suppr-mcp /202510/ts/仅云端?
   - https://suppr.wilddata.cn/
   - 超能文献|AI驱动的文档翻译与学术搜索服务。支持PDF、DOCX、PPTX等多格式文档的高质量翻译（支持11种语言），特别优化了数学公式翻译。同时提供PubMed学术文献智能搜索功能。

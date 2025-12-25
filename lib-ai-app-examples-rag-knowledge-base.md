@@ -810,6 +810,15 @@ modified: 2025-11-30T17:27:16.720Z
 - https://github.com/RapidFireAI/rapidfireai /apache2/python/ts
   - https://rapidfire.ai/
   - RapidFire AI is a new experiment execution framework that transforms your AI customization experimentation from slow, sequential processes into rapid, intelligent workflows with hyperparallelized execution, dynamic real-time experiment control, and automatic system optimization.
+# graph-knowledge
+
+## graph-examples
+
+- https://github.com/liujuntao123/DeepRead /MIT/202509/ts
+  - https://deepread.aizhi.site/
+  - AI 驱动的智能书籍知识图谱, 将书籍转化为相互关联的知识网络
+  - 基于大语言模型的全书内容分析
+  - 类似 deepwiki/codewiki 的书籍版本
 # rag-memory
 - https://github.com/jakops88-hub/Long-Term-Memory-API /202512/ts
   - A Memory Server for AI Agents. Runs on Postgres + pgvector. 

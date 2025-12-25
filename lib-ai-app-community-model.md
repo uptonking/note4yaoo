@@ -159,7 +159,38 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
-- ## 
+- ## 🤔 [How do you make agents deterministic? : r/AI_Agents](https://www.reddit.com/r/AI_Agents/comments/1pv2gfk/how_do_you_make_agents_deterministic/)
+  - I have been talking to many business and a common concern has been lack of reliability of ai agents.
+- In my experience, determinism does not come from the model, it comes from the system design around it. You cannot prompt an LLM into behaving like a rule engine. Business rules need to live in code or configuration, not in free text prompts. The agent’s job is to interpret context and propose actions, not decide what is allowed.
+  - What works well is separating concerns very clearly. Rules, policies, and exceptions are encoded as deterministic logic or tables.
+  - For reliability, many teams also constrain where and how agents can act. When agents need to interact with real systems, running them in predictable environments like hyperbrowser helps keep execution consistent and auditable, which is critical in regulated workflows.
+
+- Typically variance results from ambiguous instructions or situations. Use this method to identify specific points in your conversation and see how you can improve the context.
+  - Use something like Langfuse to run experiments and trace execution
+  - Run the same experiment multiple times.
+  - Use python to scrape the data and compare outputs across runs
+  - Compute deltas in your outputs
+  - Check if specific inputs prove to have more variance in output
+- Correct. In fact you should be focusing more on the sad paths because those are the edge cases you need to test.
+
+- Use regular workflow automation tools instead of agents. Or make your tools highly deterministic and have obvious tool selection criteria.
+
+- 90% of it is prompt engineering and a feedback loop. You have another AI at the end that is fed the last AIs user, systems messages and outputs and feeback from client "like i expected it to do this", this will give you a feedback loop on what went wrong in prompt.
+
+- I have been trying to achieve this with my own framework. Its possible. Not in the sense of 1:1 deterministic responses but the core logic of agent output can be deterministic. People have written some methods which I mostly followed. Plus my framework has agent driven, smart retries, which enforces responds to be constrained. As a result my framework, I can deliver basic crud applications with different domain with exact same gaps and similar bugs. They all look very identical. After I get back from holiday I will announce my work. Looking forward to hear your feedbacks.
+
+- ## 🏘️🧩 [Agents | OpenCode](https://opencode.ai/docs/agents/)
+- Agents are specialized AI assistants that can be configured for specific tasks and workflows. 
+- There are two types of agents in OpenCode; primary agents and subagents.
+- Primary agents are the main assistants you interact with directly. 
+  - These agents handle your main conversation and can access all configured tools.
+  - OpenCode comes with two built-in primary agents, Build and Plan. 
+  - Build is the default primary agent with all tools enabled. This is the standard agent for development work where you need full access to file operations and system commands.
+  - Plan is a restricted agent designed for planning and analysis. We use a permission system to give you more control and prevent unintended changes. This agent is useful when you want the LLM to analyze code, suggest changes, or create plans without making any actual modifications to your codebase.
+- Subagents are specialized assistants that primary agents can invoke for specific tasks. 
+  - OpenCode comes with two built-in subagents, General and Explore. 
+  - General is a general-purpose agent for researching complex questions, searching for code, and executing multi-step tasks. Use when searching for keywords or files and you’re not confident you’ll find the right match in the first few tries.
+  - Explore is a fast agent specialized for exploring codebases. Use this when you need to quickly find files by patterns, search code for keywords, or answer questions about the codebase.
 
 - ## 为什么现在 AI 写前端一下子这么强了，小米的 MiMo 论文的这段介绍了他们如何训练模型写前端的，关键是这句：
 - https://x.com/linexjlin/status/2002383307414409514
@@ -639,8 +670,6 @@ e) 最终评论者(Final Critic)
 
 - My use case is that I use local vlm to the content of the download file, then rename following the format I define and use bash script to route it to the its dedicated folder. Now every time a file is downloaded, it is renamed and route to its location automatically.
 # discuss-local-llm-xp/tips
-- ## 
-
 - ## 
 
 - ## 

@@ -488,6 +488,21 @@ modified: 2020-10-22T10:22:55.878Z
   - 用自然语言生成专业 Draw.io 图表
   - [分享一个AI科研绘图神器 ](https://linux.do/t/topic/1171836)
 
+- https://github.com/liujuntao123/ai-draw-nexus /MIT/202512/ts
+  - https://ai-draw-nexus.aizhi.site/
+  - An AI-powered diagram creation platform. 
+  - Describe your diagram in natural language, and AI generates it for you. 
+  - Built on Cloudflare Pages with React frontend and Pages Functions backend.
+  - [【开源自荐】AI驱动的一站式绘图平台 ](https://linux.do/t/topic/1361065)
+  - 支持三个绘图引擎。
+    - Mermaid - Flowcharts, sequence diagrams, class diagrams - code-driven, precise control
+    - Draw.io - Professional diagram editor, feature-rich, ideal for complex diagrams
+    - Excalidraw - Hand-drawn style diagrams, clean and beautiful, great for brainstorming
+  - 简约好用的项目管理系统，轻松管理自己的所有图表，所有数据存储在本地，不用担心隐私问题
+  - 样式精美，特别是Mermaid的，了解的人肯定知道，原本Mermaid的样式是很丑的，但是经过本项目的优化，Mermaid的美观性得到了大幅提升
+  - 基于现有图表进行后续编辑，以及版本管理功能，都已经得到了完善
+  - 输入形式的多模态化，支持文档可视化、图片复刻、链接解析
+
 - https://github.com/liujuntao123/smart-excalidraw-next /202511/js
   - https://smart-excalidraw-next.vercel.app/
   - [新的excalidraw画图神器来了 ](https://linux.do/t/topic/1119379)
