@@ -321,18 +321,6 @@ modified: 2024-09-08T20:08:16.088Z
   - The architecture you rebuilt (BM25 → vector DB → caching → metadata → monitoring) is solid and very standard, but 10K documents is not a meaningful scaling limit. The story is really “I started with a toy prototype and then replaced it with something closer to a normal production RAG stack, ” not “RAG inherently breaks beyond 10K docs.”
 - This could have been limited to: I replaced my own in memory solution with a vector database.
 
-- ## [RAGFlow is an open-source RAG engine based on OCR and document parsing | Hacker News _202404](https://news.ycombinator.com/item?id=39896923)
-- Document processing is getting better and better with new tools leveraging LLMs. If anyone is interested in exploring this space, try another similar tool LLMWhisperer (https://llmwhisperer.unstract.com/). It is a part of Unstract, an open-source document processing tool (https://github.com/Zipstack/unstract)
-  - Actually we've tried almost all lof existing open source models for document processing, and none of them performs well for complex documents, especially those having complicated tables, such as tables cells without borders, cells need to be combined, ..., etc. Although adopting LLMs to perform such document understanding tasks is more scalable, it requires much more data and computation power to achieve similar results. That's why we design such models start from scratch.
-
-- I'm partly sad at the approach this and other engines take: reimplement each part (PDF parser, etc etc) in a way where they are pretty much useless except in their specific engine.
-  - If instead we had a PDF() class that did what RAGFlow is doing (dealing with all the different trade-offs of the different python PDF engines such as pdfplumber), then we could easily adapt it and improve it, and it can be useful for other projects as well.
-- It is open-source though. Just rip it off and make that PDF() class.
-
-- A lot of the yolo stuff from ultralytics is AGPL3 fyi. Recommend caution depending on what code or models / model lineage are used
-  - Thanks for your nice suggestion. We train the model using YOLO, but during inference, the model is converted into ONNX and we use ONNXRuntime for the model inference. As a result, YOLO itself is not included in the software package. We will open the training code in the repo soon.
-  - We've used YOLOv8 as the object detection model, and use some public datasets, such as PubTable, CDLA, together with some private data to train the model. The model on Huggingface is the one trained using public dataset, and we would open this work later. We use YOLOv8 just because we want to let the document parser run without GPU, I think you could also try any other object detection models such as Detectron, and use the public datasets to train the model as well. We've not used transfomers for this task, because given limited data, it could not outperform traditional CNN based models.
-
 - ## agentset - [Production RAG: what I learned from processing 5M+ documents | Hacker News _202510](https://news.ycombinator.com/item?id=45645349)
 - I must be missing something, this says it can be self-hosted. But the first page of the self-hosting docs say you need accounts with no less than 6 (!) other third-party hosted services.
   - That was my observation as well. To be fair their business is to sell a hosted version, they’re under no obligation to release a truly self hosted version.

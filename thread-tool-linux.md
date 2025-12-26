@@ -44,7 +44,71 @@ modified: 2024-01-06T13:48:42.969Z
 
 - ## 
 
-- ## 
+- ## 搞了个无用的小工具，随便取名叫 slug2text
+- https://x.com/nake13/status/2004252226395726286
+  - 功能很简单：它能帮你把大段文字，无损压缩成一个 Link。
+  - 只要保存这个 Link，再次打开，原文就能自动解压还原。
+  - 压缩率取决于文字规模和重复度，但我实测下来，塞进一篇论文的长度也没问题。但受限于 url 的长度，所以无法塞入太多内容。
+  - 结论：我也没法评估压缩率，但根据它自己的评估，好像已经很不错了。工程实现上没遇到问题， Codex 都是一次编译即通过。
+  - 这个服务完全无状态，所以不需要存储和数据库。打开即用，存 link 即可。 密码完全可以加的，应该也不难。
+  - 没想到我 10 天前的产品想法，竟然上了 Hacker News 今日热门，还有 140 个讨论。
+  - 结果发现，竟然有开发者实现了完全相同的概念，而且做得更简洁。核心逻辑都是利用 URL 实现一个无状态的文本无损压缩服务。
+  - [Slug2Text](https://slug2text.pages.dev/)
+
+- 🤔 其实商业化的能力不强，付费特性一般是后台、并发、自动化、回放
+
+- pied piper for text
+
+- 保存Link通过访问云端解压 和保存压缩后的二进制本地解压 我能想到的差异点是多了云端 来控制授权，没太能get到点。
+  - 这个并不是严格意义上的云端，因为网页完全开源可随便部署，相当于点开一个页面就能压缩，流程很快。同时还具备了分享能力，丢一个link给别人，别人打开就能看到原文。而且数据并不存储在服务器上，而是存储在link里。
+
+- 有人做了个 URL 版本的 linktree。
+
+- 🐛 The problem with a URL every edit is a new URL. So you send the URL to a friend, then fix a typo, they need a new URL.
+
+- 🐛 Very nice exploration of URL-as-state. The approach is elegant, but the mobile crashes highlight how hostile real-world URL handling still is once links leave the browser.
+  - 复制到移动端app或其他app时， url会显示得特别长
+
+- I like these kinds of projects, but adding a file export/import is inevitable. It's less about the limits of a URL and more about practicality.
+  - I also have no way to confirm that URLs aren't logged server side, so I'd never trust the claim about "no tracking". That's why these projects also end up self-hosted.
+
+- ### [Show HN: Minimalist editor that lives in browser, stores everything in the URL | Hacker News](https://news.ycombinator.com/item?id=46378554)
+
+- https://github.com/antonmedv/textarea /202512/html
+  - https://textarea.my/
+  - A minimalist text editor that lives entirely in your browser and stores everything in the URL hash.
+  - Your text gets compressed with deflate because we're fancy like that
+  - No backend - Zero servers were harmed in the making of this app
+- In case you missed it: it is possible to style textarea via CSS and share it.
+
+- [Itty Bitty: Sites contained within their own links | Hacker News _201807](https://news.ycombinator.com/item?id=17459204)
+
+- Funny how I made almost exactly the same but for maps. I needed a way to share a link to a map, with drawings and the ability for the receiver to see their own location on the map. Annotated screenshots solves the first but not the second.
+  - https://github.com/gnyman/mapdraw
+  - https://nyman.re/mapdraw/#l=60.172108%2C24.941458&z=16
+
+- Per the spec, a URL can hold at least 8, 000 characters.
+  - Mainstream browsers support at least 64, 000 characters, and Chrome supports up to 2MB
+- Chrome limit is 2MB, Firefox is 1MB, WebKit is no limit.
+- It is always worth remembering that, unless you have already ensured that the content has been rendered into a URI-safe subset of ASCII, a character and an octet are not the same thing.
+
+- Was just working on something similar this morning. As an fyi you can avoid the string replacing in the base64 string by using `.toBase64({ alphabet: "base64url" })` and `fromBase64({ alphabet: "base64url"})`.
+  - It warned about fromBase64() and toBase64() not existing in main browsers. It is supported but is indeed a new "baseline 2025"feature. It suggested more compatible code using two small functions to convert characters manually.
+
+- I am thinking from a piracy perspective. If I share a link that contains a book, what can be done from DCMA or legal regulators? They can't ask the server (textarea.my) to remove the link because it doesn't exist.
+  - From a regulatory perspective, it seems unlikely that most courts would appreciate the difference. In their mind - you run a website, and that website contains copyrighted content. Take it down.
+  - 传递违法信息的风险
+
+- You claim no tracking, and yet there's a Cloudflare Web Analytics beacon placed at the bottom of the page (thankfully filtered out by uBlock Origin)
+
+- I made a similar thing but the html for the text editor fits in a data uri, so it can be a bookmark or new tab page for taking quick notes
+
+- TypeScript playground does effectively the same thing for shared links, though it doesn't live-update as you type.
+- 
+- 
+- 
+- 
+- 
 
 - ## 前有一堆 AI 厂商仿效 Plaud 做 AI 录音笔，今天钉钉却反其道行之，发布了一款让录音设备失效的干扰器
 - https://x.com/Ibrahim92796668/status/2003375071575048302

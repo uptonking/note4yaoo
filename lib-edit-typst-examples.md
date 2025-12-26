@@ -127,6 +127,14 @@ modified: 2025-12-25T19:55:10.911Z
 - https://github.com/parpalak/upmath.me
   - Markdown and LaTeX online editor - create text for web with equations and diagrams
 # math
+- https://github.com/dbccccccc/TypstPad /MIT/202512/ts
+  - https://typstpad.com/
+  - A simple and elegant online Typst formula editor with real-time preview
+  - SVG, PNG, JPG导出下载，支持将PNG复制到剪切板
+  - SVG, HTML, typ代码文件下载&复制
+  - 现在暂时还没有对移动端进行优化，后续版本可能会添加
+  - [TypstPad: 一个在线Typst公式编辑器 ](https://linux.do/t/topic/1364899)
+
 - https://github.com/cortex-js/compute-engine /ts
   - https://cortexjs.io/
   - An engine for symbolic manipulation and numeric evaluation of math formulas expressed with MathJSON
@@ -144,4 +152,11 @@ modified: 2025-12-25T19:55:10.911Z
 - https://github.com/pyramation/LaTeX2JS /js
   - Author interactive math equations and diagrams online using LaTeX and PSTricks
   - thanks to MathJax
+# word/wps
+- https://github.com/moon-like-gray-cat/WordFormatter /202512/python
+  - 用于 自动整理 Word 文档标题编号与段落格式的桌面轻量级工具。
+  - 它能帮助用户一键格式化word文档，方便生成目录、规范论文或课程报告的排版。
+  - 根据用户设置的标题的格式（例如 1. （一））, 识别每级标题和正文，并应用用户规定的字体, 字号与是否加粗
+  - 具备段落统一缩进的功能，会将所有的段落都顶格，并首行缩进两个字符 所有的标题也会左对齐
+  - 要求>win7操作系统
 # more

@@ -12,6 +12,16 @@ modified: 2023-04-04T22:35:59.255Z
 - js-tools
   - [UnJS: JavaScript Libraries, Tools, and Utilities, Crafted to Elevate Your Coding Journey](https://unjs.io/)
 # popular
+- https://github.com/grothkopp/lost.js /MIT/202512/js
+  - A lightweight, zero-dependency, zero-backend framework for building shareable "vibe coding" apps and prototypes.
+  - Zero Dependencies: no build steps 
+  - Persistence: Auto-saves to localStorage.
+    - No Backend Required: State is persisted locally in the browser (localStorage).
+  - Shareable URLs: built-in compression (gzip/deflate) for sharing state.
+    - Instant Sharing: Share your app state via URL. The entire state is compressed and encoded into the hash
+  - UI Shell: Includes a responsive sidebar, header, and settings dialog support.
+  - Local-Only State: Prefix keys with _ (e.g., _temp) to keep them local and private.
+
 - scheduler
   - https://github.com/facebook/react/tree/main/packages/scheduler
   - a package for cooperative scheduling in a browser environment. 

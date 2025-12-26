@@ -20,6 +20,8 @@ modified: 2025-12-06T13:25:29.309Z
 - tips
   - ?
 # draft
+- 在ocr/文档数据提取为文本的过程中，使用类似diff的交互让用户选择一个版本
+
 - workspace-ai
   - 针对系统级数据库和用户数据建表优化, 使用llm生成sql来执行查询, 是database的下一代产品
 # dev-xp

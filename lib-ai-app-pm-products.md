@@ -325,6 +325,7 @@ modified: 2025-03-22T16:10:24.856Z
   - api稳定: 稳定时用的api稳定性必须要高，否则产品体验差
   - 速率限制
   - 工具集成支持: cline, roo, librechat
+  - 另一种思路， 新开的商业站一般会限免最新的模型和热门模型，也可以用来测试
 
 - resources
   - https://github.com/cheahjs/free-llm-api-resources
@@ -357,6 +358,11 @@ modified: 2025-03-22T16:10:24.856Z
   - [Code Router](https://api.code-relay.com) , 无法签到和更多额度
     - [Code Router](https://api.codemirror.codes/)
     - 支持 Claude Code & CodeX
+  - [SWT-API](https://api.lhyb.dpdns.org/), 无限额度, 无需签到
+    - [备用站](https://new-api.koyeb.app/)
+    - [免费众多模型公益api站  ](https://linux.do/t/topic/1106811)
+    - 公益站干一两年了，都是白嫖的api
+    - 现在Gemini的模型都用不了了，我也进不去主站了，副站也进不了，备用站无法登陆
   - 📌 [b4u API](https://b4u.qzz.io/console), 每日转盘
     - 会不会增加其他模型: 不会，本站专注于Claude
     - 支持工具调用、上下文 128K+、支持 RooCode，不推荐接入 ClaudeCode
@@ -371,11 +377,9 @@ modified: 2025-03-22T16:10:24.856Z
     - [薄荷公益站签到](https://qd.x666.me/)
     - 模型丰富: claude, gpt, gemini
   - 📌 [KFC API](https://kfc-api.sxxe.net/)
-    - [KYX-API](https://api.kkyyxx.xyz/), 每日转盘
     - Claude和gpt 暂时不支持工具调用, gemini模型没有pro
     - API 调用频率限制为 12RPM，公益站永久免费，采用公平限流策略以保障服务稳定
-    - [KYX API Refueling Station 公益站额度加油站](https://quota.kyx03.de/)
-      - 别玩至尊场，1000积分一次警告扣16x，风险太高; 高级场的高积分也可以获得高收益
+    - 别玩至尊场，1000积分一次警告扣16x，风险太高; 高级场的高积分也可以获得高收益
   - [随时跑路公益](https://runanytime.hxi.me/app/me), 每天签到 10-25 刀
     - [随时跑路福利站](https://fuli.hxi.me/)
     - 完全支持 cc，主要是 sonnet 4.5，haiku 4.5 会自动重定向到 sonnet 4.5
@@ -399,10 +403,12 @@ modified: 2025-03-22T16:10:24.856Z
     - [包子公益 - Baozi DoneHub](https://lucky.5202030.xyz/)
     - 每日普通用户可自行划转 200$ 到 newapi 站点
     - [【包子公益站】更新一个总的汇总贴。现在上线了newapi的分站 ](https://linux.do/t/topic/1124776)
-  - [Elysiver](https://elysiver.h-e.top/console), 每日签到
+  - [Elysiver](https://elysiver.h-e.top/console) 
   - [莹のAPI](https://api.wpgzs.top/console)
     - [公益站支持claude ](https://linux.do/t/topic/1351151)
     - rpm15
+  - [APIKEY_公益站](https://welfare.apikey.cc/console)
+    - GLM-4.7, MiniMax-M2.1 限时免费 
   - [FovtAPI](https://api.voct.top/console), 论坛发码
     - [NewAPI签到系统](https://gift.voct.top/), 已失效
   - [ThatAPI](https://gyapi.zxiaoruan.cn/pricing)
@@ -523,6 +529,10 @@ modified: 2025-03-22T16:10:24.856Z
     - 前后端代码全部开放，检测逻辑一目了然
     - https://github.com/BingZi-233/check-cx /MIT/ts
 
+- paid-llm
+  - [foxcode](https://foxcode.rjj.cc/)
+  - [AI Ping](https://aiping.cn/modelList)
+
 - llm-ui/apps
   - [SmallAI](https://free.smallai.asia/chat)
     - 基于lobechat实现
@@ -561,6 +571,9 @@ modified: 2025-03-22T16:10:24.856Z
   - [Cloudflare Workers AI Models](https://developers.cloudflare.com/workers-ai/models/)
     - 提供免费的文生图模型: sdxl, sdv1-5
   - [Free AI Image Generator - AI Free Forever](https://aifreeforever.com/image-generators)
+
+- image2api
+  - [youmind2api，可以使用大香蕉 ](https://linux.do/t/topic/1363986)
 
 ## llm-api-official/router/gateway
 

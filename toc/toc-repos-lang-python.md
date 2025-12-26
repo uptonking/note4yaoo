@@ -40,6 +40,9 @@ modified: 2025-02-26T15:04:15.883Z
   - A template repo holding our common setup for a python project.
   - make `check_code_quality` to check code quality (PEP8 basically)
 # fastapi
+- https://github.com/zhanymkanov/fastapi-best-practices
+  - Opinionated list of best practices and conventions I use in startups.
+
 - https://github.com/fastapi/full-stack-fastapi-template /37.1kStar/MIT/202508/python/ts
   - Full stack, modern web application template. 
   - fastapi, SQLModel, pydantic

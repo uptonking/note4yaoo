@@ -16,6 +16,9 @@ modified: 2025-11-06T18:49:13.977Z
     - Evaluating multimodal model performance on complex 3D and 2D spatial tasks.
     - https://github.com/spicylemonade/spatialbench
     - designed to evaluate the next generation of multimodal AI models on their ability to reason about space, structure, and pathing
+
+- https://github.com/bytefer/macos-vision-ocr /MIT/202502/swift
+  - A powerful command-line OCR tool built with Apple's Vision framework, supporting single image and batch processing with detailed positional information output.
 # models-vlm/ocr
 - qwen3-vl-4b
   - 适合作为通用图片文字识别方案，识别完后一般还会解释一段，有时解释文字会冗长
@@ -116,7 +119,139 @@ modified: 2025-11-06T18:49:13.977Z
 
 - ## 
 
-- ## 
+- ## [OCR4all | Hacker News _202502](https://news.ycombinator.com/item?id=43043671)
+- A little secret: Apple’s Vision Framework has an absurdly fast text recognition library with accuracy that beats Tesseract. It consumes almost any image format you can think of including PDFs.
+  - After getting an iPhone and exploring some of their API documentation after being really impressed with system provided features, I'm blown away by the stuff that's available. My app experience on iOS vs Android is night and day. The vision features alone have been insane, but their text recognition is just fantastic. Any image and even my god awful handwriting gets picked up without issue.
+
+- The problem with doing OCR with LLMs is hallucination. It creates character replacements like Xerox's old flawed compression algorithm. 
+  - Graybeards like Tessaract has moved to neural network based pipelines, and they're re-inventing and improving themselves.
+  - I was planning to train Tessaract with my own hand writing, but if OCR4All can handle that, I'll be happy.
+- Paradoxically, LLMs should be the tool to fix traditional OCR by recognizing that "Charles ||I" should be "Charles III", "carrot ina box" should be "carrot in a box", the century of the event in context cannot be that construed through looking at the gliphs etc.
+  - As someone who's learning how to do OCR in order to re-OCR a bunch of poorly digitized documents, this will not work with modern OCR. Modern OCR is too good.
+  - If you're able to improve the preprocessing and recognition enough, then there's a point at which any post-processing step you do will introduce more errors than it fixes. LLM's are particularly bad as a post-processing step because the errors they introduce are _designed to be plausible_ even when they don't match the original text. This means they can't be caught just by reading the OCR results.
+  - I've only learned this recently, but it's something OCR experts have known for over a decade, including the maintainers of Tesseract. 
+  - OCR is already at the point where adding an LLM at the end is counterproductive. The state of the art now is to use an LSTM (also a type of neural network) which directly recognizes the text from the image. This performs shockingly well if trained properly. When it does fail, it fails in ways not easily corrected by LLM's. I've OCR'ed entire pages using Tesseract's new LSTM engine where the only errors were in numbers and abbreviations which an LLM obviously can't fix.
+- Tesseract wildly outperforms any VLM I've tried (as of November 2024) for clean scans of machine-printed text. True, this is the best case for Tesseract, but by "wildly outperforms" I mean: given a page that Tesseract had a few errors on, the VLM misread the text everywhere that Tesseract did, plus more. I strongly suspect that traditional OCR systems will become obsolete, but we aren't there yet.
+
+- Tesseract worked fine until the hand written part, then garbage. 
+
+- I also made an AI assisted OCR API 
+  - It combines Tesseract (for images) and Poppler-utils (PDF). A local open-source LLMs will extract document segments intelligently.
+
+- I think the current sweet-spot for speed/efficiency/accuracy is to use Tesseract in combination with an LLM to fix any errors and to improve formatting, as in my open source project which has been shared before as a Show HN: https://github.com/Dicklesworthstone/llm_aided_ocr
+
+- I maintain a searchable archive of historical documents for a nonprofit, OCR'd with Tesseract over several years. Tesseract 4 was a big improvement over previous versions, but since then its accuracy has not improved at the same rate as other free solutions.
+  - These days, just uploading a PDF of scanned documents (typeset ones, not handwriting) to Google Drive and opening with Google Docs results in a text document generated with impressive quality OCR.
+  - But this is not scriptable, and doesn't provide access position information, which is needed so we can highlight search results as color overlays on the original PDF. Tesseract's hOCR mode was great for that.
+  - For the next version, we're planning to use one of the command-line wrappers to Apple's Vision framework, which is included free in MacOS. A nice one that provides position information is at https://github.com/bytefer/macos-vision-ocr
+
+- Apple Vision and its wrappers provide bounding boxes for each line of text. That's slightly less convenient than Tesseract which can give you a bounding box for each word, but more than compensated by Apple Vision's better accuracy. I am planning to fudge the word boxes by assuming fixed-width letters and dividing up the overall width so that each word's width is proportional to its share of the total letters on the line.
+  - Once you have those bounding boxes, it's pretty simple to use a library like (Python) or (JavaScript) to add overlay text in the right place
+  - https://github.com/eloops/hocr2pdf /MIT/202509/js/inactive
+  - take scanned image, and hocr output from tesseract, create PDF. Thats it.
+
+- ## [LLM Aided OCR (Correcting Tesseract OCR Errors with LLMs with Python) : r/Python _202408](https://www.reddit.com/r/Python/comments/1eo6dxz/llm_aided_ocr_correcting_tesseract_ocr_errors/)
+- Nice job! I was looking at your code and noticed you are using regex to split sentences. From my own experience I know that is not ideal for this kind of job. You could try using the spaCy open source library to split sentences with NLP. It has an incredible 99% accuracy (meaning that sometimes two sentences will be grouped into a paragraph). This way you can avoid false positives like “I know Dr. Evil” being split into two separate sentences because of the dot after the abbreviated word.
+  - Thanks. It’s actually not that sensitive to that because each chunk shown to the LLM contains a portion of the previous chunk so that the LLM has the context. So it doesn’t really affect the quality of the output either way.
+
+- ## [Show HN: LLM-aided OCR – Correcting Tesseract OCR errors with LLMs | Hacker News _202408](https://news.ycombinator.com/item?id=41203306)
+- In my experience, this works well but doesn't scale to all kinds of documents. For scientific papers; it can't render formulas. meta's nougat is the best model to do that. For invoices and records; donut works better. Both these models will fail in some cases so you end up running LLM to fix the issues. Even with that LLM won't be able to do tables and charts justice, as the details were lost during OCR process (bold/italic/other nuances). 
+  - I feel these might also be "classical" methods. I have found vision models to be much better as they have the original document/image. 
+
+- For any one curious on automating document processing end-to-end by leveraging llms do try Unstract. It is opens source. https://github.com/Zipstack/unstract
+  - Unstract also has a commercial version of document agnostic parser which you can channel to any RAG projects. https://unstract.com/llmwhisperer/
+
+- We've been trying to solve this with https://vlm.run: the idea is to combine the character level accuracy of an OCR pipeline (like Tesseract) with the flexibility of a VLM.
+  - OCR pipelines struggle with non-trivial text layouts and don't have any notion of document structure, which means there needs to be another layer on top to actually extract text content to the right place. At the other end of the spectrum, VLMs (like GPT4o) tend to perform poorly on things like dense tables (either hallucinating or giving up entirely) and complex forms, in addition to being much slower/more expensive. Part of the fix is to allow a 'manager' VLM to dispatch to OCR on dense, simple documents, while running charts, graphs etc. through the more expensive VLM pipeline.
+
+- If anyone is looking to compare results visually, I have created an open source OCR visualiser to help identifying missing elements (especially in tables). https://github.com/orasik/parsevision
+
+- I did something similar about a decade ago because I was using tesseract to OCR Chinese.
+  - Part of the problem is that if you use Tesseract to recognize English text it's much easier to clean it up afterwards because if it makes a mistake it's usually in only a single character, and you can use Levenstein distance to spellcheck and fix which will help a lot with the accuracy.
+  - Logographic languages such as Chinese present a particular challenge to "conventional post-processing" having many words represented as two characters and often a lot of words as a single "glyph". This is particularly difficult because if it gets that glyph wrong there's no way to obvious way to detect the identification error.
+  - The solution was to use image magick to "munge" the image (scale, normalize, threshold, etc), send each of these variations to tesseract, and then use a Chinese-corpus based Markov model to score the statistical frequency of the recognized sentence and vote on a winner. It made a significant improvement in accuracy.
+- People's handwriting vary widely, and a human reading someone's writing faces the same problems you mention. For a language like English, humans also decipher unrecognized characters by looking at what letter would fix the word or what word would fit in the sentence, etc.
+
+- I wonder if you could feed back the results from an LLM into the OCR model to get it to make better decisions. E.g., if it's distinguishing a 1 from an I, the LLM could provide a probability distribution.
+  - Or the other direction. Tesseract can give you confidence levels for the guesses it makes about a symbol 
+
+- ## [How can I determine OCR confidence level when using a VLM? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1oaum1r/how_can_i_determine_ocr_confidence_level_when/)
+- One approach that works surprisingly well is running the same extraction twice with slightly different prompts and checking for consistency - if the VLM gives you different supplier names or amounts between runs, thats a strong signal the image quality is problematic and worth flagging for reupload.
+
+- ## [Docling, how does it work with VLM? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p9zvkl/docling_how_does_it_work_with_vlm/)
+  - So i have a need to convert PDF to text for data extraction. 
+  - Regular/Traditional OCR does very good job but unfortunately it does not take into consideration the layout, so while each word is perfectly recognized the output is a gibberish (if you try to read it). Understood each word but actual text does not make sense.
+  - VLMs, such as Qwen3-VL or OpenAI do a good job producing markdown considering layout, so it makes sense but unfortunately the actual OCR is not nearly as good. It hallucinates often and no coordinates where the word was found.
+
+- ## [Do we really need traditional OCR and layout models at this point, since VLMs have improved so much. : r/LocalLLaMA _202503](https://www.reddit.com/r/LocalLLaMA/comments/1jmcbsk/do_we_really_need_traditional_ocr_and_layout/)
+- An affordable top-loading scanner can scan about 25 pages per minute.
+  - If you needed to scan and OCR five hundred printed pages, how long do you think it would take a vision model to get it done?
+  - Traditional OCR can work faster than the scanner scans pages, and on much more modest hardware.
+
+- We are working on a pipeline to extract text from a specific type of paper documents. The best approach we found is to detect the layout, mask, extract using 3-4 different OCR models, majority vote, validate with VLM if there's a tie, check the output text syntax, grammar, etc with a larger LLM.
+  - We are experimenting with <10B models for the VLM. The VLM comes in only to resolve conflicts, not systematically, because it's slooow in comparison to Trad OCR tools
+
+- We use Qwen2.5 VL 72B to convert PDF files into markdown. Works significantly better than many OCR solutions out there, but it's also much slower than those.
+
+- ## 🤔 [Replace OCR with Vision Language Models | Hacker News _202502](https://news.ycombinator.com/item?id=43187209)
+- It’s an interesting idea, but still way too unreliable to use in production IMO. When a traditional OCR model can’t read the text, it’ll output gibberish with low confidence; when a VLM can’t read the text, it’ll output something confidently made up, and it has no way to report confidence. (You can ask it to, but the number will itself be made up.)
+  - There’s no way to ground the model using the source text when the model is your OCR.
+- Thing is, the majority of OCR errors aren't character issues, but layout issues. Things like complex tables with cells being returned under the wrong header.
+
+- We recently published an open source benchmark specifically for evaluating VLM vs OCR. And generally the VLMs did much better than the traditional OCR models.
+  - https://github.com/getomni-ai/benchmark
+- VLM highlights:
+  - Handwriting. Being contextually aware helps here. i.e. they read the document like a human would, interpreting the whole word/sentence instead of character by character
+  - Charts/Infographics. VLMs can actually interpret charts or flow diagrams into a text format. Including things like color coded lines.
+- Traditional OCR highlights:
+  - Standardized documents (e.x. US tax forms that they've been trained on)
+  - Dense text. Imagine textbooks and multi column research papers. This is the easiest OCR use case, but VLMS really struggle as the number of output tokens increase.
+  - Bounding boxes. There still isn't really a model that gives super precise bounding boxes. Supposedly Gemini and Qwen were trained for it, but they don't perform as well as traditional models.
+- There's still a ton of room for improvement, but especially with models like Gemini the accuracy/cost is really competitive.
+- there are a few caveats to VLMs that folks are typically unaware of (not at all exhaustive, but the ones you highlighted):
+  - 1. Long-form text (dense): Token limits of 4/8K mean that dense pages may go over limits of the LLM outputs. This requires some careful work to make them work as seamlessly as OCR.
+  - 2. Visual grounding a.k.a. bounding boxes are definitely one of those things that VLMs aren't natively good at (partly because the cross-entropy losses used aren't really geared for bounding box regression). We're definitely making some strides here to improve that so you're going to get an experience that is almost as good as native bounding box regression (all within the same VLM). 
+
+- LLMs and OCR have very different failure modes. 
+  - With LLMs, there is unbounded potential for hallucination, and the entire document is at risk.
+  - With OCR, errors are localized and have a greater chance of being detected when read.
+  - I think for a lot of cases, the best solution is to fine-tune a model like LayoutLM, which can classify the actual text tokens in a document (whether obtained from OCR or a native text layer) using visual and spatial information. Then, there are no hallucinations and you can use uncertainty information from both the OCR (if used) and the text classification. But it does mean that you have to do the work of annotating data and training a model, rather than prompt engineering
+- 100% this, combining traditional OCR with VLMs that can work with bounding boxes so that you can correlate the two is the way to go.
+
+- An effective way that usually increases accuracy is to use an ensemble(乐团; 剧团; 歌舞团) of capable models that are trained independently (e.g., gemini, gpt-4o, qwen). If >x% of them have the same output, accept it, otherwise reject and manually review
+
+- I've been using gemini 2 flash to extract financial data, within my sample which is perhaps small (probably 1000 entries so far), I've had one single error only so like a 99.9% success rate.
+  - Many hallucinations can be avoided by telling it to use null if there is no number present.
+
+- Modern OCR is astonishingly good, more importantly it's deterministically so. It's failure modes, when it's unable to read the text, are recognizably failures.
+  - Results for VLM accuracy & precision are not good
+
+- Tesseract doesn’t use an LLM. LLMs don’t know how confident they are; Tesseract’s model does.
+  - Kind of. Tesseract's confidence is just a raw model probability output. You could easily use the entropy associated with each token coming out of an LLM to do the same thing.
+- True, but LLM token probability doesn't map nearly as cleanly to "how readable was the text".
+  - Why not though? Both kinds of models jumble around the data and spit out a probability distribution. Why is the tesseract distribution inherently more explainable (aside from the UI/UX problem of the uncertainty being per-token instead of per-character)?
+
+- Why do all these OCR services only show examples with flawless screenshots of digital documents? Are there that many people trying to OCR digital data? Why not just copy the HTML?
+  - If it's not intended for digital documents, where are the screenshots with fold marks, slipping lines, lighting gradients, thumbs, etc etc.
+
+- You can also use it for robustness. Looking at e.g. historical censuses, it's amazing how many ways people found to not follow the written instructions for filling them out. Often the information you want is still there, but woe to you if you look at the columns one by one and assume the information in them to be accurate and neatly within its bounding box.
+
+- What I want: take scan/photo of a document (including a full book), pass it to the language model, and then get out a Latex document that matches the original document exactly (minus the copier/camera glitches and angles). I feel like some kind of reinforcement learning model would be possible for this. It should be able to learn to generate Latex that reproduces the exact image, pixel for pixel (learning which pixels are just noise).
+
+- You sort of have to use both. OCR and LLM and then correlate the two results. They are bad at very different things, but a subsequent call to a 2nd LLM to pair together the results does improve quality significantly, plus you get both document understanding and context as well as bounding boxes, etc.
+  - A VLM that invokes ocr tool use is a compelling idea that could result in pretty good results, I would expect.
+
+- The AI OCR build into snipping tool in windows is better than tesseract, albeit more inconvenient than something like powertoys or Capture2Text, which use a quick shortcut.
+
+- I wonder what the speed of this approach vs traditional ocr techniques. Also, curious if this could be used for text detection (find a bounding box containing text within an image).
+
+- qwen 2.5 vl was specifically trained to produce bounding boxes I believe.
+
+- Existing solutions like Tesseract already can embed text into the image, but I'm wondering if there's a way to combine LLM with Tesseract, so that LLMs can help correcting results and finding unidentified text, and finally still embed text back to the image
+
+- Can I use this to convert flowcharts to yaml representations?
+
+- VLM's can't replace ocr one to one.. most hosted multimodal models seem to have a classical OCR (tesseract-based) step in their inference loop
 
 - ## 🆚 [I benchmarked 7 OCR solutions on a complex academic document (with images, tables, footnotes...) : r/LocalLLaMA _202504](https://www.reddit.com/r/LocalLLaMA/comments/1jz80f1/i_benchmarked_7_ocr_solutions_on_a_complex/)
   - I ran a comparison of 7 different OCR solutions using the Mistral 7B paper as a reference document (pdf), which I found complex enough to properly stress-test these tools. It's the same paper used in the team's Jupyter notebook, but whatever. The document includes footnotes, tables, figures, math, page numbers, ... making it a solid candidate to test how well these tools handle real-world complexity.
@@ -249,7 +384,10 @@ modified: 2025-11-06T18:49:13.977Z
 
 - ## 
 
-- ## 
+- ## [Is there a VLM that has bounding box support built in? : r/computervision _202508](https://www.reddit.com/r/computervision/comments/1me7ciq/is_there_a_vlm_that_has_bounding_box_support/)
+- Florence 2 and PaliGemma 2
+
+- I think Qwen 2.5 VL might be able to do it. It was trained on document understanding and bounding boxes. Prompt it to generate html from your image.
 
 - ## [Feature Request: Support HunyuanOCR-1B · Issue · ggml-org/llama.cpp _202511](https://github.com/ggml-org/llama.cpp/issues/17509)
 

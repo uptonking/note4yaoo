@@ -382,6 +382,12 @@ modified: 2025-02-21T18:20:42.624Z
   - 图片参考 - 支持上传参考图片进行图生图
   - 开箱即用的容器化部署方案
   - [开源：豆包和Z-Image对话生图/改图全免费且自由 ](https://linux.do/t/topic/1358465)
+- https://github.com/coulsontl/uni-image-api /202512/python
+  - 将第三方图像生成/编辑 API 转换为 OpenAI 兼容格式的代理服务。
+  - 可扩展架构: 基于 Provider 模式，易于添加新的第三方服务
+  - 基于 FastAPI 和 httpx 的全异步实现
+  - 支持将图片上传到 S3 兼容存储（AWS S3、MinIO、阿里云 OSS 等）
+  - 碰到了有相同想法的佬友；之前我也做了一个，不过我只做了一个魔搭，但是支持了图生图
 
 ## agent-fwk-vendors
 

@@ -12,9 +12,15 @@ modified: 2025-12-19T12:43:21.150Z
   - 文档的使用频率不如图片, ocr/translation的方案要考虑图片场景
   - 批量执行ocr的架构可参考papermerge/paperless
   - vlm流式输出的方案配合编辑器流式构建内容的ux体验会很好
+  - 💡 可以不做完全体ocr，而优化重点数据的ocr，如 pdf-table > excel
+    - vlm也可以提取bounding-box + 手动分割图片为主来提取表格、图表、图片
+  - 传统的ocr方案都还没有结合llm来优化效果，而是应用层的数据处理管线开始用llm来提高质量和准确度
 
 - tips-translations
   - 翻译类型产品的形态需要根据场景进行设计，可双栏/上下紧邻/点击切换原文和译文
+
+- resources
+  - [Technical Analysis of Modern Non-LLM OCR Engines _202512](https://intuitionlabs.ai/articles/non-llm-ocr-technologies)
 # popular
 - https://github.com/xunbu/docutranslate /555Star/MPLv2/202512/python
   - 文档（小说、论文、字幕）翻译工具（支持 pdf/word/excel/json/epub/srt...）
@@ -153,10 +159,22 @@ modified: 2025-12-19T12:43:21.150Z
   - Distributes work across all available CPU cores
   - Uses `Tesseract` OCR engine to recognize more than 100 languages
   - Battle-tested on millions of PDFs.
+  - 🤔 [Proposal: Improve OCR Accuracy with LLM-based Post-processing _202503](https://github.com/ocrmypdf/OCRmyPDF/issues/1491)
+    - OCRmyPDF and Tesseract work well, but they sometimes produce errors, especially when processing complex fonts, handwritten text, or low-quality scans. One potential way to improve OCR accuracy is by integrating a post-processing step using a Large Language Model (LLM) such as GPT-4, Llama, or Claude.
+    - I don't think this would be a good idea or very practical. A better OCR engine based on LLM or recent ML would improve results more than post processing since it can actually read the input text more accuracy, as opposed to guessing what bad output text might mean from the text alone. There's no obvious way to correct positional information when the word count differs after correction and it will.
+    - The easiest thing to do at this point is use ocrmypdf and then a tool like pdftotext to get the recognized text out. You could then feed this to an LLM to improve the output text (in many cases) without positional information
+  - [[Feature]: use local (small) vision llm for higer OCR accuracy _202504](https://github.com/ocrmypdf/OCRmyPDF/issues/1517)
+    - Taking Qwen2.5-VL as an example, it is trained to output "Qwen HTML" format, with bounding box coordinates added to each HTML tag. 
+  - [Saving the images ocrmypdf temporarily creates OR use existing pdf-to-img pdfs _202501](https://github.com/ocrmypdf/OCRmyPDF/discussions/1457)
+    - I currently have an OCR workflow that uses Surya OCR for ocring and table recognition and generating text files and CSVs from scanned semi-technical PDF documents. These outputs are then fed into an LLM data extraction tool. While Surya performs well, it doesn't create searchable PDFs. To address this, I run OCRmyPDF on the original PDF as a final step to generate a searchable PDF.
+    - However, I've noticed an inefficiency in this approach since both Surya OCR and OCRmyPDF perform PDF to image conversion and preprocessing. 
+    - The goal is to perform the PDF to image conversion only once throughout the entire workflow.
+    - You could create a OCRmyPDF plugin that uses Surya as its OCR engine instead of Tesseract for example. There's an `OCRmyPDF-EasyOCR` that demonstrates how this could be done (although the more current approach would be to render to hOCR).
   - https://github.com/ocrmypdf/OCRmyPDF-EasyOCR /MIT/python
     - This is plugin to run OCRmyPDF with the EasyOCR engine instead of Tesseract OCR, the default OCR engine for OCRmyPDF. 
-  - https://github.com/FanQinFred/OCRmyPDF-Desktop /apache2/202312/js/vue/inactive
-    - 在OCRmyPDF的基础上，集成了所需环境，并使用Electron开发了桌面端
+
+- https://github.com/FanQinFred/OCRmyPDF-Desktop /apache2/202312/js/vue/inactive
+  - 在OCRmyPDF的基础上，集成了所需环境，并使用Electron开发了桌面端
   - https://github.com/razem-io/OCRmyPDFonWEB /MIT/202305/python/inactive
     - Streamlit Web UI for OCRmyPDF
     - https://github.com/mghulamqadir/scanned-to-searchable-pdf /Streamlit
@@ -342,11 +360,43 @@ modified: 2025-12-19T12:43:21.150Z
 - https://github.com/junhoyeo/BetterOCR /597Star/MIT/202311/python/inactive
   - Better text detection by combining multiple OCR engines with LLM.
   - OCR Engines Currently supports EasyOCR (JaidedAI), Tesseract (Google), and Pororo (KakaoBrain).
+  - [Show HN: BetterOCR combines and corrects multiple OCR engines with an LLM | Hacker News _202310](https://news.ycombinator.com/item?id=38048228)
+
 - https://github.com/wolfmanstout/screen-ocr /apache2/202510/python
   - screen-ocr package makes it easy to perform OCR on portions of the screen
   - WinRT is a Windows-only backend that is very fast and reasonably accurate.
   - Tesseract is a cross-platform backend that is much slower and slightly less accurate than WinRT
   - EasyOCR is a very accurate but slow backend and only runs on Python 64-bit
+
+- https://github.com/breezedeus/Pix2Text /2.7kStar/MIT/202507/python/inactive/华人作者
+  - https://p2t.breezedeus.com/
+  - Pix2Text (P2T) aims to be a free and open-source Python alternative to Mathpix
+  - Open-Source Python3 tool with SMALL models for recognizing layouts, tables, math formulas (LaTeX), and text in images, converting them into Markdown format.
+  - Text Recognition Engine: Supports 80+ languages such as English, Simplified Chinese, Traditional Chinese, Vietnamese, etc. For
+    - English and Simplified Chinese recognition, it uses the open-source OCR tool `CnOCR`, while for other languages, it uses the open-source OCR tool `EasyOCR`.
+
+- https://github.com/Rayyan9477/ocr-app /202511/ts
+  - OCR platform that combines multiple engines, AI enhancement, and HIPAA-compliant security to deliver exceptional document processing.
+  - Our platform employs specialized OCR engines working in parallel:
+    - OCRmyPDF: Industrial-strength PDF processing
+    - Enhanced Tesseract: Optimized for various document types
+    - Intelligent Orchestrator: Automatic engine selection
+    - AI Enhancement: Machine learning-powered accuracy improvements
+  - HIPAA Compliance	End-to-end encryption, audit logs
+
+- https://github.com/Dicklesworthstone/llm_aided_ocr /2.8kStar/NALic/202408/python/代码少/inactive
+  - Enhance Tesseract OCR output for scanned PDFs by applying Large Language Model (LLM) corrections
+  - Uses LLM to fix OCR-induced errors
+  - Converts text to proper markdown format
+  - [Show HN: LLM-aided OCR – Correcting Tesseract OCR errors with LLMs | Hacker News _202408](https://news.ycombinator.com/item?id=41203306)
+
+- https://github.com/TurkuNLP/ocr-postcorrection-lm /202510/python
+  - Code to try out ocr postcorrection with language models
+  - [OCR Error Post-Correction with LLMs in Historical Documents: No Free Lunches](https://arxiv.org/abs/2502.01205v1)
+  - https://github.com/Shef-AIRE/llms_post-ocr_correction /202406/python
+    - This repository contains the code for the paper Leveraging LLMs for Post-OCR Correction of Historical Newspapers, where LLMs are adapted for a prompt-based approach to post-OCR correction.
+  - https://github.com/savi8sant8s/ptbr-post-ocr-sc-llm /MIT/202501/python
+    - A proposal for post-OCR spelling correction using Language Models
 # ocr
 - https://github.com/AKSarav/pdfstract /apache2/202511/python/js
   - web application for converting PDFs to multiple formats using various state-of-the-art extraction libraries. Built with FastAPI backend and React frontend
@@ -539,6 +589,12 @@ modified: 2025-12-19T12:43:21.150Z
   - It does not rely on any DOM APIs and can therefore be used in contexts where there is no built-in support for XML parsing, most notably in Web Workers and Service Workers.
   - Currently the library supports hOCR and ALTO OCR markup.
 
+- https://github.com/orasik/parsevision /apache2/202407/python/inactive
+  - open source tool to visualise what OCR is parsing in a PDF document to help developers and product teams identify if the parsing has missed some vital information from the document.
+  - The tool runs locally, no data are sent outside your machine
+  - 支持 Tesseract, EasyOCR
+  - 效果类似hocr的文字图层，没有画框的文字就是未识别出的
+
 - https://github.com/athrael-soju/Snappy /66Star/MIT/202512/python/ts
   - Snappy implements region-level document retrieval by unifying vision-language models with OCR through spatial coordinate mapping. 
   - Unlike traditional systems that return entire pages (VLMs) or lack semantic grounding (OCR-only), Snappy uses ColPali's patch-level similarity scores as spatial relevance filters over OCR-extracted regions; operating entirely at inference time without additional training.
@@ -554,6 +610,9 @@ modified: 2025-12-19T12:43:21.150Z
     - 兼容 有道OCR/pymupdf/RapidOCR 的JSON格式
   - 给文本行中的标题标出Markdown标记
   - 保存为jpg后OCR效果比png好，不知何故
+
+- https://github.com/mary-lev/llm-ocr /202506/python
+  - LLM-powered OCR evaluation and correction package that supports multiple language models for OCR processing and text correction tasks.
 
 ## utils-tesseract
 

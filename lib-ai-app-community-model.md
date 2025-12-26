@@ -674,7 +674,19 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
-- ## 
+- ## [Hard lesson learned after a year of running large models locally : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pvxq2t/hard_lesson_learned_after_a_year_of_running_large/)
+  - I’m running everything off a workstation with a single RTX 3090, Ubuntu 22.04, llama.cpp for smaller models and vLLM for anything above 30 B parameters.
+  - My goal has always been to avoid cloud dependencies and keep as much computation offline as possible, so I’ve tried every quantization trick and caching tweak I could find.
+  - The biggest friction point has been scaling beyond 13 B models.
+  - My takeaway so far is that local first inference is viable for small to medium models, but there’s a hard ceiling unless you invest in server grade hardware or cluster multiple GPUs.
+  - Quantization helps, but you trade some quality and run into new bugs.
+  - For privacy sensitive tasks, the trade‑off is worth it; for fast iteration, it’s been painful compared to cloud based runners.
+
+- vLLM works great if model + context fit into VRAM, but it doesn't do CPU offloading well - use llama.cpp for anything that spills over to RAM.
+
+- instead of trying to use "smarter bigger" models to achieve whatever youre trying to achieve, its more reliable to use multiple parallel instances (via vllm for example) of smaller model that can communicate with each other in distinct roles to create a system that produces accurate results.
+
+- You can also rent a card in the cloud for near local inference.
 
 - ## [Useful patterns for building HTML tools _202512](https://simonwillison.net/2025/Dec/10/html-tools/)
 - https://x.com/vista8/status/2003803470449787263

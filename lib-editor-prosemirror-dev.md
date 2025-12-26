@@ -93,6 +93,7 @@ modified: 2021-05-06T09:39:53.522Z
   - diff for version-history-timeline
   - streamable diff
   - ⚖️ diff for rich-text
+  - diff for pdf editing
 
 - ✨ custom-elements
 - code
@@ -102,6 +103,7 @@ modified: 2021-05-06T09:39:53.522Z
   - group
   - views
   - 针对 vlm 优化的表格及编辑
+  - table/pdf-table to excel
 - image
   - img-diff 使用slider对比交互
   - img-editor

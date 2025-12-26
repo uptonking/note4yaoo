@@ -161,6 +161,9 @@ uv cache size
   - [生成新的 SSH 密钥并将其添加到 ssh-agent - GitHub 文档](https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 
 ```shell
+# [Hard to discover tips and apps for macOS | Hacker News](https://news.ycombinator.com/item?id=24391899)
+sudo spctl developer-mode enable-terminal
+
 # GNU versions of head, ls, cat, and many others
 brew install coreutils
 gbase64 -w 0 /dev/urandom | ghead -c 2M > textfile.txt

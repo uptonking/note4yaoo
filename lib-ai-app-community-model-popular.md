@@ -536,7 +536,14 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [I tested GLM 4.7 and minimax-m2.1 and compared it to CC and Codex : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1pvr0w0/i_tested_glm_47_and_minimaxm21_and_compared_it_to/)
+  - TL; DR Claude=best, mimimax-m2.1=excellent (surprised), Codex 5.2-med=very good, GLM-4.7=bad
+
+- Dubesor also noted reasoning loops on GLM 4.7 as concerning/spooky in highly unusual LLM breakage, and it's not ranking too well on his personal benchmark either.
+
+- I’ve also been using minimax m2.1 over the past few days, and I’m impressed as well. The price-to-performance ratio is excellent
+
+- Claude will never display its  full thinking because they are afraid of people distilling it. Also haiku is that good? I thought u would be using opus to plan and sonnet to execute…
 
 - ## [GLM 4.7 vs. Minimax M2.1. My test & subscription decision : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1ptq7rc/glm_47_vs_minimax_m21_my_test_subscription/)
   - The Test: I ran both models on the same prompt (in Claude Code) to generate e2e tests for a new feature I'm implementing in an application I'm building. Nothing complicated, two tables (1: N relationship), model, repo, service, controller, validator, routes. Pretty standard stuff.

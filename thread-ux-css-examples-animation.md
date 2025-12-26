@@ -31,7 +31,12 @@ modified: 2022-11-21T15:27:20.974Z
 # examples-loading/progress
 - ## 
 
-- ## 
+- ## 做了这样一个0依赖的dot-flip组件，我取名为「DotAnime」。
+- https://x.com/Ive422/status/2004115727394185706
+  - [dot-anime-react | Lightweight React Dot Matrix Animation](https://dotanime.dev/)
+  - https://github.com/IveTian/dot-anime-react
+
+    - A lightweight React dot matrix animation component with zero dependencies
 
 - ## 4 lines of JavaScript. Zero dependencies.
 - https://x.com/crutchcorn/status/1774695605455224871

@@ -216,6 +216,14 @@ modified: 2022-11-07T10:25:12.034Z
   - https://github.com/wordware-ai/twitter
     - AI Agent for Twitter Personality Analysis
 
+- https://github.com/zedeus/nitter /AGPL/python/nim
+  - https://nitter.net/
+  - A free and open source alternative Twitter front-end focused on privacy and performance. Inspired by the Invidious project.
+  - Running a Nitter instance now requires real accounts, since Twitter removed the previous methods.
+  - https://www.reddit.com/r/LocalLLaMA/comments/1pvz7v2
+    - Wtf is xcancel
+    - a proxy for x/twitter where you can see comments for post without having to be logged in. Not a phishing website, it's legit
+
 ## download-video/image
 
 - 浏览器扩展经常失效，更好的方式是在github查找下载工具的源码，自己修改

@@ -573,6 +573,10 @@ modified: 2025-11-30T17:27:16.720Z
     - Processing services: Specialized services for extraction, translation, rendering, and embedding
     - Data layer: Redis (sessions), ChromaDB (vectors), MinIO (files)
     - Service mesh layer: Istio for mTLS, traffic management, and observability (prestaging/staging/production)
+
+- https://github.com/ikantkode/pdfLLM /MIT/202509/python/inactive
+  - open source, proof of concept RAG app.
+  - uses PostgreSQL for session management, Qdrant for vector storage, Dgraph for graph-based indexing, and Celery for asynchronous task processing.
 # rag-fwk
 - https://github.com/run-llama/semtools /1.5kStar/MIT/202511/rust/ts
   - Semantic search and document parsing tools for the command line

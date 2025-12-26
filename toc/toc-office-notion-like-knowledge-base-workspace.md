@@ -347,6 +347,20 @@ modified: 2022-06-03T21:34:54.893Z
   - [use orm like https://entgo.io/ instead of writing sqls manually _202401](https://github.com/usememos/memos/issues/2849)
     - currently, memos support sqlite, mysql, postgresql, but writing target sql separately, we could use orm, like entgo.io to simplify the db logic and get rid of manually written sql.
     - Although it's a bit more complicated to write SQL for each driver, but the execution/migration will be open and transparent. IMO, I think writing raw SQL is better then using ORM.
+- https://github.com/Rabithua/Rote /MIT/202512/ts/类似twitter
+  - https://rote.ink/
+  - https://demo.rote.ink/
+  - A note repository like Personal Note/blog
+  - 默认不渲染markdown
+  - Separated Architecture: Frontend and backend use separated architecture design, deploy only the services you need
+  - Complete control over your data, free to export data
+  - OAuth support, currently supports GitHub and Apple Login, Google is planned
+  - S3 storage support, defaults to Cloudflare R2 storage, configuration can be skipped
+  - [I have decided to open-source my note-taking project that I have used for two years. : r/opensource](https://www.reddit.com/r/opensource/comments/1pvhvaq/i_have_decided_to_opensource_my_notetaking/)
+    - the inspiration came from the open-source project usememos. Earlier, I was a loyal user of usememos and even created an open-source mini-program client for usememos (memos_wmp)
+    - However, I gradually felt that the project became bloated and complex, diverging more from my note-taking needs.
+    - I started developing Rote from scratch. The web version's interface and interaction design drew more inspiration from designs I liked on Twitter and the Tailwindcss website
+    - Although there's an explore page and Reactions, I don't define it as a community. The explore page simply displays some users' public notes
 
 - pervane /200Star/MIT/202205/js/python
   - https://github.com/hakanu/pervane
@@ -951,6 +965,7 @@ modified: 2022-06-03T21:34:54.893Z
     - Use LLMs and LLM Vision (OCR) to handle paperless-ngx - Document Digitalization powered by AI
     - paperless-gpt seamlessly pairs with paperless-ngx to generate AI-powered document titles and tags, saving you hours of manual sorting. 
     - Harness Large Language Models (OpenAI or Ollama) for better-than-traditional OCR
+    - includes powerful OCR enhancements that go beyond basic text extraction
   - https://github.com/signorecello/paperless-docling /202504/js/inactive
     - A service that automatically processes documents in Paperless using docling and updates their content.
     - [Better OCR with Docling : r/Paperlessngx _202504](https://www.reddit.com/r/Paperlessngx/comments/1jqqsly/better_ocr_with_docling/)
