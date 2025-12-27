@@ -206,6 +206,23 @@ modified: 2023-10-30T07:34:03.602Z
 
 - 这次经过了多少工程师多少小时的打磨
 
+- ## [Is direct tool use a trap? Would it be better for LLMs to write tool-calling code instead? : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1px089u/is_direct_tool_use_a_trap_would_it_be_better_for/)
+- Look into smolagents from HF, it uses something pretty similar to this.
+
+- "better" is defined by what's model was trained on. Code path is definitely more scalable, but also more unsafe. Currently, most models are primarily trained on direct calls mode, so code calling requires taking context space with explanations and represents another failure mode for the model.
+  - Source: agents in my company can decide to call their tools via code, it's pretty hard to make them choose it, unless very specifically targeting to do so.
+
+- Scales much better to give the ai access to a virtual folder structure with code for calling different functions. Just dumping everything into context is silly.
+
+- I use each approach. Function calling API’s are my approach pretty much 100% of the time if I am building an agent which is integrating with another system with a contract and the job of the agent is to talk to the other system(s).
+  - A sandbox is better for broader use cases where the work is all internal.
+  - I often define APIs using tool calls that map to python functions running inside the sandbox which is a mix of the two.
+  - My opinion is that it completely depends on the situation 
+
+- if you are going to allow a model to write and run arbitrary code, it is riskier and should be sandboxed in most situations. I think smolagents does have the option to constrain to just the functions you are given it or write and run other things as well. I am not 100 percent sure they can guarantee this.
+
+- Yes, this is true. I've had great success providing a restrictive JS environment and typescript definition files and using this instead of JSON tool calls, especially when executing steps which would otherwise require multiple tool calls. However, it does depend on having a model that has been trained extensively on code.
+
 - ## 💡 [anthropic blog on code execution for agents. 98.7% token reduction sounds promising for local setups : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1powhy6/anthropic_blog_on_code_execution_for_agents_987/)
   - instead of direct tool calls, model writes code that orchestrates tools
   - basic idea: dont preload all tool definitions. let model explore available tools on demand. data flows through variables not context
@@ -630,6 +647,9 @@ e) 最终评论者(Final Critic)
 - TOML is actually more verbose when it comes to complex data structures.
   - Which makes sense since it was designed to be a JSON/YAML mappable language for better human readability.
 # discuss-local-llm-usecases
+- resources
+  - [Use Cases | Claude](https://claude.com/resources/use-cases)
+
 - ## 
 
 - ## 

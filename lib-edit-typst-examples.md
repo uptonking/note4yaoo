@@ -47,6 +47,19 @@ modified: 2025-12-25T19:55:10.911Z
   - Rich Text Editing: Tiptap-based editor with toolbar
   - Real-time Preview: Live PDF preview
   - The editor requires a Typst compilation server running, Compile Typst to PDF
+
+- https://github.com/tyx-editor/TyX /144Star/MIT/202512/rust/ts
+  - https://tyx-editor.com/
+  - https://app.tyx-editor.com/
+  - A LyX-like experience rewritten for Typst and the modern era
+  - 编辑器支持富文本编辑和markdown快捷键
+  - TyX uses MathLive to make math formula editing easy by seeing the formula you're editing! This is currently LaTeX-based. We are working on a Typst-based editor
+  - 默认保存为 .tyx 后缀的文件, 里面内容是json
+
+- https://github.com/rendercv/rendercv /12.3kStar/MIT/202512/python
+  - https://docs.rendercv.com/
+  - CV/resume generator for academics and engineers, YAML to PDF
+  - Version-control your CV — it's just text.
 # examples
 - https://github.com/EMOAIRX/ppt-agent /202510/ts/vue/inactive
   - https://emoairx.github.io/ppt-agent/

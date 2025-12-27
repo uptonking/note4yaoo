@@ -9,17 +9,9 @@ modified: 2025-11-06T18:49:13.977Z
 
 # guide
 
-- leaderboard
-  - [OCR Arena](https://www.ocrarena.ai/battle)
-    - [I made a free playground for comparing 10+ OCR models side-by-side _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p35f2c/i_made_a_free_playground_for_comparing_10_ocr/)
-  - [SpatialBench - AI Spatial Reasoning Benchmark](https://spicylemonade.github.io/spatialbench/)
-    - Evaluating multimodal model performance on complex 3D and 2D spatial tasks.
-    - https://github.com/spicylemonade/spatialbench
-    - designed to evaluate the next generation of multimodal AI models on their ability to reason about space, structure, and pathing
-
 - https://github.com/bytefer/macos-vision-ocr /MIT/202502/swift
   - A powerful command-line OCR tool built with Apple's Vision framework, supporting single image and batch processing with detailed positional information output.
-# models-vlm/ocr
+# models-vlm/ocr-xp
 - qwen3-vl-4b
   - 适合作为通用图片文字识别方案，识别完后一般还会解释一段，有时解释文字会冗长
 
@@ -58,6 +50,23 @@ modified: 2025-11-06T18:49:13.977Z
 - 
 - 
 
+# 🆚 ocr/vlm-parsing-benchmarking 
+- https://github.com/opendatalab/OmniDocBench /1.3kStar/apache2/202512/python/mineru
+  - https://opendatalab.com/omnidocbench
+  - A Comprehensive Benchmark for Document Parsing and Evaluation
+
+- [OCR Arena](https://www.ocrarena.ai/battle)
+  - [I made a free playground for comparing 10+ OCR models side-by-side _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p35f2c/i_made_a_free_playground_for_comparing_10_ocr/)
+
+- [SpatialBench - AI Spatial Reasoning Benchmark](https://spicylemonade.github.io/spatialbench/)
+  - https://github.com/spicylemonade/spatialbench
+  - Evaluating multimodal model performance on complex 3D and 2D spatial tasks.
+  - designed to evaluate the next generation of multimodal AI models on their ability to reason about space, structure, and pathing
+
+- https://getomni.ai/ocr-benchmark
+  - https://github.com/getomni-ai/benchmark
+  - The goal of this benchmark is to publish a comprehensive benchmark of OCRaccuracy across traditional OCR providers and multimodal Language Models.
+  - The evaluation dataset and methodologies are all Open Source, and we encourage expanding this benchmark to encompass any additional providers.
 # discuss-stars
 - ## 
 
@@ -119,6 +128,30 @@ modified: 2025-11-06T18:49:13.977Z
 
 - ## 
 
+- ## 
+
+- ## [Run structured extraction on documents/images locally with Ollama and Pydantic | Hacker News _202502](https://news.ycombinator.com/item?id=43110173&utm_source=chatgpt.com)
+  - We put together an open-source collection of Pydantic schemas for a variety of document categories (W2 filings, invoices etc.), including instructions for how to get structured JSON responses from any visual input with the model of your choosing. Run everything locally.
+
+- I'd really like to play with Qwen2.5-VL at some point, perhaps for reading data-sheets for microchips. Nicely for some applications, it's also very good at reporting position of what it finds, which many ML tools are pretty mediocre at. https://qwenlm.github.io/blog/qwen2.5-vl/
+
+- 
+- 
+- 
+- 
+
+- ## [Any suggestions for Open source OCR tools [D] : r/MachineLearning _202510](https://www.reddit.com/r/MachineLearning/comments/1o4hn2c/any_suggestions_for_open_source_ocr_tools_d/)
+- The biggest difference maker is whether you're using OCR for word- or sentence-level recognition with bounding boxes, or simply to transform non-textual info in textual info (say Markdown, or similar textual representations).
+  - disclaimer: I'm assuming the latter, many people have already replied back with valuable recognition software.
+  - IMHO Docling powered by the very cheap and efficient granite-docling-258M is your best friend, fully running on CPU and suitable for bulk operations.
+
+- 
+- 
+- 
+- 
+- 
+- 
+
 - ## [OCR4all | Hacker News _202502](https://news.ycombinator.com/item?id=43043671)
 - A little secret: Apple’s Vision Framework has an absurdly fast text recognition library with accuracy that beats Tesseract. It consumes almost any image format you can think of including PDFs.
   - After getting an iPhone and exploring some of their API documentation after being really impressed with system provided features, I'm blown away by the stuff that's available. My app experience on iOS vs Android is night and day. The vision features alone have been insane, but their text recognition is just fantastic. Any image and even my god awful handwriting gets picked up without issue.
@@ -147,7 +180,7 @@ modified: 2025-11-06T18:49:13.977Z
 
 - Apple Vision and its wrappers provide bounding boxes for each line of text. That's slightly less convenient than Tesseract which can give you a bounding box for each word, but more than compensated by Apple Vision's better accuracy. I am planning to fudge the word boxes by assuming fixed-width letters and dividing up the overall width so that each word's width is proportional to its share of the total letters on the line.
   - Once you have those bounding boxes, it's pretty simple to use a library like (Python) or (JavaScript) to add overlay text in the right place
-  - https://github.com/eloops/hocr2pdf /MIT/202509/js/inactive
+- https://github.com/eloops/hocr2pdf /MIT/202509/js/inactive
   - take scanned image, and hocr output from tesseract, create PDF. Thats it.
 
 - ## [LLM Aided OCR (Correcting Tesseract OCR Errors with LLMs with Python) : r/Python _202408](https://www.reddit.com/r/Python/comments/1eo6dxz/llm_aided_ocr_correcting_tesseract_ocr_errors/)
@@ -305,8 +338,21 @@ modified: 2025-11-06T18:49:13.977Z
 
 - 我觉得小的vlm 直接做端到端的 pdf->markdown  永远不会解决问题，稍微复杂点的edge case  就出错。最后可能还是得回到传统图像处理+vlm 的路子，先识别出格子和文字，然后连通坐标输到大模型生成markdown
 
-- ## 🆚 [State of Open OCR models : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1oe7orf/state_of_open_ocr_models/)
-  - [Supercharge your OCR Pipelines with Open Models _202510](https://huggingface.co/blog/ocr-open-models)
+- ## 🆚📝 [State of Open OCR models : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1oe7orf/state_of_open_ocr_models/)
+- [Supercharge your OCR Pipelines with Open Models _202510](https://huggingface.co/blog/ocr-open-models)
+- Recent models transcribe texts into a machine-readable format.
+- OCR models convert them into machine-readable text that comes in many different formats like HTML, Markdown and more.
+- Models use different machine-readable output formats, such as DocTags, HTML or Markdown
+  - The way a model handles tables and charts often depends on the output format they are using. 
+- DocTag: DocTag is an XML-like format for documents that expresses location, text format, component-level information, and more. This format is employed by the open Docling models.
+- HTML: HTML is one of the most popular output formats used for document parsing as it properly encodes structure and hierarchical information.
+- Markdown: Markdown is the most human-readable format. It’s simpler than HTML but not as expressive. For example, it can’t represent split-column tables.
+- JSON: JSON is not a format that models use for the entire output, but it can be used to represent information in tables or charts.
+
+- Documents can have complex structures, like multi-column text blocks and floating figures. 
+  - Older OCR models handled these documents by detecting words and then the layout of pages manually in post-processing to have the text rendered in reading order, which is brittle. 
+  - Modern OCR models, on the other hand, incorporate layout metadata to help preserve reading order and accuracy. This metadata is called “anchor”, it can come in bounding boxes. This process is also called as “grounding/anchoring” because it helps with reducing hallucination.
+
 - I just tried PaddleOCR and zero-shot worked super well
   - Indeed, that tiny 0.9B model does a perfect transcription and even beats the latest DeepSeek OCR. Impressive.
 - for now you could try with vLLM I think, because PaddleOCR-VL comes in two models (one detector for layout and the actual model itself) it's sort of packaged nicely with vLLM AFAIK

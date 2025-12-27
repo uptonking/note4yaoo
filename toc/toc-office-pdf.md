@@ -52,6 +52,7 @@ modified: 2021-01-04T17:26:43.784Z
 
 - https://github.com/diegomura/react-pdf /16.2kStar/MIT/202509/ts
   - https://react-pdf.org/repl /示例渲染的页面内容为dom元素
+    - 示例效果是左边是react jsx代码， 右边是pdf预览， 感觉不如markdown/typst的预览
   - React renderer for creating PDF files on the browser and server
   - 使用了 pdfkit
   - This package is used to create PDFs using React. 

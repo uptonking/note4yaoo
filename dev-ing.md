@@ -303,6 +303,12 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-to
   - ?
 
+## 1227
+
+- from acrobat document properties, the page size is 170~180mm x 230~240mm, what's the typical size?
+  - do not correspond to standard ISO paper sizes such as A4 (210 × 297 mm), A5 (148 × 210 mm), or Letter (215.9 × 279.4 mm).
+  - Instead, these measurements align closely with a common trim size used in book publishing, particularly for trade paperbacks and non-fiction books. The most frequently referenced standard in this range is 170 × 240 mm (approximately 6.69 × 9.45 inches), often described as a slightly reduced variant of ISO B5 (176 × 250 mm). Variations such as 170 × 230 mm or 180 × 240 mm also appear in printing specifications, accounting for minor tolerances or regional preferences.
+
 ## 1218
 
 - git-push error: GH013: Repository rule violations found for refs/heads/feat/image-pdf.

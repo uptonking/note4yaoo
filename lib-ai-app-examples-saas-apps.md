@@ -95,12 +95,6 @@ modified: 2025-02-21T17:17:42.225Z
   - 开源的数字人课程制作项目：easegen，它提供从课程制作、视频管理、智能课件生成到智能出题全套方案
   - 支持ppt课件批量自动生成、数字人克隆、声音克隆、数字人课程设计、数字人视频渲染等
   - https://x.com/aigclink/status/1847102226088841648
-# cv
-- https://github.com/roboflow/supervision /MIT/202502/python
-  - https://supervision.roboflow.com/
-  - We write your reusable computer vision tools. Whether you need to load your dataset from your hard drive, draw detections on an image or video, or count how many detections are in a zone.
-  - Supervision was designed to be model agnostic. Just plug in any classification, detection, or segmentation model.
-    - we have created connectors for the most popular libraries like Ultralytics, Transformers, or MMDetection.
 # ai-designer/lovable
 - https://github.com/TesslateAI/Studio /apache2/202510/python/ts
   - Open Source Locally Hosted Lovable with Full Stack Support
@@ -304,4 +298,29 @@ modified: 2025-02-21T17:17:42.225Z
   - 本地存储 - 支持保存和加载卡片项目
 # ai-apps
 
+# cv
+- https://github.com/IDEA-Research/Rex-Omni /1kStar/IDAE/202512/python/华人作者
+  - https://rex-omni.github.io/
+  - Detect Anything via Next Point Prediction (Based on Qwen2.5-VL-3B)
+  - 视觉效果是检测物体，不确定文本检测效果
+  - Rex-Omni is a 3B-parameter Multimodal Large Language Model (MLLM) that redefines object detection and a wide range of other visual perception tasks as a simple next-token prediction problem.
+  - Unified architecture for multiple vision tasks
+  - Rex-Omni reformulates visual perception as a next point prediction problem, unifying diverse vision tasks within a single generative framework. It predicts spatial outputs (e.g., boxes, points, polygons) auto-regressively and is optimized through a two-stage training pipeline—large-scale Supervised Fine-Tuning (SFT) for grounding, followed by GRPO-based reinforcement learning to refine geometry awareness and behavioral consistency.
+  - https://github.com/Mountchicken/Resophy /202512/python/js
+    - Resophy is an HTML-based AI paper reader with: AI Translation & Analysis — instantly understand structure
+    - modern paper reader that helps you quickly understand the core content of papers through a simple tech stack (HTML + JavaScript + Python Flask) and AI features
+    - Main Service (Resophy Core): HTML + JavaScript + Python Flask backend service, providing core features such as paper management, classification, and search
+    - LLM Server: LLM inference service for AI translation, interpretation, and arXiv paper analysis (optional, supports local deployment or remote API)
+    - MinerU Server: Document parsing service for PDF to Markdown parsing (optional, for AI features)
+
+- https://github.com/roboflow/supervision /MIT/202502/python
+  - https://supervision.roboflow.com/
+  - We write your reusable computer vision tools. Whether you need to load your dataset from your hard drive, draw detections on an image or video, or count how many detections are in a zone.
+  - Supervision was designed to be model agnostic. Just plug in any classification, detection, or segmentation model.
+    - we have created connectors for the most popular libraries like Ultralytics, Transformers, or MMDetection.
+# video
+- https://github.com/zapdos-labs/unblink /182Star/AGPL/202512/ts
+  - Unblink is a camera monitoring application that runs AI vision models on your camera streams in real-time
+  - Object detection
+  - Intelligent search across your video feeds.
 # more

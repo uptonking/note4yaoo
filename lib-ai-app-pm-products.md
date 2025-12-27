@@ -75,6 +75,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 可通过支持外部大模型api来解决
   - 小模型不够智能
   - 移动端计算能力差, 速度慢, ipad的M系芯片非gpu方案也不快
+  - 不同任务需要不同模型，对于图片问答场景，需要根据硬件切换模型，需要专门优化
   - 耗电量大, 对手机端不友好
 
 - 需要针对local本地优化
@@ -407,6 +408,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [莹のAPI](https://api.wpgzs.top/console)
     - [公益站支持claude ](https://linux.do/t/topic/1351151)
     - rpm15
+    - [随时升天的公益站](https://any.97819781.xyz/)
   - [APIKEY_公益站](https://welfare.apikey.cc/console)
     - GLM-4.7, MiniMax-M2.1 限时免费 
   - [FovtAPI](https://api.voct.top/console), 论坛发码
@@ -571,6 +573,12 @@ modified: 2025-03-22T16:10:24.856Z
   - [Cloudflare Workers AI Models](https://developers.cloudflare.com/workers-ai/models/)
     - 提供免费的文生图模型: sdxl, sdv1-5
   - [Free AI Image Generator - AI Free Forever](https://aifreeforever.com/image-generators)
+  - [Free Gemini Pro](https://freebanana.pro/)
+
+- video-gen
+  - [Video Studio](https://doubao.happieapi.top/)
+    - rpd: 30
+    - 两款模型分别是 doubao-seedance-1-0-pro-fast-251015 和 doubao-seedance-1-5-pro-251215：前者主打高速视频生成，适合大多数文本或单图生成视频的场景，视频时长为 4–12 秒，最多支持 1 张图片输入，支持全部比例，不支持音频，默认无水印（API 可配置水印）；后者主打高质量视频生成，支持多图输入，画面一致性更强，视频时长同样为 4–12 秒，最多支持 2 张图片输入，支持全部比例，支持音频（默认带音频），默认无水印（API 可配置水印）。
 
 - image2api
   - [youmind2api，可以使用大香蕉 ](https://linux.do/t/topic/1363986)

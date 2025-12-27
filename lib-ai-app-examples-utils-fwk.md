@@ -375,6 +375,20 @@ modified: 2025-02-21T18:20:42.624Z
   - 即使有些厂商说兼容openai的接口，但是实际上还是存在些许差异的
   - simple-one-api主要是解决以上2点，旨在兼容多种大模型接口，并统一对外提供 OpenAI 接口。
 
+## router-image 🖼️
+
+- https://github.com/Amery2010/peinture /392Star/MIT/202512/ts
+  - https://peinture.9th.xyz/
+  - A general-purpose AI image generation framework that supports Hugging Face, Gitee, Model Scope, and more.
+  - [【开源】派奇智图，AI 图片生成服务，合理白嫖各大平台的算力资源 _202512](https://linux.do/t/topic/1290598)
+    - 目前 Hugging Face 对于匿名用户，每天有 2分钟的算力资源，使用 Token，可以获得额外的 3.5 分钟算力资源。
+    - 目前 Gitee AI 使用 Token 每天都可以获得 100 次的 API 调用次数，理论上可以生成 100 张图片。需要注意的是，提示词优化也会计算入 API 调用次数
+    - 目前 Model Scope 使用 Token 每天都可以获得 2000 次的 API 调用次数，对于单个模型的调用官方限制为 500 次，理论上可以生成 500 张图片。
+    - 根据用户反馈 Hugging Face 与 Gitee AI 可以生成无审核的 NSFW 图片，我没有在 Model Scope 上试过，因此无法确定 Model Scope 是否存在审核机制
+    - 题外话：Gitee AI 与 Model Scope 的提示词优化使用的是 DeepSeek 3.2 这个模型，这个模型在生成中文描述上十分惊艳。
+  - [【即将开源】 诚邀大家试用派奇智图服务端 API - 开发调优 - LINUX DO](https://linux.do/t/topic/1368202)
+    - 随着项目的完善，不少佬友希望可以分享给朋友们用，经过几天的努力，终于开发了 Peinture 服务端，可以直接以 API 的形式直接给项目提供图片生成服务。
+
 - https://github.com/lianwusuoai/img-router /MIT/202512/ts
   - 三合一图像生成 API 中转服务- 一个接口，多渠道图像生成
   - 三渠道支持 - 火山引擎、Gitee (模力方舟)、ModelScope (魔塔)
@@ -382,6 +396,7 @@ modified: 2025-02-21T18:20:42.624Z
   - 图片参考 - 支持上传参考图片进行图生图
   - 开箱即用的容器化部署方案
   - [开源：豆包和Z-Image对话生图/改图全免费且自由 ](https://linux.do/t/topic/1358465)
+
 - https://github.com/coulsontl/uni-image-api /202512/python
   - 将第三方图像生成/编辑 API 转换为 OpenAI 兼容格式的代理服务。
   - 可扩展架构: 基于 Provider 模式，易于添加新的第三方服务

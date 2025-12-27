@@ -84,4 +84,6 @@ modified: 2025-09-21T13:58:08.942Z
 - 
 
 # more
+- [Please add more descriptions on how to use VLM. · Issue · docling-project/docling _202508](https://github.com/docling-project/docling/issues/2102)
+
 - [IBM is open-sourcing a new toolkit for document conversion - IBM Research _202411](https://research.ibm.com/blog/docling-generative-AI)

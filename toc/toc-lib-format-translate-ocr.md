@@ -12,15 +12,39 @@ modified: 2025-12-19T12:43:21.150Z
   - 文档的使用频率不如图片, ocr/translation的方案要考虑图片场景
   - 批量执行ocr的架构可参考papermerge/paperless
   - vlm流式输出的方案配合编辑器流式构建内容的ux体验会很好
-  - 💡 可以不做完全体ocr，而优化重点数据的ocr，如 pdf-table > excel
-    - vlm也可以提取bounding-box + 手动分割图片为主来提取表格、图表、图片
   - 传统的ocr方案都还没有结合llm来优化效果，而是应用层的数据处理管线开始用llm来提高质量和准确度
+  - 🐛 含图片内容的ocr结果是 markdown + base64图片
+  - ⏳ 文本/富文本/原文的版本管理如何设计
+
+- 💡 pdf的文本化
+  - 输出不一定是markdown, 各厂商都有自己的偏向, qwenvl-html, Nanonets-markdown, docling-doctags
+  - 可以不做完全体ocr，而优化重点数据的ocr，如 pdf-table > excel
+  - vlm也可以提取bounding-box + 手动分割图片为主来提取表格、图表、图片
+  - 更简单但低质量的方案，编辑器仅显示分页，每个编辑器页面和图片pdf的一页对应，编辑器内容为vlm识别的文本(不遵循pdf布局位置)，鼠标在点击识别文本处执行boundingbox搜索pdf图片的位置，并渲染高亮元素, 🤔🖼️ 这种方案的核心是图片操作
 
 - tips-translations
   - 翻译类型产品的形态需要根据场景进行设计，可双栏/上下紧邻/点击切换原文和译文
 
 - resources
   - [Technical Analysis of Modern Non-LLM OCR Engines _202512](https://intuitionlabs.ai/articles/non-llm-ocr-technologies)
+# vlm-ocr-solutions
+- qwen3-vl
+  - qwenvl html 指令使用时，不能开thinking, 只支持图片，不支持pdf
+    - 实测qwenvl html的输出质量不高(经常遗漏段落), 大多元素缺失bbox属性，而替代为 `<div class="image" data-bbox="130 106 947 450"><img data-bbox="130 106 947 450"/></div>`
+
+- ocr-grounding
+  - [Qwen VL](https://github.com/QwenLM/Qwen3-VL/blob/main/cookbooks/document_parsing.ipynb)
+  - [Rex Omni demos](https://huggingface.co/spaces/Mountchicken/Rex-Omni)
+  - [deepseek-ocr](https://github.com/deepseek-ai/DeepSeek-OCR)
+  - [dots.ocr](https://github.com/rednote-hilab/dots.ocr)
+  - [CogVLM](https://github.com/zai-org/CogVLM)
+  - [Seed1.8/1.5-VL](https://github.com/ByteDance-Seed/Seed1.5-VL)
+  - [MiniCPM-V Grounding](https://github.com/OpenSQZ/MiniCPM-V-CookBook/blob/main/inference/minicpm-v4_5_grounding.md)
+
+- https://www.datalab.to/playground/documents/new /体验最好/marker/surya
+  - [datalab-to/chandra · Hugging Face](https://huggingface.co/datalab-to/chandra)
+  - 输出支持 blocks/json/html/markdown
+  - blocks在hover时能高亮原文档/原图片中对应的bounding-box
 # popular
 - https://github.com/xunbu/docutranslate /555Star/MPLv2/202512/python
   - 文档（小说、论文、字幕）翻译工具（支持 pdf/word/excel/json/epub/srt...）
@@ -302,6 +326,18 @@ modified: 2025-12-19T12:43:21.150Z
   - Automatically organizes the extracted document content into clear, readable Markdown format, preserving the original layout and semantic structure
   - Streaming Processing: Features advanced concurrent processing where multiple APIs work in parallel, while each API processes pages sequentially. Results are displayed immediately after each page is processed, eliminating the need to wait for the entire PDF to complete.
   - The backend is built with FastAPI, supporting high-concurrency processing, while the frontend uses Next.js to provide a smooth user experience
+
+- https://github.com/PRITHIVSAKTHIUR/Multimodal-VLM-v1.0 /apache2/202512/python
+  - vision-language model application supporting image inference and visual question answering. 
+  - This repository hosts a Gradio-based demo that integrates several specialized models for document processing, OCR, spatial reasoning, and object/point detection.
+  - Interactive web UI built with Gradio that supports streaming text output and image-based model tasks.
+  - Streaming generation using TextIteratorStreamer for real-time text display while the model generates.
+  - The demo is optimized for a single CUDA device but will fall back to CPU if no GPU is available.
+
+- https://github.com/PRITHIVSAKTHIUR/VLM-Parsing /apache2/202512/python
+  - a Gradio-based web application for parsing documents and images into structured HTML and Markdown formats using advanced Vision Language Models (VLMs)
+  - Upload and process PDF or image files (PNG, JPEG, JPG).
+  - Select between two VLMs: Logics-Parsing and Gliese-OCR-7B-Post1.0.
 # solutions/vendors
 - https://github.com/PaddlePaddle/PaddleOCR /66.5kStar/apache2/202512/python/cpp
   - https://www.paddleocr.ai/
@@ -344,6 +380,13 @@ modified: 2025-12-19T12:43:21.150Z
 
 - https://github.com/deepseek-ai/DeepSeek-OCR /21.5kStar/MIT/202510/python
   - [DeepSeek-OCR: Contexts Optical Compression | Abstract](https://arxiv.org/abs/2510.18234)
+
+- https://github.com/rednote-hilab/dots.ocr /5.9kStar/MIT/202512/python/mdl-1.7b
+  - https://dotsocr.xiaohongshu.com/
+  - dots.ocr is a powerful, multilingual document parser that unifies layout detection and content recognition within a single vision-language model while maintaining good reading order.
+  - Multilingual Support: dots.ocr demonstrates robust parsing capabilities for low-resource languages, achieving decisive advantages across both layout detection and content recognition on our in-house multilingual documents benchmark.
+  - Unified and Simple Architecture: By leveraging a single vision-language model, dots.ocr offers a significantly more streamlined architecture than conventional methods that rely on complex, multi-model pipelines. 
+    - Switching between tasks is accomplished simply by altering the input prompt, proving that a VLM can achieve competitive detection results compared to traditional detection models like DocLayout-YOLO.
 
 - https://github.com/datalab-to/surya /19kStar/GPL/202510/python
   - https://www.datalab.to/
@@ -397,6 +440,11 @@ modified: 2025-12-19T12:43:21.150Z
     - This repository contains the code for the paper Leveraging LLMs for Post-OCR Correction of Historical Newspapers, where LLMs are adapted for a prompt-based approach to post-OCR correction.
   - https://github.com/savi8sant8s/ptbr-post-ocr-sc-llm /MIT/202501/python
     - A proposal for post-OCR spelling correction using Language Models
+
+- https://github.com/vlm-run/vlmrun-hub /537Star/apache2/202512/python
+  - https://docs.vlm.run/hub
+  - VLM Run Hub, a comprehensive repository of pre-defined Pydantic schemas for extracting structured data from unstructured visual domains such as images, videos, and documents. 
+  - 似乎为开源代码，但pip包安装后可本地运行
 # ocr
 - https://github.com/AKSarav/pdfstract /apache2/202511/python/js
   - web application for converting PDFs to multiple formats using various state-of-the-art extraction libraries. Built with FastAPI backend and React frontend
@@ -415,6 +463,12 @@ modified: 2025-12-19T12:43:21.150Z
   - Beautiful React frontend with Material-UI components and responsive design
   - Document tagging and categorization
   - OIDC Setup - Single Sign-On integration
+
+- https://github.com/fabriziosalmi/pdf-ocr /MIT/202508/python/inactive
+  - web-based application built with Flask to convert PDF documents into editable formats (DOCX, TXT, Markdown, HTML) using Optical Character Recognition (OCR).
+  - 支持image preprocessing
+  - ocr支持tesseract/EasyOCR/pyocr
+  - Poppler PDF Rendering Library
 
 - https://github.com/rdumasia303/deepseek_ocr_app /1.5kStar/MIT/202511/python/js
   - A quick vibe coded app for deepseek OCR
@@ -483,6 +537,8 @@ modified: 2025-12-19T12:43:21.150Z
   - https://github.com/neosun100/HunyuanOCR-WebUI /apahce2/python
     - 基于腾讯混元OCR的完整Web界面解决方案
     - This project uses Gradio to build the web interface and supports one-click Docker deployment
+  - https://github.com/PRITHIVSAKTHIUR/HunyuanOCR-Demo /apache2
+    - A Gradio-based demonstration application for the Tencent HunyuanOCR model, focused on optical character recognition (OCR) tasks such as text detection, extraction, and coordinate formatting from images
 
 - https://github.com/hiroi-sora/Umi-OCR /40.7kStar/MIT/202511/python/qt-qml
   - 开源、免费的离线OCR软件。
@@ -584,6 +640,9 @@ modified: 2025-12-19T12:43:21.150Z
   - A simple screen parsing tool towards pure vision based GUI agent
   - 用于把屏幕截图转化成LLM可处理的结构化格式，再结合屏幕操作工具即可让LLM操作屏幕
 
+- https://github.com/eloops/hocr2pdf /MIT/202509/js/inactive
+  - take scanned image, and hocr output from tesseract, create PDF. Thats it.
+
 - https://github.com/jbaiter/ocr-parser /MIT/202309/ts
   - This library provides a simple interface to parse OCR data from a stream, buffer or string. 
   - It does not rely on any DOM APIs and can therefore be used in contexts where there is no built-in support for XML parsing, most notably in Web Workers and Service Workers.
@@ -598,6 +657,8 @@ modified: 2025-12-19T12:43:21.150Z
 - https://github.com/athrael-soju/Snappy /66Star/MIT/202512/python/ts
   - Snappy implements region-level document retrieval by unifying vision-language models with OCR through spatial coordinate mapping. 
   - Unlike traditional systems that return entire pages (VLMs) or lack semantic grounding (OCR-only), Snappy uses ColPali's patch-level similarity scores as spatial relevance filters over OCR-extracted regions; operating entirely at inference time without additional training.
+  - The approach formalizes coordinate mapping between vision transformer patch grids (32×32) and OCR bounding boxes, repurposing ColPali's late interaction mechanism to generate interpretability maps.
+    - 类似将ocr的bbox渲染为了热力图
 
 - https://github.com/Qianxia666/ocr /GPL/202511/python
   - 利用 OpenAI API 进行图片和 PDF 文档的 OCR 识别，支持异步任务处理、实时通信和完整用户机制的任务管理系统。
@@ -855,6 +916,127 @@ modified: 2025-12-19T12:43:21.150Z
 - https://github.com/Max-Lee-explore/agentic-ai-translation-company /CC-NC/202511/python/js
   - Agentic AI Translation System with Specialized Translators and Editors
   - Specialized Translation Agents: 不同类型的内容翻译所用大模型配置不同，特别是temperature
+# ocr-visual-grounding 🆚
+- [Docling Visual grounding](https://docling-project.github.io/docling/examples/visual_grounding/)  
+  - [Visual Grounding from Docling _202504](https://alain-airom.medium.com/visual-grounding-from-docling-74a0ee078981)
+
+- https://github.com/QwenLM/Qwen3-VL /17.4kStar/apache2/202511/jupyter
+  - [Qwen3-VL 发布 _20250923](https://qwen.ai/blog?id=qwen3-vl)
+  - https://huggingface.co/spaces/Qwen/Qwen3-VL-Demo
+  - https://huggingface.co/spaces/Qwen/Qwen3-VL-Demo/tree/main
+  - comprehensive upgrades across the board: superior text understanding & generation, deeper visual perception & reasoning, extended context length, enhanced spatial and video dynamics comprehension, and stronger agent interaction capabilities.
+  - Expanded OCR: Supports 32 languages (up from 10); robust in low light, blur, and tilt; better with rare/ancient characters and jargon; improved long-document structure parsing.
+  - [Qwen2.5 VL _202501](https://qwenlm.github.io/blog/qwen2.5-vl/)
+    - Qwen2.5-VL has designed a unique document parsing format called QwenVL HTML format, which extracts layout information based on HTML. 
+    - QwenVL HTML can perform document parsing in various scenarios, such as magazines, research papers, web pages, and even mobile screenshots
+  - [PDF OCR MD格式的prompt · Issue · QwenLM/Qwen3-VL](https://github.com/QwenLM/Qwen3-VL/issues/749)
+    - 评测CC-OCR使用的prompt在对应的仓库里，其中每个子任务对应一种输出类型的prompt。cookbook里的document parsing prompt主要针对QwenVL HTML格式，如果想让它输出markdown格式，同时让table保持HTML格式，公式latex格式，直接使用OmniDocBench中的prompt就能得到不错的效果，评测结果也较Qwen2-VL-72B高出不少。
+
+- https://github.com/ankit1khare/doc-ext-visually-grounded /202504/python/inactive
+  - A app that let's you chat with PDFs and provides evidence for the answers by visually grounding them into the PDF pages.
+  - Multiple PDF Support: Upload several PDF files simultaneously
+  - Document Analysis: Extracts text, tables, and figures from PDFs using Landing AI's agentic-doc SDK
+  - Visual Evidence: See exactly where in the document the answers come from with highlighted bounding boxes
+  - 依赖streamlit、PyMuPDF、Pillow
+  - Efficiently processes documents with maximum parallelism
+  - Large Document Support: Handles PDFs of any size through automatic chunking and reassembly
+
+- https://github.com/google/langextract /apache2/202511/python/可参考ux
+  - A Python library for extracting structured information from unstructured text using LLMs with precise source grounding and interactive visualization.
+  - Precise Source Grounding: Maps every extraction to its exact location in the source text, enabling visual highlighting for easy traceability and verification.
+  - [example - Romeo and Juliet Full Text Extraction](https://github.com/google/langextract/blob/main/docs/examples/longer_text_example.md)
+    - This creates an interactive HTML visualization for exploring the extracted entities
+    - 示例仅高亮关键词, 原文必须是文本
+
+- https://github.com/PRITHIVSAKTHIUR/Super-OCRs-Demo /apache2/202511/python
+  - A Gradio-based demo application for comparing state-of-the-art OCR models: DeepSeek-OCR, Dots. OCR, HunyuanOCR, and Nanonets-OCR2-3B. 
+  - Users can upload images, select models, apply custom prompts, and generate recognized text or visual grounding results.
+  - Switch between DeepSeek-OCR (with resolution and task options), Dots. OCR, HunyuanOCR, and Nanonets-OCR2-3B for flexible OCR workflows.
+  - DeepSeek-Specific Tools: Resolution presets (Tiny to Gundam), task types (Free OCR, Markdown, Parse Figure, Locate Object), and bounding box visualization.
+  - Streaming Output: Real-time text generation for Dots. OCR and Nanonets-OCR2-3B; non-streaming for others.
+  - Visual Results: DeepSeek outputs annotated images with bounding boxes or grounding visuals.
+  - CUDA-compatible GPU (recommended for bfloat16 models; falls back to CPU).
+
+- https://github.com/kasuba-badri-vishal/dhrishtikon /apache2/202506/python
+  - A Streamlit-based web application for visual grounding and document understanding.
+  - This application allows users to upload images or PDFs and ask questions about their content, with the system providing answers along with visual grounding at different levels (block, line, word, and point).
+    - OCR the Image to get the text regions
+    - Match the Question and Answer with the text regions using Text Matching strategy
+    - Return the Grounding(bbox, text) for the Question and Answer
+  - Currently using `Doctr` OCR model
+  - Word -level and Line -level Grounding Support
+  - Multi-line Grounding Support
+    - Since adding multi-line support for the engineering solution might reduce the accuracy of the Grounding
+  - For annotating the images with bounding boxes at block, line, word and point levels for visual question-answering tasks.
+  - https://github.com/text2knowledge/docTR-Labeler /apache2/202511/python
+    - a tool to label OCR data for the docTR and OnnxTR projects.
+    - Features like auto-annotation using OnnxTR and auto polygon adjustment
+    - This project is based on the Form-Labeller project by Devarshi Aggarwal.
+
+- https://huggingface.co/spaces/PaddlePaddle/PaddleOCR/tree/main 
+  - Gradio demo for PaddleOCR. PaddleOCR demo supports Chinese, English, French, German, Korean and Japanese.
+  - 识别后在图片上方画框突出有文本的位置, 最后输出带画框标记的图片
+  - [PaddleOCR-VL Online Demo - a Hugging Face Space by PaddlePaddle](https://huggingface.co/spaces/PaddlePaddle/PaddleOCR-VL_Online_Demo)
+    - 这个识别效果和dotsocr类似，提供md text/preview/位置图
+
+- https://huggingface.co/spaces/gokaygokay/Florence-2/tree/main /python
+  - `OCR with Region` 的任务会在图片上方画框突出有文本的位置, 最后输出带画框标记的图片
+  - https://github.com/anyantudre/Florence-2-Vision-Language-Model
+    - juppyter示例
+- https://huggingface.co/spaces/prithivMLmods/Multimodal-OCR3/tree/main
+  - https://prithivmlmods-multimodal-ocr3.hf.space/
+  - 输出 markdown文本/html文本
+
+- https://github.com/IDEA-Research/Rex-Omni /1kStar/IDAE/202512/python/华人作者
+  - https://rex-omni.github.io/
+  - https://huggingface.co/spaces/Mountchicken/Rex-Omni/tree/main
+    - [Rex Omni demos](https://huggingface.co/spaces/Mountchicken/Rex-Omni)
+  - Detect Anything via Next Point Prediction (Based on Qwen2.5-VL-3B)
+  - 视觉效果是检测物体，不确定文本检测效果
+  - Rex-Omni is a 3B-parameter Multimodal Large Language Model (MLLM) that redefines object detection and a wide range of other visual perception tasks as a simple next-token prediction problem.
+  - Unified architecture for multiple vision tasks
+  - Rex-Omni reformulates visual perception as a next point prediction problem, unifying diverse vision tasks within a single generative framework. It predicts spatial outputs (e.g., boxes, points, polygons) auto-regressively and is optimized through a two-stage training pipeline—large-scale Supervised Fine-Tuning (SFT) for grounding, followed by GRPO-based reinforcement learning to refine geometry awareness and behavioral consistency.
+  - https://github.com/Mountchicken/Resophy /202512/python/js
+    - Resophy is an HTML-based AI paper reader with: AI Translation & Analysis — instantly understand structure
+    - modern paper reader that helps you quickly understand the core content of papers through a simple tech stack (HTML + JavaScript + Python Flask) and AI features
+    - Main Service (Resophy Core): HTML + JavaScript + Python Flask backend service, providing core features such as paper management, classification, and search
+    - LLM Server: LLM inference service for AI translation, interpretation, and arXiv paper analysis (optional, supports local deployment or remote API)
+    - MinerU Server: Document parsing service for PDF to Markdown parsing (optional, for AI features)
+
+- 🌰 https://news.ycombinator.com/item?id=43189412
+  - Bounding boxes. There still isn't really a model that gives super precise bounding boxes. Supposedly Gemini and Qwen were trained for it, but they don't perform as well as traditional models.
+  - Visual grounding a.k.a. bounding boxes are definitely one of those things that VLMs aren't natively good at (partly because the cross-entropy losses used aren't really geared for bounding box regression). We're definitely making some strides here to improve that so you're going to get an experience that is almost as good as native bounding box regression (all within the same VLM).
+  - there does not yet exist a multimodal vision LLM approach that is capable of identifying bounding boxes of where the text occurs.
+  - https://github.com/vlm-run/vlmrun-cookbook/blob/main/notebooks/04_visual_grounding.ipynb
+  - In this notebook, we'll walk through an example of extracting structured data from US driver licenses along with their "visual grounding" in the form of bounding boxes. 
+
+- [Feat: Find bounding box for each section in the image · Pull Request · getomni-ai/zerox](https://github.com/getomni-ai/zerox/pull/44)
+  - PyTesseract is very old and much worse at OCR than GPT (try with handwritten notes for example), so this PR would be a massive downgrade. I am not sure if it is even a good idea for finding bounding boxes. I'd suggest to look into topics such as "Layout Detection" or "Layout Analysis"
+  - [Research: Add bounding boxes to response ](https://github.com/getomni-ai/zerox/issues/7)
+
+- https://github.com/opendatalab/DocLayout-YOLO /AGPL/202504/python
+  - https://huggingface.co/spaces/opendatalab/DocLayout-YOLO /gradio
+  - Enhancing Document Layout Analysis through Diverse Synthetic Data and Global-to-Local Adaptive Perception
+  - 视觉效果是画框显示布局
+
+## labelling/annotation
+
+- https://github.com/HumanSignal/label-studio /26kStar/apache2/202512/python/ts
+  - https://labelstud.io/
+  - a multi-type data labeling and annotation tool with standardized output format
+  - It lets you label data types like audio, text, images, videos, and time series with a simple and straightforward UI and export to various model formats
+  - `label-studio-converter`	Encode labels in the format of your favorite machine learning library
+  - [Export Annotations](https://labelstud.io/guide/export.html)
+    - Label Studio stores your annotations in a raw JSON format in the SQLite database backend, PostgreSQL database backend, or whichever cloud or database storage you specify as target storage.
+    - Image annotations exported in JSON format use percentages of overall image size, not pixels, to describe the size and location of the bounding boxes. 
+    - Label Studio supports many common and standard formats for exporting completed labeling tasks.
+    - coco, csv,json,CONLL2003/spaCy/YOLO
+
+- https://github.com/CVHub520/X-AnyLabeling /7.6kStar/GPL/202512/python
+  - a powerful annotation tool that integrates an AI engine for fast and automatic labeling. It's designed for multi-modal data engineers, offering industrial-grade solutions for complex tasks.
+
+- https://github.com/PFCCLab/PPOCRLabel /202510/python
+  - a semi-automatic graphic annotation tool suitable for OCR field, with built-in PP-OCR model to automatically detect and re-recognize data.
 # proofreading
 - tips
   - 校对的流程和交互可参考code review的现有工具的最佳实践

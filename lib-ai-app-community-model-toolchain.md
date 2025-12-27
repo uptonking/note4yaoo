@@ -1066,7 +1066,14 @@ sudo launchctl load /Library/LaunchDaemons/io.yaoo.sysctl.plist
 
 - ## 
 
-- ## 
+- ## [llama.cpp: Multi-host inference slower than single-host? : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pwmpcn/llamacpp_multihost_inference_slower_than/)
+  - I have two computers running locally and I want to see how I can get faster generation speeds by combining them instead of running the models separately on each computer.
+  - I've built a very recent version of llama.cpp on both hosts (jetson using CUDA12 and Dekstop using ROCm 6.7). I use the unsloth Qwen3 80B Q8. This model is 87GBs and hence it's larger than both hosts individually, but the entire model fits into RAM when combined.
+  - Using both combined yields a generation speed of 1.1 t/s. However, if I use the desktop llama-cli command exactly the same as above but remove the --rpc "$JETSON_IP_ADDR:12400" (hence disabling multi-host), then I'm at double the speed of 2.2 t/s.
+
+- Even with no latency, you won't get faster speed with llama.cpp, because it can't do tensor parallel, only layer splitting. It allows to serve larger models, but doesn't increase speed.
+  - You can do tensor parallel with vllm, but your interconnect will be a bottleneck, unless you use RDMA capable NIC (ConnectX from NVidia/Mellanox).
+  - I see you have ROCm/CUDA mix and uneven VRAM distribution, so vllm won't work either.
 
 - ## ["Router mode is experimental" | llama.cpp now has a router mode and I didn't know. : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pfssoo/router_mode_is_experimental_llamacpp_now_has_a/)
 - While this is cool, I still do think llama-swap is very mature and worth using rn.

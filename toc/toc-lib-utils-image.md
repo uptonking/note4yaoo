@@ -226,8 +226,17 @@ modified: 2023-04-04T22:39:45.442Z
   - https://willnguyen1312.github.io/zoom-image/
   - powerful framework agnostic headless library to zoom images on the web
   - Examples are written with Preact, React, Svelte, Vanilla JS and Vue.
-
-## annotation/labelling
+# annotation/labelling
+- https://github.com/HumanSignal/label-studio /26kStar/apache2/202512/python/ts
+  - https://labelstud.io/
+  - a multi-type data labeling and annotation tool with standardized output format
+  - It lets you label data types like audio, text, images, videos, and time series with a simple and straightforward UI and export to various model formats
+  - `label-studio-converter`	Encode labels in the format of your favorite machine learning library
+  - [Export Annotations](https://labelstud.io/guide/export.html)
+    - Label Studio stores your annotations in a raw JSON format in the SQLite database backend, PostgreSQL database backend, or whichever cloud or database storage you specify as target storage.
+    - Image annotations exported in JSON format use percentages of overall image size, not pixels, to describe the size and location of the bounding boxes. 
+    - Label Studio supports many common and standard formats for exporting completed labeling tasks.
+    - coco, csv,json,CONLL2003/spaCy/YOLO
 
 - mirador /593Star/apache2/202512/js
   - https://github.com/projectmirador/mirador

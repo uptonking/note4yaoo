@@ -17,6 +17,42 @@ modified: 2025-11-16T15:34:38.658Z
 - ## 
 
 - ## 
+
+- ## 🤔⚖️ pipeshub: [Stop converting full documents to Markdown directly in your indexing pipeline : r/Rag _202510](https://www.reddit.com/r/Rag/comments/1o261nz/stop_converting_full_documents_to_markdown/)
+  - I've been working on document parsing for RAG pipelines since the beginning, and I keep seeing the same pattern in many places: `parse document → convert to markdown → feed to vector db` . I get why everyone wants to do this. You want one consistent format so your downstream pipeline doesn't need to handle PDFs, Excel, Word docs, etc. separately.
+  - But here's the thing you’re losing so much valuable information in that conversion. Think about it: when you convert a PDF to markdown, what happens to the bounding boxes? Page numbers? Element types? Or take an Excel file - you lose the sheet numbers, row references, cell positions. If you use libraries like markitdown then all that metadata is lost. 
+  - 💡 Our solution: Blocks (e.g. Paragraph in a pdf, Row in a excel file) and Block Groups (Table in a pdf or excel, List items in a pdf, etc). Individual Blocks encoded format could be markdown, html
+  - We've been working on a concept we call "blocks" (not really unique name ). This is essentially keeping documents as structured blocks with all their metadata intact. 
+  - Everything then gets stored in blob storage (raw Blocks), vector db (embedding created from blocks), graph db, and you maintain that rich structural information throughout your pipeline. We do store markdown but in Blocks
+  - So far, this approach has worked quite well for us. We have seen real improvements in both accuracy and flexibility. For e.g. `ragflow` fails for these kind of queries (as like many other just dumps chunks to the LLM)- find key insights from last quarterly report or Summarize document or compare last quarterly report with this quarter but our implementation works because of agentic capabilities.
+- Do you think this should be an open standard? A lot of projects are already doing similar indexing work. Imagine if we could reuse already-parsed documents instead of everyone re-indexing the same stuff.
+  - Think of it like this:
+  - Block = Component (self-contained unit with content + metadata)
+  - Content = could be HTML, markdown, or whatever works best
+  - Metadata = props/attributes that describe the block (position, type, relationships)
+  - Blocks just have blockId and index and they form relationship with record (or document), topics, keywords, extracted Named entities, etc
+  - Block content is still stored in blob storage
+
+- Basically your new format "Blocks" is simply more extensive than "MarkDown" but the rest of the principle is the same. I would agree with you here, MarkDown is somewhat limited.
+  - Docling has tried to solve same problem and is using actually `DocTags` and then converts DocTags to MarkDown when asked.
+- Blocks isn't really a "format" like markdown. It's more of a schema/structure for storing content (which could be markdown, HTML, or whatever) alongside its metadata. Think of it as a container.
+  - You mentioned Docling's `DocTags` - that's a perfect example! Docling has their own internal representation, then converts to markdown. LlamaIndex has theirs. Unstructured has theirs. The problem is they're all different. It's not easy to switch from one format to another, there is a learning curve for developers and there is zero reusability. What I'm proposing is a standard schema so these tools can interoperate.
+  - On converting PDFs to blocks: We're not building a custom parser. You can use any parsing tool available
+  - The blocks schema just standardizes what those parsers output. 
+  - Then your downstream RAG pipeline only needs to understand one format. 
+  - The parsing problem stays unsolved (and each tool solves it their way), but at least we have interoperability. This implementation also allows Agent to fetch more data as per the query
+
+- nice approcach, and we already have it in our lib https://github.com/managedcode/markitdown
+
+- I felt this. Markitdown is pretty good, but only for structured documents such as docx. and xlsx. Sometimes I can save some time by converting to docx from pdf by using ocr based converters but it is still a very far cry.
+
+- Consider carefully the tradeoff between using Docling and/or Docling Document format and rolling your own and maintaining it. What does your custom thing offer? Is it t really worth the effort?
+  - There are some things missing in docling format (just to name a few - memory layout, semantic metadata extracted using LLM and VLM, relationships between blocks) which is why there is need of an open standard. Everyone is rolling out their own implementation which is not good.
+
+- The key point is the document parsing method — which elements should be extracted during parsing. Even after converting the document to Markdown, those elements can still be preserved, though this may require some manual handling.
+
+- That is why i think RAG is useless. We need to have data in various formats, not just text. I have not seen any RAG that give out images. imagine an architect firms what to RAGed their drawings?
+  - We haven’t tested it with architectural drawings yet, but we do support images embedded in PDF and DOCX files. When a user submits a query, we highlight the relevant images as well as the text.
 # discuss-ragflow
 - ## 
 
@@ -83,31 +119,6 @@ modified: 2025-11-16T15:34:38.658Z
 - ## 
 
 - ## 
-
-- ## 🤔 pipeshub: [Stop converting full documents to Markdown directly in your indexing pipeline : r/Rag _202510](https://www.reddit.com/r/Rag/comments/1o261nz/stop_converting_full_documents_to_markdown/)
-  - I've been working on document parsing for RAG pipelines since the beginning, and I keep seeing the same pattern in many places: parse document → convert to markdown → feed to vector db. I get why everyone wants to do this. 
-  - You want one consistent format so your downstream pipeline doesn't need to handle PDFs, Excel, Word docs, etc. separately.
-  - But here's the thing you’re losing so much valuable information in that conversion.
-  - Our solution: Blocks (e.g. Paragraph in a pdf, Row in a excel file) and Block Groups (Table in a pdf or excel, List items in a pdf, etc). Individual Blocks encoded format could be markdown, html
-  - We've been working on a concept we call "blocks" (not really unique name :) ). This is essentially keeping documents as structured blocks with all their metadata intact. 
-  - Everything then gets stored in blob storage (raw Blocks), vector db (embedding created from blocks), graph db, and you maintain that rich structural information throughout your pipeline. We do store markdown but in Blocks
-  - So far, this approach has worked quite well for us. We have seen real improvements in both accuracy and flexibility. For e.g. ragflow fails for these kind of queries (as like many other just dumps chunks to the LLM)- find key insights from last quarterly report or Summarize document or compare last quarterly report with this quarter but our implementation works because of agentic capabilities.
-  - Do you think this should be an open standard? A lot of projects are already doing similar indexing work. Imagine if we could reuse already-parsed documents instead of everyone re-indexing the same stuff.
-
-- Basically your new format "Blocks" is simply more extensive than "MarkDown" but the rest of the principle is the same. I would agree with you here, MarkDown is somewhat limited.
-  - Docling has tried to solve same problem and is using actually DocTags and then converts DocTags to MarkDown when asked.
-- Blocks isn't really a "format" like markdown. It's more of a schema/structure for storing content (which could be markdown, HTML, or whatever) alongside its metadata. Think of it as a container.
-  - You mentioned Docling's DocTags - that's a perfect example! Docling has their own internal representation, then converts to markdown. LlamaIndex has theirs. Unstructured has theirs. The problem is they're all different. It's not easy to switch from one format to another, there is a learning curve for developers and there is zero reusability. What I'm proposing is a standard schema so these tools can interoperate.
-
-- nice approcach, and we already have it in our lib https://github.com/managedcode/markitdown
-
-- Consider carefully the tradeoff between using Docling and/or Docling Document format and rolling your own and maintaining it. What does your custom thing offer? Is it t really worth the effort?
-  - There are some things missing in docling format (just to name a few - memory layout, semantic metadata extracted using LLM and VLM, relationships between blocks) which is why there is need of an open standard. Everyone is rolling out their own implementation which is not good.
-
-- I felt this. Markitdown is pretty good, but only for structured documents such as docx. and xlsx. Sometimes I can save some time by converting to docx from pdf by using ocr based converters but it is still a very far cry.
-
-- That is why i think RAG is useless. We need to have data in various formats, not just text. I have not seen any RAG that give out images. imagine an architect firms what to RAGed their drawings?
-  - We haven’t tested it with architectural drawings yet, but we do support images embedded in PDF and DOCX files. When a user submits a query, we highlight the relevant images as well as the text.
 
 - ## [PipesHub - Open Source Enterprise Search Engine(Generative AI Powered) : r/LangChain](https://www.reddit.com/r/LangChain/comments/1kr714l/pipeshub_open_source_enterprise_search/)
 - How does this compare to SurfSense's RAG-as-a-service feature?
