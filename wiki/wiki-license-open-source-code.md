@@ -34,6 +34,22 @@ modified: 2021-09-14T18:58:58.275Z
 - Copyright”指软件的版权和其它一切权利归软件作者所私有，用户只有使用权，没有其它如复制、重新修改发布等权利。
 - 而“Copyleft”的特点是仅有版权归原作者所有，其他一切权利可以与任何人共享。
   - “Copyleft”通常被译作“著佐权”，即通过许可证的形式，补足、辅佐著作权（Copyright）不足的版权授权，相当于一种权利与义务的契约
+# license-tips
+- pdf2image 能将pdf转换为image, 代码是MIT, 但依赖 GPL协议的poppler来执行转换
+  - it is by design that pdf2image does not in any way or form, link directly to poppler. All it does is call an already existing CLI utility that comes pre-installed on most Linux installation.
+  - It's okay because pdf2image is not built or distributed with Poppler none of the Python code is "contaminated" by the GPL license.
+  - I'm reopening this since it's not clear to me if running pdf2image inside a docker container can still be considered as MIT compatible ??
+    - The container is not considered anything as it is not code, but GPL code can "live" with MIT code in a container without any issue.
+
+- [Using GPL Software in Commercial Application as 2 Separate Parts : r/opensource _202410](https://www.reddit.com/r/opensource/comments/1ftm86q/using_gpl_software_in_commercial_application_as_2/)
+- My understanding is this: If you create a Docker container based off some distro base image, there will be tons of GPL software inside of it besides ffmpeg. For which you will have to provide source for ALL of them. Do you really want to get into that?
+  - If your commercial tool just calls the ffmpeg binary, it depends how closely they interact
+  - Mere aggregations do NOT require your program to be put under GPL.
+  - If you come to the conclusion that what you are doing is a mere aggregation, I would suggest that you create packages for the popular distros. 
+  - If you really want to take the Docker route, consider releasing the Dockerfile only and have the users build the container themselves. But that might be less convenient compared to installing a package.
+- If you run this yourself and only offer a service with it (SaaS), you are likely fine. GPLv2 and GPLv3 don't prohibit this (but I think AGPL does, for example).
+  - If you distribute it, it's a different matter. If the GPL parts are an essential part of your product - i.e. they are required to run and/or the only offered piece of software to fullfil the specific feature - they become part of the whole legal construct and therefore "infect" the rest of your software.
+- LGPL allows usage in binary form, as long as the binary can be replaced by the user (and as long as the source for that binary can be obtained). So basically: calling an executable is fine, loading a dynamically linked library is fine, static linking would not be fine (unless, I think, you let the user do the linking step, then it might also be fine).
 # non-commercial
 
 ## BSL/Business Source License

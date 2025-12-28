@@ -66,6 +66,10 @@ modified: 2021-01-04T17:26:43.784Z
   - https://projects.wojtekmaj.pl/react-pdf
   - Display PDFs in your React app as easily as if they were images.
   - For React-PDF to work,  `PDF.js` worker needs to be provided.
+  - [Mismatching worker version with pdfjs-dist as a direct dependency _202306](https://github.com/wojtekmaj/react-pdf/discussions/1520)
+    - If you've installed pdfjs-dist as a direct dependency and the version is not matching the pdfjs-dist that react-pdf depends on, you may get an error
+    - In this case I have this "pdfjs-dist": "3.7.107" in my package.json, but react-pdf depends on "pdfjs-dist": "3.6.172". To solve this, make sure to use the worker provided by the pdfjs-dist version that react-pdf specifically depends on
+    - Unfortunately you have to change this back to "pdfjs-dist/build/pdf.worker.min.js" if the direct dependency version matches react-pdf's version
   - https://x.com/xiaohanyu1988/status/1905077853785567258 🆚️
 
 - https://github.com/Alpovka/EasyPDF-React /24Star/MIT/202501/ts/inactive
@@ -682,6 +686,7 @@ modified: 2021-01-04T17:26:43.784Z
   - 公式识别：使用UniMERNet进行公式识别；
   - 光学字符识别：使用PaddleOCR进行文本识别
   - [Update license from Apache 2.0 to AGPL-3.0 _20240914](https://github.com/opendatalab/PDF-Extract-Kit/commit/1471e22384d4b02e1357926e4908296ed31dac51)
+    - Since this project uses YOLO code and PyMuPDF for file processing, these components require compliance with the AGPL-3.0 license
 
 - https://github.com/py-pdf/pypdf /9.6kStar/BSD/202511/python
   - https://pypdf.readthedocs.io/en/latest/

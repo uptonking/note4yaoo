@@ -364,6 +364,10 @@ modified: 2025-03-22T16:10:24.856Z
     - [免费众多模型公益api站  ](https://linux.do/t/topic/1106811)
     - 公益站干一两年了，都是白嫖的api
     - 现在Gemini的模型都用不了了，我也进不去主站了，副站也进不了，备用站无法登陆
+    - [200刀用完关停](http://152.136.137.130/pricing)
+  - [123nhh](https://new.123nhh.xyz/pricing)
+    - [【nhh公益站】介绍贴及主贴  ](https://linux.do/t/topic/1370326)
+    - 模型来源谷歌反重力，rpm限制10/3min，不可用于NSFW，酒馆等
   - 📌 [b4u API](https://b4u.qzz.io/console), 每日转盘
     - 会不会增加其他模型: 不会，本站专注于Claude
     - 支持工具调用、上下文 128K+、支持 RooCode，不推荐接入 ClaudeCode
@@ -408,6 +412,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [莹のAPI](https://api.wpgzs.top/console)
     - [公益站支持claude ](https://linux.do/t/topic/1351151)
     - rpm15
+    - [莹のapi 加油站](https://quota.wpgzs.top/)
     - [随时升天的公益站](https://any.97819781.xyz/)
   - [APIKEY_公益站](https://welfare.apikey.cc/console)
     - GLM-4.7, MiniMax-M2.1 限时免费 
@@ -532,6 +537,11 @@ modified: 2025-03-22T16:10:24.856Z
     - https://github.com/BingZi-233/check-cx /MIT/ts
 
 - paid-llm
+  - [Free DuckCoding](https://free.duckcoding.com/console)
+    - [DuckCoding Free，反重力CC公益站，复活并接入LDC积分 ](https://linux.do/t/topic/1353130)
+    - Antigravity渠道，rpm限制50
+  - [UUcode - API 中转管理平台](https://www.uucode.org/)
+    - [【致敬开源】与其打硬广，不如给佬友们的代码“供电”，寻找L站开源作者，UUcode送商业级API额度 ](https://linux.do/t/topic/1370667)
   - [foxcode](https://foxcode.rjj.cc/)
   - [AI Ping](https://aiping.cn/modelList)
 

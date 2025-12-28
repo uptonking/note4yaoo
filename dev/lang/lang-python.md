@@ -12,7 +12,7 @@ modified: 2020-07-14T09:27:30.503Z
 - classic-examples-python
   - tips: 数据与ai计算的主力语言，也能快速开发业务
   - editor: lasuite-docs, jupyter(framework)
-  - ai: 🌹 langgraph, comfyui, mlx
+  - ai: 🌹 langgraph, comfyui, mlx, label-studio
   - data: superset, pyodide(MPL)
   - devops: airflow, posthog
   - crdt
@@ -70,6 +70,7 @@ modified: 2020-07-14T09:27:30.503Z
   - baserow
   - plane
   - MrDoc, MaxKB, fiduswriter
+  - ai: label-studio
   - apps: librephotos, django-helpdesk
   - fwk: django-eav2, wagtail-cms
 

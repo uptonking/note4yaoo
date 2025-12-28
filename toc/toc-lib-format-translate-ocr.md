@@ -22,6 +22,14 @@ modified: 2025-12-19T12:43:21.150Z
   - vlm也可以提取bounding-box + 手动分割图片为主来提取表格、图表、图片
   - 更简单但低质量的方案，编辑器仅显示分页，每个编辑器页面和图片pdf的一页对应，编辑器内容为vlm识别的文本(不遵循pdf布局位置)，鼠标在点击识别文本处执行boundingbox搜索pdf图片的位置，并渲染高亮元素, 🤔🖼️ 这种方案的核心是图片操作
 
+- ocr-labelling/annotation 没有统一标准
+  - tesseract hocr
+  - label-studio export format
+  - pdfjs AnnotationStorate支持导出json然后手动转换
+  - 图片查看器iiif不是专门为 anno 定制的标准
+  - W3C’s Web Annotation 用户不多, apache项目搁置
+  - 各模型都有自己偏向的格式，如paddle/qwenvl-bbox
+
 - tips-translations
   - 翻译类型产品的形态需要根据场景进行设计，可双栏/上下紧邻/点击切换原文和译文
 
@@ -196,6 +204,8 @@ modified: 2025-12-19T12:43:21.150Z
     - You could create a OCRmyPDF plugin that uses Surya as its OCR engine instead of Tesseract for example. There's an `OCRmyPDF-EasyOCR` that demonstrates how this could be done (although the more current approach would be to render to hOCR).
   - https://github.com/ocrmypdf/OCRmyPDF-EasyOCR /MIT/python
     - This is plugin to run OCRmyPDF with the EasyOCR engine instead of Tesseract OCR, the default OCR engine for OCRmyPDF. 
+  - [OCRmyPDF: Add an OCR text layer to scanned PDF file | Hacker News _202207](https://news.ycombinator.com/item?id=32028752)
+    - LibreOffice has a cool option where you can generate the PDF with the editable text format embedded. You get a clean PDF that is also fully editable. Easy tech, but also useful.
 
 - https://github.com/FanQinFred/OCRmyPDF-Desktop /apache2/202312/js/vue/inactive
   - 在OCRmyPDF的基础上，集成了所需环境，并使用Electron开发了桌面端
@@ -338,6 +348,19 @@ modified: 2025-12-19T12:43:21.150Z
   - a Gradio-based web application for parsing documents and images into structured HTML and Markdown formats using advanced Vision Language Models (VLMs)
   - Upload and process PDF or image files (PNG, JPEG, JPG).
   - Select between two VLMs: Logics-Parsing and Gliese-OCR-7B-Post1.0.
+
+- https://github.com/PhysicsNR/pdfcraft /MIT/202509/python/inactive
+  - A Python-based PDF viewer & toolkit with OCR, compression, and annotation features.
+  - lightweight, open-source alternative to Acrobat
+  - Built with PySide6, PyMuPDF, and Tesseract OCR.
+  - OCR scanned PDFs (make image-based PDFs searchable)
+
+- https://github.com/3ai92/3AIDoc /apache2/202509/python/ts
+  - A full-stack web application that combines OCR (Optical Character Recognition) technology with interactive document annotation capabilities. 
+  - The platform allows users to upload images or documents, automatically extract text using PaddleOCR, and create interactive form overlays for data extraction and annotation.
+  - 仅支持图片上传
+  - https://github.com/RapidAI/PaddleOCRModelConvert /apache2/202507/python/inactive
+    - This repository is mainly to convert Inference Model in PaddleOCR into ONNX format.
 # solutions/vendors
 - https://github.com/PaddlePaddle/PaddleOCR /66.5kStar/apache2/202512/python/cpp
   - https://www.paddleocr.ai/
@@ -1002,6 +1025,10 @@ modified: 2025-12-19T12:43:21.150Z
     - Main Service (Resophy Core): HTML + JavaScript + Python Flask backend service, providing core features such as paper management, classification, and search
     - LLM Server: LLM inference service for AI translation, interpretation, and arXiv paper analysis (optional, supports local deployment or remote API)
     - MinerU Server: Document parsing service for PDF to Markdown parsing (optional, for AI features)
+  - https://github.com/alirzx/Auto-Labeling-Service-Based-on-RexOmni-Arcitecture- /202512/python/js
+    - A modular FastAPI service leveraging the Rex-Omni multimodal framework, designed for automated dataset labeling across 14+ computer vision tasks.
+    - Supports multi-model inference via a registry system, allowing flexible selection between RexOmni and Florence models for different tasks.
+    - OCR with configurable output format (Box/Text) and granularity (Word/Line)
 
 - 🌰 https://news.ycombinator.com/item?id=43189412
   - Bounding boxes. There still isn't really a model that gives super precise bounding boxes. Supposedly Gemini and Qwen were trained for it, but they don't perform as well as traditional models.
@@ -1018,14 +1045,24 @@ modified: 2025-12-19T12:43:21.150Z
   - https://huggingface.co/spaces/opendatalab/DocLayout-YOLO /gradio
   - Enhancing Document Layout Analysis through Diverse Synthetic Data and Global-to-Local Adaptive Perception
   - 视觉效果是画框显示布局
-
-## labelling/annotation
+# labelling/annotation
+- https://github.com/sai-prakash/pdf-ocr-annotation /MIT/202510/python/ts
+  - A full-stack PDF annotation application built with FastAPI (Python) and React + Vite (TypeScript). 
+  - This application supports both readable and scanned PDFs, with advanced text extraction, intelligent annotation, and powerful search capabilities.
+  - Automatic detection of page type
+  - PyMuPDF for native text-based PDFs
+  - EasyOCR for scanned/image-based PDFs
+  - Advanced PDF Viewer: Built with react-pdf
+    - Custom canvas overlay for annotations
+    - Text selection with bounding boxes
+    - 🐛 对于图片pdf，在ocr后只能选择识别出整行或半行，不能拖动选择任意文本
 
 - https://github.com/HumanSignal/label-studio /26kStar/apache2/202512/python/ts
   - https://labelstud.io/
   - a multi-type data labeling and annotation tool with standardized output format
   - It lets you label data types like audio, text, images, videos, and time series with a simple and straightforward UI and export to various model formats
   - `label-studio-converter`	Encode labels in the format of your favorite machine learning library
+  - 依赖Django
   - [Export Annotations](https://labelstud.io/guide/export.html)
     - Label Studio stores your annotations in a raw JSON format in the SQLite database backend, PostgreSQL database backend, or whichever cloud or database storage you specify as target storage.
     - Image annotations exported in JSON format use percentages of overall image size, not pixels, to describe the size and location of the bounding boxes. 
@@ -1035,8 +1072,34 @@ modified: 2025-12-19T12:43:21.150Z
 - https://github.com/CVHub520/X-AnyLabeling /7.6kStar/GPL/202512/python
   - a powerful annotation tool that integrates an AI engine for fast and automatic labeling. It's designed for multi-modal data engineers, offering industrial-grade solutions for complex tasks.
 
-- https://github.com/PFCCLab/PPOCRLabel /202510/python
+- https://github.com/PFCCLab/PPOCRLabel /369Star/NALic/202510/python
   - a semi-automatic graphic annotation tool suitable for OCR field, with built-in PP-OCR model to automatically detect and re-recognize data.
+  - written in Python3 and PyQT5, supporting rectangular box, table, irregular text and key information annotation modes.
+  - Annotations can be directly used for the training of PP-OCR detection and recognition models.
+  - https://github.com/Evezerest/PPOCRLabel /legacy
+
+- https://github.com/advent259141/Auto_Labeling /202512/python/js
+  - 一个基于视觉语言模型（VLM）的自动图片标注工具，支持 YOLO 格式输出。
+  - 使用 OpenAI 格式 API 调用视觉语言模型
+  - 自动输出标准 YOLO 格式标注文件
+  - 手动模式：逐张标注，可确认或跳过
+  - 自动模式：批量自动标注
+  - 可上传参考图片帮助 VLM 理解标注需求
+
+- https://github.com/muratcanlaloglu/moonlabel /apache2/202509/python/ts
+  - Moondream VLM labeler for object detection and image captions with one‑click YOLO, COCO, VOC, and Captions export.
+  - MoonLabel is both a Python library and a tiny web UI to generate object-detection and image-caption datasets quickly.
+  - Backends supported: Moondream Cloud, Moondream Station, or fully local (Hugging Face).
+  - FastAPI server — Served by a single moonlabel-ui command.
+  - Image caption datasets — Export captions as captions.jsonl alongside images.
+  - https://github.com/KoDelioDa/moonlabel /202507/python/ts
+    - Moondream VLM-powered labeler one-click YOLO export
+
+- https://github.com/klassif-ai/react-pdf-ner-annotator /MIT/202305/ts/inactive
+  - https://react-annotator-demo.netlify.app/
+  - Annotate entities directly onto a PDF with automatic OCR for scanned PDFs
+  - OCR on scanned PDFs
+  - 需要指定entity后，才会高亮出ocr后符合entity语义的文本
 # proofreading
 - tips
   - 校对的流程和交互可参考code review的现有工具的最佳实践

@@ -694,6 +694,17 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [I'm curious whether people ask for the model's name in their prompts when testing on LMArena (ChatBot Arena). : r/LocalLLaMA _202504](https://www.reddit.com/r/LocalLLaMA/comments/1jtfzci/im_curious_whether_people_ask_for_the_models_name/)
+  - After all, by doing this, users can know the names of the models being A/B tested beforehand, which could bias the ongoing test to some extent.
+
+- Models never know a thing about themselves; no serious LLM user in 2025 will ask model about itself.
+
+- well, the model's output might not be correct at all: deepseek sometimes call itself gpt. so you never now who these models actually are.
+
 - ## [Hard lesson learned after a year of running large models locally : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pvxq2t/hard_lesson_learned_after_a_year_of_running_large/)
   - I’m running everything off a workstation with a single RTX 3090, Ubuntu 22.04, llama.cpp for smaller models and vLLM for anything above 30 B parameters.
   - My goal has always been to avoid cloud dependencies and keep as much computation offline as possible, so I’ve tried every quantization trick and caching tweak I could find.

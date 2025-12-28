@@ -150,6 +150,14 @@ modified: 2023-04-04T22:39:45.442Z
   - The annotations are stored as linked data in an Apache Jena triple store by default. 
   - It is also possible to store the annotations in SOLR.
   - Now supports IIIF Search API in both the Universal Viewer and Mirador
+
+- mirador /593Star/apache2/202512/js
+  - https://github.com/projectmirador/mirador
+  - https://projectmirador.org/
+  - https://projectmirador.org/demo/
+  - https://mirador-dev.netlify.app/__tests__/integration/mirador/
+  - web based, multi-window image viewing platform with the ability to zoom, display, compare and annotate
+  - 偏向于图片查看，标注功能少
 # image-upload
 - https://github.com/charlzyx/rush
   - 图片压缩 & 直传图床工具
@@ -226,32 +234,6 @@ modified: 2023-04-04T22:39:45.442Z
   - https://willnguyen1312.github.io/zoom-image/
   - powerful framework agnostic headless library to zoom images on the web
   - Examples are written with Preact, React, Svelte, Vanilla JS and Vue.
-# annotation/labelling
-- https://github.com/HumanSignal/label-studio /26kStar/apache2/202512/python/ts
-  - https://labelstud.io/
-  - a multi-type data labeling and annotation tool with standardized output format
-  - It lets you label data types like audio, text, images, videos, and time series with a simple and straightforward UI and export to various model formats
-  - `label-studio-converter`	Encode labels in the format of your favorite machine learning library
-  - [Export Annotations](https://labelstud.io/guide/export.html)
-    - Label Studio stores your annotations in a raw JSON format in the SQLite database backend, PostgreSQL database backend, or whichever cloud or database storage you specify as target storage.
-    - Image annotations exported in JSON format use percentages of overall image size, not pixels, to describe the size and location of the bounding boxes. 
-    - Label Studio supports many common and standard formats for exporting completed labeling tasks.
-    - coco, csv,json,CONLL2003/spaCy/YOLO
-
-- mirador /593Star/apache2/202512/js
-  - https://github.com/projectmirador/mirador
-  - https://projectmirador.org/
-  - https://mirador-dev.netlify.app/__tests__/integration/mirador/
-  - web based, multi-window image viewing platform with the ability to zoom, display, compare and annotate
-
-- https://github.com/ZitySpace/react-annotate /ts
-  - https://react-annotate-demo.vercel.app/
-  - React component for computer vision dataset annotation
-  - 依赖fabric、react-draggable、use-gesture
-
-- https://github.com/labelflow/labelflow /ts
-  - https://labelflow.ai/
-  - an open platform for image labeling. 
 # codec
 - https://github.com/GoogleChromeLabs/squoosh /apache2/202401/ts
   - https://squoosh.app/

@@ -297,6 +297,19 @@ modified: 2022-11-11T10:46:41.519Z
   - Annotations: Highlights, notes, drawings with import/export
   - Performance: Canvas rendering with text layer for PDFs
   - Caching: Optional offline caching with LocalForage
+
+- https://github.com/Belval/pdf2image /1.9kStar/MIT/202401/python/inactive
+  - A python (3.7+) module that wraps pdftoppm and pdftocairo to convert PDF to a PIL Image object
+  - Windows users will have to build or download `poppler` for Windows
+  - [Is there a way to skip disk r/w operations, and we can directly use the image object without saving it on disk _201903](https://github.com/Belval/pdf2image/issues/58)
+    - The most optimized workflow I can think of would be to use `tesserocr` with pdf2image without and output_folder or with a ramdisk.
+    - Tesserocr is a Python/Pillow friendly library that uses libtesseract.
+  - [Licensing _202002](https://github.com/Belval/pdf2image/issues/124)
+    - you're using MIT license while poppler is under GPL license. Could you please dispel my doubts?
+      - Poppler is distributed under a copyleft license, namely GPL 2.0. If in your commercial application you modify Poppler and/or do static/dynamic linking on Poppler, you can be infringing(违反/侵犯) on their license by not releasing your source code.
+      - That being said, it is by design that pdf2image does not in any way or form, link directly to poppler. All it does is call an already existing CLI utility that comes pre-installed on most Linux installation. As such, my code is distributed under MIT 
+    - I'm reopening this since it's not clear to me if running pdf2image inside a docker container can still be considered as MIT compatible ?
+      - TLDR: The container is not considered anything as it is not code, but GPL code can "live" with MIT code in a container without any issue.
 # utils
 - https://github.com/RussCoder/djvujs /js
   - https://djvu.js.org/

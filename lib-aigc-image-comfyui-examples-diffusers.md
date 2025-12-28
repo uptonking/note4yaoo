@@ -1861,6 +1861,9 @@ modified: 2025-08-23T11:43:35.904Z
     - A simple Gradio-based interface for stable-diffusion.cpp.
   - https://github.com/fszontagh/sd.cpp.gui.wx /MIT/cpp
     - A cross-platform GUI for Stable Diffusion C++, built using wxWidgets.
+  - https://github.com/fabricio3g/FlaxeoUI /MIT/202512/ts/vue
+    - A Front End for stable-diffusion.cpp. Built with Electron and Node.js, I made it to be simple to interact with the stable difussion cpp cli
+    - Currently, it has only been tested using Vulkan on Linux and Windows.
 # ai-image-provider
 - https://github.com/Lingyuzhou111/Comfyui_Free_API /apache2/202508/python
   - 为ComfyUI提供多种免费AI API服务的插件，支持文本对话、图像生成、图像分析等功能

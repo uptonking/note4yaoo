@@ -1153,6 +1153,8 @@ modified: 2025-11-30T17:27:16.720Z
     - I’ve been exploring different libraries for converting PDFs to Markdown to use in a Retrieval-Augmented Generation (RAG) setup.
     - But testing each library turned out to be quite a hassle — environment setup, dependencies, version conflicts, etc.
     - Currently, it supports: docling pymupdf4llm markitdown marker
+  - [Built a unified PDF extraction & benchmarking tool for RAG — PDFstract (Web UI • CLI • API) : r/Rag](https://www.reddit.com/r/Rag/comments/1pxom6i/opensource_pip_built_a_unified_pdf_extraction/)
+    - I have tried 100 pages and since pdfstract is a wrapper on top of libraries like unstructured, miner, docling, tessaract etc. The performance is subjective to the document and the system capacity. But it can be done
 
 - https://github.com/weiwill88/Local_Pdf_Chat_RAG /202510/python/inactive
   - 本地化智能问答系统 (FAISS版)

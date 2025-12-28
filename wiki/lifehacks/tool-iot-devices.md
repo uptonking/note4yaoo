@@ -198,7 +198,15 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## 等这波AI泡沫破裂，我都不敢想会有多少下架的服务器硬件会冲击垃圾佬市场。搓手等待
+- https://x.com/riaqn_zh/status/2004907309336875298
+- “我兄弟在等房价崩盘”
+  - 没那么快，你看22年还有一波暴涨呢。
+
+- 不用太久，服务器会把旧硬件淘汰的，大厂不差钱，而且会主动追求最新显卡，即使不破裂也能捡到硬件
+- 不用破裂，很多数据中心的服务器2-3年就淘汰了
+
+- 这次的泡沫可不像房地产和元宇宙呀。如果真的算力足够，是可以从底层教育到生活的各种方面都可以改革。就要看谁把蛋糕画大还实现它。
 
 - ## [Would a Ryzen AI Max+ 395 benefit from dedicated GPU? : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1ps2cjk/would_a_ryzen_ai_max_395_benefit_from_dedicated/)
   - I just ordered a Framework desktop motherboard, first time I will have some hardware that let me play with some local AI.

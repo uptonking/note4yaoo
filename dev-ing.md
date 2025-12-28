@@ -303,6 +303,14 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-to
   - ?
 
+## 1228
+
+- i want to develop a cross platform desktop app. i plan to use QT. if i use pyqt, am i forced to use GPL license? what's the license for QT/pyqt? can i use apache/MIT for my desktop app if i use pyqt?
+  - PyQt (from Riverbank) is distributed under the GPL (or a paid commercial license).
+  - PySide / Qt for Python — maintained by the Qt project, PySide (PySide6) is available under LGPLv3 (and in some cases GPL) or a commercial Qt license
+  - Qt framework itself — Qt modules are dual-licensed (Commercial or Open Source). Many Qt modules are available under LGPLv3, but some modules are GPL-only (e.g. certain add-on modules)
+  - If you want to use a permissive license (like MIT or Apache) or keep your source code closed/proprietary without paying for a commercial license, you should switch to PySide (Qt for Python) instead.
+
 ## 1227
 
 - from acrobat document properties, the page size is 170~180mm x 230~240mm, what's the typical size?
