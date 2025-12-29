@@ -16,7 +16,11 @@ modified: 2025-12-16T06:25:32.663Z
 
 - ## 
 
-- ## 
+- ## Is it a good idea to use @tan_stack -store instead of zustand? Will it continue to grow or will be mostly internal library?
+- https://x.com/costiniuc00/status/2005194808680497302
+- Not only will it continue to grow, but we're actively working on a huge set of improvements with a name you're familiar with
+  - TanStack Store is already an implementation of signals
+
 # discuss-news
 - ## 
 

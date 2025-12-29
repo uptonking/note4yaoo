@@ -112,6 +112,9 @@ modified: 2023-03-09T13:47:07.317Z
     - LibreOffice Online is a server service built from the main LibreOffice project code, which provides display and collaborative visual editing of a range of document types in a web browser. 
   - [LibreOffice for Android and iOS](https://www.libreoffice.org/download/android-and-ios/)
     - doesn’t currently offer an Android or iOS version of LibreOffice, there is a LibreOffice-based product in app stores from Collabora
+  - [Licenses | LibreOffice ](https://www.libreoffice.org/about-us/licenses)
+    - LibreOffice is made available subject to the terms of the Mozilla Public License v2.0
+    - It is based on code from Apache OpenOffice made available under the Apache License 2.0
   - [LibreOffice Licensing Blurb](https://github.com/LibreOffice/core/tree/master/readlicense_oo)
     - `MPL_SUBSET`: If the variable is defined, then GPL and LGPL license text will not be included, because none of the built-in code need it.
 

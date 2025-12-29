@@ -157,7 +157,27 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
-- ## 
+- ## [Local model registry to solve duplicate GGUFs across apps? : r/LocalLLM _202512](https://www.reddit.com/r/LocalLLM/comments/1pygyhi/local_model_registry_to_solve_duplicate_ggufs/)
+  - I'm running into storage issues with multiple local LLM apps. I downloaded Olmo3-7B through Ollama, then wanted to try Jan.ai's UI and had to download the same 4GB model again. Now multiply this across Dayflow, Monologue, Whispering, and whatever other local AI tools I'm testing.
+  - Each app manages its own model directory. No sharing between them. So you end up with duplicate GGUFs eating disk space.
+  - Feels like this should be solvable with a shared model registry - something like how package managers work. Download the model once, apps reference it from a common location. Would need buy-in from Ollama, LMStudio, Jan, LibreChat, etc. to adopt a standard, but seems doable if framed as an open spec.
+  - I'm guessing the OS vendors will eventually bake something like this in, but that's years away. Could a community-driven library work in the meantime? Or does something like this already exist and I'm just not aware of it?
+
+- They're just files. You can remove duplicates yourself and replace them with symlinks to whichever copy you choose to make the "primary".
+
+- Jan has Import option(to use downloaded GGUF files from any folder).
+  - Koboldcpp also does this just with browse GGUF option.
+  - For Oobabooga, I used symlinks option.
+- I found that buried in the Jan.ai UI under Settings / Model Providers / Llama.cpp / import.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
 
 - ## 🤔 [How do you make agents deterministic? : r/AI_Agents](https://www.reddit.com/r/AI_Agents/comments/1pv2gfk/how_do_you_make_agents_deterministic/)
   - I have been talking to many business and a common concern has been lack of reliability of ai agents.

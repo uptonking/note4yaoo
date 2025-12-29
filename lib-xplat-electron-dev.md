@@ -64,9 +64,11 @@ modified: 2021-05-13T03:08:52.583Z
   - Stirling-PDF
   - joplin or extension
   - drawio
+  - cli: ImageMagick, ocr, pandoc(GPL/haskell)
 - llm-ui/client
   - 可参考 ollama/lmstudio/janai 封装 llama.cpp 的逻辑
   - 封装db操作工具, 针对sqlite/turso
+  - huggingface-cli
 
 - integrations
   - vercel-aisdk

@@ -11,6 +11,14 @@ modified: 2023-04-04T22:39:45.442Z
 
 - tips
   - 对image/pdf/富文本编辑器的标注，通常流行产品都会有产品自身的实现，不必执着于标准
+
+- pdf/image/canvas-tools, 主流语言是c/js/python
+  - sharp(js/cpp/apache2)-基于 libvips(c/LGPL), jimp(ts/MIT)
+  - ImageMagick(c/FreeWithAttribution)
+  - scikit-image(py/BSD), Pillow(MIT/py/c)
+  - imgproxy(go/MIT), imaginary(go/MIT), imaging(go/MIT), imagor(go/apache2)
+  - lazy-image(MIT/rs), photon(apache2/rs)
+  - OpenImageIO(apache2/cpp)
 # popular
 - AI位图转矢量
   - https://vectorizer.ai/

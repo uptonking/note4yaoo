@@ -71,6 +71,8 @@ modified: 2025-09-21T18:39:13.776Z
 # table-md
 - 参考textbundle格式的csv来与表格交互
 
+- lowcode table builder + export to markdown/typst
+
 ## [Tables in pure Markdown](https://talk.commonmark.org/t/tables-in-pure-markdown/81)
 
 # draft

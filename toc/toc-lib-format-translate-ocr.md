@@ -8,6 +8,7 @@ modified: 2025-12-19T12:43:21.150Z
 # toc-lib-format-translate-ocr
 
 # guide
+
 - tips-ocr
   - 文档的使用频率不如图片, ocr/translation的方案要考虑图片场景
   - 批量执行ocr的架构可参考papermerge/paperless
@@ -32,6 +33,21 @@ modified: 2025-12-19T12:43:21.150Z
 
 - tips-translations
   - 翻译类型产品的形态需要根据场景进行设计，可双栏/上下紧邻/点击切换原文和译文
+
+- pdf/image/canvas-tools, 主流语言是js/python
+  - sharp(apache2/js/cpp)-基于 libvips(LGPL/c), jimp(MIT/ts)
+  - ImageMagick(FreeWithAttribution/c)
+  - jspdf(MIT/js), react-pdf(MIT/ts), pdfkit(MIT/js)
+  - scikit-image(BSD/py), Pillow(MIT/py/c)
+  - docling(MIT/py), OCRmyPDF(MPL/py), pypdf(BSD/py), pdfplumber(MIT/py), PyMuPDF(AGPL/py)
+  - gotenberg(MIT/go/libreoffice), pdfcpu(apache2/go)
+  - imgproxy(MIT/go), imaginary(/MIT/go), imaging(MIT/go), imagor(apache2/go)
+  - lazy-image(MIT/rs), photon(apache2/rs)
+  - OpenImageIO(apache2/cpp)
+  - sumatrapdf(GPL/c)
+  - libreoffice(MPL/cpp)
+  - pandoc(GPL/haskell)
+  - gui-wrapper工具可参考文件管理器的逻辑
 
 - resources
   - [Technical Analysis of Modern Non-LLM OCR Engines _202512](https://intuitionlabs.ai/articles/non-llm-ocr-technologies)

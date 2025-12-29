@@ -212,10 +212,6 @@ modified: 2025-03-22T18:23:37.602Z
     - 此示例右侧预览pdf渲染为`<canvas>`元素
   - [Use typst as library in browser? · Issue · typst/typst _202304](https://github.com/typst/typst/issues/909)
     - Typst can be compiled to WASM, but no JS glue is available, you'd have to write that yourself. It's not as simple as compile(string) because you also need to provide fonts, and if you want a multi-file setup of course also files.
-  - https://github.com/Myriad-Dreamin/shiroa /590Star/apache2/202512/rust
-    - https://myriad-dreamin.github.io/shiroa/
-    - a simple tool for creating modern online books in pure typst
-    - heavily inspired by mdBook, but it is considered to be more adapted to Typst style, hence no guarantee of compatibility with mdBook
 
 - https://github.com/Lamkateh/richtext-typst /MIT/202509/python/inactive
   - Convert rich text JSON documents (from editors like ProseMirror, Quill, Slate) to Typst markup.

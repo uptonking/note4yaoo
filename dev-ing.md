@@ -303,6 +303,11 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-to
   - ?
 
+## 1229
+
+- why does pc keyboard number keys is 789456123, rather than 123456789
+  - because the PC numpad copied the calculator/adding-machine layout (7-8-9 on the top) — that layout goes back to early 20th-century adding machines — while telephones followed a different convention chosen later by Bell Labs (1-2-3 on top).
+
 ## 1228
 
 - i want to develop a cross platform desktop app. i plan to use QT. if i use pyqt, am i forced to use GPL license? what's the license for QT/pyqt? can i use apache/MIT for my desktop app if i use pyqt?

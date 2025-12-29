@@ -34,6 +34,20 @@ modified: 2025-12-18T12:26:08.445Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Claude Code has been a game-changer for me. But where I've felt the real magic is how it enables multitasking.
+- https://x.com/omarsar0/status/2005337800284188879
+- Are you seeing more benefits of multitasking on the same repo/project or different repos?
+  - It’s across repos. Actually, that is what inspired the initial post. 
+  - We need better interfaces and operating tools with these agents but you can still get a nice decent setup to the point where you don’t feel too many bottlenecks. Still experimenting with better setups so I feel like it can only get better from here.
+
+- For a better interface for Claude Code, would you take a look at Nimbalyst, https://nimbalyst.com.  Its a free, local UI for Claude Code, session manager, tied to WYSIWYG markdown editor
+
+- Multitasking works because the model is carrying state, not just generating code. The real unlock isn’t speed …it’s context persistence, task boundaries, and knowing when to hand control back to humans. That’s where productivity turns into reliability.
+
 - ## [ClaudeCode固定在150K~160K压缩怎么办  ](https://linux.do/t/topic/1358788)
   - CC中转站、GLM都是稳定150K~160K期间压缩
   - 设置了不知道哪看到的 “CLAUDE_AUTOCOMPACT_PCT_OVERRIDE”: “90”, 也是稳定150K~160K压缩，想让他180K再压缩，有的时候刚好那20K就完成的了

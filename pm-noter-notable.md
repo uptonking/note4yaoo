@@ -154,7 +154,7 @@ modified: 2023-11-28T14:48:45.910Z
   - ai coding产品如cline, 每次新模型的发布的限免时段, 都会很快更新最新模型并免费使用, 还可以搜集使用评价与反馈
   - 能为其他产品提供infra或tools，如nvidia
   - 能为其他用户用户提供二创素材，如视频、图片
-- 纯前端/客户端的产品其实商业化的能力不强，付费特性一般是后台、并发、自动化、回放
+- 纯前端/客户端的产品其实商业化的能力不强，付费特性一般是存储(回放)、计算(后台、并发、自动化)
 
 - 为成功的产品做生态
   - unsloth给llm写tutorials, 比官方更早fix prompts issues, 增大context, 版本多(The biggest difference I would say isn't the quants, but rather our bug fixes for every model)

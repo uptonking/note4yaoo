@@ -23,10 +23,15 @@ modified: 2024-11-16T08:23:40.617Z
   - The emphasis is less on document markup languages, programming languages, or actual content and more on the way layout and orthographic features are achieved. 
   - 📝🆚️ [On Typesetting Engines: A Programmer's Perspective _202410](https://blog.ppresume.com/posts/on-typesetting-engines)
 
-- https://github.com/typst/typst /apache2/202403/rust
+- https://github.com/typst/typst /50kStar/apache2/202512/rust
   - https://typst.app/
   - Typst is a new markup-based typesetting system that is designed to be as powerful as LaTeX while being much easier to learn and use.
-  - This repository contains the Typst compiler and its CLI, which is everything you need to compile Typst documents locally.
+  - This repository contains the Typst compiler and its CLI 
+  - Built-in markup for the most common formatting tasks
+  - Flexible functions for everything else
+  - A tightly integrated scripting system
+  - Math typesetting, bibliography management, and more
+  - Fast compile times thanks to incremental compilation
 
 - https://github.com/yamlresume/yamlresume /MIT/202505/ts
   - https://yamlresume.dev/

@@ -228,6 +228,10 @@ modified: 2023-11-24T18:41:26.906Z
   - http://crowdstrike.github.io/ember-timetree
   - Visualize hierarchical timeline data. Built with Ember.js and D3.js.
   - 左边文件树，右边时间轴
+
+- https://github.com/Jason-uxui/project-dashboard /MIT/202512/ts
+  - https://v0-project-management-tool-xp.vercel.app/
+  - modern project & task management dashboard, built as a real-world UI template for founders, product designers, and full‑stack developers
 # branching
 - https://github.com/nicoespeon/gitgraph.js /2.9kStar/MIT/202209/ts/inactive
   - https://www.nicoespeon.com/gitgraph.js

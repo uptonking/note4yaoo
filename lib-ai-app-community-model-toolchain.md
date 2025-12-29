@@ -45,6 +45,18 @@ modified: 2025-09-16T12:36:12.968Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Is Q8 KV cache alright for vision models and high context : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1py4xp6/is_q8_kv_cache_alright_for_vision_models_and_high/)
+- I don't have a mathematical evidence, but with KV at Q8 in all my cases qwen3 Vision couldn't do any tasks correctly in browser use cases with very low consistency, the same for picture tagging and descriptions.
+  - The difference when observing logs is accuracy, where the model interprets small differences in inputs so differently they give the wrong outcome in terms of tool calls.
+
+- Ruins the output even at a really short context (with gemma-3, pixtral-large, qwen2-72b-vl)
+
+- I cant say anything about vision models as i haven't tested but when it comes to kv cache and llm's i never go below fp 16 because lowering the precision wrecks it. seems that trend would transfer over as well. but who knows maybe someone here sees things differently after experiments..
+
 - ## 🏠 [Scaling with Open WebUI + Ollama and multiple GPUs? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o9ssqd/scaling_with_open_webui_ollama_and_multiple_gpus/)
   - At our organization, I am in charge of our local RAG System using Open WebUI and Ollama. So far, we only use a single GPU, and provide access to only our own department with 10 users. Because it works so well
   - The final goal will be to provide all our around 1000 users access to Open WebUI (and LLMs like Mistral 24b, Gemma3 27b, or Qwen3 30b, 100% on premises).

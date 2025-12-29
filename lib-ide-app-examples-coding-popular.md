@@ -165,6 +165,21 @@ modified: 2025-12-11T18:10:23.710Z
   - Use / commands to browse and trigger actions provided by your current agent
   - Permission Management: Fine-grained control over agent actions
 
+- https://github.com/J3n5en/EnsoAI /MIT/202512/ts
+  - https://enso.j3.do/
+  - 无缝切换 Claude、Codex、Gemini 或本地 LLM。每个 Worktree 都有独立的持久化 AI 会话。 你也可以通过指定 CLI 命令来添加自定义 Agent。
+  - 专注于 Git Worktree + AI Agent 的协作场景。它不是要替代 VS Code 或 Cursor，而是作为一个轻量级的工作空间管理器
+  - 内置 可视化 Git 面板
+  - 基于 Monaco 构建的轻量级编辑器
+  - 内置专业的三栏合并编辑器。
+  - 毫秒级创建与切换 Git Worktree
+  - 框架: Electron + React 19 
+  - 终端: xterm.js + node-pty
+  - Git: simple-git
+  - 数据库: better-sqlite3
+  - 为什么使用官方 CLI 而不使用 ACP？
+    - 虽然 ACP 能够统一不同 Agent 的核心能力，但是也仅限于核心能力缺失了很多功能。切换不同 Agent 的场景其实并不多而且不同 Agent 的 CLI 核心功能都相似。所以我们认为对于有经验的开发者各 CLI 更具有生产力。
+
 - https://github.com/coder/mux /774Star/AGPL/202512/ts
   - https://mux.coder.com/
   - A desktop app for isolated, parallel agentic development

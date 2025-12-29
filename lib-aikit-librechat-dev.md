@@ -94,6 +94,7 @@ modified: 2025-09-01T05:52:34.241Z
   - 类似lmstudio的模型市场, 但支持modelscope, 同时自动扫描本地已有的ollama/lmstudio模型
   - 用户自己上传的pdf，就类似词典软件的词库
   - llama.cpp ui + mlx/vllm
+  - huggingface-cli
 - 🏘️ 参考主流厂商 coding-agent-cli 的实现, 有第三方在cli上实现web/electron/tauri, 如aionui
   - 采用aionui封装cc/gemini-cli的思路来封装llama.cpp/mlx
   - 同时需要支持 openai-compatible api, 这样方便低性能的电脑/客户端使用
@@ -160,9 +161,10 @@ modified: 2025-09-01T05:52:34.241Z
 - 用不同lm工具链(llama.cpp/mlx-lm/mlx-vlm)处理不同模型文件(gguf/mlx)的逻辑
   - 可参考vscode用不同编辑器打开不同文件的逻辑
   - 还可参考LocalAi封装多种cli
+  - 还可参考文件管理器的逻辑
 
 - 工具链功能
-  - model management: Ollama(支持api)
+  - model management: Ollama(支持api), 直接import文件
   - frontend: openwebui, librechat
   - backend/api: Koboldcpp(包括fe)
   - all-in-one: lmstudio, janai

@@ -31,6 +31,10 @@ modified: 2025-04-17T08:17:04.770Z
   - mysql， ✅ 可替换为sqlite
   - 实现清晰简单
 
+- https://github.com/heyOnuoha/golang-boilerplate-beginner /MIT/202506/go/inactive
+  - A production-ready boilerplate demonstrating clean architecture with layered design (handlers, services, repositories), PostgreSQL integration with GORM, JWT authentication, and Swagger API documentation
+  - Middleware Support: Extensible middleware architecture
+
 - https://github.com/smy-101/gin_realworld /202408/go/mysql
   - 操作数据库混合使用了 gorm 和 sqlx, 只有一张表使用了sqlx
 

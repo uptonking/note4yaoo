@@ -260,6 +260,17 @@ modified: 2025-11-30T17:27:16.720Z
   - Text extraction and conversion, using pdf-extract
   - Text chunking
   - Local embedding and reranking models
+
+- https://github.com/joelhooks/pdf-brain /157Star/MIT/202512/ts
+  - Local PDF & Markdown knowledge base with semantic search and AI-powered enrichment.
+  - extract-pdf/text > ollama-enrichment(打标) > embeding > libsql-vector-hnsw-index
+  - PDF + Markdown - Index .pdf and .md files with the same workflow
+  - Local-first - Everything runs on your machine, no API costs
+  - AI enrichment - LLM extracts titles, summaries, tags, and concepts
+  - Organize documents with hierarchical concepts
+  - Vector search - Semantic search via Ollama embeddings
+  - Hybrid search - Combine vector similarity with full-text search
+  - MCP server - Use with Claude, Cursor, and other AI assistants
 # rag-examples
 - https://github.com/pymupdf/pymupdf4llm /1.2kStar/AGPL/202511/python/lib
   - https://pymupdf.readthedocs.io/en/latest/pymupdf4llm
@@ -922,6 +933,12 @@ modified: 2025-11-30T17:27:16.720Z
   - Multiple Embedders: Support for Demo (synthetic), local MiniLM (sentence-transformers), and OpenAI (text-embedding-3-small).
   - Flexible Storage: Ships with an in-memory/local `ChromaDB` adapter.
   - matplotlib (for heatmap rendering)
+
+- https://github.com/PotentiallyARobot/EmbeddingAdapters /CC-NC/202512/python
+  - Universal embedding-space translation library. 
+  - Plug-and-play adapters that map one embedding model’s vector space into another — locally or via API — enabling cross-model retrieval, routing, and interoperability.
+  - a lightweight Python library and model collection that lets you map embeddings from one model’s space into another’s.
+  - [I built a Python library that translates embeddings from MiniLM to OpenAI _202512](https://www.reddit.com/r/Rag/comments/1py8l8f/i_built_a_python_library_that_translates/)
 # chat-docs/knowledgebase
 - https://github.com/hyperbrowserai/hyperbooklm /MIT/202512/ts/仅云端模型
   - https://hyperbrowser.ai/
