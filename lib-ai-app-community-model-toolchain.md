@@ -345,7 +345,20 @@ PP Speed: Q3 GGUF: 50 t/s
 
 - ## 
 
-- ## 
+- ## 🆚 [Benchmarks for Quantized Models? (for users locally running Q8/Q6/Q2 precision) : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pyrjke/benchmarks_for_quantized_models_for_users_locally/)
+- Nope! Definitely a need for such a thing. Quantization has been around for a while but is still the wild-west of LLM's in terms of documenting the results/impact.
+
+- Most of the benchmarks are too annoying or slow to run, unfortunately. MMLU-Pro compsci only isn't too terrible and Aider 'Polyglot' limited to python only (or whatever your preferred language is) is ok, too.
+- [Unsloth Dynamic GGUFs on Aider Polyglot | Unsloth Documentation](https://unsloth.ai/docs/basics/unsloth-dynamic-2.0-ggufs/unsloth-dynamic-ggufs-on-aider-polyglot)
+
+- Devstral-Small-2-24B-Instruct-2512-Q8_0.gguf Lm-studio community VS Devstral-Small-2-24B-Instruct-2512-UD-Q4_K_XL.gguf Unsloth
+  - It's a dense model, but it all fits comfortably in a 96GB RTX 6000, even with very long runs. The card is set to 450W instead of 600W.
+  - The problem is simple: The Q4_K_XL version of unsloth returned the modified HTML file but without some of the required fixes, while the Q8 version solved every problem.
+  - Obviously, it's only one test, but I definitely prefer the slower execution speed and greater precision. Now I'll try the Q6.
+
+- I found MXFP4 definitely superior to Q4 across a variety of models considering their applied weights (MXFP4+F32), even better than Q8 in the few cases I tried - at the exception where GPT-OSS-20B MXFP4 was not as good as Unsloth slightly heavier F16.
+
+- Primary CUDA maintainer for llama.cpp/ggml here, given enough time I'll eventually do it for quality control and publish the results here https://github.com/JohannesGaessler/elo_hellm
 
 - ## [New functiongemma model: not worth downloading : r/ollama](https://www.reddit.com/r/ollama/comments/1pq69o5/new_functiongemma_model_not_worth_downloading/)
   - I have a valid MCP toolset that works great with other very small models such as qwen3:1.7b. I obtain quite reliable function calls. So, an even smaller model that could do this with the same quality sounds great. 

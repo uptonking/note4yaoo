@@ -63,11 +63,13 @@ modified: 2022-12-19T01:51:01.389Z
   - annotation-based expressjs extension for typescript.
   - typescript-rest、typescript-ioc、typescript-rest-ioc
 
-- https://github.com/PostgREST/postgrest
+- https://github.com/PostgREST/postgrest /26.3kStar/MIT/202512/haskell
   - https://postgrest.org/
   - PostgREST serves a fully RESTful API from any existing PostgreSQL database. 
   - It provides a cleaner, more standards-compliant, faster API than you are likely to write from scratch.
   - 可直接将 PostgreSQL 数据库发布成 REST API，甚至有基于此库的 SaaS 服务如 supabase 可提供类 Google Firebase 的功能。
+  - TLDR; subsecond response times for up to 2000 requests/sec on Heroku free tier.
+    - Three factors contribute to the speed. First the server is written in Haskell using the Warp HTTP server (aka a compiled language with lightweight threads). Next it delegates as much calculation as possible to the database. Finally it uses the database efficiently with the `Hasql`(Haskell) library
 
 - https://github.com/developit/express-es6-rest-api
   - boilerplate for building REST APIs with ES6 and Express.
@@ -121,9 +123,10 @@ modified: 2022-12-19T01:51:01.389Z
 - https://github.com/app-generator/sample-docker-nodejs-react
   - docker compose up --build 
 
-- https://github.com/sunburst89757/react-admin
+- https://github.com/sunburst89757/react-admin /202302/ts/inactive
   - https://github.com/sunburst89757/react-admin-backend
   - http://47.98.204.143:3000/login
+  - 使用vite+ts+redux-toolkit为模板 创建的 react 后台管理模板
   - 后端项目，使用的模板是koa-ts-template
   - redux-toolkit: 全局状态管理工具
   - 使用 access_token refresh_token 进行无感刷新
@@ -141,8 +144,16 @@ modified: 2022-12-19T01:51:01.389Z
   - 面向配置的crud开发框架，快速开发crud功能，可作为低代码平台的基础框架
   - 可以直接使用示例中的fs-admin，特点是简单
   - 也可以采用其他的admin开源项目，然后集成fast-crud
-  - 基于目前市面上开源的高星admin项目fork，集成fast-crud，Antd v3/v4/vben-admin、Element-Plus 、NaiveUI
+  - 基于目前市面上开源的高星admin项目fork，集成fast-crud，ant-design-vue、Element-Plus 、NaiveUI
     - https://github.com/fast-crud/fs-admin-antdv /vue
+
+- https://github.com/duxweb/dvha /176Star/MIT/202512/ts/vue
+  - https://duxweb.github.io/dvha/
+  - 一个基于 Vue 3 的无头（Headless）中后台框架，vue 版的 refine
+  - 通过将业务逻辑与 UI 表现层解耦，专注于前端的多管理端、认证、权限、CRUD、I18n等业务逻辑处理，可以搭配任何 Vue 生态的 UI 框架
+  - 可与任何 Vue 生态 UI 框架集成（Element Plus、Ant Design Vue、Naive UI 等）
+  - 内置多管理端支持，支持主后台、子应用后台、商户后台等多租户架构
+  - 完整的认证流程和权限管理，支持多种认证方式和细粒度权限控制
 
 - https://github.com/thomas4019/expressa /MIT/202401/js/vue
   - API creation middleware with an admin interface

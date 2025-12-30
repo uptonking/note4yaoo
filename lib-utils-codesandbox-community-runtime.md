@@ -695,7 +695,23 @@ modified: 2024-05-12T17:20:03.132Z
   - Works with OpenAI, Anthropic, or any LLM. Pay only for compute time.
   - not open source yet - but if there's enough interest, we can cover it in a blog post
 
+# discuss-sandbox-ai 👾
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Your agents are useless without a sandbox. Sandbox is the primitive
+- https://x.com/Rasmic/status/2005953095243596175
+- Hard agree. but the real constraint is how much isolation you can afford before agents lose access to the context that makes them useful. The interesting work is finding the boundary where safety doesn’t kill leverage.
+
+- why? i just run them all in yolo mode. its fine.
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

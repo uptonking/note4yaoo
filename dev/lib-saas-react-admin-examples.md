@@ -33,6 +33,10 @@ modified: 2023-12-19T17:31:23.259Z
     - React-admin relies on Material UI for its user interface by default. 
     - However, you can use react-admin with any UI library
     - This is made possible by the very architecture of react-admin, built over a headless package named ra-core.
+- https://github.com/marmelab/shadcn-admin-kit /MIT/202512/ts
+  - http://marmelab.com/shadcn-admin-kit/
+  - Component kit to build your Admin app with shadcn/ui
+  - Admin Framework: Ra-Core
 
 - https://github.com/marmelab/react-admin-helpdesk /202401/ts
   - https://marmelab.com/react-admin-helpdesk
@@ -65,6 +69,11 @@ modified: 2023-12-19T17:31:23.259Z
   - https://marmelab.com/ra-example-kanban/
   - Example of a Kanban board built with React Admin
 
+- https://github.com/marmelab/ra-strapi /7Star/MIT/202503/ts/inactive
+  - provides a Data Provider and an Auth Provider to integrate Strapi with react-admin.
+  - https://github.com/garridorafa/ra-strapi-v4-rest /MIT/202308/ts
+    - React Admin REST data provider for Strapi.js v4
+
 - https://github.com/marmelab/ra-strapi-demo /202210/前端ts/后端js
   - [Building a B2B app with Strapi and React-Admin_202211](https://marmelab.com/blog/2022/11/28/building-a-crud-app-with-strapi-and-react-admin.html)
 
@@ -72,9 +81,6 @@ modified: 2023-12-19T17:31:23.259Z
   - React Admin data provider for Strapi.js
   - 旧版支持v3
   - https://github.com/nazirov91/ra-strapi-rest-demo
-
-- https://github.com/garridorafa/ra-strapi-v4-rest /MIT/202308/ts
-  - React Admin REST data provider for Strapi.js v4
 
 - https://github.com/raphiniert-com/ra-data-postgrest /75Star/MIT/202310/ts
   - PostgREST Data Provider for react-admin
@@ -91,8 +97,10 @@ modified: 2023-12-19T17:31:23.259Z
   - The lib is ORM agnostic
   - https://github.com/lalalilo/express-crud-router-sequelize-v6-connector
 
-- https://github.com/marmelab/ra-sqlite-dataprovider /202110/js
+- https://github.com/marmelab/ra-sqlite-dataprovider /MIT/202110/js/inactive
   - here is a POC to generate a react-admin administration not relying on an API but directly on a SQLite database hosted on a static server (in this case the Github pages server).
+  - [Using An SQLite Database Live In React-Admin _202110](https://marmelab.com/blog/2021/10/14/using-an-sqlite-database-live-in-react-admin.html)
+    - Warning: The rest of this article assumes that we will query the database from a simple static server. We will therefore only be able to do read operations
 
 - https://github.com/benwinding/react-admin-import-csv /202307/ts
   - https://benwinding.github.io/react-admin-import-csv
@@ -108,7 +116,7 @@ modified: 2023-12-19T17:31:23.259Z
   - working: pagination, sorting(requires secondary indexes)
   - not working： filtering by column，full text search
 
-- https://github.com/josx/ra-data-feathers /202202/js/inactive
+- https://github.com/josx/ra-data-feathers /160Star/MIT/202202/js/inactive
   - Feathers data provider for react-admin
   - A feathers rest client for react-admin
   - https://github.com/kfern/feathers-aor-test-integration

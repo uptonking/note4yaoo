@@ -40,6 +40,13 @@ modified: 2023-12-19T17:29:35.708Z
 
 # changelog
 
+## [v5.0.0_202406](https://marmelab.com/blog/2024/06/20/react-admin-v5.html)
+
+- v5 mostly focuses on removing deprecated features and upgrading dependencies. This makes the upgrade process easier than previous versions.
+- Apps now have a theme switcher 
+- List pages restore scroll position when coming back from Edit and Create views
+- Data providers can now cancel queries for unmounted components (opt-in)
+
 ## [v4.0.0_202204](https://marmelab.com/blog/2022/04/13/react-admin-v4.html)
 
 - v4 focuses on modernizing the inner workings of the library

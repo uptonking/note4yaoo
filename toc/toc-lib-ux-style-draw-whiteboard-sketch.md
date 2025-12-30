@@ -213,11 +213,6 @@ modified: 2025-03-22T18:23:37.602Z
   - [Use typst as library in browser? · Issue · typst/typst _202304](https://github.com/typst/typst/issues/909)
     - Typst can be compiled to WASM, but no JS glue is available, you'd have to write that yourself. It's not as simple as compile(string) because you also need to provide fonts, and if you want a multi-file setup of course also files.
 
-- https://github.com/Lamkateh/richtext-typst /MIT/202509/python/inactive
-  - Convert rich text JSON documents (from editors like ProseMirror, Quill, Slate) to Typst markup.
-  - Supports multiple formats: Quill, Slate, ProseMirror (extensible)
-  - Custom parser support: Register your own parser for new formats
-
 - https://github.com/davidmerfield/Typeset
   - https://typeset.lllllllllllllllll.com/
   - An HTML pre-proces­sor for web ty­pog­ra­phy

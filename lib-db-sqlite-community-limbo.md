@@ -257,6 +257,22 @@ target/debug/limbo database.db
 - What is the latency? And how about if s3 also does the throttling?
 
 - Does each replica maintain its own WAL in S3 ? How do you enforce consistency around replicas
+# discuss-agentfs
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Here's how I do agentic coding with AgentFS
+- https://x.com/penberg/status/2005931121754693713
+  - Step 1: Clone the repository
+  - Step 2: Start an agentfs session
+  - Step 3 (optional): Manual investigation
+  - Step 4: Make branch, commit, and push
+
 # discuss
 - ## 
 

@@ -1063,7 +1063,14 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [I have 50 ebooks and I want to turn them into a searchable AI database. What's the best tool? : r/notebooklm _202512](https://www.reddit.com/r/notebooklm/comments/1pxvmqf/i_have_50_ebooks_and_i_want_to_turn_them_into_a/)
+- Google File Search (if you are not technical, just use aistudio, e.g. this https://aistudio.google.com/apps/bundled/ask_the_manual )
+- NotebookLM is great as long as you don’t need to extract / access every bit of those books. It will pickup random extracts only and won’t tell you what it has missed.
+
+- Try a quick prototype with LlamaIndex + a vector database like Chroma to measure retrieval quality vs NLM. I don't think NLM will be robust enough.
+
+- [Seeking Advice: Local AI Pipeline for Analyzing 5000 Documents (~10 GB) : r/LocalLLM](https://www.reddit.com/r/LocalLLM/comments/1px0tm1/seeking_advice_local_ai_pipeline_for_analyzing/)
+- We run the PDF to text pipeline on private H100s and could have the text extraction piece done tomorrow. Including image descriptions, charts, tables. Our core market is businesses with sensitive data needs.
 
 - ## [RAG failure story: our top-k changed daily. Root cause was ID + chunk drift, not the retriever. : r/Rag](https://www.reddit.com/r/Rag/comments/1pqvayx/rag_failure_story_our_topk_changed_daily_root/)
   - We had a RAG system where top-k results would change day-to-day. People blamed embeddings. We kept tuning retriever params. Nothing stuck.

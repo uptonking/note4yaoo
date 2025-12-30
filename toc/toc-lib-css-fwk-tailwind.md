@@ -103,6 +103,8 @@ modified: 2023-02-26T18:25:01.328Z
 - https://github.com/themesberg/flowbite-react /1.2kStar/MIT
   - https://www.flowbite-react.com/
   - Official React components built for Flowbite and Tailwind CSS
+  - https://github.com/themesberg/flowbite-vue
+  - https://github.com/themesberg/flowbite-svelte
 
 - https://github.com/themesberg/flowbite-icons /MIT
   - https://flowbite.com/icons/
@@ -204,7 +206,8 @@ modified: 2023-02-26T18:25:01.328Z
   - https://github.com/tremorlabs/tremor
   - https://www.tremor.so/
   - https://demo.tremor.so/
-  - a low-level, opinionated UI component library to build dashboards.
+  - Copy & Paste React components to build modern web applications
+  - Built on top of Tailwind CSS and Radix UI.
   - [tremor • changelog](https://www.tremor.so/changelog)
     - v2_202303 exposure of className, and full switch to Tailwind CSS
   - 依赖recharts2、tippyjs、date-fns，未使用任何组件库
@@ -214,10 +217,10 @@ modified: 2023-02-26T18:25:01.328Z
     - a Next.js project bootstrapped with create-next-app.
     - thanks to @vercel acquisition, you can get access to all blocks on GitHub
 
-- https://github.com/hunvreus/basecoat /MIT/202506/tailwindcss/js
+- https://github.com/hunvreus/basecoat /3.3kStar/MIT/202512/js
   - https://basecoatui.com/
-  - A collection of modern UI components built with Tailwind CSS that works with any web stack. 
-  - Basecoat brings the magic of shadcn/ui to traditional web applications, no React required.
+  - A collection of modern UI components built with Tailwind CSS that works with any web stack. no React required.
+  - Basecoat brings the magic of `shadcn/ui` to traditional web applications, no React required.
   - Lightweight: no runtime JS, just CSS
   - Framework-agnostic: works with any backend or frontend stack
   - Accessible: components follow accessibility best practices.

@@ -232,7 +232,12 @@ modified: 2021-01-04T17:26:43.784Z
 
 - https://github.com/cosformula/mdxport /MIT/202512/ts/svelte
   - https://www.mdxport.com/
+  - Markdown to PDF, Perfect Typesetting, Powered by Typst.
   - 左边文本可编辑，右边预览只读
+  - Runs entirely client-side using WebAssembly.
+  - Mermaid diagrams
+  - Math formulas (LaTeX syntax)
+  - Syntax Highlighting for code blocks
   - [Built a browser-based PDF exporter using Typst + WASM (No Pandoc/LaTeX setup required) : r/ObsidianMD _202512](https://www.reddit.com/r/ObsidianMD/comments/1ppmoql/built_a_browserbased_pdf_exporter_using_typst/)
     - 100% Local (WASM): It uses the Typst engine compiled to WebAssembly. all rendering happens in your browser. No data is sent to any server
     - Better Pagination: unlike the standard HTML-to-PDF print (which Obsidian uses), Typst handles page breaks smartly. It keeps table rows together and handles footnotes/math ($E=mc2$) beautifully.

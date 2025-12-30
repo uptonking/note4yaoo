@@ -321,6 +321,15 @@ modified: 2025-12-11T18:10:23.710Z
   - supports Claude Code and Codex, with both environments sharing one CLI
   - API and proxy management: Supports official login, API Key, and CCR proxy three modes, with built-in presets for 302. AI, GLM, MiniMax, Kimi, etc.
 
+- https://github.com/ding113/claude-code-hub /756Star/MIT/202512/ts
+  - https://claude-code-hub.app/
+  - 现代化的 Claude Code & Codex API 代理服务，提供智能负载均衡、用户管理和使用统计功能。
+  - 通过 Next.js 15 + Hono + PostgreSQL + Redis 组合，实现 Claude/OpenAI 兼容 API 代理、智能负载均衡、实时监控、价格管理
+  - 智能负载均衡：权重 + 优先级 + 分组调度，内置熔断保护与最多 3 次故障转移。当某个供应商出现问题时，系统自动切换到备用供应商，用户完全无感知
+  - 多供应商管理：同时接入 Claude、Codex、Gemini CLI、OpenAI Compatible，自定义模型重定向与 HTTP/HTTPS/SOCKS 代理
+  - 限流与并发控制：RPM、金额（5 小时/周/月）、并发 Session 多维限制，Redis Lua 脚本确保原子性与 Fail-Open 降级
+  - OpenAI 兼容层：支持 /v1/chat/completions，自动格式转换、工具调用、reasoning 字段与 Codex CLI 指令注入
+
 ## codex-cli
 
 - https://github.com/openai/codex /29.7kStar/apache2/202506/rust/ts

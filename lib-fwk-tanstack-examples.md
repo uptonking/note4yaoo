@@ -9,6 +9,8 @@ modified: 2025-12-16T06:25:12.641Z
 
 # guide
 
+# draft
+- react-admin: migrated to tanstack-router
 # popular
 
 # examples

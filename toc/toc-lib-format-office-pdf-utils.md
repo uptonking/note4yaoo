@@ -247,7 +247,7 @@ modified: 2022-11-11T10:46:41.519Z
 - https://github.com/NativeDocuments/docx-wasm-client-side /201902/js/inactive
   - doc/docx to PDF conversion, client-side in-browser, using docx-wasm
 
-- https://github.com/Quorafind/typst-toolbox /apache2/202512/ts
+- https://github.com/Quorafind/typst-toolbox /apache2/202512/ts/obsidian
   - Convert Markdown to Typst and then to DOCX/PDF. Supports real-time preview and editing.
 
 - https://github.com/Prosperis/Resumier /apache2/202512/ts

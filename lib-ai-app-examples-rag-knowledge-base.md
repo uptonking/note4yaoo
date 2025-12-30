@@ -157,6 +157,9 @@ modified: 2025-11-30T17:27:16.720Z
     - 202406: currently, we don't have such plan.
   - [[Question]: How to using this "Team" option for open-source? ](https://github.com/infiniflow/ragflow/issues/7050)
     - 202504: It's a feature of enterprise version.
+  - https://github.com/tedhappy/ragflow-admin /apache2/202512/python/ts
+    - 基于ragflow二次开发的后台管理系统，可以独立运行，支持批量管理知识库、聊天、智能体、用户等，解决ragflow在后台管理上的痛点。
+    - 内置管理界面在生产环境中存在一些局限：单知识库视图, 无批量操作, 任务队列隐藏
 
 - https://github.com/Tencent/WeKnora /7.5kStar/MIT/202511/go/ts/vue
   - https://weknora.weixin.qq.com/
@@ -905,6 +908,14 @@ modified: 2025-11-30T17:27:16.720Z
   - Triple Interface: CLI, Library & Web
   - [[Release] Chunklet-py v2.1.0: Interactive Web Visualizer & Expanded File Support! : r/Rag](https://www.reddit.com/r/Rag/comments/1prjdjp/release_chunkletpy_v210_interactive_web/)
     - Our `CodeChunker` is rule-based and language-agnostic, using clever patterns to identify functions, classes, and logical blocks without the overhead of heavy dependencies like tree-sitter.
+
+- https://github.com/supermemoryai/code-chunk /MIT/202512/ts
+  - AST-aware code chunking for semantic search and RAG pipelines.
+  - Uses `tree-sitter` to split source code at semantic boundaries (functions, classes, methods) rather than arbitrary character limits. 
+  - Each chunk includes rich context: scope chain, imports, siblings, and entity signatures.
+  - Batch processing: Process entire codebases with controlled concurrency
+  - Streaming: Process large files incrementally
+  - [Building code-chunk: AST Aware Code Chunking _202512](https://supermemory.ai/blog/building-code-chunk-ast-aware-code-chunking/)
 
 - https://github.com/xuzeyu91/AntSK-FileChunk /202512/python
   - 一个基于语义理解的智能文本切片服务，专门用于处理PDF和Word文档，能够根据段落语义进行合理切片，避免传统基于Token数量切分导致的语义割裂问题。

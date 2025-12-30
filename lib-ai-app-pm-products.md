@@ -400,7 +400,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 很多openrouter渠道的模型
     - 本站完全免费！暂无任何充值通道
     - 绝大部分模型倍率换算后与官方价格相同，为缓解服务器资源压力，所有免费模型实际扣除配额均按付费标准计算
-    - [黑与白chatAPI福利站](https://next-cdk.hybgzs.com/)
+    - [黑与白chatAPI福利站](https://cdk.hybgzs.com/)
   - [包子铺](https://api.5202030.xyz/)
     - [包子公益](https://api.codeqaq.com/)
     - 只开放linuxdo lv2以上注册
@@ -432,6 +432,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 仅在每周五下午 18:00 至 21:00 开放，每周限量 100 人
     - 支持claude,gemini, 不支持gpt
     - Gemini系列模型永久免费， 与Gemini对话不会消耗帐号余额（可忽视帐号余额）
+  - [【公测开启】Kiro账号托管平台  ](https://linux.do/t/topic/1227895)
   - 🗑️ [无言AI](https://aiai.li/panel), 每日签到, 已关闭
     - 支持cc
   - 🗑️ [我爱996公益](https://529961.com/), 服务停止

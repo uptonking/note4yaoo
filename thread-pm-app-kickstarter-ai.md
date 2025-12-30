@@ -223,7 +223,28 @@ modified: 2023-04-04T03:59:40.928Z
 
 - ## 
 
-- ## 
+- ## 将AI推入下一个阶段的关键技术突破是什么？ 2025年有哪些AI产品让您眼前一亮？哪个趋势是不可忽视的必然路径？
+- https://x.com/dotey/status/2005579554346385571
+- 太多产品了。gpt4o文生图、豆包、可灵、Lovart、今天学什么、Claude Code、Augment、nano banana pro都是不同时期不同领域的优秀产品。硬件的话，豆包手机是不是可以考虑
+
+- gemini 的深度研究和学习模式：深度研究提高了资料搜集效率，学习模式是一种渐进式学习。
+  - notebooklm 的 ppt 功能：能提取重点并转成 ppt
+
+- 眼前一亮的产品：Claude Code, Nano Banana Pro, NotebookLM
+  - 2026年的路径：1. 多模态内在关联(比如生成图片内部的标注问题）；2. AI泛化革命（如AK所期望，AI能够在训练完之后忘掉已有的知识，面向需求从头快速学习）；3. AI生成内容的系统性安全问题
+
+- 今年让我眼前一亮的AI产品，
+  - 一个是NotebookLM，太强大了，让知识输入的效率提升了很多；
+  - 另一个是aiquanttools，AI量化工具，在熊市里通过AI匹配，秒极根据行情调整策略和仓位。用AI托管交易后，省力了很多，偶尔手动干预一下，胜率很高
+
+- 2025 眼前一亮的是notebook lm，figma make，nanobanana，claude（按时间先后顺序）
+
+- Manus带来的Agent交互范式
+
+- 视频啊 现在才10s左右 还贵
+
+- [As we enter 2026, what were your favorite AI agents you discovered this past year? : r/AI_Agents](https://www.reddit.com/r/AI_Agents/comments/1pyicjz/as_we_enter_2026_what_were_your_favorite_ai/)
+- Lovable/Bolt: Our marketing team now quickly spins up landing pages, lead gens using Bolt instead of having to wait for engineering or external contractors. It's not great complex apps for SAAS etc but it's great for marketing landing pages, and simple stuff! 
 
 - ## 🎨 随着 Gemini 本周加入 OpenAI 发布 Canvas，显然这种模式正在成为 AI 界面的黄金标准。
 - https://x.com/FinanceYF5/status/1902968785117819090
