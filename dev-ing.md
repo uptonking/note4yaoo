@@ -303,6 +303,15 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-to
   - ?
 
+## 1231
+
+- help me name a new tag for github issues. it should represent the issue has not been categorized, and someone should add type tag for it
+  - uncategorized
+  - untyped, no-type
+  - untriaged, unlabeled, unclassified
+  - type/triage-needed, add-type, type-missing, type-todo
+  - status/triage
+
 ## 1229
 
 - why does pc keyboard number keys is 789456123, rather than 123456789

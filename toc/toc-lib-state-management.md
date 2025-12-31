@@ -324,7 +324,7 @@ modified: 2020-07-14T11:03:53.196Z
   - Why would one use xorma instead of SqlLite in the browser? Because of the reactivity?
     - They’re nothing alike tbh. It’s not a database like you’d traditionally think of a database. It’s a state management library that feels like an orm.
 # signals
-- https://github.com/preactjs/signals /ts/实现不依赖proxy
+- https://github.com/preactjs/signals /4.3kStar/MIT/202512/ts/实现不依赖proxy
   - Signals is a performant state management library with two primary goals
     - Make it as easy as possible to write business logic for small up to complex app
     - Integrate into frameworks as if they were native built-in primitives
@@ -335,6 +335,10 @@ modified: 2020-07-14T11:03:53.196Z
     - It performed better in benchmarks, and avoided cruft resulting from transpiled TypeScript classes
   - https://gitlab.com/kevindoughty/undo-manager /MIT/202404/js
     - Undo and redo management for Preact Signals
+  - https://github.com/XantreDev/preact-signals /MIT/202512/ts
+    - https://preact-signals.netlify.app/#/
+    - provide comprehensive tooling for using preact/signals
+
 - https://github.com/luisherranz/deepsignal
   - Preact signals, but using regular JavaScript objects
   - DeepSignal works by wrapping the object with a `Proxy` that intercepts all property accesses and returns the signal value by default.

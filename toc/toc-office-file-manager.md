@@ -243,6 +243,21 @@ modified: 2021-08-23T05:27:08.068Z
   - 所有操作都有日志，方便追溯和还原。涉及程序配置内容修改的操作会有权限验证。
   - 所有的文件删除、文件更新操作进行防呆保护，最大限度保证数据安全
 # web-storage
+- https://github.com/razaanstha/s3kit /202512/ts
+  - https://s3kit.vercel.app/
+  - A secure, server-driven, framework-agnostic S3 file manager with a React UI.
+  - Plug‑and‑play package with FileManager UI for frontend for server‑side connection for S3 storage configuration with permissioned actions and picker/viewer/manager modes.
+  - core: S3 operations (virtual folders, pagination, presigned uploads, previews)
+  - adapters/*: framework adapters (Express, Next.js, Fetch/Remix)
+
+- https://github.com/jamwt/convex-fs /apache2/202512/ts
+  - Virtual filesystem for Convex, backed by Bunny.net Edge Storage & CDN
+  - ConvexFS is a Convex component that provides filesystem-like operations for managing files in your Convex application.
+  - Instead of dealing with raw blob storage, you work with familiar concepts like paths, files, and directories—while getting the performance benefits of a global CDN.
+  - Path-based file management — Organize files with familiar filesystem paths
+  - https://x.com/jamwt/status/2006151504823005471
+    - i was also working on similar thing since a while but with fully s3 compliant mainly focussed for FE while handling the credentials with authorization from server. 
+
 - https://github.com/ncisrc/cookies-storage
   - It's like localStorage or sessionStorage but with cookies.
 # more-files-manager

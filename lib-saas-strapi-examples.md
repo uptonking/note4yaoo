@@ -143,6 +143,13 @@ modified: 2023-12-15T19:30:23.094Z
     - Analytics: Umami + Google Analytics
     - Database: SQLite + Drizzle
     - Comment: Giscus
+
+- https://github.com/PaulBratslavsky/strapi-tanstack-start-starter /MIT/202512/ts
+  - A full-stack starter project combining Strapi headless CMS with TanStack Start for building modern web applications.
+  - User authentication (local signup/signin + GitHub OAuth)
+  - User authentication with JWT
+  - Session management with HTTP-only cookies
+  - [Hey I built this project with TanStack Start and Strapi and looking for some feedback : r/Strapi _202511](https://www.reddit.com/r/Strapi/comments/1ow6ozk/hey_i_built_this_project_with_tanstack_start_and/)
 # integrations
 - https://github.com/ONLYOFFICE/onlyoffice-strapi /MIT/202211/js/inactive
   - The app which enables the users to edit office documents from Strapi using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Strapi
@@ -1292,13 +1299,6 @@ modified: 2023-12-15T19:30:23.094Z
   - Strapi Starter with PostgreSQL, Typescript and test setup
   - Simple Access Role setup as a Strapi Content-Type
 # auth/register
-- https://github.com/PaulBratslavsky/strapi-tanstack-start-starter /202511/ts
-  - A full-stack starter project combining Strapi headless CMS with TanStack Start for building modern web applications.
-  - User authentication (local signup/signin + GitHub OAuth)
-  - User authentication with JWT
-  - Session management with HTTP-only cookies
-  - [Hey I built this project with TanStack Start and Strapi and looking for some feedback : r/Strapi](https://www.reddit.com/r/Strapi/comments/1ow6ozk/hey_i_built_this_project_with_tanstack_start_and/)
-
 - https://github.com/Schero94/Magic-Sessionmanager /MIT+paid/202511/js
   - [Magic Session Manager - Now on NPM! : r/Strapi](https://www.reddit.com/r/Strapi/comments/1ossc1b/magic_session_manager_now_on_npm/)
   - a plugin that lets you see and control all user sessions in your Strapi v5 app.

@@ -408,11 +408,22 @@ modified: 2022-12-19T01:51:01.389Z
   - Nitro is a framework to build web servers with a lot more features than H3 and a larger scope. 
   - it's build on top of H3
 
-- https://github.com/nksaraf/vinxi /MIT/202409/ts
+- https://github.com/nksaraf/vinxi /2.7kStar/MIT/202512/ts
   - https://vinxi.vercel.app/
   - The JavaScript toolkit to build full stack apps and frameworks with your own opinions
   - Compose full stack applications (and frameworks) using Vite, the versatile bundler and dev server, and Nitro, the universal production server. The core primitive in vinxi is a router.
   - There are currently two frameworks actively being developed on vinxi: SolidStart, TanstackStart
+  - [Vinxi with other build tools _202409](https://github.com/nksaraf/vinxi/issues/374)
+    - Right now I don't have plans to replace vite , it's one of the backbones of the system as a bundler for server/client and runtime for server in dev and to the client in both dev and prod
+    - Vite is part of our public api and plugin api so it's not really replaceable
+
+- https://github.com/better-stack-ai/better-stack /MIT/202512/ts
+  - https://www.better-stack.ai/
+  - Better Stack lets you install production-ready app features as npm packages.
+  - Each feature ships frontend + backend together: routes, APIs, database models, React components, SSR, and SEO — already wired.
+  - Installable features – real product features, not just UI
+  - Framework-agnostic – Next.js, React Router, TanStack Router, Remix
+  - Database-flexible – Prisma, Drizzle, Kysely, MongoDB
 # py-fastapi
 - https://github.com/yezz123/DogeAPI /MIT/202405/python/inactive
   - API with high performance built with FastAPI & SQLAlchemy, help to improve connection with your Backend Side to create a simple blog and Cruds with OAuth2PasswordBearer

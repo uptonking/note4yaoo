@@ -118,7 +118,15 @@ modified: 2025-09-01T07:58:29.058Z
 
 - ## 
 
-- ## 
+- ## 最近走通了三种并行开发的方式：
+- https://x.com/leeoxiang/status/1990040466486911031
+  - 1、本地开多个 worktree，每个 worktree 分配一个 agent，最后生成一个 PR; 
+  - 2、远程开多个环境，每个环境一个 session，每个 session 的产出会生成一个 PR; 
+  - 3、在 github 中每个 issue 启动一个 workflow 启动一个 claude code 进行异步开发。
+
+- 佩服大佬，我到现在都仍然坚持古法单线程 copilot 式用 agent
+
+- 不行，太伤神了。我尝试过 5 开(A 机 3 后端 session B 机 2 前端 session) 本地配好 gitlab cli 直接让 cc 从上面领任务，然后都配了 MCP feedback 增强的那个工具，一个任务完了或者有问题都必须弹窗提醒我，于是 duangduangduang，仅一天我就被干成贤者了
 
 - ## 认同这个CLAUDE md 实践，就两条：
 - https://x.com/9hills/status/1995308023578042844

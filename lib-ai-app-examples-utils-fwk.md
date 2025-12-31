@@ -273,13 +273,26 @@ modified: 2025-02-21T18:20:42.624Z
 
 ## router/gateway
 
+- https://github.com/ulab-uiuc/LLMRouter /400Star/MIT/202512/python
+  - https://ulab-uiuc.github.io/LLMRouter/
+  - Open-Source Library for LLM Routing
+  - an intelligent routing system designed to optimize LLM inference by dynamically selecting the most suitable model for each query
+  - Unified CLI: Complete command-line interface for training, inference, and interactive chat with Gradio-based UI.
+  - Complete pipeline for generating training data from 11 benchmark datasets with automatic API calling and evaluation.
+  - [We open-sourced LLMRouter: the first unified LLM routing library  _202512](https://www.reddit.com/r/LocalLLaMA/comments/1q06z2l/we_opensourced_llmrouter_the_first_unified_llm/)
+    - The current LLM routing landscape feels a lot like early GNN research: many promising router algorithms exist, but each comes with its own input/output format, training pipeline, and evaluation setup. This fragmentation makes routers difficult to use, hard to reproduce, and nearly impossible to compare fairly.
+    - Over the past year, we worked on several LLM routing projects, including GraphRouter (ICLR’25), Router-R1 (NeurIPS’25), and PersonalizedRouter (TMLR’25). Through repeatedly implementing and benchmarking different routers, we realized that the main bottleneck is not algorithmic novelty, but the lack of standardized infrastructure.
+    - Unified support for single-round, multi-round, agentic, and personalized routing
+    - Integration of 16+ SOTA LLM router algorithms
+    - One-line commands to run different routers without rebuilding pipelines
+
 - https://github.com/Egham-7/adaptive-ai-provider /202510/ts
   - https://llmadaptive.uk/
   - The Adaptive AI Provider for the AI SDK contains language model support for adaptive provider selection across multiple AI services
   - Intelligent Model Selection - Automatically picks optimal models
   - Multi-Provider - OpenAI, Anthropic, Google, DeepSeek, Groq, etc.
   - [Adaptive AI Provider for the Vercel AI SDK — real-time model routing using UniRoute (Google Research) : r/vercel _202510](https://www.reddit.com/r/vercel/comments/1o5itci/adaptive_ai_provider_for_the_vercel_ai_sdk/)
-    - It’s based on UniRoute, Google Research’s new framework for universal model routing across unseen LLMs.
+    - It’s based on `UniRoute`, Google Research’s new framework for universal model routing across unseen LLMs.
     - Adaptive automatically chooses which LLM to use for every request based on prompt complexity and live model performance.
     - It runs automated evals continuously in the background, clusters prompts by domain, and routes each query to the smallest feasible model that maintains quality.
     - it performs live eval-based routing using UniRoute’s cluster-based generalization method, which can handle unseen LLMs without retraining.

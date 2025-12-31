@@ -125,6 +125,11 @@ modified: 2021-08-30T18:56:18.632Z
 - https://github.com/inukshuk/sqleton
   - Visualizes your SQLite database schema.
 
+- https://github.com/accoumar12/dashboard /202512/python/ts
+  - https://dashboard.accoumar.fr/
+  - lightweight, intuitive dashboard for exploring SQLite databases with dynamic filtering and instant sharing capabilities!
+  - [Built a web-based SQLite explorer with cross-table filtering with SQLAlchemy _202512](https://www.reddit.com/r/Python/comments/1q0814c/built_a_webbased_sqlite_explorer_with_crosstable/)
+
 - https://github.com/sqlitebrowser/sqlitebrowser
   - DB Browser for SQLite, Previously known as "SQLite Database Browser"
   - 基于qt和c++实现

@@ -535,6 +535,13 @@ modified: 2025-11-30T17:27:16.720Z
   - Embedded Models: The app supports Ollama models for document embeddings and generating answers based on the content.
   - Chroma Vector Store: All the processed documents are stored in a Chroma vector store for efficient retrieval.
 
+- https://github.com/intercepted16/pymupdf4llm-C /AGPL/202512/c/python
+  - "Blazingly-fast" PDF extractor; a high quality 300 pages/s alternative to Markitdown, PyMUPDF4LLM & others.
+  - a PDF extractor in C using MuPDF, inspired by pymupdf4llm. i took many of its heuristics and approach but rewrote it in C for speed, then bound it to Python and Rust so it's easy to use.
+    - primarily intended for use with python bindings. but for some reason i got bored and added Rust ones too if ya want.
+  - outputs JSON for every block: text, type, bounding box, font metrics, tables. you get the raw data to process however you need.
+  - [I made a fast, structured PDF extractor for RAG; 300 pages a second : r/Rag _202512](https://www.reddit.com/r/Rag/comments/1pzwot0/i_made_a_fast_structured_pdf_extractor_for_rag/)
+
 - https://github.com/krey-yon/Cliven /MIT/202506/python/inactive
   - a command-line tool that allows you to process PDF documents and have interactive conversations with their content using local AI models. 
   - using ChromaDB for vector storage and Ollama for AI inference.
@@ -803,6 +810,10 @@ modified: 2025-11-30T17:27:16.720Z
   - Powerful and comprehensive features include: GenAI workflow, RAG, Agent, Unified model management, Evaluation, SFT, Dataset Management, Enterprise-level System Management, Observability and more.
   - [有计划将企业数据库作为数据源之一吗？ ](https://github.com/dataelement/bisheng/issues/500)
     - 202509: 目前可以通过助手节点数据查询功能实现 nl2sql 能力
+
+- https://github.com/yichuan-w/LEANN /6.8kStar/MIT/202512/python
+  - an open-source vector database, compresses RAG indexes by an impressive 97% using graph-based recomputation and on-demand embedding calculation.
+  - LEANN achieves this through graph-based selective recomputation with high-degree preserving pruning, computing embeddings on-demand instead of storing them all
 
 - https://github.com/rag-web-ui/rag-web-ui /2.7kStar/apache2/202511/python/ts/提交少
   - RAG Web UI is an intelligent dialogue system based on RAG

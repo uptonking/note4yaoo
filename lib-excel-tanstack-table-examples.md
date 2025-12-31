@@ -78,6 +78,8 @@ modified: 2022-08-21T10:37:01.349Z
   - This is a standalone data-table demo that we will be using within the OpenStatus dashboard.
   - The UI is heavily inspired by datadog and vercel log tables.
   - built with nextjs, tanstack-query, tanstack-table, shadcn/ui, cmdk, nuqs, dnd-kit
+  - 📡 roadmap
+    - migrate to tanstack-start
   - [data-table with simple pagination (client-side)](https://data-table.openstatus.dev/default)
   - [data-table with infinite scroll and click details (server-side)](https://data-table.openstatus.dev/infinite)
 
@@ -217,6 +219,19 @@ modified: 2022-08-21T10:37:01.349Z
   - https://paalamugan.github.io/excel-sheet-react-table/
   - You can import you excel sheet and edit your excel sheet in the UI and download that updated excel sheet.
   - 依赖 react-table.v7、react-window、react-toastify、xlsx-parse-json
+
+- https://github.com/ardasisbot/linked-chart /202501/ts/inactive
+  - https://linked-chart.vercel.app/
+  - Recharts-based chart synced with TanStack DataTable, enabling data exploration through linked filtering and aggregation.
+  - Built with shadcn charts / recharts
+  - Chart and table are synced: updated in one, reflected in the other
+  - 🤔 Drag on the chart to filter the table
+
+- https://github.com/Balastrong/tanstack-filtered-table-demo
+  - Managing table pagination, filtering and sorting on query parameters with the TanStack
+
+- https://github.com/Roman86/tanstack-table-header-rowspan /MIT/202511/ts
+  - Rowspan thing for headless React Table from Tanstack
 # ajax/server-side
 - https://github.com/bilalzafarr0001/server-side-data-pagination-filtering-sorting-using-react-table-tanstack /js/v7
   - implement Pagination(Offset based and Cursor based) with Mongoose and Nodejs(Handling 1M records)

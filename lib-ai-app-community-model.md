@@ -716,7 +716,13 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
-- ## 
+- ## [I benchmarked 7 Small LLMs on a 16GB Laptop. Here is what is actually usable. : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pzxtnr/i_benchmarked_7_small_llms_on_a_16gb_laptop_here/)
+  - I tested Qwen 2.5 (14B), Mistral Small (12B), Llama 3 (8B), and Gemma 3 (all 4-bit quants) to see which ones I could actually run without crashing my laptop.
+  - Qwen 2.5 (14B): The smartest for coding, but it eats 11GB System RAM + Context. On a 16GB laptop, if I opened 3 Chrome tabs, it crashed immediately (OOM).
+
+- They are all ancient models by llm age so its kinda an invalid test. The king of low spec ram is mamba2 and sliding window attention. Try Granite 4, or Nemotron Nano 2
+
+- I'm not considering 1-2 tokens/s "usable". Even 10 tokens/s is barely usable for the most part.
 
 - ## [I'm curious whether people ask for the model's name in their prompts when testing on LMArena (ChatBot Arena). : r/LocalLLaMA _202504](https://www.reddit.com/r/LocalLLaMA/comments/1jtfzci/im_curious_whether_people_ask_for_the_models_name/)
   - After all, by doing this, users can know the names of the models being A/B tested beforehand, which could bias the ongoing test to some extent.

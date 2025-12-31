@@ -428,7 +428,18 @@ modified: 2025-11-06T18:49:13.977Z
 
 - ## 
 
-- ## 
+- ## [Is Deepseek-OCR SOTA for OCR-related tasks? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1ov2wmu/is_deepseekocr_sota_for_ocrrelated_tasks/)
+- From my tests, PaddleOCR-VL, Deepseek-OCR, and MinerU-VLM are almost identical in size, performance and are all highly effective. Just make sure your GPU supports CUDA.
+
+- Qwen3VL is a more general-purpose Model. It typically operates slower than specialized OCR models and often requires guidance from users through prompting. For specific OCR needs, consider models like MinerU, which go beyond text based tasks to extract graphical elements (images and tables) from PDFs and create an associated JSON index file. So it's way more useful if you have such needs.
+- I tend to split the OCR task from the classification/extraction task.
+
+- In our use case, convert medical pdf documents in chinese with figures to markdown, MinerU-VLM is the best one in above three.
+
+- For my use cases Qwen 3 VL cleanly outperforms it.
+- Qwen3 VL 32B definitely outperforms it, but in its size and speed class Deepseek-OCR is best in slot.
+
+- I would like to also add OlmOCR 2 7B to the mix. It has been working really well especially with proper JSON schema for assistance. Minimal hallucinations and tolerable rare spelling mistakes for a VLM.
 
 - ## [Is there a VLM that has bounding box support built in? : r/computervision _202508](https://www.reddit.com/r/computervision/comments/1me7ciq/is_there_a_vlm_that_has_bounding_box_support/)
 - Florence 2 and PaliGemma 2
@@ -442,8 +453,15 @@ modified: 2025-11-06T18:49:13.977Z
   - The 6000 Pro should handle most models fine but for production use with multiple users... you might want to think about caching and load balancing. We had a client try to run everything on one GPU for their legal team and it became a bottleneck real quick. 
   - Maybe start with something like LayoutLMv3 or Donut for the document understanding part - they're built for this kind of structured extraction rather than just reading text.
 
+- The best OCR model is olmOCR 2 from Ai2. Fully open weights and they provide training data, unlike everyone else. Handles complex formatting incredibly well.
+  - This is really only true for PDFs. I recently built a project that tries to be like a markdown web browser for agents and it uses that olmOCR model on screenshots of the webpages. It works but doesn’t actually get markdown formatted outputs from those.
+
+- MinerU has a feature that extracts graphical elements into an individual folder, along with a JSON index file that retains all positional information from a scanned PDF.
+
 - The suggestion of an OCR specific model is probably a good one. I'll mention the granite docling models. Tiny but will be blazing fast for you.
   - Expect to do a lot of downloading and testing. You need to find what works for you. Then there is the never ending stream of new models to try.
+
+- Qwen3-vl is a really solid series. I have the 4B model doing full OCR of invoices with bounding boxes for visual grounding, in a human in the loop system.
 
 - You don’t really need a fancy LLM for this, if they’re high quality documents you could easily use tesseract. Regarding inference, any RAG approach should work
   - Any handwriting would be out. Tesseract is too old and I think shouldn't be the gold standard anymore.

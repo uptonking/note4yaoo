@@ -200,7 +200,25 @@ modified: 2025-09-16T12:36:12.968Z
 
 - ## 
 
-- ## 
+- ## 🆚 [When should you choose F16 over Q8_0 quantization? : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1q0ci23/when_should_you_choose_f16_over_q8_0_quantization/)
+  - We've all read about how Q8_0 is "virtually indistinguishable" from F16 when doing inference.
+
+- Every time I download native safetensors I'm amazed at just how good my Q4KL was the entire time. I don't ever recall being impressed by Q8 or BF16 over Q4KL.
+
+- If it's a VLM I will choose F16, if it's text only model - Q8.
+  - VLMs in higher precision have significantly better image understanding and bounding box accuracy.
+- Do you mean the `mmproj`-part should be f16? Or also the LLM part?
+  - I personally found a lot of success with even harsh quantization of the base model, but unquantized vision encoder, without much degradation in image understanding personally.
+- I can't upvoter this enough. In llama.cpp I found huge accuracy improvements for some of my use cases by swapping the mmproj file to the F16 or F32 version, and increasing the number of tokens generated from each image. With those tweaks I can get away with running Qwen3-VL 8b instead of a much larger VL model. Especially when I'm using it as part of an agent system to just handle visual descriptions and letting another larger text only LLM handle final analysis and writing. This lets me balance my local agent deployments better and get much better token rates with almost no loss of analytical quality.
+
+- PDE stuff is often done in FP64
+  - Highly recurrent/compounding math, such as interest rate calculations or number theory, is often done in higher than 64 but such as 128 bit, 512 bit or 1024 bit etc
+
+- In Agentic Coding you will ALWAYS see differences between FP16 and Q8.
+
+- Got-oss should be left at f16 since it’s already quantized
+  - Vision encoders should also be left at f16
+  - Otherwise q8 is great and even q4kl is very good.
 
 - ## [Most used models and performance on M3u 512 gb : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1ouogiq/most_used_models_and_performance_on_m3u_512_gb/)
   - Overall GLM 4.6 is queen right now.

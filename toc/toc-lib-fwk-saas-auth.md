@@ -147,7 +147,8 @@ modified: 2025-09-23T09:28:08.532Z
   - https://github.com/daveyplate/better-auth-nextjs-pages-starter
     - Better Auth Next.js (Pages Router) starter template with PostgreSQL, Drizzle, shadcn/ui and TanStack Query
 
-- https://github.com/daveyplate/better-auth-tanstack-starter /202504/ts/inactive
+- https://github.com/daveyplate/better-auth-tanstack-starter /202512/ts
+  - https://tanstack.better-auth-starter.com/
   - Better Auth TanStack starter template with PostgreSQL, Drizzle, shadcn/ui and TanStack Query
   - https://github.com/daveyplate/better-auth-tanstack /MIT/202505/ts
     - Tanstack Query hooks for Better Auth.
@@ -260,7 +261,7 @@ modified: 2025-09-23T09:28:08.532Z
   - https://flarekit.mockkey.com/
   - Flarekit is a modern full-stack SaaS starter kit built with React Router v7, Better Auth, Hono, and Cloudflare Workers
 
-- https://github.com/dotnize/react-tanstarter /Unlic/202505/ts
+- https://github.com/dotnize/react-tanstarter /897Star/unlic/202512/ts
   - https://tanstarter.nize.ph/
   - minimal TanStack Start template with Better Auth, Drizzle ORM, shadcn/ui
   - React 19 + React Compiler

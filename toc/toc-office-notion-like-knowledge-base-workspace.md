@@ -883,6 +883,10 @@ modified: 2022-06-03T21:34:54.893Z
   - Magic-Doc 是一款支持将网页或多格式电子书转换为 markdown 格式的工具。
     - 支持176种语言的准确识别
   - https://huggingface.co/spaces/opendatalab/MinerU
+  - [Connect to the local LLM接入本地大语言模型 _202503](https://github.com/opendatalab/MinerU/issues/1976)
+    - 教程没写就只是预留字段而已，有想做成llm方向的想法
+  - [issue: MinerU not working in vllm mode ](https://github.com/open-webui/open-webui/discussions/18446)
+    - Its not in the code yet, the only options are vlm and pipeline
 
 - https://github.com/microsoft/markitdown /MIT/202411/python
   - Python tool for converting files and office documents to Markdown.

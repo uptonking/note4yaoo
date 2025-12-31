@@ -167,6 +167,12 @@ modified: 2023-11-16T15:00:11.503Z
 - https://github.com/romansndlr/react-vite-realworld-example-app /202204/js
   - 依赖valtio、react-query.v3
 
+- https://github.com/leosuncin/conduit-monorepo /202512/ts
+  - Implementation of gothinkster/realworld with a monorepo
+  - Client: React, TanStack/react-router, shadcn/ui, radix-ui, react-query
+  - Server: Node, Fastify, OpenAPI
+  - Database: PostgreSQL, golang-migrate, IntegreSQL
+
 ### rw-api
 
 - https://github.com/cirosantilli/node-express-sequelize-nextjs-realworld-example-app /202208/后端js+前端ts
@@ -251,6 +257,14 @@ modified: 2023-11-16T15:00:11.503Z
 - https://github.com/launchbadge/realworld-axum-sqlx /AGPLv3/202203/rust/inactive
   - A Rust implementation of the Realworld demo app spec using Axum and SQLx(sea-orm)
   - Best practices are always in flux, and a major point of this project was to experiment with project architecture and suss out what those best practices might look like.
+
+### more-rw/ui
+
+- https://github.com/yurisldk/realworld-react-fsd /MIT/202506/ts/inactive
+  - A modern implementation of the RealWorld app using FSD (Feature-Sliced Design), React, TypeScript, and a contemporary frontend stack.
+
+- https://github.com/vdloc/conduit-multi-frameworks 202409/ts/inactive
+  - tailwindui, react
 # vanillajs
 - https://github.com/aman-maharshi/vanilla-js /202304/js
   - Projects using pure JavaScript without any external libraries or frameworks

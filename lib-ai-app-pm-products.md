@@ -368,6 +368,16 @@ modified: 2025-03-22T16:10:24.856Z
   - [123nhh](https://new.123nhh.xyz/pricing)
     - [【nhh公益站】介绍贴及主贴  ](https://linux.do/t/topic/1370326)
     - 模型来源谷歌反重力，rpm限制10/3min，不可用于NSFW，酒馆等
+  - [Wind Hub](https://api.224442.xyz/panel)
+    - 提供了free分组，包含deepseek-v3.2, gpt-4.1-mini
+    - claude分组倍率低
+    - [福利站](https://wcdk.224442.xyz/)
+    - [[Wind Hub]新的公益API 主帖 ](https://linux.do/t/topic/1344450)
+  - [Neb 公益站](https://ai.zzhdsgsss.xyz/console)
+    - 采用按量计费，每次0.01，注册送2000次，因为该阶段的初衷就是最大化利用这些将要过期的key。
+    - 当前额度用完或2026.1.31之后进入第二阶段，采用按量计费，倍率会很低
+    - 会不会有签到站不会，因为我太懒了
+    - [【Neb 公益站】这是主贴 ](https://linux.do/t/topic/1354122)
   - 📌 [b4u API](https://b4u.qzz.io/console), 每日转盘
     - 会不会增加其他模型: 不会，本站专注于Claude
     - 支持工具调用、上下文 128K+、支持 RooCode，不推荐接入 ClaudeCode
@@ -385,7 +395,7 @@ modified: 2025-03-22T16:10:24.856Z
     - Claude和gpt 暂时不支持工具调用, gemini模型没有pro
     - API 调用频率限制为 12RPM，公益站永久免费，采用公平限流策略以保障服务稳定
     - 别玩至尊场，1000积分一次警告扣16x，风险太高; 高级场的高积分也可以获得高收益
-  - [随时跑路公益](https://runanytime.hxi.me/app/me), 每天签到 10-25 刀
+  - [随时跑路公益](https://runanytime.hxi.me/console), 每天签到 10-25 刀
     - [随时跑路福利站](https://fuli.hxi.me/)
     - 完全支持 cc，主要是 sonnet 4.5，haiku 4.5 会自动重定向到 sonnet 4.5
     - RPM 暂时定为 5，之后看情况调整
@@ -401,28 +411,24 @@ modified: 2025-03-22T16:10:24.856Z
     - 本站完全免费！暂无任何充值通道
     - 绝大部分模型倍率换算后与官方价格相同，为缓解服务器资源压力，所有免费模型实际扣除配额均按付费标准计算
     - [黑与白chatAPI福利站](https://cdk.hybgzs.com/)
-  - [包子铺](https://api.5202030.xyz/)
-    - [包子公益](https://api.codeqaq.com/)
-    - 只开放linuxdo lv2以上注册
-    - 支持gpt,claude,gemini, 但没有gpt5(有mini)
-    - [包子公益 - Baozi DoneHub](https://lucky.5202030.xyz/)
-    - 每日普通用户可自行划转 200$ 到 newapi 站点
-    - [【包子公益站】更新一个总的汇总贴。现在上线了newapi的分站 ](https://linux.do/t/topic/1124776)
-  - [Elysiver](https://elysiver.h-e.top/console) 
   - [莹のAPI](https://api.wpgzs.top/console)
     - [公益站支持claude ](https://linux.do/t/topic/1351151)
     - rpm15
-    - [莹のapi 加油站](https://quota.wpgzs.top/)
+    - [莹のapi 加油站](https://quota.wpgzs.top/), 鸡你太美
     - [随时升天的公益站](https://any.97819781.xyz/)
+  - [Elysiver](https://elysiver.h-e.top/console), 站内签到
+  - [香草API - 高可用性的Gemini/GLM聚合AI站](https://ai.xiangcao.de/console)
   - [APIKEY_公益站](https://welfare.apikey.cc/console)
     - GLM-4.7, MiniMax-M2.1 限时免费 
   - [FovtAPI](https://api.voct.top/console), 论坛发码
     - [NewAPI签到系统](https://gift.voct.top/), 已失效
   - [ThatAPI](https://gyapi.zxiaoruan.cn/pricing)
+    - 有多个cc分组
   - [KFC API](https://kfc-api.sxxe.net/console)
     - [KFC API公益站 - 正式上线  ](https://linux.do/t/topic/1233747)
     - [逆水寒](https://api.sxxe.net/), 即将关闭
     - [逆水寒公益API——扬帆起航 ](https://linux.do/t/topic/1173036)
+  - [小呆API](https://new.184772.xyz/console)
   - [一个小站的 API 商店](https://one-api.ygxz.in/app/dashboard), 每日签到1刀内随机
     - 提供半公益的高质量 API 中转服务，始于202406
     - 无调用频率限制
@@ -433,6 +439,14 @@ modified: 2025-03-22T16:10:24.856Z
     - 支持claude,gemini, 不支持gpt
     - Gemini系列模型永久免费， 与Gemini对话不会消耗帐号余额（可忽视帐号余额）
   - [【公测开启】Kiro账号托管平台  ](https://linux.do/t/topic/1227895)
+  - [Huan API](https://ai.huan666.de/console)
+  - [包子铺](https://api.5202030.xyz/)
+    - [包子公益](https://api.codeqaq.com/)
+    - 只开放linuxdo lv2以上注册
+    - 支持gpt,claude,gemini, 但没有gpt5(有mini)
+    - [包子公益 - Baozi DoneHub](https://lucky.5202030.xyz/)
+    - 每日普通用户可自行划转 200$ 到 newapi 站点
+    - [【包子公益站】更新一个总的汇总贴。现在上线了newapi的分站 ](https://linux.do/t/topic/1124776)
   - 🗑️ [无言AI](https://aiai.li/panel), 每日签到, 已关闭
     - 支持cc
   - 🗑️ [我爱996公益](https://529961.com/), 服务停止

@@ -534,7 +534,21 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [Tested glm 4.7 for coding projects past week, comparison with deepseek and qwen : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1q0dkwz/tested_glm_47_for_coding_projects_past_week/)
+  - been doing a lot of python backend and react work, probably 200-300 api requests daily. been using deepseek v3 mainly but wanted to test glm 4.7 since it dropped recently
+  - vs deepseek v3: roughly same level for most tasks, maybe glm slightly better at keeping context in long conversations. deepseek still edges it out for very complex algorithmic stuff
+  - vs kimi: glm way less verbose. kimi would write essay explaining code, glm just gives you working code with brief explanation
+  - comparable to deepseek v3 for most tasks. slightly better context, slightly worse on complex algorithms
+  - tldr: glm 4.7 solid for coding, comparable to deepseek v3, better context than qwen, less verbose than kimi, open source, good for everyday dev work.
+
+- I myself have been using MiniMax M2.1 (UD‑Q4_K_XL) for coding over the past few days and I'm really impressed and happy with its performance. Some users around here even claim it outperforms GLM 4.7 for coding, and it's lighter (230B vs 355B), which is a nice advantage.
+
+- Opencode is offering GLM 4.7 and MiniMax 2.1 for free for a little bit. GLM 4.7 seems a little weaker than MiniMax because MiniMax follows directions extremely well and is very aligned to researching before implementing, which I have found to be extremely beneficial.
+  - Minimax has fairly up to date internal knowledge, but with a gentle nudge it will spawn the new 'explore' subagent, provide it with extremely useful instructions and directions, which will then call the opencode exa code / web search / fetch tools and return what it was asked.
+
+- Been bouncing between GLM and deepseek lately. both handle python really well. GLM does seem better at remembering context in longer debugging sessions.
+
+- I've heard (I dont't code in python) that python being front and center in the training dataset It generally has pretty good results. Other languages however - I code in rust and a lot of the models do not seem to be handling that very well.
 
 - ## [I tested GLM 4.7 and minimax-m2.1 and compared it to CC and Codex : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1pvr0w0/i_tested_glm_47_and_minimaxm21_and_compared_it_to/)
   - TL; DR Claude=best, mimimax-m2.1=excellent (surprised), Codex 5.2-med=very good, GLM-4.7=bad

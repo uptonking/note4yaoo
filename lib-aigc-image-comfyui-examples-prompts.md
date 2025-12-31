@@ -26,6 +26,7 @@ modified: 2025-09-13T09:32:22.969Z
   - 💡 [[Release] SID Z-Image Prompt Generator - Agentic Image-to-Prompt Node with Multi-Provider Support (Anthropic, Ollama, Grok) : r/comfyui](https://www.reddit.com/r/comfyui/comments/1phn65d/release_sid_zimage_prompt_generator_agentic/)
     - 输入原图 > 生成prompt > 生成新图, 可用于解决版权问题
   - [​⁡​‌​Nano Banana一致性改图模型评测汇总@阿真 整理版 - 飞书云文档](https://uahbgrt760r.feishu.cn/wiki/OAW5wM95MiUhmPktFJVcchi8nHe)
+  - [Nano Banana - nanobanana, gpt4o, chatgpt 提示词案例库](https://iris.findtruman.io/web/image_prompts?share=L)
 # prompts
 - A flat design graphic of a modern workspace, with simplified objects like a laptop, coffee cup, and lamp arranged in a colorful, two-dimensional scene with minimal shading.
 - A realistic UI/UX mockup of a sleek mobile banking app interface, showing both light and dark modes, clean typography, and intuitive button layouts on a smartphone screen.

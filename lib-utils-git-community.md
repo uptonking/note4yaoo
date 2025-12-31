@@ -436,6 +436,35 @@ modified: 2023-08-29T10:13:31.070Z
 
 - Does it avoid TLS completely here ? Would that not be sec concern though i suppose the protocol could handle that on its own maybe
   - Yes, they address this and recommend to use it alongside ssh or making it read only
+# discuss-parallel/worktree 🔀
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 我很好奇你们纯 vibe 不跑项目吗 如果要跑的这么解决每个 worktree 都要安装依赖的问题 用软连 or
+- https://x.com/yetone/status/2006325355381137659
+- 可以设置启动脚本，直接一键run
+
+- pnpm 好像可以设置全局缓存，新的worktree装起来也很快
+
+- 如果是 Node.js 项目，用 pnpm 就没那么大压力了。Python 项目，可以让不同 worktrees 共享同一个虚拟环境。 需要重复触发安装的问题可以交给 git hooks。
+
+- 我现在搞了一个 skill 每次开 worktree 就自动配置环境
+
+- 我现在 worktree 的最大问题是，两个 ts-server 直接让电脑卡住x
+
+- 以试试，多个 AI agent 并发跑确实可以提高效率，那个 conductor 的搞法我还是可以接受的，降低了蛮多 worktree 的成本
+
+- 要起多个 electron 进程也是很难以接受的
+  - 测试的时候先关掉第一个进程再开第二个不行吗
+
+- 这也是我不用 worktree 的原因，每次安装依赖花时间，主要是磁盘顶不住了。
+
+- 这种模式我一直比较好奇。如果是一些玩具的项目，那就纯粹当时浪费token玩玩好了。如果是在真实的项目，人的注意力也完全不够啊，尽管AI可以生成部分代码，但还是需要人的注意力的，这种开N个的打断的成本会很大。
 # discuss
 - ## 
 
