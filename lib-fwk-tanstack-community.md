@@ -96,7 +96,10 @@ modified: 2025-12-16T06:25:32.663Z
 
 - ## 
 
-- ## 
+- ## 📡 [Parallel Routes (named Outlets) Feature _202305](https://github.com/TanStack/router/discussions/605)
+  - I was wondering if there were plans to introduce parallel routes similar to what exists in Next.js which allows for matching multiple routes in the same segment but being independent chunks and with a different data URL.
+
+- Start is still only RC. It’ll be a bit l longer, but soon 
 
 - ## [Best way to migrate a large app from (old) React Router to Tanstack Router _202510](https://www.answeroverflow.com/m/1443596813851427007)
   - At Mastodon, we are looking into migrating our router from the old-style React Router (v6, using the v5 APIs) to Tanstack Router.

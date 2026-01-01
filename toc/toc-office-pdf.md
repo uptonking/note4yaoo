@@ -589,6 +589,11 @@ modified: 2021-01-04T17:26:43.784Z
 
 - https://github.com/leedrake5/unredact /GPL/202512/python
   - This repository contains a Python utility for extracting selectable (but visually redacted) text from PDF files and presenting it in a clear, human-readable format while preserving pagination and layout as closely as possible.
+
+- https://gitlab.com/Nystik/inkheart /apache2/202512/rust/js/svelte
+  - A self-hosted PDF library indexer and reader, written in Rust for the backend and Svelte for the frontend SPA.
+  - Direct linking to specific pages
+  - [Inkheart - Self-hosted PDF organisation and reader : r/selfhosted _202601](https://www.reddit.com/r/selfhosted/comments/1q11s7a/inkheart_selfhosted_pdf_organisation_and_reader/)
 # office
 - databyss /39Star/AGPLv3/202409/ts/js/inactive
   - https://github.com/databyss-org/databyss

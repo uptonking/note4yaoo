@@ -112,6 +112,9 @@ modified: 2022-11-07T10:25:12.034Z
     - 可用在内网穿透的场景
     - [手把手教你怎么用 Cloudflare Tunnel 穿透 HTTP / SSH / TCP 服务 _202510](https://linux.do/t/topic/1091998)
     - [使用 Cloudflare Tunnel 作為低成本的 ngrok 替代品：可自訂 domain 的 reverse tunneling 解決方案，讓外網連上本地 server | Medium](https://medium.com/@zetavg/%E4%BD%BF%E7%94%A8-cloudflare-tunnel-%E4%BD%9C%E7%82%BA%E4%BD%8E%E6%88%90%E6%9C%AC%E7%9A%84-ngrok-%E6%9B%BF%E4%BB%A3%E5%93%81-6b0aaef97557)
+# habit-recheck
+- dpdns域名需要在截止日期180天内续期, 截止日期是每年 1027
+  - https://dash.domain.digitalplat.org/auth/login?next=%2F
 # search-google
 - [Tips for efficiently Googling. Search by:](https://twitter.com/addyosmani/status/1444195449095737346)74570622/does-mastodon-has-advance-search)
   - This is not possible (intentionally / by design).

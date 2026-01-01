@@ -331,6 +331,17 @@ modified: 2025-03-22T16:10:24.856Z
 - resources
   - https://github.com/cheahjs/free-llm-api-resources
 
+- claude-latest
+  - [【Elysiver】Opus降价到0.2刀一次、元旦假期签到得10-100刀  _0101](https://linux.do/t/topic/1395641)
+    - 降价claude 4.5 opus到0.2一次，元旦以后应该也会保持这个价格
+    - 1月2号-4号签到获得10-100额度
+  - [分享点Claude4.5给大家玩 _0102](https://linux.do/t/topic/1396285)
+  - [[小呆公益站 ] 恢复+补偿--接着奏乐接着舞[农场恢复] _0102](https://linux.do/t/topic/1395912)
+    - 一周无限额度 API Key继续 还是不限速 不限额度
+    - https://api.daiju.live/
+    - sk-GqDZAnydvTjMEqSMm37gzrkFqYvVymwrINfak8syYzv4hUL2
+  - [寻找L站开源作者，UUcode送商业级API额度—— 优质开源项目扶持计划 1228](https://linux.do/t/topic/1370667)
+
 - tips: 公益站不稳定(3个月就倒闭一批), 来源不明可能导致效果差, 需要经常确认和维护, 不要浪费过多时间
   - 🤔 一种思路: tool-call时使用擅长tool-call的模型，分析时使用公益站的聊天优质但无法tool-call的模型
   - coding方案还可使用 ccr 转换 qwen-code-cli
@@ -340,7 +351,8 @@ modified: 2025-03-22T16:10:24.856Z
 - 免费api的技巧: 在知乎/小红书直接搜索 免费 claude (公益站), 就会有最新的api推广信息, 可以用小号邀请自己
   - 公益站 [Search results for '公益站' - LINUX DO](https://linux.do/search?q=%E5%85%AC%E7%9B%8A%E7%AB%99%20order%3Alatest)
   - [L站免费AI汇总 ](https://linux.do/t/topic/638821)
-  - [最新福利羊毛/福利羊毛, Lv2话题 - LINUX DO](https://linux.do/c/welfare/welfare-lv2/61)
+    - [最新福利羊毛话题](https://linux.do/c/welfare/36)
+    - [All-API-Hub：开源AI中转站集中管理和自己的New API增强管理，基于 one-api-hub 大幅重构增强 _202511](https://linux.do/t/topic/1001042)
   - 📌 [Agent Router](https://agentrouter.org/console), 每日签到获取$25
     - 模型支持 Claude Code、Codex、RooCode、Qwen Code、Gemini Cli 等多款工具
     - 仅支持coding工具，不支持使用api聊天
@@ -365,9 +377,11 @@ modified: 2025-03-22T16:10:24.856Z
     - 公益站干一两年了，都是白嫖的api
     - 现在Gemini的模型都用不了了，我也进不去主站了，副站也进不了，备用站无法登陆
     - [200刀用完关停](http://152.136.137.130/pricing)
-  - [123nhh](https://new.123nhh.xyz/pricing)
-    - [【nhh公益站】介绍贴及主贴  ](https://linux.do/t/topic/1370326)
+  - [123nhh](https://new.123nhh.xyz/pricing), 余额多
     - 模型来源谷歌反重力，rpm限制10/3min，不可用于NSFW，酒馆等
+    - 模型不稳定，经常异常再恢复再异常
+    - [【nhh公益站】介绍贴及主贴  ](https://linux.do/t/topic/1370326)
+    - [模型中转状态检测](https://status.123nhh.xyz/)
   - [Wind Hub](https://api.224442.xyz/panel)
     - 提供了free分组，包含deepseek-v3.2, gpt-4.1-mini
     - claude分组倍率低
@@ -391,44 +405,45 @@ modified: 2025-03-22T16:10:24.856Z
     - 改了下速率限制。现在变成5分钟25次，对自动化和roocode这些用户变好了很多
     - [薄荷公益站签到](https://qd.x666.me/)
     - 模型丰富: claude, gpt, gemini
-  - 📌 [KFC API](https://kfc-api.sxxe.net/)
+  - [KFC API](https://kfc-api.sxxe.net/)
     - Claude和gpt 暂时不支持工具调用, gemini模型没有pro
     - API 调用频率限制为 12RPM，公益站永久免费，采用公平限流策略以保障服务稳定
     - 别玩至尊场，1000积分一次警告扣16x，风险太高; 高级场的高积分也可以获得高收益
-  - [随时跑路公益](https://runanytime.hxi.me/console), 每天签到 10-25 刀
-    - [随时跑路福利站](https://fuli.hxi.me/)
-    - 完全支持 cc，主要是 sonnet 4.5，haiku 4.5 会自动重定向到 sonnet 4.5
-    - RPM 暂时定为 5，之后看情况调整
-    - [【随时跑路公益站】就是那个稳了一个月的AmazonQ2API公益，开放注册 ](https://linux.do/t/topic/1154353)
   - [WONG公益站](https://wzw.de5.net/console), 每日签到, cc
     - [WONG公益站](https://wzw.pp.ua/console)
     - [WONG公益站](https://newapi.netlib.re/)
     - rpm为30
     - 高效连接 Claude Code CLI
+  - [随时跑路公益](https://runanytime.hxi.me/console), 每天签到 10-25 刀
+    - [随时跑路福利站](https://fuli.hxi.me/)
+    - 完全支持 cc，主要是 sonnet 4.5，haiku 4.5 会自动重定向到 sonnet 4.5
+    - RPM 暂时定为 5，之后看情况调整
   - [黑与白chatAPI](https://ai.hybgzs.com/), 每日转盘
     - 模型丰富: claude/gemini, 但没有gpt5(有mini)
     - 很多openrouter渠道的模型
     - 本站完全免费！暂无任何充值通道
     - 绝大部分模型倍率换算后与官方价格相同，为缓解服务器资源压力，所有免费模型实际扣除配额均按付费标准计算
     - [黑与白chatAPI福利站](https://cdk.hybgzs.com/)
-  - [莹のAPI](https://api.wpgzs.top/console)
-    - [公益站支持claude ](https://linux.do/t/topic/1351151)
-    - rpm15
-    - [莹のapi 加油站](https://quota.wpgzs.top/), 鸡你太美
-    - [随时升天的公益站](https://any.97819781.xyz/)
   - [Elysiver](https://elysiver.h-e.top/console), 站内签到
-  - [香草API - 高可用性的Gemini/GLM聚合AI站](https://ai.xiangcao.de/console)
+  - [莹のAPI](https://api.wpgzs.top/pricing)，模型贵
+    - rpm15
+    - [莹のapi 加油站](https://quota.wpgzs.top/), 鸡你太美，每天可转100刀到公益站
+    - [公益站支持claude ](https://linux.do/t/topic/1351151)
+  - [莹のapi & 随时升天](https://supersb.me/console)，模型贵
+    - [随时升天的公益站](https://any.97819781.xyz/)
+  - [FovtAPI](https://api.voct.top/console), 论坛发码
+    - [NewAPI签到系统](https://gift.voct.top/), ~~已失效~~
   - [APIKEY_公益站](https://welfare.apikey.cc/console)
     - GLM-4.7, MiniMax-M2.1 限时免费 
-  - [FovtAPI](https://api.voct.top/console), 论坛发码
-    - [NewAPI签到系统](https://gift.voct.top/), 已失效
   - [ThatAPI](https://gyapi.zxiaoruan.cn/pricing)
-    - 有多个cc分组
+    - 有多个cc分组，IP限制严格
+  - [香草API](https://ai.xiangcao.de/console)
   - [KFC API](https://kfc-api.sxxe.net/console)
     - [KFC API公益站 - 正式上线  ](https://linux.do/t/topic/1233747)
     - [逆水寒](https://api.sxxe.net/), 即将关闭
     - [逆水寒公益API——扬帆起航 ](https://linux.do/t/topic/1173036)
   - [小呆API](https://new.184772.xyz/console)
+    - [小呆API](https://api.daiju.live/console)
   - [一个小站的 API 商店](https://one-api.ygxz.in/app/dashboard), 每日签到1刀内随机
     - 提供半公益的高质量 API 中转服务，始于202406
     - 无调用频率限制
@@ -440,6 +455,7 @@ modified: 2025-03-22T16:10:24.856Z
     - Gemini系列模型永久免费， 与Gemini对话不会消耗帐号余额（可忽视帐号余额）
   - [【公测开启】Kiro账号托管平台  ](https://linux.do/t/topic/1227895)
   - [Huan API](https://ai.huan666.de/console)
+  - [Fengye API](https://fengyeai.chat/console)
   - [包子铺](https://api.5202030.xyz/)
     - [包子公益](https://api.codeqaq.com/)
     - 只开放linuxdo lv2以上注册
@@ -560,6 +576,13 @@ modified: 2025-03-22T16:10:24.856Z
   - [foxcode](https://foxcode.rjj.cc/)
   - [AI Ping](https://aiping.cn/modelList)
 
+- embedding
+  - [embedding New API](https://router.tumuer.me/)
+    - [[Embedding 公益站] 专门提供 Embedding API 的迷你站 ](https://linux.do/t/topic/1385442)
+    - 服务器在国外，所以需要使用魔法
+    - [Embedding API 使用指南](https://embedding-docs.tumuer.me/)
+    - 来自 gemini, vertex 渠道的后来几天陆续添加。
+
 - llm-ui/apps
   - [SmallAI](https://free.smallai.asia/chat)
     - 基于lobechat实现
@@ -599,6 +622,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 提供免费的文生图模型: sdxl, sdv1-5
   - [Free AI Image Generator - AI Free Forever](https://aifreeforever.com/image-generators)
   - [Free Gemini Pro](https://freebanana.pro/)
+  - [FreeGen 白嫖图片生成器](https://hachimiai.dpdns.org/freegen/)
 
 - video-gen
   - [Video Studio](https://doubao.happieapi.top/)

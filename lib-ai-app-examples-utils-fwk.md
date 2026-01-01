@@ -273,6 +273,11 @@ modified: 2025-02-21T18:20:42.624Z
 
 ## router/gateway
 
+- https://github.com/ssrsgaga/API-Check /MIT/202601/ts
+  - https://api-check-beta.vercel.app/
+  - 快速的大模型 API 连通性测试工具。纯前端运行，支持 OpenAI 格式，数据仅在本地存储。
+  - [API Check大模型批量测活助手【多功能免费开源/Vercel一键部署/纯前端 _202601](https://linux.do/t/topic/1384242)
+
 - https://github.com/ulab-uiuc/LLMRouter /400Star/MIT/202512/python
   - https://ulab-uiuc.github.io/LLMRouter/
   - Open-Source Library for LLM Routing
@@ -365,15 +370,18 @@ modified: 2025-02-21T18:20:42.624Z
     - 支持 /gemini 原生生图请求的额外参数透传
     - 支持 gemini-2.0-flash-preview-image-generation 文生图 / 图生图，并兼容 OpenAI 对话接口
 
+- https://github.com/james-6-23/new_api_tools /202512/python/ts
+  - NewAPI-Tool 是一个专为 NewAPI (One API 分支) 设计的现代化增强管理中间件。
+  - 它通过直观的 Web 界面，补全了原版系统在数据可视化、充值记录审计、批量兑换码管理等方面的功能，帮助管理员更高效地运维系统
+  - 实时概览：用户数、Token、渠道、模型、兑换码等关键指标一目了然。
+  - 兑换码增强管理
+  - 充值记录审计
+  - 独立认证：拥有独立的管理后台登录机制，支持 JWT Session。
+  - 多数据库支持：完美支持 MySQL 和 PostgreSQL。
+
 - https://github.com/tbphp/gpt-load /5.4kStar/MIT/202510/go/ts/vue
   - https://www.gpt-load.com/
   - 智能密钥轮询的多渠道 AI 代理
-
-- https://github.com/qixing-jk/all-api-hub /MIT/202510/ts
-  - https://qixing-jk.github.io/all-api-hub/
-  - 一个开源的浏览器插件，聚合管理所有中转站账号的余额、模型和密钥，告别繁琐登录。
-  - 本项目为开源项目，在One API Hub的基础上进行二次开发
-  - https://github.com/fxaxg/one-api-hub /MIT
 
 - https://github.com/eraycc/API-Gateway-Manager /202511/ts
   - 基于 Next.js 的 AI API 中转站管理系统
@@ -387,6 +395,22 @@ modified: 2025-02-21T18:20:42.624Z
   - 目前市面上免费的使用国产的免费大模型越来越多，one-api对于个人用起来还是有点麻烦，就想要一个不要统计、流量、计费等等的适配程序即可。
   - 即使有些厂商说兼容openai的接口，但是实际上还是存在些许差异的
   - simple-one-api主要是解决以上2点，旨在兼容多种大模型接口，并统一对外提供 OpenAI 接口。
+
+- https://github.com/qixing-jk/all-api-hub /722Star/AGPL/202601/ts
+  - http://all-api-hub.qixing1217.top/
+  - 统一管理第三方 AI 聚合中转站与自建 New API：自动识别账号、查看余额、同步模型、管理密钥，全平台与云端备份
+  - 站点信息管理 - 多方式获取真实站点名称，支持签到状态检测和自动签到，可手动添加任意 AI 聚合中转站点
+  - 每个站点支持多个账号，账号分组与快速切换，余额和使用日志一目了然
+  - 查看站点支持的模型列表和价格信息
+  - 提供 New API 渠道管理 Beta 界面，直接在插件内维护渠道与重定向
+  - 全平台兼容 - 支持 Chrome、Firefox 浏览器，可在 Kiwi Browser 等移动端使用，支持深色模式自动切换
+  - WXT 负责多浏览器扩展工具链与构建流程
+  - [All-API-Hub：开源AI中转站集中管理和自己的New API增强管理，基于 one-api-hub 大幅重构增强 _202511](https://linux.do/t/topic/1001042)
+  - 最初基于 One API Hub 开发，现已大幅重构扩展。数据格式保持兼容，支持直接导入
+  - https://github.com/fxaxg/one-api-hub /MIT/202509/ts/inactive
+    - https://fxaxg.github.io/one-api-hub/
+    - 一个开源的浏览器插件，聚合管理AI中转站账号的余额、模型和密钥，告别繁琐登录
+    - [[开源] One-API-Hub：管理您的所有AI中转站账号的余额、模型和密钥，告别繁琐登录 _202507](https://linux.do/t/topic/833269)
 
 ## router-image 🖼️
 

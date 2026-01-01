@@ -17,6 +17,53 @@ modified: 2025-12-16T06:25:12.641Z
   - https://x.com/KevinVanCott/status/1949121990066868591
     - how to use TanStack Query with all of them.
 
+- https://github.com/dianprata/tanstack-shadcn-dashboard /202512/ts
+  - clean dashboard template built with tanstart-start
+  - SPA Architecture: Fully client-side rendered for fast navigation and interactions.
+  - 依赖@tanstack/react-router/start/query、base-ui、recharts
+  - https://github.com/themeselection/tanstack-dashboard-demo /202512/ts
+    - https://tanstack-dashboard-demo.vercel.app/dashboard
+    - admin dashboard build with tanstack-start and shadcn/ui
+    - 使用的是radix-ui
+    - https://github.com/Sulemana24/Admin-Dashboard
+  - https://github.com/GentaAmeku/dashboard-playground-tanstack-start
+    - Dashboard built in Tanstack Start(RC) + TypeScript + Tailwind CSS
+  - https://github.com/mailok/tanstack-starter
+
+- https://github.com/TomatoDroid/tanstack-start-admin-dashboard /202512/ts
+  - https://tanstack-start-admin-dashboard.vercel.app/
+  - 基于 TanStack Start + React 19 + Vite 7 的 SSR 后台模板，开箱即用
+  - 依赖zustand、aisdk、xyflow、cmdk、motion、recharts、streamdown
+  - TanStack Query 5 + @tanstack/react-router-ssr-query
+  - 表单：TanStack React Form、React Hook Form Resolver、Zod
+  - Zustand 搭配 Cookie 工具管理鉴权态
+  - 鉴权流程完整：src/features/auth 覆盖登录、注册、OTP、忘记密码，并与 stores/auth-store.ts 联动 Cookie。
+  - 任务、用户、设置等模块示例：src/features/* 与 src/routes/_authenticated/* 展示真实业务拆分方式。
+  - SSR 友好的数据获取：Query Client 通过 integrations/tanstack-query 统一创建，并由 Router Context 向下传递，确保首屏命中缓存。
+  - 📡 roadmap
+    - 首次点击部分route如/account时， 渲染会出现页面闪烁
+
+- https://github.com/tom-ludwig/sidebar-template /202512/ts/无start
+  - Shadcn Sidebar template for tanstack router.
+  - https://github.com/iampawanpoudel/multi-language-dashboard /202508/ts/无start
+    - https://multi-language-dashboard.netlify.app/
+    - React Multilingual Dashboard Template — Shadcn, TanStack Router, i18next
+
+- https://github.com/satnaing/shadcn-admin /10.7kStar/MIT/202512/ts/无start
+  - https://shadcn-admin.netlify.app/
+  - Admin Dashboard UI built with Shadcn and Vite
+  - 依赖zustand、@tanstack/react-router/query/table、radix-ui、cmdk、recharts、react-hook-form、sonner
+  - This project uses Shadcn UI components, but some have been slightly modified for better RTL (Right-to-Left) support and other improvements.
+  - Auth (partial): Clerk
+  - https://github.com/tangledup-ai/stepfun-vector-stores-admin
+    - 阶跃星辰知识库管理系统
+  - https://github.com/Cahllagerfeld/tanstack-router-dashboard /202601/ts/无start
+    - Tanstack Router, React Query
+    - 缺少后端api代码， 但可参考前端架构
+    - https://github.com/devarkarr/tanstack-router-dashboard
+  - https://github.com/nbost130/mithrandir-admin /MIT/ts/无start/需api
+  - https://github.com/Hank95/f1-data-viz
+
 - https://github.com/osadavc/tanchat /93Star/apache2/202512/ts
   - Chat SDK is a free, open-source template built with TanStack Start and the AI SDK that helps you quickly build powerful chatbot applications.
   - a fork of `vercel/ai-chatbot`, adapted for the TanStack ecosystem.
@@ -40,6 +87,11 @@ modified: 2025-12-16T06:25:12.641Z
   - React Hook for syncing TanStack Table state with URL search params.
   - 支持nextjs, tanstack-router, react-router
 
+- https://github.com/Abhirup-99/tanstack-demo /202509/ts
+  - https://abhirup-99.github.io/tanstack-demo/
+  - a minimal setup to get React working in Vite with HMR and some ESLint rules.
+  - Virtualized Table - 10, 000 Rows × 31 Columns
+
 - https://github.com/sidiDev/next-to-tanstack /202512/ts
   - A CLI to migrate Next.js 14 or 15 projects to TanStack Start
   - Swaps Next.js dependencies for TanStack Router and Start
@@ -59,33 +111,51 @@ modified: 2025-12-16T06:25:12.641Z
 - https://github.com/TanStack/create-tsrouter-app /1.1kStar/MIT/202512/ts
   - drop-in replacement for create-react-app that builds TanStack Router based SPA applications
 
-- https://github.com/agustinusnathaniel/vite-react-tailwind-starter /MIT/202512/ts
+- https://github.com/agustinusnathaniel/vite-react-tailwind-starter /MIT/202512/ts/单route
   - http://vite-react-tailwind-starter.sznm.dev/
   - template to initialize TanStack router app with TailwindCSS setup
-  - https://github.com/lightsound/tanstack-start-start
-    - minimal starter template for TanStack Start
+
+- https://github.com/lightsound/tanstack-start-start /MIT/202512/ts/单文件
+  - minimal starter template for TanStack Start
 
 - https://github.com/instructa/constructa-starter-min /MIT/202511/ts
   - https://constructa-starter-min.vercel.app/
   - Minimal Tanstack Starter with shadcn, tailwind v4
+  - 结构完整，包含 api test
 
-- https://github.com/Abhirup-99/tanstack-demo /202509/ts
-  - https://abhirup-99.github.io/tanstack-demo/
-  - a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- https://github.com/crimsonsunset/hh-dashboard /202511/ts/start
+  - https://hh-dashboard.netlify.app/
+  - Modern data exploration interface for analyzing LLM response patterns and performance metrics - Built with React, TypeScript, and TanStack Router
+  - 依赖zustand、antd、ahooks
 
 - https://github.com/backpine/tanstack-start-on-cloudflare /202512/ts
   - full-stack React application built with TanStack Start and deployed on Cloudflare Workers. 
   - This template showcases server functions, middleware, type-safe data fetching, and seamless integration with Cloudflare's edge computing platform
-  - https://github.com/backpine/tanstack-start-beta-on-cloudflare
+  - Cloudflare Workers - Edge computing platform
+  - https://github.com/backpine/tanstack-start-beta-on-cloudflare /202505/ts/inactive
 
 - https://github.com/laoer536/vite-react-TypeScript-TanStack-zustand-Eslint-prettier-template /MIT/202509/ts/inactive
   - https://laoer536.github.io/vite-react-TypeScript-TanStack-zustand-Eslint-prettier-template/
   - simple generic example template. And it includes front-end Docker deployment capability.
+  - tanstack-router, zustand, framer-motion
+
+- https://github.com/paceui/saaskit-starter /NCLic/202512/ts  
+  - https://saaskit.paceui.com/
+  - https://saaskit.paceui.com/dashboard
+  - Launch your next SaaS idea faster with power that scales
+  - Better-Auth setup with functional Sign In and Sign Up UIs
+  - Modular Architecture: Designed to be easily extended or stripped down.
 
 - https://github.com/Vijayabaskar56/tanstack-start-faster /202512/ts
   - https://tanstack-faster.tancn.dev/
   - performant e-commerce template using TanStack and Cloudflare, inspired by NextFaster
   - showcases the power of TanStack Router, Query, and Start deployed on Cloudflare's edge platform.
+  - All mutations are managed via TanStack Query with optimistic updates
+  - TanStack Router preloading is used to prefetch data and components
+  - Uses Drizzle ORM on top of Cloudflare D1
+  - Images stored on Cloudflare R2
+  - Cloudflare KV for edge caching and session storage
+  - Used v0 to generate all initial UIs
   - https://github.com/ethanniser/NextFaster /MIT/202512/ts
     - https://next-faster.vercel.app/
     - performant e-commerce template using Next.js
@@ -118,10 +188,6 @@ modified: 2025-12-16T06:25:12.641Z
   - A simple example of using Tanstack Router SSR with Hono in a monolith
   - full-stack React application template combining TanStack Router with Hono for server-side rendering
 
-- https://github.com/paceui/saaskit-starter /NCLic/202512/ts  
-  - https://saaskit.paceui.com/
-  - Launch your next SaaS idea faster with power that scales
-
 - https://github.com/JuanPabloGilA/hono-react-boilerplate /MIT/202509/ts
   - a boilerplate for react, postgres, hono, drizzle, ai, better-auth, tanstack-query, tanstack-router, shadcn and tailwind
 - https://github.com/Kroro1208/tanstack-hono-start
@@ -129,19 +195,75 @@ modified: 2025-12-16T06:25:12.641Z
 
 - https://github.com/jellekuipers/kolm-start-admin /MIT/202512/ts
   - A TanStack Start + better-auth admin starter with Prisma ORM, React Aria, Tailwind, i18next.
+  - https://github.com/nabeel-workspace/betterdash /MIT/202512/ts/start
+    - https://betterdash.vercel.app/
+    - full-stack admin dashboard starter built with TanStack Router, Better Auth, and Shadcn UI.
+    - Prisma ORM
+    - Modules: Includes pre-built modules for Users, Tasks, Settings, and more.
 
 - https://github.com/thecodingmontana/tauri-tanstarter /202512/ts
   - boilerplate for building native desktop applications with Tauri, React, TanStack Router
+  - https://github.com/borngreat-ikwutah/tanstack-tauri-template
+    - Desktop Applications with Tanstack Router, Tauri, TailwindCSS, Vite And Rust
+
+- https://github.com/CarlosZiegler/electron-tanstack /202503/ts/inactive
+  - electron app using Tanstack Router + Shadcn
+  - https://github.com/jwheeler0424/electron-tanstack-router
 
 - https://github.com/CarterPerez-dev/fullstack-template /41Star/MIT/202512/python/ts
   - Full Stack template for FastAPI, React 19 TypeScript, SCSS, Tanstack Query, Zustand, Nginx, Docker
+
+- https://github.com/mailok/react-spa-starter /202510/ts/inactive
+  - https://react-spa-starter.vercel.app/
+  - Modern React SPA template with React Router v7, shadcn/ui, TypeScript, TanStack Query, and pre-built dashboard layouts for rapid development
+
+- https://github.com/halolight/halolight-react /202512/ts
+  - https://halolight.docs.h7ml.cn/guide/react
+  - 基于 React 19 + Vite 6 + TypeScript 的现代化中文后台管理系统。
+  - 依赖react-router.v6、zustand、react-query
+  - https://github.com/halolight/halolight
+    - Next.js 15 企业级管理后台
 # examples
-- https://github.com/Kiranism/tanstack-start-dashboard /MIT/202512/ts
+- https://github.com/murabcd/docufy /202512/ts
+  - https://docufy-oss.vercel.app/
+  - Notion-like Platform Built with TanStack Start, TanStack AI and Convex
+  - Tiptap v3
+  - Collaborative editing with ProseMirror Sync from Convex
+  - with the Tanstack AI, you can switch LLM providers to Anthropic, Ollama, Gemini, and many more
+
+- https://github.com/nbost130/mithrandir-admin /MIT/202601/ts
+  - Mithrandir Admin Dashboard - Unified admin interface for managing services on the Mithrandir server. 
+  - Built with React, TanStack Router, and shadcn/ui.
+  - This dashboard MUST use the Mithrandir Unified API (port 8080)
+  - The dashboard integrates with the Mithrandir Unified API, which acts as an API Gateway/BFF (Backend for Frontend)
+  - DO NOT point directly to backend services (e.g., port 9003). The Unified API provides: Centralized CORS, authentication, rate limiting
+  - https://github.com/nbost130/mithrandir-unified-api /ts
+    - Enhanced TypeScript-based unified API gateway for Mithrandir system management with transcription project management.
+    - Dashboard Analytics - System metrics, job statistics, activity tracking, and trend visualization
+    - Transcription Proxy - Full CRUD operations for transcription job management
+    - Resilient Architecture - Circuit breakers, retry logic, and comprehensive error handling
+  - https://github.com/nbost130/transcription-palantir /MIT/ts
+    - Modern TypeScript transcription system with BullMQ, Redis, and Whisper.cpp integration
+    - Transcription Palantir is a BACKEND SERVICE - it focuses exclusively on audio transcription processing. It is NOT intended for direct frontend access.
+    - ✅ Frontends → Access via Mithrandir Unified API (port 8080) at /transcription/*
+    - ✅ Backend Services → Can access directly at port 9003 for service-to-service communication
+    - ❌ DO NOT configure frontends to access port 9003 directly
+
+- https://github.com/dyeoman2/tanstack-start-template /MIT/202510/ts/convex
+  - https://tanstack-start-convex.netlify.app/
+  - TanStack Start template with Convex real-time DB, BetterAuth, Tailwind, ShadcnUI, AI playground, admin dashboard, and automated setup scripts deployed on Netlify.
+  - Dashboard - View real-time statistics and metrics with live data updates via Convex subscriptions
+  - AI Playground - Streaming text generation with Cloudflare Workers AI
+  - User profile management and settings
+  - User management (view, edit, delete users)
+  - Parallel data loading with route loaders and Convex real-time queries
+
+- https://github.com/Kiranism/tanstack-start-dashboard /MIT/202512/ts/legacy
   - https://dub.sh/tanstack-start-dashboard
   - Admin Dashboard Starter with Tanstack Start + Shadcn Ui
-  - This template uses an older version with Vinxi, and I’m working on updating it to the Vite version.
+  - This template uses an older version with `Vinxi`, and I’m working on updating it to the Vite version.
 
-- https://github.com/kurochenko/tanstack-start-breadcrumbs-example /202512/ts
+- https://github.com/kurochenko/tanstack-start-breadcrumbs-example /202512/ts/ssr
   - https://tanstack-start-breadcrumbs-example.netlify.app/
   - A demonstration of how to implement dynamic breadcrumbs in TanStack Start that automatically update after mutations using router.invalidate().
   - Server-Side Rendering: Organizations and employees are loaded via server functions
@@ -151,7 +273,7 @@ modified: 2025-12-16T06:25:12.641Z
   - https://x.com/kurochenko/status/2000643718215303344
     - A few months back, I shared how to implement dynamic breadcrumbs in TanStack Router. It worked well for client-side routing, so I ported the example to TanStack Start to add proper SSR support
     - This is super similar to what I built back before devinxi but way cleaner. 
-  - https://github.com/kurochenko/tanstack-router-breadcrumbs-example /202412/ts
+  - https://github.com/kurochenko/tanstack-router-breadcrumbs-example /202412/ts/csr
     - demonstrates how to implement dynamic breadcrumbs in a React application using TanStack Router 
 
 - https://github.com/Vijayabaskar56/tancn /MIT/202512/ts
@@ -164,12 +286,6 @@ modified: 2025-12-16T06:25:12.641Z
   - https://confhub.tech/
   - Discover the best tech conferences, meetups, and workshops happening around the world.
   - 典型的 list-item 视图
-
-- https://github.com/murabcd/docufy /202512/ts
-  - https://docufy-oss.vercel.app/
-  - Notion-like Platform Built with TanStack Start, TanStack AI and Convex
-  - Tiptap v3
-  - Collaborative editing with ProseMirror Sync from Convex
 
 - https://github.com/blinkdisk/blinkdisk /FSL/202512/ts
   - https://blinkdisk.com/
@@ -305,6 +421,14 @@ modified: 2025-12-16T06:25:12.641Z
 # router
 - https://github.com/Balastrong/tanstack-router-demo /202512/ts
   - TanStack Router Tutorial (code for each chapter is on its own branch)
+
+- https://github.com/hemengke1997/tanstack-router-keepalive /MIT/202508/ts/inactive
+  - https://hemengke1997.github.io/tanstack-router-keepalive/
+  - a route-level keepalive solution for @tanstack/react-router. It provides a way to cache the component instance when the route is switched, and reuse it when the route is switched back.
+
+- https://github.com/Ryanjso/tanstack-router-sitemap /MIT/202507/ts/inactive
+  - Generates sitemap.xml from your routes
+  - Supports dynamic routes
 # start
 
 # virtual

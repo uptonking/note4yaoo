@@ -16,7 +16,16 @@ modified: 2024-02-14T12:35:31.547Z
 
 - ## 
 
-- ## 
+- ## [What Unique Python Projects Have You Built to Solve Everyday Problems? : r/Python _202601](https://www.reddit.com/r/Python/comments/1q0h45r/what_unique_python_projects_have_you_built_to/)
+- I have shared PyPDFForm a couple times on this sub. Basically a library with everything you need to interact with PDF forms. 
+
+- Me when I want to crowdsource ideas but I'm too lazy to even write the post without AI
+
+- A mail processing script for a law firm.
+
+- I wrote a script, then converted it to a notebook for documentation, to compare two datasets for monthly reconciliation in a mortgage company.
+
+- I always build something to automate my stuff Example like commiting stuff or deploying stuff
 # discuss-news
 - ## 
 
