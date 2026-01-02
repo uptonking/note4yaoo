@@ -53,6 +53,7 @@ modified: 2021-07-20T13:50:23.433Z
     - 网盘: 数据展示和回收站，经典使用场景，大多数cms都有且用来存储资源
 
 - lts-tech-stack 可协作/同步(离线)、版本历史、自动化
+  - 选择技术栈时，多问自己，是否愿意，是否有条件持续维护/轻度封装/仅使用
   - techstacks: editor, excel, workflow/ai, drive, whiteboard
   - products: knowledgebase + workflow, 卖工具(铲子)比卖产品更长久
   - 🌰 lts: vscode/ide/~~office~~, git/vcs(history/sync), LSP/MCP(backlink)/auto
@@ -196,13 +197,18 @@ modified: 2021-07-20T13:50:23.433Z
   - dropbox/google-drive
   - chat, forum
 
-- ✨ admin-dashboard > strapi
+- reusable
+- ✨ admin/dashboard > strapi
   - react-admin
   - tremor
+  - fwk: react, nextjs, tanstack
 - ✨ editor-wiki(web+pc)
   - outline
   - notesnook
   - mdSilo
+- file-manager
+  - vscode-like
+  - jupyter
 
 - features
   - local-first/offlineable/localizable

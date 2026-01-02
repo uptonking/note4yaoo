@@ -99,7 +99,7 @@ modified: 2022-11-04T14:22:17.373Z
 - https://github.com/fagbokforlaget/simple-fs  /js
   - Handles files on indexeddb like you would do in node.js (promise)
 
-- https://github.com/playerony/indexeddb-fs
+- https://github.com/playerony/indexeddb-fs /103Star/MIT/202303/ts/inactive
   - An "fs" kind of library dedicated to the browser.
 
 - https://github.com/piatkowski/filequeue.js

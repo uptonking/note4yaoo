@@ -247,7 +247,7 @@ modified: 2021-01-04T17:26:43.784Z
   - a powerful web based PDF Editor with tools fexamplesor editing, converting, and manipulating PDFs.
   - Merge, compress, add or remove pages, or extract text using OCR technology. 
 
-- https://github.com/ShizukuIchi/pdf-editor /202011/js/inactive
+- https://github.com/ShizukuIchi/pdf-editor /1.8kStar/MIT/202403/js/inactive
   - https://pdf-editor.now.sh/
   - Offline PDF editor. Add images, signatures, text to PDF in your browser
 

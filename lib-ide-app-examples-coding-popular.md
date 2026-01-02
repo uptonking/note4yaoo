@@ -228,6 +228,17 @@ modified: 2025-12-11T18:10:23.710Z
   - [How feasible is it to add support for other CLI agents like Gemini? _202507](https://github.com/siteboon/claudecodeui/discussions/13)
     - Gemini CLI is there yet. It's important to be able to work in non interactive mode for the Chat function to work.
 
+- https://github.com/milisp/codexia /335Star/MIT > AGPL/202601/ts/tauri
+  - https://github.com/codexia-team/codexia /renamed
+  - ~~A powerful GUI and Toolkit for Codex CLI~~
+  - A powerfull GUI/IDE and Toolkit for Codex CLI + Claude Code. FileTree + prompt notepad + git worktree and more
+  - fork chat, file-tree integration, notepad, git diff, build-in pdf csv/xlsx viewer, and more.
+  - [We built Codexia - A free and open-source powerful GUI app and Toolkit for Codex CLI : r/ChatGPTCoding _202511](https://www.reddit.com/r/ChatGPTCoding/comments/1op0yr6/we_built_codexia_a_free_and_opensource_powerful/)
+  - Is there git worktree integration?
+    - No, but in my plan
+  - https://github.com/milisp/codexia-zen
+    - GUI for OpenAI Codex CLI, minimalist design
+
 - https://github.com/winfunc/opcode /19.1kStar/AGPL/202510/ts/rust/tauri/inactive
   - https://opcode.sh/
   - A powerful GUI app and Toolkit for Claude Code
@@ -349,16 +360,6 @@ modified: 2025-12-11T18:10:23.710Z
     - Add a5c agent workflow template
   - https://github.com/epuerta9/codex-go /apache2/202504/go/inactive
     - codex port in Go
-
-- https://github.com/milisp/codexia /300Star/MIT/202511/ts/tauri
-  - https://github.com/codexia-team/codexia /renamed
-  - A powerful GUI and Toolkit for Codex CLI
-  - fork chat, file-tree integration, notepad, git diff, build-in pdf csv/xlsx viewer, and more.
-  - [We built Codexia - A free and open-source powerful GUI app and Toolkit for Codex CLI : r/ChatGPTCoding _202511](https://www.reddit.com/r/ChatGPTCoding/comments/1op0yr6/we_built_codexia_a_free_and_opensource_powerful/)
-  - Is there git worktree integration?
-    - No, but in my plan
-  - https://github.com/milisp/codexia-zen
-    - GUI for OpenAI Codex CLI, minimalist design
 
 - https://github.com/lulu-sk/CodexFlow /apache2/202512/ts
   - an enhanced GUI tool designed for Codex CLI, focused on improving conversation management and interaction. 

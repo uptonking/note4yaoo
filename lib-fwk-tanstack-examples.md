@@ -42,9 +42,11 @@ modified: 2025-12-16T06:25:12.641Z
   - SSR 友好的数据获取：Query Client 通过 integrations/tanstack-query 统一创建，并由 Router Context 向下传递，确保首屏命中缓存。
   - 📡 roadmap
     - 首次点击部分route如/account时， 渲染会出现页面闪烁
+    - aisdk > tanstack-ai
 
 - https://github.com/tom-ludwig/sidebar-template /202512/ts/无start
   - Shadcn Sidebar template for tanstack router.
+  - sidebar交互是inset，可隐藏
   - https://github.com/iampawanpoudel/multi-language-dashboard /202508/ts/无start
     - https://multi-language-dashboard.netlify.app/
     - React Multilingual Dashboard Template — Shadcn, TanStack Router, i18next
@@ -53,6 +55,8 @@ modified: 2025-12-16T06:25:12.641Z
   - https://shadcn-admin.netlify.app/
   - Admin Dashboard UI built with Shadcn and Vite
   - 依赖zustand、@tanstack/react-router/query/table、radix-ui、cmdk、recharts、react-hook-form、sonner
+  - 提供了配置面板来设置布局、主题、侧边栏交互
+  - 侧边栏可折叠，也可全部隐藏
   - This project uses Shadcn UI components, but some have been slightly modified for better RTL (Right-to-Left) support and other improvements.
   - Auth (partial): Clerk
   - https://github.com/tangledup-ai/stepfun-vector-stores-admin
@@ -107,6 +111,20 @@ modified: 2025-12-16T06:25:12.641Z
   - User authentication with JWT
   - Session management with HTTP-only cookies
   - [Hey I built this project with TanStack Start and Strapi and looking for some feedback : r/Strapi _202511](https://www.reddit.com/r/Strapi/comments/1ow6ozk/hey_i_built_this_project_with_tanstack_start_and/)
+
+- https://github.com/ln-dev7/square-ui /3.1kStar/MIT/202601/ts
+  - https://square.lndev.me/
+  - Collection of beautifully crafted open-source layouts UI built with shadcn/ui
+  - [Files ](https://square-ui-files.vercel.app/)
+  - [Dashboard ](https://square-ui-dashboard-4.vercel.app/)
+  - 看板[Tasks](https://square-ui-tasks.vercel.app/)
+  - [Task Management](https://square-ui-task-management.vercel.app/)
+  - [Circle like linear](https://circle.lndev.me/lndev-ui/team/CORE/all)
+  - [Projects Timeline](https://square-ui-projects-timeline.vercel.app/)
+  - [Calendar](https://square-ui-calendar.vercel.app/)
+  - [Chat Interface](https://square-ui-chat.vercel.app/)
+  - 📡 roadmap
+    - migrate to tanstack
 # starter/templates
 - https://github.com/TanStack/create-tsrouter-app /1.1kStar/MIT/202512/ts
   - drop-in replacement for create-react-app that builds TanStack Router based SPA applications
@@ -206,9 +224,19 @@ modified: 2025-12-16T06:25:12.641Z
   - https://github.com/borngreat-ikwutah/tanstack-tauri-template
     - Desktop Applications with Tanstack Router, Tauri, TailwindCSS, Vite And Rust
 
+- https://github.com/cheriot/electron-tanstack-demo /MIT/202601/ts
+  - Electron wrapping a Tanstack Start app
+  - Demo of turning a Tanstack Start app into a desktop app. 
+  - web-ui/ still runs as a web app for maximum optionality.
+  - 示例丰富，包括drizzle/orpc
+
+- https://github.com/jwheeler0424/electron-tanstack-router /202512/ts/无start
+  - 示例基于router kitchen sink
+  - 打包构建使用electron-forge
+- https://github.com/ezoltech/electronjs-vitets-shadcn-tanstack-starter /ts/无start/依赖少
+  - combining the power of Electron with the speed of Vite and the elegance of React.
 - https://github.com/CarlosZiegler/electron-tanstack /202503/ts/inactive
   - electron app using Tanstack Router + Shadcn
-  - https://github.com/jwheeler0424/electron-tanstack-router
 
 - https://github.com/CarterPerez-dev/fullstack-template /41Star/MIT/202512/python/ts
   - Full Stack template for FastAPI, React 19 TypeScript, SCSS, Tanstack Query, Zustand, Nginx, Docker
@@ -231,6 +259,15 @@ modified: 2025-12-16T06:25:12.641Z
   - Collaborative editing with ProseMirror Sync from Convex
   - with the Tanstack AI, you can switch LLM providers to Anthropic, Ollama, Gemini, and many more
 
+- https://github.com/dyeoman2/tanstack-start-template /MIT/202510/ts/convex
+  - https://tanstack-start-convex.netlify.app/
+  - TanStack Start template with Convex real-time DB, BetterAuth, Tailwind, ShadcnUI, AI playground, admin dashboard, and automated setup scripts deployed on Netlify.
+  - Dashboard - View real-time statistics and metrics with live data updates via Convex subscriptions
+  - AI Playground - Streaming text generation with Cloudflare Workers AI
+  - User profile management and settings
+  - User management (view, edit, delete users)
+  - Parallel data loading with route loaders and Convex real-time queries
+
 - https://github.com/nbost130/mithrandir-admin /MIT/202601/ts
   - Mithrandir Admin Dashboard - Unified admin interface for managing services on the Mithrandir server. 
   - Built with React, TanStack Router, and shadcn/ui.
@@ -248,15 +285,6 @@ modified: 2025-12-16T06:25:12.641Z
     - ✅ Frontends → Access via Mithrandir Unified API (port 8080) at /transcription/*
     - ✅ Backend Services → Can access directly at port 9003 for service-to-service communication
     - ❌ DO NOT configure frontends to access port 9003 directly
-
-- https://github.com/dyeoman2/tanstack-start-template /MIT/202510/ts/convex
-  - https://tanstack-start-convex.netlify.app/
-  - TanStack Start template with Convex real-time DB, BetterAuth, Tailwind, ShadcnUI, AI playground, admin dashboard, and automated setup scripts deployed on Netlify.
-  - Dashboard - View real-time statistics and metrics with live data updates via Convex subscriptions
-  - AI Playground - Streaming text generation with Cloudflare Workers AI
-  - User profile management and settings
-  - User management (view, edit, delete users)
-  - Parallel data loading with route loaders and Convex real-time queries
 
 - https://github.com/Kiranism/tanstack-start-dashboard /MIT/202512/ts/legacy
   - https://dub.sh/tanstack-start-dashboard
@@ -291,6 +319,7 @@ modified: 2025-12-16T06:25:12.641Z
   - https://blinkdisk.com/
   - Modern backups for absolutely everyone.
   - End-to-End Encrypted: All backups are encrypted before they ever leave your device.
+  - Simple Setup: no tech stills needed. BlinkDisk works out of the box, whether you're bringing your own S3 keys or using BlinkDisk Cloud.
   - macOS, Windows, or Linux
 
 - https://github.com/notKamui/miniverso /MIT/202512/ts

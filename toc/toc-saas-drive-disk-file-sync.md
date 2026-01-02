@@ -161,6 +161,14 @@ modified: 2024-03-31T17:45:16.789Z
   - https://github.com/spf13/afero /6.4kStar/apache2/202508/go
     - The Universal Filesystem Abstraction for Go
 
+- https://github.com/xiaobaidadada/filecat /apache2/202601/ts
+  - 一个基于 Web 的文件服务器、服务器管理工具。集成了文件管理、超大日志查看、远程终端访问、系统进程监控，以及包括 VPN、SSH、RDP、HTTP、TCP 等多种网络代理功能。支持windows、linux、mac。
+  - 本项目是对filebrowser的功能增强，使用和filebrowser一样的ui，以服务器文件管理为基础添加一些服务器控制功能
+  - 文件管理: 支持断点分块上传、多个根目录、代码\图片编辑、编辑器模式、白板绘图...
+  - 终端：相比filebrowser使用了xterm.js，并且采用了虚拟shell完美实现命令的权限过滤，避免用户执行类似 rm -r / 的危险命令
+  - CI/CD自动化构建：内置了一个模仿github workflow 语法实现的自动化构建功能，作用于以.act结尾的文件
+  - ssh代理: 可以管理多个linux服务器，作用和winscp类似，让终端和文件管理更方便。除此之外还支持http代理，rdp远程桌面(windows)等代理
+
 - https://github.com/OpenListTeam/OpenList /15.5kStar/AGPL/202509/go
   - A new AList Fork to Anti Trust Crisis
   - https://github.com/OpenListTeam/OpenList-Frontend /MIT/202509/ts/solidjs

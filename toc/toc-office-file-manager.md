@@ -8,6 +8,11 @@ modified: 2021-08-23T05:27:08.068Z
 # toc-office-file-manager
 
 # guide
+
+- tips
+  - 不要执着于独立的的file组件，在成熟产品如vscode/clouddrive/strapi/CMS/paperless/obsidian中都存在文件管理实现可参考
+    - 更适合参考网盘类产品的文件管理逻辑，因为会处理大量文件的场景
+
 - 文件管理器的url路径设计
   - github示例 支持多个branch、tag
     - note4yaoo/blob/main/attachment/tech/node架构图.png
@@ -24,12 +29,29 @@ modified: 2021-08-23T05:27:08.068Z
   - onedrive示例  内层文件夹url扁平化
     - /?id=uuid-folder&cid=AE0F511DC7381EDB
 # file-ui
+- https://github.com/jpmorganchase/jupyter-fs /238Star/apache2/202601/python/ts
+  - A plugin for JupyterLab that lets you set up and use as many filebrowsers as you like, connected to whatever local and/or remote filesystem-like resources you want.
+  - The backend is built on top of `PyFilesystem` and `fsspec`, while the frontend is built on top of `tree-finder`.
+  - PyFilesystem
+    - osfs: os filesystem. The will open a new view of your local filesystem, with the specified root
+    - s3: opens a filesystem pointing to an Amazon S3 bucket
+    - smb: opens a filesystem pointing to a Samba share
+    - jupyter-fs can open a filebrowser pointing to any of the diverse resources supported by PyFilesystem. Currently, we test only test the S3 and smb/samba backends as part of our CI
+  - https://github.com/tree-finder/tree-finder /BSD/202512/ts
+    - Versatile tree-viewer/filebrowser widget, built on top of regular-table
+
 - react-sortable-tree /MIT/3.3kStar/202005
   - https://github.com/frontend-collective/react-sortable-tree
   - https://frontend-collective.github.io/react-sortable-tree/
   - https://github.com/frontend-collective/react-sortable-tree-theme-file-explorer
   - 依赖 react-virtualized, react-dnd, react-dnd-html5-backend
   - Drag-and-drop sortable component for nested data and hierarchies
+
+- https://github.com/ln-dev7/square-ui/tree/master/templates-baseui/files /MIT/202601/ts/依赖少
+  - https://square-ui-files.vercel.app/
+  - Modern file manager with folders, storage overview, file grid/list view, and navigation.
+  - 依赖zustand、nextjs、base-ui
+  - 删除文件、上传文件未实现
 
 - https://github.com/wx-chevalier/web-file-manager
   - 基于 React & TS 的文件管理器
@@ -50,6 +72,12 @@ modified: 2021-08-23T05:27:08.068Z
   - A File Browser component for React.
   - 依赖react-window、react-dnd、styled-components、material-ui.v4、react-jss、reduxjs/toolkit
 
+- https://github.com/svar-widgets/filemanager /MIT/202512/ts/svelte
+  - https://svar.dev/svelte/filemanager/
+  - Easy-to-use Svelte file manager (file explorer) component
+  - Integrate it with any backend, whether you're using local storage, databases, or cloud services.
+  - Split view to manage files between different locations
+
 - https://github.com/reactfilemanager/core
   - https://github.com/reactfilemanager/php-server
 # file-manager-fullstack
@@ -59,6 +87,24 @@ modified: 2021-08-23T05:27:08.068Z
   - 上传后文件保存为服务器本地文件，而不是数据库中，所以搜索不方便
   - https://github.com/MrWangJustToDo/requestModule
     - 可能是后端的简单测试
+  - https://github.com/serverwentdown/file-manager /js/inactive
+    - A basic node.js file manager
+
+- https://github.com/zeitmaschinen/GalleryFlow /33Star/MIT/202510/python/ts/inactive
+  - A modern web application for browsing and managing ComfyUI-generated images with advanced metadata support.
+  - Workflow visualization for each image and copy JSON to clipboard
+  - Recursively reads all folders, so you never miss an image
+  - WebSocket support for real-time updates
+  - Direct integration with ComfyUI workflows
+  - Frontend: React 18, TypeScript, Material UI
+  - Backend: FastAPI, SQLAlchemy, Python 3.10+
+  - Other: WebSockets, React Flow, custom theming, responsive design
+
+- https://github.com/kannifarhad/CronusFileManager /MIT/202510/ts
+  - Filemanager with React & Nodejs
+  - React, Redux, Material UI, Nodejs, ExpressJs
+  - 提供了前端和后端实现
+  - virtual scroll loading to address performance issues when dealing with large folders containing more than 500 files.
 
 - https://github.com/GamEditor/Node.js-FileManager
   - This is a simple file manager for download and upload files on the server by categories.
@@ -91,11 +137,6 @@ modified: 2021-08-23T05:27:08.068Z
   - supports connectors to different file storages like google drive, node server
   - 前端依赖react-virtualized、react-sortable-hoc、react-dnd
 
-- https://github.com/kannifarhad/CronusFileManager
-  - Filemanager with React & Nodejs
-  - React, Redux, Material UI, Nodejs, ExpressJs
-  - 提供了前端和后端实现
-
 - https://github.com/psolom/RichFilemanager  /archived
   - http://fm.devale.pro/
   - Rich Filemanager is an open-source file manager
@@ -124,45 +165,37 @@ modified: 2021-08-23T05:27:08.068Z
   - https://www.filestash.app/
   - A Dropbox-like file manager that let you manage your data anywhere it is located: FTP • FTPS • SFTP • WebDAV • Git • S3 • LDAP • Mysql CardDAV • CalDAV • Backblaze B2 • Minio Dropbox • Google Drive
   - Multiple cloud providers and protocols, easily extensible
-# git-file-tree
-- https://github.com/ovity/octotree
-  - 旧版v3依赖jquery、jstree
-  - Octotree is a proprietary software. 
-  - This repository contains the old source code of a very limited version of Octotree.
+# file-pc/electron/tauri
+- https://github.com/Saifullah-dev/react-file-manager /134Star/MIT/202512/python/js/依赖少
+  - React.js package for seamless file manager integration, offering a user-friendly interface for viewing, uploading, and deleting files with full UI and backend support.
+  - It provides a user-friendly interface for managing files and folders, including viewing, uploading, and deleting, with full UI and backend integration.
+  - Navigation: Use the breadcrumb trail and sidebar navigation pane for quick directory traversal.
+  - Toolbar & Context Menu
+  - Drag-and-Drop: Move selected files and folders by dragging them to the desired directory
+  - 后端依赖express、mongoose
+  - 前端依赖react-collapsed
+  - The `backend/fastapi_backend.py` is an alternative backend implementation using Python/FastAPI instead of Node.js/Express. It provides the same file management functionality but:
+    - Uses the local filesystem directly (no MongoDB required)
+    - os.walk() filesystem scan: Slower for large directories, No metadata persistence
+    - Harder to add features
 
-- https://github.com/EnixCoda/Gitako
-  - 依赖 nprogress、react-window
-  - File tree extension for GitHub on Chrome & Firefox & Edge
-
-- https://github.com/brumm/tako /MIT/202306/js/inactive
-  - 依赖react-query、styled-components、rehype-dom-parse、zustand
-  - Tako replaces the default Github repository file list with an expandable file tree and file preview
-  - Get it on the Chrome Webstore
-- https://github.com/ineo6/git-master
-  - 依赖jquery、jquery-ui、jstree
-  - Git file tree (GitHub && GitLab && Gitee && Gitea && Gogs)
-  - Show GitHub repo size and file download support
-- https://github.com/FrankFan/gitlab-tree
-  - 依赖jquery、jstree
-  - Chrome extension to display Gitlab code in tree format.
-- https://github.com/jawil/GayHub
-  - 依赖monaco-editor、pjax、wolfy-eventemitter
-  - 文件目录树、toc
-
-- https://github.com/kaushiknishchay/better-git-viewer
-  - http://nkaushik.in/better-git-viewer/
-  - react based git repo viewer with file tree for better navigation.
-  - 依赖 isomorphic-git、@isomorphic-git/lightning-fs、material-ui
-
-- https://github.com/jpwilliams/gitree
-  - Print a directory tree that shows Git status and ignores files dictated by .gitignore.
-  - 命令行工具
-# file-electron
-- https://github.com/warpdesign/react-explorer /MIT/202303/ts/inactive
+- https://github.com/warpdesign/react-explorer /279Star/MIT/202506/ts/inactive
   - File manager written in TypeScript, React, Blueprint and packaged with Electron
   - Split-view window
-  - Plugin-based: local supported for now, ftp in the works
+  - Media File Preview
+  - WSL integration (Windows)
+  - React-Explorer is fully localized using .json files. Right now, English and French are available.
+  - React-Explorer has been written so that it can easily be extended using plugins
+  - 🔌 Plugin-based filesystem support
+  - ~~Plugin-based: local supported for now, ftp in the works~~
   - 依赖blueprintjs、electron-window-state、mobx-react、react-dnd、react-virtual
+  - 📡 roadmap
+    - migrate mobx to tanstack-store
+
+- https://github.com/Scriptol/Advanced-Explorer /CC/202512/js
+  - https://www.scriptol.com/scripts/advanced-explorer.php
+  - A file manager and text editor built in JavaScript and HTML 5, Ace editor and Node.js library. Requires Electron for the rendering engine.
+  - From Java to JavaScript: This is actually the successor of the Advanced Explorer file management software I have written in Java in 1999. This version written entirely in JavaScript in 2012 keeps the essential features of the Java program and includes a more advanced text editor based on ACE for the backend, with a custom interface.
 
 - https://github.com/Cocycles/electron-storage /201703/js/inactive
   - Simply save/load json files to/from file system in electron applications
@@ -213,8 +246,51 @@ modified: 2021-08-23T05:27:08.068Z
 
 ## tauri
 
+- https://github.com/kimlimjustin/xplorer /5.4kStar/apache2/202202/ts/rust/tauri/inactive
+  - customizable, modern and cross-platform File Explorer.
+  - a modern file explorer built from ground-up to be fully customizable to fit 2022's need. Besides, Xplorer is a cross-platform application powered by the web that is being wrapped using Tauri 
+
+- https://github.com/jeanlyn/mpfm /MIT/202512/rust/ts/Tauri
+  - A multi-protocol file storage manager client (S3/FTP/...) that support MacOS/Windows/Linux
+  - cross-platform multi-protocol file manager based on Apache OpenDAL™, providing both command-line interface and graphical interface.
+  - Multi-Protocol Support: Support for local filesystem, S3-compatible storage, FTP and other protocols
+  - Complete File Operations: Support for file/directory listing, upload, download, delete, create, and more
+
 - https://github.com/Coordinate-Cat/Flanker /GPLv3/202407/ts
   - New Age File Explorer
+# git-file-tree
+- https://github.com/ovity/octotree
+  - 旧版v3依赖jquery、jstree
+  - Octotree is a proprietary software. 
+  - This repository contains the old source code of a very limited version of Octotree.
+
+- https://github.com/EnixCoda/Gitako
+  - 依赖 nprogress、react-window
+  - File tree extension for GitHub on Chrome & Firefox & Edge
+
+- https://github.com/brumm/tako /MIT/202306/js/inactive
+  - 依赖react-query、styled-components、rehype-dom-parse、zustand
+  - Tako replaces the default Github repository file list with an expandable file tree and file preview
+  - Get it on the Chrome Webstore
+- https://github.com/ineo6/git-master
+  - 依赖jquery、jquery-ui、jstree
+  - Git file tree (GitHub && GitLab && Gitee && Gitea && Gogs)
+  - Show GitHub repo size and file download support
+- https://github.com/FrankFan/gitlab-tree
+  - 依赖jquery、jstree
+  - Chrome extension to display Gitlab code in tree format.
+- https://github.com/jawil/GayHub
+  - 依赖monaco-editor、pjax、wolfy-eventemitter
+  - 文件目录树、toc
+
+- https://github.com/kaushiknishchay/better-git-viewer
+  - http://nkaushik.in/better-git-viewer/
+  - react based git repo viewer with file tree for better navigation.
+  - 依赖 isomorphic-git、@isomorphic-git/lightning-fs、material-ui
+
+- https://github.com/jpwilliams/gitree
+  - Print a directory tree that shows Git status and ignores files dictated by .gitignore.
+  - 命令行工具
 # filesystem-utils
 - https://github.com/flystorage/flystorage /202312/ts
   - a file storage abstraction for NodeJS and TypeScript

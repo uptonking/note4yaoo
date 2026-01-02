@@ -511,6 +511,21 @@ modified: 2023-09-02T09:17:22.992Z
   - Unix socket restrictions: Control access to local IPC sockets
   - 🌰 可搜索使用示例
 
+- https://github.com/vercel-labs/just-bash /152Star/apache2/202601/ts
+  - A simulated bash environment with an in-memory virtual filesystem, written in TypeScript.
+  - Designed for AI agents that need a secure, sandboxed bash environment.
+  - Supports optional network access via curl with secure-by-default URL filtering.
+  - 能执行curl
+  - ❓ 能执行安装依赖/binary包吗
+  - https://x.com/cramforce/status/2004992618913251786
+  - I'm introducing my holiday project: just-bash _20251228
+    - just-bash is a pretty complete implementation of bash in TypeScript designed to be used as a bash tool by AI agents. Because it turns out agents love exploring data via shell scripts, even beyond coding.
+    - It comes with grep, sed, awk and the 99th percentile features that an agent like Claude Code or Cursor would use. In fact, Claude Code can use it for secure bash execution.
+    - An overlay filesystem to feed files to your agent securely
+    - A Vercel Sandbox compatible API, so you can quickly upgrade to a real VM if you need to run binaries
+    - It was essentially entirely written by Opus 4.5. Coding agents love bash and they are good at reproducing it. They are also great at text-book recursive descent parsers and AST tweet-walk interpreters. 
+    - It has cURL already
+
 - https://github.com/agent-infra/sandbox /1.7kStar/apache2/202512/python/ts/字节
   - https://sandbox.agent-infra.com/
   - All-in-One Sandbox for AI Agents that combines Browser, Shell, File, MCP and VSCode Server in a single Docker container.

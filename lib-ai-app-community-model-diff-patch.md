@@ -234,6 +234,13 @@ modified: 2025-10-10T02:45:45.941Z
   - A Stable and Cost-Efficient Agentic Patching Framework
   - PatchPilot is an innovative rule-based planning patching tool that strikes the excellent balance between patching efficacy, stability, and cost-efficiency.
 
+- https://github.com/trailofbits/graphtage /2.4kStar/LGPL/202512/python
+  - a command-line utility and underlying library for semantically comparing and merging tree-like structures, such as JSON, XML, HTML, YAML, plist, and CSS files.
+  - Graphtage performs an analysis on an intermediate representation of the trees that is divorced from the filetypes of the input files. This means, for example, that you can diff a JSON file against a YAML file
+  - By default, Graphtage will format the output diff in the same file format as the first input file. But one could, for example, diff two JSON files and format the output in YAML. 
+  - By default, Graphtage tries to match all possible pairs of elements in a dictionary.
+  - Diffing tree-like structures with unordered elements is tough. Say you want to compare two JSON files. There are limited tools available
+
 ## diff-vscode
 
 - https://github.com/dsj7419/patch-pilot /MIT/202505/ts/inactive

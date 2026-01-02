@@ -19,8 +19,24 @@ modified: 2023-01-22T18:45:58.936Z
 - [Building a Kanban Board With React](https://marmelab.com/blog/2023/07/28/create-a-kanban-board-in-react-admin.html)
 # more
 
-# discuss-kanban
+# discuss-stars
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Simple kanban as a code block : r/ObsidianMD](https://www.reddit.com/r/ObsidianMD/comments/1q18pj3/simple_kanban_as_a_code_block/)
+  - https://github.com/ldomaradzki/obsidian-kanban-block
+- 提供了真的具体场景todo/wip/done的kanban方案，使用markdown task list [ ] [x] [/]
+
+- Biggest thing for me would be if you can click into the actual text of the item, without going into the code for the whole list.
+
+- compatible w mobile?
+
+- I like minimalism like this. You've made me think that maybe having several nano-boards is a good idea... Task one-liners are overloaded in Obsidian. Task per document is confusing. Maybe there's a middle ground, and it looks like this?
+# discuss-kanban
 - ## 
 
 - ## 

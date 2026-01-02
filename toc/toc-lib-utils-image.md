@@ -19,6 +19,10 @@ modified: 2023-04-04T22:39:45.442Z
   - imgproxy(go/MIT), imaginary(go/MIT), imaging(go/MIT), imagor(go/apache2)
   - lazy-image(MIT/rs), photon(apache2/rs)
   - OpenImageIO(apache2/cpp)
+
+- resources
+  - [PIXLS. US - Free/Open Source Photography](https://pixls.us/)
+    - [Software projects that make open source imaging possible](https://pixls.us/software/)
 # popular
 - AI位图转矢量
   - https://vectorizer.ai/
@@ -30,6 +34,28 @@ modified: 2023-04-04T22:39:45.442Z
   - Full-featured photo image editor using canvas. 
   - 偏向图片滤镜
   - Plain JavaScript component
+
+- https://github.com/ikuaitu/vue-fabric-editor /7.5kStar/MIT/202512/ts/vue
+  - https://ikuaitu.github.io/doc/#/
+  - 快图设计- 基于 fabric.js 和 Vue 开发的插件化图片编辑器，可自定义字体、素材、设计模板、右键菜单、快捷键
+  - 开源版本仅前端代码，付费版本提供完整的前后端、管理后台，功能完整开箱即用，提供源码授权、支持二次开发
+  - 插件化架构：可通过插件的进行扩展开发，支持右键菜单和快捷键。
+  - 拖拽式设计：以轻量、简洁为主的图形编辑器，而非大而全的在线 PS 类的重行设计工具。
+  - 功能完善：PSD 解析、辅助线、历史记录、渐变、自定义字体、裁剪等功能。
+  - 导入 JSON、PSD 文件
+  - 导出 PNG、SVG、JSON 文件
+  - 撤销/重做
+  - 组合/拆分组合
+  - 图层功能
+  - 外观属性/字体属性/描边/阴影
+  - 多元素水平、垂直对齐方式
+  - [小建议：能否把每一步做成时间轴  ](https://github.com/ikuaitu/vue-fabric-editor/issues/395)
+    - 像PS的历史记录一样，可以回退到指定节点就好了
+  - [React版本，结合AI  ](https://github.com/ikuaitu/vue-fabric-editor/issues/510)
+    - 其他伙伴根据 core 方法开发了 React 版本
+  - https://github.com/x007xyz/r-fabric-editor /202406/ts/inactive
+    - https://x007xyz.github.io/r-fabric-editor/
+    - 开源项目vue-fabric-editor的React版。核心功能已经全部实现，部分样式和功能待添加
 
 - glightbox /1.6kStar/MIT/202203/js/inactive
   - https://github.com/biati-digital/glightbox
@@ -54,6 +80,26 @@ modified: 2023-04-04T22:39:45.442Z
   - Linkware license for v2; MIT for v1
   - https://github.com/ailon/markerjs
 
+- https://github.com/CyberTimon/RapidRAW /3.8kStar/AGPL/202512/rust/ts
+  - A beautiful, non-destructive, and GPU-accelerated RAW image editor built with performance in mind
+  - a modern, high-performance alternative to Adobe Lightroom®. It delivers a simple, beautiful editing experience in a lightweight package (under 20MB) for Windows, macOS, and Linux.
+  - rawler: For the excellent Rust crate that provides the foundation for RAW file processing in this project.
+  - I developed this project as a personal challenge at the age of 18. My goal was to create a high-performance tool for my own photography workflow
+    - I am immensely grateful for Google's Gemini suite of AI models. 
+    - As an 18-year-old without a formal background in advanced mathematics or image science, the AI Studio's free tier was an invaluable assistant, helping me research and implement concepts like the Menon demosaicing algorithm.
+  - 👾 I've designed RapidRAW's AI features with flexibility in mind. You have three ways to use them
+  - Built-in AI Tools (Local & Free): These features are integrated directly into RapidRAW and run entirely on your computer. 
+    - AI Masking: Instantly detect and mask subjects, skies, and foregrounds. 
+    - Automatic Tagging: The image library is automatically tagged with keywords using a local CLIP model, making your photos easy to search.
+    - Automatic Tagging: The image library is automatically tagged with keywords using a local CLIP model, making your photos easy to search.
+  - Self-Hosted Integration with ComfyUI (Local & Free)
+    - For users with a capable GPU who want maximum control, I've made it so RapidRAW can connect to your own local ComfyUI server.
+    - Full Control: Use your own hardware and any custom Stable Diffusion model or workflow you choose
+    - Custom Workflow Selection: Import your own ComfyUI workflows and use your custom nodes.
+  - Optional Cloud Service (Subscription)
+    - To be clear, I won't lock features behind a paywall. All of RapidRAW's functionality is available for free if you use the built-in tools or self-host.
+    - For those who want a simpler solution, I will be offering an optional $5/month subscription (pricing is not final).
+
 - https://github.com/immich-app/immich /61.9kstar/AGPLv3/202503/ts/dart/svelte
   - https://immich.app/
   - High performance self-hosted photo and video management solution.
@@ -66,6 +112,17 @@ modified: 2023-04-04T22:39:45.442Z
 - https://github.com/ximing/fabric-photo /MIT/202003/js/inactive
   - https://ximing.github.io/fabric-photo/
   - 基于 canvas 的纯前端的图片编辑器，支持方形，圆形，箭头，缩放，拖拽，鹰眼，马赛克，涂鸦，线条，导出 png，剪切等
+
+- https://github.com/scaleflex/filerobot-image-editor /1.7kStar/202412/js/inactive
+  - Edit, resize, and filter any image
+  - apply basic transformations like resize, crop, flip, finetune, annotate, watermark and various filters to any image.
+  - History management (Undo/Redo/Reset).
+  - Image Annotating & Drawing.
+  - VanillaJS + Bridged to frameworks (React & More to support...).
+
+- https://github.com/sleepy-zone/fabritor-web /1.2kStar/MIT/202408/ts/inactive
+  - https://fabritor.surge.sh/
+  - 基于 fabricjs 的开源创意图片编辑器，可应用于海报设计、小红书公众号封面设计、banner 设计等场景
 
 - https://github.com/cshum/imagor-studio /20Star/MIT/202509/go/ts
   - https://imagor.net/
@@ -290,6 +347,11 @@ modified: 2023-04-04T22:39:45.442Z
   - http://viliusle.github.io/miniPaint/
   - Online image editor lets you create, edit images using HTML5 technologies.
   - miniPaint operates directly in the browser. Nothing will be sent to any server.
+
+- https://github.com/1j01/jspaint /7.6kStar/MIT/202508/js/inactive
+  - https://jspaint.app/about
+  - JS Paint is a pixel-perfect remake of Microsoft Paint that runs in the browser.
+  - 古老的像素风格
 
 - https://github.com/chase-manning/react-photo-studio /MIT/202310/ts/inactive
   - https://reactphotostudio.app/

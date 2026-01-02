@@ -42,7 +42,10 @@ modified: 2024-01-06T13:48:42.969Z
 
 - ## 
 
-- ## 
+- ## witr: Stop guessing why a process is running on your system.
+- https://x.com/GithubProjects/status/2006747292510925092
+- https://github.com/behnamazimi/icport
+  - Kill ports like a boss
 
 - ## 搞了个无用的小工具，随便取名叫 slug2text
 - https://x.com/nake13/status/2004252226395726286

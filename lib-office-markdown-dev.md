@@ -36,6 +36,9 @@ modified: 2025-09-21T18:39:13.776Z
 - markdown-chart-viz
   - ?
 
+- composable-markdown
+  - import
+
 - markdown-extensions
   - mdx
   - [R Markdown](https://rmarkdown.rstudio.com/)

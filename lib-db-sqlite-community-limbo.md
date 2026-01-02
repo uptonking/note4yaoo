@@ -264,7 +264,17 @@ target/debug/limbo database.db
 
 - ## 
 
-- ## 
+- ## Bash running on Cloudflare Workers with AgentFS
+- https://x.com/penberg/status/2007110953167622292
+  - AI SDK + AgentFS integration with just-bash looks pretty slick.
+- What do you think of adding durable object SQLite support for agentfs? I was thinking it could be done by adding an optional property “driver” to the constructor. It would default to the existing implementation. But I could also make a durable object sqlite driver. And a driver principally just needs to implement exec, transaction and maybe open/close (at start and end of lifecycle). then your agents sdk agents could use a shell and a filesystem for most tasks and boot a sandbox only when needed!
+  - Yeah, I think it makes sense. I think a good integration path would be to add a FileSystem interface to the TypeScript SDK (which we already have in the Rust SDK) and then have a separate Turso and Durable Object implementation of AgentFS as their interfaces are totally different. But sure, totally open to merging something like this if the integration is clean
+
+- Does this mean we could have serverless Claude Code?
+  - This uses just-bash which won’t run Claude Code. But you could certainly build a coding agent with it
+
+- This approach will be much less expensive than rolling out a full VM for the agent. It could be a useful pattern for supporting skills files for example. Am I correct?
+  - Yes, indeed. I assume you can other sandbox providers for this too. I believe just-bash is Vercel Sandbox compatible, for example.
 
 - ## Here's how I do agentic coding with AgentFS
 - https://x.com/penberg/status/2005931121754693713

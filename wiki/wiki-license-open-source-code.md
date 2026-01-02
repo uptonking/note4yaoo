@@ -691,6 +691,8 @@ modified: 2021-09-14T18:58:58.275Z
   - Over the last few years, we’ve watched closely as almost every at-scale open source company that we admire (such as Elastic, Redis Labs, MongoDB, Timescale, Cockroach Labs, and many others) has evolved their license regime. 
   - In almost all of these cases, the result has been a move to a non-OSI-approved source-available license.
 # licensing-cases
+- 🤔 可以通过ai临时编写调用AGPL代码的代码来绕过协议问题
+
 - i want to use libreoffice code in my pdf/image conversion app. what's the license of libreoffice? can i use MIT/apache for my app?
   - LibreOffice is distributed primarily under the Mozilla Public License 2.0 (MPL-2.0), but the codebase also contains components under other OSS licenses (LGPL/GPL, Apache, etc.). You can license your own app under MIT or Apache, but any LibreOffice source files you copy or modify remain governed by their original licenses (typically MPL-2.0) and you must comply with those terms.
   - MPL-2.0 = file-level (weak) copyleft. If you modify a file that is MPL-2.0, you must make that file’s source (with your modifications) available under MPL-2.0 when you distribute the product. Files you create that are separate may remain under MIT/Apache

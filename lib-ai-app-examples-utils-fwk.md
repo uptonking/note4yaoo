@@ -396,6 +396,12 @@ modified: 2025-02-21T18:20:42.624Z
   - 即使有些厂商说兼容openai的接口，但是实际上还是存在些许差异的
   - simple-one-api主要是解决以上2点，旨在兼容多种大模型接口，并统一对外提供 OpenAI 接口。
 
+- https://github.com/jwy87/SimpleHub /MIT/202601/js
+  - 多站点管理：统一管理多个 AI 中转站，支持 NewAPI、Veloera、DoneHub、VOAPI 等主流平台
+  - 模型变更检测：自动追踪模型列表的增删改，精确记录每次变化
+  - 智能签到：支持 NewAPI、Veloera 平台自动签到，每日自动领取奖励
+  - [[开源]小白搓了一个API聚合管理站（含自动签到） ](https://linux.do/t/topic/1095754)
+
 - https://github.com/qixing-jk/all-api-hub /722Star/AGPL/202601/ts
   - http://all-api-hub.qixing1217.top/
   - 统一管理第三方 AI 聚合中转站与自建 New API：自动识别账号、查看余额、同步模型、管理密钥，全平台与云端备份
@@ -772,6 +778,9 @@ modified: 2025-02-21T18:20:42.624Z
   - Wrap Gemini CLI, Antigravity, ChatGPT Codex, Claude Code, Qwen Code, iFlow as an OpenAI/Gemini/Claude/Codex compatible API service, allowing you to enjoy the free Gemini 2.5 Pro, GPT 5, Claude, Qwen model through API
   - A proxy server that provides OpenAI/Gemini/Claude/Codex compatible API interfaces for CLI.
   - It now also supports OpenAI Codex (GPT models) and Claude Code via OAuth.
+  - https://github.com/router-for-me/Cli-Proxy-API-Management-Center /MIT/202601/ts
+    - a WebUI interface based on CLI-Proxy-API, designed to simplify configuration modifications and runtime status monitoring.
+    - Since version 6.0.19, the WebUI ships with the main program; access it via `/management.html` on the API url
   - https://github.com/router-for-me/CLIProxyAPIPlus /MIT/202512/go
     - the Plus version of CLIProxyAPI, adding support for third-party providers on top of the mainline project.
     - Added GitHub Copilot support (OAuth login)
@@ -780,6 +789,14 @@ modified: 2025-02-21T18:20:42.624Z
   - Native macOS menu bar app to use your Claude Code & ChatGPT subscriptions with AI coding tools - no API keys needed
   - native macOS menu bar app that lets you use your existing Claude Code, ChatGPT, Gemini, Qwen, and Antigravity subscriptions with powerful AI coding tools like Factory Droids – no separate API keys required.
   - Built on CLIProxyAPIPlus, it handles OAuth authentication, token management, and API routing automatically. One click to authenticate, zero friction to code.
+
+- https://github.com/zhalice2011/ProxyLLM /MIT/202601/ts
+  - Electron 应用，用于捕获 LLM 网站的浏览器会话，并在本机暴露 OpenAI 兼容 API
+  - OpenAI 兼容 API：POST /v1/chat/completions、GET /v1/models，以及 Anthropic 原生 POST /v1/messages。
+  - 多站点控制面板：添加/删除站点、打开/刷新窗口、查看请求并选择凭据。
+  - 适配器体系：将不同站点协议转换为 OpenAI 格式，内置多种特定适配器。
+  - 凭据捕获：Electron webRequest、CDP（HTTP + WebSocket），以及可选本地 MITM 代理。
+  - Claude Code 接管/恢复：将 Claude CLI 指向本地代理。
 
 - https://github.com/justlovemaki/AIClient-2-API /1.9kStar/GPL/202512/js
   - an API proxy service that breaks through client limitations, converting free large models originally restricted to client use only (such as Gemini, Antigravity, Qwen Code, Kiro) into standard OpenAI-compatible interfaces

@@ -78,4 +78,8 @@ modified: 2020-12-12T19:01:56.749Z
   - 为开发者和企业提供一站式应用升级解决方案
   - 全端应用升级与分发平台 | 为开发者省去90%升级服务搭建成本
   - 全端覆盖：Windows/Linux/Mac/安卓/Tauri/Electron等全场景支持
+# docker
+- https://github.com/mbakgun/DockerFlex /MIT/202512/js
+  - a modern web-based application that simplifies Docker container file management
+  - Browse, edit, and manage container files with ease through a modern web interface
 # more

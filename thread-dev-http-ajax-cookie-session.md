@@ -12,6 +12,50 @@ modified: 2021-08-06T08:32:26.142Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🆚 Cookies vs Session
+- https://x.com/neeraj_sd04/status/2006614514163499127
+Cookies vs Sessions isn’t really an either/or choice they usually work together.
+
+Cookies are just a transport mechanism.
+They don’t magically make auth insecure what you store in them does.
+Sessions move state to the server, but you still rely on:
+
+a cookie (or header) to carry the session ID
+
+proper invalidation & rotation
+
+storage + scaling strategy (memory vs Redis, sticky sessions, etc.)
+
+Key trade-offs people miss:
+
+Stateless (JWT in cookies) → great for scale, harder revocation
+
+Stateful sessions → easier control, infra + lookup cost
+
+Security → HttpOnly, Secure, SameSite matter more than cookie vs session
+
+Performance → session lookups can become a bottleneck at scale
+
+Rule of thumb:
+
+Small apps → sessions are simpler & safer
+
+Large distributed systems → stateless tokens + short TTLs
+
+High-risk flows → hybrid (session + token rotation)
+
+Auth isn’t about cookies vs sessions.
+It’s about where state lives, how fast you revoke it, and how well you protect the transport.
+
+- Sessions are more secure but cookies are stateless. Pick based on your use case
+- Both methods have their place. Cookies are simpler for stateless apps, while sessions offer better security for sensitive data
+
+- cookies store data on the user’s browser, while sessions keep the data safely on the server and only pass an ID to the browser
+
 - ## How do you debug something that consistently fails 0.02% of the time, at random?
 - https://twitter.com/ekzhang1/status/1780647022044832174
   - update on the 0.02% bug: it was because nginx, by default drops connections every 1000 HTTP requests.

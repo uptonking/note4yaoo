@@ -15,6 +15,28 @@ modified: 2021-07-28T20:11:14.714Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## for shadcn [Sidebar ](https://ui.shadcn.com/docs/components/sidebar) component, what's the different among sidebar, floating and inset variants ?
+- sidebar: 普通模式，侧边栏固定全高，内容内容区可竖直滚动
+  - This is the standard, classic sidebar look. It takes up the full height of the container (h-svh or h-full) and is rigidly attached to the side edge (left or right)
+  - It typically has a simple border separating it from the main content.
+  - Use Case: Best for traditional dashboard layouts where the navigation is a permanent, structural part of the page.
+
+- inset(镶入物, 嵌入物, 插页): 侧边栏视觉上是底部背景，内容区是突出的大卡片, 高度不会超过可视区的卡片，与浏览器4边都有间隔，所以视觉上侧边栏比sidebar模式宽一点
+  - This variant creates a specific "panel" or "app-like" layout where the sidebar usually shares a background with the outer container, and the main content area acts as a distinct "inset" panel.
+  - You must wrap your main content in the `<SidebarInset>` component
+  - Use Case: Ideal for complex web apps (like Notion or Linear) where the sidebar blends into the global background, and the page content is the focal "card."
+  - suitable for layouts where the sidebar feels part of the page rather than separate.
+
+- floating
+  - a complete border around it (not just the side connecting to content).
+  - Use Case: Great for modern, cleaner interfaces or when you want the navigation to feel less heavy and more like an overlaying element.
+
 - ## for a simple tab component, Which would you choose and why?
 - https://twitter.com/AdhamDannaway/status/1729884552896864453
   - C is a common tabs pattern, making it more easily understood (Jakob's Law).

@@ -598,6 +598,15 @@ modified: 2025-11-30T17:27:16.720Z
 - https://github.com/ikantkode/pdfLLM /MIT/202509/python/inactive
   - open source, proof of concept RAG app.
   - uses PostgreSQL for session management, Qdrant for vector storage, Dgraph for graph-based indexing, and Celery for asynchronous task processing.
+
+- https://github.com/pega2077/ai_file_manager /MIT/202512/ts
+  - file manager powered by AI. It automatically classifies your imported files into the most suitable folders and tags them intelligently based on their content, making future search and retrieval easy.
+  - Document Import and Management - Supports multiple document formats, automatically converts to Markdown format
+  - Semantic Search - Intelligent document retrieval based on vector database
+  - Supports Windows and macOS systems
+  - Embedded Node.js (Express) server inside the Electron main process
+  - Data Storage: SQLite (document metadata via Sequelize) + Faiss vector index (faiss-node)
+  - AI Models: Pluggable LLM / embedding providers (OpenAI, Azure, OpenRouter, Bailian, Ollama, etc.)
 # rag-fwk
 - https://github.com/run-llama/semtools /1.5kStar/MIT/202511/rust/ts
   - Semantic search and document parsing tools for the command line

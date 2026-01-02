@@ -73,7 +73,7 @@ modified: 2025-12-19T12:43:21.150Z
 - https://github.com/xunbu/docutranslate /555Star/MPLv2/202512/python
   - 文档（小说、论文、字幕）翻译工具（支持 pdf/word/excel/json/epub/srt...）
   - Support Multiple Formats: Translates pdf, docx, xlsx, md, txt, json, epub, srt, ass, and more
-  - PDF Table, Formula, Code Recognition: Leverages docling and mineru PDF parsing engines
+  - PDF Table, Formula, Code Recognition: Leverages `docling` and `mineru` PDF parsing engines
   - JSON Translation: Supports specifying values to translate within JSON using paths (jsonpath-ng syntax).
   - Supports docx and xlsx files (currently does not support doc or xls) while maintaining original formatting.
   - Designed for high-performance scenarios, providing full asynchronous support and interfaces for parallel multi-tasking.
@@ -246,6 +246,9 @@ modified: 2025-12-19T12:43:21.150Z
   - 本项目基于 DeepSeek OCR 进行文档识别。支持表格、公式等复杂内容的识别。通过 GPU 加速，pdf-craft 能够在本地完成从 PDF 到 Markdown 或 EPUB 的完整转换流程。
     - 依赖 DeepSeek OCR 模型，首次运行时会自动从 Hugging Face 下载。
   - 从 v1.0.0 正式版开始，pdf-craft 全面拥抱 DeepSeek OCR，不再依赖 LLM 进行文本矫正。这一改变带来了显著的性能提升：整个转换流程在本地完成，无需网络请求，告别了旧版本中漫长的等待和偶发的网络失败。
+    - 新版本也移除了 LLM 文本矫正功能。如果你的使用场景仍然需要这一特性，可以继续使用 v0.2.8 旧版本
+  - 要真正使用 pdf-craft，你需要安装 `Poppler` 用于 PDF 解析（所有使用场景都需要）以及配置 CUDA 环境用于 OCR 识别（实际转换时需要）
+  - ❓ 原文中的插图会提取为单独图片吗
   - Starting from the official v1.0.0 release, pdf-craft fully embraces DeepSeek OCR and no longer relies on LLM for text correction.
     - removing the previous AGPL-3.0 dependency, allowing the entire project to be released under the more permissive MIT license
     - Note that pdf-craft has a transitive dependency on `easydict` (LGPLv3) via DeepSeek OCR.
@@ -265,9 +268,9 @@ modified: 2025-12-19T12:43:21.150Z
   - 使用大模型翻译时，有些内容没有翻译？
     - 回答： 低参数量的大模型本身的指令遵循能力很差，让它翻译，它可能不会完全听话，就会造成此现象。因此，本地用大模型翻译，必须保证大模型本身具备一定参数规模，建议7B以上
   - 表格中的内容没有翻译？
-    - 回答： pdf2zh暂不支持表格内容翻译，如需翻译表格，可查看本仓库的dev分支，采用pdf2zh_next进行翻译，但由于速度较慢
+    - 回答: `pdf2zh`暂不支持表格内容翻译，如需翻译表格，可查看本仓库的dev分支，采用`pdf2zh_next`进行翻译，但由于速度较慢
 
-- https://github.com/gavrielc/Nano-PDF /903Star/MIT/202512/python
+- https://github.com/gavrielc/Nano-PDF /903Star/MIT/202512/python/Gemini
   - A CLI tool to edit PDF slides using natural language prompts, powered by Google's Gemini 3 Pro Image ("Nano Banana") model.
   - Natural Language Editing: "Update the graph to include data from 2025", "Change the chart to a bar graph".
   - Add New Slides: Generate entirely new slides that match your deck's visual style.
@@ -492,7 +495,7 @@ modified: 2025-12-19T12:43:21.150Z
     - But testing each library turned out to be quite a hassle — environment setup, dependencies, version conflicts, etc.
     - Currently, it supports: docling pymupdf4llm markitdown marker
 
-- https://github.com/readur/readur /MIT/202512/rust/ts/Axum
+- https://github.com/readur/readur /547Star/MIT/202601/rust/ts/Axum
   - Quick, painless, intuitive OCR platform written in Rust and TypeScript. 
   - Tesseract OCR for text extraction
   - Axum for the web framework
@@ -603,8 +606,9 @@ modified: 2025-12-19T12:43:21.150Z
   - If Image → processed with Tesseract.js
 
 - https://github.com/am009/LLM-online-tool /202512/python/js
-  - http://tool.latexdiff.cn/
+  - https://tool.latexdiff.cn/
   - 基于大语言模型（LLM）API的 Markdown/Latex 文章翻译工具
+  - 👀 上传markdown/latex文件，不支持pdf
   - 逐段翻译与校对：点击蓝色箭头按钮即可翻译当前段落，然后可以在右侧实时编辑，
   - 纯静态网页：完全在浏览器中运行
   - 分块翻译：将 Markdown 内容分割为可管理的段落进行翻译
@@ -695,7 +699,8 @@ modified: 2025-12-19T12:43:21.150Z
 
 - https://github.com/athrael-soju/Snappy /66Star/MIT/202512/python/ts
   - Snappy implements region-level document retrieval by unifying vision-language models with OCR through spatial coordinate mapping. 
-  - Unlike traditional systems that return entire pages (VLMs) or lack semantic grounding (OCR-only), Snappy uses ColPali's patch-level similarity scores as spatial relevance filters over OCR-extracted regions; operating entirely at inference time without additional training.
+  - Unlike traditional systems that return entire pages (VLMs) or lack semantic grounding (OCR-only), Snappy uses `ColPali`'s patch-level similarity scores as spatial relevance filters over OCR-extracted regions; operating entirely at inference time without additional training.
+    - 方案与模型绑定
   - The approach formalizes coordinate mapping between vision transformer patch grids (32×32) and OCR bounding boxes, repurposing ColPali's late interaction mechanism to generate interpretability maps.
     - 类似将ocr的bbox渲染为了热力图
 
@@ -841,13 +846,6 @@ modified: 2025-12-19T12:43:21.150Z
     - Uses models from https://github.com/browsermt/students
     - Translation engine and memory is shared among all tabs and webpages
   - [Google Chrome](https://github.com/jelmervdl/translatelocally-web-ext/issues/10)
-
-- https://github.com/Byaidu/PDFMathTranslate
-  - 一款可以保留原排版的PDF文档翻译工具：PDFMathTranslate，可以完整保留原文档中的公式、图表，支持双语对比
-  - 支持多种翻译服务，Google、DeepL、Ollama、OpenAI等
-
-- 使用Google翻译（Translate）的离线翻译功能？有前提：你必须先在联网状态下将需要且支持离线翻译的语言下载。
-  - 而离线翻译的结果会与联网翻译的结果存在结果差距。特别是翻译同一个字词语句下
 
 - 全文翻译比较期待类似firefox做的这种离线本地翻译
   - [Firefox Translations – Get this Extension for 🦊 Firefox (en-US)](https://addons.mozilla.org/en-US/firefox/addon/firefox-translations/)
@@ -1066,7 +1064,7 @@ modified: 2025-12-19T12:43:21.150Z
   - A full-stack PDF annotation application built with FastAPI (Python) and React + Vite (TypeScript). 
   - This application supports both readable and scanned PDFs, with advanced text extraction, intelligent annotation, and powerful search capabilities.
   - Automatic detection of page type
-  - PyMuPDF for native text-based PDFs
+  - PyMuPDF(AGPL) for native text-based PDFs
   - EasyOCR for scanned/image-based PDFs
   - Advanced PDF Viewer: Built with react-pdf
     - Custom canvas overlay for annotations

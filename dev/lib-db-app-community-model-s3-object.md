@@ -28,7 +28,12 @@ modified: 2024-03-13T14:26:26.220Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🆚 File Storage vs Object Storage vs Block Storage
+- https://x.com/systemdesignone/status/2006717318043173266
+  - File Storage → Organizes data into folders and files.
+  - Object Storage → Stores data as scalable objects with metadata.
+  - Block Storage → Provides raw, high-performance disk volumes.
+  - Each type optimizes for different workloads and tradeoffs.
 
 - ## 💡🆚️ Can anyone recommend something on the 'why' of object stores like S3? 
 - https://twitter.com/LewisCTech/status/1767676201961922762

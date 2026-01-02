@@ -986,10 +986,11 @@ modified: 2025-08-23T11:43:35.904Z
     - single-file HTML application for managing AI image generation prompts with SQLite database storage.
     - work with Stable Diffusion, ComfyUI, Automatic1111, and other AI image generation tools.
 
-- https://github.com/Firetheft/ComfyUI_Local_Image_Gallery /70Star/202508/python/js
+- https://github.com/Firetheft/ComfyUI_Local_Media_Manager /70Star/202508/python/js
   - 一个为 ComfyUI 打造的终极本地图片、视频、音频媒体管理器
   - The Ultimate Local File Manager for Images, Videos, and Audio in ComfyUI
   - It eliminates the need to constantly switch to your OS file explorer
+  - all-in-one custom node that brings a complete local file management system directly into your ComfyUI workflow
   - The gallery features a fluid waterfall (masonry) layout, smooth transitions, and an advanced lightbox viewer
   - Full Metadata Management: Tagging System, Star Rating
 - https://github.com/Firetheft/ComfyUI_Civitai_Gallery /202508/python
@@ -998,12 +999,15 @@ modified: 2025-08-23T11:43:35.904Z
   - speed up your creative process by eliminating the need to switch between your browser and ComfyUI.
   - The gallery features a fluid, responsive waterfall (masonry) layout that intelligently fills the available space, ensuring a beautiful and efficient browsing experience.
 
-- https://github.com/zeitmaschinen/GalleryFlow /MIT/202507/python/ts
+- https://github.com/zeitmaschinen/GalleryFlow /33Star/MIT/202510/python/ts/inactive
   - A modern web application for browsing and managing ComfyUI-generated images with advanced metadata support.
   - Workflow visualization for each image and copy JSON to clipboard
   - Recursively reads all folders, so you never miss an image
   - WebSocket support for real-time updates
   - Direct integration with ComfyUI workflows
+  - Frontend: React 18, TypeScript, Material UI
+  - Backend: FastAPI, SQLAlchemy, Python 3.10+
+  - Other: WebSockets, React Flow, custom theming, responsive design
 
 - https://github.com/talesofai/comfyui-browser /605Star/NALic/202411/python/svelte/inactive
   - This is an image/video/workflow browser and manager for ComfyUI. 

@@ -12,6 +12,61 @@ modified: 2024-05-12T17:20:03.132Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## ✨ I'm introducing my holiday project: just-bash _20251228
+- https://x.com/cramforce/status/2004992618913251786
+  - just-bash is a pretty complete implementation of bash in TypeScript designed to be used as a bash tool by AI agents. Because it turns out agents love exploring data via shell scripts, even beyond coding.
+  - It comes with grep, sed, awk and the 99th percentile features that an agent like Claude Code or Cursor would use. In fact, Claude Code can use it for secure bash execution.
+  - A bash-tool for @aisdk
+  - An overlay filesystem to feed files to your agent securely
+  - A Vercel Sandbox compatible API, so you can quickly upgrade to a real VM if you need to run binaries
+  - It was essentially entirely written by Opus 4.5. Coding agents love bash and they are good at reproducing it. They are also great at text-book recursive descent parsers and AST tweet-walk interpreters. 
+  - It has cURL already
+- why is this better than letting the agents just use bash?
+  - If it is your agent that you operate in the cloud then you don't need extra VMs per agent.
+  - For the local case: it provides a sandbox so your agent doesn't get prompt injected to mine Bitcoin and steal your passwords
+
+- when does your agent actually need bash logic versus a simpler structured tool? I've found the shell flexibility becomes a debugging nightmare once my team tries to maintain it three months later.
+  - don't think there is a steadfast rule. It generally works well when you see a lot of emergent behavior. That is both more powerful and inherently harder to maintain. Trade-offs
+
+- While the filesystem is undoubtedly a core element of advanced AI agents, a Bash-like wrapper isn't enough if you need a remote AI agent that can interact with external apps, services, and devices, including the need for OAuth or simply going beyond the context of a single user. - in other words, where do you think limitations are here? 
+  - Daytona or E2B seem to be aiming to address "bash is all you need" at a production scale. What do you think about them? These sandboxes can easily add significantly to your bills, especially when considering AI agents that already require many tokens to be paid for.
+- There is a class of very advanced agents that don't actually need much else. That agent has exactly 2 tools: - the bash tool - an executeSQL tool
+  - "All you need" is a metaphor not meant literally. just-bash comes with an @aisdk tool to integrate it into a bigger picture.
+  - It also comes with a Vercel Sandbox compatible API. So, if you later notice that you need more power you can switch to a real VM with no refactoring.
+- In my experience:
+  - agents that do analysis and then use custom tools actually just need just-bash
+  - the VMs are mostly needed if you actually want to run sophisticated agent-developed programs
+  - The latter is a currently important category but your everyday business agent isn't doing that
+
+- If you are looking for a sandbox which runs locally on your mac, check coderunner out which is based on apple containers, runs your AI generated code on your machine but safely inside a VM 
+- https://github.com/instavm/coderunner /apache2/202512/python
+  - CodeRunner is an MCP (Model Context Protocol) server that executes AI-generated code in a sandboxed environment on your Mac using Apple's native containers.
+
+- Reminds me of some of your former projects like ampproject/worker-dom, reimplement something to use in a sandbox and make it safe. Interactive email // bash access to agents use cases unlocked. Used to be so tedious and now so fast, perfect use case for agents!
+
+- Any way to combine this with something like pyodide and provide python scripting support along with bash support?
+  - Yeah, that should just work. The thing you may need to investigate is how this python interacts with the filesystem. But in terms of running ad hoc scripts, it should just work
+
+- This is awesome. I was working on something that helps creating/wrapping CLI commands as tools.
+
+- ## 🆚 Manus 把 Ubuntu Linux 沙箱环境放在云端，Claude 把 Code 环境放在本地。这两个不同的技术路径在产品体验上带来了非常大的差别。
+- https://x.com/xiao_zcloak/status/2006280637922394241
+  - Manus 那边，基本一个要求提过去就可以走人了，一会回来看结果。因为 AI 有操作沙箱的全部权限。
+  - 而 Claude 那边则需要你一直陪着它，做各种权限许可：“我可以访问这个路径吗？我可以下载这个脚本吗？我可以执行这个程序吗？” 
+
+- Claude 其实有两个模式而且很无缝 
+  - 你看到的Claude Code 只是一部分 
+  - 在 Claude Desktop 这边就是云端的虚拟机—你可以用它先 research 然后生成 PDF 报告验证一下：它会先写个 Python 然后运行这个 Python 生成 pdf. 这都是云端的操作
+  - 然而同时它也可以调用本地 MCP. 比如在本地调整 MacOS 一些设置—它在本地写个 script 然后交给MCP 运行
+  - 现阶段如果谈取代白领工作的话， Claude 在技术整合上最有概率的 ，而 Gemini 在生态上是最有概率的。其他玩家解决方案都没有在 distribution + comprehensiveness Pareto frontier.
+
+- 长远看，云端沙箱代理（Manus）和本地代码环境（Claude Code 这一类）确实都会长期共存，而且会越来越清晰地分工。
+  - 未来可能更成熟的形态：混合编排
+
+- github copilot agent调用claude的model也是丢云端沙箱，然后通过提pr的方式让用户确认执行结果。 这个功能根本就不是manus独有的，算不上什么很独特的东西
+
 - ## Why are VMs still not as convenient as Docker containers to work with?
 - https://x.com/eatonphil/status/1910391779834372356
   - Installing Docker is hard (podman is easier) but once you have it it's this easy standard.

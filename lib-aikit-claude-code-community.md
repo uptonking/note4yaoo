@@ -36,7 +36,9 @@ modified: 2025-12-18T12:26:08.445Z
 
 - ## 
 
-- ## 
+- ## [《我是如何使用 Claude Code 每一项功能的》 _202511](https://linux.do/t/topic/1145488)
+  - 对我来说，把任务交出去，设定上下文，然后让它自己工作，只根据最后的PR成品来评估，而不是纠结过程
+  - 从基础的 CLAUDE.md 文件和自定义斜杠命令，到 Subagents、Hooks、GitHub Actions等强大能力。这篇文章篇幅较长，我更建议把它当作参考手册，而不是一次性读完。
 
 - ## Claude Code has been a game-changer for me. But where I've felt the real magic is how it enables multitasking.
 - https://x.com/omarsar0/status/2005337800284188879

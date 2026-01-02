@@ -1835,7 +1835,14 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [对于公益站多个渠道提供相同模型怎么聚合（newapi） ](https://linux.do/t/topic/1398050)
+- 在newapi前聚合呢w
+
+- gpt-load？不过我平常直接用 uni-api 了，自用的话抱抱脸部署的都还很稳
+
+- https://github.com/atopos31/llmio /MIT/go/ts
+  - LLM API 负载均衡网关
+  - 基于 Go 的 LLM 负载均衡网关，为你的 LLM 客户端 ( claude code / codex / gemini cli / cherry studio / open webui ) 提供统一的 REST API、权重调度、日志记录与现代化管理界面，帮助你在一个服务中整合 OpenAI、Anthropic、Gemini 等不同模型能力。
 
 - ## [NVIDIA NIM - Free DeepSeek R1(0528) and more : r/SillyTavernAI _202507](https://www.reddit.com/r/SillyTavernAI/comments/1lxivmv/nvidia_nim_free_deepseek_r10528_and_more/)
 - Nvidia is much slower than the chutes

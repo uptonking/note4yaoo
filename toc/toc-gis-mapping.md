@@ -78,6 +78,15 @@ modified: 2021-01-04T16:21:18.990Z
   - http://kothic.org/
   - a full-featured JavaScript map rendering engine using HTML5 Canvas. 
   - It was initially developed as a JavaScript port of Kothic rendering engine written in Python
+
+- https://github.com/AnmolSaini16/mapcn /MIT/202601/ts
+  - https://mapcn.vercel.app/
+  - open source map components. Zero config, one command setup.
+  - Built on MapLibre GL, styled with Tailwind, works seamlessly with shadcn/ui
+  - Full access to MapLibre's powerful mapping capabilities
+  - Markers & Popups — Rich marker system with popups, tooltips, and labels
+  - Draw routes and paths on your maps
+  - Zoom, compass, locate, and fullscreen controls
 # leaflet
 - https://github.com/geoman-io/leaflet-geoman /MIT/202403/js
   - https://geoman.io/leaflet-geoman
