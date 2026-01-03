@@ -522,8 +522,15 @@ modified: 2025-12-11T18:10:23.710Z
 
 - https://github.com/milisp/opencode-gui /MIT/202510/ts/inactive
   - A lightweight Tauri GUI for Opencode CLI
-  - https://github.com/chriswritescode-dev/opencode-manager
-    - Mobile-first web interface for OpenCode AI agents. Manage, control, and code with multiple OpenCode agents from any device - your phone
+- https://github.com/chriswritescode-dev/opencode-manager /70Star/MIT/202601/ts
+  - Mobile-first web interface for OpenCode AI agents. 
+  - Manage, control, and code with OpenCode from any device - your phone, tablet, or desktop.
+  - Features Git integration, file management, and real-time chat in a responsive PWA.
+  - Worktree Support - Create and manage Git worktrees for working on multiple branches
+  - Multi-Repository Support - Clone and manage multiple git repos/worktrees in local workspaces
+  - Git Diff Viewer - View file changes with unified diff, line numbers, and addition/deletion counts
+  - Browse files and folders with tree view
+  - Large File Support - Virtualization for large files
 
 - https://github.com/chriswritescode-dev/opencode-web /MIT/202512/ts
   - A full-stack web application for running OpenCode in local processes, controllable via a modern web interface. 

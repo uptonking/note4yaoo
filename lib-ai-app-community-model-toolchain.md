@@ -1865,7 +1865,24 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 
 - ## 
 
-- ## 
+- ## [How is Cloud Inference so cheap : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1q2jwsn/how_is_cloud_inference_so_cheap/)
+  - How do cloud inference companies like DeepInfra, Together, Chutes, Novita etc manage to be in profit regarding to the price of the GPUs/electricity and the fact that I guess it's difficult to have always someone to serve ?
+
+- DeepInfra and Together are VC funded. Probably safe to assume they run at a loss for now.
+  - Chutes runs on a decentralized network (bittensor), i.e. it's crowdsourced and they pay individual miners.
+  - I haven't tried Novita but they're a tiny team of 10 and their blog has some posts about how they optimize e.g. quantization. They're also a little more expensive than the others.
+
+- Scale is more efficient, batching is more efficient, horizontal scaling is more efficient, and a lot of them quantize
+
+- Batching. One gpu can serve hundreds of uses at once. https://artificialanalysis.ai/benchmarks/hardware
+- Good God the B200 is a beast!
+  - I got a dgx spark and it has the same architecture. I’m getting 600tok/s doing batch inference with qwen3 next 80b. It’s not as good as the big boys but it’s doing batch data classification quite well.
+
+- Inference providers are operating at a loss, hoping that their competitors run out of money before they do. Last man standing wins.
+
+- Data is the new currency.
+
+- same reason the USA is 38 trillion in debt. they built the datacenters to pump corporate profits sheets up. doesn't matter how much money they lose. as long as they are 'winning' uncle sam will cash out. money is about social control. it does not measure resources.
 
 - ## openrouter 是真方便，一个 Key 所有模型都能用。
 - https://x.com/pengchujin/status/1894375539726803201

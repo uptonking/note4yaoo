@@ -27,9 +27,15 @@ modified: 2024-08-03T20:00:33.414Z
 
 - ## 
 
-- ## 
+- ## [Send: Open-source fork of Firefox Send | Hacker News _202410](https://news.ycombinator.com/item?id=41887378)
+- I like localsend too. But for some reasons I need to disconnect from tailscale in order for it to work properly.
 
-- ## 
+- I use a combination of LocalSend on all my devices (Win64, Linux, iOS…) and a Syncthing folder that I call QuickSync and added as a shortcut to all of my file managers a few years ago. Syncthing, in particular, works so well that you don’t even notice it, until you have a file conflict. It’s a great solution to have files synced easily.
+
+- ## [Syncthing Android App Discontinued | Hacker News _202410](https://news.ycombinator.com/item?id=41895718)
+- Localsend is a great program - but no alternative to syncthing. Syntcthing is running in the background and syncing automatically. Localsend needs active user interaction. Is there a way how to use localsend similarily to Syncthing?
+  - That's not a dealbreaker for me, as I don't run syncthing continuously on either end, just when I'm trying to sync my music.
+
 # discuss-pm
 - ## 
 

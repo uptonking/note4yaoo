@@ -12,6 +12,8 @@ modified: 2021-08-23T05:27:08.068Z
 - tips
   - 不要执着于独立的的file组件，在成熟产品如vscode/clouddrive/strapi/CMS/paperless/obsidian中都存在文件管理实现可参考
     - 更适合参考网盘类产品的文件管理逻辑，因为会处理大量文件的场景
+    - 可参考filebrowser/nextcloud等产品的desktop实现
+    - 还可参考云厂商的实现，如s3/r2
 
 - 文件管理器的url路径设计
   - github示例 支持多个branch、tag
@@ -105,6 +107,19 @@ modified: 2021-08-23T05:27:08.068Z
   - React, Redux, Material UI, Nodejs, ExpressJs
   - 提供了前端和后端实现
   - virtual scroll loading to address performance issues when dealing with large folders containing more than 500 files.
+
+- https://github.com/xiaobaidadada/filecat /77Star/apache2/202601/ts
+  - 一个基于 Web 的文件服务器、服务器管理工具。集成了文件管理、超大日志查看、远程终端访问、系统进程监控，以及包括 VPN、SSH、RDP、HTTP、TCP 等多种网络代理功能。支持windows、linux、mac。
+  - 本项目是对filebrowser的功能增强，使用和filebrowser一样的ui，以服务器文件管理为基础添加一些服务器控制功能
+  - 文件管理: 支持断点分块上传、多个根目录、代码\图片编辑、编辑器模式、白板绘图...
+  - 终端：相比filebrowser使用了xterm.js，并且采用了虚拟shell完美实现命令的权限过滤，避免用户执行类似 rm -r / 的危险命令
+  - CI/CD自动化构建：内置了一个模仿github workflow 语法实现的自动化构建功能，作用于以.act结尾的文件
+  - ssh代理: 可以管理多个linux服务器，作用和winscp类似，让终端和文件管理更方便。除此之外还支持http代理，rdp远程桌面(windows)等代理
+
+- https://github.com/dhanyn10/multiple-file-manager /202510/ts/inactive
+  - A desktop application built with Electron, Vite, React, and TypeScript, designed to simplify bulk file operations. 
+  - This application provides an intuitive interface to rename, delete, and manage multiple files at once based on various patterns and criteria.
+  - 似乎没有文件树，需要在url直接输入路径，只适合用来批量操作
 
 - https://github.com/GamEditor/Node.js-FileManager
   - This is a simple file manager for download and upload files on the server by categories.
@@ -318,6 +333,11 @@ modified: 2021-08-23T05:27:08.068Z
   - 文件管理/文件去重/文件备份/文件同步/查找相似图片/查找相似视频/本地以图搜图/比对文本文件内容/拷贝目录结构/视频合并/视频裁剪/找出损坏的视频/提取音频/音频格式转换/批量重命名/搜索文件/文本编码转换/CRLF与LF转换
   - 所有操作都有日志，方便追溯和还原。涉及程序配置内容修改的操作会有权限验证。
   - 所有的文件删除、文件更新操作进行防呆保护，最大限度保证数据安全
+# zip-files
+- https://github.com/gildas-lormeau/zip-manager /MIT/202511/js/inactive
+  - https://gildas-lormeau.github.io/zip-manager/
+  - a PWA using the filesystem API in zip.js.
+  - It is based on React and built with Vite.
 # web-storage
 - https://github.com/razaanstha/s3kit /202512/ts
   - https://s3kit.vercel.app/

@@ -132,6 +132,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 使用AI gateway 来验证客户端的有效性, 避免被2api滥用
 - 📡 roadmap
   - coding不适合同时编辑多个文件，但同时执行多个project的任务存在需求，特别是在本地硬件资源有限的条件下
+  - 💡 ai操作数据库的新方案，agentfs，以bash的形式操作数据库, 对数据库友好
 
 - 🏘️ ai-backend/platform
   - providers-wrapper: models, communication+state, structured in/output
@@ -350,6 +351,7 @@ modified: 2025-03-22T16:10:24.856Z
 - 免费api的技巧: 在知乎/小红书直接搜索 免费 claude (公益站), 就会有最新的api推广信息, 可以用小号邀请自己
   - 公益站 [Search results for '公益站' - LINUX DO](https://linux.do/search?q=%E5%85%AC%E7%9B%8A%E7%AB%99%20order%3Alatest)
   - [L站免费AI汇总 ](https://linux.do/t/topic/638821)
+    - [L站的佬友们应该早已经 token 自由了吧 ](https://linux.do/t/topic/1397594)
     - [最新福利羊毛话题](https://linux.do/c/welfare/36)
     - [All-API-Hub：开源AI中转站集中管理和自己的New API增强管理，基于 one-api-hub 大幅重构增强 _202511](https://linux.do/t/topic/1001042)
   - 📌 [Agent Router](https://agentrouter.org/console), 每日签到获取$25
@@ -386,7 +388,7 @@ modified: 2025-03-22T16:10:24.856Z
     - claude分组倍率低
     - [福利站](https://wcdk.224442.xyz/)
     - [[Wind Hub]新的公益API 主帖 ](https://linux.do/t/topic/1344450)
-  - [Neb 公益站](https://ai.zzhdsgsss.xyz/console)
+  - [Neb 公益站](https://ai.zzhdsgsss.xyz/console), 签到
     - 采用按量计费，每次0.01，注册送2000次，因为该阶段的初衷就是最大化利用这些将要过期的key。
     - 当前额度用完或2026.1.31之后进入第二阶段，采用按量计费，倍率会很低
     - 会不会有签到站不会，因为我太懒了
@@ -424,6 +426,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 绝大部分模型倍率换算后与官方价格相同，为缓解服务器资源压力，所有免费模型实际扣除配额均按付费标准计算
     - [黑与白chatAPI福利站](https://cdk.hybgzs.com/)
   - [Elysiver](https://elysiver.h-e.top/console), 站内签到
+    - 支持embedding model
   - [莹のAPI](https://api.wpgzs.top/pricing)，模型贵
     - rpm15
     - [莹のapi 加油站](https://quota.wpgzs.top/), 鸡你太美，每天可转100刀到公益站
@@ -434,17 +437,15 @@ modified: 2025-03-22T16:10:24.856Z
     - [NewAPI签到系统](https://gift.voct.top/), ~~已失效~~
   - [APIKEY_公益站](https://welfare.apikey.cc/console)
     - GLM-4.7, MiniMax-M2.1 限时免费 
+  - [Hotaru API](https://api.hotaruapi.top/console)，签到
+  - [曼波API](https://ai.dik3.cn/console), 签到
   - [ThatAPI](https://gyapi.zxiaoruan.cn/pricing)
     - 有多个cc分组，IP限制严格
-  - [Hotaru API](https://api.hotaruapi.top/console)
   - [香草API](https://ai.xiangcao.de/console)
-  - [曼波API](https://ai.dik3.cn/console)
-  - [KFC API](https://kfc-api.sxxe.net/console)
-    - [KFC API公益站 - 正式上线  ](https://linux.do/t/topic/1233747)
-    - [逆水寒](https://api.sxxe.net/), 即将关闭
-    - [逆水寒公益API——扬帆起航 ](https://linux.do/t/topic/1173036)
+  - [六哥公益站](https://api.crisxie.top/)
   - [小呆API](https://new.184772.xyz/console)
     - [小呆API](https://api.daiju.live/console)
+    - [农场](https://game.daiju.live/)
   - [一个小站的 API 商店](https://one-api.ygxz.in/app/dashboard), 每日签到1刀内随机
     - 提供半公益的高质量 API 中转服务，始于202406
     - 无调用频率限制
@@ -460,6 +461,10 @@ modified: 2025-03-22T16:10:24.856Z
   - [我爱996公益](https://529961.com/), 服务停止
     - [我爱996公益附属站 - 每日签到领取奖励](https://hub.529961.com/)
     - [【公益站我爱996一次】测试上线已接入LinuxDo ](https://linux.do/t/topic/1147448)
+  - [KFC API](https://kfc-api.sxxe.net/console)
+    - [KFC API公益站 - 正式上线  ](https://linux.do/t/topic/1233747)
+    - [逆水寒](https://api.sxxe.net/), 即将关闭
+    - [逆水寒公益API——扬帆起航 ](https://linux.do/t/topic/1173036)
   - [包子铺](https://api.5202030.xyz/)
     - [包子公益](https://api.codeqaq.com/)
     - 只开放linuxdo lv2以上注册
@@ -621,6 +626,9 @@ modified: 2025-03-22T16:10:24.856Z
   - [Seedream AI - 免费在线AI图像生成器](https://seedream.pro/zh)
   - [Cloudflare Workers AI Models](https://developers.cloudflare.com/workers-ai/models/)
     - 提供免费的文生图模型: sdxl, sdv1-5
+  - [香蕉皮 AI](https://nanobanana.xiao.mom/)
+    - [NanoBananaPro支持4K、免费无限制，轻蹬 ](https://linux.do/t/topic/1401748)
+    - 在家逆向了一个NanoBananaPro香蕉皮AI，支持4K，不用登录，不限次数
   - [Free AI Image Generator - AI Free Forever](https://aifreeforever.com/image-generators)
   - [Free Gemini Pro](https://freebanana.pro/)
   - [FreeGen 白嫖图片生成器](https://hachimiai.dpdns.org/freegen/)
@@ -858,6 +866,8 @@ modified: 2025-03-22T16:10:24.856Z
 
 - [Zeabur](https://zeabur.com/)
   - $5/月免费使用
+
+- [Canopy Wave](https://cloud.canopywave.io/)
 # ai-products-hunt
 
 # more

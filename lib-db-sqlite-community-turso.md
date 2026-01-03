@@ -1,11 +1,11 @@
 ---
-title: lib-db-sqlite-community-limbo
-tags: [community, database, limbodb, sqlite]
+title: lib-db-sqlite-community-turso
+tags: [community, database, sqlite, turso]
 created: 2023-10-28T17:31:09.680Z
-modified: 2024-12-13T15:12:55.861Z
+modified: 2026-01-03T08:33:17.870Z
 ---
 
-# lib-db-sqlite-community-limbo
+# lib-db-sqlite-community-turso
 
 # guide
 
@@ -262,7 +262,11 @@ target/debug/limbo database.db
 
 - ## 
 
-- ## 
+- ## For the "I just want bash for my AI agent" crowd: AI SDK  + just-bash + AgentFS. That's it. That's the stack.
+- https://x.com/penberg/status/2007174813467701337
+  - [Building AI agents with just bash and a filesystem in TypeScript _202601](https://turso.tech/blog/agentfs-just-bash)
+- Why is this better than a sandbox / container?
+  - hey solve different problems and can be used together. 
 
 - ## Bash running on Cloudflare Workers with AgentFS
 - https://x.com/penberg/status/2007110953167622292

@@ -26,7 +26,19 @@ modified: 2025-09-01T07:58:29.058Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🆚 [Testing LLM ability to port code - Comparison and Evaluation : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1q1fo4p/testing_llm_ability_to_port_code_comparison_and/)
+  - prompt:
+  - Please port this short program to [insert language here]. The resulting program must have identical behavior (including bugs and unusual behavior). That is, given identical input, it should produce identical output. The rewrite cannot use any 3rd party libraries, but can incorporate any idiomatic changes (including from the standard library) that would make it more "natural" or performant in the target language. The original JS program is executed using the Bun runtime.
+
+- For those wanting something more graphical.
+  - Looks like C++ was the easiest language to target, with Haskell being the hardest (well, except for Oberon7). 
+  - Python got close a few times but stack issues kept it from passing. 
+  - I went back and looked over some of the reasoning output and it's strange - DeepSeek noticed that the stack would be a problem, but assumed that since it worked fine in JS, it should work in Python as well since neither have TCO. It then mentioned that I ran it in Bun, but went forward with a recursive solution. I asked it separately if Bun had TCO and it said that it did (but that Node and Deno do not - correct on all three). So it should have changed this into a regular loop. But did not.
+  - K2 was the most consistent in changing the recursion to a loop (handling that in both Python and Rust but leaving it in C++ where the compiler should implement TCO on something so simple).
+
+- Have it write unit tests based on the code in the new language, and a spec, THEN code.
+
+- That's why vibed code creates a bunch of technical debt landmines waiting for the next bunch of devs to step on. You can get a program that runs but there could be insidious logic errors that slip by.
 
 - ## [is GTX 3090 24GB GDDR6 good for local coding? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o11udk/is_gtx_3090_24gb_gddr6_good_for_local_coding/)
 - Local models are nowhere near the performance of top-tier closed-source models. And even the best local ones (eg GLM-4.5/4.6) are too big to be hosted locally at reasonable speeds. So no, a 3090 is definitely a bad investment if the goal is to replace Codex-CLI.

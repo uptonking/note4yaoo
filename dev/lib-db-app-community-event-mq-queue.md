@@ -12,6 +12,23 @@ modified: 2023-12-09T12:32:50.692Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 如果我想把后端保留在 Node.js，这样就能继续享受 better-auth 这种省心的库；同时又希望能很方便地对接 Python 的 worker 服务。
+- https://x.com/Jiaxi_Cui/status/2007406939756769636
+  - 但这么看下来，好像只能走“Node.js 负责后端 + 自己再写一套类似 RQ / Celery 的队列协议，让 Python worker 尽量保持简单”的路线？
+  - 否则一旦 worker 端也要承担更多业务逻辑，就没法像在 Node 体系里那样直接用 BullMQ 这种成熟方案把事情做干净。
+  - 总觉得哪里不对劲：都 2026 年了，为什么跨语言的任务队列/worker 协作还这么不优雅？
+
+- 考虑下 temporal / restate 之类的多语言 Workflow 的服务？
+  - 看了一下temporal好像太重了，我看看restate
+
+- celery经常有莫名其妙的bug.... 我个人不喜欢。。
+
 - ## One cool thing about Postgres-backed queues is that they’re incredibly observable. 
 - https://x.com/petereliaskraft/status/1908177644480577595
   - The queue is just a Postgres table, and you can see–or change–what’s in it with SQL.

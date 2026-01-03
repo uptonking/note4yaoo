@@ -508,6 +508,10 @@ def slugify(text):
 
 - 做一个静态网站，从我提供的funding body整合所有的funding opportunity，要用爬虫爬取，整合所有的funding机会，并且用最大公约数来展示简要和关键信息，打开之后跳转到具体的funding详细页面
 
+- https://x.com/ivanfioravanti/status/2007425626676859083
+  - Claude Code battle: GLM 4.7 vs MiniMax 2.1 creating fireworks effect
+  - Create a standalone HTML file for an interactive fireworks display with the following specifications:
+
 - [「代码助手测评」启动，SC-Coder测评方案公布 - 53AI-AI知识库|大模型知识库|大模型训练|智能体开发](https://www.53ai.com/news/2024061981497)
 
 - [一套提示词帮你实现小红书、公众号封面自由，Deepseek V3也能用！](https://mp.weixin.qq.com/s/OFCgFrXNQgIT2ho3V-4Oag)

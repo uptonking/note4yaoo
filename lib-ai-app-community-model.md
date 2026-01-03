@@ -157,6 +157,24 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 随手写写我当前认识的 coding agent orchestrator /多agent编排器。
+- https://x.com/LotusDecoder/status/2007292223864353071
+  - 预感这个会是2026开年最火的概念。类似于2024的cursor，2025年的claude code。
+  - 首先这是AI agent性能提升发展后的必然趋势，从chatbot查查手册，到cursor改文件，再到claude code cli式一次成型整个项目，到了现在单个agent已经成熟之后，自然开始进入多agent分工协作，然后多个agent如何沟通、运筹、管理，这就很需要新的范式了。
+  - 最基础的是claude code里内部语法启动subagent，用bash命令或文档来管理各自的任务目标、日志、成果。
+  - vaguel其次，比较友好的是 opencode 的 oh my opencode，有一个初始的默认编排器配置 西西弗斯系统，一次性缝合Opus-4.5 Gemini-3-pro Gpt-5.2，各自干各自擅长。设计了查文档、前端、后端、总控台等多个角色，把model依次接入进去，由总控台来自行分配任务。
+  - 还有声音也比较大的 conductor，这个还没用过。 优点是可视化界面管理多个 agent，每个 agent 在独立 git worktree 中工作。还有支持codex。
+  - 现在最激进的元旦刚发布的 gas town，作者说展示给anthropic公司内部看的时候，吓到他们了。这个项目直接把所有的cli 形式agent一揽子包了进来做编排，主流的 claude code 、codex之外 Gemini CLI 、amp 等等全部囊括了进来。
+  - orchestrator的大发展将会是AI性能提升后，走到下一步的必然，并发并行多个多种agent干活，再AI测试合并，完成一个大型项目，这不是一个未来很遥远的事情，甚至很快又会成为一种标准范式吧。当然，这对人的要求更高了，需要很系统的软件工程能力，对钱包的要求也变高了，以前一个agent，orchestrator是一群agent烧token
+
+- conductor 值得一试，我这两天在用的，多 workspace/分支并行。 Claudecode/codex 订阅可以直接用
+
 - ## [Local model registry to solve duplicate GGUFs across apps? : r/LocalLLM _202512](https://www.reddit.com/r/LocalLLM/comments/1pygyhi/local_model_registry_to_solve_duplicate_ggufs/)
   - I'm running into storage issues with multiple local LLM apps. I downloaded Olmo3-7B through Ollama, then wanted to try Jan.ai's UI and had to download the same 4GB model again. Now multiply this across Dayflow, Monologue, Whispering, and whatever other local AI tools I'm testing.
   - Each app manages its own model directory. No sharing between them. So you end up with duplicate GGUFs eating disk space.

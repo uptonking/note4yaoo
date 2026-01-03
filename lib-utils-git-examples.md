@@ -564,6 +564,12 @@ modified: 2023-08-29T10:12:22.345Z
   - Repo is a tool built on top of Git. Repo helps manage many Git repositories
   - Repository tool for Android development
   - 只支持android项目
+
+- https://github.com/Araxeus/vendorfiles /MIT/202601/ts
+  - Vendorfiles lets you pull files from GitHub repositories and keep them up to date. Think of it like a package manager, but for individual files — CSS libraries, binaries, config files, whatever you need.
+  - Download files directly from any GitHub repo
+  - Grab release assets (including extracting from zip/tar archives)
+  - Configure with TOML, YAML, JSON, or package.json
 # git-ai
 - https://github.com/jnsahaj/lumen /MIT/202411/rust
   - Instant AI Git Commit message, Git changes summary from the CLI (no API key required)

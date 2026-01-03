@@ -233,6 +233,7 @@ modified: 2023-11-28T14:48:45.910Z
 # features
 - inspirations
   - 高频需求，网盘分享
+  - 如何区分 自己的内容 和 外部的内容
 
 ## editor-feats
 

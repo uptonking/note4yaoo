@@ -131,18 +131,40 @@ modified: 2024-03-31T17:45:16.789Z
 
 - https://github.com/gtsteffaniak/filebrowser /3.3kStar/apache2/202509/go/ts/vue
   - FileBrowser Quantum is a massive fork of the file browser 
+  - Add and configure multiple sources
+  - Login support for OIDC, password + 2FA, and proxy
   - Directory-level access control that can be scoped to user or group.
   - Developer API support: create long-lived API Tokens
-  - Login support for OIDC, password + 2FA, and proxy
-  - Multiple sources support
   - 依赖go-cmp、image、jwt
   - Simplified configuration via `config.yaml` config file.
   - 🔍 Ultra-efficient indexing and real-time updates
   - 🆚 readme最后提供了产品对比图
+  - Notable features that this fork does not have (removed):
+    - jobs are not supported yet.
+    - shell commands are completely removed and will not be returned.
+    - [Command Execution - File Browser](https://filebrowser.org/command-execution.html)
+      - Within File Browser you can toggle the shell (< > icon at the top right) and this will open a shell command window at the bottom of the screen. 
+  - [add s3 compatibility _202407](https://github.com/gtsteffaniak/filebrowser/issues/140)
+    - We are working on adding s3 compatibility, on this branch. Right now, it is on a early stage but functional, we have tried so far with Minio and Backblaze B2 and all basic funcionality is there
   - 📡 roadmap
-    - [add s3 compatibility _202407](https://github.com/gtsteffaniak/filebrowser/issues/140)
+    - electron-app
   - https://github.com/Softwaredam/filebrowser-chart
     - For anyone interested in a chart to deploy it on Kubernetes
+  - [High memory usage _202506](https://github.com/gtsteffaniak/filebrowser/issues/747)
+    - With an 80TB source, indexing takes 12–24h (interestingly, full sync seems faster), which is fine. However, after running the program for several days, memory usage grows to unreasonable levels. For the 80TB source, RAM usage reached 50GB+. I haven't tested this rigorously, but it seems memory usage increases with each indexing and doesn't drop, just keeps growing with subsequent indexing runs.
+    - There is one "memory leak" I am aware of, if a folder is delete/renamed or moved, that directory info will stay in memory until restart. Is this possibly what's happening? Do you move large directories often?
+    - The other situation I know increases ram is when you search, but that should clear after a while on its own with garbage collection.
+    - 202506: A lot of good changes in 0.7.10 regarding excluded files/folders. 
+    - 202511: I have created an experimental release that utilizes sqlite to improve memory performance, would love to get feedback
+  - [v1.0.0 stable release update _202509](https://github.com/gtsteffaniak/filebrowser/discussions/1293)
+    - introduction of SQLite database: 
+    - Initially, this will be primarily for job status information.
+    - eventually, this could enable RAM-free indexing and replace the existing simple (but very fast) database.
+  - [Database - SQLite  _202510](https://github.com/gtsteffaniak/filebrowser/discussions/1471)
+    - I was hoping the index was already in a SQLite db so I could see if I could use the unique IDs assigned to a path as a universal id for image sharing (even if path changes) but looks like the SQLite Db is currenty not the full index and just for the job processing 
+    - 202511: check out this experimental build which uses SQLite for indexing. The benefit is reduced memory usage, but it is a bit slower and more io heavy. But seems like a decent compromise.
+  - [Beta/v1.1.2 _20251129](https://github.com/gtsteffaniak/filebrowser/pull/1679)
+  - [bbolt/boltdb alternative _202507](https://github.com/gtsteffaniak/filebrowser/issues/1026)
 
 - https://github.com/filebrowser/filebrowser /31.1kStar/apache2/202509/go/ts/vue
   - https://filebrowser.org/
@@ -158,10 +180,12 @@ modified: 2024-03-31T17:45:16.789Z
   - [add minio as file storage  _202202](https://github.com/filebrowser/filebrowser/issues/1809)
     - Filebrowser uses spf13/afero as a filesystem abstraction layer. 
     - S3 support can be added after adding it to the afero package.
+  - [What's the database format of filemanager.db? _201906](https://github.com/filebrowser/filebrowser/issues/779)
+    - it is BoltDB. We use bbolt fork since the original was archived. It has the same API and some improvements.
   - https://github.com/spf13/afero /6.4kStar/apache2/202508/go
     - The Universal Filesystem Abstraction for Go
 
-- https://github.com/xiaobaidadada/filecat /apache2/202601/ts
+- https://github.com/xiaobaidadada/filecat /77Star/apache2/202601/ts
   - 一个基于 Web 的文件服务器、服务器管理工具。集成了文件管理、超大日志查看、远程终端访问、系统进程监控，以及包括 VPN、SSH、RDP、HTTP、TCP 等多种网络代理功能。支持windows、linux、mac。
   - 本项目是对filebrowser的功能增强，使用和filebrowser一样的ui，以服务器文件管理为基础添加一些服务器控制功能
   - 文件管理: 支持断点分块上传、多个根目录、代码\图片编辑、编辑器模式、白板绘图...
@@ -178,6 +202,13 @@ modified: 2024-03-31T17:45:16.789Z
   - 支持 国内外主流网盘
   - SolidJS + Hope UI，已经停止维护
   - https://github.com/AlistGo/alist-web
+
+- https://github.com/drivebase/drivebase /MIT/202510/ts/inactive
+  - https://drivebase.github.io/
+  - self-hosted cloud file manager designed to unify file storage across multiple cloud providers into one seamless interface.
+  - ⚠️ This project is currently being migrated to Golang and getting a dashboard redesign with many other changes.
+  - Multi-Cloud Integration (Google Drive, Dropbox, etc.)
+  - File Routing Rules for Automated Uploads
 
 - myDrive /2.8kStar/GPLv3/202012/前端js+后端ts/~~inactive~~
   - https://github.com/subnub/myDrive
