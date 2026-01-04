@@ -258,9 +258,38 @@ target/debug/limbo database.db
 
 - Does each replica maintain its own WAL in S3 ? How do you enforce consistency around replicas
 # discuss-agentfs
+- draft
+  - 针对只读场景，文件到sqlite的同步，是否可以迁移到个人生产数据库到sqlite的同步
+
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## AgentFS copy-on-write overlay in action
+- https://x.com/penberg/status/2007533204622770214
+  - Multiple AI agents working on the same codebase. Each with isolated changes, zero conflicts. Host files stay untouched.
+
+- how much performance overhead does it add? how much longer would a command like npm install take?
+  - For example, ”npx create-react-app” takes 3x longer with agentfs compared to native xfs, but it’s just lack of async which should be fixable. That said, I use agentfs to build agentfs and don’t really notice any slowdown because agents usually work in parallel in the background
+
+- AgentFS is such a nice middle ground between agents on prod and messy git worktrees. Curious how you are thinking about surfacing and merging the best overlay back once 5 agents diverge hard on the same feature.
+  - The agent needs to coordinate this because is such a use cases specific thing. However, I think we need an "agentfs apply" (easy) or "agentfs merge" (much harder) commands to assist in the merging of the delta layer to the base filesystem. But figuring out which overlay is best I think is purely agent stuff (we might need some nicer tooling to audit the overlay of course).
+
+- sounds like a recipe for disaster. git branches/worktrees are simply superior. it would be very easy to end up with both agents having broken code that all the time. What happens later, would it merge session files back into host filesystem once done?
+  - Nothing happens later unless you explicitly want something to happen. The way i use it is by making the agents push to git remote branch which means the agents never know about each other
+- Copying the code is the easy part, the problem is the vendor directories
+
+- I saw the fuse implementation now, that’s impressive, must have a try
+
+- how is this different than GIT worktrees?
+
+- This solves a real pain point. We've been running 5+ Claude instances in parallel and the worktree juggling adds friction. COW at the filesystem level means agents can work truly independently without the git ceremony. Curious if there's a plan for handling npm/node_modules sharing across overlays.
+
+- I am writing a conductor-like TUI tool to run multiple Claude Code and Codex agents in parallel and right now they are using git worktrees. Do you think using fs-agent as a replacement would be too painful?
 
 - ## For the "I just want bash for my AI agent" crowd: AI SDK  + just-bash + AgentFS. That's it. That's the stack.
 - https://x.com/penberg/status/2007174813467701337

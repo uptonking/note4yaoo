@@ -27,6 +27,10 @@ npm cache clean --force
 # verify that the cache has been successfully cleared
 npm cache verify
 
+yarn cache clean --all
+
+pnpm store prune
+
 # removing all entries or those linked to specific packages
 uv cache clean
 uv cache size

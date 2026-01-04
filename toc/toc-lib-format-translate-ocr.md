@@ -10,6 +10,7 @@ modified: 2025-12-19T12:43:21.150Z
 # guide
 
 - tips-ocr
+  - popular-on-github: tesseract/OCRmyPDF(71k), PaddleOCR(67k), MinerU(51k), DeepSeek-OCR(21k)
   - 文档的使用频率不如图片, ocr/translation的方案要考虑图片场景
   - 批量执行ocr的架构可参考papermerge/paperless
   - vlm流式输出的方案配合编辑器流式构建内容的ux体验会很好
@@ -200,46 +201,6 @@ modified: 2025-12-19T12:43:21.150Z
     - Support multi threading for translation
     - Use single process for ocr / layout model to save vram
 
-- https://github.com/ocrmypdf/OCRmyPDF /32kStar/MPLv2/202512/python
-  - http://ocrmypdf.readthedocs.io/
-  - OCRmyPDF adds an OCR text layer to scanned PDF files, allowing them to be searched or copy-pasted.
-  - Generates a searchable PDF/A file from a regular PDF
-  - Distributes work across all available CPU cores
-  - Uses `Tesseract` OCR engine to recognize more than 100 languages
-  - Battle-tested on millions of PDFs.
-  - 🤔 [Proposal: Improve OCR Accuracy with LLM-based Post-processing _202503](https://github.com/ocrmypdf/OCRmyPDF/issues/1491)
-    - OCRmyPDF and Tesseract work well, but they sometimes produce errors, especially when processing complex fonts, handwritten text, or low-quality scans. One potential way to improve OCR accuracy is by integrating a post-processing step using a Large Language Model (LLM) such as GPT-4, Llama, or Claude.
-    - I don't think this would be a good idea or very practical. A better OCR engine based on LLM or recent ML would improve results more than post processing since it can actually read the input text more accuracy, as opposed to guessing what bad output text might mean from the text alone. There's no obvious way to correct positional information when the word count differs after correction and it will.
-    - The easiest thing to do at this point is use ocrmypdf and then a tool like pdftotext to get the recognized text out. You could then feed this to an LLM to improve the output text (in many cases) without positional information
-  - [[Feature]: use local (small) vision llm for higer OCR accuracy _202504](https://github.com/ocrmypdf/OCRmyPDF/issues/1517)
-    - Taking Qwen2.5-VL as an example, it is trained to output "Qwen HTML" format, with bounding box coordinates added to each HTML tag. 
-  - [Saving the images ocrmypdf temporarily creates OR use existing pdf-to-img pdfs _202501](https://github.com/ocrmypdf/OCRmyPDF/discussions/1457)
-    - I currently have an OCR workflow that uses Surya OCR for ocring and table recognition and generating text files and CSVs from scanned semi-technical PDF documents. These outputs are then fed into an LLM data extraction tool. While Surya performs well, it doesn't create searchable PDFs. To address this, I run OCRmyPDF on the original PDF as a final step to generate a searchable PDF.
-    - However, I've noticed an inefficiency in this approach since both Surya OCR and OCRmyPDF perform PDF to image conversion and preprocessing. 
-    - The goal is to perform the PDF to image conversion only once throughout the entire workflow.
-    - You could create a OCRmyPDF plugin that uses Surya as its OCR engine instead of Tesseract for example. There's an `OCRmyPDF-EasyOCR` that demonstrates how this could be done (although the more current approach would be to render to hOCR).
-  - https://github.com/ocrmypdf/OCRmyPDF-EasyOCR /MIT/python
-    - This is plugin to run OCRmyPDF with the EasyOCR engine instead of Tesseract OCR, the default OCR engine for OCRmyPDF. 
-  - [OCRmyPDF: Add an OCR text layer to scanned PDF file | Hacker News _202207](https://news.ycombinator.com/item?id=32028752)
-    - LibreOffice has a cool option where you can generate the PDF with the editable text format embedded. You get a clean PDF that is also fully editable. Easy tech, but also useful.
-
-- https://github.com/FanQinFred/OCRmyPDF-Desktop /apache2/202312/js/vue/inactive
-  - 在OCRmyPDF的基础上，集成了所需环境，并使用Electron开发了桌面端
-  - https://github.com/razem-io/OCRmyPDFonWEB /MIT/202305/python/inactive
-    - Streamlit Web UI for OCRmyPDF
-    - https://github.com/mghulamqadir/scanned-to-searchable-pdf /Streamlit
-  - https://github.com/digidigital/OCRthyPDF-Essentials /AGPL/202407/python/inactive
-    - Make your PDF files text-searchable (A GUI for OCRmyPDF)
-  - https://github.com/denovochen/OCRmyPDF-GUI /MPL/202506/python/qt
-    - 一个图形用户界面，让OCRmyPDF命令行工具的强大功能变得简单易用
-    - 批量处理：一次处理多个PDF文件，并显示详细进度
-    - 高级OCR选项：自动校正倾斜页面、自动旋转、清理图像等
-    - OCRmyPDF, Tesseract OCR, PySide6 (Qt for Python)
-  - https://github.com/alexanderlanganke/ocrmypdfgui /MIT/202506/python
-    - GUI wrapper to run batch jobs on my filesystem
-  - https://github.com/piazin/ocrmypdf-js /ts
-    - For everything to work correctly, you need to have it installed on your OS ocrmypdf.
-
 - https://github.com/oomol-lab/pdf-craft /4.1kStar/AGPL > MIT/202512/python
   - https://pdf.oomol.com/
   - 将 PDF 文件转换为各种其他格式，本项目专注于处理扫描版书籍的 PDF 文件
@@ -394,6 +355,12 @@ modified: 2025-12-19T12:43:21.150Z
     - https://paddlepaddle.github.io/PaddleX/
     - PaddleX 3.0 是基于飞桨框架构建的低代码开发工具，它集成了众多开箱即用的预训练模型，可以实现模型从训练到推理的全流程开发，支持国内外多款主流硬件
 
+- https://github.com/RapidAI/RapidOCR /5.6kStar/apache2/202512/python
+  - https://rapidai.github.io/RapidOCRDocs
+  - the foremost multi-platform, multi-lingual OCR tool that boasts unparalleled speed, expansive support, and complete openness.
+  - Supported Languages: It inherently supports Chinese and English, with self-service conversion required for additional languages.
+  - Rationale: Acknowledging the limitations in `PaddleOCR`'s architecture, we embarked on a mission to simplify OCR inference across diverse platforms. This endeavor culminated in converting PaddleOCR's model to the versatile ONNX format and seamlessly integrating it into Python, C++, Java, and C# environments
+
 - https://github.com/tesseract-ocr/tesseract /71.5kStar/apache2/202512/cpp
   - https://tesseract-ocr.github.io/
   - Tesseract Open Source OCR Engine
@@ -401,6 +368,46 @@ modified: 2025-12-19T12:43:21.150Z
   - Tesseract supports various image formats including PNG, JPEG and TIFF.
   - Tesseract supports various output formats: plain text, hOCR (HTML), PDF, invisible-text-only PDF, TSV, ALTO and PAGE.
   - Tesseract was originally developed at Hewlett-Packard Laboratories Bristol UK in 1985. From 2006 until August 2017 it was developed by Google.
+
+- https://github.com/ocrmypdf/OCRmyPDF /32kStar/MPLv2/202512/python
+  - http://ocrmypdf.readthedocs.io/
+  - OCRmyPDF adds an OCR text layer to scanned PDF files, allowing them to be searched or copy-pasted.
+  - Generates a searchable PDF/A file from a regular PDF
+  - Distributes work across all available CPU cores
+  - Uses `Tesseract` OCR engine to recognize more than 100 languages
+  - Battle-tested on millions of PDFs.
+  - 🤔 [Proposal: Improve OCR Accuracy with LLM-based Post-processing _202503](https://github.com/ocrmypdf/OCRmyPDF/issues/1491)
+    - OCRmyPDF and Tesseract work well, but they sometimes produce errors, especially when processing complex fonts, handwritten text, or low-quality scans. One potential way to improve OCR accuracy is by integrating a post-processing step using a Large Language Model (LLM) such as GPT-4, Llama, or Claude.
+    - I don't think this would be a good idea or very practical. A better OCR engine based on LLM or recent ML would improve results more than post processing since it can actually read the input text more accuracy, as opposed to guessing what bad output text might mean from the text alone. There's no obvious way to correct positional information when the word count differs after correction and it will.
+    - The easiest thing to do at this point is use ocrmypdf and then a tool like pdftotext to get the recognized text out. You could then feed this to an LLM to improve the output text (in many cases) without positional information
+  - [[Feature]: use local (small) vision llm for higer OCR accuracy _202504](https://github.com/ocrmypdf/OCRmyPDF/issues/1517)
+    - Taking Qwen2.5-VL as an example, it is trained to output "Qwen HTML" format, with bounding box coordinates added to each HTML tag. 
+  - [Saving the images ocrmypdf temporarily creates OR use existing pdf-to-img pdfs _202501](https://github.com/ocrmypdf/OCRmyPDF/discussions/1457)
+    - I currently have an OCR workflow that uses Surya OCR for ocring and table recognition and generating text files and CSVs from scanned semi-technical PDF documents. These outputs are then fed into an LLM data extraction tool. While Surya performs well, it doesn't create searchable PDFs. To address this, I run OCRmyPDF on the original PDF as a final step to generate a searchable PDF.
+    - However, I've noticed an inefficiency in this approach since both Surya OCR and OCRmyPDF perform PDF to image conversion and preprocessing. 
+    - The goal is to perform the PDF to image conversion only once throughout the entire workflow.
+    - You could create a OCRmyPDF plugin that uses Surya as its OCR engine instead of Tesseract for example. There's an `OCRmyPDF-EasyOCR` that demonstrates how this could be done (although the more current approach would be to render to hOCR).
+  - https://github.com/ocrmypdf/OCRmyPDF-EasyOCR /MIT/python
+    - This is plugin to run OCRmyPDF with the EasyOCR engine instead of Tesseract OCR, the default OCR engine for OCRmyPDF. 
+  - [OCRmyPDF: Add an OCR text layer to scanned PDF file | Hacker News _202207](https://news.ycombinator.com/item?id=32028752)
+    - LibreOffice has a cool option where you can generate the PDF with the editable text format embedded. You get a clean PDF that is also fully editable. Easy tech, but also useful.
+
+- https://github.com/FanQinFred/OCRmyPDF-Desktop /apache2/202312/js/vue/inactive
+  - 在OCRmyPDF的基础上，集成了所需环境，并使用Electron开发了桌面端
+  - https://github.com/razem-io/OCRmyPDFonWEB /MIT/202305/python/inactive
+    - Streamlit Web UI for OCRmyPDF
+    - https://github.com/mghulamqadir/scanned-to-searchable-pdf /Streamlit
+  - https://github.com/digidigital/OCRthyPDF-Essentials /AGPL/202407/python/inactive
+    - Make your PDF files text-searchable (A GUI for OCRmyPDF)
+  - https://github.com/denovochen/OCRmyPDF-GUI /MPL/202506/python/qt
+    - 一个图形用户界面，让OCRmyPDF命令行工具的强大功能变得简单易用
+    - 批量处理：一次处理多个PDF文件，并显示详细进度
+    - 高级OCR选项：自动校正倾斜页面、自动旋转、清理图像等
+    - OCRmyPDF, Tesseract OCR, PySide6 (Qt for Python)
+  - https://github.com/alexanderlanganke/ocrmypdfgui /MIT/202506/python
+    - GUI wrapper to run batch jobs on my filesystem
+  - https://github.com/piazin/ocrmypdf-js /ts
+    - For everything to work correctly, you need to have it installed on your OS ocrmypdf.
 
 - https://github.com/naptha/tesseract.js /37.6kStar/apache2/202512/js
   - https://tesseract.projectnaptha.com/
@@ -1084,7 +1091,14 @@ modified: 2025-12-19T12:43:21.150Z
     - coco, csv,json,CONLL2003/spaCy/YOLO
 
 - https://github.com/CVHub520/X-AnyLabeling /7.6kStar/GPL/202512/python
-  - a powerful annotation tool that integrates an AI engine for fast and automatic labeling. It's designed for multi-modal data engineers, offering industrial-grade solutions for complex tasks.
+  - a powerful annotation tool that integrates an AI engine for fast and automatic labeling. 
+  - It's designed for multi-modal data engineers, offering industrial-grade solutions for complex tasks.
+  - https://github.com/CVHub520/X-AnyLabeling-Server /apache2/202512/python
+    - lightweight and extensible serving framework for AI model inference, specifically designed for X-AnyLabeling.
+    - It provides a production-ready solution with pluggable architecture and flexible configuration for various auto-labeling scenarios.
+    - Decoupled Design: Framework handles service management and resource scheduling without interfering with model implementation details
+    - Pluggable Architecture: Rapidly integrate custom models without modifying core framework code
+    - Flexible Configuration: All parameters are configurable with sensible defaults, adaptable to different deployment scenarios
 
 - https://github.com/PFCCLab/PPOCRLabel /369Star/NALic/202510/python
   - a semi-automatic graphic annotation tool suitable for OCR field, with built-in PP-OCR model to automatically detect and re-recognize data.

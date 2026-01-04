@@ -790,6 +790,11 @@ modified: 2021-01-04T17:26:43.784Z
     - OCR is a lot better, we train our own model, surya
     - References and links
     - Better equation conversion (soon including inline)
+- https://github.com/datalab-to/pdftext /644Star/apache2/202506/python
+  - Text extraction like `PyMuPDF`, but without the AGPL license. PDFText extracts plain text or structured blocks and lines. 
+  - It's built on `pypdfium2`, so it's fast, accurate, and Apache licensed.
+  - It first uses pypdfium2 to extract characters in order, along with font and other information. Then it uses a simple decision tree algorithm to group characters into lines and blocks. It does some simple postprocessing to clean up the text.
+  - built on some amazing open source work, including:  pypdfium2, scikit-learn
 
 - https://github.com/lumina-ai-inc/chunkr /AGPLv3/202410/python/ts/rust
   - https://chunkr.ai/

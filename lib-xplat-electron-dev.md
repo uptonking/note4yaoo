@@ -64,6 +64,7 @@ modified: 2021-05-13T03:08:52.583Z
   - Stirling-PDF
   - joplin or extension
   - drawio
+  - devtools: lint/format-cli
   - cli: ImageMagick, ocr, pandoc(GPL/haskell)
 - llm-ui/client
   - 可参考 ollama/lmstudio/janai 封装 llama.cpp 的逻辑

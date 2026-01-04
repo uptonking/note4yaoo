@@ -36,9 +36,25 @@ modified: 2025-12-18T12:26:08.445Z
 
 - ## 
 
-- ## [《我是如何使用 Claude Code 每一项功能的》 _202511](https://linux.do/t/topic/1145488)
+- ## 
+
+- ## [Is Claude Code better on the Terminal? : r/ClaudeCode _202601](https://www.reddit.com/r/ClaudeCode/comments/1q3dp6c/is_claude_code_better_on_the_terminal/)
+  - I been using Claude Code extension through VSCode Insider for a while now but I am not actually sure if it is better to use the CLI version or if there's any hidden advantages that I am missing.
+
+- Much better especially if you are using Skills, a Spec and a couple of plugins
+
+- I used it in cursor for a while, but honestly, it’s just easier to work in terminal. Way better information density and way fewer distractions.
+
+- Yes. Terminal is the new IDE!!
+  - Terminal is the old ide lmao
+
+- I honestly don't know why they haven't enhanced the vs code extension to have the exact same features as the terminal by now. Can't they just use Claude code to ask it to add slash commands and make it equivalent to the CLI? 
+
+- ## [《我是如何使用 Claude Code 每一项功能的》 译文 _202511](https://linux.do/t/topic/1145488)
   - 对我来说，把任务交出去，设定上下文，然后让它自己工作，只根据最后的PR成品来评估，而不是纠结过程
   - 从基础的 CLAUDE.md 文件和自定义斜杠命令，到 Subagents、Hooks、GitHub Actions等强大能力。这篇文章篇幅较长，我更建议把它当作参考手册，而不是一次性读完。
+
+- [Claude Code中文教程：100%免费，从入门到精通 ](https://linux.do/t/topic/1403054)
 
 - ## Claude Code has been a game-changer for me. But where I've felt the real magic is how it enables multitasking.
 - https://x.com/omarsar0/status/2005337800284188879

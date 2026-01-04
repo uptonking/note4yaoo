@@ -178,6 +178,7 @@ modified: 2023-11-28T14:48:45.910Z
   - https://github.com/PDFMathTranslate/PDFMathTranslate /保留排版的 PDF 文档全文双语翻译
     - [Granite Docling WebGPU: State-of-the-art document parsing 100% locally in your browser. : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o0php3/granite_docling_webgpu_stateoftheart_document/)
   - realtime collab + resumable-stream
+  - ⚖️ 支持中国知网的 caj 格式
 
 - obsidian-mobile, notion-mobile
   - obsidian-open-rewrite compatible with obsidian plugin, 主流插件已达到百万下载

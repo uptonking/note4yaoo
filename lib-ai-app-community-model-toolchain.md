@@ -356,12 +356,28 @@ PP Speed: Q3 GGUF: 50 t/s
 - M3 Ultra, 512 GB RAM, 32/80-core variant.
   - I have a script processing files roughly 30-50k tokens in length, which I cache, and then ask subsequent questions of. I just fired it up on GLM4.5 4 bit MLX quant. For a 35000 token document, prompt processing took ~247 seconds. In subsequent turns of conversation generation speed was 10 tokens per second roughly speaking.
   - GLM4.5 Air, same document was ~104 seconds for prompt processing, and then generation is at 30 tokens per second or so.
-# discuss-llm-tools-tips/tricks
+# discuss-quantized
 - ## 
 
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 🆚 [MiniMax M2.1 quantization experience (Q6 vs. Q8) : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1q3579f/minimax_m21_quantization_experience_q6_vs_q8/)
+  - I was using Bartowski's Q6_K quant of MiniMax M2.1 on llama.cpp's server with Opencode and it was giving me some very strange results.
+  - The usual way I test coding models is by having them write some of the many, many missing unit tests.
+  - I stepped up to Q8 just to see and it nailed everything on the first try with a tiny fraction of the tokens.
+  - That's a small sample size and there's always the possibility of a random outcome. But, wow, yikes, I won't be trying Q6 again in a hurry.
+
+- Minimax does not quantize like other models, and is native FP8. You can try my NVFP4 if you have Blackwell GPU’s
+
+- I had that happen with Q8 KV cache. Not worth it.
+
+- Did you try tweaking the settings, such as setting a repetition penalty, or other settings that are designed to reduce the amount of rambling a model does. A q6 should be virtually identical to a q8, there's a good chance it was just random. I always use rep pen of 1.05 for the qwen model I use, and have never encountered rambling with it set.
+  - Also you're using a quant with an imatrix, and imatrices can mess up reasoning chains. I don't ever use imatrix quants for reasoning models. And at q6 or q8 you don't need an imatrix quant, it won't make the model any better than without.
+- Im pretty sure unsloth uses imatrices. I don't have any references, it's from my own experience and I also remember bartowski talking about it in a thread once, which suggests it's a known issue. I normally use mradermachers non imatrix quants.
 
 - ## 🆚 [Benchmarks for Quantized Models? (for users locally running Q8/Q6/Q2 precision) : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pyrjke/benchmarks_for_quantized_models_for_users_locally/)
 - Nope! Definitely a need for such a thing. Quantization has been around for a while but is still the wild-west of LLM's in terms of documenting the results/impact.
@@ -377,6 +393,12 @@ PP Speed: Q3 GGUF: 50 t/s
 - I found MXFP4 definitely superior to Q4 across a variety of models considering their applied weights (MXFP4+F32), even better than Q8 in the few cases I tried - at the exception where GPT-OSS-20B MXFP4 was not as good as Unsloth slightly heavier F16.
 
 - Primary CUDA maintainer for llama.cpp/ggml here, given enough time I'll eventually do it for quality control and publish the results here https://github.com/JohannesGaessler/elo_hellm
+# discuss-llm-tools-tips/tricks
+- ## 
+
+- ## 
+
+- ## 
 
 - ## [New functiongemma model: not worth downloading : r/ollama](https://www.reddit.com/r/ollama/comments/1pq69o5/new_functiongemma_model_not_worth_downloading/)
   - I have a valid MCP toolset that works great with other very small models such as qwen3:1.7b. I obtain quite reliable function calls. So, an even smaller model that could do this with the same quality sounds great. 

@@ -33,6 +33,47 @@ modified: 2024-01-23T02:52:23.932Z
 
 - ## 
 
+- ## 
+
+- ## The future is plain text files — it's just not evenly distributed
+- https://x.com/kepano/status/2007461645438849484
+- yeah you're right, increasingly I don't care about the web ui or mobile app, I just want an LLM friendly data dump from stuff like banks and mortgage cos
+
+- I’m making a headless CMS based around plaintext formats: markdown and json
+
+- I used pandoc to convert our Word-based security program docs into Markdown. It let me use AI dev tools to knock out annual edits in an afternoon instead of a week. I keep it in git and check it out in an Obsidian project. This makes cross-referencing durable and searching FAST
+
+- I’m in the process of switching most of the apps I use to plain text files and then coding my own interfaces to interact with them. So useful!
+
+- Plain text already won. We’re just still wrapping it in layers of UI to feel productive.
+
+- ## if you're using Obsidian with Claude Code, tell me about your workflow, and what you've used it for _202601
+- https://x.com/kepano/status/2007223691315499199
+  - 讨论中分享了很多开源工具
+
+- I used Claude code yesterday to review 2025, and I have all my goals from the last few years on there, asked it to find trends! To help plan 2026
+
+- Identify new backlinks to add, synthesize knowledge base and generate summaries, batch re-organization.
+
+- mass metadata editing, mostly, also "insert backlinks that I missed"
+- Can you give examples of mass metadata editing? Are you having Claude generate Python scripts or how do you control hallucinations?
+  - "assign the type of 'movie' or 'book' to all of the items in this folder that don't have a 'type'", that kind of thing. for things like director/isbn though I had it proxy out to a script
+- The consumer/mass-market does not care about hallucinations. Most of them can’t spot them or prefer to keep using the tools and not think. The loss of Critical Thinking is one of the most significant losses of our current society.
+
+- I have started maintaining specific master context files in Obsidian that I repeatedly pass into Claude Code instead of explaining things repeatedly. I have a file like this now for every major project or area of my life
+
+- 1. batch editing that use more complicated bash commands i wouldn't have done otherwise: adding links, editing properties, .etc; 
+  - 2. create specific folders for current projects that im working on and load all the notes/pdfs/there for claude to read. make claude put on a critique lens; make claude role play different perspectives/backgrounds; make claude put valuable points into notes and keep iterating like this
+  - claude code isn't great at adding tags - maybe a context window thing. but my notes aren't that long.
+
+- I migrated from Notion to Obsidian specifically for this. Because the vault is just local text files, I can point Claude Code at the directory to get cross-file insights, auto-organize folders, and batch-edit metadata. It's a game changer for maintenance
+
+- I ask claude to aggregate ideas using keyword search of my vault. Then collect all the thoughts into an idea doc. Then iterate from there into a final form.
+
+- used opus 4.5 to write obsidian-style notes today. turns out wikilinks are basically a mini knowledge graph for the llm. it can traverse your thoughts like a filesystem. huge unlock.
+
+- Adding frontmatter, adding backlinks, categorizing / organizing / aggregating documents, importing from lesser apps (this didn’t go great). Built an MCP server for myself so it didn’t burn as many tokens the way it was trying, that’s a real issue.
+
 - ## The file over app philosophy does not make a distinction between data and file. Both are one and the same. 
 - https://twitter.com/kepano/status/1764775797444026557
   - The source is the output, and vice versa. It's a two-way door.

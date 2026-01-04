@@ -128,7 +128,43 @@ modified: 2025-09-01T07:58:29.058Z
 
 - ## 
 
-- ## 
+- ## For really complex work, AI writes thousands of lines of working code within an hour
+- https://x.com/flybayer/status/2007487747469054228
+  - But then I spend 1-3 days to fully understand, prompt deep refactors, improve end user UX, and ensure all edge cases are working and tested. 
+  - That’s even after crafting a long, detailed plan document at the start. Because with complex stuff, you can’t foresee and address everything up front. 
+  - A lot of times this is foundational stuff that is critical to get right in order to not cripple your future self.
+
+- this is a hard, underdiscussed problem. especially if you're doing something that there isn't great prior art in your existing codebase.
+  - at best i've found that AI handling the work at the LoC-level makes it easier to think deeply about design questions
+
+- I’ve started running some parallel during refactor phase that are working on different parts
+
+- once you get good scaffolding set up it gets much, much easier. 
+
+- ## dhh: I had no idea that local model dictation had gotten this good and this fast
+- https://x.com/dhh/status/2007498242561593535
+  - I'm blown away by how good hyprwhspr with Omarchy is just using a base model backed by the CPU. Unbelievably accurate.
+  - This is on my Framework desktop. It's a pretty powerful CPU (not even using the GPU!). I need to test it on lesser machines and see if it works as well. But I'd be surprised if it's still not quite good.
+- Why not the AMD hardware acceleration for the speech to text model? I use hyprwispr for a week now, with the AMD hardware on Framework Desktop, works great
+  - I tried rocm version first. Seemed slower? I don't think rocm is great on Strix Point yet. But it also just didn't seem to matter. From the CPU alone, I'm getting what seems like 100ms dication.
+
+- ## 🌰 dhh--ruby: You can't let the slop and cringe deny you the wonder of AI. This is the most exciting thing we've made computers do since we connected them to the internet. _202601
+- https://x.com/dhh/status/2007503687745490976
+  - If you spent 2025 being pessimistic or skeptical on AI, why not give the start of 2026 a try with optimism and curiosity?
+  - Just this past summer, I spoke with @lexfridman about not letting AI write any code directly, but it turns out half the resistance was simply that the models weren't good enough yet! I spent more time rewriting what it wrote than if I'd done it from scratch. That has now flipped.
+  - I still write plenty of code by hand. Both out of necessity (the models aren't hitting what I want) and out of joy (writing code is fun!), but I've embraced the idea that getting a good draft really does speed things up quite often.
+
+- AI promised to cure cancer and create new forms of energy. But all we got is will smith eating spaghetti, undressed kids and a bunch of halucinated false information. And all this comes at a very high price for the average Joe, who no longer can afford a computer
+
+- ## 🌰 vczh: 我对macos的objc++ GUI程序开发基本是一无所知的，但是借助opus 4.5，不做任何context/prompt engineering，他自己吭哧吭哧就给我把之前整了一半的移植工作给搞定了，更新到了GacUI的最新版。_202601
+- https://x.com/geniusvczh/status/2007443230481059954
+  - 现在hello world已经跑起来了，我还没测试FullControlTest。opus 4.5太强了
+- Opus 之所以能搞定 ObjC++，核心在于它正确理解了 .mm 文件中 C++ RAII 和 Objective-C ARC（自动引用计数）的混合内存管理模型。但对于 GacUI 这种自绘引擎，真正的隐形坑在于 RunLoop 的桥接。建议检查一下生成的代码是否正确将 GacUI 的 Message Pump 挂载到了 NSRunLoop 的 observer 回调里，否则一旦窗口失去焦点或者进入模态对话框（Modal Loop），整个 UI 线程很容易死锁。
+  - 没仔细看，不过这部分应该是以前就解决了的，毕竟上一个能跑的macos版本就在GacUI 1.0，当时已经是这样了。后面我编译FullControlTest demo的时候会把所有功能再试一遍 
+
+- 真香定律
+
+- 
 
 - ## 最近走通了三种并行开发的方式：
 - https://x.com/leeoxiang/status/1990040466486911031

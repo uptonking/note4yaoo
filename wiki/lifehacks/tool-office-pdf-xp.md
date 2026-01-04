@@ -32,6 +32,12 @@ modified: 2020-12-29T17:52:48.584Z
 - 画板或批注类产品要参考规范 [Web Annotation Data Model](https://www.w3.org/TR/annotation-model/)
 # draft
 - 基于 AI 的pdf review/suggestions
+
+- ⚖️ 支持中国知网的 caj 格式
+
+- 
+- 
+
 # pdf-studio
 - 编辑功能强大
 

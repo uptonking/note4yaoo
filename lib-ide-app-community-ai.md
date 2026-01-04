@@ -213,6 +213,21 @@ modified: 2024-08-24T16:28:20.515Z
 # discuss-ide-ai
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🤼 So maybe forking VS Code wasn’t the right move after all
+- https://x.com/jayair/status/2007537887235969465
+- Forking VS Code was never the real mistake. The mistake is underestimating how attached devs are to their 57 extensions and years of muscle memory.
+
+- Do people actually use VS Code for languages other than JS / TS and Node?
+  - It's so popular because it's easier to get VSCode working with the language you want than it is to install a full IDE that's probably better for the task. At uni people use it for LaTeX, C/C++, robotics, Jupiter notebook, etc. it's hard to find anyone using anything else
+
+- I think forking opencode might be smarter
+
+- Cursor's tab completion is still worth the $20, but I increasingly find myself not opening an IDE at all so I'm not sure how long that subscription makes sense
+
 - ## [昨天试了一下阿里新出的 Qoder AI 编译器。效果竟然还行 - V2EX _202508](https://www.v2ex.com/t/1154911)
 - 灵码并没有 deepseek 模型
 
