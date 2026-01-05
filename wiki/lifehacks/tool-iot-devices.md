@@ -198,6 +198,26 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [What do we think about Gorgon Point (Ryzen AI 9 HX 470)? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1q4jc99/what_do_we_think_about_gorgon_point_ryzen_ai_9_hx/)
+  - The new APU is promised to support DDR5-6400 (102.4 GB/s) and LPDDR5X-8533 (136.5 GB/s) which should move some models that were barely usable on Strix Point to the usable territory.
+  - However, it really seems that to utilise these capabilities, manufacturers would have to get chips that are basically inaccessible right now.
+
+- 470 is the successor of 370. Big HELL NO. Still worse than 395.
+
+- Gorgon Point is a mid-cycle refresh, its not a replacement for strix halo. That will only come around 2027 as medusa halo (as announced before). 
+- Looks better than HX 370, but still less interesting than Ryzen AI Max 395 with his 256 bits bus.
+
+- It takes a long time for software to catch up to the hardware. For example, Qualcomm released the Snapdragon X chips back in May 2024 with Llama being shown to run on it, but NPU support for LLMs only dropped a year after release. CPU and GPU support on llama.cpp also took a couple of months to show up and this was with Qualcomm engineers pitching in.
+  - AMD needs to do a heck of a lot more on the software side if it wants these APUs to be useful for LLMs and local AI.
+
+- I think that the real revolution will come once this kind of APUs use DDR6. But apple will be the first. And will do it with more memory lanes too
+
+- It's going to be worse than Strix Halo which offers not only 256 GB/s but also has over 75 TOPS from igpu alone (same NPU). Heck, Intel's Nova Lake is gonna offer 75+ TOPS from NPU alone.
+
 - ## 等这波AI泡沫破裂，我都不敢想会有多少下架的服务器硬件会冲击垃圾佬市场。搓手等待
 - https://x.com/riaqn_zh/status/2004907309336875298
 - “我兄弟在等房价崩盘”

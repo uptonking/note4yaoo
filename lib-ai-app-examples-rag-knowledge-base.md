@@ -215,6 +215,13 @@ modified: 2025-11-30T17:27:16.720Z
     - RAG Demo 到 RAG Application 难度的完美表现，其实功能不算丰富（增加了 Graph RAG和 Agent RAG 的思想），
     - 代码却不得不做的非常复杂，大部分其实是应用逻辑。 P. S. 代码已经成熟到可以直接抄了，直接复刻就完了
 
+- https://github.com/dataelement/bisheng /10.5kStar/apache2/202511/python/ts
+  - http://www.bisheng.ai/
+  - open LLM devops platform 
+  - Powerful and comprehensive features include: GenAI workflow, RAG, Agent, Unified model management, Evaluation, SFT, Dataset Management, Enterprise-level System Management, Observability and more.
+  - [有计划将企业数据库作为数据源之一吗？ ](https://github.com/dataelement/bisheng/issues/500)
+    - 202509: 目前可以通过助手节点数据查询功能实现 nl2sql 能力
+
 - https://github.com/coze-dev/coze-studio /18.8kStar/apache2/202512/go/ts
   - agent development platform with all-in-one visual tools, simplifying agent creation, debugging, and deployment like never before
   - Provides all core technologies needed for AI agent development: prompt, RAG, plugin, workflow, enabling developers to focus on creating the core value of AI.
@@ -284,6 +291,12 @@ modified: 2025-11-30T17:27:16.720Z
   - Maintains document layout and reading order: process multi-column pages
   - Extracts images from PDFs: save images separately or encode them inline
   - [Build a Multimodal RAG using — PyMuPDF4LLM-llamaindex-Qdrant _202411](https://ai.gopubby.com/build-a-multimodal-rag-using-pymupdf4llm-llamaindex-qdrant-e9d23a4409cc)
+- https://github.com/intercepted16/pymupdf4llm-C /AGPL/202512/c/python
+  - "Blazingly-fast" PDF extractor; a high quality 300 pages/s alternative to Markitdown, PyMUPDF4LLM & others.
+  - a PDF extractor in C using MuPDF, inspired by pymupdf4llm. i took many of its heuristics and approach but rewrote it in C for speed, then bound it to Python and Rust so it's easy to use.
+    - primarily intended for use with python bindings. but for some reason i got bored and added Rust ones too if ya want.
+  - outputs JSON for every block: text, type, bounding box, font metrics, tables. you get the raw data to process however you need.
+  - [I made a fast, structured PDF extractor for RAG; 300 pages a second : r/Rag _202512](https://www.reddit.com/r/Rag/comments/1pzwot0/i_made_a_fast_structured_pdf_extractor_for_rag/)
 
 - https://github.com/danny-avila/rag_api /710Star/MIT/202508/python/librechat
   - [RAG API - Chat with files](https://www.librechat.ai/docs/features/rag_api)
@@ -534,13 +547,6 @@ modified: 2025-11-30T17:27:16.720Z
   - Text Chunking: Large documents are split into manageable chunks for easier processing.
   - Embedded Models: The app supports Ollama models for document embeddings and generating answers based on the content.
   - Chroma Vector Store: All the processed documents are stored in a Chroma vector store for efficient retrieval.
-
-- https://github.com/intercepted16/pymupdf4llm-C /AGPL/202512/c/python
-  - "Blazingly-fast" PDF extractor; a high quality 300 pages/s alternative to Markitdown, PyMUPDF4LLM & others.
-  - a PDF extractor in C using MuPDF, inspired by pymupdf4llm. i took many of its heuristics and approach but rewrote it in C for speed, then bound it to Python and Rust so it's easy to use.
-    - primarily intended for use with python bindings. but for some reason i got bored and added Rust ones too if ya want.
-  - outputs JSON for every block: text, type, bounding box, font metrics, tables. you get the raw data to process however you need.
-  - [I made a fast, structured PDF extractor for RAG; 300 pages a second : r/Rag _202512](https://www.reddit.com/r/Rag/comments/1pzwot0/i_made_a_fast_structured_pdf_extractor_for_rag/)
 
 - https://github.com/krey-yon/Cliven /MIT/202506/python/inactive
   - a command-line tool that allows you to process PDF documents and have interactive conversations with their content using local AI models. 
@@ -812,13 +818,6 @@ modified: 2025-11-30T17:27:16.720Z
   - [RAG without Vectors – PageIndex: Reasoning-Based Document Indexing · run-llama/llama_index _202504](https://github.com/run-llama/llama_index/discussions/18360)
     - We were frustrated by vector-based RAG systems that rely on semantic similarity and often fail on long, domain-specific documents.
     - PageIndex, a hierarchical indexing system that transforms large documents (like financial reports, regulatory documents, or textbooks) into semantic trees optimized for reasoning-based RAG.
-
-- https://github.com/dataelement/bisheng /10.5kStar/apache2/202511/python/ts
-  - http://www.bisheng.ai/
-  - open LLM devops platform 
-  - Powerful and comprehensive features include: GenAI workflow, RAG, Agent, Unified model management, Evaluation, SFT, Dataset Management, Enterprise-level System Management, Observability and more.
-  - [有计划将企业数据库作为数据源之一吗？ ](https://github.com/dataelement/bisheng/issues/500)
-    - 202509: 目前可以通过助手节点数据查询功能实现 nl2sql 能力
 
 - https://github.com/yichuan-w/LEANN /6.8kStar/MIT/202512/python
   - an open-source vector database, compresses RAG indexes by an impressive 97% using graph-based recomputation and on-demand embedding calculation.
@@ -1386,6 +1385,11 @@ modified: 2025-11-30T17:27:16.720Z
   - Loads the KB into a vector database (Milvus) for fast retrieval.
   - Hybrid retrieval using both vector and keyword search with fusion reranking.
   - Exposed as a model using standard OpenAI API endpoints (v1/models and v1/chat/completions). Optionally protected with local or remote bearer tokens. Supports streaming responses.
+
+- https://github.com/abgulati/LARS /622Star/AGPL/202410/python/inactive
+  - LARS aims to be the ultimate open-source RAG-centric LLM application. Towards this end, LARS takes the concept of RAG much further by adding detailed citations to every response, supplying you with specific document names, page numbers, text-highlighting, and images relevant to your question
+  - [Made a RAG-centric, Open-Source UI based on llama.cpp - With Advanced Source Citations & Referencing _202406](https://github.com/ggml-org/llama.cpp/discussions/7928)
+  - [RAG for Documents with Advanced Source Citations & Referencing _202406](https://www.reddit.com/r/LocalLLaMA/comments/1db98el/rag_for_documents_with_advanced_source_citations/)
 
 - https://github.com/upstash/wikipedia-semantic-search /MIT/202504/ts
   - https://wikipedia-semantic-search.vercel.app/

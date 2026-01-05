@@ -14,8 +14,10 @@ modified: 2025-03-22T16:10:24.856Z
   - ✈️ local models support: mlx, lmstudio-alternative
     - 允许用户分享文档/插画中的模型配置，运行日志
     - 模型库: text模型, ocr模型,t2i生图模型, lmstudio在模型分类上做的不够好
+    - 参考janai/pipeshub, 既支持选择本地/api模型，也支持选择图片/文档
   - 🔗 citations for search: 外部数据源如字典mdx/书籍epub/wikipedia公开db/统计年鉴
     - 类似词典库/kiwix的预置模块, 可下载、可分享, 不必每次都全量索引
+    - wikipedia zim 自动翻译为中文
     - vector-marketplace, 支持用户选择任意数量的pdf文档创建embeddings, 并发布, 可作为一种变通方案解决数据隐私问题
     - 查看原文pdf-parts时支持仅查看前后几页, 保护原文内容
   - large pdf workflows: chunking-strategies, reindex, pdf-parts
@@ -433,7 +435,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [Elysiver](https://elysiver.h-e.top/console/personal), 站内签到
     - 支持embedding model
     - [模型健康度监控](https://elysiver.h-e.top/model-health)
-  - [ThatAPI](https://gyapi.zxiaoruan.cn/personal), 签到
+  - [ThatAPI](https://gyapi.zxiaoruan.cn/console/personal), 签到
     - 有多个cc分组，IP限制严格(无需gfw)
   - [小呆API](https://api.daiju.live/console/personal), 签到，api不稳定
     - [小呆API](https://new.184772.xyz/)
@@ -464,7 +466,8 @@ modified: 2025-03-22T16:10:24.856Z
     - [公益站支持claude ](https://linux.do/t/topic/1351151)
   - [莹のapi & 随时升天](https://supersb.me/console)，模型贵
     - [随时升天的公益站](https://any.97819781.xyz/)
-  - [FovtAPI](https://api.voct.top/console), 论坛发码
+  - [FovtAPI](https://api.voct.top/console)
+    - 模型旧，模型少
     - [NewAPI签到系统](https://gift.voct.top/), ~~已失效~~
   - [Hotaru API](https://api.hotaruapi.top/console/personal)，签到
     - codex
@@ -477,6 +480,7 @@ modified: 2025-03-22T16:10:24.856Z
     - cc支持
   - [DEV88公益](https://api.dev88.tech/console/personal), 签到
     - cc支持
+  - [太子公益 API](https://taizi.api.51yp.de5.net/console/personal), 签到
   - [曼波API](https://ai.dik3.cn/console/personal), 签到
   - [香草API](https://ai.xiangcao.de/console)
   - [六哥公益站](https://api.crisxie.top/)
@@ -890,6 +894,9 @@ modified: 2025-03-22T16:10:24.856Z
     - Groq 芯片虽然输出速度非常快，但由于内存大小有限，batch size 就没法很大，要是算起 $/token 的性价比来，未必有竞争力。
 
 ## llm-2api
+
+- tutorials
+  - [在 opencode 中使用CLIProxyAPI 的配置教程，享受模型自由。（首发、含推荐配置） ](https://linux.do/t/topic/1407247)
 
 - [OpenCode - Zen](https://opencode.ai/docs/zen/)
   - Zen works like any other provider in OpenCode. You login to OpenCode Zen and get your API key.

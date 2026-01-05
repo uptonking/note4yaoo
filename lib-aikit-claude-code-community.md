@@ -22,7 +22,11 @@ modified: 2025-12-18T12:26:08.445Z
 
 - ## 
 
-- ## 
+- ## [Petition: Claude Code should support AGENTS.md : r/ClaudeCode _202601](https://www.reddit.com/r/ClaudeCode/comments/1q3q8x6/petition_claude_code_should_support_agentsmd/)
+  - [Feature Request: Support AGENTS.md _202508](https://github.com/anthropics/claude-code/issues/6235)
+- Add a CLAUDE.md file with only one line "@AGENTS.md". works perfectly.
+- I just symlink a Claude.md to the agents.md. Easy.
+
 # discuss-news
 - ## 
 

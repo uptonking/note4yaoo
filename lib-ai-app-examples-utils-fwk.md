@@ -429,8 +429,18 @@ modified: 2025-02-21T18:20:42.624Z
     - 目前 Model Scope 使用 Token 每天都可以获得 2000 次的 API 调用次数，对于单个模型的调用官方限制为 500 次，理论上可以生成 500 张图片。
     - 根据用户反馈 Hugging Face 与 Gitee AI 可以生成无审核的 NSFW 图片，我没有在 Model Scope 上试过，因此无法确定 Model Scope 是否存在审核机制
     - 题外话：Gitee AI 与 Model Scope 的提示词优化使用的是 DeepSeek 3.2 这个模型，这个模型在生成中文描述上十分惊艳。
-  - [【即将开源】 诚邀大家试用派奇智图服务端 API - 开发调优 - LINUX DO](https://linux.do/t/topic/1368202)
-    - 随着项目的完善，不少佬友希望可以分享给朋友们用，经过几天的努力，终于开发了 Peinture 服务端，可以直接以 API 的形式直接给项目提供图片生成服务。
+  - https://github.com/Amery2010/imagine-server /MIT/202601/ts
+    - 基于 Hono 构建的统一 AI 图像生成 API 服务，支持多个 AI 提供商（Hugging Face、Gitee AI、ModelScope），提供文生图、图生图、图生视频、图像放大等功能。
+    - 模块化的 Provider 系统，轻松扩展新的 AI 服务提供商
+    - 集成 Peinture 提供友好的图形界面
+    - 自动切换和管理多个 API Token，配额耗尽时自动切换
+    - 使用 Unstorage 支持 Redis、Cloudflare KV 等多种存储后端
+    - 多平台部署 - 支持 Cloudflare Workers、Vercel、Node.js 等多种部署环境
+    - Token 统计 - 实时查看各提供商的 Token 使用情况
+    - [【开源】Peinture（派奇智图） 的服务端 Imagine Server 正式开源 ](https://linux.do/t/topic/1404399)
+      - 如何加载本地部署的qwen image edit
+      - 本地部署的，我目前没做兼容，您可以根据文档描述，自己写一个自定义的本地渠道
+      - 目前开发精力有限，只能选择优先级更高的需求进行开发。后续会增加 nano banana 、gpt-image 这类对话型 AI 模型的支持，本地模型由于 API 类型太多多样化，暂时没办法一一适配。
 
 - https://github.com/lianwusuoai/img-router /MIT/202512/ts
   - 三合一图像生成 API 中转服务- 一个接口，多渠道图像生成

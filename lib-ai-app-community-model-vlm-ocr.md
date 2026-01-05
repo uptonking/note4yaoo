@@ -12,6 +12,22 @@ modified: 2025-11-06T18:49:13.977Z
 - https://github.com/bytefer/macos-vision-ocr /MIT/202502/swift
   - A powerful command-line OCR tool built with Apple's Vision framework, supporting single image and batch processing with detailed positional information output.
 # models-vlm/ocr-xp
+- toolchain
+  - 虽然很多ocr模型官方不支持，但社区量化版可能支持，需要具体尝试
+
+- llama.cpp
+  - 已支持: LightOnOCR-1B
+  - 暂不支持(20260106): deepseek-ocr, dots.ocr, PaddleOCR, hunyuanocr, chandra, nanotes
+
+- ollama
+  - 支持: deepseek-ocr
+  - 暂不支持(20260106): mineru, paddleocr, hunyuanocr, dots.ocr
+
+- mlx-vlm
+  - 支持: deepseek-ocr, hunyuanocr, LightOnOCR
+  - 暂不支持(20260106): dots.ocr, mineru
+  - [Models to port to MLX-VLM · Issue · Blaizzy/mlx-vlm _202406](https://github.com/Blaizzy/mlx-vlm/issues/39)
+
 - qwen3-vl-4b
   - 适合作为通用图片文字识别方案，识别完后一般还会解释一段，有时解释文字会冗长
 
@@ -471,6 +487,10 @@ modified: 2025-11-06T18:49:13.977Z
   - Model generate hallucinated text, likely because of the projector being incorrect
 - I was really looking forward to benchmarking this model, until I saw it's limitations, on your point here "Model generate hallucinated text, likely because of the projector being incorrect" I don't think it's due to the projector, I cloned your branch to see why it's hallucinating, it seems to be due to the lack of pre-processing input done by this model "PP-DocLayoutV2"... PaddleOCR-VL is not an end to end VLM, it relies on "PP-DocLayoutV2" for detection, it's basically a glorified version of LayoutLM.
   - Yes I also almost come to the same conclusion. The main issue is that PaddleOCR is not just one monolithic model like Qwen or Deepseek-OCR, but it's more like a pipeline of multiple models glued together. Therefore, I don't think we currently have the infrastructure to bring it into llama.cpp.
+  - I'll close this PR for now as it's not giving any meaningful results. For users who need to do OCR task, I would recommend having a look at the latest Qwen3-VL series, or LightOnOCR-1B
+
+- I managed to convert the PP-DocLayoutV2 part of the pipeline into onnx format by adding a onnx conversion mapping for index_put to paddle2onnx. Do you think sharing the patch here would open up this PR again, or is this thread closed for good?
+  - I've been looking into DeepSeek-OCR, but their accuracy is actually lower than PaddleOCR-VL for real-world use, and it is also only 0.9B, which makes it runnable on basically any device.
 
 - 🐛 [PaddlePaddle/PaddleOCR-VL · GGUF or MLX support?](https://huggingface.co/PaddlePaddle/PaddleOCR-VL/discussions/2)
   - We really would love to convert this model to gguf, mlx format, to make it more accessible. 

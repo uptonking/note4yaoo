@@ -179,12 +179,12 @@ modified: 2022-11-11T11:04:29.007Z
   - Linkwarden also saves a copy of each webpage as a Screenshot and PDF
   - designed with collaboration in mind, sharing links with the public and/or allowing multiple users to work together
 
-- https://github.com/ArchiveBox/ArchiveBox /MIT/202401/python
+- https://github.com/ArchiveBox/ArchiveBox /26.3kStar/MIT/202601/python
   - https://archivebox.io/
   - self-hosted internet archiving solution to collect, save, and view websites offline.
   - Use ArchiveBox as a command-line package and/or self-hosted web app on Linux, macOS, or in Docker.
   - It saves snapshots of the URLs you feed it in several redundant formats.
-  - It uses normal filesystem folders to organize archives (no complicated proprietary formats), and offers a CLI + web UI.
+  - ArchiveBox uses standard tools like Chrome, wget, & yt-dlp, and stores data in ordinary files & folders. (no complex proprietary formats, all data is readable without needing to run ArchiveBox)
 - https://github.com/kanishka-linux/reminiscence /AGPLv3/202401/python/js
   - Self-hosted Bookmark and Archive manager
 

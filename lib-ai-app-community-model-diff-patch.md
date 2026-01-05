@@ -913,6 +913,23 @@ Code
   - Diff files are there to represent a delta state of the repository, a difference between a range of changes. Those may be one or more commits, or one more changes across individual files (not all SCMs manage state in terms of atomic commits). File changes, file attribute changes, SCM-specific metadata changes, and commit history information.
   - That delta state should be able to be applied to another tree in order to get the same end result. This is what diff files are ultimately there for.
   - Git diffs do this today, and they do it well (but they're pretty Git-specific). Many SCMs (and there are a lot of them) don't include a format on that level, or a format at all. Hence DiffX.
+
+- ## 为啥对 ACP 不上心，就是搞 avante.nvim 的 ACP 支持的时候弄伤了，ACP 你行行好吧， _202601
+- https://x.com/yetone/status/2008165234805198888
+  - 有的是 permission_request 里 merge 了 tool call，有的是 permission_request 之前会发送 tool call，而且 tool call 的 title 每个 ACP server 实现都不一样，有的一大坨像屎一样，行行好吧
+- 这种混乱典型的体现了协议初期 "Spec is just a suggestion" 的草莽阶段。permission_request 和 tool_call 的耦合或者是时序颠倒，本质上是服务端为了节省往返 (RTT) 而破坏了协议的原子性。建议在 Client 端加一层 Middleware Adapter，不要直接透传 Payload，而是强制用 Zod 或 TypeBox 做一层 Strict Schema Validation，把那些“像屎一样”的数据结构清洗成标准化的中间表示 (IR) 再喂给 Avante 的渲染层，否则 Lua 的动态类型如果不做防守，panic 是早晚的事。
+
+- 我的偏见认为是 Gemini CLI 不直接提供 API 的锅 = = Gemini 的 Subscription 实在是迷一样的操作，Gemini CLI / Google Code Assistant 跟 AI Studio 的 API Key 是分开计费甚至完全不同的计费路径。但是 AI Studio 有 Gemini Subscription 又可以用它的工作台交互。真是人都麻了。
+
+- claude-code-acp 就是封装了 claude SDK，做了下 nodejs stream 到 web stream 的转换
+- 原来 claude code sdk 是支持 streaming text 啊，不过这样的话 claude-code-acp 岂不是违反了 Anthropic 的规定，会有封号风险吧
+- 像 opencode/crush 啥的不也都可以支持 claude 账号登陆么
+  - 所以 opencode 用户被封号了
+
+- 其实可以搞个更通用的，不要局限于coding agent，现在acp太个性化了
+
+- acp推出两个月了，每周都在变
+
 - ## JetBrains is adopting ACP.
 - https://x.com/zeddotdev/status/1975241285796552816
   - Every @jetbrains IDE will support any ACP-compatible agent. Combined with Zed, Neovim, and Emacs, that's one protocol implementation reaching developers everywhere.

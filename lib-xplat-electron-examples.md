@@ -190,6 +190,12 @@ modified: 2024-01-31T19:13:11.286Z
 
 - https://github.com/pd4d10/debugtron /MIT/202407/ts
   - Debugtron is an app to debug in-production Electron based app
+
+- https://github.com/kiwix/kiwix-js-pwa /231Star/GPL/202601/js
+  - Kiwix JS Offline Browser implemented as a Progressive Web App (PWA), and packaged as Electron, NWJS and UWP apps for Windows and Linux
+  - this app is available either as an offline-capable, installable Progressive Web App (PWA), for almost all modern browsers and devices, or else as app packages for various Windows, Linux and macOS
+  - For iOS and Android, use the offline PWA.
+  - We also have packaged apps of WikiMed by Kiwix (a complete medical encyclopaedia), and Wikivoyage by Kiwix (a complete travel guide) in English -- no extra download needed
 # pattern/architecture
 - https://github.com/ccorcos/electron-architecture /4Star/CC0-1/202108/ts/inactive
   - This project is a boilerplate electron app with a thoughtfully designed architecture
@@ -380,8 +386,19 @@ modified: 2024-01-31T19:13:11.286Z
   - 一款方便的直播录制软件! 支持tiktok, youtube, twitch, 抖音，虎牙，斗鱼，快手，微博，网易cc，bilibili，花椒, 淘宝, 京东
   - a live recording software based on React, Ffmpeg, Electron, Shadcn, FRP. 
 
-- https://github.com/kiwix/kiwix-js-pwa /GPL/202503/js
-  - Kiwix JS Offline Browser implemented as a Progressive Web App (PWA), and packaged as Electron, NWJS and UWP apps for Windows and Linux
+- https://github.com/Gary-zy/dev-env-installer /202601/ts/vue
+  - 基于 Electron + Vue 3 + TypeScript 构建的 macOS 桌面应用，旨在帮助开发者一键配置开发环境。
+  - [macOS 开发环境一键安装工具，新电脑配环境再也不头疼 ](https://linux.do/t/topic/1407819)
+
+- https://github.com/t8y2/unihub /202601/ts/vue
+  - 现代化的跨平台工具集应用，支持强大的插件系统
+  - [【开源发布】UniHub - 跨平台桌面工具集，支持插件扩展的效率神器 ](https://linux.do/t/topic/1407769)
+    - 支持动态加载和管理插件，开发者可以轻松创建自己的插件
+    - 细粒度权限控制 - 插件需要申请权限才能访问系统资源
+    - 基于 GitHub Releases 的自动更新机制
+  - 目前内置了几个实用插件：
+    - JavaScript 格式化器 - 美化和压缩 JS 代码
+    - JWT 工具 - 解析和验证 JWT Token
 
 ## notes-apps
 

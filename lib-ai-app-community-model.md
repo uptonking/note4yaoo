@@ -161,6 +161,29 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
+- ## 📌 [Ratios of Active Parameters to Total Parameters on major MoE models : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1q401ka/ratios_of_active_parameters_to_total_parameters/)
+Model	Total Params	Active Params	% Active
+GLM 4.5 Air	106	12	11.3%
+GLM 4.6 and 4.7	355	32	9%
+GPT OSS 20B	21	3.6	17.1%
+GPT OSS 120B	117	5.1	4.4%
+Qwen3 30B A3B	30	3	10%
+Qwen3 Next 80B A3B	80	3	3.8%
+Qwen3 235B A22B	235	22	9.4%
+Deepseek 3.2	685	37	5.4%
+MiniMax M2.1	230	10	4.3%
+Kimi K2	1000	32	3.2%
+
+- having more knowledge memorized, means the model has access to a broader library of reasoning strategies, even if it's not as effective at applying them as a higher active parameter count model. 
+  - Pretty much every task will exist on the spectrum of "reasoning" versus "memorization" (even creative writing), and almost everything will be some combination of them. The more it is one end, the closer it'll perform to that parameter count. Ie: a pure reasoning task might depend basically only on active parameter count, whereas a pure memorization task scales basically 1:1 with total parameters.
+  - In the end, far more important than the architecture is really the data, and training compute. With good data and compute, the difference between parameter ratios is pretty small, actually (under a fixed compute budget), while with bad data, it doesn't matter if you have a good architecture, it won't perform well.
+  - The part you are maybe not taking into account is the the models with lower active parameter ratios are typically trained on more data, effectively, because on the same compute budget you train more tokens than the "dense equivalent" model, so it's not like you would magically have a model better for your usecase just because it's dense.
+  - You have to evaluate every individual model, not just from its architecture, but in how it performs for you.
+
+- In my case, granite-4.0-h-small (32B-A9B) is slow(10 t/s) on my 8GB VRAM(Tried to use Q4) due to A9B. Similar size Qwen3-30B-A3B is decent speed(30 t/s) for Q4. GPT-OSS-20B is good with 40 t/s. 
+
+- One interesting thing could be comparing this ratio against dense models having similar benchmarks, across different time periods and empirically find out the formula we used to have to map the dense model size equivalent to MOE.
+
 - ## Context Engineering 面试题：在 XX 业务场景下面，read_file, write_file 如何设计？ 面试中遇到这题我估计临场发挥不会太好
 - https://x.com/dotey/status/2007524872629387382
   - 首先得分析场景，然后看场景需要的上下文，还要看怎么管理上下文

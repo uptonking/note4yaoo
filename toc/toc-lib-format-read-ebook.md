@@ -195,7 +195,8 @@ modified: 2023-09-19T07:26:04.103Z
   - KOReader Sync
   - Kobo Sync with your Kobo eReader
 
-- https://github.com/booklore-app/booklore /GPL/202512/java
+- https://github.com/booklore-app/booklore /8.4kStar/GPL/202601/java/ts
+  - https://github.com/booklore-app/booklore
   - https://demo.booklore.dev/
   - A self-hosted, multi-user digital library with smart shelves, auto metadata, Kobo & KOReader sync, BookDrop imports, OPDS support, and a built-in reader for EPUB, PDF, and comics.
   - ux体验很好

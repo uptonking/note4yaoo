@@ -108,6 +108,10 @@ modified: 2022-11-07T10:58:24.512Z
   - 书籍epub
   - wikipedia公开db
   - 统计年鉴
+  - [中国百科网](https://www.zgbk.com/)
+    - 拷贝功能暂未开放
+  - [求闻百科](https://www.qiuwenbaike.cn/)
+    - 据说是从维基百科中文版fork而来, 有前维基百科中文大陆编辑参与
 
 - 标准文档
   - 工业技术

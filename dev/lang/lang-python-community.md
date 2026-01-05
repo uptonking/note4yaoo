@@ -53,7 +53,19 @@ modified: 2023-08-28T06:14:28.873Z
 
 - ## 
 
-- ## 
+- ## [Why doesn’t Django serve static files by default in production? : r/django](https://www.reddit.com/r/django/comments/1q3rn2y/why_doesnt_django_serve_static_files_by_default/)
+- It's performance. Webservers like Nginx are dramatically faster than Django is at serving static files and they have lots of configuration options and other features for working with static files, all of which Django lacks. But they're also better at scalability and separation of concerns.
+  - This. Most "real" webserver's will handle static files by using the kernel's sendfile system call. The kernel then reads the data from the file system and pipes it to the network device without the data ever touching the server process which saves a lot of (expensive) coping around of data.
+
+- serving static files via a dynamic server is kinda a waste of resource. ngnix, apache, caddy, ... are too good at this task.
+
+- first perfomance reason, second because in production, if your site has a lot of trafic, you are going to use a CDN anyway
+
+- Lots of good comments saying why you should use nginx in production, but not one mentioned security and SSL.
+  - You need a webserver like nginx to handle domains routing and certificates for https.
+  - This can be done with Cloudflare and CF tunnels though. It's still good to have nginx behind it with fail2ban. 
+
+- When deployig, django is used with a web server and a reverse proxy. This setup ha the benefeits of speed, scalibilty, security and much more. Your core django app should be mainly about logic, authentication and authorization (the last 2 can even be outsourced). Overall, its a really bad decision to even serve django in production with runserver.
 
 - ## [Confused About Django Project Structure: Traditional vs Service–Repository — Which One Should I Use? : r/django _202512](https://www.reddit.com/r/django/comments/1prgz0j/confused_about_django_project_structure/)
   - I’m working on a Django project and I’m confused about which project structure is best to follow. I see multiple approaches: Traditional Django structure (models, views, urls, etc.) Service + Repository pattern Controller-based or layered structure I want to understand: When should I stick with the traditional Django approach? At what point does using services and repositories make sense? Is it over-engineering for small or medium projects? 

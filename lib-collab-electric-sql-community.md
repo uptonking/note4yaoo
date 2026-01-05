@@ -22,6 +22,17 @@ modified: 2024-02-12T03:22:23.769Z
 - ## 
 
 - ## 
+# discuss-vendor-convex
+- ## 
+
+- ## 
+
+- ## [Building Replicate _202601](https://robelest.com/journal/replicate-local-first)
+- https://x.com/mikeysee/status/2007981002094997958
+  - this is EXACTLY why its taken so long for @convex to tackle local-first!
+- i'm building an AI first Notion like app, local first is not in my mind yet but I created a yjs impl for the editor that is very similar to @robelestifanos_ solution 
+  - yjs deltas + sequence + periodic compaction with snapshots
+
 # discuss-durable-stream/state
 - ## 
 

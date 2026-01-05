@@ -554,6 +554,13 @@ modified: 2021-01-04T17:26:43.784Z
   - TOC parsing (ebooktoc/toc_parser.py): normalizes entries, deduplicates, filters, and infers missing trailing numeric targets.
   - Offset and mapping (ebooktoc/fingerprints.py, ebooktoc/cli.py): computes dominant dimensions, builds a canonical index map (logical → PDF), and estimates printed‑page offsets by sampling pages with the VLM; stores toc, page_offset, fingerprints, and page_map in JSON.
   - Apply phase (ebooktoc/pdf_writer.py, ebooktoc/cli.py): rebuilds the canonical map, refines the offset, resolves target pages, and writes bookmarks.
+
+- https://github.com/zjm18023/pdf-watermark-remover /MIT/202601/python/tinker
+  - [做了一个PDF去除水印的工具，可视化操作界面，支持区域删除和文字删除两种模式 ](https://linux.do/t/topic/1408892)
+  - PyMuPDF (fitz) - PDF 文件处理和渲染
+  - 枕头 (PIL) - 图像处理
+  - CustomTkinter - 现代化 GUI 框架
+  - CTkMessagebox - 消息框组件
 # examples
 - https://github.com/AnsellMaximilian/electron-excel-to-pdf-invoice-generator /ts
   - A desktop invoice generator that turns excel files (with a specifically formatted workbook) into pdf invoices for every customer.

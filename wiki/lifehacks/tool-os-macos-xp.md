@@ -189,6 +189,10 @@ redis-cli shutdown
   - [Open Ports for macOS](https://openports.app/)
     - lsof -P -iTCP -sTCP:LISTEN +c0
     - kill -15 {PID}
+
+- https://github.com/Gary-zy/dev-env-installer /202601/ts/vue
+  - 基于 Electron + Vue 3 + TypeScript 构建的 macOS 桌面应用，旨在帮助开发者一键配置开发环境。
+  - [macOS 开发环境一键安装工具，新电脑配环境再也不头疼 ](https://linux.do/t/topic/1407819)
 # mac-apps
 - appstore
   - [MacKed - 专注于Mac破解资源的分享与下载](https://macked.app/)

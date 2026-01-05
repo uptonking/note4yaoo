@@ -155,6 +155,7 @@ modified: 2023-11-28T14:48:45.910Z
   - 能为其他产品提供infra或tools，如nvidia
   - 能为其他用户用户提供二创素材，如视频、图片
 - 纯前端/客户端的产品其实商业化的能力不强，付费特性一般是存储(回放)、计算(后台、并发、自动化)
+  - 简单查看浏览的功能不足以支撑商业化的产品，可增加更多功能如 搜索、编辑、批注、集成
 
 - 为成功的产品做生态
   - unsloth给llm写tutorials, 比官方更早fix prompts issues, 增大context, 版本多(The biggest difference I would say isn't the quants, but rather our bug fixes for every model)
@@ -177,6 +178,7 @@ modified: 2023-11-28T14:48:45.910Z
   - [GoAmzAI - 个人、团队、企业私有化、运营的AIGC平台解决方案](https://d.goamzai.com/)
   - https://github.com/PDFMathTranslate/PDFMathTranslate /保留排版的 PDF 文档全文双语翻译
     - [Granite Docling WebGPU: State-of-the-art document parsing 100% locally in your browser. : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o0php3/granite_docling_webgpu_stateoftheart_document/)
+    - ✨ 统一文本搜索高亮的双栏ux-pdf/docx/xlsx: 左侧是类似vscode的结果列表(非分页布局), 右侧是原文预览
   - realtime collab + resumable-stream
   - ⚖️ 支持中国知网的 caj 格式
 

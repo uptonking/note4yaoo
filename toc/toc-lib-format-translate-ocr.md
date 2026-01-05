@@ -23,6 +23,7 @@ modified: 2025-12-19T12:43:21.150Z
   - 可以不做完全体ocr，而优化重点数据的ocr，如 pdf-table > excel
   - vlm也可以提取bounding-box + 手动分割图片为主来提取表格、图表、图片
   - 更简单但低质量的方案，编辑器仅显示分页，每个编辑器页面和图片pdf的一页对应，编辑器内容为vlm识别的文本(不遵循pdf布局位置)，鼠标在点击识别文本处执行boundingbox搜索pdf图片的位置，并渲染高亮元素, 🤔🖼️ 这种方案的核心是图片操作
+  - 🤔 统一文本搜索高亮的双栏ux-pdf/docx/xlsx: 左侧是类似vscode的结果列表(非分页布局), 右侧是原文预览
 
 - ocr-labelling/annotation 没有统一标准
   - tesseract hocr
@@ -519,27 +520,47 @@ modified: 2025-12-19T12:43:21.150Z
   - ocr支持tesseract/EasyOCR/pyocr
   - Poppler PDF Rendering Library
 
-- https://github.com/rdumasia303/deepseek_ocr_app /1.5kStar/MIT/202511/python/js
+- https://github.com/rdumasia303/deepseek_ocr_app /1.5kStar/MIT/202511/python/js/inactive
   - A quick vibe coded app for deepseek OCR
   - React frontend and FastAPI backend
+  - Upload PDF files up to 100MB, Real-time progress tracking for large documents
+  - 左右分栏布局，右侧用bbox标注搜索的实体
+  - 支持图片/pdf
+- https://github.com/neosun100/DeepSeek-OCR-WebUI /279Star/MIT/202512/python/html
+  - 基于 DeepSeek-OCR 模型的智能图像识别 Web 应用, 参考了 deepseek_ocr_app
+    - 多语言客户端示例（Python、JavaScript、Go、TypeScript）
+    - 首次运行会下载约 7GB 的模型，请耐心等待
+    - ModelScope 自动切换 - HuggingFace 不可用时自动切换
+  - 🍎 v3.3 带来原生 Apple Silicon 支持, M3 Pro 上约 3 秒/张
+  - 7 种识别模式 - 文档、OCR、图表、图片、查找、自定义prompt等
+    - 4 个实战场景（发票提取、批量处理、PDF 处理、表格识别）
+  - 上传 PDF 文件后，系统会自动将每一页转换为独立的图片，并保持后续的所有处理逻辑（OCR识别、批量处理等）
+  - Find 模式: 左右分栏布局, 示例效果用bbox标注出查询的内容
+  - Bounding Box Visualization - Find mode automatically annotates positions
+  - 多语言支持 - 简体中文、繁体中文、英语、日语
+  - 与 Knowledge-Base-Self-Hosting-Kit/streamdown 示例ui类似
 
-- https://github.com/ihatecsv/deepseek-ocr-client /713Star/MIT/202510/python/js
-  - A real-time Electron-based desktop GUI for DeepSeek-OCR
+- https://github.com/fufankeji/DeepSeek-OCR-Web /531Star/202510/python/ts/inactive
+  - 基于 DeepSeek-OCR 的多模态文档解析工具。采用 FastAPI 后端 + React 前端
+  - 支持 PDF、图片等多种格式的文档上传和解析
+  - 专业的表格识别和图表数据提取功能
+  - 将 PDF 内容转换为结构化的 Markdown 格式
+  - 🌰 示例效果双栏布局，bbox覆盖在pdf原文上
+  - 首先需要下载 DeepSeek-OCR 模型权重，可从 Hugging Face 或 魔搭社区（ModelScope） 获取
+  - https://github.com/newlxj/DeepSeek-OCR-Web-UI
+
+- https://github.com/ihatecsv/deepseek-ocr-client /713Star/MIT/202512/python/js
+  - A real-time Electron-based desktop GUI for DeepSeek-OCR， 暂不支持webui
   - GPU acceleration (CUDA)
   - Flask backend manages the model, Electron frontend for the UI.
+  - 识别文本是流式输出
+  - 🐛 仅支持image，暂不支持pdf; 不支持批处理
+  - 使用针对mac优化的模型 https://huggingface.co/Dogacel/DeepSeek-OCR-Metal-MPS
   - [A quickly put together a GUI for the DeepSeek-OCR model that makes it a bit easier to use : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1ocx27p/a_quickly_put_together_a_gui_for_the_deepseekocr/)
 
 - https://github.com/th1nhhdk/local_ai_ocr /apache2/202512/python/ts
   - An local, offline (after initial setup), portable OCR software that can process images and PDF files, using DeepSeek-OCR AI (running directly on your machine).
   - Queue system: Allows processing multiple files sequentially.
-
-- https://github.com/fufankeji/DeepSeek-OCR-Web /202510/python/ts
-  - a multimodal document parsing tool based on DeepSeek-OCR with React frontend and FastAPI backend.
-- https://github.com/neosun100/DeepSeek-OCR-WebUI /MIT/202512/python/html
-  - Ready-to-use DeepSeek-OCR Web U
-  - v3.3 brings native Apple Silicon support, enabling Mac users to run high-performance OCR locally with: Native MPS Backend
-  - 与 Knowledge-Base-Self-Hosting-Kit/streamdown 示例ui类似
-  - https://github.com/newlxj/DeepSeek-OCR-Web-UI
 
 - https://github.com/miaoxutao123/deepseek-ocr-translate /MIT/202511/python/ts/vue
   - 使用 DeepSeek-OCR 和 AI 模型实现 PDF 文档的准确翻译
@@ -878,13 +899,26 @@ modified: 2025-12-19T12:43:21.150Z
   - Argos Translate uses OpenNMT for translations and can be used as either a Python library, command-line, or GUI application. 
   - 支持中日韩
 # examples
-- https://github.com/xushengfeng/eSearch /6.2kStar/GPLv3/202512/ts
+- https://github.com/xushengfeng/eSearch /6.2kStar/GPLv3/202512/ts/electron
   - https://esearch-app.netlify.app/
   - 截屏+OCR+搜索+翻译+贴图+屏幕翻译+以图搜图+滚动截屏+录屏
   - eSearch 是Information-portal的:electron: 重写版(顺便加了亿些功能)
   - 主要是想在 Linux 上(win 和 mac 上也能用)实现锤子大爆炸或小米传送门这样的屏幕搜索功能，当然也是一款方便的截屏软件。
   - 截屏 离线OCR 搜索翻译 以图搜图 贴图 录屏 滚动截屏 
   - 本地 OCR 由`PaddleOCR`的模型提供支持。
+
+- https://github.com/MrAMS/Smart-Search-PDFs /MIT/202601/python/qt5
+  - 智能 PDF 搜索引擎 - 基于语义向量(embeddings)和 BM25 的混合搜索系统，可用于开卷考试离线搜索PDF课件
+    - 一个基于语义向量（Embeddings）和 BM25 算法的本地化 PDF 混合搜索工具。
+  - 全部在本地运行，无需 API Key，保护隐私。
+    - 本地端侧：无需 GPU/API，使用 FastEmbed 和轻量级模型，CPU 也能流畅运行，无需 OpenAI API Key。
+  - ux交互是双栏布局，左侧是文本，右侧是pdf原文，左侧搜索出的文本，右侧不会高亮
+  - 混合搜索（智能推荐）： 结合了语义理解和关键词匹配。不仅能搜到字面一样的，还能搜到意思相近的。结果自动按相关度排序。
+    - 语义搜索： 哪怕你输入的词文中没出现，只要意思对，就能搜到。（基于 Jina AI 的 Embeddings 模型）。
+    - BM25 关键词： 经典的倒排索引算法，不仅是精确匹配，还能处理词频权重。
+    - 大文件支持：动态加载机制，几百页的文档滚动流畅不卡顿。
+  - [[开源自荐] 开卷考试/论文搜索神器 - 基于语义向量和BM25的PDF文件搜索软件 ](https://linux.do/t/topic/1408107)
+    - 不管是开卷考试需要在几百页的 PPT 里瞬间定位知识点，还是写论文时需要在几十篇参考文献中寻找佐证，传统的 Ctrl+F 往往力不从心
 
 - https://github.com/001kenji/document-ai-translator /apache2/202507/js/inactive
   - https://document-ai-translator.netlify.app/

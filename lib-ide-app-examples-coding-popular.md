@@ -187,6 +187,22 @@ modified: 2025-12-11T18:10:23.710Z
   - models: openrouter, Ollama
   - mux has a custom agent loop but much of the core UX is inspired by Claude Code.
 
+- https://github.com/fengshao1227/ccg-workflow /MIT/202601/js
+  - CCG v3.0: Claude Code 编排三 CLI 协作
+  - v3.0.0 重大更新：从 Python 脚本进化为 npm 包，三 CLI 协作时代正式开启！
+  - 从 Python 脚本重构为 TypeScript + unbuild 构建系统
+  - Claude Code 是主对话，负责编排整个工作流、做最终决策、实施代码
+    - Codex/Gemini/Claude 子进程 通过 codeagent-wrapper 调用，生成原型代码
+    - 零写入权限：子进程只能返回 Unified Diff Patch，不能直接修改文件
+    - 子进程输出视为"脏原型"，需经 Claude Code 重构为生产级代码
+  - Claude Code CLI 作为主导编排者
+    - Codex CLI 负责后端原型生成
+    - Gemini CLI 负责前端原型生成
+    - Claude CLI 子进程负责全栈整合
+  - 支持 smart/parallel/sequential 三种协作模式
+  - [【开源】CCG v3.0: Claude Code 编排三 CLI 协作 | Codex + Gemini + Claude ](https://linux.do/t/topic/1405588)
+    - 之前一直在用 孙佬 @DaiSun 的 Skills 仓库，用着用着就想搞点定制化的东西。比如给 Codex 和 Gemini 配上专家角色提示词，让它们不再是无头苍蝇；再比如把 zcf 佬的 Git 工具也缝进来，一站式解决开发需求。于是就有了这个 CCG（Claude Code + Codex + Gemini）项目 
+
 - https://github.com/ObservedObserver/async-code /apache2/202508/python/ts/inactive
   - Use Claude Code / CodeX CLI to perform multiple tasks in parallel with a Codex-style UI.
   - A code agent task management system that provides parallel execution of AI-powered coding tasks. 
@@ -340,6 +356,9 @@ modified: 2025-12-11T18:10:23.710Z
   - 多供应商管理：同时接入 Claude、Codex、Gemini CLI、OpenAI Compatible，自定义模型重定向与 HTTP/HTTPS/SOCKS 代理
   - 限流与并发控制：RPM、金额（5 小时/周/月）、并发 Session 多维限制，Redis Lua 脚本确保原子性与 Fail-Open 降级
   - OpenAI 兼容层：支持 /v1/chat/completions，自动格式转换、工具调用、reasoning 字段与 Codex CLI 指令注入
+
+- https://github.com/qinsehm1128/cloud_claude_code /202601/go/ts
+  - [云cc项目部署教程(第一次写教程向, 比较der) ](https://linux.do/t/topic/1408766)
 
 ## codex-cli
 

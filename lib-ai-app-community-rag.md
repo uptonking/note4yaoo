@@ -1063,6 +1063,15 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
+- ## 
+
+- ## [Do we need LangChain? : r/Rag](https://www.reddit.com/r/Rag/comments/1q4ahf9/do_we_need_langchain/)
+- In my opinion it's a wildly overbloated hunk of junk that was put out asap in order to facilitate development capture. I don't use it either
+
+- You don't even need python nowadays, let alone langchain, so yes, you're right.
+
+- It all depends on the scale and type of software you’re creating. If you’re building a RAG SaaS, and you want to support qdrant, pgvector, chromadb, and pinecone, and simultaneously support N number of file loaders, that’s where Langchain shines, as it gives you one interface for the vector stores and loaders/document.
+
 - ## [I have 50 ebooks and I want to turn them into a searchable AI database. What's the best tool? : r/notebooklm _202512](https://www.reddit.com/r/notebooklm/comments/1pxvmqf/i_have_50_ebooks_and_i_want_to_turn_them_into_a/)
 - Google File Search (if you are not technical, just use aistudio, e.g. this https://aistudio.google.com/apps/bundled/ask_the_manual )
 - NotebookLM is great as long as you don’t need to extract / access every bit of those books. It will pickup random extracts only and won’t tell you what it has missed.

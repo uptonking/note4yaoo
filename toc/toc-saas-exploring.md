@@ -45,3 +45,12 @@ modified: 2021-05-14T14:30:22.685Z
   - Collaborate with your team from anywhere, intuitively and efficiently, and leverage your knowledge and files.
   - MIT for the backend, functionnal tests, docker recipes, documentation, etc.
   - 集成了 Collabora
+# apps
+- https://github.com/liangdabiao/XHS_Business_Idea_Validator /202601/python
+  - 小红书收集和分析数据来解析市场需求用户痛点及竞争格局
+  - [上线了怎样使用XHS_Business_Idea_Validator-小红书解析市场机会智能体 ](https://linux.do/t/topic/1409279)
+  - https://github.com/liangdabiao/Business_Idea_Validator /MIT/202506/python/inactive
+    - https://liangdabiao.com/
+    - 一种 AI 驱动的工具，可通过自动 Web 抓取和智能分析来验证业务概念。该系统通过分析在线讨论和生成评分验证报告来评估市场需求、竞争水平和可行性
+    - 这是一款专业的商业调研应用程序，为用户提供友好的界面来：1. 验证商业创意 ， 2. 分析用户评论。 
+    - [【开源】新版本：Business_Idea_Validator 小红书收集和分析数据来解析市场需求用户痛点及竞争格局 ](https://linux.do/t/topic/1407486
