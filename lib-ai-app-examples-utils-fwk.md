@@ -441,6 +441,8 @@ modified: 2025-02-21T18:20:42.624Z
       - 如何加载本地部署的qwen image edit
       - 本地部署的，我目前没做兼容，您可以根据文档描述，自己写一个自定义的本地渠道
       - 目前开发精力有限，只能选择优先级更高的需求进行开发。后续会增加 nano banana 、gpt-image 这类对话型 AI 模型的支持，本地模型由于 API 类型太多多样化，暂时没办法一一适配。
+      - 怎么和热门开源聊天ui比如openwebui/librechat结合使用啊
+      - 后面会增加 OpenAI 兼容格式的 API 输出
 
 - https://github.com/lianwusuoai/img-router /MIT/202512/ts
   - 三合一图像生成 API 中转服务- 一个接口，多渠道图像生成
@@ -788,6 +790,15 @@ modified: 2025-02-21T18:20:42.624Z
   - Wrap Gemini CLI, Antigravity, ChatGPT Codex, Claude Code, Qwen Code, iFlow as an OpenAI/Gemini/Claude/Codex compatible API service, allowing you to enjoy the free Gemini 2.5 Pro, GPT 5, Claude, Qwen model through API
   - A proxy server that provides OpenAI/Gemini/Claude/Codex compatible API interfaces for CLI.
   - It now also supports OpenAI Codex (GPT models) and Claude Code via OAuth.
+  - [API Key issue _202510](https://github.com/router-for-me/CLIProxyAPI/issues/181)
+    - /opt/homebrew/etc/cliproxyapi.conf
+  - [gemini oauth in droid cli: unknown provider _202511](https://github.com/router-for-me/CLIProxyAPI/issues/258)
+    - If you just close the terminal / window or don’t pick a real project (or ALL), no Gemini credential file gets written into ~/.cli-proxy-api, and later requests from Droid will hit unknown provider.
+    - brew services restart cliproxyapi
+  - [CLIProxyAPI配置 Gemini CLI最后一步失败：Google账号权限设置不够 ](https://github.com/router-for-me/CLIProxyAPI/issues/480)
+    - 大陆网友请在config.yaml中设置proxy-url或开启tun模式的代理
+  - [fix: Implement fallback log directory for file logging on read-only system _202512](https://github.com/router-for-me/CLIProxyAPI/pull/772)
+    - macOS 下面，打开 logging-to-file: true 之后，homebrew services 启动失败，排查后是日志无法写入导致的。
   - https://github.com/router-for-me/Cli-Proxy-API-Management-Center /MIT/202601/ts
     - a WebUI interface based on CLI-Proxy-API, designed to simplify configuration modifications and runtime status monitoring.
     - Since version 6.0.19, the WebUI ships with the main program; access it via `/management.html` on the API url

@@ -46,6 +46,10 @@ modified: 2024-01-11T15:57:32.182Z
   - 3）最后，将初稿 PPT 进行深入检验和分析，进行深度优化和强化。
   - 4）现在才可以出街。
 
+- [转发下宝玉老师的 PPT 解决方案，核心思路是将“内容生成”与“视觉绘制”拆开  _202512](https://linux.do/t/topic/1346797)
+  - 大脑 (Planner) ：先用我的提示词模板，根据你的素材生成 Slides 大纲 + 对应的画图指令。
+  - 画师 (Artist) ：拿着画图指令，去用绘图工具（如 Nano Banana Pro）生成最终图片。
+
 - ## [How do I efficiently zip and serve 1500–3000 PDF files from Google Cloud Storage without killing memory or CPU? : r/node _202510](https://www.reddit.com/r/node/comments/1o6497g/how_do_i_efficiently_zip_and_serve_15003000_pdf/)
   - I’ve got around 1500–3000 PDF files stored in my Google Cloud Storage bucket, and I need to let users download them as a single .zip file.
   - Compression isn’t important, I just need a zip to bundle them together for download.
@@ -99,7 +103,7 @@ modified: 2024-01-11T15:57:32.182Z
   - The other method: EDIT > Insert > File attachment
 
 - PDF Portfolios combine multiple files together into a single PDF package.  
-# discuss-ppt-ai
+# discuss-ppt/image-ai
 - ## 
 
 - ## 
@@ -107,6 +111,159 @@ modified: 2024-01-11T15:57:32.182Z
 - ## 
 
 - ## 
+
+- ## [KIMI的 OK computer 模式制作ppt真的是独一档的存在 _202512](https://linux.do/t/topic/1297958)
+  - ppt真的就能按照你的要求，合理排版，并且颜色格式都非常符合审美，并且下载下来就是可编辑的pptx。和其他套模板版式的都一个层次。非常无敌，缺点就是次数太少了，连会员的次数都太少了。和banana那种一整张图不方便编辑完全不一样。
+  - ppt模式不行，都是套模板，okcomputer试一下，非常好用。
+
+- 在我看来不光不是独一档，它根本就不是PPT，只是看起来像PPT而已，纯html的，差远了，跟纯图片的一路货，这种水平的东西社区的佬友自己都能撸出来，没什么技术含量
+
+- 直接生成svg的格式，拖到ppt里右键改为形状。
+
+- ## 🌰 [使用notebooklm辅助presentation制作 ](https://linux.do/t/topic/1399823)
+  - 我收集了三部分的资料：Gemini的深度研究，GPT的深度研究，以及NotebookLM自己的Deep research。
+  - 让GPT生成大纲提示词。大纲的重点是控制结构，具体内容无须太详细，可以删掉，给Gemini留下发挥的空间。
+  - 不要尝试Slide Deck也就是直接生成PPT的功能，目前这个功能生成的PPT都是整张图片，不能编辑是个硬伤，一旦有一点错误就全废了。不过，大香蕉画出来的PPT非常美观，用作大众向的演讲还是可以的。
+  - 利用Infographics这个单独的生图功能，对于一些分条列出又不太重要的内容，能生成很好的配图。提示词不需要专门写
+  - Infographics 功能生成 graphic abstract也是一绝， 做好PPT以后让Gemini写提示词。可以告诉它要求Cell系列期刊graphic abstract的风格，可见英文指令遵循更好一些
+  - 这次做的任务是：在有限的时间内，对一个相对陌生的领域做一份高质量的报告。结果是整个报告从无到有耗费大概3+3=6个小时，产出14张PPT，无论是内容还是形式，质量都还可以。
+
+- ## [金山出了个在线工具，可用于notebooklm生成的pdf幻灯片转ppt _202601](https://linux.do/t/topic/1406180)
+- 整体效果还可以，至少大多数文字内容可以自己调整了，而且文件大小也小了很多
+
+- 在用的工具，不错的，大部分文字都能编辑，某些图元素也能移动替换，不过能编辑的土元素不是很多。主要还是在文字编辑上厉害
+
+- ## [请问佬友们Notebookllm的PDF可以转换成PPT修改吗？ _202512](https://linux.do/t/topic/1299290/5)
+  - 我用NoteBookLLM想要生成PPT用来演示，但是他下载的时候是网页PDF格式，请问怎么转换成.pptx格式的呀？
+
+- 不能直接生成可编辑的PPT，PDF转成PPT效果也很差。
+  - 我是把PDF丢给perplexity生成一份纯文字的PPT，基本与PDF能对上，然后再手工插图，不算太麻烦，还算过得去。
+  - 还试过把PDF转成图片，再丢给香蕉或perplexity除去图片上的文字，然后再把纯文字的PPT套上去。麻烦点，但出来的PPT质量很高。
+
+- Codia AI NoteSlide 试试这个网站，可以直接对pdf进行修改，同时导出为pdf文件
+
+- [制作可编辑ppt的新思路 ](https://linux.do/t/topic/1381300)
+  - NOTEBOOKLM制作的ppt很好，但痛点是不能修改，特别是有稍许错误的地方。发现可以把ppt截图发ai，让其用VBA代码复刻，大部分文字和流程图都还可以，图标可能有一定问题。
+
+- ## [PPT-master 一个用AI生成真正可编辑的高质量PPT的工具 _202512](https://linux.do/t/topic/1305492)
+  - 使用 mineru 对 pdf 进行了提取，然后用 md 文档重新生成一份含有企业预警通图标和封面图的 ppt，因为时间更空余，生成的比视频里面的更精美多了
+  - 暂时还没有考虑到作为产品来推广。我主要是自己要制作一些 ppt，所以探索了这个框架，刚好觉得这个框架还不错，所以就分享给大家。
+
+- 感觉不错 比纯图片强 起码有啥问题能自己改
+
+- 感觉先做成html再做成ppt的方法应该比直接做ppt效果更好，毕竟训练数据多
+
+- 现在从html=>svg=>PPT，转换为形状时候，格式和样式就直接乱了，然后就歇菜了
+  - 这个框架里没有 html 的设置，要想用 html 复原到 svg，可能需要重新建设一个框架，专门用于 html 还原为 svg。
+
+- svg在ppt中可以转换为形状的，不存在只是图片这一说。我上周五修改了流程，现在是一键生成pptx，打开pptx之后，点击这个按钮还原为标准的ppt
+  - wps不行啊，只能用office来处理。
+
+- 试了下效果还可以，唯一的问题是基本没有适配的图标和配图，希望可以通过接入大香蕉的api来解决这个问题
+  - 图标可以手动去 svgrepo 上下载了放入仓库里提示使用就行。配图的话我用 antigravity 可以直接使用调用生图的。
+
+- ## [生成ppt有哪些ai可以推荐？ ](https://linux.do/t/topic/1367870)
+- NotebookLM？谷歌的，用了一下，感觉生成的东西可以参考一下，但是只能生成PDF，不能修改，所以用的也不多。
+
+- ds 生成纲领 → kimi生成ppt大纲 → 手动修改不满意部分 → kimi生成
+
+- 给PPT生成PPT？没太懂是要重做吗？天工上传完word会有几个问题问你，具体要什么样式？哪部分内容放多一点之类的。manus和notebookLM是上传完word直接他就开始做了，控制不了。但都能上传word做ppt，至于重做PPT天工好像不行，manus能复刻。
+
+- gemini网页版点canvas能生成ppt，然后转存到slide，就能下载可编辑PPT了，但是效果没有notebooklm的好
+
+- 我平时用 hugohe3/ppt-master, 生成SVG然后靠python转成ppt格式的: 文字部分不会出现生图AI的乱码错误, 细节改起来也方便, 还便宜
+  - 今天用佬推荐的做了一个紧急的ppt，体验还不错，感谢佬
+  - 用claude列出每一页的内容，再在这个仓库里也用claude code生成，指定好我要的配色，做出来简约又符合我的要求。虽然ai 味有点重，不过是生成svg，感觉这个路线很合适，可以慢慢调，那些生成图的就是耗费时间又不好改
+
+- [什么时候应该让AI帮我做PPT？ ](https://linux.do/t/topic/1310968)
+  - 千问可以生成可编辑的
+- 我用那个免费的qwen chat不能生成
+
+- ## [【已开源】一个基于banana pro的一站式PPT生成应用, 告别排版美化烦恼 _202512](https://linux.do/t/topic/1285413)
+  - 鄙人平时经常有做ppt的需求，但是又不擅长做PPT，每次做都需要花费大量时间在ppt样式调整和排版上。我也使用过传统的AI PPT app，虽然能快速产出ppt，但是还存在 1只能选预设模板、2自由度低、3设计感差和4同质化严重 的问题。上周五突发奇想，:banana:pro的一致性那么强，还能渲染中文了，能不能用:banana: 仿照随便一张图，让他根据要求做一页风格相似的ppt出来？
+  - 目前的核心功能： 
+  - 1. 能够一句话/大纲/页面描述自动生成PPT, 支持Vibe方式让大模型生成或调整大纲和页面描述内容，也可以手动编辑拖动等
+  - 2. 对区域进行口头编辑：
+  - 3. 文件上传 + 自动解析里面的文本、图片、表格、公式 + 模型智能识别素材 匹配到相关PPT页面
+  - 4. 一键导出为pdf或者ppt文件
+  - ❓ 目前还在进行应该是最困难的一步的开发，就是从纯图的图片中分割出可编辑的元素，目前想到的技术方案是用类似SAM（segment anything ） + Inpaint这样的东西来实现，或者佬们有什么好方案也可以分享 （当前也能对页面进行编辑，但是为直接图生图的方式，框选区域然后口头让模型调整，理论上什么都可以调，但是我们还是会有一些手动编辑的需求）
+- PS: 目前版本，使用:banana: 生成ppt的一些个人经验：
+  - 上传的模板参考图需要避免一图放下太多内容和元素，一般最多一张图含3-4子页面
+  - 不要让模型渲染太多的文字，否则容易生成乱码
+- 已知的偶发性问题（部分情况可以通过重新生成 roll几次来解决）：
+  - 中文渲染还是有一定的错误可能
+  - 原模板成分过多会对结果造成干扰
+
+- 有没有想过可以用Gemini生成组件或者素材库再组合？这样可编辑性更高。比如可以让Gemini预留文本框什么的比如插图元素单独画，然后用一个总控去定位每个元素位置？暂时没想到怎么定位，可以搞个坐标？哦对，可以搞那种预制模板+风格迁移，大香蕉应该有这个能力去保留模板里的文本框位置，这样就不需要去记定位了
+  - 目前项目有一个单独的素材生成和管理模块能直接生图，然后可点页面编辑勾选素材，让:banana: 把选择的素材加进去(不过精确到像素级别定位，目前还做不到 只能口头表述一个位置 用Vibe的方式由banana​:banana: 来决定怎么排版，或者可以直接用编辑器框选一个区域让他放在那里，也许能满足需求
+
+- 能否先:banana: 出整页之后丢回视觉LLM（或者SAM之类的）解析文字元素和图片元素，然后让:banana: 进一步出一个纯背景再把各个图片和文字扣出来放上去
+  - 目前在做的大概就是佬的想法，不过我想的是除了背景，把分割元素也让:banana: 做了 :bili_040:（直接让:banana: 生成前景），然后用一个连通性判断+cv把元素提出来；文本框的话再用类似mineru的layout yolo模型来定位
+
+- 如果是可编辑功能，我也做了一个ocr识别文本位置GitHub - Tansuo2021/OCRPDF-TO-PPT
+但是需要干净的背景图，还需要在生成一次，然后我觉得生成干净的背景图可以直接用本地 IOPaint来去除图片中的文字得到干净背景图，目前思路是这样，今天还想到可以直接在原图裁切图案叠加过去
+
+- 佬友这个挺有前景的。但是感觉一页ppt一张图，导致做完ppt给领导，领导问怎么不能编辑就很难受。很多内容还是vibe后需要手动细化。
+  - 是的，这个是项目的重点所在，要能把图片变成可编辑的，并且还不能违和，确实有点难度
+
+- 能不能做一个素材和ppt模板的整合包，现在的可选择的还是太少了
+  - 还有就是api的管理不太灵活，希望能单独做个管理页面，文字和生图api可以分开
+
+- 感觉可以加一些选项，让用户自己选几个档的详细程度
+  - 收到建议（这么一说 想起来gamma好像也是这样的逻辑）
+
+- 之前我尝试写过一个生成svg版 ai ppt的项目，就是这么干的，后面感觉效果不好，项目就没写完了
+
+- 你后台指定的大香蕉模型名称是gemini-3-pro-image-preview吗
+  - 对的对的
+
+- 项目已经支持了文件素材的提取功能（图片、表格等），然后描述页面生成的时候会智能选择放到不同页面（会进行图片内容理解）
+  - ppt页面要用户最终确定后之后才会生成
+
+- 了解过nblm，效果也是不错的，就是目前似乎还无法编辑和二次添加素材。所以我做的这个也是想弥补下这个缺点（虽然后续google大概率也会往这个方向优化）
+
+- ppt可编辑这个确实是业务流最后也是最关键1一环节，之前是生成整页以后让Gemini生成一个HTML版本，对应表格重建还行，就是图标，流程图之类的复原的不行。上面有人提到的分离成贴图元素以及元素位置对搞不好能走下去
+
+- 关于分割可编辑元素，我看到有用Adobe Illustrator的图像描摹功能的，我试了下，效果还可以，佬可以参考下
+  - 我也听说了Adobe Illustrator的这个功能，不知道它有没有api可以调？
+
+- 这个能支持第三方 API 吗，google studio 的 API 我是免费的，没法搞生图额度，想搞付费付款账号一直搞不定，我尝试用第三方 API KEY 和 URL 来跑，好像不太行
+- 用aistudio的免费的api好像没法生图，待我换个中转试试看
+
+- 我只是用示例的提示词做了一个ppt花了3刀。心在滴血
+
+- 多亏了佬的这个项目2h直接搞完第二天的汇报ppt
+  - 其实是在改自己的大纲和修复详细内容，然后有的在生成后要把自己的一些图片发给他让他贴到ppt中，其实让他编辑的指向性已经很好了
+
+- https://github.com/QwenLM/Qwen-Image-Layered 刚看到Qwen发了个图片分层模型，感觉可以用来编辑PPT，比SAM更合适 @Anionex
+
+- 最近一周，貌似free tier也有了少量生图的额度，谷歌最近朝令夕改的… 不绑卡先试试运气和生图功能，可以不花冤枉钱
+
+- ## 🌰 [Nano Banana Pro 让我一个小时做完了PPT ](https://linux.do/t/topic/1204052)
+  - 当时是直接找了一个模版截图首页给Gemini，然后描述当前页是什么，最后附上完整的整个ppt的上下文（很长的一段文本，用ChatGPT生成的），每次换一下当前页的十几个字的描述。
+
+```prompt
+请帮我生成PPT单页截图，我会直接插入到PPT里，你需要参考风格图的颜色与色彩风格，在此基础上结合我的PPT大纲，用平面设计专家的角度，遵循最佳的平面设计原理。
+
+采用美观的图标以及【宽松/紧凑】的布局，当前需要生成的页面内容是：第二章的《痛点一：呼叫受理与调度“看不见、找不准”》
+
+这里是参考的风格图：<此处佬友随便从PPT模版网站或者是WPS里找个模版，截图一下>
+
+这是我的PPT大纲：<这里是结合老板和甲方让ChatGPT出的一个PPT大纲（包括了数据以及具体名字等等）>
+
+请你直接生成PPT单页截图，边缘不要有多余的边框或者是白边 4k分辨率 16:9比例
+
+```
+
+- 有佬友想要ChatGPT生成PPT大纲部分的提示词，我这里也一并发出来了，供大家参考
+
+```prompt
+你是一个专业的PPT设计师，这是甲方的要求<xxx具体的一大堆>，这是做PPT可以参考的资料<xxx具体的资料一大堆>
+
+请你按照这些内容，帮我整理一份PPT大纲，一定把要求中的详细数据以及专业名词保留，仔细规划PPT大纲结构，用参考资料详细填充。
+
+如果要求和资料有不明白的地方，请不要直接生成大纲，先列点向我提问，我会仔细回答。
+```
 
 - ## [The Best AI Presentation Tools in 2026 - I tested all of them so you don't have to : r/powerpoint _202512](https://www.reddit.com/r/powerpoint/comments/1pjtkfh/the_best_ai_presentation_tools_in_2026_i_tested/)
   - How I tested: Same prompt across all tools, judged on design quality, how much editing I had to do after, and whether the output looked like a template explosion or something I'd actually present.

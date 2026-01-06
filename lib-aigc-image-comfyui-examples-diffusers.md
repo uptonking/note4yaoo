@@ -483,8 +483,8 @@ modified: 2025-08-23T11:43:35.904Z
 
 - https://github.com/HisMax/RedInk /CC-BY-NC/202511/python/ts/vue
   - 一句话一张图片生成小红书图文
-  - 前段时间默子在 Linux.do 发了一个用 Nano banana Pro 做 PPT 的帖子, 收获了 600 多个赞
   - 依赖 Flask、Nano banana Pro、pinia
+  - [【开源】红墨 RedInk - 基于 大香蕉 🍌Nano Banana Pro 的一站式小红书图文生成器 _202511](https://linux.do/t/topic/1217947)
 
 - https://github.com/iconben/z-image-studio /apache2/202512/python/js
   - A web application and a command-line interface for the Z-Image-Turbo text-to-image generation model (Tongyi-MAI/Z-Image-Turbo).

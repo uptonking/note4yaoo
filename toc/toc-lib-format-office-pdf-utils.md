@@ -310,6 +310,16 @@ modified: 2022-11-11T10:46:41.519Z
       - That being said, it is by design that pdf2image does not in any way or form, link directly to poppler. All it does is call an already existing CLI utility that comes pre-installed on most Linux installation. As such, my code is distributed under MIT 
     - I'm reopening this since it's not clear to me if running pdf2image inside a docker container can still be considered as MIT compatible ?
       - TLDR: The container is not considered anything as it is not code, but GPL code can "live" with MIT code in a container without any issue.
+
+- https://github.com/Gary-zy/imageConversion /202601/ts/vue
+  - https://gary-zy.github.io/imageConversion/
+  - 免费在线图片格式转换工具，支持多种图片格式互转、OFD文档处理。
+  - 所有转换在浏览器本地完成，保护隐私，无需上传服务器。
+  - 图片处理	Canvas API、Pica（高质量缩放）
+  - PDF 生成	jsPDF
+  - OFD 解析	ofd.js（自定义实现）
+  - 国密算法	sm-crypto（SM2/SM3/SM4）、jsrsasign
+  - 文件处理	JSZip、file-saver
 # utils
 - https://github.com/RussCoder/djvujs /js
   - https://djvu.js.org/

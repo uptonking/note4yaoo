@@ -283,6 +283,16 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-to
   - ?
 
+## 0106
+
+- i want to run ocr llm model locally. why does llama.cpp not support deepseek-ocr gguf, but ollama supports deepseek-ocr since ollama uses llama.cpp under the hood? 
+- [Ollama's new engine for multimodal models · Ollama Blog _202505](https://ollama.com/blog/multimodal-models)
+  - Ollama has so far relied on the ggml-org/llama.cpp project for model support and has instead focused on ease of use and model portability.
+  - As more multimodal models are released by major research labs, the task of supporting these models the way Ollama intends became more and more challenging.
+  - We set out to support a new engine that makes multimodal models first-class citizens, and getting Ollama’s partners to contribute more directly to the community via the GGML tensor library.
+  - Today, ggml/llama.cpp offers first-class support for text-only models. For multimodal systems, however, the text decoder and vision encoder are split into separate models and executed independently. Passing image embeddings from the vision model into the text model therefore demands model-specific logic in the orchestration layer that can break specific model implementations.
+  - Within Ollama, each model is fully self-contained and can expose its own projection layer, aligned with how that model was trained. This isolation lets model creators implement and ship their code without patching multiple files or adding cascading if statements. They no longer need to understand a shared multimodal projection function or worry about breaking other models—they can focus solely on their own model and its training.
+
 ## 0104
 
 - 🤔 https://huggingface.co/datalab-to/chandra this model uses [OpenRAIL ](https://huggingface.co/blog/open_rail) license. if i use this model locally on ocr saas webapp, is it free to use? is OpenRAIL license commercial friendly? 

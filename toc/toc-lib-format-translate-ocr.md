@@ -12,11 +12,18 @@ modified: 2025-12-19T12:43:21.150Z
 - tips-ocr
   - popular-on-github: tesseract/OCRmyPDF(71k), PaddleOCR(67k), MinerU(51k), DeepSeek-OCR(21k)
   - 文档的使用频率不如图片, ocr/translation的方案要考虑图片场景
-  - 批量执行ocr的架构可参考papermerge/paperless
   - vlm流式输出的方案配合编辑器流式构建内容的ux体验会很好
   - 传统的ocr方案都还没有结合llm来优化效果，而是应用层的数据处理管线开始用llm来提高质量和准确度
   - 🐛 含图片内容的ocr结果是 markdown + base64图片
   - ⏳ 文本/富文本/原文的版本管理如何设计
+  - 批量执行ocr的架构可参考papermerge/paperless
+
+- pdf/ppt/image-editor
+  - 编辑的一种思路: 图片 > html > svg, 其中图片转html的思路可参考 design to code
+    - 此时编辑ppt的需求可转换为编辑html代码
+  - 编辑的一种思路: 生成图片后，(用inpaint)remove所有文字，然后再把文本渲染到bbox
+  - 编辑的一种思路: 直接生成svg，然后右键转换为形状
+  - 不要执着于pdf/ppt编辑器, 现在市场需求最大的是nano-banana文生图的编辑
 
 - 💡 pdf的文本化
   - 输出不一定是markdown, 各厂商都有自己的偏向, qwenvl-html, Nanonets-markdown, docling-doctags
@@ -342,6 +349,39 @@ modified: 2025-12-19T12:43:21.150Z
   - 仅支持图片上传
   - https://github.com/RapidAI/PaddleOCRModelConvert /apache2/202507/python/inactive
     - This repository is mainly to convert Inference Model in PaddleOCR into ONNX format.
+
+- https://github.com/Tansuo2021/OCRPDF-TO-PPT /314Star/MIT/202601/python
+  - 这是一个功能强大的PPT编辑器，支持OCR识别、AI图片编辑、背景去除、多页面管理等专业功能。本版本（v2.0）经过全面优化，在代码质量、性能、可维护性等方面都有显著提升。
+  - 多页面支持 - 批量导入PDF/图片，支持页面管理
+  - OCR识别 - 智能文字识别，自动生成文本框
+  - AI图片编辑 - AI驱动的图片替换和生成
+  - 背景去除 - 智能涂抹去除背景
+  - 图层系统 - 类似Photoshop的图层管理
+  - 项目管理 - 保存/加载项目，支持自动保存
+  - 多格式导出 - 导出为PPT/PDF/图片
+  - 托管线程池 - 高效的并发任务管理, 多线程并发控制，消除竞态条件
+  - PaddleOCR - OCR识别引擎
+  - IOPaint - 图片修复功能
+  - PIL/Pillow - 图片处理
+  - python-pptx - PPT生成
+  - [大香蕉生成图片转换为可编辑PPT的速度直接质变！飞升了！GPU加持下无敌  ](https://linux.do/t/topic/1410288)
+
+- https://github.com/yyy-OPS/slidedeconstruct-ai /113Star/MIT/202512/ts
+  - 基于 AI 视觉能力的智能演示文稿反向工程工具。它利用 Google Gemini (或 OpenAI Compatible) 模型，将一张静态的 PPT 截图“拆解”为可编辑的图层（背景、文字、视觉元素），并支持将其转化为矢量形状，最终导出为可编辑的 .pptx 源文件。
+  - 图片拆解：自动移除图片中的文字（保留背景），并提取视觉元素。
+  - 矢量化重构：尝试将图像中的视觉元素转化为 PPT 原生的矢量形状（如矩形、圆形、箭头等），而非简单的图片贴图。
+  - 支持批量上传 PDF、PNG、JPG 格式的幻灯片（PPT/PPTX 建议先导出为 PDF）。
+  - 使用 AI 视觉模型精确识别页面中的文本块、视觉元素和背景颜色。
+  - 🤔 智能背景修复: 也可用于pdf ocr的场景，能使文档视觉整洁
+    - 自动去字：在提取文本后，AI 会自动“擦除”原图上的文字，并根据周围纹理修复背景，生成干净的底图。
+    - 手动擦除：提供“橡皮擦”模式，用户可手动框选区域让 AI 移除多余元素。
+    - 背景
+  - 矢量化转换 (Beta)：尝试将识别到的简单几何图形（矩形、圆形、箭头等）转换为 PPT 原生形状，而非仅仅粘贴图片。
+  - 一键导出 PPT：将拆解后的所有元素（文本、背景、图片、形状）按原位置重组，导出为可编辑的 .pptx 文件
+  - AI Integration: Google GenAI SDK (@google/genai), OpenAI API Compatible
+  - File Handling: pptxgenjs (PPT生成), pdfjs-dist (PDF解析)
+  - [开源了一个 PPT“逆向”工具，图片直接转可编辑 PPT _202512](https://linux.do/t/topic/1368469)
+    - 代码都是AI写的！我也不咋能看懂，慢慢学习嘛
 # solutions/vendors
 - https://github.com/PaddlePaddle/PaddleOCR /66.5kStar/apache2/202512/python/cpp
   - https://www.paddleocr.ai/

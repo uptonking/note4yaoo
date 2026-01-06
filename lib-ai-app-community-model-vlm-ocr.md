@@ -20,8 +20,9 @@ modified: 2025-11-06T18:49:13.977Z
   - 暂不支持(20260106): deepseek-ocr, dots.ocr, PaddleOCR, hunyuanocr, chandra, nanotes
 
 - ollama
-  - 支持: deepseek-ocr
+  - 支持: deepseek-ocr, qwen3vl
   - 暂不支持(20260106): mineru, paddleocr, hunyuanocr, dots.ocr
+  - https://github.com/ollama/ollama/tree/main/model/models
 
 - mlx-vlm
   - 支持: deepseek-ocr, hunyuanocr, LightOnOCR
@@ -443,6 +444,41 @@ modified: 2025-11-06T18:49:13.977Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## pr已合并 [model : add LightOnOCR-1B model by ngxson · Pull Request · ggml-org/llama.cpp _202510](https://github.com/ggml-org/llama.cpp/pull/16764)
+  - Qwen3 as language model
+  - Mistral3 as vision encoder (the difference is that LightOnOCR does not use [IMG_BREAK] token)
+  - Important note: this model requires specific input structure, see the chat template
+
+- ## 已合并pr [feat(model): deepseekocr by mxyng · Pull Request · ollama/ollama _202511](https://github.com/ollama/ollama/pull/13082)
+- What's the supposed way to use it via the REST API? 
+
+```JS
+// just tried it with Postman and it worked.
+{
+  "model": "deepseek-ocr:3b",
+  "prompt": "<image>\n<|grounding|>Convert the document to markdown.",
+  "stream": false,
+  "images": ["BASE64_IMAGE"]
+}
+```
+
+- [How can I use deepseek-ocr:3b from the API? · Issue · ollama/ollama _202511](https://github.com/ollama/ollama/issues/13252)
+  - The model is very sensitive to variations of input. Recommended prompts can be found here.
+  - [deepseek-ai/DeepSeek-OCR: Contexts Optical Compression](https://github.com/deepseek-ai/DeepSeek-OCR#prompts-examples)
+
+```sh
+# //JavaScript
+echo '{
+    "model":"deepseek-ocr:3b-bf16",
+    "messages":[{"role":"user","content":"\n<|grounding|>Describe this image.",
+    "images":["'"$(base64 -w0 ./puppy.png)"'"]}],
+    "stream":false
+}' | curl -s localhost:11434/api/chat -d @- | jq -r .message.content
+<|ref|>White Maltese puppy<|/ref|><|det|>[[113, 184, 799, 759]]<|/det|> sitting on <|ref|>a stone<|/ref|><|det|>[[0, 434, 997, 996]]<|/det|>
+```
 
 - ## [Is Deepseek-OCR SOTA for OCR-related tasks? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1ov2wmu/is_deepseekocr_sota_for_ocrrelated_tasks/)
 - From my tests, PaddleOCR-VL, Deepseek-OCR, and MinerU-VLM are almost identical in size, performance and are all highly effective. Just make sure your GPU supports CUDA.

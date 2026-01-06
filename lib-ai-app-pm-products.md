@@ -241,13 +241,29 @@ modified: 2025-03-22T16:10:24.856Z
 - 不适合流式的数据
   - markdown-table
   - mermaid-graph
-# ai-designing/image
+# ai-designing/image/ppt
 - cursor for design: logo creator
   - 形态是否要基于vscode，产物是否要直接在vscode打开
 
 - 使用ai实现高仿设计，是否可以绕过版权限制
 
 - 版权过期书籍绘画的二创
+
+- 🌰 nano-banana的体验
+
+- 🌰 notebooklm-slide-deck的体验
+  - 默认生成的ppt包含14页
+  - 生成slide deck的速度慢，缺少进度反馈
+  - slides的每页内容都是图片，难以编辑，并且导出的体积大
+  - 导出的格式是pdf，而不是ppt，难编辑
+  - [Best Prompt for generating Slide Deck : r/notebooklm](https://www.reddit.com/r/notebooklm/comments/1psect8/best_prompt_for_generating_slide_deck/)
+    - Here’s my trick. In NBLM, ask for an outline. Create the slides in NBLM. Download. Upload to slides and copy the outline to Canvas and ask to “create a presentation from this outline with a minimum of 30 slides -one thought per slide. I have attached a deck for inspiration. Use engaging visuals in my color scheme. Here’s the style: (font, font sizes, color hex codes).
+  - [Need Help Converting Slide Deck/Infographic PDF to PowerPoint : r/notebooklm](https://www.reddit.com/r/notebooklm/comments/1pm2ucp/need_help_converting_slide_deckinfographic_pdf_to/)
+    - I used Adobe Acrobat. Edit PDF andit recognizes the text and separates graphics. Its not perfect but gets you to 70%
+  - [finally found a way to edit notebooklm slides lol : r/notebooklm](https://www.reddit.com/r/notebooklm/comments/1pbeq8d/finally_found_a_way_to_edit_notebooklm_slides_lol/)
+    - Put the slides into Gemini. Activate the Canvas. Ask it to generate slides. Open in slides. It should be editable.
+    - [Slide deck - possible to export as powerpoint? : r/notebooklm](https://www.reddit.com/r/notebooklm/comments/1p41at4/slide_deck_possible_to_export_as_powerpoint/)
+      - Not NLM, but Gemini can now make slide decks in the canvas and export to slides. So you might chain something like: NLM export to PDF—>Upload PDF to Gemini to make slides in canvas—>Export canvas slides to gSlides —> export to ppt
 # ai-lowcode
 - tips
   - 基于dnd的方案偏前端，后端一般很难定制和scale
@@ -355,6 +371,7 @@ modified: 2025-03-22T16:10:24.856Z
 - 免费api的技巧: 在知乎/小红书直接搜索 免费 claude (公益站), 就会有最新的api推广信息, 可以用小号邀请自己
   - 公益站 [Search results for '公益站' - LINUX DO](https://linux.do/search?q=%E5%85%AC%E7%9B%8A%E7%AB%99%20order%3Alatest)
   - [L站免费AI汇总 ](https://linux.do/t/topic/638821)
+    - [LD OPEN HUB — 公益站导航](https://ldoh.105117.xyz/)
     - [站内公益站汇总 ](https://linux.do/t/topic/1398351)
       - 公益站的域名被集中泄露遭到集中的打击
       - 跑路，黑与白，薄荷，wong，elysiver，都是可以kilo的。cline和roocline不懂
@@ -454,7 +471,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 很多openrouter渠道的模型
     - cc不支持tool, cc渠道经常上架下架
     - [黑与白chatAPI福利站](https://cdk.hybgzs.com/)
-  - [Neb 公益站](https://ai.zzhdsgsss.xyz/console), 签到
+  - [Neb 公益站](https://ai.zzhdsgsss.xyz/console/personal), 签到
     - 采用按量计费，每次0.01，注册送2000次，因为该阶段的初衷就是最大化利用这些将要过期的key。
     - 当前额度用完或2026.1.31之后进入第二阶段，采用按量计费，倍率会很低
     - 会不会有签到站不会，因为我太懒了
@@ -482,6 +499,13 @@ modified: 2025-03-22T16:10:24.856Z
     - cc支持
   - [太子公益 API](https://taizi.api.51yp.de5.net/console/personal), 签到
   - [曼波API](https://ai.dik3.cn/console/personal), 签到
+  - [扣腚API](https://api.jonwinters.pw/console/personal), 
+    - 每天15刀，0点重置
+    - cluade 配置, 有多余的反重力小号 可以捐到号池里面
+    - [CLI Proxy API Management Center](https://cpamc2.jonwinters.pw/management.html#/quota-public)
+  - [Luckin 公益API](https://api.oaiapi.online/console/personal)
+    - 所有模型均支持 沉浸式翻译
+  - [佬友API](https://lyclaude.site/console/personal)
   - [香草API](https://ai.xiangcao.de/console)
   - [六哥公益站](https://api.crisxie.top/)
   - [APIKEY_公益站](https://welfare.apikey.cc/console)
@@ -647,12 +671,16 @@ modified: 2025-03-22T16:10:24.856Z
 
 - image-saas
   - [小白生图 - AI Image Generator](https://catsapi.com/)
+  - [AI 生图平台](https://ztu.ai/)
+    - 每天5张免费
   - [RyanVan Z-Image | AI 图像生成](https://ryanai.org/)
     - 每天5张免费
     - 排队时间可能较长
-  - [AI 生图平台](https://ztu.ai/)
-    - 每天5张免费
   - [Z-Image 控制台](http://image.dx001.ggff.net:8080/dashboard)
+  - [香蕉皮 AI](https://nanobanana.xiao.mom/)
+    - [NanoBananaPro支持4K、免费无限制，轻蹬 ](https://linux.do/t/topic/1401748)
+    - 在家逆向了一个NanoBananaPro香蕉皮AI，支持4K，不用登录，不限次数
+  - [Nano Banana Pro - Free AI Image Editor & Generator ](https://www.nanaai.app/)
   - [最新公益绘画API ](https://linux.do/t/topic/599258)
     - 百度绘画
     - 豆包绘画
@@ -663,9 +691,6 @@ modified: 2025-03-22T16:10:24.856Z
   - [Seedream AI - 免费在线AI图像生成器](https://seedream.pro/zh)
   - [Cloudflare Workers AI Models](https://developers.cloudflare.com/workers-ai/models/)
     - 提供免费的文生图模型: sdxl, sdv1-5
-  - [香蕉皮 AI](https://nanobanana.xiao.mom/)
-    - [NanoBananaPro支持4K、免费无限制，轻蹬 ](https://linux.do/t/topic/1401748)
-    - 在家逆向了一个NanoBananaPro香蕉皮AI，支持4K，不用登录，不限次数
   - [Free AI Image Generator - AI Free Forever](https://aifreeforever.com/image-generators)
   - [Free Gemini Pro](https://freebanana.pro/)
   - [FreeGen 白嫖图片生成器](https://hachimiai.dpdns.org/freegen/)
@@ -896,7 +921,10 @@ modified: 2025-03-22T16:10:24.856Z
 ## llm-2api
 
 - tutorials
-  - [在 opencode 中使用CLIProxyAPI 的配置教程，享受模型自由。（首发、含推荐配置） ](https://linux.do/t/topic/1407247)
+  - [手把手带你用上AI神器 - CLIProxyAPI（零：配置详细解说） _202510](https://linux.do/t/topic/1011966)
+  - [手把手带你用上AI神器 - CLIProxyAPI（壹：项目介绍+Qwen实战） _202510](https://linux.do/t/topic/1011983)
+  - [在 opencode 中使用CLIProxyAPI 的配置教程，享受模型自由 _202601](https://linux.do/t/topic/1407247)
+  - [CLIProxyAPI 的反重力BananaPro 稳定输出 4k 图片 教程 _202601](https://linux.do/t/topic/1396957)
 
 - [OpenCode - Zen](https://opencode.ai/docs/zen/)
   - Zen works like any other provider in OpenCode. You login to OpenCode Zen and get your API key.
@@ -908,6 +936,18 @@ modified: 2025-03-22T16:10:24.856Z
   - $5/月免费使用
 
 - [Canopy Wave](https://cloud.canopywave.io/)
+
+## hosting
+
+- [Huggingface和Cloudflare羊毛自建代理的方法 ](https://linux.do/t/topic/1411544)
+  - 利用cf大善人的网络代理加速，利用hug大善人的免费域名和证书，达到我们的目的
+  - huggingface.co免费的容器： Free版本就是2vCPU和16GB RAM，就已经非常强了
+    - 新建一个Space，然后点 Embed this Space
+    - huggingface 跑了个前置的Nginx或Caddy或traefik代理，自动申请了证书，代理后端容器的7860端口，为什么是7860端口呢？
+    - 因为最常见的用途是托管基于 Gradio 构建的机器学习模型演示。Gradio 是一个非常流行的 Python 库，用于快速创建交互式 Web 界面来展示 ML 模型。它的默认启动端口就是7860。
+  - 接着我们去薅大善人cloudflare，首先弄好一个域名并托管到CF上面
+    - 点开左边的菜单：Build –> Compute & AI –> Workers & Pages > create app
+    - 返回这个worker的空间，点击Settings，下面的Domains & Routes ，右边点击 +Add
 # ai-products-hunt
 
 # more

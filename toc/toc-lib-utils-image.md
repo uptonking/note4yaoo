@@ -397,6 +397,11 @@ modified: 2023-04-04T22:39:45.442Z
   - cimbar is a high-density 2D barcode format. Data is stored in a grid of colored tiles
   - 一般二维码只能容纳 2.9KB 的数据，用来放超链接和文本足够了。libcimbar 开发了一个特殊的压缩和解压算法。可以把小于 33MB 的文件直接压缩到特殊的二维码里，用他们提供的 App 扫码解压即可得到文件。
 # image-ai 👾
+- https://github.com/Tansuo2021/gemini-3-pro-image-preview /MIT/202601/js
+  - https://tansuo2021.github.io/gemini-3-pro-image-preview/
+  - 基于 Google Gemini 3 Pro 模型的现代化图像生成工作台
+  - [【开源】并发自定义多渠道的gemini-3-pro-image-preview超强生图工具 _202511](https://linux.do/t/topic/1222546)
+
 - https://github.com/LuqP2/Image-MetaHub /153Star/MPL/202512/ts
   - https://imagemetahub.com/
   - A desktop application for browsing, searching, and organizing AI-generated images locally. 
@@ -425,6 +430,12 @@ modified: 2023-04-04T22:39:45.442Z
   - Client-side, privacy-first image redaction tool. No server, no data leaks
   - Automatically detects and blurs PII (Emails, IPs, Keys) using local OCR. 
   - Tech Stack: React, Vite, Tesseract.js v6.
+
+- https://github.com/Sanster/IOPaint /22.6kStar/apache2/202504/python/ts/inactive
+  - https://www.iopaint.com/
+  - A free and open-source inpainting & outpainting tool powered by SOTA AI model.
+  - fully self-hosted, support CPU & GPU & Apple Silicon
+  - FileManager: Browse your pictures conveniently and save them directly to the output directory.
 # more
 - https://github.com/ascorbic/unpic-img
   - This library uses unpic to detect the image CDN, and then uses the CDN's URL API to resize and format images. 

@@ -190,6 +190,16 @@ redis-cli shutdown
     - lsof -P -iTCP -sTCP:LISTEN +c0
     - kill -15 {PID}
 
+- [How to write a Terminal command to unrar a file in specific location? ](https://superuser.com/questions/1803889/how-to-write-a-terminal-command-to-unrar-a-file-in-specific-location)
+  - brew install unar
+  - It's the CLI version of https://theunarchiver.com/command-line
+  - unar my_archive.rar
+  - [unrar from macOS commandline : r/commandline](https://www.reddit.com/r/commandline/comments/1go6muq/unrar_from_macos_commandline/)
+  - tar -xzvf my_epub.rar
+  - tar -xvf my_epub.rar
+  - brew install rar
+    - unrar x filename.rar
+
 - https://github.com/Gary-zy/dev-env-installer /202601/ts/vue
   - 基于 Electron + Vue 3 + TypeScript 构建的 macOS 桌面应用，旨在帮助开发者一键配置开发环境。
   - [macOS 开发环境一键安装工具，新电脑配环境再也不头疼 ](https://linux.do/t/topic/1407819)

@@ -12,14 +12,14 @@ modified: 2021-04-30T20:14:17.669Z
   - 商业化的演示更偏向类似tableau的图形编辑器，而不是文字
   - 侧重信息的ppt上更多的是文字数字，而不是花里胡哨的图形，此时pdf比ppt更合适，很多pdf由ppt转换得到
   - 🤔 pdf-editor也需要支持排版与编辑, 优先级比ppt-editor高
-  - 技术栈基于svg容易实现缩放，基于dom不容易缩放, ppt需要缩放吗
+  - 技术栈基于svg容易实现缩放，基于dom不容易缩放, ppt需要缩放吗? msoffice和wps均支持zoom
 
 - dev-xp
   - ui组件都可分为state、view2部分，editor框架的核心是通过view更新state
   - ppt可以每页放一个画板或富文本编辑器
 
 - alternatives-ppt
-  - 很多ppt的每页是一张图片, 缺点是交互弱、编辑弱
+  - 很多ppt的每页是一张图片, 缺点是交互弱、编辑弱、文件大
   - ✨ pdf-editor与ppt-editor的相似点: 支持批注、左侧页面缩略图
     - pdf-editor和ppt-editor都支持缩放，没必要重复开发功能
   - 可参考: svg-editor, pdf-editor, drawio(可插入丰富元素/集成)
@@ -309,7 +309,7 @@ modified: 2021-04-30T20:14:17.669Z
   - It is implemented as a thin Node/JavaScript API layer on top of platform-specific Windows WSH/JScript and Mac OS X Automator AppleScript/JavaScript connectors. No native code is required.
   - 🍴 forks
   - https://github.com/vassbo/slideshow
-# ai-ppt/slides
+# ai-ppt/slides 👾 
 - https://github.com/presenton/presenton /1.8kStar/apache2/202508/python/ts
   - Open-Source AI Presentation Generator and API (Gamma, Beautiful AI, Decktopus Alternative)
   - generating presentations with AI — all running locally on your device.
@@ -492,9 +492,75 @@ modified: 2021-04-30T20:14:17.669Z
 - https://github.com/lesteroliver911/ai-pdf-ppt-generator-openai /MIT/202410/python/inactive
   - a Flask-based application that generates presentations from documents
 
-- https://github.com/Anionex/banana-slides /MIT/202512/python/ts
-  - [【已开源】一个基于banana pro的一站式PPT生成应用, 告别排版美化烦恼 - 资源荟萃 - LINUX DO](https://linux.do/t/topic/1285413)
-  - 这个PPT神器真智能一张图就搞定全套模板太方便了
+- https://github.com/Anionex/banana-slides /8.7kStar/MIT > CC-NC/202512/python/ts
+  - http://bananaslides.online/
+  - 目前还在进行应该是最困难的一步的开发，就是从纯图的图片中分割出可编辑的元素，目前想到的技术方案是用类似SAM（segment anything ） + Inpaint这样的东西来实现，或者佬们有什么好方案也可以分享
+    - 能否先:banana:出整页之后丢回视觉LLM（或者SAM之类的）解析文字元素和图片元素，然后让:banana:进一步出一个纯背景再把各个图片和文字扣出来放上去
+    - 目前在做的大概就是佬的想法，不过我想的是除了背景，把分割元素也让:banana:做了 :bili_040:（直接让:banana:生成前景），然后用一个连通性判断+cv把元素提出来；文本框的话再用类似mineru的layout yolo模型来定位
+  - [【已开源】一个基于banana pro的一站式PPT生成应用, 告别排版美化烦恼 _202512](https://linux.do/t/topic/1285413)
+    - 如果是可编辑功能，我也做了一个ocr识别文本位置GitHub - Tansuo2021/OCRPDF-TO-PPT 但是需要干净的背景图，还需要在生成一次，然后我觉得生成干净的背景图可以直接用本地 IOPaint来去除图片中的文字得到干净背景图，目前思路是这样，今天还想到可以直接在原图裁切图案叠加过去
+
+- https://github.com/MoonWeSif/NextCreator /196Star/AGPL/202512/ts/tauri
+  - 基于可视化节点的 AI 内容生成工作流工具，支持 文本/图片/视频/PPT 链式创作。
+  - 基于workflow画布定义步骤，再生成ppt页面图片
+  - 可编辑模式 - 去除文字仅保留背景，方便后期编辑
+  - 如需使用 PPT 可编辑导出功能（去除文字仅保留背景），需要 OCR 和 Inpaint 服务。可以自行 Docker 部署（推荐）
+  - [【开源】画布式 AI 工作流创作平台，基于 NanoBananaPro 创作可编辑文字的 PPT _202512](https://linux.do/t/topic/1304016)
+    - 基于NanoBanana Pro的PPT制作是其中一股比较热门的方向。 前段时间尝试手动AI生成大纲——PPT图片模板——图片拼接，一系列流程下来。做了一些介绍文献的 PPT 感觉效果着实不错，于是着手将其实现为一个工作流平台，方便大家也是方便自己。
+    - 开始着手后，想到不能编辑图片
+    - 直接参考OCRPDF-TO-PPT思路，将这一套逻辑内嵌到代码里面，加上这几天完善了一下（全靠Vibe Coding），终于发布了初版
+    - 基于 Tauri 构建的应用，支持网页端与桌面端(推荐，因为图片占用存储空间大，本地性能更优)。
+    - 但是项目最后针对于可编辑 PPT 的实现还是有所局限的，经过测试，发现如果字体有样式与排版规则的话，那么借助佬友的实现思路实现下来，将文字重新嵌入到 PPT 中会有排版布局样式问题。
+    - 因此项目最终实现了将生成的 PPT 中的文字全部移除掉，仅保留背景部分（效果见下方图片），文字部分各位下载 PPT 后，自行文本框添加即可，这部分对人来说应该是比较简单的工作，对照着原 PPT 添加文本框即可，但想要借助程序实现下来的话，目前还没有实现思路。
+    - 同时编辑 PPT 时，个人来说大部分情景下也是文字部分有修改的需要，背景和排版部分保留，因此对于我来说目前项目是可用的程度了
+    - AI 图片生成 - 支持文生图、图生图，可配置分辨率和比例
+    - PPT 工作流 - 自动生成大纲、页面图片，导出 PPTX
+
+- https://github.com/yyy-OPS/slidedeconstruct-ai /113Star/MIT/202512/ts
+  - 基于 AI 视觉能力的智能演示文稿反向工程工具。它利用 Google Gemini (或 OpenAI Compatible) 模型，将一张静态的 PPT 截图“拆解”为可编辑的图层（背景、文字、视觉元素），并支持将其转化为矢量形状，最终导出为可编辑的 .pptx 源文件。
+  - 图片拆解：自动移除图片中的文字（保留背景），并提取视觉元素。
+  - 矢量化重构：尝试将图像中的视觉元素转化为 PPT 原生的矢量形状（如矩形、圆形、箭头等），而非简单的图片贴图。
+  - 支持批量上传 PDF、PNG、JPG 格式的幻灯片（PPT/PPTX 建议先导出为 PDF）。
+  - 使用 AI 视觉模型精确识别页面中的文本块、视觉元素和背景颜色。
+  - 🤔 智能背景修复: 也可用于pdf ocr的场景，能使文档视觉整洁
+    - 自动去字：在提取文本后，AI 会自动“擦除”原图上的文字，并根据周围纹理修复背景，生成干净的底图。
+    - 手动擦除：提供“橡皮擦”模式，用户可手动框选区域让 AI 移除多余元素。
+    - 背景
+  - 矢量化转换 (Beta)：尝试将识别到的简单几何图形（矩形、圆形、箭头等）转换为 PPT 原生形状，而非仅仅粘贴图片。
+  - 一键导出 PPT：将拆解后的所有元素（文本、背景、图片、形状）按原位置重组，导出为可编辑的 .pptx 文件
+  - AI Integration: Google GenAI SDK (@google/genai), OpenAI API Compatible
+  - File Handling: pptxgenjs (PPT生成), pdfjs-dist (PDF解析)
+  - [开源了一个 PPT“逆向”工具，图片直接转可编辑 PPT _202512](https://linux.do/t/topic/1368469)
+    - 代码都是AI写的！我也不咋能看懂，慢慢学习嘛
+
+- https://github.com/HisMax/RedInk /CC-BY-NC/202511/python/ts/vue
+  - 一句话一张图片生成小红书图文
+  - 依赖 Flask、Nano banana Pro、pinia
+  - [【开源】红墨 RedInk - 基于 大香蕉 🍌Nano Banana Pro 的一站式小红书图文生成器 _202511](https://linux.do/t/topic/1217947)
+
+- https://github.com/JaffryGao/notebooklmfix /202601/ts
+  - https://notebooklmfix.vercel.app/
+  - 一款专为修复 NotebookLM 生成的 PDF 文档、图片（如信息图等）而设计的智能工具。它利用最新一代 Nano Banana Pro 多模态模型，解决文档中常见的文字模糊、伪影和分辨率过低问题，实现像素级的画质重塑，并支持导出为高清晰度的 PDF 或 PPTX 演示文稿。
+  - 基于 Nano Banana Pro 模型，智能识别并重绘文档内容，非单纯滤镜增强
+  - 👀 文字精准还原: 修复文字边缘锯齿与模糊，同时保持原有排版布局不变（注：仅修复画质，不篡改内容）。
+  - 支持导出高清 PDF 和 PPTX（PPTX 内也是图片）。
+
+- https://github.com/hugohe3/ppt-master /913Star/MIT/202512/python
+  - https://hugohe3.github.io/ppt-master/
+  - 基于 AI 的智能视觉内容生成系统，通过多角色协作，将源文档转化为高质量的 SVG 内容，支持演示文稿、社交媒体、营销海报等多种格式。
+  - 多格式画布支持（PPT 16:9/4:3、小红书、朋友圈、Story 等 10+ 格式）
+  - 使用设计工具（如 Figma、Adobe Illustrator）编辑
+  - 网页感太明显
+  - 每个页面都是 `<object>` 元素包裹的 svg, 可单独打开，类似 https://hugohe3.github.io/ppt-master/examples/demo_project_intro_ppt169_20251211/svg_final/slide_02_pain_points.svg
+  - PPT 不认 rgba、不认组透明、不认图片透明
+  - [PPT-master 一个用AI生成真正可编辑的高质量PPT的工具 _202512](https://linux.do/t/topic/1305492)
+    - 使用 mineru 对 pdf 进行了提取，然后用 md 文档重新生成一份含有企业预警通图标和封面图的 ppt，因为时间更空余，生成的比视频里面的更精美多了
+
+- https://github.com/YiYoYiYoYiYo-Web3/PDF-Text-Remover /AGPL/202512/python
+  - [一个没啥用的PDF去文字工具 ](https://linux.do/t/topic/1257896)
+  - 用AI搓了个把PDF文字去除的工具 
+  - 主要思路是把PDF分页后用大香蕉:banana: 重新生成一个一样但是无文字的图片，然后再拼成PPT/PDF，后续自己把文字拼上去。
+  - 后来想加入文字识别，用了tesseract + AI 合并文字块 + 坐标映射，但是有伪文字不太好识别，基本上搞出来的文字最后都得重新编辑==。实在没办法了，丢上来看哪位大佬有兴趣的话解决一下 
 
 - [ChatSlide | Build your Slides and Videos from Documents in one click](https://chatslide.ai/landing)
 # ai-canvas

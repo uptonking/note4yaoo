@@ -38,8 +38,9 @@ modified: 2022-08-21T10:16:52.004Z
   - [slate 架构与设计分析](https://github.com/wzhudev/blog/issues/36)
   - [vscode 源码解析](https://github.com/wzhudev/blog/issues/29)
 
-- Ran Luo /MarkText/muya-md-editor
+- Ran Luo(冉四夕) /MarkText/muya-md-editor/石墨文档/univer
   - https://github.com/Jocs
+  - [冉四夕 - 知乎](https://www.zhihu.com/people/ransixi)
   - [Univer 文档排版设计初探 - 知乎](https://zhuanlan.zhihu.com/p/677626409)
   - [Univer 文档架构及模块设计 - 知乎](https://zhuanlan.zhihu.com/p/677606548)
 

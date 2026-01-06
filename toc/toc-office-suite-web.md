@@ -25,6 +25,7 @@ modified: 2023-03-09T13:47:07.317Z
   - https://univer.ai/
   - An Isomorphic Full-Stack Framework for Creating and Editing Spreadsheets Across Web and Server.
   - Univer is designed to support spreadsheets, documents and presentation.
+  - 最多只用excel/ppt, 没必要用docs, canvas的架构适合excel/ppt
   - Univer is isomorphic. It can run both on browsers and Node.js (in the future, mobile devices as well), with the same API.
   - Univer is easily embeddable, allowing seamless integration into your applications
   - highly extensible, thanks to its plug-in architecture 

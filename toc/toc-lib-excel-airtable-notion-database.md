@@ -397,7 +397,8 @@ modified: 2022-08-21T10:02:05.129Z
   - S2是多维交叉分析领域的表格解决方案，数据驱动视图，提供底层核心库、基础组件库、业务场景库
   - 依赖 @antv/g-canvas、g-gesture、d3-interpolate
 
-- baserow /1.3kStar/MIT/202212/python/django/js/vue/多视图
+- baserow /3.7kStar/MIT+EE/202212/python/django/js/vue/多视图
+  - https://github.com/baserow/baserow
   - https://github.com/bram2w/baserow
   - https://baserow.io/
   - Baserow is an open source no-code database tool and Airtable alternative. 

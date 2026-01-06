@@ -229,7 +229,13 @@ modified: 2025-10-10T02:44:49.634Z
 
 - ## 
 
-- ## 
+- ## [nano banana生成的图片转可编辑矢量图的工具 ](https://linux.do/t/topic/1398790)
+  - 我目前的方法是用第三方api生成4k的图片，然后导入到illustrator里面进行描摹处理。gemini官方默认最高生成的是2k，导入之后处理会很糊
+- 只能生成svg然后导入sketch或者 illustrator 编辑，banana直出图片色彩文字，组成过于丰富，直接转svg，遵循效果很差，所以不如直出svg
+  - 生成 svg 那用的就不是 banana 了，那是 gemini3
+
+- 个人体验如下：工具使用的vetor Magic，生成的时间较长，最后的输出图片支持.ai的格式，方便之后在ai里面更改。基本能做到失真较少，算是比较好用的一个免费工具
+  - [安利一个图片转svg的方案Vector Magic ](https://linux.do/t/topic/1157197)
 
 - ## [Any good open-source model for SVG image generation? : r/svg _202505](https://www.reddit.com/r/svg/comments/1kx8jhy/any_good_opensource_model_for_svg_image_generation/)
 - AFAIK no. I think anyone using generative AI to create vector art or vector illustrations is using something like Stable Diffusion to make vector illustration looking PNGs, then converting them to vector.

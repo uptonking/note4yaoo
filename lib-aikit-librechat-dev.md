@@ -39,6 +39,10 @@ modified: 2025-09-01T05:52:34.241Z
 
 - who is using #librechat
   - ?
+
+- pm
+  - 聊天类应用是否该采用多tab设计，这样可以在其他tab打开链接/附件/生成的ppt
+  - 左右分栏视图比多tab体验更好
 # draft
 - roadmap
   - 支持直接在界面上配置大模型url, 可参考openwebui/janai
