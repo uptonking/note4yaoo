@@ -374,15 +374,30 @@ modified: 2025-08-23T11:43:35.904Z
     - 我们的网站近期一个月内发访问数据如下，浏览量 70k+, 访问次数 40K+，访客量 23K+
 
 - https://github.com/shellus/mj-studio /NALic/202512/ts/vue
+  - AI 工作台 —— 绘图与对话，一站式体验
   - 绘图模块：支持 Midjourney、Gemini、Flux、DALL-E、GPT-4o、Grok、通义万相等主流图像生成模型
+  - 视频模块：支持即梦、Veo 等视频生成模型，异步轮询生成，支持视频预览和下载
   - 对话模块：支持多助手管理、流式输出、对话分叉、智能压缩、消息重放
-  - [MJ-Studio开源，让所有大模型生成“图文混排”内容 - 搞七捻三 - LINUX DO](https://linux.do/t/topic/1358773)
-    - 渲染插图原理 通过提示词让AI输出 mj-drawing 的代码块
+  - 框架：Nuxt 4 + Vue 3 + Nuxt UI 3 (Tailwind CSS)
+  - SQLite + Drizzle ORM，无需 Redis/PostgreSQL
+  - 支持接入任意 API 中转站，一个上游可配置多个模型
+    - 上游（Upstream）: 是指提供 AI 绘图服务的 API 端点，通常是各类中转站服务
+  - 图片本地存储，图片默认模糊显示，公共场合也能安心使用
+  - [MJ-Studio开源，让所有大模型生成“图文混排”内容 _202512](https://linux.do/t/topic/1358773)
+    - 渲染插图原理: 通过提示词让AI输出 mj-drawing 的代码块
+    - 使用 gitee ai 的 z-image 可以
+  - [ComfyUI集成指南.md](https://github.com/shellus/mj-studio/blob/master/docs/workflow/ComfyUI%E9%9B%86%E6%88%90%E6%8C%87%E5%8D%97.md)
+    - 介绍如何将 MJ-Studio 作为 ComfyUI 自定义节点集成，让用户在 ComfyUI 工作流中使用 MJ-Studio 的 AI 绘图/视频能力。
 
 - https://github.com/google-gemini/gemini-image-editing-nextjs-quickstart /484Star/apache2/202505/ts/inactive
   - https://ai.google.dev/gemini-api/docs/image-generation
   - Nextjs quickstart for to generating and editing images with Google Gemini 2.0 Flash
   - It allows users to generate images from text prompts or edit existing images through natural language instructions, maintaining conversation context for iterative refinements. 
+
+- https://github.com/mfatihrabbani/open-nano-pisang /202509/ts/inactive
+  - React demo app that wraps Google Banana (Gemini 2.5 Flash Image Editing) into a simple dashboard UI. 
+  - You can upload images, enter custom prompts, pick from style presets, and even try ready-made showcase examples — all with your own API key.
+  - Generate results via Gemini 2.5 Flash Image Preview API
 
 - https://github.com/ammaarreshi/openjourney /135Star/MIT/202507/ts/提交少
   - https://openjourney.replit.app/
@@ -529,20 +544,28 @@ modified: 2025-08-23T11:43:35.904Z
     - its not free, you must use api from wavespeed.ai
       - Well the Z-Image part is free, when you have a GPU. But yeah this whole post is an Ad for Wavespeed.
 
-- https://github.com/shrimbly/node-banana /202512/ts
+- https://github.com/shrimbly/node-banana /481Star/MIT/202601/ts
   - node-based workflow application for generating images with NBP. Build image generation pipelines by connecting nodes on a visual canvas. Built mainly with Opus 4.5.
+  - 类似comfyui for nano-banana
   - AI Image Generation - Generate images using Google Gemini models
+  - Image Annotation - Full-screen editor with drawing tools (rectangles, circles, arrows, freehand, text)
   - Node Editor: @xyflow/react (React Flow)
   - Canvas: Konva.js / react-konva
 
 - https://github.com/markfulton/NanoBananaEditor /521Star/AGPL/202509/ts/inactive
+  - https://nanobananaeditor.dev/
   - Nano Banana image generator and editor application.
   - Powered by Gemini 2.5 Flash images API.
   - Conversational Editing - Modify images using natural language instructions
   - Paint masks to target specific areas for editing
   - [I built the best Nano Banana AI Image Editor, and I'm open-sourcing it : r/SideProject _202509](https://www.reddit.com/r/SideProject/comments/1n5mzas/i_built_the_best_nano_banana_ai_image_editor_and/)
-- https://github.com/etranHOLI/NanoBananaEditor /AGPL/202512/ts
-  - Nano Banana image generator and editor application. This tool provides a central hub for AI image generation and revisions.
+  - https://github.com/etranHOLI/NanoBananaEditor /AGPL/202512/ts
+    - Nano Banana image generator and editor application. This tool provides a central hub for AI image generation and revisions.
+
+- https://github.com/amrrs/fal-nanobanana-studio /MIT/202511/ts/inactive
+  - AI-powered image editor alternative to Photoshop/Photopea, powered by Google's nanobanana API from fal.ai.
+  - Edit images using natural language prompts
+  - Model Switcher: Toggle between NanoBanana and NanoBanana Pro on the fly
 
 - https://github.com/hoodini/nano-banana-ui /202512/ts
   - https://nano-banana-ui.vercel.app/

@@ -46,7 +46,21 @@ modified: 2024-09-08T20:08:16.088Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [Hybrid search + reranking in prod, what's actually worth the complexity? : r/Rag _202601](https://www.reddit.com/r/Rag/comments/1q683tf/hybrid_search_reranking_in_prod_whats_actually/)
+  - Building a RAG system for internal docs (50k+ documents, multi tenant, sub 2s latency requirement) and I'm going in circles on whether hybrid search + reranking is worth it vs just dense embeddings.
+  - Everyone says "use both" but rerankers add latency and cost. Tried Cohere rerank but it's eating our budget. BM25 + vector seems overkill for some queries but necessary for others?
+  - Also chunking strategy is all over the place. 512 tokens with overlap vs semantic chunking, no idea what actually moves the needle.
+
+- A lot of the small open source rerankers are much faster and cheaper than proprietary rerankers like voyager or cohere. I really like the qwen3-reranker-8b, in our testing it was nearly as good as the voyager reranker and was a fraction of the cost and latency.
+  - It might take a bit of effort to deploy on your infra if you haven’t deployed any open source LLMs before, but we saw significant improvements using a reranker vs just RRF with hybrid search.
+  - If you are already committed to using a dense vector search then you might as well do a hybrid search with RRF at the very least. BM25 is much faster and cheaper than dense vector search so it is effectively free from a cost and latency perspective, and it is a higher-precision lower-recall search so it complements the dense vector search well.
+
+- Combining BM25 and vector search (hybrid search) and applying them based on the specific query type is an effective strategy for maximizing search accuracy and performance. This approach, often managed by a query router, leverages the strengths of each method while mitigating their weaknesses. 
+  - A query router can analyze the incoming query and determine the most appropriate retrieval method 
+- But wouldn't the query router itself add unnecessary overhead? Or is it just a few if-else statements to check for common cases like error codes/IDs?
+  - Use a small model, or even better - fine tune a tiny model which solely does query routing
+
+- For me the sentence transformers re ranking worked just okay
 
 - ## [【吐槽】大模型太强了，以至于很多人感觉自己行了 ](https://linux.do/t/topic/1296243)
   - 最近在搞 RAG，疯狂找文章、跑 demo。 结果越跑越觉得：这些东西完全没讲到点子上。
@@ -290,6 +304,30 @@ modified: 2024-09-08T20:08:16.088Z
 - ## 
 
 - ## 
+
+- ## [Late Chunking vs Traditional Chunking: How Embedding Order Matters in RAG Pipelines? : r/Rag](https://www.reddit.com/r/Rag/comments/1q67z9q/late_chunking_vs_traditional_chunking_how/)
+  - Traditional Approach: chunk documents -> embed each chunk separately -> store in Milvus, done. It worked...
+- New Approach - Flip the Pipeline: Embed the entire document first (using long-context models like Jina Embeddings v2 which supports 8K tokens)
+  - Let it generate token embeddings with full context - the model "sees" the whole document
+  - Then carve out chunks from those token embeddings
+  - Average-pool the token spans to create final chunk vectors
+- But honestly, it's not perfect. The accuracy boost is real, but you're trading parallel processing for context - everything has to go through the model sequentially now, and memory usage isn't pretty. Plus, I have no idea how this holds up with millions of docs. Still testing that part.
+  - My take: If you're dealing with technical docs or API references, give late chunking a shot. If it's tweets or you need real-time indexing, stick with traditional chunking.
+
+- ## [200ms search over 40 million texts using just a CPU server + demo: binary search with int8 rescoring : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1q5vk9m/200ms_search_over_40_million_texts_using_just_a/)
+  - https://huggingface.co/spaces/sentence-transformers/quantized-retrieval
+  - Embed your query using a dense embedding model into a 'standard' fp32 embedding
+  - Quantize the fp32 embedding to binary: 32x smaller
+  - Use an approximate (or exact) binary index to retrieve e.g. 40 documents (~20x faster than a fp32 index)
+  - Load int8 embeddings for the 40 top binary documents from disk.
+  - Rescore the top 40 documents using the fp32 query embedding and the 40 int8 embeddings
+- This requires:
+  - Embedding all of your documents once, and using those embeddings for:
+  - A binary index, I used a IndexBinaryFlat for exact and IndexBinaryIVF for approximate
+  - A int8 "view", i.e. a way to load the int8 embeddings from disk efficiently given a document ID
+  - Instead of having to store fp32 embeddings, you only store binary index (32x smaller) and int8 embeddings (4x smaller). Beyond that, you only keep the binary index in memory, so you're also saving 32x on memory compared to a fp32 search index.
+
+- I think Microsoft uses something similar for Cosmos DB vector search and Azure AI Search. The embeddings are kept at the original fidelity and at much reduced dimensions for faster retrieval.
 
 - ## [Rebuilding RAG After It Broke at 10K Documents : r/LlamaIndex _202512](https://www.reddit.com/r/LlamaIndex/comments/1pgyedh/rebuilding_rag_after_it_broke_at_10k_documents/)
   - What Broke at 10K

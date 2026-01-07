@@ -28,7 +28,13 @@ modified: 2025-08-30T18:16:57.201Z
 
 - ## 
 
-- ## 
+- ## ✨ [Google just dropped NotebookLM updates that turn it into a full-blown content creation studio _202510](https://www.reddit.com/r/ThinkingDeeplyAI/comments/1oe8xx2/google_just_dropped_notebooklm_updates_that_turn/)
+- The "Nano Banana" Revolution: Source-Grounded Images
+  - "Nano Banana" is the internal codename for Google's gemini 2.5 flash image model, and it's built right into NotebookLM now
+  - Nano Banana is source-grounded. It doesn't just take a prompt; it reads your documents first and then generates an image based on your sources.
+- The (Leaked) Game-Changer: Automated Google Slides
+  - Analyze all your sources.
+  - Use Nano Banana to generate relevant images, charts, and infographics.
 
 - ## 📌 现在大模型一天一个样，一直在思考 LlM 应用中哪些是不变的，梳理了一下 RAG 中那些值得投入的技术栈 _202503
 - https://x.com/ZeroZ_JQ/status/1906255737845690372

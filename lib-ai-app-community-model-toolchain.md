@@ -197,6 +197,7 @@ modified: 2025-09-16T12:36:12.968Z
 - resources
   - [LocalScore - Local AI Benchmark](https://www.localscore.ai/)
     - LocalScore is an open benchmark which helps you understand how well your computer can handle local AI tasks.
+  - [AMD Strix Halo — Backend Benchmarks (Grid View)](https://kyuz0.github.io/amd-strix-halo-toolboxes/)
 
 - ## 
 
@@ -363,7 +364,14 @@ PP Speed: Q3 GGUF: 50 t/s
 
 - ## 
 
-- ## 
+- ## [Why not Qwen3-30B Quantized over qwen3-14B or gemma-12B? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1q62pyh/why_not_qwen330b_quantized_over_qwen314b_or/)
+  - I have a 3080ti with 12GB of VRAM and 32GB of RAM and a 5900x. With this I can run qwen3-30b-a3b-thinking-2507 that does 3.3B activated parameters in LM studio 20 tok/sec which I believe is quantized right? It runs pretty well and has good answers. Why would I use the more recommended ones of qwen3-14b or gemma 12b over this that I see more often recommended for a computer of my specs?
+
+- MoE models will have a higher "static" VRAM cost, so you have less KV-cache -> lower ceiling on parallel requests -> lower total TG. But active parameters are fewer -> so faster compute -> higher total TG.
+  - In any case you have to evaluate your usecase; the quality of output and your throughput.
+  - For example, if you want more speed and you don't need a lot of KV-cache/context you could try Qwen3-VL-8b at FP8 or lower quant. This will fit into your VRAM.
+
+- The big advantage of MoE, especially for running on consumer hardware, is that the model doesn't have to fully fit into VRAM to give reasonable speed. I find models larger than 8B (active) parameters get really slow on CPU. Qwen 30BA3B or GPT-OSS-20B run quickly even on only CPU since they run as small models, but they're still big enough to be reasonably smart and useful. (And they run really fast with a hybrid GPU/CPU setup, even when they don't fully fit into VRAM).
 
 - ## 🆚 [MiniMax M2.1 quantization experience (Q6 vs. Q8) : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1q3579f/minimax_m21_quantization_experience_q6_vs_q8/)
   - I was using Bartowski's Q6_K quant of MiniMax M2.1 on llama.cpp's server with Opencode and it was giving me some very strange results.

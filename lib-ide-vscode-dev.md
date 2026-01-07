@@ -61,6 +61,9 @@ modified: 2024-08-24T16:15:11.456Z
     - We have ported the vast majority of features into the chat extension
     - we now use inline suggestions to refer to all AI-generated code suggestions that appear as you type (including ghost text and next edit suggestions).
     - The next phase of our OSS journey is to refactor some AI features and components from the Copilot Chat extension into VS Code core. 
+
+- pm-ai-vscode
+  - 任何插件都可以使用其他插件的ai功能来修改文件和操作，可以互补，也可以转移成本
 # draft
 - toys
   - wiki: prosemirror/tiptap

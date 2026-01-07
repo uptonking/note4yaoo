@@ -19,7 +19,15 @@ modified: 2021-04-30T20:14:17.669Z
   - ppt可以每页放一个画板或富文本编辑器
 
 - alternatives-ppt
-  - 很多ppt的每页是一张图片, 缺点是交互弱、编辑弱、文件大
+  - 一种思路: 很多ppt的每页是一张图片, 缺点是交互弱、编辑弱、文件大
+    - 图片/pdf的优点是跨设备保持排版
+    - 改进思路: image > image2html > ppt
+    - ocr方案相对于代码方案的优点，用户能直接拖拽修改文本/图形
+  - 一种思路: html > ppt; html > pdf > ppt
+  - 一种思路: html > svg > ppt
+  - 一种思路: markdown/typst > pdf/ppt
+  - 一种思路: 预置ppt模版文件 + 自定义内容 > 修改模版而生成ppt
+    - 这种纯代码操作的传统方案，创意不够
   - ✨ pdf-editor与ppt-editor的相似点: 支持批注、左侧页面缩略图
     - pdf-editor和ppt-editor都支持缩放，没必要重复开发功能
   - 可参考: svg-editor, pdf-editor, drawio(可插入丰富元素/集成)
@@ -375,7 +383,7 @@ modified: 2021-04-30T20:14:17.669Z
   - https://x.com/KaranVaidya6/status/2000966735672041772
     - An Open Source Presentation Generator with @composio Tool Router and @aisdk
 
-- https://github.com/sligter/LandPPT /1.5kStar/apache2/202511/python
+- https://github.com/sligter/LandPPT /1.7kStar/apache2/202601/python/js
   - https://landppt.pages.dev/
   - 一个基于大语言模型（LLM）的智能演示文稿生成平台，能够自动将文档内容转换为专业的PPT演示文稿
   - 从主题到完整PPT，全程AI自动化处理
@@ -389,15 +397,18 @@ modified: 2021-04-30T20:14:17.669Z
     - 网络图像搜索：支持 Pixabay、Unsplash 等优质图库
   - AI图像生成： 集成 DALL-E、SiliconFlow、Pollinations 等服务
   - 支持本地部署: OpenAI, Claude, Gemini, Ollama
+  - 能处理不同文件：支持 PDF、Word、Markdown 等格式输入
   - 深度研究：集成 Tavily API 和 SearXNG 的多源研究功能
   - 多格式导出：PDF/HTML/PPTX 多种格式导出支持
   - 智能解析：使用 MinerU 和 MarkItDown 进行高质量内容提取
   - 🎨 丰富的模板系统: 统一的HTML模板系统，支持响应式设计
+    - 内置简洁的 HTML 模板和布局样式
     - 场景化模板：通用、旅游、教育等多种专业场景模板
   - 用户友好的响应式Web界面
   - [ollama本地连接一直显示错误，服务器500 _202507](https://github.com/sligter/LandPPT/issues/5)
     - ollama测试一直失败，尝试修复了很久也没有成功，最后发现其实可以直接运行。
     - 我也是一直测试失败，跨域调了好久，结果发现配置好了可以直接运行。
+  - [【LandPPT】耗时N天开发的开源 AIPPT 生成工具 _202507](https://linux.do/t/topic/767490)
 
 - https://github.com/icip-cas/PPTAgent /2.3kStar/MIT/202511/python
   - Generating and Evaluating Presentations Beyond Text-to-Slides [EMNLP 2025]
@@ -544,6 +555,24 @@ modified: 2021-04-30T20:14:17.669Z
   - 基于 Nano Banana Pro 模型，智能识别并重绘文档内容，非单纯滤镜增强
   - 👀 文字精准还原: 修复文字边缘锯齿与模糊，同时保持原有排版布局不变（注：仅修复画质，不篡改内容）。
   - 支持导出高清 PDF 和 PPTX（PPTX 内也是图片）。
+
+- https://github.com/cat3399/ezppt /202511/python/js/inactive
+  - 开源的大模型生成PPTX方案, 包含完整前后端, 支持图片搜索, 支持自定义参考内容, 支持自定义模型服务商, 支持自定义场景
+  - 页面生成：调用大模型生成HTML代码。
+  - 图片能力（可选） 通过 SearXNG 聚合搜索图片。
+  - 自定义参考资料：支持自定义参考资料，用于生成内容，减少模型自身知识的幻觉。
+  - 在线预览编辑 可在浏览器中实时预览与编辑。
+  - 导出 PDF 或 PPTX 导出的 PPTX 文件可保持 HTML 预览 90% 的效果，并且内容可二次编辑。
+  - 怎么把HTML转换为 PPTX 格式的？能做到什么程度的还原度呢
+    - html–(playwright)–pdf–(apryse_sdk)–pptx
+    - 还原程度的话,动态效果肯定还原不了,其余的例如光晕,渐变,阴影等都还原不了
+    - 主要瓶颈在pdf2pptx, html2pdf基本上是无损的
+    - 可以的，自己读 cdp 然后 openxml 绘制就行。
+  - [【开源自荐】EZPPT 一键生成可导出 PDF/PPTX 的AI PPT项目 _202511](https://linux.do/t/topic/1123898)
+    - 我觉得效果挺一般的,做不到一键出成品的效果,这也是目前ai ppt项目的通病吧,效果都不大行
+    - 我这个项目的优势就是导出的PPT文件和HTML预览效果基本一样(代价是美观度的降低),并且可以自由编辑
+  - [目前html转PPT还是一个天大的难题吗？ ](https://linux.do/t/topic/1114556/18)
+    - 目前基本上可以用了，转换逻辑在src/html…那里，对于普通的排版还是可以保留90％样式的，复杂的就不行，我在提示词里面限制了很多“高级css效果”，那些都是无法转换的 genspark，质谱应该都是这个方案，因为pdf转pptx有些bug都是通的，例如阴影和超出范围还有转换后的字体
 
 - https://github.com/hugohe3/ppt-master /913Star/MIT/202512/python
   - https://hugohe3.github.io/ppt-master/

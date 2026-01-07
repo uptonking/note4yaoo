@@ -48,7 +48,18 @@ modified: 2024-03-01T09:19:11.669Z
 
 - ## 
 
-- ## 
+- ## 🆚 [Postgres with large JSONBs vs ElasticSearch : r/PostgreSQL _202601](https://www.reddit.com/r/PostgreSQL/comments/1q5ts8u/postgres_with_large_jsonbs_vs_elasticsearch/)
+  - A common scenario in data science is to dump JSON data in ElasticSearch to enable full-text searching/ranking and more. Likewise in Postgres one can use JSONB columns, and pg_search for full-text search, but it's a simpler tool and less feature-rich.
+  - However I was curious to learn how both tools compare (PG vs ES) when it comes to full-text search on dumped JSON data in Elastic and Postgres (using GIN index on tsvector of the JSON data). So I've put together a benchmarking suite with a variety of scales (small, medium, large) and different queries. 
+  - https://github.com/inevolin/Postgres-FTS-TOASTed-vs-ElasticSearch
+  - TL; DR: Postgres and Elastic are both competitive for different query types for small and medium data scales. But in the large scale (+1M rows) Postgres starts losing and struggling. [FYI: 1M rows is still tiny in the real world, but large enough to draw some conclusions from]
+  - This benchmark is intentionally designed to keep the PostgreSQL JSONB payload large enough to be TOASTed for most rows (out-of-line storage). That means results reflect “search + fetch document metadata from a TOAST-heavy table”, not a pure inverted-index microbenchmark.
+  - A key learning for me was that JSONB fields should ideally remain under 2kB otherwise they get TOASTed with a heavy performance degradation. 
+
+- So basically, postgres is faster than elastic until the jsonb documents become big enough to require toast?
+  - Thats the tl; dr more or less. But pg is not faster/better on every metric/query either, and definitely not at larger scales.
+
+- Add a metric for concurrent queries per node, that’s where elastic would crash even on the <16GB shards. You’ll be seeing interesting things when you plot dataset size on one axis, concurrent users on another, and response time in color gradient
 
 - ## Postgres has lots of types, but you really only need 2: id(serial), jsonb
 - https://x.com/tomdoes_tech/status/1892675795828801877

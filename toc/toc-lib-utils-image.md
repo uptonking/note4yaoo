@@ -436,6 +436,36 @@ modified: 2023-04-04T22:39:45.442Z
   - A free and open-source inpainting & outpainting tool powered by SOTA AI model.
   - fully self-hosted, support CPU & GPU & Apple Silicon
   - FileManager: Browse your pictures conveniently and save them directly to the output directory.
+  - https://huggingface.co/spaces/Sanster/iopaint-lama
+
+- https://github.com/chunxiuxiamo/ai-image-edit /95Star/202512/js
+  - AI图片生成编辑网站，可以框选图片局部区域进行编辑修改。
+  - 通过画笔涂抹或框选图片局部区域进行编辑修改，可一次性修改多个区域。
+  - 对复杂图形有概率会修改到原图其他元素
+  - [【开源】：Nano-banana生图和画笔涂抹、框选局部区域进行编辑修改 _202512](https://linux.do/t/topic/1369893)
+    - 优化模型选择功能，兼容其他绘图模型（OpenAI通用API格式），支持自定义模型
+    - 直接框选就行右边会自动出现坐标和对应的指令输入框，输入指令之后 下面的设置提示词按钮就可以了 不用自己写坐标
+    - 模型需要支持通用的OpenAI API格式 我测试gpt-image是可以的
+    - 复刻了lovart的核心功能啊，大佬牛逼
+    - 新增支持gemini官方API渠道 但是我没有官方api key测试不了 你拉下代码看看有没有问题
+    - 可以用cliproxyapi反代antigravity，有pro的话使用gemini api格式，每五小时可以生成20张nano banana pro4K图
+
+- https://github.com/markfulton/NanoBananaEditor /521Star/AGPL/202509/ts/inactive
+  - https://nanobananaeditor.dev/
+  - Nano Banana image generator and editor application.
+  - Powered by Gemini 2.5 Flash images API.
+  - Conversational Editing - Modify images using natural language instructions
+  - Paint masks to target specific areas for editing
+  - [I built the best Nano Banana AI Image Editor, and I'm open-sourcing it : r/SideProject _202509](https://www.reddit.com/r/SideProject/comments/1n5mzas/i_built_the_best_nano_banana_ai_image_editor_and/)
+  - https://github.com/etranHOLI/NanoBananaEditor /AGPL/202512/ts
+    - Nano Banana image generator and editor application. This tool provides a central hub for AI image generation and revisions.
+
+- https://github.com/sapthesh/AI-Photo-Editor-Nano-Banana /MIT/202509/ts/inactive
+  - web application allows you to transform your photos with simple text prompts
+  - upload an image, select a region, and describe your vision in natural language.
+  - Powered by the Google Gemini gemini-2.5-flash-image-preview model
+  - Iterative Editing Workflow: Use the generated image as the new starting point for further edits, allowing you to stack multiple creative changes.
+  - Prompt Suggestions: Get inspired with clickable example prompts
 # more
 - https://github.com/ascorbic/unpic-img
   - This library uses unpic to detect the image CDN, and then uses the CDN's URL API to resize and format images. 

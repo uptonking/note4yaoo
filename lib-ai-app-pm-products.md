@@ -251,6 +251,25 @@ modified: 2025-03-22T16:10:24.856Z
 
 - 🌰 nano-banana的体验
 
+- 🌰 notebooklm-gen
+  - 点击生成app时能手动编辑prompt
+  - audio
+  - video
+    - 包含图片播放和语音讲解
+  - slide
+  - mindmap
+    - 默认只展开一级节点，此时下载图片也只有一二级，需要手动点击才显示后续节点
+  - infographic
+  - report
+    - 支持查看prompt
+    - 不可编辑
+  - flash-card
+    - 卡片显示问题，点击显示答案
+  - quiz
+    - 多是选择题，可点击显示hint/explain
+  - note: rich text notes
+  - data-table
+    - 支持 export to google sheets
 - 🌰 notebooklm-slide-deck的体验
   - 默认生成的ppt包含14页
   - 生成slide deck的速度慢，缺少进度反馈
@@ -352,13 +371,6 @@ modified: 2025-03-22T16:10:24.856Z
   - https://github.com/cheahjs/free-llm-api-resources
 
 - claude-latest
-  - [【Elysiver】Opus降价到0.2刀一次、元旦假期签到得10-100刀  _0101](https://linux.do/t/topic/1395641)
-    - 降价claude 4.5 opus到0.2一次，元旦以后应该也会保持这个价格
-    - 1月2号-4号签到获得10-100额度
-  - [[小呆公益站 ] 恢复+补偿--接着奏乐接着舞[农场恢复] _0102](https://linux.do/t/topic/1395912)
-    - 一周无限额度 API Key继续 还是不限速 不限额度
-    - https://api.daiju.live/
-    - sk-GqDZAnydvTjMEqSMm37gzrkFqYvVymwrINfak8syYzv4hUL2
   - [寻找L站开源作者，UUcode送商业级API额度—— 优质开源项目扶持计划 1228](https://linux.do/t/topic/1370667)
 
 - tips: 公益站不稳定(3个月就倒闭一批), 来源不明可能导致效果差, 需要经常确认和维护, 不要浪费过多时间
@@ -375,6 +387,7 @@ modified: 2025-03-22T16:10:24.856Z
     - [站内公益站汇总 ](https://linux.do/t/topic/1398351)
       - 公益站的域名被集中泄露遭到集中的打击
       - 跑路，黑与白，薄荷，wong，elysiver，都是可以kilo的。cline和roocline不懂
+      - 👀 不要花费过多时间，有站点会不定期清理不活跃账号，如 windhub/Fovt
     - [L站的佬友们应该早已经 token 自由了吧 ](https://linux.do/t/topic/1397594)
     - [最新福利羊毛话题](https://linux.do/c/welfare/36)
     - [All-API-Hub：开源AI中转站集中管理和自己的New API增强管理，基于 one-api-hub 大幅重构增强 _202511](https://linux.do/t/topic/1001042)
@@ -408,17 +421,18 @@ modified: 2025-03-22T16:10:24.856Z
     - 模型不稳定，经常异常再恢复再异常
     - [【nhh公益站】介绍贴及主贴  ](https://linux.do/t/topic/1370326)
     - [模型中转状态检测](https://status.123nhh.xyz/)
-  - [Wind Hub](https://api.224442.xyz/panel)
+  - [Wind Hub](https://api.224442.xyz/panel), 不定期清理14天无消耗的
     - [福利站](https://wcdk.224442.xyz/)
     - 提供了free分组，包含deepseek-v3.2, gpt-4.1-mini
     - cc分组倍率0.6
     - [[Wind Hub]新的公益API 主帖 ](https://linux.do/t/topic/1344450)
   - 📌 [b4u API](https://b4u.qzz.io/console), 每日转盘
     - 会不会增加其他模型: 不会，本站专注于Claude
+    - 不支持opus
     - 支持工具调用、上下文 128K+、支持 RooCode，不推荐接入 ClaudeCode
     - 普通用户：每次 1 刀、RPM=10
     - 渠道技术： Claude-SessionKey号池→claude2api→FC使能
-    - [转盘抽奖 / 投喂 Claude Session Key](https://tw.b4u.qzz.io/)
+    - [转盘抽奖](https://tw.b4u.qzz.io/)
     - 仅每周六晚21:00至21:30限时开放注册
     - [【B4U公益站】是克劳德，我们有救了！（每周六限时开放注册） ](https://linux.do/t/topic/801848)
     - b4u 按次数，不是按 token，还是用来 chat 合适，cc 几下就烧没了
@@ -446,7 +460,7 @@ modified: 2025-03-22T16:10:24.856Z
     - [【WONG公益站】弄个主贴 ](https://linux.do/t/topic/1179964)
     - 不要对模型进行测试，测试失败不是因为服务不可用，是我禁掉了测试
   - [随时跑路公益](https://runanytime.hxi.me/console/personal), 每天签到
-    - [随时跑路福利站](https://fuli.hxi.me/)
+    - [随时跑路福利站](https://fuli.hxi.me/wheel)
     - 完全支持 cc，主要是 sonnet 4.5，haiku 4.5 会自动重定向到 sonnet 4.5
     - RPM 暂时定为 5，之后看情况调整
   - [Elysiver](https://elysiver.h-e.top/console/personal), 站内签到
@@ -454,6 +468,7 @@ modified: 2025-03-22T16:10:24.856Z
     - [模型健康度监控](https://elysiver.h-e.top/model-health)
   - [ThatAPI](https://gyapi.zxiaoruan.cn/console/personal), 签到
     - 有多个cc分组，IP限制严格(无需gfw)
+    - 免费提供 glm flash
   - [小呆API](https://api.daiju.live/console/personal), 签到，api不稳定
     - [小呆API](https://new.184772.xyz/)
     - cc支持
@@ -489,10 +504,11 @@ modified: 2025-03-22T16:10:24.856Z
   - [Hotaru API](https://api.hotaruapi.top/console/personal)，签到
     - codex
     - [〔Hotaru公益站〕新的公益站启动 ](https://linux.do/t/topic/1398297)
-  - [Huan API](https://ai.huan666.de/console/personal), 签到
+  - [Huan API](https://ai.huan666.de/console/personal), 签到, 生图模型
     - cc支持
   - [Mu. API 2026](https://demo.awa1.fun/console/personal)
     - cc支持
+    - [「公益站」最终还是换成了 New-API _202509](https://linux.do/t/topic/927953)
   - [轻 API](https://lightllm.online/console/personal), 签到
     - cc支持
   - [DEV88公益](https://api.dev88.tech/console/personal), 签到
@@ -506,7 +522,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [Luckin 公益API](https://api.oaiapi.online/console/personal)
     - 所有模型均支持 沉浸式翻译
   - [佬友API](https://lyclaude.site/console/personal)
-  - [香草API](https://ai.xiangcao.de/console)
+  - [香草API](https://ai.xiangcao.de/pricing)
   - [六哥公益站](https://api.crisxie.top/)
   - [APIKEY_公益站](https://welfare.apikey.cc/console)
   - [一个小站的 API 商店](https://one-api.ygxz.in/app/dashboard), 每日签到1刀内随机
@@ -669,6 +685,10 @@ modified: 2025-03-22T16:10:24.856Z
 
 - modelscope对部分模型提供了免费生图的额度, 如z-image-turbo
 
+- image-api
+  - [Huan API](https://ai.huan666.de/pricing)
+  - [香草API](https://ai.xiangcao.de/pricing)
+
 - image-saas
   - [小白生图 - AI Image Generator](https://catsapi.com/)
   - [AI 生图平台](https://ztu.ai/)
@@ -693,7 +713,16 @@ modified: 2025-03-22T16:10:24.856Z
     - 提供免费的文生图模型: sdxl, sdv1-5
   - [Free AI Image Generator - AI Free Forever](https://aifreeforever.com/image-generators)
   - [Free Gemini Pro](https://freebanana.pro/)
+    - 速度慢
   - [FreeGen 白嫖图片生成器](https://hachimiai.dpdns.org/freegen/)
+  - [SoraApi](https://api.67.si/)
+    - 不可用
+
+- tutorials-image
+  - https://github.com/rere43/image-generator-hybrid
+    - CliProxyApi 反重力生图 skill, 支持4K, 有两种方法整合, http 和google genai SDK
+    - [CliProxyApi 反重力生图 skill, 支持4K, claude code , codex可用 _202512](https://linux.do/t/topic/1378927)
+  - [借助 Antigravity-Manager, 终于用上反重力了！可4k banana pro _202512](https://linux.do/t/topic/1374557)
 
 - video-gen
   - [Video Studio](https://doubao.happieapi.top/)

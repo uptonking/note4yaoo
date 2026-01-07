@@ -24,6 +24,8 @@ modified: 2025-12-19T12:43:21.150Z
   - 编辑的一种思路: 生成图片后，(用inpaint)remove所有文字，然后再把文本渲染到bbox
   - 编辑的一种思路: 直接生成svg，然后右键转换为形状
   - 不要执着于pdf/ppt编辑器, 现在市场需求最大的是nano-banana文生图的编辑
+  - ocr方案相对于代码方案的优点，用户能直接拖拽修改文本/图形
+  - ❓ 是否要对ppt格式的pdf单独处理，因为包含的文本较少，背景图片及图形可能不完整
 
 - 💡 pdf的文本化
   - 输出不一定是markdown, 各厂商都有自己的偏向, qwenvl-html, Nanonets-markdown, docling-doctags
@@ -365,6 +367,38 @@ modified: 2025-12-19T12:43:21.150Z
   - PIL/Pillow - 图片处理
   - python-pptx - PPT生成
   - [大香蕉生成图片转换为可编辑PPT的速度直接质变！飞升了！GPU加持下无敌  ](https://linux.do/t/topic/1410288)
+
+- https://github.com/baoyudu/paper-burner /244Star/GPL/202506/js/inactive
+  - https://baoyu.space/paper-burner/
+  - PDF文档OCR与翻译工具
+  - Paper Burner能够从PDF文档中提取文本（OCR），将其转换为Markdown格式，并支持使用多种AI模型进行高质量翻译，完美保留公式、图表、格式，最大限度地保持语意连贯通顺
+  - 本工具完全在浏览器中运行。
+  - PDF文本提取：使用Mistral AI的OCR技术从PDF文档中精确提取文本内容
+  - 自动将提取的内容转换为规范的Markdown格式
+  - 自动提取并保存PDF中的图片
+  - 支持多种顶级AI大模型进行翻译
+  - 长文档翻译：自动按照文章小节分段处理长文档，避免段落中出现断点，确保翻译质量和内容一致性
+  - 翻译过程中完美保留原文档的格式、公式和结构
+  - 本项目保持轻量化，不再增加新功能，但可能继续维护新的API端点。如果您的需求不止于文档处理，希望在浏览器中继续体验阅读、分析等功能，欢迎大家继续关注本项目的分支 Paper Burner X，由 Feather-2 继续保持维护与更新
+  - https://github.com/Feather-2/Burner-X /1.3kStar/AGPL/202511/js/inactive
+    - https://paperburner.viwoplus.site/views/landing/landing-page.html
+    - https://paperburner.viwoplus.site/
+    - 浏览器即开即用，AI文献识别、文档批量翻译、阅读与智能分析工具
+    - 支持 PDF/DOCX/PPTX/EPUB 等多种格式，能够进行 OCR 识别、高质量翻译、智能分析，完美保留公式、图表和格式。
+    - 在前端实现了一个 Agentic RAG 系统。通过赋予 AI 全局的文章结构 和一系列工具（如 grep, vector search, fetch等等），AI 能够自主决策、多步推理，并在长文本中实现复杂的分析和信息提取任务。
+      - 在纯前端环境中，实现了一个长文本Agent。少量文本下，将使用全量的策略；而当提供长文本时候，使用长文本Agent。
+    - 批量处理： 支持多种文档格式（PDF/DOCX/EPUB 等）和代码库的直接导入。利用并发 OCR 和翻译，并结合术语库（支持数万词条快速匹配），显著提升了文献处理效率。
+    - 目前所有数据均在浏览器本地，支持用户接入自定义 AI 模型端点，并提供了配套的 OCR Server 和 Docker 部署选项
+    - 不仅支持本地文件上传，更可一键从 GitHub 仓库或任意 URL 导入内容，自动完成解析。
+    - PDF可以使用OCR (支持`mineru/doc2x`等) 与翻译引擎，并实现保留原文格式翻译功能（基于mineru，目前优化中，并会支持更多模型）。
+    - 术语备择库： 进行了性能优化，支持一次性导入数万条术语并进行快速匹配。
+    - 沉浸式对照阅读： 提供智能对齐的段落级原译文对照、文档结构目录（TOC）、高亮与标注功能，先进行无障碍的阅读，再进行AI总结。
+    - 结构化信息提取： 内置了“文献矩阵”等实用工具，能够将非结构化的论文内容，智能提取为清晰的结构化数据，方便进行横向对比和分析
+    - 给予 AI 一系列工具，如精确匹配的 grep、向量搜索 vector search、内容抓取 fetch 等。AI 会根据你的问题，自主分析并决定调用哪种工具组合来寻找最佳答案。
+    - 下一个里程碑是将能力从分析单篇文献，扩展到处理多篇文献，并基于此开发能自动生成文献综述的 综述 Agent
+    - [Agent伴读🤖！专为学术/工作打造，您的一站式AI翻译/阅读/分析工作站 _202510](https://linux.do/t/topic/1007281)
+    - [Paper Burner X 自定义：手把手教你用 cf worker 加入更多OCR引擎/学术搜索功能 _202510](https://linux.do/t/topic/1009321)
+      - 部分佬友反馈大文件会出现failed to fetch，这里新增分块机制
 
 - https://github.com/yyy-OPS/slidedeconstruct-ai /113Star/MIT/202512/ts
   - 基于 AI 视觉能力的智能演示文稿反向工程工具。它利用 Google Gemini (或 OpenAI Compatible) 模型，将一张静态的 PPT 截图“拆解”为可编辑的图层（背景、文字、视觉元素），并支持将其转化为矢量形状，最终导出为可编辑的 .pptx 源文件。

@@ -27,7 +27,35 @@ modified: 2024-01-11T15:57:32.182Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## docx/xlsx/pptx文档文件对应的模版文件后缀分别是什么? 如何根据预定义模版文件结合自定义内容生成docx/xlsx/pptx文档文件? 请用最主流最成熟的代码工具，实现一个通过模版文件生成文档文件的例子
+- 文档：.docx
+  - 模板：.dotx（宏禁用模板），宏启用模板：.dotm
+- 工作簿：.xlsx
+  - 模板：.xltx（宏禁用模板），宏启用模板：.xltm
+- 演示文稿：.pptx
+  - 模板：.potx（宏禁用模板），宏启用模板：.potm
+- 说明：通常可以直接用 .docx/.xlsx/.pptx 作为模板（在文件里预设占位符），也可以使用上述 *.dotx/*.xltx/*.potx 专用模板扩展。如果模板中有 VBA（宏），要用带 m 的扩展名（.dotm/.xltm/.potm）。
+  - 在代码开发（编程）的实际场景中，为了方便，我们通常直接使用普通的 .docx, .xlsx, .pptx 文件作为“模版”。程序只需要读取这个文件，修改内容，然后“另存为”一个新文件即可。这样可以避免处理不同后缀带来的兼容性微小差异。
+  - 虽然微软提供了专门的 .dotx, .xltx, .potx 模版格式，但在现代开发中（特别是使用 Python/Java 库时），为了兼容性和处理方便，通常直接创建一个包含样式的普通 .docx/.xlsx/.pptx 文件作为模版，然后通过代码修改其中的内容。
+
+- 在 Office 模板（.docx/.xlsx/.pptx 或模板扩展）中放占位符（简单示例：{{name}}、{{date}}、{{company}} 等）。
+  - 在 Node.js 中读取模板文件（二进制），用成熟库把占位符替换为自定义数据，生成新的文件并写盘/返回给前端下载。
+- 对于表格/列表，一般模板中留一行作为“样板行”，在代码中复制该行并为每个数组元素替换占位符。
+
+- Word / PowerPoint 模板替换：docxtemplater + pizzip（广泛用于 docx/pptx 模板替换）
+  - 对于复杂的循环/条件渲染（Word/PPT），docxtemplater 支持循环与高级模块
+  - 工具： python-docx-template (简称 docxtpl)
+    - 原理： 它是基于 python-docx 和 Jinja2 模版引擎构建的。
+    - 优势： 你可以直接在 Word 里像写 HTML 模版一样写变量（例如 {{ name }}），支持循环表格、条件判断，实现了“样式与数据分离”。这是目前最优雅的 Word 生成方案。
+- Excel 操作：exceljs（读写 xlsx，很成熟）
+  - 工具： openpyxl
+  - 原理： 直接读取现有的 Excel 文件，定位单元格写入数据。
+  - 优势： 支持读写，保留原有格式。对于极大量数据报表，可以使用 pandas 配合 XlsxWriter。
+- PowerPoint (.pptx):
+  - 工具： python-pptx
+  - 原理： 读取 PPT 文件，遍历幻灯片（Slide）和形状（Shape），替换文本框内的文字。
+  - 最通用的方法是遍历所有 Slide 的所有 Shape，检查 TextFrame 中的文本，如果包含占位符（如 {{title}}），则进行字符串替换。
+- 以最成熟的 Apache POI 库为例，展示用Excel模板（.xltx）生成包含自定义数据文档的过程。
 
 - ## 宝玉老师总结的非常清晰。 我日常也是这样做 PPT 的。 ListenHub 的未来 PPT编辑功能也是这样，先编辑文本，确认没问题再生成。
 - https://x.com/oran_ge/status/2002594269937414554
@@ -108,9 +136,54 @@ modified: 2024-01-11T15:57:32.182Z
 
 - ## 
 
-- ## 
+- ## [我并不看好banana做的ppt，毕竟一个不能编辑的ppt太不给力 ](https://linux.do/t/topic/1293330)
+  - 从我自己的主观来讲，ppt是由文字、形状、图表、图标、图片结合而成的东西。如果认为图片成了最主要的部分，那可能是本末倒置了。
+  - 我的方法是代码直接来编写，编写好了导入ppt。
+  - 用的svg，html太框架化了，不太容易精准定位。
 
-- ## 
+- 有的场合用图片其实更方便，因为有的投影仪直接用原版ppt就会导致图片/文字错位，整个转成图片或者pdf就能避免这种问题，当然自己要修改的话用ps改一下也挺方便，而且这玩意看的就是老板要你怎么改，所以自己的主观并不起什么作用。自己就是老板的话当然看自己心情了
+
+- banana生成PPT里的插图还行，如果整页生成的话，一是不能二次编辑很麻烦，二是如果文字多的话仔细看里面还是有乱码
+  - PPT模版+svg（比如图标，框，箭头等等）+文字+插图能应对大部分场景了，我目前用着kimi的PPT生成还行，稍微改改就能用
+
+- ## [制作可编辑ppt的新思路 ](https://linux.do/t/topic/1381300)
+  - NOTEBOOKLM制作的ppt很好，但痛点是不能修改，特别是有稍许错误的地方。发现可以把ppt截图发ai，让其用 `VBA` 代码复刻，大部分文字和流程图都还可以，图标可能有一定问题。
+
+- ## [目前html转PPT还是一个天大的难题吗？ ](https://linux.do/t/topic/1114556)
+- 有见过 html → pdf → ppt 的神秘方案
+
+- 确实很困难 HTML本身就可以作为PPT的超集 光转HTML就很困难了 CSS 更难转 有一堆复杂的特效 如果引入JS 那基本不可能
+  - 倒不如从另一个方面想让PPT厂商出一个嵌入HTML的功能 这样我还可以引入 Three. JS 实现更加复杂的特效
+
+- 之前用天宫生成PPT（html的），下载成PPT我感觉还原度还挺高的。
+
+- 智谱那边有一个PPT模式，可以看到制作PPT的过程，就是通过html的形式做PPT的，不过有时候做出来的效果怪怪的，元素块跟奶油似的会化在背景上。
+  - Claude code的skill也有一个PPT相关的技能，通过html转PPT的。
+  - [skills/skills/pptx/scripts/html2pptx.js at main · anthropics/skills](https://github.com/anthropics/skills/blob/main/skills/pptx/scripts/html2pptx.js)
+
+- 这个就是类似markdown的格式来写ppt，然后实现网页展示的ppt，可以导出pdf或者图片型ppt（不可编辑）
+  - 但是现导出pdf，后用wps之类的转ppt就部分可以编辑
+
+- wps付费版可以pdf转ppt，部分文字内容可以编辑，图片可以移动位置之类的
+
+- html一比一转制ppt，我试了coze，天工，genspark，manus这几个，整体来讲manus的还原度最好
+
+- manus虽然有模板挑，但确实是用HTML做的, 以至于有的时候HTML写太长有些内容被遮住
+- 先通过gemini生成html，并根据自己需求多次微调到满意。然后将html文件喂给manus，提示词让它完全根据HTML文件内容，原样转换为ppt。这时候不是调用模板，复原的效果还比较不错
+- 我是让gemini生成html预览，然后根据预览的html写py生成pptx
+  - 还原度非常不错，就是如果有图片得自己重新排版下缩放大小
+
+- kimi 的好像可以直接在PPT中编辑
+  - kimi是模板，没研究价值
+
+- pandoc input.html -o output.pdf
+  - 其余的 LibreOffice (soffice) Poppler (pdftoppm)也可以试一下
+
+- 疑惑为啥不从svg转？感觉大模型画svg效果也更好？
+  - svg也不是就转成pptx格式了，是做好后一张一张插入进去再调整，跟直接转成pptx不是一回事。
+  - 另外，有些旧电脑系统并不支持高版本的ppt，会很麻烦
+
+- 我也是这么理解的, 让大模型输出结构化的内容, 然后再渲染成网页和PPT, 而不是直接生成网页再转换为PPT
 
 - ## [KIMI的 OK computer 模式制作ppt真的是独一档的存在 _202512](https://linux.do/t/topic/1297958)
   - ppt真的就能按照你的要求，合理排版，并且颜色格式都非常符合审美，并且下载下来就是可编辑的pptx。和其他套模板版式的都一个层次。非常无敌，缺点就是次数太少了，连会员的次数都太少了。和banana那种一整张图不方便编辑完全不一样。
@@ -142,10 +215,7 @@ modified: 2024-01-11T15:57:32.182Z
 
 - Codia AI NoteSlide 试试这个网站，可以直接对pdf进行修改，同时导出为pdf文件
 
-- [制作可编辑ppt的新思路 ](https://linux.do/t/topic/1381300)
-  - NOTEBOOKLM制作的ppt很好，但痛点是不能修改，特别是有稍许错误的地方。发现可以把ppt截图发ai，让其用VBA代码复刻，大部分文字和流程图都还可以，图标可能有一定问题。
-
-- ## [PPT-master 一个用AI生成真正可编辑的高质量PPT的工具 _202512](https://linux.do/t/topic/1305492)
+- ## 💡 [PPT-master 一个用AI生成真正可编辑的高质量PPT的工具 _202512](https://linux.do/t/topic/1305492)
   - 使用 mineru 对 pdf 进行了提取，然后用 md 文档重新生成一份含有企业预警通图标和封面图的 ppt，因为时间更空余，生成的比视频里面的更精美多了
   - 暂时还没有考虑到作为产品来推广。我主要是自己要制作一些 ppt，所以探索了这个框架，刚好觉得这个框架还不错，所以就分享给大家。
 
@@ -161,6 +231,25 @@ modified: 2024-01-11T15:57:32.182Z
 
 - 试了下效果还可以，唯一的问题是基本没有适配的图标和配图，希望可以通过接入大香蕉的api来解决这个问题
   - 图标可以手动去 svgrepo 上下载了放入仓库里提示使用就行。配图的话我用 antigravity 可以直接使用调用生图的。
+
+- [AI辅助制作PPT（可以编辑）-个人认为较为实用的方案+补充制作流程图、架构图、思维导图的方法 _202508](https://linux.do/t/topic/836088)
+  - 将AI可以解析的文件或者文本输入LLM工具，告知需要生成几页PPT，生成SVG图片
+  - 导入PPT（请使用office，WPS不支持svg渲染），右键点击转换为图形，就可以生成可以编辑的PPT
+- 补充：制作图表的方案
+  - 生成svg格式的，导入visio中
+  - 生成json格式的，导入excalidraw中
+
+- [有没有那种可以不用Office Powerpoint的SVG文档编辑器？也可以打散图形进行编辑处理的？ ](https://linux.do/t/topic/1235009)
+- SVG是转为形状，再去编辑
+  - 🐛 wps没有转为形状的按钮
+- 我编辑svg都是用一些可以导入svg的设计软件，或者可以试试inkscape
+  - 目前inkscape最好用。
+
+- [SvgPathEditor](https://yqnn.github.io/svg-path-editor/)
+
+- 我编辑 svg 用的 Lunacy，但好像没有转换？
+
+- 试了一下，PPT类的排版SVG还是不行，图标应该可以
 
 - ## [生成ppt有哪些ai可以推荐？ ](https://linux.do/t/topic/1367870)
 - NotebookLM？谷歌的，用了一下，感觉生成的东西可以参考一下，但是只能生成PDF，不能修改，所以用的也不多。
@@ -178,6 +267,11 @@ modified: 2024-01-11T15:57:32.182Z
 - [什么时候应该让AI帮我做PPT？ ](https://linux.do/t/topic/1310968)
   - 千问可以生成可编辑的
 - 我用那个免费的qwen chat不能生成
+
+- [突破传统PPT 以后用网页代替PPT展示会成为主流吗 ](https://linux.do/t/topic/1287930)
+  - PPT分为两类，一类是给人看的，一类是给自己讲的。
+  - 给人看，就是要各种图表数据拉满，偏上炫酷的特效，那网页代替PPT未必不可能。
+  - 但如果是给自己演讲辅助的，听众全程焦点在你，根本无视PPT的存在，那简单几个字、几张图就行。这个时候就不存在说什么代替不代替，反正都是信息的载体。
 
 - ## [【已开源】一个基于banana pro的一站式PPT生成应用, 告别排版美化烦恼 _202512](https://linux.do/t/topic/1285413)
   - 鄙人平时经常有做ppt的需求，但是又不擅长做PPT，每次做都需要花费大量时间在ppt样式调整和排版上。我也使用过传统的AI PPT app，虽然能快速产出ppt，但是还存在 1只能选预设模板、2自由度低、3设计感差和4同质化严重 的问题。上周五突发奇想，:banana:pro的一致性那么强，还能渲染中文了，能不能用:banana: 仿照随便一张图，让他根据要求做一页风格相似的ppt出来？

@@ -1824,6 +1824,7 @@ modified: 2022-01-16T15:52:31.293Z
 - amd
   - [ROCm Compatibility matrix](https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html)
   - [Linux support matrices by ROCm version](https://rocm.docs.amd.com/projects/radeon-ryzen/en/latest/docs/compatibility/compatibilityrad/native_linux/native_linux_compatibility.html)
+  - [AMD Strix Halo — Backend Benchmarks (Grid View)](https://kyuz0.github.io/amd-strix-halo-toolboxes/)
 
 - 🆚🔥 [英伟达热门 GPU 对比：H100、A6000、L40S、A100 - 知乎](https://zhuanlan.zhihu.com/p/5041686924)
   - [Memory Bandwidth Comparisons - Planning Ahead : r/LocalLLaMA _202402](https://www.reddit.com/r/LocalLLaMA/comments/1amepgy/memory_bandwidth_comparisons_planning_ahead/)

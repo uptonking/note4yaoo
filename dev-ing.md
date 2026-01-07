@@ -277,6 +277,11 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
   - editor
   - crud
   - 业务系统与架构增强: lasuite-docs, knowledgebase, cms
+  - 📌 pdf-editor
+  - 📌 export-ppt
+  - 📌 fix text/Chinese
+  - translation: 一键翻译 pdf/ppt
+  - reuse bg/graphics/fonts
 
 - dev-log
   - ?

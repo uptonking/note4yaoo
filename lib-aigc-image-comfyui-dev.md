@@ -86,6 +86,7 @@ modified: 2025-09-25T16:24:05.355Z
   - docs-editor  + image-gen
   - image-editor + image-gen
   - 支持多backends的架构可参考 
+  - 针对notebooklm-pdf/infographic图形的修复和高清化
 
 - google-photos-like + google-drive + preview workflow
 
