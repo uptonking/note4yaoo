@@ -19,13 +19,17 @@ modified: 2021-04-30T20:14:17.669Z
   - ppt可以每页放一个画板或富文本编辑器
 
 - alternatives-ppt
-  - 一种思路: 很多ppt的每页是一张图片, 缺点是交互弱、编辑弱、文件大
+  - 📌 一种思路: 很多ppt的每页是一张图片, 缺点是交互弱、编辑弱、文件大
     - 图片/pdf的优点是跨设备保持排版
     - 改进思路: image > image2html > ppt
+    - 改进思路: image > image2html > html-editor
     - ocr方案相对于代码方案的优点，用户能直接拖拽修改文本/图形
-  - 一种思路: html > ppt; html > pdf > ppt
+    - 🤔 基于代码的编辑如html/markdown的方案，视觉及交互体验都不如图片编辑
+  - 📌 一种思路: html > ppt; html > pdf > ppt
+    - 💡 新思路: 先隐藏所有文本得到底图，再将文本渲染到底图上，可考虑headless实现
   - 一种思路: html > svg > ppt
-  - 一种思路: markdown/typst > pdf/ppt
+  - 一种思路: html > website-editor/builder, 但site编辑器对拖拽不友好
+  - 📌 一种思路: markdown/typst > pdf/ppt
   - 一种思路: 预置ppt模版文件 + 自定义内容 > 修改模版而生成ppt
     - 这种纯代码操作的传统方案，创意不够
   - ✨ pdf-editor与ppt-editor的相似点: 支持批注、左侧页面缩略图
@@ -199,6 +203,19 @@ modified: 2021-04-30T20:14:17.669Z
     - 页面标记和节点标记: 封面页、目录页、过渡页、内容页、结束页
   - [feat: 支持移动端/更换开源协议 _202206](https://github.com/pipipi-pikachu/PPTist/commit/704192508247085d327577848691634a925623b8)
     - apache2 > GPLv3
+  - [[Feature request] iframe 自适应及点击问题 _202503](https://github.com/pipipi-pikachu/PPTist/issues/334)
+    - 本身不支持iframe，那个文档只是用iframe简单举个例子来说明下怎么自定义元素，而不是真的去实现了一个iframe元素，这个元素的具体样式/行为都需要由开发者自己实现。PPTist本身没法预先对未知的自定义元素进行提前适应。
+  - [基于fabric + canvas的在线设计 _202305](https://github.com/pipipi-pikachu/PPTist/issues/199)
+    - 代码结构，UI设计参考本项目，集合多背景样式，印刷设计元素
+
+- https://github.com/MrXujiang/pptx /201Star/apache2/202503/ts/inactive
+  - https://mindlink.turntip.cn/
+  - 一款基于web端的ppt在线编辑器
+  - Nextjs, @radix-ui, tailwindcss, html2canvas, recharts
+  - 自研PPT结构转换算法
+  - 多组件支持（图文，形状，表格，可视化图表等）
+  - 组件可视化拖拽
+  - PPT导出功能
 
 - react-design-editor /1.7kStar/MIT/202507/ts/canvas
   - https://github.com/salgum1114/react-design-editor
@@ -410,6 +427,11 @@ modified: 2021-04-30T20:14:17.669Z
     - 我也是一直测试失败，跨域调了好久，结果发现配置好了可以直接运行。
   - [【LandPPT】耗时N天开发的开源 AIPPT 生成工具 _202507](https://linux.do/t/topic/767490)
 
+- https://github.com/YOOTeam/OpenPPT /1kStar/GPL/202509/ts/vue/dom/inactive
+  - https://www.chatppt.cn/
+  - https://open.chatppt.cn/?channel=github-openppt
+  - AIPPT在线编辑器，基于ChatPPT，支持整个过程的文档编辑服务，包括导入、导出、布局美化、在线编辑、播放和演示动画。
+
 - https://github.com/icip-cas/PPTAgent /2.3kStar/MIT/202511/python
   - Generating and Evaluating Presentations Beyond Text-to-Slides [EMNLP 2025]
   - We present PPTAgent, an innovative system that automatically generates presentations from documents.
@@ -505,11 +527,64 @@ modified: 2021-04-30T20:14:17.669Z
 
 - https://github.com/Anionex/banana-slides /8.7kStar/MIT > CC-NC/202512/python/ts
   - http://bananaslides.online/
+  - 🌰 [【持续更新】使用案例 | Use Cases _202512](https://github.com/Anionex/banana-slides/issues/2)
+  - 基于nano banana pro🍌的原生AI PPT生成应用，支持想法/大纲/页面描述生成完整PPT演示文稿，自动提取附件图表、上传任意素材、口头提出修改，迈向真正的"Vibe PPT"
+  - 已支持openai格式的模型调用（文本，生图），可以切换第三方的中转
+  - 多格式支持：上传 PDF/Docx/MD/Txt 等文件，后台自动解析内容。
+  - 支持上传参考图片或模板，定制 PPT 风格。
+  - "Vibe" 式自然语言修改: 对不满意的区域进行口头式修改
+  - 一键导出标准 PPTX 或 PDF 文件。
+  - ✨ 可自由编辑的pptx导出（Beta迭代中）: 导出图像为高还原度、背景干净的、可自由编辑图像和文字的PPT页面
+  - Flask, SQLite + Flask-SQLAlchemy, python-pptx, Pillow, ThreadPoolExecutor
+  - React Router v6, Zustand, @dnd-kit
+  - https://github.com/Anionex/banana-slides/tree/main/backend
+  - 用于抽象不同的inpaint方法，支持接入多种实现：
+    - 基于InpaintingService的实现（当前默认）
+    - Gemini API实现
+    - SD/SDXL等其他模型实现
+    - 基于火山引擎的 Inpainting 服务
+  - [license - MIT to CC-NC _20251213](https://github.com/Anionex/banana-slides/commit/304848490722f263e66b8884285975f797a7e3c3)
+  - [【v0.3.0版本更新】更好的可编辑pptx效果及其他若干改进 _20260105](https://github.com/Anionex/banana-slides/issues/121)
+    - 现在，可编辑pptx导出可以分离带样式文字、插画、配图，并得到干净的背景，所有文字和图像都应该是可编辑的pptx元素
+    - 在百度智能云平台中获取API KEY，填写在.env文件中的BAIDU_OCR_API_KEY字段（有较多免费额度）, 需要的百度云服务包含1. 高精度文字识别 2. 图像修复
+    - hybrid 模式优势： MinerU 负责识别元素类型和整体布局, 百度 OCR 负责精确的文字识别和定位, 文字位置更准确，识别率更高
+    - 文字样式提取（颜色、粗体等）依赖 AI 视觉模型（Caption Model）
+    - 为什么有些文字的颜色识别不准确？ A: 对于低对比度、渐变色、特殊字体的文字，AI 识别准确率可能下降，这是已知限制。
+    - 表格识别依赖百度 OCR，对于合并单元格、嵌套表格、手绘表格等复杂结构，识别效果有限。
+    - 可编辑 PPTX 导出需要多步 AI 处理（版面分析→背景修复→样式提取），通常需要 1-5 分钟。可通过减少页数加快速度。
+    - 可以只导出部分页面吗？ A: 可以，在导出时选择需要的页面即可。
+    - 只配置了 MinerU 为什么不行？ A: MinerU 只负责版面分析（识别元素位置），背景修复和样式提取还需要 AI API Key 和/或百度 API Key。
+    - 图片可以在导出的 PPT 中编辑吗？ A: 可以。版面分析会识别出图片元素，并将其作为独立的可编辑图片嵌入 PPTX，用户可以移动、缩放、替换这些图片。
   - 目前还在进行应该是最困难的一步的开发，就是从纯图的图片中分割出可编辑的元素，目前想到的技术方案是用类似SAM（segment anything ） + Inpaint这样的东西来实现，或者佬们有什么好方案也可以分享
     - 能否先:banana:出整页之后丢回视觉LLM（或者SAM之类的）解析文字元素和图片元素，然后让:banana:进一步出一个纯背景再把各个图片和文字扣出来放上去
     - 目前在做的大概就是佬的想法，不过我想的是除了背景，把分割元素也让:banana:做了 :bili_040:（直接让:banana:生成前景），然后用一个连通性判断+cv把元素提出来；文本框的话再用类似mineru的layout yolo模型来定位
   - [【已开源】一个基于banana pro的一站式PPT生成应用, 告别排版美化烦恼 _202512](https://linux.do/t/topic/1285413)
     - 如果是可编辑功能，我也做了一个ocr识别文本位置GitHub - Tansuo2021/OCRPDF-TO-PPT 但是需要干净的背景图，还需要在生成一次，然后我觉得生成干净的背景图可以直接用本地 IOPaint来去除图片中的文字得到干净背景图，目前思路是这样，今天还想到可以直接在原图裁切图案叠加过去
+  - [增加本地llm 本地图片生成模型支持 _202512](https://github.com/Anionex/banana-slides/issues/57)
+    - 效果很差，还是不要本地了，改了代码用的qwen image实现的效果，如下
+
+- https://github.com/HisMax/RedInk /4.4kStar/CC-BY-NC/202512/python/ts/vue
+  - https://redink.top/
+  - 一句话一张图片生成小红书图文
+  - 依赖 Flask、Nano banana Pro、pinia
+  - 可编辑每页内容
+  - 可调整页面顺序（不建议）
+  - 自定义每页描述（强烈推荐）
+  - 支持并发生成所有页面（默认最多 15 张）, 如 API 不支持高并发，请在设置中关闭
+  - 支持单独重新生成不满意的页面
+  - [文本模型可以配置国内的，但是文生图模型可以支持国内的吗 _202512](https://github.com/HisMax/RedInk/issues/38)
+    - 目前文生图模型暂不支持国内 API，后续会支持豆包 seeddream 4.5。 请关注项目更新。
+  - [【开源】红墨 RedInk - 基于 大香蕉 🍌Nano Banana Pro 的一站式小红书图文生成器 _202511](https://linux.do/t/topic/1217947)
+  - [生图的api调用使用起来很困难 _202512](https://github.com/HisMax/RedInk/issues/32)
+    - 配置了国内外的各种模型的api key无一成功，大佬能不能添加一些更亲民的指南和避坑说明？
+    - 👷: 有些中转站可能缩水了。其实我也是想做很多适配的，但是我发现大部分中转站对于新出来的nanobanana的这个格式支持的不是很好，文档也不是很全。主要是文档不全，而且怎么处理的都有。
+    - 花了2天时间捣鼓，只有tuziapi的原价模型成功了，其他都失败了，关键是原价贵啊，一次烧掉20刀，有点可怕。用他们默认的分组，怎么都不成功
+    - 专门开了GEMINI 付费API才跑通，其他国内API都不行。
+    - 实际验证了下：gemini-2.5-flash 和 gemini-3-pro-image-preview 分别作为文本和图片的模型是 ok 的
+    - gemini的key只能用于生图。作者用了两个不同的库导致的。
+    - 我试了下豆包的没问题啊 这个就是调用个api的事情啊
+    - 我调用七牛的api来生图, 只有封面能成功, 后面的图都会报这个错
+    - 我也是七牛，绘图阶段只能首页成功，其他都失败。
 
 - https://github.com/MoonWeSif/NextCreator /196Star/AGPL/202512/ts/tauri
   - 基于可视化节点的 AI 内容生成工作流工具，支持 文本/图片/视频/PPT 链式创作。
@@ -526,6 +601,13 @@ modified: 2021-04-30T20:14:17.669Z
     - 同时编辑 PPT 时，个人来说大部分情景下也是文字部分有修改的需要，背景和排版部分保留，因此对于我来说目前项目是可用的程度了
     - AI 图片生成 - 支持文生图、图生图，可配置分辨率和比例
     - PPT 工作流 - 自动生成大纲、页面图片，导出 PPTX
+- https://github.com/shrimbly/node-banana /481Star/MIT/202601/ts
+  - node-based workflow application for generating images with NBP. Build image generation pipelines by connecting nodes on a visual canvas. Built mainly with Opus 4.5.
+  - 类似comfyui for nano-banana
+  - AI Image Generation - Generate images using Google Gemini models
+  - Image Annotation - Full-screen editor with drawing tools (rectangles, circles, arrows, freehand, text)
+  - Node Editor: @xyflow/react (React Flow)
+  - Canvas: Konva.js / react-konva
 
 - https://github.com/yyy-OPS/slidedeconstruct-ai /113Star/MIT/202512/ts
   - 基于 AI 视觉能力的智能演示文稿反向工程工具。它利用 Google Gemini (或 OpenAI Compatible) 模型，将一张静态的 PPT 截图“拆解”为可编辑的图层（背景、文字、视觉元素），并支持将其转化为矢量形状，最终导出为可编辑的 .pptx 源文件。
@@ -543,11 +625,6 @@ modified: 2021-04-30T20:14:17.669Z
   - File Handling: pptxgenjs (PPT生成), pdfjs-dist (PDF解析)
   - [开源了一个 PPT“逆向”工具，图片直接转可编辑 PPT _202512](https://linux.do/t/topic/1368469)
     - 代码都是AI写的！我也不咋能看懂，慢慢学习嘛
-
-- https://github.com/HisMax/RedInk /CC-BY-NC/202511/python/ts/vue
-  - 一句话一张图片生成小红书图文
-  - 依赖 Flask、Nano banana Pro、pinia
-  - [【开源】红墨 RedInk - 基于 大香蕉 🍌Nano Banana Pro 的一站式小红书图文生成器 _202511](https://linux.do/t/topic/1217947)
 
 - https://github.com/JaffryGao/notebooklmfix /202601/ts
   - https://notebooklmfix.vercel.app/

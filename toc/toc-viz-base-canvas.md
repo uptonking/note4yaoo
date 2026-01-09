@@ -44,8 +44,6 @@ modified: 2020-10-05T06:17:42.467Z
   - Typed and modular
   - See browser modules for using es6 imports in the browser or use a dedicated bundler.
   - Fabric.js depends on `node-canvas` for a canvas implementation (HTMLCanvasElement replacement) and jsdom for a window implementation on node. 
-- https://github.com/nihaojob/vue-fabric-editor
-  - 基于fabric.js和Vue的图片编辑器，可自定义字体、素材、设计模板。
 
 - react-canvas /12.5kStar/BSD/201703/inactive
   - https://github.com/Flipboard/react-canvas
@@ -111,6 +109,8 @@ modified: 2020-10-05T06:17:42.467Z
   - https://github.com/leaferjs/ui
     - 提供了常用的 UI 绘图组件，和开箱即用的功能，方便与 Figma、Sketch 等产品进行数据交换，并为跨平台开发提供了统一、丰富的交互事件，如拖拽、旋转、缩放手势等。
     - 逐步稳定，正式版即将到来
+  - https://github.com/mtsee/image-editor /592Star/MIT/202405/ts/inactive
+    - 在线图片编辑器，操作简单，功能强大，主要技术栈：typescript、leaferjs、react、mobx
 
 - easy-canvas /106Star/MIT/202010/js/NoDeps
   - https://github.com/Gitjinfeiyang/easy-canvas

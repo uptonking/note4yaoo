@@ -420,6 +420,14 @@ modified: 2025-08-23T11:43:35.904Z
   - nextjs + shadcn + redis + clerk + plausible
   - [license · Issue · Nutlope/logocreator](https://github.com/Nutlope/logocreator/issues/16)
 
+- https://github.com/monkeyWie/typix /apache2/202512/ts
+  - https://typix.art/home
+  - 开源AI生图工具
+  - 支持一键部署到 Cloudflare Workers 并且免费使用 Cloudflare Workers AI 模型。
+  - 优先使用本地存储和离线功能
+  - 支持多种 AI 模型和服务提供商
+  - 基于 WASM SQLite 技术，所有数据完全存储在您的浏览器上
+
 - https://github.com/premieroctet/photoshot /3.8kStar/MIT/202412/ts/inactive
   - open-source AI avatar generator web app
   - 依赖nextjs、chakra-ui、prisma

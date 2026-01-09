@@ -54,3 +54,8 @@ modified: 2021-05-14T14:30:22.685Z
     - 一种 AI 驱动的工具，可通过自动 Web 抓取和智能分析来验证业务概念。该系统通过分析在线讨论和生成评分验证报告来评估市场需求、竞争水平和可行性
     - 这是一款专业的商业调研应用程序，为用户提供友好的界面来：1. 验证商业创意 ， 2. 分析用户评论。 
     - [【开源】新版本：Business_Idea_Validator 小红书收集和分析数据来解析市场需求用户痛点及竞争格局 ](https://linux.do/t/topic/1407486
+
+- https://github.com/liangdabiao/Reddit_Business_Idea_Validator /202601/python
+  - Reddit 收集和分析数据来解析市场需求、用户痛点及竞争格局 深度！评论分析！用户画像！找商机！
+  - Reddit 数据抓取: 自动抓取相关帖子和评论数据（使用用户输入作为搜索关键词）
+  - [【开源】Reddit 生意调研Agent: 收集和分析数据来解析市场需求 ](https://linux.do/t/topic/1417660)

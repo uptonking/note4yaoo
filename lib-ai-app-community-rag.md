@@ -486,7 +486,52 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## 🧩💡 [FinePDFs: Liberating 3T of the finest tokens from PDFs _202601](https://huggingface.co/spaces/HuggingFaceFW/FinePDFsBlog)
+- At the beginning of 2025, our team faced a question that looms over the entire field of AI: Have we run out of data?
+  - In creating both iterations of the FineWeb datasets (Penedo et al., 2024, 2025), we had effectively exhausted CommonCrawl’s (Common Crawl Foundation, 2024) HTML archives. At that point, self-hosted crawls or synthetic data (Maini et al., 2025) seemed to be our only options forward.
+  - But wasn’t there a large amount of high-quality data still hidden in CommonCrawl for the curious to find? Indeed there was: PDFs.
+  - While this format has been largely ignored by the open-source AI community for years, we found it to be a source of high-quality data for pretraining, and importantly a source of long-context documents so often missing from open data.
+- Pretraining corpora have historically been derived almost entirely from processed HTML snapshots of CommonCrawl (e.g., Dolma (Soldaini et al., 2024), Nemotron-CC (Su et al., 2024), and RedStone (Chang et al., 2024)). Alternative datasets such as Harvard’s Institutional Books corpus (Institutional Data Initiative, 2025) and the PleIAs Common Corpus (Langlais et al., 2025) exist, but they are smaller in scale and less systematically analyzed. By contrast, the rich non-HTML content embedded within CommonCrawl—especially PDFs—has received comparatively little attention, leaving a large, underexplored opportunity for corpus construction.
+- PDFs make up only about 0.6% of the crawl (Common Crawl Foundation, 2025). Why spend time on such a small fraction of the web?
+  - The answer lies in information density. Unlike HTML pages, which are often lightweight and boilerplate-heavy, PDFs are typically long dense documents—reports, government papers, and manuals. Content that requires significant effort to create typically correlates with higher information density.
+- PDFs were built to preserve appearance, not to expose structure. Where HTML gives you a clean tree of tags, a PDF gives you a set of drawing commands: put this glyph here, draw that line there, paint an image now. The result is visually faithful, but missing any sort of semantic structure.
+- there are three broad strategies:
+- Pure parsing (PyMuPDF (PyMuPDF contributors, 2024), pdfminer (pdfminer.six contributors, 2024))
+  - Strategy: read the raw PDF text objects and infer structure with heuristics (font size → headers, proximity → columns).
+  - Quality: fails on scanned PDFs and struggles with complex layouts, as well as tables and math.
+- Pipeline methods (MinerU (Wang et al., 2024), Docling (Livathinos et al., 2025))
+  - Strategy: detect layout blocks with a small ML model, align embedded text to those blocks, then apply specialized extractors (tables, figures, captions) before stitching output together.
+  - Quality: better structure than pure parsing while staying lighter than full OCR. However, reading order and fragmented words can still be a challenge.
+  - Cost: batching and good resource utilization are hard to implement (many moving parts and GPU/CPU interop). <1 page/sec on 1 core with minimal ML inference.
+- End-to-end OCR / VLM (Nougat (Blecher et al., 2023), Got-OCR (Wei et al., 2024), RolmOCR (Reducto AI, 2025))
+  - Strategy: render each page to an image and let a vision-language model transcribe the page directly.
+  - Quality: best reading order and parsing of certain structures (tables, math, etc.). However, it can randomly hallucinate names/tables or full pages in ways that are hard to detect.
+- Early qualitative checks, along with OlmOCR results (Poznanski et al., 2025), suggested that end-to-end OCR was the best-quality option. But running it on every PDF was far beyond our GPU budget. 
+- Inspired by CCpdf (Turski et al., 2023), we therefore devised a hybrid approach: use GPU parsing only when needed (scanned documents) and keep everything else on the cheap CPU path. 
+  - To do so, we trained a lightweight classifier that predicts whether a PDF is extractable (CPU parsing) or needs OCR (GPU parsing).
+  - we trained a lightweight XGBoost classifier (Chen & Guestrin, 2016) on features aggregated from 8 random pages plus doc-level signals (inspired by MinerU (Wang et al., 2024) and Docling (Livathinos et al., 2025)). We intentionally excluded Docling’s bitmap-coverage feature because it was too expensive to compute at scale.
+
+- We ultimately selected `Docling` as our CPU extractor, as it consistently ranks first across our eval tasks. 
+  - However, if one is more CPU constrained, we strongly recommend `PyMuPDF4LLM` since it’s almost 8x faster than Docling (even after our optimizations), while staying close in quality.
+
+- To pick an OCR model, we benchmarked model-based extractors on three suites: OlmOCR (Poznanski et al., 2025), OmniDocBench (Ouyang et al., 2024), and the multilingual slice of CC-OCR (Yang et al., 2024). 
+  - Evaluations ran in May 2025, so newer OCR models released after that date are not included.
+  - Finally, based on the results, we chose RolmOCR (Reducto AI, 2025) for production at the time of extraction because it delivered reasonable speed. We used a min/max resolution range of 1280–2048 to balance quality and speed.
+- Since we needed the pipeline to be as fast as possible, we tested inference with the 3 most popular engines: SGLang (3.04 pages/sec), vLLM (3.64 pages/sec), and LMDeploy (4.1 pages/sec). Throughput results made the choice of engine a no-brainer: we used `LMDeploy`, the fastest by far.
+- We also noticed the OCR model would sometimes go into repetition loops until it exhausted the context length (8192 tokens in our case). This hurt both quality and speed as useless tokens were being generated at long sequence lengths. To fix this, we implemented a simple repetition checker (line, character, and word-level) directly inside LMDeploy, which further increased throughput to 5.17 pages/sec.
+
+- After extraction, we refined the raw text to steadily improve quality. 
+  - The postprocessing steps focused on three things: cleaning Docling tags, removing boilerplate, and filtering out hallucinated content.
+- Because Docling uses a layout model, it’s able to deduce and label many common structures (tables, figures, captions, etc.). 
+  - We only cared about two: tables (`<docling_table/>`) and picture annotations (`<docling_picture_annotations/>`) as others were empty and not used due to disabling extractors for these structures.
+  - For tables, we used heuristic extraction via `pymupdf4llm`, which caused many of them to be frequently broken (misaligned columns, missing headers). We therefore experimented with removing problematic tables, removing all tables, or cleaning them up.
+  - Picture annotations had a similar issue. We initially kept them, but they often contained sequences of letters, tick labels, or isolated numbers disconnected from any surrounding text. Such issues are caused by charts
+  - We therefore tested filtering annotations by alpha ratio (number of alphabetic characters / total characters); finding the best setting to be a threshold of 0.8, altough all the results were rather close.
+- remove boilerplate: headers, footers, watermarks, company names. 
+- We noticed a recurring hallucination pattern in RolmOCR outputs: on blank pages and pages that were mostly graphics/images, the model would hallucinate fluent text, always starting with "The"
+  - To fix this, we did not have time to train a dedicated image classifier, and running a heavy vision model across the whole corpus was too expensive.
+
+- The result is two SoTA datasets: FinePDFs and FinePDFs-EDU. While we tried to preserve as many documents as possible, we still removed more than 66% of our initial dataset to create FinePDFs, and more than 96% to create FinePDFs-EDU. This massive reduction was mostly due to the deduplication steps and heavy model based filtering (for the EDU variant).
 
 - ## [Practical (online & offline) RAG Setups for Long Documents on Consumer Laptops with <16GB RAM : r/LocalLLaMA _202412](https://www.reddit.com/r/LocalLLaMA/comments/1hq36dn/practical_online_offline_rag_setups_for_long/)
   - there are a ton of different frameworks and libraries to implement a RAG system. For the purpose of my tests, I only focused on those with a UI or offering an already made RAG pipeline, because I did not yet learn how to implement RAG by myself.

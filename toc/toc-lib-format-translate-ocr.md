@@ -241,7 +241,7 @@ modified: 2025-12-19T12:43:21.150Z
   - 表格中的内容没有翻译？
     - 回答: `pdf2zh`暂不支持表格内容翻译，如需翻译表格，可查看本仓库的dev分支，采用`pdf2zh_next`进行翻译，但由于速度较慢
 
-- https://github.com/gavrielc/Nano-PDF /903Star/MIT/202512/python/Gemini
+- https://github.com/gavrielc/Nano-PDF /903Star/MIT/202512/python/gemini
   - A CLI tool to edit PDF slides using natural language prompts, powered by Google's Gemini 3 Pro Image ("Nano Banana") model.
   - Natural Language Editing: "Update the graph to include data from 2025", "Change the chart to a bar graph".
   - Add New Slides: Generate entirely new slides that match your deck's visual style.

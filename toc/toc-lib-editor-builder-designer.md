@@ -263,6 +263,15 @@ modified: 2020-11-17T13:38:19.107Z
   - https://components.ai/css-gui
   - Visual development environment for CSS
   - 效果类似page-builder
+
+- https://github.com/palxiao/poster-design /4.6kStar/MIT/202506/ts/vue/inactive
+  - https://design.palxp.cn/
+  - 迅排设计 - 美观且功能强大的图片编辑器、在线海报设计，仿稿定设计，适用于多种场景
+  - 技术栈：Vue3 、Vite5 、Pinia 、ElementPlus、Express
+  - 图片生成：Puppeteer、Html2canvas
+  - 支持导入 PSD 设计文件解析辅助生成模板
+  - [这确定不是抄袭vue-fabric-editor？开源也要注明一下从哪来的灵感吧，未免也太不尊重作者 _202307](https://github.com/palxiao/poster-design/issues/6)
+    - vue-fabric-editor的源码,他是使用的fabricjs。而作者这个是使用dom，出图使用的无头浏览器Puppeteer，服务端出图。
 # designer-prototype
 - https://github.com/penpot/penpot /MPLv2/202503/Clojure
   - https://penpot.app/

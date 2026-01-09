@@ -288,6 +288,29 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-to
   - ?
 
+## 0108
+
+- 🆚 i want to build an online image editor webapp. I want to add text and resize image. knova and fabric.js js seems to be good library. please compare them. or do you have any better suggestion?
+- Choose Konva.js if you are using React and need high performance (e.g., thousands of objects). However, you will have to build your own "resize handles" and "text editor overlay" (using a hidden HTML `<textarea>`), as Konva does not have these native UI controls.
+  - If you want high-performance shape/animation-heavy editors and a very polished React integration → Konva (with react-konva).
+  - Scene Graph Architecture (like game engines) . Objects are organized in a hierarchical tree (layers, groups, shapes).
+- Choose Fabric.js if you want "out-of-the-box" editor features. It has built-in support for resizing handles, rotating, and a real text cursor (selectable text), saving you weeks of coding.
+  - If you want ready-made canvas object-model features like inline text editing, SVG import/export, image filters/cropping and lots of editor examples → Fabric.js.
+  - Object-Oriented Canvas Model. It provides a rich object model over the native Canvas API, treating everything (images, text, shapes) as objects that can be manipulated individually
+- Konva: modern canvas abstraction with layers, nodes and Transformers. Works best if you treat canvas like a scenegraph; editing text is usually done via a DOM `<input>` overlay (Konva recommends using native inputs for editing).
+  - Konva. Text for rendering. For user editing you typically overlay an input/textarea and sync it back to the Konva node (Konva has examples).
+- Fabric: a higher-level object model over canvas (objects, groups, IText/Textbox, image primitives) and built-in inline text editing (IText/Textbox). Easier to get an editable text UX fully on-canvas.
+  - IText/Textbox support native editing behavior on canvas (selection, caret, copy/paste, wrapping). If editable-on-canvas text is a big requirement, Fabric is simpler out of the box.
+- Both libraries can run in Node (via node-canvas / explicit canvas backends) and can export canvases to images; 
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
 ## 0106
 
 - i want to run ocr llm model locally. why does llama.cpp not support deepseek-ocr gguf, but ollama supports deepseek-ocr since ollama uses llama.cpp under the hood? 

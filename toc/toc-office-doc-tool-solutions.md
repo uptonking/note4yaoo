@@ -63,6 +63,12 @@ modified: 2021-07-21T18:07:43.056Z
   - In comparison with statically generated HTML and interactivity added using `<script />` tags, Docusaurus sites are React apps. 
   - ref
     - https://github.com/ThinkBucket/docsite
+  - [The upcoming documentation for React will have a similar feature built on Sandpack | Hacker News _202204](https://news.ycombinator.com/item?id=31006590)
+    - We've used https://docusaurus.io/docs/markdown-features/code-blocks#interactive-code-editor... do do this ourselves. No need to use codesandbox. (Powered by React Live)
+    - Docusaurus maintainer here. Yes we like MDX and live code blocks to embed natively runnable code in your page.
+    - I don't like the idea of loading a remote iframe much (at least for most cases using JS).
+    - The StackBlitz / WebContainer approach also seems better than a remote VM + iframe
+    - We'll likely use a project called React-Runner in the future, quite similar to our current setup (real native embed) but lighter.
 
 - https://github.com/shuding/nextra
   - 依赖next、nextra-core、react

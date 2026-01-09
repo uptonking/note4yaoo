@@ -28,17 +28,24 @@ modified: 2023-04-04T22:39:45.442Z
   - https://vectorizer.ai/
     - 利用人工智能将 JPG、PNG 等位图转成矢量 SVG 格式。先用 MidJourney 生成插图，再用这个工具转成矢量略加修改，岂不美哉。
 
-- tui.image-editor /5.9kStar/MIT/202210/js
+- tui.image-editor /5.9kStar/MIT/202210/js/fabricjs/简单编辑图片
   - https://github.com/nhn/tui.image-editor
   - http://ui.toast.com/tui-image-editor
   - Full-featured photo image editor using canvas. 
   - 偏向图片滤镜
   - Plain JavaScript component
+  - 🍴 forks
+  - https://github.com/cocomite/tui.image-editor /202405/js/inactive
+  - https://github.com/parteekmalik/tui.image-editor /202509/js
+  - https://github.com/arkotik/tui.image-editor /202508/js
 
-- https://github.com/ikuaitu/vue-fabric-editor /7.5kStar/MIT/202512/ts/vue
+- https://github.com/ikuaitu/vue-fabric-editor /7.5kStar/MIT/202512/ts/vue/偏向设计软件
   - https://ikuaitu.github.io/doc/#/
+  - https://ikuaitu.github.io/vue-fabric-editor/#/
   - 快图设计- 基于 fabric.js 和 Vue 开发的插件化图片编辑器，可自定义字体、素材、设计模板、右键菜单、快捷键
-  - 开源版本仅前端代码，付费版本提供完整的前后端、管理后台，功能完整开箱即用，提供源码授权、支持二次开发
+  - 💰 开源版本仅前端代码，付费版本提供完整的前后端、管理后台，功能完整开箱即用，提供源码授权、支持二次开发
+    - 支持通过 HTTP 接口、表格文件批量生成图片。
+  - core不依赖vue
   - 插件化架构：可通过插件的进行扩展开发，支持右键菜单和快捷键。
   - 拖拽式设计：以轻量、简洁为主的图形编辑器，而非大而全的在线 PS 类的重行设计工具。
   - 功能完善：PSD 解析、辅助线、历史记录、渐变、自定义字体、裁剪等功能。
@@ -49,13 +56,49 @@ modified: 2023-04-04T22:39:45.442Z
   - 图层功能
   - 外观属性/字体属性/描边/阴影
   - 多元素水平、垂直对齐方式
+  - [你好，可以增加ppt导入功能吗？ _202407](https://github.com/ikuaitu/vue-fabric-editor/issues/465)
+    - 将PPT转为 json 然后导入到画布中
   - [小建议：能否把每一步做成时间轴  ](https://github.com/ikuaitu/vue-fabric-editor/issues/395)
     - 像PS的历史记录一样，可以回退到指定节点就好了
+  - [开源图片编辑器推荐-可用于海报编辑、商品设计、封面设计、标签设计等场景 _202406](https://www.v2ex.com/t/1052550)
+    - 开源图片编辑器，更像一个开源在线设计工具，可用于海报设计、图文笔记、商品设计、封面设计、标签设计、logo 设计、等场景，自定义字体、素材、设计模板、右键菜单、快捷键，还提供插件化的方式扩展二次开发 
+  - [图片分层 AI 模型都开源了， 5 天 800Star，不搞一把？ - V2EX](https://www.v2ex.com/t/1180830)
+    - vue-fabric-editor ！这是一个基于 Vue 和 fabric.js 开发的、功能非常完善的开源图片编辑器。
+    - 它本身就有图层管理、PSD 解析、历史记录、各种滤镜等专业功能，界面友好，插件化架构，特别适合二次开发
+  - 🐛 [SVG导入时不规则路径剪切问题 _202404](https://github.com/ikuaitu/vue-fabric-editor/issues/325)
+    - 不规则路径剪切考虑支持吗？
+    - 暂时还没计划哈
+  - [前端真有意思，又干了一年图片编辑器 - V2EX _202601](https://v2ex.com/t/1183304)
+  - [开源了一个 web 版图片/海报编辑器，参考稿定设计和创客贴设计 _202302](https://hk.v2ex.com/t/917129)
+  - 🏠 [开源图片编辑器的插件化架构 - V2EX _202408](https://v2ex.com/t/1063993)
   - [React版本，结合AI  ](https://github.com/ikuaitu/vue-fabric-editor/issues/510)
     - 其他伙伴根据 core 方法开发了 React 版本
   - https://github.com/x007xyz/r-fabric-editor /202406/ts/inactive
     - https://x007xyz.github.io/r-fabric-editor/
     - 开源项目vue-fabric-editor的React版。核心功能已经全部实现，部分样式和功能待添加
+  - https://github.com/Qiu-Jun/element-fabric-editor /MIT/202512/ts/vue
+    - https://qiu-jun.github.io/element-fabric-editor/#/
+    - vue-fabric-editor的element plus版本
+    - 由于一个单子甲方需要ElementPlus作为组件库，因此诞生而单独维护，Element Fabric Editor功能是和vue-fabric-editor上是一致的，但在组件划分上Element Fabric Editor会更细致，因为Element Fabric Editor不考虑SDK的打包，所以在组件抽离会更细致
+
+- https://github.com/dromara/yft-design /1.5kStar/MIT/202508/ts/vue/inactive
+  - https://yft.design/
+  - https://demo.yft.design/
+  - 基于fabric.js的开源版【稿定设计】。一款美观且功能强大的在线设计工具，具备海报设计和图片编辑功能。
+  - 历史记录（撤销、重做）
+  - 导入PDF(完美还原格式，不支持图片裁切导入)
+  - 导入PSD(完美还原格式，支持部分特效还原，亮度，对比度，颜色覆盖)
+  - 导入SVG(不支持tspan字体)
+  - 多元素组合
+  - [能封装成组件形式吗类似这样，便于项目中引用 _202404](https://github.com/dromara/yft-design/issues/73)
+    - 我这个项目就是基于 `pptist` 改的，看你也提交了pptist组件代码，你可以自己封装哈
+  - [本项目是否还在维护，当前还存在许多问题 _202503](https://github.com/dromara/yft-design/issues/114)
+    - 图层不会同步，删除或添加了素材，图层里面的元素还是一样没有变化
+    - 修改后不会保存，每次刷新页面都是上一次的内容
+  - [大佬绘图还有很多bug _202503](https://github.com/dromara/yft-design/issues/115)
+    - 修改图层后设计会被重置
+    - 👷 欢迎PR哈
+  - [考虑做导出pptx的功能吗  ](https://github.com/dromara/yft-design/issues/94)
 
 - glightbox /1.6kStar/MIT/202203/js/inactive
   - https://github.com/biati-digital/glightbox
@@ -99,6 +142,7 @@ modified: 2023-04-04T22:39:45.442Z
   - Optional Cloud Service (Subscription)
     - To be clear, I won't lock features behind a paywall. All of RapidRAW's functionality is available for free if you use the built-in tools or self-host.
     - For those who want a simpler solution, I will be offering an optional $5/month subscription (pricing is not final).
+  - [I built a open-source lightweight RAW editor in 2 weeks because Lightroom felt too heavy on my machine : r/photography _202506](https://www.reddit.com/r/photography/comments/1lnj348/i_built_a_opensource_lightweight_raw_editor_in_2/)
 
 - https://github.com/immich-app/immich /61.9kstar/AGPLv3/202503/ts/dart/svelte
   - https://immich.app/
@@ -123,6 +167,7 @@ modified: 2023-04-04T22:39:45.442Z
 - https://github.com/sleepy-zone/fabritor-web /1.2kStar/MIT/202408/ts/inactive
   - https://fabritor.surge.sh/
   - 基于 fabricjs 的开源创意图片编辑器，可应用于海报设计、小红书公众号封面设计、banner 设计等场景
+  - [[开源图片编辑器] 为了让图片编辑器不那么卷，我开发了 fabritor - V2EX _202403](https://www.v2ex.com/t/1023314)
 
 - https://github.com/cshum/imagor-studio /20Star/MIT/202509/go/ts
   - https://imagor.net/
@@ -153,6 +198,20 @@ modified: 2023-04-04T22:39:45.442Z
 - https://github.com/sahandghavidel/ai-image-editor-saas-app /202509/ts
   - https://ai-image-editor.100jsprojects.com/
   - AI Image Editor SaaS app using Next.js, Tailwind CSS, Prisma, Neon, ImageKit and Better Auth
+
+- https://github.com/MattKetmo/darkroomjs /201512/js/inactive
+  - Extensible image editing tool in your browser
+  - It is based on the awesome FabricJS library to handle images in HTML5 canvas.
+
+- https://github.com/fengzhizi715/Monica /apache2/202512/kotlin
+  - Cross-platform open-source image editor with AI features, RAW support, and a modern customizable UI
+  - [Monica：开源、跨平台、桌面端图像编辑软件，提供丰富的图像编辑功能 - V2EX _202506](https://www.v2ex.com/t/1136906)
+    - 磕磕绊绊地做了一年多，终于做了一款桌面端的图像编辑软件 
+    - 支持 JPG/PNG/WebP/SVG/HDR/HEIC/RAW(CR2/CR3)
+    - 图像放大预览、图像调色、滤镜支持（含参数调节）
+    - 支持多种深度学习模型：人脸识别/替换、AI 漫画风、素描生成
+    - Kotlin Compose Multiplatform 写的桌面应用，macOS/Windows/Linux 都能跑
+    - 可用于验证 OpenCV 算法（目前内置一些基础调参）
 # image-viewer
 - https://github.com/xiaolin/react-image-gallery /js
   - http://linxtion.com/demo/react-image-gallery
@@ -318,6 +377,18 @@ modified: 2023-04-04T22:39:45.442Z
   - WebAssembly for native-speed image processing
   - jSquash for image codec implementations
 
+- https://github.com/joye61/pic-smaller /MIT/202509/ts/inactive
+  - https://picsmaller.com/
+  - Compress JPEG, PNG, WEBP, AVIF, SVG and GIF images intelligently
+  - [唉，一年了无人问津，开源算了 - V2EX _202405](https://fast.v2ex.com/t/1041478?p=1)
+    - 图小小是一个图片压缩工具，基于 Vite+React 技术栈开发，它可以完全取代类似 TinyPNG 之类的在线图片压缩工具，且压缩之后视觉表现效果往往更好。但图小小有个更大的优势：通过图小小进行图片压缩完全是基于浏览器本地的，没有任何服务端交互
+    - 目前图小小支持 JPEG/PNG/WebP/Gif 四种格式的图片压缩
+    - 采用了大量的第三方开源项目，所以图小小本身是没什么技术含量的，我个人认为图小小优秀在于提供了良好的 UI 和使用体验，虽然是缝合怪，但鲜有人做出类似的产品
+    - JPEG/WebP 压缩：利用了现代浏览器自带的功能，叫离屏渲染技术 OffscreenCanvas
+    - PNG 压缩：采用了一个第三方的 Webassembly 实现，底层是 libPNG
+    - Gif 压缩：采用了一个第三方的 Webassembly 实现，底层是 Gifsicle
+    - 为了防止 UI 阻塞，运用了 Web Worker 技术进行编解码和压缩，同时为了防止同一时刻浏览器的内存占用过大（内存占用过大也会导致卡顿），用了一点小技巧在 Worker 端实现了一个简单的队列 Queue，这里不展开，有兴趣的自行研究源码
+
 - https://github.com/nodeca/pica /202201/js
   - http://nodeca.github.io/pica/demo/
   - Resize image in browser with high quality and high speed
@@ -328,9 +399,6 @@ modified: 2023-04-04T22:39:45.442Z
 - https://github.com/imgix/imgix.js /202310/js
   - https://imgix.com/
   - a dependency-free JavaScript library for the browser that allows for easy integration of imgix into websites.
-
-- https://github.com/MattKetmo/darkroomjs /201512/js
-  - Extensible image editing tool in your browser
 # gif/animated
 - https://github.com/yahoo/gifshot
   - JavaScript library that can create animated GIFs from media streams, videos, or images.
@@ -402,6 +470,14 @@ modified: 2023-04-04T22:39:45.442Z
   - 基于 Google Gemini 3 Pro 模型的现代化图像生成工作台
   - [【开源】并发自定义多渠道的gemini-3-pro-image-preview超强生图工具 _202511](https://linux.do/t/topic/1222546)
 
+- https://github.com/Hi5v/UnderlayX /AGPL > closrc/202510/ts/inactive
+  - https://www.underlayx.com/
+  - UnderlayX is a creative image editing tool that lets you clone objects, change or remove backgrounds, and place text or shapes behind objects in an image, all in one place.
+  - It uses https://github.com/imgly/background-removal-js for background removal.
+  - [Built an all-in-one creative image editing tool—after thousands of visits and requests for the code, I made it open-source! : r/webdev _202501](https://www.reddit.com/r/webdev/comments/1i1aoxn/built_an_allinone_creative_image_editing/)
+  - 🍴 forks
+  - https://github.com/bytexposure/UnderlayX
+
 - https://github.com/LuqP2/Image-MetaHub /153Star/MPL/202512/ts
   - https://imagemetahub.com/
   - A desktop application for browsing, searching, and organizing AI-generated images locally. 
@@ -466,6 +542,12 @@ modified: 2023-04-04T22:39:45.442Z
   - Powered by the Google Gemini gemini-2.5-flash-image-preview model
   - Iterative Editing Workflow: Use the generated image as the new starting point for further edits, allowing you to stack multiple creative changes.
   - Prompt Suggestions: Get inspired with clickable example prompts
+- https://github.com/aigem/aice_ps /apache2/202510/ts/inactive
+  - 网页版 AI 照片编辑器，利用 Google aistudio 的先进能力
+  - 智能修饰 (局部编辑): 在图片上轻松点击指定位置，通过简单的文字指令（如“移除这个物体”、“把衬衫变成红色”）进行精准、无缝的局部修改。
+  - 创意滤镜与专业调整: 一键应用动漫、合成波、Lomo 等多种艺术风格滤镜，或进行背景虚化、增强细节、调整光效等专业级图像调整。
+  - 一键抠图: 强大的人工智能可自动识别并移除图片背景，一键生成带透明通道的 PNG 图像，非常适合设计和合成。
+  - AI 模型: Google Gemini API (gemini-2.5-flash-image-preview, imagen-4.0-generate-001, gemini-2.5-flash)
 # more
 - https://github.com/ascorbic/unpic-img
   - This library uses unpic to detect the image CDN, and then uses the CDN's URL API to resize and format images. 

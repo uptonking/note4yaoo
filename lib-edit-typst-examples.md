@@ -690,6 +690,16 @@ modified: 2025-12-25T19:55:10.911Z
   - Dynamic asset loading: Fonts, images, and packages resolved at runtime
   - [TongueToQuill - Military Document Editor | Write Markdown, Export Professional Docs](https://www.tonguetoquill.com/)
     - 需要用这里的模版
+
+- https://github.com/scipenai/tylax /71Star/apache2/202601/rust
+  - https://convert.silkyai.cn/
+  - bi-directional converter between Typst and LaTeX. 
+  - Available as both a CLI tool and a Web interface.
+  - A tool written in Rust that converts mathematical formulas and full documents between LaTeX and Typst formats.
+  - [[开源] 给佬友们推个新轮子 Tylax：Rust 写的 LaTeX ↔ Typst 双向转换神器，全 AST 解析  _202601](https://linux.do/t/topic/1418819)
+    - 跟市面上那些靠正则（Regex）硬替换的脚本不一样，Tylax 走了正道，基于 mitex 和 typst-syntax 搞了完整的 AST（抽象语法树）解析。这意味着处理嵌套结构、各种环境定义还有复杂的数学公式时，稳得一批，不会因为少个括号就原地爆炸。
+    - 表格不乱：智能处理 \multicolumn 和 \multirow
+    - 持把 LaTeX 的 TikZ 代码直接转成 CeTZ
 # latex
 - overleaf /10.5kStar/AGPLv3/202211/js/latex/ace>codemirror
   - https://github.com/overleaf/overleaf

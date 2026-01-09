@@ -64,7 +64,7 @@ modified: 2023-03-09T13:47:07.317Z
 
 - https://github.com/ranuts/document /1.6kStar/AGPL/202512/js
   - https://ranuts.github.io/document/
-  - A local web-based document editor based on `OnlyOffice`, allowing you to edit documents directly in your browser without server-side processing
+  - 基于 OnlyOffice 的本地网页文档编辑器，让您直接在浏览器中编辑文档，无需服务器端处理
   - All document processing happens locally in your browser, with no uploads to any server
   - Multi-Format Support: Supports DOCX, XLSX, PPTX, CSV, and many other document formats
   - OnlyOffice SDK: Provides powerful document editing capabilities
@@ -137,6 +137,12 @@ modified: 2023-03-09T13:47:07.317Z
   - 使用Yjs、Quill、LuckySheet 等技术实现的markdown、txt、excel 等文件的多人在线协同编辑，支持以 websocket、webRTC、组合API等形式实现通信
   - [Luckysheet 实现excel多人在线协同编辑 - 掘金](https://juejin.cn/post/7298170736480485376)
   - [Yjs + Quill 实现文档多人协同编辑器开发（基础+实战） - 掘金 _202309](https://juejin.cn/post/7273432426772070457)
+
+- https://github.com/MrXujiang/Nocode-Wep /202512/ts
+  - https://ai.flowmix.cn/
+  - 轻量WPS替代品，面向AI
+  - https://github.com/MrXujiang/OfficeHub
+    - web 版在线办公软件，集成了文档编辑、思维导图、电子表格等多种办公工具
 # office-like
 - https://github.com/mnt-ltd/moredoc /go
   - moredoc，魔豆文库，基于golang开发的类似百度文库的开源文库系统，dochub文库的重构版本。

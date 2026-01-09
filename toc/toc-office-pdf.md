@@ -244,8 +244,11 @@ modified: 2021-01-04T17:26:43.784Z
 
 - https://github.com/awesome-yasin/PDF-Verse /MIT/202312/js/ejs/inactive
   - https://pdf-verse.vercel.app/
-  - a powerful web based PDF Editor with tools fexamplesor editing, converting, and manipulating PDFs.
+  - a powerful web based PDF Editor with tools for editing, converting, and manipulating PDFs
   - Merge, compress, add or remove pages, or extract text using OCR technology. 
+  - built with Node.js, EJS, Express.js, and `PDF-lib`, and features a user-friendly interface using jQuery and Bootstrap
+  - The Edit PDF tool is made using a combination of Bootstrap, PDF.js, Fabric.js, and Prettify.js.
+  - 依赖jimp
 
 - https://github.com/ShizukuIchi/pdf-editor /1.8kStar/MIT/202403/js/inactive
   - https://pdf-editor.now.sh/

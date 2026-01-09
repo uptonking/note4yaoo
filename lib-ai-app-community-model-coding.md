@@ -811,6 +811,23 @@ def slugify(text):
 
 - ## 
 
+- ## 
+
+- ## [Been using glm 4.7 for coding instead of claude sonnet 4.5 and the cost difference is huge : r/LocalLLM _202601](https://www.reddit.com/r/LocalLLM/comments/1q79orf/been_using_glm_47_for_coding_instead_of_claude/)
+  - so ive been on claude sonnet 4.5 for like 14 months now mostly for coding work. debugging python scripts, generating react components, refactoring old code etc. its great but honestly the $20/month plus api costs when i need bulk operations was adding up
+  - glm actually delivered working code like 85-90% of the time. not perfect but way better than i expected
+  - i also tested it against deepseek and kimi since theyre in the same ballpark. deepseek is faster but sometimes misses context when files get long. kimi is solid but hit token limits faster than glm. glm just handled my 500+ line files without forgetting what variables were named
+- the biggest difference from sonnet 4.5:
+  - explanations are more technical and less "friendly" but i dont really care about that
+  - code quality is surprisingly close for most tasks, like 80-85% of sonnet 4.5 output quality
+  - way cheaper if youre using the api, like 1/5th the cost for similar results
+- where claude still wins:
+  - ui/ux obviously
+  - better for brainstorming and high level architecture discussions
+  - more polished responses when you need explanations
+
+- Glm 4.7 seems to handle long files better than kimi and doesnt hallucinate imports. Not as polished as claude for explanations but for actual code generation its solid and way cheaper, def worth testing if youre doing bulk coding work.
+
 - ## [Kimi k2 thinking vs GLM 4.6 : r/LocalLLaMA _202412](https://www.reddit.com/r/LocalLLaMA/comments/1prifzl/kimi_k2_thinking_vs_glm_46/)
   - which is better for agentic coding with opencode/kilocode - kimi k2 thinking or GLM 4.6?
 

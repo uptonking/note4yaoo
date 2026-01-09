@@ -352,6 +352,16 @@ modified: 2022-08-21T10:02:05.129Z
   - A portable, self-contained format based on SQLite
   - Irelia formulas in documents will be run using Python executed directly on your machine.
 
+- https://github.com/MrXujiang/pxcharts /80Star/GPL/202512/ts
+  - http://pxcharts.com/
+  - 支持百万数据渲染的多维表格解决方案
+  - 多视图支持 - 表格视图、看板视图、人员分配视图
+  - 基于 shadcn/ui + Tailwind CSS, Next.js 15 + React 19
+  - 支持多条件筛选、排序、分组，快速定位目标数据
+  - 支持 JSON 格式的数据导入导出
+  - https://github.com/MrXujiang/vue-mute-table /202509/ts/vue
+    - vue3实现的基础多维表格解决方案
+
 - apitable /2.3kStar/AGPLv3/202301/ts/java/维格表团队
   - https://github.com/apitable/apitable
   - https://apitable.com/

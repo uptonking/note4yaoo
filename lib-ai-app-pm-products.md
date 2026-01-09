@@ -330,6 +330,13 @@ modified: 2025-03-22T16:10:24.856Z
 - [CodeFlicker ](https://www.codeflicker.ai/)
 
 - [通义灵码 ](https://lingma.aliyun.com/)
+
+## ai-coding-xp
+
+- 实测用 claude-opus-4.5 和 glm-4.7 将同一个项目从vue迁移到react，
+  - opus只存在很小的vite配置错误，修复后可以运行
+  - glm-4.7存在很低级的jsx未闭合、css属性值的引号未闭合这类低级问题，但自己也可以修复
+    - glm-4.7在处理monorepo的import路径、vite方面明显不如claude-opus
 # ai-office
 - 产品方向: ask、生成、集成
   - core-features: improve, shorter, longer, fix/checker, translate
@@ -377,6 +384,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 🤔 一种思路: tool-call时使用擅长tool-call的模型，分析时使用公益站的聊天优质但无法tool-call的模型
   - 🤔 与其花时间签到游戏，不如研究2api和反代
   - coding方案还可使用 ccr 转换 qwen-code-cli
+  - 是否需要统一管理公益站，不同站点的安全盾绕过方式不同，模型名不同，api分组名不同，key的有效期不同
   - 有的api不能显示thinking内容
   - 模型不断更新，落后的公益站会逐渐淘汰
   - 公益站主页模型广场展示的可用模型不准确，可以在控制台的playground直接测试，异常会直接抛出
@@ -650,6 +658,12 @@ modified: 2025-03-22T16:10:24.856Z
     - 前后端代码全部开放，检测逻辑一目了然
     - https://github.com/BingZi-233/check-cx /MIT/ts
 
+- api-bookmarks
+  - [agentify API](https://api.agentify.top/pricing)
+    - [H800 公益站回归！200tps 的 gpt-oss-120b 继续不限量免费用 ](https://linux.do/t/topic/1356689)
+      - 模型部署在两张 H800 上面，人少的时候可以 200tps
+      - 还加了一些 openrouter 的免费模型也几乎不限量
+
 - paid-llm
   - [Free DuckCoding](https://free.duckcoding.com/console)
     - [DuckCoding Free，反重力CC公益站，复活并接入LDC积分 ](https://linux.do/t/topic/1353130)
@@ -688,6 +702,7 @@ modified: 2025-03-22T16:10:24.856Z
 - image-api
   - [Huan API](https://ai.huan666.de/pricing)
   - [香草API](https://ai.xiangcao.de/pricing)
+  - [六哥API站](https://api.crisxie.top/pricing)
 
 - image-saas
   - [小白生图 - AI Image Generator](https://catsapi.com/)
@@ -717,6 +732,12 @@ modified: 2025-03-22T16:10:24.856Z
   - [FreeGen 白嫖图片生成器](https://hachimiai.dpdns.org/freegen/)
   - [SoraApi](https://api.67.si/)
     - 不可用
+
+- image2api
+  - [Antigravity的反代的Nano Banana用不了了 ](https://linux.do/t/topic/1419858/2)
+    - 下午都很慢。晚上1点后一般都快些
+  - [Libre Assistant](https://libreassistant.vercel.app/)
+    - [又一款免费无限用的生图及对话LLM站 ](https://linux.do/t/topic/1418376)
 
 - tutorials-image
   - https://github.com/rere43/image-generator-hybrid
@@ -963,6 +984,13 @@ modified: 2025-03-22T16:10:24.856Z
 
 - [Zeabur](https://zeabur.com/)
   - $5/月免费使用
+
+- [XiamenLabs - Unity AI](https://xiamenlabs.com/)
+  - [【开源】 厦门实验室的UNITY2api，全网最简单的2api项目 ](https://linux.do/t/topic/1417828)
+  - [神秘厦门lab模型Unity实测报告  ](https://linux.do/t/topic/1418561/1)
+    - 先说结论：很大可能是一个小/中等大小模型，高度蒸馏Gemini的产物。
+    - 这个模型在蒸馏Gemini的时候竟然只蒸馏到了知识库，其他的全抛了，也算科技创新了
+    - 我的结论是，用来骗投资刚刚好
 
 - [Canopy Wave](https://cloud.canopywave.io/)
 

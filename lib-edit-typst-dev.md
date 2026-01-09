@@ -17,6 +17,10 @@ modified: 2025-12-25T19:53:44.941Z
 - table
   - lowcode table builder + export to markdown/typst
 
+- converters
+- html > typst, 基于html的场景数据源非常多
+  - 参考 html2markdown 来实现typst，还可以将文档内容还原为pdf/ppt
+
 - diagramming
   - 参考cetz， 基于mermaid实现
 

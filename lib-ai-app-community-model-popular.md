@@ -636,6 +636,16 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [For anyone who wanna use R1T Chimera : r/openrouter _202601](https://www.reddit.com/r/openrouter/comments/1q3zguu/for_anyone_who_wanna_use_r1t_chimera/)
+- TNG R1T Chimera is the newer improved version that supports tool calling, what you're referring to is "DeepSeek R1T Chimera", that one is simply the Tokeniser of V3-0324 bolted onto R1, plus a few other fixes
+  - "TNG R1T Chimera" no longer has a free endpoint, while the "DeepSeek R1T" older variant still has one, both are similar in normal usage actually, it's the improved tool calling that makes R1T better
+
 - ## [Tested glm 4.7 for coding projects past week, comparison with deepseek and qwen : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1q0dkwz/tested_glm_47_for_coding_projects_past_week/)
   - been doing a lot of python backend and react work, probably 200-300 api requests daily. been using deepseek v3 mainly but wanted to test glm 4.7 since it dropped recently
   - vs deepseek v3: roughly same level for most tasks, maybe glm slightly better at keeping context in long conversations. deepseek still edges it out for very complex algorithmic stuff
@@ -1842,6 +1852,55 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [使用axonhub对自己已有的公益&2api进行整合+负载均衡 _202601](https://linux.do/t/topic/1397062)
+  - 之前使用的是new-api+GPT Load的方式实现多个渠道模型的整合。不过最近在用站内 @looplj  佬的axonhub，感觉用起来差不多可以替代前者两个项目加起来的办法了。
+  - 添加渠道（即你的API来源）: 大部分的公益站使用的都是new-api，所以我们一般选择openai的格式即可。渠道是数字越大权重越高
+  - 添加模型（对外暴露的，也就是你实际调用的）: 配置我们实际要使用的模型了，也就是我们在各种cli工具/AI对话客户端中需要使用到的模型。举个例子，假设现在薄荷佬、Fovt佬、以及我自己的openrouter都有gpt-4.1-mini这个模型。那么就可以点击批量添加，然后选择好提供商，从模型ID里面选择自己需要的模型。现在已知我有三个来源，都是同一个模型。那么我们可以进行模型的关联。点击对应模型上的:link: 符号，即可进行关联。
+- 如果觉得只是自用而且只是需要一个均衡负载功能的话，可以看看这个佬的项目，API转换用的是一套的。
+  - https://github.com/bestruirui/octopus /AGPL/go/ts
+  - 项目里面api转换就是直接抄的axonhub, 这个佬的功能太多了，我的更偏个人，功能更简单
+
+- ## [New API 内导入的模型渠道无法使用联网功能吗？ _202512](https://linux.do/t/topic/1250898/6)
+- 支持啊，但是要用gemini的格式请求，供应商类型选择gemini，newapi里也要选择是gemini、vertex
+
+- newapi将模型请求方式改为gemini，客户端也用gemini格式，gemini模型就可以正确使用联网工具，newapi的转换功能实属有点问题，grok已经变成工具代理了
+
+- ## [理一下 New-API 的协议转换：如何完美兼顾 Claude Code 和 Gemini 生图？ _202512](https://linux.do/t/topic/1354989)
+  - 目前我在 VPS 上使用 New-API 来管理我的 AI 资源，上游主要是通过 cilproxy 转出来的 2api 以及站内的一些公益站（基本都是 OpenAI 格式）。
+  - 上游： cilproxy (2api) / 公益站接口（OpenAI 格式）。
+  - 中转管理： New-API。电脑端还用了 cc switch。
+  - 下游终端：
+  - Claude Code： 对协议要求极严，必须是标准的 Anthropic 响应格式。
+  - Kelivo (或其他类似前端)： 主要用来聊天和 OpenAI 格式的 Gemini 生图。
+- 我发现 New-API 的“渠道类型”设置直接决定了最后的输出逻辑：
+  - 渠道设为 Anthropic： Claude Code 配合完美，输出正常；但 Kelivo 的 OpenAI 生图请求会报错（因为协议路径或 Header 不对）。
+  - 渠道设为 OpenAI： Kelivo 生图和普通对话正常；但 Claude Code 无法正常解析输出（或者是流式输出断掉）。
+
+- 两个渠道是一个 openai 一个 Anthropic  嘛？
+
+- 之所以要两个渠道是因为我需要用openai接口来进行生图，所以才需要两个渠道
+  - 总结：如果你的上游不支持Anthropic 渠道的话，cc的话还是得用ccr，这是我目前试出来的
+
+- 类似我这种情况，上游是国产模型商，例如deepseek是 openai格式的，哪怕new-api里设置了Anthropic 也是不行的咯。那么这个类型就只是个标记了，不具有转换能力。
+  - 是的，因为你的上游没有转换能力，你可以试一下，大概率是不行的
+
+- 我看了下目前的国产厂商都是支持A家格式的, 感觉是可以直接用啊。
+
+- ## [想对公益站做一下简单的渠道管理，用new api就可以吗？ _202601](https://linux.do/t/topic/1398557)
+  - 公益站真的好多哦， 确实需要做一些简单的渠道管理，以及是不是要固定ip防止乱飘？
+  - 目前是想要把公益站顶前面，有自动重试和自动更换，最后放一点官方key兜底
+  - 这些需求，在国内小鸡上放一个new api就可以了吗？
+
+- newapi 可以的， 纯自用中转，几个二开大差不差
+
+- 个人使用 在可支援docker的状态下, 可以参考new api, axonhub
+
+- New-api 比较像独立的站点项目 如果你有渠道想要分发的话 他会是个非常好的选项
+
+- 今天刚写了，如果考虑负载均衡和自动重试的话，axonhub会更好。
 
 - ## [CLIProxy反代Antigravity + 接入claude code教程 ](https://linux.do/t/topic/1362485)
   - 认证成功后即可进入下一步，开始配置cc。建议使用cc-switch来管理配置

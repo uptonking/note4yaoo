@@ -411,6 +411,13 @@ modified: 2025-10-28T20:02:16.727Z
 
 - ## 
 
+- ## 
+
+- ## [feat: restore XML tool protocol option for OpenAI-Compatible provider _202512](https://github.com/RooCodeInc/Roo-Code/pull/10347)
+  - [Sorry we didn’t listen sooner: Native Tool Calling _202512](https://blog.roocode.com/p/sorry-we-didnt-listen-sooner-native)
+  - Keeping two tool calling architectures massively increases complexity. Every fix, every feature, every tool-related issue forces Roo to reason about two completely different execution paths. That slows development, increases bugs, and makes it harder to move Roo forward. It also guarantees that XML users would slowly get stuck with an increasingly outdated experience as improvements land only in the native path.
+  - [[ENHANCEMENT] v3.37+ forces native tool calling (XML selector removed) ](https://github.com/RooCodeInc/Roo-Code/issues/10319)
+
 - ## [Feature Suggestion: Enhancing Extensibility with a Modular Framework : r/RooCode _202511](https://www.reddit.com/r/RooCode/comments/1ot7qwp/feature_suggestion_enhancing_extensibility_with_a/)
   - Observing the ecosystem, agents like Claude Code are leveraging skills, sub-agents, and plugins, while tools like cline have implemented hooks. These mechanisms are proving to be crucial for extending the core functionality of coding agents.
   - I would like to suggest that roo code consider adopting a similar modular approach to enhance its extensibility.

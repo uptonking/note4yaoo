@@ -40,7 +40,11 @@ modified: 2025-12-18T12:26:08.445Z
 
 - ## 
 
-- ## 
+- ## 🤔 can i open multiple terminals and use multiple claude code to do different tasks at the same time? will the ai get confused? please check if it's possible . if it's possible to do it, what should i take care?
+- Separate sessions = separate context. If each terminal/process uses its own conversation/session ID (or sends its own system prompt), the model won’t mix tasks.
+
+- Each terminal maintains separate context - what you tell one doesn't affect the others
+  - Claude handles conflicts automatically and is very reliable when multiple terminals touch the same file
 
 - ## [Is Claude Code better on the Terminal? : r/ClaudeCode _202601](https://www.reddit.com/r/ClaudeCode/comments/1q3dp6c/is_claude_code_better_on_the_terminal/)
   - I been using Claude Code extension through VSCode Insider for a while now but I am not actually sure if it is better to use the CLI version or if there's any hidden advantages that I am missing.

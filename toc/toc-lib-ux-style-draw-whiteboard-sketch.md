@@ -175,6 +175,11 @@ modified: 2025-03-22T18:23:37.602Z
   - Web application for editing texteditor and painting canvas in real-time collaboration.
   - 展示了 quill、draftjs、canvas+mousemove 几个示例
   - 提供了client+server，可作为通用协作方案
+
+- https://github.com/JessYan0913/pictode /MIT/202409/ts/vue/inactive
+  - https://pictode.com/
+  - 最方便集成的绘图工具
+  - [Pictode：十分钟 DIY 图形编辑器 _202310](https://fast.v2ex.com/t/979389)
 # styling
 - https://github.com/imrishabh18/text-to-handwriting
   - https://imrishabh18.github.io/text-to-handwriting

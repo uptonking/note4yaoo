@@ -396,6 +396,17 @@ modified: 2025-02-21T18:20:42.624Z
   - 即使有些厂商说兼容openai的接口，但是实际上还是存在些许差异的
   - simple-one-api主要是解决以上2点，旨在兼容多种大模型接口，并统一对外提供 OpenAI 接口。
 
+- https://github.com/looplj/axonhub /1.3kStar/LGPL+apache2/202601/go/ts
+  - https://axonhub.onrender.com/
+  - AI gateway system that provides a unified OpenAI ( Chat Completion, Responses), Anthropic, Gemini and AI SDK compatible API
+  - 后端：Go + ent + gqlgen
+  - 前端：React + TypeScript + Shadcn + Graphql
+  - 本项目和 new-api 等项目的不同，本项目目标用户是 AI 产品开发者，不是中转服务商，所以会有更多开发监控相关能力，比如 Trace。
+  - [分享自己开源的一个肝了一段时间的 AI 网关项目 _202511](https://linux.do/t/topic/1153975)
+    - OpenAI/Anthropic 请求格式互转
+    - 渠道管理，项目管理，权限控制，用户管理，API Key 管理
+    - 低侵入 LLM API Trace ，支持不需要 SDK 就可以 trace 一次对话的多个 request，以及保存 Request 和 Response 内容，方便排查问题
+
 - https://github.com/jwy87/SimpleHub /MIT/202601/js
   - 多站点管理：统一管理多个 AI 中转站，支持 NewAPI、Veloera、DoneHub、VOAPI 等主流平台
   - 模型变更检测：自动追踪模型列表的增删改，精确记录每次变化
@@ -404,7 +415,7 @@ modified: 2025-02-21T18:20:42.624Z
 
 - https://github.com/qixing-jk/all-api-hub /722Star/AGPL/202601/ts
   - http://all-api-hub.qixing1217.top/
-  - 统一管理第三方 AI 聚合中转站与自建 New API：自动识别账号、查看余额、同步模型、管理密钥，全平台与云端备份
+  - 开源浏览器插件，统一管理第三方 AI 聚合中转站与自建 New API：自动识别账号、查看余额、同步模型、管理密钥，全平台与云端备份
   - 站点信息管理 - 多方式获取真实站点名称，支持签到状态检测和自动签到，可手动添加任意 AI 聚合中转站点
   - 每个站点支持多个账号，账号分组与快速切换，余额和使用日志一目了然
   - 查看站点支持的模型列表和价格信息
@@ -417,6 +428,11 @@ modified: 2025-02-21T18:20:42.624Z
     - https://fxaxg.github.io/one-api-hub/
     - 一个开源的浏览器插件，聚合管理AI中转站账号的余额、模型和密钥，告别繁琐登录
     - [[开源] One-API-Hub：管理您的所有AI中转站账号的余额、模型和密钥，告别繁琐登录 _202507](https://linux.do/t/topic/833269)
+
+- https://github.com/Sponge-Lu/API_detect_tools /MIT/202601/ts
+  - 管理API公益站的桌面端，可签到可添加福利站，专为管理和监控多个 API 中转站而设计。
+  - 基于 Electron + React + TypeScript 构建。
+  - API Key 管理：在桌面端直接创建、删除、分组管理 API Key，支持批量操作
 
 ## router-image 🖼️
 
