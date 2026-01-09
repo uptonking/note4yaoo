@@ -288,6 +288,15 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-to
   - ?
 
+## 0109
+
+- [Conversation Compaction Failure: Summary Generation Error · Issue · anthropics/claude-code](https://github.com/anthropics/claude-code/issues/5778)
+  - I launched the compact command for a second try and it worked without issues
+
+- when i have used claude code for a long time , context is too long but todos are still in progress. can i interrupt it and execute /compact to reduce context and continue to finish todos? if it's possible, how to do it in claude code?
+  - If Claude is currently running a long task or stuck in a loop, you can interrupt it by pressing: Ctrl + C
+  - While you can just type /compact, the safest way to ensure your specific todos are not lost in the summary is to provide a prompt to the compact command.
+
 ## 0108
 
 - 🆚 i want to build an online image editor webapp. I want to add text and resize image. knova and fabric.js js seems to be good library. please compare them. or do you have any better suggestion?

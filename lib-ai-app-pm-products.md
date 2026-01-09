@@ -703,6 +703,9 @@ modified: 2025-03-22T16:10:24.856Z
   - [Huan API](https://ai.huan666.de/pricing)
   - [香草API](https://ai.xiangcao.de/pricing)
   - [六哥API站](https://api.crisxie.top/pricing)
+  - [pollinations.ai](https://enter.pollinations.ai/)
+    - [基于Pollinations的图像生成接口的工作台  _202601](https://linux.do/t/topic/1423187)
+    - 1 额度可生成张数: z-image--5k, sdxl--3k, seedream--25
 
 - image-saas
   - [小白生图 - AI Image Generator](https://catsapi.com/)

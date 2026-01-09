@@ -45,7 +45,7 @@ modified: 2021-05-14T14:30:22.685Z
   - Collaborate with your team from anywhere, intuitively and efficiently, and leverage your knowledge and files.
   - MIT for the backend, functionnal tests, docker recipes, documentation, etc.
   - 集成了 Collabora
-# apps
+# news/marketing
 - https://github.com/liangdabiao/XHS_Business_Idea_Validator /202601/python
   - 小红书收集和分析数据来解析市场需求用户痛点及竞争格局
   - [上线了怎样使用XHS_Business_Idea_Validator-小红书解析市场机会智能体 ](https://linux.do/t/topic/1409279)
@@ -59,3 +59,18 @@ modified: 2021-05-14T14:30:22.685Z
   - Reddit 收集和分析数据来解析市场需求、用户痛点及竞争格局 深度！评论分析！用户画像！找商机！
   - Reddit 数据抓取: 自动抓取相关帖子和评论数据（使用用户输入作为搜索关键词）
   - [【开源】Reddit 生意调研Agent: 收集和分析数据来解析市场需求 ](https://linux.do/t/topic/1417660)
+
+- https://github.com/sansan0/TrendRadar /42.7kStar/GPL/202601/python
+  - 告别信息过载，你的 AI 舆情监控助手与热点筛选工具！聚合多平台热点 + RSS 订阅，支持关键词精准筛选
+  - 全网热点聚合 知乎 抖音 bilibili 热搜 华尔街见闻 贴吧 财联社热门 今日头条
+    - 默认监控 11 个主流平台，也可自行增加额外的平台
+  - 个性化热点算法: 不再被各个平台的算法牵着走，TrendRadar 会重新整理全网热搜
+  - 多存储后端支持：
+    - 远程云存储：GitHub Actions 环境默认，支持 S3 兼容协议（R2/OSS/COS 等），数据存储在云端，不污染仓库
+    - 本地 SQLite 数据库：Docker/本地环境默认，数据完全可控
+    - 自动后端选择：根据运行环境智能切换存储方式
+
+- https://github.com/666ghj/BettaFish /34.1kStar/GPL/202601/python
+  - https://deepwiki.com/666ghj/BettaFish
+  - 微舆：人人可用的多Agent舆情分析助手，打破信息茧房，还原舆情原貌
+  - 构建了从 BettaFish（数据收集与分析）到 MiroFish（全景预测）的完整链路

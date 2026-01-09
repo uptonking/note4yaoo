@@ -25,7 +25,7 @@ modified: 2023-03-09T13:47:07.317Z
   - https://univer.ai/
   - An Isomorphic Full-Stack Framework for Creating and Editing Spreadsheets Across Web and Server.
   - Univer is designed to support spreadsheets, documents and presentation.
-  - 最多只用excel/ppt, 没必要用docs, canvas的架构适合excel/ppt
+  - 🤔 最多只用excel/ppt, 没必要用docs, canvas的架构适合excel/ppt
   - Univer is isomorphic. It can run both on browsers and Node.js (in the future, mobile devices as well), with the same API.
   - Univer is easily embeddable, allowing seamless integration into your applications
   - highly extensible, thanks to its plug-in architecture 
@@ -137,6 +137,25 @@ modified: 2023-03-09T13:47:07.317Z
   - 使用Yjs、Quill、LuckySheet 等技术实现的markdown、txt、excel 等文件的多人在线协同编辑，支持以 websocket、webRTC、组合API等形式实现通信
   - [Luckysheet 实现excel多人在线协同编辑 - 掘金](https://juejin.cn/post/7298170736480485376)
   - [Yjs + Quill 实现文档多人协同编辑器开发（基础+实战） - 掘金 _202309](https://juejin.cn/post/7273432426772070457)
+
+- https://github.com/SignitDoc/open-editor /apache2/202505/ts/vue/inactive
+  - https://docs.signit.cn/
+  - https://signitdoc.github.io/open-editor/
+  - 开源智能文档编辑平台，支持多种文档类型编辑和预览，包括 Word、Excel、PPT、Markdown、思维导图和流程图。
+  - 本项目的技术选型聚焦于国内外主流开源方案，通过精心整合形成完整解决方案。
+  - 100%开源技术栈构建，所有数据处理均在浏览器端完成，不依赖任何第三方云服务
+  - Word、Excel、PPT、Markdown、思维导图和流程图六大文档类型的编辑与预览功能，提供统一的用户界面和操作体验
+    - Word 编辑器提供目录生成、电子签名等高级功能, Tiptap
+    - Excel 组件支持公式计算和图表生成, Luckysheet
+    - PPT 引擎实现动画效果和演示模式, PPTist旧版
+    - 技术文档编写完整的 Markdown 支持， ToastUI
+    - Simple-mind-map	轻量级思维导图库
+    - Draw.io (集成)	流程图解决方案
+  - 基于 Vue 3 的组合式 API 和 Pinia 状态管理，每个文档编辑器都是独立组件，支持按需加载和功能扩展
+  - 企业级特性 内置电子签名、文档水印、版本历史等企业场景必备功能 
+  - 电子签名：内置 Vue3-esign 签名组件
+  - 版本历史：编辑记录追溯
+  - Pinia, Vue Router
 
 - https://github.com/MrXujiang/Nocode-Wep /202512/ts
   - https://ai.flowmix.cn/
