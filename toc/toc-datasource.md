@@ -17,6 +17,10 @@ modified: 2020-11-11T13:19:48.284Z
 - https://github.com/plotly/datasets
   - Datasets used in Plotly examples and documentation
 # wiki/百科
+- [Introducing the Overflow Offline project - Stack Overflow _202210](https://stackoverflow.blog/2022/10/20/introducing-the-overflow-offline-project/)
+  - [The Overflow Offline project | Hacker News _202210](https://news.ycombinator.com/item?id=33274186)
+  - [WikiHow and StackExchange/StackOverflow now avalaible for download via Kiwix. : r/DataHoarder _202208](https://www.reddit.com/r/DataHoarder/comments/x1fltz/wikihow_and_stackexchangestackoverflow_now/)
+
 - [Wikipedia Structured Contents](https://www.kaggle.com/datasets/wikimedia-foundation/wikipedia-structured-contents)
   - This dataset contains all articles of the English and French language editions of Wikipedia, pre-parsed and outputted as structured JSON files with a consistent schema
   - Each JSON line holds the content of one full Wikipedia article stripped of extra markdown and non-prose sections (references, etc.).

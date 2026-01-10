@@ -288,12 +288,44 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-to
   - ?
 
+## 0110
+
+- 🤔 is there any electron examples that use client/server architecture so that it supports both windows/mac desktop app and webapp? i want to support both web ui and desktop app usage. if there's any open source repo, show the url and description
+- Actual Budget (Best "Local Server" Example) 
+  - Repository: github.com/actualbudget/actual
+  - It uses a client/server architecture where the "server" can run in the cloud (for the web app) or locally (inside the Electron app)
+  - Web Mode: The frontend runs in the browser and talks to a remote server API.
+  - Desktop Mode: The Electron process spawns a local instance of the server code. The frontend (running in the Electron window) connects to this local server via localhost.
+- Hoppscotch (Best "Shared Frontend" Example)
+  - Repository: github.com/hoppscotch/hoppscotch
+  - It is built as a Progressive Web App (PWA) first. The desktop version is essentially a wrapper around the web application but adds "native" capabilities (like bypassing CORS) that a browser cannot do.
+  - It treats the "Client" as a completely separate entity from the environment it runs in.
+  - It uses a "Proxy" server approach to handle requests that would otherwise fail in a pure web environment due to browser security restrictions.
+  - It shows how to structure a massive Vue.js application so it works flawlessly in a browser and as an installed desktop app.
+- Visual Studio Code (The "Gold Standard")
+  - Architecture: Process Separation. They separate the Workbench (UI) from the Extension Host (Logic/Server).
+  - When you run the Desktop app, the "Server" runs locally on your machine (accessing your local files).
+  - When you run the Web version, the "Server" runs remotely (like in GitHub Codespaces) or in a limited browser sandbox.
+  - The UI code communicates with the Server code via JSON-RPC, meaning the UI doesn't care if the server is local or remote.
+- Next.js + Electron Boilerplate (Best for Starting New)
+  - Repository: github.com/saltyshiomix/nextron
+  - If you are starting from scratch and want to build a React/Next.js app that serves as both, this is the most popular boilerplate (often called "Nextron").
+  - It configures the build system (Webpack/Turbo) to output two targets from your code:
+  - Web: A standard Next.js build for your website.
+  - Desktop: An Electron renderer build that loads the Next.js pages.
+  - It doesn't strictly force a "server" architecture, but it sets up the Shared Code structure for you. You can put your logic in a shared/ folder and import it into both the renderer/ (Frontend) and main/ (Electron Backend) folders.
+
+- 🤔 for a github repo with a package.json file, for one author, it's "author": { "name": "Jonathan Wheeler", "email": "jonathan.wheeler87@gmail.com" }, . if there are 2 authors, how to write?
+  - If you have two authors, you should use the `contributors` array
+  - Option 1: Co-Authors (Equal Status)
+  - Option 2: Author + Contributor
+
 ## 0109
 
 - [Conversation Compaction Failure: Summary Generation Error · Issue · anthropics/claude-code](https://github.com/anthropics/claude-code/issues/5778)
   - I launched the compact command for a second try and it worked without issues
 
-- when i have used claude code for a long time , context is too long but todos are still in progress. can i interrupt it and execute /compact to reduce context and continue to finish todos? if it's possible, how to do it in claude code?
+- 🤔 when i have used claude code for a long time , context is too long but todos are still in progress. can i interrupt it and execute /compact to reduce context and continue to finish todos? if it's possible, how to do it in claude code?
   - If Claude is currently running a long task or stuck in a loop, you can interrupt it by pressing: Ctrl + C
   - While you can just type /compact, the safest way to ensure your specific todos are not lost in the summary is to provide a prompt to the compact command.
 
@@ -312,17 +344,9 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
   - IText/Textbox support native editing behavior on canvas (selection, caret, copy/paste, wrapping). If editable-on-canvas text is a big requirement, Fabric is simpler out of the box.
 - Both libraries can run in Node (via node-canvas / explicit canvas backends) and can export canvases to images; 
 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-
 ## 0106
 
-- i want to run ocr llm model locally. why does llama.cpp not support deepseek-ocr gguf, but ollama supports deepseek-ocr since ollama uses llama.cpp under the hood? 
+- 🤔 i want to run ocr llm model locally. why does llama.cpp not support deepseek-ocr gguf, but ollama supports deepseek-ocr since ollama uses llama.cpp under the hood? 
 - [Ollama's new engine for multimodal models · Ollama Blog _202505](https://ollama.com/blog/multimodal-models)
   - Ollama has so far relied on the ggml-org/llama.cpp project for model support and has instead focused on ease of use and model portability.
   - As more multimodal models are released by major research labs, the task of supporting these models the way Ollama intends became more and more challenging.

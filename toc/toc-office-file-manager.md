@@ -14,6 +14,9 @@ modified: 2021-08-23T05:27:08.068Z
     - 更适合参考网盘类产品的文件管理逻辑，因为会处理大量文件的场景
     - 可参考filebrowser/nextcloud等产品的desktop实现
     - 还可参考云厂商的实现，如s3/r2
+  - 数据源支持local/remote/s3需要可扩展的后端架构，重点参考
+  - vscode也提供了local/remote文件管理的思路
+  - 不要执着于web/pc多个gui，webview/wrapper封装技术很成熟
 
 - 文件管理器的url路径设计
   - github示例 支持多个branch、tag
@@ -80,8 +83,14 @@ modified: 2021-08-23T05:27:08.068Z
   - Integrate it with any backend, whether you're using local storage, databases, or cloud services.
   - Split view to manage files between different locations
 
-- https://github.com/reactfilemanager/core
-  - https://github.com/reactfilemanager/php-server
+- https://github.com/concord-consortium/cloud-file-manager /MIT/202601/ts
+  - The Cloud File Manager is a Javascript library that enables applications to save and load files from various file systems using a simple consistent API.
+  - 示例偏向单文件的api操作，无文件管理示例
+  - [the following file system providers are supported:](https://github.com/concord-consortium/cloud-file-manager/blob/master/doc/providers.md)
+    - Local and remote read-only files
+    - Google Drive
+    - Browser LocalStorage (used mostly for development/testing)
+    - s3-provider
 # file-manager-fullstack
 - https://github.com/MrWangJustToDo/file-manager
   - 依赖redux-thunk、sqlite3、jquery、codemirror、echarts
@@ -102,11 +111,13 @@ modified: 2021-08-23T05:27:08.068Z
   - Backend: FastAPI, SQLAlchemy, Python 3.10+
   - Other: WebSockets, React Flow, custom theming, responsive design
 
-- https://github.com/kannifarhad/CronusFileManager /MIT/202510/ts
+- https://github.com/kannifarhad/CronusFileManager /MIT/202510/ts/inactive
   - Filemanager with React & Nodejs
   - React, Redux, Material UI, Nodejs, ExpressJs
   - 提供了前端和后端实现
   - virtual scroll loading to address performance issues when dealing with large folders containing more than 500 files.
+  - Zip/unzip
+  - Fully Image editor - Integrated TOAST UI Image Editor
 
 - https://github.com/xiaobaidadada/filecat /77Star/apache2/202601/ts
   - 一个基于 Web 的文件服务器、服务器管理工具。集成了文件管理、超大日志查看、远程终端访问、系统进程监控，以及包括 VPN、SSH、RDP、HTTP、TCP 等多种网络代理功能。支持windows、linux、mac。
@@ -115,11 +126,26 @@ modified: 2021-08-23T05:27:08.068Z
   - 终端：相比filebrowser使用了xterm.js，并且采用了虚拟shell完美实现命令的权限过滤，避免用户执行类似 rm -r / 的危险命令
   - CI/CD自动化构建：内置了一个模仿github workflow 语法实现的自动化构建功能，作用于以.act结尾的文件
   - ssh代理: 可以管理多个linux服务器，作用和winscp类似，让终端和文件管理更方便。除此之外还支持http代理，rdp远程桌面(windows)等代理
+  - [FileCat-Docs-技术介绍](https://filecat.xiaobaidadada.fun/#/zh-CN/%E6%8A%80%E6%9C%AF/%E6%8A%80%E6%9C%AF%E4%BB%8B%E7%BB%8D.md)
+    - 前端采用react框架，样式采用filebrowser的，前端样式基本是复制的filebrowser的。全局状态管理使用了 recoil
+    - 后端工作量有点小大的几个功能是，虚拟网络vpn，workflow自动化构建，虚拟终端 pty-shell ，大日志文件日志，这些功能都是本项目自己原创设计实现的，还有个rdp 原创桌面控制，是采用了其它项目的源码， 我给直接复制过来改了一下，node.js 的rdp代理好像目前只有MeshCentral实现了可以远程访问的。
 
 - https://github.com/dhanyn10/multiple-file-manager /202510/ts/inactive
   - A desktop application built with Electron, Vite, React, and TypeScript, designed to simplify bulk file operations. 
   - This application provides an intuitive interface to rename, delete, and manage multiple files at once based on various patterns and criteria.
   - 似乎没有文件树，需要在url直接输入路径，只适合用来批量操作
+
+- https://github.com/OpusCapita/filemanager /567Star/apache2/202310/java/js/inactive
+  - React based FileManager for browser ( + FS REST API for Node.js and Express)
+  - supports connectors to different file storages like google drive, node server
+  - 前端依赖react-virtualized、react-sortable-hoc、react-dnd
+
+- https://github.com/joni2back/react-filemanager /201901/js/inactive
+  - https://joni2back.github.io/react-filemanager/
+  - 依赖redux、material-ui.v4
+  - Hello ex angular-filemanager user, this is the new version in React and Redux with backends for Local Files and FTP.
+  - https://github.com/joni2back/filemanager-connector-node
+    - a local file connector API in NodeJS
 
 - https://github.com/GamEditor/Node.js-FileManager
   - This is a simple file manager for download and upload files on the server by categories.
@@ -147,23 +173,11 @@ modified: 2021-08-23T05:27:08.068Z
   - https://dropbox.ui-clone.ronne.dev/
   - 首页放了很多截图
 
-- https://github.com/OpusCapita/filemanager
-  - React based FileManager for browser ( + FS REST API for Node.js and Express)
-  - supports connectors to different file storages like google drive, node server
-  - 前端依赖react-virtualized、react-sortable-hoc、react-dnd
-
 - https://github.com/psolom/RichFilemanager  /archived
   - http://fm.devale.pro/
   - Rich Filemanager is an open-source file manager
   - Filemanager is designed to interact with a number of programming languages via connectors. 
   - The actual connectors are: PHP, Java, ASHX, ASP, NodeJs & Python 3 Flask.
-
-- https://github.com/joni2back/react-filemanager
-  - https://joni2back.github.io/react-filemanager/
-  - 依赖redux、material-ui.v4
-  - Hello ex angular-filemanager user, this is the new version in React and Redux with backends for Local Files and FTP.
-  - https://github.com/joni2back/filemanager-connector-node
-    - a local file connector API in NodeJS
 
 - https://github.com/dailykit/react-file-manager
   - A file manager built in ReactJs
@@ -180,8 +194,11 @@ modified: 2021-08-23T05:27:08.068Z
   - https://www.filestash.app/
   - A Dropbox-like file manager that let you manage your data anywhere it is located: FTP • FTPS • SFTP • WebDAV • Git • S3 • LDAP • Mysql CardDAV • CalDAV • Backblaze B2 • Minio Dropbox • Google Drive
   - Multiple cloud providers and protocols, easily extensible
+
+- https://github.com/reactfilemanager/core
+  - https://github.com/reactfilemanager/php-server
 # file-pc/electron/tauri
-- https://github.com/Saifullah-dev/react-file-manager /134Star/MIT/202512/python/js/依赖少
+- https://github.com/Saifullah-dev/react-file-manager /134Star/MIT/202601/python/js/依赖少/仅web
   - React.js package for seamless file manager integration, offering a user-friendly interface for viewing, uploading, and deleting files with full UI and backend support.
   - It provides a user-friendly interface for managing files and folders, including viewing, uploading, and deleting, with full UI and backend integration.
   - Navigation: Use the breadcrumb trail and sidebar navigation pane for quick directory traversal.
@@ -190,6 +207,7 @@ modified: 2021-08-23T05:27:08.068Z
   - 后端依赖express、mongoose
   - 前端依赖react-collapsed
   - The `backend/fastapi_backend.py` is an alternative backend implementation using Python/FastAPI instead of Node.js/Express. It provides the same file management functionality but:
+    - 💡 可参考来替换数据源
     - Uses the local filesystem directly (no MongoDB required)
     - os.walk() filesystem scan: Slower for large directories, No metadata persistence
     - Harder to add features
@@ -202,8 +220,24 @@ modified: 2021-08-23T05:27:08.068Z
   - React-Explorer is fully localized using .json files. Right now, English and French are available.
   - React-Explorer has been written so that it can easily be extended using plugins
   - 🔌 Plugin-based filesystem support
-  - ~~Plugin-based: local supported for now, ftp in the works~~
+    - ~~Plugin-based: local supported for now, ftp in the works~~
+    - React-Explorer has been written so that it can easily be extended using plugins. As a starting point you may use the `FsGeneric` skeleton.
+    - 🛢️ it's highly feasible to create an S3/MinIO plugin
+    - Clean `FsApi` interface with ~20 methods to implement
+    - Stream-based operations align perfectly with S3 SDK capabilities
   - 依赖blueprintjs、electron-window-state、mobx-react、react-dnd、react-virtual
+  - 🧭 this file manager does support running in a browser with a web UI, but with important limitations. It's designed primarily for E2E testing, not production use.
+    - The codebase includes a web build configuration that stubs Electron APIs and runs in the browser. However:
+    - Uses in-memory filesystem (memfs) - no real file operations
+    - Electron APIs are mocked/stubbed
+    - Specifically built for Cypress testing
+  - it does not support web UI.
+    - Uses Node.js fs module directly for all file operations
+    - Has file operations running in the renderer process with `nodeIntegration: true`.
+    - Has no web backend or HTTP API layer
+    - Plugin architecture already exists - can add new `FsWeb` plugin
+    - All file operations must be reimplemented as HTTP APIs. Need to build entire backend server from scratch
+    - Real-time file watching needs WebSocket implementation
   - 📡 roadmap
     - migrate mobx to tanstack-store
 
@@ -211,6 +245,17 @@ modified: 2021-08-23T05:27:08.068Z
   - https://www.scriptol.com/scripts/advanced-explorer.php
   - A file manager and text editor built in JavaScript and HTML 5, Ace editor and Node.js library. Requires Electron for the rendering engine.
   - From Java to JavaScript: This is actually the successor of the Advanced Explorer file management software I have written in Java in 1999. This version written entirely in JavaScript in 2012 keeps the essential features of the Java program and includes a more advanced text editor based on ACE for the backend, with a custom interface.
+
+- https://github.com/brettz9/filebrowser-electron /MIT/202512/js
+  - This aims to be a cross-platform and enhanced substitute for the desktop file browser.
+  - ONLY VERY MINIMALLY FUNCTIONAL
+  - Undo/Redo: Maintains up to 50 operations in the undo history
+  - Sticky Notes
+
+- https://github.com/27px/Remote-File-Manager /MIT/202110/ts/inactive
+  - GUI File Manager, access both local and ssh files, X-OS (Built on electron), Tested for Windows and Ubuntu
+  - 支持web/pc
+  - [I developed a File Manager (Local and SSH) using Node.js, Electron.js, Angular (No Bootstrap / jQuery / templates are used, It is custom CSS) Packed as Desktop application using Electron.js _202107](https://www.reddit.com/r/node/comments/okqdrh/hi_i_developed_a_file_manager_local_and_ssh_using/)
 
 - https://github.com/Cocycles/electron-storage /201703/js/inactive
   - Simply save/load json files to/from file system in electron applications
@@ -264,6 +309,9 @@ modified: 2021-08-23T05:27:08.068Z
 - https://github.com/kimlimjustin/xplorer /5.4kStar/apache2/202202/ts/rust/tauri/inactive
   - customizable, modern and cross-platform File Explorer.
   - a modern file explorer built from ground-up to be fully customizable to fit 2022's need. Besides, Xplorer is a cross-platform application powered by the web that is being wrapped using Tauri 
+  - 不支持
+    - Remote file (OneDrive, Google Drive, etc.)
+    - Web application.
 
 - https://github.com/jeanlyn/mpfm /MIT/202512/rust/ts/Tauri
   - A multi-protocol file storage manager client (S3/FTP/...) that support MacOS/Windows/Linux
@@ -394,7 +442,7 @@ modified: 2021-08-23T05:27:08.068Z
 - https://github.com/chenhb23/lanzouyun-disk
   - 蓝奏云网盘、客户端，界面美观。支持登录、大文件批量断点上传 / 下载、URL 解析，使用 electron 构建
 
-- https://github.com/spacedriveapp/spacedrive /AGPLv3/202409/rust/ts
+- https://github.com/spacedriveapp/spacedrive /36.5kStar/AGPLv3/202601/rust/ts
   - https://spacedrive.com/
   - an open source cross-platform file manager, powered by a virtual distributed filesystem (VDFS) written in Rust.
   - Prisma, Rust, React, TypeScript, Tauri

@@ -234,6 +234,22 @@ modified: 2024-01-23T02:52:23.932Z
 # discuss-pm-ob
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Do you use Daily Notes in Obsidian? Is this something you would want? : r/ObsidianMD](https://www.reddit.com/r/ObsidianMD/comments/1q8zw78/do_you_use_daily_notes_in_obsidian_is_this/)
+  - 热力图换成了背景图
+- I don't have images on my daily notes but would definitely start if there was a feature like this!
+
+- Yes, that would be very useful! I’ve already been using something very similar with the Diarian plugin, but it’s not quite there yet.
+
+- ## [Project Folders now available in Lovely Bases Plugin : r/ObsidianMD](https://www.reddit.com/r/ObsidianMD/comments/1q89nct/project_folders_now_available_in_lovely_bases/)
+  - I didn't do the design, I reused this component from shadcn and adapted it to work within Obsidian
+  - https://github.com/aitorllj93/obsidian-lovely-bases
+
+- Is there a way to show an image itself? E.g. A base that filters on png files and the view type is infinite gallery. I tried with thr file path but that didn't seem to work.
+
 - ## 🤔 [I know many folks do not use folders… : r/ObsidianMD](https://www.reddit.com/r/ObsidianMD/comments/1ppcmic/i_know_many_folks_do_not_use_folders/)
 - Use folders. Stop worrying about what others do. Your assumption is on point. Obsidian can dissapear and even tho there are some other tools that can be an 'alternative', it's not the same. Folders will give you the peace of mind that even in a file browser you will find your files more easily than a bunch of files together. Don't overthink.
 

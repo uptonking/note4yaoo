@@ -9,9 +9,14 @@ modified: 2023-07-05T10:22:57.942Z
 
 # guide
 
+- tips
+
 - resources
   - [ZIM file format](https://wiki.openzim.org/wiki/ZIM_file_format)
   - https://library.kiwix.org/
+# draft
+- datasources
+  - mozilla mdn docs 未提供 zim 格式
 # spec
 
 - 

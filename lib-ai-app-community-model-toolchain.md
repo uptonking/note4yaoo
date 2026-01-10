@@ -362,7 +362,41 @@ PP Speed: Q3 GGUF: 50 t/s
 
 - ## 
 
-- ## 
+- ## 🧩🆚 [Choosing a GGUF Model: K-Quants, I-Quants, and Legacy Formats : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1q911fj/choosing_a_gguf_model_kquants_iquants_and_legacy/)
+  - [Choosing a GGUF Model: K-Quants, I-Quants, and Legacy Formats _202510](https://kaitchup.substack.com/p/choosing-a-gguf-model-k-quants-i)
+
+- Most GGUF weight formats are blockwise.
+  - A matrix is split into fixed-size blocks, each block is represented with compact integer parameters, and a small set of per-block parameters reconstructs approximate floating weights at inference.
+
+- Legacy Formats: Q_0 and Q_1
+  - The legacy family of GGUF formats, Q4_0, Q4_1, Q5_0, Q5_1, Q8_0, implements classic per-block linear quantization. A block stores n-bit weight codes and either one scale (the “_0” variants, symmetric) or one scale plus one offset/zero-point (the “_1” variants, asymmetric). Dequantization is a single affine transform per block.
+  - These formats are simple to decode and therefore fast. Their weakness is representational: one affine map per block cannot model skewed or heavy-tailed weight distributions as well as newer schemes.
+  - At 8-bit, the difference is negligible, and Q8_0 is effectively near-lossless for most LLMs. That’s why we can still see a lot of Q8_0 models being published on the HF Hub. At 5- and especially 4-bit, legacy formats leave measurable accuracy on the table compared with modern alternatives.
+
+- K-quants: Modern Default for 3–6 Bits
+  - K-quants (Q2_K, Q3_K, Q4_K, Q5_K, Q6_K, and their mixed variants like _S, _M, _L) introduce structure beyond a single affine per block. 
+  - The most common pattern is a two-level scheme: small blocks with their own scale and zero-point grouped into a super-block with an additional scale/offset.
+  - The result is lower error at the same storage. For example, a typical Q4_K lands around the mid-4s bits/weight—slightly above Q4_0/1 once you count its extra parameters, but it achieves distinctly better fidelity. Q5_K and Q6_K cluster close to the original model in perplexity while remaining far smaller than FP16.
+  - On modern CPUs and GPUs, K-quants generally match or beat legacy formats in throughput because you move fewer bytes for the same quality.
+  - Keep in mind that for most models, you won’t see much difference in quality between S, M, and L variants, unless you are dealing with small models (let’s say <8B models).
+
+- For very large LLMs, like DeepSeek models, you may also find a TQ1_0 version.
+  - TQ1_0 encodes weights that are ternary (values in {−1, 0, +1}) using a compact packing scheme. It lands around ~1.6–1.7 bits/weight depending on packing details.
+
+- I-quants (IQ2_XXS, IQ2_XS, IQ2_S, IQ2_M; IQ3_XXS/XS/S/M; IQ4_XS; IQ4_NL) are purpose-built to hold up at 2–4 bits.
+  - They go beyond piecewise-affine by introducing non-linear and table-assisted reconstruction.
+  - The pay-off is quality per bit. IQ4_XS typically bests 4-bit K-quants at similar effective size. IQ3_XS and IQ3_M tend to outperform their 3-bit K counterparts.
+  - IQ2_* is the frontier that makes very large models fit in places they simply could not before.
+  - IQ4_NL is a special 4-bit non-linear variant that also uses smaller blocks. It targets CPU speed while retaining the non-linear benefits.
+
+- IQ4_XS vs Q4_K_M
+  - IQ4_XS and Q4_K_M are both “4-bit class” GGUF quantizations, but they trade off size, speed, and robustness differently: Q4_K_M is the reliable default (slightly larger, generally predictable quality/perf), while IQ4_XS is compresses more aggressively (lower effective bits/weight), which can help you fit larger models/contexts and sometimes improve token generation speed, at the cost of being more sensitive to how the quant was produced (imatrix quality; see below) and to your hardware/kernel mix
+  - In llama.cpp’s published Llama-3.1-8B numbers, IQ4_XS is ~4.46 bpw / 4.17 GiB vs Q4_K_M at ~4.89 bpw / 4.58 GiB, with IQ4_XS a bit faster for generation but a bit slower on prompt processing.
+
+- IQ4_NL vs IQ4_XS
+  - IQ4_NL and IQ4_XS are both llama.cpp “I-quant” GGUF formats aimed at strong quality at ~4-bit, but they optimize different things: IQ4_XS is the more aggressive/compressed option (~4.25 bpw) at the cost of being a bit more sensitive to how the quant was produced. 
+  - IQ4_NL is a less compressed non-linear variant (~4.5 bpw) with a different dequantization rule and smaller-block design that’s often described as targeting CPU friendliness/speed while keeping the non-linear benefits.
+  - In practice, many community benchmarks report IQ4_NL is very close to IQ4_XS (sometimes within noise), which is why some quant publishers drop IQ4_NL as “redundant” 
 
 - ## [Why not Qwen3-30B Quantized over qwen3-14B or gemma-12B? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1q62pyh/why_not_qwen330b_quantized_over_qwen314b_or/)
   - I have a 3080ti with 12GB of VRAM and 32GB of RAM and a 5900x. With this I can run qwen3-30b-a3b-thinking-2507 that does 3.3B activated parameters in LM studio 20 tok/sec which I believe is quantized right? It runs pretty well and has good answers. Why would I use the more recommended ones of qwen3-14b or gemma 12b over this that I see more often recommended for a computer of my specs?

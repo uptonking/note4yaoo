@@ -106,12 +106,15 @@ modified: 2022-11-07T10:58:24.512Z
 - 权威文档
   - 字典mdx
   - 书籍epub
-  - wikipedia公开db
+  - wikipedia公开db, kiwix-zim
   - 统计年鉴
   - [中国百科网](https://www.zgbk.com/)
     - 拷贝功能暂未开放
   - [求闻百科](https://www.qiuwenbaike.cn/)
     - 据说是从维基百科中文版fork而来, 有前维基百科中文大陆编辑参与
+  - [Introducing the Overflow Offline project - Stack Overflow _202210](https://stackoverflow.blog/2022/10/20/introducing-the-overflow-offline-project/)
+    - [The Overflow Offline project | Hacker News _202210](https://news.ycombinator.com/item?id=33274186)
+    - [WikiHow and StackExchange/StackOverflow now avalaible for download via Kiwix. : r/DataHoarder _202208](https://www.reddit.com/r/DataHoarder/comments/x1fltz/wikihow_and_stackexchangestackoverflow_now/)
 
 - 标准文档
   - 工业技术

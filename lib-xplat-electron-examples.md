@@ -226,6 +226,8 @@ modified: 2024-01-31T19:13:11.286Z
     - Version 0.2.0 has now been released and this supports importing Pluggable Electron into ES modules on the front end. 
   - https://github.com/dutchigor/pluggable-electron-demo
     - Also check out the with-vue branch to see an example with Vite and Vue. 
+  - https://github.com/sunkarapk/electron-plugin-manager /MIT/202202/js/inactive
+    - Plugin Manager based on NPM for Electron apps
 
 - https://github.com/reZach/secure-electron-template /MIT/202404/js/inactive
   - A current electron app template with the most popular frameworks, designed and built with security in mind
@@ -248,6 +250,47 @@ modified: 2024-01-31T19:13:11.286Z
   - Independent front - end: Theoretically supports any front - end technology, such as Vue, React, HTML, etc.
   - https://github.com/wallace5303/ee-core /ISC/202502/js
     - Powerful electron third party module, offering 100+ API
+
+## client-server(webapp+desktop-app)
+
+- https://github.com/actualbudget/actual /24.2kStar/MIT/202601/ts/js
+  - https://actualbudget.org/
+  - A local-first personal finance app
+  - it has a synchronization element so that all your changes can move between devices 
+  - client + server + sync
+  - https://github.com/jlongster/electron-with-server-example /202001/js/inactive
+    - An example Electron app with a backend server all wired up via IPC
+    - This is exactly how my product Actual, a personal finance manager, works and this code is almost 100% copy and pasted from it.
+    - By forking a separate Node.js process using `child_process.fork`, the application ensures that heavy tasks do not block the Main process's event loop, which would otherwise freeze the application's window frame and native menus.
+    - [How to run Express inside an Electron app](https://gist.github.com/maximilian-lindsey/a446a7ee87838a62099d)
+
+- https://github.com/engPabloMartinez/react-express-electron-boilerplate /202008/ts/inactive
+  - A boilerplate to generate an Electron app with a React Front end and an Express BackEnd embedded.
+
+- https://github.com/rohitsoni007/electron-shadcn /MIT/202511/ts
+  - modern Electron application template built with React, TypeScript, Vite, and shadcn/ui components
+  - Rolldown Vite 7.1.20 
+  - TanStack Router 1.134
+
+- https://github.com/Molizanee/electron-react-tailwind /MIT/202510/ts
+  - Boilerplate to build Electron.js apps with Bun.js with React.js and modern web tools
+  - bun run start:web
+  - bun run start:desktop
+
+- https://github.com/saltyshiomix/nextron /MIT/202508/ts/inactive
+  - 提供了很多示例
+- https://github.com/MaximePremont/boilerplate-nextron-shadcn /MIT/202411/ts/inactive
+  - a Nextron ( Next. Js + Electron ) project template in TypeScript with a Next. Js 14 App Router that includes TailwindCSS and the Shadcn/ui component library.
+  - This project is also configured so that the application can be built for both web and desktop versions with the same code.
+
+- https://github.com/DarkGuy10/NextJS-Electron-Boilerplate /MIT/202405/ts/inactive
+  - boilerplate for building cross-platform apps with Electron at the core and NextJS serving as the frontend. 
+  - why not just use Nextron? And the only valid answer is: flexibiliy.
+
+- https://github.com/ASteinheiser/ts-online-game-template /MIT/202601/ts
+  - https://ts-game.online/
+  - A highly opinionated template for creating real-time, online games using TypeScript
+  - Quickly create mmo-style games using React + Phaser for rendering, Colyseus for websockets and Electron for native builds! Also has support for Progressive Web Apps (PWA). Oh, and lots and lots of Vite for builds and testing
 # examples-starter
 - https://github.com/alex8088/electron-vite /3.9kStar/MIT/202502/ts
   - https://electron-vite.org/
@@ -347,6 +390,13 @@ modified: 2024-01-31T19:13:11.286Z
     - Project flat is the Web, Windows and macOS client of Agora Flat open source classroom.
   - https://github.com/netless-io/flat-server
     - Node.js server for the Agora Flat open source classroom.
+
+- https://github.com/mattermost/desktop /2.2kStar/apache2/202601/ts
+  - native desktop application that's built on Electron; it runs on Windows, Mac, and Linux.
+  - Originally created as "electron-mattermost" by Yuya Ochiai.
+  - Server dropdown for access to multiple servers
+  - Deep Linking to open Mattermost links directly in the app
+  - Runs in background to reduce number of open windows
 
 - https://github.com/d2-projects/folder-explorer /MIT/202011/js/vue/inactive
   - 扫描目录，分析文件结构和统计信息，给任意文件添加备注，导出带注释的树形文本和其它多种数据格式，大大方便书写技术文档。
@@ -527,6 +577,14 @@ modified: 2024-01-31T19:13:11.286Z
     - Users who want to build and use their own website wrappers should strongly prefer these options as they are protected from security vulnerabilities by the browser's self updating mechanism.
     - Otherwise, if the use case is to build a bespoke app wrapping a website for distribution, consider using Electron directly which offers much more flexibility.
 
+- https://github.com/flaviodelgrosso/reactronite /MIT/202510/ts
+  - modern, feature-rich Electron kit for building cross-platform desktop applications with React and Vite
+  - Clean, scalable project structure with separation of concerns
+  - Hot Module Replacement (HMR) with Vite for instant feedback
+  - Custom Titlebar - Native-looking titlebar with integrated window controls
+  - Secure IPC Communication - Safe main-renderer process communication
+  - Window State Management - Remembers window size, position, and state
+
 - https://github.com/alex8088/electron-toolkit /MIT/202502/ts
   - Toolkit for Electron
 
@@ -591,6 +649,12 @@ modified: 2024-01-31T19:13:11.286Z
   - The electron-findbar is a BrowserWindow component designed to emulate the Chrome findbar layout, leveraging the webContents.findInPage method to navigate through matches. 
   - Inter-process communication (IPC) is used for interaction between the main and renderer processes.
   - To optimize memory usage, the Findbar window is created only when the findbar is open. The implementation is lightweight, including only essential code.
+
+## utils-file
+
+- https://github.com/sindresorhus/electron-serve /476Star/MIT/202509/js/inactive
+  - Static file serving for Electron apps
+  - It serves files if they exist, and falls back to `index.html` if not, which means you can use router modules like react-router, vue-router, etc.
 
 ## utils-messaging
 

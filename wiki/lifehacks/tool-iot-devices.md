@@ -198,9 +198,32 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## [Does it make sense to have a lot of RAM (96 or even 128GB) if VRAM is limited to only 8GB? : r/LocalLLM](https://www.reddit.com/r/LocalLLM/comments/1q7e34g/does_it_make_sense_to_have_a_lot_of_ram_96_or/)
 
-- ## 
+- Since you can't upgrade VRAM, that bulk RAM is decent alternative.
+
+- The limitation is speed.
+  - Typical DDR5 RAM bandwidth is around 80 GB/s. With 128 GB of system RAM, you could run an 80B model (quantized to Q8) at roughly 1 token/s. (you can very roughly calculate t/s by dividing memory bandwidth/model size, in this case 80GB/s / 80B@Q8 = 1)
+  - Typical VRAM bandwidth varies widely, from about 200 GB/s to 2000 GB/s on high-end gaming GPUs. If you somehow had 128 GB of VRAM, you could run an 80B Q8 model at roughly 2.5 tokens/s on the low GPU end and up to 25 tokens/s on the high end GPU.
+  - While MOE may be 100B-parameter models overall, they do not use the entire model for every token, only a subset, for example ~5B parameters. Because of this, even with a 100B MoE model running from system RAM, you could still achieve something like 20 tokens/s.
+
+- I have M3 Ultra with 256GB and the entire model of 120b gpt-oss is in UMA RAM. It generates around 70 tokens per second.
+
+- The model will overflow into RAM, so it will run, but very slowly, dependent on your RAM bandwidth. Most people have only dual channel RAM setups so it'll be very slow, even on DDR5.
+
+- ## [Minisforum BD395i MAX motherboard at CES 2026: built-in AMD Strix Halo APU, use your own GPU : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1q8x9yp/minisforum_bd395i_max_motherboard_at_ces_2026/)
+- The new board's PCI slot is not PCIe 5.0 x16, it is PCIe 4.0 x4. The Minisforum product brochure for the new board is very clear. The reporting was sloppy.
+  - yeah afaik the strix halo chip itself is using all its big pcie lanes for its integrated gpu, leaving very few lanes available for external stuff.
+- Panther lake with 20 pcie lanes and lpddr5x will make obsolete
+
+- [Minisforum shows desktop Mini-ITX board with Ryzen AI Max+ 395 “Strix Halo” and 128GB LPDDR5X memory - VideoCardz.com : r/sffpc](https://www.reddit.com/r/sffpc/comments/1q8k3ng/minisforum_shows_desktop_miniitx_board_with_ryzen/)
+- Look at framework desktop benchmarks. Your games will never take advantage of those 128GB of RAM. You could maybe expect to use something like 20GB on big games...
+
+- This is good to have another alternative to Framework. And with a full x16 slot this time.
+  - physical slot but it will only be x8 capable as the chip only has 16 total PCIe 4 lanes.
+- Oh, then that's not made clear by the article saying "full PCIe 5.0x16 interface". Still that's better than the x4 slot on the Framework.
+  - Won’t be PCIe 5.0 either, Strix Halo is PCIe 4.0.
+  - Unless we see a definitive statement from Minisforum that the slot will be x8 or x16, I’d expect the slot to be x4 electrically like all the other boards. The issue is there just aren’t a lot of spare PCI lanes, and to get to x8 requires some really tough cuts elsewhere such as an M.2 slot or the Wi-Fi/BT/some of the USB.
 
 - ## [What do we think about Gorgon Point (Ryzen AI 9 HX 470)? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1q4jc99/what_do_we_think_about_gorgon_point_ryzen_ai_9_hx/)
   - The new APU is promised to support DDR5-6400 (102.4 GB/s) and LPDDR5X-8533 (136.5 GB/s) which should move some models that were barely usable on Strix Point to the usable territory.

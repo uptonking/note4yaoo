@@ -36,6 +36,7 @@ modified: 2023-06-07T14:19:18.719Z
   - Custom db with orders connected to Stripe
 # plugins/packages-marketplace
 - 可参考
+  - realworld示例的list-article架构
   - 包管理器: npm, rust-crate, docker, flathub, appimage, greasy-scripts
   - 插件扩展: vscode-extensions-marketplace, opensumi, chrome-store, jetbrains, Ulauncher
   - marketplace: atlassian, mattermost, airtable, zoho, directus

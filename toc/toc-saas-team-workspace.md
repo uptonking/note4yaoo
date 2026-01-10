@@ -691,6 +691,13 @@ modified: 2023-02-07T17:38:05.336Z
   - Virtual backgrounds
   - We provide Debian packages and a comprehensive Docker setup to make deployments as simple as possible.
   - 8x8 Jitsi as a Service (JaaS) is an enterprise-ready video meeting platform that allows developers, organizations and businesses to easily build and deploy video solutions.
+  - https://github.com/jitsi/jitsi-meet-electron /apache2/202601/js
+    - Desktop application for Jitsi Meet built with Electron.
+    - End-to-End Encryption support (BETA)
+    - Works with any Jitsi Meet deployment
+    - Built-in auto-updates
+    - Screen sharing
+    - Remote control (currently disabled due to security issues)
 
 - https://github.com/rustdesk/rustdesk /AGPLv3/202401/rust/dart
   - https://rustdesk.com/

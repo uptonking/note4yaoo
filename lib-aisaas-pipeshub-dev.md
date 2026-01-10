@@ -89,6 +89,12 @@ modified: 2025-11-16T15:34:02.881Z
 
 - 删除文档时，未实现回收站
 
+- 统一不同数据源的搜索/AGI体验
+  - pdf
+  - wikipedia-zim
+  - mdn-docs-offline
+  - dictionary
+
 - 
 - 
 - 

@@ -14,6 +14,7 @@ modified: 2021-05-13T03:08:52.583Z
   - 相对于qt/zed等原生框架实现ui，electron基于html/dom实现，可以方便集成类似rrweb进行操作回放
   - 基于electron可将数据保存在本地文件系统，比web浏览器支持更大的缓存
   - 成熟工具如vscode提供了多平台如 web/win/linux/mac 的架构参考
+  - 支持extension及扩展市场，很多第三方ide如theia/opensumi都支持vsc扩展
 
 - cons
   - 基于ipc的通信增加了web端开发的复杂度，但能支持client-server/local/idb多种架构
@@ -34,12 +35,16 @@ modified: 2021-05-13T03:08:52.583Z
 - web+pc: vscode, jupyter, (rstudio)
   - git clients
   - postman, hoppscotch
+  - notes: colanode
   - bitwarden-passwords-clients
   - otel
   - ocr
   - package-manager, downloader
   - services: nginx, redis, pg/mysql/sqlite, sync, monitoring
   - cases: wallpaper
+
+- cli-wrapper
+  - claude-code-ui
 
 - tips
   - 🏘️ 可参考各大 coding-agent-cli 的实现, 有第三方开发者在cli上实现web/electron/tauri
@@ -66,10 +71,15 @@ modified: 2021-05-13T03:08:52.583Z
   - drawio
   - devtools: lint/format-cli
   - cli: ImageMagick, ocr, pandoc(GPL/haskell)
+  - saas: filebrowser
 - llm-ui/client
   - 可参考 ollama/lmstudio/janai 封装 llama.cpp 的逻辑
   - 封装db操作工具, 针对sqlite/turso
   - huggingface-cli
+
+- compatibility
+  - vscode-extension
+  - obsidian-plugins
 
 - integrations
   - vercel-aisdk

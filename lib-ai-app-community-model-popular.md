@@ -1992,9 +1992,19 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [天塌了, 今日Oaifree正式宣布跑路 _202411](https://linux.do/t/topic/272321)
+  - 不论是打开new.oaifree.com，shared.oaifree.com还是Cloudflare Workers反代都会跳转到there is no wall
 
-- ## 
+- OAIPRO是始皇对官方API的中转，绝对保真，其他的估计都会或多或少的掺假
+
+- ## [cliproxyapi反代出来的接入到cherrystudio还能调用bananapro 出4k图吗？ _202601](https://linux.do/t/topic/1426093)
+- 可以出图的，CLIProxyAPI里面配置就不需要配置cherry studio了，图是4K的
+
+- 自定义参数设置成这样试试imageConfig json {“aspectRatio”: “比例: 比例”, “imageSize”: “4K”}
+
+- gemini返回不止一个，cherry只选取第一个，就是最低分辨率那个，所以你无论怎么设置都不行。你需要用Antigravity-Manager那个带后缀名的就可以直接出4k
+
+- https://github.com/bohesocool/gemini-chat
 
 - ## [claude-relay-service 和 new-api 哪个更适合个人用户聚合中转站？ ](https://linux.do/t/topic/1415646)
   - 个人购买了几家中转站的服务，也使用了社区的一些大佬的公益站，之前一直使用CRS做聚合，但是好像很多佬友推荐用 new-api 做聚合，有佬友做过对比么，这两者哪个更适合呢？

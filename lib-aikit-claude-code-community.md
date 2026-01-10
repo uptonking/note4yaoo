@@ -38,7 +38,21 @@ modified: 2025-12-18T12:26:08.445Z
 
 - ## 
 
-- ## 
+- ## 💡 [今天偶然发现，Claude Code 是可以同时使用多个中转站的 ](https://linux.do/t/topic/1421764)
+  - 核心思路是： 每次启动 Claude Code 时，会固定读取当前的中转站配置。
+  - 使用 cc-switch 选择 中转站 A， 打开一个 Claude Code 实例（不要关闭）， 再次使用 cc-switch 切换到 中转站 B， 再打开一个新的 Claude Code 实例
+  - 两个实例互不影响，可以同时使用
+- 新版本不是这样了，如果打开a没关闭，然后cc切换api2，那打开的a也是用api2了
+  - 是的，现在切换了之后即使不用重启都会到切换之后的中转地址了～
+
+- claude code 本身也支持。 例如使用 claude --settings settings.xxx.json 来使用不同配置启动 Claude code
+
+- 其实可以用 ANTHROPIC_BASE_URL=xxx ANTHROPIC_API_KEY=xxx claude 新版也可以用
+
+- 我不缺工具 我缺中转
+
+- 为什么不自己搭建一个负载均衡的中转
+  - 搭负载均衡中转会有缓存问题吧
 
 - ## 🤔 can i open multiple terminals and use multiple claude code to do different tasks at the same time? will the ai get confused? please check if it's possible . if it's possible to do it, what should i take care?
 - Separate sessions = separate context. If each terminal/process uses its own conversation/session ID (or sends its own system prompt), the model won’t mix tasks.

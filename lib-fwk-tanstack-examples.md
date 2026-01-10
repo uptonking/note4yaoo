@@ -68,6 +68,11 @@ modified: 2025-12-16T06:25:12.641Z
   - https://github.com/nbost130/mithrandir-admin /MIT/ts/无start/需api
   - https://github.com/Hank95/f1-data-viz
 
+- https://github.com/rohitsoni007/electron-shadcn /MIT/202511/ts
+  - modern Electron application template built with React, TypeScript, Vite, and shadcn/ui components
+  - Rolldown Vite 7.1.20 
+  - TanStack Router 1.134
+
 - https://github.com/osadavc/tanchat /93Star/apache2/202512/ts
   - Chat SDK is a free, open-source template built with TanStack Start and the AI SDK that helps you quickly build powerful chatbot applications.
   - a fork of `vercel/ai-chatbot`, adapted for the TanStack ecosystem.
@@ -116,6 +121,7 @@ modified: 2025-12-16T06:25:12.641Z
   - https://square.lndev.me/
   - Collection of beautifully crafted open-source layouts UI built with shadcn/ui
   - [Files ](https://square-ui-files.vercel.app/)
+  - [Bookmarks ](https://square-ui-bookmarks.vercel.app/)
   - [Dashboard ](https://square-ui-dashboard-4.vercel.app/)
   - 看板[Tasks](https://square-ui-tasks.vercel.app/)
   - [Task Management](https://square-ui-task-management.vercel.app/)

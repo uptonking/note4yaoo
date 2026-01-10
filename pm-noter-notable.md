@@ -149,6 +149,9 @@ modified: 2023-11-28T14:48:45.910Z
   - avoid ai ads
   - reuse models in chat/rag/image
 # business-apps
+- business-cases
+  - comfyui, librechat
+  - 沉浸式翻译
 - 成功的产品，大多可以不断更新换代
   - 如大模型、支持最新大模型的comfyui, 并且大模型种类多更新多
   - ai coding产品如cline, 每次新模型的发布的限免时段, 都会很快更新最新模型并免费使用, 还可以搜集使用评价与反馈

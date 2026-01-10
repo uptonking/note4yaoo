@@ -330,6 +330,14 @@ modified: 2021-01-04T17:26:25.032Z
   - https://readpo.com/poster
   - This React component is used to render Markdown into a beautiful poster image, with support for copying as an image
   - The project also includes a built-in web editor that can be used as an online Markdown-to-poster editor with a simple one-click deployment.
+# utils
+- https://github.com/dahlia/hongdown /GPL/202601/rust
+  - A Markdown formatter that enforces Hong Minhee's Markdown style conventions
+  - implemented in Rust using the Comrak library for parsing
+  - [Hong Minhee's Markdown style convention](https://github.com/dahlia/hongdown/blob/main/STYLE.md)
+    - Reference-style for external URLs: 类似footnote
+    - Use Setext-style (underlined) headings for document titles (H1) and major sections (H2)
+    - Use ATX-style (###, ####, etc.) for subsections within a section
 # more-md
 - https://github.com/mgmeyers/obsidian-kanban /GPLv3/202309/ts
   - https://publish.obsidian.md/kanban/

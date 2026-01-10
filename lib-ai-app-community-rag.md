@@ -305,6 +305,13 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
+- ## [The RAG Secret Nobody Talks About : r/LlamaIndex](https://www.reddit.com/r/LlamaIndex/comments/1q7c3mg/the_rag_secret_nobody_talks_about/)
+- How LlamaIndex solves this:
+  - Pluggable chunking strategies. 
+  - Retrieval evaluation built-in.
+  - Hybrid retrieval by default. 
+  - Query rewriting. Reformulates your question to be more retrievable
+
 - ## [Late Chunking vs Traditional Chunking: How Embedding Order Matters in RAG Pipelines? : r/Rag](https://www.reddit.com/r/Rag/comments/1q67z9q/late_chunking_vs_traditional_chunking_how/)
   - Traditional Approach: chunk documents -> embed each chunk separately -> store in Milvus, done. It worked...
 - New Approach - Flip the Pipeline: Embed the entire document first (using long-context models like Jina Embeddings v2 which supports 8K tokens)
@@ -657,8 +664,6 @@ modified: 2024-09-08T20:08:16.088Z
 
 - I use whatever models are on top 1-5 on the MTEB leaderboard and run my custom evaluation 
 # discuss-rag-tips/tricks
-- ## 
-
 - ## 
 
 - ## 

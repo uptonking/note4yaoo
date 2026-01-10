@@ -126,6 +126,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 消息持久化时，使用服务端id才方便消息保存与恢复、多人聊天一致性
     - 方便实现并发控制，特别是多任务
     - background-task
+    - 方便在后端处理，避免cors跨域问题
   - ai在前端或后端的架构都和workflow工作流紧密相关
   - 在不同流程或阶段采用不同LLM的方案可参考 docling
   - 🏘️ 架构参考: gemini-cli/qwen-cli(依赖fs) + ui/copilot-chat + framework/langfuse
@@ -382,7 +383,7 @@ modified: 2025-03-22T16:10:24.856Z
 
 - tips: 公益站不稳定(3个月就倒闭一批), 来源不明可能导致效果差, 需要经常确认和维护, 不要浪费过多时间
   - 🤔 一种思路: tool-call时使用擅长tool-call的模型，分析时使用公益站的聊天优质但无法tool-call的模型
-  - 🤔 与其花时间签到游戏，不如研究2api和反代
+  - 🤔 与其花时间签到游戏，不如研究2api和反代; 比较 公益站的配置折腾 / 反代的配置及更新
   - coding方案还可使用 ccr 转换 qwen-code-cli
   - 是否需要统一管理公益站，不同站点的安全盾绕过方式不同，模型名不同，api分组名不同，key的有效期不同
   - 有的api不能显示thinking内容
@@ -481,6 +482,7 @@ modified: 2025-03-22T16:10:24.856Z
     - [小呆API](https://new.184772.xyz/)
     - cc支持
     - [农场](https://game.daiju.live/)
+    - [小呆公益站 要不要claude模型这件事 ](https://linux.do/t/topic/1424755)
   - [KFC API](https://kfc-api.sxxe.net/console/personal), 签到
     - Claude和gpt 暂时不支持工具调用, gemini模型没有pro
     - API 调用频率限制为 12RPM，公益站永久免费，采用公平限流策略以保障服务稳定
@@ -509,7 +511,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [FovtAPI](https://api.voct.top/console)
     - 模型旧，模型少
     - [NewAPI签到系统](https://gift.voct.top/), ~~已失效~~
-  - [Hotaru API](https://api.hotaruapi.top/console/personal)，签到
+  - [Hotaru API](https://api.hotaruapi.top/console/personal)，签到, 不定期清理
     - codex
     - [〔Hotaru公益站〕新的公益站启动 ](https://linux.do/t/topic/1398297)
   - [Huan API](https://ai.huan666.de/console/personal), 签到, 生图模型
@@ -533,6 +535,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [香草API](https://ai.xiangcao.de/pricing)
   - [六哥公益站](https://api.crisxie.top/)
   - [APIKEY_公益站](https://welfare.apikey.cc/console)
+  - [XiaoYo](https://www.xiaoyo.cn/personal), 签到, deepseek多
   - [一个小站的 API 商店](https://one-api.ygxz.in/app/dashboard), 每日签到1刀内随机
     - 提供半公益的高质量 API 中转服务，始于202406
     - 无调用频率限制
@@ -663,6 +666,13 @@ modified: 2025-03-22T16:10:24.856Z
     - [H800 公益站回归！200tps 的 gpt-oss-120b 继续不限量免费用 ](https://linux.do/t/topic/1356689)
       - 模型部署在两张 H800 上面，人少的时候可以 200tps
       - 还加了一些 openrouter 的免费模型也几乎不限量
+  - [做点长期公益，nvidia nim 大部分开源模型 + OpenAI免费模型的gptload ](https://linux.do/t/topic/1427060)
+    - 搭建了一个gpt-load负载站：
+    - NVIDIA NIM
+    - OAI-Free: gpt-5-nano, GPT-4.1-mini
+    - https://independent-adrea-mtg-154afb72.koyeb.app/proxy/nvidia
+    - https://independent-adrea-mtg-154afb72.koyeb.app/proxy/openai
+    - GALAXYPUBLICAI1984282
 
 - paid-llm
   - [Free DuckCoding](https://free.duckcoding.com/console)
@@ -971,6 +981,11 @@ modified: 2025-03-22T16:10:24.856Z
     - 这是我 8 年前在微软亚洲研究院（MSRA）就做过的事情，适用于当时的神经网络，但真的不适合现在的大模型。因为基于 Transformer 的大模型需要很多内存用来存储 KV Cache。
     - Groq 芯片虽然输出速度非常快，但由于内存大小有限，batch size 就没法很大，要是算起 $/token 的性价比来，未必有竞争力。
 
+- [江城模境 模型广场](https://www.whaihub.cn/modelplaza/modelsquare/)
+  - free: 百度 ernie-tiny/lite/speed
+- [鲸智 模型广场](https://aihub.caict.ac.cn/modelplaza/modelsquare/)
+  - free: free: 百度 ernie-tiny/lite/speed
+
 ## llm-2api
 
 - tutorials
@@ -978,6 +993,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [手把手带你用上AI神器 - CLIProxyAPI（壹：项目介绍+Qwen实战） _202510](https://linux.do/t/topic/1011983)
   - [在 opencode 中使用CLIProxyAPI 的配置教程，享受模型自由 _202601](https://linux.do/t/topic/1407247)
   - [CLIProxyAPI 的反重力BananaPro 稳定输出 4k 图片 教程 _202601](https://linux.do/t/topic/1396957)
+  - [zeabur免费搭建CLIProxyAPI，CLI和Antigravity都能用 _202601](https://linux.do/t/topic/1381902)
 
 - [OpenCode - Zen](https://opencode.ai/docs/zen/)
   - Zen works like any other provider in OpenCode. You login to OpenCode Zen and get your API key.

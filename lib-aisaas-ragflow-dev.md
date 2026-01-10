@@ -20,6 +20,11 @@ modified: 2025-12-06T13:25:29.309Z
 - tips
   - ?
 # draft
+- datasources
+  - wikipedia-zim
+  - mdn-docs-offline
+  - dictionary
+
 - refactor
   - elasticsearch to vector-db+hybrid-search
 

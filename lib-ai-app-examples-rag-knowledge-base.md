@@ -1386,6 +1386,17 @@ modified: 2025-11-30T17:27:16.720Z
   - Hybrid retrieval using both vector and keyword search with fusion reranking.
   - Exposed as a model using standard OpenAI API endpoints (v1/models and v1/chat/completions). Optionally protected with local or remote bearer tokens. Supports streaming responses.
 
+- https://github.com/0nspaceshipearth/Hermit-AI /AGPL/202601/python
+  - a privacy-first, 100% offline ai chatbot that lets you chat with wikipedia or any other `.zim` archive.
+  - no cloud, no api keys, no tracking. everything stays on your machine.
+  - [Hermit-AI: Chat with 100GB+ of Wikipedia/Docs offline using a Multi-Joint RAG pipeline : r/LocalLLM _202601](https://www.reddit.com/r/LocalLLM/comments/1q8mdwt/hermitai_chat_with_100gb_of_wikipediadocs_offline/)
+    - I wanted to use Local AI along side my collection of ZIM files (Wikipedia, StackExchange, etc.) entirely offline. 
+    - So I built a "Multi-Joint" Reasoning Pipeline. Instead of just doing one big search and hoping for the best, Hermit breaks the process down
+    - Joint 1 (Extraction): It stops to ask "Who/What specifically is this user asking about?" before touching the database.
+    - Joint 2 (JIT Indexing): It builds a tiny, ephemeral search index just for that query on the fly. This keeps it fast and accurate without needing 64GB of RAM.
+    - Joint 3 (Verification): This is the cool part. It has a specific "Fact-Check" stage that reads the retrieved text and effectively says, "Wait, does this text actually support what the user is claiming?" If not, it corrects you.
+    - zim is optimized for read-heavy content you rarely change.
+
 - https://github.com/abgulati/LARS /622Star/AGPL/202410/python/inactive
   - LARS aims to be the ultimate open-source RAG-centric LLM application. Towards this end, LARS takes the concept of RAG much further by adding detailed citations to every response, supplying you with specific document names, page numbers, text-highlighting, and images relevant to your question
   - [Made a RAG-centric, Open-Source UI based on llama.cpp - With Advanced Source Citations & Referencing _202406](https://github.com/ggml-org/llama.cpp/discussions/7928)
@@ -1505,6 +1516,9 @@ modified: 2025-11-30T17:27:16.720Z
   - a JavaScript component that allows you to provide context from Wikipedia about words or phrases on any website. 
   - It lets you show a popup card with a short summary from Wikipedia when a reader hovers over a link: Read full article on Wikipedia 
   - Works with any link that has an article on Wikipedia
+
+- citation-examples
+  - [Bluebook Citation Generator - Instant Legal Citations & OCR](https://bluebookcitationgenerator.com/)
 # data-rag
 - https://github.com/statespace-tech/toolfront /801Star/MIT/202512/python
   - https://docs.toolfront.ai/

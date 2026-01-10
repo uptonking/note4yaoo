@@ -165,6 +165,11 @@ modified: 2024-03-31T17:45:16.789Z
     - 202511: check out this experimental build which uses SQLite for indexing. The benefit is reduced memory usage, but it is a bit slower and more io heavy. But seems like a decent compromise.
   - [Beta/v1.1.2 _20251129](https://github.com/gtsteffaniak/filebrowser/pull/1679)
   - [bbolt/boltdb alternative _202507](https://github.com/gtsteffaniak/filebrowser/issues/1026)
+  - [Feature Request – filebrowser-quantum-sync _202512](https://github.com/gtsteffaniak/filebrowser/issues/1767)
+    - https://github.com/cryinkfly/filebrowser-quantum-sync /apache2/go
+    - The filebrowser-quantum-sync tool is designed to work with FileBrowser Quantum 🔄. It reads the BoltDB database and automatically extracts usernames and hashed passwords, generating a users file compatible with htpasswd
+    - This is perfect for multi-container setups 🛠️ (e.g., FileBrowser Quantum + Radicale), ensuring centralized and consistent authentication without duplicating user management. Centralizes authentication across containers
+    - PS: Bolt DB will soon be deprecated and this will need refactoring
 
 - https://github.com/filebrowser/filebrowser /31.1kStar/apache2/202509/go/ts/vue
   - https://filebrowser.org/
@@ -186,12 +191,27 @@ modified: 2024-03-31T17:45:16.789Z
     - The Universal Filesystem Abstraction for Go
 
 - https://github.com/xiaobaidadada/filecat /77Star/apache2/202601/ts
-  - 一个基于 Web 的文件服务器、服务器管理工具。集成了文件管理、超大日志查看、远程终端访问、系统进程监控，以及包括 VPN、SSH、RDP、HTTP、TCP 等多种网络代理功能。支持windows、linux、mac。
+  - https://filecat.xiaobaidadada.fun/
+  - 一个基于 Web 的文件服务器、服务器管理工具。集成了文件管理、超大日志查看、远程终端访问、系统进程监控，以及包括 VPN、SSH、RDP、HTTP、TCP 等多种网络代理功能。
+  - 用于管理服务器上的文件，但是不是用于云盘访问(未来没有开发计划)，支持文件的各种编辑操作预览。
+  - 支持windows、linux、mac。
+    - 目前 不支持直接在 macOS 系统上运行。 由于部分子功能由 C 语言实现，尚未跨平台，无法确保在 macOS 上的构建与运行。 不过你仍然可以使用 Docker 容器方式在 macOS 上体验所有功能。
+    - 部分依赖为 C++ 原生模块，已预构建发布至 GitHub（支持 Node.js 16、18、20、22）
+  - [FileCat-Docs-技术介绍](https://filecat.xiaobaidadada.fun/#/zh-CN/%E6%8A%80%E6%9C%AF/%E6%8A%80%E6%9C%AF%E4%BB%8B%E7%BB%8D.md)
+    - 基于node.js ，使用TypeScript，http 功能使用 routing-controllers 与 express，长连接是websocket，
+    - 前端采用react框架，样式采用filebrowser的，前端样式基本是复制的filebrowser的。全局状态管理使用了 recoil
+    - 后端工作量有点小大的几个功能是，虚拟网络vpn，workflow自动化构建，虚拟终端 pty-shell ，大日志文件日志，这些功能都是本项目自己原创设计实现的，还有个rdp 原创桌面控制，是采用了其它项目的源码， 我给直接复制过来改了一下，node.js 的rdp代理好像目前只有MeshCentral实现了可以远程访问的。
+    - 传输编码做了两个版本的实现，proto和socket.io的socket.io-parser。
+    - 数据库使用多个json文件，连sqlite都没有使用，因为没有必要，本项目能产生数据的地方极少，json文件是足够的
+    - 前后端都使用 webpack打包。
   - 本项目是对filebrowser的功能增强，使用和filebrowser一样的ui，以服务器文件管理为基础添加一些服务器控制功能
   - 文件管理: 支持断点分块上传、多个根目录、代码\图片编辑、编辑器模式、白板绘图...
   - 终端：相比filebrowser使用了xterm.js，并且采用了虚拟shell完美实现命令的权限过滤，避免用户执行类似 rm -r / 的危险命令
   - CI/CD自动化构建：内置了一个模仿github workflow 语法实现的自动化构建功能，作用于以.act结尾的文件
   - ssh代理: 可以管理多个linux服务器，作用和winscp类似，让终端和文件管理更方便。除此之外还支持http代理，rdp远程桌面(windows)等代理
+  - https://github.com/Ylianst/MeshCentral /apache2/202601/js
+    - https://meshcentral.com/
+    - A complete web-based remote monitoring and management web site. Once setup you can install agents and perform remote desktop session to devices on the local network or over the Internet.
 
 - https://github.com/OpenListTeam/OpenList /15.5kStar/AGPL/202509/go
   - A new AList Fork to Anti Trust Crisis

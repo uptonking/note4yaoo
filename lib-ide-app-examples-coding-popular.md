@@ -316,6 +316,12 @@ modified: 2025-12-11T18:10:23.710Z
   - Parrlel runs support
   - Multi-process architecture with secure IPC (parralel claude code runs)
 
+- https://github.com/DevAgentForge/claude-code-webui /202601/ts
+  - https://x.com/austinit/status/2009824160680169511
+  - Claude Agent WebUI 才比较准确。因为它是基于Claude Agent SDK 构建的
+  - 使用 regex 搜索文件内容
+  - WebFetch - 获取和解析网页
+
 - https://github.com/shareAI-lab/Kode /2.2kStar/apache2/202509/ts
   - Like Claude Code, but Koding with DeepSeek V3.1, Kimi2, GLM4.5, Qwen Coder etc.
   - Kode proudly supports the `AGENTS.md` standard protocol initiated by OpenAI - a simple, open format for guiding programming agents that's used by 20k+ open source projects.

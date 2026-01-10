@@ -254,11 +254,11 @@ modified: 2023-11-17T10:12:06.357Z
   - GitDocumentDB is compatible with Git that brings us distributed multi-primary databases and efficient CI/CD.
   - The throughput of GitDocumentDB is about the same as Git. It is not as fast as typical databases. Storage size grows when managing many revisions of a document. These are a trade-off for Git features.
 # local-first-examples
-- https://github.com/actualbudget/actual /MIT/202312/ts/js
+- https://github.com/actualbudget/actual /24.2kStar/MIT/202601/ts/js
   - https://actualbudget.org/
   - A local-first personal finance app
   - it has a synchronization element so that all your changes can move between devices 
-  - https://github.com/actualbudget/actual-server /202312/js
+  - client + server + sync
 
 - https://github.com/kndwin/jikan
   - https://jikan-murex.vercel.app/
