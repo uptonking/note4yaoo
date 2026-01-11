@@ -1146,6 +1146,18 @@ modified: 2024-09-08T20:08:16.088Z
   - While querying use both vectors and rerank them.
 
 - For complex documents (with tables, charts, and images), RAGFlow works surprisingly well — it can intelligently recognize and preserve layouts like tables and embedded figures during parsing.
+# discuss-model-rag
+- ## 
+
+- ## 
+
+- ## [Nvidia releases ultralong-8b model with context lengths from 1, 2 or 4mil : r/LocalLLaMA _202504](https://www.reddit.com/r/LocalLLaMA/comments/1jzsp5r/nvidia_releases_ultralong8b_model_with_context/)
+  - 🐛 超长context，prompt processing速度慢
+- What I want to know is... How much VRAM does these kind of context windows take? Is it the same for large and small models? I think i remember reading context vram grows exponentially or quadratic, or have they found more efficient approaches?
+  - It's still quadratic. AFAICT the approach here is a YaRN-based rotary positional encoding to make a shorter RoPE-based context stretch further and still stay useful. Roughly. The transformer structure is the same. No free context, sorry. :) For completeness, it is not the same for small and large models, because the cost per token goes up the bigger the model.
+
+- This is how you sell more GPUs. Llama 4 at full context length takes 512 H200s networked. Entirely self serving by NVDA.
+- I usually don't have high hopes for models from NVIDIA. their previous research seems to be just show off what you can do with large amount of compute rather than contributing anything SOTA. ofc, to sell more compute.
 # discuss
 - ## 
 

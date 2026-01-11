@@ -229,3 +229,32 @@ and here
 
 - [Things Markdown got wrong](https://news.ycombinator.com/item?id=22776108)
 # ref
+
+# discuss-usage
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+# discuss-spec
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Blockquotes - whitespace after `>` - Spec - CommonMark Discussion _201810](https://talk.commonmark.org/t/blockquotes-whitespace-after/2956)
+  - In the spec it is mentioned that a blockquote doesn’t require a whitespace between the blockquote character `>` and the content of the blockquote
+  - Firstly, it makes a small inconsistency with Heading ATX that require a space
+  - Secondly, we come across a collision with textual smileys. For example, the smiley `>_<` are not parsed like a smiley but like a blockquote with the current commonMark spec.
+
+- I’m afraid there’s a lot of existing content out there that would be broken if we required a space (though aesthetically I’d be glad to do that).
+
+- You could potentially run an auto-fixer on existing CommonMark documents to enforce the rule.

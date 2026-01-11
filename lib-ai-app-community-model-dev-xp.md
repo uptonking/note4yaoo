@@ -10,9 +10,9 @@ modified: 2025-11-18T13:22:22.078Z
 # guide
 
 - models-variants
-  - watching: openai, claude, qwen, deepseek, gemini/gemma, glm, mistral/codestral
+  - watching: openai, claude, qwen, deepseek, gemini/gemma, mistral/codestral, glm, kimi, minimax
   - variants: mlx, unsloth, quants
-  - 测试模型时可能更希望速度快，但做任务或规划时更希望质量好，所以偏向选择大B参数的模型
+  - 测试模型时可能更希望速度快(小参数)，但做任务或规划时更希望质量好(大参数)，要取舍
   - 📱 端侧模型还要考虑电源及功耗问题, 实测macbook-air在跑模型时掉电很快
     - 端侧最好用 api-key + tiny-local-llm
 
@@ -157,6 +157,9 @@ modified: 2025-11-18T13:22:22.078Z
   - 💡 思路4: 使用codeblock传输图表相关数据，参考streamdown流式解析mermaid的方案
   - 思路5: data > sql > chart, 类似chat2db的方案
 
+- [mermaidchart/merged-mermaid-7b _202509](https://huggingface.co/mermaidchart/merged-mermaid-7b/tree/main)
+  - 无文档说明
+
 - [TroyDoesAI/BlackSheep-MermaidMistral-22B · Hugging Face](https://huggingface.co/TroyDoesAI/BlackSheep-MermaidMistral-22B)
   - /202409
   - merge: TroyDoesAI/Mermaid-22B, TroyDoesAI/BlackSheep-Mistral-22B
@@ -187,7 +190,7 @@ modified: 2025-11-18T13:22:22.078Z
 
 - https://huggingface.co/AIDC-AI/Ovis-Image-7B
   - https://github.com/AIDC-AI/Ovis-Image
-  - a 7B text-to-image model specifically optimized for high-quality text rendering 
+  - a 7B text-to-image model specifically optimized for high-quality text rendering
 
 ## ocr
 
@@ -196,9 +199,31 @@ modified: 2025-11-18T13:22:22.078Z
 
 ## translation
 
-- [nvidia/Riva-Translate-4B-Instruct · Hugging Face](https://huggingface.co/nvidia/Riva-Translate-4B-Instruct)
+- 通过 promptfoo 测试多个模型的翻译能力, 鼠标hover在表头列可以看到模型信息, prompt不变时只会增量请求新加的prompt
+  - hy-mt会采用更多意译，将中文的一句翻译为多句英文，所以翻译输出内容最长
+  - 对中文人名称呼、中文俗语翻译较准确的是hy-mt1.5, 婶婶/脂粉堆
+  - riva对 4% 的数字翻译为 4 percent, 而qwen3-4b/hy-mt能直接用原文的 4%
+    - riva对于偏文本的链接列表，范围后仍为1行，但qwen3/hy-mt能输出多行而友好
+    - 翻译输出内容最短
+    - 🤔 似乎相对于qwen3-4b没有任何优势
+
+- [tencent/HY-MT1.5-7B · Hugging Face _202512](https://huggingface.co/tencent/HY-MT1.5-7B)
+  - /freeTill100mMAU
+  - ZH<=>XX
+  - > 🔠 将以下文本翻译为{target_language}，注意只需要输出翻译后的结果，不要额外解释: {source_text}
+  - XX<=>XX Translation, excluding ZH<=>XX
+  - > 🔠 Translate the following segment into {target_language}, without additional explanation: 
+  - > 🔠 将以下<source></source>之间的文本翻译为中文，注意只需要输出翻译后的结果，不要额外解释，原文中的<sn></sn>标签表示标签内文本包含格式信息，需要在译文中相应的位置尽量保留该标签。输出格式为：<target>str</target>
+  - ⚖️ [Why such an absurdly restrictive license?](https://huggingface.co/tencent/HY-MT1.5-7B/discussions/3)
+  - https://github.com/Tencent-Hunyuan/HY-MT/blob/main/License.txt
+    - If, on the Tencent HY version release date, the monthly active users of all products or services made available by or for Licensee is greater than 100 million monthly active users in the preceding calendar month, You must request a license from Tencent
+
+- [nvidia/Riva-Translate-4B-Instruct · Hugging Face _202506](https://huggingface.co/nvidia/Riva-Translate-4B-Instruct)
+  - /free
   - mlx模型在lmstudio测试en2cn时，只会翻译第一段en英文文字
-  - [nvidia/Riva-Translate-4B-Instruct · Any-to-any](https://huggingface.co/nvidia/Riva-Translate-4B-Instruct/discussions/1)
+  - > 🔠 translating text from English to Simplified Chinese
+  - It is a fine-tuned version of a 4B Base model that was pruned and distilled from nvidia/Mistral-NeMo-12B-Base(202405) using our LLM compression technique.
+  - [Any-to-any](https://huggingface.co/nvidia/Riva-Translate-4B-Instruct/discussions/1)
   - The model currently supports the following combinations (non-English to non-English is not supported):
   - English to non-English
   - Non-English to English

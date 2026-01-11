@@ -198,6 +198,25 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Gigabyte Announces Support for 256GB of DDR5-7200 CQDIMMs at CES 2026 : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1q9xn78/gigabyte_announces_support_for_256gb_of_ddr57200/)
+- Dual channel is useless, with model that make use of 256gb the speed'd be unuseablely slow
+- This makes zero sense because Threadripper Pro exists.
+  - 256GB (2x128) CQDIMM 7200 will probably cost about $4000 (based on upcharge for rarity and speed from 4x64 6400 currently at ~$3200)
+  - But you can get 256GB (8x32) 6400 RDIMM for about $2100. Threadripper Pro has 8 channel memory so 8 channel @ 6400 is faster than dual channel @ 7200 for any task that you would actually need 256GB RAM for.
+  - Threadripper Pro 9955WX 16c: $1799 + Asus Pro WS WRX90E-SAGE SE motherboard $1249 + 8x32 6400 RDIMM $2100 = $5148
+  - Ryzen 9950X 16c $549 + Gigabyte Aorus Tachyon $600 + 2x128 7200 CQDIMM $4000 = $5149
+  - Not to mention that on the Threadripper Pro system you get 7 real x16 slots, dual 10GbE, etc
+
+- Two comments saying that its useless, but I don't think so.
+  - 256GB of 7200MT/s dual channel is very good. In fact it's faster than older Threadripper (quad-channel DDR4-3200) and on top of that this is initial support with initial modules, it will scale to higher transfers.
+  - In 2025 we saw that MoEs are becoming more sparse (Qwen Next 80B A3B, GPT-OSS 120B A5B, MiniMax 230B A10B). If this trend continues (It's very likely) and we get models like 200B A5B then this combined with just one GPU would be a killer combo for local LLMs.
+- Strix halo exists now with quad channel at 8000 Mt/s, and people call it slow for dense large models.
+  - I have a Strix Point LPdDR5X with dual channel 8000 Mt/s and it gets the job done but not really fast. 
+
 - ## [Does it make sense to have a lot of RAM (96 or even 128GB) if VRAM is limited to only 8GB? : r/LocalLLM](https://www.reddit.com/r/LocalLLM/comments/1q7e34g/does_it_make_sense_to_have_a_lot_of_ram_96_or/)
 
 - Since you can't upgrade VRAM, that bulk RAM is decent alternative.

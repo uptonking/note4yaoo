@@ -839,22 +839,22 @@ modified: 2022-06-03T21:34:54.893Z
   - 结构化数据提取工具，它可以以自然语言查询的方式从非结构化文档中提取结构化数据，并以表格或图表的形式展现
   - 文档数据的结构化入库，比如从合同里提取关键交易信息，然后结构化展示
 
-- https://github.com/Goldziher/kreuzberg /2.4kStar/MIT/202509/python>rust
+- https://github.com/kreuzberg-dev/kreuzberg /3.7kStar/MIT/202601/python>rust
+  - https://github.com/Goldziher/kreuzberg
   - https://kreuzberg.dev/
-  - Kreuzberg is a modern Python library for text extraction from documents, designed for simplicity and efficiency
-  - It provides a unified async interface for extracting text from a wide range of file formats including PDFs, images, office documents, and more.
-  - Local Processing: No external API calls or cloud dependencies required
-  - Modern Python: Built with async/await, type hints, and current best practices
-  - Kreuzberg was created to solve text extraction needs in RAG (Retrieval Augmented Generation) applications, but it's suitable for any text extraction use case. 
-  - Built on established open source foundations including Pandoc, PDFium, and Tesseract.
-  - OCR Integration: Tesseract OCR with markdown output (default) and table extraction from scanned documents. Tesseract is Google's OCR engine for text recognition
-  - PDFium: Google's PDF rendering engine for accurate PDF processing
-  - Python-docx/pptx: Native Microsoft Office format support
-  - Extensibility: Plugin architecture for custom extractors via the Extractor base class
-  - API Design: Synchronous and asynchronous APIs with consistent interfaces
-  - Type Safety: Complete type annotations throughout the codebase
-  - [Kreuzberg v4.0.0-rc.8 is available : r/LLMDevs _202512](https://www.reddit.com/r/LLMDevs/comments/1pn2d2z/kreuzberg_v400rc8_is_available/)
-    - completely rewritten in Rust - leveraging Rust's memory safety, zero-cost abstractions, and native performance.
+  - Extract text and metadata from a wide range of file formats (56+), generate embeddings and post-process at native speeds without needing a GPU.
+  - Extensible architecture – Plugin system for custom OCR backends, validators, post-processors, and document extractors
+  - OCR support – Tesseract (all languages via native binding), EasyOCR/PaddleOCR (Python), Guten (Node.js), extensible via plugin API
+  - Memory efficient – Streaming parsers for multi-GB files
+  - Embeddings Support (Optional): Kreuzberg requires ONNX Runtime version 1.22.x for embeddings. All other Kreuzberg features work without ONNX Runtime.
+  - 🎯 [Announcing Kreuzberg v4 (Open Source) : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1q9t9op/announcing_kreuzberg_v4_open_source/)
+    - Rust core: Significantly faster extraction and lower memory usage. No more Python GIL bottlenecks.
+    - Pandoc is gone: Native Rust parsers for all formats. 
+    - Plugin system: Register custom document extractors, swap OCR backends (Tesseract, EasyOCR, PaddleOCR), add post-processors for cleaning/normalization, and hook in validators for content verification.
+    - ML pipeline features: ONNX embeddings on CPU (requires ONNX Runtime 1.22.x), streaming parsers for large docs, batch processing, byte-accurate offsets for chunking.
+    - `LibreOffice` is optional and only used for a small subset of legacy/edge formats. For common formats like PDF, DOCX, HTML, email, etc., Kreuzberg uses native Rust parsers and doesn’t require LibreOffice. 
+    - Any Docling integration?
+      - Not directly- they overlap some but are separate projects. Kreuzberg is x50 times faster than docling on a CPU (not suprising, since docling is GPU orientated). Docling is better in terms of complex layout extraction. 
 
 ## web-etl
 

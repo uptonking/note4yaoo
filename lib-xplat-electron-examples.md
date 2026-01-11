@@ -267,10 +267,11 @@ modified: 2024-01-31T19:13:11.286Z
 - https://github.com/engPabloMartinez/react-express-electron-boilerplate /202008/ts/inactive
   - A boilerplate to generate an Electron app with a React Front end and an Express BackEnd embedded.
 
-- https://github.com/rohitsoni007/electron-shadcn /MIT/202511/ts
+- https://github.com/rohitsoni007/electron-shadcn /MIT/202511/ts/inactive
   - modern Electron application template built with React, TypeScript, Vite, and shadcn/ui components
   - Rolldown Vite 7.1.20 
-  - TanStack Router 1.134
+  - TanStack Router 1.134, 未使用tanstack-start
+  - 默认 uses createMemoryHistory()
 
 - https://github.com/Molizanee/electron-react-tailwind /MIT/202510/ts
   - Boilerplate to build Electron.js apps with Bun.js with React.js and modern web tools

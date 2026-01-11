@@ -389,6 +389,19 @@ modified: 2025-08-23T11:43:35.904Z
   - [ComfyUI集成指南.md](https://github.com/shellus/mj-studio/blob/master/docs/workflow/ComfyUI%E9%9B%86%E6%88%90%E6%8C%87%E5%8D%97.md)
     - 介绍如何将 MJ-Studio 作为 ComfyUI 自定义节点集成，让用户在 ComfyUI 工作流中使用 MJ-Studio 的 AI 绘图/视频能力。
 
+- https://github.com/WuMingDao/zenith-image-generator /MIT/202601/ts
+  - https://zenith-image-generator.pages.dev/
+  - 现代化 AI 文生图 Web 应用
+  - 支持多 AI 提供商的深色模式图片生成器， 批量生成，一键部署到 Cloudflare Pages
+  - 多 AI 提供商 - Gitee AI、HuggingFace Spaces、ModelScope
+  - 从图片生成视频 (Gitee AI)
+  - 多种宽高比 (1:1, 16:9, 9:16, 4:3 等)
+  - 4x 放大 - RealESRGAN 集成
+  - Token 轮询 - 多 API Key 自动切换，遇到限流自动换用下一个
+    - 遇到 429 (限流) 错误时，自动切换到下一个 Token
+    - 已耗尽的 Token 会被记录，当天不再使用
+  - Flow 模式 - 可视化批量生成画布 (实验性)
+
 - https://github.com/google-gemini/gemini-image-editing-nextjs-quickstart /484Star/apache2/202505/ts/inactive
   - https://ai.google.dev/gemini-api/docs/image-generation
   - Nextjs quickstart for to generating and editing images with Google Gemini 2.0 Flash

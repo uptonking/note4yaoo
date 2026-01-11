@@ -9,6 +9,7 @@ modified: 2025-12-31T15:43:19.960Z
 
 # guide
 
+- tanstack 大量库的类型都采用全局 declare module 的设计, 不方便实现多实例，包括table/router
 # router
 - resources
   - 🆚 [Comparison | TanStack Router/Start vs Next.js vs React Router/Remix](https://tanstack.com/router/latest/docs/framework/react/comparison)

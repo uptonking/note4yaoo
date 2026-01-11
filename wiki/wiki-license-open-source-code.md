@@ -690,6 +690,14 @@ modified: 2021-09-14T18:58:58.275Z
 - [Grafana, Loki, and Tempo will be relicensed to AGPLv3_202104](https://grafana.com/blog/2021/04/20/grafana-loki-tempo-relicensing-to-agplv3/)
   - Over the last few years, we’ve watched closely as almost every at-scale open source company that we admire (such as Elastic, Redis Labs, MongoDB, Timescale, Cockroach Labs, and many others) has evolved their license regime. 
   - In almost all of these cases, the result has been a move to a non-OSI-approved source-available license.
+# llm-lic
+
+## [NVIDIA Open Models License](https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/)
+
+- 🤔 i find a model on huggingface with [NVIDIA Open Models License] . can i use it for commercial product for free?
+- Yes — models released under NVIDIA’s NVIDIA Open Model License (NOML) are generally allowed for commercial use and distribution for free, but only if you follow the license terms and any additional notices that accompany the specific model.
+  - The model package may include separate components (tokenizers, code, data) under other licenses (e.g., Apache-2.0). You must comply with those third-party licenses as well
+  - You must follow NVIDIA’s Trustworthy AI requirements and may not bypass any built-in safety guardrails
 # licensing-cases
 - 🤔 可以通过ai临时编写调用AGPL代码的代码来绕过协议问题
 

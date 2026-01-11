@@ -68,10 +68,27 @@ modified: 2025-12-16T06:25:12.641Z
   - https://github.com/nbost130/mithrandir-admin /MIT/ts/无start/需api
   - https://github.com/Hank95/f1-data-viz
 
-- https://github.com/rohitsoni007/electron-shadcn /MIT/202511/ts
+- https://github.com/jwheeler0424/electron-tanstack-router /202512/ts/无start
+  - 示例基于router kitchen sink
+  - 打包构建使用electron-forge
+  - 代码清晰: `main/renderer/preload` 文件夹分开
+- https://github.com/rohitsoni007/electron-shadcn /MIT/202511/ts/inactive
   - modern Electron application template built with React, TypeScript, Vite, and shadcn/ui components
   - Rolldown Vite 7.1.20 
-  - TanStack Router 1.134
+  - TanStack Router 1.134, 未使用tanstack-start
+  - 默认 uses createMemoryHistory()
+  - `main/renderer/preload` 都是单文件.tsx
+  - To auto release on ci
+    - git tag v1.0.0
+      - git push origin v1.0.0
+    - git tag -a v1.0.0 -m "Release v1.0.0"
+      - git push origin main --tags
+
+- https://github.com/cheriot/electron-tanstack-demo /MIT/202601/ts
+  - Electron wrapping a Tanstack Start app
+  - Demo of turning a Tanstack Start app into a desktop app. 
+  - web-ui/ still runs as a web app for maximum optionality.
+  - 示例丰富，包括drizzle/orpc
 
 - https://github.com/osadavc/tanchat /93Star/apache2/202512/ts
   - Chat SDK is a free, open-source template built with TanStack Start and the AI SDK that helps you quickly build powerful chatbot applications.
@@ -230,15 +247,6 @@ modified: 2025-12-16T06:25:12.641Z
   - https://github.com/borngreat-ikwutah/tanstack-tauri-template
     - Desktop Applications with Tanstack Router, Tauri, TailwindCSS, Vite And Rust
 
-- https://github.com/cheriot/electron-tanstack-demo /MIT/202601/ts
-  - Electron wrapping a Tanstack Start app
-  - Demo of turning a Tanstack Start app into a desktop app. 
-  - web-ui/ still runs as a web app for maximum optionality.
-  - 示例丰富，包括drizzle/orpc
-
-- https://github.com/jwheeler0424/electron-tanstack-router /202512/ts/无start
-  - 示例基于router kitchen sink
-  - 打包构建使用electron-forge
 - https://github.com/ezoltech/electronjs-vitets-shadcn-tanstack-starter /ts/无start/依赖少
   - combining the power of Electron with the speed of Vite and the elegance of React.
 - https://github.com/CarlosZiegler/electron-tanstack /202503/ts/inactive

@@ -288,6 +288,36 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-to
   - ?
 
+## 0111
+
+- to use openai compatible api like http://localhost:1234/v1/chat/completions, how can i pass prompt text to this api? give me the api data structure and some api usage examples
+  - the chat completions endpoint expects an array of message objects, not a plain string.
+  - `"messages": [{ "role": "user", "content": "Your single prompt here" }]`
+
+- [error TS6133: 'functions' is declared but its value is never read - Stack Overflow](https://stackoverflow.com/questions/57815268/src-index-ts11-error-ts6133-functions-is-declared-but-its-value-is-never)
+
+```JSON
+{
+  "compilerOptions": {
+    "noUnusedLocals": false
+  }
+}
+```
+
+- 🤔 when i do some edits and run `git push`, i hope tags and commits are both pushed and the built win/macos/linux artifacts can be seen on github release page https://github.com/examples-hub/electron-tanstack-shadcn/releases. tell me how to do it manually with shell commands step by step
+
+```sh
+# After making edits and committing:
+git add .
+git commit -m "your message"
+git tag v1.0.3
+# pushes both the main branch commits AND the v1.0.3 tag in one command
+git push origin main v1.0.3
+
+```
+
+- When you push a tag, both build.yml and release.yml will trigger. They both build and release, which is redundant. You may want to disable one of them later, but for now both will create releases.
+
 ## 0110
 
 - 🤔 is there any electron examples that use client/server architecture so that it supports both windows/mac desktop app and webapp? i want to support both web ui and desktop app usage. if there's any open source repo, show the url and description
@@ -362,6 +392,7 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
   - check the exact OpenRAIL variant and its prohibited-use clauses. OpenRAIL licenses are explicitly designed to permit reuse, distribution and commercialization of models while adding responsibility / prohibited-use rules.
   - it’s a Modified OpenRAIL-M license, with explicit restrictions
   - Attachment A - USE RESTRICTIONS
+
     - Commercial and broader use licenses may be available from Licensor
     - for any purpose if You (your employer, or the entity you are affiliated with) generated/raised more than two million US Dollars
 

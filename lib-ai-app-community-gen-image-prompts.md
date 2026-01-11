@@ -126,6 +126,11 @@ modified: 2025-12-16T06:34:43.005Z
 
 - ## 
 
+- ## [7x Fantastic NotebookLM Infographics Styles Set : r/notebooklm _202601](https://www.reddit.com/r/notebooklm/comments/1q9e3kw/7x_fantastic_notebooklm_infographics_styles_set/)
+  - 7种风格的提示词
+
+- [5 Practical Infographic Design Styles for NotebookLM (vol. 2) : r/notebooklm](https://www.reddit.com/r/notebooklm/comments/1q9vs84/5_practical_infographic_design_styles_for/)
+
 - ## 把文章变成卡通信息图的提示词：
 - https://x.com/dotey/status/1993568167696777289
 

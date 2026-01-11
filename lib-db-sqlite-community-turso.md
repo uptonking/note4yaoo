@@ -267,7 +267,45 @@ target/debug/limbo database.db
 
 - ## 
 
-- ## 
+- ## Towards a Disaggregated Agent Filesystem on Object Storage
+- https://x.com/penberg/status/2010360708253274513
+  - The filesystem abstraction is an effective interface for AI agents, and AgentFS provides exactly that on top of a SQLite database file. But as agent workloads scale with more agents, longer-running tasks, and multi-agent  collaboration, we need to move beyond the single-file-on-local-disk  model. State needs to survive ephemeral compute, move between machines, and scale without requiring persistent volumes to be provisioned. 
+  - This  post explores how SQLite's WAL-based architecture, combined with Turso's S3-based diskless architecture, provides a path toward disaggregated agent filesystems on object storage.
+
+- Agents want a filesystem. The filesystem abstraction is an  effective interface for AI agents. The everything-is-a-file philosophy that Unix established over 50  years ago created an ecosystem of thousands of specialized CLI tools, all built around a common abstraction.
+- The problem is that real filesystems require real infrastructure.  Running agents with filesystem access means either spinning up  containers, managing VMs, or accepting the security risk of letting  agents run commands directly on your machine
+  - Furthermore, in  lightweight environments like serverless or browser-based agents, there  is no filesystem to access to begin with. And even when you do have a  filesystem, operating persistent volumes at scale to host them is just  hard.
+
+- Agents need to be snapshotted and resumed. Autonomous systems are  inherently unpredictable. 
+  - Traditional approaches fall short because they involve cobbling together  multiple tools: databases for state storage, logging systems for audit  trails, local filesystems for artifacts, and version control for  history. The inherent fragmentation creates complexity and leaves gaps  in observability. What you actually want is the ability to snapshot an  agent's complete state by copying a single file, then restore it later  to reproduce exact execution conditions or test what-if scenarios.
+  - you could pause an agent, inspect its state, then continue  from exactly where it left off. None of this works if the state is tied  to a specific instance or volume.
+- You need portability for debugging and collaboration as well. 
+  - You wish to diff two runs, or query exactly what happened with SQL.  Having a state that can travel as a single, portable unit, not one  scattered across filesystems, environment variables, and ephemeral  containers, is the key.
+
+- AgentFS is a filesystem abstraction designed for agents. Rather than relying on the host operating system's filesystem, AgentFS stores everything in a SQLite database: files, directories, metadata, key-value state, and an audit log of tool calls. 
+- The design provides three core interfaces. 
+  - The filesystem interface provides POSIX-like operations on files and directories—read, write, create, rename, and delete. Agents interact with it the same way they  would with any filesystem. 
+  - The key-value interface stores agent state  and context as JSON-serialized values, needed for session data, configuration, or intermediate computation results. 
+  - The toolcall interface records an append-only audit log of every tool invocation, capturing inputs, outputs, and timing for debugging and compliance.
+
+- Under the hood, the filesystem storage follows a classic inode/dentry  design. The dentry (directory entry) table maps names to locations in  the directory hierarchy, acting as a lookup cache. The inode table  stores actual file contents and metadata (size, permissions, and  timestamps). This separation mirrors how operating system kernels  organize filesystem data, but implemented entirely in SQLite tables.  Deletions in overlay scenarios use a whiteout mechanism: rather than  modifying a base layer, the overlay records deleted paths in a whiteout  table and filters them out on reads.
+- The key insight is that SQLite provides exactly the properties agents  need. A single file contains the complete agent runtime, which you can  copy to another machine, check into version control, or attach to a bug  report
+  - because everything is structured data, you can query agent behavior  with SQL—find all files modified in the last hour, trace the sequence of  tool calls that led to an error, or extract metrics for analysis.
+
+- For agents that need native tool compatibility, AgentFS provides FUSE  support on Linux (and NFS on macOS) that you mount the SQLite-backed  filesystem as a real POSIX filesystem, allowing you to run git, grep, ffmpeg, or any Unix tool directly without integration code.
+  - As shown in Figure 1, the agent invokes bash, which executes commands. The commands interact with the operating  system kernel via system calls. 
+  - Filesystem operations such as open and close are delegated to a userspace daemon that AgentFS provides to access the  filesystem metadata stored in a SQLite database file. 
+  - Reading from files is very cheap because the kernel page cache amortizes the cost of reading from the FUSE userspace daemon. 
+  - Writing to files is also done on the kernel page cache first, then written back asynchronously to the FUSE module.
+- For lightweight environments like serverless or browsers where you can't  mount a filesystem, the bash-tool integration provides a TypeScript reimplementation of common shell commands that operate directly on AgentFS.
+
+- The AgentFS design stores everything in a single SQLite database file on  the local disk. The approach works well for single-machine scenarios:  it provides atomicity, durability, queryability, and portability.  
+  - However, as agent workloads scale with more agents, longer-running  tasks, or multi-agent workloads, we need a disaggregated model in which  the agent filesystem resides on an object store.
+- A decoupled-metadata, object-backed distributed filesystem, such as JuiceFS or HopsFS, solves the problem by separating filesystem metadata and data, storing  them in a key-value or relational database and an object store, respectively. 
+  - However, building AgentFS on top of SQLite enables  disaggregation at a different level: the database itself. 
+  - SQLite uses a write-ahead log (WAL) that captures all mutations as a sequence of changes before they're checkpointed into the main database file. The database file represents the committed state; the WAL represents in-flight changes.
+  - With Turso's sync protocol, local changes are pushed to a remote as  logical mutations, while remote changes are pulled as physical pages.  The object store acts as the source of truth. This means you can  checkpoint the database file to object storage, stream WAL entries  through a coordination layer, and reconstruct agent state on any  machin
+- This hybrid approach gives you the best of both worlds. Reads and writes  occur at local-disk speed against an in-memory or locally cached  database. The WAL captures changes with minimal overhead. Background  sync handles durability and replication to object storage without  blocking the agent. And because the remote state is the source of truth, you get automatic conflict resolution when multiple agents modify the  same filesystem, just like you would get with something like Dropbox, for example.
 
 - ## AgentFS copy-on-write overlay in action
 - https://x.com/penberg/status/2007533204622770214

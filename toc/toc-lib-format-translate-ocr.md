@@ -44,6 +44,7 @@ modified: 2025-12-19T12:43:21.150Z
 
 - tips-translations
   - 翻译类型产品的形态需要根据场景进行设计，可双栏/上下紧邻/点击切换原文和译文
+  - mt llm comparison/playground
 
 - pdf/image/canvas-tools, 主流语言是js/python
   - sharp(apache2/js/cpp)-基于 libvips(LGPL/c), jimp(MIT/ts)

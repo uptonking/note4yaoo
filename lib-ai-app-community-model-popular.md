@@ -640,7 +640,19 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [What do you think about GLM-4.6V-Flash? : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1plgj0p/what_do_you_think_about_glm46vflash/)
+  - thinking model
+  - thinking时容易输出中文
+
+- Pretty good when it works, but unfortunately, it doesn't work for me very often. It falls into loops all the time, where it just keeps repeating a couple of paragraphs over and over indefinitely. Sometimes during "thinking" stage, sometimes when it generates the response.
+
+- it's unusable in practice because half of the time it gets stuck in thinking loops. Settings are as per unsloth recommendation, including repeat penalty. This is using MLX.
+
+- In practice, it’s not stronger enough that I’m going put the energy into figuring out the small issues/instability to swap out Qwen 3-VL 8B.
+  - I've been using it as a prompt engineering assistant for image/video work + also for captioning the results as "feedback" to an agent working on said images/videos.
+  - It's a solid captioner. I dropped it in place of Qwen 30B A3B and not a whole lot changed.
+
+- I use it to extract info from text I give it, and it handles those concepts better than other locals I have tried. The only issue I have is if the input is very large it does have a tendency to reply in Chinese.
 
 - ## [For anyone who wanna use R1T Chimera : r/openrouter _202601](https://www.reddit.com/r/openrouter/comments/1q3zguu/for_anyone_who_wanna_use_r1t_chimera/)
 - TNG R1T Chimera is the newer improved version that supports tool calling, what you're referring to is "DeepSeek R1T Chimera", that one is simply the Tokeniser of V3-0324 bolted onto R1, plus a few other fixes
@@ -2477,7 +2489,10 @@ free 5GB postgres via aiven.io
 
 - ## 
 
-- ## 
+- ## [Which is the best model under 15B : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1q9u07d/which_is_the_best_model_under_15b/)
+- You can get away with a agentic llm (multiple calls to different small models in chain) with the normal LLM Api. Which will make the output better.
+
+- I have a 32gb ram + 8gb vram, for me at least nothing beats those moe models like a30b if you set the regex to send the correct cores to gpu e and cpu, it runs the Q4 VL model at 12k context at 24 tokens per second in the koboldcpp benchmark that test for the context full (worst scenario), also managed to keep the VL part on the gpu, if I did not do that or used the non VL model I could ran it on even 20k context
 
 - ## [As 2025 wraps up, which local LLMs really mattered this year and what do you want to see in 2026? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1psd918/as_2025_wraps_up_which_local_llms_really_mattered/)
 - This is the year when open source VLMs came of age. There are good, small (and large) open VLMs that can handle a ton of tasks, and it will be fun to see how they are productized in 2026 and beyond.

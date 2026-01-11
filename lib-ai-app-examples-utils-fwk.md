@@ -790,6 +790,14 @@ modified: 2025-02-21T18:20:42.624Z
   - Stop the trial-and-error approach - start shipping secure, reliable AI apps.
   - Test your prompts and models with automated evaluations
   - Compare models side-by-side (OpenAI, Anthropic, Azure, Bedrock, Ollama, and more)
+  - thinking模型的`<think>`内容会算在`max_tokens`范围内，所以可能取不到内容
+  - 通过promptfoo测试多个模型的翻译能力, 鼠标hover在表头列可以看到模型信息, prompt不变时只会增量请求新加的prompt
+  - https://github.com/promptfoo/promptfoo/tree/main/examples/lm-studio
+    - This example demonstrates how to use Promptfoo with LM Studio for prompt evaluation. It showcases configuration for interacting with the LM Studio API using a locally hosted language model.
+  - The above examples create a table of outputs that can be manually reviewed. By setting up assertions, you can automatically grade outputs on a pass/fail basis.
+  - [Does promptfoo accept multimodal input _202407](https://github.com/promptfoo/promptfoo/issues/1164)
+    - Yes, it does, and we have several examples.
+    - Local Models via LM Studio can easily be adapted for image input too.
 # model-proxy
 - https://github.com/lymanzhao/Ollama-serve /202503/python
   - 一个 Ollama转发代理，用于为原生 Ollama 服务添加 API 密钥认证功能。

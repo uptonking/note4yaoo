@@ -13,8 +13,9 @@ modified: 2025-03-22T16:10:24.856Z
 - selling-points
   - ✈️ local models support: mlx, lmstudio-alternative
     - 允许用户分享文档/插画中的模型配置，运行日志
-    - 模型库: text模型, ocr模型,t2i生图模型, lmstudio在模型分类上做的不够好
+    - 模型库: text模型, ocr模型 ,t2i生图模型, lmstudio在模型分类上做的不够好
     - 参考janai/pipeshub, 既支持选择本地/api模型，也支持选择图片/文档
+    - ocr/vlm comparison-matrix/playground: 识别对比, 翻译对比
   - 🔗 citations for search: 外部数据源如字典mdx/书籍epub/wikipedia公开db/统计年鉴
     - 类似词典库/kiwix的预置模块, 可下载、可分享, 不必每次都全量索引
     - wikipedia zim 自动翻译为中文
@@ -434,6 +435,7 @@ modified: 2025-03-22T16:10:24.856Z
     - [福利站](https://wcdk.224442.xyz/)
     - 提供了free分组，包含deepseek-v3.2, gpt-4.1-mini
     - cc分组倍率0.6
+    - 活跃任务检测：窗口=600s，活跃任务槽位=8（阈值>5），疑似异常并发/自动化（辅助指标）
     - [[Wind Hub]新的公益API 主帖 ](https://linux.do/t/topic/1344450)
   - 📌 [b4u API](https://b4u.qzz.io/console), 每日转盘
     - 会不会增加其他模型: 不会，本站专注于Claude
