@@ -340,6 +340,17 @@ modified: 2023-02-08T07:20:48.475Z
     - The same Lemonade tool works across engines (llamacpp/ONNX/FLM), backends (vulkan/rocm/metal), and OSs (Windows/Ubuntu/macOS).
     - One of our most popular requests was for macOS support, so we shipped it last week
 
+- https://github.com/lgrammel/ai-sdk-llama-cpp /MIT/202601/ts
+  - A minimal llama.cpp provider for the Vercel AI SDK, implementing the LanguageModelV3 interface.
+  - macOS Only - This package currently only supports macOS with Apple Silicon or Intel processors.
+  - This package loads llama.cpp directly into Node.js memory via native C++ bindings, enabling local LLM inference without requiring an external server.
+  - Native Performance: Direct C++ bindings using node-addon-api (N-API)
+  - Streaming & Non-streaming: Full support for both generateText and streamText
+  - Structured Output: Generate JSON objects with schema validation using generateObject
+  - Chat Templates: Automatic or configurable chat template formatting (llama3, chatml, gemma, etc.)
+  - ESM Only: Modern ECMAScript modules, no CommonJS
+  - GGUF Support: Load any GGUF-format model
+
 ## llama-rewrite
 
 - https://github.com/projektjoe/gpt-oss /MIT/202511/python/cpp

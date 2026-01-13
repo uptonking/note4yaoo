@@ -323,4 +323,13 @@ modified: 2025-02-21T17:17:42.225Z
   - Unblink is a camera monitoring application that runs AI vision models on your camera streams in real-time
   - Object detection
   - Intelligent search across your video feeds.
+
+- https://github.com/chatfire-AI/huobao-drama /202601/go/ts/vue
+  - 基于 Go + Vue3 的全栈AI短剧自动化生产平台
+  - 基于AI的短剧自动化生产平台，实现从剧本生成、角色设计、分镜制作到视频合成的全流程自动化。
+  - 使用大语言模型自动生成剧本、角色设定和分镜脚本
+  - AI绘图生成角色形象和场景背景
+  - 基于文生视频模型自动生成分镜视频
+  - 支持批量生成和异步任务处理
+  - [【开源短剧】AI短剧创作工具 _202601](https://linux.do/t/topic/1431841)
 # more

@@ -969,6 +969,23 @@ modified: 2025-11-30T17:27:16.720Z
   - Plug-and-play adapters that map one embedding model’s vector space into another — locally or via API — enabling cross-model retrieval, routing, and interoperability.
   - a lightweight Python library and model collection that lets you map embeddings from one model’s space into another’s.
   - [I built a Python library that translates embeddings from MiniLM to OpenAI _202512](https://www.reddit.com/r/Rag/comments/1py8l8f/i_built_a_python_library_that_translates/)
+# extract
+- https://github.com/yyy-OPS/SciDataExtractor /202601/python/js
+  - 一款开源的科学图表数据提取工具，专为科研人员设计。基于 FastAPI 和 React 开发，它结合计算机视觉与 AI 技术，将静态图表图片精准转换为可编辑 Excel 数据
+  - 支持交互式坐标校准、HSV 颜色提取，并具备 AI 数据清洗与断点修复功能，能有效去除噪点并补全曲线，辅助高效科研分析。
+  - 结合了计算机视觉与 AI 技术，旨在将论文、报告中的2D科研数据图表通过精确的交互式操作转换为可编辑的 Excel 数据。
+  - 颜色分割提取: 基于 OpenCV 的 HSV 颜色空间分割算法，精准提取指定颜色的曲线数据点。
+  - 数据清洗: 利用 AI 视觉能力，自动识别并剔除提取数据中的网格线干扰、噪点和文字遮挡。
+  - 精确校准: 采用交互式手动校准（三点/四点法），确保像素坐标到物理坐标的转换精度，完全由用户掌控。
+  - 交互式操作: 现代化 React 前端，支持框选删除、手动加点、实时预览和撤回/重做。
+  - 前端 (Frontend): React 18, Vite, Konva, TailwindCSS
+  - 后端 (Backend): Python 3.11+, FastAPI, OpenCV, OpenAI API, Pandas
+  - [[开源]科研图表(曲线图)数据提取工具(导出excle数据) _202601](https://linux.do/t/topic/1435502)
+    - 主要功能就是：基于 OpenCV (HSV 颜色空间) 做分割，提取图片中该颜色的曲线数据，然后描点，最后输出excle。加了AI数据清洗/修复/平滑的功能，效果不理想，还不如使用手工绘制。
+    - 亮点可能就是支持手工绘制，如果实在不行，自己手动描一下，设置一下平滑度，出来的数据也堪堪能用。我测试下来，50的颜色容差一般可以把大体轮廓绘制出来了，再不济自己手动点几个点。
+    - 也可以在origin中复现，工具可以识别改颜色的RGB，在origin中直接设置一样的颜色
+  - 🤔 支持大佬，只能是曲线吗？其他类型的图表能识别吗
+    - 目前只做了2D曲线，后面考虑考虑做更多类型的数据图
 # chat-docs/knowledgebase
 - https://github.com/hyperbrowserai/hyperbooklm /MIT/202512/ts/仅云端模型
   - https://hyperbrowser.ai/

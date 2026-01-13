@@ -26,7 +26,6 @@ modified: 2025-09-16T19:59:57.856Z
   - [OpenRouter LLM Rankings](https://openrouter.ai/rankings)
   - [LiveBench](https://livebench.ai/)
   - [LMArena Leaderboard](https://lmarena.ai/leaderboard)
-  - [UGI Leaderboard](https://huggingface.co/spaces/DontPlanToEnd/UGI-Leaderboard)
   - https://huggingface.co/open-llm-leaderboard /archived
   - [Find a leaderboard](https://huggingface.co/spaces/OpenEvals/find-a-leaderboard)
   - [SuperCLUE中文大模型测评基准-AI评测榜单](https://www.superclueai.com/)

@@ -20,8 +20,29 @@ modified: 2023-04-20T08:05:25.098Z
   - 只要把 List 当中下标必须连续的限制条件去掉，Vector Trie 本身就变成了一种相对传统 Array 更好的容器
 # more
 
-# discuss
+# discuss-geometry-tree
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## R-trees are a powerful structure for indexing geometric data.
+- https://x.com/BenjDicken/status/2010344001707077825
+  - They’re used by MySQL, and Postgres uses an R-tree-like structure via GiST in PostGIS.
+  - They function similarly to B-trees: It’s a tree structure with multiple entries at each page-aligned node. This generally keeps the trees nice and shallow, and allows for efficient lookups for millions of elements stored on-disk. It also generally only stores data values at the leaves, like B+trees.
+  - The entries in an R-tree are bounding rectangles. The set of geometric shapes being stored are often more complex than rectangles, so at the leaves we store the minimum bounding rectangle (MBR) for each, with a reference to the full geometry stored on-disk elsewhere. The parent entry of a leaf MBR stores a bounding rectangle that fully bounds all children.
+  - Moving up the tree, the bounding rectangles get larger and larger, up to the root node storing a small number of large bounding boxes.
+  - A key difference from B-trees: searching for a single rectangle may require searching multiple tree paths! In the ideal case, B-trees offer O(log n) search performance, but due to possible overlaps the worst-case performance is actually O(n).
+  - R-trees can also be used for 3+ dimensions, generalizing the bounding-region technique.
+
+- Love R-trees, but they’re only fun until you run into overlap hell
+
+- You can also use space filling curves instead of r trees depending on the use case
+
+- R-trees don't get enough credit outside database circles. Page-aligned nodes keeping related geometries together is elegant. When you're doing spatial queries at scale, the difference between scanning everything vs navigating the tree is brutal. PostGIS relies on it.
+# discuss
 - ## 
 
 - ## 

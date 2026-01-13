@@ -120,6 +120,21 @@ modified: 2023-08-28T06:08:05.348Z
   - In VSCode, you don't need to write the imports first. When you actually want to use something from the package, just start typing, using code completion to select the thing you want to use, and it will add the import for you. 
   - `import ( _ encoding/json _ time )`; 
   - Goland does that too. Just decided to let it insert the imports as and when needed.
+# discuss-runtime-stdlib
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Today I learned that Go's standard library depends on the external packages golang․org/x/crypto and golang․org/x/net.
+- https://x.com/ohmypy/status/2010326776967582048
+- I think it's safe to treat `http://golang.org/x/*` packages as experimental stdlib
+  - I think it's a common misconception. x/* packages aren't experimental, they're production-ready. They just aren't covered by the compatibility guarantee.
+  - "x" stands for "extended", not "experimental".
+
 # discuss-gc
 - ## 
 

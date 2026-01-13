@@ -200,7 +200,12 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## 🆚 [Tested: AMD's Strix Halo vs Nvidia's DGX Spark : r/Amd _202512](https://www.reddit.com/r/Amd/comments/1pxs0dd/tested_amds_strix_halo_vs_nvidias_dgx_spark/)
+- Strix halo doesn’t support FP8 since it’s on rdna 3.5. That’s a tough sell. If these machines used rdna4 they’d be absolute monsters. It’s unfortunate that only the 9070 xt and 9060 xt use rdna4. All of these awesome APUs being released would do so much better with rdna4 imo. Hopefully rdna5/udna1 is implemented in all products when it’s released.
+
+- The Samsung Xclipse GPUs are based on RDNA, and they were used in the past in phones like Galaxy S24 (non-US/non-Qualcomm versions).
+
+- Don't worry, AMD will continue releasing old RDNA iGPUs until Intel miraculously survive Intel's mismanagement crisis.
 
 - ## [Gigabyte Announces Support for 256GB of DDR5-7200 CQDIMMs at CES 2026 : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1q9xn78/gigabyte_announces_support_for_256gb_of_ddr57200/)
 - Dual channel is useless, with model that make use of 256gb the speed'd be unuseablely slow
@@ -229,6 +234,16 @@ modified: 2022-01-16T15:52:31.293Z
 - I have M3 Ultra with 256GB and the entire model of 120b gpt-oss is in UMA RAM. It generates around 70 tokens per second.
 
 - The model will overflow into RAM, so it will run, but very slowly, dependent on your RAM bandwidth. Most people have only dual channel RAM setups so it'll be very slow, even on DDR5.
+
+- ## [[TweakTown] Minisforum BD395i MAX motherboard at CES 2026: built-in AMD Strix Halo APU, use your own GPU : r/hardware](https://www.reddit.com/r/hardware/comments/1q8jo44/tweaktown_minisforum_bd395i_max_motherboard_at/)
+- The dGPU can offload the compute intensive attention part of a large MoE LLM model while retaining most of the memory usage on the iGPU.
+
+- You could already do that with the Framework Desktop's ITX board
+
+- I already have the Strix Halo chip (Evo-X2) running a 5080 via OcuLink on the 2nd M.2 adapter. This gaming setup is 4K Heaven, and chews through MOE LLMs on the side.
+  - Honestly the onboard graphics 8060s is going to be more than fine for most people, I was playing 4K at 100+ fps (DLSS, FG, No RT) and it felt great. Then I tried Path-Tracing in Cyberpunk with the 5080 and couldn’t go back.
+
+- I’ve seen 395+ clusters but they were always limited by I/O.
 
 - ## [Minisforum BD395i MAX motherboard at CES 2026: built-in AMD Strix Halo APU, use your own GPU : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1q8x9yp/minisforum_bd395i_max_motherboard_at_ces_2026/)
 - The new board's PCI slot is not PCIe 5.0 x16, it is PCIe 4.0 x4. The Minisforum product brochure for the new board is very clear. The reporting was sloppy.
@@ -1915,7 +1930,34 @@ modified: 2022-01-16T15:52:31.293Z
 
 - ## 
 
-- ## 
+- ## 💡 [NVIDIA recently announced significant performance improvements for open-source models on Blackwell GPUs. : r/StableDiffusion _202601](https://www.reddit.com/r/StableDiffusion/comments/1qam2kr/nvidia_recently_announced_significant_performance/)
+- NVIDIA’s architecture codenames are deliberately drawn from historical figures associated with mathematics, physics, computing, or engineering. 
+- Pascal Named after Blaise Pascal (1623–1662), a French mathematician, physicist, and early computer pioneer. Key associations: • Probability theory • Fluid mechanics • One of the first mechanical calculators (the Pascaline)
+  - The name fit a generation focused on efficiency, numerical throughput, and a clean jump in performance-per-watt.
+- 20xx: Turing Named after Alan Turing (1912–1954), foundational figure of computer science. Key associations: • Formal computation (Turing machine) • Cryptography (Enigma) • The conceptual basis of programmable machines
+  - This generation introduced specialized hardware for new computational paradigms (RT cores, Tensor cores), which aligns very directly with Turing’s legacy: redefining what “computation” itself means.
+- 30xx: Ampere Named after André-Marie Ampère (1775–1836), physicist and founder of classical electromagnetism. Key associations: • Electrodynamics • Relationship between electricity and magnetism • The ampere as a unit of current
+  - Ampere was about raw current: massive parallelism, high power envelopes, and brute-force throughput, especially for data centers and AI workloads.
+- 40xx: Ada Lovelace Named after Ada Lovelace (1815–1852), often regarded as the first computer programmer.
+  - This generation emphasized software–hardware co-design, AI-assisted graphics (DLSS 3, frame generation), and abstraction layers where “rendering” is no longer purely geometric.
+- 50xx: Blackwell Named after David Harold Blackwell (1919–2010), mathematician and statistician. Key associations: • Information theory • Game theory • Bayesian statistics • Decision theory
+  - Blackwell architectures are framed around AI reasoning, inference efficiency, and statistical decision-making at scale, not just graphics. The name is far more “theoretical” than previous ones, and that is intentional.
+- So yes: these are real people, carefully chosen, and the progression mirrors NVIDIA’s shift from graphics hardware toward general-purpose statistical machines that happen to render images.
+
+- Yes, the nvfp4 model is definitely faster. It's about twice as fast as the fp8, but it's useless because it doesn't support LoRa.
+  - It totally supports lora. Tested with Flux .2 and Zimage
+
+- How is the quality of nvfp4 compared to fp8 or gguf?some people here saying nvfp4 quality is trash
+  - Yes, there is a difference in quality. Flux2 has a lot of difference, but Zimage doesn't have much difference.
+- LTX-2 nvfp4 is quite bad, quality-wise... Tested on a 5090 with torch2.9.1+cu130
+
+- This only for Blackwell 5080 and 5090 : To make this work (nvfp4) you need : * Update comfyui to the latest version
+
+- I have tested them most except Flux, the fact that NVFP4 for Z-image and Qwen don't put Character model lora into consideration, so no use. For LTX-2, It's just producing garbage. have not tested Flux yet but I'm sure the structure would be the same to ignore Character model lora. As for the speed, It's about the same. No improvement. RTX 5090 CUDA 13.0, Triton 2.9.1 Laptop.
+
+- You can use FP8 and NVFP4 on other arch, it will fallback to BF16 computation. It just that FP8 is faster on Ada and Blackwell while FP4 is faster only on Blackwell
+
+- Older GPUs (RTX 40/30-series): Use the INT4 setting; you will still see significant memory savings (3.6x) and speed improvements (up to 3x), though not the native FP4 benefit.
 
 - ## [Do any comparison between 4x 3090 and a single RTX 6000 Blackwell gpu exist? : r/LocalLLM _202512](https://www.reddit.com/r/LocalLLM/comments/1pu62uz/do_any_comparison_between_4x_3090_and_a_single/)
 - Just got here. 

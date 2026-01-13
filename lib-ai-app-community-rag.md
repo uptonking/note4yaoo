@@ -682,11 +682,6 @@ modified: 2024-09-08T20:08:16.088Z
   - When keyword search returns zero results (user searches "Microsoft laptop" but you only sell Apple/Dell), you need a fallback
   - https://github.com/pguso/rag-from-scratch /MIT/js
 
-- ## [What’s your go-to combo of LLM + embedding model for RAG? : r/Rag _202512](https://www.reddit.com/r/Rag/comments/1pba2lt/whats_your_goto_combo_of_llm_embedding_model_for/)
-- Qwen3 8B is the current SOTA for embeddings with a 32k context size, which gives you much more flexibility when chunking text.
-  - Gemini 2.5 Flash has very good performance and is really cheap.
-  - Once you factor in maintenance costs, potential GPU issues, downtime, etc., it’s almost always better to just use Google’s service — it saves you a ton of headaches and is always online.
-
 - ## 💡 [I built RAG for a rocket research company: 125K docs (1970s-present), vision models for rocket diagrams. Lessons from the technical challenges : r/LLMDevs _202509](https://www.reddit.com/r/LLMDevs/comments/1nr59iw/i_built_rag_for_a_rocket_research_company_125k/)
   - 125K documents from typewritten 1970s reports to modern digital standards
   - 40% weren't properly digitized - scanned PDFs that had been photocopied, faxed, and re-scanned over decades
@@ -1128,6 +1123,28 @@ modified: 2024-09-08T20:08:16.088Z
 
 - Great post but missing Qwen3-0.6B or Jina v3? How's zerank-2 vs bge-v2-gemma on self-host latency?
   - I only focused on what I could test deep, qwen3 lightweight is dope for multi tho. zerank-2 wins on instructions/calibration for me
+# discuss-extract
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Reliable document text extraction in Node.js 20 - how are people handling PDFs and DOCX in production? : r/node _202601](https://www.reddit.com/r/node/comments/1qaoknz/reliable_document_text_extraction_in_nodejs_20/)
+- You need to use libre office's command line tools to extract anything out of any office document format. You need to install libre office on server.
+  - We process thousands of documents in our team and this is the best advice in the thread, run a thin wrapper around libre office for your use case and forget about trying to directly interact with/parse docx.
+
+- I spin up an onlyoffice docker container, and then send the file there for conversion
+
+- As someone who works with PDF extraction, I've found that the most reliable tool for PDF text extraction is `pdftotext`, wich is a OS lib written in C++, part of popplers-utils.
+  - I use it in production for years now, it have an `--layout` flag that makes layout based parsing easy and predictable.
+  - You can install it in your OS (or in your docker image) and call it with `child_process`.
+
+- I really don't recommend node when working with pdf, they are slow even when the framework claim they access/use native c++(pain to install in certain server). We end up using c# with itextsharp, so the api just send rmq that consumed by that service.
+
+- I have spawned a worker thread to call Apache Tika
 # discuss-rag-elements
 - ## 
 
@@ -1146,10 +1163,53 @@ modified: 2024-09-08T20:08:16.088Z
   - While querying use both vectors and rerank them.
 
 - For complex documents (with tables, charts, and images), RAGFlow works surprisingly well — it can intelligently recognize and preserve layouts like tables and embedded figures during parsing.
-# discuss-model-rag
+# discuss-models-for-rag
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [I thousands of tests on 104 different GGUF's, >10k tokens each, to determine what quants work best on <32GB of VRAM : r/LocalLLM _202506](https://www.reddit.com/r/LocalLLM/comments/1liy7ku/i_thousands_of_tests_on_104_different_ggufs_10k/)
+  - The test is a 10, 000-token “needle in a haystack” style search where I purposely introduced a few nonsensical lines of dialog to HG Well’s “The Time Machine” . A small system prompt accompanies this instruction the model to local the nonsensical dialog and repeat it back to me.
+  - [I gave the same silly task to ~70 models that fit on 32GB of VRAM - thousands of times (resharing my post from /r/LocalLLM) : r/LocalLLaMA _202506](https://www.reddit.com/r/LocalLLaMA/comments/1ljpo64/i_gave_the_same_silly_task_to_70_models_that_fit/)
+
+- Nemotron UltraLong 8B actually works – it reliably outperforms Llama 3.1 8B (which was no slouch) at longer contexts
+
+- Generally LLama 3.1 8B still is a good model. Sadly little too dumb, but handlers context well.
+- In my experience (outside of this test, so this is even more-strictly going towards "just vibes") Nemotron Ultralong is cool that you can throw it massive (like, >64k contexts) and it can still extract meaning out of them where most models that size fall flat on their faces. If the context is nowhere near that, however, it's a worse-performing model than Llama 3.1 8b for me.
+  - Llama 3.1 8b is extremely interesting as it handles large contexts very well and seems to be the cutoff point for handling this correctly (Q5 failed over and over again, but Q6 succeeded)
+
+- The good thing about Nemotron UltraLong - it really does deliver its context performance. The bad thing - it is dumb and a bit wacky model, seem to treat the prompts very literally.
+
+- ## [I tested local models on 100+ real RAG tasks. Here are the best 1B model picks : r/Rag _202510](https://www.reddit.com/r/Rag/comments/1o60ib6/i_tested_local_models_on_100_real_rag_tasks_here/)
+  - A — Find facts + cite sources → Qwen3–1.7B-MLX-8bit
+  - B — Compare evidence across files → LMF2–1.2B-MLX
+  - C — Build timelines → LMF2–1.2B-MLX
+  - D — Summarize documents → Qwen3–1.7B-MLX-8bit & LMF2–1.2B-MLX
+  - E — Organize themed collections → stronger models needed
+
+- ## [We built 3B and 8B models that rival GPT-5 at HTML extraction while costing 40-80x less - fully open source : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o8m0ti/we_built_3b_and_8b_models_that_rival_gpt5_at_html/)
+  - Our goal was to make a small, fast model for taking HTML from website and extracting JSON that perfectly adheres to a schema.
+  - We distilled a frontier model down to 8B params and managed to keep basically all the output quality for this task. Schematron-8B scores 4.64 on LLM-as-a-judge evals vs GPT-4.1's 4.74 and Gemma 3B's 2.24. Schematron-3B scores 4.41 while being even faster.
+  - The main benefit of this model is that it costs 40-80x less than GPT-5 at comparable quality (slightly worse than GPT-5, as good as Gemini 2.5 Flash).
+  - We fine-tuned `Llama-3.1-8B` , expanded it to a 128K context window, quantized to FP8 without quality loss, and trained until it outputted strict JSON with 100% schema compliance.
+  - We also built a smaller 3B variant that's even cheaper and faster, but still maintains most of the accuracy of the 8B variant.
+- How does this compare to jinaai/ReaderLMv2 ? I've been using q4 for that for my usecases
+  - We haven't benchmarked against it (yet), but it's the most similar model that exists at the moment.
+
+- When you add Schematron + search for the QA benchmark, what do you put for the schema? Do you use one generic schema for all the questions, or generate a custom schema for each question - and if so, what model generates the schema?
+  - The schema is generated by the same model that generates the final answer based on the question (without the page as context). In all these cases it’s a GPT model.
+
+- There is no sensible reason one should use model to do this. Both HTML and JSON are structured and parsable.
+  - Cheaply being able to reliably gathering structured data from all kinds of different domains without building domain specific scrapers is an incredible feat for LLMs.
+
+- ## [What’s your go-to combo of LLM + embedding model for RAG? : r/Rag _202512](https://www.reddit.com/r/Rag/comments/1pba2lt/whats_your_goto_combo_of_llm_embedding_model_for/)
+- Qwen3 8B is the current SOTA for embeddings with a 32k context size, which gives you much more flexibility when chunking text.
+  - Gemini 2.5 Flash has very good performance and is really cheap.
+  - Once you factor in maintenance costs, potential GPU issues, downtime, etc., it’s almost always better to just use Google’s service — it saves you a ton of headaches and is always online.
 
 - ## [Nvidia releases ultralong-8b model with context lengths from 1, 2 or 4mil : r/LocalLLaMA _202504](https://www.reddit.com/r/LocalLLaMA/comments/1jzsp5r/nvidia_releases_ultralong8b_model_with_context/)
   - 🐛 超长context，prompt processing速度慢

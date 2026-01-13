@@ -782,7 +782,15 @@ modified: 2025-10-28T20:02:16.727Z
 
 - ## 
 
-- ## 
+- ## [cline, roo code, kilo code拓展三巨头，大家更喜欢用哪个？（哪个更好用） _202601](https://linux.do/t/topic/1429883)
+  - 小弟我刚买了glm的coding plan lite，codex和claude code的命令行真心用不习惯，查看代码改动很麻烦，还是图形化界面适合我。
+
+- B4U用在kilo code上效果是挺不错的
+
+- 推荐的话是KILO, 是Cline+roocode的综合体。工具还是得看提示词好用不，以及是否支持新理念的技术，比如skill之类的。
+  - roocode和kilo支持codebase量化。还是比较有优势的。
+
+- cc和codex都有vscode插件啊
 
 - ## [Codex CLI vs Claude Code vs Claude Code + Z.ai API — which one’s worth it? : r/ClaudeCode _202509](https://www.reddit.com/r/ClaudeCode/comments/1nepo9y/codex_cli_vs_claude_code_vs_claude_code_zai_api/)
 - I use CC to analyze and generate tasks, which I then use with GLM to complete. It works quite well and does a more than acceptable job.

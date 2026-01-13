@@ -92,6 +92,15 @@ modified: 2025-02-26T15:04:15.883Z
   - https://www.newsyeah.fun/voyager/
   - Visualize your FastAPI endpoints, and explore them interactively.
   - This repo is still in early stage, it supports pydantic v2 only
+
+- https://github.com/lwh8915/PromptX /202601/python/ts
+  - 采用 UI/UX Pro Max 设计标准，结合强大的 版本管理 和 智能分类，让你的 AI 工作流效率提升 10x。
+  - 个人提示词管理
+  - 公共模板库（NEW）
+  - 评价系统（NEW）
+  - 管理员功能（NEW）
+  - FastAPI / MongoDB (Motor) / JWT / SMTP
+  - TypeScript / Vite / Tailwind CSS / Zustand
 # django
 
 ## django-fwk

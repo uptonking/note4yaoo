@@ -784,7 +784,7 @@ modified: 2025-02-21T18:20:42.624Z
   - Another approach might be to extend the function that calculates the delay length by looking at the rate of increase/decrease of the queue size, as this would allow the algorithm to consider 'the future' in its decisions.
   - I experimented trying to put this on the back-end using ai in a Next.js app and a client-side React library on the UI. In order to do so, I had to transform to and from AsyncIterator and ReadableStream
 # eval/prompt
-- https://github.com/promptfoo/promptfoo /9.6kStar/MIT/202512/ts
+- https://github.com/promptfoo/promptfoo /9.6kStar/MIT/202601/ts/对比表/code-first
   - https://promptfoo.dev/
   - promptfoo is a developer-friendly local tool for testing LLM applications. 
   - Stop the trial-and-error approach - start shipping secure, reliable AI apps.
@@ -792,12 +792,61 @@ modified: 2025-02-21T18:20:42.624Z
   - Compare models side-by-side (OpenAI, Anthropic, Azure, Bedrock, Ollama, and more)
   - thinking模型的`<think>`内容会算在`max_tokens`范围内，所以可能取不到内容
   - 通过promptfoo测试多个模型的翻译能力, 鼠标hover在表头列可以看到模型信息, prompt不变时只会增量请求新加的prompt
+  - promptfoo eval --output mt2601-results.html --output mt2601-results.json
   - https://github.com/promptfoo/promptfoo/tree/main/examples/lm-studio
     - This example demonstrates how to use Promptfoo with LM Studio for prompt evaluation. It showcases configuration for interacting with the LM Studio API using a locally hosted language model.
   - The above examples create a table of outputs that can be manually reviewed. By setting up assertions, you can automatically grade outputs on a pass/fail basis.
   - [Does promptfoo accept multimodal input _202407](https://github.com/promptfoo/promptfoo/issues/1164)
     - Yes, it does, and we have several examples.
     - Local Models via LM Studio can easily be adapted for image input too.
+
+- https://github.com/dezoito/ollama-grid-search /896Star/MIT/202511/rust/ts
+  - [Grid Search on Large Language Models using Ollama and Rust  _202312](https://dezoito.github.io/2023/12/27/rust-ollama-grid-search.html)
+  - multi-platform desktop application to evaluate and compare LLM models, written in Rust and React.
+  - This project automates the process of selecting the best models, prompts, or inference parameters for a given use-case, allowing you to iterate over their combinations and to visually inspect the results.
+  - It assumes Ollama is installed and serving endpoints, either in localhost or in a remote server.
+  - Automatically fetches models from local or remote Ollama servers; 
+  - A/B test different prompts on several models simultaneously; 
+  - Allows limited concurrency or synchronous inference calls (to prevent spamming servers); 
+
+- https://github.com/Arize-ai/phoenix /8.2kStar/Elastic/202601/python/ts/对比表/lowcode
+  - https://arize.com/docs/phoenix#evaluation
+  - open-source AI observability platform designed for experimentation, evaluation, and troubleshooting
+
+- https://github.com/vibrantlabsai/ragas /12.2kStar/apache2/202601/python/code-first
+  - https://docs.ragas.io/
+  - toolkit for evaluating and optimizing Large Language Model (LLM) applications. 
+  - Test Data Generation: Automatically create comprehensive test datasets covering a wide range of scenarios.
+  - Seamless Integrations: Works flawlessly with popular LLM frameworks like LangChain and major observability tools.
+
+- https://github.com/confident-ai/deepeval /13kStar/apache2/202601/python/code-frist
+  - https://deepeval.com/
+  - open-source LLM evaluation framework, for evaluating and testing large-language model systems. 
+  - It is similar to `Pytest` but specialized for unit testing LLM outputs
+  - DeepEval incorporates the latest research to evaluate LLM outputs based on metrics such as G-Eval, task completion, answer relevancy, hallucination, etc., which uses LLM-as-a-judge and other NLP models that run locally on your machine for evaluation.
+
+- https://github.com/truera/trulens /3kStar/MIT/202601/python
+  - https://www.trulens.org/
+  - TruLens helps you objectively measure the quality and effectiveness of your agent using feedback functions.
+
+- https://github.com/Helicone/helicone /4.9kStar/apache2/202601/ts
+  - https://www.helicone.ai/
+  - Open source LLM observability platform. One line of code to monitor, evaluate, and experiment. YC W23
+  - Playground: Rapidly test and iterate on prompts, sessions and traces in our UI.
+  - Prompt Management: Version prompts using production data. Deploy prompts through the AI Gateway without code changes. Your prompts remain under your control, always accessible.
+
+- https://github.com/agenta-ai/agenta /3.7kStar/MIT+EE/202601/python/ts/无对比表
+  - http://www.agenta.ai/
+  - LLMOps platform: prompt playground, prompt management, LLM evaluation, and LLM observability all in one place.
+  - Interactive LLM Playground: Compare prompts side by side against your test cases
+  - Multi-Model Support: Experiment with 50+ LLM models or bring-your-own models
+  - Version Control: Version prompts and configurations with branching and environments
+  - Pre-built and Custom Evaluators: Use LLM-as-judge, one of our 20+ pre-built evaluators, or you custom evaluators
+  - LLM Tracing: Debug complex workflows with detailed traces
+  - [Changes to Agenta's Open Source and Commercial Features _202503](https://github.com/Agenta-AI/agenta/discussions/2527)
+    - We are updating our open-source model starting v0.36 to better support production-ready deployments and to ensure sustainable development of the Agenta platform. 
+    - We are introducing the Model Registry feature into the open-source version.
+    - All evaluation features (Human Evaluation, Automatic Evaluation, Custom Workflows) are now available exclusively in our commercial offering.
 # model-proxy
 - https://github.com/lymanzhao/Ollama-serve /202503/python
   - 一个 Ollama转发代理，用于为原生 Ollama 服务添加 API 密钥认证功能。

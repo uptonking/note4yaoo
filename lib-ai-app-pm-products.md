@@ -380,6 +380,8 @@ modified: 2025-03-22T16:10:24.856Z
   - https://github.com/cheahjs/free-llm-api-resources
 
 - claude-latest
+  - [大型测试现场（某个杂鱼登错号了（）） _0112](https://linux.do/t/topic/1435235)
+  - [来点免费Claude ](https://linux.do/t/topic/1436042)
   - [寻找L站开源作者，UUcode送商业级API额度—— 优质开源项目扶持计划 1228](https://linux.do/t/topic/1370667)
 
 - tips: 公益站不稳定(3个月就倒闭一批), 来源不明可能导致效果差, 需要经常确认和维护, 不要浪费过多时间
@@ -402,6 +404,9 @@ modified: 2025-03-22T16:10:24.856Z
     - [最新福利羊毛话题](https://linux.do/c/welfare/36)
     - [All-API-Hub：开源AI中转站集中管理和自己的New API增强管理，基于 one-api-hub 大幅重构增强 _202511](https://linux.do/t/topic/1001042)
     - [关于部分公益站支持CC的测试，欢迎更多反馈 ](https://linux.do/t/topic/1162888)
+  - 📌 [duckcoding 公益站](https://free.duckcoding.com/console/personal), 签到
+    - [DuckCoding Az-CC，单独开启公益站，只允许L站注册 ](https://linux.do/t/topic/1308120)
+    - [status](https://status.duckcoding.com/status/duckcoding)
   - 📌 [Agent Router](https://agentrouter.org/console), 每日签到获取$25
     - 模型支持 Claude Code、Codex、RooCode、Qwen Code、Gemini Cli 等多款工具
     - 仅支持coding工具，不支持使用api聊天
@@ -480,6 +485,11 @@ modified: 2025-03-22T16:10:24.856Z
   - [ThatAPI](https://gyapi.zxiaoruan.cn/console/personal), 签到
     - 有多个cc分组，IP限制严格(无需gfw)
     - 免费提供 glm flash
+  - [Privnode](https://privnode.com/)
+    - free分组支持claude-code，也支持gpt-5-nano
+    - https://pro.privnode.com/
+    - [【Cone 公益站】找个佬共同维护  ](https://linux.do/t/topic/1035525)
+    - [Cone 公益站更新 ](https://linux.do/t/topic/1002152)
   - [小呆API](https://api.daiju.live/console/personal), 签到，api不稳定
     - [小呆API](https://new.184772.xyz/)
     - cc支持
@@ -521,11 +531,12 @@ modified: 2025-03-22T16:10:24.856Z
   - [Mu. API 2026](https://demo.awa1.fun/console/personal)
     - cc支持
     - [「公益站」最终还是换成了 New-API _202509](https://linux.do/t/topic/927953)
+  - [太子公益 API](https://taizi.api.51yp.de5.net/console/personal), 签到
+    - cc支持
   - [轻 API](https://lightllm.online/console/personal), 签到
     - cc支持
   - [DEV88公益](https://api.dev88.tech/console/personal), 签到
     - cc支持
-  - [太子公益 API](https://taizi.api.51yp.de5.net/console/personal), 签到
   - [曼波API](https://ai.dik3.cn/console/personal), 签到
   - [扣腚API](https://api.jonwinters.pw/console/personal), 
     - 每天15刀，0点重置
@@ -533,9 +544,9 @@ modified: 2025-03-22T16:10:24.856Z
     - [CLI Proxy API Management Center](https://cpamc2.jonwinters.pw/management.html#/quota-public)
   - [Luckin 公益API](https://api.oaiapi.online/console/personal)
     - 所有模型均支持 沉浸式翻译
+  - [香草API](https://ai.xiangcao.de/pricing), 文生图
+  - [六哥公益站](https://api.crisxie.top/), 文生图
   - [佬友API](https://lyclaude.site/console/personal)
-  - [香草API](https://ai.xiangcao.de/pricing)
-  - [六哥公益站](https://api.crisxie.top/)
   - [APIKEY_公益站](https://welfare.apikey.cc/console)
   - [XiaoYo](https://www.xiaoyo.cn/personal), 签到, deepseek多
   - [一个小站的 API 商店](https://one-api.ygxz.in/app/dashboard), 每日签到1刀内随机
@@ -590,16 +601,9 @@ modified: 2025-03-22T16:10:24.856Z
     - Sonnet模型每次调用消耗两次使用次数，Opus每次调用消耗四次使用次数
     - [公益大模型API接口 - 小欢博客 - Fly your dreams](https://www.cups.moe/archives/free-llm-api.html)
   - [方舟API](https://www.yxaiapp.com/)
-  - [Privnode](https://privnode.com/)
-    - free分组不支持claude，但支持gpt-5-nano
-    - https://pro.privnode.com/
-    - [【Cone 公益站】找个佬共同维护  ](https://linux.do/t/topic/1035525)
-    - [Cone 公益站更新 ](https://linux.do/t/topic/1002152)
   - [YesCode](https://co.yes.vg/)
     - [YesCode test](https://cotest.yes.vg/)
     - [【YesCode公益测试站】Claude Code/Codex 长期免费测试 ](https://linux.do/t/topic/964164)
-  - [duckcoding](https://free.duckcoding.com/)
-    - [DuckCoding Az-CC，单独开启公益站，只允许L站注册 ](https://linux.do/t/topic/1308120)
   - [银河AI](https://mmaqq.top/console)
     - 需支付宝付费
   - [cone Veloera Zone](https://zone.veloera.org/)
@@ -767,6 +771,10 @@ modified: 2025-03-22T16:10:24.856Z
 
 - image2api
   - [youmind2api，可以使用大香蕉 ](https://linux.do/t/topic/1363986)
+  - https://github.com/iptag/jimeng-api /GPL/202511/ts
+    - Free AI Image and Video Generation API Service - Based on reverse engineering of Jimeng AI (China site) and Dreamina (international site).
+    - [【即梦jimeng/dreamina官网2api】10/20更新：双站均支持文生图和图生图  _202509](https://linux.do/t/topic/995691)
+    - 即梦 jimeng 和 dreamina 文生图和图生图的官网 api，借鉴了几位大佬的项目，但他们的参数都有些小问题，稍加改进下，稳定性强了不少，目前只测试了文生图和图生图功能
 
 ## llm-api-official/router/gateway
 
@@ -1002,6 +1010,10 @@ modified: 2025-03-22T16:10:24.856Z
   - if you are using a model through something like OpenRouter, you can never be sure if you are getting the best version of the model you want.
   - We tested a select group of models and talked to their teams about how to best run them.
   - OpenCode Zen is an AI gateway that gives you access to these models.
+  - [opencode其实提供了三种模型的免费api可以直接使用 ](https://linux.do/t/topic/1436094)
+    - api url: https://opencode.ai/zen
+    - api key: public
+    - 原以为好歹有个session 鉴权什么的，没想到是这么做的  
 
 - [Zeabur](https://zeabur.com/)
   - $5/月免费使用

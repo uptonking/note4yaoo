@@ -811,7 +811,11 @@ def slugify(text):
 
 - ## 
 
-- ## 
+- ## 🆚 [Devstral benchmark : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1piy3k1/devstral_benchmark/)
+  - I gave 4 different LLMs the same coding challenge: build a Multi-Currency Expense Tracker in Python. Then I had Opus 4.5 review all the code. Here are the results.
+  - Devstral 2 looks promising - Scored nearly as high as Claude models with the most thorough input validation
+
+- "Build a 400 line app" is not a benchmark, it's a coin toss. Grab a real 100+ files codebase and implement some reasonably sized change in it 20+ times.
 
 - ## [Been using glm 4.7 for coding instead of claude sonnet 4.5 and the cost difference is huge : r/LocalLLM _202601](https://www.reddit.com/r/LocalLLM/comments/1q79orf/been_using_glm_47_for_coding_instead_of_claude/)
   - so ive been on claude sonnet 4.5 for like 14 months now mostly for coding work. debugging python scripts, generating react components, refactoring old code etc. its great but honestly the $20/month plus api costs when i need bulk operations was adding up

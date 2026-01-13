@@ -389,6 +389,20 @@ modified: 2025-08-23T11:43:35.904Z
   - [ComfyUI集成指南.md](https://github.com/shellus/mj-studio/blob/master/docs/workflow/ComfyUI%E9%9B%86%E6%88%90%E6%8C%87%E5%8D%97.md)
     - 介绍如何将 MJ-Studio 作为 ComfyUI 自定义节点集成，让用户在 ComfyUI 工作流中使用 MJ-Studio 的 AI 绘图/视频能力。
 
+- https://github.com/chapterv/Tapnow-Studio-PP /GPL/202601/js
+  - 设计师随心所欲的一枚无限画布
+  - 自原作者 @zhengxinlan1995-code 的 2.6.1 版本以来，使用 Antigravity 从原始版本 2.6.1 到 3.7.34
+  - 工程化重构: 将原始单 HTML 架构利用 Vite + React 进行现代化重构，提升了 10 倍以上的加载速度。
+  - 黑名单与容错机制: 实现了多 API Key 智能轮换，自动拉黑积分耗尽（1006）或失效的 Key，确保大规模生成任务不中断。
+  - 智能分镜系统 (Smart Storyboard): 开发了完整的可视化分镜编辑器，支持批量生成、首尾帧控制、多图参考及实时预览。
+  - 性能专项优化: 针对超大规模节点图和数千条历史记录进行了渲染优化，支持“极致”性能模式。
+  - 数据持久化: 彻底解决了 Blob URL 失效问题，所有资产自动同步至本地存储，支持 ZIP 批量导出。
+  - [本地无限画布 支持即梦2API并发号池 _202601](https://linux.do/t/topic/1433370)
+  - 前阵子看到Tapnow和lovart的画布，觉得这个形态才是批量出图可视化的理想形态。比comfy精简上手可用。估摸着怎么把在佬友群发现大佬的优秀逆向项目用起来（jimeng-api），最好在能在本地实现开源，就找到了@zhengxinlan1995-code在git的画布项目。
+  - 一句话总结：本地一个html实现无限画布，全流程拆脚本分镜生产生图生视频
+  - 智能分镜表: 支持通过正则表达式自动解析剧本一键导入剧本拆分到各个镜头，支持一键批量导入参考图批量生图生视频
+  - API重构: 优化原项目只支持模型，支持自定义供应商和模型
+
 - https://github.com/WuMingDao/zenith-image-generator /MIT/202601/ts
   - https://zenith-image-generator.pages.dev/
   - 现代化 AI 文生图 Web 应用
@@ -1935,8 +1949,11 @@ modified: 2025-08-23T11:43:35.904Z
 
 - https://github.com/iptag/jimeng-api /GPL/202511/ts
   - Free AI Image and Video Generation API Service - Based on reverse engineering of Jimeng AI (China site) and Dreamina (international site).
-  - [【即梦jimeng/dreamina官网2api】10/20更新：双站均支持文生图和图生图 - 开发调优 / 开发调优, Lv1 - LINUX DO](https://linux.do/t/topic/995691)
-  - 即梦 jimeng 和 dreamina 文生图和图生图的官网 api，借鉴了几位大佬的项目，但他们的参数都有些小问题，稍加改进下，稳定性强了不少，目前只测试了文生图和图生图功能
+  - [【即梦jimeng/dreamina官网2api】10/20更新：双站均支持文生图和图生图  _202509](https://linux.do/t/topic/995691)
+    - 即梦 jimeng 和 dreamina 文生图和图生图的官网 api，借鉴了几位大佬的项目，但他们的参数都有些小问题，稍加改进下，稳定性强了不少，目前只测试了文生图和图生图功能
+  - 🍴 forks
+  - https://github.com/hu19940121/jimeng-api
+  - [基于【即梦jimeng/dreamina官网2api】的 webui 以及自动获取sessionId _202512](https://linux.do/t/topic/1297174)
 # models/loras/controlnet
 - https://github.com/guoyww/AnimateDiff /11.7kStar/apache2/202407/python/inactive
   - https://animatediff.github.io/

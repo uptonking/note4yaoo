@@ -729,6 +729,10 @@ modified: 2025-12-19T12:43:21.150Z
 - https://github.com/kv1830/fast_pdf_trans
   - 基于`MinerU`实现pdf转markdown的功能，接着对markdown进行分割， 送给大模型翻译，最后组装翻译结果并由`pypandoc`生成结果pdf。
 
+- https://github.com/iptag/mineru-api /MIT/202512/js
+  - 基于mineru网页端，抓包分析后将核心的上传及转换功能集成为api，供其他服务调用
+  - [[开源]两个比较有意义的docker项目吧，一个是mineru-api，另一个是微信和T的音频转换api ](https://linux.do/t/topic/975584)
+
 ## utils-ocr
 
 - https://github.com/anonNo2/deepseek-ocr-server /202511/python

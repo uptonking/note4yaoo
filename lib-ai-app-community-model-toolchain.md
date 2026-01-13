@@ -1399,7 +1399,8 @@ curl http://localhost:11434/api/chat -d '{
 
 - ## 
 
-- ## 
+- ## 🖼️ pretty excited to see image generation support in @ollama powered by MLX
+- https://x.com/awnihannun/status/2010394007952891973
 
 - ## [How does Ollama truncate the context when it's too long? : r/ollama _202512](https://www.reddit.com/r/ollama/comments/1pe18c7/how_does_ollama_truncate_the_context_when_its_too/)
   - I'm trying to understand how prompts are truncated then they exceed the context limit. Let's say I have the num_ctx parameter set to 1000 tokens. I then send in a system prompt, and a whole bunch of user and assistant messages, but in total there are 2000 tokens in the context. What happens?
@@ -2026,14 +2027,14 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 - https://x.com/scomper/status/1791804644332908646
 - 好像都是小模型为主吧
 
-# discuss-model-internals/tuning
+# discuss-model-tuning/internals
 - ## 
 
 - ## 
 
 - ## 
 
-- ## 
+- ## [Looking for a Base Model : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1q9si66/looking_for_a_base_model/)
 
 - ## [Which small model is best for fine-tuning? We tested 12 of them by spending $10K - here's what we found : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pi8z74/which_small_model_is_best_for_finetuning_we/)
   - TL; DR: We fine-tuned 12 small models to find which ones are most tunable and perform best after fine-tuning. Surprise finding: Llama-3.2-1B showed the biggest improvement (most tunable), while Qwen3-4B delivered the best final performance - matching a 120B teacher on 7/8 tasks and outperforming by 19 points on the SQuAD 2.0 dataset.

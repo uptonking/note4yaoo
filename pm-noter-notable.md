@@ -96,7 +96,9 @@ modified: 2023-11-28T14:48:45.910Z
   - pdf chat
   - ActionText for nodejs: hocuspocus
   - editor无法成为主营业务，但ide可以
-  - cms+crdt
+  - cms+crdt:
+    - 🌰 prompts cms: 管理prompt的cms与普通cms的区别在于，通常使用文件和git
+    - 不同产品实现的技术栈不同, code-first(promptfoo), lowcode(arize-phoenix)
   - interoperable/sharing
     - MCP/LSP/backlink
   - drag between windows

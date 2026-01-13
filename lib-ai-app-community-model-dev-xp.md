@@ -228,6 +228,33 @@ modified: 2025-11-18T13:22:22.078Z
   - English to non-English
   - Non-English to English
   - German(de), European Spanish(es-ES), LATAM Spanish(es-US), France(fr), Brazillian Portugese(pt-BR), Russian(ru), Simplified Chinese(zh-CN), Traditional Chinese(zh-TW), Japanese(ja), Korean(ko), Arabic(ar).
+
+## rag
+
+- [apple/CLaRa-7B-Instruct · Hugging Face _202511](https://huggingface.co/apple/CLaRa-7B-Instruct)
+  - instruction-tuned unified RAG model with built-in semantic document compression (16× & 128x).
+  - It supports instruction-following QA directly from compressed document representations.
+
+- [CohereLabs/c4ai-command-r7b-12-2024 · Hugging Face](https://huggingface.co/CohereLabs/c4ai-command-r7b-12-2024)
+  - /cc-nc
+  - [How was r7b?](https://huggingface.co/CohereLabs/c4ai-command-r7b-12-2024/discussions/3)
+
+- [jinaai/ReaderLM-v2 _1.5B· Hugging Face _202503](https://huggingface.co/jinaai/ReaderLM-v2)
+  - /cc-nc
+  - converts raw HTML into beautifully formatted markdown or JSON with superior accuracy and improved longer context handling.
+
+- [inference-net/Schematron-8B · Hugging Face](https://huggingface.co/inference-net/Schematron-8B)
+  - specialized in converting noisy HTML into clean, typed JSON that conforms to your custom schema. 
+
+## vlm
+
+- [apple/FastVLM-0.5B · Hugging Face _202412](https://huggingface.co/apple/FastVLM-0.5B)
+  - We introduce FastViTHD, a novel hybrid vision encoder designed to output fewer tokens and significantly reduce encoding time for high-resolution images.
+  - Our smallest variant outperforms LLaVA-OneVision-0.5B with 85x faster Time-to-First-Token (TTFT) and 3.4x smaller vision encoder.
+  - Our larger variants using Qwen2-7B LLM outperform recent works like Cambrian-1-8B while using a single image encoder with a 7.9x faster TTFT.
+  - [riddhimanrana/fastvlm-0.5b-captions · Hugging Face](https://huggingface.co/riddhimanrana/fastvlm-0.5b-captions)
+    - a finetuned version of FastVLM-0.5B Stage 3 
+    - built for efficient structured image captioning on mobile devices.
 # models-features/variants
 - 专用模型
 - ocr

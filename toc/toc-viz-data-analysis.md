@@ -26,7 +26,7 @@ modified: 2021-05-23T18:45:59.139Z
   - The UpSetJS React component is implemented as a pure functional component solely depending on the given properties.
   - [UpSet: Visualizing Intersecting Sets](https://jku-vds-lab.at/tools/upset/)
   - [upset live demo](http://vcg.github.io/upset/)
-# viz-ai
+# viz-ai 👾
 - https://github.com/jupyterlab/jupyter-ai /4kStar/BSD/202511/python
   - provides a user-friendly and powerful way to explore generative AI models in notebooks and improve your productivity in JupyterLab
   - A native chat UI in JupyterLab that enables you to work with generative AI as a conversational assistant.
@@ -163,6 +163,13 @@ modified: 2021-05-23T18:45:59.139Z
   - 开箱即用：仅需简单配置大模型与数据源，无需复杂开发，即可快速开启智能问数
   - 依托大模型自然语言理解与 SQL 生成能力，结合 RAG 技术，实现高质量 Text-to-SQL 转换
   - 易于集成：支持多种集成方式，提供 Web 嵌入、弹窗嵌入、MCP 调用等能力；能够快速嵌入到 n8n、Dify、MaxKB、DataEase 等应用
+
+- https://github.com/Cyronlee/chat-database-agent /202601/ts
+  - A Next.js application for interacting with databases using natural language. 
+  - Chat with your database using natural language queries powered by AI.
+  - Create and customize dashboards with various chart types to visualize your data.
+  - AI: Google Generative AI
+  - Database ORM: Prisma
 
 - https://github.com/loglux/SQLAIAgent-Ollama /202506/python/inactive
   - A powerful SQL AI agent built with Phi Data that helps you interact with your databases through natural language conversations.
