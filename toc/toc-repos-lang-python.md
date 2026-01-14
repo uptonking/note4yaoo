@@ -35,6 +35,9 @@ modified: 2025-02-26T15:04:15.883Z
 
 - https://github.com/ansible/ansible
   - IT automation platform that makes your applications and systems easier to deploy
+
+- https://github.com/msgithub1/localflare /apache2/202601/python/Tauri
+  - LocalFlare offers a simple way to build desktop applications using Flask, providing a built-in browser and local service process
 # starter/template
 - https://github.com/roboflow/template-python /202210/python
   - A template repo holding our common setup for a python project.

@@ -31,6 +31,18 @@ modified: 2020-11-11T13:19:48.284Z
     - Instead of scraping or parsing raw article text, Kaggle users can work directly with well-structured JSON representations of Wikipedia content
     - The dataset upload, as of 15 April 2025, includes high-utility elements such as abstracts, short descriptions, infobox-style key-value data, image links, and clearly segmented article sections (excluding references and other non-prose elements which are only available via Snapshot API).
     - Because all content is derived from Wikipedia, it is freely licensed under Creative Commons Attribution-Share-Alike 4.0 and the GNU Free Documentation License (GFDL)
+
+## wiki-tools
+
+- https://github.com/SomeOddCodeGuy/OfflineWikipediaTextApi /apache2/202508/python/inactive
+  - This project provides a simple way to search and retrieve Wikipedia articles from an offline dataset using the `txtai` library. 
+  - The API offers three endpoints to get full articles by title, full articles by search prompt, and summary snippets of articles by search prompt.
+  - Offline Access: All Wikipedia article texts are stored offline, allowing for fast and private access.
+  - Uses the powerful `txtai` library to search for articles by prompts.
+  - This project relies heavily on `txtai`, which uses various libraries to download and utilize small models itself for searching. 
+  - This project requires a minimum of 60GB of hard disk space to store the related datasets
+    - utilizes Git to pull down the needed datasets 
+    - This can be skipped by downloading the datasets into their respective folders in the project directory
 # popular
 - [hacker-news huggingface.co](https://huggingface.co/datasets/OpenPipe/hacker-news)
   - dataset of all HN posts and comments, current as of November 1, 2023.

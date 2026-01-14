@@ -792,16 +792,6 @@ modified: 2025-10-28T20:02:16.727Z
 
 - cc和codex都有vscode插件啊
 
-- ## [Codex CLI vs Claude Code vs Claude Code + Z.ai API — which one’s worth it? : r/ClaudeCode _202509](https://www.reddit.com/r/ClaudeCode/comments/1nepo9y/codex_cli_vs_claude_code_vs_claude_code_zai_api/)
-- I use CC to analyze and generate tasks, which I then use with GLM to complete. It works quite well and does a more than acceptable job.
-
-- Codex CLI is genuine crap. Anything is better than codex CLI as tool.
-  - Codex cli uses freaking toml, huge red flag.
-  - There is not local mcp config, no way to share it or version it for project.
-  - And tool configuration... I didn't comprehend it.
-  - their SDKs are nightmare to work with, literally made by smartasses who never worked with direct clients.
-- literally every cli tool tries to be compatible, where codex just being special.
-
 - ## [Cline vs Claude Code with the same model? Which one wins? : r/CLine _202510](https://www.reddit.com/r/CLine/comments/1nvvt81/cline_vs_claude_code_with_the_same_model_which/)
   - So cline (or roocode) vs claude code cli - while using sonnet of GLM4.5 - is there a difference between using the same model with different tools?
 

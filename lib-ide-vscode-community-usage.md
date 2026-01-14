@@ -32,6 +32,19 @@ export VSCODE_GALLERY_CONTROL_URL=""
 - https://x.com/nullvoxpopuli/status/1955014292769542598
 - Default is indent based. But you can change in settings.
 
+# discuss-search
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Search in VS Code for multiple terms - Stack Overflow](https://stackoverflow.com/questions/49944569/search-in-vs-code-for-multiple-terms)
+  - Suppose I search on VS Code the terms 'word1 word2'. Then it finds all the occurrences where 'word1' is followed by 'word2'. In reality I want to find all the files where word1 and word2 occur, but they don't have to be consecutive.
+
+- Use regex flag and search for `(word1[\s\S\n]*word2)|(word2[\s\S\n]*word1)`
 # discuss-diff
 - ## 
 

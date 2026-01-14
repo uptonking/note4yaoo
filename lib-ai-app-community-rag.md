@@ -46,6 +46,51 @@ modified: 2024-09-08T20:08:16.088Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🤔 [How do you actually measure RAG quality beyond "it looks good"? : r/Rag _202501](https://www.reddit.com/r/Rag/comments/1q68521/how_do_you_actually_measure_rag_quality_beyond_it/)
+  - We're running a customer support RAG system and I need to prove to leadership that retrieval quality matters, not just answer fluency. Right now we're tracking context precision/recall but honestly not sure if those correlate with actual answer quality.
+  - LLM as judge evals feel circular (using GPT 4 to judge GPT 4 outputs). Human eval is expensive and slow. This is driving me nuts because we're making changes blind.
+
+- Context precision/recall tells you if you fetched relevant chunks, but customers don't care about your retrieval accuracy, they care if the answer was correct, complete, and useful. LLM-as-judge is circular because you're asking the same type of system to evaluate itself. Human eval is the only real signal, but you're right that it's expensive.
+  - What actually works is to track downstream metrics that matter, such as the resolution rate, follow-up questions, customer satisfaction, or ticket escalation.
+  - If your "improved" retrieval leads to more follow-ups or escalations, your retrieval isn't actually better. The hard truth is that answer quality can't be predicted by retrieval metrics alone because the LLM might compensate for bad context or fail with good context. You need to measure outcomes, not intermediates.
+
+- Precision/recall measure retrieval, not answer validity. Latency measures speed, not correctness. LLM-as-judge is circular because it shares the same failure surface.
+  - What’s missing is an explicit grounding / coherence metric: – Does the answer make claims not supported by retrieved evidence? – Can each assertion be traced to specific context? – If evidence is weak or conflicting, does the system abstain?
+
+- Instead of measuring retrieval quality, measure preprocessing quality first. Can you actually see what your documents look like after parsing and chunking? Most people are flying blind here, which is why I built VectorFlow to show you what chunks actually contain before they hit the vector store.
+  - For customer support specifically, track whether your chunks preserve the complete question-answer pairs from your docs. If your chunking strategy splits a FAQ answer across multiple chunks, your retrieval metrics might look fine but answers will be incomplete.
+
+- [How to Evaluate RAG Systems in Production _202512](https://medium.com/@yadav.navya1601/how-to-evaluate-rag-systems-in-production-66b44a849189)
+  - You’re not just testing an LLM you’re testing whether your retrieval finds the right documents AND whether the model uses them correctly. A problem in either component breaks the whole system, but the symptoms show up differently.
+  - Retrieval fails: The system doesn’t find relevant documents
+  - Generation fails: The model has the right context but produces wrong answers
+  - The problem is these issues compound. Bad retrieval guarantees bad generation. Good retrieval doesn’t guarantee good generation. You can’t evaluate the whole pipeline by just looking at the final output.
+  - Retrieval Metrics
+    - Precision: What proportion of your top k retrieved documents are actually relevant? Low precision means you’re wasting context window space on irrelevant information.
+    - Recall: Are all relevant documents showing up in your top k results? Missing critical context leads to incomplete answers.
+    - Mean Reciprocal Rank (MRR): Where does the first relevant document appear in your ranked results?
+    - Contextual Relevancy: Do the retrieved documents actually contain information that helps answer the query? This goes beyond keyword matching — a document might mention the same terms but not address the actual question. You can evaluate this with LLM-as-judge or manual review when ground truth isn’t available.
+  - Generation Metrics
+    - Answer Relevancy: Does the response actually address the user’s question? Irrelevant answers mean something broke in your prompt construction or the model is ignoring the query context.
+    - Faithfulness: Is the response grounded in the retrieved context without hallucinations? This is critical. 
+    - Groundedness: Can you trace every claim in the response back to specific retrieved documents? This prevents the model from injecting its own knowledge or making unsupported inferences.
+    - Completeness: Does the response provide comprehensive information based on available context? Incomplete answers might mean the model isn’t using all the relevant chunks you retrieved, or your prompt doesn’t encourage thorough responses.
+  - End-to-End Metrics
+    - Hallucination Rate: How often does the system generate content that contradicts or isn’t supported by retrieved context? Track this per query type — complex multi-hop questions tend to have higher hallucination rates.
+    - Context Utilization: Is the model actually using the retrieved chunks, or is it ignoring them? Sometimes retrieval works perfectly but the generation step doesn’t incorporate the context.
+    - Latency: End-to-end response time matters in production. Measure time-to-first-token and total response time. Users expect fast results, and slow retrieval or generation kills user experience.
+
+- [Top 5 RAG Evaluation Tools for Production AI Systems (2026)](https://www.getmaxim.ai/articles/top-5-rag-evaluation-tools-for-production-ai-systems-2026)
+  - Maxim AI integrates evaluation with simulation, experimentation, and observability for complete lifecycle management.
+  - Braintrust provides enterprise-grade evaluation with production feedback loops. 
+  - Deepchecks delivers MLOps validation with CI/CD integration.
+  - TruLens specializes in feedback functions for iterative testing.
+  - Langfuse offers open-source observability with comprehensive tracing.
+
 - ## [Hybrid search + reranking in prod, what's actually worth the complexity? : r/Rag _202601](https://www.reddit.com/r/Rag/comments/1q683tf/hybrid_search_reranking_in_prod_whats_actually/)
   - Building a RAG system for internal docs (50k+ documents, multi tenant, sub 2s latency requirement) and I'm going in circles on whether hybrid search + reranking is worth it vs just dense embeddings.
   - Everyone says "use both" but rerankers add latency and cost. Tried Cohere rerank but it's eating our budget. BM25 + vector seems overkill for some queries but necessary for others?
@@ -1170,7 +1215,18 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [We built a semantic highlighting model for RAG : r/Rag _202601](https://www.reddit.com/r/Rag/comments/1qbjr5n/we_built_a_semantic_highlighting_model_for_rag/)
+  - We kept running into this problem: when we retrieve documents in our RAG system, users can't find where the relevant info actually is. Keyword highlighting is useless – if someone searches "iPhone performance" and the text says "A15 Bionic chip, smooth with no lag, " nothing gets highlighted.
+- We looked at existing semantic highlighting models:
+  - OpenSearch's model: 512 token limit, too small for real docs
+  - Provence: English-only
+  - XProvence: supports Chinese but performance isn't great + NC license
+  - Open Provence: solid but English/Japanese only
+- None fit our needs, so we trained our own bilingual (EN/CH) model
+  - https://huggingface.co/zilliz/semantic-highlight-bilingual-v1
+  - This work draws its core ideas and theoretical underpinnings from Provence (https://arxiv.org/abs/2501.16214), whose seminal research laid the essential groundwork for our exploration.
+  - we build entirely upon the exceptional efforts of the Open Provence project
+  - We’ve moved to a larger 8k context window model—it’s much more aligned with real-world use cases in RAG/Agent scenarios.
 
 - ## [I thousands of tests on 104 different GGUF's, >10k tokens each, to determine what quants work best on <32GB of VRAM : r/LocalLLM _202506](https://www.reddit.com/r/LocalLLM/comments/1liy7ku/i_thousands_of_tests_on_104_different_ggufs_10k/)
   - The test is a 10, 000-token “needle in a haystack” style search where I purposely introduced a few nonsensical lines of dialog to HG Well’s “The Time Machine” . A small system prompt accompanies this instruction the model to local the nonsensical dialog and repeat it back to me.

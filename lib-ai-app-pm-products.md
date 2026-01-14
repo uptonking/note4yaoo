@@ -23,6 +23,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 查看原文pdf-parts时支持仅查看前后几页, 保护原文内容
   - large pdf workflows: chunking-strategies, reindex, pdf-parts
   - 🌐 pdf edit
+    - proofreading: 一键检查, 版本历史
     - ✨ 翻译场景的多种布局一键切换: 双栏对比布局, 仅译文布局, 富文本页面布局
     - 甚至可以通过多栏布局的交互，来展示pdf聊天或补充信息，优点是能展示在原文位置
     - 考虑非多个文档的场景, 类似代码编辑器的 split view 也可以方便核对
@@ -368,7 +369,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 有时使用搜索引擎默认的ai结果又快又好，可以尝试解决类似stackoverflow类型的问题
 
 - 让ai将从日志平台复制来的残缺字符串补全为合法字符串并格式化缩进，速度很快很好用
-# ai/llm-api 💰
+# ai/llm-api 👾
 - api-choices
   - 支持的优质大模型、热门模型、vlm
   - api稳定: 稳定时用的api稳定性必须要高，否则产品体验差
@@ -522,17 +523,17 @@ modified: 2025-03-22T16:10:24.856Z
     - [随时升天的公益站](https://any.97819781.xyz/)
   - [FovtAPI](https://api.voct.top/console)
     - 模型旧，模型少
-    - [NewAPI签到系统](https://gift.voct.top/), ~~已失效~~
+    - [NewAPI签到系统](https://gift.voct.top/dashboard/checkin), ~~已失效~~
   - [Hotaru API](https://api.hotaruapi.top/console/personal)，签到, 不定期清理
     - codex
     - [〔Hotaru公益站〕新的公益站启动 ](https://linux.do/t/topic/1398297)
   - [Huan API](https://ai.huan666.de/console/personal), 签到, 生图模型
     - cc支持
+  - [太子公益 API](https://taizi.api.51yp.de5.net/console/personal), 签到
+    - cc支持
   - [Mu. API 2026](https://demo.awa1.fun/console/personal)
     - cc支持
     - [「公益站」最终还是换成了 New-API _202509](https://linux.do/t/topic/927953)
-  - [太子公益 API](https://taizi.api.51yp.de5.net/console/personal), 签到
-    - cc支持
   - [轻 API](https://lightllm.online/console/personal), 签到
     - cc支持
   - [DEV88公益](https://api.dev88.tech/console/personal), 签到
@@ -710,6 +711,8 @@ modified: 2025-03-22T16:10:24.856Z
     - [【公益AIGC】最适合日常使用的公益站，高级AI工具一网打尽 ](https://linux.do/t/topic/1175890/37)
       - volo api 吧，基于 new api 改的，但是 v1 开始好像就完全重写了
       - VoAPI 一直是闭源的，甚至好像只放出 Docker 的部署方式，连编译后的可执行文件都不发布的，截止到我最后一次看时是这样的，不知道后续有没有改变和有没有收费计划
+  - [WorldOF](https://worldof.onrender.com/)
+    - [GPT5、gemini2.5 Flash 的不限量无需登录的 API 来了，应该刷不死 ](https://linux.do/t/topic/1443674)
 
 ## image-gen 🖼️
 
@@ -1014,6 +1017,8 @@ modified: 2025-03-22T16:10:24.856Z
     - api url: https://opencode.ai/zen
     - api key: public
     - 原以为好歹有个session 鉴权什么的，没想到是这么做的  
+    - ip 限流，有 rate limit，最近感觉限制变得更严重了，或许是用 opencode 的人变多了。
+    - 实测其实只有 grok-code 比较稳定，glm 经常 429
 
 - [Zeabur](https://zeabur.com/)
   - $5/月免费使用
@@ -1046,6 +1051,13 @@ modified: 2025-03-22T16:10:24.856Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 🆚 [Is there any tool for for manual proofreading of video transcriptions, with ability to check original audio and to maintain a list (dictionary) of text entities? : r/LanguageTechnology _202404](https://www.reddit.com/r/LanguageTechnology/comments/1c3qfii/is_there_any_tool_for_for_manual_proofreading_of/)
+- https://gooey.ai/speech offers a bunch of ASR models (google USM, meta-large, whisper v3) and the ability to define a dictionary as a google sheet.
+
+- I'm not sure this is actually an NLP problem. Everything you want here can be done with standard text editors and databases and probably some audio software, you just want an app that puts all of that together. The actual NLP task of transcribing the audio is the part you're doing manually, rather than delegating it to an algorithm to do automatically.
 
 - ## "We now want to edit our *tools* as we have previously edited our documents"
 - https://x.com/geoffreylitt/status/1646688665479831559

@@ -201,6 +201,15 @@ modified: 2021-01-04T17:26:43.784Z
 
 - https://github.com/yeahhe365/LongImg-Splitter /MIT/202512/ts
   - [网页工具：长图转多页 PDF 文件工具，方便 AI 分析  ](https://linux.do/t/topic/1360957)
+
+- https://github.com/DDULDDUCK/every-pdf /1kStar/MIT/202601/python
+  - all-in-one desktop PDF toolkit to edit, convert, merge, and secure your documents. Built with Electron, Next.js, and Python.
+  - PDF Editor (New!): Add text, signatures, images, and checkboxes to complete your documents.
+  - Converting PDFs to different formats and converting different formats to PDFs 
+  - split, merge, Watermark
+  - Framework: Nextron (Next.js + Electron)
+  - Backend: Python, FastAPI
+  - Build/Deployment: Electron Builder
 # pdf-editor
 - https://github.com/BDenizKoca/Tideflow-md-to-pdf /MIT/202511/ts/tuari
   - https://bdenizkoca.studio/projects/tideflow/

@@ -346,7 +346,7 @@ modified: 2022-11-11T10:46:41.519Z
   - http://vslavik.github.io/diff-pdf
   - A simple tool for visually comparing two PDF files
   - produces a PDF file with visually highlighted differences:
-    - pdf上显示红绿色文字表示2个pdf的差异
+    - pdf上显示红绿色文字表示2个pdf的差异, 以浮层文字显示，视觉效果类似重影
 # latex
 - https://github.com/dginev/ar5iv /MIT/rust
   - https://ar5iv.org/

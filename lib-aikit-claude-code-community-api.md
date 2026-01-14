@@ -72,7 +72,15 @@ modified: 2025-12-18T12:26:35.487Z
 
 - ## 
 
-- ## 
+- ## [OpenPackage - A better, universal, open source version of Claude Code Plugins : r/opencodeCLI](https://www.reddit.com/r/opencodeCLI/comments/1qbqn96/openpackage_a_better_universal_open_source/)
+  - We’re all familiar with Claude Code Plugins, which allows devs to package, share, and install sets of rules/, commands/, agents/, skills/, and MCP configs.
+  - I wrote OpenPackage, an open source, universal, and arguably better version of Claude Code Plugins.
+  - You can even install Claude Code Plugins to OpenCode, file conversions handled and everything
+  - OpenPackage defines how plugins should be
+  - P. S. I see a lot of people migrating from CC to OpenCode, you can use OpenPackage to migrate your configs easily (I’ll drop a guide for this soon)
+
+- I’m working on a universal agent client and have been thinking about how I could support Claude Code plugins, but for all agents. This seems like what I would want to support in my project eventually
+  - It took a lot of tweaking and so many iterations haha, need to thank my early users for the great feedback as well.
 # discuss
 - ## 
 

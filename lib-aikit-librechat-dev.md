@@ -92,6 +92,10 @@ modified: 2025-09-01T05:52:34.241Z
   - dictionaries(mdx/kiwix)
   - ebooks
 
+- llm-ui/wrapper
+  - janai(llama.cpp)
+  - klee(ollama)
+
 - llm-ui/client
   - 可参考 ollama/lmstudio/janai 封装 llama.cpp/mlx-lm/vlm 的逻辑
   - 还可参考LocalAi封装ollama/comfyui的逻辑

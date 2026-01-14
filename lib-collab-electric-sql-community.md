@@ -42,7 +42,15 @@ modified: 2024-02-12T03:22:23.769Z
 
 - ## 
 
-- ## 
+- ## ⛓️ Introducing Durable Sessions — the key pattern for collaborative AI.
+- https://x.com/thruflo/status/2010826574002536905
+  - this post shows how you can build Durable Sessions into your existing stack, schema and AI SDK using Durable Streams from @ElectricSQL and @TanStack DB.
+  - The result is native multi-tab, multi-device, multi-user and multi-agent sessions. Built on an open protocol.
+  - https://github.com/electric-sql/transport
+  - You provide a single Standard Schema defining your token streaming and session state. The Durable Streams state layer takes care of the rest
+
+- https://x.com/thruflo/status/2010830304148087121
+  - If you're building AI apps on a request <> response model, you're doing it wrong. Here's looking at you: `useChat`
 
 - ## ⚖️ Introducing the State Protocol—the first higher-level protocol built on Durable Streams. _202512
 - https://x.com/ElectricSQL/status/2003606111811977492

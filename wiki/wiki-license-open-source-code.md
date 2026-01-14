@@ -686,10 +686,6 @@ modified: 2021-09-14T18:58:58.275Z
   - 社区数据许可协议 (CDLA)
     - CDLA-Permissive-2.0: 对开放数据的贡献者和使用者不作要求。你可以使用、修改和共享，许可协议不对结果的使用、修改或共享施加任何限制或义务。
     - CDLA-Sharing-1.0: 这属于copyleft（强制共享）许可类别，你可以使用、修改和共享，但无论是否修改，基于原作创作的新作品必须与原始版本有相同的许可协议。
-# relicense-known
-- [Grafana, Loki, and Tempo will be relicensed to AGPLv3_202104](https://grafana.com/blog/2021/04/20/grafana-loki-tempo-relicensing-to-agplv3/)
-  - Over the last few years, we’ve watched closely as almost every at-scale open source company that we admire (such as Elastic, Redis Labs, MongoDB, Timescale, Cockroach Labs, and many others) has evolved their license regime. 
-  - In almost all of these cases, the result has been a move to a non-OSI-approved source-available license.
 # llm-lic
 
 ## [NVIDIA Open Models License](https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/)
@@ -698,11 +694,24 @@ modified: 2021-09-14T18:58:58.275Z
 - Yes — models released under NVIDIA’s NVIDIA Open Model License (NOML) are generally allowed for commercial use and distribution for free, but only if you follow the license terms and any additional notices that accompany the specific model.
   - The model package may include separate components (tokenizers, code, data) under other licenses (e.g., Apache-2.0). You must comply with those third-party licenses as well
   - You must follow NVIDIA’s Trustworthy AI requirements and may not bypass any built-in safety guardrails
-# licensing-cases
+# attribution/logos-cases
+- https://github.com/simpledms/simpledms/blob/main/LICENSE.md
+  - Additional terms under GNU Affero General Public License version 3 section 7:
+  - All copies of the program, in both source code and executable form, must preserve the "Powered by SimpleDMS" attribution notice on each user interface screen. Clicking the notice must direct the user to https://simpledms.eu/open-source.
+  - This notice must be visible to all users without additional interaction, and must not be removed, obscured, or altered.
+  - All copies of the program, in both source code and executable form, must preserve the "About SimpleDMS" menu item in the main menu. The content of the linked about page must not be modified.
+  - This obligation also applies to all derivative works and any copies of derivative works.
+# additional-cases
+
+# relicense-cases
+- [Grafana, Loki, and Tempo will be relicensed to AGPLv3_202104](https://grafana.com/blog/2021/04/20/grafana-loki-tempo-relicensing-to-agplv3/)
+  - Over the last few years, we’ve watched closely as almost every at-scale open source company that we admire (such as Elastic, Redis Labs, MongoDB, Timescale, Cockroach Labs, and many others) has evolved their license regime. 
+  - In almost all of these cases, the result has been a move to a non-OSI-approved source-available license.
+# licensing-faq
 - 🤔 可以通过ai临时编写调用AGPL代码的代码来绕过协议问题
 
-- i want to use libreoffice code in my pdf/image conversion app. what's the license of libreoffice? can i use MIT/apache for my app?
-  - LibreOffice is distributed primarily under the Mozilla Public License 2.0 (MPL-2.0), but the codebase also contains components under other OSS licenses (LGPL/GPL, Apache, etc.). You can license your own app under MIT or Apache, but any LibreOffice source files you copy or modify remain governed by their original licenses (typically MPL-2.0) and you must comply with those terms.
+- ## i want to use libreoffice code in my pdf/image conversion app. what's the license of libreoffice? can i use MIT/apache for my app?
+- LibreOffice is distributed primarily under the Mozilla Public License 2.0 (MPL-2.0), but the codebase also contains components under other OSS licenses (LGPL/GPL, Apache, etc.). You can license your own app under MIT or Apache, but any LibreOffice source files you copy or modify remain governed by their original licenses (typically MPL-2.0) and you must comply with those terms.
   - MPL-2.0 = file-level (weak) copyleft. If you modify a file that is MPL-2.0, you must make that file’s source (with your modifications) available under MPL-2.0 when you distribute the product. Files you create that are separate may remain under MIT/Apache
   - Your Code: You can license your own .java, .cpp, .py, etc., files under MIT, Apache, or even a proprietary closed-source license.
   - LibreOffice Code: The LibreOffice files (and any modifications you make to them) must remain under the MPL 2.0.

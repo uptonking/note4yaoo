@@ -231,6 +231,10 @@ modified: 2025-11-18T13:22:22.078Z
 
 ## rag
 
+- [zilliz/semantic-highlight-bilingual-v1 · Hugging Face](https://huggingface.co/zilliz/semantic-highlight-bilingual-v1)
+  - We kept running into this problem: when we retrieve documents in our RAG system, users can't find where the relevant info actually is.
+  - This work draws its core ideas and theoretical underpinnings from Provence (https://arxiv.org/abs/2501.16214)
+
 - [apple/CLaRa-7B-Instruct · Hugging Face _202511](https://huggingface.co/apple/CLaRa-7B-Instruct)
   - instruction-tuned unified RAG model with built-in semantic document compression (16× & 128x).
   - It supports instruction-following QA directly from compressed document representations.

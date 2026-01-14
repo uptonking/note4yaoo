@@ -223,6 +223,11 @@ modified: 2025-03-22T18:49:15.634Z
   - Model backends: works with llama.cpp, vLLM, mlx-lm/mlx-vlm, LM Studio, Ollama, and more via the standard OpenAI-compatible API.
   - Storage: all assets (uploaded or generated) live in Postgres or file/object storage.
   - Documents: PDF, DOC/DOCX, PPT/PPTX, XLS/XLSX, ODT/ODP/ODS, MD, TXT, RTF, Pages, Numbers, Keynote, HTML, CSV, and more.
+
+- https://github.com/chatboxai/chatbox /38.1kStar/GPL/202511/ts/inactive
+  - https://chatboxai.app/
+  - repository for the Chatbox Community Edition
+  - We regularly sync code from the pro repo to this repo, and vice versa.
 # ui-ai 💄
 - https://github.com/google/a2ui /543Star/apache2/202512/ts
   - https://a2ui.org/
@@ -344,6 +349,21 @@ modified: 2025-03-22T18:49:15.634Z
   - chat.md embraces a file-first approach where your conversations with AI are just markdown files with a `.chat.md` extension. Edit them, version control them, share them - they're your files. The AI directly writes its response in the file.
   - chat.md treats conversations as first-class files in your workspace
   - Custom APIs: Any OpenAI-compatible endpoint (Azure, Google Gemini, etc.)
+# integrations-ww
+
+# integrations-cn
+- https://github.com/ILoveBingLu/miyu /MIT/202601/ts
+  - 基于 Electron + React + TypeScript 构建的聊天记录查看工具界面，基于原项目 EchoTrace 重构。
+  - 数据导出功能
+  - 全文搜索界面和交互
+  - 依赖electron-builder, Zustand
+    - 其他: jieba-wasm (分词), lucide-react (图标)
+- https://github.com/hicccc77/WeFlow /CC-NC/202601/ts
+  - 完全本地的微信实时聊天记录查看、分析与导出工具。它可以实时获取你的微信聊天记录并将其导出，还可以根据你的聊天记录为你生成独一无二的分析报告
+  - 导出聊天记录为 HTML 等格式
+  - 本地解密与数据库管理
+  - 数据库: better-sqlite3 + WCDB DLL
+  - 密语 CipherTalk 为本项目提供了基础框架
 # more-chat
 - https://github.com/microsoft/TypeChat /MIT/202405/python/ts
   - https://microsoft.github.io/TypeChat/

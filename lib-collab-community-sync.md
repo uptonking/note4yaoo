@@ -204,6 +204,14 @@ modified: 2022-11-29T20:41:25.566Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## Didn’t expect that using SQLite on the browser’s OPFS would turn into a distributed problem too
+- https://x.com/zx_loro/status/2009565910999392518
+- The fact that doing anything cross tab inside a browser becomes a distributed systems problem, despite it not only being local, but also *in the same process* is absolutely absurd. The APIs we deserve don't exist.
+
+- And it sucks that crossing those boundaries has such a perf hit too
+
 - ## A funny side effect of our sync engine: even when offline, the app stays “multiplayer” across browser tabs. 
 - https://x.com/wcools/status/1920810988040822959
   - Really useful while we're testing the real-time multiplayer features

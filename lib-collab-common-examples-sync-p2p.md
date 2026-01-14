@@ -45,6 +45,15 @@ modified: 2023-01-17T19:13:01.845Z
     - We just launched self-hosted @convex_dev _20250214
     - When people say they want open source they rarely mean they just want to read the source code. They mean they want unrestricted access, an active community, ease of use, and yes, often something for free.
 
+- https://github.com/livestorejs/livestore /3.4kStar/apache2/202601/ts
+  - https://livestore.dev/
+  - a next-generation state management framework based on reactive SQLite and built-in sync engine
+  - LiveStore is a fully-featured, client-centric data layer (replacing libraries like Redux, MobX, etc.) with a reactive embedded SQLite database powered by real-time sync (via event-sourcing).
+  - [Effect 4 notes _202506](https://github.com/livestorejs/livestore/issues/382)
+    - Embrace Effect Schema for sqlite state column definitions (table definitions) (schema-first approach)
+    - [refactor: migrate `ClientSessionSyncProcessor.push()` to Effect _202506](https://github.com/livestorejs/livestore/pull/375)
+    - [refactor: migrate `store.commit` to Effect _202508](https://github.com/livestorejs/livestore/pull/381)
+
 - https://github.com/typeonce-dev/sync-engine-web /ISC/202503/ts
   - https://typeonce.dev/
   - A Sync Engine for the web: React (TanStack Router), Web Workers, Effect, Loro

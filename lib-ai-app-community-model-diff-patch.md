@@ -999,6 +999,31 @@ Code
 - I would love it, but please don't add JSON-RPC to the world... It's too heavy for editor.
   - To write that JSON-RPC is "too heavy for editor", you have to not only misunderstand the cost of JSON encoding (trivial) but also the frequency of editor-tool interaction (seldom) and volume of data transferred (negligible). In addition, you have to look at LSP, MCP, and other JSON-y protocols and say "yep. There's where the UI latency is. Got it.". (Nope)
 
+# discuss-proofreading
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [I built a text refinement prompt that might even be better than any proofreading prompts : r/ChatGPTPromptGenius _202505](https://www.reddit.com/r/ChatGPTPromptGenius/comments/1kiz7ko/i_built_a_text_refinement_prompt_that_might_even/)
+  - I created a text refinement tool that works similarly to prompt optimization tools. You provide a piece of text (whether a prompt or a draft), and it gives you two improved versions-each one tweaked for clarity, tone, and structure.
+  - But here's the cool part: you can give feedback on the revisions, and the tool will keep learning and getting better over time. It's a bit like collaborating with a personal editor who adapts to your style.
+  - Basically, it becomes a feedback loop to help you lock in the most effective version of your text.
+  - Tip: To get the best results from the beginning, always start by telling it the purpose of your writing-like, "This is for a persuasive speech" or "I want this to sound casual but informative." It makes the whole refinement process smarter.
+
+- ## [Tracking changes, is it standard practice for proofreading? : r/TranslationStudies _202301](https://www.reddit.com/r/TranslationStudies/comments/10cyqnb/tracking_changes_is_it_standard_practice_for/)
+  - Just turned in a big proofreading/editing job, but I didn't have change tracking enabled in my CAT tool (MARSCat). I assumed the tool was tracking changes by default, but apparently not? My question is, track changes standard or at PM request/editor preference?
+- Usually they are requested from me, however I forget occasionally and PMs don’t say anything. If necessary, they can compare the two versions (pre- and post- proofreading) to generate a tracked version with redline changes, so I wouldn’t worry
+
+- I consider tracking changes to be standard for any proofreading or editing work, but as u/sxb1394 mentioned, you can either turn tracking changes on while doing the editing or compare the pre- and post-editing versions. AFAIK, the resulting file is identical no matter which method you use.
+
+- I always ask before starting the proofing. Some clients expressly request it not be turned on, I think because it can make some small unwanted changes to the document, such as misplacing punctuation.
+
+- ## 🆚 [Is there any tool for for manual proofreading of video transcriptions, with ability to check original audio and to maintain a list (dictionary) of text entities? : r/LanguageTechnology _202404](https://www.reddit.com/r/LanguageTechnology/comments/1c3qfii/is_there_any_tool_for_for_manual_proofreading_of/)
+- https://gooey.ai/speech offers a bunch of ASR models (google USM, meta-large, whisper v3) and the ability to define a dictionary as a google sheet.
+
+- I'm not sure this is actually an NLP problem. Everything you want here can be done with standard text editors and databases and probably some audio software, you just want an app that puts all of that together. The actual NLP task of transcribing the audio is the part you're doing manually, rather than delegating it to an algorithm to do automatically.
 # discuss-rich-text-editing ✏️
 - ## 
 

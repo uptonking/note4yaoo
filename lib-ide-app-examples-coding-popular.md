@@ -187,6 +187,14 @@ modified: 2025-12-11T18:10:23.710Z
   - models: openrouter, Ollama
   - mux has a custom agent loop but much of the core UX is inspired by Claude Code.
 
+- https://github.com/openkursar/hello-halo /MIT/202601/ts
+  - The Missing UI for Claude Code
+  - open-source desktop client that makes Claude Code's power accessible to everyone. No terminal, ever.
+  - https://x.com/FlynnWayne_Wang/status/2011079825956749365
+    - Remote access from phone/tablet/any browser
+    - Built-in AI Browser for web automation
+    - 100% of the code after v1 was written by Halo itself
+
 - https://github.com/fengshao1227/ccg-workflow /MIT/202601/js
   - CCG v3.0: Claude Code 编排三 CLI 协作
   - v3.0.0 重大更新：从 Python 脚本进化为 npm 包，三 CLI 协作时代正式开启！

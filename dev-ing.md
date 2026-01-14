@@ -288,6 +288,20 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-to
   - ?
 
+## 0113
+
+- it's hard to find llm server example that supports pluggable backend like .gguf/.mlx. can you find some other server example that supports pluggable backend? you can find examples for other cases like  reading/conversion/editing for document/image/pdf ... .  I want to see the best practice on how to  implement pluggable backends. if you can find, give me some github repos and description
+- Docling — document converter with format-specific backends
+  - Study how it maps file-type → backend and orchestrates pipelines. Very relevant for mapping model file format (.gguf/.mlx) → runtime backend.
+
+- Dynamic Loading: Use Python's `importlib` if you want to drop new backends into a folder without restarting the server, or simple if/else factories if you only have 2-3 backends.
+
+- How to Design Your Own (Best Practices)
+  - you should use the Registry + Adapter Pattern.
+  - Step 1: Define the Protocol (The "Interface") Don't write code for Llama or MLX yet. First, define what a "Model" is to your server.
+  - Step 2: Implement the Adapters (The "Plugins") Create separate files for each backend. This isolates dependencies. If a user doesn't have Apple Silicon, the MLXBackend import will fail, but the server will still run LlamaCppBackend.
+  - Step 3: The Factory (The "Router") This is the piece most tutorials skip. You need a function that looks at the file extension and picks the right class.
+
 ## 0111
 
 - to use openai compatible api like http://localhost:1234/v1/chat/completions, how can i pass prompt text to this api? give me the api data structure and some api usage examples

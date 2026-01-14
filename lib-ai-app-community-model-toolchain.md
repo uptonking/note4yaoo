@@ -47,7 +47,8 @@ modified: 2025-09-16T12:36:12.968Z
 
 - ## 
 
-- ## 
+- ## [Is it possible to pack LLama into an offline software that you would distribute? : r/LocalLLaMA _202404](https://www.reddit.com/r/LocalLLaMA/comments/1c9kspi/is_it_possible_to_pack_llama_into_an_offline/)
+- https://github.com/Mozilla-Ocho/llamafile
 
 - ## [Is Q8 KV cache alright for vision models and high context : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1py4xp6/is_q8_kv_cache_alright_for_vision_models_and_high/)
 - I don't have a mathematical evidence, but with KV at Q8 in all my cases qwen3 Vision couldn't do any tasks correctly in browser use cases with very low consistency, the same for picture tagging and descriptions.
@@ -1172,6 +1173,15 @@ sudo launchctl load /Library/LaunchDaemons/io.yaoo.sysctl.plist
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [using llama.cpp via remote API : r/rust _202505](https://www.reddit.com/r/rust/comments/1kssi8v/using_llamacpp_via_remote_api/)
+  - What crate is recommended to connect to a remote instance of llama.cpp (running on a server), sending in data (e.g. some code) with a command what to do (e.g. "rewrite error handling from use of ? t
+
+- ## 🖼️ [Vision support in llama-server just landed! : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kipwyo/vision_support_in_llamaserver_just_landed/)
+  - llama.cpp supports multimodal input via `libmtmd` .
+- With this the need for Ollama (to use with llama vision) is gone. We can now directly fire up llama-server and use OpenAI chat-completions. Local image tagging with good vision models is now made simple.
 
 - ## [llama.cpp: Multi-host inference slower than single-host? : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pwmpcn/llamacpp_multihost_inference_slower_than/)
   - I have two computers running locally and I want to see how I can get faster generation speeds by combining them instead of running the models separately on each computer.

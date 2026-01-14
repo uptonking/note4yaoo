@@ -208,14 +208,14 @@ modified: 2021-04-30T20:14:17.669Z
   - [基于fabric + canvas的在线设计 _202305](https://github.com/pipipi-pikachu/PPTist/issues/199)
     - 代码结构，UI设计参考本项目，集合多背景样式，印刷设计元素
 
-- https://github.com/MrXujiang/pptx /201Star/apache2/202503/ts/inactive
+- https://github.com/MrXujiang/pptx /201Star/apache2/202503/ts/dom/inactive
   - https://mindlink.turntip.cn/
   - 一款基于web端的ppt在线编辑器
   - Nextjs, @radix-ui, tailwindcss, html2canvas, recharts
   - 自研PPT结构转换算法
   - 多组件支持（图文，形状，表格，可视化图表等）
   - 组件可视化拖拽
-  - PPT导出功能
+  - PPT导出功能(html2canvas)
 
 - react-design-editor /1.7kStar/MIT/202507/ts/canvas
   - https://github.com/salgum1114/react-design-editor

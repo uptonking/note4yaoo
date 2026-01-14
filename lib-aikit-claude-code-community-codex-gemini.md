@@ -23,12 +23,27 @@ modified: 2025-12-18T12:27:14.982Z
 - ## 
 
 - ## 
+
+- ## [使用同样的大模型，Claude code 、Google Gemini CLI、Qwen CLI 区别大吗 _202601](https://linux.do/t/topic/1443293/3)
+- 模型一样的话，处理问题区别不大吧，就看使用习惯和你用途了，CC 权限多，文件读写、终端执行、工程搜索这些都行，其他的普通CLI只能给你建议代码，而且CC还有MCP
+
+- 使用体验完全不一样，Claude Code> Gemini > Qwen
+  - 即便是相同模型，Skills，Sub-Agents，丰富的工作流生态，都不是GEMINI和QWEN可以比的
+
+- claude code原生不带回退真的挺痛苦的，如果只考虑宿主的话我还是更喜欢cursor。
+
+- 写代码这件事情上，还是有IDE窗口更加直观。习惯了cursor，cli不如cursor。
+  - 另外近期在研究调用AI生成一些报告，这一块调用claude -p挺好用，这一点也算是cli工具的优势了吧。
+  - 为什么采用这种方式，因为工作环境会有很多代码、数据，需要AI进行分析，OpenApi的方式不够友好了
 # discuss-opencode
 - ## 
 
 - ## 
 
-- ## 
+- ## [OpenCode 启动速度慢？可能是这个原因（从 29s 优化到 3s）以及插件分享 ](https://linux.do/t/topic/1443795)
+  - 我的 OpenCode 启动速度非常慢，体验远不如 Claude Code 
+  - 通过 `opencode --print-logs` 打印日志，发现时间基本都耗在插件安装上
+  - oh-my-opencode@latest 安装	12.89s	每次启动都重新下载
 
 - ## 如果你喜欢 Claude Code，那么你一定要用 OpenCode。
 - https://x.com/huangyihe/status/2007472975952408724
@@ -96,3 +111,13 @@ modified: 2025-12-18T12:27:14.982Z
 
 - no but Codex doesn't do dom agents either
   - what we need is an agent that can switch between the two roles
+
+- ## [Codex CLI vs Claude Code vs Claude Code + Z.ai API — which one’s worth it? : r/ClaudeCode _202509](https://www.reddit.com/r/ClaudeCode/comments/1nepo9y/codex_cli_vs_claude_code_vs_claude_code_zai_api/)
+- I use CC to analyze and generate tasks, which I then use with GLM to complete. It works quite well and does a more than acceptable job.
+
+- Codex CLI is genuine crap. Anything is better than codex CLI as tool.
+  - Codex cli uses freaking toml, huge red flag.
+  - There is not local mcp config, no way to share it or version it for project.
+  - And tool configuration... I didn't comprehend it.
+  - their SDKs are nightmare to work with, literally made by smartasses who never worked with direct clients.
+- literally every cli tool tries to be compatible, where codex just being special.

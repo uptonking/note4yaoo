@@ -32,6 +32,7 @@ modified: 2025-09-16T19:59:57.856Z
   - [CLUE中文语言理解基准测评](https://www.cluebenchmarks.com/)
   - [EQ-Bench 3 Leaderboard](https://eqbench.com/)
   - [UGI Leaderboard - Uncensored General Intelligence](https://huggingface.co/spaces/DontPlanToEnd/UGI-Leaderboard)
+  - https://github.com/vectara/hallucination-leaderboard
 
 - leaderboard-tool-call
   - [Berkeley Function Calling Leaderboard (BFCL)](https://gorilla.cs.berkeley.edu/leaderboard.html)

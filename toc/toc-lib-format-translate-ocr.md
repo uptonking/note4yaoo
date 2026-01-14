@@ -197,6 +197,12 @@ modified: 2025-12-19T12:43:21.150Z
   - https://github.com/saurabhhbansal/polyglot-pdf /202507/inactive
     - PDF translation tool that preserves document formatting while translating content using state-of-the-art AI models. 
 
+- https://github.com/Dicklesworthstone/llm_aided_ocr /2.8kStar/NALic/202408/python/代码少/inactive
+  - Enhance Tesseract OCR output for scanned PDFs by applying Large Language Model (LLM) corrections
+  - Uses LLM to fix OCR-induced errors
+  - Converts text to proper markdown format
+  - [Show HN: LLM-aided OCR – Correcting Tesseract OCR errors with LLMs | Hacker News _202408](https://news.ycombinator.com/item?id=41203306)
+
 - https://github.com/discus0434/pdf-translator /CC-NC/202405/python/inactive
   - translates English PDF files into Japanese, preserving the original layout
   - This repository offers an WebUI and API endpoint that translates English PDF files into Japanese, preserving the original layout.
@@ -552,12 +558,6 @@ modified: 2025-12-19T12:43:21.150Z
     - AI Enhancement: Machine learning-powered accuracy improvements
   - HIPAA Compliance	End-to-end encryption, audit logs
 
-- https://github.com/Dicklesworthstone/llm_aided_ocr /2.8kStar/NALic/202408/python/代码少/inactive
-  - Enhance Tesseract OCR output for scanned PDFs by applying Large Language Model (LLM) corrections
-  - Uses LLM to fix OCR-induced errors
-  - Converts text to proper markdown format
-  - [Show HN: LLM-aided OCR – Correcting Tesseract OCR errors with LLMs | Hacker News _202408](https://news.ycombinator.com/item?id=41203306)
-
 - https://github.com/TurkuNLP/ocr-postcorrection-lm /202510/python
   - Code to try out ocr postcorrection with language models
   - [OCR Error Post-Correction with LLMs in Historical Documents: No Free Lunches](https://arxiv.org/abs/2502.01205v1)
@@ -633,6 +633,11 @@ modified: 2025-12-19T12:43:21.150Z
   - 使用针对mac优化的模型 https://huggingface.co/Dogacel/DeepSeek-OCR-Metal-MPS
   - [A quickly put together a GUI for the DeepSeek-OCR model that makes it a bit easier to use : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1ocx27p/a_quickly_put_together_a_gui_for_the_deepseekocr/)
 
+- https://github.com/Dogacel/deepseek-ocr-client-macos /MIT/202511/python/js
+  - A real-time Electron-based desktop GUI for DeepSeek-OCR
+  - [Dogacel/DeepSeek-OCR-Metal-MPS · Hugging Face](https://huggingface.co/Dogacel/DeepSeek-OCR-Metal-MPS)
+    - This repository uses the weights from the original DeepSeek-OCR and modifies model to support MPS and CPU inference
+
 - https://github.com/th1nhhdk/local_ai_ocr /apache2/202512/python/ts
   - An local, offline (after initial setup), portable OCR software that can process images and PDF files, using DeepSeek-OCR AI (running directly on your machine).
   - Queue system: Allows processing multiple files sequentially.
@@ -648,10 +653,6 @@ modified: 2025-12-19T12:43:21.150Z
   - PDF 转 DOCX 转换器 (完整版): 自动进行拆图、OCR 识别、版面分析, 利用多核 CPU 并行处理，大幅提升长文档的转换速度, 实时进度：清晰展示拆图、识别、生成的每一个步骤进度, 支持下载 Word 文档 (.docx) 或包含 Markdown、JSON 数据的 ZIP 压缩包
   - 在“批量处理”标签页，您可以一次性拖入多个 PDF 文件。 自动排队：文件会自动进入队列逐个处理。您可以在下方列表中查看每个文件的实时进度
 
-- https://github.com/Dogacel/deepseek-ocr-client-macos /MIT/202511/python/js
-  - A real-time Electron-based desktop GUI for DeepSeek-OCR
-  - [Dogacel/DeepSeek-OCR-Metal-MPS · Hugging Face](https://huggingface.co/Dogacel/DeepSeek-OCR-Metal-MPS)
-    - This repository uses the weights from the original DeepSeek-OCR and modifies model to support MPS and CPU inference
 - https://github.com/matica0902/MLX-Video-OCR-DeepSeek-Apple-Silicon /AGPL/202512/python/js
   - 影片/PDF/圖片 三合一 OCR, 專為 Apple Silicon 優化的全功能 OCR 解決方案
 
@@ -825,6 +826,13 @@ modified: 2025-12-19T12:43:21.150Z
 
 - https://github.com/mary-lev/llm-ocr /202506/python
   - LLM-powered OCR evaluation and correction package that supports multiple language models for OCR processing and text correction tasks.
+
+- https://github.com/trykuku/ocr_cook /202601/python/ts
+  - 一个基于 OCR 技术的 Photoshop 自动化工具，可以自动识别图片中的文字并生成 Photoshop JSX 脚本，支持在 Photoshop 中自动创建文字图层。
+  - 图片 OCR 识别：基于 PaddleOCR 和 PaddleX，支持高精度文字识别
+  - 智能文字定位：精确识别文字在图片中的位置和大小
+  - 翻译功能：可选的中文到英文翻译功能（Electron 版本）
+  - fastapi + PyInstaller 打包后端为独立可执行文件
 
 ## utils-tesseract
 
@@ -1356,14 +1364,50 @@ modified: 2025-12-19T12:43:21.150Z
   - This extension offers Proofread, Translate and Check Grammar commands in VS Code. 
   - It's a simple alternative to DeepL, Grammarly, and other similar tools.
   - Uses Copilot, Ollama, or OpenAI for proofreading.
+
+- https://github.com/hotchpotch/open_provence /MIT/202511/python
+  - Open-Source, Efficient, and Robust Context Pruning for Retrieval-Augmented Generation
+  - Lightweight Provence-style rerankers that keep the answers and drop the noise for retrieval-augmented generation.
+
+- apps
+  - [Refine - AI Powered Offline Grammar Checker for Mac | Privacy-First Grammarly Alternative](https://refine.sh/)
 # spellchecking
 - https://github.com/languagetool-org/languagetool /13.6kStar/LGPL/202509/java
   - https://languagetool.org/
   - Open Source proofreading software for English, Spanish, French, German, Portuguese, Polish, Dutch, and more than 20 other languages
+  - [100% Open source alternative for Grammarly : r/opensource](https://www.reddit.com/r/opensource/comments/x9sc53/100_open_source_alternative_for_grammarly/)
+    - 202512: LanguageTool is no more available, as of today they limit their extension to paid only users.
+- https://github.com/kiriharu/lango /202601/ts
+  - https://lango.kiriha.ru/
+  - simple frontend alternative for LanguageTool compatible API
+  - A modern frontend interface for the LanguageTool API, built with React, TypeScript, and Material UI.
+  - Text grammar and style checking using LanguageTool API
+  - Real-time text analysis
+  - Higlight potential issues in text
+  - Lango was created especially to use with custom selfhosted LanguageTool backend like https://github.com/meyayl/docker-languagetool /docker
 
 - https://github.com/sonnyp/Eloquent /183Star/GPL/202512/js
   - Eloquent is a proofreading software for English, Spanish, French, German, Portuguese, Polish, Dutch, and more than 20 other languages.
   - It works fully offline, powered by LanguageTool standalone server.
+  - Eloquent is also able to run as a service in the background to make your local/offline LanguageTool server available to Firefox, LibreOffice and more.
+
+- https://github.com/automattic/harper /9kStar/apache2/202601/rust/ts/svelte
+  - https://writewithharper.com/
+  - Offline, privacy-first grammar checker. Fast, open-source, Rust-powered
+  - LanguageTool is great, if you have gigabytes of RAM to spare and are willing to download the ~16GB n-gram dataset. Besides the memory requirements, I found LanguageTool too slow: it would take several seconds to lint even a moderate-size document.
+  - That's why I created Harper: it is the grammar checker that fits my needs. Not only does it take milliseconds to lint a document, take less than 1/50th of LanguageTool's memory footprint, but it is also completely private.
+  - Harper is even small enough to load via WebAssembly.
+  - 🌐 Harper currently only supports English, but the core is extensible to support other languages
+  - Supported Editors: Visual Studio Code, Neovim, Helix, Emacs, Zed
+
+- https://github.com/theJayTea/WritingTools /2.1kStar/GPL/202601/python/swift/全局浮窗交互
+  - The world's smartest system-wide grammar assistant; a better version of the Apple Intelligence Writing Tools. 
+  - Works on Windows, Linux, & macOS, with the free Gemini API, local LLMs, & more.
+  - Instantly proofread and optimize your writing system-wide with AI
+  - an Apple Intelligence-inspired application for Windows, Linux, and macOS that supercharges your writing with an AI LLM (cloud-based or local).
+  - Select any text on your PC and invoke Writing Tools with ctrl+space.
+  - The macOS version is a native Swift port, macOS 14 or later is required due to accessibility API requirements.
+    - Run local LLMs with MLX on Apple Silicon
 # more
 - https://github.com/leplusorg/docker-pdf /apache2/202512/docker
   - Multi-platform Docker container with utilities to process PDF files (pdftk, ghostscript, ocrmypdf, pdfgrep, qpdf...).

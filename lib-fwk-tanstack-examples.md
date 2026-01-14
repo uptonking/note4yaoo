@@ -265,6 +265,11 @@ modified: 2025-12-16T06:25:12.641Z
   - 依赖react-router.v6、zustand、react-query
   - https://github.com/halolight/halolight
     - Next.js 15 企业级管理后台
+
+- https://github.com/pacekit/tanstack-starter /MIT/202601/ts
+  - https://pacekit.dev/
+  - Enterprise grade starter kit for Tanstack Start. Built for modern products
+  - https://github.com/pacekit/nextjs-starter /MIT/ts
 # examples
 - https://github.com/murabcd/docufy /202512/ts
   - https://docufy-oss.vercel.app/

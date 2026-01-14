@@ -17,6 +17,15 @@ modified: 2025-02-21T17:17:42.225Z
   - AI Health Assistant | Powered by Your Data
   - Smart Parsing: Automatically parses your health data and generates structured data files.
   - Contextual Conversations: Use the structured data as context for personalized interactions with GPT-powered AI.
+
+## starter/boilerplate
+
+- https://github.com/ArjunDivecha/mlx-finetune-gui /202509/python/ts/inactive
+  - A modern desktop application for fine-tuning Large Language Models using Apple's MLX framework on macOS. 
+  - Built with Electron, React, TypeScript, and FastAPI.
+  - MLX environment already set up at: `/Users/macbook2024/Library/CloudStorage/Dropbox/AAA Backup/A Working/Arjun LLM Writing/local_qwen/.venv`.
+  - Training process management with MLX integration
+  - Datasets: File picker for JSONL training data
 # open-canvas
 - https://github.com/refly-ai/refly /apache2/202503/ts
   - https://refly.ai/
@@ -159,6 +168,11 @@ modified: 2025-02-21T17:17:42.225Z
     - Get the latest ComfyUI release information from GitHub
     - refactor: Standalone comfyUI installation logic
 
+- https://github.com/chatfire-AI/huobao-canvas /202601/js/vue
+  - 一个基于 Vue Flow 的可视化 AI 创作画布，支持文生图、视频生成等 AI 工作流的节点式编排。 
+  - 撤销/重做 - 完整的操作历史记录
+  - 类似comfyui的文生图
+
 - https://github.com/onlook-dev/onlook /apache2/202502/ts
   - https://onlook.com/
   - The open source Cursor for Designers. 
@@ -297,7 +311,43 @@ modified: 2025-02-21T17:17:42.225Z
   - 支持 Model Context Protocol，可在 Claude Desktop 等工具中使用
   - 本地存储 - 支持保存和加载卡片项目
 # ai-apps
+- https://github.com/eigent-ai/eigent /3.6kStar/apache2/202601/python/ts
+  - https://www.eigent.ai/
+  - The Open Source Cowork Desktop to Unlock Your Exceptional Productivity.
+  - open source cowork desktop application, empowering you to build, manage, and deploy a custom AI workforce that can turn your most complex workflows into automated tasks.
+  - Built on CAMEL-AI, our system introduces a Multi-Agent Workforce that boosts productivity through parallel execution, customization, and privacy protection.
+  - 100% Open Source - 🥇 Local Deployment - 🏆 MCP Integration
+  - Zero Setup - No technical configuration required
+  - Enterprise Feature - SSO/Access control
+  - Local backend server with full API
+  - Local model integration (vLLM, Ollama, LM Studio, etc.)
+  - Zero external dependencies
+  - For teams who prefer managed infrastructure, we also offer a cloud platform. 
+  - Human-in-the-Loop: If a task gets stuck or encounters uncertainty, Eigent will automatically request human input
+  - https://github.com/camel-ai/camel /15.4kStar/apache2/202601/python/ts
+    - https://www.camel-ai.org/
+    - The first and the best multi-agent framework. Finding the Scaling Law of Agents.
+    - 看org的仓库，感觉是比langchain更复杂的全家桶
+    - Agents maintain stateful memory, enabling them to perform multi-step interactions with environments and efficiently tackle sophisticated tasks.
+    - Every line of code and comment serves as a prompt for agents. Code should be written clearly and readably, ensuring both humans and agents can interpret it effectively.
 
+- https://github.com/openkursar/hello-halo /MIT/202601/ts
+  - The Missing UI for Claude Code
+  - open-source desktop client that makes Claude Code's power accessible to everyone. No terminal, ever.
+  - https://x.com/FlynnWayne_Wang/status/2011079825956749365
+    - Remote access from phone/tablet/any browser
+    - Built-in AI Browser for web automation
+    - 100% of the code after v1 was written by Halo itself
+
+- https://github.com/fastaistack/OpenChat /MIT/202508/python/inactive
+  - https://fastaistack.github.io/OpenChat/
+  - 跨平台本地客户端，集成多模型聊天、网络检索、知识库与文档对话，开箱即用、稳定高效。
+  - 兼容主流云端大模型：如 OpenAI、Deepseek、硅基流动等
+  - 支持本地化模型部署：适配 Ollama，服务器部署等本地运行方案
+  - 智能助手应用：集成Kimi，秘塔AI搜索，文心一言，豆包等应用，让你一站式访问国内多个大模型平台
+  - 敏感词检测：精准识别敏感内容，确保文本合规
+  - 跨平台支持：适配 Windows、Mac
+  - 202510: 在v1.0.4的基础上添加了深度求索最新推出的 DeepSeek—OCR 
 # cv
 - https://github.com/IDEA-Research/Rex-Omni /1kStar/IDAE/202512/python/华人作者
   - https://rex-omni.github.io/

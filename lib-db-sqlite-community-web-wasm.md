@@ -17,6 +17,12 @@ modified: 2023-12-09T10:03:55.375Z
 
 - ## 
 
+- ## Didn’t expect that using SQLite on the browser’s OPFS would turn into a distributed problem too
+- https://x.com/zx_loro/status/2009565910999392518
+- The fact that doing anything cross tab inside a browser becomes a distributed systems problem, despite it not only being local, but also *in the same process* is absolutely absurd. The APIs we deserve don't exist.
+
+- And it sucks that crossing those boundaries has such a perf hit too
+
 - ## I wonder if instead of SQLite to WASM if it'd be easier to embed DuckDB as WASM for local first 
 - https://x.com/RogersKonnor/status/1841881976971698669
 - +1 on DuckDB embed story. That and the query language is identical Postgres SQL if I'm not mistaken

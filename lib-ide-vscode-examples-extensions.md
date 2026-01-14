@@ -621,6 +621,16 @@ modified: 2024-08-24T16:17:26.715Z
   - Maintaining Tours: In order to ensure that your tours stay up-to-date as your codebase evolves, you can install one of the following tasks as part of your CI pipeline, in order to detect "tour drift" in response to PRs/commits/etc.
   - [CodeTour: VS Code extension to record and play guided walkthroughs of codebases | Hacker News _202103](https://news.ycombinator.com/item?id=26488610)
 
+- https://github.com/computing-den/CodeMic /MIT/202512/ts
+  - https://codemic.io/
+  - a Visual Studio Code extension that enables developers to create interactive, guided tours within codebases. 
+  - It records and replays code changes, including edits, selections, and scrolls, synchronized with optional audio and video narration. 
+  - This tool is ideal for tutorials, codebase onboarding, and sharing development workflows.
+  - Record and replay code edits, selections, and navigation within VS Code.
+  - Multimedia Integration: Sync recordings with audio and video for comprehensive explanations.
+  - Cross-Platform Support: Plans to extend support to other IDEs like Emacs, (Neo)Vim, IntelliJ, Sublime Text, and Helix.
+  - [CodeMic extension: record, replay, and share your coding sessions, open source & local-first : r/vscode _202601](https://www.reddit.com/r/vscode/comments/1qbt3ew/codemic_extension_record_replay_and_share_your/)
+
 ## ext-coding
 
 - https://github.com/lostintangent/codeswing /MIT/202409/ts
@@ -714,6 +724,13 @@ modified: 2024-08-24T16:17:26.715Z
 
 - https://github.com/Dheovani/SVG-Viewer /MIT/202403/ts
   - Allows you to view SVG images directly within VSCode.
+
+## ext-search
+
+- https://github.com/joshmu/periscope /MIT/202509/ts/inactive
+  - a VSCode extension that supercharges your ability to search workspace contents using ripgrep, providing an intuitive interface with real-time previews of search results.
+  - Inspired by nvim's telescope
+  - 搜索浮窗交互，能跳转对应文件
 # ext-integrations-note-taking
 - https://github.com/sheilaCat/zknotes /202008/ts/inactive
   - zettelkasten zettelkasten .vscode plugin for applying zettelkasten notation.

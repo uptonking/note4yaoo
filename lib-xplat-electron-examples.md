@@ -364,6 +364,16 @@ modified: 2024-01-31T19:13:11.286Z
 
 - https://github.com/jlongster/electron-with-server-example /202001/js
   - An example Electron app with a backend server all wired up via IPC
+
+- https://github.com/ShakeefAhmedRakin/electron-react-ts-tailwind-shadcn-fastapi-template /202504/python/ts
+  - fully-featured template for building cross-platform desktop apps with modern web and backend technologies
+  - FastAPI backend bundled with PyInstaller
+  - https://github.com/buzhiy/electron-fastapi-starter /202508/python/ts/vue
+    - 基于 Electron + Vue3 + FastAPI 的桌面应用开发模板，支持后端 API 接入与前端界面集成。
+  - https://github.com/micwonder/Electron-React-Typescript-boilerplate-with-FastAPI /202310
+  - https://github.com/AgnoyZ/electron-fastapi-starter /202511
+  - https://github.com/calvin44/Custom-Dashboard /202508/ts
+    - a cross-platform desktop application for managing and visualizing data.
 # examples
 - https://github.com/danobot/notorious /GPLv3/202102/ts/友好
   - https://danobot.github.io/notorious-landing
@@ -451,6 +461,33 @@ modified: 2024-01-31T19:13:11.286Z
     - JavaScript 格式化器 - 美化和压缩 JS 代码
     - JWT 工具 - 解析和验证 JWT Token
 
+- https://github.com/DDULDDUCK/every-pdf /1kStar/MIT/202601/python
+  - all-in-one desktop PDF toolkit to edit, convert, merge, and secure your documents. Built with Electron, Next.js, and Python.
+  - PDF Editor (New!): Add text, signatures, images, and checkboxes to complete your documents.
+  - Converting PDFs to different formats and converting different formats to PDFs 
+  - split, merge, Watermark
+  - Framework: Nextron (Next.js + Electron)
+  - Backend: Python, FastAPI
+  - Build/Deployment: Electron Builder
+  - https://github.com/prasadlonare35/pdf-utility-platform /202601/python/js
+    - Offline desktop PDF utility app (Electron + FastAPI)
+
+- https://github.com/AntonioMrtz/SpotifyElectron /CC-NC/202511/python/ts
+  - open-source music streaming desktop app made with Electron-React frontend and Python-FastAPI-MongoDB backend. 
+  - Our goal is to replicate Spotify's core functionalities while incorporating user-requested features—such as the ability to upload personal music.
+  - https://github.com/Swapnanilb/Svara
+    - feature-rich music player built with React, Python, and Electron that streams music from YouTube 
+
+- https://github.com/ephes/djdesk /MIT/202511/python
+  - Django / Electron Tutorial App
+  - `npm start` starts Django on an open port, waits for it to respond, and then shows the site in an Electron window.
+
+- https://github.com/7gxycn08/ProtonMailView /apache2/202510/python/js/单文件
+  - A lightweight, privacy-friendly ProtonMail desktop client for Windows.
+  - Built with Electron, designed for a distraction-free inbox.
+  - ProtonMailView wraps ProtonMail’s secure web interface in an Electron shell
+  - Electron · Node.js · (Experemental) Python version using Pyside6 QWebEngineView
+
 ## notes-apps
 
 - codex /195Star/CC-BY-NC-4.0/202401/ts/electron
@@ -479,6 +516,70 @@ modified: 2024-01-31T19:13:11.286Z
 - https://github.com/zonetti/zonote /MIT/202105/js/inactive
   - Cross-platform desktop note-taking app. 
   - Sticky notes with Markdown and Tabs. All in one .txt file.
+
+## ai/llm-apps 👾
+
+- https://github.com/ArjunDivecha/mlx-finetune-gui /202509/python/ts/inactive
+  - A modern desktop application for fine-tuning Large Language Models using Apple's MLX framework on macOS. 
+  - Built with Electron, React, TypeScript, and FastAPI.
+  - MLX environment already set up at: `/Users/macbook2024/Library/CloudStorage/Dropbox/AAA Backup/A Working/Arjun LLM Writing/local_qwen/.venv`.
+  - Training process management with MLX integration
+  - Datasets: File picker for JSONL training data
+
+- https://github.com/niiallenii/offline-ai-assistant /MIT/202509/python/html
+  - Offline-first AI assistant PoC (Electron + FastAPI). 
+  - Offline-first AI assistant starter built with Electron (desktop UI) + FastAPI (local API).
+  - Ships with sample business data (invoices) and a working chat flow. 
+  - Designed to add local LLM (llama.cpp / Ollama) + RAG securely in later phases.
+  - Demo runs fully offline. LLM integration (e.g., Qwen2.5-7B-Instruct GGUF) is planned in Phase 3.
+  - Ready for offline LLM (llama.cpp or Ollama) & RAG (Chroma/FAISS)
+
+- https://github.com/dnzcany/resume-ai /MIT/202512/python/ts
+  - AI-powered resume evaluation tool that analyzes PDFs/DOCX, scores resumes 0–100, checks ATS compatibility, and provides smart improvement suggestions.
+  - Multiple Deployment Options: Web app, Docker, or Desktop App (Electron)
+
+- https://github.com/moshehto/AI-assistant-app /202509/python/js
+  - Desktop AI assistant built with Electron and FastAPI, supporting file uploads and local embeddings
+
+- https://github.com/ManojRaga/journal-app /202509/python/js/inactive
+  - A desktop journal application built with Electron that features AI-powered chat functionality using RAG
+
+- https://github.com/CurtainShow/ai-labeling-tool /202601/python/js
+  - An AI-powered image labeling tool with active learning capabilities, built with FastAPI, React, and Electron.
+
+- https://github.com/con636/PicFinder-AI /MIT/202601/python/ts/vue
+  - Search your local images effortlessly with PicFinder AI, a privacy-focused tool using natural language and AI for instant results.
+  - No special hardware like a GPU is required.
+  - ChromaDB: Used for efficient image storage.
+  - https://github.com/Breathinggg/PicFinder-AI
+
+- https://github.com/asifdotpy/open-talent-local-ai /MIT/202601/python/ts
+  - https://opentalent-showcase.vercel.app/
+  - Offline, desktop-first local AI interview platform (Ollama/Piper, Granite 4; not affiliated with LinkedIn HR company Open Talent).
+  - Using Piper (TTS) ensures instant voice responses, eliminating "awkward cloud lag."
+  - Built on IBM Granite 4, optimized for coding and business logic, not creative fiction.
+  - Ollama Integration: Marketed as "Universal Compatibility"
+
+- https://github.com/ihatecsv/deepseek-ocr-client /713Star/MIT/202512/python/js
+  - A real-time Electron-based desktop GUI for DeepSeek-OCR， 暂不支持webui
+  - GPU acceleration (CUDA)
+  - Flask backend manages the model, Electron frontend for the UI.
+  - 识别文本是流式输出
+  - 🐛 仅支持image，暂不支持pdf; 不支持批处理
+  - 使用针对mac优化的模型 https://huggingface.co/Dogacel/DeepSeek-OCR-Metal-MPS
+  - [A quickly put together a GUI for the DeepSeek-OCR model that makes it a bit easier to use : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1ocx27p/a_quickly_put_together_a_gui_for_the_deepseekocr/)
+
+- https://github.com/scarletkc/vexor /MIT/202601/python/js/vue
+  - a semantic search engine that builds reusable indexes over files and code. 
+  - It supports configurable embedding and reranking providers, and exposes the same core through a Python API, a CLI tool, and an optional desktop frontend.
+  - Vexor supports both remote API providers (openai, gemini, custom) and a local provider (local):
+    - Local provider ignores api_key/base_url and only uses model plus local_cuda (CPU/GPU switch).
+
+- https://github.com/volcengine/MineContext /4.8kStar/apache2/202601/python/ts
+  - open-source, proactive context-aware AI partner, dedicated to bringing clarity and efficiency to your work, study and creation.
+  - Based on an underlying contextual engineering framework, it actively delivers high-quality information such as insights, daily/weekly summaries, to-do lists, and activity records.
+  - After starting the recording, your context will gradually be collected. It will take some time to generate value.
+  - frontend is a cross-platform desktop application built with Electron, React, and TypeScript, providing a modular, maintainable, and high-performance foundation for desktop development.
 # server
 
 # files
@@ -615,6 +716,10 @@ modified: 2024-01-31T19:13:11.286Z
   - An app that Encrypts / Decrypts your files with a password. 
   - Built using Electron and TailwindCSS
   - App works Offline.
+
+- https://github.com/itsKayWat/Exe-Decompiler /202503/python/inactive
+  - A powerful GUI tool for decompiling and analyzing Electron-based .exe applications. 
+  - Features ASAR extraction, source map analysis, and live modifications with recompilation support. Built for developers and security researchers.
 
 - https://github.com/rhysd/electron-in-page-search /MIT/201906/ts/inactive
   - This package provides Chrome's native in-page search feature to Electron applications.

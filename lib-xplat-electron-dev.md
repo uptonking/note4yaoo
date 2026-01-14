@@ -30,6 +30,7 @@ modified: 2021-05-13T03:08:52.583Z
   - notes(web/pc): obsidian, joplin(AGPL), marktext(MIT), siyuan(AGPL), trilium(AGPL), notable(MIT), notesnook(GPL), Zettlr(GPL), yn(AGPL), tinywrite
   - open: drawio(apache2), tagspaces, medis
   - ai: comfyui
+  - trending: aionui
   - 经典示例: file-manager, note-taking, reader-epub
 
 - web+pc: vscode, jupyter, (rstudio)

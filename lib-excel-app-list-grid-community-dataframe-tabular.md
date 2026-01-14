@@ -20,7 +20,37 @@ modified: 2023-11-14T06:31:35.103Z
 - https://twitter.com/gunnarmorling/status/1731776497197756545
   - @ApacheArrow , @ApacheParquet , @apacheorc compared, by Chunwei Liu et al.
 
+# discuss-toolchain
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Polars vs Pandas in 2025 — have you fully migrated yet? : r/Python _202601](https://www.reddit.com/r/Python/comments/1qbrioj/polars_vs_pandas_in_2025_have_you_fully_migrated/)
+- ecosystem compatibility is still a pain point
+  - Last time I tried (which means could be updated by now) some ML libraries only accepted and/or returned pandas dataframes, and was kinda annoying having to convert the data back and forth.
+
+- Need geopolars to be fully fleshed out still.
+
+- The only feature of Pandas for which I haven't found a Polars substitute is the pivot table, which is the only situation I've encountered where multiindexes make a problem simpler.
+  - If I could, I would use only Polars in all situations, however I am also maintaining a Python data science package that needs to support both Pandas and Polars and so I need to deal with Pandas.
+
+- Performance matters more if you are deploying pipelines. If you're doing EDA for example that latency doesn't matter so much. At that point the question is which is easier and I'm used to pandas.
+  - Fair point. For EDA, the "I already know Pandas" factor is huge — context switching has a real cost.
+  - Though I'd argue Polars' syntax is actually cleaner once you get past the initial hump. Method chaining without all the .copy() paranoia is nice.
+
+- Anytime I am stepping into EDA, I write on pandas without a second thought (6 years of that workflow). However the past year saw me switch to utilizing polars for some larger scale data acquisition+ingestion processes. What would take ~8 minutes of processing with pandas takes maybe ~20 seconds.
+
+- I have fully migrated a bit before polars 1.0. The speed improvement is not always noticeable especially for small data, but the API was the biggest reason for me. I am very experienced in pandas and have always hated its API. I picked up polars API fairly quickly and it's just natural now.
+  - It's rare that I stumble into compatibility issues, but when I do, I just .to_pandas() or pl.from_pandas() it and move on.
+
+- Fully migrated. Was attracted by the speed but stayed for the beautiful API. But it‘s natural that you have more tutorials for pandas since most tutorials are from a time where polars wasn‘t widely known yet.
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 
