@@ -93,6 +93,11 @@ modified: 2025-11-18T13:22:22.078Z
   - z1的think时间比qwen3长很多，
   - 输出内容的长度比qwen3更少, 输出内容会有表格📈
 
+## mobile 📱
+
+- lfm
+  - 对 chat template 和 prompt 的要求不严格，方便测试
+
 ## coding 🔡
 
 - tips

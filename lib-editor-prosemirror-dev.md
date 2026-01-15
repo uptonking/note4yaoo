@@ -99,6 +99,7 @@ modified: 2021-05-06T09:39:53.522Z
 - code
   - code-diff
   - sandbox: sandpack
+  - codeblock的theme支持单独配置, 如light-页面ui搭配dark-codeblock
 - table
   - group
   - views

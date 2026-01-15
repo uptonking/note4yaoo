@@ -29,7 +29,7 @@ modified: 2021-05-13T03:08:52.583Z
   - db: mongodb-compass, dbgate, beekeeper, sqlectron
   - notes(web/pc): obsidian, joplin(AGPL), marktext(MIT), siyuan(AGPL), trilium(AGPL), notable(MIT), notesnook(GPL), Zettlr(GPL), yn(AGPL), tinywrite
   - open: drawio(apache2), tagspaces, medis
-  - ai: comfyui
+  - ai: comfyui, transformerlab-train-chat
   - trending: aionui
   - 经典示例: file-manager, note-taking, reader-epub
 
@@ -71,7 +71,7 @@ modified: 2021-05-13T03:08:52.583Z
   - joplin or extension
   - drawio
   - devtools: lint/format-cli
-  - cli: ImageMagick, ocr, pandoc(GPL/haskell)
+  - cli: ImageMagick, ocr, pandoc(GPL/haskell), ffmpeg
   - saas: filebrowser
 - llm-ui/client
   - 可参考 ollama/lmstudio/janai 封装 llama.cpp 的逻辑

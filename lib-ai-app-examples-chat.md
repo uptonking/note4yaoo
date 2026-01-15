@@ -134,6 +134,12 @@ modified: 2025-03-22T18:49:15.634Z
   - A full-stack application that enables you to turn any document, resource, or piece of content into context that any LLM can use as a reference during chatting
     - An efficient, customizable, and open-source enterprise-ready document chatbot solution.
   - 基于langchain实现
+  - [Native models used by AnythingLLM](https://github.com/Mintplex-Labs/anything-llm/tree/master/server/storage/models)
+    - Use of a locally running LLM model is experimental and may behave unexpectedly, crash, or not function at all. 
+    - We suggest for production-use of a local LLM model to use a purpose-built inference server like LocalAI or LMStudio.
+    - Model must be in the latest GGUF format
+    - Model should be compatible with latest `llama.cpp`.
+    - 👀 注意没找到llama.cpp相关的代码
 
 - https://github.com/huggingface/chat-ui /9.2kStar/apache2/202510/ts/svelte
   - https://huggingface.co/chat/

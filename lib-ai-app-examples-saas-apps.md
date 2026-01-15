@@ -339,6 +339,11 @@ modified: 2025-02-21T17:17:42.225Z
     - Built-in AI Browser for web automation
     - 100% of the code after v1 was written by Halo itself
 
+- https://github.com/DevAgentForge/Claude-Cowork /MIT/202601/ts
+  - A desktop AI assistant that helps you with programming, file management, and any task you can describe.
+  - fully compatible with the exact same configuration as Claude Code, which means you can run it with any Anthropic-compatible large language model.
+  - [开源版本Claude Cowork？ ](https://linux.do/t/topic/1446736)
+
 - https://github.com/fastaistack/OpenChat /MIT/202508/python/inactive
   - https://fastaistack.github.io/OpenChat/
   - 跨平台本地客户端，集成多模型聊天、网络检索、知识库与文档对话，开箱即用、稳定高效。

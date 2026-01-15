@@ -30,6 +30,9 @@ modified: 2025-12-13T18:38:27.763Z
 
 ## draft-aionui
 
+- models
+  - 根据不同任务，使用不同模型，类似claude-sonnet/opus/haiku, 能优化成本，也能改善toolcall
+
 - pdf-view-edit
   - 支持docling/nanotes等模型解析pdf，并还原布局
   - 不与pdf软件厂商绑定

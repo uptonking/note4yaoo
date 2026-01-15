@@ -39,6 +39,20 @@ modified: 2025-12-13T18:38:59.837Z
 
 - claude真的各种扩场景，连excel侧边栏、浏览器侧边栏都进去了，gemini也算是在模型和IDE上有了新场景突破
 
+- aionui用claude code的时候，能不能自动把小任务分给haiku模型呀, 感觉好像现在开源的ui都不咋支持这个功能
+  - aionui除了gemini cli是完全重构自主接管了（等于fork了一个从头到尾自己搭），其他的比如CC，Qwencode都是通过ACP协议接进来的，Aionui能自主控制的空间不大（就是个真UI壳子），所以如果CC不支持，aionui也支持不了
+
+- 我其实研究过一段时间word的问题，不过我后面意识到，当AI更擅长写markdown的时候，会不会有一天，word这种xml格式会被世界遗弃，因为它复杂且AI不友好。基于这个思考，我不是特别想碰word，当然我也不确定自己的想法对不对
+  - pandoc试过了，总的来说体验上不是特别丝滑，复杂格式保留还是差点意思，我之前尝试过用pandoc把word拆解成json配置，修改完后再还原，效果也不是特别好
+- 我觉得是的，而且Latex数学公式的渲染在markdown下更加友好。但是现在被大多数人接受的还是word格式，所以还得做
+
+- 我最近是魔改了Gemini cli，发现gcli的问题不少，和Claude code有本质上的差别
+  - 是的，当初包gemini cli的主要原因是它是第一个开源的agent
+  - 不过也完全够我学习了，我真是大开眼界。现在有更多资料对比，其实发现他们几家之间实现方式差别很多，连skills的实现方式都不一样。
+- Gemini cli对任务安排以及工具并发上的处理不如Claude code。我当时拉取了一个cc的逆向产物kode和Gemini cli让codex作比较，codex就指出了类似的问题（当然具体是什么我有点忘了，但是记得很清楚的就是Gemini cli是串行架构，效率低，而Claude code好像串并行结合，效率更高）
+
+- 
+
 - 当然要做啦， 如今天下三分，Claude gemini ChatGPT， 你再好，我免费， 你大而强，我就小而美。 总有你的一席之地， 加油！大佬！
 - 加油啊佬 opencode 也是在 cc 下杀出了一条血路
 # discuss-roadmap

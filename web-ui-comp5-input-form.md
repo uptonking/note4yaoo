@@ -51,7 +51,20 @@ modified: 2021-07-28T20:11:24.350Z
 
 - ## 
 
-- ## 
+- ##  `<input name="username">` 在 iOS 中会锁定用户的主键盘，不能切换输入法。如果用户系统语言使用英文，他就不能用输入法输入中文。
+- https://x.com/TooooooBug/status/2011088778014965878
+  - 非常震惊，name 居然还能有这种副作用， 感觉这么多年前端白做了。
+  - 目前我测出来只影响iOS Edge浏览器，它更像是浏览器自作主张，Safari我测了一下没影响
+  - 一些无效解决方案：改name值无效，加inputmode无效，设置autocomplete值无效
+  - 有效的解决方案：在密码框前面加上一个输入框，这个输入框会被认为是用户名，原来的用户名的输入框恢复正常。但这个输入框不能被隐藏掉，type="hidden"或者display:none都不行。最后如图，设置absolute不影响原有布局，设置透明度为0视觉隐藏，设置pointer-events不影响其它元素交互。
+- 其实我是在 edge 中碰到的，改了 name 值以后，Safari 好了，edge 还是坏的，有待进一步研究。
+
+- 这种w3c标准里面没有定义的行为, 如何实现都是宿主环境说了算的, 要是实现全部统一的话, 也没有浏览器兼容性这种恶心事了
+  - w3c在移动端确实缺失非常多东西。
+
+- 有很多類似保留字的規範，之前被 copilot 教育的
+
+- 聚焦密码输入框的时候还不能触发罗技的手势操作
 
 - ## TIL ElementInternals doesn't listen call `reportValidity()` when you submit a form, instead it just checks that you already have `setValidity()` called with an anchor attached. 
 - https://twitter.com/RogersKonnor/status/1783922512549609599

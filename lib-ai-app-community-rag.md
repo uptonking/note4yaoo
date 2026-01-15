@@ -1213,7 +1213,25 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [Why does Qwen3-1.7B (and DeepSeek-distill-Qwen-1.5b) collapse with RAG? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1ndj9sf/why_does_qwen317b_and_deepseekdistillqwen15b/)
+  - I’ve been running some experiments comparing different LLMs/SLMs on system log classification with Zeroshot, Fewshot, and Retrieval-Augmented Generation (RAG). The results were pretty eye-opening:
+  - Qwen3-4B crushed it with RAG, jumping up to ~95% accuracy (from ~56% with Fewshot).
+  - Gemma3-1B also looked great, hitting ~85% with RAG.
+  - But here’s the weird part: Qwen3-1.7B actually got worse with RAG (28.9%) compared to Fewshot (43%).
+  - DeepSeek-R1-Distill-Qwen-1.5B was even stranger — RAG basically tanked it from ~17% down to 3%.
+  - I thought maybe it was a retrieval parameter issue, so I ran a top-k sweep (1, 3, 5) with Qwen3-1.7B, but the results were all flat (27–29%). So it doesn’t look like retrieval depth is the culprit.
+  - Does anyone know why the smaller Qwen models (and the DeepSeek distill) seem to fall apart with RAG, while the slightly bigger Qwen3-4B model thrives? 
+
+- I have used Qwen 3 1.7B a lot. That model is crazy without hefty task-specific fine tuning. Very chaotic.
+
+- system log classification sounds like a routine task (data should be structured with clear patterns), so I don't expect any decent model to have any problems with this. If they do, then it is likely due to the distilled models being too distilled. I started off with R1-7B and progressed to larger models from there, no point with anything smaller.
+
+- [Why does Qwen3-1.7B (and DeepSeek-distill-Qwen-1.5) collapse with RAG? : r/Qwen_AI](https://www.reddit.com/r/Qwen_AI/comments/1ndj6tp/why_does_qwen317b_and_deepseekdistillqwen15/)
+  - Think about how RAG works. You type. What you typed becomes an embedding. The embedding is used as a query to the vector database. The vector database returns results of the query. The combined “you” embedding and documents embedding are fed to the LLM
+  - My observation is that context size explodes if the user asks questions that broadly match queries. Most small models are trained with very small context windows. These windows are expanded at inference time using RoPE and YARN. But context aliasing is real and really detrimental to model output quality. The injection of RAG embeddings might be causing context aliasing.
+  - Context aliasing due to RoPE stretching is only one facet of the problem but it’s the one I am mildly familiar with.
+  - There is also weaker attention resolution, poor fine-tuning for retrieval tasks, and the brittleness of distilled models (emulating behavior without more attention heads being distributed over the context).
+  - TL; DR: Your 4B Qwen has enough eyes to read the extra pages. The 1.7B and DeepSeek distill need better page placement and less rumination. It's not "model X bad at RAG" per se. It's about head allocation, positional settings, and prompt hygiene.
 
 - ## [We built a semantic highlighting model for RAG : r/Rag _202601](https://www.reddit.com/r/Rag/comments/1qbjr5n/we_built_a_semantic_highlighting_model_for_rag/)
   - We kept running into this problem: when we retrieve documents in our RAG system, users can't find where the relevant info actually is. Keyword highlighting is useless – if someone searches "iPhone performance" and the text says "A15 Bionic chip, smooth with no lag, " nothing gets highlighted.

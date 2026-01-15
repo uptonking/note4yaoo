@@ -159,7 +159,14 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
-- ## 
+- ## Release the VSC extension design for the local coding model: 
+- https://x.com/LiMzba/status/2011106168136220739
+  - Reasons for creating a new one instead of using the existing code harness:
+  - Make the requests as sequential as possible to avoid overwhelming the local LLM server.
+  - Optimize the tools to accommodate the instability of the local model
+  - Remove timeout, so you can run it against your slowest model
+  - It's fun to build agents
+  - mlx-lm server as a first-class citizen, as I can only use mlx-lm to host models
 
 - ## 📌 [Ratios of Active Parameters to Total Parameters on major MoE models : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1q401ka/ratios_of_active_parameters_to_total_parameters/)
 Model	Total Params	Active Params	% Active
@@ -726,6 +733,39 @@ e) 最终评论者(Final Critic)
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [We tried to automate product labeling in one prompt. It failed. 27 steps later, we've processed 10, 000+ products. : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qcsmww/we_tried_to_automate_product_labeling_in_one/)
+  - We built an AI agent to localize imported food products for a retail client. The task sounds simple: extract product info, translate it contextually (not Google Translate), calculate nutritional values for local formats, check compliance with local regulations.
+  - First attempt: one detailed prompt. Let the AI figure out the workflow.
+  - Result: chaos. The AI would hallucinate numbers even with clean images. It would skip steps randomly. At scale, we had no idea where things broke. Every error was a mystery to debug.
+- So we broke it down. Way down. 27 steps.
+  - Each column in our system handles one thing: Extract name/weight/desc/...
+- What changed:
+  - 1. Traceability. When something fails, we know exactly which step. No more guessing.
+  - 2. Fixability. Client corrects a number extraction error once, we build a formula that prevents it downstream. Errors get fixed permanently, not repeatedly.
+  - 3. Consistency at scale. The AI isn't "deciding" what to do. It's executing a defined process. Same input, same process, predictable output.
+  - 4. Human oversight actually works. The person reviewing outputs learns where the AI struggles. Step 14 always needs checking. Step 22 is solid. They get faster over time.
+- The counterintuitive part: making the AI "dumber" per step made the overall system smarter. One prompt trying to do everything is one prompt that can fail in infinite ways. 27 simple steps means 27 places where you can inspect, correct, and improve.
+  - We've processed over 10, 000 products this way. The manual process used to take 20 minutes per product. Now it's 3 minutes, mostly human review.
+  - The boring truth about reliable AI agents: it's not about prompt engineering magic. It's about architecture that assumes AI will fail and makes failure easy to find and fix.
+
+- This is case with 90% of real world AI use for non coding currently. It always requires human quailty control and intervention.
+
+- Good example of human in the loop. I've been talking with my CEO about how the best use of LLM's at least for the foreseeable future will be wtih humans in the loop. The problem will always be getting humans to actually do the human in the loop process as the error rate begins to plummet.
+
+- same attempt and result I had. Found Nemotron nano solved any output quality issues once it was all broken down.
+
+- ## [Llama 3.2 1B Instruct – What Are the Best Use Cases for Small LLMs? : r/LocalLLaMA _202501](https://www.reddit.com/r/LocalLLaMA/comments/1i4cfpz/llama_32_1b_instruct_what_are_the_best_use_cases/)
+- Llama 3.2 1B Instruct can work as speculative decoding model for Llama 3.2-11B/90B or 3.3-70B.
+
+- Code completion and autocomplete
+
+- With a bit of fine tuning they can be really good at task specific things, including structured output (do not try llama 1b for structured output without fine tuning).
+  - Long term my hope is local models built into the OS, with small task specific Lora adapters. iOS is doing it, but not open to 3rd parties yet.
+
+- For research it's nice to have a dirt cheap model to prototype datasets when evaluating LLMs I usually use 8B for that though
 
 - ## [Real world use cases for small LLM on edge devices : r/LocalLLaMA _202409](https://www.reddit.com/r/LocalLLaMA/comments/1ffzsy0/real_world_use_cases_for_small_llm_on_edge_devices/)
 - Small local models can make many factual mistakes, because it's impossible to compress the entire world model into 2 GB. However, they can be great analyzers (for their size) of the existing text.

@@ -496,6 +496,19 @@ class Plugins {
   - A mock simple plugin system for learning
   - This is a repository refer to umi.
 
+## dynamic-runtime
+
+- https://github.com/yt-dlp/yt-dlp /unlic/202601/python
+  - a feature-rich command-line audio/video downloader with support for thousands of sites
+  - The "Binary Wrapper": While yt-dlp is a CLI, it has a built-in auto-update mechanism that replaces its own binary.
+
+- https://github.com/Unstructured-IO/unstructured /apache2/202601/python
+  - Convert documents to structured data effortlessly. 
+  - See how they handle the "lazy loading" of dependencies. If a user asks to parse a PDF, it checks if the model exists; if not, it downloads it to a cache directory.
+
+- Pattern: The "Language Server" (RPC approach)
+  - The "Editor" (your API) is dumb. It downloads "Extensions" (runtimes) which run as separate processes and communicate via JSON-RPC.
+
 ## plugin-react
 
 - react-table.v7的plugin存在的问题是rerender过多

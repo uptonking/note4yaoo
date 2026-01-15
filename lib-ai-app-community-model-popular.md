@@ -638,7 +638,29 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [LFM2.5 1.2B Instruct is amazing : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1q7jd1a/lfm25_12b_instruct_is_amazing/)
+  - We recommend using it for agentic tasks, data extraction, and RAG. It is not recommended for knowledge-intensive tasks and programming.
+
+- It is the perfect small "helper" model for Open WebUI creating tags, chat headlines, web searches and that kind of stuff. Fast AND good.
+  - I use the normal web search with searxng. Nothing special. But switch on "Bypass Embedding and Retrieval"! This will take longer for the result, but the retrieval itself is not working very well. You'll need of course also a large context then. Together with gpt-oss 120 as my main model it is still fast enough.
+
+- I like to leave websearch on and let the task model decide if a search should be made or not, lfm2.5 1.2b seems to fail at it along with every other model I’ve used in the qwen family (even qwen next); oss-20b is the only model I've had consistently and correctly decide if a websearch is needed or not.
+
+- I'm amazed, especially now that it has tool use. A few days ago it didn't yet, but now I can enable MCP in LM Studio, and have blazing fast inference. On my 8th gen i7 with a 1050Ti nvidia I am getting 41 tps
+- Smaller models can be surprisingly good, but once tools/RAG get involved, edge cases show up quickly.
+
+- it does seem like a model that cannot follow instructions on translation well.
+  - I think tencent released recently an 1.8b and a 7b model specifically for translation. Haven't tried it, but might be worth a look.
+
+- I tried to replace Granite-4.0-h-micro with this for tab completion but the /completion endpoint in llama.cpp gave 501 errors when I loaded LFM2.5-1.2B-Q8.gguf. Perhaps it's missing FIM support?
+
+- I tested it on a few Qualcomm NPUs and here's some early numbers.
+  - Snapdragon X Elite NPU (Compute): Prefill speed: 2591.4 tok/s, Decode speed: 63.4 tok/s
+  - Snapdragon 8 Gen 4 NPU (Mobile): Prefill speed: 4868.4 tok/s, Decode speed: 81.6 tok/s
+  - Dragonwing IQ-9075 NPU (IoT): Prefill speed: 2143.2 tok/s, Decode speed: 52.8 tok/s
+  - All runs were done with NexaSDK - we partnered with Liquid and Qualcomm to ship LFM2.5 day-0 support on Qualcomm NPU/GPU/CPU on Android, Windows, and Linux.
+
+- But context size is too low. Is there any way to increase that?
 
 - ## [What do you think about GLM-4.6V-Flash? : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1plgj0p/what_do_you_think_about_glm46vflash/)
   - thinking model
@@ -2538,7 +2560,7 @@ free 5GB postgres via aiven.io
 - ## [Best uncensored open-source models (2024–2025) for roleplay + image generation? : r/LocalLLM _202510](https://www.reddit.com/r/LocalLLM/comments/1o7qxwx/best_uncensored_opensource_models_20242025_for/)
 - Midnight Rose and MythoMax are solid uncensored models for roleplay. For 10GB VRAM you'll need heavy quantization which hurts quality.
 
-- ## [What is the best LLM with 1B parameters? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1nsu154/what_is_the_best_llm_with_1b_parameters/)
+- ## [What is the best LLM with 1B parameters? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nsu154/what_is_the_best_llm_with_1b_parameters/)
 - In my experience LFM2 1.2B is the clear winner by a huge margin. In terms of coherence, reasoning, and creativity it's better than most 4B models.
   - Whenever I want to run LLM in CPU I usually try:
   - LFM2 1.2B or the new 2.6B

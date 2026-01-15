@@ -449,6 +449,25 @@ Don’t want/can’t have external dependencies?
 - 两个多月前我的开源项目就实现了http的中转机制，可以参考一下。楼上那个mcp-proxy项目是实现sse与stdio的转换，原理不同。
 
 - smithery.ai 上 host 的 mcp server 差不多是类似的实现。给每个 mcp server 添加一个 Dockerfile 和一个配置文件，然后就可以在上面 host了。暴露给上游的是websocket，然后上游通过统一的 smithery mcp server 通信。
+# discuss-skills
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I forked Claude's pptx skill to make Claude Code generate gorgeous presentations
+- https://x.com/nityeshaga/status/2011188015503437856
+  - Claude can generate presentations using the pptx skill from @AnthropicAI but its output can be quite bland.
+  - So I played around with the pptx skill, iterated it, built a design system, gave it image assets, gave it access to run nano-banana using api and added custom commands. 
+  - End result? An every-pptx plugin!
+  - All happening 100% inside Claude desktop app
+- Is each slide a static image or fully editable slides within Google Slides?
+  - Fully editable in Google slides
+
+- why create presentation when you can create working prototype?
 # discuss
 - ## 
 

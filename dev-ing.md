@@ -288,6 +288,15 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-to
   - ?
 
+## 0114
+
+- electron 打包 python runtime 的示例
+
+- 广州商科集团是一家创立于1994年的公司，旗下主要运营着铭瑄(Maxsun)、梅捷(SOYO)和台电（TECLAST） 这三大品牌
+  - 梅捷品牌：源自台湾，创立于1985年，专注于主板研发。目前，该品牌在中国大陆的运营权归属于广州商科集团。
+  - 梅捷的产品线非常专注于主板领域，其特点是在主流和入门级价位段
+  - “梅捷”就是品牌名 SOYO（中文常写作“梅捷”/“梅捷科技”），原为台湾主板厂，后来大陆业务被商科集团（也就是铭瑄/台电同集团）收购并在大陆以 SOYO/梅捷 名义继续销售主板、显卡等产品
+
 ## 0113
 
 - it's hard to find llm server example that supports pluggable backend like .gguf/.mlx. can you find some other server example that supports pluggable backend? you can find examples for other cases like  reading/conversion/editing for document/image/pdf ... .  I want to see the best practice on how to  implement pluggable backends. if you can find, give me some github repos and description

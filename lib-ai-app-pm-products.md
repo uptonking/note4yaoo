@@ -601,6 +601,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 如果增加额度和申请Claude的留言我没有及时回复，可能只是我不在而已，可以再等等 
     - Sonnet模型每次调用消耗两次使用次数，Opus每次调用消耗四次使用次数
     - [公益大模型API接口 - 小欢博客 - Fly your dreams](https://www.cups.moe/archives/free-llm-api.html)
+  - [yx](https://api.dx001.ggff.net/pricing)
   - [方舟API](https://www.yxaiapp.com/)
   - [YesCode](https://co.yes.vg/)
     - [YesCode test](https://cotest.yes.vg/)

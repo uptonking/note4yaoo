@@ -27,6 +27,13 @@ modified: 2025-11-01T10:54:26.044Z
   - A lightweight Inference Server for Apple's MLX engine with a GUI.
   - TLDR - OpenRouter-style v1 API interface for MLX with Ollama-like model management, featuring auto-queuing, on-demand model loading, and multi-user serving capabilities via single mac app.
 
+- https://github.com/madroidmaq/mlx-omni-server /638Star/MIT/202512/python
+  - MLX Omni Server provides dual API compatibility with both OpenAI and Anthropic APIs, enabling seamless local inference on Apple Silicon using the MLX framework.
+  - [Best setup for running a production-grade LLM server on Mac Studio (M3 Ultra, 512GB RAM)? : r/LocalLLM](https://www.reddit.com/r/LocalLLM/comments/1p7ei31/best_setup_for_running_a_productiongrade_llm/)
+    - MLX Omni server is far from production ready. It’s heavily vibe coded and PRs never get merged. Tools parsing is unusable.
+    - I don’t think llama.cpp supports MLX quants. It has metal acceleration, though. MLX-LM is what you need for that, and is what MLX-Omni-server uses. This is also what LM Studio uses.
+    - Mac studios are great for single user research and applications, but not for low latency, high speed, or concurrency.
+
 - https://github.com/cubist38/mlx-openai-server /MIT/202601/python
   - A high-performance API server that provides OpenAI-compatible endpoints for MLX models. 
   - Developed using Python and powered by the FastAPI framework, it provides an efficient, scalable, and user-friendly solution for running MLX-based vision and language models locally with an OpenAI-compatible interface.
@@ -35,6 +42,81 @@ modified: 2025-11-01T10:54:26.044Z
   - LoRA adapter support for fine-tuned image generation and editing
   - https://github.com/arcee-ai/fastmlx /apache2/202503/python/inactive
     - production ready API to host MLX models.
+
+- https://github.com/transformerlab/transformerlab-app /4.7kStar/AGPL/202601/python/ts/electron
+  - https://lab.cloud/
+  - 100% Open Source Toolkit for Large Language Models: Train, Tune, Chat on your own Machine
+  - Use Different Inference Engines: mlx, vllm, llama.cpp, sglang, FastChat
+    - 🌹 支持选择 local-engine, remote-engine
+  - Support for Image Diffusion Models
+  - Finetune / Train Across Different Hardware
+  - win, linux, macos
+  - Download any LLM, VLM, or Diffusion model from Huggingface
+  - Chat with Models
+  - RAG (Retreival Augmented Generation)
+  - Convert Models Across Platforms: Convert from/to Huggingface, MLX, GGUF
+  - 🔌 Plugin Support: loader, trainer, generator, eval, exporter
+  - NVIDIA or AMD GPU on Linux (or Windows via WSL2)
+  - 🛝
+    - 插件功能强大，体验类似lmstudio
+    - import model时选择的路径在windows的wsl环境下逻辑有问题, 在mac下只支持.workspace目录下的文件，导致需要拷贝
+    - 模型RUN很慢，STOP停止困难
+    - 需要chat template的模型(如qwen3-0.6b)无法配置template, 可以先用不需要template的模型如lfm测试
+    - new chat有问题，只能聊一次，之后必须restart model才能再聊一次
+  - macOS with Apple Silicon is supported (training functionality varies by hardware)
+  - CPU-only installs run inference but not GPU-heavy workflows
+  - Transformer Lab consists of a React application "Frontend" that communicates with a Python API "Backend" (found in the api directory). Application data is stored in a file system workspace that is accessed by the API and third-party scripts using the SDK (which can be found in the lab-sdk directory).
+  - 🐛 [Importing models from folder doesn't work on Windows _202408](https://github.com/transformerlab/transformerlab-app/issues/142)
+    - The challenge is that Transformer Lab is architected as a frontend app running in your browser/Electron talking to an API running in WSL, and when you pop open the file explorer dialog it is passing a windows path to WSL.
+    - There are a number of ways we might be able to fix this but we were hoping to solve in a way that allows the API to run on a remote machine. 
+    - Perhaps the easiest short term fix is to just add the ability to copy and paste a path that the server can access into the modal.
+    - Or if you are comfortable generating paths to your models relative to you WSL install, you can try directly importing your models via the API by calling a path like `http://localhost:8338/model/import_from_local_path/?model_path=<wsl_path>`.
+
+- https://github.com/lm-sys/FastChat /39.4kstar/apache2/202506/python/inactive
+  - FastChat is an open platform for training, serving, and evaluating large language model based chatbots.
+  - FastChat powers Chatbot Arena (lmarena.ai), serving over 10 million chat requests for 70+ LLMs.
+  - FastChat's core features include:
+    - The training and evaluation code for state-of-the-art models (e.g., Vicuna, MT-Bench).
+    - A distributed multi-model serving system with web UI and OpenAI-compatible RESTful APIs.
+  - FastChat provides OpenAI-compatible APIs for its supported models, so you can use FastChat as a local drop-in replacement for OpenAI APIs. 
+  - Multiple GPUs: You can use model parallelism to aggregate GPU memory from multiple GPUs on the same machine.
+  - Metal Backend (Mac Computers with Apple Silicon or AMD GPUs)
+  - Launch Chatbot Arena (side-by-side battle UI)
+  - 🏘️ worker架构与gpustack类似
+  - [Apple MLX Integration](https://github.com/lm-sys/FastChat/blob/main/docs/mlx_integration.md)
+
+- https://github.com/gpustack/gpustack /4.4kStar/apache2/202601/python
+  - https://gpustack.ai/
+  - 开源的 GPU 集群管理器，专为高效的 AI 模型部署而设计。它允许您在自己的 GPU 硬件上高效运行模型，通过选择最佳推理引擎、调度 GPU 资源、分析模型架构以及自动配置部署参数来实现。
+  - GPUStack 采用插件式架构，可以轻松添加新的 AI 模型、推理引擎和 GPU 硬件。
+  - 经过测试的推理引擎：vLLM, SGLang, TensorRT-LLM, MindIE
+  - 多集群 GPU 管理。 跨多个环境管理 GPU 集群。这包括本地服务器、Kubernetes 集群和云提供商。
+  - 可插拔推理引擎。 自动配置高性能推理引擎，如 vLLM、SGLang 和 TensorRT-LLM。您也可以根据需要添加自定义推理引擎。
+  - GPUStack worker 节点仅支持 Linux。如果你使用 Windows，可考虑使用 WSL2 并避免使用 Docker Desktop。macOS 不支持作为 GPUStack worker 节点。
+  - 🍴 forks
+  - https://github.com/xuan-wei/gpustack /202508
+    - Implemented automatic instance start when requests arrive; adjust the number of replicas based on the demand/supply relationship in the past two mins.
+  - https://github.com/shengjian-tech/gpustack /202508
+    - 增加声音克隆的接口服务
+  - https://github.com/szlhl1040/gpustack /202503
+    - fix: making VRAM configurable from UMA for macOS
+  - [Using Custom Inference Backend](https://docs.gpustack.ai/latest/tutorials/using-custom-backends/)
+    - 支持 llama.cpp
+  - v0.7.1_20250822 是最后一个非容器版
+  - 🎯 [v2.0.0 _20251124](https://github.com/gpustack/gpustack/releases/tag/v2.0.0)
+    - 🏘️ Container-based Architecture: Redesigned deployment framework to container-based architecture
+    - Pluggable Inference Backends: multiple built-in inference backends (vLLM, SGLang, MindIE, vox-box).
+    - Supports any custom inference backends like TensorRT-LLM, llama-server, kokoro-fastapi via container images
+    - Inference Backend Multi-Versioning
+    - GPU device management moved to separate GPUStack Runtime project.
+    - Integrated Higress, an open-source AI gateway, to eliminate previous server proxy bottlenecks.
+    - Built-in SGLang Support
+  - [Dropped MacOS Support _202512](https://github.com/gpustack/gpustack/discussions/3704)
+    - About macOS: starting with v2 we run all models inside containers, and macOS doesn’t allow GPU access in containers yet. 
+    - As we don't have enough resources to maintain two separate runtimes, we had to drop macOS and native Windows support.
+    - Two things could change this in the future:
+    - If we have the bandwidth to keep a separate native desktop edition based on 0.7, or
+    - If Apple adds GPU support to their container runtime (a lot of people are asking for it).
 # mlx/llama.cpp-server/wrapper
 - https://github.com/lordmathis/llamactl /69Star/MIT/202601/go/ts
   - http://llamactl.org/
@@ -70,30 +152,16 @@ modified: 2025-11-01T10:54:26.044Z
   - 启动方式详见 vLLM启动方式、transformers启动方式
     - Uses native HuggingFace transformers library with PyTorch
     - Uses vLLM library optimized for LLM serving
+  - langchain只有rag相关的逻辑用到了，用得很少
   - [changelog](https://github.com/xusenlinzy/api-for-open-llm/blob/master/docs/NEWS.md)
     - 【2023.11.24】 支持 llama-cpp-python 推理, 实测已删除
+    - 20240612: reafactor project时不知为何删掉了llama.cpp的方式
   - 🍴 forks
     - https://github.com/wood-charcoal/api-for-open-llm
     - https://github.com/gordonchanfz/api-for-open-llm
   - [大佬，这个项目还更新吗？或者有啥平替的项目吗 ](https://github.com/xusenlinzy/api-for-open-llm/issues/318)
     - 应该不更新了，推荐使用gpustack来部署和管理模型
     - 模型和vllm版本更新太快了，两者不适配的问题频发，用爱发电确实难以为继哈哈哈
-
-- https://github.com/gpustack/gpustack /4.4kStar/apache2/202601/python
-  - https://gpustack.ai/
-  - 开源的 GPU 集群管理器，专为高效的 AI 模型部署而设计。它允许您在自己的 GPU 硬件上高效运行模型，通过选择最佳推理引擎、调度 GPU 资源、分析模型架构以及自动配置部署参数来实现。
-  - GPUStack 采用插件式架构，可以轻松添加新的 AI 模型、推理引擎和 GPU 硬件。
-  - 经过测试的推理引擎：vLLM, SGLang, TensorRT-LLM, MindIE
-  - 多集群 GPU 管理。 跨多个环境管理 GPU 集群。这包括本地服务器、Kubernetes 集群和云提供商。
-  - 可插拔推理引擎。 自动配置高性能推理引擎，如 vLLM、SGLang 和 TensorRT-LLM。您也可以根据需要添加自定义推理引擎。
-  - GPUStack worker 节点仅支持 Linux。如果你使用 Windows，可考虑使用 WSL2 并避免使用 Docker Desktop。macOS 不支持作为 GPUStack worker 节点。
-  - [Using Custom Inference Backend - GPUStack](https://docs.gpustack.ai/latest/tutorials/using-custom-backends/)
-    - 
-
-- https://github.com/lm-sys/FastChat /apache2/202506/python/inactive
-  - an open platform for training, serving, and evaluating large language model based chatbots.
-  - It has a modular architecture with a "Controller", "Model Workers", and an "API Server".
-  - Look at their Model Worker implementation. They have different workers for different backends. This is a great example of a Python-based distributed architecture.
 
 - https://github.com/abetlen/llama-cpp-python /9.9kStar/MIT/202508/python/inactive
   - Python bindings for llama.cpp
@@ -271,6 +339,18 @@ modified: 2025-11-01T10:54:26.044Z
   - Automated pipeline for generating high-quality Q&A training data from Git repositories. Processes source code with LLMs to create fine-tuning datasets. 
   - Features smart caching, resume support, MLX (Apple Silicon) & llama.cpp backends, multiple export formats (Alpaca, ChatML, etc).
   - This tool processes source code files and uses Large Language Models to create Q&A pairs suitable for fine-tuning code-focused LLMs.
+
+- https://github.com/dillondesilva/tauri-local-lm /202505/rust/ts/inactive
+  - [Building Local LM Desktop Applications with Tauri _202506](https://medium.com/@dillon.desilva/building-local-lm-desktop-applications-with-tauri-f54c628b13d9)
+    - Sticking with our approach of using prebuilt llama.cpp binaries, we’re lucky that the Tauri ecosystem provides a well-defined method for embedding external binaries.
+    - A sidecar is any binary bundled alongside your application that can be executed to add functionality. In our case, we’ll be adding the `llama-server` binary as a sidecar.
+    - You’ll notice I’ve added the suffix aarch64-apple-darwin to all the llama.cpp binaries. This is because when Tauri builds your application, it needs to select the correct binaries based on the target architecture.
+    - we’ll also want to be spawn our runtime from JS/TS code in the webview. 
+    - Installing the Tauri shell plugin, enabling us to handle execute/spawn of external binaries. Expose this shell usage capability to the webview for our respective binaries
+
+- https://github.com/av/harbor /2.3kStar/apache2/202601/python/ts
+  - Harbor is a CLI and companion app that lets you spin up a complete local LLM stack—backends like Ollama, llama.cpp, or vLLM, frontends like Open WebUI, plus supporting services like SearXNG for web search, Speaches for voice chat, and ComfyUI for image generation—all pre-wired to work together with a single harbor up command. 
+  - No manual setup: just pick the services you want and Harbor handles the Docker Compose orchestration, configuration, and cross-service connectivity so you can focus on actually using your models.
 # llm-apps
 - https://github.com/eclaire-labs/eclaire /MIT/202510/ts
   - Local-first, open-source AI assistant for your data. Unify tasks, notes, docs, photos, and bookmarks. Private, self-hosted, and extensible via APIs.

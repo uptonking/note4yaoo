@@ -101,6 +101,21 @@ modified: 2025-11-06T18:49:13.977Z
 - LLMs and VLMs aren’t magic alone but combining them smartly really moves the needle for document parsing
 
 - How do you solve the issue of "off by one row" kind of problems when there is a table in page and the rows are kinda close to each other?
+# discuss-pm-ocr/translation
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [有没有能截屏自带图像翻译的开源软件 ](https://linux.do/t/topic/1445800)
+  - 覆盖在原文位置的，不是单独弹框翻译的那种。 类似微信图片翻译的效果的。
+
+- pixpin可以的，你试试
+
+- 这种肯定都是要配外部 API 的，不可能为爱发电内置图片翻译。
 # discuss-tips
 - ## 
 
