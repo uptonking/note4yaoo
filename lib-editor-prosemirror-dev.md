@@ -109,6 +109,7 @@ modified: 2021-05-06T09:39:53.522Z
   - img-diff 使用slider对比交互
   - img-editor
   - img-gen
+  - infographics 信息图
 - graphics-by-text: 
   - mermaid-editor
   - drawio-xml

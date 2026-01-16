@@ -100,6 +100,8 @@ modified: 2025-09-25T16:24:05.355Z
 
 - mflux + ui: 参考comfyui, 可web使用, 也可桌面
 
+- infographics 信息图
+
 - booklet 画册
   - 红楼梦
 

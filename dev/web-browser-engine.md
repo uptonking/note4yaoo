@@ -24,12 +24,6 @@ modified: 2020-12-21T07:44:53.873Z
   - 上面跑通了之后要实现网络下载的功能，从一个 url 来下载 html，解析出其中的 css 和 js 单独下载。这部分相对简单。
 - 之后要实现一个静态（或者动态）服务器来下发这些资源。
 - 最后在浏览器里面做一个浏览器的界面，有地址栏，有内容区等等。
-# discuss
-- ## [Google Chromium 为什么要从 WebKit 中抽离，新建一个 Blink 分支？](https://www.zhihu.com/question/20920823/answers/updated)
-- 因为历史原因，WebCore本身一开始就没有多线程或者多进程的概念，
-  - 现有的架构对并行处理的支持非常困难，Google也认为必须对WebCore进行整体架构上的大改才能更好的支持并行处理，更充分利用多核CPU的能力，避免主线程过度拥挤
-  - 为了避免单项任务长时间阻塞主线程，WebCore目前是用延时Timer的方式将一个复杂任务分解成多段来顺序执行，这种方式即不优雅，更无法充分利用多核的能力
-- WebCore为了可以同时支持不同的JS虚拟机（如JSC和V8）导致了额外的性能开销和妨碍了对JS性能更多的改进
 # browser-engine-overview
 - 苹果曾经使用Gecko，嫌弃Gecko曾经有段时间太臃肿，就把KDE的HTML引擎KHTML、JavaScript引擎KJS加工过来，发布了WebCore+JavaScriptCore的WebKit并开源。
 - 后来Google加入使用WebCore引擎，再后来Chromium又分支出去Blink引擎，JavaScript引擎是Google开源的V8。
@@ -140,3 +134,38 @@ modified: 2020-12-21T07:44:53.873Z
 - [浏览器引擎列表](https://pic1.zhimg.com/80/v2-782b4462528d0ef134c71f3c216c6836_720w.jpg)
 - [浏览器内核版本检测](https://ie.icoa.cn/)
 - [Google图解：Chrome快是有原因的，科普浏览器架构_201809](https://toutiao.io/posts/uozd28/preview)
+# discuss
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## We built a browser with GPT-5.2 in Cursor. It ran uninterrupted for one week.
+- https://x.com/its_bvisness/status/2011585317070127430
+  - It's 3M+ lines of code across thousands of files. The rendering engine is from-scratch in Rust with HTML parsing, CSS cascade, layout, text shaping, paint, and a custom JS VM.
+  - It still has issues and is of course very far from Webkit/Chromium parity, but we were astonished that simple websites render quickly and largely correctly.
+
+- 3M+ lines of "from-scratch" code, yet it depends on:
+  - Servo's HTML parser
+  - Servo's CSS parser
+  - QuickJS for JS
+  - selectors for CSS selector matching
+  - resvg for SVG rendering
+  - egui, wgpu, and tiny-skia for rendering
+  - tungstenite for WebSocket support
+  - there are indeed over 3M lines of Rust before even considering dependencies. With dependencies there are over 9M lines of Rust. (So says cargo-loc, which I fear may be missing some dependencies due to workspace things.)
+  - Also it clearly uses other libraries for layout and text shaping, etc. Not that I begrudge them that (everyone uses Harfbuzz) but it’s absolutely not from scratch.
+- it also read Servo's code to "inform" itself
+
+- Do you know how many dependencies chromium has?
+
+- A smarter AI would have just forked Chromium and rebranded it...
+
+- ## [Google Chromium 为什么要从 WebKit 中抽离，新建一个 Blink 分支？](https://www.zhihu.com/question/20920823/answers/updated)
+- 因为历史原因，WebCore本身一开始就没有多线程或者多进程的概念，
+  - 现有的架构对并行处理的支持非常困难，Google也认为必须对WebCore进行整体架构上的大改才能更好的支持并行处理，更充分利用多核CPU的能力，避免主线程过度拥挤
+  - 为了避免单项任务长时间阻塞主线程，WebCore目前是用延时Timer的方式将一个复杂任务分解成多段来顺序执行，这种方式即不优雅，更无法充分利用多核的能力
+- WebCore为了可以同时支持不同的JS虚拟机（如JSC和V8）导致了额外的性能开销和妨碍了对JS性能更多的改进

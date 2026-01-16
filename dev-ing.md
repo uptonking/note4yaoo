@@ -288,6 +288,17 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-to
   - ?
 
+## 0115
+
+- electron python runtime
+- transformerlab-app model site:reddit.com
+- multiple inference mlx llama.cpp github
+
+- which expression is more natural in english: "please use the articles above to create a  summary" vs "please use the above articles to create a  summary" 
+  - "Please use the articles above..." (Most Common/Natural)
+  - This is the most standard way to say it in modern English. Using "above" after the noun (as a post-positive modifier) indicates location clearly.
+  - "Please summarize the provided articles."
+
 ## 0114
 
 - electron 打包 python runtime 的示例

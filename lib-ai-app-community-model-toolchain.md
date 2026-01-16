@@ -453,7 +453,7 @@ PP Speed: Q3 GGUF: 50 t/s
 
 - ## 
 
-- ## [New functiongemma model: not worth downloading : r/ollama](https://www.reddit.com/r/ollama/comments/1pq69o5/new_functiongemma_model_not_worth_downloading/)
+- ## [New functiongemma model: not worth downloading : r/ollama _202512](https://www.reddit.com/r/ollama/comments/1pq69o5/new_functiongemma_model_not_worth_downloading/)
   - I have a valid MCP toolset that works great with other very small models such as qwen3:1.7b. I obtain quite reliable function calls. So, an even smaller model that could do this with the same quality sounds great. 
   - I downloaded the functiongemma:270m-it-fp16 version of 552MB and deleted after the second test
 - I believe the purpose of this model is to be fine-tuned further on your specific tool use case.

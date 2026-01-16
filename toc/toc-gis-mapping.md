@@ -87,6 +87,8 @@ modified: 2021-01-04T16:21:18.990Z
   - Markers & Popups — Rich marker system with popups, tooltips, and labels
   - Draw routes and paths on your maps
   - Zoom, compass, locate, and fullscreen controls
+  - 📡
+    - 天地图版
 # leaflet
 - https://github.com/geoman-io/leaflet-geoman /MIT/202403/js
   - https://geoman.io/leaflet-geoman

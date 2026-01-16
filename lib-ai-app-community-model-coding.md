@@ -238,8 +238,9 @@ Only use the provided information.
   - Smooth animations for page transitions
   - Typography-driven content sections
 
-- 
-- 
+- [【第二个版本】分享一套UI风格提示词，今天进一步研究测试，gemini canvas上迭代出来了第二个版本 ](https://linux.do/t/topic/1464452)
+  - macos风格
+
 - 
 - 
 - 

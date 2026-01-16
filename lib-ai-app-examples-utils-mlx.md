@@ -240,6 +240,8 @@ modified: 2025-11-01T10:54:26.044Z
       - Nothing. Just yet another wrapper over ollama.
     - What does Klee use for embeddings for the RAG? does it support directory/folder upload or just individual file upload?
       - individual file, multiple files and folder
+    - Would also like to know if it allows users to connect to an existing ollama instance over LAN? Would it allow me to connect to my ollama API on my network? So I can use this on my laptop and connect to my AI server in the basement? Can you put a custom IP/port? 
+      - this is the most requested feature 
 
 - https://github.com/BruceMacD/chatd /MIT/202405/js/inactive
   - Chat with your documents using local AI. All your data stays on your computer 

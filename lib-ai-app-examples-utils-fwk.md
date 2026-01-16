@@ -879,6 +879,9 @@ modified: 2025-02-21T18:20:42.624Z
     - the Plus version of CLIProxyAPI, adding support for third-party providers on top of the mainline project.
     - Added GitHub Copilot support (OAuth login)
     - Added Kiro (AWS CodeWhisperer) support (OAuth login)
+  - https://github.com/dongshuyan/CPA-Dashboard 
+    - 控制面板 - 服务管理与账户监控 Web 界面
+    - 启动 / 停止 / 重启 CLIProxyAPI 服务
 - https://github.com/automazeio/vibeproxy /688Star/MIT/202512/swift
   - Native macOS menu bar app to use your Claude Code & ChatGPT subscriptions with AI coding tools - no API keys needed
   - native macOS menu bar app that lets you use your existing Claude Code, ChatGPT, Gemini, Qwen, and Antigravity subscriptions with powerful AI coding tools like Factory Droids – no separate API keys required.

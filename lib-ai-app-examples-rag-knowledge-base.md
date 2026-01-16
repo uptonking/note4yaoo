@@ -858,6 +858,12 @@ modified: 2025-11-30T17:27:16.720Z
   - AI 驱动的智能书籍知识图谱, 将书籍转化为相互关联的知识网络
   - 基于大语言模型的全书内容分析
   - 类似 deepwiki/codewiki 的书籍版本
+
+- https://github.com/abhigyanpatwari/GitNexus /202601/ts
+    - https://gitnexus.vercel.app/
+    - GitNexus is a client-side knowledge graph creator that runs entirely in your browser. 
+    - Drop in a GitHub repo or ZIP file, and get an interactive knowledge graph wit a built in Graph RAG Agent. Perfect for code exploration
+    - Zero-Server, Graph-Based Code Intelligence Engine Works fully in-browser through WebAssembly. (DB engine, Embeddings model, AST parsing, all happens inside browser)
 # rag-memory
 - https://github.com/jakops88-hub/Long-Term-Memory-API /202512/ts
   - A Memory Server for AI Agents. Runs on Postgres + pgvector. 

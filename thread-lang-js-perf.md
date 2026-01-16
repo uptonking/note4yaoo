@@ -12,6 +12,28 @@ modified: 2023-11-10T08:05:19.107Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Fun fact JSON | JSONMASTER : r/webdev](https://www.reddit.com/r/webdev/comments/1qdfq3t/fun_fact_json_jsonmaster/)
+  - Up to 40% of backend CPU in large systems is spent just on: JSON.parse() and JSON.stringify(). Data is heavy.
+- CPU cycles are cheap. Backend developers sanity is not
+  - CPU will rarely if every be a bottleneck for backend, most time is spent on IO/db
+
+- JSON parsing in every js runtime is faster than object literal instantiation...
+  - This. Typical request handler is 1) parse json 2) a few conditions 3) a few assignments 4) go to database and/or network 5) stringify json. Obviously JSON handling is the only CPU bound task here. It doesn't (necessarily) make JSON handling CPU-heavy.
+
+- 40% on JSON and not SQL?! What is your backend doing?!
+
+- structuredClone
+  - still annoying that jest still cant handle this
+
+- We can debate this all day, or we can actually measure it. I just did in an application I'm maintaining:
+  - Database call: 101 ms
+  - JSON.parse(JSON.stringify(largeObject)): 0.143 ms
+  - Let's say you are asked to improve the performance of the program that performs these two operations. Which of them would you work on?
+
 - ## Needed some I/O latency numbers for a piece I'm working on, and this came in absolutely clutch(紧紧地抱住、握住).
 - https://x.com/BenjDicken/status/1841883864144429228
 

@@ -13,6 +13,7 @@ modified: 2026-01-14T18:59:01.949Z
 
 # xp-mlx
 
+- mlx不仅支持text-gen, 还支持image-gen, 对multimodal模型的支持比llama.cpp更好
 # discuss-stars
 - ## 
 

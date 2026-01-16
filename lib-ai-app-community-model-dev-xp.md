@@ -29,6 +29,11 @@ modified: 2025-11-18T13:22:22.078Z
   - 模型的升级换代很快，喜新不喜旧，新模型对 tool-call/attention/量化的支持一般都更好
   - 大厂的模型一般都会定期升级，会有社区用户对比评测，更可靠、更有参与感
 
+- tool-call/use
+  - 针对tool-use微调优化的小模型慎用, 因为mcp的tool描述可能导致context超长
+
+- structured-output
+
 - donts
   - 很多带thinking的大模型不擅长计数，如within 18 words， 有的模型真的会逐个token打印出来逐个数一遍
 
@@ -202,7 +207,7 @@ modified: 2025-11-18T13:22:22.078Z
 - deepseek-ocr
   - 极少数的场景，会将图片中的英文翻译为中文输出, 并且LOOP
 
-## translation
+## translation 🌐
 
 - 通过 promptfoo 测试多个模型的翻译能力, 鼠标hover在表头列可以看到模型信息, prompt不变时只会增量请求新加的prompt
   - hy-mt会采用更多意译，将中文的一句翻译为多句英文，所以翻译输出内容最长
@@ -222,6 +227,13 @@ modified: 2025-11-18T13:22:22.078Z
   - ⚖️ [Why such an absurdly restrictive license?](https://huggingface.co/tencent/HY-MT1.5-7B/discussions/3)
   - https://github.com/Tencent-Hunyuan/HY-MT/blob/main/License.txt
     - If, on the Tencent HY version release date, the monthly active users of all products or services made available by or for Licensee is greater than 100 million monthly active users in the preceding calendar month, You must request a license from Tencent
+
+- [google/translategemma-4b-it · Hugging Face _202601](https://huggingface.co/google/translategemma-4b-it)
+  - 4b, 12b, 27b
+  - supports direct translation of a text input, or text-extraction-and-translation from an image input. 
+  - The models were fine-tuned from the original Gemma 3 checkpoints using parallel data from a wide variety of sources. The TranslateGemma models used 4.3 billion tokens during SFT and 10.2 million tokens during the reinforcement learning phase. 
+  - Training was done using JAX and ML Pathways. 
+  - 对模版要求严格，似乎不能在lmstudio直接对话
 
 - [nvidia/Riva-Translate-4B-Instruct · Hugging Face _202506](https://huggingface.co/nvidia/Riva-Translate-4B-Instruct)
   - /free

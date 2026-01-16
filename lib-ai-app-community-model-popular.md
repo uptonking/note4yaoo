@@ -2511,6 +2511,15 @@ free 5GB postgres via aiven.io
 
 - ## 
 
+- ## 
+
+- ## [What local model blew you away recently? : r/SillyTavernAI _202601](https://www.reddit.com/r/SillyTavernAI/comments/1qd9z2n/what_local_model_blew_you_away_recently/)
+- Drummer's finetunes punch way above their weight. I still don't know how he managed to squeeze such a good performance from Mistral Small.
+
+- Gryphe's Codex-24B-Small-3.2. There is literally nothing better in this range, and it’s surprising how rarely people here mention it.
+  - The only issue is the usual Mistral repetition, but it can be minimized by tweaking the settings a bit. 
+  - I’ve set the repetition penalty to 1.09, DRY to 2.25 / 3.5 / 3, XTC to 0.1 / 0.5 and kept other settings as recommended by Gryphe.
+
 - ## [Which is the best model under 15B : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1q9u07d/which_is_the_best_model_under_15b/)
 - You can get away with a agentic llm (multiple calls to different small models in chain) with the normal LLM Api. Which will make the output better.
 

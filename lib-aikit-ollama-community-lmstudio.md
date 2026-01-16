@@ -10,7 +10,22 @@ modified: 2026-01-14T18:58:32.523Z
 # guide
 
 # draft
+- 优化artifacts/coding的交互为类似aionui/discord-channel的收窄侧边栏效果，侧边栏并不是收窄为仅图标，而是图标+几个文字
+- 采用类似vscode文件图标的方案在chat前显示图标
+
+- 类似localsend, (通过扫描)快速让手机使用电脑的model
+
+- mlx不仅支持text-gen, 还支持image-gen, 对multimodal模型的支持比llama.cpp更好
+  - 优化基于mlx的文生图体验
+
+- image
+  - upload image by paste image url
+
 - 是否支持split-chat
+
+- 针对国内消费级显卡的产品
+  - 摩尔线程
+  - 华为昇腾
 # xp-lmstudio
 - issues
   - ~~聊天内搜索~~
@@ -66,9 +81,102 @@ modified: 2026-01-14T18:58:32.523Z
 
 - ## 
 
-- ## 
+- ## ⚖️ 0.3.39 - [Open Responses with local models via LM Studio  _20260115](https://lmstudio.ai/blog/openresponses)
+- Open Responses is an open-source specification and ecosystem designed to make calling LLMs provider-agnostic.
+  - It defines a shared schema and tooling layer that enables a unified experience for interacting with LLMs, streaming results, and composing agentic workflows completely independent of the model provider. 
+  - This tooling layer makes real-world agentic workflows work consistently, regardless of where the model lives.
 
-- ## 
+- The Open Responses API in LM Studio brings up several new useful features:
+  - Logprobs for generated tokens, along with candidate tokens
+  - Rich stats about cached and generated tokens
+  - Provide remote image URLs to VLMs
+
+- Log Probabilities
+  - You can view the logarithms of the probability (log(probability between 0 and 1) = logprob) that a specific token was chosen by the model. 
+  - The closer the logprob is to zero, the more likely the token was chosen.
+  - Enabling log probabilities allows you to see more details about how confident the model was in selecting its response.
+
+- /v1/responses update enables you to see how many tokens were cached from previous requests.
+
+- ## ⚖️ 0.3.29 - [Use OpenAI's Responses API with local models  _202510](https://lmstudio.ai/blog/lmstudio-v0.3.29)
+- This release adds support for OpenAI's /v1/responses API through the LM Studio REST server.
+  - Stateful interactions - pass a previous_response_id to continue interactions without needing to manage message history yourself.
+  - Custom function tool calling - bring your own function tools for the model to call, similar to in v1/chat/completions.
+  - Reasoning support - parse reasoning output, and control effort with reasoning: { effort: "low" | "medium" | "high" } for openai/gpt-oss-20b.
+  - Streaming or sync - use stream: true to receive SSE events as the model generates, or omit for a single JSON response.
+
+- ## 🔍 [0.3.27: Find in Chat and Search All Chats  _202509](https://lmstudio.ai/blog/lmstudio-v0.3.27)
+
+- ## 💰 [LM Studio is free for use at work  _202507](https://lmstudio.ai/blog/free-for-work)
+
+- ## ⚖️ [MCP in LM Studio  _202506](https://lmstudio.ai/blog/lmstudio-v0.3.17)
+  - introduces Model Context Protocol (MCP) support, allowing you to connect your favorite MCP servers to the app and use them with local models.
+  - supports both local and remote MCP servers. You can add MCPs by editing the app's mcp.json file or via the new "Add to LM Studio" Button, when available.
+
+- ## 🖼️ 0.17.0 [Introducing the unified multi-modal MLX engine architecture in LM Studio  _202505](https://lmstudio.ai/blog/unified-mlx-engine)
+  - we migrated to a new unified architecture that weaves together the foundational components of each of those packages. 
+  - Now mlx-lm's text model implementations are always used, and mlx-vlm's vision model implementations are modularly used as "add-ons" to generate image embeddings that can be understood by the text model.
+  - text-only chats with VLMs can now benefit from prompt caching — a feature previously exclusive to text-only LLMs — resulting in drastically faster follow-up responses. 
+
+- ## [0.3.15: RTX 50-series GPUs and improved tool use in the API  _202504](https://lmstudio.ai/blog/lmstudio-v0.3.15)
+  - support for NVIDIA RTX 50-series GPUs (CUDA 12), UI touchups including a new system prompt editor UI. 
+
+- ## [0.3.10: 🔮 Speculative Decoding  _202502](https://lmstudio.ai/blog/lmstudio-v0.3.10)
+  - introduce Speculative Decoding support in LM Studio's llama.cpp and MLX engines
+
+- ## [0.3.6 Function Calling / Tool Use API  _202501](https://lmstudio.ai/blog/lmstudio-v0.3.6)
+  - introduces a Function Calling / Tool Use API through LM Studio's OpenAI compatibility API.
+  - support for new vision-input models: The Qwen2VL in llama.cpp and mlx
+
+- ## [Introducing venvstacks: layered Python virtual environments  _202410](https://lmstudio.ai/blog/venvstacks)
+  - In our recent announcement of Apple MLX support in LM Studio 0.3.4, we alluded to a Python utility for creating an "... integrated set of independently downloadable Python application environments".
+  - Today we're excited to open source this utility: introducing venvstacks
+  - venvstacks enabled us to ship our MLX engine, which is a Python application, within LM Studio without requiring the end user to install any Python depedencies.
+
+- ## 🍎 [0.3.4 ships with Apple MLX  _202410](https://lmstudio.ai/blog/lmstudio-v0.3.4)
+  - 0.3.4 ships with an MLX engine for running on-device LLMs super efficiently on Apple Silicon Macs.
+- mlx-features
+  - Search & download any supported MLX LLM from Hugging Face (just like you've been doing with GGUF models)
+  - Use Vision models like LLaVA and more, and use them via the chat or the API (thanks to `mlx-vlm` )
+  - Enforce LLM responses in specific JSON formats (thanks to `Outlines` )
+  - Load and run multiple simultaneous LLMs. You can even mix and match llama.cpp and MLX models
+- LM Studio's `mlx-engine` is open source
+- MLX Engine is a Python module built using a combination of the following packages:
+  - mlx-lm
+  - mlx-vlm 
+  - Outlines
+- Our journey to integrate MLX into LM Studio started with Swift. While this approach worked perfectly fine, ultimately the following design goals made Python a better choice.
+  - Design Goal 1: We want to iterate on the MLX engine with the community
+  - Design Goal 2: We want to be able to support the latest models and techniques as soon as they are released. MLX in Python tends to receive support for new models sooner
+- Adding mlx-lm support to LM Studio required the ability to deploy and run Python components in a portable, cross-platform fashion.
+  - Ideally, we also want to be able to fully integrate those components with the existing C/C++ components already used in the main LM Studio application (which ended up ruling out some potential candidate solutions, such as conda environments).
+- LM Studio's initial Python runtime support is built atop the python-build-standalone project, and Python virtual environments, using a soon-to-published utility that supports the creation of an integrated set of independently downloadable Python application environments that share common runtime and framework layers (after all, nobody wants to download and install multiple copies of PyTorch or CUDA if they can reasonably avoid it).
+  - This "stacked virtual environments" utility uses the CPython interpreter's "site customization" feature, together with some pre-publication and post-installation adjustments to the virtual environment contents, to allow these virtual environments to be reliably transferred between machines and the included application launch modules invoked with CPython's -m command line switch.
+
+- KV (key-value) caching across prompts is an optimization technique that enables LLM engines to reuse computations from previous interactions. This can greatly improve model response time, or "Time to First Token".
+  - if we save the results of the computations in T1 and T2 to a KV CACHE, and give the engine access to the KV CACHE at T3, then the engine only has to perform computations on the new part of the prompt
+  - This can greatly improve response time in T4.
+
+- ## [0.3.5 - headless mode  _202410](https://lmstudio.ai/blog/lmstudio-v0.3.5)
+  - introduces headless mode, on-demand model loading, and updates to mlx-engine to support Pixtral (MistralAI's vision-enabled LLM).
+  - We've implemented headless mode, on-demand model loading, server auto-start, and a new CLI command to download models from the terminal. 
+- Headless mode, or "Local LLM Service", enables you to leverage LM Studio's technology (completions, chat completions, embedding, structured outputs via llama.cpp or Apple MLX) as local server powering your app.
+  - Once you turn on "Enable Local LLM Service", LM Studio's process will run without the GUI upon machine start up.
+- On-demand model loading
+  - simply send an inferencing request to it. If the model is not yet loaded, it'll be loaded before your request returns. This means that the first request might take a few seconds until the loading operation finishes, but subsequent calls should be zippy as usual.
+  - Using per-model settings, you can predetermine which load parameters the software will use by default when loading a given model.
+  - With JIT loading: returns all local models that can be loaded
+
+- ## [0.3.0 - RAG  _202408](https://lmstudio.ai/blog/lmstudio-v0.3.0)
+- LM Studio 0.3.0 comes with built-in functionality to provide a set of document to an LLM and ask questions about them.
+  - If the document is short enough (i.e., if it fits in the model's "context"), LM Studio will add the file contents to the conversation in full.
+  - If the document is very long, LM Studio will opt into using "Retrieval Augmented Generation", frequently referred to as "RAG". 
+- OpenAI recently announced a JSON-schema based API that can result in reliable JSON outputs. LM Studio 0.3.0 supports this with any local model that can run in LM Studio
+- Serve on the network
+
+- ## 0.2.22 - [Introducing lms: LM Studio's CLI  _202405](https://lmstudio.ai/blog/lms)
+  - With lms you can load/unload models, start/stop the API server, and inspect raw LLM input (not just output).
+
 # discuss-roadmap
 - ## 
 
