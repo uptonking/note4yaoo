@@ -556,7 +556,41 @@ git am /tmp/repo1-editor-patch/*.patch
 
 - ## 
 
-- ## 
+- ## 🤼 I talked with @steipete yesterday and we both realized that we gave up on worktrees and just use multiple checkouts. 
+- https://x.com/mitsuhiko/status/2011773404207337549
+  - Turns out, we're simple people.
+  - They are just stable checkouts with stable identities, stable node_modules, fixed ports and databases etc.
+  - (And yes, I had a vibecoded worktree manager. Ended up just not using it)
+
+- i think `--shared` shares the .git folder
+
+- what are downsides to multiple checkouts
+  - From my experience, with git clone --shared/--reference very little, I guess the main concern would be disk space. I just like it. YMMV
+- Are stashes and branches shared?
+  - No but if you do a reference clone then you can access them by sha
+- Slower, can't share the stash, can't use branches without pushing and looking, rebasing is more work, in short I completely miss why people don't want to use it.
+- When you wanna merge, pull master, and keep iterating in the same agent session you can't.
+- The only benefit I see is, that you can easily view all local branches in one git client without push/pull. And you can easily merge them locally. 
+  - Worktrees only share the .git folder, which is usually rather small.
+- Agent sessions are also tied to the directory (at least in CC) so you can't resume a session when you close a worktree (I don't think).
+
+- on macOS APFS you can duplicate the folder and rely on copy on write to save space, only files that would be updated are actually written to disk
+
+- super interesting - i've really taken to worktrees (with a really lightweight manager). key thing i needed was a .scratchpad file in the root so i could tell them apart for context switching!
+  - I find the UX around switching a work tree into the main folder to be pretty bad, and managing my node modules and other local DX things is also annoying. Also my diff viewer does not work well with worktrees, let alone me remembering which work trees are alive or not.
+  - I'm sure there are ways, but now I have multiple checkouts named after "main", "papercuts", "refactor" and I only keep one type of activity going on simultaniously.
+
+- I think switching a branch into the main folder is one of the best reasons to not use worktrees. without a 1:1 branch:worktree mapping, you lose many of the benefits; it's difficult to know where things are...
+
+- I really tried getting used to worktrees as well, even tried a few different utils and I just couldn’t do it. Multiple directories and life is good now
+
+- that’s what multiple users working on the same project would do
+
+- today and yesterday had me feeling like this, worktrees confuse the agent too much
+
+- two clone repos is enough for my brain
+
+- have actually been using work trees lately and it's great, easier to be working on different things concurrently. It's not great if you have .env files and things like that though. Or if your package/build manager  is just not really worktree friendly
 
 - ## 过往手敲代码的物理特性，Git 压根就没想过有一天我们可以在一台机器上开启任意数量的窗口并行开发，Worktree 这种为边缘场景设计的功能一跃成为开发标配，从无人问津到聚光灯下，它显然没适应好：
 - https://x.com/victor_wu_eth/status/2010605107176710630

@@ -30,6 +30,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 方便原文和译文的跳转交互
     - pdf to word: 显示summary-per-page, 适合教育场景
     - pdf体验尽量与docs一致，包括view/edit
+    - toc autogen
   - ai
     - split-view: 显示summary-per-page, 适合教育场景
       - summary的交互采用双栏布局交互还是类似comment面板交互需要考虑
@@ -38,6 +39,8 @@ modified: 2025-03-22T16:10:24.856Z
     - 输出不同模型的翻译版本，供用户比对
   - 插画复刻: Qwen-Image-i2L, image-to-prompt-to-image, 同时支持浏览comfyui生成图片的元数据、提示词
   - token is cheap, 算力越来越不是问题, 现在需要做生态和产品
+  - 💰 productivity
+    - parallel tasks
 
 - tips
   - 🤔 旧的产品交互逻辑在旧的时代都需要调整, 用户大多不想手动搜索, 直接在聊天框里输入指令，将搜索+后续工作一起执行

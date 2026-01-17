@@ -43,6 +43,30 @@ modified: 2025-11-01T10:54:26.044Z
   - https://github.com/arcee-ai/fastmlx /apache2/202503/python/inactive
     - production ready API to host MLX models.
 
+- https://github.com/llama-farm/llamafarm /760Star/apache2/202601/python/go/ts
+  - https://llamafarm.dev/
+  - https://docs.llamafarm.dev/docs/intro
+  - Deploy any AI model, agent, database, RAG, and pipeline locally or remotely in minutes
+  - LlamaFarm brings enterprise AI capabilities to everyone. Run powerful language models, document processing, and intelligent retrieval—all locally on your hardware. No cloud required
+  - Hardware Optimized — Automatic GPU/NPU acceleration on Apple Silicon, NVIDIA, and AMD
+  - LlamaFarm focuses on inference rather than fine-tuning.
+  - [Multi-Model Runtime Support with API and CLI Integration _202510](https://github.com/llama-farm/llamafarm/pull/263)
+    - [Multi-Model architecture and implementation ](https://github.com/llama-farm/llamafarm/issues/202)
+  - Choosing a Provider
+    - Local models (Ollama)
+    - Local models (Lemonade): Currently, Lemonade must be manually started. In the future, Lemonade will run as a container and be auto-started by the LlamaFarm server.
+    - Self-hosted vLLM / OpenAI-compatible
+    - Hosted APIs (OpenAI, Anthropic via proxy, Together, LM Studio)
+  - The Universal Runtime is LlamaFarm's most versatile runtime provider, supporting any HuggingFace model through PyTorch Transformers and Diffusers.
+  - 🛝
+    - pc-app启动时会下载默认runtime
+    - 支持下载huggingface的模型
+  - 🍎 pr未合并且已关闭 [feat(runtime): initial mlx support _202512](https://github.com/llama-farm/llamafarm/pull/557)
+  - [Support native docker models for local models _202510](https://github.com/llama-farm/llamafarm/issues/295)
+    - Docker engine and compose comes with built in support for running local models similar to Ollama across osx, windows and linux, so it brings down the number of dependencies developers have to install.
+    - 202601: For now, we're moving away from this direction given the way the LlamaFarm Universal Runtime works at present.
+  - [We just launched the LlamaFarm Designer - build full AI systems visually, locally, and open-source : r/LlamaFarm _202511](https://www.reddit.com/r/LlamaFarm/comments/1onjyo6/we_just_launched_the_llamafarm_designer_build/)
+
 - https://github.com/transformerlab/transformerlab-app /4.7kStar/AGPL/202601/python/ts/electron
   - https://lab.cloud/
   - 100% Open Source Toolkit for Large Language Models: Train, Tune, Chat on your own Machine
@@ -117,7 +141,32 @@ modified: 2025-11-01T10:54:26.044Z
     - Two things could change this in the future:
     - If we have the bandwidth to keep a separate native desktop edition based on 0.7, or
     - If Apple adds GPU support to their container runtime (a lot of people are asking for it).
+
+- https://github.com/containers/ramalama /2.5kStar/MIT/202601/python
+  - https://ramalama.ai/
+  - open-source tool that simplifies the local use and serving of AI models for inference from any source through the familiar approach of containers
+  - RamaLama eliminates the need to configure the host system by instead pulling a container image specific to the GPUs discovered on the host system, and allowing you to work with various models and platforms.
+  - Run AI models securely in rootless containers, isolating the model from the underlying host.
+  - Models are treated similarly to how Podman and Docker treat container images.
+
+- https://github.com/lemonade-sdk/lemonade /1.8kStar/apache2/202512/python/cpp
+  - https://lemonade-server.ai/
+  - Lemonade helps users run local LLMs with the highest performance by configuring state-of-the-art inference engines for their NPUs and GPUs.
+  - Lemonade supports both GGUF and ONNX models. You can also import custom GGUF and ONNX models from Hugging Face by using our Model Manager (requires server to be running).
+  - [How to run Lemonade server-router on an Apple Silicon mac _202510](https://github.com/lemonade-sdk/lemonade/issues/448)
+    - Lemonade is an open source server-router (like OpenRouter, but local) that auto-configures LLM backends for your computer. 
+    - The same Lemonade tool works across engines (llamacpp/ONNX/FLM), backends (vulkan/rocm/metal), and OSs (Windows/Ubuntu/macOS).
+    - One of our most popular requests was for macOS support, so we shipped it last week
+  - [The C++ rewrite of Lemonade is released and ready! : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p1h9fz/the_c_rewrite_of_lemonade_is_released_and_ready/)
+    - Lemonade is an open-source alternative to local LLM tools like Ollama
+  - [Electron app feedback _202511](https://github.com/lemonade-sdk/lemonade/issues/594)
 # mlx/llama.cpp-server/wrapper
+- https://github.com/HazyResearch/minions /1.2kStar/MIT/202601/python
+  - Big & Small LLMs working together
+  - Minions is a communication protocol that enables small on-device models to collaborate with frontier models in the cloud. By only reading long contexts locally, we can reduce cloud costs with minimal or no quality degradation. This repository provides a demonstration of the protocol
+  - We support three servers for running local models: lemonade, ollama, and tokasaurus. You need to install at least one of these.
+    - You should use ollama if you do not have access to NVIDIA/AMD GPUs
+
 - https://github.com/lordmathis/llamactl /69Star/MIT/202601/go/ts
   - http://llamactl.org/
   - Unified management and routing for llama.cpp, MLX and vLLM models with web dashboard.
@@ -144,6 +193,10 @@ modified: 2025-11-01T10:54:26.044Z
   - Lora is only support for MLX model now
     - This branch adds basic LoRA (adapter) support for MLX models. Adapters are managed similarly to models and stored under the repository adapters/ directory. Frontend 
 
+- https://github.com/malibrated/simple-llm-service /202507/python/代码少/inactive
+  - lightweight, performant REST API service for Large Language Models with OpenAI-compatible endpoints. 
+  - Supports both llama.cpp (GGUF) and Apple MLX models with configurable parameters and intelligent caching.
+
 - https://github.com/xusenlinzy/api-for-open-llm /2.5kStar/apache2/202409/python/inactive
   - 此项目为开源大模型的推理实现统一的后端接口，与 OpenAI 的响应保持一致
   - 支持流式响应，实现打印机效果
@@ -162,6 +215,10 @@ modified: 2025-11-01T10:54:26.044Z
   - [大佬，这个项目还更新吗？或者有啥平替的项目吗 ](https://github.com/xusenlinzy/api-for-open-llm/issues/318)
     - 应该不更新了，推荐使用gpustack来部署和管理模型
     - 模型和vllm版本更新太快了，两者不适配的问题频发，用爱发电确实难以为继哈哈哈
+
+- https://github.com/rmusser01/tldw_chatbook /AGPL/202508/python/inactive
+  - A sophisticated Terminal User Interface (TUI) application built with the Textual framework for interacting with various Large Language Model APIs.
+  - optional 可选安装mlx, mlx_whisper, rag
 
 - https://github.com/abetlen/llama-cpp-python /9.9kStar/MIT/202508/python/inactive
   - Python bindings for llama.cpp
@@ -204,6 +261,7 @@ modified: 2025-11-01T10:54:26.044Z
   - Cross-Platform: Tested on Windows, macOS, and Linux
 
 - https://github.com/signerlabs/klee /1.7kStar/MIT/202511/ts/inactive
+  - https://github.com/signerlabs/klee-service /legacy
   - a modern desktop application that combines AI-powered chat, knowledge base management, and note-taking capabilities.
   - It offers both Cloud Mode for seamless synchronization and Private Mode for complete offline functionality.
   - Integrated with OpenAI and local Ollama models
@@ -224,6 +282,9 @@ modified: 2025-11-01T10:54:26.044Z
   - 🍴 forks
   - https://github.com/EclipseFever/Klee /202504
     - electron-build-ci: https://github.com/EclipseFever/Klee/blob/main/.github/workflows/build.yml
+  - https://github.com/olivestory-corp/Sasara /MIT/202505/ts
+    - local AI on your desktop with a built-in RAG knowledge base and Markdown note support.
+    -  built on: klee, ollama, llamaindex
   - [I built and open sourced a electron app to run LLMs locally with built-in RAG knowledge base and note-taking capabilities. : r/electronjs _202503](https://www.reddit.com/r/electronjs/comments/1j43om9/i_built_and_open_sourced_a_electron_app_to_run/)
     - Would the users need to download Ollama separately or is it somehow embedded?
       - It is embedded, but if you already have ollama running, we will use your ollama instance.
@@ -323,6 +384,8 @@ modified: 2025-11-01T10:54:26.044Z
   - A chatbot UI for RAG, multimodal, text completion. (support Transformers, llama.cpp, MLX, vLLM)
   - Designed support both locally, remote and huggingface spaces.
   - 安装不同os的依赖，分别执行
+    - pip install -r vllm_requirements.txt
+    - pip install -r mlx_requirements.txt
 
 - https://github.com/mzbac/kooka-server /MIT/202601/python
   - mlx-lm server wrapper for agentic harness
@@ -353,6 +416,20 @@ modified: 2025-11-01T10:54:26.044Z
 - https://github.com/av/harbor /2.3kStar/apache2/202601/python/ts
   - Harbor is a CLI and companion app that lets you spin up a complete local LLM stack—backends like Ollama, llama.cpp, or vLLM, frontends like Open WebUI, plus supporting services like SearXNG for web search, Speaches for voice chat, and ComfyUI for image generation—all pre-wired to work together with a single harbor up command. 
   - No manual setup: just pick the services you want and Harbor handles the Docker Compose orchestration, configuration, and cross-service connectivity so you can focus on actually using your models.
+
+- https://github.com/dorukgezici/pydantic-ai-mlx /202503/python/inactive
+  - Add MLX support to Pydantic AI through LM Studio or mlx-lm, run MLX compatible HF models on Apple silicon
+  - LM Studio backend (OpenAI compatible server that can also utilize mlx-lm, model runs on a separate background process)
+  - LM Studio backend (OpenAI compatible server that can also utilize mlx-lm, model runs on a separate background process)
+
+- https://github.com/acon96/home-llm /202601/python
+  - A Home Assistant integration & Model to control your smart home using a Local LLM
+  - a complete solution for adding AI-powered voice and chat control to Home Assistant.
+  - It consists of two parts:
+    - Local LLM Integration – A Home Assistant custom component that connects local language models to your smart home
+    - Home Models – Small, efficient AI models fine-tuned specifically for smart home control
+  - Supported Backends
+    - Llama.cpp (built-in)	Running models directly in Home Assistant
 # llm-apps
 - https://github.com/eclaire-labs/eclaire /MIT/202510/ts
   - Local-first, open-source AI assistant for your data. Unify tasks, notes, docs, photos, and bookmarks. Private, self-hosted, and extensible via APIs.
@@ -372,17 +449,9 @@ modified: 2025-11-01T10:54:26.044Z
 
 # utils
 
-- https://github.com/lemonade-sdk/lemonade /1.8kStar/apache2/202512/python/cpp
-  - https://lemonade-server.ai/
-  - Lemonade helps users run local LLMs with the highest performance by configuring state-of-the-art inference engines for their NPUs and GPUs.
-  - Lemonade supports both GGUF and ONNX models. You can also import custom GGUF and ONNX models from Hugging Face by using our Model Manager (requires server to be running).
-  - [How to run Lemonade server-router on an Apple Silicon mac _202510](https://github.com/lemonade-sdk/lemonade/issues/448)
-    - Lemonade is an open source server-router (like OpenRouter, but local) that auto-configures LLM backends for your computer. 
-    - The same Lemonade tool works across engines (llamacpp/ONNX/FLM), backends (vulkan/rocm/metal), and OSs (Windows/Ubuntu/macOS).
-    - One of our most popular requests was for macOS support, so we shipped it last week
-  - [The C++ rewrite of Lemonade is released and ready! : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p1h9fz/the_c_rewrite_of_lemonade_is_released_and_ready/)
-    - Lemonade is an open-source alternative to local LLM tools like Ollama
-  - [Electron app feedback _202411](https://github.com/lemonade-sdk/lemonade/issues/594)
+- https://github.com/waybarrios/vllm-mlx /apache2/202601/python
+  - vLLM-like inference for Apple Silicon - GPU-accelerated Text, Image, Video & Audio on Mac
+  - vllm-mlx brings native Apple Silicon GPU acceleration to vLLM by integrating: mlx-lm, mlx-vlm, mlx-audio
 
 - https://github.com/mzau/mlx-knife /112Star/apache2/202511/python
   - ollama like cli tool for MLX models on huggingface (pull, rm, list, show, serve etc.)
@@ -395,4 +464,18 @@ modified: 2025-11-01T10:54:26.044Z
   - Built with a Rust compute layer and TypeScript orchestration, it delivers production-ready GRPO training with 100% feature parity with HuggingFace's TRL library.
   - Pure Rust/TypeScript implementation — no Python runtime required
   - TypedArray-First API: Zero-copy operations using native JavaScript typed arrays
+# llm-provider
+- https://github.com/ArseniiBrazhnyk/Veritensor /apache2/202601/python
+  - https://www.veritensor.com/
+  - Veritensor is the Zero-Trust security platform for the AI Supply Chain. 
+  - We replace naive model scanning with deep AST analysis and cryptographic signing.
+  - [I need a feedback about an open-source CLI that scan AI models (Pickle, PyTorch, GGUF) for malware, verify HF hashes, and check licenses : r/LocalLLM _202601](https://www.reddit.com/r/LocalLLM/comments/1qcmc9v/i_need_a_feedback_about_an_opensource_cli_that/)
+    - I've created a new CLI tool to secure AI pipelines. It scans models (Pickle, PyTorch, GGUF) for malware using stack emulation, verifies file integrity against the Hugging Face registry, and detects restrictive licenses (like CC-BY-NC). It also integrates with Sigstore for container signing.
 # more
+- https://github.com/intel/ipex-llm /apache2/202510/python/inactive
+  - an LLM acceleration library for Intel GPU (e.g., local PC with iGPU, discrete GPU such as Arc, Flex and Max), NPU and CPU
+  - See demos of running local LLMs on Intel Core Ultra iGPU, Intel Core Ultra NPU, single-card Arc GPU, or multi-card Arc GPUs using ipex-llm below.
+  - IPEX-LLM provides seamless integration with llama.cpp, Ollama, vLLM, HuggingFace transformers, LangChain, LlamaIndex
+  - 70+ models have been optimized/verified on ipex-llm
+  - [Run llama.cpp Portable Zip on Intel GPU with IPEX-LLM](https://github.com/intel/ipex-llm/blob/main/docs/mddocs/Quickstart/llamacpp_portable_zip_gpu_quickstart.md)
+    - 需要下载并使用定制版llama.cpp

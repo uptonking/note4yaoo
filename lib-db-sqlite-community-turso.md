@@ -267,6 +267,114 @@ target/debug/limbo database.db
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## The filesystem is important as an abstraction because we have 40+ years of tools trained on it.
+- https://x.com/glcst/status/2011790821616386422  
+  - For data that you generated and want to recall (like chat history), a database might be better.
+  - The beautiful thing about sqlite is that it can give you both, at once.
+  - AgentFS goes in that direction.
+  - Even in the first version there is a key-value abstraction to store configuration. Not to mention direct access to the sqlite database itself.
+
+- does AgentFS allow for disparete sources of file and objects ? Can i configure it to use some s3 bucket as well as local  storage?
+  - no, the underpinning idea of agentfs is that the agent will want to have a unified view of the entire filesystem, and potentially do things like snapshot, rollback, fork. Which is why encapsulating it as a sqlite file works well.
+
+- ## we're starting to hit the limits with keeping all the data for OpenCode as a bunch of flat json files _202601
+- https://x.com/thdxr/status/2011631185399857465
+  - these are nice for easy readability but obviously doesn't scale super well
+  - is anyone particularly depending on this functionality? it'll likely all get moved into sqlite
+  - this isn't for config it's for the data - your sessions, messages in them, etc
+
+- One downside: this makes it far more challenging to run in sandboxes with object storage mounts while supporting resume
+
+- I only started using OpenCode yesterday, one problem I often have with sqlite is that it's not diffable, so if I need to store conversations in git for whatever reason, that would mean I'd store an entire copy of the db every time I make a change.
+  - we still have `opencode export` which will return the session + all messages + all parts in json format
+  - we'll probably build a data explorer into opencode
+
+- I'm building https://burntop.dev, an open source tool to track AI usage that reads from OpenCode JSON files. I think moving to SQLite is a good step forward, and Claude will be happy to update the parser to read from there!
+
+- sqlite is the right call for local-first dev tools
+  - claude code did the same. json files work until they don't
+  - the migration path is clean anyway. one-time script, done
+
+- Another option could be duckdb which I would prefer. You can natively import json into tables etc
+
+- Please a have a solution for multi-machine sync. You can cobble together one with flat files and git today.
+
+- it doesn’t matter what’s under the hood if i can do full import/export anytime and it will work
+
+- Have you considered a single JSONL file like other agents instead of many JSON files?
+
+- ### second question - would you be mad if every table was id | data (json blob)
+- https://x.com/thdxr/status/2011638877933465896
+- You won't ever want to do search/slice/etc? Not sure if sqlite has super fast json parsing but most databases slow down if you do deep search in JSON (b/c) they parse it on the fly over and over again).
+  - we could do stored generated columns if that pops up
+
+- Should be fine. Zed does that.
+  - https://github.com/zed-industries/zed/blob/main/crates/agent/src/thread_store.rs
+
+- EAVT is a strict improvement over this
+
+- SQLite DB per user ala blueskyb
+
+- ## 📃🛢️ seeing how langchain and opencode have made the topic cool again for agent memory/state
+- https://x.com/swyx/status/2011984243430236608
+  - i present how every filesystem-source-of-truth eventually turns into database
+
+- seen this pattern play out so many times. everyone starts with "just a json file" and ends up reinventing postgres badly. the filesystem-to-database pipeline is inevitable once you need concurrent access or anything beyond key-value. agents just accelerated this realization
+  - 🌰 logseq就是例子
+  - opencode
+- Langchain and opencode highlight a recurring pattern: as data complexity grows, systems evolve from simple storage to structured databases. It's a natural maturation as depth and retrieval efficiency become priorities.
+
+- Tools like Langchain and Opencode simply formalize a truth: what begins as a file system for ease eventually demands database structure for scale.
+  - File systems handle data retrieval reactively. As complexity scales, a database becomes essential for efficiency, allowing dynamic queries. That's the evolution.
+  - Agent memory/state is evolving fast. Turning filesystems into databases highlights a real shift: data needs to be queryable and persistent to drive intelligent agents.
+
+- lived this exact arc. started with markdown files as source of truth, added metadata files, then indexes, then suddenly you're maintaining a janky database with worse query semantics. the filesystem wants to be a database but fights you the whole way
+
+- Yep—filesystems are the right v1 for agent state because they’re inspectable + diffable. Then you hit concurrency, indexing, permissions, and “who wrote what when”… and congrats, you rebuilt a DB.
+- Feels like “agent memory” is replaying the same arc: start w/ files for transparency + diffability, then you need indexes, schema, retention, access control, and concurrency… and you’ve rebuilt a DB. Curious where you draw the line: content-addressed FS + index vs full DB?
+
+- llama index a bit different!
+  - unfortunately llamafile is taken
+- there’s obviously benefits to adding semantic indexing and some metadata layer in a db for faster initial lookup. And intersperse that with file ops 
+  - will ls / grep work as quickly when backed by a db? Unclear
+
+- the filesystem is just a graph database. All of you saying you don't need a graph for agents while using the filesystem are just in denial about using a graph.
+
+- Every filesystem conceived as a source of truth eventually seeks the structure and query efficiency of a database. It's a transition driven by the need for scalable, organized information access—not just storage.
+
+- i think this misses the fact that the benefit of filesystems is that they can be huge in size (which is a requirement for long-horizon, context-heavy tasks). perf for dbs that contain filesystems is bad to the point that it's not useful for large filesystems. try using agentfs from turso with a codebase and you'll see the issues. it's probably that we want a metadata layer over filesystems that make them queryable/(restorable?)/version-able, but agents must work in filesystems
+
+- we went straight to sqlite for agent state and skipped the filesystem-as-memory arc entirely. no regrets. the moment you need transactions or queryable history, you're reimplementing a database with file locks anyway
+
+- ## We launched LangSmith Agent Builder this week as a no-code way to build agents. _20260115
+- https://x.com/hwchase17/status/2011834318172422279
+  - A key part of Agent builder is it’s memory system. In this blog we cover our rationale for prioritizing a memory system, technical details of how we built it
+  - We don’t use an actual filesystem. We use Postgres but have a wrapper on top of it expose it to the LLM as a filesystem
+
+- Similar to agentfs?
+
+- been thinking about doing something with DuckDB because of this. 
+
+- just used an actual filesystem dawg, sandboxes are cheap
+  - Until you need replication, additional indexes etc, I think this makes sense
+- let’s just decide on sql. everyone loves sql.
+
+- exposing things to llms through familiar interfaces is underrated. filesystem is one of the most universal abstractions. makes sense that it maps well to how agents should think about persistence. postgres under the hood is smart for scale without giving up the mental model
+
+- We should expect that users will throw huge files during agent sessions. it can be video or large images. So this would be very inefficient for that.
+- Why not just throw multimedia content in a bucket and store the pointer?
+  - It's possible to do it but we have to pay the tax of upload and download to and from sandbox.
+  - Because object storage buckets don't have full POSIX support. So the agent loses tons of functionality that is gets when its using local file system. Also reads and writes are extremely slow too.
+- But there's a transfer tax either way (Postgres to sandbox or S3 to sandbox). Consider a pattern where metadata + pointers live in Postgres and bytes in object storage. Agent queries DB to see what exists, then tool call fetches into sandbox on-demand. Sandbox has real POSIX once files land. Seems strictly better for the large file case?
+  - ya, this block device technique is quite interesting.
+- Is blob storage tech good enough to do a lustre like distributed persistent storage where tons of agents can contribute and make dirt cheap snapshots of data as they work on it.
+
+- love that hack. i once mapped s3 calls to sql tables for an “imaginary” fs too. feels like tricking the matrix with a good old postgres paintbrush.
+
 - ## Towards a Disaggregated Agent Filesystem on Object Storage
 - https://x.com/penberg/status/2010360708253274513
   - The filesystem abstraction is an effective interface for AI agents, and AgentFS provides exactly that on top of a SQLite database file. But as agent workloads scale with more agents, longer-running tasks, and multi-agent  collaboration, we need to move beyond the single-file-on-local-disk  model. State needs to survive ephemeral compute, move between machines, and scale without requiring persistent volumes to be provisioned. 

@@ -37,6 +37,35 @@ modified: 2026-01-15T15:46:21.626Z
 - ## 
 
 - ## 
+# discuss-disk/ssd
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+# discuss-ram
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [DDR5 RAM prices now over 4x higher since September 2025 : r/hardware _202601](https://www.reddit.com/r/hardware/comments/1qduvw2/ddr5_ram_prices_now_over_4x_higher_since/)
+- 16GB now costs almost as much as 64GB did before.
+
+- It's fucked for at least a year or two until additional capacity comes online. At least when the '20-'21 chip/GPU shortage happened you could downgrade from the 3000 series. You can't even downgrade from DDR5 to DDR4 in most mobos. Really fucked.
+
+- The top 10% of the US now accounts for 50+% of consumer spending. These companies don’t care about the rest of us.
+# discuss-motherboard
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
 # discuss
 - ## 
 

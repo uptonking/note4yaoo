@@ -14,7 +14,15 @@ modified: 2025-09-05T07:18:16.308Z
 
 - ## 
 
-- ## 
+- ## 🏘️ browser-use: The Bitter Lesson of Agent Frameworks
+- https://x.com/gregpr07/status/2012052139384979773 
+  - All the value is in the RL'd model, not your 10, 000 lines of abstractions.
+  - An agent is just a for-loop of messages. The only state an agent should have is: keep going until the model stops calling tools. You don't need an agent framework. You don't need anything else. It's just a for-loop of tool calls.
+  - Our first Browser Use agents had thousands of lines of abstractions. They worked - until we tried to change anything. Every experiment fought the framework. The agents weren't failing because the model was dumb. They were failing because we were.
+  - We're open-sourcing this as  https://github.com/browser-use/agent-sdk
+  - The simplest possible agent framework. No abstractions. No magic. Just a for-loop of tool calls. The framework powering BU.app.
+
+- Not really that straightforward if you want to build durable agents (beyond the simple linear use cases) - take Claude Code: you need memory handling, multi agent tools (or subagents), and some more nuanced patterns than just “infinite loop” thinking.
 
 - ## [I deleted 400 lines of LangChain and replaced it with a 20-line Python loop. My AI agent finally works. : r/AI_Agents](https://www.reddit.com/r/AI_Agents/comments/1p227ra/i_deleted_400_lines_of_langchain_and_replaced_it/)
   - I rewrote the entire logic using: Raw Python (for control flow). Standard OpenAI API (for the intelligence). A simple while loop (for the agentic behavior).

@@ -246,6 +246,13 @@ modified: 2025-03-22T18:49:15.634Z
     - copilotkit: Check out our A2UI Widget builder
     - [Create | A2UI Composer](https://a2ui-editor.ag-ui.com/)
 
+- https://github.com/vercel-labs/json-render /4.7kStar/apache2/202601/ts
+  - https://json-render.dev/
+  - Let end users generate dashboards, widgets, apps, and data visualizations from prompts — safely constrained to components you define.
+  - When users prompt for UI, you need guarantees. json-render gives AI a constrained vocabulary so output is always predictable
+  - https://x.com/rauchg/status/2011605996561649720
+    - Why not AI -> UI? Code is more flexible than JSON.
+
 - https://github.com/ag-ui-protocol/ag-ui /8.4kStar/MIT/202510/python/ts
   - https://ag-ui.com/
   - AG-UI is an open, lightweight, event-based protocol that standardizes how AI agents connect to user-facing applications. 

@@ -188,6 +188,10 @@ modified: 2021-05-23T18:45:59.139Z
   - Power BI Desktop is free (and works offline), license is only needed when you publish in Service
   - PowerBI is cheap and is all in one solution. Go for features that PowerBI and Tableau have and dont have
 
+- https://github.com/cloud666666666/ExcelMind /MIT/202601/python
+  - Excel智能分析助手，支持自然语言查询、ECharts 图表可视化、多表智能联查、知识库等，一站式解决Excel复杂分析问题
+  - 新增了 Claude 系列模型原生适配、模型调用失败的容错降级机制 以及 v2.0 写入能力。
+
 ## viz-charting
 
 - https://github.com/geodaai/openassistant /MIT/202510/ts

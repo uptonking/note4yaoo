@@ -132,6 +132,13 @@ modified: 2025-02-26T15:04:15.883Z
 
 - https://github.com/Sean-Miningah/realWorld-DjangoRestFramework /MIT/202412/python/js
   - uses django rest framework to create a backend service for the blog.
+
+## django-starter
+
+- https://github.com/cangeorgecode/Django_Boilerplate_Free /202601/python
+  - https://vibecodesaas.com/
+  - Free Django SaaS Boilerplate to sell digital products
+  - [10 months ago, I shared my Django boilerplate and it went thru major updates since : r/django](https://www.reddit.com/r/django/comments/1qegnl0/10_months_ago_i_shared_my_django_boilerplate_and/)
 # flask
 - https://github.com/gothinkster/flask-realworld-example-app /MIT/201909/archived
   - real world JSON API built with Flask 
@@ -149,4 +156,16 @@ modified: 2025-02-26T15:04:15.883Z
 
 - https://github.com/Willis0826/flask-realworld-example-app-ci-cd /MIT/202302/inactive
   - 介紹如何透過 GitLab CI，可以建置一個具有 Test、Pack、Cluster、Deploy 四個階段的 Pipeline 來進行持續整合與部屬(CI/CD)
+# apps
+- https://github.com/ActivityWatch/activitywatch /16.4kStar/MPL/202510/rust/python/inactive
+  - https://activitywatch.net/
+  - open-source automated time tracker. Cross-platform, extensible, privacy-focused.
+  - The goal of ActivityWatch is simple: Enable the collection of as much valuable lifedata as possible without compromising user privacy.
+  - https://github.com/ActivityWatch/aw-server-rust /MPL
+    - High-performance implementation of the ActivityWatch server, written in Rust
+  - https://github.com/ActivityWatch/aw-server /202410/python/inactive
+    - ActivityWatch server for storage of all your Quantified Self data.
+    - Note: In the future this will no longer be the default server used by ActivityWatch, instead we will be using aw-server-rust.
+  - https://github.com/ActivityWatch/aw-tauri /MPL
+    - WIP ActivityWatch distribution using Tauri
 # more

@@ -311,6 +311,52 @@ modified: 2025-02-21T17:17:42.225Z
   - 支持 Model Context Protocol，可在 Claude Desktop 等工具中使用
   - 本地存储 - 支持保存和加载卡片项目
 # ai-apps
+- https://github.com/multica-ai/multica /apache2/202601/ts
+  - A native desktop client that brings coding agent capabilities to everyone through a visual interface.
+  - ⚖️ Support for multiple AI agents through the Agent Client Protocol (ACP)
+  - 支持 cc, opencode, codex
+  - Local-first: your data never leaves your machine
+  - Session management with history and resume capabilities
+  - Built-in CLI for power users and testing
+  - https://x.com/jiayuan_jy/status/2012040329407713404
+    - 分享我们最近实现的一个开源版本 Claude Cowork
+    - 目标是成为 coding agent 和终端用户的中间层，有点类似 Obsidian 的模式，每个人都可以根据自己的工作流使用插件的方式来定制化。
+
+- https://github.com/accomplish-ai/openwork /758Star/MIT/202601/ts
+  - https://www.accomplish.ai/openwork/
+  - open source Al coworker that lives on your desktop
+  - https://x.com/_orcaman/status/2011492458023305394 _202601
+    - Today we are launching @openwork_ai , an open-source (MIT-licensed) computer-use agent that’s fast, cheap, and more secure.
+    - the result of a short two-day hackathon our team decided to hack, which brings together some of our favorite open source AI modules into one powerful agent
+    - does it use @opencode in some way?
+      - It certainly does! opencode is the agent harness here, sort of like Claude Code CLI is at Anthropic's Cowork app
+    - any plan on sandbox or isolation?
+      - Yes, coming up in the next couple of days.
+    - Is it computer-use or browser-use?!
+      - Both. It has file system access and can manipulate your computer. For browsing tasks it has a browser tool. Both are operated by the same agent
+
+- https://github.com/DevAgentForge/Claude-Cowork /MIT/202601/ts
+  - A desktop AI assistant that helps you with programming, file management, and any task you can describe.
+  - fully compatible with the exact same configuration as Claude Code, which means you can run it with any Anthropic-compatible large language model.
+  - [开源版本Claude Cowork？ ](https://linux.do/t/topic/1446736)
+
+- https://github.com/langchain-ai/openwork /MIT/202601/ts
+  - A desktop interface for deepagentsjs — an opinionated harness for building deep agents with filesystem capabilities planning, and subagent delegation.
+  - openwork gives AI agents direct access to your filesystem and the ability to execute shell commands.
+  - we should be able to use local open source models
+  - https://x.com/LangChain_JS/status/2011863256223400360 _202601
+    - We just released 𝚘𝚙𝚎𝚗𝚠𝚘𝚛𝚔, our completely open source take on Claude cowork built on the 𝚍𝚎𝚎𝚙𝚊𝚐𝚎𝚗𝚝𝚜𝚓𝚜 harness.
+    - A desktop interface with multi-step planning, filesystem access, and subagent delegation for tactical control over your agents.
+  - https://github.com/langchain-ai/deepagentsjs /MIT/202601/ts
+    - Using an LLM to call tools in a loop is the simplest form of an agent. This architecture, however, can yield agents that are "shallow" and fail to plan and act over longer, more complex tasks.
+    - Applications like "Deep Research", "Manus", and "Claude Code" have gotten around this limitation by implementing a combination of four things: a planning tool, sub agents, access to a file system, and a detailed prompt.
+    - deepagents is a TypeScript package that implements these in a general purpose way so that you can easily create a Deep Agent for your application
+    - Break complex tasks into manageable steps
+    - Sub-Agent Architecture - Delegate specialized work to focused agents
+    - File System Integration - Persistent memory and state management
+    - Streaming Support - Real-time updates, token streaming, and progress tracking
+    - Built on the robust LangGraph framework
+
 - https://github.com/eigent-ai/eigent /3.6kStar/apache2/202601/python/ts
   - https://www.eigent.ai/
   - The Open Source Cowork Desktop to Unlock Your Exceptional Productivity.
@@ -339,10 +385,18 @@ modified: 2025-02-21T17:17:42.225Z
     - Built-in AI Browser for web automation
     - 100% of the code after v1 was written by Halo itself
 
-- https://github.com/DevAgentForge/Claude-Cowork /MIT/202601/ts
-  - A desktop AI assistant that helps you with programming, file management, and any task you can describe.
-  - fully compatible with the exact same configuration as Claude Code, which means you can run it with any Anthropic-compatible large language model.
-  - [开源版本Claude Cowork？ ](https://linux.do/t/topic/1446736)
+- https://github.com/Kalyankr/localCowork /202601/python
+  - AI-powered assistant (Inspired by Cluade Cowork) that lives on your computer.
+
+- https://github.com/ComposioHQ/open-claude-cowork /202601/js
+  - Open Source version of Claude Cowork built with Claude Code and Composio Tool Router
+  - open-source desktop chat application powered by Claude Agent SDK and Composio Tool Router.
+  - Multi-Provider Support - Choose between Claude Agent SDK and Opencode for different model options
+  - Tool Call Visualization - See tool inputs and outputs in real-time in the sidebar
+  - https://x.com/KaranVaidya6/status/2011845965234536540
+    - I found Claude Cowork to be too expensive. So i asked Claude Code to build me a better version with @composio tool router
+    - access local files and your terminal via claude code
+    - chain actions across local files and cloud apps in one flow
 
 - https://github.com/fastaistack/OpenChat /MIT/202508/python/inactive
   - https://fastaistack.github.io/OpenChat/
@@ -353,6 +407,11 @@ modified: 2025-02-21T17:17:42.225Z
   - 敏感词检测：精准识别敏感内容，确保文本合规
   - 跨平台支持：适配 Windows、Mac
   - 202510: 在v1.0.4的基础上添加了深度求索最新推出的 DeepSeek—OCR 
+
+- https://github.com/GeoRetina/Arion /GPL/202512/python/ts
+  - https://www.georetina.com/
+  - the first agentic AI desktop app for geospatial analysis, developed by GeoRetina Inc.
+  - Built with Electron, React (TypeScript), and Vite, Arion runs natively on Windows, macOS, and Linux, empowering users to leverage local and cloud-based Large Language Models (LLMs), integrate custom Model Context Protocol (MCP) servers, and utilize a plugin system for extended capabilities.
 # cv
 - https://github.com/IDEA-Research/Rex-Omni /1kStar/IDAE/202512/python/华人作者
   - https://rex-omni.github.io/

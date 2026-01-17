@@ -165,6 +165,17 @@ modified: 2025-12-11T18:10:23.710Z
   - Use / commands to browse and trigger actions provided by your current agent
   - Permission Management: Fine-grained control over agent actions
 
+- https://github.com/multica-ai/multica /apache2/202601/ts
+  - A native desktop client that brings coding agent capabilities to everyone through a visual interface.
+  - ⚖️ Support for multiple AI agents through the Agent Client Protocol (ACP)
+  - 支持 cc, opencode, codex
+  - Local-first: your data never leaves your machine
+  - Session management with history and resume capabilities
+  - Built-in CLI for power users and testing
+  - https://x.com/jiayuan_jy/status/2012040329407713404
+    - 分享我们最近实现的一个开源版本 Claude Cowork
+    - 目标是成为 coding agent 和终端用户的中间层，有点类似 Obsidian 的模式，每个人都可以根据自己的工作流使用插件的方式来定制化。
+
 - https://github.com/J3n5en/EnsoAI /MIT/202512/ts
   - https://enso.j3.do/
   - 无缝切换 Claude、Codex、Gemini 或本地 LLM。每个 Worktree 都有独立的持久化 AI 会话。 你也可以通过指定 CLI 命令来添加自定义 Agent。

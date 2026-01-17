@@ -132,7 +132,40 @@ modified: 2021-07-27T16:35:20.057Z
 - 
 - 
 
+# discuss-file-based
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Exploring a folder-as-page approach for file-based PKM : r/PKMS _202601](https://www.reddit.com/r/PKMS/comments/1qdqad1/exploring_a_folderaspage_approach_for_filebased/)
+  - I've been thinking a lot about file-based PKM workflows and wanted to share an approach.
+- One friction I kept running into was the separation between:
+  - project files living in folders, and
+  - notes or explanations living somewhere else
+  - In practice, this often meant losing context over time, especially when revisiting old projects.
+  - So I tried an experiment where folders themselves act as the primary unit of organization, and notes are layered on top rather than stored separately.
+- The core ideas of this approach are:
+  - each folder functions like a “page”
+  - the folder structure stays exactly as it is
+  - notes are written in Markdown alongside real files
+  - files or subfolders can be referenced directly from the page
+  - search works across both file names and note content
+- This isn’t meant as a replacement for existing PKM tools like Obsidian or Logseq. It’s more about exploring whether annotating the file system itself can reduce friction in certain workflows.
+- Conceptually it’s very similar to how index.html works for a directory. Each folder can have a corresponding Markdown note (stored as a regular .md file in that folder), which acts as the “page” for that folder.
+  - The main difference is UX: creating or removing that note is exposed as a simple action in the UI, so users don’t have to think about managing the file manually if they don’t want to. But the content itself is still just a normal Markdown file living in the folder.
+  - From a storage perspective nothing special is happening — the UI just reduces the manual overhead.
+
+- I use obsidian. I’ve come across the idea of using a moc (map of contents?) idea.
+  - This would look like something like: Fundamental heading List of fundamental ideas- basically linking the page
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

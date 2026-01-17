@@ -10,7 +10,8 @@ modified: 2023-09-17T17:37:19.913Z
 > about database and application architecture
 
 # guide
-
+- who is using #db-per-user
+  - bluesky
 # discuss-stars
 - ## 
 
@@ -342,7 +343,54 @@ modified: 2023-09-17T17:37:19.913Z
 - IMO, all the approaches have pros and cons. It is about tradeoffs and the problems you are trying to solve. Vendors make it very hard to have this discussion and don't acknowledge the tradeoffs. There are legit benefits for storage/compute decoupling for OLTP, and there are definite benefits of putting every component of an OLTP on one machine.
 
 - With @spacetime_db we're skipping right to the next decade.
+# discuss-scaling
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Scaled from 1, 000 to 100, 000 users. Here's what broke.
+- https://x.com/brankopetric00/status/2011561755927826910
+
+At 5, 000 users:
+- Single database became the bottleneck
+- Added read replicas
+
+At 20, 000 users:
+- Session storage overwhelmed Redis
+- Switched to JWT tokens
+
+At 50, 000 users:
+- File uploads killed our servers
+- Moved to S3 with presigned URLs
+
+At 75, 000 users:
+- Search became unusable
+- Implemented Elasticsearch
+
+At 100, 000 users:
+- DNS became single point of failure
+- Multi-region with Route53 failover
+
+Every stage felt like the final architecture.
+
+None of them were.
+
+Scaling isn't a destination. It's a continuous series of bottleneck discoveries.
+
+- your DB broke at 5k users what the fuck was it a json file?
+- At 5, 000 users: - Single database became the bottleneck - Added read replicas This seems unlikely - We have 25k users on a single db and it works flawlessly.
+
+- A single DB became a bottleneck at 300k users for us, but we could solve it with partition schemes and scale to millions. Just added some read replicas for dashboard and report generation.
+
+- I think most people scale too early.
+  - That's also true, wast on cloud resources is crazy.
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

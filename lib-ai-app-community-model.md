@@ -157,7 +157,17 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
-- ## 
+- ## [Alternative to Transformer architecture LLMs : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nk58yc/alternative_to_transformer_architecture_llms/)
+  - I wanted to ask if there are any other possible LLM architectures instead of this transformer.
+- State Space Models (SSMs) are not using standard transformer architecture and they are getting some attention from various research institutes (look for Mamba paper on arxiv).
+  - There is also RWKV that (depending on the version) looks more like a standard RNN.
+  - Both of them have some advantages and disadvantages compared to transformers. Definitely cool research area
+
+- There is some research towards using diffusion architecture for LLMs. LLaDa is one
+
+- Hybrids are the latest thing, Nemotron Nano is only 8% transformer! Also Qwen3-Next is a hybrid.
+
+- RWKV uses an RNN.
 
 - ## Release the VSC extension design for the local coding model: 
 - https://x.com/LiMzba/status/2011106168136220739
@@ -734,7 +744,20 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
-- ## 
+- ## [Why aren't more people using local models? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1oj7ts7/why_arent_more_people_using_local_models/)
+- Two reasons that I could think of:
+  - Average consumer HW isn't just there yet to run something universally useful
+  - Consumer mindset forbids to start doing things on your own
+  - free time
+  - Most people probably don't have the time, willingness or patience to get into the matter just far enough for using local models. The average user has no clue about how to compile llama.cpp and is also not intrigued to get into this. Things have changed a lot since the 80's.
+
+- The problem with edge devices is simple. Battery life. Yeah, I can use a local model on my phone, and yeah, it works mostly relatively well. But I'm not willing to lose 20% of my battery on a short conversation
+
+- Because graphics cards cost a kazillion dollars and you need 10 of them to get claude quality which is good enough but nothing less is..
+
+- Because it's a huge pain in the ass and requires decently expensive hardware to do well.
+
+- I love using local models and it's a great feeling having control over my privacy but honestly it's a fuckton of work. If you just wanna chat and load up LM Studio it's fine but if you want more you basically have to build everything yourself. Research mode, STT and TTS, RAG, MCP or tool use. All these are small building blocks you have to integrate yourself. It really gets messed-up if you also want these in your native language other than english. When showing my setup to my normie friends everyone quickly comes to the same conclusion.
 
 - ## [We tried to automate product labeling in one prompt. It failed. 27 steps later, we've processed 10, 000+ products. : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qcsmww/we_tried_to_automate_product_labeling_in_one/)
   - We built an AI agent to localize imported food products for a retail client. The task sounds simple: extract product info, translate it contextually (not Google Translate), calculate nutritional values for local formats, check compliance with local regulations.

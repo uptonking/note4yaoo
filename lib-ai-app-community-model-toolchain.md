@@ -1102,7 +1102,16 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 
 - ## 
 
-- ## 
+- ## [Transformer Lab - Download, interact, and train models locally : r/LocalLLaMA _202402](https://www.reddit.com/r/LocalLLaMA/comments/1awer80/transformer_lab_download_interact_and_train/)
+  - We built Transformer Lab to be an open source tool that lets you interact, train, and evaluate LLMs on your own machine or in the cloud (currently Mac or Linux, Windows soon) through a simple GUI.
+  - One of our goals is to make it as easy as possible to get started experimenting with LLMs regardless of what platform you have (even if you don’t have a GPU). You can do everything through the UI but it is built on an API that can be extended using plugins. When you start the app it will try to figure out what kind of system you have and install the right set of initial plugins to get you going optimally.
+  - Recently we've been putting a lot of effort in trying to make it work really well for folks without a GPU but who have an Apple Silicon Mac and want to finetune models through a GUI.
+
+- Since this is written in electron, will there be an option to host the entire app as a web server in the future?
+  - Interesting. We’ve thought about this a bit. Mostly the app is just a plain React app so it could just be a website. It only does a bit of non web work in the installer which could be removed.
+  - We chose to make it an app in the hope that it’s easier to install but if people really want a web version it’s something we could work on (or could use help with).
+
+- The core Llama Training library uses the out of the box Hugging Face Trainer library which supports AMD. So at worst, it might require a bit of tweaking to the TrainingArguments when doing training in order to optimize for AMD.
 
 - ## [Looking for a Base Model : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1q9si66/looking_for_a_base_model/)
 

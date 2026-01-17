@@ -636,7 +636,13 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [Nemotron-3-nano:30b is a spectacular general purpose local LLM : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qdrf3o/nemotron3nano30b_is_a_spectacular_general_purpose/)
+- Been running it for a few days and totally agree - the reasoning quality is insane for its size. The robotic tone is actually a feature not a bug for me since I mostly use it for research and analysis anyway
+  - Yep, I like Phi-4 for the same reason. I have to tell other models to use a flat, clinical tone, etc, in their system prompts (with mixed success).
+
+- Yeah nemotron models have had hybrid attention with mamba2 for a while. But there are other innovations in super. I think it was speculative heads 
+
+- When I tested it (fp16 variant on vllm) it made routine errors in coding and I wasn't exactly blown away by its ability to code
 
 - ## [LFM2.5 1.2B Instruct is amazing : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1q7jd1a/lfm25_12b_instruct_is_amazing/)
   - We recommend using it for agentic tasks, data extraction, and RAG. It is not recommended for knowledge-intensive tasks and programming.

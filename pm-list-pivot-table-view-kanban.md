@@ -43,7 +43,10 @@ modified: 2023-01-22T18:45:58.936Z
 
 - ## 
 
-- ## 
+- ## React Aria has built-in support for drag and drop. This kanban board is only ~100 lines, 
+- https://x.com/devongovett/status/2011488385689436234
+  - and even supports keyboard accessibility with no additional code needed
+  - Drag and drop is supported in ListBox, Table, GridList, and Tree. It’s integrated with multi-selection, so you can drag multiple items at once with no extra work. You can also drag items into or out of the browser, including files and directories.
 
 - ## [Kanban with Markdown formatting as Visual Studio Code Plugin : r/Markdown _202512](https://www.reddit.com/r/Markdown/comments/1pg353h/kanban_with_markdown_formatting_as_visual_studio/)
   - It saves as Markdown, exports as markdown (marp) presentation formats, supports different diagram styles, etc.

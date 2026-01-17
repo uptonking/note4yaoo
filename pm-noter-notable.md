@@ -162,6 +162,7 @@ modified: 2023-11-28T14:48:45.910Z
 - 纯前端/客户端的产品其实商业化的能力不强，付费特性一般是存储(回放)、计算(后台、并发、自动化)
   - 简单查看浏览的功能不足以支撑商业化的产品，可增加更多功能如 搜索、编辑、批注、集成
   - 同步、协作、素材模版、资源包
+  - 👀 不愿意付费的/够用就行的: 前端交互
 
 - 为成功的产品做生态
   - unsloth给llm写tutorials, 比官方更早fix prompts issues, 增大context, 版本多(The biggest difference I would say isn't the quants, but rather our bug fixes for every model)

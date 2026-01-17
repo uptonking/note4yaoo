@@ -160,17 +160,75 @@ modified: 2025-11-06T18:49:13.977Z
 
 - ## 
 
-- ## 
+- ## 🆚⚡️ [70个模型！中文手写OCR评测更新【系列评测三】 _202601](https://linux.do/t/topic/1466649)
+  - 本次共涵盖 70 个不同模型，测试样本达到 31 个，且新增数个来自中学的实拍非互联网样本。
+  - 本次测试还更新了含标点、不含标点两种模式，更能符合实际不同需要参考！
+  - 本次更新使用了更合理的准确率计算方式，修正了此前样本的正确答案中存在的一些纰漏。
+- 中文手写准确率省流/总结
+  - 冠军：Gemini3Pro（含标点/不含标点都是最强）
+  - 最强国产多模态（含标点）：Doubao-1.5-UI-TARS（但快下架了）
+  - 最强国产多模态（不含标点）：ERNIE-5.0-Thinking-Preview（文心5.0）
+  - 最强"小"模型：Qwen3-VL-8B-Instruct / PaddleOCR-VL（0.9B，不支持提示词）。小参数大模型仍存在死循环、乱回现象，并非很可靠。
+  - 最推荐本地运行：PaddleOCRv5_Server。经典的、超小超快的非大模型，不用GPU都能爽用，准确率仍不输很多大模型，业务可定制性高，可输出文字框坐标、置信度，低成本、易部署、易二次开发。
+  - GPT/Claude/Grok 依旧拉跨，不用期待。
+- 所有参测大模型温度设置为0.1，使用提示词如下：
+  - 你是一个强大的OCR引擎，尤其擅长处理中文手写字符。请直接精确地返回图片中的所有的字符，不附带任何其他无关内容。全部使用中文标点符号。遵循原图的标点使用情况，不管是否合理，有标点才加上，没有就没有。对于手写涂改，例如插入、划掉、调换位置等，只要遵循涂改规则后的文本。
+- 评测说明
+  - 非大模型/不支持提示词输入/不支持温度设定的参赛选手，有夸克扫描（QuarkScan）、PaddleOCR-VL、PaddleOCRv5-Server、HunyuanOCR等。
+  - 所有模型重复5遍测试，5次结果均计入最终计算。准确率基于CER计算，计算大模型返回文本与正确答案的CER值，然后用1-CER得到准确率。
+  - 少于32B的各模型，在上述设定下，有概率出现死循环现象，此时会给额外机会，删掉死循环那一次结果，再次发起新的请求，否则无法出分（超长死循环会导致CER爆炸，准确率归零）。
+  - 以 Q4/Q8 结尾的模型均为 Windows 下通过 LMStudio 本地运行。此外，HunyuanOCR 为本地 WSL2 下通过 vLLM 部署运行，PaddleOCRv5-Server、PaddleOCR-VL 为本地直接通过paddleocr库推理运行。
+  - 还有些模型，尝试了测试，但最终未完成，未计算成绩，包括 DeepSeek-OCR（困难样本空回复）、DeepSeek-VL2（困难样本死循环、空回复）、Grok系列（已读乱回）等。
+  - 即使是0.1的温度，很多模型的表现也有不少波动，重测一遍一个模型都可能会有排名上的变化，因此笔者认为，1%以内差距的模型表现可视为同一水平。
+- 厂商模型表现简评
+- Gemini 系列的多模态能力强势已久，在本次评测中，Gemini-2.5-Pro 表现终于超过了 Gemini-2.0-Flash，表现出了符合名字的水平。 网传的 Gemini-3-Pro 的“最强多模态模型”称号也再次在本测试中得到验证。无论是在有标点还是无标点中，都夺得头筹。Gemini-3-Flash 也紧随其后，两种场景中都位列第三。
+  - 在中文手写OCR这个领域，Gemini 冠军地位并不牢固，两种场景中，Pro 和 Flash 之间都被国产大模型横插一脚，且成绩上的差距相当小，甚至可以说是误差。
+  - 提一嘴 Gemma 系列，只能说对于中文手写识别非常差，应该是训练集这方面数据相当缺乏的结果，甚至不如同是国外的 NVIDIA 训练的 Nemotron-Nano-12B-v2-VL 。
+  - 总之，至少在当下，想要最好的中文手写OCR效果，首选 Gemini-3-Pro 毋庸置疑；而 Gemini-2.0-Flash 仍然表现出非常高的性价比。
+- Baidu是OCR的老牌选手了，大模型出来之前，国内OCR开发，百度开源的PaddleOCR一直备受青睐，虽然有些毛病，但是并没有显著强于PaddleOCR的开源竞品。
+  - PaddleOCR升级到了v5版本，性能更上一层楼，更推出了大模型版本PaddleOCR-VL。
+  - PaddleOCRv5_server 仅仅 0.07B 的参数量，超过了相当多的对手。值得注意的是，笔者的测试里，中文手写有不少非常潦草、不规整换行、涂涂改改的样本，对于一般的日常用途，PaddleOCRv5_server相信能表现好很多。
+  - 所以 PaddleOCRv5_server 是笔者最推荐本地跑OCR的，当然，如果你需要OCR的同时做一些文本层面修改（不容易用算法实现的），那还是要依赖大模型的提示词来做的，PaddleOCRv5_server 只是一个“传统”的 OCR 模型。
+  - PaddleOCR-VL-0.9B 也表现亮眼，在含标点/不含标点两种场景下，在中文手写识别这个特定任务中，都能基本持平 Qwen3-VL-8B ，是一个相当高性价比的选择。
+  - 缺点呢，和上面一样，都是不支持提示词来额外做调整。
+  - 百度最新的 ERNIE-5.0，即文心5.0，也没给百度丢份儿，妥妥的第一梯队，不输甚至超越 Qwen3-VL-235B 大杯版，不过定价也是其三倍
+- 笔者觉得目前国内 Doubao 是最像 Gemini 的模型，从 1.5 版本后主力模型全部多模态，文字推理能力不差，视觉理解在国内也是领先的。
+  - 1.5-UI-TARS 版本在 Doubao 家族中，至今仍是最强。笔者猜测，有可能是为了 UI 任务，特意强化了下 OCR 的能力，但是该模型即将下架。紧随其后的是 1.6 版本衍生的 Vision 模型，很对得其模型名字的表现。
+  - Lite 结尾的模型，表现就比较一般了。
+  - Doubao 的优势就是，相比其他大厂，API服务好用且大方。各模型的训练完成度都不错，没看到什么死循环、不遵循指令乱回无关内容的问题。默认的 RPM 、并发请求数都不低。
+- Qwen3-VL-235B-A22B-Instruct 在含标点/不含标点两种场景下，分别排名第4、第7；当然，就如前面所说，前面几名其实差距都很小，可以说都是第一梯队。
+  - 对于 Qwen 家的模型来说，Instruct 版本似乎都比 Thinking 版本在OCR上表现更好，在235B这种大杯参数上亦是如此。对于 API 调用来说这是好事，用 Instruct 版成本也就更低了。
+  - 随开源大杯的大模型是 Qwen3-VL-Plus，这是基于 Qwen3 系列的表现最好的闭源版本。
+  - 值得注意的是，默认的百炼平台中的 Qwen-VL-Plus 和 Qwen-VL-MAX 的最新版本号都停留在8月份，也就是说仍然是基于 Qwen2.5 系列的
+  - Qwen-VL-OCR 这个看起来特化的OCR版本，表现一如第二期的拉跨，也许这个OCR是更针对印刷文字而非手写文字吧。Qwen2.5-VL-72B 已经掉到了中部，但免费渠道似乎不少，也堪用。
+  - Qwen3-VL-8B-Q4 就超过了非常多大模型，包括 Qwen-VL-MAX 系列、Qwen2.5-VL-72B 这些在第二期中表现良好的模型，但也不是说就很完美，即便设定温度1.0，对于部分困难样本， Qwen3-VL-8B 包括云端 API 版本，仍然逃不出小模型容易死循环、表现不稳定的规律。
+  - 至于 4B 版本，也还行，但是不如 PaddleOCRv5_server，在 OCR 任务上实用性不高。
+- 最后说说，夸克扫描（QuarkScan）这个非大模型的产品，笔者是使用其中的【提取文字】功能测试的，居然表现出了非常强的准确率。对于个人用户，不是特别在乎隐私的话，非常推荐，且使用应该是免费的。
+- 腾讯一直是国内发展比较慢的，在多模态能力上也表现如此，最新的改名后的 Tencent-HY-Vision-1.5 勉强打赢 Qwen3-VL-8B，有待继续努力。
+- olmOCR-2-7B，表现挺好的，且训练完成度比较好，没什么死循环；值得注意的是，这个是基于 Qwen2.5-VL-7B-Instruct 进行训练的，如果能更新个版本基于 Qwen3-VL-8B 训练的估计能再上一层。
+- 智谱家的，GLM4.6V，不知道为啥输给了GLM-4.6V-FlashX，但数据如此就如实写吧。表现中规中矩，反正目前GLM没有能上第一梯队的视觉模型，有待进步。
+- InternVL系列，来自上海人工智能实验室，就是把Qwen系列的文本模型加上视觉训练出来的，InternVL3-78B 底座为Qwen2.5-72B，InternVL3.5-241B-A28B 来自 Qwen3-235B-A22B，就成绩上来看，距离 Qwen 自家训练的同底座视觉版本差距不小。
+- GPT系列，嗯，还是那个样子，GPT-4.1-Mini 表现最好，其次是 GPT-5.2 ，感觉没啥能说的，反正应该没人用GPT来做中文手写OCR。如果有汉字需要识图 + GPT 的推理，感觉用其他模型识别出来再给 GPT 能表现更好。对了，GPT5.2以下（不含5.2）对于很多困难样本会拒绝输出，直接说【看不清楚，请提供更清晰的图片或更高分辨率的扫描件。】，重试很多次都是如此，最终成绩还是算了进去。
+- Claude系列，嗯，也还是那个样子，和 GPT 一样，估计训练集都不放什么汉字图片数据的。最新的基于TPU训练的 Claude-Opus-4.5，也就那样，都是难以使用的水平。
+
+- 佬友的评测代码有开源计划吗？这边也有OCR类的场景想要测试下不同模型的能力，想参考下评测过程。
+  - 短时间内应该不开源，将来优化下会考虑开源，主要是现在的问题比较多，很多时候都是手动修修改改的，现在开源的话文档都写不了，完善一些后应该会开源的，加上年末事情多，可能要到四五月份吧
+
+- 样本里面含手写公式吗
+  - 不含的，公式识别一般是专门另测的。
+
+- 之前测过glm4.6v和paddleOCR感觉前者更好用一些，因为可以根据我的需要返回内容
+  - 是的，文中也说了，PaddleOCR是不支持提示词指令的
+
+- 从官方技术报告和GitHub issues来说，DeepSeek-OCR应该更擅长版面解析/规整字识别，中文手写识别应该没有纳入训练目标，本次评测如果放个低分DeepSeek-OCR可能会导致低估其他方面能力，最后考虑下来就不计入了。
+
+- ### [中文手写OCR评测【系列评测二】 _202505](https://linux.do/t/topic/687651)
+- ### [中文OCR哪家强？【系列评测一】 _202505](https://linux.do/t/topic/671030)
 
 - ## [Run structured extraction on documents/images locally with Ollama and Pydantic | Hacker News _202502](https://news.ycombinator.com/item?id=43110173&utm_source=chatgpt.com)
   - We put together an open-source collection of Pydantic schemas for a variety of document categories (W2 filings, invoices etc.), including instructions for how to get structured JSON responses from any visual input with the model of your choosing. Run everything locally.
 
 - I'd really like to play with Qwen2.5-VL at some point, perhaps for reading data-sheets for microchips. Nicely for some applications, it's also very good at reporting position of what it finds, which many ML tools are pretty mediocre at. https://qwenlm.github.io/blog/qwen2.5-vl/
-
-- 
-- 
-- 
-- 
 
 - ## [Any suggestions for Open source OCR tools [D] : r/MachineLearning _202510](https://www.reddit.com/r/MachineLearning/comments/1o4hn2c/any_suggestions_for_open_source_ocr_tools_d/)
 - The biggest difference maker is whether you're using OCR for word- or sentence-level recognition with bounding boxes, or simply to transform non-textual info in textual info (say Markdown, or similar textual representations).

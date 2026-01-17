@@ -831,6 +831,31 @@ modified: 2024-01-31T19:13:11.286Z
   - Browser for Work
   - Wavebox gives you customizable toolbars, sleeping tabs, cookie containers and multiple profile
   - Wavebox 10, a complete **fork of Chromium** launched in 2019, but if you're looking for the Electron based Wavebox Classic, there's an archive of the code here
+# packaging
+- apps
+  - jupyterlab‑desktop
+
+- https://github.com/invoke-ai/launcher /apache2/202510/ts/inactive
+  - 📌 The launcher is a desktop application for Windows, macOS (Apple Silicon) and Linux.
+  - It can install, update, reinstall and run Invoke Community Edition. It is self-contained, so you don't need to worry about having the right python version installed.
+  - 依赖@electron-toolkit/typed-ipc、electron-builder、node-pty、xterm、@emotion/react、vite
+  - Using the launcher to update Invoke
+  - Updating the launcher itself
+  - The launcher is an electron application with React UI. We bundle `uv` with the build and then call it to install python, create the app `venv`, and run the app.
+  - If installation fails, retrying the install in Repair Mode may fix it. 
+  - Like the install script, the launcher creates and manages a normal python virtual environment.
+  - The "old" scripts will be phased out over time. The goal is to support 3 ways to install and run Invoke:
+    - Launcher
+    - Docker
+    - Manual (e.g. create a `venv` manually, install the `invokeai` package, run it as a script)
+
+- https://github.com/saviornt/Local-AI-Interface /MIT/202507/js/inactive
+  - A desktop application built with Electron that provides a user-friendly interface for managing and interacting with local AI services, including Ollama (for Large Language Models) and n8n (for workflow automation). 
+  - This project aims to simplify the setup and usage of a personal, local AI stack.
+  - Dockerized Services: All backend AI services run in isolated Docker containers, ensuring easy setup and management.
+  - One-Command Setup: A single command to get both Docker services running and the desktop application built.
+  - Prerequisites
+    - Docker Desktop: Includes Docker Engine and Docker Compose. Essential for running the AI services.
 # tauri
 - https://github.com/12joan/ping-ui
   - A simple GUI for the ping command-line utility built using Tauri.

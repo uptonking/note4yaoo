@@ -754,7 +754,7 @@ modified: 2025-11-30T17:27:16.720Z
   - provides modular components to easily integrate various LLMs, embeddings, and vector stores
   - supports: Ollama Google LMStudio vLLM OpenAI API Mistral API
 
-- https://github.com/wzdavid/ThinkRAG /MIT/202507/python/inactive
+- https://github.com/wzdavid/ThinkRAG /MIT/202512/python/inactive
   - 大模型检索增强生成系统，可以轻松部署在笔记本电脑上，实现本地知识库智能问答
   - built on LlamaIndex and Streamlit, and has been optimized for Chinese users in various fields such as model selection and text processing.
   - Supports locally deployed models and offline use
@@ -820,6 +820,12 @@ modified: 2025-11-30T17:27:16.720Z
   - [RAG without Vectors – PageIndex: Reasoning-Based Document Indexing · run-llama/llama_index _202504](https://github.com/run-llama/llama_index/discussions/18360)
     - We were frustrated by vector-based RAG systems that rely on semantic similarity and often fail on long, domain-specific documents.
     - PageIndex, a hierarchical indexing system that transforms large documents (like financial reports, regulatory documents, or textbooks) into semantic trees optimized for reasoning-based RAG.
+
+- https://github.com/OoriData/OgbujiPT /apache2/202512/python
+  - Client-side toolkit for using large language models, including where self-hosted
+  - It provides a unified API for storing, retrieving, and managing semantic knowledge across multiple backends, with support for dense vector search, sparse retrieval, hybrid search, and more.
+  - Storage backends: in-memory, pgvector, qdrant
+  - You can use the OpenAI cloud LLM API and APIs which conform to this, including Anthropic's, local LM Studio, Ollama, etc.
 
 - https://github.com/yichuan-w/LEANN /6.8kStar/MIT/202512/python
   - an open-source vector database, compresses RAG indexes by an impressive 97% using graph-based recomputation and on-demand embedding calculation.
@@ -1008,10 +1014,11 @@ modified: 2025-11-30T17:27:16.720Z
   - https://x.com/hyperbrowser/status/2000655095764267050
     - Ask questions across all your sources
 
-- https://github.com/MrSibe/KnowNote /54Star/GPL/202512/ts/Electron
+- https://github.com/MrSibe/KnowNote /54Star/GPL/202601/ts/Electron
   - 一个本地优先的知识笔记工具，灵感来自 Google NotebookLM。它将你的 PDF、Word 文档、PowerPoint 和网页转化为可提问、可引用、可追溯的个人知识库。
   - 自定义 LLM - 支持 OpenAI、Claude、本地模型等多种 AI 服务
   - 使用 SQLite 本地数据库，快速可靠
+  - sqlite-vec · Drizzle ORM · pdfjs-dist · mammoth · officeparser · Tiptap
   - [I built a local-first NotebookLM-style app without Docker (Electron-based) : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1ptj78l/i_built_a_localfirst_notebooklmstyle_app_without/)
     - One of the main reasons I started KnowNote was that many similar projects (including open-notebook) rely on Docker-based setups, which can be a bit intimidating for non-technical users.
     - My goal here was to explore a lighter, desktop-first approach using Electron, so people can just download and run it without dealing with containers.
@@ -1205,6 +1212,46 @@ modified: 2025-11-30T17:27:16.720Z
   - 强大的富文本编辑能力：兼容 Markdown 和 HTML，支持导出为 word、pdf、markdown 等多种格式。
   - 轻松与第三方应用进行集成：支持做成网页挂件挂在其他网站上，支持做成钉钉、飞书、企业微信等聊天机器人。
   - 通过第三方来源导入内容：根据网页 URL 导入、通过网站 Sitemap 导入、通过 RSS 订阅、通过离线文件导入等。
+
+- https://github.com/signerlabs/klee /1.7kStar/MIT/202511/ts/inactive
+  - a modern desktop application that combines AI-powered chat, knowledge base management, and note-taking capabilities.
+  - It offers both Cloud Mode for seamless synchronization and Private Mode for complete offline functionality.
+  - Integrated with OpenAI and local Ollama models
+  - Tiptap-based collaborative editor with Markdown support
+  - At its core, Klee is built on:
+    - `Ollama`: For running local LLMs quickly and efficiently.
+    - `LlamaIndex`: As the data framework.
+  - Privacy-First: Complete offline mode with local AI and data storage
+  - Optional cloud synchronization via Supabase
+  - Private Mode
+    - Local AI: Powered by Ollama (embedded or system-installed)
+    - Local Storage: SQLite for structured data
+    - Vector Search: LanceDB for semantic search (planned)
+  - Cloud Mode
+    - File Storage: Supabase Storage for documents and attachments
+    - Data Sync: PostgreSQL database with real-time updates
+    - Authentication: Google OAuth and email/password via Supabase
+  - 🍴 forks
+  - https://github.com/EclipseFever/Klee /202504
+    - electron-build-ci: https://github.com/EclipseFever/Klee/blob/main/.github/workflows/build.yml
+  - [I built and open sourced a electron app to run LLMs locally with built-in RAG knowledge base and note-taking capabilities. : r/electronjs _202503](https://www.reddit.com/r/electronjs/comments/1j43om9/i_built_and_open_sourced_a_electron_app_to_run/)
+    - Would the users need to download Ollama separately or is it somehow embedded?
+      - It is embedded, but if you already have ollama running, we will use your ollama instance.
+    - We start with SwiftUI but switch to Electron after 3 weeks
+  - [I built and open sourced a desktop app to run LLMs locally with built-in RAG knowledge base and note-taking capabilities. : r/LocalLLM _202503](https://www.reddit.com/r/LocalLLM/comments/1j4wvsu)
+  - [I open-sourced Klee today, a desktop app designed to run LLMs locally with ZERO data collection. It also includes built-in RAG knowledge base and note-taking capabilities. : r/LocalLLaMA _202503](https://www.reddit.com/r/LocalLLaMA/comments/1j2j7su/i_opensourced_klee_today_a_desktop_app_designed/)
+    - I see you were inspired by Slack's UI
+    - Can I just point it at the folder with my existing models?
+      - If you use windows, look up junctions and symbolic links: mklink /J C:\LinkDirectory D:\TargetDirectory
+    - When I've used Ollama I find it's not just the file location; it requires turning the GGUF models into some hashed 'model file', which is exactly why I quit using Ollama.
+    - Does this force Ollama? Or can I use llama.cpp as a backend?
+      - backend and front end are in different repo, you can use llamacpp as backend
+    - What key features differentiate this from those options like lmstudio/koboldai?
+      - Nothing. Just yet another wrapper over ollama.
+    - What does Klee use for embeddings for the RAG? does it support directory/folder upload or just individual file upload?
+      - individual file, multiple files and folder
+    - Would also like to know if it allows users to connect to an existing ollama instance over LAN? Would it allow me to connect to my ollama API on my network? So I can use this on my laptop and connect to my AI server in the basement? Can you put a custom IP/port? 
+      - this is the most requested feature 
 # chat-excel
 - https://github.com/huggingface/aisheets /1.5kStar/apache2/202510/python/ts
   - https://huggingface.co/spaces/aisheets/sheets
@@ -1301,6 +1348,8 @@ modified: 2025-11-30T17:27:16.720Z
   - Model backends: works with llama.cpp, vLLM, mlx-lm/mlx-vlm, LM Studio, Ollama, and more via the standard OpenAI-compatible API.
   - Storage: all assets (uploaded or generated) live in Postgres or file/object storage.
   - Documents: PDF, DOC/DOCX, PPT/PPTX, XLS/XLSX, ODT/ODP/ODS, MD, TXT, RTF, Pages, Numbers, Keynote, HTML, CSV, and more.
+  - [AI Model Configuration](https://github.com/eclaire-labs/eclaire/blob/main/docs/ai-models.md)
+    - 依赖外部backend来期待llm api
 
 - https://github.com/rmusser01/tldw_server /1.1kStar/GPL/202511/python
   - https://tldwproject.com/
@@ -1548,6 +1597,15 @@ modified: 2025-11-30T17:27:16.720Z
 
 - citation-examples
   - [Bluebook Citation Generator - Instant Legal Citations & OCR](https://bluebookcitationgenerator.com/)
+# examples/apps
+- https://github.com/dmayboroda/minima /MPL/202512/python/ts
+  - On-premises conversational RAG with configurable containers
+  - open source RAG on-premises containers, with ability to integrate with ChatGPT and MCP. 
+  - Minima can also be used as a fully local RAG or with your own deployed LLM.
+  - Minima currently supports 3 modes:
+    - Isolated installation (Ollama) – Operate fully on-premises with containers. All neural networks (LLM, reranker, embedding) run on your cloud or PC 
+    - Custom LLM (OpenAI-compatible API) – Use your own deployed LLM with OpenAI-compatible API (vLLM, Ollama server, TGI, etc.). The indexer runs locally while the LLM can be on your server, cloud, or local machine.
+    - Custom GPT – Query your local documents using ChatGPT app or web with custom GPTs. The indexer runs on your cloud or local PC, while the primary LLM remains ChatGPT.
 # data-rag
 - https://github.com/statespace-tech/toolfront /801Star/MIT/202512/python
   - https://docs.toolfront.ai/

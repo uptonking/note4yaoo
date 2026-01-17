@@ -717,6 +717,27 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
+- ## 💡 [Job wants me to develop RAG search engine for internal documents : r/Rag _202601](https://www.reddit.com/r/Rag/comments/1qdy998/job_wants_me_to_develop_rag_search_engine_for/)
+- I would start by identifying the most valuable subset of documents, define a conversion approach (pref. towards markdown files) and then experiment with different chunking strategies (esp. parsing) to test retrieval. Embedding and Reranking should be considered. Those models are usually tiny and can run locally. For the reasoning part (responding to the user query by formulating an answer starting from the retrieved chunks) you can think about using a cloud LLM to have more advanced reasoning and potentially less hallucinations.
+  - I agree in principle: Start with a bite size chunk that focused on some subset of docs that can offer biggest outcomes when transformed. Learn, iterate, it will begin to get clearer how scaling should occur…
+
+- what’s the use case? If you need ground truth and linked citation, then none of the aforementioned solutions may work.
+
+- The real killer is iteration speed. Every config change usually means reprocessing everything, which gets expensive fast at your scale. That's what I've been building around at vectorflow.dev, but honestly any approach that lets you test configurations before committing to the full pipeline will save you weeks.
+  - I think ocr should be a separate process from the ingesting. OCR using known quality tool(s), likely NOT AI, then work on converting/ingesting the output docs that have been tested to equal = “good”…
+
+- Every off the shelf enterprise search solution can do this without having to build it. Coveo, Elastic, Lucid, serachblox, lucid, Lucy, Glean, OpenText, Google, etc.
+
+- I am building RAG for a lot of funky stuff like math-heavy PDFs. For that, marker outclassed everything else I listed above, but it's also the slowest., Guess you get what you pay for.
+  - Even that isn't always good enough, so in my workflow, I typically take marker's JSON output and run it through a cleanup XGBoost model I hand-tuned to omit stuff that annoys me. In other words, I burn a lot of GPU cycles to let marker do most of the work, and the library comes with some absolutely brilliant pre-trained neural nets, but there's still a bit of cleanup to do.
+  - Anyway running marker to convert a folder of files is dead simple code-wise (python or CLI). The following is done serially because the box in question has only one GPU, an RTX 3090, and marker will saturate that GPU while using maybe 15/24 GB VRAM on certain files
+
+- We built search engines for 600m docs. But even with 2 - 4m things are really complicated, you need a lot of infra.
+  - Steps: First, build an OCRing system that scales. This is its own application that runs independently from the entire ingestion.
+  - Second, build scalable ingestion and search infrastructure. That’s complicated. You will probably need mass storage, Kafka, back propagation pressure, and Elasticsearch.
+  - Third, build the RAG system. Use hybrid search, it’s almost always superior than RAG alone. But you must take a measuring approach, each change must be applied to eg 100 sample docs, and you measure whether a change improves something or not.
+  - You see, these are really 3 distinct projects. There is a lot more here, eg OCRing will yield bad results, and you’ll need a language model to correct OCRing results. (Disclaimer: I am selling consulting for such stuff.)
+
 - ## [I rewrote hybrid search four times - here's what actually matters : r/Rag](https://www.reddit.com/r/Rag/comments/1pd7tao/i_rewrote_hybrid_search_four_times_heres_what/)
   - The actual problem Most resources tell you "combine vector search with keyword search" and show you a 0.5/0.5 weight split. That's it. But when you actually build it with real product data, you hit these issues: SKU codes like "MBP-M3MAX-32-1TB" return garbage from vector search; Score ranges don't match (vectors give you 0.3-0.4, BM25 gives you 15-50)
   - How I approached it
@@ -1298,6 +1319,14 @@ modified: 2024-09-08T20:08:16.088Z
 - ## 
 
 - ## 
+
+- ## file search is the new RAG
+- https://x.com/jerryjliu0/status/2011955401118663145
+- All you want is a little vector database of all your files, and then it’s just files all the way
+
+- If file search is the new RAG then Evernote would become the new Obsidian. There needs to be something that captures semantic similarity between the notes like Obsidian does with its backlinks, and RAG's chunking and embedding is just that. I don't think this is going anywhere, but both folder arrangements and semantic similarity based search could be used in tandem to reduce the toolcalls and triangulate top k data incredibly efficiently
+
+- Haiku style subagent file search is the new RAG
 
 - ## [Do we need LangChain? : r/Rag](https://www.reddit.com/r/Rag/comments/1q4ahf9/do_we_need_langchain/)
 - In my opinion it's a wildly overbloated hunk of junk that was put out asap in order to facilitate development capture. I don't use it either

@@ -40,19 +40,19 @@ modified: 2025-08-23T11:43:35.904Z
     - UI Components for Invoke's applications.
     - Customized Chakra-UI components.
   - https://github.com/Millu/invoke-workflows
-  - https://github.com/invoke-ai/launcher /apache2/202508/ts
+  - https://github.com/invoke-ai/launcher /apache2/202510/ts/inactive
     - 📌 The launcher is a desktop application for Windows, macOS (Apple Silicon) and Linux.
     - It can install, update, reinstall and run Invoke Community Edition. It is self-contained, so you don't need to worry about having the right python version installed.
     - 依赖@electron-toolkit/typed-ipc、electron-builder、node-pty、xterm、@emotion/react、vite
     - Using the launcher to update Invoke
     - Updating the launcher itself
+    - The launcher is an electron application with React UI. We bundle `uv` with the build and then call it to install python, create the app `venv`, and run the app.
     - If installation fails, retrying the install in Repair Mode may fix it. 
     - Like the install script, the launcher creates and manages a normal python virtual environment.
-    - The launcher is an electron application with React UI. We bundle `uv` with the build and then call it to install python, create the app `venv`, and run the app.
-  - The "old" scripts will be phased out over time. The goal is to support 3 ways to install and run Invoke:
-    - Launcher
-    - Docker
-    - Manual (e.g. create a `venv` manually, install the `invokeai` package, run it as a script)
+    - The "old" scripts will be phased out over time. The goal is to support 3 ways to install and run Invoke:
+      - Launcher
+      - Docker
+      - Manual (e.g. create a `venv` manually, install the `invokeai` package, run it as a script)
 
 - https://github.com/comfyanonymous/ComfyUI /85.4kStar/GPLv3/202508/python
   - https://www.comfy.org/
