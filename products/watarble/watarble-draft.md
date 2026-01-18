@@ -13,4 +13,12 @@ modified: 2022-11-24T11:37:08.907Z
   - watarble
   - writetable
     - writebases <-> obsidian-bases
+  - datalking
+    - linuxdo-email
+
+- ai
   - aeditor
+  - aichor (anchor)
+    - aichorage
+  - aicore
+  - gaiden

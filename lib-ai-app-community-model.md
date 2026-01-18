@@ -742,7 +742,15 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
-- ## 
+- ## [What are you building with sub-4B LLMs in early 2025? Real-world use wins? : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qewdza/what_are_you_building_with_sub4b_llms_in_early/)
+- Been running a Qwen 2.5 3B on my Pi 4 for basic home automation - it parses voice commands from my cheap USB mic and controls lights/temp through Home Assistant API. Nothing fancy but beats yelling at Alexa when the internet's down
+  - Works surprisingly well for stuff like "turn off bedroom lights" or "what's the temp upstairs" - just had to keep the vocab simple and train it on my specific device names
+
+- a Raspberry Pi monitors IP cameras and sensors. A tiny LLM processes live feeds in real-time to detect intruders, leaks, or hacks alerting you via push notifications or automated responses (e.g., locking doors).
+
+- We used https://huggingface.co/unsloth/gemma-3n-E4B-it-GGUF for an on premise Graph-RAG System and it worked pretty well. The Model showed promising results in not hallucinating with the right prompt and context.
+
+- I previously looked at them for simple classification tasks, I am now using FunctionGemma in a Mobile App I am building as a function caller/info extractor where a LLM call is way overkill.
 
 - ## [Why aren't more people using local models? : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1oj7ts7/why_arent_more_people_using_local_models/)
 - Two reasons that I could think of:

@@ -398,6 +398,15 @@ modified: 2023-08-29T10:12:22.345Z
       - I am submitting GitVex to the Convex Tanstack Start Hackathon. That's why I have used Convex. D1 would have worked too.
       - Currently, GitVex does not support D1 but in future GitVex will support D1. And Yes, D1 works with Tanstack Start and better auth.
   - [Infinite Git repos on Cloudflare workers | Hacker News _202410](https://news.ycombinator.com/item?id=41947513)
+
+- https://github.com/swadhinbiswas/OpencodeHub /MIT/202601/ts/astro
+  - https://opencodehub.vercel.app/
+  - open-source GitHub/GitLab alternative with SSH git hosting, pipelines/actions, and advanced UI
+  - A powerful, self-hosted Git platform with CI/CD, code review, and enterprise-grade security
+  - Full Git Support - SSH and HTTP/HTTPS protocols with authentication
+  - Repository Management - Create, fork, archive, and transfer repositories
+  - Flexible Storage - Local, S3, MinIO, Google Drive, Azure Blob, R2
+  - Universal Database Adapter - PostgreSQL, MySQL, SQLite, MongoDB, Turso, PlanetScale
 # apps-by-git
 - https://github.com/w4/rgit /public/202402/rust
   - https://git.inept.dev/

@@ -535,6 +535,13 @@ modified: 2025-03-22T16:10:24.856Z
     - cc支持
   - [太子公益 API](https://taizi.api.51yp.de5.net/console/personal), 签到
     - cc支持
+  - [FKAI](https://orchids.fuckai.me/dashboard)
+    - [【FKAI公益站】 ](https://linux.do/t/topic/1476184)
+    - 额度每天刷新 
+    - 根据论坛等级确定额度 等级 1 20000, 等级 2 50000, 等级 3 100000
+    - 可用模型：claude, gpt
+    - 在CC中效果不佳，更推荐作为日常对话
+    - 这个网站最开始是给kiro写的，但生不逢时
   - [Mu. API 2026](https://demo.awa1.fun/console/personal)
     - cc支持
     - [「公益站」最终还是换成了 New-API _202509](https://linux.do/t/topic/927953)
@@ -559,6 +566,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [佬友API](https://lyclaude.site/console/personal)
   - [APIKEY_公益站](https://welfare.apikey.cc/console)
   - [XiaoYo](https://www.xiaoyo.cn/personal), 签到, deepseek多
+  - [唔系唔系](https://claude.chiddns.com/console)
   - [一个小站的 API 商店](https://one-api.ygxz.in/app/dashboard), 每日签到1刀内随机
     - 提供半公益的高质量 API 中转服务，始于202406
     - 无调用频率限制
@@ -584,7 +592,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 🗑️ [无言AI](https://aiai.li/panel), 每日签到, 已关闭
     - 支持cc
   - 🗑️ [23公益站](https://sdwfger.edu.kg/console), 已关闭
-    - 平台将于每周五、周六统一发放额度兑换码。 额度申请：如您的额度提前用尽，可联系管理员进行补充申请
+    - 平台将于每周五、周六统一发放额度兑换码 
   - 🗑️ [tbai API](https://tbai.xin/), 已关闭
     - 模型支持gemini/gpt, 不支持claude
     - API调用频率限制为 10 RPM

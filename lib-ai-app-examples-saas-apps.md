@@ -335,6 +335,20 @@ modified: 2025-02-21T17:17:42.225Z
     - Is it computer-use or browser-use?!
       - Both. It has file system access and can manipulate your computer. For browsing tasks it has a browser tool. Both are operated by the same agent
 
+- https://github.com/different-ai/openwork /1.1kStar/MIT/202601/rust/ts/tauri
+  - https://openwork.software/
+  - open-source alternative to Claude Cowork, powered by OpenCode
+  - [I built an open-source alternative to Claude Cowork (on top of opencode!) : r/ClaudeAI _202601](https://www.reddit.com/r/ClaudeAI/comments/1qcf8mu/i_built_an_opensource_alternative_to_claude/)
+    - it’s basically an alternative gui for opencode, which (at least until now) has been more focused on technical folks.
+    - the goal with openwork is to bring the kind of workflows i’m used to running in the cli into a gui, while keeping a very deep extensibility mindset. ideally this grows into something closer to an obsidian-style ecosystem, but for agentic work.
+    - open by design: no black boxes, no hosted lock-in.
+    - extensible: skills are installable modules via a skill/package manager, using the native opencode plugin ecosystem.
+    - non-technical by default: plans, progress, permissions, and artifacts are surfaced in the ui, not buried in logs.
+  - [Show HN: OpenWork – An open-source alternative to Claude Cowork | Hacker News](https://news.ycombinator.com/item?id=46612494)
+    - I don't understand the point when opencode desktop already exists.
+    - it's fully integrated with Claude Skills.
+    - What's the security boundary here - there's no mention of a VM or anything to isolate the agent from the file system?
+
 - https://github.com/DevAgentForge/Claude-Cowork /MIT/202601/ts
   - A desktop AI assistant that helps you with programming, file management, and any task you can describe.
   - fully compatible with the exact same configuration as Claude Code, which means you can run it with any Anthropic-compatible large language model.
@@ -397,6 +411,16 @@ modified: 2025-02-21T17:17:42.225Z
     - I found Claude Cowork to be too expensive. So i asked Claude Code to build me a better version with @composio tool router
     - access local files and your terminal via claude code
     - chain actions across local files and cloud apps in one flow
+
+- https://github.com/Safphere/opencowork /apache2/202601/python/ts
+  - 你的数字同事
+  - 支持多家模型、能执行命令，可以使用MCP和SKILL，也支持多平台使用
+
+- https://github.com/Lucifer1H/open-cowork /MIT/202601/shell
+  - brings Claude Cowork's autonomous agent capabilities to OpenCode.
+  - Zero Dependencies - Just one markdown file
+  - Model Agnostic - Works with any model configured in OpenCode
+  - Safe by Default - Uses OpenCode's built-in permission system
 
 - https://github.com/fastaistack/OpenChat /MIT/202508/python/inactive
   - https://fastaistack.github.io/OpenChat/

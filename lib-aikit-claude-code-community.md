@@ -16,7 +16,15 @@ modified: 2025-12-18T12:26:08.445Z
 
 - ## 
 
-- ## 
+- ## [Claude Code真假鉴别工具 _202601](https://linux.do/t/topic/1471272)
+  - 做了个claude code测试真假的小工具，目前测试aws, crs框架的max号池皆可满分通过，kiro, cursor等逆向得分较低
+  - [Claude Code 真伪鉴别](https://cctest.blueshirtmap.com/)
+- 老哥你这个要粘贴APIKEY, 我怕你把我的apikey拿走了… 不敢用呀. 如果是本地部署的会好点.
+  - key用完就可以删了，这个倒是没什么问题
+
+- 虽然不知道是不是真的有用，但是我希望看到各大富可敌国的用户放出你们的评分截图
+
+- 应该还有一个路子可以测试，kiro 是不能完全支持所有 tools 的，比如 json，read_page 这些，我之前kiro转的调这些工具都会报错但也能模仿出来
 # discuss-roadmap
 - ## 
 

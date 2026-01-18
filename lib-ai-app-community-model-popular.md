@@ -10,10 +10,12 @@ modified: 2025-09-16T19:59:57.856Z
 
 # guide
 
-- https://github.com/sst/models.dev /MIT/202511/ts
+- https://github.com/anomalyco/models.dev /MIT/202511/ts
+   - https://github.com/sst/models.dev
   - https://models.dev/
   - open-source database of AI model specifications, pricing, and capabilities
   - We also use it internally in opencode.
+  - ux是一个巨大的宽表table
   - [OpenCode开发了一个所有AI模型(LLM)的数据库，完全开源并且可以免费通过API使用 - 知乎](https://www.zhihu.com/pin/1955588229391709336)
     - 按价格从低到高排序，你就能发现各个供应商都提供大量的免费模型。当然，免费模型都一定的额度限制。
     - 可以通过一个API路由（比如New-API：链接 ），来轮流使用这些免费模型，额度耗尽就自动切换下一家
@@ -1893,7 +1895,17 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [如果有多个公益站，应该怎么管理方便一点呢 _202601](https://linux.do/t/topic/1475126)
+  - 看到好多人用cch的，还有ccw，ccr什么的，太多工具一下子没研究明白
+- 看具体要的管理是什么了，有各种管理工具
+  - API使用上的，API格式转换，负载均衡之类的，然后还分本地和服务器的
+  - 账号管理上的，账号情况检测，余额查询之类的
+
+- 如果是 api 聚合在一起的话，octopus 和 axonhub 都可以。
+
+- 如果是claude code/codex使用，就用cc switch。如果是api使用，就自建newapi
+
+- 现在直接用cliproxyapi的地址，公益站在cliproxy管理，挺多坑的
 
 - ## [使用axonhub对自己已有的公益&2api进行整合+负载均衡 _202601](https://linux.do/t/topic/1397062)
   - 之前使用的是new-api+GPT Load的方式实现多个渠道模型的整合。不过最近在用站内 @looplj  佬的axonhub，感觉用起来差不多可以替代前者两个项目加起来的办法了。

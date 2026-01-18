@@ -1066,6 +1066,9 @@ modified: 2025-08-23T11:43:35.904Z
   - Frontend: React 18, TypeScript, Material UI
   - Backend: FastAPI, SQLAlchemy, Python 3.10+
   - Other: WebSockets, React Flow, custom theming, responsive design
+  - https://github.com/jameskerry651/AI2IMG_Tag /202601/python/js
+    - [用于管理AI绘图标签的web，接入大模型的绘图辅助工具  _202601](https://linux.do/t/topic/1473160)
+      - 玩了一天发现sdxl和sd模型依然需要管理一些标签，网上公开的魔导书用起来总是差点意思，不方便自定义标签，开源的也没有找到好用的
 
 - https://github.com/talesofai/comfyui-browser /605Star/NALic/202411/python/svelte/inactive
   - This is an image/video/workflow browser and manager for ComfyUI. 

@@ -94,7 +94,12 @@ modified: 2025-10-28T20:02:16.727Z
 
 - ## 
 
-- ## 
+- ## [roo kilo不支持xml后大家都用什么扩展coding ](https://linux.do/t/topic/1475114)
+  - 原本roo用的好好的，直接删了xml了，转kilo没几天也不支持了
+  - 想用自己的api+公益站的api，这就需要支持xml的扩展，大家在用哪个好用点呢
+
+- 降级到旧版本，或者使用社区里佬友开发的limcode
+  - https://github.com/Lianues/Lim-Code /MIT
 # discuss-kilocode
 - ## 
 
@@ -411,7 +416,9 @@ modified: 2025-10-28T20:02:16.727Z
 
 - ## 
 
-- ## 
+- ## roocode没有/v1/responses端点吗
+- https://linux.do/t/topic/1476432/29
+- 好像是没有，接口这里没有 response 类型的，下面也没看到有配置。
 
 - ## [feat: restore XML tool protocol option for OpenAI-Compatible provider _202512](https://github.com/RooCodeInc/Roo-Code/pull/10347)
   - [Sorry we didn’t listen sooner: Native Tool Calling _202512](https://blog.roocode.com/p/sorry-we-didnt-listen-sooner-native)

@@ -899,7 +899,22 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 
 - ## 
 
-- ## 
+- ## 🆚 [Llama.cpp vs vllm : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qexkwb/llamacpp_vs_vllm/)
+- Enough VRAM: vllm. Not enough: llamacpp.
+
+- Vllm optimizes for concurrent requests.
+- vLLM is better for concurrent requests and generally faster on prefill.
+- vLLM is MUCH faster for batch inference e.g. sending 1000 reqs at once. 5-10x faster for me on the same model. However, if you're just using it to 'chat' there's no point.
+
+- The llama.cpp goal is a single user chatting with LLMs, now with tool calls and MCP etc. all in one package with broad hardware support. There is some external support from companies (like NVIDIA, hugging face) but it's mostly run by the developers and contributors. The codebase is mostly cpp and is relatively dependency free.
+  - vLLM on the other hand is the enterprise use-case, it has heavy corporate + hardware support. Explicitly an order or two orders of magnitude of people work directly on vLLM full-time vs llama.cpp. It has no doubt better performance for batched inference (I would caveat saying by saying full offload), but takes more VRAM is based on python with a lot of dependencies.
+
+- vllm leverages more hardware native capabilities like fp8/nvfp4/mxfp4 while llama.cpp uses vector cores on the GPU to do dequantize for most popular formats (k-quants or q4_0) other than a few exceptions (f16/bf16 for hardware that supports them, native int8 for q8_0, and now mxfp4 on blackwell).
+  - vllm also receives direct support from hardware vendors, sometimes using external dependency libraries from them so the performance of its compute kernels are closer to hardware limits, and that is what llama.cpp does not want to do. In general vllm is faster when it is a supported use case of the hardware vendor.
+
+- I use Llama.cpp at home and deploy inference nodes using VLLM at work. Llama.cpp is good for home use, but not good for production use.
+
+- Beware that vllm is good but consume much more power on inference than llama.cpp. My workstation configuration is: Threadripper pro 5955wx, 128gb RAM, 3xRTX3090+1 RTX 4500 ada = 96gb VRAM Running Nemotron-nano-30b-3a-bf16 vllm ~1200w Llama-server ~700w Some numbers so that you can figure out. Time to load model on vllm also longer
 
 - ## 🆚 [Is vLLM worth it? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1p9t5c8/is_vllm_worth_it/)
 - vLLM currently has way too many bugs related to gpt-oss (or even qwen3) and other important features (such as structured outputs). 

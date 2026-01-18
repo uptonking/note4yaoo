@@ -191,6 +191,19 @@ modified: 2025-12-11T18:10:23.710Z
   - 为什么使用官方 CLI 而不使用 ACP？
     - 虽然 ACP 能够统一不同 Agent 的核心能力，但是也仅限于核心能力缺失了很多功能。切换不同 Agent 的场景其实并不多而且不同 Agent 的 CLI 核心功能都相似。所以我们认为对于有经验的开发者各 CLI 更具有生产力。
 
+- https://github.com/pedramamini/Maestro /AGPL/202601/ts
+  - https://runmaestro.ai/
+  - a cross-platform desktop app for orchestrating your fleet of AI agents and projects.
+  - It's a high-velocity solution for hackers who are juggling multiple projects in parallel.
+  - Run multiple agents in parallel with a Linear/Superhuman-level responsive interface. 
+  - Currently supporting Claude Code, OpenAI Codex, and OpenCode with plans for additional agentic coding tools (Aider, Gemini CLI, Qwen3 Coder) based on user demand.
+  - Git Worktrees - Run AI agents in parallel on isolated branches
+  - File-system-based task runner that batch-processes markdown checklists through AI agents. Create playbooks for repeatable workflows
+  - Mobile Remote Control - Built-in web server with QR code access.
+  - Full CLI (maestro-cli) for headless operation.
+  - Multi-Agent Management - Run unlimited agents and terminal sessions in parallel. 
+  - Message Queueing - Queue messages while AI is busy; they're sent automatically when the agent becomes ready. Never lose a thought.
+
 - https://github.com/coder/mux /774Star/AGPL/202512/ts
   - https://mux.coder.com/
   - A desktop app for isolated, parallel agentic development
@@ -245,6 +258,19 @@ modified: 2025-12-11T18:10:23.710Z
     - Built to scale horizontally when needed
     - 待确定, 是否支持区分不同用户的不同客户端
     - How It Works: Your Claude Code clients generate encryption keys locally and use Happy Server as a secure relay. Messages are end-to-end encrypted before leaving your device. The server's job is simple: store encrypted blobs and sync them between your devices in real-time.
+
+- https://github.com/21st-dev/1code /apache2/202601/ts
+  - https://1code.dev/
+  - Better UI app for running code agents in parallel (ClaudeCode, OpenCode, Codex)
+  - Best UI for Claude Code with local and remote agent execution.
+  - 1Code is an open-source app that provides a calm, visual interface for Claude Code. It lets you run multiple coding sessions in parallel, track progress visually, and manage your AI-assisted development workflow more effectively.
+  - fully open source. 
+  - Note: Currently tested on macOS and Linux. Windows support is experimental and may have issues.
+  - built for coding. It has a full terminal, GitHub integration, visual diff previews, and worktree management. 
+  - Git Worktree Isolation - Each chat session runs in its own isolated worktree
+  - [[Question] Does this usage violate Anthropic’s ToS? _202601](https://github.com/21st-dev/1code/issues/8)
+    - 1Code uses the official Claude Code SDK which wraps the Claude Code binary. This is the official way to build on top of Claude Code.
+    - Some other tools (like OpenCode) made direct API calls while impersonating Claude Code - that approach got banned. We're not doing that.
 
 - https://github.com/siteboon/claudecodeui /5kStar/GPL/202512/js
   - https://cloudcli.ai/
@@ -385,6 +411,13 @@ modified: 2025-12-11T18:10:23.710Z
 - https://github.com/qinsehm1128/cloud_claude_code /202601/go/ts
   - [云cc项目部署教程(第一次写教程向, 比较der) ](https://linux.do/t/topic/1408766)
 
+- https://github.com/enulus/OpenPackage /apache2/202601/ts
+  - A better, universal, open source version of Claude Code Plugins
+
+- https://github.com/QuivrHQ/247-claude-code-remote
+  - Access Claude Code from anywhere - Mobile / Desktop secure connection via Tailscale. Provision VMs with Fly.io. 
+  - Compatible with Gemini / Codex / OpenCode
+
 ## codex-cli
 
 - https://github.com/openai/codex /29.7kStar/apache2/202506/rust/ts
@@ -500,6 +533,143 @@ modified: 2025-12-11T18:10:23.710Z
 - https://github.com/tinfoilsh/qwen-code /202509/ts/inactive
   - all AI inference to the Qwen3 Coder model is performed using Tinfoil's private AI infrastructure
 
+## opencode-cli
+
+- https://github.com/anomalyco/opencode /75kStar/MIT/202601/ts
+   - https://github.com/sst/opencode
+  - https://opencode.ai/
+  - 📌 The open source AI coding agent.
+  - It's very similar to Claude Code in terms of capability. Here are the key differences:
+    - 100% open source
+    - Not coupled to any provider. can be used with Claude, OpenAI, Google or even local models. 
+    - Out of the box LSP support
+    - A client/server architecture. support remote control. the TUI frontend is just one of the possible clients.
+  - 🎯 [Release v1.0.0 _20251101](https://github.com/sst/opencode/releases/tag/v1.0.0)
+    - 1.0 is a complete rewrite of the TUI.
+    - We moved from the go+bubbletea based TUI which had performance and capability issues to an in-house framework (OpenTUI) written in zig+solidjs.
+    - https://github.com/sst/opentui /MIT/zig/ts
+    - The new TUI works like the old one since it connects to the same opencode server.
+  - 🍴 forks
+  - https://github.com/AllAboutAI-YT/pi-terminal /MIT/202508/go/ts/inactive
+    - Prompt Injection Terminal
+  - https://github.com/IgorWarzocha/opencode-chat
+    - [OpenCode Chat - a slimmer version of OC. From 20k tokens init to 5k. : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1oclqet/opencode_chat_a_slimmer_version_of_oc_from_20k/)
+    - The entire prompt stack and tool descriptions have been rewritten around chatting instead of coding. 
+  - https://github.com/bon5co/opencode-webui-workspace /docker
+    - A containerized development environment running OpenCode WebUI with comprehensive tooling support. 
+  - https://github.com/awesome-opencode/awesome-opencode
+
+- https://github.com/NeuralNomadsAI/CodeNomad /203Star/NALic/202512/ts
+  - built for people who live inside OpenCode
+  - Multi-Instance: Juggle several OpenCode sessions side-by-side with tabs.
+  - Monitor background tasks and child sessions without losing flow
+  - A native application (Electron-based) with global shortcuts, deeper system integration, and a dedicated window.
+  - The SolidJS-based frontend
+  - We are also working on a lightweight, high-performance version built with Tauri. 
+  - [CodeNomad - multi-instance opencode desktop client : r/opencodeCLI _202511](https://www.reddit.com/r/opencodeCLI/comments/1ox9a4u/codenomad_multiinstance_opencode_desktop_client/)
+    - The TUI wasn't cutting it for my workflow and other UIs are either slow or have a different perspective.
+    - Primary feature - Fast long session handling. Quick scrolling the session.,
+    - Multiple Opencode instances in same window, different tabs.,
+
+- https://github.com/different-ai/openwork /1.1kStar/MIT/202601/rust/ts/tauri
+  - https://openwork.software/
+  - open-source alternative to Claude Cowork, powered by OpenCode
+  - [I built an open-source alternative to Claude Cowork (on top of opencode!) : r/ClaudeAI _202601](https://www.reddit.com/r/ClaudeAI/comments/1qcf8mu/i_built_an_opensource_alternative_to_claude/)
+    - it’s basically an alternative gui for opencode, which (at least until now) has been more focused on technical folks.
+    - the goal with openwork is to bring the kind of workflows i’m used to running in the cli into a gui, while keeping a very deep extensibility mindset. ideally this grows into something closer to an obsidian-style ecosystem, but for agentic work.
+    - open by design: no black boxes, no hosted lock-in.
+    - extensible: skills are installable modules via a skill/package manager, using the native opencode plugin ecosystem.
+    - non-technical by default: plans, progress, permissions, and artifacts are surfaced in the ui, not buried in logs.
+  - [Show HN: OpenWork – An open-source alternative to Claude Cowork | Hacker News](https://news.ycombinator.com/item?id=46612494)
+    - I don't understand the point when opencode desktop already exists.
+    - it's fully integrated with Claude Skills.
+    - What's the security boundary here - there's no mention of a VM or anything to isolate the agent from the file system?
+
+- https://github.com/joelhooks/opencode-vibe /MIT/202601/ts
+  - Next.js 16 rebuild of the OpenCode web application. Real-time chat UI with streaming message display, SSE sync, and React Server Components.
+  - Prerequisites: Bun v1.3+ and OpenCode CLI running locally.
+  - The web UI auto-discovers all running OpenCode processes. No configuration needed.
+  - The web UI auto-discovers all running OpenCode processes. No configuration needed.
+  - Cross-process messaging - Send from web UI, appears in your TUI
+  - SSE sync - All updates pushed via Server-Sent Events
+
+- https://github.com/0xSero/open-orchestra /MIT/202512/ts
+  - Open Orchestra is a multi-agent orchestration plugin for OpenCode that enables you to spawn, manage, and coordinate specialized AI workers. 
+  - It implements a hub-and-spoke architecture where a central orchestrator coordinates multiple specialized workers, each optimized for specific tasks.
+  - Hub-and-Spoke Architecture - Central orchestrator with specialized workers
+  - 6 Built-in Worker Profiles - Vision, Docs, Coder, Architect, Explorer, Memory
+  - Optional Neo4j Memory - Persistent knowledge graph (advanced feature)
+  - Open Orchestra follows a hub-and-spoke pattern inspired by successful multi-agent systems like AutoGen and LangGraph, but optimized for OpenCode's plugin architecture.
+
+- https://github.com/milisp/opencode-gui /MIT/202510/ts/tauri/inactive
+  - A lightweight Tauri GUI for Opencode CLI
+- https://github.com/chriswritescode-dev/opencode-manager /70Star/MIT/202601/ts
+  - Mobile-first web interface for OpenCode AI agents. 
+  - Manage, control, and code with OpenCode from any device - your phone, tablet, or desktop.
+  - Features Git integration, file management, and real-time chat in a responsive PWA.
+  - Worktree Support - Create and manage Git worktrees for working on multiple branches
+  - Multi-Repository Support - Clone and manage multiple git repos/worktrees in local workspaces
+  - Git Diff Viewer - View file changes with unified diff, line numbers, and addition/deletion counts
+  - Browse files and folders with tree view
+  - Large File Support - Virtualization for large files
+
+- https://github.com/code-yeongyu/oh-my-opencode /18.5kStar/NC/202601/ts
+  - Run background agents, call specialized agents like oracle, librarian, and frontend engineer. Use crafted LSP/AST tools, curated MCPs, and a full Claude Code compatibility layer.
+  - We're building a fully productized version of Sisyphus to define the future of frontier agents.
+  - https://github.com/alvinunreal/oh-my-opencode-slim
+    - Slimmed and cleaned oh-my-opencode, consumes much less tokens
+  - https://github.com/Yeachan-Heo/oh-my-claude-sisyphus
+    - Sisyphus from OmO (Oh My Opencode), ported to the Claude Code SDK.
+
+- https://github.com/Microck/opencode-studio /112Star/MIT/202601/ts
+  - a local gui for managing opencode configurations. 
+  - toggle mcp servers, edit skills, manage plugins, handle auth - no json editing required.
+
+- https://github.com/btriapitsyn/openchamber /322Star/MIT/202601/rust/ts
+  - Web and desktop interface for the OpenCode AI coding agent. Works alongside the OpenCode TUI.
+  - The OpenCode team is actively working on their own desktop app. I still decided to release this project as a fan-made alternative.
+
+- https://github.com/chriswritescode-dev/opencode-web /MIT/202512/ts
+  - A full-stack web application for running OpenCode in local processes, controllable via a modern web interface. 
+  - Designed to allow users to run and control OpenCode from their phone or any device with a web browser.
+- https://github.com/chris-tse/opencode-web /AGPL/202507/ts/inactive
+  - A web-based UI for interacting with the opencode API
+  - Live streaming responses via Server-Sent Events
+  - Tool execution display with enhanced diff viewing for code changes
+- https://github.com/marmotz-dev/opencode-ui /202511/ts/inactive
+  - a simple yet powerful desktop client for Opencode
+- https://github.com/hosenur/portal /202601/ts
+  - Mobile first batteries included web ui for sst/opencode
+  - provides a browser interface to interact with OpenCode sessions, view messages, and chat with the AI assistant.
+  - This portal is designed for remote access to your OpenCode instance. Deploy the portal on a VPS alongside OpenCode, then use Tailscale (or similar VPN) to securely connect from your mobile device or any other machine.
+  - https://github.com/Shahfarzane/opencode-mobile
+
+- https://github.com/Tommertom/opencode-plugin-marketplace /MIT/202601/ts
+  - https://opencode-plugin-market.web.app/
+  - A community-driven marketplace for discovering and sharing OpenCode plugins.
+  - Community-Driven: Anyone can contribute via Pull Requests
+  - Fast & Static: Built with SolidJS and hosted on Firebase
+
+- https://github.com/easychen/openMode /MIT/202511/dart
+  - a mobile client for OpenCode (and more, maybe). Built with Flutter, it provides a seamless and intuitive interface for interacting with AI assistants, managing code projects, and enhancing your development workflow on the go.
+
+- https://github.com/Th0rgal/opencode-ralph-wiggum /MIT/202601/ts
+  - Type `ralph "prompt"` to start open code in a ralph loop. Also supports a prompt file
+  - Ralph is a development methodology where an AI agent receives the same prompt repeatedly until it completes a task. Each iteration, the AI sees its previous work in files and git history, enabling self-correction and incremental progress.
+  - This package provides a CLI-only implementation (no OpenCode plugin).
+  - The AI doesn't talk to itself. It sees the same prompt each time, but the files have changed from previous iterations. This creates a feedback loop where the AI iteratively improves its work until success.
+  - https://github.com/Hona/opencode-ralph
+    - Ralph Driven Development using OpenCode SDK and OpenTUI
+
+- https://github.com/crottolo/opencode-agent-browser /MIT/202601/ts
+  - OpenCode plugin for agent-browser - headless browser automation for AI agents
+  - Full Dev Tools - Console logs, network requests, cookies, localStorage, sessionStorage
+  - Cookie Banner Handling - Automatically dismisses cookie consent popups
+  - Persistent Sessions - Cookies saved across navigations, login once and stay authenticated
+  - JavaScript Execution - Run arbitrary JS in page context
+  - Video Streaming - Real-time WebSocket streaming for visual monitoring
+  - Zero Config - Works out of the box
+
 ## cli-coding-agent
 
 - https://github.com/Aider-AI/aider /37.1kStar/apache2/202508/python
@@ -528,65 +698,6 @@ modified: 2025-12-11T18:10:23.710Z
     - I have done some research. Unfortunately, as I suspected, this would violate Anthropic's terms of service.
   - 📱 [Mobile port _202506](https://github.com/hotovo/aider-desk/issues/242)
     - 👷 202511: Server solution has been added some time ago, so it's possible to use running AiderDesk instance from mobile.
-
-- https://github.com/sst/opencode /28.7kStar/MIT/202510/zig/ts
-  - https://opencode.ai/
-  - 📌 The AI coding agent built for the terminal
-  - It's very similar to Claude Code in terms of capability. Here are the key differences:
-    - 100% open source
-    - Not coupled to any provider. Although Anthropic is recommended
-    - Out of the box LSP support
-    - A client/server architecture. support remote control
-  - 🎯 [Release v1.0.0 _20251101](https://github.com/sst/opencode/releases/tag/v1.0.0)
-    - 1.0 is a complete rewrite of the TUI.
-    - We moved from the go+bubbletea based TUI which had performance and capability issues to an in-house framework (OpenTUI) written in zig+solidjs.
-    - https://github.com/sst/opentui /MIT/zig/ts
-    - The new TUI works like the old one since it connects to the same opencode server.
-  - 🍴 forks
-  - https://github.com/AllAboutAI-YT/pi-terminal /MIT/202508/go/ts/inactive
-    - Prompt Injection Terminal
-  - https://github.com/IgorWarzocha/opencode-chat
-    - [OpenCode Chat - a slimmer version of OC. From 20k tokens init to 5k. : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1oclqet/opencode_chat_a_slimmer_version_of_oc_from_20k/)
-    - The entire prompt stack and tool descriptions have been rewritten around chatting instead of coding. 
-
-- https://github.com/NeuralNomadsAI/CodeNomad /203Star/NALic/202512/ts
-  - built for people who live inside OpenCode
-  - Multi-Instance: Juggle several OpenCode sessions side-by-side with tabs.
-  - Monitor background tasks and child sessions without losing flow
-  - A native application (Electron-based) with global shortcuts, deeper system integration, and a dedicated window.
-  - We are also working on a lightweight, high-performance version built with Tauri. 
-
-- https://github.com/0xSero/open-orchestra /MIT/202512/ts
-  - Open Orchestra is a multi-agent orchestration plugin for OpenCode that enables you to spawn, manage, and coordinate specialized AI workers. 
-  - It implements a hub-and-spoke architecture where a central orchestrator coordinates multiple specialized workers, each optimized for specific tasks.
-  - Hub-and-Spoke Architecture - Central orchestrator with specialized workers
-  - 6 Built-in Worker Profiles - Vision, Docs, Coder, Architect, Explorer, Memory
-  - Optional Neo4j Memory - Persistent knowledge graph (advanced feature)
-  - Open Orchestra follows a hub-and-spoke pattern inspired by successful multi-agent systems like AutoGen and LangGraph, but optimized for OpenCode's plugin architecture.
-
-- https://github.com/milisp/opencode-gui /MIT/202510/ts/inactive
-  - A lightweight Tauri GUI for Opencode CLI
-- https://github.com/chriswritescode-dev/opencode-manager /70Star/MIT/202601/ts
-  - Mobile-first web interface for OpenCode AI agents. 
-  - Manage, control, and code with OpenCode from any device - your phone, tablet, or desktop.
-  - Features Git integration, file management, and real-time chat in a responsive PWA.
-  - Worktree Support - Create and manage Git worktrees for working on multiple branches
-  - Multi-Repository Support - Clone and manage multiple git repos/worktrees in local workspaces
-  - Git Diff Viewer - View file changes with unified diff, line numbers, and addition/deletion counts
-  - Browse files and folders with tree view
-  - Large File Support - Virtualization for large files
-
-- https://github.com/chriswritescode-dev/opencode-web /MIT/202512/ts
-  - A full-stack web application for running OpenCode in local processes, controllable via a modern web interface. 
-  - Designed to allow users to run and control OpenCode from their phone or any device with a web browser.
-- https://github.com/chris-tse/opencode-web /202507/ts/inactive
-  - A web-based UI for interacting with the opencode API
-  - Live streaming responses via Server-Sent Events
-  - Tool execution display with enhanced diff viewing for code changes
-- https://github.com/marmotz-dev/opencode-ui /202511/ts/inactive
-  - a simple yet powerful desktop client for Opencode
-  - https://github.com/hosenur/portal
-    - Access OpenCode through TailScale on your web browser. (Mobile First)
 
 - https://github.com/MoonshotAI/kimi-cli /1.9kStar/apache2/202510/python
   - a new CLI agent that can help you with your software development tasks and terminal operations.
@@ -650,6 +761,15 @@ modified: 2025-12-11T18:10:23.710Z
   - Get complete visibility into every LLM interaction with zero-overhead passthrough, comprehensive session recording, and powerful debugging capabilities.
   - Accepts both OpenAI and Anthropic formats simultaneously
   - See Everything Your AI Does
+
+- https://github.com/saadnvd1/agent-os /MIT/202601/ts
+  - https://runagentos.com/
+  - Mobile-first web UI for managing AI coding sessions (Claude Code, Codex, Aider, Gemini CLI). 
+  - Self-hosted with multi-pane terminals, git integration, and session orchestration.
+
+- https://github.com/hlhr202/Conductor-for-all /apache2/202601/ts
+  - Conductor for All is a standalone command-line tool designed to bring the Conductor spec-driven development methodology to any coding environment.
+  - Originally tied to the Gemini CLI extension, this project aims to decouple the methodology, allowing developers to install and initialize Conductor workflows in their projects so they can be leveraged by any AI Coding Agent (e.g., Claude Code, Cursor, VS Code Copilot, Codex) or IDE.
 # background-ai
 - https://github.com/ishaan1013/shadow /MIT/202508/ts
   - https://shadowrealm.ai/

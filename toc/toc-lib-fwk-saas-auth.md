@@ -423,8 +423,15 @@ modified: 2025-09-23T09:28:08.532Z
   - You can now open the dev launchpad at http://localhost:8100. From there, you can navigate to the dashboard at http://localhost:8101, API on port 8102, demo on port 8103, docs on port 8104, Inbucket (e-mails) on port 8105, and Prisma Studio on port 8106. 
   - [Show HN: Stack, an open-source Clerk/Firebase Auth alternative | Hacker News _202404](https://news.ycombinator.com/item?id=40031090)
 
-- https://github.com/openauthjs/openauthjs /202411/ts
-  - openauthjs
+- https://github.com/anomalyco/openauth /6.3kStar/MIT/202504/ts/inactive
+  - https://github.com/openauthjs/openauthjs
+  - https://openauth.js.org/
+  - a standards-based auth provider for web apps, mobile apps, single pages apps, APIs, or 3rd party clients. 
+  - Universal: You can deploy it as a standalone service or embed it into an existing application. It works with any framework or platform.
+  - Self-hosted: It runs entirely on your infrastructure and can be deployed on Node.js, Bun, AWS Lambda, or Cloudflare Workers.
+  - Standards-based: It implements the OAuth 2.0 spec and is based on web standards. So any OAuth client can use it.
+  - [Don't use JWTs for authentication (security risk) _202412](https://github.com/anomalyco/openauth/issues/24)
+    - This system should not be using JWTs, and specifically shouldn't be using access tokens + refresh tokens.
 
 - https://github.com/oslo-project/jwt /MIT/202409/ts
   - https://jwt.oslojs.dev/
