@@ -13,6 +13,7 @@ modified: 2020-07-14T09:27:30.503Z
   - tips: 数据与ai计算的主力语言，也能快速开发业务
   - editor: lasuite-docs, jupyter(framework)
   - ai: 🌹 langgraph, comfyui, mlx, label-studio
+    - huggingface模型库里的启动/测试脚本都是python
   - data: superset, pyodide(MPL)
   - devops: airflow, posthog
   - crdt

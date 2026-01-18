@@ -407,7 +407,23 @@ modified: 2025-08-08T07:36:31.265Z
 
 - ## 
 
-- ## 
+- ## [stream tool call outputs · Issue · vercel/ai _202506](https://github.com/vercel/ai/issues/6822)
+  - The tool-call-streaming configuration only streams the input arguments of tool calls, but tool results are not streamed and only appear once the execution is fully completed.
+
+- I agree — using streamText or generateText inside a tool call is a very common use case. To address this, I implemented a custom tool-call protocol via annotations.
+  - Still, I recommend considering an official solution — for example, a tool-result-delta event and an API for streaming toolCall results incrementally.
+
+- You can look into the artifact system in the vercel ai chatbot, it writes to the data field of useChat instead and has a DataStreamHandler component to load it onto the UI through a tool call preview, but if there is a simpler way to achieve this, it will be awesome!
+
+- We have design a complex, multi-agent system using Vercel AI and streaming tool call outputs would make it infinitely easier. Currently, we have an "Orchestrator" agent that transfers tasks to various sub-agents (tools of the Orchestrator). In the tools of the Orchestrator, we stream data to our frontend but this occurs outside the Orchestrator's stream.
+
+- ### [feat: add data stream support to tools and use-chat _202502](https://github.com/vercel/ai/pull/4789)
+  - at this stage we do not have a data stream so this goes against the architecture of `streamText`. agree with the general idea though - but the integration will not be that simple (thought about it quite a bit)
+
+- ### [Can I stream structured tool's ouput? _202505](https://community.vercel.com/t/can-i-stream-structured-tools-ouput/12124)
+- You can’t stream tool results but you can stream arguments with partial tool calls..
+
+- Currently, streamText() doesn’t support streaming structured tool outputs only the tool call and the final text. Streaming the structured output isn’t implemented yet, but would definitely be useful. Hope it’s added soon!
 # discuss-changlog
 - ## 
 

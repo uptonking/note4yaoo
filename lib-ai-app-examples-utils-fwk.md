@@ -157,6 +157,9 @@ modified: 2025-02-21T18:20:42.624Z
     - So we built our own streaming layer.
     - The new `format` option we're introducing (like `format: 'aisdk'`) establishes a pattern where Mastra can output streams in whatever format your frontend needs. Today it's AI SDK v5. Tomorrow it could be `copilotkit`, assistant-ui, or a format we haven't even imagined yet.
     - We've written before about nested streaming, but it bears repeating: modern AI applications are compositional. Agents call other agents. Workflows orchestrate multiple models. Tools can be entire applications themselves. Our custom streaming protocol makes these patterns not just possible but elegant.
+  - [streaming v2  _202507](https://github.com/mastra-ai/mastra/pull/5965)
+    - A new streaming protocol that allows us to stream all mastra primitives, agent, tools, workflows. (soon networks). Our old protocol was based on Vercel's AI sdk datatprtocol which works great for agents but not for workflows, networks and the future of Mastra.
+    - The new protocol allows us to nest streams and calculate usage values of all primitives.
 
 - https://github.com/MotiaDev/motia /5.8kStar/MIT/202508/ts
   - https://motia.dev/

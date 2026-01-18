@@ -57,6 +57,26 @@ modified: 2026-01-15T15:44:10.647Z
 - If you want LLMs with working speeds and diffusion models with slow speeds, both devices are fine. Vulkan support for AI Max 395+ is really good, so you can get better performance with most llms than DGX Sparks (or at least the same) for LLM uses.
   - However, the main problem arrives when you try to use the latest non-LLM models such as TTS, openmcp, and omni models with video support, where you are dependent on ROCm for HIP. Most of these latest models are optimized and tested for CUDA, and they usually fail on Halo (even with ROCm 7.0).
   - I own a 395+, and since I am a developer, I am really happy with my purchase. I can keep multiple 30B MOE models in memory and can get a very fast response. Every day, I try to run new AI models on my system, but the success rate for non-LLMs is 40% compared to my 4090, where it is 90%.
+# discuss-multi-gpu
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [128GB VRAM quad R9700 server : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qfscp5/128gb_vram_quad_r9700_server/)
+  - I originally planned to pick up another pair of MI100s and an Infinity Fabric Bridge
+  - But then I saw benchmarks for the R9700, particularly in the llama.cpp ROCm thread, and saw the much better prompt processing performance for a small token generation loss. The MI100 also went up in price to about $1000, so factoring in the cost of a bridge, it'd come to about the same price. So I sold the MI100s, picked up 4 R9700s and called it a day.
+  - llama 7B Q4_0, 90.89
+  - qwen3moe 30B. A3B Q8_0, 72.51
+  - qwen3vl 32B Q8_0, 14.75
+
+- It starts with you using the hardware you've got, then buying cheap ex-datacenter cards on ebay, then next thing you know you're buying every card in town. I cleared out my local Micro Center's stock of these GPUs lmao.
+
+- Interesting, so you're getting PCIe 4.0 x8/x4/x4 (from the CPU) for the first 3 and then one more Pcie 4.0/3.0 x4 (probably from the chipset).. the 9700 is PCIe 5.0, so I'm guessing your memory interactions are slow, and probably worth bumping up to 96GB?
+  - To get the necessary PCIe lanes, you can either bump up to Threadripper or Siena (I've got an 8224P), which breaks your AM5 desire...
 # discuss-ai/ml-hardware
 - ## 
 

@@ -33,6 +33,11 @@ modified: 2025-11-01T10:54:26.044Z
     - MLX Omni server is far from production ready. It’s heavily vibe coded and PRs never get merged. Tools parsing is unusable.
     - I don’t think llama.cpp supports MLX quants. It has metal acceleration, though. MLX-LM is what you need for that, and is what MLX-Omni-server uses. This is also what LM Studio uses.
     - Mac studios are great for single user research and applications, but not for low latency, high speed, or concurrency.
+  - https://github.com/lucasventurasc/mlx-studio /MIT/202512/python/js
+    - High-performance local LLM server for Apple Silicon with intelligent caching and multi-backend support
+    - MLX Studio using MLX Omni Server as Backend with many cache improvements and tool calling for Claude Code CLI e Qwen-CLI with Qwen3 models
+    - wraps `mlx-omni-server` with production-ready features: smart prompt caching (99%+ cache hit rates), on-demand model loading, Claude Code integration, and a web UI.
+    - MLX Studio auto-downloads models on first use, or you can pre-download
 
 - https://github.com/cubist38/mlx-openai-server /MIT/202601/python
   - A high-performance API server that provides OpenAI-compatible endpoints for MLX models. 

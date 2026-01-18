@@ -15,6 +15,7 @@ modified: 2025-08-08T07:35:49.535Z
 
 - cons
   - 后端功能很弱, 如 RAG/持久化/工作流
+  - 不支持streaming tool call ouput, 但支持流式input
 
 - features
   - Unified Provider API
@@ -24,8 +25,9 @@ modified: 2025-08-08T07:35:49.535Z
     - Generative UI is the process of connecting the results of a tool call to a React component.
 
 - who is using #vercelAiSdk
-  - voltagent
   - opencode
+  - voltagent
+  - mastra(但使用自定义streaming protocol)
 
 - ai-framework-comparison
   - observability/debugging: supports langfuse?
@@ -71,6 +73,10 @@ modified: 2025-08-08T07:35:49.535Z
 # draft
 
 # dev-xp
+
+- tool-call 的input支持流式输出显示，但ouput不会流式输出
+  - use-chat-tool的示例, 本地lmstudio的4b模型能触发ask, 但魔搭/火山都没有触发ask, 本地thinking模型
+  - 可通过调整提示来来提高tool call触发概率，可在提示词中明确指出需要ask for permission
 
 - 流式输出刷新页面的示例，redis保存的数据如下
   - key是 `resumable-stream:rs:sentinel:msgstream-DdQimqJ1M`, value在输出阶段是`1`， 输出完成时是`DONE`
