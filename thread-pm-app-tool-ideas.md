@@ -101,9 +101,9 @@ modified: 2022-11-07T10:58:24.512Z
   - imdb
 
 - 经典数据集
-  - 权威公开数据
+  - 公开数据
 
-- 权威文档
+- 高质量文档
   - 字典mdx
   - 书籍epub
   - wikipedia公开db, kiwix-zim
@@ -115,6 +115,9 @@ modified: 2022-11-07T10:58:24.512Z
   - [Introducing the Overflow Offline project - Stack Overflow _202210](https://stackoverflow.blog/2022/10/20/introducing-the-overflow-offline-project/)
     - [The Overflow Offline project | Hacker News _202210](https://news.ycombinator.com/item?id=33274186)
     - [WikiHow and StackExchange/StackOverflow now avalaible for download via Kiwix. : r/DataHoarder _202208](https://www.reddit.com/r/DataHoarder/comments/x1fltz/wikihow_and_stackexchangestackoverflow_now/)
+  - 💡 针对经典书籍的playground
+    - wikidata
+    - 统计局
 
 - 标准文档
   - 工业技术

@@ -274,38 +274,38 @@ modified: 2025-02-21T18:20:42.624Z
   - https://gptr.dev/
   - An LLM agent that conducts deep research (local and web) on any given topic and generates a long report with citations.
 
-## router/gateway
+## agent-fwk-vendors
+
+- https://github.com/cuga-project/cuga-agent /341Star/apache2/202512/python/ts/ibm
+  - https://huggingface.co/spaces/ibm-research/cuga-agent/tree/main
+  - https://cuga.dev/
+  - CUGA is an open-source generalist agent for the enterprise, supporting complex task execution on web and APIs, OpenAPI/MCP integrations, composable architecture, reasoning modes, and policy-aware features.
+  - High-performing generalist agent — Benchmarked on complex web and API tasks. 
+  - integrate tools via OpenAPI specs, MCP servers, and Langchain, enabling rapid connection to REST APIs, custom protocols, and Python functions
+  - Integrates with Langflow — Low-code visual build experience for designing and deploying agent workflows
+  - composable — Built with modularity in mind, CUGA itself can be exposed as a tool to other agents, enabling nested reasoning and multi-agent collaboration
+  - Configurable policy and human-in-the-loop instructions (Experimental)
+  - Save-and-reuse capabilities (Experimental) — Capture and reuse successful execution paths (plans, code, and trajectories) for faster and consistent behavior across repeated tasks
+  - Cuga supports isolated code execution using Docker/Podman containers for enhanced security.
+  - [CUGA on Hugging Face: Democratizing Configurable AI Agents _202512](https://huggingface.co/blog/ibm-research/cuga-on-hugging-face)
+
+- https://github.com/firebase/genkit /5.2kStar/apache2/202512/ts
+  - https://genkit.dev/
+  - open-source framework for building full-stack AI-powered applications, built and used in production by Google's Firebase
+  - It provides SDKs for js/python/go
+  - It offers a unified interface for integrating AI models from providers like Google, OpenAI, Anthropic, Ollama, and more. 
+# router/gateway
+- https://github.com/BerriAI/litellm /34kStar/MIT+EE/202601/python/ts
+  - https://docs.litellm.ai/docs/
+  - Python SDK, Proxy Server (LLM Gateway) to call 100+ LLM APIs in OpenAI format - [Bedrock, Azure, OpenAI, VertexAI, Cohere, Anthropic, Sagemaker, HuggingFace, Replicate, Groq]
+  - Translate inputs to provider's completion, embedding, and image_generation endpoints
+  - Consistent output, text responses will always be available at ['choices'][0]['message']['content']
+  - Set Budgets & Rate limits per project, api key, model
 
 - https://github.com/ssrsgaga/API-Check /MIT/202601/ts
   - https://api-check-beta.vercel.app/
   - 快速的大模型 API 连通性测试工具。纯前端运行，支持 OpenAI 格式，数据仅在本地存储。
   - [API Check大模型批量测活助手【多功能免费开源/Vercel一键部署/纯前端 _202601](https://linux.do/t/topic/1384242)
-
-- https://github.com/ulab-uiuc/LLMRouter /400Star/MIT/202512/python
-  - https://ulab-uiuc.github.io/LLMRouter/
-  - Open-Source Library for LLM Routing
-  - an intelligent routing system designed to optimize LLM inference by dynamically selecting the most suitable model for each query
-  - Unified CLI: Complete command-line interface for training, inference, and interactive chat with Gradio-based UI.
-  - Complete pipeline for generating training data from 11 benchmark datasets with automatic API calling and evaluation.
-  - [We open-sourced LLMRouter: the first unified LLM routing library  _202512](https://www.reddit.com/r/LocalLLaMA/comments/1q06z2l/we_opensourced_llmrouter_the_first_unified_llm/)
-    - The current LLM routing landscape feels a lot like early GNN research: many promising router algorithms exist, but each comes with its own input/output format, training pipeline, and evaluation setup. This fragmentation makes routers difficult to use, hard to reproduce, and nearly impossible to compare fairly.
-    - Over the past year, we worked on several LLM routing projects, including GraphRouter (ICLR’25), Router-R1 (NeurIPS’25), and PersonalizedRouter (TMLR’25). Through repeatedly implementing and benchmarking different routers, we realized that the main bottleneck is not algorithmic novelty, but the lack of standardized infrastructure.
-    - Unified support for single-round, multi-round, agentic, and personalized routing
-    - Integration of 16+ SOTA LLM router algorithms
-    - One-line commands to run different routers without rebuilding pipelines
-
-- https://github.com/Egham-7/adaptive-ai-provider /202510/ts
-  - https://llmadaptive.uk/
-  - The Adaptive AI Provider for the AI SDK contains language model support for adaptive provider selection across multiple AI services
-  - Intelligent Model Selection - Automatically picks optimal models
-  - Multi-Provider - OpenAI, Anthropic, Google, DeepSeek, Groq, etc.
-  - [Adaptive AI Provider for the Vercel AI SDK — real-time model routing using UniRoute (Google Research) : r/vercel _202510](https://www.reddit.com/r/vercel/comments/1o5itci/adaptive_ai_provider_for_the_vercel_ai_sdk/)
-    - It’s based on `UniRoute`, Google Research’s new framework for universal model routing across unseen LLMs.
-    - Adaptive automatically chooses which LLM to use for every request based on prompt complexity and live model performance.
-    - It runs automated evals continuously in the background, clusters prompts by domain, and routes each query to the smallest feasible model that maintains quality.
-    - it performs live eval-based routing using UniRoute’s cluster-based generalization method, which can handle unseen LLMs without retraining.
-    - Typical savings: 60–90% lower inference cost.
-    - Routing overhead: ~10 ms.
 
 - https://github.com/maximhq/bifrost /718Star/apache2/202510/go/ts
   - https://www.getmaxim.ai/bifrost
@@ -332,27 +332,14 @@ modified: 2025-02-21T18:20:42.624Z
     - I'd want to 'set' the limit to be 92GB so I still have VRAM for the system, and for it to close down applications. I've been thinking how to make it more efficient.
       - This is where I'm looking for either V2 or V3 to go. Although my system is much lighter, that assigned to this with concurrency and VRAM monitoring insight.
 
-- https://huggingface.co/katanemo/Arch-Router-1.5B /LlamaLic/qwen2
-  - [I built the HuggingChat Omni Router : r/ollama _202510](https://www.reddit.com/r/ollama/comments/1odn14n/i_built_the_huggingchat_omni_router/)
-  - HuggingFace relaunched their chat app called Omni with support for 115+ LLMs.
-  - The critical unlock in Omni is the use of a policy-based approach to model selection. I built that policy-based router: https://huggingface.co/katanemo/Arch-Router-1.5B
-  - The core insight behind our policy-based router was that it gives developers the constructs to achieve automatic behavior, grounded in their own evals of which LLMs are best for specific coding tasks like debugging, reviews, architecture, design or code gen
-  - Essentially, the idea behind this work was to decouple task identification (e.g., code generation, image editing, q/a) from LLM assignment.
-  - The model is also integrated as a first-class primitive in archgw: a models-native proxy server for agents. 
-  - https://github.com/katanemo/archgw /4.2kStar/apache2/202510/rust/python
-    - https://archgw.com/
-    - Arch is a models-native proxy server that handles the plumbing work in AI: agent routing & hand off, guardrails, end-to-end logs and traces, unified access to LLMs from OpenAI, Anthropic, Ollama, etc.
-    - Arch handles the pesky plumbing work in building AI agents — like applying guardrails, routing prompts to the right agent, generating hyper-rich information traces for RL, and unifying access to any LLM.
-    - Arch runs alongside app servers as a containerized process, and builds on top of `Envoy`'s proven HTTP management and scalability features to handle ingress and egress traffic related to prompts and LLMs.
-    - Arch was built by the contributors of Envoy Proxy with the belief that: Prompts are nuanced and opaque user requests, which require the same capabilities as traditional HTTP requests including secure handling, intelligent routing, robust observability, and integration with backend (API) systems to improve speed and accuracy for common agentic scenarios – all outside core application logic.
-
 - https://github.com/songquanpeng/one-api /27.7kStar/MIT/202502/go/js/inactive
   - LLM API 管理 & 分发系统，支持 OpenAI、Azure、Anthropic Claude、Google Gemini、DeepSeek、字节豆包
   - 支持配置镜像以及众多第三方代理服务。
   - 支持令牌管理，设置令牌的过期时间、额度、允许的 IP 范围以及允许的模型访问。
   - 🍴 forks
-  - https://github.com/MartialBE/one-hub /apache2/202510/go/js
-    - https://one-hub.xiao5.info/
+  - https://github.com/MartialBE/one-hub /2.6kStar/apache2/202601/go/js
+    - https://one-hub-doc.vercel.app/
+    - https://one-hub.xiao5.info/  /demo
     - OpenAI 接口管理 & 分发系统，改自songquanpeng/one-api。支持更多模型，加入统计页面，完善非openai模型的函数调用。
 - https://github.com/QuantumNous/new-api /11.7kStar/AGPL+LOGO/202510/go/js
   - https://www.newapi.ai/
@@ -367,8 +354,14 @@ modified: 2025-02-21T18:20:42.624Z
     - 渠道 Key 不再加密, 发送到前端显示
     - 本程序基于 new-api 二开, 数据库结构基本兼容, 会自动运行迁移.
 
-- https://github.com/deanxv/done-hub /apache2/202510/go/js
+- https://github.com/deanxv/done-hub /574Star/apache2/202601/go/js
+  - https://github.com/MartialBE/one-hub/wiki/Deployment
   - 基于one-hub二次开发而来的
+  - 目前与原版(最新镜像)的区别
+    - 支持反代渠道
+    - 支持批量删除渠道
+    - 支持自定义渠道使用Claude原生路由 - 接入ClaudeCode
+    - 新增邀请码设置模块
   - [基于 One-Hub 的二开项目 Done-Hub ](https://linux.do/t/topic/712560)
     - 支持 /gemini 原生生图请求的额外参数透传
     - 支持 gemini-2.0-flash-preview-image-generation 文生图 / 图生图，并兼容 OpenAI 对话接口
@@ -478,29 +471,58 @@ modified: 2025-02-21T18:20:42.624Z
   - 支持将图片上传到 S3 兼容存储（AWS S3、MinIO、阿里云 OSS 等）
   - 碰到了有相同想法的佬友；之前我也做了一个，不过我只做了一个魔搭，但是支持了图生图
 
-## agent-fwk-vendors
+## model-router
 
-- https://github.com/cuga-project/cuga-agent /341Star/apache2/202512/python/ts/ibm
-  - https://huggingface.co/spaces/ibm-research/cuga-agent/tree/main
-  - https://cuga.dev/
-  - CUGA is an open-source generalist agent for the enterprise, supporting complex task execution on web and APIs, OpenAPI/MCP integrations, composable architecture, reasoning modes, and policy-aware features.
-  - High-performing generalist agent — Benchmarked on complex web and API tasks. 
-  - integrate tools via OpenAPI specs, MCP servers, and Langchain, enabling rapid connection to REST APIs, custom protocols, and Python functions
-  - Integrates with Langflow — Low-code visual build experience for designing and deploying agent workflows
-  - composable — Built with modularity in mind, CUGA itself can be exposed as a tool to other agents, enabling nested reasoning and multi-agent collaboration
-  - Configurable policy and human-in-the-loop instructions (Experimental)
-  - Save-and-reuse capabilities (Experimental) — Capture and reuse successful execution paths (plans, code, and trajectories) for faster and consistent behavior across repeated tasks
-  - Cuga supports isolated code execution using Docker/Podman containers for enhanced security.
-  - [CUGA on Hugging Face: Democratizing Configurable AI Agents _202512](https://huggingface.co/blog/ibm-research/cuga-on-hugging-face)
+- https://github.com/ulab-uiuc/LLMRouter /400Star/MIT/202512/python
+  - https://ulab-uiuc.github.io/LLMRouter/
+  - Open-Source Library for LLM Routing
+  - an intelligent routing system designed to optimize LLM inference by dynamically selecting the most suitable model for each query
+  - Unified CLI: Complete command-line interface for training, inference, and interactive chat with Gradio-based UI.
+  - Complete pipeline for generating training data from 11 benchmark datasets with automatic API calling and evaluation.
+  - [We open-sourced LLMRouter: the first unified LLM routing library  _202512](https://www.reddit.com/r/LocalLLaMA/comments/1q06z2l/we_opensourced_llmrouter_the_first_unified_llm/)
+    - The current LLM routing landscape feels a lot like early GNN research: many promising router algorithms exist, but each comes with its own input/output format, training pipeline, and evaluation setup. This fragmentation makes routers difficult to use, hard to reproduce, and nearly impossible to compare fairly.
+    - Over the past year, we worked on several LLM routing projects, including GraphRouter (ICLR’25), Router-R1 (NeurIPS’25), and PersonalizedRouter (TMLR’25). Through repeatedly implementing and benchmarking different routers, we realized that the main bottleneck is not algorithmic novelty, but the lack of standardized infrastructure.
+    - Unified support for single-round, multi-round, agentic, and personalized routing
+    - Integration of 16+ SOTA LLM router algorithms
+    - One-line commands to run different routers without rebuilding pipelines
 
-- https://github.com/firebase/genkit /5.2kStar/apache2/202512/ts
-  - https://genkit.dev/
-  - open-source framework for building full-stack AI-powered applications, built and used in production by Google's Firebase
-  - It provides SDKs for js/python/go
-  - It offers a unified interface for integrating AI models from providers like Google, OpenAI, Anthropic, Ollama, and more. 
-# ai-api
+- https://github.com/Egham-7/adaptive-ai-provider /202510/ts
+  - https://llmadaptive.uk/
+  - The Adaptive AI Provider for the AI SDK contains language model support for adaptive provider selection across multiple AI services
+  - Intelligent Model Selection - Automatically picks optimal models
+  - Multi-Provider - OpenAI, Anthropic, Google, DeepSeek, Groq, etc.
+  - [Adaptive AI Provider for the Vercel AI SDK — real-time model routing using UniRoute (Google Research) : r/vercel _202510](https://www.reddit.com/r/vercel/comments/1o5itci/adaptive_ai_provider_for_the_vercel_ai_sdk/)
+    - It’s based on `UniRoute`, Google Research’s new framework for universal model routing across unseen LLMs.
+    - Adaptive automatically chooses which LLM to use for every request based on prompt complexity and live model performance.
+    - It runs automated evals continuously in the background, clusters prompts by domain, and routes each query to the smallest feasible model that maintains quality.
+    - it performs live eval-based routing using UniRoute’s cluster-based generalization method, which can handle unseen LLMs without retraining.
+    - Typical savings: 60–90% lower inference cost.
+    - Routing overhead: ~10 ms.
 
+- https://huggingface.co/katanemo/Arch-Router-1.5B /LlamaLic/qwen2
+  - [I built the HuggingChat Omni Router : r/ollama _202510](https://www.reddit.com/r/ollama/comments/1odn14n/i_built_the_huggingchat_omni_router/)
+  - HuggingFace relaunched their chat app called Omni with support for 115+ LLMs.
+  - The critical unlock in Omni is the use of a policy-based approach to model selection. I built that policy-based router: https://huggingface.co/katanemo/Arch-Router-1.5B
+  - The core insight behind our policy-based router was that it gives developers the constructs to achieve automatic behavior, grounded in their own evals of which LLMs are best for specific coding tasks like debugging, reviews, architecture, design or code gen
+  - Essentially, the idea behind this work was to decouple task identification (e.g., code generation, image editing, q/a) from LLM assignment.
+  - The model is also integrated as a first-class primitive in archgw: a models-native proxy server for agents. 
+  - https://github.com/katanemo/archgw /4.2kStar/apache2/202510/rust/python
+    - https://archgw.com/
+    - Arch is a models-native proxy server that handles the plumbing work in AI: agent routing & hand off, guardrails, end-to-end logs and traces, unified access to LLMs from OpenAI, Anthropic, Ollama, etc.
+    - Arch handles the pesky plumbing work in building AI agents — like applying guardrails, routing prompts to the right agent, generating hyper-rich information traces for RL, and unifying access to any LLM.
+    - Arch runs alongside app servers as a containerized process, and builds on top of `Envoy`'s proven HTTP management and scalability features to handle ingress and egress traffic related to prompts and LLMs.
+    - Arch was built by the contributors of Envoy Proxy with the belief that: Prompts are nuanced and opaque user requests, which require the same capabilities as traditional HTTP requests including secure handling, intelligent routing, robust observability, and integration with backend (API) systems to improve speed and accuracy for common agentic scenarios – all outside core application logic.
 # browser-use
+- https://github.com/browser-use/agent-sdk /370Star/MTI/202601/python
+  - An agent is just a for-loop.
+  - https://x.com/gregpr07/status/2012204140714217801
+    - We open sourced our tiny agent-sdk, the easiest way to build Claude Code like agents (with any provider)
+  - https://x.com/gregpr07/status/2012052139384979773
+    - The Bitter Lesson of Agent Frameworks
+    - All the value is in the RL'd model, not your 10,000 lines of abstractions
+    - An agent is just a for-loop of messages. The only state an agent should have is: keep going until the model stops calling tools. You don't need an agent framework. It's just a for-loop of tool calls.
+    - Our first Browser Use agents had thousands of lines of abstractions. They worked - until we tried to change anything. Every experiment fought the framework. 
+
 - https://github.com/browser-use/browser-use /57.9kStar/MIT/202504/python/js
   - https://browser-use.com/
   - Enable AI to control your browser
@@ -601,110 +623,6 @@ modified: 2025-02-21T18:20:42.624Z
   - https://x.com/zhangjintao9020/status/1911379146665603542
     - 实际上是一个 xface 桌面环境的 Ubuntu，通过 VNC 或浏览器来管理访问
     - 结合 CF 即将到来的无状态容器化！
-# acp/agent-client-protocol
-- https://github.com/mcpc-tech/mcpc/tree/main/packages/acp-ai-provider /MIT/202512/ts
-  - https://ai-sdk.dev/providers/community-providers/acp
-  - This package bridges ACP agents to the AI SDK. 
-  - It spawns ACP agents (Claude Code, Gemini, Codex CLI, and more) as child processes and exposes them through the AI SDK's `LanguageModelV2` protocol.
-  - Now you can start building your agent using `streamText` with Claude Code, Codex, OpenCode, and more
-  - https://github.com/mcpc-tech/dev-inspector-mcp
-    - AI-powered visual debugging for React, Vue, Svelte, SolidJS, Preact & Next.js via MCP and ACP.
-    - DevInspector connects your web app directly to your AI agent. Click any element to instantly send its source code, style, and network context to the AI for analysis and fixing.
-
-- https://github.com/RAIT-09/obsidian-agent-client /127Star/apache2/202512/ts
-  - Bring AI agents into Obsidian via Agent Client Protocol (ACP), such as Claude Code, Codex and Gemini CLI.
-  - This plugin lets you chat with Claude Code, Codex, Gemini CLI, and other AI agents right from your vault.
-  - Multi-Agent Support: Switch between Claude Code, Codex, Gemini CLI, and custom agents
-  - Note Mention Support: @notename to reference specific notes
-  - Use / commands to browse and trigger actions provided by your current agent
-  - Permission Management: Fine-grained control over agent actions
-
-- https://github.com/daodao97/acpone /202512/go/ts/vue
-  - 基于 ACP 协议 - 同时调度多个 AI Agent 的 ChatBot。
-  - 多 Agent 支持 (Claude Code, Codex 等)
-  - markstream-vue (Markdown 渲染)
-  - 内嵌静态文件 (go:embed)
-  - JSON-RPC 2.0
-  - https://x.com/daodao97__/status/2000877211197567360
-    - 搓了个新玩具 ACPone :  一个基于 ACP 协议的小应用
-
-- https://github.com/marimo-team/use-acp /apache2/202510/ts
-  - https://marimo-team.github.io/use-acp/
-  - React hooks for Agent Client Protocol (ACP) over WebSockets.
-  - Reactive state management
-# mcp
-- https://github.com/upstash/context7 /34kStar/MIT/202510/ts
-  - https://context7.com/
-  - Context7 MCP - Up-to-date Code Docs For Any Prompt
-  - Context7 MCP pulls up-to-date, version-specific documentation and code examples straight from the source — and places them directly into your prompt.
-  - require Context7 API Key (Optional) for higher rate limits and private repositories 
-  - [Feature Request: Option to Self-Host Documentation Backend _202504](https://github.com/upstash/context7/issues/59)
-    - interesting idea. I will think about this. the biggest obstacle would be licensing. we aim to make this service free for developers and open source projects. but we want to commercialize if a company like cursor needs it.
-    - but we can keep parser private and web backend open.
-    - maybe you can store all the docs in a public database, that way anyone can self-host.
-    - Another option is to allow companies to host their documentation on context7's servers privately, and support authentication.
-
-- https://github.com/jlowin/fastmcp /MIT/202503/python
-  - https://github.com/modelcontextprotocol/python-sdk
-  - The fast, Pythonic way to build Model Context Protocol servers
-  - 依赖pydantic2、httpx
-  - You can now find FastMCP as part of the official Model Context Protocol Python SDK
-    - this repository is no longer maintained.
-
-- https://github.com/AIDC-AI/Pixelle-MCP /271Star/MIT/202508/python
-  - https://pixelle.ai/
-  - Open-Source Multimodal AIGC Solution based on ComfyUI + MCP + LLM
-  - An AIGC solution based on the MCP protocol, seamlessly converting ComfyUI workflows into MCP tools
-  - Server-side is built on ComfyUI, inheriting all capabilities from the open ComfyUI ecosystem
-  - MCP Server provides functionality based on the MCP protocol, supporting integration with any MCP client (including but not limited to Cursor, Claude Desktop, etc.)
-  - MCP Client is developed based on the `Chainlit` framework, inheriting Chainlit's UI controls
-  - Integrated the LiteLLM framework, adding multi-model support for Gemini, DeepSeek, Claude, Qwen, and more
-  - Flexible Deployment: Supports standalone deployment of Server-side only as MCP Server, or standalone deployment of Client-side only as MCP Client, or combined deployment
-  - Unified Configuration: Uses YAML configuration scheme, one config file manages all services
-  - https://github.com/Chainlit/chainlit /10.5kStar/apache2/202508/python/ts
-    - https://docs.chainlit.io/
-    - Build python production-ready conversational AI applications in minutes
-    - As of May 1st 2025, the original Chainlit team has stepped back from active development.
-    - 依赖langchain、LlamaIndex、ChromaDB
-
-- https://github.com/mark3labs/mcp-filesystem-server /go
-  - Go server implementing Model Context Protocol (MCP) for filesystem operations.
-  - 通过这个MCP就可以操作本地文件系统了，由于这个是go编写的，go能交叉编译的架构特别多，所以理论上大部分系统都能运行这个MCP Server。
-
-- https://github.com/mcpc-tech/mcpc /MIT/202510/ts
-  - https://mcpc.tech/
-  - MCPC is the SDK for building agentic MCP (Model Context Protocol) Servers.
-  - Build Multi-Agent Systems: By defining each agent as a MCP tool, you can compose and orchestrate them to construct sophisticated, collaborative multi-agent systems
-  - Compose MCP servers as building blocks, select and customize tools, or modify their descriptions and parameters
-  - Logging and tracing: Built-in MCP logging and OpenTelemetry tracing support
-  - https://github.com/mcpc-tech/ai-elements-remix-template /MIT/202510/ts
-    - https://ai-elements-remix-template.pages.dev/
-    - A modern chat interface template built with AI SDK and customizable UI components.
-    - React Router V7 - Full-stack React framework
-    - ACP Support - Connect to any Agent Client Protocol compatible agent like Gemini CLI, Claude Code, or Codex CLI
-    - Uses AI SDK with `acp-ai-provider` to enable seamless integration with ACP-compatible AI agents on the web platform using `streamText` and `useChat`
-
-## browser-mcp
-
-- https://github.com/hangwin/mcp-chrome /9.6kStar/MIT/202511/ts/vue
-  - a Chrome extension-based Model Context Protocol (MCP) server that exposes your Chrome browser functionality to AI assistants like Claude, enabling complex browser automation, content analysis, and semantic search.
-  - Unlike traditional browser automation tools (like Playwright), Chrome MCP Server directly uses your daily Chrome browser, leveraging existing user habits, configurations, and login states, allowing various large models or chatbots to take control of your browser and truly become your everyday assistant.
-  - Chatbot/Model Agnostic: Let any LLM or chatbot client or agent you prefer 
-  - Use Your Original Browser: Seamlessly integrate with your existing browser
-  - Fully Local: Pure local MCP server ensuring user privacy
-  - Streamable HTTP: Streamable HTTP connection method
-  - Cross-tab context
-  - Built-in vector database for intelligent browser tab content discovery
-  - 20+ Tools: Support for screenshots, network monitoring, interactive operations, bookmark management, browsing history, and 20+ other tools
-  - Custom WebAssembly SIMD optimization for 4-8x faster vector operations
-  - https://x.com/hang49911102/status/2001865778266804264
-    - 看了下Claude code里跟Chrome通信的方案，跟我之前实现的是一样的
-# protocols-ai
-- https://github.com/agentclientprotocol/agent-client-protocol /871Star/apache2/202510/rust/ts
-  - https://github.com/zed-industries/agent-client-protocol
-  - https://agentclientprotocol.com/
-  - A protocol for connecting any editor to any agent
-  - [Bring Your Own Agent to Zed — Featuring Gemini CLI — Zed's Blog _202508](https://zed.dev/blog/bring-your-own-agent-to-zed)
 # crawler-ai
 - https://github.com/mendableai/firecrawl /AGPLv3/202502/python/rust/ts
   - https://firecrawl.dev/
@@ -730,17 +648,6 @@ modified: 2025-02-21T18:20:42.624Z
   - A crawler functions similarly to how a graph works. Basically, each web page behaves like a node, where a single node can point to n number of websites, and multiple nodes can point to the same website. The navigation of a crawler is based on the same principle as a graph traversal; in this case, I will base it on a breadth-first search (`BFS`) model.
   - The Crawler module implements a horizontal-scalable architecture, where you can create one Crawler module with hundreds of nodes (sharing the same memmory, but managing hundreds of asynchronous processes).
   - 依赖 requests、html-to-markdown、jsonlines、xai_sdk
-# github-repo
-- https://github.com/ahmedkhaleel2004/gitdiagram /MIT/202503/python/ts
-  - https://gitdiagram.com/
-  - Turn any GitHub repository into an interactive diagram for visualization in seconds.
-  - Powered by Claude 3.5 Sonnet for quick and accurate diagrams
-  - Public API available for integration (WIP)
-  - Frontend: Next.js, TypeScript, Tailwind CSS, ShadCN
-  - Backend: FastAPI, Python, Server Actions
-  - Database: PostgreSQL (with Drizzle ORM)
-  - Deployment: Vercel (Frontend), EC2 (Backend)
-  - Analytics: PostHog, Api-Analytics
 # perf/large
 - https://github.com/MoonshotAI/MoBA /MIT/202502/python
   - Mixture of Block Attention for Long-Context LLMs
@@ -759,33 +666,6 @@ modified: 2025-02-21T18:20:42.624Z
   - Built-in Chat: Conversational interface with context-aware responses
   - Pluggable LLMs: Works with OpenAI, Anthropic, or local models
   - Offline-First: No internet required after video generation
-
-## streaming-llm
-
-- https://github.com/globalaiplatform/langdiff /225Star/apache2/202509/python/ts
-  - https://langdiff.readthedocs.io/en/latest/
-  - https://globalaiplatform.github.io/langdiff/
-  - LangDiff is a Python library that solves the hard problems of streaming structured LLM outputs to frontends
-  - LangDiff provides intelligent partial parsing with granular, type-safe events as JSON structures build token by token, plus automatic JSON Patch generation for efficient frontend synchronization.
-  - Streaming Parsing
-    - Define schemas for streaming structured outputs using Pydantic-style models.
-    - Receive granular, type-safe callbacks (on_append, on_update, on_complete) as tokens stream in.
-    - Derive Pydantic models from LangDiff models for seamless interop with existing libraries and SDKs like OpenAI SDK.
-  - Change Tracking
-    - Track mutations without changing your code patterns by instrumenting existing Pydantic models, or plain Python dict/list/objects.
-    - Generate JSON Patch diffs automatically for efficient state synchronization between frontend and backend.
-  - The Problem with Traditional Streaming Approaches
-    - Even partial JSON parsing libraries that "repair" incomplete JSON don't fully solve the issues
-  - The Coupling Problem
-    - tightly coupling frontend UIs to LLM output schemas.
-  - ✨ LangDiff solves these problems through two key innovations:
-    - Intelligent Streaming Parsing: Define schemas that understand the streaming nature of LLM outputs. Get type-safe callbacks for partial updates, complete fields, and new array items as they arrive.
-    - Change-Based Synchronization: Instead of streaming raw JSON, track mutations on your application objects and send lightweight JSON Patch diffs to frontends. This decouples UI state from LLM output format.
-
-- [Smooth a stream of LLM tokens into a stream of characters while reducing jitter by stabilising output timing. Explorations of different approaches.](https://gist.github.com/sebinsua/76fc5eb6fc498636bc637b9f10b7e6bf)
-  - This approach slows the stream down a little and does generally reduce the jitter (such as pauses and bursts in the token stream). The approach was made based on educated guess-work about what might work and evaluated by eye-balling it instead of in a systematic manner. It is not perfect and sometimes the queue is exhausted only to find that we are waiting on a token. 
-  - Another approach might be to extend the function that calculates the delay length by looking at the rate of increase/decrease of the queue size, as this would allow the algorithm to consider 'the future' in its decisions.
-  - I experimented trying to put this on the back-end using ai in a Next.js app and a client-side React library on the UI. In order to do so, I had to transform to and from AsyncIterator and ReadableStream
 # eval/prompt
 - https://github.com/promptfoo/promptfoo /9.6kStar/MIT/202601/ts/对比表/code-first
   - https://promptfoo.dev/

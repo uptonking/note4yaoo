@@ -123,7 +123,7 @@ modified: 2026-01-14T18:58:32.523Z
 - ## [0.3.15: RTX 50-series GPUs and improved tool use in the API  _202504](https://lmstudio.ai/blog/lmstudio-v0.3.15)
   - support for NVIDIA RTX 50-series GPUs (CUDA 12), UI touchups including a new system prompt editor UI. 
 
-- ## [0.3.10: 🔮 Speculative Decoding  _202502](https://lmstudio.ai/blog/lmstudio-v0.3.10)
+- ## [0.3.10: Speculative Decoding  _202502](https://lmstudio.ai/blog/lmstudio-v0.3.10)
   - introduce Speculative Decoding support in LM Studio's llama.cpp and MLX engines
 
 - ## [0.3.6 Function Calling / Tool Use API  _202501](https://lmstudio.ai/blog/lmstudio-v0.3.6)

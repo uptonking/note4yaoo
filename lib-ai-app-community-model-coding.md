@@ -30,7 +30,7 @@ modified: 2025-09-16T13:29:11.327Z
 - ## 
 
 - ## 
-# discuss-prompts 🌰
+# discuss-prompts-eval 🌰
 - resources
   - [awesomeprompts.cc](https://www.awesomeprompts.cc/)
   - [⁣⁢⁤高质Prompt合集 - 飞书云文档](https://langgptai.feishu.cn/wiki/JCZHwwrsOizzaOktD4fcuGbFnzg)
@@ -253,6 +253,18 @@ Only use the provided information.
 - 行内补全的能力 很难测试
 
 - coding的prompt尽量遵循 plan + act 的结构
+
+.gitignore:4-10
+
+```
+.env.development
+.env.staging
+.env.production
+.env.test
+
+```
+
+- only files above should be ignored, other `.env.*` files should remain tracked in git. can you combine the gitignore rules to one single line?
 
 - [AI Coding Prompts | PromptBase](https://promptbase.com/coding)
 - [CodePromptFu.com - Find the best AI prompts for coding](https://www.codepromptfu.com/)

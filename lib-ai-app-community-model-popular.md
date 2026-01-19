@@ -640,6 +640,19 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
+- ## 
+
+- ## [zai-org/GLM-4.7-Flash · Hugging Face : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qh5wdq/zaiorgglm47flash_hugging_face/)
+- it's A3.9B. routing scaling isnt active parameters.
+
+- It uses MLA, so KV cache should consume a tiny amount of memory. A lot of people will be able to run it at full 200k context.
+
+- its a new arch (not the same as the big 4.7), so needs implementation
+
+- Ironically native 8 bit probably doesn't make any sense because 5000 series with 4 bit are so popular contrary to 4000 series, it was just 4000 architecture with 8 bit support as I recall.
+
+- In terms of getting faster support it’s usually vLLM and then MLX and then Llama.cpp
+
 - ## [Hermes 3: A uniquely unlocked, uncensored, and steerable model : r/LocalLLaMA _202408](https://www.reddit.com/r/LocalLLaMA/comments/1ev2n5w/hermes_3_a_uniquely_unlocked_uncensored_and/)
 - I've tested Hermes 3.1 8b version:
   -It is not uncensored at ALL, same refuses like with original model.
@@ -2052,6 +2065,40 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
     - free access or credits towards API-based LLM usage.
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [OpenCode 反代断流问题解决方案 - 解决Antigravity\2api\反代\断流\回复一半不回\莫名奇妙中断  ](https://linux.do/t/topic/1487267)
+  - 使用 OpenCode + Antigravity Tools API 反代时，经常出现以下问题：
+  - 回复到一半就不回了
+  - 莫名其妙中断
+  - 长时间 streaming 时连接被意外关闭
+  - 根本原因
+  - @ai-sdk/openai-compatible 的 SSE（Server-Sent Events）处理与 Bun 的 HTTP 客户端存在兼容性问题，导致长时间 streaming 时连接被意外关闭。
+  - 最终解决方案
+  - 使用 @ai-sdk/anthropic 协议替代 @ai-sdk/openai-compatible
+  - 之前断流是用 @ai-sdk/openai-compatible + OpenAI 格式
+  - 现在不断流是用 @ai-sdk/anthropic + Anthropic 原生格式 + 模型映射
+
+- ## [One API还是用New api 还是有更好的 _202512](https://linux.do/t/topic/1378708)
+- 我有一个旧的one api，渠道管理功能没法自动获取和添加渠道的所有模型，添加了新渠道要手动填写模型。
+  - 但是one api可以自定义api的key，比如自定义成使用者的拼音全拼, 而newapi必须要自动生成sk-XXXX
+  - 所以公司用one api的人很多，都用自己的名字作为key，想为整个公司更换成new api都不行。一换就要全部人都通知一遍，而且我们的one api添加了好多渠道, 想不影响现网使用0影响转移到newapi根本没有头绪。
+  - 所以你还是直接用newapi吧
+- newapi先在后台创建key，然后去数据库改成自定义的，数据库存的key没有sk-前缀，api调用的时候也可以不加sk-前缀，之前测试过，sk认证的时候会截取第一个“-”之前的部分丢掉，只使用第一个“-”后面的部分作为key认证，不晓得现在这个逻辑改了没，自定义的时候注意一下横线的问题就可以了
+
+- Done-hub项目更好，大佬在站里
+  - 支持，我就是从new API换到done hub了，功能更多，如果是第一次个人用其实我推荐done hub。
+
+- One 最干净简洁，但很多基本功能都已经跟不上了例如参数覆盖啥的。只是以前用的 One 不想换就一直用着。
+
+- 
+- 
+- 
+- 
+- 
 
 - ## [天塌了, 今日Oaifree正式宣布跑路 _202411](https://linux.do/t/topic/272321)
   - 不论是打开new.oaifree.com，shared.oaifree.com还是Cloudflare Workers反代都会跳转到there is no wall

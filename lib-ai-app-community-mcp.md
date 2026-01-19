@@ -12,6 +12,9 @@ modified: 2025-02-03T10:17:42.052Z
 - mcp-alternatives
   - restful api: api过于灵活, 需要自定义集成字段
   - tool-use/function-calling
+
+- tips-mcp
+  - mcp的文档内容太多, 可尝试用对应的cli工具替换api工具
 # ⚖️ ai-protocols
 - [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro)
   - [Introducing the Model Context Protocol - Anthropic _202411](https://www.anthropic.com/news/model-context-protocol)

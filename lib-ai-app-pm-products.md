@@ -10,38 +10,6 @@ modified: 2025-03-22T16:10:24.856Z
 # guide
 
 # ai-dev-xp
-- selling-points
-  - ✈️ local models support: mlx, lmstudio-alternative
-    - 允许用户分享文档/插画中的模型配置，运行日志
-    - 模型库: text模型, ocr模型 ,t2i生图模型, lmstudio在模型分类上做的不够好
-    - 参考janai/pipeshub, 既支持选择本地/api模型，也支持选择图片/文档
-    - ocr/vlm comparison-matrix/playground: 识别对比, 翻译对比
-  - 🔗 citations for search: 外部数据源如字典mdx/书籍epub/wikipedia公开db/统计年鉴
-    - 类似词典库/kiwix的预置模块, 可下载、可分享, 不必每次都全量索引
-    - wikipedia zim 自动翻译为中文
-    - vector-marketplace, 支持用户选择任意数量的pdf文档创建embeddings, 并发布, 可作为一种变通方案解决数据隐私问题
-    - 查看原文pdf-parts时支持仅查看前后几页, 保护原文内容
-  - large pdf workflows: chunking-strategies, reindex, pdf-parts
-  - 🌐 pdf edit
-    - proofreading: 一键检查, 版本历史
-    - ✨ 翻译场景的多种布局一键切换: 双栏对比布局, 仅译文布局, 富文本页面布局
-    - 甚至可以通过多栏布局的交互，来展示pdf聊天或补充信息，优点是能展示在原文位置
-    - 考虑非多个文档的场景, 类似代码编辑器的 split view 也可以方便核对
-    - 方便原文和译文的跳转交互
-    - pdf to word: 显示summary-per-page, 适合教育场景
-    - pdf体验尽量与docs一致，包括view/edit
-    - toc autogen
-  - ai
-    - split-view: 显示summary-per-page, 适合教育场景
-      - summary的交互采用双栏布局交互还是类似comment面板交互需要考虑
-    - progressive doc processing: 能展示文件主页被处理如翻译的进度和内容交互
-  - translation+proofreading: 包括pdf文件, 普通文档、网页
-    - 输出不同模型的翻译版本，供用户比对
-  - 插画复刻: Qwen-Image-i2L, image-to-prompt-to-image, 同时支持浏览comfyui生成图片的元数据、提示词
-  - token is cheap, 算力越来越不是问题, 现在需要做生态和产品
-  - 💰 productivity
-    - parallel tasks
-
 - tips
   - 🤔 旧的产品交互逻辑在旧的时代都需要调整, 用户大多不想手动搜索, 直接在聊天框里输入指令，将搜索+后续工作一起执行
   - 🤔 不要执着于ai框架，主流模型厂商都会推广包含厂商特性的框架及产品(codex/claude-code/gemini-cli), 可专注于 主流 开源业务系统实现 或 厂商无关的实现
@@ -229,6 +197,120 @@ modified: 2025-03-22T16:10:24.856Z
 
 # draft
 - rewrite open-canvas with langgraph
+# 💎🚀 aichorage - local llm with joy, 提供模型API、rag可靠性、pdf文本操作
+- selling-points
+  - ✈️ local models support: mlx, lmstudio-alternative
+    - 允许用户分享文档/插画中的模型配置，运行日志
+    - 模型库: text模型, ocr模型 ,t2i生图模型, lmstudio在模型分类上做的不够好
+    - 参考janai/pipeshub, 既支持选择本地/api模型，也支持选择图片/文档
+    - ocr/vlm comparison-matrix/playground: 识别对比, 翻译对比
+  - 🔗 citations for search: 外部数据源如字典mdx/书籍epub/wikipedia公开db/统计年鉴
+    - 类似词典库/kiwix的预置模块, 可下载、可分享, 不必每次都全量索引
+    - wikipedia zim 自动翻译为中文
+    - vector-marketplace, 支持用户选择任意数量的pdf文档创建embeddings, 并发布, 可作为一种变通方案解决数据隐私问题
+    - 查看原文pdf-parts时支持仅查看前后几页, 保护原文内容
+  - large pdf workflows: chunking-strategies, reindex, pdf-parts
+  - 🌐 pdf edit
+    - proofreading: 一键检查, 版本历史
+    - ✨ 翻译场景的多种布局一键切换: 双栏对比布局, 仅译文布局, 富文本页面布局
+    - 甚至可以通过多栏布局的交互，来展示pdf聊天或补充信息，优点是能展示在原文位置
+    - 考虑非多个文档的场景, 类似代码编辑器的 split view 也可以方便核对
+    - 方便原文和译文的跳转交互
+    - pdf to word: 显示summary-per-page, 适合教育场景
+    - pdf体验尽量与docs一致，包括view/edit
+    - toc autogen
+  - ai
+    - split-view: 显示summary-per-page, 适合教育场景
+      - summary的交互采用双栏布局交互还是类似comment面板交互需要考虑
+    - progressive doc processing: 能展示文件主页被处理如翻译的进度和内容交互
+  - translation+proofreading: 包括pdf文件, 普通文档、网页
+    - 输出不同模型的翻译版本，供用户比对
+  - 插画复刻: Qwen-Image-i2L, image-to-prompt-to-image, 同时支持浏览comfyui生成图片的元数据、提示词
+  - local-optimized
+    - 减少并发
+    - 减少system-prompt
+    - error-retry-for-small-model, more robust
+    - 优化并行对话, 外部api并行，本地模型串行
+  - token is cheap, 算力越来越不是问题, 现在需要做生态和产品
+  - 💰 productivity
+    - parallel tasks
+# 💎🚀 modelpedia - 模型参数对比, 历史评测结果, 能免费对比最新参数及上一个版本
+- 基本参数(card)
+  - 模型列表
+- 评测模型类别: text, ocr, image, embedding
+- ✨ 官方评测结果, 历史版本
+  - 模型厂商或知名评测机构(第三方)发布的结果
+  - 标记被质疑的评测
+- ✨ 开源评测(第三方)结果, 多个org的不同bench
+  - llamabench
+  - aider
+  - 标记被质疑的评测, 标记有冲突的结果
+  - 🤔 rerun benckmark, 自动将benchmark模型映射到ai-provider
+- ✨ 速度与设备评测结果
+  - 硬件厂商发布的模型评测数据
+  - 同一硬件使用不同backend如vulkan/rocm/cuda的结果不同, 很难统一比较, 但可提供参考价值
+  - 设备列表, 关联huggingface的模型id
+  - mac专区, 多个型号, 多个模型
+  - github工具收集的速度
+  - 移动设备
+  - 安装使用教程
+  - [LocalScore - Local AI Benchmark](https://www.localscore.ai/)
+- ✨ 场景测评
+  - coding-前端: 天气卡片、贪吃蛇、三维地球
+  - coding-后端
+  - coding-代码迁移
+  - translation: 翻译
+- ❓ productivity 需要提供更多的生产力价值, 一键对比prompt、对比结果
+  - 🤔 给出迭代优化prompt的建议
+  - 推荐相关prompt参考
+- 🆚 custom-comparison(功能花哨, 但不提供实际生产力)
+  - 自动高亮最高值
+  - 一键截图
+  - 是否开放: 一键copy表格数据
+  - 在线图片编辑
+  - ai点评
+- 🔗 citations/sources/papers
+  - 提供数据来源, ai对内容相关性打分
+  - 标记被质疑的评测
+- ugc用户上传评测结果(共同维护/其他)
+  - 论坛评测结果搜集, 可靠度confidence
+  - github工具收集的评价
+  - aichorage工具上传
+- 其他讨论(场景效果/使用教程/精选)
+  - tutorials/discussion: 仅提供链接，暂不提供数据库保存的原文, 但可使用ai-summary总结数据库的原文
+  - 主动提供 playground + prompt 来复现
+- ❓ playground-chat/ocr
+  - 支持接入 openrouter/siliconflow 批量测试, 结果类似 promptfoo 表格, 支持分享测试结果, 一键rerun
+- bench-source-code: reproducible
+- futuristic/new-model-notification
+- premium: ad-free, history, multi-comparison, ai-summary-online, auto-update-custom-compare-table
+  - rewards: local-speed-uploads, 参数补充
+  - ? api-usage? remote-control?
+
+- bench-naming
+  - modelpedia
+  - modelbench
+  - modeleval
+  - modelxp
+  - modelRated
+  - modelReviews
+
+- bench/reviews-like
+    - G2/grid
+    - Gartner, Capterra
+    - Product Hunt
+    - AlternativeTo
+    - Slant
+    - StackShare
+    - Clutch
+    - Google Reviews, 
+    - TripAdvisor, TheFork, pitchfork
+    - Rotten Tomatoes, Zomato
+    - Trustpilot, TrustRadius
+    - OpenTable
+    - Letterboxd
+    - Metacritic
+    - La Liste
 # pm-mcp
 - writing
 
@@ -535,7 +617,7 @@ modified: 2025-03-22T16:10:24.856Z
     - cc支持
   - [太子公益 API](https://taizi.api.51yp.de5.net/console/personal), 签到
     - cc支持
-  - [FKAI](https://orchids.fuckai.me/dashboard)
+  - [FKAI](https://orchids.fuckai.me/dashboard), 无需签到
     - [【FKAI公益站】 ](https://linux.do/t/topic/1476184)
     - 额度每天刷新 
     - 根据论坛等级确定额度 等级 1 20000, 等级 2 50000, 等级 3 100000
@@ -743,6 +825,12 @@ modified: 2025-03-22T16:10:24.856Z
   - [pollinations.ai](https://enter.pollinations.ai/)
     - [基于Pollinations的图像生成接口的工作台  _202601](https://linux.do/t/topic/1423187)
     - 1 额度可生成张数: z-image--5k, sdxl--3k, seedream--25
+  - [啾啾小铺](https://api.usegemini.xyz/pricing)
+    - [NanoBananaPro 4K生图公益 ](https://linux.do/t/topic/1486971)
+    - 注册送100额度，用完重新注册即可; 不要走 linux.do 渠道注册就好了
+    - 逆向的flow接口
+    - 模型名如下：gemini-3.0-pro-image-landscape,gemini-3.0-pro-image-portrait,gemini-3.0-pro-image-square
+    - 由于目前flow官方流量大，官网都生不了图，佬友们等会再蹬
 
 - image-saas
   - [小白生图 - AI Image Generator](https://catsapi.com/)
@@ -1070,9 +1158,27 @@ modified: 2025-03-22T16:10:24.856Z
 
 - ## 
 
-- ## 
+- ## 国外有类似大众点评这类专注于评价/打分的网站吗? 可以列举些 互联网服务或 效率/生产力工具 评价相关网站并给出该网站评价体系相关的指标, 要非餐饮行业的评价类网站
+- Letterboxd makes money primarily through its tiered subscription model (Pro and Patron) offering ad-free viewing and advanced features, targeted advertising for film studios and distributors (especially for new releases), and specialized "HQ" accounts for film organizations, all while leveraging its engaged, cinema-literate user base as a valuable marketing channel. 
+  - remove ads, get detailed stats, stream availability tools, watchlist notifications, and profile customization.
+  - HQ Accounts: Film-related businesses (studios, festivals, podcasts) pay for special accounts to post news, link to external sites
 
-- ## 
+- 
+- 
+- 
+- 
+- 
+- 
+
+- ## I suddenly use the @NotionHQ agent a lot. Use cases
+- https://x.com/cramforce/status/2012890889803399504
+  - I dump a long list of Slack-sourced one-sentence ideas. The agent categorize them
+  - I write competitive research table, the agent fills it out and adds appendixes with detailed data
+  - I love this because it saves me time but the use-cases are low-risk of hallucination AND I don't get paragraphs of slop-text that pains me to read
+
+- Notion as the “messy inbox to structured doc” layer is such a good use of an agent. Categorize the chaos, then fill the table, then append sources. The time saved is obvious, but the bigger win is everyone reads the same format.
+
+- I actually could use something like this but for Obsidian
 
 - ## [类似 Manus 的开源项目有哪些 _202601](https://linux.do/t/topic/1465345)
   - Manus 好用但是不能爽用

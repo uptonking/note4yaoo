@@ -336,7 +336,7 @@ modified: 2025-03-22T18:49:15.634Z
 
 ## ai-providers/vendors
 
-- https://github.com/BerriAI/litellm /27.1kStar/MIT+EE/202508/python/ts
+- https://github.com/BerriAI/litellm /34kStar/MIT+EE/202601/python/ts
   - https://docs.litellm.ai/docs/
   - Python SDK, Proxy Server (LLM Gateway) to call 100+ LLM APIs in OpenAI format - [Bedrock, Azure, OpenAI, VertexAI, Cohere, Anthropic, Sagemaker, HuggingFace, Replicate, Groq]
   - Translate inputs to provider's completion, embedding, and image_generation endpoints

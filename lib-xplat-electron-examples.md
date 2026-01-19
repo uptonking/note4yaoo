@@ -857,6 +857,16 @@ modified: 2024-01-31T19:13:11.286Z
   - Prerequisites
     - Docker Desktop: Includes Docker Engine and Docker Compose. Essential for running the AI services.
 # tauri
+- https://github.com/zap-studio/local.ts /MIT/202601/rust/ts
+  - https://www.zapstudio.dev/local-ts
+  - A starter kit for building local-first applications for mobile and desktop.
+  - Build for macOS, Windows, Linux, iOS, and Android
+  - Lightweight — Native performance with a small bundle size
+  - Secure — Built-in Content Security Policy and Tauri's security model
+  - System Tray — Background operation with show/hide and quit actions
+  - SQLite with Diesel ORM and automatic migrations
+  - Autostart — Launch at login with user-configurable settings
+
 - https://github.com/12joan/ping-ui
   - A simple GUI for the ping command-line utility built using Tauri.
   - Requires ping to be in the PATH and for the output of ping to have the following format

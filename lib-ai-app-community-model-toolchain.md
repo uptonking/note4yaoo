@@ -192,6 +192,29 @@ modified: 2025-09-16T12:36:12.968Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Benchmarking local llms for speed with CUDA and vulkan, found an unexpected speedup for select models : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pydegt/benchmarking_local_llms_for_speed_with_cuda_and/)
+  - I was benchmarking my local llm collection to get an idea of tokens rates. I thought it might be interesting to compare CUDA vs Vulkan on my 3080 10GB. As expected, in almost all cases CUDA was the better option as far as token rate
+- The main findings is that when running certain models partially offloaded to GPU, some models perform much better on Vulkan than CUDA:
+  - GLM4 9B Q6 had a 2.2x speedup on PP, and 1.7x speedup on TG
+  - Qwen3 8B Q6 had a 1.5x speedup on PP, and 1.1x speedup on PP (meh)
+  - Ministral3 14B 2512 Q4 had a 4.4x speedup on PP, and a 1.6x speedup on TG
+
+- actually that's a nice finding, because it means that there is probably some CUDA code to optimize in llama.cpp
+
+- I did a similar test on the 6000 96gb. In some specific cases, vulkan is faster.
+
+- FYI llama.cpp done so much Vulkan related fixes, optimizations, changes, etc., for last 2-3 months, so this effect.
+
+- Vulkan ≠ ROCm/HIP. Vulkan is primarily a low-level graphics API with compute support, while ROCm/HIP is a full compute stack closer to CUDA (compiler, runtime, math libs, kernels).
+  - For LLM inference, Vulkan compute paths usually lack mature kernels, fused ops, and numerical tuning (e.g. attention, KV cache ops), which is why agentic coding + tool calling quality can degrade. ROCm/HIP (when supported) or CUDA generally preserves correctness and stability better because the kernels are purpose-built for ML workloads.
+  - Vulkan shines for portability, not ML fidelity or complex agent workflows.
+
+- Yup, that's why I test everything on my AMD cards with both ROCm and Vulkan, have seen the same. Some models work better on another backend
+
 - ## 🆚 [When should you choose F16 over Q8_0 quantization? : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1q0ci23/when_should_you_choose_f16_over_q8_0_quantization/)
   - We've all read about how Q8_0 is "virtually indistinguishable" from F16 when doing inference.
 

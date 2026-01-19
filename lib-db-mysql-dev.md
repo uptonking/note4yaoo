@@ -12,6 +12,7 @@ modified: 2020-12-18T04:59:39.602Z
   - facebook myrocks
   - github
   - uber(from pg to mysql)
+  - shopify(mysql 8)
 # dev
 
 # mysql-linux

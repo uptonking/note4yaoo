@@ -126,6 +126,10 @@ modified: 2025-12-11T18:10:23.710Z
   - an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM
   - goose is your on-machine AI agent, capable of automating complex development tasks from start to finish. More than just code suggestions, goose can build entire projects from scratch, write and execute code, debug failures, orchestrate workflows, and interact with external APIs - autonomously.
   - Designed for maximum flexibility, goose works with any LLM and seamlessly integrates with MCP-enabled APIs, making it the ultimate AI-powered assistant
+
+- https://github.com/covibes/zeroshot /939Star/MIT/202601/js
+  - https://covibes.ai/
+  - Your autonomous engineering team in a CLI. Point Zeroshot at an issue, walk away, and return to production-grade code. Supports Claude Code, OpenAI Codex, OpenCode, and Gemini CLI.
 # terminal-ai
 
 ## claude-cli
@@ -418,6 +422,12 @@ modified: 2025-12-11T18:10:23.710Z
   - Access Claude Code from anywhere - Mobile / Desktop secure connection via Tailscale. Provision VMs with Fly.io. 
   - Compatible with Gemini / Codex / OpenCode
 
+- https://github.com/poco-ai/poco-agent /MIT/202601/python/ts
+  - https://poco-ai.com/
+  - An intelligent agent harnessing cloud-based Claude Code to realize a Manus-like autonomous experience.
+  - Poco is a cloud-based AI agent execution platform inspired by Anthropic's Cowork. It orchestrates Claude AI agents to perform autonomous tasks beyond coding—organizing files, writing documents, analyzing data, and more—in a distributed cloud environment.
+  - Works in parallel — Queue multiple tasks without waiting for completion
+
 ## codex-cli
 
 - https://github.com/openai/codex /29.7kStar/apache2/202506/rust/ts
@@ -669,9 +679,7 @@ modified: 2025-12-11T18:10:23.710Z
   - JavaScript Execution - Run arbitrary JS in page context
   - Video Streaming - Real-time WebSocket streaming for visual monitoring
   - Zero Config - Works out of the box
-
-## cli-coding-agent
-
+# cli-coding-agent
 - https://github.com/Aider-AI/aider /37.1kStar/apache2/202508/python
   - https://aider.chat/
   - aider is AI pair programming in your terminal
@@ -770,6 +778,14 @@ modified: 2025-12-11T18:10:23.710Z
 - https://github.com/hlhr202/Conductor-for-all /apache2/202601/ts
   - Conductor for All is a standalone command-line tool designed to bring the Conductor spec-driven development methodology to any coding environment.
   - Originally tied to the Gemini CLI extension, this project aims to decouple the methodology, allowing developers to install and initialize Conductor workflows in their projects so they can be leveraged by any AI Coding Agent (e.g., Claude Code, Cursor, VS Code Copilot, Codex) or IDE.
+
+- https://github.com/specstoryai/getspecstory /961Star/apache2/202601/go
+  - https://specstory.com/
+  - Turn your AI development conversations into searchable, shareable knowledge.
+  - Install our local first extensions for your favorite AI IDE or Terminal Agent. Sync your conversations to the cloud
+  - https://x.com/doesdatmaksense/status/2012209297380544940
+    - we’ve spent a lot of time normalizing agent sessions, and defining a stable contract for ai conversations across tools.
+    - Normalizing agent sessions into a stable contract is underrated. Once the “conversation shape” is consistent, you can do boring but important stuff—diffs, audits, replay, evals—without rewriting integrations every time a new tool pops up.
 # background-ai
 - https://github.com/ishaan1013/shadow /MIT/202508/ts
   - https://shadowrealm.ai/

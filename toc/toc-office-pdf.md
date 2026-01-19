@@ -567,6 +567,16 @@ modified: 2021-01-04T17:26:43.784Z
   - Offset and mapping (ebooktoc/fingerprints.py, ebooktoc/cli.py): computes dominant dimensions, builds a canonical index map (logical → PDF), and estimates printed‑page offsets by sampling pages with the VLM; stores toc, page_offset, fingerprints, and page_map in JSON.
   - Apply phase (ebooktoc/pdf_writer.py, ebooktoc/cli.py): rebuilds the canonical map, refines the offset, resolves target pages, and writes bookmarks.
 
+- https://github.com/jiangnan1224/pdf-toc-editor /202601/python/js
+  - 智能 PDF 目录编辑器
+  - 智能目录提取：内置高精度算法，一键扫描文档前 20 页并自动识别潜在层级结构。
+  - 自由拖拽排序：支持通过手柄直接拖拽调整目录顺序，所见即所得
+  - 支持三级目录结构（章、节、点），轻松应对复杂文档。
+  - 自适应纸质页码与电子页码的偏差，确保跳转精准无误。
+  - 后端: Python (Flask), pypdf
+  - 前端: HTML5, Vanilla JavaScript, Tailwind CSS
+  - [【开源自荐】pdf目录生成工具 _202601](https://linux.do/t/topic/1480789)
+
 - https://github.com/zjm18023/pdf-watermark-remover /MIT/202601/python/tinker
   - [做了一个PDF去除水印的工具，可视化操作界面，支持区域删除和文字删除两种模式 ](https://linux.do/t/topic/1408892)
   - PyMuPDF (fitz) - PDF 文件处理和渲染

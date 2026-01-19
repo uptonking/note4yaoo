@@ -310,6 +310,13 @@ modified: 2025-02-21T17:17:42.225Z
   - 多格式导出 - PNG、JPEG、PDF 等多种格式
   - 支持 Model Context Protocol，可在 Claude Desktop 等工具中使用
   - 本地存储 - 支持保存和加载卡片项目
+# ai-apps-amazing
+- https://github.com/originalankur/maptoposter /MIT/202601/python
+  - Generate beautiful, minimalist map posters for any city in the world.
+  - MapToPoster lets you create and export visually striking map posters with code.
+  - https://x.com/ImSh4yy/status/2013023687943860324
+    - I forked this repo and had Opus 4.5 optimize the code and Gemini 3 to create more themes.
+    - looks familiar to https://makemap.co/
 # ai-apps
 - https://github.com/multica-ai/multica /apache2/202601/ts
   - A native desktop client that brings coding agent capabilities to everyone through a visual interface.
@@ -370,6 +377,13 @@ modified: 2025-02-21T17:17:42.225Z
     - File System Integration - Persistent memory and state management
     - Streaming Support - Real-time updates, token streaming, and progress tracking
     - Built on the robust LangGraph framework
+
+- https://github.com/zhu1090093659/CodeConductor /apache2/202601/python/ts
+  - Open-source enhanced fork of AionUI / Anthropic Cowork
+  - Modern Electron-based desktop application providing a polished chat interface for CLI AI agents (Claude Code, OpenAI Codex). Supports both desktop and web modes.
+  - [【开源】开源版本的Cowork，但不仅是Cowork ](https://linux.do/t/topic/1481692)
+    - 用瓦砾酱aionui二开的，在原版的基础上做了一些新特性和优化
+    - ui还是太简陋了 交互也不太行
 
 - https://github.com/eigent-ai/eigent /3.6kStar/apache2/202601/python/ts
   - https://www.eigent.ai/
@@ -436,6 +450,17 @@ modified: 2025-02-21T17:17:42.225Z
   - https://www.georetina.com/
   - the first agentic AI desktop app for geospatial analysis, developed by GeoRetina Inc.
   - Built with Electron, React (TypeScript), and Vite, Arion runs natively on Windows, macOS, and Linux, empowering users to leverage local and cloud-based Large Language Models (LLMs), integrate custom Model Context Protocol (MCP) servers, and utilize a plugin system for extended capabilities.
+
+- https://github.com/ahmedkhaleel2004/gitdiagram /MIT/202503/python/ts
+  - https://gitdiagram.com/
+  - Turn any GitHub repository into an interactive diagram for visualization in seconds.
+  - Powered by Claude 3.5 Sonnet for quick and accurate diagrams
+  - Public API available for integration (WIP)
+  - Frontend: Next.js, TypeScript, Tailwind CSS, ShadCN
+  - Backend: FastAPI, Python, Server Actions
+  - Database: PostgreSQL (with Drizzle ORM)
+  - Deployment: Vercel (Frontend), EC2 (Backend)
+  - Analytics: PostHog, Api-Analytics
 # cv
 - https://github.com/IDEA-Research/Rex-Omni /1kStar/IDAE/202512/python/华人作者
   - https://rex-omni.github.io/

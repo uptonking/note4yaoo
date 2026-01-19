@@ -130,7 +130,8 @@ modified: 2021-05-06T09:39:53.522Z
   - 使用markdown格式作为ai编辑的输入输出优点是ai擅长markdown，缺点是markdown扩展标准不统一
     - 另一种思路是用prompt指示ai输出html, 各种富文本编辑器对html的复制粘贴都很成熟
 
-- prosemirror-markdown
+- markdown
+  - 🤔 markdown对llm友好，对修改友好, 考虑实现基于markdown的多栏布局, 且共用toc
   - rewrite with remark
   - rewrite with codemirror/lezer
   - mdx

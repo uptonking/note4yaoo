@@ -36,6 +36,9 @@ modified: 2026-01-14T18:57:01.673Z
 - tool应该支持在ui上配置参数
   - tool级别的prompt
   - stable-diffusion文生图的工具应该支持配置steps/选择不同效果的模型
+
+- 自动清理
+  - 此类工具的runtime/模型文件会占用大量磁盘空间, 需要提供方便管理空间的工具
 # ui/server
 - llm-ui/wrapper
   - janai(llama.cpp)

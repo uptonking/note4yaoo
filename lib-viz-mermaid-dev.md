@@ -39,6 +39,9 @@ modified: 2025-11-19T17:50:09.072Z
 
 - themes/styleing
   - ppt-shapes
+
+- bar-charts
+  - 类似模型排行榜，但无坐标轴 https://x.com/Zai_org/status/2013261304060866758
 # dev-xp
 
 # ai-mermaid

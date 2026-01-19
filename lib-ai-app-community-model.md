@@ -31,7 +31,9 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
-- ## 
+- ## The best way to learn in the new AI era is to use open source projects as references and ask Codex or Claude to re-implement them, 
+- https://x.com/LiMzba/status/2013096172752392584
+  - it will let you to learn much more deeply and thoroughly than simply reading secondhand knowledge from elsewhere.
 
 - ## 为什么 AGI 必然会私有化部署？
 - https://x.com/naki2012/status/2003081645067550888
@@ -157,7 +159,36 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
-- ## [Alternative to Transformer architecture LLMs : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nk58yc/alternative_to_transformer_architecture_llms/)
+- ## The Bitter Lesson of Agent Frameworks
+- https://x.com/gregpr07/status/2012052139384979773
+  - All the value is in the RL'd model, not your 10, 000 lines of abstractions.
+  - An agent is just a for-loop of messages. The only state an agent should have is: keep going until the model stops calling tools. You don't need an agent framework. You don't need anything else. It's just a for-loop of tool calls.
+  - Our first Browser Use agents had thousands of lines of abstractions. They worked - until we tried to change anything. Every experiment fought the framework. The agents weren't failing because the model was dumb. They were failing because we were.
+
+- I almost completely agree with this except you don't even need tool calls. Just executable code fences.
+
+- No, it's more than just loop. 
+  - 1) Sessions are stateless. Smart framework will keep permanent memory without having to tell agents 101th time the same stuff.
+  - 2) They try every possible trick to save tokens, to save costs for those who use API to access tokens
+  - 3) Smart multiagent collaboration. Models are not equal, some are better in one specific area than others. That's why having two or three specialized agents working as a team will always beat single agent trying to comp thru massive codebases
+
+- ## [Speculative Decoding: Turning Memory-Bound Inference into Compute-Bound Verification (Step-by-Step) : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qg2592/speculative_decoding_turning_memorybound/)
+  - Most of us assume LLM inference is slow because "matrix multiplication is hard." That’s actually false.
+  - For a batch size of 1 (which is standard for local inference/chat), your GPU is almost entirely Memory Bandwidth Bound. The bottleneck isn't doing the math; it's moving the 70GB+ of weights from VRAM to the compute units. The Arithmetic Logic Units (ALUs) are spending most of their time idle, waiting for data.
+  - Speculative Decoding exploits this idle time to give us a "free lunch"—2x-3x speedups with mathematically identical outputs.
+  - This converts a memory-bound operation (waiting for weights) into a compute-bound operation (doing more math on loaded weights), maximizing hardware utilization without retraining.
+
+- Welcome to 2 or so years ago (which is eons in LLM). Speculative decoding using draft models looked great back then, but the problem is the limited practical usage. In order to get good speed ups there needs to be a huge difference between the draft model size and the target model size like 1B to 70B. Gains with smaller differences are smaller. In addition the models of that size are MoE now so speculative decoding is not needed. The last setup it did bring something to the table was probably Qwen2.5 where you could use the 0.5B model as draft for the 32B for example. I find limited usage for it nowadays, but it may just be my usage and there may be scenarios where people still use and like it.
+
+- Recently I was reading Nvidia's Nemotron 3 paper. They have used speculative Decoding idea in their latest models. 
+  - Except MTP is not the same speculative decoding you wrote about. It is also still only coming with the Super and Ultra models which have not been released yet.
+
+- Works fine with models with a MTP layer
+
+- Sad that vLLM does not fully support smaller drafter models (atleast last I checked) because my gemma-3-270m is screaming to boost my gemma-3-27B token generation speeds
+  - Works with llama.cpp though so that's pretty good :). vLLM is next level though. Wish it supported that
+
+- ## 🏘️ [Alternative to Transformer architecture LLMs : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nk58yc/alternative_to_transformer_architecture_llms/)
   - I wanted to ask if there are any other possible LLM architectures instead of this transformer.
 - State Space Models (SSMs) are not using standard transformer architecture and they are getting some attention from various research institutes (look for Mamba paper on arxiv).
   - There is also RWKV that (depending on the version) looks more like a standard RNN.
@@ -168,6 +199,10 @@ modified: 2023-10-30T07:34:03.602Z
 - Hybrids are the latest thing, Nemotron Nano is only 8% transformer! Also Qwen3-Next is a hybrid.
 
 - RWKV uses an RNN.
+
+- [GFN v2.5.0: Verified O(1) Memory Inference and 500x Length Extrapolation via Symplectic Geodesic Flows : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1qgogis/gfn_v250_verified_o1_memory_inference_and_500x/)
+  - We present GFN (Geodesic Flow Networks), an architecture that reformulates sequence modeling as particle dynamics on a learned Riemannian manifold. Unlike Transformer-based architectures—which exhibit O(N^2) memory scaling due to the attention mechanism—or standard RNNs that suffer from vanishing gradients, GFN achieves O(1) memory complexity during inference and exhibits infinite-horizon stability through symplectic integration.
+  - In our v2.5.0 release, we demonstrate perfect zero-shot generalization on algorithmic tasks with sequences up to 10, 000 tokens while maintaining a strictly bounded memory footprint of ~60MB.
 
 - ## Release the VSC extension design for the local coding model: 
 - https://x.com/LiMzba/status/2011106168136220739
@@ -836,7 +871,22 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
-- ## 
+- ## We've been exploring the value of letting agents use CLIs vs just navigating a REST API directly. 
+- https://x.com/dhh/status/2012543705161326941
+  - The smartest models can do without a CLI, but take longer and cost more. Even small models can succeed when given CLIs. But the puck keeps moving!
+- AI does better with CLIs because it's a human interface. It's designed with self-discovery in a logical way. 
+
+- We realized this very early on. Our first party integrations with Ci providers are clis we purpose built for our vertical agent workflows. Mcps are terribly inefficient even if tools are lazy loaded for multi turn agentic conversations
+
+- Everyone who’s been early to using coding agents, figured this out a few months ago
+
+- Yeh my personal assistant is all CLI driven (a cli for open code to use, so I say "Plan out my day" and it goes and uses it to do that).  Super useful.  At @agentuity , we've really had to make sure our sdk, api's, and CLI are FOR agents as much as developers. Mindshift change.
+
+- Using the same CLI for both humans and agents turned out to be surprisingly practical.
+
+- The CLI abstraction buys you something else too: versioning. REST APIs change endpoints, parameters, auth flows. A stable CLI surface means your agent skills don't break when the underlying API shifts. That durability matters more as you scale agent count.
+
+- This is why I recently converted my Basecamp MCP connector to a Basecamp CLI.
 
 - ## [I benchmarked 7 Small LLMs on a 16GB Laptop. Here is what is actually usable. : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pzxtnr/i_benchmarked_7_small_llms_on_a_16gb_laptop_here/)
   - I tested Qwen 2.5 (14B), Mistral Small (12B), Llama 3 (8B), and Gemma 3 (all 4-bit quants) to see which ones I could actually run without crashing my laptop.

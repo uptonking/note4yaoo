@@ -1196,7 +1196,28 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## 💡 [[开源自荐] 一键将 ArXiv 论文转换成 Markdown ](https://linux.do/t/topic/1483462)
+  - 最近无论是看论文还是折腾知识库，喂给大模型的时候使用 pdf 或者链接的方式体验非常不爽。
+  - 还有就是下载2312.12345.pdf 这种无意义的文件名非常反人类，于是开发了这个转 markdown 插件。
+  - 两种转markdown方式，在setting页面进行设置：
+  - 基于 `ar5iv` 的 HTML 转 markdown
+  - 使用 `minerU` 的 api 进行转换
+- https://github.com/timf34/arxiv2md /MIT/202601/python/js
+  - https://arxiv2md.org/
+  - Convert arXiv papers to clean Markdown 
+  - I got tired of copy-pasting arXiv PDFs/HTML into LLMs and fighting references, TOCs, and token bloat. So I made https://gitingest.com/ but for arXiv papers.
+  - Section filtering: Remove references, appendix, or select only specific sections
+  - arxiv2md is fast because it takes advantage of arXiv's HTML format for papers. Instead of parsing PDFs (slow, error-prone), we directly parse the structured HTML that arXiv provides for newer papers. 
+
+- https://github.com/Tendo33/arxiv-md /MIT/202601/js
+  - One-click conversion of arXiv papers to Markdown with perfect LaTeX formula preservation
+  - Convert arXiv papers to Markdown in one click. Perfect for Obsidian & Notion.
+  - MinerU Integration: Optional high-precision PDF parsing for complex layouts (requires API Key).
+  - Task Manager: Track background conversion tasks, retries, and downloads.
+  - Privacy First: ar5iv conversion happens 100% locally in your browser.
+  - We use a Multi-Tier Strategy to ensure you always get the best result:
+    - Tier 1 (ar5iv): Fetches HTML5 from ar5iv.org and converts to Markdown locally.
+    - Tier 2 (MinerU): Uses MinerU AI service to parse the PDF
 
 - ## [Reliable document text extraction in Node.js 20 - how are people handling PDFs and DOCX in production? : r/node _202601](https://www.reddit.com/r/node/comments/1qaoknz/reliable_document_text_extraction_in_nodejs_20/)
 - You need to use libre office's command line tools to extract anything out of any office document format. You need to install libre office on server.

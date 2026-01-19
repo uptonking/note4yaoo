@@ -60,3 +60,10 @@ modified: 2026-01-17T22:41:25.867Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [What would be the best memory-bank in Opencode, coming from Roo Code with MemoryBank injected in the prompts. : r/opencodeCLI _202601](https://www.reddit.com/r/opencodeCLI/comments/1qe28fd/what_would_be_the_best_memorybank_in_opencode/)
+- Simple Memory Plugin from @knikolovx. It is a very simple plugin, but also very effective. And it was created with programming in mind. https://github.com/cnicolov/opencode-plugin-simple-memory
+
+- Ive written my own. I've used a meta tool pattern to keep tools down to three and got various connectivity guides/templates but I always encourage people to try and adapt something or build something suited to their workflow. https://github.com/ScottRBK/forgetful

@@ -181,7 +181,9 @@ modified: 2025-08-16T14:12:24.416Z
 
 - ## 
 
-- ## 
+- ## [以还原指定画师画风为目的，目前的开源绘画模型里哪个最好用 _202601](https://linux.do/t/topic/1486783)
+  - 目前使用过且保留下来的只有wai系列和oneobsession系列的模型，但是用起来的效果称不上特别满意。
+- 出图模型多少都有过拟合（尤其是wai特别明显），这种一般建议自己练lora去覆盖（目前来说还是xl系的会好一些，dit类的基本都对画师不太感冒感觉）
 
 - ## 🖼️ Qwen-Image-i2L：可以“将任意一张图片转化为 LoRA 模型” _202512
 - https://x.com/imxiaohu/status/1998593802320359640
@@ -190,6 +192,9 @@ modified: 2025-08-16T14:12:24.416Z
   - Qwen-Image-i2L 利用 SigLIP2 + DINOv3 + Qwen-VL 特征提取体系，
   - 把图像分解成“风格 + 内容 + 构图 + 色调”等可学习特征， 并压缩成一个轻量级 LoRA 模块。
   - 生成的 LoRA 可以直接加载到生成模型中使用，实现“单图风格迁移”。
+
+- [一张图秒生 LoRA ? Qwen-Image-i2L 诞生记 - 知乎](https://zhuanlan.zhihu.com/p/1984939993886651255)
+- [完整教程：阿里推出Qwen-Image-i2L开源工具：AI绘画的个性化革命来了 - ljbguanli - 博客园](https://www.cnblogs.com/ljbguanli/p/19466380)
 
 - ### [[Demo] Qwen Image to LoRA - Generate LoRA in a minute : r/StableDiffusion](https://www.reddit.com/r/StableDiffusion/comments/1pjfbyr/demo_qwen_image_to_lora_generate_lora_in_a_minute/)
 - The LoRAs this is producing also work very well with Qwen_Image_Edit_2509 in image editing mode !

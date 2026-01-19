@@ -22,6 +22,28 @@ modified: 2025-12-18T12:27:14.982Z
 
 - ## 
 
+- ## 
+
+- ## [droid是啥, 为啥好多人推荐, 跟Claude code或者opencode之类的区别在哪 ](https://linux.do/t/topic/1482186)
+- 闭源版本的 opencode，可以用多个模型
+  - 比 claudecode 好的地方在于模型可以多选，包括 glm，claude，gpt，且终端能力差不多
+  - 比 codex 好的地方在于 windows 下表现良好
+
+- 其实大家的cli工具都更新很快，可能现在好用，但是更新几个版本就不一定了。但是最懂claude都肯定是claudecode，最懂gpt的肯定是codex，没必要折腾这些其实。
+
+- ## [编程cli交流，droid和opencode 对比，还有模型能力对比 _202601](https://linux.do/t/topic/1414233)
+  - 用 opencode 和 droid ，用我的dsl (这个特别考验智力，因为没有训练到)，用相同模型，干同一个任务，看看时间最短。
+  - 不过opencode 有子agent 可以减少主agent的上下文，羡慕啊，不知道droid怎么搞，有没有大佬会搞。
+  - 样本太少了，我大概只测了五六次左右，不过在我这个自定义dsl 场景，考验模型迁移能力情况下，只能说minimax 2.1 是比较强的。
+
+- 如果minimax不要求2.1的话可以试试用Google部署的minimax2，用TPU速度能达到160tok/s，我们已经拿来跑一些流程长的subagent了
+
+- 昨天用opencode，token真的节约
+
+- 有一点我觉得opencode做的还行, 就是新版本的deepseek在opencode上对思考做的适配更积极
+
+- Droid也有subagent，不过它叫droids
+
 - ## [Forked Google's Gemini CLI to work with local LLMs (MLX, llama.cpp, vLLM) : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pn0gpa/forked_googles_gemini_cli_to_work_with_local_llms/)
   - So i forked the gemini cli and added local llm support, no google account needed, runs offline.
 

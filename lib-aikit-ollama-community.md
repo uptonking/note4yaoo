@@ -22,7 +22,18 @@ modified: 2026-01-14T18:57:51.174Z
 
 - ## 
 
-- ## 
+- ## [Using Claude Code with Ollama local models : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qfwubh/using_claude_code_with_ollama_local_models/)
+  - Ollama v0.14.0 and later are now compatible with the Anthropic Messages API, making it possible to use tools like Claude Code with open-source models.
+- Be aware of the long system prompts and set the context size accordingly. You can check out the system prompts below.
+  - Claude Code: 16.5K tokens
+  - Codex: 6.5K tokens
+  - Gemini-cli: 5.5K tokens
+  - Smaller models<100B (especially without being fine-tuned on a specific system prompt) might not be able to follow lengthy instructions.
+
+- I know that Claude Code performs better on SOTA or near-SOTA models, but the system prompt can be ~2x the size which for some local models changes things significantly (~10k tokens for Qwen-Code-CLI, ~21k tokens for Claude Code)
+
+- I did this a while back using LM Studio. I got it running with gpt-oss:20b on a 16GB 4080. It’s not fast but it works great in vanilla mode with 100K context.
+  - What did NOT work was trying to add skills or workflow plugins like OpenSpec.
 
 - ## 💡 [Ollama's new app | Hacker News _202507](https://news.ycombinator.com/item?id=44739632)
 - this is not electron app. It does use system webview thought.
@@ -64,9 +75,13 @@ modified: 2026-01-14T18:57:51.174Z
 
 - ## 
 
-- ## 
+- ## [Ollama GUI not working on Windows 10 Pro (22H2) _202508](https://github.com/ollama/ollama/issues/11808)
+  - The Ollama GUI does not launch or work properly on my Windows 10 system. When I try to open it, nothing happens (or it closes immediately without showing the interface).
 
-- ## 
+- The issue is that `msedgewebview2` is not installed by default on the system. For the Ollama user interface to work, it must be installed. A window may appear prompting you to install msedgewebview2; however, if you ignore the installation, the UI will not work and no error message will be shown.
+
+- ## [use the macOS electron app for Windows and Linux _202410](https://github.com/ollama/ollama/issues/7135)
+  - I don't understand why the electron app is only for macOS when electron is perfectly capable of running on Windows and Linux.
 
 - ## [FR: Meaningful names of models in models/blobs dir _202501](https://github.com/ollama/ollama/issues/8466)
   - Please make models to have meaningful filenames (like user/modelname-quantization.gguf) in models/blobs directory, so they can be (easier) used with other model inference software.
