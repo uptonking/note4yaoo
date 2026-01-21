@@ -253,6 +253,8 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
 
 ```sh /llm
 
+cd ~/Documents/repos/ai-ml-llm/done-hub-local && dist/one-api --config config.yaml
+
 ollama run --verbose gemma3:4b
 OLLAMA_DEBUG=2 ollama serve gemma3:4b
 
@@ -289,6 +291,25 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
   - ?
 - dev-to
   - ?
+
+## 0120
+
+- [[BUG] Mistral LLM Fails with Tools Due to Role Expectation · Issue · crewAIInc/crewAI](https://github.com/crewAIInc/crewAI/issues/2194)
+  - [Fix Mistral Issue: by Vidit-Ostwal · Pull Request #2580 · crewAIInc/crewAI](https://github.com/crewAIInc/crewAI/pull/2580)
+  - Added an additional check to convert any `system` role to `assistant` role.
+  - [[BUG] Problem with the user and assistant roles when using the Mistarl api. · Issue #757 · huggingface/smolagents](https://github.com/huggingface/smolagents/issues/757)
+    - When using the Mistarl API via LiteLLM or OpenAIServerModel, an error occurs due to the fact that the Mistral API expects a message with the User or Tool role, and receives it with the Assistant role.
+
+- 🧩 in local mlx llm, q5.5bit quant achieved 1.25 perplexity in our testing.  what does `perplexity` mean for model?
+  - Perplexity (PPL) is the standard metric used to evaluate how well a model predicts the next token in a sequence.
+  - Perplexity is a measurement of how well a probability model (like your LLM) predicts a sample of text. In simple terms, it measures the model's "surprise" or "uncertainty" when seeing new text.
+  - Lower is better. A lower score means the model is less surprised by the text it sees.
+  - PPL = 1.0 is perfect (model always assigns probability 1 to the true token).
+  - A PPL of 1.25 implies the model is highly confident and usually puts ~80% probability mass on the true next token — unusually good for typical open-domain text.
+  - Higher is worse. A high score means the model is confused and struggling to guess what comes next.
+  - If the Perplexity is 100, the model is as confused as if it had to pick blindly from a bag of 100 equally likely words.
+  - If the Perplexity is 1.25, the model is effectively choosing between 1.25 options.
+  - A perplexity of 1.25 is extremely low: it means the model’s geometric mean probability for the true next token is 1 / 1.25 = 0.8 (80%).
 
 ## 0116
 

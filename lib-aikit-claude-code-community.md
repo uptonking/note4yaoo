@@ -46,6 +46,15 @@ modified: 2025-12-18T12:26:08.445Z
 
 - ## 
 
+- ## 
+
+- ## [提升Claude Code 读 GitHub 和文档的速度 _202601](https://linux.do/t/topic/1487840)
+  - 吐槽一下 Claude Code 读 GitHub 和文档的龟速体验, 实在受不了，摸索出了个新路子：
+  - 直接把常用的开源项目 Clone 到本地！
+  - 让它直接读本地源码，响应速度比联网查快了不止一点半点。强烈建议大家把这个流程封装成一个 Skill，用起来简直不要太爽。
+
+- 下到本地看，看起来舒服多了，Github有时候挺卡的
+
 - ## 💡 [今天偶然发现，Claude Code 是可以同时使用多个中转站的 ](https://linux.do/t/topic/1421764)
   - 核心思路是： 每次启动 Claude Code 时，会固定读取当前的中转站配置。
   - 使用 cc-switch 选择 中转站 A， 打开一个 Claude Code 实例（不要关闭）， 再次使用 cc-switch 切换到 中转站 B， 再打开一个新的 Claude Code 实例

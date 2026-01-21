@@ -95,7 +95,10 @@ export VSCODE_GALLERY_CONTROL_URL=""
 
 - ## 
 
-- ## 
+- ## [Clearing cache · Issue · microsoft/vscode](https://github.com/microsoft/vscode/issues/164980)
+  - Can I remove the .vscode/CachedExtensionVSIXs directory safely?
+  - What do .vscode/Cache/Cache_Data and .vscode/CachedData do? Can I remove it safely? Both are using a lot of disk space.
+- Yes, you can remove it.
 
 - ## [VS Code terminal font size - Stack Overflow](https://stackoverflow.com/questions/61311241/vs-code-terminal-font-size)
 - search for terminal font size and then enter the size of your choice.

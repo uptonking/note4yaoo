@@ -66,15 +66,24 @@ modified: 2025-11-18T13:22:22.078Z
   - what is the latest version of Node.js?
   - 大漠孤烟直 出自哪里? 上下句是什么？ 表达什么意思？ 有其他地方引用过这句吗?
 
-- gemma3 🌹 /多语言/创意文本/vision
-  - 27b 和 12b 都能较好遵循带结构的instruct输出， 27b能主动给出更多外部网页链接而12b给的链接很少
-
 - qwen3 🌹 /能力全/thinking开关/内容丰富
   - 4b及14b的输出内容都比较详细，经常包含表格📈
 
 - gpt-oss-20B-A3.6B 👀 /业界标杆/输出快
   - 输出的内容特别喜欢用表格📈, 讨论代码相关问题也喜欢用表格
   - unsloth-Q5的输出速度为 11.8 tops, offcial-Q4的输出速度为 11.2 tops, 速度比qwen3-14b更快
+
+- glm-4.7-flash-30b-a3b
+  - GLM-4.7-Flash-MLX-4bit 的版本容易陷入thinking loop
+    - loop时的thinking内容没有遵循带step的thinking过程
+  - 🌹thinking的内容非常agentic, 带有明确的step
+    - request analysis > Brainstorm > draft res > refine res > revise > polish > response
+
+- nemotron-3-nano-30b-a3b
+  - 中文内容丰富
+
+- gemma3 🌹 /多语言/创意文本/vision
+  - 27b 和 12b 都能较好遵循带结构的instruct输出， 27b能主动给出更多外部网页链接而12b给的链接很少
 
 - magistral-small-2509-24b  👀 /可以用/think+vision/欧洲多语言/产品线丰富/censor弱
   - 回复一般很短，感觉质量不高

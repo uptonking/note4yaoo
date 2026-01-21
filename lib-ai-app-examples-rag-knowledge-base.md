@@ -1606,6 +1606,12 @@ modified: 2025-11-30T17:27:16.720Z
     - Isolated installation (Ollama) – Operate fully on-premises with containers. All neural networks (LLM, reranker, embedding) run on your cloud or PC 
     - Custom LLM (OpenAI-compatible API) – Use your own deployed LLM with OpenAI-compatible API (vLLM, Ollama server, TGI, etc.). The indexer runs locally while the LLM can be on your server, cloud, or local machine.
     - Custom GPT – Query your local documents using ChatGPT app or web with custom GPTs. The indexer runs on your cloud or local PC, while the primary LLM remains ChatGPT.
+
+- https://github.com/HKUDS/DeepTutor /9.3kStar/AGPL/202601/python/ts
+  - https://hkuds.github.io/DeepTutor
+  - AI-Powered Personalized Learning Assistant
+  - Smart Knowledge Base: Upload textbooks, research papers, technical manuals, and domain-specific documents. 
+  - Multi-Agent Problem Solving: Dual-loop reasoning architecture with RAG, web search, and code execution -- delivering step-by-step solutions with precise citations.
 # data-rag
 - https://github.com/statespace-tech/toolfront /801Star/MIT/202512/python
   - https://docs.toolfront.ai/

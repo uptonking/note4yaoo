@@ -223,6 +223,14 @@ modified: 2025-12-11T18:10:23.710Z
     - Built-in AI Browser for web automation
     - 100% of the code after v1 was written by Halo itself
 
+- https://github.com/lukilabs/craft-agents-oss /apache2/202601/ts
+  - https://x.com/balintorosz/status/2013302678105796764
+  - TL; DR - We've released Craft Agents as an open source product - it  showcases our take on how to effectively work with agents (Especially Claude Code). 
+  - It enables intuitive multitasking, no-fluff connection to any API or Service, sharing sessions, and a more document (vs code) centric workflow - in a beautiful and fluid UI.
+  - It leans on Claude Code through the Claude Agent SDK - follow what we found great, and improves areas where we've desired improvements.
+  - We ourselves are building Craft Agents with Craft Agents only - no code editors - so really, any customisation is just a prompt away.
+  - We built Craft Agents because we wanted a better, more opinionated (and preferably non-CLI way) of working with the most powerful agents in the world. 
+
 - https://github.com/fengshao1227/ccg-workflow /MIT/202601/js
   - CCG v3.0: Claude Code 编排三 CLI 协作
   - v3.0.0 重大更新：从 Python 脚本进化为 npm 包，三 CLI 协作时代正式开启！

@@ -651,6 +651,17 @@ modified: 2021-04-30T20:14:17.669Z
   - [目前html转PPT还是一个天大的难题吗？ ](https://linux.do/t/topic/1114556/18)
     - 目前基本上可以用了，转换逻辑在src/html…那里，对于普通的排版还是可以保留90％样式的，复杂的就不行，我在提示词里面限制了很多“高级css效果”，那些都是无法转换的 genspark，质谱应该都是这个方案，因为pdf转pptx有些bug都是通的，例如阴影和超出范围还有转换后的字体
 
+- https://github.com/uniqueww/unique-ppt /202601/js
+  - AI 驱动的图文并茂 PPT 生成器 — 输入主题或文本，AI 自动生成大纲，并为每一页智能生成匹配内容的精美配图。
+  - [unique-ppt ｜AI一键搞定高质量的图文并貌的PPT _202601](https://linux.do/t/topic/1487758)
+    - 做 PPT 最头疼的就是找配图，花一小时写完内容，再花两小时找图、抠图、调版式。
+    - AI 自动生成结构化大纲
+    - 根据每页内容自动生成匹配的 AI 图片, 不是随机配图，是真正理解内容后生成的匹配图片
+      - 每页内容 → 英文提示词 → AI 生成匹配图片
+    - 标准 PPTX，兼容 Office 和 Keynote
+    - 导出的是真实文本框，并非 SVG 或图片
+    - 并发生成	5 张图同时生成，速度提升 3-5 倍
+
 - https://github.com/hugohe3/ppt-master /913Star/MIT/202512/python
   - https://hugohe3.github.io/ppt-master/
   - 基于 AI 的智能视觉内容生成系统，通过多角色协作，将源文档转化为高质量的 SVG 内容，支持演示文稿、社交媒体、营销海报等多种格式。
@@ -661,6 +672,7 @@ modified: 2021-04-30T20:14:17.669Z
   - PPT 不认 rgba、不认组透明、不认图片透明
   - [PPT-master 一个用AI生成真正可编辑的高质量PPT的工具 _202512](https://linux.do/t/topic/1305492)
     - 使用 mineru 对 pdf 进行了提取，然后用 md 文档重新生成一份含有企业预警通图标和封面图的 ppt，因为时间更空余，生成的比视频里面的更精美多了
+  - [【原创】OpenCode + SVG：推荐一套省心可控的 AI PPT 生成方案 _202601](https://linux.do/t/topic/1489177)
 
 - https://github.com/YiYoYiYoYiYo-Web3/PDF-Text-Remover /AGPL/202512/python
   - [一个没啥用的PDF去文字工具 ](https://linux.do/t/topic/1257896)

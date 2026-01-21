@@ -345,6 +345,7 @@ modified: 2025-02-21T17:17:42.225Z
 - https://github.com/different-ai/openwork /1.1kStar/MIT/202601/rust/ts/tauri
   - https://openwork.software/
   - open-source alternative to Claude Cowork, powered by OpenCode
+  - Built on OpenCode and utilizes OpenPackage for plugins installation.
   - [I built an open-source alternative to Claude Cowork (on top of opencode!) : r/ClaudeAI _202601](https://www.reddit.com/r/ClaudeAI/comments/1qcf8mu/i_built_an_opensource_alternative_to_claude/)
     - it’s basically an alternative gui for opencode, which (at least until now) has been more focused on technical folks.
     - the goal with openwork is to bring the kind of workflows i’m used to running in the cli into a gui, while keeping a very deep extensibility mindset. ideally this grows into something closer to an obsidian-style ecosystem, but for agentic work.
@@ -416,7 +417,7 @@ modified: 2025-02-21T17:17:42.225Z
 - https://github.com/Kalyankr/localCowork /202601/python
   - AI-powered assistant (Inspired by Cluade Cowork) that lives on your computer.
 
-- https://github.com/ComposioHQ/open-claude-cowork /202601/js
+- https://github.com/ComposioHQ/open-claude-cowork /MIT/202601/js
   - Open Source version of Claude Cowork built with Claude Code and Composio Tool Router
   - open-source desktop chat application powered by Claude Agent SDK and Composio Tool Router.
   - Multi-Provider Support - Choose between Claude Agent SDK and Opencode for different model options

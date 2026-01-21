@@ -357,6 +357,7 @@ modified: 2025-02-21T18:20:42.624Z
 - https://github.com/deanxv/done-hub /574Star/apache2/202601/go/js
   - https://github.com/MartialBE/one-hub/wiki/Deployment
   - 基于one-hub二次开发而来的
+  - 优先级大的优先调用，同优先级，基于权重轮询； 想要轮询的话还是同优先级设置权重
   - 目前与原版(最新镜像)的区别
     - 支持反代渠道
     - 支持批量删除渠道
@@ -365,6 +366,31 @@ modified: 2025-02-21T18:20:42.624Z
   - [基于 One-Hub 的二开项目 Done-Hub ](https://linux.do/t/topic/712560)
     - 支持 /gemini 原生生图请求的额外参数透传
     - 支持 gemini-2.0-flash-preview-image-generation 文生图 / 图生图，并兼容 OpenAI 对话接口
+  - [同渠道多API轮询功能 ](https://github.com/MartialBE/one-hub/issues/791)
+    - 用tag就行了
+    - 在一个tag下的渠道，是随机还是轮询？
+    - 随机，但是特定条件失败的渠道回冻结一定时间并切换渠道
+  - [feat(openai)：适配一些兼容openai接口的url，但是版本号不是v1的  · Pull Request · MartialBE/one-hub](https://github.com/MartialBE/one-hub/pull/546)
+  - [已有渠道的模型映射无法正删改查，整个呈现灰色 · Issue · MartialBE/one-hub](https://github.com/MartialBE/one-hub/issues/380)
+    - 是不是填写了 标签。 把标签删了
+    - 这是用于批量管理的。 你添加后要去 渠道标签 修改
+  - [有接入豆包的计划吗?  ](https://github.com/MartialBE/one-hub/issues/323)
+    - 直接用 openai + 模型映射就可以了
+    - 渠道API地址 Base URL 填入 https://ark.cn-beijing.volces.com
+    - ChatCompletions地址 填入 /api/v3/chat/completions
+  - [new-api、one-api、chatnio对比以及令牌限制可用模型 ](https://github.com/MartialBE/one-hub/issues/332)
+  - [通过OneHub接入字节火山引擎教程 ](https://linux.do/t/topic/412857)
+  - [[Bug] 无法对相同模型不同名称(deepseek-r1和deepseek-ai/deepseek-r1)的模型负载均衡调用 ](https://github.com/songquanpeng/one-api/issues/2170)
+  - [希望日志同时记录“用户请求模型”和“实际转发模型” ](https://github.com/MartialBE/one-hub/issues/581)
+    - 配置映射的时候在实际模型名字前面添加＋号log就记录的请求名称
+  - [一站式多模型管理：One API实用指南](https://gameapp.club/post/2024-06-10-oneapi-and-models-tips/)
+  - [不同模型厂商, 同一模型名称 的处理 ](https://github.com/MartialBE/one-hub/issues/562)
+    - 202503: 不同模型厂商, 同一模型名称 这个不行， 因为请求的时候 是通过模型名称来查找渠道的， 用户不能指定 供应商，或许可以用分组来解决
+  - [请教oneapi负载均衡问题 ](https://linux.do/t/topic/108049)
+    - 楼主想要的是一个渠道里多个 key 负载均衡，批量创建完是分成多个渠道
+  - [one-api负载均衡疑问 ](https://linux.do/t/topic/210397)
+  - [百度文心模型调用异常 ](https://github.com/MartialBE/one-hub/issues/208)
+    - failed to get token encoder for model ERNIE-Speed: no encoding for model ERNIE-Speed, using encoder for gpt-3.5-turbo 这个报错是只没有找到这个模型的tokens计算，可以无视
 
 - https://github.com/james-6-23/new_api_tools /202512/python/ts
   - NewAPI-Tool 是一个专为 NewAPI (One API 分支) 设计的现代化增强管理中间件。

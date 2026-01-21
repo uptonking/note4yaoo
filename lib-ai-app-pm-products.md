@@ -190,6 +190,10 @@ modified: 2025-03-22T16:10:24.856Z
 - model-tuning
   - 针对 中文表格/image 优化的模型
 
+- dictionary
+  - 针对可能拼错的词，推荐正确的词, 而不是显示不存在
+
+- 
 - 
 - 
 - 
@@ -467,10 +471,12 @@ modified: 2025-03-22T16:10:24.856Z
 - resources
   - https://github.com/cheahjs/free-llm-api-resources
 
-- claude-latest
-  - [大型测试现场（某个杂鱼登错号了（）） _0112](https://linux.do/t/topic/1435235)
-  - [来点免费Claude ](https://linux.do/t/topic/1436042)
+- news
   - [寻找L站开源作者，UUcode送商业级API额度—— 优质开源项目扶持计划 1228](https://linux.do/t/topic/1370667)
+
+- claude-news
+  - [魔搭免费api接口支持Anthropic API可直接用于claude code附教程 _202508](https://linux.do/t/topic/876488)
+    - 模型库里面有的模型可能不支持，k2好像也不行，试了glm4.5和qwen3都可以
 
 - tips: 公益站不稳定(3个月就倒闭一批), 来源不明可能导致效果差, 需要经常确认和维护, 不要浪费过多时间
   - 🤔 一种思路: tool-call时使用擅长tool-call的模型，分析时使用公益站的聊天优质但无法tool-call的模型
@@ -492,6 +498,8 @@ modified: 2025-03-22T16:10:24.856Z
     - [最新福利羊毛话题](https://linux.do/c/welfare/36)
     - [All-API-Hub：开源AI中转站集中管理和自己的New API增强管理，基于 one-api-hub 大幅重构增强 _202511](https://linux.do/t/topic/1001042)
     - [关于部分公益站支持CC的测试，欢迎更多反馈 ](https://linux.do/t/topic/1162888)
+  - 以反重力为主的公益站: elysiver, 太子公益, hotaru, nyxar(opus)
+  - 以kiro为主的渠道: 随时跑路, duck-free
   - 📌 [duckcoding 公益站](https://free.duckcoding.com/console/personal), 签到
     - [DuckCoding Az-CC，单独开启公益站，只允许L站注册 ](https://linux.do/t/topic/1308120)
     - [status](https://status.duckcoding.com/status/duckcoding)
@@ -573,6 +581,8 @@ modified: 2025-03-22T16:10:24.856Z
   - [ThatAPI](https://gyapi.zxiaoruan.cn/console/personal), 签到
     - 有多个cc分组，IP限制严格(无需gfw)
     - 免费提供 glm flash
+  - [太子公益 API](https://taizi.api.51yp.de5.net/console/personal), 签到
+    - cc支持
   - [Privnode](https://privnode.com/)
     - free分组支持claude-code，也支持gpt-5-nano
     - https://pro.privnode.com/
@@ -593,7 +603,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [黑与白chatAPI](https://ai.hybgzs.com/), 每日转盘
     - 模型丰富: claude/gemini, 但没有gpt5(有mini)
     - 很多openrouter渠道的模型
-    - cc不支持tool, cc渠道经常上架下架
+    - cc不支持tool, **cc渠道经常上架下架**
     - [黑与白chatAPI福利站](https://cdk.hybgzs.com/)
   - [Neb 公益站](https://ai.zzhdsgsss.xyz/console/personal), 签到
     - 采用按量计费，每次0.01，注册送2000次，因为该阶段的初衷就是最大化利用这些将要过期的key。
@@ -614,8 +624,6 @@ modified: 2025-03-22T16:10:24.856Z
     - codex
     - [〔Hotaru公益站〕新的公益站启动 ](https://linux.do/t/topic/1398297)
   - [Huan API](https://ai.huan666.de/console/personal), 签到, 生图模型
-    - cc支持
-  - [太子公益 API](https://taizi.api.51yp.de5.net/console/personal), 签到
     - cc支持
   - [FKAI](https://orchids.fuckai.me/dashboard), 无需签到
     - [【FKAI公益站】 ](https://linux.do/t/topic/1476184)
@@ -885,7 +893,7 @@ modified: 2025-03-22T16:10:24.856Z
     - [【即梦jimeng/dreamina官网2api】10/20更新：双站均支持文生图和图生图  _202509](https://linux.do/t/topic/995691)
     - 即梦 jimeng 和 dreamina 文生图和图生图的官网 api，借鉴了几位大佬的项目，但他们的参数都有些小问题，稍加改进下，稳定性强了不少，目前只测试了文生图和图生图功能
 
-## llm-api-official/router/gateway
+## llm-api-official/router/gateway/aggregator
 
 - 📌 [OpenRouter API Rate Limits ](https://openrouter.ai/docs/api-reference/limits)
   - tldr: rpd-1000 
@@ -1002,14 +1010,15 @@ modified: 2025-03-22T16:10:24.856Z
   - GLM-4.5-Flash Free ✅
   - free: glm-4-flash-250414(20), glm-4-flash(200), glm-4.1v-thinking-flash(5), glm-4v-flash(10), cogview-3-flash, cogvideox-flash, glm-experimental-preview(5)
   - 没找到 用量统计/token统计 的界面
-  - [模型实时调用专属权益 及 标准单价 (很多免费)](https://bigmodel.cn/usercenter/equity-mgmt/user-rights)
+  - [免费模型 - 智谱AI开放文档](https://docs.bigmodel.cn/cn/guide/models/free/glm-4.7-flash)
   - [智谱AI - pricing](https://bigmodel.cn/pricing)
+  - [模型实时调用专属权益 及 标准单价 (很多免费)](https://bigmodel.cn/usercenter/equity-mgmt/user-rights)
   - 免费模型: [福利专区](https://bigmodel.cn/dev/activities/free/glm-4-flash)
+  - [智谱AI开放平台 - 速率限制 - 用户等级限制](https://bigmodel.cn/usercenter/proj-mgmt/rate-limits)
+  - [智谱AI开放平台 - 速率限制 - 通用默认限制](https://www.bigmodel.cn/dev/howuse/rate-limits)
+    - 当前我们限制的维度是请求并发数量（在途请求任务数量）
   - [Z.ai - Rate Limits](https://z.ai/manage-apikey/rate-limits)
     - GLM-4.5-Flash	2
-  - [智谱AI开放平台 - 速率限制 - 用户等级](https://bigmodel.cn/usercenter/proj-mgmt/rate-limits)
-  - [智谱AI开放平台 - 速率限制](https://www.bigmodel.cn/dev/howuse/rate-limits)
-    - 当前我们限制的维度是请求并发数量（在途请求任务数量）
 
 - [KAT-Coder开发工具接入指南-快手万擎-StreamLake](https://www.streamlake.com/document/WANQING/me6ymdjrqv8lp4iq0o9)
   - tldr: rphour-20~30
@@ -1106,6 +1115,11 @@ modified: 2025-03-22T16:10:24.856Z
   - free: free: 百度 ernie-tiny/lite/speed
 
 ## llm-2api
+
+- embedding
+  - [Embedding](https://router.tumuer.me/pricing)
+    - [[Embedding 公益站] 问题+更新+预告 _202601](https://linux.do/t/topic/1421074)
+    - 用 gemini 的 embedding-001 和 text-embedding-004 时容易出现，因为上游接的是 tier1 层的号，所以有限额，可以等段时间或者使用其他模型
 
 - tutorials
   - [手把手带你用上AI神器 - CLIProxyAPI（零：配置详细解说） _202510](https://linux.do/t/topic/1011966)
