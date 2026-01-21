@@ -422,7 +422,21 @@ du -h /System/Volumes/Data | grep "G\t" | sort -rh
 
 - ## 
 
-- ## 
+- ## 💻 苹果平台的开源虚拟机UTM即将迎来几个重大的feature：
+- https://x.com/riverleaf88/status/2013449976224072070
+  1. 原生的苹果虚拟框架支持OpenGL
+  2. QEMU支持OpenGL和Vulkan
+  3. QEMU支持DXVK
+- 在 Mac 虚拟机里流畅运行 Windows 游戏和 3D 软件的时代可能要来了。
+
+- Type 2垃圾还有啥鼓捣的意义， 我觉得稍微高级点的系统/内核功能真的别用Mac，非要在Mac上搞虚拟机不是自己找不痛快吗，又是需要考虑ARM转译问题，又是没有好的无头集群管理方案，内核还不能折腾，图啥呢。
+  - ARM不需要转译啊，一大堆ARM Linux发行版，还都是主流的
+
+- 可以过腾讯的 ace 吗？我判断虚拟机的虚拟化能力就是看看能不能过腾讯的 ace，尤其是三角洲行动
+
+- Windows客户机还是不支持dx加速啊，继续用fusion吧，也是免费的
+  - dxvk不就是拿来干这个的（虽然qemu打游戏我觉得悬
+- 真的想在Mac上打游戏，也不需要虚拟机啊。CrossOver更好
 
 - ## 开发 macOS 应用时，为了给应用添加自动更新功能，集成 Sparkle 这类复杂框架，依赖多、配置繁琐，确实挺麻烦。
 - https://x.com/GitHub_Daily/status/2000385354973815183

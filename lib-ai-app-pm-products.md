@@ -48,6 +48,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 容易通过摄像头获取图像数据
 - 🐛 cons-local-ai
   - 对计算资源的要求高，否则速度慢或效果差
+    - mac的token-gen速度还行，但pp处理速度太慢，不适合coding, 勉强用来chat
   - 不同本地api provider实现的逻辑有差异, 有的api只支持ollama而不支持lmstudio
   - mac设备的prompt-processing速度特别慢, mac studio ultra能加快token生成速度，但context很长prompt很多时，本地的速度太慢了，甚至不能接受
     - 可通过支持外部大模型api来解决
@@ -564,6 +565,11 @@ modified: 2025-03-22T16:10:24.856Z
     - [请问薄荷怎么才能用Claude Code ](https://linux.do/t/topic/1304580)
     - 薄荷的是Antigravity反代出来的
     - 薄荷的 rpm不是有限制么，Cc能跑的动
+  - [GoGoGo公益站](https://api.chengtx.vip/console/personal), 签到可得20~50刀，0.2刀/次
+    - [GoGoGo公益站启航：目标是刷爆gemini小破号池 ](https://linux.do/t/topic/1494070)
+    - rpm-15, 不限用途，可酒馆
+    - 模型: gemini-2.5/3-flash/pro
+    - 渠道是自部署gemini business2api，自己域名邮箱注册的，放了100多个号
   - [WONG公益站](https://wzw.pp.ua/console/topup), 每日签到
     - [WONG公益站](https://wzw.de5.net/console)
     - [WONG公益站](https://newapi.netlib.re/)

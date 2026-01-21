@@ -216,11 +216,13 @@ modified: 2023-08-25T22:31:05.132Z
     - We use a delta encoding approach to updates like source control systems such as git and provide the whole suite of revision control features: branch, merge, squash, rollback, blame, and time-travel. Idea is to provide continuous integration for the data layer. 
     - Basically squash(压扁，挤碎) all the tools and processes mentioned here into a versioned graph
 
-- https://github.com/perkeep/perkeep /apache2/go
+- https://github.com/perkeep/perkeep /7.1kStar/apache2/202601/go/js
   - https://perkeep.org/
   - a set of open source formats, protocols, and software for modeling, storing, searching, sharing and synchronizing data in the post-PC era. 
   - Data may be files or objects, tweets or 5TB videos, and you can access it via a phone, browser or FUSE filesystem.
   - [Perkeep – Open-source data modeling, storing, search, sharing and synchronizing | Hacker News_201712](https://news.ycombinator.com/item?id=15928685)
+    - Everything (photos, tweets, code) is stored as a "blob" in a database or S3 bucket
+    - It offers a FUSE interface to mount your personal archive as a regular folder.
 
 - https://github.com/treeverse/lakeFS /go
   - https://docs.lakefs.io/

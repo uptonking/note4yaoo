@@ -250,6 +250,12 @@ modified: 2025-02-21T18:20:42.624Z
 
 ## deep-research
 
+- https://github.com/666ghj/BettaFish /34.1kStar/GPL/202601/python
+  - https://deepwiki.com/666ghj/BettaFish
+  - 微舆：人人可用的多Agent舆情分析助手，打破信息茧房，还原舆情原貌
+  - 构建了从 BettaFish（数据收集与分析）到 MiroFish（全景预测）的完整链路
+  - 💡 不一定要做通用research, 细分场景的产品也有优点
+
 - https://github.com/bytedance/deer-flow /16.1kStar/MIT/202508/python/ts
   - https://deerflow.tech/
   - community-driven Deep Research framework, combining language models with tools like web search, crawling, and Python execution

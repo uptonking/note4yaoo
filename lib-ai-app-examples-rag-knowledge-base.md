@@ -283,6 +283,24 @@ modified: 2025-11-30T17:27:16.720Z
   - Vector search - Semantic search via Ollama embeddings
   - Hybrid search - Combine vector similarity with full-text search
   - MCP server - Use with Claude, Cursor, and other AI assistants
+
+- https://github.com/Hamza5/file-brain /GPL/202601/python/ts
+  - https://file-brain.com/
+  - open-source desktop tool that lets you search your local files using natural language.
+  - Uses advanced Semantic Search -in addition to full text search- to understand the intent behind your query 
+  - Extracts the content of over 1400+ file formats (PDF, Word, Excel, PowerPoint, images, archives, and more).
+  - Semantic Search: It uses a multilingual embedding model to understand intent. You can search in one language and find docs in another.
+  - OCR Support: Automatically extracts text from screenshots, and scanned documents.
+  - Auto-Indexing: Detects changes in real-time and updates the index instantly.
+  - Read-Only & Safe: File Brain only reads your files to index them. It never modifies, deletes, or alters your data in any way.
+  - All indexing and AI processing happens 100% locally on your machine. 
+  - Python/FastAPI/watchdog for backend and the custom filesystem crawler/monitor.
+  - React + PrimeReact for the UI
+  - Typesense for indexing and search.
+  - Apache Tika for file content extraction.
+  - [Local file search engine that understands your documents (OCR + Semantic Search) - Open Source. : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qiuxko/local_file_search_engine_that_understands_your/)
+  - if you are usin embeddings to search, does that mean you are maintaing a vector database of all files on disk? that would be a huge memory overhead?
+    - Yes that's it. As you can see in the screenshot, the app displays the index size, which is always above 1 Go, because the embedding itself takes around 1.1 Go.
 # rag-examples
 - https://github.com/pymupdf/pymupdf4llm /1.2kStar/AGPL/202511/python/lib
   - https://pymupdf.readthedocs.io/en/latest/pymupdf4llm

@@ -292,6 +292,29 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-to
   - ?
 
+## 0121
+
+- 🤔 is there any popular apps or open source projects that use database as storage and files as cache? git is a good example, because the the internal human-unreadable data is storage in .git, and files are just a cache. Is there any other apps or projects use this architecture or design? and how to make data/db and files sync? I am looking for a good reference for implement my own. find related examples and provide each with description
+- Git — content-addressable object DB + working tree as cache
+  - Git stores everything (blobs, trees, commits) inside .git (object database and refs); the working directory is a checked-out, human-readable cache of that data. You can reconstruct the repo entirely from .git.
+- git-annex — content stored in annex (key/value) tracked by Git refs, working files optional
+  - git-annex stores file contents in a separate annex directory and keeps metadata/location information in Git. Files in the working tree can be pointers or actual content; clones collectively host the distributed key/value store.
+- DVC (Data Version Control) — metadata in Git, large files in remote store, local files as cache
+  - DVC keeps small pointer/metadata files in Git (hashes, remotes, versions). Large data (datasets, models) is stored in remote object stores (S3/GCS/etc). The local filesystem holds a cache/checkout of the currently needed blobs.
+- IPFS (content-addressed block store) — block/object DB + file DAGs + local pin/cache
+  - IPFS stores content-addressed blocks in a blockstore; files are DAGs of those blocks. Nodes pin the blocks they want to keep; a local filesystem view (FUSE mounts, HTTP gateways) materializes files from the blockstore.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
 ## 0120
 
 - [[BUG] Mistral LLM Fails with Tools Due to Role Expectation · Issue · crewAIInc/crewAI](https://github.com/crewAIInc/crewAI/issues/2194)

@@ -98,8 +98,15 @@ modified: 2021-07-20T13:50:23.433Z
   - sourcegraph
   - 支持输出canvas，为了分享或安全
 - 🛢️ 数据存储架构
-  - file-first: vscode, obsidian, notable, hexo(ssg)
-  - db-first: git, joplin, siyuan, 多维表格/nocodb
+  - file-first: vscode, obsidian, notable, ssg(hexo), llamaindex
+    - pros: open and portable, agent-memory
+    - cons: not scale well, conflicts, large-file-read/write
+  - db-first: RAG, git, joplin, siyuan, 多维表格/nocodb, logseq
+    - pros: advanced-query, collab/sync, easier history, client/server-arch, auth, validate, graph-relations
+    - cons: complex-infra
+  - hybrid-file-db
+    - git
+    - hive, iceberg, deltalake
   - 代码文件与数据库紧密结合的方案示例，可参考git/docx-zip
   - 代码与数据库结合来更新应用程序(app/webapp)的方案，可参考aquameta/couchapp/reka/sourcegraph
 

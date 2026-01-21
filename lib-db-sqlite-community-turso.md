@@ -269,7 +269,138 @@ target/debug/limbo database.db
 
 - ## 
 
-- ## 
+- ## How does AgentFS fit into the AI agent sandbox stack?
+- https://x.com/penberg/status/2013658322038067280
+  - The sandbox infrastructure typically uses Firecracker or a similar VM for the agent compute. The integration with AgentFS is straightforward:
+  - 1. AgentFS daemon runs on the host, speaking NFS. The VMs connect directly to it for filesystem access, but the guest kernel caches metadata and data locally. This amortizes access costs against a locally running NFS server.
+  - 2. On the backend, the AgentFS daemon communicates with Turso Cloud to lazily pull and push SQLite database fragments from S3, which contain your entire agent filesystem. This allows the agent to start working instantly wherever the compute is.
+  - That's it, that's the integration. And now you have the benefits of AgentFS, such as snapshotting, resumability, and auditability, as part of the agent sandbox infrastructure.
+
+- The VM gives you isolation for compute, and AgentFS is the safe hands around the filesystem.
+
+- the whole agent in a sandbox thing doesn’t quite make sense to me for some reason. i’d really love to see someone do a whole write up on the tradeoffs around that design and whether it makes sense from first principles or is just a fad caused by claude code being a CLI
+
+- won't the reads and writes go brr when a user does a large copy with a bunch of tiny files and increase the cost for turso cloud?
+
+- ## 🆚🤼 digesting the current “filesystem vs database” debate for agent memory:
+- https://x.com/helloiamleonie/status/2013256958535401503
+  - currently I'm seeing 2 camps in how we build agent memory.
+  - on the one side, we have the “file interfaces are all you need” camp.
+  - on the other side, we have the “filesystems are just bad databases” camp.
+- 📌 "file interfaces are all you need" camp
+  - leaders like anthropic, letta, langchain & llamaindex are leaning towards file interfaces because “files are surprisingly effective as agent memory”.
+  - • anthropic’s memory tool treats memory as a set of files (the storage implementation is left up to the developer)
+  - • langsmith's agent builder also represents memory in as a set of files (the data is stored in a DB and files are exposed to the agent as a filesystem)
+  - • letta that simple filesystem tools like grep and ls outperformed specialized memory or retrieval tools in their benchmarks
+  - • llamaindex argues that for many use cases a well-organized filesystem with semantic search might be all you need
+- agents are good at using filesystems because models are optimized for coding tasks (including. CLI operations) post-training.
+  - that’s why we’re seeing a “virtual filesystem” pattern where the agent interface and the storage implementation are decoupled.
+- 📌 "filesystems are just bad databases" camp
+  - but then you have voices like dax from opencode who rightly points out that “a filesystem is just the worst kind of database”.
+  - swyx and colleagues in the database space warn about accidentally reinventing dbs by solving the agent memory problem. Avoid writing worse versions of: • search indexes, • transaction logs, • locking mechanisms
+  - logseq
+- trade-offs
+- simplicity vs scale
+  - > files are simple and CLI tools can even outperform specialized retrieval tools.
+  - > but these CLI tools don’t scale well & can become a bottleneck.
+- querying and aggregations
+  - > grep can be effective and a hard baseline to beat.
+  - > and if you want to improve retrieval performance with hybrid or semantic search?
+  - > luckily, there are CLI tools available for semantic search.
+  - > the question remains: how well they scale & how effective agents are at using them when they are not as common in the training data.
+  - > also at some point you might want some aggregations as well.
+- plain text vs complex data
+  - > file interfaces and native CLI tools are great for plain-text files.
+  - > what happens when memory becomes multimodal?
+- concurrency
+  - > if you have a single agent accessing one memory file sequentially, no need to think about this.
+  - > if you have a multi-agent system, you want a DB before implementing buggy lock mechanisms.
+- we’re just scratching the surface: security concerns, permission management, schema validation, etc. are more arguments for dbs over filesystems.
+
+- the database is a good place for the artifacts that the agent generates and will consume itself.
+  - The filesystem is a good abstraction to get data to and from tools.
+  - The main "disadvantage" of the database is the access latency. But SQLite solves that - and can be used as a filesystem as well!!!
+
+- cursor also mentioned that they use files for memory.
+
+- Last we made that filesystem is all you need decision, we ended with the obscure tiers of metadata chaining that is still a nuisance (aka hive iceberg deltalake etc)
+
+- LLMs have the same information needs as humans - humans use file systems and databases and all other systems - why LLMs should have only one true tool?
+  - It's very similar to the camera vs lidar argument for self driving cars.
+
+- Perhaps an embeddable dB to satisfy both camps
+  - A grep-like text DSL on Sqlite might just be all you need. 
+
+- why can't we just do a perfect blend of both
+- maybe filesystem can kind of be like a cache with more recently used stuff being stored there vs more persistent storage in DB? seems like the best of both worlds
+
+- Once we reached hundreds of running agents, we moved everything to object storage and gave each agent its own SQLite database.
+
+- Decide by guarantees: need ACID/joins or fast metadata queries → Postgres/SQLite; need blobs, versioning, audit trails → keep files.
+
+- Both camps are right depending on the failure mode. Files are great for inspectability and cheap iteration, DBs win when you need guarantees: schema, dedupe, TTL, audit trail. “Memory” isn’t storage, it’s the rules for what gets written and what gets trusted later.
+
+- Call me simple but I think the main reason why file system is sufficient right now is because agent is pretty much still in “single player” mode. They don’t really care about any other agents memory except themselves, so they don’t have problems that database help solve like indexing or concurrency.
+
+- Why not both? Am from the filesystem camp. We do use an rebuildable index on top, that covers the multi-modal aspect. With new stuff like LEANN(worth taking a look at) the index/DB can be stored in a compressed format used for the search, build permissions, schema etc there.
+
+- I used a database that held the files as text and vectors related to them…. I think this is a very fine distinction. Also under the hood file systems in operating systems are databases in a way. Just with a database of metadata.
+
+- Fascinating debate, filesystems win simplicity, but dbs scale for concurrency/multimodal. In physical AI (human-robot teams), memory needs relational layers (shared patterns over time), hybrid approach (virtual FS + db backend) could handle trust-critical HRI best. Great breakdown
+
+- Files are more resilient in case of random shutdowns out of memory exceptions and corruption. With a database one bit is flipped and you are done
+
+- ## File-based agent memory: great demo, good luck in prod 
+- https://x.com/nicoloboschi/status/2012119323481940119
+  - TL; DR: The "file is all you need" movement benchmarks well because benchmarks are small. In production, you'll hit context rot, multi-hop limitations, and temporal query problems. Files are a necessary foundation - but the claim they're sufficient is marketing. (Full disclosure: I sell the opposite, so I'm biased too.
+- There's a growing consensus in the agent community: files are the universal abstraction. Store conversations in markdown. Drop API specs into text files. Let agents grep their way to knowledge.
+  - LlamaIndex's recent piece articulates this well: instead of building complex tool ecosystems, give agents a filesystem and basic operations (read, write, search). They learn capabilities from files containing instructions. They store history in markdown. They retrieve context through file search.
+  - Letta's benchmark shows a filesystem-based approach hitting 74% on LoCoMo (a conversational memory benchmark) - beating specialized memory tools at 68.5%. Their argument: agents are post-trained on coding tasks, so they're good at filesystem operations. Simpler tools = better performance.
+
+- Here's what I notice: every company pushing "files are all you need" happens to sell file processing infrastructure. 
+  - LlamaIndex pitches their parsing pipeline (LlamaCloud Parse, Extract, Sheets) as the missing piece. "PDFs and Excel files aren't agent-ready - we make them agent-ready." Conveniently, their solution requires their paid parsing service.
+  - Turso's AgentFS proposes treating agent state like a filesystem, implemented as a SQLite database. Guess what they sell? SQLite hosting.
+  - Even Harrison Chase (LangChain CEO) is pushing this narrative: "File systems are a natural and powerful way to represent an agent's state." LangChain sells agent infrastructure - and files are simpler to build tooling around than structured memory.
+- Full disclosure: I work on Hindsight, a structured memory system for agents. So I have the opposite bias - I'm incentivized to argue files aren't enough. 
+
+- Enterprise codebases have several million tokens. A typical monorepo spans thousands of files. You can't stuff it all in. 
+- Agentic retrieval solves this. Give the agent a file map, let it pick what to read. Until
+  - Files over 500KB get excluded
+  - Your repo has 2, 500+ files and indexing degrades
+  - The agent needs multi-hop reasoning across 15 files
+  - Your semantic search returns irrelevant matches because code isn't prose
+
+- Context Rot Is Real
+  - Even within the "official" context limits, performance degrades. The research calls this "lost in the middle" - models perform best when relevant information is at the beginning or end of context, and significantly worse when it's buried in the middle. 
+
+- The Multi-Hop Problem
+  - File-based approaches excel at single-hop retrieval. "Find the function that handles authentication" - grep, done
+  - A naive filesystem search finds chunks about Alice OR infrastructure. It can't traverse the relationship chain directly.
+- Now, there are file-based solutions to this:
+  - Embeddings that capture semantic relationships
+  - Hierarchical file structures encoding relationships
+  - Agent-driven iterative search (read Alice's file, find Atlas reference, follow it). 
+- The iterative approach works - I've used it. The agent reads about Alice, sees "Project Atlas, " searches for that, finds Kubernetes, follows that trail. But it costs multiple LLM calls and search operations per query.
+  - With pre-built entity graphs, that traversal is a single lookup. The trade-off is build-time complexity vs query-time cost. Neither is objectively better - it depends on your query patterns and latency requirements.
+
+- File Overhead (One Data Point)
+  - Manus reported that their early versions used a todo.md file that got constantly rewritten - roughly 30% token overhead on file management.
+  - file-based state management requires constant read-write cycles that consume context budget
+
+- In my experience, the filesystem metaphor works as a foundation. Whether you need more depends on your use case.
+- Where files work well:
+  - Storing raw conversation history
+  - Holding instruction sets and API specs
+  - Grep-based retrieval for exact matches
+  - Projects under ~100K tokens total context
+  - Single-hop queries with clear keywords
+- Where I've needed additional structure:
+  - Temporal queries ("what happened last week") - files don't parse dates
+  - High query volumes where iterative search latency adds up
+  - Long-running agents where context compaction matters
+  - Cross-session entity consistency
+
+- Start with files. You'll probably add vector search, entity tracking, and compaction eventually. The question isn't whether files work - they do. It's whether "just files" scales past demos. I don't think it does, but I'd love to see benchmarks that prove me wrong.​
 
 - ## The filesystem is important as an abstraction because we have 40+ years of tools trained on it.
 - https://x.com/glcst/status/2011790821616386422  

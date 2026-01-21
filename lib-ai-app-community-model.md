@@ -159,6 +159,21 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🧩 这个 Ralph Loop 现在这么流行吗？我今天才仔细去了解一下，原来是一种方法论啊：用一个 bash 无限循环反复喂 prompt 给 AI 编码工具，直到任务完成。
+- https://x.com/vikingmute/status/2013607905040400520
+  - * 每次迭代 AI 都从干净上下文开始（避免上下文污染）。
+  - * 通过 git 历史、progress.txt、PRD.json 等文件持久化状态和学习（比如上轮学到的坑、下轮自动避开）。
+  - * 强调小步迭代：大任务拆成 5-10 分钟可完成的子任务，每次循环只处理一个。
+  - * 程序员只监督了：写好 PRD 和 prompt 后，睡一觉让 Ralph 通宵干活，早上 review PR。
+
+- 我选择用 planning-with-files，除了不能自动循环，同样能持久化状态和经验，自己把关当前态来决定是否重拾，关键还是SOTA模型自己真得烧不起token
+
+- 我试过，有两回都是卡在那不停地写文档，我没有任何命令让他写，他就是写个不停。宁愿去用sdd。
+
 - ## The Bitter Lesson of Agent Frameworks
 - https://x.com/gregpr07/status/2012052139384979773
   - All the value is in the RL'd model, not your 10, 000 lines of abstractions.

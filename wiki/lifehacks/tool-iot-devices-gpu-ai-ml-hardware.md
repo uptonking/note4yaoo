@@ -15,6 +15,8 @@ modified: 2026-01-15T15:44:10.647Z
 - ## 
 
 - ## 
+
+- ## 
 # discuss-news
 - ## 
 
@@ -83,6 +85,13 @@ modified: 2026-01-15T15:44:10.647Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## ["Introducing AMD Ryzen AI Halo, a mini-PC powered by Ryzen AI Max+ that delivers desktop-class AI compute and integrated graphics for running LLMs locally." - AMD is on the move! Would you get one? : r/LovingAI _202601](https://www.reddit.com/r/LovingAI/comments/1qiybwp/introducing_amd_ryzen_ai_halo_a_minipc_powered_by/)
+- unified 128 Gb, lpddr5 8000.
+
+- It's just a minisforum ms max
 
 - ## [Gigabyte Announces Support for 256GB of DDR5-7200 CQDIMMs at CES 2026 : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1q9xn78/gigabyte_announces_support_for_256gb_of_ddr57200/)
 - Dual channel is useless, with model that make use of 256gb the speed'd be unuseablely slow
