@@ -29,4 +29,14 @@ modified: 2022-08-20T10:38:29.185Z
   - An experiment in tracking and diffing versions of modern Microsoft Office files in Git.
   - Modern Office file formats are ZIP archives with XML files in them.
   - This is achieved using a PowerShell script which unpacks the ZIP file to a tracked directory, formats the XML files for nice diff and tracks the formatted files as well.
+# libreoffice
+- https://github.com/unoconv/unoserver /875Star/MIT/202511/python
+  - Using LibreOffice as a server for converting documents.
+  - LibreOffice has a listener mode, where it can listen for commands via a port, and load and convert documents without exiting and reloading the software. This lowers the CPU load when converting many documents with somewhere between 50% and 75%, meaning you can convert somewhere between two and four times as many documents in the same time using a listener.
+  - https://github.com/unoconv/unoconv /legacy
+
+- https://github.com/gotenberg/gotenberg /11kStar/MIT/202601/go
+  - https://gotenberg.dev/
+  - a developer-friendly API to interact with powerful tools like Chromium and LibreOffice for converting numerous document formats (HTML, Markdown, Word, Excel, etc.) into PDF files, and more!
+  - a containerized, developer-friendly API that wraps Chromium, LibreOffice and other tools to convert HTML/Markdown/Word/Excel to PDF.
 # more-office-utils

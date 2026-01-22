@@ -46,6 +46,8 @@ modified: 2021-05-13T03:08:52.583Z
 
 - cli-wrapper
   - claude-code-ui
+  - git-ui
+  - ai: ollama
 
 - tips
   - 🏘️ 可参考各大 coding-agent-cli 的实现, 有第三方开发者在cli上实现web/electron/tauri

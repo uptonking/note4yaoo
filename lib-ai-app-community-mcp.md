@@ -34,6 +34,30 @@ modified: 2025-02-03T10:17:42.052Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## How did MCP protocol win? It's just so ugly and lacking... why can't we just use stdio or http + skills directly? 
+- https://x.com/gregpr07/status/2014032608590491855
+  - Much more freedom for the LLMs + no unnecessary abstractions on top
+- I use skills that include scripts they can call for talking to remote stuff. I'm not sure it's "the way" but it works pretty well for my own made stuff.
+
+- It’s very good for non-devs
+
+- Because it a spec and hosted companies like it over CLIs, 
+  - collect usage data 
+  - auto updating
+  - Local MCPs are useless but remote make the end client easier to work with 
+  - Plus, the ChatGPT apps sdk is an MCP
+
+- For hosted saas, it’s much easier to distribute through MCP than skills.
+
+- I mostly agree. One thing MCP solves is giving LLMs access to authenticated APIs without putting the API keys in context. Hosted MCP servers also solve the evergreen / SaaS-ification of tools, whereas skills have no continuous upgrade process (Claude plugins are a start but far from standard)
+  - Auth matters, but MCP’s real value is a shared contract for stateful tool behavior. that’s the piece scripts or CLIs don’t standardize once agents get long-running...
+
+- I am still a big proponent of skills. but transport isn't the point imo. You can do stdio or HTTP any day. MCP “won” because it adds a server boundary: discoverable tools + schemas + auth + policy in one place. And the line between tools + skills is blurring (you can ship skills via MCP too, e.g. fastmcp 3.0 beta). That makes it portable across clients and makes hosted/commercial tool servers (metering, audit, permissions) a first-class thing enabling monetization.
+
 - ## [Is MCP actually better than REST for building AI agents, or is it just hype? : r/AI_Agents](https://www.reddit.com/r/AI_Agents/comments/1pbe2ua/is_mcp_actually_better_than_rest_for_building_ai/)
   - MCP gives agents structured context and real tool discoverability, which REST never tried to solve. But wrapping APIs into MCP is still extra work. So does MCP deliver enough value to beat REST for agent tooling, or not really?
 - MCP repackages existing REST APIs for LLMs. Most REST APIs aren't natively built for LLMs and don't have to be. They often give too much flexibility for an LLM to handle error free. So I think it's a solid standard to put your REST API into a modular, LLM-ready, reusable package, while still keeping the original REST API.

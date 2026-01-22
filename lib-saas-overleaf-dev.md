@@ -24,6 +24,9 @@ modified: 2024-10-19T09:26:35.210Z
   - jupyter依赖kernel编译python/其他语言
   - overleaf依赖textlive编译latex
   - 网易tango低代码平台会先将用户搭建产生的react组件编译为ast再基于codesandbox在前端运行
+
+- resources
+  - [中国科技云 论文协同编辑服务（Overleaf）](https://www.cstcloud.cn/resources/452)
 # draft
 
 # dev-xp

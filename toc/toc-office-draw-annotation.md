@@ -23,6 +23,11 @@ modified: 2023-11-03T17:43:01.518Z
     - Image annotations exported in JSON format use percentages of overall image size, not pixels, to describe the size and location of the bounding boxes. 
     - Label Studio supports many common and standard formats for exporting completed labeling tasks.
     - coco, csv,json,CONLL2003/spaCy/YOLO
+
+- https://github.com/recogito/text-annotator-js /BSD/202601/ts
+  - A JavaScript library for adding interactive text annotation functionality to web applications.
+  - The Text Annotator data model aligns closely with the W3C Web Annotation Data Model, but with a few key differences to optimize for performance and ease of use. 
+    - Every annotation in Annotorious is represented by a JavaScript object with the following structure
 # annotation
 - https://github.com/apache/incubator-annotator /apache2/202211/ts/inactive
   - https://annotator.apache.org/
@@ -128,6 +133,14 @@ modified: 2023-11-03T17:43:01.518Z
   - Add image annotation functionality to any web page with a few lines of JavaScript.
   - 给图片添加绘制 rect/polygon 的工具条
   - Annotorious integrates seamlessly with OpenSeadragon, allowing you to annotate high-resolution zoomable images
+
+- https://github.com/mire403/VisionForge /202601/ts
+  - VisionForge是一个轻量级、高扩展性的大模型图片训练&描述工具生成器，支持多家大模型API（Google、OpenAI 兼容、DeepSeek、Qwen、GLM、Claude、Doubao、自定义模型）。 它提供多图片上传、提示词优化、自动生成JSONL训练数据、多项信息分析（标签、OCR、场景分类、主色调、置信度、推理原因）等能力。 支持实时统计图表（置信度分布直方图与趋势曲线），适用于AI数据集制作、图像训练样本生成、遥感标注、计算机视觉模型预处理等场景。
+  - Prompt双区交互：主 Prompt 区（用于图片标注/训练生成） + AI 优化助手（输入想法 → 一键优化并填充到主 Prompt）。
+  - 三种输入方式：图片文件 / 图片文件夹（多图） / JSONL（可选，自动识别字段并映射）。
+  - 实时运行视图：点击运行前仍保留数据集网格预览，点击运行后自动切换为实时日志/列表视图，展示每张图片的进度与输出。
+  - 统计与可视化：标签词频、置信度直方图、置信度排序曲线（ranked confidence）、并支持将图导出为图片。
+  - 导出功能：标准 JSONL（每行一条）、可选扩展字段、TXT 报告（统计）及图表导出。
 
 - https://github.com/ZitySpace/react-annotate /ts
   - https://react-annotate-demo.vercel.app/

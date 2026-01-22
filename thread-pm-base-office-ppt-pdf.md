@@ -575,7 +575,18 @@ PDF 文件只记录字符位置，需后期处理将字符组合成行。在表�
 
 - ## 
 
-- ## 
+- ## launch Pencil: INFINITE DESIGN CANVAS for Claude Code
+- https://x.com/tomkrcha/status/2014028990810300498
+  - Superfast WebGL canvas, fully editable, running parallel design agents
+  - Runs locally with Claude Code → turn designs into code
+  - Design files live in your git repo → Open json-based .pen format
+  - you can drop any MD file or image as an inspiration, even an image of nature --- we call them "vibe image" :) and it will draw inspiration from it
+
+- Design files in git is such an obvious-in-hindsight move. No more 'final_v2_actually_final.fig' files floating around. Really curious how the parallel design agents work - are they iterating on variations simultaneously?
+  - yes, they run at the same time, you can run as many "chats" as you want and we are working on ways to make them create full flows in parallel
+
+- Is there any way to bring in an existing website? Design on an existing repo?
+  - two ways, take a screenshot and include it as a context, but you can also point to the code base. You can do that from within the Terminal as well, if you type /mcp, Pencil should show up and you can talk to the canvas from Terminal.
 
 - ## 吉光卡片，这是一款高颜值的文字排版设计 App，提供了丰富的模板以满足各种场景需求，符合我对 iOS 用户的想象。
 - https://x.com/austinit/status/1800390337082597519

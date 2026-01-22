@@ -61,6 +61,9 @@ modified: 2026-01-15T15:43:25.456Z
 
 - If you enable prompt caching, the response time won't increase as a conversation gets longer.
 
+- [Qwen3-Coder-480B on Mac Studio M3 Ultra 512gb : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1qjpwbr/qwen3coder480b_on_mac_studio_m3_ultra_512gb/)
+  - I have been using Qwen coder 480b for a while on the M3 Ultra. It’s slow. I found it works ok with Cline, but context processing is go away and come back in an hour. It definitely works, so for a background task it does a good job. Code quality is much better than smaller models. Output speed is good too, just than darn prompt processing - you’re looking at 100’s of tokens a second so on a 100k context it’s 1000 seconds. The box in general is awesome - being able to have lots of models to hand, and just fire up a different model or two is perfect for R&D. Production wise it’s ok if you have slow agentic flows. Just don’t expect snappy interactions
+
 - ## [How to speed up prompt evaluation? : r/LocalLLaMA _202411](https://www.reddit.com/r/LocalLLaMA/comments/1grwy5p/how_to_speed_up_prompt_evaluation/)
 - Unfortunately Macs are known for being weak with prompt processing part.
   - If you already tried all the baseline ways to speed things up (lower quants, quantized KV cache, etc), the only actionable advice is to cap context size at a level reasonable for your use-case, that way there'll be upper boundary.

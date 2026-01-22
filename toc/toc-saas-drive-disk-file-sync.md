@@ -586,6 +586,14 @@ modified: 2024-03-31T17:45:16.789Z
 - https://github.com/oleksiyk/mongofs /201312/js
   - MongoFS is an implementation of MongoDB GridFS that emulates node.js fs module
 # fs-filesync
+- https://github.com/rclone/rclone /55.1kStar/MIT/202601/go
+  - https://rclone.org/
+  - "rsync for cloud storage" - Google Drive, S3, Dropbox, Backblaze B2, One Drive, Swift, Hubic, Wasabi, Google Cloud Storage, Azure Blob, Azure Files, Yandex Files
+  - https://github.com/RsyncProject/rsync /4.1kStar/GPL/202601/c
+    - https://rsync.samba.org/
+    - open source utility that provides fast incremental file transfer. 
+    - It also has useful features for backup and restore operations among many other use cases.
+
 - https://github.com/fccview/scatola-magica /LGPL/202512/ts
   - A simple, self-hosted file storage/transfer app.
   - a privacy first, lightweight alternative to overcomplicated, bloated file storage solutions, to transfer, manage, encrypt/decrypt your personal files and folders. 

@@ -77,6 +77,14 @@ modified: 2022-11-07T10:25:12.034Z
     - [不懂问一下，佬们，用户分数在哪看呢？ ](https://linux.do/t/topic/1018046)
     - 获得徽章越多，分数越高
   - 查看用户等级进度 [Connect - LINUX DO](https://connect.linux.do/)
+  - [L 站运维成本是多少? 可以透露吗？ ](https://linux.do/t/topic/1501238)
+    - 好奇credit/cdk服务器什么配置的呢
+    - 8c16g
+    - 具体成本始皇也不好说，说出来就上就会有人搞个大新闻，人言可畏，其实成本大家也不需要为始皇考虑，一块儿维护社区文化就是对他做这个社区最好的回报了
+    - 时间和精力才是主要的开销，特别是维持现在的活跃度，管理层下的心血 有目共睹
+    - 如果是很小的论坛，使用tg作为图床即可。 实在付不起图片储存的费用，也可以让用户自己使用图床，然后以markdown，html，bbcode等方式前端显示，南plus就是这样干的
+    - 让用户用自己的图床是很危险的行为，一个xss攻击就够你喝一壶了
+    - 没人的论坛，腾讯云99/年足够了
 
 - [Hugging Face Spaces](https://huggingface.co/docs/hub/en/spaces-overview)
   - Spaces stores your code inside a git repository, just like the model and dataset repositories. 

@@ -16,7 +16,12 @@ modified: 2025-12-18T12:26:35.487Z
 
 - ## 
 
-- ## 
+- ## [Elysiver的CC号池没有余量了 ](https://linux.do/t/topic/1498810)
+  - 如仍想使用 ClaudeCode，请回归 CCR+TOOLITY 的模式
+  - 部分开源模型可直接使用 CCR 无需 TOOLIFY接口
+  - [【Elysia 公益站】公益站大部分2api模型支持CCR | 如何接入ClaudeCode ](https://linux.do/t/topic/920586)
+  - 公益站使用的是 Toolify Fork，根据实践效果进行了些修改，函数调用性能更好，且支持Key和Model的透传
+
 # discuss-reseller
 - ## 
 

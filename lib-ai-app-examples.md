@@ -334,6 +334,7 @@ modified: 2023-02-08T07:20:48.475Z
     - Lemonade is an open source server-router (like OpenRouter, but local) that auto-configures LLM backends for your computer. 
     - The same Lemonade tool works across engines (llamacpp/ONNX/FLM), backends (vulkan/rocm/metal), and OSs (Windows/Ubuntu/macOS).
     - One of our most popular requests was for macOS support, so we shipped it last week
+  - [Support MLX on macOS _202601](https://github.com/lemonade-sdk/lemonade/issues/891)
 
 - https://github.com/lgrammel/ai-sdk-llama-cpp /MIT/202601/ts
   - A minimal llama.cpp provider for the Vercel AI SDK, implementing the LanguageModelV3 interface.

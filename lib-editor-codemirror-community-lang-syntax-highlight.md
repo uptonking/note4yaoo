@@ -27,6 +27,20 @@ modified: 2024-08-11T07:59:35.617Z
 
 - ## 
 
+- ## The CSS highlight API feels of little use to me vs it's complexity, so I'm probably unaware of some important use-cases. 
+- https://x.com/jaffathecake/status/2013904494623334506
+- Basically custom highlights don't participate in layout so they are very cheap to apply, they can be used for things like syntax highlighting or for highlighting search matches.
+  - They should get more love though:
+  1. They just can't be used in input/textarea yet, pretty weird.
+  2. They are repainted for no good reason when you use "display: contents" also, my understanding talking to the person who is assigned to this bug report is that this may be some kind of bug in all pseudo selectors actually, maybe (https://issues.chromium.org/issues/406525485).
+  3. They can break when you use "content-visibility: auto" (https://issues.chromium.org/issues/406795493)
+  4. They are actually not very well optimized, for example a ::highlight(foo) selector presumably should be ~free if no ranges are registered with the "foo" highlight, which is just a lookup somewhere to check, but it very much isn't ~free like that (https://issues.chromium.org/issues/408399389).
+  5. Some kind of API that tells you when a custom highlight is being entered/exited would make it much easier to use them in other cases.
+  6. Perhaps they should be focusable, that would make them more interesting also.
+  - At the end of the day I think they are not necessarily crucial for performance, as vscode seems to be doing fine, but they are nice IMO.
+
+- Replied on the issue too; I would like to use this for text annotation purposes with projects like recogito-js 
+
 - ## [Language parser/syntax tree performance and debouncing - v6 - discuss. CodeMirror _202202](https://discuss.codemirror.net/t/language-parser-syntax-tree-performance-and-debouncing/3976)
   - I’ve been investigating the performance differences between CodeMirror 5 and CodeMirror 6, 
   - and one major difference I’ve noticed with respect to parsing the syntax tree is that in CM5, parsing is debounced while in CM6 it is done synchronously for each `docChanged` transaction/update.

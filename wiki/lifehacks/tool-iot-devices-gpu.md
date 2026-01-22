@@ -118,7 +118,23 @@ modified: 2026-01-15T15:33:18.008Z
 
 - ## 
 
-- ## 
+- ## [8x AMD MI50 32GB at 26 t/s (tg) with MiniMax-M2.1 and 15 t/s (tg) with GLM 4.7 (vllm-gfx906) : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qjaxfy/8x_amd_mi50_32gb_at_26_ts_tg_with_minimaxm21_and/)
+  - MiniMax-M2.1 AWQ 4bit @ 26.8 tok/s (output) // 3000 tok/s (input of 30k tok) on vllm-gfx906 with MAX context length (196608)
+  - GLM 4.7 AWQ 4bit @ 15.6 tok/s (output) // 3000 tok/s (input of 30k tok) on vllm-gfx906 with context length 95000
+  - GPUs cost: 880$ for 256GB VRAM (early 2025 prices)
+  - Power draw: 280W (idle) / 1200W (inference)
+- I'm using ASRock Rack ROMED8-2T (which has 7 PCIe 4.0 ports x16) but there are a lot of other possible solutions (using splitters / risers etc)
+  - Yes, but that MOBO itself cost tons of money, near 1K$, while general consumer latest MOBOs cost 200$... So, if you'd summup , the setup is very far from being affordable..
+
+- Have you used PCI-Splitter? If yes, which model exactly?
+  - yes, it was random chinese hardware from aliexpress (no known brands):
+  - 2x SlimSAS PCIe device adapters
+  - 2x SlimSAS cables 8i
+  - 1x SlimSAS PCIe host adapter (plugged on the motherboard in the PCIe 4.0 port)
+  - (SFF-8654 8i)
+
+- try the --enable-expert-parallel option for vllm, it can speed up output to moe.
+  - every time I tried in the past (with glm 4.6 and other models), the speed was lower (-~5/10%) but the VRAM requirement was lower too, so the KV cache and max context length could be higher... I might give another shot for glm 4.7
 # discuss-intel
 - ## 
 

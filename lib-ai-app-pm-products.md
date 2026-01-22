@@ -11,8 +11,8 @@ modified: 2025-03-22T16:10:24.856Z
 
 # ai-dev-xp
 - tips
-  - 🤔 旧的产品交互逻辑在旧的时代都需要调整, 用户大多不想手动搜索, 直接在聊天框里输入指令，将搜索+后续工作一起执行
-  - 🤔 不要执着于ai框架，主流模型厂商都会推广包含厂商特性的框架及产品(codex/claude-code/gemini-cli), 可专注于 主流 开源业务系统实现 或 厂商无关的实现
+  - 🤔 旧的产品交互逻辑在新的时代都需要调整, 用户大多不想手动搜索, 直接在聊天框里输入指令，将搜索+后续工作一起执行
+  - 🤔 不要执着于ai框架，主流模型厂商都会推广包含厂商特性的框架及产品(sdk + codex/claude-code/gemini-cli), 可专注于 主流 开源业务系统实现 或 厂商无关的实现
   - frontend: ai-sdk/chatbot, assistant-ui, librechat
   - backend: langgraph + python/nodejs
   - aisdk + docs/excel/image
@@ -33,8 +33,9 @@ modified: 2025-03-22T16:10:24.856Z
   - stable model and stable api
   - privacy: code, data, 还可以跳过广告推广
   - tweak different configs for ai-models
+    - 参考cline, 提供针对local场景的精简prompt
   - 避免模型平台的限制rate limits，如并发请求数(rpm/tpm/需要排队)、context长度、最大输出token数、模型版本、模型大小等
-    - no implicit ai degradation/switch: bring your model
+  - no implicit ai degradation/switch: bring your model
   - cost: unlimited tokens, local models支持超大context, 利用本地模型ocr/文生图
     - 文本模型有很多api提供商可选择，ocr模型的api可选择的不多，定制模型只能本地运行
     - 简单的 tool call 使用本地模型更高效, 可考虑将tool call小模型内置在软件中
@@ -53,8 +54,8 @@ modified: 2025-03-22T16:10:24.856Z
   - mac设备的prompt-processing速度特别慢, mac studio ultra能加快token生成速度，但context很长prompt很多时，本地的速度太慢了，甚至不能接受
     - 可通过支持外部大模型api来解决
   - 小模型不够智能
-  - 移动端计算能力差, 速度慢, ipad的M系芯片非gpu方案也不快
   - 不同任务需要不同模型，对于图片问答场景，需要根据硬件切换模型，需要专门优化
+  - 移动端计算能力差, 速度慢, ipad的M系芯片非gpu方案也不快
   - 耗电量大, 对手机端不友好
 
 - 需要针对local本地优化
@@ -64,7 +65,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 针对国内免费api定制的chat/ppt/mermaid: 魔搭, 快手万擎
     - 可以~~fork janai,然后扩展provider~~, janai默认支持openai-like api，已经支持了国内models
   - 利用chrome最新的侧边栏，实现类似cline/roocode的页面ai助理/office编辑
-    - 基于cline-cli的client/server架构，支持多种工具如 wps/飞书/腾讯文档/notion
+    - 基于cline-cli/opencode的client/server架构，支持多种工具如 wps/飞书/腾讯文档/notion
     - 甚至结合文生图
   - distributed ai: 限制显卡生图、计算
 
@@ -82,7 +83,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 甚至可以考虑基于opfs的能力, 让ai实现类似文件转换的功能、python可视化导出, 甚至充分发挥compiler/interpreter的能力
   - 缺点: 输出的code缺乏类似markdown/xml的标准, 难debug/测试
 
-- coding-based ai products
+- coding/claudecode-based ai products
   - 数据分析类，ai写代码、可视化，由代码驱动
   - 🐛 由代码驱动方案的缺点
     - 本地文件数据过大，无法读取完整数据
@@ -193,6 +194,7 @@ modified: 2025-03-22T16:10:24.856Z
 
 - dictionary
   - 针对可能拼错的词，推荐正确的词, 而不是显示不存在
+  - 语料库: exams, wikipedia
 
 - 
 - 
@@ -214,23 +216,24 @@ modified: 2025-03-22T16:10:24.856Z
     - wikipedia zim 自动翻译为中文
     - vector-marketplace, 支持用户选择任意数量的pdf文档创建embeddings, 并发布, 可作为一种变通方案解决数据隐私问题
     - 查看原文pdf-parts时支持仅查看前后几页, 保护原文内容
-  - large pdf workflows: chunking-strategies, reindex, pdf-parts
+  - large pdf rag workflows: chunking-strategies, reindex, pdf-parts
   - 🌐 pdf edit
+    - toc autogen
     - proofreading: 一键检查, 版本历史
     - ✨ 翻译场景的多种布局一键切换: 双栏对比布局, 仅译文布局, 富文本页面布局
     - 甚至可以通过多栏布局的交互，来展示pdf聊天或补充信息，优点是能展示在原文位置
-    - 考虑非多个文档的场景, 类似代码编辑器的 split view 也可以方便核对
+    - 考虑同一文档的使用场景, 类似代码编辑器的 split view 也可以方便查看和核对
     - 方便原文和译文的跳转交互
-    - pdf to word: 显示summary-per-page, 适合教育场景
+    - pdf to word: ~~显示summary-per-page~~, 适合教育场景
     - pdf体验尽量与docs一致，包括view/edit
-    - toc autogen
   - ai
     - split-view: 显示summary-per-page, 适合教育场景
       - summary的交互采用双栏布局交互还是类似comment面板交互需要考虑
-    - progressive doc processing: 能展示文件主页被处理如翻译的进度和内容交互
+    - progressive doc processing: 边处理/翻译，边查看，能展示文件被处理如翻译的进度和内容交互
   - translation+proofreading: 包括pdf文件, 普通文档、网页
-    - 输出不同模型的翻译版本，供用户比对
+    - 输出不同模型的翻译版本，供用户比对, 参考promptfoo
   - 插画复刻: Qwen-Image-i2L, image-to-prompt-to-image, 同时支持浏览comfyui生成图片的元数据、提示词
+    - 根据前文的图片生成风格类似的图片
   - local-optimized
     - 减少并发
     - 减少system-prompt
@@ -473,6 +476,8 @@ modified: 2025-03-22T16:10:24.856Z
   - https://github.com/cheahjs/free-llm-api-resources
 
 - news
+  - [【服务器维护中】白嫖 claude code sonnet，服务器冒烟了 ](https://linux.do/t/topic/1501898)
+  - [【WONG公益站】佬友投喂opus，来蹬 _0122](https://linux.do/t/topic/1502087)
   - [寻找L站开源作者，UUcode送商业级API额度—— 优质开源项目扶持计划 1228](https://linux.do/t/topic/1370667)
 
 - claude-news
@@ -874,12 +879,18 @@ modified: 2025-03-22T16:10:24.856Z
   - [FreeGen 白嫖图片生成器](https://hachimiai.dpdns.org/freegen/)
   - [SoraApi](https://api.67.si/)
     - 不可用
+  - [呜哩AI，一站式AIGC创意平台](https://wuli.art/generate)
 
 - image2api
   - [Antigravity的反代的Nano Banana用不了了 ](https://linux.do/t/topic/1419858/2)
     - 下午都很慢。晚上1点后一般都快些
   - [Libre Assistant](https://libreassistant.vercel.app/)
     - [又一款免费无限用的生图及对话LLM站 ](https://linux.do/t/topic/1418376)
+  - [youmind2api，可以使用大香蕉 ](https://linux.do/t/topic/1363986)
+  - https://github.com/iptag/jimeng-api /GPL/202511/ts
+    - Free AI Image and Video Generation API Service - Based on reverse engineering of Jimeng AI (China site) and Dreamina (international site).
+    - [【即梦jimeng/dreamina官网2api】10/20更新：双站均支持文生图和图生图  _202509](https://linux.do/t/topic/995691)
+    - 即梦 jimeng 和 dreamina 文生图和图生图的官网 api，借鉴了几位大佬的项目，但他们的参数都有些小问题，稍加改进下，稳定性强了不少，目前只测试了文生图和图生图功能
 
 - tutorials-image
   - https://github.com/rere43/image-generator-hybrid
@@ -892,12 +903,14 @@ modified: 2025-03-22T16:10:24.856Z
     - rpd: 30
     - 两款模型分别是 doubao-seedance-1-0-pro-fast-251015 和 doubao-seedance-1-5-pro-251215：前者主打高速视频生成，适合大多数文本或单图生成视频的场景，视频时长为 4–12 秒，最多支持 1 张图片输入，支持全部比例，不支持音频，默认无水印（API 可配置水印）；后者主打高质量视频生成，支持多图输入，画面一致性更强，视频时长同样为 4–12 秒，最多支持 2 张图片输入，支持全部比例，支持音频（默认带音频），默认无水印（API 可配置水印）。
 
-- image2api
-  - [youmind2api，可以使用大香蕉 ](https://linux.do/t/topic/1363986)
-  - https://github.com/iptag/jimeng-api /GPL/202511/ts
-    - Free AI Image and Video Generation API Service - Based on reverse engineering of Jimeng AI (China site) and Dreamina (international site).
-    - [【即梦jimeng/dreamina官网2api】10/20更新：双站均支持文生图和图生图  _202509](https://linux.do/t/topic/995691)
-    - 即梦 jimeng 和 dreamina 文生图和图生图的官网 api，借鉴了几位大佬的项目，但他们的参数都有些小问题，稍加改进下，稳定性强了不少，目前只测试了文生图和图生图功能
+## translation
+
+- 「慕鸢の公益站」 [这是谁的公益站呢？好难猜阿](https://newapi.linuxdo.edu.rs/pricing)
+  - 专门有一个翻译分组，需要创建对应分组的key，超低倍率，不限制并发
+  - [上新沉浸式翻译和codex ](https://linux.do/t/topic/1501277)
+- [cerebras fanyi API](https://fanyi.963312.xyz/pricing)
+  - cerebras 的，目前有200个号
+  - 智普官网的 glm-4.5-flash, glm-z1-flash
 
 ## llm-api-official/router/gateway/aggregator
 
@@ -907,6 +920,11 @@ modified: 2025-03-22T16:10:24.856Z
   - If you have purchased less than 10 credits, you’re limited to 50 :free model requests per day.
   - If you purchase at least 10 credits, your daily limit is increased to 1000 :free model requests per day.
   - If your account has a negative credit balance, you may see `402` errors, including for free models.
+
+- 📌 [Ollama Cloud models](https://ollama.com/search?c=cloud)
+  - Hourly + Weekly limits
+  - Unlimited public models
+  - [Announcing Cloud models · Ollama Blog _202509](https://ollama.com/blog/cloud-models)
 
 - 📌 [Cerebras Inference Rate Limits](https://inference-docs.cerebras.ai/support/rate-limits)
   - tldr: tpd-1m, rpd-14.4K

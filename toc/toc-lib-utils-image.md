@@ -152,6 +152,11 @@ modified: 2023-04-04T22:39:45.442Z
   - https://github.com/EinAeffchen/Omoide /NonCommercial/202511/python/ts
     - Self‑hosted, offline‑capable photo & video library with AI features. No cloud services required. 
     - Everything runs locally after an initial one‑time model setup.
+
+- https://github.com/TeaM-TL/FotoKilof /424Star/MIT/202512/python
+  - GUI for ImageMagick and Wand or Pillow
+  - GUI for the most used (by me) ImageMagick functionality for processing pictures. If ImageMagick or Wand are unavailable, Pillow is in use. There are small limitation, but works in general.
+  - apt-get install python3-pip python3-tk python3-wand imagemagick xclip
 # image-editor
 - https://github.com/ximing/fabric-photo /MIT/202003/js/inactive
   - https://ximing.github.io/fabric-photo/

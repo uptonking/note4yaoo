@@ -109,6 +109,8 @@ modified: 2021-07-20T13:50:23.433Z
     - hive, iceberg, deltalake
   - 代码文件与数据库紧密结合的方案示例，可参考git/docx-zip
   - 代码与数据库结合来更新应用程序(app/webapp)的方案，可参考aquameta/couchapp/reka/sourcegraph
+  - server-first vs client-first
+    - vscode/apitable(前同事liuyi告知)/affine(server-native-rafactor)/cline-cli(从客户端重构为c/s架构) 都从本地计算迁移到了服务端计算
 
 - 🚀 产品落地
   - 侧重表格的cms, 内容创作与管理

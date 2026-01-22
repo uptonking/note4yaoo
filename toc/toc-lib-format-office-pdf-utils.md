@@ -67,6 +67,10 @@ modified: 2022-11-11T10:46:41.519Z
   - locally hosted web based PDF manipulation tool using docker that allows you to perform various operations on PDF files
   - 依赖 Spring Boot + Thymeleaf、pdfbox、itext7、libreoffice转换格式、ocrMyPdf
   - 除了能给PDF打水印之外，还可以轻松批量给扫描的PDF文件瘦身，1秒钟搞定，太好用了
+  - Wraps: PDFtk, Ghostscript, OCRmyPDF, LibreOffice (for conversion)
+    - When you click "Merge," it calls PDFtk. 
+    - When you click "Compress," it calls Ghostscript. 
+    - When you convert Word to PDF, it calls LibreOffice in headless mode.
   - [refactor: move modules under app/ directory and update file paths _202507](https://github.com/Stirling-Tools/Stirling-PDF/pull/3938)
 
 - https://github.com/mrmn2/PdfDing /1.4kStar/AGPL/202511/python

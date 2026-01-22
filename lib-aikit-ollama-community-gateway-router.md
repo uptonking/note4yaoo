@@ -18,6 +18,8 @@ modified: 2026-01-21T04:22:29.956Z
   - 字节火山: [Transformer maxtoken field ineffective for Volcengine API with DeepSeek-v3 model ](https://github.com/musistudio/claude-code-router/issues/213)
     - The maxtoken transformer field in the configuration does not work properly when using the Volcengine API with the DeepSeek-v3 model, resulting in API call failures. However, the same configuration works correctly with the DeepSeek-R1 model.
     - 👀 仅deepseek-v3.2存在此问题, glm-4.7正常
+
+- 支持调整用户分组的展示顺序
 # done-hub/one-hub
 
 # new-api
@@ -53,7 +55,18 @@ modified: 2026-01-21T04:22:29.956Z
 
 - ## 
 
-- ## 
+- ## [功能：需要支持内容审计，将外发及AI响应的内容记录下来 · Issue · songquanpeng/one-api _202405](https://github.com/songquanpeng/one-api/issues/1440)
+- debug模式有日志，可以发es分析。不过debug会影响性能
+  - 环境变量DEBUG=true开启，DEBUG=false关闭
+
+- 我感觉内容审计放在应用端做比较好，让one-api更加纯粹一点
+
+- 这个有隐私问题，建议放到网关层
+
+- 自写渠道，加上百度文本审核
+  - 我可能是需要的，我自己写了渠道，支持了语音生成，bert-vits2等，或者其他get post都可以兼容，但是这语音生成有好有坏，怕被拿去干坏事，了解一下5s的音频gpt-sovits就可以克隆音色了
+  - 因为我要接入自己的tts api（vits-simple-api），然后看了one api的项目代码，发现有基本的支持，我寻思着得知道发过来的请求是啥，才能针对的截取要的进行返回
+  - 就是我通过oneapi的tts调用路径，调用到我的渠道，然后那个渠道再调用一次token计费渠道，再返回音频，上面的截图是token计费渠道的代码
 # discuss-internals
 - ## 
 

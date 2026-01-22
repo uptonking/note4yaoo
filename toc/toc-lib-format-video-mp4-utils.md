@@ -60,7 +60,7 @@ modified: 2024-04-14T12:19:52.096Z
   - The swiss army knife of lossless video/audio editing
   - Lossless cutting of most video and audio formats
   - Fast multi-file workflow (note: no mass/batch export yet)
-  - LosslessCut aims to be the ultimate cross platform FFmpeg GUI for extremely fast and lossless operations on video, audio, subtitle and other related media files. 
+  - LosslessCut aims to be the ultimate cross platform `FFmpeg` GUI for extremely fast and lossless operations on video, audio, subtitle and other related media files. 
   - The main feature is lossless trimming and cutting of video and audio files, which is great for saving space by rough-cutting your large video files
   - Everything is extremely fast because it does an almost direct data copy, fueled by the awesome FFmpeg which does all the grunt work.
 # utils

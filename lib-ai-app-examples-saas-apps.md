@@ -462,6 +462,15 @@ modified: 2025-02-21T17:17:42.225Z
   - Database: PostgreSQL (with Drizzle ORM)
   - Deployment: Vercel (Frontend), EC2 (Backend)
   - Analytics: PostHog, Api-Analytics
+
+## fact-checking
+
+- https://github.com/KeaBase/kea-research /BSL/202601/python/ts/astro
+  - https://keabase.com/
+  - Multi-AI collaboration platform that combines responses from multiple AI models, cross-validates information, and delivers verified, consensus-backed answers.
+  - [[Open Sourse] I built a tool that forces 5 AIs to debate and cross-check facts before answering you : r/LocalLLM](https://www.reddit.com/r/LocalLLM/comments/1qj3l75/open_sourse_i_built_a_tool_that_forces_5_ais_to/)
+    - So you copied pewdiepies council concept. 
+  - https://github.com/karpathy/llm-council
 # cv
 - https://github.com/IDEA-Research/Rex-Omni /1kStar/IDAE/202512/python/华人作者
   - https://rex-omni.github.io/

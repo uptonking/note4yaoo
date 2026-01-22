@@ -595,13 +595,7 @@ modified: 2025-12-19T12:43:21.150Z
   - ocr支持tesseract/EasyOCR/pyocr
   - Poppler PDF Rendering Library
 
-- https://github.com/rdumasia303/deepseek_ocr_app /1.5kStar/MIT/202511/python/js/inactive
-  - A quick vibe coded app for deepseek OCR
-  - React frontend and FastAPI backend
-  - Upload PDF files up to 100MB, Real-time progress tracking for large documents
-  - 左右分栏布局，右侧用bbox标注搜索的实体
-  - 支持图片/pdf
-- https://github.com/neosun100/DeepSeek-OCR-WebUI /279Star/MIT/202512/python/html
+- https://github.com/neosun100/DeepSeek-OCR-WebUI /279Star/MIT/202601/python/vue/提交多
   - 基于 DeepSeek-OCR 模型的智能图像识别 Web 应用, 参考了 deepseek_ocr_app
     - 多语言客户端示例（Python、JavaScript、Go、TypeScript）
     - 首次运行会下载约 7GB 的模型，请耐心等待
@@ -610,19 +604,44 @@ modified: 2025-12-19T12:43:21.150Z
   - 7 种识别模式 - 文档、OCR、图表、图片、查找、自定义prompt等
     - 4 个实战场景（发票提取、批量处理、PDF 处理、表格识别）
   - 上传 PDF 文件后，系统会自动将每一页转换为独立的图片，并保持后续的所有处理逻辑（OCR识别、批量处理等）
-  - Find 模式: 左右分栏布局, 示例效果用bbox标注出查询的内容
+  - 🆚 Find 模式: 左右分栏布局, 示例效果用bbox标注出查询的内容(image形式)
   - Bounding Box Visualization - Find mode automatically annotates positions
   - 多语言支持 - 简体中文、繁体中文、英语、日语
+  - 后端并发优化 - 使用 ThreadPoolExecutor 实现非阻塞推理
+  - 可视化 OCR 进度和队列管理 - 实时队列状态和位置追踪
   - 与 Knowledge-Base-Self-Hosting-Kit/streamdown 示例ui类似
+  - https://github.com/neosun100/HunyuanOCR-WebUI /apahce2/python
+    - 基于腾讯混元OCR的完整Web界面解决方案
+
+- https://github.com/rdumasia303/deepseek_ocr_app /1.5kStar/MIT/202511/python/js/inactive
+  - A quick vibe coded app for deepseek OCR
+  - React frontend and FastAPI backend
+  - Upload PDF files up to 100MB, Real-time progress tracking for large documents
+  - 左右分栏布局，右侧用bbox标注搜索的实体, 支持ocr/describe/find/prompts4种场景
+  - 支持图片/pdf
+
+- https://github.com/th1nhhdk/local_ai_ocr /613Star/apache2/202601/python/ts
+  - An local, offline (after initial setup), portable OCR software that can process images and PDF files, using DeepSeek-OCR AI (running directly on your machine).
+  - Queue system: Allows processing multiple files sequentially.
+  - if GPU is not available, it automatically switches to CPU
+  - Multi language support: English, Vietnamese, Chinese, Japanese, ...
+  - Multiple file format support: Images .png, .jpg, .webp, .heic, .heif and .pdf documents.
+  - Allows selecting page range for processing
+  - Fancy Output: Supports displaying Formatted text instead of raw text, allows keeping formatting for pasting into Word, ...
+  - 🆚 类似grounding(? 缩略图形式) - OCR process illustration: See exactly what the AI detected as OCR progresses (pretty cool).
+  - 3 processing modes:
+    - Standard OCR: Extracts text, does not preserve layout well.
+    - Free OCR: Extracts text, preserve layout better than "Standard OCR".
+    - Markdown Document (keep formatting): Extracts text, attempts to preserve layout (Tables, ...)
 
 - https://github.com/fufankeji/DeepSeek-OCR-Web /531Star/202510/python/ts/inactive
   - 基于 DeepSeek-OCR 的多模态文档解析工具。采用 FastAPI 后端 + React 前端
   - 支持 PDF、图片等多种格式的文档上传和解析
   - 专业的表格识别和图表数据提取功能
   - 将 PDF 内容转换为结构化的 Markdown 格式
-  - 🌰 示例效果双栏布局，bbox覆盖在pdf原文上
+  - 🆚 示例效果双栏布局，bbox覆盖在pdf原文上(pdf形式)
   - 首先需要下载 DeepSeek-OCR 模型权重，可从 Hugging Face 或 魔搭社区（ModelScope） 获取
-  - https://github.com/newlxj/DeepSeek-OCR-Web-UI
+  - https://github.com/newlxj/DeepSeek-OCR-Web-UI /仅简单ocr
 
 - https://github.com/ihatecsv/deepseek-ocr-client /713Star/MIT/202512/python/js
   - A real-time Electron-based desktop GUI for DeepSeek-OCR， 暂不支持webui
@@ -633,14 +652,18 @@ modified: 2025-12-19T12:43:21.150Z
   - 使用针对mac优化的模型 https://huggingface.co/Dogacel/DeepSeek-OCR-Metal-MPS
   - [A quickly put together a GUI for the DeepSeek-OCR model that makes it a bit easier to use : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1ocx27p/a_quickly_put_together_a_gui_for_the_deepseekocr/)
 
+- https://github.com/Cross2pro/DeepSeek-OCR-Dashboard /202512/python/ts/vue
+  - FastAPI + Vite/Vue wrapper around the DeepSeek-OCR model for quick local testing.
+  - PDF & image upload, with automatic PDF page splitting
+  - Progress visualization during uploads/inference so you know it’s working.
+  - Bounding-box overlay for layout/annotation visualization.
+  - History management: View and manage past OCR results.
+  - grounding是图片形式?
+
 - https://github.com/Dogacel/deepseek-ocr-client-macos /MIT/202511/python/js
   - A real-time Electron-based desktop GUI for DeepSeek-OCR
   - [Dogacel/DeepSeek-OCR-Metal-MPS · Hugging Face](https://huggingface.co/Dogacel/DeepSeek-OCR-Metal-MPS)
     - This repository uses the weights from the original DeepSeek-OCR and modifies model to support MPS and CPU inference
-
-- https://github.com/th1nhhdk/local_ai_ocr /apache2/202512/python/ts
-  - An local, offline (after initial setup), portable OCR software that can process images and PDF files, using DeepSeek-OCR AI (running directly on your machine).
-  - Queue system: Allows processing multiple files sequentially.
 
 - https://github.com/miaoxutao123/deepseek-ocr-translate /MIT/202511/python/ts/vue
   - 使用 DeepSeek-OCR 和 AI 模型实现 PDF 文档的准确翻译
@@ -656,23 +679,22 @@ modified: 2025-12-19T12:43:21.150Z
 - https://github.com/matica0902/MLX-Video-OCR-DeepSeek-Apple-Silicon /AGPL/202512/python/js
   - 影片/PDF/圖片 三合一 OCR, 專為 Apple Silicon 優化的全功能 OCR 解決方案
 
-- https://github.com/Cross2pro/DeepSeek-OCR-Dashboard /202512/python/ts/vue
-  - FastAPI + Vite/Vue wrapper around the DeepSeek-OCR model for quick local testing.
-  - Progress visualization during uploads/inference so you know it’s working.
-  - Bounding-box overlay for layout/annotation visualization.
+- https://github.com/mfzzf/deepseek-ocr-openai 
+  - DeepSeek-OCR 模型 OpenAI 兼容接口实现
+  - 支持流式输出，可实时获取识别结果
+  - API 调用示例 (OpenAI 兼容)
 
+- https://github.com/r-uben/deepseek-ocr-cli /MIT/202601/python/ollama
+  - CLI tool for OCR using DeepSeek-OCR model via Ollama. Local processing with zero cloud dependencies.
+  - Bounding box annotations removed
 - https://github.com/benedict2310/DeepSeekOCR-Cli /202511/python
   - A quick test to get deepseek ocr to run on a Mac with either images or pdfs
   - Runs natively on Apple Silicon (M1-M4) using PyTorch MPS acceleration
-  - https://github.com/r-uben/deepseek-ocr-cli
-    - CLI tool for OCR using DeepSeek-OCR model via Ollama. Local processing with zero cloud dependencies.
   - https://github.com/wcpsoft/deepseek-ocr-cli /apache2/202511
     - 基于 DeepSeek-OCR 项目改造，提供了增强功能，增加了对多种文档格式的支持，包括 Word、PPT、Excel 等，并提供统一的命令行接口和Web界面进行处理。
     - 双引擎支持：支持vLLM和Transformers两种推理引擎
     - 模块化架构：采用工厂模式设计，vLLM和Transformers引擎解耦，易于扩展和维护
     - 为了支持办公文档格式转换（Word、PPT、Excel等），需要安装LibreOffice
-  - https://github.com/benedict2310/DeepSeekOCR-Cli /202511/python
-    - Offline OCR and hybrid search for images and PDFs on macOS (Apple Silicon).
 
 - https://github.com/Moskize91/doc-page-extractor /MIT/202512/python
   - Document page extraction tool powered by DeepSeek-OCR.

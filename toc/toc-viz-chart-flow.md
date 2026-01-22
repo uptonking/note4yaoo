@@ -470,7 +470,7 @@ modified: 2020-10-22T10:22:55.878Z
   - https://eurostat.github.io/gridviz/
   - a JavaScript library to visualise gridded data (or any tabular dataset with x/y position) in the browser in a large variety of advanced cartographic styles
   - a JavaScript library to visualise gridded data (or any tabular dataset with x/y position) in the browser in a large variety of advanced cartographic styles
-# flow-ai
+# flow-ai 👾
 - https://github.com/DayuanJiang/next-ai-draw-io /11.3kStar/apache2/202512/ts
   - https://next-ai-drawio.jiang.jp/
   - A next.js web application that integrates AI capabilities with draw.io diagrams. 
@@ -534,6 +534,16 @@ modified: 2020-10-22T10:22:55.878Z
 
 - https://github.com/JerryKwan/drawio-live-editor /202512/svelte
   - An AI-powered online diagram editor based on Draw.io, designed specifically for technical documentation.
+
+- https://github.com/liu-ziting/ThinkFlowAI /202601/ts/vue
+  - https://thinkflow-ai.lz-t.top/
+  - 基于 Vue 3 和 VueFlow 构建的次世代、本地优先（Local-first）AI 驱动思维导图工具
+  - 轻量级“从想法到结构化图谱”的工作台：输入一个核心想法，应用会把它扩展为可浏览的知识图谱（模块/子模块）。每个节点支持继续追问扩展、深挖详情，以及可选的配图生成。
+  - 采用本地优先架构，配置存储在浏览器本地，支持任何 OpenAI 兼容接口，不锁定任何平台。
+  - 核心想法激活：一键生成思维树根基。
+    - 对节点进行 Follow-up，AI 将结合从根节点到当前节点的完整逻辑路径进行推理
+  - [[开源] ThinkFlow AI：本地优先的 AI 思维导图/灵感发散工具（支持自定义 OpenAI 兼容接口） ](https://linux.do/t/topic/1498156)
+    - 输入一个核心想法，AI 自动生成 3–5 个子分支
 
 - https://github.com/Tiledesk/tiledesk-dashboard /MIT/202406/ts
   - https://www.tiledesk.com/

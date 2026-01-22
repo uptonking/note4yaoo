@@ -253,7 +253,9 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
 
 ```sh /llm
 
-cd ~/Documents/repos/ai-ml-llm/done-hub-local && dist/one-api --config config.yaml
+# cd ~/Documents/repos/ai-ml-llm/done-hub-local && dist/one-api --config config.yaml
+
+launchctl stop com.donehub && launchctl start com.donehub
 
 ollama run --verbose gemma3:4b
 OLLAMA_DEBUG=2 ollama serve gemma3:4b
@@ -291,6 +293,16 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
   - ?
 - dev-to
   - ?
+
+## 0122
+
+- `claude "query"` vs `claude -p "query"`:
+  - claude "query" opens the interactive REPL with that query as the initial prompt; 
+  - claude -p "query" runs a one-off (print/SDK) query, prints the result, and exits — useful for scripts or piping.
+
+- 🤔 is there any popular apps or open source projects that is a cli tool wrapper? vlc is a good example, as ffmpeg wrapper. I'm trying to build something similar and need some references. find related examples and provide each with description/github-repo...
+  - ollama
+  - git ui
 
 ## 0121
 
