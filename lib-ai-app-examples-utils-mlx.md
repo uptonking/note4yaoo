@@ -451,9 +451,10 @@ modified: 2025-11-01T10:54:26.044Z
   - What NodeTool Is Not (today)
     - Managed SaaS, SLAs, multi‑tenant
 # examples
-
+- https://github.com/Lakr233/FlowDown /934Star/AGPL/202601/swift
+  - a native AI chat client for Apple platforms, designed for speed, privacy, and power users. 
+  - It provides a fluid, responsive interface to interact with a variety of AI models, right from your iPhone, iPad, and Mac.
 # utils
-
 - https://github.com/waybarrios/vllm-mlx /apache2/202601/python
   - vLLM-like inference for Apple Silicon - GPU-accelerated Text, Image, Video & Audio on Mac
   - vllm-mlx brings native Apple Silicon GPU acceleration to vLLM by integrating: mlx-lm, mlx-vlm, mlx-audio

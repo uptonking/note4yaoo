@@ -40,7 +40,18 @@ modified: 2026-01-15T16:10:18.077Z
 
 - ## 
 
-- ## 
+- ## [Quiet Threadripper AI Workstation - 768GB DDR5 and 160GB VRAM (RTX 5090 + 4x R9700) : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1qkghpk/quiet_threadripper_ai_workstation_768gb_ddr5_and/)
+  - I managed to squeeze in RTX 5090 and four R9700 into a workstation build by fitting some GPUs vertically in the front section. Two power supplies: 1600W for the main system and most of the components, and a smaller 850W power supply for 3 of the Radeons (the power cable is threaded through the system popping out through a small gap left by RTX 5090).
+  - DeepSeek-V3.1-Terminus with context = 37279 tokens: PP = 151.76 tps, TG = 10.85 tps
+  - Motherboard - Pro WS WRX90E-SAGE SE
+  - CPU - AMD Ryzen Threadripper PRO 7975WX
+  - RAM - 8x KINGSTON 96GB DDR5 5600MHz CL46
+  - GPU1 - ASUS TUF GeForce RTX 5090
+  - GPU2 - 4x ASRock Creator Radeon AI Pro R9700
+  - NVMe - 4x Samsung 9100 PRO 2TB
+  - Power1 - Dark Power Pro 13 1600W 80+ Titanium
+  - Power2 - Seasonic FOCUS V3 GX-850, 850W 80+ Gold
+  - Case - Fractal Design Define 7 XL
 
 - ## [为什么ITX架构的短显卡大部分都是Nvidia的，而AMD的高端ITX显卡则一卡难求？ - 知乎](https://www.zhihu.com/question/318806879)
 - ITX 短卡就是一个细分市场, 事实上除了我国有一堆 K39, 鱼潮S3 这样的机箱, 其他国家基本都找不到类似的机箱.

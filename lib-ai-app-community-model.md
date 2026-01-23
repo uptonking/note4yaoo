@@ -29,7 +29,12 @@ modified: 2023-10-30T07:34:03.602Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [Am I the only one who feels that, with all the AI boom, everyone is basically doing the same thing? : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qk8zj1/am_i_the_only_one_who_feels_that_with_all_the_ai/)
+- The AI was trained to regress to the mean and now everything is built by AI so everything now is gonna regress to the mean. You and I and everyone.
+
+- A bunch of amateurs ( or just lazy programmers ) just got their hands on a new toy and they're going down the dunning-kruger curve and they think their prototype is a finished product.
+
+- I find that AIs best use case for me personally is the role of a teacher or an advisor. So damn handy to be able to bounce dumb questions off it while you’re learning something new. Contextual awareness is fantastic for my learning style.
 
 - ## The best way to learn in the new AI era is to use open source projects as references and ask Codex or Claude to re-implement them, 
 - https://x.com/LiMzba/status/2013096172752392584

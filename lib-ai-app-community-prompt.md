@@ -9,6 +9,8 @@ modified: 2024-09-08T18:57:12.231Z
 
 # guide
 
+- tips
+  - 💡 ai推理失败的提示词, 可尝试在后面添加 think/explain step by step
 # blogs
 - 🧑‍🏫 [OpenAI 官方 GPT-4.1 Prompt 指南 - 知乎 _202504](https://zhuanlan.zhihu.com/p/1895544303784294231)
 # discuss-stars
@@ -17,6 +19,11 @@ modified: 2024-09-08T18:57:12.231Z
 - ## 
 
 - ## 
+
+- ## 💡 [A Simple Technique That Makes LLMs 24% More Accurate on Complex Problems : r/PromptEngineering _202504](https://www.reddit.com/r/PromptEngineering/comments/1jov7bi/a_simple_technique_that_makes_llms_24_more/)
+  - "Step-Back Prompting" is an effective solution that leads to dramatic improvements.
+  - The basic idea is simple: Instead of immediately solving a problem, first ask the model to identify what type of problem it's dealing with and which principles apply.
+  - [Step-Back Prompting: Improving AI Problem-Solving by Taking a Higher Perspective _202504](https://medium.com/@the_manoj_desai/step-back-prompting-ff3ff354dc3a)
 
 - ## [Spent 6 months deep in prompt engineering. Here's what actually moves the needle: : r/PromptEngineering _202510](https://www.reddit.com/r/PromptEngineering/comments/1ny2pff/spent_6_months_deep_in_prompt_engineering_heres/)
 - Examples beat instructions 
@@ -59,6 +66,8 @@ modified: 2024-09-08T18:57:12.231Z
   - You guys don’t think right. System prompts are not what you think. They are not rules for the system. It’s stargate.
   - You dial up your destination with your user prompts. The system message is your origin. Your perspective it’s the things you believe as the environment.
 # discuss-toolchain-prompt
+- ## 
+
 - ## 
 
 - ## 

@@ -627,6 +627,7 @@ def slugify(text):
   - I've started evaluating them to find specific models and workflows that performed the best in my specific tasks. I built harbor bench to aid myself in that (as a simpler alternative to lm evaluation harness)
 
 - ## 📄 [Favorite test prompts : r/ollama _202407](https://www.reddit.com/r/ollama/comments/1dtydjc/favorite_test_prompts/)
+  - 💡 ai推理失败的提示词, 可尝试在后面添加 think/explain step by step
 - Converting time zones, or asking for commonly used CLI commands in Linux.
 
 - explain classes in python using the example of a bank. Show a code example with it 
@@ -663,6 +664,8 @@ def slugify(text):
   - storyofstone 芙蓉女儿诔(lei)
 
 - 解释下统计学上的 Simpson's paradox
+
+- Alice (a girl) has 3 brothers. Each brother has 2 sisters. How many sisters does Alice have?
 
 - Jane is faster than Joe. Joe is faster than Sam. Is Sam faster than Jane? Explain your reasoning step by step.
 

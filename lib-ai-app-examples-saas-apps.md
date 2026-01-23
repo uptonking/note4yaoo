@@ -437,6 +437,19 @@ modified: 2025-02-21T17:17:42.225Z
   - Model Agnostic - Works with any model configured in OpenCode
   - Safe by Default - Uses OpenCode's built-in permission system
 
+- https://github.com/workany-ai/workany /apache+LOGO/202601/ts
+  - https://workany.ai/
+  - a desktop AI agent application that executes tasks through natural language. 
+  - It provides real-time code generation, tool execution, and workspace management
+  - Agent Runtime - Powered by Claude Code
+  - Agent SDK - Built on Claude Agent SDK
+  - Sandbox - Isolated execution via Codex CLI
+  - Multi-provider - OpenRouter, Anthropic, OpenAI, custom providers
+  - https://x.com/idoubicc/status/2014630939104776411
+    - 沙箱 - 通过 Codex CLI 进行隔离执行？为啥引入 codex
+    - 因为用户电脑不一定有代码执行环境，比如 node、python，引入沙箱可以跑脚本处理一些简单的任务。
+    - 现在没有内置浏览器，在考虑用沙盒跑 browser-use，还是直接用本地的浏览器。
+
 - https://github.com/fastaistack/OpenChat /MIT/202508/python/inactive
   - https://fastaistack.github.io/OpenChat/
   - 跨平台本地客户端，集成多模型聊天、网络检索、知识库与文档对话，开箱即用、稳定高效。

@@ -218,14 +218,18 @@ modified: 2025-03-22T16:10:24.856Z
     - 查看原文pdf-parts时支持仅查看前后几页, 保护原文内容
   - large pdf rag workflows: chunking-strategies, reindex, pdf-parts
   - 🌐 pdf edit
-    - toc autogen
     - proofreading: 一键检查, 版本历史
+    - 图文混排
+    - 👾 pdf-edit agent
     - ✨ 翻译场景的多种布局一键切换: 双栏对比布局, 仅译文布局, 富文本页面布局
     - 甚至可以通过多栏布局的交互，来展示pdf聊天或补充信息，优点是能展示在原文位置
     - 考虑同一文档的使用场景, 类似代码编辑器的 split view 也可以方便查看和核对
     - 方便原文和译文的跳转交互
+    - toc autogen
     - pdf to word: ~~显示summary-per-page~~, 适合教育场景
     - pdf体验尽量与docs一致，包括view/edit
+    - 统一 文本pdf 和 图片pdf 的体验，代码实现可以不同
+  - history with localsandbox/agentfs
   - ai
     - split-view: 显示summary-per-page, 适合教育场景
       - summary的交互采用双栏布局交互还是类似comment面板交互需要考虑
@@ -294,6 +298,9 @@ modified: 2025-03-22T16:10:24.856Z
 - premium: ad-free, history, multi-comparison, ai-summary-online, auto-update-custom-compare-table
   - rewards: local-speed-uploads, 参数补充
   - ? api-usage? remote-control?
+
+- 测试各项功能的参考
+  - https://x.com/Lakr233/status/2014354022573178985
 
 - bench-naming
   - modelpedia
@@ -589,6 +596,8 @@ modified: 2025-03-22T16:10:24.856Z
   - [Elysiver](https://elysiver.h-e.top/console/personal), 站内签到
     - 支持embedding model
     - [模型健康度监控](https://elysiver.h-e.top/model-health)
+    - [Elysiver 添加 Nanobanana Pro 啦 _202601](https://linux.do/t/topic/1506018/16)
+      - 是 business 2api
   - [ThatAPI](https://gyapi.zxiaoruan.cn/console/personal), 签到
     - 有多个cc分组，IP限制严格(无需gfw)
     - 免费提供 glm flash
@@ -608,6 +617,11 @@ modified: 2025-03-22T16:10:24.856Z
     - Claude和gpt 暂时不支持工具调用, gemini模型没有pro
     - API 调用频率限制为 12RPM，公益站永久免费，采用公平限流策略以保障服务稳定
     - 别玩至尊场，1000积分一次警告扣16x，风险太高; 高级场的高积分也可以获得高收益
+  - [Hotaru API](https://api.hotaruapi.top/console/personal)，签到, 不定期清理
+    - codex
+    - [〔Hotaru公益站〕新的公益站启动 ](https://linux.do/t/topic/1398297)
+  - [Huan API](https://ai.huan666.de/console/personal), 签到, 生图模型
+    - cc支持
   - [我爱996公益](https://529961.com/console)
     - [我爱996公益附属站 - 每日签到领取奖励](https://hub.529961.com/)
     - [【公益站我爱996一次】测试上线已接入LinuxDo ](https://linux.do/t/topic/1147448)
@@ -631,11 +645,6 @@ modified: 2025-03-22T16:10:24.856Z
   - [FovtAPI](https://api.voct.top/console)
     - 模型旧，模型少
     - [NewAPI签到系统](https://gift.voct.top/dashboard/checkin), ~~已失效~~
-  - [Hotaru API](https://api.hotaruapi.top/console/personal)，签到, 不定期清理
-    - codex
-    - [〔Hotaru公益站〕新的公益站启动 ](https://linux.do/t/topic/1398297)
-  - [Huan API](https://ai.huan666.de/console/personal), 签到, 生图模型
-    - cc支持
   - [FKAI](https://orchids.fuckai.me/dashboard), 无需签到
     - [【FKAI公益站】 ](https://linux.do/t/topic/1476184)
     - 额度每天刷新 

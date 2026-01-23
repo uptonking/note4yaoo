@@ -153,6 +153,14 @@ modified: 2023-04-04T22:39:45.442Z
     - Self‑hosted, offline‑capable photo & video library with AI features. No cloud services required. 
     - Everything runs locally after an initial one‑time model setup.
 
+- https://github.com/hsa00000/urocissa /MIT/202601/rust/ts/vue
+  - https://hsa00000.github.io/urocissa/
+  - https://demo.photoserver.tw/
+  - a self-hosted photos gallery designed to serve massive collections, capable of handling millions of images and videos.
+  - The goal of this project is to efficiently serve one million photos on a 4 GB RAM server, providing smooth scrubbable scrolling, infinite photo streams, and instant search and selection, without waiting for the entire database to load in the browser.
+  - Memory Efficient: Even with the entire database cached in memory, both the standard demo and the one-million-photo demo can run seamlessly on a single server with just 4 GB of RAM.
+  - Infinite Photo Stream: Experience endless scrolling without pagination. No lazy loading needed. Urocissa uses advanced virtual scrolling to serve one million photos, overcoming the DOM height limit of 33, 554, 400px (see TanStack/virtual#616).
+
 - https://github.com/TeaM-TL/FotoKilof /424Star/MIT/202512/python
   - GUI for ImageMagick and Wand or Pillow
   - GUI for the most used (by me) ImageMagick functionality for processing pictures. If ImageMagick or Wand are unavailable, Pillow is in use. There are small limitation, but works in general.

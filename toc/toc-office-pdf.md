@@ -700,7 +700,15 @@ modified: 2021-01-04T17:26:43.784Z
 - https://github.com/sumatrapdfreader/sumatrapdf /14.7kStar/GPL/202505/C
   - http://www.sumatrapdfreader.org/
   - SumatraPDF reader for windows only
-# pdf-doc/rag 👾
+# pdf-ai 👾
+- https://github.com/yeahhe365/InsightPDF /MIT/202601/ts
+  - https://insightpdf.pages.dev/
+  - 基于 AI 的 PDF 智能助手，支持见解提取、内容总结和智能文档搜索
+  - 基于 Google Gemini 多模态模型构建的智能文档助手，支持精确的视觉定位与边框高亮。
+  - 视觉定位 (Visual Grounding) AI 不仅回答问题，还会自动跳转到 PDF 对应页面，并用红框高亮显示答案来源（支持文本段落、图表、数据表格）
+  - 聊天记录和设置均存储在浏览器本地（LocalStorage/IndexedDB），只需配置 Key，无需担心数据泄露。
+  - PDF 渲染: React-PDF
+# pdf-doc/rag 🔗
 - https://github.com/docling-project/docling /39.3kStar/MIT/202509/python
   - https://docling-project.github.io/docling
   - Docling simplifies document processing, parsing diverse formats

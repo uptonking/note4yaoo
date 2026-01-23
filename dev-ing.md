@@ -289,10 +289,22 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
   - translation: 一键翻译 pdf/ppt
   - reuse bg/graphics/fonts
 
-- dev-log
-  - ?
 - dev-to
   - ?
+- dev-log
+  - ?
+
+## 0123
+
+- [Some love for MacOS gpu · Issue · microsoft/onnxruntime _202207](https://github.com/microsoft/onnxruntime/issues/12252)
+  - onnxruntime-gpu depends on CUDA.
+  - Nvidia only provide CUDA downloads for two operating system: Linux and Windows. 
+  - macOS users need to use coreml for GPU acceleration, or webgpu which we are still developing the support.
+
+- dev-to
+  - ocr api as openai api
+- dev-log
+  - ocr solution: deepseek-ocr api as openai api
 
 ## 0122
 

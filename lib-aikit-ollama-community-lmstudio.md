@@ -23,6 +23,10 @@ modified: 2026-01-14T18:58:32.523Z
 
 - 是否支持split-chat
 
+- OllamaBench ported to lmstudio
+  - upload results
+  - 处理thinking loop的场景
+
 - 针对国内消费级显卡的产品
   - 摩尔线程
   - 华为昇腾

@@ -717,6 +717,18 @@ modified: 2025-02-21T18:20:42.624Z
     - Yes, it does, and we have several examples.
     - Local Models via LM Studio can easily be adapted for image input too.
 
+- https://github.com/Laszlobeer/llm-tester /202507/python/inactive
+  - benchmarking tool for evaluating Ollama language models. 
+  - Measure performance metrics including latency, throughput, and token generation speed through a sophisticated PyQt5 GUI.
+  - Concurrent Benchmarking: Test with up to 10 simultaneous requests
+  - 100+ Diverse Prompts: Pre-configured benchmark questions
+  - Summary table shows aggregate metrics
+    - Latency
+    - Tokens/s
+    - Throughput
+  - [Introducing OllamaBench: The Ultimate Tool for Benchmarking Your Local LLMs (PyQt5 GUI, Open Source) : r/ollama _202507](https://www.reddit.com/r/ollama/comments/1mbdd4a/introducing_ollamabench_the_ultimate_tool_for/)
+    - What would be cool is to run a test prompt on several LLMs at once. Grid Search does it, but we don’t have the benchmarks (and it’s broken right now for OS X).
+
 - https://github.com/dezoito/ollama-grid-search /896Star/MIT/202511/rust/ts
   - [Grid Search on Large Language Models using Ollama and Rust  _202312](https://dezoito.github.io/2023/12/27/rust-ollama-grid-search.html)
   - multi-platform desktop application to evaluate and compare LLM models, written in Rust and React.
@@ -725,6 +737,18 @@ modified: 2025-02-21T18:20:42.624Z
   - Automatically fetches models from local or remote Ollama servers; 
   - A/B test different prompts on several models simultaneously; 
   - Allows limited concurrency or synchronous inference calls (to prevent spamming servers); 
+
+- https://github.com/ianarawjo/ChainForge /2.9kStar/MIT/202510/python/ts
+  - https://chainforge.ai/docs
+  - https://chainforge.ai/play/
+    - The web version of ChainForge has a limited feature set.
+  - open-source visual programming environment for battle-testing prompts to LLMs.
+  - ChainForge is a data flow prompt engineering environment for analyzing and evaluating LLM responses. It enables rapid-fire, quick-and-dirty comparison of prompts, models, and response quality that goes beyond ad-hoc chatting with individual LLMs.
+  - Query multiple LLMs at once to test prompt 
+  - Compare response quality across prompt permutations, across models, and across model settings to choose the best prompt and model for your use case.
+  - Setup evaluation metrics (scoring function) and immediately visualize results across prompts, prompt parameters, models, and model settings.
+  - Use AI to streamline this entire process: Create synthetic tables and input examples with built-in genAI features, or supercharge writing evals by prompting a model to give you starter code.
+  - ChainForge is built on ReactFlow and Flask.
 
 - https://github.com/Arize-ai/phoenix /8.2kStar/Elastic/202601/python/ts/对比表/lowcode
   - https://arize.com/docs/phoenix#evaluation

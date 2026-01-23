@@ -76,6 +76,7 @@ modified: 2025-11-18T13:22:22.078Z
 - glm-4.7-flash-30b-a3b
   - GLM-4.7-Flash-MLX-4bit 的版本容易陷入thinking loop
     - loop时的thinking内容没有遵循带step的thinking过程
+    - 💡 实测官方参数配置不好用, mlx-4bit适合 temperature-0.7
   - 🌹thinking的内容非常agentic, 带有明确的step
     - request analysis > Brainstorm > draft res > refine res > revise > polish > response
 
@@ -210,11 +211,6 @@ modified: 2025-11-18T13:22:22.078Z
 - https://huggingface.co/AIDC-AI/Ovis-Image-7B
   - https://github.com/AIDC-AI/Ovis-Image
   - a 7B text-to-image model specifically optimized for high-quality text rendering
-
-## ocr
-
-- deepseek-ocr
-  - 极少数的场景，会将图片中的英文翻译为中文输出, 并且LOOP
 
 ## translation 🌐
 

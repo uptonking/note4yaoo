@@ -111,6 +111,7 @@ modified: 2021-07-20T13:50:23.433Z
   - 代码与数据库结合来更新应用程序(app/webapp)的方案，可参考aquameta/couchapp/reka/sourcegraph
   - server-first vs client-first
     - vscode/apitable(前同事liuyi告知)/affine(server-native-rafactor)/cline-cli(从客户端重构为c/s架构) 都从本地计算迁移到了服务端计算
+    - codesandbox从nodebox(纯浏览器客户端)转向devbox(服务端)
 
 - 🚀 产品落地
   - 侧重表格的cms, 内容创作与管理

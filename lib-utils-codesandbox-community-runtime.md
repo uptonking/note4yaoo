@@ -14,6 +14,55 @@ modified: 2024-05-12T17:20:03.132Z
 
 - ## 
 
+- ## 🧩🚀 Today we open sourced Localsandbox, a lightweight library that gives agents a sandboxed filesystem with safe bash and code execution. _202601
+- https://x.com/vimota/status/2014009354614132912
+  - [Localsandbox: A Lightweight Agent Sandbox _202601](https://coplane.com/perspectives/localsandbox)
+
+```
+┌─────────────────────────────────────────┐
+│             Your Agent                  │
+├─────────────────────────────────────────┤
+│           Localsandbox API              │
+├──────────┬──────────┬───────────────────┤
+│ just-bash│ Pyodide  │                   │
+│  (bash)  │ (python) │                   │
+├──────────┴──────────┤                   │
+│      AgentFS        │    SQLite DB      │
+│  (virtual filesystem)                   │
+└─────────────────────────────────────────┘
+```
+
+- As part of that, I wanted to cover the recent history of agent harnesses and why we might want to use agent sandboxes at all.
+- We can think of the evolution of agent techniques in three stages:
+- Prompt engineering and RAG
+  - Before  there were agents, tools, harnesses, and sandboxes, there were just  LLMs with a simple API: text in → text out.
+  - You'd pass in some context  and instructions and the LLM would generate a response. 
+  - Products that  used this needed to carefully craft the model's prompt, often using  techniques like RAG to inject the relevant context. It wasn't long until  folks found it limiting to have to provide all the information the LLM needed upfront.
+- Tool calling (the start of "agents")
+  - Why couldn't the LLM request the information it needed? And even more—why can't the LLM take action based on my request? That quickly led to the  idea of tools: let's inform the LLM that it has a set of methods it could call if it needs to fetch information or take action to fulfill the request.
+  - But LLMs fundamentally can only output text, so calling these tools, of  course, needs to be done through text as the interface. We developed  techniques for how the LLM could signal to the system that it wanted to  make a tool call—a (typically JSON) spec that agents could use to call a  tool and pass parameters, which the harness could parse, perform the  action, and then return the result to the agent.
+  - This was really powerful. We could now design custom tools that an agent  would need to perform a particular task. We could wrap APIs, call  databases, perform computation, and even allow the agent to request human-in-the-loop interventions.
+  - This is also how MCP emerged: why have every AI engineer write the same  tools wrapping APIs when we can expose APIs through a standard that  automatically generates tools the agents know how to call. Security and  privacy concerns emerged ("wait—the agent can call these APIs to do  something I didn't intend!") but since you were writing the tools  yourself, you could largely control the blast radius during tool development.
+- Filesystem and code execution
+  - More improvements emerged: instead of writing custom tools for file search, just let the agent run grep; rather than testing the program and pasting in errors, let the agent  run the linting, tests, and the code directly. 
+  - Giving the coding agent the ability to run bash meant that it could be the developer, including  writing and running its own tools.
+  - You no longer needed to think ahead of every possible tool the agent could  need—the agent could come up with those tools just-in-time. Now... that  also means it could run `rm -rf /` on your system and cause a lot of trouble, so coding agents make sure  to ask you for permission any time they want to run something (unless you're brave enough to use YOLO mode).
+  - From these simple primitives and the models being trained on their usage, emerged incredibly powerful coding agents that could run for hours to  complete long horizon tasks. 
+  - But why should they be limited to software  development? Couldn't other tasks benefit from these powerful harnesses?
+- Beyond software development
+  - It turns out that—yes!—all sorts of tasks benefit from the agent being  able to read and write files, including programs that it could then run.
+  - This lets agents be armed with just a few very general tools, rather  than requiring custom-designed tools per task or domain.
+- The sandboxing problem
+  - since coding agents ran natively on the  user's machine, the users were responsible for the risk of unsafe  operations. 
+  - Prior to AI, software had a very similar problem: untrusted code execution  and isolation. The browser (i.e., V8, WASM), containers (i.e., Docker), and sandboxed VMs (i.e., gVisor, Firecracker) were different sandboxing  solutions to this class of problems. 
+  - The same technologies can be used  to sandbox agents, and various providers are already focusing on this  particular space: Modal, Azure Container Apps Dynamic Sessions, Google Cloud Run, and AWS AgentCore Code Interpreter.
+- Localsandbox
+  - Localsandbox is a lightweight alternative to these that can be used if you're  developing locally or don't need the full guarantees of these providers.
+  - Its foundation is AgentFS, a virtual  filesystem backed by SQLite, making it portable and easy to backup and resume.
+  - On top of that, we get the ability to run bash on the filesystem through @vercel 's just-bash project—a TypeScript interpreter of a subset of bash over a virtual filesystem like AgentFS.
+  - Finally, we want the agent to be able to write and execute code, so we use Pyodide (run through Deno) to execute a WASM-sandboxed version of Python with the AgentFS filesystem mounted to it so that the Python code can read  and write to files.
+  - All of this together gives you the ability to expose a pseudo-VM to your  agent in a lightweight and highly portable way.
+
 - ## ✨ I'm introducing my holiday project: just-bash _20251228
 - https://x.com/cramforce/status/2004992618913251786
   - just-bash is a pretty complete implementation of bash in TypeScript designed to be used as a bash tool by AI agents. Because it turns out agents love exploring data via shell scripts, even beyond coding.

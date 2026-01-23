@@ -415,6 +415,14 @@ modified: 2023-02-08T07:20:48.475Z
   - https://x.com/pamelafox/status/1801678164969853034
     - To make it super easy for anyone to try out Ollama (esp teachers/students)
     - I've included an example notebook that walks through completions, prompt eng, few-shots, and RAG
+
+- https://github.com/nicklansley/OllamaImageGenerator
+  - web-based image generator using Ollama
+  - a simple proxy server for the Ollama Image Generator, which serves an HTML interface and forwards API requests to the Ollama API. 
+  - The purpose of this is to overcome the CORS policy of many browsers which prevents direct access to the Ollama API from a local HTML file
+  - The server listens on port 8080 and forwards requests to the Ollama API located at http://localhost:11434/api/generate.
+  - The server acts as a proxy, forwarding requests from the HTML interface to the Ollama API and returning the generated images to the HTML interface in 'stream' format so that the progress of the image generation is displayed as it is being generated.
+  - [Ollama Image Generator : r/ollama _202601](https://www.reddit.com/r/ollama/comments/1qkokhv/ollama_image_generator/)
 # webgpu-ai
 - https://huggingface.co/spaces/ibm-granite/Granite-4.0-Nano-WebGPU/tree/main /202510/ts
   - the demo uses Transformers.js to run the models 100% locally in your browser with WebGPU acceleration.

@@ -875,6 +875,10 @@ modified: 2025-11-30T17:27:16.720Z
 - https://github.com/RapidFireAI/rapidfireai /apache2/python/ts
   - https://rapidfire.ai/
   - RapidFire AI is a new experiment execution framework that transforms your AI customization experimentation from slow, sequential processes into rapid, intelligent workflows with hyperparallelized execution, dynamic real-time experiment control, and automatic system optimization.
+
+- https://github.com/OpenBMB/UltraRAG /2.6kStar/apache2/202601/python/js
+  - https://ultrarag.openbmb.cn/
+  - the first lightweight RAG development framework based on the Model Context Protocol (MCP) architecture design
 # graph-knowledge
 
 ## graph-examples

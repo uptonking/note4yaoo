@@ -11,20 +11,23 @@ modified: 2025-12-19T12:43:21.150Z
 
 - tips-ocr
   - popular-on-github: tesseract/OCRmyPDF(71k), PaddleOCR(67k), MinerU(51k), DeepSeek-OCR(21k)
-  - 文档的使用频率不如图片, ocr/translation的方案要考虑图片场景
-  - vlm流式输出的方案配合编辑器流式构建内容的ux体验会很好
-  - 传统的ocr方案都还没有结合llm来优化效果，而是应用层的数据处理管线开始用llm来提高质量和准确度
-  - 🐛 含图片内容的ocr结果是 markdown + base64图片
+  - 图片的使用场景比文档更高, ocr/translation的方案要考虑图片场景
+  - 传统的ocr方案还没有结合llm来优化效果，而是应用层的数据处理管线开始用llm来提高质量和准确度
+  - 🐛 ? 含图片内容的ocr结果是 markdown + base64图片
   - ⏳ 文本/富文本/原文的版本管理如何设计
   - 批量执行ocr的架构可参考papermerge/paperless
+  - ocr API的用法还可以参考 基于llm的文本提取, 基于openai api来提取文本/ocr
+  - ~~vlm流式输出的方案配合编辑器流式构建内容的ux体验会很好~~, 前端交互重要性不高
 
 - pdf/ppt/image-editor
   - 编辑的一种思路: 图片 > html > svg, 其中图片转html的思路可参考 design to code
     - 此时编辑ppt的需求可转换为编辑html代码
+    - 基于代码的方案交互性强
   - 编辑的一种思路: 生成图片后，(用inpaint)remove所有文字，然后再把文本渲染到bbox
+    - 基于图片的方案方便缩放
   - 编辑的一种思路: 直接生成svg，然后右键转换为形状
-  - 不要执着于pdf/ppt编辑器, 现在市场需求最大的是nano-banana文生图的编辑
-  - ocr方案相对于代码方案的优点，用户能直接拖拽修改文本/图形
+  - 不要执着于pdf/ppt编辑器, 现在市场需求很大的是nano-banana文生图的编辑
+  - 基于ocr的方案 相对于 基于代码的方案 的优点，用户能直接拖拽修改文本/图形
   - ❓ 是否要对ppt格式的pdf单独处理，因为包含的文本较少，背景图片及图形可能不完整
 
 - 💡 pdf的文本化
@@ -62,6 +65,7 @@ modified: 2025-12-19T12:43:21.150Z
   - gui-wrapper工具可参考文件管理器的逻辑
 
 - resources
+  - [Supercharge your OCR Pipelines with Open Models _202510](https://huggingface.co/blog/ocr-open-models)
   - [Technical Analysis of Modern Non-LLM OCR Engines _202512](https://intuitionlabs.ai/articles/non-llm-ocr-technologies)
 # vlm-ocr-solutions
 - qwen3-vl
@@ -104,7 +108,7 @@ modified: 2025-12-19T12:43:21.150Z
 - https://github.com/gyunggyung/docling-translate /apache2/202512/python
   - https://gyunggyung.github.io/docling-translate/
   - Advanced PDF/Document Translator with interactive comparison. Built on IBM Docling.
-  - 双栏对比布局, 能高亮同一段文本
+  - 双栏对比布局, 能高亮同一段文本, 翻译悬浮显示
 
 - https://github.com/chaosen315/AIwork4translator /MIT/202512/python
   - 一个专业的文档翻译工具，通过专有名词识别和正则过滤方法，确保大模型翻译时准确使用专业术语。它能够智能处理各种格式的技术文档，保留原文格式和专有名词，提供高质量的翻译结果
@@ -116,11 +120,6 @@ modified: 2025-12-19T12:43:21.150Z
   - 双栏Markdown编辑器：WebUI中提供左右分栏的原文/译文实时展示功能
   - 实时翻译进度展示：翻译过程中实时显示当前处理的段落数/总段落数
   - 中断保护与恢复：支持 Ctrl+C 安全中断，自动保存进度与未翻译内容
-
-- https://github.com/jiananlan/PDFreformertool /AGPL/202507/python/inactive
-  - pdf文档翻译并重排版软件，支持利用llm-api进行翻译
-  - 利用 LLM 的高级语义处理能力，结合 pymupdf 和 pdfplumber 等库，提取 PDF 内容并生成高质量翻译结果。翻译数据存储在 MongoDB 中，同时实验性支持 HDF5（T5.py）作为替代存储方案。
-  - 格式保留：基于 `python-docx` 和 docxtpl 重构文档格式，确保翻译后文档格式一致。
 
 - https://github.com/PDFMathTranslate-next/PDFMathTranslate-next /2kStar/AGPLv3/202512/python
   - https://pdf2zh-next.com/zh/index.html
@@ -207,7 +206,7 @@ modified: 2025-12-19T12:43:21.150Z
   - translates English PDF files into Japanese, preserving the original layout
   - This repository offers an WebUI and API endpoint that translates English PDF files into Japanese, preserving the original layout.
   - For PDF layout analysis, using DiT.
-  - For PDF to text conversion, using PaddleOCR model.
+  - For PDF to text conversion, using `PaddleOCR` model.
   - For text translation, using FuguMT(CC-SA) model from HuggingFace.
   - https://github.com/ppisljar/pdf_translator /202409/与上面架构类似
     - offers an WebUI and API endpoint that translates PDF files using openai GPT, preserving the original layout.
@@ -237,16 +236,6 @@ modified: 2025-12-19T12:43:21.150Z
     - 本地免费跑（我们最推荐的）
   - https://github.com/oomol-lab/epub-translator
     - uses AI large language models to automatically translate EPUB e-books while 100% preserving the original book's format, illustrations, table of contents, and layout. 
-
-- https://github.com/zstar1003/FreePDF /300Star/AGPL/202512/js
-  - 一个免费的PDF文献阅读器，支持将各语言的PDF文献转成中文，并支持接入大模型基于文献内容进行问答。
-  - 翻译完的PDF文件，会在其对应目录下生成-mono.pdf(翻译文件)
-  - 支持图片型PDF吗，比如扫描件？
-    - 回答： 不支持，本质上是借助`pdf2zh`检测文本块内容，再进行翻译替换，图片型无法直接替换，会导致内容重合叠加。
-  - 使用大模型翻译时，有些内容没有翻译？
-    - 回答： 低参数量的大模型本身的指令遵循能力很差，让它翻译，它可能不会完全听话，就会造成此现象。因此，本地用大模型翻译，必须保证大模型本身具备一定参数规模，建议7B以上
-  - 表格中的内容没有翻译？
-    - 回答: `pdf2zh`暂不支持表格内容翻译，如需翻译表格，可查看本仓库的dev分支，采用`pdf2zh_next`进行翻译，但由于速度较慢
 
 - https://github.com/gavrielc/Nano-PDF /903Star/MIT/202512/python/gemini
   - A CLI tool to edit PDF slides using natural language prompts, powered by Google's Gemini 3 Pro Image ("Nano Banana") model.
@@ -287,6 +276,10 @@ modified: 2025-12-19T12:43:21.150Z
   - 一个使用layout overlay方式实现PDF英文翻译为中文的免费工具，使用智普api来完成ocr和翻译功能
   - glm-4v-flash免费并且10QPS, 实测速度约为10s/页
   - 启动gradio服务: python3 app.py
+  - uses `PyMuPDF` to achieve advanced functionality.
+  - DocLayout-YOLO
+  - 🛝
+    - 本地运行时, onnxruntime-gpu只支持linux/win
 
 - https://github.com/michaelbeijer/Supervertaler /16Star/MIT/202512/python/PyQt6
   - https://supervertaler.com/
@@ -328,11 +321,14 @@ modified: 2025-12-19T12:43:21.150Z
 
 - https://github.com/zishengwu/vlm-ocr-webui /MIT/202508/python/ts/inactive
   - using vlm to ocr pdf with user friendly ui
+  - a powerful document processing tool that utilizes advanced Vision Language Model (VLM) technology to intelligently recognize and extract various elements from PDF documents, including text, paragraphs, headings, tables, charts, and formulas, converting them into structured Markdown format.
   - parallel processing with multiple models to ensure high-precision recognition of diverse document content, including complex layouts
   - Not only extracts standard text but also accurately recognizes and converts tables and mathematical formulas into LaTeX format
   - Automatically organizes the extracted document content into clear, readable Markdown format, preserving the original layout and semantic structure
   - Streaming Processing: Features advanced concurrent processing where multiple APIs work in parallel, while each API processes pages sequentially. Results are displayed immediately after each page is processed, eliminating the need to wait for the entire PDF to complete.
-  - The backend is built with FastAPI, supporting high-concurrency processing, while the frontend uses Next.js to provide a smooth user experience
+  - OCR/VLM: OpenAI API (extensible)
+  - Backend: Python, FastAPI, Uvicorn
+  - Frontend: Next.js, React, TypeScript, Tailwind CSS
 
 - https://github.com/PRITHIVSAKTHIUR/Multimodal-VLM-v1.0 /apache2/202512/python
   - vision-language model application supporting image inference and visual question answering. 
@@ -375,7 +371,7 @@ modified: 2025-12-19T12:43:21.150Z
   - python-pptx - PPT生成
   - [大香蕉生成图片转换为可编辑PPT的速度直接质变！飞升了！GPU加持下无敌  ](https://linux.do/t/topic/1410288)
 
-- https://github.com/baoyudu/paper-burner /244Star/GPL/202506/js/inactive
+- https://github.com/baoyudu/paper-burner /244Star/GPL/202506/js/单文件/inactive
   - https://baoyu.space/paper-burner/
   - PDF文档OCR与翻译工具
   - Paper Burner能够从PDF文档中提取文本（OCR），将其转换为Markdown格式，并支持使用多种AI模型进行高质量翻译，完美保留公式、图表、格式，最大限度地保持语意连贯通顺
@@ -569,7 +565,7 @@ modified: 2025-12-19T12:43:21.150Z
 - https://github.com/vlm-run/vlmrun-hub /537Star/apache2/202512/python
   - https://docs.vlm.run/hub
   - VLM Run Hub, a comprehensive repository of pre-defined Pydantic schemas for extracting structured data from unstructured visual domains such as images, videos, and documents. 
-  - 似乎为开源代码，但pip包安装后可本地运行
+  - 似乎未开源代码，但pip包安装后可本地运行
 # ocr
 - https://github.com/AKSarav/pdfstract /apache2/202511/python/js
   - web application for converting PDFs to multiple formats using various state-of-the-art extraction libraries. Built with FastAPI backend and React frontend
@@ -594,6 +590,17 @@ modified: 2025-12-19T12:43:21.150Z
   - 支持image preprocessing
   - ocr支持tesseract/EasyOCR/pyocr
   - Poppler PDF Rendering Library
+
+- https://github.com/tmzncty/dots_ocr_suite /202512/python/js
+  - 一个基于 DotsOCR 库开发的 OCR（光学字符识别）处理工具箱，包含 PDF 转 Word (DOCX) 的完整应用。
+  - PDF 转 DOCX 转换器 (完整版): 自动进行拆图、OCR 识别、版面分析, 
+    - 利用多核 CPU 并行处理，大幅提升长文档的转换速度,
+    - 实时进度：清晰展示拆图、识别、生成的每一个步骤进度, 
+    - 支持下载 Word 文档 (.docx) 或包含 Markdown、JSON 数据的 ZIP 压缩包
+  - 在“批量处理”标签页，您可以一次性拖入多个 PDF 文件。 自动排队：文件会自动进入队列逐个处理。您可以在下方列表中查看每个文件的实时进度
+  - 文件名为 openai_test_tool.py。这是一个专用于内网多后端 API 调试与性能对比的工具。
+    - 支持对多个 OpenAI 兼容接口（如 vLLM, LocalAI）同时发起并发请求。
+    - Vision 支持：内置图片转 Base64 功能，方便测试 GPT-4 Vision 等多模态接口。
 
 - https://github.com/neosun100/DeepSeek-OCR-WebUI /279Star/MIT/202601/python/vue/提交多
   - 基于 DeepSeek-OCR 模型的智能图像识别 Web 应用, 参考了 deepseek_ocr_app
@@ -670,23 +677,12 @@ modified: 2025-12-19T12:43:21.150Z
   - 后台异步翻译，实时显示进度和结果，支持暂停/继续/停止
   - OCR 流程: PDF → 图片转换 → DeepSeek-OCR 识别 → 跨页句子合并 → 标签清理 → 存储
   - 翻译流程: 加载文本 → 智能分句 → 后台逐句翻译 → 应用纠错 → 实时显示 → 保存结果
-
-- https://github.com/tmzncty/dots_ocr_suite /202512/python/js
-  - 一个基于 DotsOCR 库开发的 OCR（光学字符识别）处理工具箱，包含 PDF 转 Word (DOCX) 的完整应用。
-  - PDF 转 DOCX 转换器 (完整版): 自动进行拆图、OCR 识别、版面分析, 利用多核 CPU 并行处理，大幅提升长文档的转换速度, 实时进度：清晰展示拆图、识别、生成的每一个步骤进度, 支持下载 Word 文档 (.docx) 或包含 Markdown、JSON 数据的 ZIP 压缩包
-  - 在“批量处理”标签页，您可以一次性拖入多个 PDF 文件。 自动排队：文件会自动进入队列逐个处理。您可以在下方列表中查看每个文件的实时进度
+  - Silicon Flow - API 基础设施
+  - vue Element Plus - 精美的 UI 组件
 
 - https://github.com/matica0902/MLX-Video-OCR-DeepSeek-Apple-Silicon /AGPL/202512/python/js
   - 影片/PDF/圖片 三合一 OCR, 專為 Apple Silicon 優化的全功能 OCR 解決方案
 
-- https://github.com/mfzzf/deepseek-ocr-openai 
-  - DeepSeek-OCR 模型 OpenAI 兼容接口实现
-  - 支持流式输出，可实时获取识别结果
-  - API 调用示例 (OpenAI 兼容)
-
-- https://github.com/r-uben/deepseek-ocr-cli /MIT/202601/python/ollama
-  - CLI tool for OCR using DeepSeek-OCR model via Ollama. Local processing with zero cloud dependencies.
-  - Bounding box annotations removed
 - https://github.com/benedict2310/DeepSeekOCR-Cli /202511/python
   - A quick test to get deepseek ocr to run on a Mac with either images or pdfs
   - Runs natively on Apple Silicon (M1-M4) using PyTorch MPS acceleration
@@ -724,13 +720,6 @@ modified: 2025-12-19T12:43:21.150Z
     - Tesseract is an integral part of ArchivEye, providing powerful OCR capabilities that convert extracted individual pages into searchable text.
     - GhostScript is used to extract individual pages from the PDF file as images for Tesseract to OCR.
 
-- https://github.com/atorhub/anj-dual-ocr-parser /202512/js
-  - https://atorhub.github.io/anj-dual-ocr-parser/
-  - Advanced client-side invoice OCR, parsing, export, and history system — powered entirely by browser technologies, no backend required.
-  - ANJ Dual OCR Parser — AI-powered invoice/bill extractor featuring dual-pass OCR (quick + enhanced), smart parsing, automatic field detection, and multi-format export (JSON, CSV, XLSX, PDF, ZIP)
-  - Tesseract.js, IndexedDB, html2canvas, jsPDF
-  - If Image → processed with Tesseract.js
-
 - https://github.com/am009/LLM-online-tool /202512/python/js
   - https://tool.latexdiff.cn/
   - 基于大语言模型（LLM）API的 Markdown/Latex 文章翻译工具
@@ -758,15 +747,54 @@ modified: 2025-12-19T12:43:21.150Z
 
 ## utils-ocr
 
+- https://github.com/yigitkonur/llm-based-ocr /AGPL/202511/python
+  - PDF-to-Markdown OCR API using LLMs with vision capabilities. 
+  - The LLM-powered OCR engine that turns any PDF into beautifully formatted Markdown. 
+  - Swift OCR: Converts pages → Sends to GPT-4 Vision → Formats as Markdown
+  - Features parallel processing, batching, and auto-retry logic for scalable extraction.
+  - uses `PyMuPDF` for PDF processing
+
+- https://github.com/mfzzf/deepseek-ocr-openai 
+  - DeepSeek-OCR 模型 OpenAI 兼容接口实现
+  - 支持流式输出，可实时获取识别结果
+  - API 调用示例 (OpenAI 兼容)
+  - ocr API的用法还可以参考 基于llm的文本提取
+  - https://github.com/neosantara-xyz/deepseek-ocr-api
+    - Serverless OCR API powered by DeepSeek-OCR (3B parameters) deployed on Modal.
+    - OpenAI-compatible vision API endpoints
+
+- https://github.com/arrase/OCR /202601/python
+  - https://arrase.github.io/OCR/
+  - Converts a PDF to text (Markdown) by rendering each page to an image and sending it through the deepseek-ocr:latest model served by Ollama via its OpenAI-compatible API (Responses API).
+
+- https://github.com/r-uben/deepseek-ocr-cli /MIT/202601/python/ollama
+  - CLI tool for OCR using DeepSeek-OCR model via Ollama. Local processing with zero cloud dependencies.
+  - Bounding box annotations removed
+
+- https://github.com/dnvriend/ollama-deepseek-ocr-tool /MIT/202512/python
+  - A CLI tool for batch OCR processing of document images using DeepSeek-OCR via Ollama
+
 - https://github.com/anonNo2/deepseek-ocr-server /202511/python
   - 使用Deepseek-OCR 的异步并发pdf处理服务
   - Asynchronous Processing - Non-blocking task queue with status tracking
+
+- https://github.com/fufankeji/vllm-ocr-server /202511/python/ts
+  - 大模型Agent开发实战》（体验课）
+  - multimodal OCR system built with LangChain 1.0 and vLLM. 
+  - Integrates MinerU, PaddleOCR‑VL, and DeepSeek‑OCR with a unified REST API and frontend UI
+  - 🔌 Unified parsing interface: pluggable selection of MinerU, PaddleOCR‑VL, and DeepSeek‑OCR
+  - Batch parsing: supports batch processing for PDFs and images; auto-splits multi‑page documents
+  - Standardized outputs: unified format with Markdown/JSON and image exports
+  - Multimodal support: extract text, tables, formulas, images, and more
+  - 核心功能一：源码部署 MinerU，使用 vLLM 启动推理服务，并以 MCP Server方式与LagnChain完成集成，支持批量解析多模态PDF、图片格式文件；
+  - 核心功能二：使用 vLLM 推理框架部署启动 DeepSeek-OCR 解析服务接口，并支持批量解析PDF和图像文件格式；
+  - 核心功能三：本地部署 PaddleOCR-VL ，并通过 PaddleOCR CLI 工具挂载 vLLM 推理服务，提供极高性能的OCR解析服务，支持批量解析PDF和图像文件格式；
 
 - https://github.com/CatchTheTornado/text-extract-api /3kStar/MIT/202512/python
   - https://demo.doctractor.com/
   - Convert any image, PDF or Office document to Markdown text or JSON structured document with super-high accuracy, including tabular data, numbers or math formulas.
   - The API is built with FastAPI and uses Celery for asynchronous task processing. Redis is used for caching OCR results.
-  - No Cloud/external dependencies all you need: PyTorch based OCR (EasyOCR) + Ollama are shipped and configured via docker-compose no data is sent
+  - No Cloud/external dependencies all you need: PyTorch based OCR (`EasyOCR`) + Ollama are shipped and configured via docker-compose no data is sent
   - PDF/Office to Markdown conversion with very high accuracy using different OCR strategies including llama3.2-vision, easyOCR, minicpm-v, remote URL strategies including marker-pdf
   - LLM Improving OCR results LLama is pretty good with fixing spelling and text issues in the OCR text
   - Distributed queue processing using Celery
@@ -787,20 +815,6 @@ modified: 2025-12-19T12:43:21.150Z
   - Use any LLM with your own keys (BYOK)
   - local providers: VLLM, LM Studio and Ollama
 
-- https://github.com/yigitkonur/llm-based-ocr /876Star/AGPL/202511/python
-  - High-accuracy PDF-to-Markdown OCR API using LLMs with vision capabilities.
-  - Parallel Processing: Multi-page PDFs in seconds
-  - Accept a PDF file upload OR a URL to a PDF. Returns beautifully formatted Markdown.
-  - This project uses `PyMuPDF` for PDF processing, which requires the GNU AGPL v3.0 license.
-
-- https://github.com/fufankeji/vllm-ocr-server /202511/python/ts
-  - multimodal OCR system built with LangChain 1.0 and vLLM. 
-  - Integrates MinerU, PaddleOCR‑VL, and DeepSeek‑OCR with a unified REST API and frontend UI
-  - Unified parsing interface: pluggable selection of MinerU, PaddleOCR‑VL, and DeepSeek‑OCR
-  - Batch parsing: supports batch processing for PDFs and images; auto-splits multi‑page documents
-  - Standardized outputs: unified format with Markdown/JSON and image exports
-  - Multimodal support: extract text, tables, formulas, images, and more
-
 - https://github.com/TimmyOVO/deepseek-ocr.rs /2.1kStar/apache2/202511/rust
   - Rust multi‑backend OCR/VLM engine (DeepSeek‑OCR, PaddleOCR‑VL, DotsOCR) with DSQ quantization and an OpenAI‑compatible server & CLI – run locally without Python
   - Rust implementation of the DeepSeek-OCR inference stack with a fast CLI and an OpenAI-compatible HTTP server. 
@@ -815,6 +829,9 @@ modified: 2025-12-19T12:43:21.150Z
 
 - https://github.com/eloops/hocr2pdf /MIT/202509/js/inactive
   - take scanned image, and hocr output from tesseract, create PDF. Thats it.
+
+- https://github.com/sandraschi/ocr-mcp /MIT/202601/python
+  - FastMCP server providing advanced OCR capabilities with current state-of-the-art models (DeepSeek-OCR, Florence-2, DOTS. OCR, PP-OCRv5, Qwen-Image-Layered decomposition), WIA scanner control, and multi-format document processing for PDFs, CBZ comics, and images.
 
 - https://github.com/jbaiter/ocr-parser /MIT/202309/ts
   - This library provides a simple interface to parse OCR data from a stream, buffer or string. 
@@ -836,6 +853,9 @@ modified: 2025-12-19T12:43:21.150Z
 
 - https://github.com/Qianxia666/ocr /GPL/202511/python
   - 利用 OpenAI API 进行图片和 PDF 文档的 OCR 识别，支持异步任务处理、实时通信和完整用户机制的任务管理系统。
+  - 自动将识别结果格式化为 Markdown 格式，支持数学公式（KaTeX）
+  - 批量处理: 支持 PDF 多页文档的批量识别
+  - 异步处理: 采用异步任务队列，支持大文件的后台处理
 
 - https://github.com/Fusyong/recover-layout-from-ocr /202509/python/inactive
   - PDF OCR Utils and Examples, especially for workbook text extraction, layout recovery, and conversion to Markdown.
@@ -856,7 +876,14 @@ modified: 2025-12-19T12:43:21.150Z
   - 翻译功能：可选的中文到英文翻译功能（Electron 版本）
   - fastapi + PyInstaller 打包后端为独立可执行文件
 
-## utils-tesseract
+## tesseract
+
+- https://github.com/atorhub/anj-dual-ocr-parser /202512/js
+  - https://atorhub.github.io/anj-dual-ocr-parser/
+  - Advanced client-side invoice OCR, parsing, export, and history system — powered entirely by browser technologies, no backend required.
+  - ANJ Dual OCR Parser — AI-powered invoice/bill extractor featuring dual-pass OCR (quick + enhanced), smart parsing, automatic field detection, and multi-format export (JSON, CSV, XLSX, PDF, ZIP)
+  - Tesseract.js, IndexedDB, html2canvas, jsPDF
+  - If Image → processed with Tesseract.js
 
 - https://github.com/hertzg/tesseract-server /MIT/202406/ts/inactive
   - lightweight HTTP server that converts photos, images and scanned documents to text using optical character recognition by utilizing the power of Google Tesseract.
@@ -875,17 +902,58 @@ modified: 2025-12-19T12:43:21.150Z
     - This project implements Apache Tika running as a web service using Spring Boot. 
     - It exposes a REST API so that a client can send a document in binary format and receive back the extracted text.
 
+- https://github.com/SteveKhoa/ocr-api-backend /202405/python/inactive
+  - A containerized web service for Optical Character Recognition.
+  - Built with FastAPI, SQLite, Google Tesseract OCR Engine, and Docker.
+  - Improved accuracy from baseline Tesseract with DBScan clustering algorithm.
+  - Base64-encoded images for interoperability.
+
+- https://github.com/LiveWithCodeAnkit/AI-OCR /202501/python
+  - Advanced AI-OCR with FastAPI and OpenAI Integration
+  - It leverages powerful image processing libraries such as OpenCV, Pillow (PIL), and `pytesseract` to extract accurate text from images and PDFs
+  - Multi-File Support: Upload and process multiple images or PDFs simultaneously.
+  - Automatically detect and fix image rotation and skewness.
+  - Intelligent text formatting and validation using OpenAI APIs.
+  - https://github.com/lifeiswilde/textract-ai
+    - extracts text from PDF files, processes the extracted text using the OpenAI API, and generates a final processed document. 
+    - Converts PDF files to images using pdf2image
+    - Extracts text from images using pytesseract
+
 - https://github.com/robertknight/tesseract-wasm /349Star/BSD/202510/ts/wasm
   - https://robertknight.github.io/tesseract-wasm/
   - A WebAssembly build of the Tesseract OCR engine for use in the browser and Node.
   - Using WebAssembly SIMD when available (Chrome >= 91, Firefox >= 90, Safari >= 16.4) to improve text recognition performance.
   - 在线示例可输出 文本 和 hocr的html
+
+- https://github.com/bhimrazy/receipt-ocr /MIT/202601/python
+  - An efficient OCR engine for receipt image processing.
+  - featuring both a dedicated Tesseract OCR module and a general receipt processing package using LLMs
+
+## paddleocr
+
+- https://github.com/majcheradam/ocrbase /MIT/202601/ts
+  - Turn PDFs into structured data at scale. 
+  - Real-time WebSocket updates.
+  - PaddleOCR-VL-0.9B for accurate text extraction
+  - Structured extraction - Define schemas, get JSON back
+  - Built for scale - Queue-based processing for thousands of documents
+  - WebSocket notifications for job progress
 # translation
 - https://github.com/aikilan/Babel-Markdown /MIT/202511/ts
   - provides real-time translation previews for VS Code, synchronizing the original Markdown and AI-translated content in a single view to help you efficiently proofread multilingual documents.
   - Progressive translation preview: streams segments as they finish translating.
   - Markdown fidelity: preserves headings, lists, tables, and code blocks exactly.
   - OpenAI-compatible API support: customize base URL, model, language, and timeout for any compatible provider.
+
+- https://github.com/zstar1003/FreePDF /300Star/AGPL/202512/js
+  - 一个免费的PDF文献阅读器，支持将各语言的PDF文献转成中文，并支持接入大模型基于文献内容进行问答。
+  - 翻译完的PDF文件，会在其对应目录下生成-mono.pdf(翻译文件)
+  - 支持图片型PDF吗，比如扫描件？
+    - 回答： 不支持，本质上是借助`pdf2zh`检测文本块内容，再进行翻译替换，图片型无法直接替换，会导致内容重合叠加。
+  - 使用大模型翻译时，有些内容没有翻译？
+    - 回答： 低参数量的大模型本身的指令遵循能力很差，让它翻译，它可能不会完全听话，就会造成此现象。因此，本地用大模型翻译，必须保证大模型本身具备一定参数规模，建议7B以上
+  - 表格中的内容没有翻译？
+    - 回答: `pdf2zh`暂不支持表格内容翻译，如需翻译表格，可查看本仓库的dev分支，采用`pdf2zh_next`进行翻译，但由于速度较慢
 
 - https://github.com/ogkalu2/comic-translate /2.3kStar/apache2/202512/python
   - Desktop app for automatically translating comics - BDs, Manga, Manhwa, Fumetti and more in a variety of formats (Image, Pdf, Epub, cbr, cbz, etc) and in multiple languages.
@@ -943,6 +1011,11 @@ modified: 2025-12-19T12:43:21.150Z
 - https://github.com/mengxi-ream/read-frog /GPL/202512/ts
   - https://readfrog.app/
   - 陪读蛙 - 开源沉浸式翻译
+
+- https://github.com/jiananlan/PDFreformertool /AGPL/202507/python/inactive
+  - pdf文档翻译并重排版软件，支持利用llm-api进行翻译
+  - 利用 LLM 的高级语义处理能力，结合 pymupdf 和 pdfplumber 等库，提取 PDF 内容并生成高质量翻译结果。翻译数据存储在 MongoDB 中，同时实验性支持 HDF5（T5.py）作为替代存储方案。
+  - 格式保留：基于 `python-docx` 和 docxtpl 重构文档格式，确保翻译后文档格式一致。
 
 - https://github.com/NEKOparapa/AiNiee /4.8kStar/AGPL/202512/python
   - 一款专注于 AI 翻译的工具， 一键自动翻译游戏、书籍、字幕、文档等复杂长文本内容
@@ -1017,7 +1090,7 @@ modified: 2025-12-19T12:43:21.150Z
   - 本地 OCR 由`PaddleOCR`的模型提供支持。
 
 - https://github.com/MrAMS/Smart-Search-PDFs /MIT/202601/python/qt5
-  - 智能 PDF 搜索引擎 - 基于语义向量(embeddings)和 BM25 的混合搜索系统，可用于开卷考试离线搜索PDF课件
+  - 🔍 智能 PDF 搜索引擎 - 基于语义向量(embeddings)和 BM25 的混合搜索系统，可用于开卷考试离线搜索PDF课件
     - 一个基于语义向量（Embeddings）和 BM25 算法的本地化 PDF 混合搜索工具。
   - 全部在本地运行，无需 API Key，保护隐私。
     - 本地端侧：无需 GPU/API，使用 FastEmbed 和轻量级模型，CPU 也能流畅运行，无需 OpenAI API Key。
@@ -1118,6 +1191,14 @@ modified: 2025-12-19T12:43:21.150Z
     - QwenVL HTML can perform document parsing in various scenarios, such as magazines, research papers, web pages, and even mobile screenshots
   - [PDF OCR MD格式的prompt · Issue · QwenLM/Qwen3-VL](https://github.com/QwenLM/Qwen3-VL/issues/749)
     - 评测CC-OCR使用的prompt在对应的仓库里，其中每个子任务对应一种输出类型的prompt。cookbook里的document parsing prompt主要针对QwenVL HTML格式，如果想让它输出markdown格式，同时让table保持HTML格式，公式latex格式，直接使用OmniDocBench中的prompt就能得到不错的效果，评测结果也较Qwen2-VL-72B高出不少。
+
+- https://github.com/yeahhe365/InsightPDF /MIT/202601/ts
+  - https://insightpdf.pages.dev/
+  - 基于 AI 的 PDF 智能助手，支持见解提取、内容总结和智能文档搜索
+  - 基于 Google Gemini 多模态模型构建的智能文档助手，支持精确的视觉定位与边框高亮。
+  - 视觉定位 (Visual Grounding) AI 不仅回答问题，还会自动跳转到 PDF 对应页面，并用红框高亮显示答案来源（支持文本段落、图表、数据表格）
+  - 聊天记录和设置均存储在浏览器本地（LocalStorage/IndexedDB），只需配置 Key，无需担心数据泄露。
+  - PDF 渲染: React-PDF
 
 - https://github.com/ankit1khare/doc-ext-visually-grounded /202504/python/inactive
   - A app that let's you chat with PDFs and provides evidence for the answers by visually grounding them into the PDF pages.
@@ -1288,7 +1369,7 @@ modified: 2025-12-19T12:43:21.150Z
     - 交互在弹窗
 
 - https://github.com/CZ600/AutoDocxProofread /MIT/202511/ts/vue
-  - 基于大模型的文档校对软件
+  - 基于大模型的文档校对软件, 校对结果列表显示在右侧面板
   - 基于 Electron、Vue 3 和 TypeScript 构建的智能长文档校对桌面应用程序
   - 检测 Word 文档中的错别字、标点符号错误、语法问题和文本一致性问题，并提供修改建议。
   - 采用了并行处理架构，显著提升大模型处理长文档的速度。新版本引入了本地知识库功能，支持RAG功能给模型校对参考

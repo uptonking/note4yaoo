@@ -875,6 +875,12 @@ modified: 2021-05-14T15:04:15.333Z
   - [Clarity/notes regarding the project license _202411](https://github.com/novuhq/novu/issues/6820)
   - https://github.com/novuhq/blog/tree/main/forum-system-with-react-novu-node
     - [Building a forum with React, NodeJS - DEV Community](https://dev.to/novu/building-a-forum-with-react-nodejs-6pe)
+
+- https://github.com/caronc/apprise /15.6kStar/BSD/202601/python
+  - Push Notifications that work with just about every platform
+  - Apprise allows you to send a notification to almost all of the most popular notification services available to us today such as: Telegram, Discord, Slack, Amazon SNS, Gotify, et
+  - Supports the handling of images and attachments (to the notification services that will accept them).
+  - all messages sent asynchronously.
 # meetings
 - https://github.com/lukevella/rallly /ts
   - https://rallly.co/

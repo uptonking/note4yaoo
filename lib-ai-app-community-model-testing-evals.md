@@ -9,10 +9,23 @@ modified: 2026-01-12T10:04:03.442Z
 
 # guide
 
+- tips
+  - 💡 ai推理失败的提示词, 可尝试在后面添加 think/explain step by step
 # discuss-stars
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [Asking 60 LLMs a set of 20 questions | Hacker News _2023209](https://news.ycombinator.com/item?id=37445401)
+- In case anyone's interested in running their own benchmark across many LLMs, I've built a generic harness for this at https://github.com/promptfoo/promptfoo.
+  - I encourage people considering LLM applications to test the models on their _own data and examples_ rather than extrapolating general benchmarks.
+
+- ChainForge has similar functionality for comparing : https://github.com/ianarawjo/ChainForge
+
+- GPT 4 and another LLM have given the right answer only after adding "Let's think step by step." to the original prompt.
+  - With the simpler prompt, all the answers were wrong, most of them ridiculously wrong.
 
 - ## [6 months of prompt engineering, what i wish someone told me at the start : r/PromptEngineering _202509](https://www.reddit.com/r/PromptEngineering/comments/1nuf9qf/6_months_of_prompt_engineering_what_i_wish/)
   - lesson 1: examples > instructions needed weeks to developing good instructions. Then tried few-shot examples and got better results instantly. Models learn by example patterns instead of by miles long lists of rules

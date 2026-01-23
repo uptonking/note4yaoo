@@ -14,6 +14,17 @@ modified: 2023-09-02T09:17:22.992Z
 
 - fans-sandbox
   - https://github.com/mcuking/vitesandbox-client
+# popular
+- https://github.com/coplane/localsandbox /MIT/202601/python/ts
+  - Lightweight AgentFS sandbox that runs bash and python.
+  - A Python SDK for sandboxed filesystem operations, built on just-bash, AgentFS, and Pyodide. Provides AI agents with a persistent, isolated environment backed by SQLite.
+  - Sandboxed Execution: Run bash commands in an isolated environment
+  - Run Python via Pyodide (WebAssembly) on the same virtual filesystem
+  - All file operations persist across commands in SQLite
+  - Key-Value Store: Separate KV API for agent state management
+  - Snapshot & Resume: Export/restore complete sandbox state
+  - Full async API via asyncio.to_thread
+  - [Localsandbox: A Lightweight Agent Sandbox _202601](https://coplane.com/perspectives/localsandbox)
 # js-sandbox
 - https://github.com/codesandbox/codesandbox-client /12.9kStar/GPLv3+apache2/202404/js
   - https://codesandbox.io/

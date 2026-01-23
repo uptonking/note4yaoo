@@ -9,11 +9,15 @@ modified: 2025-11-06T18:49:13.977Z
 
 # guide
 
+- resources
+  - [Supercharge your OCR Pipelines with Open Models _202510](https://huggingface.co/blog/ocr-open-models)
+
 - https://github.com/bytefer/macos-vision-ocr /MIT/202502/swift
   - A powerful command-line OCR tool built with Apple's Vision framework, supporting single image and batch processing with detailed positional information output.
 # models-vlm/ocr-xp
 - toolchain
-  - 虽然很多ocr模型官方不支持，但社区量化版可能支持，需要具体尝试
+  - 虽然很多ocr模型官方不支持， 但社区量化版可能支持，需要具体尝试
+  - 不同vlm/ocr模型的输出格式不同, 统一输出内容是否存在需求? 目前对blocks/tags的定义缺乏统一规范(各项目都自定义)
 
 - llama.cpp
   - 已支持: LightOnOCR-1B
@@ -52,16 +56,33 @@ modified: 2025-11-06T18:49:13.977Z
   - 🌹
     - 识别中文的正确率高
     - 识别图片中的表格能准确输出文本，每行内容正确
+  - 极少数的场景，会将图片中的英文翻译为中文输出, 并且LOOP
 
 - granite-docling-258m
   - 能输出带语意的自定义标签, 如 page_header, code, list_item, loc_99, text
   - 默认markdown不友好，需要手动转换自定义标签
   - 部分中文识别的错误率较高
 
-- PaddleOCR-VL
+- PaddleOCR-VL-0.9b
 
-- MinerU2.5
+- MinerU2.5-1.5b
 
+- chandra
+
+- olmocr-2-7b
+
+- [lightonai/LightOnOCR-2-1B · Hugging Face _202601](https://huggingface.co/lightonai/LightOnOCR-2-1B)
+  - [Update README.md](https://huggingface.co/wangjazz/LightOnOCR-2-1B-gguf/discussions/1)
+    - LightOnOCR does not require a prompt, it would degrade performance if given any input text
+  - 🐛 [hallucinations on empty pages](https://huggingface.co/lightonai/LightOnOCR-2-1B/discussions/4)
+  - [Tables as markdown instead of HTML](https://huggingface.co/lightonai/LightOnOCR-2-1B/discussions/6)
+    - The previous version of LightOn OCR would output tables directly to markdown format, but this version is outputting tables to HTML format (more tokens generated, slower speed in out tests)
+    - We have debated on this before working on the second version, but in the end we decided on HTML as output as some nested tables cannot be represented in markdown and thus we would lose some generality. Also converting from html to md after transcription is much more robust than the reverse operation, which also explains our choice. It hasn't been planned for now to give this as option but I'd say the model would be quite suited for a finetuning in this direction if it's really a deal breaker for your usage 
+  - [Remove page numbers from the output](https://huggingface.co/lightonai/LightOnOCR-2-1B/discussions/5)
+    - one of the main design choices compared to other solution is to include all visible text. that being said, the model can be easily finetuned to ignore headers/footers/page numbers, see the v1 blog post for an example.
+
+- 
+- 
 - 
 - 
 - 

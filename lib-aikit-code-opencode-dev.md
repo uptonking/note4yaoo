@@ -9,6 +9,8 @@ modified: 2026-01-17T22:40:27.013Z
 
 # guide
 
+- tips
+  - Coding agent clients (sometimes referred to as harnesses)
 # draft
 
 # dev-xp
