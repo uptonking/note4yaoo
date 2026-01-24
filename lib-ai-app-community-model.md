@@ -795,7 +795,15 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
-- ## 
+- ## [现在高智商人群都是如何利用AI的?(咨询贴, 疑问句) _202507](https://linux.do/t/topic/779052)
+- 我有时候写东西没思路了，会让AI给我多列几组提纲，然后从中选一组满意的，自己开始拓展写
+  - 很少用它生成长文，太长了它就会有幻觉，甚至跑题，而且也不符合要求它做的原意
+
+- 和网页版的区别是你可以用不同的提示词让ai去做不同的事情，比如翻译，归纳，润色邮件。
+
+- 知识库坑更大……新技术层出不穷不说，都不成熟。单一个rag就够研究好久, 然后高质量的数据源又从哪来, 来了以后又如何处理这些数据片, 断最后才到高质量的ai能不能组合这些数据，得到你想要的东西几个都是大坑，都不完美，要达到生产力感觉甚至差得远。
+
+- 帮你提升效率，自己核心竞争力保持住就可以了，搞钱才是王道 其他都是虚的
 
 - ## [What are you building with sub-4B LLMs in early 2025? Real-world use wins? : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qewdza/what_are_you_building_with_sub4b_llms_in_early/)
 - Been running a Qwen 2.5 3B on my Pi 4 for basic home automation - it parses voice commands from my cheap USB mic and controls lights/temp through Home Assistant API. Nothing fancy but beats yelling at Alexa when the internet's down

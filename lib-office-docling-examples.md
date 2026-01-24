@@ -48,6 +48,10 @@ modified: 2025-09-21T13:58:46.548Z
   - https://github.com/pdfme/pdfme /MIT
     - 提供了机遇json模版生成pdf的方案
 
+- https://huggingface.co/spaces/mozilla-ai/document-to-markdown/tree/main
+  - https://huggingface.co/spaces/mozilla-ai/document-to-markdown
+  - 可选: easyocr, tesseract, rapidocr, ocrmac
+
 - https://huggingface.co/spaces/PaddlePaddle/PaddleOCR/tree/main /apache2/202504/python
   - and i tested handwritten text for english. it got the numbers right...
 

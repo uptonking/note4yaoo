@@ -161,6 +161,10 @@ modified: 2025-12-11T18:10:23.710Z
     - Add comprehensive ACP (Agent Client Protocol) support for Claude and Gemini backends
   - 📡 roadmap
     - 可结合下面async-code和其他ui的优点, 优化 background-agents 后台任务/并发任务
+  - [AionUi V1.7.4 更新：兼容了Newapi（Cowork开源版可以用公益站/中转站了 _202601](https://linux.do/t/topic/1508016)
+    - 测了一下部分中转站已经通了，基于newapi的公益站也通了。配置在“自定义模型平台”上即可。
+    - 之前aionui直接配置中转站时会被中转站拦截请求。需要带上user-agent才能通信。他们要在标准的OpanAI协议基础上带上defaultHeader才可以识别请求，之前AionUi没做这个。
+    - 支持多key轮询, 同一个url下的多key轮询
 - https://github.com/RAIT-09/obsidian-agent-client /127Star/apache2/202512/ts
   - Bring AI agents into Obsidian via Agent Client Protocol (ACP), such as Claude Code, Codex and Gemini CLI.
   - This plugin lets you chat with Claude Code, Codex, Gemini CLI, and other AI agents right from your vault.

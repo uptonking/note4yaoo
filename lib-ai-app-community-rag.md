@@ -43,6 +43,11 @@ modified: 2024-09-08T20:08:16.088Z
   - code-search
 # dev-xp
 - 实测Ollama的embedding的过程对内存消耗小, 大文档chunk和embedding耗时可能较长
+# blogs-rag
+- [Visual Answer Grounding with Multi-Modal RAG Workflow _202507](https://medium.com/data-science-collective/multi-modal-rag-with-visual-answer-grounding-e8875a486c88)
+
+- [Visual Grounding for Advanced RAG _202505](https://pub.towardsai.net/visual-grounding-for-advanced-rag-frameworks-3034161ab7d8?gi=d785dcd1bd24)
+  - Unlock Layout-Aware Answers from Documents with Docling, LangChain & Qdrant
 # discuss-stars
 - ## 
 
@@ -1195,6 +1200,20 @@ modified: 2024-09-08T20:08:16.088Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [What's the best way to process images for RAG in and out of PDFS? : r/Rag _202508](https://www.reddit.com/r/Rag/comments/1mtog0e/whats_the_best_way_to_process_images_for_rag_in/)
+  - I'm trying to build my own rag pipeline, I'm struggling to find an updated and more recent solution to image processing images?
+
+- extract pdf figures with pdfimages or pdffigures2 and link captions, then embed crops and text separately. for screenshots run ocr + caption before embedding. a quick hack is using pdfelement to batch export images with page numbers so you don’t have to code the parser yourself.
+
+- Disclaimer - Founder of Tensorlake. we solved this problem, here is how we do it -
+  - Do layout understanding and find out the figures in a PDF.
+  - Extract the figures as is, so users can embed them with CLIP for retrieval
+  - Optionally summarize the figures with a VLM, which in some cases are better than retrieving the images.
+  - Support passing in custom prompts for summarization so users can control figure summarization or reading from pictures.
+  - At the extraction stage having a generic API which allows controlling the output is very useful.
 
 - ## 💡 [[开源自荐] 一键将 ArXiv 论文转换成 Markdown ](https://linux.do/t/topic/1483462)
   - 最近无论是看论文还是折腾知识库，喂给大模型的时候使用 pdf 或者链接的方式体验非常不爽。

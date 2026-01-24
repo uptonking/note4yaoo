@@ -9,8 +9,12 @@ modified: 2025-11-06T18:49:13.977Z
 
 # guide
 
+- tips
+  - 缺少pdf测试文件或资源，可以去主流pdf/ocr方案的issue里面找附件
+
 - resources
   - [Supercharge your OCR Pipelines with Open Models _202510](https://huggingface.co/blog/ocr-open-models)
+  - [PaddleOCR-VL和Deepseek-OCR部署使用体验记录 _202510](https://linux.do/t/topic/1107651)
 
 - https://github.com/bytefer/macos-vision-ocr /MIT/202502/swift
   - A powerful command-line OCR tool built with Apple's Vision framework, supporting single image and batch processing with detailed positional information output.
@@ -33,8 +37,23 @@ modified: 2025-11-06T18:49:13.977Z
   - 暂不支持(20260106): dots.ocr, mineru
   - [Models to port to MLX-VLM · Issue · Blaizzy/mlx-vlm _202406](https://github.com/Blaizzy/mlx-vlm/issues/39)
 
+- 支持提取图片
+  - PaddleOCR-VL
+  - dots.ocr
+  - Chandra
+  - Qwen3-VL
+  - Docling
+  - unstructured
+  - mineru-PDF-Extract-Kit(AGPL), Marker(GPL)
+
 - qwen3-vl-4b
   - 适合作为通用图片文字识别方案，识别完后一般还会解释一段，有时解释文字会冗长
+- [Qwen/Qwen3-VL-2B-Instruct · Hugging Face _202510](https://huggingface.co/Qwen/Qwen3-VL-2B-Instruct)
+  - [why the outputs are different ?](https://huggingface.co/Qwen/Qwen3-VL-2B-Instruct/discussions/5)
+    - output is changing every time.
+    - The variation you are seeing it's simply because generate() uses stochastic sampling by default. Calling model.eval() ` only disables dropout/batchnorm and it has no effect on how tokens are selected during response generation. to make your outputs identical every time, you need to turn off sampling and force greedy decoding and fix all RNG seeds. for fully deterministic setup try something like this...
+  - [How different are its hardware requirements from those of the Qwen2-VL-2B?](https://huggingface.co/Qwen/Qwen3-VL-2B-Instruct/discussions/4)
+    - Based on my experience, it works fine even on a CPU Qwen/Qwen3-VL-2B-Instruct is likely a merge with a 300M VisionEncoder with their previous Qwen/Qwen3-1.7B base Model.
 
 - nanonets-ocr2-3b
   - 输出的内容markdown优先，内容及格式都很准确
@@ -64,12 +83,21 @@ modified: 2025-11-06T18:49:13.977Z
   - 部分中文识别的错误率较高
 
 - PaddleOCR-VL-0.9b
+  - [Frequently Asked Questions on Inference and Deployment of PaddleOCR-VL PaddleOCR-VL 推理部署相关高频问题回复 ](https://github.com/PaddlePaddle/PaddleOCR/issues/16823)
+    - 目前 PaddleOCR-VL 暂不支持在 macOS 系统上进行原生部署。对于搭载 x64 架构 CPU 的设备，可通过 Docker 容器方式进行部署。同时，针对 macOS 生态，我们也在评估基于 MLX-VLM 的部署方案可行性。
 
 - MinerU2.5-1.5b
+  - [通过API调用解析下载得到的图片被压缩了，没有返回原图 ](https://github.com/opendatalab/MinerU/issues/4169)
+    - 目前 MinerU 的 vlm 后端（包括你用的 <2.2.0 版本）通过 API 提取图片时，所有图片都会被处理为 JPEG 格式并默认采用 PIL 的压缩参数，无法直接返回文档中的原图。这会导致图片体积变小、画质变模糊，且 API、配置文件和环境变量都没有提供控制图片质量或格式的选项。相关代码和 API 都是硬编码为 JPEG 输出，没有暴露 PNG 或无损选项，也没有参数可以调整压缩质量 
+    - 如果你确实需要原图，可以考虑： 用外部工具（如 Office、Adobe Acrobat、Python-docx、PyMuPDF 等）直接从 DOC/PDF 文件提取原始图片。
 
 - chandra
 
 - olmocr-2-7b
+
+- dots.ocr-3b
+  - [rednote-hilab/dots.ocr · Hugging Face](https://huggingface.co/rednote-hilab/dots.ocr)
+  - [helizac/dots.ocr-4bit · Hugging Face](https://huggingface.co/helizac/dots.ocr-4bit)
 
 - [lightonai/LightOnOCR-2-1B · Hugging Face _202601](https://huggingface.co/lightonai/LightOnOCR-2-1B)
   - [Update README.md](https://huggingface.co/wangjazz/LightOnOCR-2-1B-gguf/discussions/1)
@@ -80,6 +108,9 @@ modified: 2025-11-06T18:49:13.977Z
     - We have debated on this before working on the second version, but in the end we decided on HTML as output as some nested tables cannot be represented in markdown and thus we would lose some generality. Also converting from html to md after transcription is much more robust than the reverse operation, which also explains our choice. It hasn't been planned for now to give this as option but I'd say the model would be quite suited for a finetuning in this direction if it's really a deal breaker for your usage 
   - [Remove page numbers from the output](https://huggingface.co/lightonai/LightOnOCR-2-1B/discussions/5)
     - one of the main design choices compared to other solution is to include all visible text. that being said, the model can be easily finetuned to ignore headers/footers/page numbers, see the v1 blog post for an example.
+
+- llama3.2-vision-11b
+  - 似乎不支持中文
 
 - 
 - 
@@ -110,7 +141,13 @@ modified: 2025-11-06T18:49:13.977Z
 
 - ## 
 
-- ## 
+- ## [Show HN: PDF to MD by LLMs – Extract Text/Tables/Image Descriptives by GPT4o | Hacker News _202409](https://news.ycombinator.com/item?id=41614126)
+- Does it do image to MD too?
+  - Unless the only thing you want is a description of the image, then the real answer is NO. You can get an LLM to do something like "If you encounter an image that is not easily convertable to standard markdown, insert a [[DESCRIPTION OF IMAGE]] here." placeholder, but at that point you've lost information that may be salient to the original PDF.
+  - The reason is because these multimodal LLMs can give you descriptions/OCR/etc., but they cannot give you quantifiable information related to placement.
+  - You almost need segmentation system middleware that the LLM can forward to which can cut out these images to use in markdown syntax: ! `[A tiger burning brightly](/assets/images/tiger.png)`
+
+- you can customize this as you wish by adding it to your prompt.
 
 - ## LlamaIndex - We’ve written a new blog post on the specific areas in which LLMs are useful for document OCR - beyond the naive answer of “screenshot everything into a VLM”
 - https://x.com/jerryjliu0/status/1991624512656535664
@@ -147,6 +184,17 @@ modified: 2025-11-06T18:49:13.977Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [现在怎么处理pdf文件呢 ](https://linux.do/t/topic/1420032)
+- 可以用mineru提取出来，然后把图片的位置替换为对应的图片描述，gemini可以直接解析，我猜测他们应该也是对pdf做了解析，将其转为了文本；或者把pdf为每一页提取为一张图片给LLM进行处理
+  - pymupdf 我是使用这个库，然后把图片给大模型解析，最后再替换 但时候这个库处理表格 解析的时候有点问题，直接按照文字提取的话 就看不出这个是表格数据了
+
+- mineru会把表格解析成html的格式，效果还可以，但是对于一些复杂的表格，也不能保证百分百正确，你可以先大概测试一下，看一下表格的解析是否有问题，如果会出现解析错误的情况的话，可能得通过多种方式对表格分别进行解析，比如分别使用mineru、paddle，gemini等对这个表格进行解析，然后在保证结果都相同的情况下确认这个表格是被正确解析的。
+  - 你直接去对mineru解析出来的中间结果进行处理，最后把处理的结果全部拼接起来，不要直接在他输出的md文档上处理。
 
 - ## 💡 [Qwen3-VL works really good with Zoom-in Tool : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1osiog7/qwen3vl_works_really_good_with_zoomin_tool/)
   - While Qwen3-VL-30B-A3B(Q6_ud) performs better than previous open-source models in general image recognition, it still has issues with hallucinations and inaccurate recognition.

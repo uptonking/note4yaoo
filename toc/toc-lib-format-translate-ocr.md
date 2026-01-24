@@ -401,7 +401,8 @@ modified: 2025-12-19T12:43:21.150Z
     - 下一个里程碑是将能力从分析单篇文献，扩展到处理多篇文献，并基于此开发能自动生成文献综述的 综述 Agent
     - [Agent伴读🤖！专为学术/工作打造，您的一站式AI翻译/阅读/分析工作站 _202510](https://linux.do/t/topic/1007281)
     - [Paper Burner X 自定义：手把手教你用 cf worker 加入更多OCR引擎/学术搜索功能 _202510](https://linux.do/t/topic/1009321)
-      - 部分佬友反馈大文件会出现failed to fetch，这里新增分块机制
+      - 看到了很多佬友对多种OCR方式的需求， 因为项目是纯前端的，所以使用cf worker来代理。
+      - 有反馈大文件会出现failed to fetch，这里新增分块机制
 
 - https://github.com/yyy-OPS/slidedeconstruct-ai /113Star/MIT/202512/ts
   - 基于 AI 视觉能力的智能演示文稿反向工程工具。它利用 Google Gemini (或 OpenAI Compatible) 模型，将一张静态的 PPT 截图“拆解”为可编辑的图层（背景、文字、视觉元素），并支持将其转化为矢量形状，最终导出为可编辑的 .pptx 源文件。
@@ -745,6 +746,11 @@ modified: 2025-12-19T12:43:21.150Z
   - 基于mineru网页端，抓包分析后将核心的上传及转换功能集成为api，供其他服务调用
   - [[开源]两个比较有意义的docker项目吧，一个是mineru-api，另一个是微信和T的音频转换api ](https://linux.do/t/topic/975584)
 
+- https://github.com/AuroraPixel/MarkMuse /MIT/202505/python
+  - an innovative tool developed using Python that elegantly converts PDF files to Markdown format.
+  - 基于Celery、Redis和PostgreSQL的通用任务队列Web API，提供异步任务的提交、执行和状态查询功能。
+  - [新项目pdf转md : MarkMuse _202504](https://linux.do/t/topic/610328)
+
 ## utils-ocr
 
 - https://github.com/yigitkonur/llm-based-ocr /AGPL/202511/python
@@ -753,6 +759,7 @@ modified: 2025-12-19T12:43:21.150Z
   - Swift OCR: Converts pages → Sends to GPT-4 Vision → Formats as Markdown
   - Features parallel processing, batching, and auto-retry logic for scalable extraction.
   - uses `PyMuPDF` for PDF processing
+    - Fork this project and swap PyMuPDF for pdf2image + Poppler.
 
 - https://github.com/mfzzf/deepseek-ocr-openai 
   - DeepSeek-OCR 模型 OpenAI 兼容接口实现
@@ -938,6 +945,31 @@ modified: 2025-12-19T12:43:21.150Z
   - Structured extraction - Define schemas, get JSON back
   - Built for scale - Queue-based processing for thousands of documents
   - WebSocket notifications for job progress
+
+## mineru
+
+- https://github.com/blacksamuraiiii/pdf2ppt /MIT/202601/python
+  - 将 AI 生成的 PDF 文稿（如 Google NotebookLM 导出的内容）或其他标准 PDF 文档，通过智能解析转换为可编辑的 PowerPoint (PPTX) 演示文稿。
+  - 提供 基于 CustomTkinter 的现代化界面 (app.py) 和 cli
+  - 每个元素都带有精确的边界框坐标 [x1, y1, x2, y2]
+  - 支持中英文混排识别
+  - Area-based 字号算法: 根据 bbox 面积和字符密度自动计算最佳字号
+  - Layout.json 多源解析: 同时利用 layout.json 和 content_list.json，提取 image_caption 的精确 bbox
+  - [基于MinerU的pdf转ppt工具（更新v0.3，加入去水印） _202601](https://linux.do/t/topic/1490727)
+    - 基于MinerU强大的解析能力，将文字、图片、表格按照位置进行解析重组，字体大小根据Area-based放缩，让Antigravity改了几稿，做了一个简单的GUI页面
+    - 加了一个去右下角水印的选项
+
+- https://github.com/lpdswing/mineru-web /AGPL/202601/python/ts/vue
+  - 提供文档解析、信息提取和智能分析功能。
+  - 采用前后端分离架构，结合容器化技术，为用户提供高效、可靠的文档处理解决方案。
+  - 基于 FastAPI 和 Vue 3 构建, Element Plus
+  - 支持 PDF、Word、Excel 等多种文档格式的处理
+  - 采用异步任务队列，支持大规模文档并发处理
+  - 支持 NVIDIA GPU 和华为昇腾 NPU
+  - [[开源]Mineru-web，为mineru打造的ui界面 _202511](https://linux.do/t/topic/1115235)
+    - 项目最开始的目的是为了在私有环境给非开发人员使用，提高工作效率。按最开始官方版本的UI界面复刻的
+    - pdf预览用的浏览器的功能，理论不卡
+    - 图片直接解析并存储到minio
 # translation
 - https://github.com/aikilan/Babel-Markdown /MIT/202511/ts
   - provides real-time translation previews for VS Code, synchronizing the original Markdown and AI-translated content in a single view to help you efficiently proofread multilingual documents.

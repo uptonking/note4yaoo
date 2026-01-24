@@ -674,6 +674,25 @@ modified: 2021-04-30T20:14:17.669Z
     - 使用 mineru 对 pdf 进行了提取，然后用 md 文档重新生成一份含有企业预警通图标和封面图的 ppt，因为时间更空余，生成的比视频里面的更精美多了
   - [【原创】OpenCode + SVG：推荐一套省心可控的 AI PPT 生成方案 _202601](https://linux.do/t/topic/1489177)
 
+- https://github.com/laihenyi/NBLM2PPTX /MIT/202601/ts
+  - Convert NotebookLM PDFs to PPTX with separated background images and editable text layers using Gemini AI
+  - AI Text Removal: Uses Gemini 2.5 Flash to automatically remove text from images and reconstruct backgrounds
+  - Hybrid Text Extraction: PDF sources use native PDF.js extraction for precise coordinates; image sources use enhanced Gemini OCR
+  - Separated Layers: Exported PPTX contains background images and text as independent layers for easy editing
+  - Batch Processing: Supports processing multiple PDF pages or images at once
+  - Page Selection: Freely select which pages to process, saving time and API quota
+
+- https://github.com/blacksamuraiiii/pdf2ppt /MIT/202601/python
+  - 将 AI 生成的 PDF 文稿（如 Google NotebookLM 导出的内容）或其他标准 PDF 文档，通过智能解析转换为可编辑的 PowerPoint (PPTX) 演示文稿。
+  - 提供 基于 CustomTkinter 的现代化界面 (app.py) 和 cli
+  - 每个元素都带有精确的边界框坐标 [x1, y1, x2, y2]
+  - 支持中英文混排识别
+  - Area-based 字号算法: 根据 bbox 面积和字符密度自动计算最佳字号
+  - Layout.json 多源解析: 同时利用 layout.json 和 content_list.json，提取 image_caption 的精确 bbox
+  - [基于MinerU的pdf转ppt工具（更新v0.3，加入去水印） _202601](https://linux.do/t/topic/1490727)
+    - 基于MinerU强大的解析能力，将文字、图片、表格按照位置进行解析重组，字体大小根据Area-based放缩，让Antigravity改了几稿，做了一个简单的GUI页面
+    - 加了一个去右下角水印的选项
+
 - https://github.com/YiYoYiYoYiYo-Web3/PDF-Text-Remover /AGPL/202512/python
   - [一个没啥用的PDF去文字工具 ](https://linux.do/t/topic/1257896)
   - 用AI搓了个把PDF文字去除的工具 

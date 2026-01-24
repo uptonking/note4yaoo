@@ -19,7 +19,14 @@ modified: 2025-09-21T13:57:50.332Z
 
 - ## 
 
-- ## 
+- ## [How to extract images when using Docling with VLM? Also wondering can we use VLM in the OCR pipeline? _202601](https://github.com/docling-project/docling/discussions/2833)
+  - I was testing Docling's PDF parsing capablities with OCR and VLM pipelines against scanned PDF files, but seems the `generate_picture_images` option doesn't work with VLM pipline, I cannot see any images been extracted like the OCR pipeline did.
+- This is expected: in Docling's VLM pipeline, the generate_picture_images option only works if the VLM model output includes explicit image references (like tokens in Markdown or DocTags). If the model/prompt doesn't produce PictureItem elements, no images will be extracted or saved
+  - This is different from the standard OCR pipeline, which always extracts images from the PDF itself regardless of model output. 
+- I wrote a PoC, the WER is definitely lower, but the layout shifted, moreover, style and table structure all lost...
+
+- [Does VlmPipeline ignore pipeline_options.do_picture_description = True? _202510](https://github.com/docling-project/docling/discussions/2434)
+  - it seems the markdown format that works
 # discuss-llamaIndex
 - ## 
 
@@ -173,14 +180,18 @@ modified: 2025-09-21T13:57:50.332Z
 - LlamaParse stands out for its exceptional processing speed (~6s consistently across all page counts), offering unparalleled efficiency and scalability. 
   - It performs adequately for basic extractions, with strong numerical accuracy in simple tables and text, but struggles with complex formatting (e.g., multi-column text, intricate tables) and ToC reconstruction. 
   - This speed advantage makes it ideal for lightweight, straightforward tasks, but its structural weaknesses and accuracy trade-offs render it less suitable for comprehensive document processing compared to Docling.
-# discuss-formats
+# discuss-elements
 - ## 
 
 - ## 
 
 - ## 
 
-- ## 
+- ## [Image in PDF, description into markdown _202511](https://github.com/docling-project/docling/issues/2560)
+  - VLM based description of imaged from PDF does not show up in markdown file (only `<!-- image -->` appears). 
+- The behaviour you see is not considered a bug. Export formats such as Markdown, HTML or others are by nature lossy in some ways, since they have no native markup to cover every possible data representation that a DoclingDocument can store. Since there is no one-fits-all solution, we are keeping the default Markdown and HTML serialization clean and encourage implementing your own serializer if you need particular outputs, such as the picture descriptions. You can then decide how that should output to Markdown. The serializer API in docling is user-extensible
+
+- this should now be fixed with docling-core v2.51.0
 # discuss-ai/llm-format
 - ## 
 

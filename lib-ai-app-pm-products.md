@@ -208,7 +208,7 @@ modified: 2025-03-22T16:10:24.856Z
 - selling-points
   - ✈️ local models support: mlx, lmstudio-alternative
     - 允许用户分享文档/插画中的模型配置，运行日志
-    - 模型库: text模型, ocr模型 ,t2i生图模型, lmstudio在模型分类上做的不够好
+    - 模型库: text模型, ocr模型, 翻译模型, t2i生图模型, lmstudio在模型分类上做的不够好
     - 参考janai/pipeshub, 既支持选择本地/api模型，也支持选择图片/文档
     - ocr/vlm comparison-matrix/playground: 识别对比, 翻译对比
   - 🔗 citations for search: 外部数据源如字典mdx/书籍epub/wikipedia公开db/统计年鉴
@@ -864,6 +864,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [小白生图 - AI Image Generator](https://catsapi.com/)
   - [AI 生图平台](https://ztu.ai/)
     - 每天5张免费
+    - [【公益站】ztu.ai 视频生成上线 _202601](https://linux.do/t/topic/1507837)
   - [RyanVan Z-Image | AI 图像生成](https://ryanai.org/)
     - 每天5张免费
     - 排队时间可能较长

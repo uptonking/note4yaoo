@@ -49,6 +49,18 @@ modified: 2024-08-11T07:21:48.172Z
 - What is great about postgres is the great ecosystem of forks and extensions that make it evolve faster than the core, which must be more conservative. But the risk is the fragmentation of the solutions. Sharding? with Citus, Aurora Limitless, PgDog?
   - Fragmentation is also good for consulting — one can feel free to recommend the best, if you’re not the vendor
 
+- ## OpenAI handles 800 million users on ChatGPT with just one PostgreSQL primary and 50 read replicas _202601
+- https://x.com/arpit_bhayani/status/2014615870992163148
+  - Today, OpenAI published an engineering blog explaining how they scaled their Postgres setup to support a massive 800 million users using a single primary and 50 multi-region replicas.
+  - They dive into details around their scaling approach, the PgBouncer proxy, cache locking, and cascading read replicas. It is genuinely neat and impressive.
+- > And they hit a wall, so they’re migrating off
+  - > To mitigate these limitations and reduce write pressure, we've migrated, and continue to migrate, shardable (i.e. workloads that can be horizontally partitioned), write-heavy workloads to sharded systems such as Azure Cosmos DB, optimizing application logic to minimize unnecessary writes. We also no longer allow adding new tables to the current PostgreSQL deployment. New workloads default to the sharded systems.
+- That quote is about offloading some write-heavy workloads to Cosmos. Same post says: "PostgreSQL has remained unsharded, with a single primary instance serving all writes." Single primary + ~50 read replicas.
+
+- It's no more than a footnote in the original blog, but it's also worth noting that they use Azure Cosmos DB for write-heavy workloads (I assume all chat messages). Postgres is not the only durable storage powering ChatGPT.
+
+- Glad I wasn’t the only one that noticed this. Having one primary has to be a bit easier when you’re actively trying to avoid writing to it
+
 - ## OpenAI使用单一未分片的PostgreSQL集群（1主40从+）服务整个业务
 - https://x.com/RonVonng/status/1924305840535978431
 - OpenAI 的PG实践有力的证实了《分布式数据库是伪需求》，毕竟，OpenAI 能用一套主从PG集群干到现在5亿活跃用户，你的业务有极大概率也根本不需要分区Sharding或分布式数据库

@@ -294,6 +294,11 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-log
   - ?
 
+## 0124
+
+- [Error: 404 No allowed providers are available for the selected model. : r/RooCode](https://www.reddit.com/r/RooCode/comments/1kz57n0/error_404_no_allowed_providers_are_available_for/)
+  - If you are using open router, going to open router and double check the settings. I was getting that error because I had set my api key to only do one model provider . sometimes it seems like you get this error if you leave open router totally empty so you can pull any model
+
 ## 0123
 
 - [Some love for MacOS gpu · Issue · microsoft/onnxruntime _202207](https://github.com/microsoft/onnxruntime/issues/12252)

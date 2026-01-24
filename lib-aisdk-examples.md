@@ -9,6 +9,8 @@ modified: 2025-08-11T20:15:18.297Z
 
 # guide
 
+- resources
+  - [AI SDK Agents ](https://www.aisdkagents.com/)
 # popular
 - https://github.com/vercel/ai /16.5kStar/apache2/202508/ts
   - https://ai-sdk.dev/docs/introduction

@@ -210,6 +210,9 @@ modified: 2021-01-04T17:26:43.784Z
   - Framework: Nextron (Next.js + Electron)
   - Backend: Python, FastAPI
   - Build/Deployment: Electron Builder
+  - [My free, open-source PDF Editor is ready. Edit, sign, and merge PDFs without paying a dime. : r/macapps _202508](https://www.reddit.com/r/macapps/comments/1miyrty/my_free_opensource_pdf_editor_is_ready_edit_sign/)
+    - Can it edit text? That’s the one feature I’m missing from preview.
+    - There is no function to change text within PDF yet, but there is a function to add text separately
 # pdf-editor
 - https://github.com/BDenizKoca/Tideflow-md-to-pdf /MIT/202511/ts/tuari
   - https://bdenizkoca.studio/projects/tideflow/
@@ -799,12 +802,18 @@ modified: 2021-01-04T17:26:43.784Z
   - Supports running in a pure CPU environment, and also supports GPU(CUDA)/NPU(CANN)/MPS acceleration
   - Compatible with Windows, Linux, and Mac platforms
   - https://huggingface.co/spaces/opendatalab/MinerU
-  - https://github.com/RapidAI/RapidDoc /apache2/202512/python
+  - https://github.com/RapidAI/RapidDoc /apache2/202512/python/非VLM
     - RapidDoc 是一个轻量级、专注于文档解析的开源框架，支持 OCR、版面分析、公式识别、表格识别和阅读顺序恢复 等多种功能。
     - 框架基于 `Mineru` 二次开发，移除 VLM，专注于 Pipeline 产线下的高效文档解析，在 CPU 上也能保持不错的解析速度。
     - 基于 MinerU 改造而来，已移除原项目中的 YOLO 模型，并替换为 PP-StructureV3 系列 ONNX 模型。 由于已移除 AGPL 授权的 YOLO 模型部分，本项目整体不再受 AGPL 约束。
     - 项目所使用的核心模型主要来源于 PaddleOCR 的 PP-StructureV3 系列（OCR、版面分析、公式识别、阅读顺序恢复，以及部分表格识别模型），并已全部转换为 ONNX 格式，支持在 CPU/GPU 上高效推理。
     - 基于gradio开发的webui，界面简洁，仅包含核心解析功能，免登录
+  - [MinerU商业化二开 _202505](https://linux.do/t/topic/640019)
+    - 官方版本问题：包含禁止非商业的排序模型layoutreader，
+    - 使用规则排序替换排序模型layoutreader
+    - 优化Dockerfile（在项目根目录下）：集成libreoffice到容器，支持直接解析docx、ppt等文件
+    - 解决libreoffice转码和MinerU识别中文乱码问题
+    - 使用fastapi开发了api服务，部署后无需再次做接口开发（在web_service目录下）
 
 - https://github.com/datalab-to/marker /27.3kStar/GPLv3/202508/python
   - https://www.datalab.to/
@@ -859,6 +868,72 @@ modified: 2021-01-04T17:26:43.784Z
   - Parse PDFs, Docx, PPTx in a format that is ideal for LLMs
   - Files: ✅ PDF ✅ Powerpoint ✅ Word
   - Content: ✅ Tables ✅ TOC ✅ Headers ✅ Footers ✅ Images
+
+## pdf-extraction
+
+- https://github.com/Flopsky/MarkThat /MIT/202601/python
+  - A Python library for converting images and PDFs to Markdown or generating rich image descriptions using state-of-the-art multimodal LLMs.
+  - Multiple Provider Support: OpenAI, Anthropic, Google Gemini, Mistral, and OpenRouter
+  - Advanced Figure Extraction: Automatically detect, extract, and process figures from PDFs
+    - 💡 可参考插图提取的流程逻辑 👇 
+    - Detection: Analyzes document content to identify pages with figures
+    - Coordinate Mapping: Overlays coordinate grids and identifies figure boundaries
+    - Extraction: Crops figures using precise coordinate mapping
+    - Integration: Embeds figure paths into the final markdown output
+  - Robust Retry Logic: Intelligent retry with fallback models and failure feedback
+  - Async Support: Concurrent processing for improved performance
+  - Clean architecture: Type-safe, well-documented, and thoroughly tested
+  - 实测可运行的模型包括, gpt-4o-mini, mistral-medium, nemotron-12b-vl, 但效果都很差
+
+- https://github.com/AdemBoukhris457/Doctra /apache2/202511/python
+  - https://ademboukhris457.github.io/Doctra/
+  - Parse, extract, and analyze documents with ease
+  - Doctra requires `Poppler` for PDF processing
+  - `StructuredPDFParser` is a comprehensive PDF parser that extracts all types of content from PDF documents
+    - Uses `PaddleOCR` for accurate document layout analysis
+    - Supports both `PyTesseract` (default) and `PaddleOCR` PP-OCRv5_server for text extraction
+    - Visual Element Extraction: Saves figures, charts, and tables as images
+    - VLM Integration: Optional conversion of visual elements to structured data
+    - Multiple Output Formats: Generates Markdown, Excel, and structured JSON
+
+- https://github.com/aitomatic/ai-vision-capture /apache2/202601/python
+  - A Python library for extracting and analyzing content from PDF, Image, and Video files using VLM
+  - Supports multiple providers including OpenAI, Anthropic Claude, Google Gemini, and Azure OpenAI.
+  - Async Processing: Configurable concurrency for batch operations
+  - Structured Output: Template-based data extraction to JSON
+  - Pluggable Architecture: Provider abstraction with auto-detection
+  - PDF-to-image conversion using PyMuPDF (fitz)
+  - VisionCapture: Used for extracting specific fields from documents (e.g., forms, technical diagrams)
+    - 似乎只提取字段, 不提取插图
+
+- https://github.com/iamarunbrahma/vision-parse /457Star/MIT/202509/python
+  - Parse PDFs into markdown using Vision LLMs
+    - 实测本地模型不好用, 很多小图片
+  - Intelligently identifies and extracts text, tables, and LaTeX equations from scanned documents into markdown-formatted content with high precision
+  - Multi-LLM Support: Seamlessly integrates with multiple Vision LLM providers such as OpenAI, Gemini, and Llama for optimal accuracy and speed
+  - Supports local model hosting with Ollama for secure, no-cost, private, and offline document processing
+  - 🛝
+    - VisionParserError: Failed to convert page 1 to base64-encoded PNG: Ollama Model processing failed: timed out
+
+- https://github.com/gsmatheus/pdf-image-extractor /202511/python
+  - a Python script designed to process PDF files, specifically extracting and saving images embedded within the pages of the document. 
+  - Automatically resizes the extracted images to 60% of their original size, ensuring consistent output and potentially reducing file size.
+  - Text Extraction: For each processed page, the script also extracts and prints the textual content.
+  - pdfplumber, fitz (PyMuPDF), PIL (Pillow)
+
+- https://github.com/linjc16/PDF-Extraction /MIT/202303/python
+  - A tool for extracting tables and figures from PDF files.
+  - Pipeline for Table and Figure Extraction from Papers
+  - First, use `PaddleOCR` to extract text, tables and figures from each paper.
+    - We first convert PDF to images page by page by using `PyMuPDF`. To improve the performance of the following OCR operation, these images are unpsamped 8x to get high resolution inputs.
+    - Then, use the results from the last step to output the final extracted samples.
+
+- https://github.com/EvilFreelancer/img2md-vlm-ocr /MIT/202509/python/js
+  - service for extracting document structure and content from images using advanced computer vision and vision-language models (VLM). 
+  - The system combines YOLO-based document layout segmentation with OpenAI-compatible VLM models to accurately detect, classify, and extract text content from document images, converting them to structured Markdown format
+  - Document Layout Segmentation: Uses YOLOv8-based models to detect and classify document elements (text blocks, tables, images, headers, etc.)
+  - Vision-Language Model Integration: Leverages OpenAI-compatible VLM models (default: Qwen2.5-VL) for intelligent text extraction
+  - CLI Tools: Command-line utilities for batch PDF processing and document analysis
 # pdf-video
 - [PDF to Brainrot | MemenomeLM](https://www.memenome.gg/)
   - 把 PDF 转化为易上瘾的视频
