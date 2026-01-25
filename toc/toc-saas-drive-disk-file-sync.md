@@ -40,6 +40,9 @@ modified: 2024-03-31T17:45:16.789Z
 
 - firebase
 # 国内云存储
+- [白嫖中国科技云 20G 存储，并接入 Obsidian 实现同步  ](https://linux.do/t/topic/1505165)
+  - 提供了一个 免费的 20G 存储（兼容 S3）。
+
 - [七牛云开发者 免费额度](https://developer.qiniu.com/af/kb/1574/free-credit-information)
   - 对象存储
   - 标准存储免费空间	0-10 GB

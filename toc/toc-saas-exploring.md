@@ -74,9 +74,3 @@ modified: 2021-05-14T14:30:22.685Z
   - https://deepwiki.com/666ghj/BettaFish
   - 微舆：人人可用的多Agent舆情分析助手，打破信息茧房，还原舆情原貌
   - 构建了从 BettaFish（数据收集与分析）到 MiroFish（全景预测）的完整链路
-
-- https://github.com/ZhuLinsen/daily_stock_analysis /MIT/202601/python
-  - [[开源自荐] 基于AI的股票分析系统 _202601](https://linux.do/t/topic/1427263)
-  - 起初只是自己做一个帮忙分析自选股和大盘的工具，减少盯盘、盯股票分析的精力，后面本着开源精神开源出来了，能够每天定时推送到企业微信上。
-  - 用的都是免费的方案，github action + Gemini的API + Serpapi和TAVILY的检索功能，免费额度足够日常使用
-  - 每日自动生成大盘复盘

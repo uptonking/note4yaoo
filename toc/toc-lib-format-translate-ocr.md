@@ -797,6 +797,16 @@ modified: 2025-12-19T12:43:21.150Z
   - 核心功能二：使用 vLLM 推理框架部署启动 DeepSeek-OCR 解析服务接口，并支持批量解析PDF和图像文件格式；
   - 核心功能三：本地部署 PaddleOCR-VL ，并通过 PaddleOCR CLI 工具挂载 vLLM 推理服务，提供极高性能的OCR解析服务，支持批量解析PDF和图像文件格式；
 
+- https://github.com/EsmaeilNarimissa/SciDOCX /MIT/202511/python/inactive
+  - scientific document conversion and multimodal RAG pipeline powered by DeepSeek-OCR and Qwen2-VL.
+  - DeepSeek-OCR: pdf > markdown > pandoc > docx
+  - Dual Output:
+    - Markdown and DOCX for editing and publishing.
+    - JSONL elements (paragraphs, tables, figures) for multimodal retrieval.
+  - Embedded Figures: Extracts, deduplicates, and embeds figures with correct captions in both DOCX and JSONL outputs.
+  - optionally use Qwen2-VL-2B-Instruct to generate concise, factual figure descriptions.
+  - PyMuPDF for PDF processing
+
 - https://github.com/CatchTheTornado/text-extract-api /3kStar/MIT/202512/python
   - https://demo.doctractor.com/
   - Convert any image, PDF or Office document to Markdown text or JSON structured document with super-high accuracy, including tabular data, numbers or math formulas.
@@ -851,13 +861,6 @@ modified: 2025-12-19T12:43:21.150Z
   - 支持 Tesseract, EasyOCR
   - 效果类似hocr的文字图层，没有画框的文字就是未识别出的
 
-- https://github.com/athrael-soju/Snappy /66Star/MIT/202512/python/ts
-  - Snappy implements region-level document retrieval by unifying vision-language models with OCR through spatial coordinate mapping. 
-  - Unlike traditional systems that return entire pages (VLMs) or lack semantic grounding (OCR-only), Snappy uses `ColPali`'s patch-level similarity scores as spatial relevance filters over OCR-extracted regions; operating entirely at inference time without additional training.
-    - 方案与模型绑定
-  - The approach formalizes coordinate mapping between vision transformer patch grids (32×32) and OCR bounding boxes, repurposing ColPali's late interaction mechanism to generate interpretability maps.
-    - 类似将ocr的bbox渲染为了热力图
-
 - https://github.com/Qianxia666/ocr /GPL/202511/python
   - 利用 OpenAI API 进行图片和 PDF 文档的 OCR 识别，支持异步任务处理、实时通信和完整用户机制的任务管理系统。
   - 自动将识别结果格式化为 Markdown 格式，支持数学公式（KaTeX）
@@ -882,6 +885,13 @@ modified: 2025-12-19T12:43:21.150Z
   - 智能文字定位：精确识别文字在图片中的位置和大小
   - 翻译功能：可选的中文到英文翻译功能（Electron 版本）
   - fastapi + PyInstaller 打包后端为独立可执行文件
+
+- https://github.com/athrael-soju/Snappy /66Star/MIT/202512/python/ts
+  - Snappy implements region-level document retrieval by unifying vision-language models with OCR through spatial coordinate mapping. 
+  - Unlike traditional systems that return entire pages (VLMs) or lack semantic grounding (OCR-only), Snappy uses `ColPali`'s patch-level similarity scores as spatial relevance filters over OCR-extracted regions; operating entirely at inference time without additional training.
+    - 方案与模型绑定
+  - The approach formalizes coordinate mapping between vision transformer patch grids (32×32) and OCR bounding boxes, repurposing ColPali's late interaction mechanism to generate interpretability maps.
+    - 类似将ocr的bbox渲染为了热力图
 
 ## tesseract
 
@@ -971,6 +981,17 @@ modified: 2025-12-19T12:43:21.150Z
     - pdf预览用的浏览器的功能，理论不卡
     - 图片直接解析并存储到minio
 # translation
+- https://github.com/zt6453928/ailat-translation /MIT/202601/python/js
+  - AI-Powered Document Translation Tool
+  - A web-based PDF document parsing and translation tool that supports intelligent document parsing, multi-language translation, and various export formats.
+  - Supports PDF, DOCX and other document formats, extracts text, images, tables, and formulas
+  - Export to PDF, Markdown, HTML, DOCX, JSON, LaTeX
+  - Multiple Translation Engines: Supports DeepLX and OpenAI-compatible APIs
+  - Real-time Preview: Side-by-side comparison of original and translated content
+  - [开源一个支持多格式文档翻译应用 ](https://linux.do/t/topic/1511535)
+    - 出于身边同学对论文翻译的需求，所以开发了这个项目，除了论文我也用来对一些AI教程文档进行翻译
+    - 灵感来自于MinerU, PDF格式还支持对照翻译
+
 - https://github.com/aikilan/Babel-Markdown /MIT/202511/ts
   - provides real-time translation previews for VS Code, synchronizing the original Markdown and AI-translated content in a single view to help you efficiently proofread multilingual documents.
   - Progressive translation preview: streams segments as they finish translating.

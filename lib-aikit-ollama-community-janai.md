@@ -48,7 +48,10 @@ modified: 2026-01-14T19:05:15.969Z
 
 - ## 
 
-- ## 
+- ## [goal: Jan Desktop can use browser](https://github.com/janhq/jan/issues/6873)
+  - Enable Jan to safely use a web browser via MCP (like BrowserMCP/ChromeMCP). 
+  - Let agents navigate, read pages, click, or type with clear user consent.
+  - ✅ 202601已支持
 
 - ## 📌 [epic: Decouple cortex.cpp from Jan _202504](https://github.com/janhq/jan/issues/4906)
   - Decouple cortex.cpp from Jan, so that cortex.cpp acts like a model provider. It should not be affected when using other model providers.

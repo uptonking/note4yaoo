@@ -184,7 +184,7 @@ modified: 2025-09-21T13:58:46.548Z
   - Docling Core provides the foundational `DoclingDocument` data model and API, as well as additional APIs for tasks like serialization and chunking
   - Docling Core defines the `DoclingDocument` as a Pydantic model, allowing for advanced data model control, customizability, and interoperability.
 # ocr/vlm
-- https://github.com/Aquos06/reader-vl /202503/python/inactive
+- https://github.com/Aquos06/reader-vl /MIT/202503/python/inactive/提交少
   - a tool that transforms various document formats, like PDFs and DOCX files, into a unified structure.
   - Process PDFs and DOCX (for now).
   - Uses multimodal LLMs to extract meaning from diagrams, images, chart, and etc.
@@ -192,7 +192,7 @@ modified: 2025-09-21T13:58:46.548Z
   - Fast & Efficient: Leverages YOLO for object detection and Tesseract OCR.
   - Extensibility: Designed for easy integration into AI pipelines for customization and scalability.
   - I am not solely using OCR to parse the pdf. I am using both OCR for normal text (we called it section) and VLM for the more abstract one like Table, Chart, Diagram, and etc
-  - [Introducing Reader VL: A Tool for Unified Document Processing with VLM Integration : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1j2m6m7/introducing_reader_vl_a_tool_for_unified_document/)
+  - [Introducing Reader VL: A Tool for Unified Document Processing with VLM Integration : r/LocalLLaMA _202503](https://www.reddit.com/r/LocalLLaMA/comments/1j2m6m7/introducing_reader_vl_a_tool_for_unified_document/)
     - I'm developing a RAG system for enterprise (B2B) and noticed that many company documents contain charts, images, and other non-text elements. Our current parsers (Docling, Unstructured) struggle to process these formats. While searching for a solution, I couldn't find any parser leveraging modern VLMs—so I decided to build one myself.
     - Currently, Reader VL processes entire documents in a single pass. I'm actively working on implementing chunking and batching functionalities to better support very large documents, such as those spanning hundreds or thousands of pages.
 # code-rag

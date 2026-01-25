@@ -1957,6 +1957,9 @@ modified: 2025-08-23T11:43:35.904Z
   - 🍴 forks
   - https://github.com/hu19940121/jimeng-api
   - [基于【即梦jimeng/dreamina官网2api】的 webui 以及自动获取sessionId _202512](https://linux.do/t/topic/1297174)
+- https://github.com/dongshuyan/dreamina2api
+  - [即梦海外版2api ：Dreamina2API  ](https://linux.do/t/topic/1510014)
+  - 本项目基于 jimeng-api 修改而来
 # models/loras/controlnet
 - https://github.com/guoyww/AnimateDiff /11.7kStar/apache2/202407/python/inactive
   - https://animatediff.github.io/

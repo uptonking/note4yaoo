@@ -166,7 +166,7 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
-- ## 
+- ## 📌 [Unrolling the Codex agent loop | OpenAI _202601](https://openai.com/index/unrolling-the-codex-agent-loop/)
 
 - ## 🧩 这个 Ralph Loop 现在这么流行吗？我今天才仔细去了解一下，原来是一种方法论啊：用一个 bash 无限循环反复喂 prompt 给 AI 编码工具，直到任务完成。
 - https://x.com/vikingmute/status/2013607905040400520

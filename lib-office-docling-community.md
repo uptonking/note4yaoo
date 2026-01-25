@@ -319,7 +319,9 @@ modified: 2025-09-21T13:57:50.332Z
 
 - ## 
 
-- ## 
+- ## [FileNotFoundError: Missing safe tensors file: D:\docling\docling\_model\model.safetensors  ](https://github.com/docling-project/docling/issues/2310)
+- I managed to solve it by downloading specific configs and models. This command helped in my case:
+ `docling-tools models download layout tableformer rapidocr -o <folder_path>`
 
 - ## [Doubts about requirements to use docling in server : r/LangChain _202505](https://www.reddit.com/r/LangChain/comments/1kivf0m/doubts_about_requirements_to_use_docling_in_server/)
 - We run Docling on CPU on dedicated servers from OVHCloud with min 32gb ram. Takes anywhere from 1 ot 5 seconds of parsing per page, more with OCR.

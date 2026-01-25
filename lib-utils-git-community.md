@@ -628,6 +628,25 @@ git am /tmp/repo1-editor-patch/*.patch
 - 这也是我不用 worktree 的原因，每次安装依赖花时间，主要是磁盘顶不住了。
 
 - 这种模式我一直比较好奇。如果是一些玩具的项目，那就纯粹当时浪费token玩玩好了。如果是在真实的项目，人的注意力也完全不够啊，尽管AI可以生成部分代码，但还是需要人的注意力的，这种开N个的打断的成本会很大。
+# discuss-git-protocol/spec
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## ⏳ the author of git ai put together a spec for annotating commits with information about what code is ai generated
+- https://x.com/thdxr/status/2014689039958364209
+  - need to review deeper but opencode will probably implement this
+  - we can't have this kind of functionality only exist in proprietary products like cursor blame
+
+- I find it annoying in Cursor how it treats AI edits with special diff UI elements for "Keep / Undo". I like to look at AI output and tweak edits by hand sometimes. I've found myself just hitting Cursor's "Keep All" button immediately and then using traditional git diff viewer
+
+- this would be huge for debugging. half the time i'm staring at AI-generated code trying to reverse-engineer what prompt led to this decision. knowing "claude wrote this at iteration 3 with X context" would save so much time
+
+- so basically we're adding metadata to commits so future devs can blame the ai instead of each other cool
 # discuss
 - ## 
 

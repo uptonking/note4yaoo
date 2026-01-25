@@ -294,6 +294,13 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-log
   - ?
 
+## 0125
+
+- [error: No solution found when resolving dependencies for split · Issue #14231 · astral-sh/uv](https://github.com/astral-sh/uv/issues/14231)
+
+- [[Bug]: Error : module 'httpx' has no attribute 'AsyncHTTPTransport' · Issue #459 · acheong08/EdgeGPT](https://github.com/acheong08/EdgeGPT/issues/459)
+  - httpx固定版本为旧版本0.28.1, 而不是1.0dev
+
 ## 0124
 
 - [Error: 404 No allowed providers are available for the selected model. : r/RooCode](https://www.reddit.com/r/RooCode/comments/1kz57n0/error_404_no_allowed_providers_are_available_for/)

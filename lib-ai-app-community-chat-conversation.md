@@ -31,7 +31,27 @@ modified: 2023-04-16T10:02:58.738Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [nextchat已经四个月没更新了，是凉了吗？ ](https://linux.do/t/topic/1506232)
+- 有太多选择了，桌面端好几个，不过个人更重视安卓端。
+
+安卓端可以选：
+
+RikkaHub / Kelivo
+LastChat Plus（RikkaHub 的 fork，增加额外功能，比如 Agent Skills）
+BotHub（新晋客户端，走类 ChatGPT 的清爽风格，支持多模型同时回复、文生图等，提示词注入正在开发，Agent Skills 也有望加入；iOS 端正在开发中；后续会开源……）
+Operit AI
+AetherLink
+NoteGen（以笔记为主要形态）
+TChat（开发者原本是 fork 的 RikkaHub，名为 RikkaHubX，后又决定重新开发，但外观上还是与 RikkaHub 相仿）
+BotGem
+Chatbox（老资历，但目前没什么新的发展）
+AIaW
+OMate（角色扮演）
+ChatterUI / PocketPal（本地推理）
+还有一些不是那么广为人知的……
+iOS 端至少有 Kelivo……（没接触过苹果，更多的就不清楚了）
+
+网页端 LobeChat 十分活跃，LibreChat 也偶尔更新。
 
 - ## We separate ui message and model message in LobeChat 1.0 last year. And it turns out to be the most flexible way
 - https://x.com/arvin17x/status/1920106270415360251 

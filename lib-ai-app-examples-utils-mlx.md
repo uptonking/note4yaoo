@@ -221,6 +221,16 @@ modified: 2025-11-01T10:54:26.044Z
     - 应该不更新了，推荐使用gpustack来部署和管理模型
     - 模型和vllm版本更新太快了，两者不适配的问题频发，用爱发电确实难以为继哈哈哈
 
+- https://github.com/katanaml/sparrow /5.1kStar/GPL/202601/python
+  - https://sparrow.katanaml.io/
+  - Structured data extraction and instruction calling with ML, LLM and Vision LLM
+  - Pluggable Architecture: Mix and match different pipelines (Sparrow Parse, Instructor, Agents)
+  - Multiple Backends: MLX (Apple Silicon), Ollama, vLLM, Docker, Hugging Face Cloud GPU
+  - Multi-format Support: Images (PNG, JPG) and multi-page PDFs
+  - API-First Design: RESTful APIs for easy integration
+  - Built-in dashboard and agent workflow tracking
+  - Local Vision LLMs: Mistral, QwenVL, DeepSeek OCR, etc.
+
 - https://github.com/rmusser01/tldw_chatbook /AGPL/202508/python/inactive
   - A sophisticated Terminal User Interface (TUI) application built with the Textual framework for interacting with various Large Language Model APIs.
   - optional 可选安装mlx, mlx_whisper, rag

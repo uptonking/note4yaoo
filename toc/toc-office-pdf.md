@@ -14,6 +14,7 @@ modified: 2021-01-04T17:26:43.784Z
   - pdf-editor 可参考 ppt-editor 的实现，都包含自由文本、标注
     - 💡 可参考 overleaf, 支持典型的latex文本编辑、富文本编辑
   - pdf标注可参考 office-drawing, 还可参考: okular, foxit, canva, xournal, 各类电子书阅读器
+  - 提取pdf中插图/图表的思路是分步执行, vlm返回bbox, 然后通过pymupdf裁剪
 
 - https://printcss.live/
   - 渲染pdf的多种js示例
@@ -103,6 +104,29 @@ modified: 2021-01-04T17:26:43.784Z
   - 🍴 forks
   - https://github.com/cantoo-scribe/pdf-lib
     - This fork adds the support for svg to the pdf-lib project.
+
+- https://github.com/LibPDF-js/core /440Star/MIT/202601/ts
+  - https://libpdf.dev/
+  - modern PDF library for TypeScript. Parse, modify, and generate PDFs with a clean, intuitive API
+  - LibPDF was born from frustration at Documenso
+    - PDF.js is excellent for rendering and even has annotation editing — but it requires a browser
+    - pdf-lib has a great API, but chokes on slightly malformed documents
+    - pdfkit only generates, no parsing at all
+    - We kept adding workarounds. Eventually, we decided to build what we actually needed
+  - https://x.com/lxunos/status/2014805777551392968  _202601
+    - Introducing LibPDF the library that we’ve always wanted for PDF parsing, manipulation and signing (MIT)
+    - It does text/line/word extraction but won't do OCR, so if you're dealing with a scanned document you would need other tooling.
+      - For a multi column layout I'm not sure, we parse all the text operators we can find and do glyph mapping.
+      - Then using the font metrics we get everything onto a baseline and aggregate that into lines/words.
+    - @documenso has embeddable signing, works with any framework, is customizable, and open source.
+    - LibPDF handles the low-level PDF work. Documenso handles the signing UX. Use both.
+    - how would you compare this to reducto
+      - I'd say they're more focused on document extraction, for a rasterised document they'd be way better if that's your sole focus.
+    - just wrap pdfium.. wont beat its performance
+    - Pdf nightmares
+      - layering citation bounding boxes
+      - free text search
+      - resizing
 
 - https://github.com/anaralabs/lector /355Star/MIT/202510/ts
   - https://lector-weld.vercel.app/
@@ -492,11 +516,6 @@ modified: 2021-01-04T17:26:43.784Z
   - Supports OpenAI and OpenRouter through LiteLLM
   - Flexible CLI: Both file-based and pipe-based usage modes
   - Modular Architecture: Clean, maintainable codebase with separation of concerns
-- https://github.com/emcf/thepipe /MIT/202510/python
-  - a package that can scrape clean markdown, multimodal media, and structured data from complex documents.
-  - It can extract well-formatted data from a wide range of sources, including PDFs, URLs, Word docs, Powerpoints, Python notebooks, videos, audio, and more.
-  - Accepts a wide range of sources, including PDFs, URLs, Word docs, Powerpoints, Python notebooks, GitHub repos, videos, audio, and more
-  - The default install only pulls in CPU-friendly dependencies so it is suitable for constrained environments and CI systems. GPU-enabled libraries such as PyTorch and Triton are left as optional extras.
 
 - https://github.com/USEPA/pdf-data-extraction /js
   - The purpose of this project is to further the research and development of tools that NCEA can use in their creation of machine-readable datasets and machine learning research. 
@@ -871,6 +890,33 @@ modified: 2021-01-04T17:26:43.784Z
 
 ## pdf-extraction
 
+- https://github.com/quest-bih/quest-pdf-tools /AGPL/202512/python
+  - FastAPI-based web application and API service for processing PDF documents
+  - The service can be deployed either as a full web application with an intuitive interface or as a standalone API.
+  - PDF Layout Analysis: Detects and annotates different document elements including titles, text blocks, figures, tables, and formulas
+  - Automatically identifies and removes headers, footers, and other irrelevant content from PDFs
+  - 🖼️ Figure Extraction: Extracts and exports figures from PDFs into separate image files
+    - The bounding box computation happens in `src/doc_layout.py` during `YOLO` detection. YOLO runs inference on the rendered image (internally resized to 1024x1024). 
+    - Each cropped figure is saved as a PNG file with a naming convention like {pdf_name}_page{N}_figure{M}.png 
+    - the cropped figures are saved to the filesystem
+    - the figure extraction uses `PyMuPDF`'s `get_pixmap()` method. This method renders the PDF page as an image at 300 DPI, regardless of the original PDF format
+    - PyMuPDF handles the conversion internally - you get the same rendered image output for both types
+  - Table Extraction: Identifies and exports tables from PDFs into separate files
+  - Text Extraction: Extracts plain text content from PDFs with preserved formatting
+  - YOLO-based Detection: Utilizes DocLayout-YOLO model for accurate document layout analysis
+  - https://github.com/huridocs/pdf-document-layout-analysis /1.1kStar/apache2/202601/python
+    - A Docker-powered microservice for intelligent PDF document layout analysis, OCR, and content extraction
+    - The service offers both a user-friendly Gradio web interface for interactive use and a comprehensive REST API
+    - Export to JSON, Markdown, HTML, and visualize PDF segmentations
+    - Extract tables as HTML and formulas as LaTeX
+    - Apply OCR to scanned documents: uses Tesseract OCR with support for 150+ languages
+    - Visual & Fast Models - Choose between VGT (Vision Grid Transformer) for accuracy or LightGBM for speed
+    - Translate documents to multiple languages using Ollama models
+    - https://github.com/huridocs/pdf-table-of-contents-extractor
+      - extract Table of Contents (TOC) information from PDF
+    - https://github.com/huridocs/pdf-text-extraction
+      - extract text from PDF files
+
 - https://github.com/Flopsky/MarkThat /MIT/202601/python
   - A Python library for converting images and PDFs to Markdown or generating rich image descriptions using state-of-the-art multimodal LLMs.
   - Multiple Provider Support: OpenAI, Anthropic, Google Gemini, Mistral, and OpenRouter
@@ -883,7 +929,13 @@ modified: 2021-01-04T17:26:43.784Z
   - Robust Retry Logic: Intelligent retry with fallback models and failure feedback
   - Async Support: Concurrent processing for improved performance
   - Clean architecture: Type-safe, well-documented, and thoroughly tested
-  - 实测可运行的模型包括, gpt-4o-mini, mistral-medium, nemotron-12b-vl, 但效果都很差
+  - 实测可运行的模型包括, gpt-4o-mini, mistral-medium, nemotron-12b-vl, 🤔 但效果都很差
+
+- https://github.com/tatevik-t/pdf_visual_extraction /MIT/202509/python/inactive
+  - A Python library for extracting text and visual elements (tables, figures) from PDF document
+  - Use OpenAI's GPT-4o-mini to detect and extract tables and figures
+    - 🧊 返回bbox数据, 需要手动裁剪图片
+  - Convert extracted tables to CSV format using LLM
 
 - https://github.com/AdemBoukhris457/Doctra /apache2/202511/python
   - https://ademboukhris457.github.io/Doctra/
@@ -915,6 +967,16 @@ modified: 2021-01-04T17:26:43.784Z
   - 🛝
     - VisionParserError: Failed to convert page 1 to base64-encoded PNG: Ollama Model processing failed: timed out
 
+- https://github.com/EsmaeilNarimissa/SciDOCX /MIT/202511/python/inactive
+  - scientific document conversion and multimodal RAG pipeline powered by DeepSeek-OCR and Qwen2-VL.
+  - DeepSeek-OCR: pdf > markdown > pandoc > docx
+  - Dual Output:
+    - Markdown and DOCX for editing and publishing.
+    - JSONL elements (paragraphs, tables, figures) for multimodal retrieval.
+  - Embedded Figures: Extracts, deduplicates, and embeds figures with correct captions in both DOCX and JSONL outputs.
+  - optionally use Qwen2-VL-2B-Instruct to generate concise, factual figure descriptions.
+  - PyMuPDF for PDF processing
+
 - https://github.com/gsmatheus/pdf-image-extractor /202511/python
   - a Python script designed to process PDF files, specifically extracting and saving images embedded within the pages of the document. 
   - Automatically resizes the extracted images to 60% of their original size, ensuring consistent output and potentially reducing file size.
@@ -934,6 +996,86 @@ modified: 2021-01-04T17:26:43.784Z
   - Document Layout Segmentation: Uses YOLOv8-based models to detect and classify document elements (text blocks, tables, images, headers, etc.)
   - Vision-Language Model Integration: Leverages OpenAI-compatible VLM models (default: Qwen2.5-VL) for intelligent text extraction
   - CLI Tools: Command-line utilities for batch PDF processing and document analysis
+  - Image Processing: Drag-and-drop upload, real-time preview, and bounding box visualization
+    - Overlay detected elements on the original image
+    - Cropped image extraction for tables and images
+  - Core: FastAPI, Uvicorn, Pydantic, Pydantic-settings
+  - Computer Vision: Pillow, OpenCV, Ultralytics (YOLO)
+  - Document Processing: pdf2image
+  - uv run python process_pdf.py -i /Users/yaoo/Documents/01files/testpdf/html5canvas1pages-pic-figure.pdf -o output
+
+- https://github.com/emcf/thepipe /MIT/202510/python/inactive
+  - a package that can scrape clean markdown, multimodal media, and structured data from complex documents.
+  - It can extract well-formatted data from a wide range of sources, including PDFs, URLs, Word docs, Powerpoints, Python notebooks, videos, audio, and more.
+  - Accepts a wide range of sources, including PDFs, URLs, Word docs, Powerpoints, Python notebooks, GitHub repos, videos, audio, and more
+  - The default install only pulls in CPU-friendly dependencies so it is suitable for constrained environments and CI systems. GPU-enabled libraries such as PyTorch and Triton are left as optional extras.
+
+- https://github.com/katanaml/sparrow /5.1kStar/GPL/202601/python
+  - https://sparrow.katanaml.io/
+  - Structured data extraction and instruction calling with ML, LLM and Vision LLM
+  - Pluggable Architecture: Mix and match different pipelines (Sparrow Parse, Instructor, Agents)
+  - Multiple Backends: MLX (Apple Silicon), Ollama, vLLM, Docker, Hugging Face Cloud GPU
+  - Multi-format Support: Images (PNG, JPG) and multi-page PDFs
+  - API-First Design: RESTful APIs for easy integration
+  - Built-in dashboard and agent workflow tracking
+  - Local Vision LLMs: Mistral, QwenVL, DeepSeek OCR, etc.
+
+- https://github.com/Tro-fish/ChartEye-all_in_one-figure-VQA /202407/pythoh/js/inactive
+  - ChartEye: Multi Modal QA Chatbot for Scientific Figure Images
+  - This repository contains the code for ChartEye, including its implementation and execution instructions, for the Figure-to-Caption and QA Chatbot for Chemistry and Materials Science documents.
+  - Extract Chart(figure) image from PDF, PPTX, WORD files --> Image Extraction
+    - ❓ 似乎不支持图片版pdf
+    - PDF: Extracting images with pymupdf
+    - WORD: Extracting images with python-docx
+    - PPTX: Extracting images with python-pptx
+  - Convert Chart(figure) image to text explanation --> Chart Captioning
+  - Convert imformation in a Chart(figure) image to a number --> Chart Derendering
+  - Answer Question about the information in a Chart(figure) imge --> Question Answering
+
+- https://github.com/lkk688/VisionLangAnnotate /MIT/202511/python/inactive
+  - an advanced vision-language annotation framework that enables dynamic object detection and annotation based on natural language prompts.
+  - VisionLangAnnotate consists of two main components:
+    - Traditional Object Detection Pipeline: Multiple object detection models (DETR, YOLO, RT-DETR)
+    - Vision-Language Models (VLM) Backend: llava, Qwen2.5-VL
+  - Detect objects based on natural language descriptions
+  - Combines traditional object detectors with Vision-Language Models
+  - Unified API: Simple interface for various detection and annotation tasks
+  - Generate annotations on-the-fly based on user requests
+  - Support for both image and video inputs
+  - Zero-Shot Capabilities: Detect novel objects without prior training
+  - Export detection results to Label Studio compatible JSON format
+  - Complete Annotation Loop: End-to-end pipeline from user requests to data pre-processing, object detection, vision annotation, and human validation
+
+- https://github.com/pengyuanli/PDFigCapX /apache2/202411/python/inactive
+  - https://www.eecis.udel.edu/~compbio/PDFigCapX
+  - For each document in the input_path, the main function will generate a corresponding folder with the same name as the original document in the output_path. All extracted figures (in jpg format), captions (in text format) and their coordinate information (in json format) will be saved in the corresponding folder.
+  - PDF parsing using xpdf 
+
+- https://github.com/morkev/vlm-yolo-detector /MIT/202601/python
+  - VLM-powered image extraction and semantic search for equipment manuals. This repository provides the image data pipeline for the agentic-rag system.
+  - Extract images from PDF documents (embedded images + rendered pages with diagrams)
+  - Generate VLM descriptions for each image using LLaVA via Ollama
+  - Create semantic embeddings for intelligent image search
+  - Integrate with agentic-rag for visual content retrieval
+  - PyMuPDF (for PDF processing)
+  - sentence-transformers (for embeddings)
+  - Pillow (for image processing)
+  - Optional Dependencies (for YOLO training): ultralytics, torch, torchvision
+  - 🛝 
+    - uv sync时 there are no versions of yologen[vlm]
+  - https://github.com/ahmetkumass/yolo-gen /MIT/202601/python
+    - Train YOLO + VLM with one command. No extra labeling
+    - Train object detection and natural language description models from a standard YOLO dataset. VLM training data is auto-generated from YOLO labels.
+    - Why YOLO + VLM?
+      - YOLO alone: Fast but not enough for production-level accuracy
+      - VLM alone: Smart but too slow for production
+      - YOLO + VLM: Fast detection + VLM adds detailed descriptions, classification, and false positive filtering
+
+- https://github.com/longhoag/vlm-prototype /MIT/202601/python
+  - Simple VLM pipeline prototype for object detection with proprietary model
+  - The system processes traffic images, identifies vehicles (cars, motorcycles, mopeds, trucks, buses), and outputs annotated images with green bounding boxes.
+  - Images are analyzed via API, vehicle coordinates are extracted, and bounding boxes are rendered on the output images.
+  - Opens input images using Pillow (PIL), Draws green (#00FF00) bounding boxes
 # pdf-video
 - [PDF to Brainrot | MemenomeLM](https://www.memenome.gg/)
   - 把 PDF 转化为易上瘾的视频

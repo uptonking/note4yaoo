@@ -22,6 +22,8 @@ modified: 2025-09-21T13:58:08.942Z
 - 优化提取中文pdf文字的方案
   - 可参考华人团队的方案, 如 mineru
 # draft
+- 默认不支持中文?
+
 - 对于任意一个文件，如何自动选择pipeline来convert
 
 - vlm
@@ -84,6 +86,8 @@ modified: 2025-09-21T13:58:08.942Z
 - 
 
 # more
+- [Figure Export from Docling — Exporting PDF to image - DEV Community](https://dev.to/aairom/figure-export-from-docling-exporting-pdf-to-image-4lp6)
+
 - [Please add more descriptions on how to use VLM. · Issue · docling-project/docling _202508](https://github.com/docling-project/docling/issues/2102)
 
 - [IBM is open-sourcing a new toolkit for document conversion - IBM Research _202411](https://research.ibm.com/blog/docling-generative-AI)

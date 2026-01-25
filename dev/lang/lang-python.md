@@ -15,6 +15,7 @@ modified: 2020-07-14T09:27:30.503Z
   - ai: 🌹 langgraph, comfyui, mlx, label-studio
     - huggingface模型库里的启动/测试脚本都是python
   - data: superset, pyodide(MPL)
+  - office: pymupdf(AGPL), docling
   - devops: airflow, posthog
   - crdt
   - git-like

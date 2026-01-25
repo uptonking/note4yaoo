@@ -563,6 +563,12 @@ modified: 2023-04-04T22:39:45.442Z
   - 创意滤镜与专业调整: 一键应用动漫、合成波、Lomo 等多种艺术风格滤镜，或进行背景虚化、增强细节、调整光效等专业级图像调整。
   - 一键抠图: 强大的人工智能可自动识别并移除图片背景，一键生成带透明通道的 PNG 图像，非常适合设计和合成。
   - AI 模型: Google Gemini API (gemini-2.5-flash-image-preview, imagen-4.0-generate-001, gemini-2.5-flash)
+
+- https://github.com/yunshaochu/genai-image-patcher /202601/ts
+  - 基于nano banana pro局部重绘图片，并回填原图
+  - 允许用户在图片上框选特定区域，利用 Google Gemini 或 OpenAI (及兼容接口) 的多模态能力，根据文本提示词对该区域进行修改、增强或替换，并自动将生成的补丁无缝合成回原图。
+  - 无论是去除水印、修改细节、批量编辑，还是通过局部框选绕过 AI 模型的安全过滤实现漫画翻译，这个工具都能轻松胜任。
+  - [开源一个可以用banana pro翻译涩图的项目 _202601](https://linux.do/t/topic/1510546)
 # more
 - https://github.com/ascorbic/unpic-img
   - This library uses unpic to detect the image CDN, and then uses the CDN's URL API to resize and format images. 

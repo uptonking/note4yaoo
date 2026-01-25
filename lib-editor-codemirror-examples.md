@@ -97,6 +97,9 @@ modified: 2023-06-23T12:46:53.288Z
   - https://git.szumserver.eu/szymon/overleaf
   - https://github.com/smhaller/ldap-overleaf-sl
     - Free LDAP and OAuth2 Authentication and Authorisation for Sharelatex / Overleaf (Community Edition)
+  - vendors
+  - https://latex.cstcloud.cn/
+    - 可直接上传arxiv下载的zip
 
 - https://github.com/codesandbox/sandpack /4.5kStar/apache2/202405/ts
   - https://sandpack.codesandbox.io/

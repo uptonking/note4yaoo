@@ -12,6 +12,13 @@ modified: 2024-04-05T06:34:05.602Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [How do you prefer to deploy services? : r/selfhosted _202601](https://www.reddit.com/r/selfhosted/comments/1qlw8ln/how_do_you_prefer_to_deploy_services/)
+  - docker >> k8s > apt/yum
+
 - ## CI/CD explained in simple terms.
 - https://twitter.com/NikkiSiapno/status/1720810644713455793
   - [CI/CD Demystified — Build, Test, Deploy, Repeat](https://blog.levelupcoding.co/p/luc-26-cicd-demystified-build-test-deploy-repeat)

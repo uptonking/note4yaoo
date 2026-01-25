@@ -24,6 +24,20 @@ modified: 2023-11-03T17:43:01.518Z
     - Label Studio supports many common and standard formats for exporting completed labeling tasks.
     - coco, csv,json,CONLL2003/spaCy/YOLO
 
+- https://github.com/lkk688/VisionLangAnnotate /MIT/202511/python/inactive
+  - an advanced vision-language annotation framework that enables dynamic object detection and annotation based on natural language prompts.
+  - VisionLangAnnotate consists of two main components:
+    - Traditional Object Detection Pipeline: Multiple object detection models (DETR, YOLO, RT-DETR)
+    - Vision-Language Models (VLM) Backend: llava, Qwen2.5-VL
+  - Detect objects based on natural language descriptions
+  - Combines traditional object detectors with Vision-Language Models
+  - Unified API: Simple interface for various detection and annotation tasks
+  - Generate annotations on-the-fly based on user requests
+  - Support for both image and video inputs
+  - Zero-Shot Capabilities: Detect novel objects without prior training
+  - Export detection results to Label Studio compatible JSON format
+  - Complete Annotation Loop: End-to-end pipeline from user requests to data pre-processing, object detection, vision annotation, and human validation
+
 - https://github.com/recogito/text-annotator-js /BSD/202601/ts
   - A JavaScript library for adding interactive text annotation functionality to web applications.
   - The Text Annotator data model aligns closely with the W3C Web Annotation Data Model, but with a few key differences to optimize for performance and ease of use. 

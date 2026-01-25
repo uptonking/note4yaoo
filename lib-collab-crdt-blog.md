@@ -268,6 +268,8 @@ modified: 2022-10-13T08:00:21.260Z
   - Causal trees are a similar approach (named CT but in RGA it's called a timestamped insertion tree). 
   - In any case, CT/RGA algorithms have been proven to use the same algorithm
 # more-crdt
+- [构建 CRDT 协同 Notebook —— Reconcile 系统与一致性](https://blog.wibus.ren/posts/tag/CRDT)
+
 - [CRDTs and Realtime Collaboration](https://nyxtom.dev/2020/09/01/intro-to-crdts)
 
 - [Collaborative Web Apps_202108](https://zjy.cloud/posts/collaborative-web-apps)

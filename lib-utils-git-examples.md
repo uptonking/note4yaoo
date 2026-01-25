@@ -582,6 +582,12 @@ modified: 2023-08-29T10:12:22.345Z
 # git-ai
 - https://github.com/jnsahaj/lumen /MIT/202411/rust
   - Instant AI Git Commit message, Git changes summary from the CLI (no API key required)
+
+- https://github.com/git-ai-project/git-ai /490Star/apache2/202601/rust
+  - https://usegitai.com/
+  - Git extension for tracking the AI-generated code in your repos
+  - Supported Coding Agents call Git AI and mark the lines they insert as AI-generated.
+    - On commit, Git AI saves the final AI-attributions into a Git Note. These notes power AI-Blame, AI contribution stats, and more. The CLI makes sure these notes are preserved through rebases, merges, squashes, cherry-picks, etc.
 # git-storage
 - https://github.com/CodeForPhilly/jawn /js
   - a node.js module that allows distributed version control of Tabular Data. 

@@ -200,7 +200,7 @@ modified: 2022-11-11T10:46:41.519Z
   - Converts most equations to latex
   - Due to the licensing of the underlying models like layoutlmv3 and nougat, this is only suitable for noncommercial usage.
 
-- https://github.com/pdf2htmlEX/pdf2htmlEX /GPLv3
+- https://github.com/pdf2htmlEX/pdf2htmlEX /5.4kStar/GPLv3/202507/cpp/html/inactive
   - https://pdf2htmlex.github.io/pdf2htmlEX/
   - Convert PDF to HTML without losing text or format.
   - This is my branch of pdf2htmlEX 
@@ -208,6 +208,9 @@ modified: 2022-11-11T10:46:41.519Z
   - Some support for transparent text
   - Supporting links, outlines (bookmarks), printing, SVG background, Type 3 fonts and more...
   - 利用的Chrome Headless，让Chrome渲染PDF，再导出成HTML，甚至图片都转成了 base64 字符，所以一个网页就可以包含完整的文本、字体和图片等内容
+  - [how to install on macos  _202401](https://github.com/pdf2htmlEX/pdf2htmlEX/issues/159)
+    - [Building · pdf2htmlEX/pdf2htmlEX Wiki](https://github.com/pdf2htmlEX/pdf2htmlEX/wiki/Building)
+    - While it should in principle be possible to build on macOS, unfortunately we currently have no access to a development/testing environment with which to ensure the buildScripts are adequately tuned to build on macOS.
 
 - https://github.com/PDFTron/web-to-pdf
   - Convert any web technology to PDF (HTML to PDF, html2pdf)

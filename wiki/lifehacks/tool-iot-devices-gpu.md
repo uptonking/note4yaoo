@@ -106,7 +106,21 @@ modified: 2026-01-15T15:33:18.008Z
 
 - ## 
 
-- ## 
+- ## [CUDA moat : r/AMD_Stock _202601](https://www.reddit.com/r/AMD_Stock/comments/1qjc3s6/cuda_moat/)
+  - Claude Code just ported a CUDA backend to ROCm in 30 min. I have never written kernel before.
+  - You don't even need hipify or translation middleware. Just port CUDA with Claude Code, native performance out of the gate.
+
+- I hate to burst the bubble but this is in no way special. ROCm (rather HIP) is source compatible with CUDA. It was designed as a clone of CUDA specifically to make porting and cross-vendor GPU programming easy.
+  - The only thing you are changing is "cuda_" to "hip_" in function names making it is really rather trivial for a person to do a basic port. And as you say the 'hipify' tool does this automatically for you anyway.
+  - So in effect all you are really doing here is asking Claude to act as a very expensive text search and replace tool.
+  - CUDA has not been a moat in the enterprise space for some time now because ROCm is so closely aligned with CUDA semantics but also because so much of the work is abstracted to Torch.
+- Disclaimer: CTO of this and major contributor to this.
+  - HIP is absolutely not source compatible with CUDA.
+  - Many C++ language rules work differently between CUDA and HIP in ways that break programs. It's pretty common for the first result after a HIP port to be cryptic compile errors because of this. Inline assembly - which is pretty universally used in CUDA programs - is also a bit of a non-starter.
+  - The Torch guys end up maintaining CUDA, HIP, and now Triton versions of everything, which isn't ideal.
+
+- No, torch has too much overhead, even libtorch is slow compared to raw CUDA / ROCm, and clearly it's not just text replace
+  - Torch is an abstraction layer which runs native kernels on the backend, as such there is no overhead.
 # discuss-news
 - ## 
 

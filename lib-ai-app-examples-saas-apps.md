@@ -478,12 +478,33 @@ modified: 2025-02-21T17:17:42.225Z
 
 ## fact-checking
 
+- https://github.com/EmmaStoneX/NetPulse /MIT/202601/ts
+  - https://netpulse.zxvmax.com/
+  - [【开源自荐】事件视界，从“获取信息”升级到“获取洞察” ](https://linux.do/t/topic/1421261)
+  - 最初的想法是：能有个快速扫描全球科技热点动态，然后还能跟历史上的类似事件对比的一个玩具，在AI Studio用build创建了最初的原型。
+  - 做了前后端分离
+
 - https://github.com/KeaBase/kea-research /BSL/202601/python/ts/astro
   - https://keabase.com/
   - Multi-AI collaboration platform that combines responses from multiple AI models, cross-validates information, and delivers verified, consensus-backed answers.
   - [[Open Sourse] I built a tool that forces 5 AIs to debate and cross-check facts before answering you : r/LocalLLM](https://www.reddit.com/r/LocalLLM/comments/1qj3l75/open_sourse_i_built_a_tool_that_forces_5_ais_to/)
     - So you copied pewdiepies council concept. 
   - https://github.com/karpathy/llm-council
+
+## fintech/stock
+
+- https://github.com/ZhuLinsen/daily_stock_analysis /MIT/202601/python
+  - [[开源自荐] 基于AI的股票分析系统 _202601](https://linux.do/t/topic/1427263)
+  - 起初只是自己做一个帮忙分析自选股和大盘的工具，减少盯盘、盯股票分析的精力，后面本着开源精神开源出来了，能够每天定时推送到企业微信上。
+  - 用的都是免费的方案，github action + Gemini的API + Serpapi和TAVILY的检索功能，免费额度足够日常使用
+  - 每日自动生成大盘复盘
+
+- https://github.com/brokermr810/QuantDinger /apache2/202601/python/js/vue
+  - https://ai.quantdinger.com/
+  - a local-first, privacy-first, self-hosted quantitative trading infrastructure. 
+  - It runs on your own machine/server, providing multi-user accounts backed by PostgreSQL while keeping full control of your strategies, trading data, and API keys.
+  - runs locally. Your strategies, trading logs, API keys, and analysis results stay on your machine. No vendor lock-in
+  - [【开源自荐】目前全网最全市场的AI量化工具【QuantDinger】，全面开源 ](https://linux.do/t/topic/1507020)
 # cv
 - https://github.com/IDEA-Research/Rex-Omni /1kStar/IDAE/202512/python/华人作者
   - https://rex-omni.github.io/

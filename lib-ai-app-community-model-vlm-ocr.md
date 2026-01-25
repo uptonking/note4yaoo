@@ -12,6 +12,9 @@ modified: 2025-11-06T18:49:13.977Z
 - tips
   - 缺少pdf测试文件或资源，可以去主流pdf/ocr方案的issue里面找附件
 
+- leaderboard
+  - [Open VLM Leaderboard - a Hugging Face Space by opencompass](https://huggingface.co/spaces/opencompass/open_vlm_leaderboard)
+
 - resources
   - [Supercharge your OCR Pipelines with Open Models _202510](https://huggingface.co/blog/ocr-open-models)
   - [PaddleOCR-VL和Deepseek-OCR部署使用体验记录 _202510](https://linux.do/t/topic/1107651)
@@ -37,11 +40,12 @@ modified: 2025-11-06T18:49:13.977Z
   - 暂不支持(20260106): dots.ocr, mineru
   - [Models to port to MLX-VLM · Issue · Blaizzy/mlx-vlm _202406](https://github.com/Blaizzy/mlx-vlm/issues/39)
 
-- 支持提取图片
+- 🖼️ 支持提取图片的bbox坐标
+  - glm-4.6v-flash
+  - Qwen3-VL
   - PaddleOCR-VL
   - dots.ocr
   - Chandra
-  - Qwen3-VL
   - Docling
   - unstructured
   - mineru-PDF-Extract-Kit(AGPL), Marker(GPL)
@@ -108,6 +112,14 @@ modified: 2025-11-06T18:49:13.977Z
     - We have debated on this before working on the second version, but in the end we decided on HTML as output as some nested tables cannot be represented in markdown and thus we would lose some generality. Also converting from html to md after transcription is much more robust than the reverse operation, which also explains our choice. It hasn't been planned for now to give this as option but I'd say the model would be quite suited for a finetuning in this direction if it's really a deal breaker for your usage 
   - [Remove page numbers from the output](https://huggingface.co/lightonai/LightOnOCR-2-1B/discussions/5)
     - one of the main design choices compared to other solution is to include all visible text. that being said, the model can be easily finetuned to ignore headers/footers/page numbers, see the v1 blog post for an example.
+
+- glm-4.6v-flash
+  - https://github.com/zai-org/CogVLM
+  - Visual Grounding. Three modes of grounding are supported:
+    - Can you provide a description of the image and include the coordinates [[x0,y0,x1,y1]] for each mentioned object?
+    - Can you point out children in blue T-shirts in the image and provide the bounding boxes of their location?
+    - Tell me what you see within the designated area [[086,540,400,760]] in the picture.
+    - Format of coordination: The bounding box coordinates in the model's input and output use the format [[x1, y1, x2, y2]], with the origin at the top left corner, the x-axis to the right, and the y-axis downward. (x1, y1) and (x2, y2) are the top-left and bottom-right corners, respectively, with values as relative coordinates multiplied by 1000 (prefixed with zeros to three digits).
 
 - llama3.2-vision-11b
   - 似乎不支持中文

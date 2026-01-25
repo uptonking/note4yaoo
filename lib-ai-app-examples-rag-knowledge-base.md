@@ -1047,6 +1047,20 @@ modified: 2025-11-30T17:27:16.720Z
     - One of the main reasons I started KnowNote was that many similar projects (including open-notebook) rely on Docker-based setups, which can be a bit intimidating for non-technical users.
     - My goal here was to explore a lighter, desktop-first approach using Electron, so people can just download and run it without dealing with containers.
 
+- https://github.com/Panda-995/wechat-editor /apache2/202601/ts
+  - 专为微信公众号创作者打造的极致像素风 Markdown 编辑器，内置 Google Gemini AI 强大助手
+  - [告别排版地狱！不只是NAS，更是写作助手、排版大师和美学设计师 ](https://linux.do/t/topic/1506017)
+    - 上个月，熊猫开源了开发的妙笔生花项目，主要是利用AI来检测文章中的错别字以及语句问题，这也是熊猫之前被粉丝拷打很多的问题。但只有检测的功能就导致我很多时候写完并不愿意用它单独去跑一遍
+    - 原因还是在于它的功能太少了，于是在妙笔生花的基础上，最近熊猫又折腾了一个新的开源项目-微信公众号编辑器
+    - 直接做了个在线的编辑器，首页能看到最左侧是文章列表，右边则是编辑区和预览区，编辑区支持Markdown语法，同时编辑区和预览区支持同步滚动
+  - https://github.com/Panda-995/ai-writing-assistant /202512/ts
+    - 妙笔生花是一款基于 Google Gemini 和 OpenAI 技术的现代化智能写作辅助工具
+    - 智能纠错与润色：自动检测错别字、语法错误、标点误用，并提供专业的润色建议。
+    - 逻辑结构可视化：利用 D3.js 生成文章逻辑树状图，直观展示核心论点与支撑论据的层次结构。
+    - 多模型支持：默认支持 Google Gemini (Flash/Pro)，兼容 OpenAI (GPT-4o) 及其他兼容接口。
+    - AI SDK: @google/genai (Gemini 2.0/1.5)
+    - Markdown 渲染: react-markdown
+
 - https://github.com/arc53/DocsGPT /17.4kStar/MIT/202511/python/ts/提交多
   - https://app.docsgpt.cloud/
   - https://docsgpt.arc53.com/
@@ -1461,6 +1475,32 @@ modified: 2025-11-30T17:27:16.720Z
   - https://pen2-pdf.vercel.app/
   - a modern web application that offers six powerful productivity tools: AI-powered text extraction and PDF conversion, intelligent timetable management with Excel/CSV import, comprehensive todo list management with subtasks, smart notes generation with a searchable library, a full-featured digital whiteboard, and an AI assistant (Bella) for intelligent help - all designed to streamline your academic and professional workflow.
 # citation/sourcing
+- https://github.com/preprocess-co/rag-document-viewer /MIT/202509/python/js
+  - https://preprocess.co/rag-document-viewer
+  - https://preprocess-rag-dv-demo.hf.space/
+  - open-source library that generates high-fidelity file previews for seamless integration into your applications. 
+  - It provides desktop-level file viewing capabilities for a wide range of document formats
+  - The library converts these files into interactive HTML-based previews that can be easily embedded into web applications
+  - You can now embed the viewer in your application with just an `<iframe>`.
+  - 依赖LibreOffice、pdf2htmlEX, These tools are not bundled with the rag-document-viewer package; they must be installed on the host system where viewers are generated. 
+  - 似乎不支持mac构建
+  - Runs 100 % in-browser. Files are served directly from your backend under your auth logic, no external servers.
+  - 🔗 Precise Highlights: Pass bounding-box coordinates from your RAG chunks; the viewer auto-scrolls and spotlights them.
+    - You can get chunk coordinates from chunking providers like Preprocess.co (which supports paragraphs, layout items, multi-column layouts, slides, and more) or Unstructured.io (which offers PDF-only item-level support).
+    - Chunks' coordinates should be stored in a list. When storing and then accessing a chunk, you should use the list index to reference the correct chunk.
+    - If no chunk information is provided when generating the viewer, the following features will be disabled: Chunk highlighting and navigation
+
+- https://github.com/zt6453928/ailat-translation /MIT/202601/python/js
+  - AI-Powered Document Translation Tool
+  - A web-based PDF document parsing and translation tool that supports intelligent document parsing, multi-language translation, and various export formats.
+  - Supports PDF, DOCX and other document formats, extracts text, images, tables, and formulas
+  - Export to PDF, Markdown, HTML, DOCX, JSON, LaTeX
+  - Multiple Translation Engines: Supports DeepLX and OpenAI-compatible APIs
+  - Real-time Preview: Side-by-side comparison of original and translated content
+  - [开源一个支持多格式文档翻译应用 ](https://linux.do/t/topic/1511535)
+    - 出于身边同学对论文翻译的需求，所以开发了这个项目，除了论文我也用来对一些AI教程文档进行翻译
+    - 灵感来自于MinerU, PDF格式还支持对照翻译
+
 - https://github.com/stanford-oval/WikiChat /1.5kStar/apache2/202504/python/inactive
   - https://wikichat.genie.stanford.edu/
   - WikiChat is an improved RAG. It stops the hallucination of large language models by retrieving data from a corpus.

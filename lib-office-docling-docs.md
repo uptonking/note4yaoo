@@ -13,4 +13,17 @@ modified: 2025-09-21T13:58:25.673Z
 
 # docs
 
+- By default, models are downloaded automatically upon first usage.
+  - If you would prefer to explicitly prefetch them for offline use, 
+  - docling-tools models download
+    - Models downloaded into `$HOME/.cache/docling/models`.
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
 # more

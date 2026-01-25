@@ -206,16 +206,19 @@ modified: 2025-03-22T16:10:24.856Z
 - rewrite open-canvas with langgraph
 # 💎🚀 aichorage - local llm with joy, 提供模型API、rag可靠性、pdf文本操作
 - selling-points
+  - 易用性: 模型推荐 + 场景优化的提示词 + 多模型/多版本对比
   - ✈️ local models support: mlx, lmstudio-alternative
     - 允许用户分享文档/插画中的模型配置，运行日志
     - 模型库: text模型, ocr模型, 翻译模型, t2i生图模型, lmstudio在模型分类上做的不够好
     - 参考janai/pipeshub, 既支持选择本地/api模型，也支持选择图片/文档
     - ocr/vlm comparison-matrix/playground: 识别对比, 翻译对比
+      - ocr模型的输出统一为openai格式、统一标签
   - 🔗 citations for search: 外部数据源如字典mdx/书籍epub/wikipedia公开db/统计年鉴
     - 类似词典库/kiwix的预置模块, 可下载、可分享, 不必每次都全量索引
     - wikipedia zim 自动翻译为中文
     - vector-marketplace, 支持用户选择任意数量的pdf文档创建embeddings, 并发布, 可作为一种变通方案解决数据隐私问题
     - 查看原文pdf-parts时支持仅查看前后几页, 保护原文内容
+    - 对同一场景,如翻译/ocr, 针对不同模型设计合理的参数
   - large pdf rag workflows: chunking-strategies, reindex, pdf-parts
   - 🌐 pdf edit
     - proofreading: 一键检查, 版本历史
@@ -414,6 +417,9 @@ modified: 2025-03-22T16:10:24.856Z
 
 ```
 
+- pm-coding
+  - 将ai-prompt保存在git commit，方便查看历史, 也方便区分human-edits/commits
+
 - [智能编码助手通义灵码 产品文档](https://help.aliyun.com/zh/lingma/)
   - [价格-通义灵码](https://lingma.aliyun.com/pricing)
   - 个人专业版为限免阶段，所有用户均可享受个人专业版服务，限免期结束后，也会对所有开发者免费提供个人基础版服务，限免周期暂未确定
@@ -603,11 +609,6 @@ modified: 2025-03-22T16:10:24.856Z
     - 免费提供 glm flash
   - [太子公益 API](https://taizi.api.51yp.de5.net/console/personal), 签到
     - cc支持
-  - [Privnode](https://privnode.com/)
-    - free分组支持claude-code，也支持gpt-5-nano
-    - https://pro.privnode.com/
-    - [【Cone 公益站】找个佬共同维护  ](https://linux.do/t/topic/1035525)
-    - [Cone 公益站更新 ](https://linux.do/t/topic/1002152)
   - [小呆API](https://api.daiju.live/console/personal), 签到，api不稳定
     - [小呆API](https://new.184772.xyz/)
     - cc支持
@@ -622,9 +623,6 @@ modified: 2025-03-22T16:10:24.856Z
     - [〔Hotaru公益站〕新的公益站启动 ](https://linux.do/t/topic/1398297)
   - [Huan API](https://ai.huan666.de/console/personal), 签到, 生图模型
     - cc支持
-  - [我爱996公益](https://529961.com/console)
-    - [我爱996公益附属站 - 每日签到领取奖励](https://hub.529961.com/)
-    - [【公益站我爱996一次】测试上线已接入LinuxDo ](https://linux.do/t/topic/1147448)
   - [黑与白chatAPI](https://ai.hybgzs.com/), 每日转盘
     - 模型丰富: claude/gemini, 但没有gpt5(有mini)
     - 很多openrouter渠道的模型
@@ -699,6 +697,14 @@ modified: 2025-03-22T16:10:24.856Z
     - [包子公益 - Baozi DoneHub](https://lucky.5202030.xyz/)
     - 每日普通用户可自行划转 200$ 到 newapi 站点
     - [【包子公益站】更新一个总的汇总贴。现在上线了newapi的分站 ](https://linux.do/t/topic/1124776)
+  - [我爱996公益](https://529961.com/console)
+    - [我爱996公益附属站 - 每日签到领取奖励](https://hub.529961.com/)
+    - [【公益站我爱996一次】测试上线已接入LinuxDo ](https://linux.do/t/topic/1147448)
+  - [Privnode](https://privnode.com/)
+    - free分组支持claude-code，也支持gpt-5-nano
+    - https://pro.privnode.com/
+    - [【Cone 公益站】找个佬共同维护  ](https://linux.do/t/topic/1035525)
+    - [Cone 公益站更新 ](https://linux.do/t/topic/1002152)
   - 🗑️ [无言AI](https://aiai.li/panel), 每日签到, 已关闭
     - 支持cc
   - 🗑️ [23公益站](https://sdwfger.edu.kg/console), 已关闭
@@ -912,6 +918,8 @@ modified: 2025-03-22T16:10:24.856Z
   - [Video Studio](https://doubao.happieapi.top/)
     - rpd: 30
     - 两款模型分别是 doubao-seedance-1-0-pro-fast-251015 和 doubao-seedance-1-5-pro-251215：前者主打高速视频生成，适合大多数文本或单图生成视频的场景，视频时长为 4–12 秒，最多支持 1 张图片输入，支持全部比例，不支持音频，默认无水印（API 可配置水印）；后者主打高质量视频生成，支持多图输入，画面一致性更强，视频时长同样为 4–12 秒，最多支持 2 张图片输入，支持全部比例，支持音频（默认带音频），默认无水印（API 可配置水印）。
+
+- [Lorem Picsum - Images - The Lorem Ipsum for photos](https://picsum.photos/images)
 
 ## translation
 
@@ -1153,7 +1161,10 @@ modified: 2025-03-22T16:10:24.856Z
 - embedding
   - [Embedding](https://router.tumuer.me/pricing)
     - [[Embedding 公益站] 问题+更新+预告 _202601](https://linux.do/t/topic/1421074)
-    - 用 gemini 的 embedding-001 和 text-embedding-004 时容易出现，因为上游接的是 tier1 层的号，所以有限额，可以等段时间或者使用其他模型
+      - 用 gemini 的 embedding-001 和 text-embedding-004 时容易出现，因为上游接的是 tier1 层的号，所以有限额，可以等段时间或者使用其他模型
+    - [[Embedding 公益站] 囤囤鼠集合啦  ](https://linux.do/t/topic/1507741)
+      - 上架了模型 gemini-embedding-001(不是 embedding-001)
+      - openrouter 的 key 了，专门用于 text-embedding-3-large 
 
 - tutorials
   - [手把手带你用上AI神器 - CLIProxyAPI（零：配置详细解说） _202510](https://linux.do/t/topic/1011966)

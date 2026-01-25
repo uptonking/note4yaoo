@@ -250,7 +250,8 @@ modified: 2024-11-16T10:52:53.263Z
 
 - ## 
 
-- ## 
+- ## TrustTunnel - [Adguard竟然把vpn协议开源了 _202601](https://linux.do/t/topic/1507556)
+- 有tls in tls的经典特征啊，已经是老掉牙的问题了。 而且它也没避开双重加密，性能咋样也要打个问号。 这感觉更像标准的h2/h3隧道嘛。
 
 - ## [求各位佬推荐靠谱的机场 _202510](https://linux.do/t/topic/1071814)
 - 可以考虑 $3 买台落地 VPS 自建，套 cloudflarecn2 提速
