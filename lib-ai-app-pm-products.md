@@ -207,18 +207,18 @@ modified: 2025-03-22T16:10:24.856Z
 # 💎🚀 aichorage - local llm with joy, 提供模型API、rag可靠性、pdf文本操作
 - selling-points
   - 易用性: 模型推荐 + 场景优化的提示词 + 多模型/多版本对比
+    - 对同一场景,如翻译/ocr, 针对不同模型内置合理的参数且支持配置
   - ✈️ local models support: mlx, lmstudio-alternative
-    - 允许用户分享文档/插画中的模型配置，运行日志
     - 模型库: text模型, ocr模型, 翻译模型, t2i生图模型, lmstudio在模型分类上做的不够好
     - 参考janai/pipeshub, 既支持选择本地/api模型，也支持选择图片/文档
     - ocr/vlm comparison-matrix/playground: 识别对比, 翻译对比
-      - ocr模型的输出统一为openai格式、统一标签
+      - ocr模型的输出统一为openai格式、统一标签(暂无标准)
+    - 允许分享文档/插画中的模型配置/运行日志, 将prompt放入git-commit，还是直接放入图片?
   - 🔗 citations for search: 外部数据源如字典mdx/书籍epub/wikipedia公开db/统计年鉴
+    - 查看原文pdf-parts时支持仅查看前后几页, 保护原文内容
     - 类似词典库/kiwix的预置模块, 可下载、可分享, 不必每次都全量索引
     - wikipedia zim 自动翻译为中文
     - vector-marketplace, 支持用户选择任意数量的pdf文档创建embeddings, 并发布, 可作为一种变通方案解决数据隐私问题
-    - 查看原文pdf-parts时支持仅查看前后几页, 保护原文内容
-    - 对同一场景,如翻译/ocr, 针对不同模型设计合理的参数
   - large pdf rag workflows: chunking-strategies, reindex, pdf-parts
   - 🌐 pdf edit
     - proofreading: 一键检查, 版本历史
@@ -489,11 +489,10 @@ modified: 2025-03-22T16:10:24.856Z
   - https://github.com/cheahjs/free-llm-api-resources
 
 - news
-  - [【服务器维护中】白嫖 claude code sonnet，服务器冒烟了 ](https://linux.do/t/topic/1501898)
-  - [【WONG公益站】佬友投喂opus，来蹬 _0122](https://linux.do/t/topic/1502087)
   - [寻找L站开源作者，UUcode送商业级API额度—— 优质开源项目扶持计划 1228](https://linux.do/t/topic/1370667)
 
 - claude-news
+  - [Ollama v0.14.0 and later are now compatible with the Anthropic Messages API _202601](https://ollama.com/blog/claude)
   - [魔搭免费api接口支持Anthropic API可直接用于claude code附教程 _202508](https://linux.do/t/topic/876488)
     - 模型库里面有的模型可能不支持，k2好像也不行，试了glm4.5和qwen3都可以
 
@@ -513,6 +512,7 @@ modified: 2025-03-22T16:10:24.856Z
       - 公益站的域名被集中泄露遭到集中的打击
       - 跑路，黑与白，薄荷，wong，elysiver，都是可以kilo的。cline和roocline不懂
       - 👀 不要花费过多时间，有站点会不定期清理不活跃账号，如 windhub/Fovt
+    - [模型中转状态检测](https://check.linux.do/)
     - [L站的佬友们应该早已经 token 自由了吧 ](https://linux.do/t/topic/1397594)
     - [最新福利羊毛话题](https://linux.do/c/welfare/36)
     - [All-API-Hub：开源AI中转站集中管理和自己的New API增强管理，基于 one-api-hub 大幅重构增强 _202511](https://linux.do/t/topic/1001042)
@@ -556,6 +556,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 提供了free分组，包含deepseek-v3.2, gpt-4.1-mini
     - cc分组倍率0.6
     - 活跃任务检测：窗口=600s，活跃任务槽位=8（阈值>5），疑似异常并发/自动化（辅助指标）
+    - [Gemini Business2API](https://tebss.zeabur.app/#/public/uptime)
     - [[Wind Hub]新的公益API 主帖 ](https://linux.do/t/topic/1344450)
   - 📌 [b4u API](https://b4u.qzz.io/console), 每日转盘
     - 会不会增加其他模型: 不会，本站专注于Claude
@@ -609,6 +610,12 @@ modified: 2025-03-22T16:10:24.856Z
     - 免费提供 glm flash
   - [太子公益 API](https://taizi.api.51yp.de5.net/console/personal), 签到
     - cc支持
+  - [摸鱼公益](https://clove.cc.cd/console/personal), 可签到
+    - [【摸鱼公益】 自己的反重力和codex有一些不怎么用，开个摸鱼站给需要的用用 ](https://linux.do/t/topic/1513131)
+    - 后续只能使用积分充值。随用随冲。
+  - [WOW公益站](https://linuxdoapi.223384.xyz/console/personal)
+    - [【已接入LinuxDO OAuth】老破小公益站复活 ](https://linux.do/t/topic/1516043/1)
+    - 因站内目前不支持 Claude-Sonnet，所以接入 Claude Code 时需指定模型 ID 为站内可用的模型
   - [小呆API](https://api.daiju.live/console/personal), 签到，api不稳定
     - [小呆API](https://new.184772.xyz/)
     - cc支持
@@ -628,6 +635,11 @@ modified: 2025-03-22T16:10:24.856Z
     - 很多openrouter渠道的模型
     - cc不支持tool, **cc渠道经常上架下架**
     - [黑与白chatAPI福利站](https://cdk.hybgzs.com/)
+  - [GGBOOM公益站](https://ai.qaq.al/dashboard)
+    - [签到控制台](https://sign.qaq.al/app)
+    - [【GGBOOM公益站】签到站上线啦 ](https://linux.do/t/topic/1517772)
+    - 本站点为codex中转站，不包含其他模型
+    - sub2api的openai api仅支持 openai-responses API协议。不要选老版本的哦
   - [Neb 公益站](https://ai.zzhdsgsss.xyz/console/personal), 签到
     - 采用按量计费，每次0.01，注册送2000次，因为该阶段的初衷就是最大化利用这些将要过期的key。
     - 当前额度用完或2026.1.31之后进入第二阶段，采用按量计费，倍率会很低
@@ -669,12 +681,17 @@ modified: 2025-03-22T16:10:24.856Z
     - [CLI Proxy API Management Center](https://cpamc2.jonwinters.pw/management.html#/quota-public)
   - [Luckin 公益API](https://api.oaiapi.online/console/personal)
     - 所有模型均支持 沉浸式翻译
+  - [aidrouter - 520china](https://aidrouter.qzz.io/pricing), 无余额, 购买积分
+    - [公益站发售最后一批不限量套餐（388ldc） ](https://linux.do/t/topic/1513815)
+    - 到2.14可用，不可以使用opus和all,应该可以用于cc了（不会有莫名其妙报错）
   - [香草API](https://ai.xiangcao.de/pricing), 文生图
   - [六哥公益站](https://api.crisxie.top/), 文生图
   - [佬友API](https://lyclaude.site/console/personal)
   - [APIKEY_公益站](https://welfare.apikey.cc/console)
   - [XiaoYo](https://www.xiaoyo.cn/personal), 签到, deepseek多
   - [唔系唔系](https://claude.chiddns.com/console)
+  - [foxhank - Claude Relay Service](https://cc.foxhank.cn ), 无法注册
+    - [【CC公益站】尝试维护一个智谱的CC公益站  ](https://linux.do/t/topic/1108974)
   - [一个小站的 API 商店](https://one-api.ygxz.in/app/dashboard), 每日签到1刀内随机
     - 提供半公益的高质量 API 中转服务，始于202406
     - 无调用频率限制
@@ -929,6 +946,10 @@ modified: 2025-03-22T16:10:24.856Z
 - [cerebras fanyi API](https://fanyi.963312.xyz/pricing)
   - cerebras 的，目前有200个号
   - 智普官网的 glm-4.5-flash, glm-z1-flash
+- [老魔公益站](https://api.2020111.xyz/pricing)
+  - [【老魔公益站】沉浸式翻译站开放注册 ](https://linux.do/t/topic/1514451)
+  - translate：沉浸式翻译分组，限速 300次/5min
+  - cc-glm4.7和cc-m2.1：支持cc的分组，上游分别路由到glm-4.7和minimax-m2.1，限速 35次/5min
 
 ## llm-api-official/router/gateway/aggregator
 

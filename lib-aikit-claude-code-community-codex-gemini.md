@@ -16,7 +16,22 @@ modified: 2025-12-18T12:27:14.982Z
 
 - ## 
 
-- ## 
+- ## 想法实现了，在 Cloudflare Containers 运行 OpenCode ，再通过 S3FS 实现数据持久化 和 Cloudflared 进行远程访问预览页面。
+- https://x.com/miantiao/status/2015283393752416714
+  - 随时随地，任意终端都可以 Vide 编程了。
+  - 容器会在你不使用的10分钟后缩放至 0，不收钱。
+  - 代码就 200 行，直接开源了 https://github.com/miantiao-me/cloud-code
+  - Cloudflare Containers 的持久存储就要来了，有个想法把 Containers 搞成一个云端电脑，按需启动计费。 外面面套一个 Zero Trust 做访问控制。
+
+- 如果是想随时远程访问的话，其实可以试试cf的隧道，可以直接把一个内网的端口给转发到具体域名上，从而实现外网访问。 而且目前直接使用opencode的gui的话，我目前使用上review中记录的diff会出现遗漏，所以现在已经转向vibe kanban了
+
+- 能恢复下次接着 vibe 吗
+  - 可以的， opencode 数据持久化了
+
+- Cold start time 怎样？上次（一个月前）用 Cloudare Sandbox 试过一样的 idea 记得有点慢，最后换 E2B 了。另外 S3FS 很慢，要git commit 都很慢，要 install node_modules 就基本不可能了，除非每次启动都重新 install 到 local，但是那样冷启动就更慢了。还是 sandbox 自带 volume 的比较靠谱
+  - 冷启动并不快，加上 opencode 启动也慢，每次冷启动得 10s 多 但是非生产服务，冷启动慢也无所谓了。
+  - S3 慢的问题我尽可能把 S3 和容器都放在美西来减少延迟，但是容器目前没法强制区域。
+  - sandbox 自带 volume 靠谱？ sandbox 是只 Cloudflare sandbox 吗？  这个底层也是容器+S3, 原理应该是一样的
 # discuss-alternatives
 - ## 
 
@@ -169,7 +184,20 @@ modified: 2025-12-18T12:27:14.982Z
 
 - ## 
 
-- ## 
+- ## [OpenCode Ecosystem feels overwhelmingly bloated : r/opencodeCLI _202601](https://www.reddit.com/r/opencodeCLI/comments/1qmwcp1/opencode_ecosystem_feels_overwhelmingly_bloated/)
+  - I often check OpenCode ecosystem and update my setup every now and then to utilize opencode to the max. I go through every plugins, projects ...etc. However, i noticed most of these plugins are kinda redundant. Some of them are kinda promoting certain services or products, some of them feel outdated, some of them are for very niche use cases.
+  - It kinda takes time to go through every single one and understand how to utilize it. I wonder what are you plugin and project choices from this ecosystem ?
+
+- You don't need to use any of that shit. Opencode is just fine on its own
+  - Opencode with few selected skills is most certainly 80/20 rule.
+
+- I've been running OpenCode with absolutely nothing but custom sub agents, custom commands, and a few MCP servers.
+  - Just because the ecosystem is bloated doesn't mean you have to use bloated software.
+
+- Reminds me of MCP; you go crazy adding a ton… 6 months later you stop using MCP
+  - The only plugin I use is to send notifications when the agent is waiting on me.
+  - I probably will try to find a plugin (or write one) that helps protect against unexpected deletes… had a CC hook for that… just not ported
+- I think all abstractions like skills, mcp, sub agents etc are anti-patterns. They will all disappear when the models get better
 
 - ## [Does Oh-My-Opencode really provide an advantage? : r/opencodeCLI _202601](https://www.reddit.com/r/opencodeCLI/comments/1q425mn/does_ohmyopencode_really_provide_an_advantage/)
 - I tested it with a few feature implementations, in parallel with vanilla Opencode and Claude Code, and I didn't like how it performed. It used a ton more tokens and I didnt find the work any better. YMMV. I do have very detailed plans so maybe it negates some of what its supposed to bring
@@ -270,7 +298,21 @@ modified: 2025-12-18T12:27:14.982Z
 
 - ## 
 
-- ## 
+- ## [看到有人说codex好用，但为什么我感觉它工作效率好低 ](https://linux.do/t/topic/1515526)
+  - 看到有写佬说codex好用，但是我在实际使用过程中总感觉codex过于啰嗦，一个同样的问题claude code 很快就能解决了，codex能啰嗦半天。所以这个好用是怎么样才好用。
+
+- 我觉得因为他便宜，差距没有拉开多少，干嘛不用
+
+- 很多问题 用gpt5.1-mini 或者 把思考时间调小一点。
+- 要用gpt5.2
+
+- codex我都是用来解决Claude Code解决不了的问题的。一般Claude Code 3次改不好的我都直接让codex来改了，效果还不错。或者对整个文件进行质量审查啥的。
+- 问题少啊。。。cc快是快。。。一个问题反复改，总不好啊。。cx慢过慢，但是一般一次过。
+- 但是codex的正确率高啊，它虽然没有claude code快，但是我都使用后感觉codex的正确率要高
+
+- 1. DEBUG，比如说有什么你操作时候发现的BUG，你用自己的表述告诉codex，它倒腾思考半天后能准确识别到问题所在。cc虽然快，但是根本问题有时候就没解决，只解决了表象，再次测试BUG还在。所以很多workflow里cc写完都会让codex去做代码review。
+  - 2. 项目的后端规划。gpt5.2-high和xhigh的规划完整性比cc好。
+  - 3. 官方账号使用codex它的auto compact丢失的信息少。因此会有做好规划和步骤后让codex连跑一百多个issue十几二十个小时都没大毛病出现的场景。
 
 - ## 🆚 [Codex or cline : r/CLine _202511](https://www.reddit.com/r/CLine/comments/1p3j75w/codex_or_cline/)
 - I need to spend more time with Codex, I’ll say that first but it is Cline for me atm because:

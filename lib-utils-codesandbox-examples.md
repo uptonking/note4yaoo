@@ -25,6 +25,13 @@ modified: 2023-09-02T09:17:22.992Z
   - Snapshot & Resume: Export/restore complete sandbox state
   - Full async API via asyncio.to_thread
   - [Localsandbox: A Lightweight Agent Sandbox _202601](https://coplane.com/perspectives/localsandbox)
+  - https://github.com/manojlds/heimdall
+    - A TypeScript MCP server providing sandboxed Python and Bash execution using Pyodide (Python compiled to WebAssembly) and just-bash.
+    - Virtual Filesystem: Read, write, list, and delete files in a persistent workspace
+    - Secure Sandbox: Python code runs in an isolated WebAssembly environment
+    - Install pure Python packages via micropip
+    - Native Integration: Direct Pyodide and just-bash integration (no subprocess bridge)
+    - Bash and Python share the same workspace filesystem
 # js-sandbox
 - https://github.com/codesandbox/codesandbox-client /12.9kStar/GPLv3+apache2/202404/js
   - https://codesandbox.io/

@@ -106,6 +106,23 @@ modified: 2025-12-13T18:38:27.763Z
 - 使用本地ollama/lmstudio时，需要更详细更明确的提示词才能让8b模型执行, 4b模型很难成功执行
   - 特别是4b模型的tool call经常失败，在读文件失败时经常导致agent loop失败
 
+- gemini-cli is imported as @office-ai/aioncli-core as an npm package dependency, and i can use the default gemini-cli without installing gemini-cli.
+
+- 
+- 
+- 
+- 
+
+### devops
+
+```sh
+# start electron app in dev
+npm run start
+
+BUNDLED_CLI_PROVIDER
+
+```
+
 - 
 - 
 - 

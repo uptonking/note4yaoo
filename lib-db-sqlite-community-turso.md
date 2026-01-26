@@ -328,6 +328,9 @@ target/debug/limbo database.db
   - Finally, we want the agent to be able to write and execute code, so we use Pyodide (run through Deno) to execute a WASM-sandboxed version of Python with the AgentFS filesystem mounted to it so that the Python code can read  and write to files.
   - All of this together gives you the ability to expose a pseudo-VM to your  agent in a lightweight and highly portable way.
 
+- ### Localsandbox: a lightweight library to give your agents a sandboxed filesystem with safe bash and code execution.
+- https://x.com/vimota/status/2014003591439069445
+
 - ## How does AgentFS fit into the AI agent sandbox stack?
 - https://x.com/penberg/status/2013658322038067280
   - The sandbox infrastructure typically uses Firecracker or a similar VM for the agent compute. The integration with AgentFS is straightforward:

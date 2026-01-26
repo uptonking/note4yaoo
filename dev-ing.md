@@ -294,6 +294,22 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-log
   - ?
 
+## 0126
+
+- the original gemini-cli works well. for the opencode implementation, please read related code and architecture to make text-chat/streaming/tool-call/file-read/file-write more robust
+- the original gemini-cli is imported as @office-ai/aioncli-core as an npm package dependency, and i can use the default gemini-cli without installing gemini-cli. is your implementation for opencode can be used in a similar way? if i set the environment variable to opencode, can i use it without installing opencode-cli?
+- the task has already been implemented by you . i want you to review the existing gemini-cli implementation and improve  your opencode-cli implementation. just use git diff to see what you have edited
+- the goal is opencode-cli bundled just like the existing gemini-cli. and you provide a  new environment variable for user to choose which cli to use.  the opencode-cli architecture should be like gemini-cli. analyze related code and architecture, review your edits and improve your code.
+
+- the goal is opencode-cli bundled just like the existing gemini-cli. and you provide a  new environment variable for user to choose which cli to use. you should keep as many existing code as possible to stay unchanged.  remove testing step in your plan. you should do the core implementation first, we will write tests later.  review the goal, analyze related code and architecture , finally update your plan at plan-opencode-updated.md
+
+- I want the opencode-cli bundled just like the existing gemini-cli. and you provide a  new environment variable for user to choose which cli to use. if the environment  variable is not set, gemini-cli should be used, and existing features still work. if environment variable is set to opencode, opencode-cli should be used, and the most existing features still work. The implementation should be extensible so that other environment variable value can be used to support more  cli in the future. reiew your previous plan at plan-opencode-updated.md and recheck the goal. optimize and update the plan.
+- the following resources may be useful for your reference:
+- the source code for "@office-ai/aioncli-core" is at folder /Users/yaoo/Documents/repos/office/aioncli/packages/core. you can find api/docs and more details at /Users/yaoo/Documents/repos/office/aioncli . 
+- opencode cli can be installed by `npm install opencode-ai`. the source code for opencode-cli is at /Users/yaoo/Documents/repos/ai-ml-llm/opencode/packages/opencode/src/cli. you can find api/docs and more details at /Users/yaoo/Documents/repos/ai-ml-llm/opencode .
+
+- I want you to make a standalone package like `@office-ai/aioncli-core` for opencode. the source code for "@office-ai/aioncli-core" is at folder /Users/yaoo/Documents/repos/office/aioncli/packages/core. you can find api/docs and more details at /Users/yaoo/Documents/repos/office/aioncli. Now review your previous plan at plan-opencode.md and updated your plan. I have reverted all your previous edits.
+
 ## 0125
 
 - [error: No solution found when resolving dependencies for split · Issue #14231 · astral-sh/uv](https://github.com/astral-sh/uv/issues/14231)

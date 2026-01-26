@@ -48,6 +48,16 @@ modified: 2025-12-18T12:26:08.445Z
 
 - ## 
 
+- ## [Claude code报错error writing file ](https://linux.do/t/topic/1230531/11)
+- 写文件一直失败，大概率和死循环问题是一样的，就是一次性写入文件过大导致客户端报错，主要出现在claude code，让AI分多次写入即可解决该问题。
+
+- [请教关于claude code使用时大量出现“Error writing file”的问题 ](https://linux.do/t/topic/1485290)
+  - 增加一条全局规则：当输出文件超过100 行时，分块输出（分多次编辑文件，或拆分为主文件加子文件）
+  - 或者编辑全局的CLAUDE.md加入上面的规则效果应该是一样的
+
+- ## It's been a month since I started the Pokemon Battle rewrite from JavaScript to Rust with Claude Code. 
+- https://x.com/Vjeux/status/2015483595062997242
+
 - ## [提升Claude Code 读 GitHub 和文档的速度 _202601](https://linux.do/t/topic/1487840)
   - 吐槽一下 Claude Code 读 GitHub 和文档的龟速体验, 实在受不了，摸索出了个新路子：
   - 直接把常用的开源项目 Clone 到本地！

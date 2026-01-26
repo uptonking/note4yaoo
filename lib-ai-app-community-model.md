@@ -166,6 +166,22 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
+- ## 
+
+- ## the most capable coding agents don't have hundreds of specialized tools
+- https://x.com/vimota/status/2015823598577975453
+  - they have three: read a file, write a file, run code
+  - filesystem plus code execution is why Cursor and Claude Code can work autonomously for hours. 
+  - But it only works when the agent runs on your machine, where you control security through approvals.
+  - if you try to build it into products, you need a sandbox VM to avoid getting your files rm -rf'd
+  - localsandbox is our exploration into an alternative that uses user-land isolation via a virtual filesystem, a bash interpreter, and WASM-sandboxed python execution.
+
+- ## [I reverse-engineered Microsoft AutoGen’s reasoning loop and cut agent latency by 85% (13.4s → 1.6s). Here is the architecture. : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qn2n4p/i_reverseengineered_microsoft_autogens_reasoning/)
+  - I’ve been building voice agents using AutoGen, and the "awkward silence" during the Chain-of-Thought (CoT) phase was killing the UX. 
+  - The standard sequential loop (Think → Wait → Execute Tool → Wait → Speak) just doesn't work for real-time interaction.
+  - Instead of waiting for a v2 update, I dug into the ConversableAgent class and implemented a module for Speculative Reasoning Execution (SRE).
+  - Standard Speculative Decoding predicts tokens. I adapted this to predict Tool Calls.
+
 - ## 📌 [Unrolling the Codex agent loop | OpenAI _202601](https://openai.com/index/unrolling-the-codex-agent-loop/)
 
 - ## 🧩 这个 Ralph Loop 现在这么流行吗？我今天才仔细去了解一下，原来是一种方法论啊：用一个 bash 无限循环反复喂 prompt 给 AI 编码工具，直到任务完成。

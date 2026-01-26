@@ -21,6 +21,9 @@ modified: 2025-09-16T19:59:57.856Z
     - 可以通过一个API路由（比如New-API：链接 ），来轮流使用这些免费模型，额度耗尽就自动切换下一家
     - 对Agent应用来说，获得一个模型的参数，比如上下文大小，可以作为程序决策的依据
 
+- awesome-models
+  - [LLM Explorer: A Curated LLM List ](https://llm-explorer.com/)
+
 - leaderboard-llm
   - [Artificial Analysis LLM Leaderboard - Comparison of over 100 AI models from OpenAI, Google, DeepSeek & others](https://artificialanalysis.ai/leaderboards/models)
   - [Vellum LLM Leaderboard 2025](https://www.vellum.ai/llm-leaderboard)

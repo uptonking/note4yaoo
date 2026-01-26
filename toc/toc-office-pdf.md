@@ -113,6 +113,7 @@ modified: 2021-01-04T17:26:43.784Z
     - pdf-lib has a great API, but chokes on slightly malformed documents
     - pdfkit only generates, no parsing at all
     - We kept adding workarounds. Eventually, we decided to build what we actually needed
+  - [Introducing LibPDF: The PDF Library TypeScript Deserves - Documenso _202601](https://documenso.com/blog/introducing-libpdf-the-pdf-library-typescript-deserves)
   - https://x.com/lxunos/status/2014805777551392968  _202601
     - Introducing LibPDF the library that we’ve always wanted for PDF parsing, manipulation and signing (MIT)
     - It does text/line/word extraction but won't do OCR, so if you're dealing with a scanned document you would need other tooling.
