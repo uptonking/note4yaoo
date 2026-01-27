@@ -924,6 +924,13 @@ modified: 2025-11-30T17:27:16.720Z
   - Zep persists and recalls chat histories, and automatically generates summaries and other artifacts from these chat histories. 
   - Zep also provides a simple, easy to use abstraction for document vector search called Document Collections. This is designed to complement Zep's core memory features, but is not designed to be a general purpose vector database.
 # chunking/embedding
+- https://github.com/MichalZnalezniak/Chunking-Vis /MIT/202601/python
+  - https://chunkingvis-production.up.railway.app/
+  - A tool for visualizing different text-chunking methods.
+  - Chunking Methods
+  - [Built a tool for visualizing text chunking strategies : r/Rag](https://www.reddit.com/r/Rag/comments/1qnplpb/built_a_tool_for_visualizing_text_chunking/)
+    - https://chunkviz.up.railway.app/
+
 - https://github.com/chunkhound/chunkhound /118Star/MIT/202509/python
   - https://chunkhound.github.io/
   - Deep Research for Code & Files

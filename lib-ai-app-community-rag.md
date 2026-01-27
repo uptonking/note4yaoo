@@ -675,6 +675,18 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
+- ## 🤔 [Ran 30 RAG chunking experiments - found that chunk SIZE matters more than chunking STRATEGY : r/Rag _202601](https://www.reddit.com/r/Rag/comments/1qocxu9/ran_30_rag_chunking_experiments_found_that_chunk/)
+  - I kept seeing recommendations that sentence chunking is best for RAG because it "respects grammatical boundaries."
+  - Decided to test it systematically: 4 strategies, 2 datasets, 1, 200 retrieval evaluations.
+  - Sentence chunking did dominate initially — 96.7% recall vs 80-83% for others.
+  - Then I noticed something most benchmarks don't report: actual chunk sizes produced.
+  - When I configured all strategies with chunk_size=1024: Sentence chunking was producing chunks 3.6x larger than requested. Larger chunks = more context = better recall. That's a size effect, not a strategy effect.
+  - When I controlled for actual chunk size (~3000 chars across strategies), token chunking matched or beat sentence chunking.
+  - Correlation between chunk size and recall: r=0.74 (HotpotQA), r=0.92 (Natural Questions).
+
+- Depends what you are chunking.
+  - Exactly and this fw lets you test that on your own strategy and your own documents https://github.com/somasays/rag-experiments/tree/main/chunking
+
 - ## 💡 [Job wants me to develop RAG search engine for internal documents : r/Rag _202601](https://www.reddit.com/r/Rag/comments/1qdy998/job_wants_me_to_develop_rag_search_engine_for/)
 - I would start by identifying the most valuable subset of documents, define a conversion approach (pref. towards markdown files) and then experiment with different chunking strategies (esp. parsing) to test retrieval. Embedding and Reranking should be considered. Those models are usually tiny and can run locally. For the reasoning part (responding to the user query by formulating an answer starting from the retrieved chunks) you can think about using a cloud LLM to have more advanced reasoning and potentially less hallucinations.
   - I agree in principle: Start with a bite size chunk that focused on some subset of docs that can offer biggest outcomes when transformed. Learn, iterate, it will begin to get clearer how scaling should occur…

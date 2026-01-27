@@ -294,7 +294,184 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-log
   - ?
 
+## 0127
+
+- Uses @ai-sdk/openai-compatible: This is the key - OpenCode has built-in support for OpenAI-compatible APIs
+
+```moonshotai/kimi-k2-thinking
+
+[Config] Using OpenCode CLI provider
+[OpenCode] Configuration:
+  - Base URL: https://integrate.api.nvidia.com/v1
+  - Custom Provider ID: custom-nvidia
+  - Model String: moonshotai/kimi-k2-thinking
+[OpenCode] Creating config: {
+  "provider": {
+
+    "custom-nvidia": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Custom Provider (nvidia)",
+      "options": {
+        "baseURL": "https://integrate.api.nvidia.com/v1",
+        "apiKey": "***MASKED***"
+      },
+      "models": {
+        "moonshotai/kimi-k2-thinking": {
+          "name": "moonshotai/kimi-k2-thinking"
+        }
+      }
+    }
+
+  }, 
+  "model": "custom-nvidia/moonshotai/kimi-k2-thinking"
+}
+[OpenCode] Created config at: /Users/yaoo/.aionui/gemini-temp-1769495685105/.opencode/opencode.json
+[OpenCode] Configured provider: custom-nvidia, model: moonshotai/kimi-k2-thinking
+[OpenCode] Starting server on port 4096
+[OpenCode] Using binary: /Users/yaoo/Documents/repos/office/aionui-office/node_modules/.bin/opencode
+[OpenCode] Working directory: /Users/yaoo/.aionui/gemini-temp-1769495685105
+[OpenCode Server] INFO  2026-01-27T06:34:45 +18ms service=models.dev file={} refreshing
+[OpenCode Server] Error: Unexpected error, check log file at /Users/yaoo/.local/share/opencode/log/2026-01-27T063445.log for more details
+
+Failed to start server on port 4096
+[OpenCode] Stopping server
+[OpenCode] Force killing server
+
+```
+
+```moonshotai/kimi-k2-instruct-0905
+[Config] Using OpenCode CLI provider
+[OpenCode] Configuration:
+  - Base URL: https://integrate.api.nvidia.com/v1
+  - Custom Provider ID: custom-nvidia
+  - Model String: moonshotai/kimi-k2-instruct-0905
+[OpenCode] Creating config: {
+  "provider": {
+
+    "custom-nvidia": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Custom Provider (nvidia)",
+      "options": {
+        "baseURL": "https://integrate.api.nvidia.com/v1",
+        "apiKey": "***MASKED***"
+      },
+      "models": {
+        "moonshotai/kimi-k2-instruct-0905": {
+          "name": "moonshotai/kimi-k2-instruct-0905"
+        }
+      }
+    }
+
+  }, 
+  "model": "custom-nvidia/moonshotai/kimi-k2-instruct-0905"
+}
+[OpenCode] Created config at: /Users/yaoo/.aionui/gemini-temp-1769495507065/.opencode/opencode.json
+[OpenCode] Configured provider: custom-nvidia, model: moonshotai/kimi-k2-instruct-0905
+[OpenCode] Starting server on port 4096
+[OpenCode] Using binary: /Users/yaoo/Documents/repos/office/aionui-office/node_modules/.bin/opencode
+[OpenCode] Working directory: /Users/yaoo/.aionui/gemini-temp-1769495507065
+[OpenCode Server] INFO  2026-01-27T06:31:47 +20ms service=models.dev file={} refreshing
+[OpenCode] Server ready
+[OpenCode] Session created: ses_401d94c64ffeqICmuZ6Vvhzs8V
+[OpenCode] Initialization complete
+[OpenCode] Already initialized
+[OpenCode] refreshAuth called (no-op for OpenCode)
+[OpenCode] Tool registration skipped: aionui_web_fetch
+Loaded cached credentials.
+[OpenCode] Tool registration skipped: gemini_web_search
+[OpenCode] setTools called (no-op for OpenCode)
+[StreamMonitor] State changed to: connecting 
+[OpenCode] sendMessageStream - Query text: tell a joke within 20 words...
+[OpenCode] Sending request to: http://localhost:4096/session/ses_401d94c64ffeqICmuZ6Vvhzs8V/message
+[OpenCode] Request body: {
+  "parts": [
+
+    {
+      "type": "text",
+      "text": "tell a joke within 20 words"
+    }
+
+  ], 
+  "model": {
+
+    "providerID": "custom-nvidia",
+    "modelID": "moonshotai/kimi-k2-instruct-0905"
+
+  }
+}
+Loaded cached credentials. jinyaoo86@gmail.com
+[OpenCode] Response status: 200 OK
+[OpenCode] Response received, info: {
+  "id": "msg_bfe26bd6a001GvLaLYy51OVjXt", 
+  "sessionID": "ses_401d94c64ffeqICmuZ6Vvhzs8V", 
+  "role": "assistant", 
+  "time": {
+
+    "created": 1769495510378,
+    "completed": 1769495513270
+
+  }, 
+  "parentID": "msg_bfe26bd51001ZT2WptJDT1M2ue", 
+  "modelID": "moonshotai/kimi-k2-instruct-0905", 
+  "providerID": "custom-nvidia", 
+  "mode": "build", 
+  "agent": "build", 
+  "path": {
+
+    "cwd": "/Users/yaoo/.aionui/gemini-temp-1769495507065",
+    "root": "/"
+
+  }, 
+  "cost": 0, 
+  "tokens": {
+
+    "input": 10420,
+    "output": 13,
+    "reasoning": 0,
+    "cache": {
+      "read": 0,
+      "write": 0
+    }
+
+  }, 
+  "finish": "stop"
+}
+[OpenCode] Response parts count: 3
+[OpenCode] Processing 3 parts
+[OpenCode] Processing part: step-start
+[OpenCode] Processing part: text
+[OpenCode] Yielding text part, length: 66
+[StreamMonitor] State changed to: connected 
+[OpenCode] Processing part: step-finish
+[OpenCode] Token usage: {
+  input: 10420, 
+  output: 13, 
+  reasoning: 0, 
+  cache: { read: 0, write: 0 }
+}
+[OpenCode] Returning final turn, hasContent: true parts: 1
+[StreamMonitor] State changed to: disconnected 
+Loaded cached credentials. jinyaoo86@gmail.com
+
+```
+
 ## 0126
+
+- when i restarted and chatted again, it not work. the terminal log is 
+
+- the original workflow for gemini-cli is that user selects a custom provider and model from chatbox dropdown, and gemini-cli will use it for chatting. please analyze the code and dataflow, and make it work for opencode-cli.
+- user can configure custom provider and custom model from settings ui, then use it from chatbox dropdown menu. please assume user is always using custom provider and custom model, do not rely on the naming pattern of model-name or provier-name.
+- analyze related code and review the data flow. the original gemini-cli works well when chatting with custom model. please make the chatting with opencode-cli work in a similar way.
+
+- your previous fix by searching "think" in model name is not robust. when i use a thinking model that does not contain think in the model name, it will not work. a better solution is to parse the think event in ai response. you can read gemini-cli related code and analyze how it deals with thinking parts in response . then read opencode-cli related code , try to parse and show thinking content in electron ui in a similar way.
+
+- review your implementation. when i  select custom model from chatbox dropdown ui, will chat work with opencode-cli? the original gemini-cli works well.  recheck the data flow, and make it work for opencode-cli
+
+- the goal is opencode-cli bundled just like the existing gemini-cli. and you provide a  new environment variable for user to choose which cli to use.  you aleady have implemented it, but with bugs. so opencode-cli is just implemented by referring to gemini-cli, but with bugs.
+- i start electron app with opencode-cli by `npm run opencode:start`. when i chatted, it not work. 
+- opencode-cli is not required to install globally. you already include it via a wrapper like the original gemini-cli wrapper "@office-ai/aioncli-core".
+
+- please refer to how gemini-cli supports openai-compatible provider, and make opencode-cli supports openai-compatible provider in the similar way.
 
 - the original gemini-cli works well. for the opencode implementation, please read related code and architecture to make text-chat/streaming/tool-call/file-read/file-write more robust
 - the original gemini-cli is imported as @office-ai/aioncli-core as an npm package dependency, and i can use the default gemini-cli without installing gemini-cli. is your implementation for opencode can be used in a similar way? if i set the environment variable to opencode, can i use it without installing opencode-cli?
@@ -305,7 +482,7 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 
 - I want the opencode-cli bundled just like the existing gemini-cli. and you provide a  new environment variable for user to choose which cli to use. if the environment  variable is not set, gemini-cli should be used, and existing features still work. if environment variable is set to opencode, opencode-cli should be used, and the most existing features still work. The implementation should be extensible so that other environment variable value can be used to support more  cli in the future. reiew your previous plan at plan-opencode-updated.md and recheck the goal. optimize and update the plan.
 - the following resources may be useful for your reference:
-- the source code for "@office-ai/aioncli-core" is at folder /Users/yaoo/Documents/repos/office/aioncli/packages/core. you can find api/docs and more details at /Users/yaoo/Documents/repos/office/aioncli . 
+- the source code for gemini-cli wrapper "@office-ai/aioncli-core" is at folder /Users/yaoo/Documents/repos/office/aioncli/packages/core. you can find api/docs and more details at /Users/yaoo/Documents/repos/office/aioncli . 
 - opencode cli can be installed by `npm install opencode-ai`. the source code for opencode-cli is at /Users/yaoo/Documents/repos/ai-ml-llm/opencode/packages/opencode/src/cli. you can find api/docs and more details at /Users/yaoo/Documents/repos/ai-ml-llm/opencode .
 
 - I want you to make a standalone package like `@office-ai/aioncli-core` for opencode. the source code for "@office-ai/aioncli-core" is at folder /Users/yaoo/Documents/repos/office/aioncli/packages/core. you can find api/docs and more details at /Users/yaoo/Documents/repos/office/aioncli. Now review your previous plan at plan-opencode.md and updated your plan. I have reverted all your previous edits.

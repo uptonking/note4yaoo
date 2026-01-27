@@ -26,6 +26,46 @@ modified: 2025-09-01T07:58:29.058Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## [System Prompts When Using Claude Code and Codex with Local Models : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qdcaol/system_prompts_when_using_claude_code_and_codex/)
+  - Claude Code: 16.5K tokens
+  - Codex: 6.5K tokens
+  - Gemini-cli: 5.5K tokens
+- the Claude Code prompt is absolutely massive - 16.5k tokens is like eating up a quarter of most local models' context before you even start coding
+  - The smaller models probably just get confused trying to juggle all those instructions at once. Codex being shorter makes total sense why it works better, especially on something like qwen3-coder which is already pretty solid for its size
+
+- Claude models are multimodal.
+- Qwen3 Coder isn’t multimodal, so you should probably remove the multimodal stuff from the system prompt before you use Qwen3 coder with it. (PDF & Image related file formats and capabilities)
+
+- ## [Agentic coding tools with smaller system prompts? : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mu6a9s/agentic_coding_tools_with_smaller_system_prompts/)
+  - The problem is, all the tools I listed above start out pretty snappy, but get slow after just a few questions. I'm pretty sure this is because of the prompt that each of these tools sends along with each user message -- it's gigantic, includes e.g. the full definition of every tool available to the LLM with several examples each, etc. This fills up the context quickly and I think is why it gets slow.
+  - has anyone done any exploration into a "lite" mode for these tools or something, such that that can be functional without enormous context?
+  - 💡: 可以尝试手动压缩context, 可以尝试实现claude-code最近开始用的 tool-search/skill(不将tool描述放入context)
+
+- Any coding agent require a lot of context because they need to read many chunks of the project to understand how and where to implement something or make changes, the easiest solution for this is start a new chat after a correct implementation, this can also benefit the output quality.
+  - Other thing you can do if not already doing is use flash attention and kv cache quantization.
+  - About the agents, from my experience, Kilo Code is the most efficient agent in terms of context
+  - Roo Code is very hangry on context but has a function to `compress` when you are getting close from the limit, this helps a lot when you dont have memory for more than ~32k context
+
+- ### [I created a coding tool that produce prompts simple enough for smaller, local models : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p3qxj4/i_created_a_coding_tool_that_produce_prompts/)
+  - This design choice makes messages very simple, as all the model sees are hand-picked files and simple instructions. In the example above, I didn't have to tell the model I wanted to edit "checkpoints" feature, as this is the only feature attached in context.
+  - This simple approach makes it fully viable to code with smaller, locally hosted models like Qwen 32B.
+- https://github.com/robertpiosik/CodeWebChat /GPL/202601/ts
+  - open-source AI coding toolkit. You can use CWC in VS Code family of editors (Cursor, Antigravity, VSCodium etc.) for a much faster and cost efficient* development experience.
+  - Apply responses—interactive edits integration with checkpoints for state restoration
+  - Fully-featured—code completions, commit messages, checkpoints, skills, and more
+  - zero-overhead prompts optimized for prompt caching
+  - 100% local operation
+
+- Glad it works with VSCodium too.
+
+- Is this for modifying existing code in your own repo or for creating new functions by prompt suggestion? It’s not really clear what this is intended to accomplish?
+  - It edits selected files in context based on instructions. It always sends only one message, multi-file edits are handled by parsing code blocks from a single response.
+- Regarding seeing response during generation, you can use command "Toggle Developer Tools" and go to Console. I think I can add streamed response preview to the bottom pane.
+
+- Well it's equally good for big models too, in my experience senior devs rarely use agentic coding and tend to delegate single-context oneshot tasks to ai. So this is useful.
+
 - ## 🆚 [Testing LLM ability to port code - Comparison and Evaluation : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1q1fo4p/testing_llm_ability_to_port_code_comparison_and/)
   - prompt:
   - Please port this short program to [insert language here]. The resulting program must have identical behavior (including bugs and unusual behavior). That is, given identical input, it should produce identical output. The rewrite cannot use any 3rd party libraries, but can incorporate any idiomatic changes (including from the standard library) that would make it more "natural" or performant in the target language. The original JS program is executed using the Bun runtime.

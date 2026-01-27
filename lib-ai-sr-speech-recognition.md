@@ -12,8 +12,12 @@ modified: 2023-02-07T09:22:03.120Z
 - [人工智能的方向——NLP CV SR(语音识别) KG(知识图谱)](https://blog.csdn.net/qq_43165081/article/details/113790560)
 # sr-products
 
-# speech-to-text
+## free-tts
 
+- resources
+  - [2025年10+最佳免费文字转语音生成器（最自然的机器配音） - 文武科技柜](https://www.wangdu.site/software/tools/924.html)
+  - [免费好用的AI配音(TTS)平台全面指南：中国产品与国际平台对比 | 附详细URL、特色等 - 知乎 _202504](https://zhuanlan.zhihu.com/p/1891215909730903174)
+# speech-to-text
 - [用Python 搭配OpenAI 的GPT、Whisper API 取得Youtube 影片摘](https://medium.com/dean-lin/%E7%94%A8-python-%E6%90%AD%E9%85%8D-openai-%E7%9A%84-gpt-whisper-api-%E5%8F%96%E5%BE%97-youtube-%E5%BD%B1%E7%89%87%E6%91%98%E8%A6%81-4ceb57828732)
 
 ## Whisper

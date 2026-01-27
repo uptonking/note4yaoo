@@ -100,6 +100,13 @@ modified: 2025-02-21T18:20:42.624Z
     - 💡 Langfuse is an open-source LangSmith alternative that helps teams collaboratively build, debug, and improve their LLM applications
   - [Self-host Langfuse (Open Source LLM Observability)](https://langfuse.com/self-hosting)
 
+- https://github.com/github/copilot-sdk /5.9kStar/MIT/202601/ts
+  - Embed Copilot's agentic workflows in your application—now available in Technical preview as a programmable SDK for Python, TypeScript, Go, and . NET.
+  - The GitHub Copilot SDK exposes the same engine behind Copilot CLI: a production-tested agent runtime you can invoke programmatically. No need to build your own orchestration—you define agent behavior, Copilot handles planning, tool invocation, file edits, and more.
+  - All SDKs communicate with the Copilot CLI server via JSON-RPC
+  - a GitHub Copilot subscription is required to use the GitHub Copilot SDK. 
+  - [GitHub introduces Copilot SDK (open source) – anyone can now build Copilot-style agents : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1qoa9h5/github_introduces_copilot_sdk_open_source_anyone/)
+
 - https://github.com/K-Mistele/swarm /GPLv3/202501/ts/inactive
   - Model-agnostic typescript implementation of OpenAI's Swarm framework with the Vercel AI SDK
   - model-agnostic library for creating and managing multi-agent AI systems

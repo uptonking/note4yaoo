@@ -10,7 +10,7 @@ modified: 2026-01-14T19:05:15.969Z
 # guide
 
 # draft
-
+- v0.7.6_20260127版本上, 自定义url都会失败
 # xp-janai
 - cons
   - 不支持直接使用已有的.safetensors文件

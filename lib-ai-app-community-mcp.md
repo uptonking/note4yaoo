@@ -296,6 +296,12 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
 - ## agent.md + skills - both open standards, and can combined with an agent harness (claude code, codex, deepagents) can pretty much define a custom agent
 - https://x.com/hwchase17/status/2003599022871777467
   - currently there's no way to package those together - claude plugins is close but i think lets you add an http://agent.md

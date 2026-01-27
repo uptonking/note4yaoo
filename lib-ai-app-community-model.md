@@ -168,6 +168,15 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
+- ## [[RELEASE] ARC Protocol v2.1: The Parallel Engine. Zero-Hallucination Engineering is here. : r/GoogleAntigravityIDE](https://www.reddit.com/r/GoogleAntigravityIDE/comments/1qmjrjo/release_arc_protocol_v21_the_parallel_engine/)
+  - https://github.com/AshishOP/arc-protocol /MIT/python
+  - ARC Protocol v2.1 (Analyze. Run. Confirm.) is the complete rebuild. It’s no longer just a workflow; it's a Parallel Engineering Engine that turns your AI into an autonomous fleet.
+  - True Parallelism: Spawn specialized subagents (Alpha-Researcher, Beta-Coder, Gamma-Auditor) via the MCP Bridge. While you architect, they build.
+  - Premium TUI Dashboard: A high-fidelity mission control to watch your fleet's heartbeat in real-time.
+  - IDE Auto-Linker: A new script to automatically link the ARC bridge to Cursor, Windsurf, ClaudeCode, and VS Code.
+
+- This is a vibe coded mess Like even the instructions to install it and set it up are vibe coded and not how the project actually works
+
 - ## the most capable coding agents don't have hundreds of specialized tools
 - https://x.com/vimota/status/2015823598577975453
   - they have three: read a file, write a file, run code

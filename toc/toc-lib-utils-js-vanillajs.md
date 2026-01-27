@@ -293,6 +293,9 @@ modified: 2023-04-04T22:35:59.255Z
   - 视频清晰度配置(最高支持4K)
   - 动画时间配置
   - 保存为自定义模板
+# cli
+- https://github.com/fabiospampinato/tiny-bin /MIT/202601/ts
+  - A library for building tiny and beautiful command line apps.
 # benchmark/testing
 - https://github.com/RafaelGSS/nodejs-bench-operations /202403/js
   - This repository provides benchmarks for basic operations to aid in determining a high-performance solution.

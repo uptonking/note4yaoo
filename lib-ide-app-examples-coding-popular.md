@@ -572,6 +572,13 @@ modified: 2025-12-11T18:10:23.710Z
     - https://github.com/sst/opentui /MIT/zig/ts
     - The new TUI works like the old one since it connects to the same opencode server.
   - 🍴 forks
+  - https://github.com/nanogpt-community/nanocode /MIT/202601
+    - a fork of OpenCode configured to use NanoGPT as the default provider.
+    - AI-powered coding agent using NanoGPT.
+    - Why Use This over Opencode with Nano-GPT as a provider?
+    - Models that support reasoning will use the v1thinking endpoint with interleaved thinking enabled by default
+    - All models are automatically updated from the nano-gpt api, no need to hardcode them
+    - Nano-GPT MCP built in
   - https://github.com/AllAboutAI-YT/pi-terminal /MIT/202508/go/ts/inactive
     - Prompt Injection Terminal
   - https://github.com/IgorWarzocha/opencode-chat
@@ -593,7 +600,7 @@ modified: 2025-12-11T18:10:23.710Z
     - Primary feature - Fast long session handling. Quick scrolling the session.,
     - Multiple Opencode instances in same window, different tabs.,
 
-- https://github.com/different-ai/openwork /1.1kStar/MIT/202601/rust/ts/tauri
+- https://github.com/different-ai/openwork /7.6kStar/MIT/202601/rust/ts/tauri
   - https://openwork.software/
   - open-source alternative to Claude Cowork, powered by OpenCode
   - [I built an open-source alternative to Claude Cowork (on top of opencode!) : r/ClaudeAI _202601](https://www.reddit.com/r/ClaudeAI/comments/1qcf8mu/i_built_an_opensource_alternative_to_claude/)
@@ -602,6 +609,7 @@ modified: 2025-12-11T18:10:23.710Z
     - open by design: no black boxes, no hosted lock-in.
     - extensible: skills are installable modules via a skill/package manager, using the native opencode plugin ecosystem.
     - non-technical by default: plans, progress, permissions, and artifacts are surfaced in the ui, not buried in logs.
+  - [We just hit 7k stars in 10 days, so we're releasing owpen bot a WhatsApp interface for opencode : r/opencodeCLI](https://www.reddit.com/r/opencodeCLI/comments/1qlgi47/we_just_hit_7k_stars_in_10_days_so_were_releasing/)
   - [Show HN: OpenWork – An open-source alternative to Claude Cowork | Hacker News](https://news.ycombinator.com/item?id=46612494)
     - I don't understand the point when opencode desktop already exists.
     - it's fully integrated with Claude Skills.
@@ -692,6 +700,21 @@ modified: 2025-12-11T18:10:23.710Z
   - Video Streaming - Real-time WebSocket streaming for visual monitoring
   - Zero Config - Works out of the box
 # cli-coding-agent
+- https://github.com/1rgs/nanocode /1.7kStar/MIT/202601/python/单文件
+  - Minimal Claude Code alternative. Single Python file, zero dependencies, ~250 lines.
+  - Full agentic loop with tool use
+  - Tools: read, write, edit, glob, grep, bash
+  - Conversation history
+  - https://x.com/rahulgs/status/2010179011033608227  __202601
+    - launching nanocode! minimal claude code implementation.
+    - model >>> agent loop implementation?
+  - https://x.com/shao__meng/status/2011791885124206702
+    - 核心是一个 Agentic Loop，是能够通过“工具”操作本地文件系统的编程助手
+  - https://github.com/kaushal07wick/nanocodex /MIT/python
+    - Minimal Codex-CLI implementation.
+    - https://x.com/ofcboogeyman/status/2012467798816198889
+    - full agentic loop with tools (read, write, glob, grep, bash).  
+
 - https://github.com/Aider-AI/aider /37.1kStar/apache2/202508/python
   - https://aider.chat/
   - aider is AI pair programming in your terminal
@@ -825,6 +848,14 @@ modified: 2025-12-11T18:10:23.710Z
   - [Continue 实现原理 · Pines-Cheng/blog _202505](https://github.com/Pines-Cheng/blog/issues/108)
   - [docs: added the fastapply model to the recommendations by Olyray · Pull Request · continuedev/continue](https://github.com/continuedev/continue/pull/8249)
     - [Feature Request: Support FastApply model format parsing _202411](https://github.com/continuedev/continue/issues/2801)
+
+- https://github.com/robertpiosik/CodeWebChat /GPL/202601/ts
+  - open-source AI coding toolkit. You can use CWC in VS Code family of editors (Cursor, Antigravity, VSCodium etc.) for a much faster and cost efficient* development experience.
+  - Apply responses—interactive edits integration with checkpoints for state restoration
+  - Fully-featured—code completions, commit messages, checkpoints, skills, and more
+  - zero-overhead prompts optimized for prompt caching
+  - 100% local operation
+  - [I created a coding tool that produce prompts simple enough for smaller, local models : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p3qxj4/i_created_a_coding_tool_that_produce_prompts/)
 
 - https://github.com/twinnydotdev/twinny /MIT/202408/ts
   - https://twinny.dev/

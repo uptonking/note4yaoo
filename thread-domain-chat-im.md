@@ -182,7 +182,11 @@ modified: 2024-01-04T01:28:58.097Z
 
 - ## 
 
-- ## 
+- ## [Can't edit my post? - Site feedback - Discourse Meta _202305](https://meta.discourse.org/t/cant-edit-my-post/267632?tl=en)
+- The default edit time in discourse per trust level are
+  - tl0/tl1 - 24h
+  - tl2/tl3 - 30d
+  - tl4 - unlimited
 
 - ## [建议调整connect中“获赞: 单日最高数量”的表述 _202510](https://linux.do/t/topic/1060299)
   - 一开始以为 connect 中 “获赞：单日最高数量” 是指 “一天内最高获得 N 个的赞”，但实际并不是这个意思

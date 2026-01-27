@@ -112,6 +112,7 @@ modified: 2025-11-18T13:22:22.078Z
 
 - lfm
   - 对 chat template 和 prompt 的要求不严格，方便测试
+    - 不输入system prompt也能工作
 
 ## coding 🔡
 
@@ -253,6 +254,10 @@ modified: 2025-11-18T13:22:22.078Z
 
 ## rag
 
+- [nvidia/NVIDIA-Nemotron-Parse-v1.1 · Hugging Face](https://huggingface.co/nvidia/NVIDIA-Nemotron-Parse-v1.1)
+  - designed to understand document semantics and extract text and tables elements with spatial grounding
+  - Given an image, NVIDIA Nemotron Parse v1.1 produces structured annotations, including formatted text, bounding-boxes and the corresponding semantic classes, ordered according to the document's reading flow.
+
 - [zilliz/semantic-highlight-bilingual-v1 · Hugging Face](https://huggingface.co/zilliz/semantic-highlight-bilingual-v1)
   - We kept running into this problem: when we retrieve documents in our RAG system, users can't find where the relevant info actually is.
   - This work draws its core ideas and theoretical underpinnings from Provence (https://arxiv.org/abs/2501.16214)
@@ -281,6 +286,16 @@ modified: 2025-11-18T13:22:22.078Z
   - [riddhimanrana/fastvlm-0.5b-captions · Hugging Face](https://huggingface.co/riddhimanrana/fastvlm-0.5b-captions)
     - a finetuned version of FastVLM-0.5B Stage 3 
     - built for efficient structured image captioning on mobile devices.
+# model-wiki/bookmarks
+- 超大模型的极小量化版
+  - Llama-3.3-70B-Instruct-abliterated-Q2-mlx  22.07gb
+  - Qwen3-Next-80B-A3B-Instruct-q2-mlx  24.95gb
+  - Mistral-Large-Instruct-2411-Q2-MLX  45.99gb
+  - gpt-oss-120b-mlx-2Bit(116.8B A5.1B)  36.61gb
+  - GLM-4.5-Air-2bit(106b A12B)  33.45gb
+  - GLM-4.5-Air-4bit(106b A12B)  62gb
+  - DeepSeek-V3.1-Terminus-mlx-2Bit  209.89gb
+  - DeepSeek-R1-2bit  251.82gb
 # models-features/variants
 - 专用模型
 - ocr
@@ -401,16 +416,10 @@ modified: 2025-11-18T13:22:22.078Z
   - NSQL is a family of autoregressive open-source large foundation models (FMs) designed specifically for SQL generation tasks
   - based on Meta's original Llama-2 7B model and further pre-trained on a dataset of general SQL queries and then fine-tuned on a dataset composed of DuckDB text-to-SQL pairs.
   - 200k DuckDB text-to-SQL pairs, synthetically generated using Mixtral-8x7B-Instruct-v0.1, guided by the DuckDB v0.9.2 documentation
-# model-wiki/bookmarks
-- 超大模型的极小量化版
-  - Llama-3.3-70B-Instruct-abliterated-Q2-mlx  22.07gb
-  - Qwen3-Next-80B-A3B-Instruct-q2-mlx  24.95gb
-  - Mistral-Large-Instruct-2411-Q2-MLX  45.99gb
-  - gpt-oss-120b-mlx-2Bit(116.8B A5.1B)  36.61gb
-  - GLM-4.5-Air-2bit(106b A12B)  33.45gb
-  - GLM-4.5-Air-4bit(106b A12B)  62gb
-  - DeepSeek-V3.1-Terminus-mlx-2Bit  209.89gb
-  - DeepSeek-R1-2bit  251.82gb
+
+- [distil-labs/distil-qwen3-0.6b-SHELLper · Hugging Face](https://huggingface.co/distil-labs/distil-qwen3-0.6b-SHELLper)
+  - [SHELLper 🐚: Multi-Turn Function Calling with a <1B model : r/LocalLLM](https://www.reddit.com/r/LocalLLM/comments/1qnjiym/shellper_multiturn_function_calling_with_a_1b/)
+  - Small models struggle with multi-turn tool calling - out of the box, Qwen3-0.6B achieves 84% accuracy on single tool calls, which drops to just 42% over 5 turns. Our tuning brings this to 100% on the test set, delivering robust multi-turn performance.
 # more
 - https://github.com/NVIDIA/RULER /旧测评未更新
   - What’s the Real Context Size of Your Long-Context Language Models?

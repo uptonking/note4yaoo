@@ -99,6 +99,20 @@ modified: 2025-04-17T08:17:04.770Z
 - https://github.com/orbstack/fsnotify-macvirt
   - fsnotify is a Go library to provide cross-platform filesystem notifications on Windows, Linux, macOS, BSD, and illumos.
 # gin
+- https://github.com/chinmay-sawant/gopdfsuit /MIT/202601/go
+  - https://chinmay-sawant.github.io/gopdfsuit/
+  - a comprehensive web application written in Go which can help you generate the pdf document without worrying about the PDF templating
+  - A powerful Go web service for template-based PDF generation with multi-page support, PDF merging, form filling, and HTML to PDF/Image conversion
+  - a Go + Gin web service that generates professional PDF documents from JSON templates.
+  - Template-based PDF generation with auto page breaks
+  - PDF encryption with password protection & permissions
+  - PDF merging with drag-and-drop UI
+  - Requirements: Go 1.20+, Google Chrome (for HTML conversion, gochromedp)
+  - [GoPdfSuit v4.0.0: A high-performance PDF engine for Python devs (No Go knowledge required) : r/Python](https://www.reddit.com/r/Python/comments/1qno6hj/gopdfsuit_v400_a_highperformance_pdf_engine_for/)
+  - https://github.com/chinmay-sawant/gopdfsuit-client /go
+    - client library for creating and sending PDF documents to a PDF generation service (GoPdfSuit). 
+    - This library provides a fluent API for building PDF documents programmatically or loading them from JSON in Go.
+
 - https://github.com/appleboy/gorush /8.6kStar/MIT/202509/go
   - A push notification micro server using Gin framework written in Go (Golang) and see the demo app.
   - Support Firebase Cloud Messaging using go-fcm library for Android.

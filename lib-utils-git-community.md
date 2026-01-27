@@ -628,6 +628,28 @@ git am /tmp/repo1-editor-patch/*.patch
 - 这也是我不用 worktree 的原因，每次安装依赖花时间，主要是磁盘顶不住了。
 
 - 这种模式我一直比较好奇。如果是一些玩具的项目，那就纯粹当时浪费token玩玩好了。如果是在真实的项目，人的注意力也完全不够啊，尽管AI可以生成部分代码，但还是需要人的注意力的，这种开N个的打断的成本会很大。
+# discuss-git-ai 👾
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Who's building an IDE for reviewing code instead of writing code?
+- https://x.com/schickling/status/2015870972184662197
+  - Don't only show me diffs. Show me before/after UIs, terminal output, benchmarks, historic trends, playgrounds, demos, test results etc.
+
+- ci already solved this
+
+- We're experimenting with many versions of this internally at @cursor_ai ! With an agent-first development flow, Cursor today is probably the most fleshed out IDE for reviewing code. But lots more that we are excited to do here!
+
+- https://github.com/intent-solutions-io/iam-git-with-intent /ts
+  - CLI tool that automates PR workflows. Resolves merge conflicts, creates PRs from issues, reviews code, runs in full autopilot with approval gating.
+
+- https://github.com/peterjthomson/ledger /MIT/ts
+  - modernised git interface for improved agent and human collaboration, review and control
+  - A modernised git interface for macOS — view pull requests, worktrees, branches and stashes at a glance
+  - 多列视图
 # discuss-git-protocol/spec
 - ## 
 

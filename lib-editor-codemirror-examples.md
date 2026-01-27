@@ -603,6 +603,19 @@ modified: 2023-06-23T12:46:53.288Z
   - Diff code and render to animation video
   - 依赖codemirror6、diff、d3-ease、jsdom、prismjs、zustand、webm-writer、vite
 
+- https://github.com/kostyniuk/mellow-lines /202601/ts
+  - https://mellow-lines.vercel.app/
+  - Code animation studio built with Next.js that transforms your code snippets into beautiful, smooth transition animations.
+  - Magical Transitions: Smoothly animate code changes between multiple steps using a custom layout engine.
+  - Shiki Integration: High-fidelity syntax highlighting powered by Shiki with support for various themes.
+  - High-Performance Rendering: Direct-to-canvas 2D rendering ensures sharp visuals and fluid 60 FPS animations.
+  - Video Export: Export your animations directly to high-quality MP4 or WebM formats using FFmpeg (WASM).
+  - Interactive Studio: Real-time preview with timeline seeking, play/pause controls, and customizable transition timings.
+  - Customizable: Toggle line numbers, adjust FPS, change themes, and more.
+  - Highlighter: Shiki
+  - Graphics: HTML5 Canvas 2D API
+  - Video Processing: @ffmpeg/ffmpeg (WebAssembly)
+
 - https://github.com/shikijs/shiki-magic-move /MIT/202405/ts
   - https://shiki-magic-move.netlify.app/
   - Smoothly animated code blocks with Shiki.

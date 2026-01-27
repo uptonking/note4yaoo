@@ -46,7 +46,13 @@ modified: 2025-12-18T12:26:08.445Z
 
 - ## 
 
-- ## 
+- ## Error from Kiro API: 400 - {"message":"Improperly formed request.", "reason":null}
+  - [Add support for Cline · Issue #7 · jwadow/kiro-gateway](https://github.com/jwadow/kiro-gateway/issues/7)
+  - Fixed it - Cline was sending some tool schemas that Kiro didn't like
+
+- [【WONG公益站】修复thinking引起的500问题 ](https://linux.do/t/topic/1290928)
+  - 由于之前加入了thinking相关代码直接导致某些情况下会出现500 CodeWhisperer Error: {“message”:“Improperly formed request.”, “reason”:null}的报错。
+  - 💡 因此重写了相关逻辑，经过自测已经不存在相关报错了，不过旧的已经报错的session无法继续聊下去，只能clear或者新开session来避开。
 
 - ## [Claude code报错error writing file ](https://linux.do/t/topic/1230531/11)
 - 写文件一直失败，大概率和死循环问题是一样的，就是一次性写入文件过大导致客户端报错，主要出现在claude code，让AI分多次写入即可解决该问题。

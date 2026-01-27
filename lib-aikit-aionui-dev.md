@@ -40,6 +40,8 @@ modified: 2025-12-13T18:38:27.763Z
 - office
   - word/excel不与软件厂商绑定的方案
 
+- 和gemini-cli的 api 集成的event type没有标准
+
 - cli-本地rag
   - 可参考 https://github.com/run-llama/semtools /MIT/rust/ts
   - Semantic search and document parsing tools for the command line
@@ -56,7 +58,8 @@ modified: 2025-12-13T18:38:27.763Z
 
 - default response for gemini is very slow
 
-- 
+- chat
+  - chat界面无法切换provider/model
 
 - Supported Formats: Text files, images, code files, etc.
   - 可增加: markdown优化, docx, xlsx, pdf

@@ -18,7 +18,16 @@ modified: 2024-09-08T18:57:12.231Z
 
 - ## 
 
-- ## 
+- ## 🆚 [System Prompt vs. User Prompt : r/LocalLLaMA _202504](https://www.reddit.com/r/LocalLLaMA/comments/1k88k0h/system_prompt_vs_user_prompt/)
+- System prompts tend to use some degree or form of Ghost Attention 
+  - Having a system prompt that is generic but purposeful means it is easier to dump your content without user instruction bias
+  - And finally, a reminder that the LLM gets a text blob and expands the text blob. The reason to do something isn't because of the 'format' the LLM gets. It's just the pattern recognition that matters, and that is not always the easiest to see without experimenting.
+
+- The biggest one being in how attention is applied internally by the model, with system prompt receiving a lot more of it. So system prompt matter A LOT. But what's more is that if you want to get the most out of the system prompt, you want to combine the system prompt TOGETHER with the user message for maximum affect.
+
+- i imagine it mostly depends on how the model was trained. as for your question regarding a specific model, probably the only way to properly answer the question is to test it yourself. theorycrafting here will only lead to assumptions.
+
+- LLMs tend to focus more on messages in certain positions, with system messages getting the highest attention weight. This often leads to undesired results when users design multi-agent systems or perform real-time RAG in multi-turn conversations. We call this theory of varying attention weights based on message position "position bias."
 
 - ## 💡 [A Simple Technique That Makes LLMs 24% More Accurate on Complex Problems : r/PromptEngineering _202504](https://www.reddit.com/r/PromptEngineering/comments/1jov7bi/a_simple_technique_that_makes_llms_24_more/)
   - "Step-Back Prompting" is an effective solution that leads to dramatic improvements.

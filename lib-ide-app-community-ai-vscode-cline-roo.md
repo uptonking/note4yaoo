@@ -20,12 +20,13 @@ modified: 2025-10-28T20:02:16.727Z
   - very hard to support LSP
 
 - cline-pros
-  - stable with less features
-  - 支持本地模式下高强度压缩context, 本地运行更友好
   - cline cli with client/server architecture as ai infra
-  - 架构上更解耦，提供了不依赖vs code而standalone运行的产物
+    - 架构上更解耦，提供了不依赖vs code而standalone运行的产物
+  - 支持compact prompt模式, 来减少system prompt，对小模型更友好
+  - 支持本地模式下高强度压缩context, 本地运行更友好
+    - Adds `/smol` command to condense conversation history
+  - stable with less features
   - voice coding
-  - Adds `/smol` command to condense conversation history
 
 - cline-cons
   - reject github contributions
