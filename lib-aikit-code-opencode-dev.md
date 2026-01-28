@@ -14,6 +14,8 @@ modified: 2026-01-17T22:40:27.013Z
 # draft
 
 # dev-xp
+- 基于coding-cli封装/二次开发app的缺点, coding场景内置大量system prompt, 本地小模型效果很差
+  - 而使用自定义提示词的RAG app, 使用小模型的效果较好, 所以要根据场景选择性使用coding-cli agent
 
 ## devops
 

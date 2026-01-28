@@ -18,7 +18,26 @@ modified: 2023-09-21T17:32:15.618Z
 
 - ## 
 
-- ## 
+- ## [What Wiki Software do you use for internal documentation? : r/selfhosted _202601](https://www.reddit.com/r/selfhosted/comments/1qobumh/what_wiki_software_do_you_use_for_internal/)
+- Outline is in my opinion by far the best option
+
+- I originally built BookStack for the use-case described by OP (workplace use for a mix of technical and non-technical team members) so it may be suited.
+  - That said, the structure and design is quite opinionated so it doesn't always suit all scenarios. It's best to test out the demo or spin up an instance to trial it.
+
+- Book Stack is great because if you can understand how a book case works, you can organize your documentation. Here's a bookshelf. It contains books. Books contain chapters. I use this for long form documentation like KB and things like configuration settings.
+  - Memos is my Google Keep alternative. It's like of like having your own personal self hosted Twitter feed. It's great for jotting down quick thoughts.
+
+- At my previous company we used wikijs. We used it mostly for technical documentation and what was really important for us was that the WIKI was backed by git and that the pages were regular markdown. The most important feature for us was to not have our data be stuck in a proprietary (or at least custom) data format such that migrating to another Wiki in the future would be unreasonably hard.
+  - With that said I think wikijs had a bunch of issues. The original version was pretty bare bones and also pretty good but the upgraded version that we switched to had some pretty weird UI and asked the end user to choose the backing format of the pages if I remember correctly.
+- I agree. wikijs was to me the most "user friendly" notes service that I've set up being new and all. Saved my life a couple times when my services went down and I could just quickly recall my notes. It keeps everything organized like chapters in a book, so everything is relatively easy to find. 
+
+- in this age of bloated apps Dokuwiki is blink-of-an-eye FAST. Loading pages? FAST. Searching content: FAST.
+
+- Docmost was a close second but locking basic features behind a paywall (with a 300 USD fee) was a red flag to me.
+  - I switched from Docmost to Outline due to Docmost locking OIDC SSO behind a paywall.
+- You dont technically need to. You can check forkmost on Github. It integrates the OIDC PR.
+
+- Markdown to html
 # discuss-etl-doc
 - ## 
 

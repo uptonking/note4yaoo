@@ -251,6 +251,15 @@ redis-cli shutdown
   - macOS Adobe apps download & installer
   - [Adobe Activation Tool - Macked](https://macked.app/adobe-activation-tool-crack.html)
     - Adobe激活工具离线版 使用上面的下载器
+
+- https://github.com/yuanweize/LazyMount-Mac /MIT/202601/shell
+  - 专为 NAS 游戏玩家打造的 macOS 自动化挂载神器。支持 SMB/Rclone 自动挂载与断网重连
+  - [[开源自荐] LazyMount-Mac：让你的 Mac 拥有无限存储空间（支持 SMB/Rclone/Tailscale） ](https://linux.do/t/topic/1524150)
+    - 折腾了一圈市面上的挂载工具，要么贵得离谱（比如 CloudMounter、Mountain Duck），要么不稳定（Finder 自带的 Cmd+K 动不动就掉线，卡死 Finder）。
+    - 一个纯 Shell 写的自动化挂载工具，配合 macOS 原生 LaunchAgent 使用。 主打一个 “无感” 和 “死磕”。
+    - LazyMount 会在后台一直监控，网络一通，立马重连
+    - 整合 Rclone & SMB
+    - Tailscale 完美联动
 # arm-mac
 - https://github.com/scriptingosx/utiluti /apache2/202507/swift
   - macOS command line utility to work with default apps.

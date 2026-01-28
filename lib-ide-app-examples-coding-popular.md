@@ -145,6 +145,7 @@ modified: 2025-12-11T18:10:23.710Z
 
 - https://github.com/iOfficeAI/AionUi /3kStar/apache2/202512/ts
   - https://www.aionui.com/
+  - https://github.com/iOfficeAI/AionUi/wiki
   - open-source GUI app for Gemini CLI — Better Chat UI, multi-agent support, multi-LLMs & apikey polling, Workspace Management, AI image editing & more
   - While the official Gemini CLI is powerful, its command-line interface has limitations for daily use. 
   - Seamlessly integrate multiple terminal AI agents - Gemini CLI, Claude Code, Qwen Code, Codex and more
@@ -713,7 +714,7 @@ modified: 2025-12-11T18:10:23.710Z
   - https://github.com/kaushal07wick/nanocodex /MIT/python
     - Minimal Codex-CLI implementation.
     - https://x.com/ofcboogeyman/status/2012467798816198889
-    - full agentic loop with tools (read, write, glob, grep, bash).  
+    - full agentic loop with tools (read, write, glob, grep, bash).
 
 - https://github.com/Aider-AI/aider /37.1kStar/apache2/202508/python
   - https://aider.chat/
@@ -762,6 +763,16 @@ modified: 2025-12-11T18:10:23.710Z
   - https://github.com/nicksenger/revibe /apache2/202512/rust
     - a Rust port of Mistral Vibe
     - [Revibe is a Rust-rewrite of Mistral Vibe written by Devstral 2 : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pslzv6/revibe_is_a_rustrewrite_of_mistral_vibe_written/)
+
+- https://github.com/neovateai/neovate-code /MIT/202601/ts
+  - https://neovateai.dev/
+  - a coding agent to enhance your development workflow. You can use it to generate code, fix bugs, review code, add tests, and more
+
+- https://github.com/iflow-ai/iflow-cli /NonOpen
+  - https://cli.iflow.cn/
+  - AI assistant that runs directly in your terminal.
+  - [代码是否有开源，没有找到源代码？ ](https://github.com/iflow-ai/iflow-cli/issues/77)
+    - 当前cli代码并没有开源。不过cli有几个关联项目已经开源了
 
 - https://github.com/vinhnx/vtcode /MIT/202510/rust
   - a Rust-based terminal coding agent with semantic code intelligence via `Tree-sitter` (parsers for Rust, Python, JavaScript/TypeScript, Go, Java) and `ast-grep` (structural pattern matching and refactoring).
@@ -822,6 +833,15 @@ modified: 2025-12-11T18:10:23.710Z
     - we’ve spent a lot of time normalizing agent sessions, and defining a stable contract for ai conversations across tools.
     - Normalizing agent sessions into a stable contract is underrated. Once the “conversation shape” is consistent, you can do boring but important stuff—diffs, audits, replay, evals—without rewriting integrations every time a new tool pops up.
 # background-ai
+- https://github.com/ColeMurray/background-agents /MIT/202601/python/ts
+  - https://backgroundagents.dev/
+  - open-source background coding agent system inspired by Ramp's Inspect.
+  - https://x.com/_colemurray/status/2016210023366717818
+    - OpenInspect is an open source implementation of Ramp's background agent blog post.
+  - [Why We Built Our Own Background Agent: Inspect — Ramp Builders Blog _202601](https://builders.ramp.com/post/why-we-built-our-background-agent)
+    - Inspect writes the code like any other coding agent, but closes the loop on verifying its work by having all the context and tools needed to prove it
+    - Each session runs in a sandboxed VM on Modal with everything an engineer would have locally: Vite, Postgres, Temporal, the works.
+
 - https://github.com/ishaan1013/shadow /MIT/202508/ts
   - https://shadowrealm.ai/
   - Background coding agent and real-time web interface

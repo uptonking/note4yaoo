@@ -29,6 +29,7 @@ modified: 2025-12-19T12:43:21.150Z
   - 不要执着于pdf/ppt编辑器, 现在市场需求很大的是nano-banana文生图的编辑
   - 基于ocr的方案 相对于 基于代码的方案 的优点，用户能直接拖拽修改文本/图形
   - ❓ 是否要对ppt格式的pdf单独处理，因为包含的文本较少，背景图片及图形可能不完整
+  - 还可以参考漫画manga的编辑/翻译方案
 
 - 💡 pdf的文本化
   - 输出不一定是markdown, 各厂商都有自己的偏向, qwenvl-html, Nanonets-markdown, docling-doctags
@@ -370,6 +371,13 @@ modified: 2025-12-19T12:43:21.150Z
   - PIL/Pillow - 图片处理
   - python-pptx - PPT生成
   - [大香蕉生成图片转换为可编辑PPT的速度直接质变！飞升了！GPU加持下无敌  ](https://linux.do/t/topic/1410288)
+  - [【开源】全新的图片/PDF一键转换生成可编辑PPT，让你的Gemini大香蕉猛猛用 ](https://linux.do/t/topic/1523411)
+    - 主要页面优化更新了，之前的页面难懂，现在应该简单明了一点
+    - 佬友你这个tk实现ui有点过于原生导致的庞大了，看你代码逻辑应该是先识别文字然后和涂抹修复。但是你字体这块处理解决不了，L站我前天看过一个项目，好像是做本子翻译的，逻辑大概是利用大模型的多模态能力来对图片（你的项目对应大香蕉的PPT）文字识别，给出文字的原文，x、y、w、d、倾斜、粗体、字体、翻译等多个选项，我感觉挺适合你的项目。 如果追求MPV，我的思路是直接再利用大香蕉生成一张带文字的无字底图（大香蕉可以输出文本+图片），直接少了两个模型调用过程。
+      - 我这个是要做到纯本地运行的，你说的这个功能之前版本是有AI识别这个，直接用gemimi大香蕉来进行背景还原修改的
+    - 当然，你这个两个模型都是部署在本地上的，只是你这个快上万行的UI文件有点吓到我了，后面的MPV相当于一个新的项目开发方向了。 L站开发的项目我确实习惯性All in AI了，不过字体位置识别这块LLM确实效果会好点，就是需要额外的API。
+    - 已经做到office插件运行了?
+      - 还没有，只是可以在ppt中预览
 
 - https://github.com/baoyudu/paper-burner /244Star/GPL/202506/js/单文件/inactive
   - https://baoyu.space/paper-burner/
@@ -1053,6 +1061,16 @@ modified: 2025-12-19T12:43:21.150Z
 - https://github.com/MashiroSaber03/Saber-Translator /GPL/202512/python/js
   - AI 漫画/图像翻译与编辑神器，支持多种模型、手动标注、精细编辑、会话管理和插件扩展
   - 移植自 manga-image-translator 项目 只保留模型推理核心逻辑
+
+- https://github.com/yunshaochu/mangatype-live /202601/ts
+  - 一款提供了AI自动嵌字功能的漫画编辑器
+  - [搓了一个AI全自动翻译、嵌字的漫画编辑器，单纯的对话模型（Gemini、kimi 2.5），不使用大小香蕉  ](https://linux.do/t/topic/1523120)
+    - 给有视觉能力的 AI 开个接口让它们自己找文本框、自己嵌字岂不美哉？这样也能节省大香蕉的资源
+    - 不代表 2.5p 和 2.5f 就不能用了，因为我们还有文本探测技术，可以检测到日文文本的坐标信息
+    - 假如提前把坐标告诉 AI，能否让嵌字质量上升？ 我在给项目加上了 dmMaze 的 comic-text-detector 之后，再尝试了一次, 虽然还是比不上 gemini 3 flash，但能用了
+  - https://github.com/dmMaze/comic-text-detector /GPL/python
+    - Manga&Comic text detection
+    - scripts to train a text detector based on manga-image-translator which can extract bounding-boxes, text lines and segmentation of text from manga or comics to help further comics translation procedures such as text-removal, recognition, lettering, etc.
 
 - https://github.com/Bistutu/FluentRead /6.2kStar/GPL/202509/ts/vue/inactive
   - https://fluent.thinkstu.com/

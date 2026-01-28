@@ -1318,12 +1318,48 @@ modified: 2024-09-08T20:08:16.088Z
 
 - This is how you sell more GPUs. Llama 4 at full context length takes 512 H200s networked. Entirely self serving by NVDA.
 - I usually don't have high hopes for models from NVIDIA. their previous research seems to be just show off what you can do with large amount of compute rather than contributing anything SOTA. ofc, to sell more compute.
+# discuss-perf
+- ## 
+
+- ## 
+
+- ## [How to handle extremely large extracted document data in an agentic system? (RAG / alternatives?) : r/Rag _202601](https://www.reddit.com/r/Rag/comments/1qp9pmy/how_to_handle_extremely_large_extracted_document/)
+  - I’m building an agentic system where users can upload documents. These documents can be very large — for example, up to 15 documents at once, where some are ~1500 pages and others 300–400 pages. Most of these are financial documents (e.g., tax forms), though not exclusively.
+  - We have a document extraction service that works well and produces structured layout + document data. However, the extracted data itself is also huge, so we can’t fit it into the chat context.
+  - Current approach: The extracted structured data is stored as a JSON file in cloud storage We store a reference/ID in the DB Tools can fetch the data using this reference when needed
+  - The Problem: Because the agent never directly “sees” or understands the extracted data: If a user asks questions about the document content, The agent often can’t answer correctly, since the data is not in its context or memory
+- We’re thinking about applying RAG on the extracted data, but we have a few concerns:
+  - Agents run in a chat loop → creation + retrieval must be fast
+  - The data is deeply nested and very large
+  - We want minimal latency and good accuracy
+
+- You must do semantic chunking on the document. Split it up according to logical partitions. Ask LLM to enhance with descriptions metadata. Explicit relationships to other sections. Then embed those. 90% and the expensive part is LLM preprocessing of this. Then you gather context with vector rag and details with agentic rag + subagents to manage context.
+  - Yes, and then you can have a Table of Contents and make sure each of those sections understand their role in the hierarchical structure. This is what we do and it works well. Also a database can be useful here as well.
+
+- I’m handling this via knowledge trees and human supervised document ingestion (you supervise proper slicing and where the document belongs in the knowledge tree - though the AI does make suggestions)
+  - The AI by itself is very bad at organizing information with no clear rules and will fail spectacularly
+
+- What’s worked for me is separating understanding from storage. On ingestion, I generate a thin semantic layer, section summaries, key entities, numbers, obligations, relationships. That layer is small, fast, and always available to the agent. The heavy JSON stays out of the loop unless the agent explicitly needs to verify something. Trying to RAG directly over deeply nested extracted data is usually a dead end. It’s slow, and the signal to noise ratio is awful. Hierarchical retrieval helps a lot, first decide where to look, then pull only that slice, then answr. Latency stays low because most questions never touch the raw data.
+
+- Your instinct that you can't just shove these in the context window is correct and that you need some sort of RAG but what and why depend on the answers to these questions.
 # discuss
 - ## 
 
 - ## 
 
-- ## 
+- ## [Compared hallucination detection for RAG: LLM judges vs NLI : r/Rag _202601](https://www.reddit.com/r/Rag/comments/1qp7psa/compared_hallucination_detection_for_rag_llm/)
+  - I looked into different ways to detect hallucinations in RAG. Compared LLM judges, atomic claim verification, and encoder-based NLI.
+  - LLM judge: 100% accuracy, ~1.3s latency
+  - Atomic claim verification: 100% recall, ~10.7s latency
+  - Encoder-based NLI: ~91% accuracy, ~486ms latency (CPU-only)
+  - For real-time systems, NLI seems like the most reasonable trade-off.
+
+- I'd take 100% accuracy any day. If you prefer 91% accuracy, I reckon your product and data, where the LLM is integrated, aren't worth much.
+  - if latency and cost don’t matter, 100% accuracy is obviously the right choice (but also depending on your type of production)
+
+- we put nli as a fast filter, async llm judge on low-confidence hits, and cache verdicts per doc passage. reduced latency and cost by 70% while keeping recall. try thresholding confidence before invoking expensive checks.
+
+- From the test, anything 100% seems fishy. How many samples and what are the error bars after running same test with different seeds? There’s a “66.7%” precision number in the article, which is oddly clean (2/3), too. Was there a test/validation split with the dataset?
 
 - ## file search is the new RAG
 - https://x.com/jerryjliu0/status/2011955401118663145

@@ -1893,6 +1893,19 @@ Q8（8 位）	    16GB+	   接近原始版本
 
 - 这个方向国内已经玩透了吧
   - 咋没看见一个落地的入口
+# discuss-examples-image 🌰
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Z-Image Day-0 support in ComfyUI: Non-distilled, Flexible, High-Quality Image Generation : r/comfyui _202601](https://www.reddit.com/r/comfyui/comments/1qojov0/zimage_day0_support_in_comfyui_nondistilled/)
+  - 冷色系油画风格
+  - 很多风格鲜明的示例
+
 # discuss-image
 - ## 
 

@@ -52,6 +52,10 @@ modified: 2023-12-15T18:02:24.488Z
 - https://github.com/holdenmatt/duckdb-wasm-kit /202311/ts
   - Hooks and utilities to make it easier to use duckdb-wasm in React apps.
 
+- https://github.com/tobilg/ducklings /MIT/202601/ts/cpp
+  - https://ducklings-api.serverless-duckdb.com/
+  - A minimal DuckDB Wasm build for browsers and serverless environments like Cloudflare Workers
+
 - https://github.com/Datakitpage/Datakit /AGPL/202512/ts
   - https://datakit.page/
   - a browser-based data analysis platform that processes multi-gigabyte files (Parquet, CSV, JSON, etc) locally (with the help of duckdb-wasm).

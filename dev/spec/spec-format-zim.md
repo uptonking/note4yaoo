@@ -115,3 +115,22 @@ modified: 2023-07-05T10:22:57.942Z
 - https://github.com/openzim/libzim /cpp
   - Reference implementation of the ZIM specification
 # more
+
+# discuss
+
+- ## 
+
+- ## 
+
+- ## [TV/Movie DB zim? : r/Kiwix](https://www.reddit.com/r/Kiwix/comments/1qpemqu/tvmovie_db_zim/)
+- there's an official dataset available here, so someone could create a ZIM, just not be allowed to share it.
+  - The data can only be used for personal and non-commercial use and must not be altered/republished/resold/repurposed to create any kind of online/offline database of movie information (except for individual personal use). 
+
+- ## [Anywhere to get ZIM files other than the official Kiwix website? : r/Kiwix](https://www.reddit.com/r/Kiwix/comments/1qov4mv/anywhere_to_get_zim_files_other_than_the_official/)
+- You could make ZIMs by yourself https://github.com/openzim/zimit if you are a bit technical or have time to learn.
+  - If you aren't aware, you can make your own zim files using either the docker image or https://zimit.kiwix.org/. 
+
+- [Is there a website/hub where one can share zim's created zimit.kiwix.org or manually? : r/Kiwix](https://www.reddit.com/r/Kiwix/comments/1oys2en/is_there_a_websitehub_where_one_can_share_zims/)
+  - No, but we are looking into it - the main issue at this stage is figuring out a way to prevent people from sharing illegal stuff (child pr0n and so on).
+
+- The best approach is a simple approval process to filter out the worst offenders coupled with a report feature so that people can inform you in case they find something you missed.

@@ -529,10 +529,12 @@ modified: 2023-04-04T22:39:45.442Z
   - FileManager: Browse your pictures conveniently and save them directly to the output directory.
   - https://huggingface.co/spaces/Sanster/iopaint-lama
 
-- https://github.com/chunxiuxiamo/ai-image-edit /95Star/202512/js
+- https://github.com/chunxiuxiamo/ai-image-edit /95Star/202601/js
   - AI图片生成编辑网站，可以框选图片局部区域进行编辑修改。
   - 通过画笔涂抹或框选图片局部区域进行编辑修改，可一次性修改多个区域。
   - 对复杂图形有概率会修改到原图其他元素
+  - [【开源】：AI-ImageEdit V2版本更新啦！！！（原Nano-banana 生图和画笔涂抹、框选局部区域进行编辑修改） _202601](https://linux.do/t/topic/1536503)
+    - 支持原生Gemini接口，多图层编辑系统、AI抠图、遮罩跟随及Docker部署优化
   - [【开源】：Nano-banana生图和画笔涂抹、框选局部区域进行编辑修改 _202512](https://linux.do/t/topic/1369893)
     - 优化模型选择功能，兼容其他绘图模型（OpenAI通用API格式），支持自定义模型
     - 直接框选就行右边会自动出现坐标和对应的指令输入框，输入指令之后 下面的设置提示词按钮就可以了 不用自己写坐标

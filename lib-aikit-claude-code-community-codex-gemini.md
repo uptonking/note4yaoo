@@ -182,7 +182,18 @@ modified: 2025-12-18T12:27:14.982Z
 
 - ## 
 
-- ## 
+- ## [分享一个拿opencode干非coding活的思路(DIY cowork) ](https://linux.do/t/topic/1534786)
+  - 自己平时除了coding还有一些杂活，尤其涉及到一些文件材料台账的收集、准备、处理。因此这段时间折腾了下，拿opencode自己跑出了一套对自己而言还算可以的流程，在这里给大家分享下。
+  - 准备了一个文件夹：vibe_working，里面的结构是：
+  - 0.runtime: RULES
+  - 1.todo
+  - 2.processing
+  - 3.archived
+  - todo里面就是待干的事情，以文件夹为一个项目。processing就是处理中的，处理完后放archived里。
+  - 不知道有没有佬友会有skills焦虑，总觉得要准备一堆skills来开干。我自己的经验是，只要先弄个authropic官方的skill-creator这个skill，后续的都不急，甚至大部分都不用
+  - 你需要哪些skill，完全可以在流程跑通后，和opencode说下把刚才的整个流程变成一个skill，它就会调用skilll-creator去创建对应的skill了。我将其命名为生长型skill，即很自然的用它，用完好用的能跑通的，就把整个跑通的流程变成对应的skill，整个skill无需你自己动手去写。
+  - 我自己尝试了几个项目了，包括word、excel、pdf等文件的处理都很可以，而且还有一个这类因为没有特别难的coding问题，完全可以用国内的几个模型，更加便宜。
+  - 等你自己工作上的几种常见的活都跑过一遍后，汇总成了成熟的skill，后续完全可以让其自动化操作了。
 
 - ## [OpenCode Ecosystem feels overwhelmingly bloated : r/opencodeCLI _202601](https://www.reddit.com/r/opencodeCLI/comments/1qmwcp1/opencode_ecosystem_feels_overwhelmingly_bloated/)
   - I often check OpenCode ecosystem and update my setup every now and then to utilize opencode to the max. I go through every plugins, projects ...etc. However, i noticed most of these plugins are kinda redundant. Some of them are kinda promoting certain services or products, some of them feel outdated, some of them are for very niche use cases.

@@ -16,6 +16,23 @@ modified: 2022-11-08T10:34:34.820Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Working as AI Engineer is wild : r/AI_Agents _202601](https://www.reddit.com/r/AI_Agents/comments/1qojw8w/working_as_ai_engineer_is_wild/)
+  - I was a 10 year backend and when gpt came out I switched to learning ML and Gen AI and for the last three years I`ve been working as a AI Engineer, and compared to traditional backend development this role is the worst.
+  - My main problem is that team leads, directors and VP`s usually don't have basic ml or ai knowledge, they watch a hyped up video or presentation and assume that everything can be done by the all-mighty LLM and it just work with putting in minimal effort in the code. Unfortunately technical interviews are the same.
+
+- Engineering is always about building using the right tools. A lot of time right now the LLM is very good tool. But it is not for high scale applications, anomaly detection in time series data normally falls into that. As someone who has implemented both a ML based anomaly and LLM based anomaly detection (low volume) - both are possible and usually for different use cases.
+  - Engineering is still engineering but the world has changed, AI won't make a bad engineering organization better but it can make a good organization 10x better when it wields the tools correctly.
+
+- Thinking through first-principles is also super important. My only advice would be that you should exhaust the LLM route only because you can apply all the leverage in one place. For example, we've been able to create small LLMs (1.5B, 4B) that are exceptional at routing, orchestration and jailbreak detection especially for long-context windows. Some of the new workloads are just different and because of these nuances older techniques wouldn't be sufficient especially if the traffic patterns are agentic (which doesn't seem to be in your case).
+
+- Sentiment analysis and anomaly detection are fine LLM use-cases, you just need clean data and workflow.
+
+- Following hype is going to always yield the same results. Some people make money, most people just have a bad time.
+
 - ## [嵌入式可能是受AI冲击最早的 ](https://linux.do/t/topic/1420399)
   - 最近用AI生成嵌入式的代码，发现这种高度秩序化的软件开发对AI易如反掌，即使用免费模型或国内trae也毫无压力。而算法开发一般要跟gpt聊好久，写好文档盯对后才敢放开方向盘。
   - 嵌入式以后只要给出库函数使用说明和配置的要求，真的可以放手给AI了。

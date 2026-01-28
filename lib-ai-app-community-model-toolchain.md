@@ -1140,6 +1140,20 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 
 - ## 
 
+- ## 
+
+- ## 🤔 [Why don’t most programmers fine-tune/train their own SLMs (private small models) to build a “library-expert” moat? : r/LocalLLM](https://www.reddit.com/r/LocalLLM/comments/1qoyoty/why_dont_most_programmers_finetunetrain_their_own/)
+- Because it's way easier to just use a RAG (or something similar to feed data to the model) instead of fine-tuning models. It's also way faster and more energy efficient. And doesn't need to be re-done on every new model release. Simply switch the model, and you're done (most of the time, not always). Note: I've built machine learning frameworks and applications for a few years now at my current job, and doing a lot of things with SLMs at home.
+
+- RAG is more reliable for most tasks and doesn't risk breaking the model. The problem with fine-tuning is the quality issues are often not obvious until some time after starting to use the model, like it suddenly forgetting the context because you didnt have enough long samples
+
+- Fine tuning needs a lot more memory than inference.  Most people don’t own this kind of compute.  Fine tuning takes quite a bit of time and if you’re renting enough GPU to do it, isn’t $0 and for small to medium sized models may easily run to hundreds or thousands of dollars (depending on how it’s done).
+  - Then, generating the thousands of inputs to perform the fine tuning also isn’t easy, cheap, or seemingly well understood by many people. 
+
+- Out of the box coding models can usually do it well enough with a little guidance and documentation
+
+- Whats the point? You'll never curate more examples than the llm has already seen and what is the incremental value from that, even 5000 examples are small potatoes against something trained on all of github
+
 - ## [Transformer Lab - Download, interact, and train models locally : r/LocalLLaMA _202402](https://www.reddit.com/r/LocalLLaMA/comments/1awer80/transformer_lab_download_interact_and_train/)
   - We built Transformer Lab to be an open source tool that lets you interact, train, and evaluate LLMs on your own machine or in the cloud (currently Mac or Linux, Windows soon) through a simple GUI.
   - One of our goals is to make it as easy as possible to get started experimenting with LLMs regardless of what platform you have (even if you don’t have a GPU). You can do everything through the UI but it is built on an API that can be extended using plugins. When you start the app it will try to figure out what kind of system you have and install the right set of initial plugins to get you going optimally.

@@ -247,6 +247,8 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
   - The sales team wants to identify for which month they perform well and bad in 2014.
   - please give me the result with tables and plots
 
+- you can add more debugging logs to make it easy to trace data flow, then i restarted and give the log to you. 
+
 ```
 
 - [guide : running gpt-oss with llama.cpp · ggml-org/llama.cpp · Discussion _202508](https://github.com/ggml-org/llama.cpp/discussions/15396)
@@ -293,6 +295,17 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
   - ?
 - dev-log
   - ?
+
+## 0128
+
+- the goal is opencode-cli bundled just like the existing gemini-cli. and you provide a new environment variable for user to choose which cli to use. you have aleady implemented it, but with bugs. so opencode-cli is just implemented by referring to gemini-cli, but with bugs. 
+- i start electron app with opencode-cli by `npm run opencode:start`.  when i select a custom model from chatbox models dropdown and send chat message, ai answers well. then i click "New Chat" button, and send a new message to start a new chat, ai also answers well but the terminal often shows a error log like below
+
+- when i start electron app by `npm start`, it uses gemini-cli by default, not opencode-cli. when i select a folder fo1 at chatbox and start chatting, why is a new `.opencode` folder generated at the folder fo1? analyze related code and architecture, find the reason and fix it. .opencode folder should only be generated when i set environment variable to use opencode-cli.
+
+- your solution should make it work for starting a new chat with the same model or with a different model that user selected from the chatbox models dropdown menu.
+  - Looking at the architecture, I see the real issue: each chat is trying to use its own workspace, but the OpenCode server is shared across all chats. When the second chat creates a config in its workspace, it's either: - Overwriting the config in the same workspace (if workspaces are accidentally shared) - Creating a config in a different workspace that the server can't see
+  - The solution is to: 1. Use a single global workspace for all OpenCode chats (since OpenCode has built-in session management) 2. Merge model configs instead of overwriting when adding a new model 3. Track which models are already configured to avoid unnecessary config updates
 
 ## 0127
 
@@ -457,6 +470,9 @@ Loaded cached credentials. jinyaoo86@gmail.com
 
 ## 0126
 
+- 🎯 the goal is opencode-cli bundled just like the existing gemini-cli. and you provide a new environment variable for user to choose which cli to use.  you aleady have implemented it, but with bugs. so opencode-cli is just implemented by referring to gemini-cli, but with bugs.
+- i start electron app with opencode-cli by `npm run opencode:start`. when i chatted, it not work. 
+
 - when i restarted and chatted again, it not work. the terminal log is 
 
 - the original workflow for gemini-cli is that user selects a custom provider and model from chatbox dropdown, and gemini-cli will use it for chatting. please analyze the code and dataflow, and make it work for opencode-cli.
@@ -467,8 +483,6 @@ Loaded cached credentials. jinyaoo86@gmail.com
 
 - review your implementation. when i  select custom model from chatbox dropdown ui, will chat work with opencode-cli? the original gemini-cli works well.  recheck the data flow, and make it work for opencode-cli
 
-- the goal is opencode-cli bundled just like the existing gemini-cli. and you provide a  new environment variable for user to choose which cli to use.  you aleady have implemented it, but with bugs. so opencode-cli is just implemented by referring to gemini-cli, but with bugs.
-- i start electron app with opencode-cli by `npm run opencode:start`. when i chatted, it not work. 
 - opencode-cli is not required to install globally. you already include it via a wrapper like the original gemini-cli wrapper "@office-ai/aioncli-core".
 
 - please refer to how gemini-cli supports openai-compatible provider, and make opencode-cli supports openai-compatible provider in the similar way.
