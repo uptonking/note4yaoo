@@ -15,6 +15,9 @@ modified: 2023-09-17T17:35:27.024Z
 - sql-cons
   - not good at recursive query
   - 无法提供excel计算所需要的细粒度缓存和依赖管理 won’t do smart caching and dependency management for the cache
+
+- [Explain Plan Visualizer by Datadog](https://explain.datadoghq.com/)
+  - Currently for PostgreSQL, MySQL, MSSQL and MongoDB
 # discuss-stars
 - ## 
 

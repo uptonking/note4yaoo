@@ -643,6 +643,30 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
+- ## 
+
+- ## ✨ [Assistant_Pepe_8B, 1-M context, zero slop : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qppjo4/assistant_pepe_8b_1m_context_zero_slop/)
+  - This is a project that was a long time in the making because I wanted to get it right. I'm still not fully satisfied, as there are some rough corners to sand, but for now, this would do.
+  - The goal was to maximize shitpostness along with helpfulness, without glazing the user for every retarded idea. Not an easy needle to thread.
+  - TL; DR
+  - Top tier shitposting(玩梗) absolutely unhinged, funny, and witty. Sometimes cringe too; nothing is perfect.
+  - Helpful! will actually get shit done.
+  - Will 100% roast(毒舌) you for being dumb, thanks to a subtle negativity bias infusion. Very refreshing! 🤌
+  - Built on my UltraLong-1M-Instruct_Abliterated model, fulfill your dream of a million-token-long shitpost.
+  - Say goodbye to GPT-isms and say hello to truly creative stories!
+  - Ships code.
+- make sure to see the examples in the model card for the writing style.
+  - Also, no system prompt is needed, all the examples were made with default min_p settings
+
+- The roasting feature alone makes this worth checking out, tired of models that treat every garbage idea like it's revolutionary lmao
+
+- If you’re creative enough with your system prompts, you can get this behavior with other models.
+  - system prompts help a lot, but there's a limit to prompting. very big models (kimi, deepseek) can do it well though.
+
+- this is pretty fun! It seems to have a decent knowledge, is fast, and I enjoy that it pulls out witty quotes and references decently often.
+  - Just two things. It uses the word cucked farrrr too often, which was amusing to start with but dragged a bit. And, If you ask it what it can do, it loves to end each message with "Oh, and by the way i can do xxx" even when I am several messages past asking what it can do, it ends every message with that.
+- Regarding "I can do x" is the helpful part at play, but the repetition might be sampler settings (and stuff like random seed).
+
 - ## [My gpu poor comrades, GLM 4.7 Flash is your local agent : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qhii5v/my_gpu_poor_comrades_glm_47_flash_is_your_local/)
   - I am running it since more than half an hour on opencode and it produced hundreds of thousands tokens in one session (with context compacting obviously) without any tool calling errors. It clones github repos, it runs all kind of commands, edits files, commits changes, all perfect, not a single error yet.
 

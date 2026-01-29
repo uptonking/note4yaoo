@@ -17,6 +17,10 @@ modified: 2025-09-01T07:58:29.058Z
     - 甚至针对场景的微调模型，如ios/android, mobile-responsive
   - 🏠 continue.dev相对于cline/aider更擅长inline-autocomplete, 但架构设计可以参考rag/embedding/rerank
 
+- dev-xp
+  - ui细节问题有时难以向AI描述清楚, 复现场景、光标问题的细节如何让AI理解
+  - 难以稳定复现的问题, ai也很难分析解决
+
 - prompts-coding
   - https://github.com/tallesborges/agentic-system-prompts
     - A curated collection of system prompts and tool definitions from production AI coding agents
@@ -514,7 +518,33 @@ modified: 2025-09-01T07:58:29.058Z
 
 - ## 
 
-- ## 
+- ## 我现在越来越不担心 Vibe Coding 或者 AI 可以抢走高级程序员的工作了。
+- https://x.com/brucexu_eth/status/2016481007286002067
+  - 比如遇到一个富文本编辑器的光标拖拽不见了的 bug，AI 只会不停的调整 drop cursor 得 CSS，加上 zIndex 和 !important，但就是不出现。
+  - 我打开 Devtools 熟悉的定位到那个 DOM，看了下 styles 和渲染位置，给 AI 增加了一些额外信息，然后它才知道原来是因为 transform 会导致 position fixed 失效，而光标拖拽是使用了 position fixed 导致的。我也恍然大悟了，transform 导致 position fixed 失效的问题我在 13 年的时候写过一篇文章专门研究过。
+- 让AI用agent-browser或者chrome-devtool有可能能解决吗
+  - 解决不了，因为看到这个渲染位置，需要找到这个元素，手动修改 css，然后通过视觉看到它的渲染位置。目前 AI 是很难做到的
+- 我觉得你可能小看 devtools MCP 了，AI 可以通过它运行调试脚本通过 getClientBoundingRect 来获取各个元素的位置来分析的。我几个月前就遇到一处 transition 不生效的问题，Codex 用 devtools MCP 反复写了不同脚本测试找出了没有生效的原因。
+- 连 chrome 的 mcp 就行了，类似的前端问题我用 ai 已经解决了很多，他会看 css，改完了还会模拟点击截图看效果，你说的视觉问题它截图就处理完了
+
+- 你让 ai 接浏览器直接调了吗，还是只是描述现象，然后让它猜病灶。我倾向于认为很多很细节的问题不好调主要还是因为反馈回路没有调顺
+  - 给ai提示不好的话，最后一步解决方案可能变成问1+1等于几，就像带一个刚入门的新同事，这时问答的异步沟通和等待成本，已经超出人工独立解决的成本，要考虑规避这种问题。
+
+- 我觉得解决这个问题只差一个chrome connector
+
+- 这种和高不高级程序员没太大关系, 后端的逻辑非常复杂它可以很快理清楚, 一旦 UI 揉进来它看不见摸不着就会这样, 一个小孩子能看到说出来的东西, 它看不见, 不要说它可以读 element 元素或者截图, 现阶段它就是很难"看"到
+  - Gemini可以看视频做分析，我前几天遇到一个UI问题，语音没法描述清楚，我录了段视频给Gemini, 它就帮我解决了。
+- 写了一大堆其实卵用没有，因为其实很简单你让AI添加log定位问题，就可以解决99%的问题
+
+- 通识简单问题能解决的很好，冷门疑难问题还是需要给他一些方向，不然会一直尝试各种无效方法，毕竟他知道的解决问题的方法太多了
+
+- 我之前也遇到过一个类似的问题：在地图上拖拽一个形状时，有可能会产生 ghost effect，但这种情况只有在特定拖拽速度才会出现，AI就一直很难在没有我的描述下解决这个问题。
+  - Gemini已经可以理解screen recording 了，我前几天录屏让Gemini 帮我解决了一个问题。
+
+- 当你把这个 debug 方法教给了 AI，下次其他人再遇到这个问题，它也会开始尝试用这个方法来解决。当 AI 用于 Vibe Coding 的范围足够广，它迟早能把这些边缘 case 的解法都学到。所以，一切都只是时间问题，可能高级程序员能活得稍微久一点。
+- 这个问题要不了多久就会被其他老师傅指导 AI 学会的，还会做成可以到处分发的 skills 
+
+- 我前些日子就遇到一个，文本页面加不上选择复制功能，给我讲了一通什么qt插件，现代化UI之类的…哦，我是小白，不会编程，我的解决方案就是…彻底舍弃，从头开始…AI很死心眼的，反复调试不如重来
 
 - ## Where your product UI is dynamically generated, based on user intent and context.
 - https://x.com/Prathkum/status/1988172654872834204

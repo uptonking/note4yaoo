@@ -203,4 +203,42 @@ modified: 2025-09-21T13:58:46.548Z
   - Semantic Search - Find relevant code using natural language queries
   - Full Pipeline Automation - One command to chunk, embed, and store
   - 🛢️ Docker (for ChromaDB)
+# mineru
+- https://github.com/magicyuan876/mineru-tianshu /apache2/202601/python/ts/vue
+  - 天枢 - 企业级 AI 数据预处理平台，将非结构化数据转换为 AI 可用的结构化格式
+  - 支持文档、图片、音频等多模态数据处理 | GPU 加速 | MCP 协议
+  - 后端：FastAPI、LitServe、MinerU、PaddleOCR、SenseVoice、SQLite、Loguru
+  - 前端：Vue 3、TypeScript、Vite、TailwindCSS、Pinia、Vue Router
+  - 多解析引擎: MinerU、PaddleOCR-VL、MarkItDown、格式引擎
+    - pipeline: MinerU 标准流程，通用文档解析
+    - vlm-transformers/vlm-vllm-engine: MinerU VLM 模式
+    - paddleocr-vl: 109+ 语言，自动方向矫正, 仅支持 GPU: PaddleOCR-VL 目前不支持 CPU 及 Arm 架构
+  - 文档: PDF、Word、Excel、PPT → Markdown/JSON（MinerU、PaddleOCR-VL 109+ 语言、水印去除）
+  - 视频: MP4、AVI、MKV → 语音转写 + 关键帧 OCR🧪（FFmpeg + SenseVoice）
+  - 音频: MP3、WAV、M4A → 文字转写 + 说话人识别（SenseVoice 多语言）
+  - 大文件并行处理: PDF 自动拆分功能：超过阈值（默认 500 页）的 PDF 自动拆分为多个子任务并行处理
+    - 并发安全: 原子操作防止任务重复，支持多 Worker 并发
+    - Worker 主动拉取: 0.5秒响应，无需调度器触发
+  - RustFS 对象存储：所有解析结果的图片自动上传到对象存储, S3 兼容 API，基于 minio-py 实现
+  - GPU 负载均衡: LitServe 自动调度，避免显存冲突，多 GPU 隔离
+  - 企业特性: GPU 负载均衡、任务队列、JWT 认证、MCP 协议、现代化 Web 界面
+  - Tianshu 支持完全离线部署，提供两种部署模式：
+    - 方式 1：Linux 服务器（有 GPU 则加速，无 GPU 自动降级 CPU）
+    - 方式 2：CPU 专用版（Mac/无 GPU 环境）
+
+- https://github.com/wzdavid/mineru-api /MIT/202601/python
+  - [只需 4 步搞定！开源文档解析服务 MinerU-API 最新安装指南 - 知乎](https://zhuanlan.zhihu.com/p/1999940036863492525)
+  - 基于 Celery 的异步文档解析服务
+  - 异步处理：基于分布式任务队列，支持高并发
+  - 支持任务重试和故障恢复
+  - 实时监控：任务状态跟踪和队列统计。你可以随时查看任务的进度和状态
+  - 模块化设计，易于添加新的解析引擎。如果你需要处理新的文档格式，只需要添加一个新的解析引擎即可。
+
+- https://github.com/firecrawl/mineru-api /AGPL/202512/python
+  - Fork of neka-nat/mineru-api - API server for MinerU.
+  - designed for running MinerU on serverless platforms such as Runpod.
+  - https://github.com/neka-nat/mineru-api /AGPL/202512/python
+    - API server for MinerU.
+# extraction
+
 # more

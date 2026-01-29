@@ -16,7 +16,12 @@ modified: 2021-08-22T07:29:34.045Z
 
 - ## 
 
-- ## 
+- ## Kimi can now edit Word docs just like a lawyer. 
+- https://x.com/KimiProduct/status/2016720053639811272
+  - track-changes 的交互效果
+
+- https://x.com/Kimi_Moonshot/status/2016710842654609648
+  - Kimi can now create and edit files! From expert-level spreadsheets to professional slides and PDFs, all it takes is a chat. Quick update: "OK Computer" has officially leveled up and is now "Kimi Agent".
 
 - ## [I built an AI that redesigns your Notion pages into real websites : r/Notion _202510](https://www.reddit.com/r/Notion/comments/1o0bco2/i_built_an_ai_that_redesigns_your_notion_pages/)
   - I’ve been building Bullet.so for a while, growing slowly and steadily. 

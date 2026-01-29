@@ -26,6 +26,9 @@ modified: 2025-09-21T13:58:08.942Z
 
 - 对于任意一个文件，如何自动选择pipeline来convert
 
+- mineru api open source server?
+  - 实测mineru的在线api的解析/导出功能不稳定, 有时会失败
+
 - vlm
   - 如何流式输出
 # dev-xp
@@ -85,6 +88,22 @@ modified: 2025-09-21T13:58:08.942Z
 - 
 - 
 
+# mineru
+- mineru模型版本，三个选项: pipeline、vlm、MinerU-HTML，默认pipeline。
+
+- [输出文件格式 - MinerU](https://opendatalab.github.io/MinerU/zh/reference/output_files/)
+  - pipeline 后端 输出结果
+  - VLM 后端 输出结果
+  - 2.5版本vlm后端的输出存在较大变化，与pipeline版本存在不兼容情况
+
+- 上传本地pdf相关的api
+  - 文件批量上传解析 https://mineru.net/api/v4/file-urls/batch
+    - 文件上传完成后，无须调用提交解析任务接口。系统会自动扫描已上传完成文件自动提交解析任务
+    - response包含 batch_id
+  - 通过 batch_id 批量查询提取任务的进度和结果 https://mineru.net/api/v4/extract-results/batch/batch_id
+    - response包含data.extract_result.full_zip_url，文件解析结果压缩包，
+    - https://cdn-mineru.openxlab.org.cn/result/2026-01-30/378c8586-cbef-452e-a126-24a81100edd4.zip
+      - 无需auth可下载
 # more
 - [Figure Export from Docling — Exporting PDF to image - DEV Community](https://dev.to/aairom/figure-export-from-docling-exporting-pdf-to-image-4lp6)
 

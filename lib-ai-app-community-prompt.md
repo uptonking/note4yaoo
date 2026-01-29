@@ -129,12 +129,12 @@ modified: 2024-09-08T18:57:12.231Z
   - The previous messages are reprocessed, the more messages, the longer it takes.
   - Especially on the Macs, the longer the context, the slower the generation speed.
 
-# discuss-prompt-usecases
+# discuss-prompt-usecases 🌰
 - ## 
 
 - ## 
 
-- ## 
+- ## [网文「仿写」+「玩梗」，这套提示词可以试试 ](https://www.woshipm.com/share/6072536.html)
 
 - ## [My go-to prompt for analyzing stocks. Share yours! : r/PromptEngineering](https://www.reddit.com/r/PromptEngineering/comments/1oqa30m/my_goto_prompt_for_analyzing_stocks_share_yours/)
 - Act as a senior equity research analyst. Your task is to compile a comprehensive investment analysis report on [Company Name] (Ticker: [Ticker Symbol]). The report should be detailed, objective, and data-driven, using financial data from the last five full fiscal years and the most recent trailing twelve months (TTM).

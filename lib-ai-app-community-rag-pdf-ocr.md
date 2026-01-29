@@ -56,7 +56,8 @@ modified: 2026-01-25T17:23:01.510Z
 
 - ## 
 
-- ## 
+- ## [如何提高mineru解析PDF文件中图片的分辨率？ ](https://linux.do/t/topic/1498862)
+- 最好先看看原版 pdf 另存出来是不是就是高质量的
 
 - ## [DeepSeek-OCR - Lives up to the hype : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1ocrocy/deepseekocr_lives_up_to_the_hype/)
   - Hardware - 1 x A6000 ADA on a Ryzen 1700 /w 32gb ram

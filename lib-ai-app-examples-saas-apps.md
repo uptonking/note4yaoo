@@ -437,6 +437,12 @@ modified: 2025-02-21T17:17:42.225Z
   - Model Agnostic - Works with any model configured in OpenCode
   - Safe by Default - Uses OpenCode's built-in permission system
 
+- https://github.com/poco-ai/poco-agent /MIT/202601/python/ts
+  - https://poco-ai.com/
+  - An intelligent agent harnessing cloud-based Claude Code to realize a Manus-like autonomous experience.
+  - Poco is a cloud-based AI agent execution platform inspired by Anthropic's Cowork. It orchestrates Claude AI agents to perform autonomous tasks beyond coding—organizing files, writing documents, analyzing data, and more—in a distributed cloud environment.
+  - Works in parallel — Queue multiple tasks without waiting for completion
+
 - https://github.com/workany-ai/workany /apache+LOGO/202601/ts
   - https://workany.ai/
   - a desktop AI agent application that executes tasks through natural language. 
@@ -475,6 +481,14 @@ modified: 2025-02-21T17:17:42.225Z
   - Database: PostgreSQL (with Drizzle ORM)
   - Deployment: Vercel (Frontend), EC2 (Backend)
   - Analytics: PostHog, Api-Analytics
+
+## office
+
+- https://github.com/Prismer-AI/Prismer /BSL/202601/python/ts
+  - https://paper.prismer.ai/
+  - Open Source OpenAI Prism Alternative
+  - [OpenAI just announced “Prism.” Our project is Prismer, so we’re open-sourcing everything now : r/Python](https://www.reddit.com/r/Python/comments/1qq1u91/openai_just_announced_prism_our_project_is/)
+  - [Prismer: A self-hosted, open-source alternative to OpenAI Prism for academic research : r/selfhosted _202601](https://www.reddit.com/r/selfhosted/comments/1qq10su/prismer_a_selfhosted_opensource_alternative_to/)
 
 ## fact-checking
 

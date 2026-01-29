@@ -223,7 +223,9 @@ modified: 2025-03-22T16:10:24.856Z
   - large pdf rag workflows: chunking-strategies, reindex, pdf-parts
   - 🌐 pdf edit
     - proofreading: 一键检查, 版本历史
-    - 图文混排
+      - chunking viz
+    - 还原图文混排
+    - 提取 figure、表格
     - 👾 pdf-edit agent
     - ✨ 翻译场景的多种布局一键切换: 双栏对比布局, 仅译文布局, 富文本页面布局
     - 甚至可以通过多栏布局的交互，来展示pdf聊天或补充信息，优点是能展示在原文位置
@@ -533,7 +535,14 @@ modified: 2025-03-22T16:10:24.856Z
   - 📌 [duckcoding 公益站](https://free.duckcoding.com/console/personal), 签到
     - [DuckCoding Az-CC，单独开启公益站，只允许L站注册 ](https://linux.do/t/topic/1308120)
     - [status](https://status.duckcoding.com/status/duckcoding)
-  - 📌 [Agent Router](https://agentrouter.org/console), 每日签到获取$25
+  - 📌 [Any Router](https://anyrouter.top/), 每日签到获取$25
+    - 仅支持coding工具，不支持使用api聊天
+    - 本站直接接入官方 Claude Code 转发，无法转发非 Claude Code 的 API 流量
+    - 无充值，邀请注册来获得更多额度
+    - tg群讨论的内容看，作者似乎精力不在anyrouter而在开发商用产品
+    - 用户较多，有提供vscode插件无法使用的解决方案
+  - [Agent Router](https://agentrouter.org/console), 每日签到
+    - 转向商业
     - 模型支持 Claude Code、Codex、RooCode、Qwen Code、Gemini Cli 等多款工具
     - 仅支持coding工具，不支持使用api聊天
     - 模型支持不稳定, 似乎不支持claude
@@ -542,12 +551,6 @@ modified: 2025-03-22T16:10:24.856Z
     - https://github.com/millylee/anyrouter-check-in
     - [AgentRouter 问题汇总 · Issue · millylee/anyrouter-check-in](https://github.com/millylee/anyrouter-check-in/issues/48)
       - agent 是在登录的时候签到的，并没有额外的 sign_in 接口，是在登录的那个接口是返回了一个check_in 的字段判断的，所以才把cookie 时间给调短了，就是让重新登录签到才有效
-  - 📌 [Any Router](https://anyrouter.top/), 每日签到获取$25
-    - 仅支持coding工具，不支持使用api聊天
-    - 本站直接接入官方 Claude Code 转发，无法转发非 Claude Code 的 API 流量
-    - 无充值，邀请注册来获得更多额度
-    - tg群讨论的内容看，作者似乎精力不在anyrouter而在开发商用产品
-    - 用户较多，有提供vscode插件无法使用的解决方案
   - [Code Router](https://api.code-relay.com) , 无法签到和更多额度
     - [Code Router](https://api.codemirror.codes/)
     - 支持 Claude Code & CodeX
@@ -646,6 +649,10 @@ modified: 2025-03-22T16:10:24.856Z
     - 很多openrouter渠道的模型
     - cc不支持tool, **cc渠道经常上架下架**
     - [黑与白chatAPI福利站](https://cdk.hybgzs.com/)
+  - [Old API](https://oldai.zeabur.app/console/personal), 签到
+    - [【old API公益站】公益站上线（已恢复？） ](https://linux.do/t/topic/1541085)
+    - rpm 为 25，还是老样子小容器部署，服务稳定性未知，随时可能因为账号短缺、高并发而死掉
+    - 仅支持 sonnet 和 haiku，等 kiro 恢复 free 用户的 opus 使用权后会上 opus
   - [GGBOOM公益站](https://ai.qaq.al/dashboard)
     - [签到控制台](https://sign.qaq.al/app)
     - [【GGBOOM公益站】签到站上线啦 ](https://linux.do/t/topic/1517772)
@@ -680,6 +687,10 @@ modified: 2025-03-22T16:10:24.856Z
     - cc支持
   - [DEV88公益](https://api.dev88.tech/console/personal), 签到
     - cc支持
+  - [api-test](https://openai.api-test.us.ci/console/personal)
+    - [开个小公益站测试一下 ](https://linux.do/t/topic/1414593)
+    - 包括 deepseek，硅基流动全模型，阿里云千问全模型，glm，gemini，codex
+    - 默认 RPM30，1 级可注册，不允许批量测活
   - [曼波API](https://ai.dik3.cn/console/personal), 签到
   - [ICAT公益站](https://icat.pp.ua/console/personal), 签到
     - [【公益站】ICAT公益站上线了 _202601](https://linux.do/t/topic/1461073)
@@ -963,6 +974,9 @@ modified: 2025-03-22T16:10:24.856Z
   - cc-glm4.7和cc-m2.1：支持cc的分组，上游分别路由到glm-4.7和minimax-m2.1，限速 35次/5min
 
 ## llm-api-official/router/gateway/aggregator
+
+- 北龙超级计算云平台 [AI 智算云](https://ai.blsc.cn/#/lms/model)
+  - 免费提供: PaddleOCR-VL-0.9B, GLM-4.5-Flash, GLM-4V-Flash, GLM-4-Flash, GLM-CogView3-Flash, GLM-Z1-Flash
 
 - 📌 [OpenRouter API Rate Limits ](https://openrouter.ai/docs/api-reference/limits)
   - tldr: rpd-1000 
@@ -1249,17 +1263,22 @@ modified: 2025-03-22T16:10:24.856Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [【Agent系列4】Clawdbot（Moltbot）全球爆火的底层原理  ](https://linux.do/t/topic/1541126/3)
+  - moltbot 这么火，说明其赛道 (本地桌面 agent) 是被压抑的需求，如果其种种问题都解决了，桌面 agent 显然是功能最强大的，人能做啥他就能做啥
+  - 其他所有 CLI，虚拟机，远程服务器，浏览器 Agent，IDE agent，app agent，本质都是脱裤子放屁，舍近求远，桌面 agent 才是那个房间里的大象，但人人都装看不见。
+  - 远程虚拟机 CLI Agent (Manus) 某种角度就像我用 ipad 遥控自己电脑一样迟钝和束手束脚
+  - 远程虚拟机 CLI Agent（Manus）的情况 虚拟机里没有用户隐私，格式化了对用户也没影响，重开一个虚拟机好了
+  - Cloud Agent (如 Manus) 为什么好做？因为它运行在标准化的 Docker 容器里。 屏幕分辨率是固定的 (1920x1080)，浏览器版本是锁死的，字体渲染是统一的。
+  - Moltbot 建议用 Mac mini 这类备用电脑 / 独立电脑，或者淘汰的 MacBook 因为不是工作机，没必要个性化，甚至建议用相同版本 macOS，相同的默认界面，来对抗桌面 UI 个性化的造成的适配性灾难
+
 - ## 国外有类似大众点评这类专注于评价/打分的网站吗? 可以列举些 互联网服务或 效率/生产力工具 评价相关网站并给出该网站评价体系相关的指标, 要非餐饮行业的评价类网站
 - Letterboxd makes money primarily through its tiered subscription model (Pro and Patron) offering ad-free viewing and advanced features, targeted advertising for film studios and distributors (especially for new releases), and specialized "HQ" accounts for film organizations, all while leveraging its engaged, cinema-literate user base as a valuable marketing channel. 
   - remove ads, get detailed stats, stream availability tools, watchlist notifications, and profile customization.
   - HQ Accounts: Film-related businesses (studios, festivals, podcasts) pay for special accounts to post news, link to external sites
-
-- 
-- 
-- 
-- 
-- 
-- 
 
 - ## I suddenly use the @NotionHQ agent a lot. Use cases
 - https://x.com/cramforce/status/2012890889803399504

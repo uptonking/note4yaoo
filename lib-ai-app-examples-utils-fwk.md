@@ -707,6 +707,10 @@ modified: 2025-02-21T18:20:42.624Z
   - Built-in Chat: Conversational interface with context-aware responses
   - Pluggable LLMs: Works with OpenAI, Anthropic, or local models
   - Offline-First: No internet required after video generation
+
+- https://github.com/mohamad-tohidi/texttools /MIT/202601/python
+  - a high-level NLP toolkit built on top of LLMs.
+  - utilities for translation, question detection, categorization, NER extraction, and more
 # eval/prompt
 - https://github.com/promptfoo/promptfoo /9.6kStar/MIT/202601/ts/对比表/code-first
   - https://promptfoo.dev/

@@ -237,7 +237,32 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
-- ## 
+- ## browser-use - [Closer to the Metal: Leaving Playwright for CDP _202508](https://browser-use.com/posts/playwright-to-cdp)
+  - Playwright and Puppeteer are great for making QA tests and automation scripts short and readable
+  - We decided to peek behind the curtain and figure out what the browser was really doing, and it made us decide to drop playwright entirely and just speak the browser's native tongue: CDP.
+  - By switcing to raw CDP we've massively increased the speed of element extraction, screenshots, and all our default actions. We've also managed to add new async reaction capabilities to the agent, and proper cross-origin iframe support.
+- In our case that time has finally come for Browser-Use and playwright-python, the library that we've historically used to drive our browsers with LLM-powered tool calls like click, input_text, go_to_url.
+- Playwright also introduces a 2nd network hop going through a node.js playwright server websocket, which incurs a meaningful amount of latency when we do thousands of CDP calls to check for element position, opacity, paint order, JS event listeners, aria properties, etc.
+
+- A Quick History of Browser Automation
+
+- So why did we feel the need to write our own with cdp-use? Well for all the same reasons as everyone else: everlasting desire to be closer to the metal and have more detailed control over every step.
+
+- How do Browser Drivers Work?
+  - All these adapter libraries, drivers, and AI helper extensions really just exist to pass messages and make RPC calls to these underlying browser APIs
+
+- How does Playwright work?
+  - Playwright achieves multi-languge support by using a client-server model between clients in various languages and a single core implementation that runs as a node.js websocket server.
+  - The playwright node.js relay server accepts standardized "playwright protocol" RPC calls from playwright clients, and then sends out CDP or BIDI calls to the browser to execute them.
+  - Playwright also nicely abstracts lower-level browser ideas like targets, frames, and sessions into simple Page and BrowserContext handles and (usually) manages to keep those handles in sync and not deadlocked across node.js, the browser, and python.
+  - Unfortunately the double RPC through the node.js relay means some state inevitably drifts across the 3 places (and across three different languages and runtimes):live browser, playwright node.js relay process, python client process
+  - When a tab crashes in the browser or some operation is performed without focusing a page correctly, there are edge cases where the node.js process can hang indefinitely waiting for a browser reply, meanwhile the python client needs to send the CDP call the browser is expecting in order to proceed. Currently we have no recourse but to kill -9 and attempt to reconnect to the browser from scratch with a new playwright instance.
+
+- Did you know there are at least 10 different ways a tab can crash in Chrome?
+
+- A type-safe Python client generator for the Chrome DevTools Protocol (CDP). This library automatically generates Python bindings with full TypeScript-like type safety from the official CDP protocol specifications. It's only shallow type bindings, no complex logic for session management, pages, elements, etc. just 100% direct access.
+
+- We've introduced a new event-driven architecture to better fit the underlying event-driven architecture of CDP. Now we can subscribe to and respond to CDP events, which we set up in "watchdog" services that monitor for various things.
 
 - ## 🚀 Today we're bringing vision to Bolt: Bolt now sees your app exactly like users do, enabling faster, more precise edits pixel by pixel (& fewer tokens!) _20250221
 - https://x.com/boltdotnew/status/1892620446106886396

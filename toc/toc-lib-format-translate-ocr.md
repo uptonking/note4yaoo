@@ -990,12 +990,17 @@ modified: 2025-12-19T12:43:21.150Z
     - 图片直接解析并存储到minio
 # translation
 - https://github.com/zt6453928/ailat-translation /MIT/202601/python/js
+  - https://mineru.net/apiManage/docs
   - AI-Powered Document Translation Tool
   - A web-based PDF document parsing and translation tool that supports intelligent document parsing, multi-language translation, and various export formats.
   - Supports PDF, DOCX and other document formats, extracts text, images, tables, and formulas
   - Export to PDF, Markdown, HTML, DOCX, JSON, LaTeX
   - Multiple Translation Engines: Supports DeepLX and OpenAI-compatible APIs
   - Real-time Preview: Side-by-side comparison of original and translated content
+  - 🛝
+    - 采用 vlm 方案
+    - pdf原文件上传后保存在 `outputs/<task_id>/original.pdf` .
+    - mineru解析后的文本内容仅在memory, 未持久化
   - [开源一个支持多格式文档翻译应用 ](https://linux.do/t/topic/1511535)
     - 出于身边同学对论文翻译的需求，所以开发了这个项目，除了论文我也用来对一些AI教程文档进行翻译
     - 灵感来自于MinerU, PDF格式还支持对照翻译

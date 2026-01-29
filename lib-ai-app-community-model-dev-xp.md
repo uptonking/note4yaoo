@@ -334,6 +334,14 @@ modified: 2025-11-18T13:22:22.078Z
   - Qwen3-0.6B: 简历文本信息提取和结构化处理
   - YOLOv10: 简历版面布局检测和区域分割
 # models-exploring
+- [杠精大模型 _202406](https://modelscope.cn/models/maomoa/GangLLM)
+  - 一个专门与用户抬杠的大模型，它的名字叫“钢蛋儿”，它可以根据用户的输入会进行杠精式的回复，该模型能够捕捉到用户言辞中的细微漏洞，并据此展开犀利的反驳，
+  - 该模型在开源大模型上微调而来，基础模型采用的 InternLLM-Chat-7B 模型，采用1680条杠精式对话数据，外加100条自我认知数据进行的微调训练。
+
+- [SicariusSicariiStuff/Assistant_Pepe_8B · Hugging Face](https://huggingface.co/SicariusSicariiStuff/Assistant_Pepe_8B)
+  - 适度杠精 + 适度生产力
+  - 回答比基模llama3-8b要短， 不喜欢用列表，不喜欢用表格
+
 - [LiquidAI/LFM2-1.2B-RAG · Hugging Face _202509](https://huggingface.co/LiquidAI/LFM2-1.2B-RAG)
   - specialized in answering questions based on provided contextual documents, for use in RAG
   - We recommend using greedy decoding with a `temperature=0`.

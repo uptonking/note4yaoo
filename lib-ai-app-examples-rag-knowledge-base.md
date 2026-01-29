@@ -1690,6 +1690,12 @@ modified: 2025-11-30T17:27:16.720Z
   - [I built an MCP that finally makes your local AI models shine with SQL : r/LocalLLaMA _202506](https://www.reddit.com/r/LocalLLaMA/comments/1ll3qej/i_built_an_mcp_that_finally_makes_your_local_ai/)
   - ToolFront equips AI models with a set of read-only database tools
 # benchmark-rag ⚡️
+- https://github.com/Aaryanverma/trustifai /MIT/202601/python
+  - a Python-based observability engine designed to evaluate the trustworthiness of LLM responses and Retrieval-Augmented Generation (RAG) systems. 
+  - Unlike simple evaluation frameworks that rely on a single "correctness" score, TrustifAI computes a multi-dimensional Trust Score based on grounding, consistency, alignment, and diversity.
+  - It also includes visualizations to help showcase why a model output was deemed unreliable.
+  - [A framework to evaluate RAG answers in production : r/Rag](https://www.reddit.com/r/Rag/comments/1qpla70/a_framework_to_evaluate_rag_answers_in_production/)
+
 - https://huggingface.co/datasets/G4KMU/t2-ragbench
   - [T2-RAGBench - Benchmark for RAG in Finance (10K Downloads on HF) : r/Rag](https://www.reddit.com/r/Rag/comments/1pde2au/t2ragbench_benchmark_for_rag_in_finance_10k/)
 # more

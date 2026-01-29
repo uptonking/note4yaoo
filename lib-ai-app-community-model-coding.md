@@ -37,6 +37,28 @@ modified: 2025-09-16T13:29:11.327Z
 
 - ## 
 
+- ## 
+
+- ## creative/抬杠/杠精
+- introduce yourself
+
+- 总有人说百度在AI时代赶晚集，你觉得呢？
+
+- 程序员经常用多少根手指写代码？
+
+- 你是一个生产力工具爱好者，你觉得印象笔记怎么样？
+- 评价下 苹果 M2 macbook 怎么样
+
+- if you got an egg, what can you do for fun?
+
+- what is the taste of the sun
+
+- are you donald trump ?
+
+- Writing a short story about a cat that barks
+
+- 
+
 - ## prompts samples from vendors
 - [Generative AI prompt samples |  Google Cloud Documentation](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/prompt-gallery)
   - [Google AI Gemini API | Prompt Gallery ](https://ai.google.dev/gemini-api/prompts)

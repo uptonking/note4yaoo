@@ -114,6 +114,15 @@ modified: 2025-11-06T18:49:13.977Z
   - [Remove page numbers from the output](https://huggingface.co/lightonai/LightOnOCR-2-1B/discussions/5)
     - one of the main design choices compared to other solution is to include all visible text. that being said, the model can be easily finetuned to ignore headers/footers/page numbers, see the v1 blog post for an example.
 
+- [echo840/MonkeyOCR-pro-1.2B · Hugging Face](https://huggingface.co/echo840/MonkeyOCR-pro-1.2B)
+  - vlm specialized for OCR and document analysis
+  - Architecture: Qwen2.5-VL (qwen2vl)
+  - MonkeyOCR adopts a Structure-Recognition-Relation (SRR) triplet paradigm, which simplifies the multi-tool pipeline of modular approaches while avoiding the inefficiency of using large multimodal models for full-page document processing.
+  - MonkeyOCR-pro-1.2B surpasses MonkeyOCR-3B by 7.4% on Chinese documents.
+  - [dinhquangson/MonkeyOCR-pro-1.2B-Vision-GGUF · Hugging Face](https://huggingface.co/dinhquangson/MonkeyOCR-pro-1.2B-Vision-GGUF)
+  - https://github.com/Yuliang-Liu/MonkeyOCR
+  - https://aiwrite.wps.cn/pdf/parse/web/
+
 - glm-4.6v-flash
   - https://github.com/zai-org/CogVLM
   - Visual Grounding. Three modes of grounding are supported:

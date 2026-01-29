@@ -85,7 +85,16 @@ modified: 2026-01-14T18:58:32.523Z
 # discuss-news
 - ## 
 
-- ## 
+- ## [0.4.0 - server native _20260128](https://lmstudio.ai/blog/0.4.0)
+- Deploy LM Studio's core on cloud servers, in CI, or anywhere without GUI.
+  - core of the LM Studio packaged to be server-native, without reliance on the GUI. 
+- Parallel requests to the same model with continuous batching (instead of queueing).
+  - concurrent inference requests to the same model
+  - Parallel requests work thanks to llama.cpp's open-source continuous batching implementation, adopted in LM Studio's llm-engine. This capability has not yet made it into our MLX engine
+- New stateful REST API endpoint: /v1/chat that allows using local MCPs.
+- Refreshed application UI with chat export, split view, developer mode, and in-app docs.
+- a brand-new CLI experience centered around the `lms chat` command
+  - interactive chat session directly in your terminal, allowing you to chat with your models and download new ones.
 
 - ## ⚖️ 0.3.39 - [Open Responses with local models via LM Studio  _20260115](https://lmstudio.ai/blog/openresponses)
 - Open Responses is an open-source specification and ecosystem designed to make calling LLMs provider-agnostic.

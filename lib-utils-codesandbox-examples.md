@@ -547,6 +547,16 @@ modified: 2023-09-02T09:17:22.992Z
 - https://github.com/agent-infra/sandbox /1.7kStar/apache2/202512/python/ts/字节
   - https://sandbox.agent-infra.com/
   - All-in-One Sandbox for AI Agents that combines Browser, Shell, File, MCP and VSCode Server in a single Docker container.
+
+- https://github.com/boxlite-ai/boxlite /apache2/202601/rust
+  - https://boxlite-ai.github.io/website/
+  - Embedded micro-VM runtime for AI agents running OCI containers with hardware-level isolation — no daemon required.
+  - BoxLite lets you spin up lightweight VMs ("Boxes") and run OCI containers inside them. 
+  - It's designed for use cases like AI agent sandboxes and multi-tenant code execution, where Docker alone isn't enough and full VM infrastructure is too heavy.
+  - Hardware isolation: each Box has its own kernel (not just namespaces).
+  - Embeddable: link a library; no root; no background service to manage.
+  - OCI compatible: use Docker/OCI images (python:slim, node:alpine, alpine:latest).
+  - Async-first: run many boxes concurrently; stream stdout/stderr.
 # playground
 - https://github.com/nalgeon/codapi /1.2kStar/apache2/202411/go
   - https://codapi.org/

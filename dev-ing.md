@@ -296,6 +296,31 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-log
   - ?
 
+## 0129
+
+- I run backend and the frontend locally by readme.  if I upload a PDF file and mineru API parsing succeeded, I can see the original PDF and parsed text content at http://localhost:8080/viewer?task_id=a9da721c. If I killed the server and started the server again and visit the same URL http://localhost:8080/viewer?task_id=a9da721c, will the original pdf and text content show again? Analyze related code and architecture explain to me where the original PDF and first text content are stored.
+
+- [MinerU API Docs](https://mineru.net/apiManage/docs)
+
+```JSON
+{
+    "code": 0,
+    "msg": "ok",
+    "trace_id": "ff0527169d6eeda17d5b558b2f650580",
+    "data": {
+        "batch_id": "1820a77f-ee2b-4d7c-ba09-9029b6d254df",
+        "file_urls": [
+            "https://mineru.oss-cn-shanghai.aliyuncs.com/api-upload/extract/2026-01-29/1820a77f-ee2b-4d7c-ba09-9029b6d254df/9a9ea9b9-8b3a-4a63-994c-0a7a79b697d3.pdf?Expires=1769765834&OSSAccessKeyId=LTAI5t9nGwatk85zetzojXbn&Signature=0ctVyoNI14t0qGVziHlkTDpmAW4%3D"
+        ]
+    }
+}
+```
+
+- “based” 在英美互联网里是褒义俚语，意思大致是“真诚、不迎合潮流、值得尊敬/赞同”（反义是 “cringe”）。
+  - 在现代英文网络文化（尤其是 4chan, Reddit, Twitch, Twitter）中，"Based" 是一个非常流行且高度褒义的形容词。
+  - 所以 “Is drinking water based?” 更像是在开玩笑地问“喝水这事儿酷不酷/值得赞？” —— 典型的幽默/讽刺提问。
+  - 字面意思： 喝水这件事很酷/很赞/很硬核吗？
+
 ## 0128
 
 - the goal is opencode-cli bundled just like the existing gemini-cli. and you provide a new environment variable for user to choose which cli to use. you have aleady implemented it, but with bugs. so opencode-cli is just implemented by referring to gemini-cli, but with bugs. 
