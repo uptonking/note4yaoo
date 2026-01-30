@@ -14,7 +14,11 @@ modified: 2021-08-22T07:29:34.045Z
 
 - ## 
 
-- ## 
+- ## [昨天做的Office插件（Claude in Word！）今天打磨得差不多了，还是不选择闭源了吧 _202601](https://linux.do/t/topic/1544743)
+  - 因为发现可在商店里下载的 Add-on 不是要付费服务就是太卡太重，于是决定自己写个轻便好用的，直接使用 Office API 来获取用户操作和格式信息，快捷地使用右键菜单和侧边栏操作。
+  - 强兼 OpenAI / Anthropic / Gemini 格式 API，推荐使用 OpenAI 格式
+  - 自动捕获用户使用鼠标选择的文字内容
+  - 辅助排版，伴随着分块处理和全局撤销功能
 
 - ## Kimi can now edit Word docs just like a lawyer. 
 - https://x.com/KimiProduct/status/2016720053639811272

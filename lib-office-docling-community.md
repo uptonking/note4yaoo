@@ -314,7 +314,26 @@ modified: 2025-09-21T13:57:50.332Z
 - ## [LMStudio, Remote Services, smoldocling · docling-project/docling _202506](https://github.com/docling-project/docling/discussions/1849)
 - It looks like it got stuck in a loop. It seems to do well, then gets stuck over and over
 
+# discuss-mineru
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [mineru vl是有内置paddleocr v5吗，我不熟的时候似乎在日志还是哪里看到过，后面找不到了，我想用paddleocr v5替换单张图片的ocr · opendatalab/MinerU _202512](https://github.com/opendatalab/MinerU/discussions/4254)
+  - mineru vl对与某些旋转、倾斜、纵向的图片里面的文字表格识别没有paddleocr v5效果好
+
+- MinerU 的 PaddleOCR v5 只集成在 pipeline 后端，不在 VL（vlm-*）后端内置。你在日志里看到的 PaddleOCR v5 相关内容，实际上是 pipeline 模式下的 OCR 日志，VL 后端的 OCR 逻辑是独立实现的，不会直接调用 PaddleOCR v5
+
+- ## [请问lite版和full版的主要差别 · opendatalab/MinerU _202411](https://github.com/opendatalab/MinerU/issues/1127)
+- lite是早期开发的时候测试用的，使用了paddleocr的PP-StructureV2作为layout模型，结合paddleocr本身的ocr能力，用来做可行性验证的，实际上结果并不准确，在正式版本中没有开放lite的使用能力。
+
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

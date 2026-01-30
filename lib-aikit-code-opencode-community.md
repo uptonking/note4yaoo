@@ -40,7 +40,17 @@ modified: 2026-01-17T22:41:25.867Z
 
 - ## 
 
-- ## 
+- ## [What's the point of Opencode's built-in clipboard? : r/opencodeCLI _202601](https://www.reddit.com/r/opencodeCLI/comments/1qquefr/whats_the_point_of_opencodes_builtin_clipboard/)
+  - Why does Opencode have a built-in clipboard that overrides your terminal's clipboard, and doesn't let you paste out of it? It's very frustrating.
+  - Even for simple things, like copying a block of a conversation for documentation seems impossible with Opencode, outside of a clunky screenshot. So I assume I'm missing something and Opencode's documentation is horrible.
+
+- Have you tried ctrl-shift-c and ctrl-shift-v? There's also ctrl-ins and shift-ins
+  - Supposedly you can run 'opencode export' from the command line too for a raw text dump (saw a GitHub issue yesterday, haven't tried it yet).
+  - And finally there's tmux's copy mode (albeit opencode's scrolling behaviour limits its usefulness to only what's on the screen, and adds some indentation)
+
+- OpenCode has a text entry box, a sidebar, and a header that you PROBABLY don't want to copy. You may also want to be able to copy more than is visible on the screen, so you need OpenCode to be able to scroll back to let you select more stuff. It feels a little screen or tmux adjacent.
+
+- I have been using Linux for months and copy and paste are completely and utterly broken anyway.
 
 - ## opencode’s client/server architecture is very very clever, they’re planning on sneaking into every app _202512
 - https://x.com/threepointone/status/2002506150819119542

@@ -820,6 +820,22 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🤔 [Why we went desktop and local-first for agents 6 months ago : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qr5v9d/why_we_went_desktop_and_localfirst_for_agents_6/)
+  - We’ve been thinking a lot about first principles when building agent project, and one conclusion we keep coming back to is this: The first thing you should optimize for is the agent’s capability ceiling.
+  - From that perspective, a desktop-first agent architecture makes a lot of sense. A few reasons why:
+- Context access
+  - If you want agents to be genuinely useful, they need real user context. On desktop, an agent can natively and seamlessly access local files, folders, running apps, logs, configs, and other artifacts that are either impossible or extremely awkward to reach from a purely web-based agent.
+- Permissions equal intelligence
+  - Powerful agents need powerful permissions. Desktop agents can read and write the local file system, control native software like IDEs, terminals, browsers, or design tools, and make system-level calls or interact with hardware. This isn’t about being invasive, but about enabling workflows that simply don’t fit inside a web sandbox.
+- Web parity without web limitations
+  - A desktop agent can still do everything a web agent can do, whether through an embedded Chromium environment or via browser-extension-style control. The reverse is not true: web agents can’t escape their sandbox.
+- An often overlooked point is that desktop agents run on user-owned compute. Browsers, terminals, and local tools all execute locally, which significantly reduces backend costs and makes high-frequency, long-running agents much more viable.
+- This line of thinking is what led us to build Eigent, the opensource alternative to cowork
+
 - ## [现在高智商人群都是如何利用AI的?(咨询贴, 疑问句) _202507](https://linux.do/t/topic/779052)
 - 我有时候写东西没思路了，会让AI给我多列几组提纲，然后从中选一组满意的，自己开始拓展写
   - 很少用它生成长文，太长了它就会有幻觉，甚至跑题，而且也不符合要求它做的原意

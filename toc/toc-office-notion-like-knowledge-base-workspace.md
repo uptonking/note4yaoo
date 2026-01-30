@@ -782,7 +782,7 @@ modified: 2022-06-03T21:34:54.893Z
       - We've only run into that issue with pypdf as of now.
       - it's way faster now. That's also what pypdf does if you pass it a path instead of a stream, but that only supports the default filesystem
 
-- https://github.com/google/langextract /15.5kStar/apache2/202509/python
+- https://github.com/google/langextract /15.5kStar/apache2/202509/python/提交少
   - https://pypi.org/project/langextract/
   - a Python library that uses LLMs to extract structured information from unstructured text documents based on user-defined instructions.
   - Precise Source Grounding: Maps every extraction to its exact location in the source text, enabling visual highlighting for easy traceability and verification.

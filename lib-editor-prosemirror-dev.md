@@ -116,20 +116,6 @@ modified: 2021-05-06T09:39:53.522Z
   - mermaid-text + drawio-editor
   - chart-viz
 
-- 👾 ai
-- rich-text formats/elements/protocols
-- resumable-stream text/md
-- partial-edit: not whole rewrite, aider-diff, openai-v4a-diff
-- pdf-edit-with-vlm/ocr:
-  - restore pdf layout
-  - pdf-image upscale
-- markdown-partial
-  - stream-diff
-  - stream-table
-  - treesitter as markdown stream parser
-  - 使用markdown格式作为ai编辑的输入输出优点是ai擅长markdown，缺点是markdown扩展标准不统一
-    - 另一种思路是用prompt指示ai输出html, 各种富文本编辑器对html的复制粘贴都很成熟
-
 - markdown
   - 🤔 markdown对llm友好，对修改友好, 考虑实现基于markdown的多栏布局, 且共用toc
   - rewrite with remark
@@ -171,6 +157,26 @@ modified: 2021-05-06T09:39:53.522Z
 - devtools
   - migrate prosemirror-dev-toolkit features to prosemirror-devtools
   - rewrite prosemirror-devtools in tanstack-devtools style
+
+## 👾 ai-editing
+
+> ai时代的人工编辑, 可设计为特殊的human-in-the-loop
+
+- rich-text formats/elements/protocols
+- resumable-stream text/md
+- partial-edit: not whole rewrite, aider-diff, openai-v4a-diff
+- pdf-edit-with-vlm/ocr:
+  - restore pdf layout
+  - pdf-image upscale
+- markdown-partial
+  - stream-diff
+  - stream-table
+  - treesitter as markdown stream parser
+  - 使用markdown格式作为ai编辑的输入输出优点是ai擅长markdown，缺点是markdown扩展标准不统一
+    - 另一种思路是用prompt指示ai输出html, 各种富文本编辑器对html的复制粘贴都很成熟
+
+- [Agent Trace](https://agent-trace.dev/)
+  - 参考代码的实现, 将prompt放入commit
 # dev-xp
 - 🤔 deep-research 的产物形态是不是使用rich-text-editor更好，甚至产出ppt
   - gemini的deep-research支持直接导入google-docs显示为在线文档且可编辑

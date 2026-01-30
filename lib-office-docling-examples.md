@@ -95,7 +95,8 @@ modified: 2025-09-21T13:58:46.548Z
 # examples
 - https://github.com/mozilla-ai/document-to-markdown /MIT/202506/python/inactive
   - Convert unstructured documents to markdown using the Docling.
-  - We have built a simple Graphical Interface demo of Docling to showcase some basic functionality
+  - This blueprint guides you to convert various unstructured documents (PDFs, DOCX, HTML, etc.) to markdown, or other, formats using the Docling CLI or a locally-hosted demo UI
+  - We have built a simple Graphical Interface demo of Docling to showcase some basic functionality 
 
 - https://huggingface.co/spaces/AmineAce/pdf-tables-rag-demo/tree/main /202512/python/单文件
   - https://amineace-pdf-tables-rag-demo.hf.space/
@@ -184,6 +185,27 @@ modified: 2025-09-21T13:58:46.548Z
   - Docling Core provides the foundational `DoclingDocument` data model and API, as well as additional APIs for tasks like serialization and chunking
   - Docling Core defines the `DoclingDocument` as a Pydantic model, allowing for advanced data model control, customizability, and interoperability.
 # ocr/vlm
+- https://github.com/emcf/thepipe /1.5kStar/MIT/202510/python/inactive
+  - a package that can scrape clean markdown, multimodal media, and structured data from complex documents.
+  - It can extract well-formatted data from a wide range of sources, including PDFs, URLs, Word docs, Powerpoints, Python notebooks, videos, audio, and more.
+  - Uses VLM for OCR in text-only mode
+  - Accepts a wide range of sources, including PDFs, URLs, Word docs, Powerpoints, Python notebooks, GitHub repos, videos, audio, and more
+  - The default install only pulls in CPU-friendly dependencies so it is suitable for constrained environments and CI systems. 
+    - GPU-enabled libraries such as PyTorch and Triton are left as optional extras.
+  - 👾 By default, thepipe uses the OpenAI API, so VLM features will work out-of-the-box provided you pass in an OpenAI client.
+    - If you wish to use a local vision-language model or a different cloud provider, you can provide a custom OpenAI client
+  - structured extraction is being deprecated and will be removed in future releases. The current implementation is a simple wrapper around OpenAI's chat API, which is not ideal for structured data extraction. We recommend OpenAI's structured outputs for structured data extraction, or using Trellis AI for automated workflows with structured data.
+
+- https://github.com/aitomatic/ai-vision-capture /apache2/202601/python
+  - A Python library for extracting and analyzing content from PDF, Image, and Video files using VLM
+  - Supports multiple providers including OpenAI, Anthropic Claude, Google Gemini, and Azure OpenAI.
+  - Async Processing: Configurable concurrency for batch operations
+  - Structured Output: Template-based data extraction to JSON
+  - Pluggable Architecture: Provider abstraction with auto-detection
+  - PDF-to-image conversion using PyMuPDF (fitz)
+  - VisionCapture: Used for extracting specific fields from documents (e.g., forms, technical diagrams)
+    - 似乎只提取字段, 不提取插图
+
 - https://github.com/Aquos06/reader-vl /MIT/202503/python/inactive/提交少
   - a tool that transforms various document formats, like PDFs and DOCX files, into a unified structure.
   - Process PDFs and DOCX (for now).
@@ -195,6 +217,16 @@ modified: 2025-09-21T13:58:46.548Z
   - [Introducing Reader VL: A Tool for Unified Document Processing with VLM Integration : r/LocalLLaMA _202503](https://www.reddit.com/r/LocalLLaMA/comments/1j2m6m7/introducing_reader_vl_a_tool_for_unified_document/)
     - I'm developing a RAG system for enterprise (B2B) and noticed that many company documents contain charts, images, and other non-text elements. Our current parsers (Docling, Unstructured) struggle to process these formats. While searching for a solution, I couldn't find any parser leveraging modern VLMs—so I decided to build one myself.
     - Currently, Reader VL processes entire documents in a single pass. I'm actively working on implementing chunking and batching functionalities to better support very large documents, such as those spanning hundreds or thousands of pages.
+
+- https://github.com/PRITHIVSAKTHIUR/Doc-VLMs-exp /apache2/202507/python/inactive
+  - document-focused Vision-Language Model application that provides advanced document analysis, text extraction, and multimodal understanding capabilities.
+  - This application features a streamlined Gradio interface for processing both images and videos using state-of-the-art vision-language models specialized in document understanding.
+  - Document-Specialized Models: Three cutting-edge VLM models optimized for document processing
+  - Image Processing: Advanced document analysis and text extraction from images
+  - Video Processing: Frame-by-frame video analysis with temporal understanding
+  - Real-time Streaming: Live output generation with immediate feedback
+  - Dual Output Format: Raw text stream and formatted markdown results
+  - Canvas-Style Interface: Clean, professional output display
 # code-rag
 - https://github.com/starthackHQ/contextinator /apache2/202511/python
   - Turning messy repos into weapons of mass structured context.
@@ -204,6 +236,22 @@ modified: 2025-09-21T13:58:46.548Z
   - Full Pipeline Automation - One command to chunk, embed, and store
   - 🛢️ Docker (for ChromaDB)
 # mineru
+- https://github.com/zt6453928/ailat-translation /MIT/202601/python/js
+  - https://mineru.net/apiManage/docs
+  - AI-Powered Document Translation Tool
+  - A web-based PDF document parsing and translation tool that supports intelligent document parsing, multi-language translation, and various export formats.
+  - Supports PDF, DOCX and other document formats, extracts text, images, tables, and formulas
+  - Export to PDF, Markdown, HTML, DOCX, JSON, LaTeX
+  - Multiple Translation Engines: Supports DeepLX and OpenAI-compatible APIs
+  - Real-time Preview: Side-by-side comparison of original and translated content
+  - 🛝
+    - 采用 vlm 方案
+    - pdf原文件上传后保存在 `outputs/<task_id>/original.pdf` .
+    - mineru解析后的文本内容仅在memory, 未持久化
+  - [开源一个支持多格式文档翻译应用 ](https://linux.do/t/topic/1511535)
+    - 出于身边同学对论文翻译的需求，所以开发了这个项目，除了论文我也用来对一些AI教程文档进行翻译
+    - 灵感来自于MinerU, PDF格式还支持对照翻译
+
 - https://github.com/magicyuan876/mineru-tianshu /apache2/202601/python/ts/vue
   - 天枢 - 企业级 AI 数据预处理平台，将非结构化数据转换为 AI 可用的结构化格式
   - 支持文档、图片、音频等多模态数据处理 | GPU 加速 | MCP 协议
@@ -240,5 +288,29 @@ modified: 2025-09-21T13:58:46.548Z
   - https://github.com/neka-nat/mineru-api /AGPL/202512/python
     - API server for MinerU.
 # extraction
+- https://github.com/datalab-to/pdftext /644Star/apache2/202506/python
+  - Text extraction like `PyMuPDF`, but without the AGPL license. PDFText extracts plain text or structured blocks and lines. 
+  - It's built on `pypdfium2`, so it's fast, accurate, and Apache licensed.
+  - It first uses pypdfium2 to extract characters in order, along with font and other information. Then it uses a simple decision tree algorithm to group characters into lines and blocks. It does some simple postprocessing to clean up the text.
+  - built on some amazing open source work, including:  pypdfium2, scikit-learn
 
+- https://github.com/KatherLab/llmaixlib /MIT/202508/python/inactive
+  - a Python toolkit for automated document preprocessing (including OCR) and information extraction using large language models
+  - Preprocessing: Extracts human-readable Markdown or plain text from a wide range of document types, automatically falling back to OCR for scanned or image-based files.
+  - Uses a large language model (LLM) to transform unstructured or semi-structured text into structured data—validated by Pydantic models or JSON Schema—via an OpenAI-compatible API.
+  - OCR tools: Tesseract (for OCRmyPDF), a GPU for faster OCR (Marker and PaddleOCR)
+  - OpenAI-compatible API endpoint: Required for information extraction
+
+- https://github.com/nanonets/hands-on-vision-language-models /202409/python/inactive
+  - [Best Vision Language Models for Document Data Extraction _202409](https://nanonets.com/blog/vision-language-model-vlm-for-data-extraction/)
+  - [Benchmarking vision language models for document data extraction : r/computervision _202409](https://www.reddit.com/r/computervision/comments/1fv0ns5/benchmarking_vision_language_models_for_document/)
+    - Models tested : Qwen2, MiniCPM, Bunny, GPT-4o mini, Gemini 1.5 flash,  Claude 3.5
+    - I have chosen these models because they fit on a consumer GPU (less than 24GB VRAM)
+  - Datasets used: SROIE and CORD receipt datasets - i’ve explained why these in the blog, but tldr is that they are 
+    - standardized (and hence simpler to benchmark)
+    - complex enough to present a challenge to all the VLMs
+    - no MLLM benchmarks focussing on extracting structured data from documents
+    - Both fields and tables are present in the datasets
+  - Takeaways
+    - QWEN is the superior OS model, and Claude is the best among closed source
 # more

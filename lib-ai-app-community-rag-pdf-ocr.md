@@ -16,7 +16,8 @@ modified: 2026-01-25T17:23:01.510Z
 
 - ## 
 
-- ## 
+- ## [AI开发者工具(2)——2024 年 12 个开源文档解析项目的选型对比评测：PDF解析、OCR识别功能解读、应用场景分析及优缺点比较 - 莫尔索随笔](https://liduos.com/ai-develope-tools-series-2-open-source-doucment-parsing.html)
+
 # discuss-YOLO/traditional
 - ## 
 

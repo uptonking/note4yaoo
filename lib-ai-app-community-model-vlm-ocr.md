@@ -18,6 +18,20 @@ modified: 2025-11-06T18:49:13.977Z
 
 - https://github.com/bytefer/macos-vision-ocr /MIT/202502/swift
   - A powerful command-line OCR tool built with Apple's Vision framework, supporting single image and batch processing with detailed positional information output.
+# free-ocr-api
+- [MinerU api](https://mineru.net/apiManage/limit)
+  - 单个用户一天最多允许上传1万个文件，其中html文件最多100个
+  - 优先解析额度：2000页/日, 超出部分将自动进入普通队列依次处理
+  - 单个文件大小不能超过 200MB, 文件页数不超出 600 页
+  - 获取单个任务结果、批量获取任务结果共用一个频控，1000次/分钟
+
+- [PaddleOCR - 文档解析与智能文字识别 | 支持API调用与MCP服务 - 飞桨星河社区](https://aistudio.baidu.com/paddleocr/task)
+  - 本服务基于该开源项目的 PaddleOCR-VL 模型构建
+  - 每日调用解析页数 3000
+  - 单个文件大小无限制，但为避免处理超时请控制在100页内，超出部分将被忽略不解析
+  - [PaddleOCR-VL_API docs](https://ai.baidu.com/ai-doc/AISTUDIO/2mh4okm66)
+  - 交互与mineru类似
+  - [PaddleOCR-VL Online Demo - a Hugging Face Space by PaddlePaddle](https://huggingface.co/spaces/PaddlePaddle/PaddleOCR-VL_Online_Demo)
 # models-vlm/ocr-xp
 - toolchain
   - 虽然很多ocr模型官方不支持， 但社区量化版可能支持，需要具体尝试
@@ -87,6 +101,7 @@ modified: 2025-11-06T18:49:13.977Z
 - PaddleOCR-VL-0.9b
   - [Frequently Asked Questions on Inference and Deployment of PaddleOCR-VL PaddleOCR-VL 推理部署相关高频问题回复 ](https://github.com/PaddlePaddle/PaddleOCR/issues/16823)
     - 目前 PaddleOCR-VL 暂不支持在 macOS 系统上进行原生部署。对于搭载 x64 架构 CPU 的设备，可通过 Docker 容器方式进行部署。同时，针对 macOS 生态，我们也在评估基于 MLX-VLM 的部署方案可行性。
+  - [PaddleOCR-VL-1.5 Online Demo - a Hugging Face Space by PaddlePaddle](https://huggingface.co/spaces/PaddlePaddle/PaddleOCR-VL-1.5_Online_Demo)
 
 - MinerU2.5-1.5b
   - [通过API调用解析下载得到的图片被压缩了，没有返回原图 ](https://github.com/opendatalab/MinerU/issues/4169)
@@ -191,7 +206,17 @@ modified: 2025-11-06T18:49:13.977Z
 
 - ## 
 
-- ## 
+- ## [有没有能够搜索图片上文字内容的软件？ ](https://linux.do/t/topic/1512595/4)
+- [Anytxt Searcher | A Desktop Search Tool with A Powerful Full-Text Search Engine. Best Google Desktop Search Alternative.](https://anytxt.net/)
+  - AnyTXT Searcher has a powerful document parsing engine, which extracts the text of commonly used documents without installing any other software and combines the built-in high-speed indexing system to store the text’s metadata
+  - It works perfectly on Windows 11, 10, 8, 7
+  - OCR. Text In Any Image (png, jpg, bmp, scanned pdf etc.)
+- 如果文件比较多，而且有不少需要 ocr 的 pdf 的话，它可能会在空闲的时候占用大量内存和 CPU，最好让它只索引图片所在的文件夹。
+
+- 把所有图片放一起，全选右键，用 Adobe Acrobat 软件将图片合并为一个 pdf，找到编辑 (软件会自动进行 ocr 识别)，然后 ctrl+f 查找
+  - 图片不断增加的，合并为 pdf 不方便
+
+- 解决方法都是建索引。像 硅机、Nebius 等国产资源囤了好一些正经生产又用不上的可以用来自己跑个 OCR 存数据库，能把 内容⇋文件名 关联起来，不过不能直接结合 Windows 用不是很方便。
 
 - ## [有没有能截屏自带图像翻译的开源软件 ](https://linux.do/t/topic/1445800)
   - 覆盖在原文位置的，不是单独弹框翻译的那种。 类似微信图片翻译的效果的。
@@ -407,7 +432,7 @@ modified: 2025-11-06T18:49:13.977Z
   - Regular/Traditional OCR does very good job but unfortunately it does not take into consideration the layout, so while each word is perfectly recognized the output is a gibberish (if you try to read it). Understood each word but actual text does not make sense.
   - VLMs, such as Qwen3-VL or OpenAI do a good job producing markdown considering layout, so it makes sense but unfortunately the actual OCR is not nearly as good. It hallucinates often and no coordinates where the word was found.
 
-- ## [Do we really need traditional OCR and layout models at this point, since VLMs have improved so much. : r/LocalLLaMA _202503](https://www.reddit.com/r/LocalLLaMA/comments/1jmcbsk/do_we_really_need_traditional_ocr_and_layout/)
+- ## 🤔 [Do we really need traditional OCR and layout models at this point, since VLMs have improved so much. : r/LocalLLaMA _202503](https://www.reddit.com/r/LocalLLaMA/comments/1jmcbsk/do_we_really_need_traditional_ocr_and_layout/)
 - An affordable top-loading scanner can scan about 25 pages per minute.
   - If you needed to scan and OCR five hundred printed pages, how long do you think it would take a vision model to get it done?
   - Traditional OCR can work faster than the scanner scans pages, and on much more modest hardware.
@@ -620,6 +645,29 @@ modified: 2025-11-06T18:49:13.977Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [ollama跑DeepSeekOCR的几种提示词输出格式 _202601](https://linux.do/t/topic/1489368)
+  - 网上似乎有提示词的说明，但是很少有输出格式的说明
+  - 不管用什么跑其实输出格式都是一样的
+- 自由识别文字
+  - Free OCR
+  - 输出几乎纯文本（部分 markdown）
+- 提取纯文本
+  - Extract the text in the image
+  - 忽略图像输出文本
+- 提取为 markdown
+  - Convert the document to markdown
+  - 输出最全，包括定位符号和定位符号对应的文本
+- 给排版定位坐标
+  - Given the layout of the image
+  - Parse the figure
+- 概述图片
+  - Describe this image in detail
+  - 似乎可以简单阅读到图表内容？不仅仅是 ocr
 
 - ## pr已合并 [model : add LightOnOCR-1B model by ngxson · Pull Request · ggml-org/llama.cpp _202510](https://github.com/ggml-org/llama.cpp/pull/16764)
   - Qwen3 as language model

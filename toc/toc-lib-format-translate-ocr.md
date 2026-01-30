@@ -19,6 +19,10 @@ modified: 2025-12-19T12:43:21.150Z
   - ocr API的用法还可以参考 基于llm的文本提取, 基于openai api来提取文本/ocr
   - ~~vlm流式输出的方案配合编辑器流式构建内容的ux体验会很好~~, 前端交互重要性不高
 
+- 支持多种ocr方案的实现
+  - ragflow: docling, mineru, paddleocr
+  - mineru-tianshu: MinerU, PaddleOCR-VL
+
 - pdf/ppt/image-editor
   - 编辑的一种思路: 图片 > html > svg, 其中图片转html的思路可参考 design to code
     - 此时编辑ppt的需求可转换为编辑html代码
@@ -26,6 +30,7 @@ modified: 2025-12-19T12:43:21.150Z
   - 编辑的一种思路: 生成图片后，(用inpaint)remove所有文字，然后再把文本渲染到bbox
     - 基于图片的方案方便缩放
   - 编辑的一种思路: 直接生成svg，然后右键转换为形状
+  - 编辑的一种思路: 根据现有slides生成去文本的底图, 再将ocr的文本叠加上去
   - 不要执着于pdf/ppt编辑器, 现在市场需求很大的是nano-banana文生图的编辑
   - 基于ocr的方案 相对于 基于代码的方案 的优点，用户能直接拖拽修改文本/图形
   - ❓ 是否要对ppt格式的pdf单独处理，因为包含的文本较少，背景图片及图形可能不完整
@@ -87,24 +92,30 @@ modified: 2025-12-19T12:43:21.150Z
   - 输出支持 blocks/json/html/markdown
   - blocks在hover时能高亮原文档/原图片中对应的bounding-box
 # popular
-- https://github.com/xunbu/docutranslate /555Star/MPLv2/202512/python
+- https://github.com/xunbu/docutranslate /747Star/MPLv2/202601/python
   - 文档（小说、论文、字幕）翻译工具（支持 pdf/word/excel/json/epub/srt...）
+  - 基于大语言模型的轻量级本地文件翻译工具
   - Support Multiple Formats: Translates pdf, docx, xlsx, md, txt, json, epub, srt, ass, and more
   - PDF Table, Formula, Code Recognition: Leverages `docling` and `mineru` PDF parsing engines
+  - 自动生成术语表：支持自动生成术语表实现术语的对齐。
   - JSON Translation: Supports specifying values to translate within JSON using paths (jsonpath-ng syntax).
   - Supports docx and xlsx files (currently does not support doc or xls) while maintaining original formatting.
-  - Designed for high-performance scenarios, providing full asynchronous support and interfaces for parallel multi-tasking.
-  - Supports simultaneous use by multiple users within a local area network (LAN).
+  - 异步支持：专为高性能场景设计，提供完整的异步支持，实现了可以多任务并行的服务接口
+  - 局域网、多人使用支持：支持在局域网中多人同时使用。
   - Provides an out-of-the-box Web UI and RESTful API for easy integration and usage.
   - Windows and Mac portable packages under 40MB (versions that do not use docling for local PDF parsing).
-  - 👀 When translating pdf, it is first converted to markdown. This will lose the original layout. 
-  - For users who want to get started quickly, we provide integration packages
-    - DocuTranslate: Standard version. Uses the online `minerU` engine to parse PDF documents. Choose this version if you do not need local PDF parsing (Recommended). Version 1.5.1 and later support calling a locally deployed mineru service.
-    - DocuTranslate_full: Full version. Includes the built-in `docling` local PDF parsing engine. Choose this version if you need to parse PDFs locally.
-  - The core of the new DocuTranslate is the Workflow. Each workflow is a complete end-to-end translation pipeline designed for a specific file type. 
-  - llm: ollama, lmstudio
-  - Q: Are scanned PDFs supported? 
-    - A: Yes. Please use the `mineru` parsing engine, which has powerful OCR capabilities.
+  - 👀 在翻译pdf时会先转换为markdown，这会丢失原先的排版，对排版有要求的用户请注意
+  - 对于希望快速上手的用户，我们在 GitHub Releases 上提供整合包。
+    - DocuTranslate: 标准版，使用 minerU（在线或本地部署）解析PDF文档，支持调用本地部署的 minerU API
+    - DocuTranslate_full: 完整版，内置 docling 本地PDF解析引擎，无需 minerU 即可进行离线PDF解析时选择此版本
+  - DocuTranslate 使用 工作流 (Workflow) 系统，每个工作流都是针对特定文件类型的完整翻译管道。
+    - 根据文件类型选择工作流, 配置工作流（LLM、解析引擎、输出格式）, 执行翻译,保存结果
+  - 如果您选择 mineru作为文档解析引擎（convert_engine="mineru"），则需要申请一个免费的 Token
+    - 如果您选择 docling 作为文档解析引擎（convert_engine="docling"），它会在首次使用时从 Hugging Face 下载所需的模型
+    - 更好的选择是在github releases下载docling_artifact.zip解压到工作目录下
+  - 支持 PDF 扫描件？ A: 支持，使用 mineru 引擎具备 OCR 能力。
+  - Q: 内网/离线环境使用？ A: 可以。使用本地 LLM（Ollama/LM Studio）和本地 minerU 或 docling。
+  - Q: PDF 缓存机制？ A: MarkdownBasedWorkflow 在内存中缓存解析结果（最近 10 次）。可通过 DOCUTRANSLATE_CACHE_NUM 配置。
 
 - https://github.com/gyunggyung/docling-translate /apache2/202512/python
   - https://gyunggyung.github.io/docling-translate/
@@ -114,13 +125,24 @@ modified: 2025-12-19T12:43:21.150Z
 - https://github.com/chaosen315/AIwork4translator /MIT/202512/python
   - 一个专业的文档翻译工具，通过专有名词识别和正则过滤方法，确保大模型翻译时准确使用专业术语。它能够智能处理各种格式的技术文档，保留原文格式和专有名词，提供高质量的翻译结果
   - 实现了全新的并发翻译架构，Queue + Worker Pool模式：采用asyncio. Queue + 工作池架构，支持6并发工作线程
+  - 统一翻译核心：新增TranslationCore模块，统一CLI和WebUI的翻译逻辑，消除代码重复
   - 专有名词识别与保护：使用 Aho-Corasick 自动机高效匹配术语，支持复数归一化与冠词智能处理，确保术语在翻译中保持一致。
-  - 支持.txt和.md格式文件的翻译，通过MarkItDown工具还可以支持PDF、PowerPoint、Word、Excel、HTML等更多格式
+  - 支持.txt和.md格式文件的翻译，通过`MarkItDown`工具还可以支持PDF、PowerPoint、Word、Excel、HTML等更多格式
+    - 推荐的使用方式：输入 Markdown 原文与 CSV 词表，输出为 Markdown 译文。
+    - 对于非 Markdown 文件，该程序会自动识别并使用 MarkItDown 转换后再翻译。感谢 MarkItDown 的贡献；目前 PDF（非 OCR）表现良好，OCR PDF 仍待进一步验证。
   - 支持多种API翻译引擎，包括OpenAI、Kimi、DeepSeek、Ollama等
   - 提供命令行和Web界面两种使用方式，满足不同场景需求
+    - WebUI 使用 FastAPI 框架开发
   - 双栏Markdown编辑器：WebUI中提供左右分栏的原文/译文实时展示功能
+    - 左侧编辑器：显示原文内容，默认为只读模式
+    - 右侧编辑器：实时显示翻译结果，支持编辑
   - 实时翻译进度展示：翻译过程中实时显示当前处理的段落数/总段落数
+    - 系统采用5秒间隔的轮询机制，实时从后端获取翻译进度和新内容
   - 中断保护与恢复：支持 Ctrl+C 安全中断，自动保存进度与未翻译内容
+  - 文件大小不应超过10MB
+  - roadmap
+    - 通过MinerU增强对Markdown文件的解析性能
+    - 实现传统CAP软件的交互模式，例如表格形式的翻译界面，原文与译文逐句对应
 
 - https://github.com/PDFMathTranslate-next/PDFMathTranslate-next /2kStar/AGPLv3/202512/python
   - https://pdf2zh-next.com/zh/index.html
@@ -190,7 +212,7 @@ modified: 2025-12-19T12:43:21.150Z
   - 对于报告型表格文档，polyglotpdf效果相当完美，当然表格中的复杂矢量数学公式依旧无法正确处理
   - 本项目采用与 Adobe Acrobat DC 编辑 PDF 类似的基本原理，基于 PyMuPDF 识别和处理 PDF 文本块, 这种方式直接处理 PDF 文本块，保持原有布局不变，实现高效的文本提取和修改
   - 🛝
-    - 实测图片pdf在ocr后底部是原文, 文字散乱排布在上方, 视觉上是重影, 但分栏布局可以还原, 且识别后的每行文本和原文位置基本都一致
+    - 实测图片pdf在ocr后下层是原文, 文字散乱排布在上层, 视觉上是重影, 但分栏布局可以还原, 且识别后的每行文本和原文位置基本都一致
     - 💡🤔 更合理的流程是生成2个pdf image > text-pdf > translated-pdf, 这样就能既保持原有布局，又能无重影展示干净的译文pdf
   - [关于·ocr识别 ](https://github.com/CBIhalsen/PolyglotPDF/issues/6)
     - 请问考虑·添加·paddle作为OCR模型吗？ 文字PDF的翻译速度是我用过最快的，比pdfmathtran快几倍
@@ -235,7 +257,7 @@ modified: 2025-12-19T12:43:21.150Z
     - 更智能的布局还原：特别优化了双栏和图文混排，目标是转成 Markdown 或 EPUB 后，还能有接近纸质书的阅读体验。
     - 更完美的 LaTeX 公式支持：无论是行内公式还是独立公式，都能精准识别并还原
     - 本地免费跑（我们最推荐的）
-  - https://github.com/oomol-lab/epub-translator
+  - https://github.com/oomol-lab/epub-translator /MIT/202601/python
     - uses AI large language models to automatically translate EPUB e-books while 100% preserving the original book's format, illustrations, table of contents, and layout. 
 
 - https://github.com/gavrielc/Nano-PDF /903Star/MIT/202512/python/gemini
@@ -282,36 +304,12 @@ modified: 2025-12-19T12:43:21.150Z
   - 🛝
     - 本地运行时, onnxruntime-gpu只支持linux/win
 
-- https://github.com/michaelbeijer/Supervertaler /16Star/MIT/202512/python/PyQt6
-  - https://supervertaler.com/
-  - AI-powered translation workbench with multi-LLM support (GPT-4, Claude, Gemini, Ollama).
-  - AI Providers - OpenAI GPT-4o/5, Claude 3.5 Sonnet, Google Gemini 2.0
-  - Local LLM (Ollama) - Run AI translation offline, no API keys needed, complete privacy
-  - Google Cloud Translation API integration
-  - Translation Results Panel - All match types (Termbase, TM, MT, LLM) in one view
-  - Bilingual Review Interface - Grid, List, and Document views
-  - Multiple Termbases - Glossary support per project
-  - OS: Windows, macOS, Linux
-  - Database: SQLite (built-in)
-  - Two Editions Available
-    - Qt Edition (Modern) - Recommended
-    - Tkinter Edition (Classic) - Stable
-
 - https://github.com/LunarTechAI/babel-extreme /202512/python
   - Translate image-only PDFs while preserving layout, tables, diagrams, and formulas. 
   - Built for engineering books and technical documents where existing tools fail.
   - ocr-mineru > TRANSLATE-mistral > ReportLab-pdf-gen
-  - https://github.com/LunarTechAI/babel-extreme-arena
-    - Translate image-only PDFs while preserving layout, tables, diagrams, and formulas. 
-    - Built for engineering books and technical documents where existing tools fail.
 
-- https://github.com/wuwangzhang1216/DocTrans /MIT/202511/ts
-  - A powerful document translation system powered by Google Gemini AI, with both CLI and Web Application support. 
-  - Features dynamic parallel processing with up to 256 workers for high-performance translation.
-  - Smart Allocation: Up to 16 pages/slides concurrently, 64 workers per page
-  - Supports multiple file formats including PDF, Word, PowerPoint, Excel, and more.
-
-- https://github.com/tomorrow9913/PDF-Dual-Translate-Viewer /202506/python/inactive
+- https://github.com/tomorrow9913/PDF-Dual-Translate-Viewer /202506/python/PySide6/inactive
   - a desktop application that provides a dual-view (original/translated) PDF viewer, page navigation, highlight synchronization, translation integration, and style/layout preservation. 
   - It is built with PySide6, PyMuPDF, and follows a clean architecture design.
   - Main View: Default dual PDF viewer and translator screen.
@@ -378,6 +376,7 @@ modified: 2025-12-19T12:43:21.150Z
     - 当然，你这个两个模型都是部署在本地上的，只是你这个快上万行的UI文件有点吓到我了，后面的MPV相当于一个新的项目开发方向了。 L站开发的项目我确实习惯性All in AI了，不过字体位置识别这块LLM确实效果会好点，就是需要额外的API。
     - 已经做到office插件运行了?
       - 还没有，只是可以在ppt中预览
+  - [大香蕉直出PPT底图和文字 ](https://linux.do/t/topic/1523689)
 
 - https://github.com/baoyudu/paper-burner /244Star/GPL/202506/js/单文件/inactive
   - https://baoyu.space/paper-burner/
@@ -901,6 +900,12 @@ modified: 2025-12-19T12:43:21.150Z
   - The approach formalizes coordinate mapping between vision transformer patch grids (32×32) and OCR bounding boxes, repurposing ColPali's late interaction mechanism to generate interpretability maps.
     - 类似将ocr的bbox渲染为了热力图
 
+- https://github.com/maxent-ai/ocrpy /MIT/202211/python/inactive
+  - https://maxentlabs.com/ocrpy
+  - OCR, Archive, Index and Search: Implementation agnostic OCR framework.
+  - Unified interface to google vision, aws textract, azure, tesseract and other OCR tools
+  - The core objective of ocrpy is to let users perform OCR, archive, index and search any document with ease, providing an intuitive interface and a powerful Pipeline API to solve common OCR-based tasks.
+
 ## tesseract
 
 - https://github.com/atorhub/anj-dual-ocr-parser /202512/js
@@ -966,6 +971,22 @@ modified: 2025-12-19T12:43:21.150Z
 
 ## mineru
 
+- https://github.com/zt6453928/ailat-translation /MIT/202601/python/js
+  - https://mineru.net/apiManage/docs
+  - AI-Powered Document Translation Tool
+  - A web-based PDF document parsing and translation tool that supports intelligent document parsing, multi-language translation, and various export formats.
+  - Supports PDF, DOCX and other document formats, extracts text, images, tables, and formulas
+  - Export to PDF, Markdown, HTML, DOCX, JSON, LaTeX
+  - Multiple Translation Engines: Supports DeepLX and OpenAI-compatible APIs
+  - Real-time Preview: Side-by-side comparison of original and translated content
+  - 🛝
+    - 采用 vlm 方案
+    - pdf原文件上传后保存在 `outputs/<task_id>/original.pdf` .
+    - mineru解析后的文本内容仅在memory, 未持久化
+  - [开源一个支持多格式文档翻译应用 ](https://linux.do/t/topic/1511535)
+    - 出于身边同学对论文翻译的需求，所以开发了这个项目，除了论文我也用来对一些AI教程文档进行翻译
+    - 灵感来自于MinerU, PDF格式还支持对照翻译
+
 - https://github.com/blacksamuraiiii/pdf2ppt /MIT/202601/python
   - 将 AI 生成的 PDF 文稿（如 Google NotebookLM 导出的内容）或其他标准 PDF 文档，通过智能解析转换为可编辑的 PowerPoint (PPTX) 演示文稿。
   - 提供 基于 CustomTkinter 的现代化界面 (app.py) 和 cli
@@ -989,21 +1010,27 @@ modified: 2025-12-19T12:43:21.150Z
     - pdf预览用的浏览器的功能，理论不卡
     - 图片直接解析并存储到minio
 # translation
-- https://github.com/zt6453928/ailat-translation /MIT/202601/python/js
-  - https://mineru.net/apiManage/docs
-  - AI-Powered Document Translation Tool
-  - A web-based PDF document parsing and translation tool that supports intelligent document parsing, multi-language translation, and various export formats.
-  - Supports PDF, DOCX and other document formats, extracts text, images, tables, and formulas
-  - Export to PDF, Markdown, HTML, DOCX, JSON, LaTeX
-  - Multiple Translation Engines: Supports DeepLX and OpenAI-compatible APIs
-  - Real-time Preview: Side-by-side comparison of original and translated content
-  - 🛝
-    - 采用 vlm 方案
-    - pdf原文件上传后保存在 `outputs/<task_id>/original.pdf` .
-    - mineru解析后的文本内容仅在memory, 未持久化
-  - [开源一个支持多格式文档翻译应用 ](https://linux.do/t/topic/1511535)
-    - 出于身边同学对论文翻译的需求，所以开发了这个项目，除了论文我也用来对一些AI教程文档进行翻译
-    - 灵感来自于MinerU, PDF格式还支持对照翻译
+- https://github.com/michaelbeijer/Supervertaler /16Star/MIT/202512/python/PyQt6
+  - https://supervertaler.com/
+  - AI-powered translation workbench with multi-LLM support (GPT-4, Claude, Gemini, Ollama).
+  - AI Providers - OpenAI GPT-4o/5, Claude 3.5 Sonnet, Google Gemini 2.0
+  - Local LLM (Ollama) - Run AI translation offline, no API keys needed, complete privacy
+  - Google Cloud Translation API integration
+  - Translation Results Panel - All match types (Termbase, TM, MT, LLM) in one view
+  - Bilingual Review Interface - Grid, List, and Document views
+  - Multiple Termbases - Glossary support per project
+  - Document Support - DOCX, bilingual DOCX, PDF, Markdown, plain text
+  - OS: Windows, macOS, Linux
+  - Database: SQLite (built-in)
+  - Two Editions Available
+    - Qt Edition (Modern) - Recommended
+    - Tkinter Edition (Classic) - Stable
+
+- https://github.com/wuwangzhang1216/DocTrans /MIT/202511/ts
+  - A powerful document translation system powered by Google Gemini AI, with both CLI and Web Application support. 
+  - Features dynamic parallel processing with up to 256 workers for high-performance translation.
+  - Smart Allocation: Up to 16 pages/slides concurrently, 64 workers per page
+  - Supports multiple file formats including PDF, Word, PowerPoint, Excel, and more.
 
 - https://github.com/aikilan/Babel-Markdown /MIT/202511/ts
   - provides real-time translation previews for VS Code, synchronizing the original Markdown and AI-translated content in a single view to help you efficiently proofread multilingual documents.
@@ -1285,7 +1312,7 @@ modified: 2025-12-19T12:43:21.150Z
   - Efficiently processes documents with maximum parallelism
   - Large Document Support: Handles PDFs of any size through automatic chunking and reassembly
 
-- https://github.com/google/langextract /apache2/202511/python/可参考ux
+- https://github.com/google/langextract /apache2/202511/python/可参考ux/提交少
   - A Python library for extracting structured information from unstructured text using LLMs with precise source grounding and interactive visualization.
   - Precise Source Grounding: Maps every extraction to its exact location in the source text, enabling visual highlighting for easy traceability and verification.
   - [example - Romeo and Juliet Full Text Extraction](https://github.com/google/langextract/blob/main/docs/examples/longer_text_example.md)

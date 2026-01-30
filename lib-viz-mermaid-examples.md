@@ -30,6 +30,20 @@ modified: 2025-11-19T17:59:15.580Z
   - modern, beautiful Mermaid.js editor with live preview, multiple themes, and high-quality export. 
   - [I built a modern Mermaid.js editor with custom themes + beautiful exports — looking for feedback! : r/Markdown _202512](https://www.reddit.com/r/Markdown/comments/1pc7e0p/i_built_a_modern_mermaidjs_editor_with_custom/)
     - Nice work! Good selection of themes, backgrounds, fonts, example charts, etc.
+
+- https://github.com/lukilabs/beautiful-mermaid /2.9kStar/MIT/202601/ts
+  - Render Mermaid diagrams as beautiful SVGs or ASCII art
+  - Ultra-fast, fully themeable, zero DOM dependencies. Built for the AI era.
+  - When you're working with an AI coding assistant, being able to visualize data flows, state machines, and system architecture—directly in your terminal or chat interface—makes complex concepts instantly graspable.
+  - 5 diagram types — Flowcharts, State, Sequence, Class, and ER diagrams
+  - Dual output — SVG for rich UIs, ASCII/Unicode for terminals
+  - Mermaid is the de facto standard for text-based diagrams. It's brilliant. But the default renderer has problems:
+    - No terminal output — Can't render to ASCII for CLI tools
+    - Heavy dependencies — Pulls in a lot of code for simple diagrams
+    - We built beautiful-mermaid at Craft to power diagrams in Craft Agents
+    - The ASCII rendering engine is based on mermaid-ascii by Alexander Grooff. We ported it from Go to TypeScript
+    - https://github.com/AlexanderGrooff/mermaid-ascii /MIT/202601/go
+      - Render mermaid diagrams in your terminal
 # examples
 - https://github.com/skovy/llm-markdown /MIT/202309/ts/inactive
   - https://llm-markdown.vercel.app/

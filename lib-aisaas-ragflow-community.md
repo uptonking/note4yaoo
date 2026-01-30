@@ -120,14 +120,16 @@ modified: 2025-12-06T13:25:53.871Z
 - We officially support x86 CPU and nvidia GPU. While we also test RAGFlow on ARM64 platforms, we do not plan to maintain RAGFlow Docker images for ARM.
   - You can either use a x86 CPU machine to deploy RAGFlow or follow the guide build the RAGFlow docker image on ARM platform by yourself.
 
-# discuss-roadmap
+# discuss-news 🆕
 - ## 
 
 - ## 
 
 - ## 
 
-- ## 
+- ## [feat: add paddleocr parser _202601](https://github.com/infiniflow/ragflow/pull/12513)
+  - Add PaddleOCR as a new PDF parser.
+
 # discuss
 - ## 
 

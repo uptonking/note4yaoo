@@ -162,6 +162,13 @@ modified: 2025-11-30T17:27:16.720Z
   - https://github.com/tedhappy/ragflow-admin /apache2/202512/python/ts
     - 基于ragflow二次开发的后台管理系统，可以独立运行，支持批量管理知识库、聊天、智能体、用户等，解决ragflow在后台管理上的痛点。
     - 内置管理界面在生产环境中存在一些局限：单知识库视图, 无批量操作, 任务队列隐藏
+  - https://github.com/knowflow-ai/KnowFlow /AGPL/202512/python
+    - https://knowflowchat.cn/
+    - 基于 RAGFlow 的企业级开源知识库解决方案，专注于为企业提供真正落地的最后一公里服务
+    - 持续兼容 RAGFlow 官方版本（当前适配 RAGFlow v0.20.1），同时将社区最佳实践整合进来，为企业知识管理提供更加完善的解决方案。
+    - 插件化增强平台：通过独立服务方式扩展 RAGFlow 功能
+    - 企业级知识管理系统：提供完整的用户权限、团队协作、数据安全保障
+    - 商业版: PaddleOCR, RAG 评估系统, RBAC 完整版本, Dify 深度集成, 使用统计
 
 - https://github.com/Tencent/WeKnora /7.5kStar/MIT/202511/go/ts/vue
   - https://weknora.weixin.qq.com/
@@ -195,6 +202,8 @@ modified: 2025-11-30T17:27:16.720Z
     - 期望在知识库检索不到时，大模型也可以输出
     - 这样设计的目的是为了防止模型输出一些危险的，无法预测的内容
     - 可以修改summary prompt, 把 NO_MATCH 的话术从 Prompt中去掉，改成你想要的
+  - [[Question]: 为什么pdf用minerU的parser后，还单独用了paddle ocr处理图片？ _202512](https://github.com/Tencent/WeKnora/issues/461)
+    - 目前 minuerU 的 PDF 解析功能暂未集成 OCR 能力，若你对此功能感兴趣，欢迎提交 PR 贡献代码。
 
 - https://github.com/UnicomAI/wanwu /2.7kStar/apache2/202511/go/🆚
   - 元景万悟智能体平台是一款面向企业级场景的一站式、商用license友好的智能体开发平台
@@ -972,6 +981,8 @@ modified: 2025-11-30T17:27:16.720Z
   - Triple Interface: CLI, Library & Web
   - [[Release] Chunklet-py v2.1.0: Interactive Web Visualizer & Expanded File Support! : r/Rag](https://www.reddit.com/r/Rag/comments/1prjdjp/release_chunkletpy_v210_interactive_web/)
     - Our `CodeChunker` is rule-based and language-agnostic, using clever patterns to identify functions, classes, and logical blocks without the overhead of heavy dependencies like tree-sitter.
+  - ["Docling vs Chunklet-py: Which Document Processing Library Should You Use?" : r/Rag _202511](https://www.reddit.com/r/Rag/comments/1p42qik/docling_vs_chunkletpy_which_document_processing/)
+    - Key Difference: Docling focuses on document understanding with complex chunking options, while Chunklet-py focuses on accessible, intelligent chunking with superior metadata and universal language support.
 
 - https://github.com/supermemoryai/code-chunk /MIT/202512/ts
   - AST-aware code chunking for semantic search and RAG pipelines.
@@ -1297,6 +1308,16 @@ modified: 2025-11-30T17:27:16.720Z
       - individual file, multiple files and folder
     - Would also like to know if it allows users to connect to an existing ollama instance over LAN? Would it allow me to connect to my ollama API on my network? So I can use this on my laptop and connect to my AI server in the basement? Can you put a custom IP/port? 
       - this is the most requested feature 
+
+- https://github.com/OpenDCAI/Paper2Any /1.2kStar/apache2/202601/python/ts
+  - http://dcai-paper2any.nas.cpolar.cn/
+  - From paper PDFs / images / text to editable scientific figures, slide decks, video scripts, academic posters, and other multimodal content in one click.
+  - Paper2Figure - Editable Scientific Figures: One-click generation of model architecture diagrams, technical roadmaps (PPT + SVG), and experimental plots. Supports multiple input sources and outputs editable PPTX.
+  - Paper2PPT - Editable Slide Decks: Generate PPTs in arbitrary styles, support ultra-long document processing, and include built-in table extraction and chart parsing.
+  - PDF2PPT - Layout-Preserving Conversion: Intelligent cutout and layout analysis to accurately convert PDFs into editable PPTX.
+  - MinerU (PDF Parsing)
+  - OCR (PaddleOCR)
+  - SAM (Segment Anything Model)
 # chat-excel
 - https://github.com/huggingface/aisheets /1.5kStar/apache2/202510/python/ts
   - https://huggingface.co/spaces/aisheets/sheets

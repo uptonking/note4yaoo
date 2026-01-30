@@ -323,9 +323,31 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
-- ## 
+- ## 🚀 cursor: We're proposing an open standard for tracing agent conversations to the code they generate. It's interoperable with any coding agent or interface.
+- https://x.com/cursor_ai/status/2016934752188576029
+- Would’ve been great to include a quick example of how these traces would render in common observability tooling (e.g., spans/attributes in OTEL, a sample timeline in a trace UI). The spec is “UI agnostic, ” but a reference visualisation would help adoption.
 
-- ## 
+- Right now the biggest pain point with agent-generated code isn't quality — it's auditability. When something breaks in production, the question isn't "what changed?" but "why did the agent change it?"
+- Agent Trace solves the provenance problem. If this becomes the standard, it could unlock:
+  - • Better code review workflows (trace-aware diffs)
+  - • Agent performance benchmarking across teams
+  - • Compliance-friendly AI coding in regulated industries
+
+- git blame for the agent era!
+- The real pain point this solves: mass-accepting agent edits then 2 weeks later staring at code you don't recognize, unsure if past-you or claude wrote it. git blame doesn't tell you that
+
+- Reproducibility is the missing piece in agent systems. Teams stop shipping when they can't debug why an agent veered off path. 
+
+- https://x.com/cognition/status/2017057457332506846
+  - open standard for mapping back code:context.
+  - [Cognition | Agent Trace: Capturing the Context Graph of Code](https://cognition.ai/blog/agent-trace)
+
+- ## Cursor制定了一个开放标准：https://agent-trace.dev，用来追踪代码的来源（agent还是人）、元数据（如关联的对话链接等）
+- https://x.com/wong2__/status/2017062215275466802
+  - 在一个git commit里同时包含代码和实现这段代码的claude code对话
+- 我也有这个需求，现在只是简单的把每个 prompt 当作 commit message push 上去, 这个看起来还有丢丢麻烦，要是对话完验收代码之后一键全搞定就好了
+
+- 如果你用 @AmpCode 的话， 它默认会把 thread 链接直接带上 commit，比 Simon 这个好看一些， 不过它数据是存储在 Amp 自己的网站上的
 
 - ## agent.md + skills - both open standards, and can combined with an agent harness (claude code, codex, deepagents) can pretty much define a custom agent
 - https://x.com/hwchase17/status/2003599022871777467

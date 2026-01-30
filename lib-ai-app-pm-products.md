@@ -17,6 +17,7 @@ modified: 2025-03-22T16:10:24.856Z
   - backend: langgraph + python/nodejs
   - aisdk + docs/excel/image
   - ai-apps as ref: lasuite
+  - ai时代的人工编辑, 可设计为特殊的human-in-the-loop
 
 - ai-dev-xp
   - 难复现好的效果，同样的prompt+context，有时输出的效果就是不好
@@ -454,6 +455,12 @@ modified: 2025-03-22T16:10:24.856Z
 
 - [通义灵码 ](https://lingma.aliyun.com/)
 
+## ai-coding-draft
+
+- lib-port
+  - pdf: PyMuPDF, python-docx
+  - image: poppler
+
 ## ai-coding-xp
 
 - 实测用 claude-opus-4.5 和 glm-4.7 将同一个项目从vue迁移到react，
@@ -535,6 +542,9 @@ modified: 2025-03-22T16:10:24.856Z
   - 📌 [duckcoding 公益站](https://free.duckcoding.com/console/personal), 签到
     - [DuckCoding Az-CC，单独开启公益站，只允许L站注册 ](https://linux.do/t/topic/1308120)
     - [status](https://status.duckcoding.com/status/duckcoding)
+  - [Code公益站-反重力号池](https://claudex.us.ci/console/personal), 签到
+    - [反重力Opus踩油门（只要没爆会继续延长）一直在丰富池子 ](https://linux.do/t/topic/1542040)
+    - 纯公益反重力池子，无套路 L 站 2 级直登，加了 CF
   - 📌 [Any Router](https://anyrouter.top/), 每日签到获取$25
     - 仅支持coding工具，不支持使用api聊天
     - 本站直接接入官方 Claude Code 转发，无法转发非 Claude Code 的 API 流量
@@ -619,6 +629,9 @@ modified: 2025-03-22T16:10:24.856Z
     - [模型健康度监控](https://elysiver.h-e.top/model-health)
     - [Elysiver 添加 Nanobanana Pro 啦 _202601](https://linux.do/t/topic/1506018/16)
       - 是 business 2api
+    - [『Elysiver公益站主贴』 ](https://linux.do/t/topic/1175087)
+    - 2cx 指接入 Codex 使用
+    - docs 指的是这是 claude 的文档 ai，不破限只会回答文档相关的内容
   - [ThatAPI](https://gyapi.zxiaoruan.cn/console/personal), 签到
     - 有多个cc分组，IP限制严格(无需gfw)
     - 免费提供 glm flash
@@ -703,8 +716,7 @@ modified: 2025-03-22T16:10:24.856Z
     - [CLI Proxy API Management Center](https://cpamc2.jonwinters.pw/management.html#/quota-public)
   - [Luckin 公益API](https://api.oaiapi.online/console/personal)
     - 所有模型均支持 沉浸式翻译
-  - [aidrouter - 520china](https://aidrouter.qzz.io/pricing), 无余额, 购买积分
-    - [公益站发售最后一批不限量套餐（388ldc） ](https://linux.do/t/topic/1513815)
+  - [a__i__d__r__o__u ](https://linux.do/t/topic/1513815), 无余额, 购买积分, 待删除, qzz, io
     - 到2.14可用，不可以使用opus和all,应该可以用于cc了（不会有莫名其妙报错）
   - [香草API](https://ai.xiangcao.de/pricing), 文生图
   - [六哥公益站](https://api.crisxie.top/), 文生图
@@ -1144,6 +1156,8 @@ modified: 2025-03-22T16:10:24.856Z
 - [模力方舟（Gitee AI）](https://ai.gitee.com/serverless-api)
   - 提供了很多免费小模型，如 8b/4b, glm-4.6v-flash, 
   - AI图片检测: 并发数不限制，根据负载动态调整
+
+- [DMXAPI官网：中国多模态大模型API聚合平台](https://www.dmxapi.cn/rmb)
 
 - [Moonshot AI 开放平台 - 充值与限速](https://platform.moonshot.cn/docs/pricing/limits)
   - 赠送用完后需要充值

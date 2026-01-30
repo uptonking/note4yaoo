@@ -562,6 +562,7 @@ modified: 2021-04-30T20:14:17.669Z
     - 如果是可编辑功能，我也做了一个ocr识别文本位置GitHub - Tansuo2021/OCRPDF-TO-PPT 但是需要干净的背景图，还需要在生成一次，然后我觉得生成干净的背景图可以直接用本地 IOPaint来去除图片中的文字得到干净背景图，目前思路是这样，今天还想到可以直接在原图裁切图案叠加过去
   - [增加本地llm 本地图片生成模型支持 _202512](https://github.com/Anionex/banana-slides/issues/57)
     - 效果很差，还是不要本地了，改了代码用的qwen image实现的效果，如下
+  - [大香蕉直出PPT底图和文字 ](https://linux.do/t/topic/1523689)
 
 - https://github.com/HisMax/RedInk /4.4kStar/CC-BY-NC/202512/python/ts/vue
   - https://redink.top/
@@ -672,7 +673,12 @@ modified: 2021-04-30T20:14:17.669Z
   - PPT 不认 rgba、不认组透明、不认图片透明
   - [PPT-master 一个用AI生成真正可编辑的高质量PPT的工具 _202512](https://linux.do/t/topic/1305492)
     - 使用 mineru 对 pdf 进行了提取，然后用 md 文档重新生成一份含有企业预警通图标和封面图的 ppt，因为时间更空余，生成的比视频里面的更精美多了
+
+- https://github.com/vigorX777/ppt-svg-generator /MIT/202601/js
+  - https://mp.weixin.qq.com/s/0KhNkuoFkT9zq9I9COVnSg
+  - 一个 Skill，帮助你将 Markdown 文稿快速转化PPT 或 PDF，并支持多种预设风格选择，效果美观且可控
   - [【原创】OpenCode + SVG：推荐一套省心可控的 AI PPT 生成方案 _202601](https://linux.do/t/topic/1489177)
+  - [小小优化，“ppt-svg-generator” Skill 支持一键导出 PPTX 和 PDF 格式了 ](https://linux.do/t/topic/1522619)
 
 - https://github.com/laihenyi/NBLM2PPTX /MIT/202601/ts
   - Convert NotebookLM PDFs to PPTX with separated background images and editable text layers using Gemini AI
@@ -698,6 +704,7 @@ modified: 2021-04-30T20:14:17.669Z
   - 用AI搓了个把PDF文字去除的工具 
   - 主要思路是把PDF分页后用大香蕉:banana: 重新生成一个一样但是无文字的图片，然后再拼成PPT/PDF，后续自己把文字拼上去。
   - 后来想加入文字识别，用了tesseract + AI 合并文字块 + 坐标映射，但是有伪文字不太好识别，基本上搞出来的文字最后都得重新编辑==。实在没办法了，丢上来看哪位大佬有兴趣的话解决一下 
+  - [一个没啥用的PDF去文字工具  ](https://linux.do/t/topic/1257896)
 
 - [ChatSlide | Build your Slides and Videos from Documents in one click](https://chatslide.ai/landing)
 # ai-canvas

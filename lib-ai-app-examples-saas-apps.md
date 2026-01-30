@@ -51,6 +51,10 @@ modified: 2025-02-21T17:17:42.225Z
     - 10x faster, ~90% cheaper than pure LLM agents
     - Self-healing via LLM fallback 
 
+- https://github.com/gradio-app/daggr /MIT/202601/python
+  - a Python library for building AI workflows that connect Gradio apps, ML models (through Hugging Face Inference Providers), and custom Python functions
+  - [Introducing Daggr: Chain apps programmatically, inspect visually _202601](https://huggingface.co/blog/daggr)
+
 - https://github.com/langflow-ai/langflow /109kStar/MIT/202508/python/ts
   - http://www.langflow.org/
   - a powerful tool for building and deploying AI-powered agents and workflows.
@@ -177,6 +181,16 @@ modified: 2025-02-21T17:17:42.225Z
   - https://onlook.com/
   - The open source Cursor for Designers. 
   - Design directly in your live React app and publish your changes to code.
+
+- https://github.com/Flame-Code-VLM/Flame-Code-VLM /apache2/202502/python
+  - Flame: 一个基于数据合成提升多模态大模型前端开发能力的解决方案
+  - 为提升多模态模型在生成依赖特定前端框架代码方面的能力，我们提出了一套解决方案，包含数据合成管线、模型训练及评估套件。基于该方案，我们构建了Flame模型，可根据图文信息生成特定框架的前端代码。
+  - [数据合成] 最关键的挑战在于构建高质量的图-文（代码）数据。我们提出的智能体工作流驱动的数据合成管线能够提取、渲染并注释自包含的前端代码片段。该管线确保了生成的大规模、多样化且高保真的数据集，支持单图像和多图像输入，并提供详细的图像描述（可用于视觉思维推理开发）。
+    - 我们的数据合成方法包括三种策略：基于进化思想的合成、基于瀑布流模型的合成以及基于增量式开发思想的合成，过程中通过DeepSeek API接入DeepSeek V2和V3模型进行数据构建，生成的图文（代码）数据将全部开源。
+  - [模型训练] 我们通过两层MLP将Siglip图像编码器与Deepseek的代码模型连接，构建Flame模型，并采用三阶段训练策略。第一阶段预热两层连接器（使用公开的图文数据）；第二阶段训练图像编码器及连接器（使用我们合成的数据）；第三阶段进行SFT，训练所有参数（同样使用合成数据）。我们发现，在针对特定场景的数据下，这种训练方案表现出更好的效果。
+  - [评估套件] 为确保生成代码符合实际开发标准，我们构建了一个全面的评估套件，评估生成代码的三个关键因素：语法精确性、功能正确性和视觉一致性。该评估方法将为未来的多模态模型代码生成能力提供可靠的测评标准。
+  - 目前，该框架针对基于React的开发进行了设计和优化。该方法和管道具有高度可扩展性，只需进行少量修改即可适应其他前端框架，如Vue和Angular。
+  - 注：Flame只关注React代码生成，非通用VLM。
 
 ## ai-webapp
 

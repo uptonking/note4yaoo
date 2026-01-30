@@ -92,6 +92,9 @@ modified: 2022-11-07T10:25:12.034Z
   - Each Spaces environment is limited to 16GB RAM, 2 CPU cores and 50GB of (not persistent) disk space by default, which you can use free of charge. 
   - You can upgrade to better hardware, including a variety of GPU accelerators and persistent storage, for a competitive price.
 
+- [Zeabur](https://zeabur.com/)
+  - $5/月免费使用
+
 - 博客列车 https://blogtrain.com/
   - [免费博客主机➕免费域名 手快有！ - Benefits - IDC Flare](https://idcflare.com/t/topic/32449)
   - 1GB 存储
@@ -133,6 +136,11 @@ modified: 2022-11-07T10:25:12.034Z
   - Exclude a phrase > `javascript -es5`
   - Number range > `javascript 2015..2021`
   - Wildcard > `"fix the * error"`
+
+```
+<!-- 搜索仓库, 但排除指定仓库 -->
+mineru paddleocr site:github.com -inurl:"github.com/opendatalab/" -inurl:"github.com/PaddlePaddle/"
+```
 
 - 实测 `after:2020` 的搜索结果都是2021年的，after:2021当前年份就显示搜索结果为空了
 

@@ -262,7 +262,16 @@ modified: 2025-10-10T02:44:49.634Z
 
 - ## 
 
-- ## 
+- ## [[D] Why is table extraction still not solved by modern multimodal models? : r/MachineLearning _202503](https://www.reddit.com/r/MachineLearning/comments/1jnjfaq/d_why_is_table_extraction_still_not_solved_by/)
+- These tasks (and other precise image-based tasks) are a pretty common problem:
+  - Text has a lower information density per character compared to numerical data. In the encoding stage LLMs/VLMs do well with text or general images as semantic meaning is still retained even with somewhat incorrect representations given by the Text/Vision encoder. The same cannot be said for numerical values, where a single incorrectly interpreted digit can drastically change meaning.
+  - VLMs can have issues with geometric problems. 
+- When I did OCR, the important aspect was consistency. A traditional multi-stage OCR process was used as it was much easier to identify which part of the process would errors appear (and either flag/correct). End-to-end multi-modal models can have a 99% correct extraction, but determining why (and when) that 1% occurs is the hard part, when so many things could have gone wrong (resolution too low? table borders too thin? text too close to border? etc).
+  - Which is why if you're going to do this, I suggest setting up a workflow and fine-tuning separate models for specific tasks.
+
+- I think this will remain a niche for a few more years, because models have to be explicitly finetuned on certain documents. For example this startup finetuned on all common government invoices and most common b2b shops too. They will always outperform general LLMs because of their datasets
+
+- If the table is really THAT clean you could extract the layout with traditional computer vision (opencv...). Then you'll need some OCR (deep learned or not) to read whats inside each box.
 
 - ## [A R&D RAG project for a Car Dealership : r/Rag _202512](https://www.reddit.com/r/Rag/comments/1pgvkae/a_rd_rag_project_for_a_car_dealership/)
   - [This AI Brain Turns Messy Data to Dollars (Full Build + Code Provided) - YouTube _202512](https://www.youtube.com/watch?v=DJKVwo2mk-k)

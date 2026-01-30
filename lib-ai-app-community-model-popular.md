@@ -47,6 +47,31 @@ modified: 2025-09-16T19:59:57.856Z
 
 - ## 
 
+- ## 
+
+- ## [Why don’t we have more distilled models? : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qqeudu/why_dont_we_have_more_distilled_models/)
+  - The Qwen 8B DeepSeek R1 distill genuinely blew me away when it dropped. You had reasoning capabilities that punched way above the parameter count, running on consumer (GPU poor) hardware. So where are the rest of them? Why aren’t there more?
+- wouldn’t a distill of Kimi K2.5 be SOTA (for a consumer size) for a while?
+  - It's not a power-up. The distills really just teach the models how to reason like R1 did.
+  - Deepseek has much better reasoning than the smaller Qwen3's and obviously better reasoning than the first Qwen2.5's and Llama3's that got distilled hence why there were some wins to be had.
+  - Kimi K2.5 doesn't have that problem (I still think Deepseek reasons better but not as wide of a gap).
+
+- The problem is a general knowledge 8b model is pretty bad compared to a teacher, while a specialized 8b model is almost equal to its teacher. The specialisation just makes it basically only useful for one business and not worthy to upload to hf
+
+- GLM-4.x are kind of distillation models. They used traces from Grok, Gemini 3 Pro, or Claude Opus/Sonnet.
+- GLM 4.7 is essentially a distill of Gemini 3 Pro - it has higher response similarity to 3 Pro than 3 Flash has to 3 Pro!
+  - Ministral models are distills
+  - it's one of the more popular ways to train a model now.
+
+- ## [Why are small models (32b) scoring close to frontier models? : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qqidxp/why_are_small_models_32b_scoring_close_to/)
+  - I keep seeing benchmark results where models like Qwen-32B or GLM-4.x Flash score surprisingly good as per their size than larger models like DeepSeek V3, Kimi K2.5 (1T), or GPT-5.x.
+
+- When you’re using gemini or claude you’re actually using an agent with a bunch of tool calls it’s just abstracted from you. Most benchmarking is done without all the extras, so it’s the base model without tools and internal thinking.
+
+- As far as I know a lot of benchmarks out there do not test the agentic way of processing data. They just throw a curated (!) part of a repo at a model and then evaluate the diff the model produces as an answer/solution. This sucks for many reasons.
+
+- They do score well, until you fill up the context to 100k...
+
 - ## [简单易懂的LLM相关知识梳理 _202601](https://linux.do/t/topic/1403348)
 - 本文从实用角度出发，梦到哪写哪。部分八股文知识就不搬了，这里主要分享一下本人在使用各种云服务及本地部署过程中学到的知识。
 - 这里优先介绍LLM/VLM，暂不涉及音频/视频/Omni相关模型（也可能梦到了以后补一下）
