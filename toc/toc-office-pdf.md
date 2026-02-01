@@ -737,6 +737,19 @@ modified: 2021-01-04T17:26:43.784Z
   - 视觉定位 (Visual Grounding) AI 不仅回答问题，还会自动跳转到 PDF 对应页面，并用红框高亮显示答案来源（支持文本段落、图表、数据表格）
   - 聊天记录和设置均存储在浏览器本地（LocalStorage/IndexedDB），只需配置 Key，无需担心数据泄露。
   - PDF 渲染: React-PDF
+
+- https://github.com/MrAMS/Smart-Search-PDFs /MIT/202601/python/qt5
+  - 🔍 智能 PDF 搜索引擎 - 基于语义向量(embeddings)和 BM25 的混合搜索系统，可用于开卷考试离线搜索PDF课件
+    - 一个基于语义向量（Embeddings）和 BM25 算法的本地化 PDF 混合搜索工具。
+  - 全部在本地运行，无需 API Key，保护隐私。
+    - 本地端侧：无需 GPU/API，使用 FastEmbed 和轻量级模型，CPU 也能流畅运行，无需 OpenAI API Key。
+  - ux交互是双栏布局，左侧是文本，右侧是pdf原文，左侧搜索出的文本，右侧不会高亮
+  - 混合搜索（智能推荐）： 结合了语义理解和关键词匹配。不仅能搜到字面一样的，还能搜到意思相近的。结果自动按相关度排序。
+    - 语义搜索： 哪怕你输入的词文中没出现，只要意思对，就能搜到。（基于 Jina AI 的 Embeddings 模型）。
+    - BM25 关键词： 经典的倒排索引算法，不仅是精确匹配，还能处理词频权重。
+    - 大文件支持：动态加载机制，几百页的文档滚动流畅不卡顿。
+  - [[开源自荐] 开卷考试/论文搜索神器 - 基于语义向量和BM25的PDF文件搜索软件 ](https://linux.do/t/topic/1408107)
+    - 不管是开卷考试需要在几百页的 PPT 里瞬间定位知识点，还是写论文时需要在几十篇参考文献中寻找佐证，传统的 Ctrl+F 往往力不从心
 # pdf-doc/rag 🔗
 - https://github.com/docling-project/docling /39.3kStar/MIT/202509/python
   - https://docling-project.github.io/docling

@@ -20,6 +20,7 @@ modified: 2025-12-13T18:38:27.763Z
   - All conversations and files saved locally: local sqlite
 
 - cons
+  - 缺少类似编辑器的 undo/diff 体验
   - chat体验待优化
     - 流式输出
     - thinkingcontent

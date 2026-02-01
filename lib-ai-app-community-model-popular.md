@@ -668,7 +668,13 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [GLM 4.7 Flash going into infinitive thinking loop every time : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qrr8ti/glm_47_flash_going_into_infinitive_thinking_loop/)
+- maybe lower your temp to like 0.1-0.3 for math problems, the randomness makes them go nuts
+- Temperature == 0.2 Huge improvement IMX.
+
+- One thing so far is I always have to disable FA to get good output quality, otherwise I am using Temp = 1, Top K = 40, Top P = 0.95, Min P = 0.01
+  - With FA(Flash Attention): It goes into an infinite loop.
+  - Without FA: This times it only spends < 1m and 6k token to get to the same final form.
 
 - ## ✨ [Assistant_Pepe_8B, 1-M context, zero slop : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qppjo4/assistant_pepe_8b_1m_context_zero_slop/)
   - This is a project that was a long time in the making because I wanted to get it right. I'm still not fully satisfied, as there are some rough corners to sand, but for now, this would do.
@@ -1998,7 +2004,14 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [What good are 128k+ context windows for <40b Parameter models? : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qryr2e/what_good_are_128k_context_windows_for_40b/)
+- The original Qwen3-30B-A3B was able to accurately answer extraction questions when I dropped 50-100k dumps on it. Summarization was mostly okay too.
+
+- Nemotron 3 nano is my go to for long context. Native 1m context, fast/small enough to run on consumer hardware. I feed it portions of textbooks, lecture slides/notes, essays/articles whatever, it's not super smart but it at least has reasoning and long context.
+
+- Most people asking for huge context windows dont actually need them. They have bad prompt engineering and want to dump their entire codebase instead of being precise. 90 percent of use cases are solved with 8k if you know how to ask for what you actually want.
+
+- A large context window size is pure marketing — even big models start to get dumb at 100–200k context (for example, I’m referring to GLM 4.7 and Gemini 3 Flash).
 
 - ## [What local model blew you away recently? : r/SillyTavernAI _202601](https://www.reddit.com/r/SillyTavernAI/comments/1qd9z2n/what_local_model_blew_you_away_recently/)
 - Drummer's finetunes punch way above their weight. I still don't know how he managed to squeeze such a good performance from Mistral Small.

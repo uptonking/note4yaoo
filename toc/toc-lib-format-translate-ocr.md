@@ -22,6 +22,8 @@ modified: 2025-12-19T12:43:21.150Z
 - 支持多种ocr方案的实现
   - ragflow: docling, mineru, paddleocr
   - mineru-tianshu: MinerU, PaddleOCR-VL
+  - pdfstract: docling, paddleocr, marker, pytesseract
+  - docutranslate: docling, mineru
 
 - pdf/ppt/image-editor
   - 编辑的一种思路: 图片 > html > svg, 其中图片转html的思路可参考 design to code
@@ -29,8 +31,8 @@ modified: 2025-12-19T12:43:21.150Z
     - 基于代码的方案交互性强
   - 编辑的一种思路: 生成图片后，(用inpaint)remove所有文字，然后再把文本渲染到bbox
     - 基于图片的方案方便缩放
+    - 根据现有slides生成去文本的底图, 再将ocr的文本叠加上去
   - 编辑的一种思路: 直接生成svg，然后右键转换为形状
-  - 编辑的一种思路: 根据现有slides生成去文本的底图, 再将ocr的文本叠加上去
   - 不要执着于pdf/ppt编辑器, 现在市场需求很大的是nano-banana文生图的编辑
   - 基于ocr的方案 相对于 基于代码的方案 的优点，用户能直接拖拽修改文本/图形
   - ❓ 是否要对ppt格式的pdf单独处理，因为包含的文本较少，背景图片及图形可能不完整
@@ -249,6 +251,7 @@ modified: 2025-12-19T12:43:21.150Z
     - 新版本也移除了 LLM 文本矫正功能。如果你的使用场景仍然需要这一特性，可以继续使用 v0.2.8 旧版本
   - 要真正使用 pdf-craft，你需要安装 `Poppler` 用于 PDF 解析（所有使用场景都需要）以及配置 CUDA 环境用于 OCR 识别（实际转换时需要）
   - ❓ 原文中的插图会提取为单独图片吗
+  - 效果是直接输出新的pdf文件
   - Starting from the official v1.0.0 release, pdf-craft fully embraces DeepSeek OCR and no longer relies on LLM for text correction.
     - removing the previous AGPL-3.0 dependency, allowing the entire project to be released under the more permissive MIT license
     - Note that pdf-craft has a transitive dependency on `easydict` (LGPLv3) via DeepSeek OCR.
@@ -410,6 +413,14 @@ modified: 2025-12-19T12:43:21.150Z
     - [Paper Burner X 自定义：手把手教你用 cf worker 加入更多OCR引擎/学术搜索功能 _202510](https://linux.do/t/topic/1009321)
       - 看到了很多佬友对多种OCR方式的需求， 因为项目是纯前端的，所以使用cf worker来代理。
       - 有反馈大文件会出现failed to fetch，这里新增分块机制
+- https://github.com/AuroraPixel/MarkMuse /MIT/202505/python/inactive
+  - an innovative tool developed using Python that elegantly converts PDF files to Markdown format.
+  - 公司正在建设基于 RAG 的知识库，急需高质量的文档预处理与数据清洗方案
+  - 基于Celery、Redis和PostgreSQL的通用任务队列Web API，提供异步任务的提交、执行和状态查询功能。
+  - 提供基于FastAPI的RESTful API接口
+  - 高精度 PDF→Markdown：基于 Mistral AI OCR，精确提取文本与结构。
+  - 模板化提示词：内置 Jinja2 与 LangChain，灵活自定义转换规则。
+  - [新项目pdf转md : MarkMuse _202504](https://linux.do/t/topic/610328)
 
 - https://github.com/yyy-OPS/slidedeconstruct-ai /113Star/MIT/202512/ts
   - 基于 AI 视觉能力的智能演示文稿反向工程工具。它利用 Google Gemini (或 OpenAI Compatible) 模型，将一张静态的 PPT 截图“拆解”为可编辑的图层（背景、文字、视觉元素），并支持将其转化为矢量形状，最终导出为可编辑的 .pptx 源文件。
@@ -575,8 +586,16 @@ modified: 2025-12-19T12:43:21.150Z
   - VLM Run Hub, a comprehensive repository of pre-defined Pydantic schemas for extracting structured data from unstructured visual domains such as images, videos, and documents. 
   - 似乎未开源代码，但pip包安装后可本地运行
 # ocr
-- https://github.com/AKSarav/pdfstract /apache2/202511/python/js
-  - web application for converting PDFs to multiple formats using various state-of-the-art extraction libraries. Built with FastAPI backend and React frontend
+- https://github.com/AKSarav/pdfstract /108Star/apache2/202601/python/js
+  - The Extraction and Chunking Layer in Your RAG Pipeline - Available as CLI - WEBUI - API
+  - Extract structured text, tables, and metadata from PDFs using various libraries (PyMuPDF4LLM, MarkItDown, Marker, Docling, PaddleOCR, DeepSeek-OCR, Tesseract, MinerU, Unstructured, and more)
+  - Chunk the text into smaller chunks using various libraries (Token, Sentence, Recursive, Table, Semantic, Code, Late, Neural, Slumber, and more)
+    - 10+ chunking methods powered by `Chonkie`.
+  - Embed the chunks using various libraries (Sentence Transformers, OpenAI, etc.)
+  - Multiple Output Formats: Markdown, JSON, and Plain Text
+  - On-Demand Model Downloads: Download ML models only when needed
+  - Batch Processing: Parallel conversion of 100+ PDFs with detailed reporting
+  - 依赖fastapi、Chonkie、PyMuPDF, Marker, Docling
   - 🆚 [Built a small tool to compare PDF → Markdown libraries (for RAG / LLM workflows) : r/Rag _202507](https://www.reddit.com/r/Rag/comments/1m1j10e/built_a_small_tool_to_compare_pdf_markdown/)
     - I’ve been exploring different libraries for converting PDFs to Markdown to use in a Retrieval-Augmented Generation (RAG) setup.
     - But testing each library turned out to be quite a hassle — environment setup, dependencies, version conflicts, etc.
@@ -609,6 +628,7 @@ modified: 2025-12-19T12:43:21.150Z
   - 文件名为 openai_test_tool.py。这是一个专用于内网多后端 API 调试与性能对比的工具。
     - 支持对多个 OpenAI 兼容接口（如 vLLM, LocalAI）同时发起并发请求。
     - Vision 支持：内置图片转 Base64 功能，方便测试 GPT-4 Vision 等多模态接口。
+  - 本项目默认连接的 OCR 后端地址为 192.168.24.78:8000。 如果你有自己的 OCR 服务器，或者后端地址发生了变化，请修改 dots_ocr_lib.py 文件中的配置
 
 - https://github.com/neosun100/DeepSeek-OCR-WebUI /279Star/MIT/202601/python/vue/提交多
   - 基于 DeepSeek-OCR 模型的智能图像识别 Web 应用, 参考了 deepseek_ocr_app
@@ -635,7 +655,7 @@ modified: 2025-12-19T12:43:21.150Z
   - 左右分栏布局，右侧用bbox标注搜索的实体, 支持ocr/describe/find/prompts4种场景
   - 支持图片/pdf
 
-- https://github.com/th1nhhdk/local_ai_ocr /613Star/apache2/202601/python/ts
+- https://github.com/th1nhhdk/local_ai_ocr /613Star/apache2/202601/python/ts/PySide6
   - An local, offline (after initial setup), portable OCR software that can process images and PDF files, using DeepSeek-OCR AI (running directly on your machine).
   - Queue system: Allows processing multiple files sequentially.
   - if GPU is not available, it automatically switches to CPU
@@ -644,6 +664,7 @@ modified: 2025-12-19T12:43:21.150Z
   - Allows selecting page range for processing
   - Fancy Output: Supports displaying Formatted text instead of raw text, allows keeping formatting for pasting into Word, ...
   - 🆚 类似grounding(? 缩略图形式) - OCR process illustration: See exactly what the AI detected as OCR progresses (pretty cool).
+  - 依赖PySide6、pillow、PyMuPDF、ollama
   - 3 processing modes:
     - Standard OCR: Extracts text, does not preserve layout well.
     - Free OCR: Extracts text, preserve layout better than "Standard OCR".
@@ -654,7 +675,7 @@ modified: 2025-12-19T12:43:21.150Z
   - 支持 PDF、图片等多种格式的文档上传和解析
   - 专业的表格识别和图表数据提取功能
   - 将 PDF 内容转换为结构化的 Markdown 格式
-  - 🆚 示例效果双栏布局，bbox覆盖在pdf原文上(pdf形式)
+  - 🆚 示例效果双栏布局，bbox覆盖在pdf原文上(输出新pdf文件)
   - 首先需要下载 DeepSeek-OCR 模型权重，可从 Hugging Face 或 魔搭社区（ModelScope） 获取
   - https://github.com/newlxj/DeepSeek-OCR-Web-UI /仅简单ocr
 
@@ -691,18 +712,19 @@ modified: 2025-12-19T12:43:21.150Z
 - https://github.com/matica0902/MLX-Video-OCR-DeepSeek-Apple-Silicon /AGPL/202512/python/js
   - 影片/PDF/圖片 三合一 OCR, 專為 Apple Silicon 優化的全功能 OCR 解決方案
 
+- https://github.com/wcpsoft/deepseek-ocr-cli /apache2/202511
+  - 基于 DeepSeek-OCR 项目改造，提供了增强功能，增加了对多种文档格式的支持，包括 Word、PPT、Excel 等，并提供统一的命令行接口和Web界面进行处理。
+  - 双引擎支持：支持vLLM和Transformers两种推理引擎
+  - 模块化架构：采用工厂模式设计，vLLM和Transformers引擎解耦，易于扩展和维护
+  - 为了支持办公文档格式转换（Word、PPT、Excel等），需要安装LibreOffice
 - https://github.com/benedict2310/DeepSeekOCR-Cli /202511/python
   - A quick test to get deepseek ocr to run on a Mac with either images or pdfs
   - Runs natively on Apple Silicon (M1-M4) using PyTorch MPS acceleration
-  - https://github.com/wcpsoft/deepseek-ocr-cli /apache2/202511
-    - 基于 DeepSeek-OCR 项目改造，提供了增强功能，增加了对多种文档格式的支持，包括 Word、PPT、Excel 等，并提供统一的命令行接口和Web界面进行处理。
-    - 双引擎支持：支持vLLM和Transformers两种推理引擎
-    - 模块化架构：采用工厂模式设计，vLLM和Transformers引擎解耦，易于扩展和维护
-    - 为了支持办公文档格式转换（Word、PPT、Excel等），需要安装LibreOffice
 
 - https://github.com/Moskize91/doc-page-extractor /MIT/202512/python
   - Document page extraction tool powered by DeepSeek-OCR.
   - This package requires PyTorch with CUDA support (GPU Required).
+  - It depends on the DeepSeek-OCR model which uses easydict (LGPLv3) for configuration management.
 
 - https://github.com/ikantkode/hunyuan-1b-ocr-app /202511/python
   - [HunyuanOCR-1B - Dockerized Streamlit OCR App - Quite Amazing. : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1p6wios/hunyuanocr1b_dockerized_streamlit_ocr_app_quite/)
@@ -728,35 +750,15 @@ modified: 2025-12-19T12:43:21.150Z
     - Tesseract is an integral part of ArchivEye, providing powerful OCR capabilities that convert extracted individual pages into searchable text.
     - GhostScript is used to extract individual pages from the PDF file as images for Tesseract to OCR.
 
-- https://github.com/am009/LLM-online-tool /202512/python/js
-  - https://tool.latexdiff.cn/
-  - 基于大语言模型（LLM）API的 Markdown/Latex 文章翻译工具
-  - 👀 上传markdown/latex文件，不支持pdf
-  - 逐段翻译与校对：点击蓝色箭头按钮即可翻译当前段落，然后可以在右侧实时编辑，
-  - 纯静态网页：完全在浏览器中运行
-  - 分块翻译：将 Markdown 内容分割为可管理的段落进行翻译
-  - 问：为什么没有按照我想要的方式分割段落？段落分割方式是什么？
-    - 答：根据 “连续的两个换行” 分割段落。只有空格和tab的行也看作单独的空行。
-  - https://github.com/am009/dots.ocr
-    - 本Fork提供Docker容器重新封装的API，支持20系等旧的 Turing GPU，以float32格式运行。测试机型：单2080ti 22GB。
-
 - https://github.com/error-wtf/pdf-translator-enhanced /202512/python
   - Translate scientific PDFs with 100% formula preservation and professional quality
   - Fork of thelanguagenerd/pdf-translator with improved formula protection, table detection, and 20 language support.
   - https://github.com/thelanguagenerd/pdf-translator /CC0
     - english scientific PDF to LaTeX and back to PDF translator
 
-- https://github.com/kv1830/fast_pdf_trans
-  - 基于`MinerU`实现pdf转markdown的功能，接着对markdown进行分割， 送给大模型翻译，最后组装翻译结果并由`pypandoc`生成结果pdf。
-
 - https://github.com/iptag/mineru-api /MIT/202512/js
   - 基于mineru网页端，抓包分析后将核心的上传及转换功能集成为api，供其他服务调用
   - [[开源]两个比较有意义的docker项目吧，一个是mineru-api，另一个是微信和T的音频转换api ](https://linux.do/t/topic/975584)
-
-- https://github.com/AuroraPixel/MarkMuse /MIT/202505/python
-  - an innovative tool developed using Python that elegantly converts PDF files to Markdown format.
-  - 基于Celery、Redis和PostgreSQL的通用任务队列Web API，提供异步任务的提交、执行和状态查询功能。
-  - [新项目pdf转md : MarkMuse _202504](https://linux.do/t/topic/610328)
 
 ## utils-ocr
 
@@ -1048,11 +1050,23 @@ modified: 2025-12-19T12:43:21.150Z
   - 表格中的内容没有翻译？
     - 回答: `pdf2zh`暂不支持表格内容翻译，如需翻译表格，可查看本仓库的dev分支，采用`pdf2zh_next`进行翻译，但由于速度较慢
 
+- https://github.com/am009/LLM-online-tool /202512/python/js
+  - https://tool.latexdiff.cn/
+  - 基于大语言模型（LLM）API的 Markdown/Latex 文章翻译工具
+  - 👀 上传markdown/latex文件，不支持pdf
+  - 逐段翻译与校对：点击蓝色箭头按钮即可翻译当前段落，然后可以在右侧实时编辑，
+  - 纯静态网页：完全在浏览器中运行
+  - 分块翻译：将 Markdown 内容分割为可管理的段落进行翻译
+  - 问：为什么没有按照我想要的方式分割段落？段落分割方式是什么？
+    - 答：根据 “连续的两个换行” 分割段落。只有空格和tab的行也看作单独的空行。
+  - https://github.com/am009/dots.ocr
+    - 本Fork提供Docker容器重新封装的API，支持20系等旧的 Turing GPU，以float32格式运行。测试机型：单2080ti 22GB。
+
 - https://github.com/ogkalu2/comic-translate /2.3kStar/apache2/202512/python
   - Desktop app for automatically translating comics - BDs, Manga, Manhwa, Fumetti and more in a variety of formats (Image, Pdf, Epub, cbr, cbz, etc) and in multiple languages.
   - Many Automatic Manga Translators exist. Very few properly support comics of other kinds in other languages. This project was created to utilize the ability of State of the Art (SOTA) Large Language Models (LLMs) like GPT-4 and translate comics from all over the world.
 
-- https://github.com/meangrinch/MangaTranslator /apache2/202512/python/Gradio
+- https://github.com/meangrinch/MangaTranslator /60Star/apache2/202512/python/Gradio
   - Web application for automating the translation of manga/comic page images using AI. 
   - Targets speech bubbles and text outside of speech bubbles. 
   - Supports 54 languages and custom font pack usage.
@@ -1262,14 +1276,14 @@ modified: 2025-12-19T12:43:21.150Z
   - FTP Server - Receives documents from network scanners
   - Async Processing Queue - `ThreadPoolExecutor` with worker pool for non-blocking uploads
   - SHA256 checksum tracking in SQLite to prevent duplicate processing
-  - Extracts text from scanned PDFs using Tesseract
+  - Extracts text from scanned PDFs using `Tesseract`.
   - Automatically uploads processed documents via WebDAV
   - Easy deployment with Docker Compose
   - Configure your network scanner to send scans via FTP
 
 - https://github.com/Paullllllllllllllllll/ChronoTranscriber /MIT/202511/python
   - A Python-based tool for researchers and archivists to transcribe historical documents from PDFs, EPUB ebooks, or image folders. 
-  - ChronoTranscriber supports multiple AI providers (OpenAI, Anthropic, Google, OpenRouter) via LangChain, local OCR with Tesseract, and provides structured JSON outputs with scalable batch processing for large-scale document digitization projects.
+  - ChronoTranscriber supports multiple AI providers (OpenAI, Anthropic, Google, OpenRouter) via LangChain, local OCR with `Tesseract`, and provides structured JSON outputs with scalable batch processing for large-scale document digitization projects.
   - designed to integrate with ChronoMiner and ChronoDownloader for a complete historical document retrieval, transcription, and data extraction pipeline.
   - https://github.com/Paullllllllllllllllll/ChronoDownloader /MIT
     - A Python tool for discovering and downloading digitized historical sources from 14+ major digital libraries worldwide
@@ -1353,7 +1367,7 @@ modified: 2025-12-19T12:43:21.150Z
 - https://huggingface.co/spaces/gokaygokay/Florence-2/tree/main /python
   - `OCR with Region` 的任务会在图片上方画框突出有文本的位置, 最后输出带画框标记的图片
   - https://github.com/anyantudre/Florence-2-Vision-Language-Model
-    - juppyter示例
+    - jupyter示例
 - https://huggingface.co/spaces/prithivMLmods/Multimodal-OCR3/tree/main
   - https://prithivmlmods-multimodal-ocr3.hf.space/
   - 输出 markdown文本/html文本

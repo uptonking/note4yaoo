@@ -47,6 +47,21 @@ modified: 2024-02-14T12:35:31.547Z
 # discuss-web-fwk
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🆚 [Architecture Comparison Django vs. FastAPI : r/django _202601](https://www.reddit.com/r/django/comments/1qs5ewy/architecture_comparison_django_vs_fastapi/)
+  - Django is a Batteries included framework with pre build auth and many other features whilst FastAPI takes a more lightweight approach.
+- Maybe read the differences between each framework first. 
+  - One is a batteries-included web framework that ships with an ORM, authentication, permissions, admin UI, forms, sessions, and security middleware because it’s meant to build complete web applications. 
+  - The other is an API-first framework that deliberately doesn’t include those things and expects you to assemble them yourself.
+  - Treating them as directly comparable without that context is already a category error.
+
+- I don't know why people keep posting these kinds of comparisons between Django and FastAPI. They are quite literally meaningless.
+
 - ## Django now fully runs on Cloudflare Workers with D1 as the database _202504
 - https://x.com/G4brym/status/1915889702218928199
 - We don't use python because I don't want to manage servers and I don't like lambda sls. If python works on workers and has similar DX like TS. We're adding python to our stack

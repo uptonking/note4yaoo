@@ -310,6 +310,21 @@ modified: 2025-11-30T17:27:16.720Z
   - [Local file search engine that understands your documents (OCR + Semantic Search) - Open Source. : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qiuxko/local_file_search_engine_that_understands_your/)
   - if you are usin embeddings to search, does that mean you are maintaing a vector database of all files on disk? that would be a huge memory overhead?
     - Yes that's it. As you can see in the screenshot, the app displays the index size, which is always above 1 Go, because the embedding itself takes around 1.1 Go.
+
+- https://github.com/AKSarav/pdfstract /108Star/apache2/202601/python/js
+  - The Extraction and Chunking Layer in Your RAG Pipeline - Available as CLI - WEBUI - API
+  - Extract structured text, tables, and metadata from PDFs using various libraries (PyMuPDF4LLM, MarkItDown, Marker, Docling, PaddleOCR, DeepSeek-OCR, Tesseract, MinerU, Unstructured, and more)
+  - Chunk the text into smaller chunks using various libraries (Token, Sentence, Recursive, Table, Semantic, Code, Late, Neural, Slumber, and more)
+    - 10+ chunking methods powered by `Chonkie`.
+  - Embed the chunks using various libraries (Sentence Transformers, OpenAI, etc.)
+  - Multiple Output Formats: Markdown, JSON, and Plain Text
+  - On-Demand Model Downloads: Download ML models only when needed
+  - Batch Processing: Parallel conversion of 100+ PDFs with detailed reporting
+  - 依赖fastapi、Chonkie、PyMuPDF, Marker, Docling
+  - 🆚 [Built a small tool to compare PDF → Markdown libraries (for RAG / LLM workflows) : r/Rag _202507](https://www.reddit.com/r/Rag/comments/1m1j10e/built_a_small_tool_to_compare_pdf_markdown/)
+    - I’ve been exploring different libraries for converting PDFs to Markdown to use in a Retrieval-Augmented Generation (RAG) setup.
+    - But testing each library turned out to be quite a hassle — environment setup, dependencies, version conflicts, etc.
+    - Currently, it supports: docling pymupdf4llm markitdown marker
 # rag-examples
 - https://github.com/pymupdf/pymupdf4llm /1.2kStar/AGPL/202511/python/lib
   - https://pymupdf.readthedocs.io/en/latest/pymupdf4llm
@@ -1336,15 +1351,6 @@ modified: 2025-11-30T17:27:16.720Z
     - 支付：Lemon Squeezy
     - 部署：Vercel
 # chat-pdf
-- https://github.com/AKSarav/pdfstract /apache2/202511/python/js
-  - web application for converting PDFs to multiple formats using various state-of-the-art extraction libraries. Built with FastAPI backend and React frontend
-  - [Built a small tool to compare PDF → Markdown libraries (for RAG / LLM workflows) : r/Rag _202507](https://www.reddit.com/r/Rag/comments/1m1j10e/built_a_small_tool_to_compare_pdf_markdown/)
-    - I’ve been exploring different libraries for converting PDFs to Markdown to use in a Retrieval-Augmented Generation (RAG) setup.
-    - But testing each library turned out to be quite a hassle — environment setup, dependencies, version conflicts, etc.
-    - Currently, it supports: docling pymupdf4llm markitdown marker
-  - [Built a unified PDF extraction & benchmarking tool for RAG — PDFstract (Web UI • CLI • API) : r/Rag](https://www.reddit.com/r/Rag/comments/1pxom6i/opensource_pip_built_a_unified_pdf_extraction/)
-    - I have tried 100 pages and since pdfstract is a wrapper on top of libraries like unstructured, miner, docling, tessaract etc. The performance is subjective to the document and the system capacity. But it can be done
-
 - https://github.com/weiwill88/Local_Pdf_Chat_RAG /202510/python/inactive
   - 本地化智能问答系统 (FAISS版)
   - 混合检索：结合FAISS进行语义检索和BM25进行关键词检索，提高检索召回率和准确性

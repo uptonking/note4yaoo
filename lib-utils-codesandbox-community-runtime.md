@@ -300,7 +300,13 @@ modified: 2024-05-12T17:20:03.132Z
 
 - ## 
 
-- ## 
+- ## 14/15 年的样子开始搞容器，进程级别隔离+无状态大行其道，现在历史的车轮又回到强隔离+有状态, 以虚拟机为载体的 sandbox 需求 … 天天就知道造名词，地基不还是那个地基真是……
+- https://x.com/CMGS1988/status/2017142326829990201
+  - 底层没啥变化，hypervisor 已经定型了……
+  
+- 我们都用容器跑sandbox的，因为不需要kernel的操作，炸了就炸了
+  - 对内对外需求不一样…公有多租户容器就有点不太行
+- 加上 gVisor 呢？
 
 - ## [I'm building a Self-Hosted Alternative to OpenAI Code Interpreter, E2B : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1kxlx46/im_building_a_selfhosted_alternative_to_openai/)
 - What's the security model - looks like using a full VM but maybe pooling them?

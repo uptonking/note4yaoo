@@ -77,7 +77,9 @@ modified: 2024-09-08T18:57:12.231Z
 # discuss-toolchain-prompt
 - ## 
 
-- ## 
+- ## [Porting prompts from OpenAI/Claude to local Ollama models - best practices? : r/ollama](https://www.reddit.com/r/ollama/comments/1qrhttt/porting_prompts_from_openaiclaude_to_local_ollama/)
+- All local models are different, its impossible (or very hard) to make a tool that auto formats prompts in a way a very niche/task specific model will do great on, but also one a large generalized model will do well on with the same prommpt.
+  - Normally i rewrite prompts to the model im using, have experience with prompting and adapt to models overtime.
 
 - ## [大家在开发agent reAct的时候，对话历史要怎么管理？ _202601](https://linux.do/t/topic/1536012)
   - 比如用户提了一个任务，agent 为了完成这个任务执行了多轮的 reAct 工具调用。 并返回用户结果 接着假如用户在同一个对话中，提出下一个任务，那么问题来了。新任务要保留上一次任务的工具调用全过程吗？

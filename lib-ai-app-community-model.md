@@ -822,7 +822,16 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
-- ## 
+- ## [Getting OpenClaw to work with Qwen3:14b including tool calling and MCP support : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1qrywko/getting_openclaw_to_work_with_qwen314b_including/)
+  - I got local tool calling working on Qwen3:14b with ~40 tools, accessible through WhatsApp. 
+  - OpenClaw is an AI assistant framework that supports multiple messaging channels. It talks to its LLM backend via an OpenAI-compatible API (/v1/chat/completions).
+  - Why a bridge instead of adding tools directly in OpenClaw? OpenClaw supports custom tools natively. You could write each MCP tool as an OpenClaw extension. But I have multiple apps that need the same tools: OpenClaw for WhatsApp, Engram (my personal knowledge system), Jan.ai, etc. Writing each tool as a per-app extension means duplicating everything. With the bridge as a shared MCP layer, you configure your tools once, and any OpenAI-compatible client gets them. Just point it at :11435 instead of :11434.
+  - I tested both qwen3:8b and qwen3:14b on an M4-series Mac Studio with 64GB of RAM
+  - The 8b model is 3-5x faster but basically treats every message as a new conversation when there are 40 tool schemas in the context. OpenClaw sends the full message history (confirmed via logging: messages=16), so the problem isn't missing context. The model just can't follow it alongside those massive tool definitions.
+  - Verdict(裁定，判决): qwen3:14b. Quality over speed for now.
+  - The patch code is available as a GitHub Gist. Running this as a daily driver via WhatsApp and it's surprisingly capable for a 14b model.
+
+- I am having looping tool call issues with glm 4.7 flash 8bit running on lm studio with mlx. I just ask open claw ‘use browser to open google.com’ and it goes into a loop. I have tried all sampling combinations but nothing works. Please help
 
 - ## 🤔 [Why we went desktop and local-first for agents 6 months ago : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qr5v9d/why_we_went_desktop_and_localfirst_for_agents_6/)
   - We’ve been thinking a lot about first principles when building agent project, and one conclusion we keep coming back to is this: The first thing you should optimize for is the agent’s capability ceiling.

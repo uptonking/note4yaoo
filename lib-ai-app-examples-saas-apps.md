@@ -176,6 +176,7 @@ modified: 2025-02-21T17:17:42.225Z
   - 一个基于 Vue Flow 的可视化 AI 创作画布，支持文生图、视频生成等 AI 工作流的节点式编排。 
   - 撤销/重做 - 完整的操作历史记录
   - 类似comfyui的文生图
+  - [【开源自荐】花两天时间做了一个无限画布，开源了一个 乞丐版 lovart _202601](https://linux.do/t/topic/1438600)
 
 - https://github.com/onlook-dev/onlook /apache2/202502/ts
   - https://onlook.com/
@@ -567,4 +568,8 @@ modified: 2025-02-21T17:17:42.225Z
   - 基于文生视频模型自动生成分镜视频
   - 支持批量生成和异步任务处理
   - [【开源短剧】AI短剧创作工具 _202601](https://linux.do/t/topic/1431841)
+  - [开源短剧产品三周时间的总结和思考 _202601](https://linux.do/t/topic/1547232)
+  - https://github.com/chatfire-AI/huobao-canvas
+    - 火宝无限画布；支持文生图，图生图，图生视频，多模型切换。兼容 openai标准格式
+    - [【开源自荐】花两天时间做了一个无限画布，开源了一个 乞丐版 lovart _202601](https://linux.do/t/topic/1438600)
 # more

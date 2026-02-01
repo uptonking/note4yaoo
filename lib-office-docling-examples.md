@@ -92,6 +92,21 @@ modified: 2025-09-21T13:58:46.548Z
   - Local document caching for improved performance
   - Support for local files and URLs as document sources
   - RAG applications with Milvus upload and retrieval
+
+- https://github.com/AKSarav/pdfstract /108Star/apache2/202601/python/js
+  - The Extraction and Chunking Layer in Your RAG Pipeline - Available as CLI - WEBUI - API
+  - Extract structured text, tables, and metadata from PDFs using various libraries (PyMuPDF4LLM, MarkItDown, Marker, Docling, PaddleOCR, DeepSeek-OCR, Tesseract, MinerU, Unstructured, and more)
+  - Chunk the text into smaller chunks using various libraries (Token, Sentence, Recursive, Table, Semantic, Code, Late, Neural, Slumber, and more)
+    - 10+ chunking methods powered by `Chonkie`.
+  - Embed the chunks using various libraries (Sentence Transformers, OpenAI, etc.)
+  - Multiple Output Formats: Markdown, JSON, and Plain Text
+  - On-Demand Model Downloads: Download ML models only when needed
+  - Batch Processing: Parallel conversion of 100+ PDFs with detailed reporting
+  - 依赖fastapi、Chonkie、PyMuPDF, Marker, Docling
+  - 🆚 [Built a small tool to compare PDF → Markdown libraries (for RAG / LLM workflows) : r/Rag _202507](https://www.reddit.com/r/Rag/comments/1m1j10e/built_a_small_tool_to_compare_pdf_markdown/)
+    - I’ve been exploring different libraries for converting PDFs to Markdown to use in a Retrieval-Augmented Generation (RAG) setup.
+    - But testing each library turned out to be quite a hassle — environment setup, dependencies, version conflicts, etc.
+    - Currently, it supports: docling pymupdf4llm markitdown marker
 # examples
 - https://github.com/mozilla-ai/document-to-markdown /MIT/202506/python/inactive
   - Convert unstructured documents to markdown using the Docling.
@@ -137,12 +152,8 @@ modified: 2025-09-21T13:58:46.548Z
   - A RAG system designed for efficient processing of diverse content types with minimal computational overhead.
   - This solution won 1st place in the Secure RAG Challenge by UnderstandTech
 
-- https://github.com/AKSarav/pdfstract /apache2/202511/python/js
-  - web application for converting PDFs to multiple formats using various state-of-the-art extraction libraries. Built with FastAPI backend and React frontend
-  - [Built a small tool to compare PDF → Markdown libraries (for RAG / LLM workflows) : r/Rag _202507](https://www.reddit.com/r/Rag/comments/1m1j10e/built_a_small_tool_to_compare_pdf_markdown/)
-    - I’ve been exploring different libraries for converting PDFs to Markdown to use in a Retrieval-Augmented Generation (RAG) setup.
-    - But testing each library turned out to be quite a hassle — environment setup, dependencies, version conflicts, etc.
-    - Currently, it supports: docling pymupdf4llm markitdown marker
+- https://github.com/kv1830/fast_pdf_trans
+  - 基于`MinerU`实现pdf转markdown的功能，接着对markdown进行分割， 送给大模型翻译，最后组装翻译结果并由`pypandoc`生成结果pdf。
 # utils
 - https://github.com/messkan/rag-chunk /MIT/202511/python
   - A Python CLI to test, benchmark, and find the best RAG chunking strategy for your Markdown documents.

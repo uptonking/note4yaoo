@@ -18,6 +18,7 @@ modified: 2025-03-22T16:10:24.856Z
   - aisdk + docs/excel/image
   - ai-apps as ref: lasuite
   - ai时代的人工编辑, 可设计为特殊的human-in-the-loop
+  - 一切通知/消息，都可以设计为 ai的chat+自动化工具
 
 - ai-dev-xp
   - 难复现好的效果，同样的prompt+context，有时输出的效果就是不好
@@ -637,6 +638,8 @@ modified: 2025-03-22T16:10:24.856Z
     - 免费提供 glm flash
   - [太子公益 API](https://taizi.api.51yp.de5.net/console/personal), 签到
     - cc支持
+  - [八岁公益站](https://ai.xoooox.xyz/)
+    - cc
   - [摸鱼公益](https://clove.cc.cd/console/personal), 可签到
     - [【摸鱼公益】 自己的反重力和codex有一些不怎么用，开个摸鱼站给需要的用用 ](https://linux.do/t/topic/1513131)
     - 后续只能使用积分充值。随用随冲。
@@ -1157,6 +1160,11 @@ modified: 2025-03-22T16:10:24.856Z
   - 提供了很多免费小模型，如 8b/4b, glm-4.6v-flash, 
   - AI图片检测: 并发数不限制，根据负载动态调整
 
+- gitcode - [AtomGit AI社区 - 模型: 开源大模型 ](https://ai.gitcode.com/models)
+  - [AtomGit AI社区 - 模型广场](https://ai.gitcode.com/serverless-api)
+  - 注册即可领取 2M 免费 Token
+  - 免费容器 1000 核时/月
+
 - [DMXAPI官网：中国多模态大模型API聚合平台](https://www.dmxapi.cn/rmb)
 
 - [Moonshot AI 开放平台 - 充值与限速](https://platform.moonshot.cn/docs/pricing/limits)
@@ -1258,6 +1266,11 @@ modified: 2025-03-22T16:10:24.856Z
 - [Canopy Wave](https://cloud.canopywave.io/)
 
 ## hosting
+
+- [LD士多 - LDC积分商城](https://ldst0re.qzz.io/)
+
+- [风萧萧公益机场](https://chanel.weyolo.com)
+  - [萧草 · 臻选](https://shop.sxxe.net/)
 
 - [Huggingface和Cloudflare羊毛自建代理的方法 ](https://linux.do/t/topic/1411544)
   - 利用cf大善人的网络代理加速，利用hug大善人的免费域名和证书，达到我们的目的

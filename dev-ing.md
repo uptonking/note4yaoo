@@ -296,6 +296,23 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-log
   - ?
 
+## 0201
+
+- 美国最大电子零售商处理摸摸机, 指的是那个平台或网站
+  - Best Buy (百思买)：是美国最大的消费电子零售商（实体+线上）。
+  - 而在海淘圈或数码爱好者口中，专门处理“摸摸机”（即被顾客退货、仅开箱或短暂使用过的产品）的平台，通常指的是 Best Buy 官网旗下的 Open-Box 板块。
+  - Open-Box (开箱版)：这是 Best Buy 官网上一个专门的分类。由于美国退货政策宽松（通常为14-30天无理由退货），许多顾客买回家拆封试用几天后退货，这些产品经过检测后会重新上架销售，价格通常比全新版便宜很多。
+  - 为什么叫“摸摸机”：因为这些机器被上一任买家“摸过”（使用过），所以中文社区戏称为“摸摸机”。
+  - CowBoom 曾是 Best Buy 旗下的独立清仓网站，专门用来以极低的价格甩卖二手、翻新和开箱产品。 现状：该网站已于几年前被关闭，相关业务已完全整合回 Best Buy 官网的 Outlet / Open-Box 频道 以及 Best Buy 在 eBay 上的官方店。
+- 在 Best Buy 购买“摸摸机”时，通常会看到以下等级，成色越差价格越低：
+  - Excellent - Certified：官方认证，接近全新，通常有原盒和完整配件。
+  - Excellent：外观看起来像新的，无明显划痕，配件齐全。
+  - Satisfactory：有轻微划痕或使用痕迹，可能缺少非必要配件。
+  - Fair：有明显划痕或凹痕，可能缺少重要配件，但功能正常。
+- 另一个常见平台：Amazon Warehouse (现更名为 Amazon Resale)
+  - 亚马逊处理退货产品的部门原名叫 Amazon Warehouse（最近改名为 Amazon Resale/Renewed）。很多海淘用户也会去那里淘二手数码产品。
+# dev-01
+
 ## 0130
 
 - 🤔 i want to implement a rag app for pdf files. To support scanned pdfs, i want to create a solution that support different ocr models like mineru and paddleocr. but the outputs of mineru and paddleocr is different . Is there a popular ocr protocol or  specification that unifies the outputs of different ocr models? analyze popular apps or open source projects, and explain to me what's the best practice
@@ -318,12 +335,6 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
   - Step 2: Implement Adapter Pattern
   - Step 3: Factory & Configuration
 - IBM's Docling implements exactly this pattern with their `DoclingDocument` class—a unified internal representation that can export to Markdown, HTML, or JSON. They support plugging in different layout models and OCR backends while maintaining a consistent document object model 
-
-- 
-- 
-- 
-- 
-- 
 
 ## 0129
 

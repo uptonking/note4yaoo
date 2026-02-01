@@ -85,6 +85,12 @@ modified: 2022-11-07T10:25:12.034Z
     - 如果是很小的论坛，使用tg作为图床即可。 实在付不起图片储存的费用，也可以让用户自己使用图床，然后以markdown，html，bbcode等方式前端显示，南plus就是这样干的
     - 让用户用自己的图床是很危险的行为，一个xss攻击就够你喝一壶了
     - 没人的论坛，腾讯云99/年足够了
+  - [想知道始皇运营L站一个月要花多少钱？ _202601](https://linux.do/t/topic/1549381)
+    - L 站至少也有 7 万多人（而且大部分活跃度都不低），光一个.do 的域名都很多米，L 站的服务器至少也是个 16h16g 吧。。。一个月成本不得过千？这还不考虑花费的精力
+    - 202412: 黑五加量不加价购入了一台 192G 内存裸金属服务器，拟于 2024-12-06T开始维护迁移
+    - do 一年 300, 服务器可能是 ovh 你拉到顶配试试, 顺便 cf 商业版
+  - [还差一点点，但服务器已经撑不住了 _202505](https://linux.do/t/topic/627271)
+    - 我又果断入手一台 192G 裸金属，准备横向扩容
 
 - [Hugging Face Spaces](https://huggingface.co/docs/hub/en/spaces-overview)
   - Spaces stores your code inside a git repository, just like the model and dataset repositories. 
