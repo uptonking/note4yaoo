@@ -89,6 +89,10 @@ modified: 2021-01-04T16:21:18.990Z
   - Zoom, compass, locate, and fullscreen controls
   - 📡
     - 天地图版
+
+- https://github.com/alamenai/terrae /MIT/202602/ts
+  - https://terrae.vercel.app/
+  - Beautiful map components built with React, TypeScript, Tailwind CSS, and Mapbox GL JS. Perfect companion for shadcn/ui.
 # leaflet
 - https://github.com/geoman-io/leaflet-geoman /MIT/202403/js
   - https://geoman.io/leaflet-geoman

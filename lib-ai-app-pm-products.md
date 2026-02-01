@@ -41,6 +41,7 @@ modified: 2025-03-22T16:10:24.856Z
   - cost: unlimited tokens, local models支持超大context, 利用本地模型ocr/文生图
     - 文本模型有很多api提供商可选择，ocr模型的api可选择的不多，定制模型只能本地运行
     - 简单的 tool call 使用本地模型更高效, 可考虑将tool call小模型内置在软件中
+  - 多模态的场景，本地可以对图片预处理，如压缩、裁剪、base64编码
   - 🤔 能充分利用本地文件系统和命令行的资源，进行数据分析/文件修改/...
   - network agnostic
   - 发挥端侧计算的能力，如总结/查询，而不侧重端侧聊天
@@ -511,6 +512,7 @@ modified: 2025-03-22T16:10:24.856Z
 - news
   - [寻找L站开源作者，UUcode送商业级API额度—— 优质开源项目扶持计划 1228](https://linux.do/t/topic/1370667)
   - [华为云 CodeArts 试用期间开放GLM4.7与DeepSeek V3.2模型无限畅用，大善人还是小白鼠？ _202601](https://linux.do/t/topic/1536794/5)
+  - [Kimi K2.5 成为 OpenClaw 首个宣布免费使用的主力模型 ](https://linux.do/t/topic/1551562)
 
 - claude-news
   - [Ollama v0.14.0 and later are now compatible with the Anthropic Messages API _202601](https://ollama.com/blog/claude)
@@ -906,6 +908,10 @@ modified: 2025-03-22T16:10:24.856Z
 
 - modelscope对部分模型提供了免费生图的额度, 如z-image-turbo
 
+- [Cogview-3-Flash - 智谱AI开放文档](https://docs.bigmodel.cn/cn/guide/models/free/cogview-3-flash)
+  - 智谱推出的免费图像生成模型，能够根据用户指令生成符合要求且美学评分更高的图像
+  - 支持多种分辨率，包括 1024x1024、768x1344、864x1152、1344x768、1152x864、1440x720、720x1440 等
+
 - image-api
   - [Huan API](https://ai.huan666.de/pricing)
   - [香草API](https://ai.xiangcao.de/pricing)
@@ -913,6 +919,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [pollinations.ai](https://enter.pollinations.ai/)
     - [基于Pollinations的图像生成接口的工作台  _202601](https://linux.do/t/topic/1423187)
     - 1 额度可生成张数: z-image--5k, sdxl--3k, seedream--25
+    - 已经被阉割了，现在免费的生图质量极差
   - [啾啾小铺](https://api.usegemini.xyz/pricing)
     - [NanoBananaPro 4K生图公益 ](https://linux.do/t/topic/1486971)
     - 注册送100额度，用完重新注册即可; 不要走 linux.do 渠道注册就好了
@@ -961,6 +968,7 @@ modified: 2025-03-22T16:10:24.856Z
     - Free AI Image and Video Generation API Service - Based on reverse engineering of Jimeng AI (China site) and Dreamina (international site).
     - [【即梦jimeng/dreamina官网2api】10/20更新：双站均支持文生图和图生图  _202509](https://linux.do/t/topic/995691)
     - 即梦 jimeng 和 dreamina 文生图和图生图的官网 api，借鉴了几位大佬的项目，但他们的参数都有些小问题，稍加改进下，稳定性强了不少，目前只测试了文生图和图生图功能
+  - [[Flow2api] 无限次数的banana pro！逆向账号池 ](https://linux.do/t/topic/1214169)
 
 - tutorials-image
   - https://github.com/rere43/image-generator-hybrid
@@ -987,6 +995,9 @@ modified: 2025-03-22T16:10:24.856Z
   - [【老魔公益站】沉浸式翻译站开放注册 ](https://linux.do/t/topic/1514451)
   - translate：沉浸式翻译分组，限速 300次/5min
   - cc-glm4.7和cc-m2.1：支持cc的分组，上游分别路由到glm-4.7和minimax-m2.1，限速 35次/5min
+
+- [New API](https://new-api-latest-1-eu26.onrender.com/pricing)
+  - 无法签到, [公益API站~ 可用于翻译  ](https://linux.do/t/topic/1552193)
 
 ## llm-api-official/router/gateway/aggregator
 

@@ -149,7 +149,22 @@ modified: 2023-09-25T09:00:49.722Z
 
 - ## 
 
-- ## 
+- ## 怎么设计一个为 AI 时代准备的数据存储引擎
+- https://x.com/dotey/status/2017690558613930229
+  - 核心问题是：做 AI 应用时，数据结构经常要变。今天 AI 输出 12 个字段，明天可能变成 30 个。传统数据库改表结构要走流程、要停机，根本跟不上这个节奏。
+- 若石的解决方案组合了三个技术点：
+  1. 用 EAV 模式 + JSON Schema，实现“零 DDL”，加字段不用改表结构
+  2. 用 PostgreSQL 的 CTE + JSON_AGG，把 N+1 查询问题干掉，延迟从 1 秒降到 25 毫秒
+  3. 用 DuckDB + Parquet 做冷热分离，同时用 Anti-Join 机制保证查询不会读到脏数据
+  - [优化 EAV 模式的查询性能 ](https://blog.ltbase.dev/posts/cn/eav)
+
+- 还是对 PG 不熟悉，用 JSONB 就行了。重新发明了生成列，以及表达式索引就能解决的问题，闭门造车。
+  - 文档其实里谈到了JSONB的限制。
+
+- 把字段、属性按行存，读时 merge 的 write optimization 范式未必适合所有的 ai 业务。大部分 ai 业务还是读占比 90% 以上，read optimization 效果会更好
+
+- 为什么不直接mongodb？
+  - 如果已经在用mongodb，那确实没问题，完全可以继续用。如果之前是用PG，再加一个数据库就不太划算了。另外，如果有OLAP需求，mongodb也还是需要做forma里CDC那部分工作
 
 - ## [Can someone kindly clarify what is the meaning of this default value ARRAY[]::character varying[]::character varying(255)[] : PostgreSQL _202201](https://www.reddit.com/r/PostgreSQL/comments/rus64y/can_someone_kindly_clarify_what_is_the_meaning_of/)
 - What you're proposing is EAV design and it is known to have a poor performance at larger scale. Hstore or array or jsonb is often better.

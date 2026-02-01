@@ -133,8 +133,29 @@ for {
   - 而 Coze 这类专注于​​自动化任务和AI应用编排​​的平台，因其任务多为计算和调用，​​DAG模型在性能和直观性上更具优势​​。
 # discuss-alternatives 🆚
 - ## 
+
 - ## 
-- ## 
+
+- ## 现在大家开发 Agent 用的都是什么框架？ LangChain? Vercel AI SDK? _202602
+- https://x.com/fkysly/status/2017551264654221400
+- 一个openai + while true 先跑起来
+
+- 虽然功能强大，不开源还是有点坑，就像一个黑盒子一样，我都想替换成strands agents了，
+
+- Claude Agent SDK 能快速跑起来一个功能对齐 Claude Code 的Agent，早期验证需求可以，坑和局限性挺多，可以看我往期文章。 真正想对 Agent 有更多的自由度，继续 Vercel AI SDK 开发不错
+  - [Claude Agent SDK 使用过程中遇到的坑 | liruifengv](https://liruifengv.com/posts/claude-agent-sdk-usage/)
+- Claude Agent SDK 门槛低但坑多，尤其工具循环易无限递归或幻觉。
+  优化方案：
+  1. Prompt 强化 early_stop 与 structured output；
+  2. 加 max_iterations 限制；
+  3. 用 memory（如 Redis）持久化状态；
+  4. 代码任务配 sandbox 执行防 unsafe。
+  你的避坑指南超实用！建议开源个优化 template
+
+- 复杂的场景用不了框架, 简单的场景不需要框架, 俺的经验是越轻量越好, 真正需要的就是一个 generateText 函数+ 可随意插拔的 provider, Vercel AI SDK 挺好的
+
+- 自用的话已经不开发了，全部cliagent。如果公用的话，那还是langgraph吧
+
 - ## [LangGraph, Google ADK, or LlamaIndex. How would you compare them? : r/LangChain _202504](https://www.reddit.com/r/LangChain/comments/1jw87c0/langgraph_google_adk_or_llamaindex_how_would_you/)
 - langgraph: very low level, will give you a lot of control over your agents. also very good focus on persistence (enabling memory, human in the loop, etc)
   - llamaindex: more focused on rag but has some agent things, but just less built out around that area
@@ -238,6 +259,7 @@ for {
   - Agent is a function, so simply use generate object inside. The helpers we provide operate on text for now (keeping things slim), but adding that if requested isn’t too much of work
 - Does it support streaming?
   - Not yet, keeping scope limited. Theoretically possible
+
 # discuss-issues
 - ## 
 

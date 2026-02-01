@@ -52,7 +52,9 @@ modified: 2025-11-19T17:59:15.580Z
 - https://github.com/jgordley/MermaidGPT /202405/python/inactive
   - simple ChatGPT and Mermaid.js integration that allows you to generate diagrams using natural language
 # utils
-
+- https://github.com/1jehuang/mermaid-rs-renderer /MIT/202601/rust/NoDeps
+  - A fast native Rust Mermaid diagram renderer. No browser required. 500-1000x faster than mermaid-cli.
+  - mmdr renders diagrams 100-1800x faster than mermaid-cli by eliminating browser overhead.
 # integrations
 - https://github.com/apache/echarts-from-mermaid /202503/ts/inactive
   - A plugin that enables Apache ECharts to render charts using Mermaid-like syntax.

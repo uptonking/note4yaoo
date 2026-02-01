@@ -376,6 +376,14 @@ PP Speed: Q3 GGUF: 50 t/s
 
 - ## 
 
+- ## 
+
+- ## [Why no NVFP8 or MXFP8? : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1qsi8n2/why_no_nvfp8_or_mxfp8/)
+- I'm still sad Ampere doesn't support native FP8
+- Neither does Blackwell, at least at W8A8. Ada and Hopper only.
+
+- The reason is that most llama.cpp users are memory capacity bound on model and memory bandwidth bound on inference speed. All that matters for the one-user-per-gpu domain is quantization accuracy per bit. The llama.cpp k quants are significantly better than microscaled floats in that regard because they offer a scale and offset per block instead of just a scale. Mxfp8 and nvfp8 are jointly optimized to balance precision and ease of hardware acceleration which doesn’t matter if you have boatloads of unused compute laying about because you’re memory bound. Switching from the gguf 8 bit format to mxfp8 or nvfp8 could probably make prefill faster but it wouldn’t realistically improve tok/s during generation and would would make the models less accurate approximations of the unquantized weights. It only makes sense if you’re serving huge batches and everyone that’s doing that uses vLLM which has prioritized microscaled float support. For everyone else it’s fine to just dequantize the gguf k quant weights to fp16 on the gpu during inference
+
 - ## 🤔 [I found that MXFP4 has lower perplexity than Q4_K_M and Q4_K_XL. : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qrzyaz/i_found_that_mxfp4_has_lower_perplexity_than_q4_k/)
   - I am currently serving LLM models using a Tesla P40 and llama.cpp. When running models in the 30–32B range, I usually rely on 4-bit quantization. 
   - out of curiosity sparked by MXFP4’s fast speed, I compared Q4_K_M, Q4_K_XL, and MXFP4 quantization methods for the GLM-4.7-Flash and Nemotron-3-nano models using the llama-perplexity command.
@@ -1239,7 +1247,11 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 
 - ## 
 
-- ## 
+- ## [Realizing I can run much larger models than expected. : r/LocalLLM _202602](https://www.reddit.com/r/LocalLLM/comments/1qsk4ic/realizing_i_can_run_much_larger_models_than/)
+  - I only recently discovered that not only can I run the Q4 version of GPT-OSS 120B, but that it runs remarkably fast on my system with 24GB vram and 64gb of system ram
+- Everyone's getting 55-65 tps on the amd strix halo running 120b gptoss on native 4 bit, and 35-40 TPS on the 8 bit with some creative memory allocation.
+
+- Just remember q4 quants reduce models precision as well. Q4 range is reduced to 256 and bf/fp is 65, 536. The accuracy is gutted in 4bit. Depending on what you are doing and the accuracy that is required it would be better to use fewer parameters and higher quants and try to stick with fp16. When this extreme compression is done on a reasoning or thinking model the effect is even worse.
 
 - ## 🆚 [[Experiment] Three identical Qwen2.5:7b runs, three distinct behavioral strategies. One hit max reported metrics and started failing to execute actions. [Full data + code] : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1obkn0d/experiment_three_identical_qwen257b_runs_three/)
 - 

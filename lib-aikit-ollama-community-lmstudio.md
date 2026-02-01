@@ -201,7 +201,8 @@ modified: 2026-01-14T18:58:32.523Z
 
 - ## 
 
-- ## 
+- ## [0.4.0 Deepseek OCR2 not working · Issue · lmstudio-ai/lmstudio-bug-tracker _202601](https://github.com/lmstudio-ai/lmstudio-bug-tracker/issues/1437)
+  - LM Studio reports that the model is not supported. My runtime is up to date and uses the latest release of mlx-vlm, which lists DeepSeek OCR2 support in its changelog.
 
 - ## [Phi 3.5 Vision Instruct Fails to Load "Trust remote code" error · Issue · lmstudio-ai/mlx-engine _202411](https://github.com/lmstudio-ai/mlx-engine/issues/29)
 - 👷: If you're seeing a `Trust remote code` issue, it means that the model is not (yet) supported by `mlx-engine` . Specifically, support for that model's tokenizer and/or config has not been merged into huggingface transformers.

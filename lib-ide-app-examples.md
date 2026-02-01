@@ -408,6 +408,13 @@ modified: 2024-08-24T16:30:20.218Z
   - Hound itself is a static React frontend that talks to a Go backend. 
   - Currently Hound is only tested on MacOS and CentOS, but it should work on any *nix system. Hound on Windows is not supported
   - By default Hound polls the URL in the config for updates every 30 seconds. You can override this value
+
+- https://github.com/facebookexperimental/semcode /MIT/202601/rust
+  - a semantic code search tool for C/C++ codebases that indexes your codebase and allows you to search for functions, types, and code patterns using both exact matches and semantic similarity.
+  - Rust indexing is now supported. This just uses treesitter, but all the semcode features are there.
+  - Fast indexing of C/C++ codebases using Tree-sitter
+  - Interactive query interface with comprehensive command set
+  - MCP server for integration with AI code tools
 # code-rag
 - https://gitlab.com/gitlab-org/rust/knowledge-graph /gitlab-ee/202510/rust
   - https://gitlab-org.gitlab.io/rust/knowledge-graph/

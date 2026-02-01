@@ -41,9 +41,6 @@ modified: 2025-09-21T13:58:46.548Z
   - https://github.com/PDFMathTranslate/PDFMathTranslate /29.8kStar/AGPLv3/202511/python 
     - ✨ 可参考翻译后pdf布局不变的实现方式, 特别是表格中英文变中文但布局不变
     - 支持双栏布局显示原文和翻译，体验非常好
-  - https://github.com/getomni-ai/zerox /MIT/202505/python/ts/inactive
-    - OCR & Document Extraction using vision models
-    - Convert that file into a series of images, Pass each image to GPT and ask nicely for Markdown
     - [Upload your documents and see how OmniAI reads scans, PDFs](https://getomni.ai/ocr-demo)
   - https://github.com/pdfme/pdfme /MIT
     - 提供了机遇json模版生成pdf的方案

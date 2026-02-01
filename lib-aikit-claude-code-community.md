@@ -208,6 +208,28 @@ export ANTHROPIC_SMALL_FAST_MODEL="claude-sonnet-4-5-20250929"
 - Claude Code is very helpful for troubleshooting and writing scripts for daily sysadmin / SRE tasks. For example, I haven't worked with Windows at all (100% Unix — Linux and FreeBSD), but created a couple of pretty complex scripts in Powershell.
 
 - You're absolutely right! I shouldn't have run `rm -rf /`
+# discuss-internals
+- ## 
+
+- ## 
+
+- ## 
+
+- ## If you use LSP plugins in Claude Code, do you feel like it helps Claude produce better output?
+- https://x.com/jarredsumner/status/2017704989540684176
+  - Thinking of unshipping it due to many reports of having a large negative performance impact (clangd & rust-analyzer love using 40 GB of ram) I don’t use this feature myself because claude can just run the build to know
+- I’ve been using semcode for indexing and working with Linux codebase. 
+- I had to remove it because the swift one didn't work and just added garbage fake errors in every message.
+- worse with Swift. Incorrectly flags many times
+- The swift LSP flags too many false negatives. I turned it off.
+
+- I switched to pathfinder cli/mcp lightweight than LSP for python
+
+- The only reason for LSP is global re-name and find-references to avoid false positives while greping and filling context window with 100s of edits. I feel that even current gen of models got so good at understanding source code that they don't really need symbolic search that LSP provides to 'understand' dependencies between modules
+
+- Not a CC user myself, so can only say this: - it noticeably helps in opencode (any model incl Opus) - accidentally running session in parent folder degrades experience
+
+- In OpenCode it tends to divert the focus of the model to the LSP feedback which can get it stuck and lose the context of the overall change it started with
 # discuss
 - ## 
 

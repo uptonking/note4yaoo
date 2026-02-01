@@ -132,6 +132,19 @@ modified: 2026-01-15T15:33:18.008Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Here is why you should/shouldn't purchase Strix Halo : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1qsww1g/here_is_why_you_shouldshouldnt_purchase_strix_halo/)
+- Compatibility with general programs → strix halo (due to DGX Spark being ARM-based).
+- Why not used 3090 with 128GB of used DDR5?
+  - Electricity → strix halo is more efficient, so lower bill.
+  - Performance → the 3090 is so fast, but you probably need to offload so lower speeds, unless it's acceptable and you rarely run models larger than 30B so it's faster because u be on GPU more
+  - Safety → used parts are high-risk, you may receive genuine 3090, a modified one or a brick.
+- why not a refurbished/used Mac M1 Ultra instead?
+  - Mac M1 ultra has the some of the same problems that the DGX Spark contains because it's an ARM CPU, So it's still less compatible as a daily driver, unless your main use case is professional and don't mind never running an OS other than MacOS, it has 800 GB of bandwidth so nearly 3x of the strix and the spark.
+
 - ## [8x AMD MI50 32GB at 26 t/s (tg) with MiniMax-M2.1 and 15 t/s (tg) with GLM 4.7 (vllm-gfx906) : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qjaxfy/8x_amd_mi50_32gb_at_26_ts_tg_with_minimaxm21_and/)
   - MiniMax-M2.1 AWQ 4bit @ 26.8 tok/s (output) // 3000 tok/s (input of 30k tok) on vllm-gfx906 with MAX context length (196608)
   - GLM 4.7 AWQ 4bit @ 15.6 tok/s (output) // 3000 tok/s (input of 30k tok) on vllm-gfx906 with context length 95000

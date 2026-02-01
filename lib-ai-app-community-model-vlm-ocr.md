@@ -33,6 +33,26 @@ modified: 2025-11-06T18:49:13.977Z
   - 交互与mineru类似
   - [PaddleOCR-VL Online Demo - a Hugging Face Space by PaddlePaddle](https://huggingface.co/spaces/PaddlePaddle/PaddleOCR-VL_Online_Demo)
 # models-vlm/ocr-xp
+- ocr-pros
+  - position data for layout and characters
+  - confidence level for characters
+  - faster than vlm
+
+- ocr-cons
+  - 文字是独立的图形，缺少语义，不利于提取信息
+  - bad at handwriting recognition
+
+- vlm-pros
+  - 识别出的文本一般是语义化的段落， 便于提取信息
+  - 对于非文档类型的文件识别更强大，如倾斜海报中的文字
+  - simpler than the traditional ocr pipeline
+  - powerful: ocr + qa + image-caption + translation
+  - good at handwriting recognition
+
+- vlm-cons
+  - hallucination for blurry text
+  - slower than ocr
+
 - toolchain
   - 虽然很多ocr模型官方不支持， 但社区量化版可能支持，需要具体尝试
   - 不同vlm/ocr模型的输出格式不同, 统一输出内容是否存在需求? 目前对blocks/tags的定义缺乏统一规范(各项目都自定义)
@@ -181,6 +201,30 @@ modified: 2025-11-06T18:49:13.977Z
 
 - ## 
 
+- ## 🆚 [Show HN: Benchmarking VLMs vs. Traditional OCR | Hacker News _202502](https://news.ycombinator.com/item?id=43118514)
+  - we released the Zerox package last year (https://github.com/getomni-ai/zerox). And we wanted to put some numbers behind it. So we’re open sourcing our internal OCR benchmark + evaluation datasets.
+  1. We are using JSON accuracy as our primary metric. The end goal is to evaluate how well each OCR provider can prepare the data for LLM ingestion.
+  2. This methodology differs from a lot of OCR benchmarks, because it doesn't rely on text similarity. We believe text similarity measurements are heavily biased towards the exact layout of the ground truth text, and penalize correct OCR that has slight layout differences.
+  3. Every document goes Image => OCR => Predicted JSON. And we compare the predicted JSON against the annotated ground truth JSON. The VLMs are capable of Image => JSON directly, we are primarily trying to measure OCR accuracy here. Planning to release a separate report on direct JSON accuracy next week.
+
+- As far as I'm concerned, all of these specialty services are dead compared to a generalized LLM like OpenAI or Gemini.
+  - I wrote in a previous post about how NLP services were dead because of LLMs and obviously people in NLP took great offense to that. But I was able to use the NLP abilities of an LLM without needing to know anything about the intricacies of NLP or any APIs and it worked great. This post on OCR pretty much shows exactly what I meant. Gemini does OCR almost as good as OmniAI (granted I've never heard of it), but at 1/10th the cost. OpenAI will only get better very quickly. Kudos to OmniAI for releasing honest data, though.
+  - Sure you might get an additional 5% accuracy from OmniAI vs Gemini but a generalized LLM can do so much more than just OCR.
+
+- OCR seems to be mostly solved for 'normal' text laid out according to Latin alphabet norms (left to right, normal spacing etc.), but would love to see more adversarial examples. We've seen lots of regressions around faxed or scanned documents where the text boxes may be slightly rotated (e.g. https://www.cad-notes.com/autocad-tip-rotate-multiple-texts-...) not to mention handwriting and poorly scanned docs. Then there's contextually dependent information like X-axis labels that are implicit from a legend somewhere, so its not clear even with the bounding boxes what the numbers refer to. 
+  - This is where VLMs really shine: they can extract text then use similar examples from the page to map them into their output values when the bounding box doesn't provide this for free.
+
+- Looking at the sample documents, this seems more focused on tables and structured data extraction and not long-form texts. The ground truth JSON has so much less information than the original document image. I would love to see a similar benchmark for full contents including long-form text and tables.
+
+- The benchmark I most want to see around OCR is one that covers risks from accidental (or deliberate) prompt injection - I want to know how likely it is that a model might OCR a page and then accidentally act on instructions in that content rather than straight transcribing it as text.
+
+- ## 🆚 [Docling, how does it work with VLM? : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p9zvkl/docling_how_does_it_work_with_vlm/)
+  - i have a need to convert PDF to text for data extraction. Regular/Traditional OCR does very good job but unfortunately it does not take into consideration the layout, so while each word is perfectly recognized the output is a gibberish (if you try to read it). Understood each word but actual text does not make sense.
+  - VLMs, such as Qwen3-VL or OpenAI do a good job producing markdown considering layout, so it makes sense but unfortunately the actual OCR is not nearly as good. It hallucinates often and no coordinates where the word was found.
+  - So now, i am looking at Docling, it's using custom OCR but then sends for processing to VLM.
+  - Question is, What is the output of Docling? Docling tags which is a "marriage" of two worlds OCR and VLM?
+  - how does it marry VLM output with OCR output? Or is it one or another?
+
 - ## [Show HN: PDF to MD by LLMs – Extract Text/Tables/Image Descriptives by GPT4o | Hacker News _202409](https://news.ycombinator.com/item?id=41614126)
 - Does it do image to MD too?
   - Unless the only thing you want is a description of the image, then the real answer is NO. You can get an LLM to do something like "If you encounter an image that is not easily convertable to standard markdown, insert a [[DESCRIPTION OF IMAGE]] here." placeholder, but at that point you've lost information that may be salient to the original PDF.
@@ -229,7 +273,10 @@ modified: 2025-11-06T18:49:13.977Z
 
 - ## 
 
-- ## 
+- ## 🌰 [Local VLMs for handwriting recognition — way better than built-in OCR : r/Supernote _202512](https://www.reddit.com/r/Supernote/comments/1pqs7zy/local_vlms_for_handwriting_recognition_way_better/)
+- I also experimented with with tessaract and was heavily disappointed. I agree that local VLM is the way to go, but that latency is kinda off putting. 
+
+- Not only on-device recognition is not on par, but it is also too slow to be usable. Doing OCR, exporting the file somewhere, looking it up on the computer, etc... too slow and pointless. And it does nothing for my memory retention.
 # discuss-solutions
 - ## 
 
@@ -237,7 +284,14 @@ modified: 2025-11-06T18:49:13.977Z
 
 - ## 
 
-- ## 
+- ## [Most efficient way to classify rotated images before sending them to a VLM : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1pku9qo/most_efficient_way_to_classify_rotated_images/)
+  - I have seen paddleocr supports it natively. But I still need a generic option which can work with others
+
+- You could try using OpenCV to detect text orientation - it's pretty lightweight and works well for documents with regular text layouts. Just run a quick angle detection before your VLM pipeline
+  - That works for slightly tilted or skewed texts right, afaik. Does it work for complete 90 or 180 degree rotations?
+
+- Tesseract OCR engine orientation and script detection (OSD). It detects 90, 180, 270 degrees of rotation. https://pyimagesearch.com/2022/01/31/correcting-text-orientation-with-tesseract-and-python/
+  - I did look into tesseract as well, hoping there was something lighter than this
 
 - ## [现在怎么处理pdf文件呢 ](https://linux.do/t/topic/1420032)
 - 可以用mineru提取出来，然后把图片的位置替换为对应的图片描述，gemini可以直接解析，我猜测他们应该也是对pdf做了解析，将其转为了文本；或者把pdf为每一页提取为一张图片给LLM进行处理
@@ -432,7 +486,7 @@ modified: 2025-11-06T18:49:13.977Z
   - Regular/Traditional OCR does very good job but unfortunately it does not take into consideration the layout, so while each word is perfectly recognized the output is a gibberish (if you try to read it). Understood each word but actual text does not make sense.
   - VLMs, such as Qwen3-VL or OpenAI do a good job producing markdown considering layout, so it makes sense but unfortunately the actual OCR is not nearly as good. It hallucinates often and no coordinates where the word was found.
 
-- ## 🤔 [Do we really need traditional OCR and layout models at this point, since VLMs have improved so much. : r/LocalLLaMA _202503](https://www.reddit.com/r/LocalLLaMA/comments/1jmcbsk/do_we_really_need_traditional_ocr_and_layout/)
+- ## 🤔🆚 [Do we really need traditional OCR and layout models at this point, since VLMs have improved so much. : r/LocalLLaMA _202503](https://www.reddit.com/r/LocalLLaMA/comments/1jmcbsk/do_we_really_need_traditional_ocr_and_layout/)
 - An affordable top-loading scanner can scan about 25 pages per minute.
   - If you needed to scan and OCR five hundred printed pages, how long do you think it would take a vision model to get it done?
   - Traditional OCR can work faster than the scanner scans pages, and on much more modest hardware.
@@ -649,6 +703,43 @@ modified: 2025-11-06T18:49:13.977Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 🆚 [Benchmark Paper: Vision-Language Models vs Traditional OCR in Videos : r/LocalLLaMA _202502](https://www.reddit.com/r/LocalLLaMA/comments/1ioi4lm/benchmark_paper_visionlanguage_models_vs/)
+  - A new benchmark paper just dropped evaluating how well Vision-Language Models (VLMs) perform compared to traditional OCR tools in dynamic video environments.
+  - Three state-of-the-art VLMs – Claude-3, Gemini-1.5, and GPT-4o – were benchmarked against traditional OCR tools like EasyOCR and RapidOCR, using metrics such as Word Error Rate (WER), Character Error Rate (CER), and Accuracy.
+  - VLMs outperformed traditional OCR in many cases, demonstrating robustness across varied video contexts.
+  - Challenges persist – hallucinated text, security policy triggers, and difficulty with occluded/stylized text.
+
+- ## 🆚 [VLM's vs PaddleOCR vs TrOCR vs EasyOCR : r/computervision _202505](https://www.reddit.com/r/computervision/comments/1kt3p8i/vlms_vs_paddleocr_vs_trocr_vs_easyocr/)
+  - I am working on a hardware project where I need to read alphanumeric texts on hard surfaces(like pipes and doors) in decent lighting conditions. The current pipeline has a high-accuracy detection model, where I crop the detections and run OCR over that, but I haven't been able to achieve anything above 85%(TrOCR)(also achieved 82.56% on paddleOCR, so I prefer Paddle as the edge compute required is much lower)
+- The PaddleOCR has 3 models or steps:
+  - Detection (detecting bounding boxes of possible text)
+  - Classification (detecting rotated text and orientation)
+  - Recognition (OCR step reading cropped bounding boxes to string).
+  - I had a use case where I already have bounding boxes so I only required last Recognition model to run it.
+
+- We chose paddleOCR and quite happy with overall results and for complex layouts, we are trying to "ensemble" the results with vision model(Owen2.5-vl).
+
+- ## 🤔 [How can I determine OCR confidence level when using a VLM : r/computervision _202510](https://www.reddit.com/r/computervision/comments/1oaukp9/how_can_i_determine_ocr_confidence_level_when/)
+- Cant you prompt vlm to output its confidences, just in words, like low, medium-low, medium, medium-high, high?
+  - That’s exactly what I tried to do. It usually just gives me high or “1.0” confidence Moreover, it messes up the output of my extracted fields too
+
+- What worked best for me was use a 2-stage for OCR: use VLMs to reason which text/fields are relevant and what position, and then crop those out and feed it to an OCR module like Tesseract - performance is pretty amazing. If it's digital documents then EasyOCR or something more lightweight also works.
+
+- ## [What is the best open-source VLM model for OCR (Multilinguage EN FR DE)? : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1q3qda4/what_is_the_best_opensource_vlm_model_for_ocr/)
+- Ministral recently released, they claim best performance in many European languages, Mistral is french after all
+
+- Deep seek ocr or nemotron parse for document to markdown /html and then run a model for converting it in the json structure of your choice?
+  - tables can be tricky sometimes. Maybe start by building a validation set und try different models and their performance on it.
+
+- Most people jump straight to VLM model selection when the real bottleneck is usually document preprocessing. You're dealing with scanned docs, which means quality varies wildly. The OCR accuracy on those 100k documents will make or break your table extraction, regardless of which VLM you pick.
+  - Before comparing more models, run a sample through your current pipeline and check how clean the text extraction actually is. Qwen2-VL-72B might give you better results than the 8B version, but if your document quality is inconsistent, you'll hit a ceiling fast. PaddleOCR or Tesseract with proper preprocessing often outperforms VLMs on pure text extraction.
+  - For table structure specifically, try Table Transformer or LayoutLMv3 as a preprocessing step before the VLM. They're designed exactly for this. The VLM can then focus on converting the structured data to JSON rather than doing both detection and extraction.
+  - Testing different approaches systematically, something vectorflow.dev handles well, usually reveals that the parsing stage needs more attention than the model choice.
+
+- I tested multiple models and between Qwen3-VL faimily most of them and for my usecase also the 8B model was punching way above its weights.
 
 - ## [ollama跑DeepSeekOCR的几种提示词输出格式 _202601](https://linux.do/t/topic/1489368)
   - 网上似乎有提示词的说明，但是很少有输出格式的说明

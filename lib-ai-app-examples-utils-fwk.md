@@ -255,6 +255,23 @@ modified: 2025-02-21T18:20:42.624Z
   - Vendor‑Agnostic: Integrate any LLM or API without extra wrappers.
   - Debug-Friendly: Inspect state and trace execution paths easily.
 
+- https://github.com/strands-agents/sdk-python /5kStar/apache2/202601/python
+  - https://strandsagents.com/
+  - A model-driven approach to building AI agents in just a few lines of code.
+  - Strands Agents is a simple yet powerful SDK that takes a model-driven approach to building and running AI agents
+  - Lightweight & Flexible: Simple agent loop that just works and is fully customizable
+  - Model Agnostic: Support for Amazon Bedrock, Anthropic, Gemini, LiteLLM, Llama, Ollama, OpenAI, Writer, and custom providers
+  - Advanced Capabilities: Multi-agent systems, autonomous agents, and streaming support
+  - Built-in MCP: Native support for Model Context Protocol (MCP) servers, enabling access to thousands of pre-built tools
+
+- https://github.com/badlogic/pi-mono /4.5kStar/MIT/202602/ts
+  - AI agent toolkit: coding agent CLI, unified LLM API, TUI & web UI libraries, Slack bot, vLLM pods
+  - [Pi: The Minimal Agent Within OpenClaw | Armin Ronacher's Thoughts and Writings _202601](https://lucumr.pocoo.org/2026/1/31/pi/)
+  - https://x.com/shao__meng/status/2017745045156467003
+    - Pi 可能是当今系统提示词最短的编程 Agent——只有 Read、Write、Edit、Bash 四个工具，但它支撑了本周互联网上最火的项目 @openclaw
+  - https://x.com/mitsuhiko/status/2017604638137012335
+    - Self-extending agents are exciting, but the moment they can rewrite their own tools you need change control like a real system: pinned versions, eval gates, and a rollback path. Otherwise “it got better” turns into “it drifted.”
+
 ## deep-research
 
 - https://github.com/666ghj/BettaFish /34.1kStar/GPL/202601/python

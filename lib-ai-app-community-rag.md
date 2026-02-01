@@ -53,7 +53,28 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## 🤔 Does anyone know why Codex and Claude doesn't use cloud-based embeddings like Cursor to quickly search through the codebase?
+- https://x.com/EthanLipnik/status/2017468578438709723
+- Early versions of Claude Code used RAG + a local vector db, but we found pretty quickly that agentic search generally works better. It is also simpler and doesn’t have the same issues around security, privacy, staleness, and reliability.
+  - the findings make sense. but honestly, seeing CC grep around climbing through the folder structure is painful and slow. It often doesn’t find what it’s looking for. Cursor usually doesn’t have this problem
+  - RAG should be a DECISION, not a hard yes or no. We can add MCPs to do the job, which is good but new users don’t understand what’s going on and their first experience matters…
+- By agentic search do you just mean grep with the terminal
+  - Indexing, instrction, sub agent spawn in context im pretty sure.
+- egrep I guess but yea
+- grep | tail | awk | grep
+
+- RAG is overrated! Especially for a small codebase
+
+- who needs graphs when you have grep
+
+- RAG is great until you're the one managing the vector db. Agentic search is way more efficient here.
+- the reliability point is underrated. vector db adds another system that can fail. fewer moving parts means fewer failure modes. claude code is better for being simpler not despite it
+
+- The staleness issue alone makes agentic search worth it. RAG indexes get out of sync the moment you push new code.
+
+- you can use warpgrep MCP (parallel agentic search without embeddings) in CC and codex, its very nice. try it for free
+
+- privacy tradeoff. cloud embeddings mean your code leaves your machine for every search. claude's 200k context and codex's container approach bet on cramming more into the window rather than external indexing. cursor made the opposite bet
 
 - ## 🤔 [How do you actually measure RAG quality beyond "it looks good"? : r/Rag _202501](https://www.reddit.com/r/Rag/comments/1q68521/how_do_you_actually_measure_rag_quality_beyond_it/)
   - We're running a customer support RAG system and I need to prove to leadership that retrieval quality matters, not just answer fluency. Right now we're tracking context precision/recall but honestly not sure if those correlate with actual answer quality.

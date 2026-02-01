@@ -1112,6 +1112,12 @@ modified: 2021-01-04T17:26:43.784Z
   - The system processes traffic images, identifies vehicles (cars, motorcycles, mopeds, trucks, buses), and outputs annotated images with green bounding boxes.
   - Images are analyzed via API, vehicle coordinates are extracted, and bounding boxes are rendered on the output images.
   - Opens input images using Pillow (PIL), Draws green (#00FF00) bounding boxes
+
+- https://github.com/getomni-ai/zerox /MIT/202505/python/ts/inactive
+  - OCR & Document Extraction using vision models
+  - Convert that file into a series of images, Pass each image to GPT and ask nicely for Markdown
+  - [Research: Add bounding boxes to response _202407](https://github.com/getomni-ai/zerox/issues/7)
+    -  I would love to have some bounding boxes come back with the text response. Primarily for highlighting locations in the original document where the text got pulled. Not sure exactly how I would proceed with this one
 # pdf-video
 - [PDF to Brainrot | MemenomeLM](https://www.memenome.gg/)
   - 把 PDF 转化为易上瘾的视频

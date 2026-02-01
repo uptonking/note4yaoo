@@ -267,6 +267,13 @@ modified: 2023-04-16T13:34:33.706Z
   - It allows you to turn a series of Canvas frames into a WebM video.
   - This implementation allows you to create very large video files (exceeding the size of available memory), because when running in a privileged context like a Chrome extension or Electron app, it can stream chunks immediately to a file on disk using Chrome's FileWriter while the video is being constructed, instead of needing to buffer the entire video in memory before saving can begin. 
   - Video sizes in excess of 4GB can be written. The implementation currently tops out at 32GB, but this could be extended.
+
+- https://github.com/mediar-ai/screenpipe /16.6kStar/MIT/202602/rust/ts
+  - https://screenpi.pe/
+  - screenpipe records your screen and audio 24/7, stores everything locally, and lets you connect digital history to ai.
+  - remember everything - never forget what you saw, heard, or did
+  - search with ai - find anything using natural language
+  - 100% local - your data never leaves your machine
 # thumbnail/preview-image
 - https://github.com/wei/socialify /MIT/202412/ts
   - Socialify helps you showcase your project to the world by generating a beautiful project image 

@@ -166,7 +166,10 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
-- ## 
+- ## [Files For AI Agents: Context, Search, Skills Guide | LlamaIndex _202601](https://www.llamaindex.ai/blog/files-are-all-you-need)
+- 
+- 
+- 
 
 - ## [[RELEASE] ARC Protocol v2.1: The Parallel Engine. Zero-Hallucination Engineering is here. : r/GoogleAntigravityIDE](https://www.reddit.com/r/GoogleAntigravityIDE/comments/1qmjrjo/release_arc_protocol_v21_the_parallel_engine/)
   - https://github.com/AshishOP/arc-protocol /MIT/python

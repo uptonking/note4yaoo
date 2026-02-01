@@ -86,7 +86,16 @@ modified: 2026-01-15T15:44:10.647Z
 
 - ## 
 
-- ## 
+- ## 🆚 [Mac Studi M3 Ultra vs Nvidia 6000 Blackwell : r/LocalLLM _202602](https://www.reddit.com/r/LocalLLM/comments/1qsv2p0/mac_studi_m3_ultra_vs_nvidia_6000_blackwell/)
+- Nvidia RTX 6000 Pro if you need it to be fast. Mac if you need to run the best possible model and can accept that it might be slow. Simple as that.
+
+- I have an RTX PRO 6000 and a M3 Ultra with 256GB RAM. The RTX PRO 6000 is quite a bit faster at both prompt processing (10x?) and token generation (3x?). Speed matters to me so I only use the RTX PRO 6000. I would only use the M3 Ultra if I wanted to run a model that was too big for the RTX PRO 6000. So far I have not needed to run a model that didn't fit on the RTX PRO 6000 but it is nice to know that I can with the M3 Ultra when/if I might need to some day.
+  - The other thing about Mac is that you can now build clusters of them over TB5 for even faster AI - checkout exo:
+
+- If you’re just asking it questions and you want the smartest possible answers, mac is probably the way to go. M3 ultra 512gb is by far the most convenient way to run big sota models at home.
+  - If you are going to try agentic coding, image or video generation or anything that uses long context, be warned mac will be very very slow. For giving it a page or three of text and asking for an answer, you’ll be fine, maybe wait 10 to 30 seconds before it starts answering. More than that and it will slow to a crawl. Expect to wait half an hour or more for a response to finish if you’re using coding agents.
+  - Rtx pro on the other hand, will be way faster but can’t fit the big sota models like glm 4.7, deepseek 3.2, kimi k2.5 etc
+  - If you get an rtx pro plus a ton of ram you can run the big sota models maybe at the same speed as mac (possible with lower wait time for the answer to start) but then you have an engineering problem on your hands as to how to keep all that ram cool, not to mention it’s probably about as expensive as the m3 ultra now
 
 - ## ["Introducing AMD Ryzen AI Halo, a mini-PC powered by Ryzen AI Max+ that delivers desktop-class AI compute and integrated graphics for running LLMs locally." - AMD is on the move! Would you get one? : r/LovingAI _202601](https://www.reddit.com/r/LovingAI/comments/1qiybwp/introducing_amd_ryzen_ai_halo_a_minipc_powered_by/)
 - unified 128 Gb, lpddr5 8000.

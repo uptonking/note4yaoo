@@ -307,7 +307,14 @@ modified: 2025-12-18T12:27:14.982Z
 
 - ## 
 
-- ## 
+- ## [codex写算法后端不是ccode能比的 _202602](https://linux.do/t/topic/1552314)
+  - 亲身体验，好几次让他俩一起干同一个项目，只要涉及到比较复杂的逻辑或者算法。 codex 一般都能把结果弄出来。
+  - 但是 claudecode 陷入 bug 后一直拗不过来，改来改去还是有 bug。
+  - claude 时候简单的增删查改业务，但是涉及到复杂逻辑还是交给 codex 来做吧。专业事交给专业的人来做
+
+- 是的，但是 codex 有时候太 nerd，得 claude 监工 / 润色 prd / 提醒写注释
+
+- 是的，但是 codex 有时候太 nerd，得 claude 监工 / 润色 prd / 提醒写注释
 
 - ## [看到有人说codex好用，但为什么我感觉它工作效率好低 ](https://linux.do/t/topic/1515526)
   - 看到有写佬说codex好用，但是我在实际使用过程中总感觉codex过于啰嗦，一个同样的问题claude code 很快就能解决了，codex能啰嗦半天。所以这个好用是怎么样才好用。

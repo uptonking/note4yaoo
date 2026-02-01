@@ -177,6 +177,9 @@ modified: 2022-11-06T11:21:27.612Z
   - A modern, browser-based, open source SQL workbench for your MySQL and PostgreSQL compatible database with version control features when connected to Dolt.
   - Use Dolt to unlock powerful version control features.
 
+- https://github.com/zexahq/dbdesk-studio /MIT/202602/ts
+  - A modern database management studio with a beautiful web interface. Manage PostgreSQL, MySQL, and other databases with ease.
+
 - https://github.com/ourines/drizzleflow /202507/ts
   - A smart, visual management tool for modern databases. 
   - Go beyond Drizzle Studio with AI-powered agents and interactive schema visualization
