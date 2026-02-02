@@ -63,6 +63,7 @@ modified: 2020-07-14T09:27:30.503Z
 # fastapi
 - who is using #fastapi 🌰
   - papermerge
+  - SurfSense
 # django
 - who is using #django 🌰
   - zulip

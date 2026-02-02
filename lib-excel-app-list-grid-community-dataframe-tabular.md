@@ -46,6 +46,22 @@ modified: 2023-11-14T06:31:35.103Z
   - It's rare that I stumble into compatibility issues, but when I do, I just .to_pandas() or pl.from_pandas() it and move on.
 
 - Fully migrated. Was attracted by the speed but stayed for the beautiful API. But it‘s natural that you have more tutorials for pandas since most tutorials are from a time where polars wasn‘t widely known yet.
+# discuss-python-excel
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [What do you use python for in Excel? : r/excel](https://www.reddit.com/r/excel/comments/1qtj5v3/what_do_you_use_python_for_in_excel/)
+- You can use it with SQLite to use window functions. I think both PQ and PP support something like window functions. But both are less intuitive than SQL window functions imo.
+
+- Python for Excel is too restrictive, it bottoms out at something like 150, 000 rows, can’t access file system etc.
+  - They would be better off actually adding the Python software to the office install!! Then excel would be unstoppable
+
+- I had 45, 000 rows containing strings in Excel that needed AI processing. Python read the Excel file, sent the strings to Claude AI in batches, got back the categorized and cleaned results, and wrote them back to Excel. Basically, Python was the middleman between Excel and the AI.
+
+- Not in excel, but I use python from vscode to download files from crm, clean, reform and write it in excel files, then check send mails All that with one click script
 # discuss
 - ## 
 

@@ -61,6 +61,8 @@ modified: 2025-12-13T18:38:27.763Z
 
 ### opencode-cli
 
+- 参考 opencode-desktop 的官方实现 来优化aionui的数据流
+
 - tool-call fix
 
 - chat内容中的文件路径不可点击打开

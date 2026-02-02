@@ -273,6 +273,19 @@ modified: 2025-03-22T18:49:15.634Z
   - It also ships with a reference HTTP implementation and default connector to help teams get started fast.
   - 支持vanillajs/LangGraph/Pydantic/Mastra
 
+- https://github.com/assistant-ui/tool-ui /MIT/202602/ts
+  - https://tool-ui.com/
+  - https://www.tool-ui.com/docs/gallery
+  - UI components for AI interfaces.
+  - JSON-native, typed, accessible, copy-pasteable.
+  - Tools return JSON; Tool UI renders it as inline, narrated, referenceable surfaces.
+  - Radix/shadcn (primitives) → Tool UI (conversation‑native components & schema) → AI SDK / LangGraph / etc. (LLM orchestration)
+    - Client side: Register the component and let assistant-ui handle rendering.
+    - assistant-ui manages the runtime, streaming, and tool call lifecycle
+  - Built on Radix, shadcn/ui, and Tailwind.
+  - https://x.com/HiTw93/status/2018109861201093052
+    - It’s schema-first: every surface is driven by a serializable schema with stable IDs, so results stay consistent and reusable.
+
 - https://github.com/assistant-ui/assistant-ui /5.8kStar/MIT/202508/ts
   - https://www.assistant-ui.com/
   - open source TypeScript/React library for AI chat.

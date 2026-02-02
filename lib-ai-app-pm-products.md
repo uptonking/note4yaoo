@@ -313,6 +313,14 @@ modified: 2025-03-22T16:10:24.856Z
 - 测试各项功能的参考
   - https://x.com/Lakr233/status/2014354022573178985
 
+- windsurf arena mode 竞技场
+  - [Wave 14: Arena Mode - May the Best Model Win _202601](https://windsurf.com/blog/windsurf-wave-14)
+  - One prompt. Two models. Your vote.
+  - 不告诉你模型，好像是为了让人工根据实际生成的效果来判断哪个模型写出来的效果更好。
+  - 一般最新的(可能多个)模型作为挑战目标, 然后选择结果
+  - [windsurf现在可以免费在竞技场用前沿模型了，持续一周 ](https://linux.do/t/topic/1548962)
+    - 可以一次性得到两个结果选择你认为更好的，目前我选的基本都是 gpt 和 claude 更好..kimi 暂时没赢过，因为我没问前端问题
+
 - bench-naming
   - modelpedia
   - modelbench
@@ -640,7 +648,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 免费提供 glm flash
   - [太子公益 API](https://taizi.api.51yp.de5.net/console/personal), 签到
     - cc支持
-  - [八岁公益站](https://ai.xoooox.xyz/)
+  - [八岁公益站](https://ai.xoooox.xyz/console/personal)
     - cc
   - [摸鱼公益](https://clove.cc.cd/console/personal), 可签到
     - [【摸鱼公益】 自己的反重力和codex有一些不怎么用，开个摸鱼站给需要的用用 ](https://linux.do/t/topic/1513131)
@@ -662,15 +670,19 @@ modified: 2025-03-22T16:10:24.856Z
     - [〔Hotaru公益站〕新的公益站启动 ](https://linux.do/t/topic/1398297)
   - [Huan API](https://ai.huan666.de/console/personal), 签到, 生图模型
     - cc支持
+  - [Old API](https://oldai.zeabur.app/console/personal), 签到
+    - [【old API公益站】公益站上线（已恢复？） ](https://linux.do/t/topic/1541085)
+    - rpm 为 25，还是老样子小容器部署，服务稳定性未知，随时可能因为账号短缺、高并发而死掉
+    - 仅支持 sonnet 和 haiku，等 kiro 恢复 free 用户的 opus 使用权后会上 opus
   - [黑与白chatAPI](https://ai.hybgzs.com/), 每日转盘
     - 模型丰富: claude/gemini, 但没有gpt5(有mini)
     - 很多openrouter渠道的模型
     - cc不支持tool, **cc渠道经常上架下架**
     - [黑与白chatAPI福利站](https://cdk.hybgzs.com/)
-  - [Old API](https://oldai.zeabur.app/console/personal), 签到
-    - [【old API公益站】公益站上线（已恢复？） ](https://linux.do/t/topic/1541085)
-    - rpm 为 25，还是老样子小容器部署，服务稳定性未知，随时可能因为账号短缺、高并发而死掉
-    - 仅支持 sonnet 和 haiku，等 kiro 恢复 free 用户的 opus 使用权后会上 opus
+  - [api-test](https://openai.api-test.us.ci/console/personal)
+    - [开个小公益站测试一下 ](https://linux.do/t/topic/1414593)
+    - 包括 deepseek，硅基流动全模型，阿里云千问全模型，glm，gemini，codex
+    - 默认 RPM30，1 级可注册，不允许批量测活
   - [GGBOOM公益站](https://ai.qaq.al/dashboard)
     - [签到控制台](https://sign.qaq.al/app)
     - [【GGBOOM公益站】签到站上线啦 ](https://linux.do/t/topic/1517772)
@@ -705,10 +717,6 @@ modified: 2025-03-22T16:10:24.856Z
     - cc支持
   - [DEV88公益](https://api.dev88.tech/console/personal), 签到
     - cc支持
-  - [api-test](https://openai.api-test.us.ci/console/personal)
-    - [开个小公益站测试一下 ](https://linux.do/t/topic/1414593)
-    - 包括 deepseek，硅基流动全模型，阿里云千问全模型，glm，gemini，codex
-    - 默认 RPM30，1 级可注册，不允许批量测活
   - [曼波API](https://ai.dik3.cn/console/personal), 签到
   - [ICAT公益站](https://icat.pp.ua/console/personal), 签到
     - [【公益站】ICAT公益站上线了 _202601](https://linux.do/t/topic/1461073)
@@ -1303,7 +1311,14 @@ modified: 2025-03-22T16:10:24.856Z
 
 - ## 
 
-- ## 
+- ## [畅想一下未来，以后充token会不会就像充流量话费 ](https://linux.do/t/topic/1552655)
+- 如果能的话我觉得还是挺值得入的，无限 token 但到指定 token 数额之后限制上下文
+
+- 要出不限量 不降智 老百姓用的起
+
+- 以 v3.2 的价格，可能加起来价格不如话费贵。
+
+- 从 3g 时代，用多少充多少。到后来套餐包月。最后进化到卫星 wifi，实现 token 自由
 
 - ## [【Agent系列4】Clawdbot（Moltbot）全球爆火的底层原理  ](https://linux.do/t/topic/1541126/3)
   - moltbot 这么火，说明其赛道 (本地桌面 agent) 是被压抑的需求，如果其种种问题都解决了，桌面 agent 显然是功能最强大的，人能做啥他就能做啥

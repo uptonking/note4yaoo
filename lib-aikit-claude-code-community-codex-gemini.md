@@ -39,6 +39,16 @@ modified: 2025-12-18T12:27:14.982Z
 
 - ## 
 
+- ## 
+- ## [Mistral Vibe 2.0 : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1qt76qs/mistral_vibe_20/)
+- tell us why use it instead of OpenCode. They both seem to copy ClaudeCode as far as I can see.
+  - IMHO if you use Devstral, use Vibe. Each agentic tool has a different massive system prompt with slightly different tool definitions. It seems that every AI lab is fine-tuning their model to perform better with their harness. They’ll all work on every CLI, sure, but Kimi 2.5 will surely perform better with Kimi CLI, Sonnet with Claude Code, GPT with Codex, etc.
+  - Z.ai seems to be the holdout so far, they haven’t released a CLI, so they chose to tune their models for Claude Code. 
+
+- opencode doesn't support markdown tables
+
+- I haven't use mistral-vibe much yet, but I like how short the code is compared to alternatives
+
 - ## [droid是啥, 为啥好多人推荐, 跟Claude code或者opencode之类的区别在哪 ](https://linux.do/t/topic/1482186)
 - 闭源版本的 opencode，可以用多个模型
   - 比 claudecode 好的地方在于模型可以多选，包括 glm，claude，gpt，且终端能力差不多

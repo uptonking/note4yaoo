@@ -688,6 +688,15 @@ modified: 2021-04-30T20:14:17.669Z
   - Batch Processing: Supports processing multiple PDF pages or images at once
   - Page Selection: Freely select which pages to process, saving time and API quota
 
+- https://github.com/elliottzheng/NotebookLM2PPT /MIT/202601/python
+  - https://elliottzheng.github.io/NotebookLM2PPT/
+  - 一款强大的自动化工具，旨在将不可编辑的 PDF 文档（特别是 NotebookLM 生成的演示文稿）转换为完全可编辑的 PowerPoint 演示文稿。
+  - 全自动化：利用微软电脑管家"智能圈选"，自动完成截图、识别、转换和合并。
+  - MinerU 深度优化：(可选) 集成 MinerU 解析能力，智能重排文本、统一字体、替换高清图片
+  - 智能去水印：内置针对 NotebookLM 的智能水印去除算法。
+  - 批量处理：(v0.7.0) 支持任务队列，可批量添加多个 PDF 及其 MinerU JSON 进行自动化顺序处理。
+  - 系统要求: Windows 10/11, Microsoft PowerPoint 或 WPS Office (v0.6.5+ 支持), 微软电脑管家 (版本 ≥ 3.17.50.0，必须开启"智能圈选")
+
 - https://github.com/blacksamuraiiii/pdf2ppt /MIT/202601/python
   - 将 AI 生成的 PDF 文稿（如 Google NotebookLM 导出的内容）或其他标准 PDF 文档，通过智能解析转换为可编辑的 PowerPoint (PPTX) 演示文稿。
   - 提供 基于 CustomTkinter 的现代化界面 (app.py) 和 cli

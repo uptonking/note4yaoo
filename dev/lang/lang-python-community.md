@@ -51,7 +51,14 @@ modified: 2023-08-28T06:14:28.873Z
 
 - ## 
 
-- ## 
+- ## [Thoughts on using django admin (with a good looking theme and restricted enough) as MVP ? : r/django](https://www.reddit.com/r/django/comments/1qtd4j6/thoughts_on_using_django_admin_with_a_good/)
+- Just MVP? im using django admin with unfold as the main interface it looks good and has a lot of customization and if you know how to override things you are set for life
+
+- Check https://github.com/SmartBase-SK/django-smartbase-admin it aims exactly at this simplifying object access permission setup. Has a bit of learning curve because of that but you will be able to run standard admin too for real admins.
+
+- I've built many projects over the years that have handled hundreds of millions in revenue all managed through django admin.. i haven't had a project yet that needed more.. sure I guess it would be "nice" to spend all this time making some pretty admin dashboard.. but eh
+
+- Django admin is more like graphical SQL Viewer/editor than real admin. You can use it that way, but still it is too low-level to be useful in many cases. For simple, mvp-like things you can use it, but in 99% cases this is a place to low-level fix things broken by admins by super admin too lazy to edit db directly 
 
 - ## [Why doesn’t Django serve static files by default in production? : r/django](https://www.reddit.com/r/django/comments/1q3rn2y/why_doesnt_django_serve_static_files_by_default/)
 - It's performance. Webservers like Nginx are dramatically faster than Django is at serving static files and they have lots of configuration options and other features for working with static files, all of which Django lacks. But they're also better at scalability and separation of concerns.

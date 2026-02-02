@@ -750,6 +750,12 @@ modified: 2025-12-11T18:10:23.710Z
     - RisingWave Labs的实力
     - pyright没有一个warning
     - python 代码不都这样？
+  - https://x.com/istdrc/status/2017981457692770737
+    - Try install Kimi Code CLI and then run `kimi web`. It's the best Claude Cowork alternative you can get I suppose.
+    - Kimi Web still runs the agent loop locally on your terminal, just with a web-based interface
+  - https://x.com/tualatrix/status/2018145633635541164
+    - Kimi Code 自带的 Web 界面还不错，虽然各家 Coding Agent 都从 CLI 开始搞，但我觉得最终依然会回归 GUI 的。
+    - 就像好多视频编辑工具是 ffmpeg 的 CLI 套壳一样
 
 - https://github.com/mistralai/mistral-vibe /839Star/apache2/202512/python
   - Mistral's open-source CLI coding assistant.
@@ -763,6 +769,13 @@ modified: 2025-12-11T18:10:23.710Z
   - https://github.com/nicksenger/revibe /apache2/202512/rust
     - a Rust port of Mistral Vibe
     - [Revibe is a Rust-rewrite of Mistral Vibe written by Devstral 2 : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pslzv6/revibe_is_a_rustrewrite_of_mistral_vibe_written/)
+
+- https://github.com/gptme/gptme /4.1kStar/MIT/202602/python
+  - https://gptme.org/docs/
+  - Your agent in your terminal, equipped with local tools: writes code, uses the terminal, browses the web, vision
+  - An unconstrained local free and open-source alternative to Claude Code, Codex, Cursor Agents, etc.
+  - https://github.com/gptme/gptme-tauri /NALic/202507/rust/ts/inactive
+    - Desktop app for gptme built with Tauri
 
 - https://github.com/neovateai/neovate-code /MIT/202601/ts
   - https://neovateai.dev/

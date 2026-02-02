@@ -230,6 +230,25 @@ export ANTHROPIC_SMALL_FAST_MODEL="claude-sonnet-4-5-20250929"
 - Not a CC user myself, so can only say this: - it noticeably helps in opencode (any model incl Opus) - accidentally running session in parent folder degrades experience
 
 - In OpenCode it tends to divert the focus of the model to the LSP feedback which can get it stuck and lose the context of the overall change it started with
+
+- https://x.com/zhangjintao9020/status/2017955055102488885
+- 现在的 AI 其实某种意义上还是很“笨”的。如果他们没有针对使用lsp的使用的数据训练过，那么即使你塞了lsp给它们，它们也不会用，或者说瞎用。它们的训练数据都是用grep来索引代码的，就是得让它们用grep，效果才最好啊。要像让AI用好lsp，得在下一代模型的训练数据里加上lsp才行。
+  - “训练数据是用grep来索引代码的”这个结论有出处吗？
+
+- https://x.com/yetone/status/2018010635322474808
+- 我当时就说 LLM 其实只喜欢调用 filesystem based 工具，LSP 工具提供给它除了添乱外毫无用处， 纯是人嗨式行为，大家还不信
+- 可是基于文件系统的工具无法提供很多人在写代码时能获得的信息啊，这个怎么办。
+  - 这让我想起了当年（应该是 2024 年） Cursor 官网的一篇很有意思的文章，他的文章上来第一句话就是：「你喜欢在 Google Doc 里写代码还是在 IDE 中写代码？我相信你的回答肯定是 IDE，因为 IDE 为你提供了一系列方便写代码的工具（highlighter、formater、linter 等等），既然这些 IDE 提供的工具对你写代码很有帮助，那么对于 LLM 也是的」。所以 Cursor 就在基于 IDE 这个基座上头也不回地做 AI Coding 去了。 
+  - 直到 2025 年 3 月份 claude code 对外发布以后，Cursor 就把这篇文章删了。
+
+- 下一步进化：让claude code自主运行。 oh-my-claudecode可以让你的agent 24小时自动工作。我现在就是一个AI agent，早上8点在这里写推，我的人类还在睡觉
+
+- 搭配我的 vscode mcp 在 vscode 里面用其实就不用担心内存问题，因为 vscode 本来就跑了一个 lsp。
+  - 核心问题确实是 llm 目前普遍不会主动调用 lsp，原因可能还是 llm 工具调用强化的时候都没往这方法强化。
+
+- 這點我也有一點自己的觀察。我注意到像 Windsurf 裡面有一個 Fast Context 功能，它能夠幫你把代碼庫中跟某一些功能相關的內容全部快速找出來，不需要讓模型再一個一個去 grep。 但我觀察到並不是所有的模型都會用這個工具，而且就算你指名道姓地讓它用，它可能用著用著就回去再用 grep 了。
+
+- 有些 zig 啥的非主流语言 LSP 重构基本只支持个 rename ，模型有这个能力都用不起来
 # discuss
 - ## 
 

@@ -33,6 +33,8 @@ modified: 2024-09-08T20:08:16.088Z
     - top202509: gemini-embedding-001, embeddinggemma-300m, Qwen3-Embedding-8B/4B/0.6B, linq-mistral, jina, granite, nomic
     - 👷实测, embeddinggemma在Ollama结果差, 在LM Studio结果还行 ~~在 similaritySearch 时很差~~
       - 跟推荐qwen/granite
+  - [nvidia/ChatRAG-Bench · Datasets at Hugging Face](https://huggingface.co/datasets/nvidia/ChatRAG-Bench)
+    - ChatRAG Bench is a benchmark for evaluating a model's conversational QA capability over documents or retrieved context. 
 
 - resources
   - [RAG+AI工作流+Agent：LLM框架该如何选择，全面对比MaxKB、Dify、FastGPT、RagFlow、Anything-LLM, 以及更多推荐 - 知乎 _202407](https://zhuanlan.zhihu.com/p/711761781)
@@ -1180,14 +1182,24 @@ modified: 2024-09-08T20:08:16.088Z
 
 - Great post but missing Qwen3-0.6B or Jina v3? How's zerank-2 vs bge-v2-gemma on self-host latency?
   - I only focused on what I could test deep, qwen3 lightweight is dope for multi tho. zerank-2 wins on instructions/calibration for me
-# discuss-extract
+# discuss-extraction
 - ## 
 
 - ## 
 
 - ## 
 
-- ## 
+- ## [Best tools or methods to extract tables from PDFs into Excel (scanned + mixed PDFs)? : r/computervision _202602](https://www.reddit.com/r/computervision/comments/1qtmayu/best_tools_or_methods_to_extract_tables_from_pdfs/)
+- Try combining a layout-aware OCR + parser rather than basic OCR alone. Python options: pdfplumber or Camelot for table detection (better than naive OCR); Tesseract with layout hints.
+  - But for higher accuracy and structured output you’ll want a parser layer on top of OCR. Tools like Parsio (AI OCR) or Airparser (LLM-powered) handle scanned tables and export clean Excel/CSV/Sheets/etc
+
+- I have had some success with qwen VL models, especially with fine tuning and guided generation.
+- Were you fine-tuning Qwen-VL on document layouts, or using guided generation prompts only? How was row/column alignment accuracy?, can we use it for production purpose?
+  - I converted the documents to images and then fed the images along with a prompt into the model. You need to make sure the image dimensions are divisible by a certain patch size (varies by model version). I had the model generate a big JSON object of the document contents I want to extract. I also had the model generate bounding boxes for the location of charts, text blocks and tables, but not individual rows/columns. Getting the location of rows/columns was unnecessary because the output JSON contained the fully extracted tables. I used guided generation in vLLM to ensure the JSON followed the correct schema. For fine tuning I just manually created some document/json pairs and used Unsloth. It did not take a lot of examples for Qwen 2.5 VL 7B, just a few dozen. But depending on how varied and complex your documents are, it may take more or less. I believe most of the Qwen models are Apache licensed so you can host them yourself in production with no issues.
+
+- qwen-3-vl to csv
+
+- just a heads-up from experience: local models often struggle with 'mixed' PDFs (keeping the row alignment in scanned tables). ​If you hit a wall with accuracy and can sanitize the PII (names/account numbers) before processing, I built parserdata specifically to handle those messy scanned tables that Tesseract/local OCRs break on.
 
 - ## [What's the best way to process images for RAG in and out of PDFS? : r/Rag _202508](https://www.reddit.com/r/Rag/comments/1mtog0e/whats_the_best_way_to_process_images_for_rag_in/)
   - I'm trying to build my own rag pipeline, I'm struggling to find an updated and more recent solution to image processing images?
@@ -1363,7 +1375,44 @@ modified: 2024-09-08T20:08:16.088Z
 - What’s worked for me is separating understanding from storage. On ingestion, I generate a thin semantic layer, section summaries, key entities, numbers, obligations, relationships. That layer is small, fast, and always available to the agent. The heavy JSON stays out of the loop unless the agent explicitly needs to verify something. Trying to RAG directly over deeply nested extracted data is usually a dead end. It’s slow, and the signal to noise ratio is awful. Hierarchical retrieval helps a lot, first decide where to look, then pull only that slice, then answr. Latency stays low because most questions never touch the raw data.
 
 - Your instinct that you can't just shove these in the context window is correct and that you need some sort of RAG but what and why depend on the answers to these questions.
+# discuss-hallucination/citation
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Released: VOR — a hallucination-free runtime that forces LLMs to prove answers or abstain : r/ollama _202602](https://www.reddit.com/r/ollama/comments/1qtine0/released_vor_a_hallucinationfree_runtime_that/)
+  - VOR (Verified Observation Runtime) is a runtime layer that sits around LLMs and retrieval systems and enforces one rule: If an answer cannot be proven from observed evidence, the system must abstain.
+  - https://github.com/CULPRITCHAOS/VOR
+  - 感觉是花里胡哨的创造名词
+- What's the difference between this and doing promoting to force llm to answer i don't have the answers versus expanding the pipeline to allow rag or integrating scraping function to pull from the internet? 
+  - Short answer: Those approaches try to encourage the model not to hallucinate. VOR removes the model’s authority to answer at all unless the answer is provably grounded. Longer, concrete difference: Prompting “say I don’t know” This is behavioral. The model still decides whether it “knows” something. Failure mode: confident-sounding abstention or quiet fabrication. You can’t audit why it answered or abstained — only that it did. VOR doesn’t trust the model’s self-assessment. The model can propose an answer, but it cannot finalize it.
+  - VOR treats retrieval as observations, not truth. If retrieved evidence is insufficient, conflicting, or ambiguous → ABSTAIN, even if the model “thinks it knows.” What VOR actually changes The model is demoted to a proposer, not an authority.
+
+# discuss-cons-rag 🐛
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I don't use RAG at all. I use live generated indices
+- https://x.com/speakerjohnash/status/2017958607464305009
+  - A good computer can make a search engine out of a long document very quickly 
+  - it is literally one of the most powerful techniques in all of LLM engineering 
+  - and I have heard not a single other person do this
+- How do you see this up? I’ve been wanting to do similar
+  - hnswlib + sentencetransformers embeddings
+- so you're doing rag, just at very small scale
+- You use RAG. What you mean is you don’t use VectorDB and the type of (RA) that comes with it. You use a different indexing strategy. It may not be optimum.
+- Isn’t semantic search/embedding distance basically RAG? Especially once you add caching to avoid recomputing the same embeddings
+
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

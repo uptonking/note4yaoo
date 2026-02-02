@@ -246,6 +246,16 @@ modified: 2026-01-21T04:22:29.956Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [哪里有免费或者便宜的stt语音模型 可以接api用的 ](https://linux.do/t/topic/1211369)
+- 硅基流动的 SenseVoiceSmall
+  - Groq 的 Whisper-large
+
+- 火山引擎有一个免费的，一个应用免费两个小时，嗯，挺够用的。
+
 - ## [免费的AI服务额度 _202601](https://linux.do/t/topic/1516842)
 - 日常我除了付费购买了 AI 编程，其它都使用一些免费的 AI 服务，这些服务额度有限
 1、ChatGPT https://chat.openai.com

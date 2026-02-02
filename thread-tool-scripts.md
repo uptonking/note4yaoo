@@ -24,7 +24,14 @@ modified: 2023-12-11T10:12:09.159Z
 
 - ## 
 
-- ## 
+- ## 一些用了好几年的新 Unix：
+- https://x.com/FradSer/status/2018290869301117161
+  - `bat` → `cat` ：带有语法高亮和 Git集成的文件查看器。
+  - `eza` → `ls` ：支持颜色、图标和 Git 状态的列表工具。
+  - `fd` → `find` ：简单、快速且用户友好的查找工具。
+  - `ripgrep` 即 `rg` → `grep` ：极速的文本搜索工具。
+  - `zoxide` 即 `z` → `cd` ：更智能的目录跳转工具，会记住你常去的路径。
+  - `git-delta` → `diff` ：用于 git 的语法高亮 diff 查看器。
 
 - ## 我用这个 simple-git-hooks 而不是 husky，纯粹是因为我不想根目录多一个 .husky 文件夹。
 - https://twitter.com/YuTengjing/status/1764511774248956061

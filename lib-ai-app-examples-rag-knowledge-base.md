@@ -18,19 +18,27 @@ modified: 2025-11-30T17:27:16.720Z
   - 基于文件系统，还是基于数据库 来实现和优化rag
   - rag是很多产品都需要的基础能力之一, 可替代text-search, 可参考成功的产品或针对场景/codebase/local优化的产品
 
+- tech-stack
+  - 很多方案对中文的支持很差
+  - 参考 cli-agent 的rag案例来实现rag后端
+  - 结合 cli-agent + cli-rag 的方案
+  - coding-agent is good at text and filesystem
+    - store extracted text in db
+    - use just-bash to interact with db
+
 - features: 
-  - citations
+  - citations: 搜索rag citation的案例
   - local sources: pdf/docx
   - external sources: slack, github
   - external search: SearXNG, Tavily
   - large-file/pdf
   - ollama-embeddings
-  - 中文
+  - 中文优化
 # citation/backlinks
 - 权威数据源
-  - 国家统计局
   - arxiv
   - 类似 google-scholar, web-of-science
+  - 国家统计局
   - 中国裁判文书网
   - 国家哲学社会科学(所有文献免费下载)
 
@@ -61,7 +69,7 @@ modified: 2025-11-30T17:27:16.720Z
   - pr已合并 [Backend Support for Ollama Models · Pull Request _202507](https://github.com/pipeshub-ai/pipeshub-ai/pull/475)
     - [Ollama Embedding model support · Pull Request ](https://github.com/pipeshub-ai/pipeshub-ai/pull/480)
 
-- https://github.com/MODSetter/SurfSense /10.6kStar/apache2/202511/python/ts
+- https://github.com/MODSetter/SurfSense /12.7kStar/apache2/202601/python/ts
   - https://www.surfsense.com/
   - Open source alternative to NotebookLM, Perplexity, and Glean.
   - Connects to search engines, Slack, Linear, Jira, ClickUp, Notion, YouTube, GitHub, Discord, and more. 
@@ -217,7 +225,7 @@ modified: 2025-11-30T17:27:16.720Z
   - 企业级知识库、RAG Pipeline:  提供知识库创建→ 文档解析→向量化→检索→精排 的全流程知识管理能力，支持pdf/docx/txt/xlsx/csv/pptx等 多种格式 文档，还支持网页资源的抓取和接入
   - 提供 RESTful API ，支持与企业现有系统（OA/CRM/ERP等）深度集成
 
-- https://github.com/pingcap/autoflow /2.6kStar/apache2/202507/python
+- https://github.com/pingcap/autoflow /2.6kStar/apache2/202601/python/inactive
   - https://tidb.ai/
   - a Graph RAG based and conversational knowledge base tool built with TiDB Serverless Vector Storage.
   - An open source GraphRAG (Knowledge Graph) built on top of TiDB Vector and LlamaIndex and DSPy.
@@ -281,17 +289,33 @@ modified: 2025-11-30T17:27:16.720Z
   - Text extraction and conversion, using pdf-extract
   - Text chunking
   - Local embedding and reranking models
+- https://github.com/postgresml/korvus /1.5kStar/MIT/202501/rust/inactive
+  - a search SDK that unifies the entire RAG pipeline in a single database query. 
+  - Built on top of Postgres with bindings for Python, JavaScript, Rust and C.
 
-- https://github.com/joelhooks/pdf-brain /157Star/MIT/202512/ts
+- https://github.com/joelhooks/pdf-brain /157Star/MIT/202601/ts
   - Local PDF & Markdown knowledge base with semantic search and AI-powered enrichment.
+  - CLI
   - extract-pdf/text > ollama-enrichment(打标) > embeding > libsql-vector-hnsw-index
+    - Extract - PDF text via `pdf-parse`, Markdown parsed directly
+    - Enrich (optional) - LLM extracts metadata, matches taxonomy concepts
+    - Chunk - Text split into ~512 token chunks with overlap
+    - Embed - Each chunk embedded via Ollama (1024 dimensions)
+    - Store - `libSQL` with vector index (HNSW) + FTS5
+    - Search - Query embedded, compared via cosine similarity
   - PDF + Markdown - Index .pdf and .md files with the same workflow
   - Local-first - Everything runs on your machine, no API costs
   - AI enrichment - LLM extracts titles, summaries, tags, and concepts
   - Organize documents with hierarchical concepts
+    - The taxonomy(生物分类学; 分类系统) is a hierarchical concept system for organizing documents
   - Vector search - Semantic search via Ollama embeddings
   - Hybrid search - Combine vector similarity with full-text search
   - MCP server - Use with Claude, Cursor, and other AI assistants
+  - The database can get large due to vector index overhead. 
+    - Text content	~180MB	Actual chunk text(~500k chunks)
+    - FTS index	~200MB	Full-text search
+    - Embeddings	~1.9GB	500k × 1024 dims × 4 bytes
+    - Vector index	~48GB	HNSW neighbor graphs (~100KB/row)
 
 - https://github.com/Hamza5/file-brain /GPL/202601/python/ts
   - https://file-brain.com/
@@ -307,6 +331,10 @@ modified: 2025-11-30T17:27:16.720Z
   - React + PrimeReact for the UI
   - Typesense for indexing and search.
   - Apache Tika for file content extraction.
+  - 💰 PRO version is on the way with advanced capabilities:
+    - Chat with Files
+    - Video Search
+    - Cloud & Network Drives: Connect Google Drive, Dropbox, Box, and network drives.
   - [Local file search engine that understands your documents (OCR + Semantic Search) - Open Source. : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qiuxko/local_file_search_engine_that_understands_your/)
   - if you are usin embeddings to search, does that mean you are maintaing a vector database of all files on disk? that would be a huge memory overhead?
     - Yes that's it. As you can see in the screenshot, the app displays the index size, which is always above 1 Go, because the embedding itself takes around 1.1 Go.
@@ -326,7 +354,7 @@ modified: 2025-11-30T17:27:16.720Z
     - But testing each library turned out to be quite a hassle — environment setup, dependencies, version conflicts, etc.
     - Currently, it supports: docling pymupdf4llm markitdown marker
 # rag-examples
-- https://github.com/pymupdf/pymupdf4llm /1.2kStar/AGPL/202511/python/lib
+- https://github.com/pymupdf/pymupdf4llm /1.2kStar/AGPL/202601/python/lib
   - https://pymupdf.readthedocs.io/en/latest/pymupdf4llm
   - a specialized extension of PyMuPDF designed specifically for extracting content from PDFs in a format that's optimized for LLMs
   - Converts PDFs to clean, structured Markdown format
@@ -471,8 +499,12 @@ modified: 2025-11-30T17:27:16.720Z
   - Document indexing with ChromaDB
   - Streaming large file handling: chunking splits large documents into manageable pieces
   - File watching and auto-indexing: Real-time index updates, batch processing
-  - https://github.com/gptme/gptme /4.1kStar/MIT/202511/python
+  - https://github.com/gptme/gptme /4.1kStar/MIT/202602/python
+    - https://gptme.org/docs/
     - Your agent in your terminal, equipped with local tools: writes code, uses the terminal, browses the web, vision
+    - An unconstrained local free and open-source alternative to Claude Code, Codex, Cursor Agents, etc.
+  - https://github.com/gptme/gptme-tauri /NALic/202507/rust/ts/inactive
+    - Desktop app for gptme built with Tauri
 
 - https://github.com/thiswillbeyourgithub/wdoc /GPL/202511/python
   - https://wdoc.readthedocs.io/en/stable/
@@ -649,7 +681,7 @@ modified: 2025-11-30T17:27:16.720Z
   - open source, proof of concept RAG app.
   - uses PostgreSQL for session management, Qdrant for vector storage, Dgraph for graph-based indexing, and Celery for asynchronous task processing.
 
-- https://github.com/pega2077/ai_file_manager /MIT/202512/ts
+- https://github.com/pega2077/ai_file_manager /MIT/202601/ts/Electron
   - file manager powered by AI. It automatically classifies your imported files into the most suitable folders and tags them intelligently based on their content, making future search and retrieval easy.
   - Document Import and Management - Supports multiple document formats, automatically converts to Markdown format
   - Semantic Search - Intelligent document retrieval based on vector database
@@ -791,19 +823,22 @@ modified: 2025-11-30T17:27:16.720Z
   - Built-in multi-tenancy
   - Built with TypeScript, Next.js, AI SDK, Prisma, Supabase, and Trigger.dev
 
+- https://github.com/wzdavid/ThinkRAG /MIT/202512/python/inactive
+  - https://bluedigit.ai/
+  - 大模型检索增强生成系统，可以轻松部署在笔记本电脑上，实现本地知识库智能问答
+  - 基于 LlamaIndex 和 Streamlit 构建，针对国内用户在模型选择、文本处理等诸多领域进行了优化
+  - 开发模式支持本地文件存储，无需安装任何数据库
+  - 为国内用户做了大量定制和优化：
+    - 使用 Spacy 文本分割器，更好地处理中文字符
+    - 采用中文标题增强功能
+    - 使用中文提示词模板进行问答和细化过程
+    - 默认支持国内大模型厂商，如DeepSeek，Moonshot和Zhipu等
+    - 使用双语嵌入模型，如 BAAI的bge-large-zh-v1.5
+
 - https://github.com/Bessouat40/RAGLight /612Star/MIT/202512/python
   - a lightweight and modular Python library for implementing RAG
   - provides modular components to easily integrate various LLMs, embeddings, and vector stores
   - supports: Ollama Google LMStudio vLLM OpenAI API Mistral API
-
-- https://github.com/wzdavid/ThinkRAG /MIT/202512/python/inactive
-  - 大模型检索增强生成系统，可以轻松部署在笔记本电脑上，实现本地知识库智能问答
-  - built on LlamaIndex and Streamlit, and has been optimized for Chinese users in various fields such as model selection and text processing.
-  - Supports locally deployed models and offline use
-  - a lot of customizations and optimizations for Chinese users:
-    - Uses Spacy text splitter for better handling of Chinese characters
-    - Uses Chinese prompt templates for Q&A and refinement processes
-    - Uses bilingual embedding models, such as `bge-large-zh-v1.5` from BAAI
 
 - https://github.com/HKUDS/RAG-Anything /10.7kStar/MIT/202511/python
   - All-in-One Multimodal Document Processing RAG system built on LightRAG.
@@ -885,10 +920,6 @@ modified: 2025-11-30T17:27:16.720Z
 - https://github.com/devflowinc/trieve /2.6kStar/MIT/202510/rust/js/inactive
   - https://trieve.ai/
   - All-in-one platform for search, recommendations, RAG, and analytics offered via API
-
-- https://github.com/postgresml/korvus /1.5kStar/MIT/202501/rust/inactive
-  - a search SDK that unifies the entire RAG pipeline in a single database query. 
-  - Built on top of Postgres with bindings for Python, JavaScript, Rust and C.
 
 - https://github.com/autollama/autollama /26Star/MIT/202509/js
   - https://autollama.io/
@@ -1040,23 +1071,6 @@ modified: 2025-11-30T17:27:16.720Z
   - Plug-and-play adapters that map one embedding model’s vector space into another — locally or via API — enabling cross-model retrieval, routing, and interoperability.
   - a lightweight Python library and model collection that lets you map embeddings from one model’s space into another’s.
   - [I built a Python library that translates embeddings from MiniLM to OpenAI _202512](https://www.reddit.com/r/Rag/comments/1py8l8f/i_built_a_python_library_that_translates/)
-# extract
-- https://github.com/yyy-OPS/SciDataExtractor /202601/python/js
-  - 一款开源的科学图表数据提取工具，专为科研人员设计。基于 FastAPI 和 React 开发，它结合计算机视觉与 AI 技术，将静态图表图片精准转换为可编辑 Excel 数据
-  - 支持交互式坐标校准、HSV 颜色提取，并具备 AI 数据清洗与断点修复功能，能有效去除噪点并补全曲线，辅助高效科研分析。
-  - 结合了计算机视觉与 AI 技术，旨在将论文、报告中的2D科研数据图表通过精确的交互式操作转换为可编辑的 Excel 数据。
-  - 颜色分割提取: 基于 OpenCV 的 HSV 颜色空间分割算法，精准提取指定颜色的曲线数据点。
-  - 数据清洗: 利用 AI 视觉能力，自动识别并剔除提取数据中的网格线干扰、噪点和文字遮挡。
-  - 精确校准: 采用交互式手动校准（三点/四点法），确保像素坐标到物理坐标的转换精度，完全由用户掌控。
-  - 交互式操作: 现代化 React 前端，支持框选删除、手动加点、实时预览和撤回/重做。
-  - 前端 (Frontend): React 18, Vite, Konva, TailwindCSS
-  - 后端 (Backend): Python 3.11+, FastAPI, OpenCV, OpenAI API, Pandas
-  - [[开源]科研图表(曲线图)数据提取工具(导出excle数据) _202601](https://linux.do/t/topic/1435502)
-    - 主要功能就是：基于 OpenCV (HSV 颜色空间) 做分割，提取图片中该颜色的曲线数据，然后描点，最后输出excle。加了AI数据清洗/修复/平滑的功能，效果不理想，还不如使用手工绘制。
-    - 亮点可能就是支持手工绘制，如果实在不行，自己手动描一下，设置一下平滑度，出来的数据也堪堪能用。我测试下来，50的颜色容差一般可以把大体轮廓绘制出来了，再不济自己手动点几个点。
-    - 也可以在origin中复现，工具可以识别改颜色的RGB，在origin中直接设置一样的颜色
-  - 🤔 支持大佬，只能是曲线吗？其他类型的图表能识别吗
-    - 目前只做了2D曲线，后面考虑考虑做更多类型的数据图
 # search 🔍
 - https://github.com/tobi/qmd /5.1kStar/MIT/202602/python/ts
   - mini cli search engine for your docs, knowledge bases, meeting notes, whatever. 
@@ -1400,7 +1414,7 @@ modified: 2025-11-30T17:27:16.720Z
   - A semantic search is first performed on your pdf content and the most relevant embeddings are passed to the Open AI.
   - https://github.com/tuxxon/PDFGPT /202408/inactive
     - I rebuilt it because I thought this repository was no longer being maintained.
-# chat-workspace
+# chat-workspace/notebooklm
 - https://github.com/lfnovo/open-notebook /13kStar/MIT/202512/python/ts/提交少
   - https://www.open-notebook.ai/
   - Open Source implementation of Notebook LM with more flexibility and features
@@ -1409,6 +1423,10 @@ modified: 2025-11-30T17:27:16.720Z
   - 依赖SurrealDB、fatspi、nextjs
   - Organize multi-modal content - PDFs, videos, audio, web pages, and more
   - 🐛: no citation, no connector
+  - [Our target for starting strong in 2026 _202601](https://github.com/lfnovo/open-notebook/discussions/375)
+    - Here's what's on our radar:
+    - RAG & Context Mechanism: We inject full source content into conversations. This overloads models and produces subpar responses
+    - SurrealDB: Transaction conflicts under load, production readiness questions.Our decision: We're staying with SurrealDB. It gives us document storage, graph relationships, vector embeddings, and background jobs — all in one. The alternative (Postgres + Redis + Celery + vector DB) doesn't align with "easy self-hosting."
   - https://github.com/lfnovo/esperanto
     - Python library that provides a unified interface for interacting with various Large Language Model (LLM) providers.
     - All providers communicate directly via HTTP APIs using httpx - no bulky vendor SDKs required
@@ -1434,10 +1452,6 @@ modified: 2025-11-30T17:27:16.720Z
   - It consists of a FastAPI API-first server architecture backed by SQLite or Postgres depending on user choice, with OpenAI-compatible Chat and Audio APIs, a unified RAG pipeline, knowledge management, and integrations with local or hosted LLM providers (with cost/usage tracking).
   - https://github.com/the-crypt-keeper/tldw /inactive
 
-- https://github.com/CaviraOSS/PageLM /NonCommercial/202511/ts
-  - https://pagelm.spotit.dev/
-  - a community driven version of NotebookLM & a education platform that transforms study materials into interactive resources like quizzes, flashcards, notes, and podcasts.
-
 - https://github.com/souzatharsis/podcastfy /5.6kStar/apache2/202510/python
   - Open Source Python alternative to NotebookLM's podcast feature: Transforming Multimodal Content into Captivating Multilingual Audio Conversations with GenAI
   - https://github.com/gabrielchua/open-notebooklm
@@ -1460,21 +1474,25 @@ modified: 2025-11-30T17:27:16.720Z
   - https://github.com/xynehq/jaf
     - functional agent framework built on immutable state, type safety, and composable policies.
 
-- https://github.com/deta/surf /2.7kStar/apache2/202511/rust/ts/svelte
+- https://github.com/deta/surf /2.7kStar/apache2/202511/rust/ts/svelte/inactive
   - https://deta.surf/
   - Personal AI Notebooks. Organize files & webpages and generate notes from them. 
+  - an AI notebook that brings all your files and the web directly into your stream of thought.
   - built in Svelte, TypeScript and Rust, runs on MacOS, Windows & Linux, stores data locally in open formats 
   - PDF Notes: open a PDF and ask a question
   - Create an applet: use the "app generation" tool and ask for an app
+  - 整体体验是 Notion + AI
   - 📡 [Optimized Embeddings CPU Usage _202510](https://github.com/deta/surf/pull/43)
     - Implemented Lazy Embeddings for Large Document Types
     - Embeddings will then be generated on-demand when documents are accessed in chat/search
     - Larger chunks (2000 → 2500): fewer embeddings to generate and store
   - [[FEATURE] Migrate to a better browser engine _202510](https://github.com/deta/surf/issues/27)
     - We understand the pros and cons of using Electron, and for the moment the pros outweigh the cons, specially for a small team.
+  - [Unable to drag window on Mac ](https://github.com/deta/surf/issues/94)
+    - 必须将光标移到顶部resize改变窗口高度时，才可以移动窗口
   - [Show HN: Deta Surf – An open source and local-first AI notebook | Hacker News _202510](https://news.ycombinator.com/item?id=45680937)
     - We took inspiration from analog notebooks as a tool for thought, but wanted something for multi-media. We also see NotebookLM as the closest mainstream product to Surf.
-    - 🆚 The big difference UX wise between chatbots and Surf is that Surf is built entirely on editable documents that you can mold / craft into an output (vs chat).
+    - 🆚📝 The big difference UX wise between chatbots and Surf is that Surf is built entirely on editable documents that you can mold / craft into an output (vs chat).
       - We actually had a chatbot, but our explorations showed that notes were a more effective in many cases!
     - Is this an open source equivalent to google’s NotebookLM? I can tell. How does it stack up features wise?
       - Surf is built entirely on editable WYSIWYG documents, NotebookLM's main AI is built on chat. Surf is built to be a bit more open, NotebookLM was a bit locked down for our taste.
@@ -1512,6 +1530,13 @@ modified: 2025-11-30T17:27:16.720Z
 - https://github.com/H0NEYP0T-466/Pen2PDF /MIT/202511/js
   - https://pen2-pdf.vercel.app/
   - a modern web application that offers six powerful productivity tools: AI-powered text extraction and PDF conversion, intelligent timetable management with Excel/CSV import, comprehensive todo list management with subtasks, smart notes generation with a searchable library, a full-featured digital whiteboard, and an AI assistant (Bella) for intelligent help - all designed to streamline your academic and professional workflow.
+
+- https://github.com/CaviraOSS/PageLM /1.3kStar/NonCommercial/202512/ts/inactive
+  - https://pagelm.spotit.dev/
+  - a community driven version of NotebookLM & a education platform that transforms study materials into interactive resources like quizzes, flashcards, notes, and podcasts.
+
+- https://github.com/zstmfhy/zlibrary-to-notebooklm /MIT/202601/python
+  - 一键将 Z-Library 书籍自动下载并上传到 Google NotebookLM
 # citation/sourcing
 - https://github.com/preprocess-co/rag-document-viewer /MIT/202509/python/js
   - https://preprocess.co/rag-document-viewer
@@ -1696,6 +1721,13 @@ modified: 2025-11-30T17:27:16.720Z
   - a JavaScript component that allows you to provide context from Wikipedia about words or phrases on any website. 
   - It lets you show a popup card with a short summary from Wikipedia when a reader hovers over a link: Read full article on Wikipedia 
   - Works with any link that has an article on Wikipedia
+
+- https://github.com/rahulanand1103/rag-citation /MIT/202411/python/inactive
+  - RAG Citation enhances Retrieval-Augmented Generation (RAG) by automatically generating relevant citations for AI-generated content
+
+- https://github.com/thomassbooth/document-citation-rag /202410/python/ts
+  - This project implements a Retrieval-Augmented Generation (RAG) system using Python and a frontend built with Nextjs - TypeScript, and advanced retrieval strategies: Multi-Query, RAG Fusion 
+  - It leverages Qdrant and uses streaming responses to delivery queries to the frontend. 
 
 - citation-examples
   - [Bluebook Citation Generator - Instant Legal Citations & OCR](https://bluebookcitationgenerator.com/)

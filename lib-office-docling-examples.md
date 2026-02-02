@@ -296,6 +296,32 @@ modified: 2025-09-21T13:58:46.548Z
   - https://github.com/neka-nat/mineru-api /AGPL/202512/python
     - API server for MinerU.
 # extraction
+- https://github.com/VikParuchuri/tabled /GPL/202501/python/archived
+  - Detect and extract tables to markdown and csv
+  - deprecated. The functionality here has been migrated to marker. 
+  - Tabled is a small library for detecting and extracting tables. It uses `surya` to find all the tables in a PDF, identifies the rows/columns, and formats cells into markdown, csv, or html.
+
+- https://github.com/camelot-dev/excalibur /1.8kStar/MIT/202501/python/js
+  - https://excalibur-py.readthedocs.io/
+  - A web interface to extract tabular data from PDFs. powered by Camelot.
+  - Note: Excalibur only works with text-based PDFs and not scanned documents
+  - control over your data. All file storage and processing happens on your own local or remote machine.
+  - Excalibur can be configured with MySQL and Celery for parallel and distributed workloads. By default, sqlite and multiprocessing are used for sequential workloads.
+  - Upload a PDF and enter the page numbers you want to extract tables from.
+  - Go to each page and select the table by drawing a box around it. (You can choose to skip this step since Excalibur can automatically detect tables on its own. )
+  - Click on "View and download data" to see the extracted tables.
+  - https://github.com/camelot-dev/camelot /MIT/202508/python/inactive
+    - https://camelot-py.readthedocs.io/
+    - A Python library to extract tabular data from PDFs
+
+- https://github.com/microsoft/table-transformer /2.8kStar/MIT/202309/python/inactive
+  - Table Transformer (TATR) is a deep learning model for extracting tables from unstructured documents (PDFs and images). 
+  - This is also the official repository for the PubTables-1M dataset and GriTS evaluation metric.
+
+- https://github.com/ronnywang/pdf-table-extractor /202511/js
+  - https://ronnywang.github.io/pdf-table-extractor/
+  - Extractor tables from PDF
+
 - https://github.com/datalab-to/pdftext /644Star/apache2/202506/python
   - Text extraction like `PyMuPDF`, but without the AGPL license. PDFText extracts plain text or structured blocks and lines. 
   - It's built on `pypdfium2`, so it's fast, accurate, and Apache licensed.
@@ -321,4 +347,30 @@ modified: 2025-09-21T13:58:46.548Z
     - Both fields and tables are present in the datasets
   - Takeaways
     - QWEN is the superior OS model, and Claude is the best among closed source
+
+- https://github.com/yyy-OPS/SciDataExtractor /202601/python/js
+  - 一款开源的科学图表数据提取工具，专为科研人员设计。基于 FastAPI 和 React 开发，它结合计算机视觉与 AI 技术，将静态图表图片精准转换为可编辑 Excel 数据
+  - 支持交互式坐标校准、HSV 颜色提取，并具备 AI 数据清洗与断点修复功能，能有效去除噪点并补全曲线，辅助高效科研分析。
+  - 结合了计算机视觉与 AI 技术，旨在将论文、报告中的2D科研数据图表通过精确的交互式操作转换为可编辑的 Excel 数据。
+  - 颜色分割提取: 基于 OpenCV 的 HSV 颜色空间分割算法，精准提取指定颜色的曲线数据点。
+  - 数据清洗: 利用 AI 视觉能力，自动识别并剔除提取数据中的网格线干扰、噪点和文字遮挡。
+  - 精确校准: 采用交互式手动校准（三点/四点法），确保像素坐标到物理坐标的转换精度，完全由用户掌控。
+  - 交互式操作: 现代化 React 前端，支持框选删除、手动加点、实时预览和撤回/重做。
+  - 前端 (Frontend): React 18, Vite, Konva, TailwindCSS
+  - 后端 (Backend): Python 3.11+, FastAPI, OpenCV, OpenAI API, Pandas
+  - [[开源]科研图表(曲线图)数据提取工具(导出excle数据) _202601](https://linux.do/t/topic/1435502)
+    - 主要功能就是：基于 OpenCV (HSV 颜色空间) 做分割，提取图片中该颜色的曲线数据，然后描点，最后输出excle。加了AI数据清洗/修复/平滑的功能，效果不理想，还不如使用手工绘制。
+    - 亮点可能就是支持手工绘制，如果实在不行，自己手动描一下，设置一下平滑度，出来的数据也堪堪能用。我测试下来，50的颜色容差一般可以把大体轮廓绘制出来了，再不济自己手动点几个点。
+    - 也可以在origin中复现，工具可以识别改颜色的RGB，在origin中直接设置一样的颜色
+  - 🤔 支持大佬，只能是曲线吗？其他类型的图表能识别吗
+    - 目前只做了2D曲线，后面考虑考虑做更多类型的数据图
+
+- https://github.com/ispras/dedoc /apache2/202512/python
+  - converting documents to a unified output format. It extracts a document’s logical structure and content: tables, text formatting and metadata. 
+  - The document’s content is represented as a tree storing headings and lists of any level. 
+  - Dedoc can be integrated in a document contents and structure analysis system as a separate module.
+
+- https://github.com/whyhow-ai/knowledge-table /MIT/202411/python/ts/inactive
+  - open-source package designed to simplify extracting and exploring structured data from unstructured documents. 
+  - It enables the creation of structured knowledge representations, such as tables and graphs, using a natural language query interface. 
 # more

@@ -478,7 +478,8 @@ modified: 2025-08-08T07:36:31.265Z
 
 - ## 
 
-- ## 
+- ## 🔗 [How can I show citations/sources in responses _202410](https://github.com/vercel/ai/discussions/3432)
+- You could try sending it out via `providerMetadata / experiemntal_providerMetadata` for now and then forward it to the UI with stream data.
 
 - ## [allow user to override ChatConfig when creating LanguageModel for LMStudio (openAiCompatible) Provider by Sewdn · Pull Request · vercel/ai _202503](https://github.com/vercel/ai/pull/5262)
   - This PR now allows to optionally override languageModel configuration properties defaultObjectGenerationMode and supportStructuredOutputs.

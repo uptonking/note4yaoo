@@ -847,7 +847,28 @@ def slugify(text):
 
 - ## 
 
-- ## 
+- ## [为什么觉得opus4.5也没有那么厉害呢 _202602](https://linux.do/t/topic/1553597)
+- opus4.5 主要是省心吧我感觉，能解决大部分 bug, 小部分不能解决的，召唤 gpt5.2
+- opus4.5 快并且质量还可以，不过有时候确实傻，处理 bug 或者写的代码有问题，应该让 codex 来解决
+
+- 有些代码不同 ai 都喜欢钻牛角尖，我哈基米 + opus 都遇到过，codex 还没用过
+
+- 写代码强，修 bug 确实一般。最好是你自己知道问题在哪里然后指引它去排查
+
+- codex 执行力强，适合具体详细的 prompt
+  - claude 发散思维强，适合没那么详细，模糊的 prompt
+
+- 所以最合理的使用方式是：CC 做方案，CX 执行
+
+- 三大巨头都惊艳过我，也都让我无语抓狂过，都是正常的。
+
+- 逆向用 Claude，合法项目用 GPT 5.2 Codex, OpenAI 审查太严了
+
+- claude 修 bug 真垃圾。修 bug 还得用 codex
+
+- augment 是我遇到过最喜欢写文档的 claude 的渠道, 写到后期如果完全不删的话，文档数量能和代码文件数量持平
+
+- 感觉 opus4.5 和 gpt5.2 差不多，让他们写同一个项目写出来的都大差不差，就是 gpt 不听话我让他用中文输出结果他就是用英语
 
 - ## 🆚 [Devstral benchmark : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1piy3k1/devstral_benchmark/)
   - I gave 4 different LLMs the same coding challenge: build a Multi-Currency Expense Tracker in Python. Then I had Opus 4.5 review all the code. Here are the results.

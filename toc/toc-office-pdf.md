@@ -524,7 +524,7 @@ modified: 2021-01-04T17:26:43.784Z
 - https://github.com/camelot-dev/camelot /MIT/202508/python/inactive
   - https://camelot-py.readthedocs.io/
   - A Python library to extract tabular data from PDFs
-  - https://github.com/camelot-dev/excalibur
+  - https://github.com/camelot-dev/excalibur /1.8kStar/MIT/202501/python/js
     - https://excalibur-py.readthedocs.io/
     - A web interface to extract tabular data from PDFs. powered by Camelot.
     - Note: Excalibur only works with text-based PDFs and not scanned documents

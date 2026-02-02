@@ -292,7 +292,21 @@ Else
 
 - ## 
 
-- ## 
+- ## [For people who’ve hired full stack developers: what signs told you ‘this person is actually good’? : r/webdev _202602](https://www.reddit.com/r/webdev/comments/1qtsi14/for_people_whove_hired_full_stack_developers_what/)
+- the ones who ask clarifying questions before diving into solutions usually stand out. someone who stops and asks "wait, are we optimizing for speed or maintainability here?" shows they're thinking about tradeoffs, not just coding
+  - also the ones who admit when they don't know something instead of bullshitting. way more valuable than pretending to know everything
+
+- The most reliable signal I've found: ask them to walk you through the messiest bug they've ever had to fix. Good developers get animated about this. They remember the details, the false leads they chased, the moment it clicked. They can explain WHY it was hard, not just what the fix was. Mediocre developers give vague answers or claim they dont run into many bugs. Thats a red flag. Also pay attention to how they talk about code they've inherited vs code they've written. Everyone complains about other people's code, but strong developers can also critique their own past work. "Yeah I wrote that six months ago and it was a mess, here's what I'd do differently now" shows growth mindset. One more thing: watch how they respond when you disagree with something technical they've said. Do they get defensive, or do they get curious? The best people I've worked with treat technical disagreements as interesting puzzles, not personal attacks.
+
+- Ask clarifying questions before implementing
+  - Know exactly what and why he did it, and can explain why he chose this instead of that
+  - Know how to deal with the trade-offs
+  - Write clean, understandable code. You wouldn't want to hire someone whose code only he and God understand.
+
+- Asking questions about "why are we even doing this feature" - starting from real business needs, actual users count etc. - person that will prevent overengineering. Person that will prevent making a solution scalable to 100 mln concurrent users with advanced permissions systems, when there are not even 100 real users and almost no features.
+  - Other thing - just gut feeling about persons "energy" (attitude towards work, curiosity, passion).
+
+- let them present some of their work. If they can explain why certain decisions were made, they're good.
 
 - ## 如果现在面试要面试候选人运用 AI 的能力，应该考察哪些方面呢？
 - https://x.com/dotey/status/1890293167989334283
