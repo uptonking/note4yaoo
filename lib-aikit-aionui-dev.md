@@ -201,18 +201,18 @@ BUNDLED_CLI_PROVIDER
 - Unhandled event type: { type: 'model_info', value: 'ep-b35yem-1765485729171085834' }
 # docs-aionui
 
-# 📌 claude-code/codex
-- claude-code-cli 使用ollama本地模型时，可能提示 
-  - "qwen3-vl:4b-instruct" does not support thinking
-  - think value "high" is not supported for this model "qwen3-vl:4b"
-  - 💡 使用gpt-oss-20b就无问题, 实测ollama/lmstudio的gpt-oss-20b都支持
+# alternatives-claude-cowork/codex-app
 
-- 
-- 
-- 
-- 
-- 
+- claude-cowork
+- pros
+- cons
 
+- codex-app
+- pros
+- cons
+  - 启动时必须选择文件夹
+  - 选择文件夹后，通过 add files 添加指定文件，ai似乎未获取到文件路径而回应 Which PDF file should I summarize?
+  - cmd+q推出后所有任务会中断 Any local threads running on this machine will be interrupted and scheduled automations won't run
 # more
 - [【教程】用 AionUI & Chrome MCP Tools控制自己的 Chrome浏览器（带浏览器原始数据，非新开），完全免费 ](https://linux.do/t/topic/1510601)
 

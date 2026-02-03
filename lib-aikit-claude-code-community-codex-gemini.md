@@ -14,7 +14,9 @@ modified: 2025-12-18T12:27:14.982Z
 
 - ## 
 
-- ## 
+- ## We need to find tools which can exchange contexts between the tools like Claude Code, CoWork, Codex App, Gemini CLI, Antigravity, Cursor, VSC. 
+- https://x.com/sabrishsurender/status/2018525743425474606
+  - Context here means all the logs and inferences and not just the end code
 
 - ## 想法实现了，在 Cloudflare Containers 运行 OpenCode ，再通过 S3FS 实现数据持久化 和 Cloudflared 进行远程访问预览页面。
 - https://x.com/miantiao/status/2015283393752416714
@@ -39,7 +41,18 @@ modified: 2025-12-18T12:27:14.982Z
 
 - ## 
 
-- ## 
+- ## [Notes after using Claude Code and OpenCode side by side : r/opencodeCLI _202602](https://www.reddit.com/r/opencodeCLI/comments/1qu44yh/notes_after_using_claude_code_and_opencode_side/)
+  - Claude Code feels guarded and structured. It plans carefully, asks before doing risky stuff, and generally prioritizes safety and predictability.
+  - OpenCode feels more like raw infrastructure. You pick the model per task. It runs commands, edits files, and you validate by actually running the code. More control, less hand-holding.
+  - Both got the job done when I tried real tasks (multi-file refactors, debugging from logs). Neither “failed.” The difference was how they worked, not whether they could.
+
+- The only feature from CC that I miss is that CC can run bash commands in the background and easily check its logs. That's it. For everything else, OpenCode is superior. Once you set your custom modes, and add plugins, it's awesome.
+  - There is an opencode pty plugin for that
+
+- The only i miss when moving from CC is /rewind . Opencode has something less powerful /undo but it’s tedious to use and buggy.
+
+- The main thing OpenCode can really fail on is picking back up on things if you need to run out of usage and/or need to switch models/providers. OpenCode’s flow is already so rigid (with task management being handled in the conversation), and Superpowers expects the full lifecycle of its skills to complete a task, and doesn’t wrap up things if you get interrupted.
+
 - ## [Mistral Vibe 2.0 : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1qt76qs/mistral_vibe_20/)
 - tell us why use it instead of OpenCode. They both seem to copy ClaudeCode as far as I can see.
   - IMHO if you use Devstral, use Vibe. Each agentic tool has a different massive system prompt with slightly different tool definitions. It seems that every AI lab is fine-tuning their model to perform better with their harness. They’ll all work on every CLI, sure, but Kimi 2.5 will surely perform better with Kimi CLI, Sonnet with Claude Code, GPT with Codex, etc.

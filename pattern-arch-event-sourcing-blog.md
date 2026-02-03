@@ -17,6 +17,8 @@ modified: 2023-09-13T14:37:51.659Z
   - when I first heard about the idea of building an system around a log of events, they called it event sourcing. in 2014, it got reinvented as "kappa architecture"
   - when people talk about Event Sourcing, they normally are talking about designing an application that can regenerate the state from events - all state is captured as events. 
 
+## [Learn how Workflow DevKit uses event sourcing internally for debugging and observability _202601](https://useworkflow.dev/docs/how-it-works/event-sourcing)
+
 ## [Why Event Sourcing?](https://abdullin.com/post/event-sourcing-why/)
 
 - Flexibility

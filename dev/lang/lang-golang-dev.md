@@ -13,7 +13,7 @@ modified: 2023-08-28T06:08:27.303Z
   - office: focalboard, usememos(flomo-like)
   - crdt
   - git-like: 🌹 gitea, git-lfs, dolt, zoekt(code-search)
-  - cloud-drive: 🌹 opencloud-be, filebrowser, minio, syncthing(MPL)
+  - cloud-drive: 🌹 opencloud-be, filebrowser, minio, syncthing(MPL), rclone(MIT)
   - monitoring: highlight(apache2), openreplay(AGPL), grafana(AGPL)
   - cloud-native: gitpod(AGPL), coder(AGPL), devpod(MPL), LiveKit
   - ai: ollama, LocalAI

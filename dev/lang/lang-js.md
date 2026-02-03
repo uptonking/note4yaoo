@@ -15,9 +15,10 @@ modified: 2020-07-14T09:26:50.808Z
   - editor: 🌹 codemirror, prosemirror, typewriter, starboard-noteb(MPL)
   - excel-model: grist, ospreadsheet(LGPL)
   - flow-graph: maxgraph, litegraph, mermaid
-  - automation: n8n, langgraph
+  - automation: n8n/activepieces, langgraph
   - crdt
   - git/ide-like: 🌹 vscode, openvscode/code-server(MIT), gemini-cli
+  - coding: gemini-cli, opencode
   - db: nedb, 
   - web: dnd, floating-layer, satori-2svg(MPL)
   - utils: persistent-data-structure
@@ -57,7 +58,7 @@ modified: 2020-07-14T09:26:50.808Z
   - 把命令操作函数化
   - Proxy支持
 
-- `Object.getOwnPropertyDescriptor`,                                                  `Object.keys`等方法对应的就是强类型语言的反射，它们分散各自类型的静态方法上并不合适，ES6收敛到Reflect上是对语言的进一步规范化。
+- `Object.getOwnPropertyDescriptor`,                                                    `Object.keys`等方法对应的就是强类型语言的反射，它们分散各自类型的静态方法上并不合适，ES6收敛到Reflect上是对语言的进一步规范化。
 
 - 对象上定义了14种接口，比如访问属性`[[GET]]`之类的，这些接口是内部C++使用的，我们代码访问不到。但是通过其他方式，比如js中的元老级对象Object，它的一些属性就可以间接调用这些接口。
   - 为什么要Reflect呢？因为Object这个函数上的属性太杂了，大概有20种左右，虽然其中包含了对象接口。但是这不太好，我们需要一个专门的对象来做这个事情。显然不可能重新设计Object，毕竟兼容性才是大哥。

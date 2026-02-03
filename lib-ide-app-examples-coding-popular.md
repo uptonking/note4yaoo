@@ -15,12 +15,28 @@ modified: 2025-12-11T18:10:23.710Z
   - ui类型的工具逐渐开始支持cli, 如cline-cli
   - cli类型的工具逐渐开始支持web, 如codex/claude
 # popular
-- https://github.com/oraios/serena /17.1kStar/MIT/202512/python
+- https://github.com/oraios/serena /19.6kStar/MIT/202602/python
+  - https://oraios.github.io/serena
   - A powerful coding agent toolkit providing semantic retrieval and editing capabilities (MCP server & other integrations)
   - Serena is a powerful coding agent toolkit capable of turning an LLM into a fully-featured agent that works directly on your codebase.
   - Unlike most other tools, it is not tied to an LLM, framework or an interface
   - Serena provides essential semantic code retrieval and editing tools that are akin to an IDE's capabilities
   - You can think of Serena as providing IDE-like tools to your LLM/coding agent. With it, the agent no longer needs to read entire files, perform grep-like searches or string replacements to find and edit the right code. Instead, it can use code centered tools like find_symbol, find_referencing_symbols and insert_after_symbol.
+  - Memory & Knowledge System - **Markdown-based storage** in `.serena/memories/` directories
+  - Serena can be integrated with an LLM in several ways: 
+    - by MCP. Serena provides an MCP server for integration
+    - by incorporating Serena's tools into an agent framework of your choice. Serena's tool implementation is decoupled from the framework-specific code and can thus easily be adapted to any agent framework.
+  - Serena incorporates a powerful abstraction layer for the integration of language servers that implement LSP
+    - With Serena's LSP library, we provide support for over 30 programming languages
+    - All the language servers that we use through Solid-LSP.
+  - [RAG Search for Memories _202506](https://github.com/oraios/serena/issues/205)
+    - Would love to be able to use memory feature to the maximum. Can we save our memories with specialized RAG technique to be able to automatically load relevant memories?
+    - Using embeddings will significantly increase the complexity and I don't see any benefit to it. Claude already loads the right memory from its name, and for an embedding based approach one can simply combine Serena with a dedicated embedding MCP and disable Serena's memory tools.
+    - Sorry, that's not a feature for this project.
+  - [[Feature] Ability to launch serena as ACP server _202509](https://github.com/oraios/serena/issues/644)
+    - We already have `SerenaAgent` as dedicated abstraction which exposes all capabilities of serena. It should be fairly straightforward to use it in any connection layer, including ACP.
+  - 📡 [Better integration with major agentic CLIs and IDEs _202511](https://github.com/oraios/serena/issues/757)
+    - 已支持 claude-code, codex, vscode
 
 - https://github.com/cline/cline /50kStar/apache2/202509/ts/cli使用go实现
   - https://docs.cline.bot/
@@ -200,6 +216,19 @@ modified: 2025-12-11T18:10:23.710Z
   - 为什么使用官方 CLI 而不使用 ACP？
     - 虽然 ACP 能够统一不同 Agent 的核心能力，但是也仅限于核心能力缺失了很多功能。切换不同 Agent 的场景其实并不多而且不同 Agent 的 CLI 核心功能都相似。所以我们认为对于有经验的开发者各 CLI 更具有生产力。
 
+- https://github.com/21st-dev/1code /4.7kStar/apache2/202601/ts
+  - https://1code.dev/
+  - Better UI app for running code agents in parallel (ClaudeCode, OpenCode, Codex)
+  - Best UI for Claude Code with local and remote agent execution.
+  - 1Code is an open-source app that provides a calm, visual interface for Claude Code. It lets you run multiple coding sessions in parallel, track progress visually, and manage your AI-assisted development workflow more effectively.
+  - fully open source. 
+  - Note: Currently tested on macOS and Linux. Windows support is experimental and may have issues.
+  - built for coding. It has a full terminal, GitHub integration, visual diff previews, and worktree management. 
+  - Git Worktree Isolation - Each chat session runs in its own isolated worktree
+  - [[Question] Does this usage violate Anthropic’s ToS? _202601](https://github.com/21st-dev/1code/issues/8)
+    - 1Code uses the official Claude Code SDK which wraps the Claude Code binary. This is the official way to build on top of Claude Code.
+    - Some other tools (like OpenCode) made direct API calls while impersonating Claude Code - that approach got banned. We're not doing that.
+
 - https://github.com/pedramamini/Maestro /AGPL/202601/ts
   - https://runmaestro.ai/
   - a cross-platform desktop app for orchestrating your fleet of AI agents and projects.
@@ -276,19 +305,6 @@ modified: 2025-12-11T18:10:23.710Z
     - 待确定, 是否支持区分不同用户的不同客户端
     - How It Works: Your Claude Code clients generate encryption keys locally and use Happy Server as a secure relay. Messages are end-to-end encrypted before leaving your device. The server's job is simple: store encrypted blobs and sync them between your devices in real-time.
 
-- https://github.com/21st-dev/1code /apache2/202601/ts
-  - https://1code.dev/
-  - Better UI app for running code agents in parallel (ClaudeCode, OpenCode, Codex)
-  - Best UI for Claude Code with local and remote agent execution.
-  - 1Code is an open-source app that provides a calm, visual interface for Claude Code. It lets you run multiple coding sessions in parallel, track progress visually, and manage your AI-assisted development workflow more effectively.
-  - fully open source. 
-  - Note: Currently tested on macOS and Linux. Windows support is experimental and may have issues.
-  - built for coding. It has a full terminal, GitHub integration, visual diff previews, and worktree management. 
-  - Git Worktree Isolation - Each chat session runs in its own isolated worktree
-  - [[Question] Does this usage violate Anthropic’s ToS? _202601](https://github.com/21st-dev/1code/issues/8)
-    - 1Code uses the official Claude Code SDK which wraps the Claude Code binary. This is the official way to build on top of Claude Code.
-    - Some other tools (like OpenCode) made direct API calls while impersonating Claude Code - that approach got banned. We're not doing that.
-
 - https://github.com/siteboon/claudecodeui /5kStar/GPL/202512/js
   - https://cloudcli.ai/
   - A desktop and mobile UI for Claude Code, and Cursor CLI
@@ -324,7 +340,7 @@ modified: 2025-12-11T18:10:23.710Z
   - Session History: View and resume past coding sessions with full context
   - Background Execution: Run agents in separate processes for non-blocking operations
 
-- https://github.com/stravu/crystal /MIT/202511/ts
+- https://github.com/stravu/crystal /2.9kStar/MIT/202512/ts/inactive
   - a new graphical interface to manage Claude Code sessions. 
   - Run multiple Codex and Claude Code AI sessions in parallel git worktrees
   - We built this internally to help speed up the development of Stravu, and it was so helpful we decided we had to share it
@@ -332,7 +348,7 @@ modified: 2025-12-11T18:10:23.710Z
   - Monitor all your Claude Code sessions from a unified interface
   - [Crystal: Supercharge Your Development with Multi-Session Claude Code Management](https://nimbalyst.com/blog/crystal-supercharge-your-development-with-multi-session-claude-code-management)
 
-- https://github.com/opactorai/Claudable /3.4kStar/MIT/202512/ts/electron
+- https://github.com/opactorai/Claudable /3.4kStar/MIT/202512/ts/electron/inactive
   - an open-source web builder that leverages local CLI agents, such as Claude Code, Codex, Gemini CLI, Qwen Code, and Cursor Agent, to build and deploy products effortlessly.
   - Instant Preview: See your changes immediately with hot-reload as AI builds your app
   - Zero Setup, Instant Launch: No complex sandboxes, no API key, no database headaches - just start building immediately
@@ -440,6 +456,18 @@ modified: 2025-12-11T18:10:23.710Z
   - An intelligent agent harnessing cloud-based Claude Code to realize a Manus-like autonomous experience.
   - Poco is a cloud-based AI agent execution platform inspired by Anthropic's Cowork. It orchestrates Claude AI agents to perform autonomous tasks beyond coding—organizing files, writing documents, analyzing data, and more—in a distributed cloud environment.
   - Works in parallel — Queue multiple tasks without waiting for completion
+
+- https://github.com/AndyMik90/Auto-Claude /11.2kStar/AGPL/202602/python/ts/Electron
+  - Autonomous multi-agent coding framework that plans, builds, and validates software for you.
+  - Autonomous Tasks	Describe your goal; agents handle planning, implementation, and validation
+  - Parallel Execution	Run multiple builds simultaneously with up to 12 agent terminals
+  - Isolated Workspaces	All changes happen in git worktrees
+  - Memory Layer	Agents retain insights across sessions for smarter builds
+
+### clude-plugins
+
+- https://github.com/treylom/knowledge-manager /202601/ts
+  - Knowledge Manager Agent for Claude Code - Extract and organize content from web, PDF, social media to Obsidian/Notion
 
 ## codex-cli
 
@@ -845,6 +873,129 @@ modified: 2025-12-11T18:10:23.710Z
   - https://x.com/doesdatmaksense/status/2012209297380544940
     - we’ve spent a lot of time normalizing agent sessions, and defining a stable contract for ai conversations across tools.
     - Normalizing agent sessions into a stable contract is underrated. Once the “conversation shape” is consistent, you can do boring but important stuff—diffs, audits, replay, evals—without rewriting integrations every time a new tool pops up.
+# cli-utils
+- https://github.com/BloopAI/vibe-kanban /20.4kStar/apache2/202602/rust/ts
+  - https://www.vibekanban.com/
+  - Get 10X more out of Claude Code, Gemini CLI, Codex, Amp and other coding agents...
+  - AI coding agents are increasingly writing the world's code and human engineers now spend the majority of their time planning, reviewing, and orchestrating tasks. Vibe Kanban streamlines this process 
+  - Easily switch between different coding agents
+  - Orchestrate the execution of multiple coding agents in parallel or in sequence
+  - Quickly review work and start dev servers
+  - Track the status of tasks that your coding agents are working on
+  - Centralise configuration of coding agent MCP configs
+
+- https://github.com/doobidoo/mcp-memory-service /1.3kStar/apache2/202602/python/未实现rag
+  - Stop re-explaining your project to AI every session. Automatic context memory for Claude, VS Code, Cursor, and 13+ AI tools.
+  - ⚖️ fully compatible with the SHODH Unified Memory API Specification v1.0.0, enabling seamless interoperability across the SHODH ecosystem.
+  - ❓ 是否支持incremental-indexing
+  - Persistent Memory – Context survives across sessions with semantic search
+    - Hybrid Backend - Fast 5ms local SQLite + background Cloudflare sync (RECOMMENDED default)
+  - Web Dashboard – Visualize and manage memories
+  - Knowledge Graph – Interactive D3.js visualization of memory relationships 
+  - Compatibility
+    - Claude Desktop - Native MCP integration
+    - Claude Code - HTTP transport + Memory-aware development with SessionStart hooks
+    - VS Code, Cursor, Continue - IDE extensions
+    - 15+ AI applications - REST API compatibility
+  - [Claude Code Integration: Commands vs MCP Server](https://github.com/doobidoo/mcp-memory-service/blob/main/docs/guides/commands-vs-mcp-server.md)
+    - Choose Commands if you want: Simple usage, No configuration (zero MCP server setup)
+    - Choose MCP Server if you want: Deep integration with Claude Code's MCP system, Multi-server workflows (alongside other MCP servers)
+  - [setting up MCP Memory Service for multiple clients, enabling shared memory access across different applications and devices](https://github.com/doobidoo/mcp-memory-service/blob/main/docs/integration/multi-client.md)
+  - 📡 [Enhancement: Hybrid BM25 + Vector Search for Better Exact Match Scoring _202510](https://github.com/doobidoo/mcp-memory-service/issues/175)
+  - https://github.com/varun29ankuS/shodh-memory /apache2/202601/rust
+    - Persistent memory for AI agents. Single binary. Local-first. Runs offline.
+    - We built this because AI agents forget everything between sessions. 
+
+- https://github.com/0xranx/OpenContext /368Star/MIT/202601/rust/js/未实现rag
+  - https://0xranx.github.io/OpenContext/
+  - 给你的 AI 助手一个持久记忆。 不再重复解释，专注高效构建。
+  - OpenContext 直接接入你现有的 CLI（Codex/Claude/OpenCode），并提供 GUI + 内置 Skills/工具
+  - OpenContext 是一个面向 AI 助手（Agent）与 Cursor / Claude Code / Codex 等编码工具用户的「个人上下文/知识库」。它直接复用你已有的 coding agent CLI（Codex/Claude/OpenCode），并提供 GUI 与内置 Skills/工具，让 AI 助手能「先读历史再动手、做完再沉淀」。
+  - oc CLI — 管理全局 contexts/ 文档库（目录/文档、清单、检索）
+  - MCP Server — 让 Cursor/Claude Code/Codex/Agent 通过工具调用 OpenContext
+  - Web UI — 本地浏览/编辑文档（无需安装桌面版）
+
+- https://github.com/zilliztech/claude-context /5.2kStar/MIT/202509/python/ts/inactive
+  - MCP plugin that adds semantic code search to Claude Code and other AI coding agents(codex/gemini-cli)
+  - Hybrid Code Search: BM25 + dense vector
+    - uses semantic search to find all relevant code from millions of lines. No multi-round discovery needed. It brings results straight into the Claude's context.
+  - efficiently stores your codebase in a vector database and only uses related code in context to keep your costs manageable.
+  - 🔄 Incremental Indexing: Efficiently re-index only changed files using Merkle trees.
+  - Analyze code in Abstract Syntax Trees (AST) for chunking.
+  - Customizable: Configure file extensions, ignore patterns, and embedding models.
+  - Embedding Providers: OpenAI, VoyageAI, Ollama, Gemini
+  - Vector Databases: Milvus or Zilliz Cloud(fully managed vector database as a service)
+  - Code Splitters: AST-based splitter (with automatic fallback), LangChain character-based splitter
+  - While MCP is the recommended way to use Claude Context with AI assistants, you can also use it directly or through the VSCode extension.
+  - 🧑‍🏫 [Update Docs: Fully offline install guide _202508](https://github.com/zilliztech/claude-context/issues/162)
+  - [Question: is index autosync available _202511](https://github.com/zilliztech/claude-context/issues/238)
+    - After I run initial indexing, does Claude context continue to auto-sync and update the changes in multiple code granularity, meaning only the changes gets updated and vectors created only for the changed code?
+    - Currently having to manually update indexes after every change
+  - [Is it required and must use openai key? _202507](https://github.com/zilliztech/claude-context/issues/81)
+    - This project currently doesn't use LLM, so what you need to do is to select an embedding model
+    - openrouter does not have embedding models. you can use Mistral Code Embedding that supports the same API
+    - It looks like Mistral Code Embedding is a good one, but it seems to have it's own api
+    - 202601: OpenRouter only recently added support for embeddings. 
+
+- https://github.com/Wildcard-Official/deepcontext-mcp /258Star/apache2/202509/ts/inactive
+  - https://wild-card.ai/deepcontext
+  - DeepContext is an MCP server that adds symbol-aware semantic search to Claude Code, Codex CLI, and other agents for faster, smarter context on large codebases.
+  - Currently supports Typescript and Python.
+  - Visit the Wildcard DeepContext page, Click "Generate API Key"
+  - Most coding agents use grep based search that match exact text, these searches miss semantically related code and fill context windows with irrelevant results.
+  - 🚧 Self-hosting requires code modifications to integrate directly with vector storage and embedding providers, as the current implementation uses the Wildcard API backend.
+    - Turbopuffer API key for vector storage and hybrid search operations
+    - Jina AI API key for text embeddings and reranking services
+  - MCP Integration Flow
+    - Coding Agent communicates with DeepContext through the Model Context Protocol
+    - MCP server receives requests, validates parameters, and routes to appropriate core components
+    - For long-running operations like indexing, spawns detached background processes to prevent timeouts
+
+- https://github.com/marcoaapfortes/Mantic.sh /532Star/AGPL/202601/ts/rag
+  - A structural code search engine for Al agents.
+  - After testing across 5 repositories (cal.com, next.js, tensorflow, supabase, chromium), it demonstrates superior result quality compared to grep/ripgrep 
+  - Semantic Reranking (Hybrid Intelligence): Combines heuristic speed with neural understanding. Uses local embeddings (transformers.js) to find "conceptually relevant" code even without exact keyword match
+  - Deep understanding of your codebase structure using Tree-sitter.
+  - CLI Installation: npx mantic.sh@latest "your search query"
+  - MCP Server Installation: Mantic works as an MCP server for Claude Desktop, Cursor, VS Code, and other MCP-compatible tools.
+
+- https://github.com/campfirein/cipher /3.5kStar/elastic/202512/ts/rag/inactive
+  - https://docs.byterover.dev/cipher/overview
+  - opensource memory layer specifically designed for coding agents. 
+  - Compatible with Cursor, Codex, Claude Code, Windsurf, Cline, Claude Desktop, Gemini CLI, AWS's Kiro, VS Code, Roo Code, Trae, Amp Code and Warp through MCP.
+  - MCP integration with any IDE you want.
+    - Cipher can run as an MCP (Model Context Protocol) server, allowing integration with MCP-compatible clients like Codex, Claude Desktop, Cursor, Windsurf, and other AI coding assistants.
+  - Auto-generate AI coding memories that scale with your codebase.
+  - Switch seamlessly between IDEs without losing memory and context.
+  - Dual Memory Layer that captures System 1 (Programming Concepts & Business Logic & Past Interaction) and System 2 (reasoning steps of the model when generating code).
+  - llm支持local, 包括lmstudio
+  - vector db支持 Qdrant, Milvus, ChromaDB, or In-Memory
+  - The Cipher Web UI provides an intuitive interface for interacting with memory-powered AI agents, featuring session management, tool integration, and real-time chat capabilities.
+  - [Hybrid RAG _202602](https://github.com/campfirein/cipher/discussions/293)
+    - as i got some exp in RAG design i was wondering, what effect hybrid rag could have here, i mean using also Keywordsearch internally.
+  - [[FEATURE] Implement Cross-Project Knowledge Transfer System _202509](https://github.com/campfirein/cipher/issues/249)
+    - This repository has been archived. No further work will be done. For production use, please visit byterover.dev
+  - https://github.com/RyanNg1403/agentic-search-vs-rag /MIT/202601/python/同作者
+    - A reproducible experiment comparing traditional vector-based RAG with Agentic Search (context trees) for code retrieval tasks.
+    - This experiment validates that context trees with agentic search dramatically outperform traditional RAG for code understanding tasks.
+      - 2× better retrieval accuracy (IoU score)
+      - 99% fewer tokens used per query
+
+- https://github.com/johnhuang316/code-index-mcp /731Star/MIT/202601/python
+  - MCP server that helps large language models index, search, and analyze code repositories with minimal setup
+  - get started with any MCP-compatible application: cc, codex, ...
+
+- https://github.com/BeehiveInnovations/pal-mcp-server /11kStar/apache2/202512/python/inactive
+  - Why rely on one AI model when you can orchestrate them all?
+  - A Model Context Protocol server that supercharges tools like Claude Code, Codex CLI, and IDE clients such as Cursor or the Claude Dev VS Code extension. 
+  - PAL MCP connects your favorite AI tool to multiple AI models for enhanced code analysis, problem-solving, and collaborative development.
+  - PAL supports conversation threading so your CLI can discuss ideas with multiple AI models
+
+- https://github.com/pchalasani/claude-code-tools /1.4kStar/MIT/202601/python/rust
+  - productivity tools for Claude Code, Codex-CLI, and similar CLI coding agents.
+  - aichat is your unified CLI command-group for managing Claude Code and Codex sessions: Resume with lineage, Full-text search with Tantivy
+  - tmux-cli works with any CLI coding agent, Think Playwright for terminals - Terminal automation for AI agents.
+  - lmsh: Natural language shell - type what you want in plain English, get an editable command.
 # background-ai
 - https://github.com/ColeMurray/background-agents /MIT/202601/python/ts
   - https://backgroundagents.dev/

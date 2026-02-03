@@ -419,6 +419,8 @@ $if($gt(%totaldiscs%,1),%discnumber%-,)$if($and(%albumartist%,%tracknumber%),$nu
   - 2023年学考录取第一次投档（不含补录），能进入公办院校的普通类考生仅有9.47万人，而线上总共有37.42万考生，公办录取率仅25%？
 - [广东春季高考不同分数段能报什么学校 ](https://zhuanlan.zhihu.com/p/660974357)
 
+- [广东春季高考330分大概可以报什么学校? - 知乎](https://www.zhihu.com/question/448570583)
+
 - [🌟 ‌广东学考录取分数线出来了（预测版） - 知乎](https://zhuanlan.zhihu.com/p/26536164772)
   - 包含23/24年排位
 

@@ -63,6 +63,20 @@ modified: 2026-01-19T05:01:00.055Z
     - ACP Support - Connect to any Agent Client Protocol compatible agent like Gemini CLI, Claude Code, or Codex CLI
     - Uses AI SDK with `acp-ai-provider` to enable seamless integration with ACP-compatible AI agents on the web platform using `streamText` and `useChat`
 
+## office-mcp
+
+- https://github.com/SylphxAI/pdf-reader-mcp /471Star/MIT/202601/ts
+  - https://pdf-reader-mcp.sylphx.com/
+  - MCP server for PDF processing - 5-10x faster with parallel processing and 94%+ test coverage
+  - Extract text, images, and metadata with unmatched performance and reliability.
+  - Process 50-page PDFs in seconds with multi-core utilization
+  - Absolute & relative paths, Windows/Unix support (v1.3.0)
+  - Smart Ordering - Y-coordinate based content preserves document layout
+  - Simple API - Single tool handles all operations elegantly
+
+- https://github.com/ivanvanderbyl/pdf-reader-mcp /MIT/202505/go/inactive
+  - MCP server for reading and analyzing PDF documents using Google's Gemini API, written in Go. This server enables AI assistants like Claude (Code and Desktop) and Cursor to seamlessly read, extract, and analyze PDF content directly from their interfaces.
+
 ## browser-mcp
 
 - https://github.com/hangwin/mcp-chrome /9.6kStar/MIT/202511/ts/vue

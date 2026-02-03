@@ -21,6 +21,14 @@ modified: 2021-01-31T08:40:11.675Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## time.com 取消 paywall 之后真是什么古代文章都能找到。比如这个是关于 918 事变的文章
+- https://x.com/lispcz/status/2018330642870911303
+  - time.com 被 salesforce 老板收购了。不缺钱。
+
 - ## 每年必读的一个网页：Wikipedia 年份词条。
 - https://x.com/howie_serious/status/1872253531706860015
   - 每年的年份词条，都是对这一年、地球上(重要)事件的详细记录，只用一个网页！

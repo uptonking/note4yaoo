@@ -747,7 +747,15 @@ modified: 2024-05-12T17:20:03.132Z
 
 - ## 
 
-- ## 
+- ## Docker Sandboxes are now available _202602
+- https://x.com/Docker/status/2018368918612492466
+  - They use isolated microVMs so agents can install packages, run Docker, and modify configs - without touching your host system. 
+
+- Nice to see microVM sandboxes becoming mainstream for coding agents. We have been running agents inside isolated microVMs since day one at Umans, on our infra. What we are exploring with envs: one ready microVM per repo, so nothing touches your laptop.
+
+- I build a version of this using docker-in-docker. Of course that’s not the same level of hard isolation as the VM approach, but it gives the agent a well isolated workspace where it can use docker.
+
+- can you fix wsl support and testcontainers
 # discuss-kata-containers
 - ## 
 

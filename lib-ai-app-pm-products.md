@@ -223,6 +223,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 类似词典库/kiwix的预置模块, 可下载、可分享, 不必每次都全量索引
     - wikipedia zim 自动翻译为中文
     - vector-marketplace, 支持用户选择任意数量的pdf文档创建embeddings, 并发布, 可作为一种变通方案解决数据隐私问题
+    - 行业应用: law, medical
   - large pdf rag workflows: chunking-strategies, reindex, pdf-parts
   - 🌐 pdf edit
     - proofreading: 一键检查, 版本历史
@@ -245,6 +246,8 @@ modified: 2025-03-22T16:10:24.856Z
     - progressive doc processing: 边处理/翻译，边查看，能展示文件被处理如翻译的进度和内容交互
   - translation+proofreading: 包括pdf文件, 普通文档、网页
     - 输出不同模型的翻译版本，供用户比对, 参考promptfoo
+  - audio
+    - 远端分析youtube/b站视频
   - 插画复刻: Qwen-Image-i2L, image-to-prompt-to-image, 同时支持浏览comfyui生成图片的元数据、提示词
     - 根据前文的图片生成风格类似的图片
   - local-optimized
@@ -619,11 +622,6 @@ modified: 2025-03-22T16:10:24.856Z
     - [请问薄荷怎么才能用Claude Code ](https://linux.do/t/topic/1304580)
     - 薄荷的是Antigravity反代出来的
     - 薄荷的 rpm不是有限制么，Cc能跑的动
-  - [GoGoGo公益站](https://api.chengtx.vip/console/personal), 签到可得20~50刀，0.2刀/次
-    - [GoGoGo公益站启航：目标是刷爆gemini小破号池 ](https://linux.do/t/topic/1494070)
-    - rpm-15, 不限用途，可酒馆
-    - 模型: gemini-2.5/3-flash/pro
-    - 渠道是自部署gemini business2api，自己域名邮箱注册的，放了100多个号
   - [WONG公益站](https://wzw.pp.ua/console/topup), 每日签到
     - [WONG公益站](https://wzw.de5.net/console)
     - [WONG公益站](https://newapi.netlib.re/)
@@ -688,6 +686,9 @@ modified: 2025-03-22T16:10:24.856Z
     - [【GGBOOM公益站】签到站上线啦 ](https://linux.do/t/topic/1517772)
     - 本站点为codex中转站，不包含其他模型
     - sub2api的openai api仅支持 openai-responses API协议。不要选老版本的哦
+  - [ibsgss公益站](https://codex.ibsgss.uk/console/personal), 签到
+    - [【ibsgss公益站】支持codex cli / cherry  ](https://linux.do/t/topic/1434464)
+    - 维护期限：到 codex-team 渠道耗尽为止
   - [Neb 公益站](https://ai.zzhdsgsss.xyz/console/personal), 签到
     - 采用按量计费，每次0.01，注册送2000次，因为该阶段的初衷就是最大化利用这些将要过期的key。
     - 当前额度用完或2026.1.31之后进入第二阶段，采用按量计费，倍率会很低
@@ -754,6 +755,11 @@ modified: 2025-03-22T16:10:24.856Z
     - [KFC API公益站 - 正式上线  ](https://linux.do/t/topic/1233747)
     - [逆水寒](https://api.sxxe.net/), 即将关闭
     - [逆水寒公益API——扬帆起航 ](https://linux.do/t/topic/1173036)
+  - [GoGoGo公益站](https://api.chengtx.vip/console/personal), 签到可得20~50刀，0.2刀/次
+    - [GoGoGo公益站启航：目标是刷爆gemini小破号池 ](https://linux.do/t/topic/1494070)
+    - rpm-15, 不限用途，可酒馆
+    - 模型: gemini-2.5/3-flash/pro
+    - 渠道是自部署gemini business2api，自己域名邮箱注册的，放了100多个号
   - [包子铺](https://api.5202030.xyz/)
     - [包子公益](https://api.codeqaq.com/)
     - 只开放linuxdo lv2以上注册
@@ -993,7 +999,7 @@ modified: 2025-03-22T16:10:24.856Z
 
 ## translation
 
-- 「慕鸢の公益站」 [这是谁的公益站呢？好难猜阿](https://newapi.linuxdo.edu.rs/pricing)
+- 「慕鸢の公益站」 [这是谁的公益站呢？好难猜阿](https://newapi.linuxdo.edu.rs/pricing), 签到获取0.01
   - 专门有一个翻译分组，需要创建对应分组的key，超低倍率，不限制并发
   - [上新沉浸式翻译和codex ](https://linux.do/t/topic/1501277)
 - [cerebras fanyi API](https://fanyi.963312.xyz/pricing)
@@ -1018,6 +1024,10 @@ modified: 2025-03-22T16:10:24.856Z
   - If you have purchased less than 10 credits, you’re limited to 50 :free model requests per day.
   - If you purchase at least 10 credits, your daily limit is increased to 1000 :free model requests per day.
   - If your account has a negative credit balance, you may see `402` errors, including for free models.
+  - [Free Models Router ](https://openrouter.ai/openrouter/free)
+    - openrouter/free
+  - [openrouter出免费模型路由了 _202602](https://linux.do/t/topic/1559289)
+    - 稍微测了下，不是 50rpd，挺好
 
 - 📌 [Ollama Cloud models](https://ollama.com/search?c=cloud)
   - Hourly + Weekly limits
@@ -1243,6 +1253,10 @@ modified: 2025-03-22T16:10:24.856Z
 - [鲸智 模型广场](https://aihub.caict.ac.cn/modelplaza/modelsquare/)
   - free: free: 百度 ernie-tiny/lite/speed
 
+- paid-api
+  - [OAIPro API](https://api.oaipro.com/)
+    - L 站不倒，这个就不倒
+
 ## llm-2api
 
 - embedding
@@ -1284,6 +1298,11 @@ modified: 2025-03-22T16:10:24.856Z
 
 - [Canopy Wave](https://cloud.canopywave.io/)
 
+## video/movie
+
+- [OmniBox - 在线观影](https://omnibox.wangchao.uno/)
+  - [MoonTVPlus](https://moontv.wangchao.uno/)
+
 ## hosting
 
 - [LD士多 - LDC积分商城](https://ldst0re.qzz.io/)
@@ -1300,6 +1319,11 @@ modified: 2025-03-22T16:10:24.856Z
   - 接着我们去薅大善人cloudflare，首先弄好一个域名并托管到CF上面
     - 点开左边的菜单：Build –> Compute & AI –> Workers & Pages > create app
     - 返回这个worker的空间，点击Settings，下面的Domains & Routes ，右边点击 +Add
+
+- [gdgame - 免费单机游戏下载 | 游戏库 - 免登录直接下载单机游戏](https://gdgame.org/)
+  - [公益免费单机游戏站 ](https://linux.do/t/topic/1561998)
+  - 免登录享受 4000 款单机游戏
+  - 支持国内全主流网盘：百度，夸克，迅雷，123，天翼。天翼盘是可以做到免费不限速，真正不花一分钱。
 # ai-products-hunt
 
 # more
@@ -1310,6 +1334,16 @@ modified: 2025-03-22T16:10:24.856Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## Codex app is out for mac
+- https://x.com/sama/status/2018414858015039504
+- cons
+  - 不能添加文件夹
+
+- 
+- 
 
 - ## [畅想一下未来，以后充token会不会就像充流量话费 ](https://linux.do/t/topic/1552655)
 - 如果能的话我觉得还是挺值得入的，无限 token 但到指定 token 数额之后限制上下文

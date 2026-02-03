@@ -12,10 +12,11 @@ modified: 2020-07-14T09:27:30.503Z
 - classic-examples-python
   - tips: 数据与ai计算的主力语言，也能快速开发业务
   - editor: lasuite-docs, jupyter(framework)
-  - ai: 🌹 langgraph, comfyui, mlx, label-studio
+  - ai: 🌹 langgraph, comfyui, mlx, label-studio, ragflow, mlx-lm
     - huggingface模型库里的启动/测试脚本都是python
   - data: superset, pyodide(MPL)
-  - office: pymupdf(AGPL), docling
+  - office: pymupdf(AGPL), docling, Pillow(MIT)
+  - coding: kimi-cli, mistral-vibe
   - devops: airflow, posthog
   - crdt
   - git-like

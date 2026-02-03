@@ -19,9 +19,11 @@ modified: 2025-11-30T17:27:16.720Z
   - rag是很多产品都需要的基础能力之一, 可替代text-search, 可参考成功的产品或针对场景/codebase/local优化的产品
 
 - tech-stack
-  - 很多方案对中文的支持很差
-  - 参考 cli-agent 的rag案例来实现rag后端
-  - 结合 cli-agent + cli-rag 的方案
+  - 很多rag方案对中文的支持很差
+  - 参考 cli-agent 的rag案例来实现rag后端, 大多数基于mcp-server或集成代码库
+    - mcp-memory-service支持在不同cli中共享memory, 还要支持启用/禁止memory
+    - migrate code indexing 的逻辑到 pdf rag
+  - 结合 cli-agent + cli-rag 的方案, cli-agent的search通常通过MCP来实现
   - coding-agent is good at text and filesystem
     - store extracted text in db
     - use just-bash to interact with db

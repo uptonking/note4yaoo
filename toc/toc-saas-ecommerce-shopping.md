@@ -174,6 +174,12 @@ modified: 2023-06-07T14:19:18.719Z
   - a reverse engineered NPM registry with a modular structure.
   - You can provide your own functionality for storing artifacts and metadata.
 
+- https://github.com/npmx-dev/npmx.dev /1.2kStar/MIT/202602/ts/vue
+  - https://npmx.dev/
+  - The goal of npmx.dev is to build a fast, modern browser for the npm registry.
+  - Compatibility – Replace npmjs.com with xnpmjs.com or npmx.dev in any URL and it just works.
+  - Enhanced admin experience – Manage your packages, teams, and organizations from the browser, powered by your local npm CLI.
+
 ## marketplace
 
 - https://github.com/joplin/website-plugin-discovery /MIT/202401/ts/mustache

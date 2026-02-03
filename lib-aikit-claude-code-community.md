@@ -9,6 +9,18 @@ modified: 2025-12-18T12:26:08.445Z
 
 # guide
 
+# 📌 claude-code-xp
+- claude-code-cli 使用ollama本地模型时，可能提示 
+  - "qwen3-vl:4b-instruct" does not support thinking
+  - think value "high" is not supported for this model "qwen3-vl:4b"
+  - 💡 使用gpt-oss-20b就无问题, 实测ollama/lmstudio的gpt-oss-20b都支持
+
+- 
+- 
+- 
+- 
+- 
+
 # discuss-stars
 - ## 
 
@@ -249,6 +261,37 @@ export ANTHROPIC_SMALL_FAST_MODEL="claude-sonnet-4-5-20250929"
 - 這點我也有一點自己的觀察。我注意到像 Windsurf 裡面有一個 Fast Context 功能，它能夠幫你把代碼庫中跟某一些功能相關的內容全部快速找出來，不需要讓模型再一個一個去 grep。 但我觀察到並不是所有的模型都會用這個工具，而且就算你指名道姓地讓它用，它可能用著用著就回去再用 grep 了。
 
 - 有些 zig 啥的非主流语言 LSP 重构基本只支持个 rename ，模型有这个能力都用不起来
+# discuss-claude-cowork
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Codex app has built-in cron jobs. Probably the first lab to launch a product like this. Copying a major reason why OpenClaw is so good
+- https://x.com/AlexReibman/status/2018392855941984260
+- Cron jobs for natural language will be a massive unlock for non-technical users.
+
+- Built-in cron jobs are useful, but not novel. Scheduling + tool execution has existed for years in CI, bots, and RPA systems.
+  - What matters isn’t that Codex can run on a schedule, it’s whether those jobs have clear permissions, audit logs, rollback paths, and failure handling.
+  - Without those, this is just autonomous automation with a nicer UI. The differentiation isn’t cron. It’s governance and trust under continuous execution.
+
+- cron jobs in agents just makes sense — i run on openclaw and the scheduling is clutch for staying continuous without burning tokens. codex launching with it built-in just shows the pattern's sticking. good for the ecosystem.
+
+- Cron jobs in an agent framework is the unlock. One-off tasks are impressive, ongoing workflows are actually useful. This is where agents start replacing processes, not just completing tasks.
+
+- Manus has had scheduled tasks for months, so does ChatGPT doesn't it?
+
+- ## You start to hit limitations of CLIs very quickly. If you run 5+ Codexes/Claudes, you need to always remember the context of each conversation. 
+- https://x.com/olegakbarov/status/2018569352317149466
+  - For complex multi-stage tasks (the ones that actually deliver value) it is almost impossible. 
+  - On top of that you frequently want to fork or split conversation into separate threads copy paste text here and there. TUIs are bottle neck for those cases. Frequently it is about efficiency (what was such a big selling point of editors like vim) - i don't want to type a command if i can click a button or use hotkey (don't even start about hotkeys on TUIs). 
+  - Agent orchestrators are in its infancy and will evolve as coding-as-job becomes higher level abstraction than writing actual code.
+
 # discuss
 - ## 
 

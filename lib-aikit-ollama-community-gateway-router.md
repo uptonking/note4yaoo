@@ -248,7 +248,8 @@ modified: 2026-01-21T04:22:29.956Z
 
 - ## 
 
-- ## 
+- ## [openrouter出免费模型路由了 _202602](https://linux.do/t/topic/1559289)
+  - 稍微测了下，不是 50rpd，挺好
 
 - ## [哪里有免费或者便宜的stt语音模型 可以接api用的 ](https://linux.do/t/topic/1211369)
 - 硅基流动的 SenseVoiceSmall

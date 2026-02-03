@@ -491,6 +491,11 @@ modified: 2023-02-08T07:20:48.475Z
   - Free Commercial Use. Starting from April 2024, both V2 and V1 are released under MIT License. 
   - OpenVoice has been powering the instant voice cloning capability of myshell.ai since May 2023. 
   - 即时语音克隆工具，只需从参考资料中截取一段简短的音频即可实现克隆。可详细控制语音风格，包括情感、口音、节奏、停顿和语调。生成多种语言的语音。
+
+- https://github.com/bc-dunia/qwen3-TTS-studio /202602/python
+  - A professional-grade interface for Qwen3-TTS, designed to unlock the model's full potential with fine-grained control and intuitive workflows.
+  - Automated Podcasts: Generate complete podcasts from just a topic - AI writes the script, assigns voices, and synthesizes audio automatically
+  - [I built Qwen3-TTS Studio – Clone your voice and generate podcasts locally, no ElevenLabs needed : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1quhtzi/i_built_qwen3tts_studio_clone_your_voice_and/)
 # ai-examples
 - https://github.com/Zeyi-Lin/HivisionIDPhotos /apache2/202409/python
   - https://swanhub.co/ZeYiLin/HivisionIDPhotos/demo

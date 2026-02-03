@@ -63,7 +63,16 @@ modified: 2023-10-28T13:46:14.957Z
 
 - ## 
 
-- ## 
+- ## Rows in PostgreSQL are immutable and stored on the 'heap'. Every row has a hidden identifier called CTID that points to its physical location on disk.
+- https://x.com/arpit_bhayani/status/2018306637938020484
+  - CTID is a tuple identifier with two parts: the page number and the index within that page. You can see it with a simple query:  SELECT ctid, * FROM your_table; 
+  - Here's what makes CTID interesting: when you create a primary key index, the index doesn't store the entire row. It stores the value and the CTID, which points to the actual row location on the heap.
+  - This is why lookups are fast. The index gives you the CTID, and PostgreSQL jumps directly to that physical location on the heap to fetch the row.
+  - But here's the catch: CTID changes when a row is updated. PostgreSQL uses MVCC (Multi-Version Concurrency Control), so updates create new row versions at different physical locations. The old CTID becomes invalid, and the row gets a new one.
+  - This is why indexes need to be updated on every row update. The key value might stay the same, but the CTID it points to changes.
+  - Interesting design choices. PostgreSQL saved one indirection by saving CTID, but now the index needs to be updated even if non-indexed columns are modified.
+
+- 
 
 - ## Like most databases, Postgres work with fixed size pages. 
 - https://x.com/hnasr/status/1832071246051446991

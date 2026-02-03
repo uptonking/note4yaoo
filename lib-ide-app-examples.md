@@ -205,6 +205,13 @@ modified: 2024-08-24T16:30:20.218Z
   - Argilla can be used for collecting human feedback for a wide variety of AI projects like traditional NLP (text classification, NER, etc.), LLMs (RAG, preference tuning, etc.), or multimodal models (text to image, etc.). Argilla's programmatic approach lets you build workflows for continuous evaluation and model improvement. 
   - Take control of your data and models
 # code-search
+- https://github.com/RyanNg1403/agentic-search-vs-rag /MIT/202601/python
+  - Experimental validation: Agentic Search (context trees) vs traditional RAG for code retrieval. Agentic wins with 99% fewer tokens and 2× better accuracy. Fully reproducible with automated pipelines.
+  - A reproducible experiment comparing traditional vector-based RAG with Agentic Search (context trees) for code retrieval tasks.
+  - This experiment validates that context trees with agentic search dramatically outperform traditional RAG for code understanding tasks.
+    - 2× better retrieval accuracy (IoU score)
+    - 99% fewer tokens used per query
+
 - https://github.com/BurntSushi/ripgrep /55.1kStar/MIT/202507/rust
   - ripgrep recursively searches directories for a regex pattern while respecting your gitignore
   - ripgrep is a line-oriented search tool that recursively searches the current directory for a regex pattern. 

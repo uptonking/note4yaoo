@@ -48,7 +48,7 @@ modified: 2025-11-01T10:54:26.044Z
   - https://github.com/arcee-ai/fastmlx /apache2/202503/python/inactive
     - production ready API to host MLX models.
 
-- https://github.com/llama-farm/llamafarm /760Star/apache2/202601/python/go/ts
+- https://github.com/llama-farm/llamafarm /760Star/apache2/202601/python/go/ts/electron
   - https://llamafarm.dev/
   - https://docs.llamafarm.dev/docs/intro
   - Deploy any AI model, agent, database, RAG, and pipeline locally or remotely in minutes
