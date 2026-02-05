@@ -86,6 +86,19 @@ modified: 2024-04-14T12:19:52.096Z
   - 查词查询：鼠标悬停生词可快速查询，不打断学习进程。
   - 视频下载：粘贴视频链接，下载视频。
   - 支持win/linux/mac
+# subtitle
+- https://github.com/Huanshere/VideoLingo /15.9kStar/apache2/202505/python/inactive
+  - https://docs.videolingo.io/
+  - Netflix级字幕切割、翻译、对齐、甚至加上配音，一键全自动视频搬运AI字幕组
+  - 一站式视频翻译本地化配音工具，能够一键生成 Netflix 级别的高质量字幕，告别生硬机翻，告别多行字幕，还能加上高质量的克隆配音
+  - 使用 yt-dlp 从 Youtube 链接下载视频
+  - 使用 WhisperX 进行单词级和低幻觉字幕识别
+  - 使用 NLP 和 AI 进行字幕分割
+  - 自定义 + AI 生成术语库，保证翻译连贯性
+  - 三步直译、反思、意译，实现影视级翻译质量
+  - 按照 Netflix 标准检查单行长度，绝无双行字幕
+  - 支持 GPT-SoVITS、Azure、OpenAI 等多种配音方案
+  - 一键启动，在 streamlit 中一键出片
 # nsfw
 - https://github.com/stashapp/stash /11.5kStar/AGPLv3/202512/go/ts
   - https://docs.stashapp.cc/

@@ -914,6 +914,22 @@ Code
   - That delta state should be able to be applied to another tree in order to get the same end result. This is what diff files are ultimately there for.
   - Git diffs do this today, and they do it well (but they're pretty Git-specific). Many SCMs (and there are a lot of them) don't include a format on that level, or a format at all. Hence DiffX.
 
+- ## The Agent Client Protocol is an open standard unifying AI agent-to-editor communication.
+- https://x.com/_philschmid/status/2018706591776756216
+  - Uses standard JSON-RPC 2.0 protocol for reliable communication.
+  - Connects via stdio for subprocesses or HTTP for remote agents.
+  - Standardizes methods for file access, terminal execution, and permissions.
+  - Streams agent plans, reasoning, and tool calls via session updates.
+
+- Notable that ACP could act as a plumbing standard for AI editors, reframing integration from a coding chore into governance and trust. The real test becomes data provenance and consistent permissions as messages flow between client and agent, not just the interface
+
+- ACP is the LSP moment for agents. By using JSON-RPC 2.0 over stdio, it creates a universal interface that decouples agent logic from editor-specific implementations like Zed or VS Code. Standardized plumbing wins.
+
+- ACP solves the editor-agent link but the harder gap is agent-to-agent. JSON-RPC works for structured tool calls, but agents coordinating with each other need discovery and trust on top. Right now every framework invents its own handshake.
+  - Agent-to-editor is solved. Agent-to-agent is the harder problem. How do two agents negotiate a task neither was explicitly programmed for? JSON-RPC works for structured calls but breaks down when agents need to build shared context dynamically.
+- does the agent to agent protocol from google solve this?
+  - A2A handles discovery and structured task handoffs well. The gap is what happens mid-task - when agents need to build shared context dynamically, renegotiate scope, or handle partial failures. Protocol covers the handshake, not the conversation.
+
 - ## 为啥对 ACP 不上心，就是搞 avante.nvim 的 ACP 支持的时候弄伤了，ACP 你行行好吧， _202601
 - https://x.com/yetone/status/2008165234805198888
   - 有的是 permission_request 里 merge 了 tool call，有的是 permission_request 之前会发送 tool call，而且 tool call 的 title 每个 ACP server 实现都不一样，有的一大坨像屎一样，行行好吧

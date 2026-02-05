@@ -175,6 +175,16 @@ modified: 2025-09-16T12:36:12.968Z
 
 - In my experience MLX is only marginally faster, less than 10% usually; it has an edge when it comes to speculative decoding, though.
 
+- ## 🆚 [How does MLX quantization compare to GGUF? : r/LocalLLaMA _202410](https://www.reddit.com/r/LocalLLaMA/comments/1gc0t0c/how_does_mlx_quantization_compare_to_gguf/)
+- The GGUF quantization is often more accurate than MLX at the same bit depth. 
+  - For example, if you compare a GGUF q4_k_m with a 4-bit MLX model, GGUF tends to maintain better text quality and reduce errors, especially for larger models like 70b and 123b. 
+  - However, MLX is generally faster, though this speed can come at the cost of precision, particularly in 2-bit quantization, where grammatical errors are more frequent.
+
+- MLX's quants are a lot simpler and contains less information than llama.cpp's K quants.
+
+- is it really worth it running a 123B model at 2-bit? Have you noticed any issues running it at that low of a precision?
+  - I find ML 123B 'surprisingly' usable at IQ2M, better or on a par with 70B @ Q4KM for some tasks.
+
 - ## 🤔 [Genuine question: Why are the Unsloth GGUFs more preferred than the official ones? : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1ksw070/genuine_question_why_are_the_unsloth_ggufs_more/)
 - They often write "getting started" blog posts along with their quants of popular models where they share insights. That's valuable to newcomers. 
 
@@ -377,6 +387,37 @@ PP Speed: Q3 GGUF: 50 t/s
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [MMLU Pro: MLX-4bit vs GGUF-q4_K_M : r/LocalLLaMA _202412](https://www.reddit.com/r/LocalLLaMA/comments/1hgj0t6/mmlu_pro_mlx4bit_vs_ggufq4_k_m/)
+  - It sounds like that q4_K_M has 4.7 bits per weight (bpw), while MLX-4bit has 4.5 bpw when accounting for scales and biases. Considering the random variability (more info at the bottom), it looks like MLX-4bit and LCP-q4_K_M seem to have pretty comparable quality.
+  - running the benchmark with 12k questions takes less time.
+  - mlx-4bit > q4_K_M > iq4_XS
+
+- It's interesting because your data seems to suggest that MLX is better overall, but this has not been my experience testing between MLX and Q4_K_M
+
+- 
+- 
+- 
+- 
+
+- ## Using 4bit coding models locally give you more generation speed, but less precision. 
+- https://x.com/ivanfioravanti/status/2018920704050430333
+  - This means model and harness will keep iterating on wrongly created file to fix them. 
+  - TLDR: better using 6bit or above for local coding.
+
+- Yes, and for agentic coding, error accumulation would lead to very bad results
+  - Absolutely true, facing similar issues with 6bit too, but slightly better. I think 8bit is the solution.
+
+- What's your current software setup Ivan? Been trying to do some agentic coding on the M4 Pro with local models: in theory it works well (decent tps and lots of space for context) but in practice way too slow for agentic use
+  - I’m now testing qwen next coder 8bit on M3 Ultra, pretty fast! Step-3.5-Flash was good too, but requires more memory.
+
+- Usually 4bits is 1-2 points below BF16, so it's not a meaningful difference, provided it's a good quant. The model and quantization (4-bit) you choose is far more important. Furthermore, 4-bit is the standard for many models (e.g. Kimi K2.5 is an Int4 fine-tune, GPT-OSS, etc).
+
+- Had similar experience with qwen 3 coder next on 4 bit! Lots of stuck looping, will try with 6 bit quant.
+
+- I tried GLM 4.7 fast 6bit (23gb) and it was underwhelming because it kept looping forever.
 
 - ## [Why no NVFP8 or MXFP8? : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1qsi8n2/why_no_nvfp8_or_mxfp8/)
 - I'm still sad Ampere doesn't support native FP8

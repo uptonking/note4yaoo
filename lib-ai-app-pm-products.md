@@ -218,6 +218,7 @@ modified: 2025-03-22T16:10:24.856Z
     - ocr/vlm comparison-matrix/playground: 识别对比, 翻译对比
       - ocr模型的输出统一为openai格式、统一标签(暂无标准)
     - 允许分享文档/插画中的模型配置/运行日志, 将prompt放入git-commit，还是直接放入图片?
+    - ❓ 如何一键切换到cloud版
   - 🔗 citations for search: 外部数据源如字典mdx/书籍epub/wikipedia公开db/统计年鉴
     - 查看原文pdf-parts时支持仅查看前后几页, 保护原文内容
     - 类似词典库/kiwix的预置模块, 可下载、可分享, 不必每次都全量索引
@@ -677,6 +678,9 @@ modified: 2025-03-22T16:10:24.856Z
     - 很多openrouter渠道的模型
     - cc不支持tool, **cc渠道经常上架下架**
     - [黑与白chatAPI福利站](https://cdk.hybgzs.com/)
+  - [ibsgss公益站](https://codex.ibsgss.uk/console/personal), 签到
+    - [【ibsgss公益站】支持codex cli / cherry  ](https://linux.do/t/topic/1434464)
+    - 维护期限：到 codex-team 渠道耗尽为止
   - [api-test](https://openai.api-test.us.ci/console/personal)
     - [开个小公益站测试一下 ](https://linux.do/t/topic/1414593)
     - 包括 deepseek，硅基流动全模型，阿里云千问全模型，glm，gemini，codex
@@ -686,9 +690,8 @@ modified: 2025-03-22T16:10:24.856Z
     - [【GGBOOM公益站】签到站上线啦 ](https://linux.do/t/topic/1517772)
     - 本站点为codex中转站，不包含其他模型
     - sub2api的openai api仅支持 openai-responses API协议。不要选老版本的哦
-  - [ibsgss公益站](https://codex.ibsgss.uk/console/personal), 签到
-    - [【ibsgss公益站】支持codex cli / cherry  ](https://linux.do/t/topic/1434464)
-    - 维护期限：到 codex-team 渠道耗尽为止
+  - [NPC API](https://npcodex.kiroxubei.tech/console/personal)
+    - [[NPC-API]codex公益站开业 ](https://linux.do/t/topic/1564054)
   - [Neb 公益站](https://ai.zzhdsgsss.xyz/console/personal), 签到
     - 采用按量计费，每次0.01，注册送2000次，因为该阶段的初衷就是最大化利用这些将要过期的key。
     - 当前额度用完或2026.1.31之后进入第二阶段，采用按量计费，倍率会很低
@@ -1009,6 +1012,8 @@ modified: 2025-03-22T16:10:24.856Z
   - [【老魔公益站】沉浸式翻译站开放注册 ](https://linux.do/t/topic/1514451)
   - translate：沉浸式翻译分组，限速 300次/5min
   - cc-glm4.7和cc-m2.1：支持cc的分组，上游分别路由到glm-4.7和minimax-m2.1，限速 35次/5min
+- [6655 API](https://translate-api-cf.6655.pp.ua/)
+  - [【2月兑换码】6655公益 沉浸式翻译api ](https://linux.do/t/topic/1564148)
 
 - [New API](https://new-api-latest-1-eu26.onrender.com/pricing)
   - 无法签到, [公益API站~ 可用于翻译  ](https://linux.do/t/topic/1552193)

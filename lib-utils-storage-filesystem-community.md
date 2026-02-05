@@ -126,6 +126,34 @@ modified: 2024-05-22T11:24:07.511Z
 - Ext4. I tried f2fs recently and grub has some nasty bugs with it. Braking the efi quite often.
 - I’m using xubuntu and zfs is shipped with grub snapshot support you don’t need to do anything. I think its better than btrfs and easier.
 
+# discuss-vfs
+- ## 
+
+- ## 
+
+- ## 
+
+- ## deepagents-cli 0.0.16 is out: virtual filesystem allows you to expose fs ops to the agent like a filesystem even if they’re backed by a database or object store like Postgres or S3
+- https://x.com/Vtrivedy10/status/2018841161637806521
+  - built-ins for bash, planning, context management for large tool calls, compaction, skills, memory and more
+  - our stack for “hooks” called “middleware” for us is fully open so anyone can inject custom logic into the harness
+  - Our prompts, context injection, tool design is open too, spending a lot of time iterating on this
+  - The goal is make harness building hackable, and watch the community cook with their creativity
+
+- Are you using a virtual filesystem to sandbox the agent, or are you using it to save the "files" to a database/s3 store? Is there a way to map the FS ops into S3 for example?
+  - we support sandboxing as well (more coming soon on this!)
+  - but the concept of virtual filesystem is better captured by our “backends” documentation, we’re using it to save files but abstract the underlying storage as fs ops
+  - a community member did great work with deepagents-backends showing an example with S3 here
+
+- ## I got the boot time for our little Linux sandbox down to <0.5s with QEMU and it now has TLS MITM. 
+- https://x.com/mitsuhiko/status/2018805803239800874
+  - Kinda shocked how easy this is to do armed with Opus and Codex. Userland sandbox plumbing is Zig, host is just node. (And I built the FS abstraction on @matteocollina 's new node VFS)
+  - The sandbox is unaware of the funky business. It just talks ethernet. There is a JS implementation of Ethernet that handles DNS and TCP and re-encrypts TLS so you can do full interception of all HTTP requests which is super cool because you can just replace fetch.
+- Tiago Freitas in founder mode @tiagoefreitas · 14h I wish it had native virtiofs on macos, only old QEMU patch series enable vhost-user backends that could enable VirtioFS. Use case is using macos apps on the same folders available inside the sandbox with native performance. Maybe the clankers can finish that
+  - Oh my shit is way worse : D The entire file system is JavaScript 
+
+- So now you can do something like after having mounted the VFS with the eventual thing to run ? For the network part did you attached to a socket ?
+  - Sort of, but you register a fetch function instead, and the file system is a full posix like VFS.
 # discuss-fs-on-db
 - ## 
 

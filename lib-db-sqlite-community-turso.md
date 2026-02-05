@@ -279,6 +279,18 @@ target/debug/limbo database.db
 
 - ## 
 
+- ## deepagents-cli 0.0.16 is out: virtual filesystem allows you to expose fs ops to the agent like a filesystem even if they’re backed by a database or object store like Postgres or S3
+- https://x.com/Vtrivedy10/status/2018841161637806521
+  - built-ins for bash, planning, context management for large tool calls, compaction, skills, memory and more
+  - our stack for “hooks” called “middleware” for us is fully open so anyone can inject custom logic into the harness
+  - Our prompts, context injection, tool design is open too, spending a lot of time iterating on this
+  - The goal is make harness building hackable, and watch the community cook with their creativity
+
+- Are you using a virtual filesystem to sandbox the agent, or are you using it to save the "files" to a database/s3 store? Is there a way to map the FS ops into S3 for example?
+  - we support sandboxing as well (more coming soon on this!)
+  - but the concept of virtual filesystem is better captured by our “backends” documentation, we’re using it to save files but abstract the underlying storage as fs ops
+  - a community member did great work with deepagents-backends showing an example with S3 here
+
 - ## 🧩🚀 Today we open sourced Localsandbox, a lightweight library that gives agents a sandboxed filesystem with safe bash and code execution. _202601
 - https://x.com/vimota/status/2014009354614132912
   - [Localsandbox: A Lightweight Agent Sandbox _202601](https://coplane.com/perspectives/localsandbox)

@@ -164,7 +164,18 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
-- ## 
+- ## [Your thoughts on "thinking" LLMs? : r/ollama _202602](https://www.reddit.com/r/ollama/comments/1qv1yey/your_thoughts_on_thinking_llms/)
+  - almost all of the ollama-ready models released in recent months have been "thinking" or "chain of thought" or "reasoning" models -- you know, the ones that force you to watch the model's simulated thought process before it generates a final answer.
+
+- thinking models are created because they work. RL is used during post-training to train it to think in a way that increases performance.
+
+- It’s good for long prompts where you’re asking the LLM to complete multiple tasks. The thinking tokens allow the model to work out the intricacies of what you are asking. Simple prompts like “hello” and “summarize this:” isnt where these models excel. If the use cases correct, it’s great!
+
+- The smaller models thinking process does work for certain things, like solving puzzles, but it's generally much flimsier than a SotA model's thoughts.
+
+- There’s a huge difference between my qwen3 30b thinking vs non thinking models. It’s the difference between right and wrong answers.
+
+- It's not fake, thinking tokens were created because in a lot of scenarios they help steering the model for a better answer without polluting the contex.
 
 - ## [Files For AI Agents: Context, Search, Skills Guide | LlamaIndex _202601](https://www.llamaindex.ai/blog/files-are-all-you-need)
 - 

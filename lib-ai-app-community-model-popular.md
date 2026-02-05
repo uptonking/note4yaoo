@@ -269,16 +269,6 @@ modified: 2025-09-16T19:59:57.856Z
 - GPT-OSS provides low, medium, high reasoning efforts.
 - NVIDIA's V2 Nemotron has token-level reasoning control https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-9B-v2
 
-- ## 🆚 [How does MLX quantization compare to GGUF? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1gc0t0c/how_does_mlx_quantization_compare_to_gguf/)
-- The GGUF quantization is often more accurate than MLX at the same bit depth. 
-  - For example, if you compare a GGUF q4_k_m with a 4-bit MLX model, GGUF tends to maintain better text quality and reduce errors, especially for larger models like 70b and 123b. 
-  - However, MLX is generally faster, though this speed can come at the cost of precision, particularly in 2-bit quantization, where grammatical errors are more frequent.
-
-- MLX's quants are a lot simpler and contains less information than llama.cpp's K quants.
-
-- is it really worth it running a 123B model at 2-bit? Have you noticed any issues running it at that low of a precision?
-  - I find ML 123B 'surprisingly' usable at IQ2M, better or on a par with 70B @ Q4KM for some tasks.
-
 - ## 🆚 [The new MLX DWQ quant is underrated, it feels like 8bit in a 4bit quant. : r/LocalLLaMA _202505](https://www.reddit.com/r/LocalLLaMA/comments/1khb7rs/the_new_mlx_dwq_quant_is_underrated_it_feels_like/)
 - Yep, fully agreed - the DWQs are honestly awesome (at least for 30ba3b). 
   - one of the big benefits of DWQ over AWQ is that the model support is far, far easier. From my understanding it's basically plug-and-play; any model can use DWQ. Versus AWQ which required bespoke support from one model to the next.

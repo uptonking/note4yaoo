@@ -165,6 +165,10 @@ modified: 2025-11-01T10:54:26.044Z
   - [The C++ rewrite of Lemonade is released and ready! : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1p1h9fz/the_c_rewrite_of_lemonade_is_released_and_ready/)
     - Lemonade is an open-source alternative to local LLM tools like Ollama
   - [Electron app feedback _202511](https://github.com/lemonade-sdk/lemonade/issues/594)
+  - pr已合并 [Geramy/macosx support stg1 _202602](https://github.com/lemonade-sdk/lemonade/pull/868)
+    - This PR introduces comprehensive macOS support for Lemonade, focusing on native packaging, system integration, and performance optimizations. 
+    - It establishes the foundation for seamless macOS integration, replacing the previous cross-platform approach with macOS-native implementations.
+    - Switched to `.pkg` installer: Replaced `.dmg` with `.pkg` format for automatic installation of both the Electron app and system services
 # mlx/llama.cpp-server/wrapper
 - https://github.com/HazyResearch/minions /1.2kStar/MIT/202601/python
   - Big & Small LLMs working together

@@ -33,7 +33,19 @@ modified: 2024-01-23T02:52:23.932Z
 
 - ## 
 
-- ## 
+- ## 🤔 [10, 000 notes in Obsidian. I think it's just not working for me anymore. : r/PKMS _202602](https://www.reddit.com/r/PKMS/comments/1qvnvxu/10000_notes_in_obsidian_i_think_its_just_not/)
+  - Been using Obsidian since 2020 pretty much since public launch. 10, 000+ notes now.
+  - I have an inbox in a completely different app because getting stuff into Obsidian feels like too much. I add ## Log sections with dates to notes because I never know where to put new thoughts on old ideas. Half my thinking now happens in Claude or ChatGPT and never makes it to Obsidian.
+  - As a result more and more things end up outside of my knowledge base. I looked at the stats and the number of notes I'm creating dropped to almost just a couple of notes per month. And I didn't stop my work and consuming materials, so clearly something is not working.
+  - I started looking into other stuff: notebooklm, mem, outliners (feel like a great idea but I haven't found a decent implementation) but nothing really feels right. And I don't want to abandon my 4 years of notes.
+
+- I have 8819 notes, it is working fine for me. I use PARA as a methodology.
+
+- Of those 10, 000+ notes, how many are basically web clippings (with or without annotation, markup) and how many of them are original writings?
+  - The reason for asking is that I've noticed a connection between large vaults and struggles similar to yours.
+  - Data hoarding is a thing. And just like those who hoard physical things, it becomes impossible to find the things you have. Whether it is an inbox or "uncataloged" folder, it shouldn't be a dumping ground, but a queue of things to be processed.
+  - If you are consistently adding to it faster than you are processing it then perhaps the things you are adding aren't as important as you initially thought.
+  - My vault is a little over 2400+ notes (all but about 50 are original writings) spanning 49 years. I use the Johnny Decimal method for my folder/notebook hierarchy and make generous but deliberate use of links (approx. 5200 links in the vault)... nearly all are internal to the vault. Tags are the 3rd ligaments of connection.
 
 - ## The future is plain text files — it's just not evenly distributed
 - https://x.com/kepano/status/2007461645438849484

@@ -367,6 +367,20 @@ language:JavaScript  language:TypeScript
 
 - Is it possible to show this search in a floating window like in JetBrains' IDEs?
   - Unfortunatelly not. I manages to achieve this only by forking VS code. The extension doesn’t support such behaviour
+# discuss-github-issues
+- ## 
+
+- ## 
+
+- ## [Sorting the insights dependency graph lists · community _202109](https://github.com/orgs/community/discussions/5575)
+  - That really interesting to look at dependents repositories and find some great project. Some popular repos has a lot of dependents so I wonder be able to sort them by stars or forks.
+
+- https://github.com/andriyor/ghtopdep /327Star/MIT/202408/python/inactive
+  - CLI tool for sorting dependents repo by stars
+
+- https://github.com/capricorn86/happy-github-dependents /MIT/202602/ts
+  - Uses Happy DOM to scrape GitHub dependents pages for a Github repository and generate a report sorted by stars in various formats (HTML, Markdown, JSON, CSV).
+  - This tool doesn't require any API keys as it uses the public GitHub web interface to get the data.
 # discuss-xp-github
 - ## 
 

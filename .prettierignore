@@ -9,6 +9,7 @@ LICENSE.txt
 *.md
 *.mdx
 
+*.min.html
 *.min.js
 *.min.css
 *.js.map

@@ -14,7 +14,15 @@ modified: 2026-01-25T17:23:01.510Z
 
 - ## 
 
-- ## 
+- ## [Architecture breakdown: Processing 2GB+ of docs for RAG without OOM errors (Python + Generators) : r/Rag _202602](https://www.reddit.com/r/Rag/comments/1qv2ks2/architecture_breakdown_processing_2gb_of_docs_for/)
+  - Most RAG tutorials teach you to load a PDF into a list. That works for 5MB, but it crashes when you have 2GB of manuals or logs.
+  - I built a pipeline to handle large-scale ingestion efficiently on a consumer laptop. 
+  - I made a full code-along video explaining the implementation line-by-line using Python and LangChain concepts.
+  - Here is the architecture I used to solve RAM bottlenecks and API rate limits:
+  - Lazy Loading with Generators: Instead of docs = loader.load(), I implemented a Python Generator (yield). This processes one file at a time, keeping RAM usage flat regardless of total dataset size.
+  - Persistent Storage: Using ChromaDB in persistent mode (on disk), not in-memory. Index once, query forever.
+  - Smart Batching: Sending embeddings in batches of 100 to the API with tqdm for monitoring, handling rate limits gracefully.
+  - Recursive Chunking with Overlap: Critical for maintaining semantic context across cuts.
 
 - ## [AI开发者工具(2)——2024 年 12 个开源文档解析项目的选型对比评测：PDF解析、OCR识别功能解读、应用场景分析及优缺点比较 - 莫尔索随笔](https://liduos.com/ai-develope-tools-series-2-open-source-doucment-parsing.html)
 
@@ -53,6 +61,10 @@ modified: 2026-01-25T17:23:01.510Z
   - The RAG approach you mentioned as a backup is actually pretty smart because it gives you flexibility when section titles are vague or when content spans weird boundaries. We've seen similar challenges with educational content processing using Docstrange and the hybrid approach tends to work better than trying to make one method handle all edge cases perfectly.
 
 # discuss-solutions
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

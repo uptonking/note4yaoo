@@ -16,7 +16,14 @@ modified: 2026-01-17T22:41:25.867Z
 
 - ## 
 
-- ## 
+- ## 🚀 [Kilo CLI 1.0 just launched - built on OpenCode as its open-source foundation : r/opencodeCLI _202602](https://www.reddit.com/r/opencodeCLI/comments/1qvo002/kilo_cli_10_just_launched_built_on_opencode_as/)
+  - [Kilo CLI 1.0: Built for Kilo Speed _202602](https://blog.kilo.ai/p/kilo-cli)
+  - Kilo CLI 1.0 just dropped, and it's built directly on the OpenCode server as its foundation.
+  - The original Kilo CLI was built on top of the VS Code extension architecture, which had dependencies that slowed iteration. Terminal-native tools deserve terminal-native foundations, and that's why the foundation turned out to be OpenCode.
+  - Instead of creating a thin wrapper around extension capabilities, Kilo CLI is now deeply integrated into the Kilo platform while preserving everything that makes OpenCode great. And the commitment is real - open source works because people give back, so improvements and bug fixes will be contributed upstream.
+
+- what's the difference between this and using opencode directly?
+  - Looks like it integrates back with the other kilo apps on your desktop
 # discuss-news
 - ## 
 

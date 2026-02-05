@@ -104,6 +104,10 @@ modified: 2025-09-21T13:58:08.942Z
     - response包含data.extract_result.full_zip_url，文件解析结果压缩包，
     - https://cdn-mineru.openxlab.org.cn/result/2026-01-30/378c8586-cbef-452e-a126-24a81100edd4.zip
       - 无需auth可下载
+
+## draft-mineru
+
+- 参考 docling-mcp 实现mineru-mcp
 # more
 - [Figure Export from Docling — Exporting PDF to image - DEV Community](https://dev.to/aairom/figure-export-from-docling-exporting-pdf-to-image-4lp6)
 

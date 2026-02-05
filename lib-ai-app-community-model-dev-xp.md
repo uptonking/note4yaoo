@@ -258,6 +258,17 @@ modified: 2025-11-18T13:22:22.078Z
   - designed to understand document semantics and extract text and tables elements with spatial grounding
   - Given an image, NVIDIA Nemotron Parse v1.1 produces structured annotations, including formatted text, bounding-boxes and the corresponding semantic classes, ordered according to the document's reading flow.
 
+- [inference-net/Schematron-8B · Hugging Face](https://huggingface.co/inference-net/Schematron-8B)
+  - Schematron series, Inference.net's long‑context extraction models specialized in converting noisy HTML into clean, typed JSON that conforms to your custom schema. 
+  - 基于 meta-llama/Llama-3.1-8B-Instruct
+  - https://x.com/samhogan/status/2018838862123196455
+    - I found out today that two of the largest web scraping companies in the world are using a custom Llama 3 model we released last year to process millions of webpages per day. 
+    - Schematron-3b: HTML -> JSON parsing
+    - Custom LLMs for data extraction are GOATed dude! We built one for a special use case and it outperforms NLP by far.
+
+- [inference-net/OSSAS-Qwen3-14B · Hugging Face](https://huggingface.co/inference-net/OSSAS-Qwen3-14B)
+  - part of Project OSSAS, developed in collaboration with LAION and Wynd Labs to democratize access to scientific knowledge by creating structured summaries of research papers at scale.
+
 - [zilliz/semantic-highlight-bilingual-v1 · Hugging Face](https://huggingface.co/zilliz/semantic-highlight-bilingual-v1)
   - We kept running into this problem: when we retrieve documents in our RAG system, users can't find where the relevant info actually is.
   - This work draws its core ideas and theoretical underpinnings from Provence (https://arxiv.org/abs/2501.16214)
@@ -279,6 +290,8 @@ modified: 2025-11-18T13:22:22.078Z
 
 ## vlm
 
+- [stepfun-ai/Step3-VL-10B · Hugging Face](https://huggingface.co/stepfun-ai/Step3-VL-10B)
+
 - [apple/FastVLM-0.5B · Hugging Face _202412](https://huggingface.co/apple/FastVLM-0.5B)
   - We introduce FastViTHD, a novel hybrid vision encoder designed to output fewer tokens and significantly reduce encoding time for high-resolution images.
   - Our smallest variant outperforms LLaVA-OneVision-0.5B with 85x faster Time-to-First-Token (TTFT) and 3.4x smaller vision encoder.
@@ -286,6 +299,14 @@ modified: 2025-11-18T13:22:22.078Z
   - [riddhimanrana/fastvlm-0.5b-captions · Hugging Face](https://huggingface.co/riddhimanrana/fastvlm-0.5b-captions)
     - a finetuned version of FastVLM-0.5B Stage 3 
     - built for efficient structured image captioning on mobile devices.
+
+## omni
+
+- [openbmb/MiniCPM-o-4_5 · Hugging Face _202602](https://huggingface.co/openbmb/MiniCPM-o-4_5)
+  - The first full-duplex omni-modal LLM 
+  - Full-duplex Omni-modal Live Streaming: The model can see, listen, and speak simultaneously in a real-time conversation without mutual blocking
+  - https://x.com/OpenBMB/status/2018741614257307678
+    - Leading Performance: Scoring 77.6 on OpenCompass, it outperforms GPT-4o & Gemini 2.0 Pro in vision-language tasks with 9B params
 # model-wiki/bookmarks
 - 超大模型的极小量化版
   - Llama-3.3-70B-Instruct-abliterated-Q2-mlx  22.07gb

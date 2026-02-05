@@ -170,7 +170,20 @@ modified: 2025-09-01T07:58:29.058Z
 
 - ## 
 
-- ## 
+- ## AI Coding：我从传统的单元测试全面迁移到 BDD（行为驱动测试）上了，让 AI 写 BDD 测试。
+- https://x.com/waylybaye/status/2018890382462087348
+  - 因为 BDD 的测试结果更可读，很容易验收 AI 的代码。比如我下面截图，一眼就能看出来 AI 是否完成了需求。
+  - BDD 不只是集成测试或 E2E 测试，单元测试采用面向行为的描述也是 BDD。BDD 关注点在行为而非实现。核心区别是交付视角的变化：
+  - TDD 侧重验证逻辑，交付的是代码，测试是代码正确的证明。
+  - BDD 侧重验证需求，交付的是行为证明，代码是实现行为的赠品。
+
+- 
+- 
+
+- https://x.com/geniusvczh/status/2018997878153523704
+  - 专门学习了一下BDD，感觉就是user story / 从需求导出测试 / 敏捷开发那一套换个语言重新说了一遍，最后弄出来一堆e2e test。不过众所周知，e2e只能解决一小部分的bug，因为相同的覆盖下，他膨胀的速度比unit test快太多，而unit test膨胀的速度也比编译期验证快太多，成本太高
+- 90% 单元测试 + 10% BDD(主要流程)，目前挺好的。
+- 用 AI 去修 e2e test 的问题，然后涌现出更多问题
 
 - ## For really complex work, AI writes thousands of lines of working code within an hour
 - https://x.com/flybayer/status/2007487747469054228

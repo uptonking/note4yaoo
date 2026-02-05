@@ -45,6 +45,18 @@ modified: 2025-12-13T18:38:27.763Z
 - 提供完全使用外部 gemini-cli/opencode-cli 的方式, 
   - 增加抽象层，通用的能力支持其他cli, 定制/复杂的能力使用内置cli, 内置cli的设计是否要去掉?
 
+- 集成 docling-mcp
+### sandbox
+
+- git-worktree to agentfs
+
+- web-clipper to import chatgpt/gemini/deepseek-chat-message
+
+- 
+- 
+- 
+- 
+
 ### chat体验待优化
 
 - 流式输出

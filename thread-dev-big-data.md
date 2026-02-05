@@ -177,6 +177,24 @@ modified: 2023-04-19T07:30:34.872Z
 # discuss-hudi-iceberg-delta
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Apache Iceberg was developed at Netflix to solve problems with petabyte-scale tables.
+- https://x.com/sspaeti/status/2018958712124449140
+  - But I think the real reason it's winning isn't technical features. It's that the original creators kept it vendor-neutral.
+  - Delta Lake is open source but Databricks-led. 
+  - Hudi is open source but AWS-influenced. 
+  - When your format doesn't favor any vendor, every vendor supports it.
+
+- I guess for a long time, both delta and iceberg will be used. And there's a new one every week, almost (Lance, Paimont, Havasus, IndexTables, Bauplan, AgentFS
+  - So it's hard to say. But I would guess that interfaces are becoming interchangeable, like the S3 API used by other object storage services.
+
+- And that is why ducklake shines over all those format
+
 - ## Apache Iceberg's catalog agnosticism actually hurts adoption and doesn't help. 
 - https://x.com/rahulj51/status/1905514407695974833
   - Barring Glue, it's a smattering of half baked, poorly documented catalogs that don't align on basic capabilities but instead try to compete on fancy add-ons. It's a mess. Everything is a perpetual work-in-progress. 
@@ -203,15 +221,15 @@ modified: 2023-04-19T07:30:34.872Z
 
 - ## Apache Hudi’s WRITE operation - Under the Hood. 
 - https://twitter.com/apachehudi/status/1764814812939202841
-01.      Deduplication:  Any duplicate record keys in the incoming batch are identified & addressed appropriately
-02.      Index Lookup: Next, an index lookup is performed to identify the file group an input record belongs to. For a new INSERT, this step returns no results
-03.      File Sizing: Then the file sizing algorithm will add sufficient records into a small file until it nearly reaches the configured maximum limit (via bin-packing)
-04.      Partitioning: Here the allocation of specific updates & inserts to existing or new file groups is determined
-05.      Write I/O: Actual writes happens here. Either the base file is created or an existing log file is appended to
-06.      Update Index: The Index is then updated to reflect the inclusion of new file groups, among other updates
-07.      Commit: Finally the changes are committed atomically
-08.      Clean: Following the commit, cleaning is initiated as required
-09.      Compaction: For MoR tables, compaction may run inline or be scheduled to execute asynchronously
+01.         Deduplication:  Any duplicate record keys in the incoming batch are identified & addressed appropriately
+02.         Index Lookup: Next, an index lookup is performed to identify the file group an input record belongs to. For a new INSERT, this step returns no results
+03.         File Sizing: Then the file sizing algorithm will add sufficient records into a small file until it nearly reaches the configured maximum limit (via bin-packing)
+04.         Partitioning: Here the allocation of specific updates & inserts to existing or new file groups is determined
+05.         Write I/O: Actual writes happens here. Either the base file is created or an existing log file is appended to
+06.         Update Index: The Index is then updated to reflect the inclusion of new file groups, among other updates
+07.         Commit: Finally the changes are committed atomically
+08.         Clean: Following the commit, cleaning is initiated as required
+09.         Compaction: For MoR tables, compaction may run inline or be scheduled to execute asynchronously
 10. Archival: Finally, an archival process is run, transferring old items from the timeline to an archive folder
 
 # discuss

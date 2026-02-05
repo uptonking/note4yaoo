@@ -65,6 +65,19 @@ modified: 2026-01-19T05:01:00.055Z
 
 ## office-mcp
 
+- https://github.com/magicyuan876/mineru-tianshu /apache2/202601/python/ts/vue
+  - 天枢 - 企业级 AI 数据预处理平台，将非结构化数据转换为 AI 可用的结构化格式
+  - 支持文档、图片、音频等多模态数据处理 | GPU 加速 | MCP 协议
+  - 后端：FastAPI、LitServe、MinerU、PaddleOCR、SenseVoice、SQLite、Loguru
+  - 前端：Vue 3、TypeScript、Vite、TailwindCSS、Pinia、Vue Router
+  - 多解析引擎: MinerU、PaddleOCR-VL、MarkItDown、格式引擎
+    - pipeline: MinerU 标准流程，通用文档解析
+    - vlm-transformers/vlm-vllm-engine: MinerU VLM 模式
+    - paddleocr-vl: 109+ 语言，自动方向矫正, 仅支持 GPU: PaddleOCR-VL 目前不支持 CPU 及 Arm 架构
+  - 文档: PDF、Word、Excel、PPT → Markdown/JSON（MinerU、PaddleOCR-VL 109+ 语言、水印去除）
+  - 企业特性: GPU 负载均衡、任务队列、JWT 认证、MCP 协议、现代化 Web 界面
+  - MCP 协议: 让 AI 助手（Claude Desktop）直接调用文档解析服务。
+
 - https://github.com/SylphxAI/pdf-reader-mcp /471Star/MIT/202601/ts
   - https://pdf-reader-mcp.sylphx.com/
   - MCP server for PDF processing - 5-10x faster with parallel processing and 94%+ test coverage
@@ -173,4 +186,11 @@ modified: 2026-01-19T05:01:00.055Z
     - Turn any article or content into professional slide decks with AI-generated images.
     - 15 styles to choose from
     - the generated slides can be exported as a PPTX file
+
+- https://github.com/assafelovic/skyll /apache2/202602/python/ts
+  - https://skyll.app/
+  - A tool for AI agents to discover and learn skills autonomously
+  - https://x.com/EdenEmarco177/status/2018602082962690511
+    - This is the future of agents. Dynamic skill loading
+    - I did something similar at https://labs.youware.com/youskill. The difference is it's agentic skill discovery based on your actual request. Should I make this an MCP?
 # more

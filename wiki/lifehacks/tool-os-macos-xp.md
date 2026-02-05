@@ -35,6 +35,11 @@ pnpm store prune
 uv cache clean
 uv cache size
 
+# clean global cache(~/go/pkg/mod)
+go clean -modcache
+# clean Build Cache(~/Library/Caches/go-build)
+go clean -cache
+
 ```
 
 ## macbook

@@ -169,7 +169,18 @@ modified: 2025-11-06T18:49:13.977Z
 - llama3.2-vision-11b
   - 似乎不支持中文
 
-- 
+- [zai-org/GLM-OCR · Hugging Face _202602](https://huggingface.co/zai-org/GLM-OCR)
+  - [Thanks for using the PP-DocLayoutV3 model from PaddleOCR-VL-1.5](https://huggingface.co/zai-org/GLM-OCR/discussions/4)
+    - The complete OCR pipeline integrates PP-DocLayoutV3 for document layout analysis, which is licensed under the Apache License 2.0
+  - [提取结构化信息的提示词使用demo 可以提供一下吗 ](https://github.com/zai-org/GLM-OCR/issues/23)
+    - 在线版目前没有结构化提取，如需要使用本地部署
+    - "请按下列JSON格式输出图中信息:\n{\n    \"id_number\": \"\",\n    \"last_name\": \"\",\n    \"first_name\": \"\",\n    \"date_of_birth\": \"\",\n    \"address\": {\n        \"street\": \"\",\n        \"city\": \"\",\n        \"state\": \"\",\n        \"zip_code\": \"\"\n    },\n    \"dates\": {\n        \"issue_date\": \"\",\n        \"expiration_date\": \"\"\n    },\n    \"sex\": \"\"\n}"
+  - https://github.com/zai-org/GLM-OCR /441Star/apache2/202602/python/ts
+    - a multimodal OCR model for complex document understanding, built on the GLM-V encoder–decoder architecture. I
+    - It introduces Multi-Token Prediction (MTP) loss and stable full-task reinforcement learning to improve training efficiency, recognition accuracy, and generalization.
+    - The model integrates the CogViT visual encoder pre-trained on large-scale image–text data, a lightweight cross-modal connector with efficient token downsampling, and a GLM-0.5B language decoder
+    - Combined with a two-stage pipeline of layout analysis and parallel recognition based on PP-DocLayout-V3, GLM-OCR delivers robust and high-quality OCR performance across diverse document layouts.
+
 - 
 - 
 - 
@@ -199,7 +210,7 @@ modified: 2025-11-06T18:49:13.977Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🆚🛢️ [【Wiki】语言模型区分题库：从文本到多模态 _202602](https://linux.do/t/topic/286836)
 
 - ## 🆚 [Show HN: Benchmarking VLMs vs. Traditional OCR | Hacker News _202502](https://news.ycombinator.com/item?id=43118514)
   - we released the Zerox package last year (https://github.com/getomni-ai/zerox). And we wanted to put some numbers behind it. So we’re open sourcing our internal OCR benchmark + evaluation datasets.
@@ -330,6 +341,23 @@ modified: 2025-11-06T18:49:13.977Z
 - ## 
 
 - ## 
+
+- ## 🆚 [GLM OCR对比Deepseek OCR 2 _202602](https://linux.do/t/topic/1563022)
+- Deepseek OCR 我觉得文字识别这一块还不如 Gemini
+  -  GLM OCR 任务 2 可以比 Gemini 还要强
+- 我希望他们出个真正的多模态，能够读懂图片和视频
+
+- ## [ocr 识别文字，哪个模型好？ _202602](https://linux.do/t/topic/1560543)
+- gemini 用 3.0falsh 正确率应该有 95% 以上
+  - 2.5 pro 正确率接近 100%
+
+- paddle ocr 最好用了（用 docker 部署），其他的都花里胡哨的
+
+- 手写的试过 paddle、ds、qwen，准确率基本上只能达到两三成
+
+- Qwen3-VL-8B 虽然是视觉模型，但 OCR 效果其实也不错。
+
+- glm-ocr 确实很强，而且很小，速度飞快，ollama 内建支持，直接就能用，都不需要配置 py 环境
 
 - ## DeepSeek刚刚发布了OCR-V2! 用LLM替代CLIP, _202601
 - https://x.com/karminski3/status/2016037684737933489

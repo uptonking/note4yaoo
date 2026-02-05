@@ -825,6 +825,24 @@ modified: 2024-05-12T17:20:03.132Z
 - Hard agree. but the real constraint is how much isolation you can afford before agents lose access to the context that makes them useful. The interesting work is finding the boundary where safety doesn’t kill leverage.
 
 - why? i just run them all in yolo mode. its fine.
+# discuss-qemu
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I got the boot time for our little Linux sandbox down to <0.5s with QEMU and it now has TLS MITM. 
+- https://x.com/mitsuhiko/status/2018805803239800874
+  - Kinda shocked how easy this is to do armed with Opus and Codex. Userland sandbox plumbing is Zig, host is just node. (And I built the FS abstraction on @matteocollina 's new node VFS)
+  - The sandbox is unaware of the funky business. It just talks ethernet. There is a JS implementation of Ethernet that handles DNS and TCP and re-encrypts TLS so you can do full interception of all HTTP requests which is super cool because you can just replace fetch.
+- Tiago Freitas in founder mode @tiagoefreitas · 14h I wish it had native virtiofs on macos, only old QEMU patch series enable vhost-user backends that could enable VirtioFS. Use case is using macos apps on the same folders available inside the sandbox with native performance. Maybe the clankers can finish that
+  - Oh my shit is way worse : D The entire file system is JavaScript 
+
+- So now you can do something like after having mounted the VFS with the eventual thing to run ? For the network part did you attached to a socket ?
+  - Sort of, but you register a fetch function instead, and the file system is a full posix like VFS.
 # discuss
 - ## 
 

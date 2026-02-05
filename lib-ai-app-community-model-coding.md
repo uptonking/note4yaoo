@@ -648,6 +648,9 @@ def slugify(text):
   - Percentage of the tests passed is a score
   - I've started evaluating them to find specific models and workflows that performed the best in my specific tasks. I built harbor bench to aid myself in that (as a simpler alternative to lm evaluation harness)
 
+- ## 🆚🛢️ [【Wiki】语言模型区分题库：从文本到多模态 _202602](https://linux.do/t/topic/286836)
+  - 题库都是中文提示词
+
 - ## 📄 [Favorite test prompts : r/ollama _202407](https://www.reddit.com/r/ollama/comments/1dtydjc/favorite_test_prompts/)
   - 💡 ai推理失败的提示词, 可尝试在后面添加 think/explain step by step
 - Converting time zones, or asking for commonly used CLI commands in Linux.
@@ -713,7 +716,7 @@ def slugify(text):
 在回来的路上
 看着火车外的风景
 真的好感人
-- [qwen3max thinking试了3次，也没有通过测试，似乎 - 国产替代 - LINUX DO](https://linux.do/t/topic/1117657)
+- [qwen3max thinking试了3次，也没有通过测试 ](https://linux.do/t/topic/1117657)
   - 通过测试的情况是输出的结果提到车被扣了，没有通过测试的情况是没有提到车被扣了
   - 国内模型都非常正能量, 大多不能推理出讽刺结局, 能推理出的包括: deepseek-r1/v3.1-thinking, glm/kimi有时能推理出
 

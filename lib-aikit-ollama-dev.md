@@ -39,6 +39,8 @@ modified: 2026-01-14T18:57:01.673Z
 
 - 自动清理
   - 此类工具的runtime/模型文件会占用大量磁盘空间, 需要提供方便管理空间的工具
+
+- 支持通过ui快速在提示词末尾添加`/non_think`的开关
 # ui/server
 - llm-ui/wrapper
   - janai(llama.cpp)

@@ -11,7 +11,22 @@ modified: 2023-12-12T08:45:31.670Z
 - feathers框架为实时类应用而设计，代码量很少
 # discuss-stars
 - ## 
-- ## 
+
+- ## [WebSockets or auto-refresh data? : r/django](https://www.reddit.com/r/django/comments/1qv04fv/websockets_or_autorefresh_data/)
+- Using something like HTMX makes this trivial. I have been using polling with htmx, but I’m looking to use SSE next.
+- Htmx polling is super simple and requires less moving parts than web socket setup will.
+
+- Do you really need real-time? Sounds like you could probably poll for status like once every 10 or 15 minutes?
+
+- I’m going to get hate but web sockets are a real pain. I know some businesses I’ve been to also block the protocol on their network.
+  - For near realtime dashboards, I’ve used htmx polling set to a few seconds. I have yet to try it with Django 6 template partials. Probably because it was super simple and I didn’t know any better.
+  - SSE is on my list to explore. It seems a bit simpler than websockets still.
+
+- Using websockets with django require a lot of setup (for example, I use uvicorn, its gunicorn worker and django-channels) and programming that is rather different than the usual model, view, template stuff. Additionally, you need to be familiar with the issues that can arise with async stuff and use of threads in case something goes wrong. Not ideal for a one man team. 
+  - I don't think it is worth in this case. Imho you should just create a view for the parts of the page you want to update and poll it in a very basic javascript with a small interval like 10 seconds and possibly less often.
+
+- Websockets using channels isn’t hard. You will have to use asgi with something like uvicorn when deploying. For the front end we use a simple wrapper around reconnecting web socket with some callbacks. Just keep it very simple and it should work well.
+
 - ## just intercepting a direct Undici request and handling it on the socket level in Node.js. Is this... socket-level interception, at last? _202508
 - https://x.com/kettanaito/status/1952733757037007059
   - Doesn't patch Undici; 
@@ -101,7 +116,9 @@ modified: 2023-12-12T08:45:31.670Z
   - 为什么不能统一一下前后端的交互，让绝大部分通信都使用websocket？
 - 分析思路
   - 占用服务器cpu、内存
+
     - 长连接有维护的开销，短连接会很快释放
+
   - 消耗带宽资源，如传输额外数据
   - 场景通用性，对移动端的支持
   - 水平扩展性

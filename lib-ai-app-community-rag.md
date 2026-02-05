@@ -55,29 +55,6 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 🤔 Does anyone know why Codex and Claude doesn't use cloud-based embeddings like Cursor to quickly search through the codebase?
-- https://x.com/EthanLipnik/status/2017468578438709723
-- Early versions of Claude Code used RAG + a local vector db, but we found pretty quickly that agentic search generally works better. It is also simpler and doesn’t have the same issues around security, privacy, staleness, and reliability.
-  - the findings make sense. but honestly, seeing CC grep around climbing through the folder structure is painful and slow. It often doesn’t find what it’s looking for. Cursor usually doesn’t have this problem
-  - RAG should be a DECISION, not a hard yes or no. We can add MCPs to do the job, which is good but new users don’t understand what’s going on and their first experience matters…
-- By agentic search do you just mean grep with the terminal
-  - Indexing, instrction, sub agent spawn in context im pretty sure.
-- egrep I guess but yea
-- grep | tail | awk | grep
-
-- RAG is overrated! Especially for a small codebase
-
-- who needs graphs when you have grep
-
-- RAG is great until you're the one managing the vector db. Agentic search is way more efficient here.
-- the reliability point is underrated. vector db adds another system that can fail. fewer moving parts means fewer failure modes. claude code is better for being simpler not despite it
-
-- The staleness issue alone makes agentic search worth it. RAG indexes get out of sync the moment you push new code.
-
-- you can use warpgrep MCP (parallel agentic search without embeddings) in CC and codex, its very nice. try it for free
-
-- privacy tradeoff. cloud embeddings mean your code leaves your machine for every search. claude's 200k context and codex's container approach bet on cramming more into the window rather than external indexing. cursor made the opposite bet
-
 - ## 🤔 [How do you actually measure RAG quality beyond "it looks good"? : r/Rag _202501](https://www.reddit.com/r/Rag/comments/1q68521/how_do_you_actually_measure_rag_quality_beyond_it/)
   - We're running a customer support RAG system and I need to prove to leadership that retrieval quality matters, not just answer fluency. Right now we're tracking context precision/recall but honestly not sure if those correlate with actual answer quality.
   - LLM as judge evals feel circular (using GPT 4 to judge GPT 4 outputs). Human eval is expensive and slow. This is driving me nuts because we're making changes blind.
@@ -796,12 +773,94 @@ modified: 2024-09-08T20:08:16.088Z
 - dont use joins. use views or make stored procs to call for summaries etc you want.
 
 - I would use the traditional RAG-based approach more in cases when the knowledge base is made of documents instead of structured data.
-# discuss-code-rag
+# discuss-code-rag 🔡
 - ## 
 
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 🔍🔡 Does anyone know why Codex and Claude doesn't use cloud-based embeddings like Cursor to quickly search through the codebase?
+- https://x.com/EthanLipnik/status/2017468578438709723
+- 👷: Early versions of Claude Code used RAG + a local vector db, but we found pretty quickly that agentic search generally works better. It is also simpler and doesn’t have the same issues around security, privacy, staleness, and reliability.
+  - the findings make sense. but honestly, seeing CC grep around climbing through the folder structure is painful and slow. It often doesn’t find what it’s looking for. Cursor usually doesn’t have this problem
+  - RAG should be a DECISION, not a hard yes or no. We can add MCPs to do the job, which is good but new users don’t understand what’s going on and their first experience matters…
+- By agentic search do you just mean grep with the terminal
+  - Indexing, instrction, sub agent spawn in context im pretty sure.
+- egrep I guess but yea
+- grep | tail | awk | grep
+
+- RAG is overrated! Especially for a small codebase
+
+- who needs graphs when you have grep
+
+- RAG is great until you're the one managing the vector db. Agentic search is way more efficient here.
+- the reliability point is underrated. vector db adds another system that can fail. fewer moving parts means fewer failure modes. claude code is better for being simpler not despite it
+
+- The staleness issue alone makes agentic search worth it. RAG indexes get out of sync the moment you push new code.
+
+- you can use warpgrep MCP (parallel agentic search without embeddings) in CC and codex, its very nice. try it for free
+
+- privacy tradeoff. cloud embeddings mean your code leaves your machine for every search. claude's 200k context and codex's container approach bet on cramming more into the window rather than external indexing. cursor made the opposite bet
+
+- ### 🌰 We saw exactly this in my previous startup. RAG + vector DB gives decent results, but agentic search over the repo (glob/grep/read, etc) consistently worked better on real-world codebases.
+- https://x.com/dani_avila7/status/2018766464933613871
+  - We even pushed further: RAG + embeddings + AST + tree-sitter. The quality was excellent
+  - cons: staleness and privacy, you need continuous re-indexing, and all the code and embeddings must live on your servers.
+  - In practice, fast models + bash-style agentic search ended up outperforming general RAG search, even if it requires more tool calls
+
+- I built https://github.com/BeaconBay/ck for this. "ck" aka Seek.  Treesitter, local embedding model, delta index updates (lives in a sidecar), agent friendly CLI (ask Claude Code to run ck --help and form an impression). The idea was simply "semantic grep" - also does hybrid query BM25/vector
+
+- RAG assumes query→vector similarity. Agentic search recognizes that code understanding is graph traversal. AST + tree-sitter + glob/grep = treating the codebase as what it is: executable knowledge graph, not text blob.
+
+- The bash style agentic search point resonates a lot. One failure mode I keep hitting is tools that only glob recent files, so long lived services drift out of the agent’s working set unless you enforce full repo passes on a schedule.
+
+- That's why we at @Alloy_main started with agentic search as the default. It's interesting to see how teams that struggled with RAG+vector are genuinely surprised when they try our agents.
+
+- Embedding makes sense when index build cost < search cost.
+
+- the same applies to web search too
+
+- Im using rag+treesitter+graph, and im getting around 83% recall@1 and like 85% mrr@10 on pydantic’s repo, and that’s with fully local cpu embedding and rerank models, not to mention instant. So while I fully agree that agentic likely works better I don’t think we should discount
+
+- For non-coding, I treat it as “workflows over sources”:
+  1) list the sources (docs/tickets/files)
+  2) fetch the current ones
+  3) summarize + cite
+  4) only then generate
+  - Same principle: force verification, not vibes.
+
+- ### The creator of Claude Code just told you the entire RAG industry is solving the wrong problem and nobody is repricing.
+- https://x.com/aakashgupta/status/2018933856460775597
+  - They started with the standard playbook. Voyage embeddings, off-the-shelf RAG, local vector DB. The setup every enterprise is currently spending millions to replicate. And they abandoned it.
+  - RAG requires an indexing step. Code drifts out of sync with the index. The index has to live somewhere. That somewhere is a security liability. Cherny specifically said that even Anthropic’s own codebase was too sensitive to upload to a third-party index
+
+- I buy the “grep/glob + multiple passes” point for codebases that change hourly. Index freshness becomes a tax, and the tax shows up as wrong context at the worst time. But I’m also wary of “felt better” as the bar when teams try to copy this. Internal tooling can optimize for speed and taste.. enterprises optimize for auditability, repeatability, and access control. I’d like to see what their eval looked like in practice.. even lightweight.. bugfix success rate, time-to-PR, rollback rate, etc.
+
+- Coding is a different problem. The connections between document are objective, consistent, and easy to follow. Agentic traversal definitely makes sense.
+  - For messy documents like in Medicine, the relationships are purely semantic, not an easy path to traverse like following a variable or an import. It’s not just the static corpora aspect.
+  - Also the cost of running a agentic traversal over huge documents is just prohibitively expensive to run in production. If you are able to run it locally, that’s great.
+
+- Embedding makes sense when index build cost < search cost.
+  - Good for: 1. Large blob data — full scan too slow.  2. Data changes rarely — index rebuild not expensive
+  - Code = small blobs + frequent changes → poor fit.
+
+- ## [Claude 3.7 Sonnet and Claude Code | Hacker News_202502](https://news.ycombinator.com/item?id=43163011)
+- One of the silver bullets of Claude, in the context of coding, is that it does NOT use RAG when you use it via the web interface. Sure, you burn your tokens but the model sees everything and this let it reply in a much better way. Is Claude Code doing the same and just doing document-level RAG, so that if a document is relevant and if it fits, all the document will be put inside the context window? I really hope so! Also, this means that splitting large code bases into manageable file sizes will make more and more sense. Another Q: is the context size of Sonnet 3.7 the same of 3.5? Btw Thanks you so much for Claude Sonnet, in the latest months it changed the way I work and I'm able to do a lot more, now.
+- Right -- Claude Code doesn't use RAG currently. In our testing we found that agentic search out-performed RAG for the kinds of things people use Code for.
+  - Since the Claude Code docs suggest installing Ripgrep, my guess is that they mean that Claude Code often runs searches to find snippets to improve in the context.
+  - I would argue that this is still RAG. There's a common misconception (or at least I think it's a misconception) that RAG only counts if you used vector search - I like to expand the definition of RAG to include non-vector search (like Ripgrep in this case), or any other technique where you use Retrieval techniques to Augment the Generation phase.
+
+- ## [What's the best indexing tool/RAG setup for Claude Code on a large repo? : r/LLMDevs _202510](https://www.reddit.com/r/LLMDevs/comments/1nw2duk/whats_the_best_indexing_toolrag_setup_for_claude/)
+  - My goal is to enable features like codebase Q&A, smart code generation, and refactoring without incurring enterprise-level costs or complexity.
+- Serena looks interesting. I've been using claude-context which is less capable.
+- Does Serena provide automatic re-indexing after code changes?
+
+- For large repos, I’ve found that similarity-only retrieval often returns test files and outdated backups instead of the implementation you actually care about. Some folks mitigate that by injecting basic structural metadata or combining keyword/syntax filters ahead of semantic search
 
 - ## [What’s the best way to chunk large Java codebases for a vector store in a RAG system? : r/Rag _202512](https://www.reddit.com/r/Rag/comments/1pgliqi/whats_the_best_way_to_chunk_large_java_codebases/)
 - AST-based chunking is definitely the way to go for Java codebases. Simple token or line-based splits will break methods and classes in weird places, making it harder for the model to understand context and relationships between code elements. Tree-sitter is solid for this, and there are some decent parsers out there, but honestly the tooling ecosystem for experimenting with different chunking strategies is pretty fragmented.
