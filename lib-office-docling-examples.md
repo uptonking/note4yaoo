@@ -89,6 +89,7 @@ modified: 2025-09-21T13:58:46.548Z
   - Local document caching for improved performance
   - Support for local files and URLs as document sources
   - RAG applications with Milvus upload and retrieval
+  - https://github.com/microsoft/markitdown/tree/main/packages/markitdown-mcp
 
 - https://github.com/AKSarav/pdfstract /108Star/apache2/202601/python/js
   - The Extraction and Chunking Layer in Your RAG Pipeline - Available as CLI - WEBUI - API

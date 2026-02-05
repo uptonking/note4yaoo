@@ -257,13 +257,16 @@ modified: 2025-12-11T18:10:23.710Z
     - Built-in AI Browser for web automation
     - 100% of the code after v1 was written by Halo itself
 
-- https://github.com/lukilabs/craft-agents-oss /apache2/202601/ts
-  - https://x.com/balintorosz/status/2013302678105796764
-  - TL; DR - We've released Craft Agents as an open source product - it  showcases our take on how to effectively work with agents (Especially Claude Code). 
+- https://github.com/lukilabs/craft-agents-oss /2.4kStar/apache2/202602/ts
+  - https://agents.craft.do/
+  - https://x.com/balintorosz/status/2013302678105796764  _202601
+  - TL; DR - We've released Craft Agents as an open source product - it showcases our take on how to effectively work with agents (Especially Claude Code). 
   - It enables intuitive multitasking, no-fluff connection to any API or Service, sharing sessions, and a more document (vs code) centric workflow - in a beautiful and fluid UI.
   - It leans on Claude Code through the Claude Agent SDK - follow what we found great, and improves areas where we've desired improvements.
   - We ourselves are building Craft Agents with Craft Agents only - no code editors - so really, any customisation is just a prompt away.
   - We built Craft Agents because we wanted a better, more opinionated (and preferably non-CLI way) of working with the most powerful agents in the world. 
+  - 支持吃anthropic格式的api
+    - 可尝试 快手、cliproxyapi
 
 - https://github.com/fengshao1227/ccg-workflow /MIT/202601/js
   - CCG v3.0: Claude Code 编排三 CLI 协作
@@ -743,6 +746,11 @@ modified: 2025-12-11T18:10:23.710Z
     - Minimal Codex-CLI implementation.
     - https://x.com/ofcboogeyman/status/2012467798816198889
     - full agentic loop with tools (read, write, glob, grep, bash).
+
+- https://github.com/shareAI-lab/learn-claude-code /16.5kStar/MIT/202602/python
+  - Bash is all You need - Write a nano Claude Code 0 - 1
+  - https://x.com/hylarucoder/status/2019261190615232723
+    - 实际上 700 多行 python 就可以复刻 claude code 迷你版, 包含 todo / subagent / skills.
 
 - https://github.com/Aider-AI/aider /37.1kStar/apache2/202508/python
   - https://aider.chat/

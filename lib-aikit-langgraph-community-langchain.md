@@ -67,7 +67,11 @@ modified: 2025-09-05T07:18:16.308Z
 
 - ## 
 
-- ## 
+- ## 𝚍𝚎𝚎𝚙𝚊𝚐𝚎𝚗𝚝𝚜 supports pluggable storage backends for AI agents
+- https://x.com/LangChain_JS/status/2019080952618897578
+  - /docs/       → S3
+  - /memories/   → SQLite
+  - /workspace/  → Local disk
 
 - ## [is the openai package still the best approach for working with LLMs in Python? : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1puqqjv/is_the_openai_package_still_the_best_approach_for/)
 - It works well. You can recreate everything with the standard `requests` library, but why would you? It's just streaming requests and JSON at the end of the day

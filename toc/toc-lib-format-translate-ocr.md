@@ -262,6 +262,8 @@ modified: 2025-12-19T12:43:21.150Z
     - 本地免费跑（我们最推荐的）
   - https://github.com/oomol-lab/epub-translator /MIT/202601/python
     - uses AI large language models to automatically translate EPUB e-books while 100% preserving the original book's format, illustrations, table of contents, and layout. 
+  - https://github.com/jarodise/pdf2epub-paddle /MIT
+    - vibe code了一个扫描版电子书转换工具，打包了PaddleOCR的API，然后在代码层面做了一些工程优化处理, 确保扫描版的PDF文件能够转化成排版优雅的Epub格式电子书，去除PDF文件中不必要的页眉，页脚，页码等杂乱元素的同时，最大程度保留原书内的插图，表格等内容。
 
 - https://github.com/gavrielc/Nano-PDF /903Star/MIT/202512/python/gemini
   - A CLI tool to edit PDF slides using natural language prompts, powered by Google's Gemini 3 Pro Image ("Nano Banana") model.

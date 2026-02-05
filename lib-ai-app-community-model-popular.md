@@ -47,7 +47,14 @@ modified: 2025-09-16T19:59:57.856Z
 
 - ## 
 
-- ## 
+- ## 🧩 [[Discussion] What exactly are World Models in AI? What problems do they solve, and where are they going? : r/MachineLearning _202505](https://www.reddit.com/r/MachineLearning/comments/1kf3pes/discussion_what_exactly_are_world_models_in_ai/)
+- A " world model " is really just some set of assumptions The model makes about the world reflected in how it makes decisions.
+  - Mostly when we mean this we aren't actually referring to some kind of concretized design and instead speculating on a performance characteristic
+- So if I understand you correctly, when we talk about a “world model, ” we’re really evaluating whether a system can reason about causality and make informed decisions based on some internal assumptions about the environment, rather than referring to a specific architectural module.
+  - More importantly, you don't have to build anything by hand (aside from basic feature engineering ) unlike rule based/expert systems. With enough unsupervised and supervised learning, eventually the ML system will have a statistical representation that's close to/similar enough to the real world for practical use.
+
+- [[D] ELI5: What the heck is a world model? : r/MachineLearning](https://www.reddit.com/r/MachineLearning/comments/ixukn7/d_eli5_what_the_heck_is_a_world_model/)
+  - World models in RL learn the transition probabilities between states. So they are world simulators. You give it the current state s and the current action a, and the world model answers with the most probable next state s'. Or with a bunch of probabilities. They are used because it's cheaper to try out something inside the simulation and find that it may not be a good idea than to make that mistake in the real world. Their problem is that they have errors and do not simulate the real world exact enough. When models are given beforehand by the programmer, then it's called optimal control instead of model-based RL.
 
 - ## [Why don’t we have more distilled models? : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qqeudu/why_dont_we_have_more_distilled_models/)
   - The Qwen 8B DeepSeek R1 distill genuinely blew me away when it dropped. You had reasoning capabilities that punched way above the parameter count, running on consumer (GPU poor) hardware. So where are the rest of them? Why aren’t there more?
@@ -657,6 +664,14 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [We built an 8B world model that beats 402B Llama 4 by generating web code instead of pixels — open weights on HF : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1qwo9j0/we_built_an_8b_world_model_that_beats_402b_llama/)
+  - We just released gWorld — open-weight visual world models for mobile GUIs (8B and 32B).
+  - The core idea: Instead of predicting the next screen as pixels (diffusion, autoregressive image gen), gWorld predicts it as executable web code. You render the code, you get the image. This sounds simple but it works remarkably well because VLMs already have strong priors on structured web code from pre-training.
 
 - ## [GLM 4.7 Flash going into infinitive thinking loop every time : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qrr8ti/glm_47_flash_going_into_infinitive_thinking_loop/)
 - maybe lower your temp to like 0.1-0.3 for math problems, the randomness makes them go nuts

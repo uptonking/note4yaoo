@@ -401,6 +401,27 @@ modified: 2025-02-21T17:17:42.225Z
     - 用瓦砾酱aionui二开的，在原版的基础上做了一些新特性和优化
     - ui还是太简陋了 交互也不太行
 
+- https://github.com/lukilabs/craft-agents-oss /2.4kStar/apache2/202602/ts
+  - https://agents.craft.do/
+  - https://x.com/balintorosz/status/2013302678105796764  _202601
+  - TL; DR - We've released Craft Agents as an open source product - it showcases our take on how to effectively work with agents (Especially Claude Code). 
+  - It enables intuitive multitasking, no-fluff connection to any API or Service, sharing sessions, and a more document (vs code) centric workflow - in a beautiful and fluid UI.
+  - It leans on Claude Code through the Claude Agent SDK - follow what we found great, and improves areas where we've desired improvements.
+  - We ourselves are building Craft Agents with Craft Agents only - no code editors - so really, any customisation is just a prompt away.
+  - We built Craft Agents because we wanted a better, more opinionated (and preferably non-CLI way) of working with the most powerful agents in the world. 
+  - 只支持anthropic格式的api
+    - 可尝试 快手、cliproxyapi
+  - 🛝
+    - 读 .docx 文件时，thinking的内容多是 read word document content using python-docx, 实际执行 python3 -c "code"
+    - 读 .pdf/.md 文件很顺利
+    - web fetch 非常慢, 待确定搜索源?
+  - https://x.com/dotey/status/2013516064361943148
+    - 告别命令行的 Claude Code 体验——保留 Claude Code 的全部能力，但用精心设计的 UI/UX 包装。
+    - 解决实际痛点——针对 Claude Code 使用中常见的困扰：难以审查计划、不易理解代码变更的原因、多任务切换困难等问题，提供了更清晰的工作流。
+    - 基于 Web 技术栈开发，底层调用 Claude Agent SDK。作者是有 20+ 年经验的 iOS/UIKit 工程师，整个项目 100% 代码由 Claude 编写
+    - https://x.com/op7418/status/2018892524937695533
+      - 聊天窗口中的文档浏览很舒服
+
 - https://github.com/eigent-ai/eigent /3.6kStar/apache2/202601/python/ts
   - https://www.eigent.ai/
   - The Open Source Cowork Desktop to Unlock Your Exceptional Productivity.

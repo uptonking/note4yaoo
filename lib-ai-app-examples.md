@@ -314,6 +314,16 @@ modified: 2023-02-08T07:20:48.475Z
     - Xllamacpp: New llama.cpp Python binding, maintained by Xinference team, supports continuous batching and is more production-ready
     - Support MLX backend for Apple Silicon chips
 
+- https://github.com/tc-mb/llama.cpp-omni /MIT/202602/cpp
+  - a high-performance Omni multimodal inference engine built on llama.cpp.
+  - First Full-Duplex Omni Streaming Engine — The first open-source C++ inference framework supporting full-duplex, omni-modal streaming video calls
+  - Compatible with llama.cpp interfaces and ecosystem for seamless integration with existing toolchains
+  - Supports Windows, Linux, and macOS
+  - Supports the complete pipeline of streaming audio input, LLM inference, and TTS speech synthesis
+  - Built on the MiniCPM-o 4.5 end-to-end omni-modal architecture, where modality encoders/decoders are densely connected to the LLM through hidden states. This design enables better information flow and control while fully leveraging the rich multimodal knowledge acquired during training.
+  - llama.cpp-omni splits the original PyTorch model into multiple independent GGUF modules, each with specific responsibilities
+  - [Discuss how to design omni model · ggml-org/llama.cpp _202510](https://github.com/ggml-org/llama.cpp/discussions/16552)
+
 - https://github.com/airnsk/proxycache /202511/python
   - Smart OpenAI‑compatible proxy for llama.cpp: manages slots, saves/restores KV cache to disk, routes requests by prefix similarity
   - [Faster Prompt Processing in llama.cpp: Smart Proxy + Slots + Restore : r/LocalLLaMA _202511](https://www.reddit.com/r/LocalLLaMA/comments/1ostdcn/faster_prompt_processing_in_llamacpp_smart_proxy/)

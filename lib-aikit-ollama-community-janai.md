@@ -48,6 +48,20 @@ modified: 2026-01-14T19:05:15.969Z
 
 - ## 
 
+- ## 
+
+- ## 🚀🍎 pr已合并_20260205 [feat: add new backend - MLX · Pull Request · janhq/jan](https://github.com/janhq/jan/pull/7459)
+  - This PR adds native MLX inference support for Jan, enabling Apple Silicon Macs to run MLX-optimized models (safetensors format) with Metal GPU acceleration. 
+  - 👀 MLXServer基于swift语言实现
+  - The implementation provides an OpenAI-compatible API via a Swift server, enabling seamless integration with the existing Jan frontend. 
+  - Vision model support via MLXVLM (Qwen2-VL, etc.)
+  - Tool calling support with function calling
+  - Prompt cache for repeated system prompts
+
+- ### [idea: MLX support · Issue · janhq/jan _202506](https://github.com/janhq/jan/issues/5485)
+  - Jan does not currently support MLX as an inference engine
+- Once we finish with the llama.cpp extension, I think supporting MLX won't be too difficult. We already bundle `uvx` with Jan.
+
 - ## [goal: Jan Desktop can use browser](https://github.com/janhq/jan/issues/6873)
   - Enable Jan to safely use a web browser via MCP (like BrowserMCP/ChromeMCP). 
   - Let agents navigate, read pages, click, or type with clear user consent.
@@ -61,14 +75,6 @@ modified: 2026-01-14T19:05:15.969Z
 - [goal: Jan Desktop uses llama.cpp and deprecates Cortex ](https://github.com/janhq/jan/issues/4941)
   - Integrate llama.cpp backend, by: Embedding llama-server via `std::process::Command`
 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-
 # discuss-roadmap
 - ## 
 
@@ -80,11 +86,6 @@ modified: 2026-01-14T19:05:15.969Z
   - People store models they downloaded from Ollama. In Jan, we should let them run models they already downloaded. This is probably the most commonly asked feature from r/LocalLLaMA.
 
 - just added a new provider and it worked
-
-- ## [idea: MLX support · Issue · janhq/jan _202506](https://github.com/janhq/jan/issues/5485)
-  - Jan does not currently support MLX as an inference engine
-- Once we finish with the llama.cpp extension, I think supporting MLX won't be too difficult. We already bundle `uvx` with Jan.
-
 # discuss-issues
 - ## 
 

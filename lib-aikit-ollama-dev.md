@@ -41,6 +41,14 @@ modified: 2026-01-14T18:57:01.673Z
   - 此类工具的runtime/模型文件会占用大量磁盘空间, 需要提供方便管理空间的工具
 
 - 支持通过ui快速在提示词末尾添加`/non_think`的开关
+
+- https://x.com/OpenBMB/status/2018741614257307678
+  - Introducing MiniCPM-o 4.5 The first full-duplex omni-modal LLM
+  - We also open source a new high-performing `llama.cpp-omni` engine together with an interactive Demo, to bring full-duplex omni experience directly to your local devices like MacBook
+  - https://github.com/tc-mb/llama.cpp-omni /MIT/202602/cpp
+    - a high-performance Omni multimodal inference engine built on llama.cpp.
+    - First Full-Duplex Omni Streaming Engine — The first open-source C++ inference framework supporting full-duplex, omni-modal streaming video calls
+    - Supports Windows, Linux, and macOS
 # ui/server
 - llm-ui/wrapper
   - janai(llama.cpp)

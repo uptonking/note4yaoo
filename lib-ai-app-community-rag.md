@@ -673,7 +673,17 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [If RAG is dead, what will replace it? : r/LLMDevs _202602](https://www.reddit.com/r/LLMDevs/comments/1qvtrw7/if_rag_is_dead_what_will_replace_it/)
+- I don’t think RAG is dead. Vector-only semantic search is what usually disappoints. What’s replacing it (for me) is hybrid retrieval + memory architecture: FTS/keyword first, then vectors only as fallback, union + rerank, and always return retrieval diagnostics (which backend, hit counts, scores, latency).
+  - The biggest unlock is in considering embeddings/indexes as versioned, reproducible derived artifacts (model/version + source hash), and controlling changes via a small golden set to prevent silent changes to results. Retrieval is just one “memory surface, ” alongside structured state/ledgers and episodic logs.
+
+- RAG isn’t dead. It’s perfectly fine and just needs to be used well. Everyone believes context graphs are the next trillion dollar industry. Context graph management at runtime is another flavor of RAG.
+  - Remember that RAG isn’t a narrow term. If something is pulled from somewhere to augment generation, it’s RAG.
+- The challenge with the name "RAG" is that so many people use it as a shorthand to describe semantic search over chunked documents in a vector database. I think the days where you can built any sort of meaningful AI application with that approach are behind us.
+- Yeah I'm using graph rag for a client and it works great if the data is static.
+  - Why static? You can't rebuild your graph every x hours?
+
+- RAG isn’t dead, it’s just being asked to do too much. gents break when you expect retrieval to behave like memory. What replaces it isn’t “better RAG, ” it’s layered memory... AG becomes infrastructure, not the strategy.
 
 - ## 🤔 [Ran 30 RAG chunking experiments - found that chunk SIZE matters more than chunking STRATEGY : r/Rag _202601](https://www.reddit.com/r/Rag/comments/1qocxu9/ran_30_rag_chunking_experiments_found_that_chunk/)
   - I kept seeing recommendations that sentence chunking is best for RAG because it "respects grammatical boundaries."
@@ -1015,7 +1025,22 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## 🧮🧩 Hierarchical Navigable Small World (HNSW) is the algorithm that makes vector search actually fast at scale, letting us search through billions of vectors in milliseconds. 
+- https://x.com/victorialslocum/status/2019003231456686375
+  - HNSW builds a multi-layer graph structure where each layer has exponentially fewer nodes than the one below it.
+  - So every vector exists in the bottom layer (layer 0), which is super well-connected. But only some vectors appear in layer 1, even fewer in layer 2, and so on. The higher layers act as "highways" that let you skip over tons of irrelevant data.
+  - When you search, HNSW starts at the top layer, finds the closest node, then travels down to the next layer and repeats. By the time you reach the bottom layer, you've already narrowed down to the most relevant neighborhood - no need to search through everything.
+  - This is why HNSW is so memory efficient compared to other approaches. It's able to "skip" through large amounts of data without scoring it.
+
+- NSW is a beautiful example of structural efficiency: multi-layer navigation turns brute-force similarity into logarithmic traversal. 
+  - But it also formalizes an approximation regime: search quality depends on graph topology, ef, connectivity, and metric choice.
+  - At scale, the relevant question becomes: what invariants survive these index-induced transformations, and when does retrieval drift become structurally irreversible? This is exactly the kind of post-hoc boundary/coherence layer we study (OMNIA).
+
+- HNSW is a great example of an algorithm thats elegant on paper and powerful in practice, but most real world issues end up coming from tuning and update patterns rather than the search itself.
+
+- HNSW is not known for being memory efficient though compared to other vector indices like IVFFlat. Also HNSW indices are great for incremental inserts and thus do not have to be rebuild often.
+
+- yep, SkipLists like structure but for graphs
 
 - ## [I built a desktop GUI for vector databases (Qdrant, Weaviate, Milvus) - looking for feedback! : r/vectordatabase](https://www.reddit.com/r/vectordatabase/comments/1po6ela/i_built_a_desktop_gui_for_vector_databases_qdrant/)
   - VectorDBZ - a desktop app for exploring and managing vector databases.

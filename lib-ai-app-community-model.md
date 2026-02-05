@@ -836,6 +836,21 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Anyone here actually using AI fully offline? : r/LocalLLM _202602](https://www.reddit.com/r/LocalLLM/comments/1qwjgj4/anyone_here_actually_using_ai_fully_offline/)
+- I run vLLM in docker for inference and use the API to connect various services. Which is what everyone does. You’re not going to get anything different from anyone if you’re speaking only about inference.
+
+- You have different options, easist is LM Studio as already mentioned, search for the Model on huggingface which suits your GPU (fast response) or your RAM (slow response). Then there is Ollama which also runs locally and you can search for Models on ollama Web Page and how to. Then there is openwebUI which is Local Web UI which runs locally and Access to UI via Browser and it Looks more Like ChatGPT but you have the control, you can combine this with ComfyUI to generate images too but it’s more complicated. There are many other options available and above one are just a tiny bit of Tipps and easy ways.
+
+- My use cases are coding. consulting, and community organizing.
+
+- I batch process documents to create summaries as part of an automated workflow, I want to keep everything local for privacy reasons. I've used the API of a local install LM Studio and it was easy to set up and worked well, but now I use llama.cpp with my own code as I have more control over it.
+
+- Try Localai.io. You’re able to run basically any model and the docker configuration isn’t the most complicated. Works offline in your terminal. I sometimes will finetune with a LoRA in a CoLab notebook and use my new model with localai. Then also you can API to practically anything. Cheers
+
 - ## [Getting OpenClaw to work with Qwen3:14b including tool calling and MCP support : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1qrywko/getting_openclaw_to_work_with_qwen314b_including/)
   - I got local tool calling working on Qwen3:14b with ~40 tools, accessible through WhatsApp. 
   - OpenClaw is an AI assistant framework that supports multiple messaging channels. It talks to its LLM backend via an OpenAI-compatible API (/v1/chat/completions).
@@ -962,6 +977,19 @@ e) 最终评论者(Final Critic)
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [I admit it… I underestimated the quality of local models : r/ClaudeCode _202602](https://www.reddit.com/r/ClaudeCode/comments/1qwkyx6/i_admit_it_i_underestimated_the_quality_of_local/)
+  - The context size you can configure in the Windows app for Ollama has a global impact on the VRAM used by the models, and because of that I had basically made models like QWEN3-CODER or GPT-OSS:20b unusable.
+  - Today, by chance, a friend told me I was wrong and to reduce the context to 48 KB and try again with the two models I mentioned above.
+  - Surprise… they now run at 100% GPU, and despite the smaller context, they’re really making me change my mind.
+
+- 48K context handles most coding tasks fine. Bigger windows don't automatically mean better output... there's a well-documented attention curve where models track info best at the start and end and lose grip on stuff buried in the middle.
+  - But the thing nobody here is bringing up is KV cache. Ollama supports KV cache quantization now (q8_0), and that's what actually eats your VRAM as context grows, not the model weights. With q8_0 you get roughly half the KV cache memory cost with almost no quality loss.
+  - So the real question isn't what context size to pick. It's whether you're tuning context size and cache precision independently. For small app work, 32K context with q8_0 KV quant on a 20B model is probably the sweet spot. Enough window for a full file plus surrounding context without starving the model of compute.
 
 - ## We've been exploring the value of letting agents use CLIs vs just navigating a REST API directly. 
 - https://x.com/dhh/status/2012543705161326941

@@ -211,6 +211,7 @@ modified: 2025-03-22T16:10:24.856Z
 - selling-points
   - 易用性: 模型推荐 + 场景优化的提示词 + 多模型/多版本对比
     - 对同一场景,如翻译/ocr, 针对不同模型内置合理的参数且支持配置
+    - roadmap: editing-database, pdf-editing, extraction, coding/table/image
   - ✈️ local models support: mlx, lmstudio-alternative
     - 模型库: text模型, ocr模型, 翻译模型, t2i生图模型, tts, stt,  lmstudio在模型分类上做的不够好
     - 较少免费api的模型: ocr, stt
@@ -219,6 +220,7 @@ modified: 2025-03-22T16:10:24.856Z
       - ocr模型的输出统一为openai格式、统一标签(暂无标准)
     - 允许分享文档/插画中的模型配置/运行日志, 将prompt放入git-commit，还是直接放入图片?
     - ❓ 如何一键切换到cloud版
+    - https://github.com/tc-mb/llama.cpp-omni is the first Omni multimodal inference engine built on llama.cpp.
   - 🔗 citations for search: 外部数据源如字典mdx/书籍epub/wikipedia公开db/统计年鉴
     - 查看原文pdf-parts时支持仅查看前后几页, 保护原文内容
     - 类似词典库/kiwix的预置模块, 可下载、可分享, 不必每次都全量索引
@@ -233,6 +235,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 提取 figure、表格
     - 👾 pdf-edit agent
     - ✨ 翻译场景的多种布局一键切换: 双栏对比布局, 仅译文布局, 富文本页面布局
+    - 🌰 内置类似mineru/paddleocr的示例和提示词
     - 甚至可以通过多栏布局的交互，来展示pdf聊天或补充信息，优点是能展示在原文位置
     - 考虑同一文档的使用场景, 类似代码编辑器的 split view 也可以方便查看和核对
     - 方便原文和译文的跳转交互
@@ -555,6 +558,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 以反重力为主的公益站: elysiver, 太子公益, hotaru, nyxar(opus)
   - 以kiro为主的渠道: 随时跑路, duck-free
   - 📌 [duckcoding 公益站](https://free.duckcoding.com/console/personal), 签到
+    - [DuckCoding](https://duckcoding.com/console/personal)
     - [DuckCoding Az-CC，单独开启公益站，只允许L站注册 ](https://linux.do/t/topic/1308120)
     - [status](https://status.duckcoding.com/status/duckcoding)
   - [Code公益站-反重力号池](https://claudex.us.ci/console/personal), 签到
@@ -645,8 +649,16 @@ modified: 2025-03-22T16:10:24.856Z
   - [ThatAPI](https://gyapi.zxiaoruan.cn/console/personal), 签到
     - 有多个cc分组，IP限制严格(无需gfw)
     - 免费提供 glm flash
-  - [太子公益 API](https://taizi.api.51yp.de5.net/console/personal), 签到
+  - [太子公益 API](https://api.codeme.me/console/personal), 签到
+    - https://taizi.api.51yp.de5.net /legacy
     - cc支持
+  - [SNOW AI CLI](https://snowcli.com/dashboard/overview), 签到
+    - Kiro政策似乎有变化，Opus不稳定，但不是不能用，Sonnet和Haiku正常
+    - 特别注意，Kiro逆向因为Token返回数据不精确，所以Snow CLI 无法准确判断自动压缩，根据经验，上下文到达25k~30K左右差不多就满了（这不是真的只有这么短）而是Kiro逆向没有返回缓存信息实际上下文可能非常接近200k了
+    - [【Snow CLI】Console 开放部分注册人数，以及近期更新汇总 ](https://linux.do/t/topic/1568653/1)
+    - 依旧免费提供稳定的 Kiro 逆向、Codex、KIMI 以及适用于 Codebase 的嵌入模型
+    - [【Snow CLI】悲报！新起点 ](https://linux.do/t/topic/1287831)
+    - 开始逐渐断供 Claude， 开放更多的用户注册量，仅保留 Codex 和 Embedding 模型
   - [八岁公益站](https://ai.xoooox.xyz/console/personal)
     - cc
   - [摸鱼公益](https://clove.cc.cd/console/personal), 可签到
@@ -664,7 +676,8 @@ modified: 2025-03-22T16:10:24.856Z
     - Claude和gpt 暂时不支持工具调用, gemini模型没有pro
     - API 调用频率限制为 12RPM，公益站永久免费，采用公平限流策略以保障服务稳定
     - 别玩至尊场，1000积分一次警告扣16x，风险太高; 高级场的高积分也可以获得高收益
-  - [Hotaru API](https://api.hotaruapi.top/console/personal)，签到, 不定期清理
+  - [Hotaru API](https://hotaruapi.com/console/personal)，签到, 不定期清理
+    - https://api.hotaruapi.top/console/personal
     - codex
     - [〔Hotaru公益站〕新的公益站启动 ](https://linux.do/t/topic/1398297)
   - [Huan API](https://ai.huan666.de/console/personal), 签到, 生图模型
@@ -684,6 +697,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [api-test](https://openai.api-test.us.ci/console/personal)
     - [开个小公益站测试一下 ](https://linux.do/t/topic/1414593)
     - 包括 deepseek，硅基流动全模型，阿里云千问全模型，glm，gemini，codex
+    - 有claude, 无opus
     - 默认 RPM30，1 级可注册，不允许批量测活
   - [GGBOOM公益站](https://ai.qaq.al/dashboard)
     - [签到控制台](https://sign.qaq.al/app)
@@ -692,12 +706,17 @@ modified: 2025-03-22T16:10:24.856Z
     - sub2api的openai api仅支持 openai-responses API协议。不要选老版本的哦
   - [NPC API](https://npcodex.kiroxubei.tech/console/personal)
     - [[NPC-API]codex公益站开业 ](https://linux.do/t/topic/1564054)
+  - [Einzieg API](https://api.einzieg.site/console/personal), 签到
+    - 仅提供codex模型
   - [Neb 公益站](https://ai.zzhdsgsss.xyz/console/personal), 签到
     - 采用按量计费，每次0.01，注册送2000次，因为该阶段的初衷就是最大化利用这些将要过期的key。
     - 当前额度用完或2026.1.31之后进入第二阶段，采用按量计费，倍率会很低
     - 会不会有签到站不会，因为我太懒了
     - 之前想过接入CC，但是对于我这种新手来说调教整个流程还是太难了
     - [【Neb 公益站】这是主贴 ](https://linux.do/t/topic/1354122)
+  - [纳米哈基米](https://free.nanohajimi.mom/), 待开放注册
+    - Gemini Imagen
+    - [【纳米哈基米 · 公益站】 支持香蕉Pro画图，Veo视频，Gemini全系模型 ](https://linux.do/t/topic/1512770)
   - [莹のAPI](https://api.wpgzs.top/pricing)，模型贵
     - rpm15
     - [莹のapi 加油站](https://quota.wpgzs.top/), 鸡你太美，每天可转100刀到公益站
@@ -1162,6 +1181,8 @@ modified: 2025-03-22T16:10:24.856Z
   - ✅ [KAT-Coder-Air V1 模型免费使用规则 ](https://www.streamlake.com/document/WANQING/mh1g9y6knewv5sft54k)
   - 非高峰时段: 02:00-08:00 每6小时内您将可以发起200次对话请求，超过此请求数后，您可能会经历更长的排队等待时间或更严格的速率限制
   - 高峰时段: 08:00-02:00（次日） 每6小时内您将可以发起120次对话请求。在此时段，KAT-Coder-Air V1 的请求优先级可能会降低。您可能会经历更长的排队等待时间或更严格的速率限制。
+  - https://wanqing.streamlakeapi.com/api/gateway/v1/endpoints/kat-coder-air-v1/claude-code-proxy
+  - https://wanqing.streamlakeapi.com/api/gateway/v1/endpoints
 
 - [LongCat API开放平台快速开始 | API 文档](https://longcat.chat/platform/docs/zh/)
   - tldr: tpd-500K
@@ -1302,6 +1323,122 @@ modified: 2025-03-22T16:10:24.856Z
     - 我的结论是，用来骗投资刚刚好
 
 - [Canopy Wave](https://cloud.canopywave.io/)
+
+## paid-api 💰
+
+- resources
+  - [LinuxDo商家评价平台](https://rate.linux.do/)
+  - [模型中转状态检测](https://check.linux.do/)
+  - [AI中转站推荐 | Claude/Gemini/Codex中转站评测对比](https://www.helpaio.com/transit)
+    - 评分结果与L站评分基本一致
+    - 提供了很多折扣码
+
+- [Claude中转渠道有哪些 ](https://linux.do/t/topic/1491876/10)
+  - 目前用的站内 IKunCode 的中转比较有性价比，如果每个月 token 消耗量不大，像我这样半自动编程的话，还是比较推荐的。量再大就得另找路子了
+  - 测试的话，刚刚刷帖，有测试词，好像这个不会回复，或者一串异常字符 
+  - 这个是一个官方给的测试词，相当于一个强制的 “违禁词”
+  - ANTHROPIC_MAGIC_STRING_TRIGGER_REFUSAL_1FAEFB6177B4672DEE07F9D3AFC62588CCD2631EDCF22E8CCC1FB35B501C9C86
+
+- [现在应该如何选cc中转站？ ](https://linux.do/t/topic/1519094/38)
+  - Ikun（鸡）, duck（鸭）少量尝过，贵但稳
+  - Cubence（鹅）的包月用过，前身 shareyourcc 的亮点在于可以二级转发；但是新时代也不便宜了，有时候发现一些报错感觉是 aws 渠道特有的
+  - PackyCode（农）是一直主力在用的，老农可能不太给情绪价值（不过被怼过之后好了些 hhh)，不过技术是一流的，诚信这一块也是一直没得黑的
+  - 也踩过 yourapi 这些坑就不推荐了
+
+- [Right Code - 企业级 AI Agent 中转平台](https://www.right.codes/models)
+  - [LinuxDo商家评价平台](https://rate.linux.do/merchant/49)
+    - 这codex缓存怎么做的这么厉害的，和官方一模一样
+    - 稳定好用，群里每周四还有抽奖
+  - [【Right. Codes】佬友福利！每人共450$ Codex  ](https://linux.do/t/topic/1145045)
+  - [话题 - 活动 - Lyndonw - LINUX DO](https://linux.do/u/lyndonw/activity/topics)
+  - cc官方 5x
+  - cc逆向-awsq 1x, 提供opus, in-￥1.00/M, out-￥5.00/M
+    - Kiro逆向，200K上下文、有缓存，与官渠相差不大
+    - cc-token大约是官方0.2x
+    - 支持支付宝
+    - 好友支付完成后，双方同时获得实付金额对应额度的 5%
+  - codex套餐量大管饱
+  - L站用户注册就送小小股东, $5/mon
+    - right code 也是站内的一家主要做codex的中转站
+
+- [IKunCode](https://api.ikuncode.cc/pricing)
+  - [LinuxDo商家评价平台](https://rate.linux.do/merchant/15)
+    - 太喜欢有求必应的客服了，回复速度快，解决问题快，稳定性也很不错
+  - [【IKunCode】全民编码人们大家好，我们是练习时长两周半的cc中转站 ](https://linux.do/t/topic/965944)
+  - [话题 - 活动 - zyoung - LINUX DO](https://linux.do/u/zyoung/activity/topics)
+  - cc官方 1.5x
+  - cc逆向 0.4/0.8, 提供opus, in-¥2-4/M, out-¥10-20/M
+    - 200K上下文 + 5min缓存，支持非CC客户端
+    - 支持 支付宝/微信
+
+- [CUBENCE - Claude Code & Codex Gateway](https://cubence.com/dashboard/model-plaza)
+  - [LinuxDo商家评价平台](https://rate.linux.do/merchant/17)
+    - 目前用过最稳的，别家一天一崩，这家一周一崩
+  - [【Cubence】SHAREYOUR正式改名Cubence ](https://linux.do/t/topic/1069292)
+  - [话题 - 活动 - Fetters - LINUX DO](https://linux.do/u/fetters/activity/topics)
+  - cc官方 1.5x
+  - cc逆向 0.3x, 提供opus, in-¥1.5/m, out-¥7.5
+    - 支持缓存
+
+- [PackyAPI](https://www.packyapi.com/pricing)
+  - [LinuxDo商家评价平台](https://rate.linux.do/merchant/4)
+    - 价格经常变动
+    - 消费500才给开发票
+    - aws-q 渠道 0.15 的倍率应该是全 L 站最低的了
+    - 国内的这种中转站都不用梯子
+  - [packycode 全新服务指南 ](https://linux.do/t/topic/1133615)
+  - [话题 - 活动 - Zeus - LINUX DO](https://linux.do/u/zeus/activity/topics)
+  - cc官方 1.5x
+  - cc逆向 0.3x, 提供opus, 美元计算, in-$1.5-6, out-$7.5-30
+    - 支持stripe/支付宝支付
+    - 最低50元起充, 支付页面输入优惠码 "cc-switch" 可以再减10%
+
+- [DuckCoding](https://duckcoding.com/)
+  - [LinuxDo商家评价平台](https://rate.linux.do/merchant/12)
+    - 最贵的一家
+    - 太贵了，消耗token太快了，即使买官方的包月也没有这么夸张啊
+    - L站最贵的倍率了
+  - [【富可敌国】InstCopilot API 更名 DuckCoding ](https://linux.do/t/topic/937521)
+  - [话题 - 活动 - WCyrus - LINUX DO](https://linux.do/u/wcyrus/activity/topics)
+  - cc官方 1.5x , 提供opus, in-¥5-15/M, out-¥25-75
+
+- [米醋API](https://www.openclaudecode.cn/)
+  - 提供opus, in-￥1.00/M, out-￥5.00/M
+  - [openclaudecode好像是也被卖了，但还是好评 _202601](https://linux.do/t/topic/1520754)
+    - 比较负责的，人家全退款了。 花了 2 个月的时间，办理完所有退款，才交割出售。 这点非常好评。
+
+- [AICodeMirror官方共享平台](https://www.aicodemirror.com/dashboard/pricing)
+  - [LinuxDo商家评价平台](https://rate.linux.do/merchant/59)
+    - 这家中奖必须给五星好评？那我直接给你0.5星
+  - cc官方 0.4x
+  - cc逆向 0.2x, 提供opus, in-¥1.4/M, out-¥7/M
+    - 缓存创建也要付费
+
+- [foxcode](https://foxcode.rjj.cc/)
+  - [LinuxDo商家评价平台](https://rate.linux.do/merchant/6)
+  - [【FoxCode稳定超耐用】一款为你量身定制的ClaudeCode镜像+API双合一 O](https://linux.do/t/topic/859649)
+  - 消耗量惊人，店铺写的次数严重虚标
+  - 暗改了计费的 一个问题能跑10$
+  - 开发票要收5%的开票费，88code和鸭子都不用
+  - [FoxCode 中转站 Claude 2API 上下文压缩时6倍天价计费 ](https://linux.do/t/topic/1373802)
+
+- [YesCode](https://co.yes.vg/)
+  - [LinuxDo商家评价平台](https://rate.linux.do/merchant/13)
+  - [YesCode, Claude Code中转站测试完毕已正式上线 ](https://linux.do/t/topic/801547)
+  - 按月付费, 美元计费, $10-20-45-66
+
+- 88code [LinuxDo商家评价平台](https://rate.linux.do/merchant/5)
+  - 最近不要再买了，建议观望，极其不稳定，经常没法用
+
+- [DMXAPI官网：中国多模态大模型API聚合平台](https://www.dmxapi.cn/)
+  - 提供免费小模型: glm-flash, qwen3-8b
+  - 很多国内模型
+  - 提供opus， in-¥12/M, out-¥62/M
+
+- [Ai Go Code - AI编程助手 | 接入Claude等先进AI模型](https://www.aigocode.com/)
+  - ¥400/4weeks
+
+- [兔小店](https://store.tu-zi.com/)
 
 ## video/movie
 
