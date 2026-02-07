@@ -58,6 +58,27 @@ modified: 2021-05-13T03:08:52.583Z
   - 不建议基于electron实现自定义浏览器，要考虑支持各浏览器自带的扩展商店，可在自己的应用层实现
   - ? electron-for-android/ios vs apps
 
+- what can chromium and nodejs do, but tauri webview cannot do?
+  - compatibility: safari-webkit cons
+  - agentic browser
+  - headless browser
+  - Execute Dynamic Code (The "Interpreter" Pattern): using vm or eval
+    - 是否可用于sandbox场景
+  - Media Codecs
+  - os/hardware
+    - audio/video recording
+    - WebHID, Web Serial, WebUSB
+    - Bluetooth API
+    - Desktop Capturer
+  - 使用nodejs/npm生态
+  - the main things Chromium+Node give you in an Electron renderer that a Tauri system WebView doesn't are direct access to the Node runtime (fs, child_process, native addons, npm-only modules) and a consistent, full Chromium feature set (Chromium flags / newer web APIs available because Electron ships Chromium).
+  - Electron bundles a specific Chromium release so you get the same web APIs everywhere (WebRTC, modern codecs, WebCodecs, WebAudio, WebCrypto changes, web platform flags). 
+  - Tauri uses the system WebView (WebView2/WKWebView/etc.), so available browser APIs depend on the OS and webview version and may lag or vary by platform.
+  - Chrome-only flags or embedder features & extensions: opfs
+  - Chrome Extensions: react-devtools
+  - Electron's `<webview>` tag allows you to embed external websites directly within your app's DOM with full isolation and control. Tauri cannot do this 
+    - webview 比 iframe 更强大, 突破 X-Frame-Options 的限制
+
 - resources
   - [Cross platform software frameworks](https://blog.tomayac.com/2023/02/23/cross-platform-software-frameworks/)
   - [electron alternatives](https://dev.to/urielsouza29/comment/1lb73)

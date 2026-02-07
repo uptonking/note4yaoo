@@ -544,6 +544,14 @@ modified: 2023-09-02T09:17:22.992Z
     - It was essentially entirely written by Opus 4.5. Coding agents love bash and they are good at reproducing it. They are also great at text-book recursive descent parsers and AST tweet-walk interpreters. 
     - It has cURL already
 
+- https://github.com/pydantic/monty /695Star/MIT/202602/rust/python
+  - A minimal, secure Python interpreter written in Rust for use by AI
+  - https://x.com/samuelcolvin/status/2019604402399768721  _202602
+    - Monty: a new python implementation, from scratch, in rust, for LLMs to run code without host access.
+    - This will power CodeMode in @pydantic AI.
+  - https://x.com/mitsuhiko/status/2019731099870777532
+    - I'm really happy that we're not just seeing full VM sandbox approaches but also stiff like vercel's just-bash and now monty.
+
 - https://github.com/agent-infra/sandbox /1.7kStar/apache2/202512/python/ts/字节
   - https://sandbox.agent-infra.com/
   - All-in-One Sandbox for AI Agents that combines Browser, Shell, File, MCP and VSCode Server in a single Docker container.

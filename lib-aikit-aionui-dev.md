@@ -46,6 +46,11 @@ modified: 2025-12-13T18:38:27.763Z
   - 增加抽象层，通用的能力支持其他cli, 定制/复杂的能力使用内置cli, 内置cli的设计是否要去掉?
 
 - 集成 docling-mcp
+
+### issues
+
+- 使用内置的cli，会导致使用外部同名cli出现配置冲突、端口冲突、编辑冲突吗
+
 ### sandbox
 
 - git-worktree to agentfs

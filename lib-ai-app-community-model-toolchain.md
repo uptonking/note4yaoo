@@ -388,7 +388,14 @@ PP Speed: Q3 GGUF: 50 t/s
 
 - ## 
 
-- ## 
+- ## 🍎 [MLX Said No to Mixed Precision. We Did It Anyway. : r/LocalLLM _202602](https://www.reddit.com/r/LocalLLM/comments/1qx6wz8/mlx_said_no_to_mixed_precision_we_did_it_anyway/)
+  - MLX's quantization only supports uniform precision. All experts at FP16? 180GB+. All at 4-bit? Quality tanks on coding tasks.
+  - We needed 9 coding experts at FP16, 119 others at 4-bit. MLX's tools said impossible.
+  - The Architecture: - Split 128 experts into TWO blocks (9 FP16 + 119 4-bit) - Map router indices on-the-fly (expert 21 → local ID 0 in FP16 block) - Run both blocks in parallel (gather_mm + gather_qmm) - mx.where selects the right output
+  - The entire "hack"? ~15 lines of conditional routing.
+  - The lesson: When workflows don't fit, trust the primitives.
+  - MLX's high-level tools said "one precision only." But gather_mm, gather_qmm, and mx.where were always capable of more.
+  - This way of convert does not allow you to quantize layers which light up for experts we want like I choose keep higher precision for security rest lower. The approach I do allows me do this via mx.where
 
 - ## [MMLU Pro: MLX-4bit vs GGUF-q4_K_M : r/LocalLLaMA _202412](https://www.reddit.com/r/LocalLLaMA/comments/1hgj0t6/mmlu_pro_mlx4bit_vs_ggufq4_k_m/)
   - It sounds like that q4_K_M has 4.7 bits per weight (bpw), while MLX-4bit has 4.5 bpw when accounting for scales and biases. Considering the random variability (more info at the bottom), it looks like MLX-4bit and LCP-q4_K_M seem to have pretty comparable quality.

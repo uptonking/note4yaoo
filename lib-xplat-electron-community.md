@@ -31,7 +31,61 @@ modified: 2023-01-02T10:30:19.459Z
 # discuss-bundler/compiler
 - ## 
 
-- ## 
+- ## 🌰🍎 aionui打包 - [三天三夜，三更半夜 踩坑实录 _202602](https://linux.do/t/topic/1573468)
+  - 本文记录了我在开源项目 AionUi（一个统一 AI Agent 图形界面）中遭遇的一次 Electron 打包白屏事故。从发现问题到最终定位根因，历时三天三夜。
+  - 如果你也在用 Electron + GitHub Actions 做 CI/CD，这篇文章或许能帮你避开一个隐蔽的大坑。
+  - 像往常一样推送了一个版本到 dev 分支，GitHub Actions 开始了它忠实的自动构建工作。十几分钟后，CI 亮起了绿灯 —— 所有平台构建成功。我下载了 macOS 的 DMG，拖进 Applications，双击启动, 白屏。没有报错弹窗，没有崩溃提示，就是一片白。
+- 第一天：本地没问题，那一定是 CI 的问题。我的第一反应是 —— 先在本地复现。本地打包出来的 DMG 安装后运行完全正常。我打开 Electron 的开发者工具日志，终于看到了这个错误： Not allowed to load local resource: file:///Applications/AionUi.app/Contents/Resources/app/.webpack/renderer/main_window/index.html
+  - ERR_FILE_NOT_FOUND——Electron 找不到渲染进程的入口文件。这个 index.html 是 webpack 打包生成的，没有它，整个界面就是一片白。
+- 第二天：深入 asar 的内心世界。我从 CI artifacts 下载了 DMG，挂载后检查 asar。CI 打包出来的 asar 里压根没有 index.html！ 这意味着 webpack 的产物在 CI 环境下根本没有生成。但 CI 构建明明显示成功了啊？ 我仔细翻看了 CI 的构建日志。在数百行日志的角落里，我发现了 "FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory"。 Node.js 内存溢出了，webpack 在打包过程中吃光了内存，进程直接崩溃。
+  - 但是 —— 为什么 CI 没有报错？答案就在 GitHub Actions 的 workflow 配置里， `continue_on_error: true` —— 这个设置的本意是：macOS 构建有时会因为 Apple 公证服务超时而失败，为了不阻塞其他平台的构建，设置了继续执行。 但它也悄悄地吞掉了 OOM 错误。webpack 崩溃了，HTML 没生成，但 CI 一脸无事地继续往下走，把一个残缺的产物打包成了 DMG 并上传。
+  - Windows 和 Linux 的构建都正常，唯独 macOS 白屏。
+  - 原因在于 Node.js V8 引擎的内存管理机制。V8 有一个人为设定的堆内存上限（64 位系统默认约 4GB），这个限制独立于物理内存。
+  - GitHub Actions 各平台 Runner 虽然标称内存相同（7GB），但实际可用内存差异很大： macOS 系统开销 (~1.5GB), Xcode / 签名工具 (~0.5GB)， Node.js 可用 (~4.5GB)
+  - macOS 系统本身就比 Linux 更 "臃肿"，加上 Xcode 工具链、代码签名服务等额外负担，留给 Node.js 的空间更少。当 webpack 打包一个包含 Monaco Editor、Arco Design、多个 AI SDK 的大型 Electron 项目时，内存消耗刚好卡在了 macOS 的临界点上。
+  - 这也解释了为什么这个问题之前没出现 —— 随着项目不断壮大，依赖越来越多，webpack 的内存消耗在某个版本终于突破了 macOS 上的 4GB 天花板。
+- 第三天：修复与反思
+  - 修复本身只需要一行： NODE_OPTIONS: "--max-old-space-size=8192"
+  - 这不是 "给 Node.js 更多物理内存"——Runner 的物理内存还是 7GB，不会凭空变多。 这是解除 V8 引擎的人为限制。告诉 V8：“如果需要，你可以用到 8GB”。实际上 webpack 只会用到它需要的量（约 5GB）。
+  - 光修 OOM 不够。真正的问题是 continue_on_error: true 让构建失败变成了 "沉默的杀手"。
+  - 我重写了 macOS 构建步骤，将公证失败和构建失败区分开来
+- 这个 bug 之所以能藏这么深的根本原因 ——AionUi 的打包流程本身就不走寻常路。
+  - 大多数 Electron 开源项目的打包流程是这样的： builder 或 forge
+- AionUi 的打包流程长这样
+  - 单独用 Forge 做不了完善的公证；单独用 electron-builder 又没有 Forge 的 webpack 集成好用。
+  - 所以 AionUi 用了一个混血方案 ——Forge 负责编译，electron-builder 负责打包。
+  - 问题就出在这里：Forge 和 electron-builder 之间没有原生的握手机制。Forge 编译完就完了，至于 .webpack/ 目录里到底有没有该有的文件，它不管。electron-builder 拿到 .webpack/ 就打包，至于里面是不是空的，它也不管。
+  - 当 webpack 因为 OOM 中途崩溃时，.webpack/ 目录可能是 "半成品"——main 进程的代码可能已经编译好了（因为它先编译），但 renderer 的 index.html 还没来得及生成。electron-builder 照样把这个半成品打进了 asar，产出了一个 "看起来正常但其实没有界面" 的 DMG。
+  - 这就是混血架构的代价：两个工具之间的信任边界，恰好是 bug 的藏身之处。
+- 需要 Electron Forge 的原因： 
+  - 它的 WebpackPlugin 对 Electron 多进程架构（main + renderer + preload）有开箱即用的支持
+  - 开发时的 HMR 热更新、DevServer、日志端口管理都做得很好
+  - FusesPlugin 可以在打包时控制 Electron 安全特性（禁用 RunAsNode、启用 Cookie 加密等）
+- 需要 electron-builder 的原因：
+  - macOS 代码签名 + Apple 公证（Forge 的 maker 支持有限）
+  - 跨架构编译（在 arm64 机器上构建 x64 包，反之亦然）
+  - 精细的 asar 控制（哪些模块打包、哪些解压、哪些排除）
+  - 多格式输出（DMG + ZIP 同时生成）
+  - 更成熟的 CI/CD 集成
+- 原生模块：另一个深坑
+  - AionUi 不是一个纯 JS 应用。它依赖了多个原生 C++ 模块：
+  - better-sqlite3 — 本地数据库，存储对话历史和设置
+  - node-pty — 终端模拟，用于运行 CLI AI 工具
+  - tree-sitter — 代码解析，用于语法高亮
+  - 这些模块必须针对目标平台和架构编译成 .node 二进制文件。在 afterPack.js 中，AionUi 实现了一套完整的跨架构重建逻辑
+  - 这意味着一次 macOS arm64 构建实际上要经历：webpack 编译 → Forge 打包 → electron-builder 打包 → 原生模块重建 → 代码签名 → Apple 公证，六个步骤。任何一步失败都可能导致最终产物有问题。
+- 为什么不简化？
+  - Forge 的 maker 不支持 Apple notarytool — 这是硬伤，没法绕过
+  - electron-builder 的 webpack 集成不如 Forge — 特别是多入口（main + renderer + preload + worker）场景
+  - 原生模块的跨架构编译 — 需要精细控制，两个工具各自的方案都不够灵活
+  - 安全特性 — Electron Fuses 只有 Forge 的 FusesPlugin 支持得好
+  - 所以这个 "混血" 方案虽然复杂，但在当前的 Electron 生态下，它是 AionUi 这种重量级桌面应用的实际最优解。
+- 经验总结
+  - 1. continue_on_error 是一把双刃剑
+  - 2. CI 绿灯 ≠ 构建成功
+  - 3. OOM 是一个平台相关的 "薛定谔 Bug": 同样的代码，同样的 webpack 配置，在 Windows 不 OOM、在 macOS 就 OOM。它可能今天不出现，明天加了一个依赖就出现了。对于大型 Electron 项目，主动设置 --max-old-space-size 是一个好习惯，不要等到 OOM 了才想起来。
+  - 4. 永远验证最终产物: 不要相信过程，要验证结果。在 CI 流水线里加一步检查最终产物是否存在且完整，能省去无数个排查白屏的深夜。
+  - 修复只用了一行配置。但找到这一行的过程，让我深刻理解了一个道理： 最难调试的 bug，不是会报错的 bug，而是假装没有 bug 的 bug。
 
 - ## [rspack support · Issue · electron/forge](https://github.com/electron/forge/issues/3450)
 - there's a community rspack electron forge template

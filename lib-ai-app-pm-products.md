@@ -525,9 +525,11 @@ modified: 2025-03-22T16:10:24.856Z
   - https://github.com/cheahjs/free-llm-api-resources
 
 - news
-  - [寻找L站开源作者，UUcode送商业级API额度—— 优质开源项目扶持计划 1228](https://linux.do/t/topic/1370667)
+  - [讯飞的GLM-4.7免费用 _202602](https://linux.do/t/topic/1573384)
+    - 限免至0305, 20qps
+    - [讯飞星辰MaaS平台](https://maas.xfyun.cn/modelSquare)
   - [华为云 CodeArts 试用期间开放GLM4.7与DeepSeek V3.2模型无限畅用，大善人还是小白鼠？ _202601](https://linux.do/t/topic/1536794/5)
-  - [Kimi K2.5 成为 OpenClaw 首个宣布免费使用的主力模型 ](https://linux.do/t/topic/1551562)
+  - [寻找L站开源作者，UUcode送商业级API额度—— 优质开源项目扶持计划 1228](https://linux.do/t/topic/1370667)
 
 - claude-news
   - [Ollama v0.14.0 and later are now compatible with the Anthropic Messages API _202601](https://ollama.com/blog/claude)
@@ -574,10 +576,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 转向商业
     - 模型支持 Claude Code、Codex、RooCode、Qwen Code、Gemini Cli 等多款工具
     - 仅支持coding工具，不支持使用api聊天
-    - 模型支持不稳定, 似乎不支持claude
     - > 签到功能在哪里呀？ 退出登录重新登陆就好了. 
-    - https://github.com/aceHubert/newapi-ai-check-in
-    - https://github.com/millylee/anyrouter-check-in
     - [AgentRouter 问题汇总 · Issue · millylee/anyrouter-check-in](https://github.com/millylee/anyrouter-check-in/issues/48)
       - agent 是在登录的时候签到的，并没有额外的 sign_in 接口，是在登录的那个接口是返回了一个check_in 的字段判断的，所以才把cookie 时间给调短了，就是让重新登录签到才有效
   - [Code Router](https://api.code-relay.com) , 无法签到和更多额度
@@ -599,7 +598,6 @@ modified: 2025-03-22T16:10:24.856Z
     - 提供了free分组，包含deepseek-v3.2, gpt-4.1-mini
     - cc分组倍率0.6
     - 活跃任务检测：窗口=600s，活跃任务槽位=8（阈值>5），疑似异常并发/自动化（辅助指标）
-    - [Gemini Business2API](https://tebss.zeabur.app/#/public/uptime)
     - [[Wind Hub]新的公益API 主帖 ](https://linux.do/t/topic/1344450)
   - 📌 [b4u API](https://b4u.qzz.io/console), 每日转盘
     - 会不会增加其他模型: 不会，本站专注于Claude
@@ -625,8 +623,8 @@ modified: 2025-03-22T16:10:24.856Z
     - Gemini 的模型是支持三种格式的： Gemini 格式（带原生和搜索）, OpenAI 格式, Claude 格式（能 CC？）
     - 反重力和veterx逆向的锅，claude对open ai格式调用问题，用cline系的产品吧，比如roo或者kilo
     - [请问薄荷怎么才能用Claude Code ](https://linux.do/t/topic/1304580)
-    - 薄荷的是Antigravity反代出来的
-    - 薄荷的 rpm不是有限制么，Cc能跑的动
+    - [【薄荷公益站】上新分组，codex分组 _202601](https://linux.do/t/topic/1501117)
+      - 速率限制是 5 分钟 50 次
   - [WONG公益站](https://wzw.pp.ua/console/topup), 每日签到
     - [WONG公益站](https://wzw.de5.net/console)
     - [WONG公益站](https://newapi.netlib.re/)
@@ -652,13 +650,9 @@ modified: 2025-03-22T16:10:24.856Z
   - [太子公益 API](https://api.codeme.me/console/personal), 签到
     - https://taizi.api.51yp.de5.net /legacy
     - cc支持
-  - [SNOW AI CLI](https://snowcli.com/dashboard/overview), 签到
-    - Kiro政策似乎有变化，Opus不稳定，但不是不能用，Sonnet和Haiku正常
-    - 特别注意，Kiro逆向因为Token返回数据不精确，所以Snow CLI 无法准确判断自动压缩，根据经验，上下文到达25k~30K左右差不多就满了（这不是真的只有这么短）而是Kiro逆向没有返回缓存信息实际上下文可能非常接近200k了
-    - [【Snow CLI】Console 开放部分注册人数，以及近期更新汇总 ](https://linux.do/t/topic/1568653/1)
-    - 依旧免费提供稳定的 Kiro 逆向、Codex、KIMI 以及适用于 Codebase 的嵌入模型
-    - [【Snow CLI】悲报！新起点 ](https://linux.do/t/topic/1287831)
-    - 开始逐渐断供 Claude， 开放更多的用户注册量，仅保留 Codex 和 Embedding 模型
+  - [Jarvis API](https://ai.ctacy.cc/console/personal), 签到
+    - cc
+    - 备用, [Jarvis API](https://jarvis.ccwu.cc/)
   - [八岁公益站](https://ai.xoooox.xyz/console/personal)
     - cc
   - [摸鱼公益](https://clove.cc.cd/console/personal), 可签到
@@ -687,7 +681,7 @@ modified: 2025-03-22T16:10:24.856Z
     - rpm 为 25，还是老样子小容器部署，服务稳定性未知，随时可能因为账号短缺、高并发而死掉
     - 仅支持 sonnet 和 haiku，等 kiro 恢复 free 用户的 opus 使用权后会上 opus
   - [黑与白chatAPI](https://ai.hybgzs.com/), 每日转盘
-    - 模型丰富: claude/gemini, 但没有gpt5(有mini)
+    - 模型丰富: claude/gemini/codex
     - 很多openrouter渠道的模型
     - cc不支持tool, **cc渠道经常上架下架**
     - [黑与白chatAPI福利站](https://cdk.hybgzs.com/)
@@ -717,6 +711,11 @@ modified: 2025-03-22T16:10:24.856Z
   - [纳米哈基米](https://free.nanohajimi.mom/), 待开放注册
     - Gemini Imagen
     - [【纳米哈基米 · 公益站】 支持香蕉Pro画图，Veo视频，Gemini全系模型 ](https://linux.do/t/topic/1512770)
+  - [SNOW AI CLI](https://snowcli.com/dashboard/overview), 签到但余额仅当天有效
+    - Kiro政策似乎有变化，Opus不稳定，但不是不能用，Sonnet和Haiku正常
+    - 特别注意，Kiro逆向因为Token返回数据不精确，所以Snow CLI 无法准确判断自动压缩，根据经验，上下文到达25k~30K左右差不多就满了（这不是真的只有这么短）而是Kiro逆向没有返回缓存信息实际上下文可能非常接近200k了
+    - [【Snow CLI】Console 开放部分注册人数，以及近期更新汇总 ](https://linux.do/t/topic/1568653/1)
+    - 依旧免费提供稳定的 Kiro 逆向、Codex、KIMI 以及适用于 Codebase 的嵌入模型
   - [莹のAPI](https://api.wpgzs.top/pricing)，模型贵
     - rpm15
     - [莹のapi 加油站](https://quota.wpgzs.top/), 鸡你太美，每天可转100刀到公益站
@@ -871,7 +870,6 @@ modified: 2025-03-22T16:10:24.856Z
   - [AICodeMirror官方共享平台 - 中国用户专属AI编程助手](https://www.aicodemirror.com/)
     - 每月 2000积分
     - 因成本大幅上升，免费用户暂不开放体验。后续开放时间另行通知
-  - [packycode：全部服务指南，包含 claude code codex 公益、付费全部站点 ](https://linux.do/t/topic/933715)
   - [一叶知秋API](https://88996.cloud/)
     - 本站已勉强运行 1020 天
   - [cto.new ](https://cto.new/)
@@ -907,15 +905,6 @@ modified: 2025-03-22T16:10:24.856Z
     - https://independent-adrea-mtg-154afb72.koyeb.app/proxy/openai
     - GALAXYPUBLICAI1984282
 
-- paid-llm
-  - [Free DuckCoding](https://free.duckcoding.com/console)
-    - [DuckCoding Free，反重力CC公益站，复活并接入LDC积分 ](https://linux.do/t/topic/1353130)
-    - Antigravity渠道，rpm限制50
-  - [UUcode - API 中转管理平台](https://www.uucode.org/)
-    - [【致敬开源】与其打硬广，不如给佬友们的代码“供电”，寻找L站开源作者，UUcode送商业级API额度 ](https://linux.do/t/topic/1370667)
-  - [foxcode](https://foxcode.rjj.cc/)
-  - [AI Ping](https://aiping.cn/modelList)
-
 - embedding
   - [embedding New API](https://router.tumuer.me/)
     - [[Embedding 公益站] 专门提供 Embedding API 的迷你站 ](https://linux.do/t/topic/1385442)
@@ -949,6 +938,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 支持多种分辨率，包括 1024x1024、768x1344、864x1152、1344x768、1152x864、1440x720、720x1440 等
 
 - image-api
+  - [云端API](https://cloudapi.wdyu.eu.cc/pricing), 签到
   - [Huan API](https://ai.huan666.de/pricing)
   - [香草API](https://ai.xiangcao.de/pricing)
   - [六哥API站](https://api.crisxie.top/pricing)
@@ -1205,6 +1195,8 @@ modified: 2025-03-22T16:10:24.856Z
   - 免费1个模型: Spark Lite 
   - QPS: 2
   - [星火大模型，燃情双十一-讯飞开放平台](https://www.xfyun.cn/activities/discount)
+  - [讯飞星辰MaaS平台](https://maas.xfyun.cn/modelSquare)
+    - 限免活动
 
 - [七牛 AI 大模型推理服务 - 七牛云](https://www.qiniu.com/ai/chat)
   - 采用按量计费的模式，根据实际使用的 token 数量收费，每月初出账。新用户享有免费额度
@@ -1279,6 +1271,8 @@ modified: 2025-03-22T16:10:24.856Z
 - [鲸智 模型广场](https://aihub.caict.ac.cn/modelplaza/modelsquare/)
   - free: free: 百度 ernie-tiny/lite/speed
 
+- [ZenMux](https://zenmux.ai/models?sort=pricingLowToHigh)
+
 - paid-api
   - [OAIPro API](https://api.oaipro.com/)
     - L 站不倒，这个就不倒
@@ -1322,9 +1316,11 @@ modified: 2025-03-22T16:10:24.856Z
     - 这个模型在蒸馏Gemini的时候竟然只蒸馏到了知识库，其他的全抛了，也算科技创新了
     - 我的结论是，用来骗投资刚刚好
 
-- [Canopy Wave](https://cloud.canopywave.io/)
-
 ## paid-api 💰
+
+- tips
+  - 中转商的价格每天都在变化, 套餐也在改变, 不要在一家花费过多
+    - 很可能注册的第一天会显示低价，后面就恢复正常价格了，注意误导
 
 - resources
   - [LinuxDo商家评价平台](https://rate.linux.do/)
@@ -1345,6 +1341,27 @@ modified: 2025-03-22T16:10:24.856Z
   - PackyCode（农）是一直主力在用的，老农可能不太给情绪价值（不过被怼过之后好了些 hhh)，不过技术是一流的，诚信这一块也是一直没得黑的
   - 也踩过 yourapi 这些坑就不推荐了
 
+- [PackyAPI](https://www.packyapi.com/pricing)
+  - [Packy - 模型健康面板](https://check.linux.do/group/Packy)
+  - [PackyAPI 使用文档](https://docs.packyapi.com/)
+  - [LinuxDo商家评价平台](https://rate.linux.do/merchant/4)
+    - 价格经常变动
+    - 消费500才给开发票
+    - aws-q 渠道 0.15 的倍率应该是全 L 站最低的了
+    - 国内的这种中转站都不用梯子
+  - [packycode 全新服务指南 _202511](https://linux.do/t/topic/1133615)
+  - [packycode：全部服务指南，包含 claude code codex 公益、付费全部站点 _202509](https://linux.do/t/topic/933715)
+  - [话题 - 活动 - Zeus - LINUX DO](https://linux.do/u/zeus/activity/topics)
+  - cc官方 1.5x
+  - cc逆向 0.3x, 提供opus, 美元计算, in-$1.5-6, out-$7.5-30
+    - 支持stripe/支付宝支付
+    - 最低50元起充, 支付页面输入优惠码 "cc-switch" 可以再减10%
+    - 好友充值可返利10%
+  - codex - [PackyCode](https://codex.packycode.com/pricing)
+    - ¥6.3/mon: 30-d, 90-week
+    - ¥10.9/mon: 60-d, 180-week
+    - ¥12.9/mon: 120-d, 360-week
+
 - [Right Code - 企业级 AI Agent 中转平台](https://www.right.codes/models)
   - [LinuxDo商家评价平台](https://rate.linux.do/merchant/49)
     - 这codex缓存怎么做的这么厉害的，和官方一模一样
@@ -1358,6 +1375,9 @@ modified: 2025-03-22T16:10:24.856Z
     - 支持支付宝
     - 好友支付完成后，双方同时获得实付金额对应额度的 5%
   - codex套餐量大管饱
+    - ¥45/mon: 30-d, 900-mon
+    - ¥60/mon: 60-d, 1800-mon
+    - ¥75/mon: 90-d, 2700-mon
   - L站用户注册就送小小股东, $5/mon
     - right code 也是站内的一家主要做codex的中转站
 
@@ -1379,19 +1399,6 @@ modified: 2025-03-22T16:10:24.856Z
   - cc官方 1.5x
   - cc逆向 0.3x, 提供opus, in-¥1.5/m, out-¥7.5
     - 支持缓存
-
-- [PackyAPI](https://www.packyapi.com/pricing)
-  - [LinuxDo商家评价平台](https://rate.linux.do/merchant/4)
-    - 价格经常变动
-    - 消费500才给开发票
-    - aws-q 渠道 0.15 的倍率应该是全 L 站最低的了
-    - 国内的这种中转站都不用梯子
-  - [packycode 全新服务指南 ](https://linux.do/t/topic/1133615)
-  - [话题 - 活动 - Zeus - LINUX DO](https://linux.do/u/zeus/activity/topics)
-  - cc官方 1.5x
-  - cc逆向 0.3x, 提供opus, 美元计算, in-$1.5-6, out-$7.5-30
-    - 支持stripe/支付宝支付
-    - 最低50元起充, 支付页面输入优惠码 "cc-switch" 可以再减10%
 
 - [DuckCoding](https://duckcoding.com/)
   - [LinuxDo商家评价平台](https://rate.linux.do/merchant/12)
@@ -1416,11 +1423,34 @@ modified: 2025-03-22T16:10:24.856Z
 
 - [foxcode](https://foxcode.rjj.cc/)
   - [LinuxDo商家评价平台](https://rate.linux.do/merchant/6)
+    - aws渠道有点蠢，其余渠道经常卡。。。体验差
   - [【FoxCode稳定超耐用】一款为你量身定制的ClaudeCode镜像+API双合一 O](https://linux.do/t/topic/859649)
   - 消耗量惊人，店铺写的次数严重虚标
   - 暗改了计费的 一个问题能跑10$
   - 开发票要收5%的开票费，88code和鸭子都不用
   - [FoxCode 中转站 Claude 2API 上下文压缩时6倍天价计费 ](https://linux.do/t/topic/1373802)
+  - [FoxCode发卡](https://fk.hshwk.org/)
+    - ¥35/0.1b, ¥135/0.5b, ¥468/2b
+  - [扛过这波了，FoxCode 稳定不涨价通知 + 优惠券发放 + 新增超高质量cc-Super渠道 _202601](https://linux.do/t/topic/1505358)
+  - [【富可敌国】小于1毛钱/$的claude-opus-4-6已全面适配, 上线gpt-5.3-codex _202602](https://linux.do/t/topic/1571488)
+  - [一文搞清楚foxcode的计费 ](https://linux.do/t/topic/1486166)
+    - 在这里以我的实际上付费为例，我充了 135 人民币，在账号上有 500 刀的可用余额。在实际上进行调用后可以发现，这三个渠道有以下的比率。aws 是原价的 0.25 倍，ultra 是 2 倍，max 是 18 倍。
+  - 🐛 [foxcode 和 tiger 用一台服务器? _202601](https://linux.do/t/topic/1468155)
+    - IP 和 证书都一样，买 MAX 还送服务器啊，还是主站服务器啊
+  - [foxcode+opencode计费是否出问题了？ ](https://linux.do/t/topic/1473221)
+    - 买东西不能光盯着几分钱的价格，没缓存 / 缓存不生效，相同的场景会贵很多的，命中缓存只有 1/10 价格
+  - [Foxcode最近的utral和super是啥渠道？ ](https://linux.do/t/topic/1506436)
+    - utral 是反重力
+    - 只有几种渠道 1、官转 2、aws 3、kiro/cursor/antigravity
+
+- [Tiger API](https://tiger.bookapi.cc/pricing)
+  - opus, in-¥1/M, out-¥5/M
+  - [【低倍率&耐用王Tiger】春节炸场福利！Claude 4.6 Opus ，Codex 5.3首发 ](https://linux.do/t/topic/1572928)
+    - 充值 6000 以上的佬友请私信群主转账并可开具发票
+    - 纯血 CC Max，假一赔十
+
+- [Jiekou AI](https://jiekou.ai/resource-pack)
+  - ¥15/20M/mon, ¥75/0.1b/mon, ¥225/0.3b/mon
 
 - [YesCode](https://co.yes.vg/)
   - [LinuxDo商家评价平台](https://rate.linux.do/merchant/13)
@@ -1440,6 +1470,11 @@ modified: 2025-03-22T16:10:24.856Z
 
 - [兔小店](https://store.tu-zi.com/)
 
+- [UUcode - API 中转管理平台](https://www.uucode.org/)
+  - [【致敬开源】与其打硬广，不如给佬友们的代码“供电”，寻找L站开源作者，UUcode送商业级API额度 ](https://linux.do/t/topic/1370667)
+
+- [AI Ping](https://aiping.cn/modelList)
+
 ## video/movie
 
 - [OmniBox - 在线观影](https://omnibox.wangchao.uno/)
@@ -1451,6 +1486,10 @@ modified: 2025-03-22T16:10:24.856Z
 
 - [风萧萧公益机场](https://chanel.weyolo.com)
   - [萧草 · 臻选](https://shop.sxxe.net/)
+
+- [Canopy Wave](https://cloud.canopywave.io/)
+  - 提供模型API
+  - 也提供部署环境
 
 - [Huggingface和Cloudflare羊毛自建代理的方法 ](https://linux.do/t/topic/1411544)
   - 利用cf大善人的网络代理加速，利用hug大善人的免费域名和证书，达到我们的目的
@@ -1477,15 +1516,19 @@ modified: 2025-03-22T16:10:24.856Z
 
 - ## 
 
-- ## 
+- ## OpenClaw 可以算是 AI OS 的雏形了吧，或者叫 AI DOS：
+- https://x.com/geekbb/status/2019591292456759564
+  - Skills → 应用软件
+  - 终端 → Telegram/Discord/WhatsApp 
+  - 进程管理 → Agentic Workflow / Task Planning
+  - 指令集 → 自然语言
+  - 虚拟内存与分页 → RAG
+- 这个类比很到位，尤其是叫 AI DOS ，现在的交互确实还挺硬核的。如果 RAG 是虚拟内存，那 Context Window 应该就是死贵的 L1 缓存？好奇谁能先搞出 AI 界的 Windows 95。
 
 - ## Codex app is out for mac
 - https://x.com/sama/status/2018414858015039504
 - cons
   - 不能添加文件夹
-
-- 
-- 
 
 - ## [畅想一下未来，以后充token会不会就像充流量话费 ](https://linux.do/t/topic/1552655)
 - 如果能的话我觉得还是挺值得入的，无限 token 但到指定 token 数额之后限制上下文

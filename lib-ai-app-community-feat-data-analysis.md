@@ -16,7 +16,13 @@ modified: 2026-02-01T13:27:30.842Z
 
 - ## 
 
-- ## 
+- ## We've started implementing these ideas in our agent, Loop, by storing SQL results in files, so the agent can dig through them without bloating context.
+- https://x.com/ankrgyl/status/2019584936639099096
+  - This provides a nice balance of read efficiency (via SQL instead of 1 file per trace on the FS) with context management.
+
+- Smart architecture choice. The core problem with most agent frameworks is they try to keep everything in context, which gets expensive fast and degrades quality.
+  - "Store results, not conversations" should be a design principle for every agent system. SQL gives you structured retrieval, files give you persistence, and the agent only loads what it needs for the current step.
+  - This is the kind of infra pattern that separates agents that work in demos from agents that work in production.
 # discuss-toolchain
 - ## 
 

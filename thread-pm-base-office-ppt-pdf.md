@@ -597,7 +597,9 @@ PDF 文件只记录字符位置，需后期处理将字符组合成行。在表�
 # discuss-design-poster
 - ## 
 
-- ## 
+- ## Agentation 2.0. Your agent can now see your annotations in real-time and act on them directly. 
+- https://x.com/benjitaylor/status/2019454660575146062
+  - 产品视频和动画很好
 
 - ## launch Pencil: INFINITE DESIGN CANVAS for Claude Code
 - https://x.com/tomkrcha/status/2014028990810300498

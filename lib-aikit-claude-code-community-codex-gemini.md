@@ -325,7 +325,24 @@ modified: 2025-12-18T12:27:14.982Z
 - 模型不同，Antigravity里面用的是opus
 
 - 同感。有时候我感觉google他们家的ai coding领域的工具和理念自成一派，甚至会怀疑是不是自己不会用，怎么会这么难用。
+# discuss-codex-xp
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [error sending request for url (https://api.openai.com/v1/responses) · Issue · openai/codex](https://github.com/openai/codex/issues/4885)
+- I guess it's a network proxy problem. Last week I solve it by change my proxy point. But this week I can't fix it again
+  - export ALL_PROXY="http://127.0.0.1:7890" is ok
+  - that works for cli, but not for vscode codex entension with ssh connection in linux server.
+- 问题一般是 VSCode 从 GUI 启动时没有继承代理/环境变量。从能用 codex 的终端输入code . 启动vscode(先在终端中先运行一下codex，然后退出codex，最后再启动vscode)，如果新打开的vscode里能用codex插件，则就是这个问题！想要根治这个问题有两大方法：①在vscode里配置系统代理；②把代理/Key写入到“系统级环境”，使得GUI启动vscode也可以走代理。
+
 # discuss-codex
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

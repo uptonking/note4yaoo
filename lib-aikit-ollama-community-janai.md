@@ -93,7 +93,9 @@ modified: 2026-01-14T19:05:15.969Z
 
 - ## 
 
-- ## 
+- ## [bug: Error generating response: Load failed ](https://github.com/janhq/jan/issues/7451)
+  - At the same time, the browser console reports a CORS (cross-origin) error.
+
 # discuss-internals
 - ## 
 

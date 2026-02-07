@@ -26,7 +26,18 @@ modified: 2025-12-18T12:26:08.445Z
 
 - ## 
 
-- ## 
+- ## 🧩 [CC环境变量 搞点简单记录 _202601](https://linux.do/t/topic/1513988)
+- CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC
+- CLAUDE_CODE_ATTRIBUTION_HEADER
+- CLAUDE_CODE_PROXY_RESOLVES_HOSTS
+  - 启用就是 把 DNS 解析交给代理服务器去做, 这个对于 WebFetch 还有 WebSearch 应该会很有帮助
+- CLAUDE_CODE_BLOCKING_LIMIT_OVERRIDE
+- CLAUDE_CODE_SKIP_PROMPT_HISTORY
+  - 多开导致概率飙升
+- CLAUDE_AUTOCOMPACT_PCT_OVERRIDE=57
+  - 强制覆盖在 ( 128000 - 13000 ) / 200000 = 57.5% 处触发自动压缩
+  - 相较于硬编码的 200k 使得在 115k 的时候就触发压缩了 满足你的需求
+- DISABLE_INSTALLATION_CHECKS
 
 - ## [Claude Code真假鉴别工具 _202601](https://linux.do/t/topic/1471272)
   - 做了个claude code测试真假的小工具，目前测试aws, crs框架的max号池皆可满分通过，kiro, cursor等逆向得分较低

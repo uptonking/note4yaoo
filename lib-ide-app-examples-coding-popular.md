@@ -620,6 +620,28 @@ modified: 2025-12-11T18:10:23.710Z
     - A containerized development environment running OpenCode WebUI with comprehensive tooling support. 
   - https://github.com/awesome-opencode/awesome-opencode
 
+- https://github.com/rivet-dev/sandbox-agent /536Star/apache2/202602/rust/ts
+  - https://sandboxagent.dev/
+  - Introducing Sandbox Agent SDK: A universal API for automatic coding agents in sandboxes
+  - Universal Session Schema: Standardized schema that normalizes all agent event formats for storage and replay
+  - Human-in-the-Loop: Approve or deny tool executions and answer agent questions remotely over HTTP
+  - Runs Inside Any Sandbox: Lightweight static Rust binary. One curl command to install inside E2B, Daytona, Vercel Sandboxes, or Docker
+  - Server or SDK Mode: Run as an HTTP server or embed with the TypeScript SDK
+  - The Sandbox Agent acts as a universal adapter between your client application and various coding agents. 
+  - Embedded Mode: Runs agents locally as subprocesses
+  - Server Mode: Runs as HTTP server from any sandbox provider, Rust daemon (sandbox-agent server) exposing the HTTP + SSE AP
+  - https://x.com/rivet_dev/status/2016548084696727842 _202601
+    - Claude Code, Codex, OpenCode, Amp all have different APIs. Sandbox Agent SDK unifies them.
+    - 100% open-source
+    - Universal session schema means no more parsing five different formats.
+    - Pairs with Rivet Actors for automatic transcript persistence, real-time streaming to clients, and full session replay.
+  - https://github.com/rivet-dev/sandbox-agent/tree/main/gigacode
+    - https://x.com/NathanFlurry/status/2019759962482725149
+    - Introducing Gigacode: Use @opencode 's UI with any coding agent
+    - Supports Claude Code, Codex, & Amp harness
+    - Not a fork (opencode attach)
+    - Powered by Sandbox Agent SDK ( @rivet_dev )
+
 - https://github.com/NeuralNomadsAI/CodeNomad /203Star/NALic/202512/ts
   - built for people who live inside OpenCode
   - Multi-Instance: Juggle several OpenCode sessions side-by-side with tabs.

@@ -15,6 +15,7 @@ modified: 2025-11-18T13:22:22.078Z
   - 测试模型时可能更希望速度快(小参数)，但做任务或规划时更希望质量好(大参数)，要取舍
   - 📱 端侧模型还要考虑电源及功耗问题, 实测macbook-air在跑模型时掉电很快
     - 端侧最好用 api-key + tiny-local-llm
+  - unsloth团队提供的量化版模型会根据反馈不断更新，经常针对热门模型更新fix和优化, 而lmstudio-community的模型很少会更新
 
 - models-choices
   - 🤔 LMs are tools. Describe your use cases.
@@ -79,6 +80,10 @@ modified: 2025-11-18T13:22:22.078Z
     - 💡 实测官方参数配置不好用, mlx-4bit适合 temperature-0.7
   - 🌹thinking的内容非常agentic, 带有明确的step
     - request analysis > Brainstorm > draft res > refine res > revise > polish > response
+  - [DeepSeek architecture?](https://huggingface.co/unsloth/GLM-4.7-Flash-GGUF/discussions/2)
+    - [DeepseekV3ForCausalLM](https://huggingface.co/zai-org/GLM-4.7-Flash/discussions/5)
+    - the modular file does inherit the DSv3 module
+    - And it looks like the only thing added on top of DSv3 is to ignore the MTP layer.
 
 - nemotron-3-nano-30b-a3b
   - 中文内容丰富

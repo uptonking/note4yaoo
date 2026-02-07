@@ -377,6 +377,8 @@ modified: 2025-11-30T17:27:16.720Z
     - primarily intended for use with python bindings. but for some reason i got bored and added Rust ones too if ya want.
   - outputs JSON for every block: text, type, bounding box, font metrics, tables. you get the raw data to process however you need.
   - [I made a fast, structured PDF extractor for RAG; 300 pages a second : r/Rag _202512](https://www.reddit.com/r/Rag/comments/1pzwot0/i_made_a_fast_structured_pdf_extractor_for_rag/)
+  - [I ported PyMuPDF4LLM to Go/C, and made it 100x faster (literally), while keeping comparable quality : r/Python _202602](https://www.reddit.com/r/Python/comments/1qxb67f/i_ported_pymupdf4llm_to_goc_and_made_it_100x/)
+    - About 1000 pages/s on a 1600 page document, and 500 pages/s on a 149 page document
 
 - https://github.com/danny-avila/rag_api /710Star/MIT/202508/python/librechat
   - [RAG API - Chat with files](https://www.librechat.ai/docs/features/rag_api)

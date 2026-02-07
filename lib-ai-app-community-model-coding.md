@@ -850,6 +850,25 @@ def slugify(text):
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Codex 5.3 is better than 4.6 Opus : r/ClaudeCode _202602](https://www.reddit.com/r/ClaudeCode/comments/1qxazv9/codex_53_is_better_than_46_opus/)
+- Like many hear, I've been testing a lot and reading a lot from people I trust (who have been using both for multiple days). The general consensus seems to be:
+  - Claude improved on things that Codex was better at (e.g. reviews)
+  - Codex improved on things that Claude was better at (e.g. steering)
+  - Opus amazes in many "build this from scratch" situations
+  - Codex seems more stable and thorough with fewer hiccups
+  - Both got better at UI, but Opus takes the cake
+  - Codex speed and token efficiency is a big improvement
+
+- Codex app is great, Codex 5.3 (even xhigh) is fast and has generous limits. Opus 4.6 is good as an all-rounder, but it eats up tokens way too fast. What used to last me 5 hours now barely lasts me an hour. 
+
+- Yep, Codex 5.3 xhigh reasoning is still a better coding model, but Claude Code with Opus 4.6 is a better coding agent
+
+- I switched to Codex half a year ago and never looked back. Codex produces high quality code, follows tasks as expected, barely needs complex changes once the task is done. Claude required too much steering and it didn’t orient in the codebase that well.
+
 - ## [为什么觉得opus4.5也没有那么厉害呢 _202602](https://linux.do/t/topic/1553597)
 - opus4.5 主要是省心吧我感觉，能解决大部分 bug, 小部分不能解决的，召唤 gpt5.2
 - opus4.5 快并且质量还可以，不过有时候确实傻，处理 bug 或者写的代码有问题，应该让 codex 来解决

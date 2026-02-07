@@ -1,5 +1,8 @@
 # AGENT RULES for markdown-based notes
 
+# common-rules
+
+- if the issue/problem/task is complex, prefer to use todo task list and update the task progress when working
 # markdown
 - always prefer github-flavored markdown syntax
 - when writing list, always perfer using `-` as list item symbol for top level list item. 

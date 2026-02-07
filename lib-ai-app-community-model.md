@@ -164,6 +164,12 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
 - ## [Your thoughts on "thinking" LLMs? : r/ollama _202602](https://www.reddit.com/r/ollama/comments/1qv1yey/your_thoughts_on_thinking_llms/)
   - almost all of the ollama-ready models released in recent months have been "thinking" or "chain of thought" or "reasoning" models -- you know, the ones that force you to watch the model's simulated thought process before it generates a final answer.
 

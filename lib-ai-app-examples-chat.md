@@ -340,6 +340,12 @@ modified: 2025-03-22T18:49:15.634Z
   - Features local RAG with vector search, real-time voice/video calls, document analysis (PDF/DOCX), and project workspaces. 
   - Runs entirely in the browser using IndexedDB for privacy and speed—no external backend required.
 
+- https://github.com/ibadoo/llm-msg-analysis /202602/ts/vue
+  - https://ibadoo.github.io/llm-msg-analysis/
+  - LLM 对话协议可视化分析工具 — 支持解析 Claude、OpenAI、Gemini 的 SSE 流、对话历史和 API 响应
+  - [一个将三大厂的请求或响应体可视化的工具 _202602](https://linux.do/t/topic/1575045)
+    - 快速翻译。点击一键翻译 prompt。
+
 ## llm-md-ext
 
 - https://github.com/zhs007/adarender /apache2/202101/js/inactive

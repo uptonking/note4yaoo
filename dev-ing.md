@@ -296,6 +296,31 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-log
   - ?
 
+## 0206
+
+- stream disconnected before completion: stream closed before response.completed
+  - 使用 custom type 而不是 codex, 不要开启 responses api 的兼容模式
+
+- stream disconnected before completion: failed to parse ResponseCompleted: missing field `id`.
+  - 不要开启 responses api 的兼容模式， 而应该改变provider type为 codex
+
+- sensitive_words_detected
+  - 换用国产模型
+
+- stream disconnected before completion: error sending request for url (https://127.0.0.1:4090/v1/ responses)
+  - claude code分析到原因, 应该用http, 而不是https
+
+- 🤔 i want to download and run gguf model locally. which one should i use 
+  - https://huggingface.co/unsloth/Qwen3-1.7B-GGUF
+  - https://huggingface.co/unsloth/Qwen3-1.7B-unsloth-bnb-4bit
+- bnb 4-bit safetensors release: 
+  - It’s a bitsandbytes 4-bit quant that’s intended for GPU inference with transformers + bitsandbytes
+  - bnb-4bit: smaller VRAM usage and faster on GPU, but requires CUDA, bitsandbytes, and recent transformers/accelerate. Not suitable for CPU-only runs.
+
+- [中国造出“混纺AI高光谱光选机”，爆改全球垃圾场，老外看懵了！_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1gCBSBDEPB/)
+  - 弓叶科技
+  - [中国女博士“拣垃圾”，登上《时代》年度榜单 - 知乎](https://zhuanlan.zhihu.com/p/2000182014125564584)
+
 ## 0201
 
 - 美国最大电子零售商处理摸摸机, 指的是那个平台或网站

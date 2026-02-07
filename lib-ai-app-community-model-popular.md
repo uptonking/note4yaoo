@@ -79,7 +79,7 @@ modified: 2025-09-16T19:59:57.856Z
 
 - They do score well, until you fill up the context to 100k...
 
-- ## [简单易懂的LLM相关知识梳理 _202601](https://linux.do/t/topic/1403348)
+- ## 🧑‍🏫 [简单易懂的LLM相关知识梳理 _202601](https://linux.do/t/topic/1403348)
 - 本文从实用角度出发，梦到哪写哪。部分八股文知识就不搬了，这里主要分享一下本人在使用各种云服务及本地部署过程中学到的知识。
 - 这里优先介绍LLM/VLM，暂不涉及音频/视频/Omni相关模型（也可能梦到了以后补一下）
 
@@ -182,6 +182,20 @@ modified: 2025-09-16T19:59:57.856Z
   - Pascal用户（Tesla P4 / P40、1080Ti等）：GPTQ、BNB、GGUF等各种，能跑起来就是胜利
   - AMD用户：看这篇文章的多半搞不定ROCm，老老实实GGUF去吧
   - 苹果Apple Silicon用户：有MLX用MLX，没MLX用GGUF
+
+- ### [简单易懂的LLM相关知识梳理-ep.3-2 认识NVIDIA显卡 ](https://linux.do/t/topic/1424264)
+- 
+- 
+
+- ### [简单易懂的LLM相关知识梳理-ep3-3 认识NVIDIA驱动、CUDA、Pytorch ](https://linux.do/t/topic/1446261)
+- 
+- 
+
+- ## [简单易懂的LLM相关知识梳理-ep.5 常见接口规范的介绍及实践中的坑 ](https://linux.do/t/topic/1500121)
+  - 这里只从 HTTP 请求角度讲起，基本不讲 SDK 调用，因为 SDK 本质上也就是对请求进行了包装而已。
+  - Function Call、MCP 的调用在后面讲，本章略过。
+- 
+- 
 
 - ## [为什么感觉deepseek“泯然众人”了，甚至被国内一些大模型赶超了 ](https://linux.do/t/topic/1182991)
 - 不认同泯然众人，Qwen、GLM、KIMI 的最新模型都沿用来自 DeepSeek 的 MLA、DeepSeek-MoE、GRPO 等技术，虽然 “DeepSeek” 可能用的不多，但实际上处处是 “DeepSeek” 的影子。

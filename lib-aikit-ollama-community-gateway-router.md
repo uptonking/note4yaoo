@@ -24,7 +24,7 @@ modified: 2026-01-21T04:22:29.956Z
 
 - 支持调整用户分组的展示顺序
 # done-hub/one-hub
-
+- codex-cli的渠道接入很简单, 类型选custom， 添加模型名即可, 不需要开启 v1/responses 
 # new-api
 
 # discuss-stars
@@ -57,6 +57,17 @@ modified: 2026-01-21T04:22:29.956Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [codex app接入 glm-4.7 · Issue · deanxv/done-hub](https://github.com/deanxv/done-hub/issues/43)
+  - 提示这个：stream disconnected before completion: failed to parse ResponseCompleted: missing field id
+
+- ## [[Feature Request] Response API · Issue · MartialBE/one-hub _202511](https://github.com/MartialBE/one-hub/issues/868)
+  - 提供对外的 Response API 接口。现在只能将上游的转为 ChatCompletions 接口。
+- 现在 Codex 中使用，报错如下： stream disconnected before completion: failed to parse ResponseCompleted: missing field `cached_tokens`
+
+- 最新版渠道设置最下面有相关设置
 
 - ## [有些渠道报错不会切换到低优先级渠道，比如429、504 · Issue · MartialBE/one-hub _202411](https://github.com/MartialBE/one-hub/issues/410)
   - 有时候高优先级的渠道返回错误，比如429、504等，会直接返回错误而不会切换到低优先级渠道
