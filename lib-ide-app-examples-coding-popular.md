@@ -31,7 +31,7 @@ modified: 2025-12-11T18:10:23.710Z
     - All the language servers that we use through Solid-LSP.
   - [RAG Search for Memories _202506](https://github.com/oraios/serena/issues/205)
     - Would love to be able to use memory feature to the maximum. Can we save our memories with specialized RAG technique to be able to automatically load relevant memories?
-    - Using embeddings will significantly increase the complexity and I don't see any benefit to it. Claude already loads the right memory from its name, and for an embedding based approach one can simply combine Serena with a dedicated embedding MCP and disable Serena's memory tools.
+    - 👷 Using embeddings will significantly increase the complexity and I don't see any benefit to it. Claude already loads the right memory from its name, and for an embedding based approach one can simply combine Serena with a dedicated embedding MCP and disable Serena's memory tools.
     - Sorry, that's not a feature for this project.
   - [[Feature] Ability to launch serena as ACP server _202509](https://github.com/oraios/serena/issues/644)
     - We already have `SerenaAgent` as dedicated abstraction which exposes all capabilities of serena. It should be fairly straightforward to use it in any connection layer, including ACP.
@@ -926,6 +926,12 @@ modified: 2025-12-11T18:10:23.710Z
     - If hash differs, deletes old chunks and reingests 
     - If hash matches, skips
   - Graph & Entities (lightweight): Ingestion extracts equipment/chemical/parameter entities and links them back to chunks so agents can pivot (Full semantic relationship extraction is still on the roadmap.)
+  - MCP-First Architecture: Conventional RAG systems hide retrieval behind a monolithic API. This server embraces the MCP client as a planner
+    - Ingestion as a Toolchain – Every step returns artifacts and plan hashes for replayable ingestion.
+    - Results surface full score vectors (bm25, dense, rrf, rerank, prior, decay) and why annotations 
+  - Prerequisites
+    - Docker Desktop (for Qdrant + TEI reranker)
+    - Ollama (for embeddings)
 
 - https://github.com/marlian/claude-qdrant-mcp /MIT/202507/ts/inactive
   - Local-first TypeScript MCP server for Qdrant with client isolation, LM Studio integration, and scalable document workflows.
@@ -937,6 +943,7 @@ modified: 2025-12-11T18:10:23.710Z
   - Batch processing - efficient API usage with p-limit concurrency control
   - SHA256 deduplication - never process the same document twice (90%+ time savings on updates)
   - Rich metadata - source tracking, chunk indexing, similarity scores
+  - Claude Desktop Integration - Automatic MCP server configuration
 
 - https://github.com/doobidoo/mcp-memory-service /1.3kStar/apache2/202602/python/未实现rag
   - Stop re-explaining your project to AI every session. Automatic context memory for Claude, VS Code, Cursor, and 13+ AI tools.
@@ -968,10 +975,14 @@ modified: 2025-12-11T18:10:23.710Z
   - Claude Code, Cursor, Windsurf, Cline, OpenCode — one setup command
   - MCP Server	9 tools: save, search, timeline, details, recall, list, update, delete, status
   - Vector Search	HNSW semantic similarity with multilingual embeddings (100+ languages)
+  - Local embeddings, no API calls: Vector search uses a local ONNX model (multilingual-e5-small). Semantic search works offline
   - Web Viewer	Browser UI to view, search, add, edit, delete memories
   - 3-Layer Search	Progressive disclosure saves ~87% tokens vs fetching everything
+  - Hybrid Search: FTS + vector fusion, scoring, ranking, filters
   - Lifecycle Mgmt	Auto-compress, archive, and clean up old sessions
   - Background processing — Workers enrich observations with AI, generate embeddings, compress old data
+  - If you prefer manual setup, add to your MCP config
+  - 🐛 似乎未实现 incremental indexing, 但提供了 `memory_update`	Update existing memory content or tags
   - [Enhancement: Hybrid BM25 + Vector Search for Better Exact Match Scoring · Issue · doobidoo/mcp-memory-service](https://github.com/doobidoo/mcp-memory-service/issues/175)
     - We implemented this exact approach in AgentKits Memory — SQLite FTS5 for keyword/exact matching + HNSW (approximate nearest neighbor) for vector search, running in parallel with merged results.
     - FTS5 is more than enough — SQLite's built-in BM25 scoring works well for this use case. No need for an external BM25 library.
@@ -998,7 +1009,7 @@ modified: 2025-12-11T18:10:23.710Z
     - Tree-sitter - Universal AST parser supporting 29 languages
   - Multi-Hop Semantic Search - Discovers interconnected code relationships beyond direct matches
   - Semantic search - Natural language queries like "find authentication code"
-    - DuckDB (primary) - OLAP columnar database with HNSW vector indexing LanceDB (experimental) 
+    - `DuckDB` (primary) - OLAP columnar database with HNSW vector indexing `LanceDB` (experimental) 
     - Purpose-built vector database with Apache Arrow format
   - Regex search - Pattern matching without API keys
   - Local-first - Your code stays on your machine
@@ -1071,11 +1082,14 @@ modified: 2025-12-11T18:10:23.710Z
   - get started with any MCP-compatible application: cc, codex, ...
   - Tree-sitter AST Parsing: Native syntax parsing for accurate symbol extraction
   - 未实现 hybrid
+  - Auto-detects and uses the best available tool (ugrep, ripgrep, ag, or grep)
   - Real-time Monitoring & Auto-refresh
     - File Watcher: Automatic index updates when files change
     - Cross-platform: Native OS file system monitoring
     - Smart Processing: Batches rapid changes to prevent excessive rebuilds
     - Shallow Index Refresh: Watches file changes and keeps the file list current; run a deep rebuild when you need symbol metadata
+  - launch the server via FastMCP 
+  - [Code Index MCP v1.0.0 - Let LLMs explore your entire codebase : r/mcp _202508](https://www.reddit.com/r/mcp/comments/1mh70bq/code_index_mcp_v100_let_llms_explore_your_entire/)
 
 - https://github.com/wende/cicada /MIT/202601/python
   - https://cicada-mcp.vercel.app/
@@ -1356,6 +1370,17 @@ modified: 2025-12-11T18:10:23.710Z
 - https://github.com/LLMTooling/code-search-mcp /MIT/202601/ts/未实现rag
   - mcp server providing powerful and efficient codebase search tools, including full AST support for 15 languages
   - Built on our universal-ctags wrapper, ripgrep, and ast-grep, it provides fast symbol search, structural AST pattern matching, text search, file search, and dependency analysis with persistent caching for 80%+ faster startup times.
+
+- https://github.com/Context-Engine-AI/Context-Engine /321Star/Paid/202602/python
+  - https://context-engine.ai/
+  - Context-Engine MCP - Agentic Context Compression Suite
+  - 🍴 forks
+  - https://github.com/mikahoy045/Context-Engine /MIT/202511/python
+    - a plug-and-play MCP retrieval stack that unifies code indexing, hybrid search, and optional llama.cpp decoding so product teams can ship context-aware agents in minutes
+    - One-command bring-up delivers dual SSE/RMCP endpoints, seeded Qdrant, and live watch/reindex loops for fast local validation.
+    - Shared memory/indexer schema and reranker tooling make it easy to mix dense, lexical, and semantic signals without bespoke glue code.
+    - NEW: Performance optimizations including connection pooling, intelligent caching, request deduplication, and async subprocess management that cut redundant calls and smooth spikes under load.
+    - an MCP-compliant context layer without rebuilding indexing, embeddings, or retrieval heuristics.
 
 - https://github.com/pchalasani/claude-code-tools /1.4kStar/MIT/202601/python/rust
   - productivity tools for Claude Code, Codex-CLI, and similar CLI coding agents.

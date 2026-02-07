@@ -114,6 +114,7 @@ modified: 2021-07-20T13:50:23.433Z
     - codesandbox从nodebox(纯浏览器客户端)转向devbox(服务端)
     - apitable(前同事liuyi告知)/affine(server-native-rafactor)
     - lmstudio-v0.4: core of the LM Studio packaged to be server-native
+    - client-first对于多实例的场景，注意处理database-lock, 比如chrome/edge访问访问网站的场景
 
 - 🚀 产品落地
   - 侧重表格的cms, 内容创作与管理

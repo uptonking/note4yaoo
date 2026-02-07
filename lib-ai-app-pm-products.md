@@ -211,7 +211,7 @@ modified: 2025-03-22T16:10:24.856Z
 - selling-points
   - 易用性: 模型推荐 + 场景优化的提示词 + 多模型/多版本对比
     - 对同一场景,如翻译/ocr, 针对不同模型内置合理的参数且支持配置
-    - roadmap: editing-database, pdf-editing, extraction, coding/table/image
+    - roadmap: editing-database, pdf-editing, extraction, chat2db, coding/table/image
   - ✈️ local models support: mlx, lmstudio-alternative
     - 模型库: text模型, ocr模型, 翻译模型, t2i生图模型, tts, stt,  lmstudio在模型分类上做的不够好
     - 较少免费api的模型: ocr, stt
@@ -475,7 +475,7 @@ modified: 2025-03-22T16:10:24.856Z
 ## ai-coding-draft
 
 - lib-port
-  - pdf: PyMuPDF, python-docx
+  - pdf: PyMuPDF(AGPL), python-docx(AGPL)
   - image: poppler
 
 ## ai-coding-xp
@@ -563,7 +563,7 @@ modified: 2025-03-22T16:10:24.856Z
     - [DuckCoding](https://duckcoding.com/console/personal)
     - [DuckCoding Az-CC，单独开启公益站，只允许L站注册 ](https://linux.do/t/topic/1308120)
     - [status](https://status.duckcoding.com/status/duckcoding)
-  - [Code公益站-反重力号池](https://claudex.us.ci/console/personal), 签到
+  - [claudex-反重力号池](https://claudex.us.ci/console/personal), 签到
     - [反重力Opus踩油门（只要没爆会继续延长）一直在丰富池子 ](https://linux.do/t/topic/1542040)
     - 纯公益反重力池子，无套路 L 站 2 级直登，加了 CF
   - 📌 [Any Router](https://anyrouter.top/), 每日签到获取$25
@@ -593,7 +593,8 @@ modified: 2025-03-22T16:10:24.856Z
     - 模型不稳定，经常异常再恢复再异常
     - [【nhh公益站】介绍贴及主贴  ](https://linux.do/t/topic/1370326)
     - [模型中转状态检测](https://status.123nhh.xyz/)
-  - [Wind Hub](https://api.224442.xyz/panel), 不定期清理14天无消耗的
+  - [Wind Hub](https://windhub.cc/panel/model_price), 农场
+    - https://api.224442.xyz/panel  /legacy
     - [福利站](https://wcdk.224442.xyz/)
     - 提供了free分组，包含deepseek-v3.2, gpt-4.1-mini
     - cc分组倍率0.6
@@ -648,14 +649,13 @@ modified: 2025-03-22T16:10:24.856Z
     - 有多个cc分组，IP限制严格(无需gfw)
     - 免费提供 glm flash
   - [太子公益 API](https://api.codeme.me/console/personal), 签到
-    - https://taizi.api.51yp.de5.net /legacy
     - cc支持
   - [Jarvis API](https://ai.ctacy.cc/console/personal), 签到
     - cc
     - 备用, [Jarvis API](https://jarvis.ccwu.cc/)
   - [八岁公益站](https://ai.xoooox.xyz/console/personal)
     - cc
-  - [摸鱼公益](https://clove.cc.cd/console/personal), 可签到
+  - [摸鱼公益](https://clove.cc.cd/console/personal), 可签到, 额度少
     - [【摸鱼公益】 自己的反重力和codex有一些不怎么用，开个摸鱼站给需要的用用 ](https://linux.do/t/topic/1513131)
     - 后续只能使用积分充值。随用随冲。
   - [WOW公益站](https://linuxdoapi.223384.xyz/console/personal)
@@ -688,8 +688,15 @@ modified: 2025-03-22T16:10:24.856Z
   - [ibsgss公益站](https://codex.ibsgss.uk/console/personal), 签到
     - [【ibsgss公益站】支持codex cli / cherry  ](https://linux.do/t/topic/1434464)
     - 维护期限：到 codex-team 渠道耗尽为止
+    - [【ibsgss公益站】支持codex cli / cherry ](https://linux.do/t/topic/1434464)
+  - [Einzieg API](https://api.einzieg.site/console/personal), 签到
+    - 仅提供codex模型
+    - [【Einzieg公益站】再次启动 ](https://linux.do/t/topic/1569418)
+  - [NPC API](https://npcodex.kiroxubei.tech/console/personal)
+    - [[NPC-API]codex公益站开业 ](https://linux.do/t/topic/1564054)
   - [api-test](https://openai.api-test.us.ci/console/personal)
     - [开个小公益站测试一下 ](https://linux.do/t/topic/1414593)
+    - [LDC Virtual Goods Shop](https://shop.api-test.us.ci/)
     - 包括 deepseek，硅基流动全模型，阿里云千问全模型，glm，gemini，codex
     - 有claude, 无opus
     - 默认 RPM30，1 级可注册，不允许批量测活
@@ -698,10 +705,12 @@ modified: 2025-03-22T16:10:24.856Z
     - [【GGBOOM公益站】签到站上线啦 ](https://linux.do/t/topic/1517772)
     - 本站点为codex中转站，不包含其他模型
     - sub2api的openai api仅支持 openai-responses API协议。不要选老版本的哦
-  - [NPC API](https://npcodex.kiroxubei.tech/console/personal)
-    - [[NPC-API]codex公益站开业 ](https://linux.do/t/topic/1564054)
-  - [Einzieg API](https://api.einzieg.site/console/personal), 签到
-    - 仅提供codex模型
+    - [【GGBOOM公益站】 全面支持gpt-5.3-codex ](https://linux.do/t/topic/1581803)
+  - [sorai API](https://newapi.sorai.me/console/personal)
+    - [codex公益站启动 _202601](https://linux.do/t/topic/1524003)
+    - 只有 codex 模型
+  - [玩票 API](https://api.361888.xyz/console/personal)
+    - opus4.6 和 codex 虽迟但到
   - [Neb 公益站](https://ai.zzhdsgsss.xyz/console/personal), 签到
     - 采用按量计费，每次0.01，注册送2000次，因为该阶段的初衷就是最大化利用这些将要过期的key。
     - 当前额度用完或2026.1.31之后进入第二阶段，采用按量计费，倍率会很低
@@ -716,12 +725,6 @@ modified: 2025-03-22T16:10:24.856Z
     - 特别注意，Kiro逆向因为Token返回数据不精确，所以Snow CLI 无法准确判断自动压缩，根据经验，上下文到达25k~30K左右差不多就满了（这不是真的只有这么短）而是Kiro逆向没有返回缓存信息实际上下文可能非常接近200k了
     - [【Snow CLI】Console 开放部分注册人数，以及近期更新汇总 ](https://linux.do/t/topic/1568653/1)
     - 依旧免费提供稳定的 Kiro 逆向、Codex、KIMI 以及适用于 Codebase 的嵌入模型
-  - [莹のAPI](https://api.wpgzs.top/pricing)，模型贵
-    - rpm15
-    - [莹のapi 加油站](https://quota.wpgzs.top/), 鸡你太美，每天可转100刀到公益站
-    - [公益站支持claude ](https://linux.do/t/topic/1351151)
-  - [莹のapi & 随时升天](https://supersb.me/console)，模型贵
-    - [随时升天的公益站](https://any.97819781.xyz/)
   - [FovtAPI](https://api.voct.top/console)
     - 模型旧，模型少
     - [NewAPI签到系统](https://gift.voct.top/dashboard/checkin), ~~已失效~~
@@ -772,15 +775,16 @@ modified: 2025-03-22T16:10:24.856Z
     - Gemini系列模型永久免费， 与Gemini对话不会消耗帐号余额（可忽视帐号余额）
   - [【公测开启】Kiro账号托管平台  ](https://linux.do/t/topic/1227895)
   - [Fengye API](https://fengyeai.chat/console)
+  - [莹のAPI](https://api.wpgzs.top/pricing)，模型贵
+    - rpm15
+    - [莹のapi 加油站](https://quota.wpgzs.top/), 鸡你太美，每天可转100刀到公益站
+    - [公益站支持claude ](https://linux.do/t/topic/1351151)
+  - [莹のapi & 随时升天](https://supersb.me/console)，模型贵
+    - [随时升天的公益站](https://any.97819781.xyz/)
   - [KFC API](https://kfc-api.sxxe.net/console/personal)
     - [KFC API公益站 - 正式上线  ](https://linux.do/t/topic/1233747)
     - [逆水寒](https://api.sxxe.net/), 即将关闭
     - [逆水寒公益API——扬帆起航 ](https://linux.do/t/topic/1173036)
-  - [GoGoGo公益站](https://api.chengtx.vip/console/personal), 签到可得20~50刀，0.2刀/次
-    - [GoGoGo公益站启航：目标是刷爆gemini小破号池 ](https://linux.do/t/topic/1494070)
-    - rpm-15, 不限用途，可酒馆
-    - 模型: gemini-2.5/3-flash/pro
-    - 渠道是自部署gemini business2api，自己域名邮箱注册的，放了100多个号
   - [包子铺](https://api.5202030.xyz/)
     - [包子公益](https://api.codeqaq.com/)
     - 只开放linuxdo lv2以上注册
@@ -791,7 +795,12 @@ modified: 2025-03-22T16:10:24.856Z
   - [我爱996公益](https://529961.com/console)
     - [我爱996公益附属站 - 每日签到领取奖励](https://hub.529961.com/)
     - [【公益站我爱996一次】测试上线已接入LinuxDo ](https://linux.do/t/topic/1147448)
-  - [Privnode](https://privnode.com/)
+  - [GoGoGo公益站](https://api.chengtx.vip/console/personal), 签到可得20~50刀，0.2刀/次
+    - [GoGoGo公益站启航：目标是刷爆gemini小破号池 ](https://linux.do/t/topic/1494070)
+    - rpm-15, 不限用途，可酒馆
+    - 模型: gemini-2.5/3-flash/pro
+    - 渠道是自部署gemini business2api，自己域名邮箱注册的，放了100多个号
+  - 🗑️ [Privnode](https://privnode.com/)
     - free分组支持claude-code，也支持gpt-5-nano
     - https://pro.privnode.com/
     - [【Cone 公益站】找个佬共同维护  ](https://linux.do/t/topic/1035525)
@@ -1514,7 +1523,12 @@ modified: 2025-03-22T16:10:24.856Z
 
 - ## 
 
-- ## 
+- ## [从“为什么ai客户端都不支持多窗口多开”看到ai开发的未来 _202602](https://linux.do/t/topic/1576098)
+  - Cherry Studio 桌面客户端不支持多开窗口 这个问题已经反应了一年了，作者还回复了，也开看见了，LobeHub 也是 作者也知道，也一年了，知道现在一个这些主流 ai 客户端就没一个支持多窗口多开的
+  - 这些客户端大部分都是 chrome 架构的，本质就是个网页，多窗口多开本质不就是一个代码开关的问题，真有这么难，就没人做的出来，还是作者极度的傲慢？
+  - 我之前看 win 多屏用户人群超过 30% 了，这么多人使用多显示器
+  - 尤其是在写东西查资料的的时候两个标签反复的切换 我另一个屏幕就哪里空着用不上 真是用的脑袋疼 太恶心了
+  - 尤其是不同的 ai 还需要先切换助手在点击对话 切换一次要点四五次，我很难理解这些人做出来的产品到底自己用不用
 
 - ## OpenClaw 可以算是 AI OS 的雏形了吧，或者叫 AI DOS：
 - https://x.com/geekbb/status/2019591292456759564

@@ -816,6 +816,12 @@ modified: 2025-02-21T18:20:42.624Z
     - We are updating our open-source model starting v0.36 to better support production-ready deployments and to ensure sustainable development of the Agenta platform. 
     - We are introducing the Model Registry feature into the open-source version.
     - All evaluation features (Human Evaluation, Automatic Evaluation, Custom Workflows) are now available exclusively in our commercial offering.
+
+- https://github.com/stellarlinkco/ai-eval /AGPL/202602/go
+  - [【开源】 AI-Eval：Prompt 评估系统，用单元测试跑 prompt 评估  _202602](https://linux.do/t/topic/1577572)
+  - Go 写的 Prompt 评估系统。把 Prompt 测试当单元测试跑 —— 写 YAML 定义用例，配评估器（模式匹配、LLM Judge、RAG、Agent、安全检测），跑 pass@k 处理 LLM 的不确定性。
+  - 带 Web API、Leaderboard、CI 集成，
+  - 支持 MMLU/GSM8K/HumanEval 标准 Benchmark。
 # model-proxy
 - https://github.com/lymanzhao/Ollama-serve /202503/python
   - 一个 Ollama转发代理，用于为原生 Ollama 服务添加 API 密钥认证功能。

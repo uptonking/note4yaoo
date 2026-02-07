@@ -925,7 +925,7 @@ modified: 2025-11-30T17:27:16.720Z
   - Storage backends: in-memory, pgvector, qdrant
   - You can use the OpenAI cloud LLM API and APIs which conform to this, including Anthropic's, local LM Studio, Ollama, etc.
 
-- https://github.com/yichuan-w/LEANN /6.8kStar/MIT/202512/python
+- https://github.com/yichuan-w/LEANN /9.9kStar/MIT/202602/python
   - an open-source vector database, compresses RAG indexes by an impressive 97% using graph-based recomputation and on-demand embedding calculation.
   - LEANN achieves this through graph-based selective recomputation with high-degree preserving pruning, computing embeddings on-demand instead of storing them all
 
@@ -1102,6 +1102,13 @@ modified: 2025-11-30T17:27:16.720Z
   - a lightweight Python library and model collection that lets you map embeddings from one model’s space into another’s.
   - [I built a Python library that translates embeddings from MiniLM to OpenAI _202512](https://www.reddit.com/r/Rag/comments/1py8l8f/i_built_a_python_library_that_translates/)
 # search 🔍
+- https://github.com/AL-MARID/Lorph /MIT/202602/ts
+  - AI chat application designed to run locally on your device, offering a seamless interactive experience with powerful large language models (LLMs) via Ollama.
+  - What truly sets Lorph apart is the advanced and excellent search system I've developed. It's not just about conversation; it extends to highly dynamic and effective web search capabilities, enriching AI responses with up-to-date and relevant information.
+  - Dynamic Web Search Integration: Leverages real-time web search to augment AI responses with current and relevant information.
+  - Supports text extraction from images (OCR), PDF documents, Microsoft Word (.docx), and Excel (.xlsx) files, enhancing contextual understanding for AI responses.
+  - [Lorph: A Local AI Chat App with Advanced Web Search via Ollama : r/ollama _202602](https://www.reddit.com/r/ollama/comments/1qy77nm/lorph_a_local_ai_chat_app_with_advanced_web/)
+
 - https://github.com/tobi/qmd /5.1kStar/MIT/202602/python/ts
   - mini cli search engine for your docs, knowledge bases, meeting notes, whatever. 
   - Tracking current sota approaches while being all local

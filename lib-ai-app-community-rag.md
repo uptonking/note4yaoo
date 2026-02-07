@@ -27,6 +27,13 @@ modified: 2024-09-08T20:08:16.088Z
   - 针对表格excel/脑图的rag
   - ⏳ 多版本文件的rag
 
+- features
+  - incremental indexing
+  - embedding
+  - FTS
+  - hybrid-search
+  - relations: graph
+
 - leaderboard-rag
   - [MTEB Leaderboard - a Hugging Face Space by mteb](https://huggingface.co/spaces/mteb/leaderboard)
     - https://github.com/embeddings-benchmark/mteb

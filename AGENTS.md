@@ -1,3 +1,9 @@
+---
+title: AGENTS
+created: 2026-02-04T10:37:05.176Z
+modified: 2026-02-06T15:48:09.172Z
+---
+
 # AGENT RULES for markdown-based notes
 
 # common-rules
@@ -10,3 +16,4 @@
 # coding
 - when writing html files, always perfer tailwindcss, you can refer to the existing html files like `toyapps/boilerplate/b1b1-tailwind-minimal.html`.
 # more rules
+

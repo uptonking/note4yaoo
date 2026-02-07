@@ -90,6 +90,19 @@ modified: 2026-01-14T18:58:32.523Z
 # discuss-news
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Introducing Parallel Requests for MLX _202602
+- https://x.com/lmstudio/status/2019872805521674563
+  - Multiple requests to the same model can now be processed simultaneously 
+  - Works both in the API and in Split View chats.
+
 - ## [0.4.0 - server native _20260128](https://lmstudio.ai/blog/0.4.0)
 - Deploy LM Studio's core on cloud servers, in CI, or anywhere without GUI.
   - core of the LM Studio packaged to be server-native, without reliance on the GUI. 

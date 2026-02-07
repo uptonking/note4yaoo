@@ -170,6 +170,71 @@ modified: 2025-09-01T07:58:29.058Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🤔 I've used AI to write 100% of my code for 1+ year as an engineer. 13 no-bs lessons
+- https://www.reddit.com/r/ClaudeCode/comments/1qxvobt/ive_used_ai_to_write_100_of_my_code_for_1_year_as/
+  - 1 year ago I posted "12 lessons from 100% AI-generated code" that hit 1M+ views. Some of those points evolved into agents.md, claude.md, plan mode, and context7 MCP. This is the 2026 version, learned from shipping products to production.
+1- The first few thousand lines determine everything
+
+When I start a new project, I obsess over getting the process, guidelines, and guardrails right from the start. Whenever something is being done for the first time, I make sure it's done clean. Those early patterns are what the agent replicates across the next 100, 000+ lines. Get it wrong early and the whole project turns to garbage.
+
+2- Parallel agents, zero chaos
+
+I set up the process and guardrails so well that I unlock a superpower. Running multiple agents in parallel while everything stays on track. This is only possible because I nail point 1.
+
+3- AI is a force multiplier in whatever direction you're already going
+
+If your codebase is clean, AI makes it cleaner and faster. If it's a mess, AI makes it messier faster. The temporary dopamine hit from shipping with AI agents makes you blind. You think you're going fast, but zoom out and you actually go slower because of constant refactors from technical debt ignored early.
+
+4- The 1-shot prompt test
+
+One of my signals for project health: when I want to do something, I should be able to do it in 1 shot. If I can't, either the code is becoming a mess, I don't understand some part of the system well enough to craft a good prompt, or the problem is too big to tackle all at once and needs breaking down.
+
+5- Technical vs non-technical AI coding
+
+There's a big difference between technical and non-technical people using AI to build production apps. Engineers who built projects before AI know what to watch out for and can detect when things go sideways. Non-technical people can't. Architecture, system design, security, and infra decisions will bite them later.
+
+6- AI didn't speed up all steps equally
+
+Most people think AI accelerated every part of programming the same way. It didn't. For example, choosing the right framework, dependencies, or database schema, the foundation everything else is built on, can't be done by giving your agent a one-liner prompt. These decisions deserve more time than adding a feature.
+
+7- Complex agent setups suck
+
+Fancy agents with multiple roles and a ton of .md files? Doesn't work well in practice. Simplicity always wins.
+
+8- Agent experience is a priority
+
+Treat the agent workflow itself as something worth investing in. Monitor how the agent is using your codebase. Optimize the process iteratively over time.
+
+9- Own your prompts, own your workflow
+
+I don't like to copy-paste some skill/command or install a plugin and use it as a black box. I always change and modify based on my workflow and things I notice while building.
+
+10- Process alignment becomes critical in teams
+
+Doing this as part of a team is harder than doing it yourself. It becomes critical that all members follow the same process and share updates to the process together.
+
+11- AI code is not optimized by default
+
+AI-generated code is not optimized for security, performance, or scalability by default. You have to explicitly ask for it and verify it yourself.
+
+12- Check git diff for critical logic
+
+When you can't afford to make a mistake or have hard-to-test apps with bigger test cycles, review the git diff. For example, the agent might use created_at as a fallback for birth_date. You won't catch that with just testing if it works or not.
+
+13- You don't need an LLM call to calculate 1+1
+
+It amazes me how people default to LLM calls when you can do it in a simple, free, and deterministic function. But then we're not "AI-driven" right?
+
+- 👥
+
+- one lesson i would add from my own year of 100% AI code: invest heavily in your test suite early. the AI is incredible at generating code but mediocre at verifying correctness. having a solid test framework means you catch regressions immediately when the AI makes a change. i treat my test suite as the source of truth and the generated code as disposable.
+
+- Nice write-up and I agree with almost all of it. #7 I feel that multiple agents with a single task/role is a must. Multiple checks with different roles are more likely to produce quality code than a single agent with multiple roles.
+
 - ## AI Coding：我从传统的单元测试全面迁移到 BDD（行为驱动测试）上了，让 AI 写 BDD 测试。
 - https://x.com/waylybaye/status/2018890382462087348
   - 因为 BDD 的测试结果更可读，很容易验收 AI 的代码。比如我下面截图，一眼就能看出来 AI 是否完成了需求。
