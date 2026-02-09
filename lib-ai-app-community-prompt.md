@@ -126,7 +126,11 @@ modified: 2024-09-08T18:57:12.231Z
 
 - ## 
 
-- ## 
+- ## [Stop round-tripping your codebase: cutting LLM token Usage by \~80% using REPL driven document analysis : r/ClaudeCode _202601](https://www.reddit.com/r/ClaudeCode/comments/1qeqj7r/stop_roundtripping_your_codebase_cutting_llm/)
+- It's a completely different approach to handling large documents compared to tools like mgrep or specialized logic tools like Serena. 
+  - If you have ever used mgrep then you know it is basically a specialized version of grep that is incredibly fast at finding strings across a filesystem but it lacks any real concept of state. Once a search finishes with mgrep the results are just text on your screen and if you want to do something with that data you have to pipe it into another tool or start a fresh process. 
+  - Serena moves closer to what we want by using relational logic to synthesize programs but it still tends to treat each task as a discrete problem to be solved from scratch rather than a living environment.
+  - Matryoshka gives you active memory within its REPL which functions like a persistent workspace where results stay live between turns. A tool like mgrep finds ten thousand lines of code it just dumps them out while Matryoshka stores those results as a variable handle within the sandbox. The agent does not have to pull every single line of text back into its limited context window just to count them or filter them further. Instead of burning through thousands of tokens to remind the AI what it just found the agent can simply refer to a pointer in the memory. This persistent state allows the system to behave more like a human developer who keeps a few tabs open to reference later rather than a script that forgets everything the moment it finishes a single command.
 
 - ## [What has your experience been with context engines? : r/ClaudeCode _202602](https://www.reddit.com/r/ClaudeCode/comments/1qz6r8f/what_has_your_experience_been_with_context_engines/)
   - Recently came across Augment Code and they have something called context engine that allows you to do real-time semantic searches on your codebase and other accompanying data. They also released it as an MCP and SDK recently.

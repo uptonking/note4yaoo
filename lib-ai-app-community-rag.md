@@ -678,7 +678,30 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [Ask HN: How are you doing RAG locally? | Hacker News _202601](https://news.ycombinator.com/item?id=46616529)
+- Hybrid search usually refers to traditional keyword search (BM25, TF-IDF) combined with a vector similarity search.
+
+- For vector generation I started using Meta-LLama-3-8B in april 2024 with Python and Transformers for each text chunk on an RTX-A6000. Wow that thing was fast but noisy and also burns 500W. So a year ago I switched to an M1 Ultra and only had to replace Transformers with Apple's MLX python library. Approximately the same speed but less heat and noise. The Llama model has 4k dimensions so at fp16 thats 8 kilobyte per chunk, which I store in a BLOB column in SQLite via numpy.save(). Between running on the RTX and M1 there is a very small difference in vector output but not enough for me to change retrieval results, regenerate the vectors or change to another LLM.
+  - For retrieval I load all the vectors from the SQlite database into a numpy.array and hand it to FAISS. Faiss-gpu was impressively fast on the RTX6000 and faiss-cpu is slower on the M1 Ultra but still fast enough for my purposes (I'm firing a few queries per day, not per minute). For 5 million chunks memory usage is around 40 GB which both fit into the A6000 and easily fits into the 128GB of the M1 Ultra. It works, I'm happy.
+
+- Most of my complex documents are, luckily, Markdown files. I can recommend https://github.com/tobi/qmd/ . It’s a simple CLI tool for searching in these kinds of files. My previous workflow was based on fzf, but this tool gives better results and enables even more fuzzy queries. I don’t use it for code, though.
+
+- Don't use a vector database for code, embeddings are slow and bad for code. Code likes bm25+trigram, that gets better results while keeping search responses snappy.
+  - You can do hybrid search in Postgres. Shameless plug: https://github.com/jankovicsandras/plpgsql_bm25 BM25 search implemented in PL/pgSQL ( Unlicense / Public domain )
+  - The repo includes also plpgsql_bm25rrf.sql : PL/pgSQL function for hybrid search ( plpgsql_bm25 + pgvector ) with Reciprocal Rank Fusion; and Jupyter notebook examples.
+- For BM25 + trigram, SQLite FTS5 works well.
+- This is true in general with LLMs, not just for code. LLMs can be told that their RAG tool is using BM25+N-grams, and will search accordingly. keyword search is superior to embeddings based search. The moment google switched to bert based embeddings for search everyone agreed it was going down hill. Most forms of early enshittification were simply switching off BM25 to embeddings based search.
+  - BM25/tf-idf and N grams have always been extremely difficult to beat baselines in information retrieval. This is why embeddings still have not led to a "ChatGPT" moment in information retrieval.
+- I agree. Someone here posted a drop-in for grep that added the ability to do hybrid text/vector search but the constant need to re-index files was annoying and a drag. Moreover, vector search can add a ton of noise if the model isn't meant for code search and if you're not using a re-ranker. For all intents and purposes, running gpt-oss 20B in a while loop with access to ripgrep works pretty dang well. gpt-oss is a tool calling god compared to everything else i've tried, and fast.
+
+- I like embeddings for natural language documents where your query terms are unlikely to be unique, and overall document direction is a good disambiguator.
+
+- Kiln wraps up all the parts in on app. Just drag and drop in files. You can easily compare different configs on your dataset: extraction methods, embedding model, search method (BM25, hybrid, vector), etc. It uses LanceDB and has dozens of different extraction/embedding models to choose from. It even has evals for checking retrieval accuracy, including automatically generating the eval dataset. You can use its UI, or call the RAG via MCP. https://github.com/kiln-ai/kiln
+
+- Claude code / codex which internally uses ripgrep, and I'm unsure if it's using parallel mode. And, project specific static analyzers.
+  - Cursor uses a vector index, some details here: https://cursor.com/docs/context/semantic-search
+
+- Local LibreChat which bundles a vector db for docs.
 
 - ## [If RAG is dead, what will replace it? : r/LLMDevs _202602](https://www.reddit.com/r/LLMDevs/comments/1qvtrw7/if_rag_is_dead_what_will_replace_it/)
 - I don’t think RAG is dead. Vector-only semantic search is what usually disappoints. What’s replacing it (for me) is hybrid retrieval + memory architecture: FTS/keyword first, then vectors only as fallback, union + rerank, and always return retrieval diagnostics (which backend, hit counts, scores, latency).
@@ -799,7 +822,25 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [I feel semantic search is overused : r/Rag](https://www.reddit.com/r/Rag/comments/1qzxttv/i_feel_semantic_search_is_overused/)
+  - I understand semantic search was the basis for RAG along with graph search. That's how we started making the search possible with AI.
+  - But as the LLMs got so better, I feel we should take a step back and appreciate the simple text search tools as well. 
+  - I took a step back and just did a regular text base regex search tools.
+
+- Most people are using a combo of semantic and keyword search and then reranking.
+- BM25 + Lexical + knowledge graphs is de wei.
+
+- Hybrid search (semantic + keyword) is standard now but you're hitting the real production issue: when retrieval fails, debugging is archaeology.
+  - Semantic search missed code reference. Regex found it. Great, but when this happens at scale across different query types, how do you know which retrieval method to trust? Users don't tell you "use keyword search" - they ask questions and expect answers.
+  - We saw this exact issue. Added BM25 alongside vector search. Results improved but incidents became harder to debug. "It found the wrong doc" doesn't tell you which retrieval method failed or why fusion chose incorrectly.
+  - For production RAG: are you capturing retrieval results from both methods plus fusion decisions? Or just measuring end result quality?
+  - Multi-method retrieval helps accuracy. Evidence capture makes failures debuggable.
+
+- yea honestly hybrid is the move but even then people overcomplicate it. for most use cases just doing BM25 + vector search with a reranker on top gets you like 90% of the way there... seen too many people jump straight into knowledge graphs and complex pipelines when their actual problem was just bad chunking
+
+- 
+- 
+- 
 
 - ## 🔍🔡 Does anyone know why Codex and Claude doesn't use cloud-based embeddings like Cursor to quickly search through the codebase?
 - https://x.com/EthanLipnik/status/2017468578438709723

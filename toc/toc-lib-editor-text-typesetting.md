@@ -103,4 +103,20 @@ modified: 2024-11-16T08:23:40.617Z
   - Cobalt is optimized to run on single-core CPUs, resulting in better input latency since the renderer and resource loader do not compete with layout operations.
   - Cobalt produces consistent 60FPS animations by only supporting animation of properties that don't affect layout, like transform, and always running animations on a separate thread.
   - On platforms that support GLES2, Cobalt avoids CPU painting by performing almost all rendering operations on the GPU.
+# latex
+- https://github.com/EvolvingLMMs-Lab/lmms-lab-writer /MIT/202602/rust/ts/Tauri
+  - https://writer.lmms-lab.com/
+  - Agentic LaTeX Writer - Local-first editor for AI-assisted academic writing
+  - automatically detects and installs a lightweight LaTeX distribution. If a package is missing, it’s installed on the fly during compilation. 
+  - Supports TinyTeX, MiKTeX, MacTeX, and TeX Live—with streamlined, one-click management.
+  - English, Chinese, Japanese, Korean, Arabic, or any other language. XeLaTeX and LuaLaTeX are supported out of the box with full Unicode and system font compatibility
+  - It also pairs perfectly with Claude Code, Cursor, Codex CLI, Aider, and other tools.
+  - Cross-Platform: Built with Tauri 
+  - 🆚 Overleaf vs. LMMs-Lab Writer
+  - https://x.com/Brian_Bo_Li/status/2020853665196617796
+    - 天下苦 Overleaf 久矣，赶 paper 在 chatgpt 和编辑器之间反复横跳真的会疯。prism 出来后又感觉太繁重且不支持中文
+    - 一个内置 AI Agent 的终极 LaTeX 本地编辑器 LMMs-Lab Writer。
+    - 一键环境配置，自动下载管理 LaTeX，开箱即用。
+    - 原生 Git 集成：侧边栏直接可视化管理版本控制。
+    - 我想要的是，可以在本地跟着代码一起写，做事实核查，可以在vscode，cursor里面写的，这样就能用deep research或者任何github整的skills，还可以随时同步云端的overleaf，how can we achieve this
 # more

@@ -14,7 +14,20 @@ modified: 2023-02-07T09:12:37.761Z
 
 - ## 
 
-- ## 
+- ## Lamport's Time, Clocks, and the Ordering of Events in a Distributed System is one of the most important systems papers of all time.
+- https://x.com/jamesacowling/status/2020203010119594134
+It formalizes something kinda obvious: Within a timeline everything happens in an order defined by events it observed (I threw a ball, you caught it), but on two separate timelines, like two people offline on their laptops, two events *aren't* ordered with respect to each other.
+
+It's impossible to merge these timelines together in the general case, no matter how accurate clocks are. It's like those movies where two people go down different timelines: you can't merge those together no matter how good their watches are.
+
+To build local sync you have to accept one of three things:
+1. Sometimes data loss will occur, e.g., last-writer wins.
+2. There's a specific lossy or domain-specific API you can use, e.g., operational-transforms, CRDTs, or client-side merge logic.
+3. Different people see different timelines forever, which is fine for some applications.
+
+A lot of the interesting work in local-first happens around option #2. How to limit operations users can perform to those that can be acceptably merged together or where it's ok to have certain kinds of data loss.
+
+- OT&CRDTs' most difficult (& 1st) algorithms solve a narrow problem: in a text doc, if my "insert A @ index 6" op reaches a node before your "insert B @ index 10" op, the node needs to instead insert B @ index 11. This isn't a real semantic conflict, just a flaw w/ using indexes.
 
 - ## guests say that they don't need CRDTs b/c they're "too complex" but then go on to explain their custom solution which is... a CRDT
 - https://twitter.com/tantaman/status/1691083925060227075

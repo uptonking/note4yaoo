@@ -79,4 +79,19 @@ modified: 2025-12-25T19:54:56.482Z
 
 - ## 
 
-- ## 
+- ## [Typst has ruined me : r/typst](https://www.reddit.com/r/typst/comments/1r00v8d/typst_has_ruined_me/)
+  - tl; dr: typst is so empowering and it started a domino effect where i now obsess over every typographical detail and even in my daily life i couldn't stop myself from thinking "heh i bet i could remake this form/signage/poster/presentation/document in typst and make it better"
+
+- I feel very similar. I hope you will never hear about Practical Typography by M. Butterick, because that combined with Typst will drive obsession into insanity. Me, I am done for.
+
+- Typst is actually user friendly and I've used for all kind of cool stuff. Like making templates for Zebra printers, converting them to png and printing labels, instead of using dreadful zpl. Or actually making document templates myself. The support for csv/json and other input variables is crazy. My only dream that it had better python support to use as a library in the way.
+  - I agree. For me, it feels like even though Typst is technically less capable in some aspects, at least it lets you do things more easily, as if welcoming you to be a power user
+
+- I keep all tables as csv files, and can use the design document to generate cost estimates, timeliness, etc, which gets me 80% there already. Everyone else uses Google Docs and I can do same but faster and better in Typst. Documentation used to be a chore but now it's actually enjoyable.
+
+- Reminds me of another reason why I find Typst so fun: the syntax. As someone with experience in Python and MATLAB, Typst's syntax lets me think programmatically, which again empowers me to do more automation and weird complex stuff I never would have done with LaTeX without hitting my head at a wall or copying stuff from the stack exchange (yeah i later realized that macros in latex are a thing but it seemed complicated at the time)
+
+- typst is too simple syntactically and too usable as a plain markup format. When in the past I'd reach for plain markdown or, heaven forbid, libreoffice, for some notes, now my general instinct is doing it in typst because I can just suddenly also plot functions inline, draw graphics far better than i could do by hand and inputting formulas and regular text is just too easy.
+  - Typst has managed to bridge the gap between "proper" document layout and just quickly writing something down for me and it is amazing.
+
+- Just came to say this: mitex filter enables LaTeX syntax for equations, AND quarto lets you render from its markdown+programming chunks to word/typst/LaTeX/html and presentation formats via pandoc. You can get your formatting template in typst, and your text written in markdown

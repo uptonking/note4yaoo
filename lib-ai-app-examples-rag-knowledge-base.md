@@ -361,6 +361,46 @@ modified: 2025-11-30T17:27:16.720Z
     - I’ve been exploring different libraries for converting PDFs to Markdown to use in a Retrieval-Augmented Generation (RAG) setup.
     - But testing each library turned out to be quite a hassle — environment setup, dependencies, version conflicts, etc.
     - Currently, it supports: docling pymupdf4llm markitdown marker
+
+- https://github.com/signerlabs/klee /1.7kStar/MIT/202511/ts/inactive
+  - a modern desktop application that combines AI-powered chat, knowledge base management, and note-taking capabilities.
+  - It offers both Cloud Mode for seamless synchronization and Private Mode for complete offline functionality.
+  - Integrated with OpenAI and local Ollama models
+  - Tiptap-based collaborative editor with Markdown support
+  - At its core, Klee is built on:
+    - `Ollama`: For running local LLMs quickly and efficiently.
+    - `LlamaIndex`: As the data framework.
+  - Privacy-First: Complete offline mode with local AI and data storage
+  - Optional cloud synchronization via Supabase
+  - Private Mode
+    - Local AI: Powered by Ollama (embedded or system-installed)
+    - Local Storage: SQLite for structured data
+    - Vector Search: LanceDB for semantic search (planned)
+  - Cloud Mode
+    - File Storage: Supabase Storage for documents and attachments
+    - Data Sync: PostgreSQL database with real-time updates
+    - Authentication: Google OAuth and email/password via Supabase
+  - 🍴 forks
+  - https://github.com/EclipseFever/Klee /202504
+    - electron-build-ci: https://github.com/EclipseFever/Klee/blob/main/.github/workflows/build.yml
+  - [I built and open sourced a electron app to run LLMs locally with built-in RAG knowledge base and note-taking capabilities. : r/electronjs _202503](https://www.reddit.com/r/electronjs/comments/1j43om9/i_built_and_open_sourced_a_electron_app_to_run/)
+    - Would the users need to download Ollama separately or is it somehow embedded?
+      - It is embedded, but if you already have ollama running, we will use your ollama instance.
+    - We start with SwiftUI but switch to Electron after 3 weeks
+  - [I built and open sourced a desktop app to run LLMs locally with built-in RAG knowledge base and note-taking capabilities. : r/LocalLLM _202503](https://www.reddit.com/r/LocalLLM/comments/1j4wvsu)
+  - [I open-sourced Klee today, a desktop app designed to run LLMs locally with ZERO data collection. It also includes built-in RAG knowledge base and note-taking capabilities. : r/LocalLLaMA _202503](https://www.reddit.com/r/LocalLLaMA/comments/1j2j7su/i_opensourced_klee_today_a_desktop_app_designed/)
+    - I see you were inspired by Slack's UI
+    - Can I just point it at the folder with my existing models?
+      - If you use windows, look up junctions and symbolic links: mklink /J C:\LinkDirectory D:\TargetDirectory
+    - When I've used Ollama I find it's not just the file location; it requires turning the GGUF models into some hashed 'model file', which is exactly why I quit using Ollama.
+    - Does this force Ollama? Or can I use llama.cpp as a backend?
+      - backend and front end are in different repo, you can use llamacpp as backend
+    - What key features differentiate this from those options like lmstudio/koboldai?
+      - Nothing. Just yet another wrapper over ollama.
+    - What does Klee use for embeddings for the RAG? does it support directory/folder upload or just individual file upload?
+      - individual file, multiple files and folder
+    - Would also like to know if it allows users to connect to an existing ollama instance over LAN? Would it allow me to connect to my ollama API on my network? So I can use this on my laptop and connect to my AI server in the basement? Can you put a custom IP/port? 
+      - this is the most requested feature 
 # rag-examples
 - https://github.com/pymupdf/pymupdf4llm /1.2kStar/AGPL/202601/python/lib
   - https://pymupdf.readthedocs.io/en/latest/pymupdf4llm
@@ -699,6 +739,11 @@ modified: 2025-11-30T17:27:16.720Z
   - Embedded Node.js (Express) server inside the Electron main process
   - Data Storage: SQLite (document metadata via Sequelize) + Faiss vector index (faiss-node)
   - AI Models: Pluggable LLM / embedding providers (OpenAI, Azure, OpenRouter, Bailian, Ollama, etc.)
+
+- https://github.com/hyson666/pdf-rag-mcp-server /202505/python/js/inactive
+  - This system allows you to upload, process, and query PDF documents through a modern web interface or via the MCP protocol for integration with AI tools like Cursor.
+  - FastAPI Backend: Handles API requests, PDF processing, and vector storage
+  - MCP Server: Exposes knowledge base to MCP-compatible clients
 # rag-fwk
 - https://github.com/run-llama/semtools /1.5kStar/MIT/202511/rust/ts
   - Semantic search and document parsing tools for the command line
@@ -953,6 +998,14 @@ modified: 2025-11-30T17:27:16.720Z
 - https://github.com/OpenBMB/UltraRAG /2.6kStar/apache2/202601/python/js
   - https://ultrarag.openbmb.cn/
   - the first lightweight RAG development framework based on the Model Context Protocol (MCP) architecture design
+
+- https://github.com/libragen/libragen /MIT/202601/ts
+  - https://libragen.dev/
+  - Create private, local RAG libraries that work offline—no API keys, no cloud services. Share them as single files your whole team can use.
+  - It’s a CLI tool and MCP server for creating discrete, versioned “libraries” of RAG-able content.
+  - Under the hood, it uses an embedding model locally. It chunks your content and stores embeddings in SQLite. The search functionality uses vector + keyword search + a re-ranking model.
+  - You can also point it at any GitHub repo and it will create a RAG DB out of it.
+  - You can also use the MCP server to create and query the libraries.
 # graph-knowledge
 
 ## graph-examples
@@ -1101,6 +1154,11 @@ modified: 2025-11-30T17:27:16.720Z
   - Plug-and-play adapters that map one embedding model’s vector space into another — locally or via API — enabling cross-model retrieval, routing, and interoperability.
   - a lightweight Python library and model collection that lets you map embeddings from one model’s space into another’s.
   - [I built a Python library that translates embeddings from MiniLM to OpenAI _202512](https://www.reddit.com/r/Rag/comments/1py8l8f/i_built_a_python_library_that_translates/)
+
+- https://github.com/vectordbz/vectordbz /NonOpen
+  - http://vectordbz.com/
+  - modern desktop application for exploring, managing, and analyzing vector databases
+  - Multiple Database Support — Connect to Qdrant, Weaviate, Milvus, ChromaDB, Pinecone, pgvector, and Elasticsearch
 # search 🔍
 - https://github.com/AL-MARID/Lorph /MIT/202602/ts
   - AI chat application designed to run locally on your device, offering a seamless interactive experience with powerful large language models (LLMs) via Ollama.
@@ -1339,46 +1397,6 @@ modified: 2025-11-30T17:27:16.720Z
   - 强大的富文本编辑能力：兼容 Markdown 和 HTML，支持导出为 word、pdf、markdown 等多种格式。
   - 轻松与第三方应用进行集成：支持做成网页挂件挂在其他网站上，支持做成钉钉、飞书、企业微信等聊天机器人。
   - 通过第三方来源导入内容：根据网页 URL 导入、通过网站 Sitemap 导入、通过 RSS 订阅、通过离线文件导入等。
-
-- https://github.com/signerlabs/klee /1.7kStar/MIT/202511/ts/inactive
-  - a modern desktop application that combines AI-powered chat, knowledge base management, and note-taking capabilities.
-  - It offers both Cloud Mode for seamless synchronization and Private Mode for complete offline functionality.
-  - Integrated with OpenAI and local Ollama models
-  - Tiptap-based collaborative editor with Markdown support
-  - At its core, Klee is built on:
-    - `Ollama`: For running local LLMs quickly and efficiently.
-    - `LlamaIndex`: As the data framework.
-  - Privacy-First: Complete offline mode with local AI and data storage
-  - Optional cloud synchronization via Supabase
-  - Private Mode
-    - Local AI: Powered by Ollama (embedded or system-installed)
-    - Local Storage: SQLite for structured data
-    - Vector Search: LanceDB for semantic search (planned)
-  - Cloud Mode
-    - File Storage: Supabase Storage for documents and attachments
-    - Data Sync: PostgreSQL database with real-time updates
-    - Authentication: Google OAuth and email/password via Supabase
-  - 🍴 forks
-  - https://github.com/EclipseFever/Klee /202504
-    - electron-build-ci: https://github.com/EclipseFever/Klee/blob/main/.github/workflows/build.yml
-  - [I built and open sourced a electron app to run LLMs locally with built-in RAG knowledge base and note-taking capabilities. : r/electronjs _202503](https://www.reddit.com/r/electronjs/comments/1j43om9/i_built_and_open_sourced_a_electron_app_to_run/)
-    - Would the users need to download Ollama separately or is it somehow embedded?
-      - It is embedded, but if you already have ollama running, we will use your ollama instance.
-    - We start with SwiftUI but switch to Electron after 3 weeks
-  - [I built and open sourced a desktop app to run LLMs locally with built-in RAG knowledge base and note-taking capabilities. : r/LocalLLM _202503](https://www.reddit.com/r/LocalLLM/comments/1j4wvsu)
-  - [I open-sourced Klee today, a desktop app designed to run LLMs locally with ZERO data collection. It also includes built-in RAG knowledge base and note-taking capabilities. : r/LocalLLaMA _202503](https://www.reddit.com/r/LocalLLaMA/comments/1j2j7su/i_opensourced_klee_today_a_desktop_app_designed/)
-    - I see you were inspired by Slack's UI
-    - Can I just point it at the folder with my existing models?
-      - If you use windows, look up junctions and symbolic links: mklink /J C:\LinkDirectory D:\TargetDirectory
-    - When I've used Ollama I find it's not just the file location; it requires turning the GGUF models into some hashed 'model file', which is exactly why I quit using Ollama.
-    - Does this force Ollama? Or can I use llama.cpp as a backend?
-      - backend and front end are in different repo, you can use llamacpp as backend
-    - What key features differentiate this from those options like lmstudio/koboldai?
-      - Nothing. Just yet another wrapper over ollama.
-    - What does Klee use for embeddings for the RAG? does it support directory/folder upload or just individual file upload?
-      - individual file, multiple files and folder
-    - Would also like to know if it allows users to connect to an existing ollama instance over LAN? Would it allow me to connect to my ollama API on my network? So I can use this on my laptop and connect to my AI server in the basement? Can you put a custom IP/port? 
-      - this is the most requested feature 
 
 - https://github.com/OpenDCAI/Paper2Any /1.2kStar/apache2/202601/python/ts
   - http://dcai-paper2any.nas.cpolar.cn/

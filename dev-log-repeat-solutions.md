@@ -112,9 +112,11 @@ modified: 2021-07-20T13:50:23.433Z
   - server-first vs client-first
     - vscode/cline-cli(从客户端重构为c/s架构) 都从本地计算迁移到了服务端计算
     - codesandbox从nodebox(纯浏览器客户端)转向devbox(服务端)
-    - apitable(前同事liuyi告知)/affine(server-native-rafactor)
+    - apitable(前同事liuyi告知从浏览器转向服务端)/affine(server-native-rafactor)
     - lmstudio-v0.4: core of the LM Studio packaged to be server-native
     - client-first对于多实例的场景，注意处理database-lock, 比如chrome/edge访问访问网站的场景
+      - 还对协作冲突处理不友好
+    - client-first案例: webcontainer/nodebox
 
 - 🚀 产品落地
   - 侧重表格的cms, 内容创作与管理

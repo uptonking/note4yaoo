@@ -14,7 +14,14 @@ modified: 2023-12-15T17:04:24.911Z
 
 - ## 
 
-- ## 
+- ## 💰 [Versions 0.301.0 and later are no longer open source · nocodb/nocodb _202601](https://github.com/nocodb/nocodb/discussions/12891)
+  - They're moving to a Sustainable Use License.
+  - It’s a switch to „source available“ and technically similar to a BUSL  license.
+  - Same applies to e.g Hashicorp Vault, n8n, etc. on Cloudron as mentioned before. Other examples with similar licenses are MongoDB, Kibana, Elasticsearch, Redis…
+
+- [Heads up: Nocodb is no longer open source. | Cloudron Forum](https://forum.cloudron.io/topic/14918/heads-up-nocodb-is-no-longer-open-source.)
+
+- [Time to Stop Saying Open Source Airtable Alternative : r/NocoDB](https://www.reddit.com/r/NocoDB/comments/1qzhgsa/time_to_stop_saying_open_source_airtable/)
 # discuss-issues
 - ## 
 

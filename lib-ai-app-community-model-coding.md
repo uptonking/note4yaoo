@@ -688,6 +688,8 @@ def slugify(text):
 - 何心意之忡忡，若寤寐之栩栩 出自哪里? 上下句是什么？ 表达什么意思？
   - storyofstone 芙蓉女儿诔(lei)
 
+- 洗车店离我家只有 50 米，我想洗车，是开车去还是走路去？
+
 - 解释下统计学上的 Simpson's paradox
 
 - Alice (a girl) has 3 brothers. Each brother has 2 sisters. How many sisters does Alice have?

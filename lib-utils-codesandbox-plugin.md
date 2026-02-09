@@ -45,8 +45,7 @@ modified: 2023-09-02T09:16:30.412Z
 - 
 - 
 
-## docker/vm
-
+# docker/vm
 - 🆚 采用docker容器方案的缺点
   - 不方便单个容器升降级配置， 采用vm更方便
   - 在paas实测，docker容器启动时及扩容时的耗时，比vm慢很多，如firecracker的卖点就是启动快
@@ -56,6 +55,15 @@ modified: 2023-09-02T09:16:30.412Z
 - pros
   - 让原生程序在浏览器、移动端执行
   - 让浏览器中的文件系统更方便
+
+- cons(webcontainer看似美好, 限制太大, 仅适合demo)
+  - 客户端直接操作db/支付的场景, 风险高
+  - 很多计算发生在客户端, 对低端设备不友好, build/compile in browser 有时expensive
+  - 需要处理shim的兼容性, 如SharedArrayBuffer/nodejs-api/pyiode-api
+    - 这一层抽象的复杂度难以判断，会碰到如 浏览器能运行但本地不能运行 的场景, 难以复现和调试
+  - 浏览器中多个tab/多个workspace的并发操作如何处理, 能否无冲突读写数据
+  - 同一domain下浏览器的连接限制如何解决
+  - 关闭标签页后重新打开页面， 或更换浏览器打开统一页面，是否要重新下载deps/build
 # iframe
 - iframe load speed
   - 思路1: 

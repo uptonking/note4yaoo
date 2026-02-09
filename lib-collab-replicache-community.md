@@ -406,7 +406,25 @@ modified: 2024-01-07T05:09:14.413Z
 
 - ## 
 
-- ## 
+- ## 🤼 Local first/sync first ecosystem is in a very weird place today
+- https://x.com/cahofmeyr/status/2020297716547428371
+  - plugs into existing setups = my existing pg/mysql database should work
+  - runs everywhere = not just javascript, but native (swift/kotlin/rust etc)
+
+- `my existing pg/mysql database should work` and o`ffline-first` Are basically in conflict. That's why this doesn't exist. Because conflicts
+  - Take your typical relational schema offline. Make arbitrary writes to it. Come back online while collaborators were also editing.
+  - The conflicts cannot always be merged. Even with human intervention. They can be arbitrarily complex.
+- i think when people say offline first nowadays they just mean it syncs to durable storage on the client
+- Preventing all destructive operations while offline is a valid strategy. But I don’t think it meets the intuitive definition of “offline operation” for most users.
+- Perhaps you can still have “offline create writes”? Like you cant update any existing data offline, but you can create new data
+  - Yes, disallowing destructive edits is a solution, but is not what people usually mean by 'offline-first' or 'works with my existing schema'.
+
+- The design of the offline capabilities in PowerSync are based on (1) our aim to give developers flexibility/optionality, (2) what works for the majority of typical use cases, in our experience.
+  - Our original product (that we spun off PowerSync from) was an offline-first app platform that we started working on in 2009, and we've helped customers with hundreds of use cases across dozens of industries over the years. In our experience, use cases that routinely have conflicts are not particularly common in practice.
+  - In many scenarios, users work on different projects/jobs/tickets while offline. When they collaborate on the same project/job/ticket, they are often working on different parts of it, or are editing different fields on the same object that can be merged safely with field-level merges. In the (not super common) cases where two users modify the same field to different values, or make edits that result in some other business rule violation, it is usually not a catastrophic data loss scenario where one user has lost all their work.
+  - If we tell developers the easy thing to implement is field-level last-write-wins and they can customize the conflict resolution logic in their own backend (which can include sending conflicts back to users to resolve manually using UI), and they also have the option of using CRDT data structures where they want (e.g. for collaborative text editing), it seems like the most of them are happy with this set of capabilities. Could be survivor bias
+  - (In our original app platform, we also had built-in audit trails for edits to data, which means that even if the developer did not properly cater for certain destructive changes, they can manually recover a user's field-level edits if it's critical to do so. In cases where avoiding any data loss is business-critical, this is another pattern we recommend)
+  - This is why I believe PowerSync ticks "simple to integrate" [for the vast majority of use cases], "plugs into existing setups" and "offline-first"
 
 - ## Why is preloading cheating? If it works, it works. The only way to go faster is to load data before user needs it.
 - https://x.com/aboodman/status/1902745871248429324

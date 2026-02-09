@@ -223,6 +223,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 允许分享文档/插画中的模型配置/运行日志, 将prompt放入git-commit，还是直接放入图片?
     - ❓ 如何一键切换到cloud版
     - https://github.com/tc-mb/llama.cpp-omni is the first Omni multimodal inference engine built on llama.cpp.
+    - sources: docs, emails
   - 🔗 citations for search: 外部数据源如字典mdx/书籍epub/wikipedia公开db/统计年鉴
     - 查看原文pdf-parts时支持仅查看前后几页, 保护原文内容
     - 类似词典库/kiwix的预置模块, 可下载、可分享, 不必每次都全量索引
@@ -669,7 +670,8 @@ modified: 2025-03-22T16:10:24.856Z
     - 免费提供 glm flash
   - [太子公益 API](https://api.codeme.me/console/personal), 签到
     - cc支持
-  - [Old API](https://oldai.zeabur.app/console/personal), 签到
+  - [Old API](https://sakuradori.dpdns.org/console/personal), 签到
+    - [Old API](https://oldai.zeabur.app/console/personal)
     - [【old API公益站】公益站上线（已恢复？） ](https://linux.do/t/topic/1541085)
     - rpm 为 25，还是老样子小容器部署，服务稳定性未知，随时可能因为账号短缺、高并发而死掉
     - 仅支持 sonnet 和 haiku，等 kiro 恢复 free 用户的 opus 使用权后会上 opus
@@ -688,6 +690,9 @@ modified: 2025-03-22T16:10:24.856Z
     - [〔Hotaru公益站〕新的公益站启动 ](https://linux.do/t/topic/1398297)
   - [Huan API](https://ai.huan666.de/console/personal), 签到, 生图模型
     - cc支持
+  - [API分享站](https://new-api-bxhm.onrender.com/console/personal)
+    - [【API分享站】公益站主帖 ](https://linux.do/t/topic/1355814)
+    - 反代自 kiro
   - [Jarvis API](https://ai.ctacy.cc/console/personal), 签到
     - cc
     - 备用, [Jarvis API](https://jarvis.ccwu.cc/)
@@ -711,6 +716,12 @@ modified: 2025-03-22T16:10:24.856Z
   - [Einzieg API](https://api.einzieg.site/console/personal), 签到
     - 仅提供codex模型
     - [【Einzieg公益站】再次启动 ](https://linux.do/t/topic/1569418)
+  - [GGBOOM公益站](https://ai.qaq.al/dashboard)
+    - [签到控制台](https://sign.qaq.al/app)
+    - [【GGBOOM公益站】签到站上线啦 ](https://linux.do/t/topic/1517772)
+    - 本站点为codex中转站，不包含其他模型
+    - sub2api的openai api仅支持 openai-responses API协议。不要选老版本的哦
+    - [【GGBOOM公益站】 全面支持gpt-5.3-codex ](https://linux.do/t/topic/1581803)
   - [NPC API](https://npcodex.kiroxubei.tech/console/personal)
     - [[NPC-API]codex公益站开业 ](https://linux.do/t/topic/1564054)
   - [api-test](https://openai.api-test.us.ci/console/personal)
@@ -719,12 +730,6 @@ modified: 2025-03-22T16:10:24.856Z
     - 包括 deepseek，硅基流动全模型，阿里云千问全模型，glm，gemini，codex
     - 有claude, 无opus
     - 默认 RPM30，1 级可注册，不允许批量测活
-  - [GGBOOM公益站](https://ai.qaq.al/dashboard)
-    - [签到控制台](https://sign.qaq.al/app)
-    - [【GGBOOM公益站】签到站上线啦 ](https://linux.do/t/topic/1517772)
-    - 本站点为codex中转站，不包含其他模型
-    - sub2api的openai api仅支持 openai-responses API协议。不要选老版本的哦
-    - [【GGBOOM公益站】 全面支持gpt-5.3-codex ](https://linux.do/t/topic/1581803)
   - [玩票 API](https://api.361888.xyz/console/personal)
     - opus4.6 和 codex 虽迟但到
   - [sorai API](https://newapi.sorai.me/console/personal)
@@ -1305,6 +1310,8 @@ modified: 2025-03-22T16:10:24.856Z
   - [OAIPro API](https://api.oaipro.com/)
     - L 站不倒，这个就不倒
 
+- [令牌查询](https://apikey.cifang.xyz/)
+
 ## llm-2api
 
 - embedding
@@ -1542,9 +1549,24 @@ modified: 2025-03-22T16:10:24.856Z
 
 - ## 
 
-- ## 
+- ## [Fully offline, privacy-first AI transcription & assistant app. Is there a market for this? : r/LocalLLM](https://www.reddit.com/r/LocalLLM/comments/1qz80a9/fully_offline_privacyfirst_ai_transcription/)
+- Entirely dependent on the minimum specs required to run it and the platforms it runs on.
+  - If I can run it on an integrated graphics Intel CPU from the last five years or so with say only 8-16gb of RAM it could be a winner. Or thinks Mac M1 with 8gb of RAM. This is 80% of computers that real people use daily. 
+  - If it needs 24gb of VRAM and 16 CPU cores then it's a niche market... Not sure I like your chances. 
+- It’s actually 100% standalone on mobile! No PC or server tethering required. The whole point is to have a fully offline assistant right in your pocket, taking advantage of the NPU/GPU on modern smartphones.
+- Yes, like whisper locally but mobile, and I connected an LLM that gives you suggestions or translates or summarizes in real time. What do you think?
+  - I use whisper regularly. That's why I was asking, what's the big deal? Personally I don't need summaries or translations, but those might be the major attraction for some people, saving them time.
+- I use LoroNote for whisper local transcription on my phone. If you could do real time streaming transcription, ESPECIALLY with diarization (separating who is speaking) then that would be an absolute game changer.
 
-- ## 
+- Here seems to be a ready-made one that supports multiple platforms including iOS/macOS. https://www.kyoten.jp/products/safe-translator/
+
+- ## 高强度使用了 openclaw, 离开了它丑丑的 UI 我发现 openclaw 最牛逼的地方就是它是一个高度 AI Native 的系统（拜托于各式各样的 skills）
+- https://x.com/yetone/status/2020875192923558026
+  - ai native: 完全发挥 AI 的主观能动性，不需要用户操作任何的 UI 控件，只通过聊天让 AI 完成所有的操作
+- 其实并不是因为 UI 丑，而是他本身就是一个 Headless AI Native 产品，如果真的说有 UI 的话，那 IM 就是他的 UI 了。他的出现其实给很多 agent 产品一个启示，agent 最适合的载体就是 IM，因为可以随时随地唤起。
+
+- 没错Alma是有层层叠叠的UI树和对化设置的，要让设置能通过对话和记忆，自己设置自己
+  - 接下来的几个版本，Alma 逐渐进化到 skill base 的系统，大家都不需要通过任何 UI 点击就能完成所有的 Alma 的配置工作
 
 - ## 🤔💡 软件正在走一条，媒体已经走过的老路。当成本塌陷，一个行业的价值结构一定会整体翻转。
 - https://x.com/AztecaAlpaca/status/2020013931499278370

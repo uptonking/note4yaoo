@@ -11,6 +11,9 @@ modified: 2026-01-14T19:05:15.969Z
 
 # draft
 - v0.7.6_20260127版本上, 自定义url都会失败
+
+- lite
+  - 去掉llama.cpp/mlx后端的纯客户端版本
 # xp-janai
 - cons
   - 不支持直接使用已有的.safetensors文件

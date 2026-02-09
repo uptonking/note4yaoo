@@ -289,6 +289,13 @@ modified: 2026-01-19T05:01:00.055Z
   - A protocol for connecting any editor to any agent
   - [Bring Your Own Agent to Zed — Featuring Gemini CLI — Zed's Blog _202508](https://zed.dev/blog/bring-your-own-agent-to-zed)
 # skills
+- https://github.com/PrefectHQ/colin /202602/python
+  - https://colin.prefect.io/
+  - A context engine that treats skills as software.
+  - Write templates that reference live sources—GitHub, Linear, Notion, HTTP endpoints—and other documents. Colin compiles them, tracks dependencies, and rebuilds only what's stale.
+  - Run colin run. Colin fetches the Linear issues, resolves the reference to your weekly notes, extracts blockers via LLM, and writes the compiled skill. Run it again tomorrow—if nothing changed upstream, nothing rebuilds. The expires: 1d ensures time-sensitive content stays fresh.
+  - [We built Colin, a context engine that can keep agent skills fresh : r/AI_Agents _202601](https://www.reddit.com/r/AI_Agents/comments/1qnns7n/we_built_colin_a_context_engine_that_can_keep/)
+
 - https://github.com/comeonzhj/Auto-Redbook-Skills /python/js
   - 一个自动撰写小红书笔记，自动生成图片，自动发布的 Skills
   - 根据既定主题，撰写小红书笔记（提示词自己调整，在 SKILL.md里）

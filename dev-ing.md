@@ -201,8 +201,8 @@ console.log('; ; task ', taskState, runningTaskAction, task?.task_steps)
 
 ```
 ```log //ai
-- provide a brief overview of reactjs in less than 90 words
-- provide a brief overview of reactjs with hello world code example
+- introduce reactjs in less than 90 words
+- introduce reactjs with hello world code example
 - count from 1 to 80, every number on a separate line
 - count from zz1 to zz40, every item on a separate line  /no_think
 - when did deepseek v3.1 model release?
@@ -233,6 +233,7 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
   - provide a comprehensive overview of this project. analyze the project architecture and primary user journey use cases. then find some important source code to explain the core architecture and data flow.
   - i want more details about rag ingest/chunking/embedding/persistence logic
   - how to refactor related source code to support more vector db including qdrant/chromadb/pgvector? show me some code and explain the architecture migration
+- analyze the project architecture and related code. explain the core architecture and data flow
 
 - You are a professional python/typescript/nodejs fullstack developer and a system administrator.
   - I want to run this project fully locally without docker and nginx for local development and debugging.

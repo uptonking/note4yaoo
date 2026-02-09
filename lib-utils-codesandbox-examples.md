@@ -663,6 +663,41 @@ modified: 2023-09-02T09:17:22.992Z
   - An experiment to bootstrap Node.js (version 8.0.0) in the browser in order to run Node apps or npm libraries unmodified.
   - [How to run Node.js (apps) in the browser? | by Johannes Bader | CloudBoost _201711](https://blog.cloudboost.io/how-to-run-node-js-apps-in-the-browser-3f077f34f8a5)
 
+- https://github.com/macaly/almostnode /191Star/MIT/202602/ts
+  - http://almostnode.dev/
+  - lightweight, browser-native Node.js runtime environment. 
+  - Run Node.js code, install npm packages, and develop with Vite or Next.js - all without a server.
+  - Built by the creators of Macaly.com — a tool that lets anyone build websites and web apps, even without coding experience. Think Claude Code for non-developers.
+  - Virtual File System - Full in-memory filesystem with Node.js-compatible API
+  - Node.js API Shims - 40+ shimmed modules (fs, path, http, events, and more)
+  - Install and run real npm packages in the browser
+  - Service Worker Architecture - Intercepts requests for seamless dev experience
+  - Optional Web Worker Support - Offload code execution to a Web Worker for improved UI responsiveness
+  - Built-in Vite and Next.js development servers
+  - First-class TypeScript/TSX transformation via esbuild-wasm
+  - Secure by Default - Cross-origin sandbox support for running untrusted code safely
+  - https://x.com/PetrBrzek/status/2020161329470828932
+    - Vibe coded an open-source library that runs Node.js entirely in the browser. 
+    - Full virtual filesystem with POSIX-compatible API (using just-bash from @cramforce )
+    - No server. No backend. No cold starts.
+    - was it really vibe-coded in a sense that you let it run autonomously and make decisions, or did you replace coding by hand in favor of explaining in natural language what you wanted to code?
+      - I said "Let's make it possible to run Express.js in the browser". It had a test environment ready and just kept iterating in a feedback loop until the Express example actually worked. Then I said "Cool, now let's run the Next.js dev server" same thing. Loop until it works.
+    - how does the http server listen on a port if it's running in the browser?
+      - it shims Node's http module using browser APIs like Service Workers to intercept and handle requests virtually, without binding to real ports
+    - It’s basically an open alternative to webcontainer
+    - But why would you run Node.js in the browser?
+      - Before AI coding, the answer was niche: show library examples in docs, or quick prototyping on StackBlitz. 
+      - With AI coding platforms like Macaly, it's a different story. If you're building an AI coding platform (Bolt, Lovable, our platform Macaly), your users are generating Next.js apps, React + Vite projects, using Supabase, Convex, etc. 
+      - You need to run that code somewhere. Two options:
+      - Cloud sandboxes ( @e2b , etc.) — full Linux VM, most flexible, but expensive. Every user session costs you money.
+      - Run it in the browser — fake Node.js environment, zero server cost. That's what WebContainers do inside Bolt.
+      - The problem: WebContainers aren't open source.
+      - With a TDD approach and enough shims, you can get Next.js, Vite, and Express dev servers running entirely in the browser.
+      - I didn't write a single line of code in this project. All vibe coded.
+      - It's experimental, it has bugs, but it works. And it's fully open source.
+    - I would just use emscriptem. emscripten already has the fs shims. 
+      - Got it. You can definitely do it in WASM as well. WebContainers work like that. I didn’t have a strong preference, I was just orchestrating it.
+
 - https://github.com/opensumi/codeblitz /MIT/202401/ts/inactive
   - https://codeblitz.opensumi.com/
   - https://openlab.antchain.antgroup.com/ide

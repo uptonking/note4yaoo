@@ -159,6 +159,20 @@ modified: 2023-10-30T07:34:03.602Z
 - https://twitter.com/FinanceYF5/status/1730912502312296935
   - [国产大模型188个list - Feishu Docs](https://zw73xyquvv.feishu.cn/wiki/WXLmwBbYuiTobkkJ6Ojc2cxqnj0?sheet=2XjJlJ&table=tblS2Jv7isKtSODz&view=vewfCdOf0U)
 
+# discuss-llm-internals
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Hugging Face transformers合并GLM 5，参数估算 _202602](https://linux.do/t/topic/1588178)
+- 从代码实现来看，GLM-5 采用了 78 层 Transformer 解码器结构。在计算模式上，它延续了智谱 AI 近期的混合设计思路：前三层保持为稠密（Dense）层，从第四层开始全面转为稀疏（Sparse）的混合专家架构（MoE）。模型配置了 256 个专家，单 token 激活 8 个专家的策略，这种设计能够在维持庞大参数量的同时，通过计算资源的按需分配来兼顾推理响应速度。
+  - 对比 GLM 4.5 系列： 总专家数：160 个 路由专家（Routed Experts） + 1 个 共享专家 上下文能力：128K
+  - 估算 GLM5 模型大小在 700-800B 之间，激活参数不变
+
 # discuss-llm-architecture
 - ## 
 

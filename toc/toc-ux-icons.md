@@ -341,6 +341,14 @@ modified: 2021-05-06T09:58:23.803Z
 - [Iconbuddy — 200K+ open source free svg icons](https://iconbuddy.app/)
   - Download, Customize, Edit and Personalize. Over 200k+ open source icons.
 
+- https://github.com/cossistantcom/cossistant/tree/main/packages/facehash /MIT/NoDeps
+  - https://www.facehash.dev/
+  - Deterministic avatar faces from any string. Zero dependencies, works with React 18/19 and Next.js 15/16.
+  - https://x.com/anthonyriera/status/2020784989919498545
+    - Nobody talks about how ugly your app looks when users do not upload avatars.
+    - So I fixed that with FaceHashes
+    - This was originally in http://cossistant.com, a AI / human  customer support widget you add with a simple `<Support />` component to your React app.
+
 - https://github.com/jaywcjlove/icongo /MIT/202405/ts
   - https://icongo.github.io/
   - Search SVG Icons. Easily include popular icons in your React projects and provide an easy tool to convert SVG into React components

@@ -364,7 +364,8 @@ modified: 2024-08-24T16:30:20.218Z
     - SeaGOAT is designed to allow you to use your computer while processing files. 
     - It is an intentional design choice to avoid blocking/slowing down your computer. This design decision does not affect the performance of queries.
 
-- https://github.com/github/stack-graphs /MIT/202503/rust
+- https://github.com/github/stack-graphs /871Star/MIT/202503/rust/archived
+  - https://docs.rs/stack-graphs/*/stack_graphs/
   - Rust implementation of stack graphs
   - Incremental, zero-config Code Navigation using stack graphs.
   - allow you to define the name resolution rules for an arbitrary programming language in a way that is efficient, incremental, and does not need to tap into existing build or program analysis tools.
@@ -379,6 +380,10 @@ modified: 2024-08-24T16:30:20.218Z
     - GitHub has developed two code navigation approaches based on the open source tree-sitter and stack-graphs library
     - Search-based - searches all definitions and references across a repository to find entities with a given name
     - Precise - resolves definitions and references based on the set of classes, functions, and imported definitions at a given point in your code
+
+- https://gitlab.com/gitlab-org/rust/knowledge-graph /GitLabEE/202601/rust
+  - https://gitlab-org.gitlab.io/rust/knowledge-graph/
+  - aims to create a structured, queryable graph database from code repositories to power AI features and enhance developer productivity.
 
 - https://github.com/sourcegraph/scip /apache2/202504/go
   - SCIP (pronunciation: "skip") is a language-agnostic protocol for indexing source code, which can be used to power code navigation functionality such as Go to definition, Find references, and Find implementations.
@@ -443,6 +448,7 @@ modified: 2024-08-24T16:30:20.218Z
   - osgrep serve
     - Watches the repo (via `chokidar`) and incrementally re-indexes on change.
   - Claude Code Plugin, Opencode Plugin
+
 - https://github.com/blazejp83/hygrep /apache2/202512/python/inactive
   - a self-hosted semantic code search system designed for AI coding agents
   - Semantic + Lexical Retrieval: LanceDB vectors plus SQLite FTS5 with per-query weight overrides
@@ -469,6 +475,7 @@ modified: 2024-08-24T16:30:20.218Z
   - database: The persistence layer, powered by the `Kuzu` graph database, for storing and querying the knowledge graph.
   - event-bus: A real-time event system for broadcasting progress and status updates.
   - [The GitLab Knowledge Graph, a universal graph database of your code, sees up to 10% improvement on SWE-Bench-lite : r/Rag _202510](https://www.reddit.com/r/Rag/comments/1nu148l/the_gitlab_knowledge_graph_a_universal_graph/)
+
     - It’s not a vector DB with embedding (yet), but a graph database called Kuzu. It’s taking your code’s AST and translating that into graph format.
 # ide-devtools
 - https://github.com/zthxxx/react-dev-inspector /MIT/202412/ts

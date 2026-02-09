@@ -24,6 +24,28 @@ modified: 2024-12-27T17:28:57.941Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [[开源] ContextWeaver 本地代码库语义检索工具，目标是ace平替 _202512](https://linux.do/t/topic/1373618)
+- https://github.com/hsingjui/ContextWeaver /MIT/202601/ts
+  - ContextWeaver 是一个基于 MCP 协议、利用 Tree-sitter 和向量搜索为大语言模型提供本地代码库智能上下文编织与检索的工具。
+  - 这里 Embedding 和 Reranker 模型用的硅基流动免费的模型，用 Qwen/Qwen3-Embedding-8B 和 Qwen/Qwen3-Reranker-8B，效果好一些，但是速度会慢一点
+
+- 验证项目中分片和召回设置的参数多少会比较好, 例如:
+  - qwen 3 embedding 最高可以到 4096，但效果是正相关吗？
+  - recall 40% ~ 60% 对于项目精确性的影响如何？
+  - 中文注释是否需要多语系模型？
+- 用 Qwen/Qwen3-Embedding-8B 4096维和 BAAI/bge-m3 在 new-api 的仓库分别做测试，效果是差不多的，但 Qwen3 的 api 慢很多，结果是给大模型看的，还会根据结果继续验证，我认为有一些差别也没事
+
+- 佬，这个索引会保存在哪里？如果多人的话可以共用吗？
+  - 为了尽可能不引入外部依赖，存在 `~/.contextweaver`，多人不能共用，是存在本地的
+
+- ### [逆向复现augment ACE进展与求助 ](https://linux.do/t/topic/1585388)
+
 - ## [Repository X-Ray (#11733) · Epic · gitlab-org _202310](https://gitlab.com/groups/gitlab-org/-/epics/11733)
   - The idea is to have a container based scanner for repositories that gathers as much information as possible from a repository, saves the data to a database that can also run locally in IDE's and the server.
 
@@ -99,7 +121,7 @@ modified: 2024-12-27T17:28:57.941Z
 
 - Can you add repos after starting the container? What about persisting indexes across restarts?
   - Yes - there is a file watcher that should pickup modifications to the configuration file.
-  - And you can persist indexes across restarts by mounting a volume to the `/data` directory (e.g.,    `-v $(pwd):/data`). Indexes are stored in a `.sourcebot` cache directory.
+  - And you can persist indexes across restarts by mounting a volume to the `/data` directory (e.g.,                         `-v $(pwd):/data`). Indexes are stored in a `.sourcebot` cache directory.
 
 - Does it support Perforce? i couldn't find it in the schema in the repo.
   - No just GitLab and GitHub atm

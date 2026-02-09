@@ -702,6 +702,8 @@ modified: 2021-09-14T18:58:58.275Z
   - All copies of the program, in both source code and executable form, must preserve the "About SimpleDMS" menu item in the main menu. The content of the linked about page must not be modified.
   - This obligation also applies to all derivative works and any copies of derivative works.
 # additional-cases
+- [saasy license](https://github.com/crawlchat/crawlchat/blob/main/LICENSE.md)
+  - 
 
 # relicense-cases
 - [Grafana, Loki, and Tempo will be relicensed to AGPLv3_202104](https://grafana.com/blog/2021/04/20/grafana-loki-tempo-relicensing-to-agplv3/)
