@@ -852,7 +852,24 @@ def slugify(text):
 
 - ## 
 
-- ## 
+- ## opus 4.6 vs codex 5.3 [It’s been over 24 hours. Which one do you prefer? : r/codex _202602](https://www.reddit.com/r/codex/comments/1qywijh/its_been_over_24_hours_which_one_do_you_prefer/)
+- gpt 5.3 seems to be the better coder
+  - Opus 4.6 seems to be the better debugger
+
+- Codex hands down. But opus has better front-end imo skills.
+  - True! I've been using codex for everything but frontend designs. For that opus and gemini are miles ahead
+- Codex or GPT really need a UI improvement. Even Kimi and GLM have them beat. GPT looks like Windows 98 in comparison.
+
+- Codex = more money in my pocket. It’s cheap and as efficient as opus without a doubt
+
+- Im a claude fan but sadly codex 5.3 extra high wins tonight for me easily. Claude didnt even catch what i wanted and codex first try did it without a problem. I was so surprised. 
+  - Same experience. I really like the Claude code harness and feature set like playgrounds and hooks but codex is still the goat
+
+- I spent 2 hours trying to debug a problem with my code with Codex. Decided to use Opus 4.6 via API, solved in 3 minutes… I am stuck using both models.
+
+- [As a Claude Code devotee I am currently using Codex to do 95% of my coding : r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1qz2kv0/as_a_claude_code_devotee_i_am_currently_using/)
+- I’ve been praising Claude code for almost a year. Never even mentioned codex despite using it a few times here and there and had bad experiences with it before 5.1.
+  - I decided to try 5.3 for a big task and it’s insanely good. One thing is absolutely certain, I’m going to downgrade from 20x to 5x after this.
 
 - ## [Codex 5.3 is better than 4.6 Opus : r/ClaudeCode _202602](https://www.reddit.com/r/ClaudeCode/comments/1qxazv9/codex_53_is_better_than_46_opus/)
 - Like many hear, I've been testing a lot and reading a lot from people I trust (who have been using both for multiple days). The general consensus seems to be:

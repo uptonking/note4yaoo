@@ -211,7 +211,9 @@ modified: 2025-03-22T16:10:24.856Z
 - selling-points
   - 易用性: 模型推荐 + 场景优化的提示词 + 多模型/多版本对比
     - 对同一场景,如翻译/ocr, 针对不同模型内置合理的参数且支持配置
-    - roadmap: editing-database, pdf-editing, extraction, chat2db, coding/table/image
+    - roadmap: 
+      - editing-database, pdf-editing, extraction, chat2db, coding/table/image
+      - agent-browser
   - ✈️ local models support: mlx, lmstudio-alternative
     - 模型库: text模型, ocr模型, 翻译模型, t2i生图模型, tts, stt,  lmstudio在模型分类上做的不够好
     - 较少免费api的模型: ocr, stt
@@ -352,6 +354,10 @@ modified: 2025-03-22T16:10:24.856Z
     - Letterboxd
     - Metacritic
     - La Liste
+# 💎 llm-playground - 使用公益api的效率工具+api统计分析
+- 公益版
+
+- 企业版
 # pm-mcp
 - writing
 
@@ -507,6 +513,17 @@ modified: 2025-03-22T16:10:24.856Z
     - Limit your search to trusted knowledge sources
 
 - [Project Idea: Using an AI face search to find data leakage in RAG source repositories. : r/ChatGPTCoding](https://www.reddit.com/r/ChatGPTCoding/comments/1oq4p2s/project_idea_using_an_ai_face_search_to_find_data/)
+# ai-hardware/硬件
+- 智能家居
+  - 各家设备
+
+- 国产显卡
+  - 华为昇腾, 摩尔线程, 砺算科技
+
+- 
+- 
+- 
+
 # ai-dev-xp
 - 当一个复杂问题让ai折腾了1h还没解决，不要继续纠结，赶紧换更强的模型
   - 让ai动手前自己先拆分任务，不要让ai分析复杂的任务，ai分析不清会乱改增加工作量，自己可以主动mock状态和对象
@@ -563,7 +580,9 @@ modified: 2025-03-22T16:10:24.856Z
     - [DuckCoding](https://duckcoding.com/console/personal)
     - [DuckCoding Az-CC，单独开启公益站，只允许L站注册 ](https://linux.do/t/topic/1308120)
     - [status](https://status.duckcoding.com/status/duckcoding)
-  - [claudex-反重力号池](https://claudex.us.ci/console/personal), 签到
+  - [claudex-反重力号池](https://code.claudex.us.ci/panel), 签到
+    - [claudex-反重力号池](https://claudex.us.ci/console/personal), 签到
+    - [【福利】公益福利，反重力Opus4.6踩油门（只要没爆会继续延长) ](https://linux.do/t/topic/1542040)
     - [反重力Opus踩油门（只要没爆会继续延长）一直在丰富池子 ](https://linux.do/t/topic/1542040)
     - 纯公益反重力池子，无套路 L 站 2 级直登，加了 CF
   - 📌 [Any Router](https://anyrouter.top/), 每日签到获取$25
@@ -650,17 +669,10 @@ modified: 2025-03-22T16:10:24.856Z
     - 免费提供 glm flash
   - [太子公益 API](https://api.codeme.me/console/personal), 签到
     - cc支持
-  - [Jarvis API](https://ai.ctacy.cc/console/personal), 签到
-    - cc
-    - 备用, [Jarvis API](https://jarvis.ccwu.cc/)
-  - [八岁公益站](https://ai.xoooox.xyz/console/personal)
-    - cc
-  - [摸鱼公益](https://clove.cc.cd/console/personal), 可签到, 额度少
-    - [【摸鱼公益】 自己的反重力和codex有一些不怎么用，开个摸鱼站给需要的用用 ](https://linux.do/t/topic/1513131)
-    - 后续只能使用积分充值。随用随冲。
-  - [WOW公益站](https://linuxdoapi.223384.xyz/console/personal)
-    - [【已接入LinuxDO OAuth】老破小公益站复活 ](https://linux.do/t/topic/1516043/1)
-    - 因站内目前不支持 Claude-Sonnet，所以接入 Claude Code 时需指定模型 ID 为站内可用的模型
+  - [Old API](https://oldai.zeabur.app/console/personal), 签到
+    - [【old API公益站】公益站上线（已恢复？） ](https://linux.do/t/topic/1541085)
+    - rpm 为 25，还是老样子小容器部署，服务稳定性未知，随时可能因为账号短缺、高并发而死掉
+    - 仅支持 sonnet 和 haiku，等 kiro 恢复 free 用户的 opus 使用权后会上 opus
   - [小呆API](https://api.daiju.live/console/personal), 签到，api不稳定
     - [小呆API](https://new.184772.xyz/)
     - cc支持
@@ -676,10 +688,17 @@ modified: 2025-03-22T16:10:24.856Z
     - [〔Hotaru公益站〕新的公益站启动 ](https://linux.do/t/topic/1398297)
   - [Huan API](https://ai.huan666.de/console/personal), 签到, 生图模型
     - cc支持
-  - [Old API](https://oldai.zeabur.app/console/personal), 签到
-    - [【old API公益站】公益站上线（已恢复？） ](https://linux.do/t/topic/1541085)
-    - rpm 为 25，还是老样子小容器部署，服务稳定性未知，随时可能因为账号短缺、高并发而死掉
-    - 仅支持 sonnet 和 haiku，等 kiro 恢复 free 用户的 opus 使用权后会上 opus
+  - [Jarvis API](https://ai.ctacy.cc/console/personal), 签到
+    - cc
+    - 备用, [Jarvis API](https://jarvis.ccwu.cc/)
+  - [八岁公益站](https://ai.xoooox.xyz/console/personal)
+    - cc
+  - [摸鱼公益](https://clove.cc.cd/console/personal), 可签到, 额度少
+    - [【摸鱼公益】 自己的反重力和codex有一些不怎么用，开个摸鱼站给需要的用用 ](https://linux.do/t/topic/1513131)
+    - 后续只能使用积分充值。随用随冲。
+  - [WOW公益站](https://linuxdoapi.223384.xyz/console/personal)
+    - [【已接入LinuxDO OAuth】老破小公益站复活 ](https://linux.do/t/topic/1516043/1)
+    - 因站内目前不支持 Claude-Sonnet，所以接入 Claude Code 时需指定模型 ID 为站内可用的模型
   - [黑与白chatAPI](https://ai.hybgzs.com/), 每日转盘
     - 模型丰富: claude/gemini/codex
     - 很多openrouter渠道的模型
@@ -706,11 +725,11 @@ modified: 2025-03-22T16:10:24.856Z
     - 本站点为codex中转站，不包含其他模型
     - sub2api的openai api仅支持 openai-responses API协议。不要选老版本的哦
     - [【GGBOOM公益站】 全面支持gpt-5.3-codex ](https://linux.do/t/topic/1581803)
+  - [玩票 API](https://api.361888.xyz/console/personal)
+    - opus4.6 和 codex 虽迟但到
   - [sorai API](https://newapi.sorai.me/console/personal)
     - [codex公益站启动 _202601](https://linux.do/t/topic/1524003)
     - 只有 codex 模型
-  - [玩票 API](https://api.361888.xyz/console/personal)
-    - opus4.6 和 codex 虽迟但到
   - [Neb 公益站](https://ai.zzhdsgsss.xyz/console/personal), 签到
     - 采用按量计费，每次0.01，注册送2000次，因为该阶段的初衷就是最大化利用这些将要过期的key。
     - 当前额度用完或2026.1.31之后进入第二阶段，采用按量计费，倍率会很低
@@ -1522,6 +1541,47 @@ modified: 2025-03-22T16:10:24.856Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 🤔💡 软件正在走一条，媒体已经走过的老路。当成本塌陷，一个行业的价值结构一定会整体翻转。
+- https://x.com/AztecaAlpaca/status/2020013931499278370
+  - 一旦软件像内容一样“便宜到不需要赚钱”，后果就会出现：
+  - 软件数量会爆炸，单个大而全的系统价值下降，用户不会再依赖某一个“巨无霸软件”，而是用一堆小工具、临时工具、自动生成的东西，按当下需求拼起来用。
+  - Salesforce 不会被下一个 Salesforce 干掉，而会被一堆“临时有效、随用随生”的东西慢慢掏空；真正掌权的，会是新的平台，负责分发、组合、调度这些软件。
+  - 在互联网出现之前，媒体的运行方式完全不同。内容生产成本很高：要付钱请人创作、编辑、发行。正因如此，内容必须赚钱。消费者也确实为此付费——报纸、杂志、书籍、有线电视、按次点播。沃伦·巴菲特曾公开表示自己热爱报纸生意，谁会不喜欢一种订阅稳定、又具备地方性垄断结构的商业模式呢？
+  - 当互联网出现时，媒体公司把它看成扩大受众、降低分发成本的工具。但几乎没人预料到，互联网不只是把分发成本压到零，同时也把内容创作成本推向了零。用户生成内容开始繁荣。当内容不再需要成本，它也就不再需要赚钱。
+  - 用户生成内容平台。这些平台对传统媒体形成了侧面撞击。作为一家媒体公司，你争夺的是同样的用户注意力，却承担着更高的单位成本。雇佣的人越多、原创内容团队越大，越容易被用户生成内容平台从侧翼包抄。从结构上看，投资媒体此后一直是一个持续失血的选择，价值创造已经完全转移到掌控分发的平台手中。
+  - 软件的情况长期以来类似。软件昂贵，是因为需要人来开发、维护和分发。正因为昂贵，软件必须赚钱。我们为此付费——软件授权、SaaS、按席位定价等。历史上，软件行业的利润率令人艳羡：90%以上的毛利率，分发的边际成本几乎为零。
+  - 软件之所以昂贵，是因为开发者昂贵。他们是高技能的“翻译者”，在人的语言与计算机语言之间来回切换。大语言模型已经证明自己在这件事上极其高效，并将把软件的创建成本推向零。
+  - 当软件不再需要赚钱时，会发生什么？我们将经历一次软件的寒武纪大爆发，正如当年内容所经历的一样。
+  - 《Vogue》并没有被另一家时尚媒体取代，它被一万个网红取代。
+  - Salesforce 也不会被另一个庞大的 CRM 系统替代，它会被一组动态组合的工具所取代，这些工具共同服务于相同的意图与痛点。
+  - 软件公司将以与媒体公司相同的方式被取代，同时催生出一批新的、掌控分发权的平台。
+  - SaaS、ARR、各种“魔法数字”，都是旧软件商业模式的速记方式。在那个模型里，软件开发成本本身构成了护城河。长期以来，市场的“无形之手”在软件行业被人为压制；而 LLM 将引入一次迅速而熟悉的纠偏。今天选择计算机科学作为专业，处境将类似于 90 年代末选择新闻学。
+
+- 做出优秀的软件是个严肃的工程任务，但是人们需求并不需要优秀的软件就可以满足了
+  - 比如科研工作者，他们的代码质量总体上是很糟糕的，尤其是做数学和做物理的，代码风格简直臭名昭著... 但是，对他们而言，有个凑活能用的代码来解决计算需求已经够了。
+- 人们在许多时候对软件的需求甚至连demo都够不上。以前只能通过购买某个软件来满足这种需求，现在直接AI生成一个简单的脚本就搞定了（就像有个高级一点的计算器）。
+
+- 🤔 不是软件变得很多，是语言文字图片的input转向了不需要用软件，而是用skills，或直接mcp解决问题，但是对于大公司，mcp向数据库请求资源，和以什么样式回馈给用户，还是需要构架的，数据库的关系，还是需要构架的，以前，人类需要前后端UI显示和查询数据库，现在不是了
+  - Salesforce确实有很大影响，但是对于复杂的任务，很难，而对于简单的项目，比如报税，intuit就很快就会被干掉，只要大多数人可以用skills. 但你别指望不会写代码的人能马上上手terminal CLI. 更别指望不懂数据关系的人上手用母语编程
+
+- 软件行业的“媒体化”已经开始了。但媒体还有一个课很少人提：当内容免费后，赌的就是分发。谁能把软件送到用户面前，谁就赢。App Store 就是这个模式下最大的赢家。
+  - 🤔 分发渠道是否是 skill/mcp marketplace
+
+- 🤔 还可以参考 智能手机 干掉 mp3/相机/导航仪 的市场逻辑
+  - ai正在将垂直领域的产品封装为一个个插件
+- cowork太通用
+  - 阿里垂直场景的工具可以调用国产软件，如金税系统、教育、医疗、法律
+
+- 媒体翻转后留下了碎片化和垃圾信息洪水，软件翻转后，我们会不会面临‘逻辑洪水’？当工具便宜到不需要钱，我们是不是反而会被无数低质、临时的逻辑补丁给淹没？
+  - 有可能吧，现在已经进入了一个发布之后就不再维护的时代了，和传媒的那种管拉不管擦的局面差不多了
+
+- 维护一个能用的工具是要花费精力和人力的, 用来挣钱的工具, 为什么要倾向于自己造方案?  既然生产成本很低, 更应该往供应商多提定制需求
+  - 文中一个比较核心的观点：“当软件不再需要赚钱时”... 你说的都是不得不以赚钱为目标的软件。但很多情况下，我写个代码只是为了解决我手头的问题，不需要赚钱
 
 - ## [从“为什么ai客户端都不支持多窗口多开”看到ai开发的未来 _202602](https://linux.do/t/topic/1576098)
   - Cherry Studio 桌面客户端不支持多开窗口 这个问题已经反应了一年了，作者还回复了，也开看见了，LobeHub 也是 作者也知道，也一年了，知道现在一个这些主流 ai 客户端就没一个支持多窗口多开的

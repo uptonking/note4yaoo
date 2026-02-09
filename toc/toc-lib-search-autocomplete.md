@@ -572,11 +572,21 @@ modified: 2023-01-01T13:24:35.994Z
   - AI search engine inspired by Perplexity
   - An open source AI search engine. Powered by Together.ai.
 
-- https://github.com/Ryandonofrio3/osgrep /apache2/202511/ts
+- https://github.com/Ryandonofrio3/osgrep /1kStar/apache2/202601/ts
   - Natural-language search that works like grep. Fast, local, and works with coding agents.
   - Semantic: Finds concepts ("auth logic"), not just strings.
-  - Local & Private: 100% local embeddings via transformers.js.
+  - Local & Private: 100% local embeddings via `onnxruntime-node` ~~transformers.js~~.
   - Adaptive: Runs fast on desktops, throttles down on laptops to prevent overheating.
+  - Smart Chunking: Uses tree-sitter to split code by function/class boundaries
+  - Deduplication: Identical code blocks (boilerplate, license headers) are embedded once and cached, saving space and time.
+  - Semantic Split Search: Queries both "Code" and "Docs" separately to ensure documentation doesn't drown out implementation details, then reranks with ColBERT.
+  - Global Batching: A producer/consumer pipeline decouples chunking from embedding. Files are chunked concurrently, queued, embedded in fat batches, and written to `LanceDB` in bulk.
+  - Auto-Isolated: Each repository gets its own index automatically.
+    - Your first search will automatically index the repository. Each repository is automatically isolated with its own index.
+    - If the background server is running (osgrep serve), search goes through the hot daemon; otherwise it falls back to on-demand indexing.
+  - osgrep serve
+    - Watches the repo (via `chokidar`) and incrementally re-indexes on change.
+  - Claude Code Plugin, Opencode Plugin
 # more-search
 - https://github.com/typicode/json-server
   - Get a full fake REST API with zero coding

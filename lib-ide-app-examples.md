@@ -227,14 +227,6 @@ modified: 2024-08-24T16:30:20.218Z
   - https://github.com/phiresky/ripgrep-all /rust
     - rga: ripgrep, but also search in PDFs, E-Books, Office documents, zip, tar.gz, etc.
 
-- https://github.com/mixedbread-ai/mgrep /2.3kStar/apache2/202512/ts
-  - https://demo.mgrep.mixedbread.com/
-  - CLI-native way to semantically grep everything, like code, images, pdfs and more.
-  - Natural-language search that feels as immediate as grep.
-  - Semantic, multilingual & multimodal (audio, video support coming soon!)
-  - Web search built-in — query the web alongside your local files with --web.
-  - Smooth background indexing via mgrep watch, designed to detect and keep up-to-date everything that matters inside any git repository.
-
 - https://github.com/sourcebot-dev/sourcebot /1.9kStar/MIT+EE/202505/ts
   - https://sourcebot.dev/
   - a fast code indexing and search tool for your codebases. 
@@ -423,6 +415,53 @@ modified: 2024-08-24T16:30:20.218Z
   - Interactive query interface with comprehensive command set
   - MCP server for integration with AI code tools
 # code-rag
+- https://github.com/mixedbread-ai/mgrep /3.2kStar/apache2/202601/ts/平台未开源
+  - https://demo.mgrep.mixedbread.com/
+  - CLI-native way to semantically grep everything, like code, images, pdfs and more.
+  - Natural-language search that feels as immediate as grep.
+  - Semantic, multilingual & multimodal (audio, video support coming soon!)
+    - Today, mgrep works great on: code, text, PDFs, images. 
+  - Web search built-in — query the web alongside your local files with --web.
+  - Smooth background indexing via mgrep watch, designed to detect and keep up-to-date everything that matters inside any git repository.
+  - Under the hood, mgrep is powered by Mixedbread Search, our full-featured search solution.
+    - Every file is pushed into a Mixedbread Store using the same SDK your apps get.
+  - 🐛 [Why is it online only ?  _202512](https://github.com/mixedbread-ai/mgrep/issues/97)
+    - we use our Mixedbread platform under the hood. It exposes a store that enables semantic search over files with nice abstractions. There are no open source solutions currently that expose such capabilities offline with the same speed, availability and throughput.
+
+- https://github.com/Ryandonofrio3/osgrep /1kStar/apache2/202601/ts
+  - Natural-language search that works like grep. Fast, local, and works with coding agents.
+  - Semantic: Finds concepts ("auth logic"), not just strings.
+  - Local & Private: 100% local embeddings via `onnxruntime-node` ~~transformers.js~~.
+  - Adaptive: Runs fast on desktops, throttles down on laptops to prevent overheating.
+  - Smart Chunking: Uses tree-sitter to split code by function/class boundaries
+  - Deduplication: Identical code blocks (boilerplate, license headers) are embedded once and cached, saving space and time.
+  - Semantic Split Search: Queries both "Code" and "Docs" separately to ensure documentation doesn't drown out implementation details, then reranks with ColBERT.
+  - Global Batching: A producer/consumer pipeline decouples chunking from embedding. Files are chunked concurrently, queued, embedded in fat batches, and written to `LanceDB` in bulk.
+  - Auto-Isolated: Each repository gets its own index automatically.
+    - Your first search will automatically index the repository. Each repository is automatically isolated with its own index.
+    - If the background server is running (osgrep serve), search goes through the hot daemon; otherwise it falls back to on-demand indexing.
+  - osgrep serve
+    - Watches the repo (via `chokidar`) and incrementally re-indexes on change.
+  - Claude Code Plugin, Opencode Plugin
+- https://github.com/blazejp83/hygrep /apache2/202512/python/inactive
+  - a self-hosted semantic code search system designed for AI coding agents
+  - Semantic + Lexical Retrieval: LanceDB vectors plus SQLite FTS5 with per-query weight overrides
+  - Self-Hosted Stack: Dockerized FastAPI backend, llama.cpp/Ollama embeddings, optional reranker + llama.cpp LLM, zero cloud dependencies
+  - `hygrep-cli index --watch` now asks the backend to start a watchdog observer so subsequent file saves trigger incremental reindexing.
+
+- https://github.com/yetidevworks/ygrep /MIT/202602/rust
+  - fast, local, indexed code search tool optimized for AI coding assistants. 
+  - Written in Rust using Tantivy for full-text indexing.
+
+- https://github.com/dbinky/Pommel /MIT/202601/go
+  - Local-first semantic code search for AI coding agents.
+  - Pommel maintains a vector database of your code, enabling fast semantic search without loading files into context.
+  - Hybrid search - Combines semantic vector search with keyword search (FTS5) using Reciprocal Rank Fusion for best-of-both-worlds results.
+  - Automatic file system monitoring keeps your index synchronized with code changes. No manual reindexing required.
+  - Multi-level chunks - Search at file, class/module, or method/function granularity for precise results.
+  - Automatically skips minified JavaScript/CSS files that produce low-quality chunks.
+  - [Introducing Pommel - an open source tool to help Claude Code find code without burning your context window : r/ClaudeAI _202601](https://www.reddit.com/r/ClaudeAI/comments/1q0gkn8/introducing_pommel_an_open_source_tool_to_help/)
+
 - https://gitlab.com/gitlab-org/rust/knowledge-graph /gitlab-ee/202510/rust
   - https://gitlab-org.gitlab.io/rust/knowledge-graph/
   - aims to create a structured, queryable graph database from code repositories to power AI features and enhance developer productivity.

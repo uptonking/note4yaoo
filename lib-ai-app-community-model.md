@@ -834,6 +834,34 @@ e) 最终评论者(Final Critic)
 
 - TOML is actually more verbose when it comes to complex data structures.
   - Which makes sense since it was designed to be a JSON/YAML mappable language for better human readability.
+# discuss-cloud-llm/agent
+- ## 
+
+- ## 
+
+- ## 
+
+- ## ["Get agents off your machine" _202602](https://x.com/zachlloydtweets/status/2019877685980196937)
+  - other productivity apps moved to the cloud long ago, from Google Docs to Figma etc. 
+  - there hasn’t been a great reason for software development to move off of the laptop and into the cloud. TL; DR: the pull to work in the cloud wasn’t that strong for developers, the setup costs were high, and the ergonomics were poor compared to local development.
+  - This is all going to change this year, It’s all because of... you guessed it... agents.
+  - We are running out of laptop capacity. Let alone 10 agents running in parallel.
+  - Agents cannot test their work simultaneously if they need computer access. 
+  - Agents need to be working at all times, regardless of whether your computer is awake. 
+  - Companies want visibility and tracking of agents. 
+  - And the big one: agents actually make it much easier to set up cloud environments
+
+- It's so hard to manage more than 2 agents at a time when you have dev servers or `cargo builds` stepping on each other
+  - Cloud is still expensive and slow. Even though I'm doing fully remote style dev because of agents. I still like my super fast local machine that has no latency. I'm not sure remote dev will ever take off if compute doesn't get cheaper.
+- Full cloud VMs are expensive, but pay-as-you-go sandboxes or compute units are relatively affordable. This is somewhat similar to some companies paying for GitHub Actions build time instead of self-hosting a runner. (Of course, this also depends on the actual amount used)
+
+- local agents are great until they touch real secrets + prod. run them in an isolated sandbox with scoped creds, no ambient filesystem, and audited tool calls.
+
+- I’d add that the remote agents should have access to a file system. And this file system should be synced in real time with your Mac or PC. I use Mutagen sync for this. At the same time the folder is my Obsidian vault. So anything the agents do I can see and vice versa.
+
+- I lean on Warp agents daily across multiple repos and stacks -- code gen, inspecting deployments. The laptop bottleneck is real, especially when you want agents working in parallel. Excited to see where Warp takes cloud-native agent environments.
+
+- Yeah, agents are forcing the shift: parallel sandboxes, always-on, self-provisioning envs—laptops can't keep up. Warp's timing is spot-on. Hyped for next week!
 # discuss-local-llm-usecases
 - resources
   - [Use Cases | Claude](https://claude.com/resources/use-cases)
@@ -986,7 +1014,19 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
-- ## 
+- ## 我觉得 AI 编程的发展有些像现在的编译器，普通人不需要关心它的实现，
+- https://x.com/dotey/status/2019918867812757556
+  - 只要用高级语言描述清楚自己想要的，编译器会帮助把编程语言编译成机器代码；以后人类用自然语言，AI 翻译成编程语言，人类不需要关心其中的细节，只要验收结果就好
+- 编译器的输出是确定的，但LLM不是
+- chatgpt以后就类似于Windows，是操作系统，你用软件完全不应研究内部咋实现的
+
+- 完全同意编译器这个类比。但现在的关键瓶颈不是AI翻译能力，而是人类描述需求的精度。我做产品用 Spec 驱动开发（先写文档再写代码，文档: 代码比 3.6:1），发现越精确的 Spec 给 AI，出来的代码质量越高。自然语言编程的前提是结构化自然语言。
+
+- 代码逻辑的复杂度不会消失，计算机发展的过程就是不断提高抽象层的过程。
+
+- 宝玉老师是前端吧。后端或者服务型是要跑很多年的，不是什么月抛年抛的
+  - 大部分没有复杂业务的curd没有任何护城河。复杂点的云计算，openstack k8那一坨，大家都玩了这么多年了，gayhub上一大堆。
+- 你们眼里的后端就是云计算和crud吗？
 
 - ## [I admit it… I underestimated the quality of local models : r/ClaudeCode _202602](https://www.reddit.com/r/ClaudeCode/comments/1qwkyx6/i_admit_it_i_underestimated_the_quality_of_local/)
   - The context size you can configure in the Windows app for Ollama has a global impact on the VRAM used by the models, and because of that I had basically made models like QWEN3-CODER or GPT-OSS:20b unusable.
@@ -1237,7 +1277,18 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
-- ## 
+- ## 🎮 [继续试播多agent实时麻将（2月8日，国产混战 MiniMax-M2.1/GLM4.7/Kimi-K2.5/Deepseek-V3.2） ](https://linux.do/t/topic/1584637)
+  - 由于 kimi 的额度爆掉了，这场直播暂停。
+  - 这次试播发现了几个现象：
+  - minimax m2.1 的麻将水平极差，完全不知道自己在干什么。
+  - deepseek v3.2 的麻将能力稍好一些，但是因为上下文太小在 cc 里运行一段时间就会爆上下文出错，不适合作为自动化 agent 使用。
+  - kimi 原价 19.9 刀 / 99 元 的套餐额度极低，即使现在在搞三倍额度活动，同样作为选手参与打麻将，其额度也只有 minimax 49 元套餐的三分之一不到（kimi 爆 5 小时额度的时候，m2.1 套餐只使用了 30%，中间两者都没有重置过额度）。所以在不搞活动的时候 kimi 的 19.9 刀 / 99 元套餐大概只有 m2.1 10 刀 / 49 元套餐的十分之一，如果考虑到周额度的话相差更多。
+  - deepseek v3.2 使用的是豆包原价 200 元的 pro 编程套餐，其 5 小时额度用量和 minimax 49 元套餐接近（在 kimi 爆额度时，deepseek 和 minimax 的 5 小时额度都只使用了 30% 左右）。但考虑到周限额月限额以及价格，只考虑额度的话豆包编程套餐远不如 minimax 编程套餐的额度多。
+  - 基本可以判断，GLM4.7 和 K2.5 是现在国产模型里的麻将第一梯队，至少能够以麻将规则进行思考。
+
+- 下次要不试试斗地主（或者开源三国杀之类）？麻将好慢啊（不过麻将节目效果肯定更高）
+
+- 什么时候 AI 对打 LOL？
 
 - ## [你对AI最常敲的指令是啥 ](https://linux.do/t/topic/1536540)
 - 还是无法运行

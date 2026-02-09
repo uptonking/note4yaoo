@@ -89,8 +89,117 @@ modified: 2026-01-19T05:01:00.055Z
 
 - https://github.com/ivanvanderbyl/pdf-reader-mcp /MIT/202505/go/inactive
   - MCP server for reading and analyzing PDF documents using Google's Gemini API, written in Go. This server enables AI assistants like Claude (Code and Desktop) and Cursor to seamlessly read, extract, and analyze PDF content directly from their interfaces.
+# browser-use
+- https://github.com/browser-use/agent-sdk /370Star/MTI/202601/python
+  - An agent is just a for-loop.
+  - https://x.com/gregpr07/status/2012204140714217801
+    - We open sourced our tiny agent-sdk, the easiest way to build Claude Code like agents (with any provider)
+  - https://x.com/gregpr07/status/2012052139384979773
+    - The Bitter Lesson of Agent Frameworks
+    - All the value is in the RL'd model, not your 10,000 lines of abstractions
+    - An agent is just a for-loop of messages. The only state an agent should have is: keep going until the model stops calling tools. You don't need an agent framework. It's just a for-loop of tool calls.
+    - Our first Browser Use agents had thousands of lines of abstractions. They worked - until we tried to change anything. Every experiment fought the framework. 
 
-## browser-mcp
+- https://github.com/browser-use/browser-use /57.9kStar/MIT/202504/python/js
+  - https://browser-use.com/
+  - Enable AI to control your browser
+  - [Pack 拆解 browser-use 项目 ](https://quaily.com/silico-anatomy/packs/110)
+- https://github.com/browser-use/web-ui /MIT/202504/python
+  - This project builds upon the foundation of the browser-use, which is designed to make websites accessible for AI agents.
+  - WebUI: is built on Gradio and supports most of browser-use functionalities.
+  - support for various Large Language Models (LLMs), including: Google, OpenAI, Azure OpenAI, Anthropic, DeepSeek, Ollama etc. 
+  - You can choose to keep the browser window open between AI tasks, allowing you to see the complete history and state of AI interactions.
+
+- https://github.com/microsoft/playwright-mcp /apache2/202503/ts
+  - A Model Context Protocol (MCP) server that provides browser automation capabilities using Playwright. 
+  - This server enables LLMs to interact with web pages through structured accessibility snapshots, bypassing the need for screenshots or visually-tuned models.
+  - https://x.com/playwrightweb/status/1904265499422409047
+    - we went ahead and built an MCP server for Playwright. Ours is snapshot-based, which makes it faster and more reliable! You can opt into the visual mode too.
+
+- https://github.com/Skyvern-AI/skyvern /AGPL/202506/python/ts
+  - https://www.skyvern.com/
+  - Skyvern automates browser-based workflows using LLMs and computer vision. 
+  - It provides a simple API endpoint to fully automate manual workflows on a large number of websites
+  - Instead of only relying on code-defined XPath interactions, Skyvern relies on Vision LLMs to interact with the websites.
+  - Skyvern Cloud is a managed cloud version of Skyvern that allows you to run Skyvern without worrying about the infrastructure
+    - It allows you to run multiple Skyvern instances in parallel and comes bundled with anti-bot detection mechanisms, proxy network, and CAPTCHA solvers.
+  - Skyvern starts running the task in a browser that pops up and closes it when the task is done
+  - Skyvern was inspired by the Task-Driven autonomous agent design popularized by BabyAGI and AutoGPT -- with one major bonus: we give Skyvern the ability to interact with websites using browser automation libraries like Playwright.
+
+- https://github.com/browserbase/stagehand /11.3kStar/MIT/202504/ts
+  - https://stagehand.dev/
+  - An AI web browsing framework focused on simplicity and extensibility.
+  - Stagehand is the easiest way to build browser automations. It is fully compatible with Playwright, offering three simple AI APIs on top of the base Playwright `Page` class
+  - It works best when your code is a sequence of atomic actions.
+  - Stagehand allows you to write durable, self-healing, and repeatable web automation workflows that actually work.
+  - https://github.com/browserbase/mcp-server-browserbase
+  - https://github.com/browserbase/sdk-node
+
+- https://github.com/browserless/browserless /10kStar/SSPL-NC/202504/ts
+  - https://browserless.io/
+  - Browserless allows remote clients to connect and execute headless work, all inside of docker. 
+  - It supports the standard, unforked Puppeteer and Playwright libraries, as well offering REST-based APIs for common actions like data collection, PDF generation and more.
+  - Parallelism and request-queueing are built-in + configurable.
+  - Works with unforked Puppeteer and Playwright.
+  - An interactive puppeteer debugger, so you can see what the headless browser is doing and use its DevTools.
+  - Support for running and development on Apple's M1 machines
+  - 💰 If you want to use Browserless to build commercial sites, applications, or in a continuous-integration system that's closed-source, then you'll need to purchase a commercial license.
+  - 💡 Browserless listens for both incoming websocket requests, generally issued by most libraries, as well as pre-build REST APIs to do common functions (PDF generation, images and so on). When a websocket connects to Browserless it starts Chrome and proxies your request into it. 
+    - Once the session is done then it closes and awaits for more connections. 
+    - Some libraries use Chrome's HTTP endpoints, like /json to inspect debug-able targets, which Browserless also supports.
+
+- https://github.com/rebrowser/rebrowser-patches /202506/js
+  - Collection of patches for puppeteer and playwright to avoid automation detection and leaks. 
+  - Helps to avoid Cloudflare and DataDome CAPTCHA pages. 
+  - Easy to patch/unpatch, can be enabled/disabled on demand.
+# computer/container-use
+- https://github.com/bytedance/UI-TARS-desktop /9.6kStar/apache2/202503/ts
+  - https://agent-tars.com/
+  - A GUI Agent application based on UI-TARS(Vision-Language Model) that allows you to control your computer using natural language.
+  - ❓ agent-tars似乎支持replay，ui-tars是否支持replay
+  - https://x.com/Nin19536/status/1905975354227040314
+    - 从 TARS 的开源 repo 学到的两个架构特点
+    - 1️⃣mcp 统一工具协议: 可插拔，可扩展非常关键，且 tool 定义和 tool 执行对外只暴露接口，agent 端不关心实现。
+    - 2️⃣事件管理: 管理好所有流式输出、任何工具 update，都需要考虑到前端展示 event 的方式，提供更好交互。而且事件管理有利于模型统一管理上下文。以事件时间戳永远自增，便于时间回溯和用户观测。
+  - https://x.com/imwritingbugs/status/2000862713594195989
+    - 真不错啊，里面一堆好用的沙盒工具。基本上可以复制粘贴就实现 browser use，terminal use
+  - [2025-03-18] We released a technical preview version of a new desktop app - Agent TARS, a multimodal AI agent that leverages browser operations by visually interpreting web pages and seamlessly integrating with command lines and file systems.
+    - Comprehensive Tool Support: Integrates with search, file editing, command line, and Model Context Protocol (MCP) tools to handle complex workflows.
+  - https://github.com/bytedance/UI-TARS /apache2
+    - UI-TARS is a next-generation native GUI agent model designed to interact seamlessly with graphical user interfaces (GUIs) using human-like perception, reasoning, and action capabilities. 
+    - Unlike traditional modular frameworks, UI-TARS integrates all key components—perception, reasoning, grounding, and memory—within a single vision-language model (VLM), enabling end-to-end task automation without predefined workflows or manual rules.
+    - This project builds upon and extends the capabilities of Qwen2-VL, a powerful vision-language model, which serves as the foundational architecture for UI-TARS. 
+  - https://github.com/web-infra-dev/Midscene /MIT/ts
+    - open-source web automation SDK that has supported UI-TARS model. 
+    - Midscene.js lets AI be your browser operator. Just describe what you want to do in natural language, and it will help you operate web pages, validate content, and extract data. 
+    - Besides the default model GPT-4o, we have added two new recommended open-source models to Midscene.js: UI-TARS and Qwen2.5-VL. (Yes, Open Source !) 
+    - Supports Puppeteer and Playwright integration, allowing you to combine AI capabilities with these powerful automation tools
+    - Visual Reports for Debugging 🎞️: Through our test reports and Playground, you can easily understand, replay and debug the entire process.
+    - [Midscene.js - Joyful Automation by AI - Midscene.js](https://midscenejs.com/index.html#visualized-report)  
+      - Midscene wants to provide a way to make automation more stable and easier to debug, so we provide a visual report after each run. With this report, you can review the animated replay and view the details of each step in the process.
+
+- https://github.com/e2b-dev/open-computer-use /apache2/202503/python
+  - A secure cloud Linux computer powered by E2B Desktop Sandbox and controlled by open-source LLMs.
+  - Uses E2B for secure Desktop Sandbox
+  - Operates the computer via the keyboard, mouse, and shell commands
+  - Supports 10+ LLMs, OS-Atlas/ShowUI and any other models you want
+  - Live streams the display of the sandbox on the client computer
+  - User can pause and prompt the agent at any time
+  - Uses Ubuntu, but designed to work with any operating system
+  - [How I taught an AI to use a computer _202501](https://blog.jamesmurdza.com/how-i-taught-an-ai-to-use-a-computer)
+
+- https://github.com/Aident-AI/open-cuak /apache2/202503/ts
+  - https://aident.ai/
+  - Open CUA Kit (Computer Use Agent), is THE platform for teaching, hiring and managing automation agents at scale — starting with browsers.
+  - Open-CUAK is designed to run and manage thousands of automation agents, ensuring each one is reliable.
+  - Run Operator-like automation workflows locally, ensuring full privacy
+
+- https://github.com/bytebot-ai/bytebot /MIT/202505/ts
+  - Bytebot is the container for desktop agents.
+  - Bytebot spins up a containerized Linux desktop you can drive programmatically or via VNC—perfect for automation, scraping, CI tasks, and remote work.
+  - https://x.com/zhangjintao9020/status/1911379146665603542
+    - 实际上是一个 xface 桌面环境的 Ubuntu，通过 VNC 或浏览器来管理访问
+    - 结合 CF 即将到来的无状态容器化！
 
 - https://github.com/hangwin/mcp-chrome /9.6kStar/MIT/202511/ts/vue
   - a Chrome extension-based Model Context Protocol (MCP) server that exposes your Chrome browser functionality to AI assistants like Claude, enabling complex browser automation, content analysis, and semantic search.
@@ -105,6 +214,16 @@ modified: 2026-01-19T05:01:00.055Z
   - Custom WebAssembly SIMD optimization for 4-8x faster vector operations
   - https://x.com/hang49911102/status/2001865778266804264
     - 看了下Claude code里跟Chrome通信的方案，跟我之前实现的是一样的
+
+- https://github.com/vercel-labs/agent-browser /13.2kStar/apache2/202602/rust/ts
+  - https://agent-browser.dev/
+  - Headless browser automation CLI for AI agents. Fast Rust CLI with Node.js fallback.
+  - https://x.com/Jiaxi_Cui/status/2020233150950174833
+    - rust写的cli解析层，实际还是有个node daemon，依赖playwright core
+    - 通过封装playwright实现浏览器控制，同时对元素进行重新映射，简化元素定位，进而大幅度减少上下文token，想法也不错
+    - 这个东西我深度使用了一段时间，目前发现了两个问题，一个是在 Windows 的稳定性不够，经常出现 Daemon 无法启动的情况。在 GitHub 上发现了一个 PR 修复这个问题，不过目前还没有合入。另外就是不能去获取网页的 dom 结构。如果是用来调试一些前端页面问题，或者做一些深入的数据抓取，就不太行了。
+    - 不用尝试了，社交媒体网站会屏蔽所有headless浏览器，这种工具毫无意义
+    - 我用cdp的模式比较可控
 # acp/agent-client-protocol
 - https://github.com/mcpc-tech/mcpc/tree/main/packages/acp-ai-provider /MIT/202512/ts
   - https://ai-sdk.dev/providers/community-providers/acp

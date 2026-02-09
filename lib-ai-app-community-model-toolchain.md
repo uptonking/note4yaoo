@@ -388,6 +388,24 @@ PP Speed: Q3 GGUF: 50 t/s
 
 - ## 
 
+- ## 
+
+- ## [I have no idea what all these quants are. : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1qz5jp2/i_have_no_idea_what_all_these_quants_are/)
+- AI models are basically sets of numbers, and we can represent those numbers with different precision, the more precise the better the model performs and the more space it takes
+  - So we can reduce precision to make the model smaller and faster but lose some quality
+  - INT stands for Integer, ie whole numbers; FP, F for floating point numbers; the following number is the number of bits that represent the number, ie 4 bit integers go from 0 to 2^4 - 1; BF16 is a special nvidia format
+  - Generally you want either iQ (importance matrix weighed, basically to compress the more important parts of the model less) or some other "smart" quantizations (like unsloth dynamic UD quants).
+
+- IQ are imatrix quants that utilize a user-provided importance matrix file to use different quantization levels to different tensor weights depending on how often they were relevant for the output of the users' test data.
+  - *_K_* quants use different variable quantization levels as well, with S being smaller than M which is smaller than L.
+  - The numbers typically represent the (average) number of bits used to represent a tensor weight in the quantized model.
+  - Q* quants use integers (ie whole numbers) to represent model weights. 
+  - F* models use floating points (or decimal numbers) to represent model weights.
+  - F16 and FP16 are the same thing - standard 16-bit IEEE754 decimal numbers. FP8 is the same deal but in 8 -bits. BF16 is a different format designed by Nvidia to be more accurate or efficient for ML/AI on GPUs, but I'm not sure about the details. It is also 16 bits.
+
+- Exllama is faster and better quality of the same size but you can't off load anything to CPU.
+  - That's why i use GGUF because i sometimes can't fit the whole model+context in my 12GB VRAM.
+
 - ## 🍎 [MLX Said No to Mixed Precision. We Did It Anyway. : r/LocalLLM _202602](https://www.reddit.com/r/LocalLLM/comments/1qx6wz8/mlx_said_no_to_mixed_precision_we_did_it_anyway/)
   - MLX's quantization only supports uniform precision. All experts at FP16? 180GB+. All at 4-bit? Quality tanks on coding tasks.
   - We needed 9 coding experts at FP16, 119 others at 4-bit. MLX's tools said impossible.
@@ -403,11 +421,6 @@ PP Speed: Q3 GGUF: 50 t/s
   - mlx-4bit > q4_K_M > iq4_XS
 
 - It's interesting because your data seems to suggest that MLX is better overall, but this has not been my experience testing between MLX and Q4_K_M
-
-- 
-- 
-- 
-- 
 
 - ## Using 4bit coding models locally give you more generation speed, but less precision. 
 - https://x.com/ivanfioravanti/status/2018920704050430333

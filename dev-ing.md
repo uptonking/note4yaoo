@@ -273,6 +273,8 @@ llama-cli -hf ggml-org/gemma-3-1b-it-GGUF
 
 VLLM_LOGGING_LEVEL=debug VLLM_CONFIGURE_LOGGING=1 vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model-len 28000 --enable-log-requests --enable-log-outputs --enable-prompt-tokens-details --uvicorn-log-level debug 
 
+cd ~/Documents/opt/compiled/qdrant && ./qdrant
+
 ```
 
 ```sh /image
@@ -295,6 +297,35 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
   - ?
 - dev-log
   - ?
+
+## 0208
+
+- context-engine for claude/MCP-client
+
+```sh
+uv run --env-file .env -- python -m scripts.mcp_memory_server
+uv run --env-file .env -- python -m scripts.mcp_indexer_server
+
+FASTMCP_TRANSPORT=http FASTMCP_PORT=8002 PYTHONPATH=. uv run --env-file .env -- python -m scripts.mcp_memory_server
+FASTMCP_TRANSPORT=http FASTMCP_INDEXER_PORT=8003 PYTHONPATH=. uv run --env-file .env -- python -m scripts.mcp_indexer_server
+
+# --scope local (default): Available only to you in the current project
+# --scope project: Shared with everyone in the project via .mcp.json file
+claude mcp add --transport http --scope project context-engine-indexer http://localhost:8003/mcp
+
+```
+
+- You are a professional python/typescript/nodejs fullstack developer and a system administrator.
+  - I want to run this project fully locally without docker and nginx for local development and debugging.
+  - please read setup-related files like docker-compose.yml/README.md/docs/ARCHITECTURE.md or other files, and tell me step by step how to configure and run this project as MCP server locally. i want to self host this mcp server and use it with local claude-code.
+  - i have already installed python/uv/npm/QdrantDB/Ollama/postgresql/mysql/redis on my local macos.
+  - just tell me steps and commands to set up backend/frontend, i will start services like db/redis later.
+
+- [Chroma Architecture](https://docs.trychroma.com/docs/overview/architecture)
+  - Chroma delegates, as much as possible, problems of data durability to trusted sub-systems such as SQLite and Cloud Object Storage, focusing the system design on core problems of data management and information retrieval.
+  - In Local and Single Node mode, all components share a process and use the local filesystem for durability.
+  - v0.4.0_202307
+    - drops duckdb and clickhouse in favor of sqlite for metadata storage. 
 
 ## 0206
 

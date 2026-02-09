@@ -217,7 +217,25 @@ script.runInContext(context);
 
 - ## 
 
-- ## 
+- ## I did a deep dive into graceful shutdowns in node.js express
+- https://www.reddit.com/r/node/comments/1qz7htp/i_did_a_deep_dive_into_graceful_shutdowns_in/
+  - I looked into some third party libraries like http-terminator here Everytime a connection is made, they keep adding this socket to a set and then remove it when the client disconnects. I wonder if such manual management of sockets is actually needed. I dont see them handling any SIGTERM or SIGINT or uncaughtException or unhandledRejection anywhere.
+  - Godaddy seems to have a terminus library that seems to take an array of signals and then call a cleanup function. I dont see an uncaughtException or unhandledRejection here though
+- The one thing most of these guides miss is what happens with keep-alive connections. server.close() stops accepting new connections but existing keep-alive sockets just sit there until the client disconnects or your timeout fires.
+  - In production I've found the cleanest approach is: catch SIGTERM, flip your health check to return 503 so the LB stops routing new traffic, then call server.close() and start a timer. For active connections, set Connection: close on any in-flight responses so clients don't try to reuse the socket.
+  - The uncaughtException vs SIGTERM handling is a good callout. Those should be separate code paths — uncaughtException means your process state might be corrupted, so you want to exit fast instead of trying to gracefully drain. In k8s we just set terminationGracePeriodSeconds to 30 and let the SIGTERM handler work within that window. uncaughtException just logs and exits.
+  - One more gotcha nobody talks about: if you're behind a reverse proxy that does connection pooling (nginx, envoy), server.close() can be surprising because those upstream connections stay open even after your app stops accepting work. You need keepAliveTimeout shorter than whatever your proxy's upstream keepalive is set to.
+
+- One thing I'd add that most graceful shutdown guides miss: if you're running behind a load balancer (ALB, nginx, etc.), server.close() alone isn't enough. The LB will keep routing new requests to your instance even after you've started shutting down, because it doesn't know you're going away.
+  - What we do is flip a "shutting down" flag on SIGTERM and immediately start returning 503 from our health check endpoint. That gives the LB time to deregister the instance and stop sending new traffic. Then after a short delay (we use 5s) we call server.close() to drain the remaining in-flight requests. Without that gap you get a burst of 502s during deploys.
+  - For your questions: yes, both SIGTERM and SIGINT. Docker sends SIGTERM, Ctrl+C sends SIGINT, and k8s also sends SIGTERM. PM2 uses SIGINT by default but can be configured. And server.close() does wait for existing connections to finish, but as someone else mentioned, keep-alive connections will hang indefinitely so you absolutely need that setTimeout force-kill.
+
+- **Signal Handling:**
+  - SIGTERM (Docker/Kubernetes default) - graceful shutdown
+  - SIGINT (Ctrl+C locally) - same treatment
+  - Don't handle uncaughtException/unhandledRejection for shutdown - log and exit immediately with code 1
+  - SIGKILL (can't catch anyway) - immediate termination
+- The key insight: Kubernetes gives you a terminationGracePeriod (default 30s). Your shutdown needs to fit inside that window or you get SIGKILL.
 
 - ## node 写服务端或者说写前+后，纵使有千般不好，万般不是。 但一个仓库一个语言一个框架一个编辑器一次解决问题，这一点就够了。
 - https://x.com/wwwgoubuli/status/1844569476257427554

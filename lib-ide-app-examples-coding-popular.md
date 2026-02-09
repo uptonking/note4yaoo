@@ -26,7 +26,7 @@ modified: 2025-12-11T18:10:23.710Z
   - Serena can be integrated with an LLM in several ways: 
     - by MCP. Serena provides an MCP server for integration
     - by incorporating Serena's tools into an agent framework of your choice. Serena's tool implementation is decoupled from the framework-specific code and can thus easily be adapted to any agent framework.
-  - Serena incorporates a powerful abstraction layer for the integration of language servers that implement LSP
+  - 🏘️ Serena incorporates a powerful abstraction layer for the integration of language servers that implement LSP
     - With Serena's LSP library, we provide support for over 30 programming languages
     - All the language servers that we use through Solid-LSP.
   - [RAG Search for Memories _202506](https://github.com/oraios/serena/issues/205)
@@ -753,6 +753,10 @@ modified: 2025-12-11T18:10:23.710Z
   - JavaScript Execution - Run arbitrary JS in page context
   - Video Streaming - Real-time WebSocket streaming for visual monitoring
   - Zero Config - Works out of the box
+
+- https://github.com/CefBoud/MonClaw /MIT/202602/ts
+  - https://cefboud.com/posts/monclaw-a-light-openclaw-with-opencode-sdk/
+  - A minimal Openclaw built using the Opencode SDK
 # cli-coding-agent
 - https://github.com/1rgs/nanocode /1.7kStar/MIT/202601/python/单文件
   - Minimal Claude Code alternative. Single Python file, zero dependencies, ~250 lines.
@@ -773,6 +777,32 @@ modified: 2025-12-11T18:10:23.710Z
   - Bash is all You need - Write a nano Claude Code 0 - 1
   - https://x.com/hylarucoder/status/2019261190615232723
     - 实际上 700 多行 python 就可以复刻 claude code 迷你版, 包含 todo / subagent / skills.
+
+- https://github.com/Nano-Collective/nanocoder /1.3kStar/MIT+Attrib/202602/ts
+  - https://nanocollective.org/
+  - A local-first CLI coding agent that brings the power of agentic coding tools like Claude Code and Gemini CLI to local models or controlled APIs like OpenRouter.
+  - supports any AI provider that has an OpenAI compatible end-point, tool and non-tool calling models.
+  - How is this different to OpenCode?
+    - OpenCode is a great tool, but it's owned and managed by a venture-backed company
+    - we're actively pushing to develop advancements and frameworks for small, local models to be effective at coding locally.
+  - supports MCP servers to extend its capabilities with additional tools
+  - Checkpointing: Captures conversation history, modified files, and AI model configuration
+  - Extensible architecture: Plugin-style system for adding new capabilities
+  - 📡 
+    - 没有ACP相关代码
+    - [Feature Request: Skills Support - Modular Capabilities with Progressive Disclosure _202511](https://github.com/Nano-Collective/nanocoder/issues/91)
+    - [Feature Request: Plugin System & Marketplace for Extensible Capabilities ](https://github.com/Nano-Collective/nanocoder/issues/92)
+      - Current Limitations:
+      - No dynamic extension system beyond custom commands
+      - No marketplace for discovering and sharing extensions
+      - Limited plugin lifecycle management
+      - No sandboxing or security model for third-party code
+      - No dependency resolution or version management
+    - [[Feature] GUI mode-alternative of terminal based system ](https://github.com/Nano-Collective/nanocoder/issues/264)
+      - I would suggest we make this as a new app that has headless nanocoder as a dependency and use Tauri + TS. I am up for working on this - should be a new repo.
+    - [Consolidate file storage locations across platforms ](https://github.com/Nano-Collective/nanocoder/issues/230)
+    - [feat: Implement graceful shutdown system ](https://github.com/Nano-Collective/nanocoder/issues/239)
+      - ink's exit() doesn't terminate the process
 
 - https://github.com/Aider-AI/aider /37.1kStar/apache2/202508/python
   - https://aider.chat/
@@ -903,7 +933,17 @@ modified: 2025-12-11T18:10:23.710Z
   - https://x.com/doesdatmaksense/status/2012209297380544940
     - we’ve spent a lot of time normalizing agent sessions, and defining a stable contract for ai conversations across tools.
     - Normalizing agent sessions into a stable contract is underrated. Once the “conversation shape” is consistent, you can do boring but important stuff—diffs, audits, replay, evals—without rewriting integrations every time a new tool pops up.
-# cli-utils/rag
+
+- https://github.com/thebushidocollective/han /FSL/202602/rust/ts
+  - https://han.guru/
+  - A curated marketplace of Claude Code plugins that embody the principles of ethical and professional software development.
+  - [Han Meets OpenCode: One Plugin Ecosystem, Any AI Coding Tool - Han Blog](https://han.guru/blog/han-meets-opencode)
+    - Han was built for Claude Code. The hook system, the validation pipeline, the plugin ecosystem - all designed around Claude Code's event lifecycle.
+    - But the principles behind Han aren't Claude Code-specific. Validating code after every edit. Running linters automatically. Catching type errors before they compound. Injecting quality guidelines into the agent's system prompt. Making 400+ coding skills available on demand. These are universal needs. The AI-DLC methodology paper said it directly: "The principles transfer; the implementation details vary."
+    - The new `opencode-plugin-han` package bridges the gap. It's an OpenCode plugin that reads Han's plugin definitions and executes them natively inside OpenCode's runtime.
+    - The bridge does something fundamentally different from Han's Claude Code integration. In Claude Code, hooks are shell commands that run as separate processes. Output goes to stdout, which Claude sees as conversation messages. It works, but it's fire-and-forget.
+    - In OpenCode, the bridge runs hooks as awaited promises with structured result collection.
+# cli-utils
 - https://github.com/BloopAI/vibe-kanban /20.4kStar/apache2/202602/rust/ts
   - https://www.vibekanban.com/
   - Get 10X more out of Claude Code, Gemini CLI, Codex, Amp and other coding agents...
@@ -913,6 +953,35 @@ modified: 2025-12-11T18:10:23.710Z
   - Quickly review work and start dev servers
   - Track the status of tasks that your coding agents are working on
   - Centralise configuration of coding agent MCP configs
+# cli-search/rag/context/memory
+- https://github.com/mixedbread-ai/mgrep /3.2kStar/apache2/202601/ts/平台未开源
+  - https://demo.mgrep.mixedbread.com/
+  - CLI-native way to semantically grep everything, like code, images, pdfs and more.
+  - Natural-language search that feels as immediate as grep.
+  - Semantic, multilingual & multimodal (audio, video support coming soon!)
+    - Today, mgrep works great on: code, text, PDFs, images. 
+  - Web search built-in — query the web alongside your local files with --web.
+  - Smooth background indexing via mgrep watch, designed to detect and keep up-to-date everything that matters inside any git repository.
+  - Under the hood, mgrep is powered by Mixedbread Search, our full-featured search solution.
+    - Every file is pushed into a Mixedbread Store using the same SDK your apps get.
+  - 🐛 [Why is it online only ?  _202512](https://github.com/mixedbread-ai/mgrep/issues/97)
+    - we use our Mixedbread platform under the hood. It exposes a store that enables semantic search over files with nice abstractions. There are no open source solutions currently that expose such capabilities offline with the same speed, availability and throughput.
+
+- https://github.com/Ryandonofrio3/osgrep /1kStar/apache2/202601/ts
+  - Natural-language search that works like grep. Fast, local, and works with coding agents.
+  - Semantic: Finds concepts ("auth logic"), not just strings.
+  - Local & Private: 100% local embeddings via `onnxruntime-node` ~~transformers.js~~.
+  - Adaptive: Runs fast on desktops, throttles down on laptops to prevent overheating.
+  - Smart Chunking: Uses tree-sitter to split code by function/class boundaries
+  - Deduplication: Identical code blocks (boilerplate, license headers) are embedded once and cached, saving space and time.
+  - Semantic Split Search: Queries both "Code" and "Docs" separately to ensure documentation doesn't drown out implementation details, then reranks with ColBERT.
+  - Global Batching: A producer/consumer pipeline decouples chunking from embedding. Files are chunked concurrently, queued, embedded in fat batches, and written to `LanceDB` in bulk.
+  - Auto-Isolated: Each repository gets its own index automatically.
+    - Your first search will automatically index the repository. Each repository is automatically isolated with its own index.
+    - If the background server is running (osgrep serve), search goes through the hot daemon; otherwise it falls back to on-demand indexing.
+  - osgrep serve
+    - Watches the repo (via `chokidar`) and incrementally re-indexes on change.
+  - Claude Code Plugin, Opencode Plugin
 
 - https://github.com/puran-water/knowledge-base-mcp /MIT/202512/python
   - https://github.com/puran-water/knowledge-base-mcp/blob/main/USAGE.md
@@ -920,7 +989,7 @@ modified: 2025-12-11T18:10:23.710Z
   - Zero-Cost Embeddings & Reranking: Ollama-powered embeddings and a local TEI cross-encoder keep every document and query free of per-token fees.
   - Hybrid Retrieval: Auto mode chooses among dense, hybrid, sparse, and rerank routes; 
   - Multi-Collection Support (manual): Organize documents into separate knowledge bases by adding entries to NOMIC_KB_SCOPES
-  - Incremental & Deterministic Ingestion: Smart update detection only reprocesses changed documents. Deterministic chunk IDs enable automatic upsert-based updates without manual cleanup.
+  - 🔄 Incremental & Deterministic Ingestion: Smart update detection only reprocesses changed documents. Deterministic chunk IDs enable automatic upsert-based updates without manual cleanup.
     - Computes SHA256 hash of extracted text
     - Compares with existing chunks in Qdrant 
     - If hash differs, deletes old chunks and reingests 
@@ -939,13 +1008,13 @@ modified: 2025-12-11T18:10:23.710Z
     - Cross-client search - find information across all clients
   - LM Studio Integration: BGE-M3 embeddings (1024 dimensions) for semantic search, Qwen3-8B summaries for document overviews
   - Multi-format support - PDF, Markdown, TXT, DOCX
-  - Incremental updates - only process changed files
+  - 🔄 Incremental updates - only process changed files
   - Batch processing - efficient API usage with p-limit concurrency control
   - SHA256 deduplication - never process the same document twice (90%+ time savings on updates)
   - Rich metadata - source tracking, chunk indexing, similarity scores
   - Claude Desktop Integration - Automatic MCP server configuration
 
-- https://github.com/doobidoo/mcp-memory-service /1.3kStar/apache2/202602/python/未实现rag
+- https://github.com/doobidoo/mcp-memory-service /1.3kStar/apache2/202602/python
   - Stop re-explaining your project to AI every session. Automatic context memory for Claude, VS Code, Cursor, and 13+ AI tools.
   - ⚖️ fully compatible with the SHODH Unified Memory API Specification v1.0.0, enabling seamless interoperability across the SHODH ecosystem.
   - ❓ 是否支持incremental-indexing
@@ -962,27 +1031,39 @@ modified: 2025-12-11T18:10:23.710Z
     - Choose Commands if you want: Simple usage, No configuration (zero MCP server setup)
     - Choose MCP Server if you want: Deep integration with Claude Code's MCP system, Multi-server workflows (alongside other MCP servers)
   - [setting up MCP Memory Service for multiple clients, enabling shared memory access across different applications and devices](https://github.com/doobidoo/mcp-memory-service/blob/main/docs/integration/multi-client.md)
-  - 📡 [Enhancement: Hybrid BM25 + Vector Search for Better Exact Match Scoring _202510](https://github.com/doobidoo/mcp-memory-service/issues/175)
+  - 🔍 pr已合并 [Enhancement: Hybrid BM25 + Vector Search for Better Exact Match Scoring _202510](https://github.com/doobidoo/mcp-memory-service/issues/175)
+    - Hybrid Search is Live in v10.8.0 _202602
+    - FTS5-based BM25 keyword search with trigram tokenizer
+    - Parallel execution of BM25 and vector searches (<15ms latency)
+    - Configurable score fusion (default: 30% keyword, 70% semantic)
+    - Auto-Sync: Automatic FTS5 index synchronization via database triggers
+    - [feat: Hybrid BM25 + Vector Search ](https://github.com/doobidoo/mcp-memory-service/pull/436)
+  - [Side-loading the database ](https://github.com/doobidoo/mcp-memory-service/issues/5)
+    - This implementation also resolved issue #48 (PDF side-loading) and provides the comprehensive "Document Ingestion System" 
+    - Implement functionality to side-load PDF files into the semantic memory storage system, enabling text extraction, chunking, embedding generation, and storage in `ChromaDB`.
   - https://github.com/varun29ankuS/shodh-memory /apache2/202601/rust
     - Persistent memory for AI agents. Single binary. Local-first. Runs offline.
-    - We built this because AI agents forget everything between sessions. 
+    - We built this because AI agents forget everything between sessions.
 
 - https://github.com/aitytech/agentkits-memory /MIT/202602/ts
   - Persistent memory system for AI coding assistants via MCP. 
   - Works with Claude Code, Cursor, Copilot, Windsurf, Cline.
   - 100% Local	All data stays on your machine. No cloud, no API keys, no accounts
   - Fast	Native SQLite (better-sqlite3) = instant queries, zero latency
+    - Single SQLite database: One file (memory.db) holds everything — memories, sessions, observations, embeddings. No scattered files to sync, no merge conflicts, no orphaned data. Backup = copy one file
+    - Memory data always stored in `.claude/memory/ `(single source of truth)
   - Claude Code, Cursor, Windsurf, Cline, OpenCode — one setup command
   - MCP Server	9 tools: save, search, timeline, details, recall, list, update, delete, status
   - Vector Search	HNSW semantic similarity with multilingual embeddings (100+ languages)
-  - Local embeddings, no API calls: Vector search uses a local ONNX model (multilingual-e5-small). Semantic search works offline
+    - Local embeddings, no API calls: Vector search uses a local ONNX model (multilingual-e5-small). Semantic search works offline
   - Web Viewer	Browser UI to view, search, add, edit, delete memories
   - 3-Layer Search	Progressive disclosure saves ~87% tokens vs fetching everything
   - Hybrid Search: FTS + vector fusion, scoring, ranking, filters
   - Lifecycle Mgmt	Auto-compress, archive, and clean up old sessions
   - Background processing — Workers enrich observations with AI, generate embeddings, compress old data
+    - After each session, background workers process queued tasks
   - If you prefer manual setup, add to your MCP config
-  - 🐛 似乎未实现 incremental indexing, 但提供了 `memory_update`	Update existing memory content or tags
+  - 🤔 似乎未实现 incremental indexing, 但提供了 `memory_update`	Update existing memory content or tags
   - [Enhancement: Hybrid BM25 + Vector Search for Better Exact Match Scoring · Issue · doobidoo/mcp-memory-service](https://github.com/doobidoo/mcp-memory-service/issues/175)
     - We implemented this exact approach in AgentKits Memory — SQLite FTS5 for keyword/exact matching + HNSW (approximate nearest neighbor) for vector search, running in parallel with merged results.
     - FTS5 is more than enough — SQLite's built-in BM25 scoring works well for this use case. No need for an external BM25 library.
@@ -998,6 +1079,158 @@ modified: 2025-12-11T18:10:23.710Z
   - oc CLI — 管理全局 contexts/ 文档库（目录/文档、清单、检索）
   - MCP Server — 让 Cursor/Claude Code/Codex/Agent 通过工具调用 OpenContext
   - Web UI — 本地浏览/编辑文档（无需安装桌面版）
+
+- https://github.com/zilliztech/claude-context /5.2kStar/MIT/202509/python/ts/inactive
+  - MCP plugin that adds semantic code search to Claude Code and other AI coding agents(codex/gemini-cli)
+  - Hybrid Code Search: BM25 + dense vector
+    - uses semantic search to find all relevant code from millions of lines. No multi-round discovery needed. It brings results straight into the Claude's context.
+  - efficiently stores your codebase in a vector database and only uses related code in context to keep your costs manageable.
+  - 🔄 Incremental Indexing: Efficiently re-index only changed files using `Merkle trees`.
+  - Analyze code in Abstract Syntax Trees (AST) for chunking.
+  - Customizable: Configure file extensions, ignore patterns, and embedding models.
+  - Embedding Providers: OpenAI, VoyageAI, Ollama, Gemini
+  - Vector Databases: Milvus or Zilliz Cloud(fully managed vector database as a service)
+  - Code Splitters: AST-based splitter (with automatic fallback), LangChain character-based splitter
+  - While MCP is the recommended way to use Claude Context with AI assistants, you can also use it directly or through the VSCode extension.
+  - 🧑‍🏫 [Update Docs: Fully offline install guide _202508](https://github.com/zilliztech/claude-context/issues/162)
+  - [Question: is index autosync available _202511](https://github.com/zilliztech/claude-context/issues/238)
+    - After I run initial indexing, does Claude context continue to auto-sync and update the changes in multiple code granularity, meaning only the changes gets updated and vectors created only for the changed code?
+    - 🐛 Currently having to manually update indexes after every change
+  - [Is it required and must use openai key? _202507](https://github.com/zilliztech/claude-context/issues/81)
+    - This project currently doesn't use LLM, so what you need to do is to select an embedding model
+    - openrouter does not have embedding models. you can use Mistral Code Embedding that supports the same API
+    - It looks like Mistral Code Embedding is a good one, but it seems to have it's own api
+    - 202601: OpenRouter only recently added support for embeddings. 
+  - [Use entire codebase as Claude's context : r/ClaudeAI _202508](https://www.reddit.com/r/ClaudeAI/comments/1mn7fpc/use_entire_codebase_as_claudes_context/)
+    - it’s inspired by cursor’s implementation, e.g. using merkle tree to only index the incremental change. Only once, until the code changes, then it re-indexes only the part that changes.
+    - How is that different to Serena MCP?
+      - serena does not use vector search
+      - Vector search IS the technical implementation of semantic search. 
+      - Serena doesn't watch your codebase for file changes - you have to manually re-index everything after each modification. 
+      - Claude Context runs an async indexer that watches your project and incrementally re-embeds only changed files with merkle-tree sync.
+  - 🍴 forks
+  - https://github.com/YuweiXiao/claude-context
+    - feat(core): Add PostgreSQL (with pgvector) as vector engine backend 
+  - https://github.com/kierr/claude-context
+    - Add Qdrant vector database integration with extended hybrid search
+  - https://github.com/mcampa/ai-context
+    - Add support for qdrant
+    - @mcampa/ai-deno-search: Lightweight search-only package for Deno applications
+  - https://github.com/ayaka209/claude-context
+    - feat: Implement file-level incremental indexing with hash caching
+    - feat: Add comprehensive embedding testing and external project indexing 
+    - feat: Add Alibaba Cloud DashScope compatibility for text-embedding-v4 
+    - feat: Add interactive CLI for vector database queries 
+  - https://github.com/zhangsuosheng9/code-agent
+    - support chroma and local run
+    - Add azure ai search
+  - https://github.com/RoscoeTheDog/claude-context
+    - feat: Implement comprehensive real-time filesystem synchronization
+    - feat(realtime-sync): Implement auto-enable after indexing 
+    - feat: Complete Story 1: Smart Adaptive Search Results (v0.5.0)
+  - https://github.com/ham-zax/claude-context
+    - feat(mcp): add sync_codebase tool and tool selection guidance
+    - feat: add VoyageAI embedding provider
+    - feat: exact line highlighting in search results
+  - https://github.com/svaus/claude-context
+    - (feat) added support for azureaisearch vector database
+  - https://github.com/everwise/claude-context
+    - Introduced a new PRF engine with comprehensive query expansion capabilities using Pseudo-Relevance Feedback (PRF).
+  - https://github.com/billlzzz10/claude-code-context /MIT/仅文档
+  - https://github.com/patchy631/code-context /inactive
+
+- https://github.com/FarhanAliRaza/claude-context-local /GPL/202511/python/inactive
+  - Code search MCP for Claude Code.
+  - Embeddings are created and stored locally
+  - Unified orchestrator (Python AST + tree-sitter)
+  - EmbeddingGemma; device=auto (CUDA→MPS→CPU); offline cache
+  - `FAISS` index for vector search (CPU by default; GPU when available)
+  - 🔄 `Merkle`-driven incremental indexing
+  - Content-hash DAG of the workspace
+  - Snapshot persistence & stats
+  - Diffs snapshots to find changed files
+  - MCP tools for Claude Code (stdio/HTTP)
+  - [I built Claude Context but 100% local - semantic code search with no API keys : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nb66te/i_built_claude_context_but_100_local_semantic/)
+    - You might know Claude Context (3k+ stars) - it's a great semantic code search tool but requires OpenAI API keys + Zilliz Cloud.
+    - I built a fully local alternative that runs 100% on your machine
+    - Tree-sitter for AST parsing (understands code structure)
+    - EmbeddingGemma for semantic embeddings (1.2GB model)
+
+- https://github.com/wende/cicada /MIT/202601/python/提交多
+  - https://cicada-mcp.vercel.app/
+  - The core problem: AI code assistants waste context on blind searches. Grep dumps entire files when you only need a function signature, leaving less room for actual reasoning.
+  - CICADA gives your AI structured, pre-indexed knowledge
+  - 提供了对比 CICADA vs Serena vs Codicil (Elixir-only)
+    - Git Context	 PR history, blame, evolution
+  - Semantic search – Find code by concept with keyword extraction or embeddings (Ollama integration)
+  - AST-level indexing – Module/function/class definitions with signatures, specs, docs
+  - Complete call-site tracking – Aliases, imports, dynamic references across all supported languages
+  - Dependency analysis – Bidirectional tracking (what calls this, what does this call)
+  - Git + PR attribution – Surface why code exists, not just what
+  - claude mcp add cicada uvx cicada-mcp
+  - 依赖tree-sitter、watchdog、fastapi、protobuf、cicada-vector
+  - 100% local: parsing + indexing happen on your machine; no external access.
+  - 🔄 Automatic Re-indexing with Watch Mode
+    - A separate process monitors .ex, .exs (Elixir) and .py (Python) files for changes
+    - Changes are automatically reindexed (incremental, fast)
+    - 2-second debounce prevents excessive reindexing during rapid edits
+    - The watch process stops automatically when the MCP server stops
+  - Token-Friendly Responses: All tools return structured Markdown/JSON snippets (signatures, call sites, PR metadata) instead of full files, keeping prompts lean.
+    - All tools now use compact output by default to minimize token usage. 
+    - Use `verbose=true` for detailed output with full docs and specs.
+  - https://github.com/wende/cicada-vector /202512/python
+    - A lightweight semantic search engine for text files.
+    - a simple, zero-dependency semantic search engine and RAG database
+    - Universal: Works on code, docs, commits, configs - any text content.
+    - Hybrid Search: Combines Vector semantic search with Keyword exact matching. Won't miss exact terms while understanding meaning.
+    - Ollama (Recommended: nomic-embed-text)
+    - 🛢️ Storage: JSONL (Human-readable, append-only)
+
+- https://github.com/Context-Engine-AI/Context-Engine /321Star/MIT > Paid/202602/python
+  - https://context-engine.ai/
+  - Context-Engine MCP - Agentic Context Compression Suite
+  - Neo4j graph backend for symbol_graph queries
+  - [Licensing update: MIT > BSL _20260111](https://github.com/Context-Engine-AI/Context-Engine/pull/173)
+  - [Context-Engine – a context layer for IDE agents (Claude Code, Cursor, local LLMs, etc.) : r/vibecoding _202511](https://www.reddit.com/r/vibecoding/comments/1pahe9w/contextengine_a_context_layer_for_ide_agents/)
+  - [Showcase: Context Engine : r/AugmentCodeAI _202510](https://www.reddit.com/r/AugmentCodeAI/comments/1oa9ui1/showcase_context_engine/)
+    - https://github.com/m1rl0k/Context-Engine /renamed
+    - Lots of customization went into this, not only does it have embeddings, it can optionally run reFrag vs rag, lots of knobs, decoder option with ollama, Qdrant based
+  - [[Project Demo] Built My Own Context Engine for Code Search (Qdrant + Embeddings + MCP) : r/AugmentCodeAI _202510](https://www.reddit.com/r/AugmentCodeAI/comments/1o6p5lc/project_demo_built_my_own_context_engine_for_code/)
+    - I've seen that your MCP has commands to reindex and things like that, don't you consider it more convenient to have a watcher that does it without needing to give the agent one more obligation?
+    - the watcher does also the mcp can directly reindex it you ask it, commands are for dev purposes
+    - Roocode has something very similar already implemented with embeddings + qdrant.
+  - 🍴 forks
+  - https://github.com/1571312541/Context-Engine
+    - 国际化, 及docker修改
+    - MCP retrieval stack for AI coding assistants. Hybrid code search (dense + lexical + reranker), ReFRAG micro-chunking
+    - One command deploys Qdrant-powered indexing for Cursor, Windsurf, Roo, Cline, Codex, and any MCP client.
+    - Hybrid search: Semantic + lexical + cross-encoder reranking
+    - Large file chunks: Returns 5-50 line chunks, not whole files
+    - Self-hosted stack: No cloud dependency, no vendor lock-in
+    - Auto-syncing: Extension watches for changes and re-indexes automatically
+    - Memory system: Store team knowledge alongside your code
+    - Optional LLM features: Local decoder (llama.cpp), cloud integration (GLM, MiniMax), adaptive rerank learning
+    - 依赖tree_sitter、qdrant、fastembed、fastmcp、fastapi、watchdog、onnxruntime
+    - 未使用neo4j/redis
+  - https://github.com/mikahoy045/Context-Engine /MIT/202511/python
+    - a plug-and-play MCP retrieval stack that unifies code indexing, hybrid search, and optional llama.cpp decoding so product teams can ship context-aware agents in minutes
+    - One-command bring-up delivers dual SSE/RMCP endpoints, seeded Qdrant, and live watch/reindex loops for fast local validation.
+    - an MCP-compliant context layer without rebuilding indexing, embeddings, or retrieval heuristics.
+    - You can index any local folder (outside this repo)
+    - Idempotent + incremental indexing out of the box:
+      - Skips unchanged files automatically using a file content hash stored in payload (metadata.file_hash)
+
+- https://github.com/NgoTaiCo/mcp-codebase-index /202511/ts/inactive
+  - MCP server that enables AI editors to search and understand your codebase using Google's Gemini embeddings and Qdrant vector storage.
+  - 🔄 Incremental Indexing - Only re-indexes changed files (90%+ time savings)
+    - Real-time Watch - Auto-updates index on file changes
+  - Auto-save Checkpoints - Saves progress every 10 files, resume anytime
+  - Real-time Progress - Track indexing with ETA and performance metrics
+  - Parallel Processing - 25x faster indexing with batch execution
+  - Vector Storage - Uses `Qdrant` for persistent storage
+  - Modular Architecture - Clean handler separation for maintainability
+  - Vector Visualization - 2D/3D UMAP visualization of your codebase
+    - Vector visualization transforms your codebase's 768-dimensional embeddings into interactive 2D or 3D visualizations using UMAP dimensionality reduction. 
 
 - https://github.com/chunkhound/chunkhound /974Star/MIT/202602/python
   - https://chunkhound.github.io/
@@ -1029,46 +1262,6 @@ modified: 2025-12-11T18:10:23.710Z
     - Agree. And to make the CLI usage more effective/efficient, if you can publish a skill that would be excellent
     - `chunkhound search <query>`, `chunkhound search --regex <query>` and `chunkhound research <query>` are the main cli entry points that you can already use today
 
-- https://github.com/zilliztech/claude-context /5.2kStar/MIT/202509/python/ts/inactive
-  - MCP plugin that adds semantic code search to Claude Code and other AI coding agents(codex/gemini-cli)
-  - Hybrid Code Search: BM25 + dense vector
-    - uses semantic search to find all relevant code from millions of lines. No multi-round discovery needed. It brings results straight into the Claude's context.
-  - efficiently stores your codebase in a vector database and only uses related code in context to keep your costs manageable.
-  - 🔄 Incremental Indexing: Efficiently re-index only changed files using `Merkle trees`.
-  - Analyze code in Abstract Syntax Trees (AST) for chunking.
-  - Customizable: Configure file extensions, ignore patterns, and embedding models.
-  - Embedding Providers: OpenAI, VoyageAI, Ollama, Gemini
-  - Vector Databases: Milvus or Zilliz Cloud(fully managed vector database as a service)
-  - Code Splitters: AST-based splitter (with automatic fallback), LangChain character-based splitter
-  - While MCP is the recommended way to use Claude Context with AI assistants, you can also use it directly or through the VSCode extension.
-  - 🧑‍🏫 [Update Docs: Fully offline install guide _202508](https://github.com/zilliztech/claude-context/issues/162)
-  - [Question: is index autosync available _202511](https://github.com/zilliztech/claude-context/issues/238)
-    - After I run initial indexing, does Claude context continue to auto-sync and update the changes in multiple code granularity, meaning only the changes gets updated and vectors created only for the changed code?
-    - Currently having to manually update indexes after every change
-  - [Is it required and must use openai key? _202507](https://github.com/zilliztech/claude-context/issues/81)
-    - This project currently doesn't use LLM, so what you need to do is to select an embedding model
-    - openrouter does not have embedding models. you can use Mistral Code Embedding that supports the same API
-    - It looks like Mistral Code Embedding is a good one, but it seems to have it's own api
-    - 202601: OpenRouter only recently added support for embeddings. 
-  - [Use entire codebase as Claude's context : r/ClaudeAI _202508](https://www.reddit.com/r/ClaudeAI/comments/1mn7fpc/use_entire_codebase_as_claudes_context/)
-    - it’s inspired by cursor’s implementation, e.g. using merkle tree to only index the incremental change. Only once, until the code changes, then it re-indexes only the part that changes.
-    - How is that different to Serena MCP?
-      - serena does not use vector search
-      - Vector search IS the technical implementation of semantic search. 
-      - Serena doesn't watch your codebase for file changes - you have to manually re-index everything after each modification. 
-      - Claude Context runs an async indexer that watches your project and incrementally re-embeds only changed files with merkle-tree sync.
-
-- https://github.com/FarhanAliRaza/claude-context-local /GPL/202511/python/inactive
-  - Code search MCP for Claude Code.
-  - Embeddings are created and stored locally
-  - [I built Claude Context but 100% local - semantic code search with no API keys : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nb66te/i_built_claude_context_but_100_local_semantic/)
-    - You might know Claude Context (3k+ stars) - it's a great semantic code search tool but requires OpenAI API keys + Zilliz Cloud.
-    - I built a fully local alternative that runs 100% on your machine
-    - Tree-sitter for AST parsing (understands code structure)
-    - EmbeddingGemma for semantic embeddings (1.2GB model)
-    - FAISS for vector search
-    - MCP protocol for Claude Code integration
-
 - https://github.com/adam-hanna/semantic-search-mcp /MIT/202512/python
   - An MCP server that provides semantic code search using local embeddings. 
   - Hybrid search: Combines vector similarity (Jina code embeddings) with FTS5 keyword matching using Reciprocal Rank Fusion
@@ -1076,47 +1269,6 @@ modified: 2025-12-11T18:10:23.710Z
   - Zero external APIs: All embeddings generated locally with FastEmbed
   - https://github.com/gpowala/CodeGraphRagMcp /GPL/python
     - MCP server for analyzing large C++ codebases using Graph-RAG architecture
-
-- https://github.com/johnhuang316/code-index-mcp /731Star/MIT/202601/python
-  - MCP server that helps large language models index, search, and analyze code repositories with minimal setup
-  - get started with any MCP-compatible application: cc, codex, ...
-  - Tree-sitter AST Parsing: Native syntax parsing for accurate symbol extraction
-  - 未实现 hybrid
-  - Auto-detects and uses the best available tool (ugrep, ripgrep, ag, or grep)
-  - Real-time Monitoring & Auto-refresh
-    - File Watcher: Automatic index updates when files change
-    - Cross-platform: Native OS file system monitoring
-    - Smart Processing: Batches rapid changes to prevent excessive rebuilds
-    - Shallow Index Refresh: Watches file changes and keeps the file list current; run a deep rebuild when you need symbol metadata
-  - launch the server via FastMCP 
-  - [Code Index MCP v1.0.0 - Let LLMs explore your entire codebase : r/mcp _202508](https://www.reddit.com/r/mcp/comments/1mh70bq/code_index_mcp_v100_let_llms_explore_your_entire/)
-
-- https://github.com/wende/cicada /MIT/202601/python
-  - https://cicada-mcp.vercel.app/
-  - The core problem: AI code assistants waste context on blind searches. Grep dumps entire files when you only need a function signature, leaving less room for actual reasoning.
-  - CICADA gives your AI structured, pre-indexed knowledge
-  - Semantic search – Find code by concept with keyword extraction or embeddings (Ollama integration)
-  - AST-level indexing – Module/function/class definitions with signatures, specs, docs
-  - Complete call-site tracking – Aliases, imports, dynamic references across all supported languages
-  - Dependency analysis – Bidirectional tracking (what calls this, what does this call)
-  - claude mcp add cicada uvx cicada-mcp
-  - 100% local: parsing + indexing happen on your machine; no external access.
-  - Automatic Re-indexing with Watch Mode
-    - A separate process monitors .ex, .exs (Elixir) and .py (Python) files for changes
-    - Changes are automatically reindexed (incremental, fast)
-    - 2-second debounce prevents excessive reindexing during rapid edits
-    - The watch process stops automatically when the MCP server stops
-
-- https://github.com/bluewings1211/codebase-RAG /MIT/202512/python
-  - MCP server designed to assist AI agents and developers in understanding and navigating codebases.
-  - Two-Stage RAG: 22-31% accuracy improvement with cross-encoder reranking (Qwen3-Reranker).
-  - Intelligent Chunking: Parses code into functions and classes using Tree-sitter for better context.
-  - Supports incremental indexing and MPS acceleration on macOS.
-- https://github.com/dinesh-k-elumalai/rag-code-search-pipeline /MIT/202511/python/inactive
-  - (RAG) pipeline for semantic code search and documentation generation using vector databases.
-  - Incremental Updates: Git-based change detection for efficient re-indexing
-  - Batch Processing: Process embeddings in batches of 100
-  - Caching: Enable embedding cache for repeated queries
 
 - https://github.com/ancoleman/qdrant-rag-mcp /MIT/202506/python/inactive
   - MCP server that provides semantic search capabilities across your codebase using Qdrant vector database.
@@ -1126,14 +1278,66 @@ modified: 2025-12-11T18:10:23.710Z
   - Multi-Project Support: Keep different projects' knowledge separate
   - Optional Auto-Indexing: Keep your index up-to-date automatically as files change
 
+- https://github.com/jardhel/seu-claude /MIT/202602/ts
+  - https://github.com/jardhel/seu-claude/blob/main/docs/rag/CONCEPTS.md
+  - Local Codebase RAG MCP Server for Claude Code - Proactive semantic indexing with AST-based chunking
+  - HybridSearcher: Semantic + BM25
+  - Incremental Indexing: The system tracks file changes for efficient updates
+    - FileIndex stores hash + mtime for each file
+    - On re-index, only changed files are processed
+    - Cross-references are rebuilt incrementally
+
+- https://github.com/johnhuang316/code-index-mcp /731Star/MIT/202601/python/未实现rag
+  - MCP server that helps large language models index, search, and analyze code repositories with minimal setup
+  - get started with any MCP-compatible application: cc, codex, ...
+  - Tree-sitter AST Parsing: Native syntax parsing for accurate symbol extraction
+  - 未实现 rag / vector-search
+  - Auto-detects and uses the best available tool (ugrep, ripgrep, ag, or grep)
+  - Real-time Monitoring & Auto-refresh
+    - File Watcher: Automatic index updates when files change
+    - Cross-platform: Native OS file system monitoring
+    - Smart Processing: Batches rapid changes to prevent excessive rebuilds
+    - Shallow Index Refresh: Watches file changes and keeps the file list current; run a deep rebuild when you need symbol metadata
+  - launch the server via FastMCP 
+  - [Code Index MCP v1.0.0 - Let LLMs explore your entire codebase : r/mcp _202508](https://www.reddit.com/r/mcp/comments/1mh70bq/code_index_mcp_v100_let_llms_explore_your_entire/)
+    - Is this storing any information fully locally?  YES
+
+- https://github.com/bluewings1211/codebase-RAG /MIT/202512/python
+  - MCP server designed to assist AI agents and developers in understanding and navigating codebases.
+  - It indexes your local directories or GitHub repositories into a vector database (Qdrant), allowing Large Language Models to perform semantic searches
+  - Two-Stage RAG: 22-31% accuracy improvement with cross-encoder reranking (Qwen3-Reranker).
+  - Intelligent Chunking: Parses code into functions and classes using Tree-sitter for better context.
+  - Supports incremental indexing and MPS acceleration on macOS.
+
+- https://github.com/SylphxAI/coderag /MIT/202512/ts/NoDeps
+  - Lightning-fast semantic code search with AST chunking (15+ languages) - Hybrid TF-IDF + Vector, MCP-ready for AI assistants
+  - Traditional code search tools are either slow (full-text grep), inaccurate (keyword matching), or complex (require external services).
+  - Hybrid Search - TF-IDF + optional vector embeddings
+    - Vector Search - Optional OpenAI embeddings for semantic search
+  - StarCoder2 Tokenizer - Code-aware tokenization (4.7MB, trained on code)
+    - AST Chunking - Smart code splitting using Synth parsers
+  - SQLite Persistence - Instant startup (<100ms) with cached index
+  - Incremental Updates - Smart diff detection, no full rebuilds
+  - File Watching - Real-time index updates on file changes
+  - MCP Server - Works with Claude Desktop, Cursor, VS Code, Windsurf
+  - Low Memory Mode - SQL-based search for resource-constrained environments
+
+- https://github.com/dinesh-k-elumalai/rag-code-search-pipeline /MIT/202511/python/inactive
+  - (RAG) pipeline for semantic code search and documentation generation using vector databases.
+  - 🔄 Incremental Updates: Git-based change detection for efficient re-indexing
+  - Batch Processing: Process embeddings in batches of 100
+  - Caching: Enable embedding cache for repeated queries
+  - Hybrid Search: Combines semantic similarity with keyword matching
+
 - https://github.com/bretwardjames/ragtime /MIT/202602/python
   - Local-first memory and RAG system for Claude Code. 
   - Semantic search over code, docs, and team knowledge.
+  - Hybrid search: semantic + keyword filtering
   - CLI for humans - formatted output, interactive workflows
   - MCP for agents - structured data, tool integration
     - MCP Server: Native Claude Code integration
   - Code Indexing: Index functions, classes, and composables from Python, TypeScript, Vue, and Dart
-    - [feat: add incremental indexing based on file modification times _202602](https://github.com/bretwardjames/ragtime/commit/6cf8db27dd9b285af024b4a5a766c3ae82030997)
+    - 🔄 [feat: add incremental indexing based on file modification times _202602](https://github.com/bretwardjames/ragtime/commit/6cf8db27dd9b285af024b4a5a766c3ae82030997)
     - Store mtime in metadata for docs and code entries
     - Compare file mtimes on disk vs indexed to detect changes
     - Only re-embed new/changed files (skips unchanged)
@@ -1151,28 +1355,6 @@ modified: 2025-12-11T18:10:23.710Z
   - Incremental Updates - Only changed files are re-indexed. Saves every 5 batches, so no data loss if interrupted.
   - SQLite Cache - 5-10x faster than JSON. Automatic migration from older JSON caches.
 
-- https://github.com/SylphxAI/coderag /MIT/202512/ts/NoDeps
-  - Lightning-fast semantic code search with AST chunking (15+ languages) - Hybrid TF-IDF + Vector, MCP-ready for AI assistants
-  - Traditional code search tools are either slow (full-text grep), inaccurate (keyword matching), or complex (require external services).
-  - Hybrid Search - TF-IDF + optional vector embeddings
-    - Vector Search - Optional OpenAI embeddings for semantic search
-  - StarCoder2 Tokenizer - Code-aware tokenization (4.7MB, trained on code)
-    - AST Chunking - Smart code splitting using Synth parsers
-  - SQLite Persistence - Instant startup (<100ms) with cached index
-  - Incremental Updates - Smart diff detection, no full rebuilds
-  - File Watching - Real-time index updates on file changes
-  - MCP Server - Works with Claude Desktop, Cursor, VS Code, Windsurf
-  - Low Memory Mode - SQL-based search for resource-constrained environments
-
-- https://github.com/jardhel/seu-claude /MIT/202602/ts
-  - https://github.com/jardhel/seu-claude/blob/main/docs/rag/CONCEPTS.md
-  - Local Codebase RAG MCP Server for Claude Code - Proactive semantic indexing with AST-based chunking
-  - HybridSearcher: Semantic + BM25
-  - Incremental Indexing: The system tracks file changes for efficient updates
-    - FileIndex stores hash + mtime for each file
-    - On re-index, only changed files are processed
-    - Cross-references are rebuilt incrementally
-
 - https://github.com/Daniel-Barta/mcp-rag-server /MIT/202601/ts
   - Lightweight RAG server for the Model Context Protocol: ingest source code, docs, build a vector index, and expose search/citations to LLMs via MCP tools.
   - Pure local embedding inference (no external API calls) via @huggingface/transformers
@@ -1183,7 +1365,7 @@ modified: 2025-12-11T18:10:23.710Z
   - Stdio or Streamable HTTP transport (with optional host allow‑list / DNS rebinding protection)
   - Minimal dependencies; quick startup after first model load
   - Ready for extension: add new MCP tools or ANN / hybrid retrieval backends
-  - Planned
+  - 📡 Planned
     - hybrid BM25 + embedding search
     - batched / parallel embedding, semantic boundary aware chunking
 
@@ -1199,10 +1381,22 @@ modified: 2025-12-11T18:10:23.710Z
     - Vector Database: FAISS (Facebook AI Similarity Search)
     - Incremental Updates: Add new documents without rebuilding entire index
 
+- https://github.com/Zackriya-Solutions/MCP-Markdown-RAG /apache2/202507/python/inactive/代码太简单
+  - MCP server that provides a local-first RAG engine for your markdown documents. 
+  - This server uses a file-based Milvus vector database to index your notes, enabling Large Language Models (LLMs) to perform semantic search and retrieve relevant content from your local files.
+  - Local-First & Private: All your data is processed and stored locally.
+  - Semantic Search for Markdown
+    - The server reads the documents, splits them into logical chunks (e.g., by headings), and converts each chunk into a vector embedding.
+    - Incremental Update (force_reindex=False, default): Automatically detects and re-indexes only changed files by comparing them against a tracking log. Deleted or modified chunks are pruned and replaced to keep the index up-to-date.
+  - Integrates with any MCP-supported host application like Claude Desktop, Windsurf, or Cursor.
+  - https://github.com/ryan-m-bishop/docrag
+    - 未实现 Incremental indexing (only index changed files)
+
 - https://github.com/mufasadb/code-grapher /202508/python/inactive
   - MCP server that provides a service for graph-ify-ing the codebase then retrieving from it to help feed perfect amount of context.
   - Complete codebase analysis in seconds using deterministic AST parsing
   - Incremental Updates: Updates graphs efficiently as code changes via git integration
+  - Hybrid Retrieval: Combines vector similarity (ChromaDB) with graph traversal (Neo4j)
 
 - https://github.com/nonatofabio/local_faiss_mcp /MIT/202512/python
   - MCP server that provides local vector database functionality using FAISS for Retrieval-Augmented Generation (RAG) applications.
@@ -1210,32 +1404,34 @@ modified: 2025-12-11T18:10:23.710Z
   - Incremental indexing: Adds to existing index, doesn't overwrite
     - Shows indexing progress for each file
   - Persistent Storage: Indexes and metadata are saved to disk
+  - Semantic Search: Query documents using natural language with sentence embeddings
+    - Custom Embeddings: Choose any Hugging Face embedding model
   - Works with any MCP-compatible AI agent or client
   - Format support: Handles PDF/TXT/MD natively; DOCX/HTML/EPUB with pandoc
-  - Custom Embeddings: Choose any Hugging Face embedding model
 
 - https://github.com/ItMeDiaTech/dt-cli /MIT/202511/python/inactive
   - A comprehensive development assistance system combining Retrieval-Augmented Generation (RAG), Multi-Agent Framework (MAF), and configurable LLM backends - completely open source and free.
   - All major RAG features implemented (caching, hybrid search, reranking, incremental indexing)
+  - Hybrid Search: BM25 + semantic search with tunable weights
+  - Auto-Trigger: Automatic determination of when to use RAG vs. direct LLM
+  - 依赖langchain, langgraph, chromadb, tree-sitter
   - [RAG-MAF Plugin Architecture](https://github.com/ItMeDiaTech/dt-cli/blob/main/docs/guides/ARCHITECTURE.md)
     - The RAG-MAF plugin is a sophisticated system that combines Retrieval-Augmented Generation (RAG) with Multi-Agent Framework (MAF) orchestration to provide context-aware development assistance in Claude Code.
-
-- https://github.com/Zackriya-Solutions/MCP-Markdown-RAG /apache2/202507/python/inactive
-  - MCP server that provides a local-first RAG engine for your markdown documents. 
-  - This server uses a file-based Milvus vector database to index your notes, enabling Large Language Models (LLMs) to perform semantic search and retrieve relevant content from your local files.
-  - Local-First & Private: All your data is processed and stored locally.
-  - Integrates with any MCP-supported host application like Claude Desktop, Windsurf, or Cursor.
-  - https://github.com/ryan-m-bishop/docrag
-    - 未实现 Incremental indexing (only index changed files)
 
 - https://github.com/nbjoin/resolve-tools /202601/python
   - A versioned RAG (Retrieval-Augmented Generation) system for DaVinci Resolve documentation.
   - PDF Extraction: Extracts and chunks Resolve manuals with structure preservation
   - Version Support: Organizes knowledge by Resolve version (v19, v20, etc.) for easy updates
+    - The system is designed to support multiple Resolve versions
+    - Place the new manual PDF in the repo root; Run the build script with the new version number
+    - Both versions remain searchable - the system returns the most relevant results
   - Semantic Search: ChromaDB-powered vector search for relevant documentation
   - MCP Server: Integrates with Claude Desktop and VS Code as an MCP tool
   - Source Citations: All responses include page numbers and chapter references
-  - 未实现  Incremental updates (add new content without full rebuild)
+  - 依赖 pymupdf langchain langchain-community chromadb
+  - 📡 未实现
+    - Incremental updates (add new content without full rebuild)
+    - Multi-modal support (images from manual)
 
 - https://github.com/h4gen/postgres-graph-rag /MIT/202512/python
   - A Python Library to perform Graph RAG in your Postgres DB without headaches
@@ -1260,6 +1456,9 @@ modified: 2025-12-11T18:10:23.710Z
   - Currently supports Typescript and Python.
   - Visit the Wildcard DeepContext page, Click "Generate API Key"
   - Most coding agents use grep based search that match exact text, these searches miss semantically related code and fill context windows with irrelevant results.
+  - Hybrid Search with Reranking
+  - Incremental Indexing: Uses file modification times and content hashes to track changes
+  - Only reprocesses files with different hashes during reindexing
   - 🚧 Self-hosting requires code modifications to integrate directly with vector storage and embedding providers, as the current implementation uses the Wildcard API backend.
     - Turbopuffer API key for vector storage and hybrid search operations
     - Jina AI API key for text embeddings and reranking services
@@ -1305,11 +1504,17 @@ modified: 2025-12-11T18:10:23.710Z
   - Persistent Storage - SQLite with optional cloud sync (S3, R2, D1)
   - Export/Import - Backup and restore with merge strategies
   - Semantic Search - Vector embeddings (TF-IDF, sentence-transformers, OpenAI)
+  - Advanced Queries - Full-text, date ranges, tag filters (AND/OR/NOT), hybrid search
+  - Automatic: Embeddings and cross-references are computed automatically when you memory_create, memory_update, or memory_create_batch.
+  - Real-time Updates - Graph, timeline, and history update via SSE when memories change
 
 - https://github.com/tobi/qmd /5.1kStar/MIT/202602/python/ts
   - mini cli search engine for your docs, knowledge bases, meeting notes, whatever. 
   - Tracking current sota approaches while being all local
   - use it on the command line, it also exposes an MCP (Model Context Protocol) server for tighter integration.
+  - QMD combines BM25 full-text search, vector semantic search, and LLM re-ranking—all running locally via node-llama-cpp with GGUF models.
+  - QMD uses three local GGUF models (auto-downloaded on first use): embeddinggemma, qwen3-reranker-0.6b, qmd-query-expansion-1.7B 
+  - 需要手动更新index: qmd update
   - https://x.com/lauritzsh/status/2018901648907829623
     - It uses SQLite FTS5 and some other stuff. You have the keep embeddings updated, but can throw it in a 5-min interval cron job.
     - qmd can use just FTS5 too so not sure what you mean. If you want hybrid you can use embeddings too. It gives you three ways to search the SQLite database.
@@ -1324,6 +1529,9 @@ modified: 2025-12-11T18:10:23.710Z
   - Local RAG for developers using MCP. Semantic search with keyword boost for exact technical terms — fully private, zero setup.
   - Semantic search with keyword boost Vector search first, then keyword matching boosts exact matches. 
   - Runs entirely locally No API keys, no cloud, no data leaving your machine. Works fully offline after the first model download.
+  - Built with Model Context Protocol `LanceDB`, and Transformers.js.
+  - [Building a Local RAG for Agentic Coding: From Fixed Chunks to Semantic Search with Keyword Boost | Norsica Blog _202601](https://www.norsica.jp/blog/local-rag-agentic-coding)
+    - Technical deep-dive into the semantic chunking and hybrid search design.
 
 - https://github.com/MattMagg/agentic-rag-sdk /202602/python
   - RAG pipeline using Voyage AI embeddings, Qdrant vector database, and hybrid retrieval with cross-encoder reranking. 
@@ -1371,22 +1579,36 @@ modified: 2025-12-11T18:10:23.710Z
   - mcp server providing powerful and efficient codebase search tools, including full AST support for 15 languages
   - Built on our universal-ctags wrapper, ripgrep, and ast-grep, it provides fast symbol search, structural AST pattern matching, text search, file search, and dependency analysis with persistent caching for 80%+ faster startup times.
 
-- https://github.com/Context-Engine-AI/Context-Engine /321Star/Paid/202602/python
-  - https://context-engine.ai/
-  - Context-Engine MCP - Agentic Context Compression Suite
-  - 🍴 forks
-  - https://github.com/mikahoy045/Context-Engine /MIT/202511/python
-    - a plug-and-play MCP retrieval stack that unifies code indexing, hybrid search, and optional llama.cpp decoding so product teams can ship context-aware agents in minutes
-    - One-command bring-up delivers dual SSE/RMCP endpoints, seeded Qdrant, and live watch/reindex loops for fast local validation.
-    - Shared memory/indexer schema and reranker tooling make it easy to mix dense, lexical, and semantic signals without bespoke glue code.
-    - NEW: Performance optimizations including connection pooling, intelligent caching, request deduplication, and async subprocess management that cut redundant calls and smooth spikes under load.
-    - an MCP-compliant context layer without rebuilding indexing, embeddings, or retrieval heuristics.
-
 - https://github.com/pchalasani/claude-code-tools /1.4kStar/MIT/202601/python/rust
   - productivity tools for Claude Code, Codex-CLI, and similar CLI coding agents.
   - aichat is your unified CLI command-group for managing Claude Code and Codex sessions: Resume with lineage, Full-text search with Tantivy
   - tmux-cli works with any CLI coding agent, Think Playwright for terminals - Terminal automation for AI agents.
   - lmsh: Natural language shell - type what you want in plain English, get an editable command.
+
+- https://github.com/JetBrains/databao-context-engine /15Star/apache2/202602/python
+  - https://databao.app/
+  - a CLI tool that automatically generates governed semantic context from your databases, BI tools, documents, and spreadsheets.
+  - It runs locally in your environment and integrates with any LLM 
+  - MCP integration	Works with Claude Desktop, Cursor, and any MCP-compatible tool
+  - Built-in benchmarks	Measure and improve context quality over time
+  - LLM agnostic	OpenAI, Anthropic, Ollama, Gemini — use any model
+  - Governed & versioned	Track, version, and share context across your team
+  - Dynamic or static	Serve context via MCP server or export as artifact
+  - 不支持hybrid-search
+
+- https://github.com/a24z-ai/a24z-Memory /MIT/202510/ts/inactive
+  - MCP server for managing repository-anchored notes and context management.
+  - [I am building a better context engine for AI Agents : r/LLMDevs _202508](https://www.reddit.com/r/LLMDevs/comments/1n3g6z1/i_am_building_a_better_context_engine_for_ai/)
+    - The MCP server retrieves, creates, summarizes, deletes, and checks for staleness.
+    - It is completely local as part of your github repository. No complicated vector databases. Just file anchors on files.
+
+- https://github.com/kayba-ai/agentic-context-engine /1.8kStar/MIT/202602/python
+  - https://www.kayba.ai/
+  - ACE enables AI agents to learn from their execution feedback—what works, what doesn't—and continuously improve.
+  - No fine-tuning, no training data, just automatic in-context learning.
+  - The framework maintains a Skillbook: a living document of strategies that evolves with each task. When your agent succeeds, ACE extracts patterns. When it fails, ACE learns what to avoid. All learning happens transparently in context.
+  - Self-Improving: Agents autonomously get smarter with each task
+  - [[P] Open-Source Implementation of "Agentic Context Engineering" Paper - Agents that improve by learning from their own execution feedback : r/MachineLearning _202510](https://www.reddit.com/r/MachineLearning/comments/1o9yuxv/p_opensource_implementation_of_agentic_context/)
 # background-ai
 - https://github.com/ColeMurray/background-agents /MIT/202601/python/ts
   - https://backgroundagents.dev/

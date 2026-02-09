@@ -1483,6 +1483,15 @@ modified: 2025-11-30T17:27:16.720Z
   - [AI Model Configuration](https://github.com/eclaire-labs/eclaire/blob/main/docs/ai-models.md)
     - 依赖外部backend来期待llm api
 
+- https://github.com/frumu-ai/tandem /MIT/202602/rust/ts/python/Tauri
+  - A local-first, privacy-focused AI workspace. Your AI coworker that runs entirely on your machine.
+  - Unlike cloud-based AI tools, Tandem runs on your machine. Your code, documents, and API keys never touch our servers
+  - Use any LLM provider - Anthropic, OpenAI, or run models locally with Ollama
+  - Cross-Platform: built on Tauri 
+  - [I built a fully local, open-source AI workspace using Rust, Tauri, and sqlite-vec (No Python backend) : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1qz6zi3/i_built_a_fully_local_opensource_ai_workspace/)
+    - Vector Store: Instead of running a separate Docker container for Qdrant/Chroma, I'm using sqlite-vec. This allows me to store embeddings directly in the same SQLite file as the chat history. It simplifies the distribution massively—users just download one binary.
+    - I built it primarily to drive local Llama models. It connects seamlessly to Ollama
+
 - https://github.com/rmusser01/tldw_server /1.1kStar/GPL/202511/python
   - https://tldwproject.com/
   - Too Long; Didn't Watch - API-first media analysis & research platform
@@ -1551,6 +1560,18 @@ modified: 2025-11-30T17:27:16.720Z
     - [Add private search connectors _202508](https://github.com/ItzCrazyKns/Perplexica/issues/856)
   - [fix(uploads): Resolve the bug of large document attachment upload failure](https://github.com/ItzCrazyKns/Perplexica/pull/675)
     - Resolve the bug where large document uploads prompt an "exceeded maximum allowed batch size" error. The error message is as follows: error: Error in uploading file results: 413 input batch size 512 > maximum allowed batch size 32 (request id: 2025031909320299661815003514673)
+
+- https://github.com/rupeshs/verity /NALic/202602/python/js
+  - a Perplexity-style AI search and answer engine that runs fully locally on AI PCs.
+  - It combines SearXNG-powered search, retrieval, and local LLM reasoning to generate grounded, verifiable answers — without relying on cloud-based LLM providers.
+  - Fully Local, AI PC Ready - Optimized for Intel AI PCs using OpenVINO (CPU / iGPU / NPU), Ollama (CPU / CUDA / Metal)
+  - Privacy by Design - Search and inference can be fully self-hosted
+  - SearXNG-Powered Search - Self-hosted, privacy-friendly meta search engine
+  - Designed for fact-grounded, concise answers
+  - OpenVINO and Ollama models supported
+  - Modular architecture
+  - CLI and WebUI support, API server support
+  - [Verity, a Perplexity style AI search and answer engine that runs fully locally on AI PCs with CPU, GPU, NPU acceleration : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1qz8clh/veritya_perplexity_style_ai_search_and_answer/)
 
 - https://github.com/zaidmukaddam/scira /11.4kStar/AGPL/202511/ts
   - https://scira.ai/

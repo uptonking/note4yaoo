@@ -124,6 +124,19 @@ modified: 2024-09-08T18:57:12.231Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [What has your experience been with context engines? : r/ClaudeCode _202602](https://www.reddit.com/r/ClaudeCode/comments/1qz6r8f/what_has_your_experience_been_with_context_engines/)
+  - Recently came across Augment Code and they have something called context engine that allows you to do real-time semantic searches on your codebase and other accompanying data. They also released it as an MCP and SDK recently.
+  - Curious to know what are the results like with these tools? I'm seeing they claim better results when using their MCP with other tools like Claude code.
+
+- The fundamental idea really comes down to two distinct problems:
+  - Retrieval - finding the most relevant code chunks and ranking them by relevance
+  - At some point the amount of relevant chunks will be too big to fit in a single context, and then the challenge becomes accurate answer synthesis at scale.  For large enterprise mono repos a single architectural query might have to crunch through millions of tokens. Even if you could fit it all in a single context, the U attention curve will produce very inaccurate results
+  - Gets these two right and you have a better agent that's both more token efficient and more accurate. I'll also humbly nominate ChunkHound which is another OSS solution. ChunkHound solves both challenges while also being local first enabling fully offline operation
+
 - ## [LM Studio and Context Caching (for API) : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1npatw9/lm_studio_and_context_caching_for_api/)
   - I'm running a Mac, so LM Studio with their MLX support is my go-to for using local models. 
   - When using the LM Studio as a local LLM server that integrates with tools and IDEs (like Zed, Roo, Cline, etc.), things get a bit annoying with the long-context slowdown. 

@@ -24,7 +24,11 @@ modified: 2025-10-10T02:44:49.634Z
 
 - ## 
 
-- ## 
+- ## Parsing line charts is a hard task for VLMs
+- https://x.com/jerryjliu0/status/2020228625191330028
+  - VLMs are generally fine at coarse visual understanding, but they have a hard time reasoning about precise coordinates. Ask most VLMs, even though tuned to chart understanding, to parse a line chart to a table and they will struggle.
+  - We tested over a few samples. Docling’s new granite-vision model, gemini 3 flash, gpt 5.2 pro, and a v0.1 of our own chart parsing (which is in beta and rapidly evolving).
+  - Out of these, most models fail, and sometimes miss the entire chart correctly. gpt 5.2 pro is closest but spends an absurd number of tokens reasoning through each point. Our own parsing is actually quite good, though of course, there’s still some things we need to do to get to 100% accuracy.
 
 - ## [Anybody tried Codellama-70B, SQLCoder-70B; SQLCoder-7B? And Alphacodium framework? And perplexing HumanEval scores : r/LocalLLaMA _202402](https://www.reddit.com/r/LocalLLaMA/comments/1ajwhc8/anybody_tried_codellama70b_sqlcoder70b_sqlcoder7b/)
 - SQLCoder is not instruction fine-tuned yet! You will probably get better results with [this prompt](https://raw.githubusercontent.com/defog-ai/sqlcoder/c167d340ad16b925f87eef5530474c5a9405abce/prompt.md) for the 70b, and with your metadata in this format
