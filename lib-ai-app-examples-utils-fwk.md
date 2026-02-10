@@ -734,14 +734,15 @@ modified: 2025-02-21T18:20:42.624Z
   - A proxy server that provides OpenAI/Gemini/Claude/Codex compatible API interfaces for CLI.
   - It now also supports OpenAI Codex (GPT models) and Claude Code via OAuth.
   - [API Key issue _202510](https://github.com/router-for-me/CLIProxyAPI/issues/181)
-    - /opt/homebrew/etc/cliproxyapi.conf
+    - 🍎 mac上通过homebrew安装后配置文件在 `/opt/homebrew/etc/cliproxyapi.conf`
+  - [fix: Implement fallback log directory for file logging on read-only system _202512](https://github.com/router-for-me/CLIProxyAPI/pull/772)
+    - macOS 下面，打开 logging-to-file: true 之后，homebrew services 启动失败，排查后是日志无法写入导致的。
   - [gemini oauth in droid cli: unknown provider _202511](https://github.com/router-for-me/CLIProxyAPI/issues/258)
     - If you just close the terminal / window or don’t pick a real project (or ALL), no Gemini credential file gets written into ~/.cli-proxy-api, and later requests from Droid will hit unknown provider.
     - brew services restart cliproxyapi
   - [CLIProxyAPI配置 Gemini CLI最后一步失败：Google账号权限设置不够 ](https://github.com/router-for-me/CLIProxyAPI/issues/480)
     - 大陆网友请在config.yaml中设置proxy-url或开启tun模式的代理
-  - [fix: Implement fallback log directory for file logging on read-only system _202512](https://github.com/router-for-me/CLIProxyAPI/pull/772)
-    - macOS 下面，打开 logging-to-file: true 之后，homebrew services 启动失败，排查后是日志无法写入导致的。
+  - [目前发现的一些Cli Proxy API问题的解决方法 _202602](https://linux.do/t/topic/1592398)
   - https://github.com/router-for-me/Cli-Proxy-API-Management-Center /MIT/202601/ts
     - a WebUI interface based on CLI-Proxy-API, designed to simplify configuration modifications and runtime status monitoring.
     - Since version 6.0.19, the WebUI ships with the main program; access it via `/management.html` on the API url
@@ -756,6 +757,7 @@ modified: 2025-02-21T18:20:42.624Z
   - Native macOS menu bar app to use your Claude Code & ChatGPT subscriptions with AI coding tools - no API keys needed
   - native macOS menu bar app that lets you use your existing Claude Code, ChatGPT, Gemini, Qwen, and Antigravity subscriptions with powerful AI coding tools like Factory Droids – no separate API keys required.
   - Built on CLIProxyAPIPlus, it handles OAuth authentication, token management, and API routing automatically. One click to authenticate, zero friction to code.
+  - 👀 注意 msty studio 内置并自动开启了Vibe CLI Proxy, 会导致通过系统包管理器安装的cliproxyapi出现端口冲突而不可用
 
 - https://github.com/zhalice2011/ProxyLLM /MIT/202601/ts
   - Electron 应用，用于捕获 LLM 网站的浏览器会话，并在本机暴露 OpenAI 兼容 API

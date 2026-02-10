@@ -913,11 +913,13 @@ modified: 2025-12-11T18:10:23.710Z
 - https://github.com/AIPowerGrid/grid-code /202508/ts/inactive
   - a coding agent powered by the grid, a decentralized network of AI workers
 
-- https://github.com/superset-sh/superset /apache2/202512/ts
+- https://github.com/superset-sh/superset /1.5kStar/apache2 > elastic/202602/ts
   - https://superset.sh/
   - A Terminal Built for Coding Agents
   - Run 10+ CLI coding agents like Claude Code, Codex, etc. in parallel on your machine. Spin up new coding tasks while waiting for your current agent to finish. Quickly switch between tasks as they need your attention.
   - For each parallel tasks, Superset uses git worktrees to clone a new branch on your machine.
+  - https://x.com/FlyaKiet/status/2020993991605735571
+    - Chat GUI is in early preview - It's Claude Code SDK  under the hood with extra integrations into Superset for the ultimate chat experience. Compatible with existing Claude Code sessions. Slash commands and @ mention supported. Codex will soon follow.
 
 - https://github.com/erans/lunaroute /apache2/202511/rust
   - LunaRoute is a high-performance local proxy for AI coding assistants like Claude Code, OpenAI Codex CLI, and OpenCode. 

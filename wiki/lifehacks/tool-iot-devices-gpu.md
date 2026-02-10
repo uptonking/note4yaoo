@@ -59,6 +59,7 @@ modified: 2026-01-15T15:33:18.008Z
   - [ROCm Compatibility matrix](https://rocm.docs.amd.com/en/latest/compatibility/compatibility-matrix.html)
   - [Linux support matrices by ROCm version](https://rocm.docs.amd.com/projects/radeon-ryzen/en/latest/docs/compatibility/compatibilityrad/native_linux/native_linux_compatibility.html)
   - [AMD Strix Halo — Backend Benchmarks (Grid View)](https://kyuz0.github.io/amd-strix-halo-toolboxes/)
+  - [Strix Halo Wiki](https://strixhalo.wiki/)
 
 - 🆚🔥 [英伟达热门 GPU 对比：H100、A6000、L40S、A100 - 知乎](https://zhuanlan.zhihu.com/p/5041686924)
   - [Memory Bandwidth Comparisons - Planning Ahead : r/LocalLLaMA _202402](https://www.reddit.com/r/LocalLLaMA/comments/1amepgy/memory_bandwidth_comparisons_planning_ahead/)
@@ -134,7 +135,16 @@ modified: 2026-01-15T15:33:18.008Z
 
 - ## 
 
-- ## 
+- ## [Free Strix Halo performance! : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1r0b7p8/free_strix_halo_performance/)
+  - TL; DR not all quants are born the same, some quants have bf16 tensors, which doesn’t work well on AMD as it seems, so find quants without bf16 tensors and you get anywhere between 50%-100% performance on both tgs and pp
+  - Strix Halo (gfx1151) doesn’t advertise bf16 in Vulkan backend, which confirms that the kernel doesn’t support models with bf16 tensors in some of their layers!
+  - BF16 is just much worse than f16 in the halo (at least for Vulkan)
+
+- You can see/search all the weights on each HF GGUF download page
+
+- MXFP4 probably doesn’t have bf16 ( I am not saying unsloth quants are bad, it is just that from all quants (unsloth and others) some have bf16 tensors (even q4 quantsay have some bf16 tensors), and that hits the performance)
+  - And yeah ofc MXFP4 quants seems better
+  - So when downloading a model look for MXFP4 quants or a quant that has no bf16 tensors in it (check metadata manually for now!)
 
 - ## [Here is why you should/shouldn't purchase Strix Halo : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1qsww1g/here_is_why_you_shouldshouldnt_purchase_strix_halo/)
 - Compatibility with general programs → strix halo (due to DGX Spark being ARM-based).

@@ -678,6 +678,33 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🤼 [Knowledge Distillation for RAG (Why Ingestion Pipeline Matters More Than Retrieval Algorithm) : r/Rag _202602](https://www.reddit.com/r/Rag/comments/1r129pa/knowledge_distillation_for_rag_why_ingestion/)
+  - We obsess over retrieval algorithms (hybrid search, reranking, HyDE, query decomposition) while completely ignoring that retrieval operates over fundamentally broken representations of knowledge.
+  - I started using a new approach that is working pretty well so far : Instead of chunking, use LLMs at ingestion time to extract and restructure knowledge into forms optimized for retrieval:
+  - Level 1: Extract facts as explicit SVO sentences
+  - Level 2 : Synthesize relationships spanning multiple insights
+  - Level 3 : Document-level summaries for broad queries
+  - Level 4 : Patterns learned across the entire corpus
+- This is fully automatable with workflow-based pipelines:
+  - Table extraction (preserve structure via CV models)
+  - Text generation 1: insights from tables + text
+  - Text generation 2: concepts from insights
+  - Text generation 3: abstracts from concepts
+  - Text generation 4: table schema analysis for SQL generation
+- Each component receives previous component's output. Final JSON contains original data + all distillation layers.
+
+- this resonates. the problem with chunking is it destroys the semantic boundaries that actually matter for retrieval. structuring at ingestion makes sense but the hard part is validating that your distillation pipeline is actually extracting what you need without hallucinating connections
+
+- Distillation at ingestion helps retrieval quality but creates a new debugging problem: when retrieval fails, which distillation layer broke?
+  - LLMs spent minutes analyzing doc, but you don't have artifacts showing what they extracted at each level.
+  - Chunking is simpler to debug - you see exactly what text was retrieved. Multi-layer distillation optimizes for quality but trades debuggability. Production systems need both retrieval quality and incident traceability.
+
 - ## [Ask HN: How are you doing RAG locally? | Hacker News _202601](https://news.ycombinator.com/item?id=46616529)
 - Hybrid search usually refers to traditional keyword search (BM25, TF-IDF) combined with a vector similarity search.
 

@@ -435,6 +435,13 @@ modified: 2025-02-21T17:17:42.225Z
   - Zero external dependencies
   - For teams who prefer managed infrastructure, we also offer a cloud platform. 
   - Human-in-the-Loop: If a task gets stuck or encounters uncertainty, Eigent will automatically request human input
+  - [Local LLMs + Desktop Agents: An open source Claude Cowork : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qi3d4c/local_llms_desktop_agents_an_open_source_claude/)
+    - At the core is CAMEL’s Workforce system, which is inspired by distributing systems: a root node for task planning and coordination, worker nodes for execution, and an asynchronous task channel. It also supports failure tolerance and recursive workers for long-horizon tasks. All of this is open source.
+    - the hardest problems we face today is the local desktop runtime. Supporting multiple operating systems, versions, and package mirrors has been extremely painful. Our desktop agent installs Python and TypeScript dependencies on first launch, and supporting this reliably across macOS and Windows has been more complex than we initially expected.
+    - After looking into a VM-based approach that uses Apple’s Virtualization framework to run Ubuntu on macOS, we started wondering whether a similar setup could help.
+    - I had to resolve the same issue, to run agent code cross platforms as is, I shipped a runtime which is basically eval inside restricted sandbox https://github.com/netdur/hugind
+    - Nice work on the agent! The VM approach might help with the cross-platform headaches but could introduce its own complexity around hardware access and performance overhead
+    - Have you considered containerizing just the Python/TS runtime while keeping native OS hooks for system calls?
   - https://github.com/camel-ai/camel /15.4kStar/apache2/202601/python/ts
     - https://www.camel-ai.org/
     - The first and the best multi-agent framework. Finding the Scaling Law of Agents.
@@ -473,11 +480,29 @@ modified: 2025-02-21T17:17:42.225Z
   - Model Agnostic - Works with any model configured in OpenCode
   - Safe by Default - Uses OpenCode's built-in permission system
 
+- https://github.com/OpenCoworkAI/open-cowork /233Star/MIT/202602/python/ts
+  - open-source implementation of Claude Cowork
+  - It provides a sandboxed workspace where AI can manage files, generate professional outputs (PPTX, DOCX, XLSX, etc.) through our built-in Skills system, and connect to desktop apps via MCP (browser, Notion, etc.) for better collaboration.
+  - Remote Control: Connect to collaboration platforms like Feishu (Lark) and other remote services
+  - GUI Operation: Control and interact with various desktop GUI applications on your computer
+  - VM-Level Isolation: WSL2 (Windows) and Lima (macOS) VM isolation—all commands execute in an isolated VM to protect your host system.
+  - Supports Claude, OpenAI-compatible APIs, and Chinese models like GLM...
+  - Skills System: Built-in workflows for PPTX, DOCX, PDF, XLSX generation and processing. Supports custom skill creation and deletion.
+  - Real-time Trace: Watch AI reasoning and tool execution in the Trace Panel.
+
 - https://github.com/poco-ai/poco-agent /MIT/202601/python/ts
   - https://poco-ai.com/
   - An intelligent agent harnessing cloud-based Claude Code to realize a Manus-like autonomous experience.
   - Poco is a cloud-based AI agent execution platform inspired by Anthropic's Cowork. It orchestrates Claude AI agents to perform autonomous tasks beyond coding—organizing files, writing documents, analyzing data, and more—in a distributed cloud environment.
   - Works in parallel — Queue multiple tasks without waiting for completion
+
+- https://github.com/kuse-ai/kuse_cowork /MIT/202601/rust/ts
+  - https://www.kuse.ai/
+  - Open-source Alternative to Claude Cowork Desktop App By Kuse
+  - Use your own API keys or even bring your own local models 
+  - Agent fully written in Rust with zero external dependencies
+  - Containerized: Docker isolation for enhanced security
+  - [Rust + Local LLMs: An Open-Source Claude Cowork with Skills : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qhutc3/rust_local_llms_an_opensource_claude_cowork_with/)
 
 - https://github.com/workany-ai/workany /apache+LOGO/202601/ts
   - https://workany.ai/

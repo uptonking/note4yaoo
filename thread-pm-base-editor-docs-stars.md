@@ -12,6 +12,27 @@ modified: 2021-08-22T07:29:34.045Z
 # discuss-docs-ai 👾
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## llamaindex: We built LobsterX, an @openclaw specialized for document work on your computer.
+- https://x.com/jerryjliu0/status/2021021110721265979
+  - It uses high-accuracy document parsing, extraction, classification through LlamaCloud, meaning it can comb through complicated PDFs (with scans, tables, diagrams) and extract out 100% accurate context!
+  - It can run as a Telegram bot and is built on top of agentfs ( @tursodatabase ) as a file system.
+- https://github.com/AstraBert/workflows-acp/tree/main/packages/lobsterx
+  - agent inspired by OpenClaw (formerly known as MoltBot or ClawdBot), which focuses on document-related tasks.
+
+- General-purpose agents are impressive demos. Specialized agents with domain-tuned tools are production systems.
+  - When you constrain the problem space, you can optimize for accuracy instead of flexibility.
+  - This is the pattern.
+
+- Doc agents win when extraction comes with provenance. If every field links back to the exact page/bbox plus a tight exception queue, “100% accurate” stops being marketing and becomes something reviewers can clear fast.
+
+- Document parsing is the unsexy unlock. Most enterprise data lives in PDFs nobody wants to read. Whoever structures it first wins.
+
 - ## 原来做文档的 Craft 团队出的 Craft Agent 也太牛逼了！
 - https://x.com/op7418/status/2018892524937695533
   - 界面非常漂亮，整个交互细节也做得非常到位，完爆昨天的 Codex App

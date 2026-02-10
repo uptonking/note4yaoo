@@ -9,6 +9,8 @@ modified: 2026-01-03T08:33:17.870Z
 
 # guide
 
+- who is using #agentfs
+  - lobsterx
 # usage
 - All SQL commands must end with a semicolon (; ).
 

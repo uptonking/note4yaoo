@@ -190,6 +190,35 @@ modified: 2023-01-02T10:30:19.459Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🌰 [The Codex App | Hacker News _202602](https://news.ycombinator.com/item?id=46859054)
+- Looks like another Claude App/Cowork-type competitor with slightly different tradeoffs (Cowork just calls Claude Code in a VM, this just calls Codex CLI with OS sandboxing).
+
+- programs like Claude Cowork or Codex should, by design, integrate as deeply with the OS as possible. This requires calling native APIs (e.g., Win32), which is not feasible from Electron.
+  - Who told you that? You can write entire C libraries and call them from Electron just fine. Browser is a native application after all. All this "native applications" debate boils down to the UI implementation strategy. Maintaining three separate UI stacks (WinUI, SwiftUI, GTK/Qt) is dramatically more expensive and slower to iterate on than a single web-based UI with shared logic
+  - We already have three major OSes, all doing things differently. The browsers, on the other hand, use the same language, same rendering model, same layout system, and same accessibility layer everywhere, which is a massive abstraction win.
+- If they can save effort with Electron and put that effort into things their research says users care about more, everyone wins.
+
+- Part of this (especially the CPU) is teams under-optimizing their Electron apps. See the multi-X speedup examples when they look into it and move hot code to C et al.
+
+- I think the comparison between native apps and Electron apps is conflating two things:
+  - Native apps integrate well with the native OS look and feel and native OS features. I'd say it's nice to have, but not a must have, especially considering that the same app can run on multiple platforms.
+  - Native apps use much less RAM than Electron apps. I believe this one is a real issue for many users. Running Slack, Figma, Linear, Spotify, Discord, Obsidian, and others at the same time consumes a lot of memory for no good reason.
+  - Which makes me wonder: Is there anything that could removed from Electron to make it lighter, similar to what Qt does?
+
+- Video games often use HTML/JS-based UI these days.
+- UE5 has its own custom UI framework, which definitely does not feel "native" on any platform. Not really any better than Electron.
+- You can easily call native APIs from Electron.
+
+- One of Electron's main selling points is that you control the browser version. Anything that relies on the system web view (like Tauri and Wails) will either force you to aggressively drop support for out-of-date OS versions, or constantly check caniuse.com and ship polyfills like you're writing a normal web app. It also forces you to test CSS that touches form controls or window chrome on every supported major version of every browser, which is just a huge pain. And you'll inevitably run into bugs with the native -> web glue that you wouldn't hit with Electron.
+
+- Their goal is to ship as fast as possible b/c they don't care about what you care about. Their objective is to gather as much data as possible & electron is good enough for that.
+
+- Electron also opens up easier porting to Linux which almost certainly wouldn't happen if companies insist on native only
+
 - ## 🆚 Made the hard decision to migrate a native (React Native Windows) app to Electron myself.
 - https://x.com/birch_js/status/1988433012321853736
   - We could deliver more frequent updates

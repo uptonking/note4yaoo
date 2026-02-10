@@ -45,7 +45,8 @@ modified: 2026-01-17T22:41:25.867Z
 
 - ## 
 
-- ## 
+- ## [Am I the Only One Using GUI? and is the CLI Better? : r/opencodeCLI](https://www.reddit.com/r/opencodeCLI/comments/1r13qup/am_i_the_only_one_using_gui_and_is_the_cli_better/)
+- The CLI and GUI are identical in how they interact with the model. Both are just a way to communicate with the underlying opencode server.
 
 - ## [What's the point of Opencode's built-in clipboard? : r/opencodeCLI _202601](https://www.reddit.com/r/opencodeCLI/comments/1qquefr/whats_the_point_of_opencodes_builtin_clipboard/)
   - Why does Opencode have a built-in clipboard that overrides your terminal's clipboard, and doesn't let you paste out of it? It's very frustrating.

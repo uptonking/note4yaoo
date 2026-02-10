@@ -450,6 +450,8 @@ PP Speed: Q3 GGUF: 50 t/s
   - out of curiosity sparked by MXFP4’s fast speed, I compared Q4_K_M, Q4_K_XL, and MXFP4 quantization methods for the GLM-4.7-Flash and Nemotron-3-nano models using the llama-perplexity command.
 - The interesting thing with MXFP4 is that it's quantization-aware trained, so the model already "knows" it's running at 4-bit. That's fundamentally different from post-training quantization where you're just chopping precision off an FP16 model.
 
+- Anytime someone says my OSS, or GLM Flash is running slow, I direct them to MXFP4 form `u/noctrex`. It’s literally double the tg128 number for me.
+
 - My only experience with QAT was with Gemma 3 27B, running both the Q4 QAT side by side with Q8, and let's just say the QAT version left a lot to be desired, even in seemingly simple tasks. It's not that the Q4 response was bad, but more that the Q8 answer was so much better. FWIW, I run both with the same seed for repeatability.
 
 - I actually tested Unsloth q6 against MXFP4 quant, and on my tests they were pretty close, but MXFP4 was slightly ahead in concrete tasks. So q6 is better in reasoning and general stuff, MXFP4 is better in actual tasks implementation. I think I should update llama, but it was working great in Opencode. I heard ubergarm's IQ5 is good too, but haven't tried.

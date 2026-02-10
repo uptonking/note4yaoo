@@ -120,6 +120,31 @@ modified: 2024-03-31T17:45:16.789Z
     - I think it should be possible to also encrypt the S3 buckets, independently from OpenCloud, as a feature of the storage
     - OpenCloud however does not yet support client side S3 encryption.
 
+- https://github.com/DrizzleTime/Foxel /1kStar/MIT/202602/python/ts
+  - https://foxel.cc/
+  - https://demo.foxel.cc/
+  - extensible private cloud storage solution for individuals and teams, featuring AI-powered semantic search.
+  - Unified File Management: Centralize management of files distributed across different storage backends.
+  - extensible adapter pattern to easily integrate various storage types:
+    - Local, S3-compatible, WebDAV, SFTP, FTP
+    - Google Drive, OneDrive, Dropbox, Quark
+    - Telegram, AList, Foxel-to-Foxel
+  - Semantic Search: configurable embedding providers and vector databases (Milvus, Qdrant).
+  - Preview images, videos, PDFs, Office documents, text, and code files directly in the browser — no downloads required.
+  - full-featured Role-Based Access Control (RBAC) system to secure your data
+  - Generate public or password-protected share links with configurable expiration dates
+  - a manifest-based plugin architecture: Load React frontend components and custom backend routes at runtime, without modifying the core codebase.
+  - Run asynchronous background tasks — file indexing, data backups, scheduled jobs — without impacting the main application.
+  - agent with built-in tools for VFS operations, web fetching, and file processing — bringing intelligent automation directly into your cloud storage.
+  - Backend	Python 3.14+, FastAPI, Tortoise ORM, SQLite
+  - Frontend	React 19, TypeScript, Vite, Ant Design
+  - Vector DB	Milvus Lite / Server, Qdrant
+  - [「开源自荐」Foxel V2 不仅是网盘，更是你的 AI 文件操作系统（支持插件/RBAC/多存储） _202602](https://linux.do/t/topic/1589655)
+    - 如果说 v1 是 “好用的文件管理器”，那么 v2 则是 “可扩展的 AI 文件操作系统” 。在保留了美观界面的同时，补齐了权限管理、插件系统和 AI Agent 能力。
+    - 参考并致敬了 AList 的设计，现在支持挂载更多主流存储云盘
+  - [[开源] Foxel 转型成智能文件管理系统啦 _202508](https://linux.do/t/topic/915704)
+    - 当时选用 .NET 开发，后续发现很多感兴趣的开发者并不熟悉 .NET 技术栈，这次我用 Python 对整个项目进行了重构，不仅从原来的 “图片管理” 升级为全类型文件管理
+
 - https://github.com/owncloud/ocis /1.8kStar/apache2/202510/go
   - https://doc.owncloud.com/ocis/next/
   - ownCloud Infinite Scale (oCIS) is the new file sync & share platform that will be the foundation of your data management platform.

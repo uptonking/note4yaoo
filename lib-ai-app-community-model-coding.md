@@ -212,7 +212,7 @@ Only use the provided information.
 
 - Create a navigation bar using React + Tailwind CSS with logo, menu items, and mobile hamburger menu
 
-- Make a single-file landing page for "Waterble" (spreadsheet workflow with ai).
+- Make a single-file landing page for "Watarble" (spreadsheet workflow with ai).
   - Style: modern tech, muted palette, Tailwind, rounded-xl, subtle gradients.
   - Sections: navbar, hero (big headline + 2 CTAs), logos row, features (3x cards), code block (copyable), pricing (3 tiers), FAQ accordion, footer.
   - Constraints: semantic HTML, no external JS. Return ONLY the HTML code.
@@ -692,6 +692,10 @@ def slugify(text):
 
 - 解释下统计学上的 Simpson's paradox
 
+- 知识新鲜度测试
+- 查询下以下大模型的发布日期及特性: deepseek v3.2
+- 查询 2025年中国的出生人口数据 并简单分析
+
 - Alice (a girl) has 3 brothers. Each brother has 2 sisters. How many sisters does Alice have?
 
 - Jane is faster than Joe. Joe is faster than Sam. Is Sam faster than Jane? Explain your reasoning step by step.
@@ -853,6 +857,21 @@ def slugify(text):
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [What local LLM model is best for Haskell? : r/haskell _202601](https://www.reddit.com/r/haskell/comments/1qispvs/what_local_llm_model_is_best_for_haskell/)
+  - Performance at Haskell isn't determined just by model size or benchmarks; many models that are overtrained on e.g. Python can be excellent reasoners but utterly fail at Haskell. Several models with excellent reasoning skills failed due to inadequate Haskell knowledge.
+  - gpt-oss-120b is by far the highest performer for AI-assisted Haskell SWE, although Qwen3 VL 30B A3B also looks viable. gpt-oss-20b should be good for quick tasks.
+  - Qwen3 VL 30B A3B looks like the obvious choice for when you need vision + tool calls + reasoning (e.g. browser automation). It's a viable choice for Haskell, too.
+  - Qwen3-Coder 30B Q4_K_M is the only passible autocomplete-tier model that I tested
+  - GLM-4.7-Flash and Nemotron-Nano-12B-v2 are ill-suited for Haskell, but they have very compelling reasoning, and I'll likely try them elsewhere.
+
+- ## [Mistral Vibe CLI which is the smallest local llm that you can run ? : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pkaqjl/mistral_vibe_cli_which_is_the_smallest_local_llm/)
+- Qwen3 8b? Whats your ram + vram? Rule of thumb for me: At q8_0 a 10b model is 10gb ram/vram. So at q4 its about 5gb. But also be careful of quantization of small models like q4 of a 4b is probs not too good.
+
+- What’s with a MoE like Qwen-3-30B-A3B or GPT-oss-20B. It’s definitely worth trying one of these two, right?
+  - I tried both and they run fine, but in agent mode i have issues with tool calling with all the MoE I've tested
 
 - ## opus 4.6 vs codex 5.3 [It’s been over 24 hours. Which one do you prefer? : r/codex _202602](https://www.reddit.com/r/codex/comments/1qywijh/its_been_over_24_hours_which_one_do_you_prefer/)
 - gpt 5.3 seems to be the better coder

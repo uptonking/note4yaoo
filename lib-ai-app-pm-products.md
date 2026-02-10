@@ -191,6 +191,7 @@ modified: 2025-03-22T16:10:24.856Z
 - 本地模型 + 数据下载/提供 的方案参考
   - 用户自己上传的pdf，就类似词典软件的词库
   - kiwix提供了wikipedia的各种子主题文章精选集合下载，如历史/地理/计算机/医学
+  - linux文档
 
 - model-tuning
   - 针对 中文表格/image 优化的模型
@@ -690,9 +691,11 @@ modified: 2025-03-22T16:10:24.856Z
     - [〔Hotaru公益站〕新的公益站启动 ](https://linux.do/t/topic/1398297)
   - [Huan API](https://ai.huan666.de/console/personal), 签到, 生图模型
     - cc支持
+  - [小辣椒 公益站～(～￣▽￣)～](https://yyds.215.im/console/topup)
+    - cc
   - [API分享站](https://new-api-bxhm.onrender.com/console/personal)
     - [【API分享站】公益站主帖 ](https://linux.do/t/topic/1355814)
-    - 反代自 kiro
+    - 反代 kiro
   - [Jarvis API](https://ai.ctacy.cc/console/personal), 签到
     - cc
     - 备用, [Jarvis API](https://jarvis.ccwu.cc/)
@@ -730,25 +733,27 @@ modified: 2025-03-22T16:10:24.856Z
     - 包括 deepseek，硅基流动全模型，阿里云千问全模型，glm，gemini，codex
     - 有claude, 无opus
     - 默认 RPM30，1 级可注册，不允许批量测活
+  - [纳米哈基米](https://free.nanohajimi.mom/), 签到
+    - Gemini Imagen
+    - [【纳米哈基米 · 公益站】 支持香蕉Pro画图，Veo视频，Gemini全系模型 ](https://linux.do/t/topic/1512770)
   - [玩票 API](https://api.361888.xyz/console/personal)
     - opus4.6 和 codex 虽迟但到
   - [sorai API](https://newapi.sorai.me/console/personal)
     - [codex公益站启动 _202601](https://linux.do/t/topic/1524003)
     - 只有 codex 模型
+  - [云端API](https://cloudapi.wdyu.eu.cc/pricing), 签到, 生图
   - [Neb 公益站](https://ai.zzhdsgsss.xyz/console/personal), 签到
     - 采用按量计费，每次0.01，注册送2000次，因为该阶段的初衷就是最大化利用这些将要过期的key。
     - 当前额度用完或2026.1.31之后进入第二阶段，采用按量计费，倍率会很低
     - 会不会有签到站不会，因为我太懒了
     - 之前想过接入CC，但是对于我这种新手来说调教整个流程还是太难了
     - [【Neb 公益站】这是主贴 ](https://linux.do/t/topic/1354122)
-  - [纳米哈基米](https://free.nanohajimi.mom/), 待开放注册
-    - Gemini Imagen
-    - [【纳米哈基米 · 公益站】 支持香蕉Pro画图，Veo视频，Gemini全系模型 ](https://linux.do/t/topic/1512770)
   - [SNOW AI CLI](https://snowcli.com/dashboard/overview), 签到但余额仅当天有效
     - Kiro政策似乎有变化，Opus不稳定，但不是不能用，Sonnet和Haiku正常
     - 特别注意，Kiro逆向因为Token返回数据不精确，所以Snow CLI 无法准确判断自动压缩，根据经验，上下文到达25k~30K左右差不多就满了（这不是真的只有这么短）而是Kiro逆向没有返回缓存信息实际上下文可能非常接近200k了
     - [【Snow CLI】Console 开放部分注册人数，以及近期更新汇总 ](https://linux.do/t/topic/1568653/1)
     - 依旧免费提供稳定的 Kiro 逆向、Codex、KIMI 以及适用于 Codebase 的嵌入模型
+  - [GLM 仪表板](https://pureai.shop/dashboard.html)
   - [FovtAPI](https://api.voct.top/console)
     - 模型旧，模型少
     - [NewAPI签到系统](https://gift.voct.top/dashboard/checkin), ~~已失效~~
@@ -1303,6 +1308,8 @@ modified: 2025-03-22T16:10:24.856Z
   - free: 百度 ernie-tiny/lite/speed
 - [鲸智 模型广场](https://aihub.caict.ac.cn/modelplaza/modelsquare/)
   - free: free: 百度 ernie-tiny/lite/speed
+
+- [超算互联网](https://www.scnet.cn/ycjh/index.html)
 
 - [ZenMux](https://zenmux.ai/models?sort=pricingLowToHigh)
 

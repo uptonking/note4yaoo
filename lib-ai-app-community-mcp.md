@@ -237,6 +237,43 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
+- ## 
+
+- ## WebMCP: AI agents can now interact *directly* with existing websites and webapps - not by using the "human" app interface.
+- https://x.com/liadyosef/status/2021151526375268643
+  - This naturally complements MCP Apps towards the future of agentic UI.
+
+- This unlocks real agent-native workflows. Web as an API, not an interface.
+
+- hmm, direct DOM manipulation is powerful but risky - what happens when sites change their layout? we tried this approach for test automation. ended up with 30% flake rate vs 5% with proper API interfaces. sometimes the old ways are better
+
+- the browser was always the universal API. someone just finally made it official.
+
+- WebMCP expands the attack surface significantly. Agents interacting directly with services - bypassing human UI - means new injection vectors. Forms declaring MCP capabilities become targets. Every web service's security posture is now an agent security question.
+
+- ## 🧭⚖️ Chrome 146 includes an early preview of WebMCP, accessible via a flag, that lets AI agents query and execute services without browsing the web app like a user.
+- https://x.com/firt/status/2020903127428313461
+  - Services can be declared through an imperative navigator.modelContext API or declaratively through a form.
+
+- Could this build upon the accessibility tree and ARIA attributes, instead of creating yet another separate API?
+- Maybe MCPs are better UI for accessibility long term? Then user can use the UI they want. chat, voice +++
+  - Maybe they are if ARIA is too constrained. But I think they should study prior art before shipping yet another separate API.
+
+- the funniest side effect of this will be that sites will mostly adopt this to either rate limit or block agents from using their site
+
+- The brilliance lies in how it standardizes the chaos. Instead of traditional agents struggling with slow, fragile OCR or DOM tree analysis to "guess" button positions, It offers a subtle, friendly interaction layer.
+  - It allows site owners to explicitly define schemas with lightweight code, giving agents a stable CONTRACT via registerTool. 
+  - The site tells the agent how to behave, and the agent executes predictably—no more breaking boundaries.
+- We’re back to wrapping garbage in more layers. If I have to manually code a schema just to tell an agent how to behave on my site, it’s not "auto" anymore. MCP feels like another over-engineered trap. They are just patching their way up instead of killing the protocol.
+
+- this makes the browser a bit like a potential harness
+
+- That is the right way to navigate for agents. Browser use is too slow and too messy to be honest. Soon, this would become an standard.
+
+- This is the browser becoming agent-native. Instead of agents scraping UIs, sites declare what services they offer. Agents call them directly. 'Apps are dead, APIs win' — but now the browser enforces it. The UI layer really is becoming irrelevant.
+
+- Chrome embedding MCP natively is massive. Websites can declare AI-callable services via forms and navigator.modelContext. Security teams: think about agents executing your backend directly. Input validation just got more interesting.
+
 - ## browser-use - [Closer to the Metal: Leaving Playwright for CDP _202508](https://browser-use.com/posts/playwright-to-cdp)
   - Playwright and Puppeteer are great for making QA tests and automation scripts short and readable
   - We decided to peek behind the curtain and figure out what the browser was really doing, and it made us decide to drop playwright entirely and just speak the browser's native tongue: CDP.

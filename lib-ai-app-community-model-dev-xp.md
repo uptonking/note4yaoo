@@ -67,6 +67,10 @@ modified: 2025-11-18T13:22:22.078Z
   - what is the latest version of Node.js?
   - 大漠孤烟直 出自哪里? 上下句是什么？ 表达什么意思？ 有其他地方引用过这句吗?
 
+- cowork-model
+  - macos model
+  - shell model
+
 - qwen3 🌹 /能力全/thinking开关/内容丰富
   - 4b及14b的输出内容都比较详细，经常包含表格📈
 
@@ -148,6 +152,8 @@ modified: 2025-11-18T13:22:22.078Z
   - 擅长用渐变色块代替图片占位符
   - 写完代码后一般还会讲解说明一段
 
+- devstral-2512-24b
+  - 前端landing-page是tailwind风格, 但整体白色简约，色彩不丰富
 - devstral-2507-24b /欧洲多语言/instruct
 
 - qwen2.5-coder-32b /微调多
@@ -173,6 +179,10 @@ modified: 2025-11-18T13:22:22.078Z
   - webgen生成单页面的效果远不如uigen/qwen3-coder
   - 似乎不擅长tailwind, 生成页面的风格偏非tailwind样式的传统网页
   - 经常出现部分元素样式错乱的问题
+
+- [ruv/ruvltra-claude-code · Hugging Face](https://huggingface.co/ruv/ruvltra-claude-code)
+  - The World's First LLM Optimized for Claude Code
+  - Self-Learning Intelligence (SONA): The model continuously improves from interactions, learning your coding patterns, preferences, and project-specific conventions.
 
 ## data-viz/charting 📊
 

@@ -687,6 +687,17 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
   - We just released gWorld — open-weight visual world models for mobile GUIs (8B and 32B).
   - The core idea: Instead of predicting the next screen as pixels (diffusion, autoregressive image gen), gWorld predicts it as executable web code. You render the code, you get the image. This sounds simple but it works remarkably well because VLMs already have strong priors on structured web code from pre-training.
 
+- ## [GLM-4.7-Flash reasoning is amazing : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1qykuxd/glm47flash_reasoning_is_amazing/)
+  - The model is very aware when to start using structured points and when to talk directly and use minimal tokens.
+  - For example I asked it a maths problem and asked it to do web search, when he saw the math problem he started to put the problem into different pieces and analyze each and then achieved conclusion.
+  - where when it was operating in agentic environment it's like "user told me .., I should..." Then it calls the tool directly without Yapping inside the Chain-Of-Thought.
+  - Another good thing that it uses MLA instead of GQA which makes it's memory usage significantly lower and allows it to fit directly on some GPUs without offload.
+
+- I have been using GLM4.7 for almost 2 weeks now, I feel its good and bad at the same time, its good with small deterministic tasks, but breaks down when the tasks get bigger, didnt try to solve maths with it though. I am talking about coding.
+
+- I find initial generations are incredible but then it starts looping at slightly longer contexts (> 20k).
+
+
 - ## [GLM 4.7 Flash going into infinitive thinking loop every time : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qrr8ti/glm_47_flash_going_into_infinitive_thinking_loop/)
 - maybe lower your temp to like 0.1-0.3 for math problems, the randomness makes them go nuts
 - Temperature == 0.2 Huge improvement IMX.

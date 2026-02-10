@@ -886,7 +886,15 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
-- ## 
+- ## [Is Local LLM the next trend in the AI wave? : r/LocalLLM _202602](https://www.reddit.com/r/LocalLLM/comments/1r0swmh/is_local_llm_the_next_trend_in_the_ai_wave/)
+- I mean local is always going to be limited by your gear - to have a ‘good’ local LLM you’re talking 5k minimum to have something reasonable and really 10k+ to get something that is significant value add
+  - I mean even with OpenClaw there are a ton of reviews basically saying it is near useless without hooking it up to one of the large models.
+
+- Local LLMs are much less capable with 16-24GB GPU memory limit. We need cheap GPUs with like 128GB memory.
+- Remember to factor in electricity too 
+
+- I think it could be a business for a while. I just don't know how to find clients. LOL There's bound to be people who want local llms but don't know how to do it.
+  - Finding clients for niche tech like local LLMs can be tough, especially if cold outreach is not your thing. Try looking for communities where small businesses or devs vent about AI challenges and jump in to share your knowledge. Tools like ParseStream can help by tracking those discussions across multiple platforms so you do not miss any real opportunities to help.
 
 - ## [Anyone here actually using AI fully offline? : r/LocalLLM _202602](https://www.reddit.com/r/LocalLLM/comments/1qwjgj4/anyone_here_actually_using_ai_fully_offline/)
 - I run vLLM in docker for inference and use the API to connect various services. Which is what everyone does. You’re not going to get anything different from anyone if you’re speaking only about inference.

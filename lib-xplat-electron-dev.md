@@ -25,11 +25,12 @@ modified: 2021-05-13T03:08:52.583Z
 
 - who is using #electron 🌰
   - popular: vscode/theia/opensumi, jupyter, postman-like(web+pc)
-  - known: qq, slack, mattermost, zulip
+  - known: obsidian, qq, slack, mattermost, zulip, figma-desktop
   - db: mongodb-compass, dbgate, beekeeper, sqlectron
   - notes(web/pc): obsidian, joplin(AGPL), marktext(MIT), siyuan(AGPL), trilium(AGPL), notable(MIT), notesnook(GPL), Zettlr(GPL), yn(AGPL), tinywrite
   - open: drawio(apache2), tagspaces, medis
-  - ai: comfyui, transformerlab-train-chat
+  - ai: comfyui, transformerlab-training-chat
+  - ai-known: codex-app, claude-cowork
   - trending: aionui
   - 经典示例: file-manager, note-taking, reader-epub
 
@@ -58,9 +59,9 @@ modified: 2021-05-13T03:08:52.583Z
   - 不建议基于electron实现自定义浏览器，要考虑支持各浏览器自带的扩展商店，可在自己的应用层实现
   - ? electron-for-android/ios vs apps
 
-- what can chromium and nodejs do, but tauri webview cannot do?
+- 🤔 what can chromium and nodejs do, but tauri webview cannot do?
   - compatibility: safari-webkit cons
-  - agentic browser
+  - agentic browser-use
   - headless browser
   - Execute Dynamic Code (The "Interpreter" Pattern): using vm or eval
     - 是否可用于sandbox场景
