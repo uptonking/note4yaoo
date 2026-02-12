@@ -495,6 +495,10 @@ modified: 2025-02-21T17:17:42.225Z
   - An intelligent agent harnessing cloud-based Claude Code to realize a Manus-like autonomous experience.
   - Poco is a cloud-based AI agent execution platform inspired by Anthropic's Cowork. It orchestrates Claude AI agents to perform autonomous tasks beyond coding—organizing files, writing documents, analyzing data, and more—in a distributed cloud environment.
   - Works in parallel — Queue multiple tasks without waiting for completion
+  - [【开源】Poco：把 Claude Code 装进口袋，把 CoWork 搬上云 _202602](https://linux.do/t/topic/1605866)
+    - Poco 意思是 Your Pocket Coworker，希望把 Claude Code 的能力拓展到云端
+    - 支持接入 MCP、Skills
+    - 对话界面进行了很多优化，可以看到不同格式的产物（代码、markdown、ppt、word、xlsx 等等），我们还学习 Manus，添加了沙盒执行过程的重放，能够看到 agent 每一步查看浏览器和执行命令的完整过程
 
 - https://github.com/kuse-ai/kuse_cowork /MIT/202601/rust/ts
   - https://www.kuse.ai/

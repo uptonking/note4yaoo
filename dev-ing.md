@@ -299,6 +299,39 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-log
   - ?
 
+## 0211
+
+- the `README.md` shows how to setup app with swift impelmentation at `Build from Source`. please add `docs-mlx-py.md` to guide the user how to setup with mlx python backend.
+
+- file `dev-arch-gguf-mlx.md` describes the core architecture for this llm chat app. analyze how the mlx swift server is implemented and integrated into the backend. please write a similar python implementation to replace the swift implementation. You should keep the existing features still working, and keep as many code as possible unchanged, then add a environment variable `ENABLE_MLX_PY_BACKEND`, if it's set to true, use python impelementation instead of the swift implementation. if it's set to false or unset, existing swift implementation is still used. 
+  - it's better to implement the python package as a separate module so that it's easy to maintain and keep changes to existing code as small as possible.
+  - avoid writing python implementation from scratch, use project mlx-openai-server at folder `/Users/yaoo/Documents/repos/ai-ml-llm/all-runtime-mlx/mlx-openai-server` as a util/library, analyze its architecture, write a wrapper or glue code to implement the features like swift. make it easy for me to update the wrapper/glue code if mlx-openai-server code is updated.
+
+- this project is a llm chat app built with tauri. it supports using external llm api like openai/mistral api, as well as running local .gguf models and mlx models to provide api. 
+  - please analyze the project architecture and related code. explain the core architecture and data flow for the extensible architecture to support local models in different formats. write your result to dev-arch-gguf-mlx.md. 
+  - there are different approaches to run local models. is it possible to write a extensible module to make the logic of running swift mlx server swappable. i want to use python mlx-server implementation to replace the swift implementation.
+
+- 🤔 when i use claude-code-cli on my mac, why is it always using sonnet? will it switch between sonnet and opus automatically according to task complexity just like it uses haiku automatically ? 
+  - Claude Code does NOT automatically switch between Sonnet and Opus based on task complexity.
+  - Main model (Sonnet 4) — Used for the primary agent loop (reasoning, coding, tool use)
+  - Haiku — Used automatically for lightweight/cheap subtasks like: File summarization Background context gathering Simple classifications
+  - Unlike the Sonnet → Haiku auto-switching, there is no automatic escalation to Opus for complex tasks. Opus is only used if you explicitly request it.
+
+- i want to run a local openai-compatible api . project mlx-lm and project mlx-openai-server both provide a solution. you can read mlx-lm/SERVER.md and mlx-openai-server/README.md. please analyze the code and architecture, compare the  solutions to help me choose one.
+
+- 🤔 can i open multiple terminals on different folders, and run multiple claude code at the same time to work on different projects? will messages get messy and confused?
+  - Yes, You Can Run Multiple Claude Code Instances Simultaneously
+  - Each terminal session runs as a completely independent instance.
+- what if i open multiple terminals on the same folder, and run claude code on each terminal? 
+  - Yes, you can do it, but it gets risky.
+  - Each terminal is still its own independent process with its own conversation. Claude won't confuse who said what across sessions.
+  - But the Real Problem: File Conflicts
+
+- 🤔 i want to package python backend code into stand-alone executables.  what's the most popular solutions? pyinstaller is licensed under GPL, why is it popular?
+  - PyInstaller comes with a special "Bootloader Exception" (similar to the GCC Runtime Library Exception). 
+  - The Bootloader Exception: The actual executable you generate contains a small piece of binary code called the "bootloader" (which sets up the environment and runs your script). The authors explicitly grant an exception that allows you to link this bootloader with your own proprietary code without triggering the GPL requirement to open-source your app.
+  - PyInstaller has a massive library of "hooks" that automatically find hidden imports for complex libraries like pandas or matplotlib, which often break in other packagers.
+
 ## 0208
 
 - context-engine for claude/MCP-client

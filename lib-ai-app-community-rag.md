@@ -682,7 +682,9 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## 🤔 [Has anyone built RAG for real-time conversation scenarios? Latency is killing me : r/Rag](https://www.reddit.com/r/Rag/comments/1r257tc/has_anyone_built_rag_for_realtime_conversation/)
+  - Think real-time meeting assistants or interview coaching tools where you need to retrieve and present context within 1-2 seconds while someone is still talking. The problem is that my current setup is too slow for real-time use. 
+  - I am using Pinecone for vector search and GPT-4o for generation. Each query takes around 3-4 seconds end to end which is fine for async use cases but unusable for live assistance.
 
 - ## 🤼 [Knowledge Distillation for RAG (Why Ingestion Pipeline Matters More Than Retrieval Algorithm) : r/Rag _202602](https://www.reddit.com/r/Rag/comments/1r129pa/knowledge_distillation_for_rag_why_ingestion/)
   - We obsess over retrieval algorithms (hybrid search, reranking, HyDE, query decomposition) while completely ignoring that retrieval operates over fundamentally broken representations of knowledge.

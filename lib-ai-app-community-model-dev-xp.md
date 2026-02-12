@@ -12,6 +12,7 @@ modified: 2025-11-18T13:22:22.078Z
 - models-variants
   - watching: openai, claude, qwen, deepseek, gemini/gemma, mistral/codestral, glm, kimi, minimax
   - variants: mlx, unsloth, quants
+    - 考虑优化版模型 mxfp4, awq, dwq
   - 测试模型时可能更希望速度快(小参数)，但做任务或规划时更希望质量好(大参数)，要取舍
   - 📱 端侧模型还要考虑电源及功耗问题, 实测macbook-air在跑模型时掉电很快
     - 端侧最好用 api-key + tiny-local-llm

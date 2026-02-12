@@ -61,6 +61,7 @@ modified: 2026-01-14T18:57:01.673Z
   - 用户自己上传的pdf，就类似词典软件的词库
   - llama.cpp ui + mlx/vllm
   - huggingface-cli, 下载模型优先搜索modelscope
+  - vllm-mlx的性能比llama.cpp好很多，可尝试作为可选后端
 - 🏘️ 参考主流厂商 coding-agent-cli 的实现, 有第三方在cli上实现web/electron/tauri, 如aionui
   - 采用aionui封装cc/gemini-cli的思路来封装llama.cpp/mlx
   - 同时需要支持 openai-compatible api, 这样方便低性能的电脑/客户端使用

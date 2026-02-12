@@ -221,6 +221,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 参考janai/pipeshub, 既支持选择本地/api模型，也支持选择图片/文档
     - ocr/vlm comparison-matrix/playground: 识别对比, 翻译对比
       - ocr模型的输出统一为openai格式、统一标签(暂无标准)
+    - AI异常后，human-in-the-loop的核心功能，还能用，还好用
     - 允许分享文档/插画中的模型配置/运行日志, 将prompt放入git-commit，还是直接放入图片?
     - ❓ 如何一键切换到cloud版
     - https://github.com/tc-mb/llama.cpp-omni is the first Omni multimodal inference engine built on llama.cpp.
@@ -544,6 +545,13 @@ modified: 2025-03-22T16:10:24.856Z
   - https://github.com/cheahjs/free-llm-api-resources
 
 - news
+  - [kiro企业逆向opus4.6免费蹬 ](https://linux.do/t/topic/1606386)
+  - [Codex 用不完 试运行一下个人 LDC 小店 ](https://linux.do/t/topic/1606407)
+    - https://sub2api.touchx.tagzxia.com
+    - 每日限制 29$ 这个是 7 天卡，周限额是 79$
+    - 2.28 日所有的 兑换码 和 订阅 都会被撤销，所以 至少要在 2.21 日前兑换
+  - [codex 额度分享 ](https://linux.do/t/topic/1606571)
+    - 搞了 400 个 GPT 免费号用不完，Key 至 15 号凌晨无限额度
   - [讯飞的GLM-4.7免费用 _202602](https://linux.do/t/topic/1573384)
     - 限免至0305, 20qps
     - [讯飞星辰MaaS平台](https://maas.xfyun.cn/modelSquare)
@@ -693,6 +701,8 @@ modified: 2025-03-22T16:10:24.856Z
     - cc支持
   - [小辣椒 公益站～(～￣▽￣)～](https://yyds.215.im/console/topup)
     - cc
+  - [真好记公益站](https://newapi.zhenhaoji.qzz.io/console/personal)
+    - 随便刷吧，可能刷崩了，我就关站了
   - [API分享站](https://new-api-bxhm.onrender.com/console/personal)
     - [【API分享站】公益站主帖 ](https://linux.do/t/topic/1355814)
     - 反代 kiro
@@ -715,7 +725,6 @@ modified: 2025-03-22T16:10:24.856Z
   - [ibsgss公益站](https://codex.ibsgss.uk/console/personal), 签到
     - [【ibsgss公益站】支持codex cli / cherry  ](https://linux.do/t/topic/1434464)
     - 维护期限：到 codex-team 渠道耗尽为止
-    - [【ibsgss公益站】支持codex cli / cherry ](https://linux.do/t/topic/1434464)
   - [Einzieg API](https://api.einzieg.site/console/personal), 签到
     - 仅提供codex模型
     - [【Einzieg公益站】再次启动 ](https://linux.do/t/topic/1569418)
@@ -733,7 +742,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 包括 deepseek，硅基流动全模型，阿里云千问全模型，glm，gemini，codex
     - 有claude, 无opus
     - 默认 RPM30，1 级可注册，不允许批量测活
-  - [纳米哈基米](https://free.nanohajimi.mom/), 签到
+  - [纳米哈基米](https://free.nanohajimi.mom/console/personal), 签到
     - Gemini Imagen
     - [【纳米哈基米 · 公益站】 支持香蕉Pro画图，Veo视频，Gemini全系模型 ](https://linux.do/t/topic/1512770)
   - [玩票 API](https://api.361888.xyz/console/personal)
@@ -741,19 +750,23 @@ modified: 2025-03-22T16:10:24.856Z
   - [sorai API](https://newapi.sorai.me/console/personal)
     - [codex公益站启动 _202601](https://linux.do/t/topic/1524003)
     - 只有 codex 模型
-  - [云端API](https://cloudapi.wdyu.eu.cc/pricing), 签到, 生图
+  - [云端API](https://cloudapi.wdyu.eu.cc/console/personal), 签到, 生图
   - [Neb 公益站](https://ai.zzhdsgsss.xyz/console/personal), 签到
     - 采用按量计费，每次0.01，注册送2000次，因为该阶段的初衷就是最大化利用这些将要过期的key。
     - 当前额度用完或2026.1.31之后进入第二阶段，采用按量计费，倍率会很低
     - 会不会有签到站不会，因为我太懒了
     - 之前想过接入CC，但是对于我这种新手来说调教整个流程还是太难了
     - [【Neb 公益站】这是主贴 ](https://linux.do/t/topic/1354122)
+  - [Ciprohtna](https://anthorpic.us.ci/console/personal), 签到
+    - [【Ciprohtna 公益站】上新 10 LDC = $100 一天订阅畅享包 ](https://linux.do/t/topic/1606615)
+    - 注意！没有 opus，opus 在后台都会被重定向到 sonnet
   - [SNOW AI CLI](https://snowcli.com/dashboard/overview), 签到但余额仅当天有效
     - Kiro政策似乎有变化，Opus不稳定，但不是不能用，Sonnet和Haiku正常
     - 特别注意，Kiro逆向因为Token返回数据不精确，所以Snow CLI 无法准确判断自动压缩，根据经验，上下文到达25k~30K左右差不多就满了（这不是真的只有这么短）而是Kiro逆向没有返回缓存信息实际上下文可能非常接近200k了
     - [【Snow CLI】Console 开放部分注册人数，以及近期更新汇总 ](https://linux.do/t/topic/1568653/1)
     - 依旧免费提供稳定的 Kiro 逆向、Codex、KIMI 以及适用于 Codebase 的嵌入模型
   - [GLM 仪表板](https://pureai.shop/dashboard.html)
+    - glm + qwen
   - [FovtAPI](https://api.voct.top/console)
     - 模型旧，模型少
     - [NewAPI签到系统](https://gift.voct.top/dashboard/checkin), ~~已失效~~

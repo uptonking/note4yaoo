@@ -74,6 +74,84 @@ modified: 2024-01-25T13:33:23.267Z
 - Wow, just single DB for such huge workload! Must be a huge machine.
   - It's not huge! 4 cores and 24GiB RAM (actually I believe 16GiB would be fine too). Plus we also store sandbox pageviews (hourly, daily, weekly, monthly)/users/teams etc...
 - Incredible! I am using a little bigger machine for a much lesser scale application.  Likely I am doing something wrong.
+# discuss-sandbox-agent
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🆚🏘️ Agent 与 Sandbox 的两种集成架构模式
+- https://x.com/shao__meng/status/2021488624446079160
+  - 来自 @LangChain 创始人 @hwchase17 的分享，他提出了两种集成架构：Agent 运行在 Sandbox 内部，或外部。
+- 模式一：Agent 运行在沙箱内部（Agent IN Sandbox）
+  - 架构特征： 将 Agent 框架打包进 Docker 镜像或 VM，在沙箱内启动，外部通过 HTTP/WebSocket 与之通信。
+- 优势：
+· 与本地开发体验一致——本地怎么跑，沙箱里就怎么跑，降低了部署的心智负担。
+· Agent 与执行环境紧耦合——Agent 可以直接操作文件系统、维护复杂的环境状态，适合需要持续与特定库交互的场景。
+- 代价：
+文章列举了五个明确的 trade-off：
+1. 通信基础设施成本——需要自行搭建跨沙箱边界的网络通信层（除非 SDK 提供商已封装好）。
+2. API 密钥暴露风险——Agent 需要在沙箱内调用推理 API，密钥必须存在于沙箱中。一旦沙箱被攻破（无论是隔离技术漏洞还是 prompt injection 导致的凭证外泄），密钥即面临风险。
+3. 迭代速度慢——每次更新 Agent 逻辑都需要重建镜像、重新部署。
+4. 冷启动问题——沙箱需要先恢复（resume）才能让 Agent 活跃，需要额外的编排逻辑。
+5. 知识产权风险——Agent 的全部代码和 prompt 都运行在沙箱内，容易被整体提取。
+
+- 特别值得注意的是 Nuno Campos 补充的一个深层安全洞察：在此模式下，Agent 的任何组件都不能拥有比 bash 工具更高的权限。举例来说，如果 Agent 同时拥有 bash 工具和 web fetch 工具，那么 LLM 生成的代码就能无限制地执行网络请求——这是一个重大的安全隐患。安全边界围绕的是整个 Agent，而非单个工具。
+
+- 模式二：沙箱作为工具（Sandbox as Tool）
+- 架构特征： Agent 运行在本地或你的服务器上，需要执行代码时通过 API 远程调用沙箱服务（E2B、Modal、Daytona、Runloop 等）。
+- 优势：
+· 快速迭代——改 Agent 逻辑不需要重建镜像，开发效率高。
+· 密钥安全——API 密钥留在 Agent 侧，沙箱内只有执行，不持有敏感信息。
+· 关注点分离更清晰——Agent 状态（对话历史、推理链、记忆）与沙箱解耦。沙箱崩溃不会丢失 Agent 状态，切换沙箱后端也不影响核心逻辑。
+· 并行执行——可以同时在多个远程沙箱中并行执行任务。
+- 按需付费——只在执行代码时才产生沙箱费用，而非为整个 Agent 进程持续付费。
+- Zo Computer 的 Ben Guo 还补充了一个前瞻性观点：未来 Agent 推理可能需要运行在 GPU 机器上，而沙箱环境的需求完全不同，两者的基础设施要求会进一步分化，提前解耦是明智的。
+- 代价：
+  - 主要是网络延迟。每次执行调用都要跨网络边界，对于大量小粒度执行操作的工作负载，延迟会累积。不过文章也指出，有状态会话可以缓解这个问题——变量、文件、已安装的包在同一会话内持久化，减少往返次数。
+
+- 两种架构模式的选择建议
+- 选择模式一（Agent IN Sandbox）
+· Agent 与执行环境紧耦合
+· 希望生产环境与本地开发一致
+· SDK 提供商已处理好通信层
+- 选择模式二（Sandbox as Tool）
+· 需要快速迭代 Agent 逻辑
+· 需要保护 API 密钥安全
+· 偏好 Agent 状态与执行环境分离
+
+- 理想状态下沙箱中的agent是不需要快速迭代的，是完全和业务解耦的一个通用agent，业务相关的部分完全交给cli和skill来实现动态更新。 安全问题随着模型能力的提高，对于prompt injection的防范会相对轻松
+
+- 开发爽一时，安全风险高。将 Key 置于沙箱内部确实极大增加了 Prompt Injection 的攻击面。但若完全剥离，跨边界通信的延迟与复杂度又是另一项沉重的工程税收。
+
+- ### The two patterns by which agents connect sandboxes
+- https://x.com/hwchase17/status/2021261552222158955
+  - More and more agents need a workspace: a computer where they can run code, install packages, and access files. Sandboxes provide this.
+  - There are two architecture patterns for integrating agents with sandboxes:
+  - Pattern 1 (Agent IN Sandbox): Agent runs inside the sandbox, you communicate with it over the network. Benefits: mirrors local development, tight coupling between agent and environment.
+  - Pattern 2 (Sandbox as Tool): Agent runs locally/on your server, calls sandbox remotely for execution. Benefits: easy to update agent logic, API keys stay outside sandbox, cleaner separation of concerns.
+  - `deepagents` supports both patterns with simple configuration
+
+- ### I hold this truth to be self-evident: Putting the agent in a different container than the environment makes a lot more architectural sense.
+- https://x.com/bernhardsson/status/2021527682534760709
+- yep - learned this the hard way with container networking latency. putting agent + env in the same pod cuts p50 latency by ~40ms and eliminates a bunch of failure modes around container orchestration race conditions
+
+- Separation wins at scale. Single container = tight coupling. When your agent crashes, it shouldn't take the env with it. Latency matters less than fault isolation when you're running 1000+ concurrent sessions. Ask me how I know.
+  - State management becomes the entire game. File-based task state forces deterministic retries, audit trails, and canary deploys. Every concurrency problem becomes debuggable. That's where the moat lives.
+
+- ### Default to #2. Sandbox as tool → clean separation, faster updates, better secret isolation.
+- https://x.com/AstasiaMyers/status/2021389843318919230
+- API keys must live inside the sandbox to allow the agent to make inference calls.
+  - That's false; the understood pattern today is that you proxy inference calls and inject secrets outside the sandbox
+
+- In #2, your server now has access to all of the same API keys. if one of the N agents you’re running on that server get compromised, your exposure is much larger. Agent in sandbox allows you to scope and inject scoped credentials, limiting exposure and better manage resources.
+  - there is no difference when all agents use same API keys, that's the most common case.
+- you can do this with terraform I think.
+
+- yes. agent-sandbox decoupling also lets you run functional tests against the sandbox API separately. learned this after our first sandbox had a subtle race condition that only showed up when agent ran multiple commands in parallel
 # discuss-iframe
 - ## 
 

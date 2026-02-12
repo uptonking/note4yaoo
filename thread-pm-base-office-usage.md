@@ -9,6 +9,27 @@ modified: 2023-03-01T14:10:06.993Z
 
 # guide
 
+# discuss-stars
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [企业内使用office在线编辑方案 _202602](https://linux.do/t/topic/1603081)
+  - 公司内部使用在线编辑 word, 目前简单查了一下 看是 wps 的开放服务，满足需求，付费 1 月最少 750, 套餐 1.8w 起.
+  - 有没有佬友对比过 onlyoffice, 或者其他方案的。推荐一下.
+
+- 可以试试 onlyoffice，好几年前做过对比，最好选了这个，不过感觉 onlyoffice 和微软的 office 有一些兼容问题，不知道是不是单纯的字体原因， 还有 onlyoffice 在移动端编辑的话，需要加载几十 M 的 SDK，这个很不方便，不知道现在改了没
+
+- 先说结论，这个需求解决方案的经典组合是 Nextcloud（文档 / 权限 / 分享 / 版本）+ ONLYOFFICE 或 Collabora（在线编辑器）。
+  - 开源自建方案 Nextcloud + ONLYOFFICE/Collabora 和 WPS 的商业一体化服务相比，亮点主要集中在数据主权、可集成性、可控性、成本结构。
+
+- 实际我关注首要是格式兼容性。开源方案可以作为最终的后期节源参考.
+
+- ONLYOFFICE Personal 是一款基于 wasm 运行的 Office 办公套件，无需服务端直接运行。
 # discuss-builder
 - ## 
 

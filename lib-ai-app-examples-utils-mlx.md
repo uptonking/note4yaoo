@@ -18,6 +18,18 @@ modified: 2025-11-01T10:54:26.044Z
   - Low-rank and full model fine-tuning with support for quantized models.
   - Distributed inference and fine-tuning with mx.distributed
   - [MLX Community Projects · ml-explore/mlx _202402](https://github.com/ml-explore/mlx/discussions/654)
+  - https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/SERVER.md
+    - use mlx-lm to make an HTTP API for generating text with any supported model. 
+    - The HTTP API is intended to be similar to the OpenAI chat API.
+    - not recommended for production as it only implements basic security checks.
+    - SSE
+    - LoRA Adapters
+    - LRU prompt cache with trie-based prefix matching
+    - 🐛 
+      - 只支持text, 不支持vlm
+      - Python's built-in ThreadingHTTPServer (threading-based)
+      - single model per server
+      - single queue
 
 - https://github.com/Blaizzy/mlx-vlm /1.8kStar/MIT/202511/python
   - a package for inference and fine-tuning of Vision Language Models (VLMs) and Omni Models (VLMs with audio and video support) on your Mac using MLX
@@ -26,6 +38,37 @@ modified: 2025-11-01T10:54:26.044Z
   - https://mlxgui.com/
   - A lightweight Inference Server for Apple's MLX engine with a GUI.
   - TLDR - OpenRouter-style v1 API interface for MLX with Ollama-like model management, featuring auto-queuing, on-demand model loading, and multi-user serving capabilities via single mac app.
+
+- https://github.com/cubist38/mlx-openai-server /MIT/202601/python
+  - A high-performance API server that provides OpenAI-compatible endpoints for MLX models. 
+  - Developed using Python and powered by the FastAPI framework, it provides an efficient, scalable, and user-friendly solution for running MLX-based vision and language models locally with an OpenAI-compatible interface.
+  - Multimodal model support with vision, audio, and text
+    - Text, Multimodal, Image Gen/Edit, Embeddings, Whisper
+  - Easy Python and CLI usage
+  - LoRA adapter support for fine-tuned image generation and editing
+  - 支持multiple models, 通过yaml config
+    - Multi-process (spawn) per model
+    - Process isolation via HandlerProcessProxy 
+    - InferenceWorker pattern (dedicated thread per handler)
+  - 支持Structured Outputs: JSON schema via outlines
+  - Queue: 3-level, per-model config
+  - SSE
+  - LoRA Adapters
+  - Extensive parser/converter system
+  - use `mlx-lm` as its core text generation engine
+  - mlx-vlm for vlm
+  - mflux for image gen
+  - mlx-embeddings for embedding
+  - mlx-whisper for audio
+  - mlx-openai-server can be used as a library
+    - You can import and use the async functions directly: from app.main import start, start_multi
+    - You can also use the handlers directly without the web server: from app.schemas.openai import ChatCompletionRequest
+    - Or use the model wrappers directly (lowest level): model = MLX_LM(model_path="mlx-community/Mistral-7B-Instruct-v0.3-4bit")
+  - 需要手动配置模型的 model_type, 之后 The server uses `model_type` parameter to determine which handler (and underlying library) to use
+    - routing is explicit and configuration-driven
+    - a simple factory pattern based on the model_type string
+  - https://github.com/arcee-ai/fastmlx /apache2/202503/python/inactive
+    - production ready API to host MLX models.
 
 - https://github.com/madroidmaq/mlx-omni-server /638Star/MIT/202512/python
   - MLX Omni Server provides dual API compatibility with both OpenAI and Anthropic APIs, enabling seamless local inference on Apple Silicon using the MLX framework.
@@ -38,15 +81,6 @@ modified: 2025-11-01T10:54:26.044Z
     - MLX Studio using MLX Omni Server as Backend with many cache improvements and tool calling for Claude Code CLI e Qwen-CLI with Qwen3 models
     - wraps `mlx-omni-server` with production-ready features: smart prompt caching (99%+ cache hit rates), on-demand model loading, Claude Code integration, and a web UI.
     - MLX Studio auto-downloads models on first use, or you can pre-download
-
-- https://github.com/cubist38/mlx-openai-server /MIT/202601/python
-  - A high-performance API server that provides OpenAI-compatible endpoints for MLX models. 
-  - Developed using Python and powered by the FastAPI framework, it provides an efficient, scalable, and user-friendly solution for running MLX-based vision and language models locally with an OpenAI-compatible interface.
-  - Multimodal model support with vision, audio, and text
-  - Easy Python and CLI usage
-  - LoRA adapter support for fine-tuned image generation and editing
-  - https://github.com/arcee-ai/fastmlx /apache2/202503/python/inactive
-    - production ready API to host MLX models.
 
 - https://github.com/llama-farm/llamafarm /760Star/apache2/202601/python/go/ts/electron
   - https://llamafarm.dev/

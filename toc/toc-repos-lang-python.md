@@ -42,6 +42,10 @@ modified: 2025-02-26T15:04:15.883Z
 - https://github.com/roboflow/template-python /202210/python
   - A template repo holding our common setup for a python project.
   - make `check_code_quality` to check code quality (PEP8 basically)
+
+- https://github.com/ShakeefAhmedRakin/electron-react-ts-tailwind-shadcn-fastapi-template /202504/python/ts
+  - fully-featured template for building cross-platform desktop apps with modern web and backend technologies
+  - FastAPI backend bundled with PyInstaller
 # fastapi
 - https://github.com/zhanymkanov/fastapi-best-practices
   - Opinionated list of best practices and conventions I use in startups.

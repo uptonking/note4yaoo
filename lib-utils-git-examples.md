@@ -112,6 +112,10 @@ modified: 2023-08-29T10:12:22.345Z
   - Native Git Storage: Manage issues, users, and comments directly within your repository
   - Third-Party Bridges: Easily synchronize issues with platforms like GitHub and GitLab using bridges
   - Flexible Interfaces: Choose how you interact - via CLI, TUI, or a web browser
+
+- https://github.com/mweidner037/git-rich-text /MIT/202404/ts/inactive
+  - Collaborative rich text editing over git, with conflict-free (GDocs-style) merging and cherry-picking.
+  - Made with list-positions / @list-positions/formatting, Quill, and Electron.
 # git-like
 - https://github.com/GerritCodeReview/jgit /EDL(BSD)/202310/java
   - https://eclipse.dev/jgit/

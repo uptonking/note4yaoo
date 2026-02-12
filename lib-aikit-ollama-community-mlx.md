@@ -21,7 +21,11 @@ modified: 2026-01-14T18:59:01.949Z
 
 - ## 
 
-- ## 
+- ## I attached a benchmark chart (Apple M4 Max 128GB, 4-bit) showing vllm-mlx beating llama.cpp across multiple model families, roughly ~1.17× to 1.87× faster depending on the model. _202602
+- https://x.com/mynamekarma/status/2021375707021181330
+  - And it’s not just text-only either, multimodal caching is getting stupid fast (image prefix cache 21.7s → 0.78s, up to 28×).
+- Compare it to mlx-server, not llama.cpp.
+
 # discuss-news
 - ## 
 

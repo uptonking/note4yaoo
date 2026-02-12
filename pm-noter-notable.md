@@ -164,6 +164,7 @@ modified: 2023-11-28T14:48:45.910Z
   - 简单查看浏览的功能不足以支撑商业化的产品，可增加更多功能如 搜索、编辑、批注、集成
   - 同步、协作、素材模版、资源包
   - 👀 不愿意付费的/够用就行的/nice-to-have: 前端交互
+  - api token 希望能加密，但其他文本希望能显示
 
 - 为成功的产品做生态
   - unsloth给llm写tutorials, 比官方更早fix prompts issues, 增大context, 版本多(The biggest difference I would say isn't the quants, but rather our bug fixes for every model)

@@ -288,6 +288,10 @@ Only use the provided information.
 
 - only files above should be ignored, other `.env.*` files should remain tracked in git. can you combine the gitignore rules to one single line?
 
+- in a reactjs infinite scrolling list webapp, the list keeps showing loading icon when scrolling, analyze possible reasons and solutions
+
+- 实现一个解决背包问题的在线讲解页面，提供一个预设好的参数，打开就开始播放
+
 - [AI Coding Prompts | PromptBase](https://promptbase.com/coding)
 - [CodePromptFu.com - Find the best AI prompts for coding](https://www.codepromptfu.com/)
 
@@ -305,6 +309,7 @@ Only use the provided information.
 
 - Write a Makefile to convert JPEG images to PNG
 
+- Write a program that removes the first 1 KiB of a file in python
 - Write a program that removes the first 1 KiB of a file in golang
 
 - Write a Oracle SQL query to find the nth number in the Fibonacci Sequence.

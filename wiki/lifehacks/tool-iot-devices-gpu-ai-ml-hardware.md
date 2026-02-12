@@ -28,7 +28,17 @@ modified: 2026-01-15T15:44:10.647Z
 
 - ## 
 
-- ## 
+- ## [Advice: Which MiniPC To Buy? (Framework, Bosgame, Minisforum) - AI MAX 395+/128GB : r/StrixHalo _202602](https://www.reddit.com/r/StrixHalo/comments/1r18v84/advice_which_minipc_to_buy_framework_bosgame/)
+  - Framework - $3700
+  - Minisforum MS-S1 - $3900
+  - Bosgame M5 - $2850
+  - The BOSGAME is significantly cheaper than the other options, but doesn't have a lot of the connectivity options that Minisforum and Framework have.
+
+- I faced a similar question a few weeks ago. I went with a fourth option and ended up purchasing a Corsair AI 300 workstation. It is a little bit more expensive than Bosgame, but cheaper than the alternatives, and it comes with good support and a two-year warranty.
+
+- Framework. They support LVFS so firmware updates are simple under Linux. Standard power supply so easy to replace in future. mITX so easy to move to different case. Basically good flexibility for the future.
+
+- Having proper mini-itx board with normal PC power supply played a role in my choice. I can resell it later as a beefy server if push comes to shove or as a small gaming PC with the original case.
 
 - ## 🆚 [Tested: AMD's Strix Halo vs Nvidia's DGX Spark : r/Amd _202512](https://www.reddit.com/r/Amd/comments/1pxs0dd/tested_amds_strix_halo_vs_nvidias_dgx_spark/)
 - Strix halo doesn’t support FP8 since it’s on rdna 3.5. That’s a tough sell. If these machines used rdna4 they’d be absolute monsters. It’s unfortunate that only the 9070 xt and 9060 xt use rdna4. All of these awesome APUs being released would do so much better with rdna4 imo. Hopefully rdna5/udna1 is implemented in all products when it’s released.

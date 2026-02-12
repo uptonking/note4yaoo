@@ -279,7 +279,17 @@ target/debug/limbo database.db
 
 - ## 
 
-- ## 
+- ## Your Company is a Filesystem
+- https://x.com/runes_leo/status/2021454468836098539
+  - One of the reasons Openclaw is so good is because its entire context is a filesystem on your computer.
+  - Openclaw runs on a computer and lets you talk to it via a chat app like Telegram or iMessage. When you ask it to run a task, it calls the Claude API and uses context from files on your machine. Your conversation with Openclaw is represented as a file on the computer. When you run a task, Openclaw writes to that file. The filesystem is the state.
+  - if Openclaw is useful for our personal lives, how powerful would Openclaw (or other AI agents) actually be if an entire company was represented as a filesystem it could work in?
+
+- 补充一个他没提的：filesystem 不只是 state，更是 memory — agent 的踩坑记录、决策日志、策略参数全是文件，随时间积累越来越强。这才是 compound effect 真正发生的地方。
+
+- 是的，我很久不用web的chatbot了，建了个文件夹每个topic一个子文件夹，沟通记录、思维探索、方案结论全部沉淀为具体文件
+
+- 这个视角很赞。与其说是写代码，不如说是在养一个数字分身。这种基于 filesystem 的 Memory 积累，反而比那些复杂的数据库更直观、更鲁棒。
 
 - ## deepagents-cli 0.0.16 is out: virtual filesystem allows you to expose fs ops to the agent like a filesystem even if they’re backed by a database or object store like Postgres or S3
 - https://x.com/Vtrivedy10/status/2018841161637806521

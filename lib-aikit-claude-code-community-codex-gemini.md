@@ -343,7 +343,7 @@ modified: 2025-12-18T12:27:14.982Z
 
 - ## 
 
-- ## 
+- ## [Codex 5.3 优化 ：工作并行加速 + 回答简洁轻快 ](https://linux.do/t/topic/1603762)
 
 - ## [codex污染这么严重吗？  _202602](https://linux.do/t/topic/1585312)
 - OpenAI 老问题了，语料污染非常严重

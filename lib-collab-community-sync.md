@@ -178,7 +178,20 @@ modified: 2022-11-29T20:41:25.566Z
 
 - ## 
 
-- ## 
+- ## Git is actually a really good app data syncing layer.
+- https://x.com/schickling/status/2021559022755729613
+  - Planning to embrace it heavily for my personal apps with a LiveStore sync adapter. Auth already built in via GitHub.
+  - Also gives you out-of-the-box version history, auditing, branching, PRs for app data etc. 
+  - Feels like the right foundation for agentic collaboration.
+  - Also interop with other existing systems like Notion is certainly feasible.
+
+- I'm using git to track app data changes in my personal productivity app also (notes, lists, time tracker, etc.). It's nice knowing that if an agent wipes out my todo list I can always roll back any edit.
+
+- We got burned using git as a backend. You will re-invent or workaround so many things. 10/10 wouldnt recommend
+  - you can't store anything else than text files in git. 
+  - at first you think, oh cool i can serialize my app state to JSONL. this can't be that hard? 
+  - and whups you loose everything that a database gives you (acid, transactions, sql, etc.). 
+  - and then you realize that git can't even handle app state that frequently changes. the amount of data is overwhelming for git.
 
 - ## git as app sync engine
 - https://x.com/schickling/status/1832706699594965357

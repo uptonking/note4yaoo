@@ -45,6 +45,26 @@ modified: 2026-01-17T22:41:25.867Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🔍 we've taken the first steps in eliminating opencode's ripgrep dependency 
+- https://x.com/thdxr/status/2021422750385176905
+  - https://github.com/dmtrKovalenko/fff.nvim /rust
+  - wrapped it up into a nice native dep for us
+  - avoids having to install and call into ripgrep as a separate process and is more performant
+  - there's a lot of underlying functionality that depends on finding files so the indexing + access tracking system will help in a number of places
+
+- What does native dep mean here? It's still a Rust program in a typescript/zig thingy?
+  - direct function calls instead of a subprocess essentially
+- instead of spawning a new process they'll be natively calling functions with bun:ffi 
+
+- ripgrep, fast only when burning through all cores, but limping when using 1-2 cores.
+  - rg is 4x faster than grep at 8x the resource usage!
+
+- Just want to mention one potential bug: ripgrep by default respect gitignore (which usually includes secrets files like .env and build artifact). Just want to make sure that the native dep can do similar functionality.
+
 - ## [Am I the Only One Using GUI? and is the CLI Better? : r/opencodeCLI](https://www.reddit.com/r/opencodeCLI/comments/1r13qup/am_i_the_only_one_using_gui_and_is_the_cli_better/)
 - The CLI and GUI are identical in how they interact with the model. Both are just a way to communicate with the underlying opencode server.
 

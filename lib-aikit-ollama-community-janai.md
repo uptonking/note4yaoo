@@ -9,15 +9,20 @@ modified: 2026-01-14T19:05:15.969Z
 
 # guide
 
+- pros
+  - ?
+
+- cons
+  - ? 不支持直接使用已有的.safetensors文件
+
+- features
+  - ?
 # draft
 - v0.7.6_20260127版本上, 自定义url都会失败
 
 - lite
   - 去掉llama.cpp/mlx后端的纯客户端版本
 # xp-janai
-- cons
-  - 不支持直接使用已有的.safetensors文件
-
 - 使用ollama或lmstudio的模型api时，需要关闭clash全局代理
   - http://localhost:11434/v1
   - http://localhost:1234/v1

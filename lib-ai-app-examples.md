@@ -34,6 +34,9 @@ modified: 2023-02-08T07:20:48.475Z
   - 提供了类似lm studio的模型下载简化版
   - [chore: Jan's code is now under the Apache license _202505](https://github.com/menloresearch/jan/pull/5042)
     - release/v0.5.18
+  - this project is a llm chat app built with tauri. it supports using external llm api like openai/mistral api, as well as running local .gguf models and mlx models to provide api. 
+  - please analyze the project architecture and related code. explain the core architecture and data flow for the extensible architecture to support local models in different formats. write your result to dev-arch-gguf-mlx.md. 
+  - there are different approaches to run local models. is it possible to write a extensible module to make the logic of running swift mlx server swappable. i want to use python mlx-server implementation to replace the swift implementation.
 
 - https://github.com/Doriandarko/maestro /202406/python
   - ⛓️ A framework for Claude Opus to intelligently orchestrate subagents.

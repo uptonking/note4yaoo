@@ -124,7 +124,29 @@ modified: 2024-09-08T18:57:12.231Z
 
 - ## 
 
-- ## 
+- ## [We've built memory into 4 different agent systems. Here's what actually works and what's a waste of time. : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1r21ojm/weve_built_memory_into_4_different_agent_systems/)
+- What's a waste of time:
+  - "Just use a vector store" -- Congrats, you built keyword search with extra steps and worse debugging. Embeddings are great for fuzzy matching, terrible for precise retrieval. Your agent will confidently pull up something semantically similar instead of the actual thing it needs.
+  - Dumping full conversation logs as memory -- Your agent doesn't need to remember that the user said "thanks" 47 times. Unfiltered logs are noise with a few signal fragments buried in them. And you're burning tokens retrieving garbage.
+  - One retrieval strategy -- If you're only doing semantic search, you're missing exact matches. If you're only doing keyword search, you're missing relationships. Pick one and you'll spend months wondering why retrieval "feels off."
+- What actually works:
+  - Entity resolution pipelines. Actively identify and link entities across conversations. "The Postgres migration, " "that DB move we discussed, " and "the thing Jake proposed last Tuesday" are the same thing. If your memory doesn't know that, it's broken.
+  - Temporal tagging. When was this learned? Is it still valid? A decision from 3 months ago might be reversed. If your memory treats everything as equally fresh, your agent will confidently act on outdated context. Timestamps aren't metadata. They're core to whether a memory is useful.
+  - Explicit priority systems. Not everything is worth remembering. Let users or systems mark what matters and what should decay. Without this you end up with a memory that "remembers" everything equally, which means it effectively remembers nothing.
+  - Contradiction detection. Your system will inevitably store conflicting information. "We're using Redis for caching" and "We moved off Redis last sprint." If you silently store both, your agent flips a coin on which one it retrieves. Flag conflicts. Surface them. Let a human resolve it.
+  - Multi-strategy retrieval. Run keyword, semantic, and graph traversal in parallel. Merge results. The answer to "why did we pick this architecture?" might be spread across a design doc, a Slack thread, and a PR description. No single strategy finds all three.
+- The uncomfortable truth:
+  - None of this "solves" memory. These are tactical patches for specific retrieval problems. But implemented carefully, they make systems that feel like memory instead of feeling like a database you have to babysit.
+  - The bar isn't "perfect recall." The bar is "better than asking the same question twice."
+
+- How are you doing the entity resolution?
+  - On write: When a new fact comes in, we extract entities (people, projects, tools, decisions) with an LLM call. Then we check against a lightweight entity index. If "the database migration" looks like it's referring to the same thing as postgres-migration that we already have, we link them. Fuzzy match on names + a quick LLM "are these the same thing?" check for ambiguous cases.
+  - On read: When retrieving, we resolve the query to known entities first, then pull all facts linked to those entities. This is where it pays off. Instead of hoping semantic search finds the right chunk, you're pulling a structured cluster of everything you know about that entity.
+  - The trick is not overthinking it. We started with exact string matching and only added fuzzy/LLM resolution when we saw specific failures. 90% of entity mentions are pretty obvious. It's only the remaining 10% (abbreviations, nicknames, "that thing we discussed") that need the smart layer.
+  - Biggest lesson: store the entity links, not just the raw text. If you only store chunks, you're doing retrieval on every read. If you store entity relationships, reads become lookups instead of searches.
+
+- > The uncomfortable truth
+  - Hi Opus 4.6
 
 - ## [Stop round-tripping your codebase: cutting LLM token Usage by \~80% using REPL driven document analysis : r/ClaudeCode _202601](https://www.reddit.com/r/ClaudeCode/comments/1qeqj7r/stop_roundtripping_your_codebase_cutting_llm/)
 - It's a completely different approach to handling large documents compared to tools like mgrep or specialized logic tools like Serena. 
