@@ -13,6 +13,8 @@ modified: 2026-01-21T04:22:29.956Z
 - 渠道列表
   - 优先按优先级排序，其次按权重排序
 
+- 支持调整用户分组的展示顺序
+
 - 刷新页面会使系统崩溃429，待排查是前端问题还是后端问题
   - 复现步骤: 快速连续多次刷新任意页面如 http://localhost:4090 
 
@@ -21,10 +23,18 @@ modified: 2026-01-21T04:22:29.956Z
   - 字节火山: [Transformer maxtoken field ineffective for Volcengine API with DeepSeek-v3 model ](https://github.com/musistudio/claude-code-router/issues/213)
     - The maxtoken transformer field in the configuration does not work properly when using the Volcengine API with the DeepSeek-v3 model, resulting in API call failures. However, the same configuration works correctly with the DeepSeek-R1 model.
     - 👀 仅deepseek-v3.2存在此问题, glm-4.7正常
-
-- 支持调整用户分组的展示顺序
-# done-hub/one-hub
+# donehub/one-api
 - codex-cli的渠道接入很简单, 类型选custom， 添加模型名即可, 不需要开启 v1/responses 
+
+- there is no configuration option to enforce max context length
+  - While there is a `ContextLength` field in the ModelInfo struct (model/model_info.go:12), it is only used for informational/display purposes in the web UI - it does not enforce any validation.
+
+- 
+- 
+- 
+- 
+- 
+
 # new-api
 
 # discuss-stars
@@ -35,7 +45,7 @@ modified: 2026-01-21T04:22:29.956Z
 - ## 
 
 - ## 
-# discuss-news
+# discuss-donehub/one-api-news
 - ## 
 
 - ## 
@@ -43,7 +53,7 @@ modified: 2026-01-21T04:22:29.956Z
 - ## 
 
 - ## 
-# discuss-roadmap
+# discuss-donehub/one-api-roadmap
 - ## 
 
 - ## 
@@ -51,7 +61,7 @@ modified: 2026-01-21T04:22:29.956Z
 - ## 
 
 - ## 
-# discuss-issues
+# discuss-donehub/one-api-issues
 - ## 
 
 - ## 
@@ -88,14 +98,26 @@ modified: 2026-01-21T04:22:29.956Z
   - 我可能是需要的，我自己写了渠道，支持了语音生成，bert-vits2等，或者其他get post都可以兼容，但是这语音生成有好有坏，怕被拿去干坏事，了解一下5s的音频gpt-sovits就可以克隆音色了
   - 因为我要接入自己的tts api（vits-simple-api），然后看了one api的项目代码，发现有基本的支持，我寻思着得知道发过来的请求是啥，才能针对的截取要的进行返回
   - 就是我通过oneapi的tts调用路径，调用到我的渠道，然后那个渠道再调用一次token计费渠道，再返回音频，上面的截图是token计费渠道的代码
-# discuss-internals
+# discuss-donehub/one-api-internals
 - ## 
 
 - ## 
 
 - ## 
 
-- ## 
+- ##  `$.parameter.cbm.max_tokens` value must be less or equal than 16384
+
+- option 1: `{"remove_params": ["max_tokens"]}`
+  - This deletes the `max_tokens` parameter from the request body before sending it to your custom OpenAI-compatible API.
+  - If the provider API has a default `max_tokens` value when not specified, this would use that default instead of whatever Claude Code sends.
+  - Some APIs might reject requests without max_tokens specified
+
+- option 2: `{"overwrite": true, "max_tokens": 16384}`
+
+- `max_tokens` is the maximum number of output tokens (completion tokens), NOT the total context length.
+
+- [AI_APICallError: `max_tokens` must be less than or equal to `16384` · Issue · anomalyco/opencode](https://github.com/anomalyco/opencode/issues/1000)
+  - It looks like groq currently only supports a max of 16384 output tokens. I can't seem to go higher in their playground. 
 # discuss-new-api-issues
 - ## 
 

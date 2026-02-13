@@ -849,7 +849,14 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [ACE 的平替：fast-context-mcp ](https://linux.do/t/topic/1610998)
+  - 最近玩 cc/codex 的佬应该都离不开一个东西了 —— Augment 家的 Context Engine MCP（下面简称 ACE）。 尤其是 codex，能大大地提高速度
+  - 简单说下 ACE 是啥：它会对你整个代码仓库建立索引，你用自然语言问一句，它就能很快的返回最相关的代码片段。不用 cc 自己 grep 半天，也不用 AI 一个文件一个文件翻
+  - 有替代方案吗？ 还真有 —— Windsurf 的 Fast Context。
+  - 两者目标一样：帮 AI coding agent 快速找到代码库里的相关文件，但技术路线完全不同：
+  - ace会给代码库建立索引，查询时走vector search
+  - fast context用一个专门训练的小模型 swe-grep 指挥本地工具 ripgrep/readfile/tree 多轮检索
+  - 佬逆向了 Windsurf 编辑器和后端的 Connect-RPC/Protobuf 通信协议，把 Fast Context 的能力从 Windsurf 编辑器里扒了出来，封装成了独立的 MCP Server。
 
 - ## [I feel semantic search is overused : r/Rag](https://www.reddit.com/r/Rag/comments/1qzxttv/i_feel_semantic_search_is_overused/)
   - I understand semantic search was the basis for RAG along with graph search. That's how we started making the search possible with AI.

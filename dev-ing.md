@@ -304,7 +304,10 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-log
   - ?
 
-## 0212
+## 0213
+
+- {"type":"10163", "error":{"type":"system_error", "message":"Provider API error: xunfei response error: sid: cht000bd483@dx19c584c088ab8aa700 msg: RequestParamsError:(02:38:24.169) '$.parameter.cbm.max_tokens' value must be less or equal than 16384; (request id: 20260214023823724232000Scx7MLQe)"}}
+  - set max_tokens or remove it
 
 ## 0211
 
@@ -658,7 +661,7 @@ Loaded cached credentials. jinyaoo86@gmail.com
 
 - this project provides llm electron app and web app that can chat with cli agent like claude-code/codex-cli/gemini-cli/opencode-cli. a modified gemini-cli is bundled by default, other cli needs to be installed manually. Chatting with the built-in bundled gemini-cli is implemented internally, while chatting with other cli is handled by ACP protocol.
 - the goal is to add a new opencode-cli-mini bundled just like the existing gemini-cli. and add a new icon of opencode-cli-mini after the first default gemini-cli icon for user to select which cli to use. when using the app, if the first gemini-cli icon is selected, bundled gemini-cli should be used, and existing features should still work. if the second opencode-cli-mini icon is selected, bundled opencode-cli should be used, and most existing features should still work. features for the existing bundled gemini-cli should also work for the new bundled opencode-cli-mini. the original gemini-cli is imported by `@office-ai/aioncli-core` as an npm package dependency, and i can use the default gemini-cli without installing gemini-cli. make your implementation for opencode-cli can be used in a similar way.
-- The implementation should be extensible so that it should be easy to add more bundled cli in the future. creating a standalone package like gemini-cli wrapper `@office-ai/aioncli-core` for opencode-cli-mini may be an approach. when user configures the llm model at Settings--Model page and select the model at chatbox models dropdown list , it should work for all bundled cli like gemini-cli/opencode-cli-mini. 
+- The implementation should be extensible so that it should be easy to add more bundled cli in the future. creating a standalone package like gemini-cli wrapper `@office-ai/aioncli-core` for opencode-cli-mini may be an approach.  when user configures the llm model at Settings--Model page and select the model at chatbox models dropdown list , it should work for all bundled cli like gemini-cli/opencode-cli-mini. 
 - the existing acp impelmentation with opencode-cli should be kept unchaged for backward compatibility, it will not be used anymore. do not use the existing opencode acp integration.
 - you should keep as many existing code as possible to stay unchanged so that it is easy to merge upstream changes later.
 

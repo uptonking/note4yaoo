@@ -194,7 +194,13 @@ modified: 2025-12-13T18:38:27.763Z
 
 - gemini-cli is imported as @office-ai/aioncli-core as an npm package dependency, and i can use the default gemini-cli without installing gemini-cli.
 
-- 
+- Each conversation gets its own SEPARATE CLI/server instance
+  - ForkTask (from @/worker/fork/ForkTask) spawns a separate Node.js child process for each agent instance
+  - gemini-cli uses In-process (aioncli-core)
+  - opencode-cli-mini uses Separate HTTP server (opencode serve) , Random port per conversation 
+  - Concurrency: Multiple conversations can run simultaneously without blocking
+  - Each process can be killed independently when conversation is closed
+
 - 
 - 
 - 

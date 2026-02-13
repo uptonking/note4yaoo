@@ -814,7 +814,6 @@ modified: 2025-03-22T16:10:24.856Z
   - [mmkg API](https://api.mmkg.cloud/)
     - 仅在每周五下午 18:00 至 21:00 开放，每周限量 100 人
     - 支持claude,gemini, 不支持gpt
-    - Gemini系列模型永久免费， 与Gemini对话不会消耗帐号余额（可忽视帐号余额）
   - [【公测开启】Kiro账号托管平台  ](https://linux.do/t/topic/1227895)
   - [Fengye API](https://fengyeai.chat/console)
   - [莹のAPI](https://api.wpgzs.top/pricing)，模型贵
