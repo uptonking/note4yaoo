@@ -76,7 +76,8 @@ git cherry-pick <sha-of-squashed-commit>
 ```sh
 
 # Patch file / bundle approach (portable)
-# Create a single squashed commit in repo1, export it as a patch
+# ✨ Create a single squashed commit in repo1, export it as a patch
+# features: text-diffs, no branch preservation, single squash
 cd /path/to/repo1
 # create squashed commit on branch squashed-for-repo2 (see B)
 git format-patch -1 HEAD -o /tmp/patches   # creates a single patch file for the squashed commit
@@ -86,6 +87,7 @@ git am /tmp/patches/*.patch
 # or if you want to inspect before applying: git apply --check <patch>
 
 # ✨ Or use git bundle to transfer full refs:
+# features: binary-git-obj, full commits and metadata, no squash, branch preservation
 cd /path/to/repo1
 git bundle create ../repo1.bundle repo1/main
 # copy repo1.bundle to repo2 machine (local here)

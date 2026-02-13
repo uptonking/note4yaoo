@@ -1031,6 +1031,9 @@ modified: 2025-12-11T18:10:23.710Z
     - 未对code search做优化
   - Although the tool works perfectly fine when you just tell your agent to use it on the command line, it also exposes an MCP (Model Context Protocol) server for tighter integration.
   - 📡 [[FEATURE] Other file types: pdf, png, etc ](https://github.com/tobi/qmd/issues/60)
+  - 🐛 [Incremental embedding: skip unchanged chunks in qmd embed ](https://github.com/tobi/qmd/issues/151)
+    - `qmd embed` re-processes all chunks on every run, even when the underlying documents haven't changed. 
+  - 🐛 [qmd embed has no file size guard — large files cause resource exhaustion and pollute search results ](https://github.com/tobi/qmd/issues/156#issue-3929551829)
   - [How can I remove a document from the index or re-ingest it if it changes? ](https://github.com/tobi/qmd/issues/12)
     - This is already supported:
     - Re-index changed documents: Run qmd update - it detects content changes automatically via hash comparison
@@ -1045,11 +1048,14 @@ modified: 2025-12-11T18:10:23.710Z
     - qmd can use just FTS5 too so not sure what you mean. If you want hybrid you can use embeddings too. It gives you three ways to search the SQLite database.
   - [QMD: Local hybrid search engine for Markdown that cuts token usage by 95%+  _202602](https://medium.com/coding-nexus/qmd-local-hybrid-search-engine-for-markdown-that-cuts-token-usage-by-95-e0f9d21f89af)
   - 🍴 forks
+  - https://github.com/setbap/qmd-ui
+  - https://github.com/thordin9/qmd
   - https://github.com/jamiequint/qmd
 
 - https://github.com/aaronshaf/mdq /MIT/202602/ts
   - CLI for indexing and searching local markdown files via Meilisearch with MCP server support.
   - qmd - Similar tool with opposite tradeoffs: qmd does LLM work at query time (reranking, query expansion), while mdq does LLM work at index time (embeddings) for fast queries.
+
 - https://github.com/muqsitnawaz/mq /MIT/202602/go
   - Agentic Querying for Structured Documents
   - mq is an interface, not an answer engine. It extracts structure into the agent's context, where the agent can reason over it directly.
@@ -1069,6 +1075,24 @@ modified: 2025-12-11T18:10:23.710Z
   - https://x.com/yOyO38/status/2009648901570367490
   - https://github.com/Mirrdhyn/code-rag-mcp /MIT/202601/go
     - MCP server for semantic code search. Replace grep/ripgrep with understanding-based code search.
+
+- https://github.com/zilliztech/memsearch /109Star/MIT/202602/python
+  - https://zilliztech.github.io/memsearch/
+  - A Markdown-first memory system, a standalone library for any AI agent. Inspired by OpenClaw.
+  - basically proper RAG over markdown files with:
+    - Hybrid search (vector + BM25, weighted fusion)
+    - File watching + auto-indexing
+    - Framework agnostic
+  - Write memories as markdown, search them semantically. Inspired by OpenClaw's markdown-first memory architecture. Pluggable into any agent framework.
+  - Ready-made Claude Code plugin — a drop-in example of agent memory built on memsearch
+  - Markdown is the source of truth — the vector store is just a derived index, rebuildable anytime.
+  - Smart dedup — SHA-256 content hashing means unchanged content is never re-embedded
+  - Live sync — File watcher auto-indexes changes to the vector DB, deletes stale chunks when files are removed
+  - Milvus: Cosine similarity
+  - 🐛 
+    - Simpler chunking - Heading-based only (no token-based chunking)
+    - No reranking - Hybrid search with RRF but no LLM-based reranker
+  - [RAG for AI memory: why is everyone indexing databases instead of markdown files? : r/Rag _202602](https://www.reddit.com/r/Rag/comments/1r2hlzd/rag_for_ai_memory_why_is_everyone_indexing/)
 
 - https://github.com/puran-water/knowledge-base-mcp /MIT/202512/python
   - https://github.com/puran-water/knowledge-base-mcp/blob/main/USAGE.md
@@ -1126,7 +1150,7 @@ modified: 2025-12-11T18:10:23.710Z
   - ChromaDB vector store with HNSW indexing (industry standard)
   - Background File Watching: Automatic document indexing with watchdog library (debounced events)
   - Multi-Agent Orchestration: Intelligent routing between RAG and code analysis agents
-  - RAG-CLI integrates with the Multi-Agent Framework (MAF) to provide intelligent query routing:
+  - 💡 RAG-CLI integrates with the Multi-Agent Framework (MAF) to provide intelligent query routing:
     - RAG Only: Simple document retrieval queries
     - MAF Only: Pure code analysis and debugging tasks
     - Parallel RAG+MAF: Complex queries combining documentation and code analysis

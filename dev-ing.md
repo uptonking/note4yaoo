@@ -252,6 +252,11 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
 
 ```
 
+```rules
+- when writing or editing large files, it's easy to fail if the content to write is large. you can write small edits many times to avoid large edits.
+
+```
+
 - [guide : running gpt-oss with llama.cpp · ggml-org/llama.cpp · Discussion _202508](https://github.com/ggml-org/llama.cpp/discussions/15396)
 
 ```sh /llm
@@ -298,6 +303,8 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
   - ?
 - dev-log
   - ?
+
+## 0212
 
 ## 0211
 
@@ -647,14 +654,27 @@ Loaded cached credentials. jinyaoo86@gmail.com
 - the task has already been implemented by you . i want you to review the existing gemini-cli implementation and improve  your opencode-cli implementation. just use git diff to see what you have edited
 - the goal is opencode-cli bundled just like the existing gemini-cli. and you provide a  new environment variable for user to choose which cli to use.  the opencode-cli architecture should be like gemini-cli. analyze related code and architecture, review your edits and improve your code.
 
-- the goal is opencode-cli bundled just like the existing gemini-cli. and you provide a  new environment variable for user to choose which cli to use. you should keep as many existing code as possible to stay unchanged.  remove testing step in your plan. you should do the core implementation first, we will write tests later.  review the goal, analyze related code and architecture , finally update your plan at plan-opencode-updated.md
+- remove testing step in your plan. you should do the core implementation first, we will write tests later. 
+
+- this project provides llm electron app and web app that can chat with cli agent like claude-code/codex-cli/gemini-cli/opencode-cli. a modified gemini-cli is bundled by default, other cli needs to be installed manually. Chatting with the built-in bundled gemini-cli is implemented internally, while chatting with other cli is handled by ACP protocol.
+- the goal is to add a new opencode-cli-mini bundled just like the existing gemini-cli. and add a new icon of opencode-cli-mini after the first default gemini-cli icon for user to select which cli to use. when using the app, if the first gemini-cli icon is selected, bundled gemini-cli should be used, and existing features should still work. if the second opencode-cli-mini icon is selected, bundled opencode-cli should be used, and most existing features should still work. features for the existing bundled gemini-cli should also work for the new bundled opencode-cli-mini. the original gemini-cli is imported by `@office-ai/aioncli-core` as an npm package dependency, and i can use the default gemini-cli without installing gemini-cli. make your implementation for opencode-cli can be used in a similar way.
+- The implementation should be extensible so that it should be easy to add more bundled cli in the future. creating a standalone package like gemini-cli wrapper `@office-ai/aioncli-core` for opencode-cli-mini may be an approach. when user configures the llm model at Settings--Model page and select the model at chatbox models dropdown list , it should work for all bundled cli like gemini-cli/opencode-cli-mini. 
+- the existing acp impelmentation with opencode-cli should be kept unchaged for backward compatibility, it will not be used anymore. do not use the existing opencode acp integration.
+- you should keep as many existing code as possible to stay unchanged so that it is easy to merge upstream changes later.
+
+- the following resources may be useful for your reference:
+- the source code for gemini-cli wrapper `@office-ai/aioncli-core` is at folder /Users/yaoo/Documents/repos/office/aioncli/packages/core. you can find api or docs and more details at /Users/yaoo/Documents/repos/office/aioncli . 
+- opencode cli can be installed by `npm install opencode-ai`. the source code for opencode-cli is at /Users/yaoo/Documents/repos/ai-ml-llm/opencode/packages/opencode/src/cli. you can find api or docs and more details at /Users/yaoo/Documents/repos/ai-ml-llm/opencode .
+
+- analyze related code and architecture , make a plan and write your plan to plan-opencode-cli-mini.md, ask for approval before implement it.
+
+- when writing or editing large files, it's easy to fail if the content to write is large. you can write small edits multiple times to avoid large edits.
+
+- review the goal, analyze related code and architecture , finally update your plan at plan-opencode-updated.md
 
 - I want the opencode-cli bundled just like the existing gemini-cli. and you provide a  new environment variable for user to choose which cli to use. if the environment  variable is not set, gemini-cli should be used, and existing features still work. if environment variable is set to opencode, opencode-cli should be used, and the most existing features still work. The implementation should be extensible so that other environment variable value can be used to support more  cli in the future. reiew your previous plan at plan-opencode-updated.md and recheck the goal. optimize and update the plan.
-- the following resources may be useful for your reference:
-- the source code for gemini-cli wrapper "@office-ai/aioncli-core" is at folder /Users/yaoo/Documents/repos/office/aioncli/packages/core. you can find api/docs and more details at /Users/yaoo/Documents/repos/office/aioncli . 
-- opencode cli can be installed by `npm install opencode-ai`. the source code for opencode-cli is at /Users/yaoo/Documents/repos/ai-ml-llm/opencode/packages/opencode/src/cli. you can find api/docs and more details at /Users/yaoo/Documents/repos/ai-ml-llm/opencode .
 
-- I want you to make a standalone package like `@office-ai/aioncli-core` for opencode. the source code for "@office-ai/aioncli-core" is at folder /Users/yaoo/Documents/repos/office/aioncli/packages/core. you can find api/docs and more details at /Users/yaoo/Documents/repos/office/aioncli. Now review your previous plan at plan-opencode.md and updated your plan. I have reverted all your previous edits.
+- I want you to make a standalone package like `@office-ai/aioncli-core` for opencode-cli-mini. the source code for "@office-ai/aioncli-core" is at folder /Users/yaoo/Documents/repos/office/aioncli/packages/core. you can find api/docs and more details at /Users/yaoo/Documents/repos/office/aioncli. Now review your previous plan at plan-opencode.md and updated your plan. I have reverted all your previous edits.
 
 ## 0125
 
@@ -701,17 +721,6 @@ Loaded cached credentials. jinyaoo86@gmail.com
   - DVC keeps small pointer/metadata files in Git (hashes, remotes, versions). Large data (datasets, models) is stored in remote object stores (S3/GCS/etc). The local filesystem holds a cache/checkout of the currently needed blobs.
 - IPFS (content-addressed block store) — block/object DB + file DAGs + local pin/cache
   - IPFS stores content-addressed blocks in a blockstore; files are DAGs of those blocks. Nodes pin the blocks they want to keep; a local filesystem view (FUSE mounts, HTTP gateways) materializes files from the blockstore.
-
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
 
 ## 0120
 

@@ -1569,6 +1569,24 @@ modified: 2025-03-22T16:10:24.856Z
 
 - ## 
 
+- ## 
+
+- ## [老saas焕新的讨论 ](https://linux.do/t/topic/1607336)
+  - 有没有办法，可以把老旧的 web based 的 saas 系统，升级成 AI driven 的新的 saas 系统？ 我能想到的一种方式是，前端提供对话框，LLM prompts 里提前对业务系统的表结构进行理解（saas 一般都是结构化数据），text2sql，然后对查出来的数据，在前端通过 llm 进行展示（这种形式最容易想到，也容易被 sql 注入，大家还有没有别的方法）
+- 我觉得目前的 AI 还不够智能和安全，我的想法是在现有的 SaaS 系统基础上做一个外挂，通过 MCP 让 agent 能够调用后端接口，而不是直接去操作数据库，相当于是替代前端，这是我觉得目前阶段比较稳妥的做法。
+- 具体怎么操作也看 SaaS 的架构吧，我这边是基于 Go 的后端，就接入 Go 的 MCP 库，你可以理解成把现在的 restful api 给翻译为 MCP 接口，专门让 agent 进行调用的。
+  - 然后 agent 这一块是另一套工程方向了，简单的话可以用 dify、coze 搭建工作流接入后端的 mcp 服务器，复杂的话也可以用 python/Go 或者 langchain 之类的框架做 agent 开发，这块比较复杂
+
+- 好想法，甚至可以把一些业务动作封装成 skills
+
+- 可以的，老哥这个想法比我的靠谱多了，那你觉得前端应该用什么形式呢，chatbot？而且 mcp agent 的话，怎么鉴权呢，比如不同的权限级别能调用的 api 应该是不同的
+  - 前端 chatbot 最简单高效，反正我目前是在原有前端界面右下角有个按钮弹出对话框，就像那些客服机器人一样。
+  - 鉴权直接接入现有 SaaS 的权限管理呗。
+- 理论上只要能把用户的 token 从 agent 通过 mcp 传到后端就行，会不会有问题我也不敢百分之百肯定，可能不同语言的 mcp 实现不一样呢
+
+- 总感觉这里可以通过提示词提权
+  - 提不了，大模型也只是调接口而已
+
 - ## [Fully offline, privacy-first AI transcription & assistant app. Is there a market for this? : r/LocalLLM](https://www.reddit.com/r/LocalLLM/comments/1qz80a9/fully_offline_privacyfirst_ai_transcription/)
 - Entirely dependent on the minimum specs required to run it and the platforms it runs on.
   - If I can run it on an integrated graphics Intel CPU from the last five years or so with say only 8-16gb of RAM it could be a winner. Or thinks Mac M1 with 8gb of RAM. This is 80% of computers that real people use daily. 

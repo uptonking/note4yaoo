@@ -1022,6 +1022,18 @@ modified: 2025-11-30T17:27:16.720Z
     - Drop in a GitHub repo or ZIP file, and get an interactive knowledge graph wit a built in Graph RAG Agent. Perfect for code exploration
     - Zero-Server, Graph-Based Code Intelligence Engine Works fully in-browser through WebAssembly. (DB engine, Embeddings model, AST parsing, all happens inside browser)
 # rag-memory/context
+- https://github.com/zilliztech/memsearch /109Star/MIT/202602/python
+  - https://zilliztech.github.io/memsearch/
+  - A Markdown-first memory system, a standalone library for any AI agent. Inspired by OpenClaw.
+  - basically proper RAG over markdown files with:
+    - Hybrid search (vector + BM25, weighted fusion)
+    - File watching + auto-indexing
+    - Framework agnostic
+  - Write memories as markdown, search them semantically. Inspired by OpenClaw's markdown-first memory architecture. Pluggable into any agent framework.
+  - Ready-made Claude Code plugin — a drop-in example of agent memory built on memsearch
+  - Markdown is the source of truth — the vector store is just a derived index, rebuildable anytime.
+  - [RAG for AI memory: why is everyone indexing databases instead of markdown files? : r/Rag _202602](https://www.reddit.com/r/Rag/comments/1r2hlzd/rag_for_ai_memory_why_is_everyone_indexing/)
+
 - https://github.com/volcengine/OpenViking /839Star/apache2/202602/python/cpp
   - https://openviking.ai/
   - 专为 AI Agent 设计的上下文数据库

@@ -58,6 +58,10 @@ modified: 2023-02-08T10:47:32.359Z
 
 - https://github.com/vss-devel/zimmer /js
   - nodejs ZIM file creator
+
+- https://github.com/noosed/InvaderZIM /python
+  - GUI Tool for WSL/Linux to export webpages to .zim
+  - [InvaderZIM - Convert HTML websites (stored as ZIP files) into ZIM archives : r/Kiwix](https://www.reddit.com/r/Kiwix/comments/1r2ji6m/invaderzim_convert_html_websites_stored_as_zip/)
 # goldendict
 - 全文索引fts的位置
   - ~/.var/app/org.goldendict. GoldenDict/cache/goldendict/index/

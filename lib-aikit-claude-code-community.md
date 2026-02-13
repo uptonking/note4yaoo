@@ -15,9 +15,11 @@ modified: 2025-12-18T12:26:08.445Z
   - think value "high" is not supported for this model "qwen3-vl:4b"
   - 💡 使用gpt-oss-20b就无问题, 实测ollama/lmstudio的gpt-oss-20b都支持
 
-- 
-- 
-- 
+- 不必启用opus mode, 似乎opus-mode不会使用haiku模型，
+  - 可在gateway将sonnet映射到opus，这样sonnet+haiku实际就是opus+haiku
+
+- expore agents的 Levitating 可能花费时间较长， 可能等2min以上才有token响应返回
+
 - 
 - 
 
