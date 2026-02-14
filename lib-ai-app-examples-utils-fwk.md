@@ -362,6 +362,17 @@ modified: 2025-02-21T18:20:42.624Z
     - I'd want to 'set' the limit to be 92GB so I still have VRAM for the system, and for it to close down applications. I've been thinking how to make it more efficient.
       - This is where I'm looking for either V2 or V3 to go. Although my system is much lighter, that assigned to this with concurrency and VRAM monitoring insight.
 
+- https://github.com/Wei-Shaw/sub2api /1.7kStar/MIT/202602/go/ts/vue
+  - https://demo.sub2api.org/
+  - Sub2API-CRS2 一站式开源中转服务，让 Claude、Openai 、Gemini、Antigravity订阅统一接入，支持拼车共享
+  - 一个 AI API 网关平台，用于分发和管理 AI 产品订阅（如 Claude Code $200/月）的 API 配额。用户通过平台生成的 API Key 调用上游 AI 服务，平台负责鉴权、计费、负载均衡和请求转发。
+  - 多账号管理 - 支持多种上游账号类型（OAuth、API Key）
+  - API Key 分发 - 为用户生成和管理 API Key
+  - 精确计费 - Token 级别的用量追踪和成本计算
+  - 并发控制 - 用户级和账号级并发限制
+  - 后端	Go 1.25.7, Gin, Ent, PostgreSQL, Redis
+  - 前端	Vue 3.4+, Vite 5+, TailwindCSS
+
 - https://github.com/songquanpeng/one-api /27.7kStar/MIT/202502/go/js/inactive
   - LLM API 管理 & 分发系统，支持 OpenAI、Azure、Anthropic Claude、Google Gemini、DeepSeek、字节豆包
   - 支持配置镜像以及众多第三方代理服务。

@@ -74,7 +74,7 @@ modified: 2024-01-25T13:33:23.267Z
 - Wow, just single DB for such huge workload! Must be a huge machine.
   - It's not huge! 4 cores and 24GiB RAM (actually I believe 16GiB would be fine too). Plus we also store sandbox pageviews (hourly, daily, weekly, monthly)/users/teams etc...
 - Incredible! I am using a little bigger machine for a much lesser scale application.  Likely I am doing something wrong.
-# discuss-sandbox-agent
+# discuss-sandbox-agent 👾
 - ## 
 
 - ## 
@@ -83,14 +83,14 @@ modified: 2024-01-25T13:33:23.267Z
 
 - ## 
 
-- ## 🆚🏘️ Agent 与 Sandbox 的两种集成架构模式
+- ## 🆚🏘️🧩 Agent 与 Sandbox 的两种集成架构模式
 - https://x.com/shao__meng/status/2021488624446079160
   - 来自 @LangChain 创始人 @hwchase17 的分享，他提出了两种集成架构：Agent 运行在 Sandbox 内部，或外部。
-- 模式一：Agent 运行在沙箱内部（Agent IN Sandbox）
+- 🧩 模式一：Agent 运行在沙箱内部（Agent IN Sandbox）
   - 架构特征： 将 Agent 框架打包进 Docker 镜像或 VM，在沙箱内启动，外部通过 HTTP/WebSocket 与之通信。
 - 优势：
-· 与本地开发体验一致——本地怎么跑，沙箱里就怎么跑，降低了部署的心智负担。
-· Agent 与执行环境紧耦合——Agent 可以直接操作文件系统、维护复杂的环境状态，适合需要持续与特定库交互的场景。
+  - 与本地开发体验一致——本地怎么跑，沙箱里就怎么跑，降低了部署的心智负担。
+  - Agent 与执行环境紧耦合——Agent 可以直接操作文件系统、维护复杂的环境状态，适合需要持续与特定库交互的场景。
 - 代价：
 文章列举了五个明确的 trade-off：
 1. 通信基础设施成本——需要自行搭建跨沙箱边界的网络通信层（除非 SDK 提供商已封装好）。
@@ -101,7 +101,8 @@ modified: 2024-01-25T13:33:23.267Z
 
 - 特别值得注意的是 Nuno Campos 补充的一个深层安全洞察：在此模式下，Agent 的任何组件都不能拥有比 bash 工具更高的权限。举例来说，如果 Agent 同时拥有 bash 工具和 web fetch 工具，那么 LLM 生成的代码就能无限制地执行网络请求——这是一个重大的安全隐患。安全边界围绕的是整个 Agent，而非单个工具。
 
-- 模式二：沙箱作为工具（Sandbox as Tool）
+- 🧩 模式二：沙箱作为工具（Sandbox as Tool）
+  - 🤔 是否更适合并行任务、多任务
 - 架构特征： Agent 运行在本地或你的服务器上，需要执行代码时通过 API 远程调用沙箱服务（E2B、Modal、Daytona、Runloop 等）。
 - 优势：
 · 快速迭代——改 Agent 逻辑不需要重建镜像，开发效率高。
@@ -115,13 +116,13 @@ modified: 2024-01-25T13:33:23.267Z
 
 - 两种架构模式的选择建议
 - 选择模式一（Agent IN Sandbox）
-· Agent 与执行环境紧耦合
-· 希望生产环境与本地开发一致
-· SDK 提供商已处理好通信层
+  - Agent 与执行环境紧耦合
+  - 希望生产环境与本地开发一致
+  - SDK 提供商已处理好通信层
 - 选择模式二（Sandbox as Tool）
-· 需要快速迭代 Agent 逻辑
-· 需要保护 API 密钥安全
-· 偏好 Agent 状态与执行环境分离
+  - 需要快速迭代 Agent 逻辑
+  - 需要保护 API 密钥安全
+  - 偏好 Agent 状态与执行环境分离
 
 - 理想状态下沙箱中的agent是不需要快速迭代的，是完全和业务解耦的一个通用agent，业务相关的部分完全交给cli和skill来实现动态更新。 安全问题随着模型能力的提高，对于prompt injection的防范会相对轻松
 

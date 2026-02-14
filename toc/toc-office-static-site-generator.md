@@ -33,6 +33,15 @@ modified: 2021-07-17T03:00:02.268Z
   - 依赖bluebird、moment、warehouse-db
   - Hundreds of themes & plugins
 
+- https://github.com/docmd-io/docmd /660Star/MIT/202602/js
+  - https://docmd.io/
+  - Generate minimal, fast & beautiful docs from Markdown. 
+  - The minimalist, zero-config documentation generator.
+  - Blazing Fast: Generates pure, static HTML. No React hydration lag, no heavy bundles.
+  - Smart Search: Built-in, offline-capable full-text search with fuzzy matching. No API keys required.
+  - Isomorphic Core: Runs anywhere, Node.js CLI, CI/CD pipelines, or directly in the browser.
+  - Rich Content: Built-in support for Callouts, Cards, Tabs, Steps, Changelogs, and Mermaid diagrams.
+
 - https://github.com/getzola/zola /12.3kStar/MIT/202402/rust
   - https://www.getzola.org/
   - A fast static site generator in a single binary with everything built-in

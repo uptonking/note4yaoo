@@ -119,6 +119,21 @@ modified: 2025-10-28T20:02:16.727Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🎯 Introducing Cline CLI 2.0: An open-source AI coding agent that runs entirely in your terminal. _202602
+- https://x.com/arafatkatze/status/2022415192932651302
+  - our previous CLI was junk and had bugs that made it harder to work with. 
+  - We were using Golang before and we realized that was not necessary as were replicating so much code in Golang from typescript when we could have just used typescript code. 
+  - We went full nuke mode and rewrote it in typescript and removed all the golang junk and re-used typescript where ever we could. The experience was so much sleeker and usable. 
+
+- I tried and still looks like junk for me. There are dozens, if not hundreds, of bugs. I want it to be good, but it is not usable right now.
+
+- didn't you guys clone opencode and work upon it ?
+  - no
+
 - ## We've migrated our system prompt tool calling format to native tool calling and split that out for different model families. _202511
 - https://x.com/cline/status/1984334385626411397  
   - Here's why this results in a better experience using Cline

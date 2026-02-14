@@ -15,7 +15,15 @@ modified: 2023-12-09T10:03:55.375Z
 
 - ## 
 
-- ## 
+- ## [How do you connect to a remote SQLite db? : r/sqlite](https://www.reddit.com/r/sqlite/comments/1r31584/how_do_you_connect_to_a_remote_sqlite_db/)
+- SQLite is a single user, single process database. There's no "remoting in" to one.
+  - However, I recently learned of a project called libSQL, which purports to be a networkable, remote-accessible database "server" that is backward-compatible with SQLite. Rather than connecting to a file (mydatabase.db or mydatabase.sqlite3), you run sqld on a folder which serves as the location for your database files - then you access the database files through the sqld daemon with a connection string (e.g. ws://127.0.0.1:8080). But you can't use the "sqlite3" executable to do this
+
+- You will corrupt data by attempting to do remote operations on SQLite. I'm sure I'm not the only one who's learned this the hard way. See sqlite.org/faq.html#q5 and https://sqlite.org/lockingv3.html#how_to_corrupt for details.
+  - Your best bet is to remote into the machine hosting the sqlite db if you need to interact with the database.
+  - For network based applications, you might consider using a webserver to field requests for SQLite operations. PHP, for instance, offers native support for sqlite via SQLITE3 or PDO classes.
+
+- In theory, Linux's Network Block Device (NBD) over SSH could work as this would implement proper POSIX file I/O but I don't know how well it would perform.
 
 - ## Didn’t expect that using SQLite on the browser’s OPFS would turn into a distributed problem too
 - https://x.com/zx_loro/status/2009565910999392518

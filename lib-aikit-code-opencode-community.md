@@ -90,6 +90,22 @@ modified: 2026-01-17T22:41:25.867Z
 
 - Not quite as robust as the sdk + runtime approach
   - The SDK + runtime plugin system is the best feature 
+# discuss-sandbox
+- ## 
+
+- ## 
+
+- ## 
+
+- ## been messing around with @daytonaio sandboxes while running @opencode as a server rather than a headless instance
+- https://x.com/ryanvogel/status/2022495102615326850
+  - i built a package called that wraps the sandbox provider and manages resumability & instance storage
+
+- have you guys thought about how you would isolate sandboxes to a session while maintaining a static server URL?
+
+- This is the right direction. Long-lived agent server + sandbox resumability is where things stop feeling like demos.
+  - Biggest pain I keep hitting is state sync: filesystem + env + “what tools ran” so you can replay safely.
+  - How are you persisting instance storage here, snapshotting whole sandboxes or doing diffs/checkpoints?
 # discuss
 - ## 
 

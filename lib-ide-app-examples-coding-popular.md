@@ -799,6 +799,11 @@ modified: 2025-12-11T18:10:23.710Z
   - 📡 
     - 没有ACP相关代码
     - [Feature Request: Skills Support - Modular Capabilities with Progressive Disclosure _202511](https://github.com/Nano-Collective/nanocoder/issues/91)
+    - [[Feature] Enable mode-specific model and provider configuration for optimized performance _202601](https://github.com/Nano-Collective/nanocoder/issues/277)
+      - Currently, Nanocoder uses a single provider and model configuration across all development modes (normal, auto-accept, plan). 
+      - I propose implementing mode-specific model and provider configuration that allows users to define different AI models for different development modes
+      - Planning Phase: Use powerful, sophisticated models
+      - Execution Phase: Use efficient local models (20B-30B range) for faster, cost-effective implementation
     - [Feature Request: Plugin System & Marketplace for Extensible Capabilities ](https://github.com/Nano-Collective/nanocoder/issues/92)
       - Current Limitations:
       - No dynamic extension system beyond custom commands
@@ -869,7 +874,17 @@ modified: 2025-12-11T18:10:23.710Z
 - https://github.com/gptme/gptme /4.1kStar/MIT/202602/python
   - https://gptme.org/docs/
   - Your agent in your terminal, equipped with local tools: writes code, uses the terminal, browses the web, vision
-  - An unconstrained local free and open-source alternative to Claude Code, Codex, Cursor Agents, etc.
+  - An unconstrained local free and open-source alternative to Claude Code, Codex, Cursor Agents, etc. created (Spring 2023) that is still in active development.
+  - OpenAI, Anthropic, OpenRouter, or serve locally with llama.cpp
+    - [Providers — gptme](https://gptme.org/docs/providers.html)
+    - Small models won’t work well with tools, severely limiting the usefulness of gptme. 
+  - [Evals — gptme](https://gptme.org/docs/evals.html)
+    - The recommended model is Claude Sonnet 4.5
+    - Note that some models may perform better or worse with different --tool-format options (markdown, xml, or tool for native tool-calling).
+  - 📡 [Add RAG for code, personal files, and conversations _202401](https://github.com/gptme/gptme/issues/59)
+    - gptme-retrieval plugin for automatic context retrieval, automatically retrieves relevant context before each LLM step
+    - qmd backend: Shell-based retrieval via subprocess
+  - pr已合并 _202512 [Implement ACP (Agent Client Protocol) support](https://github.com/gptme/gptme/issues/977)
   - https://github.com/gptme/gptme-tauri /NALic/202507/rust/ts/inactive
     - Desktop app for gptme built with Tauri
 
@@ -882,6 +897,26 @@ modified: 2025-12-11T18:10:23.710Z
   - AI assistant that runs directly in your terminal.
   - [代码是否有开源，没有找到源代码？ ](https://github.com/iflow-ai/iflow-cli/issues/77)
     - 当前cli代码并没有开源。不过cli有几个关联项目已经开源了
+
+- https://github.com/wiseprobe/patchpal /apache2/202602/python
+  - https://ai.wiseprobe.io/patchpal
+  - An agentic coding and automation assistant, supporting both local and cloud LLMs.
+  - It supports agent skills, tool use, and executable Python generation, enabling interactive workflows for tasks such as data analysis, visualization, web scraping, API interactions, and research with synthesized findings.
+  - A key goal of this project is to marry both: use the same agent interactively in your terminal (patchpal) or in Python scripts (agent.run("task")), plus autopilot mode for autonomous runs.
+  - Terminal Interface for interactive development
+  - Python API for flexibility and extensibility
+  - Skills System
+  - Autopilot Mode using Ralph Wiggum loops
+  - cloud models are much better suited for agentic workflows than local models.
+  - While originally designed for software development, PatchPal is also a general-purpose assistant. With web search, file operations, shell commands, and custom tools/skills, it can help with research, data analysis, document processing, log file analyses, etc.
+
+- https://github.com/haasonsaas/ocode /AGPL/202512/python/inactive
+  - terminal-native AI coding assistant that provides deep codebase intelligence and autonomous task execution. 
+  - Built to work seamlessly with local Ollama models
+  - Autonomous task execution – handles multi-step development tasks end-to-end
+  - Extensible plugin layer – Model Context Protocol (MCP) enables third-party integrations
+  - System Operations: Process monitoring, environment management, network connectivity testing
+  - Sandboxed command execution
 
 - https://github.com/vinhnx/vtcode /MIT/202510/rust
   - a Rust-based terminal coding agent with semantic code intelligence via `Tree-sitter` (parsers for Rust, Python, JavaScript/TypeScript, Go, Java) and `ast-grep` (structural pattern matching and refactoring).
@@ -1093,6 +1128,8 @@ modified: 2025-12-11T18:10:23.710Z
     - Simpler chunking - Heading-based only (no token-based chunking)
     - No reranking - Hybrid search with RRF but no LLM-based reranker
   - [RAG for AI memory: why is everyone indexing databases instead of markdown files? : r/Rag _202602](https://www.reddit.com/r/Rag/comments/1r2hlzd/rag_for_ai_memory_why_is_everyone_indexing/)
+  - https://x.com/geekbb/status/2022547666606133397
+    - Zilliz（Milvus 向量数据库的开发商）发布了一个 Python 库，把 OpenClaw 的 markdown-first 记忆架构搬到了其他 Agent 框架里。它主要解决的是 AI Agent 的持久化记忆问题。
 
 - https://github.com/puran-water/knowledge-base-mcp /MIT/202512/python
   - https://github.com/puran-water/knowledge-base-mcp/blob/main/USAGE.md
@@ -1390,50 +1427,6 @@ modified: 2025-12-11T18:10:23.710Z
   - Vector Visualization - 2D/3D UMAP visualization of your codebase
     - Vector visualization transforms your codebase's 768-dimensional embeddings into interactive 2D or 3D visualizations using UMAP dimensionality reduction. 
 
-- https://github.com/chunkhound/chunkhound /974Star/MIT/202602/python
-  - https://chunkhound.github.io/
-  - https://pypi.org/project/chunkhound/2.0.0/ /配置文档
-  - Deep Research for Code & Files
-  - Transform your codebase into a searchable knowledge base for AI assistants using semantic search via cAST algorithm and regex search. 
-  - MCP integration - Works with Claude, VS Code, Cursor, Windsurf, Zed, etc
-  - cAST Algorithm - Research-backed semantic code chunking
-    - Tree-sitter - Universal AST parser supporting 29 languages
-  - Multi-Hop Semantic Search - Discovers interconnected code relationships beyond direct matches
-  - Semantic search - Natural language queries like "find authentication code"
-    - `DuckDB` (primary) - OLAP columnar database with HNSW vector indexing `LanceDB` (experimental) 
-    - Purpose-built vector database with Apache Arrow format
-  - Regex search - Pattern matching without API keys
-  - Local-first - Your code stays on your machine
-  - 22 languages with structured parsing, via Tree-sitter
-  - Real-time indexing - Automatic file watching, smart diffs, seamless branch switching
-  - OpenAI, VoyageAI, Ollama 
-  - pr已合并 [refactor: Extract BaseCLIProvider and improve OpenCode integration _202512](https://github.com/chunkhound/chunkhound/pull/122)
-  - [ChunkHound - Modern RAG for your codebase : r/ClaudeAI _202506](https://www.reddit.com/r/ClaudeAI/comments/1llaa1v/chunkhound_modern_rag_for_your_codebase/)
-    - a local MCP server that does semantic and regex search on your codebase (modern RAG really). Written in python using tree-sitter and DuckDB I find it quite handy for my own personal use. Been heavily using it with Claude Code (actually used it to build and index its own code using Claude Code)
-  - 🧑‍🏫 [ChunkHound v4: Code Research for AI Context : r/ClaudeCode _202511](https://www.reddit.com/r/ClaudeCode/comments/1ovs9ri/chunkhound_v4_code_research_for_ai_context/)
-    - v4 just shipped with a code research sub-agent. It’s not just semantic search - it actually explores your codebase like you would, following imports, tracing dependencies, finding patterns
-    - The architecture is basically two layers. Bottom layer does cAST-chunked semantic search plus regex (standard RAG but actually done right). Top layer orchestrates BFS traversal with adaptive token budgets that scale from 30k to 150k depending on repo size, then does map-reduce to synthesize everything.
-    - Try to remove the `.mcp.json` completely and run `claude mcp add ChunkHound chunkhound mcp` inside the project directory
-  - [Show HN: ChunkHound, a local-first tool for understanding large codebases | Hacker News _202601](https://news.ycombinator.com/item?id=46662078)
-    - Can you please expose the functionality as a self-documenting CLI command with machine readable output? (Or did I misunderstand that MCP isn't the only way to use it?)
-    - Telling Claude to call the CLI tool is more efficient.
-    - Agree. And to make the CLI usage more effective/efficient, if you can publish a skill that would be excellent
-    - `chunkhound search <query>`, `chunkhound search --regex <query>` and `chunkhound research <query>` are the main cli entry points that you can already use today
-
-- https://github.com/krokozyab/Agent-Fusion /MIT/202511/kotlin
-  - a local RAG semantic search engine that gives AI agents instant access to your code, documentation (Markdown, Word, PDF).
-  - Local: Everything stored locally in DuckDB
-  - Search: Smart search that understands meaning, not just keywords (semantic + symbol + full-text + git history)
-  - [Run Semantic Search Locally: A Context Engine for AI Code Assistants : r/codex _202511](https://www.reddit.com/r/codex/comments/1ouwo3e/run_semantic_search_locally_a_context_engine_for/)
-
-- https://github.com/ancoleman/qdrant-rag-mcp /MIT/202506/python/inactive
-  - MCP server that provides semantic search capabilities across your codebase using Qdrant vector database.
-  - Hybrid Search: Combines semantic understanding with keyword matching for +30% better precision
-  - AST-Based Chunking: Structure-aware code parsing for Python, Shell, Go, JavaScript, and TypeScript (-40% tokens)
-  - Smart Incremental Reindexing: Only process changed files for 90%+ faster reindexing (v0.2.4)
-  - Multi-Project Support: Keep different projects' knowledge separate
-  - Optional Auto-Indexing: Keep your index up-to-date automatically as files change
-
 - https://github.com/AperturePlus/augmented-codebase-indexer /202512/python
   - A Python tool for semantic code search with precise line-level location results.
   - Semantic code search/indexer with tree-sitter parsing, Qdrant vector store, and Typer/FastAPI interfaces. 
@@ -1463,6 +1456,52 @@ modified: 2025-12-11T18:10:23.710Z
     - FileIndex stores hash + mtime for each file
     - On re-index, only changed files are processed
     - Cross-references are rebuilt incrementally
+
+- https://github.com/chunkhound/chunkhound /974Star/MIT/202602/python
+  - https://chunkhound.github.io/
+  - https://pypi.org/project/chunkhound/2.0.0/ /配置文档
+  - Deep Research for Code & Files
+  - Transform your codebase into a searchable knowledge base for AI assistants using semantic search via cAST algorithm and regex search. 
+  - MCP integration - Works with Claude, VS Code, Cursor, Windsurf, Zed, etc
+  - cAST Algorithm - Research-backed semantic code chunking
+    - Tree-sitter - Universal AST parser supporting 29 languages
+  - Multi-Hop Semantic Search - Discovers interconnected code relationships beyond direct matches
+  - Semantic search - Natural language queries like "find authentication code"
+    - `DuckDB` (primary) - OLAP columnar database with HNSW vector indexing `LanceDB` (experimental) 
+    - Purpose-built vector database with Apache Arrow format
+  - Regex search - Pattern matching without API keys
+  - Local-first - Your code stays on your machine
+  - 22 languages with structured parsing, via Tree-sitter
+  - Real-time indexing - Automatic file watching, smart diffs, seamless branch switching
+  - OpenAI, VoyageAI, Ollama 
+  - pr已合并 [refactor: Extract BaseCLIProvider and improve OpenCode integration _202512](https://github.com/chunkhound/chunkhound/pull/122)
+  - [ChunkHound - Modern RAG for your codebase : r/ClaudeAI _202506](https://www.reddit.com/r/ClaudeAI/comments/1llaa1v/chunkhound_modern_rag_for_your_codebase/)
+    - a local MCP server that does semantic and regex search on your codebase (modern RAG really). Written in python using tree-sitter and DuckDB I find it quite handy for my own personal use. Been heavily using it with Claude Code (actually used it to build and index its own code using Claude Code)
+  - [Which vector database do we like for local/selfhosted? : r/Rag](https://www.reddit.com/r/Rag/comments/1r3y4ys/which_vector_database_do_we_like_for/)
+    - When scaling ChunkHound to millions of vectors locally, we tried both LanceDB and DuckDB. We couldn't get either to work well enough. In the end, we split it by letting DuckDB handle the metadata and act as source of truth, then manually reflect the vectors into a custom sharded HNSW index built on usearch directly. Way more involved than we wanted to, but it works amazingly well and lets us control clustering which is very helpful for later analysis
+  - 🧑‍🏫 [ChunkHound v4: Code Research for AI Context : r/ClaudeCode _202511](https://www.reddit.com/r/ClaudeCode/comments/1ovs9ri/chunkhound_v4_code_research_for_ai_context/)
+    - v4 just shipped with a code research sub-agent. It’s not just semantic search - it actually explores your codebase like you would, following imports, tracing dependencies, finding patterns
+    - The architecture is basically two layers. Bottom layer does cAST-chunked semantic search plus regex (standard RAG but actually done right). Top layer orchestrates BFS traversal with adaptive token budgets that scale from 30k to 150k depending on repo size, then does map-reduce to synthesize everything.
+    - Try to remove the `.mcp.json` completely and run `claude mcp add ChunkHound chunkhound mcp` inside the project directory
+  - [Show HN: ChunkHound, a local-first tool for understanding large codebases | Hacker News _202601](https://news.ycombinator.com/item?id=46662078)
+    - Can you please expose the functionality as a self-documenting CLI command with machine readable output? (Or did I misunderstand that MCP isn't the only way to use it?)
+    - Telling Claude to call the CLI tool is more efficient.
+    - Agree. And to make the CLI usage more effective/efficient, if you can publish a skill that would be excellent
+    - `chunkhound search <query>`, `chunkhound search --regex <query>` and `chunkhound research <query>` are the main cli entry points that you can already use today
+
+- https://github.com/krokozyab/Agent-Fusion /MIT/202511/kotlin/inactive
+  - a local RAG semantic search engine that gives AI agents instant access to your code, documentation (Markdown, Word, PDF).
+  - Local: Everything stored locally in `DuckDB`.
+  - Search: Smart search that understands meaning, not just keywords (semantic + symbol + full-text + git history)
+  - [Run Semantic Search Locally: A Context Engine for AI Code Assistants : r/codex _202511](https://www.reddit.com/r/codex/comments/1ouwo3e/run_semantic_search_locally_a_context_engine_for/)
+
+- https://github.com/ancoleman/qdrant-rag-mcp /MIT/202506/python/inactive
+  - MCP server that provides semantic search capabilities across your codebase using Qdrant vector database.
+  - Hybrid Search: Combines semantic understanding with keyword matching for +30% better precision
+  - AST-Based Chunking: Structure-aware code parsing for Python, Shell, Go, JavaScript, and TypeScript (-40% tokens)
+  - Smart Incremental Reindexing: Only process changed files for 90%+ faster reindexing (v0.2.4)
+  - Multi-Project Support: Keep different projects' knowledge separate
+  - Optional Auto-Indexing: Keep your index up-to-date automatically as files change
 
 - https://github.com/missdeer/ace-tool-rs /208Star/GPL/202601/rust
   - a Rust implementation of a codebase context engine that enables AI assistants to search and understand codebases using natural language queries.
@@ -1586,6 +1625,14 @@ modified: 2025-12-11T18:10:23.710Z
   - Incremental Updates: Updates graphs efficiently as code changes via git integration
   - Hybrid Retrieval: Combines vector similarity (ChromaDB) with graph traversal (Neo4j)
 
+- https://github.com/AssahBismarkabah/42context /apache2/202509/ts/inactive
+  - code search and analysis tool that leverages MCP for intelligent code understanding. 
+  - Key features include natural language queries with vector similarity matching, real-time file system watching with automatic re-indexing, deep AST-based code structure analysis, high-performance similarity search, and full MCP server integration with stdio and HTTP transports. 
+  - It also incorporates advanced memory management to handle large codebases (7, 620+ files) without segmentation faults, along with a comprehensive CLI supporting shell completions.
+  - The stdio transport is recommended for local client integration
+  - Tensor Cleanup: Proper ONNX.js tensor disposal to prevent native memory leaks.
+  - Sequential Processing: Memory-safe batch processing replacing unsafe Promise.all().
+
 - https://github.com/Bikach/codeGraph /MIT/202601/ts
   - MCP server that builds and exposes a code graph via Neo4j, enabling LLMs to intelligently navigate and analyze codebases.
 
@@ -1665,6 +1712,17 @@ modified: 2025-12-11T18:10:23.710Z
   - Deep understanding of your codebase structure using Tree-sitter.
   - CLI Installation: npx mantic.sh@latest "your search query"
   - MCP Server Installation: Mantic works as an MCP server for Claude Desktop, Cursor, VS Code, and other MCP-compatible tools.
+
+- https://github.com/JetBrains/databao-context-engine /15Star/apache2/202602/python
+  - https://databao.app/
+  - a CLI tool that automatically generates governed semantic context from your databases, BI tools, documents, and spreadsheets.
+  - It runs locally in your environment and integrates with any LLM 
+  - MCP integration	Works with Claude Desktop, Cursor, and any MCP-compatible tool
+  - Built-in benchmarks	Measure and improve context quality over time
+  - LLM agnostic	OpenAI, Anthropic, Ollama, Gemini — use any model
+  - Governed & versioned	Track, version, and share context across your team
+  - Dynamic or static	Serve context via MCP server or export as artifact
+  - 不支持hybrid-search: Run a vector similarity search
 
 - https://github.com/BeaconBay/ck /1.4kStar/MIT/202601/rust/ts
   - https://beaconbay.github.io/ck/
@@ -1768,22 +1826,11 @@ modified: 2025-12-11T18:10:23.710Z
   - tmux-cli works with any CLI coding agent, Think Playwright for terminals - Terminal automation for AI agents.
   - lmsh: Natural language shell - type what you want in plain English, get an editable command.
 
-- https://github.com/JetBrains/databao-context-engine /15Star/apache2/202602/python
-  - https://databao.app/
-  - a CLI tool that automatically generates governed semantic context from your databases, BI tools, documents, and spreadsheets.
-  - It runs locally in your environment and integrates with any LLM 
-  - MCP integration	Works with Claude Desktop, Cursor, and any MCP-compatible tool
-  - Built-in benchmarks	Measure and improve context quality over time
-  - LLM agnostic	OpenAI, Anthropic, Ollama, Gemini — use any model
-  - Governed & versioned	Track, version, and share context across your team
-  - Dynamic or static	Serve context via MCP server or export as artifact
-  - 不支持hybrid-search
-
 - https://github.com/a24z-ai/a24z-Memory /MIT/202510/ts/inactive
   - MCP server for managing repository-anchored notes and context management.
   - [I am building a better context engine for AI Agents : r/LLMDevs _202508](https://www.reddit.com/r/LLMDevs/comments/1n3g6z1/i_am_building_a_better_context_engine_for_ai/)
     - The MCP server retrieves, creates, summarizes, deletes, and checks for staleness.
-    - It is completely local as part of your github repository. No complicated vector databases. Just file anchors on files.
+    - 💡 It is completely local as part of your github repository. No complicated vector databases. Just file anchors on files.
 
 - https://github.com/cocoindex-io/cocoindex /6.1kStar/apache2/202602/rust/python
   - https://cocoindex.io/
@@ -1808,6 +1855,11 @@ modified: 2025-12-11T18:10:23.710Z
   - Codebase intelligence for AI. Detects patterns & conventions + remembers decisions across sessions. MCP server for any IDE. Offline CLI.
   - Drift's Cortex Memory System replaces static instruction files with living memory
   - [AST‑Powered Codebase Intelligence: Meet Drift, the Context Engine Behind Truly Useful AI Agents. : r/golang _202601](https://www.reddit.com/r/golang/comments/1qn7ksm/astpowered_codebase_intelligence_meet_drift_the/)
+
+- https://github.com/CodeAlive-AI/codealive-mcp /MIT/202601/python
+  - https://www.codealive.ai/
+  - The most accurate and comprehensive Context Engine as a service, optimized for large codebases, powered by advanced GraphRAG and accessible via MCP. 
+  - you can self-host the entirety of CodeAlive in your own environment, and even use your own LLM providers for added flexibility. This option allows you to maintain the privacy and security of your codebase. 👀 This option is available only for companies
 
 - https://github.com/your-papa/obsidian-Smart2Brain /MIT/202602/ts/svelte
   - An Obsidian plugin to interact with your privacy focused AI-Assistant making your second brain even smarter!

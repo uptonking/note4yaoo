@@ -122,6 +122,13 @@ modified: 2025-02-26T15:04:15.883Z
 
 ## django-apps
 
+- https://github.com/maniishbhusal/django-react-auth-starter /202602/py/ts
+  - https://django-react-auth-starter.vercel.app/
+  - production-ready authentication starter with Django REST Framework and React. 
+  - JWT authentication, email verification, password reset - all wired up and ready to go.
+  - [I built a Django + React auth starter so I'd stop rewriting the same login code every project : r/django _202602](https://www.reddit.com/r/django/comments/1r2vt1m/i_built_a_django_react_auth_starter_so_id_stop/)
+    - I tried something like this with Next instead of React - https://github.com/mentix02/djanxt  Uses BetterAuth + Django for seamless auth via JWT + signals. Template ships with a todo list app with auth.
+
 - https://github.com/FarhanAliRaza/django-repl /202511/ts/svelte
   - https://django.farhana.li/
   - Experimental - Run Django in your browser using WebAssembly

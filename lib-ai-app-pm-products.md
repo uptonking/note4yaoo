@@ -19,6 +19,7 @@ modified: 2025-03-22T16:10:24.856Z
   - ai-apps as ref: lasuite
   - ai时代的人工编辑, 可设计为特殊的human-in-the-loop
   - 一切通知/消息，都可以设计为 ai的chat+自动化工具
+  - 之前的软件设计是面向用户、开发者，现在不得不重新设计，以大模型为使用者。 WebMCP的推进会让产品api快速发展
 
 - ai-dev-xp
   - 难复现好的效果，同样的prompt+context，有时输出的效果就是不好
@@ -215,6 +216,7 @@ modified: 2025-03-22T16:10:24.856Z
     - roadmap: 
       - editing-database, pdf-editing, extraction, chat2db, coding/table/image
       - agent-browser
+  - non-goals: local image gen
   - ✈️ local models support: mlx, lmstudio-alternative
     - 模型库: text模型, ocr模型, 翻译模型, t2i生图模型, tts, stt,  lmstudio在模型分类上做的不够好
     - 较少免费api的模型: ocr, stt
@@ -226,6 +228,7 @@ modified: 2025-03-22T16:10:24.856Z
     - ❓ 如何一键切换到cloud版
     - https://github.com/tc-mb/llama.cpp-omni is the first Omni multimodal inference engine built on llama.cpp.
     - sources: docs, emails
+    - modes config for ocr/rag/translation like cline-plan/act/ask
   - 🔗 citations for search: 外部数据源如字典mdx/书籍epub/wikipedia公开db/统计年鉴
     - 查看原文pdf-parts时支持仅查看前后几页, 保护原文内容
     - 类似词典库/kiwix的预置模块, 可下载、可分享, 不必每次都全量索引
@@ -234,6 +237,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 行业应用: law, medical
   - large pdf rag workflows: chunking-strategies, reindex, pdf-parts
   - 🌐 pdf edit
+    - acp for pdf/rich-editing
     - proofreading: 一键检查, 版本历史
       - chunking viz
     - 还原图文混排
@@ -545,13 +549,10 @@ modified: 2025-03-22T16:10:24.856Z
   - https://github.com/cheahjs/free-llm-api-resources
 
 - news
-  - [kiro企业逆向opus4.6免费蹬 ](https://linux.do/t/topic/1606386)
   - [Codex 用不完 试运行一下个人 LDC 小店 ](https://linux.do/t/topic/1606407)
     - https://sub2api.touchx.tagzxia.com
     - 每日限制 29$ 这个是 7 天卡，周限额是 79$
     - 2.28 日所有的 兑换码 和 订阅 都会被撤销，所以 至少要在 2.21 日前兑换
-  - [codex 额度分享 ](https://linux.do/t/topic/1606571)
-    - 搞了 400 个 GPT 免费号用不完，Key 至 15 号凌晨无限额度
   - [讯飞的GLM-4.7免费用 _202602](https://linux.do/t/topic/1573384)
     - 限免至0305, 20qps
     - [讯飞星辰MaaS平台](https://maas.xfyun.cn/modelSquare)
@@ -590,10 +591,9 @@ modified: 2025-03-22T16:10:24.856Z
     - [DuckCoding](https://duckcoding.com/console/personal)
     - [DuckCoding Az-CC，单独开启公益站，只允许L站注册 ](https://linux.do/t/topic/1308120)
     - [status](https://status.duckcoding.com/status/duckcoding)
-  - [claudex-反重力号池](https://code.claudex.us.ci/panel), 签到
+  - [claudex-反重力号池](https://code.claudex.us.ci/panel)
     - [claudex-反重力号池](https://claudex.us.ci/console/personal), 签到
     - [【福利】公益福利，反重力Opus4.6踩油门（只要没爆会继续延长) ](https://linux.do/t/topic/1542040)
-    - [反重力Opus踩油门（只要没爆会继续延长）一直在丰富池子 ](https://linux.do/t/topic/1542040)
     - 纯公益反重力池子，无套路 L 站 2 级直登，加了 CF
   - 📌 [Any Router](https://anyrouter.top/), 每日签到获取$25
     - 仅支持coding工具，不支持使用api聊天
@@ -699,24 +699,14 @@ modified: 2025-03-22T16:10:24.856Z
     - [〔Hotaru公益站〕新的公益站启动 ](https://linux.do/t/topic/1398297)
   - [Huan API](https://ai.huan666.de/console/personal), 签到, 生图模型
     - cc支持
+  - [API分享站](https://new-api-bxhm.onrender.com/console/personal)
+    - [【API分享站】公益站主帖 ](https://linux.do/t/topic/1355814)
+    - 反代 kiro
   - [小辣椒 公益站～(～￣▽￣)～](https://yyds.215.im/console/topup)
     - cc
   - [真好记公益站](https://newapi.zhenhaoji.qzz.io/console/personal)
     - 随便刷吧，可能刷崩了，我就关站了
-  - [API分享站](https://new-api-bxhm.onrender.com/console/personal)
-    - [【API分享站】公益站主帖 ](https://linux.do/t/topic/1355814)
-    - 反代 kiro
-  - [Jarvis API](https://ai.ctacy.cc/console/personal), 签到
     - cc
-    - 备用, [Jarvis API](https://jarvis.ccwu.cc/)
-  - [八岁公益站](https://ai.xoooox.xyz/console/personal)
-    - cc
-  - [摸鱼公益](https://clove.cc.cd/console/personal), 可签到, 额度少
-    - [【摸鱼公益】 自己的反重力和codex有一些不怎么用，开个摸鱼站给需要的用用 ](https://linux.do/t/topic/1513131)
-    - 后续只能使用积分充值。随用随冲。
-  - [WOW公益站](https://linuxdoapi.223384.xyz/console/personal)
-    - [【已接入LinuxDO OAuth】老破小公益站复活 ](https://linux.do/t/topic/1516043/1)
-    - 因站内目前不支持 Claude-Sonnet，所以接入 Claude Code 时需指定模型 ID 为站内可用的模型
   - [黑与白chatAPI](https://ai.hybgzs.com/), 每日转盘
     - 模型丰富: claude/gemini/codex
     - 很多openrouter渠道的模型
@@ -750,6 +740,9 @@ modified: 2025-03-22T16:10:24.856Z
   - [sorai API](https://newapi.sorai.me/console/personal)
     - [codex公益站启动 _202601](https://linux.do/t/topic/1524003)
     - 只有 codex 模型
+  - [lucky codex](https://codex-lucky.zeabur.app/console/personal), 签到 1-4 刀
+    - [【lucky公益站】codex公益站  ](https://linux.do/t/topic/1616313)
+    - 目前只有 10 个 team 号，所以可能随时跑路
   - [云端API](https://cloudapi.wdyu.eu.cc/console/personal), 签到, 生图
   - [Neb 公益站](https://ai.zzhdsgsss.xyz/console/personal), 签到
     - 采用按量计费，每次0.01，注册送2000次，因为该阶段的初衷就是最大化利用这些将要过期的key。
@@ -760,6 +753,16 @@ modified: 2025-03-22T16:10:24.856Z
   - [Ciprohtna](https://anthorpic.us.ci/console/personal), 签到
     - [【Ciprohtna 公益站】上新 10 LDC = $100 一天订阅畅享包 ](https://linux.do/t/topic/1606615)
     - 注意！没有 opus，opus 在后台都会被重定向到 sonnet
+  - [Jarvis API](https://ai.ctacy.cc/console/personal), 签到
+    - 备用, [Jarvis API](https://jarvis.ccwu.cc/)
+  - [八岁公益站](https://ai.xoooox.xyz/console/personal)
+    - cc
+  - [摸鱼公益](https://clove.cc.cd/console/personal), 可签到, 额度少
+    - [【摸鱼公益】 自己的反重力和codex有一些不怎么用，开个摸鱼站给需要的用用 ](https://linux.do/t/topic/1513131)
+    - 后续只能使用积分充值。随用随冲。
+  - [WOW公益站](https://linuxdoapi.223384.xyz/console/personal)
+    - [【已接入LinuxDO OAuth】老破小公益站复活 ](https://linux.do/t/topic/1516043/1)
+    - 因站内目前不支持 Claude-Sonnet，所以接入 Claude Code 时需指定模型 ID 为站内可用的模型
   - [SNOW AI CLI](https://snowcli.com/dashboard/overview), 签到但余额仅当天有效
     - Kiro政策似乎有变化，Opus不稳定，但不是不能用，Sonnet和Haiku正常
     - 特别注意，Kiro逆向因为Token返回数据不精确，所以Snow CLI 无法准确判断自动压缩，根据经验，上下文到达25k~30K左右差不多就满了（这不是真的只有这么短）而是Kiro逆向没有返回缓存信息实际上下文可能非常接近200k了
@@ -782,7 +785,7 @@ modified: 2025-03-22T16:10:24.856Z
     - [「公益站」最终还是换成了 New-API _202509](https://linux.do/t/topic/927953)
   - [轻 API](https://lightllm.online/console/personal), 签到
     - cc支持
-  - [DEV88公益](https://api.dev88.tech/console/personal), 签到
+  - [DEV88公益](https://api.dev88.tech/console/personal), 签到-0.01
     - cc支持
   - [曼波API](https://ai.dik3.cn/console/personal), 签到
   - [ICAT公益站](https://icat.pp.ua/console/personal), 签到
@@ -806,6 +809,8 @@ modified: 2025-03-22T16:10:24.856Z
   - [唔系唔系](https://claude.chiddns.com/console)
   - [foxhank - Claude Relay Service](https://cc.foxhank.cn ), 无法注册
     - [【CC公益站】尝试维护一个智谱的CC公益站  ](https://linux.do/t/topic/1108974)
+  - [Fengye API](https://fengyeai.chat/console)
+    - cc
   - [一个小站的 API 商店](https://one-api.ygxz.in/app/dashboard), 每日签到1刀内随机
     - 提供半公益的高质量 API 中转服务，始于202406
     - 无调用频率限制
@@ -815,7 +820,6 @@ modified: 2025-03-22T16:10:24.856Z
     - 仅在每周五下午 18:00 至 21:00 开放，每周限量 100 人
     - 支持claude,gemini, 不支持gpt
   - [【公测开启】Kiro账号托管平台  ](https://linux.do/t/topic/1227895)
-  - [Fengye API](https://fengyeai.chat/console)
   - [莹のAPI](https://api.wpgzs.top/pricing)，模型贵
     - rpm15
     - [莹のapi 加油站](https://quota.wpgzs.top/), 鸡你太美，每天可转100刀到公益站
@@ -1002,6 +1006,8 @@ modified: 2025-03-22T16:10:24.856Z
     - 逆向的flow接口
     - 模型名如下：gemini-3.0-pro-image-landscape,gemini-3.0-pro-image-portrait,gemini-3.0-pro-image-square
     - 由于目前flow官方流量大，官网都生不了图，佬友们等会再蹬
+  - [图片生成](https://pam-carrier-korean-chemicals.trycloudflare.com/)
+    - [nanobanana公益站 ](https://linux.do/t/topic/1616133)
 
 - image-saas
   - [小白生图 - AI Image Generator](https://catsapi.com/)
@@ -1568,7 +1574,58 @@ modified: 2025-03-22T16:10:24.856Z
 
 - ## 
 
-- ## 
+- ## 从 CompanyOS 到 LifeOS - 将文件系统哲学应用于人生管理
+- https://x.com/yibie/status/2021778995185168650
+  - Eli Mernit 提出将公司建模为文件系统，让 AI Agent 通过读写文件来运营企业。这条思路的深层价值在于：当个人也将人生建模为文件系统时，它不仅是一种极简高效的人生管理哲学，更让 Openclaw 等 AI Agent 能够真正成为你的"数字分身"——因为它们可以像访问公司数据一样，访问你完整的人生上下文。
+- "One reason that rolling out agents at enterprises is complicated is because data is siloed across many different systems."
+  - 没有共享的命名空间 (shared namespace)，AI Agent 无法获得完整的上下文，自然无法做出好的决策。
+- Eli 的解决方案极具 Unix 哲学的美感： 把整个公司建模为一个统一的文件系统。
+  - 统一命名空间：所有数据映射到文件路径Agent 可以访问所需的一切
+  - 文件即状态：公司状态 = 文件内容状态管理极简、透明
+  - 权限即治理：组织架构 = Unix 权限权限边界清晰、自动化
+  - 读写即操作：Agent 通过读写文件工作接口简单、可审计
+
+- 如果你想开始构建自己的人生文件系统，以下是一些工具思路：
+基础工具
+Obsidian - 本地 Markdown 笔记，图谱视图
+Logseq - 大纲式笔记，日记导向
+VS Code + Git - 代码编辑器管理人生文件
+同步与访问
+Syncthing - 点对点文件同步
+Nextcloud - 自托管云存储
+GitHub Private Repos - 版本控制人生文件
+AI 集成
+Openclaw - 文件系统优先的 AI Agent
+Claude Code - 可以直接操作文件的 AI
+数据迁移
+从各 App 导出数据（大多数支持）
+转换为 Markdown / JSON / CSV
+导入统一的人生文件系统
+
+- 👥
+
+- 这里面的挑战是，未来这些信息是一个本地的系统，还是一个云端的系统。是集中化的，还是数据分散但是通过agent集中起来的。留在本地的这一整套都不是终极形态
+  - 未来和 OpenClaw 开发者所说的，SaaS 服务会再度抽象成一个个 bot，然后 bot-2-bot 相互沟通提供服务。可视化设计只不过是面向人类，而 bot 是不需要的。 所以，无论当前的界面是否消亡，面向人类的 GUI 和让数据联通的 API 都不会消失。
+
+- ## So far in 2026: Browsers. Payments. Apps. Commerce. Ads.
+- https://x.com/Jall_n/status/2022364519071154325
+  - Google shipped WebMCP
+  - Stripe shipped x402 payments
+  - Anthropic released MCP Apps
+  - Shopify launched Universal Commerce Protocol
+  - Yahoo released adMCP
+  - Your new customer is an agent with a protocol, not a human with a browser.
+
+- visa also shipped credit cards for agents with @crossmint
+
+- Final phase, Prompt injected to leak my already leaked password, golden.
+- still waiting on my AuthMCP invite
+
+- funny how we spent years optimizing for SEO and now we're back to optimizing for machines anyway
+
+- MCP will die this 2026. MD files and CLI will be the substitute
+
+- 2026 is the year protocols become the primary interface. Humans aren’t browsing. Agents are. They follow standards, authenticate, and transact autonomously.
 
 - ## [老saas焕新的讨论 ](https://linux.do/t/topic/1607336)
   - 有没有办法，可以把老旧的 web based 的 saas 系统，升级成 AI driven 的新的 saas 系统？ 我能想到的一种方式是，前端提供对话框，LLM prompts 里提前对业务系统的表结构进行理解（saas 一般都是结构化数据），text2sql，然后对查出来的数据，在前端通过 llm 进行展示（这种形式最容易想到，也容易被 sql 注入，大家还有没有别的方法）

@@ -15,6 +15,8 @@ modified: 2025-02-03T10:17:42.052Z
 
 - tips-mcp
   - mcp的文档内容太多, 可尝试用对应的cli工具替换api工具
+# mcp-xp
+- MCP will die this 2026. MD files and CLI will be the substitute
 # ⚖️ ai-protocols
 - [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro)
   - [Introducing the Model Context Protocol - Anthropic _202411](https://www.anthropic.com/news/model-context-protocol)
@@ -238,6 +240,32 @@ modified: 2025-02-03T10:17:42.052Z
 - ## 
 
 - ## 
+
+- ## WebMCP 是一套标准化协议，让网站可以主动告诉 AI Agent "你能在我这里做什么、怎么做"，而不是让 Agent 自己去猜测和操作 DOM。
+- https://x.com/dotey/status/2022392133827932255
+  - 它提供了两种 API：一种是声明式的，基于 HTML 表单定义标准操作；另一种是命令式的，通过 JavaScript 处理更复杂的动态交互。典型应用场景包括客服工单自动填写、电商购物导航、机票搜索预订等。
+
+- 这就伟大了! 因为它定义的是所有服务商的服务器给用户的服务api, 使得用户日后只需要本地agent就可以获取任何服务商的各种服务
+
+- 之前的软件设计是面向用户、开发者，现在不得不重新设计，以大模型为使用者。
+
+- 这波操作没看出来对网站有啥好处，网站只是提供数据
+
+- ## [Chrome’s WebMCP makes AI agents stop pretending : r/mcp](https://www.reddit.com/r/mcp/comments/1r2m7ev/chromes_webmcp_makes_ai_agents_stop_pretending/)
+  - WebMCP basically lets websites register tools that AI agents can discover and call directly, instead of taking screenshots and parsing pixels.
+  - AI agents tools like agent-browser currently browse by rendering pages, taking screenshots, sending them to vision models, deciding what to click, and repeating. Every single interaction. 51% of web traffic is already bots doing exactly this (per Imperva's latest report).
+  - Edit: I should clarify that agent-browser doesn't need to take screenshots by default but when it has to, it will (assuming the model that's steering it has a vision LLM).
+  - WebMCP flips the model. Websites declare their capabilities with structured tools that agents can invoke directly, no pixel-reading required. Same shift fintech went through when Open Banking replaced screen-scraping with APIs.
+  - The spec's still a W3C Community Group Draft with a number of open issues, but Chrome's backing it and it's designed for progressive enhancement.
+  - You can add it to existing forms with a couple of HTML attributes.
+
+- That is not at all how agent-browser works. It uses accessibility snapshots to find interactable elements, no screenshot involved.
+  - It CAN take screenshots when it needs to and send to vision LLM/s when navigation isn't straightforward. By default it doesn't need to.
+
+- Pretty sure your premise is off. Playwright, for example, just interacts with the DOM of your webpage. It can take screenshots as well but that’s not what it uses to navigate…
+  - That’s quite difficult when the page is mostly JavaScript.
+
+- How does this differ meaningfully from the llms.txt protocol? Most sights that want to be accessible to llms just post one of those
 
 - ## WebMCP: AI agents can now interact *directly* with existing websites and webapps - not by using the "human" app interface.
 - https://x.com/liadyosef/status/2021151526375268643

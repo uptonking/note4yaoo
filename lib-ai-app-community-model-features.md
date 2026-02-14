@@ -28,6 +28,14 @@ modified: 2025-11-05T19:04:50.350Z
 
 - ## 
 
+- ## [Please stop creating "memory for your agent" frameworks. : r/ClaudeCode _202602](https://www.reddit.com/r/ClaudeCode/comments/1r4asf6/please_stop_creating_memory_for_your_agent/)
+  - Claude Code already has all the memory features you could ever need. Want to remember something? Write documentation! Create a README. Create a SKILL.md file. Put in a directory-scoped CLAUDE.md. Temporary notes? Claude already has a tasks system and a plannig system and an auto-memory system. We absolutely do not need more forms of memory!
+- why don’t you want to use my slop plugin that will severely bloat your context window, triple token usage and cause hallucinations all the time? No
+
+- You can't stop it, like what Taylor Swift says: makers gonna make make make 
+
+- Agent memory is far from perfect. Claude memory is not ideal. It doesn’t remember half the things. Memory is the biggest problem that needs to be solved still. Anyone who is deep into agentic world knows this. We need as much innovation as we can get.
+
 - ## [Universal LLM Memory Doesn't Exist : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1p5jh9l/universal_llm_memory_doesnt_exist/)
   - TL; DR: I benchmarked Mem0 and Zep as “universal memory” layers for agents on MemBench (4, 000 conversational QA cases with reflective memory), using gpt-5-nano and comparing them to a plain long-context baseline.
   - My takeaway:

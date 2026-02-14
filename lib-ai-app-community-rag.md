@@ -362,6 +362,48 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [we turned topics into APIs : r/Rag _202602](https://www.reddit.com/r/Rag/comments/1r4f23t/we_turned_topics_into_apis/)
+  - 👀 疑似广告
+  - In almost every AI project we’ve built, we ended up recreating the same infrastructure.
+  - Pick a topic ->
+  - Scrape sources.
+  - Schedule refreshes.
+  - Deduplicate.
+  - Extract entities.
+  - Embed.
+  - Track changes.
+  - Handle webhooks.
+  - Repeat.
+  - It works.
+  - But it’s surprisingly heavy to maintain.
+  - So we built something simpler: treat a topic like an API endpoint.
+  - Instead of scraping websites, you subscribe to a topic /remem/create
+  - That topic becomes a persistent memory.
+  - It refreshes automatically. Each refresh creates a version. You can diff versions. You can query it anytime.
+  - You’re not querying the web. You’re querying a continuously maintained topic.
+  - Why not just use search APIs like Exa or Tavily?
+  - Search APIs are query-time tools. They search the web right now. That’s useful.
+  - But they don’t: Persist results over time, Maintain version history, Detect changes between updates
+  - Search is stateless. This is stateful.
+  - Why not just scrape + RAG?
+  - Eventually you’ve rebuilt a topic monitoring system.
+  - What /remem actually does
+  - Each update creates a version. You can diff versions.
+  - Entity extraction (no generative hallucinations)
+  - Entity-level change detection
+- Tradeoffs
+  - You’re abstracting away crawling control.
+  - If you need highly custom scraping logic, you’ll still want your own stack.
+  - Version history is currently limited (3 stored per memory).
+  - If you need deep archival storage, this isn’t that.
+- Daily tracking ≈ 30 credits/month.
+
+- Keeping topic data fresh and reliable is a real headache if you are building multiple AI tools. Automating the monitoring and lead discovery part can honestly save a ton of time. If you want to track real conversations across platforms like Reddit and LinkedIn, ParseStream does this well by sending alerts for keywords you care about so you can jump in right when it matters.
+
 - ## [The RAG Secret Nobody Talks About : r/LlamaIndex](https://www.reddit.com/r/LlamaIndex/comments/1q7c3mg/the_rag_secret_nobody_talks_about/)
 - How LlamaIndex solves this:
   - Pluggable chunking strategies. 
@@ -847,9 +889,28 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## 🔠 [Rules that will help with Context Engine MCP : r/AugmentCodeAI](https://www.reddit.com/r/AugmentCodeAI/comments/1qieg9k/rules_that_will_help_with_context_engine_mcp/)
+  - When asked about the codebase, project structure, or to find code, always use the augment-context-engine MCP tool (codebase-retrieval) first before reading individual files.
 
-- ## [ACE 的平替：fast-context-mcp ](https://linux.do/t/topic/1610998)
+- ## [Context Engine MCP : My own result : r/AugmentCodeAI _202602](https://www.reddit.com/r/AugmentCodeAI/comments/1qxr0sz/context_engine_mcp_my_own_result/)
+  - For testing, I used: Roo Code / glm 4.7. Runs with and without Augment’s Context Engine
+
+- I've been doing this too. The improvement is insane. Kimi 2.5 uses Auggie context engine VERY well, better than GLM, as good as sonnet. Legit please include it in augment.
+
+- it’s hard to use the context MCP on Claude or Cursor, those agents keep using their own code search tool
+  - you will need to give them specific rules… much like we did with ours… https://github.com/Context-Engine-AI/Context-Engine …. So tools know to use augments mcp over grep and cat etc…
+
+- ## [Self-hosted code search for your LLMs - built this to stop wasting context on irrelevant files : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qlbsv1/selfhosted_code_search_for_your_llms_built_this/)
+- One thing that tripped us up early on was assuming “retrieval correctness” was the whole problem — but in longer, highly interactive sessions, the conversation itself becomes the limiting factor, even when the right files are in play.
+  - At some point the session isn’t wrong, it’s just overloaded.
+  - What helped was treating long sessions more like a system with a stability envelope: once you cross a certain accumulated context threshold, quality degrades quietly unless you checkpoint or reset deliberately.
+  - Out of curiosity: do you currently have any heuristics for detecting *when* a session is becoming unstable, or is it mostly noticed after answers start drifting?
+- This resonates a lot. One thing I’ve noticed is that even when retrieval is done “right”, long interactive sessions still tend to drift quietly over time — not because a file is missing, but because the conversation itself becomes overloaded.
+  - Reducing irrelevant context is huge, but knowing *when* a session is becoming unstable has been just as important for me.
+  - Curious: have you noticed cases where everything relevant was retrieved correctly, yet answers still started degrading after long back-and-forth?
+- not at all. especially when using apis. however. the clear instructions for the agents we have in Claude example / skills, port to any we just haven't got to the logistics. Once it knows the tools like that. its very effective never using grep or file reads, and making precision edits
+
+- ## [ACE 的平替：windsurf 的 fast-context-mcp ](https://linux.do/t/topic/1610998)
   - 最近玩 cc/codex 的佬应该都离不开一个东西了 —— Augment 家的 Context Engine MCP（下面简称 ACE）。 尤其是 codex，能大大地提高速度
   - 简单说下 ACE 是啥：它会对你整个代码仓库建立索引，你用自然语言问一句，它就能很快的返回最相关的代码片段。不用 cc 自己 grep 半天，也不用 AI 一个文件一个文件翻
   - 有替代方案吗？ 还真有 —— Windsurf 的 Fast Context。
@@ -1150,6 +1211,36 @@ modified: 2024-09-08T20:08:16.088Z
   - the concurrency argument is valid for multi-agent setups but honestly most people arent running multiple agents writing to the same memory simultaneously. for single agent workflows (which is like 90% of use cases) files work perfectly
   - biggest win for me is the git versioning. being able to git diff your AI's memory and see exactly what changed is incredibly useful for debugging weird behavior. try doing that with a postgres table
 
+- ### [Why I think markdown files are better than databases for AI memory : r/AIMemory _202602](https://www.reddit.com/r/AIMemory/comments/1r2pd8k/why_i_think_markdown_files_are_better_than/)
+  - Standard approach: Store memories in PostgreSQL/MongoDB → embed → index in vector DB → query through APIs.
+  - Alternative: Store memories in markdown → embed → index in vector DB → query through APIs.
+  - The retrieval is identical. Same vector search, same reranking. Only difference: source of truth.
+
+- 🤼 ideally memory should be append only, I Aside that md seems like the wrong tool, unless you’re not trying to build ‘infinite’ memory
+
+- Git latency spikes at 10, 000 files. Programmatic commits cause .git bloat. Markdown lacks ACID concurrency. For agent memory under 100MB, these are negligible. Transactional integrity for multi-agent writes is the primary bottleneck. Databases offer ACID; Markdown offers transparency. Choice is a function of write concurrency, not storage volume. Transparency is the survival strategy for frontier agents.
+
+- Of course memory is storage, whether that’s flat-files or a database. But it’s a bit more too, and that “meta-schema” seems to be important and not straightforward.
+
+- But there are complications. Auto-reindexes require some sort of watcher if you allow a user to edit them manually — that can get hairy. Indexing FTS/BM25 becomes slow at the very least.
+  - But maybe the trade offs are worth it? Git memory history is a nice forensics feature, but again super slow compared to versioning memories in a DB.
+
+- Markdown files are a perfectly fine choice for AI memory when the constraints fit; small data, single-user, single-agent, infrequent writes. I use that for my own personal builds. And you're right that premature optimization often adds complexity without real benefit.
+  - But I also think dismissing the counter-arguments is a bit hand-wavy. Once you start building multi-user, multi-tenant, multi-agent systems with need for structured data you need to think differently. There is a reason why databases exists.
+
+- The main gotchas Ive run into are concurrent writes and schema drift over time, but git does give you a nice audit trail. Do you separate short-term scratchpad vs long-term facts? 
+
+- The “concurrent writes” thing rears its ugly head when you’re trying to get agent swarms to operate on a shared central memory of what they’re building.
+
+- I ran a flat-file "database" based Perl forums and CMS's at the beginning of the 90s. Never again. It's OK for a single, not for a swarm of agents and their workflows, and not for years. We have better things for that, and they also "just work".
+
+- database-backed memory is hard to inspect and debug. but you've solved what amounts to a tooling problem by rearchitecting your data layer.
+  - "How often do you need concurrent writes?" The moment you have an agent processing a conversation while a background job consolidates memories, or any multi-tenant scenario. File systems don't give you locks or conflict resolution. We solved this problem. 
+  - Atomicity — Process crashes mid-write to a markdown file and you get corruption. Databases give you transactions. The write completes or it doesn't.
+  - "< 100MB after months" That's survivorship bias from running a system for two months. We probably want to maintain projects on the scale of years.
+  - Git managing enterprise code ≠ git managing agent memory. Agent memory is written programmatically, potentially thousands of times daily. Git was not designed for that write pattern and you'll probably bloat the repo.
+  - Queryability beyond vectors — Not every memory access is semantic search. Exact lookups, relational joins, filtered queries, aggregations. Markdown gives you none of that without building a parser, which is again just a worse database.
+
 - ## 🧮🧩 Hierarchical Navigable Small World (HNSW) is the algorithm that makes vector search actually fast at scale, letting us search through billions of vectors in milliseconds. 
 - https://x.com/victorialslocum/status/2019003231456686375
   - HNSW builds a multi-layer graph structure where each layer has exponentially fewer nodes than the one below it.
@@ -1251,6 +1342,66 @@ modified: 2024-09-08T20:08:16.088Z
 - ## 
 
 - ## 
+
+- ## [Increasing your chunk size solves lots of problems - the default 1024 bit chunk size is too small : r/Rag _202602](https://www.reddit.com/r/Rag/comments/1r36f72/increasing_your_chunk_size_solves_lots_of/)
+- you are wrong, but given you are only here to inform us that you are right, i think i'll let you find out yourself.
+  - input-token costs off the charts, particularly with said big context models
+  - amount of consulted sources decreases
+  - granular information gets lost in the haystack
+  - llm context gets polluted to absolute hell
+  - what this guy pointed out niceley: search accuracy gets diluted
+  - multi-step or multi-retrieval agents will despite what OP says absolutely hit context ceiling
+  - while providers claim context windows of N, performance usually massively drops at arround max 0.4 N. Big context window doesnt mean its best to fill it to the brim, in the contrary.
+  - Generally: for contextual-understandig-type things, rather big chunks are fine, for exact granular data retrieval smaller are better.
+
+- The bottleneck for chunk size was never the context window of the reader, but rather the context window of the embedder as well as the “effective” context size of the embedder.
+  - Even SOTA embedding models today don’t have much more than a few thousand tokens of context max, which is a hard limit on your chunk size assuming you are going to use vector search.
+  - Additionally there is a very significant regression to the mean issue with embeddings, where if you put too many sentences together you start losing the signal of that piece of text.
+  - I think the larger effective context size of the readers (decoder LLMs) means more context can be retrieved, but it shouldn’t have too much impact on the size of the chunks you are embedding.
+
+- the point about embedder context being the actual bottleneck is the real answer here. you can feed 50 pages to gemini all day but if your embedding model only meaningfully represents the first 512 tokens of each chunk then your retrieval quality tanks regardless of chunk size
+  - in practice what worked for me is chunking larger (2-4k tokens) but with overlap AND storing a summary embedding alongside the full chunk. retrieve on the summary, pass the full chunk to the LLM. best of both worlds
+
+- Increasing chunk size feels like a win until you realize you’re just paying for 'Context Dilution.'
+  - Mathematically, when you bloat chunks, your cosine similarity starts measuring the 'average' of a 6, 000-token soup rather than the specific needle you’re looking for. You end up with higher latency, higher token costs, and a model that gets 'Lost in the Middle'. The latter won't happen in case the answer fits in 1 or 2 chunks, but with pushing more chunks into the answer and agentic workflows where context is bloated by all the instructions and tools, it will take a significant toll.
+  - Besides, by nature it's an endless optimization process. It must be based on evals to see, if it's a gain or a loss in your specific case. We automate experimentation and just find the mathematical 'sweet spot' for each specific use case.
+
+- ## 🆚 [We Benchmarked 7 Chunking Strategies. Most 'Best Practice' Advice Was Wrong. : r/Rag _202602](https://www.reddit.com/r/Rag/comments/1r47duk/we_benchmarked_7_chunking_strategies_most_best/)
+  - Somebody on your team (or a Medium post) told you to "just use 512 tokens with 50-token overlap" or "semantic chunking is strictly better."
+  - We (hello from the R&D team at Vecta!) decided to test these claims. We created a small corpus of real academic papers spanning AI, astrophysics, mathematics, economics, social science, physics, chemistry, and computer vision. Then, we ran every document through seven different chunking strategies and measured retrieval quality and downstream answer accuracy.
+  - Critically, we designed the evaluation to be fair: each strategy retrieves a different number of chunks, calibrated so that every strategy gets approximately 2, 000 tokens of context in the generation prompt. This eliminates the confound where strategies with larger chunks get more context per retrieval, and ensures we're measuring chunking quality, not context window size.
+  - The "boring" strategies won. The hyped strategies failed. And the relationship between chunk granularity and answer quality is more nuanced than most advice suggests.
+  - We assembled a diverse corpus of 50 academic papers (905, 746 total tokens) deliberately spanning similar disciplines, writing styles, and document structures: Papers ranged from 3 to 112 pages and included technical dense mathematical proofs pertaining to fundamental ML research. All PDFs were converted to clean markdown using MarkItDown, with OCR artifacts and single-character fragments stripped before chunking.
+- Chunking Strategies Tested
+  - Fixed-size, 512 tokens, 50-token overlap
+  - Fixed-size, 1024 tokens, 100-token overlap
+  - Recursive character splitting, LangChain-style 
+  - RecursiveCharacterTextSplitter at 512 tokens
+  - Semantic chunking, embedding-based boundary detection (cosine similarity threshold 0.7)
+  - Document-structure-aware, splitting on markdown headings/sections, max 1024 tokens
+  - Page-per-chunk, one chunk per PDF page, using MarkItDown's form-feed (\f) page boundaries
+  - Proposition chunking, LLM-decomposed atomic propositions following Dense X Retrieval with the paper's exact extraction prompt
+- All chunks were embedded with text-embedding-3-small and stored in local ChromaDB. Answer generation used gemini-2.5-flash-lite via OpenRouter. We generated 30 ground-truth Q&A pairs using Vecta's synthetic benchmark pipeline.
+- How We Score Retrieval: Precision, Recall, and F1
+  - We evaluate retrieval at two granularities: page-level (did we retrieve the right pages?) and document-level (did we retrieve the right documents?). At each level, the core metrics are precision, recall, and F1.
+  - Precision measures: of everything we retrieved, what fraction was actually relevant? A retriever that returns 5 pages, 4 of which contain the answer, has a precision of 0.8. High precision means low noise in the context window.
+  - Recall measures: of everything that was relevant, what fraction did we find? If 3 pages contain the answer and we retrieved 2 of them, recall is 0.67. High recall means we're not missing important information.
+  - F1 is the harmonic mean of precision and recall. It penalizes strategies that trade one for the other and rewards balanced retrieval.
+  - Why two granularities matter. Page-level metrics tell you whether you're pulling the right passages. Document-level metrics tell you whether you're pulling from the right sources. A strategy can score high page-level recall (finding many relevant pages) while scoring low document-level precision (those pages are scattered across too many irrelevant documents). As we'll see, the tension between these two levels is one of the main findings.
+- Results
+  - Recursive splitting wins on accuracy (69%) and page-level retrieval (0.92 F1). The 512-token strategies lead on generation quality, while larger-chunk strategies lead on document-level retrieval but fall behind on accuracy.
+  - Finding 1: Recursive and Fixed Splitting Often Outperforms Fancier Strategies
+  - Finding 2: The Granularity-Retrieval Tradeoff Is Real
+  - Finding 3: Semantic Chunking Collapses at Scale. The fundamental problem: semantic chunking optimizes for retrieval-boundary purity at the expense of context coherence. Each chunk is a "clean" semantic unit, but a single sentence chunk may lack the surrounding context needed for generation.
+  - Finding 4: The Page-Level Retrieval Story. Recursive 512 at k=5 hits the best balance: 0.92 page F1 and 0.86 doc F1. 
+- My team built Vecta specifically to meet the need for precise RAG evaluation software. It generates synthetic benchmark Q&A pairs across multiple semantic granularities, then measures precision, recall, F1, accuracy, and groundedness against your actual retrieval pipeline.
+
+- You should publish your code to make your findings more credible. Chunking is only one small step in the whole setup and process. Each step will impact the final retrieval. Docs should be cleaned and OCR results should be reviewed since error rate normally is pretty high.
+  - You should release the doc sources you have used so other people can validate your claims. There is no worse or better chunks strategy without references to doc type, quality, and relationship. A good chunk method to your doc RAG may be very bad to my.
+
+- These are the most basic ones.. there are way more variant and strategy out there.. For starter checkout the chunking playground Chunker.veristamp.in you can tweak and play all these strategy in browser
+
+- this is an AI slop advertisement
 # discuss-embedding
 - ## 
 

@@ -22,7 +22,13 @@ modified: 2025-10-10T02:44:49.634Z
 
 - ## 
 
-- ## 
+- ## [text2sql的工程项目大家有没有最优解 _202602](https://linux.do/t/topic/1614141)
+  - 要求 text2sql 足够准，涉及多表联查，多轮对话纠正，可以生成 echarts 图表展示；
+- 💡 一种思路是参考bi项目的ai功能设计
+
+- 目前没有什么通用的方案， 主要原因是因为业务的 sql 表千奇百怪、各种各样、甚至有一些业务自己都不知道什么语义， 还是需要根据库表的实际场景来分析
+
+- 所以要做数据治理， 要做大量的工程化
 
 - ## Parsing line charts is a hard task for VLMs
 - https://x.com/jerryjliu0/status/2020228625191330028

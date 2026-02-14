@@ -436,6 +436,10 @@ modified: 2023-02-08T07:20:48.475Z
   - The server listens on port 8080 and forwards requests to the Ollama API located at http://localhost:11434/api/generate.
   - The server acts as a proxy, forwarding requests from the HTML interface to the Ollama API and returning the generated images to the HTML interface in 'stream' format so that the progress of the image generation is displayed as it is being generated.
   - [Ollama Image Generator : r/ollama _202601](https://www.reddit.com/r/ollama/comments/1qkokhv/ollama_image_generator/)
+
+- https://github.com/Kieirra/murmure /AGPL/202602/rust/ts
+  - Fully local, private and cross platform Speech-to-Text with LLM Post-processing
+  - [Murmure 1.7.0 - A local voice interface for Ollama : r/ollama](https://www.reddit.com/r/ollama/comments/1r3abol/murmure_170_a_local_voice_interface_for_ollama/)
 # webgpu-ai
 - https://huggingface.co/spaces/ibm-granite/Granite-4.0-Nano-WebGPU/tree/main /202510/ts
   - the demo uses Transformers.js to run the models 100% locally in your browser with WebGPU acceleration.

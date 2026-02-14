@@ -242,6 +242,14 @@ modified: 2025-03-22T18:49:15.634Z
   - If you want a personal, single-user assistant that feels local, fast, and always-on, this is it.
   - [给大家推荐一下这几天国外爆火的 Clawdbot ](https://linux.do/t/topic/1511657)
     - 安装以后，它可以接入你的WhatsApp或Telegram，你给它发消息，它就能在你的电脑上帮你做各种事儿，例如回邮件、浏览网页、做视频等等，而且只在你的电脑上运行，不上传隐私。当然这些事儿Claude Code也能干，但和 clawdbot 对话更像人
+
+- https://github.com/specstoryai/getspecstory /961Star/apache2/202601/go
+  - https://specstory.com/
+  - Turn your AI development conversations into searchable, shareable knowledge.
+  - Install our local first extensions for your favorite AI IDE or Terminal Agent. Sync your conversations to the cloud
+  - https://x.com/doesdatmaksense/status/2012209297380544940
+    - we’ve spent a lot of time normalizing agent sessions, and defining a stable contract for ai conversations across tools.
+    - Normalizing agent sessions into a stable contract is underrated. Once the “conversation shape” is consistent, you can do boring but important stuff—diffs, audits, replay, evals—without rewriting integrations every time a new tool pops up.
 # ui-ai 💄
 - https://github.com/google/a2ui /543Star/apache2/202512/ts
   - https://a2ui.org/

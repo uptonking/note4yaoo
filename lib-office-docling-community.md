@@ -336,7 +336,16 @@ modified: 2025-09-21T13:57:50.332Z
 
 - ## 
 
-- ## 
+- ## [Love-hate relationship with Docling, or am I missing something? : r/Rag](https://www.reddit.com/r/Rag/comments/1r3kk3b/lovehate_relationship_with_docling_or_am_i/)
+  - I can use texts to get any text block from the pdf.
+  - This is given that nothing is lost in the docling conversion, and for most pdfs I try this on there always is. There's always some block either missing or not part of the correct group, for example:
+  - list items interpreted as being text block, thus not being part of a list group
+  - With my projects demand for accuracy Docling is not enough, but it's so so close!
+
+- You are not fighting Docling, you are fighting PDF. If you would try the same with Azure Document Intelligence, you'd end up with a similar experience.
+  - What can help (but does not always) is post-processing. You use all sorts of tricks to re-establish relationships that were missed by the OCRing tool. For example, you could use an LLM and ask it to put things together in a coherent way.
+
+- Docling is not the end game.. use it just to parse but there is a whole lot of post processing before ingestion begins. But yes depends upon on the need
 
 - ## [FileNotFoundError: Missing safe tensors file: D:\docling\docling\_model\model.safetensors  ](https://github.com/docling-project/docling/issues/2310)
 - I managed to solve it by downloading specific configs and models. This command helped in my case:

@@ -114,6 +114,17 @@ modified: 2023-07-05T10:22:57.942Z
 # examples
 - https://github.com/openzim/libzim /cpp
   - Reference implementation of the ZIM specification
+
+- https://github.com/epheterson/zimi /MIT/202602/python
+  - Search and read 100M+ articles offline. API-first knowledge server for ZIM files.
+  - Kiwix packages the world's knowledge into ZIM files — offline archives of Wikipedia, Stack Overflow, dev docs, and thousands of other sources
+  - Zimi makes them useful: JSON API for AI agents — search, read, and browse articles programmatically
+  - Library manager — browse the Kiwix catalog and download ZIMs from the UI
+  - Cross-ZIM search with relevance ranking, deduplication, and time budgets
+  - Persistent cache — instant startup on subsequent runs
+  - [Zimi – ZIM file access for AI agents and humans (UI, API, more...) : r/Kiwix _202602](https://www.reddit.com/r/Kiwix/comments/1r4f6vv/zimi_zim_file_access_for_ai_agents_and_humans_ui/)
+    - I tried to use Claude Code to access my ZIM files and realized there's no great way to do that, so I built one.
+    - It runs locally or in Docker and can be used via API, CLI, MCP, or a web UI in the browser.
 # more
 
 # discuss

@@ -1719,6 +1719,17 @@ modified: 2025-11-30T17:27:16.720Z
   - [Kiwix RAG: Terminal Chat Interface with Local Kiwix Content Integration : r/Kiwix _202512](https://www.reddit.com/r/Kiwix/comments/1pdio0i/kiwix_rag_terminal_chat_interface_with_local/)
   - [I built an offline AI chat app that automatically pulls Wikipedia articles for factual answers - runs completely locally with Ollama : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1pd2x8u/i_built_an_offline_ai_chat_app_that_automatically/)
 
+- https://github.com/epheterson/zimi /MIT/202602/python
+  - Search and read 100M+ articles offline. API-first knowledge server for ZIM files.
+  - Kiwix packages the world's knowledge into ZIM files — offline archives of Wikipedia, Stack Overflow, dev docs, and thousands of other sources
+  - Zimi makes them useful: JSON API for AI agents — search, read, and browse articles programmatically
+  - Library manager — browse the Kiwix catalog and download ZIMs from the UI
+  - Cross-ZIM search with relevance ranking, deduplication, and time budgets
+  - Persistent cache — instant startup on subsequent runs
+  - [Zimi – ZIM file access for AI agents and humans (UI, API, more...) : r/Kiwix _202602](https://www.reddit.com/r/Kiwix/comments/1r4f6vv/zimi_zim_file_access_for_ai_agents_and_humans_ui/)
+    - I tried to use Claude Code to access my ZIM files and realized there's no great way to do that, so I built one.
+    - It runs locally or in Docker and can be used via API, CLI, MCP, or a web UI in the browser.
+
 - https://github.com/rouralberto/zim-llm /202508/python/inactive
   - [Building an Offline Knowledge Base with Kiwix Zim and Docker Model Runner - Alberto Roura](https://albertoroura.com/building-an-offline-knowledge-base-with-zim-and-docker-model-runner/)
   - This project provides a comprehensive system for processing ZIM files (compressed Wikipedia/offline content databases) and creating a vector database for Retrieval-Augmented Generation (RAG) with Large Language Models, effectively having an offline knowledge base.
