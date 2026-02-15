@@ -30,6 +30,8 @@ modified: 2021-03-29T19:14:57.440Z
   3. lint + format, 格式化方便后面看修改的diff。 eslint里一些特殊的规则需要在更新/patch代码后设为error，但lint大部分完后设为warn, 如prefer-const有时会修改源码结构，所以保留一部分lint error不处理
   4. codemod，基于jscodeshift; 一般是添加或移除class field modifier，如declare/private, 设置初始值; 可利用流程先移除所有再添加部分来实现移除部分
   5. tests
+
+- 对开源项目 build from source 时，要选 ci 通过commit
 # dev-summary
 - 研发工作经常是用同一语言的不同框架，或用不同语言，在不同的平台重复实现相同的功能
   - 静下心来深入一个主题，总结现有方案的优点和缺点

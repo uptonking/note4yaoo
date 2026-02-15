@@ -18,6 +18,8 @@ modified: 2026-01-14T19:05:15.969Z
 - features
   - ?
 # draft
+- search in chat
+
 - v0.7.6_20260127版本上, 自定义url都会失败
 
 - lite

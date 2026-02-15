@@ -1026,6 +1026,13 @@ modified: 2025-12-11T18:10:23.710Z
     - Today, mgrep works great on: code, text, PDFs, images. 
   - Web search built-in — query the web alongside your local files with --web.
   - Smooth background indexing via mgrep watch, designed to detect and keep up-to-date everything that matters inside any git repository.
+    - When installed with a coding agent, mgrep runs a background process that syncs your files to enable semantic search. 
+    - This process starts automatically when you begin a session and stops when your session ends. 
+    - Maximum file size: 1MB per file
+    - Maximum file count: 1,000 files per directory
+    - mgrep watch is used to index the current repository and keep the Mixedbread store in sync via file watchers.
+    - Every file is pushed into a Mixedbread Store using the same SDK your apps get.
+    - Because stores are cloud-backed, agents and teammates can query the same corpus without re-uploading.
   - Under the hood, mgrep is powered by Mixedbread Search, our full-featured search solution.
     - Every file is pushed into a Mixedbread Store using the same SDK your apps get.
   - 🐛 [Why is it online only ?  _202512](https://github.com/mixedbread-ai/mgrep/issues/97)
@@ -1407,6 +1414,7 @@ modified: 2025-12-11T18:10:23.710Z
     - Optional LLM features: Local decoder (llama.cpp), cloud integration (GLM, MiniMax), adaptive rerank learning
     - 依赖tree_sitter、qdrant、fastembed、fastmcp、fastapi、watchdog、onnxruntime
     - 未使用neo4j/redis
+    - supports multi-repository operation through unified collection architecture: seamless cross-repo search, All repositories index into **single shared collection** by default
   - https://github.com/mikahoy045/Context-Engine /MIT/202511/python
     - a plug-and-play MCP retrieval stack that unifies code indexing, hybrid search, and optional llama.cpp decoding so product teams can ship context-aware agents in minutes
     - One-command bring-up delivers dual SSE/RMCP endpoints, seeded Qdrant, and live watch/reindex loops for fast local validation.

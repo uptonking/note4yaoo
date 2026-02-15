@@ -237,6 +237,8 @@ modified: 2025-03-22T16:10:24.856Z
     - 行业应用: law, medical
   - large pdf rag workflows: chunking-strategies, reindex, pdf-parts
   - 🌐 pdf edit
+    - pdf ocr one-click eval like FlowDown
+      - ui for popular ocr benchmark
     - acp for pdf/rich-editing
     - proofreading: 一键检查, 版本历史
       - chunking viz

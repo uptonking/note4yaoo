@@ -265,6 +265,10 @@ redis-cli shutdown
     - LazyMount 会在后台一直监控，网络一通，立马重连
     - 整合 Rclone & SMB
     - Tailscale 完美联动
+
+- https://github.com/buresdv/Cork /4.1kStar/CC/202602/swift
+  - https://corkmac.app/
+  - A fast GUI for Homebrew written in SwiftUI
 # arm-mac
 - https://github.com/scriptingosx/utiluti /apache2/202507/swift
   - macOS command line utility to work with default apps.

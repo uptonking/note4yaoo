@@ -304,6 +304,42 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-log
   - ?
 
+## 0215
+
+- Still the same category of errors — WiredMemoryTicket, ToolCallFormat, ToolCallParser are all types that exist in mlx-swift 0.30.6 but not in 0.30.3. Even this older commit of mlx-swift-lm already depends on them.
+  - The root cause is clear: the Package.resolved in the repo is stale. The CI passes because it resolves fresh and gets mlx-swift 0.30.6. Trying to find an mlx-swift-lm commit old enough to work with 0.30.3 would mean going back very far and likely breaking FlowDown's own code that depends on newer mlx-swift-lm APIs.
+  - The correct fix is the other direction — update Package.resolved to use mlx-swift 0.30.6. Run these commands:
+  - rm FlowDown.xcworkspace/xcshareddata/swiftpm/Package.resolved
+  - rm FlowDown.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved
+  - rm -rf build 
+  - xcodebuild build
+
+```sh
+# FlowDown built from source and debugging
+
+xcodebuild build \
+    -workspace FlowDown.xcworkspace \
+    -scheme FlowDown \
+    -configuration Debug \
+    -destination 'generic/platform=macOS' \
+    -derivedDataPath ./build \
+    CODE_SIGN_IDENTITY=- \
+    CODE_SIGN_STYLE=Manual \
+    CODE_SIGNING_REQUIRED=NO \
+    CODE_SIGNING_ALLOWED=NO \
+    COMPILER_INDEX_STORE_ENABLE=NO
+
+lldb ./build/Build/Products/Debug-maccatalyst/FlowDown.app/Contents/MacOS/FlowDown
+
+run
+
+bt
+
+cp -R ./build/Build/Products/Release-maccatalyst/FlowDown.app /Applications/
+
+xattr -cr /Applications/FlowDown.app
+```
+
 ## 0213
 
 - {"type":"10163", "error":{"type":"system_error", "message":"Provider API error: xunfei response error: sid: cht000bd483@dx19c584c088ab8aa700 msg: RequestParamsError:(02:38:24.169) '$.parameter.cbm.max_tokens' value must be less or equal than 16384; (request id: 20260214023823724232000Scx7MLQe)"}}

@@ -57,8 +57,9 @@ modified: 2025-12-18T12:26:08.445Z
 
 - ## [Petition: Claude Code should support AGENTS.md : r/ClaudeCode _202601](https://www.reddit.com/r/ClaudeCode/comments/1q3q8x6/petition_claude_code_should_support_agentsmd/)
   - [Feature Request: Support AGENTS.md _202508](https://github.com/anthropics/claude-code/issues/6235)
-- Add a CLAUDE.md file with only one line "@AGENTS.md". works perfectly.
+- Add a CLAUDE.md file with only one line `@AGENTS.md` . works perfectly.
 - I just symlink a Claude.md to the agents.md. Easy.
+  - create symbolic link CLAUDE.md that refers to AGENTS.md using ln command.
 
 # discuss-news
 - ## 
@@ -71,9 +72,32 @@ modified: 2025-12-18T12:26:08.445Z
 
 - ## 
 
-- ## 
+- ## when i set up claude code with  https://github.com/upstash/context7 mcp, what's the differences for setup below ?
+- `claude mcp add --scope user context7 -- npx -y @upstash/context7-mcp --api-key YOUR_API_KEY` .
+  - Flow: Claude ↔ Local Process ↔ Context7 API.
+  - This tells claude to run the @upstash/context7-mcp package locally (via npx) and communicate with that process over `stdio` (the CLI spawns the package and talks to it). 
+  - The MCP server code downloads and runs locally on your machine using Node.js.
+  - The local process still calls Context7's cloud API, but the MCP channel is local
 
-- ## 
+- `claude mcp add --scope user --header "CONTEXT7_API_KEY: YOUR_API_KEY" --transport http context7 https://mcp.context7.com/mcp` ?
+  - Flow: Claude ↔ Remote Server ↔ Context7 API.
+  - This configures a remote MCP and tells Claude to call https://mcp.context7.com/mcp over HTTP(S). 
+  - The `--header` option instructs Claude to include that header on each request
+
+- ## when adding mcp to claude like `claude mcp add --transport http notion https://mcp.notion.com/mcp` , what's difference between `--scope user/project/local` ? where is the configuration file for each?
+- `--scope local` (default) — private to you for the current project. 
+  - Stored inside your user config file `~/.claude.json` under an entry keyed by the project path. Use this for personal/dev setups or secrets.
+  - For experimental configurations, sensitive credentials, personal development servers
+
+- `--scope project` — shared with the team: written to a `.mcp.json` file at the project root (intended to be checked into VCS). 
+  - Claude will prompt other users to approve project-scoped servers before use.
+  - For team-shared servers, project-specific tools, or services required for collaboration
+
+- `--scope user` — user-wide (available across all projects on that machine). 
+  - Stored in your user config (`~/.claude.json`, in the `mcpServers` area). 
+  - For personal utilities, development tools, or frequently used services across multiple projects
+
+- Precedence: if the same server name exists in multiple scopes, Claude resolves conflicts with local → project → user (local wins).
 
 - ## [经过 8 个月 Claude Code 高强度实战，我们决定开源内部的最佳实践 _202601](https://linux.do/t/topic/1539636)
   - 我们正式发布了 Trellis

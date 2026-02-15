@@ -635,6 +635,32 @@ modified: 2025-02-21T18:20:42.624Z
   - a high-level NLP toolkit built on top of LLMs.
   - utilities for translation, question detection, categorization, NER extraction, and more
 # eval/prompt
+- https://github.com/uncSoft/anubis-oss /GPL/202602/swift
+  - https://www.devpadapp.com/
+  - Local LLM Testing & Benchmarking for Apple Silicon
+  - a native macOS app for benchmarking, comparing, and managing local large language models using any OpenAI-compatible endpoint - Ollama, MLX, LM Studio Server, OpenWebUI, Docker Models, etc. 
+  - Built with SwiftUI for Apple Silicon, it provides real-time hardware telemetry correlated with full, history-saved inference performance - something no CLI tool or chat wrapper offers. 
+  - Export benchmarks directly without having to screenshot, and export the raw data as . MD or . CSV from the history. 
+  - You can even OLLAMA PULL models directly within the app.
+  - 8 metric cards: Tokens/sec, GPU %, CPU %, Time to First Token, Process Memory, Model Memory, Thermal State, GPU Frequency
+  - Process monitoring: Auto-detects backend process by port (Ollama, LM Studio, mlx-lm, vLLM, etc.) with manual process picker
+    - Backend identification: Matches process path and command-line args to identify Ollama, LM Studio, mlx-lm, vLLM, LocalAI, llama.cpp
+    - All inference backends implement a shared protocol, making it straightforward to add new ones
+  - Configurable parameters: temperature, top-p, max tokens, system prompt
+  - 🔠 Prompt presets organized by category (Quick, Reasoning, Coding, Creative, Benchmarking)
+  - Session history with full replay, CSV export, and Markdown reports
+  - Image export: Copy to clipboard, save as PNG, or share - 2x retina rendering with watermark, respects light/dark mode
+  - Side-by-side A/B model comparison with the same prompt.
+  - Why Anubis?
+    - Chat wrappers (Ollama, LM Studio, Jan) focus on conversation, not systematic testing
+    - Performance monitors (asitop, macmon, mactop) are CLI-only and lack LLM context
+    - Evaluation frameworks (promptfoo) require YAML configs and terminal expertise
+    - No tool correlates hardware metrics (GPU / CPU / ANE / power / memory) with inference speed in real time
+- https://github.com/Lakr233/FlowDown /934Star/AGPL/202601/swift
+  - a native AI chat client for Apple platforms, designed for speed, privacy, and power users. 
+  - It provides a fluid, responsive interface to interact with a variety of AI models, right from your iPhone, iPad, and Mac.
+  - 🧪 both the Mac app and iPhone app support testing model abilities including tool-calling, instruction-following, coding
+
 - https://github.com/promptfoo/promptfoo /9.6kStar/MIT/202601/ts/对比表/code-first
   - https://promptfoo.dev/
   - promptfoo is a developer-friendly local tool for testing LLM applications. 
