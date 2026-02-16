@@ -1089,6 +1089,7 @@ modified: 2025-12-11T18:10:23.710Z
     - It uses SQLite FTS5 and some other stuff. You have the keep embeddings updated, but can throw it in a 5-min interval cron job.
     - qmd can use just FTS5 too so not sure what you mean. If you want hybrid you can use embeddings too. It gives you three ways to search the SQLite database.
   - [QMD: Local hybrid search engine for Markdown that cuts token usage by 95%+  _202602](https://medium.com/coding-nexus/qmd-local-hybrid-search-engine-for-markdown-that-cuts-token-usage-by-95-e0f9d21f89af)
+  - pr已合并 _202602 [Nodejs by tobi · Pull Request · tobi/qmd](https://github.com/tobi/qmd/pull/177)
   - 🍴 forks
   - https://github.com/setbap/qmd-ui
   - https://github.com/thordin9/qmd

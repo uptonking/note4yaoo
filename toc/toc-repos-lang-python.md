@@ -150,6 +150,14 @@ modified: 2025-02-26T15:04:15.883Z
   - https://vibecodesaas.com/
   - Free Django SaaS Boilerplate to sell digital products
   - [10 months ago, I shared my Django boilerplate and it went thru major updates since : r/django](https://www.reddit.com/r/django/comments/1qegnl0/10_months_ago_i_shared_my_django_boilerplate_and/)
+
+## django-devops
+
+- https://github.com/mherrmann/djevops /MIT/202602/python
+  - a command-line tool for deploying Django web apps to Linux VPSs.
+  - Unlike other tools, djevops runs Django "on bare metal". That is, without Docker. This makes development faster and easier.
+  - all you need is SSH root access to a Linux VPS running Ubuntu or Debian. Install djevops on your local machine with pip install djevops. 
+  - [Djevops: Host Django on bare metal : r/django _202602](https://www.reddit.com/r/django/comments/1r5l8p5/djevops_host_django_on_bare_metal/)
 # flask
 - https://github.com/gothinkster/flask-realworld-example-app /MIT/201909/archived
   - real world JSON API built with Flask 

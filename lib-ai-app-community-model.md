@@ -1297,7 +1297,35 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
-- ## 
+- ## [Anyone else spending more time tweaking than actually using their model? : r/LocalLLM](https://www.reddit.com/r/LocalLLM/comments/1r6e4h4/anyone_else_spending_more_time_tweaking_than/)
+- I swear I’ve spent 10x more time:
+  - comparing quants
+  - adjusting context size
+  - testing different system prompts
+  - watching tokens/sec
+  - than actually asking it useful questions
+  - Feels like building a gaming PC and then only running benchmarks
+
+- Oh for sure. Plus recompiliing llama.cpp and ik_llama.
+  - Recently it has been more: "why tool calling breaks after few times" often, so I guess... progress?
+
+- Reality is, the real work is being done with layers and models of models/retrievers/planers/routers like:
+
+User Input
+  ↓
+Retriever (patterns, code, history, embeddings)
+  ↓
+Planner / Router
+  ↓
+LLM (reasoning)
+  ↓
+Tool Calls (search, code execution, APIs)
+  ↓
+Evaluator / Critic
+  ↓
+Final Output
+
+That's why claude code is kicking the butt of whatever isolated model we kick the tires on... but also why claude is so fragile vs competition because it's not rocket science to build this onion layer pattern with tooling.
 
 - ## 🎮 [继续试播多agent实时麻将（2月8日，国产混战 MiniMax-M2.1/GLM4.7/Kimi-K2.5/Deepseek-V3.2） ](https://linux.do/t/topic/1584637)
   - 由于 kimi 的额度爆掉了，这场直播暂停。

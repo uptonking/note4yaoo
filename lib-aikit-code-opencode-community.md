@@ -31,7 +31,16 @@ modified: 2026-01-17T22:41:25.867Z
 
 - ## 
 
-- ## 
+- ## v1.2.0 of opencode includes our migration to sqlite - if anything goes wrong don't worry, your original data is not yet deleted _202602
+- https://x.com/thdxr/status/2022562561732812841
+  - you can clear out `opencode.db*` files in %APPDATA% or ~/.local/share/opencode folder and it'll rerun
+
+- Why sqlite if I may ask?
+  - opencode produces a lot of data and we need query flexibility beyond what flatfiles in folders gives us
+
+- Given you're using drizzle for this, are you open to other database types in the future. Would love to centrally manage my opencode sessions across sandboxes
+  - we're going to solve that problem in a different way
+  - we are just going to make distributed opencode a native thing
 # discuss-roadmap
 - ## 
 

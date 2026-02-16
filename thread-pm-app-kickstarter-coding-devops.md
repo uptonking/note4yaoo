@@ -39,7 +39,17 @@ Bottom Line: Success isn’t just about good code. It’s about presentation, ac
 
 - ## 
 
-- ## 
+- ## 🤔 [为什么还要让AI写高级代码 _202602](https://linux.do/t/topic/1620666/5)
+  - 虽然 AI 对于高级代码喂的内容比较多了，但是为什么不直接让 AI 写汇编等更底层的，然后去运行，之前有人用 AI 写了个新的编程语言虽然很差。但是如果让 AI 写很高级的很长的 java 代码，还要理解 java 的 spring 什么的架构不是很麻烦嘛，况且他还要知道 sdk 或者各库的最新版本情况什么的。
+
+- 因为高级代码足够多？没试过语料只给 asm，但我猜训练效果会惨不忍睹
+- 简单来说就是因为训练数据的问题，那些汇编语言数据量太少而且太陈旧，并且很多都是严格保密的代码。 而且按照现在模型 6 个月一更新的节奏来看，其实你 SDK 的更新速度比不上模型的迭代速度，正常来说一个项目都是按年来规划的，所以不担心这个问题。 还有一点就是利用高级语言可以更快产出并且迭代产品，没有商业价值的东西没有谈论的必要
+
+- 以 transformer 为代表的 LLM 真正闪耀的的地方就是对抽象概念的理解，而高级语言处于抽象层级的较顶端。
+
+- 因为搓汇编 AI 依然需要理解 PE/ELF 的结构，依然需要知道最新版本的 libc 和 kernel32 库和 sdk
+  - 现在高级语言都能跑飞，直接搓二进制这种要较长时间记忆跳转相对偏移和寄存器状态的，我都不敢想会出来一坨什么东西
+  - 哦单凡哪里错了几个字节，gdb 调试的时候更是能直接放在地狱做某一层刑罚
 
 - ## Vue & Vite+ 作者 尤雨溪 @yuxiyou 创建 VoidZero 拿下 1250 万美元 A 轮融资
 - https://x.com/AppSaildotDEV/status/1984616482152857668
@@ -63,6 +73,26 @@ Bottom Line: Success isn’t just about good code. It’s about presentation, ac
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 来自中国的硬件团队的这个 PicoClaw ，把 OpenClaw（前Clawdbot）用 Go 彻底重构了
+- https://x.com/chuhaiqu/status/2023244280903663878
+  - 直接把 AI Agent 的硬件门槛打到了地板，内存占用不到 10MB，启动仅需 1 秒。以前得用 Mac Mini 跑的服务，现在 9.9 美元的开发板或者树莓派就能跑。
+  - 不仅保留了核心功能（写代码、联网搜索、Discord/Telegram 聊天），还加入了安全沙箱。
+  - 最骚的是 官方宣称这套架构迁移 95% 的代码都是 AI 自己写的
+  - https://github.com/sipeed/picoclaw
+
+- 我现在在 Mac Mini 上跑 OpenClaw，光 Node.js 就吃不少内存。Go 重构后 10MB 内存 + 1秒启动，这意味着树莓派集群跑多 Agent 完全可行了。
+
+- 好多朋友问为啥不用 Rust，官方给出了答案，简单来说还是因为 AI 更擅长 Go。
+
+- rust入门门槛更高，训练ai的样本略逊少一点
+
+- 不是AI擅长Go，是Go适合claws这种网络应用类型
+
+- ## [【6k star 开源】屎山代码检测器 fuck-u-code，看看你的项目能拿多少分 ](https://linux.do/t/topic/1619511)
+  - https://github.com/Done-0/fuck-u-code
 
 - ## [Ask HN: what are examples of successful "open-source alternatives"? | Hacker News _202407](https://news.ycombinator.com/item?id=40848998)
   - It seems like every day there's a Show HN post for another "open source alternative" to a popular SaaS app.

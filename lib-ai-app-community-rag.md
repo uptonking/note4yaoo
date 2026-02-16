@@ -1547,7 +1547,20 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## 🆚 [Benchmarks: Kreuzberg, Apache Tika, Docling, Unstructured.io, PDFPlumber, MinerU and MuPDF4LLM : r/Python _202602](https://www.reddit.com/r/Python/comments/1r5b9t5/benchmarks_kreuzberg_apache_tika_docling/)
+  - We finished a bunch of benchmarks of Kreuzberg and other major open source tools in the text-extraction / document-intelligence spac
+  - https://kreuzberg.dev/benchmarks is the UI for the benchmarks. All data is available in GitHub as part of the benchmark workflow artifacts and the release tab.
+  - Kreuzberg includes a benchmark harness built in Rust (you can see it in the repo under the /tools folder), and the benchmarks run in GitHub Actions CI on Linux runners
+  - The goal is to compare extractors on the same inputs with the same measurement approach.
+  - Two modes: single-file (one document at a time) to compare latency, and batch (limited concurrency) to compare throughput-oriented behavior.
+  - p50/p95/p99 across documents for duration, extraction duration (when available), throughput, memory, and success rate.
+
+- Where are your accuracy metrics? How many of those metrics are made on an OCR dataset?
+  - We measure F1. The dataset includes both OCR and non OCR PDFs, rotated etc. and other files. There are 47 different file types in the harness.
+
+- For high-volume processing, p50 latency under 2ms is a game-changer for keeping infrastructure costs low
+
+- Love a good benchmark comparison. Python's ecosystem for data processing is unmatched. We run our entire trading engine in Python — sub-10ms execution with optimized numpy and async operations. The data pipeline processes market data, news feeds, and multi-model AI outputs all in Python. People underestimate Python's speed when you optimize properly. What's the memory footprint comparison looking like across these tools?
 
 - ## [Best tools or methods to extract tables from PDFs into Excel (scanned + mixed PDFs)? : r/computervision _202602](https://www.reddit.com/r/computervision/comments/1qtmayu/best_tools_or_methods_to_extract_tables_from_pdfs/)
 - Try combining a layout-aware OCR + parser rather than basic OCR alone. Python options: pdfplumber or Camelot for table detection (better than naive OCR); Tesseract with layout hints.
@@ -1740,7 +1753,22 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [Semantic chunking + metadata filtering actually fixes RAG hallucinations : r/LangChain](https://www.reddit.com/r/LangChain/comments/1r3mp8b/semantic_chunking_metadata_filtering_actually/)
+  - I noticed that most people don't realize their chunking and retrieval strategy might be causing their RAG hallucinations.
+  - Fixed-size chunking (split every 512 tokens regardless of content) fragments semantic units. Single explanation gets split across two chunks. Tables lose their structure. Headers separate from data. The chunks going into your vector DB are semantically incoherent.
+  - I've been testing semantic boundary detection instead where I use a model to find where topics actually change. Generate embeddings for each sentence, calculate similarity between consecutive ones, split when it sees sharp drops. The results are variable chunks but each represents a complete clear idea.
+  - This alone gets 2-3 percentage points better recall but the bigger win for me was adding metadata. I pass each chunk through an LLM to extract time periods, doc types, entities, whatever structured info matters and store that alongside the embedding.
+  - This metadata filters narrow the search space first, then vector similarity runs on that subset. Searching 47 relevant chunks instead of 20, 000 random ones.
+  - [Metadata-Enriched RAG: How to Reduce Hallucinations](https://kudra.ai/metadata-enriched-retrieval-the-next-evolution-of-rag/)
+  - Goes into the different semantic chunking approaches (embedding similarity detection, LLM-driven structural analysis, proposition extraction) and the full metadata enrichment pipeline. Probably more detail than necessary but figured it might help someone else debugging the same issues.
+
+- A simple summarization pass does wonders before getting into more advanced collection techniques.
+- Summarization really is a game changer. It helps maintain context and coherence, especially with complex documents. What techniques do you find most effective for summarizing before chunking?
+  - It entirely depends on the downstream agent’s task and the dimensionality of the data. I work with a lot of source code so I might prefer to summarize the import statements as a first pass to get the skeleton of a repo. Then if I were to start using the codebase, I might want to get function signatures before extracting the actual logic.
+  - Most frontier models now can ingest a whole file (depending on lines of code and if it’s a generated file). I’m even working with more deterministic summarization passes since source code is so well structured if you know the syntax of the language.
+
+- What's helped me is an answer contract: extract the exact supporting spans first, then write, and refuse if nothing supports it. And on metadata, treat it as a scoring hint not a hard filter if the tags come from a model, otherwise one bad tag can hide the best chunk.
+  - Regression sets start getting noisy around 200-300 cases... past that you spend more time maintaining stale examples than catching real regressions. For LLM-as-judge, 30-50 gold-labeled examples gets you surprisingly far on calibration, but you need to re-run alignment checks whenever you swap the judge model or change rubric criteria. On rollback triggers, pure metrics miss the weird qualitative stuff (model confidently generating plausible but wrong answers), so we do metric gates plus a human spot-check on a random sample from each deployment.
 
 - ## [Released: VOR — a hallucination-free runtime that forces LLMs to prove answers or abstain : r/ollama _202602](https://www.reddit.com/r/ollama/comments/1qtine0/released_vor_a_hallucinationfree_runtime_that/)
   - VOR (Verified Observation Runtime) is a runtime layer that sits around LLMs and retrieval systems and enforces one rule: If an answer cannot be proven from observed evidence, the system must abstain.

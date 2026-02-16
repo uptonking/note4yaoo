@@ -79,9 +79,27 @@ modified: 2024-01-25T13:33:23.267Z
 
 - ## 
 
-- ## 
+- ## 我想了想…大规模用 Python 或者 node 做 appengine 类似的 sandbox ，隔离靠 vm，存储 fuse 接口直接挂进去…没错，今年一定是 2013 年
+- https://x.com/CMGS1988/status/2022592355975729516
+- 十年前给人做cloud，十年后给agent做cloud。非常合理
 
-- ## 
+- gae那时候有容器隔离吧，你说的是dae或sae？
+  - 嗯 DAE…GAE 有的，GAE 毕竟是 public 服务
+
+- k8s 表示等你成熟了，接入调度吧。
+
+- ## this is how i currently visualize the best way to do sandboxing with @opencode
+- https://x.com/ryanvogel/status/2022694821929136144
+  - each sandbox is running an opencode server instance, and the clients have full range to switch between which server they are on 
+- https://github.com/R44VC0RP/serverbox /202602/ts
+  - On-demand, sandboxed OpenCode server instances powered by Daytona.
+  - ServerBox manages infrastructure and lifecycle only. You get back a URL and credentials, then use @opencode-ai/sdk directly against it.
+
+- this is all suboptimal we're doing work to make this a lot more seamless
+
+- What about a local sandbox?
+  - It would still be handled the same, replace the sandbox provider with a docker instance
+- Any exploration on using apple containers on macOS instead of docker? One less dependency to manage
 
 - ## 🆚🏘️🧩 Agent 与 Sandbox 的两种集成架构模式
 - https://x.com/shao__meng/status/2021488624446079160

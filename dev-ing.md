@@ -304,6 +304,28 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-log
   - ?
 
+## 0216
+
+- 🤔 when i add a mcp to claude code like `claude mcp add n8n-mcp`, how does agent know when to use the mcp tools and what mcp tools are available? is it required to add  explicit mcp instructions to CLAUDE.md ?  there are many open source mcp on github, after adding some by commands like `claude mcp add n8n-mcp`, i am curious the internals about the mcp integration. does opencode-cli work the similar way?
+- How the Agent Discovers Available MCP Tools
+  - When you run claude mcp add n8n-mcp, here's what happens under the hood:
+  - Registration Phase: This stores the MCP server configuration in Claude Code's settings 
+  - Tool Discovery Phase (At Startup): When Claude Code starts a session, it Launches each registered MCP server as a subprocess (or connects via SSE/HTTP for remote servers), Calls tools/list on each MCP server via the MCP protocol — this is a standardized JSON-RPC method. These tool definitions are injected into the model's context — they become part of the tool-use schema that Claude (the LLM) sees. The model sees them exactly the same way it sees built-in tools like Read, Write, Bash, etc.
+- How the Agent Knows When to Use MCP Tools
+  - The agent relies entirely on the tool descriptions and names. There's no magic routing — it works the same way all tool use works with LLMs. This is why good tool descriptions in MCP servers are critical.
+- Do You Need to Add Instructions to CLAUDE.md?
+  - It's NOT required, but it's highly recommended for complex MCP setups.
+  - Without CLAUDE.md instructions: The model only has the tool names and descriptions from the MCP server
+  - It may not know the preferred workflow or when to prefer one tool over another
+
+- Does opencode-cli Work the Same Way?
+  - Yes, opencode-cli follows the same MCP protocol, since MCP is a standardized protocol. The core mechanics are the same:
+  - You configure MCP servers in opencode's config (typically opencode.json or similar)
+  - At startup, it connects to MCP servers and calls tools/list
+  - Tool definitions are injected into the LLM's context
+  - The LLM decides when to call them based on descriptions
+- The MCP protocol is model-agnostic — any agent framework that implements the MCP client spec will discover and call tools the same way. The only difference is which LLM is doing the reasoning about when to use which tool.
+
 ## 0215
 
 - Still the same category of errors — WiredMemoryTicket, ToolCallFormat, ToolCallParser are all types that exist in mlx-swift 0.30.6 but not in 0.30.3. Even this older commit of mlx-swift-lm already depends on them.

@@ -16,12 +16,22 @@ modified: 2026-01-19T05:01:00.055Z
   - https://context7.com/
   - Context7 MCP - Up-to-date Code Docs For Any Prompt
   - Context7 MCP pulls up-to-date, version-specific documentation and code examples straight from the source — and places them directly into your prompt.
+  - Add `use context7` to your prompt (or set up a rule to auto-invoke)
+    - To avoid typing `use context7` in every prompt, add a rule to your MCP client to automatically invoke Context7 for code-related questions
+    - Claude Code: CLAUDE.md
+    - Cursor: Cursor Settings > Rules
   - require Context7 API Key (Optional) for higher rate limits and private repositories 
+  - This repository hosts the MCP server’s source code. The supporting components — API backend, parsing engine, and crawling engine — are private and not part of this repository.
   - [Feature Request: Option to Self-Host Documentation Backend _202504](https://github.com/upstash/context7/issues/59)
     - interesting idea. I will think about this. the biggest obstacle would be licensing. we aim to make this service free for developers and open source projects. but we want to commercialize if a company like cursor needs it.
     - but we can keep parser private and web backend open.
     - maybe you can store all the docs in a public database, that way anyone can self-host.
     - Another option is to allow companies to host their documentation on context7's servers privately, and support authentication.
+
+- https://github.com/czlonkowski/n8n-mcp /MIT/202602/ts
+  - https://www.n8n-mcp.com/
+  - A MCP for Claude Desktop / Claude Code / Windsurf / Cursor to build n8n workflows for you
+  - For the best results when using n8n-MCP with Claude Projects, use these enhanced system instructions
 
 - https://github.com/jlowin/fastmcp /MIT/202503/python
   - https://github.com/modelcontextprotocol/python-sdk
@@ -90,6 +100,22 @@ modified: 2026-01-19T05:01:00.055Z
 - https://github.com/ivanvanderbyl/pdf-reader-mcp /MIT/202505/go/inactive
   - MCP server for reading and analyzing PDF documents using Google's Gemini API, written in Go. This server enables AI assistants like Claude (Code and Desktop) and Cursor to seamlessly read, extract, and analyze PDF content directly from their interfaces.
 # browser-use
+- https://github.com/microsoft/playwright-mcp /27.2kStar/apache2/202602/ts
+  - A Model Context Protocol (MCP) server that provides browser automation capabilities using Playwright. 
+  - This server enables LLMs to interact with web pages through structured accessibility snapshots, bypassing the need for screenshots or visually-tuned models.
+  - This package provides MCP interface into Playwright. 
+  - If you are using a coding agent, you might benefit from using the CLI+SKILLS instead.
+    - Modern coding agents increasingly favor CLI–based workflows exposed as SKILLs over MCP because CLI invocations are more token-efficient: they avoid loading large tool schemas and verbose accessibility trees into the model context, allowing agents to act through concise, purpose-built commands.
+  -  MCP remains relevant for specialized agentic loops that benefit from persistent state, rich introspection, and iterative reasoning over page structure, such as exploratory automation, self-healing tests, or long-running autonomous workflows where maintaining continuous browser context outweighs token cost concerns.
+  - https://x.com/playwrightweb/status/1904265499422409047
+    - we went ahead and built an MCP server for Playwright. Ours is snapshot-based, which makes it faster and more reliable! You can opt into the visual mode too.
+
+- https://github.com/ChromeDevTools/chrome-devtools-mcp /25.6kStar/apache2/202602/ts
+  - MCP server, giving your AI coding assistant access to the full power of Chrome DevTools for reliable automation, in-depth debugging, and performance analysis.
+  - Uses `puppeteer` to automate actions in Chrome and automatically wait for action results.
+  - The MCP server will start the browser automatically once the MCP client uses a tool that requires a running browser instance. 
+    - Connecting to the Chrome DevTools MCP server on its own will not automatically start the browser.
+
 - https://github.com/browser-use/agent-sdk /370Star/MTI/202601/python
   - An agent is just a for-loop.
   - https://x.com/gregpr07/status/2012204140714217801
@@ -109,12 +135,6 @@ modified: 2026-01-19T05:01:00.055Z
   - WebUI: is built on Gradio and supports most of browser-use functionalities.
   - support for various Large Language Models (LLMs), including: Google, OpenAI, Azure OpenAI, Anthropic, DeepSeek, Ollama etc. 
   - You can choose to keep the browser window open between AI tasks, allowing you to see the complete history and state of AI interactions.
-
-- https://github.com/microsoft/playwright-mcp /apache2/202503/ts
-  - A Model Context Protocol (MCP) server that provides browser automation capabilities using Playwright. 
-  - This server enables LLMs to interact with web pages through structured accessibility snapshots, bypassing the need for screenshots or visually-tuned models.
-  - https://x.com/playwrightweb/status/1904265499422409047
-    - we went ahead and built an MCP server for Playwright. Ours is snapshot-based, which makes it faster and more reliable! You can opt into the visual mode too.
 
 - https://github.com/Skyvern-AI/skyvern /AGPL/202506/python/ts
   - https://www.skyvern.com/

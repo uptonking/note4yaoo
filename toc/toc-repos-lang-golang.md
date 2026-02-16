@@ -101,6 +101,7 @@ modified: 2025-04-17T08:17:04.770Z
 # gin
 - https://github.com/chinmay-sawant/gopdfsuit /MIT/202601/go
   - https://chinmay-sawant.github.io/gopdfsuit/
+  - https://chinmay-sawant.github.io/gopdfsuit/#/editor
   - a comprehensive web application written in Go which can help you generate the pdf document without worrying about the PDF templating
   - A powerful Go web service for template-based PDF generation with multi-page support, PDF merging, form filling, and HTML to PDF/Image conversion
   - a Go + Gin web service that generates professional PDF documents from JSON templates.
@@ -112,6 +113,9 @@ modified: 2025-04-17T08:17:04.770Z
   - https://github.com/chinmay-sawant/gopdfsuit-client /go
     - client library for creating and sending PDF documents to a PDF generation service (GoPdfSuit). 
     - This library provides a fluent API for building PDF documents programmatically or loading them from JSON in Go.
+  - [GoPDFSuit – A JSON-based PDF engine with drag-and-drop layouts. Should I use LaTeX or Typst? : r/Python](https://www.reddit.com/r/Python/comments/1r59242/gopdfsuit_a_jsonbased_pdf_engine_with_draganddrop/)
+    - I think LaTeX makes more sense in the python ecosystem at the moment. It is also already used by things like matplotlib, which also can natively output to LaTeX. I also think a lot of people who would want to use formulas in something like this are likely to be familiar with LaTeX since it's often used for scientific reporting.
+    - I think the familiarity outweighs the simplification of switching to Typst right now.
 
 - https://github.com/appleboy/gorush /8.6kStar/MIT/202509/go
   - A push notification micro server using Gin framework written in Go (Golang) and see the demo app.

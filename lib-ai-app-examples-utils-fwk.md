@@ -660,6 +660,9 @@ modified: 2025-02-21T18:20:42.624Z
   - a native AI chat client for Apple platforms, designed for speed, privacy, and power users. 
   - It provides a fluid, responsive interface to interact with a variety of AI models, right from your iPhone, iPad, and Mac.
   - 🧪 both the Mac app and iPhone app support testing model abilities including tool-calling, instruction-following, coding
+    - closing the settings dialog WILL stop the evaluation  
+    - The evaluation is tied to the view controller's lifecycle - if the EvaluationStatusController is dismissed, the evaluation stops.
+    - The evaluation result files (`.fder`) are JSON-encoded and contain full session data including all test case outcomes
 
 - https://github.com/promptfoo/promptfoo /9.6kStar/MIT/202601/ts/对比表/code-first
   - https://promptfoo.dev/

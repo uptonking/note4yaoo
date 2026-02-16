@@ -1002,6 +1002,21 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [We tested 5 vLLM optimizations: Prefix Cache, FP8, CPU Offload, Disagg P/D, and Sleep Mode : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1r61so4/we_tested_5_vllm_optimizations_prefix_cache_fp8/)
+  - We just published a new article on the JarvisLabs blog that dives into 5 practical techniques to optimize vLLM performance.
+  - We actually ran benchmarks on Qwen3-32B to see how much improvements these techniques actually bring to the table.
+  - Prefix Caching: This stops the model from re-computing parts of the prompt it has already seen. In our tests with Qwen3-32B, this increased throughput by over 250%.
+  - FP8 KV-Cache: This reduces the precision of the KV cache from 16-bit to 8-bit. It cuts memory usage roughly in half with minimal impact on accuracy.
+  - CPU Offloading: This lets you use your system RAM to hold the KV cache when your GPU runs out of space. It helps avoid out-of-memory errors during heavy loads.
+  - Disaggregated Prefill/Decode: This is a more advanced setup where you split the "reading" (prefill) and "writing" (decode) phases onto different GPUs.
+  - Zero Reload Sleep Mode: A way to keep your model "warm" in memory without burning through resources when no one is using it.
+
+- Prefix caching does NOT improve token generation speed.
+
 - ## 🆚 [Llama.cpp vs vllm : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qexkwb/llamacpp_vs_vllm/)
 - Enough VRAM: vllm. Not enough: llamacpp.
 

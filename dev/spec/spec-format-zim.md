@@ -127,8 +127,20 @@ modified: 2023-07-05T10:22:57.942Z
     - It runs locally or in Docker and can be used via API, CLI, MCP, or a web UI in the browser.
 # more
 
-# discuss
+# discuss-kiwix
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Is Kiwix free or not? : r/Kiwix _202602](https://www.reddit.com/r/Kiwix/comments/1r5n8g2/is_kiwix_free_or_not/)
+- It's free and Open Source. The github repositories are under this organization. You can build it youself using kiwix-build. Or you can simply download any of the existing builds. One you may find particularily interesting for an emergency hotspot is kiwix-serve (part of kiwix-tools).
+
+# discuss
 - ## 
 
 - ## 

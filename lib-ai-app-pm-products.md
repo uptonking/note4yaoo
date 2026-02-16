@@ -239,6 +239,7 @@ modified: 2025-03-22T16:10:24.856Z
   - 🌐 pdf edit
     - pdf ocr one-click eval like FlowDown
       - ui for popular ocr benchmark
+      - personal bench suite like FlowDown
     - acp for pdf/rich-editing
     - proofreading: 一键检查, 版本历史
       - chunking viz
@@ -746,6 +747,7 @@ modified: 2025-03-22T16:10:24.856Z
     - [【lucky公益站】codex公益站  ](https://linux.do/t/topic/1616313)
     - 目前只有 10 个 team 号，所以可能随时跑路
   - [云端API](https://cloudapi.wdyu.eu.cc/console/personal), 签到, 生图
+    - grok-imagine-1.0
   - [Neb 公益站](https://ai.zzhdsgsss.xyz/console/personal), 签到
     - 采用按量计费，每次0.01，注册送2000次，因为该阶段的初衷就是最大化利用这些将要过期的key。
     - 当前额度用完或2026.1.31之后进入第二阶段，采用按量计费，倍率会很低
