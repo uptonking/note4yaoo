@@ -82,4 +82,13 @@ modified: 2020-12-12T19:01:56.749Z
 - https://github.com/mbakgun/DockerFlex /MIT/202512/js
   - a modern web-based application that simplifies Docker container file management
   - Browse, edit, and manage container files with ease through a modern web interface
+# port-forwarding
+- https://github.com/vercel-labs/portless /742Star/apache2/202602/ts
+  - Replace port numbers with stable, named .localhost URLs. For humans and agents.
+  - cookies set on localhost bleed across apps on different ports; localStorage is lost when ports shift
+  - Browser history is useless -- your history for localhost:3000 is a jumble of unrelated projects
+  - https://x.com/geekbb/status/2023645651092075008
+    - Vercel Labs 做了个端口转发工具，用稳定的命名 .localhost URL 替换 localhost:3000 这些端口号，让人类和 AI 代理都能轻松访问本地服务。
+    - 以前开几个本地项目，端口记不住、端口冲突，现在代理自动分配随机端口，用命名URL替代数字端口。
+    - 工作原理就是：跑一个本地代理在1355端口，所有 *.localhost:1355 都路由到它，然后它根据子域名转发到实际的应用端口。
 # more

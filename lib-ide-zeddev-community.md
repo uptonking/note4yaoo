@@ -43,6 +43,33 @@ modified: 2024-08-24T16:14:33.275Z
 
 - Split diff
   - We're working on it
+# discuss-gpui
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 💥 [Why is Zed's binary size comparable to VS Code/Electron despite the GPUI architecture? : r/ZedEditor _202602](https://www.reddit.com/r/ZedEditor/comments/1r537ux/why_is_zeds_binary_size_comparable_to_vs/)
+  - the Zed binary is still hovering around 70MB+.
+  - Since Zed isn't shipping a full Chromium instance, what is taking up that space?
+
+- Here it is 350mb.. I'm running zed-preview-bin from AUR
+  - It should print the 20 largest crates in the binary, where a crate is like a library. Only thing is that if crate A calls a generic function defined by crate B (or, the optimizer makes crate A inlines a function defined in B, etc), this gets counted in A's budget.
+  - It's possible that the zed binary includes large assets such as whole wasm binaries inside its binary (Zed uses wasm for its plugins). This will make the .text section to be very large (or even other linker sections, depending on where the asset is stored)
+
+- Rust statically links all of its dependencies. And 70mb is pretty small, at least when it comes to Rust UI libraries
+
+- Are binary sizes a big concern these days? Especially when we’re talking about something like 70MB? My own main concern is performance and reliability and how much memory it uses.
+
+- 70 MB is actually pretty small when you consider that Rust statically links all its dependencies so the binary includes everything it needs to run.
+  - Rust’s compiler also does dead code elimination, so it only includes what’s actually used. This keeps the binary smaller than the sum of the binary plus it's libraries would.
+
+- I am more concerned about HOW are they developing ui? Coming from frontend, I can’t imagine not having hot module reloading, instant feedback and so on. I tried doing it in rust and every change you do - you need to wait for compilations, which is quite long…
+  - You get used to keeping track of changes in your head 😜 we had some other tricks as well. component preview, our custom storybook-style bin for building smaller pieces in isolation…
+  - Someone in the community did get subsecond working for gpui but only for single crates (Zed is split across hundreds? of crates at this point.)
+  - When we rewrote gpui (`gpui2`) we move to a tailwind-esque method chaining approach to styling that makes prototyping pretty quick and manageable despite no live reload.
+  - Fun fact: `gpui1` had hot reloading, because the entire ui used to be styled via one giant 50k+ line json file…
 # discuss
 - ##
 

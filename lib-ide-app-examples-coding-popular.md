@@ -1497,6 +1497,13 @@ modified: 2025-12-11T18:10:23.710Z
     - Telling Claude to call the CLI tool is more efficient.
     - Agree. And to make the CLI usage more effective/efficient, if you can publish a skill that would be excellent
     - `chunkhound search <query>`, `chunkhound search --regex <query>` and `chunkhound research <query>` are the main cli entry points that you can already use today
+- https://github.com/MikeRecognex/mcp-codebase-index /AGPL/202602/python
+  - A structural codebase indexer with an MCP server for AI-assisted development. 
+  - Zero runtime dependencies — uses Python's ast module for Python analysis and regex for TypeScript/JS. 
+  - Indexes codebases by parsing source files into structural metadata -- functions, classes, imports, dependency graphs, and cross-file call chains -- then exposes 17 query tools via the Model Context Protocol
+  - By default, AI assistants may still read entire files instead of using the indexed tools. Add this to your project's `CLAUDE.md` (or equivalent instructions file) to nudge(劝说；鼓励) it:
+    - Prefer using codebase-index MCP tools (get_project_summary, find_symbol, get_function_source, get_class_source, get_dependencies, get_dependents, get_change_impact, get_call_chain, etc.) over reading entire files when navigating the codebase.
+  - [I built an MCP to significantly reduce your token consumption : r/claude _202602](https://www.reddit.com/r/claude/comments/1r71lyb/i_built_an_mcp_to_significantly_reduce_your_token/)
 
 - https://github.com/krokozyab/Agent-Fusion /MIT/202511/kotlin/inactive
   - a local RAG semantic search engine that gives AI agents instant access to your code, documentation (Markdown, Word, PDF).

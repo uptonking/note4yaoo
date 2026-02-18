@@ -619,6 +619,13 @@ modified: 2025-12-25T19:55:10.911Z
   - allows searching, sorting, opening in Overleaf and downloading figures (PDF/SVG/PNG) from this collection.
   - Have a TikZ/CeTZ diagram you'd like to share? Submit a PR with a .tex or .typ and a corresponding metadata .yml file in the assets/ directory
 
+- https://github.com/splines/pptypst /MIT/202602/ts
+  - https://splines.github.io/pptypst/
+  - Bring the power of Typst to PowerPoint
+  - Easily insert Typst equations with live preview, update them, and even generate from a file.
+  - [PPTypst: Bring the power of Typst to PowerPoint : r/typst](https://www.reddit.com/r/typst/comments/1r6ey1l/pptypst_bring_the_power_of_typst_to_powerpoint/)
+    - insert your Typst equations in PowerPoint and get editable SVGs
+
 ## format/markdown-typst
 
 - https://github.com/RayZ3R0/typst-raster /MIT/202512/ts

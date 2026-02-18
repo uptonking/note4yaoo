@@ -1803,7 +1803,22 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [How do you decide to choose between fine tuning an LLM model or using RAG? : r/Rag _202602](https://www.reddit.com/r/Rag/comments/1r6gzih/how_do_you_decide_to_choose_between_fine_tuning/)
+- They solve two distinct problems. If you compare them, that means you have the wrong mental model.
+  - Fine-tuning is NOT to securely ingest new information into a model. Fine-tuning may or may not add new info to a model. It may not do that because the new info may collide with existing info, and then the model will behave inconsistently.
+  - RAG is the right thing that you need if you need to provide access to knowledge from your documents.
+  - So, when is fine-tuning a good choice? Well, to give the LLM new or improved capabilities - not knowledge.
+
+- RAG for me was the way to go because it retrieves the relevant docs and can cite them directly from the knowledge base, including a link to those document and the relevant page. If answer validation is less important, I can imagine one chooses to go with finetuning a model instead.
+  - if the knowledge base changes all the time, it is better in my opinion to have a pipeline where documents get chunked and embedded directly, rather than having to retrain LLM models all the time.
+
+- Implementing RAG is a faster and easier to fine-tuning, especially when your case is common and can be resolved by providing accurate information to a model through multiple shots. Fine-tuning becomes necessary when dealing with private datasets, controlling output formats, behavior, or specific tool usage in agentic applications. However, fine-tuning only expands existing skillsets and doesn't introduce new abilities, so make sure identifying the true bottleneck before making any decisions.
+
+- In my experience, 
+  - Use RAG for knowledge based tasks. Eg: Find me an answer from docs/tickets
+  - Use fine tuning for behaviour based tasks. Eg: Given a document always generate a JSON that looks like this
+
+- I would say fine tuning is good if you need new capabilities, like language, vocabulary and grammar. Or if you want a highly specialised LLM, think medical, legal etc.
 
 - ## [Compared hallucination detection for RAG: LLM judges vs NLI : r/Rag _202601](https://www.reddit.com/r/Rag/comments/1qp7psa/compared_hallucination_detection_for_rag_llm/)
   - I looked into different ways to detect hallucinations in RAG. Compared LLM judges, atomic claim verification, and encoder-based NLI.

@@ -48,6 +48,15 @@ modified: 2023-02-07T09:22:03.120Z
   - 此应用基于AI语音识别模型 Whisper
   - 先把视频放到Google Drive，然后从Google Colab上运行代码，调用OpenAI的Whisper API生成字幕，再借助ChatGPT的API对字幕逐行翻译，最后人工再校对就好了
 
+- https://github.com/nexmoe/eve /202602/python
+  - eve 全称为 eavesdropper。
+  - 一个跨平台的麦克风长时间录音工具：实时录音并自动转写，默认使用 Qwen3-ASR；VAD 仅保留有人说话的部分并只对说话段做转写。
+  - 实时转写：录音过程中持续输出转写文本（JSON）。
+  - ASR 可关闭：支持离线/异步转写已有录音。
+  - 长时间连续录音：面向全天或多小时录制场景。
+  - 自动分段存储：按时间切片生成 WAV 文件，便于管理与回放。
+  - [我开源了个 24 小时录音与实时转写工具 Eve _202602](https://linux.do/t/topic/1622790)
+
 - https://github.com/huggingface/distil-whisper /CodeNA
   - Distil-Whisper is a distilled version of Whisper that is 6 times faster, 49% smaller, and performs within 1% WER on out-of-distribution evaluation sets.
   - https://twitter.com/sanchitgandhi99/status/1719409022246220184

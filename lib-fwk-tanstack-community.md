@@ -34,7 +34,12 @@ modified: 2025-12-16T06:25:32.663Z
 
 - ## 
 
-- ## 
+- ## why tanstack start made the default in cli? I can't create a bare router project 
+- https://x.com/roccosoftware/status/2023485492860436831
+- Clone one of the bare router examples from the docs. The builder is being streamlined to support more addons with fewer permutation issues. Also… just start with Start. If you don’t need SSR, turn it off with spa mode. This way if you ever need SSR, it’s just a flag away, 
+
+- Start's entry points are still too tucked away and bare lets you do cool things like this where invalidating the viewer query would propagate deterministically
+  - +1. This is one of the biggest issues we're having with start. No way to pass react context to router context
 
 - ## The other night, @schanuelmiller and I refactored TanStack Start's "static" server function mode out of the core and into a server function middleware. _202508
 - https://x.com/tannerlinsley/status/1955048427047489801

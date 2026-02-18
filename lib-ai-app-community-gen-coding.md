@@ -32,6 +32,20 @@ modified: 2025-09-01T07:58:29.058Z
 
 - ## 
 
+- ## 
+
+- ## Shifting structures in a software world dominated by AI. Some first-order reflections (TL; DR at the end):
+- https://x.com/Thom_Wolf/status/2023387043967959138
+  - Reducing software supply chains, the return of software monoliths – When rewriting code and understanding large foreign codebases becomes cheap, the incentive to rely on deep dependency trees collapses. 
+  - Monoliths return – cheap rewriting kills dependency trees; smaller attack surface, better performance, bare-metal becomes realistic
+  - Lindy effect weakens – legacy code loses its moat, but unknown unknowns persist; formal verification becomes essential
+  - Strongly typed languages rise – human psychology mattered for adoption; now formal verification and RL environments favor types over ergonomics
+  - Open source restructures – human connection drove the community; AI-written/read code breaks those incentives; alignment becomes decisive
+  - New languages diverge – AI may not share our tradeoffs; optimal LLM programming languages may look nothing like what humans converged on
+
+- 
+- 
+
 - ## [System Prompts When Using Claude Code and Codex with Local Models : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qdcaol/system_prompts_when_using_claude_code_and_codex/)
   - Claude Code: 16.5K tokens
   - Codex: 6.5K tokens
@@ -689,7 +703,14 @@ It amazes me how people default to LLM calls when you can do it in a simple, fre
 
 - ## 
 
-- ## 
+- ## [开源仓库经常收到 ai 劣质pr 如何解决呢 ](https://linux.do/t/topic/1622067)
+  - 开源仓库里多了一堆质量堪忧的 PR。一眼能看出来是直接丢给 AI 生成然后啥也不测就提上来的，变量命名一股 AI 味，commit message 千篇一律，有的甚至连本地跑都跑不过。
+- 你需要引入 Codex 自动审查 PR 并给出建议 （Codex Bot 支持在 Github 自动审查 PR，并给出问题所在，当你给他标准时，他就会按照你的标准来审核，这避免了质量问题）
+  - 确实是得用魔法打败魔法，刚才翻了翻 发现有个 action 专门做这个事情的
+  - https://github.com/peakoss/anti-slop
+  - A GitHub action that detects and automatically closes low-quality and AI slop PRs.
+
+- 参考 llama.cpp 在 AGENTS.md 之类的里面写清楚禁止让 AI 干什么
 
 - ## [New to local, vibe coding recommendations? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1nh16ft/new_to_local_vibe_coding_recommendations/)
 - I still prefer Aider. Their system messages are under 2k. Crush is like 10k iirc. Idk about cursor/roo.

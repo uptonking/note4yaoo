@@ -214,7 +214,15 @@ modified: 2025-03-22T16:10:24.856Z
   - 易用性: 模型推荐 + 场景优化的提示词 + 多模型/多版本对比
     - 对同一场景,如翻译/ocr, 针对不同模型内置合理的参数且支持配置
     - roadmap: 
-      - editing-database, pdf-editing, extraction, chat2db, coding/table/image
+      - agentic场景优化: ocr, translation
+      - citation, backlinks: 提升rag的准确度, 优化搜索结果中的code/text/image
+      - pdf-editing: typst, formula, chart
+      - acp/WebMCP for pdf/rich-editing
+      - translation
+      - extraction
+      - tts/stt/asr
+      - editing-database, coding/table/image
+      - chat2db
       - agent-browser
   - non-goals: local image gen
   - ✈️ local models support: mlx, lmstudio-alternative
@@ -227,7 +235,6 @@ modified: 2025-03-22T16:10:24.856Z
     - 允许分享文档/插画中的模型配置/运行日志, 将prompt放入git-commit，还是直接放入图片?
     - ❓ 如何一键切换到cloud版
     - https://github.com/tc-mb/llama.cpp-omni is the first Omni multimodal inference engine built on llama.cpp.
-    - sources: docs, emails
     - modes config for ocr/rag/translation like cline-plan/act/ask
   - 🔗 citations for search: 外部数据源如字典mdx/书籍epub/wikipedia公开db/统计年鉴
     - 查看原文pdf-parts时支持仅查看前后几页, 保护原文内容
@@ -235,12 +242,14 @@ modified: 2025-03-22T16:10:24.856Z
     - wikipedia zim 自动翻译为中文
     - vector-marketplace, 支持用户选择任意数量的pdf文档创建embeddings, 并发布, 可作为一种变通方案解决数据隐私问题
     - 行业应用: law, medical
+    - sources: docs, emails
   - large pdf rag workflows: chunking-strategies, reindex, pdf-parts
   - 🌐 pdf edit
     - pdf ocr one-click eval like FlowDown
       - ui for popular ocr benchmark
       - personal bench suite like FlowDown
     - acp for pdf/rich-editing
+    - WebMCP for pdf/rich-editing
     - proofreading: 一键检查, 版本历史
       - chunking viz
     - 还原图文混排
@@ -1577,6 +1586,23 @@ modified: 2025-03-22T16:10:24.856Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [Claude Co-Work is....meh unless you code : r/claude](https://www.reddit.com/r/claude/comments/1r6a11x/claude_cowork_ismeh_unless_you_code/)
+  - I genuine tried to give this thing a shot. Outside of coding, its kind of just a glorified web-app that you can install locally.
+  - Browsing the web? Unless its plain text, it struggles, fails, times out, gives up.
+  - Want it to download files/pdf's? Nope. Can't do that, do it yourself.
+  - It also regularly fails to find folders. How do you not see DOCUMENTS on a mac? Its right there...
+  - It can't open more than one tab at a time.
+  - It is stupid slow on all models.
+  - At the end of the day, what ever you are doing on claude that isn't code, there is very little reason to pay to get cowork. It's not going to do anything it advertised if you aren't coding standalone agents.
+  - Over all, it has potential, but in its current form, its too slow, too naggy, too annoying, too useless.
+  - Being advertised as an actual "co-worker" you can hand off a bunch of work to and f*** off and come back and its mostly done, is so far from reality its not even funny.
+
+- Co-work is great, to be honest. If they cancel that, I’ll drop my Claude subscription. I use it to write confluence docs, edit pdfs, word docs, create contracts, amend them, do P&l stuff, powerpoint presentation, even google slides via chrome mcp. You’re using it wrong OP.
+
+- I think the idea is that many more non coders in the near future will do small coding activities in their jobs. If that’s not you, it’s not for you. But it might be for your replacement
 
 - ## 从 CompanyOS 到 LifeOS - 将文件系统哲学应用于人生管理
 - https://x.com/yibie/status/2021778995185168650

@@ -681,7 +681,11 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## Obsessed: Nanbeige4.1-3B is going viral and for good reasons. A 3B model that runs on your phone, scores 87.4% on AIME 2026, beating models 10x its size.
+- https://x.com/victormustar/status/2023423300278583727
+  - And yes from my tests it's delivering
+
+- I tried it and even its 4bit quant was better than other 4B models in fp16. The only thing it couldn't beat was the rare languages knowledge of Gemma 3n
 
 - ## [We built an 8B world model that beats 402B Llama 4 by generating web code instead of pixels — open weights on HF : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1qwo9j0/we_built_an_8b_world_model_that_beats_402b_llama/)
   - We just released gWorld — open-weight visual world models for mobile GUIs (8B and 32B).
@@ -696,7 +700,6 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 - I have been using GLM4.7 for almost 2 weeks now, I feel its good and bad at the same time, its good with small deterministic tasks, but breaks down when the tasks get bigger, didnt try to solve maths with it though. I am talking about coding.
 
 - I find initial generations are incredible but then it starts looping at slightly longer contexts (> 20k).
-
 
 - ## [GLM 4.7 Flash going into infinitive thinking loop every time : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qrr8ti/glm_47_flash_going_into_infinitive_thinking_loop/)
 - maybe lower your temp to like 0.1-0.3 for math problems, the randomness makes them go nuts

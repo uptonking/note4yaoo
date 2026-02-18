@@ -152,15 +152,15 @@ modified: 2023-11-28T14:48:45.910Z
   - reuse models in chat/rag/image
 # business-apps
 - business-cases
-  - comfyui, librechat
-  - 沉浸式翻译
+  - acquired: librechat, 沉浸式翻译
+  - trending: comfyui
 - 成功的产品，大多可以不断更新换代
   - 🤔 产品的价值是否足以吸引用户付费, 否则可持续发展性很弱
   - 如大模型、支持最新大模型的comfyui, 并且大模型种类多更新多
   - ai coding产品如cline, 每次新模型的发布的限免时段, 都会很快更新最新模型并免费使用, 还可以搜集使用评价与反馈
   - 能为其他产品提供infra或tools，如nvidia
   - 能为其他用户用户提供二创素材，如视频、图片
-- 纯前端/客户端的产品其实商业化的能力不强，付费特性一般是存储(回放)、计算(后台、并发、自动化)
+- 纯前端/客户端的产品其实商业化的能力不强，付费特性一般是存储(版本、回放)、计算(后台、并发、自动化)
   - 简单查看浏览的功能不足以支撑商业化的产品，可增加更多功能如 搜索、编辑、批注、集成
   - 同步、协作、素材模版、资源包
   - 👀 不愿意付费的/够用就行的/nice-to-have: 前端交互
@@ -182,12 +182,12 @@ modified: 2023-11-28T14:48:45.910Z
 - willing-to-sponsor ❤️
   - obsidian-bases
   - citations: notebooklm doc search with citations
-  - DeepAnalyze: automatic data analysis; + mermaid, 
-  - 插画复刻: Qwen-Image-i2L, image-to-prompt-to-image, 同时支持浏览comfyui生成图片的元数据、提示词
-  - [GoAmzAI - 个人、团队、企业私有化、运营的AIGC平台解决方案](https://d.goamzai.com/)
   - https://github.com/PDFMathTranslate/PDFMathTranslate /保留排版的 PDF 文档全文双语翻译
     - [Granite Docling WebGPU: State-of-the-art document parsing 100% locally in your browser. : r/LocalLLaMA _202510](https://www.reddit.com/r/LocalLLaMA/comments/1o0php3/granite_docling_webgpu_stateoftheart_document/)
     - ✨ 统一文本搜索高亮的双栏ux-pdf/docx/xlsx: 左侧是类似vscode的结果列表(非分页布局), 右侧是原文预览
+  - DeepAnalyze: automatic data analysis; + mermaid, 
+  - 插画复刻: Qwen-Image-i2L, image-to-prompt-to-image, 同时支持浏览comfyui生成图片的元数据、提示词
+  - [GoAmzAI - 个人、团队、企业私有化、运营的AIGC平台解决方案](https://d.goamzai.com/)
   - realtime collab + resumable-stream
   - ⚖️ 支持中国知网的 caj 格式
 
