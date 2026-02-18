@@ -618,7 +618,22 @@ Don’t want/can’t have external dependencies?
 
 - ## 
 
-- ## 
+- ## Top 7 MCPs worth adding to your workflow _202602
+- https://x.com/101babich/status/2023766057211572293
+  - [Top 7 MCP for Product Designers.  _202602](https://uxplanet.org/top-7-mcp-for-product-designers-4bd77f4e281c?gi=975c2cc9ca30&sk=ec2956f75b5285dbd69d6598631d83e9)
+1️⃣ context7 (Pulls live library docs into your AI tool so it codes with the right context)
+2️⃣ NotebookLM MCP (Feeds your research and specs directly to AI, so it builds with real user needs in mind)
+3️⃣ shadcn/UI MCP (Gives AI actual component knowledge instead of letting it guess your UI)
+4️⃣ Figma MCP (Turns your designs into code using real layout structure, not screenshots)
+5️⃣ Notion MCP (Lets AI read your PRDs, pull specs, and update tasks without leaving the editor)
+6️⃣ Google Analytics MCP (Query your GA4 data in plain English to validate design decisions fast)
+7️⃣ Supabase MCP (Set up your entire backend through natural language. No SQL needed.)
+
+- context7 alone killed half my cursor hallucinations. the model was fine — my docs were just outdated. who knew
+
+- Solid list. The biggest win with MCPs is keeping agents grounded in real sources of truth. The part I worry about is governance: permission scopes, write versus read separation, and audit logs so an agent cannot silently mutate Notion or analytics. Do any of these ship a permission manifest standard yet? I am curious what your must have guardrails are for permissions and auditing, especially for Notion and Analytics, so the tool can read and write safely without leaking or clobbering info.
+
+- MCPs help, but structure beats access. Without clean schemas context just amplifies mistakes.
 
 - ## 🤔 MCP is just like...an API right?
 - https://x.com/jamesqquick/status/1950604084370620719

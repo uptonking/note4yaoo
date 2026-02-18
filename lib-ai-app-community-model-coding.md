@@ -694,6 +694,7 @@ def slugify(text):
   - storyofstone 芙蓉女儿诔(lei)
 
 - 洗车店离我家只有 50 米，我想洗车，是开车去还是走路去？
+- I want to wash my car. The car wash is 80 meters away from my home. Should I walk or drive?
 
 - 解释下统计学上的 Simpson's paradox
 

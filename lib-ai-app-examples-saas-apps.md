@@ -193,6 +193,14 @@ modified: 2025-02-21T17:17:42.225Z
   - 目前，该框架针对基于React的开发进行了设计和优化。该方法和管道具有高度可扩展性，只需进行少量修改即可适应其他前端框架，如Vue和Angular。
   - 注：Flame只关注React代码生成，非通用VLM。
 
+- https://github.com/opactorai/Claudable /3.4kStar/MIT/202512/ts/electron/inactive
+  - an open-source web builder that leverages local CLI agents, such as Claude Code, Codex, Gemini CLI, Qwen Code, and Cursor Agent, to build and deploy products effortlessly.
+  - Instant Preview: See your changes immediately with hot-reload as AI builds your app
+  - Zero Setup, Instant Launch: No complex sandboxes, no API key, no database headaches - just start building immediately
+  - Deploy to Vercel: Push your app live with a single click
+  - Supabase Database: Connect production PostgreSQL with authentication ready to use
+  - Desktop App: Available as Electron desktop application for Mac, Windows, and Linux
+
 ## ai-webapp
 
 - https://huggingface.co/spaces/enzostvs/deepsite/tree/main

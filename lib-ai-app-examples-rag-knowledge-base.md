@@ -744,6 +744,22 @@ modified: 2025-11-30T17:27:16.720Z
   - This system allows you to upload, process, and query PDF documents through a modern web interface or via the MCP protocol for integration with AI tools like Cursor.
   - FastAPI Backend: Handles API requests, PDF processing, and vector storage
   - MCP Server: Exposes knowledge base to MCP-compatible clients
+
+- https://github.com/christopherkarani/Wax /256Star/apache2/202602/swift
+  - The SQLite for AI memory. Memory layer for on-device AI Agents. Replace complex RAG pipelines with a serverless, single-file memory layer.
+  - One file. Full RAG. Zero infrastructure.
+  - [Local-First. Sub-Millisecond RAG – 0.84ms vector search, zero cloud dependencies. Your Agents remember everything : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1r7otbt/localfirst_submillisecond_rag_084ms_vector_search/)
+    - Every RAG solution requires either cloud APIs (Pinecone/Weaviate) or running a database locally (ChromaDB/Qdrant). 
+    - I wanted what SQLite gave us: import a library, open a file, query. Except for multimodal content at GPU speed on Apple Silicon.
+    - So I built Wax – a pure Swift RAG engine for truly local AI apps.
+
+- https://github.com/velle999/velle.ai /202602/js
+  - Locally-run AI companion with persistent memory, swappable personalities, and system command execution. Powered by Ollama.
+  - Zero external AI APIs. Zero telemetry. Zero cloud. Everything local.
+  - [I built VELLE. AI - a local AI companion with memory, voice, quant engine, and a full productivity suite. No cloud, no subscriptions. Everything on your machine. : r/LocalLLM _202602](https://www.reddit.com/r/LocalLLM/comments/1r7dbwm/i_built_velleai_a_local_ai_companion_with_memory/)
+    - a local AI operating system that runs on top of Ollama. It's not just another chat wrapper. It's a full personal assistant with persistent memory, two-way voice, a quantitative finance engine, and a productivity suite with todos, habits, goals, journal, and achievements.
+    - Persistent memory — it actually remembers you across sessions. Your preferences, your name, your projects. All stored locally in `SQLite`.
+    - Tech stack: Node.js, Express, WebSocket, SQLite, Ollama, vanilla JS. About 8,000 lines across 6 server modules. Works with any Ollama model including qwen3:8b, llama3, mistral. Ships as a Windows .exe or run from source on any OS.
 # rag-fwk
 - https://github.com/run-llama/semtools /1.5kStar/MIT/202511/rust/ts
   - Semantic search and document parsing tools for the command line
@@ -1171,6 +1187,11 @@ modified: 2025-11-30T17:27:16.720Z
   - http://vectordbz.com/
   - modern desktop application for exploring, managing, and analyzing vector databases
   - Multiple Database Support — Connect to Qdrant, Weaviate, Milvus, ChromaDB, Pinecone, pgvector, and Elasticsearch
+
+- https://github.com/Mintplex-Labs/vector-admin /2.2kStar/MIT/202401/ts/inactive
+  - https://vectoradmin.com/
+  - The universal tool suite for vector database management. Manage Pinecone, Chroma, Qdrant, Weaviate and more vector databases with ease
+  - This repo and project is no longer actively maintained by Mintplex Labs. We hope one day to grow the team large enough to restart dedicated support and updates for this project. our main focus has moved to AnythingLLM.
 # search 🔍
 - https://github.com/AL-MARID/Lorph /MIT/202602/ts
   - AI chat application designed to run locally on your device, offering a seamless interactive experience with powerful large language models (LLMs) via Ollama.

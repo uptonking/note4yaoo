@@ -294,6 +294,12 @@ modified: 2022-06-03T21:34:54.893Z
     - 🛢️ A key idea of Eidos is to make each table a real SQLite table, so users can view and modify it through other software or visualize it with tools like Metabase
     - You can make some adjustments in the settings to store data in a local folder. Then, use iCloud, Git, or your preferred service to back up your data. Just like the web version of VSCode, it can handle local files. The web is just an app and doesn't hold any data.
     - I carefully designed the architecture, which is very flexible. The "backend" is currently running on web worker & service worker. It should be possible to deploy it to a web-standard runtime environment for self-hosting. P2P synchronization based on CRDT is on the roadmap.
+
+- https://github.com/bradwmorris/ra-h_os /MIT/202602/ts
+  - TL; DR: Clone this repository and you'll have a local SQLite database on your computer. The database schema is structured so external AI agents can continuously read and write to it, building your knowledge graph externally.
+  - Currently macOS only. Linux and Windows support is coming
+  - Exposes an MCP server — Claude Code, Cursor, or any MCP client can query and add to your knowledge base
+  - [I built and open sourced a local Obsidian alternative (sqlite) : r/PKMS](https://www.reddit.com/r/PKMS/comments/1r7tgl4/i_built_and_open_sourced_a_local_obsidian/)
 # confluence-like
 - MrDoc /2.1kStar/GPLv3/202403/js/python/Django/仅网页版
   - https://github.com/zmister2016/MrDoc

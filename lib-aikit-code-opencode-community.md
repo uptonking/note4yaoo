@@ -41,6 +41,9 @@ modified: 2026-01-17T22:41:25.867Z
 - Given you're using drizzle for this, are you open to other database types in the future. Would love to centrally manage my opencode sessions across sandboxes
   - we're going to solve that problem in a different way
   - we are just going to make distributed opencode a native thing
+
+- https://x.com/LukeParkerDev/status/2023915692404400536
+  - anecdotally opencode now sits at max 700mb of memory usage, rather than memory explosion of 14gb of ram, fixed for me as of the 1.2.0+ versions that swapped to `sqlite`.
 # discuss-roadmap
 - ## 
 

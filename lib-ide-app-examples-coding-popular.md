@@ -367,11 +367,12 @@ modified: 2025-12-11T18:10:23.710Z
   - Supabase Database: Connect production PostgreSQL with authentication ready to use
   - Desktop App: Available as Electron desktop application for Mac, Windows, and Linux
 
-- https://github.com/d-kimuson/claude-code-viewer /MIT/202512/ts
+- https://github.com/d-kimuson/claude-code-viewer /892Star/MIT/202602/ts
   - A full-featured web-based Claude Code client that provides complete interactive functionality for managing Claude Code projects
   - View Claude Code session logs in real-time through the web UI. Supports historical logs as it uses standard Claude Code logs (~/.claude/projects/...) as the data source
   - Built-in Git Diff Viewer lets you review all changes directly within Claude Code Viewer
   - What Makes Claude Code Viewer Different: specifically designed as a session log viewer
+  - Core Philosophy: Zero data loss + Effective organization + Remote-friendly design
 
 - https://github.com/sugyan/claude-code-webui /MIT/202509/ts/inactive
   - A modern web interface for Claude Code CLI - Transform your command-line coding experience into an intuitive web-based chat interface
@@ -474,6 +475,22 @@ modified: 2025-12-11T18:10:23.710Z
   - Parallel Execution	Run multiple builds simultaneously with up to 12 agent terminals
   - Isolated Workspaces	All changes happen in git worktrees
   - Memory Layer	Agents retain insights across sessions for smarter builds
+
+- https://github.com/jhlee0409/claude-code-history-viewer /MIT/202602/rust/ts/tauri
+  - https://jhlee0409.github.io/claude-code-history-viewer
+  - desktop app to browse, search, and analyze your Claude Code conversations — all offline.
+  - It automatically scans ~/.claude for conversation data
+  - [Show HN: Claude Code History Viewer for macOS | Hacker News _202507](https://news.ycombinator.com/item?id=44459376)
+
+- https://github.com/andyfischer/ai-coding-tools/tree/main/claude-history-tool /MIT/202507/ts/inactive
+  - A desktop application for browsing and viewing your Claude chat history.
+  - Browseable Session History: View all your Claude conversations organized by project.
+  - Full Tool Use: See the full input & response data for each tool use.
+  - Full Message Details: Examine the stored JSON to see extra details about your chats.
+  - https://github.com/facetlayer/candle /ts
+    - Small process manager for local development and AI agents
+    - Candle is instead optimized for easy local development instead of production.
+    - Candle will only have one instance of a given service at a time.
 
 ### clude-plugins
 
@@ -966,6 +983,9 @@ modified: 2025-12-11T18:10:23.710Z
   - https://runagentos.com/
   - Mobile-first web UI for managing AI coding sessions (Claude Code, Codex, Aider, Gemini CLI). 
   - Self-hosted with multi-pane terminals, git integration, and session orchestration.
+- https://github.com/The-Vibe-Company/companion /202602/ts
+  - Web & Mobile UI for Claude Code & Codex . 
+  - Launch sessions, stream responses, approve tools. All from your browser / mobile
 
 - https://github.com/hlhr202/Conductor-for-all /apache2/202601/ts
   - Conductor for All is a standalone command-line tool designed to bring the Conductor spec-driven development methodology to any coding environment.
@@ -1423,6 +1443,11 @@ modified: 2025-12-11T18:10:23.710Z
     - You can index any local folder (outside this repo)
     - Idempotent + incremental indexing out of the box:
       - Skips unchanged files automatically using a file content hash stored in payload (metadata.file_hash)
+  - https://github.com/voarsh2/Context-Engine /MIT/202602
+    - refactor(vscode-ext): modularize extension.js for maintainability 
+    - upload clients to use watchdog - add dept to extension
+    - Refactor auth backend resolution with hostname matching and external bridge detection
+    - symbol_graph: defensively parse line numbers
 
 - https://github.com/NgoTaiCo/mcp-codebase-index /202511/ts/inactive
   - MCP server that enables AI editors to search and understand your codebase using Google's Gemini embeddings and Qdrant vector storage.

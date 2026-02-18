@@ -304,6 +304,10 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-log
   - ?
 
+## 0218
+
+- 
+
 ## 0216
 
 - 🤔 when i add a mcp to claude code like `claude mcp add n8n-mcp`, how does agent know when to use the mcp tools and what mcp tools are available? is it required to add  explicit mcp instructions to CLAUDE.md ?  there are many open source mcp on github, after adding some by commands like `claude mcp add n8n-mcp`, i am curious the internals about the mcp integration. does opencode-cli work the similar way?
@@ -405,16 +409,39 @@ xattr -cr /Applications/FlowDown.app
 - context-engine for claude/MCP-client
 
 ```sh
+cd ~/Documents/opt/compiled/qdrant && ./qdrant
+
 uv run --env-file .env -- python -m scripts.mcp_memory_server
 uv run --env-file .env -- python -m scripts.mcp_indexer_server
 
-FASTMCP_TRANSPORT=http FASTMCP_PORT=8002 PYTHONPATH=. uv run --env-file .env -- python -m scripts.mcp_memory_server
-FASTMCP_TRANSPORT=http FASTMCP_INDEXER_PORT=8003 PYTHONPATH=. uv run --env-file .env -- python -m scripts.mcp_indexer_server
+FASTMCP_TRANSPORT=http FASTMCP_PORT=8002 uv run --env-file .env -- python -m scripts.mcp_memory_server
+
+FASTMCP_TRANSPORT=http FASTMCP_INDEXER_PORT=8003 uv run --env-file .env -- python -m scripts.mcp_indexer_server
+
+uv run --env-file .env -- python -m scripts.ingest_code --root /Users/yaoo/Documents/repos/ai-ml-llm/aionui-office
+
+# 更改vector相关配置时，需要
+curl -X DELETE http://localhost:6333/collections/codebase
+uv run --env-file .env -- python -m scripts.ingest_code --root /Users/yaoo/Documents/repos/ai-ml-llm/aionui-office --recreate
 
 # --scope local (default): Available only to you in the current project
 # --scope project: Shared with everyone in the project via .mcp.json file
-claude mcp add --transport http --scope project context-engine-indexer http://localhost:8003/mcp
+claude mcp add --transport http --scope project qdrant-indexer http://localhost:8003/mcp
 
+```
+
+- test mcp
+  - Both servers are responding correctly — the initialize handshake succeeds on both ports. So the servers themselves are fine.
+  - 💡 The issue is on the Claude Code side. 
+  - 排查方向转为 模型的 mcp tool call 是否能成功调用， 实测讯飞模型kimi调用会失败
+  - Claude Code won't automatically use MCP tools for every question. The model decides based on relevance. Try being explicit: "Use the repo_search tool to search for 'authentication'" or "Use the qdrant-indexer MCP server to find code related to embeddings".
+
+```sh
+# test mcp connection
+curl -s -X POST -H "Content-Type: application/json" -H "Accept: application/json, text/event-stream" http://localhost:8003/mcp -d '{"jsonrpc":"2.0","method":"initialize","params":{"protocolVersion":"2024- 11-05","capabilities":{},"clientInfo":{"name":"test","version":"0.1"}},"id":1}'
+
+# event: message
+# data: {"jsonrpc":"2.0","id":1,"result":{"protocolVersion":"2025-06-18","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":false}},"serverInfo":{"name":"qdrant-indexer-mcp","version":"1.17.0"}}}
 ```
 
 - You are a professional python/typescript/nodejs fullstack developer and a system administrator.

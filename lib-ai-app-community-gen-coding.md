@@ -114,6 +114,26 @@ modified: 2025-09-01T07:58:29.058Z
 - This is my exact experience, I have spend over 100 usd on API fees through OpenRouter, OpenAI and Deepseek and tried many models with both Cline and Roocode and you really get various results. Sometimes you can end up in endless loops trying to solve a problem no matter how many times you start a new task with the same LLM then you switch to another LLM and you can get past that point or you get a situation where it wants to go on another totally different tangent. Ive had similar issues with local LLMs and even still have issues with them even working with Roocode and Cline. Ive even tried Bolt.diy which is a fork of Bolt.new, similar issues. Ive started writing my own coder to hopefully solve a few of my concerns but its likely we will end up with the same issues.
 
 - I’ve been having similar issues with all local models. I’m using Qwen-2.5-coder 7B on MacBook M3 Pro and I’ve come to the conclusion that Cline’s context size is too large to be performant. I use the same model with Continue.dev and everything works quickly.
+# discuss-ai-coding-roadmap 📡 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 最近 vibe building 已经完全不看代码甚至不看代码结构了，只验收最终部署的产物，甚至功能上通常也不太需要验收，agent 自己的浏览器测试已经测完功能了
+- https://x.com/istdrc/status/2023788974712779224
+- 我用 agent-browser，感觉比 playwright 好用
+  - 底层都是 chromium，但这里的重点不是底层，是 AX
+- 我试试看能不能做e2e，感觉截图跑得很慢
+
+- 现在基于canvas的测试都没有成熟产品，你们页面不能太复杂哈
+
+- 我开发阶段也不看，但是完成度差不多的时候，会让几个 ai 交叉给一份架构和结构的 Review 报告和建议。要不 ai 即使是 opus 4.6  ，也给我整出单文件 5k+ 行的模块
+
+- 看项目和场景吧 多端协同测试 供应链等挺复杂的
 # discuss-ai-coding-internals
 - ## 
 

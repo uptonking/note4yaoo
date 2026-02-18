@@ -17,6 +17,7 @@ modified: 2026-01-14T19:05:15.969Z
 
 - features
   - ?
+  - ? 似乎不支持skills
 # draft
 - search in chat
 

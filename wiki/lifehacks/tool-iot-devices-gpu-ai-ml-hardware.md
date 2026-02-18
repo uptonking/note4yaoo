@@ -28,6 +28,42 @@ modified: 2026-01-15T15:44:10.647Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Ryzen AI Max 395+ boards with PCIe x16 slot? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1ncdtei/ryzen_ai_max_395_boards_with_pcie_x16_slot/)
+  - I'm looking to buy a Ryzen AI Max 395+ system with 128GB and a convenient and fast way to connect a dedicated GPU to it.
+  - I've had very bad experiences with eGPUs and don't want to go down that route.
+
+- It's never going to be possible. They basically stole PCIe lanes to make the memory bus wider and to add the GPU, which is why the AI max punches so much above it's weight
+
+- The CPU does not have enough PCIe lanes for a x16 slot if you also want an NVMe SSD, which for obvious reasons all boards will have.
+  - The Framework Mainboard has a PCIe x4 slot, that might be the most you can find.
+
+- I hope nextgen Ryzen fixes this debacle.
+  - It won't, at least not in the desktop or embedded variant. The pin count would grow too large.
+  - I would, however, bet on an Epyc or Threadripper chip with a iGPU and a 512 bit memory bus.
+
+- Epyc with iGPU exists but it got called MI300A APU
+  - True, but it uses HBM so price is eye watering.
+  - 512 or 768 bit memory is already possible on 9000 series, they just need to connect an iGPU to 64 of the PCI-E lanes.
+
+- I made a post about this a few days ago. I already have the 128GB in order.
+  - If your use case is mainly gaming, but also want to run inference on dGPU, do this:
+  - Get the 128GB board
+  - Get an ATX size case and decent power supply 
+  - A PCIe 4x4 to 4x16 riser that is powered (because the board provides a max of 25W and you need 75W). These are compact so you can mount it with screws next to the MB inside the case
+  - This combo will give you all 64Gbps bandwidth from the motherboard PCIe just like Occulink without dealing with external cables, power supplies or anything of that nature.
+
+- Lookup Oculink vs Desktop performance in Gaming. Then in LLMs.
+  - Gaming sees a drop of 2-5% from desktop IRL. That’s worth it for me every time because the FPS drop is insignificant. Going from 120fps to 112-115 is negligible.
+  - LLMs will have almost no impact (except for slightly slower load time from NVME storage) when the model fits completely in VRAM. However, a worse impact will be seen for models offloading to CPU or other graphics cards in the same system.
+
+- If you want dGPU don't get 395 and just put 128GB RAM with a desktop CPU.
+
+- Minisforum MS-S1 has 16x Pcie slot, however the PSU is too weak to power a dGPU
+
 - ## [Advice: Which MiniPC To Buy? (Framework, Bosgame, Minisforum) - AI MAX 395+/128GB : r/StrixHalo _202602](https://www.reddit.com/r/StrixHalo/comments/1r18v84/advice_which_minipc_to_buy_framework_bosgame/)
   - Framework - $3700
   - Minisforum MS-S1 - $3900

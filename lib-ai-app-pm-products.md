@@ -148,7 +148,7 @@ modified: 2025-03-22T16:10:24.856Z
   - retrieval
   - code retrieval
   - text-matching
-  - 类似 词典软件+词典mdx 的形式, 搜索软件+书籍pdf/epub
+  - 类似 词典软件+词典mdx 的形式, 搜索软件+书籍pdf/epub, 产品价值参考context7
 
 - office
   - excel/database generator
@@ -236,7 +236,7 @@ modified: 2025-03-22T16:10:24.856Z
     - ❓ 如何一键切换到cloud版
     - https://github.com/tc-mb/llama.cpp-omni is the first Omni multimodal inference engine built on llama.cpp.
     - modes config for ocr/rag/translation like cline-plan/act/ask
-  - 🔗 citations for search: 外部数据源如字典mdx/书籍epub/wikipedia公开db/统计年鉴
+  - 🔗 citations for search: 外部数据源如字典mdx/书籍epub/wikipedia公开db/统计年鉴, 产品价值参考context7
     - 查看原文pdf-parts时支持仅查看前后几页, 保护原文内容
     - 类似词典库/kiwix的预置模块, 可下载、可分享, 不必每次都全量索引
     - wikipedia zim 自动翻译为中文
@@ -1266,6 +1266,10 @@ modified: 2025-03-22T16:10:24.856Z
   - [星火大模型，燃情双十一-讯飞开放平台](https://www.xfyun.cn/activities/discount)
   - [讯飞星辰MaaS平台](https://maas.xfyun.cn/modelSquare)
     - 限免活动
+  - 🐛
+    - 少部分模型存在无法调用mcp的问题，如kimi-k2.5, 而glm-4.7支持调用mcp-tools; 调用失败的表现是， claude对话突然停止，且history里面没有相关对话日志
+      - 排查过程: 中转claude模型能用mcp， 但讯飞的kimi用不了， 进一步测试讯飞的glm-4.7能用
+  - 🛝
 
 - [七牛 AI 大模型推理服务 - 七牛云](https://www.qiniu.com/ai/chat)
   - 采用按量计费的模式，根据实际使用的 token 数量收费，每月初出账。新用户享有免费额度

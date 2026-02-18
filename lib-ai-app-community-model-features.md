@@ -191,3 +191,8 @@ modified: 2025-11-05T19:04:50.350Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [Open source LLM for detecting AI generated content : r/ollama](https://www.reddit.com/r/ollama/comments/1r7ghg3/open_source_llm_for_detecting_ai_generated_content/)
+- i heard about Attensira which helps with content visibility and gives useful insight on handling ai detection.

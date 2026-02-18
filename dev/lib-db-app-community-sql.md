@@ -180,6 +180,26 @@ modified: 2023-09-17T17:35:27.024Z
 - 
 - 
 
+# discuss-toolchain-sql
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Introducing polyglot - A Rust SQL transpiler for more than 30 SQL dialects. 
+- https://x.com/TobiM/status/2023325808975069491
+  - It has 100% coverage for sqlglot‘s test fixtures.
+  - Playground for the Wasm version: [Polyglot SQL Playground](https://polyglot-playground.gh.tobilg.com/)
+
+- very nice. been looking for something like this - sqlite's dialect differences alone have bitten me too many times. curious if it handles materialized view syntax across postgres/mysql/oracle though?
+  - I was developed to be 100% compatible to sqlglot's fixtures, so they don't cover it, polyglot won't as well as of today. It's an early version (0.1.2 right now)
+
+- SurrealQL doesn’t seem very close to standard SQL, so it’s probably some effort.
+
+- Would be nice to see support for Firebird SQL. AFAIK the Firebird SQL closely follows the SQL specs.
 # discuss
 - ## 
 
