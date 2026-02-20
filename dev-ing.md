@@ -304,9 +304,21 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-log
   - ?
 
-## 0218
+## 0220
 
-- 
+- this project provides MCP/cli for code search. the existing cli only implements partial features of mcp servers. please write a new cli in a new separate folder that implements full features of code search and auto reindexing, using programatic function call and import useful existing code/lib instead of using mcp api call. features related to memory/context enhancement are not required to implement, focusing on good code search first. then write a new skill at `skills/context-engine-cli/SKILL.md` to provide the new cli for other agent clients.
+
+## 0219
+
+- 🤔 There are so many cli coding agents like claude-code/codex-cli/gemini-cli, is there any popular solution to unify the chat message into an interoperable format? for example, unify/export/manage claude code message and codex cli message.  Is there any popular open source solution to this problem? if there is, list github repo and provide description for each.
+  - there’s no single “one true” universal format yet — but two practical standards have emerged and are already used by many projects, and a few open-source tools already act as adapters/bridges.
+  - If you want one place to start, treat the Model Context Protocol (MCP) as the canonical message/tool-call wire format and use AGENTS.md for repo-level agent instructions; then plug adapters (or use projects that already do this) so different CLIs/agents can interoperate.
+- AGENTS.md doesn’t replace a wire protocol, but it unifies how repositories present instructions and constraints to different agents. Good to combine with MCP for behavior + tooling.
+- https://github.com/open-voice-interoperability/openfloor-docs
+  - This repository contains the specification and schemas for the Open-Floor Protocol family of Vendor-Independent specifications and supporting schemas developed by the Voiceinteroperability.ai initiative
+  - The Open-Floor Conversation Envelope is a universal JSON structure whose purpose is to allow human or automatic agents (assistants) to interoperably participate in a conversation. When coupled with a specific protocol, such as HTTPS, a dialog agent that can generate and send Conversation Envelopes is capable of inter-operating with any other Open-Floor-compliant agent, regardless of the technology or architecture on which that other agent is based.
+
+- Model Context Protocol (MCP) : An open-source standard (maintained by Anthropic) for connecting AI applications to external systems. While not specifically for chat history export, it provides a standardized way for agents to interact with tools and data sources, creating a foundation for interoperability. Claude Code, Gemini CLI, and Codex CLI all support MCP integrations.
 
 ## 0216
 

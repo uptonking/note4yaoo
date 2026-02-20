@@ -716,11 +716,46 @@ AI
 - 广告就太 low 了，等待时间可能会让你做图片识别来训练AI用，以换取 token
 
 - 首行代码免广告，每一个人通过你的邀请码加入，你每次看广告时间缩短0.01秒
+# discuss-code-review
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [What's the best AI code review tool? : r/codereview _202512](https://www.reddit.com/r/codereview/comments/1pqgmv4/whats_the_best_ai_code_review_tool/)
+- Here are my top 5:
+  - Graphite
+  - Bito's AI Code Review Agent
+  - GitHub Copilot
+  - Seer (by Sentry)
+  - CodeRabbit
+  - My next project is to create a fresh 2026 benchmarking report of the best AI code review tools. I'm planning to add Greptile, Qodo, and Bugbot to the list.
+
+- Graphite has been acquired by Cursor a few days ago I think. However, since I'm working with the Kilo Code team on some tasks, I use Kilo Code Review. 
+
+- We ended up valuing low noise more than anything else. Static checks stay in CI, and Qodo joins as an extra reviewer on each PR, reading related files and history, then leaving a short summary and a few higher‑risk comments. That has been easier to work with than tools that add many tiny remarks.
+
+- ## [Looking for a Free/Open Source AI Code Review Tool – Suggestions? : r/developersIndia _202507](https://www.reddit.com/r/developersIndia/comments/1lrrsvl/looking_for_a_freeopen_source_ai_code_review_tool/)
+- for FOSS, try CodeRabbit OSS tier, Review Bot, or self-hosted options like SonarQube plus Semgrep rules. if you want a one-click repo report, most “free” tools cap usage. Qodo also has some open source components and a free plan for small teams and does PR reviews with summaries and test suggestions
+
+- 
+- 
+- 
+- 
+- 
+
 # discuss
-- ##
+- ## 
 
-- ##
+- ## 
 
-- ##
+- ## 
 
-- ##
+- ## 

@@ -237,6 +237,18 @@ modified: 2025-12-11T18:10:23.710Z
     - 1Code uses the official Claude Code SDK which wraps the Claude Code binary. This is the official way to build on top of Claude Code.
     - Some other tools (like OpenCode) made direct API calls while impersonating Claude Code - that approach got banned. We're not doing that.
 
+- https://github.com/getpaseo/paseo /MIT/202602/ts
+  - https://paseo.sh/
+  - Manage coding agents from your phone and desktop.
+  - a self-hosted daemon for Claude Code, Codex, and OpenCode.
+  - Agents run on your machine with your full dev environment. 
+  - Connect from phone, desktop, or web.
+  - [I built a fully self-hosted and open-source Claude Code UI for desktop and mobile : r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1r8rqnv/i_built_a_fully_selfhosted_and_opensource_claude/)
+    - Git worktree management for running agents in parallel, Git operations so you don't have to leave the app, integrated terminal, it also comes with fully local voice mode and dictation
+
+- https://github.com/kbwo/ccmanager /MIT/202602/ts
+  - a CLI application for managing multiple AI coding assistant sessions (Claude Code, Gemini CLI, Codex CLI, Cursor Agent, Copilot CLI, Cline CLI, OpenCode, Kimi CLI) across Git worktrees and projects.
+
 - https://github.com/pedramamini/Maestro /AGPL/202601/ts
   - https://runmaestro.ai/
   - a cross-platform desktop app for orchestrating your fleet of AI agents and projects.
@@ -374,6 +386,13 @@ modified: 2025-12-11T18:10:23.710Z
   - What Makes Claude Code Viewer Different: specifically designed as a session log viewer
   - Core Philosophy: Zero data loss + Effective organization + Remote-friendly design
 
+- https://github.com/jhlee0409/claude-code-history-viewer /MIT/202602/rust/ts/tauri
+  - https://jhlee0409.github.io/claude-code-history-viewer
+  - desktop app to browse, search, and analyze your Claude Code conversations — all offline.
+  - It automatically scans `~/.claude` for conversation data
+  - 支持chat聊天内搜索
+  - [Show HN: Claude Code History Viewer for macOS | Hacker News _202507](https://news.ycombinator.com/item?id=44459376)
+
 - https://github.com/sugyan/claude-code-webui /MIT/202509/ts/inactive
   - A modern web interface for Claude Code CLI - Transform your command-line coding experience into an intuitive web-based chat interface
   - Secure tool access with granular permission controls and clear approval workflow
@@ -476,12 +495,6 @@ modified: 2025-12-11T18:10:23.710Z
   - Isolated Workspaces	All changes happen in git worktrees
   - Memory Layer	Agents retain insights across sessions for smarter builds
 
-- https://github.com/jhlee0409/claude-code-history-viewer /MIT/202602/rust/ts/tauri
-  - https://jhlee0409.github.io/claude-code-history-viewer
-  - desktop app to browse, search, and analyze your Claude Code conversations — all offline.
-  - It automatically scans ~/.claude for conversation data
-  - [Show HN: Claude Code History Viewer for macOS | Hacker News _202507](https://news.ycombinator.com/item?id=44459376)
-
 - https://github.com/andyfischer/ai-coding-tools/tree/main/claude-history-tool /MIT/202507/ts/inactive
   - A desktop application for browsing and viewing your Claude chat history.
   - Browseable Session History: View all your Claude conversations organized by project.
@@ -491,6 +504,12 @@ modified: 2025-12-11T18:10:23.710Z
     - Small process manager for local development and AI agents
     - Candle is instead optimized for easy local development instead of production.
     - Candle will only have one instance of a given service at a time.
+
+- https://github.com/Yeachan-Heo/oh-my-claudecode /6.7kStar/MIT/202602/ts
+  - https://yeachan-heo.github.io/oh-my-claudecode-website
+  - Teams-first Multi-agent orchestration for Claude Code
+  - https://github.com/jayEntp/openDevTeam /MIT/202602/js
+    - [【开源】openDevTeam：为 Claude Code 注入 6 个专业级 AI 智能体工作流 ](https://linux.do/t/topic/1625719)
 
 ### clude-plugins
 
@@ -991,6 +1010,15 @@ modified: 2025-12-11T18:10:23.710Z
   - Conductor for All is a standalone command-line tool designed to bring the Conductor spec-driven development methodology to any coding environment.
   - Originally tied to the Gemini CLI extension, this project aims to decouple the methodology, allowing developers to install and initialize Conductor workflows in their projects so they can be leveraged by any AI Coding Agent (e.g., Claude Code, Cursor, VS Code Copilot, Codex) or IDE.
 
+- https://github.com/endorhq/rover /apache2/202602/ts
+  - A manager for AI coding agents that works with Claude Code, Cursor, Gemini, Codex, and Qwen.
+  - everything runs locally, under your control, and using your already installed tools.
+- https://github.com/jacob-bd/ai-code-connect /MIT/202601/ts
+  - A CLI tool that connects Claude Code and Gemini CLI, eliminating manual copy-paste between AI coding assistants.
+
+- https://github.com/aannoo/hcom /MIT/202602/python/rust
+  - Connect Claude Code, Gemini CLI, and Codex so agents can message, watch, and spawn each other across terminals
+
 - https://github.com/specstoryai/getspecstory /961Star/apache2/202601/go
   - https://specstory.com/
   - Turn your AI development conversations into searchable, shareable knowledge.
@@ -1426,15 +1454,27 @@ modified: 2025-12-11T18:10:23.710Z
   - https://github.com/1571312541/Context-Engine
     - 国际化, 及docker修改
     - MCP retrieval stack for AI coding assistants. Hybrid code search (dense + lexical + reranker), ReFRAG micro-chunking
+      - scripts/ctx.py - Main CLI tool 
+      - The `ctx` CLI connects to the MCP server to retrieve relevant code context, then enhances prompts using a local LLM decoder.
+      - ctx.py is an HTTP client that communicates with the running MCP server, as a prompt enhancement tool, not a full MCP client. 
+      - ctx cli does NOT support all MCP features, only uses 2 MCP tools - repo_search / context_search
     - One command deploys Qdrant-powered indexing for Cursor, Windsurf, Roo, Cline, Codex, and any MCP client.
     - Hybrid search: Semantic + lexical + cross-encoder reranking
     - Large file chunks: Returns 5-50 line chunks, not whole files
     - Self-hosted stack: No cloud dependency, no vendor lock-in
     - Auto-syncing: Extension watches for changes and re-indexes automatically
+      - The ctx.py CLI does NOT support auto-reindexing. However, there's a separate standalone file watcher that runs as a background daemon.
+      - The watcher runs as a separate long-running process: python scripts/watch_index.py
+      - Uses `watchdog` library to monitor file system changes
+      - Automatically re-indexes modified/created files
+      - Supports both single-repo and multi-repo modes
     - Memory system: Store team knowledge alongside your code
     - Optional LLM features: Local decoder (llama.cpp), cloud integration (GLM, MiniMax), adaptive rerank learning
     - 依赖tree_sitter、qdrant、fastembed、fastmcp、fastapi、watchdog、onnxruntime
     - 未使用neo4j/redis
+    - 🏘️
+      - Search Flow: Query → Query Expansion → Parallel (Dense + Lexical Search) → RRF Fusion → Reranking → Results
+      - Indexing Flow: File Detection → Tree-sitter Parsing → Chunking → Embedding → Qdrant Upsert
     - supports multi-repository operation through unified collection architecture: seamless cross-repo search, All repositories index into **single shared collection** by default
   - https://github.com/mikahoy045/Context-Engine /MIT/202511/python
     - a plug-and-play MCP retrieval stack that unifies code indexing, hybrid search, and optional llama.cpp decoding so product teams can ship context-aware agents in minutes
@@ -1495,7 +1535,7 @@ modified: 2025-12-11T18:10:23.710Z
   - https://chunkhound.github.io/
   - https://pypi.org/project/chunkhound/2.0.0/ /配置文档
   - Deep Research for Code & Files
-  - Transform your codebase into a searchable knowledge base for AI assistants using semantic search via cAST algorithm and regex search. 
+  - Transform your codebase into a searchable knowledge base for AI assistants using semantic search via cAST algorithm and `regex` search. 
   - MCP integration - Works with Claude, VS Code, Cursor, Windsurf, Zed, etc
   - cAST Algorithm - Research-backed semantic code chunking
     - Tree-sitter - Universal AST parser supporting 29 languages
@@ -1522,13 +1562,6 @@ modified: 2025-12-11T18:10:23.710Z
     - Telling Claude to call the CLI tool is more efficient.
     - Agree. And to make the CLI usage more effective/efficient, if you can publish a skill that would be excellent
     - `chunkhound search <query>`, `chunkhound search --regex <query>` and `chunkhound research <query>` are the main cli entry points that you can already use today
-- https://github.com/MikeRecognex/mcp-codebase-index /AGPL/202602/python
-  - A structural codebase indexer with an MCP server for AI-assisted development. 
-  - Zero runtime dependencies — uses Python's ast module for Python analysis and regex for TypeScript/JS. 
-  - Indexes codebases by parsing source files into structural metadata -- functions, classes, imports, dependency graphs, and cross-file call chains -- then exposes 17 query tools via the Model Context Protocol
-  - By default, AI assistants may still read entire files instead of using the indexed tools. Add this to your project's `CLAUDE.md` (or equivalent instructions file) to nudge(劝说；鼓励) it:
-    - Prefer using codebase-index MCP tools (get_project_summary, find_symbol, get_function_source, get_class_source, get_dependencies, get_dependents, get_change_impact, get_call_chain, etc.) over reading entire files when navigating the codebase.
-  - [I built an MCP to significantly reduce your token consumption : r/claude _202602](https://www.reddit.com/r/claude/comments/1r71lyb/i_built_an_mcp_to_significantly_reduce_your_token/)
 
 - https://github.com/krokozyab/Agent-Fusion /MIT/202511/kotlin/inactive
   - a local RAG semantic search engine that gives AI agents instant access to your code, documentation (Markdown, Word, PDF).
@@ -1572,6 +1605,7 @@ modified: 2025-12-11T18:10:23.710Z
   - get started with any MCP-compatible application: cc, codex, ...
   - Tree-sitter AST Parsing: Native syntax parsing for accurate symbol extraction
   - 未实现 rag / vector-search
+  - search_code_advanced: Smart search with `regex`, fuzzy matching, file filtering, and paginated results 
   - Auto-detects and uses the best available tool (ugrep, ripgrep, ag, or grep)
   - Real-time Monitoring & Auto-refresh
     - File Watcher: Automatic index updates when files change
@@ -1581,6 +1615,14 @@ modified: 2025-12-11T18:10:23.710Z
   - launch the server via FastMCP 
   - [Code Index MCP v1.0.0 - Let LLMs explore your entire codebase : r/mcp _202508](https://www.reddit.com/r/mcp/comments/1mh70bq/code_index_mcp_v100_let_llms_explore_your_entire/)
     - Is this storing any information fully locally?  YES
+
+- https://github.com/MikeRecognex/mcp-codebase-index /AGPL/202602/python
+  - A structural codebase indexer with an MCP server for AI-assisted development. 
+  - Zero runtime dependencies — uses Python's ast module for Python analysis and `regex` for TypeScript/JS. 
+  - Indexes codebases by parsing source files into structural metadata -- functions, classes, imports, dependency graphs, and cross-file call chains -- then exposes 17 query tools via the Model Context Protocol
+  - By default, AI assistants may still read entire files instead of using the indexed tools. Add this to your project's `CLAUDE.md` (or equivalent instructions file) to nudge(劝说；鼓励) it:
+    - Prefer using codebase-index MCP tools (get_project_summary, find_symbol, get_function_source, get_class_source, get_dependencies, get_dependents, get_change_impact, get_call_chain, etc.) over reading entire files when navigating the codebase.
+  - [I built an MCP to significantly reduce your token consumption : r/claude _202602](https://www.reddit.com/r/claude/comments/1r71lyb/i_built_an_mcp_to_significantly_reduce_your_token/)
 
 - https://github.com/bluewings1211/codebase-RAG /MIT/202512/python
   - MCP server designed to assist AI agents and developers in understanding and navigating codebases.

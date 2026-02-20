@@ -243,6 +243,11 @@ modified: 2025-03-22T18:49:15.634Z
   - [给大家推荐一下这几天国外爆火的 Clawdbot ](https://linux.do/t/topic/1511657)
     - 安装以后，它可以接入你的WhatsApp或Telegram，你给它发消息，它就能在你的电脑上帮你做各种事儿，例如回邮件、浏览网页、做视频等等，而且只在你的电脑上运行，不上传隐私。当然这些事儿Claude Code也能干，但和 clawdbot 对话更像人
 
+- https://github.com/supermemoryai/llm-bridge /MIT/202511/ts/inactive
+  - https://supermemory.ai/blog/we-solved-ai-api-interoperability/
+  - Interoperability between input formats of various LLMs, with observability, error handling, etc. built in.
+  - TypeScript library that provides seamless translation between different LLM provider APIs (OpenAI, Anthropic Claude, Google Gemini) while preserving zero data loss and enabling perfect reconstruction of original requests.
+
 - https://github.com/specstoryai/getspecstory /961Star/apache2/202601/go
   - https://specstory.com/
   - Turn your AI development conversations into searchable, shareable knowledge.
@@ -250,6 +255,20 @@ modified: 2025-03-22T18:49:15.634Z
   - https://x.com/doesdatmaksense/status/2012209297380544940
     - we’ve spent a lot of time normalizing agent sessions, and defining a stable contract for ai conversations across tools.
     - Normalizing agent sessions into a stable contract is underrated. Once the “conversation shape” is consistent, you can do boring but important stuff—diffs, audits, replay, evals—without rewriting integrations every time a new tool pops up.
+
+- https://github.com/yoavf/ai-sessions-mcp /MIT/202602/go
+  - An MCP server that makes sessions from Claude Code, OpenAI Codex, Gemini CLI and opencode available to any MCP compatible client.
+  - Allow AI agents to search, list, and read your previous local coding sessions from multiple CLI coding agents.
+
+- https://github.com/nervosys/chasm-cli /AGPL/202602/rust
+  - Universal CLI for managing AI chat sessions across providers
+  - unifying chat sessions from AI coding assistants like GitHub Copilot, Cursor, and more.
+  - Extract chat sessions from VS Code, Cursor, Windsurf, and other editors
+  - No Lock-in - Universal session format that works across all providers
+  - Merge - Combine sessions across workspaces and time periods
+  - Real-time Recording - Live session recording to prevent data loss from editor crashes
+  - API Server - REST + WebSocket API for building custom integrations
+  - SQLite-based storage that normalizes all providers
 # ui-ai 💄
 - https://github.com/google/a2ui /543Star/apache2/202512/ts
   - https://a2ui.org/
@@ -383,6 +402,35 @@ modified: 2025-03-22T18:49:15.634Z
   - Vercel AI SDK community provider for Claude Code SDK - Use Pro/Max Subscription via SDK
   - This is the v5-beta compatible version. For AI SDK v4 support, use version 0.2.x.
 # chat-coding-toolchain
+- https://github.com/marc-shade/universal-ai-chat /202511/python/inactive
+  - Universal AI Chat MCP Server - Real-time communication between Claude Code, OpenAI Codex CLI, and Gemini CLI
+  - Shared Memory: All AIs share a common vector memory via Qdrant
+  - Documentation Corpus: Pre-indexed docs for all three CLI tools
+  - Conversation History: Full message threading and history
+
+- https://github.com/nervosys/chasm-cli /AGPL/202602/rust
+  - Universal CLI for managing AI chat sessions across providers
+  - unifying chat sessions from AI coding assistants like GitHub Copilot, Cursor, and more.
+  - Extract chat sessions from VS Code, Cursor, Windsurf, and other editors
+  - No Lock-in - Universal session format that works across all providers
+  - Merge - Combine sessions across workspaces and time periods
+  - Real-time Recording - Live session recording to prevent data loss from editor crashes
+  - API Server - REST + WebSocket API for building custom integrations
+  - SQLite-based storage that normalizes all providers
+
+- https://github.com/jacob-bd/ai-code-connect /MIT/202601/ts
+  - A CLI tool that connects Claude Code and Gemini CLI, eliminating manual copy-paste between AI coding assistants.
+
+- https://github.com/monk1337/clicodelog /MIT/202602/python
+  - local-first web app to browse, inspect, and export logs from CLI-based AI coding agents — Claude Code, OpenAI Codex, and Gemini CLI.
+
+- https://github.com/kylebrodeur/universal-agent-context /MIT/202602/python/ts
+  - Universal context system for AI agents: discover, translate, and manage agent skills across formats. 
+  - Includes MCP server, CLI, and Python library.
+  - What makes UACS different: It's middleware, not another agent tool
+  - It provides format translation, context compression, package management, persistent memory, and MCP server integration in one package - the only solution offering this complete feature set.
+  - Bundled Architecture: The Next.js frontend (static export) is served directly from FastAPI - no separate frontend server needed!
+
 - https://github.com/sqlchat/sqlchat /BSL/202406/ts
   - https://sqlchat.ai/
   - Chat-based SQL Client and Editor for the next decade

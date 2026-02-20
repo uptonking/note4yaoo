@@ -235,6 +235,7 @@ modified: 2025-07-17T14:40:07.230Z
   - creating a Kanban board
   - mapping your organisation to entities linking them together and providing infinite options of navigation, filtering, views
 
+- [✨ Notion like databases  _202501](https://github.com/suitenumerique/docs/discussions/1904)
 # discuss-changelog
 - ## 
 

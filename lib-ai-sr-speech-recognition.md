@@ -159,6 +159,27 @@ modified: 2023-02-07T09:22:03.120Z
 - https://github.com/harry0703/AudioNotes /MIT/202407/python
   - 快速提取音视频内容，整理成一份结构化的markdown笔记
 
+# discuss-model-tts
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Kitten TTS V0.8 is out: New SOTA Super-tiny TTS Model (Less than 25 MB) : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1r8pztp/kitten_tts_v08_is_out_new_sota_supertiny_tts/)
+  - Kitten ML has released open source code and weights for three new tiny expressive TTS models - 80M, 40M, 14M (all Apache 2.0)
+  - https://github.com/KittenML/KittenTTS
+  - The smallest model is less than 25 MB, and around 14M parameters. All models have a major quality upgrade from previous versions, and can run on just CPU.
+
+- The voices are so cute!
+# discuss-model-stt
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
 # discuss
 - ## 
 

@@ -17,6 +17,23 @@ modified: 2022-10-21T21:03:38.124Z
 - ## 
 
 - ## 
+# discuss-roadmap
+- ## 
+
+- ## 
+
+- ## 
+# discuss-changelog
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [feat: server-side processing by YousefED · Pull Request · TypeCellOS/BlockNote _202407](https://github.com/TypeCellOS/BlockNote/pull/451)
+  - This introduces a server-util package which can be used to interact with BlockNote without instantiating an entire editor. 
+  - For example, it can be used to render HTML from BlockNote blocks in JSON format (or from a YDoc) for server-side rendering. Or, for server-side conversion to markdown for server-side search indexing.
+
 # discuss
 - ## 
 

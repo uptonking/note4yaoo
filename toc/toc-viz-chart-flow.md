@@ -514,7 +514,7 @@ modified: 2020-10-22T10:22:55.878Z
     - 采用了独创的箭头连接算法，能够很好的修正 AI 绘制过程中出现的箭头乱飘的现象。
     - 除了箭头连接算法和提示词是我自己研究出来的外。 其他的功能均为 vibe-coding 所得，难免会有 bug
 
-- https://github.com/Menghuan1918/drawio2go /MIT/202601/ts/electron
+- https://github.com/Menghuan1918/drawio2go /168Star/MIT/202601/ts/electron
   - https://drawio2go.vercel.app/
   - DrawIO 编辑器应用，致力于在AI加持下构建更好的人机协同建模工具
   - 提供开箱即用的应用(Windows/Linux/Mac OS)或作为网页部署
@@ -531,6 +531,8 @@ modified: 2020-10-22T10:22:55.878Z
     - 支持让有视觉模型读取视觉上的drawio布局，根据这个布局再反过来调整drawio的XML
   - [【开源】Drawio2GO V1.2更新：让DeepSeek也能画好图 _202601](https://linux.do/t/topic/1385703)
     - V1.2更新大幅加强了较弱模型的绘图能力，此前往往只有类似于claude-sonnet这样对drawio内容特殊训练的模型才能有效地绘制drawio。这次更新引入了知识和主题的概念，同时重构了操作的工具来解决这个问题。
+  - [图片怎么有效转draw.io ](https://linux.do/t/topic/1626505/7)
+    - 一个方案是让 ai 读图输出 svg/mermaid/graphviz/plantuml
 
 - https://github.com/JerryKwan/drawio-live-editor /202512/svelte
   - An AI-powered online diagram editor based on Draw.io, designed specifically for technical documentation.

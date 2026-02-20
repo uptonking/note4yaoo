@@ -592,6 +592,30 @@ modified: 2025-02-21T17:17:42.225Z
   - It runs on your own machine/server, providing multi-user accounts backed by PostgreSQL while keeping full control of your strategies, trading data, and API keys.
   - runs locally. Your strategies, trading logs, API keys, and analysis results stay on your machine. No vendor lock-in
   - [【开源自荐】目前全网最全市场的AI量化工具【QuantDinger】，全面开源 ](https://linux.do/t/topic/1507020)
+
+## openclaw
+
+- https://github.com/netease-youdao/lobsterai /MIT/202602/python/ts
+  - https://lobsterai.youdao.com/
+  - all-in-one personal assistant Agent developed by NetEase Youdao. It works around the clock to handle your everyday tasks — data analysis, making presentations, generating videos, writing documents, searching the web, sending emails, scheduling tasks, and more.
+  - At its core is Cowork mode — it executes tools, manipulates files, and runs commands in a local or sandboxed environment, all under your supervision. 
+    - Cowork is the core feature of LobsterAI — an AI working session system built on the Claude Agent SDK.
+  - You can also chat with agent via Telegram, Discord, DingTalk or Feishu (Lark) and get work done from your phone anytime, anywhere.
+  - Local + Sandbox Execution — Run tasks directly on your machine or in an isolated Alpine Linux sandbox
+  - Built-in Skills — Office document generation, web search, Playwright automation, Remotion video generation, and more
+  - Scheduled Tasks — Create recurring tasks via conversation or the GUI
+  - Persistent Memory — Automatically extracts user preferences and personal facts from conversations
+  - Mobile via IM — Control your Agent remotely from your phone through Telegram, Discord, DingTalk, or Feishu
+  - Permission Gating — All tool invocations require explicit user approval before execution
+  - Cross-Platform — macOS (Intel + Apple Silicon), Windows, Linux desktop, plus mobile coverage via IM
+  - Local Data — SQLite storage keeps your chat history and configuration on your device
+  - LobsterAI uses Electron's strict process isolation. All cross-process communication goes through IPC.
+  - Uses electron-builder to produce platform-specific installers. 
+  - https://x.com/fengzhou/status/2024332482322329905
+    - What’s the difference between OpenClaw and LobsterAI
+    - LobsterAI has GUI for mac and windows. So no terminal skills are needed for the user.
+  - https://x.com/dotey/status/2024337839916286380
+    - LobsterAI has GUI for mac and windows. So no terminal skills are needed for the user.技术上基于 Electron + React + TypeScript 构建，采⽤严格的进程隔离架构，任务⽀持本地执⾏和沙箱 VM（QEMU + Alpine Linux）两种模式。数据层使⽤ SQLite 实现全本地化存储，IM ⽹关层通过钉钉 Stream、⻜书 SDK 等对接各平台。
 # cv
 - https://github.com/IDEA-Research/Rex-Omni /1kStar/IDAE/202512/python/华人作者
   - https://rex-omni.github.io/

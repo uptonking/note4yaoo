@@ -79,6 +79,34 @@ modified: 2024-01-25T13:33:23.267Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## going to benchmark sandboxes
+- https://x.com/ryanvogel/status/2024266375825363207
+  - cloudflare
+  - vercel
+  - daytona
+  - e2b.dev
+  - exe.dev
+  - sprites
+
+- https://github.com/computesdk/benchmarks /ts
+  - Compare startup time-to-interactive for top sandbox providers.
+
+- [A thousand ways to sandbox an agent](https://michaellivs.com/blog/sandbox-comparison-2026)
+
+- You forgot the best part Firecracker
+
+- Add the user’s browser to the mix. Python running inside Chrome/WASM. It’s not the full capability of Python but it can get you pretty far depending on your use case.
+
+- try @modal ! we've also got GPU sandboxes, nice for developing CUDA kernels, training ML models, or doing ray tracing.
+
+- What’re you measuring? IME startup time is pretty similar across most of those. What I’ve found more important for coding agents is developer ergonomics (Modal), scale without a custom plan (Modal), persistence (Sprites), and s3fs (CF, Modal).
+
+- Daytona and runpod for gpu sandbox
+
 - ## 我想了想…大规模用 Python 或者 node 做 appengine 类似的 sandbox ，隔离靠 vm，存储 fuse 接口直接挂进去…没错，今年一定是 2013 年
 - https://x.com/CMGS1988/status/2022592355975729516
 - 十年前给人做cloud，十年后给agent做cloud。非常合理

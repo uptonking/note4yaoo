@@ -203,6 +203,10 @@ modified: 2025-11-01T10:54:26.044Z
     - This PR introduces comprehensive macOS support for Lemonade, focusing on native packaging, system integration, and performance optimizations. 
     - It establishes the foundation for seamless macOS integration, replacing the previous cross-platform approach with macOS-native implementations.
     - Switched to `.pkg` installer: Replaced `.dmg` with `.pkg` format for automatic installation of both the Electron app and system services
+  - [Do we want the benefits of Ollama API without actually using Ollama? : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1r8gb3p/do_we_want_the_benefits_of_ollama_api_without/)
+    - lemonade is a local ai sever that does LLMs, image, and audio. Similar to Ollama or LM Studio but it’s open source and sponsored by AMD to make sure it’s optimized for their GPUs and NPUs.
+    - Lemonade is 100% open source. It’s sponsored by AMD, which only makes money if you buy a computer. The idea is that if local AI gets increasingly awesome then more people will buy computers, so there’s no need for lemonade itself to have revenue/profits.
+    - llama.cpp has had server routing for models for months now. You can literally mount and unmount models on the fly. lemonade literally copied and pasted the relevant snippets into their code base. They did do some other stuff in there, Ill give them that at the very least. But the only thing special about it is that its optimized for AMD hardware. Thats really it.
 # mlx/llama.cpp-server/wrapper
 - https://github.com/HazyResearch/minions /1.2kStar/MIT/202601/python
   - Big & Small LLMs working together
@@ -519,6 +523,11 @@ modified: 2025-11-01T10:54:26.044Z
   - Built with a Rust compute layer and TypeScript orchestration, it delivers production-ready GRPO training with 100% feature parity with HuggingFace's TRL library.
   - Pure Rust/TypeScript implementation — no Python runtime required
   - TypedArray-First API: Zero-copy operations using native JavaScript typed arrays
+
+- https://github.com/rohanelukurthy/rig-rank /MIT/202602/go
+  - a CLI tool written in Go that benchmarks how well Large Language Models (LLMs) run on your specific hardware. 
+  - It measures real-world performance metrics via Ollama and tells you whether your "rig" is ready for AI workloads.
+  - [I built a small CLI tool to help beginners see if their hardware can actually handle local LLMs : r/ollama](https://www.reddit.com/r/ollama/comments/1r8rgg8/i_built_a_small_cli_tool_to_help_beginners_see_if/)
 # llm-provider
 - https://github.com/ArseniiBrazhnyk/Veritensor /apache2/202601/python
   - https://www.veritensor.com/

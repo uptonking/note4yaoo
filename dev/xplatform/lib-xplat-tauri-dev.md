@@ -20,7 +20,7 @@ modified: 2023-01-14T17:21:28.975Z
 
 - who is using #tauri
   - janai
-  - opencode-desktop
+  - opencode-desktop(migrating to electron)
   - NextChat
   - apps: chatwise
 # dev

@@ -388,7 +388,12 @@ modified: 2023-11-28T14:48:45.910Z
 
 - ## 
 
-- ## 
+- ## notion but it's just markdown
+- https://x.com/boristane/status/2024320768189092021
+- thats just opencode and you tell it to take notes in markdown
+  - but how do I share? collaborate?
+
+- biggest question is: how do to live collaboration work well in an actual file. you always end up doing an editor with yjs bindindings due to live collab
 
 - ## [It's 2024 and there's still not a decent Notion replacement that can be ran in docker? : r/selfhosted _202401](https://www.reddit.com/r/selfhosted/comments/18zoc0k/its_2024_and_theres_still_not_a_decent_notion/)
 

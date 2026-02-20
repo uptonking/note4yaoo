@@ -28,6 +28,12 @@ modified: 2025-02-03T10:17:42.052Z
   - [AGENTS.md – Open format for guiding coding agents | Hacker News _202508](https://news.ycombinator.com/item?id=44957443)
 
 - [Agent Skills](https://agentskills.io/home)
+  - Agent Skills are folders of instructions, scripts, and resources that agents can discover and use to do things more accurately and efficiently.
+  - skills give agents access to procedural knowledge and company-, team-, and user-specific context they can load on demand. 
+  - Include skill metadata in the system prompt so the model knows what skills are available. Keep metadata concise. Each skill should add roughly 50-100 tokens to the context.
+  - Discovery: At startup, agents load only the name and description of each available skill, just enough to know when it might be relevant.
+  - Activation: When a task matches a skill’s description, the agent reads the full `SKILL.md` instructions into context.
+  - Execution: The agent follows the instructions, optionally loading referenced files or executing bundled code as needed.
   - [Agent Skills - Claude Docs](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)
   - [Introducing Skills | Claude _202510](https://claude.com/blog/skills)
 

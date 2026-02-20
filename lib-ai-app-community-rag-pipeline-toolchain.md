@@ -22,7 +22,49 @@ modified: 2026-02-18T04:15:19.228Z
 
 - ## 
 
-- ## 
+- ## I tested 7 semantic code search tools so you don't have to.
+- https://x.com/c0mm0n_dev_us3r/status/2024343367732351151
+  - The problem: grep is literal.
+- In 2026, there are 3 categories of "better than grep":
+  1. Deterministic code rules (AST)
+  2. Semantic retrieval (embeddings)
+  3. LLM reasoning over files
+- ColGREP — the local-first king
+  - Tree-sitter parses your code into semantic units. 
+  - ColBERT multi-vector embeddings understand context. NextPlaid indexes locally.
+  - Fully private. Fast. Incremental updates. Perfect for coding agents + private repos.
+- osgrep — ColGREP's beefier cousin
+  - Same tree-sitter foundation but adds:
+  - Dual embeddings (dense + ColBERT int8)
+  - LanceDB + FTS fusion via RRF
+  - Staged reranking + structural boosts
+  - Hot daemon mode for low-latency
+  - Best for: when you need richer local ranking.
+- mgrep — cloud-powered team search
+  - Syncs your repo to Mixedbread Store. Search + rerank via API. Merges web + local sources in one query.
+  - Multi-user friendly. Multimodal.
+  - Tradeoff: code leaves your machine.
+- rlmgrep — the thinker
+  - Not embedding-first. Uses DSPy RLM to REASON iteratively over your files. Handles PDFs, Office docs, media.
+  - Returns (path, line) matches + narrative answers.
+  - Slower, costs tokens. But handles fuzzy investigative queries nothing else can.
+- qmd — your local knowledge brain
+  - SQLite FTS5 + vector search + GGUF query expansion + reranking. All local. Perfect for markdown/docs/notes knowledge bases.
+- semtools — lighter entry point. 
+  - Parses docs via LlamaParse, embeds lines, cosine search. Good starter.
+- Semgrep — the deterministic guard
+  - Not semantic search. AST-based pattern matching with rules.
+  - Find SQL injections, enforce coding standards, catch bugs — zero false-positive ambiguity.
+  - Use ALONGSIDE semantic tools, not instead of them.
+
+- TL; DR decision tree:
+  - Private local code search? ColGREP or osgrep
+  - Cloud/team search? mgrep
+  - Docs/KB retrieval? qmd (or semtools)
+  - Reasoning Q&A over mixed files? rlmgrep
+  - Security/compliance? Semgrep
+  - No single tool wins. Stack them.
+  - My setup: ColGREP + rg + Semgrep.
 
 - ## grep uses exact text pattern matching. But sometimes exact matches aren’t enough. Here are 4 semantic search alternatives for grep:
 - https://x.com/helloiamleonie/status/2023757180701147597

@@ -12,6 +12,99 @@ modified: 2023-01-02T10:30:19.459Z
 # discuss-electron-vs-tauri/nw
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🐛🤔 The biggest issue with Tauri and Electrobun using the system webview is that on macOS that system webview is safari. 
+- https://x.com/stolinski/status/2024134641364709506
+  - I had to move v_framer to electron because of how many issues I was having that were entirely Safari based.
+- 👷(opencode): we are going through this now, we really underestimated how bad safari was
+  - the thing is desktop apps tend to be more "intense" applications. in our case it's involves rendering sometimes very complex diffs with detailed syntax highlighting. we've hit the ceiling on safari performance - it just feels much better on chrome. 
+- for me it's get user media limitations. As a desktop app, I'm not thinking at all about web usage or browser compat, I just need it working. Chrome is the only way that's going to happen.
+- Yeah, i've swung hard back into electron because of it. Just issue after issue with Safari
+- I'm also thinking of going to Electron from Tauri. I've run into weird permissions issues that only Safari enforces. Like I hit a problem where *.localhost URLs won't work on any OS before macOS 26, even though the system DNS will resolve it.
+
+- this is such a common story. iirc @zoodotdev also went through this due to `webrtc` limitations on webkit and ended up switching to electron
+
+- Linux is even worse. Linux webview does not even play local videos
+
+- Electron is *by far* the best option on the market of these choices right now. Most mature and with the sanest engineering choices (given the insanity of using a webview in the first place). It's better to commit to Electron and help improve it which is absolutely doable.
+
+- also, the version of Safari can change at any time, potentially breaking your app
+
+- I just spent a weekend rewriting my React Native ebook reader to present its popup dictionary as a native view instead of drawing it inside its WebView. All because WebKit has atrocious rendering errors with vertical-rl documents (fixed-position elements just… disappear).
+  - Aside from WebKit rendering errors, a killer feature of Electron to me is `desktopCapturer`, used for recording system audio.
+  - Tauri doesn’t implement it. I’d be exceedingly surprised if Electrobun does, too, but will give it the benefit of the doubt until I’ve checked.
+- it was simply unable to record media at retina resolution in safari.
+
+- The crazy thing is Tauri, Wails, Electrobun, NW.js, ALL have very similar memory usage as Electron. 
+  - Most people don't recognize it, BECAUSE when you use the system webview, the OS allocates the memory and so the task manager shows the memory not as your app using it, but as the OS using it.   Making your APP APPEAR to be using less memory! But the actual reality is, your app is still using 200mb+ of memory BECAUSE you are using a browser.  
+  - Virtually ANY Browser based GUI will have the same actual memory usage footprint.
+
+- Thats why they let you use CEF
+  - Seems that you can selectively bundle CEF for each platform, so just toggling it for macos would be trivial with electrobun. Very neat
+- Set `bundleCEF:true` in your `electrobun.config.ts` to use chromium. Electrobun’s architecture is webview agnostic so as soon servo and ladybird are more mature we can easily integrate them as well
+
+- apple ships the bugs. tauri ships the apology.
+
+- I had to update my mac to 26 with that ugly liquid glass just to play with webGPU. Cant wait for tauri 3.0 and CEF
+
+- ## we have a tedious task of moving off of bun file apis _202602
+- https://x.com/thdxr/status/2024147745024495794
+  - we had opencode analyze all usage and come up with a plan for how things should be mapped
+  - and now it's running in a loop opening one PR per file - each of which can be reviewed and safely merged independently
+  - entirely done with kimi k2.5
+
+- why?
+  - at our scale we're exposed to so many different OS's and CPUs that cause crashes which node has already dealt with - probably years worth of work
+  - given how much help cc needs with the basics unlikely these become prioritized anytime soon
+- we decided to make opencode work in nodejs because this gives us a few options
+  - node is way more stable on windows and we have a lot of pain there currently
+  - electron desktop app can easily embed it without spawning another process
+  - we're not certain about the future of bun for a few different reasons
+  - gives us the option of freely exploring deno
+  - lets people embed opencode in their own applications more easily
+  - we've benchmarked things and we're not really benefiting from bun's slight performance advantage
+- I believe opencode has a client/server architecture. when would someone feel the need to embed opencode v/s just call the API ?
+  - it's a bit easier in lambda environments to call it as a library
+- "slight performance advantage" Huh...? All the charts that get bandied around are showing like 2x speeds at least.
+  - some of the benchmarks we ran showed even like 14x! but our use case isn't a server receiving a ton of requests so in practice it makes little difference. we're using it as a very very very low traffic server so less of a gap
+  - we could even switch to nodejs sync apis and be faster than bun
+
+- Are you moving off Bun for package management as well? Will you still be using bun for the tooling/package management? Or migrating off of that too?
+  - NO
+  - for us developing opencode, yeah no reason to move off
+  - just everything at runtime should be agnostic
+
+- My experience as someone who just built a little runtime-agnostic library is that Deno’s nAPI compatibility for file operations still isn’t quite there, so watch out for that.
+
+- isn't oc desktop app is on tauri?
+  - it's moving to electron
+- we're moving off from tauri specifically for performance reasons too lol
+  - The limit of what you can with Tauri’s webview was going to eventually lure you to Electron. Tauri just ain’t it for in app browser views.
+- I’m just happy because it means I don’t have to learn rust to contribute
+
+- Tauri feels like dogshit on Linux
+
+- I was a big support Deno, still hope they do great things but switched to bun for better node_modules compatability. Deno was just doing some weird things and we kept having bugs.
+- Deno works well on Windows + stable but you might run into other frustrating issues.
+
+- Nice. And 1 more benefit is that maybe it can run on Android termux. Currently bun cannot run on termux so any Bun API based thing cannot run.
+
+- opentui's goal is to support everything bun/deno/node
+
+- is there any difference in kimi k2.5 and kimi k2.5 free in terms of intelligence? just asking about quantization.
+  - they're the same, the free version is just slower since it gets hit with more traffic
+
+- ### I think Anthropics hostility towards OpenCode and now their ownership of Bun is a driving force.
+- https://x.com/joshmanders/status/2024211239220760871
+- You can take this pessimistic perspective, but really it comes down to:
+  1. Windows support and stability is pretty bad with Bun. Things that work on macOS are just broken
+  2. They are moving from Tauri to Electron, and don’t want to bundle the extra runtime when they have Node.
+
 - ## 🤔 做 windword 之前，稍微短暂的思考过，用 electron 还是 tauri。
 - https://x.com/wwwgoubuli/status/1996028487711556010
   - 在模型下载后几百兆到几个G的情况下，那 100M 有什么关系吗？

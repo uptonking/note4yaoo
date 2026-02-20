@@ -866,6 +866,27 @@ def slugify(text):
 
 - ## 
 
+- ## 
+
+- ## [K2.5 is still the king for open-source models : r/opencodeCLI](https://www.reddit.com/r/opencodeCLI/comments/1r97ruh/k25_is_still_the_king_for_opensource_models/)
+- What about GLM-5 or Minimax M2.5?
+  - Kimi is atleast better than both in writing. In coding, they are prolly close enough but writing is much better.
+- GLM-5 is.... I don't know. It's erratic for me in tool-calling and not to mention the Z.ai provider inference is slow AF.
+  - MiniMax 2.5 is a joke for subagent work. It does excel on UI though. wouldn't even put it in the same league as K2.5 for utilitarian work.
+- I selfhost both K2.5 was better, GLM-5 was missing things (K2.5 is easier to host too, int4 base). both tested with sglang official cli settings.
+
+- ## 🆚 [Devstral Small 2 24B + Qwen3 Coder 30B: Coders for Every Hardware (Yes, Even the Pi) : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1r85o89/devstral_small_2_24b_qwen3_coder_30b_coders_for/)
+  - Devstral is the hero on RTX 40/50 series. Also: it has a quality cliff ~2.30 bpw, but ShapeLearn avoids faceplanting there.
+  - Qwen3-Coder is the “runs everywhere” option: Pi 5 (16GB) ~9 TPS at ~90% BF16 quality. (If you daily-drive that Pi setup, we owe you a medal.)
+  - Picking a model is annoying: Devstral is more capable but more demanding (dense 24B + bigger KV). If your context fits and TPS is fine → Devstral. Otherwise → Qwen.
+  - Bonus: Qwen GGUFs ship with a custom template that supports parallel tool calling (tested on llama.cpp; same template used for fair comparisons vs Unsloth). If you can sanity-check on different llama.cpp builds/backends and real coding workflows, any feedback will be greatly appreciated.
+
+- Why does it take so long for these quants to come out? No glm4.7 flash? Nemotron? Qwen3 next? Ministral? Etc? Are they just really expensive to compress so you need to be selective on what models to pick?
+  - Making a quality quantization is not a quick and easy task. You need to have the compute resources to effectively run the full model and also track internal states of every weight in the model (ie: you need a decent amount more memory than just running inference) and you need to have a way to evaluate the performance of the quantized resulting model so you can understand how badly it has been crippled by the quantization.
+  - I don't fully understand how Byteshape are doing their quantization, but it seems like they're adding additional steps into the normal quantization process in order to find more optimal quality result by selectively reducing precision of various weights depending on how important they each are, which likely requires even more compute and memory resources. (Please correct me if I'm misunderstanding).
+- Quantizing the models is relatively fast. Devstral, which is the slowest model we have quantized up to this point, barely took a couple of hours per model. The bottleneck is evaluating all the quants to show which quant is better under which constraints. So yes, we need to be selective, but not because of the quantization, more so because of benchmarking them
+- Our process requires finetuning the datatypes on a calibration dataset of sorts. We actually need to create our own handpicked datasets while evading compromising the model on any weird licensing issue, because the bitlengths actually learn from the specific use case of the fine tuned task. For example, for previous releases our dataset was focused on general knowledge and instruction following, since our previous quants were general instruct models. In this case, the models are coders, so the dataset is more heavily oriented towards tool calling, coding, etc. That's one aspect of it. Then there's the datatype learning, which actually doesn't take much time in comparison, just a few hours even for large models. And finally there's the elephant in the room, benchmarking the quants. Realistically we could just throw out our quants and be done with it, but it would be a disservice to the community in our opinion. We think well benchmarked quants to allow informed selections is the way to go, but this takes a lot of time and compute resources (which we don't have). 
+
 - ## [What local LLM model is best for Haskell? : r/haskell _202601](https://www.reddit.com/r/haskell/comments/1qispvs/what_local_llm_model_is_best_for_haskell/)
   - Performance at Haskell isn't determined just by model size or benchmarks; many models that are overtrained on e.g. Python can be excellent reasoners but utterly fail at Haskell. Several models with excellent reasoning skills failed due to inadequate Haskell knowledge.
   - gpt-oss-120b is by far the highest performer for AI-assisted Haskell SWE, although Qwen3 VL 30B A3B also looks viable. gpt-oss-20b should be good for quick tasks.

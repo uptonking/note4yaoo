@@ -30,7 +30,40 @@ modified: 2023-03-01T14:10:06.993Z
 - 实际我关注首要是格式兼容性。开源方案可以作为最终的后期节源参考.
 
 - ONLYOFFICE Personal 是一款基于 wasm 运行的 Office 办公套件，无需服务端直接运行。
+# discuss-office-ai 👾
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Interpreter. It's a desktop agent that can fill PDFs, edit your Excel and Word docs, and learn new skills. 
+- https://x.com/hellokillian/status/2024227639087813035
+  - Runs offline, works with any model, and it's free.
+  - [Interpreter: The Desktop Agent](https://www.openinterpreter.com/)
+  - my work is just more "files first" so wanted something that wasn't so chat-first. will extend this beyond office docs soon.
+
+- does it handle multi-step tasks across multiple docs, or is it one file at a time?
+  - multi-doc to the core. this was why we decided to bring the office editors into the app (as opposed to an Excel/Word extension) — so much work happens across documents
+  - the agent is multi-doc, and the interface supports multi-pane layouts, so you can also be multi-doc!
+
+- How do you see the interactions in the coming years? I believe we will possibly have a central database with logic for interacting with it.
+  - I think of it the same way! most of the apps I use every day are simple structures under the hood:
+  - contacts, notes, calendar, email, many more— are arrays of objects.
+  - I imagine it becoming pretty annoying that they each have their own GUI and can't talk to eachother. 
+  - the primary form of interaction might just be through an agent, which is capable of displaying those objects + some interactive controls for fast/granular manipulation.
+  - exactly how we're approaching interpreter :) agent on the right, objects on the left, interfaces in the middle that the agent or user can control.
+- Totally agree. And I think this applies to both B2C and B2B. Think about real daily workflows: you interact with calendars, finances, tasks, notes  and even when we connect these through APIs, there's still a fundamental piece missing: a central place where the relationships between things actually exist.
+  - B2C example: a person has calendar, bank, notes, emails. Each app holds a piece. But none of them knows that "Tuesday's meeting is with the client who owes you money and who you noted last week is unhappy." That relationship doesn't exist anywhere.
+  - B2B example: a company has ERP, CRM, logistics, finance. The same customer has a different ID in each system. Nobody knows that the customer who's buying less (ERP) is the same one who gave a low NPS (CRM) and received 3 late deliveries (logistics). The data islands exist, but the relationships between them don't.
+  - What I believe: the future is a central database (SQL, graph, whatever) where the entities and relationships of a business or a person's life are actually modeled. The rules and connections live there. And the agent consumes that to act with full context  not stitching pieces from N apps together, but reading from a unified ontology.
 # discuss-builder
+- ## 
+
+- ## 
+
 - ## 
 
 - ## Webflow 目前在全球拥有超过 350w 的用户，估值达 40 亿美金，有超过 2000 份用户创作的网站模板。_202405

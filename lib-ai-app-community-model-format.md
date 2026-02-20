@@ -237,7 +237,9 @@ modified: 2025-10-10T02:44:49.634Z
 
 - ## 
 
-- ## 
+- ## 这也是我放弃直接绘制 drawio，转而开发使用 plantuml 语言绘制 drawio 的原因。llm 对于复杂图表的空间布局实在不擅长。
+- https://x.com/xicilion/status/2024202293214622098
+- 我覺得讓 LLM 寫 mermaid 的效果不錯
 
 - ## [nano banana生成的图片转可编辑矢量图的工具 ](https://linux.do/t/topic/1398790)
   - 我目前的方法是用第三方api生成4k的图片，然后导入到illustrator里面进行描摹处理。gemini官方默认最高生成的是2k，导入之后处理会很糊

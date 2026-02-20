@@ -11,6 +11,32 @@ modified: 2021-03-29T19:14:57.440Z
 - 工作节奏
   - 思路清晰时，写流程+改接口
   - 头脑不清时，调样式+玩案例
+# ai-coding 👾
+- 📌 简单coding流程
+- recheck goal
+  - ai asking questions
+  - runnable checking commands: npm run tests
+- draft-impl
+- is it correct 
+  - make it work
+  - run checking commands
+- recheck code reuse and extensibility
+  - make it right
+  - 可与上一步同时执行
+  - 将大文件拆分为小文件, 代码模块化
+- recheck if it is correct
+- improvements and performanece
+  - make it fast
+- tests
+- 
+
+- 📌 复杂coding流程: plan-act
+- 
+- 
+- 
+- 
+- 
+
 # repo/git-workflow
 - 技术方案写完后，要假设进行开发的研发不是自己，交接过去也能顺利开发
   - 方案要点: 业务流程、上下游关联、前端后端网关变更

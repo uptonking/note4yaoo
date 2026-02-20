@@ -133,6 +133,13 @@ modified: 2023-02-08T07:20:48.475Z
   - ChatGPT Desktop Application (Mac, Windows and Linux)
   - 国内ip无法访问
 
+- https://github.com/tg-prplx/vellium /MIT/202602/ts
+  - Desktop AI/RP chat app built with Electron, a local Express API, and SQLite.
+  - [Vellium: open-source desktop app for creative writing with visual controls instead of prompt editing : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1r89a4y/vellium_opensource_desktop_app_for_creative/)
+    - I got tired of digging through SillyTavern's config every time I wanted to change the tone of a scene. So I built my own thing.
+    - Chat with an inspector panel: Mood, Pacing, Intensity, Dialogue Style, Initiative, Descriptiveness, Unpredictability, Emotional Depth. All visual, no prompt editing needed.
+    - Works with Ollama, LM Studio, OpenAI, OpenRouter, or any compatible endpoint. Light and dark themes. English, Russian, Chinese, Japanese.
+
 ## gpt-apps
 
 - https://github.com/enricoros/big-AGI /6.6kStar/MIT/202508/ts

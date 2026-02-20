@@ -484,4 +484,26 @@ modified: 2024-08-24T16:30:20.218Z
   - How to Use and Configure
     - add the `<Inspector/>` component in your page to reads the source info, and sends it to the dev-server when you inspect elements on browser.
     - integrate the middleware in your framework's dev-server: to receives source path info from API, then call your local IDE/Editor to open the source file.
+# code-review
+- https://github.com/qodo-ai/pr-agent /10.2kStar/AGPL/202602/python
+  - https://qodo-merge-docs.qodo.ai/
+  - PR Agent - The Original Open-Source PR Reviewer, This repo is not the Qodo free tier
+  - PR-Agent is an open-source, AI-powered code review agent and a community-maintained legacy project of Qodo.
+  - It is distinct from Qodo’s primary AI code review offering, which provides a feature-rich, context-aware experience. Qodo now offers a free tier that integrates seamlessly with GitHub, GitLab, Bitbucket, and Azure DevOps for high-quality automated reviews.
+
+- https://github.com/kodustech/kodus-ai /925Star/AGPL+EE/202602/ts
+  - https://kodus.io/
+  - Ship better code faster with personalized, context-aware code reviews.
+  - open-source AI agent that reviews your code like a real teammate — but one that never gets tired of doing pull requests.
+  - Kody (our agent) plugs into your Git workflow, learns how your team writes code, and starts reviewing PRs automatically. You decide what matters — performance, security, readability, or all of the above.
+  - Custom Review Policies — Create review guidelines in plain language, or any language of your choice, that align with your team's engineering principles and practices.
+  - Native Git Integration — Seamlessly integrates with your existing workflow, providing detailed feedback directly in pull requests.
+  - [Code Review is a pain (so we built this) : r/opensource](https://www.reddit.com/r/opensource/comments/1kawpbm/code_review_is_a_pain_so_we_built_this/)
+    - At Kodus, the code review engine (which is the core of the product) is fully open source. You can use it, modify it, and run it without any closed dependencies.
+    - The commercial parts, like the UI dashboard or premium integrations, are totally optional and don’t block anyone from running Kodus locally with the core AI working. The goal is to make it easy for any team to use Kody in an open, customizable, and self hosted way if they want.
+    - About the .ee. files: yeah, there are still some references to them in the main repo, and we get how that can be confusing. The core engine already works without those parts, but the current setup doesn’t make that obvious. That’s exactly why we’re working on a separate repo with a fully open source version, to make it clearer and easier to use without any closed components.
+
+- https://github.com/coderabbitai/ai-pr-reviewer /MIT/202311/ts/archived
+  - https://coderabbit.ai/
+  - AI-based Pull Request Summarizer and Reviewer with Chat Capabilities.
 # more

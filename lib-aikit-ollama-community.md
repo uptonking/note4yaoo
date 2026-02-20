@@ -119,7 +119,10 @@ modified: 2026-01-14T18:57:51.174Z
 
 - ## 
 
-- ## 
+- ## [llama.cpp PR to implement IQ_K and IQ_KS quants from ik_llama.cpp : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1r91akx/llamacpp_pr_to_implement_iq_k_and_iq_ks_quants/)
+- finally, been waiting for the ik_llama quants to land upstream. the quality gains at low bpp were wild compared to standard Q4
+
+- Weird, is there some sort of bad blood between Llama.cpp and ik_llama.cpp? Simply assumed ik_llama.cpp was going for max speeds while llama.cpp was going for max compatibility and they diverged from opinions on design differences.
 # discuss-llama.cpp
 - ## 
 
@@ -193,7 +196,22 @@ modified: 2026-01-14T18:57:51.174Z
 
 - ## 
 
-- ## 
+- ## [Do we want the benefits of Ollama API without actually using Ollama? : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1r8gb3p/do_we_want_the_benefits_of_ollama_api_without/)
+  - Apps with native Ollama API integration often have smoother setup and model management than what we get with the OpenAI API alone. For example, in Open WebUI (see image), the server is auto-detected on port 11434 and you can pull, eject, and check the status of models right from the web ui.
+  - As an experiment this week I added Ollama API support to Lemonade Server. We already had the functions, so I just had to hook them up to /api endpoints.
+
+- Is Lemonade a for profit company?
+  - No Lemonade is 100% open source. It’s sponsored by AMD, which only makes money if you buy a computer. The idea is that if local AI gets increasingly awesome then more people will buy computers, so there’s no need for lemonade itself to have revenue/profits.
+
+- llama.cpp has had server routing for models for months now. You can literally mount and unmount models on the fly.
+  - lemonade literally copied and pasted the relevant snippets into their code base.
+  - They did do some other stuff in there, Ill give them that at the very least. But the only thing special about it is that its optimized for AMD hardware. Thats really it.
+  - My problem with the routing is that it leaves fucking models hanging in the background and OOM crashes the new model it's going to load. It's a known bug and it's aggravating as fuck. Anyone know a solution to that?
+    - In llama.cpp, set the option "--models-max 1"
+
+- the ollama API becoming a de facto standard is interesting because it happened organically. apps integrated it because ollama made local setup dead simple, and now the API itself has more adoption than some official specs.
+
+- Llama-server now provides a mechanism to automatically swap between models. Haven't looked into it but thats an option
 
 - ## 🖼️ pretty excited to see image generation support in @ollama powered by MLX
 - https://x.com/awnihannun/status/2010394007952891973

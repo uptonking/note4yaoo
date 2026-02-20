@@ -728,6 +728,26 @@ modified: 2021-04-30T20:14:17.669Z
   - 后来想加入文字识别，用了tesseract + AI 合并文字块 + 坐标映射，但是有伪文字不太好识别，基本上搞出来的文字最后都得重新编辑==。实在没办法了，丢上来看哪位大佬有兴趣的话解决一下 
   - [一个没啥用的PDF去文字工具  ](https://linux.do/t/topic/1257896)
 
+- https://github.com/Menghuan1918/drawio2go /168Star/MIT/202601/ts/electron
+  - https://drawio2go.vercel.app/
+  - DrawIO 编辑器应用，致力于在AI加持下构建更好的人机协同建模工具
+  - 提供开箱即用的应用(Windows/Linux/Mac OS)或作为网页部署
+  - 支持多页面drawio编辑，让AI仅编辑你想要修改的部分
+  - 手动创建版本/AI自动创建版本
+  - 轻松对比/回滚不同修改版本之间的差异
+  - 基于XPath的精准删改查工具，效果好省token
+  - 完全自定义drawio画布，修改其默认外观主题
+  - 不再需要描述“最右边的几个xxx”，直接鼠标框选，会话会自动解析画布元素到上下文中***
+  - [AI DrawIO 流程图工具：AI编辑，版本管理/对比/回滚 _202512](https://linux.do/t/topic/1322324)
+    - 基于XPath/Drawio元素ID的AI drawio编辑(理论上比直接操控XML更省token)
+    - 版本对比/智能对比
+    - 这个项目是完全vibe coding完成的
+    - 支持让有视觉模型读取视觉上的drawio布局，根据这个布局再反过来调整drawio的XML
+  - [【开源】Drawio2GO V1.2更新：让DeepSeek也能画好图 _202601](https://linux.do/t/topic/1385703)
+    - V1.2更新大幅加强了较弱模型的绘图能力，此前往往只有类似于claude-sonnet这样对drawio内容特殊训练的模型才能有效地绘制drawio。这次更新引入了知识和主题的概念，同时重构了操作的工具来解决这个问题。
+  - [图片怎么有效转draw.io ](https://linux.do/t/topic/1626505/7)
+    - 一个方案是让 ai 读图输出 svg/mermaid/graphviz/plantuml
+
 - [ChatSlide | Build your Slides and Videos from Documents in one click](https://chatslide.ai/landing)
 # ai-canvas
 - https://github.com/open-webui/open-webui /104kStar/BSD+LOGO/python/ts/svelte

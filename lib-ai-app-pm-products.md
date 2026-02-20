@@ -257,6 +257,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 👾 pdf-edit agent
     - ✨ 翻译场景的多种布局一键切换: 双栏对比布局, 仅译文布局, 富文本页面布局
     - 🌰 内置类似mineru/paddleocr的示例和提示词
+    - multi-docs
     - 甚至可以通过多栏布局的交互，来展示pdf聊天或补充信息，优点是能展示在原文位置
     - 考虑同一文档的使用场景, 类似代码编辑器的 split view 也可以方便查看和核对
     - 方便原文和译文的跳转交互
@@ -264,6 +265,8 @@ modified: 2025-03-22T16:10:24.856Z
     - pdf to word: ~~显示summary-per-page~~, 适合教育场景
     - pdf体验尽量与docs一致，包括view/edit
     - 统一 文本pdf 和 图片pdf 的体验，代码实现可以不同
+  - office
+    - multi-docs: work across documents
   - history with localsandbox/agentfs
   - ai
     - split-view: 显示summary-per-page, 适合教育场景
@@ -286,6 +289,9 @@ modified: 2025-03-22T16:10:24.856Z
   - gui
     - better revert/checkpoint
 # 💎🚀 modelpedia - 模型参数对比, 历史评测结果, 能免费对比最新参数及上一个版本
+- pm-eval/bench
+  - 模型文档及参数都是on-paper, 可直接运行的测试集加上量化版本更适合实际效果, 是否存在产品空间
+
 - 基本参数(card)
   - 模型列表
 - 评测模型类别: text, ocr, image, embedding
@@ -552,7 +558,7 @@ modified: 2025-03-22T16:10:24.856Z
 # ai/llm-api 👾
 - api-choices
   - 支持的优质大模型、热门模型、vlm
-  - api稳定: 稳定时用的api稳定性必须要高，否则产品体验差
+  - api稳定: production用的api稳定性必须要高，否则产品体验差
   - 速率限制
   - 工具集成支持: cline, roo, librechat
   - 另一种思路， 新开的商业站一般会限免最新的模型和热门模型，也可以用来测试
@@ -1586,12 +1592,55 @@ modified: 2025-03-22T16:10:24.856Z
 
 # more
 
-# discuss-ai-pm
+# discuss-ai-pm-cowork/office
 - ## 
 
 - ## 
 
-- ## 
+- ## [AnythingLLM Desktop works across your entire OS with local models : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1r8biu3/anythingllm_desktop_works_across_your_entire_os/)
+  - Today, we released AnythingLLM Desktop v1.11.0 and it is a step towards our new direction that becomes more of an extension of your OS and less of a sandboxed app.
+  - Now with a simple customized keybind you can open an overlay that instantly has access to your open apps and screen. This works for both multi-modal but also non-vision enabled models.
+  - This functionality is all on top of all the stuff people use AnythingLLM for already: Chatting with documents, RAG, agents, MCPs, and more. This panel also has awareness of any Meeting transcripts you might have too!
+  - This is all done using on-device models and pipelines - using a local model you can have a fully on-device experience. In that demo I am using Qwen3-VL 4B Instruct (Q4) on a Macbook M4 Pro but you can really bring in any model or provider you want.
+  - We also have an OSS MIT license multi-user server based version of AnythingLLM if you are looking for something more hostable on a VM or something.
+  - When you drag a file into the window (what type?) it parses them and adds them to the model. You can press CTRL/CMD+F and see the exact documents + token window usage of all documents. I am certainly able to drag and drop files and it certainly is pulling specific information out of them as well
+- The installer is only ~400MB. Are you on Mac or Windows? The majority of the footprint likely is the meeting assistant stuff. We now have the installer ask first before pulling the model if you know youll never use it. We can do the same for the whole feature as well.
+  - Then the other big bit is Ollama's CUDA/RoCM backend - which without will just have the built-in models run on CPU only.
+  - I do plan to move the entire installer away from the old installer method and instead have the "select features" kind of UI where you can pick and choose what you want to install during setup - which then should get you to where you want total bundle size.
+
+- How do you guarantee your solution against malicious prompt injection? If it has access to the entire computer, the fact that it's local doesn't guarantee data extraction.
+  - It does not read your screen passively
+  - "agentic" tasks that call APIs and do things like that require "@agent" in the prompt - this keeps regular chats and agentic chats separate within the same thread. AnythingLLM has always done this.
+  - So the only way to prompt inject yourself and do something is to entirely execute a full self-own and really force it to happen. Its a non-issue.
+
+- ## Interpreter. It's a desktop agent that can fill PDFs, edit your Excel and Word docs, and learn new skills. _202602
+- https://x.com/hellokillian/status/2024227639087813035
+  - Runs offline, works with any model, and it's free.
+  - [Interpreter: The Desktop Agent](https://www.openinterpreter.com/)
+  - my work is just more "files first" so wanted something that wasn't so chat-first. will extend this beyond office docs soon.
+
+- 🐛 
+  - 不选择文件的普通chat，无法查看历史
+
+- does it handle multi-step tasks across multiple docs, or is it one file at a time?
+  - multi-doc to the core. this was why we decided to bring the office editors into the app (as opposed to an Excel/Word extension) — so much work happens across documents
+  - the agent is multi-doc, and the interface supports multi-pane layouts, so you can also be multi-doc!
+
+- How do you see the interactions in the coming years? I believe we will possibly have a central database with logic for interacting with it.
+  - I think of it the same way! most of the apps I use every day are simple structures under the hood:
+  - contacts, notes, calendar, email, many more— are arrays of objects.
+  - I imagine it becoming pretty annoying that they each have their own GUI and can't talk to eachother. 
+  - the primary form of interaction might just be through an agent, which is capable of displaying those objects + some interactive controls for fast/granular manipulation.
+  - exactly how we're approaching interpreter :) agent on the right, objects on the left, interfaces in the middle that the agent or user can control.
+- Totally agree. And I think this applies to both B2C and B2B. Think about real daily workflows: you interact with calendars, finances, tasks, notes  and even when we connect these through APIs, there's still a fundamental piece missing: a central place where the relationships between things actually exist.
+  - B2C example: a person has calendar, bank, notes, emails. Each app holds a piece. But none of them knows that "Tuesday's meeting is with the client who owes you money and who you noted last week is unhappy." That relationship doesn't exist anywhere.
+  - B2B example: a company has ERP, CRM, logistics, finance. The same customer has a different ID in each system. Nobody knows that the customer who's buying less (ERP) is the same one who gave a low NPS (CRM) and received 3 late deliveries (logistics). The data islands exist, but the relationships between them don't.
+  - What I believe: the future is a central database (SQL, graph, whatever) where the entities and relationships of a business or a person's life are actually modeled. The rules and connections live there. And the agent consumes that to act with full context  not stitching pieces from N apps together, but reading from a unified ontology.
+
+- ## Codex app is out for mac
+- https://x.com/sama/status/2018414858015039504
+- cons
+  - 不能添加文件夹
 
 - ## [Claude Co-Work is....meh unless you code : r/claude](https://www.reddit.com/r/claude/comments/1r6a11x/claude_cowork_ismeh_unless_you_code/)
   - I genuine tried to give this thing a shot. Outside of coding, its kind of just a glorified web-app that you can install locally.
@@ -1607,6 +1656,12 @@ modified: 2025-03-22T16:10:24.856Z
 - Co-work is great, to be honest. If they cancel that, I’ll drop my Claude subscription. I use it to write confluence docs, edit pdfs, word docs, create contracts, amend them, do P&l stuff, powerpoint presentation, even google slides via chrome mcp. You’re using it wrong OP.
 
 - I think the idea is that many more non coders in the near future will do small coding activities in their jobs. If that’s not you, it’s not for you. But it might be for your replacement
+# discuss-ai-pm
+- ## 
+
+- ## 
+
+- ## 
 
 - ## 从 CompanyOS 到 LifeOS - 将文件系统哲学应用于人生管理
 - https://x.com/yibie/status/2021778995185168650
@@ -1749,11 +1804,6 @@ Claude Code - 可以直接操作文件的 AI
   - 虚拟内存与分页 → RAG
 - 这个类比很到位，尤其是叫 AI DOS ，现在的交互确实还挺硬核的。如果 RAG 是虚拟内存，那 Context Window 应该就是死贵的 L1 缓存？好奇谁能先搞出 AI 界的 Windows 95。
 
-- ## Codex app is out for mac
-- https://x.com/sama/status/2018414858015039504
-- cons
-  - 不能添加文件夹
-
 - ## [畅想一下未来，以后充token会不会就像充流量话费 ](https://linux.do/t/topic/1552655)
 - 如果能的话我觉得还是挺值得入的，无限 token 但到指定 token 数额之后限制上下文
 
@@ -1802,12 +1852,6 @@ Claude Code - 可以直接操作文件的 AI
 - 这个是 Gemini cli 的 GUI 吧，很多终端上能用的功能在 aionui 就不能用了
   - aionui俺这个还不太行，基于gemini cli魔改的，目前能力都在终端上，浏览器的话，得装 chrome-dev-tool之类的MCP进行调用。
   - 对话的时候，点这个关联文件夹，授予gemini cli访问权限
-
-- 
-- 
-- 
-- 
-- 
 
 - ## 🆚 [Is there any tool for for manual proofreading of video transcriptions, with ability to check original audio and to maintain a list (dictionary) of text entities? : r/LanguageTechnology _202404](https://www.reddit.com/r/LanguageTechnology/comments/1c3qfii/is_there_any_tool_for_for_manual_proofreading_of/)
 - https://gooey.ai/speech offers a bunch of ASR models (google USM, meta-large, whisper v3) and the ability to define a dictionary as a google sheet.
