@@ -61,6 +61,9 @@ modified: 2025-12-18T12:26:08.445Z
 - I just symlink a Claude.md to the agents.md. Easy.
   - create symbolic link CLAUDE.md that refers to AGENTS.md using ln command.
 
+- [Pointing CLAUDE.md to AGENTS.md : r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1r9zx34/pointing_claudemd_to_agentsmd/)
+  - The right way to do it is '@AGENTS.md' in the CLAUDE.md. This way the Claude Code's pre-processor picks up the AGENTS.md right away (and you can see that in the CLI), without an extra agent round trip. They don't advertise it much, but it is mentioned in the official docs. You can leave the rest, but the reference should probably be the very first line.
+  - https://code.claude.com/docs/en/claude-code-on-the-web#best-practices
 # discuss-news
 - ## 
 

@@ -433,6 +433,28 @@ du -h /System/Volumes/Data | grep "G\t" | sort -rh
 - ## [node.js - Create directory "/dotenv" on MacOs, Read-only file system - Stack Overflow](https://stackoverflow.com/questions/60469031/create-directory-dotenv-on-macos-read-only-file-system)
 - If you really want to, you can disable the read-only file system in Catalina 
 
+# discuss-zsh/omzsh
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## pr已合并_202303 [feat(init)!: allow turning off aliases for libs and plugins · Pull Request · ohmyzsh/ohmyzsh](https://github.com/ohmyzsh/ohmyzsh/pull/11550)
+  - [RFC: Add option to disable ohmyzsh aliases · Issue · ohmyzsh/ohmyzsh _202202](https://github.com/ohmyzsh/ohmyzsh/issues/10644)
+
+```shell
+# turned off by the user via ztyle
+zstyle ':omz:plugins:*' aliases no
+zstyle ':omz:plugins:git' aliases no
+
+# selectively enabled for specific components
+zstyle ':omz:plugins:*' aliases no
+zstyle ':omz:plugins:git' aliases yes
+```
+
 # discuss-macos-devtools
 - ## 
 

@@ -214,7 +214,15 @@ OCR 适配：第三方 OCR 引擎接入尚处于实验阶段，底层仍高度�
 
 - ## 
 
-- ## 
+- ## [Structure-first RAG with metadata enrichment (stop chunking PDFs into text blocks) : r/Rag](https://www.reddit.com/r/Rag/comments/1r9updr/structurefirst_rag_with_metadata_enrichment_stop/)
+  - [Metadata-Enriched RAG: Document Structure Beats Text Chunking](https://kudra.ai/metadata-enriched-rag-agent-why-document-structure-beats-text-chunking/)
+  - The problem is research papers aren't random text. They're hierarchically organized (Abstract, Introduction, Methodology, Results, Discussion). Each section answers different question types. Destroying this structure makes precise retrieval impossible.
+  - I've been using structure-first extraction where documents get converted to JSON objects (sections, tables, figures) enriched with metadata like section names, content types, and semantic tags. The JSON gets flattened to natural language only for embedding while metadata stays available for filtering.
+  - The workflow uses Kudra for extraction (OCR → vision-based table extraction → VLM generates summaries and semantic tags). Then LangChain agents with tools that leverage the metadata. When someone asks about datasets, the agent filters by content_type="table" and semantic_tags="datasets" before running vector search.
+  - This enables multi-hop reasoning, precise citations ("Table 2 from Methods section" instead of "Chunk 47"), and intelligent routing based on query intent. For structured documents where hierarchy matters, metadata enrichment during extraction seems like the right primitive.
+
+- [Structure-first RAG with metadata enrichment (stop chunking PDFs into text blocks) : r/LangChain](https://www.reddit.com/r/LangChain/comments/1r9ur3x/structurefirst_rag_with_metadata_enrichment_stop/)
+- Totally agree. Structure first extraction with metadata filtering makes RAG far more precise and lets you cite exact tables and sections.
 
 - ## [Qwen3-VL for OCR: PDF pre-processing + prompt approach? : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1q92olo/qwen3vl_for_ocr_pdf_preprocessing_prompt_approach/)
 - PaddleOCR-VL. You'll lose information with just a VLM , and higher risk of hallucination.

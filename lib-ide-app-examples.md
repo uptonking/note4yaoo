@@ -485,25 +485,144 @@ modified: 2024-08-24T16:30:20.218Z
     - add the `<Inspector/>` component in your page to reads the source info, and sends it to the dev-server when you inspect elements on browser.
     - integrate the middleware in your framework's dev-server: to receives source path info from API, then call your local IDE/Editor to open the source file.
 # code-review
+- tips
+  - nice-to-have, 非必须流程, 需要可跳过
+
 - https://github.com/qodo-ai/pr-agent /10.2kStar/AGPL/202602/python
+  - https://qodo-merge-docs.qodo.ai/installation/locally/
   - https://qodo-merge-docs.qodo.ai/
   - PR Agent - The Original Open-Source PR Reviewer, This repo is not the Qodo free tier
   - PR-Agent is an open-source, AI-powered code review agent and a community-maintained legacy project of Qodo.
   - It is distinct from Qodo’s primary AI code review offering, which provides a feature-rich, context-aware experience. Qodo now offers a free tier that integrates seamlessly with GitHub, GitLab, Bitbucket, and Azure DevOps for high-quality automated reviews.
+  - ~~似乎必须先存在 pr url 后, 才能使用此工具~~
+  - 🏘️ CLI args → PRAgent.handle_request() → GitProvider.get_diff_files() → PR Processing (token handling) → AI Handler → Publish results
+    - all git providers implement the same `GitProvider` interface, which abstracts away whether the diff comes from GitHub, GitLab, or a local repository.
+    - `LocalGitProvider`: Uses `gitpython` library to interact with local .git directory, Creates a `PullRequestMimic` object to simulate PR structure; Works with /review and /describe commands
+  - Fast & Affordable: Each tool (/review, /improve, /ask) uses a single LLM call (~30 seconds, low cost)
+  - Handles Any PR Size: Our PR Compression strategy effectively processes both small and large PRs
+  - Customizable: JSON-based prompting allows easy customization of review categories and behavior via configuration files
+  - Platform Agnostic:
+    - AI Models: OpenAI GPT, Claude, Deepseek, and more
+    - Deployment: CLI, GitHub Actions, Docker, self-hosted, webhooks
+    - Git Providers: GitHub, GitLab, BitBucket, Azure DevOps, Gitea
+  - `LocalGitProvider` cannot review uncommitted changes directly.
+    - git add -A
+    - git commit -m "WIP: changes for review"
+    - pr-agent --pr_url=main review
+    - git reset HEAD~1
+    - error: Getting labels is not implemented for the local git provider
+      - LocalGitProvider doesn't support labels (this is a known limitation). harmless.
+  - pr必须在单独的branch: LocalGitProvider is designed to compare branches
+    - LocalGitProvider compares: Current branch (where you run the command from) **Against** the branch specified in --pr_url
+    - git checkout brWithNewCommits
+    - pr-agent --pr_url=baseBr review
+
+- https://github.com/techdebtgpt/pr-agent /31Star/apache2/202512/ts/inactive
+  - An AI-powered tool that automatically analyzes pull requests and code changes using advanced AI models (Claude, GPT, Gemini). 
+  - Available as both a CLI tool for local development and a GitHub Action for CI/CD integration.
+  - PR Agent can leverage your project's architecture documentation for context-aware analysis.
+  - PR Agent integrates with Semgrep for comprehensive static analysis, detecting security vulnerabilities and code quality issues.
+  - pr-agent analyze --staged           # Analyze staged changes
+  - pr-agent analyze --full --verbose   # Full analysis with details
+  - ? 似乎只能执行命令，不能添加提示词
+
+- https://github.com/diffray/diffray /MIT/202601/ts
+  - https://diffray.ai/cli
+  - AI-powered code review CLI for git changes
+  - A CLI tool that runs multiple AI agents to review your code changes. Each agent specializes in different aspects: bugs, security, performance, code style. 
+  - Works with Claude Code, Cursor Agent, OpenCode, or Codex CLI.
+  - ? 似乎只能执行命令，不能添加提示词
+  - How is it different from diffray.ai? The cloud platform automatically learns from your team's review feedback and generates rules. This CLI version requires manual rule configuration but gives you full control and runs locally.
+  - Prerequisites
+    - Git - your project must be a git repository
+    - diffray uses external AI tools to analyze code. You need to install and authorize one of them: claude-code, codex-cli, opencode, cursor-agent
+  - Creating Custom Rules:  Rules connect agents to files. They tell diffray: "Run this agent on these files".
+    - By default, diffray runs ALL agents on ALL changed files. 
+    - with rules you can add extra instructions for specific file types
+  - AI isn't perfect. diffray is tuned for low false positives (fewer wrong alerts) rather than finding every possible issue.
+  - Can I use it in CI/CD? Yes! Use --json flag for machine-readable output
+  - How much does it cost? The CLI is free, but uses Claude AI which has API costs. With Claude Code CLI, costs are typically $0.01-0.05 per review.
+    - Want automated reviews directly in GitHub Pull Requests? Sign up at diffray.ai - connect your repo and get AI review comments on every PR automatically.
+  - diffray uses multiple specialized AI "agents" that each focus on one type of problem: bug, security, performance, consistency
+  - [Windows: CLI executors fail with command line length errors on large diffs _202601](https://github.com/diffray/diffray/issues/2)
+    - Pass prompts via stdin instead of CLI args to avoid command line length limits
+
+- https://github.com/Gentleman-Programming/gentleman-guardian-angel /580Star/MIT/202602/shell/NoDeps
+  - Provider-agnostic code review using AI
+  - Use whichever AI CLI you have installed
+  - Use Claude, Gemini, Codex, OpenCode, Ollama, LM Studio, GitHub Models, or any AI to enforce your coding standards.
+  - Zero dependencies. Pure Bash. Works everywhere.
+  - Gentleman Guardian Angel runs on every commit, validating your staged files against your project's `AGENTS.md` (or any rules file). 
+  - gga run: Runs code review on currently staged files. Uses intelligent caching by default to skip unchanged files.
+  - Highly configurable - File patterns, exclusions, custom rules
+  - Smart caching - Skip unchanged files for faster reviews
+  - PR review mode - Review full PRs, not just last commit
+  - 🐛
+    - 手动安装存在bug, 用下面的命令修复
+    - cp ~/Documents/repos/ai-ml-llm/all-agi-coding/gentleman-guardian-angel/lib/pr_mode.sh   ~/.local/share/gga/lib/pr_mode.sh &&  chmod +x ~/.local/share/gga/lib/pr_mode.sh &&  gga --version
 
 - https://github.com/kodustech/kodus-ai /925Star/AGPL+EE/202602/ts
   - https://kodus.io/
   - Ship better code faster with personalized, context-aware code reviews.
   - open-source AI agent that reviews your code like a real teammate — but one that never gets tired of doing pull requests.
   - Kody (our agent) plugs into your Git workflow, learns how your team writes code, and starts reviewing PRs automatically. You decide what matters — performance, security, readability, or all of the above.
+  - 安装复杂, 必须使用docker
   - Custom Review Policies — Create review guidelines in plain language, or any language of your choice, that align with your team's engineering principles and practices.
   - Native Git Integration — Seamlessly integrates with your existing workflow, providing detailed feedback directly in pull requests.
+  - open-source vs cloud vs enterprise
+    - open-source 不支持 Quality Metrics, Custom Integrations, 10 rules
+    - cloud 不支持 Custom Integrations, unlimited rules
   - [Code Review is a pain (so we built this) : r/opensource](https://www.reddit.com/r/opensource/comments/1kawpbm/code_review_is_a_pain_so_we_built_this/)
     - At Kodus, the code review engine (which is the core of the product) is fully open source. You can use it, modify it, and run it without any closed dependencies.
     - The commercial parts, like the UI dashboard or premium integrations, are totally optional and don’t block anyone from running Kodus locally with the core AI working. The goal is to make it easy for any team to use Kody in an open, customizable, and self hosted way if they want.
     - About the .ee. files: yeah, there are still some references to them in the main repo, and we get how that can be confusing. The core engine already works without those parts, but the current setup doesn’t make that obvious. That’s exactly why we’re working on a separate repo with a fully open source version, to make it clearer and easier to use without any closed components.
 
+- https://github.com/mattzcarey/shippie /MIT/202510/ts/inactive
+  - https://shippie.dev/
+  - extendable code review and QA agent
+  - Shippie uses Large Language Models to review code in your CI/CD pipeline. 
+  - 支持在 cicd / cli 使用
+    - Shippie also works locally to review files staged for commit. Just add some files to the staging area.
+    - npx shippie review
+
+- https://github.com/Nikita-Filonov/ai-review /263Star/apache2/202602/python
+  - a developer tool that brings AI-powered code review directly into your workflow
+  - AI-powered code review tool for GitHub, GitLab, Bitbucket Cloud
+  - ❓ 似乎只能在cicd中使用
+  - AI Review runs fully client-side — it never proxies or inspects your requests.
+    - AI Review does not store, log, or transmit your source code to any external service other than the LLM provider explicitly configured in your .ai-review.yaml.
+    - All data is sent directly from your CI/CD environment to the selected LLM API endpoint (e.g. OpenAI, Gemini, Claude, OpenRouter). No intermediary servers or storage layers are involved.
+  - Multiple LLM providers — choose between OpenAI, Claude, Gemini, Ollama, ...
+  - Customizable prompts — adapt inline, context, and summary reviews
+  - Reply modes — AI can now participate in existing review threads, adding follow-up replies in both inline and summary discussions.
+  - AI Review runs automatically in your CI/CD pipeline and posts both inline comments, summary reviews, and now AI-generated replies directly inside your merge requests. 
+
+- https://github.com/lava/backloop /AGPL/202510/python/inactive
+  - A fully local code review platform with a built-in feedback loop, to make iterating on agentic code output efficient and fun.
+  - It works by spinning up an ad-hoc web server that hosts a GitHub-like code review UI that's linked to the current coding session.
+
 - https://github.com/coderabbitai/ai-pr-reviewer /MIT/202311/ts/archived
   - https://coderabbit.ai/
   - AI-based Pull Request Summarizer and Reviewer with Chat Capabilities.
+
+- https://github.com/sourcery-ai/sourcery /NonOpen
+  - https://sourcery.ai/
+  - automated code reviewer that will review any pull request on any GitHub repository to provide instant feedback on the proposed changes.
+  - Every review will include a summary of the changes, high level feedback, and line by line suggestions/comments (where relevant).
+  - We use both OpenAI and Anthropic LLMs to provide pieces of our code reviews. Because of this, we need to send them sections of your code (typically the diff of the PR).
+
+- https://github.com/sanyuan0704/code-review-expert /2kStar/202602/skills
+  - Expert code review skill: SOLID, security, performance, error handling, boundary conditions
+  - SOLID Principles - Detect SRP, OCP, LSP, ISP, DIP violations
+  - Security Scan - XSS, injection, SSRF, race conditions, auth gaps, secrets leakage
+
+- https://github.com/awesome-skills/code-review-skill /87Star/MIT/202602/python
+  - A modular code review skill for Claude Code, covering React 19, Vue 3, Rust, TypeScript, Java, Python, C/C++, CSS/Less/Sass, architecture design, and performance optimization.
+
+- https://github.com/qdhenry/Claude-Command-Suite /202601
+  - development toolkit providing 148+ slash commands, 54 AI agents, Claude Code Skills, and automated workflows for software engineering tasks. 
+  - The suite covers code review, testing, deployment, business scenario modeling, and GitHub-Linear synchronization through structured, repeatable workflows.
+
+- https://github.com/FradSer/dotclaude /202602/python
+  - collection of plugins and skills for Claude Code, designed to enhance development workflows with specialized agents and automation tools.
 # more

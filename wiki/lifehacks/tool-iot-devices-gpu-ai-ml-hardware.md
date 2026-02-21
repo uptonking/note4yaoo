@@ -23,6 +23,22 @@ modified: 2026-01-15T15:44:10.647Z
 - ## 
 
 - ## 
+# discuss-vulkan
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Anybody using Vulkan on NVIDIA now in 2026 already? : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1r6z3d4/anybody_using_vulkan_on_nvidia_now_in_2026_already/)
+- Vulkan is faster than rocm for my rx7900xt for whatever that’s worth
+  - Same on my RX7900XTX.
+
+- In my exp w 3090s, P40s, M40s; custom lcpp.cuda builds are vastly superior to lcpp.vk.
+
+- I use Vulkan with llama.cpp for my AMD GPUs (MI50, MI60, V340). It works great! I have no complaints. I have no experience using it with Nvidia GPUs though. Sorry.
+
+- Vulkan is good and I use it alot since I have both Nvidia and AMD GPUs, but CUDA is nearly twice as fast on MXFP4 models that fit entirely on my Nvidia hardware.
 # discuss-iot-unified-memory
 - ## 
 

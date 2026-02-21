@@ -182,7 +182,19 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
-- ## 
+- ## [I looked into OpenClaw architecture to dig some details : r/LLMDevs _202602](https://www.reddit.com/r/LLMDevs/comments/1r9136z/i_looked_into_openclaw_architecture_to_dig_some/)
+  - Under the hood, it’s simpler than most people expect.
+  - OpenClaw runs as a persistent Node.js process on your machine. There’s a single Gateway that binds to localhost and manages all messaging platforms at once: WhatsApp, Telegram, Slack, Discord. Every message flows through that one process. It handles authentication, routing, session loading, and only then passes control to the agent loop. Responses go back out the same path. No distributed services. No vendor relay layer.
+  - What makes it feel different from ChatGPT-style tools is persistence. It doesn’t reset. Conversation history, instructions, tools, even long-term memory are just files under ~/clawd/. Markdown files. No database. You can open them, version them, diff them, roll them back. The agent reloads this state every time it runs, which is why it remembers what you told it last week.
+  - The heartbeat mechanism is the interesting part. A cron wakes it up periodically, runs cheap checks first (emails, alerts, APIs), and only calls the LLM if something actually changed. That design keeps costs under control while allowing it to be proactive. It doesn’t wait for you to ask.
+  - The security model is where things get real. The system assumes the LLM can be manipulated. So enforcement lives at the Gateway level: allow lists, scoped permissions, sandbox mode, approval gates for risky actions. But if you give it full shell and filesystem access, you’re still handing a probabilistic model meaningful control. The architecture limits blast radius, it doesn’t eliminate it.
+  - What stood out to me is that nothing about OpenClaw is technically revolutionary. The pieces are basic: WebSockets, Markdown files, cron jobs, LLM calls. The power comes from how they’re composed into a persistent, inspectable agent loop that runs locally.
+  - It’s less “magic AI system” and more “LLM glued to a long-running process with memory and tools.”
+
+- That persistence feature is possibly the most important advantage AI agents have over chat interfaces imo
+
+- One of the most important components at the core of OpenClaw is another open source project called Pi and Pi is responsible for a large portion of the heavy lifting in OpenClaw.
+  - Pi has a number on components in its mono repo (pi-mono) but the 2 most relevant to OpenClaw’s success are the Agent and Coding-Agent.
 
 - ## [Your thoughts on "thinking" LLMs? : r/ollama _202602](https://www.reddit.com/r/ollama/comments/1qv1yey/your_thoughts_on_thinking_llms/)
   - almost all of the ollama-ready models released in recent months have been "thinking" or "chain of thought" or "reasoning" models -- you know, the ones that force you to watch the model's simulated thought process before it generates a final answer.

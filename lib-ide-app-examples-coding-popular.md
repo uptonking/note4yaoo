@@ -508,8 +508,11 @@ modified: 2025-12-11T18:10:23.710Z
 - https://github.com/Yeachan-Heo/oh-my-claudecode /6.7kStar/MIT/202602/ts
   - https://yeachan-heo.github.io/oh-my-claudecode-website
   - Teams-first Multi-agent orchestration for Claude Code
-  - https://github.com/jayEntp/openDevTeam /MIT/202602/js
-    - [【开源】openDevTeam：为 Claude Code 注入 6 个专业级 AI 智能体工作流 ](https://linux.do/t/topic/1625719)
+- https://github.com/jayEntp/openDevTeam /MIT/202602/js
+  - [【开源】openDevTeam：为 Claude Code 注入 6 个专业级 AI 智能体工作流 ](https://linux.do/t/topic/1625719)
+- https://github.com/agent-era/devteam /MIT/202509/ts/inactive
+  - Run a team of local coding agents in your terminal. Launch multiple Claude Code, Codex or Gemini agents, switch between them
+  - An exercise to push how fast development can happen with multiple parallel agents. Mostly vibe-coded
 
 ### clude-plugins
 
@@ -549,6 +552,11 @@ modified: 2025-12-11T18:10:23.710Z
   - Limitations - Here's what's not built yet:
     - Custom models/APIs: Codex supports various models and providers, but I haven't exposed that in the UI yet.
     - MCP servers: If you have them configured via codex-cli, they might work? I don't use MCPs myself, so I haven't tested this.
+
+- https://github.com/Yeachan-Heo/oh-my-codex /MIT/202602/ts
+  - Multi-agent orchestration layer for OpenAI Codex CLI.
+  - OMX turns Codex from a single-session agent into a coordinated system
+  - Inspired by oh-my-claudecode, adapted for Codex CLI.
 
 ## gemini/qwen-code-cli
 
@@ -1925,6 +1933,10 @@ modified: 2025-12-11T18:10:23.710Z
   - Install Postgres if you don't have one. CocoIndex uses it for incremental processing.
   - Install Claude Code skill for enhanced development experience.
   - 用户定义workflow， 框架执行转换
+  - https://github.com/VioletCranberry/coco-search /MIT
+    - Local-first hybrid semantic code search tool. 
+    - Indexes codebases into PostgreSQL with pgvector embeddings via Ollama, combines vector similarity + keyword search with RRF fusion.
+    - Powered by CocoIndex for indexing, Tree-sitter for syntax-aware chunking and symbol extraction, PostgreSQL with pgvector for storage, and Ollama for local embeddings. No external APIs — everything runs on your machine.
 
 - https://github.com/kayba-ai/agentic-context-engine /1.8kStar/MIT/202602/python
   - https://www.kayba.ai/

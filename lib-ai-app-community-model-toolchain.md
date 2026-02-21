@@ -1325,6 +1325,24 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [GGML. AI has got acquired by Huggingface : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1r9vywq/ggmlai_has_got_acquired_by_huggingface/)
+- Hugging Face is becoming the primary distribution and coordination layer for open weight models, datasets, and tooling, but it does not own or control most open source AI development.
+
+- So who from Huggingface can mediate the llama.cpp vs. ik_llama.cpp dispute?
+
+- Unsloth next?
+
+- the Transformers library is Apache 2 licensed. I don't think we have anything to worry about from them.
+
+- https://x.com/simonw/status/2024895405146997002
+- ggml's real gift to enterprise wasn't just local inference — it was proof that a tiny C library could outrun cloud APIs on edge hardware.
+  - Hugging Face stewardship is the right call for distribution. The test: does llama.cpp stay ruthlessly minimal, or does it accumulate abstractions? The former is what made it deployable at scale.
+- GGUF becoming a first-class citizen at HF instead of a community afterthought is the real unlock. Every local model ships optimized from day one instead of waiting for someone to quantize it
+
 - ## [Realizing I can run much larger models than expected. : r/LocalLLM _202602](https://www.reddit.com/r/LocalLLM/comments/1qsk4ic/realizing_i_can_run_much_larger_models_than/)
   - I only recently discovered that not only can I run the Q4 version of GPT-OSS 120B, but that it runs remarkably fast on my system with 24GB vram and 64gb of system ram
 - Everyone's getting 55-65 tps on the amd strix halo running 120b gptoss on native 4 bit, and 35-40 TPS on the 8 bit with some creative memory allocation.

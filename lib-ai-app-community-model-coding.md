@@ -866,7 +866,14 @@ def slugify(text):
 
 - ## 
 
-- ## 
+- ## [Kimi K2.5 vs GLM 5 : r/opencodeCLI _202602](https://www.reddit.com/r/opencodeCLI/comments/1r9pti3/kimi_k25_vs_glm_5/)
+  - I see alot of people praising Kimi K2.5 on this sub, but according to benchmark GLM 5 is supposed to be better.
+
+- As for Kimi 2.5: it's a tad better than GLM 4.7 but weaker than GLM 5 in my testing. I sometimes wonder if making it multi-modal (which yields a massive-param-count model - trillion params) might've been a bad play for coding. 
+
+- GLM 5, also used on cline Vs Kimi 2.5 and minimax2.5, GLM 5 is just too precise.
+
+- I like more GLM 5 than K2.5, is a shame that in z.ai is too slow
 
 - ## [K2.5 is still the king for open-source models : r/opencodeCLI](https://www.reddit.com/r/opencodeCLI/comments/1r97ruh/k25_is_still_the_king_for_opensource_models/)
 - What about GLM-5 or Minimax M2.5?

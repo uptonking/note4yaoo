@@ -208,7 +208,22 @@ modified: 2025-09-01T07:58:29.058Z
 
 - ## 
 
-- ## 
+- ## 🤔 [Research seems to show that repo-level . MD files reduce quality and increase cost : r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1r95h0c/research_seems_to_show_that_repolevel_md_files/)
+- I feel a lot of research on AI is obsolete by the time it is published. This has been discovered by the users already and dedicated documentation skills and progressive disclosure patterns address it quite well.
+  - This Vercel article directly tests AGENTS.md vs skills and in their tests, AGENTS.md outperforms skills.
+
+- OpenAIs approach is gradual disclosure via a Top-Level Agents.md that is a table of contents to deeper docs (only referenced when needed). Really makes you wonder if the researchers did the stupid thing that would obviously make the results they wanted? Or did they use the well-designed thing and still got bad results? Genuinely curious. I use the OpenAI approach currently
+  - [Harness engineering: leveraging Codex in an agent-first world | OpenAI _202602](https://openai.com/index/harness-engineering/)
+
+- I work in a fairly large codebase and CLAUDE.md files with specific instructions for different packages/directories have been a lifesaver. It keeps me from having to stop and correct the agent when it does something that I’ve repeatedly told it not to do. I think the key is to keep the instructions small, and use many CLAUDE.md files throughout the codebase if you need to have reminders for specific parts of the code that aren’t always touched.
+  - Agreed. The value increases with the size and complexity of the package.
+- Claude just seems to ignore them for me. The amount of times I have to remind it broke rules or conventions that were documented in CLAUDE.md is insane
+  - How big is your CLAUDE.md? The larger it gets, the more likely it seems to be that it will straight up ignore stuff in it. Also, if you haven’t already, I HIGHLY recommend running the /insights command. It will give you some great info about what you could add/remove from the file, what skills you could benefit from, and when you’ve had to stop and correct CC and why, with ideas on how to correct it.
+
+- 
+- 
+- 
+- 
 
 - ## 🤼 逐行 review 是时代糟粕
 - https://x.com/real_kai42/status/2020789286723867047

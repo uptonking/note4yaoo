@@ -52,6 +52,14 @@ modified: 2023-01-02T10:30:19.459Z
 
 - I had to update my mac to 26 with that ugly liquid glass just to play with webGPU. Cant wait for tauri 3.0 and CEF
 
+- https://x.com/thekitze/status/2024515332002762843
+  - electron the goat will never be dethroned. we should just find a way to use a common chromium version for all electron apps instead of bundling it with each one.
+- It has been discussed for long time - a shared runtime mode.
+  - [Idea of runtime mode · Issue · electron/electron](https://github.com/electron/electron/issues/673)
+- shared chromium is the obvious answer but the sandboxing makes it way harder than it sounds. nobody wants to be responsible for security bugs in a shared browser engine
+
+- That’s exactly what electrobun does. You set bundleCEF to true and can also change the chromium version whenever you want.
+
 - ## we have a tedious task of moving off of bun file apis _202602
 - https://x.com/thdxr/status/2024147745024495794
   - we had opencode analyze all usage and come up with a plan for how things should be mapped

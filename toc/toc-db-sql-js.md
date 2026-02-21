@@ -143,6 +143,12 @@ modified: 2021-08-30T18:56:14.863Z
   - https://prostgles.com/ui
   - Web dashboard and SQL Editor for Postgres
   - Sorting, Filtering and Cross-Filtering joined tables
+# sql-ai 👾
+- https://github.com/SubhanHakverdiyev/OptimizeQL /MIT/202602/python/ts
+  - AI-powered SQL query optimizer that analyzes EXPLAIN plans and suggests indexes, rewrites, and configuration changes.
+  - [100% open source SQL query optimizer - OptimizeQL : r/PostgreSQL _202602](https://www.reddit.com/r/PostgreSQL/comments/1r9w4li/100_open_source_sql_query_optimizer_optimizeql/)
+    - How do you verify that the rewritten query is semantically equivalent to the original query?
+    - Tbh I don't automatically verify semantic equivalence right now. It's on the user to validate them. But LLM is instructed to preserve semantics — the system prompt explicitly asks for functionally equivalent rewrites, not approximations. I think it is pretty hard to do a semantic equivalence verification. What I could add is running both queries and diff the results.
 # sql-alternatives
 - https://github.com/PRQL/prql /rust
   - https://prql-lang.org/

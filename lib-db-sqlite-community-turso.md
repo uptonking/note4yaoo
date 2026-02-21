@@ -679,6 +679,36 @@ target/debug/limbo database.db
   - Step 3 (optional): Manual investigation
   - Step 4: Make branch, commit, and push
 
+# discuss-sqlite-cloud
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🆚 If you're using SQLite with Cloudflare Durable Objects, I would love to hear why you're using that over D1. What workloads benefit from this approach the most?
+- https://x.com/penberg/status/2024848178147692986
+- I am biased (working with both teams), but you would use DOs over D1 for heavy sharding (hundreds, thousands, millions of DBs), and when you colocate your logic inside the DO and do many SQLite queries within the same request. In a nutshell this is why you pick DOs vs D1.
+  - D1 needs extra actions for each database: creating it, adding to your worker bindings, deploy. Or patch the worker through the API. So, users with heavy sharding needs have better DX with DOs.
+
+- for us it came down to wanting full control over the SQLite instance lifecycle - DOs let you colocate the db right next to your compute with zero cold start overhead for reads
+  - D1 is great for shared data but when you need per-user or per-session isolation with guarenteed single-writer semantics, DOs + SQLite just fits more naturally
+
+- D1 has limited RPS, sharing one DO per user or even one DO per instance you can squeeze a lot more performance. This is how cf ai search and cf ai gateway works
+
+- DO supports proper transactions. D1 only supports batching with no way to abort the batch conditionally 
+  - + I like DOs approach of sharding-by-default
+
+- Mostly for on-demand provisioning for per-tenant DB. But additionaly: 
+  - slightly less overall latency
+  - simpler db migrations setup
+  - the ergonomics of the sync interface that  allows you to skip joins and transaction most of the time and simplifies multiplayer use-cases
+
+- D1 is equivalent to using SQLite on a single DO as a centralized server db. So all the drawbacks of using SQLite as a server db with none of the benefits. The benefits being: sharding and moving the db closer to compute and the user.
+
+- Migrations is my number one reason... D1 migrations are manual, but DO migrations run automatically on init.
 # discuss
 - ## 
 

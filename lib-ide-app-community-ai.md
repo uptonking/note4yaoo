@@ -725,9 +725,48 @@ AI
 
 - ## 
 
-- ## 
+- ## [change my mind: automated code review tools are better than human code review in 70% of cases : r/ExperiencedDevs _202601](https://www.reddit.com/r/ExperiencedDevs/comments/1q525yn/change_my_mind_automated_code_review_tools_are/)
+  - Most PRs are just checking for: syntax issues, naming conventions, obvious bugs, test coverage, security vulnerabilities, code style consistency. stuff a machine does in seconds.
 
-- ## 
+- I don't review code that doesn't pass the linter check, so I see what you are talking about but I see that as an already solved problem.
+  - And if I disagree on the code style? Well that's another issue that is best discussed outside of code review, so again it doesn't slow me down.
+  - And, I'll go even further: on the last 30% that matter, I tend to think that design shouldn't be a point of contention in a review, as it should be decided before the code is even produced.
+
+- You are missing the part that all the stuff you said are part of CI pipelines and do not compete at all with what a human should do when reviewing code. The only controversial part of your take are your arbitrary percentages.
+
+- I’ve been seeing AI code reviews as a “good first pass” instead of a replacement for human eyes. It can catch all the stupid things so I can focus on more structural issues
+
+- The real problem with automated code review is false precision.
+  - Static analyzers + diff-aware checks & system-level reviewers (we’ve used CodeQL, Danger, and Kavia in different setups) work best when they frame uncertainty instead of pretending to be a senior engineer.
+
+- ## [Here are the AI code review tools I've been looking at, which one is best? : r/webdev _202602](https://www.reddit.com/r/webdev/comments/1quz7wh/here_are_the_ai_code_review_tools_ive_been/)
+- we use coderabbit at work, it's fine but very noisy, you'll spend time configuring what rules to turn off
+
+- tried greptile for a few months, good for understanding codebase but the review comments were kinda generic
+
+- ## 🎯 [Qodo Launches Version 2.0 with Top Accuracy in AI Code Reviews : r/aicuriosity _202602](https://www.reddit.com/r/aicuriosity/comments/1qvpxp9/qodo_launches_version_20_with_top_accuracy_in_ai/)
+  - The biggest highlight comes from their own testing. On a set of 580 real bugs injected into 100 pull requests from live open-source projects, Qodo 2.0 reached a 60.1% F1 score. That beats the next closest competitor by 9 percentage points.
+  - Qodo 2.0 moves away from a single general-purpose reviewer. Instead it uses several focused specialist agents that handle different jobs: Spotting critical bugs Finding duplicated code Detecting changes that could break things Enforcing custom coding rules Checking alignment with ticket requirements
+  - Each agent pulls in the full repository plus pull request history so suggestions stay relevant and cut through the clutter.
+
+- ## [Anyone using Qodo for diff-aware code reviews across? : r/codereview _202510](https://www.reddit.com/r/codereview/comments/1oey60f/anyone_using_qodo_for_diffaware_code_reviews/)
+- at my work we have an absolute monster of a legacy codebase. AI review tools don't seem to grasp our in-house tools or libraries. It does make some suggestions to use standard C++ libraries, but can't seem to figure out that it should be using our in house custom std functions.
+  - It's kind of like an eager junior. Being wrong with incredible speed.
+
+- we're in a similar stage of exploration. we're a relatively small codebase, mostly python. I'm thinking we can leverage gitlab mcp to perform ai generated coode reviews using bedrock models and maintain context files for each repository. 
+
+- I used Qodo for a while. It’s clean and has good diff visualization but our workflow needed tighter repo integration so we eventually switched. Right now we’re using CodeRabbit. It automatically reviews PRs with context from previous commits and project structure. It's able to spot subtle inconsistencies before they make it to testing.
+
+- What helped our team was treating AI as another reviewer rather than a replacement. Static checks and tests still run in CI, then Qodo reviews each PR with repo context, posts a short summary, and highlights a few higher‑risk issues instead of commenting on every line. That kept review quality the same while cutting the time we spend on obvious problems
+
+- ## [Anyone here using Qodo for AI-powered code reviews? : r/codereview _202508](https://www.reddit.com/r/codereview/comments/1mi0z28/anyone_here_using_qodo_for_aipowered_code_reviews/)
+  - We’ve been using Qodo to automate the first pass of PRs it pulls in Jira context, past PRs, and even flags missing tests or edge cases.
+
+- What I like most is that it doesn’t just look at the code in isolation it actually pulls in context from Jira tickets, past PRs, surrounding files, and even test coverage. So it’s not just “hey, this is poorly written, ” but more like “this logic doesn’t match what you did in a similar PR two weeks ago” or “you added new logic here but didn’t write tests for this branch.” Feels more like a thoughtful dev doing a first review than just an LLM copy editor.
+  - The agent stuff is cool too. We’ve got it set up so one agent helps while writing code (suggests missing tests, highlights edge cases), and another one kicks in during PRs - adds inline comments, flags things that might break conventions, that kind of thing. And we’ve been able to add some custom rules, like blocking PRs if new logic doesn’t have test coverage or if it’s not linked to a Jira ticket.
+  - Tried Copilot and CodeRabbit before, but Qodo feels more team-aware and opinionated in a good way. Curious how others are setting it up too - are you just using the default flows or customizing it a bit?
+
+- yup been running Qodo in our workflow for a bit. the jira + past pr context is huge, makes the comments feel way less generic. what i like most tho is how it ties review with test gen, so if it flags a gap it can spin up a starter test right there. feels more like an extra teammate than just a lint bot.
 
 - ## [What's the best AI code review tool? : r/codereview _202512](https://www.reddit.com/r/codereview/comments/1pqgmv4/whats_the_best_ai_code_review_tool/)
 - Here are my top 5:
@@ -742,14 +781,58 @@ AI
 
 - We ended up valuing low noise more than anything else. Static checks stay in CI, and Qodo joins as an extra reviewer on each PR, reading related files and history, then leaving a short summary and a few higher‑risk comments. That has been easier to work with than tools that add many tiny remarks.
 
-- ## [Looking for a Free/Open Source AI Code Review Tool – Suggestions? : r/developersIndia _202507](https://www.reddit.com/r/developersIndia/comments/1lrrsvl/looking_for_a_freeopen_source_ai_code_review_tool/)
-- for FOSS, try CodeRabbit OSS tier, Review Bot, or self-hosted options like SonarQube plus Semgrep rules. if you want a one-click repo report, most “free” tools cap usage. Qodo also has some open source components and a free plan for small teams and does PR reviews with summaries and test suggestions
+- ## [Best AI code review tools in your experience? : r/AskProgramming _202511](https://www.reddit.com/r/AskProgramming/comments/1p1cymk/best_ai_code_review_tools_in_your_experience/)
+- What I’ve seen is that different AI reviewers target different layers.
+  - Snyk Code focuses on vulnerability detection and static analysis. OTOH Qodo Merge and CodeRabbit analyze flow and semantics.
+  - For me personally, I’d take CodeRabbit since it’s really unique in its approach when it comes to function-level context, and it doesn’t really work with token windows which is a good thing. That’s why it catches side-effects or mismatched logic where others fail. Of course, latency and cost aren’t as economical once you scale it to big repos.
+- Yeah, that’s pretty much what we ran into too. Once the repo gets big enough, token limits start chopping context like crazy. CodeRabbit’s function-level parsing fixes most of that. It seems to be really good at holding the thread between files, even across services where Bito or Qodo Merge just blank out, you know? 
+  - We dropped it into our CI pipeline one late night and the first flag it threw was a mismatched type conversion. Pandas join against a NumPy array. No one caught it during manual review, which was a bit humbling. 
+- We did a controlled rollout on one of our ETL repos, and CodeRabbit flagged a subtle leak between two Airflow DAGs that would’ve broken downstream transformations. None of our static tools caught it.
 
-- 
-- 
-- 
-- 
-- 
+- We ran a 3-month evaluation across our dev squads last year. Our team tried Bito, Qodo Merge, DeepCode, and CodeRabbit, but the one that stayed was CodeRabbit, mostly because it handled large diffs without crashing and gave context-aware suggestions instead of just restating variable names.
+  - Code review backlog dropped by around 25% after we added automated pre-checks from Rabbit. It doesn’t replace humans, that would take some time, but it triages things fast.
+  - Qodo Merge was good too, but it required more setup and struggled when multiple branches touched the same dependency.
+
+- in my experience, the best tools are the ones teams keep enabled long term. That usually means fewer comments, better context, and learning from past reviews. Qodo’s been one of the few that didn’t get muted after a few weeks because its feedback stayed relevant
+
+- ## 📌 [AI code review tools : r/AI_Agents _202510](https://www.reddit.com/r/AI_Agents/comments/1og3vjm/ai_code_review_tools/)
+- [State of AI Code Review Tools in 2025 _202510](https://www.devtoolsacademy.com/blog/state-of-ai-code-review-tools-2025/)
+  - CLI Based Reviewers: CodeRabbit
+  - IDE Native Reviewers (In-Editor Assistants)
+  - PR-Based Review Bots (GitHub/GitLab Integrations): CodeRabbit, Greptile, Graphite, Qodo Merge
+  - Hybrid & Security-Focused Review Platforms: DeepCode, CodePeer, HackerOne
+  - Open-Source and Community-Driven Reviewers: 
+
+- We went down a similar path, building a simple diff reviewer with an LLM. It's surprisingly effective for catching low-hanging fruit and enforcing basic style.
+  - The main difference we found with paid tools isn't always the core AI suggestion on a single line of code. It's everything around it. The paid tools are usually much better at understanding the full repository context, not just the diff, so they can catch more complex bugs that span multiple files.
+  - A lot of them also bundle in security scanning which is a huge value-add and a pain to build and maintain yourself. Plus, the workflow integration is just smoother managing suggestions, dismissing false positives, and having a UI that isn't another thing your team has to build.
+  - Your custom tool is probably great for your very specific, in-house rules. Might be worth running a trial of a paid tool on one repo to see if the security and whole-repo context features catch things yours doesn't.
+
+- im not sure if you meant qodo or a different tool. Most feel the same until you add repo memory. For code quality, Qodo stood out by pulling history and related files, then proposing focused fixes. it reduces reviewer fatigue on larger changes.
+
+- The main advantage of something like qudo or polarity is they're built specifically for this so they handle edge cases better and have context understanding that goes beyond just diff analysis. Like they track patterns across your entire codebase and learn from your team's feedback over time which is hard to replicate in a homegrown tool without significant investment We started with smth similar to what you built but at the end switched to polarity bc maintaining our internal tool became its own project and the accuracy just wasn't there for more complex logic issues. The paid tools also integrate better with workflows and dont require constant tweaking when your stack changes or gitlab updates their api or whatever. 
+
+- Paid tools like Qudo often come with advanced features such as:
+  - Comprehensive analysis of coding standards and best practices.
+  - Integration with various CI/CD pipelines and project management tools.
+  - Continuous updates and support from the vendor.
+- Custom solutions, like the one you've developed, can be tailored specifically to your team's workflow and coding standards, which might provide a more personalized experience.
+
+- most of the value comes from how much context the tool has. Diff only reviews don’t add much. Tools that understand repo structure and patterns feel more useful long term. That’s why I’ve kept Qodo in the workflow, since its feedback stays relevant instead of noisy
+
+- ## [any self hostable alternatives for code rabbit?? : r/devops _202510](https://www.reddit.com/r/devops/comments/1oheri0/any_self_hostable_alternatives_for_code_rabbit/)
+- Not advisable unless your team can handle constant maintenance and model updates. Coderabbit is optimized for reliability across repos and languages which is hard to replicate. Even with startup credits, you’d likely spend more time managing infrastructure than getting reviews. Keeping Coderabbit is the safer long-term choice.
+
+- I am not aware of any self hosted free alternative and I am looking to incorporate code rabbit as well but I do want to say if you’re doing this, you’re probably doing many other things where you’re trying to cut corners for cost.
+  - You’re ignoring the cost of your development and DevOps team’s time. Eventually, you’ll be spending more on dev time keeping up these services than just paying the $40/mo/dev keeping it up.
+
+- it will be headache for your team to manage those services. As team we should focus on what is primary domain to deliver. Any engineering can self host any solutions but that will unnecessarily defocusing on primary goal. I will prefer to use coderabbit solutions directly and if cost is concern can use initially for free tier or VS Code extension.
+
+- CodeRabbit also has a self-hosted version. You get a container image from them that you can run wherever you want but of course it will still need a CodeRabbit license.
+
+- ## [Looking for a Free/Open Source AI Code Review Tool – Suggestions? : r/developersIndia _202507](https://www.reddit.com/r/developersIndia/comments/1lrrsvl/looking_for_a_freeopen_source_ai_code_review_tool/)
+- for FOSS, try CodeRabbit OSS tier, Review Bot, or self-hosted options like SonarQube plus Semgrep rules. if you want a one-click repo report, most “free” tools cap usage. 
+  - Qodo also has some open source components and a free plan for small teams and does PR reviews with summaries and test suggestions
 
 # discuss
 - ## 

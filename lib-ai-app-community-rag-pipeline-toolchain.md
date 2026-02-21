@@ -110,6 +110,18 @@ modified: 2026-02-18T04:15:19.228Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## we launched Notion AI Q&A in Nov 2023, Notion vector search over the past 2 years: 10x scale, then 1/10th cost. 
+- https://x.com/nxlouie/status/2024525357672808844
+  - we evaluated alternative search engines—and @turbopuffer emerged as our top pick.
+  - We achieved an incremental 60% reduction in search engine cost and 25% improved query latency just by switching
+  - We built a way to detect incremental span changes in an edited page and utilized Turbopuffer’s PATCH functionality to skip embedding costs entirely for metadata changes.
+  - Now we’re migrating near real-time embeddings to Ray running on @anyscalecompute
+  - All in, we are at 90%+ reduction in embeddings infrastructure costs from our peak ramp up days!
+
 - ## 🤔🆚 [RAG for AI memory: why is everyone indexing databases instead of markdown files? : r/Rag _202602](https://www.reddit.com/r/Rag/comments/1r2hlzd/rag_for_ai_memory_why_is_everyone_indexing/)
 -  Most memory solutions follow this pattern:
 - Standard RAG approach (Mem0, Zep, etc.):

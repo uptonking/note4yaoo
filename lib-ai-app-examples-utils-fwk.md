@@ -373,6 +373,15 @@ modified: 2025-02-21T18:20:42.624Z
   - 后端	Go 1.25.7, Gin, Ent, PostgreSQL, Redis
   - 前端	Vue 3.4+, Vite 5+, TailwindCSS
 
+- https://github.com/peva3/SmarterRouter /MIT/202602/python
+  - LLM gateway and VRAM-aware router for Ollama, llama.cpp, and OpenAI. 
+  - Features semantic caching, model profiling, and automatic failover for local AI labs.
+  - multi-backend AI router that sits between your application and various LLM providers. 
+  - All local, zero cost - No cloud API fees, works with your existing models
+  - Works with any OpenAI-compatible client
+  - Smart routing - Analyzes prompts and picks the optimal model based on category and complexity
+  - VRAM management - Monitors GPU usage and unloads models when needed
+
 - https://github.com/songquanpeng/one-api /27.7kStar/MIT/202502/go/js/inactive
   - LLM API 管理 & 分发系统，支持 OpenAI、Azure、Anthropic Claude、Google Gemini、DeepSeek、字节豆包
   - 支持配置镜像以及众多第三方代理服务。

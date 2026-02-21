@@ -51,7 +51,34 @@ modified: 2024-03-30T05:55:54.349Z
   - fair point, but you can strip out eval for a tiny binary with no js parser
 
 - Still, I guess that will require custom packages that implements servers and stuff. Current ones depends on the v8 interface.
+# discuss-js-runtime/solutions
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Announcing Hermes-node: Hermes can now run as a standalone CLI with Node.js-compatible APIs - no C++ embedding required. _202602
+- https://x.com/tmikov/status/2024609186936660170
+  - Technically, hermes-node is a Node.js API compatibility layer for Hermes. It ports Node's native bindings (fs, net, http, child_process, etc.) to Node-API and reuses Node's original lib/*.js files, allowing standard Node.js programs to run on Hermes instead of V8. 
+  - It vendors libuv, c-ares, llhttp, Ada, simdutf, etc to provide the same networking and I/O stack as Node, and runs as a standalone CLI binary.
+  - This is still a work in progress, though surprisingly functional. More Node modules coming, source will be published soon.
+
+- Did you do this via implementing v8’s C++ API similar to node-jsc?
+  - My goal wasn't to drop-in replace v8 in Node, so I went in the opposite direction. I am porting and partially re-implementing Node C++ bindings.
+  - So, instead of putting Hermes in Node, I am adding Node modules to Hermes, so to speak. This gives me better control over the architecture and more "ownership" over the result.
+  - I am pretty excited about adding sound typing to the Node modules and compiling them natively. End result is potentially almost everything written in typed JS, with very little C++.
+- What is the perf impact of using modules to interface. Any penalty
+
+- Will this also work with static Hermes somehow? I.e. can we AOT compile Node.js bindings? (Are they even well typed enough?)
+  - I developed it in my free time. Yes, compiling typed .js is very much part of the plan.
+
+- int32, int64, float32, float64, shared memory multithreading, static memory layout objects. Small list left for the greatest lang ever.
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

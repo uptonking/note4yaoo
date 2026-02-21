@@ -185,6 +185,9 @@ modified: 2025-11-18T13:22:22.078Z
   - The World's First LLM Optimized for Claude Code
   - Self-Learning Intelligence (SONA): The model continuously improves from interactions, learning your coding patterns, preferences, and project-specific conventions.
 
+- [zed-industries/zeta · Hugging Face](https://huggingface.co/zed-industries/zeta)
+  - a fine-tuned version of Qwen2.5-Coder-7B to support edit prediction in Zed.
+
 ## data-viz/charting 📊
 
 - 生成图表的方案(分析需求: 偏前端展示/偏数据分析)

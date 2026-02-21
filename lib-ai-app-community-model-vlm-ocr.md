@@ -190,6 +190,9 @@ modified: 2025-11-06T18:49:13.977Z
 # 🆚 ocr/vlm-parsing-benchmarking 
 - leaderboard
   - [Open VLM Leaderboard - a Hugging Face Space by opencompass](https://huggingface.co/spaces/opencompass/open_vlm_leaderboard)
+  - [allenai/olmOCR-bench · Datasets at Hugging Face](https://huggingface.co/datasets/allenai/olmOCR-bench)
+    - https://x.com/NielsRogge/status/2024518878655578509
+    - We converted OlmOCR-Bench by @allen_ai to an official benchmark on the hub.
 
 - https://github.com/opendatalab/OmniDocBench /1.3kStar/apache2/202512/python/mineru
   - https://opendatalab.com/omnidocbench
@@ -214,7 +217,17 @@ modified: 2025-11-06T18:49:13.977Z
 
 - ## 
 
-- ## 
+- ## Increased thinking doesn't correlate with increased document understanding 
+- https://x.com/jerryjliu0/status/2024568615320899930
+  - [The Cost of Overthinking: Why Reasoning Models Fail at Document Parsing _202602](https://www.llamaindex.ai/blog/the-cost-of-overthinking-why-reasoning-models-fail-at-document-parsing)
+  - Models are getting much better at reasoning which translates well for math/coding/general intelligence tasks. We did some experiments with GPT-5.2 on different thinking modes to see if it actually helps improves scores on OmniDocBench.
+  - Result: it doesn't, and in fact the higher the thinking, the more the output structure might deviate from the existing input. 
+
+- This matches what I see in practice: perception is the bottleneck. Once OCR drops pixels, no amount of reasoning brings them back. Pipelines beat monoliths
+
+- This matches what we see in practice: more “thinking” helps compute, not perception. If retrieval/parsing is weak, you just get more confident synthesis on partial evidence, so the win is better chunking + citations/provenance before you crank reasoning depth.
+
+- The thinking mode might need to be task-specific - for document understanding, guided summarization approaches often outperform generic reasoning prompts regardless of model size.
 
 - ## 🖼️ [单图≠多图：多图理解时 VLM 为什么更容易“胡说”，以及一个两阶段解法 _202602](https://linux.do/t/topic/1584167)
   - 这篇文章起源于我发现在多图分析时，网页端的表现和 API 调用的结果一致性相差很大，然后我就一步步去拆为什么相差大，然后试图在工程上找补救的过程。
