@@ -175,8 +175,17 @@ modified: 2021-05-06T09:39:53.522Z
   - 使用markdown格式作为ai编辑的输入输出优点是ai擅长markdown，缺点是markdown扩展标准不统一
     - 另一种思路是用prompt指示ai输出html, 各种富文本编辑器对html的复制粘贴都很成熟
 
+- https://github.com/pierrecomputer/pierre /apache2/202512/ts
+  - https://diffs.com/
+  - open source diff and code rendering library. It's built on Shiki for syntax highlighting and theming, is super customizable, and comes packed with features. 
+
 - [Agent Trace](https://agent-trace.dev/)
   - 参考代码的实现, 将prompt放入commit
+
+- [Chrome Web AI Demos](https://chrome.dev/web-ai-demos/)
+  - [Proofreader API](https://chrome.dev/web-ai-demos/proofreader-api-playground/)
+  - [Translator and Language Detector API Playground](https://chrome.dev/web-ai-demos/translation-language-detection-api-playground/)
+  - [Join the early preview program  |  AI on Chrome](https://developer.chrome.com/docs/ai/join-epp)
 # dev-xp
 - 🤔 deep-research 的产物形态是不是使用rich-text-editor更好，甚至产出ppt
   - gemini的deep-research支持直接导入google-docs显示为在线文档且可编辑

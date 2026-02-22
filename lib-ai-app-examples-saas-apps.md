@@ -555,6 +555,20 @@ modified: 2025-02-21T17:17:42.225Z
   - Deployment: Vercel (Frontend), EC2 (Backend)
   - Analytics: PostHog, Api-Analytics
 
+## computer-use
+
+- https://github.com/Bigchx/NestOS /MIT/202602/js
+  - NestOS 运行在具备完整 Linux 图形桌面（GUI）的服务器中，既能像人一样操作浏览器（点击、输入、过验证），也能像运维一样调度底层环境完成部署与交付。
+  - 基础设施：Linux (Ubuntu) + 1Panel + Docker/Compose
+  - OS: Ubuntu 22.04 x64 (目前仅适配此版本)
+  - 浏览器执行层：OpenClaw Browser (Chrome)
+  - 图形交互层：XRDP + XFCE4
+  - 控制端：Web / Discord / Telegram / 飞书 / ...（支持所有可接入 OpenClaw 的软件，如 WhatsApp 等）
+  - AI 记忆能力：qmd 索引 + 语义检索 + 本地日志
+  - [【开源自荐】我们把 VPS 变成了带桌面的“数字员工”，基于 OpenClaw 和 1Panel 搓了一套 GUI 自动化环境，理论上 100% 解决网页交互难题 _202602](https://linux.do/t/topic/1632379)
+    - 配置: 建议 4 核 8G 内存 (4H8G)，带宽别太小（毕竟要传桌面画面）。
+    - 验证码墙：通过 “AI 执行 + 人工协助” 解决自动化登录死角。
+
 ## office
 
 - https://github.com/Prismer-AI/Prismer /BSL/202601/python/ts

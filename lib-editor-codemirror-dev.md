@@ -385,6 +385,9 @@ edd.contentDOM.cmView.view === edd // true
 ```
 
 # dev-ai-coding/diff
+- https://github.com/pierrecomputer/pierre /apache2/202512/ts
+  - https://diffs.com/
+  - open source diff and code rendering library. It's built on Shiki for syntax highlighting and theming, is super customizable, and comes packed with features. 
 
 ## diff-com-smbug
 

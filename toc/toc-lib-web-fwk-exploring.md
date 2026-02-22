@@ -9,6 +9,17 @@ modified: 2020-12-31T17:05:37.410Z
 
 # trending
 
+- https://github.com/Ripple-TS/ripple /7kStar/MIT/202602/ts/js
+  - https://ripple-ts.com/
+  - a TypeScript UI framework that combines the best parts of React, Solid, and Svelte. 
+  - Created by @trueadm, who has contributed to Inferno, React, Lexical, and Svelte 5.
+  - Fine-grained Reactivity: track and @ syntax with a unique reactivity system
+    - 基于 new Proxy 实现， 核心runtime是js代码而不是ts
+  - Reactive Collections: #[] arrays and #{} objects with full reactivity
+  - TypeScript First: Complete type safety with .ripple file extension
+  - Scoped Styling: Component-level CSS with automatic scoping
+  - SSR support is coming soon! Currently SPA-only.
+
 - crank /2.2kStar/MIT/202011/ts/NoDeps
   - https://github.com/bikeshaving/crank
   - Crank uses the same JSX syntax and diffing algorithm popularized by React, allowing you to write HTML-like code directly in JavaScript.

@@ -385,12 +385,19 @@ modified: 2025-12-11T18:10:23.710Z
   - Built-in Git Diff Viewer lets you review all changes directly within Claude Code Viewer
   - What Makes Claude Code Viewer Different: specifically designed as a session log viewer
   - Core Philosophy: Zero data loss + Effective organization + Remote-friendly design
+  - 支持在浏览器中打开terminal
+  - 支持resume-chat
+  - 支持查看变更文件列表, 支持查看diff视图
+  - 支持pr模式，可选择branch
+  - 快速查看tool-calls列表
 
 - https://github.com/jhlee0409/claude-code-history-viewer /MIT/202602/rust/ts/tauri
   - https://jhlee0409.github.io/claude-code-history-viewer
   - desktop app to browse, search, and analyze your Claude Code conversations — all offline.
   - It automatically scans `~/.claude` for conversation data
-  - 支持chat聊天内搜索
+  - 支持chat聊天内搜索, 但不支持resume-chat
+  - 看板模式、日历模式 来展示用户历史会话
+  - 统计功能强大: 日历热力图, 模型, tools
   - [Show HN: Claude Code History Viewer for macOS | Hacker News _202507](https://news.ycombinator.com/item?id=44459376)
 
 - https://github.com/sugyan/claude-code-webui /MIT/202509/ts/inactive
@@ -601,6 +608,8 @@ modified: 2025-12-11T18:10:23.710Z
     - Verbose and unnatural: JSON structures add cognitive overhead for LLMs
     - Inconsistent parsing: The LLM had to parse and interpret JSON semantics
     - Less human-like: Plain text is more aligned with how LLMs naturally process information
+  - 🍴 forks
+  - https://github.com/undici77/qwen-code-no-telemetry /202602
 
 - https://github.com/google-gemini/gemini-cli /15.2kStar/apache2/202506/ts
   - 📌 a command-line AI workflow tool that connects to your tools, understands your code and accelerates your workflows.
@@ -1117,24 +1126,40 @@ modified: 2025-12-11T18:10:23.710Z
     - The grep Way: The AI tries to guess which keywords you used in your code related to your query. If it guesses a very common word like error, it might get 500 lines of logs, most of which are useless, wasting tokens and time.
     - osgrep is different. OpenCode calls osgrep to perform a semantic search. It looks for the concept of your request.  Using an indexed database It can find who calls a function and what that function calls (Call Graph Tracing), which provides deeper structural context that grep doesn’t have. This context allows more precise results saving tokens.
 
-- https://github.com/tobi/qmd /5.1kStar/MIT/202602/python/ts
+- https://github.com/tobi/qmd /9.8kStar/MIT/202602/python/ts
+  - https://github.com/levineam/qmd-skill/blob/main/SKILL.md
+    - 比官方SKILL.md更清晰
   - mini cli search engine for your docs, knowledge bases, meeting notes, whatever. 
   - Tracking current sota approaches while being all local
   - use it on the command line, it also exposes an MCP (Model Context Protocol) server for tighter integration.
   - Hybrid search: FTS + Vector + Query Expansion + Re-ranking
     - QMD combines BM25 full-text search, vector semantic search, and LLM re-ranking—all running locally via node-llama-cpp with GGUF models.
+    - Parallel Retrieval: Each query searches both FTS and vector indexes
+    - RRF Fusion: Combine all result lists using score = Σ(1/(k+rank+1)) where k=60
   - QMD uses three local GGUF models (auto-downloaded on first use): embeddinggemma, qwen3-reranker-0.6b, qmd-query-expansion-1.7B
+    - LLM models stay loaded in VRAM across requests. Embedding/reranking contexts are disposed after 5 min idle and transparently recreated on the next request (~1s penalty, models remain loaded).
+  - Index stored in: `~/.cache/qmd/index.sqlite`.
   - 🐛 
     - 需要手动更新index: qmd update
     - 未对code search做优化
+    - SKILL.md中提示通过npm全局安装cli, 需要环境中有nodejs
   - Although the tool works perfectly fine when you just tell your agent to use it on the command line, it also exposes an MCP (Model Context Protocol) server for tighter integration.
+  - Python is used exclusively for model training and fine-tuning in the finetune/ directory. It's completely separate from the CLI runtime.
+    - The Python code produces the query expansion model that the TypeScript CLI downloads and uses via node-llama-cpp.
+  - is qmd packaged into a cli that can be installed? is it installed as binary? 
+    - qmd uses a hybrid wrapper approach - not a compiled binary. 
+    - The entry point is a bash script (not a binary)
+    - Locates Node.js by checking PATH, Executes the compiled JavaScript: `exec "$NODE" "$SCRIPT_DIR/dist/qmd.js"`.
+    - sqlite-vec is a native SQLite extension (.so/.dylib), not just a Node.js native module.
+    - The workarounds to bundle sqlite-vec would add significant maintenance burden and potential failure modes.
+    - One npm package works everywhere. Binary distribution requires per-platform builds.
   - 📡 [[FEATURE] Other file types: pdf, png, etc ](https://github.com/tobi/qmd/issues/60)
   - 🐛 [Incremental embedding: skip unchanged chunks in qmd embed ](https://github.com/tobi/qmd/issues/151)
     - `qmd embed` re-processes all chunks on every run, even when the underlying documents haven't changed. 
   - 🐛 [qmd embed has no file size guard — large files cause resource exhaustion and pollute search results ](https://github.com/tobi/qmd/issues/156#issue-3929551829)
   - [How can I remove a document from the index or re-ingest it if it changes? ](https://github.com/tobi/qmd/issues/12)
     - This is already supported:
-    - Re-index changed documents: Run qmd update - it detects content changes automatically via hash comparison
+    - Re-index changed documents: Run `qmd update` - it detects content changes automatically via hash comparison
     - Remove a document: Delete the file from disk, then run qmd update - it will deactivate documents that no longer exist
     - The update command shows: Indexed: X new, Y updated, Z unchanged, W removed
   - https://x.com/tobi/status/2013217570912919575  _202601
@@ -1146,6 +1171,20 @@ modified: 2025-12-11T18:10:23.710Z
     - qmd can use just FTS5 too so not sure what you mean. If you want hybrid you can use embeddings too. It gives you three ways to search the SQLite database.
   - [QMD: Local hybrid search engine for Markdown that cuts token usage by 95%+  _202602](https://medium.com/coding-nexus/qmd-local-hybrid-search-engine-for-markdown-that-cuts-token-usage-by-95-e0f9d21f89af)
   - pr已合并 _202602 [Nodejs by tobi · Pull Request · tobi/qmd](https://github.com/tobi/qmd/pull/177)
+  - https://github.com/hmemcpy/qmd-history
+    - Automatic indexing and search for Claude Code conversation history using QMD
+  - https://github.com/AlexZeitler/lazyqmd
+    - terminal ui for qmd
+  - https://github.com/zero8dotdev/smriti /MIT
+    - Shared memory for AI-powered engineering teams. 
+    - Captures, indexes, and recalls conversations across Claude Code, Cursor, Codex, and other agents.
+    - Share team knowledge through git — no cloud required.
+    - Built on top of QMD 
+  - https://github.com/NOTAschool/gqmd /go
+    - Goalng 版 qmd, A Go rewrite of qmd
+    - https://github.com/akhenakh/qmd /go
+  - https://github.com/qntx/qmd /rust
+    - Lightweight local search engine for AI agents in Rust.
   - 🍴 forks
   - https://github.com/setbap/qmd-ui
   - https://github.com/thordin9/qmd
@@ -1188,6 +1227,7 @@ modified: 2025-12-11T18:10:23.710Z
   - Smart dedup — SHA-256 content hashing means unchanged content is never re-embedded
   - Live sync — File watcher auto-indexes changes to the vector DB, deletes stale chunks when files are removed
   - Milvus: Cosine similarity
+  - CLI Usage, Python API, Claude Code Plugin
   - 🐛 
     - Simpler chunking - Heading-based only (no token-based chunking)
     - No reranking - Hybrid search with RRF but no LLM-based reranker
@@ -1539,7 +1579,7 @@ modified: 2025-12-11T18:10:23.710Z
     - On re-index, only changed files are processed
     - Cross-references are rebuilt incrementally
 
-- https://github.com/chunkhound/chunkhound /974Star/MIT/202602/python
+- https://github.com/chunkhound/chunkhound /1kStar/MIT/202602/python
   - https://chunkhound.github.io/
   - https://pypi.org/project/chunkhound/2.0.0/ /配置文档
   - Deep Research for Code & Files

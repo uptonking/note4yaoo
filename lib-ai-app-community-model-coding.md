@@ -875,6 +875,8 @@ def slugify(text):
 
 - I like more GLM 5 than K2.5, is a shame that in z.ai is too slow
 
+- GLM 5 is slow on z.ai but the most precise and reliable model of the ones I tested. I also tested a lot with openclaw and it takes it’s time but it gets the job done and does not crush trough token usage.
+
 - ## [K2.5 is still the king for open-source models : r/opencodeCLI](https://www.reddit.com/r/opencodeCLI/comments/1r97ruh/k25_is_still_the_king_for_opensource_models/)
 - What about GLM-5 or Minimax M2.5?
   - Kimi is atleast better than both in writing. In coding, they are prolly close enough but writing is much better.

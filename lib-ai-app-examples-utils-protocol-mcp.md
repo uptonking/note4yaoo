@@ -275,6 +275,15 @@ modified: 2026-01-19T05:01:00.055Z
   - https://marimo-team.github.io/use-acp/
   - React hooks for Agent Client Protocol (ACP) over WebSockets.
   - Reactive state management
+
+- https://github.com/Areo-Joe/chrome-acp /MIT/202602/ts
+  - https://areo-joe.github.io/chrome-acp/
+  - A Chrome extension to chat with AI agents. Give them the power to see and interact with your browser.
+  - Works with any ACP-compatible agent — Claude Code, OpenCode, Gemini CLI, and more
+  - Operates as you — Agents interact with pages using your real browser session 
+  - [Built a Chrome extension using ACP - give AI agents control of your browser : r/ZedEditor](https://www.reddit.com/r/ZedEditor/comments/1r73hr3/built_a_chrome_extension_using_acp_give_ai_agents/)
+    - a Chrome extension that lets you chat with any ACP-compatible agent (Claude Code, Codex, Gemini CLI, OpenCode, etc.) directly from your browser — and give them the ability to see and interact with your tabs.
+    - Apart from the extension, I also build web UI for it. So based on the CS architecture, the backend and the agent can be deployed to anywhere(Mac mini) and you can control the agent remotely (just like OpenClaw).
 # multi-agent/a2a
 
 # streaming-llm

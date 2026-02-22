@@ -144,3 +144,22 @@ modified: 2024-05-06T02:52:41.789Z
   - 总结开发模式: history/collab/automation
   - 为下一份工作/事业打好基础
 # more
+
+# colleagues
+- tech
+  - 李亚飞
+  - 胡壮壮
+  - 刘毅
+  - 邵帅
+  - 郭意如
+  - 谢武
+  - 刘天平
+  - 黄茂俊
+  - 赵晨越
+  - 陈顺利
+
+- pm/marketing
+  - ivan 李益仪
+  - 陈西西
+  - 李佳路
+  - 廖满娥

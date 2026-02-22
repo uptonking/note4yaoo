@@ -214,9 +214,10 @@ modified: 2025-03-22T16:10:24.856Z
   - 易用性: 模型推荐 + 场景优化的提示词 + 多模型/多版本对比
     - 对同一场景,如翻译/ocr, 针对不同模型内置合理的参数且支持配置
     - roadmap: 
-      - agentic场景优化: ocr, translation
+      - agentic场景优化: ocr-vlm/pipeline, translation
       - citation, backlinks: 提升rag的准确度, 优化搜索结果中的code/text/image
       - pdf-editing: typst, formula, chart
+      - 优化 windows版 coding-agent、模型推理、 rag依赖库
       - acp/WebMCP for pdf/rich-editing
       - translation
       - extraction
@@ -239,7 +240,9 @@ modified: 2025-03-22T16:10:24.856Z
   - local agent
     - 支持同一个任务选择不同agent如claude-code/codex-cli来实现多个版本
     - 支持不同的cli来交叉验证
+    - local/cloud agentfs-sandbox
   - 🔗 citations for search: 外部数据源如字典mdx/书籍epub/wikipedia公开db/统计年鉴, 产品价值参考context7
+    - 目前cli的搜索体验太差, 可针对 context/search-engine 结合 coding-agent 开发类似notbooklm的搜索体验
     - 查看原文pdf-parts时支持仅查看前后几页, 保护原文内容
     - 类似词典库/kiwix的预置模块, 可下载、可分享, 不必每次都全量索引
     - wikipedia zim 自动翻译为中文
@@ -572,10 +575,10 @@ modified: 2025-03-22T16:10:24.856Z
   - https://github.com/cheahjs/free-llm-api-resources
 
 - news
-  - [Codex 用不完 试运行一下个人 LDC 小店 ](https://linux.do/t/topic/1606407)
-    - https://sub2api.touchx.tagzxia.com
-    - 每日限制 29$ 这个是 7 天卡，周限额是 79$
-    - 2.28 日所有的 兑换码 和 订阅 都会被撤销，所以 至少要在 2.21 日前兑换
+  - [OAI-FREE](https://newapi.zhx47.xyz/pricing)
+    - [LinuxDo 社区福利活动](https://campaign.zhx47.xyz/)
+    - [OAI-FREE 签到发送订阅 ](https://linux.do/t/topic/1632349)
+    - 都是临时渠道，不开签到了，直接每天送 100 刀余额
   - [讯飞的GLM-4.7免费用 _202602](https://linux.do/t/topic/1573384)
     - 限免至0305, 20qps
     - [讯飞星辰MaaS平台](https://maas.xfyun.cn/modelSquare)
@@ -712,14 +715,14 @@ modified: 2025-03-22T16:10:24.856Z
     - cc支持
     - [农场](https://game.daiju.live/)
     - [小呆公益站 要不要claude模型这件事 ](https://linux.do/t/topic/1424755)
-  - [KFC API](https://kfc-api.sxxe.net/console/personal), 签到
-    - Claude和gpt 暂时不支持工具调用, gemini模型没有pro
-    - API 调用频率限制为 12RPM，公益站永久免费，采用公平限流策略以保障服务稳定
-    - 别玩至尊场，1000积分一次警告扣16x，风险太高; 高级场的高积分也可以获得高收益
   - [Hotaru API](https://hotaruapi.com/console/personal)，签到, 不定期清理
     - https://api.hotaruapi.top/console/personal
     - codex
     - [〔Hotaru公益站〕新的公益站启动 ](https://linux.do/t/topic/1398297)
+  - [KFC API](https://kfc-api.sxxe.net/console/personal), 签到
+    - Claude和gpt 暂时不支持工具调用, gemini模型没有pro
+    - API 调用频率限制为 12RPM，公益站永久免费，采用公平限流策略以保障服务稳定
+    - 别玩至尊场，1000积分一次警告扣16x，风险太高; 高级场的高积分也可以获得高收益
   - [Huan API](https://ai.huan666.de/console/personal), 签到, 生图模型
     - cc支持
   - [API分享站](https://new-api-bxhm.onrender.com/console/personal)

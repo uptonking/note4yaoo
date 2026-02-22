@@ -394,7 +394,7 @@ modified: 2022-04-05T10:08:25.947Z
   - ElectricSQL gives you instant local-first for your Postgres. 
   - Elixir sync service that manages active-active replication between Postgres and SQLite
 
-- liveblocks /1.5kStar/apache2/202407/ts/服务端未开源
+- liveblocks /4.4kStar/apache2+AGPL/202602/ts
   - https://github.com/liveblocks/liveblocks
   - https://liveblocks.io/
   - The all-in-one toolkit to build collaborative products like Figma, Notion, and more.
@@ -402,6 +402,12 @@ modified: 2022-04-05T10:08:25.947Z
   - our Storage block is CRDTs based, but we're making different trade-offs.
     - our CRDTs are not "pure" so we solve some conflicts on the server. 
     - Also, we don't support Text CRDTs yet.
+  - 💰 [Open sourcing the Liveblocks sync engine and dev server _20260218](https://liveblocks.io/blog/open-sourcing-the-liveblocks-sync-engine-and-dev-server)
+    - The core WebSocket server for our sync engines, Liveblocks Storage and Yjs, is open source under the AGPL v3 license.
+    - Our client libraries (@liveblocks/client, @liveblocks/react, @liveblocks/node, and others) have been open source under the Apache 2.0 since day one.
+    - Features like Comments and Notifications are not yet include
+    - Can I self-host Liveblocks in production?
+    - 🐛 Not quite yet. The open source packages released today are designed to give a great local development, testing, and evaluation experience. While @liveblocks/server contains the same core technology that powers Liveblocks, a production-ready self-hosted deployment supporting thousands of users requires additional infrastructure pieces and expertise that are not yet easy to package.
   - [Is the backend open source?_202211](https://github.com/liveblocks/liveblocks/discussions/570)
     - The backend is not open source. It might at some point, but not in the short term.
   - [[FEATURE_REQUEST] Self-hosting?](https://github.com/liveblocks/liveblocks/issues/682)

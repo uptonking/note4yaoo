@@ -1474,6 +1474,7 @@ modified: 2025-12-19T12:43:21.150Z
 # proofreading
 - tips
   - 校对的流程和交互可参考code review的现有工具的最佳实践
+  - [The Proofreader API  |  AI on Chrome ](https://developer.chrome.com/docs/ai/proofreader-api)
 
 - https://github.com/chrisgrieser/obsidian-proofreader /30Star/MIT/202512/ts
   - AI-based proofreading and stylistic improvements for your writing. 

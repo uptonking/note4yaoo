@@ -16,6 +16,36 @@ modified: 2024-08-11T07:21:27.549Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Why I'm using SQLite as the only database for a production SaaS (and the tradeoffs I've hit so far) : r/FastAPI _202602](https://www.reddit.com/r/FastAPI/comments/1ra1xlg/why_im_using_sqlite_as_the_only_database_for_a/)
+  - I've been building a discovery engine for solo-built software — think of it as intent-based search where users type a problem ("I need to send invoices") and get matched to tools, instead of browsing by product name or upvotes.
+  - The stack is FastAPI + SQLite. No Postgres. No Redis. No managed database service. Just a single .db file.
+- Why SQLite
+  - Zero operational overhead. No connection pooling, no database server to monitor, no Docker Compose dependency. The app and the data live together.
+  - Reads are absurdly fast. My use case is read-heavy (search queries) with infrequent writes (new tool submissions, maybe 10-20/day). SQLite handles this without breaking a sweat.
+  - Backups are cp. I rsync the .db file nightly. That's the entire backup strategy. It works.
+  - Deployment is simple. One process, one file, one VPS. I deploy with a git pull and a systemd restart. The calm tech dream.
+- The tradeoffs I've hit
+  - Write concurrency. SQLite uses a file-level lock for writes. With WAL mode enabled, concurrent reads are fine, but if you have multiple processes writing simultaneously, you'll hit SQLITE_BUSY. My solution: a single FastAPI worker handles all writes via a background task queue. If you're running Gunicorn with multiple workers, this is something you have to think about.
+  - Full-text search. SQLite's built-in FTS5 is surprisingly capable. I'm using it for intent-based search with custom tokenizers. It's not Elasticsearch, but for a catalog of a few thousand items, it's more than enough. The main limitation: no fuzzy matching out of the box. I handle typo tolerance at the application layer.
+  - No native JSON operators (sort of). SQLite has json_extract() and friends, but they're not as ergonomic as Postgres's -> and ->> operators. I store structured metadata as JSON blobs and parse in Python when needed. Minor annoyance, not a blocker.
+  - Schema migrations. There's no ALTER COLUMN in SQLite. If you need to change a column type, you're rebuilding the table. I use alembic with the batch mode for this, which wraps the create-copy-drop-rename dance. Works fine, just feels clunky.
+- I think SQLite stops being the right choice when:
+  - You need concurrent writes from multiple services (microservices, multiple API servers)
+  - Your dataset exceeds ~50GB and you need complex analytical queries
+  - You need real-time replication to a read replica
+
+- I too was in my "SQLite is amazing" era at some point a few years ago. Now I'm back to boring managed PostgreSQL. Not because SQLite can't handle the load of a lot of products, I agree it can.
+  - But managed PG is really not that much harder to operate. I get insurance for the unlikely future I might need to scale beyond 1 machine. And I don't get weird looks or have to waste time explaining. Life is easy.
+- Totally fair take. The managed Postgres route removes a lot of operational headaches — you're paying for someone else to handle backups, replication, and upgrades. For a team or anything with multiple services writing to the same DB, Postgres is the obvious choice.
+  - For me the calculus is different right now: single service, read-heavy, solo developer (building indiestack.fly.dev). The operational simplicity of "it's just a file" genuinely saves me time every week. But I'm not dogmatic about it — if the requirements change, so will the database.
+
+- Using async web framework (FastAPI) with a non-async database driver sounds like a missed opportunity.
+  - I'm on a similar setup (Quart + asyncmy) with sqlite as the caching layer. Webapps wickedly fast even in Python.
+
 - ## Top 5 free SQLite GUIs 
 - https://twitter.com/notrab/status/1777708042760376638
 - [DB Browser for SQLite](https://sqlitebrowser.org/)

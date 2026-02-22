@@ -29,7 +29,13 @@ modified: 2026-01-17T22:41:25.867Z
 
 - ## 
 
-- ## 
+- ## in the next release of @opencode there is a new experimental server route "Global Session List"
+- https://x.com/ryanvogel/status/2024921007291785629
+  - If you run an opencode server from a top-level directory (e.g., ~), custom clients can now list all recent sessions across directories.
+
+- "What did we do last week?" Now can be answered.
+
+- Any parent can access it's child session right?
 
 - ## v1.2.0 of opencode includes our migration to sqlite - if anything goes wrong don't worry, your original data is not yet deleted _202602
 - https://x.com/thdxr/status/2022562561732812841

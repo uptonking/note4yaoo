@@ -16,7 +16,10 @@ modified: 2023-01-02T10:30:19.459Z
 
 - ## 
 
-- ## 
+- ## 由于 GUI 革命，内存规格从80年代末的 KB，暴涨到 90 年代的 MB。
+- https://x.com/FarSideOfMoonvy/status/2025124105595617614
+  - 由于 AI 革命，如果相信本地模型一定会成为普遍需求，那内存规格至少到几百 GB 的级别。
+  - 没人有再在意 Electron 占用多少内存了，就像现在没人记得 Overlays 一样。
 
 - ## 🐛🤔 The biggest issue with Tauri and Electrobun using the system webview is that on macOS that system webview is safari. 
 - https://x.com/stolinski/status/2024134641364709506

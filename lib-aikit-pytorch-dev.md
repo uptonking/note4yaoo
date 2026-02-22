@@ -15,7 +15,6 @@ modified: 2025-09-15T09:30:50.277Z
 
 - setup pytorch with uv on macos
   - [Accelerated PyTorch training on Mac - Metal - Apple Developer](https://developer.apple.com/metal/pytorch/)
-  - [Accelerated PyTorch training on Mac - Metal - Apple Developer](https://developer.apple.com/metal/pytorch/)
 
 ```sh
 conda install pytorch torchvision torchaudio -c pytorch-nightly

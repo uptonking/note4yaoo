@@ -644,6 +644,11 @@ modified: 2025-02-21T18:20:42.624Z
   - a high-level NLP toolkit built on top of LLMs.
   - utilities for translation, question detection, categorization, NER extraction, and more
 # eval/prompt
+- https://github.com/openai/evals /17.7kStar/MIT/202511/python
+  - Evals provide a framework for evaluating large language models (LLMs) or systems built using LLMs.
+  - We offer an existing registry of evals to test different dimensions of OpenAI models and the ability to write your own custom evals for use cases you care about.
+  - Our evals registry is stored using Git-LFS. 
+
 - https://github.com/uncSoft/anubis-oss /GPL/202602/swift
   - https://www.devpadapp.com/
   - Local LLM Testing & Benchmarking for Apple Silicon

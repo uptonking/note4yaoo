@@ -61,7 +61,18 @@ modified: 2023-10-28T13:46:14.957Z
 
 - ## 
 
-- ## 
+- ## Did you know Postgres uses TWO in-memory caches?
+- https://x.com/BenjDicken/status/2024863773216133439
+  - Every time pg reads a row, it comes from one of three places:
+  - 1) Postgres-managed shared_buffers cache. This is the "closest" layer of disk pages to Postgres, fulfilling the fastest.
+  - 2) OS page cache. Operating systems utilize unused memory as a cache of recently-read pages from the filesystem. A Pg read can miss on shared_buffers, but the page exists in the OS cache. This is still a very fast read, just need to copy into shared_buffers.
+  - 3) Filesystem / hardware. when neither cache has the data, a request is made by the filesystem to grab it from disk (much slower).
+  - It's possible for data to be duplicated in both caches! IMO using a single unified cache could be a nice benefit for PG as a future enhancement, though it's a big implementation lift.
+
+- Postgres depends on the OS page cache by design. shared_buffers manages what Postgres needs directly, and the operating system handles disk caching and read-ahead efficiently.
+  - A single unified cache sounds simple, but it would mean Postgres taking over a lot of what the operating system already does well. That would be a big and complex change.
+
+- The gains would be marginal. IRL impact of OS cache is minimal since on a database server, almost all the memory will be allocated to PG managed buffer cache (true for number of databases). Often databases also use DIRECT IO to avoid dumb caching by OS.
 
 - ## Rows in PostgreSQL are immutable and stored on the 'heap'. Every row has a hidden identifier called CTID that points to its physical location on disk.
 - https://x.com/arpit_bhayani/status/2018306637938020484

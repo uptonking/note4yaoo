@@ -1168,6 +1168,18 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
+- ## 
+
+- ## [I benchmarked PaddleOCR-VL 1.5 vs Marker vs PP-StructureV3 for PDF-to-Markdown on Modal (T4, A10G, L4) — here's what I found : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1ralqm0/i_benchmarked_paddleocrvl_15_vs_marker_vs/)
+  - TL; DR: Tested 3 PDF-to-Markdown tools on the same 15-page paper. PaddleOCR-VL: 7 min (slow, painful setup). Marker: 54s (best quality, easy setup). PP-StructureV3 lightweight: 26s (fastest, best math, but jumbles reading order). For most people: just use the Datalab API ($25/mo free credit).
+  - PP-StructureV3 lightweight on L4 — 26-32s, $0.006/run
+  - PaddleOCR-VL — slowest, worst quality, hardest to set up
+  - The "best" tool depends entirely on what you care about. If I could only pick one for general use: Marker. The reading order and completeness issues with StructureV3 are hard to work around. If LaTeX formula accuracy is critical: StructureV3 lightweight.
+
+- out of those that I mentioned the new Qwen 3.5 beats all of them in my OCR tasks, but it's too big and too slow to use if efficiently locally, so waiting for smaller versions.
+
+- MinerU has a pipeline doc tool as well
+
 - ## 🆚 [Benchmarks: Kreuzberg, Apache Tika, Docling, Unstructured.io, PDFPlumber, MinerU and MuPDF4LLM : r/Python _202602](https://www.reddit.com/r/Python/comments/1r5b9t5/benchmarks_kreuzberg_apache_tika_docling/)
   - We finished a bunch of benchmarks of Kreuzberg and other major open source tools in the text-extraction / document-intelligence spac
   - https://kreuzberg.dev/benchmarks is the UI for the benchmarks. All data is available in GitHub as part of the benchmark workflow artifacts and the release tab.

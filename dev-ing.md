@@ -16,6 +16,10 @@ https://meeting.tencent.com/p/9606972663
 
 # dev-summary
 - module/fwk/server: 灵活的tag/bookmark系统, cms, tables, bi
+
+- live-demo/play
+  - [Chrome Web AI Demos](https://chrome.dev/web-ai-demos/)
+
 - 编辑器参考
   - https://atlaskit.atlassian.com/packages/editor/editor-core
   - https://atlaskit.atlassian.com/examples/editor/editor-core/kitchen-sink
@@ -304,6 +308,25 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-log
   - ?
 
+## 0222
+
+- aionui + notebooklm-like-search
+
+## 0221
+
+- coding-agent的
+  - 代码搜索增强, 可参考 (augment-)context-engine, chunkhound
+  - 文本搜索增强, 可参考 qmd(仅命令行), mgrep, notebooklm
+
+- this project provides MCP/cli for code search.
+  - the legacy cli `scripts/ctx.py` only implements partial features of mcp servers.
+  - in current git uncommited files, it's a new cli in a new separate folder `cli` that has implemented full features of code search and auto reindexing, using programatic function call and import useful existing code/lib instead of using mcp api call. features related to memory/context enhancement are not required to implement, focusing on good code search first.
+  - there is a new skill at `skills/context-engine-cli/SKILL.md` to provide the new cli for other agent clients.
+
+- the goal is to review the uncommited code and refactor the new cli at `cli` to be pip installable, while making logic correct, code reuse, extensible, maintainable.
+  - after refacotring, the new cli should be installable by `pip install -e .` or `uv tool install -e .` , and the cli name should be `power-context`, usage should be like `power-context search "auth middleware"`. rename the skill name to be `power-context`.
+  - analyze the architecture and core data flow, refactor the new cli and make sure the new cli code indexing and search is correct and clear. finally, provide updated agent skills .
+
 ## 0220
 
 - `pip install -e .` can install a package globally in every terminal cli. when i run `uv pip install -e .`, my package is not available from terminal . how to use `uv` to install a package Install in editable mode globally?
@@ -326,11 +349,11 @@ uv tool list
 
 - this project provides MCP/cli for code search.
   - the existing cli `scripts/ctx.py` only implements partial features of mcp servers.
-  - in current git uncommited files, it's a new cli in a new separate folder `cli` that has implemented full features of code search and auto reindexing, using programatic function call and import useful existing code/lib instead of using mcp api call. features related to memory/context enhancement are not required to implement, focusing on good code search first.
-  - there is a new skill at `skills/context-engine-cli/SKILL.md` to provide the new cli for other agent clients.
+  - in current git uncommited files, it's a new cli in a new separate folder `cli` that has implemented full features of code search and auto reindexing as `power-context`, using programatic function call and import useful existing code/lib instead of using mcp api call. features related to memory/context enhancement are not required to implement, focusing on good code search first.
+  - there is a new skill at `skills/power-context/SKILL.md` to provide the new cli for other agent clients.
 
 - the goal is to review the uncommited code and provide feedback for improvements, focusing on logic correctness, code reuse, extensibility, maintainability.
-  - review the mcp implementation and the new cli implementation, recheck code resuse and extensibility. analyze the architecture and core data flow, make sure the new cli code indexing and search is correct and clear. provide more concise agent skills at skills/context-engine-cli/SKILL.md, removing commands that are unrelated to code indexing and search.
+  - review the mcp implementation and the new `power-context` cli implementation, recheck code resuse and extensibility. analyze the architecture and core data flow, make sure the new cli code indexing and search is correct and clear. provide concise agent skills at `skills/power-context/SKILL.md`, removing commands that are unrelated to code indexing and search.
 
 ## 0219
 

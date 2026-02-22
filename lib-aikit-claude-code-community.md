@@ -70,6 +70,16 @@ modified: 2025-12-18T12:26:08.445Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## Custom slash commands have been merged into skills. 
+- https://code.claude.com/docs/en/skills
+  - A file at .claude/commands/review.md and a skill at .claude/skills/review/SKILL.md both create /review and work the same way. Your existing .claude/commands/ files keep working. 
+  - Skills add optional features: a directory for supporting files, frontmatter to control whether you or Claude invokes them, and the ability for Claude to load them automatically when relevant.
+
 # discuss-tips/xp
 - ## 
 

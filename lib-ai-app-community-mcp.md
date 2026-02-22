@@ -34,8 +34,11 @@ modified: 2025-02-03T10:17:42.052Z
   - Discovery: At startup, agents load only the name and description of each available skill, just enough to know when it might be relevant.
   - Activation: When a task matches a skill’s description, the agent reads the full `SKILL.md` instructions into context.
   - Execution: The agent follows the instructions, optionally loading referenced files or executing bundled code as needed.
+  - When referencing other files in your skill, use relative paths from the skill root. Keep file references one level deep from SKILL.md. Avoid deeply nested reference chains.
   - [Agent Skills - Claude Docs](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)
   - [Introducing Skills | Claude _202510](https://claude.com/blog/skills)
+  - [Extend Claude with skills - Claude Code Docs](https://code.claude.com/docs/en/skills)
+  - Claude Code skills follow the Agent Skills open standard, which works across multiple AI tools. Claude Code extends the standard with additional features like invocation control, subagent execution, and dynamic context injection.
 
 - [Agent Client Protocol](https://agentclientprotocol.com/overview/introduction)
   - [ACP Brings JetBrains on Board — Zed's Blog _202510](https://zed.dev/blog/jetbrains-on-acp)
@@ -246,6 +249,23 @@ modified: 2025-02-03T10:17:42.052Z
 - ## 
 
 - ## 
+
+- ## playwright 的 --extension 模式，配合这个 Playwright MCP Bridge 插件，可以直接操作自己原有浏览器的实例
+- https://x.com/jakevin7/status/2025209913153388773
+  - 这个插件允许 AI 直接操作你当前正在使用的标签页。免登录： AI 可以直接使用你已经登录的 GitHub、AWS 或企业内部账户。保留 Cookie和 所有的登录状态、偏好设置和本地缓存都对 AI 可见。
+  - 尽量只在本地使用，保证安全。
+
+- ## ["OptGuideOnDeviceModel" folder taking up 3GB. Have no idea what this folder does. : r/chrome](https://www.reddit.com/r/chrome/comments/1jslb22/optguideondevicemodel_folder_taking_up_3gb_have/)
+- It's a gemini nano model to enable chrome API for AI tasks 
+
+- [Get started with built-in AI  |  AI on Chrome _202412](https://developer.chrome.com/docs/ai/get-started)
+
+- ## Let’s dive deeper into WebMCP's new APIs. 
+- https://x.com/ChromiumDev/status/2024932531032789187
+  - First, the Declarative API: it's built for high-precision, form-based tasks. By defining tools in your HTML, you enable agents to book flights or file support tickets with speed and reliability that scraping can't match
+  - For more complex workflows, there’s the Imperative API. Use this for dynamic scenarios like stadium seat selection or real-time data filtering that requires JavaScript. It provides a structured bridge for agents to execute logic without getting lost in the DOM 
+
+- got adopted because search engines rewarded it. WebMCP will follow the same path... once agent traffic matters, sites that don't declare tools just won't get used.  
 
 - ## WebMCP 是一套标准化协议，让网站可以主动告诉 AI Agent "你能在我这里做什么、怎么做"，而不是让 Agent 自己去猜测和操作 DOM。
 - https://x.com/dotey/status/2022392133827932255

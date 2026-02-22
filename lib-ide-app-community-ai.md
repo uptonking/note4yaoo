@@ -215,7 +215,9 @@ modified: 2024-08-24T16:28:20.515Z
 
 - ## 
 
-- ## 
+- ## [ACP: All AI edits are applied instantly without any diff view or approval : r/ZedEditor _202602](https://www.reddit.com/r/ZedEditor/comments/1r979j3/acp_all_ai_edits_are_applied_instantly_without/)
+  - [Switch over to built-in Claude Code tools · Pull Request · zed-industries/claude-agent-acp](https://github.com/zed-industries/claude-agent-acp/pull/316)
+  - Given a number of recent issues stemming from Claude Code using more subagents that don't play nicely with our custom mcp server, plus some slowly diverging behavior, we made the decision to just switch back over to the built-in tools and do more processing on the tool input/output
 
 - ## 🤼 So maybe forking VS Code wasn’t the right move after all
 - https://x.com/jayair/status/2007537887235969465

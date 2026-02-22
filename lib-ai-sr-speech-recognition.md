@@ -39,6 +39,15 @@ modified: 2023-02-07T09:22:03.120Z
   - [Linux version](https://github.com/chidiwilliams/buzz/issues/176)
   - #Whisper 是 #OpenAI 开源的语音识别模型，OpenAI不仅开源代码而且还开源该模型的详细解释，有开发者基于此开发了图形界面 App，用户只需要在本地运行这个 App，就可以完成语音转录的工作，不需要网络和第三方的参与
 
+- https://github.com/homelab-00/TranscriptionSuite /GPL/202602/python/ts
+  - A fully local & private Speech-To-Text app for Linux, Windows & macOS. 
+  - Python backend + Electron frontend, utilizing faster-whisper and CUDA acceleration.
+  - [TranscriptionSuite - A fully local, private & open source audio transcription for Linux, Windows & macOS : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1r9y6s8/transcriptionsuite_a_fully_local_private_open/)
+  - Is there a reason why you chose to go with FasterWhisper over WhisperX? Have you seen WhisperX's diarization capabilities? It does only support five languages but my experience has been that it's pretty amazing with those five languages. If someone could help them support even more languages it'd be great.
+    - The inspiration for my app, the RealtimeSTT package, was using `faster-whisper` so that's what I started with.
+    - I did test out WhisperX but found the results not good enough to warrant the refactoring effort. 
+    - It's the same stuff under the hood: `faster-whisper` + `pyannote`.
+
 - https://codeberg.org/pluja/web-whisper
   - https://whisper.r3d.red/
   - OpenAI's whisper on your web browser，后端go实现

@@ -10,6 +10,7 @@ modified: 2021-05-13T03:08:52.583Z
 # guide
 
 - pros
+  - ✨ 使用最新的chrome特性: split-view, WebMCP, chrome-built-in-AI
   - 内置了chromium/nodejs, 使用方碰到兼容性问题的概率小很多
   - 相对于qt/zed等原生框架实现ui，electron基于html/dom实现，可以方便集成类似rrweb进行操作回放
   - 基于electron可将数据保存在本地文件系统，比web浏览器支持更大的缓存
@@ -112,6 +113,13 @@ modified: 2021-05-13T03:08:52.583Z
 
 - maybe
   - copy zed xp to vscode
+
+## ai-electron 👾
+
+- [Chrome Web AI Demos](https://chrome.dev/web-ai-demos/)
+  - [Proofreader API](https://chrome.dev/web-ai-demos/proofreader-api-playground/)
+  - [Translator and Language Detector API Playground](https://chrome.dev/web-ai-demos/translation-language-detection-api-playground/)
+  - [Join the early preview program  |  AI on Chrome](https://developer.chrome.com/docs/ai/join-epp)
 # dev-xp
 
 # dev

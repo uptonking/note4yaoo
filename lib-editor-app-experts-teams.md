@@ -87,6 +87,8 @@ modified: 2022-08-21T10:16:52.004Z
 
 - 张驰
   - [张驰技术博客](https://juejin.cn/user/3456520286121437/posts)
+  - https://github.com/tzhangchi
+  - https://x.com/terryzhang101
 
 - fantasticit /think知识库
   - https://github.com/fantasticit

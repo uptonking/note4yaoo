@@ -94,7 +94,12 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 
-- ## 
+- ## What agentic coding methods seem to have done is reduced the cost of replicating previous-generation methods. 
+- https://x.com/dustingetz/status/2025191981207421346
+  - But without developing new frameworks, the agentic methods will simply reproduce the same set of flaws and issues that the current generation of growth stage products have. Which means they are (1) uncompetitive, and (2) late. 
+  - The fundamental problem of software is that it becomes difficult to change once you have users and revenue. 
+  - Being 100x faster to generate code does not solve that problem that landing the code in prod breaks the user's workflow and generates churn(搅乳器).
+  - Agentic coding methods also accelerate research and development, so I anticipate a new generation of more agile products. But still, these will be built by more competent founders, not less. AI reduces switching costs and accelerates learning. The advantage right now is to R&D teams that figure out how to take advantage of the new capability frontier to accelerate their very slow R&D lifecycle.
 
 - ## [I looked into OpenClaw architecture to dig some details : r/LLMDevs _202602](https://www.reddit.com/r/LLMDevs/comments/1r9136z/i_looked_into_openclaw_architecture_to_dig_some/)
   - Under the hood, it’s simpler than most people expect.

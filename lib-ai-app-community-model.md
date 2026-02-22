@@ -180,7 +180,19 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
-- ## 
+- ## Cloudflare 新出的这个 MCP 的 code mode: 可以让 Agent 以极低的 token 成本（大约 1000 个 token）, 就能学会调用整个 Cloudflare API，大约 2500 个 endpoints。
+- https://x.com/vikingmute/status/2025098635021877622
+  - 做法就是其实又包了一层，不是把所有内容的描述全部塞进上下文，而是暴露了两个工具：search() 和 execute()， search 可以让 Agent 自己写代码搜索要用到的 endpoint，execute 直接运行并且验证。这些代码都是在 在 Cloudflare 的 sandbox 中运行，所以不会泄露环境变量等等的隐私。
+
+- https://x.com/dillon_mulroy/status/2024851567334011110
+  - right now mcp is the most practical form of distribution
+- nooo, cli is so much better please lean into cli
+- Why not just a sane CLI an agent can use? “aws s3 cp” is clear, self explanatory, documents itself, and is 3 tokens.
+
+- wouldn’t server-side Code Mode and dynamic tool search result in the same token context at the end of the agent loop?
+
+- The agent searches the OpenAPI spec with the search tool, finds a subset of endpoints. Then drills down to get the req schema, again using the search tool. Wouldn’t the token size of the schema returned by the search tool roughly match the input schema of an MCP tool
+  - Creating a R2 bucket using Code Mode or using dynamic tool search would still require the agent to understand all parameters that available to create that bucket, wouldn’t it?
 
 - ## [I looked into OpenClaw architecture to dig some details : r/LLMDevs _202602](https://www.reddit.com/r/LLMDevs/comments/1r9136z/i_looked_into_openclaw_architecture_to_dig_some/)
   - Under the hood, it’s simpler than most people expect.

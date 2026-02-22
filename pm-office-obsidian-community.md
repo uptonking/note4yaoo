@@ -248,7 +248,9 @@ modified: 2024-01-23T02:52:23.932Z
 
 - ## 
 
-- ## 
+- ## 🗺️ [Chorographia Update: 0.3.0 beta release : r/ObsidianMD](https://www.reddit.com/r/ObsidianMD/comments/1r91mid/chorographia_update_030_beta_release/)
+  - my plugin that turns your vault into a semantic map. Notes embedded, projected into 2D via UMAP, and clustered into thematic zones. 
+  - the overlapping zone issue. I still really like the original (now called “Star Map”), so instead of redesigning I added a new mode: “World Map.”
 
 - ## [Do you use Daily Notes in Obsidian? Is this something you would want? : r/ObsidianMD](https://www.reddit.com/r/ObsidianMD/comments/1q8zw78/do_you_use_daily_notes_in_obsidian_is_this/)
   - 热力图换成了背景图

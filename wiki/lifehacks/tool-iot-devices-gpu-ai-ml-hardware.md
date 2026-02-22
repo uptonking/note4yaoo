@@ -28,7 +28,18 @@ modified: 2026-01-15T15:44:10.647Z
 
 - ## 
 
-- ## 
+- ## 🆚 [A few Strix Halo benchmarks (Minimax M2.5, Step 3.5 Flash, Qwen3 Coder Next) : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1rabcyp/a_few_strix_halo_benchmarks_minimax_m25_step_35/)
+  - My ROCm benchmarks are running against ROCm 7.2 as that is what my distro provides. My device has a Ryzen AI Max+ 395 @ 70W and 128GB of memory. All benchmarks are run at a context depth of 30, 000 tokens.
+  - 测试结果， vulkan的pp/tg速度都快于rocm
+
+- You really need to fix your setup. ROCm outperforms Vulkan at almost every model especially in higher depths.
+  - Also your numbers are around 25% PP and 50%-60% TG for a standard 120W strix halo. 
+  - https://kyuz0.github.io/amd-strix-halo-toolboxes/
+
+- does that mean if I dump 30k tokens in context, I would need to sit and wait for at least 7 minutes before the first token appear with the STEP and minimax?
+  - If the context is not in cache, yes, that is roughly accurate for MiniMax, for STEP it would be just under 4 minutes.
+  - If the context grows incrementally or is only altered slightly, it only needs to process the changes, and prompt processing times are low. But yes, prompt processing is painfully slow for cache misses.
+  - I'd be happy to be proven wrong and pointed to a setup / software stack that improves this on Strix Halo, but as far as I understand, this is just the state of the ROCm & Vulkan backends on the platform right now. I'm not sure if it's just all the hardware has got, or could be optimized over time.
 
 - ## [Anybody using Vulkan on NVIDIA now in 2026 already? : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1r6z3d4/anybody_using_vulkan_on_nvidia_now_in_2026_already/)
 - Vulkan is faster than rocm for my rx7900xt for whatever that’s worth
