@@ -990,8 +990,10 @@ modified: 2025-11-30T17:27:16.720Z
   - an open-source vector database, compresses RAG indexes by an impressive 97% using graph-based recomputation and on-demand embedding calculation.
   - LEANN achieves this through graph-based selective recomputation with high-degree preserving pruning, computing embeddings on-demand instead of storing them all
 
-- https://github.com/rag-web-ui/rag-web-ui /2.7kStar/apache2/202511/python/ts/提交少
+- https://github.com/rag-web-ui/rag-web-ui /2.7kStar/apache2/202511/python/ts/提交少/inactive
   - RAG Web UI is an intelligent dialogue system based on RAG
+  - FastAPI, MySQL + ChromaDB, MinIO, Langchain
+  - Nextjs, Vercel AI SDK
 
 - https://github.com/percent4/embedding_rerank_retrieval /202507/jupyter/inactive
   - 本项目是针对RAG中的Retrieve阶段的召回技术及算法效果所做评估实验。使用主体框架为LlamaIndex.

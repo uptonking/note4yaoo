@@ -70,7 +70,8 @@ modified: 2025-12-13T18:38:59.837Z
 
 - 👷 202511: 
   - Request 1: Already on our roadmap! We'll support custom configurations, but tailored for office workflows rather than pure coding scenarios.
-  - Request 2: We're taking a different approach. AionUI focuses on terminal agents with ReAct patterns, not IDE-style code indexing. We may revisit RAG if needed for office productivity use cases in the future.
+  - Request 2: We're taking a different approach. AionUI focuses on terminal agents with ReAct patterns, not IDE-style code indexing. 
+  - We may revisit `RAG` if needed for office productivity use cases in the future.
 # discuss-issues
 - ## 
 

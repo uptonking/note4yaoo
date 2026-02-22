@@ -20,6 +20,7 @@ modified: 2025-12-13T18:38:27.763Z
   - All conversations and files saved locally: local sqlite
 
 - cons
+  - 不支持rag
   - 缺少类似编辑器的 undo/diff 体验
   - chat体验待优化
     - 流式输出
@@ -36,6 +37,10 @@ modified: 2025-12-13T18:38:27.763Z
   - skills for existing apps like msoffice/libreoffice
   - 父子文件夹的rag如何去重
   - ai执行的进度和反馈不够透明和丰富
+
+- 对本地文件的rag采用client/server更合适, 而不是在每个文件夹都创建index.sqlite数据库
+  - 方便支持多个terminal/agent/app同时操作文件，能减少冲突
+  - 减少重复索引
 
 ## draft-office
 

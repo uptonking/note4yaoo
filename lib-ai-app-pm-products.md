@@ -212,7 +212,7 @@ modified: 2025-03-22T16:10:24.856Z
 # 💎🚀 aichorage - local llm with joy, 提供模型API、rag可靠性、pdf文本操作
 - selling-points
   - 易用性: 模型推荐 + 场景优化的提示词 + 多模型/多版本对比
-    - 对同一场景,如翻译/ocr, 针对不同模型内置合理的参数且支持配置
+    - 对同一场景, 如翻译/ocr, 针对不同模型内置合理的参数且支持配置
     - roadmap: 
       - agentic场景优化: ocr-vlm/pipeline, translation
       - citation, backlinks: 提升rag的准确度, 优化搜索结果中的code/text/image
@@ -240,9 +240,9 @@ modified: 2025-03-22T16:10:24.856Z
   - local agent
     - 支持同一个任务选择不同agent如claude-code/codex-cli来实现多个版本
     - 支持不同的cli来交叉验证
-    - local/cloud agentfs-sandbox
+    - local/cloud agentfs-sandbox: agentfs impl for worktree
   - 🔗 citations for search: 外部数据源如字典mdx/书籍epub/wikipedia公开db/统计年鉴, 产品价值参考context7
-    - 目前cli的搜索体验太差, 可针对 context/search-engine 结合 coding-agent 开发类似notbooklm的搜索体验
+    - 目前cli的搜索体验太差, 可针对 context/search-engine 结合 coding-agent 开发类似notebooklm的搜索体验
     - 查看原文pdf-parts时支持仅查看前后几页, 保护原文内容
     - 类似词典库/kiwix的预置模块, 可下载、可分享, 不必每次都全量索引
     - wikipedia zim 自动翻译为中文
@@ -276,6 +276,7 @@ modified: 2025-03-22T16:10:24.856Z
     - multi-docs: work across documents
     - diff without git
   - history with localsandbox/agentfs
+    - worktree
   - ai
     - split-view: 显示summary-per-page, 适合教育场景
       - summary的交互采用双栏布局交互还是类似comment面板交互需要考虑
@@ -655,21 +656,6 @@ modified: 2025-03-22T16:10:24.856Z
     - cc分组倍率0.6
     - 活跃任务检测：窗口=600s，活跃任务槽位=8（阈值>5），疑似异常并发/自动化（辅助指标）
     - [[Wind Hub]新的公益API 主帖 ](https://linux.do/t/topic/1344450)
-  - 📌 [b4u API](https://b4u.qzz.io/console), 每日转盘
-    - 会不会增加其他模型: 不会，本站专注于Claude
-    - 不支持opus
-    - 支持工具调用、上下文 128K+、支持 RooCode，不推荐接入 ClaudeCode
-    - 普通用户：每次 1 刀、RPM=10
-    - 渠道技术： Claude-SessionKey号池→claude2api→FC使能
-    - [转盘抽奖](https://tw.b4u.qzz.io/)
-    - 仅每周六晚21:00至21:30限时开放注册
-    - [【B4U公益站】是克劳德，我们有救了！（每周六限时开放注册） ](https://linux.do/t/topic/801848)
-    - b4u 按次数，不是按 token，还是用来 chat 合适，cc 几下就烧没了
-    - [[B4U]如何 配置 claude code ](https://linux.do/t/topic/1068671)
-    - 需要ccr，而且工具调用不稳定。  反正我b4u聊天经常被断，所以只能简单的写个代码修改个东西
-    - [B4U2CC：让B4U支持Claude Code＋思考 ](https://linux.do/t/topic/1285981)
-    - B4U2CC 是一个Anthorpic Message 格式到 Openai Chat 的桥接器，无需上游支持FC, 就能实现接入Claude code并支持启用thinking
-    - 不止支持b4u，任意支持openai chat格式的模型都可通过b4u2cc接入claude code，如果模型是claude的话还能启用思考
   - 📌 [薄荷 API](http://x666.me/console), 每日签到
     - 改了下速率限制。现在变成5分钟25次，对自动化和roocode这些用户变好了很多
     - [薄荷公益站签到](https://up.x666.me/), 模型一次调用 0.002
@@ -679,8 +665,6 @@ modified: 2025-03-22T16:10:24.856Z
     - Gemini 的模型是支持三种格式的： Gemini 格式（带原生和搜索）, OpenAI 格式, Claude 格式（能 CC？）
     - 反重力和veterx逆向的锅，claude对open ai格式调用问题，用cline系的产品吧，比如roo或者kilo
     - [请问薄荷怎么才能用Claude Code ](https://linux.do/t/topic/1304580)
-    - [【薄荷公益站】上新分组，codex分组 _202601](https://linux.do/t/topic/1501117)
-      - 速率限制是 5 分钟 50 次
   - [WONG公益站](https://wzw.pp.ua/console/topup), 每日签到
     - [WONG公益站](https://wzw.de5.net/console)
     - [WONG公益站](https://newapi.netlib.re/)
@@ -741,9 +725,20 @@ modified: 2025-03-22T16:10:24.856Z
   - [ibsgss公益站](https://codex.ibsgss.uk/console/personal), 签到
     - [【ibsgss公益站】支持codex cli / cherry  ](https://linux.do/t/topic/1434464)
     - 维护期限：到 codex-team 渠道耗尽为止
+  - [随缘API](https://newapi.tanmw.top/console/personal)
+    - [【随缘API公益站】开放注册！余额已调整 ](https://linux.do/t/topic/1634879)
+    - RPM:20
+    - 目前只有 GPT 和 Grok 
+    - 不保证稳定性！随时跑路
   - [Einzieg API](https://api.einzieg.site/console/personal), 签到
     - 仅提供codex模型
     - [【Einzieg公益站】再次启动 ](https://linux.do/t/topic/1569418)
+  - [api-test](https://openai.api-test.us.ci/console/personal)
+    - [开个小公益站测试一下 ](https://linux.do/t/topic/1414593)
+    - [LDC Virtual Goods Shop](https://shop.api-test.us.ci/)
+    - 包括 deepseek，硅基流动全模型，阿里云千问全模型，glm，gemini，codex
+    - 有claude, 无opus
+    - 默认 RPM30，1 级可注册，不允许批量测活
   - [GGBOOM公益站](https://ai.qaq.al/dashboard)
     - [签到控制台](https://sign.qaq.al/app)
     - [【GGBOOM公益站】签到站上线啦 ](https://linux.do/t/topic/1517772)
@@ -752,12 +747,6 @@ modified: 2025-03-22T16:10:24.856Z
     - [【GGBOOM公益站】 全面支持gpt-5.3-codex ](https://linux.do/t/topic/1581803)
   - [NPC API](https://npcodex.kiroxubei.tech/console/personal)
     - [[NPC-API]codex公益站开业 ](https://linux.do/t/topic/1564054)
-  - [api-test](https://openai.api-test.us.ci/console/personal)
-    - [开个小公益站测试一下 ](https://linux.do/t/topic/1414593)
-    - [LDC Virtual Goods Shop](https://shop.api-test.us.ci/)
-    - 包括 deepseek，硅基流动全模型，阿里云千问全模型，glm，gemini，codex
-    - 有claude, 无opus
-    - 默认 RPM30，1 级可注册，不允许批量测活
   - [纳米哈基米](https://free.nanohajimi.mom/console/personal), 签到
     - Gemini Imagen
     - [【纳米哈基米 · 公益站】 支持香蕉Pro画图，Veo视频，Gemini全系模型 ](https://linux.do/t/topic/1512770)
@@ -777,6 +766,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 会不会有签到站不会，因为我太懒了
     - 之前想过接入CC，但是对于我这种新手来说调教整个流程还是太难了
     - [【Neb 公益站】这是主贴 ](https://linux.do/t/topic/1354122)
+  - [北极AI大模型](https://bapi.outaucer.me/console/personal)， 签到
   - [Ciprohtna](https://anthorpic.us.ci/console/personal), 签到
     - [【Ciprohtna 公益站】上新 10 LDC = $100 一天订阅畅享包 ](https://linux.do/t/topic/1606615)
     - 注意！没有 opus，opus 在后台都会被重定向到 sonnet
@@ -872,6 +862,20 @@ modified: 2025-03-22T16:10:24.856Z
     - rpm-15, 不限用途，可酒馆
     - 模型: gemini-2.5/3-flash/pro
     - 渠道是自部署gemini business2api，自己域名邮箱注册的，放了100多个号
+  - 🗑️ [b4u API](https://b4u.qzz.io/console), 每日转盘, 关站20260222
+    - 会不会增加其他模型: 不会，本站专注于Claude
+    - 不支持opus
+    - 支持工具调用、上下文 128K+、支持 RooCode，不推荐接入 ClaudeCode
+    - 普通用户：每次 1 刀、RPM=10
+    - 渠道技术： Claude-SessionKey号池→claude2api→FC使能
+    - [转盘抽奖](https://tw.b4u.qzz.io/)
+    - 仅每周六晚21:00至21:30限时开放注册
+    - [【B4U公益站】是克劳德，我们有救了！（每周六限时开放注册） ](https://linux.do/t/topic/801848)
+    - [[B4U]如何 配置 claude code ](https://linux.do/t/topic/1068671)
+    - 需要ccr，而且工具调用不稳定。  反正我b4u聊天经常被断，所以只能简单的写个代码修改个东西
+    - [B4U2CC：让B4U支持Claude Code＋思考 ](https://linux.do/t/topic/1285981)
+    - B4U2CC 是一个Anthorpic Message 格式到 Openai Chat 的桥接器，无需上游支持FC, 就能实现接入Claude code并支持启用thinking
+    - 不止支持b4u，任意支持openai chat格式的模型都可通过b4u2cc接入claude code，如果模型是claude的话还能启用思考
   - 🗑️ [Privnode](https://privnode.com/)
     - free分组支持claude-code，也支持gpt-5-nano
     - https://pro.privnode.com/
@@ -1128,6 +1132,8 @@ modified: 2025-03-22T16:10:24.856Z
     - openrouter/free
   - [openrouter出免费模型路由了 _202602](https://linux.do/t/topic/1559289)
     - 稍微测了下，不是 50rpd，挺好
+  - [Introducing Web Search via the API  _202501](https://openrouter.ai/announcements/introducing-web-search-via-the-api)
+    - The OpenRouter API now supports a web search feature, available for all models. 
 
 - 📌 [Ollama Cloud models](https://ollama.com/search?c=cloud)
   - Hourly + Weekly limits
@@ -1242,6 +1248,7 @@ modified: 2025-03-22T16:10:24.856Z
   - GLM-4.5-Flash Free ✅
   - free: glm-4-flash-250414(20), glm-4-flash(200), glm-4.1v-thinking-flash(5), glm-4v-flash(10), cogview-3-flash, cogvideox-flash, glm-experimental-preview(5)
   - 没找到 用量统计/token统计 的界面
+  - 非glm-coding-plan的api，仅提供openai格式，不提供 anthropic格式
   - [免费模型 - 智谱AI开放文档](https://docs.bigmodel.cn/cn/guide/models/free/glm-4.7-flash)
   - [智谱AI - pricing](https://bigmodel.cn/pricing)
   - [模型实时调用专属权益 及 标准单价 (很多免费)](https://bigmodel.cn/usercenter/equity-mgmt/user-rights)

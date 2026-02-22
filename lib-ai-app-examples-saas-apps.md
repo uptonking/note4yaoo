@@ -609,6 +609,15 @@ modified: 2025-02-21T17:17:42.225Z
 
 ## openclaw
 
+- https://github.com/suitedaces/dorabot /MIT/202602/ts
+  - https://dora.so/
+  - [How to turn Claude Code into a personal agent with memory and goals : r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1rb2i61/how_to_turn_claude_code_into_a_personal_agent/)
+    - I built an open-source agent that wraps the Claude Agent SDK into a persistent daemon on your Mac. 
+    - It has memory, goals, scheduled tasks, messaging channels, browser automation, and more
+    - Gateway server on localhost wraps the Claude Agent SDK, which spawns Claude Code as a subprocess. 
+    - You get all the standard tools (Read, Write, Bash, Grep, etc.) plus custom MCP tools (browser via CDP, screenshots, messaging, scheduling, goals) with persistent state on top. Everything local, no cloud relay.
+    - Memory: No RAG, no vector store. Just a curated MEMORY.md (preferences, decisions, context) loaded every session, plus daily journals at memories/YYYY-MM-DD/MEMORY.md the agent writes to as it works. 
+
 - https://github.com/netease-youdao/lobsterai /MIT/202602/python/ts
   - https://lobsterai.youdao.com/
   - all-in-one personal assistant Agent developed by NetEase Youdao. It works around the clock to handle your everyday tasks — data analysis, making presentations, generating videos, writing documents, searching the web, sending emails, scheduling tasks, and more.

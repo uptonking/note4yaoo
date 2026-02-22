@@ -172,6 +172,7 @@ modified: 2025-12-11T18:10:23.710Z
   - https://github.com/iOfficeAI/AionUi/wiki
   - open-source GUI app for Gemini CLI — Better Chat UI, multi-agent support, multi-LLMs & apikey polling, Workspace Management, AI image editing & more
   - While the official Gemini CLI is powerful, its command-line interface has limitations for daily use. 
+  - 不支持rag
   - Seamlessly integrate multiple terminal AI agents - Gemini CLI, Claude Code, Qwen Code, Codex and more
     - [ACP Setup · iOfficeAI/AionUi Wiki](https://github.com/iOfficeAI/AionUi/wiki/ACP-Setup)
     - Gemini CLI Mode: Built into AionUi, users get it by default
@@ -283,7 +284,7 @@ modified: 2025-12-11T18:10:23.710Z
   - TL; DR - We've released Craft Agents as an open source product - it showcases our take on how to effectively work with agents (Especially Claude Code). 
   - It enables intuitive multitasking, no-fluff connection to any API or Service, sharing sessions, and a more document (vs code) centric workflow - in a beautiful and fluid UI.
   - It leans on Claude Code through the Claude Agent SDK - follow what we found great, and improves areas where we've desired improvements.
-  - We ourselves are building Craft Agents with Craft Agents only - no code editors - so really, any customisation is just a prompt away.
+  - We ourselves are building Craft Agents with Craft Agents only - no code editors - so, any customisation is just a prompt away.
   - We built Craft Agents because we wanted a better, more opinionated (and preferably non-CLI way) of working with the most powerful agents in the world. 
   - 支持吃anthropic格式的api
     - 可尝试 快手、cliproxyapi
@@ -332,6 +333,7 @@ modified: 2025-12-11T18:10:23.710Z
   - https://cloudcli.ai/
   - A desktop and mobile UI for Claude Code, and Cursor CLI
   - Use Claude Code or Cursor CLI on mobile and web with Claude Code UI. 
+  - 不支持rag
   - Claude Code UI free open source webui/GUI that helps you manage your Claude Code session and projects remotely
   - You can use it locally or remotely to view your active projects and sessions in Claude Code or Cursor and make changes to them
   - Supports models including Claude Sonnet 4, Opus 4.1, and GPT-5
@@ -398,7 +400,26 @@ modified: 2025-12-11T18:10:23.710Z
   - 支持chat聊天内搜索, 但不支持resume-chat
   - 看板模式、日历模式 来展示用户历史会话
   - 统计功能强大: 日历热力图, 模型, tools
+  - v1.5.0_202602: Show archived `Codex` sessions in project tree, opencode也支持
+  - [feat: add capture mode for screenshot-ready message hiding _202601](https://github.com/jhlee0409/claude-code-history-viewer/pull/61)
   - [Show HN: Claude Code History Viewer for macOS | Hacker News _202507](https://news.ycombinator.com/item?id=44459376)
+
+- https://github.com/kamranahmedse/claude-run /517Star/MIT/202601/ts
+  - A beautiful web UI for browsing Claude Code conversation history.
+  - Real-time streaming - Watch conversations update live as Claude responds
+  - Resume sessions - Copy the resume command to continue any conversation in your terminal
+
+- https://github.com/thedotmack/claude-mem /30.1kStar/AGPL/202602/ts
+  - https://claude-mem.ai/
+  - A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.
+  - Persistent Memory - Context survives across sessions
+    - SQLite Database - Stores sessions, observations, summaries
+  - Progressive Disclosure - Layered memory retrieval with token cost visibility
+  - Skill-Based Search - Query your project history with mem-search skill
+  - Web Viewer UI - Real-time memory stream at http://localhost:37777
+  - Privacy Control - Use `<private>` tags to exclude sensitive content from storage
+  - Fine-grained control over what context gets injected
+  - 🔗 Citations - Reference past observations with IDs
 
 - https://github.com/sugyan/claude-code-webui /MIT/202509/ts/inactive
   - A modern web interface for Claude Code CLI - Transform your command-line coding experience into an intuitive web-based chat interface
@@ -520,6 +541,14 @@ modified: 2025-12-11T18:10:23.710Z
 - https://github.com/agent-era/devteam /MIT/202509/ts/inactive
   - Run a team of local coding agents in your terminal. Launch multiple Claude Code, Codex or Gemini agents, switch between them
   - An exercise to push how fast development can happen with multiple parallel agents. Mostly vibe-coded
+
+- https://github.com/ruvnet/claude-flow /14.3kStar/MIT/202602/ts/python
+  - Ruflo is a comprehensive AI agent orchestration framework that transforms Claude Code into a powerful multi-agent development platform. 
+  - Coordinated Agent Teams - Run unlimited agents simultaneously in organized swarms
+  - Works With Any LLM - Switch between Claude, GPT, Gemini
+  - Plugs Into Claude Code - Native integration via MCP
+    - Native integration with Claude Code's experimental Agent Teams feature for spawning and coordinating multiple Claude instances.
+  - Extensible Plugin System - Add custom capabilities with the plugin SDK. Create workers, hooks, providers, and security modules. Share plugins via the decentralized IPFS marketplace.
 
 ### clude-plugins
 
@@ -1019,7 +1048,7 @@ modified: 2025-12-11T18:10:23.710Z
   - https://runagentos.com/
   - Mobile-first web UI for managing AI coding sessions (Claude Code, Codex, Aider, Gemini CLI). 
   - Self-hosted with multi-pane terminals, git integration, and session orchestration.
-- https://github.com/The-Vibe-Company/companion /202602/ts
+- https://github.com/The-Vibe-Company/companion /2kStar/MIT/202602/ts
   - Web & Mobile UI for Claude Code & Codex . 
   - Launch sessions, stream responses, approve tools. All from your browser / mobile
 
@@ -1235,6 +1264,61 @@ modified: 2025-12-11T18:10:23.710Z
   - https://x.com/geekbb/status/2022547666606133397
     - Zilliz（Milvus 向量数据库的开发商）发布了一个 Python 库，把 OpenClaw 的 markdown-first 记忆架构搬到了其他 Agent 框架里。它主要解决的是 AI Agent 的持久化记忆问题。
 
+- https://github.com/thedotmack/claude-mem /30.1kStar/AGPL/202602/ts
+  - https://claude-mem.ai/
+  - A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.
+  - Persistent Memory - Context survives across sessions
+    - SQLite Database - Stores sessions, observations, summaries
+  - Progressive Disclosure - Layered memory retrieval with token cost visibility
+  - Skill-Based Search - Query your project history with mem-search skill
+  - Web Viewer UI - Real-time memory stream at http://localhost:37777
+  - Privacy Control - Use `<private>` tags to exclude sensitive content from storage
+  - Fine-grained control over what context gets injected
+  - 🔗 Citations - Reference past observations with IDs
+  - v5.4.0+: Skill-based search replaces MCP tools, saving ~2, 250 tokens per session.
+
+- https://github.com/agentic-mcp-tools/memora /183Star/MIT/202602/python/ts
+  - A lightweight MCP server for semantic memory storage, knowledge graphs, and cross-session context.
+  - Persistent Storage - SQLite with optional cloud sync (S3, R2, D1)
+    - Export/Import - Backup and restore with merge strategies
+    - When using Cloudflare D1 as your database, the graph visualization is hosted on Cloudflare Pages - no local server needed.
+  - Semantic Search - Vector embeddings (TF-IDF, sentence-transformers, OpenAI)
+    - Embeddings and cross-references are computed automatically when you memory_create, memory_update, or memory_create_batch.
+  - Advanced Queries - Full-text, date ranges, tag filters (AND/OR/NOT), hybrid search
+  - RAG-powered chat panel that searches relevant memories and streams LLM responses
+  - Knowledge Graph - Interactive visualization with Mermaid rendering and cluster overlays
+    - The graph shows memories stored in Memora's database, not Claude's conversation logs directly. 
+    - Memora does not automatically record Claude Code conversations.  Memora only stores what you tell it to store via MCP tools like memory_create
+  - skill needs to be explicitly triggered at session start to load context.
+    - In a new session, you need to explicitly invoke the skill to load context: /memora
+    - Or ask directly: Search memory for [topic] 
+  - Live Graph Server - Built-in HTTP server with cloud-hosted option (D1/Pages)
+    - The server runs automatically when configured in Claude Code.
+    - A built-in HTTP server starts automatically with the MCP server, serving an interactive knowledge graph visualization.
+    - Real-time Updates - Graph, timeline, and history update via SSE when memories change
+
+- https://github.com/campfirein/cipher /3.5kStar/elastic/202512/ts/rag/inactive
+  - https://docs.byterover.dev/cipher/overview
+  - opensource memory layer specifically designed for coding agents. 
+  - Compatible with Cursor, Codex, Claude Code, Windsurf, Cline, Claude Desktop, Gemini CLI, AWS's Kiro, VS Code, Roo Code, Trae, Amp Code and Warp through MCP.
+  - MCP integration with any IDE you want.
+    - Cipher can run as an MCP (Model Context Protocol) server, allowing integration with MCP-compatible clients like Codex, Claude Desktop, Cursor, Windsurf, and other AI coding assistants.
+  - Auto-generate AI coding memories that scale with your codebase.
+  - Switch seamlessly between IDEs without losing memory and context.
+  - Dual Memory Layer that captures System 1 (Programming Concepts & Business Logic & Past Interaction) and System 2 (reasoning steps of the model when generating code).
+  - llm支持local, 包括lmstudio
+  - vector db支持 Qdrant, Milvus, ChromaDB, or In-Memory
+  - The Cipher Web UI provides an intuitive interface for interacting with memory-powered AI agents, featuring session management, tool integration, and real-time chat capabilities.
+  - [Hybrid RAG _202602](https://github.com/campfirein/cipher/discussions/293)
+    - as i got some exp in RAG design i was wondering, what effect hybrid rag could have here, i mean using also Keywordsearch internally.
+  - [[FEATURE] Implement Cross-Project Knowledge Transfer System _202509](https://github.com/campfirein/cipher/issues/249)
+    - This repository has been archived. No further work will be done. For production use, please visit byterover.dev
+  - https://github.com/RyanNg1403/agentic-search-vs-rag /MIT/202601/python/同作者
+    - A reproducible experiment comparing traditional vector-based RAG with Agentic Search (context trees) for code retrieval tasks.
+    - This experiment validates that context trees with agentic search dramatically outperform traditional RAG for code understanding tasks.
+      - 2× better retrieval accuracy (IoU score)
+      - 99% fewer tokens used per query
+
 - https://github.com/puran-water/knowledge-base-mcp /MIT/202512/python
   - https://github.com/puran-water/knowledge-base-mcp/blob/main/USAGE.md
   - MCP server for RAG knowledge base with optimized PDF ingestion (Docling), Qdrant vector store (gRPC), FTS search, and hierarchical summarization.
@@ -1286,9 +1370,11 @@ modified: 2025-12-11T18:10:23.710Z
   - works seamlessly with Claude Code as a native plugin, eliminating the need for external API calls while processing documents locally 
   - Local-First Architecture: Everything runs locally except Claude API calls
   - Multi-Format Support: Process MD, PDF, DOCX, HTML, and TXT files
+    - LangChain for document processing
   - Retrieval: Query -> Hybrid search -> Reranking -> Top-K results
   - Hybrid search: 70% semantic + 30% keyword (configurable via core.constants)
   - ChromaDB vector store with HNSW indexing (industry standard)
+    - Sentence Transformers for embedding models
   - Background File Watching: Automatic document indexing with watchdog library (debounced events)
   - Multi-Agent Orchestration: Intelligent routing between RAG and code analysis agents
   - 💡 RAG-CLI integrates with the Multi-Agent Framework (MAF) to provide intelligent query routing:
@@ -1308,7 +1394,7 @@ modified: 2025-12-11T18:10:23.710Z
   - Progress Reporting: Real-time feedback during long operations
   - Embedding Model: multi-qa-mpnet-base-dot-v1 (optimized for question-answering)
   - PDF Extraction: PyMuPDF for text extraction with OCR fallback for scanned PDFs
-  - Tesseract (Optional - for OCR)
+  - `Tesseract` (Optional - for OCR)
   - Custom Chunk Sizes For different document types:
     - Smaller chunks (2-3 sentences)
     - Preserves code structure
@@ -1745,10 +1831,33 @@ modified: 2025-12-11T18:10:23.710Z
     - The server reads the documents, splits them into logical chunks (e.g., by headings), and converts each chunk into a vector embedding.
     - Incremental Update (force_reindex=False, default): Automatically detects and re-indexes only changed files by comparing them against a tracking log. Deleted or modified chunks are pruned and replaced to keep the index up-to-date.
   - Integrates with any MCP-supported host application like Claude Desktop, Windsurf, or Cursor.
-  - https://github.com/ryan-m-bishop/docrag
+  - https://github.com/ryan-m-bishop/docrag /MIT/202511/python/inactive
     - 未实现 Incremental indexing (only index changed files)
-    - Local vector database with efficient embedding using LanceDB
+    - Local vector database with efficient embedding using `LanceDB`.
     - documentation RAG system with MCP server for Claude Code.
+    - pip-installable package with CLI and MCP server
+    - Designed for use with Claude Code via MCP
+
+- https://github.com/lyonzin/knowledge-rag /MIT/202602/python
+  - Local RAG System for Claude Code
+  - Hybrid Search: Combines semantic search (embeddings) with BM25 keyword search using Reciprocal Rank Fusion (RRF)
+  - a 100% local semantic search system that integrates with Claude Code via MCP 
+  - Multi-Format: Supports MD, PDF, TXT, Python, JSON files
+  - Smart Routing: Keyword-based routing with word boundaries ensures accurate category matching
+  - Smart Routing: Keyword-based routing with word boundaries ensures accurate category matching
+  - Fast: Parallel embedding generation + vector search with ChromaDB
+  - Documents are automatically indexed when Claude Code starts. manually reindex is supported
+  - Planned
+    - Incremental indexing (only changed files)
+    - File watcher for automatic reindexing
+    - Web UI for document management
+  - https://github.com/ttommyth/rag-memory-mcp /202505/ts/inactive
+    - MCP server for RAG-enabled memory through a knowledge graph with vector search.
+    - 未实现Incremental indexing 
+  - https://github.com/fa-ina-tic/memvid-rag /202602/python
+    - Agent Skills for local RAG (Retrieval-Augmented Generation) using memvid-sdk.
+    - These skills follow the Agent Skills specification so they can be used by any skills-compatible agent, including Claude Code and Codex CLI.
+    - 未实现Incremental indexing 
 
 - https://github.com/mufasadb/code-grapher /202508/python/inactive
   - MCP server that provides a service for graph-ify-ing the codebase then retrieving from it to help feed perfect amount of context.
@@ -1880,15 +1989,6 @@ modified: 2025-12-11T18:10:23.710Z
   - Hybrid Search: Combines vector similarity with BM25 keyword matching using Reciprocal Rank Fusion (RRF) for optimal results
   - Smart Indexing: Automatically performs full indexing for new codebases or incremental updates for previously indexed ones
 
-- https://github.com/agentic-mcp-tools/memora /183Star/MIT/202602/python/ts
-  - A lightweight MCP server for semantic memory storage, knowledge graphs, and cross-session context.
-  - Persistent Storage - SQLite with optional cloud sync (S3, R2, D1)
-  - Export/Import - Backup and restore with merge strategies
-  - Semantic Search - Vector embeddings (TF-IDF, sentence-transformers, OpenAI)
-  - Advanced Queries - Full-text, date ranges, tag filters (AND/OR/NOT), hybrid search
-  - Automatic: Embeddings and cross-references are computed automatically when you memory_create, memory_update, or memory_create_batch.
-  - Real-time Updates - Graph, timeline, and history update via SSE when memories change
-
 - https://github.com/er77/code-graph-rag-mcp /MIT/202512/ts
   - mcp server that creates intelligent graph representations of your codebase with comprehensive semantic analysis capabilities.
   - 5.5x faster than Native Claude tools with comprehensive testing results
@@ -1909,28 +2009,6 @@ modified: 2025-12-11T18:10:23.710Z
   - RAG pipeline using Voyage AI embeddings, Qdrant vector database, and hybrid retrieval with cross-encoder reranking. 
   - Includes an MCP server for seamless integration with Claude Code, Amp, and other MCP-compatible AI assistants.
   - Secondary feature: 44 IDE-agnostic workflows for building agents with Google ADK.
-
-- https://github.com/campfirein/cipher /3.5kStar/elastic/202512/ts/rag/inactive
-  - https://docs.byterover.dev/cipher/overview
-  - opensource memory layer specifically designed for coding agents. 
-  - Compatible with Cursor, Codex, Claude Code, Windsurf, Cline, Claude Desktop, Gemini CLI, AWS's Kiro, VS Code, Roo Code, Trae, Amp Code and Warp through MCP.
-  - MCP integration with any IDE you want.
-    - Cipher can run as an MCP (Model Context Protocol) server, allowing integration with MCP-compatible clients like Codex, Claude Desktop, Cursor, Windsurf, and other AI coding assistants.
-  - Auto-generate AI coding memories that scale with your codebase.
-  - Switch seamlessly between IDEs without losing memory and context.
-  - Dual Memory Layer that captures System 1 (Programming Concepts & Business Logic & Past Interaction) and System 2 (reasoning steps of the model when generating code).
-  - llm支持local, 包括lmstudio
-  - vector db支持 Qdrant, Milvus, ChromaDB, or In-Memory
-  - The Cipher Web UI provides an intuitive interface for interacting with memory-powered AI agents, featuring session management, tool integration, and real-time chat capabilities.
-  - [Hybrid RAG _202602](https://github.com/campfirein/cipher/discussions/293)
-    - as i got some exp in RAG design i was wondering, what effect hybrid rag could have here, i mean using also Keywordsearch internally.
-  - [[FEATURE] Implement Cross-Project Knowledge Transfer System _202509](https://github.com/campfirein/cipher/issues/249)
-    - This repository has been archived. No further work will be done. For production use, please visit byterover.dev
-  - https://github.com/RyanNg1403/agentic-search-vs-rag /MIT/202601/python/同作者
-    - A reproducible experiment comparing traditional vector-based RAG with Agentic Search (context trees) for code retrieval tasks.
-    - This experiment validates that context trees with agentic search dramatically outperform traditional RAG for code understanding tasks.
-      - 2× better retrieval accuracy (IoU score)
-      - 99% fewer tokens used per query
 
 - https://github.com/BeehiveInnovations/pal-mcp-server /11kStar/apache2/202512/python/inactive
   - Why rely on one AI model when you can orchestrate them all?
@@ -2019,7 +2097,7 @@ modified: 2025-12-11T18:10:23.710Z
     - Inspect writes the code like any other coding agent, but closes the loop on verifying its work by having all the context and tools needed to prove it
     - Each session runs in a sandboxed VM on Modal with everything an engineer would have locally: Vite, Postgres, Temporal, the works.
 
-- https://github.com/ishaan1013/shadow /MIT/202508/ts
+- https://github.com/ishaan1013/shadow /1.4kStar/MIT/202508/ts/inactive
   - https://shadowrealm.ai/
   - Background coding agent and real-time web interface
   - Sets up isolated execution environments for AI agents to work on GitHub repositories with tools to understand code, edit files, and much more.

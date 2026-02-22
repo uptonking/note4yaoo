@@ -740,7 +740,7 @@ modified: 2022-06-03T21:34:54.893Z
   - 输入：文档类图像, 输出：TXT或Word
   - A[/文档图像/] --> B([文档方向分类 rapid_orientation]) --> C([版面分析 rapid_layout])
 
-- https://github.com/Cinnamon/kotaemon /23kStar/apache2/202507/python
+- https://github.com/Cinnamon/kotaemon /23kStar/apache2/202507/python/inactive
   - https://cinnamon.github.io/kotaemon/
   - https://huggingface.co/spaces/cin-model/kotaemon-demo
   - open-source clean & customizable RAG UI for chatting with your documents. Built with both end users and developers in mind.

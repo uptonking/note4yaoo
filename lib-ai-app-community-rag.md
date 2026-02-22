@@ -52,6 +52,12 @@ modified: 2024-09-08T20:08:16.088Z
   - code-search
 # dev-xp
 - 实测Ollama的embedding的过程对内存消耗小, 大文档chunk和embedding耗时可能较长
+
+- 对本地文件的rag采用client/server更合适, 而不是在每个文件夹都创建index.sqlite数据库
+  - 方便支持多个terminal/agent/app同时操作文件，能减少冲突
+  - 减少重复索引
+
+- [Milvus Demo Hub: Explore AI-Powered Vector Search in Action](https://milvus.io/milvus-demos)
 # blogs-rag
 - [Visual Answer Grounding with Multi-Modal RAG Workflow _202507](https://medium.com/data-science-collective/multi-modal-rag-with-visual-answer-grounding-e8875a486c88)
 

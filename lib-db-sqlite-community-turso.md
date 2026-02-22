@@ -279,6 +279,28 @@ target/debug/limbo database.db
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## The File System Is the New Database: How I Built a Personal OS for AI Agents
+- https://x.com/koylanai/status/2025286163641118915
+  - Every AI conversation starts the same way. You explain who you are. You explain what you're working on. You paste in your style guide. You re-describe your goals. Y
+  - Personal Brain OS. It's a file-based personal operating system that lives inside a Git repository. Clone it, open it in Cursor or Claude Code, and the AI assistant has everything: my voice, my brand, my goals, my contacts, my content pipeline, my research, my failures. 
+  - No database, no API keys, no build step. Just 80+ files in markdown, YAML, and JSONL that both humans and language models read natively
+
+- The file system is actually the slowest for I/O operations. This won’t scale well.
+  - This is my personal side project. I'm not building anything to scale lol
+
+- https://x.com/Hesamation/status/2025386547176956077
+- People that say the file system is the new database don’t understand databases. File systems are incredibly slow and inefficient compared to a typical database. 
+  - This article is misguided attempt to explain why markdown files are good for agents. 
+  - The problem with current agent technology is exactly why compilers exist. When a developer writes code he’s taking human language, typically English, and giving instructions for the compiler to turn it into bytecode. Human language is incredibly verbose and linear. AI (agents) take these huge swaths of verbose text and have to return huge amounts of text. 
+  - What we need is a way to JIT (just-in-time) text into bytecode and send that to the AI. It would be much faster and efficient.
+- sqlite is a decent compromise.  Every file can be a db.
+
+- wait until you find out about OCRagents.  Not file system but pictures at different resolutions
+
 - ## Your Company is a Filesystem
 - https://x.com/runes_leo/status/2021454468836098539
   - One of the reasons Openclaw is so good is because its entire context is a filesystem on your computer.

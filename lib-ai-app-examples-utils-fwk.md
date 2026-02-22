@@ -272,6 +272,14 @@ modified: 2025-02-21T18:20:42.624Z
   - https://x.com/mitsuhiko/status/2017604638137012335
     - Self-extending agents are exciting, but the moment they can rewrite their own tools you need change control like a real system: pinned versions, eval gates, and a rollback path. Otherwise “it got better” turns into “it drifted.”
 
+- https://github.com/ruvnet/claude-flow /14.3kStar/MIT/202602/ts/python
+  - Ruflo is a comprehensive AI agent orchestration framework that transforms Claude Code into a powerful multi-agent development platform. 
+  - Coordinated Agent Teams - Run unlimited agents simultaneously in organized swarms
+  - Works With Any LLM - Switch between Claude, GPT, Gemini
+  - Plugs Into Claude Code - Native integration via MCP
+    - Native integration with Claude Code's experimental Agent Teams feature for spawning and coordinating multiple Claude instances.
+  - Extensible Plugin System - Add custom capabilities with the plugin SDK. Create workers, hooks, providers, and security modules. Share plugins via the decentralized IPFS marketplace.
+
 ## deep-research
 
 - https://github.com/666ghj/BettaFish /34.1kStar/GPL/202601/python
@@ -796,6 +804,11 @@ modified: 2025-02-21T18:20:42.624Z
     - brew services restart cliproxyapi
   - [CLIProxyAPI配置 Gemini CLI最后一步失败：Google账号权限设置不够 ](https://github.com/router-for-me/CLIProxyAPI/issues/480)
     - 大陆网友请在config.yaml中设置proxy-url或开启tun模式的代理
+  - 🐛 [Claude Code Web Search doesn’t work _202601](https://github.com/router-for-me/CLIProxyAPI/discussions/1210)
+    - https://github.com/aprils148/cpa_websearch_proxy
+  - [Web Search tool not working in AMP with cliproxyapi ](https://github.com/router-for-me/CLIProxyAPI/issues/370)
+    - You could try adding a 3rd party web search, maybe something like Exa
+    - 反重力的模型除了2.5flash，其他都不支持，可以使用mcp来补充搜索能力
   - [目前发现的一些Cli Proxy API问题的解决方法 _202602](https://linux.do/t/topic/1592398)
   - https://github.com/router-for-me/Cli-Proxy-API-Management-Center /MIT/202601/ts
     - a WebUI interface based on CLI-Proxy-API, designed to simplify configuration modifications and runtime status monitoring.

@@ -12,6 +12,27 @@ modified: 2024-06-08T10:27:08.423Z
 # discuss-stars
 - ## 
 
+- ## 🤼🤔 Cloning any random piece of SaaS is something that could already be done before agentic coding, and the economics of it haven't changed meaningfully. 
+- https://x.com/fchollet/status/2025283590972756284
+  - Before, writing the clone would cost 0.5-1% of the valuation of the legacy SaaS company. Now it might be 0.1%. 
+  - It doesn't make a difference -- if you can pull it off profitably today you could also have done it profitably in the past.
+  - The code is a very small part of the process of making such a clone successful, and the reason legacy software has often bad UX is not because code was expensive to write.
+- I genuinely think "code is now much easier to write and features are much easier to ship" strictly benefits legacy SaaS because it addresses their main weakness
+  - The main threat to legacy SaaS is other legacy SaaS trying to move horizontally into their space because it is now easier to do so
+- Circa 2012 you had a lot of devs "cloning Twitter" as a weekend project. Reproducing the UI and features of any app was never difficult and was never particularly valuable.
+
+- I agree with this, and it explains why Meta would spend billions of dollars acquiring competitors rather than just building it themselves, which they could have done so easily.
+  - However, I think there are examples of software which are just genuinely very difficult to build, even now with Vibe coding. It would still take many years to vibe code Adobe Photoshop, DaVinci Resolve/Fusion, or Unreal Engine again from scratch, even if you knew exactly "what" to build, and mimicking anything means you don't understand it in the same structural/phylogenetic way -- so you won't be able to creatively evolve it. 
+
+- the workday example is perfect. google could clone it in a week. they don't because the value isn't in the code, it's in the compliance templates, the audit trails, the integration with 500 payroll providers, the decade of edge cases baked into business logic. vibecoders cloning saas UIs are solving the easy 5% and calling it disruption.
+
+- Exactly. Code has never been the moat. Distribution, data network effects, switching costs, and trust are. Agentic coding lowers build cost, but it doesn’t magically give you customers, integrations, or brand credibility.
+
+- The moat was never the code. It was distribution and switching costs. That math still holds.
+
+- Problem of SaaS is not cloning. Their problem is that now I do not need many SaaS at all. I can just build things for myself or as internal tools for the company way cheaper than it was before
+  - The reason people pay for SaaS is not just because of the effort of development
+
 - ## we’ve found a clear way to make a project stand out and gain traction.
 - https://x.com/GithubProjects/status/1905901281165648204
 1️⃣ A Killer README is Non-Negotiable

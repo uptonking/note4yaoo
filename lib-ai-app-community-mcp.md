@@ -17,6 +17,17 @@ modified: 2025-02-03T10:17:42.052Z
   - mcp的文档内容太多, 可尝试用对应的cli工具替换api工具
 # mcp-xp
 - MCP will die this 2026. MD files and CLI will be the substitute
+# protocols-lacking
+- done
+  - mcp
+  - skills
+  - agents.md
+  - agent2agent
+  - acp
+
+- tracing/commits
+
+- worktree
 # ⚖️ ai-protocols
 - [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro)
   - [Introducing the Model Context Protocol - Anthropic _202411](https://www.anthropic.com/news/model-context-protocol)
@@ -174,6 +185,23 @@ modified: 2025-02-03T10:17:42.052Z
   - Support for JSON-RPC batching
   - Tool annotations for better describing tool behavior
 
+# discuss-mcp-cli 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## the cli is dead - the big cli players are all pivoting.
+- https://x.com/jediahkatz/status/2025263982462820544
+- CLI for humans is dead, but not for agents. We need a CLI for all pro tools like Adobe, CAD, etc so agents can take over that work.
+  - New OS will be bi-modal. It will make agents producitve and help humans monitor & review work.
+
+- TUI is goofy but CLIs are the future. Agents are better at using non-interactive CLIs than humans are at using GUIs
+
+- the tui part isn't important + is an artifact of teams wanting to ship fast and avoid making risky/expensive product bets. the real value is in having an executable + composable "agent" that can be dropped in any sandbox and given a task. it's a nice contract for "agent shape"
 # discuss-mcp-pm
 - ## 
 
@@ -405,6 +433,26 @@ modified: 2025-02-03T10:17:42.052Z
 - 
 - 
 
+# discuss-protocols-lacking
+- ## 
+
+- ## 
+
+- ## 
+
+- ## By default, Claude Code worktrees are created in .claude/worktrees inside your project.
+- https://x.com/dani_avila7/status/2025336648913793506
+  - You can change this location in Settings → Claude Code under the "Worktree Location" option.
+  - It's good practice to keep your worktrees outside your project directory. 
+
+- solid tip on the external location — ran into merge conflicts once when worktrees got gitignored incorrectly. ~/dev/.worktrees/ works great, keeps everything clean and no risk of accidentally committing the worktree dir
+  - I keep mine in ~/worktrees - much cleaner and you avoid accidentally committing worktree artifacts. Also makes backup/cleanup way easier.
+
+- pro tip: if you're using multiple projects, set up a shared worktree location like ~/.claude-worktrees/{project-name} so you can easily find and manage them across different repos
+
+- I open all my worktrees in an S3 bucket.
+
+- decapod does git worktrees better -- and they're usable by all agent(s), not just Claude.
 # discuss-ai-protocol ⚖️
 - ## 
 

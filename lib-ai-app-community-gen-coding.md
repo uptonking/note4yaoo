@@ -206,7 +206,13 @@ modified: 2025-09-01T07:58:29.058Z
 
 - ## 
 
-- ## 
+- ## AI agents are getting so good at implementation that your highest leverage is thinking deeply about how to set goals.
+- https://x.com/EnoReyes/status/2025332943179448688
+  - Specifications are an easy form factor for setting goals at the implementation level. But what is stopping you from setting goals one level above that?
+
+- just collapse it to the highest level of abstraction: “make me money”
+
+- true, but who's actually brave enough to question their own goal-setting assumptions
 
 - ## 🤔 [Research seems to show that repo-level . MD files reduce quality and increase cost : r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1r95h0c/research_seems_to_show_that_repolevel_md_files/)
 - I feel a lot of research on AI is obsolete by the time it is published. This has been discovered by the users already and dedicated documentation skills and progressive disclosure patterns address it quite well.

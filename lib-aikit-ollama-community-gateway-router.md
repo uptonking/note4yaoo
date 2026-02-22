@@ -18,6 +18,8 @@ modified: 2026-01-21T04:22:29.956Z
 - 刷新页面会使系统崩溃429，待排查是前端问题还是后端问题
   - 复现步骤: 快速连续多次刷新任意页面如 http://localhost:4090 
 
+- admin配置模型名映射后, 使用token的用户的日志名应该显示别名，而不是原始名称
+
 - ai-provier-issues
   - mistral api转换为 claude api 时, 出现异常 Expected last role User or Tool (or Assistant with prefix True) for serving but got assistant
   - 字节火山: [Transformer maxtoken field ineffective for Volcengine API with DeepSeek-v3 model ](https://github.com/musistudio/claude-code-router/issues/213)
@@ -70,6 +72,17 @@ modified: 2026-01-21T04:22:29.956Z
 
 - ## 
 
+- ## [请求增加文心一言的联网参数web_search透传 · Issue · MartialBE/one-hub _202504](https://github.com/MartialBE/one-hub/issues/671)
+  - 文心一言的联网功能都没有效果，在lobechat上面打开联网功能无效，在客户端直接使用文心一言的key有效
+
+- [请问智谱怎么开启联网？ · Issue · MartialBE/one-hub _202401](https://github.com/MartialBE/one-hub/issues/82)
+- 现在可以直接在渠道中配置插件信息了， 目前支持智谱 和 qwen的插件配置
+  - 不过 智谱的API设置web_search好像有点问题，开启和关闭没区别，并没有进行联网。 它的知识库 是可以使用的。
+
+- [接口更新 · Issue  · MartialBE/one-hub _202408](https://github.com/MartialBE/one-hub/issues/321)
+  - 希望添加是否开启web_search联网，质谱的glm-4-alltools模型目前无法调用工具
+- 这个鬼模型这么贵的吗，调试几下，我20大洋没了， 对接不起
+
 - ## [codex app接入 glm-4.7 · Issue · deanxv/done-hub](https://github.com/deanxv/done-hub/issues/43)
   - 提示这个：stream disconnected before completion: failed to parse ResponseCompleted: missing field id
 
@@ -99,6 +112,8 @@ modified: 2026-01-21T04:22:29.956Z
   - 因为我要接入自己的tts api（vits-simple-api），然后看了one api的项目代码，发现有基本的支持，我寻思着得知道发过来的请求是啥，才能针对的截取要的进行返回
   - 就是我通过oneapi的tts调用路径，调用到我的渠道，然后那个渠道再调用一次token计费渠道，再返回音频，上面的截图是token计费渠道的代码
 # discuss-donehub/one-api-internals
+- ## 
+
 - ## 
 
 - ## 

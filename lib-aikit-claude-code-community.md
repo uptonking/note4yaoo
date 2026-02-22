@@ -22,6 +22,14 @@ modified: 2025-12-18T12:26:08.445Z
 
 - 
 - 
+- 
+
+- [liteLLM - Claude Code - WebSearch Across All Providers](https://docs.litellm.ai/docs/tutorials/claude_code_websearch)
+  - Enable Claude Code's web search tool to work with any provider (Bedrock, Azure, Vertex, etc.). LiteLLM automatically intercepts web search requests and executes them server-side.
+
+- 
+- 
+- 
 
 # discuss-stars
 - ## 

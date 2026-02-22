@@ -1058,7 +1058,13 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
-- ## 
+- ## Something that’s remarkable easy and high ROI now:
+- https://x.com/GrantSlatton/status/2025311598735491250
+  - When I write a really tricky algorithm in our codebase, I can have my LLM whip up a pretty HTML / JS visualizer to give future readers a visual intuition for it, 3blue1brown style, and commit that to the repo alongside the algo
+
+- Interesting but now you have to maintain both the visualisation and the logic and keep them in sync. If i dont understand anything in a codebase i just ask it to visualise it on the fly, imo that is a better approach
+
+- have you tried beautiful mermaid diagrams? someone should turn it into a way to create it into movies/slideshow so you can get introduced to a large codebase by navigating it and then have that section of the codebase be narrated to you and then visually shown
 
 - ## 我觉得 AI 编程的发展有些像现在的编译器，普通人不需要关心它的实现，
 - https://x.com/dotey/status/2019918867812757556

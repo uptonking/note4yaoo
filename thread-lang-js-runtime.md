@@ -74,6 +74,26 @@ modified: 2024-03-30T05:55:54.349Z
   - I developed it in my free time. Yes, compiling typed .js is very much part of the plan.
 
 - int32, int64, float32, float64, shared memory multithreading, static memory layout objects. Small list left for the greatest lang ever.
+# discuss-deno
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+# discuss-bun
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Bun 才是最激进的，Zig 自己都没 Stable 
+- https://x.com/RaySong19184922/status/2025411031775019378
+- bun用的zig是自己魔改的定制版本，有些语法和zig主分支都不一致了，这不仅仅是激进，主要是zig老在breaking change
+
+- 这并不算激进吧， 用最新的 stable 版本是常规操作。 我们都是用 CI 自动更新的，一发布 CI 跑过就升级了。 用 unstable 版本才算是激进
 # discuss
 - ## 
 

@@ -121,7 +121,9 @@ modified: 2021-05-13T03:08:52.583Z
   - [Translator and Language Detector API Playground](https://chrome.dev/web-ai-demos/translation-language-detection-api-playground/)
   - [Join the early preview program  |  AI on Chrome](https://developer.chrome.com/docs/ai/join-epp)
 # dev-xp
-
+- 对本地文件的rag采用client/server更合适, 而不是在每个文件夹都创建index.sqlite数据库
+  - 方便支持多个terminal/agent/app同时操作文件，能减少冲突
+  - 减少重复索引
 # dev
 - Electron运行package.json中的main脚本中的进程被称为主进程，该进程在应用整个生命周期只会存在唯一一个，负责面窗口的创建、控制、销毁等管理行为，同时也能控制整个应用的生命周期。
   - 主进程本质上是一个 Node.js 进程，该进程充分利用了 Node.js 的跨平台特性，在其 API 的底层，抹掉了不同操作系统中的差异

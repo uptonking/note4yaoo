@@ -679,7 +679,12 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [Nanbeige 4.1 is the best small LLM, it crush qwen 4b : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1rb61og/nanbeige_41_is_the_best_small_llm_it_crush_qwen_4b/)
+- Actually, not really. I'm not waiting for a 10k token reasoning trace before the final answer arrives. Nanbeige has good output but the amount of self-babbling it does is ridiculous.
+  - Qwen 4B and Granite Micro 3B are the best small models so far for RAG and summarization.
+
+- Give me a non thinking version. 
+  - yeah just start its reply for it with 'sure' and it will skip thinking
 
 - ## Obsessed: Nanbeige4.1-3B is going viral and for good reasons. A 3B model that runs on your phone, scores 87.4% on AIME 2026, beating models 10x its size.
 - https://x.com/victormustar/status/2023423300278583727

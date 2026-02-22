@@ -725,7 +725,10 @@ AI
 
 - ## 
 
-- ## 
+- ## [How do you balance AI and human review in PR workflows? : r/codereview _202602](https://www.reddit.com/r/codereview/comments/1ra6q2e/how_do_you_balance_ai_and_human_review_in_pr/)
+  - we’ve been using an AI code review tool for a cpuple of months now. It works fine, but we’ve been running into some issues like, noisy comments, missing context and suggestions that are technically correct but miss the bigger picture.
+- We have copilot reviews turned on by default. It cannot approve code but it runs on a different model and different harness to the ones we’re used in code gen so it’s still likely to pick up stuff we or the coding agents missed. Copilot cannot see or respond to your comments on its comments. It’s really just flagging stuff for you and the human reviewer(s) to consider.
+  - Agents cannot approve PRs. We’re a pretty ai forward company but I don’t see that changing. Ultimately we’re still responsible for the ai assisted code that we commit, approve, or merge.
 
 - ## [change my mind: automated code review tools are better than human code review in 70% of cases : r/ExperiencedDevs _202601](https://www.reddit.com/r/ExperiencedDevs/comments/1q525yn/change_my_mind_automated_code_review_tools_are/)
   - Most PRs are just checking for: syntax issues, naming conventions, obvious bugs, test coverage, security vulnerabilities, code style consistency. stuff a machine does in seconds.

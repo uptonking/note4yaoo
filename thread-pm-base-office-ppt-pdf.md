@@ -23,6 +23,8 @@ modified: 2024-01-11T15:57:32.182Z
 - html-editor vs react-page-editor vs svg-generator
   - 基于markdown的编辑器方案可参考mermaid/rich-text-editor
 
+- 基于mermaid的 ppt
+
 - [Presentations and Slide Decks with AI | Gamma](https://gamma.app/)
 # discuss-stars
 - ## 

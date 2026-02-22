@@ -14,7 +14,27 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 
-- ## 
+- ## Vibe coding culture will make many people understand that a website or app is not a business; a business has a website or app.
+- https://x.com/Benn_X1/status/2025308341811970237
+  - The most important department in any company is sales/marketing. You’ll need to go outside and touch grass after vibe coding the perfect product with AI.
+  - You’ll need customers, and you’ll learn very hard lessons if you’re attempting to vibe code a B2B product.
+
+- Building something is now the easy part. The hard part was always distribution and understanding why someone would pay for it. Vibe coding just removes the illusion that the code was ever the bottleneck.
+  - The B2B point especially - you cant vibe code domain expertise or customer relationships
+
+- Vibe coding just removed the "I can't build it" excuse. Now you're left with "I can't sell it" which was always the real problem. The people who win aren't the best coders or the best vibe coders. They're the ones who know their customer.
+
+- A polished app isn’t a business, distribution, sales, and real customer demand are. Vibe coding can build the product; it can’t build the market.
+
+- If you can’t sell the problem your code solves, you’ve just built a very high-tech hobby, not a business.
+
+- https://x.com/ivanalog_com/status/2025583968167281010
+  - 快，很少是商业的核心价值；
+  - 正确，稳定，安全，高精度，可信赖地方式达成目的，往往才是重点。
+  - 而Vibe这种形式，一开始就对后者不够重视。
+  - 商业本身的价值，就在于可预测性和强可靠性，这是AI作品目前最缺乏的。
+  - 当然，反过来说，AI本身只是一个工具，是否重视商业的某一个侧面，或者使用AI代替具体哪一个环节，还是由使用AI的人决定的。未来机会无限。
+  - 说的极端一点就是，对于一家银行来说，除非有致命错误，不然，用rust代替cobol，用新架构代替一个运行稳定几十年的屎山，有什么真实的好处吗？rust和AI工程师，目前也比cobol老头贵的多。和技术爱好者相信的相反，几乎没有。工程师的审美和洁癖，在真实世界毫无意义。
 
 - ## 其实最后用户愿意买单的产品还是一样的，真正能留住用户的还是那些精心打磨，真正好用的产品。有没有 vibe coding 都一样，只要用户的需求逻辑没变。
 - https://x.com/yvbbrjdr/status/2024665256791019670
@@ -23,6 +43,27 @@ modified: 2026-02-20T17:36:40.796Z
 - 感觉产品的核心竞争力正在转变成对细节的打磨，因为复制创意越来越简单，可能几小时时间甚至更短就能出个可验证的 sample，但打磨细节到完成品需要额外的精力和时间, 虽说从 0 到 1 的乐趣被永远剥夺了
 
 - 确实是这样，软件开发发展到内容农场的阶段
+
+- ## 🤼🤔 Cloning any random piece of SaaS is something that could already be done before agentic coding, and the economics of it haven't changed meaningfully. 
+- https://x.com/fchollet/status/2025283590972756284
+  - Before, writing the clone would cost 0.5-1% of the valuation of the legacy SaaS company. Now it might be 0.1%. 
+  - It doesn't make a difference -- if you can pull it off profitably today you could also have done it profitably in the past.
+  - The code is a very small part of the process of making such a clone successful, and the reason legacy software has often bad UX is not because code was expensive to write.
+- I genuinely think "code is now much easier to write and features are much easier to ship" strictly benefits legacy SaaS because it addresses their main weakness
+  - The main threat to legacy SaaS is other legacy SaaS trying to move horizontally into their space because it is now easier to do so
+- Circa 2012 you had a lot of devs "cloning Twitter" as a weekend project. Reproducing the UI and features of any app was never difficult and was never particularly valuable.
+
+- I agree with this, and it explains why Meta would spend billions of dollars acquiring competitors rather than just building it themselves, which they could have done so easily.
+  - However, I think there are examples of software which are just genuinely very difficult to build, even now with Vibe coding. It would still take many years to vibe code Adobe Photoshop, DaVinci Resolve/Fusion, or Unreal Engine again from scratch, even if you knew exactly "what" to build, and mimicking anything means you don't understand it in the same structural/phylogenetic way -- so you won't be able to creatively evolve it. 
+
+- the workday example is perfect. google could clone it in a week. they don't because the value isn't in the code, it's in the compliance templates, the audit trails, the integration with 500 payroll providers, the decade of edge cases baked into business logic. vibecoders cloning saas UIs are solving the easy 5% and calling it disruption.
+
+- Exactly. Code has never been the moat. Distribution, data network effects, switching costs, and trust are. Agentic coding lowers build cost, but it doesn’t magically give you customers, integrations, or brand credibility.
+
+- The moat was never the code. It was distribution and switching costs. That math still holds.
+
+- Problem of SaaS is not cloning. Their problem is that now I do not need many SaaS at all. I can just build things for myself or as internal tools for the company way cheaper than it was before
+  - The reason people pay for SaaS is not just because of the effort of development
 # discuss-ai-pm-cowork/office
 - ## 
 
