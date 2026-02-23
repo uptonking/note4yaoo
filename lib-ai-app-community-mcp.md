@@ -15,6 +15,10 @@ modified: 2025-02-03T10:17:42.052Z
 
 - tips-mcp
   - mcp的文档内容太多, 可尝试用对应的cli工具替换api工具
+# skills-xp
+- https://github.com/cloudflare/agent-skills-discovery-rfc
+  - Agent Skills Discovery via Well-Known URIs
+  - A well-known URI provides a predictable location for agents and tools to discover skills published by an organization or project.
 # mcp-xp
 - MCP will die this 2026. MD files and CLI will be the substitute
 # protocols-lacking
@@ -206,6 +210,36 @@ modified: 2025-02-03T10:17:42.052Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## MCP servers are just bad skills files. 
+- https://x.com/nisten/status/2025650149968519237
+  - On that note, wondering why not just make a standard openAPI endpoint with regular discovery ability (which MCP still doesn't have lol) and feed the bot the skill tree AND backend via that.
+- opencode supports https://github.com/cloudflare/agent-skills-discovery-rfc
+
+- people always seem to focus on mcp from a tool discoverability pov, and never mention that oauth support is baked in.
+  - we need a way for non-coders to authenticate against the tools.
+  - skills literally help in no way with that.
+  - dream situation would be:
+  - better skills discoverability (like you mentioned)
+  - mcp drops the concept of tools and focuses on authorization
+- what authentication mechanism does the user use? copy/paste an api key? implement oauth yourself for each endpoint?
+- I love using MCPs instead of CLI tools because I like giving my agent a more restricted token. I don't want Son of Anton force pushing to master with my auth token.
+
+- yeah skill discovery is the real gap here. just add OpenAPI + /.well-known/skills and you're 90% there with existing tech
+  - no need to reinvent auth, rate limiting, or observability patterns we already solved
+
+- The difference is that MCP presents a validated and structured schema that correlates to internal deterministic logic calls. 
+  - Where as skills, even with resources, are bloated textual descriptions that result in stochastic behaviour and exploratory runs by the agent aiming to accurately affirm direction.
+  - You can be reductionist and say that MCP == Skills, as they seem to address the same problem on the surface - but fundamentally they are not the same thing. 
+  - Now, having MCPs provide Skill packages to better instruct them on how to interact with the API, like tricks, common workflows, gotchas, etc etc - that is a good idea, and the MCP protocol spec already supports this. I use this in all of my custom MCPs. 
+  - I also use OpenID Connect and OAuth for auth, SSL over TLS for encryption, and .well-known/ for discoverability. As these are all industry standard methods for each issue.
+  - The issue arises that the vast majority of people building/consuming MCP and Skills are not actual software engineers, and do not actually know about these things.
+
+- Try an OpenAPI-to-MCP proxy, that's exactly the logic you're talking about. It basically turns your spec into tools for the model without messing around with new configs.
 
 - ## Manus 和  OpenAI 的Operator 催生一个新的需：云端渲染的浏览器。
 - https://x.com/leeoxiang/status/1897855654091800798  

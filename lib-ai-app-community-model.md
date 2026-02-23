@@ -1058,6 +1058,33 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [3 weeks of running qwen2.5:14b in an agentic loop - context management is where everything breaks : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1rcdicv/3_weeks_of_running_qwen2514b_in_an_agentic_loop/)
+  - I've been running qwen2.5:14b locally for about 3 weeks as part of an automation pipeline - not chatting with it, but using it to actually do things: read files, make decisions, call tools, write outputs. The hardware part worked fine. What I completely underestimated was context management.
+  - The problem isn't that local models are bad at long contexts. Qwen handles 128k tokens on paper. The problem is what happens to quality as you fill that window. Around 60-70% capacity, the model starts ignoring things it read earlier. It doesn't fail loudly - it just quietly forgets constraints you set at the top of the prompt. You get plausible-looking output that misses requirements you specified 10, 000 tokens ago.
+  - I caught this because the pipeline was producing outputs that were technically correct but violated a formatting rule I'd set in the system prompt. Took me two days to figure out it wasn't a logic error - it was just the model not "seeing" the beginning of its own context anymore.
+  - The fix that actually worked: aggressive context pruning between steps. Instead of one long running context, I reset between major task phases and re-inject only what's essential. It felt wrong at first - like I was throwing away useful state. But the consistency improvements were immediate and obvious.
+  - The other thing I didn't expect: streaming matters for pipeline latency in a non-obvious way. If you're not streaming and you're waiting for a 2000-token response, you're blocking everything downstream. Obvious in hindsight, but I had batch mode on by default and it was creating weird bottlenecks.
+  - The model itself is genuinely good. On structured reasoning tasks with a clear prompt, it rivals what I was getting from API calls a year ago. The failure modes are just different from what you'd expect if you've only ever used it interactively.
+
+- yeah this tracks hard with what we've seen. we run a similar setup and the context degradation thing is real, it's so subtle too because the outputs still look reasonable until you realize key constraints from your system prompt just evaporated.
+  - one thing that helped us beyond pruning was adding a lightweight "context health check" between steps. basically a quick validation pass where the model confirms it can still recall the 3-4 most critical constraints before proceeding. catches the drift way earlier than waiting for bad outputs.
+
+- Either using multiple agents with specific roles like summarizing and replying fixes this, or using memory like a library to craft a reasonable context for the model.
+
+- I’ve noticed something similar across near enough every model (instruct/thinking) I have used regardless of (harness/scaffolding).
+  - Around 60k to 90k tokens into agentic coding, the likelihood of success diminishes significantly.
+  - Much better to kill it and start a new session. 
+  - Another alternative is to consistently break a large problem into smaller pieces and run those smaller pieces in their own session.
+  - TLDR - avoid exceeding beyond 60k tokens in a single agentic coding session window.
+  - Break the problem down and use multiple sessions under 60k tokens instead.
+  - use plan mode to build markdown files, so that the independent session builds with integrate properly.
+
 - ## Something that’s remarkable easy and high ROI now:
 - https://x.com/GrantSlatton/status/2025311598735491250
   - When I write a really tricky algorithm in our codebase, I can have my LLM whip up a pretty HTML / JS visualizer to give future readers a visual intuition for it, 3blue1brown style, and commit that to the repo alongside the algo

@@ -571,6 +571,22 @@ modified: 2025-02-21T17:17:42.225Z
 
 ## office
 
+- https://github.com/ItMeDiaTech/Documentation_Hub /MIT/202602/ts/Electron
+  - A modern desktop application for managing document processing workflows with advanced hyperlink management, table of contents generation, and comprehensive document styling capabilities.
+  - Session-Based Workflow: Organize your document processing tasks into sessions, each maintaining its own configuration, documents, and processing history.
+  - Add multiple Word documents (.docx) to each session
+  - 类似headless的实现模式, 不需要打开编辑器，直接修改选择任务，然后一键执行
+  - app未使用大模型
+  - Hyperlink Management: Append custom content IDs to hyperlink URLs
+  - Table of Contents Generation: Right-align page numbers option
+  - Table Uniformity
+  - Tracked Changes Visualization
+  - Document Processing: DocXMLater 10.1 (type-safe OOXML processing)
+  - State Management: React Context with Zustand
+  - Data Persistence: IndexedDB for sessions, LocalStorage for settings
+  - https://github.com/ItMeDiaTech/Documentation_Hub/releases/tag/v2.0.0
+    - dmg
+
 - https://github.com/Prismer-AI/Prismer /BSL/202601/python/ts
   - https://paper.prismer.ai/
   - Open Source OpenAI Prism Alternative

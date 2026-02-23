@@ -30,7 +30,7 @@ modified: 2025-09-16T13:29:11.327Z
 - ## 
 
 - ## 
-# discuss-prompts-eval 🌰
+# discuss-prompts-eval 🔠🌰
 - resources
   - [awesomeprompts.cc](https://www.awesomeprompts.cc/)
   - [⁣⁢⁤高质Prompt合集 - 飞书云文档](https://langgptai.feishu.cn/wiki/JCZHwwrsOizzaOktD4fcuGbFnzg)

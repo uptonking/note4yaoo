@@ -779,6 +779,10 @@ modified: 2025-02-21T18:20:42.624Z
   - Go 写的 Prompt 评估系统。把 Prompt 测试当单元测试跑 —— 写 YAML 定义用例，配评估器（模式匹配、LLM Judge、RAG、Agent、安全检测），跑 pass@k 处理 LLM 的不确定性。
   - 带 Web API、Leaderboard、CI 集成，
   - 支持 MMLU/GSM8K/HumanEval 标准 Benchmark。
+
+- https://github.com/3615-computer/workunit-benchmarks /202602/python
+  - Benchmarks for local and cloud LLM performance on real MCP tool calling.
+  - [I benchmarked 17 local LLMs on real MCP tool calling — single-shot AND agentic loop. The difference is massive. : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1rcjepp/i_benchmarked_17_local_llms_on_real_mcp_tool/)
 # model-proxy
 - https://github.com/lymanzhao/Ollama-serve /202503/python
   - 一个 Ollama转发代理，用于为原生 Ollama 服务添加 API 密钥认证功能。

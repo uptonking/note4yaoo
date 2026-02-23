@@ -39,7 +39,26 @@ modified: 2025-12-18T12:27:14.982Z
 
 - ## 
 
-- ## 
+- ## [没用过claude code，用起来和open code有啥区别？ _202602](https://linux.do/t/topic/1636505)
+- 自己上手体验下就好嘛, 这东西搞一下又不麻烦
+
+- claudecode 在 cli 领域是碾压级别的，不然 A\ 的协议不可能打过 openai
+
+- Claude 的护城河就在于它独特的编码优势，最神奇的地方就在于，即使是不是和 Claude Code 高度契合的模型，只要使用 Claude Code 进行开发，它的代码体验也能提升一大截。
+
+- 我也喜欢用 codex，虽然慢，但是工作很严谨。问题就是有时候太严谨了，不懂的变通，需要把要求说的非常清楚明确才行
+
+- [佬们，能讲讲cc和opencode的区别嘛  ](https://linux.do/t/topic/1636531)
+- 有人计算过 token 损耗，opencode 的 prompt 消耗要比 cc 多百分之三十到五十
+  - opencode 好处是开源，你想怎么折腾就怎么折腾
+
+- 目前体会到 opencode+oh-my-opencode 的优点是
+  - 可以用多个厂商的模型。比如现在 gpt 模型量大管饱，claude 模型比较贵，我就主要用 gpt 模型，遇到解决不了的可以一键切换到 claude 模型。并且前端的开发他会主动调用 gemini 的模型。总之就是尽量利用到各家模型的优势。
+  - Subagents 做的比较成熟。
+  - 楼上说 claude 可以节省 token，这个我没测试过。但 opencode 配合 Opencode-DCP 这个插件也可以节省很多 token。
+  - TUI 界面很好看, 感觉可以吊打 cc、codex、gemini 等一众 AI 工具
+
+- 个人使用 cc、codex，做 agent 开发参考 opencode 的架构思想。
 
 - ## [Notes after using Claude Code and OpenCode side by side : r/opencodeCLI _202602](https://www.reddit.com/r/opencodeCLI/comments/1qu44yh/notes_after_using_claude_code_and_opencode_side/)
   - Claude Code feels guarded and structured. It plans carefully, asks before doing risky stuff, and generally prioritizes safety and predictability.

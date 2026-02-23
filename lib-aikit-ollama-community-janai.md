@@ -19,6 +19,9 @@ modified: 2026-01-14T19:05:15.969Z
   - ?
   - ? 似乎不支持skills
 # draft
+- janai-cli like ollama-cli, lms-cli
+  - skills for janai-cli
+
 - search in chat
 
 - v0.7.6_20260127版本上, 自定义url都会失败

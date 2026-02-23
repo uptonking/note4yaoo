@@ -354,6 +354,15 @@ modified: 2025-11-06T18:49:13.977Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## agentic ocr skill with multi-turn feedback with codex spark >> everything.
+- https://x.com/tokenbender/status/2025587371543257091
+  - [Updated global OCR combo: ocr-refiner + pdf-ocr-feedback](https://gist.github.com/tokenbender/4efebb0baeeec7cab3059cddf603b49d)
+- Multi-turn feedback loops for OCR is a solid pattern - the agent correcting its own extraction before moving on makes a lot of sense for messy docs. How many feedback rounds do you typically see before accuracy plateaus? Wondering if there's a sweet spot before the token cost outweighs the gains.
+
 - ## 🌰 [Local VLMs for handwriting recognition — way better than built-in OCR : r/Supernote _202512](https://www.reddit.com/r/Supernote/comments/1pqs7zy/local_vlms_for_handwriting_recognition_way_better/)
 - I also experimented with with tessaract and was heavily disappointed. I agree that local VLM is the way to go, but that latency is kinda off putting. 
 

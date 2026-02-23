@@ -20,7 +20,14 @@ modified: 2021-10-29T15:02:28.882Z
 
 - ## 
 
-- ## 
+- ## we've been working on opencode for 8 months
+- https://x.com/thdxr/status/2025947428038525249
+  - the things we're currently working on were nowhere on our radar when we started, we had no clue we'd be doing what we're doing 
+  - so it's funny whenever i see people make predictions about businesses or the industry
+
+- Even when it comes to Ai, the best is yet to come. Anyone whose making bold assumptions should question their assumptions more often and more rigorously
+
+- Predictors often do have vested interests in what they predicting. Hypers are also the same. Never trust such people, make your own opinion around facts and figures.
 
 - ## 今天一个 AI 初创公司想去挑战 Google 或者字节是完全不可能的。 在巨头面前，你没有任何壁垒可言。
 - https://x.com/oran_ge/status/2002513784095887845

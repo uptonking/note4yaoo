@@ -27,6 +27,16 @@ modified: 2026-01-19T05:01:00.055Z
     - but we can keep parser private and web backend open.
     - maybe you can store all the docs in a public database, that way anyone can self-host.
     - Another option is to allow companies to host their documentation on context7's servers privately, and support authentication.
+- https://github.com/vercel-labs/opensrc /apache2/202601/ts
+  - Fetch source code for npm packages to give AI coding agents deeper context
+  - opensrc automates the process of fetching package source code so your agent can reference it when needed.
+  - https://x.com/hyojun_at/status/2025602999994011746
+    - i found codesearch is more practically useful than docs search in these days
+    - context7 vectorizing docs - not all libs and tools out there are open sourced, sometimes all they provide us with are simple docs.
+    - Most AI tools are already capable of going into the `node_modules` folder and read the source code.
+    - Docs are for humans, source code is for AIs.
+    - everybody uses only npm packages in their projects ? (maven?)
+    - what u think about deepwiki
 
 - https://github.com/czlonkowski/n8n-mcp /MIT/202602/ts
   - https://www.n8n-mcp.com/

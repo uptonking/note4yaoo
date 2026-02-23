@@ -677,7 +677,8 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [TeichAI's "Nemotron-Orchestrator" models are misleading — they're just Qwen3-8B distilled on frontier traces, not routing models : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1rch66j/teichais_nemotronorchestrator_models_are/)
+  - What NVIDIA's actual Nemotron-Orchestrator-8B does: NVIDIA's model is a pure router trained with reinforcement learning to act as a supervisor over a fleet of specialist models - a search model, a reasoning model, a math model, an answer model. It never generates the final answer itself. Its system prompt is literally "You are good at using tools." It's useless without the full ToolOrchestra ensemble running behind it.
 
 - ## [Nanbeige 4.1 is the best small LLM, it crush qwen 4b : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1rb61og/nanbeige_41_is_the_best_small_llm_it_crush_qwen_4b/)
 - Actually, not really. I'm not waiting for a 10k token reasoning trace before the final answer arrives. Nanbeige has good output but the amount of self-babbling it does is ridiculous.

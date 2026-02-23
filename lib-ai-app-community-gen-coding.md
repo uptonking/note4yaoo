@@ -206,6 +206,20 @@ modified: 2025-09-01T07:58:29.058Z
 
 - ## 
 
+- ## 
+
+- ## [Best open-source coder model for replacing Claude Code with Qwen locally? : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1rbvbzt/best_opensource_coder_model_for_replacing_claude/)
+- Qwen 3 Coder and OSS 20B are your best bet. 
+  - But realistically, don't bother. 
+  - Even if Qwen 3 Coder runs at 40t/s at long context on my machine (16GB VRAM + 32GB RAM), it is still quite slow between turns. 
+  - But the biggest issue is that these models are very unstable when it comes to applying patches to files. 
+  - With big cloud models, the issue is the model cannot code nicely (or in case of Opus, the model does not fully follow your coding conventions). With these small models, the struggle was right at the part of calling tools correctly. The dense 7B and 14B were worst, and the dense 24B was only barely better in my tests. 
+  - All of them costs me more time, not reducing my software development time.
+  - Don't get me wrong. You can chat with these to solve programming stuffs. You can do quite kickass automation with these. But agentic coding is novelty rather than workhorse with these models.
+  - even the full-sized open source models barely match Opus and Sonnet, and even if you buy new hardware, you are still using the smaller and less capable versions of those open source models. So, keep your expectation in check.
+
+- I'm on an Apple Macbook Pro M2 Max with 96 GB RAM ... hard to compare the way Apple architecture deals with cores, GPU and RAM, so not sure it's a useful comp for you ... running Qwen3 Coder Next with good quality and performance, coherence up to ~ 150k tokens. Keeps my memory pegged around 85% util and runs pretty hot haha.
+
 - ## AI agents are getting so good at implementation that your highest leverage is thinking deeply about how to set goals.
 - https://x.com/EnoReyes/status/2025332943179448688
   - Specifications are an easy form factor for setting goals at the implementation level. But what is stopping you from setting goals one level above that?

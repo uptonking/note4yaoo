@@ -12,6 +12,33 @@ modified: 2022-06-13T03:01:05.956Z
 # discuss-not-yet
 - ## 
 
+- ## 
+
+- ## 
+
+- ## Postgres has a lot of problems and the root cause of all of them is an insular(狭隘的, 孤独的, 保守的) core team that rejects improvements. 
+- https://x.com/frasergeorgew/status/2025424053226574294
+  - The most egregious(极坏的; 令人震惊的) example is the copy on write storage engine which was already outdated when it was first implemented in the 1990s. 
+  - Another insane design choice that has somehow never been revisited is one process per session. 
+  - PG has become systemically important because for various reasons it has become the default choice for new systems. It would be a good thing for the world if AWS MS and Google would fork it and fix the fundamental problems. Maybe the name Ingres is available?
+- I agree with your view that Postgres has some fundamental problems and I think it is yet to be realized for Tier 0 use-cases. However, I don’t completely agree that the core team is insular or that the right solution is for large corporations to fork it.
+  - As a side note, every technology has its flaws. The more widely adopted a technology becomes, the more visible its problems are.
+- CoW is not appropriate for an operational db like Postgres that needs to be able to support update heavy workloads. It causes explosive write amplification. Undo space is the solution that’s been adopted by everyone but Postgres.
+- Undo space? Is that part of slotting solutions?
+  - Different approaches to implementing MVCC. Every update in PostgreSQL is an insert - a new tuple is written (sometimes to the same page but not generally) and the old one is marked dead. By contrast, MySQL updates tuples in-place and inserts the old tuple into an undo log.
+
+- postgres isn't cow, it's wal+mvcc just like mysql and everyone else. people revisit the one process per session thing all the time, it would be nice to have threads so the db could support higher connection counts but you can use pgbouncer and be fine
+  - agree on process/session, but there are other issues as well for example with wal replication
+  - I think mysql binlog type replication also better than postgres stateful wal replication.
+- pg supports physical and logical, and they're both wal replication. agree mysql is generally easier to setup and less maintenance than pg_vacuum nightmares
+
+- Process per session is being revisited. Heiki is leading the efforts. Microsoft, AWS, Google are all investing in it
+
+- sth like orioledb will probably become the defacto standard storage engine, and there has been exploration work even in recent years to get rid of process-per-conn, but obv huge regression risk there so will take ages to get right, provided there even is enough appetite for it
+  - This is my point though. The pace of change is just too slow - orioledb has been in the works for 5+ years. Separately, I think orioledb is probably too big a unit of change, Oracle style heap with undo space is probably the right evolutionary path for Postgres.
+
+- This topic is very deep and if any of those forks did fork it they'd likely keep it private (e.g. aurora postgres)
+
 - ## Incremental View Maintenance in PG. Not implemented, but a neat page. PG really is going to eat everything, isn't it?
 - https://x.com/criccomini/status/1814351383715590382
 - Last time I looked into it, it wasn't really useful yet. Limited support for which SQL is supported in incrementally materialized views, and very locking-heavy.

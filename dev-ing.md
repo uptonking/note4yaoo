@@ -308,6 +308,10 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-log
   - ?
 
+## 0223
+
+- search rag-skill, + rag-cli
+
 ## 0222
 
 - aionui + notebooklm-like-search

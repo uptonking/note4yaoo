@@ -117,7 +117,11 @@ modified: 2025-03-22T16:10:24.856Z
   - 使用AI gateway 来验证客户端的有效性, 避免被2api滥用
 - 📡 roadmap
   - coding不适合同时编辑多个文件，但同时执行多个project的任务存在需求，特别是在本地硬件资源有限的条件下
+
+- agentfs: 隔离性, 轻计算/自动化, 存储安全
   - 💡 ai操作数据库的新方案，agentfs，以bash的形式操作数据库, 对数据库友好
+    - agentfs + worktree
+    - lix-vcs + agentfs
 
 - 🏘️ ai-backend/platform
   - providers-wrapper: models, communication+state, structured in/output
@@ -225,6 +229,12 @@ modified: 2025-03-22T16:10:24.856Z
       - editing-database, coding/table/image
       - chat2db
       - agent-browser
+    - 长期难以被AI取代: 
+      - 硬件相关
+      - 数据或模板资源
+      - 计算集群
+      - 快速，高精度，稳定可靠
+      - privacy
   - non-goals: local image gen
   - ✈️ local models support: mlx, lmstudio-alternative
     - 模型库: text模型, ocr模型, 翻译模型, t2i生图模型, tts, stt,  lmstudio在模型分类上做的不够好
@@ -257,6 +267,7 @@ modified: 2025-03-22T16:10:24.856Z
     - acp for pdf/rich-editing
     - diff without git
     - WebMCP for pdf/rich-editing
+    - obsidian for pdf
     - proofreading: 一键检查, 版本历史
       - chunking viz
     - 还原图文混排
@@ -272,11 +283,13 @@ modified: 2025-03-22T16:10:24.856Z
     - pdf to word: ~~显示summary-per-page~~, 适合教育场景
     - pdf体验尽量与docs一致，包括view/edit
     - 统一 文本pdf 和 图片pdf 的体验，代码实现可以不同
+    - ocr bench by claude-code
   - office
     - multi-docs: work across documents
     - diff without git
   - history with localsandbox/agentfs
     - worktree
+    - lix-vcs + agentfs
   - ai
     - split-view: 显示summary-per-page, 适合教育场景
       - summary的交互采用双栏布局交互还是类似comment面板交互需要考虑
@@ -747,6 +760,11 @@ modified: 2025-03-22T16:10:24.856Z
     - [【GGBOOM公益站】 全面支持gpt-5.3-codex ](https://linux.do/t/topic/1581803)
   - [NPC API](https://npcodex.kiroxubei.tech/console/personal)
     - [[NPC-API]codex公益站开业 ](https://linux.do/t/topic/1564054)
+  - [520 API](https://520.wcgio.com/console/personal)
+    - gpt-5.3-codex 
+  - [爱你公益站](https://x.ainiaini.xyz/console/personal)
+    - [[爱你公益站]开站 ](https://linux.do/t/topic/1638562)
+    - 暂时只有 gpt 系列，
   - [纳米哈基米](https://free.nanohajimi.mom/console/personal), 签到
     - Gemini Imagen
     - [【纳米哈基米 · 公益站】 支持香蕉Pro画图，Veo视频，Gemini全系模型 ](https://linux.do/t/topic/1512770)
@@ -996,6 +1014,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 服务器在国外，所以需要使用魔法
     - [Embedding API 使用指南](https://embedding-docs.tumuer.me/)
     - 来自 gemini, vertex 渠道的后来几天陆续添加。
+  - [【求助】寻找一个嵌入模型的公益站 ](https://linux.do/t/topic/1637724)
 
 - llm-ui/apps
   - [SmallAI](https://free.smallai.asia/chat)

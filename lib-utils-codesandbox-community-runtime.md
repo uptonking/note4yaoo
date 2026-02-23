@@ -800,6 +800,24 @@ modified: 2024-05-12T17:20:03.132Z
 - LXC does it better, you can even have virtualization
   - The difference here is that katacontainers are OCI and CRI complaint - meaning that it can immediately be used with K8s, Nomad and possibly others. You get all the features of these orchestration platforms. LXC doesn't have that (it actually predates OCI and CRI).
   - There are other orchestration systems that can use LXC - LXD, libvirt, Proxmox, and may be others. Also, LXC doesn't have traditional virtualization - that's a feature of LXD using KVM. (Do you mean system containers, as opposed to regular app containers?)
+# discuss-apple-container 🍎
+- ## 
+
+- ## 
+
+- ## 
+
+- ## NanoClaw moved from Apple Containers to Docker _202602
+- https://x.com/Gavriel_Cohen/status/2025603982769410356
+  - When I built NanoClaw, it was my personal project. I use a Mac, I loved the idea of using lightweight Apple Containers that are optimized for Apple Silicon, so that's what I shipped. 
+  - But NanoClaw isn't just my personal project anymore. Thousands of people are using it. 
+  - The right thing for the project is to default to @Docker, supported universally, battle-tested, runs everywhere. So that's what we've done.
+
+- Went through the same debate. Apple Containers are beautiful in isolation, but the moment you need CI/CD or a teammate on Linux, Docker's ecosystem gravity wins. Pragmatism > purity.
+
+- Can't you use the same OCI containers in both worlds? If Docker is not installed + macOS 26 ➡️ use Apple Containerization framework.
+
+- docker's boring but it doesn't surprise you at 2am. that's worth a lot
 # discuss-computer-use
 - ## 
 

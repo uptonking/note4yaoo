@@ -611,6 +611,14 @@ modified: 2024-08-24T16:30:20.218Z
   - Every review will include a summary of the changes, high level feedback, and line by line suggestions/comments (where relevant).
   - We use both OpenAI and Anthropic LLMs to provide pieces of our code reviews. Because of this, we need to send them sections of your code (typically the diff of the PR).
 
+- https://github.com/imbue-ai/vet /AGPL/202602/python
+  - a standalone verification tool for code changes and coding agent behavior.
+  - Vet ships as an agent skill that coding agents like OpenCode and Codex can discover and use automatically.
+  - It reviews git diffs, and optionally an agent's conversation history, to find issues that tests and linters often miss. 
+  - Vet is optimized for use by humans, CI, and coding agents.
+  - run against hosted providers or local/self-hosted OpenAI-compatible endpoints.
+  - [We built Vet, an open-source tool that reviews your coding agents work. : r/codex _202602](https://www.reddit.com/r/codex/comments/1rc8ssk/we_built_vet_an_opensource_tool_that_reviews_your/)
+
 - https://github.com/sanyuan0704/code-review-expert /2kStar/202602/skills
   - Expert code review skill: SOLID, security, performance, error handling, boundary conditions
   - SOLID Principles - Detect SRP, OCP, LSP, ISP, DIP violations

@@ -241,6 +241,30 @@ and here
 - ## 
 
 - ## 
+# discuss-md-ext
+- ## 
+
+- ## 
+
+- ## [Do you use [[wikilinks]] or [markdown] (links)? Why? : r/ObsidianMD](https://www.reddit.com/r/ObsidianMD/comments/1rb0aun/do_you_use_wikilinks_or_markdown_links_why/)
+- Wiki-links (that's what the [[filename|optional text]] Syntax is called) is an Obsidian specific thing. There are other tools that use similar concepts, but it is not guaranteed that they will work elsewhere.
+
+- Wikilinks for other notes. Markdown links for URLs. I’ve never considered Markdown links for other notes (although some apps use them for images).
+  - One other difference is that markdown-links can be relative in Obsidian, so you could identicaly named files in multiple folders, which won't work with Obsidan links
+- It's MediaWiki specific. There also other flavours of markdown, like GitHub supports linking to headers in the same document with [Jump to Section](#section-name)
+
+- Markdown links. Because I can use other terminal applications to view and edit files.
+- I use markdown links (I have the setting enabled to do it automatically).
+  - The main reason is I push my notes to a private GitHub repository for version control, and I love having the links work when viewing the repository in browser (in addition to all the other markdown and YAML rendering nicely!)
+  - Wikilinks doesn’t work on GitHub AFAIK
+
+- If all you do is make personal notes that only you yourself read then wikilinks are more readable. For people that have vaults related to any sort of studying, I think that this is just better
+  - If you want to deploy your notes by using some sort of static site generator then markdown links with either relative or full paths are needed. Personally, that is the only use case I've ever found for markdown links.
+  - As long as all of your attachments are within a single folder, You can always make a python script to convert between one and another, so I wouldn't worry about future proofing it that much
+
+- I can’t imagine why you’d use markdown links for internal note links.
+  - If you’re always using unique note names (which obsidian enforces in a vault) you’ll never have ambiguity.
+  - edit: obsidian doesn't enforce unique note names in a vault, just in folders
 # discuss-spec
 - ## 
 

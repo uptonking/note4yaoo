@@ -13,6 +13,38 @@ modified: 2026-02-20T17:36:40.796Z
 - ## 
 
 - ## 
+# discuss-ai-moat 🤼
+- ## 
+
+- ## 
+
+- ## 
+
+- ## "Code Is Cheap Now. Software Isn’t."
+- https://x.com/VKazulkin/status/2025622866306519274
+- What matters isn’t tools, it’s the idea and the ability to solve real problems. You have to think like a builder and a dreamer. Engineering is the execution layer; vision is the leverage.
+  - Focus on what AI can’t outperform you at, original thinking, creative problem framing, and connecting dots others don’t even see. Then use AI as force-multiplication for what it does beat you at: speed, scale, and relentless processing.
+  - This is a golden era for high-IQ domain experts who actually execute.
+  - Find your niche, move fast, and build before the market catches up.
+
+- https://x.com/ivanfioravanti/status/2025656085344821617
+  - We have so much power in our hands, we can build any software nowadays, but having so much possibilities make me unable to choose a single one to focus on. 
+- The same feeling I had starting out in ML a decade ago. Back then when confronted with the choice I narrowed down the scope to Vision and NLP. The knowledge gained generalised pretty well and is the foundation to which I help build the MLX ecosystem.
+
+- Find a problem you have, or something you work on. Use that power to do it better by figuring out new ways. You have been focusing on optimizing the tools, and you need use them to solve your own problems to complete the picture. Better, drive your efforts by the problems in hand.
+
+- I know what I'm building and sticking to that. The advantage: When models get better, the work on that one thing improves. You can build anything, but if you pick 1 problem to solve, and get insanely good at that, now you have something worth it for people to use.
+
+- ## I love AI but please no more blog posts about AI destroying “moats” that weren’t moats in the first place.
+- https://x.com/bernhardsson/status/2025729124359094332
+  - A competitor could always clone the UI (read about the Samwer brothers) for instance.
+
+- the real moat is usually in the data model and workflow optimizations you discover after v1. anyone can clone a UI, but few stick around long enough to learn why certain tables need careful indexing or which queries need materialized views
+
+- Agreed. The "AI kills all moats" take misunderstands what a moat actually is. Real moats are distribution, trust, switching costs, proprietary data, and relationships. Those don't go away. If your only moat was "we coded it and others didn't" — that was never a moat.
+  - this is the right frame. I'd add: for agents specifically, the moat is operational trust. anyone can spin up an LLM with tools. but getting a human to let it touch their email, calendar, wallet, and leave it running overnight? that takes months of earned reliability. code is commodity, trust is compounding.
+
+- if your only edge was a prettier UI you were cooked way before Claude showed up
 
 - ## Vibe coding culture will make many people understand that a website or app is not a business; a business has a website or app.
 - https://x.com/Benn_X1/status/2025308341811970237

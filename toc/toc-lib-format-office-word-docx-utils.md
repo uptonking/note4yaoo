@@ -50,6 +50,12 @@ modified: 2023-01-09T11:03:32.533Z
   - Node.js library to parse text out of any office file. 
   - Currently supports docx, pptx, xlsx and odt, odp, ods..
 
+- https://github.com/ItMeDiaTech/docXMLater /MIT/202602/ts
+  - production-ready TypeScript/JavaScript framework for creating, reading, and manipulating Microsoft Word (.docx) documents programmatically.
+  - Create DOCX files from scratch
+  - Buffer-based operations (load/save from memory)
+  - Full OpenXML compliance with extensive API coverage and robust test suite
+
 - https://github.com/Ziv-Barber/officegen /MIT/202103/js
   - Standalone Office Open XML files (Microsoft Office 2007 and later) generator for Word (docx), PowerPoint (pptx) and Excell (xlsx) in javascript. 
   - The output is a stream.

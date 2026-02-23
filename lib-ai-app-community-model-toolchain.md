@@ -554,7 +554,13 @@ PP Speed: Q3 GGUF: 50 t/s
 
 - ## 
 
-- ## 
+- ## [I benchmarked 17 local LLMs on real MCP tool calling — single-shot AND agentic loop. The difference is massive. : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1rcjepp/i_benchmarked_17_local_llms_on_real_mcp_tool/)
+  - I benchmarked 17 local LLMs on real MCP tool calling — not synthetic function-calling evals, but actual calls against a production API with 19 tools, real validation, and real results.
+  - I ran each model twice. First single-shot (one API call, score the first response). Then agentic (model gets tool results back, keeps going until it passes or times out). 
+  - Same 17 models, same 28 tasks, same MCP server.
+  - 17 models on a 4080 16GB + 64GB RAM, running via LM Studio, talking to a real MCP server (Workunit's project management API — 19 tools) through a custom Python runner.
+  - 5 models are not trained for tool calling (per LM Studio metadata) — included to test whether raw reasoning ability compensates for missing fine-tuning.
+  - The benchmark runs against Workunit's MCP server, so you need a free account at workunit.app to get an MCP token.
 
 - ## [New functiongemma model: not worth downloading : r/ollama _202512](https://www.reddit.com/r/ollama/comments/1pq69o5/new_functiongemma_model_not_worth_downloading/)
   - I have a valid MCP toolset that works great with other very small models such as qwen3:1.7b. I obtain quite reliable function calls. So, an even smaller model that could do this with the same quality sounds great. 

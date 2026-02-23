@@ -99,7 +99,8 @@ modified: 2025-12-16T06:25:32.663Z
 # discuss-tanstack-router
 - ## 
 
-- ## 
+- ## 📡 [feat: add rsbuild support for TanStack Start _202602](https://github.com/TanStack/router/pull/6623)
+- 
 
 - ## 📡 [Parallel Routes (named Outlets) Feature _202305](https://github.com/TanStack/router/discussions/605)
   - I was wondering if there were plans to introduce parallel routes similar to what exists in Next.js which allows for matching multiple routes in the same segment but being independent chunks and with a different data URL.

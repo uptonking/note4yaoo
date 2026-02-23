@@ -583,15 +583,33 @@ modified: 2023-08-29T10:12:22.345Z
   - Download files directly from any GitHub repo
   - Grab release assets (including extracting from zip/tar archives)
   - Configure with TOML, YAML, JSON, or package.json
-# git-ai
-- https://github.com/jnsahaj/lumen /MIT/202411/rust
-  - Instant AI Git Commit message, Git changes summary from the CLI (no API key required)
-
+# git-ai 👾
 - https://github.com/git-ai-project/git-ai /490Star/apache2/202601/rust
   - https://usegitai.com/
   - Git extension for tracking the AI-generated code in your repos
   - Supported Coding Agents call Git AI and mark the lines they insert as AI-generated.
     - On commit, Git AI saves the final AI-attributions into a Git Note. These notes power AI-Blame, AI contribution stats, and more. The CLI makes sure these notes are preserved through rebases, merges, squashes, cherry-picks, etc.
+
+- https://github.com/opral/lix /MIT/202602/ts
+  - https://lix.dev/
+  - Embeddable & universal version control system for AI agents
+  - Lix is a library you import. Get branching, diff, rollback in your existing stack
+  - Tracks semantic changes — diffs, blame, and history are queryable via SQL
+  - Approval workflows for agents — agents propose changes in isolated versions, humans review and merge
+  - In Lix, semantic changes are stored as first-class records at write time, so diffs, audit trails, and rollback are native and queryable.
+    - Unlike Git's line-based diffs, Lix understands file structure through plugins. 
+  - Lix can track: JSON, CSV, Excel
+  - Lix uses SQL databases as query engine and persistence layer. Virtual tables like `file` and `file_history` are exposed on top
+    - When a file is written, a plugin parses it and detects entity-level changes. 
+    - These changes (deltas) are stored in the database, enabling branching, merging, and audit trails.
+  - [Comparison to Git | Lix Documentation](https://lix.dev/docs/comparison-to-git)
+    - Use Git for source code. Use Lix when you need version control as a library.
+    - Git stores snapshots and derives diffs by comparing versions. Lix stores semantic changes (deltas) as data, so diffs, audit trails, and rollback are native and queryable.
+    - Git diff drivers can improve display for some formats, but Git remains snapshot-first and toolchain-oriented. 
+    - Lix is a library: semantic deltas, approvals, and queryable history as data.
+
+- https://github.com/jnsahaj/lumen /MIT/202411/rust
+  - Instant AI Git Commit message, Git changes summary from the CLI (no API key required)
 # git-storage
 - https://github.com/CodeForPhilly/jawn /js
   - a node.js module that allows distributed version control of Tabular Data. 

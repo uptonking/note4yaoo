@@ -459,7 +459,7 @@ modified: 2025-11-30T17:27:16.720Z
     - Very Large Files: Individual files >100MB may cause memory issues
     - Non-English OCR: Currently only English OCR is configured
 
-- https://github.com/2dogsandanerd/Knowledge-Base-Self-Hosting-Kit /MIT/202511/python
+- https://github.com/2dogsandanerd/Knowledge-Base-Self-Hosting-Kit /171Star/MIT/202602/python
   - A Docker-powered RAG system that understands the difference between code and prose. 
   - Ingest your codebase and documentation, then query them with full privacy and zero configuration.
   - Different chunking strategies for code vs. prose
@@ -475,6 +475,7 @@ modified: 2025-11-30T17:27:16.720Z
     - chroma run --host 0.0.0.0 --port 8000 --path ~/Documents/repos/libfwk/ai-llm/all-rag/Knowledge-Base-Self-Hosting-Kit/backend/ENV/ingestdb
     - OLLAMA_DEBUG=2 ollama serve
     - uv run --env-file .env -- uvicorn src.main:app --port 8080
+  - https://github.com/2dogsandanerd/RAG_enterprise_core /NonOpen
   - [I spent 2 years building privacy-first local AI. My conclusion: Ingestion is the bottleneck, not the Model. (Showcase: Ollama + Docling RAG Kit) : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pamu5t/i_spent_2_years_building_privacyfirst_local_ai_my/)
     - I’ve been working on strictly local, data-privacy-compliant AI solutions for about two years
     - The biggest lesson I learned: We spend 90% of our time debating model quantization, VRAM, and context windows. But in real-world implementations, the project usually fails long before the prompt hits the LLM. It fails at Ingestion.

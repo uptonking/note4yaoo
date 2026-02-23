@@ -45,6 +45,7 @@ modified: 2023-11-28T14:48:45.910Z
       - 快速定位到指定位置，快速分享链接和截图
       - 另一种思路: agent执行action后，整个repo都能回到指定action的时刻，类似git回到某个commit的状态
       - rrweb + editor-diff
+    - agentfs + lix-vcs
   - 🪟 table
     - diff
     - 基于文本的table格式: gfm, frontmatter-yaml; + diff
