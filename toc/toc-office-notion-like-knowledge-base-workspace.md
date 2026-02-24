@@ -835,8 +835,9 @@ modified: 2022-06-03T21:34:54.893Z
   - AI/RAG Integration - Document chunking for LLM pipelines with sentence boundaries and metadata (v1.3.0+)
   - Low memory usage - Efficient streaming for large PDFs
 
-- https://github.com/ucbepic/docetl /3.1kStar/MIT/202511/python
+- https://github.com/ucbepic/docetl /3.6kStar/MIT/202602/python/ts
   - https://docetl.org/
+  - https://www.docetl.org/playground
   - DocETL is a tool for creating and executing data processing pipelines, especially suited for complex document processing tasks. 
   - It offers a low-code, declarative YAML interface to define LLM-powered operations on complex data.
   - DocETL is the ideal choice when you're looking to maximize correctness and output quality for complex tasks over a collection of documents or unstructured datasets.

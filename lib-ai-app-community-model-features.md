@@ -118,6 +118,16 @@ modified: 2025-11-05T19:04:50.350Z
 
 - ## 
 
+- ## 
+
+- ## [Benchmarked 4 AI Memory Systems on 600-Turn Conversations - Here Are the Results : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1rckcww/benchmarked_4_ai_memory_systems_on_600turn/)
+  - Tested Mem0 against OpenAI Memory, LangMem, and MemGPT across 10 multi-session conversations with 200 questions each.
+  - Mem0: 66.9% accuracy, 1.4s p95 latency, ~2K tokens per query
+  - Mem0 Graph: 68.5% accuracy, 2.6s p95 latency, ~4K tokens (superior temporal reasoning)
+  - LangMem: 58.1% accuracy, 60s p95 latency, ~130 tokens
+  - OpenAI Memory: 52.9% accuracy, 0.9s p95 latency, ~5K tokens
+  - What stands out: Mem0 achieved 14 percentage points higher accuracy than OpenAI Memory while maintaining sub-2s response times. The graph variant excels at temporal queries (58.1% vs OpenAI's 21.7%) and multi-hop reasoning.
+
 - ## [Please stop creating "memory for your agent" frameworks. : r/ClaudeCode _202602](https://www.reddit.com/r/ClaudeCode/comments/1r4asf6/please_stop_creating_memory_for_your_agent/)
   - Claude Code already has all the memory features you could ever need. Want to remember something? Write documentation! Create a README. Create a SKILL.md file. Put in a directory-scoped CLAUDE.md. Temporary notes? Claude already has a tasks system and a plannig system and an auto-memory system. We absolutely do not need more forms of memory!
 - why don’t you want to use my slop plugin that will severely bloat your context window, triple token usage and cause hallucinations all the time? No

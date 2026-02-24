@@ -66,6 +66,18 @@ modified: 2023-02-07T09:22:03.120Z
   - 自动分段存储：按时间切片生成 WAV 文件，便于管理与回放。
   - [我开源了个 24 小时录音与实时转写工具 Eve _202602](https://linux.do/t/topic/1622790)
 
+- https://github.com/Yamico/DiTing /MIT/202602/python/ts
+  - 你的私人视频知识库 — 本地 ASR · AI 分析 · 沉浸式阅读
+  - 一个自托管的本地优先视频知识库系统。它能将 B 站、YouTube、抖音等平台的视频（以及本地音视频文件）转化为可搜索、可分析、可标注的结构化文本资产
+  - 多引擎 ASR	SenseVoice・Whisper・Qwen3-ASR・阿里百炼云端，一键切换
+  - 平台集成	Bilibili / YouTube / 抖音 URL 直接粘贴，自动下载、提取字幕、转录
+  - 浏览器伴侣	油猴脚本将转录面板嵌入 B 站 / 抖音播放页，歌词式同步阅读
+  - 采用 Server + Worker 分离架构，主服务不加载 AI 模型，ASR 推理由独立 Worker 进程完成。
+    - 单机部署：Server 和 Worker 在同一台机器，通过 scripts/run_tray.py 统一管理
+    - 跨机部署：Worker 跑在 GPU 服务器上，Server 通过配置 ASR_WORKERS 字典远程调用
+  - [【开源自荐】谛听：私人视频知识库 — 本地 ASR · AI 分析 · 沉浸式阅读 _202602](https://linux.do/t/topic/1640848)
+    - 核心理念：收藏 → 转写 → 分析 → 沉淀，把碎片化的视频信息变成你的私人知识库。
+
 - https://github.com/huggingface/distil-whisper /CodeNA
   - Distil-Whisper is a distilled version of Whisper that is 6 times faster, 49% smaller, and performs within 1% WER on out-of-distribution evaluation sets.
   - https://twitter.com/sanchitgandhi99/status/1719409022246220184

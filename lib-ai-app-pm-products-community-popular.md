@@ -14,11 +14,35 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 # discuss-ai-moat 🤼
+- xp
+  - 在LLM热潮前就有很多开源/免费软件, 它们是如何维持运营的
+
+- ## 
+
 - ## 
 
 - ## 
 
 - ## 
+
+- ## 
+
+- ## Imagine a future world where agents can recreate all of planetscale’s source code perfectly.
+- https://x.com/aboodman/status/2026179235896017074
+  - I still don’t want to fucking run it. Even if the agents do it. Even if I know it’s just sam and 20 sock puppets I’m paying to run it.
+  - In case you haven’t realized it, Planetscale isn’t selling databases. They are selling SRE-hours.
+
+- People finding out what the last S in SaaS means
+
+- Tens of people will be happy to run it and some with even better features, compressing margins.
+
+- ## OpenClaw打消了我对程序员前景的担心 - openclaw几乎是vibe coding出来的，要是 toB 的软件像这样每次升级都挂一片，早就没有用户敢用了。
+- https://x.com/spacewander_lzx/status/2025965778181505280
+- 每次升级都血流成河，这都不能叫 breaking change 了，叫 blood change
+
+- 绝大部分tob的项目只要领导开心，有没有bug无所谓，用户连吐槽的地方都没有，tob是做的质量比较差的软件领域。只有极少关键软件要求高，基本也没人敢碰。
+
+- 说没有用户敢用是你没去过小公司，就那种地方小国企做的项目，哪次不是领导有个很急的需求就匆匆上线了，一样是上线一堆bug
 
 - ## "Code Is Cheap Now. Software Isn’t."
 - https://x.com/VKazulkin/status/2025622866306519274
@@ -101,6 +125,17 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 感觉 openclaw 在企业端的需求非常强，而且我看好 local first 而不是 cloud first 的落地路径，因为几十人的组织到头就相当于几十个 agent，单体设备完全够了，且就应该放在它所替代的人的桌上。
+- https://x.com/ewind_dev/status/2025971612470931755
+- 龙虾不是对 Mac 支持最好吗？用 Linux 是有别的优势？
+  - 我在给一个几十人团队里所有人每人开一或多个独立的 agent 实例，相应的容器能力感觉还是 linux 上配起来最简单。
+  - Mac 的优势应该是对 C 端用户能便捷地访问到相册日历和备忘录这些数据，但对团队这些全在飞书和 codebase 里，这样 Mac 就感觉没啥特别优势了，且 GUI 虚拟化还卡得特别死
+- 在企业场景如果不是涉及到 iOS 开发，Mac 的确没啥优势，不如 Linux 节省资源和丰富的软件包
+
 - ## [AnythingLLM Desktop works across your entire OS with local models : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1r8biu3/anythingllm_desktop_works_across_your_entire_os/)
   - Today, we released AnythingLLM Desktop v1.11.0 and it is a step towards our new direction that becomes more of an extension of your OS and less of a sandboxed app.
   - Now with a simple customized keybind you can open an overlay that instantly has access to your open apps and screen. This works for both multi-modal but also non-vision enabled models.
@@ -160,12 +195,50 @@ modified: 2026-02-20T17:36:40.796Z
 - Co-work is great, to be honest. If they cancel that, I’ll drop my Claude subscription. I use it to write confluence docs, edit pdfs, word docs, create contracts, amend them, do P&l stuff, powerpoint presentation, even google slides via chrome mcp. You’re using it wrong OP.
 
 - I think the idea is that many more non coders in the near future will do small coding activities in their jobs. If that’s not you, it’s not for you. But it might be for your replacement
+# discuss-ai-showcase-apps/products
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [一个在浏览网页时扫描内容是否由AI生成的油猴脚本 ](https://linux.do/t/topic/1641840)
+  - https://textoracle.h-e.top/
+  - 爬了一些不大的数据集，训练了一个可以判别是 AI 还是人类的模型
+  - 由于训练数据不大，并且力求快速响应，所以存在不少误判情况需人工核查
+  - 由于训练数据不大，并且力求快速响应，所以存在不少误判情况需人工核查
+
+- 后端算法是用 LLM 吗？或者是 BERT 这种检测模型？是 LLM 佬友能不能分享一下提示词
+  - 是 BERTw
+
+- 感觉不错，但是一些短文本就没必要检测了吧，短文本检测准确度一般都不高，检测意义也不大，还浪费计算资源
 # discuss-ai-pm
 - ## 
 
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [What do people actually use openclaw for? : r/ClaudeCode _202602](https://www.reddit.com/r/ClaudeCode/comments/1rcx9di/what_do_people_actually_use_openclaw_for/)
+- These are some common things I saw people talking about:
+  - email management, i dont trust AI with this and i dont have that many emails to manage.
+  - morning briefings, sounds like slop and just junk formation.
+  - second brain/todo tracking/calendar, why not just use the exiting notes/todo apps its much faster and doesn't cause you "tokens".
+  - financial/news alerts and monitoring, again sounds like slops that aren't that useful.
+
+- A lot of the hype is just marketing. All I see right now is openclaw abstracting tasks to make them different, but not easier, and costing more money.
+
+- To me its just like N8N, overhyped.
+
+- I think its hype... zapier has done this for years, and personally I use agent teams with cron jobs to achieve the same Open Clawd results but without the high cost from api usage because it runs on terminal. Also I built an agent/team manager app I call Agent UI that work alongside it to help me get the most out of every token! https://github.com/DatafyingTech/AUI
+
+- Hype and marketing. Mostly non devs who call themselves tech trying to show off their "ai skills". To them they finally can chat with ai on whatsapp and telegram and use ai to manage their data containing pii. Also, remember to run it on a mac mini
 
 - ## What agentic coding methods seem to have done is reduced the cost of replicating previous-generation methods. 
 - https://x.com/dustingetz/status/2025191981207421346

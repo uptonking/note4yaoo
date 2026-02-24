@@ -258,6 +258,36 @@ modified: 2024-01-25T13:32:35.137Z
 
 - ## 
 
+- ## 
+
+- ## Introducing http://lifo.sh : The ultra-fast Linux-like OS in the browser, it's a mapping of Linux APIs to the browser APIs.
+- https://x.com/sanketsahu/status/2025960162402750608
+  - Now run that untrusted code. You might not need a cloud sandbox! Made for Agents and Humans!
+  - It implements a kernel, a shell with interpreter, lexer, parser, pipe, redirection. It has almost no boot time 
+  - apart from core commands, it maps Node APIs like fs, http over browser network calls, a lot needs to be done here!
+  - This is very experimental right now!
+  - there is no wasm yet! We will bring wasm only for non JS packages like ffmpeg, imagemagick, python or postgres
+- VSCode for web uses IndexedDB, it can handle large fs
+
+- How does it handle concurrent processes?
+  - Currently it's just shared, will introduce workers for process isolation
+
+- Can it be ported to Node or Bun and support these runtimes for running arbitrary code?
+  - Yes, that's on the roadmap! It could run on serverless edge too but not extra resources
+
+- You could in theory delete most of actual Linux and just run a chrome container (or better) on top of a microkernel when your OS is sophisticated enough
+  - yes, my idea was to inject on the existing runtime so that there is no booting needed
+
+- Very cool direction. A deterministic syscall allowlist plus per process CPU and memory quotas would make the untrusted code story much stronger and easier to benchmark against cloud sandboxes.
+  - that's the limitation, we don't have granular control over memory and cpu allocations as this is mostly a shim to the web APIs
+
+- is it mapping linux syscall to WebAPI?
+  - yes
+
+- How is this different from jslinux? so not emulating the entire x86-64 or riscv
+  - nope, not emulating but mostly shimming.
+  - Extremely lightweight, uses the existing browser runtime
+
 - ## [Unix in the Browser Tab | Hacker News _202201](https://news.ycombinator.com/item?id=29823022)
 
 - I'm one of the authors
@@ -278,6 +308,12 @@ modified: 2024-01-25T13:32:35.137Z
 - AFAICT, Browsix is meant to work more like Wine than like jslinux. 
   - The goal is to allow devs to deploy native executables to the web browser more seamlessly because it provides ways for standard javascript to interact with the program. 
   - JSLinux is a full system emulator and thus has more overhead and doesn't have a method to cleanly interact with the world outside of the emulator.
+# discuss
+- ## 
+
+- ## 
+
+- ## 
 
 - ## Browsix does this by mapping low-level Unix primitives, like processes and system calls, onto existing browser APIs, like Web Workers and postMessage.
 - https://twitter.com/randomdross/status/1062827514597232640

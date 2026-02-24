@@ -50,6 +50,10 @@ modified: 2025-12-13T18:38:27.763Z
 - 提供完全使用外部 gemini-cli/opencode-cli 的方式, 
   - 增加抽象层，通用的能力支持其他cli, 定制/复杂的能力使用内置cli, 内置cli的设计是否要去掉?
 
+- llamaindex open source version
+  - https://x.com/jerryjliu0/status/2026032764131451334
+    - We built an AI agent that lets you vibe-code document extraction
+
 - 集成 docling-mcp
 
 ### issues

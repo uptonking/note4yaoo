@@ -57,7 +57,8 @@ modified: 2026-01-15T15:44:10.647Z
 
 - ## 
 
-- ## 
+- ## 775GB RAM [I just saw something amazing - Asus-ExpertCenter-Pro-ET900N-G3 : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1rd80gx/i_just_saw_something_amazing/)
+- As various manufacturers have released derivatives of DGX Spark, this would be a derivative of DGX Station as well. https://www.nvidia.com/en-us/products/workstations/dgx-station/
 
 - ## [Ryzen AI Max 395+ boards with PCIe x16 slot? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1ncdtei/ryzen_ai_max_395_boards_with_pcie_x16_slot/)
   - I'm looking to buy a Ryzen AI Max 395+ system with 128GB and a convenient and fast way to connect a dedicated GPU to it.
@@ -132,6 +133,23 @@ modified: 2026-01-15T15:44:10.647Z
 - If you want LLMs with working speeds and diffusion models with slow speeds, both devices are fine. Vulkan support for AI Max 395+ is really good, so you can get better performance with most llms than DGX Sparks (or at least the same) for LLM uses.
   - However, the main problem arrives when you try to use the latest non-LLM models such as TTS, openmcp, and omni models with video support, where you are dependent on ROCm for HIP. Most of these latest models are optimized and tested for CUDA, and they usually fail on Halo (even with ROCm 7.0).
   - I own a 395+, and since I am a developer, I am really happy with my purchase. I can keep multiple 30B MOE models in memory and can get a very fast response. Every day, I try to run new AI models on my system, but the success rate for non-LLMs is 40% compared to my 4090, where it is 90%.
+# discuss-npu
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Anyone making use of the NPU in Linux? : r/StrixHalo _202602](https://www.reddit.com/r/StrixHalo/comments/1rcygx8/anyone_making_use_of_the_npu_in_linux/)
+  - All the inference is going to the gpu cores, and the NPU seems to be idle. I'm using Resources app to monitor, LMStudio for my inference server.
+  - Oh, more detail, Linux Mint. 128gb total, 96gb to the GPU. Kernel 6.17.0.14-generic. Cinnamon 6.6.7.
+
+- NPU supported in kernel 6.2+ iirc.
+
+- we had a small thread about this yesterday in r/LocalLLaMA. it can be used on Linux but the tooling is immature compared to what Lemonade uses if it's running on Windows. nobody's done anything much past AMD's sample code
+  - the GitHub readme for Lemonade notes two backends for NPU-backed LLM stuff on Windows. i believe flm is FastFlowLM (which has proprietary licensing for its NPU kernels) and ryzenai-llm is AMD's OGA (which looks like it's based on ONNX and doesn't work on Linux due to a missing implementation of its custom operators).
+
+- Sadly lemonade linux does not support it, only windows. It’s ok, the main advantage is low power usage
 # discuss-multi-gpu
 - ## 
 
@@ -152,6 +170,24 @@ modified: 2026-01-15T15:44:10.647Z
 
 - Interesting, so you're getting PCIe 4.0 x8/x4/x4 (from the CPU) for the first 3 and then one more Pcie 4.0/3.0 x4 (probably from the chipset).. the 9700 is PCIe 5.0, so I'm guessing your memory interactions are slow, and probably worth bumping up to 96GB?
   - To get the necessary PCIe lanes, you can either bump up to Threadripper or Siena (I've got an 8224P), which breaks your AM5 desire...
+# discuss-offload-cpu
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Does a laptop with 96GB System RAM make sense for LLMs? : r/LocalLLM](https://www.reddit.com/r/LocalLLM/comments/1rcjzv0/does_a_laptop_with_96gb_system_ram_make_sense_for/)
+- It’s helpful, but best if it is paired with a powerful gpu for MOE models. The attention layers go to the GPU, and the experts go to CPU. So having 96gb will be better and give you access to larger models, only question is how fast it is.
+  - When i load 70gb models like qwen coder next using 32gb vram (5090) and the rest offloaded to ram I get around 28-30 tokens per second.
+  - OTOH, if I run a model that fits on my gpu (glm flash 4.7) I get 120 tokens per second.
+
+- If that laptop supports AVX512, you could get even better t/s using ik_llama.cpp.
+
+- My personal experience with the Radeon 780m iGPU with 96gb RAM on the Framework 16, I got 0.5 TPS PP in and ~3 TPS out with IQ3-XXS Minimax 2.5 - a Sonnet 4.5 equivalent model.
+  - The fastest models on this setup worth using are Qwen3vl 30b a3b and GPT OSS 20b which both get around ~30 TPS TG out, I dont remember the PP speed off the top of my head but its somewhere in the ~200 TPS range.
 # discuss-ai/ml-hardware
 - ## 
 

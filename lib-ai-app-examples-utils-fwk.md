@@ -634,6 +634,11 @@ modified: 2025-02-21T18:20:42.624Z
   - AgentFS is a filesystem explicitly designed for AI agents. Just as traditional filesystems provide file and directory abstractions for applications, AgentFS provides the storage abstractions that AI agents need
   - AgentFS Specification - SQLite-based agent filesystem specification.
   - [pg-fs: Postgres backed filesystem for AI Agents : r/VercelAISDK](https://www.reddit.com/r/VercelAISDK/comments/1qzbfcv/pgfs_postgres_backed_filesystem_for_ai_agents/)
+
+- https://github.com/IceWhaleTech/ToolFS /MIT/202601/go
+  - A FUSE virtual filesystem for AI Agents, integrating memory, RAG & local data access with flexible MCP/tool chaining and a scalable plugin system
+  - ToolFS is a specialized virtual filesystem framework designed for Large Language Model (LLM) agents. It unifies disparate interfaces—files, persistent memory, semantic search (RAG), and code execution (WASM skills)—into a single, POSIX-compliant /toolfs namespace.
+  - Unified Skill API: Register and execute WASM-based or native skills with context-aware documentation that helps agents understand when and how to use them.
 # utils
 - https://github.com/Olow304/memvid /MIT/202506/python
   - https://pypi.org/project/memvid/

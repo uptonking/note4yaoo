@@ -890,13 +890,14 @@ modified: 2025-12-11T18:10:23.710Z
   - supports any AI provider that has an OpenAI compatible end-point, tool and non-tool calling models.
   - How is this different to OpenCode?
     - OpenCode is a great tool, but it's owned and managed by a venture-backed company
+    - We also strongly believe in the "local-first" approach
     - we're actively pushing to develop advancements and frameworks for small, local models to be effective at coding locally.
   - supports MCP servers to extend its capabilities with additional tools
-  - Checkpointing: Captures conversation history, modified files, and AI model configuration
+  - conversation checkpointing, allowing you to save snapshots of your coding sessions and restore them later. 
   - Extensible architecture: Plugin-style system for adding new capabilities
   - 📡 
     - 没有ACP相关代码
-    - [Feature Request: Skills Support - Modular Capabilities with Progressive Disclosure _202511](https://github.com/Nano-Collective/nanocoder/issues/91)
+    - pr已合并 [Feature Request: Skills Support - Modular Capabilities with Progressive Disclosure _202511](https://github.com/Nano-Collective/nanocoder/issues/91)
     - [[Feature] Enable mode-specific model and provider configuration for optimized performance _202601](https://github.com/Nano-Collective/nanocoder/issues/277)
       - Currently, Nanocoder uses a single provider and model configuration across all development modes (normal, auto-accept, plan). 
       - I propose implementing mode-specific model and provider configuration that allows users to define different AI models for different development modes
@@ -1172,6 +1173,8 @@ modified: 2025-12-11T18:10:23.710Z
     - osgrep is different. OpenCode calls osgrep to perform a semantic search. It looks for the concept of your request.  Using an indexed database It can find who calls a function and what that function calls (Call Graph Tracing), which provides deeper structural context that grep doesn’t have. This context allows more precise results saving tokens.
 
 - https://github.com/tobi/qmd /9.8kStar/MIT/202602/python/ts
+  - https://github.com/tobi/qmd/blob/main/skills/qmd/SKILL.md
+    - 官方SKILL.md提供了cli用法和mcp用法
   - https://github.com/levineam/qmd-skill/blob/main/SKILL.md
     - 比官方SKILL.md更清晰
   - mini cli search engine for your docs, knowledge bases, meeting notes, whatever. 
@@ -1181,6 +1184,7 @@ modified: 2025-12-11T18:10:23.710Z
     - QMD combines BM25 full-text search, vector semantic search, and LLM re-ranking—all running locally via node-llama-cpp with GGUF models.
     - Parallel Retrieval: Each query searches both FTS and vector indexes
     - RRF Fusion: Combine all result lists using score = Σ(1/(k+rank+1)) where k=60
+  - `sqlite-vec` vector index (hash_seq key)
   - QMD uses three local GGUF models (auto-downloaded on first use): embeddinggemma, qwen3-reranker-0.6b, qmd-query-expansion-1.7B
     - LLM models stay loaded in VRAM across requests. Embedding/reranking contexts are disposed after 5 min idle and transparently recreated on the next request (~1s penalty, models remain loaded).
   - Index stored in: `~/.cache/qmd/index.sqlite`.
@@ -1196,6 +1200,8 @@ modified: 2025-12-11T18:10:23.710Z
     - The entry point is a bash script (not a binary)
     - Locates Node.js by checking PATH, Executes the compiled JavaScript: `exec "$NODE" "$SCRIPT_DIR/dist/qmd.js"`.
     - sqlite-vec is a native SQLite extension (.so/.dylib), not just a Node.js native module.
+    - sqlite-vec uses native C extensions that require dynamic loading
+    - Bun's compilation strips necessary native addon support
     - The workarounds to bundle sqlite-vec would add significant maintenance burden and potential failure modes.
     - One npm package works everywhere. Binary distribution requires per-platform builds.
   - 📡 [[FEATURE] Other file types: pdf, png, etc ](https://github.com/tobi/qmd/issues/60)
@@ -1295,6 +1301,15 @@ modified: 2025-12-11T18:10:23.710Z
     - 以markdown作为数据源, 对并发更新md不友好
     - Simpler chunking - Heading-based only (no token-based chunking)
     - No reranking - Hybrid search with RRF but no LLM-based reranker
+  - 🛝
+    - uv tool install -e ".[local]"
+  - 搜索结果经常出现的 0.0164 分数与 RRF (Reciprocal Rank Fusion) 重排序算法有关。 
+    - 最终分数 = RRF(dense_rank) + RRF(bm25_rank)
+    - RRF_score = 1 / (k + rank)  , k=60
+    - 1/61 = 0.0164 , 1/62 = 0.0161 , 1/63 = 0.0159
+    - Result 1 │ 0.0323 │ 0.0164 + 0.0159 = 在Dense排名第1 + BM25排名第3 
+    - Result 2 │ 0.0164 │ 0.0164 + 0.0000 = 在某一路排名第1，另一路未命中
+    - 0.0164 出现频繁说明： 这些结果在某一路搜索中排名第1 (得分 1/61) - 但在另一路搜索中没有命中或排名靠后 (得分 ≈ 0)
   - [RAG for AI memory: why is everyone indexing databases instead of markdown files? : r/Rag _202602](https://www.reddit.com/r/Rag/comments/1r2hlzd/rag_for_ai_memory_why_is_everyone_indexing/)
   - https://x.com/geekbb/status/2022547666606133397
     - Zilliz（Milvus 向量数据库的开发商）发布了一个 Python 库，把 OpenClaw 的 markdown-first 记忆架构搬到了其他 Agent 框架里。它主要解决的是 AI Agent 的持久化记忆问题。
@@ -1303,11 +1318,14 @@ modified: 2025-12-11T18:10:23.710Z
     - Zero context overhead: no MCP tool definitions loaded
     - Storage: Transparent Markdown files (.memsearch/memory/)
     - The interesting technical difference is recall. claude-mem requires Claude to actively decide "I should search my memories now" and call the tool. memsearch hooks into UserPromptSubmit and auto-injects top-3 semantic matches before Claude even sees your prompt.
+  - [feat(ccplugin): per-project collection isolation ](https://github.com/zilliztech/memsearch/pull/79)
+    - Previously all projects shared the default memsearch_chunks collection, causing cross-project search leakage. 
+    - Now each project directory gets a unique collection name derived from its absolute path.
   - 🍴 forks
   - https://github.com/pjgates/memsearch
     - feat: support MEMSEARCH_WATCH_PATHS env var for extra watch directories 
   - https://github.com/alxwang/memsearch
-    - feat: Add GRPC keepalive settings to Milvus client to prevent connection drops on MacOS
+    - feat: Add GRPC keepalive settings to Milvus client to prevent connection drops on Mac OS
 
 - https://github.com/thedotmack/claude-mem /30.1kStar/AGPL/202602/ts
   - https://claude-mem.ai/
@@ -1426,6 +1444,7 @@ modified: 2025-12-11T18:10:23.710Z
     - batched / parallel embedding, semantic boundary aware chunking
 
 - https://github.com/ItMeDiaTech/rag-cli /MIT/202511/python/inactive
+  - https://github.com/ItMeDiaTech/rag-cli/blob/master/src/rag_cli_plugin/skills/rag-retrieval/SKILL.md
   - rag system that enhances your development workflow by providing instant access to your project documentation, codebase context, and external resources.
   - works seamlessly with Claude Code as a native plugin, eliminating the need for external API calls while processing documents locally 
   - Local-First Architecture: Everything runs locally except Claude API calls
@@ -1455,6 +1474,26 @@ modified: 2025-12-11T18:10:23.710Z
   - 依赖langchain, langgraph, chromadb, tree-sitter
   - [RAG-MAF Plugin Architecture](https://github.com/ItMeDiaTech/dt-cli/blob/main/docs/guides/ARCHITECTURE.md)
     - The RAG-MAF plugin is a sophisticated system that combines Retrieval-Augmented Generation (RAG) with Multi-Agent Framework (MAF) orchestration to provide context-aware development assistance in Claude Code.
+
+- https://github.com/SpillwaveSolutions/agent-brain /MIT/202602/python
+  - https://github.com/SpillwaveSolutions/agent-brain/blob/main/agent-brain-plugin/skills/using-agent-brain/SKILL.md
+  - A RAG-based (Retrieval-Augmented Generation) document indexing and semantic search system for AI agents and applications.
+  - Agent Brain provides AI-first document and code search through a Claude Code plugin with skills, commands, and agents.
+  - Smart hybrid search: All modes combined (RRF)
+    - 支持 code/docs: agent-brain index /path/to/docs --include-code
+  - Vector Store: ChromaDB (HNSW, cosine similarity)
+  - Graph Store: SimplePropertyGraphStore / Kuzu
+  - GraphRAG (Knowledge Graph): Entity and relationship extraction
+  - Server: FastAPI backend for indexing and retrieval
+  - Agent Brain supports multiple providers for embeddings and summarization: OpenAI, Ollama
+  - Run completely offline with Ollama
+  - Multi-Instance Architecture: Per-project isolated servers, Automatic port allocation
+  - Command-line tool (also used by plugin internally) : While the plugin is the recommended interface, you can also use the CLI directly
+  - [Give your Claude Code, OpenCode and Codex full RAG over docs and code repos _202601](https://pub.spillwave.com/give-your-claude-code-opencode-and-codex-full-rag-over-docs-and-code-repos-edcf654407e9)
+  - plan
+    - Embedding cache with content hashing
+    - File watcher for auto-indexing
+    - Background incremental updates
 
 - https://github.com/bretwardjames/ragtime /MIT/202602/python
   - Local-first memory and RAG system for Claude Code. 
@@ -1502,7 +1541,7 @@ modified: 2025-12-11T18:10:23.710Z
   - Persistent Memory – Context survives across sessions with semantic search
     - Hybrid Backend - Fast 5ms local SQLite + background Cloudflare sync (RECOMMENDED default)
     - [Backend Synchronization Guide  ](https://github.com/doobidoo/mcp-memory-service/wiki/Backend-Synchronization-Guide)
-    - bidirectional synchronization capabilities between Cloudflare and SQLite-vec backends in MCP Memory Service. 
+    - bidirectional synchronization capabilities between Cloudflare and `SQLite-vec` backends in MCP Memory Service. 
   - Web Dashboard – Visualize and manage memories
   - Multiple Formats - PDF, TXT, MD, JSON with intelligent chunking
     - Optional semtools - Enhanced PDF/DOCX/PPTX parsing with LlamaParse
@@ -1772,6 +1811,23 @@ modified: 2025-12-11T18:10:23.710Z
     - On re-index, only changed files are processed
     - Cross-references are rebuilt incrementally
 
+- https://github.com/glommer/memelord /MIT/202602/ts
+  - Persistent memory for coding agents. Powered by Turso.
+  - gives agents a per-project memory that persists across sessions and improves over time through reinforcement learning.
+  - Per-project databases: Each project gets its own .memelord/memory.db. No shared state.
+    - 每个project一个db不适合多个repo的搜索与更新
+- https://github.com/glommer/codemogger /MIT/202602/ts
+  - Code indexing library for AI coding agents. Parses source code with tree-sitter, chunks it into semantic units (functions, structs, classes, impl blocks), embeds them locally, and stores everything in a single SQLite file with vector + full-text search.
+  - Search - vector cosine similarity (semantic) or FTS with weighted fields (keyword)
+  - Incremental: only changed files (by SHA-256 hash) are re-processed on subsequent runs.
+    - Indexing is a one-time cost dominated by embedding (~97% of time). Subsequent runs only re-embed changed files.
+  - Store - write chunks + embeddings to SQLite with FTS index
+  - Turso for storage - embedded SQLite with FTS + vector search extensions
+    - 每个project一个db不适合多个repo的搜索与更新
+  - Chunk - parse each file with tree-sitter (WASM), extract top-level definitions
+  - Embed - encode each chunk with the provided embedding model (runs locally, no API)
+  - No Docker, no server, no API keys. One .db file per codebase.
+
 - https://github.com/chunkhound/chunkhound /1kStar/MIT/202602/python
   - https://chunkhound.github.io/
   - https://pypi.org/project/chunkhound/2.0.0/ /配置文档
@@ -1814,9 +1870,12 @@ modified: 2025-12-11T18:10:23.710Z
   - MCP server that provides semantic search capabilities across your codebase using Qdrant vector database.
   - Hybrid Search: Combines semantic understanding with keyword matching for +30% better precision
   - AST-Based Chunking: Structure-aware code parsing for Python, Shell, Go, JavaScript, and TypeScript (-40% tokens)
-  - Smart Incremental Reindexing: Only process changed files for 90%+ faster reindexing (v0.2.4)
+  - Automatically indexes common code, config, and doc files
+    - Documentation Indexing: Index and search markdown documentation files
+  - Smart Incremental Reindexing: Only process changed files for 90%+ faster reindexing 
   - Multi-Project Support: Keep different projects' knowledge separate
   - Optional Auto-Indexing: Keep your index up-to-date automatically as files change
+  - Supports Apple Silicon MPS acceleration
 
 - https://github.com/missdeer/ace-tool-rs /208Star/GPL/202601/rust
   - a Rust implementation of a codebase context engine that enables AI assistants to search and understand codebases using natural language queries.
@@ -1938,7 +1997,6 @@ modified: 2025-12-11T18:10:23.710Z
   - a 100% local semantic search system that integrates with Claude Code via MCP 
   - Multi-Format: Supports MD, PDF, TXT, Python, JSON files
   - Smart Routing: Keyword-based routing with word boundaries ensures accurate category matching
-  - Smart Routing: Keyword-based routing with word boundaries ensures accurate category matching
   - Fast: Parallel embedding generation + vector search with ChromaDB
   - Documents are automatically indexed when Claude Code starts. manually reindex is supported
   - Planned
@@ -1958,6 +2016,22 @@ modified: 2025-12-11T18:10:23.710Z
   - Complete codebase analysis in seconds using deterministic AST parsing
   - Incremental Updates: Updates graphs efficiently as code changes via git integration
   - Hybrid Retrieval: Combines vector similarity (ChromaDB) with graph traversal (Neo4j)
+
+- https://github.com/shinpr/mcp-local-rag /129Star/MIT/202602/ts
+  - https://github.com/shinpr/mcp-local-rag/blob/main/skills/mcp-local-rag/SKILL.md
+  - Local RAG for developers using MCP. Semantic search with keyword boost for exact technical terms — fully private, zero setup.
+  - Install skills for better query formulation, result interpretation, and ingestion workflows
+    - Skills are loaded automatically in most cases—AI assistants scan skill metadata and load relevant instructions when needed.
+  - Semantic search with keyword boost Vector search first, then keyword matching boosts exact matches. 
+  - PDF, DOCX, TXT, Markdown, and HTML (via ingest_data). Not yet: Excel, PowerPoint, images.
+  - Runs entirely locally No API keys, no cloud, no data leaving your machine. Works fully offline after the first model download.
+  - Built with Model Context Protocol `LanceDB`, and Transformers.js.
+    - Transformers.js runs on CPU. GPU support is experimental. CPU performance is adequate for most use cases.
+  - Multi-user support? No. Designed for single-user, local access. Multi-user would require authentication/access control.
+  - Each chunk goes through a Transformers.js embedding model (default: all-MiniLM-L6-v2, configurable via MODEL_NAME), converting text into vectors. 
+    - Vectors are stored in LanceDB, a file-based vector database requiring no server process.
+  - [Building a Local RAG for Agentic Coding: From Fixed Chunks to Semantic Search with Keyword Boost | Norsica Blog _202601](https://www.norsica.jp/blog/local-rag-agentic-coding)
+    - Technical deep-dive into the semantic chunking and hybrid search design.
 
 - https://github.com/AssahBismarkabah/42context /apache2/202509/ts/inactive
   - code search and analysis tool that leverages MCP for intelligent code understanding. 
@@ -2074,18 +2148,6 @@ modified: 2025-12-11T18:10:23.710Z
   - Hybrid Search: Combines vector similarity with BM25 keyword matching using Reciprocal Rank Fusion (RRF) for optimal results
   - Smart Indexing: Automatically performs full indexing for new codebases or incremental updates for previously indexed ones
 
-- https://github.com/shinpr/mcp-local-rag /129Star/MIT/202602/ts
-  - Local RAG for developers using MCP. Semantic search with keyword boost for exact technical terms — fully private, zero setup.
-    - Install skills for better query formulation, result interpretation, and ingestion workflows
-    - Skills are loaded automatically in most cases—AI assistants scan skill metadata and load relevant instructions when needed.
-  - Semantic search with keyword boost Vector search first, then keyword matching boosts exact matches. 
-  - Runs entirely locally No API keys, no cloud, no data leaving your machine. Works fully offline after the first model download.
-  - Built with Model Context Protocol `LanceDB`, and Transformers.js.
-  - Each chunk goes through a Transformers.js embedding model (default: all-MiniLM-L6-v2, configurable via MODEL_NAME), converting text into vectors. 
-    - Vectors are stored in LanceDB, a file-based vector database requiring no server process.
-  - [Building a Local RAG for Agentic Coding: From Fixed Chunks to Semantic Search with Keyword Boost | Norsica Blog _202601](https://www.norsica.jp/blog/local-rag-agentic-coding)
-    - Technical deep-dive into the semantic chunking and hybrid search design.
-
 - https://github.com/er77/code-graph-rag-mcp /MIT/202512/ts
   - mcp server that creates intelligent graph representations of your codebase with comprehensive semantic analysis capabilities.
   - 5.5x faster than Native Claude tools with comprehensive testing results
@@ -2102,15 +2164,6 @@ modified: 2025-12-11T18:10:23.710Z
   - A Model Context Protocol server that supercharges tools like Claude Code, Codex CLI, and IDE clients such as Cursor or the Claude Dev VS Code extension. 
   - PAL MCP connects your favorite AI tool to multiple AI models for enhanced code analysis, problem-solving, and collaborative development.
   - PAL supports conversation threading so your CLI can discuss ideas with multiple AI models
-
-- https://github.com/SpillwaveSolutions/agent-brain /MIT/202602/python
-  - Private RAG system with semantic context ingestion to improve source of truth of reliable sources
-  - A RAG-based (Retrieval-Augmented Generation) document indexing and semantic search system for AI agents and applications.
-  - Agent Brain provides AI-first document and code search through a Claude Code plugin with skills, commands, and agents.
-  - GraphRAG (Knowledge Graph): Entity and relationship extraction
-  - Server: FastAPI backend for indexing and retrieval
-  - Command-line tool (also used by plugin internally) : While the plugin is the recommended interface, you can also use the CLI directly
-  - [Give your Claude Code, OpenCode and Codex full RAG over docs and code repos _202601](https://pub.spillwave.com/give-your-claude-code-opencode-and-codex-full-rag-over-docs-and-code-repos-edcf654407e9)
 
 - https://github.com/LLMTooling/code-search-mcp /MIT/202601/ts/未实现rag
   - mcp server providing powerful and efficient codebase search tools, including full AST support for 15 languages

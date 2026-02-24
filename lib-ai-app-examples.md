@@ -140,6 +140,17 @@ modified: 2023-02-08T07:20:48.475Z
     - Chat with an inspector panel: Mood, Pacing, Intensity, Dialogue Style, Initiative, Descriptiveness, Unpredictability, Emotional Depth. All visual, no prompt editing needed.
     - Works with Ollama, LM Studio, OpenAI, OpenRouter, or any compatible endpoint. Light and dark themes. English, Russian, Chinese, Japanese.
 
+- https://github.com/Light-Heart-Labs/Lighthouse-AI /apache2/202602/python/js
+  - https://lightheartlabs.io/
+  - One command to a full local AI stack — LLM inference, chat UI, voice agents, workflows, RAG, and privacy tools.
+  - vLLM for inference
+  - Open WebUI for chat
+  - Qdrant for RAG / vector search
+  - LiteLLM as a unified model gateway
+  - PII redaction proxy
+  - n8n for workflow automation
+  - [Looking for feedback: Building an Open Source one shot installer for local AI. : r/LocalLLM _202602](https://www.reddit.com/r/LocalLLM/comments/1rco6la/looking_for_feedback_building_an_open_source_one/)
+
 ## gpt-apps
 
 - https://github.com/enricoros/big-AGI /6.6kStar/MIT/202508/ts

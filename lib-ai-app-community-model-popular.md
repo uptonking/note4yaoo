@@ -677,6 +677,20 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
+- ## 
+
+- ## [Round 2: Quick MoE quantization comparison: LFM2-8B-A1B, OLMoE-1B-7B-0924-Instruct, granite-4.0-h-tiny : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1rd2cdu/round_2_quick_moe_quantization_comparison/)
+  - The goal is to check on MXFP4 and evaluate the smallest quantization variants.
+  - PPL (Perplexity): Measures "Certainty." It’s the average uncertainty the model feels when predicting the next token. It is derived from the total information loss (Cross Entropy). Lower = more confident
+  - KLD (KL Divergence): Measures "Faithfulness." It shows how much the quantized model's probability distribution drifts from the original baseline. Lower = closer.
+  - They are correlated. Perplexity measures the total error, KLD measures the relative error. This relationship helps in determining information loss (or gain when training).
+  - Conclusion: MXFP4 is probably great for QAT (Quantization Aware Training), but it underperforms on speed and quality.
+
+- If you end up wanting to try more quants you could also try ik_llama. They have custom IQ_K quants, a number of trellis quants (_KT ended ones) (loosely based on QTIP# but with some divergence from the spec to focus on CPU inference), and a few other quants. IQ4_KS and IQ4_KSS are fairly notable ones (IQ4_KSS for instance comes out to about the same size as IQ4_XS but allagedly tends to perform on par with QTIP# 4 bit quants)
+
+- Q4_K_S seems fairly consistently below 0.1 kld and basically ends up similar sized to MXFP4 but without the weird KV bloat. Are these quants Imatrix or static?
+  - Yup, imatrix. 
+
 - ## [TeichAI's "Nemotron-Orchestrator" models are misleading — they're just Qwen3-8B distilled on frontier traces, not routing models : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1rch66j/teichais_nemotronorchestrator_models_are/)
   - What NVIDIA's actual Nemotron-Orchestrator-8B does: NVIDIA's model is a pure router trained with reinforcement learning to act as a supervisor over a fleet of specialist models - a search model, a reasoning model, a math model, an answer model. It never generates the final answer itself. Its system prompt is literally "You are good at using tools." It's useless without the full ToolOrchestra ensemble running behind it.
 

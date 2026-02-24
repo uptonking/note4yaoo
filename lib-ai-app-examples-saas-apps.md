@@ -593,6 +593,16 @@ modified: 2025-02-21T17:17:42.225Z
   - [OpenAI just announced “Prism.” Our project is Prismer, so we’re open-sourcing everything now : r/Python](https://www.reddit.com/r/Python/comments/1qq1u91/openai_just_announced_prism_our_project_is/)
   - [Prismer: A self-hosted, open-source alternative to OpenAI Prism for academic research : r/selfhosted _202601](https://www.reddit.com/r/selfhosted/comments/1qq10su/prismer_a_selfhosted_opensource_alternative_to/)
 
+- https://github.com/hehecat/gongwen /202602/ts
+  - https://hehecat.github.io/gongwen/
+  - 基于 GB/T 9704 国标的党政机关公文在线排版工具，支持实时预览、智能分页和 DOCX 导出。
+  - 先解析为文本，再渲染为dom
+  - [AI糊一个在线公文格式化工具 ](https://linux.do/t/topic/1641274)
+    - 纯 vibe code，没看一点代码，没考虑有表格等情况，不过大致格式是确定的
+    - 提几点小建议：
+      - 不建议用行距来实现每页 22 行。应该通过调整页边距参数和限制每页 22 行来实现，原因有二：一是国标规定撑满版心的要求，直接 28/29 磅是撑不满的，二是插图片也会直接只剩一下一行图片。如果一定要磅数。建议是 29.6 磅，上 34.6 mm，下 32.6 mm，左 28 mm，右 26 mm。
+      - 不建议默认是 GB2312，这个问题老生常谈了
+
 ## fact-checking
 
 - https://github.com/EmmaStoneX/NetPulse /MIT/202601/ts

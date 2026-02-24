@@ -1236,6 +1236,25 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 - https://x.com/scomper/status/1791804644332908646
 - 好像都是小模型为主吧
 
+# discuss-model-training
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Hardware requirements for training a ~3B Model From Scratch locally? : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1rckqpp/hardware_requirements_for_training_a_3b_model/)
+- I strongly suggest you start with a much smaller model, so that you can test and refine your pipeline a lot faster, not to mention 2 GPUs will be unnecessary pain in the beginning. Also not sure if 3B params are realistic on 2x3090, unless you plan to go tiny microbatches (which will take forever), but you probably did the math. For a 3B param model, you'll need way more than 50b training tokens to get decent results.
+  - This will train easily on a single GPU and allow you to experiment with tokenizer and data dedup/cleanup (both of which can be just as important as the transformer). 
+  - Once you reach something you are happy with, you can scale up as much as you want by adding more params/training data/GPUs.
+
+- I trained 4B MoE from scratch with about 90B tokens (probably 170B total total across runs). It was on 8x H100 node and took a long while, about 800 GPU hours.
+
+- Generally training at the 124m - 330m range is vastly more common.
+  - Training those with an optimized recipe is around ~3-5 minutes on 8XH100 (so roughly ~40 minutes, which works out to around ~$100-$200 usually).
+  - Now, the bigger you get the more expensive it is, both because you have to reduce batching, and you need to train more tokens, so at minimum I'd expect training a 3B to run around ~$1000 at bare minimum (and that's with a lot of custom work).
 # discuss-model-tuning/internals
 - ## 
 

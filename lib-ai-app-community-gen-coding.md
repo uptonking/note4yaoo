@@ -32,7 +32,17 @@ modified: 2025-09-01T07:58:29.058Z
 
 - ## 
 
-- ## 
+- ## 🤼 What spec-driven development gets wrong
+- https://x.com/jakevin7/status/2026238245609365939
+- 这篇文章印证了我之前的一些想法：
+  - spec/doc 驱动是不对的，doc 随着代码的增加非常容易过失，spec 这种硬约束容易误导 agent。设计文档、架构图、onboarding wviki--几乎一写出来就过时了。
+  - 应该是描述需求，让 agent 起草 spec，再拆分 task
+  - 进行实时的review，遇到了哪些原计划没考虑的约束及时反馈。
+  - 文章里没提到的一点是，代码文档很重要。代码文档本身可以作为一个渐进式的知识系统。
+  - 架构要作为软性约束，不要用文档做硬性约束
+- 如果spec是硬约束，那交付物就应该是spec而不是代码，代码只是spec通过agent编译后的产物了
+
+- 现在的 spec 并不是能够稳定编译得到代码产物。什么时候模型能力能够稳定编译产出，那就真的成了。
 
 - ## Shifting structures in a software world dominated by AI. Some first-order reflections (TL; DR at the end):
 - https://x.com/Thom_Wolf/status/2023387043967959138

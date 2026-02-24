@@ -215,6 +215,7 @@ modified: 2025-03-22T16:10:24.856Z
 - rewrite open-canvas with langgraph
 # 💎🚀 aichorage - local llm with joy, 提供模型API、rag可靠性、pdf文本操作
 - selling-points
+  - non-goals: local image gen
   - 易用性: 模型推荐 + 场景优化的提示词 + 多模型/多版本对比
     - 对同一场景, 如翻译/ocr, 针对不同模型内置合理的参数且支持配置
     - roadmap: 
@@ -230,12 +231,11 @@ modified: 2025-03-22T16:10:24.856Z
       - chat2db
       - agent-browser
     - 长期难以被AI取代: 
-      - 硬件相关
-      - 数据或模板资源
+      - 用户数据或模板资源
       - 计算集群
+      - 硬件相关
       - 快速，高精度，稳定可靠
       - privacy
-  - non-goals: local image gen
   - ✈️ local models support: mlx, lmstudio-alternative
     - 模型库: text模型, ocr模型, 翻译模型, t2i生图模型, tts, stt,  lmstudio在模型分类上做的不够好
     - 较少免费api的模型: ocr, stt
@@ -284,6 +284,9 @@ modified: 2025-03-22T16:10:24.856Z
     - pdf体验尽量与docs一致，包括view/edit
     - 统一 文本pdf 和 图片pdf 的体验，代码实现可以不同
     - ocr bench by claude-code
+  - extraction
+    - https://x.com/jerryjliu0/status/2026032764131451334
+      - llamaindex: We built an AI agent that lets you vibe-code document 
   - office
     - multi-docs: work across documents
     - diff without git
@@ -625,8 +628,6 @@ modified: 2025-03-22T16:10:24.856Z
     - [最新福利羊毛话题](https://linux.do/c/welfare/36)
     - [All-API-Hub：开源AI中转站集中管理和自己的New API增强管理，基于 one-api-hub 大幅重构增强 _202511](https://linux.do/t/topic/1001042)
     - [关于部分公益站支持CC的测试，欢迎更多反馈 ](https://linux.do/t/topic/1162888)
-  - 以反重力为主的公益站: elysiver, 太子公益, hotaru, nyxar(opus)
-  - 以kiro为主的渠道: 随时跑路, duck-free
   - 📌 [duckcoding 公益站](https://free.duckcoding.com/console/personal), 签到
     - [DuckCoding](https://duckcoding.com/console/personal)
     - [DuckCoding Az-CC，单独开启公益站，只允许L站注册 ](https://linux.do/t/topic/1308120)
@@ -768,6 +769,10 @@ modified: 2025-03-22T16:10:24.856Z
   - [纳米哈基米](https://free.nanohajimi.mom/console/personal), 签到
     - Gemini Imagen
     - [【纳米哈基米 · 公益站】 支持香蕉Pro画图，Veo视频，Gemini全系模型 ](https://linux.do/t/topic/1512770)
+  - [OAI-FREE](https://newapi.zhx47.xyz/pricing)
+    - [LinuxDo 社区福利活动](https://campaign.zhx47.xyz/)
+    - [OAI-FREE 签到发送订阅 ](https://linux.do/t/topic/1632349)
+    - 都是临时渠道，不开签到了，直接每天送 100 刀余额
   - [玩票 API](https://api.361888.xyz/console/personal)
     - opus4.6 和 codex 虽迟但到
   - [sorai API](https://newapi.sorai.me/console/personal)
@@ -1058,6 +1063,9 @@ modified: 2025-03-22T16:10:24.856Z
     - 由于目前flow官方流量大，官网都生不了图，佬友们等会再蹬
   - [图片生成](https://pam-carrier-korean-chemicals.trycloudflare.com/)
     - [nanobanana公益站 ](https://linux.do/t/topic/1616133)
+  - [TS-AI | 灵感创作工坊](https://linux.tsart.lat/workspace)
+    - [【绘画公益站】TS-AI  ](https://linux.do/t/topic/1641029)
+    - 每天签到可获得 3000 积分（三天内有效）
 
 - image-saas
   - [小白生图 - AI Image Generator](https://catsapi.com/)
@@ -1067,6 +1075,9 @@ modified: 2025-03-22T16:10:24.856Z
   - [RyanVan Z-Image | AI 图像生成](https://ryanai.org/)
     - 每天5张免费
     - 排队时间可能较长
+  - [RyanVan Z-Image | AI 图像生成](https://txt2img.1771177.xyz/)
+    - [[Z-Image公益] 跟随R佬脚步，闲置显卡分享zimage ](https://linux.do/t/topic/1643183)
+    - 按照教程通过 gpu-worker 的方式接入了 R 佬的节点。目前本地跑的是 fp8 量化版的 z-image-turbo 模型，实测生成一张 1K 图片 15 秒左右。
   - [Z-Image 控制台](http://image.dx001.ggff.net:8080/dashboard)
   - [香蕉皮 AI](https://nanobanana.xiao.mom/)
     - [NanoBananaPro支持4K、免费无限制，轻蹬 ](https://linux.do/t/topic/1401748)

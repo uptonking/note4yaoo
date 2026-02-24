@@ -698,6 +698,12 @@ modified: 2023-09-02T09:17:22.992Z
     - I would just use emscriptem. emscripten already has the fs shims. 
       - Got it. You can definitely do it in WASM as well. WebContainers work like that. I didn’t have a strong preference, I was just orchestrating it.
 
+- https://github.com/lifo-sh/lifo /MIT/202602/ts
+  - https://lifo.sh/
+  - A Linux-like operating system that runs natively in the browser. Not a VM
+  - Virtual Filesystem (VFS) -- synchronous in-memory INode tree with full POSIX-like semantics (read, write, stat, mkdir, symlinks, hard links, permissions)
+  - Persistence -- IndexedDB-backed filesystem persistence with serialization/deserialization of the entire INode tree
+
 - https://github.com/opensumi/codeblitz /MIT/202401/ts/inactive
   - https://codeblitz.opensumi.com/
   - https://openlab.antchain.antgroup.com/ide

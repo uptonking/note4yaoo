@@ -85,6 +85,13 @@ modified: 2026-01-19T05:01:00.055Z
 
 ## office-mcp
 
+- https://github.com/jgraph/drawio-mcp /202602/js
+  - The official draw.io MCP (Model Context Protocol) server that enables LLMs to create and open diagrams in the draw.io editor.
+  - https://github.com/jgraph/drawio-mcp/tree/main/skill-cli
+  - A Claude Code skill that generates native .drawio files, with optional export to PNG, SVG, or PDF (with embedded XML so the exported file remains editable in draw.io). No MCP setup required.
+  - Generate draw.io XML for your requested diagram; Write it to a `.drawio` file in your current directory
+  - If you requested an export format, export using the draw.io desktop CLI
+
 - https://github.com/magicyuan876/mineru-tianshu /apache2/202601/python/ts/vue
   - 天枢 - 企业级 AI 数据预处理平台，将非结构化数据转换为 AI 可用的结构化格式
   - 支持文档、图片、音频等多模态数据处理 | GPU 加速 | MCP 协议
@@ -335,6 +342,26 @@ modified: 2026-01-19T05:01:00.055Z
   - Run colin run. Colin fetches the Linear issues, resolves the reference to your weekly notes, extracts blockers via LLM, and writes the compiled skill. Run it again tomorrow—if nothing changed upstream, nothing rebuilds. The expires: 1d ensures time-sensitive content stays fresh.
   - [We built Colin, a context engine that can keep agent skills fresh : r/AI_Agents _202601](https://www.reddit.com/r/AI_Agents/comments/1qnns7n/we_built_colin_a_context_engine_that_can_keep/)
 
+- https://github.com/ConardLi/rag-skill /202602/python
+  - 专为本地知识库智能检索设计的 AI Skill 演示仓库，展示如何通过分层索引和渐进式检索实现高效的多格式文件问答系统。
+  - 分层索引 - 通过 data_structure.md 实现智能目录导航
+    - 每个目录都有 data_structure.md 文件，说明子目录/文件的用途
+  - 渐进式检索 - 避免全文加载，按需局部读取，节省 token
+    - 不要一次性读取整个文件 
+    - 使用 grep 定位关键词, 只读取匹配行附近的上下文（limit=200-500）
+    - 多轮迭代（最多 5 次）逐步缩小范围
+  - 多轮迭代 - 最多 5 轮智能检索，确保找到最相关信息
+  - 强制学习机制 - 处理 PDF/Excel 前必须先学习处理方法
+    - 遇到 PDF 或 Excel 文件时，必须先读取 references/pdf_reading.md
+
+- https://github.com/bobmatnyc/mcp-skillset /MIT/202602/python
+  - mcp-skillset is a standalone Python application that provides intelligent, context-aware skills to code assistants through hybrid RAG (vector + knowledge graph). 
+  - Unlike static skills that load at startup, mcp-skillset enables runtime skill discovery, automatic recommendations based on your project's toolchain
+  - Dynamic Discovery: Vector similarity + knowledge graph for better skill finding
+  - On-Demand Loading: Skills loaded when needed, not all at startup
+  - MCP Native: First-class Model Context Protocol integration
+  - agentskills.io Compatible: Supports both native and agentskills.io specification formats
+
 - https://github.com/comeonzhj/Auto-Redbook-Skills /python/js
   - 一个自动撰写小红书笔记，自动生成图片，自动发布的 Skills
   - 根据既定主题，撰写小红书笔记（提示词自己调整，在 SKILL.md里）
@@ -358,4 +385,35 @@ modified: 2026-01-19T05:01:00.055Z
   - https://x.com/EdenEmarco177/status/2018602082962690511
     - This is the future of agents. Dynamic skill loading
     - I did something similar at https://labs.youware.com/youskill. The difference is it's agentic skill discovery based on your actual request. Should I make this an MCP?
+# utils
+- https://github.com/apify/mcp-cli /323Star/MIT/202602/ts
+  - a CLI client for MCP. It supports persistent sessions, stdio/HTTP, OAuth 2.1, JSON output for code mode, proxy for AI sandboxes, and much more.
+  - Works with any MCP server over Streamable HTTP or stdio.
+  - JSON output enables integration with CLI tools like jq and scripting.
+  - AI sandboxing - MCP proxy server to securely access authenticated sessions from AI-generated code.
+  - works on Mac/Win/Linux, doesn't use LLMs on its own.
+
+- https://github.com/philschmid/mcp-cli /892Star/MIT/202602/ts
+  - A lightweight, Bun-based CLI for interacting with MCP (Model Context Protocol) servers.
+  - Single Binary - Compile to standalone executable via bun build --compile
+  - Designed for AI coding agents (Gemini CLI, Claude Code, etc.)
+  - Supports both stdio and HTTP MCP servers
+  - mcp-cli is designed to give AI coding agents access to MCP (Model Context Protocol) servers. 
+  - Traditional MCP integration loads full tool schemas into the AI's context window, consuming thousands of tokens.
+  - The CLI approach: Only fetch schemas when needed
+    - Shell composable: Chain with jq, pipes, and scripts
+    - Scriptable: AI can write shell scripts for complex workflows
+
+- https://github.com/mcpshim/mcpshim /202602/go
+  - https://mcpshim.dev/
+  - Turn remote MCP servers into local command workflows.
+  - A lightweight daemon + CLI bridge that centralizes MCP sessions, auth, discovery, and tool execution behind one local Unix socket.
+  - Remote MCP servers are powerful, but each service has its own auth flow, transport expectations, and invocation patterns. Wiring all of that directly into every script or agent loop creates brittle command workflows.
+  - dumping raw MCP schemas for every connected server can consume prompt budget before useful work begins.
+  - mcpshimd handles MCP lifecycle concerns in one place: session management, discovery, retries, and OAuth flow.
+  - mcpshim provides a stable CLI surface over a local Unix socket so tools can be called consistently, with dynamic flags translated to MCP arguments at runtime.
+  - [I turned MCP tools into standard CLI commands to solve context pollution : r/ollama _202602](https://www.reddit.com/r/ollama/comments/1rcv5by/i_turned_mcp_tools_into_standard_cli_commands_to/)
+    - what difference does it make with direct api calls then ? 
+    - Not everything is an MCP wrapped around an API. Not every API is simple. Often times the openapi spec is larger than the MCP tool def.
+    - Can you expand the example config to include stuff like local servers using node or npx, etc?
 # more

@@ -240,7 +240,7 @@ modified: 2022-08-21T10:02:05.129Z
   - 📝 [[Plugin] Block editor view _202408](https://github.com/teableio/teable/issues/829)
     - [Markdown Document Field _202412](https://github.com/teableio/teable/issues/1137)
 
-- nocobase /3.7kStar/apache2(core)🌹 > AGPL/202404/ts
+- nocobase /3.7kStar/apache2(core)🌹 > AGPL > apache2/202404/ts
   - https://github.com/nocobase/nocobase
   - https://www.nocobase.com/
   - [源码安装](https://docs-cn.nocobase.com/welcome/getting-started/installation/git-clone)
@@ -262,6 +262,8 @@ modified: 2022-08-21T10:02:05.129Z
   - Everything is a plugin, all new features can be implemented by developing and installing plugins
   - [change license of plugins-AGPLv3_20230111, v0.8.1 > v0.9.0](https://github.com/nocobase/nocobase/pull/1350)
   - [change license to AGPLv3 or commercial _2024-03-30](https://github.com/nocobase/nocobase/commit/e2763b332286affb7cfd9c6a9fb90d656226e3fb)
+  - https://x.com/NocoBase/status/2026175176988360910
+    - 202602: Starting with 2.0, NocoBase is shifting toward an AI-driven platform. To support this direction, the core license moves to Apache-2.0, many previously commercial plugins are now open-sourced
 
 - focalboard /10.3kStar/AGPL-src + MIT-bin/202203/ts/go/偏看板/参考前端/squirrel-sql-builder
   - https://github.com/mattermost/focalboard

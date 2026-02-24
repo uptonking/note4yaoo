@@ -97,7 +97,8 @@ modified: 2021-08-16T06:56:53.061Z
 
 - ## 
 
-- ## 
+- ## 纸张褶皱的效果: 算力过剩时代的UI be like
+- https://x.com/DLKFZWilliam2/status/2026111187528949996
 
 - ## userjot: The editor is getting a lot better
 - https://x.com/ImSh4yy/status/1869887335854117092

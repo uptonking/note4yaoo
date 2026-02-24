@@ -122,7 +122,11 @@ modified: 2024-09-08T18:57:12.231Z
 
 - ## 
 
-- ## 
+- ## [RFC: RAG-based dynamic skill injection to fix context pollution at scale · openclaw/openclaw _202602](https://github.com/openclaw/openclaw/discussions/20028)
+  - buildWorkspaceSkillsPrompt() serialises every eligible skill into the system prompt on every agent turn. This works well with a handful of skills, but breaks down as the skill library grows
+  - The current token-limit binary-search in applySkillsPromptLimits() mitigates the worst case by truncating skills, but truncation is arbitrary — the skills that get dropped may be exactly the ones needed for the current task.
+  - Proposed solution: Replace the static full-injection with per-turn semantic retrieval (RAG)
+  - Since ClawHub already classifies every skill as benign, suspicious, or malicious via VirusTotal + Code Insight (blog), RAG indexing is a natural enforcement point.
 
 - ## [We've built memory into 4 different agent systems. Here's what actually works and what's a waste of time. : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1r21ojm/weve_built_memory_into_4_different_agent_systems/)
 - What's a waste of time:

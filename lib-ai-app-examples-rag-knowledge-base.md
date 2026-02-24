@@ -1025,6 +1025,11 @@ modified: 2025-11-30T17:27:16.720Z
   - Under the hood, it uses an embedding model locally. It chunks your content and stores embeddings in SQLite. The search functionality uses vector + keyword search + a re-ranking model.
   - You can also point it at any GitHub repo and it will create a RAG DB out of it.
   - You can also use the MCP server to create and query the libraries.
+
+- https://github.com/nkapila6/mcp-local-rag /MIT/202602/python
+  - A RAG-based web search and deep research model context protocol (MCP) server that runs entirely locall
+  - Features multi-engine research across 9+ search backends with semantic similarity ranking, and requires no API keys.
+  - 9+ Search Backends: DuckDuckGo, Google, Bing, Brave, Wikipedia, Yahoo, Yandex, Mojeek, Grokipedia
 # graph-knowledge
 
 ## graph-examples

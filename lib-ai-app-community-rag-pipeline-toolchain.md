@@ -15,6 +15,41 @@ modified: 2026-02-18T04:15:19.228Z
 - ## 
 
 - ## 
+# discuss-rag-tools/saas
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Looking for feedback: Building an Open Source one shot installer for local AI. : r/LocalLLM _202602](https://www.reddit.com/r/LocalLLM/comments/1rco6la/looking_for_feedback_building_an_open_source_one/)
+  - I’ve been working full time in local AI for about six months and got tired of configuring everything separately every time. So I built an installer that takes bare metal to a fully working local AI stack off one command 
+  - It detects your GPU and VRAM, picks appropriate models
+- https://github.com/Light-Heart-Labs/Lighthouse-AI /apache2/202602/python/js
+  - https://lightheartlabs.io/
+  - One command to a full local AI stack — LLM inference, chat UI, voice agents, workflows, RAG, and privacy tools.
+  - vLLM for inference
+  - Open WebUI for chat
+  - Qdrant for RAG / vector search
+  - LiteLLM as a unified model gateway
+  - PII redaction proxy
+  - n8n for workflow automation
+
+- I really want a full agent stack in a box with nice attachment support and full computer-use.
+  - Qwen3, for example, supports audio reasoning, video reasoning, and is fully trained for computer use. Getting all that to work? Get ready for weeks of coding.
+  - Efficient file-search primitives work better than RAG. Id skip vector search
+
+- I think the problem is that the people who care about this would rather tinker and customize themselves, and the people that don’t care won’t even know why they would need a RAG or use this process at all vs just using ChatGPT
+  - I agree which is why it’s open source and not a closed project. You could use the setup, modify it, do whatever you want with it etc.
+
+- 
+- 
+- 
+- 
+- 
+
 # discuss-search-grep
 - ## 
 

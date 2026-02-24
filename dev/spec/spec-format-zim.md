@@ -145,6 +145,16 @@ modified: 2023-07-05T10:22:57.942Z
 
 - ## 
 
+- ## 
+
+- ## [Using the ZIM format to distribute a bounded archive of AI responses (experimental project) : r/Kiwix](https://www.reddit.com/r/Kiwix/comments/1rcssey/using_the_zim_format_to_distribute_a_bounded/)
+  - Originally, I explored whether a ZIM file could function as a fully offline AI chatbot. After thinking through memory constraints and performance consistency across devices, it became clear that bundling a live model inside a ZIM was not practical.
+  - That led to a different idea: Instead of live inference, what if I systematically enumerated a bounded prompt space, generated responses once, and distributed the entire prompt-response corpus as a static ZIM artifact?
+  - Are there other applications for a "bounded inference archive" like this?
+
+- It's an intriguing idea, but I'd suggest a different approach: be word-based rahter than character based and use n-grams to truncate "all possible combinations" to "reasonable likely combinations". That would allow you to include much more meaningful prompts while maintaining a somewhat acceptable growth pattern.
+  - Actually, you could probably shift completely to a tree like strcuture. The user could enter one or two keywords. For every possible keyword combination (e.g. "wikipedia history" or "nuclear power"), generate X interesting prompts during the ZIM creation using an LLM. The user could then be shown a list of those prompts and an answer to them.
+
 - ## [TV/Movie DB zim? : r/Kiwix](https://www.reddit.com/r/Kiwix/comments/1qpemqu/tvmovie_db_zim/)
 - there's an official dataset available here, so someone could create a ZIM, just not be allowed to share it.
   - The data can only be used for personal and non-commercial use and must not be altered/republished/resold/repurposed to create any kind of online/offline database of movie information (except for individual personal use). 

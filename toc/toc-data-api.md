@@ -173,6 +173,9 @@ modified: 2020-11-11T13:16:24.994Z
   - https://github.com/HackerNews/API
     - Documentation and Samples for the Official HN API
     - In partnership with Firebase, we're making the public Hacker News data available in near real time
+- https://github.com/DOSAYGO-STUDIO/HackerBook /MIT/202602/js
+  - The unkillable, offline Hacker News archive, updated Weekly.
+  - [I fit 22GB of Hacker News into SQLite : r/sqlite _202602](https://www.reddit.com/r/sqlite/comments/1rcmny9/i_fit_22gb_of_hacker_news_into_sqlite/)
 
 - https://github.com/mdn/data
   - There's a top-level directory for each broad area covered: for example, "api", "css", "svg". 

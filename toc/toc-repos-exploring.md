@@ -9,6 +9,8 @@ modified: 2020-11-03T06:55:09.225Z
 
 # guide
 
+- alternatives
+  - https://relatedrepos.com/gh/anomalyco/opencode
 # image
 - https://github.com/aoguai/LiYing /AGPL/202508/python/offline/仅win
   - LiYing 是一套适用于自动化 完成一般照相馆后期证件照处理流程的照片自动处理的程序。
