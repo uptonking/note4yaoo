@@ -144,7 +144,97 @@ modified: 2024-09-25T15:20:00.070Z
   - 备份就是设备一次发 32k 恢复就是 Finder 一次发 32k
   - 然后每次传完就打一条日制 挂着日制收集器 IO 直接爆炸 不挂也浪费一大堆处理器资源
 
+# discuss-sim
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [新开移动号反套路改8元套餐 - 小红书](https://www.xiaohongshu.com/explore/6978c9ff0000000022021579?xsec_token=ABwd6ZRCtEHq7umnL-fz6vt5X34D9MUS8TfmJ-4JCO2BA=&xsec_source=pc_search&source=web_search_result_notes)
+- 建议月底前三天操作，降低首月月套餐成本。
+1、移动app上搜索宝藏卡，选择心仪号码，下单填写信息地址，等师傅上门开卡激活。
+2、一般是顺丰，下单第二天上门激活卡，首次要充值50元，月底最后两天激活扣不到3元的月租费。
+3、激活成功后，马上拨打10086客服电话，要求改成8元自由选套餐，流量、语音选择其一，还是语音吧，流量太少了，还不如在app签到领的多。
+4、坐等下个月新套餐激活。
+ps：现在营业厅开个号，至少推你大几十的绑定套餐，改低套餐还要支付违约金，妥妥大冤种。
+
+- 移动有可以直接办理的8元新号套餐啊
+  - 每个省份政策不同吧，这边新号不能直接开通8元套餐。
+- 我昨天去营业厅说新号办不了8元套餐，老用户才可以
+
+- 归属地是只能本省的吗
+  - 好像跟收货地绑定
+
+- [移动宝藏卡8元套餐攻略 - 小红书](https://www.xiaohongshu.com/explore/6879ff72000000002400bff8?xsec_token=ABMWa9eycbPsqnEWz1KQfoSZOXan4BdRzQyOSfHevucVQ=&xsec_source=pc_search&source=web_search_result_notes)
+  - 需要给队友办个新的国内电话卡，方便在国外收短信验证码，所以在APP下单了一个29元月租的宝藏卡。（下单时未支付任何费用）
+  - 第二天中午收到了电话卡，京东快递配送的，提供身份证原件之后工作人员会给你激活，有让我扫一个码充值50元
+  - 另外跟客服沟通需要给这张卡开通一下国际漫游，查询后客服表示该卡已经开通了国际漫游，说这张卡自动开的国际漫游服务。
+- 目前在线是这么办，线下办的话很多宝宝反馈营业员不给办
+
+- 
+- 
+- 
+
+- [教你如何快速办理移动8元保号套餐 - 小红书](https://www.xiaohongshu.com/explore/67a5f1ca000000001703aee8?xsec_token=ABaSImGc9MJ0PXFyNqUJKZbv9QBwVOe5Oxj0_mw3EQkb8=&xsec_source=pc_search&source=web_search_result_notes)
+  - 下载移动app-查看更多-号卡-号卡中心-选择办理29元宝藏卡-接下来按照指引选号下单，京🐶快递送达，当天需要准备身份证原件。
+  - 打10086-转人工-和人工客服说改8元保号套餐，客服会告诉你登记下来，然后48小时内联系你，果然第三天客服才联系我
+  - 只有10M的流量。相当于0
+
+- 
+- 
+- 
+
+- ## 👀 [联通劳资打死你 - 小红书](https://www.xiaohongshu.com/explore/68b43382000000001d034db6?xsec_token=ABHRfK0CgtuFDQhWIxlZF5BBqKbly0IBT3Q8WpnA0u3gk=&xsec_source=pc_search&source=web_explore_feed)
+  - 联通国际漫游话费一天25/35，移动8.8，此为一胜
+  - 联通不能用无忧行，只有移动能用，此为二胜
+
+- 移动基础套餐贵呀
+
+- [联通海外如何用无忧行 - 小红书](https://www.xiaohongshu.com/explore/631bbe77000000001200ad29?xsec_token=ABlJV6SQn3nZxUFeHJucYVMyPa9YBWK4sBQbRUlTih5hU=&xsec_source=pc_search&source=web_explore_feed)
+  - 无忧行是移动开发的一款app，主要特点是可以直接托管移动手机号，海外免费接听电话，短信。首次激活后，可以直接取出SIM卡，电话短信接收完全依靠网络信号。
+- 如果有联通用户想在境外免费接听电话，是无法直接使用无忧行的。现有两种折衷方案：
+  - 将联通号携号转网，转到移动，可找客服开通8元保号套餐；
+  - 新开一张移动手机卡，改为最低8元套餐，无忧行接管该号。联通号开通呼叫转移，呼叫转到新的移动卡，这样海外接听联通号只花呼叫转移费用，实测0.1元每分钟，移动号不扣费。
+- 直接用联通当然不行，呼叫转移后没问题
+- 联通不用携号转网，直接呼叫转移给移动，移动号码托管无忧行。联通手机记得别带出国
+  - 这样的话短信收不到吧，只能收到电话
+
+- ## [如何办理其他省份电信无忧卡 - 小红书](https://www.xiaohongshu.com/explore/6946913a000000001b024eaa?xsec_token=ABNtQpiPx82b2xfEzWqczPV_j0CEUyuomF34hk1kMkYRA=&xsec_source=pc_search&source=web_search_result_notes)
+- 你先查一下哪个省有无忧，然后办那个省的卡，然后转成无忧
+  - 你只要办得到卡，那个省份有无忧卡，就可以转
+  - 比如你办个湖北卡，湖北要是有无忧卡，你就转成无忧卡
+  - 最好月末，当月月租少花些，第二个月才是8
+
+- 直接买个便宜套餐，听别人说月底买最划算，然后把套餐换了，换成无忧卡
+  - 我已经改好套餐了次月生效，可是我问了客服说我这个月的话费按照原套餐算一整个月的
+
+- ## [广东电信无忧卡办理成功在小红薯上搜到教程，先购入了29的畅享卡，然后联系客服更改套餐。客服也很配合，直接就帮忙更改了。这下终于有了一个备用号！ - 小红书](https://www.xiaohongshu.com/explore/692195fa000000001d0382fc?xsec_token=ABvygBv4V-Pmi2MTH-wjJMWEgh3VnlkmkNd63zUBel7E8=&xsec_source=pc_search&source=web_search_result_notes)
+  - 我这里线上也不能办，所以我才买畅享卡然后改成5元的无忧卡套餐 
+  - 畅享卡线上在电信app里面买的，然后线上人工转的套餐
+
+- 这个29的畅享卡，写着合约期两年，收到可以直接改吗？
+  - 这个我没注意，我是收到之后直接打人工客服改的
+
+- 我直接打10000号办的，我说我要出国，留一个号收短信，马上就办好了
+
+- [广东星卡转无忧 - 小红书](https://www.xiaohongshu.com/explore/6863bfa8000000000d01b409?xsec_token=ABTswNJz2Sf2rzQdIMB7LcaYslD0qd0-TYHStRjObc6iU=&xsec_source=pc_search&source=web_search_result_notes)
+  - 先买的29星卡，今天激活的，下午就打一万号叫人工变更套餐，本来想改5元的、后来听他说10元的有1G  和80分钟通话，觉得更划算就办了10元的
+  - 广州，佛山的，都只要身份证，上门送卡开卡
+
+- ## [保号套餐疑问 - 小红书](https://www.xiaohongshu.com/explore/6916ae3c000000000402b012?xsec_token=AB-Qmjz-7JxVgYmg_54V0Do9sqHY_bOCVgdXL07CQjomU=&xsec_source=pc_search&source=web_search_result_notes)
+  - 主包原本是广东移动 8 元保号，但是经常会流量偷跑，就异地转网到电信，转网要求选套餐，选择最便宜的套餐首月按天计费，电话卡会通过快递寄送过来，激活之后打人工客服要求次月改成 5 元的无忧卡套餐
+
+- 现在没有了，只有以前的保留，我就是，
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## [为什么现在的手机相机都在做夜景？ - 知乎](https://www.zhihu.com/question/387066017)

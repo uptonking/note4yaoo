@@ -243,14 +243,28 @@ modified: 2024-01-23T02:52:23.932Z
 - ## one fun thing in Obsidian 1.8 is that it lets you browse the web in plain text — the "reader mode" is persistent as you click links
 - https://x.com/kepano/status/1885022352209306085
 
+# discuss-showcase-ob
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Combined all notes/writing apps I've ever used into a single vault : r/ObsidianMD](https://www.reddit.com/r/ObsidianMD/comments/1rdpwmw/combined_all_noteswriting_apps_ive_ever_used_into/)
+  - graph关系图，样式友好
+
+- ## 🗺️ [Chorographia Update: 0.3.0 beta release : r/ObsidianMD](https://www.reddit.com/r/ObsidianMD/comments/1r91mid/chorographia_update_030_beta_release/)
+  - my plugin that turns your vault into a semantic map. Notes embedded, projected into 2D via UMAP, and clustered into thematic zones. 
+  - the overlapping zone issue. I still really like the original (now called “Star Map”), so instead of redesigning I added a new mode: “World Map.”
+
 # discuss-pm-ob
 - ## 
 
 - ## 
 
-- ## 🗺️ [Chorographia Update: 0.3.0 beta release : r/ObsidianMD](https://www.reddit.com/r/ObsidianMD/comments/1r91mid/chorographia_update_030_beta_release/)
-  - my plugin that turns your vault into a semantic map. Notes embedded, projected into 2D via UMAP, and clustered into thematic zones. 
-  - the overlapping zone issue. I still really like the original (now called “Star Map”), so instead of redesigning I added a new mode: “World Map.”
+- ## 
+
+- ## 
 
 - ## [Do you use Daily Notes in Obsidian? Is this something you would want? : r/ObsidianMD](https://www.reddit.com/r/ObsidianMD/comments/1q8zw78/do_you_use_daily_notes_in_obsidian_is_this/)
   - 热力图换成了背景图

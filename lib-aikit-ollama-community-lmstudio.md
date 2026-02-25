@@ -99,7 +99,11 @@ modified: 2026-01-14T18:58:32.523Z
 
 - ## 
 
-- ## 
+- ## Introducing LM Link - Connect to remote instances of LM Studio, securely. _202602
+- https://x.com/lmstudio/status/2026722042347663779
+  - Load models locally, use them on the go
+  - Use local devices, LLM rigs, or cloud VMs
+- from local AI to private AI network, very cool
 
 - ## Introducing Parallel Requests for MLX _202602
 - https://x.com/lmstudio/status/2019872805521674563

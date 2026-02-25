@@ -51,7 +51,12 @@ modified: 2021-08-25T05:56:00.431Z
 
 - ## 
 
-- ## 
+- ## [I vibe coded a 3D city with 21, 000 lines in 4 days - every GitHub dev is a building : r/vibecoding _202602](https://www.reddit.com/r/vibecoding/comments/1rdw12q/i_vibe_coded_a_3d_city_with_21000_lines_in_4_days/)
+  - Built entirely with Claude. 21, 000 lines of Next.js + Three.js + React Three Fiber + Supabase + Stripe.
+  - The result: a 3D pixel art city where every GitHub developer is a building. You can fly through it, unlock achievements, compete on leaderboards, and customize your building with items like hologram rings and neon auras.
+- https://github.com/srizzon/git-city /AGPL/202602/ts
+  - https://thegitcity.com/
+  - Your GitHub profile as a 3D pixel art building in an interactive city
 
 - ## 使用Dall-E 3制作城市3D立体天气海报
 - https://twitter.com/xiaohuggg/status/1720792193848484000

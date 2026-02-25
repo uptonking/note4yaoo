@@ -9,6 +9,15 @@ modified: 2026-01-17T22:40:27.013Z
 
 # guide
 
+- pros
+  - ?
+
+- cons
+  - ?
+
+- features
+  - tui支持渲染markdown table
+
 - tips
   - Coding agent clients (sometimes referred to as harnesses)
 # draft

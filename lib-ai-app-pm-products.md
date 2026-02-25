@@ -766,6 +766,8 @@ modified: 2025-03-22T16:10:24.856Z
   - [爱你公益站](https://x.ainiaini.xyz/console/personal)
     - [[爱你公益站]开站 ](https://linux.do/t/topic/1638562)
     - 暂时只有 gpt 系列，
+  - [Codex - New API](https://codex.makeup/console/personal)
+    - [又一个codex公益站，人手一个蹬  ](https://linux.do/t/topic/1645651)
   - [纳米哈基米](https://free.nanohajimi.mom/console/personal), 签到
     - Gemini Imagen
     - [【纳米哈基米 · 公益站】 支持香蕉Pro画图，Veo视频，Gemini全系模型 ](https://linux.do/t/topic/1512770)

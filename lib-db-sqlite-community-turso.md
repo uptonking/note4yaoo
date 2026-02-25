@@ -281,7 +281,12 @@ target/debug/limbo database.db
 
 - ## 
 
-- ## 
+- ## I suspect Mastra's workspace abstraction will be huge for agents.
+- https://x.com/penberg/status/2026310251956326604
+  - Every agent gets a filesystem for reading, writing, mkdir, and so on, but the storage backend is pluggable. Mastra already had local and S3 providers, but @abhiaiyer suggested adding AgentFS, so I went and built it.
+  - AgentFS backs everything with Turso/SQLite. Agent files persist across sessions, no local disk, no S3 credentials. The agent does its thing and doesn't care what's underneath. That's the whole point: prototype locally, deploy to S3 or AgentFS; the agent code doesn't change. Storage is infrastructure, not something you wire up by hand.
+
+- How straightforward is it to use go-libsql as the db driver for agentfs? Iirc we can drop-in our own if we vendor the go source? Would love to have a full agentfs with ANN builtin for in-process semantic operations.
 
 - ## The File System Is the New Database: How I Built a Personal OS for AI Agents
 - https://x.com/koylanai/status/2025286163641118915

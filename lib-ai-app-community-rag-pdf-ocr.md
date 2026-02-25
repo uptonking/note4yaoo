@@ -39,6 +39,20 @@ modified: 2026-01-25T17:23:01.510Z
 
 - ## [From YOLO to VLMs: Advancing Zero-Shot and Few-Shot Detection of Wastewater Treatment Plants Using Satellite Imagery in MENA Region | Abstract _202512](https://arxiv.org/abs/2512.14312)
 
+# discuss-pdf-elements
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Best way to handle pdfs containing huge tables in RAG : r/Rag](https://www.reddit.com/r/Rag/comments/1reezcu/best_way_to_handle_pdfs_containing_huge_tables_in/)
+- Docling and detect and prechunk tables
+
+- Parse into csv and add into a SQLite, have an agent to do that, don't do programmatically. Or have the rag trigger an agent with vision capabilities to answer
+  - One approach, that can be expensive, is to have a vision model to parse the content and on a second step, the data is cleaned by another LLM call and validated against the original table. If you're running models at your end, it could be worth it.
+
+- Sounds more suitable to store them in database tables and create/use a tool that query them.
 # discuss-vlm
 - ## 
 

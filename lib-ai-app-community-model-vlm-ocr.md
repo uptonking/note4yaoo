@@ -210,6 +210,15 @@ modified: 2025-11-06T18:49:13.977Z
   - https://github.com/getomni-ai/benchmark
   - The goal of this benchmark is to publish a comprehensive benchmark of OCRaccuracy across traditional OCR providers and multimodal Language Models.
   - The evaluation dataset and methodologies are all Open Source, and we encourage expanding this benchmark to encompass any additional providers.
+
+- ## OmniDocBench is getting saturated. VLMs are getting increasingly better at document understanding _202602
+- https://x.com/jerryjliu0/status/2026408921385284001
+  - we're quickly approaching the point where we need a new benchmark. 
+  - The latest models are pushing ~95% on OmniDocBench and are already overfitting the benchmark, while still having real gaps on document capabilities.
+  - The evaluation metrics of OmniDocBench depend completely on exact match and not on semantic correctness. The latter is much more important, especially in today's world where LLMs can reason over text tokens regardless of non-important formatting differences.
+  - There are so many real-world documents that haven't yet been solved by even the latest models. We'd love to welcome discussion on advancing document understanding benchmarks that are more diverse and properly score models on semantic correctness.
+
+- The issue with OCR is it’s a small piece of a larger system. we need full e2e document processing benchmarks that include NER with OCR
 # discuss-stars
 - ## 
 

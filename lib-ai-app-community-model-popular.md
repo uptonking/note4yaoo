@@ -677,7 +677,41 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [Ran 3 popular ~30B MoE models on my apple silicon M1 Max 64GB. Here's how they compare : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1rdx2c7/ran_3_popular_30b_moe_models_on_my_apple_silicon/)
+  - GLM-4.7-Flash, Nemotron-3-Nano, and Qwen3-Coder, all share a similar formula: roughly 30 billion total parameters, but only ~3 billion active per token. 
+  - I put all three through the same gauntlet on my MacBook Pro M1 Max (64GB) using llama-server
+  - 64GB unified memory handles all three without breaking a sweat. Nemotron takes the most RAM because of its hybrid Mamba-2 architecture and higher bits-per-weight quant (5.78 BPW).
+  - Quantizations: GLM Q4_K_XL (Unsloth) | Nemotron Q4_K_XL (Unsloth) | Qwen IQ4_XS (Unsloth)
+  
+- I've never had any luck with 30B MoE outside of basic stuff. Integrating them with coding extensions and they manage to mess up simple codebases.
+  - I've tried the Qwen3 Coder 30BA3B at Q4/Q6 with RooCode and I was disappointed with the end results. It was a fairly basic node.js web application.
+- Current pick is Minimax M2.5, runs ok, end results are impressive for coding. Again, not using coding extensions though. It's too slow on my system for that.
+- Gemma3:27B QAT remains my model of choice for basic non STEM chat interactions. Models trained on general corpus tend to fare better than most STEM focused ones.
+
+
+
+
+
+  
+
+- there's a big gap between "model answers a coding question well in a chat window" and "model reliably drives an agentic coding workflow end-to-end." Tools like RooCode (and Cline, Continue, etc.) demand a lot more from a model, it needs to understand multi-file context, produce structurally valid edits, follow tool-calling conventions precisely, and maintain coherence across multiple back-and-forth steps. That's a fundamentally harder task than a single prompt-response cycle, which is what my benchmark tested. 
+
+
+- 
+- 
+- 
+
+- ## [Qwen3.5 27B better than 35B-A3B? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1re72h4/qwen35_27b_better_than_35ba3b/)
+- Ive done some personal testing and the 27b IS the better model but on my 3090 it's a difference of 100 t/s or 20 t/s. I have both downloaded and it'll be really a matter of how long do I want to wait for which I'll use
+
+- For agentic, moe wins. Agent needs to craft commands faster.
+
+- ## 🆚 [Qwen3-30B-A3B vs Qwen3.5-35B-A3B on RTX 5090 : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1re3l3r/qwen330ba3b_vs_qwen3535ba3b_on_rtx_5090/)
+  - TL; DR: The 3.5 is ~32% slower in raw generation but handles long context significantly better — flat tok/s scaling vs the 30B's 21% degradation. Thinking mode is where it gets interesting. Quality is a wash with slight 3.5 edge in structure/formatting.
+  - For raw speed and short interactions: Stick with the 30B. It's 48% faster and the quality difference is negligible for quick queries.
+  - For long conversations, big context windows, or RAG-heavy workloads: The 3.5 has a real architectural advantage. Its flat context scaling curve means it'll hold 160 tok/s at 8K context while the 30B drops to 187 tok/s — and that gap likely widens further at 16K+.
+  - For thinking/reasoning tasks: It's a tradeoff. The 30B thinks faster but burns more tokens on verbose reasoning. The 3.5 thinks more concisely and reaches the answer within budget more reliably, but at lower throughput.
+  - My plan: Keeping the 30B as my daily driver for now. The speed advantage matters for interactive use. But I'll be watching the 3.5 closely — once llama.cpp optimizations land for the new architecture, that context scaling advantage could be a killer feature.
 
 - ## [Round 2: Quick MoE quantization comparison: LFM2-8B-A1B, OLMoE-1B-7B-0924-Instruct, granite-4.0-h-tiny : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1rd2cdu/round_2_quick_moe_quantization_comparison/)
   - The goal is to check on MXFP4 and evaluate the smallest quantization variants.
