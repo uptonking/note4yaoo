@@ -29,7 +29,11 @@ modified: 2024-02-18T13:52:07.926Z
 
 - ## 
 
-- ## 
+- ## 🤼 PostgreSQL的快照隔离在有长事务的情况下性能不良，因为并行事务不能写冲突。也就是说如果很多个事务试图修改计数器，那么除了一个事务其他都必须失败。
+- https://x.com/JXQNHZr1yUAj5Be/status/2027003437200674862
+  - 而MySQL的update是当前写（原子寄存器语义），意味着它总是看到最新的状态，对同一个行的写不会导致事务被取消。因此它更有利于长事务和写入。
+  - 因此从互联网的主要业务看，PostgreSQL的设计是失败的。
+- 差点被糊弄过去。首先 PostgreSQL 和 MySQL 在这个情况下的写锁行为差不多，PostgreSQL 只会可重复读和可串行化级别存在违反的时候会滚事物，对应 MySQL 的行为是数据错误或者死锁。 此外你说的计数器场景，大家都使用读已提交隔离级别，两边的行为几乎一致。
 
 - ## 🔒📝 Postgres locks are interesting. e.g. CREATE INDEX allows reads but blocks Writes, while VACUUM FULL blocks all queries.
 - https://twitter.com/hnasr/status/1781129355286229229

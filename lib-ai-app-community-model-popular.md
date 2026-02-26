@@ -677,6 +677,20 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🆚 [speed of GLM-4.7-Flash vs Qwen3.5-35B-A3B : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1rf99u2/speed_of_glm47flash_vs_qwen3535ba3b/)
+- Gated delta-net linear attention used by Qwen 3 Next and Qwen 3.5 means less compute overhead at higher context lengths. I think it's a real factor here.
+- GLM 4.7 Flash uses Multihead Latent Attention, which affects token generation speeds pretty severely at long contexts in llama.cpp. Some of this can be bypassed in the ik_llama.cpp fork by using some precached calculations, but it comes at the cost of more VRAM.
+
+- Please note that there are often changes in the software (like llama.cpp), and you can see a speed difference before and after an update. So the speed depends on the implementation.
+  - Also, different models have different architectures, so there are different theoretical optimal implementations, and then there are the actual (often suboptimal!) implementations we run in practice.
+  - That’s why real hardware testing is important. Your results may differ on different backends!
+
+- worth noting that llama.cpp's MLA implementation is still improving. I've seen meaningful speed differences between minor versions. so these benchmarks are a snapshot - worth retesting after major updates.
+
 - ## [Ran 3 popular ~30B MoE models on my apple silicon M1 Max 64GB. Here's how they compare : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1rdx2c7/ran_3_popular_30b_moe_models_on_my_apple_silicon/)
   - GLM-4.7-Flash, Nemotron-3-Nano, and Qwen3-Coder, all share a similar formula: roughly 30 billion total parameters, but only ~3 billion active per token. 
   - I put all three through the same gauntlet on my MacBook Pro M1 Max (64GB) using llama-server
@@ -688,14 +702,9 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 - Current pick is Minimax M2.5, runs ok, end results are impressive for coding. Again, not using coding extensions though. It's too slow on my system for that.
 - Gemma3:27B QAT remains my model of choice for basic non STEM chat interactions. Models trained on general corpus tend to fare better than most STEM focused ones.
 
-
-
-
-
   
 
 - there's a big gap between "model answers a coding question well in a chat window" and "model reliably drives an agentic coding workflow end-to-end." Tools like RooCode (and Cline, Continue, etc.) demand a lot more from a model, it needs to understand multi-file context, produce structurally valid edits, follow tool-calling conventions precisely, and maintain coherence across multiple back-and-forth steps. That's a fundamentally harder task than a single prompt-response cycle, which is what my benchmark tested. 
-
 
 - 
 - 

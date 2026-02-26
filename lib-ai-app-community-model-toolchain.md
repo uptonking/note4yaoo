@@ -199,6 +199,7 @@ modified: 2025-09-16T12:36:12.968Z
   - [LocalScore - Local AI Benchmark](https://www.localscore.ai/)
     - LocalScore is an open benchmark which helps you understand how well your computer can handle local AI tasks.
   - [AMD Strix Halo — Backend Benchmarks (Grid View)](https://kyuz0.github.io/amd-strix-halo-toolboxes/)
+  - [Demystifying LLM Quantization Suffixes: What Q4_K_M, Q8_0, and Q6_K Really Mean _202506](https://medium.com/@paul.ilvez/demystifying-llm-quantization-suffixes-what-q4-k-m-q8-0-and-q6-k-really-mean-0ec2770f17d3)
 
 - ## 
 
@@ -386,9 +387,56 @@ PP Speed: Q3 GGUF: 50 t/s
 
 - ## 
 
-- ## 
+- ## 🆚 [Qwen3.5-35B-A3B Q4 Quantization Comparison : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1rfds1h/qwen3535ba3b_q4_quantization_comparison/)
+  - The goal is to give people a data-driven basis for picking a file rather than just grabbing whatever is available.
+  - KLD (KL Divergence): "Faithfulness." It shows how much the quantized model's probability distribution drifts from a baseline (the probability distribution of the original weights). Lower = closer.
+  - PPL (Perplexity): Used to measure the average uncertainty of the model when predicting the next token. It is derived from the total information loss (Cross Entropy). Lower = more confident.
+  - They are correlated. Perplexity measures the total error, KLD measures the relative error (like a routing drift of an MoE model). This relationship helps in determining information loss (or gain when training). Since we are trying to see how much information we've lost and since PPL is noisy as it can get a better score by pure luck, KLD is better as it is not relying on the dataset but on the baseline.
+  - If you need the most faithfull quant, pick the one with the lowest KLD.
+  - Conclusion
+  - AesSedai's Q4_K_M achieves KLD 0.0102 by consistently protecting always-active tensors (attention, shared experts) at Q8_0 and differentiating ffn_down_exps from ffn_gate/up_exps.
+  - Ubergarm's Q4_0 outperforms every other Q4_0 by a factor of 2.5 by a large margin for the same reason.
+  - MXFP4 is likely well-suited for QAT (Quantization Aware Training), where the model is trained to operate within MXFP4 numerical ranges. Applied post-hoc to a BF16 model, it consistently underperforms standard quants at equivalent size on this architecture
 
-- ## 
+- Interesting that IQ4_XS deviates so much on KLD while staying close on PPL. Suggests it's redistributing probability mass in ways that don't hurt next-token prediction but might affect generation diversity. We've been running Qwen quants for inference and the Q4_K_M vs IQ4_XS choice really depends on whether you care more about faithfulness or throughput on limited VRAM. Have you tested generation quality subjectively on longer outputs?
+
+- ## 🧩💡 [Overwhelmed by so many quantization variants : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1reqdpb/overwhelmed_by_so_many_quantization_variants/)
+  - One needs not only to test and benchmark models, but also within each model, compare its telemetry and quality between all the available quants and quant-techniques.
+  - So many concepts like the new UD from Unsloth, autoround from Intel, imatrix, K_XSS, you name it. All of them could be with a REAM or a REAP or any kind of prunation, multiplying the length of the list.
+  - When I ask wether to choose mlx or gguf, the answer comes strong like a dogma: mlx for mac. And while it indeed seems to be faster (sometimes only slightlier), mlx offers less configurations. Maybe with gguff I would lose a couple of t/s but gain in context. Or maybe a 4bit mlx is less advanced as the UD q4 of Unsloth and it is faster but with less quality.
+  - And it is a great problem to have: I root for someone super smart to create a brilliant new method that allows to run gigantic models in potato hardware with lossless quality and decent speed. And that is happening: quants are getting super smart ideas.
+  - But also feel totally overwhelmed.
+  - Anyone on the same boat? Are there any leaderboards comparing quant methods and sizes of a single model?
+
+- Ubergarm's perplexity charts are by far my favorite for this. I wish unsloth did the same.
+  - example: https://huggingface.co/ubergarm/Qwen3.5-397B-A17B-GGUF/blob/main/images/perplexity.png
+
+- Importance matrix is a separate feature, it's not exclusive to the "I" quants. For example, all of bartowiski and unsloth quants use importance matrixes, even the old q4_0 ones
+- You have got the common confusion that I in IQ4 stands for "importance". It just came at the same time, but is not related. Imatrix is a way to judge the impact of a weight during the quantization approximation based on the influence of particular sets of weights to the output of the layer (somehow). Imatrix can be applied to any quantization method, and typically it is in fact applied to all quants nowadays, because it's giving "free quality". Any quantization method can benefit from knowing which values are the most important, as it can distribute the errors more on weights that are less important when it searches for the optimal parameters for each block.
+  - IQs are codebook quants, something that ikawrakow cooked up before apparently figuring out that likely the important thing that made them better was the nonlinear spacing of the value distribution, and came up later with the KS/KSS etc. quants which seem to be even better than the IQ quants. Unfortunately, these "K" quants are only available on ik_llama.cpp and they will go fast only on CUDA, which for me means they are useless.
+
+- Dynamic quants (imatrix/AWQ/UD) tend to punch around 1 tier above their filesize, ie: q4 dynamic is similar to q5 naive. Everyone claims their method is best, in practical use outside of extremely low precision they're pretty similar. Default to q4_k_m (or a dynamic equivalent) and go up a tier if you feel like it's less coherent than it should be. Smaller models (4B-8B) lose more and should be run in higher precision, probably at least q6.
+  - The quality to file size ratio for mlx is probably worse in general because most mlx quants are naive. It is possible to make tuned quants in mlx format but as far as I know most of the popular uploaders don't do it.
+
+- I heard quite a few complaints (all coming from folks who don't speak English and Chinese) about dynamic quants reducing multi-lingual abilities of at least some models. Not sure how true it is, but that's just something to think about.
+
+- According to Unsloths own testing, UD Q2KXL is the most efficient quant in terms of performance per size. From my testing this holds up well. I try to run the best model I can run at UD Q2KXL. I've been running 122B at this quant with partial offload and it has been fast and smart. 
+
+- Honestly the quant rabbit hole is real but you can shortcut most of it: for MoE models right now (like Qwen3.5-35B-A3B), the UD quants are a bit controversial -- some evidence bartowski/ubergarm Q4_K_M actually beats UD at similar sizes. For dense models UD is usually a safe win. So: dense = UD Q4_KXL or higher, MoE = just grab bartowski Q4_K_M and call it done until the dust settles.
+
+- Been through this exact rabbit hole. Honestly the mental overhead of picking quants is real and underrated.
+  - One thing that helped me: stop thinking about it as "which quant is best" and start thinking about it as a hardware-first decision. Once you fix your VRAM ceiling, the quant choice almost picks itself.
+
+- You have to look at your inference hardware too. Some iGPUs and CPUs like ARM64 or Adreno OpenCL support accelerated processing only on Q4_0 in llama.cpp, so you're stuck with those quants if you want speed.
+
+- A shortlist I usually go down when friends ask me about weights, quants and models:
+  - Pick model family for task.
+  - Decide target context length (because KV cache can dominate). ￼
+  - Default quant ladder:
+  - Q5_K_M (default) → Q6_K (if headroom) → Q8_0 (if you’re chasing max fidelity)
+  - If memory tight: Q4_K_M → (if still tight and imatrix is good) IQ4_XS/IQ4_NL
+  - Only go IQ3 / ~2-bit when you must fit something huge; expect noticeable degradation.
+  - Benchmark prefill + decode under realistic settings.
 
 - ## [I have no idea what all these quants are. : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1qz5jp2/i_have_no_idea_what_all_these_quants_are/)
 - AI models are basically sets of numbers, and we can represent those numbers with different precision, the more precise the better the model performs and the more space it takes

@@ -709,7 +709,13 @@ Don’t want/can’t have external dependencies?
 
 - ## 
 
-- ## 
+- ## Just me or Codex and OpenCode *much* worse at automatically using skills than Claude based on just the prompt text? Need to explicitly invoke them for them to be used.
+- https://x.com/adamwathan/status/2026745037388742767
+- skills are not reliable in any, read this: [AGENTS.md outperforms skills in our agent evals - Vercel](https://vercel.com/blog/agents-md-outperforms-skills-in-our-agent-evals?utm_source=chatgpt.com)F
+
+- Same experience here. Claude seems to have better implicit skill invocation. I've found that explicit CLAUDE.md definitions help a lot - the model tends to 'forget' available tools without that explicit anchor.
+
+- ive got 38 skills in my setup and claude fires them from context without me naming them. tried opencode with the same skill definitions and had to explicitly call them most of the time. noticeable difference
 
 - ## I forked Claude's pptx skill to make Claude Code generate gorgeous presentations
 - https://x.com/nityeshaga/status/2011188015503437856

@@ -9,9 +9,7 @@ modified: 2021-01-01T20:21:10.887Z
 
 # guide
 - 可视化输出报告时，技术上更依赖图形编辑器
-
 # svg
-
 - 是一种使用XML描述2D图形的语言。
 - SVG基于XML，这意味着SVG DOM中的每一个元素都是可用的。您可以为某个元素附加Javascript事件处理器。
 - 在SVG中，每个被绘制的图形均被视为对象。如果SVG对象的属性发生变化，那么浏览器能够自动重现图形。
@@ -75,6 +73,19 @@ modified: 2021-01-01T20:21:10.887Z
   - 其动画的实现上也只能通过js里的计时器，设置好绘制间隔去一遍遍重绘来达到动画的效果。
   - canvas适合去做一些复杂丰富的数据可视化展示的，如图表等，配合当前一些插件EchartJs等，能够快速实现很多复杂多样的数据展示。
 # svg vs canvas
+- svg-pros
+  - ai is good at xml
+  - easier to test outside dom
+
+- svg-cons
+  - ?
+
+- canvas-pros
+  - ?
+
+- canvas-cons
+  - ?
+
 - overview
   - SVG is vector based and Canvas is a bitmap you draw on. Scaling with SVG is natural and with Canvas it requires a redraw.
   - SVG is built with elements, like DOM elements, and therefore you can draw a circle and attach mouse *events* to it very naturally with Javascript.  Canvas does not give you this ability natively, requiring much more work.

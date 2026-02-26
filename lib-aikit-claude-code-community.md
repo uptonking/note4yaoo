@@ -93,6 +93,14 @@ modified: 2025-12-18T12:26:08.445Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 💡 TIL 如何防止 Claude Code 读取 .env 文件
+- https://x.com/wong2__/status/2026916035761418251
+- 更应该不明文存可能敏感的 .env
+
 - ## when i set up claude code with  https://github.com/upstash/context7 mcp, what's the differences for setup below ?
 - `claude mcp add --scope user context7 -- npx -y @upstash/context7-mcp --api-key YOUR_API_KEY` .
   - Flow: Claude ↔ Local Process ↔ Context7 API.

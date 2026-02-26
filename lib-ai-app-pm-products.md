@@ -236,6 +236,7 @@ modified: 2025-03-22T16:10:24.856Z
       - 硬件相关
       - 快速，高精度，稳定可靠
       - privacy
+      - ai是基于现有数据和成功训练, 所以现阶段未解决的问题, ai大多未解决, ai更多时候是在加速解决已解决过得问题，而很多业务开发就是在重复解决已解决过的问题
   - ✈️ local models support: mlx, lmstudio-alternative
     - 模型库: text模型, ocr模型, 翻译模型, t2i生图模型, tts, stt,  lmstudio在模型分类上做的不够好
     - 较少免费api的模型: ocr, stt
@@ -246,7 +247,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 允许分享文档/插画中的模型配置/运行日志, 将prompt放入git-commit，还是直接放入图片?
     - ❓ 如何一键切换到cloud版
     - https://github.com/tc-mb/llama.cpp-omni is the first Omni multimodal inference engine built on llama.cpp.
-    - modes config for ocr/rag/translation like cline-plan/act/ask
+    - modes config for coding/ocr/translation/rag like cline-plan/act/ask
   - local agent
     - 支持同一个任务选择不同agent如claude-code/codex-cli来实现多个版本
     - 支持不同的cli来交叉验证

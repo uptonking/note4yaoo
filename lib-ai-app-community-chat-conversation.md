@@ -157,6 +157,23 @@ iOS 端至少有 Kelivo……（没接触过苹果，更多的就不清楚了）
 - 很好的思路，本质上就是通过对每句话进行句子表述上的补全，让每句话都是独立且完整的表述，保证了能进行可靠的向量搜索
 - plugins 的思路也类似这样
 
+# discuss-chat-format
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 目前 render AI chat history 有什么现成的三方库吗？就是我有一个 jsonl 文件或者 array of message 的数据，然后要根据不同的 role 把对话重新呈现出来。
+- https://x.com/tison1096/status/2026837754882175150
+  - 目前看最暴力的就是硬写一个 component 上不同的颜色，然后 message content 里用 Markdown render 出来。可能再加一个折叠。
+
+- 加个 load more button，再加个搜索。vibe 也就十分钟的事
+
+- pi-mono里都有, 看下share功能的实现，风格就是完全terminal，应该vibe下也没什么问题
+  - 不过如果是分享的话，有个很重要的脱敏功能没有
 # discuss-db-chat
 - ## 
 

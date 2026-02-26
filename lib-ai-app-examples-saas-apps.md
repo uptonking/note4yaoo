@@ -609,6 +609,22 @@ modified: 2025-02-21T17:17:42.225Z
       - 顺带一提其实也没要求英文和数字要求新罗马，甚至要求页码的 - 1 -，用的是宋体，当然了这些都是习惯了，而且新罗马电脑都有，且不会出现缺失这种情况。
     - 我们现在还是沿用 GB2312，数字新罗马。 另外提个 BUG， 引号 “ 现在是新罗马，要改成中文字体
 
+## research
+
+- https://github.com/Agents2AgentsAI/ata /apache2/202602/rust/ts
+  - AI agents for solving engineering and research problems end to end
+  - [We forked Codex CLI and turned it into a full research agent — it searches papers, reads PDFs, traverses citation graphs, and synthesizes everything into navigable documents : r/codex _202602](https://www.reddit.com/r/codex/comments/1rem9ai/we_forked_codex_cli_and_turned_it_into_a_full/)
+    - We saw that with the current Codex, we have to spend a lot of manual efforts to handle pdfs, and adjust the prompts to get the results we want.
+    - I have been using both Claude Code and Codex in parallel due to Claude Code’s ability to handle pdfs natively and it feels pretty “handicapped” now to switch to Claude.
+  - why fork codex?
+    - Codex gave us the best foundation for this. Paper reading is just step one — the roadmap is letting researchers pull methods from papers, combine them, and actually build from it. Code, experiments, prototypes, all from the terminal. The sandbox and agentic architecture gave us a huge head start.
+    - Also it's all Rust, so it's fast and smooth.
+  - What are you using to parse PDFs?
+    - For pdf files, we encode as base64 and send to the LLM providers. For urls, we send the them directly to the providers, except Gemini doesn't accept pdf urls so we still send base64 data. It's much better than parsing them first and then sending a combination of text and figures to the providers, especially for scientific papers. I believe Claude Code also handles this similarly.
+  - wouldn't the base model, e.g., chatgpt 5.2 (thinking) be more suitable to do this tyle of work than codex, which is specialized in coding?
+    - Yes, that’s my experience too. I usually use gpt-5.2 high for reading papers and switch to gpt-5.3-codex xhigh for updating our codes.
+  - A very nicely working tool. It’s just a pity that when changing the model, it doesn’t respect the option to specify a host for an OpenAI-compatible API. For example, I use Codex Loadbalancer, and when I change something like the model’s reasoning level, the provider automatically switches back to OpenAI. 
+
 ## fact-checking
 
 - https://github.com/EmmaStoneX/NetPulse /MIT/202601/ts

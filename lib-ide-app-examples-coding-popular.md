@@ -915,6 +915,7 @@ modified: 2025-12-11T18:10:23.710Z
     - [Consolidate file storage locations across platforms ](https://github.com/Nano-Collective/nanocoder/issues/230)
     - [feat: Implement graceful shutdown system ](https://github.com/Nano-Collective/nanocoder/issues/239)
       - ink's exit() doesn't terminate the process
+    - [feat: implement parallel tool execution for better performance _202602](https://github.com/Nano-Collective/nanocoder/pull/352)
 
 - https://github.com/Aider-AI/aider /37.1kStar/apache2/202508/python
   - https://aider.chat/

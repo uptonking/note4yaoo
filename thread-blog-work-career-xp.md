@@ -18,7 +18,17 @@ modified: 2022-11-08T10:34:34.820Z
 
 - ## 
 
-- ## 
+- ## 近期看到最好笑但又很贴切的比喻： Vibe Coding 能赚钱，大概就像—— 以为买了自动研磨咖啡机，就能开咖啡厅。
+- https://x.com/caiyue5/status/2026864387227791573
+- 比喻错了。Vibe Coding 赚钱不是因为你买了咖啡机，而是以前开店必须要高薪雇个咖啡师（程序员）拉花，现在不用了。
+
+- 越来越感受到商业和技术是完全不同的两件事
+- 客户只要一杯能解渴的水，没人在乎豆子怎么磨。能快速交付结果就是本事。死磕底层逻辑，往往是看不清商业本质的自我感动。
+
+- 理想：让懂产品的二流程序员成为一流程序员
+- 现实：让不懂程序的产品经理成为三流程序员
+
+- 我为什么要开咖啡厅，我直接叫别人如何快速制造咖啡啊(卖课)
 
 - ## 🤼🤔 Cloning any random piece of SaaS is something that could already be done before agentic coding, and the economics of it haven't changed meaningfully. 
 - https://x.com/fchollet/status/2025283590972756284
@@ -40,7 +50,6 @@ modified: 2022-11-08T10:34:34.820Z
 
 - Problem of SaaS is not cloning. Their problem is that now I do not need many SaaS at all. I can just build things for myself or as internal tools for the company way cheaper than it was before
   - The reason people pay for SaaS is not just because of the effort of development
-
 
 - ## 👾 不少人想的还是 build 速度提升，然后就去说 AI 可以替换打字员。
 - https://x.com/tison1096/status/2024698930341302618
