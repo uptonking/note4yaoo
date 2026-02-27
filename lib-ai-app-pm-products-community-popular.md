@@ -223,7 +223,25 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 
-- ## 
+- ## 🤔 [NotebookLM lowkey gave me superpowers and i’m not even joking : r/notebooklm _202602](https://www.reddit.com/r/notebooklm/comments/1rfhswr/notebooklm_lowkey_gave_me_superpowers_and_im_not/)
+  - threw in sources for programming, marketing, copywriting, literally everything i was studying. and dude. i was understanding stuff in like 20 minutes that would take me an entire afternoon watching youtube videos. this is not an exaggeration. i bought a marketing course that cost me good money and i ended up literally taking the course content, feeding it as a source into NotebookLM and learned BETTER than going through the actual course. the course became study material for the AI. i’m still processing this honestly.
+  - does it have gaps? yeah. it’s not perfect, there’s stuff that’s clunky, limitations that make you roll your eyes. but being completely real with you it’s by far the best study tool i’ve ever used. and i’ve tried a lot. the thing is most people just throw a random pdf in there and expect magic. that’s not how it works. if you feed it good sources and know how to ask questions, this thing becomes a tutor that knows everything about that subject and doesn’t charge you 200 bucks an hour. but if you throw garbage in you’re gonna get garbage out. simple as that.
+
+- I work on affordable housing real estate development; I uploaded all the complex rules and regulations and now I have a consultant who knows every inside and out
+- I've seen NotebookLM make mistakes. I don't use it for high-consequence questions. But I will ask it to make first drafts of documents, and review my work to suggest things I missed.
+  - This is a key point as all the systems like this (RAG inside) are lossy and will generalise the gaps based on wider training corpus. Many people think hallucination is the problem (where model has too little info and has to guess wildly), but this is an opposite problem where it has to condense too much content into its context window.
+  - LLM's are actually weirdly bad at finding all needles in a haystack, which is counterintuitive as that's what we often do with them - especially NotebookLM.
+  - However, even with a forensic setup you still have to check their homework across the source docs for any claim you consider important and damaging to get wrong - and NotebookLM allows this so it's a useful product compromise. (It still has a completeness problem but at least you can approximate correctness.)
+
+- Only way NotebookLM hallucinates is if you start web searching in chat or you have inaccurate sources that YOU brought in.
+
+- Upload kindle pdfs and read the plot and everything and ask it to create a per chapter slide deck! I love reading but my ADHD gets in a way! I used to never finish a single book now im down 10 books out of my 20 books challenge for this year haha! Superpower indeed
+
+- The infographic generation all by itself is an amazing feature. Sometimes I'll just do it without any special prompting to see what I get and the results are often magically exactly what I was hoping for. Then maybe I'll add a couple extra prompts to focus on a specific area and again looks beautiful.
+
+- 🐛 It's useful, but I don't understand why it doesn't have the ability to have multiple threads/conversations within the same notebook. I assume I'm using up some context window with each message, arenwe meant to just start a new notebook when the conversation hits length = X?
+  - Yes, that annoys me too. I end up having to create notebooks separated by subtopic, which is absurd when the sources are the same. The context window is getting polluted and the quality drops. It would be amazing to have parallel conversations within the same notebook, each focused on a different angle but using the same sources. Thread type.
+- I guess you can query via Gemini but I have no idea if the quality of the responses is the same
 
 - ## [What do people actually use openclaw for? : r/ClaudeCode _202602](https://www.reddit.com/r/ClaudeCode/comments/1rcx9di/what_do_people_actually_use_openclaw_for/)
 - These are some common things I saw people talking about:

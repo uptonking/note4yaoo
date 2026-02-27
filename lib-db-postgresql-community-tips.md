@@ -95,7 +95,36 @@ modified: 2023-10-28T17:52:17.942Z
 
 - ## 
 
-- ## 
+- ## 🤔 ["You just need postgres" : r/PostgreSQL](https://www.reddit.com/r/PostgreSQL/comments/1rfvbox/you_just_need_postgres/)
+- I think pg_partman is to replicate the partition system of kafka and help with ingestion of thousand of message per second.
+  - But... LISTEN/NOTIFY is the real scalability issue in this case.
+- Kafka han handle millions per second not thousands. PG will never compete with kafka but for 99% of people reading this they probably don't need it.
+- You can move LISTEN/NOTIFY to separate server, it isn't that difficult to spun single container.
+
+- i had nothing but a fuckton of problems having pg partitioning done with pg_partman on a prod 5-6 year ago, migrated to timescale eventually
+  - 5-6 years ago is right before pg finally fully implemented full native partitioning logic. Had similar issues, but was able to upgrade before it was a real problem. They now allow for tens of thousands of partitions per a table and it's very easy to handle, whereas their first installment barely allowed for daily partitions.
+
+- a little bit confused here, how does having an unlogged table and pooling effectively act as being "in-memory" like Redis? Am I misunderstanding?
+  - When a row is modified, 2 events immediately happen: An in memory version of the page of the targeted row is updated; The row change is saved to disk in a special file called WAL
+  - After some time passes or certain conditions are met, the in-memory version of the page is copied to disk.
+  - An unlogged table simply skips step 2.
+  - The page is allowed to stay in memory indefinitely unless another page on disk needs the memory space. This isn’t unique to logged tables, though. All table pages can persist in memory.
+  - Cache eviction is pretty rare for a healthy server. An unlogged table will avoid writing to disk during an active request and its pages are likely to stay in like any other page in Postgres. So, in that regard, unlogged tables are likely to act like an in memory cache.
+  - In regards to pooling (my personal specialization), I don’t know what the guy is talking about. There are some pooling services that can cache results, but I wouldn’t say that’s common
+
+- I think the selling point of nonrelational DBS is the horizontal scalability. How does Postgresql do that? Same with redis/Kafka, elastic search, etc.
+- There are 5 ways:
+1. CitusDB: an extension that turns a PG instance into an orchestrator. When queries come into it, it then makes requests to other PG databases based on a sharding key. It then stitches together the data and sends it back. This is the most battle tested true sharding Postgres offers. It is limited, as all the shards need to be physically close to the leader for the approach to be practical.
+2. Read replica: not true sharding, but a tried and true method to scale servers orchestrating requests
+3. Custom storage engine: AlloyDB, YugaByte, CockRoach… have built a custom storage engine that relies on sharding. However, they use the Postgres Protocol and parser for queries. So, they’re not Postgres, but Postgres API compatible with sharding support.
+4. Application layer orchestration: just have multiple Postgres DBs and orchestrate requests at the app server level.
+5. New age sharding: PGDog, Supabase, PGEdge, and PlanetScale are building out PG focused sharding proxies. They’re still a bit nascent, so we’ll have to wait and see how they evolve
+- You are correct except Yugabyte IS mostly PostgreSQL by reusing the source code of it.
+
+- About timeseries, I must insist that influxdb really, really sucks. I tried it again like 4 years ago (ok, it's a long time), and they changed their query language to be some cryptic erlang-like language. It's just so unwieldly. And I remember there were a ton of quirks to everything. Yeah, I don't like influxdb.
+  - influx v1.x is pretty good, just don't try to store data for too long. v2 and flux was catastrophically worse. haven't tried v3 yet since the open source version is totally nerfed. but v1.x is pretty useful: flexible (schemaless), can handle huge amounts of writes, and works great with grafana.
+
+- All true except Kafka and Airflow and tine series database. I agree that Influx is not the best, but Scylla, Cassandra and others exist for some reason
 
 - ## How many people use window functions in Postgres
 - https://x.com/craigkerstiens/status/1907464058695229598

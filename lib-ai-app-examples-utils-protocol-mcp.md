@@ -416,4 +416,18 @@ modified: 2026-01-19T05:01:00.055Z
     - what difference does it make with direct api calls then ? 
     - Not everything is an MCP wrapped around an API. Not every API is simple. Often times the openapi spec is larger than the MCP tool def.
     - Can you expand the example config to include stuff like local servers using node or npx, etc?
+
+- https://github.com/jx-codes/lootbox /MIT/202602/ts
+  - Code mode doesn't replace MCP - it orchestrates it.
+  - Lootbox is inspired by "Code Mode" - LLMs write TypeScript code to call APIs rather than using tool invocation.
+  - The repository includes example tools for key-value storage, SQLite, knowledge graphs, GraphQL, and filesystem operations that you can copy to your project.
+  - [Code Mode: give agents an entire API in 1, 000 tokens](https://blog.cloudflare.com/code-mode-mcp/)
+
+- https://github.com/elusznik/mcp-server-code-execution-mode /GPL/202512/python/inactive
+  - An MCP server that executes Python code in isolated rootless containers with optional MCP server proxying. Implementation of Anthropic's and Cloudflare's ideas for reducing MCP tool definitions context bloat.
+  - [I developed an open-source Python implementation of Anthropic/Cloudflare idea of calling MCPs by code execution : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1otkf5e/i_developed_an_opensource_python_implementation/)
+
+- https://github.com/AnEntrypoint/codemode-agent /202510/js/inactive
+  - A Claude agent with an execute tool that provides programmatic access to file operations, system commands, and MCP tools. Features interactive mode with real-time typing, persistent execution context, and seamless integration with multiple MCP servers.
+  - [I implemented the codemode article that cloudflare published, as an agent and MCP tool : r/aipromptprogramming](https://www.reddit.com/r/aipromptprogramming/comments/1o8vbep/i_implemented_the_codemode_article_that/)
 # more

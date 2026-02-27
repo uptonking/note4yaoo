@@ -542,6 +542,21 @@ modified: 2026-02-18T04:15:19.228Z
 
 - This is how you sell more GPUs. Llama 4 at full context length takes 512 H200s networked. Entirely self serving by NVDA.
 - I usually don't have high hopes for models from NVIDIA. their previous research seems to be just show off what you can do with large amount of compute rather than contributing anything SOTA. ofc, to sell more compute.
+# discuss-rag-internals
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [The "Silent Bottleneck" in Production RAG: Why Cosine Similarity Fails at Scale : r/Rag _202602](https://www.reddit.com/r/Rag/comments/1rfinck/the_silent_bottleneck_in_production_rag_why/)
+- This is absolutely beginner level RAG and I guarantee you that production systems that only use embedding distance don’t exist or are intended to be simple.
+
+- I think the key takeaway here is that pure cosine similarity almost always hits a wall once you’re beyond toy corpora because it ends up returning the same document or very similar chunks over and over, which fills up your context window with redundant info instead of diverse evidence.
+  - That’s why hybrid search (lexical + vectors) or diversity-aware selection strategies like MMR/DF-RAG tend to outperform vanilla RAG at scale; you want relevance and non-redundancy. 
+  - If you’ve actually tested this in a production stack and found something better than MMR, it’d be great to hear from Mem0 on what empirically worked
 # discuss
 - ## 
 

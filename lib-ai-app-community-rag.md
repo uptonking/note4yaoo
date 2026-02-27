@@ -1351,6 +1351,17 @@ modified: 2024-09-08T20:08:16.088Z
 - You use RAG. What you mean is you don’t use VectorDB and the type of (RA) that comes with it. You use a different indexing strategy. It may not be optimum.
 - Isn’t semantic search/embedding distance basically RAG? Especially once you add caching to avoid recomputing the same embeddings
 
+# discuss-rag-pm
+- ## 
+
+- ## 
+
+- ## [For teams selling internal AI search/RAG: what does user behavior actually look like? : r/Rag _202602](https://www.reddit.com/r/Rag/comments/1reu6t0/for_teams_selling_internal_ai_searchrag_what_does/)
+  - Have you ever measured average user session length?
+  - I’m trying to understand actual behavioral patterns of users interacting with RAG systems. Papers and blog posts talk a lot about retrieval accuracy, but almost nothing about how people actually use these systems once deployed.
+
+- we build rag for businesses with lots of heavy technical documentations and manuals. Mainly for manufacturing and agriculture industry, where it's important to get it right, otherwise the end users won't use it. Some customers have 1M+ pages, with documents 1k+ pages long. I'd be happy to talk if you have some potential customers where it might help them.
+  - Getting users to trust and actually use AI search in such technical environments comes down to surfacing the most relevant info at the right time and being quick to incorporate feedback. Tracking where users ask questions outside your tool can give a lot of insight into gaps. If you want to catch those unaddressed conversations across platforms, ParseStream helps surface them in real time so you can engage or learn what people actually need.
 # discuss
 - ## 
 

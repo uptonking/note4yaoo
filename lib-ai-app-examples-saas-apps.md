@@ -323,7 +323,13 @@ modified: 2025-02-21T17:17:42.225Z
   - Use text or image prompts to generate UI components and apps built with React. 
   - Powered by OpenAI's Assistants API and CodeSandbox's Sandpack.
 
-## ai-card
+## ai-gen-mtv
+
+- https://github.com/waoowaooAI/waoowaoo /MIT/202602/ts
+  - 首家工业级全流程可控协作式专业AIagent影视生产平台，从短片到漫剧到真人级影视剧一站搞定，采用好莱坞专业制作团队思路，让你拥有虚拟制片场
+  - [免费开源！已经盈利的AI影视/短剧agent制作系统 waoowaoo _202602](https://linux.do/t/topic/1666777)
+
+## ai-card-ui
 
 - https://github.com/Rpeng666/Ant-Card /apache2/202510/ts
   - 现代化的在线卡片编辑器 - 支持多种精美模板，实时预览，PDF导出，AI 智能生成

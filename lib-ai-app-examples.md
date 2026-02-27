@@ -458,6 +458,10 @@ modified: 2023-02-08T07:20:48.475Z
 - https://github.com/Kieirra/murmure /AGPL/202602/rust/ts
   - Fully local, private and cross platform Speech-to-Text with LLM Post-processing
   - [Murmure 1.7.0 - A local voice interface for Ollama : r/ollama](https://www.reddit.com/r/ollama/comments/1r3abol/murmure_170_a_local_voice_interface_for_ollama/)
+
+- https://github.com/Laszlobeer/Ollama-Vision-Memory-Desktop /MIT/202602/python
+  - Local AI Desktop Assistant with a focus on long-term memory, computer vision, and customizable behavior.
+  - [Ollama-Vision-Memory-Desktop — Local AI Desktop Assistant with Vision + Memory! : r/ollama](https://www.reddit.com/r/ollama/comments/1rfffru/ollamavisionmemorydesktop_local_ai_desktop/)
 # webgpu-ai
 - https://huggingface.co/spaces/ibm-granite/Granite-4.0-Nano-WebGPU/tree/main /202510/ts
   - the demo uses Transformers.js to run the models 100% locally in your browser with WebGPU acceleration.

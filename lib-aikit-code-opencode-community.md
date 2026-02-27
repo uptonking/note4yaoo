@@ -126,6 +126,49 @@ modified: 2026-01-17T22:41:25.867Z
 - This is the right direction. Long-lived agent server + sandbox resumability is where things stop feeling like demos.
   - Biggest pain I keep hitting is state sync: filesystem + env + “what tools ran” so you can replay safely.
   - How are you persisting instance storage here, snapshotting whole sandboxes or doing diffs/checkpoints?
+# discuss-tips
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [I have 2, 004 AI skills installed. Here's how I reduced my startup context from ~80K tokens to ~255 tokens (99.7% reduction) : r/opencodeCLI _202602](https://www.reddit.com/r/opencodeCLI/comments/1rfwlzk/i_have_2004_ai_skills_installed_heres_how_i/)
+  - The problem: AI agents use a 3-level progressive disclosure system to load skills. Level 1 loads the name + description of every skill into the system prompt at startup. With 2, 004 skills, that's ~80, 000 tokens consumed before I even type a prompt - roughly 40% of a 200K context window.
+  - The fix: [SkillPointer](https://github.com/blacksiders/SkillPointer)
+  - It's not a plugin or library. It's an organizational pattern that works with native skills:
+  - Move all 2, 004 raw skills to a hidden vault directory (outside the agent's scan path)
+  - Replace them with 35 lightweight "category pointer" skills
+  - Each pointer tells the AI: "use list_dir and view_file to browse the vault and find the exact skill you need"
+  - The AI still accesses every skill - it just discovers them on-demand using file tools it already has, instead of loading all descriptions at startup.
+
+- Cloudflare released code mode to target this issue: Code Mode
+  - Nice! Code Mode is super interesting, thanks for linking it. It’s tackling the same core problem (too much MCP/API surface in context).
+
+- Okay so I absolutely love this from a technical standpoint, I've seen several mini patterns like this and written a few- but mostly for chaining not condensing context!
+  - However, this feels pretty perfectly situated for rag or even just a database lookup right? Then again, I don't think you can actually best text lookup at this scale, if you are willing to be militant on organization and policing descriptions
+- > The commenter recognizes the "SkillPointer" method as a clever design pattern. However, they note that they usually see this logic used for chaining (linking multiple AI tasks together in a sequence) rather than condensing context (shrinking the amount of data the AI has to "read" at the start of a session).
+  - > RAG (Retrieval-Augmented Generation) is the industry standard for this exact problem. Usually, if you have 2, 000 items, you put them in a database and let the AI search for what it needs. The commenter is essentially asking: "Why build this manual 'pointer' system instead of just using a standard database?"
+  - > if a human is "militant" (extremely strict) about how they name and describe their files, a simple text-based file search is often faster and accurate
+- 👷 You absolutely nailed the dilemma, but you actually read my mind, I'm not skipping vector search entirely, I’m just layering it.
+  - I use FAISS+Langchain and a custom Qdrant MCP at different layers under the hood (since Cursor/VS Code have built-in indexers by default anyway).
+  - The problem with pure RAG/Vector DB lookups at the top level is semantic failure. If I ask a pure RAG setup to 'Build a stretchy IK arm', it pulls the IK node and all connected if you know those DBS can have up to 700+ vrctors, but misses the 'Naming Conventions' file because the mathematical overlap just isn't there.
+  - So I use SkillPointer as a strict text router to force a custom dependency map first. This mixed, layer-by-layer approach saves massive tokens. Once inside the routed skill, the AI can trigger the Qdrant MCP for semantic search if it actually needs to deep-dive into the docs.
+  - By putting SkillPointer's strict text routing in front, I shield the AI from that MCP bloat. The AI only loads the schema for the one tool it actually needs at that exact moment, rather than choking on the entire protocol dictionary.
+  - In the end, it's all about ruthlessly optimizing context limits to prevent hallucinations in complex tasks.
+
+- Ever get misroutes where a skill could fit like 2-3 categories? How does the agent decide which pointer to hit?"
+  - Right now, the Heuristic Engine just assigns it to the first matching category in my priority dictionary. Code of idea is open and you can see examples and improve them for your specific needs.
+  - But the real safeguard is the AI itself. Because the Pointers are incredibly token-cheap (just a few sentences), the agent will naturally trigger multiple pointers simultaneously if a task is ambiguous. But it also can skip most of them, depends on approach and rules llm follows.
+
+- I do something different, and I've seen the Convex skill do the same: I create matter skills which have subskills as references. Also, just install your skills per project.
+  - Cool! Matter skills + subskill refs (Convex style, just checked their page) nests nicely. Looks like everyone who see the problem in scale diggin into this issue. I think it will be resolved on higher level soon!
+
+- I think the problem is having four digit number of skills. You just need to delete ones that are not used
+
+- Sorry but skills do not meaningfully change the code quality. It’s all over engineering.
 # discuss
 - ## 
 

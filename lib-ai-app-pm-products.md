@@ -11,6 +11,7 @@ modified: 2025-03-22T16:10:24.856Z
 
 # ai-dev-xp
 - tips
+  - llm ux: natural language as interface
   - 🤔 旧的产品交互逻辑在新的时代都需要调整, 用户大多不想手动搜索, 直接在聊天框里输入指令，将搜索+后续工作一起执行
   - 🤔 不要执着于ai框架，主流模型厂商都会推广包含厂商特性的框架及产品(sdk + codex/claude-code/gemini-cli), 可专注于 主流 开源业务系统实现 或 厂商无关的实现
   - frontend: ai-sdk/chatbot, assistant-ui, librechat
@@ -217,6 +218,7 @@ modified: 2025-03-22T16:10:24.856Z
 - selling-points
   - non-goals: local image gen
   - 易用性: 模型推荐 + 场景优化的提示词 + 多模型/多版本对比
+    - llm ux: natural language as interface
     - 对同一场景, 如翻译/ocr, 针对不同模型内置合理的参数且支持配置
     - roadmap: 
       - agentic场景优化: ocr-vlm/pipeline, translation
