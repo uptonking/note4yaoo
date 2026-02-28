@@ -221,6 +221,14 @@ modified: 2022-11-09T11:53:13.093Z
   - You can use the diff view to see exactly what changes 
   - There is an additional wrapper around the base editor that is meant to be easy to integrate with Git version control.
 # md-app
+- https://github.com/tropical-algae/markoun /MIT/202602/python/ts/vue
+  - self-hosted, and entirely file-based Markdown editor designed for users who prioritize privacy and simplicity.
+  - The UI layout of Markoun is inspired by Haptic and Obsidian
+  - File-Based Architecture: Works directly on local files — no database, no indexing, fully portable
+  - LaTeX support: Live Markdown preview with built-in LaTeX support
+  - Image Upload: Supports file upload and Ctrl + V  clipboard image paste
+  - [A self-hosted & file-based markdown editor : r/Markdown _202602](https://www.reddit.com/r/Markdown/comments/1rf75i8/a_selfhosted_filebased_markdown_editor/)
+
 - https://github.com/1943time/bluestone /AGPLv3/202403/ts
   - https://www.bluemd.me/
   - 青石是一个开源的所见即所得Markdown编辑器

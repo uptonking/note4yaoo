@@ -178,7 +178,16 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
-- ## 
+- ## [How is Qwen 3.5 (MoE 35b) in instruct mode (with no reasoning/thinking) ? : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1rgzfat/how_is_qwen_35_moe_35b_in_instruct_mode_with_no/)
+  - I find it surprising that qwen moved away from hybrid model (after the 2507 releases) to again release an hybrid reasoning model.
+
+- It's pretty good - though its performance at long context definitely suffers. I'm presently running a few benchmarks - I have a suspicion that for my use-case I'm going to have to leave thinking turned on, even though it *loves* to "Wait..." over and over again even after it's already copied out its entire input.
+
+- Use the recommended inference parameters. It'll overthink unless you set presence_penalty to something high.
+
+- Ran it through our internal eval suite yesterday. Non-thinking mode on the 35B MoE sits roughly where Qwen3 32B dense was on reasoning-heavy tasks, maybe slightly better on code gen. The real win is throughput — you're only activating ~4B params per token, so on a dual 3090 setup I was seeing around 45 tok/s with vLLM, which is wild for that quality tier.
+  - The hybrid pivot makes sense if you think about it from a deployment angle. They want one checkpoint that serves both the "cheap fast API" use case and the "let it think for 30 seconds" use case. Shipping two separate model families is an ops headache for cloud providers, and Qwen clearly wants that distribution.
+  - Main gotcha: the non-thinking mode is noticeably worse at multi-step math compared to dedicated reasoning models. If that's your workload, you still want thinking enabled or a different model entirely.
 
 - ## Cloudflare 新出的这个 MCP 的 code mode: 可以让 Agent 以极低的 token 成本（大约 1000 个 token）, 就能学会调用整个 Cloudflare API，大约 2500 个 endpoints。
 - https://x.com/vikingmute/status/2025098635021877622

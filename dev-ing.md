@@ -308,6 +308,11 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-log
   - ?
 
+## 0228
+
+- [How do I bring back the full URL in the address bar? I want to see https://www.example.com : r/firefox](https://www.reddit.com/r/firefox/comments/1moorm2/how_do_i_bring_back_the_full_url_in_the_address/)
+  - In about:config, toggle browser.urlbar.trimURLs to false.  
+
 ## 0224
 
 - 介绍下 MINISFORUM 铭凡 这家公司，及主力产品， 融资历程，投资关系， 发展前景

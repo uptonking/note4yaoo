@@ -84,6 +84,8 @@ modified: 2024-08-24T16:28:20.515Z
 
 - 注定失败，non deterministic 系统永远都不可能在prod自主iterate
 
+- ### [The third era of AI software development : r/cursor](https://www.reddit.com/r/cursor/comments/1rfi6zc/the_third_era_of_ai_software_development/)
+
 - ## wish cursor, windsurf, jetbrains junie, and all the ai vibe coders editors out there could just agree on one .rules file format
 - https://x.com/enunomaduro/status/1918373761381752871
 - Next project idea! Make a global .rules format compiler to all vibe coding editor.
@@ -753,6 +755,25 @@ AI
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 我的用法反过来：写代码的模型永远不负责审自己的代码。
+- https://x.com/runes_leo/status/2027269214524903892
+  - 我的日常开发全在 Claude Code 里跑 Opus 4.6。写完一个功能或改完一个 bug，不急着提交，先让 Codex 审一遍。
+  - Claude Code 支持 MCP 协议，可以在同一个终端里调用外部模型。我接了一个 Codex MCP Server。写完代码说一句" Codex review "，它就去审了，不用切窗口
+  - 审完列出问题，回到 Opus 逐个修，改完再过一遍，循环到没新问题为止。
+  - 跟人类团队 Code Review一个道理——自己写的东西自己审，永远有盲区。区别是现在审的那个人也是 AI，换一个不同思路的 AI 来审你的 AI。
+  - 实测基本每次 review 都能捞出点东西，边界条件没覆盖、错误处理遗漏这种最常见。偶尔还能抓到逻辑 bug
+  - 成本多一轮对话的钱，但省掉的返工时间远超这个。
+- 上下文传递是关键痛点。我的做法：
+  - 1) 项目里维护 PROJECT_CONTEXT.md 作为压缩上下文；
+  - 2) MCP 调用时把关键文件路径和需求摘要显式传过去；
+  - 3) 不依赖对话历史，每次给 Codex 的 prompt 都是自包含的。本质上是用"文档即记忆"替代对话上下文
+- MCP 只是形式，核心思路都一样——不让同一个模型既当球员又当裁判
+
+- 我每次调用codex mcp跑大任务都报错，最后忍无可忍写了个skill，直接跑codex。好了，世界太平了。
+  - 哈哈一样，MCP 跑大任务确实容易超时。写成 skill 稳定很多，我现在也是两条路并行 小任务走 MCP 快速验证，大任务走 skill给足上下文
 
 - ## [How do you balance AI and human review in PR workflows? : r/codereview _202602](https://www.reddit.com/r/codereview/comments/1ra6q2e/how_do_you_balance_ai_and_human_review_in_pr/)
   - we’ve been using an AI code review tool for a cpuple of months now. It works fine, but we’ve been running into some issues like, noisy comments, missing context and suggestions that are technically correct but miss the bigger picture.

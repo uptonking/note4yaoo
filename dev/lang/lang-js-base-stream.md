@@ -81,6 +81,28 @@ modified: 2023-04-11T13:29:56.273Z
 
 - https://x.com/joelhooks/status/1999886451270676956
   - I've been struggling with agent mail (as mcp versus cli) and want a more "native" approach so building out a typescript variant using pglite and the Durable Streams spec to facilitate agent coordination in swarm
+# discuss-protocol-stream
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## I fully agree that WebStreams are an abomination(令人厌恶的东西；坏习惯). _202602
+- https://x.com/rough__sea/status/2027398866736431220
+
+- Observables are push-based, fundamentally different model
+
+- WebStreams has been a nightmare for years. The proposal is long overdue - we need proper backpressure, streaming from arbitrary sources, and a clean API that doesn't require polyfills. 
+  - Deno's approach with ReadableStream/WritableStream is the way forward. 
+  - Finally someone with the right context is pushing this.
+
+- https://x.com/domenic/status/2027769448778895636
+- There's some very good points in here, particularly around byte-only streams which do definitely seem like a mistake, but this in particular resonated - the goal isn't to make it easy for a handful of people to implement, it's to make it reliable for millions of people to use
 # discuss
 - ## 
 

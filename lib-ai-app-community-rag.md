@@ -34,6 +34,9 @@ modified: 2024-09-08T20:08:16.088Z
   - hybrid-search
   - relations: graph
 
+- dev-to
+  - structured extraction
+
 - leaderboard-rag
   - [MTEB Leaderboard - a Hugging Face Space by mteb](https://huggingface.co/spaces/mteb/leaderboard)
     - https://github.com/embeddings-benchmark/mteb
@@ -371,6 +374,25 @@ modified: 2024-09-08T20:08:16.088Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [Building RAG pipelines using elasticsearch : r/Rag _202602](https://www.reddit.com/r/Rag/comments/1rfd4md/building_rag_pipelines_using_elasticsearch/)
+- FYI: Azure AI Search is very similar to Elasticsearch and offers hybrid search out of the box. It's very powerful - but very expensive. 
+  - I am using Azure AI Search. What I like about it is how easy it is to wrap AI Search around MCP tools for orchestration and the entire architecture becomes much simpler. For deployment and governance.
+
+- For my part, I chose Amazon Bedrock Knowledge Bases. It offers
+  - Advanced Retrieval: Including hybrid search and automated re-ranking
+  - Cost-Efficiency: Extremely low-cost RAG storage using S3 Vectors.
+  - Native Multimodal Support: Integrated embeddings for text, images, and video
+  - Enterprise-Grade: A secure, scalable, and easy-to-deploy managed service.
+- does s3 do hybrid search?
+  - Actually, S3 itself doesn't perform the hybrid search. It acts as the storage layer for your chunks and vectors. 
+  - The 'magic' happens within Amazon Bedrock Knowledge Bases, which manages the retrieval logic. It pulls the data from S3 and handles the combination of semantic search and keyword search (hybrid) along with re-ranking to give you the most relevant context.
+
+- Everyone's debating the retrieval backend but the thing that actually moved our accuracy numbers was what we were putting into the index in the first place. We spent weeks tuning Elasticsearch scoring and it turned out the real problem was ingesting raw markdown from our scraper. Navigation menus, footer links, language selectors, cookie banners, all of it was getting embedded alongside the actual content.
+  - Once we switched to structured extraction where you get typed fields (title, body paragraphs, metadata) instead of a markdown blob, our retrieval precision jumped because the embeddings were actually representing the content, not the UI. 
+  - The added bonus is you can index specific fields separately and weight them differently in your hybrid query, which is harder to do when everything is one big text chunk.
 
 - ## [we turned topics into APIs : r/Rag _202602](https://www.reddit.com/r/Rag/comments/1r4f23t/we_turned_topics_into_apis/)
   - 👀 疑似广告
@@ -894,6 +916,23 @@ modified: 2024-09-08T20:08:16.088Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Enable LSP in Claude Code: code navigation goes from 30-60s to 50ms with exact results : r/ClaudeCode _202602](https://www.reddit.com/r/ClaudeCode/comments/1rh5pcm/enable_lsp_in_claude_code_code_navigation_goes/)
+  - If you've noticed Claude Code taking 30-60 seconds to find a function, or returning the wrong file because it matched a comment instead of the actual definition, it's because it uses text-based grep by default. 
+  - There's a way to fix this using LSP (Language Server Protocol). It's a background process that indexes your code and understands types, definitions, references, and call chains.
+  - Claude Code can connect to these same language servers. The setup has three parts: a hidden flag in settings.json (ENABLE_LSP_TOOL), installing a language server for your stack (pyright for Python, gopls for Go, etc.), and enabling a Claude Code plugin. About 2 minutes total.
+
+- Context window efficiency is the real win here, not just navigation speed.
+  - When an agent is doing code review or cross-file refactoring, it can waste significant tokens trying to piece together what symbols mean. LSP gives precise answers instead of probabilistic guesses from partial context.
+  - Running 6 Claude Code agents in parallel — the compounding effect across all of them is real. Anything that reduces the tokens an agent spends getting oriented in a file means more tokens for the actual task. 50ms vs 30s for symbol lookup adds up fast when the agent is doing it dozens of times per session.
+
+- when I use CC in the VSCode terminal, I notice Claude uses LSP. I wonder if it’s something related to VSCode providing a LSP interface of some sort.
 
 - ## 🔠 [Rules that will help with Context Engine MCP : r/AugmentCodeAI](https://www.reddit.com/r/AugmentCodeAI/comments/1qieg9k/rules_that_will_help_with_context_engine_mcp/)
   - When asked about the codebase, project structure, or to find code, always use the augment-context-engine MCP tool (codebase-retrieval) first before reading individual files.

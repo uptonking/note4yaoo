@@ -280,6 +280,15 @@ modified: 2025-02-21T18:20:42.624Z
     - Native integration with Claude Code's experimental Agent Teams feature for spawning and coordinating multiple Claude instances.
   - Extensible Plugin System - Add custom capabilities with the plugin SDK. Create workers, hooks, providers, and security modules. Share plugins via the decentralized IPFS marketplace.
 
+- https://github.com/vmDeshpande/ai-agent-automation /apache2/202602/ts
+  - https://vmdeshpande.github.io/ai-automation-platform-website/
+  - Open-source, local-first workflow execution engine for AI agents
+  - AI Agent Automation Platform is a developer-first execution engine for AI-driven workflows.
+  - You create a Workflow made of ordered steps (LLM, HTTP, Tool, Delay)
+  - [v0.3.0 Released -Full Tool Execution with Ollama is Live : r/ollama](https://www.reddit.com/r/ollama/comments/1rh39d1/v030_released_full_tool_execution_with_ollama_is/)
+    - This is the kind of release that turns "LLM demo" into actual agents. Once you have tool execution (HTTP, browser, files), the next pain points tend to be: retries, idempotency, state/memory, and good tracing so you can debug why the agent did a thing.
+    - If you are interested, I wrote up a quick checklist for building tool-using agents here: https://www.agentixlabs.com/blog/
+
 ## deep-research
 
 - https://github.com/666ghj/BettaFish /34.1kStar/GPL/202601/python

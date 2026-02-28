@@ -27,6 +27,7 @@ modified: 2025-11-30T17:27:16.720Z
   - coding-agent is good at text and filesystem
     - store extracted text in db
     - use just-bash to interact with db
+  - structured extraction
 
 - who is NOT using #code-rag
   - claude-code
@@ -42,6 +43,7 @@ modified: 2025-11-30T17:27:16.720Z
   - large-file/pdf
   - ollama-embeddings
   - 中文优化
+  - structured extraction
 # citation/backlinks
 - 权威数据源
   - arxiv
@@ -515,6 +517,13 @@ modified: 2025-11-30T17:27:16.720Z
     - Nomic Embed Text (768-dim) for embeddings
     - ChromaDB for vector storage
     - Complete offline operation
+
+- https://github.com/ryanlane/document-manager /MIT/202601/python/js
+  - Local-first document archive assistant for semantic search and RAG using local LLMs and embeddings.
+  - all running on your own machine.
+    - All processing runs locally via Docker and Ollama.
+  - Extracts text from PDFs, images (OCR), and plain text
+  - Gallery view for browsing and analyzing images with vision models
 
 - https://github.com/MLNativeAI/paperjet /AGPL/202512/ts
   - https://getpaperjet.com/
