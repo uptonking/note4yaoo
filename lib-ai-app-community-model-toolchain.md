@@ -602,6 +602,40 @@ PP Speed: Q3 GGUF: 50 t/s
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🤔 [PSA: If your local coding agent feels "dumb" at 30k+ context, check your KV cache quantization first. : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1rhvi09/psa_if_your_local_coding_agent_feels_dumb_at_30k/)
+  - I’ve been seeing a lot of posts lately about models like Qwen3-Coder or GLM 4.7 getting trapped in infinite correction loops or hallucinating tool-call parameters once the context gets deep. The usual advice is to switch to a higher precision GGUF or tweak the system prompt. But after a few days of heavy profiling, the culprit is almost always aggressive KV cache quantization. Everyone wants to cram 30B+ models into 24GB of VRAM. To do that and still keep a 64k context window, turning on Q4 or Q8 KV cache in llama.cpp or ExLlamaV3 feels like free real estate. Short-context perplexity benchmarks barely budge, so it looks like a safe bet.
+  - It’s not...
+  - We initially blamed the model’s context degradation, but when we isolated the variables, it was entirely the KV cache.
+  - Here is the mechanical reality: the K-cache (Keys) is exponentially more sensitive to precision loss than the V-cache (Values). When you quantize the K-cache to 4-bit or even 8-bit, you are actively degrading the attention mechanism's ability to perfectly match the exact syntax of a strict schema defined 40, 000 tokens ago. The model knows the tool exists, but the keys are "fuzzy, " so it hallucinates the parameter structure. On top of that, if you're using llama.cpp, heavily quantized KV cache forces a lot of the dequantization overhead onto the CPU, absolutely nuking your prompt processing speed.
+  - A practical workaround if you're VRAM-starved: see if your backend allows mixed precision. Leave the K-cache at FP16 or FP8 and only quantize the V-cache to Q8. Otherwise, you're much better off dropping your max context size to fit an unquantized cache rather than giving your agent a lobotomy just to say you can hit 72k tokens.
+
+- In llama.cpp (llama-server), If you don’t pass cache-type arguments, it stays at FP16. Right?
+  - Yes
+
+- this is also why short-context benchmarks are basically useless for evaluating agents. a model can score great at 4k and completely fall apart at 40k due to KV quant alone ..
+
+- 100% agree the K-cache is the fragile bit. “8-bit” isn’t one thing: FP8 has an exponent/mantissa (so dynamic range), while many Q8 schemes are uniform/affine with per-block scales — great for storage, not great for preserving tiny angular differences in keys over long contexts.
+  - In practice: if you care about tool-call JSON / exact syntax at 30k+, keep K at fp16/fp8 and only get aggressive on V (or just cut context). The extra tokens aren’t worth the silent corruption.
+
+- Someone recently did PPL tests on this with qwen. Found the PPL loss from Q8 was negligible. Also I did my own PPL test on devstral and my quant does lower PPL at 32K than it did at 512. My cache both Q8.
+  - Grain of salt is that it's going to be different for different modes. Some couldn't handle Q4 at all
+
+- q8 is no good but fp8 is ok? Aren’t they both 8-bit quants?
+  - q8 relies on int8 blocks. fp8 is floating point 8, and has more fidelity (or range) than int8, so it performs better.
+
+- q8 kv vs q4 kv is one of the most underrated performance variables in local setups, good catch.
+
+- Solid debugging methodology. This maps to a broader pattern - agent degradation at long context is almost never the model's base capability, it's infrastructure choices that seemed "free" early on. KV cache quantization as silent killer makes sense given K-cache sensitivity.
+
+- The K-cache sensitivity finding matches what I was seeing in multi-step agent pipelines. The failure mode is insidious because the model doesn't error -- it produces something that looks like valid JSON but has subtle parameter mismatches. You only catch it downstream when a function call returns unexpected results.
+  - One thing that helped me beyond KV settings: where you put the schemas in context matters a lot. I moved all tool/function schema definitions to the very beginning of the system prompt rather than injecting them mid-conversation. When the schemas are anchored in the first 2-3k tokens, even with some cache degradation they tend to hold. When I was re-stating schemas as reminders at 20-30k tokens, that's when the hallucination rate spiked.
+  - The config I landed on for llama.cpp: no cache-type flags (stays FP16 by default), hard context cap at 40k, schemas at position 0. Dropped malformed tool calls by roughly 80% vs the Q4 cache + bigger context approach I was trying before.
+  - The tradeoff is real -- you're giving up effective context window to maintain accuracy. But for agent pipelines where one bad tool call can cascade through a dozen subsequent steps, the narrower-but-reliable window is worth it.
+
 - ## [I benchmarked 17 local LLMs on real MCP tool calling — single-shot AND agentic loop. The difference is massive. : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1rcjepp/i_benchmarked_17_local_llms_on_real_mcp_tool/)
   - I benchmarked 17 local LLMs on real MCP tool calling — not synthetic function-calling evals, but actual calls against a production API with 19 tools, real validation, and real results.
   - I ran each model twice. First single-shot (one API call, score the first response). Then agentic (model gets tool results back, keeps going until it passes or times out). 

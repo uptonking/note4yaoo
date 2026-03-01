@@ -732,6 +732,15 @@ CPU主频	2.3GHz
 
 - gpx
 # kitchen
+- 半球小型电饭煲
+  - 米白, 1.2L
+  - 米水比例 1 : 1.2
+  - [不用洗碗真的太香啦！巨巨简单！（无油烟） - 小红书](https://www.xiaohongshu.com/explore/6810ab1a000000000900ef0a?xsec_token=AB_QqkK7_ZF3_KbwyW1ZB1W3KkwFDAs2pN0J3Iyrm-rkI=&xsec_source=pc_search&source=web_explore_feed)
+  - [这个电饭煲煮出来的饭够吃两顿吗 - 小红书](https://www.xiaohongshu.com/explore/6891c5b30000000025027884?xsec_token=AByyU4peojE-XuRI2GK6wydPLzMbW1VdQQB0xS0iV8sfs=&xsec_source=pc_search&source=web_explore_feed)
+    - 我买的1.2l的，一次可以煮2-3杯米，够两个人吃两顿; 
+    - 我一次只吃送的量杯半杯米，它最大刻度线是1.5杯，我和男朋友一起的话，刚好是1.5杯米
+    - 你饭量小的话 一杯米就够吃两顿
+
 - 长虹迷你电煮锅
   - 黄色, 1.5L
 
@@ -741,3 +750,62 @@ CPU主频	2.3GHz
 - 
 - 
 - 
+
+# diet
+- 电饭煲
+  - 煮饭: 
+    - 90ml米 * ( 1 + 1.2 )  = 198ml刻度线
+    - 120ml米 *( 1 + 1.2 )  = 264ml刻度线
+    - 150ml米 *( 1 + 1.2 )  = 330ml刻度线
+  - 煮粥: 
+    - 60ml米 * ( 1 + 8 )  = 540ml刻度线
+    - 90ml米 * ( 1 + 8 )  = 720ml刻度线
+  - 黄金比例：米和水的体积比 1:1.1~1.2（如1杯米加1.1杯水）。
+    - 喜欢软饭：多加水至 1:1.3。 喜欢硬饭：少加水至 1:1。
+  - 懒人法：加水后，水面比米面高 一个指节（约1.5cm）。
+  - 1人份约用 1杯米（普通米杯约150g），煮好后约2碗饭。
+  - 煮10分钟，关火焖10分钟。
+    - 煮好后立刻用饭勺翻松米饭，再盖盖焖 5-10分钟。作用：让多余水汽蒸发，米饭更Q弹。
+  - [煮饭煮粥备忘录（以体积比为准） ](https://www.xiaohongshu.com/explore/67ec062e000000000e0052f8?xsec_token=ABdVhE1WcB7WyGGbP46aKhj1vvB8bfLzZZWPL1FeN4W_E=&xsec_source=pc_search&source=web_search_result_notes)
+    - 建议大米和水【1：1.2】
+    - 一人食份量（一碗）：【大米半杯（120ml）】【水一杯（180ml）】
+    - 煮白粥比例: 大米和水【1：8】、【1：9】、【1：10】均可
+    - 一人食小米粥： 【小米40ml】【水500ml】
+    - 稀粥：60克米 + 800克水
+  - [电饭煲的水位线终于懂了！ - 小红书](https://www.xiaohongshu.com/explore/663dfd5c000000001e0269e9?xsec_token=ABiIhawxJm060rcPjfvidoezS_qKgBbl5bd4wfW-e2jA4=&xsec_source=pc_search&source=web_search_result_notes)
+    - 煮粥功能。 米和水1：8
+    - 小米很吸水。会很稠。需要多一点水，1：10可以试试。 如果还有紫米也是会吸水。
+    - 煮杂粮饭要比白米饭多加水1格，熬粥则要加到对应米量的2倍水位，这样煮出来的粥浓稠不糊底。
+  - [一杯100g的大米能蒸出半碗米饭，约236克 - 小红书](https://www.xiaohongshu.com/explore/63ec49b4000000001203ce8c?xsec_token=ABfc8JHdf5BTr7yW2Lv1EzpN8Whc7ACJ9b1ICQm02is1Y=&xsec_source=pc_search&source=web_search_result_notes)
+    - 果然100g大米根本不够吃。我正常一顿饭应该要120g左右。
+    - 正常女的吃2两～3两生米，120克米可以蒸出283克米饭。
+    - 90g米只蒸出来150g米饭，水放的少 口感劲道
+    - 如果你的量杯是160毫升的话，一杯估计130克左右大米，2倍260克大米，预计煮出来650克米饭，就我这种两碗米饭，不算多
+  - [一人吃的粥/饭 放这么多准没错 - 小红书](https://www.xiaohongshu.com/explore/66f2c4af000000001902e247?xsec_token=AB_qcbN5FIsfapLhy3djhIzy1-PRjHet3zaXayb1PVpGI=&xsec_source=pc_search&source=web_search_result_notes)
+    - 100g生米+150g水 ≈ 250g熟米饭
+    - 50g生米+400g水 ≈ 350g粥
+  - [一人份米饭 ](https://www.xiaohongshu.com/explore/688d9806000000002302406b?xsec_token=ABT4qAw9_T974TlK6-Bd_KafpbkXMLL2aCCa_NcG7okhc=&xsec_source=pc_search&source=web_search_result_notes)
+    - 一人份的米饭一般在100-150g
+    - 米和水的比例一般是1:1.2-1:1.5，如果是100g米饭，我就居中放个130-140g水。
+  - [原来10斤米可以吃一个月 - 小红书](https://www.xiaohongshu.com/explore/69257153000000001e02773d?xsec_token=ABFmESv8pd1rNDv7yKLYiC4TaIzNgOBWgh5q2tRWIFqk4=&xsec_source=pc_search&source=web_search_result_notes)
+    - 一顿饭煮一杯米150克左右
+    - 每天煮一顿的话，5000克÷150克≈33天
+  - [煮粥的方法，适合不常做饭的朋友 - 小红书](https://www.xiaohongshu.com/explore/693bd181000000000d03b25f?xsec_token=ABL2jX2J0wIbUcP2X9nHBJFaPSqz_nH82eBazTlTTuC0c=&xsec_source=pc_search&source=web_search_result_notes)
+    - 1人1餐比例，煮粥一小碗，（饭量小的女生）米的量大概是45g左右
+    - 电饭锅：米水比例1：10左右，煮粥模式
+    - 高压锅：米水比例1：10左右，25分钟，闷10分钟
+    - 燃气灶用锅：米水比例1：20，35～45分钟左右
+  - [不会煮面条的小盆友可以参考一下 - 小红书](https://www.xiaohongshu.com/explore/64383a5b0000000013037ea5?xsec_token=AB9q_9gPwwRqzhN2dp6aK5mNS7hEnCWSpaqo9XffdnjSc=&xsec_source=pc_search&source=web_search_result_notes)
+    - 如果是同一锅煮两个人的按照（食指抵到拇指两关节中间）来煮，就是放两次这个量的面条。
+  - [熬绿豆粥千万不能泡一晚上绿豆啊！ - 小红书](https://www.xiaohongshu.com/explore/68686e66000000002203d8e8?xsec_token=AB3APHkn4EGp3KXX3WKkU0K5cVY0oUj-N4rdNVX_9RnR4=&xsec_source=pc_search&source=web_search_result_notes)
+    - 泡一晚上绿豆啊！还是泡着水到冰箱里冷冻着吧，否则会收获一堆绿豆芽
+    - 用开水泡一下子给烫死就发不了芽。或者放冰箱冷藏泡
+    - 煮半小时，闷半小时，绿豆靠的是闷
+  - [后悔没早点发现电饭锅炖鸡蛋和大米的做法 - 小红书](https://www.xiaohongshu.com/explore/678c5b14000000001803f838?xsec_token=ABSpF34HznsRJQglS_PKMSSVlRWyWBruU8h94342TQxUg=&xsec_source=pc_search&source=web_search_result_notes)
+    - 我把鸡蛋放在生大米上，然后还没熟，电饭锅就跳闸啦
+    - 当米饭被电饭煲煮熟了，然后放鸡蛋液到电饭煲的米饭上，然后让电饭煲闷熟它们。
+  - [懒得动又没钱的人最适合的极简食谱 - 小红书](https://www.xiaohongshu.com/explore/67ea662b000000001c01d299?xsec_token=ABhwvh4o79bh1iZJod5ETLK5CRf5JCdtwuyYT6N5Y8IOU=&xsec_source=pc_search&source=web_search_result_notes)
+    - 为什么被鸡蛋清接触和包裹的米粒，都是很硬的
+    - 这样，打鸡蛋的地方米饭会结块的，会很硬
+    - 加了鸡蛋，电饭煲没多久就跳到保温，米还是生的
+  - [以后再也不把鸡蛋放电饭煲蒸了 - 小红书](https://www.xiaohongshu.com/explore/66f0194a0000000026031c1e?xsec_token=ABhEpQOvCp6iIwzZvBp_xd9_kJmrcr-v_f2-4xuIsmLus=&xsec_source=pc_search&source=web_note_detail_r10)

@@ -770,6 +770,13 @@ modified: 2025-11-30T17:27:16.720Z
     - a local AI operating system that runs on top of Ollama. It's not just another chat wrapper. It's a full personal assistant with persistent memory, two-way voice, a quantitative finance engine, and a productivity suite with todos, habits, goals, journal, and achievements.
     - Persistent memory — it actually remembers you across sessions. Your preferences, your name, your projects. All stored locally in `SQLite`.
     - Tech stack: Node.js, Express, WebSocket, SQLite, Ollama, vanilla JS. About 8,000 lines across 6 server modules. Works with any Ollama model including qwen3:8b, llama3, mistral. Ships as a Windows .exe or run from source on any OS.
+
+- https://github.com/I3K-IT/RAG-Enterprise /AGPL/202603/python
+  - 100% local RAG system with one-command setup.
+  - 100% Local: No data leaves your infrastructure
+  - Multi-user Auth: JWT-based with role-based access control
+  - Multiple Formats: PDF, DOCX, TXT, MD, PPTX, XLSX, and more
+  - [RAG-Enterprise: One-command local RAG setup (Docker + Ollama + Qdrant) with zero-downtime backups via rclone – for privacy-focused enterprise docs : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1rhvpuj/ragenterprise_onecommand_local_rag_setup_docker/)
 # rag-fwk
 - https://github.com/run-llama/semtools /1.5kStar/MIT/202511/rust/ts
   - Semantic search and document parsing tools for the command line

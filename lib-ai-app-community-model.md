@@ -178,6 +178,72 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 推荐 @simonw 的 Agentic Engineering Patterns，这是他使用大模型开发过程中总结的工程经验，我总结了他所说的要点
+- https://x.com/yibie/status/2027928136172867619
+一、核心理念原则
+1. Code is cheap now（代码现在很廉价）
+   - 编写初始工作代码的成本已降至几乎为零
+   - 但交付"好代码"仍然昂贵（测试、文档、错误处理等）
+   - 行动规则：每当直觉说"不值得花时间做"时，先让 agent 试试，最坏情况只是浪费一点 token
+
+2. Hoard things you know how to do（囤积你知道怎么做的东西）
+   - 收集解决方案（blog、GitHub repos、HTML tools）
+   - 建立可运行的代码片段库
+   - 关键模式：让 agent 组合两个或多个现有工作示例来构建新东西
+
+二、测试与质量保证
+3. Red/green TDD（红/绿测试驱动开发）
+   - 提示词："Use red/green TDD"
+   - 模型理解：先写测试 → 确认测试失败（红）→ 实现代码 → 确认测试通过（绿）
+   - 防止 agent 写无效代码或过度工程
+
+4. First run the tests（先运行测试）
+   - 新 session 的第一条提示："Run the tests to confirm they pass, then summarize what the test suite tells you about the project"
+   - 作用：
+
+     * 确认测试套件存在
+     * 了解项目规模/复杂度
+     * 建立测试心态
+
+三、代码理解模式
+5. Linear walkthroughs（线性代码走读）
+   - 场景：需要理解现有代码（他人代码、自己遗忘的代码、vibe coded 代码）
+   - 提示词模板：让 agent 创建结构化文档，解释代码如何工作
+   - 使用 Showboat 工具记录走读过程
+
+6. Interactive explanations（交互式解释）
+   - 当代码成为"认知债务"时需要偿还
+   - 让 agent 创建动画/交互式演示来解释算法
+   - 示例：词云算法用动画展示螺旋放置过程
+
+四、Prompt 工程技巧
+7. Artifacts 开发配置
+   - 禁用 React（需要构建步骤）
+   - 强制使用 vanilla HTML/JS：单个文件、可粘贴到静态托管
+
+五、关键洞察总结
+传统开发 vs Agentic Engineering：
+
+- 代码成本：昂贵（一天几百行）→ 廉价（几乎免费）
+- 好代码成本：昂贵 → 仍然昂贵
+- 并行能力：单线程 → 多线程（同时做多件事）
+- 学习模式：手动阅读文档 → 让 agent 解释并生成交互式演示
+- 代码囤积：笔记/收藏夹 → 可运行的代码仓库 + HTML tools
+
+最重要的原则：
+"Delivering new code has dropped in price to almost free... 
+but delivering good code remains significantly more expensive than that."
+
+实践建议：
+1. 培养"囤积"习惯——收集可运行的解决方案
+2. 任何任务先让 agent 尝试，再判断是否值得继续
+3. 测试不再是可选项，而是必需
+4. 用 agent 生成代码解释来偿还"认知债务"
+
 - ## [How is Qwen 3.5 (MoE 35b) in instruct mode (with no reasoning/thinking) ? : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1rgzfat/how_is_qwen_35_moe_35b_in_instruct_mode_with_no/)
   - I find it surprising that qwen moved away from hybrid model (after the 2507 releases) to again release an hybrid reasoning model.
 
@@ -918,6 +984,15 @@ e) 最终评论者(Final Critic)
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Local agent - real accomplishments : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1rgw4yk/local_agent_real_accomplishments/)
+- I’m doing complicated parsing of texts and information heavy texts and books. I regularly run into being blocked by copyright on online models so run a 8b qwen locally with a 14b for further refinement. I’m churning through 50 pages an hour at the moment in an amd 7900
+
+- The future is LocalLLM and open claw, in any future form. The thing we are currently seeing, large companies having their models sign a deal with administration, to be able to invade anyone privacy or even - life. Everyone will need their own AI Agent, locally, to defend them
 
 - ## [Is Local LLM the next trend in the AI wave? : r/LocalLLM _202602](https://www.reddit.com/r/LocalLLM/comments/1r0swmh/is_local_llm_the_next_trend_in_the_ai_wave/)
 - I mean local is always going to be limited by your gear - to have a ‘good’ local LLM you’re talking 5k minimum to have something reasonable and really 10k+ to get something that is significant value add

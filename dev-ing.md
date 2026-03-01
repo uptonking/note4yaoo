@@ -195,7 +195,7 @@ next dev -H 0.0.0.0 -p 3000
   - pouchdb + kappa-crdt + eav => pouchdb-crdt-eav
   - 做完tailwind-table就面试
 - dev-to 提炼核心`需求+产出`工作流，不能在产品中检验的技术不玩
-# dev-01
+# dev-03
 
 ```log //dev-xp
 console.log('; ; task ', taskState, runningTaskAction, task?.task_steps)
@@ -307,6 +307,19 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
   - ?
 - dev-log
   - ?
+
+## 0301
+
+- latest chromium/chrome has experimental features like ai/split-view, how can i enable these features automatically on my custom electron app? explain to me and give me some docs and urls for references
+  - enable the Chromium flags you need at app startup (via `app.commandLine.appendSwitch`) and/or turn on Renderer-level runtime flags via BrowserWindow's `webPreferences` (experimentalFeatures / enableBlinkFeatures).
+- Electron is built on Chromium's web rendering engine, not the Chrome browser UI. Because "Split Tabs" is strictly a Chrome Browser UI feature, appending the split-view flag in Electron will do absolutely nothing.
+  - To implement a split-view in Electron, you don't use flags; you build it natively using Electron's `WebContentsView` API (the modern replacement for BrowserView). This allows you to embed multiple independent web views side-by-side in a single window.
+- Google Chrome recently introduced a built-in AI API (window.ai.languageModel) powered by a local Gemini Nano model.
+  - While appending the flags above will successfully expose the window.ai JavaScript API bindings in your Electron renderer process, it will not actually work out-of-the-box.
+  - Google Chrome downloads the massive gigabyte-sized Gemini Nano model weights dynamically using Chrome's proprietary "Component Updater" (chrome://components). Electron does not include this component updater or Google's proprietary server connections, meaning the model will never download and the API will return a "No model available" error
+- the official Electron maintainers created an experimental library called @electron/llm
+  - It perfectly mimics Chromium's window.ai API but allows you to bundle and load your own local .gguf open-source models (like Llama 3) entirely offline
+# dev-02-vlm-powerful-than-ocr-&-code-indexing-mcp-&-unify-code-search-and-rag-with-skills-&-context-engine-and-memsearch-qmd
 
 ## 0228
 
@@ -573,7 +586,7 @@ curl -s -X POST -H "Content-Type: application/json" -H "Accept: application/json
   - Fair：有明显划痕或凹痕，可能缺少重要配件，但功能正常。
 - 另一个常见平台：Amazon Warehouse (现更名为 Amazon Resale)
   - 亚马逊处理退货产品的部门原名叫 Amazon Warehouse（最近改名为 Amazon Resale/Renewed）。很多海淘用户也会去那里淘二手数码产品。
-# dev-01
+# dev-01-ppt-edit-eg-&-promptfoo-eval-&-llm-backend-llamacpp-mlx-&-donehub-llm-api
 
 ## 0130
 

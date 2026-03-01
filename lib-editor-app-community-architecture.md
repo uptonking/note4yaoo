@@ -15,6 +15,21 @@ modified: 2024-12-28T19:11:01.446Z
 - ## 
 
 - ## 
+
+- ## There is no reason a rich text editor has to be coupled with a UI framework. None. It's just a state machine. It has to be headless.
+- https://x.com/thesegunadebayo/status/2027936212036534652
+  - TipTap is headless. It has bindings for React and Solid, but I completely forewent those and built my own UI on top. Works like a charm.
+- Is there any good such option out there? The @formisch_dev approach could work here too.
+
+- The same goes for most UI components, regardless of complexity. With a state machine or any event-driven architecture, you can model components without coupling them to a framework. Working on @zag_js proved this for me.
+  - yep - this is why frameworks like XState catch on. the hard part isn't drawing boxes and arrows, it's making state transitions explicit and testable. we cut bugs 40% in a complex form flow just by modeling it as a proper FSM first
+
+- Slate (mostly) works this way  2 years ago I, AI assisted, built a fully customizable internal text editor using it, pretty powerful, that said the complexity and platejs has built ontop of slate isn't ideal imo. I'm super tempted to see if I could build a tiptap version
+
+- You might like the Portable Text Editor, BYOUI
+  - Also worth pointing out it is state machines all the way down, with xstate 
+
+- afaik although lexical is focused to be used with react, it is agnostic and low level. it have a good set of primitives
 # discuss-edit-with-diff
 - ## 
 

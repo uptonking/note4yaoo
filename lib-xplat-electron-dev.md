@@ -98,6 +98,7 @@ modified: 2021-05-13T03:08:52.583Z
   - devtools: lint/format-cli
   - cli: ImageMagick, ocr, pandoc(GPL/haskell), ffmpeg, curl/wget
   - saas: filebrowser
+  - more: electron wrapper for chromium
 - llm-ui/client
   - 可参考 ollama/lmstudio/janai 封装 llama.cpp 的逻辑
   - 封装db操作工具, 针对sqlite/turso

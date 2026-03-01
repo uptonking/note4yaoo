@@ -289,6 +289,25 @@ modified: 2023-01-02T10:30:19.459Z
 - ## [Bindings not found error · Issue · vitejs/vite-plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc/issues/74)
 - We have fixed the problem with running this command: `npm i -D @swc/cli @swc/core`
 
+# discuss-internal-nodejs
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Add support for experimental-inspector-network-resource _202601](https://github.com/electron/electron/issues/49500)
+  - in Node.js 22.19 they added --experimental-inspector-network-resource flag, which allows applications to manually add support for remote source map resolution
+- [feat: allow --experimental-inspector-network-resource node flag by parthtaneja0001 · Pull Request ](https://github.com/electron/electron/pull/49689)
+
+# discuss-internal-chrome
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
 # discuss
 - ## 
 

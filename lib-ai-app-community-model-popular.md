@@ -679,7 +679,26 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [Qwen3.5 35B-A3B replaced my 2-model agentic setup on M1 64GB : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1rh9k63/qwen35_35ba3b_replaced_my_2model_agentic_setup_on/)
+  - Device: Apple Silicon M1 Max, 64GB
+  - The Task: Analyze Amazon sales data for January 2025, identify trends, and suggest improvements to boost sales by 10% next month. The data is an Excel file with 6 sheets. This requires both reasoning (planning the analysis, drawing conclusions) and coding (pandas, visualization).
+  - Before: Two Models Required. Previously, no single model could handle the full task well on my device. I had to combine: nemotron-30b and qwen3-coder-30b
+  - After: One Model Does It All. Qwen3.5 35B-A3B generates at ~27 tok/s on my M1, slower than either of the previous models individually but it handles both reasoning and coding without needing a second model.
+  - Without thinking (~15-20 min): Slower than the two-model setup, but the output quality was noticeably better
+  - With thinking (~35-40 min): Results improved slightly over no-thinking mode, but at the cost of roughly double the time. Diminishing returns for this particular task.
+  - One of the tricky parts of local agentic AI is the engineering effort in model selection balancing quality, speed, and device constraints. 
+  - Qwen3.5 35B-A3B is a meaningful step forward: a single model that handles both reasoning and coding well enough to replace a multi-model setup
+
+- I have the same setup as OP, and 27B spends so long thinking! It’s practically neurotic. Good output though… eventually.
+
+- the thinking disabled tip is criminally underrated in this post
+  - thinking mode is a trap for agentic tasks — you're paying 2-3x latency for marginal gains on steps where the model already knows what to do. the planning overhead kills you in multi-step loops
+  - also ditching 2 specialized models removes all the routing logic ("is this a reasoning step or coding step?") which was honestly my biggest headache. simpler graph, fewer failure modes
+  - curious — are you streaming tool outputs back into context between steps or batching them?
+- I'm using LangGraph for orchestration, so the workflow defines which model handles each step. Outputs from previous steps are fed back into context for the model to decide what to do next, though this requires some context engineering to keep things tight and avoid quality/speed degradation from overly long contexts, especially, with the small models running on limited resource devices.
+  - You're spot on about the routing complexity. With two specialized models, we also have the UX hit of users waiting for two separate model downloads. Dropping to a single model that handles both reasoning and coding well simplifies everything: the graph, the setup, and the user experience.
+
+- Qwen3.5-35B-A3B-UD-Q3_K_XL @ +100 tok/s on RTX 4090 24GB
 
 - ## 🆚 [speed of GLM-4.7-Flash vs Qwen3.5-35B-A3B : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1rf99u2/speed_of_glm47flash_vs_qwen3535ba3b/)
 - Gated delta-net linear attention used by Qwen 3 Next and Qwen 3.5 means less compute overhead at higher context lengths. I think it's a real factor here.

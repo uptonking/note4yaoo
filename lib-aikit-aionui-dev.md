@@ -42,6 +42,9 @@ modified: 2025-12-13T18:38:27.763Z
   - 方便支持多个terminal/agent/app同时操作文件，能减少冲突
   - 减少重复索引
 
+- ? migrate sidebar to chromium-split-view
+- local ai by @electron/llm
+
 ## draft-office
 
 - models

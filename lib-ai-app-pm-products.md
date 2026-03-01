@@ -242,6 +242,7 @@ modified: 2025-03-22T16:10:24.856Z
   - ✈️ local models support: mlx, lmstudio-alternative
     - 模型库: text模型, ocr模型, 翻译模型, t2i生图模型, tts, stt,  lmstudio在模型分类上做的不够好
     - 较少免费api的模型: ocr, stt
+    - 参考lmstudio支持本地并发请求, 支持展示进度
     - 参考janai/pipeshub, 既支持选择本地/api模型，也支持选择图片/文档
     - ocr/vlm comparison-matrix/playground: 识别对比, 翻译对比
       - ocr模型的输出统一为openai格式、统一标签(暂无标准)

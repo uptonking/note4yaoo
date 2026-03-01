@@ -13,6 +13,10 @@ modified: 2026-02-20T17:36:40.796Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
 # discuss-ai-moat 🤼
 - xp
   - 在LLM热潮前就有很多开源/免费软件, 它们是如何维持运营的
@@ -127,7 +131,13 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 
-- ## 
+- ## 🤔 [Is the Codex app basically just a CLI wrapper? : r/codex _202603](https://www.reddit.com/r/codex/comments/1rgxpbm/is_the_codex_app_basically_just_a_cli_wrapper/)
+  - Trying to understand how the Codex app is structured here. Is it essentially a wrapper around the CLI, or does it have its own separate update cycle and capabilities?
+- pretty sure the app is a gui for the codex cli's app-server mode. i couldnt get voice working right with appserver atm but everything else works the same.
+
+- App and cli are both wrappers for the api I think. All three are likely versioned independently, though api updates will obviously impact both tools
+
+- not really. there is a shared app server and the CLI, extension and app are wrappers on that
 
 - ## 感觉 openclaw 在企业端的需求非常强，而且我看好 local first 而不是 cloud first 的落地路径，因为几十人的组织到头就相当于几十个 agent，单体设备完全够了，且就应该放在它所替代的人的桌上。
 - https://x.com/ewind_dev/status/2025971612470931755

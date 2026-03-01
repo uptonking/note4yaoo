@@ -836,7 +836,18 @@ modified: 2024-05-12T17:20:03.132Z
 
 - ## 
 
-- ## 
+- ## 🤔 people don't realize how slow s3 is. the difference between daytona and e2b in this report is about a single call to s3.
+- https://x.com/jhleath/status/2027844067691008354
+  - top of mind because i'm currently ruthlessly eliminating any interaction with aws services (including s3) in the path that mounts an archil disk.
+  - super critical for agent workloads that need to mount an archil file system when sandboxes start.
+
+- Isn’t the trade off of 0.05s for decades of reliability at scale worth it?
+  - it depends on what you’re doing. for serving a website? sure. for model training? nope.
+
+- there is no practical difference for .37 and .38 P95.  everyone is focusing on “TTI” benchmarks is performative performance. I want to see benchmarks of actual reliability at 10x the scale + cpu/io/network performance under a variety of workloads
+- the only “benchmark” that matters is the wall clock time of the workload that your customers are actually running
+
+- Not understanding why this matters relative to an agent session spanning minutes to hours to days. Inference is still the bottleneck.
 
 - ## Your agents are useless without a sandbox. Sandbox is the primitive
 - https://x.com/Rasmic/status/2005953095243596175

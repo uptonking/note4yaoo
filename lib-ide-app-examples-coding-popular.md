@@ -496,6 +496,10 @@ modified: 2025-12-11T18:10:23.710Z
   - https://fast-editor.github.io/Lynkr/
   - Lynkr is a self-hosted Claude Code proxy that lets the CLI route requests through your own infrastructure. 
   - It is a Cli tool which acts like a HTTP proxy that lets Claude Code CLI talk to non-Anthropic backends, manage local tools, and compose Model Context Protocol (MCP) servers with prompt caching, repo intelligence, and Git-aware automation
+- https://github.com/Alishahryar1/free-claude-code /MIT/202603/python
+  - Use claude-code for free in the terminal, VSCode extension or via discord like openclaw
+  - A lightweight proxy that routes Claude Code's Anthropic API calls to NVIDIA NIM (40 req/min free), OpenRouter (hundreds of models), or LM Studio (fully local).
+  - Use Claude Code CLI & VSCode for free. No Anthropic API key required.
 
 - https://github.com/UfoMiao/zcf /4.7kStar/MIT/202512/ts
   - http://zcf.ufomiao.com/

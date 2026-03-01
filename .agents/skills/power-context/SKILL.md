@@ -1,4 +1,7 @@
 ---
+title: SKILL
+created: 2026-02-27T14:23:32.902Z
+modified: 2026-02-27T14:23:32.902Z
 name: power-context
 description: Extract text and tables from PDF files, fill forms, merge documents.
 ---

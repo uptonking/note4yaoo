@@ -561,6 +561,7 @@ modified: 2023-02-05T19:03:12.723Z
   - Sanity.io is the platform for structured content. 
   - It comes with an open-source editing environment called Sanity Studio that you can customize with JavaScript and a real-time hosted data store. 
   - 依赖slate.v0.72.3，自研slate-react
+  - 依赖 xstate、@xstate/react
   - 包含test，但测试示例storybook效果过于简单
   - [Question on Slate _202412](https://github.com/portabletext/editor/issues/635)
     - 202505: The Portable Text Editor is almost as old as Sanity and the decision to use Slate was made many years ago when the project received active maintenance. It's only recently we've pulled PTE out of Sanity Studio as a standalone editor and really treating it as such.

@@ -299,7 +299,8 @@ modified: 2025-11-01T10:54:26.044Z
     - uses llama.cpp as its backend 
 - https://github.com/electron/llm /202505/ts/inactive
   - This module makes it easy for developers to prototype local-first applications interacting with local large language models (LLMs)
-  - makes use of node-llama-cpp
+  - It aims for an API surface similar to Chromium's window. AI API, except that you can supply any GGUF model.
+  - makes use of `node-llama-cpp`.
 
 - https://github.com/ngxson/wllama /975Star/MIT/202512/cpp/ts
   - https://huggingface.co/spaces/ngxson/wllama
@@ -421,6 +422,7 @@ modified: 2025-11-01T10:54:26.044Z
 - https://github.com/mlx-chat/mlx-chat-app /MIT/202403/python/ts/inactive
   - Chat with MLX is a high-performance macOS application that connects your local documents to a personalized large language model (LLM).
   - First, setup huggingface access tokens to download models
+  - we are working to release with correct packaging (pyinstaller & electron-builder) and authentication (Apple codesign). I
 
 - https://github.com/NexaAI/nexa-sdk /apache2/202511/go
   - https://docs.nexa.ai/
@@ -496,7 +498,7 @@ modified: 2025-11-01T10:54:26.044Z
     - eclaire-workers expects a multi-modal model with support for text + images
     - Both eclaire-backend and eclaire-workers can point to same or different endpoints as long as the model meets the requirements mentioned above.
 
-- https://github.com/nodetool-ai/nodetool /AGPL/202511/ts
+- https://github.com/nodetool-ai/nodetool /269Star/AGPL/202603/ts
   - https://nodetool.ai/
   - Nodetool lets you design agents that work with your data. Use any model to analyze data, generate visuals, or automate workdlows.
   - Local models (Llama.cpp, MLX, vLLM, HuggingFace) + optional cloud (OpenAI/Anthropic/Replicate/FAL)
