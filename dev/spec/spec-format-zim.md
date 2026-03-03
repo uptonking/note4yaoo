@@ -127,8 +127,21 @@ modified: 2023-07-05T10:22:57.942Z
     - It runs locally or in Docker and can be used via API, CLI, MCP, or a web UI in the browser.
 # more
 
-# discuss-kiwix
+# discuss-features
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Any plans to integrate the interlang feature of Wikipedia into kiwix? : r/Kiwix](https://www.reddit.com/r/Kiwix/comments/1ri7n13/any_plans_to_integrate_the_interlang_feature_of/)
+- What is interlang?
+  - It's what makes you able to change the language of a wikipedia page to another without having to search for the article in the other language.
+  - Now my way to go is the English/French wikipedia -> Google translate the title in Russian for example -> Copy the translation into kiwix search hoping I got the right word/combination of words -> I show it to locals.
+  - I would love it if it could be native to the app
+
+# discuss-kiwix
 - ## 
 
 - ## 

@@ -836,6 +836,12 @@ modified: 2024-05-12T17:20:03.132Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 🤔 people don't realize how slow s3 is. the difference between daytona and e2b in this report is about a single call to s3.
 - https://x.com/jhleath/status/2027844067691008354
   - top of mind because i'm currently ruthlessly eliminating any interaction with aws services (including s3) in the path that mounts an archil disk.

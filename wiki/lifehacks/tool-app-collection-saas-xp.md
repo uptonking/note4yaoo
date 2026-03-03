@@ -306,6 +306,16 @@ mineru paddleocr site:github.com -inurl:"github.com/opendatalab/" -inurl:"github
 - [Bluesky](https://bsky.app/)
 - [AT Protocol](https://atproto.com/guides/overview)
 # telegram
+- tips
+  - 优先手动复制链接地址url
+
+- 如何保存禁止转发的资源
+  - 优先手动复制链接地址url, 然后使用修改版桌面端或app来转发或下载
+  - 也可以访问web端, 然后通过 greasyfork 脚本来下载
+
+- resources
+  - [第三方tg(电报)大合集 ](https://linux.do/t/topic/269559)
+
 - not-yet
   - [Telegram app should remember video playback position inside the app · Issue · telegramdesktop/tdesktop _202404](https://github.com/telegramdesktop/tdesktop/issues/27681)
 
@@ -319,9 +329,6 @@ mineru paddleocr site:github.com -inurl:"github.com/opendatalab/" -inurl:"github
   - [Meow. TG-做最懂你的TG搜索](https://meow.tg/)
   - [sssoou.com](https://www.sssoou.com/)
   - [千帆搜索 - 资源超丰富的电报中文搜索引擎，需注册](https://tg.qianfan.app/)
-
-- https://github.com/Neet-Nestor/Telegram-Media-Downloader /202311/js
-  - A Tampermonkey script allowing you to download images and videos from Telegram web even if the group restricts downloading
 
 - [TG中文群 - TGCNG. COM](https://www.tgcng.com/)
   - 不建议随意搜索，从相关群或论坛的讨论信息能找到更准确的信息
@@ -356,12 +363,32 @@ mineru paddleocr site:github.com -inurl:"github.com/opendatalab/" -inurl:"github
   - if you look at the dependencies and code, WebZ is written in React/teact, WebK does not have any popular libraries (React, Vue, Angular, Svelte...) in the dependencies and in the source code is written in native js (ts)
   - I noticed that WebK is running way faster on my potato pc than WebZ, Z has more features tho
 
+- https://github.com/nicegram/Nicegram-iOS
+  - https://nicegram.app/
+  - The Enhanced Telegram Client for Web3 Users
+
+- https://github.com/AyuGram/AyuGramDesktop /GPL/202601/cpp
+  - https://t.me/ayugram
+  - https://docs.ayugram.one/desktop/
+  - Desktop Telegram client with good customization and Ghost mode.
+  - No Copy & Download Restrictions by Default
+  - Local Telegram Premium
+
 - https://github.com/tangyoha/telegram_media_downloader /MIT/202507/python/js
   - 基于Dineshkarthik的项目， 电报视频下载，电报资源下载，跨平台，支持web查看下载进度 ，支持bot下发指令下载，支持下载已经加入的私有群但是限制下载的资源
 
 - https://github.com/Neet-Nestor/Telegram-Media-Downloader /GPL/202506/js
+  - https://greasyfork.org/en/scripts/446342-telegram-media-downloader
   - A script allowing you to download images and videos from Telegram web even if the group restricts downloading.
+  - This script only works on Telegram Webapp. It adds a download button for images, GIFs and videos.
   - https://github.com/vinodkr494/telegram-media-downloader /python
+
+- https://github.com/bisnuray/RestrictedContentDL /202601
+  - An advanced Telegram bot script to download restricted content such as photos, videos, audio files, or documents from Telegram private chats or channels. 
+
+- https://github.com/cinit/TMoe /GPL/202602/java/kotlin
+  - 一个兼容若干第三方开源 Telegram 客户端的开源 Xposed 模块
+  - 激活本模块后，在 Telegram 客户端的设置中点击 "TMoe 设置" 即可开关对应功能。
 # discord
 - [Use SOCKS5 proxy with Discord on Linux](https://gist.github.com/mzpqnxow/ca4b4ae0accf2d3b275537332ccbe86e)
 

@@ -81,7 +81,17 @@ modified: 2024-01-25T13:33:23.267Z
 
 - ## 
 
-- ## 
+- ## Browsers have spent decades solving a similar problem of executing untrusted code safely, and porting those architectural learnings to backend infrastructure feels like a natural evolution
+- https://x.com/auchenberg/status/2027949839581945871
+  - [Let's discuss sandbox isolation _202602](https://www.shayon.dev/post/2026/52/lets-discuss-sandbox-isolation/)
+- v8's isolates were literally designed to sandbox js execution, and now we're seeing that pattern everywhere - from cloudflare workers to lambda to deno
+  - the multi-tenant security story is already solved, just needs adapting
+
+- ## sandbox-as-a-service is becoming the default agent infrastructure layer. 
+- https://x.com/ivanburazin/status/2027879361177850177
+  - E2B, Daytona, Modal, now Alibaba — everyone's converging on 'give the agent its own ephemeral compute.'
+  - the interesting question is who wins on cold start time. agents need sub-second sandbox spin-up for interactive workflows, and that's where the MicroVM vs container tradeoff gets real. Firecracker can do ~125ms but most hosted offerings are still 2-5 seconds.
+- the bottleneck isn't building the sandbox. it's deciding what belongs inside it. most people sandbox everything or nothing. reality is you need granular permissions per tool, per context, per risk level. treat agents like unix processes, not all-or-nothing executables.
 
 - ## going to benchmark sandboxes
 - https://x.com/ryanvogel/status/2024266375825363207

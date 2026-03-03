@@ -864,7 +864,12 @@ def slugify(text):
 
 - ## 
 
-- ## 
+- ## [Jan-Code-4B: a small code-tuned model of Jan-v3 : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rim0b3/jancode4b_a_small_codetuned_model_of_janv3/)
+  - This is a small experiment aimed at improving day-to-day coding assistance, including code generation, edits/refactors, basic debugging, and writing tests, while staying lightweight enough to run locally. 
+  - Intended to be used as a drop-in replacement for the Haiku model in Claude Code.
+  - Qwen3.5 coming soon is the exact reason why we try to release it anyways instead of holding off longer.
+  - Later we'll get additional codetune models(based on 3.5 models) from them.
+  - This is a small experiment, and those 3 metrics are where we saw the clearest improvements over the baseline, other benchmarks did not change much compared to the base. I’ve also tested it as a CLI helper, and it works well.
 
 - ## [Kimi K2.5 vs GLM 5 : r/opencodeCLI _202602](https://www.reddit.com/r/opencodeCLI/comments/1r9pti3/kimi_k25_vs_glm_5/)
   - I see alot of people praising Kimi K2.5 on this sub, but according to benchmark GLM 5 is supposed to be better.

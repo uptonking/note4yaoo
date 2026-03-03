@@ -1434,7 +1434,11 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 
 - ## 
 
-- ## 
+- ## [Qwen 3.5 small just dropped : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rirjg1/qwen_35_small_just_dropped/)
+- What’s the difference between base and no base?
+  - the non-base model (usually called the instruct model) is finetuned to write in chat format, where it receives user/system prompts and responds as the assistant - so it behaves like a chatbot. 
+  - the base model will just generate text continuing the input. if you've ever played around with e.g. gpt-2: it's like that. it's a little more complicated than that, but that's the gist of it
+- base model exist for further fine-tuning
 
 - ## [GGML. AI has got acquired by Huggingface : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1r9vywq/ggmlai_has_got_acquired_by_huggingface/)
 - Hugging Face is becoming the primary distribution and coordination layer for open weight models, datasets, and tooling, but it does not own or control most open source AI development.

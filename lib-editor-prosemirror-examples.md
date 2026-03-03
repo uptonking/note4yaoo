@@ -128,6 +128,7 @@ modified: 2022-08-18T16:57:46.405Z
     - we have removed these features from the core, and moved them into optional packages.
 
 - wax-prosemirror /9Star/MIT/202411/js/react
+  - https://github.com/Coko-Foundation/wax-prosemirror
   - https://gitlab.coko.foundation/wax/wax-prosemirror
   - https://waxjs.net/docs/wax/
   - http://wax-demo.coko.foundation/

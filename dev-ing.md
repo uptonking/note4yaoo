@@ -308,9 +308,30 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-log
   - ?
 
+## 0302
+
+- 🤔 i want to use a sandbox for a agentic electron app. aws firecracker seems fast to start and use. is there any popular solution that uses firecracker ?  if i package it into electron, does it work on linux/macos/windows?
+  - No. AWS Firecracker is a Virtual Machine Monitor (VMM) that relies exclusively on KVM (Kernel-based Virtual Machine) to create microVMs.
+  - Linux: It will work natively, provided the host Linux machine has KVM enabled and hardware virtualization supported.
+  - macOS: macOS does not have KVM (it uses Apple's Hypervisor.framework). Firecracker cannot run natively on macOS.
+  - Windows: Windows uses Hyper-V, not KVM. To run Firecracker on Windows, the user would need WSL2 (Windows Subsystem for Linux) configured with nested virtualization.
+- Approach A: Cloud Sandboxing (The "Firecracker" Route)
+  - Use an API like E2B or Daytona.
+- Approach B: Local Cross-Platform Sandboxing
+- WebAssembly (Wasm) / WASI (Highly Recommended). Check out Wasmer, Wasmtime, or Pyodide (if your agent writes Python).
+- V8 Isolates / Deno: If your agent executes JavaScript/TypeScript, you can use Node.js vm2 (deprecated/unsafe) or better, run a bundled instance of Deno. 
+  - Deno has built-in permission flags (e.g., --allow-read, --deny-net) which creates a secure, cross-platform sandbox out of the box.
+- Local Docker / Podman (The Heavy Route): You can design your Electron app to check if the user has Docker installed. 
+  - If they do, your app uses the Docker API to spin up containers locally for the agent to use.
+  - Tools: Testcontainers or standard Dockerode library.
+
+- e2b: recommended: keep the Firecracker sandboxes off the user’s mac/win host and run them remotely (or in a lightweight Linux helper VM you install separately). This lets your Electron app be cross-platform UI + controller while the microVMs run where KVM is available.
+
+- Firecracker is a Linux/KVM user-space VMM — it requires access to KVM (i.e. /dev/kvm) on the host. That means it natively runs only on Linux hosts with KVM enabled (or on hosts that provide an equivalent kernel device). You will need host privileges (or special ACLs/capabilities) to let the Firecracker binary talk to /dev/kvm.
+
 ## 0301
 
-- latest chromium/chrome has experimental features like ai/split-view, how can i enable these features automatically on my custom electron app? explain to me and give me some docs and urls for references
+- 🤔 latest chromium/chrome has experimental features like ai/split-view, how can i enable these features automatically on my custom electron app? explain to me and give me some docs and urls for references
   - enable the Chromium flags you need at app startup (via `app.commandLine.appendSwitch`) and/or turn on Renderer-level runtime flags via BrowserWindow's `webPreferences` (experimentalFeatures / enableBlinkFeatures).
 - Electron is built on Chromium's web rendering engine, not the Chrome browser UI. Because "Split Tabs" is strictly a Chrome Browser UI feature, appending the split-view flag in Electron will do absolutely nothing.
   - To implement a split-view in Electron, you don't use flags; you build it natively using Electron's `WebContentsView` API (the modern replacement for BrowserView). This allows you to embed multiple independent web views side-by-side in a single window.

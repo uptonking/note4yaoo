@@ -517,7 +517,7 @@ modified: 2023-09-02T09:17:22.992Z
   - A web remote debugging tools, based on Chrome DevTools.
   - DevTools-pro 是基于chrome-devtools-frontend进行开发的，通过自建 WebSocket 通道实现 Frontend 和 Backend 的通信。
   - 可扩展，支持自定义插件
-# ai-sandbox
+# ai-sandbox 👾
 - https://github.com/anthropic-experimental/sandbox-runtime /1.6kStar/apache2/202511/ts
   - A lightweight sandboxing tool for enforcing filesystem and network restrictions on arbitrary processes at the OS level, without requiring a container.
   - `srt` uses native OS sandboxing primitives (`sandbox-exec` on macOS,  `bubblewrap` on Linux) and proxy-based network filtering. 
@@ -565,6 +565,26 @@ modified: 2023-09-02T09:17:22.992Z
   - Embeddable: link a library; no root; no background service to manage.
   - OCI compatible: use Docker/OCI images (python:slim, node:alpine, alpine:latest).
   - Async-first: run many boxes concurrently; stream stdout/stderr.
+
+- https://github.com/alibaba/OpenSandbox /3.8kStar/apache2/202603/python/go
+  - https://open-sandbox.ai/zh/
+  - 面向 AI 应用场景设计的「通用沙箱平台」，为LLM相关的能力（命令执行、文件操作、代码执行、浏览器操作、Agent 运行等）提供 多语言 SDK、沙箱接口协议和沙箱运行时。
+  - 沙箱协议：定义了沙箱生命周期管理 API 和沙箱执行 API。你可以通过这些沙箱协议扩展自己的沙箱运行时。
+  - 沙箱运行时：沙箱全生命周期管理，支持 Docker 和自研高性能 Kubernetes 运行时，实现本地运行、企业级大规模分布式沙箱调度。
+  - 沙箱环境：内置 Command、Filesystem、Code Interpreter 实现。并提供 Coding Agent（Claude Code 等）、浏览器自动化（Chrome、Playwright）和桌面环境（VNC、VS Code）等示例。
+  - 网络策略：提供统一的 Ingress Gateway 实现，并支持多种路由策略；提供单实例级别的沙箱出口网络限制。
+
+- https://github.com/CelestoAI/SmolVM /apache2/202603/python
+  - fast, secure microVM runtime designed for high-density isolation. It provides AI agents and tools with a safe, hardware-virtualized environment to execute untrusted code without risking the host system.
+  - Secure Isolation: Hardware-level virtualization (utilizing Firecracker) for strong sandbox boundaries.
+    - Linux + Firecracker backend: KVM support (Ubuntu/Debian/Fedora).
+    - macOS + QEMU backend: Homebrew and QEMU (qemu-system-*).
+  - MicroVMs boot in sub-second time with minimal overhead.
+  - Python Native: Clean, high-level SDK for managing VM lifecycles and command execution.
+  - Automatic Networking: Built-in NAT, port forwarding, and SSH tunneling.
+  - Custom Images: Build specialized Debian-based rootfs images with your own tools.
+  - MicroVM-based Security: Unlike containers that share the host kernel, SmolVM uses KVM-backed microVMs. This provides a significantly smaller attack surface and stronger hardware-level isolation.
+  - Agent-First Design: SmolVM abstracts away the complexity of microVM networking, storage, and TAP devices into a simple, pythonic API.
 # playground
 - https://github.com/nalgeon/codapi /1.2kStar/apache2/202411/go
   - https://codapi.org/

@@ -45,7 +45,9 @@ modified: 2023-09-02T09:16:30.412Z
 - 
 - 
 
-# docker/vm
+# vm
+- firecracker
+# docker
 - 🆚 采用docker容器方案的缺点
   - 不方便单个容器升降级配置， 采用vm更方便
   - 在paas实测，docker容器启动时及扩容时的耗时，比vm慢很多，如firecracker的卖点就是启动快

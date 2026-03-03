@@ -249,10 +249,12 @@ modified: 2021-07-11T08:31:00.660Z
   - Cabbage Tree Labs is a home for publishing projects critical for the wider publishing ecosystem. 
 - XSweet
   - https://gitlab.coko.foundation/XSweet/XSweet
+  - https://github.com/Coko-Foundation/XSweet
   - tool for converting Microsoft Word documents (.docx) into HTML and beyond. 
   - Built as a series of XSL transformation steps, it’s designed to be modular and flexible.
   - A set of XSLT 2.0 stylesheets for extraction and refinement of data from MS Office Open XML (.docx) format, producing HTML for editorial workflows.
 - Wax
+  - https://github.com/Coko-Foundation/wax-prosemirror
   - https://gitlab.coko.foundation/wax/wax-prosemirror
   - http://wax-demo.coko.foundation/
   - https://waxjs.net/docs/wax/
@@ -268,7 +270,6 @@ modified: 2021-07-11T08:31:00.660Z
   - https://gitlab.coko.foundation/pubsweet/pubsweet
   - The open toolkit for building publishing workflows
   - a server and client that work together, components that can modify or extend the functionality of the server and/or client
-
 # docs/journals
 - [AsPoem | 现代化诗词学习网站](https://aspoem.com/zh-Hans)
 # more-products

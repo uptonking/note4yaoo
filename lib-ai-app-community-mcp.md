@@ -196,7 +196,19 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
-- ## 
+- ## [CLI is all you need? Do we really need MCPs : r/codex _202603](https://www.reddit.com/r/codex/comments/1ri5m0f/cli_is_all_you_need_do_we_really_need_mcps/)
+- Anything that has a CLI is WAY better than using an MCP imo. I think this is one of the shifts that most people don't talk about but everyone has converged on separately.
+  - Maybe I'm wrong. MCP can still be useful if you can package it in a way that makes it easier for non techies to access your stuff, but for anyone slightly technical, a CLI will work better*
+  - *Provided you're okay with the authentication tradeoffs.
+
+- CLI is all you need. Also much easier to test and distribute.
+
+- Creator of openclaw made the same point before. AI models are always much better at using CLI
+
+- CLIs also tend to have request/response semantics and in Codex’s latest newsletter, there is now MCP support for WebSockets which can be much more useful instead of packaging state in every payload over the wire back and forth, because HTTP is a stateless protocol.
+  - That said, my take is that MCPs do have a purpose that CLIs won’t solve. MCPs are typically servers which means that they can be stateful and it would be nice if optimizations were made such that state is kept there that returns a reference and doesn’t blow up an LLM’s context window. Just some food for thought.
+- CLI can also be stateful. Many have the daemon pattern.
+- Well git is certainly stateful and is a CLI, no?
 
 - ## the cli is dead - the big cli players are all pivoting.
 - https://x.com/jediahkatz/status/2025263982462820544
