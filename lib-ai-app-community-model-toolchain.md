@@ -493,6 +493,13 @@ PP Speed: Q3 GGUF: 50 t/s
 
 - The reason is that most llama.cpp users are memory capacity bound on model and memory bandwidth bound on inference speed. All that matters for the one-user-per-gpu domain is quantization accuracy per bit. The llama.cpp k quants are significantly better than microscaled floats in that regard because they offer a scale and offset per block instead of just a scale. Mxfp8 and nvfp8 are jointly optimized to balance precision and ease of hardware acceleration which doesn’t matter if you have boatloads of unused compute laying about because you’re memory bound. Switching from the gguf 8 bit format to mxfp8 or nvfp8 could probably make prefill faster but it wouldn’t realistically improve tok/s during generation and would would make the models less accurate approximations of the unquantized weights. It only makes sense if you’re serving huge batches and everyone that’s doing that uses vLLM which has prioritized microscaled float support. For everyone else it’s fine to just dequantize the gguf k quant weights to fp16 on the gpu during inference
 
+- ## [MXFP4 vs UD speed and ppl - GLM, GPT-OSS, Granite Tiny, Qwen Coder : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1rg3n62/mxfp4_vs_ud_speed_and_ppl_glm_gptoss_granite_tiny/)
+  - MXFP4 has better PPL on GLM, better size and speed on gpt-oss. Maybe even on Granite Tiny, or MX is better for the size. Unsloth Dynamic better speed and PPL for Qwen Coder.
+  - Test system has 2x 3060 12G. llama.cpp CUDA container b8172. Perplexity with wikitext-2-raw.
+
+- From this message  https://www.reddit.com/r/LocalLLaMA/comments/1rfds1h/qwen3535ba3b_q4_quantization_comparison/  it is better to use KLD instead of PPL.
+  - KLD (KL Divergence): "Faithfulness." It shows how much the quantized model's probability distribution drifts from a baseline (the probability distribution of the original weights). Lower = closer.
+
 - ## 🤔 [I found that MXFP4 has lower perplexity than Q4_K_M and Q4_K_XL. : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qrzyaz/i_found_that_mxfp4_has_lower_perplexity_than_q4_k/)
   - I am currently serving LLM models using a Tesla P40 and llama.cpp. When running models in the 30–32B range, I usually rely on 4-bit quantization. 
   - out of curiosity sparked by MXFP4’s fast speed, I compared Q4_K_M, Q4_K_XL, and MXFP4 quantization methods for the GLM-4.7-Flash and Nemotron-3-nano models using the llama-perplexity command.

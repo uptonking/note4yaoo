@@ -42,6 +42,10 @@ go clean -cache
 
 ```
 
+- https://github.com/vashpan/xcode-dev-cleaner
+  - Xcode could store tens of gigabytes in ~/Developer folder. 
+  - DevCleaner gives you an easy way to inspect auto-generated files and clean them if necessary. It could also remind you about scan after a while.
+
 ## macbook
 
 - mac-apps-loved

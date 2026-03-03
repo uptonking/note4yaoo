@@ -748,6 +748,8 @@ modified: 2025-03-22T16:10:24.856Z
     - RPM:20
     - 目前只有 GPT 和 Grok 
     - 不保证稳定性！随时跑路
+  - [YAO](http://154.37.220.66:3000/console/personal)
+    - [[Yao公益站]codex注册200刀，可能随时倒闭  ](https://linux.do/t/topic/1683788)
   - [Einzieg API](https://api.einzieg.site/console/personal), 签到
     - 仅提供codex模型
     - [【Einzieg公益站】再次启动 ](https://linux.do/t/topic/1569418)

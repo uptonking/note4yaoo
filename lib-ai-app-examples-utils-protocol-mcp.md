@@ -386,6 +386,13 @@ modified: 2026-01-19T05:01:00.055Z
     - This is the future of agents. Dynamic skill loading
     - I did something similar at https://labs.youware.com/youskill. The difference is it's agentic skill discovery based on your actual request. Should I make this an MCP?
 # utils
+- https://github.com/mksglu/claude-context-mode /2.2kStar/MIT/202603/ts
+  - https://cc-context-mode.mksg.lu/
+  - The other half of the context problem.
+  - Inspired by Cloudflare's Code Mode — which compresses tool definitions from millions of tokens into ~1, 000 — we asked: what about the other direction?
+  - Context Mode is an MCP server that sits between Claude Code and these outputs. 315 KB becomes 5.4 KB. 98% reduction.
+  - This installs the MCP server + a PreToolUse hook that automatically routes tool outputs through the sandbox + slash commands for diagnostics and upgrades.
+
 - https://github.com/apify/mcp-cli /323Star/MIT/202602/ts
   - a CLI client for MCP. It supports persistent sessions, stdio/HTTP, OAuth 2.1, JSON output for code mode, proxy for AI sandboxes, and much more.
   - Works with any MCP server over Streamable HTTP or stdio.

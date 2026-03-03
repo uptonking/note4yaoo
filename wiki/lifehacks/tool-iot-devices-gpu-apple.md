@@ -28,6 +28,29 @@ modified: 2026-01-15T15:43:25.456Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [Apple unveils M5 Pro and M5 Max, citing up to 4× faster LLM prompt processing than M4 Pro and M4 Max : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1rjqsv6/apple_unveils_m5_pro_and_m5_max_citing_up_to_4/)
+  - M5 Pro supports up to 64GB of unified memory with up to 307GB/s of memory bandwidth, while M5 Max supports up to 128GB of unified memory with up to 614GB/s of memory bandwidth.
+- I desperately need to see pre-fill benchmarks. The M3 Ultra mac studio takes 10+ minutes on pre-fill for large models and contexts
+  - The main difference in the M5 is the newly introduced matmul, specifically for boosting prompt processing speed. This paired with 1.2TB/s makes the combo wild. Still, not too many GPU cores compared to the spark (packed with 6k cuda cores), but for inference, on paper, it might be a better value for money.
+
+- ## [M5 using neural accelerators in the GPU is up to 3.65x faster for prefil in test : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1ocousf/comment/nko6m47/?force-legacy-sct=1)
+- How is it different to the neural engines in previous iterations?
+  - Think of the new approach as equivalent to nvidias tensor cores. 
+  - The old approach was using dedicated npus that were outside of the gpu. Same deal as Intel and amd cpus with npus in them.
+  - While npus are more efficient than just doing small tasks on the cpu, they just can’t offer the same performance as something like a tensor core. This is something that amd has been struggling to realize and only now changing it in rdna5.
+- this is AI cores inside the M5, previous M chips didn't have accelerators
+  - they have "neural engine" cores though - aren't those meant to do the same thing - accelerate machine learning, ie matmul?
+- The neural engine can only be accessed through CoreML. Ie: not used for LLMs at all.
+  - M5 adds matmul instructions and/or accelerators on the GPU.
+- MLX does not use the Neural Engine
+  - [ANE support · Issue #18 · ml-explore/mlx](https://github.com/ml-explore/mlx/issues/18)
+  - ANE can be supported with light warpper of kernel in pytorch/mlx module level. In M3 Ultra , ANE is far behind GPU cores, that is why apple won't support it
+
+- [M5 Neural Accelerator benchmark results from Llama.cpp : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1ogwf6b/m5_neural_accelerator_benchmark_results_from/)
+  - M5 和 M4 的token generation 速度提升大致一点点 24.1 -> 26.5， 但prompt processing的速度提升了很多 221 -> 608
 # discuss-benchemarks
 - ## 
 

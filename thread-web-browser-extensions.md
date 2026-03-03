@@ -77,6 +77,25 @@ modified: 2025-03-01T09:05:43.976Z
 - ## 🆚️🆚️ [Compare – WXT](https://wxt.dev/guide/resources/compare)
   - 官方比较列表
 
+# discuss-security
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 其实早期的浏览器就能无限制运行桌面软件，微软还为此设计了一整套技术框架，到现在还在支持。
+- https://x.com/xicilion/status/2028796786924523825
+  - 后来浏览器厂家花了二十年时间才慢慢把漏洞给补上。
+
+- 而且，银行系统会为了“安全”强制你使用 IE 以启动这个超能力。
+  - 当年找到一个不使用 ActiveX 的银行，以为找到了抵抗组织。。。
+
+- 现在windows为每个进程分配适当时间Integrity level, 不同的级别权限不同。即使你是admin用户，默认启动的进程也只是 medium级别。而浏览器各tab对应的进程级别都很低，很多是low或者untrusted。
+
+- COM ，OLE，ActiveX 漏洞筛子。
 # discuss
 - ## 
 

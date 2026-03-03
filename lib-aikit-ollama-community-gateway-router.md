@@ -350,6 +350,18 @@ modified: 2026-01-21T04:22:29.956Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## kilo提供 [Kimi K2.5 MiniMax M2.5免费API渠道](https://linux.do/t/topic/1683518)
+  - Kilo Code扩展里扣出来的
+
+- 但是我使用的感觉是，kilo的free模型很降智，甚至不如opencode的public。 
+  - 无限free的api用得多的是英伟达，魔搭社区，grok2api的
+
 - ## [iFlow账号被封了，高强度刷论坛，找到一个解封链接，佬友们可以提交看看 _202602](https://linux.do/t/topic/1658255)
 - 我该怎么和它说我一个手机号要解封10个号？
   - 因为google账号不用绑手机，也不用绑实名

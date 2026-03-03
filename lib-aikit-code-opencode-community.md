@@ -29,6 +29,36 @@ modified: 2026-01-17T22:41:25.867Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## we are bringing workspaces in as a first-class concept: agents will be able to run anywhere: local directory/container/worktree, remote sandbox, or anything. 
+- https://x.com/jlongster/status/2028616190004740366
+  - instead of having a single server that only knows about local directories, the server will act as a "control plane" that routes prompts to where they should go
+  - it will manage all of the sessions across these environments and provide a unified layer for all clients to interact with them
+  - we will be smart about this: it's not *only* about routing. we will sync all data from remote environments into the local control plane server. this means the remote env can be destroyed, and we will be able to later recreate a new env with exactly the same state. it's reproducible
+- I thought a lot about syncing when I built @actualbudget and and a whole CRDT system. wasn't expecting to be working in that space again (though very different) and I'm excited to tackle this problem. this time we'll probably do something like event sourcing. It's a lot simpler than distributed syncing; we don't need to support multiple writers
+
+- Workspace abstraction is the right move. Biggest friction with coding agents today is the assumption that "local directory" = "where you work." Once you decouple the workspace from the filesystem, you unlock patterns like branching agent sessions, persistent context across projects, and safe sandboxed execution.
+
+- I've been a bit resistant to remote sandboxes because I have a perfectly good computer sitting right here. but maybe with this I can see the light and be able to offload heavy conversations.
+  - honestly me too, but this same architecture could route it into a local sandbox that uses just-bash or containers or  something
+  - or if you just use worktrees, that's cool too
+  - but it'll all work the same for others who want remote stuff
+
+- I built my own version of this using opencode serve with a custom plugin that sends session logs to a centralized observability plane. Super stoked this is gonna be first class in opencode.
+
+- with event sourcing, when you destroy + recreate a remote env — are you replaying the full event log or snapshotting? curious how that scales for long sessions
+
+- https://x.com/thdxr/status/2028621778218557519
+  - could have prompted a git worktree feature into existence a while ago. 
+  - but we put in the time to design a system that can also support docker containers, remote sandboxes, etc
+  - with sync that can tolerate going offline
+
+- how does this come into play for people using the sdk?
+  - it'll all be possible to orchestrate from the sdk. all of our products use the sdk so nothing is ever missing there
+
 - ## in the next release of @opencode there is a new experimental server route "Global Session List"
 - https://x.com/ryanvogel/status/2024921007291785629
   - If you run an opencode server from a top-level directory (e.g., ~), custom clients can now list all recent sessions across directories.

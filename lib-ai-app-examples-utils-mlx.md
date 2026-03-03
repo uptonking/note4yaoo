@@ -126,6 +126,7 @@ modified: 2025-11-01T10:54:26.044Z
     - 模型RUN很慢，STOP停止困难
     - 需要chat template的模型(如qwen3-0.6b)无法配置template, 可以先用不需要template的模型如lfm测试
     - new chat有问题，只能聊一次，之后必须restart model才能再聊一次
+    - 安装时，使用 miniforge3/conda 安装环境， 本地环境+workspace+1GB小模型总体占用空间为8GB左右
   - macOS with Apple Silicon is supported (training functionality varies by hardware)
   - CPU-only installs run inference but not GPU-heavy workflows
   - Transformer Lab consists of a React application "Frontend" that communicates with a Python API "Backend" (found in the api directory). Application data is stored in a file system workspace that is accessed by the API and third-party scripts using the SDK (which can be found in the lab-sdk directory).

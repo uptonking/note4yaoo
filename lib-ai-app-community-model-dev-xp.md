@@ -13,6 +13,7 @@ modified: 2025-11-18T13:22:22.078Z
   - watching: openai, claude, qwen, deepseek, gemini/gemma, mistral/codestral, glm, kimi, minimax
   - variants: mlx, unsloth, quants
     - 考虑优化版模型 mxfp4, awq, dwq
+  - 一些受欢迎的小模型容易获取到免费api，本地方便对比， 如 glm-flash/nvidia
   - 测试模型时可能更希望速度快(小参数)，但做任务或规划时更希望质量好(大参数)，要取舍
   - 📱 端侧模型还要考虑电源及功耗问题, 实测macbook-air在跑模型时掉电很快
     - 端侧最好用 api-key + tiny-local-llm
@@ -185,6 +186,9 @@ modified: 2025-11-18T13:22:22.078Z
   - 似乎不擅长tailwind, 生成页面的风格偏非tailwind样式的传统网页
   - 经常出现部分元素样式错乱的问题
 
+- jan-code-4B
+  - 前端页面不擅长js, accordion无法折叠展开
+
 - [ruv/ruvltra-claude-code · Hugging Face](https://huggingface.co/ruv/ruvltra-claude-code)
   - The World's First LLM Optimized for Claude Code
   - Self-Learning Intelligence (SONA): The model continuously improves from interactions, learning your coding patterns, preferences, and project-specific conventions.
@@ -328,8 +332,18 @@ modified: 2025-11-18T13:22:22.078Z
 - [openbmb/MiniCPM-o-4_5 · Hugging Face _202602](https://huggingface.co/openbmb/MiniCPM-o-4_5)
   - The first full-duplex omni-modal LLM 
   - Full-duplex Omni-modal Live Streaming: The model can see, listen, and speak simultaneously in a real-time conversation without mutual blocking
+  - The model is built in an end-to-end fashion based on SigLip2, Whisper-medium, CosyVoice2, and `Qwen3-8B` with a total of 9B parameters.
   - https://x.com/OpenBMB/status/2018741614257307678
     - Leading Performance: Scoring 77.6 on OpenCompass, it outperforms GPT-4o & Gemini 2.0 Pro in vision-language tasks with 9B params
+
+## tool-call
+
+- [Team-ACE/ToolACE-2.5-Llama-3.1-8B · Hugging Face](https://huggingface.co/Team-ACE/ToolACE-2.5-Llama-3.1-8B)
+  - a fine-tuned model of LLaMA-3.1-8B-Instruct with our dataset ToolACE tailored for tool usage. 
+  - Compared with ToolACE-2, ToolACE-2.5-8B enhances the multi-turn tool-usage ability.
+  - [Team-ACE/ToolACE-2.5-Llama-3.1-8B · Chat template `.call`](https://huggingface.co/Team-ACE/ToolACE-2.5-Llama-3.1-8B/discussions/1)
+    - The template is originally from Llama3.1-8B-Instruct, not supporting our function call format. 
+    - If you want to use FC based on our model, we recommend you to replace the chat template with vllm official implementation: https://github.com/vllm-project/vllm/blob/main/examples/tool_chat_template_toolace.jinja.
 # model-wiki/bookmarks
 - 超大模型的极小量化版
   - Llama-3.3-70B-Instruct-abliterated-Q2-mlx  22.07gb

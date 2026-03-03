@@ -561,6 +561,10 @@ modified: 2025-02-21T17:17:42.225Z
   - Deployment: Vercel (Frontend), EC2 (Backend)
   - Analytics: PostHog, Api-Analytics
 
+- https://github.com/eren726290/opencode-cowork-plugins
+  - Standalone OpenCode CLI plugins for Windows. Ported from Anthropic's knowledge-work-plugins.
+  - [Coworke Plugins wiped out 100 billion from SaaS. I made for opencode. : r/opencodeCLI _202603](https://www.reddit.com/r/opencodeCLI/comments/1rhrbgg/coworke_plugins_wiped_out_100_billion_from_saas_i/)
+
 ## computer-use
 
 - https://github.com/Bigchx/NestOS /MIT/202602/js

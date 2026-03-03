@@ -18,6 +18,11 @@ modified: 2026-01-14T19:05:15.969Z
 - features
   - ?
   - ? 似乎不支持skills
+
+- 实现参考
+  - janai: rust/tauri + ui
+  - llamafarm: lemonade(cpp) + ui
+  - transformerlab-app: backend-plugins + ui
 # draft
 - janai-cli like ollama-cli, lms-cli
   - skills for janai-cli

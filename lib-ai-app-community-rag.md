@@ -375,7 +375,10 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [Architectural Consolidation for Low-Latency Retrieval Systems: Why We Co-Located Transport, Embedding, Search, and Reranking : r/Rag](https://www.reddit.com/r/Rag/comments/1rj1c90/architectural_consolidation_for_lowlatency/)
+  - https://github.com/orneryd/NornicDB/discussions/26
+  - put together a blog post about how we achieved a 7ms full e2e vector search pipeline in NornicDB
+  - TL; DR: NornicB intentionally co-locates the whole retrieval path (transport + embedding + hybrid search + reranking) in one runtime/container to cut inter-service hop overhead and hit low latency (example shown: ~7.65 ms HTTP end-to-end on their sample run).
 
 - ## [Building RAG pipelines using elasticsearch : r/Rag _202602](https://www.reddit.com/r/Rag/comments/1rfd4md/building_rag_pipelines_using_elasticsearch/)
 - FYI: Azure AI Search is very similar to Elasticsearch and offers hybrid search out of the box. It's very powerful - but very expensive. 
@@ -750,7 +753,15 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [How do you update a RAG vector store in production? (Best practices?) : r/Rag](https://www.reddit.com/r/Rag/comments/1rj1bkg/how_do_you_update_a_rag_vector_store_in/)
+- the biggest thing that tripped us up was treating the vector store like a static artifact instead of a living system. once you shift to that mindset, the update strategy becomes clearer.
+- what works for us in production:
+  - document-level metadata tracking: every chunk gets tagged with a source doc ID + version hash. when a doc changes, you regenerate chunks for that doc only, delete the old ones by metadata filter, and insert new ones. way cheaper than rebuilding the whole index.
+  - incremental ingestion pipeline: we run a nightly job that diffs source docs against what's already indexed (using those version hashes). only changed/new docs get processed. keeps compute costs reasonable as your corpus grows.
+  - handling deletions is the annoying part: most vector DBs don't make bulk deletes fast. we ended up keeping a separate mapping table (doc_id → chunk_ids) so we can precisely target what to remove without scanning the whole store.
+- 👀 one thing to watch out for — if you ever swap embedding models, you basically have to rebuild from scratch since the vector spaces won't be compatible. plan for that early.
+
+- The update mechanics vary by vector DB, but the production pitfalls are consistent: partial updates that leave retrieval in an inconsistent state, no rollback path when new embeddings degrade quality, and zero visibility into what changed. Before you pick an update strategy, decide how you'll version your index, validate retrieval quality post-update, and roll back if something breaks. Those controls matter more than the specific chunking or batching approach.
 
 - ## 🤔 [Has anyone built RAG for real-time conversation scenarios? Latency is killing me : r/Rag](https://www.reddit.com/r/Rag/comments/1r257tc/has_anyone_built_rag_for_realtime_conversation/)
   - Think real-time meeting assistants or interview coaching tools where you need to retrieve and present context within 1-2 seconds while someone is still talking. The problem is that my current setup is too slow for real-time use. 

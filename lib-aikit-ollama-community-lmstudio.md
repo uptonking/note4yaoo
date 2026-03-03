@@ -9,6 +9,10 @@ modified: 2026-01-14T18:58:32.523Z
 
 # guide
 
+- 实现参考
+  - janai: rust/tauri + ui
+  - llamafarm: lemonade(cpp) + ui
+  - transformerlab-app: backend-plugins + ui
 # draft
 - 在lmstudio支持服务端headless模式后, 将ollama wrapper替换为lmstudio wrapper
   - 💰 谨慎封装lmstudio, 因为之前lmstudio连免费工作使用都不支持
