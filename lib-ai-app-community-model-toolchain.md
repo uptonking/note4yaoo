@@ -1349,7 +1349,25 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 
 - ## 
 
-- ## 
+- ## 🧩 [Repetition penalties are terribly implemented - A short explanation and solution : r/LocalLLaMA _202410](https://www.reddit.com/r/LocalLLaMA/comments/1g383mq/repetition_penalties_are_terribly_implemented_a/)
+  - For reasons of various hypotheses, LLMs have a tendency to repeat themselves and get stuck in loops during multi-turn conversations (for single-turn Q&A/completion, repetition penalty usually isn't necessary). Therefore, reducing the probabilities of existing words will minimise repetitiveness.
+  - Frequency and presence penalties are subtractive(减少的，减去的；应减的). Frequency penalty reduces word weights per existing word instance, whereas presence penalty reduces based on boolean word existence. Note that these penalties are applied to the logits (unnormalised weight predictions) of each token, not the final probability.
+  - Repetition penalty is the same as presence penalty, but multiplicative(趋于增加的；倍增的). This is usually good when trying different models, since the raw logit magnitude differs between models.
+  - People generally use repetition penalty over frequency/presence penalty nowadays. I believe the adversity to frequency penalty is due to how poorly implemented it is in most applications.
+  - Repetition penalty has one significant problem: It either has too much effect, or doesn't have enough effect. "Stop using a word if it exists in the prompt" is a very blunt guidance for stopping repetitions in the first place. Frequency penalty solves this problem, by gradually increasing the penalty when a word appears multiple times.
+  - However, for some reason, nearly all implementations apply frequency penalty to ALL EXISTING TOKENS. This includes the special/stop tokens (e.g. `<|eot_id|>` ), tokens from user messages, and tokens from the system message. When the purpose of penalties is to reduce an LLM's repetition of ITS OWN MESSAGES, penalising based on other's messages makes no sense. Furthermore, penalising stop tokens like `<|eot_id|>` is setting yourself up for guaranteed failure, as the model will not be able to end its own outputs at some point and start rambling endlessly.
+  - TLDR: Frequency penalty is not bad, just implemented poorly. It's probably significantly better than repetition penalty when used properly.
+
+- Frequency penalties cannot work, because they will always penalize the building blocks of whatever language you are writing in. The problem goes far beyond special tokens like `<|eot_id|>:` Frequency penalty penalizes a, the, and, or, etc., and doing so distorts the very grammar you expect the model to reproduce. And there is no good way to make implementations ignore those "essential" tokens, because which tokens are essential depends on the input language, on the writing style, even on particularities of the specific task.
+  - But token-based penalties are barking up the wrong tree anyway. When people talk about the model repeating itself, they don't mean that specific tokens come up again and again. They mean that specific sequences of tokens come up again and again.
+- There are two ways to attack this problem from the sampling perspective:
+  - Penalize sequence repetitions directly using a penalty that increases with sequence length, allowing necessary repetitions while discouraging looping. This is what DRY does.
+  - Occasionally remove high-probability tokens regardless of whether they can be identified as repetitions. This can effectively combat even subtle forms of looping where the model paraphrases previous output rather than repeating it verbatim. This is what XTC does.
+  - That being said, I think your idea of excluding user messages from the penalty context makes a lot of sense.
+
+- Don't use rep pen or any of this old junk. All you need is MinP and either XTC (creative) or DRY (roleplay)
+  - DRY works by penalizing repetitive sequences, not tokens, which works much better. It doesn't break EOT for one.
+  - XTC works by penalizing top choice, sort of an inverse greedy sampler
 
 - ## 🤔 [Why don’t most programmers fine-tune/train their own SLMs (private small models) to build a “library-expert” moat? : r/LocalLLM](https://www.reddit.com/r/LocalLLM/comments/1qoyoty/why_dont_most_programmers_finetunetrain_their_own/)
 - Because it's way easier to just use a RAG (or something similar to feed data to the model) instead of fine-tuning models. It's also way faster and more energy efficient. And doesn't need to be re-done on every new model release. Simply switch the model, and you're done (most of the time, not always). Note: I've built machine learning frameworks and applications for a few years now at my current job, and doing a lot of things with SLMs at home.

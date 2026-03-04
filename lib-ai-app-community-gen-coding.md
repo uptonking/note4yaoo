@@ -766,7 +766,13 @@ It amazes me how people default to LLM calls when you can do it in a simple, fre
 
 - ## 
 
-- ## 
+- ## [最近比较火的几个开源项目是否正在慢慢变成屎山? ](https://linux.do/t/topic/1682706)
+  - opencode、openclaw 等都是最近比较火的项目，他们的 issues 和 pr 都是好几千个。 这个量级感觉靠人处理是不是不太现实了，只能让 ai 自己修复，继续堆屎。
+- 相信后“模”的力量 
+
+- 项目越大，功能加的越快，越容易屎山，我都停下来加功能开始refactor了
+
+- 还是看愿不愿意接受pr 如果对pr质量要求低 随便就merge 那肯定会变成屎山
 
 - ## [开源仓库经常收到 ai 劣质pr 如何解决呢 ](https://linux.do/t/topic/1622067)
   - 开源仓库里多了一堆质量堪忧的 PR。一眼能看出来是直接丢给 AI 生成然后啥也不测就提上来的，变量命名一股 AI 味，commit message 千篇一律，有的甚至连本地跑都跑不过。

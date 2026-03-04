@@ -50,6 +50,27 @@ modified: 2026-02-18T04:15:19.228Z
 - 
 - 
 
+# discuss-eval-rag
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [How do you actually measure if your RAG app is giving good answers? Beyond just looks okay to me : r/Rag _202603](https://www.reddit.com/r/Rag/comments/1rjvr34/how_do_you_actually_measure_if_your_rag_app_is/)
+- honestly the simplest setup that actually works is running a cheap LLM (like haiku or gpt-4o-mini) as a judge on every response. Have it score 3 things... did retrieval pull relevant docs, did the answer stick to those docs vs hallucinating, and did it actually address the question.
+  - log everything and set alerts for when scores drop. Way better than waiting for user complaints
+  - ragas and the fancier eval frameworks exist but a simple judge prompt gets you like 80% of the way there for production
+
+- LLM as a judge, have done it for finance, can check my blogposts for more details. Fortunately there was a benchmark for me with good ground truths. Else, you will have to curate.
+
+- we built this pipeline at ZeroEntropy called zbench https://github.com/zeroentropy-ai/zbench
+
+- I used promptfoo (open source) to write evals that include llm as a judge like others have already mentioned. One thing I found critical is to actually understand you data so you will be able to identify the small mistakes llms can make.
+
+- ended up just using confident-ai.com and honestly should have started there. does what you're describing, checks retrieval, checks if the model stayed grounded, gives you a score. the main thing for me was being able to see trends over time so when we changed our chunking strategy we could actually tell if it made things better or worse
 # discuss-search-grep
 - ## 
 

@@ -843,6 +843,12 @@ modified: 2025-12-11T18:10:23.710Z
 - https://github.com/easychen/openMode /MIT/202511/dart
   - a mobile client for OpenCode (and more, maybe). Built with Flutter, it provides a seamless and intuitive interface for interacting with AI assistants, managing code projects, and enhancing your development workflow on the go.
 
+- https://github.com/lehhair/OpenCodeUI /GPL/202603/ts
+  - https://lehhair.github.io/OpenCodeUI/
+  - 为 OpenCode 打造的第三方 Web 前端界面。
+  - 完全由 AI 辅助编程（Vibe Coding）完成——从第一行代码到最终发布，所有功能均通过与 AI 对话驱动开发。
+  - 桌面应用 — 基于 Tauri 的原生客户端（macOS / Linux / Windows）
+
 - https://github.com/Th0rgal/opencode-ralph-wiggum /MIT/202601/ts
   - Type `ralph "prompt"` to start open code in a ralph loop. Also supports a prompt file
   - Ralph is a development methodology where an AI agent receives the same prompt repeatedly until it completes a task. Each iteration, the AI sees its previous work in files and git history, enabling self-correction and incremental progress.
@@ -920,6 +926,12 @@ modified: 2025-12-11T18:10:23.710Z
     - [feat: Implement graceful shutdown system ](https://github.com/Nano-Collective/nanocoder/issues/239)
       - ink's exit() doesn't terminate the process
     - [feat: implement parallel tool execution for better performance _202602](https://github.com/Nano-Collective/nanocoder/pull/352)
+
+- https://github.com/coulsontl/ai-toolbox /MIT/202603/rust/ts
+  - 一个跨平台桌面应用，旨在帮助开发者高效管理各类 AI 编程助手的配置。支持 Windows、macOS 和 Linux。
+  - OpenCode 配置管理 - 可视化管理 OpenCode 的供应商和模型配置，支持列表页快速启停
+  - Claude Code 配置管理 - 一键切换 Claude Code 的 API 供应商配置，支持动态获取模型列表
+  - Codex 配置管理 - 管理 OpenAI Codex CLI 的供应商配置
 
 - https://github.com/Aider-AI/aider /37.1kStar/apache2/202508/python
   - https://aider.chat/
@@ -2218,6 +2230,14 @@ modified: 2025-12-11T18:10:23.710Z
   - https://www.codealive.ai/
   - The most accurate and comprehensive Context Engine as a service, optimized for large codebases, powered by advanced GraphRAG and accessible via MCP. 
   - you can self-host the entirety of CodeAlive in your own environment, and even use your own LLM providers for added flexibility. This option allows you to maintain the privacy and security of your codebase. 👀 This option is available only for companies
+
+- https://github.com/JinHo-von-Choi/memento-mcp /apache2/202603/js
+  - [A Three-Layer Memory Architecture for LLMs (Redis + Postgres + Vector) MCP : r/mcp](https://www.reddit.com/r/mcp/comments/1rgrejh/a_threelayer_memory_architecture_for_llms_redis/)
+  - Originally, this was a supporting feature of another custom MCP I built. But after using it for a while, it felt solid enough to separate and release on its own.
+  - Once you close the session, all context evaporates.
+  - You can try stuffing markdown files with setup notes, but that has limits.
+  - So I tried to simulate how humans fragment memories and reconstruct them through associative structures.
+  - Memento MCP is a mid- to long-term AI memory system built on the MCP (Model Context Protocol).
 
 - https://github.com/your-papa/obsidian-Smart2Brain /MIT/202602/ts/svelte
   - An Obsidian plugin to interact with your privacy focused AI-Assistant making your second brain even smarter!

@@ -101,7 +101,17 @@ modified: 2026-01-14T18:58:32.523Z
 
 - ## 
 
-- ## 
+- ## pr已合并 [Add Presence Penalty · Pull Request · lmstudio-ai/lmstudio-js _202603](https://github.com/lmstudio-ai/lmstudio-js/pull/552)
+  - ? 似乎只支持llama.cpp， 不支持 mlx
+
+- [Presence Penalty seems to be incoming on LMStudio for Qwen 3.5 : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rjhmmf/presence_penalty_seems_to_be_incoming_on_lmstudio/)
+  - I still wonder why they recommend presence penalty, isn't it a naive and obsolete sampler?
+- Presence penalty adds a fixed penalty to a repeated token, regardless of how many times it has already appeared in context. The penalty doesn't change even if the token continues to appear.
+  - Frequency and repetition penalty add a proportional penalty based on a token's frequency. 
+  - However, repetition penalty has additional parameters to scale the slope and range, which can make it more impactful and more tunable.
+  - If you want the exact implementation details, they can be found in the llama.cpp source code and related pull requests.
+
+- About time. LM Studio seriously needs to expose more parameters. You'd think their "developer mode" would, but nope.
 
 - ## Introducing LM Link - Connect to remote instances of LM Studio, securely. _202602
 - https://x.com/lmstudio/status/2026722042347663779

@@ -314,12 +314,24 @@ modified: 2025-09-21T13:57:50.332Z
 - ## [LMStudio, Remote Services, smoldocling · docling-project/docling _202506](https://github.com/docling-project/docling/discussions/1849)
 - It looks like it got stuck in a loop. It seems to do well, then gets stuck over and over
 
+# discuss-paddleocr
+- ## 
+
+- ## 
+
+- ## 
 # discuss-mineru
 - ## 
 
 - ## 
 
-- ## 
+- ## [基于MinerU的API调用封装为ClaudeCode中的subagents的建议？ _202603](https://linux.do/t/topic/1666868)
+  - mineru 支持api调用，写个脚本，交个agent调用
+
+- mineu是用来处理文件的，做成异步任务rag会很好，实时处理的话性能不容乐观，最好和agent应用解耦
+
+- 可以看出ragflow或者coze以及dify里面都有做rag相关的内容，把文档传上去后，直接暴露接口给cc当工具来调用就行了。数据处理和数据使用分离。
+  - 上了rag之后可以暴露接口，直接让AI调就行了，不需要每次都处理文档，如果文件太多的话做一轮检索也行，这样可以避免上下文溢出。
 
 - ## [mineru vl是有内置paddleocr v5吗，我不熟的时候似乎在日志还是哪里看到过，后面找不到了，我想用paddleocr v5替换单张图片的ocr · opendatalab/MinerU _202512](https://github.com/opendatalab/MinerU/discussions/4254)
   - mineru vl对与某些旋转、倾斜、纵向的图片里面的文字表格识别没有paddleocr v5效果好

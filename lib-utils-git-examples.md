@@ -264,6 +264,10 @@ modified: 2023-08-29T10:12:22.345Z
     - https://gitea-react-toolkit.netlify.com/
     - A Gitea React Toolkit Component Library.
     - to expose Gitea API functionality using React Components and Material UI.
+- https://github.com/AliyahZombie/Linuxdo-Gitea /MIT
+  - [[社区孵化] 我魔改了Gitea 接入Linuxdo信任等级体系~ 更安全的分发代码 _202603](https://linux.do/t/topic/1672364)
+    - 基于Gitea，我接入了Linux DO登录，并允许仓库根据L站信任等级设置仓库可见性
+    - 目前，你需要先创建私有仓库后，再在设置中更改可见性
 
 - https://github.com/gogs/gogs /45.1kStar/MIT/202411/go
   - https://gogs.io/

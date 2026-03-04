@@ -664,6 +664,17 @@ modified: 2024-03-31T17:45:16.789Z
   - Streaming downloads with a Service Worker.
   - Out-of-process storage of server state using Redis.
 
+- https://github.com/ZhangShengFan/FastFile /MIT/202603/js/单文件
+  - http://file.091224.xyz/
+  - 基于 Cloudflare Workers 的文件快传工具，支持口令保护、二维码分享、在线预览。
+  - 基于 Cloudflare Workers + KV 的轻量级文件快速分享工具
+  - 无需服务器 · 无需数据库 · 一键部署 · 全球加速
+  - 可设置提取口令，防止文件被陌生人下载
+  - 自定义有效期	10分钟 ~ 3天，过期自动删除
+  - 管理后台	支持多 Worker 接口调度，统一管理配额
+  - API 接口	提供标准 REST API，方便第三方集成
+  - [开源了！基于CF的文件快传工具 _202603](https://linux.do/t/topic/1674057)
+
 - ezshare /324Star/MIT/202207/js/inactive
   - https://github.com/mifi/ezshare
   - A simple file server that lets you easily share many big files like photos and videos with friends (or between your devices) over a local network without requiring an internet connection.

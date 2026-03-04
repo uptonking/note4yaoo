@@ -743,13 +743,13 @@ modified: 2025-03-22T16:10:24.856Z
   - [ibsgss公益站](https://codex.ibsgss.uk/console/personal), 签到
     - [【ibsgss公益站】支持codex cli / cherry  ](https://linux.do/t/topic/1434464)
     - 维护期限：到 codex-team 渠道耗尽为止
+  - [YAO](http://154.37.220.66:3000/console/personal)
+    - [[Yao公益站]codex注册200刀，可能随时倒闭  ](https://linux.do/t/topic/1683788)
   - [随缘API](https://newapi.tanmw.top/console/personal)
     - [【随缘API公益站】开放注册！余额已调整 ](https://linux.do/t/topic/1634879)
     - RPM:20
     - 目前只有 GPT 和 Grok 
     - 不保证稳定性！随时跑路
-  - [YAO](http://154.37.220.66:3000/console/personal)
-    - [[Yao公益站]codex注册200刀，可能随时倒闭  ](https://linux.do/t/topic/1683788)
   - [Einzieg API](https://api.einzieg.site/console/personal), 签到
     - 仅提供codex模型
     - [【Einzieg公益站】再次启动 ](https://linux.do/t/topic/1569418)
@@ -1107,6 +1107,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [FreeGen 白嫖图片生成器](https://hachimiai.dpdns.org/freegen/)
   - [SoraApi](https://api.67.si/)
     - 不可用
+    - 继续上新 即梦4.6 和 5.0 
   - [呜哩AI，一站式AIGC创意平台](https://wuli.art/generate)
 
 - image2api

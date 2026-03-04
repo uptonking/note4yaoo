@@ -597,6 +597,14 @@ modified: 2025-02-21T17:17:42.225Z
   - https://github.com/ItMeDiaTech/Documentation_Hub/releases/tag/v2.0.0
     - dmg
 
+- https://github.com/iiinnovation/Solidify /MIT/202603/ts
+  - 一款专为非研发背景实施人员打造的轻量级 AI 工具，专注文档生成、演示准备和知识管理。
+  - 9 个内置技能 - 需求分析、方案设计、演示文稿、测试方案等
+  - 多格式导出 - PPTX、PDF、DOCX、Markdown、HTML
+  - 云端同步 - 可选的 Supabase 云端存储，多设备同步
+  - Tauri 打包，体积小（~50MB），启动快（<1s）
+  - [【开源分享】为实施人员打造的轻量级 AI 工具，专注文档生成、演示准备和知识管理 _202603](https://linux.do/t/topic/1681661)
+
 - https://github.com/Prismer-AI/Prismer /BSL/202601/python/ts
   - https://paper.prismer.ai/
   - Open Source OpenAI Prism Alternative

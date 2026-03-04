@@ -335,7 +335,20 @@ modified: 2025-11-05T19:04:50.350Z
 
 - ## 
 
-- ## 
+- ## [这可能是目前比较全的 LLM 故事生成资源库之一 ](https://linux.do/t/topic/1687100)
+  - https://github.com/Picrew/awesome-llm-story-generation
+  - 这个 repo 主要整理的是 LLM 故事生成这条线，范围包括故事、小说、剧本生成。
+  - 不是单纯堆链接，而是按方法拆了分类，后面查资料、补论文、找 baseline 会顺手很多。
+- 像这些方向现在都单独整理了：
+planning / decomposition
+multi-agent 协作写作
+sandbox / world simulation
+long-context / memory coherence
+controllability / consistency
+iterative refinement / self-critique
+evaluation / benchmark
+datasets / surveys
+还有一些值得翻的开源项目
 
 - ## [Open source LLM for detecting AI generated content : r/ollama](https://www.reddit.com/r/ollama/comments/1r7ghg3/open_source_llm_for_detecting_ai_generated_content/)
 - i heard about Attensira which helps with content visibility and gives useful insight on handling ai detection.

@@ -129,7 +129,10 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 
-- ## 
+- ## [[分享] GoRabbit：本地优先的 AI Agent 桌面平台（开发内测中） ](https://linux.do/t/topic/1684941)
+  - 主要目标是： 让 AI 不只是聊天，而是能像一个「可编程助手」那样，真正替你干活。
+  - 一句话概括： 桌面端 + 多模型 + 工具调用 + Agent + 记忆系统 + 自我学习规划决策，完全本地可控。
+  - 基础功能已经可用：多模型、多 Agent、工具系统、记忆系统、权限控制等
 
 - ## 🤔 [Is the Codex app basically just a CLI wrapper? : r/codex _202603](https://www.reddit.com/r/codex/comments/1rgxpbm/is_the_codex_app_basically_just_a_cli_wrapper/)
   - Trying to understand how the Codex app is structured here. Is it essentially a wrapper around the CLI, or does it have its own separate update cycle and capabilities?
@@ -214,6 +217,14 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 
+- ## 🎞️ [有哪些知名的AI套壳项目值得推荐 ](https://linux.do/t/topic/1689853)
+  - 想做一个类似 pollo .ai 的项目，提供一些视频模板，传自己的角色或者场景，生成宣传视频，有没有合适的开源项目做二次开发呀？
+
+- 站内有两个开源的短剧/视频生成平台，可以参考下
+  - [免费开源！已经盈利的AI影视/短剧agent制作系统 waoowaoo  ](https://linux.do/t/topic/1670000)
+  - [ai火宝开源 ](https://linux.do/t/topic/1521682)
+  - 另外还有些 Skills，可以通过关键词短剧进一步了解
+
 - ## [一个在浏览网页时扫描内容是否由AI生成的油猴脚本 ](https://linux.do/t/topic/1641840)
   - https://textoracle.h-e.top/
   - 爬了一些不大的数据集，训练了一个可以判别是 AI 还是人类的模型
@@ -231,7 +242,34 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 
-- ## 
+- ## [大家除了编程一般都拿AI干啥 _202603](https://linux.do/t/topic/1679742)
+- 分析在线新闻，建立对于某个事件的路径图，分析舆论啥的
+
+- NSFW，我做了一个女友的赛博分身NSFW版，配上生图skill，不要太哈皮。
+  - NSFW 这不是生产力的来源吗
+
+- 阅读 给他提要求 推荐一系列的书籍 读不懂的时候问它 和自己熟悉的知识建立联系
+
+- 思维练习: 多角度分析
+
+- 学习！很多不懂的东西让他解释都非常好，还可以让他规划学习路线。生活中看到一些现象非常好奇是怎么回事我也会问一下ai。我现在其实百分之七八十都是不是让他编程，都是在满足好奇心
+
+- openclaw
+每天早上发一份天气预报，一份新闻，一份github热点报告。
+定时提醒，不过这个有点不稳定，不太重要的定时可以用，否则还是手机自带的语音助手更安心。
+待办列表，用一个skill将待办存进数据库里，用来平替gmail的tasks, 体验一般，看个人习惯了。
+帮我读容器日志，更新下容器什么的。
+
+- ## [Reddit上关于Qwen人事变动的讨论 ](https://linux.do/t/topic/1690679)
+- 有一定的道理，qwen拿着最多的钱和资源到现在却没有什么标杆模型，现在这qwen3.5也只能勉强算一个吧。
+  - 别的模型一眼就能看出哪些是主线大模型哪些是小模型而且也只专心维护升级那几个模型，成本自然低，而qwen混乱的产品线不去研究根本不知道他到底哪些模型是干什么的，整这么多模型成本炸裂不说大部分都没人在乎
+  - 我觉得以后qwen可能是整一个顶级闭源大模型赚钱，一个中等开源模型以及小模型抢开源市场
+
+- 一堆模型我觉得不影响什么, 问题是 Qwen Max 为啥那么平庸
+
+- 看起来情况比想像的糟糕? 别的团队花同样的资金可以搞出 200B, 300B 甚至 700B 的 SOTA LLM, Qwen 却只能死守 SLM, 然后还有内部斗争
+
+- [千问离职瓜继续爆料 ](https://linux.do/t/topic/1690763)
 
 - ## 🤔 [NotebookLM lowkey gave me superpowers and i’m not even joking : r/notebooklm _202602](https://www.reddit.com/r/notebooklm/comments/1rfhswr/notebooklm_lowkey_gave_me_superpowers_and_im_not/)
   - threw in sources for programming, marketing, copywriting, literally everything i was studying. and dude. i was understanding stuff in like 20 minutes that would take me an entire afternoon watching youtube videos. this is not an exaggeration. i bought a marketing course that cost me good money and i ended up literally taking the course content, feeding it as a source into NotebookLM and learned BETTER than going through the actual course. the course became study material for the AI. i’m still processing this honestly.

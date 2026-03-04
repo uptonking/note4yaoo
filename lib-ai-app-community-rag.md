@@ -751,7 +751,26 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [大模型RAG实战，从被骂不靠谱到成为部门MVP，这是我的踩坑全记录 - 张不惑 - 博客园 _202602](https://www.cnblogs.com/bu-huo/p/19601644)
+- 把这套系统从被骂下线到成为部门标配，前后折腾了将近一个月。趟过的坑挺多，但收获也很大。
+- 几点核心总结：
+1. RAG不是万能的，选好适用场景
+RAG适合有明确知识库、答案可追溯的场景。如果你的需求是让大模型发挥创造力（比如写文案、做创意），那RAG反而是个约束。
+
+2. 切分和检索是根基
+大家往往把注意力放在大模型本身，觉得用更强的模型就能解决问题。但实际上，如果前面的切分和检索做得不好，再强的模型也是巧妇难为无米之炊。
+
+3. Prompt工程真的是门手艺
+同样的检索结果，不同的Prompt可能带来天壤之别的回答效果。这个没什么捷径，就是多试、多看、多迭代。
+
+4. 上线只是开始
+真正的挑战在上线之后。用户的各种奇葩输入、文档的持续更新、性能的优化、效果的监控……每一项都是持续的工作。
+
+- 最后，附上这套系统目前的一些核心指标：
+  - 日均查询量：200+次
+  - 平均响应时间：2.3秒（开启流式后首字符延迟约0.8秒）
+  - 用户满意度（通过回答后的点赞/点踩收集）：约72%
+  - 无法回答的比例：约22%（这部分会定期分析，推动补充文档）
 
 - ## [How do you update a RAG vector store in production? (Best practices?) : r/Rag](https://www.reddit.com/r/Rag/comments/1rj1bkg/how_do_you_update_a_rag_vector_store_in/)
 - the biggest thing that tripped us up was treating the vector store like a static artifact instead of a living system. once you shift to that mindset, the update strategy becomes clearer.
