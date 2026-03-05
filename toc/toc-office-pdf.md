@@ -722,6 +722,11 @@ modified: 2021-01-04T17:26:43.784Z
   - another Webassembly PDF renderer for node and the browser
   - This is a port of MuPDF to javascript and webassembly
 
+- https://github.com/yfedoseev/pdf_oxide /MIT/202603/rust/ts
+  - https://oxide.fyi/
+  - The fastest PDF library for Python and Rust. 
+  - [PDF Oxide -- Fast PDF library for Python with engine in Rust (0.8ms mean, MIT/Apache license) : r/Python](https://www.reddit.com/r/Python/comments/1rjsq84/pdf_oxide_fast_pdf_library_for_python_with_engine/)
+
 - OpenViewerFX  /LGPL/
   - https://github.com/qwertme/OpenViewerFX
   - now part of JDeli

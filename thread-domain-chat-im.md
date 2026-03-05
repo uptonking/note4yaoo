@@ -141,6 +141,21 @@ modified: 2024-01-04T01:28:58.097Z
 
 - Using namespaced IDs is somewhat pointless if you can simply define all the schemas in the core protocol spec and call it a day.
 - the other significant point of evolvability (that's in practice now) is the RPC methods. New ones can be defined, returning new schemas, and so on.
+# discuss-forum-vc/market
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [L站估值多少？ _202603](https://linux.do/t/topic/1693851)
+  - 差不多2亿，看到有人问始皇出去年包多少突发奇想
+- 全员翻墙违法，没收违法所得。资产为负
+
 # discuss-ai-customer-service/客服
 - ## 
 

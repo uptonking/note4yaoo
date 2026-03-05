@@ -362,6 +362,15 @@ modified: 2025-12-18T12:27:14.982Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Everything I Wish Existed When I Started Using Codex CLI — So I Built It : r/codex _202603](https://www.reddit.com/r/codex/comments/1rkgkx9/everything_i_wish_existed_when_i_started_using/)
+- Up to 32KiB for AGENTS.md. That feels like an excessively high limit doesn't it?
+
 - ## [Codex 5.3 优化 ：工作并行加速 + 回答简洁轻快 ](https://linux.do/t/topic/1603762)
 
 - ## [codex污染这么严重吗？  _202602](https://linux.do/t/topic/1585312)

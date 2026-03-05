@@ -680,6 +680,19 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🆚 [Qwen3 vs Qwen3.5 performance : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1rlckan/qwen3_vs_qwen35_performance/)
+- If the graphic is close to reality, then three things catch A LOT of attention:
+  - Qwen3.5-35BA3, which is blazing fast, even as no-reasoning is above ALL qwen3 (including those with hundreds of billions of parameters). That's incredible.
+  - Qwen3.5-27B thinking, slow but able to fit in many PCs and laptops, is sitting almost at the peak!
+  - The old 4B model was considered a gem for its size, the new one is like 10 points above.
+- Other interesting things:
+  - the 9B is better than the non-thinking 35B
+  - 27b non-thinking = 35BA3 thinking --> That means that it could be better to use the 27B since it would use less tokens to reach the same. And running locally, if using speculative decoding and a good quant, maybe the seconds to solution are not much slowlier.
+
 - ## [Qwen3.5 35B-A3B replaced my 2-model agentic setup on M1 64GB : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1rh9k63/qwen35_35ba3b_replaced_my_2model_agentic_setup_on/)
   - Device: Apple Silicon M1 Max, 64GB
   - The Task: Analyze Amazon sales data for January 2025, identify trends, and suggest improvements to boost sales by 10% next month. The data is an Excel file with 6 sheets. This requires both reasoning (planning the analysis, drawing conclusions) and coding (pandas, visualization).

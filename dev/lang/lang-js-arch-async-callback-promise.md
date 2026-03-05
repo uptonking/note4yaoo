@@ -118,7 +118,31 @@ modified: 2021-08-30T07:01:09.493Z
 
 - ## 
 
-- ## 
+- ## Every Node.js developer has lost a background job to a server restart.
+- https://x.com/matteocollina/status/2028879094381686834
+  - We just open-sourced @platformatic/job-queue, a new queue library built for reliability from day one.
+  - Deduplication, retries, request/response, graceful shutdown. All out of the box.
+- Most queue setups make you stitch together patterns yourself:
+  - Deduplicate jobs? DIY.
+  - Wait for a result? Build custom plumbing.
+  - Recover stalled jobs? Hope for the best.
+- We built these into the core API so you don't have to.
+- Three storage backends for different stages:
+  - MemoryStorage - dev & testing
+  - FileStorage - simple single-node deploys
+  - RedisStorage - production, horizontal scaling, leader election
+- Start local, go distributed. No code changes.
+- We've been testing this @platformatic , and it's been solid.
+
+- Are there plans for concurrency management and group concurrency? (so that big tenants don't clog the pipe) pg-boss has very powerful and flexible concurrency configuration that can be used as a reference
+
+- Did you build this because you ran into problems with BullMQ? Curious what you are solving for, given there is a _very_ mature tool in this space
+  - I needed something that could work over the file system, and generically had a multi-provided interface.
+  - It introduces a caching/deduplication layer too. So if the same job gets queued twice, it will only be processed once.
+- Yeah, but easily enough done with explicit job ID creation/dedup with BullMQ. But nice you built it first-class!
+
+- what does it have that bullmq doesnt or it does better
+  - it’s multi-provider and it introduces a caching/deduplication layer too. So if the same job gets queued twice, it will only be processed once.
 
 - ## [GCP: When to use PubSub vs Task Queues _201702](https://groups.google.com/g/google-appengine/c/IcIjLfgnNXs/m/-m_ik7h6DgAJ)
 - Much of the answer is historical. Task Queues evolved as part of the App Engine developer libraries (back in 2009) and was (internally) slated for deprecation and replacement with release of Pub/Sub. As you observed: Pub/Sub does seem like a strong generalization of Task Queues. When Pub/Sub launched, however, we found that it did not meet the needs of a significant number of customers. A number of features that we thought weren’t particularly import (de-duplication, scheduled delivery, rate management, concurrency management, tagged tasks, configurable retries, etc) turned out to be critical and not supported in Pub/Sub.

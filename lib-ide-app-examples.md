@@ -633,4 +633,18 @@ modified: 2024-08-24T16:30:20.218Z
 
 - https://github.com/FradSer/dotclaude /202602/python
   - collection of plugins and skills for Claude Code, designed to enhance development workflows with specialized agents and automation tools.
+
+- https://github.com/vercel-labs/openreview /MIT/202603/ts
+  - https://openreview.labs.vercel.dev/
+  - An open-source, self-hosted AI code review bot. 
+  - Deploy to Vercel, connect a GitHub App, and get on-demand PR reviews powered by Claude.
+  - Mention @openreview in any PR comment to trigger a review
+  - Sandboxed execution — Runs in an isolated Vercel Sandbox with full repo access, including the ability to run linters, formatters, and tests
+  - https://x.com/haydenbleasel/status/2029646226707362009
+    - self-hosted AI code review bot powered by the Vercel AI Cloud.
+# code-security
+- https://github.com/lintsinghua/DeepAudit /5kStar/AGPL/202602/python/ts
+  - DeepAudit：人人拥有的 AI 黑客战队，让漏洞挖掘触手可及。国内首个开源的代码漏洞挖掘多智能体系统。
+  - 小白一键部署运行，自主协作审计 + 自动化沙箱 PoC 验证。
+  - 支持 Ollama 私有部署 ，一键生成报告。支持中转站。​让安全不再昂贵，让审计不再复杂。
 # more

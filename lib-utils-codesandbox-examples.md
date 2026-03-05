@@ -529,6 +529,12 @@ modified: 2023-09-02T09:17:22.992Z
   - Unix socket restrictions: Control access to local IPC sockets
   - 🌰 可搜索使用示例
 
+- https://github.com/openai/codex/tree/main/codex-rs/windows-sandbox-rs /apache2/202603/rust
+  - Codex app for Windows 中的 windows-sandbox-rs 也一并开源了。
+  - https://x.com/zhangjintao9020/status/2029357059913798119
+    - 我大致看了下，感觉这个沙箱主要是创建了一个在登陆界面隐藏的使用随机密码的用户，然后获取该用户令牌后进行 XP 时期提供的创建受限令牌操作，Job Objects 限制基本没做啥……就个人感觉隔离程度有但还没有令人放心到放手一搏的地步（强度比 Chromium 沙盒和 Sandboxie 低很多）
+    - 我很多年前倒是在 NSudo 研究过通过创建受限令牌降权到 UAC 提升之前的方式，关于我的研究最终发现还是获取 Linked Token 最好，倒是 Codex 那个沙盒的受限令牌创建 LUA 实现我之前在 NSudo 实现过类似的（只是创建受限令牌的时候我没有引入 DISABLE_MAX_PRIVILEGE 和 WRITE_RESTRICTED）
+
 - https://github.com/vercel-labs/just-bash /152Star/apache2/202601/ts
   - A simulated bash environment with an in-memory virtual filesystem, written in TypeScript.
   - Designed for AI agents that need a secure, sandboxed bash environment.

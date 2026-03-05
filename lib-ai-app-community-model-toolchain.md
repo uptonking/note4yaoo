@@ -1226,7 +1226,17 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 
 - ## 
 
-- ## 
+- ## [Toolify——为任意LLM API添加完善的Function Calling支持 _202507](https://linux.do/t/topic/797373)
+  - 本程序在实现上类似于Open WebUI的code interpreter功能，通过xml标签让AI调用函数。事实上站内N佬已经发过一个类似的实现：让任何 OpenAI 兼容渠道强行支持 Function Call !! 美中不足的是不支持多工具调用，并且要求模型在开头立刻输出函数调用，无法输出其他的文本内容。
+- 本项目应该可以最大程度上让不支持函数调用的OpenAI compatible接口/模型支持函数调用：
+允许模型在输出的任何地方调用函数
+兼容 `<think>` 思维链
+支持一次性多函数调用
+支持多上游渠道配置
+模型可以看到自己上次调用的具体函数和参数
+支持Docker Compose快速部署
+
+- 由于是通过提示词实现的，肯定效果不如原生支持Function Calling的接口好，但胜在能用，性能好的模型调用起来应该没太大问题。我自己在公益站的所有模型上都应用了，自己也测试过，还是可以的
 
 - ## [How is Cloud Inference so cheap : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1q2jwsn/how_is_cloud_inference_so_cheap/)
   - How do cloud inference companies like DeepInfra, Together, Chutes, Novita etc manage to be in profit regarding to the price of the GPUs/electricity and the fact that I guess it's difficult to have always someone to serve ?

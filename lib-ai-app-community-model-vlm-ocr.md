@@ -211,6 +211,15 @@ modified: 2025-11-06T18:49:13.977Z
   - The goal of this benchmark is to publish a comprehensive benchmark of OCRaccuracy across traditional OCR providers and multimodal Language Models.
   - The evaluation dataset and methodologies are all Open Source, and we encourage expanding this benchmark to encompass any additional providers.
 
+- ## There is no best VLM OCR model - rankings can flip completely by document type.
+- https://x.com/vanstriendaniel/status/2029555038322917718
+  - I built ocr-bench: run open OCR models on YOUR documents, get a per-collection leaderboard. 
+  - VLM-as-judge with Bradley-Terry ELO, all running on @huggingface . No local GPU needed.
+  - Inspired by @datalabto 's benchmarks approach, but open source so you can run it on your own collections.
+
+- That's great! Benchmarks should be dynamic, not static. One question I have is: how can we trust the judges on the evaluation, considering that they can also make mistakes?
+  - The ui gives you an interface for doing your own ranking so you can see how much you align with the judge. It also depends a bit on what you care about, so I plan to add options for custom prompts in the future to better tune the rankings to your needs.
+
 - ## OmniDocBench is getting saturated. VLMs are getting increasingly better at document understanding _202602
 - https://x.com/jerryjliu0/status/2026408921385284001
   - we're quickly approaching the point where we need a new benchmark. 
@@ -810,8 +819,6 @@ modified: 2025-11-06T18:49:13.977Z
 
 - Gemma3 27b is pretty great for OCR.
 # discuss-vlm 👾
-- ## 
-
 - ## 
 
 - ## 

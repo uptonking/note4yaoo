@@ -163,6 +163,7 @@ modified: 2021-05-06T09:39:53.522Z
 > ai时代的人工编辑, 可设计为特殊的human-in-the-loop
 
 - rich-text formats/elements/protocols
+  - 参考 google-workspace-cli 实现 本地版
 - resumable-stream text/md
 - partial-edit: not whole rewrite, aider-diff, openai-v4a-diff
 - pdf-edit-with-vlm/ocr:

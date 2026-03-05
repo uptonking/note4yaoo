@@ -483,6 +483,23 @@ modified: 2024-01-11T15:57:32.182Z
 - 
 - 
 
+# discuss-pdf-ai
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Adobe Acrobat has PDF splitting. We have agentic PDF splitting 
+- https://x.com/jerryjliu0/status/2029379628830425369
+  - Simply define the categories you want in natural language, and our split agent will automatically “chunk” the document into subsets of pages and tag them with the appropriate categories.
+  - This is super useful to break apart complicated document packets like resumes, tax forms, identification docs, expense reports, and more.
+
+- Adobe splits by page breaks. This splits by semantic intent. Document chunking accuracy jumps from "wherever the page ends" to "here's the actual contract vs appendix vs exhibits" - like having a paralegal vs a paper cutter.
+
+- Standard RAG chunking loses semantic boundaries that page-aware agents capture with 92% higher precision.
 # discuss-pdf
 - ## 
 

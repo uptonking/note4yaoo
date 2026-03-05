@@ -179,7 +179,11 @@ target/debug/limbo database.db
 
 - ## 
 
-- ## 
+- ## Turso 0.5.0 is now out! ⚡ Concurrent writes is now beta _202603
+- https://x.com/Maxxen_/status/2029340813558194508
+- How do you deal with cross-database dependencies of types? E.g. what happens if i attach database A and B, and then use a custom type stored in A when creating a table in B? What if I detach A after and persist B? Or drop from A after detaching B?
+  - they cant be used across attach.  The only sane solution that I see to this is that id you want to use a type in 2 databases you have to create the type in both.
+  - To be frank there are likely still a lot of bugs wirh this that we will have to fix before making it non experimwntal
 
 - ## limbo, Today we have decided to make @penberg 's experimental project, an official Turso project _20241210
 - https://x.com/glcst/status/1866508345731088759

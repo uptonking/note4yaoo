@@ -22,12 +22,43 @@ uv python install --default 3.13
 - ## 
 
 - ## 
-# discuss-pkg/pip/uv
+# discuss-packaging-binary
 - ## 
 
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [使用 pyinstaller 打包兼容 Intel 和 Apple Silicon 的 Universal2 macOS 桌面应用 SOP ](https://linux.do/t/topic/1695385)
+  - 当使用 PyInstaller 在 macOS 上打包 universal2（跨架构）应用时，会遇到在 M系列设备上闪退、或者出现 Read-only file system 的问题。这份标准化操作程序（SOP）能够确保你在此类任务中不再踩坑。
+  - 要打包出双架构的 App，最根本的前提是你的 Python 解释器和打包环境本身必须是 Universal2 的。
+  - Python 官方的 universal2 版本可以兼容两种架构，但 许多第三方库（如 numpy, pandas, Pillow 等）在 pip install 时，如果使用 Homebrew 或默认源，它们夹带的 C/++ 扩展库 (.so 或 .dylib) 往往只有单架构 (x86_64)。
+  - 这就是为什么应用在 Intel 机器上完美运行，但在 Apple Silicon（ARM64）机器上打开直接闪退的原因 —— 底层二进制不支持。
+  - 为了确保虚拟环境中的每个库都是真正的 universal2
+
+# discuss-pkg/pip
+- ## 
+
+- ## 
+
+- ## 
+# discuss-uv
+- ## 
+
+- ## 
+
+- ## uv still has a bunch of issues.
+- https://x.com/HanchungLee/status/1900942356377202762
+  - it’s not pip
+  - lack of ide and coding agent support
+  - venv created by uv cant be used without uv
+  - poor documentation. there’s no playbook on how to migrate to it. information scattered around like a changelog.
+- If you’re dealing with complex dependencies, like stuff in requirements.txt that comes directly from GitHub, or certain things involving CUDA libraries, then uv has some rough edges. But for many projects it “just works” at this point and it’s wildly faster and very nice to use.
+- The third one is not true, you can do uv pip install pip and then pip install whatever didn't work before. I'm doing this basically every other day
+- can't you just run `source ./venv/bin/activate` like normal?
+  - you can. but that venv does not have pip and will use global. so a pip install will mess up your global python environment.
 
 - ## 💡 [uv-managed python installed into .local/bin can't be used with venv module · Issue · astral-sh/uv _202411](https://github.com/astral-sh/uv/issues/8821)
   - `python3.12 -m venv` fails to create a virtual environment.

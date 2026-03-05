@@ -14,9 +14,27 @@ modified: 2026-01-15T15:44:10.647Z
 
 - ## 
 
-- ## 
+- ## [Any decent alternatives to M3 Ultra, : r/LocalLLM _202505](https://www.reddit.com/r/LocalLLM/comments/1kv4gjn/any_decent_alternatives_to_m3_ultra/)
+- viable alternatives:
+  - https://community.amd.com/t5/ai/amd-ryzen-ai-max-395-processor-breakthrough-ai-performance-in/ba-p/752960 256 gb/s memory bandwidth.
+  - https://www.nvidia.com/en-us/products/workstations/dgx-spark/ 273 GB/s
+  - Memory bandwidth multiplied by each card: https://videocardz.com/newz/intel-announces-arc-pro-b60-24gb-and-b50-16gb-cards-dual-b60-features-48gb-memory 456 GB/s Available in xeon workstations in Q3 for $5k-$10K.
+  - Maybe 548 GB/s https://www.qualcomm.com/products/technology/processors/cloud-artificial-intelligence/cloud-ai-100 Low power leader? https://www.pcmag.com/news/dell-ditches-the-gpu-for-an-ai-chip-in-this-bold-new-workstation-laptop
 
-- ## 
+- The closest thing is the B60 Dual, but they are basically two cards on one, which means that they communicate with each other over the PCI-e bus. So besides being half speed of the M3 Ultra, they also have a communication penalty. Two cards would be like four cards communicating. Then RTX 3090 is preferable with almost double bandwidth.
+
+- Sticking four 3090s into a single PC is a huge hassle (space, cooling, just finding a mainboard with enough PCIe lanes, dealing with PCIe extenders etc.)
+  - Having two Dual B60 Pro 48GB cards sounds much nicer. Yes, they will be slower, but you get tensor parallelism so they will probably be faster than the Mac.
+
+- Buy a PC with two new Intel Dual Pro B60 cards (48GBRAM at $1000 each) to get 456GB/s memory bandwidth for a total price of less than $3000. At that price you only get 2x PCIe 5.0 x8 bandwidth between those cards due to mainboard limitations. It's probably not a problem for inference.
+
+- ## [Alternatives to a Mac Studio M3 Ultra? : r/LocalLLaMA _202506](https://www.reddit.com/r/LocalLLaMA/comments/1l81r8e/alternatives_to_a_mac_studio_m3_ultra/)
+- There's really nothing like it in the world. Ryzen AI Max can have high-RAM configs with 8-channel(?) memory in a small form factor, but I believe bandwidth maxed out at 256GB/s. This is leagues faster and more affordable than modern high-channel DDR5 HEDT/Server gear, but do some napkin math and realize what running a 60GB+ set of weights looks like at 256GB/s. Even heavily quantized MoE's will be in for a rough time. For now, you're either getting clever high-channel used hardware (will work but not be nearly as elegant as a Mac Studio) or you're stacking GPUs with the rest of us. As of today, there is nothing I'd consider a true M3 Ultra competitor.
+
+- People might say “get a multichannel ram system with 512GB ram and an rtx pro 6000 and use ik_llama.cpp with unsloth quant of moe models” and okay, the system would be in some ways as good as an m3 ultra. Price would be comparable.
+  - But you have to consider you’re looking at considerably more time and effort to get started. You have to source all the components individually. You have to do the minor engineering task of ensuring heat and power consumption are within tolerance. You have to assemble everything yourself. There’s plenty of room for things to go wrong and for you to spend even more time fixing it.
+  - And with this setup you are also going to be consuming considerably more power over time. Also, for a big moe like deepseek v3 or r1, your tokens per second on shorter prompts will likely be about half of what you get with the m3. (For smaller models that fit entirely in the 96gb VRAM of the rtx pro 6000, tokens per second will be significantly faster than the m3)
+  - The big downsides with the m3 are slow prompt processing speed and slow token generation when working with long context. However (and this is relative to my own use case) I don’t think the self built multichannel system would be better enough in this dimension to justify the downsides. It would be better though. Just not better enough.
 # discuss-news
 - ## 
 
@@ -56,6 +74,77 @@ modified: 2026-01-15T15:44:10.647Z
 - ## 
 
 - ## 
+
+- ## [Strix Halo（或者Medusa Halo）是否可以改造为PCIe的计算卡 _202602](https://www.chiphell.com/forum.php?mod=viewthread&tid=2779354&highlight=strix%2Bhalo)
+  - 最近看到Strix Halo的主板，不得不说Strix Halo的主板面积确实很小，也就和显卡差不多大，所以就会想如果把Strix Halo单独拿出来，是否可以做成PCIe接口的计算卡，用于AI的推理。
+  - 由于Strix Halo的PCIE为4+4+4+4，因此如果做成计算卡，和主机CPU相连接的带宽只有PCIE4.0*4，因此PCIE是否可以这样配置
+  - 在这种情况下，虽然和主板相连接的PCIe接口带宽不足，但Strix Halo通过自带的 PCIe 4.0 直连主板上的NVMe SSD，而不需要经过主机CPU，降低对和主机相连的PCIe带宽的压力，而且可以大幅缩短大模型冷启动时间，还可以实现内存 + NVMe两级异构存储。专用多卡互联的PCIe通道也可以降低对和主机相连的PCIe带宽的压力。
+  - 理论上Strix Halo的CPU/GPU/NPU协同运行大模型可以在效率和精度间实现很好的平衡，但这得非常好的优化，采用混合量化 + 分层算力分配 + 异构 KV 缓存，既避免过度量化损失精度，又能充分释放三单元算力，实现端侧本地流畅推理。
+  - 关键优化：128G 内存下的 KV 缓存异构分配
+  - 运行时调度策略：阶段化协同 + 动态功耗 / 精度调节
+  - 针对大模型推理的Prefill（上下文编码）和Decode（逐 Token 生成）两个核心阶段，做阶段化算力分配，同时依托 Strix Halo 的动态 TDP 特性，实现速度 - 精度 - 功耗的三重平衡，适配不同使用场景。
+  - Strix Halo做成计算卡的最大优势是统一内存零拷贝：统一内存让直接共享模型权重、KV 缓存、多模态张量，消除数据传输延迟，是端侧大模型流畅推理的核心保障
+
+- 需要他的PCIe支持配置成EP mode，如果只支持RC那是不行的
+
+- 那何必用pcie卡的形式呢，自带cpu完全可以菊花链咯。
+
+- 类似麦金塔的TB mesh组集群，PCIE本身没这个功能，需要TB5或者网卡才行。
+  - MS-S1就可以用USB4组集群, 不过对于集群来说USB4的带宽不是太够
+
+- 你怎么不直接卖mi300a呢，那个也是apu还能直接多路
+  - mi300a的价格估计是strix halo/medusa halo的7~10倍以上，medusa halo即使在现在的内存价格下，用128G LPDDR6内存，价格也估计2w左右
+  - 再说mi300a、mi300x对应的是数据中心计算集群，strix halo/medusa halo对应的是小工作室、公司、实验室、个人等的单卡环境
+
+- cpu用得ddr内存比起显卡上的GDDR带宽差了个数量级呢, dma模块的设计也是高并发的, 显卡跑模型的过程中也是0拷贝不管是cv还是llm框架都在尽可能地规避offload的发生, 多张显卡之间也是直接的dma也不走ddr, cpu在大模型领域的角色定位类似于全屋智能的中枢网关, 负责接收请求调度计算单元返回响应
+
+- 我本人就是做LLM基础软件栈的，你这个想法需要先回答下面几个最关键的问题：
+  - 首先，把它做成pcie卡的意义是什么？如果你不想直接用它当主力机，你大可以在上面装个linux起个ollama或者vllm服务，在主力机上通过API来使用。有什么需求需要通过pcie连一起？哪怕你确实有什么古怪的场景需要高速连接，也就插个100G网卡的事
+  - 其次， 跟真正意义上的“计算卡”相比，这种大核显的性能根本不够看，除了显存大一无是处，显存带宽只有几分之一，算力大概只有十分之一还不到（看你跟什么比），也没有高速互联接口（pcie 几十GB/s到头了，计算卡的nvlink都是几百GB/s起步的）。用途被限制在个人部署单并发跑着玩，和计算卡的上百并发的serving场景完全不是一回事
+  - 异构CPU/GPU/NPU实现极为繁琐，但性能收益却很有限，比如decode如果memory bound了，你什么PU都是挂在内存总线上的，异构不会有任何性能提升。Prefill的话或许能有一点“算力聚合”的效果，但还是效果有限、实现复杂
+
+- 做成PCI-E的意义应该不大。。 你要做的是一个设备， 那就还需要一个主机来协调。
+  - 其次， 对于LLM来说， 需要都是几百GB/S 速率需求， PCEI *4 的带宽非常有限。
+  - 最后， 谁说计算卡的扇热能力强了？ 那是完全被动扇热（服务器本身的风扇）或者以噪音为前提设计。
+  - 总的来说，这东西，你要想玩玩可以 买几个相同主机用USB4 雷电线缆 直连。 或者厂商做了 群集柜，可以参考看看。。但人家怎么买不好说。
+
+- AMD 自身就不会允许这种抢自家生意的存在，设计上就是给个人pc玩一下，还真想干大活，不可能
+
+- ## 🆚 [Strix Halo (Bosgame M5) + 7900 XTX eGPU: Local LLM Benchmarks (Llama.cpp vs vLLM). A loose follow-up : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1q959am/strix_halo_bosgame_m5_7900_xtx_egpu_local_llm/)
+  - I recently got my hands on a Strix Halo system, specifically the Bosgame M5. My goal was to benchmark the Strix Halo standalone (which is a beast), and then see what effects adding a 7900 XTX via eGPU (TB3/USB4) would have on performance.
+  - Host: Bosgame M5 (Strix Halo)
+  - OS: Fedora Server 43
+  - eGPU: 7900 XTX (Connected via USB4/TB3)
+  - Toolboxes: Huge thanks to kyuz0 on GitHub for the llama.cpp toolboxes and vLLM toolboxes.
+  - Critical Tip for eGPU users: To prevent the whole system from becoming unresponsive when activating the Thunderbolt enclosure, I had to add the following kernel parameter: pcie_port_pm=off (Found this solution online, it's a lifesaver for stability).
+  - [Performance of llama.cpp on Apple Silicon M-series · ggml-org/llama.cpp ](https://github.com/ggml-org/llama.cpp/discussions/4167)
+
+- For me PP is the biggest impediment for local agentic use. Is there any change to especially increase PP/TTFT with that setup?
+  - a hybrid setup Basically the prefill is processed on the the DGX Spark
+  - And then moved across the network to a Mac Studio for generation
+  - The result is prefill performance of the Spark and tgs performance of the Mac Studio
+  - We need a similar setup to get around the prefill limitation!
+
+- As far as Bosgame support told me , eGPU isnt supported via their USB4 connection , nice to see that it works at least some how
+  - I don't think that you can have usb4 without the thunderbolt compatibility. Also, I would expect the m.2 to pcie to work as well
+
+- I’m planning to run the same tests with a Minisforum MS‑S1 MAX and several different configurations:
+  - Intel Arc Pro B50 installed directly via PCIe (the MS‑S1 MAX should support 70 W GPUs if there’s enough space); if I can get my hands on an RTX 4000 SFF I’ll test that as well.
+  - RTX A5000 via Oculink
+  - RTX A5000 via Thunderbolt 4
+  - A mix of Arc Pro + RTX A5000 + integrated GPU/RAM
+
+- I'm using Strix Halo with eGPU via OcuLink but it's still too slow for splitting models. It is nice however for running multiple models. Like a larger MoE on Strix and smaller dense model on the GPU. Looking forward to running very small models on the NPU at the same time.
+  - I also found vLLM to be awful and use llama.cpp.
+
+- ## [Strix Halo + eGPU : r/StableDiffusion _202601](https://www.reddit.com/r/StableDiffusion/comments/1qclq6v/strix_halo_egpu/)
+  - I currently have a strix halo machine with 128GB of RAM. I’m considering getting eGPU via a TB5 enclosure, possibly a 5070Ti. My system has USB4v2
+
+- best to just use the gpu for generating images/vids and use the strix halo for llm prompt generation
+  - egpu will mainly slow down the initial loading of the ai model into the gpu's vram. other than that there won't be much difference vs an internal gpu
+- One thing to keep in mind. Running LLM that fits into VRAM (only need to upload to VRAM once, so bandwidth between VRAM-RAM doesn't matter much) is very different use case from image/video generation (e.g. ComfyUI swaps from RAM/VRAM like crazy, so moving bunch of GBs over TB5/USBv4 can become an issue).
+
+- NO BRO, THE LATENCY IS BAD, better buy a new cpu with gpu a server mother board
 
 - ## 775GB RAM [I just saw something amazing - Asus-ExpertCenter-Pro-ET900N-G3 : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1rd80gx/i_just_saw_something_amazing/)
 - As various manufacturers have released derivatives of DGX Spark, this would be a derivative of DGX Station as well. https://www.nvidia.com/en-us/products/workstations/dgx-station/

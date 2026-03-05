@@ -196,6 +196,43 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
+- ## 
+
+- ## Google has shipped a CLI for Google Workspace (Drive, Gmail, Calendar, Sheets, Docs, …) Huge!
+- https://x.com/rauchg/status/2029356560494018956
+  - Written in Rust, distributed through npm & http://skills.sh
+  - This is a very well implemented CLI. It's so thorough. It dynamically registers commands, it's designed for a browser-wielding agent to automate the setup steps, it can start a MCP daemon…
+  - https://github.com/googleworkspace/cli /MIT/202603/rust
+- i've been using the google workspace CLI (gog) through an openclaw skill for weeks — gmail, calendar, drive all from terminal. agent reads inbox, drafts responses, files things by label, checks calendar conflicts before scheduling.
+
+- my openclaw agent reads gmail and manages calendar through a workspace CLI every day. once auth is cached, email is just another shell command to the agent — no SDK needed. distributing that setup as a skill means someone else skips the 2 hours of oauth config i spent.
+
+- It still needs the user to create a project in cloud console, which is such a nofly zone for any nontechnical person. Such a brutal blocker - I hope they figure a way around that
+  - I think he's considered this, not sure how this plays out specifically tho
+
+- ## 看到大家纷纷把http api包装成cli给agent用，我有个疑问：为什么不是api文档+curl呢
+- https://x.com/wong2__/status/2029381003614286311
+- curl 要把所有的命令都展示一遍，参数说明一遍，skill 会很长。cli 可以按子命令通过 --help 渐进式展开。推荐我做的一个通用的 cli 工具，可以给任意的带 schema 发现功能的 api 提供 cli。
+  - skill会很长，这个可以用references来解决
+
+- 做个cli相当于再封装了一层。多一层逻辑空间，可以做更多提效的工作。
+
+- cli更容易做端侧的聚合，也可以保存state。api是无状态的。
+  - 也就是说cli是新的面向agent的application，容易进行认证、复杂交互、业务逻辑的抽象。写skills的时候也更加简短。你可以决策到底哪些内容是要暴露给agent的，哪些应该内涵到程序规则去。
+
+- CLI 本身是 stateless 的，当任务复杂度提升时，核心问题就不再是工具调用，而是 state management 和 workflow orchestration
+
+- CLI 工具可以封装非常多的 API，结合 help 命令来做指令的渐进式披露。 如果使用 HTTP 去 curl 的话，描述内容会非常多，其实还是有比较多的干扰信息的。所以 CLI 工具给 agent 使用是一个非常方便可靠的一个方案。
+
+- 存量业务经常多个 http api 组合才能完成一个业务操作，cli（和 web ui）就是那个裱糊匠
+
+- api doc + curl 才是标准模式，一行代码都不用写。 我现在都是先进到项目里，然后问codex： 现在客服的问题是XXXXX， 你帮我利用现有的API 找到最佳查询路径，如果无法查询请规划新的API，最后生成操作手册。 十分完美
+
+- 我就是用的 api，另外还整了个 api 网关服务，解决鉴权和一些身份问题，可以使用统一的接口，比 cli 更灵活好用，ai 也能更自由的组合。
+
+- skills实际上就是DSL换壳
+  - 我对 Skill 的第一反应也是 DSL，只不过刚好它是自然语言 + 命令行
+
 - ## [CLI is all you need? Do we really need MCPs : r/codex _202603](https://www.reddit.com/r/codex/comments/1ri5m0f/cli_is_all_you_need_do_we_really_need_mcps/)
 - Anything that has a CLI is WAY better than using an MCP imo. I think this is one of the shifts that most people don't talk about but everyone has converged on separately.
   - Maybe I'm wrong. MCP can still be useful if you can package it in a way that makes it easier for non techies to access your stuff, but for anyone slightly technical, a CLI will work better*

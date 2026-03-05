@@ -255,6 +255,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 支持同一个任务选择不同agent如claude-code/codex-cli来实现多个版本
     - 支持不同的cli来交叉验证
     - local/cloud agentfs-sandbox: agentfs impl for worktree
+    - 参考 google-workspace-cli 实现 本地版
   - 🔗 citations for search: 外部数据源如字典mdx/书籍epub/wikipedia公开db/统计年鉴, 产品价值参考context7
     - 目前cli的搜索体验太差, 可针对 context/search-engine 结合 coding-agent 开发类似notebooklm的搜索体验
     - 查看原文pdf-parts时支持仅查看前后几页, 保护原文内容
@@ -268,7 +269,7 @@ modified: 2025-03-22T16:10:24.856Z
     - pdf ocr one-click eval like FlowDown
       - ui for popular ocr benchmark
       - personal bench suite like FlowDown
-    - acp for pdf/rich-editing
+    - acp for pdf/rich-editing: 参考 google-workspace-cli 实现 本地版
     - diff without git
     - WebMCP for pdf/rich-editing
     - obsidian for pdf
@@ -599,7 +600,8 @@ modified: 2025-03-22T16:10:24.856Z
   - [OAI-FREE](https://newapi.zhx47.xyz/pricing)
     - [LinuxDo 社区福利活动](https://campaign.zhx47.xyz/)
     - [OAI-FREE 签到发送订阅 ](https://linux.do/t/topic/1632349)
-    - 都是临时渠道，不开签到了，直接每天送 100 刀余额
+    - 都是临时渠道，不开签到了，直接每天送 100 刀余额 
+  - [Atomgit GLM5 无限 Token? ](https://linux.do/t/topic/1696331)
   - [讯飞的GLM-4.7免费用 _202602](https://linux.do/t/topic/1573384)
     - 限免至0305, 20qps
     - [讯飞星辰MaaS平台](https://maas.xfyun.cn/modelSquare)
@@ -745,7 +747,16 @@ modified: 2025-03-22T16:10:24.856Z
     - 维护期限：到 codex-team 渠道耗尽为止
   - [YAO](http://154.37.220.66:3000/console/personal)
     - [[Yao公益站]codex注册200刀，可能随时倒闭  ](https://linux.do/t/topic/1683788)
-  - [随缘API](https://newapi.tanmw.top/console/personal)
+  - [Rosmontis](https://ai.rosmontis.de/console/personal)
+    - [[迷迭香公益站]  ](https://linux.do/t/topic/1694922)
+    - 公益站有无限codex(目前限制500并发)，无限grok(程序默认限制50并发)。glm系列目前不保证可用性。还有一些杂七杂八的模型。
+  - [codexapi福利 API](https://ai.xingyungept.cn/console/personal)
+    - 注册500刀，签到1-100刀
+  - [Infinite API](https://infiniteai.cc/checkin)
+    - dark-mode 水平方向逐渐变化的动画效果很好
+    - [【Infinite API】全新公益站上线试运营 ](https://linux.do/t/topic/1622685)
+    - 50 RPM， 25 个同时进行的请求
+  - 🗑️ [随缘API](https://newapi.tanmw.top/console/personal)
     - [【随缘API公益站】开放注册！余额已调整 ](https://linux.do/t/topic/1634879)
     - RPM:20
     - 目前只有 GPT 和 Grok 
@@ -1344,6 +1355,7 @@ modified: 2025-03-22T16:10:24.856Z
   - AI图片检测: 并发数不限制，根据负载动态调整
 
 - gitcode - [AtomGit AI社区 - 模型: 开源大模型 ](https://ai.gitcode.com/models)
+  - https://ai.atomgit.com/serverless-api
   - [AtomGit AI社区 - 模型广场](https://ai.gitcode.com/serverless-api)
   - 注册即可领取 2M 免费 Token
   - 免费容器 1000 核时/月

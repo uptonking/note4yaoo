@@ -161,6 +161,29 @@ modified: 2026-02-18T04:15:19.228Z
   - I doubt it's going to be faster but probably better results for natural language queries
 
 - How do you pick between ColGrep and osgrep? I'll grep first, then rerank.
+# discuss-rag-graph/relations
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Handling blueprints and complex relationships : r/Rag _202603](https://www.reddit.com/r/Rag/comments/1rkmpam/handling_blueprints_and_complex_relationships/)
+  - Ive worked for 3 months on embedding 1k pdf docs (per project). I get decent results, but haven't been able to improve the past month.
+- The PDFs are a combination of:
+  - 100s of pages of txt, sometimes with tables etc. Some docs might be have old info
+  - scanned documents with blueprints and txt on same pages, also could include weirdisj tables
+  - very large blueprint pages, might be 15k X 15k pixels
+  - not in English
+- Ive tried a lot of different approaches. Currently, if I'm simplifying, the approach is to classify each page as txt or img, and use vision model (haiku) to extract some info from the images. But it would cost $1k+ per project to create the chunks+embeddings, and that's unfeasible. Also the models hallucinate especially on the large blueprints, unless i split them into 3x3 tiles etc.
+  - Also often the queries proeuce suboptimal results since wrong chunks get brought up.
+
+- A few things that moved the needle for me:
+  - On blueprints specifically: tiling is the right instinct but 3x3 is often too coarse. I've had better results with overlapping tiles (10–15% overlap) so you don't lose context at boundaries. Also, rather than asking the vision model to "extract info", prompt it to describe spatial relationships explicitly ("what is to the left of X", "what label is near this component"). Hallucinations drop significantly when you constrain the task.
+  - On retrieval quality: wrong chunks coming up usually means your chunking strategy doesn't match your query patterns. A few things to try: (1) hybrid search (BM25 + dense vectors) helps a lot for technical docs with specific part numbers / terminology, (2) add a reranker (Cohere or a cross-encoder) this alone often fixes the "wrong chunk" problem without touching your embedding pipeline, (3) store page metadata (doc type, date, section) and filter before retrieval, not after.
+  - On old vs new info: if recency matters, tag each chunk with document date at ingest and either filter or apply a recency penalty in your ranking.
+
+- Recall is impacted by so much. Hybrid search could help, chucking, so many things. 
 # discuss-rag-vector-db
 - ## 
 
@@ -578,6 +601,36 @@ modified: 2026-02-18T04:15:19.228Z
 - I think the key takeaway here is that pure cosine similarity almost always hits a wall once you’re beyond toy corpora because it ends up returning the same document or very similar chunks over and over, which fills up your context window with redundant info instead of diverse evidence.
   - That’s why hybrid search (lexical + vectors) or diversity-aware selection strategies like MMR/DF-RAG tend to outperform vanilla RAG at scale; you want relevance and non-redundancy. 
   - If you’ve actually tested this in a production stack and found something better than MMR, it’d be great to hear from Mem0 on what empirically worked
+# discuss-ingestion
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [7 document ingestion patterns I wish someone told me before I started building RAG agents : r/Rag](https://www.reddit.com/r/Rag/comments/1rklbag/7_document_ingestion_patterns_i_wish_someone_told/)
+- I've been building document agents for a while and figured I'd share the ingestion patterns that actually matter when you're trying to move past prototypes. (I wish someone shared this with me when i started)
+
+Naive fixed-size chunking just splits at token limits without caring about boundaries. One benchmark showed this performing way worse on complex docs. I only use it for quick prototypes now when testing other stuff.
+
+Recursive chunking uses hierarchy of separators. Tries paragraphs first, then sentences, then tokens. It's the LangChain default and honestly good enough for most prose. Fast, predictable, works.
+
+Semantic chunking uses embeddings to detect where topics shift and cuts there instead of arbitrary token counts. Can improve recall but gets expensive at scale. Best for research papers or long reports where precision really matters.
+
+Hierarchical chunking indexes at two levels at once. Small chunks for precise retrieval, large parent chunks for context. Solves that lost-in-the-middle problem where content buried in the middle gets ignored way more than stuff at the start or end.
+
+Layout-aware parsing extracts visual and structural elements before chunking. Headers, tables, figures, reading order. This separates systems that handle PDFs correctly from ones that quietly destroy your data. If your documents have tables you need this.
+
+Metadata-enriched ingestion attaches info to every chunk for filtering and ranking. I know about a legal team that deployed RAG without metadata and it started citing outdated tax clauses because couldn't tell which documents were current versus archived.
+
+Adaptive ingestion has the agent analyze each document and pick the right strategy. Research paper gets semantic chunking. Financial report gets layout-aware extraction. Still somewhat experimental at scale but getting more viable.
+
+Anyway hope this saves someone else the learning curve. Fix ingestion first and everything downstream gets better.
+
+- Ad
+  - I agree. Kudra.ai is always doing it the same way. Someone writes a “personal” story and than the link to the Kudra blog
 # discuss
 - ## 
 

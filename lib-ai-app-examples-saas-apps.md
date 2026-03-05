@@ -436,6 +436,15 @@ modified: 2025-02-21T17:17:42.225Z
     - https://x.com/op7418/status/2018892524937695533
       - 聊天窗口中的文档浏览很舒服
 
+- https://github.com/Liquid4All/cookbook/tree/main/examples/localcowork /MIT/202603/ts
+  - LocalCowork is a desktop AI agent that runs entirely on-device. No cloud APIs, no data leaving your machine. The model calls pre-built tools via the Model Context Protocol (MCP), and every tool execution is logged to a local audit trail.
+  - LocalCowork ships with 75 tools across 14 MCP servers covering filesystem operations, document processing, OCR, security scanning, email drafting, task management, and more (full tool registry).
+  - The agent core communicates with the inference layer via the OpenAI chat completions API. Changing the model is a config change, not a code change. MCP servers are auto-discovered at startup by scanning mcp-servers/.
+  - Limitations: 1-2 step workflows are reliable. 4+ step chains degrade as conversation history grows
+  - https://x.com/liquidai/status/2029586519389086198
+    - LocalCowork is an AI agent that runs on a MacBook. Open source. 
+    - Everything runs locally
+
 - https://github.com/eigent-ai/eigent /3.6kStar/apache2/202601/python/ts
   - https://www.eigent.ai/
   - The Open Source Cowork Desktop to Unlock Your Exceptional Productivity.
@@ -580,6 +589,15 @@ modified: 2025-02-21T17:17:42.225Z
     - 验证码墙：通过 “AI 执行 + 人工协助” 解决自动化登录死角。
 
 ## office
+
+- https://github.com/googleworkspace/cli /MIT/202603/rust
+  - This is a very well implemented CLI. It's so thorough. It dynamically registers commands, it's designed for a browser-wielding agent to automate the setup steps, it can start a MCP daemon…
+
+- https://github.com/jaredpalmer/mogcli /MIT/202603/go
+  - Unofficial agent-friendly Microsoft 365 CLI
+  - mogcli is a Microsoft Graph CLI for personal Microsoft accounts (MSA) and enterprise Microsoft Entra ID accounts. It provides scriptable commands for Mail, Calendar, Contacts, Groups, Tasks, and OneDrive.
+  - https://x.com/jaredpalmer/status/2029643407606563140
+    - (h/t to @steipete ’s for gogcli)
 
 - https://github.com/ItMeDiaTech/Documentation_Hub /MIT/202602/ts/Electron
   - A modern desktop application for managing document processing workflows with advanced hyperlink management, table of contents generation, and comprehensive document styling capabilities.
