@@ -76,7 +76,17 @@ modified: 2026-02-18T04:15:19.228Z
 
 - ## 
 
-- ## 
+- ## File search + grep is all you need
+- https://x.com/jerryjliu0/status/2029726062670967019
+- grep + glob gets me through 90% of codebase questions. vector search is for when you dont know what youre looking for
+
+- I use pdfgrep to search pdf files. https://pdfgrep.org
+
+- Grep works great but man you want to do anything at scale you’re in trouble. Works when you have hundreds of docs or hobby projects. Imagine you’re needing tool calls to understand context to build on multi-system docs. Say few hundred thousand. You’re gonna want both vectors and text search
+
+- For codebases, maybe. Not for enterprise content.
+
+- As long as you don’t need any form of cognitive searching and boom you’re back to where you started. Any document above 15pages , any document with multiple words. RAG use cases are multiple.
 
 - ## I tested 7 semantic code search tools so you don't have to.
 - https://x.com/c0mm0n_dev_us3r/status/2024343367732351151

@@ -69,7 +69,15 @@ modified: 2023-05-07T18:35:50.897Z
 
 - ## 
 
-- ## 
+·- ## [【开源】来薅羊毛，把huggingface repo弄成网盘 ](https://linux.do/t/topic/1699359)
+  - 前段时间看到huggingface在x上发的推文，宣传他们的xet多好用，就寻思着免费的100GB私有空间得薅呀，于是就产生了本项目。
+  - Huggingface有100GB私密空间和8.7TB公用空间，如果不怕隐私泄漏，理论上能薅8.8TB的网盘空间。
+  - huggingcloud默认才用直链模式，也就是说下载文件不使用服务器流量，仅上传时需要服务器流量。
+
+- 不建议，搞学术的平台就别薅了，本来资源就紧张。
+
+- 之前拿huggingface搞代理，号被封了
+- 肯定被ban。网盘里面的资料就取不出来了。
 
 - ## [Favorite Self-Hosted Tools in 2025 (Looking for More Suggestions!) : r/selfhosted](https://www.reddit.com/r/selfhosted/comments/1pdui2u/favorite_selfhosted_tools_in_2025_looking_for/)
 

@@ -1071,6 +1071,12 @@ modified: 2025-12-11T18:10:23.710Z
   - For each parallel tasks, Superset uses git worktrees to clone a new branch on your machine.
   - https://x.com/FlyaKiet/status/2020993991605735571
     - Chat GUI is in early preview - It's Claude Code SDK  under the hood with extra integrations into Superset for the ultimate chat experience. Compatible with existing Claude Code sessions. Slash commands and @ mention supported. Codex will soon follow.
+  - https://x.com/vikingmute/status/2029906627458125926
+    - Superset 和 Conductor 是今年用的最愉悦的两个工具，功能类似，界面也相同，并行运行和管理多个 AI coding agents，基于 git worktree，不过 Conductor 只支持 Codex 和 Claude Code 两个 CLI，Superset 各种都支持。后来我就主要使用 Superset 了。
+
+- https://github.com/hlhr202/Conductor-for-all /apache2/202601/ts
+  - Conductor for All is a standalone command-line tool designed to bring the Conductor spec-driven development methodology to any coding environment.
+  - Originally tied to the Gemini CLI extension, this project aims to decouple the methodology, allowing developers to install and initialize Conductor workflows in their projects so they can be leveraged by any AI Coding Agent (e.g., Claude Code, Cursor, VS Code Copilot, Codex) or IDE.
 
 - https://github.com/erans/lunaroute /apache2/202511/rust
   - LunaRoute is a high-performance local proxy for AI coding assistants like Claude Code, OpenAI Codex CLI, and OpenCode. 
@@ -1085,10 +1091,6 @@ modified: 2025-12-11T18:10:23.710Z
 - https://github.com/The-Vibe-Company/companion /2kStar/MIT/202602/ts
   - Web & Mobile UI for Claude Code & Codex . 
   - Launch sessions, stream responses, approve tools. All from your browser / mobile
-
-- https://github.com/hlhr202/Conductor-for-all /apache2/202601/ts
-  - Conductor for All is a standalone command-line tool designed to bring the Conductor spec-driven development methodology to any coding environment.
-  - Originally tied to the Gemini CLI extension, this project aims to decouple the methodology, allowing developers to install and initialize Conductor workflows in their projects so they can be leveraged by any AI Coding Agent (e.g., Claude Code, Cursor, VS Code Copilot, Codex) or IDE.
 
 - https://github.com/endorhq/rover /apache2/202602/ts
   - A manager for AI coding agents that works with Claude Code, Cursor, Gemini, Codex, and Qwen.

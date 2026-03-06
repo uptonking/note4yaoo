@@ -705,6 +705,16 @@ modified: 2022-06-03T21:34:54.893Z
   - https://office-ai.net/
   - Make Office/WPS more powerful and easier to use with AI, similar to Office Copilot and WordGPT
   - System Requirements: Windows 7/10/11 or later + Office 2013/2016/2019/Office 365
+
+- https://github.com/deepdoctection/deepdoctection /3.1kStar/apache2/202603/python
+  - https://deepdoctection.readthedocs.io/
+  - https://huggingface.co/spaces/deepdoctection/deepdoctection
+  - deepdoctection is a Python library that orchestrates Scan and PDF document layout analysis, OCR and document and token classification. 
+  - Build and run a pipeline for your document extraction tasks, develop your own document extraction workflow, fine-tune pre-trained models and use them seamlessly for inference.
+  - Document layout analysis and table recognition in PyTorch with Detectron2 and Transformers, 
+  - OCR with support of Tesseract, DocTr and AWS Textract, 
+  - Text mining for native PDFs with pdfplumber, 
+  - Deskewing and rotating images with jdeskew or Tesseract.
 # kb-ai/chatgpt
 - https://github.com/upstash/context7 /34kStar/MIT/202510/ts
   - https://context7.com/

@@ -58,9 +58,41 @@ modified: 2026-01-14T18:59:01.949Z
 - ## 
 
 - ## 
-# discuss
+# discuss-tips
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🆚 [MLX vs GGUF (Unsloth) - Qwen3.5 122b-10b : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rm94gy/mlx_vs_gguf_unsloth_qwen35_122b10b/)
+  - I just benchmarked the newly uploaded Qwen3.5 122b a10b UD (Q5_K_XL) vs. mlx-community/Qwen3.5-122B-A10B-6bit on my M4 Max 128GB.
+  - The first two tests were text summarization with a context window of 80k tokens and a prompt length of 37k and another one with a context window of 120k and a prompt length of 97k.
+
+- Because I don’t think mlx vision does prompt caching. You’re reading speed vs much quicker response times
+  - Yeah mlx is definitely slower for multi turn conversations as it doesn't prompt cache as well as a gguf does, at least that's what I've found when using lm studio.
+
+- For agentic workflows like using Claude Code Router or OpenCode, you unfortunately have to stick with GGUF since MLX will result in cache misses on every request, causing you to process the entire prompt after each new request.
+  - This is true if you use multimodal quant of qwen3.5. There are mlx quants available which have the vision part axed - prompt caching seems to work for me using those quants (I'm using lmstudio).
+
+- The reason I prefer llama.cpp/GGUF is that llama-server is an all-in-one package:
+  - good inference engine with support for anthropic-messages, openai-completions and openai-responses endpoint (meaning you can use it with any coding agent)
+  - constrained output
+  - killer web UI that recently added support for MCP and agentic loops.
+
+- I'm using gguf instead of mlx because it supports mmap but mlx doesn't. If I load a large mlx model I can't do anything else even temporarily because the model uses up all the RAM, and every time I unload the model I'll have to process the prompt/context again from the beginning. But with gguf I can keep the model loaded so I won't lose the cached prompts.
+
+- Since this post is about qwen3.5 specifically - I've read that unsloth did implement something like a tool call template fix into their gguf - I don't know if the mlx variant also needs something like this
+
+- At 6 bits the output quality of all quants is already very high. The difference in accuracy is more noticeable with lower quants.
+  - Yup, exactly this. At say 3-bits, performance of GGUF quants is similar to 4-bit MLX quants. The test from OP was actually fair because it's comparing 6-bit MLX vs 5-bit GGUF, which would be similar quality.
+
+- I found lots of coding bugs caused by 4/5/6 bit MLX quantization (vs GGUF Q4_K_M or UD-Q4_K_XL) so I only use 8 bit MLXs now. They're a lot bigger than a GGUF of the same quality so I use MLX for small models and GGUF for large ones.
+# discuss
 - ## 
 
 - ## 

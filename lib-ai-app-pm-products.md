@@ -43,6 +43,7 @@ modified: 2025-03-22T16:10:24.856Z
   - cost: unlimited tokens, local models支持超大context, 利用本地模型ocr/文生图
     - 文本模型有很多api提供商可选择，ocr模型的api可选择的不多，定制模型只能本地运行
     - 简单的 tool call 使用本地模型更高效, 可考虑将tool call小模型内置在软件中
+  - openclaw比manus更火的原因，是支持在本地自动化执行任务，而不是云端
   - 多模态的场景，本地可以对图片预处理，如压缩、裁剪、base64编码
   - 🤔 能充分利用本地文件系统和命令行的资源，进行数据分析/文件修改/...
   - network agnostic
@@ -252,10 +253,12 @@ modified: 2025-03-22T16:10:24.856Z
     - https://github.com/tc-mb/llama.cpp-omni is the first Omni multimodal inference engine built on llama.cpp.
     - modes config for coding/ocr/translation/rag like cline-plan/act/ask
   - local agent
+    - openclaw比manus更火的原因，是支持在本地自动化执行任务，而不是云端
     - 支持同一个任务选择不同agent如claude-code/codex-cli来实现多个版本
     - 支持不同的cli来交叉验证
     - local/cloud agentfs-sandbox: agentfs impl for worktree
     - 参考 google-workspace-cli 实现 本地版
+    - agentfs + history
   - 🔗 citations for search: 外部数据源如字典mdx/书籍epub/wikipedia公开db/统计年鉴, 产品价值参考context7
     - 目前cli的搜索体验太差, 可针对 context/search-engine 结合 coding-agent 开发类似notebooklm的搜索体验
     - 查看原文pdf-parts时支持仅查看前后几页, 保护原文内容

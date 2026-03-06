@@ -682,7 +682,15 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## 🆚 [Qwen3.5-4B vs Qwen3-4B 2507 vs ChatGPT 4.1 nano; a tiny open-source model just lapped a paid OpenAI product. Again. Twice. : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1rjo325/qwen354b_vs_qwen34b_2507_vs_chatgpt_41_nano_a/)
+  - My daily driver is an ablit version of Qwen3-4B 2507 Instruct (which was already strong). Qwen3-4 series are stupidly, stupidly good across all sizes, but my local infra keeps me in the 4B-9B range.
+  - Q4_K_M is what I personally use.
+  - I wanted to see if the 3.5 series were "better" than the 3 series across some common benchmarks. The answer is yes - by a lot.
+  - The below table is a cross comparison of Qwen3.5B, Qwen 3-4B and ChatGPT 4.1 nano.
+  - Qwen3-4 series was already significantly more performant than ChatGPT 4.1 nano (across all cited benchmarks), and nipping at the heels of ChatGPT 4.1 mini and 4o full.
+  - Qwen3.5 is ~2.2x better than that.
+
+- I compared Qwen 3.5 4b vs. 9b and I really prefer the 9b (summarization, instruction following, light tool use, image recognition). I find it to hallucinate much less and with much better vision model. I’m still surprised how good and fast the 4b is
 
 - ## 🆚 [Qwen3 vs Qwen3.5 performance : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1rlckan/qwen3_vs_qwen35_performance/)
 - If the graphic is close to reality, then three things catch A LOT of attention:

@@ -53,6 +53,33 @@ Bottom Line: Success isn’t just about good code. It’s about presentation, ac
   - Yeah that things used all over institutional financial apps. High performance grid for trading desk apps etc, those things could be updating a table of 200 items with an update every row a few times a second. People will pay for that
 
 - We’re working on a new brand called Fair Source that is basically this. http://fair.io 
+# discuss-pm/shwocase-coding-based 🌰
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Cursor Revenue Leak: $2 Billion Annual Sales Rate : r/cursor _202603](https://www.reddit.com/r/cursor/comments/1rjqupl/cursor_revenue_leak_2_billion_annual_sales_rate/)
+  - Cursor, the AI coding assistant startup led by CEO Michael Truell, has reached a $2 billion annualized revenue run rate as of February 2026, doubling its revenue in just three months. 
+  - Roughly 60 percent of revenue comes from corporate customers, including new enterprise clients and expanded seat purchases from existing ones.
+  - Founded less than five years ago, Cursor is now one of the fastest-growing startups ever and was valued at $29.3 billion in a November funding round led by Accel and Coatue. 
+  - The company recently released an update allowing its AI to autonomously implement code, test it, and record its workflow. 
+  - Its product has helped popularize “vibe coding, ” where developers use simple prompts to generate complex software with AI handling most of the execution.
+
+- “leak”, they are just trying to raise new funding.
+
+- I’m curious was their current losses are.
+  - Everyone is, but of course AI companies only “leak” their ARR
+
+- Antigravity is far less polished, and that's a fact. Also, the way Google quantize the models they serve via the app is kinda shameful. No wonder Cursor is better.
+  - Gemini CLI is also half baked. A lot of their stuff is, honestly.
+
+- I ended up cancelling recently. The CEO latest x post about moving away from tab complete towards cloud agents gave me a bad taste. I'm going to try the $10 copilot tier for a month.
+
+- They likely pay tons of $$ to their AI providers (Claude, OAI, Google) so is that gross revenue or net revenue? And that's a high valuation when Anthropic could just ship an IDE fairly easily and crush them.
 # discuss-toolchain
 - ## 
 

@@ -109,6 +109,19 @@ modified: 2025-02-21T17:17:42.225Z
   - 支持ppt课件批量自动生成、数字人克隆、声音克隆、数字人课程设计、数字人视频渲染等
   - https://x.com/aigclink/status/1847102226088841648
 # ai-designer/lovable
+- https://github.com/Amery2010/open-builder /GPL/202603/ts
+  - https://builder.u14.app/
+  - Open Builder is an open-source AI-powered app generator. Build web applications through natural language conversations.
+  - [【开源】Open Builder v1.2.0 发布，用了 $400 多 opus 4.6 额度完全重构了整个项目，完美复刻 AI Studio Build 体验的自部署 AI 应用构建平台  _202603](https://linux.do/t/topic/1699622)
+    - 集成tauri，增加了桌面客户端
+    - 目前是纯前端实现，用不了 skill 和 mcp，除非完全专注于开发服务端或客户端版本。但项目一开始是向轻量级方向开发的，所以对于后续的开发规划，我还得好好想一想…
+    - 跟 manus 这类通用型的 agent 还是不太一样的，跟 bolt 会比较接近，但 bolt 部署存在难度，且项目资源消耗比较大，本质上不是给个人用户用的。这个项目更像是一个给普通人用的 AI 网站生成工具。
+  - [【开源】Open Builder 一款轻量级 AI 生成应用框架（文本转APP），通过自然语言描述快速生成网页应用 _202602](https://linux.do/t/topic/1663809)
+    - 这几天在研究 Google AI Studio Build 的实现原理，了解到目前市面上的 Text2Code 一般是通过 AI 后端+SandBox（项目隔离）实现项目生成和及时编译。普通用户想要架设一套完整的 AI 项目生成系统会比较麻烦。
+    - 在调研了一些方案后，我最终采用了 AI 代码生成+Sandpack 这套架构方案，Sandpack 底层由 CodeSandbox 提供技术支持，可以很轻松的实现项目云端编译，实时预览的效果，而且没有任何费用。
+    - AI 代码生成其实有很多中实现方案，比如像 manus 那样在项目中通过任务的形式一步步执行，也可以通过 tool call 让 AI 自己选择工具进行操作。我在项目中采用了第二种方案。项目的核心代码位于 src/lib/generator.ts，本质上是利用 tool call 让 AI 自主选择工具，对代码进行项目初始化、管理项目依赖、列出所有项目文件、批量读取文件内容、创建或覆写文件、精确搜索替换文件内容、删除文件、全局搜索文件内容，以及可选的联网搜索与网页内容读取。这些操作可以让 AI 精准的操作虚拟文件系统中的项目文件，实现云端项目生成。
+    - 本项目无后端架构，是一个静态页面，因此您可以将此项目部署到任何服务器上。所有的项目参数都保存在本地，因此您也无需担心数据泄漏的问题。由于是无后端的架构模式，您可能无法与朋友共享此项目。
+
 - https://github.com/TesslateAI/Studio /apache2/202510/python/ts
   - Open Source Locally Hosted Lovable with Full Stack Support
   - Includes support for llama.cpp, LM Studio, Ollama, Openrouter, and any provider you choose.
@@ -592,12 +605,20 @@ modified: 2025-02-21T17:17:42.225Z
 
 - https://github.com/googleworkspace/cli /MIT/202603/rust
   - This is a very well implemented CLI. It's so thorough. It dynamically registers commands, it's designed for a browser-wielding agent to automate the setup steps, it can start a MCP daemon…
+  - https://x.com/addyosmani/status/2029372736267805081
+    - Google Drive, Gmail, Calendar, and every Workspace API. 40+ agent skills included.
 
 - https://github.com/jaredpalmer/mogcli /MIT/202603/go
   - Unofficial agent-friendly Microsoft 365 CLI
   - mogcli is a Microsoft Graph CLI for personal Microsoft accounts (MSA) and enterprise Microsoft Entra ID accounts. It provides scriptable commands for Mail, Calendar, Contacts, Groups, Tasks, and OneDrive.
   - https://x.com/jaredpalmer/status/2029643407606563140
     - (h/t to @steipete ’s for gogcli)
+
+- https://github.com/griches/apple-mcp /MIT/202603/ts
+  - A collection of Model Context Protocol (MCP) servers that provide AI assistants with access to native Apple applications on macOS.
+  - [Apple Services MCP : r/mcp](https://www.reddit.com/r/mcp/comments/1rk4gys/apple_services_mcp/)
+    - I’ve made a telegram bridge to this now so I can just message it requests and it will do my admin stuff like finding how details and adding stuff to my calendar.
+    - I thought it had already an iMessage MCP by Anthropic. 
 
 - https://github.com/ItMeDiaTech/Documentation_Hub /MIT/202602/ts/Electron
   - A modern desktop application for managing document processing workflows with advanced hyperlink management, table of contents generation, and comprehensive document styling capabilities.

@@ -490,6 +490,25 @@ modified: 2025-11-01T10:54:26.044Z
     - Home Models – Small, efficient AI models fine-tuned specifically for smart home control
   - Supported Backends
     - Llama.cpp (built-in)	Running models directly in Home Assistant
+
+- https://github.com/pwilkin/llama-runner /MIT/202508/python/inactive
+  - Llama.cpp runner/swapper and proxy that emulates LMStudio / Ollama backends (for IntelliJ AI Assistant / GitHub Copilot), now with headless mode.
+  - support for different llama.cpp runtimes including ik_llama 
+  - dynamically loads and unloads runtimes based on model string in request
+  - double proxy: emulation for LM Studio-specific backend and OpenAI-compatible backends (running on port 1234) and for Ollama specific backends (running on port 11434)
+
+- https://github.com/mostlygeek/llama-swap /2.6kStar/MIT/202603/go/swift
+  - Reliable model swapping for any local OpenAI/Anthropic compatible server - llama.cpp, vllm, etc
+  - Run multiple generative AI models on your machine and hot-swap between them on demand. 
+  - llama-swap works with any OpenAI and Anthropic API compatible server 
+  - Built in Go for performance and simplicity, llama-swap has zero dependencies and is incredibly easy to set up. 
+  - [Add a Playground to the UI _202601](https://github.com/mostlygeek/llama-swap/issues/481)
+- https://github.com/bjodah/llm-multi-backend-container /BSD/202602/python
+  - Docker/podman container for llama.cpp/vllm/exllamav{2, 3} orchestrated using llama-swap
+  - This repo is my working config, it's mainly used on a 16 core Ryzen machine with 64 GiB RAM and a single RTX 3090.
+- https://github.com/pkeffect/llama-swap-sync /MIT/202511/python/inactive
+  - production-ready Python toolkit to automate the synchronization between a directory of .gguf model files and a llama-swap config.yaml file. 
+  - This project provides utilities for downloading models from Hugging Face, verifying their integrity, and automatically maintaining your llama-swap configuration.
 # llm-apps
 - https://github.com/eclaire-labs/eclaire /MIT/202510/ts
   - Local-first, open-source AI assistant for your data. Unify tasks, notes, docs, photos, and bookmarks. Private, self-hosted, and extensible via APIs.

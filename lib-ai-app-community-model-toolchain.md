@@ -1462,6 +1462,24 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
   - Coding Agents are great, but giving them unfiltered access to your filesystem might be a very bad idea
   - Bonus: we also gave the agent understanding of unstructured documents, by parsing them with LlamaParse
 
+# discuss-tools-agentic
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [如何优雅的实现web_fetch ](https://linux.do/t/topic/1701286/7)
+  - 常用的web_fetch工具有时候容易遇到cloudflare盾或者其他问题，导致很难获取到内容，刚刚刷推刷到两个方法感觉很优雅：
+  - 首选：r.jina.ai/你要fetch的URL
+  - 备选：defuddle.md/你要fetch的URL
+
+- 每分钟20次好像，个人用完全够，再加上 备用的那个 更够了
+- r.jina.ai算是覆盖全的了 有的需要js加载的也能搞得定
 # discuss
 - ## 
 

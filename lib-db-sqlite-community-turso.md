@@ -179,6 +179,30 @@ target/debug/limbo database.db
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## The turso sync works fully locally, without our cloud, btw. With Turso 0.5.0, if you download the CLI and do:
+- https://x.com/glcst/status/2029781200555102472
+  - tursodb --sync-server 0.0.0.0:8080 mydata.db
+  - that will open a server that you can then use to sync your databases.
+  - All Open Source.
+
+- I thought you would keep sync server closed. Nice 
+  - our cloud runs a massively multitenant implementation of the protocol. But there is an OSS reference implementation that you can use if you are syncing one db.
+
+- When will Turso replace LibSQL for your Cloud service?
+  - still this year.
+
+- Can I sync from several clients to one Turso DB.
+  - yes
+
+- Unrelated but are you guys planning to do something like bottomless storage experiment you did with libsql? And I saw you and pekka talk about putting stuff on S3 express a while back
+  - that's for the turso cloud only, that's how the turso cloud works (and why it is all green all the time). the compute nodes on the turso cloud are stateless.
+
 - ## Turso 0.5.0 is now out! ⚡ Concurrent writes is now beta _202603
 - https://x.com/Maxxen_/status/2029340813558194508
 - How do you deal with cross-database dependencies of types? E.g. what happens if i attach database A and B, and then use a custom type stored in A when creating a table in B? What if I detach A after and persist B? Or drop from A after detaching B?

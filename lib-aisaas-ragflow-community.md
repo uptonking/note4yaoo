@@ -86,6 +86,20 @@ modified: 2025-12-06T13:25:53.871Z
 - A lot of the yolo stuff from ultralytics is AGPL3 fyi. Recommend caution depending on what code or models / model lineage are used
   - Thanks for your nice suggestion. We train the model using YOLO, but during inference, the model is converted into ONNX and we use ONNXRuntime for the model inference. As a result, YOLO itself is not included in the software package. We will open the training code in the repo soon.
   - We've used YOLOv8 as the object detection model, and use some public datasets, such as PubTable, CDLA, together with some private data to train the model. The model on Huggingface is the one trained using public dataset, and we would open this work later. We use YOLOv8 just because we want to let the document parser run without GPU, I think you could also try any other object detection models such as Detectron, and use the public datasets to train the model as well. We've not used transfomers for this task, because given limited data, it could not outperform traditional CNN based models.
+# discuss-news
+- ## 
+
+- ## 
+
+- ## 
+
+- ## PaddleOCR-VL-1.5 is now integrated into RAGFlow’s DeepDoc Parser, bringing stronger document understanding to the very first step of the RAG pipeline. _202603
+- https://x.com/PaddlePaddle/status/2029919932637663586
+  - Polygon-level localization for more precise element detection
+  - Cross-page table merging + heading continuity for long documents
+  - Visual citation grounding for more traceable and trustworthy retrieval
+  - From messy PDFs to structured, citation-ready knowledge — now built directly into RAGFlow.
+
 # discuss-roadmap
 - ## 
 

@@ -43,7 +43,60 @@ modified: 2022-12-19T01:48:53.761Z
   - 开发一个功能时先不要管http/rpc。在java/go 的世界先定义好 interface ，然后实现自己interface。
   - 实现的过程中将数据读写都放在dao里面。
   - 在动态类型后端语言不要搞严格的分层，会很累。导致最终分了个寂寞，此处不展开。
+# discuss-architecture/pattern
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [After 2 years of solo Node.js in production, here are the patterns I swear by and the ones I abandoned. : r/node](https://www.reddit.com/r/node/comments/1riuksx/after_2_years_of_solo_nodejs_in_production_here/)
+- Running a Node.js monolith in production for 2+ years as the only developer. 15K+ users, ~200 req/s at peak. Here's what actually matters:
+
+Patterns I swear by:
+
+1. Centralized error handling middleware Every Express route wraps async handlers with a single error catcher. No try/catch in every route. One place to log, one place to format error responses.
+
+2. Request validation at the edge Joi/Zod validation on every incoming request before it touches any business logic. The number of bugs this prevents is insane.
+
+3. Structured logging from day 1 Winston with JSON format, correlation IDs on every request. When something breaks at 3 AM, structured logs are the difference between debugging in 5 minutes vs 2 hours.
+
+4. Database connection pooling with health checks Mongoose with proper poolSize, heartbeat interval, and reconnection logic. Had a 4-hour outage early on because I used default connection settings.
+
+5. Rate limiting per endpoint, not just globally Some endpoints (auth, payments) get strict limits. Others (reads) are more permissive. One global rate limit is too blunt.
+
+6. Graceful shutdown handling SIGTERM handler that stops accepting new connections, finishes in-flight requests, closes DB connections, then exits. Prevents data corruption during deploys.
+
+Patterns I abandoned:
+
+1. Microservices Built 4 separate services for 50 users. Debugging was a nightmare. Consolidated back to a monolith. Night and day difference in velocity.
+
+2. GraphQL For my use case (mostly CRUD with simple relationships), REST was simpler and faster to develop. GraphQL added complexity with no real benefit at my scale.
+
+3. Event-driven architecture with message queues Used RabbitMQ for async processing. Replaced it with simple cron jobs on Lambda. 90% of "async processing" needs are just scheduled tasks.
+
+4. Clustering with PM2 Switched to a single process behind an ALB. Node handles concurrent requests fine with async I/O. PM2 clustering added complexity for minimal benefit at my traffic level.
+
+5. ORM-heavy patterns Started with Sequelize, moved to raw MongoDB queries. For simple CRUD, native drivers are faster and easier to debug.
+
+- The biggest insight: complexity is the real enemy when you're solo. Every abstraction layer you add is another thing to debug at 3 AM when things break.
+
+- Microservices for 50 users ??
+  - You'd be surprised how many companies do that
+- Microservices for a solo dev ??
+
+- What are the odds there are two "life-hack" style of posts in a single day and both of them list graceful shutdown handling with SIGTERM. Thanks, ChatGPT. What are you trying to accomplish?
+
+- One thing I've found is a good (micro?)services pattern to reduce complexity. We have a single codebase, that has an entry point pattern to build several different lambdas that we deploy with IaC (pulumi, but terraform also works). This allows us to write simple code, in a single project, that refers to other parts of the system. So the parts of our system that need to scale can, and the ones that don't, don't.
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

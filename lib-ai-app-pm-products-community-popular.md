@@ -17,7 +17,7 @@ modified: 2026-02-20T17:36:40.796Z
 - ## 
 
 - ## 
-# discuss-ai-moat 🤼
+# discuss-ai-moat/roadmap 🤼
 - xp
   - 在LLM热潮前就有很多开源/免费软件, 它们是如何维持运营的
 
@@ -29,7 +29,26 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 
-- ## 
+- ## [某互联网大厂产品内测有感（程序员的未来如何） _202603](https://linux.do/t/topic/1701158)
+  - 本次测试为云平台的代码开发
+  - 你可能会想这有什么，无非就是上云嘛，不管是Claude code还是别家，早就可以做到云端写代码了，但是本次测试，只需要上传项目文件和任务描述，然后中间没有任何的交互的地方，全流程自动化，即我给你一个任务，中间无任何交互，直接验收成果。
+  - 本次测试测评要求：使用最近 Coding 场景发生的真实任务，最好是基于现有代码仓库的任务，不能使用单纯的测试 prompt
+  - 未来代码的开发一定不会是像现在这样，写代码这个门槛将放的无限低。任何一个人只要有一个需求，他就可以做到一个非常非常复杂的项目出来。注意不是所谓的玩具，而是那种真正的复杂场景下的代码研发，你从现在这几家大厂的产品线，你就能看出来，这个测试我就不说是哪家了，然后另外一家智谱的Z code产品线，核心目的也是这个
+  - 甚至我自己的项目，核心目标也是这个: GitCortex 的最终设计目标是通过社交平台的简单对话，完成复杂项目的产出，不是那种玩具，而是真正的复杂化的生产级产品。
+  - 而且 AI 迭代的速度已经超乎想象，一年前，写个前端的贪吃蛇小游戏，一年后，现在可以完成复杂的项目开发
+  - 无论是智谱，还是这家互联网大厂，亦或者是我的项目，完成完整性开发后，这个时间不会超过二零二六年，就已经可以达到他所说的2028到2032这个水平了
+  - 大厂和我的研究方向，实际上是让每一个人都可以拥有自己做应用的能力，而且是做那种很复杂的应用，满足各种每个人各种各样的需求，让每个人有一个新需求，他就可以自己立马DIY一个新应用出来，做到这种程度
+  - 至于现在所说的 AI 产出的代码，维护性差、质量低等等问题，返璞归真就解决掉了，现在有技术就解决掉了，我就说一个最简单的方式，把sonarqube的评分规则扒下来，在完成任务提交之前，新增一项内部检测，合规输出不合规返工。当然有更多更好的解决方案，我只是随便说了一个最简单的
+  - 而且我的这个感觉并不是今天才有，我实际上刚开始研发我自己的项目的时候，我就已经有这个感受了，然后我发现智谱和我撞车了，然后今天参加另外一个大厂的产品内测，发现核心上也撞车了，就我最开始有这个感觉的时候，我可能认为是我自己夜郎自大，我想多了我太菜，是我没有意识到哪些地方是有空缺的，但是接连发现大厂的产品线跟我重叠，就我不知道怎么说这个感受，所以来发一个这样的帖子。
+  - 这大厂真挺狠啊，同时测8个模型，光填评测表都得填一个半小时到俩小时左右，除去1～2 个老版本模型，相当于他至少有6个新模型在同步开发，并且都是专攻于代码生成的
+- 不知道他们 我做的GitCortex, 是多终端，主终端分配任务，自动拉起新终端，单个终端的上下文非常有限，而且主终端不负责审计代码 只负责分配任务和传递任务，各个子终端传递给主终端的是那种已完成的任务列表 不传代码
+
+- 你仅通过和微信机器人或者说飞书机器人对话，完成了一个超复杂项目的开发，你唯一需要做的就是告诉机器人你的需求，你想要什么东西，你连架构都不用知道，更不用像现在这样去折腾，现搞什么plan计划，然后一步一步地去做出来，什么都不用动。包括安装都是傻瓜式的，我的项目做了一键式的安装，那两个大厂的项目更不用说了
+  - 甚至可以说，目前所有的一句话做 App 的所有应用都是同类竞品，只不过他们现在做的还是比较初级的前端应用小应用，能做复杂项目的各家大厂还都没发布，还在内测，我的项目虽然发布了，但是也不成熟，也还在开发中
+
+- 在编程这方面大模型确实是很强了，现在是抢应用落地的阶段了
+
+- 其实感觉还没到模型能力的稳定期，现在的很多范式都是有强烈时效性的，不太能说有决定性的突破
 
 - ## Imagine a future world where agents can recreate all of planetscale’s source code perfectly.
 - https://x.com/aboodman/status/2026179235896017074
@@ -235,6 +254,27 @@ modified: 2026-02-20T17:36:40.796Z
   - 是 BERTw
 
 - 感觉不错，但是一些短文本就没必要检测了吧，短文本检测准确度一般都不高，检测意义也不大，还浪费计算资源
+# discuss-monetizing
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [After 3 months of building MCP servers for free, I finally figured out how to monetize them : r/mcp](https://www.reddit.com/r/mcp/comments/1rjqjkj/after_3_months_of_building_mcp_servers_for_free_i/)
+  - I built a bunch of MCP servers — web scraping tools, data enrichment, a PDF parser — and just... gave them away.
+  - MCP is incredible for connecting tools to agents, but there's no native way to say "hey, this tool costs $0.01 per call." So I went looking for a solution that didn't involve building a whole billing system from scratch.
+  - Found this project called xpay — it lets you charge per-call for any MCP tool.
+  - it lets you monetize any MCP server without changing your code. Seriously, zero code changes. You paste your MCP server URL into their dashboard, set a price for each tool, and they give you a proxy URL like: your-server.mcp.xpay.sh/mcp
+  - Agents connect to that proxy URL instead of your raw server. When they call a tool, xpay handles payment automatically before forwarding the request to your actual server. Your server receives the exact same requests as before — it doesn't know or care that there's a payment layer in front of it.
+  - That's it. No SDK to install, no payment code to write, no billing infrastructure to manage.
+
+- A solution looking for a problem IMO. If people are technical enough to plug in MCP servers they are likely technical enough to find a free and equally secure one through the countless repos out there. And if it doesn’t exist I’m sure people are figuring out you can pretty easily vibe code these things (I think I recently saw a post for an mcp server that can build out other mcp servers? Now that’s a neat catch-all idea).
+
+- Cool proof of concept nonetheless. I can scrap together an MCP pretty quickly but if you can set up decent infra around it so MCPs are more efficient, fail less, or any other value add I could see it being useful. Not maintaining it is a value add as well.
+
+- This sounds fucking awful and a security, PCI compliance. Billing, and all around nightmare.
+  - Answer to original question, yes we charge for our MCP servers. We control their access and route view a platform that is the "entrance" to the MCP servers and tools and handles authentication at the company and user level (fully multi-tenant from the start) and bill for access to the suite of MCP tools. The user brings their own API key or user credentials depending on the MCP server/tool they are connecting to. Our cost is the cost of development, maintenance, and the Azure infrastructure for hosting
 # discuss-ai-pm
 - ## 
 
@@ -242,9 +282,79 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 
-- ## 
+- ## 为什么Manus的云端形态都没火成这样, 而openclaw这种本地部署这么复杂的项目火了
+- https://x.com/yangyi/status/2029864493296275625
+- 云端让你把文件搬过去，本地直接活在你的文件系统里，我觉得摩擦差异比功能差异更致命。
+  - 这也是为什么我做牛马ai做本地化而不是云
+- 本地部署的ai模型和硬件setup怎么做的?
 
-- ## 
+- 我觉得这个才是原因，manus收费太贵，openclaw本地部署大家都觉得能用低价的模型代替
+- 那低价的要能用, 他们干啥非得要高级的
+  - 对对，我就是这个意思，适合普通老百姓的一定是低消费的，不一定是最好的
+- 对对，实在用不起claude、gpt就换成deepseek v3.2、minimax2.5，或者再差的stepflash3.5、qwen3，能解决实际场景问题才是人民的好AI哈哈，豆包不就是个例子
+
+- 我发现大家都配置不上api, 所以可能得需要做一些低价试用包了
+
+- 最大不同在交互创新。它接入了电报、飞书这样的聊天窗口，用户早习惯聊天窗口是一个“人”的存在，聊天软件里的龙虾给人心理上的突破感。
+  - 其次 后端权限全部对它开发，它能像病毒在你电脑里肆意游走，你在聊天窗口吩咐的事它是真能干
+  - 相比这点，云端的manus就像个无能的丈夫，只能嘴上输出，没法真干
+- Manus可以选择开放什么，比较安全，像个有能的丈夫， openclaw像黄毛，不管你开不开放反正我开放就行
+
+- 很明显是manus没有办法给各方充分分配利益，大家都玩不起来。openclaw部署的模式，养活了mac mini，虚拟机厂商，个人装机者，让多方都觉得有利益，大家就用脚投票了。
+
+- 你愿意把你的密码 信用卡交给这些人吗? 如果无法处理这些敏感数据, 云端Agent 就说空中楼阁, 在各种厂干过的人都知道, 他们可以随意看你的对话记录
+
+- 我感觉 Claude Code 还有 OpenClaw 还没出技术圈，或者说还在泛技术圈这个范围吧，基本上还没到普通用户手里。
+  - 技术圈用户的 ROI 思维非常高，他们觉得一个东西如果不够开源、不够好用、不够有选择，那就不太行。
+- 至于你说的云端模式，其实很多都是云端模式：
+1. Claude Code 早期出了云端 CLI，你可以在它的服务器中运行 Claude Code。
+2. CodeX 一开始也是这样推出的。
+3. Perplexity 也有它的 Computer 模式。
+- 这些模式都是存在的，也有一定的用户量。但目前最火爆的肯定还是 OpenClaw 这种，它最核心的优势在于自主性太强了。它比Manus 好的地方在于：
+  - 不需要充值Manus（订阅费）。
+  - 用户可以自己出成本（按需支付）。
+  - 自主性极强，很多事情都能做成，当然也涉及卖 Token 的逻辑。
+
+- manus永远是别人的 openclaw 大家觉得是自己的
+
+- 跟 IM 打通、自我创建 skill 的能力，让它活了。个人可以自由的添加各种skill，打造适合自己工作、生活的个性化agent工具，并且用移动IM就能操控一切，获得的成就感是云端商业agent不能比拟的。
+
+- 两个我都用了。1，Manus太贵，OpenClaw我可以用原本Codex的额度，钱省了不少；2，OpenClaw能扩展连接本地电脑数据和软件，能做的事情一下子就比Manus多了
+
+- 首先因为进门是免费的，to C 引流肯定还是要领鸡蛋
+  - 其次因为天生带梗，安全做的差、代码写的烂，这些都不是事
+
+- 因为原来模型能力不行，openclaw 正好卡在这个临界点上诞生了
+
+- Agent本地运行才是未来大势所趋，Qwen3.5的发展趋势看出本地部署大模型，跑agent才是未来大势。优势：1 低成本 2 隐私
+
+- 8gb内存的云端vps，一年的费用都可以买两台16gb内存的mac mini了
+
+- 通用agent本来就应该本地化，它的执行效果可以直接通过改变本机环境来体现而不受限于网页界面交互。大多数有趣的应用也只适合本地跑呀，比如让agent帮你玩耍最新的各种AI模型。
+
+- 原来用cc，一个痛点是离开电脑时用不了，试了happy，也试了让cc模仿happy写了简单的转发，体验总是不好，龙虾很好的解决了这个问题，手机可以随时操作电脑上的agent，想到什么需要agent的事情，随时拿出手机就可以办。coding plan完全没有闲着。现在的痛点又变成了，国产模型太拉，想用好模型，，，
+
+- ## 国内大厂争先恐后地养龙虾还不如把自己的主业务写成 cli。
+- https://x.com/xicilion/status/2029983875552923901
+
+- ## [【开源自荐】GenQuick：一款具备提示词管理及优化的划词 AI 助手 _202603](https://linux.do/t/topic/1696959)
+  - 一句话说清楚：选中文字，按 Alt+1，AI 结果直接插回原位，全程不用离开你正在工作的窗口，本体只有 18MB 左右，内存占用不到 100MB，启动秒开，常驻后台也不心疼。
+  - 划词即用，零切换成本，在任何应用里选中文字，Alt+1 唤起悬浮窗，窗口跟着鼠标走，选个提示词就开始处理。结果出来后一键插入、替换、追加，不用来回复制粘贴。
+  - 模型随便换，OpenAI 兼容接口、Claude、Gemini、Ollama 本地模型全都支持
+  - 能画图， 不只是文本处理，还支持用 AI 生成 Mermaid 流程图、ECharts 数据图、Graphviz 结构图、词云、思维导图，生成完直接预览导出或插入。
+  - 全部本地存储，不碰你的数据，所有配置和缓存都在本地，API Key 加密保存，不上传任何东西，用 Ollama 的话甚至可以完全离线跑。
+
+- ## 🤔 国内还没有搞ai+工业制图的吧？创业方向?
+- https://x.com/xicilion/status/2029791614206427381
+
+- 👷 最新的WebMCP提供了操作ui的新方法
+
+- 和一个合作伙伴研讨半年了，开放 cad 还是很难很顺畅地 ai 化，ai 能做到生产级别的，最擅长的还是声明式。我们内部在尝试在 markdown 里写 openscad，ai 做得还不错。
+
+- 主要CAD画图，人类语言还挺难精确描述的
+- 鼠标点一下的事，用ai要说一堆话
+
+- 游戏渲染，3d，也不行
 
 - ## [为什么您根本不需要OpenClaw ](https://linux.do/t/topic/1696116)
   - 2026年3月3日，OpenClaw 成为 GitHub Star 星标数量历史第一，超越了 React 和 Linux。

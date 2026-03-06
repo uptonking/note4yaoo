@@ -1891,6 +1891,11 @@ modified: 2025-11-30T17:27:16.720Z
   - AI-Powered Personalized Learning Assistant
   - Smart Knowledge Base: Upload textbooks, research papers, technical manuals, and domain-specific documents. 
   - Multi-Agent Problem Solving: Dual-loop reasoning architecture with RAG, web search, and code execution -- delivering step-by-step solutions with precise citations.
+
+- https://github.com/rav4nn/youtube-rag-scraper
+  - [Experiment: turning YouTube channels into RAG-ready datasets (transcripts → chunks → embeddings) : r/Rag](https://www.reddit.com/r/Rag/comments/1rm7cxi/experiment_turning_youtube_channels_into_ragready/)
+    - Youtube is a great source of knowledge as long as a human can select which channels should be chunked. I can see the value of this as an actual webapp, where you would create a Topic, add channels and then have a knowledge base (directly as a cloud vector db) which you can use for agentic work.
+    - I think it might make it useful to apply a re-write step after pulling the transcripts. Maybe even compress them (smtg like compresr.ai)
 # data-rag
 - https://github.com/statespace-tech/toolfront /801Star/MIT/202512/python
   - https://docs.toolfront.ai/

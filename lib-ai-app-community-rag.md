@@ -371,9 +371,23 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## [关于在自己的产品中集成RAG，检索法条之类的，佬们现阶段推荐啥，milvus还是Elasticsearch？ ](https://linux.do/t/topic/1698867)
+  - 我在从es迁移到pg，es一打开就是内存大户，不知道是es的锅还是我向量索引的锅，milvus安装超级多问题
 
-- ## 
+- 注意哈，PGVector 向量维度最高是 2000
+
+- 推荐自己的狗粮来了 highkay/stupidsimplerag: 简单，低开销，适合金融事件和信息的rag embedding推荐用gemini-embedding-001，入库用768。chat模型推荐longcat的chat，不要用lite，那个经常审查。配额高，速度快，智商比glm的免费模型高。
+
+- 其实RAG除了embedding模型的能力，对于chunk/长文本等采取的方案也会大幅影响性能的。尤其是长文本切块的话还是得根据业务类型来选择好的方案的
+
+- ## [有偿：本地大模型 + 合同知识库搭建（RAG/智能审查/生成） ](https://linux.do/t/topic/1697370/11)
+  - 想内部搞一套完全本地化、不联网、数据绝对不出企业内网的合同智能辅助系统 
+- 个人建议：先看看你们的数据如何~本地大模型、特别是RAG，个人感觉现在最重要、最麻烦的不是搭建，是数据清洗
+  - 看你们是做合同相关，估计你们下一步就想搞Knowledge Graph，这个玩意对于你们可能比RAG更有用，但是也更看数据质量
+
+- 这个和知识库没啥关系，这个需求需要单独开发程序来实现的。合同管理系统啥的。
+
+- 真正难的点在于数据清洗，demo其实很快就可以做出（开源项目太多了），但是实际效果取决于数据和对模型的微调
 
 - ## [Architectural Consolidation for Low-Latency Retrieval Systems: Why We Co-Located Transport, Embedding, Search, and Reranking : r/Rag](https://www.reddit.com/r/Rag/comments/1rj1c90/architectural_consolidation_for_lowlatency/)
   - https://github.com/orneryd/NornicDB/discussions/26

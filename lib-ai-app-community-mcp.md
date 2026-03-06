@@ -260,9 +260,33 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
-- ## 
+- ## [MCP’s biggest missing piece just got an open framework : r/mcp](https://www.reddit.com/r/mcp/comments/1rm6plf/mcps_biggest_missing_piece_just_got_an_open/)
+  - If you've been building with MCP you've probably hit the same realization we did. It's incredible at connecting agents to real systems, but it has absolutely no concept of identity.
+  - There's no way to say "This agent is acting on behalf of John from accounting, and John explicitly authorized it to book travel under $300." No way to blame and fire John.
+  - The agent has access, so it acts. That's it. And honestly if you're prototyping or running stuff internally, fine. But the moment agents start booking travel, managing accounts, completing transactions on someone's behalf, that's a problem. You can't audit it. You can't scope it. You can't revoke it mid-action. OAuth, API keys, JWTs, all of these assume a human is on the other end. They weren't designed for an agent acting on behalf of someone else, which is a totally different trust model.
+  - So... we've been working on MCP-I (Model Context Protocol, Identity) at Vouched to fill this gap, and it just officially got donated to the Decentralized Identity Foundation. Meaning it's now being stewarded under open governance by DIF's Trusted AI Agents Working Group instead of staying proprietary. That part matters a lot to me because the whole point is that this becomes a standard and not product lock-in.
+  - We also built Agent Checkpoint (vouched.id/know-your-agent) which is the product layer that actually enforces this. It sits at the control plane between your services and inbound agent traffic, detects it, classifies by risk, and lets you define exactly what agents are allowed to do.
 
-- ## 
+- authorization (what you're describing) is already part of oauth and token auth
+
+- the delegation + revocation piece is the real unlock. without it you cannot do policy-based approvals at the MCP layer at all. peta (peta.io) is tackling a related piece -- vault + audit trail + policy enforcement as the control plane between services and agent traffic.
+
+- ## 🤼 [MCP servers are the real game changer, not the model itself : r/ClaudeCode _202603](https://www.reddit.com/r/ClaudeCode/comments/1rm367e/mcp_servers_are_the_real_game_changer_not_the/)
+  - Once I connected Claude Code to our internal tools (JIRA, deployment pipeline, monitoring dashboards) through MCP, the productivity jump was insane. Instead of copy-pasting context from 5 different browser tabs, Claude just pulls what it needs directly.
+  - A few examples:
+  - MCP server that reads our JIRA tickets and understands the full context of a task before I even explain it
+  - One that queries our staging environment logs so Claude can debug production issues with real data
+  - A simple one that manages git workflows with our team's conventions baked in
+  - The model is smart, but the model + direct access to your actual tools is a completely different experience. If you're still just using Claude Code with the default tools, you're leaving a lot on the table.
+
+- biggest unlock for me was building an MCP server that wraps macos accessibility + screen capture. the AI can literally see what's on screen and click things without me copy-pasting anything. went from "here's a screenshot, what do I do" to "just do it" overnight. the JIRA integration sounds great too — half my time used to be reading tickets and translating them into context for the model.
+
+- True. I turned Claude off entirely and I don't even use LLMs anymore. I just connect manually to the mcp server and do the work myself because it's the real game changer. Made me work 1000x faster
+
+- You don't need MCPs half the time. Claude Code can just use the AWS CLI and it can create scripts to interact with the JIRA API which, given the Atlassian MCP is so crap, is usually the better option.
+  - MCPs are a reminder to keep your —help or openapi spec up to date and sound. In best case it’s a token/auth interface…
+
+- I ditched MCP’s for Skills and never looked back. 
 
 - ## MCP servers are just bad skills files. 
 - https://x.com/nisten/status/2025650149968519237
@@ -756,7 +780,18 @@ Don’t want/can’t have external dependencies?
 
 - ## 
 
-- ## 
+- ## Introducing @tan_stack Intent (alpha) _202603
+- https://x.com/tan_stack/status/2029973163455766769
+  - Ship agent-readable "skills" inside npm packages
+  - Composable - mix core + framework-specific skills
+  - Oh, and if you're a maintainer of a library, we ship *skills* for you to: - Generate skills - Audit skills - Get feedback on skills from users (using skills of course)
+  - And you can automate all of this via CI
+
+- This is very dangerous to automatically discover and use skills from node_modules because malicious package might easily compromise your machine. Sooner or later it will be blocked.
+  - Aren’t you already vulnerable to prompt injection any time an agentic coding tool reads files from dependencies into its context?
+- package management distribution risks have been a thing for a long time before this. The way we see it, it's better to bet on the security and provenance of an already established (and continually improving) mode of distribution (NPM) instead of inventing yet another one.
+- Yeah, I don't think this is a new surface area. This should already be a concern. If a package is malicious, it can attack in multiple ways. Same as always.
+  - Maybe with bun/pnpm or in our cli we could add a filter or safeguard to only use on packages with provenance or something like that.
 
 - ## Just me or Codex and OpenCode *much* worse at automatically using skills than Claude based on just the prompt text? Need to explicitly invoke them for them to be used.
 - https://x.com/adamwathan/status/2026745037388742767

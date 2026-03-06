@@ -44,7 +44,15 @@ modified: 2026-01-25T17:23:01.510Z
 
 - ## 
 
-- ## 
+- ## llamaindex: I wrote a blog post digging into the PDF representation itself, why its impossible to “simply” read the page into plaintext, and what the modern parsing techniques are
+- https://x.com/jerryjliu0/status/2029998812216127763
+  - [Why Reading PDFs is Hard _202603](https://www.llamaindex.ai/blog/why-reading-pdfs-is-hard)
+  - The crux of the issue is that PDFs are designed to display text on a screen, and not to represent what a word means.
+  - PDF text is represented as glyph shapes positioned at absolute x, y coordinates. Sometimes there’s no mapping from character codes back to a unicode representation
+  - Most PDFs have no concept of a table. Tables are described as grid lines drawn with coordinates. Traditional parser would have to find intersections between lines to infer cell boundaries and associate with text within cells through algorithms
+  - The order of operators has no relationship with reading order. You would need clustering techniques to be able to piece together text into a coherent logical format.
+  - That’s why everyone today is excited about using VLMs to parse text. Which to be clear has a ton of benefits, but still limitations in terms of accuracy and cost.
+  - At @llama_index we’re building hybrid pipelines that interleave both text and VLMs to give both extremely accurate parsing at the cheapest price points.
 
 - ## [Best way to handle pdfs containing huge tables in RAG : r/Rag](https://www.reddit.com/r/Rag/comments/1reezcu/best_way_to_handle_pdfs_containing_huge_tables_in/)
 - Docling and detect and prechunk tables

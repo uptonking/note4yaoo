@@ -166,6 +166,60 @@ modified: 2026-01-14T18:57:51.174Z
 - ## 🆚⚡️ [Performance of llama.cpp on Apple Silicon M-series · ggml-org/llama.cpp _202311](https://github.com/ggml-org/llama.cpp/discussions/4167)
   - 提供了各种mac, air的模型测试数据
 
+# discuss-llama-swap
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🌰 [Add mlx_lm.server example by losuler · Pull Request · mostlygeek/llama-swap _202509](https://github.com/mostlygeek/llama-swap/pull/302)
+  -  I wanted to add an example for anyone else who is coming across the same problem. Which was that without useModelName being the file path, mlx_lm.server is using the model name, which causes it to download the model to the huggingface cache path, instead of using the one I manually downloaded to the specified --model path.
+
+- [Profiles not working · Issue · mostlygeek/llama-swap](https://github.com/mostlygeek/llama-swap/issues/145)
+  - Profiles were replaced with the Groups feature. 
+  - Groups provide better parallel control and reduced internal complexity a bunch.
+
+- ## 🆚 [To everyone using still ollama/lm-studio... llama-swap is the real deal : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1rm7nq1/to_everyone_using_still_ollamalmstudio_llamaswap/)
+  - Both ollama and lm-studio have the "load models on demand" feature that trapped me. But llama-swap supports this AND works with literally any underlying provider. I'm currently running llama.cpp and ik_llama.cpp, but I'm planning to add image generation support next.
+  - It is extremely lightweight (one executable, one config file), and yet it has a user interface that allows to test the models + check their performance + see the logs when an inference engine starts, so great for debugging.
+
+- Why do you need llama-swap if llama-server also has builtin functionality with the router mode?
+  - The main reason to use llama-swap over llama.cpp is if you either want to use different inference services (like have some models go to llama.cpp and others to vLLM) or if you want specific customizations for each model beyond what llama.cpp will allow without server restart.
+  - llama.cpp’s built in router mode is probably enough for 95% of folks, including OP
+- yep same here, I'm using vllm behind llama swap , also it allowed to proxy requests to external endpoints.
+- llama.cpp's router mode already allows you to customize for each model using presets.
+
+- llama-server router is llama.cpp-only. the moment u want ik_llama.cpp or any other backend in the mix, that option disappears. llama-swap wraps whatever inference engine u throw at it , that's the actual difference.
+
+- If you’re only using LLM and gguf the builtin router mode will probably be enough.
+  - There are a few things that I am free to add to llama-swap that probably don’t make sense in llama-server’s router:
+  - audio endpoints for tts/stt
+  - image gen endpoints with stablediffusion.cpp
+  - filters like setParamsByID that allow toggling of reasoning mode without reloading the model
+  - peer routing to remotely hosted models: another llama-swap, openrouter, vercel, etc
+  - the UI playground and debug features
+  - support for other engines like ik_llama, vllm, sglang, basically anything that supports an openai or anthropic api
+  - I think the range of tools looks pretty good now. There are simple but more limited tools. llama-server is in the middle, more powerful but also more complex. llama-swap I’m pushing to the edge where you can have a very powerful, multi-engine, multi-model set up. It’s so great that people can choose something that match their comfort and skill level.
+
+- https://github.com/meganoob1337/llama-swap-vllm-boilerplate
+  - The repo also shows how to use vllm in docker with llama-swap
+
+- llama-swap is very useful for me in ways that llama-server isn't. Of course the ability to use different providers is the road-blocker of llama-server. 
+  - To me the real deal is the convenience features it provides.
+  - It's just so much nicer to have the UI to debug and test different models and versions, and being able to swap them with almost no-downtime is awesome. i.e., when I update llama.cpp, or download a new quant for a model, I only need to update the config.yaml, and when I save it I have 2-3 seconds of downtime, and any bugs are immediately apparent thanks to the log. It's just very convenient. It feels right to have the router split from the providers. I previously used open-webui for this, but llama-swap is more convenient for many use cases I have.
+  - I manage several servers and I do tons of experiments with different quantizations and providers, and llama-swap has been a blessing. But of course, this is my personal use case which may not translate to others.
+
+- If anyone wants to have something similar but with web ui instead of config files, I built llamactl. It has full support for llama-server router mode. It also supports vllm, mlx_lm and deploying models on other hosts. The model swapping options are not as complex as llama-swap - I only support simple LRU eviction at the moment.
+
+- I use it because llama-swap can be used for lots more than just llama.cpp. I do whispercpp and stablediffusioncpp under it at the same time as llamacpp.
+
+- Can llama-swap start and stop different underlying providers (ollama/llama.cpp/ik_llama/vLLM/…)?
+  - Yes, and it is configurable. You can define different groups of models (each with their own defined provider), and configure the evicting behavior by configuring swap and exclusive controls.
 # discuss-gpustack
 - ## 
 

@@ -894,6 +894,36 @@ AI
 
 - ## 
 
-- ## 
+- ## 去年大家说起 vibe coding 还都是 cursor, 为什么现在全变成了 claude？
+- https://x.com/Hayami_kiraa/status/2029867625887461560
+  - claude怎么异军突起的？
+- 自家模型配自家 prompt 配自家工具，效果好（模型不多，而且有继承性，太好优化了）
+  - 自家模型厂搞的工具，prompt caching 方便稳定，把成本降下来了，然后商业上操作一下，1 刀能买价值 10 刀的 token，用户用着忍不住轻哼起来
 
-- ## 
+- 因为与 ai 协作的流程发生了变化，以前是人类构思任务->分配给模型->人类对模型生成的结果检查。随着模型能力的提升，已经不需要这些操作了，现在是人与 ai 构思 plan->ai 执行 plan，IDE 形态已经不合适了
+- cursor也好用，但是cli才是摸索这么久后大家共识的ai原生交互方向。核心原因：在软件开发测试闭环中，人为操作才是瓶颈。人干扰越少，ai越容易出成果。
+
+- 现在的 LLM 是靠提示词驱动的，Claude Code 的出现让人们意识到用 LLM 来辅助编程，在用户界面层面好像只要有个能输入提示词的地方就行了！暂时脱离 IDE 也不会影响 LLM 的效果，甚至可能还有提升，于是在当时只是个 CLI 工具的 Claude Code 取得了巨大的成功
+
+- cursor 能回到那个 500 次的时代我相信还会有很多人为他买单的, 大多数不再用它的人也仅仅是因为它太贵了，还没用就没有额度了
+
+- 底模公司看那一块业务有钱赚。可以碾压式的去做。直接替代对方。。。。。也是无奈
+
+- ## 我已经去掉所有的 linter formater 了，这个在 vibe coding 时代除了增加 token 消耗量减缓迭代速度以外没有任何用处
+- https://x.com/yetone/status/2029915551267688747
+- linter 还是有一定价值的，我是说那种防止写出错误代码的 linter .. 可以认为是某种测试或者 skills
+  - formatter 这个确实，如果人不改是可以不用的
+- Linter 的确有这个价值，但是我想把“防止写出错误代码”的权力下放到 LLM 层，而不是工具层。
+  - 我甚至激进到认为 Coq, Agda 这种 dependent type 语言也不会向工程界发展了。
+
+- 你在选择某个语言的时候，实际上就是接受了其编译器带给你的一系列 linter .. 我听你这么描述，感受其实是某些语言的 linter 太琐碎了
+  - 的确如此，比如在当下有些 golangci-lint 的 linters 就有点太龟毛了，LLM 经常为了这些龟毛的 linters 多消耗好多个 turn
+
+- 我反而都加上去了，而且重新 review 全部规则，这点 token 消耗量无所谓，现在迭代速度的瓶颈是人，不是 AI。
+
+- 感觉还是有必要的，有时候lint还是能检测出很多不规范的地方的。 还有个用处是lint format过后的code 人读起来舒服很多，现在人还是需要review code的呀
+  - 我已经不 code review 很久了
+
+- 传统的静态分析肯定还是有用的，我是觉得不如完全放在ci或者git hook上，llm的能力应该用来做更复杂的分析
+
+- This works until it doesn't. Linters catch the stuff AI is worst at: subtle type mismatches, unused imports that bloat bundle size, security patterns the model doesn't know about. The token cost of running a linter is nothing compared to debugging a production issue the linter would have caught in 2 seconds.

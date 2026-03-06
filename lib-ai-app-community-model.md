@@ -985,9 +985,32 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
-- ## 
+- ## [Local LLM Performance: Testing OpenClaw with 2B/4B models via llama.cpp? : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1qzykqy/local_llm_performance_testing_openclaw_with_2b4b/)
+  - Has anyone here experimented with "tiny" models in the 2B to 4B parameter range (like Gemma 2B, Phi-3, or Qwen 4B)?
 
-- ## 
+- I have tested it in the 2-12b param range and it is literally unusable, it isn't even able to respond properly to the very first "wake up my friend" prompt.
+
+- I managed to get it going with qwen3-4b-thinking-2507 on a 6gb rtx 3050. It took about 3 minutes to respond to hello. It’s unusable.
+
+- I have a Lenovo Legion 5 notebook with 16GB RAM, a Ryzen 5 5600H, and a 3070 notebook GPU. I didn't use llama.cpp directly but used Ollama.
+  - Download qwen3:4b-instruct-2507-q8_0.
+  - Install OpenClaw on the VM and complete the setup.
+  - Tool Calling: Seems to work fine.
+  - Performance: 30 seconds to execute the command "Create a file named HelloWorld on my desktop". 10 seconds to respond to "Hello".
+  - It is not the fastest, but it works well for me. You could also host the model on your main PC and use an old device in the same network to run Linux with OpenClaw
+
+- ## [I benchmarked 22 local models for OpenClaw agent tool calling on RTX 3090 — Qwen 2.5 Coder 32B (Oct 2024) still beats every 2025-2026 model, including Claude Sonnet 4.5 : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rmkqco/i_benchmarked_22_local_models_for_openclaw_agent/)
+  - I run OpenClaw as my daily AI agent (Telegram, email, CRM) on a self-hosted RTX 3090. I tested 24 models (18 dense + 6 MoE) on what actually matters for agents: tool calling, multi-step workflows, bilingual FR/EN, and JSON reliability. 
+  - Setup: llama.cpp, 65K context, KV cache q4_0, flash attention.
+  - https://github.com/Shad107/openclaw-benchmark
+- Qwen 2.5 Coder 32B (Q4_K_M) wins at 9.3/10 — a model from October 2024 beats every 2025-2026 model
+- It also beats Claude Sonnet 4.5 API (8.6/10) on pure agent execution
+- Reasoning models (R1 Distill, QwQ, OLMo Think) make terrible agents — thinking ≠ doing
+  - Reasoning models can't agent. R1 Distill (4.0), OLMo Think (3.4), QwQ (7.3) — they waste tokens thinking when the agent needs to act.
+- MoE with small active params can't handle multi-step — fast but unreliable
+- Magistral Small 2509 is the dark horse — best multi-step (9/10), perfect French
+
+- another fucking bot, can we just ban for mentioning qwen2.5 at this point
 
 - ## [Local agent - real accomplishments : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1rgw4yk/local_agent_real_accomplishments/)
 - I’m doing complicated parsing of texts and information heavy texts and books. I regularly run into being blocked by copyright on online models so run a 8b qwen locally with a 14b for further refinement. I’m churning through 50 pages an hour at the moment in an amd 7900
