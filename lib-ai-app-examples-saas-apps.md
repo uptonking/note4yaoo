@@ -587,7 +587,17 @@ modified: 2025-02-21T17:17:42.225Z
   - Standalone OpenCode CLI plugins for Windows. Ported from Anthropic's knowledge-work-plugins.
   - [Coworke Plugins wiped out 100 billion from SaaS. I made for opencode. : r/opencodeCLI _202603](https://www.reddit.com/r/opencodeCLI/comments/1rhrbgg/coworke_plugins_wiped_out_100_billion_from_saas_i/)
 
-## computer-use
+## manus/openclaw/computer-use
+
+- https://github.com/openclaw/openclaw /273kStar/MIT/202603/ts
+  - https://openclaw.ai/
+  - https://docs.openclaw.ai/start/getting-started
+  - OpenClaw is a personal AI assistant you run on your own devices. It answers you on the channels you already use (WhatsApp, Telegram, Slack, Discord, Google Chat, Signal, iMessage...)
+  - It can speak and listen on macOS/iOS/Android, and can render a live Canvas you control. The Gateway is just the control plane — the product is the assistant.
+
+- https://github.com/remorses/kimaki /577Star/MIT/202603/ts
+  - https://kimaki.xyz/
+  - Kimaki is a Discord bot that lets you control OpenCode coding sessions from Discord. Send a message in a Discord channel → an AI agent edits code on your machine.
 
 - https://github.com/Bigchx/NestOS /MIT/202602/js
   - NestOS 运行在具备完整 Linux 图形桌面（GUI）的服务器中，既能像人一样操作浏览器（点击、输入、过验证），也能像运维一样调度底层环境完成部署与交付。

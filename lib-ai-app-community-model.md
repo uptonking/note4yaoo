@@ -1169,7 +1169,13 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
-- ## 
+- ## [Small LLMs seem to have a hard time following conversations : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1rn7362/small_llms_seem_to_have_a_hard_time_following/)
+- 4B quants might be the bigger culprit(问题的起因; 罪犯) than the model size here. Especially if the KV cache is quantized as well.
+
+- Use a structured prompt. Instead of a raw copy-paste, wrap the chat in XML tags. It helps the degraded 4-bit attention mechanism focus on the actual logic
+
+- Another option is write a quick python script to break conversation into chunks and clear context between each chunk. Small model focuses on one chunk at a time and writes a short “compressed” summary for itself. Then the final instantiation of the model just looks at all the summaries.
+  - Or alternatively you could use something like GPT-5-mini over API (if conversation not sensitive) to do the original large context summarization then pass it off to a smaller local model. 5 mini is so cheap you would have to purposely trying to run up your bill to be surprised. I use it for OpenClaw and end up paying a few bucks a month typically.
 
 - ## [3 weeks of running qwen2.5:14b in an agentic loop - context management is where everything breaks : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1rcdicv/3_weeks_of_running_qwen2514b_in_an_agentic_loop/)
   - I've been running qwen2.5:14b locally for about 3 weeks as part of an automation pipeline - not chatting with it, but using it to actually do things: read files, make decisions, call tools, write outputs. The hardware part worked fine. What I completely underestimated was context management.

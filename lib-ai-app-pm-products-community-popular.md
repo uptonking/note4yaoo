@@ -143,7 +143,146 @@ modified: 2026-02-20T17:36:40.796Z
 
 - Problem of SaaS is not cloning. Their problem is that now I do not need many SaaS at all. I can just build things for myself or as internal tools for the company way cheaper than it was before
   - The reason people pay for SaaS is not just because of the effort of development
+# discuss-ai-pm-computer-use/openclaw
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🤔 为什么Manus的云端形态都没火成这样, 而openclaw这种本地部署这么复杂的项目火了
+- https://x.com/yangyi/status/2029864493296275625
+- 云端让你把文件搬过去，本地直接活在你的文件系统里，我觉得摩擦差异比功能差异更致命。
+  - 这也是为什么我做牛马ai做本地化而不是云
+- 本地部署的ai模型和硬件setup怎么做的?
+
+- 我觉得这个才是原因，manus收费太贵，openclaw本地部署大家都觉得能用低价的模型代替
+- 那低价的要能用, 他们干啥非得要高级的
+  - 对对，我就是这个意思，适合普通老百姓的一定是低消费的，不一定是最好的
+- 对对，实在用不起claude、gpt就换成deepseek v3.2、minimax2.5，或者再差的stepflash3.5、qwen3，能解决实际场景问题才是人民的好AI哈哈，豆包不就是个例子
+
+- 我发现大家都配置不上api, 所以可能得需要做一些低价试用包了
+
+- 最大不同在交互创新。它接入了电报、飞书这样的聊天窗口，用户早习惯聊天窗口是一个“人”的存在，聊天软件里的龙虾给人心理上的突破感。
+  - 其次 后端权限全部对它开发，它能像病毒在你电脑里肆意游走，你在聊天窗口吩咐的事它是真能干
+  - 相比这点，云端的manus就像个无能的丈夫，只能嘴上输出，没法真干
+- Manus可以选择开放什么，比较安全，像个有能的丈夫， openclaw像黄毛，不管你开不开放反正我开放就行
+
+- 很明显是manus没有办法给各方充分分配利益，大家都玩不起来。openclaw部署的模式，养活了mac mini，虚拟机厂商，个人装机者，让多方都觉得有利益，大家就用脚投票了。
+
+- 你愿意把你的密码 信用卡交给这些人吗? 如果无法处理这些敏感数据, 云端Agent 就说空中楼阁, 在各种厂干过的人都知道, 他们可以随意看你的对话记录
+
+- 我感觉 Claude Code 还有 OpenClaw 还没出技术圈，或者说还在泛技术圈这个范围吧，基本上还没到普通用户手里。
+  - 技术圈用户的 ROI 思维非常高，他们觉得一个东西如果不够开源、不够好用、不够有选择，那就不太行。
+- 至于你说的云端模式，其实很多都是云端模式：
+1. Claude Code 早期出了云端 CLI，你可以在它的服务器中运行 Claude Code。
+2. CodeX 一开始也是这样推出的。
+3. Perplexity 也有它的 Computer 模式。
+- 这些模式都是存在的，也有一定的用户量。但目前最火爆的肯定还是 OpenClaw 这种，它最核心的优势在于自主性太强了。它比Manus 好的地方在于：
+  - 不需要充值Manus（订阅费）。
+  - 用户可以自己出成本（按需支付）。
+  - 自主性极强，很多事情都能做成，当然也涉及卖 Token 的逻辑。
+
+- manus永远是别人的 openclaw 大家觉得是自己的
+
+- 跟 IM 打通、自我创建 skill 的能力，让它活了。个人可以自由的添加各种skill，打造适合自己工作、生活的个性化agent工具，并且用移动IM就能操控一切，获得的成就感是云端商业agent不能比拟的。
+
+- 两个我都用了。1，Manus太贵，OpenClaw我可以用原本Codex的额度，钱省了不少；2，OpenClaw能扩展连接本地电脑数据和软件，能做的事情一下子就比Manus多了
+
+- 首先因为进门是免费的，to C 引流肯定还是要领鸡蛋
+  - 其次因为天生带梗，安全做的差、代码写的烂，这些都不是事
+
+- 因为原来模型能力不行，openclaw 正好卡在这个临界点上诞生了
+
+- Agent本地运行才是未来大势所趋，Qwen3.5的发展趋势看出本地部署大模型，跑agent才是未来大势。优势：1 低成本 2 隐私
+
+- 8gb内存的云端vps，一年的费用都可以买两台16gb内存的mac mini了
+
+- 通用agent本来就应该本地化，它的执行效果可以直接通过改变本机环境来体现而不受限于网页界面交互。大多数有趣的应用也只适合本地跑呀，比如让agent帮你玩耍最新的各种AI模型。
+
+- 原来用cc，一个痛点是离开电脑时用不了，试了happy，也试了让cc模仿happy写了简单的转发，体验总是不好，龙虾很好的解决了这个问题，手机可以随时操作电脑上的agent，想到什么需要agent的事情，随时拿出手机就可以办。coding plan完全没有闲着。现在的痛点又变成了，国产模型太拉，想用好模型，
+
+- https://x.com/0xLoki_Zeng/status/2030123523335950680
+- 云端文件的可操作性、可编辑性、可定制化都太低了。Openclaw通用太多。
+- 其实就是manus成本太高了
+
+- ## [Openclaw是不是纯属炒作？ ](https://linux.do/t/topic/1704768)
+  - 感觉是大模型厂商的联合营销，因为现在股市ai见顶了，融资断裂，通过这个骗用户充值token。实际使用就是一个玩具没任何实际作用。自己二次开发claude code也能实现一模一样的功能。
+
+- 你见过什么纯炒作的项目挂着5K+的issue，几K PR，每隔一两天进化版本，每天几百个commit。人类历史上前无古人。
+
+- 被你发现了，个人用户本来是很少量使用token的，这个openclaw正好就是一个让个人用户付费token的最好契机
+
+- 你自己动动手就能干的事，然后非要用这东西，其实实际上啥也干不了，基本上各家也封的死死的，比如什么领劵、什么操作，你在服务器上怎么干？我当时最大的想法是拿来远程写代码，这个可能是唯一有点用的地方了
+  - 远程写代码拿个有web的ssh client不就行了
+
+- ## [想请问下为什么openclaw火了而opencode没火 _202603](https://linux.do/t/topic/1705856)
+  - 似乎两者都可以skill，操控命令行，接入其它app，甚至角色扮演感觉都没问题
+  - 我个人基本上不用他编码功能而是自动化运维
+
+- 两者的共同点只有AI驱动且能接入skills、MCP等以及操作文件的功能ww，
+  - 像心跳、接入平台(discord、telegram)、主动推送都是opencode做不到的，或者说是没有特别去包装成开箱即用的，让小白来用就是一脸蒙
+  - 倒不如说kilo code跟roo code同样都是编程cli工具，为什么opencode能比他们火十倍呢
+  - 能让openclaw去操作opencode，所以openclaw比较火是应该的
+
+- opencode挺火的啊，不过仅编程领域，自然比不上openclaw
+
+- opencode偏编程 龙虾适用性广 市场需求不同吧
+
+- 一般管这玩意叫出圈一但出圈，外部流量自然会把你捧起来, 很明显龙虾这个赛道还没第二个出圈的，流量自然都流向它
+
+- opencode在编程圈基本都知道啊，只不过openclaw有人营销，程序员一般都比较穷:joy: 都是口口相传
+
+- 个人理解，关键是低成本入口，我看的大多数教程，安装openclaw 和接入飞书是必须的部分，如果没有一个低成本的入口，每次都要开网页估计也没办法炒起来。话又说回来，微信挺尴尬的
+
+- 龙虾是宣传可以让AI操作电脑，并且可以通过社交软件随时随地让它干活。而opencode是开源替代cli，两者一开始定位不同。可能龙虾的“自主操作电脑”更有流量，加上之前的龙虾社区，这便可以产生更多的话题，自然就火起来了
+
+- opencode定位是编程工具，openclaw定位是个人助理。openclaw会记得帮我安装过哪些东西，有哪些东西可以调用，我手机上就可以指挥它操作我的服务器（opencode可能也可以，但我不清楚），比如说我最近要用ai生成5分钟的视频，我直接发需求给openclaw（有grok2api），过一会完成了就把视频发我了。opencode我没试过，更多的还是把opencode当成cc类的编程工具在用。
+
+- ## [How to allow Openclaw to read files content? ](https://www.answeroverflow.com/m/1471366269742747892)
+  - Below is openclaw replied to me: I don't have direct filesystem access in this session to read local files. I sent a request to try to access it via another session, but it timed out.
+- directly — that path is on your machine, but the bot/session you’re talking to is running on someone else’s Gateway host. So it has no filesystem access to your laptop/server for security + architecture reasons.
+  - If you run your own Gateway locally (same machine as the file) Then the agent can read local files (via the Gateway tools) — easiest path is usually: - copy/move the file into your `workspace` and ask the agent to read it from there
+  - If your Gateway is remote (VPS) but you want access to your computer’s files Pair your computer as a node. Then the Gateway can call node tools on your machine and you can cat /inspect files through that node.
+  - If you’re using Docker sandboxing and the file is “outside the sandbox” Bind-mount the folder into the sandbox
+- if i save files in `workspace` folder, how do i instruct openclaw to read it
+  - If the file is on the same machine as your Gateway and inside the configured workspace, you can just tell the assistant the path and what you want done.
+  - Read documents/Web_search and QMD knowledge.txt and summarize it.
+
+- ## [Openclaw with Small local model : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1r24264/openclaw_with_small_local_model/)
+- Even large hosted models struggle with agentic/tool-calling programs like Openclaw. The smallest local I've seen that can do somewhat reliable tool calling is IBM's Granite models. In the 14B range Qwen is OK. I've heard Mistral models also work but I haven't had much luck with it myself. 30B+ models are what I stick to for tool-calling but you're going to need 24GB VRAM for good speeds.
+
+- I tried to run some, the gemma3:4b run great on my GPU with 6GBvram (for text/vision) but when tried to use openclaw I got the output that the model does not support tools. I did tried qwen3-v1:8b and it did respond in 4 minutes.
+
+- I have an Nvidia with 8GB and use gemma3:12b as the model, which just fits into the memory. As far as I understand, the model cannot handle tooling or agents, but I have a small agent script running (not Openclaw) that I can communicate with via Telegram and that performs tasks. 
+
+- Qwen2.5-7B-Instruct-Q4_K_M.gguf is working to run everything that a higher level model has setup. I trust it with heartbeat and corn jobs and other items. The Qwen2.5-1.5b-instruct-q4_k_m.gguf responds but doesnt seem smart enough for most tasks. I experimenting with it to run heartbeat and low level tasks.
+
+- ### [My experience with local models for Openclaw : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1qwm3wk/my_experience_with_local_models_for_openclaw/)
+
+- ## [你们都用 OpenClaw（Moltbot、ClawdBot）实现了什么有价值的功能？ - 知乎](https://www.zhihu.com/question/1999842555244860056)
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
 # discuss-ai-pm-cowork/office
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 
@@ -281,58 +420,6 @@ modified: 2026-02-20T17:36:40.796Z
 - ## 
 
 - ## 
-
-- ## 为什么Manus的云端形态都没火成这样, 而openclaw这种本地部署这么复杂的项目火了
-- https://x.com/yangyi/status/2029864493296275625
-- 云端让你把文件搬过去，本地直接活在你的文件系统里，我觉得摩擦差异比功能差异更致命。
-  - 这也是为什么我做牛马ai做本地化而不是云
-- 本地部署的ai模型和硬件setup怎么做的?
-
-- 我觉得这个才是原因，manus收费太贵，openclaw本地部署大家都觉得能用低价的模型代替
-- 那低价的要能用, 他们干啥非得要高级的
-  - 对对，我就是这个意思，适合普通老百姓的一定是低消费的，不一定是最好的
-- 对对，实在用不起claude、gpt就换成deepseek v3.2、minimax2.5，或者再差的stepflash3.5、qwen3，能解决实际场景问题才是人民的好AI哈哈，豆包不就是个例子
-
-- 我发现大家都配置不上api, 所以可能得需要做一些低价试用包了
-
-- 最大不同在交互创新。它接入了电报、飞书这样的聊天窗口，用户早习惯聊天窗口是一个“人”的存在，聊天软件里的龙虾给人心理上的突破感。
-  - 其次 后端权限全部对它开发，它能像病毒在你电脑里肆意游走，你在聊天窗口吩咐的事它是真能干
-  - 相比这点，云端的manus就像个无能的丈夫，只能嘴上输出，没法真干
-- Manus可以选择开放什么，比较安全，像个有能的丈夫， openclaw像黄毛，不管你开不开放反正我开放就行
-
-- 很明显是manus没有办法给各方充分分配利益，大家都玩不起来。openclaw部署的模式，养活了mac mini，虚拟机厂商，个人装机者，让多方都觉得有利益，大家就用脚投票了。
-
-- 你愿意把你的密码 信用卡交给这些人吗? 如果无法处理这些敏感数据, 云端Agent 就说空中楼阁, 在各种厂干过的人都知道, 他们可以随意看你的对话记录
-
-- 我感觉 Claude Code 还有 OpenClaw 还没出技术圈，或者说还在泛技术圈这个范围吧，基本上还没到普通用户手里。
-  - 技术圈用户的 ROI 思维非常高，他们觉得一个东西如果不够开源、不够好用、不够有选择，那就不太行。
-- 至于你说的云端模式，其实很多都是云端模式：
-1. Claude Code 早期出了云端 CLI，你可以在它的服务器中运行 Claude Code。
-2. CodeX 一开始也是这样推出的。
-3. Perplexity 也有它的 Computer 模式。
-- 这些模式都是存在的，也有一定的用户量。但目前最火爆的肯定还是 OpenClaw 这种，它最核心的优势在于自主性太强了。它比Manus 好的地方在于：
-  - 不需要充值Manus（订阅费）。
-  - 用户可以自己出成本（按需支付）。
-  - 自主性极强，很多事情都能做成，当然也涉及卖 Token 的逻辑。
-
-- manus永远是别人的 openclaw 大家觉得是自己的
-
-- 跟 IM 打通、自我创建 skill 的能力，让它活了。个人可以自由的添加各种skill，打造适合自己工作、生活的个性化agent工具，并且用移动IM就能操控一切，获得的成就感是云端商业agent不能比拟的。
-
-- 两个我都用了。1，Manus太贵，OpenClaw我可以用原本Codex的额度，钱省了不少；2，OpenClaw能扩展连接本地电脑数据和软件，能做的事情一下子就比Manus多了
-
-- 首先因为进门是免费的，to C 引流肯定还是要领鸡蛋
-  - 其次因为天生带梗，安全做的差、代码写的烂，这些都不是事
-
-- 因为原来模型能力不行，openclaw 正好卡在这个临界点上诞生了
-
-- Agent本地运行才是未来大势所趋，Qwen3.5的发展趋势看出本地部署大模型，跑agent才是未来大势。优势：1 低成本 2 隐私
-
-- 8gb内存的云端vps，一年的费用都可以买两台16gb内存的mac mini了
-
-- 通用agent本来就应该本地化，它的执行效果可以直接通过改变本机环境来体现而不受限于网页界面交互。大多数有趣的应用也只适合本地跑呀，比如让agent帮你玩耍最新的各种AI模型。
-
-- 原来用cc，一个痛点是离开电脑时用不了，试了happy，也试了让cc模仿happy写了简单的转发，体验总是不好，龙虾很好的解决了这个问题，手机可以随时操作电脑上的agent，想到什么需要agent的事情，随时拿出手机就可以办。coding plan完全没有闲着。现在的痛点又变成了，国产模型太拉，想用好模型，，，
 
 - ## 国内大厂争先恐后地养龙虾还不如把自己的主业务写成 cli。
 - https://x.com/xicilion/status/2029983875552923901

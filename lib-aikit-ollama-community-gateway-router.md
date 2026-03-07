@@ -57,6 +57,20 @@ modified: 2026-01-21T04:22:29.956Z
 - 即便如此也挡不住官方降智
 
 - 只要是前端，基本上都可以逆向出来，只是难与不难而已
+
+- https://x.com/geniusvczh/status/2030083754509959545
+  - 不太行，因为AI说话是streaming，现在的签名算法不可能做到一边stream一边签，因为这是一种安全上的缺陷
+- 最后加个 chunk 带上签名也也行呀
+
+- streaming 输出是按 chunks 来，每个 chunk 签个名似乎也可以。
+
+- chacha20不就行了。能解密出来的一定是用密钥签出来的
+  - prefix不变第二天就被攻破了
+- 有ecdh算法保证
+
+- 可以签，   rsa 非对称加密 典型问题。但是都是中间站了， 那中间人攻击 ，官方说你咋不直接买我订阅 或者 买token
+
+- 可以在模型生成token的那个层做标记，有对应的论文
 # discuss-donehub/one-api-news
 - ## 
 
@@ -369,7 +383,14 @@ modified: 2026-01-21T04:22:29.956Z
 
 - ## 
 
-- ## 
+- ## [Mistral API quota and rate limits pools analysis for Free Tier plan (20.02.2026) : r/MistralAI](https://www.reddit.com/r/MistralAI/comments/1rc8rwf/mistral_api_quota_and_rate_limits_pools_analysis/)
+  - The goal of research is to map which models share quota pools and rate limits on the Mistral Free Tier, and document the actual limits returned via response headers.
+  - Important note: On the Mistral Free Tier, there is a global rate limit of 1 request per second per API key, applicable to all models regardless of per-minute quotas.
+  - Quota limits are not per-model — they are shared across groups of models. All aliases consume from the same pool as their canonical model.
+  - Pool 1: Standard Limits: 50, 000 tokens/min | 4, 000, 000 tokens/month
+  - Pool 2: mistral-large-2411 (special) Limits: 600, 000 tokens/5-min | 60 req/min | 200, 000, 000, 000 tokens/month
+  - Pool 3: mistral-medium-2508 Limits: 375, 000 tokens/min | 25 req/min | no monthly limit
+  - Pool 7: devstral-2512 Limits: 1, 000, 000 tokens/min | 50 req/min | 10, 000, 000 tokens/month
 
 - ## [minimax m2.5的风到底怎么刮起来的？ ](https://linux.do/t/topic/1671843)
   - 使用体感甚至不如 k2.5 评分难道是对基准测试问题的特殊优化（拟合）来的？

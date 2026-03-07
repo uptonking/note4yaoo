@@ -308,6 +308,11 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-log
   - ?
 
+## 0307
+
+- 有没有什么在线大模型或本地大模型，说话或聊天的风格偏向于不正经的聊天，偏向于抬杠或毒舌，有没有一些热门的抬杠或毒舌模型？ 如果有，可以列出 huggingface url并给出简介
+  - 抬杠, 毒舌, 嘲讽, 阴阳
+
 ## 0302
 
 - 🤔 i want to use a sandbox for a agentic electron app. aws firecracker seems fast to start and use. is there any popular solution that uses firecracker ?  if i package it into electron, does it work on linux/macos/windows?

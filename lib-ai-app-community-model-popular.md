@@ -680,7 +680,9 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## [Qwen3.5 27B vs 35B Unsloth quants - LiveCodeBench Evaluation Results : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1rn2qlb/qwen35_27b_vs_35b_unsloth_quants_livecodebench/)
+  - 27B-IQ3_XXS outperforms 35B-IQ4_XS across all difficulty levels despite being a lower quant
+  - On average, 27B is ~3.2x better overall (34.8% vs 11.0%)
 
 - ## 🆚 [Qwen3.5-4B vs Qwen3-4B 2507 vs ChatGPT 4.1 nano; a tiny open-source model just lapped a paid OpenAI product. Again. Twice. : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1rjo325/qwen354b_vs_qwen34b_2507_vs_chatgpt_41_nano_a/)
   - My daily driver is an ablit version of Qwen3-4B 2507 Instruct (which was already strong). Qwen3-4 series are stupidly, stupidly good across all sizes, but my local infra keeps me in the 4B-9B range.

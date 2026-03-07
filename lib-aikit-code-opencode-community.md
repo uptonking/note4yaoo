@@ -14,7 +14,14 @@ modified: 2026-01-17T22:41:25.867Z
 
 - ## 
 
-- ## 
+- ## OpenCode's codebase is very high quality. Which is unusual for an app built with AI. This makes me curious how @thdxr uses AI to code. _202603
+- https://x.com/kianmckenn/status/2030087262239592690
+- @kitlangton has a good metaphor. it's like tending a garden. can let ai code grow but you have to aggressively clean up after it and be diligent about architecture and patterns. codebase is ok it will get better
+- https://x.com/thdxr/status/2018051250785272127
+  - now i can actually refactor everything when we find a better way of doing something
+  - before shitty code just lingered forever
+
+- spend more time weeding than planting these days. the ai output is fast but the cleanup compounds if you skip it for even a day
 
 - ## 🚀 [Kilo CLI 1.0 just launched - built on OpenCode as its open-source foundation : r/opencodeCLI _202602](https://www.reddit.com/r/opencodeCLI/comments/1qvo002/kilo_cli_10_just_launched_built_on_opencode_as/)
   - [Kilo CLI 1.0: Built for Kilo Speed _202602](https://blog.kilo.ai/p/kilo-cli)
@@ -31,7 +38,36 @@ modified: 2026-01-17T22:41:25.867Z
 
 - ## 
 
-- ## 
+- ## once we hit a bit more stability my goal is to have opencode running as a service(i mean running as an OS service on your machine
+)
+- https://x.com/thdxr/status/2030292138466939214
+  - so when you launch tui, web, desktop it's all just connecting to a same process
+  - if you can assume there's an agent always running ready for work, a lot of interesting things can be built on top
+
+- doesnt it work like that already with the server?
+  - yeah you can set it up that way i just meant having it work like this out of the box (ala docker)
+- right now you have to create a different server for every repository
+  - you actually don't have to do that - can run one and set `x-opencode-directory` as a header
+- oh with the launchd and stuff. that'd be cool
+
+- this will be much better for http://kimaki.xyz openclaw on top of opencode
+
+- Are you thinking there'd be a way for service process to have access to the environment on the client device? I would love it if opencode runs as a service on a server/cloud, but that as needed it could have access to MCPs/tools/files etc on my laptop.
+  - opencode 2.0 splits the server into a control plane and workers
+  - allows for interesting configurations - can run control plane in server but then add your laptop as a worker
+- Do you see this as personal server <> personal workers, or potentially something larger scale in future? Many companies are trying to figure out the right way to scale out remote agents and mostly building their own for internal use. The labs aren’t making self-hostable options
+- Vscode does this today with remote workspaces..we need in opencode for sure
+
+- Not a fan of my terminal process and agent process being the same. As agents gain more agency, their ability to work in the background is important, with several terminals concurrently communicating with a single agent process.
+  - If you want to check out my harness framework, it has a few proven use-cases for task planning and tool calls. The architecture is based on Anthropic's intializer-updater flow.
+
+- persistent daemon architecture is the key. cold starts kill agent workflows - you lose context every time. with an always-on process you get: filesystem watching, log monitoring, cron triggers, all hitting the same memory. no more spinning up new instances for every task.
+
+- the transition from a "session-based" tool to a persistent daemon architecture is where the real agentic power lives. 
+  - if the process is always running, it can handle asynchronous observers—it doesn't wait for your command; it watches the filesystem, monitors the logs, and prepares the fix before you even open the TUI. 
+  - by standardizing the communication layer between the service and the various frontends (Web, Desktop, TUI), you’re effectively building a local-first operating system for intent. persistence is the missing link in autonomous workflows.
+
+- the real gain isn't availability — it's continuity of context. an agent 'always ready for work' is only useful if it remembers what work means in this codebase, right now. persistence is harder than uptime.
 
 - ## we are bringing workspaces in as a first-class concept: agents will be able to run anywhere: local directory/container/worktree, remote sandbox, or anything. 
 - https://x.com/jlongster/status/2028616190004740366

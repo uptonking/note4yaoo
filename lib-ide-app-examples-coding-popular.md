@@ -1340,6 +1340,8 @@ modified: 2025-12-11T18:10:23.710Z
   - [feat(ccplugin): per-project collection isolation ](https://github.com/zilliztech/memsearch/pull/79)
     - Previously all projects shared the default memsearch_chunks collection, causing cross-project search leakage. 
     - Now each project directory gets a unique collection name derived from its absolute path.
+  - [File wathcer doesn't work on windows ](https://github.com/zilliztech/memsearch/issues/75)
+    - The issue was that asyncio.run() creates and closes a new event loop on every call, which breaks httpx's cached connections on the second file change. This has been fixed in PR #76 by using a persistent event loop for watcher callbacks.
   - 🍴 forks
   - https://github.com/pjgates/memsearch
     - feat: support MEMSEARCH_WATCH_PATHS env var for extra watch directories 

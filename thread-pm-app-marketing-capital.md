@@ -103,6 +103,27 @@ modified: 2023-10-14T12:11:39.039Z
 - 作为价值的主要创造者，软件公司小地主门，盈利的百分之三十成果直接上缴大地主。以知乎为例，知识付费知乎抽成百分之十，苹果百分之三十。另一种角度来讲，现在的状况是，只要知乎在苹果上虚拟服务上盈利，盈利的大头其实是苹果公司。小地主给大地主提供租金本身没问题，但现状是，大地主收费的机制不合理。凭借独有平台，采取不合理的收费机制，这何不为，大地主对于小地主的抢劫，更是直接对用户抢劫。况且，小地主是种树结果的人，大地主本身未对服务产生实质性帮助。
 
 - 你抽腾讯的钱，那叫抽成。你特么抽我用户的钱，算特么哪门子的抽成？这就是垄断的可怕之处。
+# discuss-vc-tips
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🤼 bun-founder: now that I’m no longer doing a startup and won’t for many years, some early stage startup fundraising advice:
+- https://x.com/jarredsumner/status/2030215444477673473
+  - don’t spend any time at all with investors until you’re ready. 
+  - tell them you’re too busy. do not meet with them. yes especially if an associate emails you 5 times
+  - how do you know you’re ready? it should be extremely obvious. because then you say that when you’re fundraising and that’s part of what makes them excited to put money in. if it’s not obvious you’re not ready
+- i wouldn’t suggest fundraising < $4m. we did $7m for bun’s seed round and it was probably too much - I don’t remember exact number but I think we spent like 20% of that by the series A.
+  - REALLY depends on the business, no?
+- having founder friends 2+ stages ahead of you who strongly believe in you is really great - sounding board + fundraising help. ideally someone you’ve known for years. this was @shravvmehtaa for me
+- you should spend like 2 weeks or less fundraising for a seed. pack your meetings with investors as close together as possible. don’t do a pre-seed. don’t do any accelerator other than (optionally) YC. respond to emails quickly.
+  - if the fundraise takes longer than 2 weeks you probably weren’t ready. When meeting with a big fund, if you don’t get a term sheet within 2 meetings + a partner meeting they’re wasting your time. If it’s a small fund or individual, it should be like 1-2 meetings
+
+- REALLY depends on the business, no?
+
+- Depends on product
 # discuss
 - ## 
 
