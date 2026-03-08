@@ -139,6 +139,8 @@ modified: 2024-01-04T06:53:04.003Z
 
 - couchapp
   - reimplement with wasm
+  - 🐛 cons
+    - 计算逻辑与存储层耦合
 
 - sync
   - rxdb-sync-protocol

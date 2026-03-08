@@ -12,7 +12,35 @@ modified: 2021-04-30T11:10:26.083Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## Programming language doesn’t matter until you need to:
+- https://x.com/JamesWard/status/2030081762685018285
+- have actual parallelism
+- scale horizontally
+- scale vertically
+- compile 1m LoC
+- incrementally compile 1m LOC
+- refactor without breaking anything
+- review a large diff
+- validate a change
+- detect and remove dead code
+- maintain backwards compatibility
+- get a large team working efficiently
+- onboard new hires
+- validate the security of a system
+- invent custom abstractions to reduce duplication
+- work around abstractions someone else invented
+- troubleshoot production issues at 2am
+- be operationally efficient
+- deploy on Friday
+- deploy 100 times a day
+- handle time & timezones correctly
+- handle currency correctly
+- eliminate null pointer exceptions
+- depend on libraries that are maintained & secure
+​​- produce something of more value than a tweet
+
+- Precise claim: language is neither necessary nor sufficient for architectural health at scale (setting aside performance). What is sufficient: pure functions, typed data, I/O at boundaries, flat composition, declarative equivalents. Violations of these practices are the most common, and usually decisive, cause of every failure on this list. The language is merely the medium in which those violations are expressed; it is not the root cause. Monday I publish the full argument, the book, and the ecosystem behind it.
+  - Math is the universal construct for truth. Eventually everything figures out that it is math. I’m just not sure where we are in that journey with software engineering.
 
 - ## 1 billion nested loop iterations
 - https://x.com/BenjDicken/status/1861072804239847914

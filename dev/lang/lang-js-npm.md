@@ -295,6 +295,15 @@ npm unlink
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🛢️ pnpm v11.0.0-alpha.13 is out! We continue to ship big improvements to v11. _202603
+- https://x.com/pnpmjs/status/2030600985484070922
+  - We use SQLite now for storing the content-addressable store index. It seems to be a bit faster sometimes.
+  - We have completely redesigned how global install and pnpx works. They will be faster and more deterministic. They will both use the global virtual store now. Installation with the global virtual store is much faster
+
 - ## [pnpm link on macOS broken · Issue · pnpm/pnpm _202502](https://github.com/pnpm/pnpm/issues/9066)
 - `pnpm link --global` links the package from the current working directory to the global package. Then you should be able to do `pnpm link <pkg name>` . Even using it with `--dir` .
   - Using `--global` together with `-C` won't work. --global changes the location to the global directory.

@@ -307,7 +307,92 @@ target/debug/limbo database.db
 
 - ## 
 
-- ## 
+- ## 🛢️📁 What if a codebase was actually stored in Postgres and agents directly modified files by reading/writing to the DB? 
+- https://x.com/samhogan/status/2030476849911050687
+  - Code velocity has increased 3-5x. This will undoubtedly continue. PR review has already become a bottleneck for high output teams. 
+  - Codebase checked-out on filesystem seems like a terrible primitive when you have 10-100-1000 agents writing code. 
+  - Code is now high velocity data and should be modeled at such. Bare minimum, we need write-level atomicity and better coordination across agents, better synchronization primitives for subscribing to codebase state changes and real-time time file-level code lint/fmt/review. 
+  - The current ~20 year old paradigm of git checkout/branch/push/pr/review/rebase ended Jan 2026. We need an entirely new foundational system for writing code if we’re really going to keep pace with scale laws.
+- A few folks pointed me to AgentFS, which is pretty close to what I'm imagining but implemented as a filesystem
+  - This isn’t technically a filesystem, its an object store with extra steps.
+
+- You mean like chunk the code files, generate embeddings, store as vectors in postgres and give the agent a tool call to make the vector search?
+  - Absolutely not. Store the full file content + metadata
+- So 1 file = 1 record. Agents get the code from the DB, each agent works on the same exact record in their own session, so every session has a unique state of the code
+
+- Found an interesting related blog [Git in Postgres _202602](https://nesbitt.io/2026/02/26/git-in-postgres.html)
+  - postgres triggers over commits could replace the whole linter-on-git-hooks approach. review doesn't scale linearly with output
+- Interestingly there's this other way around being developed too, building git like workflows for data: [Git for Data Applied _202602](https://motherduck.com/blog/git-for-data-part-2/)
+
+- I think Zed is working on DeltaDB for this use case.
+
+- My project https://github.com/openrundev/openrun does just that. OpenRun fetches code from git or your file system and loads to a SQLite or Postgres database. Files in database are deduplicated, across versions and also across apps
+  - [Using SQLite as Storage for Web Server Static Content – OpenRun - Internal Tools Deployment Platform](https://openrun.dev/blog/sqlite/)
+
+- Velocity with agents is a fallacy right now because orchestration overhead eats the gains. You can ship a lot more if you run agents serially and front-load verification. Building new infra for 1000 concurrent agents assumes the parallelism is worth it. The bottleneck is actually agent reliability and not git.
+  - Good summary! I just connectes Github Issues / Runners and Claude Code "Agents". My overall delivery speed dropped 50% compared to serialization!
+
+- the real bottleneck isn't git vs database—it's verification. more code velocity just means more bugs shipped faster. the teams winning are the ones treating verification as a first-class citizen, not an afterthought.
+  - verification first-class all day. ai tests catch what humans miss early
+
+- I don’t think this is the bottleneck. I mean, writing the correct code, merge conflicts, etc is still where we stall. Clone time isn’t the issue. I agree that PRs are going to be outmoded, but storage layer is an implementation detail, no?
+  - Got operations can change state
+
+- Noooo. You don’t want to do that. DBs are extremely inefficient for code storage. DBs do better when records are uniform. You want to think in terms of improving FS perf, better FS memutil. You should use DBs to store indexed data certainly.
+- It’s actually a horrible idea. You’re adding disassociated non-arbitrary context to arbitrary files. Why, yes, I want another management layer to refactor my db schema every time I move a file.
+- Just use filesystem snapshots on btrfs. A filesystem is a database for files
+
+- the bottleneck isn't just storage. it's knowing which agent touched what and when. git solved human coordination. agents need something that can handle 100x the write rate and actually tell you what changed without a 3 hour merge nightmare.
+
+- The main bottleneck isn’t text manipulation. It is the fact that coding agents manipulate raw source code. Each agent should work on a private copy of the AST and have a way to transactionally merge tree changes to main.
+
+- there is much we can do to speed up git operations without changing the backend completely. people are working on this :) also most agent tool calls (read, write, grep) would need to materialize the file on disk which is closer to a virtual file system setup
+  - It’s not about git operations per se it’s about the entire format. Code is largely ephemeral and should be treated as such. Agent tool calls can be mocked - a grep call could easily be a function call
+
+- Once FrankenSQLite ships a stable release it would be the ideal db to store the LSP parsed AST.
+
+- https://db9.ai/ an interesting try to combine pg and file system interface
+
+- Ya it’s interesting. I think also possible to end up with an underlying file system that tracks all changes
+  - Possibly but then you need to basically rebuild all the stuff you get for free with a database
+- I think you can actually do what you’re describing with agentfs pointed to Postgres backend. May need FUSE mount unless you’re swapping the file read/write tools to route through the api. And can wrap git too if you want it completely obscured from the agent maybe
+  - Yeah I think swapping the tools makes sense as a first attempt. Putting the full, realtime state in a single place seems like the right longterm approach. Maybe it’s a shared filesystem tho, probably easier. The downside is building all the synchronization/locking systems on top.
+- https://x.com/jarredsumner/status/2001580825322848703
+  - agentfs is very interesting. SQLite seems like a better upper fs for this I think one can probably get claude to do an updated and simpler port of fuse for macOS that exclusively supports FSKit as the backend & avoids the third-party dependency.
+- Thinking about this a bit more - shared filesystem is probably better. Or maybe even lower than that where you hook into syscalls for reads and writes or something
+  - That’s what the FUSE layers are doing here. Agentfs essentially created a shared filesystem backed by sqlite
+- Why are we reimplementing filesystems as databases? Agentic harnesses with rewind are here now. Filesystems with snapshotting do this now. ZFS, APFS... slightly more exotic options like NILFS2. This is a systems/infra layer problem with many solutions.
+
+- we're building this - event-sourced system of record for agents. Built on postgres with git-like layer. 
+  - You get zero-copy branches, schema is data, writes are immutable field-level facts, and every change is an event agents can trigger on. 
+
+- storing code in postgres sounds wild at first but the coordination problem with multiple agents is real. current git workflows were never designed for this
+
+- You said it yourself, the bottleneck is code reviews not Git. Why don’t you start by eliminating the code reviews first? Let us know how it goes.
+  - Git, idx and grep are bottlenecks but the important one is the Github PR experience with thousands of agentic PRs, verifying docs and diagrams, review and approval processes, merge conflicts, and ensuring safe outcomes. Proofs and outcomes.  We can generate any perspectives.
+
+- https://github.com/ProjectAI00/imi-agent /rust
+  - its not the filesystems that are the problem, its more so how work is being tracked and coordinated. 
+  - ai agents can ship code quite well, but they aren't aware of what has been shipped before or what goal you want to achieve with your product. 
+  - right now people try to solve this by adding context like md files or calling to external apps like slack or linear. but non of it has been designed for ai agents. mostly because it was designed for humans tracking work not agents. 
+  - to fix it, i gave every codebase its own local db so agents can read and write to the db by calling commands like change goals, tasks, decisions, logs etc. 
+  - tracking the work that agents shipped in chronological order on a task level for what needs to get done. 
+
+- The git paradigm is a human coordination protocol masquerading as a technical one. Branch/PR/review was designed for async human review cycles measured in hours. Agents operate in seconds. The mismatch is fundamental, not incidental. DB-backed code gets you write atomicity and query-driven context. The bigger unlock: agents could subscribe to change streams and react in real time rather than polling file state. What does conflict resolution look like when 100 agents write simultaneously?
+
+- This goes way beyond code though. Every SaaS product is just a database + business logic + a UI for humans. Agents don't need the UI, and the business logic is really just conditional actions on structured data.
+  - When everything lives in one data layer, you can give agents (or a powerful future model) weeks and months of decision context to reason over. Why we made this choice, what the tradeoffs were, what changed. You don't get that from APIs or MCP. That context has to be structural. Then you scope it with RBAC so marketing agents see brand guidelines but not legal's contract terms, sales agents get pipeline data but not engineering's security audit, etc. Same data layer, scoped access.
+  - Code, docs, contracts, specs, all of it collapses into one data layer. Everything else becomes a render step into a delivery mechanism.
+- "Your codebase lives as a model of it's semantic intent, you simply render it to your target language as needed."
+
+- Couchdb teased this idea a long time ago. You may want to see what aspects of it is relevant and what's different.
+
+- Rediscovering stored procedures and all the mess that comes it from scratch
+
+- https://x.com/jhleath/status/2030678388210643086
+  - this is completely wrong, and an artifact of there being a lack of work in file systems over the past 15 years.
+  - of course, POSIX needs an atomic "writeFile" api that works like S3 to make application development easier, but there's no need to write the world's tools to use... postgres(?) under the hood.
+  - if you have a code-based workflow that you think would be better served by postgres than a file system, reply below, and we'll ship it into the file system in our next release
 
 - ## I suspect Mastra's workspace abstraction will be huge for agents.
 - https://x.com/penberg/status/2026310251956326604

@@ -371,6 +371,12 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [I built a persistent AI assistant with Claude Code + Obsidian + QMD, and it’s starting to feel like a real long-term “second brain” : r/ClaudeCode _202603](https://www.reddit.com/r/ClaudeCode/comments/1rn38wh/i_built_a_persistent_ai_assistant_with_claude/)
+
 - ## [关于在自己的产品中集成RAG，检索法条之类的，佬们现阶段推荐啥，milvus还是Elasticsearch？ ](https://linux.do/t/topic/1698867)
   - 我在从es迁移到pg，es一打开就是内存大户，不知道是es的锅还是我向量索引的锅，milvus安装超级多问题
 

@@ -16,6 +16,12 @@ modified: 2024-01-23T02:52:23.932Z
 
 - features
   - ?
+# examples
+- https://github.com/slimhk45/awesome-obsidian-alternatives /md
+  - free and open-source Obsidian clones and the technologies used to build them.
+  - [I made an awesome list of FOSS apps compatible with the Obsidian vault format : r/PKMS](https://www.reddit.com/r/PKMS/comments/1ro31d0/i_made_an_awesome_list_of_foss_apps_compatible/)
+    - I’ve been tracking tools that are compatible with the Obsidian vault format.
+    - The idea is to identify FOSS applications that can work with the same vault structure so our notes stay truly portable and future-proof.
 # examples-plugins
 - https://github.com/tmcw/obsidian-freeform /MIT/202405/js
   - Obsidian freeform plugin. This lets you write arbitrary JavaScript, including importing ESM modules, injecting styles, and much more

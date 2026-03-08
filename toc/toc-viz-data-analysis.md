@@ -164,6 +164,13 @@ modified: 2021-05-23T18:45:59.139Z
   - 依托大模型自然语言理解与 SQL 生成能力，结合 RAG 技术，实现高质量 Text-to-SQL 转换
   - 易于集成：支持多种集成方式，提供 Web 嵌入、弹窗嵌入、MCP 调用等能力；能够快速嵌入到 n8n、Dify、MaxKB、DataEase 等应用
 
+- https://github.com/wagner-niklas/Alfred /MIT/202603/ts
+  - An open, inspectable AI data assistant for working with Agent Skills, semantic knowledge graphs and structured domain data.
+  - https://x.com/QingQ77/status/2030636653623013456
+    - 一个开源 AI Data Assistant，核心不是“再做一个会聊天的文本框”，而是把 Agent Skills、语义知识图谱、结构化数据查询放到同一个可检查、可扩展的系统里。
+    - 把知识图谱、Agent Skills 和结构化数据查询揉进同一套交互里的开源数据助手。
+    - 它主要面向想做企业数据问答、Text-to-SQL、知识图谱辅助分析的团队或开发者，尤其适合那些不想把数据助手完全交给黑盒 SaaS 的人。
+
 - https://github.com/Cyronlee/chat-database-agent /202601/ts
   - A Next.js application for interacting with databases using natural language. 
   - Chat with your database using natural language queries powered by AI.

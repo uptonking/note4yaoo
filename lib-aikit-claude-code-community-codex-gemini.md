@@ -222,7 +222,16 @@ modified: 2025-12-18T12:27:14.982Z
 
 - ## 
 
-- ## 
+- ## [Why is there so little discussion about the oh-my-opencode plugin? : r/opencodeCLI _202603](https://www.reddit.com/r/opencodeCLI/comments/1ro6xwu/why_is_there_so_little_discussion_about_the/)
+- It's one of the most bloated garbage plugins I've ever used. I honestly can't understand why it has so many stars. It's also way too opinionated.
+  - I would also challenge your assumption about star count reflecting actual usage.
+  - It's riding on the popularity of the "oh-my-x" namespace without adding any real value.
+
+- Too overkill, too bloated, 50K tokens per request if you don't setup it very carefully. But there is a very nice slim version forked from it (https://github.com/alvinunreal/oh-my-opencode-slim), to which I am a contributor myself
+
+- There was a time I recommended it. But it has gotten carried away. Too bloated. Too many tokens used. Too much time required to finish
+
+- It’s garbage! Uses a lot of tokens without giving any real value. I get better results using plan mode with a detailed plan
 
 - ## [分享一个拿opencode干非coding活的思路(DIY cowork) ](https://linux.do/t/topic/1534786)
   - 自己平时除了coding还有一些杂活，尤其涉及到一些文件材料台账的收集、准备、处理。因此这段时间折腾了下，拿opencode自己跑出了一套对自己而言还算可以的流程，在这里给大家分享下。

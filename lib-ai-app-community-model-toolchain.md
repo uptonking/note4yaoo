@@ -1072,6 +1072,23 @@ PP Speed: Q3 GGUF: 50 t/s
 - Transformers is going to be running the original, unmodified model; it was trained, tested, etc for this experience. You're getting the purest experience.
   - GGUF is a conversion to make it more compatible for the rest of us. The way inferencing occurs, there is a possibility of differences between gguf and the original intended experience, and also a possibility of speed differences as well.
   - ggufs are VERY popular amongst individual users and runners, and folks with limited/specific hardware. But if you're serving to other users, and you have the base hardware expected for Transformers, then you're probably doing that.
+# discuss-prompt-processing
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [(Llama.cpp) In case people are struggling with prompt processing on larger models like Qwen 27B, here's what helped me out : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rnrxsv/llamacpp_in_case_people_are_struggling_with/)
+  - TLDR: I put the --ubatch-size to my GPU's L3 cache is (in MB).
+  - My GPU is 9070xt, and when I put it to --ubatch-size 64 (as the GPU has 64MB of L3 cache) my prompt processing jumped in speed where it was actually usable for Claude code invocation.
+
+- The batch size is in tokens so I don't understand what the connection to the L3 cache size is.
+  - Ya this is not a very helpful post
+
+- Increasing ubatch increases overall VRAM usage, which can cause your performance to drop off if you start overflowing into RAM.
 # discuss-vllm
 
 ```shell

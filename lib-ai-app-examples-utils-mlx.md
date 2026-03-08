@@ -557,6 +557,13 @@ modified: 2025-11-01T10:54:26.044Z
   - We replace naive model scanning with deep AST analysis and cryptographic signing.
   - [I need a feedback about an open-source CLI that scan AI models (Pickle, PyTorch, GGUF) for malware, verify HF hashes, and check licenses : r/LocalLLM _202601](https://www.reddit.com/r/LocalLLM/comments/1qcmc9v/i_need_a_feedback_about_an_opensource_cli_that/)
     - I've created a new CLI tool to secure AI pipelines. It scans models (Pickle, PyTorch, GGUF) for malware using stack emulation, verifies file integrity against the Hugging Face registry, and detects restrictive licenses (like CC-BY-NC). It also integrates with Sigstore for container signing.
+# mlx-benchmark
+- https://github.com/jundot/omlx /apache2/202603/python
+  - https://omlx.ai/
+  - https://omlx.ai/benchmarks
+  - LLM inference server with continuous batching & SSD caching for Apple Silicon — managed from the macOS menu bar
+  - Continuous batching and tiered KV caching, managed directly from your menu bar.
+  - [Built oMLX.ai/benchmarks - One place to compare Apple Silicon inference across chips and models : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1ro646t/built_omlxaibenchmarks_one_place_to_compare_apple/)
 # more
 - https://github.com/intel/ipex-llm /apache2/202510/python/inactive
   - an LLM acceleration library for Intel GPU (e.g., local PC with iGPU, discrete GPU such as Arc, Flex and Max), NPU and CPU

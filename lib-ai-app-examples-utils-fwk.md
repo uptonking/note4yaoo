@@ -644,6 +644,23 @@ modified: 2025-02-21T18:20:42.624Z
   - AgentFS Specification - SQLite-based agent filesystem specification.
   - [pg-fs: Postgres backed filesystem for AI Agents : r/VercelAISDK](https://www.reddit.com/r/VercelAISDK/comments/1qzbfcv/pgfs_postgres_backed_filesystem_for_ai_agents/)
 
+- https://github.com/openrundev/openrun /808Star/apache2/202603/go
+  - https://openrun.dev/
+  - App deployment simplified. 
+  - Open source alternative to Google Cloud Run and AWS App Runner. 
+  - Easily deploy internal tools, on a single node with Docker/Podman or onto a Kubernetes cluster.
+  - OpenRun makes it easy to declaratively deploy containerized web apps. OpenRun can deploy apps on a single-node or onto a Kubernetes cluster. 
+  - OpenRun apps are deployed directly from the git repo, no build server required. OpenRun scales idles apps down to zero and supports atomic updates across multiple apps.
+  - Create and manage apps declaratively, through GitOps
+  - RBAC for admin operation and for app access
+  - https://x.com/ajay_kidave/status/2030506060440862905
+    - OpenRun fetches code from git or your file system and loads to a SQLite or Postgres database. Files in database are deduplicated, across versions and also across apps
+  - [Using SQLite as Storage for Web Server Static Content _202410](https://openrun.dev/blog/sqlite/)
+    - OpenRun is built to serve web applications, primarily for internal tools. OpenRun provides functionality usually handled separately by a web server and an application server.
+    - The app metadata obviously made sense to store in a database, since apps are created dynamically. The app data (static files, app code, config files etc) is usually stored on the file system by most web servers.
+    - For OpenRun, the decision was made to use SQLite for app files storage instead of using the file system. The reasoning was mainly to be able to do atomic version changes. When updating an app, since there could be lots of files being updated, using a database would allow all changes to be done atomically in a transaction. This would prevent broken web pages from being served during a version change.
+    - OpenRun uploads all files to the SQLite database during app creation and updates. Files are uploaded from GitHub or from local disk. Only for development mode, the local file system is used.
+
 - https://github.com/IceWhaleTech/ToolFS /MIT/202601/go
   - A FUSE virtual filesystem for AI Agents, integrating memory, RAG & local data access with flexible MCP/tool chaining and a scalable plugin system
   - ToolFS is a specialized virtual filesystem framework designed for Large Language Model (LLM) agents. It unifies disparate interfaces—files, persistent memory, semantic search (RAG), and code execution (WASM skills)—into a single, POSIX-compliant /toolfs namespace.

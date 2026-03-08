@@ -613,6 +613,13 @@ modified: 2025-02-21T17:17:42.225Z
 
 ## office
 
+- https://github.com/zhu1090093659/minister /apache2/202603/ts
+  - 把 Claude Code 塞进飞书，给你的团队加一个全能同事。
+  - 丞相是一个基于 Claude Code 的飞书 AI 助手框架，为企业团队打造。它不是又一个聊天机器人——它是一个住在飞书里的同事，能直接帮你发消息、建任务、写文档、排日程、操作多维表格，说完就办，不用你再动手。
+  - 为每位同事维护专属记忆。你说过"我的周报喜欢分三段写"，它就记住了，下次直接照做。张三的习惯是张三的，李四的偏好是李四的，互不干扰。会话断了、服务重启了，记忆都还在。
+  - 底层，丞相通过 MCP 协议将飞书 API 暴露给 Claude Code，让 AI 拥有真正的执行力而不只是生成文本。整个项目用 TypeScript 写成，Bun 驱动，Docker 一键部署。
+  - [【开源】“丞相“——企业版OpenClaw _202603](https://linux.do/t/topic/1703072)
+
 - https://github.com/googleworkspace/cli /MIT/202603/rust
   - This is a very well implemented CLI. It's so thorough. It dynamically registers commands, it's designed for a browser-wielding agent to automate the setup steps, it can start a MCP daemon…
   - https://x.com/addyosmani/status/2029372736267805081
@@ -653,6 +660,13 @@ modified: 2025-02-21T17:17:42.225Z
   - 云端同步 - 可选的 Supabase 云端存储，多设备同步
   - Tauri 打包，体积小（~50MB），启动快（<1s）
   - [【开源分享】为实施人员打造的轻量级 AI 工具，专注文档生成、演示准备和知识管理 _202603](https://linux.do/t/topic/1681661)
+
+- https://github.com/hewliyang/office-agents /MIT/202603/ts
+  - Office Agents is a monorepo of Microsoft Office Add-ins with integrated AI chat panels. Each add-in connects to major LLM providers using your own credentials (BYOK) and can read/write documents through built-in tools, a sandboxed shell, and a virtual filesystem.
+  - https://x.com/hewliyang/status/2030648851603087392
+    - i've also renamed the open-excel repo into office-agents.
+    - the SDK, which contains the agent loop, IndexedDB storage logic, etc is published to NPM. so you can build your own plugins.
+    - fwiw, powerpoint is only ~2.5k LoC excluding the system prompt and the officejs .d.ts file
 
 - https://github.com/Prismer-AI/Prismer /BSL/202601/python/ts
   - https://paper.prismer.ai/

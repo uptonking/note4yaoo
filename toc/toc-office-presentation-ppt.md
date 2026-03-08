@@ -564,6 +564,15 @@ modified: 2021-04-30T20:14:17.669Z
     - 效果很差，还是不要本地了，改了代码用的qwen image实现的效果，如下
   - [大香蕉直出PPT底图和文字 ](https://linux.do/t/topic/1523689)
 
+- https://github.com/BIT-DataLab/Edit-Banana /3.1kStar/AGPL/202603/python
+  - https://editbanana.anxin6.cn/
+  - A framework for converting statistical formats into editable.
+  - Powered by SAM 3 and multimodal large models, it enables high-fidelity reconstruction that preserves the original diagram details and logical relationships.
+  - https://x.com/berryxia/status/2030647797586993304
+    - 把AI生成的死图、流程图、架构图、PDF统计图、公式图，一键秒变完全可编辑的 DrawIO / SVG / PPTX
+    - 使用SAM3精准分割 + 本地OCR + 多模态LLM，颜色、箭头、层级、LaTeX公式全1:1还原，随便拖拽改样式！
+    - 看着挺唬人，其实还是在给落后的工作流打补丁。 SAM3+本地OCR+多模态，一套重型基建砸下去，就为了逆向还原一张“死图”。 真正的 Agent 时代，大脑输出的第一步就该是底层结构化数据和纯净资产。 先让AI拉一坨扁平的死像素，再费劲巴拉用另一套AI去逆向还原，纯属脱裤子放屁。 在本地跑跑Demo骗两千个Star确实香。 等真上了生产环境，这套拼接流带来的延迟和 Token 刺客，会教这帮温室极客做人。
+
 - https://github.com/JuniverseCoder/MinerU2PPT /202602/python
   - [[开源] 手搓了个小工具，解决 NotebookLM 生成的 PPT 没法编辑的问题 _202602](https://linux.do/t/topic/1576291)
     - 有两个痛点实在忍不了：
