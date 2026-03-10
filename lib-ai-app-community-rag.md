@@ -771,19 +771,38 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🤔 [RAG Insight: Parsing & Indexing Often Matter More Than Model Size : r/Rag](https://www.reddit.com/r/Rag/comments/1rodl46/rag_insight_parsing_indexing_often_matter_more/)
+- There are roughly two different philosophies when building RAG systems.
+- First approach — LLM-heavy
+  - documents → chunk → embedding → retrieve → large LLM does most of the inference
+  - The assumption here is that the LLM should recover structure, meaning, and reasoning from relatively raw text chunks.
+- Second approach — indexing-heavy
+  - documents → parsing → structure extraction → richer indexing → retrieval → smaller LLM reasoning
+  - This approach pushes much more intelligence into the parsing and indexing stages
+  - [Running a fully local RAG system on a laptop (~12k PDFs, tables & images supported) : r/Rag](https://www.reddit.com/r/Rag/comments/1rnm45d/running_a_fully_local_rag_system_on_a_laptop_12k/)
+
+- 100% agree, garbage in garbage out applies so hard to RAG. ive seen pipelines where switching to better pdf parsing and table extraction made a bigger diffrence than upgrading from a 7b to a 70b model. the retrieval quality ceiling is usually set way before the llm even sees the chunks
+
+- The indexing-heavy approach also tends to be more debuggable. When something fails in an LLM-heavy pipeline, it's hard to trace whether the problem was retrieval quality, the prompt, or the model. When parsing and indexing are rigorous, you can inspect what the LLM actually received and trace failures back to specific chunks.
+  - The harder production problem is that real document collections are rarely uniform. Mixed formats with inconsistent parsing needs is usually where the clean indexing-heavy approach starts to bend.
+
 - ## [大模型RAG实战，从被骂不靠谱到成为部门MVP，这是我的踩坑全记录 - 张不惑 - 博客园 _202602](https://www.cnblogs.com/bu-huo/p/19601644)
 - 把这套系统从被骂下线到成为部门标配，前后折腾了将近一个月。趟过的坑挺多，但收获也很大。
 - 几点核心总结：
 1. RAG不是万能的，选好适用场景
 RAG适合有明确知识库、答案可追溯的场景。如果你的需求是让大模型发挥创造力（比如写文案、做创意），那RAG反而是个约束。
 
-2. 切分和检索是根基
+1. 切分和检索是根基
 大家往往把注意力放在大模型本身，觉得用更强的模型就能解决问题。但实际上，如果前面的切分和检索做得不好，再强的模型也是巧妇难为无米之炊。
 
-3. Prompt工程真的是门手艺
+1. Prompt工程真的是门手艺
 同样的检索结果，不同的Prompt可能带来天壤之别的回答效果。这个没什么捷径，就是多试、多看、多迭代。
 
-4. 上线只是开始
+1. 上线只是开始
 真正的挑战在上线之后。用户的各种奇葩输入、文档的持续更新、性能的优化、效果的监控……每一项都是持续的工作。
 
 - 最后，附上这套系统目前的一些核心指标：

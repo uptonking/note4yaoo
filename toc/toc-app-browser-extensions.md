@@ -216,6 +216,18 @@ modified: 2023-02-08T10:24:11.422Z
   - Enables fuzzy search for histories, tabs and bookmarks.
   - Inspired by the Sidekick search dialogue
 # bookmarks
+- https://github.com/yorkxin/copy-as-markdown /689Star/MIT/202602/ts
+  - A browser extension to copy tabs and links as Markdown
+  - helps you copy the following things as Markdown to your system clipboard: 
+    - On the web page: selection, link, image
+    - Exporting tabs in the current window
+  - You can add keyboard shortcuts for copying tab(s) as Markdown. By default, Copy as Markdown does not assign any keyboard shortcuts.
+  - exportLink rewrites title first, then applies format-specific rendering
+    - rewrite is now a pre-processing layer for all link formats (link, link- with-date, custom-format).
+  - Custom format is Mustache templating ; 
+    - Mustache is logic-less - it cannot do text replacement.
+    - it formats output shape, but does not provide regex/string rewrite tools.
+
 - https://github.com/vaeth/bookmarkdupes /js
   - A WebExtension which can display/remove duplicate bookmarks or empty folders
 - https://github.com/zaksid/ext-duplicate-bookmarks-finder /js

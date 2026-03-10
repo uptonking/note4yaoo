@@ -651,6 +651,21 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 - UTCP seems to try and remove all of the QoL MCP has, and is just an imaginary "ok but imagine how cool it would be", but not practical.
 
 - The communication overhead from tool calls will literally be the least relevant part of an LLM pipeline when it comes to performance. I do not see a point in using UTCP because none of the key players in the ecosystem (ie LLM front ends or APIs) are investing in it. It provides no additional value and instead just becomes an unnecessary wrapper or abstraction layer because some non-key players want to standardize an API that needs to be allowed to move incredibly fast.
+# discuss-models-writing
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Best current Local model for creative writing (mainly editing) : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1ro1ujh/best_current_local_model_for_creative_writing/)
+  - I'm a writer, I don't use the LLMs to write my plot or chapters, I mainly use it to edit, and to brainstorm very occasionally.
+
+- you can also look on hugging face for any model that is "uncensored" but the more common term is "abliterated" or "heretic"/"heresy"
+
+- If you Google around you can find "abliterared" models that have essentially been trained to ignore that safety without losing the conversational coherence at the same time.
 # discuss-models-translation
 - ## 
 

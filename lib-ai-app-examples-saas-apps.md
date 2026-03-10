@@ -122,6 +122,23 @@ modified: 2025-02-21T17:17:42.225Z
     - AI 代码生成其实有很多中实现方案，比如像 manus 那样在项目中通过任务的形式一步步执行，也可以通过 tool call 让 AI 自己选择工具进行操作。我在项目中采用了第二种方案。项目的核心代码位于 src/lib/generator.ts，本质上是利用 tool call 让 AI 自主选择工具，对代码进行项目初始化、管理项目依赖、列出所有项目文件、批量读取文件内容、创建或覆写文件、精确搜索替换文件内容、删除文件、全局搜索文件内容，以及可选的联网搜索与网页内容读取。这些操作可以让 AI 精准的操作虚拟文件系统中的项目文件，实现云端项目生成。
     - 本项目无后端架构，是一个静态页面，因此您可以将此项目部署到任何服务器上。所有的项目参数都保存在本地，因此您也无需担心数据泄漏的问题。由于是无后端的架构模式，您可能无法与朋友共享此项目。
 
+- https://github.com/ZSeven-W/openpencil /477Star/MIT/202603/ts
+  - https://op.zseven.tech/
+  - https://openpencil.dev/
+  - first open-source AI-native vector design tool and the first to feature concurrent Agent Teams. Design-as-Code. 
+  - Turn prompts into UI directly on the live canvas.
+  - OpenPencil is built around AI from the ground up — not as a plugin, but as a core workflow.
+  - Text-to-design — describe a page, get it generated on canvas in real-time with streaming animation
+  - File format: `.op` — JSON-based, human-readable, Git-friendly
+  - Orchestrator — decomposes complex pages into spatial sub-tasks for parallel generation
+  - Design modification — select elements, then describe changes in natural language
+  - Vision input — attach screenshots or mockups for reference-based design
+  - 依赖 Fabric.js v7, Zustand, React 19, TanStack Start, Nitro, Tailwind CSS v4, shadcn/ui
+  - Native macOS, Windows, and Linux via Electron
+  - Code Generation
+    - React + Tailwind CSS
+    - HTML + CSS
+
 - https://github.com/TesslateAI/Studio /apache2/202510/python/ts
   - Open Source Locally Hosted Lovable with Full Stack Support
   - Includes support for llama.cpp, LM Studio, Ollama, Openrouter, and any provider you choose.

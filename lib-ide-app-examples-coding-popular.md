@@ -526,7 +526,7 @@ modified: 2025-12-11T18:10:23.710Z
   - Access Claude Code from anywhere - Mobile / Desktop secure connection via Tailscale. Provision VMs with Fly.io. 
   - Compatible with Gemini / Codex / OpenCode
 
-- https://github.com/poco-ai/poco-agent /MIT/202601/python/ts
+- https://github.com/poco-ai/poco-agent /1.1kStar/MIT/202603/python/ts
   - https://poco-ai.com/
   - An intelligent agent harnessing cloud-based Claude Code to realize a Manus-like autonomous experience.
   - Poco is a cloud-based AI agent execution platform inspired by Anthropic's Cowork. It orchestrates Claude AI agents to perform autonomous tasks beyond coding—organizing files, writing documents, analyzing data, and more—in a distributed cloud environment.
@@ -791,6 +791,13 @@ modified: 2025-12-11T18:10:23.710Z
   - Optional Neo4j Memory - Persistent knowledge graph (advanced feature)
   - Open Orchestra follows a hub-and-spoke pattern inspired by successful multi-agent systems like AutoGen and LangGraph, but optimized for OpenCode's plugin architecture.
 
+- https://github.com/openchamber/openchamber /1.4kStar/MIT/202603/ts
+  - Desktop and web interface for OpenCode AI agent
+  - OpenCode, everywhere. Desktop. Browser. Phone.
+  - A rich interface for OpenCode. Review diffs, manage agents, run dev servers, and keep the big picture while your AI codes.
+  - Branchable chat timeline - Undo, redo, fork from any turn. Explore different approaches without losing your place.
+  - GitHub-native workflows - Start sessions from issues and PRs with context already attached. Review checks, merge - all in-app.
+
 - https://github.com/milisp/opencode-gui /MIT/202510/ts/tauri/inactive
   - A lightweight Tauri GUI for Opencode CLI
 - https://github.com/chriswritescode-dev/opencode-manager /70Star/MIT/202601/ts
@@ -873,6 +880,29 @@ modified: 2025-12-11T18:10:23.710Z
 - https://github.com/Opencode-DCP/opencode-dynamic-context-pruning /AGPL/202602/python/ts
   - Automatically reduces token usage in OpenCode by removing obsolete content from conversation history.
   - Dynamic context pruning plugin for OpenCode - intelligently manages conversation context to optimize token usage
+# cli-wrapper/aggregator
+- https://github.com/slopus/happy /14.6kStar/MIT/202602/ts
+  - https://happy.engineering/
+  - Mobile and Web client for Codex and Claude Code, with realtime voice, encryption and fully featured
+  - On your computer, run `happy` instead of `claude` or `happy codex` instead of `codex` to start your AI through our wrapper. 
+    - When you want to control your coding agent from your phone, it restarts the session in remote mode. 
+    - To switch back to your computer, just press any key on your keyboard.
+  - Switch devices instantly - Take control from phone or desktop with one keypress
+  - 类似的问题也存在。而且 Happy 用起来更麻烦，需要单独跑一个 Happy 进程。虽然支持 remote 和 local 切换，但每次切换都是一次新对话，更加不连贯。
+
+- https://github.com/tiann/hapi /2.4kStar/AGPL/202603/ts
+  - https://hapi.run/
+  - App for Claude Code / Codex / Gemini / OpenCode, vibe coding anytime, anywhere
+  - Run official Claude Code / Codex / Gemini / OpenCode sessions locally and control them remotely through a Web / PWA / Telegram Mini App.
+  - Seamless Handoff - Work locally, switch to remote when needed, switch back anytime. No context loss, no session restart.
+  - Your AI, Your Choice - Claude Code, Codex, Cursor Agent, Gemini, OpenCode—different models, one unified workflow.
+  - Voice Control - Talk to your AI agent hands-free using the built-in voice assistant.
+  - [我开发的 HAPI 开源了：随时随地访问 Claude Code / Codex / Gemini _202512](https://linux.do/t/topic/1360731/1)
+    - 经过 9 天的 Agentic Coding，我基于 Happy 大幅魔改的 Coding Agent 远程访问应用：hapi（"哈皮"音译）正式开源了
+    - 多 Agent 后端：支持 Claude Code、Codex、Gemini，通过 ACP 协议可拓展更多 Agent
+    - Claude Code / Codex 支持本地/远程无缝切换；支持 AskUserQuestion 等工具交互
+    - Telegram 集成：权限请求推送，Mini App 全功能操作，快捷按钮一键审批
+    - 实时多端同步：乐观并发控制，PWA 离线支持
 # cli-coding-agent
 - https://github.com/1rgs/nanocode /1.7kStar/MIT/202601/python/单文件
   - Minimal Claude Code alternative. Single Python file, zero dependencies, ~250 lines.

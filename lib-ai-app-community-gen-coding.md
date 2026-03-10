@@ -759,6 +759,34 @@ It amazes me how people default to LLM calls when you can do it in a simple, fre
   - C1 fixes this by turning LLM responses into an adaptive, interactive UI in real time.
   - cards, charts, table, forms
 
+# discuss-code-review
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [i don't think i can maintain PR's anymore at Postiz : r/selfhosted _202603](https://www.reddit.com/r/selfhosted/comments/1ropohy/i_dont_think_i_can_maintain_prs_anymore_at_postiz/)
+  - The world has changed so much in the last year, and AI is so good that it can really replace humans. I don't remember the last time I actually wrote pure code myself.
+  - Today, everything I get is AI - mostly, unchecked AI.
+  - People contribute stuff even without checking, without knowing the architecture of what they built.
+  - You get 100% more contribution, 100% more slop, and a lot of spam.
+  - As a single person, it's very hard to maintain something like.
+  - Postiz is not going to change; it's going to be 100% open-source like always, AGPL-3, everything that is inside the commercial version is 1:1 with the open-source.
+  - Code will always remain free, and I encourage people also to open issues (maybe even just provide the "prompt" for the issue)
+  - But I no longer feel I can maintain PRs.
+
+- I'm an open source developer myself, and I feel what you're going through. It was already bad enough before AI, and it's even worse now.
+  - Don't for a moment feel bad about this decision, you're far from being the only one. You may not remember the times before Github, but PRs basically didn't exist back then. The only way to contribute was to email a patch. I rarely received patches, and everything was just fine.
+  - Now all of my Github repos have 20 garbage PRs ranging from resume-padding nonsense and people trying to put backdoors in my software to AI slop that makes zero sense.
+  - And to top it all off, a bug request from some asshole about how I'm a terrible maintainer because of open PRs and I should just hand over my project to someone else.
+
+- AI cannot replace software maintenance sadly.
+  - I agree, the contributors are not maintainers mostly
+
+- i get it. the problem isnt ai its people submitting code they dont understand. open source worked when contributors actually learned the codebase. now its just paste the error into claude and submit whatever it spits out
 # discuss
 - ## 
 

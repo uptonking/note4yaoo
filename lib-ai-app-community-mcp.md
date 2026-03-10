@@ -383,7 +383,34 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
-- ## 
+- ## [Anyone moved off browser-use for production web scraping/navigation? Looking for alternatives : r/LangChain _202603](https://www.reddit.com/r/LangChain/comments/1rm5lx8/anyone_moved_off_browseruse_for_production_web/)
+  - Been using browser-use for a few months now for a project where we need to navigate a bunch of different websites, search for specific documents, and pull back content (mix of PDFs and on-page text). Think like ~100+ different sites, each with their own quirks, some have search boxes, some have dropdown menus you need to browse through, some need JS workarounds just to submit a form.
+- It works, but honestly it's been a pain in the ass. The main issues:
+  - Slow as hell. Each site takes 3-5 minutes because the agent does like 25-30 steps, one LLM call per step. Screenshot, think, do one click, repeat. For what's ultimately "go to URL, search for X, click the right result, grab the text."
+  - Insane token burn. We're sending full DOM/screenshots to the LLM on every single step. Adds up fast.
+  - We had to build a whole prompt engineering framework around it. Each site has its own behavior config with custom instructions, JS code snippets, navigation patterns etc. The amount of code we wrote just to babysit the agent into doing the right thing is embarrassing. Feels like we're fighting the tool instead of using it.
+  - Fragile. The agent still goes off the rails randomly. Gets stuck on disclaimers, clicks the wrong result, times out on PDF pages.
+- What I actually need is something where I can say "go here, search for this, click the best result, extract the text" in like 4-5 targeted calls instead of hoping a 30-step autonomous loop figures it out. Basically I want to control the flow but let AI handle the fuzzy parts (finding the right element on the page).
+- Has anyone switched from browser-use to something else and been happy with it? I've been looking at:
+  - Stagehand: the act/extract/observe primitives look exactly like what I want. Anyone using the Python SDK in production? How's the local mode?
+  - Skyvern: looks solid but AGPL license is a dealbreaker for us
+  - AgentQL: seems more like a query layer than a full solution, and it's API-only?
+  - Or is the real answer to just write Playwright scripts per site and stop trying to make AI do the navigation? Would love to hear what's actually working for people at scale.
+
+- I can’t imagine using llms for browsing. I just write and directed a bunch of playwright python to open and browse and scrape sites. Occasionally they break and I go and fix them.
+  - You can use llms to write and update the script and then run it.
+
+- We ran into the same problem. The autonomous browser agent loop (screenshot -> DOM -> LLM -> one click -> repeat) looks great in demos but is painful in production. It’s slow, expensive, and hard to control. You end up writing a ton of prompt scaffolding just to keep the agent on track.
+  - What worked better for us was flipping the model to have deterministic control flow and small AI calls only where ambiguity exists.
+  - We’ve been building an open-source project around this idea called Actionbook and a skill called extract. It's basically reusable “actions” for agents so you don’t have to write site-specific prompt logic everywhere. Curious what kind of sites you’re scraping, gov portals, filings, etc.
+
+- The answer is kind of both. Playwright scripts for the deterministic flow (go to URL, click search, type query) and LLM calls only for the fuzzy bits like picking the right result or extracting structured data from messy pages. That takes you from 25-30 LLM calls down to 2-3 per site.
+  - Stagehand's act/extract/observe primitives are designed for exactly this split.
+
+- Yeah, the “autonomous browser agent” thing sounds great on paper, but once you’re at 100+ sites, you’re basically debugging a very slow intern every run.
+  - What’s worked best for me is leaning into boring determinism and using AI only where humans would squint. I use Playwright as the backbone and define per-site flows as small, explicit scripts: go_to(url), maybe_login(), run_search(query), open_top_result(), extract(). All timing, retries, JS hacks, and PDF handling live there, not in the model.
+  - Then I let the LLM handle the fuzzy selectors and heuristics in tight loops: given a DOM snapshot or a constrained element list, pick the search box, pick the best result row, decide if a page “looks like” the target doc. That’s 2–4 calls per site, not 30.
+  - Key tricks: pre-normalize pages (kill popups/consent banners with hard-coded selectors), cache per-site strategies, and log HTML + chosen selectors so you can quickly patch a site when it changes instead of retraining prompts. Over time the AI part shrinks and the stable Playwright layer does most of the work.
 
 - ## playwright 的 --extension 模式，配合这个 Playwright MCP Bridge 插件，可以直接操作自己原有浏览器的实例
 - https://x.com/jakevin7/status/2025209913153388773

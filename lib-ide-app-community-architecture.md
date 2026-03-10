@@ -24,6 +24,39 @@ modified: 2024-12-03T13:20:30.085Z
   - While LSP allows editor clients to abstract over different programming languages, BSP allows IDE clients to abstract over different build tools.
 - Example of running, testing and debugging a Scala program in VS Code via BSP and the Debug Adapter Protocol.
 
+# discuss-remote-coding
+- ## 
+
+- ## 
+
+- ## [VSCode tunnel 实测比 Happy 以及其他 Web UI 程序都好用 _202602](https://linux.do/t/topic/1661258)
+  - 我的需求: 在其他设备上远程访问开发机（Windows）的文件夹，并使用 Claude Code。
+  - 因为用的是第三方中转站，Claude 官方的 Remote 功能注定终生与我无缘。所以只能找替代方案。
+  - Tunnel卡手的体验跟用UU远程差不多（之所以不用远程就是我对刷新率要求很高，远程卡的我难受，尽管我用了多年这样的方案）
+- https://github.com/siteboon/claudecodeui
+  - 优点：自动识别设备上所有的 Claude Session，无论开关状态都能看到，这个设计确实不错。
+  - 但实测发现一个问题——在 Web 端进行的会话，回到终端是看不到的。也就是说只要通过 Web 修改了 session，就只能靠 resume 的方式恢复，不够无缝。
+
+- https://github.com/slopus/happy
+  - 类似的问题也存在。而且 Happy 用起来更麻烦，需要单独跑一个 Happy 进程。虽然支持 remote 和 local 切换，但每次切换都是一次新对话，更加不连贯。
+
+- 最终方案：VSCode Tunnel
+  - 折腾了一圈之后转向了 VSCode 的 tunnel 功能（说来惭愧，是 Opus 自己给我找的方案）。
+  - 不需要一直开着远程桌面窗口去控制项目
+  - 可以像本地一样开多个 VSCode 窗口（或者直接用网页版 vscode.dev）
+  - 通过 tunnel 访问到开发机，直接在终端里用 Claude Code
+  - 会话连贯，不存在上面两个方案的断裂问题
+  - 有类似远程用 Claude Code 需求的佬可以试试，省得再折腾各种 Web UI 了。
+  - 不过由于是通过微软中转，网络不是很流畅，我正在测试通过ssh直连能否提高连接速度
+
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+
 # discuss-ide-database 🛢️
 - ## 
 

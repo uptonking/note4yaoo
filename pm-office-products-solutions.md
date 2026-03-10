@@ -298,3 +298,20 @@ teamind似乎也基于dom而不是canvas
 
 - 工具产品，向内容平台扩展；让我想起了快手，从GIF工具到内容生态的跨越
   - 和用户一起发展
+# discuss-office
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [LibreOffice learns to speak Markdown in version 26.2 : r/Markdown _202603](https://www.reddit.com/r/Markdown/comments/1rp1rup/libreoffice_learns_to_speak_markdown_in_version/)
+- google docs also support it! i prefer notepadnext or marktext txai fork btw

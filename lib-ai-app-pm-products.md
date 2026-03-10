@@ -726,28 +726,22 @@ modified: 2025-03-22T16:10:24.856Z
     - https://api.hotaruapi.top/console/personal
     - codex
     - [〔Hotaru公益站〕新的公益站启动 ](https://linux.do/t/topic/1398297)
+    - https://codex.mqc.me/
   - [KFC API](https://kfc-api.sxxe.net/console/personal), 签到
     - Claude和gpt 暂时不支持工具调用, gemini模型没有pro
     - API 调用频率限制为 12RPM，公益站永久免费，采用公平限流策略以保障服务稳定
     - 别玩至尊场，1000积分一次警告扣16x，风险太高; 高级场的高积分也可以获得高收益
   - [Huan API](https://ai.huan666.de/console/personal), 签到, 生图模型
     - cc支持
-  - [API分享站](https://new-api-bxhm.onrender.com/console/personal)
-    - [【API分享站】公益站主帖 ](https://linux.do/t/topic/1355814)
-    - 反代 kiro
-  - [小辣椒 公益站～(～￣▽￣)～](https://yyds.215.im/console/topup)
-    - cc
-  - [真好记公益站](https://newapi.zhenhaoji.qzz.io/console/personal)
-    - 随便刷吧，可能刷崩了，我就关站了
-    - cc
   - [黑与白chatAPI](https://ai.hybgzs.com/), 每日转盘
     - 模型丰富: claude/gemini/codex
     - 很多openrouter渠道的模型
     - cc不支持tool, **cc渠道经常上架下架**
     - [黑与白chatAPI福利站](https://cdk.hybgzs.com/)
-  - [ibsgss公益站](https://codex.ibsgss.uk/console/personal), 签到
-    - [【ibsgss公益站】支持codex cli / cherry  ](https://linux.do/t/topic/1434464)
-    - 维护期限：到 codex-team 渠道耗尽为止
+  - [OAI-FREE](https://newapi.zhx47.xyz/pricing), 每日100
+    - [LinuxDo 社区福利活动](https://campaign.zhx47.xyz/)
+    - [OAI-FREE 签到发送订阅 ](https://linux.do/t/topic/1632349)
+    - 都是临时渠道，不开签到了，直接每天送 100 刀余额
   - [YAO](http://154.37.220.66:3000/console/personal)
     - [[Yao公益站]codex注册200刀，可能随时倒闭  ](https://linux.do/t/topic/1683788)
   - [Rosmontis](https://ai.rosmontis.de/console/personal)
@@ -759,11 +753,6 @@ modified: 2025-03-22T16:10:24.856Z
     - dark-mode 水平方向逐渐变化的动画效果很好
     - [【Infinite API】全新公益站上线试运营 ](https://linux.do/t/topic/1622685)
     - 50 RPM， 25 个同时进行的请求
-  - 🗑️ [随缘API](https://newapi.tanmw.top/console/personal)
-    - [【随缘API公益站】开放注册！余额已调整 ](https://linux.do/t/topic/1634879)
-    - RPM:20
-    - 目前只有 GPT 和 Grok 
-    - 不保证稳定性！随时跑路
   - [Einzieg API](https://api.einzieg.site/console/personal), 签到
     - 仅提供codex模型
     - [【Einzieg公益站】再次启动 ](https://linux.do/t/topic/1569418)
@@ -786,15 +775,19 @@ modified: 2025-03-22T16:10:24.856Z
   - [爱你公益站](https://x.ainiaini.xyz/console/personal)
     - [[爱你公益站]开站 ](https://linux.do/t/topic/1638562)
     - 暂时只有 gpt 系列，
+  - [API分享站](https://new-api-bxhm.onrender.com/console/personal)
+    - [【API分享站】公益站主帖 ](https://linux.do/t/topic/1355814)
+    - 反代 kiro
+  - [小辣椒 公益站～(～￣▽￣)～](https://yyds.215.im/console/topup)
+    - cc
+  - [真好记公益站](https://newapi.zhenhaoji.qzz.io/console/personal)
+    - 随便刷吧，可能刷崩了，我就关站了
+    - cc
   - [Codex - New API](https://codex.makeup/console/personal)
     - [又一个codex公益站，人手一个蹬  ](https://linux.do/t/topic/1645651)
   - [纳米哈基米](https://free.nanohajimi.mom/console/personal), 签到
     - Gemini Imagen
     - [【纳米哈基米 · 公益站】 支持香蕉Pro画图，Veo视频，Gemini全系模型 ](https://linux.do/t/topic/1512770)
-  - [OAI-FREE](https://newapi.zhx47.xyz/pricing)
-    - [LinuxDo 社区福利活动](https://campaign.zhx47.xyz/)
-    - [OAI-FREE 签到发送订阅 ](https://linux.do/t/topic/1632349)
-    - 都是临时渠道，不开签到了，直接每天送 100 刀余额
   - [玩票 API](https://api.361888.xyz/console/personal)
     - opus4.6 和 codex 虽迟但到
   - [sorai API](https://newapi.sorai.me/console/personal)
@@ -907,6 +900,14 @@ modified: 2025-03-22T16:10:24.856Z
     - rpm-15, 不限用途，可酒馆
     - 模型: gemini-2.5/3-flash/pro
     - 渠道是自部署gemini business2api，自己域名邮箱注册的，放了100多个号
+  - 🗑️ [ibsgss公益站](https://codex.ibsgss.uk/console/personal), 签到
+    - [【ibsgss公益站】支持codex cli / cherry  ](https://linux.do/t/topic/1434464)
+    - 维护期限：到 codex-team 渠道耗尽为止
+  - 🗑️ [随缘API](https://newapi.tanmw.top/console/personal)
+    - [【随缘API公益站】开放注册！余额已调整 ](https://linux.do/t/topic/1634879)
+    - RPM:20
+    - 目前只有 GPT 和 Grok 
+    - 不保证稳定性！随时跑路
   - 🗑️ [b4u API](https://b4u.qzz.io/console), 每日转盘, 关站20260222
     - 会不会增加其他模型: 不会，本站专注于Claude
     - 不支持opus
@@ -1142,12 +1143,17 @@ modified: 2025-03-22T16:10:24.856Z
     - [CliProxyApi 反重力生图 skill, 支持4K, claude code , codex可用 _202512](https://linux.do/t/topic/1378927)
   - [借助 Antigravity-Manager, 终于用上反重力了！可4k banana pro _202512](https://linux.do/t/topic/1374557)
 
-- video-gen
-  - [Video Studio](https://doubao.happieapi.top/)
-    - rpd: 30
-    - 两款模型分别是 doubao-seedance-1-0-pro-fast-251015 和 doubao-seedance-1-5-pro-251215：前者主打高速视频生成，适合大多数文本或单图生成视频的场景，视频时长为 4–12 秒，最多支持 1 张图片输入，支持全部比例，不支持音频，默认无水印（API 可配置水印）；后者主打高质量视频生成，支持多图输入，画面一致性更强，视频时长同样为 4–12 秒，最多支持 2 张图片输入，支持全部比例，支持音频（默认带音频），默认无水印（API 可配置水印）。
-
 - [Lorem Picsum - Images - The Lorem Ipsum for photos](https://picsum.photos/images)
+
+### logo-gen
+
+- [Accio — Ask anything about B2B, find suppliers & inspiration](https://www.accio.com/)
+
+### video-gen
+
+- [Video Studio](https://doubao.happieapi.top/)
+  - rpd: 30
+  - 两款模型分别是 doubao-seedance-1-0-pro-fast-251015 和 doubao-seedance-1-5-pro-251215：前者主打高速视频生成，适合大多数文本或单图生成视频的场景，视频时长为 4–12 秒，最多支持 1 张图片输入，支持全部比例，不支持音频，默认无水印（API 可配置水印）；后者主打高质量视频生成，支持多图输入，画面一致性更强，视频时长同样为 4–12 秒，最多支持 2 张图片输入，支持全部比例，支持音频（默认带音频），默认无水印（API 可配置水印）。
 
 ## translation
 

@@ -124,6 +124,20 @@ modified: 2026-01-14T18:58:32.523Z
   - Multiple requests to the same model can now be processed simultaneously 
   - Works both in the API and in Split View chats.
 
+- ### [LMStudio Parallel Requests t/s : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1rokp2t/lmstudio_parallel_requests_ts/)
+  - Ive been wondering about LMS Parallel Requests for a while, and just got a chance to test it. It works! It can truly pack more inference into a GPU.
+  - Pardon my shitty hardware.
+  - Single character, "Tell me a story" 22.12 t/s
+  - Two parallel char, same prompt. 18.9, 18.1 t/s
+  - I saw two jobs generating in parallel in LMStudio, their little counters counting up right next to each other, and the two responses returned just ms apart.
+  - I also tried a 3 batch: 14.09, 14.26, 14.25 t/s for 42.6 combined t/s. Yeah, she's bottlenecking out hard here, but MOAR WORD BETTER. Lol
+
+- Yeah. It is great that LM Studio can do concurrent requests now for both GGUF and MLX!!
+
+- Great data! This perfectly illustrates the efficiency of Batching. Older cards like the P40 might have lower single-stream speed, but their massive VRAM allows for larger KV cache to handle parallel requests. You’re effectively maximizing the TFLOPS that go wasted during single-token generation. Keep pushing that old Pascal architecture!
+
+- Now try with different prompts in each parallel instance.
+
 - ## [0.4.0 - server native _20260128](https://lmstudio.ai/blog/0.4.0)
 - Deploy LM Studio's core on cloud servers, in CI, or anywhere without GUI.
   - core of the LM Studio packaged to be server-native, without reliance on the GUI. 

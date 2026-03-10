@@ -517,6 +517,44 @@ modified: 2026-02-18T04:15:19.228Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 🆚 [Reasoning Models vs Non-Reasoning Models : r/Rag _202603](https://www.reddit.com/r/Rag/comments/1rosq4y/reasoning_models_vs_nonreasoning_models/)
+  - I was playing around with my RAG workflow, I had a complex setup going with a non-thinking model, but then I discovered some models have built-in reasoning capabilities, and was wondering if the ReACT, and query retrieval strategies were overkill? In my testing, the reasoning model outperformed the non-reasoning workflows and provided better answers for my domain knowledge. Thoughts?
+- So I played around with both, these were my workflows.
+
+- 📌 "advanced" Non-Reasoning Workflow
+
+The average time to an answer from a users query was 30-180s, answeres were generally good, sometimes the model could not find the answer, despite the knowledge being in the database.
+
+- ReACT to introduce reasoning
+- Query Expansion/Decomposition
+- Confidence score on answers
+- RRF
+- tool vector search
+
+- 📌 "Simple" Non-Reasoning Workflow
+
+Got answers in <10s, answers were not good.
+
+- Return top-k 50-300 using users query only
+
+- model sifts through the chunks
+
+- 📌 Simplified Reasoning Workflow
+In this scenario, i got rid of every single strategy and simply had the model reasoning, and call its own tool use for the vector search. In this workflow, it outperformed the non-reasoning workflow, and generally ran quick, with answers in 15s-30s
+user query --> sent to model
+Model decides what to do next via system prompt. Can call tool use, ask clarifying questions, adjust top-k, determine own search phrases or keywords.
+
+- yeah this tracks with what ive seen too. letting a reasoning model handle its own retrieval strategy basically replaces all the manual orchestration you'd normally build. the fact that it decides its own search phrases and adjusts top-k on its own is huge, way better than static query expansion pipelines imo
+
+- The reasoning model result makes sense. Most of the complexity in those non-reasoning pipelines exists to compensate for a model that can't effectively plan its own retrieval strategy. When you give a reasoning model that control, a lot of the orchestration layer becomes redundant.
+  - Worth noting the cost difference though. Reasoning tokens add up fast at scale. The "simple non-reasoning" approach is still probably the floor for latency-critical or high-volume queries.
+
 - ## [Why does Qwen3-1.7B (and DeepSeek-distill-Qwen-1.5b) collapse with RAG? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1ndj9sf/why_does_qwen317b_and_deepseekdistillqwen15b/)
   - I’ve been running some experiments comparing different LLMs/SLMs on system log classification with Zeroshot, Fewshot, and Retrieval-Augmented Generation (RAG). The results were pretty eye-opening:
   - Qwen3-4B crushed it with RAG, jumping up to ~95% accuracy (from ~56% with Fewshot).

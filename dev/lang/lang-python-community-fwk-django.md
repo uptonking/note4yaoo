@@ -81,7 +81,15 @@ modified: 2026-03-05T19:32:00.353Z
 
 - ## 
 
-- ## 
+- ## [I built django-lumen — a Django app for visualizing Django models : r/django](https://www.reddit.com/r/django/comments/1roikva/i_built_djangolumen_a_django_app_for_visualizing/)
+  - It renders an interactive ERD of all your project's models directly in the browser - no external diagram libraries, just vanilla JS + SVG generated on the fly from the live model registry.
+  - https://codeberg.org/Lupus/django-lumen /NoDeps
+- Have you looked at Graph models from Django extensions? https://django-extensions.readthedocs.io/en/latest/graph_models.html
+  - I’ve used it for years, but building the Graphviz module is a pain on certain platforms. Plus, it ends up being just a static image anyway. My goal is to let anyone with admin access browse models more quickly while finally ditching that Graphviz dependency.
+
+- How well does it work with larger systems? We have about 425 tables across many apps. One app has like 65 tables
+- I have 700+ tables in a few dozen apps in my Django project. It's a project that manages the operations, billing, scheduling, maintenence, and more for utilities districts. Several of those are pghistory models for audit purposes.
+- I just tried it on a project with ~300 tables. It was a bit of a visual mess, but I had no issues with performance.
 
 - ## [Made My Django Admin Look 10x Better in One Step : r/django](https://www.reddit.com/r/django/comments/1rklfiz/made_my_django_admin_look_10x_better_in_one_step/)
   - https://github.com/unfoldadmin/django-unfold /MIT
