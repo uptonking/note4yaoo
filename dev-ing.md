@@ -308,6 +308,19 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-log
   - ?
 
+## 0310
+
+- 🤔 from both clashx pro network monitor and NetSpeedMonitor.app, it shows download speed is 6.1~6.9 MB/s, it keeps showing for hours. please find which apps are downloading and eating my network. from both clashx pro network monitor and NetSpeedMonitor.app, now it still shows download speed is 6.1~6.9 MB/s.
+  - 这个问题非常奇怪, 在从22:00到凌晨03:05， 突然就没有异常流量了, 一切恢复正常了
+  - 试了codex/iflow，都没有正确分析出问题
+- the heavy downloader is Microsoft Edge Helper, not Chrome.  Evidence from live Clash connection deltas (8-second window):
+- Microsoft Edge Helper -> stun.chat.bilibili.com (UDP 3478): 54, 670, 336 bytes / 8s
+  - That is about 6.52 MB/s, matching your observed 6.1–6.9 MB/s.
+- Next highest traffic in same window was tiny (node -> api.telegram.org: 6, 309 bytes).
+- So the app eating traffic is:
+- Microsoft Edge (background helper process)
+- Host pattern: stun.chat.bilibili.com (likely Edge tab/background RTC stream)
+
 ## 0309
 
 - [How long does It typically take for an extension to get reviewed? : r/chrome_extensions _202411](https://www.reddit.com/r/chrome_extensions/comments/1h099ur/how_long_does_it_typically_take_for_an_extension/)

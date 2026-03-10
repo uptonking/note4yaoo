@@ -985,6 +985,23 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
+- ## 
+
+- ## [Finally found a reason to use local models  : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rp48hx/finally_found_a_reason_to_use_local_models/)
+  - I have a static website with about 400 pages inside one sub directory. I wanted to add internal linking to those pages but I was not going to read them and find relevant pages manually.
+  - So I asked claude code to write a script which will create a small map of all those mdx files. The map would contain basic details for example, title, slug, description and tags. But not the full content of the page ofcourse. That would burn down my one and only 3090 ti.
+  - Once the map is created, I query every page and pass 1/4th chunk of the map and run the same page 4 times on a gemma3 27b abliterated model. I ask the model to find relevant pages from the map which I can add a link to in the main page I am querying.
+  - At first I faced an obvious problem that the tags were too broad for gemma 3 to understand. So it was adding links to any random page from my map. I tried to narrow down the issue but found out the my data was not good enough.
+  - I asked claude code to write me another script to pass every single post into the model and ask it to tag the post from a pre defined set. When running the site locally I am checking whether the pre defined set is being respected so there is no issue when I push this live.
+
+- You’re missing out on a significantly easier and cheaper way to do this! Use an embedding model. My go to is https://huggingface.co/google/embeddinggemma-300m but anything should work fine. They will naturally generate the exact sorts of connections you’re looking for. They’re significantly faster than anything generative and can probably do just as well. Look into RAG with a vector DB, it fits your use case very well. To me, it sounds like you’re doing document clustering. You might want to look into that cause you might be able to significantly improve the results you’re seeing!
+
+- This here is what I like to see. Experiment, learn, share
+
+- Instead of stopping the script manually, you should set your GPU power limit to 50-70%, whatever your PC can handle longterm during those temperatures. You can do similar things with the CPU, lowering the max frequency by a slight amount can already cut the power consumption in half.
+
+- Embeddings won’t directly insert inline links. Use them to fetch the top 10 nearest pages for each article, then pass only those candidates plus the source article to an LLM and ask it to return max 3 inline link edits as JSON. So the pipeline is: embed all pages once -> cosine top-k retrieval -> optional rerank with tags/categories -> LLM chooses exact anchor text and sentence placement -> script patches the markdown.
+
 - ## [Local LLM Performance: Testing OpenClaw with 2B/4B models via llama.cpp? : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1qzykqy/local_llm_performance_testing_openclaw_with_2b4b/)
   - Has anyone here experimented with "tiny" models in the 2B to 4B parameter range (like Gemma 2B, Phi-3, or Qwen 4B)?
 

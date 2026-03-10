@@ -637,6 +637,25 @@ git am /tmp/repo1-editor-patch/*.patch
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🚀 huggingface: We just shipped Storage Buckets: S3-like mutable storage, cheaper & faster 
+- https://x.com/huggingface/status/2031428153948709291
+  - Git falls short for everything on high-throughput side of AI (checkpoints, processed data, agent traces, logs etc) 
+  - Buckets fixes that: fast writes, overwrites, directory sync
+  - All powered by Xet dedup so successive checkpoints skip the bytes that already exist
+  - [Introducing Storage Buckets on the Hugging Face Hub _202603](https://huggingface.co/blog/storage-buckets)
+
+- This is the missing piece between Git and object stores. Does bucket versioning keep a content addressed history for easy rollback across checkpoints, and is there an API for syncing agent traces incrementally?
+
+- Mutable S3-ish storage on HF is the right direction. Using Git repos as data planes was always a coping mechanism. Curious what the ACL story looks like for teams.
+
+- This fills a real gap between Git and artifact stores. Curious what your current limits are for object size, overwrite throughput, and list performance at very large prefix counts.
+
+- [Hugging Face Storage Buckets: Mutable, non-versioned object storage at $12/TB | Hacker News _202603](https://news.ycombinator.com/item?id=47326480)
+
 - ## Who's building an IDE for reviewing code instead of writing code?
 - https://x.com/schickling/status/2015870972184662197
   - Don't only show me diffs. Show me before/after UIs, terminal output, benchmarks, historic trends, playgrounds, demos, test results etc.

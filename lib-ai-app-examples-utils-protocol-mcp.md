@@ -385,6 +385,19 @@ modified: 2026-01-19T05:01:00.055Z
   - https://x.com/EdenEmarco177/status/2018602082962690511
     - This is the future of agents. Dynamic skill loading
     - I did something similar at https://labs.youware.com/youskill. The difference is it's agentic skill discovery based on your actual request. Should I make this an MCP?
+
+- https://github.com/mcollina/skills /MIT/202603/ts
+  - My own collection of skills for modern Node.js development
+  - https://x.com/matteocollina/status/2031053418064720273
+    - fter years of building with Node.js, I've organized my hard-won knowledge into skills: a collection of best practices, workflows, and deep expertise my AI assistant uses to write code to my standard.
+    - fastify: hooks lifecycle, plugin architecture, performance tuning
+    - node: event loop, async error handling, streams, test runner
+    - nodejs-core: V8 internals, libuv, C++ addons
+    - typescript-magician: advanced types, complex generics
+    - octocat: GitHub workflows with gh CLI
+    - oauth: OAuth 2.0/2.1 + Fastify integration
+    - linting: neostandard + ESLint v9 flat config
+    - documentation: Diátaxis framework
 # utils
 - https://github.com/mksglu/claude-context-mode /2.2kStar/MIT/202603/ts
   - https://cc-context-mode.mksg.lu/

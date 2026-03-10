@@ -268,6 +268,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 行业应用: law, medical
     - sources: docs, emails
   - large pdf rag workflows: chunking-strategies, reindex, pdf-parts
+    - 中文rag需要优化
   - 🌐 pdf edit
     - pdf ocr one-click eval like FlowDown
       - ui for popular ocr benchmark
@@ -605,9 +606,8 @@ modified: 2025-03-22T16:10:24.856Z
     - [OAI-FREE 签到发送订阅 ](https://linux.do/t/topic/1632349)
     - 都是临时渠道，不开签到了，直接每天送 100 刀余额 
   - [Atomgit GLM5 无限 Token? ](https://linux.do/t/topic/1696331)
-  - [讯飞的GLM-4.7免费用 _202602](https://linux.do/t/topic/1573384)
+  - [讯飞星辰MaaS平台](https://maas.xfyun.cn/modelSquare)
     - 限免至0305, 20qps
-    - [讯飞星辰MaaS平台](https://maas.xfyun.cn/modelSquare)
   - [华为云 CodeArts 试用期间开放GLM4.7与DeepSeek V3.2模型无限畅用，大善人还是小白鼠？ _202601](https://linux.do/t/topic/1536794/5)
   - [寻找L站开源作者，UUcode送商业级API额度—— 优质开源项目扶持计划 1228](https://linux.do/t/topic/1370667)
 
@@ -641,10 +641,6 @@ modified: 2025-03-22T16:10:24.856Z
     - [DuckCoding](https://duckcoding.com/console/personal)
     - [DuckCoding Az-CC，单独开启公益站，只允许L站注册 ](https://linux.do/t/topic/1308120)
     - [status](https://status.duckcoding.com/status/duckcoding)
-  - [claudex-反重力号池](https://code.claudex.us.ci/panel)
-    - [claudex-反重力号池](https://claudex.us.ci/console/personal), 签到
-    - [【福利】公益福利，反重力Opus4.6踩油门（只要没爆会继续延长) ](https://linux.do/t/topic/1542040)
-    - 纯公益反重力池子，无套路 L 站 2 级直登，加了 CF
   - 📌 [Any Router](https://anyrouter.top/), 每日签到获取$25
     - 仅支持coding工具，不支持使用api聊天
     - 本站直接接入官方 Claude Code 转发，无法转发非 Claude Code 的 API 流量
@@ -1349,6 +1345,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [星火大模型，燃情双十一-讯飞开放平台](https://www.xfyun.cn/activities/discount)
   - [讯飞星辰MaaS平台](https://maas.xfyun.cn/modelSquare)
     - 限免活动
+    - 限免 z-image-turbo、Qwen3-Embedding-8B
   - 🐛
     - 少部分模型存在无法调用mcp的问题，如kimi-k2.5, 而glm-4.7支持调用mcp-tools; 调用失败的表现是， claude对话突然停止，且history里面没有相关对话日志
       - 排查过程: 中转claude模型能用mcp， 但讯飞的kimi用不了， 进一步测试讯飞的glm-4.7能用

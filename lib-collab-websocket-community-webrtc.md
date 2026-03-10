@@ -446,10 +446,37 @@ sse.onerror = () => sse.close()
 - VPN - if those machines are fixed so to speak - you are always connecting to the same machines - I would consider using VPN to deliver the security. 
   - The transmissions are protected from outsiders, the server behaves like it's in the same network and I can use any protocol I want.
 
+# discuss-devops-websocket
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Your WebSocket server handles 50K concurrent connections. When you deploy new code, all connections drop and reconnect simultaneously, causing a thundering herd.
+- https://x.com/0xlelouch_/status/2031280038780256327
+  - How do you deploy without disrupting connections?
+
+- Use graceful, zero-downtime deployments.
+  • Connection draining - stop accepting new sockets, keep existing ones alive
+  • Rolling updates - replace instances gradually, not all at once
+  • Sticky sessions so clients stay on same node
+  • Reconnect jitter/backoff to avoid thundering herd
+  • Optionally state externalization (Redis) for session continuity
+  - I’m exploring this deeply while building an internal chat service still weighing trade-offs of draining vs fast rollouts vs infra complexity.
+
+- Rolling deployment with connection draining. New pods start accepting new connections while old pods finish existing ones with a grace period. Add exponential backoff with jitter on the client reconnect to prevent the thundering herd. Without jitter you just moved the stampede.
+
+- Graceful draining is the way. Stop accepting new connections on the old nodes, signal the clients to reconnect with a random jitter (to avoid the spike), and let the new fleet take over gradually
 # discuss
 - ## 
+
 - ## 
+
 - ## 
+
 - ## TIL (and painful reminder): You need to close WebSocket connections with a code for a Node process/thread to properly exit.
 - https://x.com/schickling/status/1869081922846220583
 - MDN claims it to be automatically set to 1000?

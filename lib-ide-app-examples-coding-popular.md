@@ -9,11 +9,11 @@ modified: 2025-12-11T18:10:23.710Z
 
 # guide
 - tips
-  - 对于模型厂商推出的cli-coding，会尽可能多的使用token来实现更好的效果
-    - 对于类似cursor应用层推出的coding产品，会偏向减少token用量来降低成本
+  - 对于模型厂商推出的cli-coding，会偏向于多使用token来实现更好的效果
+    - 对于类似cursor应用层推出的coding产品，会偏向于减少token用量来降低成本
   - cli的实现经常与模型厂商自己的sdk紧密结合，但只要兼容openai的协议就可通用，目前不通用的是gemini-cli, 可考虑开发patch
+  - cli类型的工具逐渐开始支持ui(web/cowork), 如codex/claude
   - ui类型的工具逐渐开始支持cli, 如cline-cli
-  - cli类型的工具逐渐开始支持web, 如codex/claude
 # popular
 - https://github.com/oraios/serena /19.6kStar/MIT/202602/python
   - https://oraios.github.io/serena
@@ -167,118 +167,7 @@ modified: 2025-12-11T18:10:23.710Z
     - The Claude Code binaries distributed by Anthropic contain Open Source software.
     - Some of that software is made available to Anthropic under the terms of the Apache-2.0 license, however there does not appear to be a notice of this in the distributed files, nor on the Claude Code documentation website
 
-- https://github.com/iOfficeAI/AionUi /3kStar/apache2/202512/ts
-  - https://www.aionui.com/
-  - https://github.com/iOfficeAI/AionUi/wiki
-  - open-source GUI app for Gemini CLI — Better Chat UI, multi-agent support, multi-LLMs & apikey polling, Workspace Management, AI image editing & more
-  - While the official Gemini CLI is powerful, its command-line interface has limitations for daily use. 
-  - 不支持rag
-  - Seamlessly integrate multiple terminal AI agents - Gemini CLI, Claude Code, Qwen Code, Codex and more
-    - [ACP Setup · iOfficeAI/AionUi Wiki](https://github.com/iOfficeAI/AionUi/wiki/ACP-Setup)
-    - Gemini CLI Mode: Built into AionUi, users get it by default
-    - Multi-Agent Mode: Requires users to download and install
-  - Handle Multiple Tasks at Once: Multiple conversations, no task confusion, independent memory, double efficiency
-  - 📱 WebUI Mode: Access AionUi from any device on your network
-  - Batch renaming, auto organization, smart classification, file merging
-  - image generation, editing, and recognition powered by Gemini 2.5 Flash Image Preview
-  - AI helps you create, organize, analyze, and beautify Excel files
-  - MCP Tool Management
-  - [feat: Implement ACP integration with improved Gemini authentication _20250903](https://github.com/iOfficeAI/AionUi/commit/23b3c4fae1af1c763f7ca41957ec141df47ad3a2)
-    - Add comprehensive ACP (Agent Client Protocol) support for Claude and Gemini backends
-  - 📡 roadmap
-    - 可结合下面async-code和其他ui的优点, 优化 background-agents 后台任务/并发任务
-  - [AionUi V1.7.4 更新：兼容了Newapi（Cowork开源版可以用公益站/中转站了 _202601](https://linux.do/t/topic/1508016)
-    - 测了一下部分中转站已经通了，基于newapi的公益站也通了。配置在“自定义模型平台”上即可。
-    - 之前aionui直接配置中转站时会被中转站拦截请求。需要带上user-agent才能通信。他们要在标准的OpanAI协议基础上带上defaultHeader才可以识别请求，之前AionUi没做这个。
-    - 支持多key轮询, 同一个url下的多key轮询
-- https://github.com/RAIT-09/obsidian-agent-client /127Star/apache2/202512/ts
-  - Bring AI agents into Obsidian via Agent Client Protocol (ACP), such as Claude Code, Codex and Gemini CLI.
-  - This plugin lets you chat with Claude Code, Codex, Gemini CLI, and other AI agents right from your vault.
-  - Multi-Agent Support: Switch between Claude Code, Codex, Gemini CLI, and custom agents
-  - Note Mention Support: @notename to reference specific notes
-  - Use / commands to browse and trigger actions provided by your current agent
-  - Permission Management: Fine-grained control over agent actions
-
-- https://github.com/multica-ai/multica /apache2/202601/ts
-  - A native desktop client that brings coding agent capabilities to everyone through a visual interface.
-  - ⚖️ Support for multiple AI agents through the Agent Client Protocol (ACP)
-  - 支持 cc, opencode, codex
-  - Local-first: your data never leaves your machine
-  - Session management with history and resume capabilities
-  - Built-in CLI for power users and testing
-  - https://x.com/jiayuan_jy/status/2012040329407713404
-    - 分享我们最近实现的一个开源版本 Claude Cowork
-    - 目标是成为 coding agent 和终端用户的中间层，有点类似 Obsidian 的模式，每个人都可以根据自己的工作流使用插件的方式来定制化。
-
-- https://github.com/J3n5en/EnsoAI /MIT/202512/ts
-  - https://enso.j3.do/
-  - 无缝切换 Claude、Codex、Gemini 或本地 LLM。每个 Worktree 都有独立的持久化 AI 会话。 你也可以通过指定 CLI 命令来添加自定义 Agent。
-  - 专注于 Git Worktree + AI Agent 的协作场景。它不是要替代 VS Code 或 Cursor，而是作为一个轻量级的工作空间管理器
-  - 内置 可视化 Git 面板
-  - 基于 Monaco 构建的轻量级编辑器
-  - 内置专业的三栏合并编辑器。
-  - 毫秒级创建与切换 Git Worktree
-  - 框架: Electron + React 19 
-  - 终端: xterm.js + node-pty
-  - Git: simple-git
-  - 数据库: better-sqlite3
-  - 为什么使用官方 CLI 而不使用 ACP？
-    - 虽然 ACP 能够统一不同 Agent 的核心能力，但是也仅限于核心能力缺失了很多功能。切换不同 Agent 的场景其实并不多而且不同 Agent 的 CLI 核心功能都相似。所以我们认为对于有经验的开发者各 CLI 更具有生产力。
-
-- https://github.com/21st-dev/1code /4.7kStar/apache2/202601/ts
-  - https://1code.dev/
-  - Better UI app for running code agents in parallel (ClaudeCode, OpenCode, Codex)
-  - Best UI for Claude Code with local and remote agent execution.
-  - 1Code is an open-source app that provides a calm, visual interface for Claude Code. It lets you run multiple coding sessions in parallel, track progress visually, and manage your AI-assisted development workflow more effectively.
-  - fully open source. 
-  - Note: Currently tested on macOS and Linux. Windows support is experimental and may have issues.
-  - built for coding. It has a full terminal, GitHub integration, visual diff previews, and worktree management. 
-  - Git Worktree Isolation - Each chat session runs in its own isolated worktree
-  - [[Question] Does this usage violate Anthropic’s ToS? _202601](https://github.com/21st-dev/1code/issues/8)
-    - 1Code uses the official Claude Code SDK which wraps the Claude Code binary. This is the official way to build on top of Claude Code.
-    - Some other tools (like OpenCode) made direct API calls while impersonating Claude Code - that approach got banned. We're not doing that.
-
-- https://github.com/getpaseo/paseo /MIT/202602/ts
-  - https://paseo.sh/
-  - Manage coding agents from your phone and desktop.
-  - a self-hosted daemon for Claude Code, Codex, and OpenCode.
-  - Agents run on your machine with your full dev environment. 
-  - Connect from phone, desktop, or web.
-  - [I built a fully self-hosted and open-source Claude Code UI for desktop and mobile : r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1r8rqnv/i_built_a_fully_selfhosted_and_opensource_claude/)
-    - Git worktree management for running agents in parallel, Git operations so you don't have to leave the app, integrated terminal, it also comes with fully local voice mode and dictation
-
-- https://github.com/kbwo/ccmanager /MIT/202602/ts
-  - a CLI application for managing multiple AI coding assistant sessions (Claude Code, Gemini CLI, Codex CLI, Cursor Agent, Copilot CLI, Cline CLI, OpenCode, Kimi CLI) across Git worktrees and projects.
-
-- https://github.com/pedramamini/Maestro /AGPL/202601/ts
-  - https://runmaestro.ai/
-  - a cross-platform desktop app for orchestrating your fleet of AI agents and projects.
-  - It's a high-velocity solution for hackers who are juggling multiple projects in parallel.
-  - Run multiple agents in parallel with a Linear/Superhuman-level responsive interface. 
-  - Currently supporting Claude Code, OpenAI Codex, and OpenCode with plans for additional agentic coding tools (Aider, Gemini CLI, Qwen3 Coder) based on user demand.
-  - Git Worktrees - Run AI agents in parallel on isolated branches
-  - File-system-based task runner that batch-processes markdown checklists through AI agents. Create playbooks for repeatable workflows
-  - Mobile Remote Control - Built-in web server with QR code access.
-  - Full CLI (maestro-cli) for headless operation.
-  - Multi-Agent Management - Run unlimited agents and terminal sessions in parallel. 
-  - Message Queueing - Queue messages while AI is busy; they're sent automatically when the agent becomes ready. Never lose a thought.
-
-- https://github.com/coder/mux /774Star/AGPL/202512/ts
-  - https://mux.coder.com/
-  - A desktop app for isolated, parallel agentic development
-  - Isolated workspaces: local directory, worktree, ssh
-  - models: openrouter, Ollama
-  - mux has a custom agent loop but much of the core UX is inspired by Claude Code.
-
-- https://github.com/openkursar/hello-halo /MIT/202601/ts
-  - The Missing UI for Claude Code
-  - open-source desktop client that makes Claude Code's power accessible to everyone. No terminal, ever.
-  - https://x.com/FlynnWayne_Wang/status/2011079825956749365
-    - Remote access from phone/tablet/any browser
-    - Built-in AI Browser for web automation
-    - 100% of the code after v1 was written by Halo itself
-
-- https://github.com/lukilabs/craft-agents-oss /2.4kStar/apache2/202602/ts
+- https://github.com/lukilabs/craft-agents-oss /3.2kStar/apache2/202603/ts
   - https://agents.craft.do/
   - https://x.com/balintorosz/status/2013302678105796764  _202601
   - TL; DR - We've released Craft Agents as an open source product - it showcases our take on how to effectively work with agents (Especially Claude Code). 
@@ -289,21 +178,50 @@ modified: 2025-12-11T18:10:23.710Z
   - 支持吃anthropic格式的api
     - 可尝试 快手、cliproxyapi
 
-- https://github.com/fengshao1227/ccg-workflow /MIT/202601/js
-  - CCG v3.0: Claude Code 编排三 CLI 协作
-  - v3.0.0 重大更新：从 Python 脚本进化为 npm 包，三 CLI 协作时代正式开启！
-  - 从 Python 脚本重构为 TypeScript + unbuild 构建系统
-  - Claude Code 是主对话，负责编排整个工作流、做最终决策、实施代码
-    - Codex/Gemini/Claude 子进程 通过 codeagent-wrapper 调用，生成原型代码
-    - 零写入权限：子进程只能返回 Unified Diff Patch，不能直接修改文件
-    - 子进程输出视为"脏原型"，需经 Claude Code 重构为生产级代码
-  - Claude Code CLI 作为主导编排者
-    - Codex CLI 负责后端原型生成
-    - Gemini CLI 负责前端原型生成
-    - Claude CLI 子进程负责全栈整合
-  - 支持 smart/parallel/sequential 三种协作模式
-  - [【开源】CCG v3.0: Claude Code 编排三 CLI 协作 | Codex + Gemini + Claude ](https://linux.do/t/topic/1405588)
-    - 之前一直在用 孙佬 @DaiSun 的 Skills 仓库，用着用着就想搞点定制化的东西。比如给 Codex 和 Gemini 配上专家角色提示词，让它们不再是无头苍蝇；再比如把 zcf 佬的 Git 工具也缝进来，一站式解决开发需求。于是就有了这个 CCG（Claude Code + Codex + Gemini）项目 
+- https://github.com/d-kimuson/claude-code-viewer /892Star/MIT/202602/ts
+  - A full-featured web-based Claude Code client that provides complete interactive functionality for managing Claude Code projects
+  - View Claude Code session logs in real-time through the web UI. Supports historical logs as it uses standard Claude Code logs (~/.claude/projects/...) as the data source
+  - Built-in Git Diff Viewer lets you review all changes directly within Claude Code Viewer
+  - What Makes Claude Code Viewer Different: specifically designed as a session log viewer
+  - Core Philosophy: Zero data loss + Effective organization + Remote-friendly design
+  - 支持在浏览器中打开terminal
+  - 支持resume-chat
+  - 支持查看变更文件列表, 支持查看diff视图
+  - 支持pr模式，可选择branch
+  - 快速查看tool-calls列表
+
+- https://github.com/jhlee0409/claude-code-history-viewer /571Star/MIT/202603/ts/rust/tauri
+  - https://jhlee0409.github.io/claude-code-history-viewer
+  - desktop app to browse, search, and analyze your Claude Code conversations — all offline.
+  - It automatically scans `~/.claude` for conversation data
+  - 支持chat聊天内搜索, 但不支持resume-chat
+  - 看板模式、日历模式 来展示用户历史会话
+  - 统计功能强大: 日历热力图, 模型, tools
+  - v1.5.0_202602: Show archived `Codex` sessions in project tree, opencode也支持
+  - [feat: add capture mode for screenshot-ready message hiding _202601](https://github.com/jhlee0409/claude-code-history-viewer/pull/61)
+  - [Show HN: Claude Code History Viewer for macOS | Hacker News _202507](https://news.ycombinator.com/item?id=44459376)
+
+- https://github.com/wesm/agentsview /444Star/MIT/202603/go/ts/svelte
+  - https://agentsview.io/
+  - A local web application for browsing, searching, and analyzing AI agent coding sessions. 
+  - Supports Claude Code, Codex, and Gemini CLI. A next-generation rewrite of agent-session-viewer in Go.
+  - agentsview indexes these sessions into a local SQLite database with full-text search, providing a web interface to find past conversations, review agent behavior, and track usage patterns over time.
+  - Live updates via SSE as active sessions receive new messages
+  - Local-first -- all data stays on your machine, single binary, no accounts
+  - https://github.com/wesm/archived-agent-session-viewer /MIT/202601/python/rust/js/tauri/archived
+    - This tool gives you instant full-text search across every session from Claude Code and Codex, organized by project.
+    - Live updates - Active sessions refresh automatically as new messages arrive
+    - Auto-sync - Background sync every 15 minutes, plus manual sync with r
+
+- https://github.com/andyfischer/ai-coding-tools/tree/main/claude-history-tool /MIT/202507/ts/inactive
+  - A desktop application for browsing and viewing your Claude chat history.
+  - Browseable Session History: View all your Claude conversations organized by project.
+  - Full Tool Use: See the full input & response data for each tool use.
+  - Full Message Details: Examine the stored JSON to see extra details about your chats.
+  - https://github.com/facetlayer/candle /ts
+    - Small process manager for local development and AI agents
+    - Candle is instead optimized for easy local development instead of production.
+    - Candle will only have one instance of a given service at a time.
 
 - https://github.com/ObservedObserver/async-code /apache2/202508/python/ts/inactive
   - Use Claude Code / CodeX CLI to perform multiple tasks in parallel with a Codex-style UI.
@@ -313,50 +231,6 @@ modified: 2025-12-11T18:10:23.710Z
   - Parallel Task Management: Execute multiple coding tasks simultaneously
   - Git Integration: Automatic repository cloning, commits, and PR creation
   - Backend: Python Flask API with Docker orchestration
-
-- https://github.com/slopus/happy /5kStar/MIT/202512/ts/tauri
-  - https://happy.engineering/
-  - Mobile and Web client for Codex and Claude Code, with realtime voice, encryption and fully featured
-  - On your computer, run happy instead of claude or happy codex instead of codex to start your AI through our wrapper. When you want to control your coding agent from your phone, it restarts the session in remote mode.
-  - Switch devices instantly - Take control from phone or desktop with one keypress
-  - Open source - Audit the code yourself. No telemetry, no tracking
-  - https://github.com/slopus/happy-server /MIT/202512/ts
-    - Minimal backend for open-source end-to-end encrypted Claude Code clients.
-    - Only essential features for secure sync, nothing more
-    - The server stores encrypted data but has no ability to decrypt it
-    - WebSocket-based synchronization across all your devices
-    - Built to scale horizontally when needed
-    - 待确定, 是否支持区分不同用户的不同客户端
-    - How It Works: Your Claude Code clients generate encryption keys locally and use Happy Server as a secure relay. Messages are end-to-end encrypted before leaving your device. The server's job is simple: store encrypted blobs and sync them between your devices in real-time.
-
-- https://github.com/siteboon/claudecodeui /5kStar/GPL/202512/js
-  - https://cloudcli.ai/
-  - A desktop and mobile UI for Claude Code, and Cursor CLI
-  - Use Claude Code or Cursor CLI on mobile and web with Claude Code UI. 
-  - 不支持rag
-  - Claude Code UI free open source webui/GUI that helps you manage your Claude Code session and projects remotely
-  - You can use it locally or remotely to view your active projects and sessions in Claude Code or Cursor and make changes to them
-  - Supports models including Claude Sonnet 4, Opus 4.1, and GPT-5
-  - Direct access to Claude Code or Cursor CLI through built-in shell functionality
-  - Session Management - Resume conversations, manage multiple sessions, and track history
-  - File Explorer - Interactive file tree with syntax highlighting and live editing
-  - Git Explorer - View, stage and commit your changes. You can also switch branches
-  - 🐛 [Feature Request: Support for Claude Code Proxy Tools (CCR Integration) _202511](https://github.com/siteboon/claudecodeui/issues/234)
-    - I'm using claude-code-router (CCR), a proxy tool that routes Claude Code requests to different AI models and providers (Gemini, DeepSeek, Ollama, etc.). However, claudecodeui currently doesn't support integration with CCR due to its architecture.
-    - Since the main chat functionality uses the SDK, it bypasses the claude CLI and connects directly to Anthropic's API, making it impossible to use proxy tools like CCR that work by intercepting CLI calls.
-  - [How feasible is it to add support for other CLI agents like Gemini? _202507](https://github.com/siteboon/claudecodeui/discussions/13)
-    - Gemini CLI is there yet. It's important to be able to work in non interactive mode for the Chat function to work.
-
-- https://github.com/milisp/codexia /335Star/MIT > AGPL/202601/ts/tauri
-  - https://github.com/codexia-team/codexia /renamed
-  - ~~A powerful GUI and Toolkit for Codex CLI~~
-  - A powerfull GUI/IDE and Toolkit for Codex CLI + Claude Code. FileTree + prompt notepad + git worktree and more
-  - fork chat, file-tree integration, notepad, git diff, build-in pdf csv/xlsx viewer, and more.
-  - [We built Codexia - A free and open-source powerful GUI app and Toolkit for Codex CLI : r/ChatGPTCoding _202511](https://www.reddit.com/r/ChatGPTCoding/comments/1op0yr6/we_built_codexia_a_free_and_opensource_powerful/)
-  - Is there git worktree integration?
-    - No, but in my plan
-  - https://github.com/milisp/codexia-zen
-    - GUI for OpenAI Codex CLI, minimalist design
 
 - https://github.com/winfunc/opcode /19.1kStar/AGPL/202510/ts/rust/tauri/inactive
   - https://opcode.sh/
@@ -373,65 +247,18 @@ modified: 2025-12-11T18:10:23.710Z
   - Monitor all your Claude Code sessions from a unified interface
   - [Crystal: Supercharge Your Development with Multi-Session Claude Code Management](https://nimbalyst.com/blog/crystal-supercharge-your-development-with-multi-session-claude-code-management)
 
-- https://github.com/opactorai/Claudable /3.4kStar/MIT/202512/ts/electron/inactive
-  - an open-source web builder that leverages local CLI agents, such as Claude Code, Codex, Gemini CLI, Qwen Code, and Cursor Agent, to build and deploy products effortlessly.
-  - Instant Preview: See your changes immediately with hot-reload as AI builds your app
-  - Zero Setup, Instant Launch: No complex sandboxes, no API key, no database headaches - just start building immediately
-  - Deploy to Vercel: Push your app live with a single click
-  - Supabase Database: Connect production PostgreSQL with authentication ready to use
-  - Desktop App: Available as Electron desktop application for Mac, Windows, and Linux
-
-- https://github.com/d-kimuson/claude-code-viewer /892Star/MIT/202602/ts
-  - A full-featured web-based Claude Code client that provides complete interactive functionality for managing Claude Code projects
-  - View Claude Code session logs in real-time through the web UI. Supports historical logs as it uses standard Claude Code logs (~/.claude/projects/...) as the data source
-  - Built-in Git Diff Viewer lets you review all changes directly within Claude Code Viewer
-  - What Makes Claude Code Viewer Different: specifically designed as a session log viewer
-  - Core Philosophy: Zero data loss + Effective organization + Remote-friendly design
-  - 支持在浏览器中打开terminal
-  - 支持resume-chat
-  - 支持查看变更文件列表, 支持查看diff视图
-  - 支持pr模式，可选择branch
-  - 快速查看tool-calls列表
-
-- https://github.com/jhlee0409/claude-code-history-viewer /MIT/202602/rust/ts/tauri
-  - https://jhlee0409.github.io/claude-code-history-viewer
-  - desktop app to browse, search, and analyze your Claude Code conversations — all offline.
-  - It automatically scans `~/.claude` for conversation data
-  - 支持chat聊天内搜索, 但不支持resume-chat
-  - 看板模式、日历模式 来展示用户历史会话
-  - 统计功能强大: 日历热力图, 模型, tools
-  - v1.5.0_202602: Show archived `Codex` sessions in project tree, opencode也支持
-  - [feat: add capture mode for screenshot-ready message hiding _202601](https://github.com/jhlee0409/claude-code-history-viewer/pull/61)
-  - [Show HN: Claude Code History Viewer for macOS | Hacker News _202507](https://news.ycombinator.com/item?id=44459376)
-
-- https://github.com/wesm/agentsview /MIT/202602/go/svelte
-  - https://agentsview.io/
-  - A local web application for browsing, searching, and analyzing AI agent coding sessions. 
-  - Supports Claude Code, Codex, and Gemini CLI. A next-generation rewrite of agent-session-viewer in Go.
-  - agentsview indexes these sessions into a local SQLite database with full-text search, providing a web interface to find past conversations, review agent behavior, and track usage patterns over time.
-  - Live updates via SSE as active sessions receive new messages
-  - Local-first -- all data stays on your machine, single binary, no accounts
-  - https://github.com/wesm/archived-agent-session-viewer /MIT/202601/python/rust/js/tauri/archived
-    - This tool gives you instant full-text search across every session from Claude Code and Codex, organized by project.
-    - Live updates - Active sessions refresh automatically as new messages arrive
-    - Auto-sync - Background sync every 15 minutes, plus manual sync with r
+- https://github.com/openkursar/hello-halo /MIT/202601/ts
+  - The Missing UI for Claude Code
+  - open-source desktop client that makes Claude Code's power accessible to everyone. No terminal, ever.
+  - https://x.com/FlynnWayne_Wang/status/2011079825956749365
+    - Remote access from phone/tablet/any browser
+    - Built-in AI Browser for web automation
+    - 100% of the code after v1 was written by Halo itself
 
 - https://github.com/kamranahmedse/claude-run /517Star/MIT/202601/ts
   - A beautiful web UI for browsing Claude Code conversation history.
   - Real-time streaming - Watch conversations update live as Claude responds
   - Resume sessions - Copy the resume command to continue any conversation in your terminal
-
-- https://github.com/thedotmack/claude-mem /30.1kStar/AGPL/202602/ts
-  - https://claude-mem.ai/
-  - A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.
-  - Persistent Memory - Context survives across sessions
-    - SQLite Database - Stores sessions, observations, summaries
-  - Progressive Disclosure - Layered memory retrieval with token cost visibility
-  - Skill-Based Search - Query your project history with mem-search skill
-  - Web Viewer UI - Real-time memory stream at http://localhost:37777
-  - Privacy Control - Use `<private>` tags to exclude sensitive content from storage
-  - Fine-grained control over what context gets injected
-  - 🔗 Citations - Reference past observations with IDs
 
 - https://github.com/sugyan/claude-code-webui /MIT/202509/ts/inactive
   - A modern web interface for Claude Code CLI - Transform your command-line coding experience into an intuitive web-based chat interface
@@ -519,9 +346,6 @@ modified: 2025-12-11T18:10:23.710Z
 - https://github.com/qinsehm1128/cloud_claude_code /202601/go/ts
   - [云cc项目部署教程(第一次写教程向, 比较der) ](https://linux.do/t/topic/1408766)
 
-- https://github.com/enulus/OpenPackage /apache2/202601/ts
-  - A better, universal, open source version of Claude Code Plugins
-
 - https://github.com/QuivrHQ/247-claude-code-remote
   - Access Claude Code from anywhere - Mobile / Desktop secure connection via Tailscale. Provision VMs with Fly.io. 
   - Compatible with Gemini / Codex / OpenCode
@@ -538,16 +362,6 @@ modified: 2025-12-11T18:10:23.710Z
   - Parallel Execution	Run multiple builds simultaneously with up to 12 agent terminals
   - Isolated Workspaces	All changes happen in git worktrees
   - Memory Layer	Agents retain insights across sessions for smarter builds
-
-- https://github.com/andyfischer/ai-coding-tools/tree/main/claude-history-tool /MIT/202507/ts/inactive
-  - A desktop application for browsing and viewing your Claude chat history.
-  - Browseable Session History: View all your Claude conversations organized by project.
-  - Full Tool Use: See the full input & response data for each tool use.
-  - Full Message Details: Examine the stored JSON to see extra details about your chats.
-  - https://github.com/facetlayer/candle /ts
-    - Small process manager for local development and AI agents
-    - Candle is instead optimized for easy local development instead of production.
-    - Candle will only have one instance of a given service at a time.
 
 - https://github.com/Yeachan-Heo/oh-my-claudecode /6.7kStar/MIT/202602/ts
   - https://yeachan-heo.github.io/oh-my-claudecode-website
@@ -567,6 +381,21 @@ modified: 2025-12-11T18:10:23.710Z
   - Extensible Plugin System - Add custom capabilities with the plugin SDK. Create workers, hooks, providers, and security modules. Share plugins via the decentralized IPFS marketplace.
 
 ### clude-plugins
+
+- https://github.com/thedotmack/claude-mem /30.1kStar/AGPL/202602/ts
+  - https://claude-mem.ai/
+  - A Claude Code plugin that automatically captures everything Claude does during your coding sessions, compresses it with AI (using Claude's agent-sdk), and injects relevant context back into future sessions.
+  - Persistent Memory - Context survives across sessions
+    - SQLite Database - Stores sessions, observations, summaries
+  - Progressive Disclosure - Layered memory retrieval with token cost visibility
+  - Skill-Based Search - Query your project history with mem-search skill
+  - Web Viewer UI - Real-time memory stream at http://localhost:37777
+  - Privacy Control - Use `<private>` tags to exclude sensitive content from storage
+  - Fine-grained control over what context gets injected
+  - 🔗 Citations - Reference past observations with IDs
+
+- https://github.com/enulus/OpenPackage /apache2/202601/ts
+  - A better, universal, open source version of Claude Code Plugins
 
 - https://github.com/treylom/knowledge-manager /202601/ts
   - Knowledge Manager Agent for Claude Code - Extract and organize content from web, PDF, social media to Obsidian/Notion
@@ -726,28 +555,6 @@ modified: 2025-12-11T18:10:23.710Z
     - A containerized development environment running OpenCode WebUI with comprehensive tooling support. 
   - https://github.com/awesome-opencode/awesome-opencode
 
-- https://github.com/rivet-dev/sandbox-agent /536Star/apache2/202602/rust/ts
-  - https://sandboxagent.dev/
-  - Introducing Sandbox Agent SDK: A universal API for automatic coding agents in sandboxes
-  - Universal Session Schema: Standardized schema that normalizes all agent event formats for storage and replay
-  - Human-in-the-Loop: Approve or deny tool executions and answer agent questions remotely over HTTP
-  - Runs Inside Any Sandbox: Lightweight static Rust binary. One curl command to install inside E2B, Daytona, Vercel Sandboxes, or Docker
-  - Server or SDK Mode: Run as an HTTP server or embed with the TypeScript SDK
-  - The Sandbox Agent acts as a universal adapter between your client application and various coding agents. 
-  - Embedded Mode: Runs agents locally as subprocesses
-  - Server Mode: Runs as HTTP server from any sandbox provider, Rust daemon (sandbox-agent server) exposing the HTTP + SSE AP
-  - https://x.com/rivet_dev/status/2016548084696727842 _202601
-    - Claude Code, Codex, OpenCode, Amp all have different APIs. Sandbox Agent SDK unifies them.
-    - 100% open-source
-    - Universal session schema means no more parsing five different formats.
-    - Pairs with Rivet Actors for automatic transcript persistence, real-time streaming to clients, and full session replay.
-  - https://github.com/rivet-dev/sandbox-agent/tree/main/gigacode
-    - https://x.com/NathanFlurry/status/2019759962482725149
-    - Introducing Gigacode: Use @opencode 's UI with any coding agent
-    - Supports Claude Code, Codex, & Amp harness
-    - Not a fork (opencode attach)
-    - Powered by Sandbox Agent SDK ( @rivet_dev )
-
 - https://github.com/NeuralNomadsAI/CodeNomad /203Star/NALic/202512/ts
   - built for people who live inside OpenCode
   - Multi-Instance: Juggle several OpenCode sessions side-by-side with tabs.
@@ -775,6 +582,10 @@ modified: 2025-12-11T18:10:23.710Z
     - it's fully integrated with Claude Skills.
     - What's the security boundary here - there's no mention of a VM or anything to isolate the agent from the file system?
 
+- https://github.com/CefBoud/MonClaw /MIT/202602/ts/inactive
+  - https://cefboud.com/posts/monclaw-a-light-openclaw-with-opencode-sdk/
+  - A minimal Openclaw built using the Opencode SDK
+
 - https://github.com/joelhooks/opencode-vibe /MIT/202601/ts
   - Next.js 16 rebuild of the OpenCode web application. Real-time chat UI with streaming message display, SSE sync, and React Server Components.
   - Prerequisites: Bun v1.3+ and OpenCode CLI running locally.
@@ -783,7 +594,7 @@ modified: 2025-12-11T18:10:23.710Z
   - Cross-process messaging - Send from web UI, appears in your TUI
   - SSE sync - All updates pushed via Server-Sent Events
 
-- https://github.com/0xSero/open-orchestra /MIT/202512/ts
+- https://github.com/0xSero/open-orchestra /MIT/202601/ts/inactive
   - Open Orchestra is a multi-agent orchestration plugin for OpenCode that enables you to spawn, manage, and coordinate specialized AI workers. 
   - It implements a hub-and-spoke architecture where a central orchestrator coordinates multiple specialized workers, each optimized for specific tasks.
   - Hub-and-Spoke Architecture - Central orchestrator with specialized workers
@@ -821,10 +632,6 @@ modified: 2025-12-11T18:10:23.710Z
 - https://github.com/Microck/opencode-studio /112Star/MIT/202601/ts
   - a local gui for managing opencode configurations. 
   - toggle mcp servers, edit skills, manage plugins, handle auth - no json editing required.
-
-- https://github.com/btriapitsyn/openchamber /322Star/MIT/202601/rust/ts
-  - Web and desktop interface for the OpenCode AI coding agent. Works alongside the OpenCode TUI.
-  - The OpenCode team is actively working on their own desktop app. I still decided to release this project as a fan-made alternative.
 
 - https://github.com/chriswritescode-dev/opencode-web /MIT/202512/ts
   - A full-stack web application for running OpenCode in local processes, controllable via a modern web interface. 
@@ -873,22 +680,39 @@ modified: 2025-12-11T18:10:23.710Z
   - Video Streaming - Real-time WebSocket streaming for visual monitoring
   - Zero Config - Works out of the box
 
-- https://github.com/CefBoud/MonClaw /MIT/202602/ts
-  - https://cefboud.com/posts/monclaw-a-light-openclaw-with-opencode-sdk/
-  - A minimal Openclaw built using the Opencode SDK
-
 - https://github.com/Opencode-DCP/opencode-dynamic-context-pruning /AGPL/202602/python/ts
   - Automatically reduces token usage in OpenCode by removing obsolete content from conversation history.
   - Dynamic context pruning plugin for OpenCode - intelligently manages conversation context to optimize token usage
-# cli-wrapper/aggregator
-- https://github.com/slopus/happy /14.6kStar/MIT/202602/ts
+# cli-aggregator/wrapper
+- https://github.com/superset-sh/superset /1.5kStar/apache2 > elastic/202602/ts
+  - https://superset.sh/
+  - A Terminal Built for Coding Agents
+  - Run 10+ CLI coding agents like Claude Code, Codex, etc. in parallel on your machine. Spin up new coding tasks while waiting for your current agent to finish. Quickly switch between tasks as they need your attention.
+  - For each parallel tasks, Superset uses git worktrees to clone a new branch on your machine.
+  - https://x.com/FlyaKiet/status/2020993991605735571
+    - Chat GUI is in early preview - It's Claude Code SDK  under the hood with extra integrations into Superset for the ultimate chat experience. Compatible with existing Claude Code sessions. Slash commands and @ mention supported. Codex will soon follow.
+  - https://x.com/vikingmute/status/2029906627458125926
+    - Superset 和 Conductor 是今年用的最愉悦的两个工具，功能类似，界面也相同，并行运行和管理多个 AI coding agents，基于 git worktree，不过 Conductor 只支持 Codex 和 Claude Code 两个 CLI，Superset 各种都支持。后来我就主要使用 Superset 了。
+
+- https://github.com/hlhr202/Conductor-for-all /apache2/202601/ts
+  - Conductor for All is a standalone command-line tool designed to bring the Conductor spec-driven development methodology to any coding environment.
+  - Originally tied to the Gemini CLI extension, this project aims to decouple the methodology, allowing developers to install and initialize Conductor workflows in their projects so they can be leveraged by any AI Coding Agent (e.g., Claude Code, Cursor, VS Code Copilot, Codex) or IDE.
+
+- https://github.com/slopus/happy /14.6kStar/MIT/202602/ts/tauri
   - https://happy.engineering/
   - Mobile and Web client for Codex and Claude Code, with realtime voice, encryption and fully featured
-  - On your computer, run `happy` instead of `claude` or `happy codex` instead of `codex` to start your AI through our wrapper. 
-    - When you want to control your coding agent from your phone, it restarts the session in remote mode. 
-    - To switch back to your computer, just press any key on your keyboard.
+  - On your computer, run `happy` instead of `claude` or `happy codex` instead of `codex` to start your AI through our wrapper. When you want to control your coding agent from your phone, it restarts the session in remote mode.
   - Switch devices instantly - Take control from phone or desktop with one keypress
+  - Open source - Audit the code yourself. No telemetry, no tracking
   - 类似的问题也存在。而且 Happy 用起来更麻烦，需要单独跑一个 Happy 进程。虽然支持 remote 和 local 切换，但每次切换都是一次新对话，更加不连贯。
+  - https://github.com/slopus/happy-server /MIT/202512/ts
+    - Minimal backend for open-source end-to-end encrypted Claude Code clients.
+    - Only essential features for secure sync, nothing more
+    - The server stores encrypted data but has no ability to decrypt it
+    - WebSocket-based synchronization across all your devices
+    - Built to scale horizontally when needed
+    - 待确定, 是否支持区分不同用户的不同客户端
+    - How It Works: Your Claude Code clients generate encryption keys locally and use Happy Server as a secure relay. Messages are end-to-end encrypted before leaving your device. The server's job is simple: store encrypted blobs and sync them between your devices in real-time.
 
 - https://github.com/tiann/hapi /2.4kStar/AGPL/202603/ts
   - https://hapi.run/
@@ -903,6 +727,185 @@ modified: 2025-12-11T18:10:23.710Z
     - Claude Code / Codex 支持本地/远程无缝切换；支持 AskUserQuestion 等工具交互
     - Telegram 集成：权限请求推送，Mini App 全功能操作，快捷按钮一键审批
     - 实时多端同步：乐观并发控制，PWA 离线支持
+
+- https://github.com/fengshao1227/ccg-workflow /MIT/202601/js
+  - CCG v3.0: Claude Code 编排三 CLI 协作
+  - v3.0.0 重大更新：从 Python 脚本进化为 npm 包，三 CLI 协作时代正式开启！
+  - 从 Python 脚本重构为 TypeScript + unbuild 构建系统
+  - Claude Code 是主对话，负责编排整个工作流、做最终决策、实施代码
+    - Codex/Gemini/Claude 子进程 通过 codeagent-wrapper 调用，生成原型代码
+    - 零写入权限：子进程只能返回 Unified Diff Patch，不能直接修改文件
+    - 子进程输出视为"脏原型"，需经 Claude Code 重构为生产级代码
+  - Claude Code CLI 作为主导编排者
+    - Codex CLI 负责后端原型生成
+    - Gemini CLI 负责前端原型生成
+    - Claude CLI 子进程负责全栈整合
+  - 支持 smart/parallel/sequential 三种协作模式
+  - [【开源】CCG v3.0: Claude Code 编排三 CLI 协作 | Codex + Gemini + Claude ](https://linux.do/t/topic/1405588)
+    - 之前一直在用 孙佬 @DaiSun 的 Skills 仓库，用着用着就想搞点定制化的东西。比如给 Codex 和 Gemini 配上专家角色提示词，让它们不再是无头苍蝇；再比如把 zcf 佬的 Git 工具也缝进来，一站式解决开发需求。于是就有了这个 CCG（Claude Code + Codex + Gemini）项目 
+
+- https://github.com/opactorai/Claudable /3.4kStar/MIT/202512/ts/electron/inactive
+  - an open-source web builder that leverages local CLI agents, such as Claude Code, Codex, Gemini CLI, Qwen Code, and Cursor Agent, to build and deploy products effortlessly.
+  - Instant Preview: See your changes immediately with hot-reload as AI builds your app
+  - Zero Setup, Instant Launch: No complex sandboxes, no API key, no database headaches - just start building immediately
+  - Deploy to Vercel: Push your app live with a single click
+  - Supabase Database: Connect production PostgreSQL with authentication ready to use
+  - Desktop App: Available as Electron desktop application for Mac, Windows, and Linux
+
+- https://github.com/erans/lunaroute /apache2/202511/rust
+  - LunaRoute is a high-performance local proxy for AI coding assistants like Claude Code, OpenAI Codex CLI, and OpenCode. 
+  - Get complete visibility into every LLM interaction with zero-overhead passthrough, comprehensive session recording, and powerful debugging capabilities.
+  - Accepts both OpenAI and Anthropic formats simultaneously
+  - See Everything Your AI Does
+
+- https://github.com/coulsontl/ai-toolbox /MIT/202603/rust/ts
+  - 一个跨平台桌面应用，旨在帮助开发者高效管理各类 AI 编程助手的配置。支持 Windows、macOS 和 Linux。
+  - OpenCode 配置管理 - 可视化管理 OpenCode 的供应商和模型配置，支持列表页快速启停
+  - Claude Code 配置管理 - 一键切换 Claude Code 的 API 供应商配置，支持动态获取模型列表
+  - Codex 配置管理 - 管理 OpenAI Codex CLI 的供应商配置
+
+- https://github.com/manaflow-ai/cmux /MIT/202512/ts/rust
+  - Open source Claude Code manager that supports Codex/Gemini/Cursor/OpenCode/Amp CLI
+  - cmux lets you spawn Claude Code, Codex CLI, Cursor CLI, Gemini CLI, Amp, Opencode, and other coding agent CLIs in parallel across multiple tasks.
+  - Every run spins up an isolated VS Code workspace either in the cloud or in a local Docker container with the git diff view, terminal, and dev server preview ready so parallel agent work stays verifiable, fast, and ready to ship.
+  - cmux supports macOS. Linux and Windows support coming soon.
+  - 未使用tauri
+# ui-aggregator/manager
+- https://github.com/iOfficeAI/AionUi /18.4kStar/apache2/202603/ts
+  - https://www.aionui.com/
+  - https://github.com/iOfficeAI/AionUi/wiki
+  - open-source GUI app for Gemini CLI — Better Chat UI, multi-agent support, multi-LLMs & apikey polling, Workspace Management, AI image editing & more
+  - While the official Gemini CLI is powerful, its command-line interface has limitations for daily use. 
+  - 🐛 
+    - 不支持rag
+  - Seamlessly integrate multiple terminal AI agents - Gemini CLI, Claude Code, Qwen Code, Codex and more
+    - [ACP Setup · iOfficeAI/AionUi Wiki](https://github.com/iOfficeAI/AionUi/wiki/ACP-Setup)
+    - Gemini CLI Mode: Built into AionUi, users get it by default
+    - Multi-Agent Mode: Requires users to download and install
+  - Handle Multiple Tasks at Once: Multiple conversations, no task confusion, independent memory, double efficiency
+  - 📱 WebUI Mode: Access AionUi from any device on your network
+  - Batch renaming, auto organization, smart classification, file merging
+  - image generation, editing, and recognition powered by Gemini 2.5 Flash Image Preview
+  - AI helps you create, organize, analyze, and beautify Excel files
+  - MCP Tool Management
+  - [feat: Implement ACP integration with improved Gemini authentication _20250903](https://github.com/iOfficeAI/AionUi/commit/23b3c4fae1af1c763f7ca41957ec141df47ad3a2)
+    - Add comprehensive ACP (Agent Client Protocol) support for Claude and Gemini backends
+  - 📡 roadmap
+    - 可结合下面async-code和其他ui的优点, 优化 background-agents 后台任务/并发任务
+  - [AionUi V1.7.4 更新：兼容了Newapi（Cowork开源版可以用公益站/中转站了 _202601](https://linux.do/t/topic/1508016)
+    - 测了一下部分中转站已经通了，基于newapi的公益站也通了。配置在“自定义模型平台”上即可。
+    - 之前aionui直接配置中转站时会被中转站拦截请求。需要带上user-agent才能通信。他们要在标准的OpanAI协议基础上带上defaultHeader才可以识别请求，之前AionUi没做这个。
+    - 支持多key轮询, 同一个url下的多key轮询
+
+- https://github.com/multica-ai/multica /apache2/202602/ts/inactive
+  - A native desktop client that brings coding agent capabilities to everyone through a visual interface.
+  - ⚖️ Support for multiple AI agents through the Agent Client Protocol (ACP)
+  - 支持 cc, opencode, codex
+  - Local-first: your data never leaves your machine
+  - Session management with history and resume capabilities
+  - Built-in CLI for power users and testing
+  - https://x.com/jiayuan_jy/status/2012040329407713404
+    - 分享我们最近实现的一个开源版本 Claude Cowork
+    - 目标是成为 coding agent 和终端用户的中间层，有点类似 Obsidian 的模式，每个人都可以根据自己的工作流使用插件的方式来定制化。
+
+- https://github.com/siteboon/claudecodeui /8.2kStar/GPL/202603/ts
+  - https://cloudcli.ai/
+  - A desktop and mobile UI for Claude Code, Cursor CLI, Codex, and Gemini-CLI.
+  - Use Claude Code or Cursor CLI on mobile and web with Claude Code UI. 
+  - 不支持rag
+  - Claude Code UI free open source webui/GUI that helps you manage your Claude Code session and projects remotely
+  - You can use it locally or remotely to view your active projects and sessions in Claude Code or Cursor and make changes to them
+  - Supports models including Claude Sonnet 4, Opus 4.1, and GPT-5
+  - Direct access to Claude Code or Cursor CLI through built-in shell functionality
+  - Session Management - Resume conversations, manage multiple sessions, and track history
+  - File Explorer - Interactive file tree with syntax highlighting and live editing
+  - Git Explorer - View, stage and commit your changes. You can also switch branches
+  - 🐛 [Feature Request: Support for Claude Code Proxy Tools (CCR Integration) _202511](https://github.com/siteboon/claudecodeui/issues/234)
+    - I'm using claude-code-router (CCR), a proxy tool that routes Claude Code requests to different AI models and providers (Gemini, DeepSeek, Ollama, etc.). However, claudecodeui currently doesn't support integration with CCR due to its architecture.
+    - Since the main chat functionality uses the SDK, it bypasses the claude CLI and connects directly to Anthropic's API, making it impossible to use proxy tools like CCR that work by intercepting CLI calls.
+  - [How feasible is it to add support for other CLI agents like Gemini? _202507](https://github.com/siteboon/claudecodeui/discussions/13)
+    - Gemini CLI is there yet. It's important to be able to work in non interactive mode for the Chat function to work.
+
+- https://github.com/milisp/codexia /478Star/MIT > AGPL/202603/ts/tauri
+  - https://github.com/codexia-team/codexia /renamed
+  - ~~A powerful GUI and Toolkit for Codex CLI~~
+  - A powerfull GUI/IDE and Toolkit for Codex CLI + Claude Code. FileTree + prompt notepad + git worktree and more
+  - fork chat, file-tree integration, notepad, git diff, build-in pdf csv/xlsx viewer, and more.
+  - [We built Codexia - A free and open-source powerful GUI app and Toolkit for Codex CLI : r/ChatGPTCoding _202511](https://www.reddit.com/r/ChatGPTCoding/comments/1op0yr6/we_built_codexia_a_free_and_opensource_powerful/)
+  - Is there git worktree integration?
+    - No, but in my plan
+  - https://github.com/milisp/codexia-zen
+    - GUI for OpenAI Codex CLI, minimalist design
+
+- https://github.com/J3n5en/EnsoAI /MIT/202512/ts
+  - https://enso.j3.do/
+  - 无缝切换 Claude、Codex、Gemini 或本地 LLM。每个 Worktree 都有独立的持久化 AI 会话。 你也可以通过指定 CLI 命令来添加自定义 Agent。
+  - 专注于 Git Worktree + AI Agent 的协作场景。它不是要替代 VS Code 或 Cursor，而是作为一个轻量级的工作空间管理器
+  - 内置 可视化 Git 面板
+  - 基于 Monaco 构建的轻量级编辑器
+  - 内置专业的三栏合并编辑器。
+  - 毫秒级创建与切换 Git Worktree
+  - 框架: Electron + React 19 
+  - 终端: xterm.js + node-pty
+  - Git: simple-git
+  - 数据库: better-sqlite3
+  - 为什么使用官方 CLI 而不使用 ACP？
+    - 虽然 ACP 能够统一不同 Agent 的核心能力，但是也仅限于核心能力缺失了很多功能。切换不同 Agent 的场景其实并不多而且不同 Agent 的 CLI 核心功能都相似。所以我们认为对于有经验的开发者各 CLI 更具有生产力。
+
+- https://github.com/21st-dev/1code /4.7kStar/apache2/202601/ts
+  - https://1code.dev/
+  - Better UI app for running code agents in parallel (ClaudeCode, OpenCode, Codex)
+  - Best UI for Claude Code with local and remote agent execution.
+  - 1Code is an open-source app that provides a calm, visual interface for Claude Code. It lets you run multiple coding sessions in parallel, track progress visually, and manage your AI-assisted development workflow more effectively.
+  - fully open source. 
+  - Note: Currently tested on macOS and Linux. Windows support is experimental and may have issues.
+  - built for coding. It has a full terminal, GitHub integration, visual diff previews, and worktree management. 
+  - Git Worktree Isolation - Each chat session runs in its own isolated worktree
+  - [[Question] Does this usage violate Anthropic’s ToS? _202601](https://github.com/21st-dev/1code/issues/8)
+    - 1Code uses the official Claude Code SDK which wraps the Claude Code binary. This is the official way to build on top of Claude Code.
+    - Some other tools (like OpenCode) made direct API calls while impersonating Claude Code - that approach got banned. We're not doing that.
+
+- https://github.com/getpaseo/paseo /MIT/202602/ts
+  - https://paseo.sh/
+  - Manage coding agents from your phone and desktop.
+  - a self-hosted daemon for Claude Code, Codex, and OpenCode.
+  - Agents run on your machine with your full dev environment. 
+  - Connect from phone, desktop, or web.
+  - [I built a fully self-hosted and open-source Claude Code UI for desktop and mobile : r/ClaudeCode](https://www.reddit.com/r/ClaudeCode/comments/1r8rqnv/i_built_a_fully_selfhosted_and_opensource_claude/)
+    - Git worktree management for running agents in parallel, Git operations so you don't have to leave the app, integrated terminal, it also comes with fully local voice mode and dictation
+
+- https://github.com/kbwo/ccmanager /MIT/202602/ts
+  - a CLI application for managing multiple AI coding assistant sessions (Claude Code, Gemini CLI, Codex CLI, Cursor Agent, Copilot CLI, Cline CLI, OpenCode, Kimi CLI) across Git worktrees and projects.
+
+- https://github.com/pedramamini/Maestro /AGPL/202601/ts
+  - https://runmaestro.ai/
+  - a cross-platform desktop app for orchestrating your fleet of AI agents and projects.
+  - It's a high-velocity solution for hackers who are juggling multiple projects in parallel.
+  - Run multiple agents in parallel with a Linear/Superhuman-level responsive interface. 
+  - Currently supporting Claude Code, OpenAI Codex, and OpenCode with plans for additional agentic coding tools (Aider, Gemini CLI, Qwen3 Coder) based on user demand.
+  - Git Worktrees - Run AI agents in parallel on isolated branches
+  - File-system-based task runner that batch-processes markdown checklists through AI agents. Create playbooks for repeatable workflows
+  - Mobile Remote Control - Built-in web server with QR code access.
+  - Full CLI (maestro-cli) for headless operation.
+  - Multi-Agent Management - Run unlimited agents and terminal sessions in parallel. 
+  - Message Queueing - Queue messages while AI is busy; they're sent automatically when the agent becomes ready. Never lose a thought.
+
+- https://github.com/saadnvd1/agent-os /MIT/202601/ts
+  - https://runagentos.com/
+  - Mobile-first web UI for managing AI coding sessions (Claude Code, Codex, Aider, Gemini CLI). 
+  - Self-hosted with multi-pane terminals, git integration, and session orchestration.
+- https://github.com/The-Vibe-Company/companion /2kStar/MIT/202602/ts
+  - Web & Mobile UI for Claude Code & Codex . 
+  - Launch sessions, stream responses, approve tools. All from your browser / mobile
+
+- https://github.com/endorhq/rover /apache2/202602/ts
+  - A manager for AI coding agents that works with Claude Code, Cursor, Gemini, Codex, and Qwen.
+  - everything runs locally, under your control, and using your already installed tools.
+- https://github.com/jacob-bd/ai-code-connect /MIT/202601/ts
+  - A CLI tool that connects Claude Code and Gemini CLI, eliminating manual copy-paste between AI coding assistants.
+
+- https://github.com/aannoo/hcom /MIT/202602/python/rust
+  - Connect Claude Code, Gemini CLI, and Codex so agents can message, watch, and spawn each other across terminals
 # cli-coding-agent
 - https://github.com/1rgs/nanocode /1.7kStar/MIT/202601/python/单文件
   - Minimal Claude Code alternative. Single Python file, zero dependencies, ~250 lines.
@@ -957,14 +960,9 @@ modified: 2025-12-11T18:10:23.710Z
       - ink's exit() doesn't terminate the process
     - [feat: implement parallel tool execution for better performance _202602](https://github.com/Nano-Collective/nanocoder/pull/352)
 
-- https://github.com/coulsontl/ai-toolbox /MIT/202603/rust/ts
-  - 一个跨平台桌面应用，旨在帮助开发者高效管理各类 AI 编程助手的配置。支持 Windows、macOS 和 Linux。
-  - OpenCode 配置管理 - 可视化管理 OpenCode 的供应商和模型配置，支持列表页快速启停
-  - Claude Code 配置管理 - 一键切换 Claude Code 的 API 供应商配置，支持动态获取模型列表
-  - Codex 配置管理 - 管理 OpenAI Codex CLI 的供应商配置
-
 - https://github.com/Aider-AI/aider /37.1kStar/apache2/202508/python
   - https://aider.chat/
+  - https://aider.chat/docs/leaderboards/
   - aider is AI pair programming in your terminal
   - [Aider does not work with lm studio on mac, linux, or windows _202508](https://github.com/Aider-AI/aider/issues/4396)
   - You need an underscore `lm_studio/...` in the prefix
@@ -1070,6 +1068,14 @@ modified: 2025-12-11T18:10:23.710Z
   - [VT Code — Rust terminal coding agent doing AST-aware edits + local model workflows : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1oe6y1a/vt_code_rust_terminal_coding_agent_doing_astaware/)
     - Most of the features I planned to build are completed. For local models, I had planned to do ollama integration firsthand. I also do plan to integrate with llama.cpp and lmstudio next
 
+- https://github.com/coder/mux /1.3kStar/AGPL/202603/ts
+  - https://mux.coder.com/
+  - A desktop app for isolated, parallel agentic development
+  - enables developers to plan and execute tasks with multiple AI agents on local or remote compute.
+  - Isolated workspaces: local directory, worktree, ssh
+  - models: openrouter, Ollama
+  - mux has a custom agent loop but much of the core UX is inspired by Claude Code.
+
 - https://github.com/synthetic-lab/octofriend /202510/ts
   - Octo is a small, helpful, cephalopod-flavored coding assistant that works with any OpenAI-compatible or Anthropic-compatible LLM API, and allows you to switch models at will mid-conversation
   - Octo has helped write some of its own source code, but the codebase is human-first
@@ -1080,56 +1086,12 @@ modified: 2025-12-11T18:10:23.710Z
   - MCP server for Claude that gives it terminal control, file system search and diff file editing capabilities
   - Built on top of MCP Filesystem Server to provide additional search and replace file editing capabilities.
 
-- https://github.com/manaflow-ai/cmux /MIT/202512/ts/rust
-  - Open source Claude Code manager that supports Codex/Gemini/Cursor/OpenCode/Amp CLI
-  - cmux lets you spawn Claude Code, Codex CLI, Cursor CLI, Gemini CLI, Amp, Opencode, and other coding agent CLIs in parallel across multiple tasks.
-  - Every run spins up an isolated VS Code workspace either in the cloud or in a local Docker container with the git diff view, terminal, and dev server preview ready so parallel agent work stays verifiable, fast, and ready to ship.
-  - cmux supports macOS. Linux and Windows support coming soon.
-  - 未使用tauri
-
 - https://github.com/QuantaAlpha/RepoMaster /202511/python/web
   - https://quantaalpha.github.io/
   - RepoMaster transforms how you solve coding tasks by automatically finding the right GitHub tools and making them work together seamlessly.
 
 - https://github.com/AIPowerGrid/grid-code /202508/ts/inactive
   - a coding agent powered by the grid, a decentralized network of AI workers
-
-- https://github.com/superset-sh/superset /1.5kStar/apache2 > elastic/202602/ts
-  - https://superset.sh/
-  - A Terminal Built for Coding Agents
-  - Run 10+ CLI coding agents like Claude Code, Codex, etc. in parallel on your machine. Spin up new coding tasks while waiting for your current agent to finish. Quickly switch between tasks as they need your attention.
-  - For each parallel tasks, Superset uses git worktrees to clone a new branch on your machine.
-  - https://x.com/FlyaKiet/status/2020993991605735571
-    - Chat GUI is in early preview - It's Claude Code SDK  under the hood with extra integrations into Superset for the ultimate chat experience. Compatible with existing Claude Code sessions. Slash commands and @ mention supported. Codex will soon follow.
-  - https://x.com/vikingmute/status/2029906627458125926
-    - Superset 和 Conductor 是今年用的最愉悦的两个工具，功能类似，界面也相同，并行运行和管理多个 AI coding agents，基于 git worktree，不过 Conductor 只支持 Codex 和 Claude Code 两个 CLI，Superset 各种都支持。后来我就主要使用 Superset 了。
-
-- https://github.com/hlhr202/Conductor-for-all /apache2/202601/ts
-  - Conductor for All is a standalone command-line tool designed to bring the Conductor spec-driven development methodology to any coding environment.
-  - Originally tied to the Gemini CLI extension, this project aims to decouple the methodology, allowing developers to install and initialize Conductor workflows in their projects so they can be leveraged by any AI Coding Agent (e.g., Claude Code, Cursor, VS Code Copilot, Codex) or IDE.
-
-- https://github.com/erans/lunaroute /apache2/202511/rust
-  - LunaRoute is a high-performance local proxy for AI coding assistants like Claude Code, OpenAI Codex CLI, and OpenCode. 
-  - Get complete visibility into every LLM interaction with zero-overhead passthrough, comprehensive session recording, and powerful debugging capabilities.
-  - Accepts both OpenAI and Anthropic formats simultaneously
-  - See Everything Your AI Does
-
-- https://github.com/saadnvd1/agent-os /MIT/202601/ts
-  - https://runagentos.com/
-  - Mobile-first web UI for managing AI coding sessions (Claude Code, Codex, Aider, Gemini CLI). 
-  - Self-hosted with multi-pane terminals, git integration, and session orchestration.
-- https://github.com/The-Vibe-Company/companion /2kStar/MIT/202602/ts
-  - Web & Mobile UI for Claude Code & Codex . 
-  - Launch sessions, stream responses, approve tools. All from your browser / mobile
-
-- https://github.com/endorhq/rover /apache2/202602/ts
-  - A manager for AI coding agents that works with Claude Code, Cursor, Gemini, Codex, and Qwen.
-  - everything runs locally, under your control, and using your already installed tools.
-- https://github.com/jacob-bd/ai-code-connect /MIT/202601/ts
-  - A CLI tool that connects Claude Code and Gemini CLI, eliminating manual copy-paste between AI coding assistants.
-
-- https://github.com/aannoo/hcom /MIT/202602/python/rust
-  - Connect Claude Code, Gemini CLI, and Codex so agents can message, watch, and spawn each other across terminals
 
 - https://github.com/specstoryai/getspecstory /961Star/apache2/202601/go
   - https://specstory.com/
@@ -1149,6 +1111,28 @@ modified: 2025-12-11T18:10:23.710Z
     - The bridge does something fundamentally different from Han's Claude Code integration. In Claude Code, hooks are shell commands that run as separate processes. Output goes to stdout, which Claude sees as conversation messages. It works, but it's fire-and-forget.
     - In OpenCode, the bridge runs hooks as awaited promises with structured result collection.
 # cli-utils
+- https://github.com/rivet-dev/sandbox-agent /536Star/apache2/202602/rust/ts
+  - https://sandboxagent.dev/
+  - Introducing Sandbox Agent SDK: A universal API for automatic coding agents in sandboxes
+  - Universal Session Schema: Standardized schema that normalizes all agent event formats for storage and replay
+  - Human-in-the-Loop: Approve or deny tool executions and answer agent questions remotely over HTTP
+  - Runs Inside Any Sandbox: Lightweight static Rust binary. One curl command to install inside E2B, Daytona, Vercel Sandboxes, or Docker
+  - Server or SDK Mode: Run as an HTTP server or embed with the TypeScript SDK
+  - The Sandbox Agent acts as a universal adapter between your client application and various coding agents. 
+  - Embedded Mode: Runs agents locally as subprocesses
+  - Server Mode: Runs as HTTP server from any sandbox provider, Rust daemon (sandbox-agent server) exposing the HTTP + SSE AP
+  - https://x.com/rivet_dev/status/2016548084696727842 _202601
+    - Claude Code, Codex, OpenCode, Amp all have different APIs. Sandbox Agent SDK unifies them.
+    - 100% open-source
+    - Universal session schema means no more parsing five different formats.
+    - Pairs with Rivet Actors for automatic transcript persistence, real-time streaming to clients, and full session replay.
+  - https://github.com/rivet-dev/sandbox-agent/tree/main/gigacode
+    - https://x.com/NathanFlurry/status/2019759962482725149
+    - Introducing Gigacode: Use @opencode 's UI with any coding agent
+    - Supports Claude Code, Codex, & Amp harness
+    - Not a fork (opencode attach)
+    - Powered by Sandbox Agent SDK ( @rivet_dev )
+
 - https://github.com/BloopAI/vibe-kanban /20.4kStar/apache2/202602/rust/ts
   - https://www.vibekanban.com/
   - Get 10X more out of Claude Code, Gemini CLI, Codex, Amp and other coding agents...
@@ -1159,8 +1143,10 @@ modified: 2025-12-11T18:10:23.710Z
   - Track the status of tasks that your coding agents are working on
   - Centralise configuration of coding agent MCP configs
 
-- https://github.com/CodeGraphContext/CodeGraphContext
-  - ?
+- https://github.com/CodeGraphContext/CodeGraphContext /1.5kStar/MIT/202603/python/ts
+  - https://codegraphcontext.vercel.app/
+  - MCP server and CLI toolkit that indexes local code into a graph database to provide context to AI assistants and developers. 
+  - Use it as a standalone CLI for comprehensive code analysis or connect it to your favorite AI IDE via MCP
   - [CodeGraphContext - An MCP server that indexes your codebase into a graph database to provide accurate context to AI assistants and humans : r/mcp](https://www.reddit.com/r/mcp/comments/1qyncmd/codegraphcontext_an_mcp_server_that_indexes_your/)
     - indexes a repo into a repository-scoped symbol-level graph: files, functions, classes, calls, imports, inheritance — and serves precise, relationship-aware context to AI tools via MCP.
     - Real-time updates as code changes
@@ -1168,6 +1154,15 @@ modified: 2025-12-11T18:10:23.710Z
       - For dynamic repos, we do watch files for live changes using watch_dog and the incremental updates are done by replacing all nodes, including and contained within the node. 
     - Graph-based code indexing is such a better approach than just chunking files. How are you handling incremental updates when only a few files change? That's usually where the perf bottleneck shows up.
       - Whenever we change a file, we delete the node and all related edges to this. Then only that file is brought-back and from the cache we do path resolution for imports.
+  - [CodeGraphContext (An MCP server that indexes local code into a graph database) now has a website playground for experiments : r/mcp _202603](https://www.reddit.com/r/mcp/comments/1rp6q31/codegraphcontext_an_mcp_server_that_indexes_local/)
+
+- https://github.com/RAIT-09/obsidian-agent-client /127Star/apache2/202512/ts
+  - Bring AI agents into Obsidian via Agent Client Protocol (ACP), such as Claude Code, Codex and Gemini CLI.
+  - This plugin lets you chat with Claude Code, Codex, Gemini CLI, and other AI agents right from your vault.
+  - Multi-Agent Support: Switch between Claude Code, Codex, Gemini CLI, and custom agents
+  - Note Mention Support: @notename to reference specific notes
+  - Use / commands to browse and trigger actions provided by your current agent
+  - Permission Management: Fine-grained control over agent actions
 
 - https://github.com/jayjongcheolpark/chat2md /202602/swift
   - A macOS menu bar app that syncs AI CLI conversations to Markdown files for use with Obsidian or any markdown-based note system.
@@ -1178,7 +1173,7 @@ modified: 2025-12-11T18:10:23.710Z
   - Status Graph: Visual history of recent sync operations per provider
   - [I built a macOS app that auto-syncs Claude Code conversations to your vault : r/ObsidianMD _202601](https://www.reddit.com/r/ObsidianMD/comments/1qrxv3b/i_built_a_macos_app_that_autosyncs_claude_code/)
 # cli-search/rag/context/memory
-- https://github.com/mixedbread-ai/mgrep /3.2kStar/apache2/202601/ts/平台未开源
+- https://github.com/mixedbread-ai/mgrep /3.2kStar/apache2/202601/ts/平台未开源/inactive
   - https://demo.mgrep.mixedbread.com/
   - CLI-native way to semantically grep everything, like code, images, pdfs and more.
   - Natural-language search that feels as immediate as grep.
@@ -1221,7 +1216,7 @@ modified: 2025-12-11T18:10:23.710Z
     - The grep Way: The AI tries to guess which keywords you used in your code related to your query. If it guesses a very common word like error, it might get 500 lines of logs, most of which are useless, wasting tokens and time.
     - osgrep is different. OpenCode calls osgrep to perform a semantic search. It looks for the concept of your request.  Using an indexed database It can find who calls a function and what that function calls (Call Graph Tracing), which provides deeper structural context that grep doesn’t have. This context allows more precise results saving tokens.
 
-- https://github.com/tobi/qmd /9.8kStar/MIT/202602/python/ts
+- https://github.com/tobi/qmd /14kStar/MIT/202603/python/ts
   - https://github.com/tobi/qmd/blob/main/skills/qmd/SKILL.md
     - 官方SKILL.md提供了cli用法和mcp用法
   - https://github.com/levineam/qmd-skill/blob/main/SKILL.md

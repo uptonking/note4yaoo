@@ -486,6 +486,11 @@ modified: 2023-08-29T10:12:22.345Z
     - GitHub has no way of delete remote Git LFS objects except from deleting the whole repository
     - Windows clients with Git <2.34 corrupt files > 4Gb
 
+- https://github.com/huggingface/xet-core /424Star/apache2/202603/rust
+  - xet-core enables huggingface_hub to utilize xet storage for uploading and downloading to HF Hub. 
+  - Xet storage provides chunk-based deduplication, efficient storage/retrieval with local disk caching, and backwards compatibility with Git LFS. 
+  - This library is not meant to be used directly, and is instead intended to be used from https://github.com/huggingface/huggingface_hub /apache2/python
+
 - https://github.com/filhodanuvem/gitql /go
   - a Git query language
 

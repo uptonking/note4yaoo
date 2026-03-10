@@ -12,7 +12,7 @@ modified: 2022-11-11T06:57:09.670Z
 - classic-examples-rust
   - tips: 比cpp更安全的语言, 在 编辑器/ide/存储层 有探索，业务开发速度慢
   - editor: kilo-editor, treesitter, ripgrep, xi-editor/lapce/zed
-  - db: 🌹 turso, rust-kv, terminusdb-store, 
+  - db: 🌹 turso, rust-kv, terminusdb-store, xet(hf storage)
   - crdt
   - git-like: codex-cli
   - utils: mdx, mdBook(MPL)/rustdoc, typst, arrow

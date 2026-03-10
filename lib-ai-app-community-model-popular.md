@@ -693,6 +693,15 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Missing a Qwen3.5 model between the 9B and the 27B? : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rp1t9n/missing_a_qwen35_model_between_the_9b_and_the_27b/)
+- 35B-A3B is roughly the new "14B" and runs on almost any PC with >=32GB RAM. But I believe 35B-A3B easily lose to 27B for anything except world knowledge, unlike Qwen3-30B-A3B-2507 vs Qwen3-32B.
+
+- try 18B and 22B MoE Reap
+
 - ## [Is GLM-4.7-Flash relevant anymore? : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rnwvg6/is_glm47flash_relevant_anymore/)
 - For me, I still find it better than Qwen 3.5, and I still use it. I did a comparison between GLM-4.7-Flash and all Qwen 3.5 releases and confirmed for myself that GLM 4.7 is the best for agentic penetration testing. Not only that, but it's also great with coding, and for me, I found it to be the same or better than Qwen 3.5 and Qwen 3 Coder Next.
   - Me too. The model is great, cleaner thinking, better problem solving. The only thing that keeps me away from using it is that much slower on long context being transformer vs linear attention of qwen. GLM degrades much faster on speed. 

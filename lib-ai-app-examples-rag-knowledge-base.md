@@ -1047,6 +1047,10 @@ modified: 2025-11-30T17:27:16.720Z
   - Features multi-engine research across 9+ search backends with semantic similarity ranking, and requires no API keys.
   - 9+ Search Backends: DuckDuckGo, Google, Bing, Brave, Wikipedia, Yahoo, Yandex, Mojeek, Grokipedia
 # graph-knowledge
+- https://github.com/paukkroa/SemaTree /202603/python
+  - a framework for managing and querying semantically structured graph-like knowledge bases
+  - SemaTree turns documentation websites and local folders into navigable semantic file trees that AI agents can explore with simple tools. Instead of retrieving chunks statistically, agents navigate a clean directory hierarchy to find exactly what they need — with precise control over how much context they consume at each step.
+  - [Experimentation with semantic file trees and agentic search : r/Rag _202603](https://www.reddit.com/r/Rag/comments/1rq6p3p/experimentation_with_semantic_file_trees_and/)
 
 ## graph-examples
 
