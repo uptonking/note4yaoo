@@ -618,39 +618,6 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 - ERNIE 4.5 (?) 0.3B: It's a really small model that maintains coherence, I personally like it and use it in places with low amount of RAM.
 
 - Small models don't take Quantization well, they can get really dumbed down.
-# discuss-tool-call
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 
-
-- ## 🤔 [What’s the smallest, most effective model for function calling and AI agents? : r/LocalLLaMA _202503](https://www.reddit.com/r/LocalLLaMA/comments/1jd8lwp/whats_the_smallest_most_effective_model_for/)
-
-- Small models don't do well with FC as a rule. They simply lack the reasoning. That said, there is the Hammer2.1-3b model at #26 on the BFCL
-
-- From my experience, smaller models struggle with consistent tool usage, especially when multiple tools need to be chosen based on context. Even larger models like the 14b Qwen are underwhelming. That's the reality.
-  - And yes, I've tried many small models 4B, 7B, 8B, 14B and adjusted context sizes and prompts without much success.
-
-- [Open source model which good at tool calling? : r/ollama](https://www.reddit.com/r/ollama/comments/1ku4ejf/open_source_model_which_good_at_tool_calling/)
-- Im using qwen3/Qwen3-30B-A3B with a specific systempromt. Works like a charm
-- massive +1 Qwen3 has been way better for tool calling than Gemma3, Qwen2.5, and watt-tool
-- Qwen3:8b with good prompts and examples worked great for me. Also tried mistral:7b, llama3.2, llama3.1, none of them even came close. The closet competitor in the 8B range was Qwen2.5
-- We use gemma 3 and phi4 and they work really well for us. The issue we had before of the models always opting to use a tool, we solved it by adding a “send response” tool that breaks the loop.
-
-- ## 🆚 [Why do reasoning models perform worse on function calling benchmarks than non-reasoning models ? : r/LLMDevs _202504](https://www.reddit.com/r/LLMDevs/comments/1kbj0bg/why_do_reasoning_models_perform_worse_on_function/)
-- Function calling is finetuned behavior. Test time compute uses CoT behavior finetuning and RL-based rewards that weaken the function calling ability (via catastrophic forgetting?). A lot of the “thinking” chatter is also probably not improving the lost-in-the-middle attention problem either.
-
-- ## [For local models, has anyone benchmarked tool calling protocols performance? : r/LocalLLaMA _202509](https://www.reddit.com/r/LocalLLaMA/comments/1ntcr1k/for_local_models_has_anyone_benchmarked_tool/)
-  - I’ve been researching tool-calling protocols and came across comparisons claiming UTCP is 30–40% faster than MCP.
-  - UTCP: Direct tool calls; native support for WebSocket, gRPC, CLI
-  - MCP: All calls go through a JSON-RPC server (extra overhead, but adds control)
-
-- UTCP seems to try and remove all of the QoL MCP has, and is just an imaginary "ok but imagine how cool it would be", but not practical.
-
-- The communication overhead from tool calls will literally be the least relevant part of an LLM pipeline when it comes to performance. I do not see a point in using UTCP because none of the key players in the ecosystem (ie LLM front ends or APIs) are investing in it. It provides no additional value and instead just becomes an unnecessary wrapper or abstraction layer because some non-key players want to standardize an API that needs to be allowed to move incredibly fast.
 # discuss-models-writing
 - ## 
 
@@ -666,28 +633,6 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 - you can also look on hugging face for any model that is "uncensored" but the more common term is "abliterated" or "heretic"/"heresy"
 
 - If you Google around you can find "abliterared" models that have essentially been trained to ignore that safety without losing the conversational coherence at the same time.
-# discuss-models-translation
-- ## 
-
-- ## 
-
-- ## [Solid alternatives to AYA expanse 32b LLM for translation? : r/LocalLLaMA _202502](https://www.reddit.com/r/LocalLLaMA/comments/1ipq391/solid_alternatives_to_aya_expanse_32b_llm_for/)
-- My idea is that for asian languages like chinese and japanese the better local model always was QWEN.
-
-- The only model I found to be better at Japanese to English translation was Llama 3.1 405B. It more consistently understands the actual intended meaning of a sentence and tends to get the little nuances right. But it's very slow to run it locally
-
-- Maybe try a mistral family. I tried a mistral large finetune (monstral 123b) and it was much better than aya. 
-
-- ## [Which model is best for translation? : r/LocalLLaMA _202507](https://www.reddit.com/r/LocalLLaMA/comments/1lykpo6/which_model_is_best_for_translation/)
-  - I want to translate english text to various languages, these include European as well as Asian languages. But since models have problems with asian languages, I trying to make my project work best for European Languages like Spanish, French, German, etc.
-- Gemma 3 is your best bet for this task, at least from my personal benchmark (https://huggingface.co/spaces/Thermostatic/TranslateBench-EN-ES) & personal usage for translation.
-
-- for translation and summarization tasks I only use Qwen3-32B. It's the best for me.
-  - My experience is that Qwen3-32B is quite a lot weaker than Gemma 3 27B when it comes to European languages (personal experience with Swedish, and third party assessments on Finnish). But for e.g. coding, I prefer Qwen3-32B (which really does give me high hopes for the soon-to-be-released coder version...).
-
-- From my usage of chinese to english translation, gemma 3 27b was one of the worst models I've used for the task.
-
-- I'd say Qwen3. It's trained on 119 languages and that's one of its hallmarks.
 # discuss-models-hot/features
 - ## 
 

@@ -288,6 +288,15 @@ modified: 2025-03-22T18:49:15.634Z
   - https://x.com/rauchg/status/2011605996561649720
     - Why not AI -> UI? Code is more flexible than JSON.
 
+- https://github.com/thesysdev/openui /MIT/202603/ts
+  - https://www.openui.com/
+  - The Open Standard for Generative UI
+  - OpenUI is a full-stack Generative UI framework — a compact streaming-first language, a React runtime with built-in component libraries, and ready-to-use chat interfaces — that is up to 67% more token-efficient than JSON.
+  - https://x.com/rabi_guha/status/2031751935880314897
+    - We built a better alternative to json-render & A2UI
+    - Up to 3x faster rendering & 67% fewer tokens. Far fewer broken outputs.
+    - Not your fault, but installing this repo uses 6.5 GB on my drive, with ~10 node_modules sub-folders all over... this whole Node ecosystem is bonkers
+
 - https://github.com/ag-ui-protocol/ag-ui /8.4kStar/MIT/202510/python/ts
   - https://ag-ui.com/
   - AG-UI is an open, lightweight, event-based protocol that standardizes how AI agents connect to user-facing applications. 

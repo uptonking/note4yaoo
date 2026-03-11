@@ -379,7 +379,27 @@ modified: 2026-02-18T04:15:19.228Z
 
 - ## 
 
-- ## 
+- ## 🐛 [I had to re-embed 5 million documents because I changed embedding models. Here's how to never be in that position. : r/Rag _202603](https://www.reddit.com/r/Rag/comments/1rqw1oo/i_had_to_reembed_5_million_documents_because_i/)
+  - Being Six months into production, recall quality on our domain-specific queries was consistently underperforming. we had text-embedding-3-large
+  - Why changing models means re-embedding everything
+  - Vectors from different embedding models are not comparable.
+  - At 5M documents that's not a quick overnight job. It's a production incident.
+  - The architecture mistake I made I'd coupled chunking and embedding into a single pipeline stage. Documents came in, got chunked, got embedded, vectors went into the index. Clean, fast to build, completely wrong for maintainability. When I needed to switch models, I had no stored intermediate state. No chunks sitting somewhere ready to re-embed. I went back to raw documents and ran the entire pipeline again.
+  - The fix is separating them into two explicit stages with a storage layer in between:
+  - Stage 1: Document → Chunks → Store raw chunks (persistent)
+  - Stage 2: Raw chunks → Embeddings → Vector index
+  - When you change models, Stage 1 is already done. You only run Stage 2 again. On 5M documents that's the difference between 18 hours and 2-3 hours.
+  - Store your raw chunks in a separate document store. Postgres, S3, whatever fits your stack. Treat your vector index as a derived artifact that can be rebuilt. Because at some point it will need to be rebuilt.
+  - Mistakes to Avoid while Choosing the Embedding model
+  - text-embedding-3-large is a black box. No fine-tuning, no weight access, no adaptation path. When recall underperforms your only option is switching models entirely and eating the re-embedding cost. I learned that the hard way.
+  - Open-weight models give you a third option between "accept mediocre recall" and "re-embed everything." You fine-tune on your domain and adapt the model you already have. Vectors stay valid. Index stays intact.
+
+- it doesn’t take long even running local embedding models. in nornic i’ve used the parallel workers to re-generate embeddings on data while testing (millions of entries) and they are extremely fast when there isn’t a ton of latency.
+  - latency is the real killer not compute. The pain is mostly API-dependent pipelines. but you're suggesting an Add ON. but yeah Yeah local inference changes the math completely
+
+- IMO, fine tuning embedding models should be the last thing you do. There are way better ways to improve retrieval that do not require this or re-embedding. Rerankers and if needed fine tuned rerankers as a start.
+
+- I went through the same deal, but not with 5 mm docs. I was thinking along the way I was so lucky not to have to re-ingest everything.
 
 - ## [Show HN: We cut RAG latency ~2× by switching embedding model | Hacker News _202511](https://news.ycombinator.com/item?id=46043354)
 - I always feel that the choice of embedding model is quite important, but it's seldom mentioned. Most tutorials about RAG just tell you to use a common model like OpenAI's text embedding, making it seem as though it's okay to use anything else. But even though I'm somewhat aware of this, I lack the knowledge and methods to determine which model is best suited for my scenario.

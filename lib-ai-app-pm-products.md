@@ -243,6 +243,9 @@ modified: 2025-03-22T16:10:24.856Z
   - ✈️ local models support: mlx, lmstudio-alternative
     - 模型库: text模型, ocr模型, 翻译模型, t2i生图模型, tts, stt,  lmstudio在模型分类上做的不够好
     - 较少免费api的模型: ocr, stt
+    - modes config for coding/ocr/translation/rag like cline-plan/act/ask
+      - 内置场景化提示词
+      - 内置场景参数, 支持disable thinking(qwen/nemotron)
     - 参考lmstudio支持本地并发请求, 支持展示进度
     - 参考janai/pipeshub, 既支持选择本地/api模型，也支持选择图片/文档
     - ocr/vlm comparison-matrix/playground: 识别对比, 翻译对比
@@ -251,7 +254,6 @@ modified: 2025-03-22T16:10:24.856Z
     - 允许分享文档/插画中的模型配置/运行日志, 将prompt放入git-commit，还是直接放入图片?
     - ❓ 如何一键切换到cloud版
     - https://github.com/tc-mb/llama.cpp-omni is the first Omni multimodal inference engine built on llama.cpp.
-    - modes config for coding/ocr/translation/rag like cline-plan/act/ask
   - local agent
     - openclaw比manus更火的原因，是支持在本地自动化执行任务，而不是云端
     - 支持同一个任务选择不同agent如claude-code/codex-cli来实现多个版本
@@ -579,7 +581,8 @@ modified: 2025-03-22T16:10:24.856Z
 - 国产显卡
   - 华为昇腾, 摩尔线程, 砺算科技
 
-- 
+- [LLM Hardware Requirements Calculator — GPU & VRAM Guide | Onyx AI ](https://onyx.app/llm-hardware-requirements)
+
 - 
 - 
 
@@ -1426,6 +1429,7 @@ modified: 2025-03-22T16:10:24.856Z
   - free: free: 百度 ernie-tiny/lite/speed
 
 - [超算互联网](https://www.scnet.cn/ycjh/index.html)
+  - https://www.scnet.cn/
 
 - [ZenMux](https://zenmux.ai/models?sort=pricingLowToHigh)
 
@@ -1473,6 +1477,9 @@ modified: 2025-03-22T16:10:24.856Z
     - 先说结论：很大可能是一个小/中等大小模型，高度蒸馏Gemini的产物。
     - 这个模型在蒸馏Gemini的时候竟然只蒸馏到了知识库，其他的全抛了，也算科技创新了
     - 我的结论是，用来骗投资刚刚好
+
+- [ExaFree](https://exa.chengtx.vip/ )
+  - [ExaFree公益站来袭：全民无限Exa搜索API时代 _202603](https://linux.do/t/topic/1724047)
 
 ## paid-api 💰
 

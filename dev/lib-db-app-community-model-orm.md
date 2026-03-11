@@ -23,7 +23,19 @@ modified: 2023-09-24T19:05:33.866Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## Prisma 彻底向 Drizzle 投降了啊！ _202603
+- https://x.com/ewind_dev/status/2031494683449565184
+  - Prisma 的 API 是 JSON DSL 而 Drizzle 是链式的 SQL query builder，类型更强且更适合 AI 糊
+- Prisma：打不过就加入, 不过说真的，链式 API 在 AI 时代确实更香，AI 写 .where().orderBy() 比写那坨 JSON 嵌套靠谱多了
+
+- 同样链式也有好用的和不好用的，整体链式可以，但我就特别烦用eq，直接"字段":"值不"就得了，其他特殊的才用函数，高频的就是要足够简单好用，不能为了语法而语法，且看prisma改造完是啥样
+
+- Drizzle 也兼容 prisma 那套 JSON 查询，自己写代码 drizzle 那套类型提示很爽，API 调用的时候还得是 JSON
+
+- 其实链式 query builder 是大多数语言中的大多数 ORM 的写法，不是 drizzle 的专利
+  - go？java？
+
+- 类似的事件历史上亦有记载：Laravel Eloquent和symfony doctrine
 
 - ## SQL may have all those problems, but the main use case for ORMs is the mapping of relational data to objects. 
 - https://x.com/penberg/status/1906236557125677356

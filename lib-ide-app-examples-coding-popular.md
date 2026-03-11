@@ -621,9 +621,12 @@ modified: 2025-12-11T18:10:23.710Z
   - Browse files and folders with tree view
   - Large File Support - Virtualization for large files
 
-- https://github.com/code-yeongyu/oh-my-opencode /18.5kStar/NC/202601/ts
+- https://github.com/code-yeongyu/oh-my-openagent /39.1kStar/NC/202603/ts
+  - https://github.com/code-yeongyu/oh-my-opencode /renamed
   - Run background agents, call specialized agents like oracle, librarian, and frontend engineer. Use crafted LSP/AST tools, curated MCPs, and a full Claude Code compatibility layer.
   - We're building a fully productized version of Sisyphus to define the future of frontier agents.
+  - Claude Code Compatible	Your hooks, commands, skills, MCPs, and plugins? All work here.
+  - Agents: Sisyphus (the main agent), Prometheus (planner), Oracle (architecture/debugging), Librarian (docs/code search), Explore (fast codebase grep), Multimodal Looker
   - https://github.com/alvinunreal/oh-my-opencode-slim
     - Slimmed and cleaned oh-my-opencode, consumes much less tokens
   - https://github.com/Yeachan-Heo/oh-my-claude-sisyphus

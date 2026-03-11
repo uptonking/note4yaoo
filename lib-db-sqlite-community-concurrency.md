@@ -15,6 +15,26 @@ modified: 2022-12-19T01:59:01.628Z
 - ## 
 
 - ## 
+# discuss-server
+- ## 
+
+- ## 
+
+- ## [What's the real option to have sqlite run as a server? : r/sqlite _202603](https://www.reddit.com/r/sqlite/comments/1rqcdki/whats_the_real_option_to_have_sqlite_run_as_a/)
+- Is it only turso libsql?
+  - I'm just looking for a server like solution that ideally could be replicated to S3.
+- Considering sqlite because requirements:
+  - data segregation tenant physical isolated (50k now)
+  - per tenant encryption
+- Workload:
+  - much more reads than writes
+  - 1000-2000 (max 5000 entries per tenant)
+
+- For a read-write application, the .sqlite files need to be on a local file system, not a networked one.
+  - I have much more reads than writes and a requirement is to be physical isolated
+
+- Check rqlite
+  - checked it and is good on the HA/clustering side, however seems that I need to manage the multitenant part on my own
 # discuss
 - ## 
 

@@ -546,6 +546,14 @@ sudo systemctl start minidlna
 - gfw-list
   - https://github.com/gfwlist/gfwlist/blob/master/gfwlist.txt
 
+- [现在科学上网用啥协议最可靠啊 - LINUX DO _202603](https://linux.do/t/topic/1736311)
+  - 买的搬瓦工的VPS，部署了科学上网工具，前段时间被封了，不确定还要不要换个IP，后面会放出来吗？如果要重新部署用啥协议比较好呢？
+  - 直连reality就好，很久以前用瓦工封了隔一段时间会放出来。
+  - VLESS + Reality，ip 段要干净，要不然什么协议都没用, 还有就是reality偷的域名别太假
+  - 敏感时期搬瓦工的IP段都会被墙
+  - 前天在gcp 开了个台湾的小鸡，直接上vless+reality，伪装Microsoft，目前稳定且奔放
+  - 买中转，再套落地
+
 ## google-proxy
 
 - 备用方法

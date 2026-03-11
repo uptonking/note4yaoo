@@ -95,7 +95,13 @@ modified: 2025-12-18T12:26:08.445Z
 
 - ## 
 
-- ## 
+- ## 搞了半天才知道，CC 有这么一个模式：/model opusplan
+- https://x.com/JinsFavorites/status/2031634804844933485
+  - 规划阶段用 Opus，执行阶段自动切回 Sonnet
+
+- 这个会有副作用, 因为切换model 会导致cache 失效, opusplan还有个clear context 的选项, 这个才是用这个 model 的精髓.
+
+- 这不就是Antigravity默认功能么？
 
 - ## 💡 TIL 如何防止 Claude Code 读取 .env 文件
 - https://x.com/wong2__/status/2026916035761418251

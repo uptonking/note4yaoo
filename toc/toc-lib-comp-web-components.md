@@ -7,8 +7,17 @@ modified: 2020-11-13T07:31:42.369Z
 
 # toc-lib-comp-web-components
 
-# web-components
+# guide
 
+# ui-format/protocol
+- https://github.com/openui/open-ui /W3C/202603
+  - https://open-ui.org/
+  - Maintain an open standard for UI and promote its adherence and adoption.
+  - HTML alone won't be enough, however. New CSS and JavaScript are needed as well. And rather than simply standardize specific interfaces, it's time to create a more powerful underlying architecture so the creators of web sites and apps can design and build their own ideas for interfaces.
+  - The Open UI Community Group is tasked with facilitating a larger architectural plan for how HTML, CSS, JS, and Web APIs can be combined to provide needed technology so web developers can create modern custom user interfaces. 
+  - https://github.com/openui/design-system
+    - The OpenUI Design System is a collaborative effort to create a centralized set of UI components that can be used across the web.
+# web-components
 - https://github.com/salesforce/lwc
   - /865Star/MIT/202009/ts
   - Lightning Web Components Engine and Compiler.
@@ -49,9 +58,7 @@ modified: 2020-11-13T07:31:42.369Z
 - https://github.com/tenphi/numl
   - https://numl.design/
   - An open-source Library of Web Components and a Runtime CSS Framework for rapidly building UI
-
 # compiled-to-web-components
-
 - https://github.com/Gomah/bulmil
   - /68Star/MIT/202009
   - An agnostic UI components library based on Web Components, made with Bulma & Stencil.
