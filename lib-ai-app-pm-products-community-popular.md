@@ -14,7 +14,19 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 
-- ## 
+- ## [佬友们有没有发现：现在已经没有人讨论RAG、知识库、MCP、Dify和FastGPT哪个更好用了？  _202603](https://linux.do/t/topic/1743407)
+- RAG感觉死很久了
+  - 知识库偶尔还能听到
+  - MCP在Skills出来基本就没有声音了
+  - Dify和FastGPT这种包装一层的只能说是过渡吧，就跟曾经的低代码一样
+
+- rag/知识库感觉还是会有用，mcp 可能配合着 skill 还是有用，workflow orchestrator 是真的看不到前途
+
+- 知识库的有用限于企业环境吧，个人自用的话，claude code 已经证明了一个 ripgrep 加文件系统 is all you need
+
+- rag你当大模型外挂一个向量检索用来给大模型挂相关任务的上下文，知识库就是被检索的数据库，mcp其实用的还挺多就是类似chrome外挂工具，dify是固定工作流
+
+- RAG、知识库，企业内部还是有讨论的；MCP已经是必不可少的了吧；Dify其实和coze/n8n一直有市场，只不过我们没留意；
 
 - ## [OpenAI 宣布收购 AI 安全平台 Promptfoo _202603](https://linux.do/t/topic/1716028)
   - 3 月 9 日，OpenAI 宣布将收购人工智能安全平台 Promptfoo，并计划在交易完成后把该公司的技术全面集成到 OpenAI 的企业级智能体平台 OpenAI Frontier 中。

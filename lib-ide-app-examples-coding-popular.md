@@ -223,6 +223,12 @@ modified: 2025-12-11T18:10:23.710Z
     - Candle is instead optimized for easy local development instead of production.
     - Candle will only have one instance of a given service at a time.
 
+- https://github.com/op7418/CodePilot /3.6kStar/MIT/202603/ts
+  - https://www.codepilot.sh/
+  - A desktop GUI for Claude Code — chat, code, and manage projects visually. Built with Electron + Next.js.
+  - Multi-provider, one interface. Connect to Anthropic, OpenRouter, Bedrock, Vertex, or any custom endpoint.
+  - Control from anywhere. Bridge connects CodePilot to Telegram, Feishu, Discord, and QQ. 
+
 - https://github.com/ObservedObserver/async-code /apache2/202508/python/ts/inactive
   - Use Claude Code / CodeX CLI to perform multiple tasks in parallel with a Codex-style UI.
   - A code agent task management system that provides parallel execution of AI-powered coding tasks. 
@@ -247,9 +253,11 @@ modified: 2025-12-11T18:10:23.710Z
   - Monitor all your Claude Code sessions from a unified interface
   - [Crystal: Supercharge Your Development with Multi-Session Claude Code Management](https://nimbalyst.com/blog/crystal-supercharge-your-development-with-multi-session-claude-code-management)
 
-- https://github.com/openkursar/hello-halo /MIT/202601/ts
-  - The Missing UI for Claude Code
+- https://github.com/openkursar/hello-halo /665Star/MIT/202603/ts
+  - https://hello-halo.cc/
+  - Open-source Claude Code GUI — like Claude Cowork
   - open-source desktop client that makes Claude Code's power accessible to everyone. No terminal, ever.
+  - Multi-provider Support — Anthropic, OpenAI, DeepSeek, and any OpenAI-compatible API
   - https://x.com/FlynnWayne_Wang/status/2011079825956749365
     - Remote access from phone/tablet/any browser
     - Built-in AI Browser for web automation
@@ -731,6 +739,12 @@ modified: 2025-12-11T18:10:23.710Z
     - Telegram 集成：权限请求推送，Mini App 全功能操作，快捷按钮一键审批
     - 实时多端同步：乐观并发控制，PWA 离线支持
 
+- https://github.com/BeehiveInnovations/pal-mcp-server /11kStar/apache2/202512/python/inactive
+  - Why rely on one AI model when you can orchestrate them all?
+  - A Model Context Protocol server that supercharges tools like Claude Code, Codex CLI, and IDE clients such as Cursor or the Claude Dev VS Code extension. 
+  - PAL MCP connects your favorite AI tool to multiple AI models for enhanced code analysis, problem-solving, and collaborative development.
+  - PAL supports conversation threading so your CLI can discuss ideas with multiple AI models
+
 - https://github.com/fengshao1227/ccg-workflow /MIT/202601/js
   - CCG v3.0: Claude Code 编排三 CLI 协作
   - v3.0.0 重大更新：从 Python 脚本进化为 npm 包，三 CLI 协作时代正式开启！
@@ -897,6 +911,7 @@ modified: 2025-12-11T18:10:23.710Z
   - https://runagentos.com/
   - Mobile-first web UI for managing AI coding sessions (Claude Code, Codex, Aider, Gemini CLI). 
   - Self-hosted with multi-pane terminals, git integration, and session orchestration.
+
 - https://github.com/The-Vibe-Company/companion /2kStar/MIT/202602/ts
   - Web & Mobile UI for Claude Code & Codex . 
   - Launch sessions, stream responses, approve tools. All from your browser / mobile
@@ -1166,6 +1181,8 @@ modified: 2025-12-11T18:10:23.710Z
   - Note Mention Support: @notename to reference specific notes
   - Use / commands to browse and trigger actions provided by your current agent
   - Permission Management: Fine-grained control over agent actions
+- https://github.com/YishenTu/claudian
+  - An Obsidian plugin that embeds Claude Code as an AI collaborator in your vault
 
 - https://github.com/jayjongcheolpark/chat2md /202602/swift
   - A macOS menu bar app that syncs AI CLI conversations to Markdown files for use with Obsidian or any markdown-based note system.
@@ -1349,6 +1366,7 @@ modified: 2025-12-11T18:10:23.710Z
     - Simpler chunking - Heading-based only (no token-based chunking)
     - No reranking - Hybrid search with RRF but no LLM-based reranker
   - 🛝
+    - 偏向于搜索对话内容，而不是文件; 同作者的 claude-context 偏向于搜索code文件
     - uv tool install -e ".[local]"
   - 搜索结果经常出现的 0.0164 分数与 RRF (Reciprocal Rank Fusion) 重排序算法有关。 
     - 最终分数 = RRF(dense_rank) + RRF(bm25_rank)
@@ -1543,6 +1561,12 @@ modified: 2025-12-11T18:10:23.710Z
     - Embedding cache with content hashing
     - File watcher for auto-indexing
     - Background incremental updates
+
+- https://github.com/filippostanghellini/DocFinder /AGPL/202603/python
+  - a local-first indexing and searching documents using semantic embeddings stored in SQLite. 
+  - Everything runs on your machine, no external services required.
+  - [DocFinder: 100% local semantic search tool for your documents (PDF, DOCX, Markdown, TXT). : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rrpilx/docfinder_100_local_semantic_search_tool_for_your/)
+    - I use Obsidian a lot and the copilot plugin seems to do the same plus running actual LLMs (local or cloud), and I know there are other similar plugins. I believe it can also process PDFs.
 
 - https://github.com/bretwardjames/ragtime /MIT/202602/python
   - Local-first memory and RAG system for Claude Code. 
@@ -2207,12 +2231,6 @@ modified: 2025-12-11T18:10:23.710Z
   - RAG pipeline using Voyage AI embeddings, Qdrant vector database, and hybrid retrieval with cross-encoder reranking. 
   - Includes an MCP server for seamless integration with Claude Code, Amp, and other MCP-compatible AI assistants.
   - Secondary feature: 44 IDE-agnostic workflows for building agents with Google ADK.
-
-- https://github.com/BeehiveInnovations/pal-mcp-server /11kStar/apache2/202512/python/inactive
-  - Why rely on one AI model when you can orchestrate them all?
-  - A Model Context Protocol server that supercharges tools like Claude Code, Codex CLI, and IDE clients such as Cursor or the Claude Dev VS Code extension. 
-  - PAL MCP connects your favorite AI tool to multiple AI models for enhanced code analysis, problem-solving, and collaborative development.
-  - PAL supports conversation threading so your CLI can discuss ideas with multiple AI models
 
 - https://github.com/LLMTooling/code-search-mcp /MIT/202601/ts/未实现rag
   - mcp server providing powerful and efficient codebase search tools, including full AST support for 15 languages

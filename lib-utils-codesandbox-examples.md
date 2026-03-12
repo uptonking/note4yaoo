@@ -558,7 +558,7 @@ modified: 2023-09-02T09:17:22.992Z
   - https://x.com/mitsuhiko/status/2019731099870777532
     - I'm really happy that we're not just seeing full VM sandbox approaches but also stiff like vercel's just-bash and now monty.
 
-- https://github.com/agent-infra/sandbox /1.7kStar/apache2/202512/python/ts/字节
+- https://github.com/agent-infra/sandbox /1.7kStar/apache2/202512/python/ts/字节/docker
   - https://sandbox.agent-infra.com/
   - All-in-One Sandbox for AI Agents that combines Browser, Shell, File, MCP and VSCode Server in a single Docker container.
 

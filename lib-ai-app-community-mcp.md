@@ -194,9 +194,32 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
-- ## 
+- ## [Perplexity drops MCP, Cloudflare explains why MCP tool calling doesn't work well for AI agents : r/mcp _202603](https://www.reddit.com/r/mcp/comments/1rrviz4/perplexity_drops_mcp_cloudflare_explains_why_mcp/)
+  - Perplexity's CTO just said they're dropping MCP internally to go back to classic APIs and CLIs.
+  - Cloudflare published a detailed article on why direct tool calling doesn't work well for AI agents (CodeMode). 
+  - Every intermediate result passes back through the neural network just to be copied to the next call. It wastes tokens and slows everything down.
+  - The alternative that Cloudflare, Anthropic, HuggingFace, and Pydantic are pushing: let the LLM write code that calls the tools.
+  - Intermediate values stay in the code, they never pass back through the LLM.
+  - MCP remains the tool discovery protocol. What changes is the last mile: instead of the LLM making tool calls one by one, it writes a code block that calls them all. Cloudflare does exactly this — their Code Mode consumes MCP servers and converts the schema into a TypeScript API.
+  - As it happens, I was already working on adapting Monty and open sourcing a runtime for this on the TypeScript side: Zapcode — TS interpreter in Rust, sandboxed by default, 2µs cold start. It lets you safely execute LLM-generated code.
+  - Code Mode = Cloudflare's integrated solution. You're on Workers, you plug in your MCP servers, it works. But you're locked into their infra and there's no suspend/resume (the V8 isolate runs everything at once).
+  - Monty = the original. Pydantic laid down the concept: a subset interpreter in Rust, sandboxed, with snapshots. But it's for Python — if your agent stack is in TypeScript, it's no use to you.
+  - Zapcode = Monty for TypeScript. Same architecture (parse → compile → VM → snapshot), same sandbox philosophy, but for JS/TS stacks. Suspend/resume lets you handle long-running tools (slow API calls, human validation) by serializing the VM state and resuming later, even in a different process.
 
-- ## 
+- note: it’s impossible for a large language model to be properly trained on every single possible business domain. However, MCP allows for prompts, which is the closest thing to providing extra training data to a model so that it knows how to use the tool/resource for your MCP
+
+- MCP standardizes auth on Oauth DCR. This is a way better auth experience than anything else (especially copy-pasting API keys which non-engineers will struggle with)
+
+- ## [MCP Is up to 32× More Expensive Than CLI. : r/mcp _202603](https://www.reddit.com/r/mcp/comments/1rr31ee/mcp_is_up_to_32_more_expensive_than_cli/)
+  - Scalekit published an MCP vs CLI report about their 75 benchmark runs to compare CLI and MCP for AI agent tasks.
+  - CLI won on every efficiency metric: 10x to 32× cheaper, and 100% reliable versus MCP’s 72%.
+
+- The benchmarks are not correct for what's currently available. Claude Code has tool search automatically now for MCPs making the tool schemas dynamic discovery, essentially making the costs the same as skills. And Codex's mcps are also dynamic discovery by default. Or you can use docker mcp gateway which has also made mcp tool schemas dynamic discovery for months now.
+  - Even with tool search the token usage metrics are brutal, I've done a lot of benchmarking. Tool search isn't a magic bullet but I don't agree with scalekits's approach here either.
+
+- tl; Dr: What they actually did was benchmarking (of questionable quality/accuracy) on the GitHub Copilot MCP Service vs the GitHub CLI. They then claimed those results apply to "MCP" (a protocol, not a service) in general and wrote a sensationalist headline about it.
+
+- This is funny because it completely takes away from where MCP shines - multi-user multi-agent workflows.
 
 - ## Google has shipped a CLI for Google Workspace (Drive, Gmail, Calendar, Sheets, Docs, …) Huge!
 - https://x.com/rauchg/status/2029356560494018956

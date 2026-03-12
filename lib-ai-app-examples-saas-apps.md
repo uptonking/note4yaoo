@@ -377,6 +377,24 @@ modified: 2025-02-21T17:17:42.225Z
     - I forked this repo and had Opus 4.5 optimize the code and Gemini 3 to create more themes.
     - looks familiar to https://makemap.co/
 # ai-apps
+- https://github.com/iOfficeAI/AionUi /18.4kStar/apache2/202603/ts
+  - https://www.aionui.com/
+  - https://github.com/iOfficeAI/AionUi/wiki
+  - open-source GUI app for Gemini CLI — Better Chat UI, multi-agent support, multi-LLMs & apikey polling, Workspace Management, AI image editing & more
+  - While the official Gemini CLI is powerful, its command-line interface has limitations for daily use. 
+  - 🐛 
+    - 不支持rag
+  - Seamlessly integrate multiple terminal AI agents - Gemini CLI, Claude Code, Qwen Code, Codex and more
+    - [ACP Setup · iOfficeAI/AionUi Wiki](https://github.com/iOfficeAI/AionUi/wiki/ACP-Setup)
+    - Gemini CLI Mode: Built into AionUi, users get it by default
+    - Multi-Agent Mode: Requires users to download and install
+  - Handle Multiple Tasks at Once: Multiple conversations, no task confusion, independent memory, double efficiency
+  - 📱 WebUI Mode: Access AionUi from any device on your network
+  - Batch renaming, auto organization, smart classification, file merging
+  - image generation, editing, and recognition powered by Gemini 2.5 Flash Image Preview
+  - AI helps you create, organize, analyze, and beautify Excel files
+  - MCP Tool Management
+
 - https://github.com/multica-ai/multica /apache2/202601/ts
   - A native desktop client that brings coding agent capabilities to everyone through a visual interface.
   - ⚖️ Support for multiple AI agents through the Agent Client Protocol (ACP)
@@ -502,9 +520,11 @@ modified: 2025-02-21T17:17:42.225Z
     - Agents maintain stateful memory, enabling them to perform multi-step interactions with environments and efficiently tackle sophisticated tasks.
     - Every line of code and comment serves as a prompt for agents. Code should be written clearly and readably, ensuring both humans and agents can interpret it effectively.
 
-- https://github.com/openkursar/hello-halo /MIT/202601/ts
-  - The Missing UI for Claude Code
+- https://github.com/openkursar/hello-halo /665Star/MIT/202603/ts
+  - https://hello-halo.cc/
+  - Open-source Claude Code GUI — like Claude Cowork
   - open-source desktop client that makes Claude Code's power accessible to everyone. No terminal, ever.
+  - Multi-provider Support — Anthropic, OpenAI, DeepSeek, and any OpenAI-compatible API
   - https://x.com/FlynnWayne_Wang/status/2011079825956749365
     - Remote access from phone/tablet/any browser
     - Built-in AI Browser for web automation
@@ -513,9 +533,9 @@ modified: 2025-02-21T17:17:42.225Z
 - https://github.com/Kalyankr/localCowork /202601/python
   - AI-powered assistant (Inspired by Cluade Cowork) that lives on your computer.
 
-- https://github.com/ComposioHQ/open-claude-cowork /MIT/202601/js
+- https://github.com/ComposioHQ/open-claude-cowork /3.1kStar/MIT/202603/js
   - Open Source version of Claude Cowork built with Claude Code and Composio Tool Router
-  - open-source desktop chat application powered by Claude Agent SDK and Composio Tool Router.
+  - open-source desktop chat application powered by `Claude Agent SDK` and Composio Tool Router.
   - Multi-Provider Support - Choose between Claude Agent SDK and Opencode for different model options
   - Tool Call Visualization - See tool inputs and outputs in real-time in the sidebar
   - https://x.com/KaranVaidya6/status/2011845965234536540
@@ -523,9 +543,9 @@ modified: 2025-02-21T17:17:42.225Z
     - access local files and your terminal via claude code
     - chain actions across local files and cloud apps in one flow
 
-- https://github.com/Safphere/opencowork /apache2/202601/python/ts
-  - 你的数字同事
-  - 支持多家模型、能执行命令，可以使用MCP和SKILL，也支持多平台使用
+- https://github.com/DevAgentForge/Open-Claude-Cowork /3kStar/MIT/202602/ts/inactive
+  - open-source alternative to Claude Cowork — a desktop AI assistant that helps with programming, file management, and any task you can describe.
+  - Reuses your existing ~/.claude/settings.json
 
 - https://github.com/Lucifer1H/open-cowork /MIT/202601/shell
   - brings Claude Cowork's autonomous agent capabilities to OpenCode.
@@ -542,6 +562,13 @@ modified: 2025-02-21T17:17:42.225Z
   - Supports Claude, OpenAI-compatible APIs, and Chinese models like GLM...
   - Skills System: Built-in workflows for PPTX, DOCX, PDF, XLSX generation and processing. Supports custom skill creation and deletion.
   - Real-time Trace: Watch AI reasoning and tool execution in the Trace Panel.
+
+- https://github.com/agi-hub/AGIAgent /python
+  - An open-source Vibe platform similar to Claude Cowork / Manus / Openclaw, with professional rich image document generation.
+
+- https://github.com/Safphere/opencowork /apache2/202601/python/ts
+  - 你的数字同事
+  - 支持多家模型、能执行命令，可以使用MCP和SKILL，也支持多平台使用
 
 - https://github.com/poco-ai/poco-agent /MIT/202601/python/ts
   - https://poco-ai.com/
@@ -560,6 +587,11 @@ modified: 2025-02-21T17:17:42.225Z
   - Agent fully written in Rust with zero external dependencies
   - Containerized: Docker isolation for enhanced security
   - [Rust + Local LLMs: An Open-Source Claude Cowork with Skills : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qhutc3/rust_local_llms_an_opensource_claude_cowork_with/)
+
+- https://github.com/Prof-Harita/terminaI /387Star/apache2/202601/ts/tauri/inactive
+  - Open-source, local-first alternative to Cowork-style computer assistants: real PTY terminal ops, explicit approvals, JSONL audit logs. Windows + Linux + macOS. Model agnostic.
+  - CLI (canonical): for developers, power users, and headless environments.
+  - Desktop (preview): a Tauri wrapper around the same engine (GUI + voice surface). Linux/Windows are early; macOS is in progress. 
 
 - https://github.com/workany-ai/workany /apache+LOGO/202601/ts
   - https://workany.ai/

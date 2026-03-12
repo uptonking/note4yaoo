@@ -240,8 +240,11 @@ modified: 2021-05-06T09:38:31.520Z
     - cm-diff算法的精确度较差，特别是对于增加一行的场景，cm-diff展示的效果是先删除一行再增加两行
     - vscode-diff 支持显示code移动
   - codemirror-diff 作为 git diff 输出的view层
+  - 尝试复用 vscode/monaco的diff逻辑, 用codemirror实现渲染层
+    - codemirror-diff对 yml/xml 的支持不好，yml中换行处未变动的部分也经常显示diff [found issue with MergeView: the diff function seems not working well when I use YAML or XML file - v6 - discuss. CodeMirror _202302](https://discuss.codemirror.net/t/found-issue-with-mergeview/5805)
   - diff for office: docx/xlsx
-  - codemirror-diff对 yml/xml 的支持不好，yml中换行处未变动的部分也经常显示diff [found issue with MergeView: the diff function seems not working well when I use YAML or XML file - v6 - discuss. CodeMirror _202302](https://discuss.codemirror.net/t/found-issue-with-mergeview/5805)
+  - 用codemirror实现类似 github pr 的ux, 包括图片diff、rename
+    - 还可结合 https://github.com/MrWangJustToDo/git-diff-view 实现可编辑版
   - ⚖️ diff for rich-text
   - 在ocr/文档数据提取为文本的过程中，使用类似diff的交互让用户选择一个版本
 

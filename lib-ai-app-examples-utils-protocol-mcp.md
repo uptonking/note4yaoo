@@ -190,10 +190,11 @@ modified: 2026-01-19T05:01:00.055Z
   - Helps to avoid Cloudflare and DataDome CAPTCHA pages. 
   - Easy to patch/unpatch, can be enabled/disabled on demand.
 # computer/container-use
-- https://github.com/bytedance/UI-TARS-desktop /9.6kStar/apache2/202503/ts
+- https://github.com/bytedance/UI-TARS-desktop /28.8kStar/apache2/202603/ts
   - https://agent-tars.com/
   - A GUI Agent application based on UI-TARS(Vision-Language Model) that allows you to control your computer using natural language.
   - ❓ agent-tars似乎支持replay，ui-tars是否支持replay
+  - 在向cowork方向发展
   - https://x.com/Nin19536/status/1905975354227040314
     - 从 TARS 的开源 repo 学到的两个架构特点
     - 1️⃣mcp 统一工具协议: 可插拔，可扩展非常关键，且 tool 定义和 tool 执行对外只暴露接口，agent 端不关心实现。
@@ -353,6 +354,11 @@ modified: 2026-01-19T05:01:00.055Z
   - 多轮迭代 - 最多 5 轮智能检索，确保找到最相关信息
   - 强制学习机制 - 处理 PDF/Excel 前必须先学习处理方法
     - 遇到 PDF 或 Excel 文件时，必须先读取 references/pdf_reading.md
+
+- https://github.com/op7418/Humanizer-zh /MIT/202601/md
+  - Humanizer-zh: AI 写作去痕工具（中文版）
+  - https://github.com/blader/humanizer
+    - 原项目基于维基百科的 Signs of AI writing 指南
 
 - https://github.com/bobmatnyc/mcp-skillset /MIT/202602/python
   - mcp-skillset is a standalone Python application that provides intelligent, context-aware skills to code assistants through hybrid RAG (vector + knowledge graph). 

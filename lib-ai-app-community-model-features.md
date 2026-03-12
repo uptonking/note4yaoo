@@ -395,6 +395,12 @@ modified: 2025-11-05T19:04:50.350Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
 - ## [I tested 21 small LLMs on tool-calling judgment — Round 2 with every model you asked for : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1r4ie8z/i_tested_21_small_llms_on_toolcalling_judgment/)
   - https://github.com/MikeVeerman/tool-calling-benchmark /Attr/202603/python
   - That benchmark tested 11 small models on whether they know when to call a tool, not just whether they can.

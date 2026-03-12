@@ -29,6 +29,58 @@ modified: 2023-10-30T07:34:03.602Z
 # discuss-stars
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🤔 [I was backend lead at Manus. After building agents for 2 years, I stopped using function calling entirely. Here's what I use instead. : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rrisqn/i_was_backend_lead_at_manus_after_building_agents/)
+  - I was a backend lead at Manus before the Meta acquisition. I've spent the last 2 years building AI agents — first at Manus, then on my own open-source agent runtime (Pinix) and agent (agent-clip). Along the way I came to a conclusion that surprised me:
+  - A single `run(command="...")` tool with Unix-style commands outperforms a catalog of typed function calls.
+  - Unix made a design decision 50 years ago: everything is a text stream. Programs don't exchange complex binary structures or share memory objects — they communicate through text pipes. Small tools each do one thing well, composed via | into powerful workflows. Programs describe themselves with --help, report success or failure with exit codes, and communicate errors through stderr.
+  - LLMs made an almost identical decision 50 years later: everything is tokens. They only understand text, only produce text. Their "thinking" is text, their "actions" are text, and the feedback they receive from the world must be text.
+  - The text-based system Unix designed for human terminal operators — cat, grep, pipe, exit codes, man pages — isn't just "usable" by LLMs. It's a natural fit. When it comes to tool use, an LLM is essentially a terminal operator — one that's faster than any human and has already seen vast amounts of shell commands and CLI patterns in its training data.
+  - This is the core philosophy of the *nix Agent: don't invent a new tool interface. Take what Unix has proven over 50 years and hand it directly to the LLM.
+  - Most agent frameworks give LLMs a catalog of independent tools: tools: [search_web, read_file, write_file, run_code, send_email, ...]
+  - Before each call, the LLM must make a tool selection — which one? What parameters? The more tools you add, the harder the selection, and accuracy drops. Cognitive load is spent on "which tool?" instead of "what do I need to accomplish?"
+  - My approach: one run(command="...") tool, all capabilities exposed as CLI commands.
+  - The LLM still chooses which command to use, but this is fundamentally different from choosing among 15 tools with different schemas. Command selection is string composition within a unified namespace — function selection is context-switching between unrelated APIs.
+  - I don't need to teach the LLM how to use CLI — it already knows. This familiarity is probabilistic and model-dependent, but in practice it's remarkably reliable across mainstream models.
+  - A single run isn't enough on its own. If run can only execute one command at a time, the LLM still needs multiple calls for composed tasks. So I make a chain parser (parseChain) in the command routing layer, supporting four Unix operators
+  - Single-tool + CLI solves "what to use." But the agent still needs to know "how to use it." It can't Google. It can't ask a colleague. I use three progressive design techniques to make the CLI itself serve as the agent's navigation system.
+
+- OP's post a psyop to give your llm agent full rights to your terminal
+  - Not at all. Currently, you (or rather the library that you are using to communicate with a model) parse the model response and extract tool calls from it. And you can do whatever you want with these calls: execute, add MiM to approve/reject, or autoreject.
+  - run(command="cat log.txt | grep ERROR | wc -l")
+  - You must not blindly throw everything inside brackets into the terminal. Instead, you (or rather the library that you are using to communicate the model) should parse everything inside the brackets, translate to a list of tool calls, and return the list to you, where you can have full control of it.
+  - So, from the developer's perspective, who is working on agentic software, nothing really changes globally. Just add a new, remarkably cool feature - chain calls, which are not designed for standard tool calling.
+
+- I can't find it anymore, but there was an experiment like this but with python code - the LLM can only use Python code eval as a tool, no other tools. The paper claimed it worked remarkably well.
+  - You might be thinking of Smolagents from Hugging Face
+- code-as-tool is a valid approach and the results are real.
+  - But from my experience, LLMs are currently better at using tools than writing code to do the same thing. The gap narrows with stronger models, but it's still there.
+- 🐛 There's also a deeper issue: discoverability. With CLI, the agent can run tool --help or tool list to discover what's available at runtime — this is a pattern Unix established 50 years ago. With Python eval, how does the LLM know what functions/libraries are available? You either stuff the docs into context (expensive), or you have to invent your own discovery mechanism. Neither is as natural as --help.
+  - CLI gives you discoverability for free. Code eval makes you reinvent it.
+- Agree and also, writing python code takes much of context length. The same above code with cat and grep which is just one line will take more than 5 lines on python. Though, it isn't much for a single tool call, it can add up pretty easily with more tool calls.
+- CLI naturally subsumes code. The agent can always do write script.py && python script.py when it needs complex logic. But going the other direction is awkward — in a pure code-eval world, how do you run pip list? You end up writing subprocess.run(['pip', 'list']), which is just... calling CLI with extra steps.
+
+- Shell is the superset. Code is a tool you invoke from it, not the other way around.
+- I agree CLI is very powerful and it's natural fit, I would suggest python as extension for more complex operations, although it could definitely replace CLI commands completely.
+  - Agreed — and here's a fun example of "shell is the superset": I run Claude Code, Codex CLI, and Gemini CLI inside my agent's sandbox. When my agent needs complex coding work, it just does: codex exec --full-auto -C /path/to/repo "implement auth module"
+  - Entire coding agents as sub-commands — like grep or curl. No special sub-agent protocol, no inter-agent message format. Just stdin/stdout.
+
+- Yeah, I think discoverability is the real advantage. Code eval can be powerful, but CLI gives the model a built-in way to explore the tool surface: --help, list, stderr, exit codes, etc... With code eval you usually have to invent that layer yourself.
+  - So it’s not just shell vs code, it’s navigable interface vs custom interface.
+
+- JIT natural language to sed awk regex was the true superpower all along
+
+- The most powerful agent framework might end up looking exactly like the shell
+
+- The Unix convergence argument is interesting. The main tradeoff I see is sandboxing - typed function calls let you define strict access boundaries upfront (this agent can only call search_web and read_file), whereas run(command) requires you to either trust the LLM fully or implement a custom command filter. Have you found a clean pattern for restricting what commands are allowed in production?
+  - So the security model isn't "filter which commands are allowed" — it's "commands are either native functions (no OS) or sandboxed execution (isolated OS)." No middle ground where the LLM runs arbitrary commands on the host.
+  - There are actually two layers here:
+  - Most commands never touch the OS. cat, grep, memory search, browser open — these look like shell commands but they're implemented as a Go command router. The LLM outputs a string, I parse it and dispatch to native functions. No os/exec, no shell injection surface. It's essentially typed functions wearing CLI syntax — same access control, but the LLM gets a familiar interface.
+  - When you do need real OS execution (e.g. running a Python script or installing packages), it runs inside a micro-VM — an isolated QCOW2 virtual machine with its own filesystem. The agent can do whatever it wants inside the sandbox. It can rm -rf / and nothing happens to the host. Sandbox isolation > command filtering.
+
 - ## [Am I the only one who feels that, with all the AI boom, everyone is basically doing the same thing? : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qk8zj1/am_i_the_only_one_who_feels_that_with_all_the_ai/)
 - The AI was trained to regress to the mean and now everything is built by AI so everything now is gonna regress to the mean. You and I and everyone.
 

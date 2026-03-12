@@ -20,6 +20,19 @@ modified: 2022-12-19T01:59:01.628Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Thinking of building an open-source multi-tenant Sqlite server : r/sqlite _202603](https://www.reddit.com/r/sqlite/comments/1rra3ln/thinking_of_building_an_opensource_multitenant/)
+- what's the use case?
+  - usecase: large number of tenants (tens of thousands to millions) that require physical separation (not only logical), per tenant encryption. Less read/write throughput, but more focus on data security, compliance and so on.
+
+- TrailBase already supports multi-DB and have been thinking about adding some sort multi-tenancy support. IMHO, routing is the easy part. Bigger challenges will be the management, eg non-transactional mass schema migrations, ... Also things like aggregations as already pointed out by someone else. Happy to chat more
+  - true. For the schema migration, I've thought of doing them on first write/read instead of all at once.
+  - About aggregations, out of scope at least in first versions. That will be overkill and don't have a solution.
+- The tricky case will be schema evolutions on existing DBs. If you do them lazily, how do you handle late failure? E.g. some column constraint change may apply fine to 99% of your data but then you may find out that there were edge cases you didn't already consider while some DBs have already been migrated.
+
 - ## [What's the real option to have sqlite run as a server? : r/sqlite _202603](https://www.reddit.com/r/sqlite/comments/1rqcdki/whats_the_real_option_to_have_sqlite_run_as_a/)
 - Is it only turso libsql?
   - I'm just looking for a server like solution that ideally could be replicated to S3.

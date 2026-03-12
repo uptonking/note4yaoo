@@ -70,6 +70,27 @@ modified: 2024-08-24T16:14:33.275Z
   - Someone in the community did get subsecond working for gpui but only for single crates (Zed is split across hundreds? of crates at this point.)
   - When we rewrote gpui (`gpui2`) we move to a tailwind-esque method chaining approach to styling that makes prototyping pretty quick and manageable despite no live reload.
   - Fun fact: `gpui1` had hot reloading, because the entire ui used to be styled via one giant 50k+ line json file…
+# discuss-architecture
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Zed 的插件 都是 WASM，rust 里面 wasmtime 编译成实例后基本上没有冷启动时间，注意到这个 ondemand 插件启用机制，真的太舒服了
+- https://x.com/Canmi21/status/2031921302983135452
+- 好像Wasm只能写一些桥接业务逻辑，LSP很多还是外部的需要一些启动时间。
+
+- 还要启动单独的lsp的, 还有一个node.js
+# discuss-internals
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
 # discuss
 - ##
 

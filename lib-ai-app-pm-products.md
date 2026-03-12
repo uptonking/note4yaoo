@@ -21,6 +21,7 @@ modified: 2025-03-22T16:10:24.856Z
   - ai时代的人工编辑, 可设计为特殊的human-in-the-loop
   - 一切通知/消息，都可以设计为 ai的chat+自动化工具
   - 之前的软件设计是面向用户、开发者，现在不得不重新设计，以大模型为使用者。 WebMCP的推进会让产品api快速发展
+  - 大模型可能的成本变化: 推广期token廉价, 等到工程师coding能力下降, token再涨价, 因为本地运行大模型成本太高
 
 - ai-dev-xp
   - 难复现好的效果，同样的prompt+context，有时输出的效果就是不好
@@ -271,6 +272,7 @@ modified: 2025-03-22T16:10:24.856Z
     - sources: docs, emails
   - large pdf rag workflows: chunking-strategies, reindex, pdf-parts
     - 中文rag需要优化
+    - rag db支持浏览空间占用、手动删除文件索引
   - 🌐 pdf edit
     - pdf ocr one-click eval like FlowDown
       - ui for popular ocr benchmark

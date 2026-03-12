@@ -320,7 +320,12 @@ redis-cli shutdown
 
 - ## 
 
-- ## 
+- ## macOS 中关于 App 的持久化存储的清理机制。
+- https://x.com/Blankwonder/status/2031912092400566480
+  1. 对于使用了 sandbox 和 App Group 机制的 app，在从系统里将应用程序包彻底删除后，系统会自动清理掉关于这个应用的几乎所有数据。所有从 Mac App Store 安装的 app 均属于这类。
+  2. 对于自己从官网下载安装包安装的 app，绝大多数都没有使用 sandbox 机制，也就是说由 app 开发者自行决定将数据存储于何处。大多数 app 遵循的处理方式，是在 ~/Library/Application Support 目录建立一个与 app 同名的目录，将数据尽量都放在这里面。
+  但是这并非强制要求，开发者可以存在任意位置，所以不太讲究的开发者可能把数据写的到处都是。而且由于大多数 Mac App 没有 uninstaller，所以即使删除了应用本身，这些数据也不会被清理，永久存在，除非用户手动进行删除。
+- macOS允许侧载，在开发者看来就是默许了自己随地大小便，抹得哪儿哪儿都是，真服了。
 
 - ## [macos - Adding timestamp to each line on Zsh - Stack Overflow](https://stackoverflow.com/questions/40076573/adding-timestamp-to-each-line-on-zsh)
 

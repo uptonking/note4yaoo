@@ -625,7 +625,14 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
-- ## 
+- ## 现在纯文本处理（写作、翻译、润色、总结、创意内容生成等文字相关任务）哪个大模型比较强？输出的主要是中文内容。
+- https://x.com/vikingmute/status/2032086583613276280
+- 你这个需求其实提示词带来的效果差异远大于模型能力的差异
+- 这年头，大模型在纯文本上已经没有太大的差距了，非推理类，提示词反而比选哪个大模型更重要，而个人的文学修养能决定最后一百米
+
+- 写给你看和帮你写给你的用户看... 是两种prompt....，这个差距比较大. claude 比较重视这个的区别... gemini们都是写给你比较擅长.
+
+- Gemini大概已经写了四十万字，ChatGPT 写短篇专栏从22年用到现在。用得越久，她越懂你。
 
 - ## [Best current Local model for creative writing (mainly editing) : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1ro1ujh/best_current_local_model_for_creative_writing/)
   - I'm a writer, I don't use the LLMs to write my plot or chapters, I mainly use it to edit, and to brainstorm very occasionally.

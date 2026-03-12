@@ -375,7 +375,12 @@ modified: 2025-12-18T12:27:14.982Z
 
 - ## 
 
-- ## 
+- ## [最近的一些关于gpt系列模型推理强度的小观察 - 开发调优 - LINUX DO _202603](https://linux.do/t/topic/1740763)
+- 最近主要用gpt-5.4和5.2，有一些不太常见的小经验给大家分享一下。
+  - codex用plan，推理强度会自动给你限制到中等。有点奇怪对吧，看到最后说说你的想法。
+  - 同一个问题，推理强度越高，烧的token越多，我大概的经验是，min和None思考都是空的，low大概是100，med大概是200-300，high可以干到1000左右，xhigh大概1200到1500，这个肯定是不准确的，大概意思了解一下，其实模型如果没变的话，烧的token越多就越智能，这个智能的差距大概是这样，所以你用high开始配额燃烧速度非常非常快，xhigh反而提升没那么大了。这个是5.4的。
+  - 如果一个偏主观的问题，比如答复高中低吧，没有准确的答案的那种，不同的强度答案差距不大，但是我加入了置信度的话，会有差别，是一个微笑曲线，no和low这种置信度会很高（盲目自信？），med会比较低，xhigh会比较高。所以这里对你设计类似的系统或者解法需要权衡考虑的。编码反而不需要太在乎，xhigh一把梭得了。
+  - 5.2的确相对质量比较差，甚至codex编码也不见得强，我是用这几个模型写代码，然后用不同的推理强度，最后用5.4 xhigh打分的，简单题目都还可以，复杂题目都不太行，区分度不高。最后结论还是5.4 xhigh的确可以一把梭。
 
 - ## [Everything I Wish Existed When I Started Using Codex CLI — So I Built It : r/codex _202603](https://www.reddit.com/r/codex/comments/1rkgkx9/everything_i_wish_existed_when_i_started_using/)
 - Up to 32KiB for AGENTS.md. That feels like an excessively high limit doesn't it?

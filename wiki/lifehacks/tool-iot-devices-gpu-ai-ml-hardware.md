@@ -284,6 +284,17 @@ modified: 2026-01-15T15:44:10.647Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [摩尔线程自研笔记本：首发“长江”处理器 Linux安卓Windows随心切换 - 知乎 _202602](https://zhuanlan.zhihu.com/p/2009342318608675074)
+  - MTT AI Book的核心亮点是首发自研的 “长江” SoC。该芯片基于Arm架构打造，拥有12个CPU核心，基础频率达2.65GHz，同时搭配摩尔线程自研MUSA微架构的GPU，具体型号暂未公布。
+  - 其 NPU的AI计算能力可达 50 TOPS，与AMD的Strix Point处理器处于同一水平。
+  - 硬件配置上，MTT AI Book内置32GB LPDDR5X-7500内存，板载1TB SSD，可充分满足大容量存储需求，兼顾算力运算与日常使用的硬件要求。
+  - 系统支持方面，这款产品原生搭载基于Linux内核开发的 AIOS 操作系统，同时兼容Windows、安卓系统，实现多系统灵活切换。后者通过虚拟机环境运行，可满足用户不同的使用场景需求。
+  - 机身采用 6 系铝合金 CNC 工艺打造，重量1.5kg，便携性表现出色；内置70Wh容量电池；接口方面则配备3个USB-C 接口。目前该产品已在京东摩尔线程官方旗舰店上架，售价9999元。
+
 - ## 🆚 [Mac Studi M3 Ultra vs Nvidia 6000 Blackwell : r/LocalLLM _202602](https://www.reddit.com/r/LocalLLM/comments/1qsv2p0/mac_studi_m3_ultra_vs_nvidia_6000_blackwell/)
 - Nvidia RTX 6000 Pro if you need it to be fast. Mac if you need to run the best possible model and can accept that it might be slow. Simple as that.
 

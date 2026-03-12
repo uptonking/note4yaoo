@@ -3,7 +3,7 @@ title: git-in-postgres
 tags: [dev, git, postgresql]
 created: 2026-03-08T09:34:23.614Z
 modified: 2026-03-08T09:34:31.219Z
-description: "Instead of using git as a database, what if you used a database as a git?"
+description: Instead of using git as a database, what if you used a database as a git?
 ---
 
 # git-in-postgres

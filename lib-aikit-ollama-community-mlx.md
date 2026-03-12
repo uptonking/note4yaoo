@@ -19,8 +19,17 @@ modified: 2026-01-14T18:59:01.949Z
 
 - ## 
 
-- ## 
+- ## [MLX is not faster. I benchmarked MLX vs llama.cpp on M1 Max across four real workloads. Effective tokens/s is quite an issue. What am I missing? Help me with benchmarks and M2 through M5 comparison. : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rs059a/mlx_is_not_faster_i_benchmarked_mlx_vs_llamacpp/)
+  - Setup: Mac Studio M1 Max, 64 GB. LM Studio 0.4.5. Qwen3.5-35B-A3B, MLX 4-bit vs GGUF Q4_K_M. Warm model, temperature 0.6, thinking mode off.
+  - That tok/s number only measures generation (tokens produced one at a time). It ignores prefill (processing the entire input before the first token appears). Prefill scales with context size. Generation doesn't. At 8.5K tokens of context, prefill was 94% of MLX's total response time. Thats super misleading. So even though your counter says: fast. Its super slow in practice.
+  - Where MLX still wins: long output with short context. For creative, single prompt inferencing its super fast. However, in day-to-day workloads like an 8-turn agent conversation with 300-400 token replies, results swing back and forth. MLX wins most turns because the 2x generation speed compensates for slower prefill when there's enough output. 
+  - GGUF again is better, for long input prompts and shorter outputs, like my document classification use case.
 
+- Qwen 3.5 uses a hybrid attention mechanism. Llama.cpp probably supports it better than MLX. MLX is probably using a standard attention mechanism, which is why on short prompts you aren't see the difference, but on long prompts the hybrid attention will make a lot of difference.
+
+- There is a known issue with mlx runtime in lmstudio, where prompt caching for qwen3.5 multimodal is not working, which means, that for each turn of conversation with the agent, the whole conversation history is processed again (rather than just new tokens). One way around this with current stable lmstudio version, is to use qwen3.5 version, that has vision part removed (there are a bunch of quants like that available). 
+
+- ## I attached a benchmark chart (Apple M4 Max 128GB, 4-bit) showing vllm-mlx beating llama.cpp across multiple model families, roughly ~1.17× to 1.87× faster depending on the model. _202602
 - ## I attached a benchmark chart (Apple M4 Max 128GB, 4-bit) showing vllm-mlx beating llama.cpp across multiple model families, roughly ~1.17× to 1.87× faster depending on the model. _202602
 - https://x.com/mynamekarma/status/2021375707021181330
   - And it’s not just text-only either, multimodal caching is getting stupid fast (image prefix cache 21.7s → 0.78s, up to 28×).
