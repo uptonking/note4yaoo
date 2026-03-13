@@ -22,6 +22,59 @@ modified: 2026-01-15T15:43:25.456Z
   - The issue is that data in RAM has a short life and has to be refreshed regularly or it gets corrupted/disappears. That's why laptops are always RAM constrained and desktops are not. 
   - There's more to it about scale and speed that requires workstation class machines to get to have extremely large RAM.
 
+- ## 🆚📌 [Memory Bandwidth Comparisons - Planning Ahead : r/LocalLLaMA _202402](https://www.reddit.com/r/LocalLLaMA/comments/1amepgy/memory_bandwidth_comparisons_planning_ahead/)
+- Epyc actually has 12 channels of ram. The latest 9004 series has 460.8 GB/s. Threadripper is the one that comes with quad and octa channel variants.
+  - Note: The upcoming Epycs(zen 5) are supposed to have even more bandwidth due to the new out-of-the-box ram speed being 6000mhz instead of the current 4800mhz
+- 6000 MT/s would be nice, giving 4090-like memory bandwidth over 24 channels in a 2P system, but with a minimum of 384GB instead of a maximum of 24GB. That's assuming all else is equal/negligible, which isn't quite the case.
+- Yeah, an ideal environment for sparse MoE like Mixtral
+
+- Lpddr5x at 120gb/s I have a core ultra 7 155h with lpddr5 at 100gb/s. You can ask me for some tests if you want
+
+- Is there any reason that regular consumer motherboards can't support quad or 8 channel RAM? I feel like if we can have 8 channels DDR6, we'd be at around 600 to 800GB/s, which is very similar to gpu vram speeds. Maybe this is what we should ask AMD to do instead of GPU's with 46gb or 96gb RAM for consumers at reasonable prices.
+  - It would normalize everyone potentially having great bandwidth for local inference, wouldn't require a GPU at all, and would basically explode the number of devices that could locally inference at reasonable speed. This would open the flood gates for local llm's - open or closed source, because now everyone and their grandma would be able to use it effectively.
+  - And unlike GPU's, you'd never be limited by how many GB's of RAM you want to install, and therefore not be dependent on NVIDIA (or whomever) to hopefully one day release a card with more VRAM. The power would go back to consumer. And the bandwidth would double again for DDR7 and so on.
+  - I just don't know if putting quad or 8 channels on a motherboard is somehow difficult and can only done at high price to the consumer, which is why only pro-sumer or server level mobos do it.
+- They could, but the main limiting factor is the memory controllers are on the CPU. Intel, AMD, and the others use number of channels as a market segmentation method. But ultimately it boils down to memory channels equal $$.
+
+- The bandwidth numbers for the Apple M1/2/3 SoC are just the raw totals from the memory, but depending one which cluster is using it (P-cores, E-cores, GPU) they have their own limitations. Here is the explanation for the M1 series
+  - On the M1 Max with 400GB/s the CPU can get maximum 204GB/s when using the P cores only or 243GB/s when using both the P and E cores.
+
+- ## 🆚⚡️ [Performance of llama.cpp on Apple Silicon M-series · ggml-org/llama.cpp _202311](https://github.com/ggml-org/llama.cpp/discussions/4167)
+  - 提供了各种mac, air的模型测试数据
+
+- LLaMA 7B
+
+```markdown
+- Mac, bandwidth(gb/s), gpu-cores, 7b-Q4-PP, 7b-Q4-TG
+- M1,     68,           7,          107,     14
+- M1Pro,  200,          14,         230,     35
+- M1Max,  400,          24,         400,     54
+- M1Ult,  800,          64,         1030,    83
+
+- M2,     100,          8,          145,     21
+- M2Pro,  200,          16,         294,     37
+- M2Max,  400,          30,         537,     60
+- M2Ult,  800,          76,         1238,    94
+
+- M3,     100,          10,         186,     21
+- M3Pro,  150,          14,         269,     30
+- M3Max,  400,          40,         759,     66
+- M3Ult,  800,          60,         1073,    88
+- M3Ult,  800,          80,         1471,    92
+
+- M4,     120,          10,         221,     24
+- M4Pro,  273,          16,         364,     49
+- M4Max,  410,          32,         713,     69
+- M4Max,  546,          40,         885,     83
+
+- M5,     153,          10,         247,     29
+- M5N,    153,          10,         636,     31
+- M5Pro,  307,          16,         3xx,     4x
+- M5Max,  460,          32,         7xx,     6x
+- M5Max,  614,          40,         8xx,     6x
+
+```
+
 # discuss-news
 - ## 
 

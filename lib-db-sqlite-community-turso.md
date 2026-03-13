@@ -44,7 +44,33 @@ target/debug/limbo database.db
 # discuss-stars
 - ## 
 
-- ## 
+- ## ⏳ What are Turso, Turso Cloud, and libSQL?
+- https://x.com/penberg/status/2032373944007688226
+  - tl; dr: Turso is a new SQLite-compatible database, rewritten from scratch in Rust, currently in beta. 
+  - libSQL is our open-source fork of SQLite, which powers Turso Cloud today. 
+  - Turso Cloud is our managed database service, and we're actively working towards adding Turso to it.
+
+Still confused? That's fair. The names evolved as the product did. Here's the full story in chronological order.
+
+Back in October 2022, we announced a fork of SQLite called libSQL. At the time, we were building an edge-replicated database based on SQLite for our internal use. However, we faced a major problem that there was no way to upstream the core enabling technology, WAL virtualization. We decided to fork SQLite and make it open to everyone's contributions.
+
+With the fork out of the way, we kept building what would become Turso Cloud. One of the most memorable moments was when ThePrimeagen tested our database on his stream sometime in February 2023, while we were still in private beta. The whole team was watching the stream and monitoring our systems, hoping everything would work out fine. In April 2023, we launched a public beta.
+
+With our own fork of SQLite, we spent a lot of time early on trying to address one of its biggest limitations: the single-writer transaction model, which limits scalability and isn't the greatest DX. Me, @sarna_dev , and @iavins built a Hekaton-based MVCC implementation and a prototype of libSQL supporting BEGIN CONCURRENT. However, the integration wasn't great, and there was a lot to do with Turso Cloud, so we shifted priorities there.
+
+During that same time, I began exploring rewriting SQLite. I initially used Zig, thinking I would reuse large parts of the SQLite front-end, for example. However, I also wanted to make the database core fully asynchronous with io_uring support, and it turned out to be very hard to reuse any of the SQLite code for such a fork. With some skill issues during comptime (as ThePrimeagen and Jarred Sumner once framed it), I ended up ditching Zig and, in late August 2024, switched to Rust. I called the project Limbo at the time, but later it was renamed Turso. The whole thing was more of a side quest than anything at that point, mostly exploration.
+
+In early 2024, we had a bunch of people asking for vector support in libSQL. @SivukhinN added support for approximate vector search, similar to pgvector, but we had to compromise on the DX because the changes to libSQL would have been very intrusive. Around this time, we realized that forking SQLite would only take us so far, mostly because the main test suite SQLite uses is fully proprietary, and we had not been able to obtain access to it.
+
+After some back-and-forth, we ended up making my SQLite rewrite side quest public. Surprisingly enough, early people like @Peristocles1, @jussisaur, and @PThorpe92 showed up and started contributing to the project. As we saw more uptake, we made it an official company project in December 2024, renaming it to Turso.
+
+(As a side note, we did end up rewriting the libSQL server components using TigerBeetle-style DST architecture with S3-based diskless architecture in August 2024 and migrating from Fly to AWS. But that part fortunately added very little confusion to users, as it's mostly a Turso Cloud internal detail.)
+
+Today, Turso is in beta with early customers working toward production deployments. The libSQL fork has been an incredible success with 800k weekly downloads for the JavaScript SDK and running production workloads at scale. We're actively maintaining libSQL, but the future is Turso. Built from scratch with no proprietary test suite in the way, Turso supports features like concurrent writes that a fork of SQLite never could, and we're working on bringing it to Turso Cloud.
+
+- How do you ensure full SQLite compatibility, without access to the closed-source SQLite test suite?
+  - We don't yet provide full compatibility btw. But differential testing is the technique to do it (you run same query with both systems). 
+  - Note that the open test suite covers functionality well, so compatibility is not an issue, really. It's more about reliability and robustness.
 
 - ## [Limbo: A complete rewrite of SQLite in Rust | Lobsters _202412](https://lobste.rs/s/hl73hl/limbo_complete_rewrite_sqlite_rust)
 - Deterministic Simulation Testing is a paradigm made famous by the folks at TigerBeetle

@@ -29,7 +29,15 @@ modified: 2025-09-16T13:29:11.327Z
 
 - ## 
 
-- ## 
+- ## [Why can't we have small SOTA-like models for coding? : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rsv70y/why_cant_we_have_small_sotalike_models_for_coding/)
+- People tried to do this in the beginning. As it turns out, all the "off-topic" training on other programming languages, science, humanities, reddit conversations, other human languages, etc. etc. is actually necessary to train a model that is good at programming.
+  - Because it needs to know language and all sorts of concepts to correctly interpret instructions and all sorts of different prompting styles people might use, I'd imagine.
+
+- SOTA models' performance comes from general reasoning capability, not pure knowledge alone. Many coding tasks require planning, debugging, architectural decisions, and understanding natural language requirements. Those capabilities scale strongly with parameter count. A 30B model specialized only in Python can learn syntax and common patterns very well, but it has far less reasoning capacity for complex multi-step problems.
+
+- if you look at MOE activation layers you will find that when you run a coding problem through it activate layers of math, reasoning, coding , language . I think if one wanted a smaller model but for a specific usecase they could train LORA for it. that way you keep the original model intact and when you need python specific performace you use that python LORA with the latests and greatest.
+  - but in my opinion the better approach would be for the model not to seek internal logic, but instead have access to up to date docs of the latest python and python libraries and whenever it wants to code it references it . it just needs to know how the python syntax and rules work but not now specifics since it canr eference it.
+  - So my point is, smaller models are already good enough for coding but they require extra effort on setting up an successful enviorment for them. bigger models can bruteforce it because they have so much more knowledge within their latent space.
 # discuss-prompts-eval 🔠🌰
 - resources
   - [awesomeprompts.cc](https://www.awesomeprompts.cc/)

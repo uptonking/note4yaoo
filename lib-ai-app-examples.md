@@ -378,6 +378,12 @@ modified: 2023-02-08T07:20:48.475Z
   - ESM Only: Modern ECMAScript modules, no CommonJS
   - GGUF Support: Load any GGUF-format model
 
+- https://github.com/keypaa/llamaup /MIT/202602/shell
+  - Pre-built Linux CUDA binaries for llama.cpp, organized by GPU architecture.
+  - No more compiling on every machine. Build once per SM version, store the binary, pull it anywhere in seconds.
+  - The problem: The official llama.cpp releases ship pre-built Windows CUDA binaries but nothing for Linux CUDA. If you're running llama.cpp on Linux across multiple GPU types (T4, A100, L40S, RTX 4090, H100...) you have to compile from source every time — on every machine, for every new release.
+  - [I got tired of compiling llama.cpp on every Linux GPU : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rszkrk/i_got_tired_of_compiling_llamacpp_on_every_linux/)
+
 ## llama-rewrite
 
 - https://github.com/projektjoe/gpt-oss /MIT/202511/python/cpp

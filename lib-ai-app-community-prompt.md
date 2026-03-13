@@ -120,7 +120,11 @@ modified: 2024-09-08T18:57:12.231Z
 
 - ## 
 
-- ## 
+- ## [Simple trick that cuts context usage ~70% on local models : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rso083/simple_trick_that_cuts_context_usage_70_on_local/)
+  - Local models have tight context windows. I got tired of hitting limits feeding them large docs. Made a dead simple convention: annotate your markdown blocks with [SPEC], [NOTE], [BUG] etc. Then only load the block types you actually need for the task. Fixing a bug? Load [BUG] + [SPEC], skip everything else. 8k → 2.4k tokens. with any model, any framework. Just text.
+- Claude Code and Qwen Code CLI are already pretty good at this. Their tool-calls only grab subsets of the code based on grep/find results and it's only if that fails that they move to ingest the entire file.
+
+- Another way to solve the issue, is to have an indexing context project step, and get the agent to look at the index prior to planning then retrieve what they need from the index. Refresh index based on project change logs. This way they are only loading relevant context and it's not limited to a single document.
 
 - ## [RFC: RAG-based dynamic skill injection to fix context pollution at scale · openclaw/openclaw _202602](https://github.com/openclaw/openclaw/discussions/20028)
   - buildWorkspaceSkillsPrompt() serialises every eligible skill into the system prompt on every agent turn. This works well with a handful of skills, but breaks down as the skill library grows

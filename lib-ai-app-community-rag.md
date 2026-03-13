@@ -71,47 +71,6 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 🤔 [How do you actually measure RAG quality beyond "it looks good"? : r/Rag _202501](https://www.reddit.com/r/Rag/comments/1q68521/how_do_you_actually_measure_rag_quality_beyond_it/)
-  - We're running a customer support RAG system and I need to prove to leadership that retrieval quality matters, not just answer fluency. Right now we're tracking context precision/recall but honestly not sure if those correlate with actual answer quality.
-  - LLM as judge evals feel circular (using GPT 4 to judge GPT 4 outputs). Human eval is expensive and slow. This is driving me nuts because we're making changes blind.
-
-- Context precision/recall tells you if you fetched relevant chunks, but customers don't care about your retrieval accuracy, they care if the answer was correct, complete, and useful. LLM-as-judge is circular because you're asking the same type of system to evaluate itself. Human eval is the only real signal, but you're right that it's expensive.
-  - What actually works is to track downstream metrics that matter, such as the resolution rate, follow-up questions, customer satisfaction, or ticket escalation.
-  - If your "improved" retrieval leads to more follow-ups or escalations, your retrieval isn't actually better. The hard truth is that answer quality can't be predicted by retrieval metrics alone because the LLM might compensate for bad context or fail with good context. You need to measure outcomes, not intermediates.
-
-- Precision/recall measure retrieval, not answer validity. Latency measures speed, not correctness. LLM-as-judge is circular because it shares the same failure surface.
-  - What’s missing is an explicit grounding / coherence metric: – Does the answer make claims not supported by retrieved evidence? – Can each assertion be traced to specific context? – If evidence is weak or conflicting, does the system abstain?
-
-- Instead of measuring retrieval quality, measure preprocessing quality first. Can you actually see what your documents look like after parsing and chunking? Most people are flying blind here, which is why I built VectorFlow to show you what chunks actually contain before they hit the vector store.
-  - For customer support specifically, track whether your chunks preserve the complete question-answer pairs from your docs. If your chunking strategy splits a FAQ answer across multiple chunks, your retrieval metrics might look fine but answers will be incomplete.
-
-- [How to Evaluate RAG Systems in Production _202512](https://medium.com/@yadav.navya1601/how-to-evaluate-rag-systems-in-production-66b44a849189)
-  - You’re not just testing an LLM you’re testing whether your retrieval finds the right documents AND whether the model uses them correctly. A problem in either component breaks the whole system, but the symptoms show up differently.
-  - Retrieval fails: The system doesn’t find relevant documents
-  - Generation fails: The model has the right context but produces wrong answers
-  - The problem is these issues compound. Bad retrieval guarantees bad generation. Good retrieval doesn’t guarantee good generation. You can’t evaluate the whole pipeline by just looking at the final output.
-  - Retrieval Metrics
-    - Precision: What proportion of your top k retrieved documents are actually relevant? Low precision means you’re wasting context window space on irrelevant information.
-    - Recall: Are all relevant documents showing up in your top k results? Missing critical context leads to incomplete answers.
-    - Mean Reciprocal Rank (MRR): Where does the first relevant document appear in your ranked results?
-    - Contextual Relevancy: Do the retrieved documents actually contain information that helps answer the query? This goes beyond keyword matching — a document might mention the same terms but not address the actual question. You can evaluate this with LLM-as-judge or manual review when ground truth isn’t available.
-  - Generation Metrics
-    - Answer Relevancy: Does the response actually address the user’s question? Irrelevant answers mean something broke in your prompt construction or the model is ignoring the query context.
-    - Faithfulness: Is the response grounded in the retrieved context without hallucinations? This is critical. 
-    - Groundedness: Can you trace every claim in the response back to specific retrieved documents? This prevents the model from injecting its own knowledge or making unsupported inferences.
-    - Completeness: Does the response provide comprehensive information based on available context? Incomplete answers might mean the model isn’t using all the relevant chunks you retrieved, or your prompt doesn’t encourage thorough responses.
-  - End-to-End Metrics
-    - Hallucination Rate: How often does the system generate content that contradicts or isn’t supported by retrieved context? Track this per query type — complex multi-hop questions tend to have higher hallucination rates.
-    - Context Utilization: Is the model actually using the retrieved chunks, or is it ignoring them? Sometimes retrieval works perfectly but the generation step doesn’t incorporate the context.
-    - Latency: End-to-end response time matters in production. Measure time-to-first-token and total response time. Users expect fast results, and slow retrieval or generation kills user experience.
-
-- [Top 5 RAG Evaluation Tools for Production AI Systems (2026)](https://www.getmaxim.ai/articles/top-5-rag-evaluation-tools-for-production-ai-systems-2026)
-  - Maxim AI integrates evaluation with simulation, experimentation, and observability for complete lifecycle management.
-  - Braintrust provides enterprise-grade evaluation with production feedback loops. 
-  - Deepchecks delivers MLOps validation with CI/CD integration.
-  - TruLens specializes in feedback functions for iterative testing.
-  - Langfuse offers open-source observability with comprehensive tracing.
-
 - ## [Hybrid search + reranking in prod, what's actually worth the complexity? : r/Rag _202601](https://www.reddit.com/r/Rag/comments/1q683tf/hybrid_search_reranking_in_prod_whats_actually/)
   - Building a RAG system for internal docs (50k+ documents, multi tenant, sub 2s latency requirement) and I'm going in circles on whether hybrid search + reranking is worth it vs just dense embeddings.
   - Everyone says "use both" but rerankers add latency and cost. Tried Cohere rerank but it's eating our budget. BM25 + vector seems overkill for some queries but necessary for others?
@@ -766,6 +725,67 @@ modified: 2024-09-08T20:08:16.088Z
   - Text-to-SQL is a sequence to sequence task. My very first thought was "zero shot learning" because I have done this successfully in other domains. 
 
 - I use whatever models are on top 1-5 on the MTEB leaderboard and run my custom evaluation 
+# discuss-eval/bench 🆚
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [What metrics do you use to evaluate production RAG systems? : r/Rag _202603](https://www.reddit.com/r/Rag/comments/1rspagy/what_metrics_do_you_use_to_evaluate_production/)
+- The most bottom-line metrics to me are: total latency, factual accuracy and cost per query. 
+  - All other metrics are diagnostic to the bottom line results, which I use to dig deeper if there are issues with the big 3.
+
+- For the retriever:
+  - Metrics with GT:
+  - Recall, Precision, F1 score
+  - Metrics without GT:
+  - Precision@k
+- For the generator:
+  - Correctness, Groundness/faithfulness, Relevance
+
+- We use langfuse for this.
+
+- ## 🤔 [How do you actually measure RAG quality beyond "it looks good"? : r/Rag _202501](https://www.reddit.com/r/Rag/comments/1q68521/how_do_you_actually_measure_rag_quality_beyond_it/)
+  - We're running a customer support RAG system and I need to prove to leadership that retrieval quality matters, not just answer fluency. Right now we're tracking context precision/recall but honestly not sure if those correlate with actual answer quality.
+  - LLM as judge evals feel circular (using GPT 4 to judge GPT 4 outputs). Human eval is expensive and slow. This is driving me nuts because we're making changes blind.
+
+- Context precision/recall tells you if you fetched relevant chunks, but customers don't care about your retrieval accuracy, they care if the answer was correct, complete, and useful. LLM-as-judge is circular because you're asking the same type of system to evaluate itself. Human eval is the only real signal, but you're right that it's expensive.
+  - What actually works is to track downstream metrics that matter, such as the resolution rate, follow-up questions, customer satisfaction, or ticket escalation.
+  - If your "improved" retrieval leads to more follow-ups or escalations, your retrieval isn't actually better. The hard truth is that answer quality can't be predicted by retrieval metrics alone because the LLM might compensate for bad context or fail with good context. You need to measure outcomes, not intermediates.
+
+- Precision/recall measure retrieval, not answer validity. Latency measures speed, not correctness. LLM-as-judge is circular because it shares the same failure surface.
+  - What’s missing is an explicit grounding / coherence metric: – Does the answer make claims not supported by retrieved evidence? – Can each assertion be traced to specific context? – If evidence is weak or conflicting, does the system abstain?
+
+- Instead of measuring retrieval quality, measure preprocessing quality first. Can you actually see what your documents look like after parsing and chunking? Most people are flying blind here, which is why I built VectorFlow to show you what chunks actually contain before they hit the vector store.
+  - For customer support specifically, track whether your chunks preserve the complete question-answer pairs from your docs. If your chunking strategy splits a FAQ answer across multiple chunks, your retrieval metrics might look fine but answers will be incomplete.
+
+- [How to Evaluate RAG Systems in Production _202512](https://medium.com/@yadav.navya1601/how-to-evaluate-rag-systems-in-production-66b44a849189)
+  - You’re not just testing an LLM you’re testing whether your retrieval finds the right documents AND whether the model uses them correctly. A problem in either component breaks the whole system, but the symptoms show up differently.
+  - Retrieval fails: The system doesn’t find relevant documents
+  - Generation fails: The model has the right context but produces wrong answers
+  - The problem is these issues compound. Bad retrieval guarantees bad generation. Good retrieval doesn’t guarantee good generation. You can’t evaluate the whole pipeline by just looking at the final output.
+  - Retrieval Metrics
+    - Precision: What proportion of your top k retrieved documents are actually relevant? Low precision means you’re wasting context window space on irrelevant information.
+    - Recall: Are all relevant documents showing up in your top k results? Missing critical context leads to incomplete answers.
+    - Mean Reciprocal Rank (MRR): Where does the first relevant document appear in your ranked results?
+    - Contextual Relevancy: Do the retrieved documents actually contain information that helps answer the query? This goes beyond keyword matching — a document might mention the same terms but not address the actual question. You can evaluate this with LLM-as-judge or manual review when ground truth isn’t available.
+  - Generation Metrics
+    - Answer Relevancy: Does the response actually address the user’s question? Irrelevant answers mean something broke in your prompt construction or the model is ignoring the query context.
+    - Faithfulness: Is the response grounded in the retrieved context without hallucinations? This is critical. 
+    - Groundedness: Can you trace every claim in the response back to specific retrieved documents? This prevents the model from injecting its own knowledge or making unsupported inferences.
+    - Completeness: Does the response provide comprehensive information based on available context? Incomplete answers might mean the model isn’t using all the relevant chunks you retrieved, or your prompt doesn’t encourage thorough responses.
+  - End-to-End Metrics
+    - Hallucination Rate: How often does the system generate content that contradicts or isn’t supported by retrieved context? Track this per query type — complex multi-hop questions tend to have higher hallucination rates.
+    - Context Utilization: Is the model actually using the retrieved chunks, or is it ignoring them? Sometimes retrieval works perfectly but the generation step doesn’t incorporate the context.
+    - Latency: End-to-end response time matters in production. Measure time-to-first-token and total response time. Users expect fast results, and slow retrieval or generation kills user experience.
+
+- [Top 5 RAG Evaluation Tools for Production AI Systems (2026)](https://www.getmaxim.ai/articles/top-5-rag-evaluation-tools-for-production-ai-systems-2026)
+  - Maxim AI integrates evaluation with simulation, experimentation, and observability for complete lifecycle management.
+  - Braintrust provides enterprise-grade evaluation with production feedback loops. 
+  - Deepchecks delivers MLOps validation with CI/CD integration.
+  - TruLens specializes in feedback functions for iterative testing.
+  - Langfuse offers open-source observability with comprehensive tracing.
 # discuss-rag-tips/tricks
 - ## 
 
@@ -774,6 +794,11 @@ modified: 2024-09-08T20:08:16.088Z
 - ## 
 
 - ## 
+
+- ## [Title: Stop asking NotebookLM to "summarize" your sources. Do this instead for pro-level research. : r/notebooklm _202603](https://www.reddit.com/r/notebooklm/comments/1rse4wp/title_stop_asking_notebooklm_to_summarize_your/)
+  - EXPLAIN > SUMMARIZE Never type "summarize." Summarization strips away the nuance and kills the details. Instead, use the word "Explain." Tell it to explain the topics from the index. This prompts the AI to build a comprehensive, logical structure rather than just giving you a shallow overview.
+
+- All these tips in the form of "Do this, it's better" never actually show comparisons or evidence that they produce good results. NotebookLM already has briefing and explainer type prompts built-in, we don't have to ask it to "summarize" in the chat. How is yours better?
 
 - ## 🤔 [RAG Insight: Parsing & Indexing Often Matter More Than Model Size : r/Rag](https://www.reddit.com/r/Rag/comments/1rodl46/rag_insight_parsing_indexing_often_matter_more/)
 - There are roughly two different philosophies when building RAG systems.

@@ -447,6 +447,10 @@ modified: 2025-12-11T18:10:23.710Z
   - OMX turns Codex from a single-session agent into a coordinated system
   - Inspired by oh-my-claudecode, adapted for Codex CLI.
 
+- https://github.com/Dimillian/CodexMonitor /3.1kStar/MIT/202603/ts/tauri
+  - a Tauri app for orchestrating multiple Codex agents across local workspaces. 
+  - It provides a sidebar to manage projects, a home screen for quick actions, and a conversation view backed by the Codex app-server protocol.
+
 ## gemini/qwen-code-cli
 
 - https://github.com/Piebald-AI/gemini-cli-desktop /109Star/MIT/202512/rust/ts/tauri

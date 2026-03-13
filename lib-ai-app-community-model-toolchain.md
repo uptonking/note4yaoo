@@ -205,7 +205,20 @@ modified: 2025-09-16T12:36:12.968Z
 
 - ## 
 
-- ## 
+- ## [2000 TPS with QWEN 3.5 27b on RTX-5090 : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rsz8k6/2000_tps_with_qwen_35_27b_on_rtx5090/)
+  - I've been tuning my settings for a specific job that classifies markdown documents - lots of input tokens, no real caching because every doc is different and very few output tokens. So, these numbers are totally situational, but I thought I would share if anyone cares.
+  - In the last 10 minutes it processed 1, 214, 072 input tokens to create 815 output tokens and classified 320 documents. ~2000 TPS
+  - I'm pretty blown away because the first iterations were much slower.
+  - I tried a bunch of different quants and setups, but these numbers are unsloth/Qwen3.5-27B-UD-Q5_K_XL.gguf using the official llama.cpp:server-cuda13 image.
+- The key things I set to make it fast were:
+  - No vision/mmproj loaded. This is for vision and this use case does not require it.
+  - Ensuring "No thinking" is used
+  - Ensuring that it all fits in my free VRAM (including context during inference)
+  - Turning down the context size to 128k (see previous)
+  - Setting the parallelism to be equal to my batch size of 8
+- That gives each request in the batch 16k of context to work with and it kicks out the less than 1% of larger documents for special processing.
+
+- I don't get where your excitement comes from. 2k tok/s PP on a 27B Q4 model? For 16k long prompts, running 8 in parallel? That's below what a single 3090 can achieve, embarassing result for a 5090.
 
 - ## [Benchmarking local llms for speed with CUDA and vulkan, found an unexpected speedup for select models : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pydegt/benchmarking_local_llms_for_speed_with_cuda_and/)
   - I was benchmarking my local llm collection to get an idea of tokens rates. I thought it might be interesting to compare CUDA vs Vulkan on my 3080 10GB. As expected, in almost all cases CUDA was the better option as far as token rate
@@ -493,6 +506,32 @@ PP Speed: Q3 GGUF: 50 t/s
 
 - The reason is that most llama.cpp users are memory capacity bound on model and memory bandwidth bound on inference speed. All that matters for the one-user-per-gpu domain is quantization accuracy per bit. The llama.cpp k quants are significantly better than microscaled floats in that regard because they offer a scale and offset per block instead of just a scale. Mxfp8 and nvfp8 are jointly optimized to balance precision and ease of hardware acceleration which doesn’t matter if you have boatloads of unused compute laying about because you’re memory bound. Switching from the gguf 8 bit format to mxfp8 or nvfp8 could probably make prefill faster but it wouldn’t realistically improve tok/s during generation and would would make the models less accurate approximations of the unquantized weights. It only makes sense if you’re serving huge batches and everyone that’s doing that uses vLLM which has prioritized microscaled float support. For everyone else it’s fine to just dequantize the gguf k quant weights to fp16 on the gpu during inference
 
+- ## [What are the cons of MXFP4? : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1pgoezb/what_are_the_cons_of_mxfp4/)
+  - Considering that we can make the model FP16 and fine-tune it and then quantize to MXFP4 again, and the model will be robust because it was trained with QAT, what would be the cons? 
+  - MXFP4 is (almost) virtually lossless, not FP16 but near-lossless, and it cuts training cost into the half compared to FP16? (FP8 won't be exactly the half because some layers will be kept in FP16 or FP32, so usually like 30% less) while MXFP4 still uses layers that are in higher precision the MoE layers are almost always in 4-bit and that's where the bulk of the computation go, so why it's not the new route? Especially it's standardized so it's verified to be in production and we have seen that with GPT-OSS, I found that MXFP4 gets much less loss even when they get upscaled to FP16 and then quantized to something like INT4 (which has wide compatibility with all types of hardware) compared to model that are trained in FP16.
+
+- There are no real downsides to MX Data types. They take advantage of the homogeneous nature of LLM model weights to effectively extend the resolution of the data type. FP4 encompasses 16 unique values. With MXFP4 it’s 4096 if memory serves.
+
+- MXFP4 is a block quantization method (with a single exponent being shared by 32 parameters), not too different from llama.cpp Q4 quants (with a shared scaling factor which can be more precise than an exponent). And in consumer hardware it's only supported by the RTX 50 series as far as I know.
+- It is, see page 64 of nvidia's Blackwell doc - note the 4090 is N/A for FP4
+  - The thing is that FP4 can be processed as FP8 or BF16 in much the same way as you can run Q4 when no GPUs don't have hardware support for Q4. The disadvantage is that you only get the FP8 or BF16 compute performance. This just isn't noticeable during inference (maybe during prefill?) because memory bandwidth limits performance more than compute.
+- isn't MXFP4 the model format of gpt-oss-120b? I'm pretty sure that runs on my Mac natively? I dunno for sure though because I usually use an MLX version anyways or a gguf.
+  - As I said, you can just have a kernel that converts MXFP4 -> BF16 or whatever format and use that - this is already how Q4_K and such work. But it's not free to convert and the intermediate BF16 will compute slower than the FP4 would with native hardware support. 
+  - Still if you're memory bandwidth bound then those compute costs don't matter all that much.
+
+- MXFP4 is only supported by CDNA 4, ~~Hopper~~ and Blackwell. There's no consumer hardware with CDNA 4.
+
+- ## [MXFP4 and various hardware : r/LocalLLaMA _202508](https://www.reddit.com/r/LocalLLaMA/comments/1mij7ki/mxfp4_and_various_hardware/)
+- Both gpt-oss-20b and gpt-oss-120b are MXFP4 quantized by default. Please, note that MXFP4 is supported in Hopper or later architectures. This includes data center GPUs such as H100 or GB200, as well as the latest RTX 50xx family of consumer cards.
+  - To efficiently run MXFP4 MoE, vLLM has integrated two specialized GPU kernels via collaboration with OpenAI and NVIDIA:
+  - Blackwell GPUs (e.g., B200): A new MoE kernel from FlashInfer. This kernel is implemented by NVIDIA and uses Blackwell’s native MXFP4 tensor cores for maximum performance.
+  - Hopper GPUs (e.g., H100, H200): Triton matmul_ogs kernel, officially implemented by the OpenAI Triton team. This kernel is optimized specifically for Hopper architectures, includes the swizzling optimization and built-in heuristics, removing the need for manual tuning.
+- According to the code, The FP4 are unpacked into BF16 to be multiplied. So the FP4 parameters will run at Hopper’s native BF16/FP16 speeds. Not even FP8. Of course memory bandwidth is still the main bottleneck.
+- How does it fit in my VRAM? They unquantize serially? I need to dig in more.
+  - The parameters are unpacked in the GPU registers, in VRAM two FP4 are packed into a single byte as expected, so the space saving is still there.
+
+- For apple the ggml appears to be placing the MXFP4 structure into 32bit floats (I've never written metal this is just my take from looking at the commit).
+
 - ## [MXFP4 vs UD speed and ppl - GLM, GPT-OSS, Granite Tiny, Qwen Coder : r/LocalLLaMA _202602](https://www.reddit.com/r/LocalLLaMA/comments/1rg3n62/mxfp4_vs_ud_speed_and_ppl_glm_gptoss_granite_tiny/)
   - MXFP4 has better PPL on GLM, better size and speed on gpt-oss. Maybe even on Granite Tiny, or MX is better for the size. Unsloth Dynamic better speed and PPL for Qwen Coder.
   - Test system has 2x 3060 12G. llama.cpp CUDA container b8172. Perplexity with wikitext-2-raw.
@@ -612,6 +651,10 @@ PP Speed: Q3 GGUF: 50 t/s
 - ## 
 
 - ## 
+
+- ## 🧩🔧 [Open source LLM compiler for models on Huggingface. 152 tok/s. 11.3W. 5.3B CPU instructions. mlx-lm: 113 tok/s. 14.1W. 31.4B CPU instructions on macbook M1 Pro. : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rspblk/open_source_llm_compiler_for_models_on/)
+- https://github.com/pacifio/unc /MIT/202603/cpp/metal
+  - HuggingFace transformer compiler for optimised native inference binaries
 
 - ## 🤔 [PSA: If your local coding agent feels "dumb" at 30k+ context, check your KV cache quantization first. : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1rhvi09/psa_if_your_local_coding_agent_feels_dumb_at_30k/)
   - I’ve been seeing a lot of posts lately about models like Qwen3-Coder or GLM 4.7 getting trapped in infinite correction loops or hallucinating tool-call parameters once the context gets deep. The usual advice is to switch to a higher precision GGUF or tweak the system prompt. But after a few days of heavy profiling, the culprit is almost always aggressive KV cache quantization. Everyone wants to cram 30B+ models into 24GB of VRAM. To do that and still keep a 64k context window, turning on Q4 or Q8 KV cache in llama.cpp or ExLlamaV3 feels like free real estate. Short-context perplexity benchmarks barely budge, so it looks like a safe bet.

@@ -269,6 +269,10 @@ modified: 2025-03-22T18:49:15.634Z
   - Real-time Recording - Live session recording to prevent data loss from editor crashes
   - API Server - REST + WebSocket API for building custom integrations
   - SQLite-based storage that normalizes all providers
+
+- https://github.com/meltylabs/chorus /714Star/MIT/202601/ts/rust/inactive
+  - AI chat app for Mac
+  - Built by the creators of Conductor.
 # ui-ai 💄
 - https://github.com/google/a2ui /543Star/apache2/202512/ts
   - https://a2ui.org/

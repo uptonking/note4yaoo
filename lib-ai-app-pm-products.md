@@ -68,6 +68,23 @@ modified: 2025-03-22T16:10:24.856Z
 - 需要针对local本地优化
   - 自动unload占用内存的image/llm模型, comfyui-lmstudio-node已实现了相关逻辑, 类似llama-swap 但同时支持文本/图片模型
 
+- https://github.com/Ashfaqbs/TinyLLM-usecases
+  - When Small LLMs Win
+    - Tool/function calling - Mapping user intent to a function name + arguments
+    - Intent classification - Routing queries to the right service
+    - Query parsing - Extracting structured data from natural language
+    - Simple Q&A with tools - Answering questions by calling APIs
+    - Edge/IoT deployment - Running AI on devices with no internet
+    - High-throughput pipelines - Processing thousands of requests per second
+    - Privacy-sensitive workloads - Data never leaves your infrastructure
+    - Development and testing - Fast iteration on AI pipelines without API costs
+  - When You Still Need Large LLMs
+    - Complex multi-step reasoning across long documents
+    - High-quality creative writing or content generation
+    - Tasks requiring deep world knowledge
+    - Nuanced understanding of ambiguous instructions
+    - Multi-modal tasks (vision + text + audio)
+
 - roadmap-ai
   - 针对国内免费api定制的chat/ppt/mermaid: 魔搭, 快手万擎
     - 可以~~fork janai,然后扩展provider~~, janai默认支持openai-like api，已经支持了国内models

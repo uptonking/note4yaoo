@@ -33,7 +33,7 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
-- ## 🤔 [I was backend lead at Manus. After building agents for 2 years, I stopped using function calling entirely. Here's what I use instead. : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rrisqn/i_was_backend_lead_at_manus_after_building_agents/)
+- ## 🤔💡 [I was backend lead at Manus. After building agents for 2 years, I stopped using function calling entirely. Here's what I use instead. : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rrisqn/i_was_backend_lead_at_manus_after_building_agents/)
   - I was a backend lead at Manus before the Meta acquisition. I've spent the last 2 years building AI agents — first at Manus, then on my own open-source agent runtime (Pinix) and agent (agent-clip). Along the way I came to a conclusion that surprised me:
   - A single `run(command="...")` tool with Unix-style commands outperforms a catalog of typed function calls.
   - Unix made a design decision 50 years ago: everything is a text stream. Programs don't exchange complex binary structures or share memory objects — they communicate through text pipes. Small tools each do one thing well, composed via | into powerful workflows. Programs describe themselves with --help, report success or failure with exit codes, and communicate errors through stderr.
@@ -80,6 +80,46 @@ modified: 2023-10-30T07:34:03.602Z
   - There are actually two layers here:
   - Most commands never touch the OS. cat, grep, memory search, browser open — these look like shell commands but they're implemented as a Go command router. The LLM outputs a string, I parse it and dispatch to native functions. No os/exec, no shell injection surface. It's essentially typed functions wearing CLI syntax — same access control, but the LLM gets a familiar interface.
   - When you do need real OS execution (e.g. running a Python script or installing packages), it runs inside a micro-VM — an isolated QCOW2 virtual machine with its own filesystem. The agent can do whatever it wants inside the sandbox. It can rm -rf / and nothing happens to the host. Sandbox isolation > command filtering.
+
+- ### [CLI is All Agents Need — Part 2: Misconceptions, Patterns, and Open Questions : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rso48p/cli_is_all_agents_need_part_2_misconceptions/)
+- The biggest misunderstanding from Part 1. Many people read "CLI" and assumed I meant "give the LLM a Linux terminal." That's not what I'm saying.
+  - CLI is an interface protocol: text command in → text result out. You can implement it in two ways:
+  - As a binary or script in the shell's PATH — it becomes a CLI tool that runs in a real shell.
+  - As a command parser inside your code — when the LLM outputs run(command="weather --city Tokyo"), you parse the string and execute it directly in your application code. No shell involved.
+  - You just need the LLM to feel like it's using a CLI. That's it.
+  - In my system, most commands never touch the OS. They're Go functions dispatched by a command router. Only commands that genuinely need a real OS — running scripts, installing packages — go to an isolated micro-VM. The agent doesn't know and doesn't care which layer handles its command.
+- How to design CLI tools that work well for agents.
+  - Philosophy 1: Unix-Style Help Design
+  - Philosophy 2: Tips Thinking
+    - Every response — especially errors — should include guidance that reduces unnecessary exploration.
+  - Dry-Run / Change Preview — Preventing Mistakes
+  - Human Authorization — Operations Beyond the Agent's Autonomy
+- When results are large, tools should write the bulk to a file and return a short summary with a reference
+- Schema Display — auto-generated from --help, function signature as constraint
+  - Schema Validation — the command validates input internally, returning actionable hints on error
+- stdin Separation
+  - Double-escaping is the biggest engineering tax of the CLI approach. The LLM outputs a JSON function call, and the command field contains a shell command. If the command has quotes or newlines → JSON escaping + shell escaping = double escape hell.
+  - The fix: pass content through a separate stdin parameter, not through the command string
+- When output exceeds 200 lines or 50KB:
+  - Truncate to the first 200 lines (rune-safe, no broken UTF-8)
+  - Write the full output to a temp file
+  - Return: [first 200 lines of output]
+- Always attach stderr on failure.
+  - When a command fails, stderr is the information the agent needs most.
+
+- Q: Why not Python / CodeAct?
+  - CLI is the superset. Shell can call code naturally (`python -c "..."`), but code calling CLI requires subprocess wrappers. pip list is itself a CLI command.
+  - `--help` is a zero-cost discovery protocol. There's no equivalent in Python — you either stuff documentation into context (expensive) or invent your own discovery mechanism.
+
+- ❓ Things I Haven't Figured Out Yet
+  - Tool discovery — --help solves using known tools, but how does the agent discover tools it doesn't know exist? cli-search (see Q&A) is one direction, but a complete solution isn't there yet
+  - Multimodal I/O — how to handle image/audio/binary data in a text-stream paradigm
+
+- if the output is less than a few k, there's no reason an agent couldn't consume it as long as it had a decent context window, anything above (or even if it needs to be dynamic) the output could be stored like you're indicating, and a message could be sent back with the tool result providing the agent with a method to fetch the output in chunks - and you would need to provide a tool for that. That's how I manage large tool results in both CLIO and SAM.
+  - Tool discovery - apropos could be an option.
+- `apropos` is a pretty dated UNIX command, it lets you search man pages by keyword.
+
+- This is a masterclass in agentic workflow design. The point about Philosophy 2 (Tips Thinking) is so underrated returning a hint on how to fix a command instead of just a raw error code is a massive token saver in long-context loops.
 
 - ## [Am I the only one who feels that, with all the AI boom, everyone is basically doing the same thing? : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qk8zj1/am_i_the_only_one_who_feels_that_with_all_the_ai/)
 - The AI was trained to regress to the mean and now everything is built by AI so everything now is gonna regress to the mean. You and I and everyone.
@@ -1030,6 +1070,23 @@ e) 最终评论者(Final Critic)
 # discuss-local-llm-usecases
 - resources
   - [Use Cases | Claude](https://claude.com/resources/use-cases)
+
+- https://github.com/Ashfaqbs/TinyLLM-usecases
+  - When Small LLMs Win
+    - Tool/function calling - Mapping user intent to a function name + arguments
+    - Intent classification - Routing queries to the right service
+    - Query parsing - Extracting structured data from natural language
+    - Simple Q&A with tools - Answering questions by calling APIs
+    - Edge/IoT deployment - Running AI on devices with no internet
+    - High-throughput pipelines - Processing thousands of requests per second
+    - Privacy-sensitive workloads - Data never leaves your infrastructure
+    - Development and testing - Fast iteration on AI pipelines without API costs
+  - When You Still Need Large LLMs
+    - Complex multi-step reasoning across long documents
+    - High-quality creative writing or content generation
+    - Tasks requiring deep world knowledge
+    - Nuanced understanding of ambiguous instructions
+    - Multi-modal tasks (vision + text + audio)
 
 - ## 
 

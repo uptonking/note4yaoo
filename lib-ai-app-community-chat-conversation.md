@@ -185,7 +185,54 @@ iOS 端至少有 Kelivo……（没接触过苹果，更多的就不清楚了）
   - https://github.com/clidey/whodb
 
 - 和chat2db相比哪个好用？
-# discuss-ui-chat
+# discuss-ui-gen
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Anthropic shipped generative UI for Claude. I reverse-engineered how it works and rebuilt it for PI. _202603
+- https://x.com/micLivs/status/2032244251464188184
+  - Extracted the full design system from a conversation export. Live streaming HTML into native macOS windows via morphdom DOM diffing.
+  - Built on @badlogicgames 's pi and @DanielGri 's Glimpse.
+  - [Reverse-engineering Claude's generative UI - then building it for the terminal _202603](https://michaellivs.com/blog/reverse-engineering-claude-generative-ui)
+- https://github.com/Michaelliv/pi-generative-ui /255Star/MIT/202603/ts
+  - Claude.ai's generative UI - reverse-engineered, rebuilt for pi.
+  - this cannot work on other harnesses because it requires access to the harness’s streaming layer (which pi natively provides, but other harnesses don’t).
+
+- Isn’t it just MCP-UI?
+  - no, the agent generates the ui ad-hoc. in mcp-ui, the mcp server injects an iframe into the agent ui.
+  - because as per the spec, the UI is defined by the MCP server. the agent doesn't define it. it can only spawn it via a tool call.
+- Can MCP UI render arbitrary html+js?
+  - Json rpc can not a big deal
+
+- morphdom for live DOM diffing is a great choice here. The fact that you can extract a full design system from a conversation export and rebuild it independently says a lot about how well-structured Anthropic's approach is. Open-sourcing the repo is a W.
+
+- DOM diffing for live HTML streaming is a smart call — fast rendering without full re-renders. but the bigger shift is generative UI as a first-class interface paradigm rather than a party trick. curious how far the design system extraction can generalize across different apps.
+
+- ## ⚖️ json-render now supports YAML as a wire format
+- https://x.com/ctatedev/status/2032557225030664272
+  - JSONL needs a full element before rendering
+  - YAML is valid at every prefix, going from element-level to property-level
+  - YAML looks like source code to LLMs
+  - And we use 3 standards they know: JSON Patch, Merge Patch, Unified diff
+
+- YAML being valid at every prefix is a bigger advantage than most people realize. Streaming interfaces get easier when partial state is already valid instead of waiting for a full object boundary. Curious how you handle patch ordering once multiple incremental updates arrive close together.
+
+- Can this be done for SSR streaming? Or just client?
+  - It's possible but haven't put together an example (yet)
+  - It's just JSON + renderer
+
+- Is this how Claude generates charts directly in the chat window now?
+  - Claude writes raw html and hosts it in an iframe. Super flexible but slow and token heavy.
+
+- https://github.com/lucianfialho/visual-yaml /apache2/202603/ts
+  - The visual YAML editor. Schema-aware, embeddable, extensible.
+  - Inspired by https://github.com/vercel-labs/visual-json /apache2
+# discuss-chat-apps
 - ## 
 
 - ## 

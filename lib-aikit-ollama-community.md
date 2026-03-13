@@ -130,7 +130,22 @@ modified: 2026-01-14T18:57:51.174Z
 
 - ## 
 
-- ## 
+- ## 🆚 [Ik_llama vs llamacpp : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rsyo23/ik_llama_vs_llamacpp/)
+- Its good, I get a decent speed improvement on ik_llama.cpp though regular llama.cpp seems to have better overall support. Speed improvements are usually in the range of 15-20%, which is always appreciated. 
+  - Generally I use regular llama.cpp for anything brand new and then ik_llama.cpp once I have a more established workflow/its been updated. 
+  - Haven't had ik_llama.cpp crash except for some weirdness for GLM 5 Ubergarm quants so stability doesn't seem to be an issue.
+
+- Anyone running ik_llama on AMD hardware? They have a disclaimer that the only supported setup is CPU+CUDA, so I haven't tried it yet.
+  - I tried, you can't. Kawrakow has explicitly said ROCm is not supported. There was a thread a while back where he asked in a poll whether to add Vulkan support. Most people voted yes, but I haven't heard of any progress on that front.
+  - It's mostly a one man show, so it's totally understandable.
+
+- Performances of ik are far above llama.cpp but they so not support all hardware type. As the ik has a smaller team, it evolves fast and support is very active.
+
+- ik_llama has better quants and optimization, iq-k quants run faster when you offload moe on CPU, iq-kt quants keep better fidelity within similar size.
+
+- If your model runs entirely on gpu try vllm especially for batches. Ik_llama is for hybrid inference
+
+- Prompt prefil is faster of ik_llama.cpp you have to enable all the flags though. Like split mode graph etc. and throughout is much faster. Tgen is also faster
 
 - ## [using llama.cpp via remote API : r/rust _202505](https://www.reddit.com/r/rust/comments/1kssi8v/using_llamacpp_via_remote_api/)
   - What crate is recommended to connect to a remote instance of llama.cpp (running on a server), sending in data (e.g. some code) with a command what to do (e.g. "rewrite error handling from use of ? t

@@ -19,6 +19,10 @@ modified: 2026-01-14T18:59:01.949Z
 
 - ## 
 
+- ## 🧩🔧 [Open source LLM compiler for models on Huggingface. 152 tok/s. 11.3W. 5.3B CPU instructions. mlx-lm: 113 tok/s. 14.1W. 31.4B CPU instructions on macbook M1 Pro. : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rspblk/open_source_llm_compiler_for_models_on/)
+- https://github.com/pacifio/unc /MIT/202603/cpp/metal
+  - HuggingFace transformer compiler for optimised native inference binaries
+
 - ## [MLX is not faster. I benchmarked MLX vs llama.cpp on M1 Max across four real workloads. Effective tokens/s is quite an issue. What am I missing? Help me with benchmarks and M2 through M5 comparison. : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rs059a/mlx_is_not_faster_i_benchmarked_mlx_vs_llamacpp/)
   - Setup: Mac Studio M1 Max, 64 GB. LM Studio 0.4.5. Qwen3.5-35B-A3B, MLX 4-bit vs GGUF Q4_K_M. Warm model, temperature 0.6, thinking mode off.
   - That tok/s number only measures generation (tokens produced one at a time). It ignores prefill (processing the entire input before the first token appears). Prefill scales with context size. Generation doesn't. At 8.5K tokens of context, prefill was 94% of MLX's total response time. Thats super misleading. So even though your counter says: fast. Its super slow in practice.

@@ -36,7 +36,16 @@ modified: 2026-01-17T22:41:25.867Z
 
 - ## 
 
-- ## 
+- ## 🌰🎯 [Kilo built on OpenCode server : r/RooCode _202603](https://www.reddit.com/r/RooCode/comments/1rsgtes/kilo_built_on_opencode_server/)
+  - [We've completely rebuilt the Kilo Code extension for VS Code. Join the beta test. _202603](https://blog.kilo.ai/p/we-completely-rebuilt-the-kilo-vs-code-extension)
+  - Last month, we shipped a renewed Kilo CLI built on OpenCode server—a portable, open-source core that isn’t tied to any single editor. The VS Code extension was always going to be next. Today it’s here.
+  - Why We Rebuilt
+  - originally, under the hood, every surface—CLI, JetBrains, Cloud Agents—was still running VS Code internals, whether it needed them or not. The clearest example was JetBrains, where we were running VS Code internals inside a JetBrains IDE. Developers felt it.
+  - When we rebuilt the CLI on OpenCode server, we saw the opportunity to fix this at the root. Instead of patching around VS Code dependencies, we built a portable core that runs natively on every surface. The new VS Code extension shares the same engine as Kilo CLI.
+  - Cross-Platform Sessions
+
+- I think RooCode stagnated a bit, it seems logical for them to switch bases. For example there is no parallel subagent capability
+  - Totally agree. The lack of parallel subagent capability in RooCode is a major bottleneck. Switching to OpenCode gives us more room to implement these advanced features
 
 - ## once we hit a bit more stability my goal is to have opencode running as a service(i mean running as an OS service on your machine
 )
