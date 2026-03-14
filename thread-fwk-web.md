@@ -22,6 +22,25 @@ modified: 2021-01-08T17:13:53.965Z
   - diffs to a table are conceptually events. the idea is that "data/content" is something that is replaced wholesale, and "event" is a mutation applied to client state
 
 - Are those different "movements" or different _usecases_? Both are equally valid, depending on what you actually want to show, right?
+# discuss-fwk-architecture
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## One delicate problem with modern UI frameworks adopting async-first approaches is that their tests need to be incredibly resilient.
+- https://x.com/trueadm/status/2032602992961016095
+  - That’s hard when tests depend on microtask/macrotask flushing. You get a bug report, write a regression test for it, and then some slight race-condition heuristic breaks it again later.
+  - That’s why claims like “we solved async” feel unfounded. No framework has solved async in a practical sense. Maybe only in a theoretical one.
+  - It gets even blurrier once you bring in AbortController and start seeing how behavior can differ between browsers while your tests fail to catch it.
+  - Fun times ahead. LLMs are almost no help in this no-man’s-land of engineering. 
+  - Trust me, the Ripple team is in that problem space right now, and it’s deeply complicated.
+
+- How are AbortController and microtasks related? The abort call and listener notifications are synchronous.
+  - We use microtasks to handle flushing updates. Co-ordinating aborts on event handlers needs to happen in the correct ordering for propagation
 # discuss
 - ## 
 

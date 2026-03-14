@@ -274,6 +274,13 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
+- ## [不建议使用 claude agent sdk 框架来做 agent 开发 - LINUX DO _202603](https://linux.do/t/topic/1755337)
+  - Anthropic官方API经常会加一些小功能，Claude Agent SDK 就会跟着适配，他是默认你用官方API，直接会在request里加新功能支持。
+  - 但是如果你接入其他模型，国产开源之类，服务商肯定跟不上更新，就会报错。
+  - 等于说你用claude agent sdk想要用的爽，就必须绑定官方API，不然就会有很多小bug
+  - 这类debug很烦人，因为claude底层cli不开源
+  - 不更新agent sdk 就有很多老bug。更新了就引入新功能，造成兼容性的新bug
+
 - ## 推荐 @simonw 的 Agentic Engineering Patterns，这是他使用大模型开发过程中总结的工程经验，我总结了他所说的要点
 - https://x.com/yibie/status/2027928136172867619
 一、核心理念原则
@@ -1094,7 +1101,14 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
-- ## 
+- ## [Are local LLMs better at anything than the large commercial ones? : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1rtpqqo/are_local_llms_better_at_anything_than_the_large/)
+- They are better at privacy. That is a thing.
+
+- NSFW models are better
+
+- Latency - some models (e.g., at openrouter) get overloaded and take 10-30s to respond. For long responses, they will still "win" but for short responses, local can be better.
+
+- all frontier models set you either with temporary loose limits to lock you in, hour/weekly limits that drive you nuts or paying big bucks to get what you want. Local models gives a piece of mind, even if they're not as capable
 
 - ## [Finally found a reason to use local models  : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rp48hx/finally_found_a_reason_to_use_local_models/)
   - I have a static website with about 400 pages inside one sub directory. I wanted to add internal linking to those pages but I was not going to read them and find relevant pages manually.

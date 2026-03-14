@@ -95,6 +95,8 @@ vite --host 0.0.0.0 --port 8080
 serve -p 9000 --cors
 HOST=0.0.0.0 PORT=8080 react-scripts start
 next dev -H 0.0.0.0 -p 3000
+
+npm i -g npm yarn pnpm corepack serve @dotenvx/dotenvx opencode-ai @openai/codex @iflow-ai/iflow-cli @kilocode/cli @kimuson/claude-code-viewer 
 ```
 
 - dev-goals 不能在产品中检验的技术不玩，注意产品化

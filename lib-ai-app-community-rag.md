@@ -793,7 +793,19 @@ modified: 2024-09-08T20:08:16.088Z
 
 - ## 
 
-- ## 
+- ## 🤔 [How to make RAG model answer Document-Related Queries ? : r/Rag _202603](https://www.reddit.com/r/Rag/comments/1rsxih5/how_to_make_rag_model_answer_documentrelated/)
+  - Summarise the page no. 5
+  - Give me all the images/table in document
+
+- these are fundamentally different from content retrieval queries — they're structural/metadata queries, so standard chunk-based RAG won't handle them well out of the box.
+  - what worked for us: store page-level metadata alongside your chunks (page number, document name, total pages). then route queries through a classifier first — if it's a metadata query ('how many pages', 'summarize page X'), hit the metadata index directly instead of running vector search. for the page summary one, just filter chunks by page_number=5 and pass those to the LLM.
+  - for images and tables, you'll need a parsing step before ingestion — something like docling or unstructured.io to extract tables/images with their page locations, then store that as structured data you can query directly.
+- This is correct. Just store metadata about the document and use an LLM to classify the query.
+
+- The metadata routing approach above is right. One thing to add: for "summarize page 5" specifically, you want to be careful about chunk boundaries. If your chunking strategy splits aggressively, page 5 content might be split across chunk boundaries. Storing a page_text field (full page) alongside your chunks and using that when the query specifies a page number is cleaner than trying to reassemble from partial chunks.
+  - For the table/image case: if you have the budget to run a vision model at ingestion time, extracting table content as structured text (markdown tables work well) before embedding gives much better retrieval than trying to handle it post-hoc.
+
+- Meta data question classifier and then run tools to search for the document and then tools for chunks filtered by pages, sections, split intervals.
 
 - ## [Title: Stop asking NotebookLM to "summarize" your sources. Do this instead for pro-level research. : r/notebooklm _202603](https://www.reddit.com/r/notebooklm/comments/1rse4wp/title_stop_asking_notebooklm_to_summarize_your/)
   - EXPLAIN > SUMMARIZE Never type "summarize." Summarization strips away the nuance and kills the details. Instead, use the word "Explain." Tell it to explain the topics from the index. This prompts the AI to build a comprehensive, logical structure rather than just giving you a shallow overview.

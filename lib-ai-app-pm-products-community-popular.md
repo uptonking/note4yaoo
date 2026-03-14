@@ -377,7 +377,12 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 
-- ## 
+- ## [【开源】一站式论文搜索、精读、写作、AI辅助写作，佬们走过路过来瞧瞧 - LINUX DO _202603](https://linux.do/t/topic/1752324)
+  - 检索论文的版块，目前用的是OpenAlex的源，后面会适配上arxiv等
+  - 作为史诗级缝合怪的素养，别人有的一个都不能少，然后我也注意到了有部分佬友可能会对论文扫描件的AI助读的需求，所以最后选了surya-ocr来帮忙解析文档
+  - 因为word特殊性，目前还没找到合适的方式怎么让他导出好，但是latex天生模板随便换的优越感直接就来了。所以目前支持latex的基础骨架的导出
+
+- [论文格式排版快捷修改工具   _202603](https://linux.do/t/topic/1753287)
 
 - ## [[分享] GoRabbit：本地优先的 AI Agent 桌面平台（开发内测中） ](https://linux.do/t/topic/1684941)
   - 主要目标是： 让 AI 不只是聊天，而是能像一个「可编程助手」那样，真正替你干活。
@@ -506,6 +511,25 @@ modified: 2026-02-20T17:36:40.796Z
 
 - This sounds fucking awful and a security, PCI compliance. Billing, and all around nightmare.
   - Answer to original question, yes we charge for our MCP servers. We control their access and route view a platform that is the "entrance" to the MCP servers and tools and handles authentication at the company and user level (fully multi-tenant from the start) and bill for access to the suite of MCP tools. The user brings their own API key or user credentials depending on the MCP server/tool they are connecting to. Our cost is the cost of development, maintenance, and the Azure infrastructure for hosting
+# discuss-ai-iot
+- ## 
+
+- ## 
+
+- ## [So AI NAS category is a mess and i don't understand why nobody has fixed the obvious problem : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1rtey5z/so_ai_nas_category_is_a_mess_and_i_dont/)
+  - current landscape as i understand it:
+  - Synology and Qnap: mature software, terrible hardware for AI, their "AI features" are embarrassing compared to what you can run locally on a halfway decent GPU, they're selling NAS boxes with NAS CPUs and calling it AI ready
+  - minisforum and that category: genuinely interesting, the new ones with ryzen AI chips are not a joke, but the storage story is weak and they're clearly a PC company trying to figure out the NAS side rather than the other way around
+  - zettlab: pretty hardware, their OS is still rough, saw a review where the reviewer said the AI features required too much manual setup to be useful for non technical users, also no real GPU expansion
+  - DIY: this is where you end up if you want something that actually works but now you're maintaining a server and that's a part time job
+  - the product that should exist is a tower that treats local AI inference as the primary purpose, has real GPU expansion, has real storage capacity, has software that's designed for actual workflows not demos, and doesn't require a homelab hobbyist to set up
+
+- From what little i know nas is network attached storage. That has a weak cpu, maybe modern ones can run some supermega lightweight stuff on it. If you want ai inference, you build a server out of a new ryzen shared memory chip, slap on 128gb of ram and it can happen that you attach a das to it so has huge storage also. If you try inferencing on a raspbery pie your options are “limited” on what llms you can run… but at that point your smarphone can handle better llms which are still mostly useless.
+
+- NAS by its nature doesn’t need high-performance hardware. Just buy dedicated server for AI and leave NAS to be just storage server.
+  - I certainly don’t want my nas to be built for AI, it would make it unnecessary expensive and power hungry to run for what is something I will be using less than 1% of the time. I want cheap energy efficient quiet box to store files not an electric heater that sounds like a jet taking off and costing more in electricity than it’s worth.
+
+- You are better off having a normal NAS and an inferencing machine that pulls from it. That way, you aren't maxxing out your GPU when you're just pulling an image or two.
 # discuss-ai-pm
 - ## 
 

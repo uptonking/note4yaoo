@@ -76,6 +76,20 @@ modified: 2024-01-03T16:14:53.804Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 📡 Rstack could offer a unified toolchain experience similar to Vite Plus as well, and huge respect to the Vite Plus team for exploring that direction.
+- https://x.com/jait_chen/status/2032723214472991123
+  - We haven’t pursued that path for now, mainly because we worry about a few tradeoffs:
+  - 1. it makes dependency/version management more coupled, especially around major upgrades in underlying tools
+  - 2. it can lead to a single large config file, and if that file imports several third-party packages, it may slow down command startup
+  - 3. for task management and build cache, projects like Turborepo and Nx already do a great job, so we’d rather build on top of that ecosystem than reinvent it
+  - For the second issue, import defer might help in the future. Runtime support is still limited today, but Rspack already supports bundling it behind experiments.deferImport . So one possible direction for us could be to bundle the config with Rspack at startup to reduce the eager cost from imports.
+
+- I appreciate that sentiment but the JS ecosystem needs to grow up. I desperately want a cargo like experience when working with JS. Vite+ finally feels like a way out of gluing together 7-10 tools that have no incentive to synchronize everytime. We need a single unified tooling stack just like every other language besides JS has
+
 - ## Rspack v1.5.0-beta.0 is out
 - https://x.com/rspack_dev/status/1954869708664254582
   - 🧭 New @rspack/browser package

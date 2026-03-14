@@ -92,8 +92,32 @@ modified: 2024-05-27T09:12:06.925Z
 - [Creating a permanent link to a code snippet - GitHub Docs](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-a-permanent-link-to-a-code-snippet)
   - You can create a permanent link to a specific line or range of lines of code in a specific version of a file or pull request.
 
-# disccuss-git-ui
+# disccuss-git-ui 💄
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [Looking for a good alternative to the Git Graph VS Code extension : r/vscode _202603](https://www.reddit.com/r/vscode/comments/1rrcx9k/looking_for_a_good_alternative_to_the_git_graph/)
+  - I've been using the Git Graph extension for a long time, and it's been my absolute favorite tool for visualizing commit history and managing branches directly inside VS Code.
+  - However, it looks like the repository is no longer being actively maintained
+  - Does anyone have good recommendations for a replacement?  
+
+- https://github.com/git-hub-tig/vscode-git-graph
+  - Fork of Michael Hutchisons repository with some updates.
+  - This fork includes critical fixes for recent VS Code versions and new features not present in the original.
+
+- I use GitLG as a replacement which is no fork but started from scratch (the read me has a comparison to git-graph)
+  - https://github.com/phil294/GitLG /MIT/202511/js/vue/inactive
+
+- GitLens feature is cool for line by line commit history. The GitKraken graphs is cool too but not sure if I would pay for it.
+  - Use GitLess if you want a nag free version of GitLens from before it got annoying.
+
+- fork.dev tool.
+  - Nicer, free, and works on Linux: SourceGit
+
+- I use sourcetree. The git tree with change parts in 1 screen is the best for me.  
 
 - ## VSCode git UI is awesome
 - https://x.com/aidenybai/status/1885810358138667140

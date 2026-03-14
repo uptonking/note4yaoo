@@ -404,7 +404,21 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
-- ## 
+- ## Chrome最新版146 终于可以方便的让agent操控当前浏览器了（之前要么启动一个单独的Chrome实例，要么安装第三方浏览器扩展来实现）。
+- https://x.com/wong2__/status/2032697322451382324
+  - 1. 打开 chrome://inspect/#remote-debugging 开启 Remote debugging
+  - 2. 安装 agent-browser skill 或 chrome-devtools-mcp，都支持自动连接到已有的Chrome实例
+- 这个 144 就支持了，用了好久了
+  - mac的145好像还有问题，146可用了
+
+- 终于不用 headless 绕一圈了，agent 直接寄生在你日常浏览器里，细思极恐
+
+- 用的时候还是需要手动确认一下，不太适合纯远程
+- 还是会弹一个对话框要求同意。
+
+- 这个权限太大了，而且非常费token，我做了一个只允许读取网页的产品，网页输出 markdown 
+
+- 以后端到端可以直接用9222端口
 
 - ## [Anyone moved off browser-use for production web scraping/navigation? Looking for alternatives : r/LangChain _202603](https://www.reddit.com/r/LangChain/comments/1rm5lx8/anyone_moved_off_browseruse_for_production_web/)
   - Been using browser-use for a few months now for a project where we need to navigate a bunch of different websites, search for specific documents, and pull back content (mix of PDFs and on-page text). Think like ~100+ different sites, each with their own quirks, some have search boxes, some have dropdown menus you need to browse through, some need JS workarounds just to submit a form.
@@ -877,7 +891,26 @@ Don’t want/can’t have external dependencies?
   - Fully editable in Google slides
 
 - why create presentation when you can create working prototype?
+# discuss-examples 🌰
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 百度把PaddleOCR-VL-1.5做成OpenClaw Skills了，也上架到ClawHub了，配置好后就可以直接解析文档了。
+- https://x.com/aiwarts/status/2032685663418568704
+  - 每天有解析几万页数的文档额度，应该是目前唯一免费高精度读PDF的Skill。
+
 # discuss
+- ## 
+
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

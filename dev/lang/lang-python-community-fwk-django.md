@@ -81,6 +81,17 @@ modified: 2026-03-05T19:32:00.353Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [I built a Rails-inspired CLI for Django – full CRUD app in 3 commands : r/django _202603](https://www.reddit.com/r/django/comments/1rtj2lf/i_built_a_railsinspired_cli_for_django_full_crud/)
+  - https://github.com/RedsonNgwira/djx-cli
+  - I got tired of writing the same boilerplate every time I started a new Django feature — model, views, templates, urls, wire everything together. So I built DJX.
+  - It generates the model, all 5 class-based views, templates, urls — and wires everything into your project automatically.
+
+- You could try doing the same with iommi. You don't need to code gen, you don't need templates, just: https://docs.iommi.rocks/views.html
+
 - ## [I built django-lumen — a Django app for visualizing Django models : r/django](https://www.reddit.com/r/django/comments/1roikva/i_built_djangolumen_a_django_app_for_visualizing/)
   - It renders an interactive ERD of all your project's models directly in the browser - no external diagram libraries, just vanilla JS + SVG generated on the fly from the live model registry.
   - https://codeberg.org/Lupus/django-lumen /NoDeps

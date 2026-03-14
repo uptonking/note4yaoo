@@ -12,7 +12,12 @@ modified: 2025-08-08T07:36:31.265Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [不建议使用 claude agent sdk 框架来做 agent 开发 - LINUX DO _202603](https://linux.do/t/topic/1755337)
+  - Anthropic官方API经常会加一些小功能，Claude Agent SDK 就会跟着适配，他是默认你用官方API，直接会在request里加新功能支持。
+  - 但是如果你接入其他模型，国产开源之类，服务商肯定跟不上更新，就会报错。
+  - 等于说你用claude agent sdk想要用的爽，就必须绑定官方API，不然就会有很多小bug
+  - 这类debug很烦人，因为claude底层cli不开源
+  - 不更新agent sdk 就有很多老bug。更新了就引入新功能，造成兼容性的新bug
 
 - ## 🆚🤔 [Framework vs. SDK for AI Agents – What's the Right Move? : r/AI_Agents _202502](https://www.reddit.com/r/AI_Agents/comments/1iqg6w1/framework_vs_sdk_for_ai_agents_whats_the_right/)
   - Should we use full frameworks (LangChain, AutoGen, CrewAI) or go raw with SDKs (Vercel AI, OpenAI Assistants, plain API calls)?

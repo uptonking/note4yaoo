@@ -40,7 +40,18 @@ modified: 2021-07-28T19:22:07.339Z
 - ## 
 
 - ## 
+
+- ## I just open sourced OpenBrand - extract any brand's logos, colors, and assets from just a URL.
+- https://x.com/ethanjyx/status/2032550256366481533
+  - Why we built this: while building another product, we needed to pull in customers' brand images as custom backgrounds. It felt like a simple enough problem with no open source solution - so we built one.
+
+- https://github.com/ethanjyx/openbrand /MIT/202603/ts
+  - Extract any brand from a URL
+
+- Most products have brand guidelines, would be great to prioritize extracting assets there like logo/icon.
 # discuss-svg-icons
+- ## 
+
 - ## 
 
 - ## 
