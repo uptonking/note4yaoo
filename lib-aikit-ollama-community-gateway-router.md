@@ -270,6 +270,11 @@ modified: 2026-01-21T04:22:29.956Z
 
 - 现在直接用cliproxyapi的地址，公益站在cliproxy管理，挺多坑的
 
+- [请问有多个公益站统一接入的方案有吗? - LINUX DO _202603](https://linux.do/t/topic/1761186)
+  - 部署个New API
+  - 你都用ALL API Hub了不如直接一步到位上NewAPI，再转CPA有的折腾
+  - 主要是可以all api hub内的账号一键导入
+
 - ## [使用axonhub对自己已有的公益&2api进行整合+负载均衡 _202601](https://linux.do/t/topic/1397062)
   - 之前使用的是new-api+GPT Load的方式实现多个渠道模型的整合。不过最近在用站内 @looplj  佬的axonhub，感觉用起来差不多可以替代前者两个项目加起来的办法了。
   - 添加渠道（即你的API来源）: 大部分的公益站使用的都是new-api，所以我们一般选择openai的格式即可。渠道是数字越大权重越高
@@ -282,6 +287,28 @@ modified: 2026-01-21T04:22:29.956Z
 - 支持啊，但是要用gemini的格式请求，供应商类型选择gemini，newapi里也要选择是gemini、vertex
 
 - newapi将模型请求方式改为gemini，客户端也用gemini格式，gemini模型就可以正确使用联网工具，newapi的转换功能实属有点问题，grok已经变成工具代理了
+
+- ## [【开源】Metapi：中转站的中转站，一个 Key 聚合 New API / One API / OneHub 等多个站点，定时自动签到，适用于个人管理公益站等  _202602](https://linux.do/t/topic/1671489)
+  - https://github.com/cita-777/metapi /777Star/MIT/202603/ts
+  - 能不能搞一个东西，把这些中转站全聚合起来，只给下游暴露一个 Key？
+  - 当然了，也有ALL-API-Hub和New-API这样优秀的项目，Metapi和这些优秀项目的定位差距在哪里呢？
+  - ALL-API-Hub为浏览器插件，而Metapi可以使用Docker一键部署运行在云服务器或自家主机上，实现完全自动化的定时签到，并且有完整的SMTP通知等功能，出现错误在手机上就可以收到通知，且支持自动路由，聚合API的功能。
+  - New-API更加适合团队使用或用户管理、开中转站使用，而Metapi的定位是个人使用，不用于给他人分发使用，因此 删除了用户管理功能，只有一个管理员令牌防止资源被盗用。V1.2 起还支持项目级多 Key 管理 ，每个 Key 可独立配置过期时间、费用上限、请求上限、模型白名单等，适合多项目拆分使用。有自动签到、各中转站令牌管理等功能。
+  - Metapi和上面两者适用于不同用户群体，因此Metapi也兼容从ALL-API-Hub导入备份数据，方便站点较多的佬友们快速迁移体验，大家选择适合自己情况的就好~
+  - MIT License，完全自托管，所有数据存储在本地 SQLite，不会向任何第三方发送数据，大家可以放心
+
+- 问一下有模型映射吧，比如很多个站点可能模型命名都有一些出入，能用正则之类的方式批量映射成同一个模型吗
+  - 这个目前还没有做，但批量自动映射感觉可能有点困难，如果说是不同上游的同一个模型怎么处理好呢 ，因为同一个站点也有提供多个一样的但是来源不同上游的模型
+- octopus 有这个批量映射可以参考下
+- 因为我目前在用的一个聚合项目有这个功能，感觉挺方便的，比之前用newapi聚合一个个配置好很多。主要是可以让我自己设置一个正则，来匹配模型名称，都映射到同一个模型上，比如上面的minimax-m2.1、minimaxai/minimax-m2.1，我可以设置正则(?:^|.*/)(minimax-m2.1)$来处理不管是什么前缀，都合并到模型minimax-m2.1上。
+
+- 主要是all-api-hub因为受限于用户的浏览器进程，你如果好几天没看浏览器应该就没法自动签到了，因为浏览器不在24小时运行，all-api-hub不能提供自动路由和聚合api还有通知之类的功能 可以简单理解为我更类似于是New-API和all-api-hub的杂交结合体。
+
+- 有签到不？
+  - 有的有的，大部分比如Wong之类的正常公益站都能签到，详细功能可以看看项目的README，有一些比较严的比如随时跑路公益站加了严格人机验证的没办法，anyrouter这种简单过盾的可以签到 
+  - 有些站点不希望被自动签到，加了人机验证就签不了了，而且是比较好加的，不过目前大部分站点还是没有加的，也没有禁止自动签到的说法
+
+- 这个和cch这个好像啊
 
 - ## [想对公益站做一下简单的渠道管理，用new api就可以吗？ _202601](https://linux.do/t/topic/1398557)
   - 公益站真的好多哦， 确实需要做一些简单的渠道管理，以及是不是要固定ip防止乱飘？
@@ -381,7 +408,12 @@ modified: 2026-01-21T04:22:29.956Z
 
 - ## 
 
-- ## 
+- ## [Claude Code Max，Opus-4.6的所有渠道研究  _202603](https://linux.do/t/topic/1740014)
+  - Claude Code + Max反代拼车方案
+  - Claude Code + Max中转站方案
+  - Antigravity Ultra家庭组拼车方案
+  - Antigravity学生Pro方案
+  - VSCode + Copilot会员方案
 
 - ## [Mistral API quota and rate limits pools analysis for Free Tier plan (20.02.2026) : r/MistralAI](https://www.reddit.com/r/MistralAI/comments/1rc8rwf/mistral_api_quota_and_rate_limits_pools_analysis/)
   - The goal of research is to map which models share quota pools and rate limits on the Mistral Free Tier, and document the actual limits returned via response headers.

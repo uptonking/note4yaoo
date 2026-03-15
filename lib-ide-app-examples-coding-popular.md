@@ -648,6 +648,12 @@ modified: 2025-12-11T18:10:23.710Z
   - a local gui for managing opencode configurations. 
   - toggle mcp servers, edit skills, manage plugins, handle auth - no json editing required.
 
+- https://github.com/itlackey/openpalm /MPL/202603/ts/svelte
+  - Personal AI assistant(s) powered by OpenCode
+  - OpenPalm isn't a finished product you consume. It's a starter kit — a secure, modular foundation you build on top of. Swap models, add channels, wire in your own tools, and make it yours. The architecture is designed so you can go as far as you want without fighting the framework.
+  - OpenPalm is built to integrate, not to lock you in.
+  - [Opensource projects that connect Opencode with IMs : r/opencodeCLI _202603](https://www.reddit.com/r/opencodeCLI/comments/1rtcla2/opensource_projects_that_connect_opencode_with_ims/)
+
 - https://github.com/chriswritescode-dev/opencode-web /MIT/202512/ts
   - A full-stack web application for running OpenCode in local processes, controllable via a modern web interface. 
   - Designed to allow users to run and control OpenCode from their phone or any device with a web browser.
@@ -915,6 +921,13 @@ modified: 2025-12-11T18:10:23.710Z
   - https://runagentos.com/
   - Mobile-first web UI for managing AI coding sessions (Claude Code, Codex, Aider, Gemini CLI). 
   - Self-hosted with multi-pane terminals, git integration, and session orchestration.
+
+- https://github.com/enz1m/enzim-coder /MIT/202603/rust
+  - https://enzim.dev/
+  - a Linux desktop app for working with AI coding threads, workspaces, Git context, file browsing, and agent sessions in one place.
+  - Enzim Coder is a GTK4/libadwaita desktop app for working with coding threads, workspaces, Git context, file browsing, and local agent sessions in one place.
+  - Today it supports Codex and OpenCode.
+  - [Enzim Coder now supports OpenCode as a backend : r/opencodeCLI _202603](https://www.reddit.com/r/opencodeCLI/comments/1rude4q/enzim_coder_now_supports_opencode_as_a_backend/)
 
 - https://github.com/The-Vibe-Company/companion /2kStar/MIT/202602/ts
   - Web & Mobile UI for Claude Code & Codex . 
@@ -1196,7 +1209,7 @@ modified: 2025-12-11T18:10:23.710Z
   - YAML Frontmatter: Metadata for Obsidian (date wikilink, provider, project, session, cwd)
   - Status Graph: Visual history of recent sync operations per provider
   - [I built a macOS app that auto-syncs Claude Code conversations to your vault : r/ObsidianMD _202601](https://www.reddit.com/r/ObsidianMD/comments/1qrxv3b/i_built_a_macos_app_that_autosyncs_claude_code/)
-# cli-search/rag/context/memory
+# cli-search/rag/context
 - https://github.com/mixedbread-ai/mgrep /3.2kStar/apache2/202601/ts/平台未开源/inactive
   - https://demo.mgrep.mixedbread.com/
   - CLI-native way to semantically grep everything, like code, images, pdfs and more.
@@ -2285,6 +2298,13 @@ modified: 2025-12-11T18:10:23.710Z
   - The most accurate and comprehensive Context Engine as a service, optimized for large codebases, powered by advanced GraphRAG and accessible via MCP. 
   - you can self-host the entirety of CodeAlive in your own environment, and even use your own LLM providers for added flexibility. This option allows you to maintain the privacy and security of your codebase. 👀 This option is available only for companies
 
+- https://github.com/DannyMac180/ace-platform /apache2/202603/python/ts
+  - ACE Platform for Agentic Context Engineering
+  - ACE turns one-off prompts into evolving playbooks. It captures what worked, what failed, and what to improve so your assistant becomes more reliable with real use.
+  - Stay tool-agnostic: use ACE anywhere MCP fits into your workflow
+  - https://x.com/daniel_mac8/status/2033176502125125949 _202603
+    - ACE is now open-source. you can now self-host.
+
 - https://github.com/JinHo-von-Choi/memento-mcp /apache2/202603/js
   - [A Three-Layer Memory Architecture for LLMs (Redis + Postgres + Vector) MCP : r/mcp](https://www.reddit.com/r/mcp/comments/1rgrejh/a_threelayer_memory_architecture_for_llms_redis/)
   - Originally, this was a supporting feature of another custom MCP I built. But after using it for a while, it felt solid enough to separate and release on its own.
@@ -2306,6 +2326,30 @@ modified: 2025-12-11T18:10:23.710Z
 - https://github.com/cbcoutinho/nextcloud-mcp-server /AGPL/202602/python
   - MCP server that connects AI assistants to your Nextcloud instance.
   - This is a dedicated standalone MCP server designed for external MCP clients like Claude Code and IDEs. It runs independently of Nextcloud (Docker, VM, Kubernetes, or local) and provides deep CRUD operations across Nextcloud apps.
+
+## memory
+
+- https://github.com/remete618/widemem-ai /apache2/202603/python
+  - https://widemem.ai/
+  - Next-gen AI memory layer with importance scoring, temporal decay, hierarchical memory, and YMYL prioritization
+  - An open-source AI memory layer that actually remembers what matters. 
+  - widemem gives your AI a real memory — one that scores what matters, forgets what doesn't
+  - Hierarchical memory — Facts roll up into summaries, summaries into themes. 
+    - Facts -> summaries -> themes, auto-routed
+    - Broad questions get themes, specfic ones get facts.
+  - YMYL(Your Money or Your Life) prioritization: Health/legal/financial facts are untouchable
+    - Some things you just don't forget.
+  - Local-first, batteries-included, and opinionated about not forgetting your user's blood type.
+    - 140 tests. Zero external services required. 
+    - SQLite + FAISS by default. Plug in OpenAI, Anthropic, Ollama, Qdrant, or sentence-transformers as needed.
+  - SQLite + FAISS out of the box. No accounts, no API keys for storage. Plug in Qdrant or any cloud provider when you're ready.
+  - two-tier confidence system to avoid crying wolf:
+  - [widemem: open-source memory layer that works fully local with Ollama + sentence-transformers : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rtrl3p/widemem_opensource_memory_layer_that_works_fully/)
+
+- https://github.com/vineetkishore01/Chetna /MIT/202603/rust
+  - Rust-based semantic memory with embeddings, LLM consolidation, and MCP support
+  - [Chetna - A human brain mimicking memory system for AI agents. : r/ollama _202603](https://www.reddit.com/r/ollama/comments/1rtuplr/chetna_a_human_brain_mimicking_memory_system_for/)
+    - TL;DR: Built a memory system that combines semantic search + importance + recency + frequency + emotion for more human-like recall. Tried to move beyond "just another vector DB." 
 # background-ai
 - https://github.com/ColeMurray/background-agents /MIT/202601/python/ts
   - https://backgroundagents.dev/

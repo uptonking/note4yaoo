@@ -459,6 +459,11 @@ modified: 2025-02-21T18:20:42.624Z
   - [百度文心模型调用异常 ](https://github.com/MartialBE/one-hub/issues/208)
     - failed to get token encoder for model ERNIE-Speed: no encoding for model ERNIE-Speed, using encoder for gpt-3.5-turbo 这个报错是只没有找到这个模型的tokens计算，可以无视
 
+- https://github.com/cita-777/metapi /777Star/MIT/202603/ts
+  - http://metapi.cita777.me/
+  - 把你在各处注册的 New API / One API / OneHub / DoneHub / Veloera / AnyRouter / Sub2API 等站点， 汇聚成 一个 API Key、一个入口，自动发现模型、智能路由、成本最优
+  - [【开源】Metapi：中转站的中转站，一个 Key 聚合 New API / One API / OneHub 等多个站点，定时自动签到，适用于个人管理公益站等  _202602](https://linux.do/t/topic/1671489)
+
 - https://github.com/james-6-23/new_api_tools /202512/python/ts
   - NewAPI-Tool 是一个专为 NewAPI (One API 分支) 设计的现代化增强管理中间件。
   - 它通过直观的 Web 界面，补全了原版系统在数据可视化、充值记录审计、批量兑换码管理等方面的功能，帮助管理员更高效地运维系统

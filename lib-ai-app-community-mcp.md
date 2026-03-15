@@ -194,6 +194,52 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
+- ## 做了一个 AI Native 的 CLI ，OpenCLI 可以对接所有的网站转换成 CLI
+- https://x.com/jakevin7/status/2032936880115736883
+  - https://github.com/jackwener/opencli
+  - 操控 chrome 无风控风险，复用登录，CLI 化全部网站。 并且可以让龙虾/AI agent直接替你做想要的接口
+  - 目前是 AI native 的 CLI ，也就是能够让 AI 直接去挖掘网站里存在的功能，或者你想要的功能，然后变成 CLI 的命令。把所有的网站全部变成CLI！让 AI Agent 和你的龙虾可以无缝接入所有的网站访问所有信息。
+  - 目前 bilibili 里面的  favorite history feed search user-videos .... 等等，就是我告诉 AI agent，然后他实现的。
+  - 根据你自己想要的功能随便定制化开发。实现了动态命令注册中心，随意组合实现各种命令。
+  - 利用了 Playwright MCP bridge 插件，直接操作浏览器本身。直接操作你浏览器本身，无风控问题。
+  - 利用（Accessibility Tree) 的处理逻辑提供了高效的 filter 能力，节约token。
+
+- ## 当mcp来的时候，我们说mcp最终会死，因为mcp的模式是全量上下文，而不是渐进式披露结果
+- https://x.com/yangyi/status/2032745539025129815
+  - 但skill也不够本质，因为skill当前没有一种自我迭代的infra，它是个一次性的，它缺少目标奖励函数的输入
+  - 如果skill无法自我持续迭代 改进 优化， 那么它就仍然还是一个中间态， 最终被吞噬 被封装
+  - mcp死了, skill也快了，不过不重要，能用就好
+  - 这就是事物发展过程必然经历的阶段
+
+- 我看到新的 skill-creator 增加了一个自测、迭代的机制，但是还是需要人工要求去迭代，这个一定程度上是否可以解决持续迭代的问题
+  - 还不够，它是依托一个外力在更新skill， 应该是这个东西本身就有元能力自主更新
+
+- agent应该可以根据实际干活的过程和结果，自我迭代？纯文本改起来还是比较容易的？
+- 感觉agent四要素都应该可以依照目标奖励函数持续迭代
+  - LLM大脑
+  - Prompt指令
+  - Memory记忆
+  - Tools工具
+
+- ## Skill替代不了MCP。你觉得MCP垃圾，只是你不需要、不理解而已。它们解决的是两个不同层面的问题。
+- https://x.com/huangyihe/status/2032722428103925960
+- Skill擅长的：非确定性的知识交付
+  - 提供最佳实践、代码示例、决策指南
+  - 自适应上下文管理，LLM 按需取用
+  - 灵活、轻量、易创建
+- MCP擅长的：确定性的动作执行
+  - 工具有严格的输入/输出Schema，调用结果可预测
+  - 工具之间可以可靠地组合编排（Skill触发时机不确定，组合起来不稳定）
+  - 有完整的SDK基础设施：测试、共享代码、持久连接、OAuth认证
+  - 支持远程托管、跨宿主复用
+- 用一句话概括：Skill是让Agent知道该做什么，而MCP是让Agent真正去执行。
+
+- 替代不了。CLI要求Agent预先知道命令名。如果环境里有上千个工具，你不可能把所有命令都塞进Prompt。
+  - 结合skill补充cli的manual不就行了，这个简单
+- cli在服务端跑stateless鉴权可没有mcp好用
+
+- mcp就是不够灵活…工具全部常驻context，然后只是一个api服务还需要单独搞个mcp服务部署。反观skills，api server不用重新开了，还有动态上下文，毕竟不用作为工具常驻context了。 但是复杂的类似那种需要agentic 反复调用的 mcp还是必要的吧，这一点我还没有尝试。
+
 - ## [Perplexity drops MCP, Cloudflare explains why MCP tool calling doesn't work well for AI agents : r/mcp _202603](https://www.reddit.com/r/mcp/comments/1rrviz4/perplexity_drops_mcp_cloudflare_explains_why_mcp/)
   - Perplexity's CTO just said they're dropping MCP internally to go back to classic APIs and CLIs.
   - Cloudflare published a detailed article on why direct tool calling doesn't work well for AI agents (CodeMode). 
@@ -399,10 +445,113 @@ modified: 2025-02-03T10:17:42.052Z
 - You can test out a few chunkers here: https://chunkers.vercel.app
 
 - Actually the LangChain splitters (which is quite good) is not bundled, it's available as a separate package @langchain/textsplitters
-# discuss-ai-use-browser/computer/container
+# discuss-ai-use-computer/container
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [How I taught an AI to use a computer _202501](https://e2b.dev/blog/how-i-taught-an-ai-to-use-a-computer)
+- 
+- 
+- 
+
+# discuss-ai-use-browser
+- ## 
+
+- ## 
+
+- ## 
+
+- ## PageAgent AI 可以直接操作网页。
+- https://x.com/IndieDevHailey/status/2032428337877205254
+  - 它最打动我的一点是：把最烦人的数据录入干掉了。
+  - 很多公司每天都在做这种重复工作： 复制数据 → 打开系统 → 填表 → 提交
+  - 以后可能只需要一句话：“帮我填写客户信息。” AI 就会自动识别网页结构，把整个流程全部做完。
+- 几个非常实用的场景：
+1. 自动填写网页
+CRM 表单、注册表单、订单系统
+直接让 AI 帮你把网页表单填好。
+2. AI 网站助手（Web Copilot）
+用户可以直接说：
+- 帮我找订单
+- 生成报表
+- 搜索商品
+AI 自动在后台页面完成操作。
+3. 企业系统自动化
+ERP、CMS、内部管理系统
+AI 可以直接操作后台 UI，把复杂流程自动化。
+4. 无障碍辅助
+语音 → 操作网页
+用户说话就能完成网页操作。
+- 和很多 Agent 不一样的是，它 不靠截图识别界面，而是直接读取 HTML DOM，所以：
+  - 更快
+  - 更稳定
+  - 成本更低
+- 而且整个系统 直接运行在浏览器里，不需要：
+  - Puppeteer
+  - Playwright
+  - Python 自动化
+- 这东西直接读DOM真的稳多了，我之前用截图Agent搞内部系统老是卡，换这种方式应该能省一大堆时间。 独立开发者做自动化工具的话，这个方向现在超有搞头。
+
+- 试过了，速度奇慢无比，体验太差了
+
+- 解析Dom运行js一定是慢到爆的那种体验
+
+- ## 新产品@dokobot正式上线
+- https://x.com/supezen/status/2032824859227771011
+  - AI agent 读网页这个难题，现有方案各有各的缺陷：
+  - Jina Reader / Firecrawl：转 Markdown 不错，但过不了 Cloudflare 反爬，登录页也读不了
+  - Browserbase / Steel 这类云浏览器：能渲染 JS，但读不了你登录过的 Gmail 和 Notion，输出还是原始 HTML
+  - Agent-browser / Chrome CDP 方案：权限太大，能注入脚本、读 cookie、操控 DOM，安全隐患多
+  - Dokobot 在 Chrome CDP 基础上增加一层，让 Agent 可以高效且安全的通过你的浏览器来读网页，试图彻底解决这个难题。
+  - Dokobot 利用 CDP 和 Treewalker 技术预处理好页面内容，提供一条安全的通道供 agent 随时查询，避免 agent 直接操作 CDP 注入动态脚本带来安全隐患。
+  - 总之你登录了什么它就能读什么，反爬天然免疫，被网站屏蔽的风险也最低，同时输出 AI 可直接消费的 Markdown，最多可节省 99% token。
+
+- 痛点太真实了，我跑 browser automation 也踩过一模一样的坑。最后走的本地 Chrome + CDP 路线才算稳定。好奇 dokobot 的架构是怎么处理登录态同步的？是 browser extension 还是有别的方案？
+  - 是的，基于浏览器插件
+
+- Treewalker + CDP 这个组合有点意思。本地预处理再让 agent 查询，确实比直接暴露 CDP 安全很多。好奇 token 节省 99% 这个数字是怎么测的？是对比直接用原始 HTML 还是对比 Jina Reader 这类方案？
+  - 原始HTML，如果已经是markdown就差不多了
+
+- 可以cloud用吗？ 还是不许是local才可以用？
+  - 可以远程访问，龙虾在云端也可以
+
+- 如果网页需要一定交互才能显示需要的内容..  但是网址都没变 能获取么
+  - 交互的方式太多了，暂时不支持。
+
+- ## bb-browser，badboy browser，可以用 bb-browser site 的方式直接拉到任何网站的信息，
+- https://x.com/yan5xu/status/2032858943874281782
+  - 目前支持 Reddit、Twitter、GitHub、Hacker News、小红书、知乎、B站、微博、豆瓣、YouTube，50+ 个命令，我会持续更新。
+  - 当然能做到信息获取这件事不稀奇，我也是看到 @jakevin7 的 twitter-cli 的启发，才做的。
+  - 但 bb-browser 的实现方式非常丧良心 — 我是通过 Chrome 插件 + CDP 直接操控你真实的浏览器。不是无头浏览器，不是偷 Cookie，不是模拟请求。你已登录了，它就直接用你的登录态。它直接在浏览器 console 里面跑 eval，以前爬虫最麻烦的登录态、还有各种鉴权都没有了。（这种方式真的。。。太作弊了，我都能想到哪些大厂前端发现我在这么搞，会怎么骂我，因为真的很难防）
+  - 另外我还在命令行里面埋了 guide 命令，也就是说你只要装了 bb-browser CLI 或 MCP，跟你的 Agent 说"我需要把 XX 网站 CLI 化"，它就能帮你做了！！
+  - 真的，大家去看看 repo 里面每一个网站 api 的代码只有几十行，就能把网站逆向出来
+  - 强调一下！！在 guide 命令指导下，基本 10 分钟就可以把一个网站转成 cli！！强烈建议把自己的网站 cli 化！
+  - 架构对了，转化真的。。。非常快，bb-browser site已经添加了 35 个网站，97 个命令
+
+- 以前的爬虫为啥不这样做
+
+- 我以前也这样爬内容 但是问题是频率 要封号呢
+
+- 这个实现很狠但很实用。我以前也试过用 CDP 借登录态，省掉鉴权地狱，但权限边界要想清楚。
+
+- 我写的twitter extension也是一样的. 不过没你们这么适配 因为这个就是成本最低、最自然的方案
+
+- ## Chrome 最新146版本正式加入了WebMCP支持，也就是你的任何Web网站/应用都可以以MCP形式对外提供功能服务。
+- https://x.com/nash_su/status/2033053457733853394
+  - 这个意义很大，当越来越多人用AI帮助干活，当你的Web网站有MCP支持的时候，AI不再需要复杂的模拟点击->截屏->分析->操作这样复杂的工作，而是直接用你标准化的MCP接口进行快速调用。
+
+- 基本上所有的互联网公司靠广告活着，使用mcp的话这些公司会失去很多经济来源，他们大概率不会主动去断臂吧
+  - 这不是由他们决定的，百度能不让大家用问AI取代搜索吗？大趋势如此
+
+- 怎么诱使用户买入更多额外服务 获利
+  - 那是另一个问题，可以诱导AI一定要下单额外服务
 
 - ## Chrome最新版146 终于可以方便的让agent操控当前浏览器了（之前要么启动一个单独的Chrome实例，要么安装第三方浏览器扩展来实现）。
 - https://x.com/wong2__/status/2032697322451382324
@@ -598,16 +747,22 @@ modified: 2025-02-03T10:17:42.052Z
   - 第一个是基于视觉，这部分是默认开启的，那么模型是怎么知道要点击的呢，上文说到js脚本解析了所有DOM节点构成了一个DOM树并且标注了DOM节点是否可以点击并且是可视的，这个脚本还做了另一件事就是将可交互的所有DOM节点进行了数字标记。每次执行任务都会提交对应的网页截图其中也包含了数字标记。
   - 第二个是基于DOM结构化数据中将可视化的数据转换成了一个如下格式的文本串： `[索引]<DOM标签名 属性 标签内所有文本/>` 直到下一个可点击元素之前的所有文本, 然后当模型接收到如上数据之后，会执行对应的funcation_calling，然后把索引传递给对应的方法，这样就成功执行了一次点击。
   - 当然Agent也可以关闭视觉的参与，然后纯靠如上第二部分的数据来进行推理，根据我的实验，如果网页视觉结构非常复杂，当关闭视觉参与可以得到不错的效果。当然Agent中执行操作是很重要的一部分，历史数据记录也是不容忽视的。这我会在之后的文章中分享。
-
-- ## [How I taught an AI to use a computer _202501](https://e2b.dev/blog/how-i-taught-an-ai-to-use-a-computer)
-- 
-- 
-- 
-
 # discuss-protocols-lacking
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## If you are using MCP to access your data, you are trusting that third party with unencrypted access to your data.
+- https://x.com/kepano/status/2033195271220597215
+  - Third-party MCPs are not an option if you value privacy. 
+  - End-to-end encryption makes MCP effectively useless.
+  - Obsidian Sync is end-to-end encrypted. An MCP for it would be useless. Unless you mean a local MCP in which case why not use the CLI?
+
+- Yeah, I wrote an article about exactly that. To work with MCP securely, you need to implement a real client and an orchestrator that you own, but it's not easy because no one explains how. They push you toward their “clients.” I built a vanilla MCP orchestrator client from scratch and figured it out.
 
 - ## 最近终于各大公司都开始说mcp没啥用了。奇怪的是这个事情竟然过了一年才被广泛承认，有基本软件工程知识和架构经验，第一天就应该知道它是错误的设计。
 - https://x.com/virushuo/status/2032432024506474991
@@ -898,7 +1053,11 @@ Don’t want/can’t have external dependencies?
 
 - ## 
 
-- ## 
+- ## [MCP Manager: Tool filtering, MCP-as-CLI, One-Click Installs : r/mcp _202603](https://www.reddit.com/r/mcp/comments/1rtwip7/mcp_manager_tool_filtering_mcpascli_oneclick/)
+  - I built a rust-based MCP manager that provides: HTTP/stdio-to-stdio MCP server proxying
+  - Tool filtering for context poisoning reduction
+- OAuth tokens stored plaintext in SQLite: Access tokens, refresh tokens, and even client_secret are serialized as plain JSON into SQLite. The vault only protects API keys. Long-lived refresh tokens for GitHub etc. are sitting unencrypted on disk.
+  - Access tokens, refresh tokens, and client secrets are now stored in the encrypted Stronghold vault alongside API keys. SQLite retains only non-sensitive metadata (token type, expiration timestamp, client ID, scopes, endpoint URLs) — just enough for the UI to show connection status and expiry without touching the vault.
 
 - ## 百度把PaddleOCR-VL-1.5做成OpenClaw Skills了，也上架到ClawHub了，配置好后就可以直接解析文档了。
 - https://x.com/aiwarts/status/2032685663418568704

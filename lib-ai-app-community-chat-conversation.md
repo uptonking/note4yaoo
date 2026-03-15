@@ -185,14 +185,27 @@ iOS 端至少有 Kelivo……（没接触过苹果，更多的就不清楚了）
   - https://github.com/clidey/whodb
 
 - 和chat2db相比哪个好用？
-# discuss-ui-gen
+# discuss-ui-gen 💄
 - ## 
 
 - ## 
 
-- ## 
+- ## Claude交互式UI的原理分析和开源实现
+- https://x.com/Gorden_Sun/status/2032829589253447985
+  - 本质是工具调用，交互式UI的部分直接注入DOM渲染，没有使用iframe的方式，所以能实现流式渲染。为了保证渲染效果，严格限定了UI规范，例如禁止渐变和阴影等。
+  - https://github.com/CopilotKit/OpenGenerativeUI 开源的这个方案就比较简单粗暴，直接使用了iframe，缺点是不能实时渲染且笨重，优点是兼容各家LLM。
 
-- ## 
+- ## 逆向 Claude 的生成式 UI 架构，移植到 Coding Agent CLI ~ Pi
+- https://x.com/shao__meng/status/2032649105852473365
+  - Anthropic 为 Claude 推出了 generative UI 功能，对话中内嵌可交互的 HTML 组件（滑块、图表、动画），而非静态图片或代码块。 
+  - @micLivs 对它的实现机制进行了逆向分析，并基于 Pi 和 Glimpse 将同一套能力移植到了终端环境。
+- Claude Generative UI 的实际实现 -- 实现机制：不是 Markdown 渲染，是一个名为 show_widget 的 tool call，参数中携带 HTML 片段，由前端做 DOM 注入。证据——CSS 变量能跨组件解析、内容随 token 实时渲染、背景透明无 iframe 痕迹。安全边界靠 CSP 白名单限定可加载的 CDN。
+  - 与 Artifacts 的本质区别：Artifacts 是侧边面板中可下载的交付物，用预打包库；
+  - generative UI 是对话流内联的临时组件，可从 CDN 实时加载任意库。
+  - read_me 模式：模型调用 show_widget 前必须先调用 read_me，按需加载对应模块的设计规范（diagram/chart/interactive/mockup/art）。这是渐进式上下文注入——基础 prompt 保持精简，专业知识按需加载，节省 token。
+  - 设计规范提取：通过导出对话 JSON，从 tool_result 中提取了 Anthropic 完整的 72KB 设计体系原文。核心要求包括：流式优先（style → HTML → script）、禁用渐变/阴影/模糊、深色模式强制、9 条色阶体系、Chart.js/SVG 专用规范等。
+- Pi 终端重建 -- 问题：终端无法渲染交互式 HTML。
+  - 方案：用 Glimpse（macOS 原生 WKWebView，<50ms 启动，双向 JSON 通信）作为渲染容器。
 
 - ## Anthropic shipped generative UI for Claude. I reverse-engineered how it works and rebuilt it for PI. _202603
 - https://x.com/micLivs/status/2032244251464188184
@@ -232,6 +245,28 @@ iOS 端至少有 Kelivo……（没接触过苹果，更多的就不清楚了）
 - https://github.com/lucianfialho/visual-yaml /apache2/202603/ts
   - The visual YAML editor. Schema-aware, embeddable, extensible.
   - Inspired by https://github.com/vercel-labs/visual-json /apache2
+
+- https://x.com/dan_note/status/2032768253311721701
+  - LiveRender now supports it too!
+  - https://github.com/dannote/live_render/releases/tag/v0.5.0  /elixir-Phoenix
+  - LiveRender. Format. YAML — YAML wire format with progressive streaming. The LLM outputs YAML inside a ```spec or ```yaml fence, and the streaming parser incrementally re-parses on each newline.
+
+- https://x.com/0xblacklight/status/2032939792263164003
+  - underrated aspect of YAML is that while JSON is ridiculously hard to parse and stream partial objects based on deltas for, YAML is easy. You just split on newlines.
+- All json is valid yaml.
+  - An incomplete multiline json object is not
+
+- Isn't that the point of using json over yaml, where you don't want to accidentally partially parse anything?  The streaming capabilities come from yaml being weakly formatted
+
+- What if the browser had a native yaml parser
+
+- Python: bad because it depends on whitespace 
+  - Yaml: good because it depends on whitespace 
+
+- ts really not that hard to write a streaming JSON parser, the spec is simple compared to YAML. But yeah if you are trying to do it the naive way (run a full parse on every delta update) it doesn't work.
+  - So just don't do that, write the streaming parser, and enjoy the simplicity of a much  smaller spec.
+
+- i was just battling NDJSON
 # discuss-chat-apps
 - ## 
 

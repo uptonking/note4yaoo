@@ -149,6 +149,35 @@ modified: 2025-09-01T07:58:29.058Z
 - 我开发阶段也不看，但是完成度差不多的时候，会让几个 ai 交叉给一份架构和结构的 Review 报告和建议。要不 ai 即使是 opus 4.6  ，也给我整出单文件 5k+ 行的模块
 
 - 看项目和场景吧 多端协同测试 供应链等挺复杂的
+# discuss-ai-coding-architecture
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 一个 coding agent 砍掉了 MCP、子 agent、plan mode、权限系统——跑分居然没掉，还进了 Terminal-Bench 前十。
+- https://x.com/runes_leo/status/2032777762155487718
+  - 从零手写。系统提示 <1000 tokens，工具就 4 个：读、写、改、跑。
+  - 砍掉的每个功能，背后同一个判断：黑盒。
+  - MCP 一上来就吞 13K+ tokens context，用不用得上全看运气；子 agent 是黑盒套黑盒，崩了你都不知道卡在哪；plan mode 探索了啥文件，也全藏着。
+  - 替代全靠看得见的通道：
+  - 子 agent → bash 调用自己 + tmux，全程可盯
+  - MCP → CLI 工具 + README，按需读，不抢 context
+  - Plan mode → 写 PLAN.md，跨会话不丢
+  - TODO → 直接写 TODO.md，别让模型自己记状态
+  - Claude Code 走另一条路：帮你管 context，代价是你得信它的黑盒。
+  - 两条路的交汇点都在项目上下文文件（CLAUDE.md / AGENTS.md）——pi 只给你这一个入口，Claude Code 在上面又堆了十几层自动化。
+  - [What I learned building an opinionated and minimal coding agent _202511](https://mariozechner.at/posts/2025-11-30-pi-coding-agent/)
+
+- cc背后是llm公司，他不会为你省token的
+
+- 如何看待pi不支持MCP？
+
+- 这条我赞同，很多“功能加法”其实是在给不确定性买单。可执行建议：每次只保留一个实验变量（比如先固定工具数，再测上下文长度），并用统一基准集做周度回归，能更快识别真贡献。你们现在最看重哪项指标：成功率、延迟，还是每任务token成本？
+
+- https://x.com/coder_left/status/2033044164951126324
+- 上下文透明和链路可观测确实是痛点。不过工具集精简到极致，会不会牺牲掉处理复杂、非标任务的能力？
 # discuss-ai-coding-internals
 - ## 
 
@@ -797,7 +826,18 @@ It amazes me how people default to LLM calls when you can do it in a simple, fre
 
 - ## 
 
-- ## 
+- ## vibe coding可以说是显著增大了我的精神压力... 哪怕我已经用了最顶尖的模型，我依然需要无时无刻Review LLM的命令执行和代码输出，并快速做出各种架构决策、在它犯错的时候及时干预。
+- https://x.com/is_llll/status/2032825865969742281
+  - 这种神经紧绷的状态特别累。我好久没有体会曾经自己写代码那种愉悦的心流状态了。但放弃使用LLM又会大大降低效率...
+- 我感觉自己反过来被LLM异化了... 曾经一个产品磨洋工磨半年才写出来对我来说是很正常的事情，对一个深层bug追查几小时不休息也是很正常的事情。而现在我自己的长线注意力和耐心完全被LLM破坏了，明显感觉自己浮躁了特别多。
+  - 不过和LLM协作倒有一个好处，虽然我的逻辑能力和工作记忆退化了不少。但是知识面广阔了很多，使用git和各种CI工具的能力也强了不少（被逼的！）...
+
+- 我一般用下面方法减少这种情况
+  - 1 粒度拆小，多步commit。根据commit review
+  - 2 控制并发度一次最多开3个CLI
+  - 确实有时候有精神紧绷的状态。
+
+- 是这样的。每天都会心有不甘的放弃review
 
 - ## [最近比较火的几个开源项目是否正在慢慢变成屎山? ](https://linux.do/t/topic/1682706)
   - opencode、openclaw 等都是最近比较火的项目，他们的 issues 和 pr 都是好几千个。 这个量级感觉靠人处理是不是不太现实了，只能让 ai 自己修复，继续堆屎。

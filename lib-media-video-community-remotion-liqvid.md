@@ -166,6 +166,18 @@ modified: 2024-06-21T09:53:44.956Z
   - Jellyfin customization is way better through skins and other plugins.
   - Currently the only Jellyfin drawback is related to performance, specifically with CPU usage being high and consuming a lot more RAM than Emby. The CPU thing isn't always an issue, but there is definitely something that causes Jellyfin to use way more CPU than it should. Likely something to do with DB read/write, but not positive.
   - Overall I'm happy with the switch to Jellyfin. But I would say if the main or only thing you care about is reliability and smooth performance, Emby might be the better bet for now. I think in a few years time, these issues will be resolved.
+# discuss-screen-recording
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 试用了三个 开源的 ScreenStudio 类似的录屏工具 Openscreen、Recordly、以及CursorLens，
+- https://x.com/LgyLight/status/2033109870187295151
+  - Openscreen 是鼻祖，其他两个都是从他身上 fork 来的，
+  - 但是要论功能最强，最美观好用的，我推荐 Recordly。
+
 # discuss-remotion
 - ## 
 

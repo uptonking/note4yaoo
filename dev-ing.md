@@ -310,6 +310,24 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-log
   - ?
 
+## 0315
+
+- ndjson vs jsonl format
+  - There is no technical difference between NDJSON and JSONL (or JSONNL). They are exactly the same data format.
+  - Most people call it NDJSON (newline-delimited JSON) or JSONL / JSONLINES.
+  - Use NDJSON/JSONL for logs, streaming, big datasets, or appendable files. 
+  - Use a normal JSON array when a single valid JSON document is required.
+- there is a slight difference in naming conventions and specifications between NDJSON and JSONL.
+- application/x-ndjson
+  - Heavily used in streaming data, Elasticsearch, and big data pipelines.
+  - The spec explicitly allows for optional carriage returns (`\r\n`) and specifically addresses streaming scenarios.
+  - Use NDJSON if you are working with streaming APIs, logs, or tools like Elasticsearch.
+- applicatioƒn/jsonl
+  - Heavily used in data science, Python (pandas), and machine learning datasets.
+  - The spec is slightly stricter about standardizing how text is encoded (UTF-8) and handling line endings.
+  - Use JSONL if you are working with datasets, Python pandas, or static files.
+- Both are superior to standard JSON for large datasets because they allow you to read one line (one record) at a time without loading the entire file into memory.
+
 ## 0310
 
 - 🤔 from both clashx pro network monitor and NetSpeedMonitor.app, it shows download speed is 6.1~6.9 MB/s, it keeps showing for hours. please find which apps are downloading and eating my network. from both clashx pro network monitor and NetSpeedMonitor.app, now it still shows download speed is 6.1~6.9 MB/s.

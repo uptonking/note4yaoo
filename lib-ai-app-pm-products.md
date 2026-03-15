@@ -300,6 +300,7 @@ modified: 2025-03-22T16:10:24.856Z
     - obsidian for pdf
     - proofreading: 一键检查, 版本历史
       - chunking viz
+    - proofreading for word/excel/ppt
     - 还原图文混排
     - 提取 figure、表格
     - 👾 pdf-edit agent
@@ -660,7 +661,7 @@ modified: 2025-03-22T16:10:24.856Z
     - [All-API-Hub：开源AI中转站集中管理和自己的New API增强管理，基于 one-api-hub 大幅重构增强 _202511](https://linux.do/t/topic/1001042)
     - [关于部分公益站支持CC的测试，欢迎更多反馈 ](https://linux.do/t/topic/1162888)
   - 📌 [duckcoding 公益站](https://free.duckcoding.com/console/personal), 签到
-    - [DuckCoding](https://duckcoding.com/console/personal)
+    - [DuckCoding](https://www.duckcoding.ai/console/personal)
     - [DuckCoding Az-CC，单独开启公益站，只允许L站注册 ](https://linux.do/t/topic/1308120)
     - [status](https://status.duckcoding.com/status/duckcoding)
   - 📌 [Any Router](https://anyrouter.top/), 每日签到获取$25
@@ -762,15 +763,19 @@ modified: 2025-03-22T16:10:24.856Z
     - 都是临时渠道，不开签到了，直接每天送 100 刀余额
   - [YAO](http://154.37.220.66:3000/console/personal)
     - [[Yao公益站]codex注册200刀，可能随时倒闭  ](https://linux.do/t/topic/1683788)
+    - claude-sonnet-4-5-20250929
   - [Rosmontis](https://ai.rosmontis.de/console/personal)
     - [[迷迭香公益站]  ](https://linux.do/t/topic/1694922)
     - 公益站有无限codex(目前限制500并发)，无限grok(程序默认限制50并发)。glm系列目前不保证可用性。还有一些杂七杂八的模型。
+  - [Hello AI _202603](https://hello.xhyun.eu.cc/console/personal)
+    - [「XH AI Center/Hello AI 」重新出发 _202603](https://linux.do/t/topic/1759449)
   - [codexapi福利 API](https://ai.xingyungept.cn/console/personal)
     - 注册500刀，签到1-100刀
   - [Infinite API](https://infiniteai.cc/checkin)
     - dark-mode 水平方向逐渐变化的动画效果很好
     - [【Infinite API】全新公益站上线试运营 ](https://linux.do/t/topic/1622685)
     - 50 RPM， 25 个同时进行的请求
+    - arrow-preview, QuiverAI API flagship SVG gen
   - [Einzieg API](https://api.einzieg.site/console/personal), 签到
     - 仅提供codex模型
     - [【Einzieg公益站】再次启动 ](https://linux.do/t/topic/1569418)
@@ -780,6 +785,10 @@ modified: 2025-03-22T16:10:24.856Z
     - 包括 deepseek，硅基流动全模型，阿里云千问全模型，glm，gemini，codex
     - 有claude, 无opus
     - 默认 RPM30，1 级可注册，不允许批量测活
+  - [Codex - New API](https://codex.makeup/console/personal)
+    - [又一个codex公益站，人手一个蹬  ](https://linux.do/t/topic/1645651)
+    - gpt-5.4, gpt-5.3-codex
+    - [上线claude-sonnet-4.6模型（不稳定版），爱来自cursor  _202603](https://linux.do/t/topic/1739712)
   - [GGBOOM公益站](https://ai.qaq.al/dashboard)
     - [签到控制台](https://sign.qaq.al/app)
     - [【GGBOOM公益站】签到站上线啦 ](https://linux.do/t/topic/1517772)
@@ -801,8 +810,6 @@ modified: 2025-03-22T16:10:24.856Z
   - [真好记公益站](https://newapi.zhenhaoji.qzz.io/console/personal)
     - 随便刷吧，可能刷崩了，我就关站了
     - cc
-  - [Codex - New API](https://codex.makeup/console/personal)
-    - [又一个codex公益站，人手一个蹬  ](https://linux.do/t/topic/1645651)
   - [纳米哈基米](https://free.nanohajimi.mom/console/personal), 签到
     - Gemini Imagen
     - [【纳米哈基米 · 公益站】 支持香蕉Pro画图，Veo视频，Gemini全系模型 ](https://linux.do/t/topic/1512770)
@@ -923,7 +930,6 @@ modified: 2025-03-22T16:10:24.856Z
     - 维护期限：到 codex-team 渠道耗尽为止
   - 🗑️ [随缘API](https://newapi.tanmw.top/console/personal)
     - [【随缘API公益站】开放注册！余额已调整 ](https://linux.do/t/topic/1634879)
-    - RPM:20
     - 目前只有 GPT 和 Grok 
     - 不保证稳定性！随时跑路
   - 🗑️ [b4u API](https://b4u.qzz.io/console), 每日转盘, 关站20260222

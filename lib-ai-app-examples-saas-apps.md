@@ -712,10 +712,23 @@ modified: 2025-02-21T17:17:42.225Z
 
 - https://github.com/hewliyang/office-agents /MIT/202603/ts
   - Office Agents is a monorepo of Microsoft Office Add-ins with integrated AI chat panels. Each add-in connects to major LLM providers using your own credentials (BYOK) and can read/write documents through built-in tools, a sandboxed shell, and a virtual filesystem.
+  - https://x.com/hewliyang/status/2033176726663249959
+    - OpenWord v0.0.1 is out. it is competent at most text editing operations, can insert images into your doc, has vision, can add & reply to comments, and even works with Track Changes (redlining)
   - https://x.com/hewliyang/status/2030648851603087392
     - i've also renamed the open-excel repo into office-agents.
     - the SDK, which contains the agent loop, IndexedDB storage logic, etc is published to NPM. so you can build your own plugins.
     - fwiw, powerpoint is only ~2.5k LoC excluding the system prompt and the officejs .d.ts file
+- https://github.com/tdimino/dabarat /MIT/202603/python/js
+  - AI-native markdown previewer with annotations, bookmarks, and live reload. Zero dependencies.
+  - 5 annotation types — Comment, Question, Suggestion, Important, Bookmark
+  - Threaded replies — reply to any annotation inline
+  - Resolve/archive workflow — resolved annotations move to a separate archive file
+
+- https://github.com/chenhuawang-04/DocuFlow /apache2/202603/python
+  - AI Powered Document Toolbox. Designed for codex/claude code
+  - It exposes 149 tools across Word, Excel, PowerPoint, PDF, format conversion, OCR, HTML-to-PPTX, and AI image generation workflows.
+  - The project is designed to provide one consistent MCP surface for common document tasks, so Claude Code, Codex, and other MCP-compatible clients can operate on documents directly.
+  - [【DocuFlow】一个命令行Cli的文档处理MCP/SKILL工具集 - LINUX DO _202603](https://linux.do/t/topic/1760765)
 
 - https://github.com/Prismer-AI/Prismer /BSL/202601/python/ts
   - https://paper.prismer.ai/
@@ -784,6 +797,13 @@ modified: 2025-02-21T17:17:42.225Z
   - It runs on your own machine/server, providing multi-user accounts backed by PostgreSQL while keeping full control of your strategies, trading data, and API keys.
   - runs locally. Your strategies, trading logs, API keys, and analysis results stay on your machine. No vendor lock-in
   - [【开源自荐】目前全网最全市场的AI量化工具【QuantDinger】，全面开源 ](https://linux.do/t/topic/1507020)
+
+## ecommerce
+
+- https://github.com/liangdabiao/amazon-sorftime-research-MCP-skill /MIT/202603/python
+  - 亚马逊选品 之 Listing全维度穿透分析报告 加上 全品类分析 ，关键词分析，差评分析 等等。claude code agent skill, amazon sorftime research MCP 智能体skill. 
+  - 基于 Sorftime MCP 服务和 Claude Skills 的亚马逊竞品分析工具集。
+  - [【公益推广】周末加班-完成了跨境电商amazon选品分析之差评分析-6维痛点分析框架  _202603](https://linux.do/t/topic/1759097)
 
 ## openclaw
 

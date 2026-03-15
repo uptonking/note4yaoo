@@ -484,6 +484,10 @@ modified: 2022-08-21T10:02:05.129Z
   - https://github.com/RafaelGB/obsidian-db-folder
     - Obsidian Plugin to Allow Notion like database based on folders
 
+- https://github.com/bgarciamoura/obsidian-notion-bases-plugin /GPL/202603/ts
+  - Turn any folder in your vault into a powerful database — right inside Obsidian.
+  - [I built a Notion-like database plugin for Obsidian — 6 views, fully local, no external tools : r/ObsidianMD _202603](https://www.reddit.com/r/ObsidianMD/comments/1rtwcja/i_built_a_notionlike_database_plugin_for_obsidian/)
+
 - https://github.com/mukulchugh/kanboard-notion-kanban-react /js
   - https://notion-kanboard-mukul.netlify.app/
   - 暂不支持表格视图

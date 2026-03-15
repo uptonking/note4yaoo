@@ -558,6 +558,33 @@ git am /tmp/repo1-editor-patch/*.patch
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 大多数开发者用了 10 年 git，从没用过 worktree。
+- https://x.com/chenchengpro/status/2032411474703053012
+  - 现在我同时跑 5-10 个 Claude Code / Codex session，每个代理处理一个任务。但问题来了：每个代理都需要独立的工作目录，不能互相踩文件。
+  - 解法：git worktree + pnpm 全局虚拟存储。
+  - git 对象只有一份，分支却全部同时 checkout。
+  - 但 node_modules 怎么办？每个 worktree 都要装一遍，几百 MB 乘以 10 个代理？ pnpm 的 enableGlobalVirtualStore 解决了这个. enableGlobalVirtualStore: true 开启之后，每个 worktree 的 node_modules 里只有符号链接，指向磁盘上同一份内容寻址存储。
+  - pnpm 自己的仓库就是这套配置，还封装了辅助命令
+  - AI 代理时代的并行开发工作流，不是多开几个终端那么简单。
+  - 每个代理需要真正的隔离：独立文件、独立分支、独立依赖树。
+  - git worktree + pnpm virtualstore，是目前最轻量的答案。
+
+- submodule 可以softlink吧?
+
+- 我缺的是worktree吗？我缺的是token
+
+- 子代理同时改pnpm，改的版本还不一样怎么办
+
+- 心智负担高, 直接把git目录复制5份即可解决，无需学习任何新知识
+
 - ## 🤼 I talked with @steipete yesterday and we both realized that we gave up on worktrees and just use multiple checkouts. 
 - https://x.com/mitsuhiko/status/2011773404207337549
   - Turns out, we're simple people.

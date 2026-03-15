@@ -138,7 +138,17 @@ modified: 2026-01-15T15:33:18.008Z
 
 - ## 
 
-- ## 
+- ## [Open-Source "GreenBoost" Driver Aims To Augment NVIDIA GPUs vRAM With System RAM & NVMe To Handle Larger LLMs : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1ru98fi/opensource_greenboost_driver_aims_to_augment/)
+- The concept of extending VRAM with system RAM isn't new - llama.cpp already does layer offloading to CPU and the performance cliff when you spill out of VRAM is brutal. 
+  - The question is whether a driver-level approach can manage the data movement more intelligently than userspace solutions. If they can prefetch the right layers into VRAM before they're needed, that could genuinely help for models that almost fit. 
+  - But for models that need 2x your VRAM, you're still memory-bandwidth limited no matter how clever the driver is. 
+  - NVMe as a third tier is an interesting idea in theory but PCIe bandwidth is going to be the bottleneck there.
+
+- i wonder how the latency hit compares to just doing partial offloading through llama.cpp natively. right now on my 4080 super with 16gb vram i can fit most of qwen3.5 27B fully in vram with Q4_K_M and it flies, but anything bigger and i have to offload layers to cpu ram which tanks generation speed to like 5-8 t/s
+  - if this driver can make the NVMe tier feel closer to system ram speed for the overflow layers, that would be a game changer for people trying to run 70B+ models on consumer hardware. the current bottleneck isnt really compute its just getting the weights where they need to be fast enough
+
+- Chances it handles numa properly, likely zero.
+  - You'll hit PCIe bandwidth limit long before QPI/UPI/infinity-fabric become an issue.
 
 - ## [如何评价50系显卡? - 知乎 _202501](https://www.zhihu.com/question/9155824275)
 - 简单来说能考虑的就3张，5060, 5060T 16G, 5070T
@@ -262,6 +272,21 @@ modified: 2026-01-15T15:33:18.008Z
 - ## 
 
 - ## 
+# discuss-gpu-mod
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Is the 48 GB modded RTX 4090 still the highest available or is there something higher confirmed and who is the most reliable seller? : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1ru63f0/is_the_48_gb_modded_rtx_4090_still_the_highest/)
+- they were cool when they were little known and could be purchasen for about 2700 USD, after the price rise to 4k because of the hype they are useless now because there is RTX Pro 5000 48GB for about 5k
+
+- It's baffling these cost so much without native 4 bit support and just 48gb of VRAM. If it wasn't for manual chip swaps, I'd say it should cost 2000 max
+
+- Not Nvidia but 2x R9700 will get you 64GB VRAM for <$3k.
 # discuss
 - ## 
 

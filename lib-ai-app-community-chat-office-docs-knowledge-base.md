@@ -57,6 +57,23 @@ modified: 2025-08-30T18:16:57.201Z
 - 搭起来很简单，做到效果好很难，做一套评测标准也很难
 - 就是chatbot这个形态有点不三不四
 
+# discuss-office-tools/examples
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [【DocuFlow】一个命令行Cli的文档处理MCP/SKILL工具集 - LINUX DO _202603](https://linux.do/t/topic/1760765)
+  - DocuFlow 的 OCR 模块支持多引擎切换，通过 ocr_config.json 进行配置
+  - 本地引擎 (tesseract)：完全本地运行，无需 API。
+  - 远程引擎 (completion)：支持任何兼容 OpenAI chat/completions 接口的模型（如 Grok, GPT-4o）。
+  - 自动模式 (auto)：优先尝试本地识别，必要时自动回退至远程模型。
+
+- https://github.com/chenhuawang-04/DocuFlow /apache2/202603/python
+  - AI Powered Document Toolbox. Designed for codex/claude code
+  - It exposes 149 tools across Word, Excel, PowerPoint, PDF, format conversion, OCR, HTML-to-PPTX, and AI image generation workflows.
+  - The project is designed to provide one consistent MCP surface for common document tasks, so Claude Code, Codex, and other MCP-compatible clients can operate on documents directly.
 # discuss-local/llama
 - ## 
 

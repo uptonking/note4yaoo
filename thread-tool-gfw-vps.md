@@ -111,7 +111,18 @@ modified: 2023-03-18T17:53:25.909Z
 
 - ## 
 
-- ## 
+- ## [自建vps 那种协议不容易被墙IP，有没有大佬解答下 - LINUX DO _202603](https://linux.do/t/topic/1759970)
+  - vless + xTLS
+  - vmess + TLS
+  - shadowTLS
+  - naiveproxy
+  - trojan
+  - hysteria trojan必须要用到域名吗？是不是还得自己买一个？
+- 我用的vmess，没有任何问题，随便弄了个二级域名挂cf上解析
+
+- 套cf的最不容易
+
+- https://www.spaceship.com 10块钱可以买一个全是数字的.xyz域名，挂在cf上解析，然后用脚本的时候使用这个域名就可以搭建了
 
 - ## 一款能将临时 IP 变成固定 IP 的代理池中间件：ProxyCat。
 - https://x.com/GoJun315/status/1842511148077420982

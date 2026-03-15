@@ -138,7 +138,13 @@ modified: 2023-10-28T17:52:51.915Z
 
 - ## 
 
-- ## 
+- ## Isn’t pgbouncer the easiest thing to scale? 
+- https://x.com/mehulmpt/status/2032747657060561228
+  - Keep it in transaction mode, create more instances, and have your backend distribute connections to different pgbouncers connection URLs. 
+
+- Yes Pgbouncer provides a way to scale our postgres easily which otherwise is very hard to scale due to it's process per connection architecture, but the catch is to do the configuration properly, it has lot of variables namely max_client_conn, default_pool_size, no_of_pools ... etc. We have to configure all these variables correctly based on access pattern and our requirements to get the max benefit of pgbouncer.
+
+- You're missing that instead of paying for one server for all your requests, you pay for 10000 servers so that your little woowoo boy scrub-faced team can get away with their shit engineering. All of these servers need to constantly open new connections to Postgres because borrowing servers JIT isn't slow enough. pgBouncer makes the mistake of assuming no one is retarded enough to do this.
 
 - ## 🔥 [Citus 6.1 Released – Horizontally scale your Postgres database | Hacker News_201702](https://news.ycombinator.com/item?id=13662166)
 - 

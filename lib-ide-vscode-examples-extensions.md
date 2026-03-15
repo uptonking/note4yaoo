@@ -731,6 +731,16 @@ modified: 2024-08-24T16:17:26.715Z
   - a VSCode extension that supercharges your ability to search workspace contents using ripgrep, providing an intuitive interface with real-time previews of search results.
   - Inspired by nvim's telescope
   - 搜索浮窗交互，能跳转对应文件
+
+- https://github.com/garroter/spyglass /MIT/202603/ts
+  - Fast, keyboard-driven search popup for VS Code
+  - Inspired by Neovim Telescope and JetBrains Search Everywhere
+  - Full-text search with live preview
+  - Glob filter — limit search to specific file patterns (*.ts, !*.test.ts)
+
+- https://github.com/tkim90/fff-extension /MIT/202603/rust/ts
+  - IntelliJ-like CMD+Shift+F in Cursor / VSCode.
+  - [I hate VSCode's default global search feature, so I built one like IntelliJ's : r/vscode _202603](https://www.reddit.com/r/vscode/comments/1rtccmi/i_hate_vscodes_default_global_search_feature_so_i/)
 # ext-integrations-note-taking
 - https://github.com/sheilaCat/zknotes /202008/ts/inactive
   - zettelkasten zettelkasten .vscode plugin for applying zettelkasten notation.

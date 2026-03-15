@@ -101,6 +101,17 @@ modified: 2023-02-08T07:20:48.475Z
 
 ## benchmarks-llm
 
+- https://github.com/groq/openbench /740Star/MIT/202512/python/inactive
+  - https://openbench.dev/
+  - Provider-agnostic, open-source evaluation infrastructure for language models
+  - Built on `inspect-ai`: Industry-standard evaluation framework
+  - 95+ Benchmarks: MMLU, GPQA, HumanEval, SimpleQA, competition math (AIME, HMMT), SciCode, GraphWalks, and more
+  - Simple CLI: bench list, bench describe, bench eval
+  - Extensible: Easy to add new benchmarks and metrics
+  - Provider-agnostic: Works with 30+ model providers out of the box
+  - 🍴 forks
+  - https://github.com/ivanfioravanti/mlx-openbench
+
 - https://github.com/bigcode-project/bigcodebench /apache2/202408/python
   - https://bigcode-bench.github.io/
   - BigCodeBench is an easy-to-use benchmark for code generation with practical and challenging programming tasks
@@ -344,6 +355,10 @@ modified: 2023-02-08T07:20:48.475Z
   - Built on the MiniCPM-o 4.5 end-to-end omni-modal architecture, where modality encoders/decoders are densely connected to the LLM through hidden states. This design enables better information flow and control while fully leveraging the rich multimodal knowledge acquired during training.
   - llama.cpp-omni splits the original PyTorch model into multiple independent GGUF modules, each with specific responsibilities
   - [Discuss how to design omni model · ggml-org/llama.cpp _202510](https://github.com/ggml-org/llama.cpp/discussions/16552)
+- https://github.com/lemonade-sdk/llamacpp-rocm /MIT/202603/python
+  - provide nightly builds of llama.cpp with AMD ROCm™ 7 acceleration based on TheRock
+  - All builds include ROCm™ 7 built-in - no separate ROCm™ installation required
+  - [Lemonade ROCm latest brings great improvements in prompt processing speed in llama.cpp and LM Studio's own runtimes. : r/StrixHalo _202603](https://www.reddit.com/r/StrixHalo/comments/1rue1fn/lemonade_rocm_latest_brings_great_improvements_in/)
 
 - https://github.com/airnsk/proxycache /202511/python
   - Smart OpenAI‑compatible proxy for llama.cpp: manages slots, saves/restores KV cache to disk, routes requests by prefix similarity

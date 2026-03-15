@@ -18,6 +18,20 @@ modified: 2025-02-03T15:11:10.478Z
 # discuss-tools
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 最近用了各种爬虫， 开源自建的 Crawl4AI / CrawlLee, 服务用过 Firecrawl / Jina Reader / Cloudflare新出的 crawl
+- https://x.com/vikingmute/status/2033156347504767135
+  - 发现最方便实惠便宜的还是 Jina Reader，没有订阅，免费额度大，后面一直是按需付费，爬各种内容也稳定，尤其是 X 的帖子爬的效果也不错。别的感觉都一般，不稳定或者根本就被block，当然除了 Apify，但是太贵了。
+  - 自建的话效果最好的就是 Crawl4AI
+
+- Linkup 数据格式干净是真，但爬 X 稳不稳定没试过，这块 Jina 确实有优势
+- Linkup 实时性不足，作为搜索还不错。
+
 - ## 仔细看了下这些流量的来源。因为我们是套了 CF 盾的，一开始我还以为是哪个高手的绕过了 CF 盾，结果一看 UA 居然是 meta 的爬虫。
 - https://x.com/arvin17x/status/1927989856053121431
   - 然后果断把这个 UA 加进 firewall deny 了，然后请求量一下子就降了下来。

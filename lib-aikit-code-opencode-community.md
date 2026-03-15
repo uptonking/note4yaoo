@@ -130,7 +130,8 @@ modified: 2026-01-17T22:41:25.867Z
 
 - ## 
 
-- ## 
+- ## [Is there a way to edit code in OpenCode app? : r/opencodeCLI _202603](https://www.reddit.com/r/opencodeCLI/comments/1rtfybx/is_there_a_way_to_edit_code_in_opencode_app/)
+- It’s not an editor. You’re right to be afraid, it’s not easy to make a good editor and there are many great ones already out there
 
 - ## [System environment prompt causes cache invalidation _202512](https://github.com/anomalyco/opencode/issues/5224)
   - I've noticed that the environment() function in system.ts fetches 200 files from the current git working directory. This means that when files are added or removed in the directory, this portion of the system environment prompt is likely to change, resulting in context invalidation and increased API costs.

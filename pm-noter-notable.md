@@ -162,6 +162,7 @@ modified: 2023-11-28T14:48:45.910Z
   - 能为其他产品提供infra或tools，如nvidia
     - openclaw的广泛使用能推广硬件如mac-mini、模型厂商、模型聚合商、自媒体
   - 能为其他用户用户提供二创素材，如视频、图片
+- 纯前端的功能大多都是nice-to-have，解决的不是核心痛点
 - 纯前端/客户端的产品其实商业化的能力不强，付费特性一般是存储(版本、回放)、计算(后台、并发、自动化)
   - 简单查看浏览的功能不足以支撑商业化的产品，可增加更多功能如 搜索、编辑、批注、集成
   - 同步、协作、素材模版、资源包
@@ -195,8 +196,10 @@ modified: 2023-11-28T14:48:45.910Z
   - realtime collab + resumable-stream
   - ⚖️ 支持中国知网的 caj 格式
 
+- obsidian-open-rewrite 
+  - compatible with obsidian plugins, 主流插件已达到百万下载
+  - 可参考已有实现，如
 - obsidian-mobile, notion-mobile
-  - obsidian-open-rewrite compatible with obsidian plugin, 主流插件已达到百万下载
   - obsidian bases database
 
 - git-statistics ui， 可参考 pingcap/ossinsight

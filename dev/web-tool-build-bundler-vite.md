@@ -15,7 +15,48 @@ modified: 2021-01-10T16:24:19.787Z
 - ## 
 
 - ## 
+# discuss-news
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Introducing Void, the Vite-native deployment platform: _20260313
+- https://x.com/youyuxi/status/2032385324572180575
+  - Auto-provisioned infra (db, kv, storage, AI, crons, queues...)
+  - React/Vue/Svelte/Solid + Vite meta-frameworks
+  - SSR, SSG, ISR, islands + Markdown
+  - AI-native tooling
+- will it be oss?
+  - The CLI/framework part will be
+
+- What databases does it have? Does it support sessions?
+  - D1 and any Postgres as long as you have a connection string
+
+- As a framework, is Void platform-agnostic, or can it only be deployed on Void Cloud? I’m also curious whether there are any plans to support other platforms in the future.
+  - There is actually a Node-target build option, but naturally you’d lose all platform-specific features.
+- Node build exists. The platform features are why you'd choose Void - and they don't work elsewhere.
+- platform-agnostic usually means 'works anywhere as long as it is our specific cluster' in these docs. the cloud lock-in is how they get you. lol
+  - managing different build targets and ci paths is exactly why we built permaship. it handles the routine ticket-to-pr work and ci fixes so you don't spend half your week fighting with platform-specific drift.
+
+- Could we leverage void specifically for auto-provisioned infra (DB, KV, storage, AI, crons, queues)? What are the distinct advantages of this approach compared to going direct with Cloudflare?
+  - DX
+
+- what are the benefits of using Void over Nuxt Hub? Have you “just” derived their DX to make it frontend agnostic? Do you plan to make it infra agnostic too at some point?
+  - The main difference is you don't bring your own CF account. Resources are auto provisioned and managed by Void.
+  - This is all-in Cloudflare because that is what makes the DX possible. We want to be very upfront about this. If you worry about platform lock-in then this is not for you (which is totally fine!)
+
+- Another Vercel competitor, built on CloudFlare. 
+
+- Nice we got Cloudflare wrapper fighting AWS wrappers in 2026
+
+- The "all-in Cloudflare, no BYOC" tradeoff is the honest part most platforms bury in the docs. Curious how Void handles cold start latency for the AI-native tooling layer at scale.
 # discuss
+- ## 
+
+- ## 
+
 - ## 
 
 - ## 

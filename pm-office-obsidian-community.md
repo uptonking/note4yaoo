@@ -241,6 +241,20 @@ modified: 2024-01-23T02:52:23.932Z
 - People keep looking for new features in notetaking apps as productivity procrastination, whereas, if they actually do real work they realise obsidian doesn’t need anything more. It does the job. Let’s keep it simple !
 
 - Adding most of those features would not make Obsidian better anyway. Focus.
+# discuss-roamdap
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 一旦进入充满pptx和docx的世界，就发现Obsidian一点都不能用
+- https://x.com/TooooooBug/status/2033116556511842680
+  - 小脑筋又开始思考“笔记软件”，或者是“资料库”软件……
+
+- pptx和docx，本质上是一个压缩包，里面是xml和素材，obsidian换个角度就是一个超大的word文档
 # discuss-news-obsdmd
 - ## 
 

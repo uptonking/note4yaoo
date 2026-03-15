@@ -286,7 +286,24 @@ modified: 2026-01-15T15:44:10.647Z
 
 - ## 
 
-- ## 
+- ## [GPUs are not the final hardware for AI inference : r/costlyinfra _202603](https://www.reddit.com/r/costlyinfra/comments/1rttb9x/gpus_are_not_the_final_hardware_for_ai_inference/)
+  - AI ASICs
+  - inference-specific chips
+  - optical computing
+  - wafer-scale chips
+  - If one of these works, it could collapse inference costs by 10×–100×
+- the 10–100x range isn’t from a single improvement, it’s when multiple shifts stack together.
+  - moving from general GPUs to inference-specific ASICs (like TPU-style designs) can already cut cost/token significantly
+  - quantization (fp16 → int8/int4) can reduce memory and compute requirements 2–8x
+  - optimized runtimes, batching, and KV-cache reuse can add another 2–5x efficiency
+  - newer hardware approaches like wafer-scale chips or optical compute aim to remove a lot of the energy and memory bottlenecks entirely
+  - none of these alone gives 100x, but when hardware + model compression + inference runtimes all improve together, the total cost per token can drop dramatically.
+
+- A 10x efficiency gain is nothing out of the ordinary if you implement something in an ASIC
+
+- If they can spend a trillion on inference they can spend some money on custom chips.
+
+- I don't care about inference. I need training to be faster.
 
 - ## [摩尔线程自研笔记本：首发“长江”处理器 Linux安卓Windows随心切换 - 知乎 _202602](https://zhuanlan.zhihu.com/p/2009342318608675074)
   - MTT AI Book的核心亮点是首发自研的 “长江” SoC。该芯片基于Arm架构打造，拥有12个CPU核心，基础频率达2.65GHz，同时搭配摩尔线程自研MUSA微架构的GPU，具体型号暂未公布。
