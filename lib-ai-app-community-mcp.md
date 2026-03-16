@@ -454,7 +454,32 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
-- ## 
+- ## [OpenLobster – for those frustrated with OpenClaw's architecture : r/openclaw _202603](https://www.reddit.com/r/openclaw/comments/1rum56j/openlobster_for_those_frustrated_with_openclaws/)
+- What OpenClaw got right:
+  - Dead simple to deploy
+  - Great concept (self-hosted AI agent)
+  - Vibrant community (you're all awesome)
+- What broke for us:
+  - MEMORY.md conflicts when running multiple users
+  - Scheduler reading a .md file every 30 minutes felt like a hack
+  - MCP integration wasn't production-ready
+  - 40K+ instances exposed (not your fault, just happened)
+- The fork decision: We reviewed the codebase. These weren't bugs—they were architectural choices that made sense for a v0.1 PoC, but didn't scale.
+  - We could patch it, or rebuild it right. We chose the latter.
+- What's different in OpenLobster:
+  - Neo4j graph database (proper memory system, not .md files)
+  - Real multi-user support (RBAC per user per channel)
+  - 200ms startup, 30MB RAM (vs ~3s, 150MB+)
+  - Encrypted secrets backend
+  - Task scheduler with cron + ISO 8601
+- Same philosophy:
+  - Self-hosted (your data, your infra)
+  - GPL-3.0 (forever open)
+  - Supports Telegram, Discord, Slack, WhatsApp, SMS
+  - Any LLM provider
+- This is the guide for migrating from OpenClaw 
+
+- Claude code with auto mode is the better claw
 
 - ## [How I taught an AI to use a computer _202501](https://e2b.dev/blog/how-i-taught-an-ai-to-use-a-computer)
 - 
@@ -466,7 +491,9 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
-- ## 
+- ## WebMCP 反过来：让网页应用主动告诉 AI「我能做什么」，AI 直接调用。不用模拟键鼠，不用找 DOM，一步到位。
+- https://x.com/runes_leo/status/2033479932601565464
+- DOM 选择器脆弱性太高。WebMCP 这种声明式 API 的方向确实更稳定，对 AI 更友好——直接告诉它"我有哪些能力"，比让它去猜测
 
 - ## PageAgent AI 可以直接操作网页。
 - https://x.com/IndieDevHailey/status/2032428337877205254
@@ -477,16 +504,16 @@ modified: 2025-02-03T10:17:42.052Z
 1. 自动填写网页
 CRM 表单、注册表单、订单系统
 直接让 AI 帮你把网页表单填好。
-2. AI 网站助手（Web Copilot）
+1. AI 网站助手（Web Copilot）
 用户可以直接说：
 - 帮我找订单
 - 生成报表
 - 搜索商品
 AI 自动在后台页面完成操作。
-3. 企业系统自动化
+1. 企业系统自动化
 ERP、CMS、内部管理系统
 AI 可以直接操作后台 UI，把复杂流程自动化。
-4. 无障碍辅助
+1. 无障碍辅助
 语音 → 操作网页
 用户说话就能完成网页操作。
 - 和很多 Agent 不一样的是，它 不靠截图识别界面，而是直接读取 HTML DOM，所以：

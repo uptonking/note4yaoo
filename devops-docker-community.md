@@ -315,7 +315,7 @@ modified: 2024-06-30T11:17:28.971Z
 
 - ## 
 
-- ## 
+- ## [PSA: Docker still bypasses UFW by default. Here is why your "Firewall" might be lying to you. : r/selfhosted _202603](https://www.reddit.com/r/selfhosted/comments/1ruz3v9/psa_docker_still_bypasses_ufw_by_default_here_is/)
 
 - ## [Why are Makefiles not the norm while using docker : r/docker](https://www.reddit.com/r/docker/comments/1atcomp/why_are_makefiles_not_the_norm_while_using_docker/)
   - docker compose 支持windows

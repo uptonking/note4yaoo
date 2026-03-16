@@ -16,6 +16,7 @@ modified: 2025-12-13T18:38:27.763Z
   - 基于electron, 方便打包python/js运行时, 这样可以方便用户直接使用python skills
   - support for macOS, Windows, Linux (Claude Cowork currently only macOS)
   - switch between different models: Gemini, OpenAI, Claude, Qwen, as well as local models like Ollama, LM Studio.
+    - 本地model、多个model的配置UI简单易用, 而很多产品没有实现如openclaw/cowork
     - 支持多 key 轮询
   - All conversations and files saved locally: local sqlite
 

@@ -643,6 +643,13 @@ modified: 2025-02-21T17:17:42.225Z
   - https://docs.openclaw.ai/start/getting-started
   - OpenClaw is a personal AI assistant you run on your own devices. It answers you on the channels you already use (WhatsApp, Telegram, Slack, Discord, Google Chat, Signal, iMessage...)
   - It can speak and listen on macOS/iOS/Android, and can render a live Canvas you control. The Gateway is just the control plane — the product is the assistant.
+- https://github.com/Neirth/OpenLobster /GPL/202603/go/ts
+  - [OpenLobster – for those frustrated with OpenClaw's architecture : r/openclaw _202603](https://www.reddit.com/r/openclaw/comments/1rum56j/openlobster_for_those_frustrated_with_openclaws/)
+  - Neo4j graph database (proper memory system, not .md files)
+  - Real multi-user support (RBAC per user per channel)
+  - Encrypted secrets backend
+  - Task scheduler with cron + ISO 8601
+  - [Migrating from OpenClaw to OpenLobster _202603](https://github.com/Neirth/OpenLobster/discussions/44)
 
 - https://github.com/remorses/kimaki /577Star/MIT/202603/ts
   - https://kimaki.xyz/

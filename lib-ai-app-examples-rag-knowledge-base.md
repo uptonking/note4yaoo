@@ -1675,7 +1675,7 @@ modified: 2025-11-30T17:27:16.720Z
 
 - https://github.com/zstmfhy/zlibrary-to-notebooklm /MIT/202601/python
   - 一键将 Z-Library 书籍自动下载并上传到 Google NotebookLM
-# citation/sourcing
+# citation/sourcing 🔗
 - https://github.com/preprocess-co/rag-document-viewer /MIT/202509/python/js
   - https://preprocess.co/rag-document-viewer
   - https://preprocess-rag-dv-demo.hf.space/
@@ -1708,6 +1708,15 @@ modified: 2025-11-30T17:27:16.720Z
   - WikiChat uses Wikipedia and the following 7-stage pipeline to makes sure its responses are factual. Each numbered stage involves one or more LLM calls.
   - [WikiChat: Stopping the Hallucination of Large Language Model Chatbots by Few-Shot Grounding on Wikipedia _202401](https://www.reddit.com/r/LocalLLaMA/comments/1920hho/wikichat_stopping_the_hallucination_of_large/)
   - [Is Wikipedia RAG possible entirely locally with a gaming machine? : r/ollama _202502](https://www.reddit.com/r/ollama/comments/1ihibp9/is_wikipedia_rag_possible_entirely_locally_with_a/)
+
+- https://github.com/mussussu/Qavrn /MIT/202603/python/ts/Tauri
+  - Your private AI research assistant. Fully local. Fully yours.
+  - local-first RAG (Retrieval-Augmented Generation) engine that indexes your documents and lets you ask questions about them in natural language.
+  - Conversational answers powered by local LLMs via Ollama
+  - Source citations with per-chunk relevance scores for every answer
+  - File watcher — add a folder to auto-reindex whenever files are created, modified, or deleted
+  - Native desktop app — bundle as a standalone executable with Tauri v2 (no terminal required)
+  - [Qavrn, a self-hosted RAG engine for searching your local documents with AI : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rvhpk1/qavrn_a_selfhosted_rag_engine_for_searching_your/)
 
 - https://github.com/AdyTech99/volo /GPL/202501/python/inactive
   - combining AI with Wikipedia knowledge via a RAG pipeline

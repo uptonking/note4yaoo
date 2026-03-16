@@ -67,7 +67,28 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 
-- ## 
+- ## [Claude Code使用之后，有点焦虑 - LINUX DO _202603](https://linux.do/t/topic/1767554)
+  - 深度使用了一段时间 Claude Code，说实话，被震撼到了。
+- 之前自己引以为豪的就是动手能力强——不管什么东西，给我点时间，我总能捣鼓出来。代码写得不算优雅，但能跑、能用、能解决问题，我一直觉得这就是我的核心竞争力。
+- 但是使用之后发现，Claude Code从根源上就直接薄纱了我：
+  - 之前写的屎山代码，它三下五除二就重构好了
+  - 脑子里一个模糊的想法，它两下就给你 vibe 出来一个能跑的版本特别聪明
+  - Plan 模式下拆解任务、设计方案，比我自己想得还清晰
+- 说白了，我之前靠“肯花时间 + 能写代码”建立的优势，现在一个工具就能平替，而且做得比我好。
+- 以前觉得“不搞科研，靠工程能力吃饭”也是一条路，但现在这条路好像也在被 AI 蚕食。
+- 说实话，这种强力的AI绝对是大势所趋，等到毕业的时候，人人都能熟练用 Claude Code 这类工具了，我就在想：那我还剩什么不可替代的东西？
+
+- 还可以修下水道，修空调
+
+- 我只能说，往大数据少的方向去利用ai，ai还得看利用的人水平怎么样的。
+
+- 只能加入，用的更好，现在是高速发展期，谁也不知道他最后还能多强，不过终究是工具，还是得人来用吧。
+
+- 你理解的动手能力强，是古法调试代码的能力。
+- 技术在于革新。
+- 动手能力强，也可以是掌握新技术，把AI玩转。
+- 你觉得人人都能熟练用cc，但我感觉只会有一小部分人能真的熟练。各种工具mcp, skills，工作流和多agents编排，提示词工程。真的就能人人都熟练么？
+- 适应工具，发挥自己动手能力强的优势，深入去研究试一下。
 
 - ## [某互联网大厂产品内测有感（程序员的未来如何） _202603](https://linux.do/t/topic/1701158)
   - 本次测试为云平台的代码开发
@@ -191,6 +212,25 @@ modified: 2026-02-20T17:36:40.796Z
 - ## 
 
 - ## 
+
+- ## 360安全龙虾是基于 OpenClaw 做的一个封装，结果在安装包里，任何人下载后都能直接访问到一个用于域名 *.myclaw.360.cn 的 SSL私钥，这个证书有效期到2027年4月，覆盖了该平台所有子域名。
+- https://x.com/vikingmute/status/2033528578986721457
+- 这锅不能全给360。很多开源封装都会踩坑：测试证书打包进生产。根本是缺 secrets 管理——应该用 Vault 或 K8s Secrets 动态注入，而不是硬编码。不过通配符私钥直接
+
+- 最离谱的不是泄露，是上线前连安装包静态检查都没过。敢做入口级产品，至少把密钥扫描、证书检查、制品审计做成门槛，不然安全助手先成投毒入口。
+
+- 肯定不是AI写的，AI可严谨了
+
+- ## [Unpopular opinion: Why is everyone so hyped over OpenClaw? I cannot find any use for it. : r/openclaw _202603](https://www.reddit.com/r/openclaw/comments/1rteu83/unpopular_opinion_why_is_everyone_so_hyped_over/)
+- Good AI isn't free.
+
+- Came to the realization that there’s just not many things it can do to make you a profit if you don’t already have some sort of business scaled. Even then, it’s not actually making you money, it just makes some of your tasks easier/automated. EVEN THEN, what it can actually do in terms of tasks is pretty limited by the fact that it can’t really interact with most of the internet.
+
+- ## [QClaw 内侧码发下来了 - LINUX DO _202603](https://linux.do/t/topic/1760089)
+- WorkBuddy不能自定义模型，用的是云端，qclaw是在本地跑定制版openclaw
+- WorkBuddy 是腾讯自研的桌面 AI 智能体，兼容 OpenClaw 生态，更简单易用。
+
+- 微信如果不支持md 他也没什么用呀，好歹qq机器人支持md
 
 - ## [为何今天国内openclaw大爆发？各大头部企业，甚至地方政府都在推 _202603](https://linux.do/t/topic/1715483)
 - 龙岗和无锡在发激励，腾讯和字节在争入口，其他的厂在争报表

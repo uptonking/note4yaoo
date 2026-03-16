@@ -12,7 +12,27 @@ modified: 2026-01-17T22:41:25.867Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🐛 [OpenCode concerns (not truely local) : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rv690j/opencode_concerns_not_truely_local/)
+  - when you run opencode serve and use the web UI --> opencode will proxy all requests internally to https://app.opencode.ai!
+  - There is currently no option to change this behavior, no startup flag, nothing. You do not have the option to serve the web app locally, using `opencode web` just automatically opens the browser with the proxied web app, not a true locally served UI.
+  - There are a lot of open PRs and issues regarding this problem
+
+- They've shown other questionable practices as well; refusing to merge PRs that show tokens-per-second metrics and with OpenCode Zen (different product from OpenCode but one of their monetization avenues), providing no transparency about their providers, quantization, or rate limits.
+  - There's a lot of VC money behind OpenCode, so don't forget about that.
+  - And regarding yourt post, locking down their default plan/build prompts and requiring a rebuild of the app has always struck me as a weird design choice.
+
+- I understand it only concerns the webui?
+  - yes, as far as I can tell TUI is unaffected
+- How is it with the OpenCode Desktop app?
+
+- The other thing is I believe without building from source there is no way to customize/override the system prompts right?
+  - Last time i checked they had a really long and obnoxious system prompt for qwen which made it keep reasoning circularly.
+
+- Take a look at nanocoder. It’s a project for a truly open source claude code. https://github.com/Nano-Collective/nanocoder
+
+- Also please be aware that the very first thing that the TUI does is to upload your initial prompt to their servers at https://opencode.ai/zen/v1/responses in order to generate a title. It does this regardless of whether you are using a local model or not, unless you explicitly disable the titling feature or specify a different small_model. You should assume that they are doing anything and everything they want with this data. I wouldn't be surprised if later they decide that for a better user experience they will regenerate the title once there is more prompt available.
+
+- I had the same concerns and found RolandCode. It's a fork of OpenCode with telemetry and other anti-privacy features removed. https://github.com/standardnguyen/rolandcode
 
 - ## OpenCode's codebase is very high quality. Which is unusual for an app built with AI. This makes me curious how @thdxr uses AI to code. _202603
 - https://x.com/kianmckenn/status/2030087262239592690

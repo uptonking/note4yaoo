@@ -131,7 +131,36 @@ modified: 2024-05-22T11:24:07.511Z
 
 - ## 
 
-- ## 
+- ## 📁 @nodejs has always been about I/O. Streams, buffers, sockets, files. But there's a gap that has bugged me for years: you can't virtualize the filesystem.
+- https://x.com/matteocollina/status/2033590124919787819
+  - [Why Node.js Needs a Virtual File System _202603](https://blog.platformatic.dev/why-nodejs-needs-a-virtual-file-system)
+  - You can't import a module that only exists in memory. You can't bundle assets into a Single Executable without patching half the standard library.
+  - That changes now
+  - `node:vfs` , a Virtual File System landing in Node.js core (PR #61478, ~14, 000 lines across 66 files)
+  - `@platformatic/vfs` , a userland package you can use today on Node.js 22+
+- Here's the problem. Every time you need to:
+  - Bundle an app into a Single Executable
+  - Run tests without touching disk
+  - Sandbox a tenant's file access
+  - Load AI-generated code at runtime
+- You need the same primitive: a virtual filesystem that hooks into `node:fs` AND the module resolver. Nobody had built it.
+- The ecosystem built approximations. memfs, unionfs, mock-fs. They all share the same limitation: they patch fs but not the module resolver. Code that calls `import('./config.json')` bypasses them entirely.
+- Two modes:
+  - Mount mode: VFS is active only under a specific path prefix. Clean isolation.
+  - Overlay mode: VFS is checked first for all paths, falls through to the real filesystem. Override a few config files and leave everything else untouched. Perfect for testing.
+- Why does this need to be in core? Because userland will always be a compromise:
+  - 960+ lines of duplicated module resolution logic
+  - Patching private APIs like Module._resolveFilename
+  - Global fs patching that breaks if code captures references early
+  - Native modules can't load from memory
+  - Module cache cleanup is impossible from outside
+- Let me be honest about how this happened. A 16, 000-line PR would normally take months. This one happened over Christmas 2025 because I built it with Claude Code. I pointed the AI at the tedious parts: every fs method variant, test coverage, and docs. I focused on architecture, API design, and line-by-line review.
+- When @cramforce (Malte Ubl, CTO of Vercel) saw the PR, the Vercel team independently extracted the same API into userland as node-vfs-polyfill.
+  - When two teams independently build the same thing, the design is solid.
+- `@platformatic/vfs` ships extra providers not in core:
+  - SqliteProvider: persistent VFS backed by node:sqlite. Files survive restarts.
+  - RealFSProvider: sandboxed real filesystem access with built-in path traversal prevention. No more fragile path.resolve() checks.
+- `npm install @platformatic/vfs` . When `node:vfs` ships in core, migrating is a one-line import change.
 
 - ## deepagents-cli 0.0.16 is out: virtual filesystem allows you to expose fs ops to the agent like a filesystem even if they’re backed by a database or object store like Postgres or S3
 - https://x.com/Vtrivedy10/status/2018841161637806521

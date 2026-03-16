@@ -563,6 +563,37 @@ modified: 2022-08-21T10:02:27.788Z
   - lazy loading
   - keyboard navigation for cells and rows
 
+- https://github.com/1771-Technologies/lytenyte /423Star/apache2+pro/202603/ts/NoDeps
+  - https://www.1771technologies.com/
+  - https://www.1771technologies.com/demo
+  - LyteNyte Grid is a ~40 KB, zero-dependency React data grid engineered for high performance and enterprise-scale datasets. 
+  - It can handle 10, 000 updates/sec and render millions of rows. No wrappers. No heavy abstractions.
+  - Choose between headless components or a pre-styled grid out of the box, and ship faster with a declarative API that is purpose-built for React.
+  - Single & Multi Column Sort
+  - Simple Data & Custom Filters
+  - Group By Column
+  - Group Row Selection
+  - Built-In & Custom Aggregation Functions
+  - Custom Edit Providers & Update Function
+  - Detail Rows (Master Detail)
+  - CSV & Excel Export
+  - Pinning & Spanning
+  - Paginated Rows
+  - Row Virtualization
+  - 💰 paid
+    - Quick Search Filters
+    - Set & Tree Set Filters
+    - Single & Range Cell Selection
+    - Pivot Mode
+    - Tree Views
+    - Copy, Cut, Paste
+    - Server Data Loading
+  - [We spent 2 years building the most powerful data table on the market. 4 painful lessons we learned along the way. : r/opensource _202603](https://www.reddit.com/r/opensource/comments/1rtdm93/we_spent_2_years_building_the_most_powerful_data/)
+    - Make your code public if your product is a developer library or tool
+    - Be patient for promotion
+    - Confidence externally, honesty internally
+    - Trust the process
+
 - https://github.com/jupyterlab/lumino /ts/PhosphorJS/jupyter
   - https://lumino.readthedocs.io/en/latest/examples.html
   - a set of JavaScript packages, written in TypeScript, that provide a rich toolkit of widgets, layouts, events, and data structures. 

@@ -27,8 +27,9 @@ modified: 2026-01-14T18:57:01.673Z
   - ui操作体验友好
 
 - lmstudio-cons
-  - 不提供api来支持remote control
-  - 对mlx格式的 embedding 模型额支持有问题, 但gguf格式模型支持好
+  - ~~不提供api来支持 remote control~~ 2603已支持
+  - 对mlx格式的 embedding 模型额支持有问题, gguf格式模型支持好
+  - lmstudio官方格式支持在ui上开关thinking, 其他的量化版模型缺少快捷方式
 # draft
 - 🤔 一种思路: tool-call时使用擅长tool-call的模型，分析时使用公益站的聊天优质但无法tool-call的模型
   - 支持类似 roocode 的 model profile 切换

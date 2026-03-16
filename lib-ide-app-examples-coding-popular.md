@@ -797,6 +797,13 @@ modified: 2025-12-11T18:10:23.710Z
   - Every run spins up an isolated VS Code workspace either in the cloud or in a local Docker container with the git diff view, terminal, and dev server preview ready so parallel agent work stays verifiable, fast, and ready to ship.
   - cmux supports macOS. Linux and Windows support coming soon.
   - 未使用tauri
+
+- https://github.com/morapelker/hive /MIT/202603/ts
+  - https://morapelker.github.io/hive/
+  - Project/Worktree manager, deeply integrated with AI agents to increase productivity and multitask efficiently
+  - An open-source AI agent orchestrator for parallel coding across projects.
+  - Run Claude Code, OpenCode, and Codex sessions in parallel. One window. Isolated branches. Zero tab chaos.
+  - [Built a fully open source desktop app wrapping OpenCode sdk aimed at maximum productivity : r/opencodeCLI _202603](https://www.reddit.com/r/opencodeCLI/comments/1runznq/built_a_fully_open_source_desktop_app_wrapping/)
 # ui-aggregator/manager
 - https://github.com/iOfficeAI/AionUi /18.4kStar/apache2/202603/ts
   - https://www.aionui.com/

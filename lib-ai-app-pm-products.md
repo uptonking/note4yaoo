@@ -795,6 +795,8 @@ modified: 2025-03-22T16:10:24.856Z
     - 本站点为codex中转站，不包含其他模型
     - sub2api的openai api仅支持 openai-responses API协议。不要选老版本的哦
     - [【GGBOOM公益站】 全面支持gpt-5.3-codex ](https://linux.do/t/topic/1581803)
+  - [CM-API-公益站 _202603](https://api.chengmo.cc.cd/console/personal)
+    - gpt免费号池 
   - [NPC API](https://npcodex.kiroxubei.tech/console/personal)
     - [[NPC-API]codex公益站开业 ](https://linux.do/t/topic/1564054)
   - [520 API](https://520.wcgio.com/console/personal)
