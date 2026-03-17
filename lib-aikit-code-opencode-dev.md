@@ -13,7 +13,7 @@ modified: 2026-01-17T22:40:27.013Z
   - ?
 
 - cons
-  - ?
+  - opencode serve默认会代理到线上url, 而不使用本地
 
 - features
   - tui支持渲染markdown table

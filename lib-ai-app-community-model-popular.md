@@ -654,6 +654,13 @@ https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/LEARNED_QUANTS.md
 
 - ## 
 
+- ## [只能说Qwen3.5 35b太强大了，未经审查版-更炸裂！！！ - LINUX DO _202603](https://linux.do/t/topic/1773045)
+  - {% set enable_thinking = false %}
+
+- 其实 glm 国外平台 api 也能达到这个效果
+
+
+
 - ## [Missing a Qwen3.5 model between the 9B and the 27B? : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rp1t9n/missing_a_qwen35_model_between_the_9b_and_the_27b/)
 - 35B-A3B is roughly the new "14B" and runs on almost any PC with >=32GB RAM. But I believe 35B-A3B easily lose to 27B for anything except world knowledge, unlike Qwen3-30B-A3B-2507 vs Qwen3-32B.
 

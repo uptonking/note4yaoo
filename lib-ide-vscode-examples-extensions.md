@@ -532,6 +532,9 @@ modified: 2024-08-24T16:17:26.715Z
 - https://github.com/mjbvz/vscode-markdown-emoji /MIT/202412/ts
   - VS Code extension that adds support for :emoji: syntax to the built-in markdown preview
 
+- https://github.com/sumnow/markdown-formatter /202306/ts
+  - https://marketplace.visualstudio.com/items?itemName=mervin.markdown-formatter
+  - This is a tool to improve the writing efficiency of markdown, not only provides a relatively uniform format for the markdown user, but also provides some snippets.
 ## ext-git
 
 - https://github.com/lostintangent/gitdoc /MIT/202412/ts

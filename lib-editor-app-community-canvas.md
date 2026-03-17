@@ -9,6 +9,8 @@ modified: 2023-03-13T08:05:09.453Z
 
 # guide
 
+- tips
+  - 基于dom的组件比canvas组件对agent更友好
 # [Google Docs will now use canvas based rendering: this may impact some Chrome extensions_202105](https://workspaceupdates.googleblog.com/2021/05/Google-Docs-Canvas-Based-Rendering-Update.html)
 - We’re updating the way Google Docs renders documents. 
   - we’ll be migrating the underlying technical implementation of Docs from the current `HTML-based` rendering approach to a `canvas-based` approach 

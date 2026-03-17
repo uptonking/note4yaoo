@@ -11,6 +11,7 @@ modified: 2021-05-19T08:32:28.120Z
 
 - tips
   - 还可以复用主流业务组件的canvas渲染逻辑，如 echarts-zrender, Fabric, pixi, dropflow, LeaferJS
+  - 基于dom的组件比canvas组件对agent更友好
 
 - ref
   - https://www.npmtrends.com/primrose-vs-carota-vs-@creately/carota

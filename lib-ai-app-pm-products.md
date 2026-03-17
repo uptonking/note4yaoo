@@ -619,6 +619,10 @@ modified: 2025-03-22T16:10:24.856Z
   - 速率限制
   - 工具集成支持: cline, roo, librechat
   - 另一种思路， 新开的商业站一般会限免最新的模型和热门模型，也可以用来测试
+- 不要在公益站浪费过多时间, 工作状态需要稳定和高效, 折腾公益站经常打断核心任务
+  - 可尝试直接购买付费中转站， 注意跑路
+  - 可采用类似 opus+sonnet+haiku 的 顶级+主流+轻量 组合架构
+  - 跳蚤市场经常有临期或拼车的惊喜
 
 - resources
   - https://github.com/cheahjs/free-llm-api-resources
@@ -660,7 +664,7 @@ modified: 2025-03-22T16:10:24.856Z
     - [最新福利羊毛话题](https://linux.do/c/welfare/36)
     - [All-API-Hub：开源AI中转站集中管理和自己的New API增强管理，基于 one-api-hub 大幅重构增强 _202511](https://linux.do/t/topic/1001042)
     - [关于部分公益站支持CC的测试，欢迎更多反馈 ](https://linux.do/t/topic/1162888)
-  - 📌 [duckcoding 公益站](https://free.duckcoding.com/console/personal), 签到
+  - 📌 [duckcoding 公益站](https://free.duckcoding.ai/console/personal), 签到
     - [DuckCoding](https://www.duckcoding.ai/console/personal)
     - [DuckCoding Az-CC，单独开启公益站，只允许L站注册 ](https://linux.do/t/topic/1308120)
     - [status](https://status.duckcoding.com/status/duckcoding)
@@ -761,7 +765,8 @@ modified: 2025-03-22T16:10:24.856Z
     - [LinuxDo 社区福利活动](https://campaign.zhx47.xyz/)
     - [OAI-FREE 签到发送订阅 ](https://linux.do/t/topic/1632349)
     - 都是临时渠道，不开签到了，直接每天送 100 刀余额
-  - [YAO](http://154.37.220.66:3000/console/personal)
+  - [YAO API _202603](https://yybbwan.xyz/console/personal)
+    - [YAO](http://154.37.220.66:3000/console/personal) , legacy
     - [[Yao公益站]codex注册200刀，可能随时倒闭  ](https://linux.do/t/topic/1683788)
     - claude-sonnet-4-5-20250929
   - [Rosmontis](https://ai.rosmontis.de/console/personal)
@@ -776,19 +781,19 @@ modified: 2025-03-22T16:10:24.856Z
     - [【Infinite API】全新公益站上线试运营 ](https://linux.do/t/topic/1622685)
     - 50 RPM， 25 个同时进行的请求
     - arrow-preview, QuiverAI API flagship SVG gen
-  - [Einzieg API](https://api.einzieg.site/console/personal), 签到
-    - 仅提供codex模型
-    - [【Einzieg公益站】再次启动 ](https://linux.do/t/topic/1569418)
   - [api-test](https://openai.api-test.us.ci/console/personal)
     - [开个小公益站测试一下 ](https://linux.do/t/topic/1414593)
     - [LDC Virtual Goods Shop](https://shop.api-test.us.ci/)
     - 包括 deepseek，硅基流动全模型，阿里云千问全模型，glm，gemini，codex
     - 有claude, 无opus
     - 默认 RPM30，1 级可注册，不允许批量测活
+  - [蒸蚌公益站 _202603](https://laoxi.ethan010203.online/console/personal), 签到50
+    - gpt-5.2
   - [Codex - New API](https://codex.makeup/console/personal)
     - [又一个codex公益站，人手一个蹬  ](https://linux.do/t/topic/1645651)
     - gpt-5.4, gpt-5.3-codex
     - [上线claude-sonnet-4.6模型（不稳定版），爱来自cursor  _202603](https://linux.do/t/topic/1739712)
+  - [鱼汤公益站 _202603](https://ai.zhansi.top/console/personal)
   - [GGBOOM公益站](https://ai.qaq.al/dashboard)
     - [签到控制台](https://sign.qaq.al/app)
     - [【GGBOOM公益站】签到站上线啦 ](https://linux.do/t/topic/1517772)
@@ -797,16 +802,26 @@ modified: 2025-03-22T16:10:24.856Z
     - [【GGBOOM公益站】 全面支持gpt-5.3-codex ](https://linux.do/t/topic/1581803)
   - [CM-API-公益站 _202603](https://api.chengmo.cc.cd/console/personal)
     - gpt免费号池 
+  - [Einzieg API](https://api.einzieg.site/console/personal), 签到
+    - 仅提供codex模型
+    - [【Einzieg公益站】再次启动 ](https://linux.do/t/topic/1569418)
+  - [zenscaleai](https://lc.zenscaleai.com/console/personal)
+    - 5.4
+  - [LogosAPI _202603](https://api.777114.xyz/console/personal)
+    - 5.4
+  - [不可明说 API _202603](https://1.cnmz.de/console/personal)
+  - [API分享站](https://new-api-bxhm.onrender.com/console/personal)
+    - [【API分享站】公益站主帖 ](https://linux.do/t/topic/1355814)
+    - 反代 kiro
   - [NPC API](https://npcodex.kiroxubei.tech/console/personal)
     - [[NPC-API]codex公益站开业 ](https://linux.do/t/topic/1564054)
+  - [SakuraCode _202603](https://codex.sakurapy.de/dashboard)
+    - 5.4
   - [520 API](https://520.wcgio.com/console/personal)
     - gpt-5.3-codex 
   - [爱你公益站](https://x.ainiaini.xyz/console/personal)
     - [[爱你公益站]开站 ](https://linux.do/t/topic/1638562)
     - 暂时只有 gpt 系列，
-  - [API分享站](https://new-api-bxhm.onrender.com/console/personal)
-    - [【API分享站】公益站主帖 ](https://linux.do/t/topic/1355814)
-    - 反代 kiro
   - [小辣椒 公益站～(～￣▽￣)～](https://yyds.215.im/console/topup)
     - cc
   - [真好记公益站](https://newapi.zhenhaoji.qzz.io/console/personal)

@@ -447,6 +447,17 @@ modified: 2025-11-05T19:04:50.350Z
 - UTCP seems to try and remove all of the QoL MCP has, and is just an imaginary "ok but imagine how cool it would be", but not practical.
 
 - The communication overhead from tool calls will literally be the least relevant part of an LLM pipeline when it comes to performance. I do not see a point in using UTCP because none of the key players in the ecosystem (ie LLM front ends or APIs) are investing in it. It provides no additional value and instead just becomes an unnecessary wrapper or abstraction layer because some non-key players want to standardize an API that needs to be allowed to move incredibly fast.
+# discuss-search-online 🔍
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [搜索mcp tavily、exa、searxng-mul哪个效果好 - LINUX DO _202603](https://linux.do/t/topic/1774105)
+- exa配合firecrawl  
+
+
 # discuss
 - ## 
 

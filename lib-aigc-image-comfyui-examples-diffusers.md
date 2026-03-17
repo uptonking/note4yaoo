@@ -1507,6 +1507,11 @@ modified: 2025-08-23T11:43:35.904Z
 - more-flows
   - https://github.com/dci05049/Comfyui-workflows
   - https://github.com/cubiq/ComfyUI_Workflows
+# cli-comfy
+- https://github.com/XXXxx7258/comfyui-cli /MIT/202603/python
+  - Command-line interface for ComfyUI
+  - [comfyui-cli - LINUX DO _202603](https://linux.do/t/topic/1767976)
+  - 面向 ComfyUI 的命令行工具，适合让AI代理使用
 # sd-api/server
 - https://github.com/comfyanonymous/ComfyUI/blob/master/script_examples/basic_api_example.py
   - [How to Use ComfyUI API with Python: A Complete Guide _202503](https://medium.com/@next.trail.tech/how-to-use-comfyui-api-with-python-a-complete-guide-f786da157d37)

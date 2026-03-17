@@ -80,5 +80,14 @@
     }
   ],
   "editor.trimAutoWhitespace": false,
-  "files.trimTrailingWhitespace": false
+  "files.trimTrailingWhitespace": false,
+  "vsix.sources": {
+    "vsc": {
+      "type": "marketplace",
+      "serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
+    },
+  },
+  "vsix.extensions": [
+    "vsc:mervin.markdown-formatter"
+  ]
 }

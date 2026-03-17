@@ -130,6 +130,26 @@ jobs:
   - @edloidas wrote a script for Github Action to create a release when a new tag appears.
 
 - I use Changesets for this. They have GHA to release packages to npm registry (and you can release packages for different languages too), update changelogs and create a release
+# discuss-domain-name
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [xyz域名转移到哪里续费便宜啊？ - LINUX DO _202603](https://linux.do/t/topic/1773602)
+  - 宝塔0.01买了一年.xyz的域名（是英文不是数字），宝塔续费要91一年，有没有转移过去以后续费会更便宜的厂家啊？
+  - 看了一圈都不太便宜，续费比.com还贵了，老实当年抛域名算了
+
+
+
+
+- spaceship 四块几毛钱（不过是六个数字.xyz）
+
+
+- https://tld-list.com 这里可以对比价格
+
+
 # discuss
 - ## 
 

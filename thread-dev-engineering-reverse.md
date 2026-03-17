@@ -65,6 +65,14 @@ modified: 2026-03-01T17:12:41.271Z
 - Claude code will reverse engineer Claude code with very little convincing
 
 - this is sick. the fact that ANE has 38 TFLOPS of INT8 but Apple basically pretends it doesn't exist for training is so frustrating. I've got an M2 Pro and always wondered if there was a way to tap into the NPU beyond CoreML inference.
+# discuss-toolchain
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
 # discuss-tips
 - ## 
 
@@ -73,6 +81,31 @@ modified: 2026-03-01T17:12:41.271Z
 - ## 
 
 - ## 
+# discuss-examples 🌰
+- ## 
+
+- ## 
+
+- ## 
+
+- ## AI逆向分析阿里推出的“悟空”App技术架构
+- https://x.com/nash_su/status/2033807671107981737
+  - 打开 ClaudeCode，让他自己分析，然后就给我输出了这么篇详细的技术架构分析报告
+  - 让我惊讶的是，竟然反推出来源码结构.....这玩意可以Rust开发的，编译好的二进制文件，直接给我把源代码架构反推出来了
+  - 以后应用没有门槛了，赶紧建立自己的业务壁垒吧
+
+
+- app本来就是最好逆向的啊，所以才各种加固。试试看加固后能不能逆向
+- 有没试过加固壳的？比如360加固、腾讯乐固这种，AI还能逆出结构吗？
+
+- 是的我觉得 Ai 最好用的场景就是逆向和在本地重写网络请求了。那种掌控的感觉在手动编码时代是具备不了的。
+
+
+- Claude Code 做这种分析是真的强。之前拿它分析一个陌生项目的架构，模块依赖和数据流理得比我自己看快太多了。好奇 — 它分析 binary symbols 和动态库依赖时准确率怎么样？逆向的场景下会不会乱猜？
+
+- APP逆向有啥好说的，你把服务器端代码给他逆向出来了到还值得说一说
+
+
 # discuss
 - ## 
 

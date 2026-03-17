@@ -306,6 +306,20 @@ modified: 2026-01-14T18:58:32.523Z
 - ## 
 
 - ## 
+# discuss-tips
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## can lm studio use  existing huggingface models from local cache like `~/.cache/huggingface`, i want to reuse existing local models
+- The easy, reliable ways are (A) use LM Studio’s `lms import` (it can create symbolic links so you don’t duplicate files) or (B) create symlinks yourself
+
+
+- To reuse your .gguf models from the Hugging Face cache without copying them and wasting disk space, you should use Symbolic Links (Symlinks).
 # discuss
 - ## 
 

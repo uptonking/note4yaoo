@@ -27,6 +27,9 @@ modified: 2021-05-23T18:45:59.139Z
   - [UpSet: Visualizing Intersecting Sets](https://jku-vds-lab.at/tools/upset/)
   - [upset live demo](http://vcg.github.io/upset/)
 # viz-ai 👾
+- https://github.com/Anarkh-Lee/universal-db-mcp /
+  - [MCP 数据库万能连接器：用自然语言查询和分析数据 - LINUX DO _202603](https://linux.do/t/topic/1770924)
+
 - https://github.com/jupyterlab/jupyter-ai /4kStar/BSD/202511/python
   - provides a user-friendly and powerful way to explore generative AI models in notebooks and improve your productivity in JupyterLab
   - A native chat UI in JupyterLab that enables you to work with generative AI as a conversational assistant.

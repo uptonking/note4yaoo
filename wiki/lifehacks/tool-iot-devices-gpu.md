@@ -221,7 +221,16 @@ modified: 2026-01-15T15:33:18.008Z
 
 - ## 
 
-- ## 
+- ## [Is Buying AMD GPUs for LLMs a Fool’s Errand? : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1rvs8fx/is_buying_amd_gpus_for_llms_a_fools_errand/)
+  - I want to run a moderately quantized 70B LLM above 25 tok/sec using a system with 3200Mbs DDR4 RAM. I believe that would mean a ~40GB Q4 model. 
+  - The options I see within my budget are either a 32GB AMD R9700 with GPU offloading or two 20GB AMD 7900XTs. 
+  - I’m concerned neither configuration could give me the speeds I want, especially once the context runs up & I’d just be wasting my money. Nvidia GPUs are out of budget. 
+
+- Dual 7900 XTX's here running llama/Mistral/OpenHermes 2.5 with a Threadripper and 256 gB of DDR4. 
+  - Machine learning with AMD is absolutely workable, but the parallel tensorism is important along with proper installation of rocM support (which can be trickier than you might expect).
+  - I would triple check for documented support of your intended GPU's before pulling the trigger. Would also recommend running your stack on Linux, as windows is a fairly new arrival to the rocM compatibility nebula.
+
+- inference fine, fine tuning not. if you want to fine tune models with unsloth or fine tune text to image models, nvidia will make life easier.
 
 - ## [Free Strix Halo performance! : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1r0b7p8/free_strix_halo_performance/)
   - TL; DR not all quants are born the same, some quants have bf16 tensors, which doesn’t work well on AMD as it seems, so find quants without bf16 tensors and you get anywhere between 50%-100% performance on both tgs and pp

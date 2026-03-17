@@ -82,6 +82,60 @@ modified: 2025-11-01T10:54:26.044Z
     - wraps `mlx-omni-server` with production-ready features: smart prompt caching (99%+ cache hit rates), on-demand model loading, Claude Code integration, and a web UI.
     - MLX Studio auto-downloads models on first use, or you can pre-download
 
+- https://github.com/unslothai/unsloth /54.3kStar/apache2+AGPL/202603/python/ts
+  - https://unsloth.ai/docs
+  - Unified web UI for training and running open models like Qwen, DeepSeek, and Gemma locally.
+  - Unsloth Studio lets you run and train models for text, audio, embedding, vision and more. 
+  - Available on Windows, Linux and macOS.
+  - Unsloth provides several key features for both inference and training
+  - The `llama.cpp` library that lets users run and save models with Unsloth
+  - Search + download + run models including GGUF, LoRA adapters, safetensors
+  - Export models: Save or export models to GGUF, 16-bit safetensors and other formats.
+  - Tool calling: Support for self-healing tool calling and web search
+  - Code execution: lets LLMs run code, data and verify results so answers are more accurate.
+    - Unsloth Studio allows LLMs to run code and programs in a sandbox so it can calculate, analyze data, test code, generate files, or verify an answer with actual computation.
+  - Auto-tune inference parameters and customize chat templates.
+  - Upload images, audio, PDFs, code, DOCX and more file types to chat with.
+  - Supports full fine-tuning, pretraining, 4-bit, 16-bit and, FP8 training.
+  - Observability: Monitor training live, track loss and GPU usage and customize graphs.
+  - Multi-GPU training is supported, with major improvements coming soon.
+  - 🐛
+    - mac is chat-only, When chat_only=true, model selector shows only Hub picker (no local/fine-tuned picker)
+    - “Downloaded GGUF” list is from HF cache repos (/api/models/cached-gguf)
+  - 🛝
+    - In the current script, every unsloth studio setup on local machine does a full reset of the Studio env
+    - rm -rf "$VENV_DIR" and rm -rf "$VENV_T5_DIR" at studio/setup.sh
+    - it also deletes/rebuilds ~/.unsloth/llama.cpp each run at studio/setup.sh
+    - rerunning setup is expensive. Practical workflow: run unsloth studio setup only when first installing, after major updates, or when deps break
+    - Local .gguf (or directory containing .gguf) is auto-detected in studio/backend/utils/ models/model_config.py
+  - [[Feature] MLX Support  _202602](https://github.com/unslothai/unsloth/issues/4061)
+    - We're working on it as we speak. Will be released within 2 months I'd say
+  - [Introducing Unsloth Studio  _202603](https://unsloth.ai/docs/new/studio)
+    - open-source, no-code web UI for training, running and exporting open models in one unified local interface.
+    - Powered by llama.cpp + Hugging Face, we support multi-GPU inference and most models.
+    - Unsloth Studio runs 100% offline and locally.
+    - Studio supports a range of supported transformers compatible model families, including text, multimodal models, text-to-speech, audio, embeddings, and BERT-style models.
+    - https://x.com/UnslothAI/status/2033926272481718523
+    - This is the right direction. The next bottleneck for most teams isn’t model speed anymore — it’s dataset + eval quality. We saw local fine-tuning cut iteration cost by ~60% in one workflow, but bad eval sets still gave misleading “wins.” Are you planning built-in eval templates/versioning so people can benchmark model changes more reliably?
+  - ⚖️ Is Unsloth now licensed under AGPL-3.0?
+    - No. The main Unsloth package is still licensed under Apache 2.0. Only certain optional components, such as the Unsloth Studio UI, are under the AGPL-3.0 open-source license.
+    - Unsloth now has dual-licensing where some parts of the codebase are licensed Apache 2.0, while others are licensed AGPL-3.0. This structure helps support ongoing Unsloth development
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 - https://github.com/llama-farm/llamafarm /760Star/apache2/202601/python/go/ts/electron
   - https://llamafarm.dev/
   - https://docs.llamafarm.dev/docs/intro

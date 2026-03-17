@@ -385,10 +385,8 @@ Today, Turso is in beta with early customers working toward production deploymen
 
 - Overlay VFS would be huge for Agent loop, point in time recovery etc.
 
-- 
-- 
-- 
-- 
+- 🆚 differences between node-vfs-sqlite-provider and turso-agentfs ?
+  - agentfs does copy on write
 
 - ## 🛢️📁 What if a codebase was actually stored in Postgres and agents directly modified files by reading/writing to the DB? 
 - https://x.com/samhogan/status/2030476849911050687

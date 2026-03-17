@@ -1562,7 +1562,19 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
 
 - ## 
 
-- ## 
+- ## [Krasis LLM Runtime: 8.9x prefill / 4.7x decode vs llama.cpp — Qwen3.5-122B on a single 5090, minimal RAM : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rwal26/krasis_llm_runtime_89x_prefill_47x_decode_vs/)
+  - Since Krasis' initial release I've been working on optimising decode speeds.
+  - This has led to dropping the dual-format system and moving to run both prefill and decode entirely on GPU with very different optimisation strategies.
+  - This means less requirement on the CPU and system RAM memory speed and much less system RAM usage overall (Krasis now needs enough just for the quantised model plus some overhead vs the prior 2.5x model)
+  - The results are that Krasis can now run Qwen3-Coder-Next on a single 16GB 5080 (1801 tok/sec prefill, 26.8 tok/sec decode) faster than Llama.cpp on a 32GB 5090 (layer offloading to GPU).
+  - On equal footing with a single 5090 (in both cases limited by PCIE 4.0) Krasis is multiples faster on both prefill and decode (purple bar vs grey bar).
+  - The server is currently OpenAI compatible and I also plan to expand on support for IDEs and tooling like Opencode and Aider.
+
+- NVidia-only at this point, hopefully support of AMD+Intel comes soon.
+  - This won't benefit Strix Halo at all. This benefits eGPU + CPU setups. 
+  - Strix Halo uses unified memory and the entire model will run on the GPU. There is no need to move data from RAM to VRAM.
+
+
 
 - ## [Qwen 3.5 small just dropped : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rirjg1/qwen_35_small_just_dropped/)
 - What’s the difference between base and no base?

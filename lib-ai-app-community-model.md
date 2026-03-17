@@ -1327,7 +1327,12 @@ e) 最终评论者(Final Critic)
 
 - ## 
 
-- ## 
+- ## [关于大模型对于中文字数的理解  - LINUX DO _202603](https://linux.do/t/topic/1773860)
+- 反正玩酒馆的时候发现，AI并不能掌控自己到底输出多少字，更有效的prompt是要求大概的tokens数或每一段落大概多少多少字，一共字数在哪个范围。大模型只能估算，没办法实际去计数。
+
+
+- 是的.只能给区间. 大模型好像默认只能发散, 聚拢必须要通过推理.
+
 
 - ## [Small LLMs seem to have a hard time following conversations : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1rn7362/small_llms_seem_to_have_a_hard_time_following/)
 - 4B quants might be the bigger culprit(问题的起因; 罪犯) than the model size here. Especially if the KV cache is quantized as well.

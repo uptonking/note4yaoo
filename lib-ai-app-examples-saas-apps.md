@@ -138,6 +138,12 @@ modified: 2025-02-21T17:17:42.225Z
   - Code Generation
     - React + Tailwind CSS
     - HTML + CSS
+  - [【开源自荐】OpenPencil：首个开源AI原生矢量设计工具，支持Agent Team，可导入Figma，一键导出React/Vue代码 - LINUX DO _202603](https://linux.do/t/topic/1773258)
+    - 自然语言生成设计稿，支持 Claude Code/Codex/OpenCode 等主流CLI
+    - 支持 MCP 实时操作画布，可局部修改元素
+    - 支持 Agent Team，多Agent并发完成设计
+    - 兼容 .pen，支持 .fig 导入，还原度相当高
+    - 一键导出React/Vue等8种原生代码，还原度接近100%
 
 - https://github.com/TesslateAI/Studio /apache2/202510/python/ts
   - Open Source Locally Hosted Lovable with Full Stack Support

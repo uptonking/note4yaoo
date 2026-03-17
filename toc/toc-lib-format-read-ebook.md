@@ -196,10 +196,11 @@ modified: 2023-09-19T07:26:04.103Z
   - Kobo Sync with your Kobo eReader
 
 - https://github.com/booklore-app/booklore /8.4kStar/GPL/202601/java/ts
-  - https://github.com/booklore-app/booklore
   - https://demo.booklore.dev/
   - A self-hosted, multi-user digital library with smart shelves, auto metadata, Kobo & KOReader sync, BookDrop imports, OPDS support, and a built-in reader for EPUB, PDF, and comics.
   - ux体验很好
+  - [Booklore is gone. : r/selfhosted _202603](https://www.reddit.com/r/selfhosted/comments/1rvmpnv/booklore_is_gone/)
+    - In the dev's post they mentioned or implied mental health issues a few times.
 
 - https://github.com/shanleiguang/vRain /MIT/202511/perl
   - 中文古籍刻本風格直排電子書製作工具 Chinese Ancient eBooks Generator

@@ -132,8 +132,31 @@ modified: 2023-01-02T10:30:19.459Z
   - 👉🏻 Users of desktop apps don't expect them to stop working after install! On top of that, updating desktop apps is nowhere near as simple as changing the source of your website.
 - It's just extra work as well keeping up with a moving target. We've shipped Electron apps that don't require any maintenance and work for new customers years later.
 
+# discuss-deploy/update
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## React Native 或者是 Electron based 软件可以使用 Cloudflare R2 + D1 做 OTA 自动更新。
+- https://x.com/vikingmute/status/2033801559700869182
+  - R2 负责存储静态文件，D1 负责存储版本元数据，还可以搭配 Cloudflare Workers 做更新检查的 API 端点。几乎免费而且速度还不错。
+- 二进制 和版本元数据 直接丢 github 就行。。免费。。
+
+- GitHub Release 就好…
+- 直接使用expo好了
+
 # discuss-bundler/compiler
 - ## 
+
+- ## 
+
+- ## 
+
+
 
 - ## 🌰🍎 aionui打包 - [三天三夜，三更半夜 踩坑实录 _202602](https://linux.do/t/topic/1573468)
   - 本文记录了我在开源项目 AionUi（一个统一 AI Agent 图形界面）中遭遇的一次 Electron 打包白屏事故。从发现问题到最终定位根因，历时三天三夜。

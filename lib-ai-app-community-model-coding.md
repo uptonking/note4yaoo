@@ -872,6 +872,26 @@ def slugify(text):
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [5.4 vs 5.3 Codex : r/codex _202603](https://www.reddit.com/r/codex/comments/1rrbi4f/54_vs_53_codex/)
+- I use on high always (extra high overthinks too much IMO) and I’m having a good time with 5.4. I just noticed that it’s way faster than 5.3 Codex.
+
+- same here. i find 5.4 messing up so much ive switched back to 5.3 codex
+
+- as soon as I switched to 5.4 from 5.3, I started seeing mistakes for every prompt. What 5.3 can do in a single prompt, 5.4 needs a few.
+
+- curious if the context window improvements actually translate to better code output or just longer conversations.
+  - From my experience, the larger context doesn’t mean better responses, but potentially more overthinking and hallucination.
+
+- Both are great. Your setup is important
+
+- 5.4 high works really well with skills, it automatically pics which is needed, with 5.3 I had to invoke skill manually ($brainstorm)
+
 - ## [Jan-Code-4B: a small code-tuned model of Jan-v3 : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rim0b3/jancode4b_a_small_codetuned_model_of_janv3/)
   - This is a small experiment aimed at improving day-to-day coding assistance, including code generation, edits/refactors, basic debugging, and writing tests, while staying lightweight enough to run locally. 
   - Intended to be used as a drop-in replacement for the Haiku model in Claude Code.
