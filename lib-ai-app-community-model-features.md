@@ -28,7 +28,14 @@ modified: 2025-11-05T19:04:50.350Z
 
 - ## 
 
-- ## 
+- ## [Anthropic published a pattern that dropped MCP agent token usage from 150, 000 to 2, 000. Works with any model that can generate code. : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rxfadz/anthropic_published_a_pattern_that_dropped_mcp/)
+  - Instead of loading every tool definition into context and piping all data through the model, agents write code that calls MCP servers as APIs inside a sandbox.
+- The savings come from three places:
+  - Tool definitions load on demand (browse a filesystem instead of dumping 450 definitions into context)
+  - Data gets filtered locally (fetch 10K rows, filter to 5 in the sandbox, return only those 5 to the model)
+  - Loops and error handling happen in code, not as LLM round trips
+- The 98.7% reduction was from one specific implementation, so your mileage will vary. But even half that savings changes the economics of running agents against real tools.
+- Worth noting: this is model-agnostic. MCP is an open protocol and the pattern works with anything that writes decent code. Cloudflare independently reached the same conclusion.
 
 - ## [I have 2, 004 AI skills installed. Here's how I reduced my startup context from ~80K tokens to ~255 tokens (99.7% reduction) : r/opencodeCLI _202602](https://www.reddit.com/r/opencodeCLI/comments/1rfwlzk/i_have_2004_ai_skills_installed_heres_how_i/)
   - The problem: AI agents use a 3-level progressive disclosure system to load skills. Level 1 loads the name + description of every skill into the system prompt at startup. With 2, 004 skills, that's ~80, 000 tokens consumed before I even type a prompt - roughly 40% of a 200K context window.
@@ -456,7 +463,6 @@ modified: 2025-11-05T19:04:50.350Z
 
 - ## [搜索mcp tavily、exa、searxng-mul哪个效果好 - LINUX DO _202603](https://linux.do/t/topic/1774105)
 - exa配合firecrawl  
-
 
 # discuss
 - ## 

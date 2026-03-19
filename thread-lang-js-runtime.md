@@ -56,7 +56,12 @@ modified: 2024-03-30T05:55:54.349Z
 
 - ## 
 
-- ## 
+- ## Introducing Edge.js -  run ANY Node.js app unmodified, safely anywhere… without Docker, containers, or security headaches _202603
+- https://x.com/wasmerio/status/2033966082944577693
+  - Fully compatible with Node.js
+  - Sandboxed by design
+  - Pluggable with any JS engine
+  - Apps are sandboxed using WebAssembly instead of Docker. Perfect for Agentic and serverless workloads. Built using @OpenAI Codex agents.
 
 - ## Announcing Hermes-node: Hermes can now run as a standalone CLI with Node.js-compatible APIs - no C++ embedding required. _202602
 - https://x.com/tmikov/status/2024609186936660170

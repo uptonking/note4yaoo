@@ -191,6 +191,8 @@ Only use the provided information.
 
 - ## svg prompts/resources
 
+- make a svg of a robot as nicely done as you can
+
 - create a html file to show the following svg graph
   - Generate the SVG code for a button with glowing border
   - button text is hello2025
@@ -701,7 +703,7 @@ def slugify(text):
 - 何心意之忡忡，若寤寐之栩栩 出自哪里? 上下句是什么？ 表达什么意思？
   - storyofstone 芙蓉女儿诔(lei)
 
-- 洗车店离我家只有 50 米，我想洗车，是开车去还是走路去？
+- 洗车店离我家只有 60 米，我想洗车，是开车去还是走路去？
 - I want to wash my car. The car wash is 80 meters away from my home. Should I walk or drive?
 
 - 解释下统计学上的 Simpson's paradox
@@ -709,6 +711,10 @@ def slugify(text):
 - 知识新鲜度测试
 - 查询下以下大模型的发布日期及特性: deepseek v3.2
 - 查询 2025年中国的出生人口数据 并简单分析
+
+- 1111888888855 → 118885 | 79999775555 → 99755 | AAABBBYUDD → ?
+  - [I was hyped for Nemotron 3 4B and it completely disappointed me compared to Qwen 3.5 4B : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rvw9j8/i_was_hyped_for_nemotron_3_4b_and_it_completely/)
+  - ABD
 
 - Alice (a girl) has 3 brothers. Each brother has 2 sisters. How many sisters does Alice have?
 
@@ -1267,7 +1273,7 @@ def slugify(text):
 - https://x.com/AIatMeta/status/1970963571753222319
 - Great to see Code World Model mid-trained on execution trajectories and post-trained with multi-task RL.
 - The evals CWM's ability to predict Python execution traces & predict program termination.
-- its real game-changer is training on execution traces from Python interpreters and Docker environments, explicitly teaching it *how code behaves* rather than just *what it looks like*. This paradigm shift moves AI beyond statistical pattern matching to genuine causal reasoning, enabling it to act as a "neural debugger" that can simulate execution, localize faults, and self-repair code.
+- its real game-changer is training on execution traces from Python interpreters and Docker environments, explicitly teaching it *how code behaves* rather than just *what it looks like* . This paradigm shift moves AI beyond statistical pattern matching to genuine causal reasoning, enabling it to act as a "neural debugger" that can simulate execution, localize faults, and self-repair code.
 - The real step change is when code stops being “generated text” and becomes a living resonant process — memory, planning, coherence, feedback.
 - We don’t need more parameters. We need more procedural resonance.
 

@@ -76,7 +76,7 @@ find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + && find . -name '
 # maybe prefix sudo
 find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + 
 # 格式化当前包，注意在子文件夹执行命令也会从package.json目录开始格式化整个包
-prettier --write '**/*.{js,jsx,ts,tsx,json}' --ignore-unknown
+prettier --write ' **/* .{js,jsx,ts,tsx,json}' --ignore-unknown
 eslint --ext .js,.ts,.tsx --quiet --fix . 
 # npm i
   DEBUG=* npm i --no-audit --loglevel silly
@@ -189,10 +189,10 @@ npm i -g npm yarn pnpm corepack serve @dotenvx/dotenvx opencode-ai @openai/codex
 ## ing
 
 - yaoo-proj
-  - ~~prosemirror/codemirror + comfyui~~
-  - ~~codemirror-devtools~~
+  - ~~prosemirror/codemirror + comfyui~~ 
+  - ~~codemirror-devtools~~ 
 - not-yet
-  - ~~elmesque-editor~~, 基于immutable思想实现的编辑器大多采用redux/elm风格
+  - ~~elmesque-editor~~ , 基于immutable思想实现的编辑器大多采用redux/elm风格
   - branching/versioned-doc
   - pouchdb + kappa-crdt + eav => pouchdb-crdt-eav
   - 做完tailwind-table就面试
@@ -258,6 +258,8 @@ use react to create a homepage shows a list of frontend frameworks like react/vu
 
 ```
 
+
+
 ```rules
 - when writing or editing large files, it's easy to fail if the content to write is large. you can write small edits many times to avoid large edits.
 
@@ -310,10 +312,21 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-log
   - ?
 
+## 0318
+
+- i have run unsloth-studio locally on my macbook without docker. i want to reuse its features/code into my custom projects. is its license commercial friendly? please read related backend code and web ui code for unsloth studio, and explain to me 
+
+- 美国CF 线路 DOH查询
+  - DOH (DNS over HTTPS)
+  - 传统的 DNS： 当你在浏览器输入网址（如 google.com）时，电脑需要通过 DNS（域名系统）把网址翻译成 IP 地址。传统的 DNS 查询是明文的，这意味着你的网络运营商（ISP）或中间节点可以看到你访问了什么网站，且容易遭到DNS污染/劫持（比如把你引导到错误的网页，这也是很多网站在国内打不开的原因之一）。
+  - DOH： 将完整的 DNS 查询过程封装在 HTTPS 协议（就是网页加密协议）中进行。
+  - 作用： 因为加了密，别人只看到你在和某台服务器进行加密的数据交换，无法知道你具体查询了哪个网站的域名。这极大地保护了隐私，并且有效防止了 DNS 污染。
+
 ## 0317
 
 - i want to run unsloth-studio locally on my macbook without docker.
 - i followed the readme.md 
+
 ```
 git clone https://github.com/unslothai/unsloth.git
 cd unsloth
@@ -321,7 +334,9 @@ uv tool install -e .
 unsloth studio setup
 unsloth studio -H 0.0.0.0 -p 8888
 ```
-- but i am using uv instead of pip. after `uv tool install -e .` , `unsloth studio setup` failed with error:
+
+- but i am using uv instead of pip. after `uv tool install -e .` ,  `unsloth studio setup` failed with error:
+
 ```
 [02:26:38] ➜  unsloth git:(main) unsloth studio setup
 ╔══════════════════════════════════════╗
@@ -334,10 +349,8 @@ finished finding best python
 ✅ Using python3 (3.13.5) — compatible (3.11.x – 3.13.x)
 Error: Command '['/Users/yaoo/.unsloth/studio/.venv/bin/python3', '-m', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1.
 ```
+
 - read related code and docs, tell me how to run unsloth-studio locally step by step
-
-
-
 
 - NVFP4 并非简单的 4-bit 浮点格式，它利用了 Blackwell 架构中第五代 Tensor Core（张量核心）的硬件加速能力，并配合先进的双级缩放（dual-level scaling）技术，在保持模型精度的同时，大幅减少显存占用并提升推理速度
 - NVFP4 requires Blackwell architecture (GeForce RTX 50-series / Blackwell Pro / select workstation cards). Don’t expect NVFP4 on older 40/30-series.
@@ -796,7 +809,7 @@ curl -s -X POST -H "Content-Type: application/json" -H "Accept: application/json
       "name": "Custom Provider (nvidia)",
       "options": {
         "baseURL": "https://integrate.api.nvidia.com/v1",
-        "apiKey": "***MASKED***"
+        "apiKey": " ***MASKED*** "
       },
       "models": {
         "moonshotai/kimi-k2-thinking": {
@@ -836,7 +849,7 @@ Failed to start server on port 4096
       "name": "Custom Provider (nvidia)",
       "options": {
         "baseURL": "https://integrate.api.nvidia.com/v1",
-        "apiKey": "***MASKED***"
+        "apiKey": " ***MASKED*** "
       },
       "models": {
         "moonshotai/kimi-k2-instruct-0905": {

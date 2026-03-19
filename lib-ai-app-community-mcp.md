@@ -155,7 +155,7 @@ modified: 2025-02-03T10:17:42.052Z
   - All client → server messages go through the `/message` (or similar) endpoint
   - All client → server requests could be upgraded by the server to be SSE, and used to send notifications/requests
   - Client provides session ID in headers; server can pay attention to this if needed
-  - Client can initiate an SSE stream with an empty GET to `/message`
+  - Client can initiate an SSE stream with an empty GET to `/message` 
 
 - Remote MCP currently works over HTTP+SSE transport which:
   - Does not support resumability
@@ -1099,7 +1099,24 @@ Don’t want/can’t have external dependencies?
 
 - ## 
 
-- ## 
+- ## [I genuinely don’t understand the value of MCPs : r/mcp _202603](https://www.reddit.com/r/mcp/comments/1rw7z6l/i_genuinely_dont_understand_the_value_of_mcps/)
+  - When MCP first came out I was excited. I read the docs immediately, built a quick test server, and even made a simple weather MCP that returned the temperature in New York. At the time it felt like the future — agents connecting to tools through a standardized interface.
+  - Wait… I could have just called the API directly.
+  - A simple curl request or a short script would have done the exact same thing with far less setup. Even a plain .md file explaining which endpoints to call and when would have worked.
+  - As I started installing more MCP servers — GitHub, file tools, etc. — the situation felt worse.
+  - Why not just tell the agent to use the GitHub CLI? It’s documented, reliable, and already optimized.
+  - Skills are basically structured .md instructions with tooling around them. When I saw that, it almost felt like Anthropic realized the same thing: sometimes plain instructions are enough.
+  - But Anthropic still insists that MCP is better for external data access, while Skills are meant for local, specialized tasks.
+  - Why is MCP inherently better for calling APIs? From my perspective, whether it’s an MCP server, a Skill using WebFetch/Playwright, or just instructions to call an API — the model is still executing code through a tool.
+
+- Think of an MCP like a pre-defined set of instructions for HOW an AI calls APIs or other tools. 
+  - It's a structured way for AI to see what's available and easily see what params are needed to call an API and it guarantees that it's executed the same way every time.
+  - MCP also allows you to control what's returned to the agent so you can be more context aware.
+  - MCP also provides authentication layers for AI to be able to access and read/write from databases. Otherwise, you'll have to expose your database credentials to AI to tell them to read/write from a database. MCP is that middle layer that provides auth and a structured, guaranteed way to access databases without letting AI hallucinate what fields they should fill out.
+
+- There’s a few reasons to use MCP over skills. Security is probably the biggest one
+
+- there are good reasons to not always allow these powerful and potentially dangerous capabilities and might better only configure tools to access exactly what you need. 
 
 - ## Top 7 MCPs worth adding to your workflow _202602
 - https://x.com/101babich/status/2023766057211572293

@@ -14,6 +14,15 @@ modified: 2025-12-11T18:10:23.710Z
   - cli的实现经常与模型厂商自己的sdk紧密结合，但只要兼容openai的协议就可通用，目前不通用的是gemini-cli, 可考虑开发patch
   - cli类型的工具逐渐开始支持ui(web/cowork), 如codex/claude
   - ui类型的工具逐渐开始支持cli, 如cline-cli
+
+- context/memory layering
+  - user/system prompt
+  - chat hisotry
+  - local sources
+    - codebase
+    - files: pdf/docs
+  - external sources
+    - integartions: slack, google-docs
 # popular
 - https://github.com/oraios/serena /19.6kStar/MIT/202602/python
   - https://oraios.github.io/serena
@@ -200,6 +209,10 @@ modified: 2025-12-11T18:10:23.710Z
   - v1.5.0_202602: Show archived `Codex` sessions in project tree, opencode也支持
   - [feat: add capture mode for screenshot-ready message hiding _202601](https://github.com/jhlee0409/claude-code-history-viewer/pull/61)
   - [Show HN: Claude Code History Viewer for macOS | Hacker News _202507](https://news.ycombinator.com/item?id=44459376)
+
+- https://github.com/aaaAlexanderaaa/cchistory /MIT/202603/ts
+  - The all in one platform that you can quick view and search your turns in coding agent history.
+  - [[开源分享] 7天, 8亿token, 更好地分析 coding agent会话记录  _202603](https://linux.do/t/topic/1770925)
 
 - https://github.com/wesm/agentsview /444Star/MIT/202603/go/ts/svelte
   - https://agentsview.io/
@@ -862,7 +875,7 @@ modified: 2025-12-11T18:10:23.710Z
 
 - https://github.com/milisp/codexia /478Star/MIT > AGPL/202603/ts/tauri
   - https://github.com/codexia-team/codexia /renamed
-  - ~~A powerful GUI and Toolkit for Codex CLI~~
+  - ~~A powerful GUI and Toolkit for Codex CLI~~ 
   - A powerfull GUI/IDE and Toolkit for Codex CLI + Claude Code. FileTree + prompt notepad + git worktree and more
   - fork chat, file-tree integration, notepad, git diff, build-in pdf csv/xlsx viewer, and more.
   - [We built Codexia - A free and open-source powerful GUI app and Toolkit for Codex CLI : r/ChatGPTCoding _202511](https://www.reddit.com/r/ChatGPTCoding/comments/1op0yr6/we_built_codexia_a_free_and_opensource_powerful/)
@@ -948,7 +961,7 @@ modified: 2025-12-11T18:10:23.710Z
 
 - https://github.com/aannoo/hcom /MIT/202602/python/rust
   - Connect Claude Code, Gemini CLI, and Codex so agents can message, watch, and spawn each other across terminals
-# cli-coding-agent
+# cli-agent-coding/apps
 - https://github.com/1rgs/nanocode /1.7kStar/MIT/202601/python/单文件
   - Minimal Claude Code alternative. Single Python file, zero dependencies, ~250 lines.
   - Full agentic loop with tool use
@@ -1152,6 +1165,14 @@ modified: 2025-12-11T18:10:23.710Z
     - The new `opencode-plugin-han` package bridges the gap. It's an OpenCode plugin that reads Han's plugin definitions and executes them natively inside OpenCode's runtime.
     - The bridge does something fundamentally different from Han's Claude Code integration. In Claude Code, hooks are shell commands that run as separate processes. Output goes to stdout, which Claude sees as conversation messages. It works, but it's fire-and-forget.
     - In OpenCode, the bridge runs hooks as awaited promises with structured result collection.
+
+- https://github.com/basnijholt/agent-cli /MIT/202603/python
+  - https://agent-cli.nijho.lt/
+  - a collection of local-first, AI-powered command-line agents that run entirely on your machine. 
+  - It provides a suite of powerful tools for voice and text interaction, designed for privacy, offline capability, and seamless integration with system-wide hotkeys and workflows
+  - I got tired of typing long prompts to LLMs. Speaking is faster, so I built this tool to transcribe my voice directly to the clipboard with a hotkey.
+  - Voice transcription to clipboard with system-wide hotkeys (Cmd+Shift+R on macOS)
+  - All agents in this tool are designed to run 100% locally. Your data, whether it's from your clipboard, microphone, or files, is never sent to any cloud API. 
 # cli-utils
 - https://github.com/rivet-dev/sandbox-agent /536Star/apache2/202602/rust/ts
   - https://sandboxagent.dev/
@@ -1241,7 +1262,7 @@ modified: 2025-12-11T18:10:23.710Z
 - https://github.com/Ryandonofrio3/osgrep /1kStar/apache2/202601/ts/inactive
   - Natural-language search that works like grep. Fast, local, and works with coding agents.
   - Semantic: Finds concepts ("auth logic"), not just strings.
-  - Local & Private: 100% local embeddings via `onnxruntime-node` ~~transformers.js~~.
+  - Local & Private: 100% local embeddings via `onnxruntime-node` ~~transformers.js~~ .
     - ts与llm的集成比较麻烦
   - Adaptive: Runs fast on desktops, throttles down on laptops to prevent overheating.
   - Smart Chunking: Uses tree-sitter to split code by function/class boundaries
@@ -1436,7 +1457,8 @@ modified: 2025-12-11T18:10:23.710Z
   - 🔗 Citations - Reference past observations with IDs
   - v5.4.0+: Skill-based search replaces MCP tools, saving ~2, 250 tokens per session.
 
-- https://github.com/agentic-mcp-tools/memora /183Star/MIT/202602/python/ts
+- https://github.com/agentic-box/memora /183Star/MIT/202602/python/ts
+  - https://github.com/agentic-mcp-tools/memora  /renamed
   - A lightweight MCP server for semantic memory storage, knowledge graphs, and cross-session context.
   - 使用感觉很轻量, 安装cli和skills就可以save/query, 会自动启动mcp server和端口
   - 偏向查询chat-history, 而不是文件
@@ -1569,9 +1591,12 @@ modified: 2025-12-11T18:10:23.710Z
 - https://github.com/SpillwaveSolutions/agent-brain /MIT/202602/python
   - https://github.com/SpillwaveSolutions/agent-brain/blob/main/agent-brain-plugin/skills/using-agent-brain/SKILL.md
   - A RAG-based (Retrieval-Augmented Generation) document indexing and semantic search system for AI agents and applications.
+  - Agent Brain enables intelligent querying of documentation and source code using natural language.
   - Agent Brain provides AI-first document and code search through a Claude Code plugin with skills, commands, and agents.
+    - 安装过程与cc强绑定
   - Smart hybrid search: All modes combined (RRF)
     - 支持 code/docs: agent-brain index /path/to/docs --include-code
+    - Code Search: AST-Aware Chunking: Tree-sitter parsing preserves code structure
   - Vector Store: ChromaDB (HNSW, cosine similarity)
   - Graph Store: SimplePropertyGraphStore / Kuzu
   - GraphRAG (Knowledge Graph): Entity and relationship extraction

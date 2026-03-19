@@ -30,6 +30,7 @@ modified: 2026-01-14T18:57:01.673Z
   - ~~不提供api来支持 remote control~~ 2603已支持
   - 对mlx格式的 embedding 模型额支持有问题, gguf格式模型支持好
   - lmstudio官方格式支持在ui上开关thinking, 其他的量化版模型缺少快捷方式
+  - 不支持直接使用本地已有的模型，如 `~/.cache/huggingface` 或 ollama 的模型, 而msty/transformerlab支持导入
 # draft
 - 🤔 一种思路: tool-call时使用擅长tool-call的模型，分析时使用公益站的聊天优质但无法tool-call的模型
   - 支持类似 roocode 的 model profile 切换

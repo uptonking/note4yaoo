@@ -172,7 +172,7 @@ modified: 2021-05-06T09:58:23.803Z
   - Each icon is on a 21x21 grid.
   - Use the icons how you want, for free, and without any attribution.
 # brand-icons
-- https://github.com/pheralb/svgl /MIT/202312/ts/svelte
+- https://github.com/pheralb/svgl /5.6kStar/MIT/202603/ts/svelte
   - https://svgl.vercel.app/
   - https://svgl.app/
   - most popular SaaS logos in SVG format, with lightning-fast search

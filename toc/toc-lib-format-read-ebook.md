@@ -201,6 +201,10 @@ modified: 2023-09-19T07:26:04.103Z
   - ux体验很好
   - [Booklore is gone. : r/selfhosted _202603](https://www.reddit.com/r/selfhosted/comments/1rvmpnv/booklore_is_gone/)
     - In the dev's post they mentioned or implied mental health issues a few times.
+  - [What happened to Booklore? : r/selfhosted _202603](https://www.reddit.com/r/selfhosted/comments/1rvmnru/what_happened_to_booklore/)
+    - the original dev (u/WorldTraveller101, also known as ACX and ACX10 in discord and github) was leaving the project. the message said that the project would continue and implied that it would be given to the open-source community, and that a new server (called “booklore2.0”) was being created to continue the project. the message included an invite link to the server.
+    - In short the app seemed to be mostly, if not completely "vibe coded". This means the "developer" asked an AI agent to build him an application and it spits out the code. This is fine if you can understand what its producing and correct it. Unfortunately it didn't seem this "developer" had any clue what the code the AI agent was spitting out actually did or if it was even correct.
+    - Unfortunately due to this complete naivety from the "developer" new release of the software where full of bugs.
 
 - https://github.com/shanleiguang/vRain /MIT/202511/perl
   - 中文古籍刻本風格直排電子書製作工具 Chinese Ancient eBooks Generator

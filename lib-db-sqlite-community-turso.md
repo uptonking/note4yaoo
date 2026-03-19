@@ -350,6 +350,24 @@ Today, Turso is in beta with early customers working toward production deploymen
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 🚀 Introducing TigerFS - a filesystem backed by PostgreSQL, and a filesystem interface to PostgreSQL. ——202603
+- https://x.com/michaelfreedman/status/2034291102346326416
+  - Idea is simple: Agents don't need fancy APIs or SDKs, they love the file system. ls, cat, find, grep. Pipelined UNIX tools. So let’s make files transactional and concurrent by backing them with a real database.
+  - here are two ways to use it:
+  - File-first: Write markdown, organize into directories. Writes are atomic, everything is auto-versioned. Any tool that works with files -- Claude Code, Cursor, grep, emacs --  just works. Multi-agent task coordination is just mv'ing files between todo/doing/done directories.
+  - Data-first: Mount any Postgres database and explore it with Unix tools. For large databases, chain filters into paths that push down to SQL: .by/customer_id/123/.order/created_at/.last/10/.export/json. Bulk import/export, no SQL needed, and ships with Claude Code skills.
+  - Every file is a real PostgreSQL row. Multiple agents and humans read and write concurrently with full ACID guarantees. The filesystem /is/ the API.
+  - Mounts via FUSE on Linux and NFS on macOS, no extra dependencies. Point it at an existing Postgres database, or spin up a free one on Tiger Cloud or Ghost.
+  - I built this mostly for agent workflows, but curious what else people would use it for. It's early but the core is solid. Feedback welcome.
+
+- why is the code not on GitHub or have a source archive? Seems like it's an opaque binary. 
+
+- So this is the AgentFS' PostgreSQL version. 
+
 - ## 📁 @nodejs has always been about I/O. Streams, buffers, sockets, files. But there's a gap that has bugged me for years: you can't virtualize the filesystem.
 - https://x.com/matteocollina/status/2033590124919787819
   - [Why Node.js Needs a Virtual File System _202603](https://blog.platformatic.dev/why-nodejs-needs-a-virtual-file-system)
@@ -941,7 +959,7 @@ Today, Turso is in beta with early customers working toward production deploymen
 - https://x.com/iavins/status/1900220354985169332
   - We also decided to write our own asynchronous runtime implementation (instead of using `Tokio` ) for reasons. Now this bad boy is all bare bones, we don't use Rust's `async` yet.
   - For disk or network we use io_uring (of course). Since it's a database, that's pretty much all it does: talk with io. And that requires a state machine. You submit a request, wait for some time to poll or for callback to trigger. That means, a function doesn't always have a result ready; sometimes it says, my friend wait for sometime, I don't have result ready yet: `Ok(None)` . When it's done you get: `Ok(Some(T))` .
-  - The entire codebase is pretty much `Result<Option<T>>`
+  - The entire codebase is pretty much `Result<Option<T>>` 
 
 - Fallible Iterators also use Result`<Option<T>>. Ok(Some(T))`: when there's valid next item. Ok(None) when iteration's complete.
 

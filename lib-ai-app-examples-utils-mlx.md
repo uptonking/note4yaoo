@@ -100,6 +100,7 @@ modified: 2025-11-01T10:54:26.044Z
   - Observability: Monitor training live, track loss and GPU usage and customize graphs.
   - Multi-GPU training is supported, with major improvements coming soon.
   - 🐛
+    - studio的backend和ui都是AGPL
     - mac is chat-only, When chat_only=true, model selector shows only Hub picker (no local/fine-tuned picker)
     - “Downloaded GGUF” list is from HF cache repos (/api/models/cached-gguf)
   - 🛝
@@ -120,21 +121,7 @@ modified: 2025-11-01T10:54:26.044Z
   - ⚖️ Is Unsloth now licensed under AGPL-3.0?
     - No. The main Unsloth package is still licensed under Apache 2.0. Only certain optional components, such as the Unsloth Studio UI, are under the AGPL-3.0 open-source license.
     - Unsloth now has dual-licensing where some parts of the codebase are licensed Apache 2.0, while others are licensed AGPL-3.0. This structure helps support ongoing Unsloth development
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  - [Unsloth Studio vs Llama.cpp vs LlamaFactory : r/unsloth _202603](https://www.reddit.com/r/unsloth/comments/1rx8tzi/unsloth_studio_vs_llamacpp_vs_llamafactory/)
 
 - https://github.com/llama-farm/llamafarm /760Star/apache2/202601/python/go/ts/electron
   - https://llamafarm.dev/

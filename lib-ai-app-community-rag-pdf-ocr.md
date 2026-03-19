@@ -12,7 +12,28 @@ modified: 2026-01-25T17:23:01.510Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## 🆚 [Traditional ML-based OCR (like Textract) vs LLM/VLM based OCR : r/OCR_Tech _202603](https://www.reddit.com/r/OCR_Tech/comments/1rx1y1y/traditional_mlbased_ocr_like_textract_vs_llmvlm/)
+  - [Amazon Textract vs LLM/VLM based OCR | Nanonets OCR blog _202603](https://nanonets.com/ocr/blog/amazon-textract-alternatives)
+- Wins for Textract:
+  - decent accuracy in extracting simple forms and key-value pairs.
+  - excellent accuracy for simple tables 
+  - excellent in extracting data from fixed templates, where rule-based post-processing is easy and effective. Also proves to be cost-effective on such documents.
+  - better latency - unless your LLM/VLM provider offers a custom high-throughput setup, textract still has a slight edge in processing speeds.
+  - easy to integrate if you already use AWS. Data never leaves your private VPC.
+- Wins for LLM/VLM based OCRs:
+  - Better accuracy because of agentic OCR feedback that uses context to resolve difficult OCR tasks. eg. If an LLM sees "1O0" in a pricing column, it still knows to output "100".
+  - Reading order - LLMs/VLMs preserve visual hierarchy and return the correct reading order directly in Markdown. This is important for outputs downstream tasks like RAG, agents, JSON extraction.
+  - Layout extraction is far better. Another non-negotiable for RAG, agents, JSON extraction, other downstream tasks
+  - Handles challenging and complex tables which have been failing on non-LLM OCR for years
+  - Can encode images, charts, visualizations as useful, actionable outputs.
+  - Cheaper and easier-to-use than Textract when you are dealing with a variety of different doc layouts.
+  - Less post-processing. You can get structured data from documents directly in your own required schema, where the outputs are precise, type-safe, and thus ready to use in downstream tasks.
+
+- ### [LLM-based OCR is significantly outperforming traditional ML-based OCR, especially for downstream LLM tasks : r/LLMDevs _202603](https://www.reddit.com/r/LLMDevs/comments/1rx6qnk/llmbased_ocr_is_significantly_outperforming/)
+- I've been using LLM vision for screen OCR in a desktop automation context and the accuracy difference is night and day compared to traditional OCR. the contextual understanding is the killer feature - when my agent reads a dialog box it doesn't just see text, it understands that "Cancel" and "OK" are buttons and "Are you sure?" is a prompt. traditional OCR gives you a flat string with no semantic structure.
+  - for live screen content, the combo of accessibility APIs + LLM vision is stronger than either alone. the accessibility tree gives you structure and element types for free, vision fills in the visual context that the tree misses.
+
+- The biggest advantage is that an LLM agent can use tool calls to validate data and do things like sum up line items to match an invoice total, so you can get a kind of self-consistency check when extracting data without a whole bunch of trial-and-error harness code.
 
 - ## [Architecture breakdown: Processing 2GB+ of docs for RAG without OOM errors (Python + Generators) : r/Rag _202602](https://www.reddit.com/r/Rag/comments/1qv2ks2/architecture_breakdown_processing_2gb_of_docs_for/)
   - Most RAG tutorials teach you to load a PDF into a list. That works for 5MB, but it crashes when you have 2GB of manuals or logs.
@@ -73,6 +94,22 @@ modified: 2026-01-25T17:23:01.510Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## [Best way to extract data from PDF invoices to Excel? : r/excel _202603](https://www.reddit.com/r/excel/comments/1rwpxn8/best_way_to_extract_data_from_pdf_invoices_to/)
+- In my experience, the best option is to ask the vendor to provide the invoices in Excel format or to provide a summary file with all of the invoice data.
+  - Vendor relationship managers are eager to add value; this is a small way that they can do that, with major payoff for their clients.
+
+- Have you tried importing and merging the data with PowerQuery? That’s the direction I’d go; they have a decent native PDF source option.
+
+- I started running them through Copilot, asking for tabular output. I’ve had pretty good success with this method.
+
+- Power Automate. Create a flow to extract whatever data you need from the files and add them to a table in an Excel file
+
+- Try power query geet data from pdf. If that doesn’t do it, Nitro Pro is a pdf tool and it will convert the PDF to excel. Then you use power query to clean the data.
+
+- You can try using Acrobat to combine all the pdf invoices into one file if they are essentially formatted the same. Then Power Query on the whole combined file.
 
 - ## 🆚 [RAG知识库还有搞头吗？ _202602](https://linux.do/t/topic/1576669)
 - 由于业务需求，团队需处理海量的电子文档。单个表单涉及的 PDF 数量通常在 1000 至 5000 份不等。自 2025 年 12 月启动知识库项目以来，我们在几个月的实战中遇到了以下瓶颈：
@@ -167,7 +204,7 @@ OCR 适配：第三方 OCR 引擎接入尚处于实验阶段，底层仍高度�
   - Processed prompts: 100%|██████████| 1/1 [00:00<00:00, 3.29it/s, est. speed input: 3000.81 toks/s, output: 220.20 toks/s]
 - Here is a more technical analysis. The result being the model response. Going to update the OP with this data.
   * **Content and Metadata:** The `result` field within each object in the `results` array contains the core document information as a string. This string is a mix of:
-  * **Markdown-like Syntax:** It uses Markdown conventions for formatting, such as `#` for headings and `**` for bold text.
+  * **Markdown-like Syntax:** It uses Markdown conventions for formatting, such as `#` for headings and `** ` for bold text.
   * **HTML Tags:** It directly embeds HTML `<table>` tags to structure tabular data.
   * **Custom Tags:** The format uses a set of unique tags to provide additional metadata:
   * `<|ref|>` and `<|/ref|>` : These tags appear to act as "reference" or "type" markers. They enclose a word that categorizes the succeeding content, such as `title` , `text` , or `table` .

@@ -378,6 +378,32 @@ export ANTHROPIC_SMALL_FAST_MODEL="claude-sonnet-4-5-20250929"
   - On top of that you frequently want to fork or split conversation into separate threads copy paste text here and there. TUIs are bottle neck for those cases. Frequently it is about efficiency (what was such a big selling point of editors like vim) - i don't want to type a command if i can click a button or use hotkey (don't even start about hotkeys on TUIs). 
   - Agent orchestrators are in its infancy and will evolve as coding-as-job becomes higher level abstraction than writing actual code.
 
+# discuss-cc-sandbox
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+# discuss-cc-web
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 在 Claude Code Web的虚拟机里，我们发现了什么
+- https://x.com/AprilNEA/status/2034216942924624054
+  - Claude Code Web 跑在 Firecracker MicroVM 里——这是 AWS 开源的轻量虚拟机，Lambda 和 Fargate 底层用的就是它。证据是 ACPI 表里写死的 OEM ID FIRECK `。整个虚拟机极其精简：4核 CPU、16GB 内存、252GB 磁盘，没有 systemd，没有 sshd，没有 cron，PID 1 是一个自研的 ` /process_api ` 二进制，同时充当 init 进程和 WebSocket API 网关。
+  - 虚拟机里有一个 27MB 的 Go 二进制 `/usr/local/bin/environment-runner` ，没有做 strip，保留了完整的调试信息和符号表。源码路径指向 github[.]com/anthropics/anthropic/api-go/environment-manager/——这是 Anthropic 内部的私有仓库。
+  - 通过 go tool objdump `、` strings `、` objdump `等工具，我们从中提取出了完整的包结构、所有函数签名、嵌入资源和关键字符串。
+  - 1. Antspace —— Anthropic 自建的 PaaS 平台
+  - 2. Baku —— Claude 网页版应用构建器的内部代号
+  - 3. BYOC —— 自带容器的企业部署模式
+  - 这不只是一个 AI 编程助手，而是一个 AI 原生的 PaaS 平台的雏形。它的竞争对手不仅是 Cursor 和 GitHub Copilot，更是 Vercel、Netlify、Replit、Lovable 和 Bolt。而 Anthropic 的独特优势在于：他们拥有从大模型到运行时到部署平台的完整垂直整合，这是目前任何竞品都不具备的。
+  - 方法论：全部发现来自对一个未 strip 的 Go 二进制的静态分析和运行时追踪。没有任何网络攻击、权限提升或越权操作——这个二进制就在虚拟机里，带着完整的符号表，等着被读取。
+
 # discuss
 - ## 
 

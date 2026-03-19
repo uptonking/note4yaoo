@@ -87,7 +87,7 @@ modified: 2025-03-22T16:10:24.856Z
 
 - roadmap-ai
   - 针对国内免费api定制的chat/ppt/mermaid: 魔搭, 快手万擎
-    - 可以~~fork janai,然后扩展provider~~, janai默认支持openai-like api，已经支持了国内models
+    - 可以 ~~fork janai,然后扩展provider~~ , janai默认支持openai-like api，已经支持了国内models
   - 利用chrome最新的侧边栏，实现类似cline/roocode的页面ai助理/office编辑
     - 基于cline-cli/opencode的client/server架构，支持多种工具如 wps/飞书/腾讯文档/notion
     - 甚至结合文生图
@@ -311,7 +311,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 考虑同一文档的使用场景, 类似代码编辑器的 split view 也可以方便查看和核对
     - 方便原文和译文的跳转交互
     - toc autogen
-    - pdf to word: ~~显示summary-per-page~~, 适合教育场景
+    - pdf to word: ~~显示summary-per-page~~ , 适合教育场景
     - pdf体验尽量与docs一致，包括view/edit
     - 统一 文本pdf 和 图片pdf 的体验，代码实现可以不同
     - ocr bench by claude-code
@@ -632,9 +632,10 @@ modified: 2025-03-22T16:10:24.856Z
     - [LinuxDo 社区福利活动](https://campaign.zhx47.xyz/)
     - [OAI-FREE 签到发送订阅 ](https://linux.do/t/topic/1632349)
     - 都是临时渠道，不开签到了，直接每天送 100 刀余额 
+  - [GOOOD！！！ _202603](https://goood.my/pricing), 无签到
+    - [自建公益站随便蹬！注册即送1000额度 - LINUX DO _202603](https://linux.do/t/topic/1779827)
+    - 个人自建的站，随意蹬，如果用完了，到时候会补的
   - [Atomgit GLM5 无限 Token? ](https://linux.do/t/topic/1696331)
-  - [讯飞星辰MaaS平台](https://maas.xfyun.cn/modelSquare)
-    - 限免至0305, 20qps
   - [华为云 CodeArts 试用期间开放GLM4.7与DeepSeek V3.2模型无限畅用，大善人还是小白鼠？ _202601](https://linux.do/t/topic/1536794/5)
   - [寻找L站开源作者，UUcode送商业级API额度—— 优质开源项目扶持计划 1228](https://linux.do/t/topic/1370667)
 
@@ -730,6 +731,8 @@ modified: 2025-03-22T16:10:24.856Z
     - [『Elysiver公益站主贴』 ](https://linux.do/t/topic/1175087)
     - 2cx 指接入 Codex 使用
     - docs 指的是这是 claude 的文档 ai，不破限只会回答文档相关的内容
+  - [NihaoAPI _202603](https://nih.cc/console/personal)
+    - cc
   - [ThatAPI](https://gyapi.zxiaoruan.cn/console/personal), 签到
     - 有多个cc分组，IP限制严格(无需gfw)
     - 免费提供 glm flash
@@ -759,12 +762,22 @@ modified: 2025-03-22T16:10:24.856Z
   - [黑与白chatAPI](https://ai.hybgzs.com/), 每日转盘
     - 模型丰富: claude/gemini/codex
     - 很多openrouter渠道的模型
-    - cc不支持tool, **cc渠道经常上架下架**
+    - cc不支持tool, **cc渠道经常上架下架** 
     - [黑与白chatAPI福利站](https://cdk.hybgzs.com/)
   - [OAI-FREE](https://newapi.zhx47.xyz/pricing), 每日100
     - [LinuxDo 社区福利活动](https://campaign.zhx47.xyz/)
     - [OAI-FREE 签到发送订阅 ](https://linux.do/t/topic/1632349)
     - 都是临时渠道，不开签到了，直接每天送 100 刀余额
+  - [CM-API-公益站 _202603](https://api.chengmo.cc.cd/console/personal)
+    - [【CM公益站】佬们，该蹬车了！GPT-5.4强势回归！0倍率+无限制 ](https://linux.do/t/topic/1777029)
+  - [52公益站 _202603](https://free.9e.nz/dashboard)
+    - [[52公益站]既然天才程序员回归了，那各位爽蹬吧（支持5.4） ](https://linux.do/t/topic/1774352)
+    - 倍率设置为0，为保证可用性并发默认5
+    - 随时失效，不作保障性承诺
+  - [QuicklyAPI _202603](https://sub.jlypx.de/dashboard)
+    - 直接注册就可以无限用，默认10并发
+    - [gpt-5.4无限蹬，今日依旧正常，24小时各位佬友们蹬了500亿token ](https://linux.do/t/topic/1781875)
+  - [hotaru Codex Distributor _202603](https://codex.mqc.me/)
   - [YAO API _202603](https://yybbwan.xyz/console/personal)
     - [YAO](http://154.37.220.66:3000/console/personal) , legacy
     - [[Yao公益站]codex注册200刀，可能随时倒闭  ](https://linux.do/t/topic/1683788)
@@ -800,8 +813,6 @@ modified: 2025-03-22T16:10:24.856Z
     - 本站点为codex中转站，不包含其他模型
     - sub2api的openai api仅支持 openai-responses API协议。不要选老版本的哦
     - [【GGBOOM公益站】 全面支持gpt-5.3-codex ](https://linux.do/t/topic/1581803)
-  - [CM-API-公益站 _202603](https://api.chengmo.cc.cd/console/personal)
-    - gpt免费号池 
   - [Einzieg API](https://api.einzieg.site/console/personal), 签到
     - 仅提供codex模型
     - [【Einzieg公益站】再次启动 ](https://linux.do/t/topic/1569418)
@@ -815,7 +826,8 @@ modified: 2025-03-22T16:10:24.856Z
     - 反代 kiro
   - [NPC API](https://npcodex.kiroxubei.tech/console/personal)
     - [[NPC-API]codex公益站开业 ](https://linux.do/t/topic/1564054)
-  - [SakuraCode _202603](https://codex.sakurapy.de/dashboard)
+  - [SakuraCode _202603](https://codex.sakurapy.de/dashboard), 
+    - https://codesign.sakurapy.de/
     - 5.4
   - [520 API](https://520.wcgio.com/console/personal)
     - gpt-5.3-codex 
@@ -869,7 +881,7 @@ modified: 2025-03-22T16:10:24.856Z
     - glm + qwen
   - [FovtAPI](https://api.voct.top/console)
     - 模型旧，模型少
-    - [NewAPI签到系统](https://gift.voct.top/dashboard/checkin), ~~已失效~~
+    - [NewAPI签到系统](https://gift.voct.top/dashboard/checkin), ~~已失效~~ 
   - [FKAI](https://orchids.fuckai.me/dashboard), 无需签到
     - [【FKAI公益站】 ](https://linux.do/t/topic/1476184)
     - 额度每天刷新 
@@ -980,7 +992,7 @@ modified: 2025-03-22T16:10:24.856Z
   - [VoAPI公益站](https://demo.voapi.top/), 每日签到, 
     - [【首发更新】全新API分发和管理系统-VoAPI ](https://linux.do/t/topic/218662)
     - 曾经的帐号已注销，需要重新注册
-  - [~~Cats API~~](https://catsapi.com/), 已关闭
+  - [ ~~Cats API~~ ](https://catsapi.com/), 已关闭
     - API调用频率限制为 15 RPM
     - [【猫猫公益】API使用说明 ](https://linux.do/t/topic/851028)
   - [RawChat公益站点](https://chatgptplus.cn/)

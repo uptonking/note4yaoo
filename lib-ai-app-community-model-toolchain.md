@@ -1574,7 +1574,7 @@ vllm serve RUC-DataLab/DeepAnalyze-8B --max-num-batched-tokens 40000 --max-model
   - This won't benefit Strix Halo at all. This benefits eGPU + CPU setups. 
   - Strix Halo uses unified memory and the entire model will run on the GPU. There is no need to move data from RAM to VRAM.
 
-
+- [Krasis LLM Runtime - run large LLM models on a single GPU : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1rwlqoe/krasis_llm_runtime_run_large_llm_models_on_a/)
 
 - ## [Qwen 3.5 small just dropped : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rirjg1/qwen_35_small_just_dropped/)
 - What’s the difference between base and no base?

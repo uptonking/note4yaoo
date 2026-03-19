@@ -48,6 +48,8 @@ modified: 2025-12-13T18:38:27.763Z
 
 ## draft-office
 
+- aionui-cli: general cli wrapper for coding agents
+
 - models
   - 根据不同任务，使用不同模型，类似claude-sonnet/opus/haiku, 能优化成本，也能改善toolcall
 

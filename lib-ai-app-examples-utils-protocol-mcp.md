@@ -360,13 +360,17 @@ modified: 2026-01-19T05:01:00.055Z
   - https://github.com/blader/humanizer
     - 原项目基于维基百科的 Signs of AI writing 指南
 
-- https://github.com/bobmatnyc/mcp-skillset /MIT/202602/python
+- https://github.com/bobmatnyc/mcp-skillset /MIT/202603/python
   - mcp-skillset is a standalone Python application that provides intelligent, context-aware skills to code assistants through hybrid RAG (vector + knowledge graph). 
   - Unlike static skills that load at startup, mcp-skillset enables runtime skill discovery, automatic recommendations based on your project's toolchain
   - Dynamic Discovery: Vector similarity + knowledge graph for better skill finding
   - On-Demand Loading: Skills loaded when needed, not all at startup
   - MCP Native: First-class Model Context Protocol integration
   - agentskills.io Compatible: Supports both native and agentskills.io specification formats
+  - On first run, mcp-skillset will automatically download a ~90MB `sentence-transformer` model (all-MiniLM-L6-v2) for semantic search. 
+    - Models are cached in `~/.cache/huggingface/` for future use
+  - mcp-skillset uses a hybrid RAG approach combining: Vector Store (ChromaDB) and Knowledge Graph (NetworkX)
+    - The hybrid search system combines vector similarity (semantic search) with knowledge graph relationships (dependency traversal) to find relevant skills. 
 
 - https://github.com/comeonzhj/Auto-Redbook-Skills /python/js
   - 一个自动撰写小红书笔记，自动生成图片，自动发布的 Skills

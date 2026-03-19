@@ -14,9 +14,18 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 
-- ## 
+- ## 凡是吹 CLI 和 TUI 伟大复兴的人，都是没有脑子。历史已经一次次证明了图形化是必然的。教育市场，反过来只会被市场教育。
+- https://x.com/techeconomyana/status/2033852684286234666
+  - Codex在CLI命令行界面的时候，只有60万用户。推出了Codex APP之后激增到200万。
+  - Claude Code推出都这么久了，为什么是Cowork出圈？
 
-- ## 
+- 降低使用门槛是必然的，普通用户和类似程序员的专业用户，体量不同而已
+
+- ## 有没有一种可能，以后软件/服务商只提供 API 和 CLI， 由社区来 Vibe 和 打包 各种发行版本的 GUI
+- https://x.com/cellinlab/status/2034108711229395304
+  - ffmpeg 其实就已经是这样了， 提供最全参数和 API 的 CLI， 然后社区去做了不同的 发行版本
+- 为什么产品制作方不同时直接制作面向最终用户带 GUI 的版本呢
+  - 可以，但是 他不能做太多个版本，就行 Office 很多功能一般都不用
 
 - ## LLM被过度神化，根本原因是大多数人不了解其背后的数学原理。它的实际价值在于效率提升——大约30%，且集中在编程这类输出容易自动化生成、结果容易形式化验证的领域。
 - https://x.com/edward40e/status/2032899339090276545
@@ -535,7 +544,7 @@ modified: 2026-02-20T17:36:40.796Z
   - It is stupid slow on all models.
   - At the end of the day, what ever you are doing on claude that isn't code, there is very little reason to pay to get cowork. It's not going to do anything it advertised if you aren't coding standalone agents.
   - Over all, it has potential, but in its current form, its too slow, too naggy, too annoying, too useless.
-  - Being advertised as an actual "co-worker" you can hand off a bunch of work to and f*** off and come back and its mostly done, is so far from reality its not even funny.
+  - Being advertised as an actual "co-worker" you can hand off a bunch of work to and f *** off and come back and its mostly done, is so far from reality its not even funny.
 
 - Co-work is great, to be honest. If they cancel that, I’ll drop my Claude subscription. I use it to write confluence docs, edit pdfs, word docs, create contracts, amend them, do P&l stuff, powerpoint presentation, even google slides via chrome mcp. You’re using it wrong OP.
 

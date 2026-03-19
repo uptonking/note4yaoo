@@ -136,6 +136,29 @@ for {
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## [Build agents with Raw python or use frameworks like langgraph? : r/LangChain _202603](https://www.reddit.com/r/LangChain/comments/1rvzds0/build_agents_with_raw_python_or_use_frameworks/)
+- Agents run tools in loop to achieve a goal, that’s it
+
+- Using a framework saves you time, if you need:
+  - HITL
+  - Dependency injection to tools
+  - Tracing
+  - REACT Loop
+  - Chat session management
+- I tried both, and a framework is better. There is so much additional planning you need to do if you want to implement something from scratch. Frameworks remove that extra hassle, just get the dependency right and off you go.
+
+- Frameworks (LangGraph, AutoGen, etc.) are great for prototyping orchestration. But once agents hit real workloads, teams usually want tighter control over:
+  - memory
+  - retries / failure handling
+  - tool execution
+  - cost + latency
+
+- A framework is definitely necessary. You can choose different frameworks based on your specific scenario to save a lot of trouble. The principle behind an Agent is simple, but the engineering details are far more complex than you might imagine.
+
 - ## 现在大家开发 Agent 用的都是什么框架？ LangChain? Vercel AI SDK? _202602
 - https://x.com/fkysly/status/2017551264654221400
 - 一个openai + while true 先跑起来
@@ -274,7 +297,7 @@ for {
 - 
 
 - ## [OpenAIEmbeddings does not allow setting encoding_format, causing incompatibility with LM Studio (returns float[], not base64) · Issue · langchain-ai/langchainjs _202505](https://github.com/langchain-ai/langchainjs/issues/8221)
-  - DOES NOT WORK with `OpenAIEmbeddings` – no way to set `encoding_format`
+  - DOES NOT WORK with `OpenAIEmbeddings` – no way to set `encoding_format` 
 
 - 🐛 langchain子包的 `OpenAIEmbeddings` 由于与大模型交互的 encoding_format 未正确设置而导致得到的embeeding结果都是0，此时官方修复的包还未发布
   - o1: 使用其他子包的类似api `OllamaEmbeddings` , 等官方发布后再改回 OpenAIEmbeddings

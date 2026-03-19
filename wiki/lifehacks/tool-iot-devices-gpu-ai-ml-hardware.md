@@ -246,7 +246,14 @@ modified: 2026-01-15T15:44:10.647Z
 
 - ## 
 
-- ## 
+- ## [Multi-GPU? Check your PCI-E lanes! x570, Doubled my prompt proc. speed by switching 'primary' devices, on an asymmetrical x16 / x4 lane setup. : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rwiuvg/multigpu_check_your_pcie_lanes_x570_doubled_my/)
+  - Short version - in my situation, adding export CUDA_VISIBLE_DEVICES="1, 0" to my llama.cpp launch script doubled prompt processing speed for me in some situations.
+  - I've been running a dual 3090 setup on a system that splits the PCI-E lanes 16x / 4x between the two "x16" slots (common on x570 boards, I believe). For whatever reason, by default, at least in my setup (Ubuntu-Server 24.04 Nvidia 580.126.20 drivers, x570 board), the CUDA0 device is the one on the 4-lane PCI express slot. 
+
+- Llama.cpp has a command line argument where you can tell it which card to use as the primary. It is -mg I believe.
+  - Not OP but I think that flag is bugged. I just re order with CUDA_VISIBLE_DEVICES and it works instead.
+
+- This is the problem of llama.cpp that need more attention. LLama.cpp by default split model across all GPUs vs fit by groups.
 
 - ## [128GB VRAM quad R9700 server : r/LocalLLaMA _202601](https://www.reddit.com/r/LocalLLaMA/comments/1qfscp5/128gb_vram_quad_r9700_server/)
   - I originally planned to pick up another pair of MI100s and an Infinity Fabric Bridge
@@ -971,7 +978,7 @@ modified: 2026-01-15T15:44:10.647Z
   - New RAM: DDR5-6000MHz - 96gb
   - Model: unsloth gpt-oss-120b-F16.gguf
   - 16 tok/sec with LM Studio → ~24 tok/sec by switching to llama.cpp → ~31 tok/sec upgrading RAM to DDR5
-  - `llama-server --n-gpu-layers 999 --n-cpu-moe 22 --flash-attn on --ctx-size 48768 --jinja --reasoning-format auto -m C:\Users\Path\To\models\unsloth\gpt-oss-120b-F16\gpt-oss-120b-F16.gguf  --host 0.0.0.0 --port 6969 --api-key "redacted" --temp 1.0 --top-p 1.0 --min-p 0.005 --top-k 100  --threads 8 -ub 2048 -b 2048`
+  - `llama-server --n-gpu-layers 999 --n-cpu-moe 22 --flash-attn on --ctx-size 48768 --jinja --reasoning-format auto -m C:\Users\Path\To\models\unsloth\gpt-oss-120b-F16\gpt-oss-120b-F16.gguf  --host 0.0.0.0 --port 6969 --api-key "redacted" --temp 1.0 --top-p 1.0 --min-p 0.005 --top-k 100  --threads 8 -ub 2048 -b 2048` 
 
 - You can get more speed on computers with hybrid cores (a mix of p and e cores) by pinning llama.cpp to p-cores only. 
 
@@ -1153,7 +1160,7 @@ modified: 2026-01-15T15:44:10.647Z
   - E-ATX（中塔，全塔）机箱推荐, 这类型的机箱比较大，通常都支持360水冷，大型风冷，散热基本都非常优秀。硬盘位也很多。
   - 这类型的机箱比较适合游戏发烧友，或服务器工作站。
   - 做服务器或工作站用的朋友建议考虑使用分形工艺的Meshify 2和D7，以及这两款机箱的XL型号（双显卡用）。我个人在使用这两款机箱，散热优秀，设计，用料，做工都非常不错。Meshify 2是突出散热，D7是突出静音。
-  - 分形工艺 Torrent: 箱体长宽高（mm）544（长）*242（宽）*530（高）mm
+  - 分形工艺 Torrent: 箱体长宽高（mm）544（长） *242（宽）* 530（高）mm
 
 - ### [25L Portable NV-linked Dual 3090 LLM Rig : r/LocalLLaMA _202506](https://www.reddit.com/r/LocalLLaMA/comments/1l0zsv7/25l_portable_nvlinked_dual_3090_llm_rig/)
   - cpu: AMD Ryzen 7 5800X 3.8 GHz 8-Core Processor
@@ -1883,7 +1890,7 @@ modified: 2026-01-15T15:44:10.647Z
   - 简单来讲，大语言模型每生成一个token，就需要将整个模型扫一遍进行计算（实际上比这个描述复杂很多）。这意味着，当浮点算力充裕的时候，扫描的速度就决定了生成文本的速度上限。
   - 目前这个设备的内存带宽水平跟 M4 Max 的 MacBook 没什么区别（Apple MacBook Pro M4 Max 128GB 内存带宽是546GB/s）
 - 拿 [Llama-3.3-70b-instruct-4bit] 举例，这个4bit量化模型大小约为40GB，那么扫一遍就意味着GPU要处理40GB的数据，如果想要每秒钟生成10 token，简单计算可得，40GB\*10 = 400GB, 这意味着内存带宽至少有 400GB/s 才能保证每秒钟能生成 10 token.
-  - 回到 digits 这个设备，在512GB/s 的情况下，**运行 70b-4bit 规模的模型，生成速度理论最大值是 512/40 = 12.8 token/s**
+  - 回到 digits 这个设备，在512GB/s 的情况下， **运行 70b-4bit 规模的模型，生成速度理论最大值是 512/40 = 12.8 token/s** 
 
 - nv版的mac mini。当然mac mini有macos，project digits只有linux，操作系统生态上以及桌面级定位上估计会导致拉胯掉，nv虽然有cuda生态，但是在桌面级相比os的生态，还是有点困难的。
 - 大模型推理其实是个很微妙的产品需求，大显存容量很重要，memory bound也是事实。

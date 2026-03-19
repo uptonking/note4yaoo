@@ -759,6 +759,11 @@ modified: 2025-02-21T18:20:42.624Z
   - A/B test different prompts on several models simultaneously; 
   - Allows limited concurrency or synchronous inference calls (to prevent spamming servers); 
 
+- https://github.com/leonickson1/ModelSweep /MIT/202603/ts
+  - A GUI-first evaluation workbench for local LLMs running on Ollama. 
+  - Build personal test suites, run sequential evaluations across installed models, visualize results through dashboards, and make keep-or-delete decisions. Think "Postman for local LLM evaluation."
+  - [ModelSweep: Open-Source Benchmarking for Local LLMs (Connects to Ollama) : r/ollama _202603](https://www.reddit.com/r/ollama/comments/1rvyuyc/modelsweep_opensource_benchmarking_for_local_llms/)
+
 - https://github.com/ianarawjo/ChainForge /2.9kStar/MIT/202510/python/ts
   - https://chainforge.ai/docs
   - https://chainforge.ai/play/

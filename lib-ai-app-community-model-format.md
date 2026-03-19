@@ -265,7 +265,7 @@ modified: 2025-10-10T02:44:49.634Z
 # discuss-ai-graphics-gen 🖼️
 - ## 
 
-- ## 
+- ## [Arrow-1 by QuiverAI ranks #1 on SVG Arena, first model to surpass 1500 Elo in SVG generation : r/singularity _202602](https://www.reddit.com/r/singularity/comments/1rfg6wb/arrow1_by_quiverai_ranks_1_on_svg_arena_first/)
 
 - ## 这也是我放弃直接绘制 drawio，转而开发使用 plantuml 语言绘制 drawio 的原因。llm 对于复杂图表的空间布局实在不擅长。
 - https://x.com/xicilion/status/2024202293214622098
@@ -488,7 +488,7 @@ project_count: 43
 - Whenever using structured outputs, also leave the model space to output some "unstructured" content in a form of descriptions, comments etc. It reduces the pressure of improbable token sequences and you can use it for some fancy logs.
 - Do you have an example of that?
   - Include a comment or description fields into structured output schemas allowing for a short free-text flow.
-  - `{ description: "1 sentence explaining the reasoning behind your choice", ... }`
+  - `{ description: "1 sentence explaining the reasoning behind your choice", ... }` 
 
 - This still mess with the performance though cause there are enforcement ongoing. Please free text regex enforcement can be quite slow. I find using 2 prompt work better with first prompt let it freely generate an answer
 
