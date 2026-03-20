@@ -1122,6 +1122,8 @@ modified: 2025-03-22T16:10:24.856Z
   - 智谱推出的免费图像生成模型，能够根据用户指令生成符合要求且美学评分更高的图像
   - 支持多种分辨率，包括 1024x1024、768x1344、864x1152、1344x768、1152x864、1440x720、720x1440 等
 
+- csdn 的 gitee 的 ai模型服务，每天免费 1000 次好像是(有些开源生图模型)
+
 - image-api
   - [云端API](https://cloudapi.wdyu.eu.cc/pricing), 签到
   - [Huan API](https://ai.huan666.de/pricing)

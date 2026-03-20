@@ -122,7 +122,9 @@ Bottom Line: Success isn’t just about good code. It’s about presentation, ac
 
 - ## 
 
-- ## 
+- ## Astral has entered into an agreement to join OpenAI as part of the Codex team. _202603
+- https://x.com/OpenAINewsroom/status/2034616934671724639 
+  - https://x.com/astral_sh/status/2034622016049860869
 
 - ## 来自中国的硬件团队的这个 PicoClaw ，把 OpenClaw（前Clawdbot）用 Go 彻底重构了
 - https://x.com/chuhaiqu/status/2023244280903663878

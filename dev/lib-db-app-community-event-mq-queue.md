@@ -131,7 +131,9 @@ At a high level, it supports:
 
 - ## 
 
-- ## 
+- ## who needs Kafka when you can build a queue on s3 with a single JSON file? Turbopuffer did just that.
+- https://x.com/kozlovski/status/2034639368086810647
+  - The way they handled bootstrapping clients to the broker, all via S3, was really elegant as well.
 
 - ## 最近看了一圈所谓 MQ 的实现，发现它们确实分成队列和流两种方案。
 - https://x.com/tison1096/status/1898241411004481851

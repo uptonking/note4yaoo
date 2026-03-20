@@ -14,7 +14,14 @@ modified: 2026-02-18T04:15:19.228Z
 
 - ## 
 
-- ## 
+- ## Your embeddings might be 32× larger than it needs to be!
+- https://x.com/_jphwang/status/2034595497764126921
+  - Binary quantization compresses each embedding dimension from a (32-bit) float to a single bit. 
+  - Positive values become 1, negative become 0. That takes a 4, 096-byte vector down to... (checks notes) 128 bytes!
+  - The typical catch is retrieval quality degradation due to precision loss. 
+  - But Jina's team solved this in their v5 embedding model training with GOR (Generalized Orthogonal Regularization). GOR spreads embedding values more uniformly, making the compression nearly lossless.
+  - The result is that MTEB score drops less than 2(!) points.
+
 # discuss-rag-tools/saas
 - ## 
 
@@ -284,7 +291,7 @@ modified: 2026-02-18T04:15:19.228Z
 - ## 🆚 [Vector db comparison : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1ph7njc/vector_db_comparison/)
   - Key findings:
   - RAG systems under ~10M vectors, standard HNSW is fine. Above that, you'll need to choose a different index.
-  - Large dataset + cost-sensitive*:* Turbopuffer. Object storage makes it cheap at scale.
+  - Large dataset + cost-sensitive *:* Turbopuffer. Object storage makes it cheap at scale.
   - pgvector is good for small scale and local experiments. Specialized vector dbs perform better at scale.
   - Chroma - Lightweight, good for running in notebooks or small servers
   - [Best Vector Databases for RAG - Agentset](https://agentset.ai/blog/best-vector-db-for-rag)

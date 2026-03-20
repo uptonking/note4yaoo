@@ -332,7 +332,26 @@ Today, Turso is in beta with early customers working toward production deploymen
 
 - ## 
 
-- ## 
+- ## opencode: we've been experimenting with getting rid of the bash tool
+- https://x.com/thdxr/status/2034364283413283224
+  - agents can write js fine which can do what bash can (though some gaps with things like git) and is more cross platform
+  - and then could run that in this
+
+- We did some preliminary code mode evals in a JS sandbox when we wrote our SQL vs. Bash eval, and JS was about 2.5x more token efficient than bash to achieve the same result.
+  - https://github.com/braintrustdata/bash-agent-evals/pull/6
+
+- So that it can import “child_process”, right?
+
+- but then you lose access to 100s of battle tested CLIs, that LLMs are good at out of the box. CLIs like Terraform encapsulate complex behavior hard to replicate with custom code on the fly
+  - why does everyone think js can't spawn clis!
+- unless you mean let the code run the cli tools instead of the shell
+
+- there should only be one tool called eval(typescriptSnippet)
+
+- bash is basically unsandboxable trust. JS you can at least pretend to control what it touches.
+  - but you can sandbox bash with just-bash using secure exec.
+
+- 
 
 - ## Vercel CTO Malte Ubl 批评 Cloudflare 团队 fork 了开源项目 just-bash 并发布为 cloudflare/shell 的行为，而且是 slop-fork，移除了大量安全相关的代码和防御措施。
 - https://x.com/vikingmute/status/2033516497801494657

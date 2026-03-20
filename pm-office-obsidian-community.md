@@ -23,15 +23,19 @@ modified: 2024-01-23T02:52:23.932Z
     - I’ve been tracking tools that are compatible with the Obsidian vault format.
     - The idea is to identify FOSS applications that can work with the same vault structure so our notes stay truly portable and future-proof.
 # examples-plugins
+- https://github.com/bgarciamoura/obsidian-notion-bases-plugin /GPL/202603/ts
+  - Turn any folder in your vault into a powerful database — right inside Obsidian.
+  - [I built a Notion-like database plugin for Obsidian — 6 views, fully local, no external tools : r/ObsidianMD _202603](https://www.reddit.com/r/ObsidianMD/comments/1rtwcja/i_built_a_notionlike_database_plugin_for_obsidian/)
+
+- https://github.com/PlayerMiller109/obsidian-sheets-basic /202408/js
+  - merge markdown table cells after Obsidian v1.5.0
+  - [小插件 Sheets Basic：合并 Markdown 表格单元格 - Obsidian 中文论坛 _202405](https://forum-zh.obsidian.md/t/topic/35091)
+
 - https://github.com/tmcw/obsidian-freeform /MIT/202405/js
   - Obsidian freeform plugin. This lets you write arbitrary JavaScript, including importing ESM modules, injecting styles, and much more
   - This brings a taste of Observable to Obsidian. 
   - give you an @observablehq -like experience with editable code blocks that run in isolated iframes.
   - Based on iframes: Everything you write is run within a sandboxed iframe, making it safer to do more creative coding within Obsidian without affecting the surrounding page.
-
-- https://github.com/PlayerMiller109/obsidian-sheets-basic /202408/js
-  - merge markdown table cells after Obsidian v1.5.0
-  - [小插件 Sheets Basic：合并 Markdown 表格单元格 - 经验分享 - Obsidian 中文论坛 _202405](https://forum-zh.obsidian.md/t/topic/35091)
 # discuss-stars
 - ## 
 
@@ -297,6 +301,18 @@ modified: 2024-01-23T02:52:23.932Z
   - https://github.com/aitorllj93/obsidian-lovely-bases
 
 - Is there a way to show an image itself? E.g. A base that filters on png files and the view type is infinite gallery. I tried with thr file path but that didn't seem to work.
+
+- ## 🆚 [Folders vs tags vs links vs you name it - what actually works after 2+ years of PKMS? : r/PKMS _202603](https://www.reddit.com/r/PKMS/comments/1rxy6ua/folders_vs_tags_vs_links_vs_you_name_it_what/)
+- The systems that survive 2+ years have one thing in common: they're optimized for retrieval, not for capture.
+  - PARA survives because the top-level question ("what am I actively working on?") maps directly to how you look for things later. 
+  - Zettelkasten survives because every note is forced to link out, so any retrieval path leads somewhere useful.
+  - What collapses: folder trees deeper than 2 levels (you never remember which branch you filed something under), tag vocabularies without a fixed schema (that note is tagged #productivity or #work or #tasks - pick one and stick to it), and any system where the number of entry points grows faster than the content.
+- The 2-year test isn't "do I still have this system running" - it's "how long does it take me to find a specific thing I captured 18 months ago." Most people don't audit on that metric until the system has already broken.
+
+- I started with folders more than 30 years ago. I still use them. Now I also connect notes with links. Tags are only there when there's some state to track, otherwise they mostly serve to get some statistics (how many notes with #y2025? How many notes in my #journal?).
+  - I don't use indices / MOCs, except very rarely when I have a sequence of individual things that are used together, such as a series of articles. I might have about 10 of these...
+
+- "folders vs tags vs links" is an unnecessary debate as if they are in conflict with each other.
 
 - ## 🤔 [I know many folks do not use folders… : r/ObsidianMD](https://www.reddit.com/r/ObsidianMD/comments/1ppcmic/i_know_many_folks_do_not_use_folders/)
 - Use folders. Stop worrying about what others do. Your assumption is on point. Obsidian can dissapear and even tho there are some other tools that can be an 'alternative', it's not the same. Folders will give you the peace of mind that even in a file browser you will find your files more easily than a bunch of files together. Don't overthink.

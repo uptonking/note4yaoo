@@ -70,6 +70,21 @@ modified: 2023-05-30T21:36:55.391Z
 - https://x.com/ZeroZ_JQ/status/1872456529691258935
   - 最后找到了知名工作流库 Prefect 推出的 ControlFlow。
 
+# discuss-mindmap/flow
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Xmind 现在被ai冲击的厉害，已经改赛道了
+- https://x.com/siantgirl/status/2034465468086669824
+- Xmind创始人去年我还见过 说是他们目前在搞AI塔罗牌产品
+  - 说是本来计划面向白领用户 定价比较高，但是实际发现初高中大学女生是主力用户，后面调整的价格和产品
+- xmind创始人在介绍的时候 引用了一句网友点评 xmind除了好看一无是处
+
 # discuss
 - ## 
 

@@ -2257,6 +2257,19 @@ ollama run hf.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF:Q6_K
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [How are you all doing agentic coding on 9b models? : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1rxhmti/how_are_you_all_doing_agentic_coding_on_9b_models/)
+- 7B–9B models are just too unreliable for agentic coding. 20B+ (like Qwen 3.5 27B) is where it starts working properly.
+
+- I have also found that 9B is too small. The OmniCoder-9B fine tune of Qwen3.5-9B manages to make successful tool calls most of the time, but you have to set the parameters just right to avoid reasoning loops, and it's still lacking in world knowledge so it struggles to write valid code.
+
+- With both nemotron nano and glm4.7 flash, I have not been able to make it write a simple program that actually draws an ascii art that reads Hello World. It can do plain text fine...it's been extremely funny as well as frustrating
+
 - ## [What's your favourite local coding model? : r/LocalLLaMA _202512](https://www.reddit.com/r/LocalLLaMA/comments/1ppwylg/whats_your_favourite_local_coding_model/)
   - mistralai_Devstral-Small-2-24B-Instruct-2512-Q8_0.gguf - works but it's kind of slow for coding
   - nvidia_Nemotron-3-Nano-30B-A3B-Q8_0.gguf - text generation is fast, but the actual coding is slow and often incorrect

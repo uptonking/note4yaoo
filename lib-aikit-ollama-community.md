@@ -269,6 +269,9 @@ modified: 2026-01-14T18:57:51.174Z
 - Does this mean that it can run NVFP4 in Blackwell ?
   - Not yet, but soon!
 
+- https://x.com/UnslothAI/status/2034363137722352066
+  - Unsloth Studio now installs via uv.
+
 - ## [Meet Unsloth Studio, a new web UI for Local AI : r/unsloth _202603](https://www.reddit.com/r/unsloth/comments/1rw9jaa/meet_unsloth_studio_a_new_web_ui_for_local_ai/)
   - open-source web UI to train and run LLMs in one unified local UI interface.
   - keep in the mind the license is under an open-source AGPL3 license

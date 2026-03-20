@@ -72,6 +72,25 @@ modified: 2021-04-21T15:01:12.882Z
 - ## cat in macdonald
 - https://x.com/FinanceYF5/status/1898531217697653160
 
+# discuss-solution-anime
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## Introducing Motionwind: A Babel plugin that turns Tailwind-like classes into Motion animations. 
+- https://x.com/ZingadePiyush/status/2034593224170299863
+  - Works with Next.js, Vite, and React.
+  - Zero imports, zero runtime overhead.
+  - No imports. No runtime. Just classes.
+  - [Motionwind — Motion animations as Tailwind classes ](https://www.motionwind.xyz/)
+
+- Damn, someone should port this for react-native
+
+- Babel transform at build time means your animation values are fully static though. Dynamic animations based on runtime state still need escape hatches.
 # discuss
 - ## 
 

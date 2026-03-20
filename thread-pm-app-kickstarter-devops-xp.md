@@ -207,7 +207,7 @@ modified: 2022-11-07T11:00:28.824Z
   - 至于迁移成本，本来就已经是不健康的破裂关系，企图以如此卑劣的手段挽留，又能够持续多久了？总有一天矛盾会继续爆发，他一狠心就咬咬牙切换了。
 
 - 我一直很欣赏一家SaaS公司，做抖音数据洞察的考古加，他们不是第一个做抖音数据洞察的，但他们是第一个敢保留20%毛利率，做出同样品质的公司（此前的蝉妈妈是80%毛利率）。
-  - 微利不意味着降低体验，而是**直接以终局进行思考**，切断任何被低价颠覆的可能性。
+  - 微利不意味着降低体验，而是 **直接以终局进行思考** ，切断任何被低价颠覆的可能性。
 
 - 在群接龙之前，电商SaaS都是动辄收取几千块、甚至上万的年费的，群接龙是第一个实现零订阅费，只收取1%（包含微信千分之六的手续费）手续费的电商SaaS产品，很多用户对我们收费都是无感的，因为收的实在是太低了
   - 我们的理念是赚取刀片的利润，拥有海量的规模，不留给竞争对手任何的空间，因为零售业本身就是供大于求的行业，商家们本身就处于充分竞争的微利状态，你作为赋能他们的技术服务商，你又怎么可能实现暴利呢，微利状态的商家一定会选择微利状态的技术服务商，这才是行业终局。
@@ -718,7 +718,7 @@ modified: 2022-11-07T11:00:28.824Z
 
 - ## Airtable lays off 50% pivots into enterprise, reportedly only $150M in revenue as of 2023 with 1.4b raised. Not even a unicorn, last 5 years of trumpeting have been optics!
 - https://twitter.com/dustingetz/status/1703001633368506772
-  - 27% (237 ppl) laid in the *second round*, first round was 29% (254 ppl) in Dec '22
+  - 27% (237 ppl) laid in the *second round* , first round was 29% (254 ppl) in Dec '22
 
 - ## If you're starting a SaaS, just remember this: building = fun, marketing = $$
 - https://twitter.com/Timb03/status/1695328737670426935
@@ -1408,7 +1408,7 @@ modified: 2022-11-07T11:00:28.824Z
 - Ignoring people who are critical of your work is not “creating an echo chamber”, it’s building a community. 
   - You wouldn’t tell Slayer to write songs for the people who don’t like Slayer. 
   - Find the people who love what you’re doing and spend your attention on them, ignore the rest.
-- **Analytics are overrated**. 
+- **Analytics are overrated** . 
   - I’ve never once made a decision that was informed by open rates or traffic sources. 
   - In fact Tailwind UI has no website analytics at all. 
   - Doing great work has always been a more efficient lever for me.
@@ -1499,7 +1499,9 @@ modified: 2022-11-07T11:00:28.824Z
 
 - ## 
 
-- ## 
+- ## 国内比较简单的个人线上收款方式：Flowus、爱发电、面包多、麦客表单
+- https://x.com/zuozizhen/status/2034496810526658696
+- 闲鱼无敌
 
 - ## 正式向 Stripe 申请支付宝的“Recurring charges”，客服发来一个表格，让我好好填写后发回去，审核过后就可以了。
 - https://x.com/tualatrix/status/1902700737274253509

@@ -216,7 +216,12 @@ modified: 2024-09-08T18:57:12.231Z
 
 - ## 
 
-- ## 
+- ## [I think I made the best general use System Prompt for Qwen 3.5 (OpenWebUI + Web search) : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rxudf2/i_think_i_made_the_best_general_use_system_prompt/)
+  - This prompt will execute a web search, then think, then continue the search until it has enough information to give you a detailed answer. It prioritizes searching latest information when needed. I'm running this with 131K context but you should be able to get away with less. I do not use an embedding or re ranking model. I feed full context to the model. Be sure to enable Native tool use in OWUI.
+  - here is the prompt:
+  - When searching the web, use the tool once, then think about the results. Then use the the web search tool again to broaden your knowledge if needed and repeat the cycle until you have enough nuanced information. You can also open web pages as well. Do not provide a generic answer. The current date is {{CURRENT_DATE}}
+
+- When im creating a project from scratch, i let 397b (slow with wide knowledge) create a plan and architecture, it calls sub agent 35b (extremely fast) to run a research assignment online about the plan, find holes, outdated libraries and come back with summarized document about the initial plan. This way i manage to get results between both worlds of wide knowledge and a fast sub agent who can read online and verify data
 
 - ## [哪些令你惊艳的AI大语言模型提示词（prompt）？ - 知乎](https://www.zhihu.com/question/5415393695)
 - 提示词大致分为下面几个部份：

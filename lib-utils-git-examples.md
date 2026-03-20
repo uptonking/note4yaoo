@@ -231,6 +231,13 @@ modified: 2023-08-29T10:12:22.345Z
 
 - https://github.com/extrawurst/gitui /MIT/202408/rust
   - fast terminal-ui for git written in rust
+
+- https://github.com/Auto-Explore/GitComet /AGPL/202603/rust
+  - https://gitcomet.dev/
+  - fastest open source user interface for GIT workflows
+  - 依赖 GPUI
+  - [GitComet: a fast, local-first, open-source Git GUI built for large repos : r/git _202603](https://www.reddit.com/r/git/comments/1rx5soc/gitcomet_a_fast_localfirst_opensource_git_gui/)
+    - Changes don’t appear to be auto-fetched
 # git-server/gitlab-like
 - github-alternatives
   - ruby: gitlab

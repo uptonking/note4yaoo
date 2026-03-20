@@ -243,6 +243,32 @@ modified: 2025-09-01T07:58:29.058Z
 - I just use plain roo.. but only because I don’t need more (yet). Would be nice if there were presets for different tech stacks, like coder-node-react or coder-cplus coder-serverless etc. as I’m sure things for me would be smoother if I took the time to add guardrails around the stacks I’m using
 
 - SPARC enabled me to do one complex project and taught me so much about system architecture/design. That being said, now that I developed my own understanding of how to architect, I no longer need it.
+# discuss-coding-backend/db
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 用了很多年的mysql ，从来不会把后端业务写在数据库里。 现在用 opus 搞的项目， 全都是把后端业务写在supabase 的postgresql 里面， 这样感觉确实方便了很多。
+- https://x.com/PandaTalk8/status/2034519830548914510
+- 一般后端实现要么有一个业务层，里面是各种业务逻辑，校验、计算啊什么的，底层再读写数据库；
+另一种方式是业务逻辑封装在数据库中，实现方式是存储过程，也就是数据库层面的脚本，来实现校验、计算等等，并且在存储过程内读写数据
+
+架构上前者要一个后端的业务层，或厚或薄，现代编程框架通常会用面向对象的方式实现，并且常常用 ORM 框架去访问数据库，完成对象和关系型数据库的映射；后者可以不需要这样的层，劣势是是函数式的架构，通常认为复杂业务逻辑的话这种结构弊大于利。
+
+我倾向于认为在 AI 让软件构建成本降低的今天，单一复杂系统会减少，简单系统及相互互联会增多。因此推主的架构选择大概率是合理适用的。
+
+更复杂了大不了重新写嘛。各种设计模式本来就是解决人脑如何驾驭复杂度的问题的。
+
+现在有 AI，那么复杂度是靠设计模式解决还是靠 AI 蛮力解决，只要能实现就行。
+
+其次，人类程序员写的很多设计模式、高级架构的使用，本意想六代日后业务逻辑变复杂后扩展，但到最后往往发现其实都没有用上，所谓的过度设计也不少见。
+
+- 十几年前还听过存储过程，号称SQL语句有好几千行。最近5年这个词听的少了，都是ORM加RPC实现业务逻辑
+- 业务逻辑封装到存储过程，二十年前流行过，现在这种方式已经被废弃了吧
+
+- 数据库还是安心用作存储 做计算到时候要扩容比无状态的应用麻烦太多
 # discuss-coding-tools/tricks
 - ## 
 
