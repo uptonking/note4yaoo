@@ -8,7 +8,7 @@ modified: 2023-11-28T14:48:45.910Z
 
 # pm-noter-notable
 
-> make something people want to pay for futuristically. ~~easy to read， easy to write, content-centric notebook~~
+> make something people want to pay for futuristically. ~~easy to read， easy to write, content-centric notebook~~ 
 
 # guide(for notable/noter/paper(create+search+collab))
 - features
@@ -106,7 +106,7 @@ modified: 2023-11-28T14:48:45.910Z
   - integrations
     - jupyter-notebook
     - whisper-editor
-  - ~~open folder as site~~, 通常发布的站点都会多次处理内容，任意文件夹无意义, 只是toc显示不同内容而已
+  - ~~open folder as site~~ , 通常发布的站点都会多次处理内容，任意文件夹无意义, 只是toc显示不同内容而已
 
 - 特色功能点
   - localizable note file(not local-first)
@@ -217,6 +217,9 @@ modified: 2023-11-28T14:48:45.910Z
 - ai-local
   - 医疗行业对本地ai的需求较高
 
+- ai-cleaning
+  - 清理编程环境如npm/pip/cargo
+
 ## saas/cloud
 
 - office
@@ -232,7 +235,7 @@ modified: 2023-11-28T14:48:45.910Z
   - consistent environment and pre-installed tools
 
 - pros-云桌面/云浏览器
-  - ~~启动速度快~~, vnc打开chrome也挺慢
+  - ~~启动速度快~~ , vnc打开chrome也挺慢
   - 方便服务端api操作
   - 云端环境方便打开类似本地的url如 http://localhost:3000, 且能绕过iframe的cors/cookie问题
   - 最新版chrome逐渐限制cdp调试的能力，在云桌面固定版本可绕过此问题

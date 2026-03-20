@@ -95,7 +95,8 @@ modified: 2026-01-12T10:04:03.442Z
 
 - ## 
 
-- ## 
+- ## [[求助] 各位大佬，有没有好用的 LLM API 压测脚本或工具推荐？在线等挺急的 LINUX DO _202603](https://linux.do/t/topic/1785708)
+- evalscope库？python这类相关的库挺多的吧
 
 - ## [What AI evaluation tools have you actually used? What worked and what totally didn't? : r/Rag _202512](https://www.reddit.com/r/Rag/comments/1phgej6/what_ai_evaluation_tools_have_you_actually_used/)
 - In practice, most teams don’t rely on a single evaluation tool. They try a few—Ragas, TruLens, DeepEval, LangSmith—and use them mainly to understand what to measure, not as a final verdict on quality. Ragas and DeepEval are popular starting points for RAG-style metrics, but people often struggle to fully trust the scores. LangSmith, Promptfoo, and Humanloop tend to help more with debugging, prompt iteration, and team visibility than with “is this answer actually good?” decisions.

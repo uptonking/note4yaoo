@@ -272,6 +272,8 @@ modified: 2026-01-14T18:57:51.174Z
 - https://x.com/UnslothAI/status/2034363137722352066
   - Unsloth Studio now installs via uv.
 
+- [Qwen3.5-4B is very powerful. It executes tool calls during thinking. : r/unsloth _202603](https://www.reddit.com/r/unsloth/comments/1ry1a42/qwen354b_is_very_powerful_it_executes_tool_calls/)
+
 - ## [Meet Unsloth Studio, a new web UI for Local AI : r/unsloth _202603](https://www.reddit.com/r/unsloth/comments/1rw9jaa/meet_unsloth_studio_a_new_web_ui_for_local_ai/)
   - open-source web UI to train and run LLMs in one unified local UI interface.
   - keep in the mind the license is under an open-source AGPL3 license

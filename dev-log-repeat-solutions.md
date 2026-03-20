@@ -56,7 +56,7 @@ modified: 2021-07-20T13:50:23.433Z
   - 选择技术栈时，多问自己，是否愿意，是否有条件持续维护/轻度封装/仅使用
   - techstacks: editor, excel, workflow/ai, drive, whiteboard
   - products: knowledgebase + workflow, 卖工具(铲子)比卖产品更长久
-  - 🌰 lts: vscode/ide/~~office~~, git/vcs(history/sync), LSP/MCP(backlink)/auto
+  - 🌰 lts: vscode/ide/ ~~office~~ , git/vcs(history/sync), LSP/MCP(backlink)/auto
     - 20230630: editor/slate  + table   + collab
     - 20250129: editor/vscode + triplit + sync(powersync/zerosync)
   - vscode: 🏘️ 支持BS/CS架构, monaco-editor + electron, coder-server
@@ -72,7 +72,7 @@ modified: 2021-07-20T13:50:23.433Z
   - ai: 擅长text-gen
   - 考虑维护/fork旧版项目: codemirror5-lang/demo, atlaskit-editor-eg, mxgraph-demo
   - 考虑port主流项目: codemirror-go/rust
-  - ~~animation: motion(dom/svg)~~
+  - ~~animation: motion(dom/svg)~~ 
 
 - 技术细节(editor): virtualized, draggable, table(eav)
 - 技术产品(reuse):  cm-devtools, noseditor, collab-hocuspocus
@@ -89,7 +89,7 @@ modified: 2021-07-20T13:50:23.433Z
 - 技术可选4: 侧重版本控制的数据库，如dolt, SirixDB, git-like-db
 - 玩具尝试1: git+crdt+table+branch/version, 参考类似ckan的data-portal
 - 🎯 roadmap: virtualized-draggable-table, cm-devtools, cm-noseditor, cm-hocus
-  - 📝 编辑器，协作同步，版本分支，~~虚拟渲染, 分支版本, 协作冲突, undo/redo~~
+  - 📝 编辑器，协作同步，版本分支， ~~虚拟渲染, 分支版本, 协作冲突, undo/redo~~ 
   - 🔀🛢️ crdt版本历史, partial-replica、ivm, delta-db, 实时架构
   - version-history+sync(for table/pdf), replay, motion/live-photo(标准)
   - replay(editor+tree+layout), reproducible
@@ -111,18 +111,20 @@ modified: 2021-07-20T13:50:23.433Z
     - hive, iceberg, deltalake
   - 代码文件与数据库紧密结合的方案示例，可参考git/docx-zip
   - 代码与数据库结合来更新应用程序(app/webapp)的方案，可参考aquameta/couchapp/reka/sourcegraph
-  - server-first
-    - vscode/cline-cli(从客户端重构为c/s架构) 都从本地计算迁移到了服务端计算
-    - codesandbox从nodebox(纯浏览器客户端)转向devbox(服务端)
-    - apitable(前同事liuyi告知从浏览器转向服务端), affine(server-native-rafactor)
-    - lmstudio-v0.4: core of the LM Studio packaged to be server-native
-    - powersync
-    - replicache/zerosync
-  - client-first
-    - usecases: webcontainer/nodebox
-    - claude-code, codex
-    - client-first对于多实例的场景，注意处理database-lock, 比如chrome/edge访问访问网站的场景
-      - 还对协作冲突处理不友好
+- server-first
+  - vscode/cline-cli(从客户端重构为c/s架构) 都从本地计算迁移到了服务端计算
+  - codesandbox从nodebox(纯浏览器客户端)转向devbox(服务端)
+  - apitable(前同事liuyi告知从浏览器转向服务端), affine(server-native-rafactor)
+  - lmstudio-v0.4: core of the LM Studio packaged to be server-native
+  - powersync
+  - replicache/zerosync
+- client-first
+  - usecases: webcontainer/nodebox
+  - claude-code, codex
+  - client-first对于多实例的场景，注意处理database-lock, 比如chrome/edge访问访问网站的场景
+    - 还对协作冲突处理不友好
+- cli-first
+  - 很多项目都迁移到了cli, 如lmstudio, claude-cowork, codex-app
 
 - 🚀 产品落地
   - 侧重表格的cms, 内容创作与管理
@@ -165,10 +167,10 @@ modified: 2021-07-20T13:50:23.433Z
   - 📌 tanstack-table, ag-grid, handsontable, luckysheet/univer, ospreadsheet; undb/nocodb/ethercalc
   - stream-updates/server-side-infinite-row-model
   - scripting/themeable/canvas/viztable/apache-arrow
-  - ~~excel-like~~/~~headless~~
+  - ~~excel-like~~/~~headless~~ 
 - 💎 collab
   - crdt: yjs, automerge, logux, rga, fluid-framework, hlc
-  - log-based: ~~p/couchdb~~, powersync, kappa-db, event-sourcing
+  - log-based: ~~p/couchdb~~ , powersync, kappa-db, event-sourcing
   - eav: triplitdb
 
 - 通用能力/features

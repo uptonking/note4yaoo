@@ -1922,6 +1922,13 @@ modified: 2025-11-30T17:27:16.720Z
     - Custom LLM (OpenAI-compatible API) – Use your own deployed LLM with OpenAI-compatible API (vLLM, Ollama server, TGI, etc.). The indexer runs locally while the LLM can be on your server, cloud, or local machine.
     - Custom GPT – Query your local documents using ChatGPT app or web with custom GPTs. The indexer runs on your cloud or local PC, while the primary LLM remains ChatGPT.
 
+- https://github.com/NitroRCr/nyaai /apache2/202603/ts/vue
+  - https://nyaai.cc/
+  - [[开源] Nya AI: 在一个地方进行 AI 对话 / 网络搜索 / 笔记 / 协作 / 频道 / 网盘  - LINUX DO _202603](https://linux.do/t/topic/1787694)
+    - Nya AI 结合了 AI 对话客户端和协作平台，让你能够在一个平台进行 AI 对话、网络搜索、记笔记、编写文档、与团队沟通/协作、管理文件等操作。
+    - Nya AI 是可协作的平台，因此所有内容都储存在云端，你可以随时通过任意设备访问所有内容。得益于同步引擎 Zero
+    - 类似于传统搜索引擎和 AI 搜索的结合，左侧是搜索结果，右侧会生成 AI 总结回答，也可进行后续对话。
+
 - https://github.com/HKUDS/DeepTutor /9.3kStar/AGPL/202601/python/ts
   - https://hkuds.github.io/DeepTutor
   - AI-Powered Personalized Learning Assistant

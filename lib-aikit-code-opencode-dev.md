@@ -20,6 +20,22 @@ modified: 2026-01-17T22:40:27.013Z
 
 - tips
   - Coding agent clients (sometimes referred to as harnesses)
+
+- tui-pros
+  - 容易实现 multi-agents
+  - terminal integrates with your existing shell like zsh/tmux/...
+  - 更容易自动化: easier to manipulate the CLI via scripting
+
+- tui-cons
+  - ?
+
+- gui-pros
+  - better ux/notifications
+  - 适合作为 remote control 的客户端
+  - ui方便展示更多信息
+
+- gui-cons
+  - 不容易实现 multi-agents
 # draft
 - obsidian-cli by opencode-cli
 # dev-xp

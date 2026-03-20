@@ -312,6 +312,11 @@ cd ~/Documents/opt/compiled/zimage && ./ZImageCLI -m mzbac/Z-Image-Turbo-8bit -o
 - dev-log
   - ?
 
+## 0320
+
+- greasyfork: [Due to issues with spam, new accounts may not immediately post scripts. Please try again later. _202603](https://greasyfork.org/en/discussions/greasyfork/295935-due-to-issues-with-spam-new-accounts-may-not-immediately-post-scripts-please-try-again-later)
+  - It's 5 minutes. 
+
 ## 0318
 
 - i have run unsloth-studio locally on my macbook without docker. i want to reuse its features/code into my custom projects. is its license commercial friendly? please read related backend code and web ui code for unsloth studio, and explain to me 

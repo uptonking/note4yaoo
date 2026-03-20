@@ -256,7 +256,18 @@ modified: 2023-10-30T07:34:03.602Z
 
 - ## 
 
-- ## 
+- ## [Nvidia built a silent opinion engine into NemotronH to gaslight you and they're not the only ones doing it : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1ryv8ic/nvidia_built_a_silent_opinion_engine_into/)
+  - I found something weird while uncensoring Nvidia's NemotronH family this past week.
+  - These models don't just refuse harmful prompts in the typical fashion for certain demographic categories. Nvidia trained a completely separate behavior and flaunts it as a positive technological breakthrough. The model quietly rewrites what you asked into the opposite. There is no disclosure and no refusal message, but directly different content than what you requested.
+  - The thinking trace makes it obvious. the reasoning module plans to comply ("provide practical steps, no disallowed content") but the output generation layer produces anti-content.
+  - Educational material, positive reframing, the works. the model decided what you should have meant and gave you that instead.
+  - This only happens for specific categories. other comparable prompts in the same domain get normal refusal behavior (or just comply). it's asymmetric by design.
+  - Technically this is a distinct circuit from the refusal direction. it's not a safety guardrail — it's an instruction-tuning artifact baked into the generation weights. the pathway actually
+  - Shares activation subspace with creative writing and narrative generation, meaning nvidia trained the model to creatively rewrite certain inputs using the same neural pathways it uses for storytelling.
+  - Both the 4B and 30B exhibit this so it's definitely a family-wide training choice.
+
+- You mean https://huggingface.co/datasets/nvidia/Nemotron-RL-Safety-v1 ?
+  - Awesome!! the README is interesting here, Nvidia explicitly trains different response strategies per category through the reward model. they even penalize what they call 'incorrect refusal strategy' meaning some categories are supposed to get hard refusal and others get "the nudge in the right direction".
 
 - ## 很多人会直觉觉得：中文字少，token 应该也更少；但在大语言模型里，这不一定成立。
 - https://x.com/cholf5/status/2032724501935632529
@@ -1330,9 +1341,7 @@ e) 最终评论者(Final Critic)
 - ## [关于大模型对于中文字数的理解  - LINUX DO _202603](https://linux.do/t/topic/1773860)
 - 反正玩酒馆的时候发现，AI并不能掌控自己到底输出多少字，更有效的prompt是要求大概的tokens数或每一段落大概多少多少字，一共字数在哪个范围。大模型只能估算，没办法实际去计数。
 
-
-- 是的.只能给区间. 大模型好像默认只能发散, 聚拢必须要通过推理.
-
+- 是的. 只能给区间. 大模型好像默认只能发散, 聚拢必须要通过推理.
 
 - ## [Small LLMs seem to have a hard time following conversations : r/LocalLLM _202603](https://www.reddit.com/r/LocalLLM/comments/1rn7362/small_llms_seem_to_have_a_hard_time_following/)
 - 4B quants might be the bigger culprit(问题的起因; 罪犯) than the model size here. Especially if the KV cache is quantized as well.
@@ -1594,7 +1603,7 @@ e) 最终评论者(Final Critic)
   - The goal is to create just enough structure so your decisions are traceable and the agent has context for the next iteration of a given feature area.
 - First, worth mentioning this approach really only applies to a decent sized feature. Bug fixes, small tweaks or clean up items are better served just by giving a brief explanation and letting the agent do its thing.
 - How we implemented it (step-by-step)
-  - Define your prd.md**:** goals for the feature, user journey, basic requirements.
+  - Define your prd.md **:** goals for the feature, user journey, basic requirements.
   - Define your tech_brief.md: high-level architecture, constraints, tech-stack, definitions.
   - For each feature/user story, write a requirements.md file: what the story is, acceptance criteria, dependencies.
   - For each task under the story, write an instructions.md: detailed task instructions
@@ -1687,7 +1696,7 @@ That's why claude code is kicking the butt of whatever isolated model we kick th
   - 对，todo list有助于拉回注意力好一些，但一样输出内容不能太长
 
 - 说下我的理解：每个token输出都是一个概率，举个例子：比如说“我”这个字后面跟着“们”还是“的”，对llm来说就是取概率高的。但是概率有2个问题：
-  1. 就算每次都取最高的，0.9*0.9*0.9…，整体来看，符合预期的概率越来越低，所以输出太多之后没法保证不走偏
+  1. 就算每次都取最高的，0.9 *0.9* 0.9…，整体来看，符合预期的概率越来越低，所以输出太多之后没法保证不走偏
   2. 中间某一个位置，两个token的概率相近，llm选择不小心走偏了之后，后面输出的token会一直在这个走偏的token上继续输出
   - 补充一点，现在LLM有温度设置，不是纯贪心取最大概率的。而且算力有限，无法做到全局最优。只能说篇幅越短，越准确。 现在大家做的CoT，以及利用Agentic workflow不断重写，其实都是在逼近全局最优。
 

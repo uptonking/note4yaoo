@@ -34,7 +34,22 @@ modified: 2025-12-18T12:26:08.445Z
 # discuss-stars
 - ## 
 
-- ## 
+- ## [Terminal vs. Desktop App: What’s The Difference? : r/ClaudeCode _202603](https://www.reddit.com/r/ClaudeCode/comments/1ryq4t7/terminal_vs_desktop_app_whats_the_difference/)
+- Claude Code was a terminal app before it was a desktop app. A lot of people started using it that way, grew accustomed to it, and built a ton of systems around terminal-based interfaces. So... partly it's cultural.
+  - But there are important functional reasons to run Claude Code in terminal mode. 
+  - First, Claude Code terminal sessions are persistent and can talk to each other, which opens up a huge architectural advantage in multi-agent system. 
+  - And second, you can run tmux or other software packages to view all kinds of agents at once. Claude for Mac doesn't support either of those - zero agent-to-agent communication, and you only get to view one session at a time.
+  - Finally... Claude for Mac, at least, is an underdeveloped piece of software with a lot of bugs. Some are purely aesthetic but a fair number are functional and even crippling. It's my sense that Claude Code terminal mode simply doesn't have those problems.
+
+- Terminal is infinitely better at least on Mac. The app is so laggy and takes forever to start up if you have a lot of mcp servers, even on a 2025 M2 Pro.
+
+- It's purely a preference thing, the desktop app just wraps the cli so it's basically the cli in an interface
+
+- terminal vs desktop is mostly culture/habit but there is one real difference: terminal integrates with your existing shell setup. if you already live in tmux or iterm triggers, the terminal feels natural. if you just want to code and not think about your tooling, desktop app is fine. the performance difference is negligible for most tasks. the desktop app does have some quality of life things the terminal doesnt (easier file browsing, native notifications) but honestly once you get comfortable in terminal you wont go back. as a hobbyist just use whatever lets you ship faster, the desktop app is perfectly capable
+
+- New to it myself but the one thing I like most about running the terminal is that when you do so in an ide like cursor or vs you can actually see what it’s doing, as opposed to just watching the claude window and waiting. And obviously you can do things in the terminal that you can’t in the Claude app, like check your usage limits with a command or see the context window.
+
+- It's usually easier to manipulate the CLI via scripting. Automations are crucial for many users, and if you're not comfortable with that, ask LLMs for help and be specific.
 
 - ## 🧩 [CC环境变量 搞点简单记录 _202601](https://linux.do/t/topic/1513988)
 - CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC

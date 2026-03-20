@@ -49,7 +49,7 @@ modified: 2024-11-16T16:58:32.628Z
 
 - ## 服务器 ssh 被扫了 16w 次，就离谱。
 - https://x.com/hubingkang/status/1900362862767595638
-  - `sudo lastb | wc -l`
+  - `sudo lastb | wc -l` 
 
 - 紧查了查，我的几台国外服务器，20多万次。国内的反而少一点，不到两万次。但是我内网穿透的家里主机，竟然也有将近2万次，家里的电脑密码很简单，也不知被攻破了没
   - 家里内网得注意，一被破解了不是盗取资料就是要勒索了。
@@ -67,6 +67,19 @@ modified: 2024-11-16T16:58:32.628Z
 - ## YaDNSb - 一个 DNS 服务器性能基准测试工具！支持 IPv4、IPv6、DoH、DoT 和 DoQ - 基本上所有的 DNS 协议
 - https://x.com/geekbb/status/1928287578983186678
 - 更适合中国宝宝体质的 DNS 测速工具：https://github.com/xxnuo/dns-benchmark/tree/master
+
+# discuss-wireshark
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Wireshark-MCP：为 LLM 提供原生的pcap包分析能力  - LINUX DO _202603](https://linux.do/t/topic/1784146)
+  - 主要解决 AI 辅助网络排障和安全分析时，缺乏底层数据包操作能力的痛点。底层基于真实的 tshark / Wireshark 套件，你可以直接把 .pcap 文件丢给 CodeX 或 Claude，
+  - 它会自动提取数据帧，基本覆盖 Tshak 全部功能，已经精简过Tool Calling 的上下文，可用于应急响应分析已经 CTF 竞赛
 
 # discuss
 - ## 

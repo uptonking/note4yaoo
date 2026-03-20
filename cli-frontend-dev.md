@@ -26,6 +26,8 @@ yarn cache clean --all
 pnpm store prune
 ```
 
+
+
 ```JS
 // 随机整数，在区间[0, N]之间，包含两端
 Math.round(Math.random() * 20)
@@ -72,7 +74,7 @@ crypto.randomUUID().slice(-5)
 // sleep
 await new Promise(r => setTimeout(r, 2000));
 const sleep = ms => new Promise(r => setTimeout(r, ms));··
-/** do something every second by 3 times  */
+/ ** do something every second by 3 times  * /
 async function test() {
   for (let i = 0; i < 3; i++) {
     await new Promise((resolve, reject) => setTimeout(resolve, 1000));
@@ -85,6 +87,9 @@ async function test() {
 new Date(Date.now() - (new Date().getTimezoneOffset() * 60000)).toISOString()
 
 new Date(Date.now() - (new Date().getTimezoneOffset() * 60000)).toISOString().replaceAll('-', '').replaceAll(':', '').replaceAll('.', '')
+
+// 处理已有时间字符串, 输出 2026-03-19T05:21
+new Date(new Date('2026-03-18T21:21:37.880Z').getTime() - (new Date().getTimezoneOffset() * 60000)).toISOString().slice(0, 16)
 ```
 
 # npm-cli
@@ -189,7 +194,8 @@ npm info @dao42/clacky-paas-front@0.9.307
       - `lerna add pkgA --scope=pkgB` ：将A安装到B的字段， --dev，一次只能一包
       - `lerna publish` ：先确定哪些包需要publish，--skip-git/npm
           - 先设置version，先打tag，再push到github，再上传npm，可通过参数拆分流程
-          - `lerna publish from-package --yes --registry http:// `
+          - `lerna publish from-package --yes --registry http://`
+
           - 参考 https://github.com/lerna/lerna/issues/1648
       - `lerna ls` ：显示packages下的各个package的version
       - `npm link` ：可添加本地正在开发的包作为依赖

@@ -328,7 +328,7 @@ modified: 2025-11-06T18:49:13.977Z
 - Does it do image to MD too?
   - Unless the only thing you want is a description of the image, then the real answer is NO. You can get an LLM to do something like "If you encounter an image that is not easily convertable to standard markdown, insert a [[DESCRIPTION OF IMAGE]] here." placeholder, but at that point you've lost information that may be salient to the original PDF.
   - The reason is because these multimodal LLMs can give you descriptions/OCR/etc., but they cannot give you quantifiable information related to placement.
-  - You almost need segmentation system middleware that the LLM can forward to which can cut out these images to use in markdown syntax: ! `[A tiger burning brightly](/assets/images/tiger.png)`
+  - You almost need segmentation system middleware that the LLM can forward to which can cut out these images to use in markdown syntax: ! `[A tiger burning brightly](/assets/images/tiger.png)` 
 
 - you can customize this as you wish by adding it to your prompt.
 
@@ -460,7 +460,7 @@ modified: 2025-11-06T18:49:13.977Z
 - https://x.com/karminski3/status/2016037684737933489
   - 用 LLM 架构直接替掉传统的 CLIP 视觉编码器！
   - CLIP 是 OpenAI 搞的一个视觉编码器，通过海量图文对比学习，让模型能把图像"翻译"成语言模型能理解的向量。DeepSeek-OCR V1 就用的 CLIP VIT (300M参数)，效果已经很不错了。但问题是，CLIP 天生是为"图文匹配"设计的，不是为"按顺序读文档"设计的——它看图像就像拍照片，一眼看全局，但不会像人一样"从头读到尾"。
-  - DeepSeek-OCR-2 的核心创新叫**视觉因果流 (Visual Causal Flow)**，说白了就是让模型学会"智能阅读"。怎么做到的？用 Qwen2-0.5B 这个小型 LLM 替代 CLIP 做视觉编码——所谓视觉编码，就是把一张图片转换成一串数字序列（token），让语言模型能"看懂"图片内容。
+  - DeepSeek-OCR-2 的核心创新叫 **视觉因果流 (Visual Causal Flow)** ，说白了就是让模型学会"智能阅读"。怎么做到的？用 Qwen2-0.5B 这个小型 LLM 替代 CLIP 做视觉编码——所谓视觉编码，就是把一张图片转换成一串数字序列（token），让语言模型能"看懂"图片内容。
   - 可学习的 "causal flow tokens"（因果流token）。简单理解就是，模型会生成一组"阅读指针"，这些指针可以自己学习按什么顺序去关注图像的不同区域。
   - 图像本来是2D的（有横有纵），但语言模型只能处理1D序列（一个字接一个字）。传统做法是把图像暴力展平，从左上角扫到右下角，这样复杂图案空间关系全乱了。
   - DeepSeek-OCR-2 的做法更聪明：第一层，让视觉token用双向注意力互相"看见"，保持2D空间感知（知道谁在谁旁边）；第二层，因果流token按语义逻辑重新排序（先看标题、再看正文、表格单独处理）。两层配合，就像先画一张内容地图，再规划最优阅读路线——用1D的阅读顺序，还原出2D的文档结构！
@@ -827,7 +827,12 @@ modified: 2025-11-06T18:49:13.977Z
 
 - ## 
 
-- ## 
+- ## Bunch of new open OCR models recently — all available as uv scripts on @huggingface .
+- https://x.com/vanstriendaniel/status/2034695914636325231
+- Are dots.mocr weights the same as the previous dots.ocr 1.5?
+  - I got my answer: both of the safetensors have the same hash.
+- Yes they decided to rename the model
+
 
 - ## 🆚 [Benchmark Paper: Vision-Language Models vs Traditional OCR in Videos : r/LocalLLaMA _202502](https://www.reddit.com/r/LocalLLaMA/comments/1ioi4lm/benchmark_paper_visionlanguage_models_vs/)
   - A new benchmark paper just dropped evaluating how well Vision-Language Models (VLMs) perform compared to traditional OCR tools in dynamic video environments.

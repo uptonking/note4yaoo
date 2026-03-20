@@ -17,7 +17,7 @@ modified: 2025-12-19T12:43:21.150Z
   - ⏳ 文本/富文本/原文的版本管理如何设计
   - 批量执行ocr的架构可参考papermerge/paperless
   - ocr API的用法还可以参考 基于llm的文本提取, 基于openai api来提取文本/ocr
-  - ~~vlm流式输出的方案配合编辑器流式构建内容的ux体验会很好~~, 前端交互重要性不高
+  - ~~vlm流式输出的方案配合编辑器流式构建内容的ux体验会很好~~ , 前端交互重要性不高
 
 - 支持多种ocr方案的实现
   - ragflow: docling, mineru, paddleocr
@@ -94,6 +94,27 @@ modified: 2025-12-19T12:43:21.150Z
   - 输出支持 blocks/json/html/markdown
   - blocks在hover时能高亮原文档/原图片中对应的bounding-box
 # popular
+- https://github.com/run-llama/liteparse /686Star/apache2/202603/python/ts
+  - https://developers.llamaindex.ai/liteparse/
+  - LiteParse is a standalone OSS PDF parsing tool focused exclusively on fast and light parsing. 
+  - It provides high-quality spatial text parsing with bounding boxes, without proprietary LLM features or cloud dependencies.
+  - Everything runs locally on your machine.
+  - Fast Text Parsing: Spatial text parsing using PDF.js
+  - Flexible OCR System:
+    - Built-in: Tesseract.js (zero setup, works out of the box!)
+    - HTTP Servers: Plug in any OCR server (EasyOCR, PaddleOCR, custom)
+    - Standard API: Simple, well-defined OCR API specification
+  - Screenshot Generation: Generate high-quality page screenshots for LLM agents
+  - 🐛
+    - 仅导出文本， 丢失了文本格式， 是否丢失语义?
+    - 需要支持扫描版pdf
+  - Standalone Binary: No cloud dependencies, runs entirely locally
+  - Multi-platform: Linux, macOS (Intel/ARM), Windows
+  - https://github.com/run-llama/liteparse/tree/main/packages/python
+    - Python wrapper for LiteParse 
+  - https://x.com/jerryjliu0/status/2034665976428724267
+    - Introducing LiteParse - the best model-free document parsing tool for AI agents 
+
 - https://github.com/xunbu/docutranslate /747Star/MPLv2/202601/python
   - 文档（小说、论文、字幕）翻译工具（支持 pdf/word/excel/json/epub/srt...）
   - 基于大语言模型的轻量级本地文件翻译工具
@@ -1479,7 +1500,7 @@ modified: 2025-12-19T12:43:21.150Z
 - https://github.com/chrisgrieser/obsidian-proofreader /30Star/MIT/202512/ts
   - AI-based proofreading and stylistic improvements for your writing. 
   - Changes are inserted as suggestions directly in the editor, similar to suggested changes in word processing apps.
-  - Suggested changes are inserted directly into the text: Additions as ==highlights== and removals as ~~strikethroughs~~.
+  - Suggested changes are inserted directly into the text: Additions as ==highlights== and removals as ~~strikethroughs~~ .
   - https://github.com/lucasmelin/red-pen /MIT/202308/ts/inactive
     - Red Pen is implemented as a retext-based plugin for the Obsidian note-taking app.
     - Red Pen acts as a proofreader for your writing.

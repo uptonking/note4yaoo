@@ -982,7 +982,7 @@ modified: 2025-12-11T18:10:23.710Z
   - https://x.com/hylarucoder/status/2019261190615232723
     - 实际上 700 多行 python 就可以复刻 claude code 迷你版, 包含 todo / subagent / skills.
 
-- https://github.com/Nano-Collective/nanocoder /1.3kStar/MIT+Attrib/202602/ts
+- https://github.com/Nano-Collective/nanocoder /1.3kStar/MIT/202602/ts
   - https://nanocollective.org/
   - A local-first CLI coding agent that brings the power of agentic coding tools like Claude Code and Gemini CLI to local models or controlled APIs like OpenRouter.
   - supports any AI provider that has an OpenAI compatible end-point, tool and non-tool calling models.
@@ -2388,6 +2388,10 @@ modified: 2025-12-11T18:10:23.710Z
   - open-source background coding agent system inspired by Ramp's Inspect.
   - https://x.com/_colemurray/status/2016210023366717818
     - OpenInspect is an open source implementation of Ramp's background agent blog post.
+  - https://x.com/_colemurray/status/2034664228272099474
+    - VSCode Code Server In-browser
+    - OpenInspect now contains a hosted VSCode instance which runs inside of the sandbox. 
+    - You can now make manual changes without having to clone the repo locally
   - [Why We Built Our Own Background Agent: Inspect — Ramp Builders Blog _202601](https://builders.ramp.com/post/why-we-built-our-background-agent)
     - Inspect writes the code like any other coding agent, but closes the loop on verifying its work by having all the context and tools needed to prove it
     - Each session runs in a sandboxed VM on Modal with everything an engineer would have locally: Vite, Postgres, Temporal, the works.

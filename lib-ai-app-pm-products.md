@@ -733,6 +733,8 @@ modified: 2025-03-22T16:10:24.856Z
     - docs 指的是这是 claude 的文档 ai，不破限只会回答文档相关的内容
   - [NihaoAPI _202603](https://nih.cc/console/personal)
     - cc
+  - [Pond Hub 反重力号池 _202603](https://code.claudex.us.ci/panel/profile)
+    - [【公益站】Code公益站-反重力号池 重回更名为Pond Hub ](https://linux.do/t/topic/1785656)
   - [ThatAPI](https://gyapi.zxiaoruan.cn/console/personal), 签到
     - 有多个cc分组，IP限制严格(无需gfw)
     - 免费提供 glm flash
@@ -816,11 +818,10 @@ modified: 2025-03-22T16:10:24.856Z
   - [Einzieg API](https://api.einzieg.site/console/personal), 签到
     - 仅提供codex模型
     - [【Einzieg公益站】再次启动 ](https://linux.do/t/topic/1569418)
-  - [zenscaleai](https://lc.zenscaleai.com/console/personal)
-    - 5.4
-  - [LogosAPI _202603](https://api.777114.xyz/console/personal)
-    - 5.4
   - [不可明说 API _202603](https://1.cnmz.de/console/personal)
+    - 5.4
+  - [LogosAPI _202603](https://api.777114.xyz/console/personal), 签到10
+    - 5.4
   - [API分享站](https://new-api-bxhm.onrender.com/console/personal)
     - [【API分享站】公益站主帖 ](https://linux.do/t/topic/1355814)
     - 反代 kiro
@@ -828,6 +829,8 @@ modified: 2025-03-22T16:10:24.856Z
     - [[NPC-API]codex公益站开业 ](https://linux.do/t/topic/1564054)
   - [SakuraCode _202603](https://codex.sakurapy.de/dashboard), 
     - https://codesign.sakurapy.de/
+    - 5.4
+  - [zenscaleai](https://lc.zenscaleai.com/console/personal), 签到少
     - 5.4
   - [520 API](https://520.wcgio.com/console/personal)
     - gpt-5.3-codex 

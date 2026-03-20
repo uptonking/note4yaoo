@@ -765,6 +765,22 @@ modified: 2025-02-21T17:17:42.225Z
       - 顺带一提其实也没要求英文和数字要求新罗马，甚至要求页码的 - 1 -，用的是宋体，当然了这些都是习惯了，而且新罗马电脑都有，且不会出现缺失这种情况。
     - 我们现在还是沿用 GB2312，数字新罗马。 另外提个 BUG， 引号 “ 现在是新罗马，要改成中文字体
 
+- https://github.com/amluckydave/shiyu /MIT/202603/ts/vue/tauri
+  - https://amluckydave.github.io/shiyu/
+  - 拾语 — 外刊精读 · 原版书阅读利器 | AI 划词标注、长难句拆解、FSRS 间隔复习 (Tauri 2 + Vue 3 + Rust)
+  - AI 思维导图	一键分析文章结构，中英双语切换，缓存秒开
+  - AI 翻译 & 解析	流式翻译，句子成分彩色标注，兼容 DeepSeek/OpenAI
+  - 生词本 & 句子库	搜索、批量操作、来源跳转、TTS 朗读
+  - 在线编辑	md-editor-v3 全功能编辑器，实时预览
+  - OCR 导入	PP-StructureV3 识别 + AI 校正，一键导入
+  - 数据管理	JSON 导入/导出，支持合并或覆盖
+  - 前端	Vue 3 + TypeScript + Vite + Vue Router + Pinia
+  - 后端	Rust + rusqlite (SQLite) + reqwest + tokio
+  - 解析渲染	epub + html2md + scraper + marked + md-editor-v3
+  - 思维导图	markmap-lib + markmap-view
+  - 语音	edge-tts-universal（三级缓存）
+  - [【开源自荐】拾语：外刊、外文原版书精读利器  - LINUX DO _202603](https://linux.do/t/topic/1786244)
+
 ## research
 
 - https://github.com/Agents2AgentsAI/ata /apache2/202602/rust/ts

@@ -550,6 +550,19 @@ modified: 2023-09-02T09:17:22.992Z
     - It was essentially entirely written by Opus 4.5. Coding agents love bash and they are good at reproducing it. They are also great at text-book recursive descent parsers and AST tweet-walk interpreters. 
     - It has cURL already
 
+- https://github.com/ColeMurray/background-agents /MIT/202601/python/ts
+  - https://backgroundagents.dev/
+  - open-source background coding agent system inspired by Ramp's Inspect.
+  - https://x.com/_colemurray/status/2016210023366717818
+    - OpenInspect is an open source implementation of Ramp's background agent blog post.
+  - https://x.com/_colemurray/status/2034664228272099474
+    - VSCode Code Server In-browser
+    - OpenInspect now contains a hosted VSCode instance which runs inside of the sandbox. 
+    - You can now make manual changes without having to clone the repo locally
+  - [Why We Built Our Own Background Agent: Inspect — Ramp Builders Blog _202601](https://builders.ramp.com/post/why-we-built-our-background-agent)
+    - Inspect writes the code like any other coding agent, but closes the loop on verifying its work by having all the context and tools needed to prove it
+    - Each session runs in a sandboxed VM on Modal with everything an engineer would have locally: Vite, Postgres, Temporal, the works.
+
 - https://github.com/pydantic/monty /695Star/MIT/202602/rust/python
   - A minimal, secure Python interpreter written in Rust for use by AI
   - https://x.com/samuelcolvin/status/2019604402399768721  _202602

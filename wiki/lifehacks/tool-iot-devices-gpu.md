@@ -281,6 +281,27 @@ modified: 2026-01-15T15:33:18.008Z
 - ## 
 
 - ## 
+# discuss-npu
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Tried GPU+NPU hybrid tensor parallelism on AMD Strix Halo (128GB unified DDR5). Here are some of my findings : r/StrixHalo _202603](https://www.reddit.com/r/StrixHalo/comments/1ryof3a/tried_gpunpu_hybrid_tensor_parallelism_on_amd/)
+  - I spent a few days trying to build a proof-of-concept for splitting large matrix multiplications across the iGPU and NPU simultaneously on Strix Halo. The goal was simple: GPU handles part of the matmul, NPU handles the rest in parallel, the net result is hopefully faster inference.
+  - The main focus is the Prompt Processing stage, as it is usually the main bottleneck on complex tasks.
+- Experiment 1: Running two separate models simultaneously (GPU + NPU)
+  - Key finding: The GPU model's prompt processing (PP) speed is almost completely unaffected by the NPU running simultaneously (~0–4% degradation across context sizes from 748 to 29, 900 tokens). The NPU model, however, degrades ~15–20% during PP and ~15% during token generation.
+  - Why: The MoE GPU model during PP at large context is compute-bound, so the GPU isn't saturating DDR5. The NPU can use the leftover bandwidth almost for free. But the GPU's Infinity Fabric connection is aggressive enough to dominate the bus during TG (where the GPU is bandwidth-bound), starving the NPU's XRT DMA path.
+  - Practical takeaway: On Strix Halo, you can run a small NPU model essentially for free while a sparse MoE GPU model is doing prompt processing. That's actually useful.
+- Experiment 2: Splitting a single matmul across GPU and NPU
+  - I wrote a proof of concept that splits a large matmul between GPU and NPU — one portion goes to the GPU, the other to the NPU, both run matrrix multiplication in parallel. I swept split ratios from 0.0 (GPU only) to 1.0 (NPU only) and measured wall time. For NPU, I use functions provided by the IRON bare metal framework.
+  - No split ratio beat GPU-only. The best result was just running everything on the GPU.
+  - The deeper issue is that it's gets quite complicated and non-linear: Strix Halo's 32MB Infinity Cache creates a non-linear contention cliff when the NPU's DMA transfers run concurrently with the GPU kernel. A naive parallel split doesn't yield any definite conclusion or performance improvement over pure GPU. It probably needs proper kernel-level coordination to be viable, which is beyond what a simple Python PoC can do.
+
+- I wonder if speculative decoding on npu using a small model with a larger moe model on the igpu would be a speed up compared to both on igpu.
+  - I believe yes, there are parallel variants of speculative decoding coming up. But I am more interested in improving the pp of the system. It's too slow for coding or deep research.
 # discuss-gpu-mod
 - ## 
 

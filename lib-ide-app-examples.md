@@ -436,7 +436,7 @@ modified: 2024-08-24T16:30:20.218Z
 - https://github.com/Ryandonofrio3/osgrep /1kStar/apache2/202601/ts
   - Natural-language search that works like grep. Fast, local, and works with coding agents.
   - Semantic: Finds concepts ("auth logic"), not just strings.
-  - Local & Private: 100% local embeddings via `onnxruntime-node` ~~transformers.js~~.
+  - Local & Private: 100% local embeddings via `onnxruntime-node` ~~transformers.js~~ .
   - Adaptive: Runs fast on desktops, throttles down on laptops to prevent overheating.
   - Smart Chunking: Uses tree-sitter to split code by function/class boundaries
   - Deduplication: Identical code blocks (boilerplate, license headers) are embedded once and cached, saving space and time.
@@ -494,7 +494,7 @@ modified: 2024-08-24T16:30:20.218Z
   - PR Agent - The Original Open-Source PR Reviewer, This repo is not the Qodo free tier
   - PR-Agent is an open-source, AI-powered code review agent and a community-maintained legacy project of Qodo.
   - It is distinct from Qodo’s primary AI code review offering, which provides a feature-rich, context-aware experience. Qodo now offers a free tier that integrates seamlessly with GitHub, GitLab, Bitbucket, and Azure DevOps for high-quality automated reviews.
-  - ~~似乎必须先存在 pr url 后, 才能使用此工具~~
+  - ~~似乎必须先存在 pr url 后, 才能使用此工具~~ 
   - 🏘️ CLI args → PRAgent.handle_request() → GitProvider.get_diff_files() → PR Processing (token handling) → AI Handler → Publish results
     - all git providers implement the same `GitProvider` interface, which abstracts away whether the diff comes from GitHub, GitLab, or a local repository.
     - `LocalGitProvider`: Uses `gitpython` library to interact with local .git directory, Creates a `PullRequestMimic` object to simulate PR structure; Works with /review and /describe commands
@@ -642,6 +642,13 @@ modified: 2024-08-24T16:30:20.218Z
   - Sandboxed execution — Runs in an isolated Vercel Sandbox with full repo access, including the ability to run linters, formatters, and tests
   - https://x.com/haydenbleasel/status/2029646226707362009
     - self-hosted AI code review bot powered by the Vercel AI Cloud.
+
+- https://github.com/condevtools/pr-agent /MIT/202603/ts
+  - AI-powered code review service built with TypeScript + NestJS. 
+  - This repository is now a pnpm monorepo: the backend service lives in backend/, and the Next.js frontend lives in frontend/.
+  - [【开源】pr-agent 自托管的代码 pr/issue 审查服务 - LINUX DO _202603](https://linux.do/t/topic/1787114)
+    - 支持 openai-compatiable 格式请求。
+    - 网页的前端是花了 4h vibe 做的，自认为极限时间内做出比较合格的官网
 # code-security
 - https://github.com/lintsinghua/DeepAudit /5kStar/AGPL/202602/python/ts
   - DeepAudit：人人拥有的 AI 黑客战队，让漏洞挖掘触手可及。国内首个开源的代码漏洞挖掘多智能体系统。

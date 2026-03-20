@@ -79,7 +79,11 @@ modified: 2024-01-25T13:33:23.267Z
 
 - ## 
 
-- ## 
+- ## zeroboot — 用 Firecracker 快照 + CoW fork 做亚毫秒级 AI agent VM 沙箱
+- https://x.com/QingQ77/status/2034580389742944576
+  - 它是直接把 Firecracker 快照当母体，再用 CoW fork 出新的 KVM VM，目标就一个，让 agent 跑代码的时候，既别太慢，也别太像在裸奔。
+- https://github.com/zerobootdev/zeroboot /apache2/202603/rust
+  - Sub-millisecond VM sandboxes for AI agents via copy-on-write forking
 
 - ## Browsers have spent decades solving a similar problem of executing untrusted code safely, and porting those architectural learnings to backend infrastructure feels like a natural evolution
 - https://x.com/auchenberg/status/2027949839581945871
@@ -259,7 +263,7 @@ modified: 2024-01-25T13:33:23.267Z
 
 - ## [How can I manually append three.js code into an iframe - Stack Overflow](https://stackoverflow.com/questions/72862663/how-can-i-manually-append-three-js-code-into-an-iframe)
 - `iframeDocument.write(generatedCode)` ; 
-  - Your generatedCode will produce error Unterminated template literal you need to escape/replace `</script>` in variable with `<\/script>`
+  - Your generatedCode will produce error Unterminated template literal you need to escape/replace `</script>` in variable with `<\/script>` 
 
 - ## [Is it safe to have sandbox="allow-scripts allow-popups allow-same-origin" on <iframe />? - Stack Overflow](https://stackoverflow.com/questions/35208161/is-it-safe-to-have-sandbox-allow-scripts-allow-popups-allow-same-origin-on-if)
 - allow-scripts This allows JavaScript code within the IFrame to run
@@ -286,7 +290,8 @@ modified: 2024-01-25T13:33:23.267Z
 var iframe = document.getElementById('my_iframe');
 var iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
 
-var scriptSource = `
+var scriptSource =`
+
     window.addEventListener('DOMContentLoaded', function() {
         var form = document.getElementById('form'); // change to the actual form selector
         var input = document.getElementById('transaction_amount');
@@ -349,7 +354,7 @@ window.document.getElementById("baidu-container").onload = function() {
 - There is one alternative to `<iframe>` and that's the `<object>` tag. It can display content from different sources as well. The pro is it being conform to the **xhtml-standards** and encouraged to use but there's not such a broad / usable support in older browsers (you have to mess with it to get it right in IE).
 
 - As others have mentioned you can also use the embed tag and the object tag but that's not necessarily more advanced or newer than the iframe.
-  - HTML5 has gone more in the direction of adopting web APIs to get information from cross domains. **Usually web APIs just return data though and not HTML**.
+  - HTML5 has gone more in the direction of adopting web APIs to get information from cross domains. **Usually web APIs just return data though and not HTML** .
 
 - ## [How to show google.com in an iframe? - Stack Overflow](https://stackoverflow.com/questions/8700636/how-to-show-google-com-in-an-iframe)
   - Why does google.com not load in an iFrame 
