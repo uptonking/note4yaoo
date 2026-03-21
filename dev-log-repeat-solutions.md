@@ -477,6 +477,46 @@ modified: 2021-07-20T13:50:23.433Z
   - elara: demo示例非常酷，特别是layer，dashboard, shell, pic-viewer
   - ventus: 快速切换到窗口平铺预览
   - rc-dock: 类似ide的拖拽停靠效果
+
+## rewrite-to 🛝👾
+
+- prosemirror
+  - columns
+  - code-diff
+- codemirror
+  - monaco-diff
+- vscode 
+  - obsidian
+
+- handsontable: database, grist
+- grist: ember to agnostic/react
+
+- pptist: vue to agnostic/react
+
+- papermerge
+  - paperless-ngx: nested tags, ai
+
+- bentopdf backport
+- PyMuPDF
+
+- pdf-proofreading
+  - word
+  - excel
+
+- janai
+  - lmstudio-cli
+
+- web-clipper
+
+- git-graph
+
+- timeline
+
+- 
+- 
+- 
+- 
+
 # fundamentals
 - format
   - excel/csv/office open xml

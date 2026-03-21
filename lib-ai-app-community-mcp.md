@@ -194,6 +194,31 @@ modified: 2025-02-03T10:17:42.052Z
 
 - ## 
 
+- ## 
+
+- ## 
+
+- ## CLI 这波热点，是流量逻辑。因为 for agents 的述事成了硅谷的吹捧，同时确实有 agents 想通过 CLI 来调用工具，
+- https://x.com/lifesinger/status/2035010592981852213
+  - 于是传统工具们纷纷穿上新衣服，希望被调用，来获取流量或资本关注。
+- 然而 CLI 化有很难解决的问题：
+  1. 参数爆炸问题。GUI 的功能远胜 CLI，要压缩成 CLI 参数，只能疯狂做减法。能敢于做减法的，已经是有认知的老板。没认知的老板，只会强压团队：所有功能都必须 CLI 化。可悲的是，用户根本不这么想。比如用户会在 IM 里按照自己对传统工具的 GUI 用法来描述需求，结果 agent 会发现：CLI 只能骗用户，或调调最基础的功能，稍微复杂的，还得是 computer use. 可用户已经急躁得骂娘了。
+  2. 更严重的问题上，CLI 化很难跑通商业模式。此处太敏感，省略一万字。
+- 更好的解法，是别安装本地软件了，一切云端 API 化。Agent 也很擅长调用 API 的，而且很考验 API 的接口易用性和商业模式设计。越易用的 API，能有越多模型能调用成功。商业模式越好的 API，则越能更长久为用户提供性美价廉甚至免费的服务。
+- 提供 API 最有经验的公司，就是 SaaS 公司。优秀 SaaS 公司最核心的资产，也是 API。并不是界面。
+- Agent 时代， 需要 CLI，然而更需要的，是优秀的 API 型 SaaS 服务。
+
+- 不矛盾，现在大部分cli就是api的入口
+
+- 无脑瞎上CLI短期可能会搞到流量，但长期来看作用不大。但也能理解吧，不是所有公司都有 SaaS 化能力的。
+  - 合理的架构应该是CLI作为入口，API承载商业化，GUI补充。三者有机结合
+
+- cli一定程度上解决了api认证的问题，并且缓解了注意力的分散，cli的help也是天然的动态注入。我更愿意看作gui是把api封装成人类友好的交互，cli把api封装成agent有好的交互
+
+- 这个前提是平台愿意做 API。现实是中国互联网大量平台根本不提供公开 API，或者 API极其残缺。这种情况下 CLI 不是退而求其次，而是唯一可行路径
+
+- 也不是 我看 有人往 CLI 参数塞 JSON 了
+
 - ## 做了一个 AI Native 的 CLI ，OpenCLI 可以对接所有的网站转换成 CLI
 - https://x.com/jakevin7/status/2032936880115736883
   - https://github.com/jackwener/opencli
@@ -490,6 +515,57 @@ modified: 2025-02-03T10:17:42.052Z
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 🎯 Introducing: Browser Use CLI 2.0
+- https://x.com/browser_use/status/2035081807209931153
+  - 2x the speed, half the cost (compared to other browser automation CLIs)
+  - Easily connect to running Chrome
+  - Uses direct CDP
+- Popular use cases:
+  - Form filling
+  - QA/Pentesting
+  - General web automation
+
+- Is this opensource?
+  - yes
+
+- Direct CDP is powerful, but maintaining those selectors is the real bottleneck.
+
+- direct CDP is the right call been burned by playwright overhead way too many times. does the 2x speed hold when youre running multiple concurrent sessions?
+  - yes
+
+- The Claude Chrome extension is free to use with Claude CLI. Honest question: what does this improve over that setup?
+  - Don’t need to install a Chrome extension
+  - Can be used with any CLI agent
+  - Fast and token efficient
+
+- can it run headless and do the same thing as this video demo?
+  - Yes
+
+- what's the difference between this and agent-browser?
+  - 2x the speed for half of the cost with half of the commands
+
+- 那本地都能做了，它家的 cloud 服务可以做什么？
+  - Cloud gives you access to our agent-ready browsers and browser subagents
+  - Massive parallelization
+
+- https://github.com/ulpi-io/benchmark-browse-vs-agent-browser-vs-browser-use
+  - Benchmark: browse vs agent-browser vs browser-use
+  - It's definitely a bit better than agent-browser, but would't say it's the "fastest" or the most token efficient. 
+
+- btw you can do this with chrome Dev MCP too with any cli/browser/client https://github.com/ychampion/chrome-for-agents
+
+- https://x.com/shao__meng/status/2035163988674454017
+- 新版本采用持久化后台守护进程架构，每条命令通过 Unix socket（或 Windows TCP）通信，响应延迟低至约 50ms。
+- 这与传统 Playwright 等框架形成鲜明对比——后者往往因抽象层导致启动慢、token 浪费和状态不稳定。
+- 无需 Chrome 扩展，即可与任何 CLI Agent 无缝集成，尤其擅长表单填写、数据提取等复杂交互。
+
+- 支持三种浏览器模式：
+  - 本地托管无头 Chromium
+  - 连接真实 Chrome（含现有登录与扩展）
+  - 云浏览器（可选，通过 Cloud API）
 
 - ## WebMCP 反过来：让网页应用主动告诉 AI「我能做什么」，AI 直接调用。不用模拟键鼠，不用找 DOM，一步到位。
 - https://x.com/runes_leo/status/2033479932601565464

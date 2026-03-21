@@ -171,13 +171,6 @@ modified: 2021-05-06T09:58:23.803Z
   - System UIcons is a collection of icons designed for products and systems in mind. 
   - Each icon is on a 21x21 grid.
   - Use the icons how you want, for free, and without any attribution.
-# brand-icons
-- https://github.com/pheralb/svgl /5.6kStar/MIT/202603/ts/svelte
-  - https://svgl.vercel.app/
-  - https://svgl.app/
-  - most popular SaaS logos in SVG format, with lightning-fast search
-  - Built with @sveltejs & @tailwindcss
-  - All svgs provides the link to the product or company that owns it, please contact them if you are going to use their logo. If you are the owner of an svg and do not want it to appear here, please create an issue on Github.
 # font icons
 - catalog
   - https://getbootstrap.com/docs/4.0/extend/icons/
@@ -341,6 +334,21 @@ modified: 2021-05-06T09:58:23.803Z
 - [Iconbuddy — 200K+ open source free svg icons](https://iconbuddy.app/)
   - Download, Customize, Edit and Personalize. Over 200k+ open source icons.
 
+- https://github.com/dicebear/dicebear /7.6kStar/MIT/202508/ts/经典图层组合
+  - https://dicebear.com/
+  - https://www.dicebear.com/playground/
+  - With DiceBear you can create awesome avatars for your project in no time.
+  - In addition to purely random avatars, you can also create deterministic avatars for user identities. With the built-in PRNG you create the same avatar over and over again based on a seed.
+  - The avatars are created in SVG format. This allows to generate avatars dynamically without much computing power.
+    - In most cases, various SVG elements such as hair, eyes, ears etc. are selected from a set and combined to create a character / avatar.
+    - XorShift32 is used as the algorithm for the PRNG. It is important to note that the PNGR does not attempt to be cryptographically secure
+  - [Host the HTTP API yourself | DiceBear](https://www.dicebear.com/guides/host-the-http-api-yourself/)
+  - [Licenses | DiceBear](https://www.dicebear.com/licenses/)
+    - While our code is MIT licensed, the avatar styles are licensed under different licenses that the artists can choose themselves
+    - 友好的风格: Avataaars, Bottts, Bootstrap Icons
+  - https://github.com/dicebear/api /118Star/MIT/202507/ts
+    - source code for the DiceBear API. It's built on Fastify
+
 - https://github.com/cossistantcom/cossistant/tree/main/packages/facehash /MIT/NoDeps
   - https://www.facehash.dev/
   - Deterministic avatar faces from any string. Zero dependencies, works with React 18/19 and Next.js 15/16.
@@ -348,6 +356,11 @@ modified: 2021-05-06T09:58:23.803Z
     - Nobody talks about how ugly your app looks when users do not upload avatars.
     - So I fixed that with FaceHashes
     - This was originally in http://cossistant.com, a AI / human  customer support widget you add with a simple `<Support />` component to your React app.
+
+- https://github.com/boringdesigners/boring-avatars /6.2kStar/MIT/202509/ts/inactive
+  - 头像填充渐变色、小方块、表情形状；可选方形、圆形
+  - https://boringavatars.com/
+  - Boring avatars is a tiny JavaScript React library that generates custom, SVG-based, round avatars from any username and color palette.
 
 - https://github.com/jaywcjlove/icongo /MIT/202405/ts
   - https://icongo.github.io/
@@ -369,21 +382,6 @@ modified: 2021-05-06T09:58:23.803Z
 - https://icons.pqoqubbw.dev/
   - animated icons i’ve been working on lately are now open source
 # logos-generator
-- https://github.com/dicebear/dicebear /7.6kStar/MIT/202508/ts/经典图层组合
-  - https://dicebear.com/
-  - https://www.dicebear.com/playground/
-  - With DiceBear you can create awesome avatars for your project in no time.
-  - In addition to purely random avatars, you can also create deterministic avatars for user identities. With the built-in PRNG you create the same avatar over and over again based on a seed.
-  - The avatars are created in SVG format. This allows to generate avatars dynamically without much computing power.
-    - In most cases, various SVG elements such as hair, eyes, ears etc. are selected from a set and combined to create a character / avatar.
-    - XorShift32 is used as the algorithm for the PRNG. It is important to note that the PNGR does not attempt to be cryptographically secure
-  - [Host the HTTP API yourself | DiceBear](https://www.dicebear.com/guides/host-the-http-api-yourself/)
-  - [Licenses | DiceBear](https://www.dicebear.com/licenses/)
-    - While our code is MIT licensed, the avatar styles are licensed under different licenses that the artists can choose themselves
-    - 友好的风格: Avataaars, Bottts, Bootstrap Icons
-  - https://github.com/dicebear/api /118Star/MIT/202507/ts
-    - source code for the DiceBear API. It's built on Fastify
-
 - https://github.com/Nutlope/logocreator /202411/ts
   - https://www.logo-creator.io/
   - A free + OSS logo generator powered by Flux on Together AI
@@ -397,6 +395,20 @@ modified: 2021-05-06T09:58:23.803Z
 - [Logo Design & Brand Identity for Entrepreneurs | Looka](https://looka.com/)
   - AI-powered platform to design a logo and brand you love
   - 生成超多选择性的 logo 图标 , 然后下载是要收费的，你可以去直接扒 dom 里的 svg，去绕过这个问题
+# brand-icons
+- https://github.com/pheralb/svgl /5.6kStar/MIT/202603/ts/svelte
+  - https://svgl.vercel.app/
+  - https://svgl.app/
+  - most popular SaaS logos in SVG format, with lightning-fast search
+  - Built with @sveltejs & @tailwindcss
+  - All svgs provides the link to the product or company that owns it, please contact them if you are going to use their logo. If you are the owner of an svg and do not want it to appear here, please create an issue on Github.
+
+- https://github.com/preetsuthar17/loftlyy /MIT/202603/ts
+  - https://loftlyy.com/
+  - A brand identity reference site — discover and explore brand colors, typography, logos, and design systems. Like Mobbin, but for branding.
+  - Next.js 16, shadcn/ui
+  - https://x.com/preetsuthar17/status/2035251357855502604
+    - Loftlyy is now open-source
 # more
 - https://github.com/fontello/fontello
   - This tool lets you combine icon webfonts

@@ -189,6 +189,17 @@ modified: 2026-01-19T05:01:00.055Z
   - Collection of patches for puppeteer and playwright to avoid automation detection and leaks. 
   - Helps to avoid Cloudflare and DataDome CAPTCHA pages. 
   - Easy to patch/unpatch, can be enabled/disabled on demand.
+
+- https://github.com/alibaba/page-agent /MIT/202603/ts
+  - https://alibaba.github.io/page-agent/
+  - The GUI Agent Living in Your Webpage. Control web interfaces with natural language.
+  - No Selenium. No Puppeteer. No Chrome extension. No Python backend. Just one script tag.
+  - It reads your DOM as text (no screenshots, no multimodal BS), brings your own LLM, and executes natural language commands like "fill out this form" or "click login" — right inside the page.
+  - https://x.com/NainsiDwiv50980/status/2034907880462414024
+    - What about handling dynamic content loaded by JavaScript.
+    - You cannot always read DOM as text and understand page layout.
+    - that's just moving the complexity from the backend to the client side, now you have to worry about browser compatibility and cross site scripting.
+    - At the moment it seems to be able to navigate a single page and use dropdowns, but does not know how to use a search functionality.
 # computer/container-use
 - https://github.com/bytedance/UI-TARS-desktop /28.8kStar/apache2/202603/ts
   - https://agent-tars.com/
@@ -408,6 +419,13 @@ modified: 2026-01-19T05:01:00.055Z
     - oauth: OAuth 2.0/2.1 + Fastify integration
     - linting: neostandard + ESLint v9 flat config
     - documentation: Diátaxis framework
+
+- https://github.com/Yuzc-001/hand-drawn-note-generator
+  - [一个手绘图的skill，同时输出提示词 - LINUX DO _202603](https://linux.do/t/topic/1789990)
+  - A skill that transforms any content — project introductions, concept explanations, process diagrams, tutorials, comparisons — into clean hand-drawn sketch-note style images.
+  - Input: raw text, article, outline, bullet points
+  - Extract key points → Choose layout → Write prompt → Generate image
+  - Output: 4:3 sketch-note, white background, black ink, color accents
 # utils
 - https://github.com/mksglu/claude-context-mode /2.2kStar/MIT/202603/ts
   - https://cc-context-mode.mksg.lu/

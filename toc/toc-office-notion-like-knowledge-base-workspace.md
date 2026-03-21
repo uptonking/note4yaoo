@@ -480,7 +480,7 @@ modified: 2022-06-03T21:34:54.893Z
   - extensible tool for creating personal non-linear notebooks, databases, and wikis that is entirely self-contained, runs in your browser, and is only 55 kilobytes. 
   - The idea is that it's like TiddlyWiki but as small as possible.
   - 👉🏻 The app and all of the content you create using it are stored within the single HTML file generated when you save your wiki. 
-  - Publishing your content is as simple as uploading that file to a web server, and **updating is as simple as overwriting the file**.
+  - Publishing your content is as simple as uploading that file to a web server, and **updating is as simple as overwriting the file** .
   - Tiddlyhost is a free hosting platform that offers the ability to save your Feather Wiki directly instead of needing to download a copy!
   - [Feather Wiki: app for creating personal non-linear notebooks, databases, wikis | Hacker News_202205](https://news.ycombinator.com/item?id=31474062)
 
@@ -992,6 +992,8 @@ modified: 2022-06-03T21:34:54.893Z
     - [Better OCR with Docling : r/Paperlessngx _202504](https://www.reddit.com/r/Paperlessngx/comments/1jqqsly/better_ocr_with_docling/)
     - [Has anybody tried Readur as a Paperless-ngx alternative? : r/selfhosted](https://www.reddit.com/r/selfhosted/comments/1lw0164/has_anybody_tried_readur_as_a_paperlessngx/)
       - I am personally not a fan of Paperless’s tag-based approach. I have a folder-based approach that has worked well for me for years. I would love it if paperless (or an alternative) would simply interact with an existing folder structure, rather than consuming everything.
+    - pr已合并 [Feature: Nested Tags _202509](https://github.com/paperless-ngx/paperless-ngx/pull/10833)
+      - uses django-treenode's TreeNodeModel for tags to give them parent/child relationships and applies to documents such that adding a child always adds its parents and removing a parent removes all children. Similarly, if a tag gets assigned a new parent, that parent is added to existing docs.
 - https://github.com/clusterzx/paperless-ai /4.6kStar/MIT/202511/python/js
   - https://clusterzx.github.io/paperless-ai/
   - an AI-powered extension for Paperless-ngx that brings automatic document classification, smart tagging, and semantic search using OpenAI-compatible APIs and Ollama.

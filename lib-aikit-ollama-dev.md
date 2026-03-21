@@ -35,6 +35,9 @@ modified: 2026-01-14T18:57:01.673Z
 - 🤔 一种思路: tool-call时使用擅长tool-call的模型，分析时使用公益站的聊天优质但无法tool-call的模型
   - 支持类似 roocode 的 model profile 切换
 
+- model-manager
+  - 参考msty，能统一管理 local/ollama/lmstudio/huggingface 的模型，释放空间
+
 - tool应该支持在ui上配置参数
   - tool级别的prompt
   - stable-diffusion文生图的工具应该支持配置steps/选择不同效果的模型

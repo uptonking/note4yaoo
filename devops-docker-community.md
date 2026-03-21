@@ -24,7 +24,7 @@ modified: 2024-06-30T11:17:28.971Z
   - If --env-file is not set, variables set by an `.env` file in local working directory (PWD)
   - Variables from a file set by - `-env-file` or an `.env` file in project directory
   - You can check variables and values used by Compose to interpolate the Compose model by running `docker compose config --environment` .
-  - `COMPOSE_DEBUG=${DEV_MODE:-false}`
+  - `COMPOSE_DEBUG=${DEV_MODE:-false}` 
 
 - ## 又有人遇到 Docker 网络问题，之前分享的操作方法我又分享一下。这是最稳妥的做法：
 - https://x.com/jaywcjlove/status/1894825834390921678
@@ -98,12 +98,12 @@ modified: 2024-06-30T11:17:28.971Z
 - 你把模拟和虚拟混淆掉，OS级别和软件级别也混淆了，当然傻傻分不清了。
 - 💡 Docker不存在模拟，也不存在虚拟。
   - 它是隔离工具，需要运行特定的image，就是你想运行的软件大集合。不同image帮你隔离开互相不可见。 
-  - 这一切让你误以为是OS级别，**其实是软件级别**。
-- 💡 **Wine也是软件级别的模拟**，只模拟windows，让Linux也能运行win程序，
+  - 这一切让你误以为是OS级别， **其实是软件级别** 。
+- 💡 **Wine也是软件级别的模拟** ，只模拟windows，让Linux也能运行win程序，
   - 这个和微软提供WSL提供windows上模拟Linux道理是一样的，只是正好相反。
 - 💡 KVM是虚拟硬件的，非常底层。但是它是内核的一部分，所以强绑Linux平台。
   - Qemu在中层配合KVM使用。上层的客户OS可以完全不知道自己在哪，是谁。
-- **KVM和Qemu都是用在OS级别的模拟或者虚拟**。他们都支持。 到底是哪个，决定在于你怎么使用他们。
+- **KVM和Qemu都是用在OS级别的模拟或者虚拟** 。他们都支持。 到底是哪个，决定在于你怎么使用他们。
   - 你可以单独使用Qemu进行OS模拟。这个时候就无所谓底层是什么操作系统了。但是实现不了完全虚拟化。
 - 💡 Linux系列，kvm负责cpu虚拟化+内存虚拟化，实现了cpu和内存的虚拟化，但kvm不能模拟其他设备；
   - qemu是模拟IO设备（网卡，磁盘），kvm加上qemu之后就能实现真正意义上服务器虚拟化。因为用到了上面两个东西，所以一般都称之为qemu-kvm。
@@ -307,13 +307,26 @@ modified: 2024-06-30T11:17:28.971Z
   - I’m not talking about "docker logs", or "docker inspect", or "docker exec"
   - I’m talking about "docker events".
   - it streams low-level, real-time event logs from the Docker daemon; not just your container.
-  - `docker events --filter container=<your_container_id>`
+  - `docker events --filter container=<your_container_id>` 
 
 - In terms of debugging, it's cleaner to see error events or logs first, then to hop on the host and look for specifics.
 # discuss
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 
+
+- ## [If Docker Hub images are so insecure why does everyone still use them as the default? : r/selfhosted _202603](https://www.reddit.com/r/selfhosted/comments/1rzddrb/if_docker_hub_images_are_so_insecure_why_does/)
+- It's because it's not dockerhub itself but the containers in the repository that are unsafe.
+
+- because dockerhub does no scanning at all.
+  - Granted pypi, node.js, rust, aren't really any better.
+  - I wish docker / oci containers were more like just the docker file, and then you built the container starting with a known distro, rather than a big blob.
+
+- the problem isn't docker hub, it is that lots of projects don't do much beyond basic security setup
 
 - ## [PSA: Docker still bypasses UFW by default. Here is why your "Firewall" might be lying to you. : r/selfhosted _202603](https://www.reddit.com/r/selfhosted/comments/1ruz3v9/psa_docker_still_bypasses_ufw_by_default_here_is/)
 

@@ -70,7 +70,18 @@ modified: 2026-01-14T18:59:01.949Z
 
 - ## 
 
-- ## 
+- ## [Multi-Token Prediction (MTP) for qwen-3.5 is coming to mlx-lm : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1rzntv5/multitoken_prediction_mtp_for_qwen35_is_coming_to/)
+  - Early support for generating multiple tokens per forward pass is in, and the gains already look solid: • 15.3 → 23.3 tok/s (~1.5x throughput boost)
+- [feat: native MTP speculative decoding for Qwen3.5 · Pull Request · ml-explore/mlx-lm _202603](https://github.com/ml-explore/mlx-lm/pull/990)
+  - Qwen3.5 checkpoints ship with a built-in Multi-Token Prediction head (mtp_num_hidden_layers: 1 in config) that predicts token t+2 from the backbone hidden state at t and the embedding of token t+1. 
+  - This PR adds support for using it as a native speculative decoding mechanism. No separate draft model needed, at minimal extra compute (1 extra transformer layer).
+  - 🐛 The PR works out of the box for the dense 27B, but MoE models (35B-A3B, 122B-A10B) fail conversion with "768 parameters not in model".  MoE acceptance rates are significantly lower than dense.
+
+- Similar PR for llama.cpp on its way: [feat: MTP support for dense Qwen 3.5 (0.8B-27B)  · Pull Request · ggml-org/llama.cpp _202603](https://github.com/ggml-org/llama.cpp/pull/20700)
+  - [Add Multi-Token Prediction (MTP) support for Qwen3.5 MoE · Pull Request · ggml-org/llama.cpp _202603](https://github.com/ggml-org/llama.cpp/pull/19937)
+
+- This means this will give us a speed boost in ALL Qwen3.5 models? Including 35B A3B and Qwen3-Coder-Next ?
+  - Nope. It is physically impossible for MTP to benefit you on a MoE unless you are batching multiple requests together. (Note: I said MTP. Yes, n-gram-mod specdec can benefit in very specific scenarios.)
 # discuss-tips
 - ## 
 
@@ -123,7 +134,7 @@ modified: 2026-01-14T18:59:01.949Z
 - ## [Apple MLX framework released _202312](https://github.com/ggml-org/llama.cpp/discussions/4345)
 - 202401: MLX v.0.0.9 just also added experimental GGUF file support
   - [GGUF support  · Pull Request · ml-explore/mlx](https://github.com/ml-explore/mlx/pull/350)
-  - This adds GGUF support using the excellent `gguflib`
+  - This adds GGUF support using the excellent `gguflib` 
 
 - ## [Any experience serving LLMs locally on Apple M4 for multiple users? : r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/comments/1ov5bpe/any_experience_serving_llms_locally_on_apple_m4/)
 - vLLM, or any production grade multi user inference engine, does not support this platform.. I think the Apple multi user story is effectively "buy each user their own mac"
@@ -325,6 +336,8 @@ sudo mv io.github.sysctl.plist /Library/LaunchDaemons/
 sudo chown root:wheel /Library/LaunchDaemons/io.github.sysctl.plist
 sudo launchctl load /Library/LaunchDaemons/io.yaoo.sysctl.plist
 ```
+
+
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

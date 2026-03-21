@@ -20,7 +20,7 @@ modified: 2020-07-14T09:27:30.503Z
   - devops: airflow, posthog
   - crdt
   - git-like
-  - apps: docling, OCRmyPDF(MPL)
+  - apps: docling, OCRmyPDF(MPL), archivebox/linkding(MIT)
   - more: json-parser, tree
 
 - tutorials 🧑‍🏫

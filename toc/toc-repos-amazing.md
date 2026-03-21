@@ -188,7 +188,7 @@ modified: 2020-11-03T06:54:59.051Z
   - 轻松制作你的YouTube风格的 Logo
   - https://logomaker.akkariin.com/
 
-- https://github.com/boringdesigners/boring-avatars
+- https://github.com/boringdesigners/boring-avatars /6.2kStar/MIT/202509/ts/inactive
   - 头像填充渐变色、小方块、表情形状；可选方形、圆形
   - https://boringavatars.com/
   - Boring avatars is a tiny JavaScript React library that generates custom, SVG-based, round avatars from any username and color palette.

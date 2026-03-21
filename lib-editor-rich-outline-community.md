@@ -37,6 +37,26 @@ modified: 2021-09-09T18:31:03.467Z
 - ## 
 
 - ## 
+# discuss-roadmap
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## [Feature Request before PR: Document Tagging System _202602](https://github.com/outline/outline/discussions/11603)
+  - I would like to propose a tagging system for Outline that allows documents to be classified with tags as an orthogonal dimension alongside the existing collection hierarchy.
+  - Outline's current document organization relies exclusively on collections and nested documents. This works well for hierarchical structure, but it creates friction in two common scenarios:
+  - 1. Cross-cutting topics that don't belong in a single collection
+  - 2. Discoverability at scale
+- What I'm explicitly NOT proposing
+  - No inline hashtags in document content
+  - No nested / hierarchical tags (#project/sub). Flat tags are sufficient and far simpler to implement and maintain.
+  - No per-user tags. Tags are team-wide normalized identifiers — marketing means the same thing for everyone on the team.
+
+- [Feature/tag system by defcon1702 · Pull Request  _202603](https://github.com/outline/outline/pull/11722)
 # discuss-collab
 - ## 
 

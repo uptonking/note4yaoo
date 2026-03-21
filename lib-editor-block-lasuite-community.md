@@ -196,6 +196,14 @@ modified: 2025-07-17T14:40:07.230Z
 
 - ## 
 
+- ## 
+
+- ## 🔖 [Tag / Category for the documents _202507](https://github.com/suitenumerique/docs/issues/1238)
+- We are not thinking of adding a tagging system. With sub documents, good search amd the drive integration users will have plenty of ways to classify their docs
+
+- [General UX for subpages and Confluence-like Spaces to group notes together  _202509](https://github.com/suitenumerique/docs/discussions/1433)
+  - We plan to make it easier to find subdocs
+
 - ## 👀 [Templates library _202507](https://github.com/suitenumerique/docs/issues/1125)
   - Users have templates for meeting minutes, product requirement documents, briefs etc.
 
@@ -264,4 +272,4 @@ modified: 2025-07-17T14:40:07.230Z
 
 - ## [(back) remove usage of deprecated db engine _202506](https://github.com/suitenumerique/docs/commit/6964686f7c0a08935e7bbfaca0aa6f5662dc3d6d)
   - The db engine `postgresql_psycopg2` does not exists anymore in django but for BC compat it is possible to use it in the configuration and it is replace by postgresql at runtime.
-  - `django.db.backends.postgresql_psycopg2` > `django.db.backends.postgresql`
+  - `django.db.backends.postgresql_psycopg2` > `django.db.backends.postgresql` 

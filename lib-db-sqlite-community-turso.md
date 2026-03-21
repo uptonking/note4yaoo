@@ -967,6 +967,25 @@ Today, Turso is in beta with early customers working toward production deploymen
 - D1 is equivalent to using SQLite on a single DO as a centralized server db. So all the drawbacks of using SQLite as a server db with none of the benefits. The benefits being: sharding and moving the db closer to compute and the user.
 
 - Migrations is my number one reason... D1 migrations are manual, but DO migrations run automatically on init.
+# discuss-compatibility-sqlite
+- ## 
+
+- ## 
+
+- ## 
+
+- ## 
+
+- ## SQLite does not support the DEFAULT keyword, which is standard SQL.  _202603
+- https://x.com/glcst/status/2035050083356385694
+  - This means that there is no way to write a multi-row statement that says "just use the default" for different columns in each of the rows.
+  - Postgres of course, supports that. I am planning to support that on @tursodatabase as well
+  - We do a lot of big features, like concurrent writes, encryption and vector search. But the small details matter too.
+- also more data types please, like UILID, BOOLEAN, DATE, TIMESTAMP
+  - Turso has custom types
+
+- what percentage of turso's codebase is vibecoded?
+  - We didnt even use any AI until a couple of months ago
 # discuss
 - ## 
 

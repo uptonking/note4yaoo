@@ -198,6 +198,7 @@ modified: 2024-03-31T17:45:16.789Z
     - The filebrowser-quantum-sync tool is designed to work with FileBrowser Quantum 🔄. It reads the BoltDB database and automatically extracts usernames and hashed passwords, generating a users file compatible with htpasswd
     - This is perfect for multi-container setups 🛠️ (e.g., FileBrowser Quantum + Radicale), ensuring centralized and consistent authentication without duplicating user management. Centralizes authentication across containers
     - PS: Bolt DB will soon be deprecated and this will need refactoring
+  - [allow tagging files for search _202407](https://github.com/gtsteffaniak/filebrowser/issues/143)
 
 - https://github.com/filebrowser/filebrowser /31.1kStar/apache2/202509/go/ts/vue
   - https://filebrowser.org/
@@ -217,6 +218,7 @@ modified: 2024-03-31T17:45:16.789Z
     - it is BoltDB. We use bbolt fork since the original was archived. It has the same API and some improvements.
   - https://github.com/spf13/afero /6.4kStar/apache2/202508/go
     - The Universal Filesystem Abstraction for Go
+  - [[Feature Request] File Tags ](https://github.com/filebrowser/filebrowser/issues/3351)
 
 - https://github.com/xiaobaidadada/filecat /77Star/apache2/202601/ts
   - https://filecat.xiaobaidadada.fun/
@@ -258,7 +260,7 @@ modified: 2024-03-31T17:45:16.789Z
   - Multi-Cloud Integration (Google Drive, Dropbox, etc.)
   - File Routing Rules for Automated Uploads
 
-- myDrive /2.8kStar/GPLv3/202012/前端js+后端ts/~~inactive~~
+- myDrive /2.8kStar/GPLv3/202012/前端js+后端ts/ ~~inactive~~ 
   - https://github.com/subnub/myDrive
   - https://mydrive-storage.com/
   - MyDrive is an Open Source cloud file storage server (Similar To Google Drive). 

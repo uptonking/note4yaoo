@@ -463,6 +463,8 @@ modified: 2025-02-21T18:20:42.624Z
   - http://metapi.cita777.me/
   - 把你在各处注册的 New API / One API / OneHub / DoneHub / Veloera / AnyRouter / Sub2API 等站点， 汇聚成 一个 API Key、一个入口，自动发现模型、智能路由、成本最优
   - [【开源】Metapi：中转站的中转站，一个 Key 聚合 New API / One API / OneHub 等多个站点，定时自动签到，适用于个人管理公益站等  _202602](https://linux.do/t/topic/1671489)
+    - New-API更加适合团队使用或用户管理、开中转站使用，而Metapi的定位是个人使用，不用于给他人分发使用，因此 删除了用户管理功能，只有一个管理员令牌防止资源被盗用。
+    - V1.2 起还支持项目级多 Key 管理 ，每个 Key 可独立配置过期时间、费用上限、请求上限、模型白名单等，适合多项目拆分使用。有自动签到、各中转站令牌管理等功能。
 
 - https://github.com/james-6-23/new_api_tools /202512/python/ts
   - NewAPI-Tool 是一个专为 NewAPI (One API 分支) 设计的现代化增强管理中间件。

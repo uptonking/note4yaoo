@@ -267,7 +267,35 @@ modified: 2023-02-08T10:24:11.422Z
   - Open source chrome extension to quickly preview, download or copy inline or embedded SVG images from a website
 # userscripts
 - registry/sources
+  - 不要在userscripts管理器上花费过多时间, 支持新特性的管理器也许对safari/firefox的支持不好, 建议用最流行的
+  - 有些扩展需要配置 csp等, 不同管理器的实现不同， 建议用最流行的
   - [Greasy Fork - safe and useful user scripts](https://greasyfork.org/en)
+
+- https://github.com/violentmonkey/violentmonkey /8kStar/MIT/202603/js/vue
+  - https://violentmonkey.github.io/
+  - provides userscripts support for browsers. 
+  - It works on browsers with WebExtensions support.
+  - [[Feature] Manifest V3 for Chrome ](https://github.com/violentmonkey/violentmonkey/issues/1934)
+  - 🍴 forks
+  - https://github.com/Zulenka/ProjectSaturn
+
+- https://github.com/Tampermonkey/tampermonkey /5.3kStar/GPL/201301/js/inactive
+  - https://www.tampermonkey.net/
+  - This repository contains the source of the Tampermonkey extension up to version 2.9.  it has been closed-sourced since version 3.0
+  - All newer versions are distributed under a proprietary license.
+  - [Tampermonkey Source State  _202303](https://github.com/Tampermonkey/tampermonkey/discussions/1735)
+    - As the developer of Tampermonkey, I have always worked on it in a private repository. The reason for this is that I enjoy working alone without having to consider external contributions or feedback regarding the implementation and architecture for example. While I did occasionally synchronize the GitHub repository with my private repository between versions 1.0.0.1 and 2.9.0 from 2010 to 2013, the syncing was sporadic and sometimes occurred with a two-year gap.
+    - However, the Mozilla Add-ons and Opera teams are receiving a source package to build and review Tampermonkey with every new version, and when I worked with the Microsoft Edge team on extension support for the first version of the Edge browser, they also had full access to the source code. Additionally, Firefox recently made Tampermonkey available for their Android browser after a review.
+
+- https://github.com/scriptscat/scriptcat /4.2kStar/GPL/202603/ts
+  - https://docs.scriptcat.org/
+  - https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf
+  - 脚本猫，一个可以执行用户脚本的浏览器扩展
+  - ScriptCat is a powerful userscript manager based on Tampermonkey's design philosophy, fully compatible with Tampermonkey scripts. 
+  - It not only supports traditional userscripts but also innovatively implements a background script execution framework with rich API extensions, enabling scripts to accomplish more powerful functions. 
+    - supports backend scripts and timed scripts. This is a function that tampering monkeys do not possess. 
+  - It features an excellent built-in code editor with intelligent completion and syntax checking, making script development more efficient and smooth.
+  - Cloud Sync
 
 ## github
 

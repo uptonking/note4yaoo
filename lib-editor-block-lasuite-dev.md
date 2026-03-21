@@ -19,11 +19,12 @@ modified: 2025-07-17T14:39:41.606Z
   - 支持ai能力，支持llama
 
 - cons
-  - 不支持个人所有文件的 FileTree
+  - 不支持个人所有文件的 FileTree, 可通过 subpage 缓解
   - database/table
   - editor
   - collab
-  - ~~本地开发的环境配置过于复杂~~
+  - 文件不支持添加tag
+  - ~~本地开发的环境配置过于复杂~~ 
 
 - features
   - 文档名在编辑器内容外，方便在名称和内容之间插入其他内容
@@ -79,7 +80,7 @@ modified: 2025-07-17T14:39:41.606Z
 - 
 
 - issues-maybe
-  - ~~不同的浏览器打开时，存在数据不一致的情况~~
+  - ~~不同的浏览器打开时，存在数据不一致的情况~~ 
 
 - codebased
   - version-history的原理: 基于s3 bucket 的versioning 实现

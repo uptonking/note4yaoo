@@ -353,7 +353,9 @@ modified: 2025-12-18T12:27:14.982Z
 - 模型不同，Antigravity里面用的是opus
 
 - 同感。有时候我感觉google他们家的ai coding领域的工具和理念自成一派，甚至会怀疑是不是自己不会用，怎么会这么难用。
-# discuss-codex-xp
+# discuss-codex-tips/tricks
+- ## 
+
 - ## 
 
 - ## 
@@ -373,7 +375,10 @@ modified: 2025-12-18T12:27:14.982Z
 
 - ## 
 
-- ## 
+- ## ✨ Codex CLI 1.116.0 supports connecting the TUI to an app server. 
+- https://x.com/kcosr/status/2035047017702109691
+  - You can even connect multiple TUIs and the desktop app at the same time. 
+  - Set [features]:tui_app_server = true to enable.
 
 - ## [最近的一些关于gpt系列模型推理强度的小观察 - 开发调优 - LINUX DO _202603](https://linux.do/t/topic/1740763)
 - 最近主要用gpt-5.4和5.2，有一些不太常见的小经验给大家分享一下。

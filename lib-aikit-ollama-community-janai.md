@@ -28,6 +28,9 @@ modified: 2026-01-14T19:05:15.969Z
   - skills for janai-cli
   - 直接兼容 lms-cli, 使用已下载的model
 
+- model-manager
+  - 参考msty，能统一管理 local/ollama/lmstudio/huggingface 的模型，释放空间
+
 - search in chat
 
 - v0.7.6_20260127版本上, 自定义url都会失败
@@ -93,7 +96,7 @@ modified: 2026-01-14T19:05:15.969Z
   - This epic is to introduce new modle provider extension in Jan, this llama.cpp extension replaces legacy cortex.cpp which is deprecated.
   - Now all of the cortex.cpp features move to this extension such as: GGUF model management Hardware and engine variant control
 - [goal: Jan Desktop uses llama.cpp and deprecates Cortex ](https://github.com/janhq/jan/issues/4941)
-  - Integrate llama.cpp backend, by: Embedding llama-server via `std::process::Command`
+  - Integrate llama.cpp backend, by: Embedding llama-server via `std::process::Command` 
 
 # discuss-roadmap
 - ## 

@@ -42,6 +42,15 @@ modified: 2020-12-08T13:52:49.103Z
 
 - [Html to Pdf library suggestions : r/django](https://www.reddit.com/r/django/comments/1q74j4u/html_to_pdf_library_suggestions/)
   - I think that if you want reliable rendering your best option is always going to be a headless browser. In which case you should look at pyppeteer.
+# discuss-office-ooxml
+- ## 
+
+- ## 
+
+- ## [word文档怎样免费无损的，高效的转换成PDF文档呢  - LINUX DO _202603](https://linux.do/t/topic/1793546)
+  - 在word文档转PDF文档时遇到了困难，在word中选项-高级中选了高保真分辨率，打印或者导出来的pdf中图片比word中更模糊。
+- 图片用矢量图的话好点
+
 # discuss
 - ## 
 

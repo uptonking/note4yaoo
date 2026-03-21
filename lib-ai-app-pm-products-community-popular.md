@@ -249,7 +249,14 @@ modified: 2026-02-20T17:36:40.796Z
 
 - ## 
 
-- ## 
+- ## [Openclaw… what are the use cases? : r/LocalLLaMA _202603](https://www.reddit.com/r/LocalLLaMA/comments/1ryw7kn/openclaw_what_are_the_use_cases/)
+- So far the common use case for the people on the hype train seems to be: summarize my day.
+
+- It enables people with little technical ability to actually make their computer do useful stuff, something that previously they had very little chance of accomplishing. Much the same way that Stable Diffusion allows people with little or no artistic ability to make art (well, the "art" part is debatable, much the same way that Openclaw gives people legitimate technical ability is debatable).
+
+- i use it for automating routine admin tasks stuff like checking logs, restarting services, that kind of thing. It's like having a junior sysadmin that never sleeps.
+
+- Tl; dr - "I made a cron job that checks a queue and does the thing in the queue." Fucking revolutionary
 
 - ## 360安全龙虾是基于 OpenClaw 做的一个封装，结果在安装包里，任何人下载后都能直接访问到一个用于域名 *.myclaw.360.cn 的 SSL私钥，这个证书有效期到2027年4月，覆盖了该平台所有子域名。
 - https://x.com/vikingmute/status/2033528578986721457

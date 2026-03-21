@@ -11,6 +11,25 @@ modified: 2022-11-11T11:04:29.007Z
 
 - tips
   - 标签管理通常作为产品的一个功能，而不是独立的产品
+  - 主流的 CMS/多维表格 都提供了管理文章/链接的能力, 特别是搜索能力
+  - 偏向于 marking/cliper, 还是偏向于 archiving/crawler/归档为文件, 偏向于 read-it-later
+
+- tags vs folder
+  - ❓ subpage 可以替代 nested-tags
+  - 常见方案: 默认显示最近文件记录(即分页的所有文件), 点击MyDocs实际显示的是包含文件夹的collection, 文件夹名不展示为tags，点击Tag实际显示单层扁平文件，两者的实现逻辑可复用
+
+- who is using #tags
+  - mkdocs-material, nested
+  - paperless-ngx, nested
+  - papermerge, 非嵌套
+  - archivebox
+  - linkding, 非嵌套
+  - wallabag, 非嵌套
+
+- who is using #folders/subdocs
+  - lasuite-docs
+  - outline
+  - filebrowser
 # popular
 - web-clipper /4.7kStar/GPLv2/202208/ts
   - https://github.com/webclipper/web-clipper
@@ -29,10 +48,54 @@ modified: 2022-11-11T11:04:29.007Z
   - 基本复刻了chrome bookmark manager的功能
   - 支持list/grid视图
 
-- https://github.com/alyssaxuu/omni
-  - The all-in-one tool to supercharge your productivity
-  - With Omni you can use your browser like a pro. 
-  - Manage tabs, bookmarks, your browser history, perform all sorts of actions and more with a simple command interface.
+- https://github.com/sissbruecker/linkding /10.3kStar/MIT/202602/python/django
+  - https://linkding.link/
+  - https://demo.linkding.link/
+  - Self-hosted bookmark manager that is designed be to be minimal, fast, and easy to set up using Docker.
+  - Organize bookmarks with tags
+  - Bulk editing, Markdown notes, read it later functionality
+  - Share bookmarks with other users or guests
+  - Automatically archive websites, either as local HTML file or on Internet Archive
+  - Import and export bookmarks in Netscape HTML format
+  - Installable as a Progressive Web App (PWA)
+  - Admin panel for user self-service and raw data access
+  - [feature request: categorizing bookmarks _202206](https://github.com/sissbruecker/linkding/issues/285)
+    - Is it possible to add a feature that allows grouping multiple bookmarks in a folder-like structure? I currently only the see possibility to remotely emulate this feature by using tags, but that feels kind of clunky for that use-case.
+    - I'll probably not support folders, I might consider lists or some other type of collection if some concrete use-cases come up. It would be helpful to know why tags are not sufficient for categorization for specific use-cases.
+    - basically allow manual grouping of tags into groups / categories, instead of having them grouped alphabetically.
+    - One way to implement this feature could be using what is called namespace or category tags. It's not a parent tag and is flat. In fact GitHub uses these. For example you can search language:rust and get a result of all the repositories that use the Rust language.
+    - I like the way Obsidian does tags, with a nested hierarchical structure.
+  - [Feature request: Partial tag search _202506](https://github.com/sissbruecker/linkding/issues/1103)
+  - 🍴 forks
+  - https://github.com/WooHooDai/linkding-cn /MIT
+    - 中文本地化、功能增强、界面优化。
+    - 支持🎲随机排序、📅日期筛选、🐞自定义快照脚本、♻️回收站等丰富功能，拥有搜索栏&侧边栏随屏滚动、侧边栏折叠、独立滚动条、位置&折叠状态记忆等界面优化。
+
+- https://github.com/ArchiveBox/ArchiveBox /27.1kStar/MIT/202603/python/ts
+  - https://archivebox.io/
+  - self-hosted internet archiving solution to collect, save, and view websites offline.
+  - Use ArchiveBox as a command-line package and/or self-hosted web app on Linux, macOS, or in Docker.
+    - Once installed, you can interact with it through the: Browser Extension, CLI, self-hosted web interface, Python API, or filesystem.
+    - You can feed ArchiveBox URLs one at a time, or schedule regular imports from your bookmarks or history, social media feeds or RSS, link-saving services like Pocket/Pinboard, our Browser Extension, and more.
+  - It saves snapshots of the URLs you feed it in several redundant formats.
+    - Saves all pages to archive.org as well by default for redundancy (can be disabled for local-only mode)
+  - ArchiveBox uses standard tools like Chrome, wget, & yt-dlp, and stores data in ordinary files & folders. (no complex proprietary formats, all data is readable without needing to run ArchiveBox)
+  - Powerful CLI with modular dependencies and support for Google Drive/NFS/SMB/S3/B2/etc.
+  - Extracts a wide variety of content out-of-the-box: media (yt-dlp), articles (readability), code (git), etc.
+  - Uses standard, durable, long-term formats like HTML, JSON, PDF, PNG, MP4, TXT, and WARC
+  - Planned: support for running JS during archiving to adblock, autoscroll, modal-hide, thread-expand
+  - [twitter/x posts not captured - screenshots taken before the post is fully loaded _202408](https://github.com/ArchiveBox/ArchiveBox/discussions/1490)
+    - That's normal for big tech social media sites, that's why we use a ton of different methods to capture redundantly, usually a few will fail but others will work.
+  - [Architecture: Support organizing archived links with folders or tags _201906](https://github.com/ArchiveBox/ArchiveBox/issues/247)
+    - 202104: Tags have been around for a few versions. I don't think we'll natively support hierarchical tags anytime soon, but you can use slashes or dashes to indicate categories in your tag names somecategory/somesubcategory/sometag (similar to how gmail tagging works).
+
+- https://github.com/floccusaddon/floccus /7.8kStar/MPLv2/202603/ts/js/vue
+  - https://floccus.org/
+  - Sync your bookmarks privately across browsers and devices
+  - Syncs your real, native browser bookmarks directly
+  - Sync via Nextcloud Bookmarks, Google Drive or any WebDAV-compatible service
+  - Install the floccus Android app to access your bookmarks on your phone
+  - (eventual) consistency is more important than intention preservation
 
 - https://github.com/pawelmalak/flame /MIT/202307/ts/inactive
   - Flame is self-hosted startpage for your server. inspired (heavily) by SUI.
@@ -63,6 +126,11 @@ modified: 2022-11-11T11:04:29.007Z
     - epub.js
   - https://github.com/windingwind/zotero-better-notes /AGPLv3/202401/ts
     - Everything about note management. All in Zotero.
+
+- https://github.com/alyssaxuu/omni /MIT/202207/js/inactive
+  - The all-in-one tool to supercharge your productivity
+  - With Omni you can use your browser like a pro. 
+  - Manage tabs, bookmarks, your browser history, perform all sorts of actions and more with a simple command interface.
 # web-clipper
 - maoxian-web-clipper /596Star/MIT/202209/js
   - https://github.com/mika-cn/maoxian-web-clipper
@@ -130,6 +198,7 @@ modified: 2022-11-11T11:04:29.007Z
   - An iOS app, and an Android app.
 
 - https://github.com/Daniel31x13/linkwarden /MIT/js/代码简单
+  - https://github.com/linkwarden/linkwarden
   - a self-hosted, open-source bookmark + archive manager to collect, and save websites for offline use.
   - 依赖mongodb、puppeteer、react-select
   - LinkWarden also saves a copy of the link as screenshot and PDF
@@ -164,14 +233,6 @@ modified: 2022-11-11T11:04:29.007Z
   - Mobile: React-Native
   - Link sharing, discovery, managing, observing link groups or users
 
-- https://github.com/floccusaddon/floccus /MPLv2/202401/ts/js/vue
-  - https://floccus.org/
-  - Sync your bookmarks privately across browsers and devices
-  - Syncs your real, native browser bookmarks directly
-  - Sync via Nextcloud Bookmarks, Google Drive or any WebDAV-compatible service
-  - Install the floccus Android app to access your bookmarks on your phone
-  - (eventual) consistency is more important than intention preservation
-
 - https://github.com/linkwarden/linkwarden /AGPLv3/202401/ts
   - https://linkwarden.app/
   - Self-hosted collaborative bookmark manager to collect, organize, and preserve webpages and articles.
@@ -179,12 +240,6 @@ modified: 2022-11-11T11:04:29.007Z
   - Linkwarden also saves a copy of each webpage as a Screenshot and PDF
   - designed with collaboration in mind, sharing links with the public and/or allowing multiple users to work together
 
-- https://github.com/ArchiveBox/ArchiveBox /26.3kStar/MIT/202601/python
-  - https://archivebox.io/
-  - self-hosted internet archiving solution to collect, save, and view websites offline.
-  - Use ArchiveBox as a command-line package and/or self-hosted web app on Linux, macOS, or in Docker.
-  - It saves snapshots of the URLs you feed it in several redundant formats.
-  - ArchiveBox uses standard tools like Chrome, wget, & yt-dlp, and stores data in ordinary files & folders. (no complex proprietary formats, all data is readable without needing to run ArchiveBox)
 - https://github.com/kanishka-linux/reminiscence /AGPLv3/202401/python/js
   - Self-hosted Bookmark and Archive manager
 
@@ -209,11 +264,12 @@ modified: 2022-11-11T11:04:29.007Z
   - frontend uses with Angular and Angular CLI.
   - backend uses ExpressJS with MongoDB and Keycloak. OpenAPI
 
-- https://github.com/go-shiori/shiori /11kStar/MIT/202509/go/js
+- https://github.com/go-shiori/shiori /11kStar/MIT/202509/go/js/vue/inactive
   - bookmark manager built with Go
   - Intended as a simple clone of Pocket. 
   - You can use it as a command line application or as a web application. 
   - 依赖httprouter、sqlx、go-sqlbuilder、goquery
+  - Support for sqlite3, PostgreSQL, MariaDB and MySQL as its database.
 
 - https://github.com/clebert/bookmark.wtf
   - A free and open-source bookmark manager that uses GitHub Gist as database.
@@ -242,11 +298,32 @@ modified: 2022-11-11T11:04:29.007Z
   - It organizes your bookmarks in a wiki format.
   - NestJS, Apollo, TypeORM
 
-- https://github.com/Pintree-io/pintree /MIT/202407/html
+- https://github.com/Pintree-io/pintree /2.6kStar/MIT/202501/ts/inactive
   - https://app.pintree.io/
   - Pintree 是一个开源项目，旨在将浏览器书签导出成导航网站
   - 将书签文件转换成JSON格式, 生成静态导航网站
   - 使用插件导出浏览器书签，并保存 JSON 文件到本地。替换 JSON 文件
+
+- https://github.com/raphaelsty/knowledge /GPL/202603/python
+  - https://raphaelsty.github.io/knowledge/
+  - Open-source personal bookmarks search engine
+  - It fetches content you interact with from various platforms—GitHub, HackerNews, Zotero, HuggingFace likes, X/Twitter—and organizes it into a navigable knowledge graph.
+
+## read-it-later
+
+- https://github.com/omnivore-app/omnivore /16kStar/AGPL/202601/ts
+  - https://omnivore.app/
+  - open source read-it-later solution for people who like reading
+  - Offline support
+  - 依赖nextjs、swr、stitches、mozilla-readability、radix-ui、pdfjs
+  - Web app written in Node.js and TypeScript; android/ios
+  - Browser extensions for Chrome, Safari, Firefox, and Edge
+  - Add newsletter articles via email (with substack support!)
+  - Every single part is fully open source! deploy it to your own server.
+
+- https://github.com/wallabag/wallabag /12.6kStar/MIT/202603/php
+  - https://wallabag.org/
+  - a self hostable application for saving web pages: Save and classify articles. Read them later. Freely.
 
 ## offline
 
@@ -283,6 +360,47 @@ modified: 2022-11-11T11:04:29.007Z
 
 - https://github.com/deweyapp/dewey /201603/js/inactive
   - a Chrome app for tagging, searching and sorting your Chrome bookmarks.
+
+## twitter-bookmarks
+
+- https://github.com/twillot-app/twillot /202501/ts/archived
+  - https://twillot.com/
+  - Effortlessly search, organize, and export your X/Twitter bookmarks with AI-powered categorization - no Premium account required.
+  - [竞品调研 _202403](https://github.com/twillot-app/twillot/discussions/3)
+
+- https://github.com/prinsss/twitter-web-exporter /2.2kStar/MIT/202603/ts
+  - Export tweets, bookmarks, lists and much more from Twitter(X) web app. (推文/书签/收藏/列表导出工具)
+  - 🐛
+    - 管理功能不够强大, 可参考dewey或twillot
+    - 安装扩展后，一直捕获不到bookmarks, 过了几小时，突然就捕获到了, 奇怪
+  - [Content-Security-Policy (CSP) Issues _202404](https://github.com/prinsss/twitter-web-exporter/issues/19)
+  - [开启插件后刷不出帖子 _202403](https://github.com/prinsss/twitter-web-exporter/issues/8)
+    - 原来Tampermonkey不行， 换了violentmonkey,可以正常刷出帖子
+  - [Doesn’t work with Orion anymore ](https://github.com/prinsss/twitter-web-exporter/issues/98)
+    - caused by a known issue about Twitter's CSP not allowing us to inject random userscripts.
+
+- https://github.com/viperrcrypto/Siftly /1.5kStar/MIT/202603/ts
+  - Local Twitter/X bookmark organizer with AI categorization and mindmap visualization
+  - Click "Export X Bookmarks" in your bookmark bar, the tool scrolls through and captures all your bookmarks automatically
+
+- https://github.com/alexknowshtml/smaug
+  - Archive your Twitter/X bookmarks (and/or optionally, likes) to markdown. Automatically.
+  - Smaug uses the bird CLI which needs your Twitter session cookies.
+    - Fetches bookmarks from Twitter/X using the bird CLI (can also fetch likes, or both)
+  - https://github.com/jawond/bird
+
+- https://github.com/zhaoscsc/x-bookmark-to-obsidian /MIT/202603/python/js
+  - A Chrome extension + bundled macOS installer for saving X bookmarks into Obsidian.
+  - 你在 x.com 点击收藏后，插件会自动抓取帖子内容，并把它保存成 Markdown 笔记写入 Obsidian。
+  - 基于已有仓库 https://github.com/iamzifei/bookmark-is-learned /MIT/202602/js
+  - https://github.com/JesstLe/x-bookmarks-to-obsidian
+    - 自动将 X (Twitter) 书签保存到 Obsidian 的完整解决方案 - 包含 Chrome 自动化脚本、视频下载、图片提取等功能
+  - https://github.com/ryanfoxeth/xmarks
+    - Live sync X/Twitter bookmarks to Obsidian with AI categorization
+
+- https://github.com/b3rntsen/twitter-bookmarks-merger /202603/python
+  - Merge multiple X/Twitter bookmark exports, deduplicate, generate browsable HTML pages, and use AI to categorize your bookmarks.
+  - 此扩展免费导出20条 https://chromewebstore.google.com/detail/x-bookmarks-exporter-expo/abgjpimjfnggkhnoehjndcociampccnm
 # tag
 - https://github.com/FelipeCortez/bmarks /django2
   - https://bmarks.net/felipecortez
@@ -325,6 +443,10 @@ modified: 2022-11-11T11:04:29.007Z
 
 - https://github.com/scale8/scale8-tag-manager-and-analytics
   - A simple, yet powerful Google Tag Manager alternative that is fully open-sourced and privacy-friendly.
+# archiving
+- https://github.com/wabarc/wayback /GPL/202601/go
+  - https://docs.wabarc.eu.org/
+  - An archiving tool with an IM-style interface that prioritizes privacy and accessibility, integrated with various archival services including Internet Archive, archive.today, Ghostarchive, IPFS, Telegraph, and file systems.
 # browser-bookmark-utils
 - https://github.com/flybayer/twitter-bookmarks-search
   - adds the ability to search your bookmarked tweets inside Twitter.
@@ -339,6 +461,16 @@ modified: 2022-11-11T11:04:29.007Z
   - 好看但不实用
   - a browser extension that stores links to your favorite sites in a more visually pleasing way than traditional bookmarks. 
   - Hop will try to find an icon for each link automatically, but you can use your own image if you prefer.
+# bookmark-pm
+- dewey. - [Save your favorite Twitter / X, LinkedIn, Bluesky, TikTok, Threads, Truth and web bookmarks all in one place _202603](https://getdewey.co/)
+  - Organize: Built-in organization tools like folders, nested folders, and tags 
+  - Search: Lightning-fast search of every bookmark, tag, author and note.
+  - Export: easily export your entire library with one click - formatted as CSV, searchable PDFs, or a Google Sheet spreadsheet. Even export all associated media like images and videos
+  - Share: let you turn on public sharing of bookmark folders to collaborate with others
+  - AI Bulk Tagging
+  - [Pricing - dewey. _202603](https://getdewey.co/pricing/)
+    - export需付费
+    - paid: auto-sync, folder, tag, ai, likes, full-thread, integrations-notion/google
 # discuss
 - ## 
 

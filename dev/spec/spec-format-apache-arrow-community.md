@@ -20,6 +20,13 @@ modified: 2021-07-24T08:16:41.076Z
 
 - ## 
 
+- ## 
+
+- ## Parquet Content Designed Chunking (CDC) is merged in arrow-rs
+- https://x.com/lhoestq/status/2034996666919481630
+  - It chunks parquet pages to optimize storage savings on content adressable stores like @huggingface Xet
+  - Btw any framework that reads Parquet can read Parquet files written using CDC, since it's just a way to cut the pages in a smart way instead of using a fixed size 
+
 - ## ClickBench keeps me convinced that  Parquet can be quite fast. There is only a 2.3x performance difference vs @duckdb 's own format and unoptimized parquet
 - https://x.com/andrewlamb1111/status/1925537738360504663
   - I am surprised that the (closed source) Umbra only reports 3.3x faster than DuckDB on parquet
@@ -51,7 +58,7 @@ modified: 2021-07-24T08:16:41.076Z
   - Using Arrow for data serialization helped us delete over 1, 000 lines of code 
 - In general, the performance improvements come from reduced data serialization time (i.e. sending data from Python to the browser).
   - But pandas itself is also becoming faster due to Apache Arrow, so having both pandas and Streamlit using the same format should yield improvements
-  - The app creator still needs to think about their workflow, use caching as appropriate, etc. **Apache Arrow can't fix algorithmic complexity of complex transformations**
+  - The app creator still needs to think about their workflow, use caching as appropriate, etc. **Apache Arrow can't fix algorithmic complexity of complex transformations** 
 
 # discuss-showcase
 - ## 

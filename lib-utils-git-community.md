@@ -51,6 +51,8 @@ git cherry-pick --no-commit repo1/main~4..repo1/main
 # If you want to preserve original authorship information, you’ll need to add Co-authored-by: lines manually in the commit message
 ```
 
+
+
 ```sh
 # squash - Alternative: create a squashed branch in repo1, fetch it into repo2
 cd /path/to/repo1
@@ -73,6 +75,8 @@ git merge repo1/squashed-for-repo2
 git cherry-pick <sha-of-squashed-commit>
 ```
 
+
+
 ```sh
 
 # Patch file / bundle approach (portable)
@@ -92,7 +96,7 @@ cd /path/to/repo1
 git bundle create ../repo1.bundle repo1/main
 # copy repo1.bundle to repo2 machine (local here)
 cd /path/to/repo2
-git fetch ../repo1.bundle refs/heads/*:refs/remotes/repo1/*
+git fetch ../repo1.bundle refs/heads/ *:refs/remotes/repo1/* 
 git merge repo1/main   # or cherry-pick, whatever you prefer
 
 ```
@@ -389,7 +393,7 @@ git am /tmp/repo1-editor-patch/*.patch
 
 - SQLite uses cathedral-style development. 95% of the code in SQLite comes from just three programmers, 64% from just the lead developer. And all SQLite developers know each other well and interact daily. Fossil is designed for this development model.
 
-- It's sad because Fossil underneath the covers is a lot like Git, but with a SQL RDBMS as the store. Fossil's design is much more powerful than Git's for that reason alone. But **that super-opinionated attitude they have is a disaster**. Run away.
+- It's sad because Fossil underneath the covers is a lot like Git, but with a SQL RDBMS as the store. Fossil's design is much more powerful than Git's for that reason alone. But **that super-opinionated attitude they have is a disaster** . Run away.
 - I'm also not convinced it's a good idea to merge your bug tracker and version control.
 
 - I choose fossil at a time when it wasn't clear which one of fossil, Mercurial, or git would "win".
@@ -417,7 +421,7 @@ git am /tmp/repo1-editor-patch/*.patch
 
 - As someone currently working in a project where parts are managed with git and others with fossil, I have a strong preference towards git. 
   - One major issue with fossil is the non-existent ecosystem. It simply does not integrate well with other frameworks and tools (e.g. Yocto/OE)
-  - The irony is that they have big performance issues with fossil, precisely due to the fact that **fossil records everything and the push/pull commands sync the entire repo, not just one branch**.
+  - The irony is that they have big performance issues with fossil, precisely due to the fact that **fossil records everything and the push/pull commands sync the entire repo, not just one branch** .
 - Fossil also lacks an equivalent to git submodules, which should be added to the list of features found in git, but not in fossil.
 
 - I agree with those who said they prefer git's "clean" commit history.
@@ -444,7 +448,7 @@ git am /tmp/repo1-editor-patch/*.patch
 - I think git and hg are both pretty bad in different ways.
   - Both have pretty terrible UI but so long as one uses magit, git comes out way on top.
   - The data models are different and suffer different problems.
-    - A **main issue with git is that it is stupid about file copies and renames**. 
+    - A **main issue with git is that it is stupid about file copies and renames** . 
     - An issue with hg is that it doesn’t work well with long running forked histories (i.e. like git branches) because it stores the set of revisions of a file as a list of blocks of “complete file” or “diff from previous version in this list”
   - Both have scaling problems to large repos and algorithm/data structure problems which cause too many operations to be e.g. O(size of history) at least. 
 - Another interesting vc system being developed at the moment is pijul which can be simply described as “like darcs but fast and more likely to be correct”. It feels a bit like it’s fitting in with the current trend of CRDTs, although it’s core data structure is not a CRDT as that would imply that all merges have some deterministic resolution (ie merge conflicts do not happen) and that is not the case, instead files are allowed to be merged into a first-class conflicted state which can then be resolved by later patches.
@@ -514,6 +518,23 @@ git am /tmp/repo1-editor-patch/*.patch
 - ## 
 
 - ## 
+
+- ## 
+
+- ## 🌰 what's the best local git diff viewer?
+- https://x.com/flybayer/status/2035037826966790504
+  - 评论区非常多的方案/github url
+- https://github.com/banga/git-split-diffs /MIT/202510/ts/inactive
+  - Syntax highlighted side-by-side diffs in your terminal
+- https://github.com/DavidWells/git-split-diffs
+  - Fork of git-split-diffs with clickable editor links
+
+- https://github.com/remorses/critique /MIT/202603/ts
+  - TUI for reviewing git changes
+
+- These days I just use the diff in the Codex desktop app. Good enough.
+
+- Gitkraken, no contest
 
 - ## 💡 [Show HN: Locust – “Git diff” over abstract syntax trees | Hacker News _202011](https://news.ycombinator.com/item?id=24999775)
 - I can't wait until the future when we have version control at the AST level instead of using text files.

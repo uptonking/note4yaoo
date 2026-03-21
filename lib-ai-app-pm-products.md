@@ -827,7 +827,7 @@ modified: 2025-03-22T16:10:24.856Z
     - 反代 kiro
   - [NPC API](https://npcodex.kiroxubei.tech/console/personal)
     - [[NPC-API]codex公益站开业 ](https://linux.do/t/topic/1564054)
-  - [SakuraCode _202603](https://codex.sakurapy.de/dashboard), 
+  - [SakuraCode _202603](https://codex.sakurapy.de/dashboard), 计算pow
     - https://codesign.sakurapy.de/
     - 5.4
   - [zenscaleai](https://lc.zenscaleai.com/console/personal), 签到少

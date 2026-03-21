@@ -27,6 +27,11 @@ modified: 2024-01-23T02:52:23.932Z
   - Turn any folder in your vault into a powerful database — right inside Obsidian.
   - [I built a Notion-like database plugin for Obsidian — 6 views, fully local, no external tools : r/ObsidianMD _202603](https://www.reddit.com/r/ObsidianMD/comments/1rtwcja/i_built_a_notionlike_database_plugin_for_obsidian/)
 
+- https://github.com/TfTHacker/group-enhancer-for-bases /MIT/202603/ts
+  - Enhances the base functionality of bases group features
+  - https://x.com/TfTHacker/status/2035123231628087726
+    - group collapsing in Obsidian Bases
+
 - https://github.com/PlayerMiller109/obsidian-sheets-basic /202408/js
   - merge markdown table cells after Obsidian v1.5.0
   - [小插件 Sheets Basic：合并 Markdown 表格单元格 - Obsidian 中文论坛 _202405](https://forum-zh.obsidian.md/t/topic/35091)

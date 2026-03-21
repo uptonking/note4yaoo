@@ -52,7 +52,7 @@ modified: 2023-09-19T07:26:04.103Z
   - https://nota-lang.github.io/bene/
   - Bene is a reading system for documents written in the EPUB file format.
 
-- https://github.com/omnivore-app/omnivore /14.4kStar/AGPL/202503/ts
+- https://github.com/omnivore-app/omnivore /16kStar/AGPL/202601/ts
   - https://omnivore.app/
   - open source read-it-later solution for people who like reading
   - Offline support

@@ -63,6 +63,17 @@ modified: 2024-03-30T05:55:54.349Z
   - Pluggable with any JS engine
   - Apps are sandboxed using WebAssembly instead of Docker. Perfect for Agentic and serverless workloads. Built using @OpenAI Codex agents.
 
+- https://x.com/zack_overflow/status/2035099963441782954
+- The interesting things to me are:
+  - New JS runtime with 100% Node compat and passing 99% of Node's tests (the most compatible that I know of)
+  - Was essentially vibecoded in a few weeks by gpt-5.4 and a small team with minimal experience with Node internals and C++
+- From reading the blog post and briefly glancing at the code, the runtime works by running using WASIX (basically WASI but supports all Posix system calls).
+- What's cool is the actual JS engine (V8 right now, but conceptually could support any) is *not* compiled to Wasm but is instead exposed as a native host function so it's still fast and can JIT
+- The sandboxing comes from re-implementing every single Node module and swapping out all IO to use Edge.js's own implementation
+- These are actually NAPI functions exposed to JS, and there's a compilation step that compiles them to Wasm. When they're called, it brings execution back into Wasm where system calls can be sandboxed by the Wasmer runtime
+- It looks like they made some changes to Wasmer runtime to directly support that by intercepting napi function registration calls and registering those functions in the runtime
+- Also important to mention that they got such high compatibility by basically making everything as close to possible to Node. It uses V8 and libuv, so they can pretty much directly copy Node internals and change up only the calls to IO to use their own. You can only really do this with LLMs because the surface area is massive
+
 - ## Announcing Hermes-node: Hermes can now run as a standalone CLI with Node.js-compatible APIs - no C++ embedding required. _202602
 - https://x.com/tmikov/status/2024609186936660170
   - Technically, hermes-node is a Node.js API compatibility layer for Hermes. It ports Node's native bindings (fs, net, http, child_process, etc.) to Node-API and reuses Node's original lib/*.js files, allowing standard Node.js programs to run on Hermes instead of V8. 
@@ -90,7 +101,8 @@ modified: 2024-03-30T05:55:54.349Z
 # discuss-bun
 - ## 
 
-- ## 
+- ## @ulpi/browse v1.0: Ported from Bun to Node.js (Bun's WebSocket bug blocked CDP for 2 years — we moved on)
+- https://x.com/cip_spiridon/status/2035369941654966723
 
 - ## 🐛 Claude Code 一定程度上带火了 Bun。Bun用来装 npm 包是极快的，用来当做 CLI 的运行时也不错，但是千万不要拿来做长时间运行的服务，比如 API 之类的。
 - https://x.com/austinit/status/2032448694382125318

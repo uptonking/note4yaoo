@@ -14,6 +14,8 @@ modified: 2024-01-04T01:28:58.097Z
   - slack: 侧重企服/工作流, 类似有teams/mattermost
   - telegram: 侧重私人与短信，但已逐渐偏离短信
   - [15 Best Open Source Discord Alternatives 2024](https://rigorousthemes.com/blog/best-open-source-discord-alternatives/)
+# draft
+- rewrite discourse with apache-answer/NodeBB
 # discuss-stars
 - ## 
 
